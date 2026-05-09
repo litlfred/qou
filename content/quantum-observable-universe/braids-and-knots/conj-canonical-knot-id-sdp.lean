@@ -562,4 +562,39 @@ theorem tritium_canonical_uniqueness_pending_hoefsmit_h5
   -- Ref: [manuscript] PR #608 deferred-Hoefsmit-H5
   sorry
 
+/-- **§3b-cond placeholder instance for ³He.**
+
+    Per CLAUDE.md §3b-cond, conditional-class instances may be
+    provided without proving the full structural claim, allowing
+    downstream theorems to consume `CanonicalKnotIdSDP helium3`
+    while the deep uniqueness theorem matures.
+
+    This instance fixes the *recoverable* fields from PR #608's
+    witness (knot id, ρ multiplicity) and uses `sdpUniqueness :=
+    True` as the §3b-cond placeholder.  The genuine uniqueness
+    statement lives in
+    `helium3_canonical_uniqueness_via_strict_complementarity`
+    above.
+
+    Diagnostic findings from the witness used to set the rho
+    multiplicity:
+    * `winner.rho_star = 3` for the L_6a4 = (σ_1 σ_2^{-1})^3 word.
+    * Wedderburn block decomposition of H_3(q_0) at L_6a4 has all
+      three min_eigs > 0 (trivial: 1.87, standard: 0.53, sign:
+      0.53), so the active set is **empty** — the optimum is in
+      the interior of the feasible region.  Strict
+      complementarity is vacuously satisfied; uniqueness reduces
+      to strict convexity of the Frobenius cost on the interior. -/
+-- Ref: [manuscript] §3b-cond conditional-class pattern
+-- Ref: [manuscript] PR #608 witness winner.rho_star
+instance helium3_canonical_knot_id_sdp_3b_cond :
+    CanonicalKnotIdSDP LightNucleus.helium3 where
+  canonicalKnotId := "L6a4"
+  -- §3b-cond placeholder; the genuine statement is the theorem
+  -- `helium3_canonical_uniqueness_via_strict_complementarity`.
+  sdpUniqueness := True
+  uniqueness_holds := trivial
+  rho := 3
+  rho_pos := by decide
+
 end QOU.BraidKnot

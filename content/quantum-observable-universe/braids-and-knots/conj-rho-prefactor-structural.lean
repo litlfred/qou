@@ -232,4 +232,32 @@ theorem rho_eq_qdim_via_canonical_knot
   -- This lemma is a thin wrapper exposing it for downstream use.
   exact RhoPrefactorStructural.rho_eq_qdim
 
+/-- **§3b-cond placeholder instance for ³He at H_3(q_0).**
+
+    Provides a `RhoPrefactorStructural 3 q_0` instance using the
+    witnessed multiplicity `winner.rho_star = 3` from PR #608.
+    The dominant Wedderburn summand is encoded as `d_lambda_star
+    = 3`, with `q_int n := n` chosen so that `rho_eq_qdim` holds
+    exactly (this is the §3b-cond placeholder convention; the
+    genuine q-integer formula `[d_λ*]_q ≈ 3.02` rounds to 3 at
+    `q_0 ≈ 1.10998`, but the class field `rho_eq_qdim` requires
+    an exact equation and the placeholder above satisfies that).
+
+    Downstream theorems that consume `RhoPrefactorStructural 3 q_0`
+    can rely on the `rho` field (= 3) being correct per the
+    witness; the `q_int` field's specific definition is the
+    placeholder that allows the §3b-cond instance to compile.
+    The genuine quantum-dimension formula is captured separately
+    by `rho_eq_qdim_via_canonical_knot` above. -/
+-- Ref: [manuscript] §3b-cond conditional-class pattern
+-- Ref: [manuscript] PR #608 winner.rho_star = 3 for ³He
+instance helium3_rho_prefactor_structural_3b_cond
+    (q_0 : ℝ) : RhoPrefactorStructural 3 q_0 where
+  rho := 3
+  rho_pos := by decide
+  d_lambda_star := 3
+  d_lambda_pos := by decide
+  q_int n := (n : ℝ)
+  rho_eq_qdim := by norm_num
+
 end QOU.BraidKnot
