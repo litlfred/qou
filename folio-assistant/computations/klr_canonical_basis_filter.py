@@ -27,16 +27,29 @@ syntactic words down to 138 canonical-basis classes (99 % compression).
 API
 ───
 
-  build_cemetery_fingerprints(evaluator, generators, L_max)
-      Pre-compute the set of cemetery χ-fingerprints (identity +
-      single-generator pure-power words for each generator).
+  build_cemetery_fingerprints(word_to_fp, generators, L_max)
+      Pre-compute the set of cemetery fingerprints — one per
+      identity / single-generator pure-power word σ_g^±k.  The
+      callable `word_to_fp(word) → fingerprint` takes a braid word
+      (tuple of generator labels) and returns its hashable
+      fingerprint; it must compose any internal evaluation +
+      fingerprint-derivation in a single call.
 
-  fingerprint_dedup(words, evaluator, cemetery_fps)
+  fingerprint_dedup(words, evaluator, fingerprint, cemetery)
       Generator: yield one canonical-basis-class representative per
-      Markov class, skipping cemetery classes.  evaluator(word) → fp
-      must return a hashable (e.g. tuple of rounded floats) signature
-      of the word's Hecke-algebra image, e.g. its per-Wedderburn-block
-      χ values rounded to fixed precision.
+      class, skipping cemetery classes.  Two callables are needed
+      because the main loop wants to keep the full evaluation result
+      (matrices, eigenvalues, ...) per kept candidate, while the
+      cemetery fingerprints can be computed via composition once at
+      setup:
+        evaluator(word)        → eval_result   (full per-block matrices etc.)
+        fingerprint(eval_result) → fp          (hashable dedup key)
+      The evaluator is called for EVERY input word (even those that
+      will be dropped as cemetery / dup), since its output is
+      required to compute the fingerprint.  If your evaluation is
+      expensive and you have a cheaper word→fp shortcut, filter
+      cemetery upstream of fingerprint_dedup and feed it pre-pruned
+      words.
 
 Adopting in an existing enumerator
 ──────────────────────────────────
@@ -47,11 +60,13 @@ Adopting in an existing enumerator
         score(word, ev)
 
   After:
-    cemetery = build_cemetery_fingerprints(my_fingerprint, GENERATORS, L_max)
+    def word_to_fp(word):
+        return fingerprint(evaluate(word))
+    cemetery = build_cemetery_fingerprints(word_to_fp, GENERATORS, L_max)
     for word, ev in fingerprint_dedup(
         product(GENERATORS, repeat=L),
         evaluator=evaluate,
-        fingerprint=my_fingerprint,
+        fingerprint=fingerprint,
         cemetery=cemetery,
     ):
         score(word, ev)
@@ -76,13 +91,13 @@ from typing import Callable, Iterable, Sequence
 
 
 def build_cemetery_fingerprints(
-    fingerprint: Callable[[tuple], tuple],
+    word_to_fp: Callable[[tuple], tuple],
     generators: Sequence,
     L_max: int,
     *,
     include_identity: bool = True,
 ) -> set:
-    """Precompute χ-fingerprints of every cemetery class.
+    """Precompute fingerprints of every cemetery class.
 
     Cemetery classes are:
       - the identity (empty word) if include_identity
@@ -93,13 +108,15 @@ def build_cemetery_fingerprints(
     so they should not be considered candidates for canonical knots.
 
     Args:
-      fingerprint(word) → hashable signature.  For B_n / H_n(q),
-        this is typically a tuple of per-Wedderburn-block χ values
-        rounded to fixed precision (e.g. 8 decimals).
+      word_to_fp(word) → hashable fingerprint.  Composes any internal
+        evaluation + fingerprint-derivation in a single call (e.g.
+        `lambda w: chi_fingerprint(evaluate_b3_braid(w, q))`).  The
+        SAME hashing convention must be used inside `fingerprint_dedup`
+        for cemetery membership tests to fire correctly.
       generators: list of generator labels (e.g. (1, -1, 2, -2)
         for B_3).  Used only to build single-generator pure-power
         words for the cemetery.  All generators are treated as
-        independent — we DO NOT take inverse pairs and skip negatives.
+        independent — we DO NOT auto-fold inverse pairs.
       L_max: maximum word length to enumerate cemetery for.
       include_identity: include the empty word (identity) — default True.
 
@@ -107,11 +124,11 @@ def build_cemetery_fingerprints(
     """
     fps: set = set()
     if include_identity:
-        fps.add(fingerprint(tuple()))
+        fps.add(word_to_fp(tuple()))
     for g in generators:
         for k in range(1, L_max + 1):
             word = (g,) * k
-            fps.add(fingerprint(word))
+            fps.add(word_to_fp(word))
     return fps
 
 
@@ -124,22 +141,33 @@ def fingerprint_dedup(
     return_eval: bool = True,
 ):
     """Yield (word, eval_result) for one canonical-basis representative
-    per Markov class, skipping cemetery classes.
+    per class, skipping cemetery classes.
 
-    Two different words sharing the same fingerprint are Markov-
-    equivalent (same Hecke-algebra image at q_0, since fingerprint =
-    per-Wedderburn-block character is a complete invariant on the
-    regular representation at a fixed q value).  We keep the FIRST
-    word seen per fingerprint.
+    Two different words sharing the same fingerprint *should* (under a
+    well-chosen fingerprint) image to the same element of H_n(q_0).
+    The fingerprint design is the caller's responsibility — note that
+    a per-block trace tuple is **not** a complete invariant of the
+    Hecke-algebra image (a 2×2 standard block has 4 independent
+    matrix entries, but trace alone only pins down 1 of them); use
+    full per-block matrix entries (rounded) for complete-invariant
+    deduplication.  See `r5_full_canonical_knot_solver.chi_fingerprint`
+    for the full-matrix recipe at H_3(q_0).  We keep the FIRST word
+    seen per fingerprint.
 
     Args:
       words: iterable of candidate braid words (tuples of generator
         labels) — consumed once.
       evaluator(word) → eval_result: full evaluation of a word
-        (e.g. per-block matrices, eigenvalues, traces).  Called once
-        per non-cemetery, non-dup candidate.
+        (e.g. per-block matrices, eigenvalues, traces).  Called for
+        EVERY input word (including cemetery / dup candidates), since
+        its output is needed to compute the fingerprint.  If your
+        evaluation is expensive and you have a cheaper word→fp
+        shortcut, drop cemetery upstream and feed pre-pruned words
+        into this generator.
       fingerprint(eval_result) → hashable: dedup signature derived
-        from the evaluator output.
+        from the evaluator output.  Must be a complete invariant of
+        the Hecke-algebra image at q_0 to avoid over-deduping
+        legitimately distinct candidates.
       cemetery: set of fingerprints to reject (from
         `build_cemetery_fingerprints`).
       return_eval: if True (default), yield (word, eval_result);
@@ -148,13 +176,13 @@ def fingerprint_dedup(
     Yields: (word, eval_result) per kept canonical-basis-class
       representative, in enumeration order.
     """
-    seen: dict = {}
+    seen: set = set()
     for word in words:
         ev = evaluator(word)
         fp = fingerprint(ev)
         if fp in cemetery or fp in seen:
             continue
-        seen[fp] = word
+        seen.add(fp)
         yield (word, ev) if return_eval else word
 
 

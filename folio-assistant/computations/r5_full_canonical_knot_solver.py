@@ -65,7 +65,6 @@ from __future__ import annotations
 
 import json
 import sys
-from datetime import datetime, timezone
 from itertools import product
 from pathlib import Path
 from typing import Iterable
@@ -73,16 +72,15 @@ from typing import Iterable
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).parent))
-from q_parameter import Q as Q_FLOAT
-from experimental_constants import M_E_MEV
-from lp_dual_solver import solve_operator_selection_lp
-from witness_base import WitnessBuilder
-from klr_canonical_basis_filter import (
+from q_parameter import Q as Q_FLOAT  # noqa: E402
+from experimental_constants import M_E_MEV  # noqa: E402
+from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
+from witness_base import WitnessBuilder  # noqa: E402
+from klr_canonical_basis_filter import (  # noqa: E402
     build_cemetery_fingerprints as _build_cemetery_generic,
 )
 
 Q0 = float(Q_FLOAT)
-H0 = Q0 - 1.0 / Q0  # Hecke parameter h = q − q^{-1}
 
 
 # ───────────────────────────────────────────────────────────────────
@@ -211,6 +209,10 @@ def evaluate_b3_braid(braid_word, q=Q0):
             "eigenvalues_sym": eigs,
             "min_eig_sym": min_eig,
             "psd_within_tol": min_eig >= -1e-9,
+            # Full matrix entries — used by chi_fingerprint to build a
+            # COMPLETE invariant of the Hecke-algebra image (trace alone
+            # under-determines the standard 2×2 block).
+            "matrix": M.tolist(),
         }
         chi_per_lambda[label] = chi
 
@@ -333,34 +335,55 @@ def enumerate_b3_words(
 def chi_fingerprint(eval_result: dict, precision: int = 8) -> tuple:
     """Canonical-basis-class fingerprint of a B_3 braid candidate.
 
-    Returns a tuple of per-Wedderburn-block χ values rounded to
-    `precision` decimal places.  Two braid words have the same
-    fingerprint iff their image in H_3(q_0) is identical (same
-    Hecke-algebra element), modulo numerical roundoff.
+    Concatenates the FULL per-Wedderburn-block matrix entries of the
+    Hecke-algebra image (rounded to `precision` decimal places) into
+    a tuple key.  At H_3(q_0) the Wedderburn dimensions are
+    1 (trivial) + 4 (standard 2×2) + 1 (sign) = 6, which equals
+    dim H_3(q_0); so the full per-block matrix entry tuple is a
+    *complete* invariant of the Hecke-algebra image (different from
+    a trace-only fingerprint, which would extract only 3 of the 6
+    independent scalars and over-collapse distinct Hecke elements).
 
-    This is used as the dedup key for the canonical-basis-class
-    cemetery filter (stage b).  Words sharing a fingerprint are
-    Markov-equivalent (or braid-equivalent) and only one
-    representative — the lexicographically smallest by braid-word
-    length, then by tuple order — is kept for scoring.
+    Two braid words have the same fingerprint iff their image in
+    H_3(q_0) is identical (same Hecke-algebra element), modulo
+    numerical roundoff at the chosen precision.  Used as the dedup
+    key for the canonical-basis-class cemetery filter (stage b).
+    Words sharing a fingerprint are braid-equivalent at q_0; only
+    the first seen representative is kept for scoring.
     """
-    chi = eval_result["chi_per_lambda"]
+    per_block = eval_result["per_block"]
+    parts: list = []
     # Sorted block labels = stable order.
-    return tuple(
-        round(chi[lbl], precision)
-        for lbl in ("trivial_(3)", "standard_(2,1)", "sign_(1,1,1)")
-    )
+    for lbl in ("trivial_(3)", "standard_(2,1)", "sign_(1,1,1)"):
+        block = per_block[lbl]
+        # `block["matrix"]` is recorded by evaluate_b3_braid below;
+        # fall back to the trace-only fingerprint if absent (back-compat
+        # for legacy callers that only stored `trace`).
+        M = block.get("matrix")
+        if M is not None:
+            for row in M:
+                for entry in row:
+                    parts.append(round(float(entry), precision))
+        else:
+            parts.append(round(float(block["trace"]), precision))
+    return tuple(parts)
 
 
 def is_cemetery_fingerprint(
-    fp: tuple, cemetery_fingerprints: set, eps: float = 1e-7,
+    fp: tuple, cemetery_fingerprints: set,
 ) -> bool:
     """True if a per-block fingerprint matches a known cemetery class.
 
     Cemetery classes for B_3 / H_3(q_0) are precomputed once per atom
     by `build_cemetery_for_b3` and include: identity, σ_1^±k, σ_2^±k
-    for k up to L_max, and cyclic-conjugate Markov-equivalents (which
-    auto-collapse to the same fingerprint).
+    for k up to L_max, and any other braid words that produce the same
+    Hecke-algebra image as one of those (cyclic-conjugate Markov-
+    equivalents auto-collapse to the same fingerprint).
+
+    Comparison is exact set membership at the chosen rounding
+    precision of `chi_fingerprint` — there is no separate eps tolerance
+    parameter (the fingerprint's `precision` argument controls
+    numerical robustness).
     """
     return fp in cemetery_fingerprints
 
@@ -463,7 +486,7 @@ def solve_atom_b3(
           f"fingerprints precomputed (σ_1^±k / σ_2^±k for k ∈ [1, {L_max}])")
 
     candidates = []
-    seen_fingerprints: dict = {}    # fp → first braid word seen (rep)
+    seen_fingerprints: set = set()    # canonical-basis classes seen
     n_seen = 0
     n_cemetery_killed = 0
     n_dedup_killed = 0
@@ -480,12 +503,12 @@ def solve_atom_b3(
         if is_cemetery_fingerprint(fp, cemetery_fps):
             n_cemetery_killed += 1
             continue
-        # Stage (b2): canonical-basis-class dedup (Markov-equivalent
+        # Stage (b2): canonical-basis-class dedup (braid-equivalent
         # words share a fingerprint; keep the first seen).
         if fp in seen_fingerprints:
             n_dedup_killed += 1
             continue
-        seen_fingerprints[fp] = word
+        seen_fingerprints.add(fp)
         markov = markov_trace_h3(ev, wenzl)
         score = cost_for_candidate(ev, markov, B_AME)
         candidates.append({
@@ -665,16 +688,53 @@ def main(L_max: int = 8, top_k: int = 8):
     print(f"  L_max = {L_max} (B_3 word length cutoff)")
     print(f"  top_k = {top_k} (operator-selection LP channels)")
 
+    # Construct the WitnessBuilder BEFORE the search so its
+    # `durationMs` field captures the actual compute time (per Copilot
+    # review on PR #608: WitnessBuilder._start_time is set at
+    # construction; building it post-search underreported runtime as
+    # ~26ms instead of the real ~10s).
+    w = (
+        WitnessBuilder("r5-full-canonical-knot-solver", engine="python")
+        .set_description(
+            "R5-full SDP solver — operator-selection LP / shadow-price "
+            "/ primal-dual / lp-duality search for the canonical Hecke "
+            "element T_w (and Wedderburn multiplicity ρ) from substrate "
+            "data alone (issue #604, deliverable 1: numerical prototype). "
+            "Enumerates B_3 braid words up to length L_max, KLR canonical-"
+            "basis 'cemetery' filter + χ-fingerprint dedup compress the "
+            "search space ~99 % to canonical-basis-class representatives, "
+            "scores each candidate by (alpha-gap of Wedderburn PSD "
+            "constraint) + (relative binding-energy residual under the "
+            "single-term flagship formula), and emits an operator-"
+            "selection LP with channels = top-K candidates whose dual "
+            "shadow prices y_star identify the saturating channels. "
+            "For ²H and ³He the historical knot identifications "
+            "(6_2, L6a4) are PRESENT in the canonical-basis-class "
+            "search space and their per-block PSD-feasibility / rank "
+            "by single-term residual are reported, providing the "
+            "infrastructure for the categorical uniqueness theorem of "
+            "conj:canonical-knot-id-sdp / conj:rho-prefactor-structural "
+            "(issue #604 deliverables 3-4) once the multi-term mass "
+            "formula (T2-T6 of thm:knot-mass-formula-unified) is wired "
+            "into the cost function."
+        )
+        .set_content_block("conj:canonical-knot-id-sdp")
+        .add_parameter("q_0", Q0)
+        .add_parameter("m_e_MeV", M_E_MEV)
+        .add_parameter("L_max", L_max)
+        .add_parameter("top_k", top_k)
+    )
+
     per_atom = []
     for atom in R5_FULL_SUBSTRATE_REGISTRY:
         result = solve_atom_b3(atom, L_max=L_max, top_k=top_k)
         per_atom.append(result)
-        w = result["winner"]
+        win = result["winner"]
         h = result["historical_cross_check"]
         psd = result["psd_feasible_subset"]
-        print(f"\n  → {atom['name']} winner: braid={w['braid_word']}, "
-              f"ρ*={w['rho_star']}, α*={w['alpha_gap']:.6f}, "
-              f"|tr_M|={abs(w['markov_trace']):.6f}, cost={w['cost']:.6f}")
+        print(f"\n  → {atom['name']} winner: braid={win['braid_word']}, "
+              f"ρ*={win['rho_star']}, α*={win['alpha_gap']:.6f}, "
+              f"|tr_M|={abs(win['markov_trace']):.6f}, cost={win['cost']:.6f}")
         print(f"    historical {h['knot_name']}: "
               f"α*={h['alpha_gap']:.6f} ({'PSD' if h['psd_feasible'] else 'not PSD'}), "
               f"|tr_M|={abs(h['markov_trace']):.6f}, "
@@ -730,12 +790,17 @@ def main(L_max: int = 8, top_k: int = 8):
         ),
         "next_session_deliverables": [
             "Wire multi-term mass formula (T2-T6 of "
-            "thm:knot-mass-formula-unified) into cost_for_candidate",
-            "Wire KLR canonical-basis 'cemetery' filter to skip "
-            "Demazure-trivial Markov classes (σ_i^k pure powers and "
-            "their conjugates) at enumeration time, not post-filter — "
-            "uses kazhdan-lusztig-canonical-basis.witness.json + "
-            "markov_trace_canonical.py infrastructure already present",
+            "thm:knot-mass-formula-unified) into cost_for_candidate "
+            "— without this the single-term residual is dominated by "
+            "PSD-trivial near-pure-power braids whose |tr_M| "
+            "coincidentally matches B_AME/(m_e·ρ).",
+            "Port klr_canonical_basis_filter to other braid-enumerators "
+            "in folio-assistant/computations/ (universal-ilp.py, "
+            "ch-bond-writhe-lp.py, h2-integer-lp.py per the cemetery-"
+            "applicability survey).  These use an OPS-tuple abstraction "
+            "(named operators with state-update fns) rather than raw "
+            "B_n generators, so each port needs an adapted "
+            "evaluator(word) → fingerprint function.",
             "Extend to B_5 / 8_11 (³H) — needs Hoefsmit at H_5; "
             "consistent with deferred-to-Rust posture in "
             "joint_tower_sdp_solver_v2.py",
@@ -746,47 +811,31 @@ def main(L_max: int = 8, top_k: int = 8):
         ],
     }
 
-    # ── Build witness JSON (LP-dual / operator-selection / shadow-
-    # price compute, picked up by lp_dual_witness_validator). ──────
-    w = (
-        WitnessBuilder("r5-full-canonical-knot-solver", engine="python")
-        .set_description(
-            "R5-full SDP solver — operator-selection LP / shadow-price "
-            "/ primal-dual / lp-duality search for the canonical Hecke "
-            "element T_w (and Wedderburn multiplicity ρ) from substrate "
-            "data alone (issue #604, deliverable 1: numerical prototype). "
-            "Enumerates B_3 braid words up to length L_max, scores each "
-            "candidate by (alpha-gap of Wedderburn PSD constraint) + "
-            "(relative binding-energy residual), and emits an operator-"
-            "selection LP with channels = top-K candidates whose dual "
-            "shadow prices y_star identify the saturating channels. "
-            "For ²H and ³He the historical knot identifications "
-            "(6_2, L6a4) are recovered from substrate-only inputs, "
-            "providing the empirical foundation for the categorical "
-            "uniqueness theorem of conj:canonical-knot-id-sdp / "
-            "conj:rho-prefactor-structural (issue #604 deliverables 3-4)."
-        )
-        .set_content_block("conj:canonical-knot-id-sdp")
-        .add_parameter("q_0", Q0)
-        .add_parameter("m_e_MeV", M_E_MEV)
-        .add_parameter("L_max", L_max)
-        .add_parameter("top_k", top_k)
-        .add_data("substrate_registry", R5_FULL_SUBSTRATE_REGISTRY)
-        .add_data("per_atom_results", per_atom)
-        .add_data("summary", summary)
-        .add_caveat(
+    # ── Attach data + caveat to the WitnessBuilder constructed
+    # before the search loop (so durationMs captures actual runtime). ─
+    (
+        w.add_data("substrate_registry", R5_FULL_SUBSTRATE_REGISTRY)
+         .add_data("per_atom_results", per_atom)
+         .add_data("summary", summary)
+         .add_caveat(
             "Search restricted to B_3 (handles ²H and ³He). Tritium "
             "³H lives in B_5 / 8_11 and needs Hoefsmit at H_5 — "
             "deferred (matches existing joint_tower_sdp_solver_v2.py "
             "deferred-to-Rust posture). The single-term flagship "
-            "formula B = m_e · ρ · |tr_M| has known structural offset "
-            "(see probe-sdp-canonical-paper-formula.witness.json); "
-            "this prototype demonstrates that the *relative* ranking "
-            "across braid candidates (joint α-gap + residual) selects "
-            "the historical knot from substrate-only inputs, even with "
-            "the offset present.  The categorical uniqueness theorem "
-            "(deliverable 3) and the structural ρ(Z, N) rule "
-            "(deliverable 4) are next-session work."
+            "formula B = m_e · ρ · |tr_M| has the known structural "
+            "offset documented in "
+            "probe-sdp-canonical-paper-formula.witness.json; under "
+            "this single-term cost the ²H/³He historical T_w are "
+            "PRESENT in the canonical-basis-class search space and "
+            "are reported with their per-block PSD eigenvalues + "
+            "rank-by-residual, but they are NOT the unique global "
+            "winners — the cost-minimising candidates are PSD-trivial "
+            "near-pure-power braids whose |tr_M| coincidentally fits "
+            "B_AME / (m_e · ρ).  Wiring the multi-term tower (T2-T6 "
+            "of thm:knot-mass-formula-unified) into cost_for_candidate "
+            "is the next-session blocker for unique recovery; the "
+            "categorical uniqueness theorem (deliverable 3) and the "
+            "structural ρ(Z, N) rule (deliverable 4) follow."
         )
     )
     out = w.save()
@@ -795,8 +844,9 @@ def main(L_max: int = 8, top_k: int = 8):
     print(f"  Framework status: {summary['framework_status']}")
     print(f"  Strong duality holds for all per-atom LPs: "
           f"{summary['all_lp_strong_duality_holds']}")
-    print(f"  Historical T_w recovery as joint-cost winner: "
-          f"{n_winners_match_historical}/{n_atoms}")
+    print(f"  Historical T_w as joint-cost winner: "
+          f"{n_winners_match_historical}/{n_atoms} "
+          f"(non-recovery is the expected single-term-formula symptom)")
     print(f"  Historical T_w in top-{top_k}: "
           f"{n_top_k_contains_historical}/{n_atoms}")
     print(f"  Historical T_w PSD-feasible at q_0: "
