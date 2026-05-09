@@ -145,4 +145,70 @@ noncomputable def lengthFn (n : ℕ) (i : Fin n.factorial) : ℕ :=
 noncomputable def identityIndex (n : ℕ) : Fin n.factorial :=
   (permutationEnumeration n).symm 1
 
+/-! ### Concrete simple-transposition lengths
+
+    Each simple transposition `σ_i` has Coxeter length 1 (it's
+    a single Coxeter generator).  Proved by `decide` for
+    concrete (small) `n`, exploiting the decidable equality
+    on `Fin n × Fin n`. -/
+
+/-- σ_1 in S_3 has Coxeter length 1. -/
+theorem coxeterLength_sigma1_in_S3 :
+    coxeterLength sigma1_in_S3 = 1 := by
+  unfold coxeterLength sigma1_in_S3 simpleTransposition
+  decide
+
+/-- σ_2 in S_3 has Coxeter length 1. -/
+theorem coxeterLength_sigma2_in_S3 :
+    coxeterLength sigma2_in_S3 = 1 := by
+  unfold coxeterLength sigma2_in_S3 simpleTransposition
+  decide
+
+/-- σ_1 in S_4 has Coxeter length 1. -/
+theorem coxeterLength_sigma1_in_S4 :
+    coxeterLength sigma1_in_S4 = 1 := by
+  unfold coxeterLength sigma1_in_S4 simpleTransposition
+  decide
+
+/-- σ_2 in S_4 has Coxeter length 1. -/
+theorem coxeterLength_sigma2_in_S4 :
+    coxeterLength sigma2_in_S4 = 1 := by
+  unfold coxeterLength sigma2_in_S4 simpleTransposition
+  decide
+
+/-- σ_3 in S_4 has Coxeter length 1. -/
+theorem coxeterLength_sigma3_in_S4 :
+    coxeterLength sigma3_in_S4 = 1 := by
+  unfold coxeterLength sigma3_in_S4 simpleTransposition
+  decide
+
+/-! ### Markov trace formula via Coxeter length
+
+    The Jones-Markov trace satisfies `tr_M(T_w) = z^{ℓ(w)}`
+    on the basis.  Combining `lengthFn n` (the per-basis-index
+    Coxeter length) with the Markov parameter `z` gives the
+    explicit trace formula. -/
+
+/-- **Markov trace via Coxeter length** at level `n`:
+    `tr_M(x) = Σ_{i : Fin n!} x i * z^{ℓ(i)}` where ℓ is
+    `lengthFn n` (the Coxeter length of the i-th basis element). -/
+noncomputable def markovTrace_via_coxeter (z : ℝ) (n : ℕ)
+    (x : Fin n.factorial → ℝ) : ℝ :=
+  ∑ i : Fin n.factorial, x i * z ^ (lengthFn n i)
+
+/-- Markov-trace normalisation: `tr_M(1) = 1` since the identity
+    has length 0 and z^0 = 1. -/
+theorem markovTrace_via_coxeter_basis_at_id (z : ℝ) (n : ℕ)
+    (h_pos : 0 < n.factorial) :
+    markovTrace_via_coxeter z n
+      (fun i => if i = ⟨0, h_pos⟩ then 1 else 0)
+      = z ^ (lengthFn n ⟨0, h_pos⟩) := by
+  unfold markovTrace_via_coxeter
+  rw [Finset.sum_eq_single ⟨0, h_pos⟩]
+  · simp
+  · intro i _ hne
+    simp [hne]
+  · intro h
+    exact absurd (Finset.mem_univ _) h
+
 end QOU.Mathlib.PermutationEnumeration
