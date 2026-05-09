@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T03:58:49.763524+00:00",
-  "commitSha": "ba9a03f9f210ccc55f6287a2c9d554654a9a3b97",
+  "computedAt": "2026-05-09T04:40:33.260376+00:00",
+  "commitSha": "2eb476df30bacfc53139cfa6d4321fa442308006",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -438,7 +438,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
@@ -1341,7 +1341,9 @@
         "alpha-em-shift-multiplicative-chain.witness.json",
         "alpha-high-precision.witness.json",
         "alpha-k-jones-markov-h3.witness.json",
+        "alpha-k-macdonald-closed-form.witness.json",
         "alpha-shift-torus.witness.json",
+        "atom-mass-additive-baseline.witness.json",
         "atom-mass-derived.witness.json",
         "atom-nf-symbolic-D.witness.json",
         "atomic-braid-alpha-shift-l6.witness.json",
@@ -1372,6 +1374,7 @@
         "brane-tower-isospin-diagnosis.witness.json",
         "brane-tower-per-channel-phi-q-probe.witness.json",
         "brane-tower-two-avenues-probe.witness.json",
+        "brundan-kleshchev-audit.witness.json",
         "bw-chirality-isotopes.witness.json",
         "c-alpha-from-Q-beta-trace.witness.json",
         "canonical-mass-table.witness.json",
@@ -1384,6 +1387,7 @@
         "channel-product-mass.witness.json",
         "chirality-braid-average.witness.json",
         "close-321-weinberg-gap.witness.json",
+        "codata-reconciliation.witness.json",
         "compute-audit-scan.witness.json",
         "confined-knot-binding.witness.json",
         "confinement-operator-selection.witness.json",
@@ -1396,6 +1400,7 @@
         "d-from-scratch.witness.json",
         "d-u-closed-form-proof.witness.json",
         "delta-q-decoration.witness.json",
+        "demazure-markov-trace.witness.json",
         "deuteron_tr_M_symbolic.witness.json",
         "e0-calibration-audit.witness.json",
         "entanglement-orders.witness.json",
@@ -1481,6 +1486,7 @@
         "nv-pslq-tr-pure-basis.witness.json",
         "nv1_candidate_a_doubleprime.witness.json",
         "ocneanu-cancellation-derivation.witness.json",
+        "onepb-status-dashboard.witness.json",
         "optimised-magic-verifier.witness.json",
         "p2-5-symbolic-q-audit.witness.json",
         "paper-six-term-isotope-sweep.witness.json",
@@ -1517,6 +1523,7 @@
         "q-pinning-50-digit.witness.json",
         "q-pochhammer-seed.witness.json",
         "rho-f-categorical-probe.witness.json",
+        "rho-f-volume-binding-gap.witness.json",
         "rho-k-h3a-refinement.witness.json",
         "rho-k-leading-order-verification.witness.json",
         "rho-k-markov-multiplicativity.witness.json",
@@ -1557,6 +1564,7 @@
         "wall-violations.witness.json",
         "wedderburn-pair-volumes.witness.json",
         "y-lambda-cyclotomic-factor.witness.json",
+        "y-lambda-macdonald-telescope.witness.json",
         "y_lambda_equivalence_proof.witness.json"
       ]
     }
