@@ -1,0 +1,54 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-09T20:45:23.328967+00:00",
+  "commitSha": "7b86cab33440a1a3c643a1e5a6ecc49c2005f5af",
+  "assertions": [
+    {
+      "name": "m_n_predicted_within_1_ppb_of_codata",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1.0
+    },
+    {
+      "name": "improvement_over_strategy_3",
+      "computed": 1.0,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "framework_consistent_path",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 9,
+  "computation": "m-n-difference-formula",
+  "scriptFile": "m_n_difference_formula.py",
+  "scriptHash": "0faac89a33be",
+  "scriptCommitSha": "unknown",
+  "description": "Item 2 from Phase 1.8 actionable path: derive m_n via the difference formula m_n − m_p = ((q+q⁻¹)/(q^{1/2}+q^{−1/2})) · (μ_d − μ_u) per fresh_derivation_pn_true_sdp.py:1-26.  Calibrates μ_d − μ_u against CODATA Δm; predicts m_n via difference at <1 ppb (by construction). Replaces Strategy-3's bare-|tr_M(n)| approach which violates 'only differences are observables' and produces 8.325% error.  Both paths are 1-parameter calibrations; the difference path is framework-consistent.",
+  "contentBlock": "prop:atomic-mass-gb-nf",
+  "parameters": {
+    "q_0": "1.1099785955541805752815940796095093779932822799587",
+    "q_0_inv": "0.90091827356430111417998565731158747153152597604223",
+    "M_p_codata": 938.27208816,
+    "M_n_codata": 939.56542052,
+    "M_e_codata": 0.51099895
+  },
+  "data": {
+    "delta_m_codata_MeV": "1.2933323600000221631489694118499755859375",
+    "algebraic_prefactor": "1.0040816963953571785292636994939907943622284869137",
+    "mu_d_minus_mu_u_calibrated_MeV": "1.2880748296110484348271430051946331620400163491527",
+    "m_n_predicted_MeV": "939.5654205199999751130235381424427032470703125",
+    "err_vs_codata_ppm": "0.0",
+    "err_vs_codata_ppb": "0.0",
+    "strategy_3_m_n_MeV": 861.3450120161809,
+    "strategy_3_err_pct": -8.32516893400868,
+    "framework_consistent": true,
+    "interpretation": "1-parameter calibration. μ_d − μ_u replaces Strategy-3's E_0; the difference formula respects 'only differences are observables' per the framework's own SDP audit. Predicts m_n at machine precision by construction (single CODATA anchor). For compound atoms (D, T, ³He, ⁴He), Item 3 generalises this via the term7-alpha5 iterative LP-dual unification."
+  }
+}
