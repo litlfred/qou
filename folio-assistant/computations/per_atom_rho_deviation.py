@@ -2,16 +2,21 @@
 """
 Per-atom ρ-deviation diagnostic — path to 1 ppb.
 
-For each atom in `mass-table-ppb`, the canonical Kashaev-law family-1
-prediction is `B_pred = ρ_F · m_e · Vol_hyp(K)` with ρ_F a structural
-integer (1 or 2). PR #512 showed that the "true" ρ (= B_AME / (m_e ·
-Vol_hyp(K))) for ³He is 2.062, not 2 — a +3.1% substrate-q correction
-beyond the integer.
+For a curated set of light Z=N atoms (²H, ⁴He, ¹²C, ¹⁶O — the four
+hard-coded entries in `AME` below), the canonical Kashaev-law
+family-1 prediction is `B_pred = ρ_F · m_e · Vol_hyp(K)` with ρ_F a
+structural integer (1 or 2). PR #512 showed that the "true" ρ
+(= B_AME / (m_e · Vol_hyp(K))) for ³He is 2.062, not 2 — a +3.1%
+substrate-q correction beyond the integer.
 
-This script generalises that probe: for every atom in the table,
-compute the "true" ρ implied by AME and the canonical Vol·m_e
-factor, then test whether the deviation δρ = ρ_true / ρ_struct − 1
-matches any pre-specified categorical q-arithmetic form.
+This script focuses on the doubly-symmetric Z=N=k subset (²H, ⁴He,
+¹²C, ¹⁶O). For each, it computes the "true" ρ implied by AME and
+the canonical Vol·m_e factor, then tests whether the deviation
+δρ = ρ_true / ρ_struct − 1 matches any pre-specified categorical
+q-arithmetic form. Extending to the full mass-table-ppb iteration
+is a follow-up — the four Z=N atoms are sufficient to surface the
++δρ = -([A]_q − A) / ρ_struct regularity that motivates the
+`conj:z-eq-n-rho-correction` block.
 
 **No fitting.** All candidate forms for δρ are stated in advance from
 the substrate's standard q-anchors (η_q, ℏ_q, 1/c_q, d_H(q), low-order
@@ -23,6 +28,7 @@ Usage:
 """
 from __future__ import annotations
 
+import math
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -32,11 +38,11 @@ sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as Q0, q_int  # noqa: E402
 from experimental_constants import (  # noqa: E402
     M_E_MEV,
-    VOL_6_2_50DP,
-    VOL_8_11_50DP,
-    VOL_L6A4_50DP,
-    VOL_7_SQ_1_50DP,
-    EIGHT_G_50DP,
+    VOL_6_2,
+    VOL_8_11,
+    VOL_L6A4,
+    VOL_7_SQ_1,
+    EIGHT_G,
 )
 
 # For backwards-comparison with the existing mass-table-ppb pipeline,
@@ -44,11 +50,11 @@ from experimental_constants import (  # noqa: E402
 # legacy mass_table_ppb.py uses 8·CATALAN_G ≈ 7.327724753417752,
 # which differs from the SnapPy VOL_L6A4 = 7.327724753846269 at the
 # 10⁻⁹ level. At 1 ppb this matters; both forms are exposed below.
-VOL_BORROMEAN_EIGHT_G = EIGHT_G_50DP        # legacy magic-A input (8·G)
-VOL_BORROMEAN_SNAPPY  = VOL_L6A4_50DP       # SnapPy actual link volume
+VOL_BORROMEAN_EIGHT_G = EIGHT_G        # legacy magic-A input (8·G)
+VOL_BORROMEAN_SNAPPY  = VOL_L6A4       # SnapPy actual link volume
 KNOT_VOL = {
-    "6_2":  VOL_6_2_50DP,
-    "8_11": VOL_8_11_50DP,
+    "6_2":  VOL_6_2,
+    "8_11": VOL_8_11,
     "L6a4": VOL_BORROMEAN_EIGHT_G,           # match mass_table_ppb baseline
 }
 
@@ -74,7 +80,10 @@ def qn(q: float, n: int) -> float:
     """
     if n == 0:
         return 0.0
-    if q == Q0:
+    # Use isclose for the fast-path detection (q == Q0 by exact
+    # float equality is brittle if q is computed rather than
+    # imported — per Copilot review on PR #591).
+    if math.isclose(q, Q0, rel_tol=0.0, abs_tol=1e-15):
         return q_int(n)
     return (q ** n - q ** (-n)) / (q - 1 / q)
 
@@ -131,7 +140,6 @@ def decomposition_row(sym: str, knot: str, rho_struct: int, A: int,
     # For each anchor a, test δρ = ±a, δρ = ±(a − 1), and δρ = ±(a − ⌊a⌋)
     # (fractional-part removal — matches the docstring's "−⌊a⌋" notation).
     # No fitting: just record the closest match by absolute residual.
-    import math
     best = []
     for label, val in anchors.items():
         for sign in (+1, -1):
@@ -164,6 +172,17 @@ def decomposition_row(sym: str, knot: str, rho_struct: int, A: int,
 
 
 def main() -> int:
+    # Instantiate WitnessBuilder up front so its `durationMs` field
+    # captures the FULL run time (was wrapping at the end → measured
+    # only wrap/save time ≈ 0 ms; per Copilot review on PR #591).
+    from witness_base import WitnessBuilder
+    builder = WitnessBuilder(
+        "per-atom-rho-deviation",
+        engine="python",
+        output_dir=Path(__file__).parent,
+    )
+    builder.set_audit_only("docs/audits/2026-05-03-z-eq-n-rho-correction-finding.md")
+
     print("=" * 110)
     print("PER-ATOM ρ-DEVIATION DIAGNOSTIC — path to 1 ppb")
     print(f"  q₀ = {Q0:.16f}   m_e = {M_E_MEV} MeV")
@@ -236,7 +255,7 @@ def main() -> int:
     q4_minus_4 = qn(Q0, 4) - 4
     correction_4He = 1.0 - q4_minus_4 / 2.0          # = ρ_true / 2
     B_4He_corr = 2 * M_E_MEV * 4 * VOL_BORROMEAN_EIGHT_G * correction_4He
-    C_ALPHA = M_E_MEV * VOL_7_SQ_1_50DP               # 2.4270 MeV (= m_e·Vol(7²_1))
+    C_ALPHA = M_E_MEV * VOL_7_SQ_1               # 2.4270 MeV (= m_e·Vol(7²_1))
 
     ALPHA_CHAIN = [
         # (sym, n_alpha, n_pairs, B_AME_MeV)
@@ -296,7 +315,7 @@ def main() -> int:
             "VOL_BORROMEAN_EIGHT_G": VOL_BORROMEAN_EIGHT_G,
             "VOL_BORROMEAN_SNAPPY":  VOL_BORROMEAN_SNAPPY,
             "KNOT_VOL": KNOT_VOL,
-            "VOL_7_SQ_1": VOL_7_SQ_1_50DP,
+            "VOL_7_SQ_1": VOL_7_SQ_1,
         },
         "rows":          rows,
         "z_eq_n_propagation": {
@@ -317,22 +336,13 @@ def main() -> int:
             ],
         },
     }
-    # Migrated to WitnessBuilder.wrap_legacy (was direct json.dump);
-    # adds scriptHash / scriptCommitSha / commitSha / engine /
-    # engineVersion / durationMs metadata.
-    from witness_base import WitnessBuilder
+    # Save via the builder created at start of main(); pass `extra=`
+    # to fold the legacy top-level keys (description, parameters,
+    # data, ...) into the witness without using wrap_legacy.
+    # `durationMs` reflects elapsed time since builder instantiation.
     out["computation"] = "per-atom-rho-deviation"
-    out["auditOnly"] = "docs/audits/2026-05-03-z-eq-n-rho-correction-finding.md"
-    out_path = (
-        WitnessBuilder.wrap_legacy(
-            "per-atom-rho-deviation",
-            out,
-            script_path=__file__,
-            engine="python",
-            output_dir=Path(__file__).parent,
-        )
-        .save()
-    )
+    # Description / etc. live inside `out` already; preserve as extras.
+    out_path = builder.save(extra=out)
     print(f"\nWitness: {out_path}")
     return 0
 
