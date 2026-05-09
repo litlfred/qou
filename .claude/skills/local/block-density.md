@@ -108,7 +108,7 @@ The script reports three categories:
 | After this skill | Use next |
 |-----------------|----------|
 | Before creating a block | `content-graph` PR1–PR7 — placement checklist |
-| Feature branch ready to merge | `prepare-for-merge` — upstream check + density audit |
+| Feature branch ready to merge | `/prepare-merge` (slash command) — upstream check + density audit + one-voice |
 | Split a block | `content-validation` (check new blocks validate) |
 | Move a child block | `content-graph` (check forward refs improved) |
 | Extract a table | `content-validation` + `rendering-auditor` |

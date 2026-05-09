@@ -1,18 +1,23 @@
 ---
-name: one-voice
-description: Narrative voice and style consistency checker
+name: one-voice-style-guide
+description: Author voice profile and narrative style guide. Reference when authoring or editing prose. Pairs with `one-voice-audit` (mechanical sweep for status leaks, emoji, and Unicode crashes).
 roles: [reader, collaborator]
 triggers:
-  - "one voice"
-  - "voice check"
-  - "narrative check"
-  - "style consistency"
+  - "one voice style"
+  - "voice profile"
+  - "author voice"
+  - "narrative style"
   - "before committing narrative"
 ---
 
-# One-Voice: Narrative Consistency Checker
+# One-Voice Style Guide — Author Voice Profile
 
-Run this skill before committing any narrative content (.md files).
+> **See also:** `one-voice-audit` is the mechanical sweep (greps for
+> ✅/TODO/first-person work tone). This file is the *style profile*
+> agents follow when *writing* prose; the audit is what runs *after*.
+
+Reference this skill when authoring or editing narrative content
+(.md files).
 It ensures the paper speaks with a single, consistent voice across
 all chapters, sections, and the running SU(2) example.
 

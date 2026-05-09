@@ -11,6 +11,17 @@ allowed-tools: Read Edit Bash Grep Glob WebFetch AskUserQuestion Agent
 
 # Todo Review Skill
 
+> **Disambiguation:**
+> - `todo-review` (this file) = triage of **content feedback** stored
+>   in `todos/content-todos.ts` (paper-scope; persistent across
+>   sessions; surfaced via `/todos` dashboard).
+> - `todo-manager` = the agent's **session work-plan** via TodoWrite
+>   (in-memory; per-session).
+>
+> Both can be active in one session: the agent's work-plan
+> (`todo-manager`) may include "process N feedback items via
+> `todo-review`" as a single task.
+
 ## Role
 
 Monitor open feedback across the manuscript. At session start, offer a
