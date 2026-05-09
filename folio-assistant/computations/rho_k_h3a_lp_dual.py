@@ -51,16 +51,13 @@ Usage:
 from __future__ import annotations
 
 import argparse
-import hashlib
 import json
 import sys
-from datetime import datetime, timezone
 from multiprocessing import Pool, cpu_count
 from pathlib import Path
 
 import mpmath as mp
 import numpy as np
-import sympy as sp
 
 HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
@@ -80,7 +77,7 @@ from rho_k_h3a_refinement import (  # noqa: E402
 )
 from codata_constants import M_E_MEV, M_P_MEV, M_N_MEV, M_D_MEV  # noqa: E402
 from q_parameter import Q_MP  # noqa: E402
-from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
+from witness_base import WitnessBuilder  # noqa: E402
 
 mp.mp.dps = 50
 
@@ -237,16 +234,22 @@ def lp_select_delta_lambda(
     # Dual extraction: scipy 'highs' returns eqlin.marginals = ∂(opt obj)/∂(b_eq)
     # for our single mass-equation row.
     y0_star = float(res.eqlin.marginals[0])
-    # Per-λ binding-contribution shadow prices: signed magnitude carried
-    # by each Δ_λ at the LP optimum, weighted by y0_star (the universal
-    # Lagrange multiplier of the mass equation). This is the physical
-    # quantity the validator expects to live next to active_set.
-    y_star = [y0_star * abs(d_i) for d_i in delta]
-    # Active set := the (typically single) λ at the LP basic solution.
-    # Use a relative threshold to be robust against highs slack noise.
-    abs_max = max(abs(d_i) for d_i in delta) if d > 0 else 0.0
-    thresh = max(1e-12, 1e-9 * abs_max)
-    active_set = [i for i, d_i in enumerate(delta) if abs(d_i) > thresh]
+    # Per-λ binding-contribution shadow prices: NON-NEGATIVE magnitudes
+    # of the binding contribution carried by each Δ_λ at the LP optimum,
+    # scaled by |y0_star| (the magnitude of the universal Lagrange
+    # multiplier of the mass equation). The LP-dual contract from
+    # `lp_dual_solver.LpDualResult` requires y_star ≥ 0 with
+    # active_set = {i : y_star[i] > tol}; this construction satisfies
+    # both invariants regardless of the sign of y0_star (which is
+    # signed because the mass-equation residual can be either positive
+    # or negative).
+    y_star = [abs(y0_star) * abs(d_i) for d_i in delta]
+    # Active set := indices with strictly positive y_star (the
+    # canonical LP-dual definition). Use a relative threshold so highs
+    # slack noise does not produce spurious actives.
+    y_max = max(y_star) if y_star else 0.0
+    thresh = max(1e-12, 1e-9 * y_max)
+    active_set = [i for i, y_i in enumerate(y_star) if y_i > thresh]
     dual_obj = float(target_np * y0_star)
     duality_gap = abs(primal_obj - dual_obj)
 
@@ -459,12 +462,12 @@ def main() -> int:
     print(f"    closure error (ppm) = {mp.nstr(closure_err_ppm, 4)}")
 
     # ── Step 9: emit the witness ──────────────────────────────
-    script_bytes = Path(__file__).read_bytes()
-    script_hash = "sha256:" + hashlib.sha256(script_bytes).hexdigest()
-
-    witness = {
+    # Use WitnessBuilder.wrap_legacy so staleness metadata
+    # (scriptHash, scriptCommitSha, commitSha, durationMs) is emitted
+    # canonically per witness_base.py — replacing the prior hand-rolled
+    # `json.dump` with `hashlib.sha256(...)` scriptHash.
+    legacy_payload = {
         "computation": "rho-k-h3a-lp-dual",
-        "computedAt": datetime.now(timezone.utc).isoformat(),
         "description": (
             "Δ_λ option D: LP-dual shadow-price selection for the H_{3A} "
             "Wedderburn refinement of ρ_K (deuteron, n=6, 11 partitions). "
@@ -478,7 +481,7 @@ def main() -> int:
             "PR #600 derivation race (A=Occam, B=co-Casimir, C=Demazure, "
             "D=this LP-dual, E=crystal)."
         ),
-        "engine": (
+        "engineDetail": (
             f"mpmath numeric Hoefsmit at q_0 (50 dps), "
             f"multiprocessing.Pool({args.workers}); "
             f"scipy.optimize.linprog 'highs' for LP+dual"
@@ -486,8 +489,6 @@ def main() -> int:
             else "sympy symbolic-q + mpmath evaluation (50 dps), single-threaded; "
                  "scipy.optimize.linprog 'highs' for LP+dual"
         ),
-        "scriptFile": "rho_k_h3a_lp_dual.py",
-        "scriptHash": script_hash,
         "tags": ["lp-dual", "operator-selection-lp", "shadow-price"],
         "parameters": {
             "q_0_50dps": mp.nstr(Q_MP, 50),
@@ -608,9 +609,14 @@ def main() -> int:
             "do not re-solve the same LPs."
         ),
     }
-    out = HERE / "rho-k-h3a-lp-dual.witness.json"
-    out.write_text(json.dumps(witness, indent=2) + "\n")
-    print(f"\n  Wrote {out.name} ({out.stat().st_size} bytes).")
+    out_path = WitnessBuilder.wrap_legacy(
+        "rho-k-h3a-lp-dual",
+        legacy_payload,
+        script_path=__file__,
+        engine="mpmath" if not args.symbolic else "python+mpmath+sympy",
+        output_dir=HERE,
+    ).save()
+    print(f"\n  Wrote {out_path.name} ({out_path.stat().st_size} bytes).")
     print("=" * 96)
     return 0 if sw_match and lp_primary["feasible"] else 2
 

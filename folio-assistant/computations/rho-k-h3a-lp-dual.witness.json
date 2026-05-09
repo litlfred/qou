@@ -1,10 +1,17 @@
 {
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-09T12:57:26.165998+00:00",
+  "commitSha": "1e4ff7cf44100e224e1ebe486852ead95faa48d5",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
   "computation": "rho-k-h3a-lp-dual",
-  "computedAt": "2026-05-09T05:38:07.476033+00:00",
-  "description": "\u0394_\u03bb option D: LP-dual shadow-price selection for the H_{3A} Wedderburn refinement of \u03c1_K (deuteron, n=6, 11 partitions). Reformulates the underdetermined mass equation as an operator-selection LP per prop:operator-selection-lp; the dual variables y0_star / y_star are the *derived* per-irrep binding-energy shadow prices, replacing the arbitrary single-support / smallest-|\u0394| heuristic of the Occam baseline. Cost vector is plancherel (Plancherel = 1/dim_q(\u03bb); Frobenius = |\u03c7^\u03bb(\u03b2_D)|). Both costs reported. Sibling of PR #600 derivation race (A=Occam, B=co-Casimir, C=Demazure, D=this LP-dual, E=crystal).",
-  "engine": "mpmath numeric Hoefsmit at q_0 (50 dps), multiprocessing.Pool(4); scipy.optimize.linprog 'highs' for LP+dual",
   "scriptFile": "rho_k_h3a_lp_dual.py",
-  "scriptHash": "sha256:6fb704b40da0bf71a9ff777ba4f3d6635b1a214e0632cf7291ac378313af1e98",
+  "scriptHash": "dd662486fd2d",
+  "scriptCommitSha": "1e4ff7cf44100e224e1ebe486852ead95faa48d5",
+  "description": "Δ_λ option D: LP-dual shadow-price selection for the H_{3A} Wedderburn refinement of ρ_K (deuteron, n=6, 11 partitions). Reformulates the underdetermined mass equation as an operator-selection LP per prop:operator-selection-lp; the dual variables y0_star / y_star are the *derived* per-irrep binding-energy shadow prices, replacing the arbitrary single-support / smallest-|Δ| heuristic of the Occam baseline. Cost vector is plancherel (Plancherel = 1/dim_q(λ); Frobenius = |χ^λ(β_D)|). Both costs reported. Sibling of PR #600 derivation race (A=Occam, B=co-Casimir, C=Demazure, D=this LP-dual, E=crystal).",
+  "engineDetail": "mpmath numeric Hoefsmit at q_0 (50 dps), multiprocessing.Pool(4); scipy.optimize.linprog 'highs' for LP+dual",
   "tags": [
     "lp-dual",
     "operator-selection-lp",
@@ -18,7 +25,7 @@
     "A": 2,
     "n_strands": 6,
     "braid_word_source": "mass_at_3A_proper.atom_braid_word_3A(1, 1)",
-    "braid_word_str": "\u03b2_p \u00b7 I \u00b7 \u03b2_n  (canonical: H_3 \u2297 H_3 \u2282 H_6 with interface I = \u03c3_3 - h/2\u00b71 at gen_idx=2)",
+    "braid_word_str": "β_p · I · β_n  (canonical: H_3 ⊗ H_3 ⊂ H_6 with interface I = σ_3 - h/2·1 at gen_idx=2)",
     "crossings_typed": [
       [
         0,
@@ -298,17 +305,17 @@
     ],
     "y0_star": -1.0102501144208846,
     "y_star": [
-      -0.0,
-      -23.194784634966577,
-      -0.0,
-      -0.0,
-      -0.0,
-      -0.0,
-      -0.0,
-      -0.0,
-      -0.0,
-      -0.0,
-      -0.0
+      0.0,
+      23.194784634966577,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
     ],
     "active_set": [
       1
@@ -335,17 +342,17 @@
       ],
       "y0_star": -1.0102501144208846,
       "y_star": [
-        -0.0,
-        -23.194784634966577,
-        -0.0,
-        -0.0,
-        -0.0,
-        -0.0,
-        -0.0,
-        -0.0,
-        -0.0,
-        -0.0,
-        -0.0
+        0.0,
+        23.194784634966577,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
       ],
       "active_set": [
         1
@@ -373,17 +380,17 @@
       ],
       "y0_star": -16.895397420825944,
       "y_star": [
-        -796.7181392454709,
-        -0.0,
-        -0.0,
-        -0.0,
-        -0.0,
-        -0.0,
-        -0.0,
-        -0.0,
-        -0.0,
-        -0.0,
-        -0.0
+        796.7181392454709,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
       ],
       "active_set": [
         0
@@ -528,8 +535,8 @@
       "constraint_residual": "-3.6243444188762386966937362347743816144881014179536e-16"
     }
   },
-  "audit_reference": "AUDIT-DEEP-2026-05.md \u00a77 P3' / \u0394_\u03bb derivation race",
-  "pr": "#600 (sibling \u2014 \u0394_\u03bb option D)",
-  "notes": "Categorical caveat: every operator-selection LP needs SOME cost vector to lift the rank-deficient constraint manifold to a unique extremum. Two categorically motivated choices are reported: t_\u03bb = 1/dim_q(\u03bb) (Plancherel weight; default; favours small-dim, low-multiplicity blocks) and t_\u03bb = |\u03c7^\u03bb(\u03b2_D)| (Frobenius norm; favours channels the deuteron word actually couples to weakly). Neither is canonical; the active-set y_\u03bb* > 0 channels are the *derived* binding-energy shadow prices and may differ between the two costs. The comparison_to_occam block reports the L\u221e between LP and the Occam (3,2,1)/[5,1] singleton-support pick. If LP picks the same single partition as Occam, the methods agree. If LP spreads support across several \u03bb, the LP shadow prices are the *principled* selector and Occam was a degenerate guess.",
-  "follow_up": "Extend to (T, \u00b3He) at n=9 (p(9)=30) with the same LP and compare LP active sets across atoms \u2014 if a stable subset of \u03bb is selected by LP for every atom, that subset is the categorically derived binding-channel registry. Also wire the LP-dual cache (lp_dual_cache.py) so witness regenerations do not re-solve the same LPs."
+  "audit_reference": "AUDIT-DEEP-2026-05.md §7 P3' / Δ_λ derivation race",
+  "pr": "#600 (sibling — Δ_λ option D)",
+  "notes": "Categorical caveat: every operator-selection LP needs SOME cost vector to lift the rank-deficient constraint manifold to a unique extremum. Two categorically motivated choices are reported: t_λ = 1/dim_q(λ) (Plancherel weight; default; favours small-dim, low-multiplicity blocks) and t_λ = |χ^λ(β_D)| (Frobenius norm; favours channels the deuteron word actually couples to weakly). Neither is canonical; the active-set y_λ* > 0 channels are the *derived* binding-energy shadow prices and may differ between the two costs. The comparison_to_occam block reports the L∞ between LP and the Occam (3,2,1)/[5,1] singleton-support pick. If LP picks the same single partition as Occam, the methods agree. If LP spreads support across several λ, the LP shadow prices are the *principled* selector and Occam was a degenerate guess.",
+  "follow_up": "Extend to (T, ³He) at n=9 (p(9)=30) with the same LP and compare LP active sets across atoms — if a stable subset of λ is selected by LP for every atom, that subset is the categorically derived binding-channel registry. Also wire the LP-dual cache (lp_dual_cache.py) so witness regenerations do not re-solve the same LPs."
 }
