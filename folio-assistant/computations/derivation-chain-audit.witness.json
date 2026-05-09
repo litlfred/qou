@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T12:30:22.323183+00:00",
-  "commitSha": "2df342e82699f0167a71a915cc8aedc484964788",
+  "computedAt": "2026-05-09T13:06:00.346598+00:00",
+  "commitSha": "8e6b4a1eec06dfd3c0d0e0e3da5665aabdf521f3",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -106,6 +106,32 @@
       "computed": true,
       "expected": true,
       "passed": true
+    },
+    {
+      "name": "chain_valid[markov-trace-assembly-deuteron.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "leaf_value[markov-trace-assembly-deuteron.derivation]",
+      "computed": 0.17743692421543206,
+      "expected": 0.17743692421543206,
+      "passed": true,
+      "tolerance": 1.7743692421543207e-10
+    },
+    {
+      "name": "chain_valid[markov-trace-assembly-neutron.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "leaf_value[markov-trace-assembly-neutron.derivation]",
+      "computed": 1.5893934459539052,
+      "expected": 1.5893934459539052,
+      "passed": true,
+      "tolerance": 1.5893934459539053e-09
     },
     {
       "name": "chain_valid[markov-trace-assembly-proton.derivation]",
@@ -438,7 +464,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 4,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
@@ -476,7 +502,8 @@
         "trust_summary": {
           "axiom": 1,
           "mathlib-cited": 1,
-          "script-cited": 5,
+          "script-cited": 4,
+          "derived": 1,
           "computational": 1
         },
         "has_script_frontier": true
@@ -587,6 +614,38 @@
         "has_script_frontier": false
       },
       {
+        "chain": "markov-trace-assembly-deuteron.derivation.json",
+        "target": "tr_M(D, q_0)",
+        "target_value": 0.17743692421543206,
+        "computed_value": 0.17743692421543206,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "derived": 2,
+          "script-cited": 2,
+          "computational": 1
+        },
+        "has_script_frontier": true
+      },
+      {
+        "chain": "markov-trace-assembly-neutron.derivation.json",
+        "target": "tr_M(n, q_0)",
+        "target_value": 1.5893934459539052,
+        "computed_value": 1.5893934459539052,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 1,
+          "derived": 6,
+          "script-cited": 1,
+          "computational": 1
+        },
+        "has_script_frontier": true
+      },
+      {
         "chain": "markov-trace-assembly-proton.derivation.json",
         "target": "tr_M(p, q_0)",
         "target_value": 2.12258250945273,
@@ -596,11 +655,10 @@
         "issues": [],
         "trust_summary": {
           "axiom": 1,
-          "derived": 5,
-          "script-cited": 1,
+          "derived": 6,
           "computational": 1
         },
-        "has_script_frontier": true
+        "has_script_frontier": false
       },
       {
         "chain": "n-tr-M-q0.derivation.json",
@@ -613,7 +671,8 @@
         "trust_summary": {
           "axiom": 1,
           "mathlib-cited": 1,
-          "script-cited": 5,
+          "script-cited": 4,
+          "derived": 1,
           "computational": 1
         },
         "has_script_frontier": true
@@ -1330,7 +1389,6 @@
     "witness_trust": {
       "derivation-fully-trusted": [],
       "derivation-backed": [
-        "habiro-coefficients-atomic.witness.json",
         "mass-endomorphism.witness.json",
         "mass-formula-6term-mpfr-50dps.witness.json"
       ],
@@ -1425,6 +1483,7 @@
         "h-3a-vs-h-3-divergence.witness.json",
         "h2-integer-lp.witness.json",
         "h2-molecular-binding.witness.json",
+        "habiro-coefficients-atomic.witness.json",
         "habiro-coefficients-extended.witness.json",
         "habiro-coefficients-interpolate.witness.json",
         "habiro-exact-mass-endomorphism.witness.json",
