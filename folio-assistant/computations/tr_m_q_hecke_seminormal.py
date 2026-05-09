@@ -185,9 +185,6 @@ def main() -> int:
             "(rel err ~55-80% with q=1 MN character → expected ~1e-6 "
             "with q-Hecke seminormal character)."
         )
-        .set_audit_only(
-            "docs/audits/2026-05-08-q-hecke-character-gap-closure.md"
-        )
     )
 
     rows = []

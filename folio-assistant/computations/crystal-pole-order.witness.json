@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-05-08T19:41:15.569121+00:00",
-  "commitSha": "54d988902adbbcbf7b907ee295943afa5894281d",
+  "computedAt": "2026-05-09T00:16:50.728332+00:00",
+  "commitSha": "f178edd94a6d880523fadda22b11180b48760635",
   "assertions": [
     {
       "name": "crystal_pole[T_2_1]_equals_published_alpha_shift",
@@ -216,7 +216,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 8,
   "computation": "crystal-pole-order",
   "scriptFile": "crystal_pole_order.py",
   "scriptHash": "e448a52a00b9",

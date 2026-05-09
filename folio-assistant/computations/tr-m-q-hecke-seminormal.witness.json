@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.4",
-  "computedAt": "2026-05-08T23:44:37.517039+00:00",
-  "commitSha": "ffec9d6889b771c1c4189afea2b362e0b2247d91",
+  "computedAt": "2026-05-09T00:16:36.911225+00:00",
+  "commitSha": "f178edd94a6d880523fadda22b11180b48760635",
   "assertions": [
     {
       "name": "q_hecke_seminormal_closes_gap[proton]_to_1e-3",
@@ -66,13 +66,12 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 65831,
+  "durationMs": 59463,
   "computation": "tr-m-q-hecke-seminormal",
   "scriptFile": "tr_m_q_hecke_seminormal.py",
-  "scriptHash": "f8e4af927643",
-  "scriptCommitSha": "9bed8d71248abbee7c63bd42f97a417f7ce0b327",
+  "scriptHash": "ce83de9142e8",
+  "scriptCommitSha": "f178edd94a6d880523fadda22b11180b48760635",
   "description": "Closes the character gap in the partition-sum tr_M path: tr_M(β) = Σ_λ y_λ(q) · χ^λ_q(β) via canonical Wenzl y_λ (numerical-q-from-start) + Hoefsmit seminormal χ^λ_q at q_0. Cross-checks against `markov_trace_recursive` reference (atomic-tr-m-mpfr-50dps.witness.json). Closes the residual gap identified in tr-m-jones-markov-cross-check.witness.json (rel err ~55-80% with q=1 MN character → expected ~1e-6 with q-Hecke seminormal character).",
-  "auditOnly": "docs/audits/2026-05-08-q-hecke-character-gap-closure.md",
   "data": {
     "cross_check_table": [
       {
@@ -87,7 +86,7 @@
         "rel_err_vs_canonical": 3.9602204327201236e-15,
         "agrees_to_1e_minus_3": true,
         "agrees_to_1e_minus_6": true,
-        "elapsed_sec": 0.3108695159999115,
+        "elapsed_sec": 0.15184295099993506,
         "non_zero_partitions": 3,
         "top_3_contributions": [
           {
@@ -134,7 +133,7 @@
         "rel_err_vs_canonical": 4.208882628151452e-15,
         "agrees_to_1e_minus_3": true,
         "agrees_to_1e_minus_6": true,
-        "elapsed_sec": 0.0002354890002607135,
+        "elapsed_sec": 0.000795348999986345,
         "non_zero_partitions": 3,
         "top_3_contributions": [
           {
@@ -181,7 +180,7 @@
         "rel_err_vs_canonical": 7.00525671030851e-15,
         "agrees_to_1e_minus_3": true,
         "agrees_to_1e_minus_6": true,
-        "elapsed_sec": 3.6573485010003424,
+        "elapsed_sec": 3.0886311740000565,
         "non_zero_partitions": 11,
         "top_3_contributions": [
           {
@@ -227,7 +226,7 @@
         "rel_err_vs_canonical": 1.0669874277978483e-14,
         "agrees_to_1e_minus_3": true,
         "agrees_to_1e_minus_6": true,
-        "elapsed_sec": 61.58749946700027,
+        "elapsed_sec": 55.84989316999997,
         "non_zero_partitions": 30,
         "top_3_contributions": [
           {
@@ -274,7 +273,7 @@
         "rel_err_vs_canonical": 1.0347489292338557e-14,
         "agrees_to_1e_minus_3": true,
         "agrees_to_1e_minus_6": true,
-        "elapsed_sec": 0.25736360800010516,
+        "elapsed_sec": 0.35315382099997805,
         "non_zero_partitions": 30,
         "top_3_contributions": [
           {
