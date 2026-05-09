@@ -329,6 +329,33 @@ theorem mass_identity_calcium40 : MassIdentity calcium40_cert := by
   · show |(408.771300060167 : ℝ) - 342.05212| ≤ 342.05212 / 4
     rw [abs_sub_le_iff]; constructor <;> norm_num
 
+/-! ## Upstream-substrate-bridge cross-reference (item #5)
+
+    The substrate-axiom dependencies of this file
+    (`YekutieliFiniteSliceMultiplicativeTrace T_w`,
+    `GbSpectralSequenceCollapseAtE2`, `CategoricalMassInvariantFinite T_w`,
+    `MassIdentity cert`) are now ALSO discharged via the
+    upstream `QOU.Mathlib.*` infrastructure.  See
+    `content/quantum-observable-universe/lean/QOU/Mathlib/UpstreamSubstrateBridge.lean`
+    for the cross-reference theorems:
+
+    * `gb_spectral_collapse_at_E2_discharged R`
+    * `wedderburn_iso_n2_to_n6 R q`
+    * `archimedean_eval_well_defined p`
+    * `yekutieli_finite_slice_discharged G z`
+    * `markov_axiom_h{1_to_2, 2_to_3}_discharged q z`
+    * `complete_upstream_discharge R q q_ℝ z G z_G` (aggregate
+      over all 7 substrate axioms)
+
+    The per-atom `MassIdentity` theorems below use direct
+    `norm_num` proofs on the certificate's `B_pred_MeV` /
+    `B_AME_MeV` values — no recourse to the substrate axiom or
+    upstream bridge needed.  The bridge is documented for
+    downstream consumers who need the substrate-axiom layer
+    discharged.
+
+    Cross-reference: `QOU.Mathlib.UpstreamSubstrateBridge`. -/
+
 /-- The collection of witness-validated atoms.  Each has a
     `MassIdentity` theorem (above) proved without recourse to the
     substrate axiom. -/
