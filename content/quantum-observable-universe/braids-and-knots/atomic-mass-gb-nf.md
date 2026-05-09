@@ -145,8 +145,19 @@ the multiplicative-chain identity for $\alpha_{EM}^{-1}$
 ([$\alpha_{EM}$ chain](#prop:alpha-em-shift-multiplicative-chain)),
 but the atomic-braid case carries a strand-context-dependent profile
 $(1, 4, 0, 0, 1, 0)$ for the per-crossing shift contributions whose
-categorical origin is open. Closing the atomic-shift coefficients
-$(18, 3, 1)$ closes the nucleon-mass anchors and hence $\rho_K$.
+categorical origin is open. The atomic-shift coefficients
+$(18, 21, 1)$ governing
+[`prop:per-nucleon-shift-additive-linearity`](per-nucleon-shift-additive-linearity.md)
+are now **categorically verified** for the proton and deuteron via
+the symbolic Hoefsmit pole-order analysis in
+[`per_irrep_pole_atom.py`](../../folio-assistant/computations/per_irrep_pole_atom.py)
+(witnesses
+[`per-irrep-pole-proton-h3.witness.json`](../../folio-assistant/computations/per-irrep-pole-proton-h3.witness.json)
++
+[`per-irrep-pole-deuteron-h6.witness.json`](../../folio-assistant/computations/per-irrep-pole-deuteron-h6.witness.json)),
+closing the per-nucleon contribution to $\mathrm{shift}_{\mathrm{NF}}$
+that controls the $u$-power in $D(u)$. Closing the strand-context
+profile $(1, 4, 0, 0, 1, 0)$ remains open.
 
 **Negative result on the simple shift-anchor ansatz**
 (`u-shift-mass-anchor-probe.witness.json`).
