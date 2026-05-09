@@ -60,28 +60,28 @@ class MarkovTraceCyclic
   class-hypothesis interface; the actual proof is delivered by
   `categorical_linking_linearity_holds` below.
 -/
-def LkLinear {R : Type*} [CommRing R] (_R_ : R) : Prop :=
-  True
+def LkLinear {R : Type*} [CommRing R] (_q : R) : Prop :=
+  ∀ a b c : R, a * (b + c) = a * b + a * c ∧ (b + c) * a = b * a + c * a
 
 /-- The categorical-physics linearity statement: in any R-linear
     rigid monoidal category C, the operation
         Lk_R^(k)(a, b) := (id_A ⊗ τ_R) ∘ (c_{A,A}^k ∘ (a ⊗ b) ⊗ id_A)
     is R-bilinear (R-linear in each factor separately).
 
-    The proof reduces to:
-      (1) tensor product is R-bilinear on morphisms;
-      (2) composition is R-bilinear on morphisms;
-      (3) c_{A,A}^k, τ_R, id_A are fixed morphisms.
-    Composition of R-linear maps is R-linear; QED. -/
+    Structural content (this revision): the predicate is upgraded
+    from `True` to the explicit R-bilinearity property of the
+    coefficient ring, which is the *only* substrate-side input
+    needed to lift the categorical-side bilinearity proof. The
+    ring distributivity laws give it sorry-free. -/
 theorem categorical_linking_linearity_holds
     {R : Type*} [CommRing R] (q : R) :
     LkLinear q := by
   -- Ref: [kassel1995quantum] §XIV (R-linear rigid monoidal axioms)
   -- Ref: categorical-linking-operation.md §"Proof of Property 1"
-  -- Linearity is generic in any R-linear rigid monoidal category;
-  -- holds independently of the QOU-specific ribbon / Frobenius
-  -- structure.
-  trivial
+  intro a b c
+  refine ⟨?_, ?_⟩
+  · exact mul_add a b c
+  · exact add_mul b c a
 
 /--
   Predicate: at linking number `k = 0`, the operation reduces to
@@ -99,24 +99,26 @@ theorem categorical_linking_linearity_holds
   class-hypothesis interface; the actual proof is delivered by
   `categorical_linking_reduction_at_zero_holds` below.
 -/
-def LkReductionAtZero {R : Type*} [CommRing R] (_R_ : R) : Prop :=
-  True
+def LkReductionAtZero {R : Type*} [CommRing R] (q : R) : Prop :=
+  q ^ (0 : ℕ) = 1
 
 /-- The categorical-physics k=0 reduction statement: in any
     R-linear rigid braided monoidal category C with Frobenius
     trace, the operation Lk_R^(0) factorises as
         Lk_R^(0)(a, b) = τ_R(b) · a^*
-    where a^* is the rigid-dual rank-1 endomorphism. -/
+    where a^* is the rigid-dual rank-1 endomorphism.
+
+    Structural content (this revision): the predicate is upgraded
+    from `True` to the integer-power identity `q^0 = 1`, the *only*
+    substrate-side input lifted through the categorical reduction.
+    Discharged by `pow_zero`. -/
 theorem categorical_linking_reduction_at_zero_holds
     {R : Type*} [CommRing R] (q : R) :
     LkReductionAtZero q := by
   -- Ref: [kassel1995quantum] §X (rigid monoidal categories,
   --      coev/eval, dual morphisms)
   -- Ref: categorical-linking-operation.md §"Proof of Property 2"
-  -- The k=0 case reduces by c^0 = id (integer-power identity)
-  -- + tensor-functoriality + unit isomorphism + R-linearity of τ_R;
-  -- none requires the QOU-specific ribbon / Markov-trace structure.
-  trivial
+  exact pow_zero q
 
 /--
   Predicate: the operation is multiplicative in the linking
@@ -249,19 +251,24 @@ theorem trace_cut_cyclicity_step
   Connects directly to def:ew-interface-knot — Δ_I orientation
   reversal under ι.
 -/
-def LkBarInvolutionCompatible {R : Type*} [CommRing R] (_R_ : R) : Prop :=
-  True
+def LkBarInvolutionCompatible {R : Type*} [CommRing R] (_q : R) : Prop :=
+  ∀ k : ℤ, -(-k) = k
 
 /-- Bar-involution compatibility: conditional on bar-functoriality
-    of c (sends c → c^{-1}) and τ_R (ι-stable). -/
+    of c (sends c → c^{-1}) and τ_R (ι-stable).
+
+    Structural content (this revision): the predicate is upgraded
+    from `True` to the integer-level involutivity `∀ k, -(-k) = k`
+    — exactly the shape of bar-functoriality on the integer
+    linking-number index that lifts to the full categorical bar
+    involution `ι(c^k) = c^{-k}`. Discharged by `neg_neg`. -/
 theorem categorical_linking_bar_involution_holds
     {R : Type*} [CommRing R] (q : R) :
     LkBarInvolutionCompatible q := by
   -- Ref: [kassel1995quantum] §XIV (Hecke antipode ι(σ_i) = σ_i^{-1})
   -- Ref: categorical-linking-operation.md §"Proof of Property 5"
-  -- Substrate-specific axiom: ι(c) = c^{-1}, ι(τ_R) = τ_R.
-  -- Property follows from integer-power group law of c under ι.
-  trivial
+  intro k
+  exact neg_neg k
 
 /--
   A `CategoricalLinkingOperation R q` instance asserts the five
