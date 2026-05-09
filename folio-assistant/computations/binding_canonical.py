@@ -213,6 +213,7 @@ if __name__ == "__main__":
                          "delta_m_over_m_pct": dm})
 
     witness = {
+        "computedAt": datetime.now(timezone.utc).isoformat(),
         "computation": "binding-canonical-markov",
         "description": (
             "Atom binding via the canonical Jones-Markov trace "
@@ -223,10 +224,10 @@ if __name__ == "__main__":
             "atom_markov_trace.  Binding = E_0·(|tr_M_free| − "
             "|tr_M_atom|) with E_0 = 0.78233341 MeV (β-decay Q)."
         ),
-        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
         "parameters": {"q0": Q0_NUM, "E_0_MeV": 0.78233341},
         "results": results,
     }
     out = Path(__file__).parent / "binding-canonical.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    out.write_text(json.dumps(witness, indent=2, default=str, ensure_ascii=False) + "\n")
     print(f"\nWitness: {out}")

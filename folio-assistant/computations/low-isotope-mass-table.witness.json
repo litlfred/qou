@@ -1,6 +1,8 @@
 {
+  "computedAt": "2026-05-09T05:45:58.629994+00:00",
   "name": "low-isotope-mass-table",
   "description": "Low-isotope mass + mass-excess table (Z ≤ 10) from the mass-volume binding framework.  Delta = Z·Δ_H + N·Δ_n - B_pred, M = A·u + Delta.",
+  "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
   "constants": {
     "q_0": 1.1099785955541805,
     "U_MEV": 931.49410372,
@@ -385,7 +387,5 @@
     "delta_max_abs_MeV": 12.09355426476885,
     "M_mean_abs_ppm": 514.4562781396669,
     "M_max_abs_ppm": 2081.545232995459
-  },
-  "computedAt": "2026-05-09T05:09:53.671842+00:00",
-  "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md"
+  }
 }

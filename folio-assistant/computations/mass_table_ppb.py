@@ -240,6 +240,7 @@ def main() -> int:
     print(f"    mean |err|:   {mean_pct:.4f}%  =  {mean_ppb:.3e} ppb")
 
     witness = {
+        "computedAt": datetime.now(timezone.utc).isoformat(),
         "computation": "mass-table-ppb-zero-param",
         "description": (
             "AME2020 light-atom binding vs strictly zero-free-parameter "
@@ -249,7 +250,7 @@ def main() -> int:
             "census search (flagged 'hyp: census-assigned').  "
             "NO AME-derived calibrations or fits."
         ),
-        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "auditOnly": "docs/audits/2026-05-03-next-session-plan-to-1ppb.md",
         "parameters": {
             "q_0": Q0,
             "m_e_MeV": M_E_MEV,
@@ -264,7 +265,7 @@ def main() -> int:
         "mean_abs_ppb": mean_ppb,
     }
     out = Path(__file__).parent / "mass-table-ppb.witness.json"
-    out.write_text(json.dumps(witness, indent=2))
+    out.write_text(json.dumps(witness, indent=2, ensure_ascii=False) + "\n")
     print(f"\n  Witness: {out}")
     return 0
 

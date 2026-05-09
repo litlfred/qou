@@ -1,7 +1,8 @@
 {
+  "computedAt": "2026-05-09T05:53:25.466671+00:00",
   "computation": "binding-canonical-markov",
-  "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
   "description": "Atom binding via the canonical Jones-Markov trace (Direction 1 of validity audit): matches the prop's explicit-values table tr_M(σ_0)=z, tr_M(σ_0σ_1)=z², tr_M(σ_0σ_1σ_0)=hz²+z.  Replaces the Plancherel-weighted trace used in binding_3A and atom_markov_trace.  Binding = E_0·(|tr_M_free| − |tr_M_atom|) with E_0 = 0.78233341 MeV (β-decay Q).",
+  "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
   "parameters": {
     "q0": 1.1099785955541805,
     "E_0_MeV": 0.78233341
@@ -18,7 +19,7 @@
       "B_MeV": 0.46567591238191713,
       "n_atom_terms": 32,
       "n_free_terms": 16,
-      "trace_time_sec": 0.009290456771850586,
+      "trace_time_sec": 0.009274005889892578,
       "atom": "D",
       "B_AME_MeV": 2.22452,
       "delta_m_over_m_pct": 0.09372783625740098
@@ -34,7 +35,7 @@
       "B_MeV": 0.6289741571728001,
       "n_atom_terms": 256,
       "n_free_terms": 64,
-      "trace_time_sec": 0.21845793724060059,
+      "trace_time_sec": 0.22630715370178223,
       "atom": "T",
       "B_AME_MeV": 8.481821,
       "delta_m_over_m_pct": 0.2789825993182929
@@ -50,7 +51,7 @@
       "B_MeV": 0.6581111541827034,
       "n_atom_terms": 128,
       "n_free_terms": 64,
-      "trace_time_sec": 0.08052802085876465,
+      "trace_time_sec": 0.07997012138366699,
       "atom": "3He",
       "B_AME_MeV": 7.71804,
       "delta_m_over_m_pct": 0.25081315602218035
@@ -66,11 +67,10 @@
       "B_MeV": 0.7134688281503286,
       "n_atom_terms": 1024,
       "n_free_terms": 256,
-      "trace_time_sec": 2.313950777053833,
+      "trace_time_sec": 2.3457529544830322,
       "atom": "4He",
       "B_AME_MeV": 28.295674,
       "delta_m_over_m_pct": 0.7349202888887676
     }
-  ],
-  "computedAt": "2026-05-09T05:18:33.607119+00:00"
+  ]
 }

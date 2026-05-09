@@ -157,13 +157,14 @@ def main() -> int:
           f"max|δM|={max(m_ppms):.1f} ppm")
 
     witness = {
+        "computedAt": datetime.now(timezone.utc).isoformat(),
         "name": "low-isotope-mass-table",
         "description": (
             "Low-isotope mass + mass-excess table (Z ≤ 10) from the "
             "mass-volume binding framework.  Delta = Z·Δ_H + N·Δ_n "
             "- B_pred, M = A·u + Delta."
         ),
-        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
         "constants": {
             "q_0": Q0,
             "U_MEV": U_MEV,
@@ -183,7 +184,7 @@ def main() -> int:
     }
 
     out_path = Path(__file__).parent / "low-isotope-mass-table.witness.json"
-    out_path.write_text(json.dumps(witness, indent=2))
+    out_path.write_text(json.dumps(witness, indent=2, ensure_ascii=False) + "\n")
     print(f"\n  Wrote {out_path}")
     return 0
 
