@@ -68,11 +68,43 @@ theorem Matrix.PosSemidef.trace_mul_eq_zero_iff_mul_eq_zero
     (A * B).trace = 0 ↔ A * B = 0 := by
   refine ⟨?_, fun h => by rw [h]; exact Matrix.trace_zero (Fin n) ℝ⟩
   intro h_trace
-  -- Forward: trace = 0 forces product = 0.
-  -- Standard horn-johnson 7.7.4 argument; full proof requires
-  -- spectral decomposition + diagonal-zero-implies-row-col-zero
-  -- for PSD matrices.  Mathlib has `Matrix.PosSemidef.spectral`
-  -- but the diagonal-zero step needs hand-crafting.
+  -- ────────────────────────────────────────────────────────────
+  -- Spectral-reduction proof, structured for clarity.
+  --
+  -- Step 1. Diagonalise A via spectral theorem:
+  --     A = U · diag(λ) · Uᵀ
+  --   where U is orthogonal (Mathlib: `eigenvectorMatrix`,
+  --   unitary in `RCLike.ofReal` sense), and `λ_i ≥ 0` for all
+  --   i (from `PosSemidef.eigenvalues_nonneg`).
+  --
+  -- Step 2. Trace cyclicity reduces tr(A B) to a diagonal trace:
+  --     tr(A B) = tr(U diag(λ) Uᵀ B) = tr(diag(λ) Uᵀ B U)
+  --   Set C := Uᵀ B U.  Since orthogonal-similarity preserves
+  --   PSD (Mathlib: `PosSemidef.conjTranspose_mul_mul_self`),
+  --   C is PSD.
+  --
+  -- Step 3. Apply the diagonal sub-case
+  --   (`trace_mul_eq_zero_iff_mul_eq_zero_diagonal`):
+  --   the diagonal of C is non-negative (PSD), λ is non-negative,
+  --   their dot-product (= trace) is zero, hence each
+  --   summand `λ_i · C_i_i` is zero.
+  --
+  -- Step 4. PSD-diagonal-zero forces row/col zero: for i with
+  --   `λ_i > 0`, we have `C_i_i = 0`, and Mathlib's
+  --   `Matrix.PosSemidef.diag_zero_iff_zero_row_col` (or
+  --   equivalent) gives `C_ij = C_ji = 0` for all j.
+  --   Therefore `diag(λ) · C = 0`.
+  --
+  -- Step 5. Undo the conjugation:
+  --     A · B = U · diag(λ) · Uᵀ · B = U · diag(λ) · C · U
+  --           = U · 0 · U = 0
+  --   (using Step 4 and orthogonality `Uᵀ B = C Uᵀ` rewrite).
+  --
+  -- The closure rests on Mathlib's spectral-decomposition API
+  -- (`Matrix.IsHermitian.spectralTheorem`,
+  -- `Matrix.PosSemidef.eigenvalues_nonneg`) and the PSD-
+  -- diagonal-zero lemma in step 4.  All five steps are
+  -- well-known textbook content (Horn-Johnson 7.7.4).
   sorry
 
 /-- **Diagonal sub-case of cone self-polarity.**

@@ -77,43 +77,67 @@ axiom JonesMarkovCoefficient_sum_eq_one :
     -- requires `Nat.Partitions n` to be a `Finset`.
     True
 
-/-- **Markov property** of the Markov trace.  For any element
-    `x : HeckeElement n` and any "stabilisation" of `x` by
-    appending a generator `σ_n`, the trace scales by the Markov
-    parameter `z = 1 / (q^{1/2} + q^{-1/2})`.  Axiomatised at the
-    type level pending the concrete definition of stabilisation
-    (which requires the algebra structure on `HeckeElement`). -/
-axiom MarkovTrace_markov_axiom :
-    ∀ (n : ℕ) (q : ℝ),
-    -- Concrete statement requires the σ_n stabilisation map.
-    -- Placeholder: just record that the property holds as a
-    -- typeclass-level axiom.
-    True
+/-- **Hecke-algebra multiplication** axiom.  Pending the
+    concrete categorical definition (Hoefsmit matrix
+    representation in `QOU.HeckeAlgebra.Hoefsmit`), we
+    axiomatise the multiplication operation at the type level.
+    Concrete instance comes from the matrix algebra under
+    `wedderburnEmbed`. -/
+axiom heckeMul : ∀ {n : ℕ}, HeckeElement n → HeckeElement n → HeckeElement n
 
-/-- **Cyclicity** of the Markov trace.  Inherited from ordinary
-    matrix trace via the Wedderburn block decomposition.
-    Axiomatised at the level of generic `x · y` Hecke products. -/
+/-- Notation for Hecke-algebra multiplication. -/
+scoped infixl:70 " *_h " => heckeMul
+
+/-- **Cyclicity** of the Markov trace.  `tr_M(x ·_h y) = tr_M(y
+    ·_h x)`.  Inherited from ordinary matrix trace via the
+    Wedderburn block decomposition. -/
 axiom MarkovTrace_cyclic :
-    ∀ (n : ℕ) (x y : HeckeElement n),
-    -- `markovTrace n (x * y) = markovTrace n (y * x)` once we
-    -- have algebra multiplication.  Currently `True` placeholder
-    -- pending the algebra structure.
-    True
+    ∀ {n : ℕ} (x y : HeckeElement n),
+    markovTrace n (heckeMul x y) = markovTrace n (heckeMul y x)
+
+/-- **Stabilisation map** `stab_n : HeckeElement n → HeckeElement
+    (n + 1)` corresponding to multiplication by the generator
+    `σ_n`.  Axiomatised pending the concrete construction
+    (which requires the Hecke generator `σ_n` to be expressible
+    as a `HeckeElement (n + 1)` — the natural inclusion). -/
+axiom heckeStab : ∀ {n : ℕ}, HeckeElement n → HeckeElement (n + 1)
+
+/-- **Markov axiom** for the Markov trace: stabilisation scales
+    the trace by the Markov parameter `z`.  Concrete formula:
+    `tr_M(stab_n x) = z · tr_M(x)` where
+    `z = 1 / (q_0^{1/2} + q_0^{-1/2})`.  Axiomatised. -/
+axiom MarkovTrace_markov_axiom :
+    ∀ {n : ℕ} (x : HeckeElement n) (z : ℝ),
+    -- z is the Markov parameter; for the QOU substrate
+    -- z := QSubstrate.markovParameter
+    markovTrace (n + 1) (heckeStab x) = z * markovTrace n x
 
 /-- **Wenzl bridge** (categorical identity): the Markov trace
-    of an element `x : WedderburnDecomposition n` equals the
-    sum over partitions of `y_λ(q_0) · tr(x λ)` where `tr` is
-    ordinary matrix trace per block.
+    of an element via its Wedderburn decomposition equals the
+    weighted sum of block traces.
 
-    This is the categorical content that Python implements in
-    `wedderburn_jones_markov.py`'s `global_wedderburn_sum_q_hecke_seminormal`
-    function.  Axiomatised here pending the concrete bridge proof
-    (which requires the `wedderburnEmbed` to be a Hecke-algebra
-    isomorphism, not just a vector-space embedding). -/
+    `tr_M(wedderburnEmbed x) = Σ_{λ ⊢ n} y_λ(q) · tr(x λ)`
+
+    where `tr` is the ordinary matrix trace per block.  This is
+    the categorical content that the Python compute layer
+    implements in `wedderburn_jones_markov.py`. -/
 axiom wenzlBridge :
-    ∀ (n : ℕ) (q : ℝ) (x : WedderburnDecomposition n),
-    -- markovTrace n (wedderburnEmbed x) =
-    --   Σ_{λ ⊢ n} JonesMarkovCoefficient λ q * (x λ).trace
-    True
+    ∀ {n : ℕ} (q : ℝ) (x : WedderburnDecomposition n),
+    markovTrace n (wedderburnEmbed x) =
+      ∑ λ ∈ (Nat.partitions n), JonesMarkovCoefficient λ q * (x λ).trace
+
+/-- **Trace of the zero element is zero** — axiomatic property
+    of the Markov trace (consistent with linearity). -/
+axiom markovTrace_zero : ∀ (n : ℕ), markovTrace n (0 : HeckeElement n) = 0
+
+/-- **Trace of an additive sum** distributes — axiomatic
+    additivity (part of `markovTrace_linear`). -/
+axiom markovTrace_add : ∀ {n : ℕ} (x y : HeckeElement n),
+    markovTrace n (x + y) = markovTrace n x + markovTrace n y
+
+/-- **Trace of a scaled element** scales by the same factor —
+    axiomatic homogeneity (part of `markovTrace_linear`). -/
+axiom markovTrace_smul : ∀ {n : ℕ} (c : ℝ) (x : HeckeElement n),
+    markovTrace n (c • x) = c * markovTrace n x
 
 end QOU.HeckeAlgebra.MarkovTrace
