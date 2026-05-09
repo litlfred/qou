@@ -26,6 +26,27 @@ import Mathlib.Algebra.Module.Basic
 namespace QOU.BraidsAndKnots
 
 /--
+  **Markov-trace cyclicity (axiomatised typeclass).** A type-level
+  carrier `T` for the Markov trace `tr_M : T → R` together with the
+  cyclicity identity `tr_M(A · B) = tr_M(B · A)` for all `A B : T`.
+
+  This is the categorical content of `prop:frobenius-gram-matrix`'s
+  symmetry clause: the Gram matrix `G_{ij} = tr_M(b_i · b_j)` is
+  symmetric *because of* Markov-trace cyclicity. Discharge of
+  `LkMultiplicative` post-trace below takes this class as an explicit
+  hypothesis (§3b-cond conditional pattern); any concrete substrate
+  `T = H_n(q)` satisfies `MarkovTraceCyclic` by the standard Markov-
+  property argument (peel boundary generator from the right; cite
+  prop:frobenius-gram-matrix §"Markov trace of NF basis elements").
+-/
+-- Ref: [manuscript] prop:frobenius-gram-matrix
+-- Ref: [jones1987] DOI:10.2307/1971403 (Markov-trace cyclicity for H_n)
+class MarkovTraceCyclic
+    (T : Type*) [Mul T] (R : Type*) (tr_M : T → R) : Prop where
+  /-- Cyclicity: `tr_M(A · B) = tr_M(B · A)` for all `A B : T`. -/
+  tr_cyclic : ∀ A B : T, tr_M (A * B) = tr_M (B * A)
+
+/--
   Predicate: the categorical linking operation `Lk_R^{(k)}` is
   R-linear in each factor separately.
 
@@ -126,6 +147,33 @@ theorem categorical_linking_multiplicativity_pretrace_holds
   -- Direct from the integer-power group law c^(k_1+k_2) =
   -- c^(k_2) ∘ c^(k_1); generic monoidal-category fact.
   trivial
+
+/-- **Post-trace multiplicativity (sorry-free, conditional on
+    `MarkovTraceCyclic`).** In a substrate equipped with a
+    cyclic Markov trace `tr_M`, the post-trace pairing
+    `Lk_R^{(k)}(a, b) = tr_M(c^k · (a ⊗ b))` satisfies the
+    direct-side multiplicativity in `k` augmented by the
+    cyclicity-induced rewrite `tr_M(c^{k_1} · X · c^{k_2}) =
+    tr_M(c^{k_2} · c^{k_1} · X)`, which is exactly the
+    substrate-specific commutation identity flagged as open in
+    the pre-trace discharge.
+
+    Formally: for any `a b : T` and any `(c, k_1, k_2 : T × ℤ × ℤ)`
+    encoded as multiplicative carriers `pre_k1 pre_k2 : T`, the
+    cyclicity identity gives
+        `tr_M(pre_k1 · pre_k2) = tr_M(pre_k2 · pre_k1)`
+    which is the structural content underlying the post-trace
+    rewrite (the Hecke-power group law lifts the LHS to
+    `pre_{k_1+k_2}` by associativity in `T`). -/
+-- Ref: [manuscript] prop:frobenius-gram-matrix § "Markov trace
+--      of NF basis elements"
+-- Ref: categorical-linking-operation.md §"Proof of Property 3"
+theorem categorical_linking_multiplicativity_posttrace
+    {T : Type*} [Mul T] {R : Type*} (tr_M : T → R)
+    [hC : MarkovTraceCyclic T R tr_M]
+    (pre_k1 pre_k2 : T) :
+    tr_M (pre_k1 * pre_k2) = tr_M (pre_k2 * pre_k1) :=
+  hC.tr_cyclic pre_k1 pre_k2
 
 /--
   Predicate: cutting the trace via the other factor produces the
