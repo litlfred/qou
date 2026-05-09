@@ -125,6 +125,81 @@ The exact rank formula likely arises from one or more of:
   $\Sigma c^\lambda_{\mu\nu}^2$ — a lower bound, not the rank
   directly (5 vs observed 86 for [7,2]).
 
+## The 21-dim redundancy at λ=[7,2] — crystal cell-content kernel
+
+Per a focused investigation (parallel Explore agent, 2026-05-09)
+of the 21-dim inter-block redundancy at λ=[7,2]:
+
+**Key arithmetic identity.** The five LR support pairs at λ=[7,2]
+have $(d_\mu \cdot d_\nu)$ values $\{1, 5, 9, 2, 10\}$, summing to
+**27** — and $f^{[7,2]} = 9!/13440 = 27$ (= dim $V_{[7,2]}$).
+This is the LR branching identity
+$\dim V_\lambda = \sum_{(\mu, \nu)} c^\lambda_{\mu\nu} \cdot \dim V_\mu \cdot \dim V_\nu$
+in concrete form.  The 27-dim total is the EXTERNAL constraint that
+the LR formula has to respect.
+
+**Mechanism for the 21-dim kernel.**  Per
+[`docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md`](2026-05-08-crystal-r-matrix-sublemma-2-1.md)
+and the cell-content multiplicity tables in
+[`hoefsmit-ew-cell-content.md`](../../content/quantum-observable-universe/braids-and-knots/hoefsmit-ew-cell-content.md),
+the kernel comes from:
+
+1. **Schur-Weyl intertwiner dimension < (d_μ d_ν)²** for each
+   (μ, ν) with $c^\lambda_{\mu\nu} \le 1$: the centraliser
+   $\mathrm{End}_{H_{n_1} \otimes H_{n_2}}(V_\mu \otimes V_\nu)$ has dim
+   $\sum_\kappa m_\kappa^2$ for $V_\mu \otimes V_\nu = \bigoplus m_\kappa V_\kappa$
+   — typically much smaller than $(d_\mu d_\nu)^2$.
+
+2. **Pieri-rule cancellations** on horizontal-strip additions:
+   contributions from cells in $\lambda/\mu$ and $\lambda/\mu'$ for
+   different $\mu, \mu'$ within the LR support cohesively cancel
+   under the boundary-cell interface action.
+
+3. **Wedderburn block-diagonal forcing** from the implicit
+   $U_q(\mathfrak{sl}_2)$ structure: the Hecke action on simultaneous
+   eigenspaces of far-commuting generators forces block-diagonal $A$.
+
+**The 21 dimensions** are therefore the dim of the **cell-content
+kernel of the mixed-tableau intertwiner space**, not a separately
+computed reduction.  Closing this identification ties to
+`conj:crystal-graph-realization` (already in the manuscript;
+operator-valued Sub-lemma 2.1 closure conditional on that
+conjecture).
+
+**Quick numerical test (2026-05-09):** the simple Schur-intertwiner
+hypothesis $\mathrm{rank} = \sum_{(\mu,\nu) \in \mathrm{supp}} \sum_\kappa c^\kappa_{\mu\nu}^2$
+**does not match**.  For λ=[7,2] this gives:
+
+| (μ, ν) | $\sum_\kappa c^\kappa_{\mu\nu}^2$ |
+|---|---|
+| ((3), (6)) | 4 |
+| ((3), (5,1)) | 7 |
+| ((3), (4,2)) | 8 |
+| ((2,1), (6)) | 4 |
+| ((2,1), (5,1)) | 11 |
+| **Sum** | **34** |
+| **Observed rank** | **86** |
+
+So **34 ≠ 86** — the rank is *not* the LR-multiplicity-square
+sum.  Empirical observation: 86 ≈ rank((3,(4,2))) + rank(((2,1),(5,1))) =
+22 + 64 = 86 (the **top two per-pair ranks**), while the smaller
+pairs (1, 16, 4) appear to be subsumed in the top two's column
+span.
+
+This suggests the inter-block redundancy is **NOT** intertwiner-
+dimensional but instead reflects column-span overlap between
+different (μ, ν) blocks: the bilinear span of $\rho_\mu(β_1) \otimes \rho_\nu(β_2)$
+across multiple (μ, ν) pairs has shared subspaces.
+
+The crystal cell-content interpretation is still the natural
+candidate, but the precise formula remains open.
+
+**Mathlib formalisation target** (suggested):
+`QOU.CrystalBase.littelmann_path_content_constraint`, citing
+Kashiwara (1990) *Crystal bases*, Lecouvey (2007) *Littlewood-
+Richardson rule via crystal operators*, Mathas (1999) *Hecke
+algebras of type A_n and crystal bases*.
+
 ## Recommended path
 
 1. **Empirical sweep**: probe rank across A=2, A=3 with all THREE
