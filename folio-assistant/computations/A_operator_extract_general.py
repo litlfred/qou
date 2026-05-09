@@ -176,9 +176,10 @@ def chi_lambda(shape: tuple, word: tuple) -> complex:
 
 
 def extract_A_for_split(n1: int, n2: int, *,
-                         test_count_1: int = 12,
-                         test_count_2: int = 12,
+                         test_count_1: int = 0,
+                         test_count_2: int = 0,
                          verbose: bool = True) -> dict:
+    # Auto-size: zero/None means "use the full structured panel".
     """Run A^λ_{μν}(I) extraction for the split (n1, n2) → n1+n2.
 
     For each λ ⊢ (n1+n2), fits the operator entries of A^λ_{μν}(I)

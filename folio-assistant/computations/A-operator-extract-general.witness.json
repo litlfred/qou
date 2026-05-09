@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.4",
-  "computedAt": "2026-05-09T21:01:30.636592+00:00",
-  "commitSha": "0a5635fc7027f6c1fedb8006e5667ae7db6119ab",
+  "computedAt": "2026-05-09T21:12:57.109035+00:00",
+  "commitSha": "c9166c448bd502a3f840c040201e0584fa512e56",
   "assertions": [
     {
       "name": "all_lambda_residuals_below_1e-10",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 8,
+  "durationMs": 9,
   "computation": "A-operator-extract-general",
   "scriptFile": "A_operator_extract_general.py",
-  "scriptHash": "e6103127929b",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "97bcd72d3179",
+  "scriptCommitSha": "24a7df3530dec4d28cc95a21b5810836245bfd73",
   "description": "Operator-valued A^λ_{μν}(I) extraction at A=3 via the refined Sub-lemma 2.1 LR-decomposition formula. Generalized from the A=2-only sublemma_2_1_A_operator_extract.py to arbitrary atomic decompositions using lr_coefficients.lr_coef for the LR table.  Per λ ⊢ 9, fits a least-squares operator A^λ_{μν}(I) ∈ End(V_μ ⊗ V_ν)^(⊕ c^λ_{μν}) satisfying χ^λ(β_1·I·β_2) = Σ_(μ,ν) c^λ_{μν} · Tr(A^λ_{μν}(I) · (ρ_μ(β_1) ⊗ ρ_ν(β_2))).",
   "contentBlock": "conj:operator-valued-sublemma-2-1",
   "auditOnly": "docs/audits/2026-05-09-kite-tail-reconciliation.md",
@@ -27,14 +27,14 @@
     "splits": "[(3, 6)]"
   },
   "data": {
-    "max_relative_residual_overall": 2.355641228786905e-15,
-    "n_lambda_solved": 6,
+    "max_relative_residual_overall": 4.270972963874954e-15,
+    "n_lambda_solved": 22,
     "n_lambda_total": 30,
     "per_split": {
       "split_3_6": {
         "n1": 3,
         "n2": 6,
-        "elapsed_sec": 10.312962532043457,
+        "elapsed_sec": 149.25234413146973,
         "n_partitions": 30,
         "results_per_lambda": {
           "[9]": {
@@ -53,9 +53,9 @@
               }
             ],
             "n_unknowns": 1,
-            "n_equations": 216,
+            "n_equations": 2442,
             "rank": 1,
-            "max_relative_residual": 2.3616894762655714e-16,
+            "max_relative_residual": 3.8337481716750787e-16,
             "status": "solved"
           },
           "[8, 1]": {
@@ -100,9 +100,9 @@
               }
             ],
             "n_unknowns": 30,
-            "n_equations": 216,
-            "rank": 12,
-            "max_relative_residual": 1.6465016573994081e-15,
+            "n_equations": 2442,
+            "rank": 20,
+            "max_relative_residual": 1.6336383632009752e-15,
             "status": "solved"
           },
           "[7, 2]": {
@@ -174,9 +174,9 @@
               }
             ],
             "n_unknowns": 211,
-            "n_equations": 216,
-            "rank": 40,
-            "max_relative_residual": 1.3832467306841465e-15,
+            "n_equations": 2442,
+            "rank": 86,
+            "max_relative_residual": 2.24007567722129e-15,
             "status": "solved"
           },
           "[7, 1, 1]": {
@@ -251,8 +251,10 @@
               }
             ],
             "n_unknowns": 230,
-            "n_equations": 216,
-            "status": "underdetermined"
+            "n_equations": 2442,
+            "rank": 91,
+            "max_relative_residual": 7.381426417365558e-16,
+            "status": "solved"
           },
           "[6, 3]": {
             "support": [
@@ -337,8 +339,10 @@
               }
             ],
             "n_unknowns": 556,
-            "n_equations": 216,
-            "status": "underdetermined"
+            "n_equations": 2442,
+            "rank": 110,
+            "max_relative_residual": 3.0989067804482985e-15,
+            "status": "solved"
           },
           "[6, 2, 1]": {
             "support": [
@@ -469,8 +473,10 @@
               }
             ],
             "n_unknowns": 1315,
-            "n_equations": 216,
-            "status": "underdetermined"
+            "n_equations": 2442,
+            "rank": 146,
+            "max_relative_residual": 1.1437637130910312e-15,
+            "status": "solved"
           },
           "[6, 1, 1, 1]": {
             "support": [
@@ -563,8 +569,10 @@
               }
             ],
             "n_unknowns": 726,
-            "n_equations": 216,
-            "status": "underdetermined"
+            "n_equations": 2442,
+            "rank": 146,
+            "max_relative_residual": 1.2662447969990745e-15,
+            "status": "solved"
           },
           "[5, 4]": {
             "support": [
@@ -624,8 +632,10 @@
               }
             ],
             "n_unknowns": 530,
-            "n_equations": 216,
-            "status": "underdetermined"
+            "n_equations": 2442,
+            "rank": 110,
+            "max_relative_residual": 1.3032415090310676e-15,
+            "status": "solved"
           },
           "[5, 3, 1]": {
             "support": [
@@ -785,7 +795,7 @@
               }
             ],
             "n_unknowns": 2516,
-            "n_equations": 216,
+            "n_equations": 2442,
             "status": "underdetermined"
           },
           "[5, 2, 2]": {
@@ -907,8 +917,10 @@
               }
             ],
             "n_unknowns": 2310,
-            "n_equations": 216,
-            "status": "underdetermined"
+            "n_equations": 2442,
+            "rank": 156,
+            "max_relative_residual": 8.872445240228683e-16,
+            "status": "solved"
           },
           "[5, 2, 1, 1]": {
             "support": [
@@ -1092,7 +1104,7 @@
               }
             ],
             "n_unknowns": 2991,
-            "n_equations": 216,
+            "n_equations": 2442,
             "status": "underdetermined"
           },
           "[5, 1, 1, 1, 1]": {
@@ -1192,8 +1204,10 @@
               }
             ],
             "n_unknowns": 1050,
-            "n_equations": 216,
-            "status": "underdetermined"
+            "n_equations": 2442,
+            "rank": 156,
+            "max_relative_residual": 3.2858621556080466e-15,
+            "status": "solved"
           },
           "[4, 4, 1]": {
             "support": [
@@ -1284,8 +1298,10 @@
               }
             ],
             "n_unknowns": 1654,
-            "n_equations": 216,
-            "status": "underdetermined"
+            "n_equations": 2442,
+            "rank": 149,
+            "max_relative_residual": 2.8995518032097303e-15,
+            "status": "solved"
           },
           "[4, 3, 2]": {
             "support": [
@@ -1420,7 +1436,7 @@
               }
             ],
             "n_unknowns": 2566,
-            "n_equations": 216,
+            "n_equations": 2442,
             "status": "underdetermined"
           },
           "[4, 3, 1, 1]": {
@@ -1606,7 +1622,7 @@
               }
             ],
             "n_unknowns": 3390,
-            "n_equations": 216,
+            "n_equations": 2442,
             "status": "underdetermined"
           },
           "[4, 2, 2, 1]": {
@@ -1796,7 +1812,7 @@
               }
             ],
             "n_unknowns": 3390,
-            "n_equations": 216,
+            "n_equations": 2442,
             "status": "underdetermined"
           },
           "[4, 2, 1, 1, 1]": {
@@ -1992,7 +2008,7 @@
               }
             ],
             "n_unknowns": 2991,
-            "n_equations": 216,
+            "n_equations": 2442,
             "status": "underdetermined"
           },
           "[4, 1, 1, 1, 1, 1]": {
@@ -2098,8 +2114,10 @@
               }
             ],
             "n_unknowns": 726,
-            "n_equations": 216,
-            "status": "underdetermined"
+            "n_equations": 2442,
+            "rank": 146,
+            "max_relative_residual": 1.6921118811915908e-15,
+            "status": "solved"
           },
           "[3, 3, 3]": {
             "support": [
@@ -2149,8 +2167,10 @@
               }
             ],
             "n_unknowns": 1074,
-            "n_equations": 216,
-            "status": "underdetermined"
+            "n_equations": 2442,
+            "rank": 142,
+            "max_relative_residual": 4.270972963874954e-15,
+            "status": "solved"
           },
           "[3, 3, 2, 1]": {
             "support": [
@@ -2295,7 +2315,7 @@
               }
             ],
             "n_unknowns": 2566,
-            "n_equations": 216,
+            "n_equations": 2442,
             "status": "underdetermined"
           },
           "[3, 3, 1, 1, 1]": {
@@ -2429,8 +2449,10 @@
               }
             ],
             "n_unknowns": 2310,
-            "n_equations": 216,
-            "status": "underdetermined"
+            "n_equations": 2442,
+            "rank": 156,
+            "max_relative_residual": 8.350536696685828e-16,
+            "status": "solved"
           },
           "[3, 2, 2, 2]": {
             "support": [
@@ -2530,8 +2552,10 @@
               }
             ],
             "n_unknowns": 1654,
-            "n_equations": 216,
-            "status": "underdetermined"
+            "n_equations": 2442,
+            "rank": 149,
+            "max_relative_residual": 2.1746638524073e-15,
+            "status": "solved"
           },
           "[3, 2, 2, 1, 1]": {
             "support": [
@@ -2715,7 +2739,7 @@
               }
             ],
             "n_unknowns": 2516,
-            "n_equations": 216,
+            "n_equations": 2442,
             "status": "underdetermined"
           },
           "[3, 2, 1, 1, 1, 1]": {
@@ -2873,8 +2897,10 @@
               }
             ],
             "n_unknowns": 1315,
-            "n_equations": 216,
-            "status": "underdetermined"
+            "n_equations": 2442,
+            "rank": 146,
+            "max_relative_residual": 1.8874665758632293e-15,
+            "status": "solved"
           },
           "[3, 1, 1, 1, 1, 1, 1]": {
             "support": [
@@ -2967,8 +2993,10 @@
               }
             ],
             "n_unknowns": 230,
-            "n_equations": 216,
-            "status": "underdetermined"
+            "n_equations": 2442,
+            "rank": 91,
+            "max_relative_residual": 3.990583656888261e-15,
+            "status": "solved"
           },
           "[2, 2, 2, 2, 1]": {
             "support": [
@@ -3040,8 +3068,10 @@
               }
             ],
             "n_unknowns": 530,
-            "n_equations": 216,
-            "status": "underdetermined"
+            "n_equations": 2442,
+            "rank": 110,
+            "max_relative_residual": 1.5332253047424345e-15,
+            "status": "solved"
           },
           "[2, 2, 2, 1, 1, 1]": {
             "support": [
@@ -3150,8 +3180,10 @@
               }
             ],
             "n_unknowns": 556,
-            "n_equations": 216,
-            "status": "underdetermined"
+            "n_equations": 2442,
+            "rank": 110,
+            "max_relative_residual": 8.654401481397439e-16,
+            "status": "solved"
           },
           "[2, 2, 1, 1, 1, 1, 1]": {
             "support": [
@@ -3246,9 +3278,9 @@
               }
             ],
             "n_unknowns": 211,
-            "n_equations": 216,
-            "rank": 40,
-            "max_relative_residual": 2.355641228786905e-15,
+            "n_equations": 2442,
+            "rank": 86,
+            "max_relative_residual": 1.4336484334216276e-15,
             "status": "solved"
           },
           "[2, 1, 1, 1, 1, 1, 1, 1]": {
@@ -3310,9 +3342,9 @@
               }
             ],
             "n_unknowns": 30,
-            "n_equations": 216,
-            "rank": 12,
-            "max_relative_residual": 2.2084136519877236e-15,
+            "n_equations": 2442,
+            "rank": 20,
+            "max_relative_residual": 2.0581270717492635e-15,
             "status": "solved"
           },
           "[1, 1, 1, 1, 1, 1, 1, 1, 1]": {
@@ -3338,9 +3370,9 @@
               }
             ],
             "n_unknowns": 1,
-            "n_equations": 216,
+            "n_equations": 2442,
             "rank": 1,
-            "max_relative_residual": 5.319280166489957e-16,
+            "max_relative_residual": 4.364588073503966e-16,
             "status": "solved"
           }
         }
