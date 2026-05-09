@@ -115,24 +115,44 @@ artificially erases this isospin asymmetry.
 
 ## Consequences
 
-**Within the legacy disjoint-product convention, Term 7 is
-isospin-blind at the crystal limit.** The current
+**Term 7 is isospin-blind at the crystal limit, even in the legacy
+disjoint-product convention.** The current
 [`term7_alpha5_crystal_derivation.py`](../../../folio-assistant/computations/term7_alpha5_crystal_derivation.py)
-assigns *the same* shell residual to T and to $^3\mathrm{He}$,
-even though experimentally
+assigns *the same* crystal-side shell residual to T and to
+$^3\mathrm{He}$.  Experimentally
 $\mathfrak{m}({}^3\mathrm{H}) - \mathfrak{m}({}^3\mathrm{He})
 \approx 0.529\;\mathrm{MeV}$ and the 2-row Wedderburn dominance
 fractions differ ($84.04\%$ vs.\ $89.34\%$ at $q_0 \approx 1.110$;
 witness
 [`delta-lambda-2row-stratum.witness.json`](../../../folio-assistant/computations/delta-lambda-2row-stratum.witness.json)).
-This isospin-blindness is **a known artefact** of the legacy
-disjoint-product convention — it goes away once the canonical
-$\Delta_I$-coupled word is used, because canonical T and
-${}^3\mathrm{He}$ words differ in interface *type*
-($pn{=}\Delta_I + nn{=}\sigma^{-1}$ vs.\
-$pp{=}\sigma + pn{=}\Delta_I$), not just generator sign.  Migrating
-the crystal derivation to canonical words is tracked separately
-(see *Open work* below).
+The proposition derives the legacy-convention equality from a
+*specific* mechanism (Hecke skein at $q = 0$ collapses
+$\sigma_i \leftrightarrow \sigma_i^{-1}$ to the same SYT action).
+
+**Convergent finding from the sibling investigation** on branch
+[`claude/term7-alpha5-derive-investigation`](https://github.com/litlfred/qou/tree/claude/term7-alpha5-derive-investigation):
+the LP-dual binding-energy shadow price
+$y_0^*(K)$ at *finite* $q$ in the *canonical* $\Delta_I$-coupled
+convention also satisfies $y_0^*(T) = y_0^*({}^3\mathrm{He})$
+exactly, in both 2-row and height-6 strata, at every probed
+$q \in \{1.001, 1.050, 1.110\}$.  The sibling proposition
+*spin-involution / LP-dual invariance* derives this from a
+**deeper structural mechanism** — the Hopf antipode
+$S \colon V_\lambda \leftrightarrow V_{\lambda^T}$ exchanging
+matter and antimatter (equivalently $Z \leftrightarrow N$) — which
+applies to the canonical convention without requiring the
+crystal limit.
+
+The two derivations are independent: my proposition above proves
+$T = {}^3\mathrm{He}$ at $q = 0$ under the *legacy* convention via
+sign-flip invariance; the sibling proves $T = {}^3\mathrm{He}$ at
+$q = q_0$ under the *canonical* convention via the Hopf antipode.
+Both predict the same observable equality through different
+algebraic levers.  The empirical $0.529$ MeV mass split must
+therefore live in a *different* sector that breaks the
+$Z \leftrightarrow N$ symmetry — most plausibly the
+electromagnetic / Coulomb correction, which is not a $\sigma$- or
+$S$-invariant perturbation of the Markov trace.
 
 **Corollary (q-curvature of isospin-mirror pairs).**
 *For any pair of isospin-mirror atoms $K, K'$ whose canonical braid
@@ -152,32 +172,41 @@ ontological-agnosticism remark in this chapter).*
 
 ## Open work: canonical $\Delta_I$ extension
 
-The proposition above is a structural identity of the **legacy
-disjoint-product convention**.  Two follow-ups are required to
-turn it into a physical statement:
+The proposition above is a structural identity proved at $q = 0$
+under the **legacy disjoint-product convention**.  The sibling
+LP-dual investigation suggests the analogous equality
+$T \leftrightarrow {}^3\mathrm{He}$ persists in the canonical
+$\Delta_I$-coupled convention via the Hopf antipode at finite $q$.
+Two follow-ups remain to bridge the two:
 
 1. **Migrate
    [`term7_alpha5_crystal_derivation.py`](../../../folio-assistant/computations/term7_alpha5_crystal_derivation.py)
    to the canonical word
    [`mass_at_3A_proper.atom_braid_word_3A`](../../../folio-assistant/computations/mass_at_3A_proper.py).**
-   The script's hardcoded `ATOMS` list (signed integer words) treats
-   each nucleon as a disjoint 3-strand sub-word with no inter-nucleon
-   coupling.  The canonical word emits triples $(c, d, g)$ with
+   The script's hardcoded `ATOMS` list treats each nucleon as a
+   disjoint 3-strand sub-word with no inter-nucleon coupling.  The
+   canonical word emits triples $(c, d, g)$ with
    $d \in \{0, -h, -h/2\}$ encoding $\sigma_g$, $\sigma_g^{-1}$, and
    $\Delta_I = \sigma_g - (h/2)\cdot\mathbf{1}$.
 
 2. **Define a regularised crystal functional for $\Delta_I$.**  The
    averaged interface coefficient $h = q - q^{-1}$ diverges at
    $q = 0$, so a naive $q \to 0$ limit of the canonical word is
-   ill-defined.  A finite renormalised functional $S_{\mathrm{crystal}}^{\mathrm{can}}$
-   would identify the regularised image of $\Delta_I$ as a
-   crystal-graph operator (e.g. an explicit Kashiwara $\tilde{e}$
-   / $\tilde{f}$ combination, or the level-crossing average on
-   $\mathrm{SYT}(\lambda)$).  Once defined, the analogue of this
-   proposition for $S_{\mathrm{crystal}}^{\mathrm{can}}$ would
-   distinguish T from ${}^3\mathrm{He}$ structurally and yield a
-   crystal-side prediction of the $T$–${}^3\mathrm{He}$ mass
-   splitting without empirical AME calibration.
+   ill-defined.  A naive per-letter $q$-power renormalisation
+   $\hat\sigma := q\cdot\sigma$, $\hat\sigma^{-1} := q\cdot\sigma^{-1}$,
+   $\hat\Delta_I := q\cdot\Delta_I$ yields bounded eigenvalues at
+   $q = 0$ but loses information through cancellations like
+   $\hat\sigma^2 = q^2\sigma^2 \to 0$ — proton-intra
+   words containing five consecutive $\sigma_g$ factors zero out
+   under this renormalisation, contradicting the finite
+   contribution from the bare Hecke relation
+   $\sigma^2 = h\sigma + 1$.  A correct regularisation must take
+   the limit at the level of the trace
+   $\chi^\lambda(\beta_{\mathrm{can}})$ (whole-word
+   renormalisation), not per letter.  Once defined, the canonical
+   crystal functional should preserve the $T \leftrightarrow {}^3\mathrm{He}$
+   equality predicted by the sibling Hopf-antipode proposition
+   while distinguishing $D$ and ${}^4\mathrm{He}$ structurally.
 
 ## Connection to the 2-row decay observation
 
