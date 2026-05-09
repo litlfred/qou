@@ -1,0 +1,87 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-09T13:25:31.624836+00:00",
+  "commitSha": "8c2a08911628606123952d1ecffd8500465a481f",
+  "assertions": [
+    {
+      "name": "n_star_rule_closes_to_5pct",
+      "computed": 0,
+      "expected": 1,
+      "passed": false
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 5,
+  "computation": "probe-phiq-n-star-rule",
+  "scriptFile": "probe_phiq_n_star_rule.py",
+  "scriptHash": "1a69afbb92f7",
+  "scriptCommitSha": "unknown",
+  "description": "Per-atom n_⋆ probe of the brane-tower truncation rule n_⋆(𝔥) = ℓ·n_0 + k from conj:brane-level-selection.  Substitutes per-atom (n_⋆_D, n_⋆_T, n_⋆_³He) = (14, 27, 20) into Φ_q^{[≤n_⋆]} and checks ±5% closure of B(𝔥) against AME without per-atom retuning.  Tests proof-obligation 1 of conj:brane-level-selection — the empirical signature that n_⋆ is structurally correct (or falsifies the rule).",
+  "auditOnly": "content/quantum-observable-universe/braids-and-knots/derivation-audit-report.md (GAP-A-3)",
+  "parameters": {
+    "rule": "n_star = ell * n_0 + k_Hecke",
+    "n_star_per_atom": {
+      "deuteron": 14,
+      "tritium": 27,
+      "he3": 20
+    },
+    "ell": 2,
+    "k_Hecke_per_atom": {
+      "deuteron": 2,
+      "tritium": 9,
+      "he3": 2
+    }
+  },
+  "data": {
+    "rows": {
+      "deuteron": {
+        "n_star": 14,
+        "ell": 2,
+        "n_0": 6,
+        "k_hecke": 2,
+        "tower_atom": 191708.3568037935,
+        "tower_free": 192611.19763384794,
+        "delta_tower": 902.8408300544543,
+        "B_abs_MeV": 97964.57743524465,
+        "B_sub_MeV": 2826.969790021527,
+        "AME_MeV": 2.224566,
+        "err_abs_pct": 4403661.337503345,
+        "err_sub_pct": 126979.60968663223,
+        "ame_pct_close_within_5pct": false
+      },
+      "tritium": {
+        "n_star": 27,
+        "ell": 2,
+        "n_0": 9,
+        "k_hecke": 9,
+        "tower_atom": 1294738.9327093181,
+        "tower_free": 1302232.3468940177,
+        "delta_tower": 7493.4141846995335,
+        "B_abs_MeV": 1323223.1498369267,
+        "B_sub_MeV": 23463.33353464607,
+        "AME_MeV": 8.481798,
+        "err_abs_pct": 15600638.780113919,
+        "err_sub_pct": 276531.6002178556,
+        "ame_pct_close_within_5pct": false
+      },
+      "he3": {
+        "n_star": 20,
+        "ell": 2,
+        "n_0": 9,
+        "k_hecke": 2,
+        "tower_atom": 922964.5312713331,
+        "tower_free": 951981.7471732496,
+        "delta_tower": 29017.215901916497,
+        "B_abs_MeV": 943270.595515337,
+        "B_sub_MeV": 90858.53232878551,
+        "AME_MeV": 7.71806,
+        "err_abs_pct": 12221502.261647837,
+        "err_sub_pct": 1177119.823748267,
+        "ame_pct_close_within_5pct": false
+      }
+    },
+    "closed_within_5pct_across_all": false,
+    "interpretation": "If true, the n_⋆ rule reproduces empirical binding energies of {²H, ³H, ³He} without per-atom retuning, discharging proof-obligation 1 of conj:brane-level-selection.  If false, the specific formula n_⋆ = ℓ·n_0 + k is empirically falsified at this depth — the rule must depend on additional structural data."
+  }
+}
