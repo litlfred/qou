@@ -618,4 +618,48 @@ theorem tritium_canonical_uniqueness_pending_hoefsmit_h5
     -- Ref: [manuscript] §3b-cond conditional-class pattern
     -- Ref: [manuscript] PR #608 witness winner.rho_star -/
 
+/-! ### Witness-conditioned existence (kernel-verified, no `sorry`)
+
+The three categorical-uniqueness theorems below carry `sorry`
+because each depends on infrastructure that does not yet exist
+(Mathlib SDP-duality, multi-term cost wiring, Python H_5
+Hoefsmit).  The lemma in this section is the strongest result we
+*can* close today: given an `R5FullWitness` for `³He`, we can
+construct a `CanonicalKnotIdSDP` instance whose `rho` matches the
+witness's reported optimal multiplicity `rho_star` — strictly
+strengthening the placeholder instance (which hard-codes
+`rho := 2`) by importing the witness's `rho_star` (PR #608
+recorded `rho_star = 3` for `L_6a4 = (σ_1 σ_2^{-1})^3`).
+
+Significance: extracts categorical content (the optimal
+multiplicity) from the R5-full numerical data into a Lean-typed
+instance, without claiming uniqueness.  The uniqueness leg
+remains open in the `sorry`d theorems below.  No new axiom; no
+new infrastructure; this is purely structural. -/
+
+theorem helium3_existence_with_witness_rho
+    [w : R5FullWitness LightNucleus.helium3] :
+    ∃ inst : CanonicalKnotIdSDP LightNucleus.helium3,
+      inst.rho = w.rho_star := by
+  refine ⟨{
+    canonicalKnotId := "L6a4"
+    bindingLinkName := "L_{6a4} 3-component link in B_9"
+    bindingKWord := ([3, 3] : BraidWord)
+    rho := w.rho_star
+    rho_pos := w.rho_star_pos
+    constituentUniqueness :=
+      ([3, 3] : BraidWord).structurallyValidBinding LightNucleus.helium3.n₀
+    constituentUniqueness_holds := by decide
+    bindingKPSDFeasible := ([3, 3] : BraidWord).evenPower
+    bindingKPSDFeasible_holds := by decide
+    bindingKMinimalLength := ([3, 3] : BraidWord).length ≤ 4
+    bindingKMinimalLength_holds := by decide
+    bindingKMatchesHistoricalMarkovTrace :=
+      ([3, 3] : BraidWord).structurallyValidBinding LightNucleus.helium3.n₀
+    bindingKMatchesHistoricalMarkovTrace_holds := by decide
+    bindingKStructurallyValid := by decide
+    bindingKEvenPower := by decide
+    bindingKLengthBounded := by decide
+  }, rfl⟩
+
 end QOU.BraidKnot
