@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T13:06:00.346598+00:00",
-  "commitSha": "8e6b4a1eec06dfd3c0d0e0e3da5665aabdf521f3",
+  "computedAt": "2026-05-09T13:19:41.356777+00:00",
+  "commitSha": "59b5564ef0627fd3098f071f53b25d6df5638b1d",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -464,7 +464,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 2,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
@@ -1599,6 +1599,7 @@
         "rho-k-pair-gen-extension.witness.json",
         "rho-k-pair-gen-v2-wedderburn.witness.json",
         "rho-k-scaling-structure.witness.json",
+        "rho-prefactor-structural-verifier.witness.json",
         "sdp-gamma-gamma-to-qqbar.witness.json",
         "shadow-price-c-321-q0.witness.json",
         "shell7-bb-stratum.witness.json",

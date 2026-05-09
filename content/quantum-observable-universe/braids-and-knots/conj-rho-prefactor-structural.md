@@ -84,6 +84,61 @@ and $\rho = 2$ for double-cover nuclei.
 4. Extend the rule to heavier nuclei $A \leq 60$ in the recursive
    atom-knot atlas and verify no per-atom re-tuning is needed.
 
+## Critical structural finding (issue #604, deliverable 4)
+
+The B_3-level numerical evaluation
+([`folio-assistant/computations/rho_prefactor_structural_verifier.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/rho_prefactor_structural_verifier.py),
+witness [`rho-prefactor-structural-verifier.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/rho-prefactor-structural-verifier.witness.json))
+**falsifies** the simple form of the rule "$\rho = \mathrm{round}[\dim_q(\lambda^*)]$" when
+$\lambda^*$ is computed from the *braid strand count* alone:
+
+| atom | knot braid | dominant $\lambda^* \vdash 3$ | $\dim_q$ at $q_0$ | obs $\rho$ |
+|------|-----------|------------------------------|--------------------|------------|
+| proton  | $(\sigma_1 \sigma_2^{-1})^3$  | $(2,1)$ | $2.011$ | $\mathbf{1}$ |
+| neutron | $(\sigma_1 \sigma_2^{-1})^3$  | $(2,1)$ | $2.011$ | $\mathbf{1}$ |
+| ²H ($6_2$) | $\sigma_1 \sigma_2^{-1} \sigma_1^3 \sigma_2^{-1}$ | $(3)$ | $1.000$ | $\mathbf{1}$ |
+| ³He ($L_{6a4}$) | $(\sigma_1^{-1} \sigma_2)^3$ | $(2,1)$ | $2.011$ | $\mathbf{2}$ |
+
+Proton, neutron, and ³He have **identical** $\chi_\lambda$ values across all
+three blocks — their braid words are mutual inverses (or trivially equal),
+hence Markov-equivalent in $H_3(q_0)$.  No rule of the form
+"$\rho = f(\chi_\lambda, y_\lambda)$ at the braid strand count" can
+distinguish $\rho_{\mathrm{p}} = 1$ from $\rho_{^3\mathrm{He}} = 2$.
+
+### Required structural refinement: atomic strand count $n_0 = 3 \cdot A$
+
+The conjecture must be evaluated at the **atomic** strand count
+$n_0 = 3 \cdot A$, embedding the braid into $H_{3 \cdot A}(q_0)$
+**through the binding operator**:
+
+$$
+T_w(\mathfrak{H})
+\;=\;
+\underbrace{K(\mathfrak{H})}_{\text{binding link} \,\in\, H_{3A}(q_0)}
+\,\cdot\,
+\underbrace{\bigotimes_{i=1}^{A} T_w(\text{nucleon}_i)}_{\text{constituents at } H_3(q_0)^{\otimes A}}.
+$$
+
+The binding operator $K(\mathfrak{H})$ links the $A$ nucleon-trefoils
+together (Hopf link $L_H$ for ²H, an $8_{11}$-class link for ³H,
+$L_{6a4}$ for ³He).  The dominant $\lambda^* \vdash 3 \cdot A$ of
+$K$ — *not* of the whole-particle braid image at $H_3$ — is what
+carries the $\rho$ information.
+
+This is the natural framework for the joint-tower SDP cross-level
+consistency constraints (4) of
+[`prop:joint-tower-sdp-confinement`](#prop:joint-tower-sdp-confinement),
+which already enforce $T_w(\mathfrak{H}) \hookleftarrow T_w(\mathfrak{H}')$
+across confinement levels.  Wiring an explicit
+"binding-K SDP solver mode" — that finds $K(\mathfrak{H})$ from
+substrate data + constituent $T_w$'s alone — is the natural
+follow-up deliverable for issue #604 (after the H_{3·A} Hoefsmit
+infrastructure lands).  The Lean class
+[`conj-rho-prefactor-structural.lean`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/conj-rho-prefactor-structural.lean)
+records `A` (not the braid strand count) as its primary parameter and
+derives $n_0 = 3 \cdot A$ structurally; per-atom instances must be
+constructed at $H_{3 \cdot A}$ to discharge the rule.
+
 ## Relationship to GAP-A-4
 
 This conjecture directly addresses GAP-A-4 of the
