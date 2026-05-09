@@ -58,8 +58,11 @@ import Mathlib.Algebra.BigOperators.Group.Finset
 import Mathlib.Data.Finset.Lattice.Fold
 import Mathlib.LinearAlgebra.Dimension.Finrank
 import Mathlib.LinearAlgebra.Dimension.DivisionRing
+import Mathlib.LinearAlgebra.Dimension.Constructions
+import Mathlib.LinearAlgebra.DFinsupp
 import Mathlib.LinearAlgebra.Span.Basic
-import Mathlib.Order.CompleteLattice
+import Mathlib.Order.SupIndep
+import Mathlib.Algebra.DirectSum.Module
 
 namespace QOU.BraidKnot
 
@@ -173,10 +176,10 @@ Lifts the ℕ-arithmetic `PanelRankDecomposition` to actual
 sub-spaces: the panel-image of each `(μ, ν)`-block is a
 `Submodule K V` for a finite-dimensional ambient `V`, the
 within-μ nesting becomes a *chain* (totally ordered by ≤) of
-sub-spaces, and across-μ independence becomes
-`CompleteLattice.Independent` of the per-μ joint sub-spaces.
+sub-spaces, and across-μ independence becomes `iSupIndep` of the
+per-μ joint sub-spaces.
 
-**Within-μ part is fully proved** (no `sorry`):
+**Both parts fully proved** (no `sorry`):
 
 | Lemma | Statement |
 |---|---|
@@ -184,15 +187,15 @@ sub-spaces, and across-μ independence becomes
 | `finrank_iSup_eq_νStar` | finrank of joint span = finrank of νStar block |
 | `finrank_blockRank_le` | each block's finrank ≤ νStar block's finrank |
 | `finrank_iSup_eq_finset_sup` | finrank of joint span = max-over-ν of block finranks |
+| `finrank_iSup_eq_sum_of_iSupIndep` | (general) `iSupIndep p → finrank (⨆ i, p i) = ∑ i, finrank (p i)` |
+| `toRankDecomposition` | `PanelImageStructure → PanelRankDecomposition` (instance) |
 
-The **across-μ part** (sum-over-μ summation from
-`CompleteLattice.Independent`) is left as the
-`PanelRankDecomposition.total_eq_sum` axiom in the ℕ-rank class
-above.  Discharging it from `independent` requires a Mathlib
-lemma of the form
-`CompleteLattice.Independent.finrank_iSup_eq_sum_finrank`; that
-final connection is queued separately (the precise API name
-needs Lean-MCP verification).
+The general lemma `finrank_iSup_eq_sum_of_iSupIndep` factors
+through `DirectSum.coeLinearMap`: its range is `⨆ i, p i`
+(`DirectSum.range_coeLinearMap`), and `iSupIndep` makes it
+injective (`iSupIndep.dfinsupp_lsum_injective`), so we get
+`(⨁ i, p i) ≃ₗ[K] (⨆ i, p i)` and then close with
+`Module.finrank_directSum`.
 -/
 
 universe u v
@@ -222,7 +225,7 @@ class PanelImageStructure
   νStar_max : ∀ μ ν, W μ ν ≤ W μ (νStar μ)
   /-- Across-μ independence of the per-μ joint sub-spaces. -/
   independent :
-    CompleteLattice.Independent (fun μ : μIdx => W μ (νStar μ))
+    iSupIndep (fun μ : μIdx => W μ (νStar μ))
 
 namespace PanelImageStructure
 
@@ -291,6 +294,79 @@ theorem finrank_iSup_eq_finset_sup
   · exact Finset.le_sup (f := fun ν => Module.finrank K (W μ ν))
       (Finset.mem_univ (P.νStar μ))
   · exact Finset.sup_le fun ν _ => finrank_blockRank_le μ ν
+
+end PanelImageStructure
+
+/-! ### Across-μ summation: finrank of an iSupIndep family -/
+
+/-- **Finrank of an independent supremum decomposes as a sum.**
+
+    For an `iSupIndep` family of submodules in a finite-dimensional
+    space, the finrank of the joint supremum is the sum of the
+    individual finranks.
+
+    Proof: `DirectSum.coeLinearMap p : (⨁ i, p i) →ₗ[K] V` has
+    range `⨆ i, p i` (`DirectSum.range_coeLinearMap`), and is
+    injective by `iSupIndep.dfinsupp_lsum_injective`.  So
+    `(⨁ i, p i) ≃ₗ[K] (⨆ i, p i)`, and the conclusion follows
+    from `Module.finrank_directSum`. -/
+theorem finrank_iSup_eq_sum_of_iSupIndep
+    {K : Type u} [DivisionRing K]
+    {V : Type v} [AddCommGroup V] [Module K V] [FiniteDimensional K V]
+    {ι : Type*} [Fintype ι] [DecidableEq ι]
+    {p : ι → Submodule K V} (hp : iSupIndep p) :
+    Module.finrank K (⨆ i, p i : Submodule K V) =
+      ∑ i, Module.finrank K (p i) := by
+  classical
+  -- Step 1: the canonical linear map ⨁ i, p i →ₗ V has range ⨆ i, p i
+  -- and is injective (by iSupIndep).
+  have hinj : Function.Injective (DirectSum.coeLinearMap p) :=
+    hp.dfinsupp_lsum_injective
+  have hrange : LinearMap.range (DirectSum.coeLinearMap p) = ⨆ i, p i :=
+    DirectSum.range_coeLinearMap
+  -- Step 2: factor as a LinearEquiv via ofInjective + ofEq.
+  have L : (⨁ i, p i) ≃ₗ[K] (⨆ i, p i : Submodule K V) :=
+    (LinearEquiv.ofInjective _ hinj).trans (LinearEquiv.ofEq _ _ hrange)
+  -- Step 3: transport finrank along L, then close with finrank_directSum.
+  rw [← L.finrank_eq, Module.finrank_directSum]
+
+namespace PanelImageStructure
+
+/-- **Translation to ℕ-rank class.**
+
+    Given a `PanelImageStructure` over a finite-dimensional ambient
+    space, build a `PanelRankDecomposition` instance with
+    `blockRank μ ν := finrank K (W μ ν)`,
+    `jointRankMu μ := finrank K (W μ (νStar μ))`, and
+    `totalRank := finrank K (⨆ μ ν, W μ ν)`.
+
+    The within-μ field follows from `finrank_iSup_eq_finset_sup`.
+    The across-μ field uses `finrank_iSup_eq_sum_of_iSupIndep` after
+    rewriting the inner `⨆ ν` to its νStar value via
+    `iSup_eq_νStar`. -/
+def toRankDecomposition
+    {K : Type u} [Field K]
+    {V : Type v} [AddCommGroup V] [Module K V] [FiniteDimensional K V]
+    {μIdx : Type} [Fintype μIdx] [DecidableEq μIdx]
+    {νIdx : μIdx → Type} [∀ μ, Fintype (νIdx μ)]
+    {W : (μ : μIdx) → νIdx μ → Submodule K V}
+    [P : PanelImageStructure μIdx νIdx W] :
+    PanelRankDecomposition μIdx νIdx
+      (fun μ ν => Module.finrank K (W μ ν))
+      (fun μ => Module.finrank K (W μ (P.νStar μ)))
+      (Module.finrank K (⨆ μ : μIdx, ⨆ ν : νIdx μ, W μ ν : Submodule K V)) where
+  joint_eq_max := fun μ => by
+    have h := finrank_iSup_eq_finset_sup (P := P) μ
+    -- h : finrank (⨆ ν, W μ ν) = sup_ν finrank (W μ ν)
+    -- want : finrank (W μ (νStar μ)) = sup_ν finrank (W μ ν)
+    rw [← finrank_iSup_eq_νStar (P := P) μ]; exact h
+  total_eq_sum := by
+    -- Rewrite ⨆ μ ⨆ ν, W μ ν as ⨆ μ, W μ (νStar μ) using iSup_eq_νStar
+    have hcongr : (⨆ μ : μIdx, ⨆ ν : νIdx μ, W μ ν : Submodule K V) =
+        ⨆ μ : μIdx, W μ (P.νStar μ) :=
+      iSup_congr (fun μ => iSup_eq_νStar (P := P) μ)
+    rw [hcongr]
+    exact finrank_iSup_eq_sum_of_iSupIndep P.independent
 
 end PanelImageStructure
 
