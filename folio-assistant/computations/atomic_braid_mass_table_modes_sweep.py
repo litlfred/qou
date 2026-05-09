@@ -2,6 +2,30 @@
 """
 Atomic-braid mass-table T1 modes sweep.
 
+⚠ CONVENTION CORRECTION (PR #564, 2026-05-08).  Modes A, B, C, F
+all build on a *disjoint* multiplicative T1 base
+|tr_M(p)|^Z · |tr_M(n)|^N which is **empirically wrong** for
+multi-nucleon atoms (deuteron, tritium, ³He, ⁴He) per the convention
+audit on PR #564.  The disjoint-product identity
+tr_M(α ⊗ β) = tr_M(α) · tr_M(β) applies only to genuine
+disjoint-cluster braids (e.g. an unknot operator on disjoint strand
+bundles), NOT to multi-nucleon atoms whose canonical word
+(`mass_at_3A_proper.atom_braid_word_3A`) includes operator-valued
+σ_{3k} interfaces between adjacent nucleons.
+
+Additionally, the PROTON_WORD = [1]*7 + [2]*4 and NEUTRON_WORD =
+[1]*6 + [2]*4 + [-1] hardcoded below correspond to a non-canonical
+word convention that lacks the 2 averaged crossings per nucleon that
+`atom_braid_word_3A` produces.  Computed |tr_M(p)| = 1.6332 and
+|tr_M(n)| = 1.2482 from these words disagree with the canonical
+1.0653 / 0.9232 in `atomic-tr-m-mpfr-50dps.witness.json`.
+
+Mode E (legacy GS-NF) reads the canonical `atomic-tr-m-mpfr-50dps`
+witness directly, so it uses canonical values.  Modes A, B, C, F
+inherit the non-canonical disjoint base and therefore should be
+treated as **research / negative-result** rather than as production
+T1 candidates.
+
 Tests several T1 constructions for the atomic-braid six-term mass
 formula and reports the per-mode err% across (p, n, D, T, ³He, ⁴He).
 The motivating question is whether any T1 construction closes the
@@ -13,6 +37,9 @@ Modes:
   A. disjoint:        T1(K) = |tr_M(p)|^Z · |tr_M(n)|^N
                       (PR #547 pure disjoint-product, no inter-
                       nucleon coupling).
+                      ⚠ EMPIRICALLY WRONG per PR #564 convention
+                      audit. Schur-Weyl identity Σ_λ y_λ χ^λ = tr_M
+                      fails by factor ~5 on the deuteron.
 
   B. disjoint × J:    T1(K) = disjoint(K) · a_J(Z, N)
                       where a_J is the structural Jones-quotient

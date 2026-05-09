@@ -2,7 +2,7 @@
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "computation": "e0-calibration-audit",
   "description": "Audit of E_0 / Q_β(n) calibration constants across folio-assistant/computations. Reports value-precision drift, anchor-of-pinning violations vs CAL-3, and the PDG-derived uncertainty floor on every E_0-dependent quantity.",
-  "computedAt": "2026-05-08T19:12:15.020432+00:00",
+  "computedAt": "2026-05-09T00:22:51.877324+00:00",
   "reference_blocks": [
     "prop:three-calibration-inputs",
     "rem:calibration-inputs"
@@ -154,7 +154,7 @@
       },
       {
         "file": "folio-assistant/computations/mass_at_3A_proper.py",
-        "line": 521,
+        "line": 555,
         "pattern": "literal_0_782",
         "match": "0.782",
         "context": "tower_binding_full.  E_0 = 0.782 MeV (β-decay Q), no Catalan.",
@@ -162,7 +162,7 @@
       },
       {
         "file": "folio-assistant/computations/mass_at_3A_proper.py",
-        "line": 603,
+        "line": 637,
         "pattern": "literal_0_782",
         "match": "0.782",
         "context": "\"(default = β-decay Q = 0.782)\")",
@@ -170,7 +170,7 @@
       },
       {
         "file": "folio-assistant/computations/mass_at_3A_proper.py",
-        "line": 703,
+        "line": 737,
         "pattern": "literal_0_782",
         "match": "0.782",
         "context": "\"E_0 = 0.782 MeV (free-neutron β-decay Q). No Catalan.\"",
@@ -241,6 +241,14 @@
         "match": "0.78233341",
         "context": "# = 0.78233341 MeV (CODATA-derived)",
         "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/codata_constants.py",
+        "line": 37,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "Q_BETA_MEV = M_N_MEV - M_P_MEV - M_E_MEV  # ≈ 0.78233341 MeV",
+        "kind": "active"
       },
       {
         "file": "folio-assistant/computations/experimental_constants.py",
@@ -408,7 +416,7 @@
       },
       {
         "file": "folio-assistant/computations/mass_at_3A_proper.py",
-        "line": 503,
+        "line": 537,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
         "context": "E_0: float = E_0_CALIBRATION_MEV,",
@@ -416,7 +424,7 @@
       },
       {
         "file": "folio-assistant/computations/mass_at_3A_proper.py",
-        "line": 558,
+        "line": 592,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
         "context": "E_0: float = E_0_CALIBRATION_MEV,",
@@ -424,7 +432,7 @@
       },
       {
         "file": "folio-assistant/computations/mass_at_3A_proper.py",
-        "line": 601,
+        "line": 635,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
         "context": "ap.add_argument(\"--E0\", type=float, default=E_0_CALIBRATION_MEV,",
@@ -432,7 +440,7 @@
       },
       {
         "file": "folio-assistant/computations/mass_at_3A_proper.py",
-        "line": 623,
+        "line": 657,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
         "context": "f\"hecke_core.E_0_CALIBRATION_MEV)\")",
@@ -455,6 +463,38 @@
         "match": "Q_BETA_N",
         "context": "E_0: float = float(_Q_BETA_N),",
         "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/codata_constants.py",
+        "line": 13,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "from codata_constants import M_E_MEV, M_P_MEV, M_N_MEV, Q_BETA_MEV",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/codata_constants.py",
+        "line": 33,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "# By construction: M_N_MEV = M_P_MEV + M_E_MEV + Q_BETA_MEV",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/codata_constants.py",
+        "line": 37,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "Q_BETA_MEV = M_N_MEV - M_P_MEV - M_E_MEV  # ≈ 0.78233341 MeV",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/codata_constants.py",
+        "line": 52,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "\"M_E_MEV\", \"M_P_MEV\", \"M_N_MEV\", \"Q_BETA_MEV\",",
+        "kind": "doc"
       }
     ],
     "proton_mass_anchor": [

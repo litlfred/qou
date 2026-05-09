@@ -4,23 +4,39 @@ Multi-atom Markov-trace anchor via the axiomatic recursive reducer.
 
 Uses `markov_trace_recursive.markov_trace_of_word` (representation-
 theory-free, axiom-only) to compute the Markov trace of every atomic-
-braid word for the supported atoms:
+braid word for the supported atoms.
 
-  proton  (Z=1, N=0):  σ₁⁷ σ₂⁴            ∈ H_3
-  neutron (Z=0, N=1):  σ₁⁶ σ₂⁴ σ₁⁻¹       ∈ H_3
-  deuteron (Z=1, N=1): σ₁⁷ σ₂⁴ ⊕ σ₁⁶ σ₂⁴ σ₁⁻¹    (disjoint H_3 ⊗ H_3 ⊂ H_6)
-                      = σ₁⁷ σ₂⁴ σ₄⁶ σ₅⁴ σ₄⁻¹      (rebased to gens 4,5)
+⚠ CONVENTION CORRECTION (PR #564, 2026-05-08).  The deuteron entry
+formerly used a *disjoint* H_3 ⊗ H_3 ⊂ H_6 word
+(σ₁⁷ σ₂⁴ σ₄⁶ σ₅⁴ σ₄⁻¹, 22 crossings, NO interface crossing).  This
+convention is **empirically wrong** — the Schur-Weyl identity
+Σ_λ y_λ(q) χ^λ(β_D) = tr_M(β_D) fails by factor ~5 for that word.
 
-The Markov axiom values multiply on disjoint clusters in H_n:
-  tr_M(α ⊗ β) = tr_M(α) · tr_M(β)
-when α uses only σ_{i<k} and β uses only σ_{j>k+1} (commuting clusters
-separated by an unused generator slot).  Verified empirically below.
+The canonical convention from
+`content/quantum-observable-universe/braids-and-knots/hecke-branching-trace-decomposition.md`
+is β_p · I · β_n where I = σ₃ - h/2·1 is an *operator-valued* interface
+crossing (non-scalar A^λ_{μ,ν}(I) for 9 of 11 partitions λ ⊢ 6).  The
+canonical word is built by `mass_at_3A_proper.atom_braid_word_3A(Z, N)`.
 
-For each atom, emits:
-  - symbolic closed form in ℚ(q)
-  - numerical value at q_0 (50 dps via mpmath)
-  - cross-check against `markov_trace_atomic_proton_full` for proton
-  - dimensional anchor ρ_K^CODATA = (m_K/m_e) / |tr_M|
+The deuteron entry is **removed from this script** because the
+recursive reducer `markov_trace_of_word` does not support the
+"averaged" crossing type (c·σ + d·I with d = -h/2) that the
+canonical interface requires.  For canonical |tr_M(deuteron)|, use:
+
+    folio-assistant/computations/atomic_tr_m_mpfr_50dps.py
+    → atomic-tr-m-mpfr-50dps.witness.json
+
+which uses tr_M_via_wenzl_bridge_mpfr.py + atom_braid_word_3A and
+gives |tr_M(β_D)| = 0.388286471547713419620628617786 (canonical).
+
+Disjoint multiplicativity tr_M(α ⊗ β) = tr_M(α) · tr_M(β) is **only
+valid for genuine disjoint-cluster braids** (e.g. an unknot operator
+on a disjoint strand bundle), NOT for the deuteron, triton, ³He, ⁴He
+where the inter-nucleon σ_{3k} interface is part of the physics.
+
+Supported atoms (after correction):
+  proton  (Z=1, N=0):  σ₁⁷ σ₂⁴       ∈ H_3
+  neutron (Z=0, N=1):  σ₁⁶ σ₂⁴ σ₁⁻¹  ∈ H_3
 
 Output: markov-trace-axiomatic-multi-atom.witness.json
 """
@@ -64,15 +80,16 @@ ATOMS = {
         "word_str": "σ₁⁶ σ₂⁴ σ₁⁻¹",
         "m_MeV": 939.56542052,
     },
-    "deuteron": {
-        # Proton's σ₁⁷σ₂⁴ on strands {1,2,3} ⊕ neutron's σ₁⁶σ₂⁴σ₁⁻¹
-        # rebased to strands {4,5,6} via σᵢ → σᵢ₊₃.
-        # Total: σ₁⁷ σ₂⁴ σ₄⁶ σ₅⁴ σ₄⁻¹ (22 crossings, disjoint).
-        "Z": 1, "N": 1, "n": 6,
-        "word": [1] * 7 + [2] * 4 + [4] * 6 + [5] * 4 + [-4],
-        "word_str": "σ₁⁷ σ₂⁴ ⊕ σ₄⁶ σ₅⁴ σ₄⁻¹",
-        "m_MeV": 1875.61294,  # CODATA: m_d (deuteron mass)
-    },
+    # ── deuteron REMOVED (PR #564, 2026-05-08) ──────────────────
+    # The disjoint H_3 ⊗ H_3 word σ₁⁷σ₂⁴σ₄⁶σ₅⁴σ₄⁻¹ (22 crossings)
+    # is empirically wrong — it does not reproduce the canonical
+    # |tr_M(β_D)| = 0.388286... value pinned by the Wenzl-bridge
+    # path in atomic-tr-m-mpfr-50dps.witness.json.  The canonical
+    # word β_p · I · β_n = atom_braid_word_3A(1, 1) (23 crossings,
+    # with σ₃ averaged interface) cannot be evaluated by the
+    # axiomatic recursive reducer because markov_trace_of_word does
+    # not support the averaged crossing type (c·σ + d·I with d=-h/2).
+    # Use atomic_tr_m_mpfr_50dps.py for canonical |tr_M(deuteron)|.
 }
 
 M_E_MEV = mp.mpf("0.51099895")
@@ -138,40 +155,28 @@ def main() -> int:
             "rho_K_codata": str(rho_K),
         }
 
-    # ── Disjoint-product check ──────────────────────────────────
-    checks: dict = {}
-    print(f"\n  Disjoint-product structural check (deuteron = proton ⊗ neutron):")
-    if all(a in results and "tr_M_at_q0_50dps" in results[a]
-           for a in ["proton", "neutron", "deuteron"]):
-        tr_p = mp.mpf(results["proton"]["tr_M_at_q0_50dps"])
-        tr_n = mp.mpf(results["neutron"]["tr_M_at_q0_50dps"])
-        tr_d = mp.mpf(results["deuteron"]["tr_M_at_q0_50dps"])
-        product = tr_p * tr_n
-        relative = abs(tr_d - product) / abs(product) if abs(product) > 0 else mp.mpf("inf")
-        print(f"    tr_M(proton)         = {mp.nstr(tr_p, 12)}")
-        print(f"    tr_M(neutron)        = {mp.nstr(tr_n, 12)}")
-        print(f"    tr_M(p) · tr_M(n)    = {mp.nstr(product, 12)}")
-        print(f"    tr_M(deuteron)       = {mp.nstr(tr_d, 12)}")
-        print(f"    relative |Δ|         = {mp.nstr(relative, 8)}")
-        if relative < mp.mpf("1e-30"):
-            print(f"    ✅ Disjoint-product property HOLDS (Δ < 1e-30, mpmath-exact).")
-            disjoint_ok = True
-        elif relative < mp.mpf("1e-9"):
-            print(f"    ✓ Disjoint-product property holds within 1 ppb.")
-            disjoint_ok = True
-        else:
-            print(f"    ✗ Mismatch — investigate axiom application on H_6.")
-            disjoint_ok = False
-        checks["disjoint_product"] = {
-            "tr_p_times_tr_n_at_q0": str(product),
-            "tr_d_at_q0": str(tr_d),
-            "relative_error": str(relative),
-            "matches_within_1ppb": bool(relative < mp.mpf("1e-9")),
-            "matches_mpmath_exact": bool(relative < mp.mpf("1e-30")),
+    # ── Disjoint-product check (REMOVED, PR #564) ───────────────
+    # The previous check verified tr_M(disjoint H_3⊗H_3) ≈ tr_M(p)·tr_M(n)
+    # which is structurally tautological for the disjoint word but does
+    # NOT validate the deuteron physics: the canonical β_p·I·β_n word
+    # has an interface crossing σ_3 that breaks multiplicativity.  The
+    # canonical |tr_M(β_D)| value (atomic-tr-m-mpfr-50dps.witness.json)
+    # equals 0.388286..., which is NOT |tr_M(p)|·|tr_M(n)| ≈ 0.984.
+    # See `hecke-branching-trace-decomposition.md` for the operator-
+    # valued A^λ_{μ,ν}(I) decomposition that replaces disjoint product.
+    checks: dict = {
+        "disjoint_product_removed": {
+            "reason": (
+                "The disjoint-product property tr_M(α⊗β)=tr_M(α)·tr_M(β) "
+                "applies only to genuine disjoint-cluster braids; the "
+                "deuteron β_p·I·β_n has an interface σ_3 averaged "
+                "crossing that breaks multiplicativity. Canonical "
+                "|tr_M(deuteron)| = 0.388286... ≠ |tr_M(p)|·|tr_M(n)|."
+            ),
+            "canonical_witness": "atomic-tr-m-mpfr-50dps.witness.json",
         }
-    else:
-        print(f"    (skipped — one or more atoms failed)")
-        disjoint_ok = False
+    }
+    disjoint_ok = True  # check removed — see notes
 
     # ── Cross-check against atomic-proton-full witness ──────────
     print(f"\n  Cross-check against markov_trace_atomic_proton_full witness:")
@@ -204,16 +209,25 @@ def main() -> int:
     # ── Witness emission ────────────────────────────────────────
     witness = {
         "computation": "markov-trace-axiomatic-multi-atom",
+        "convention_status": (
+            "DEPRECATED_NON_CANONICAL — the proton word σ₁⁷σ₂⁴ and "
+            "neutron word σ₁⁶σ₂⁴σ₁⁻¹ used here do NOT match the "
+            "canonical convention from mass_at_3A_proper.atom_braid_word_3A "
+            "(which has 2 averaged crossings per nucleon). Computed "
+            "values 1.6332 (proton) and 1.2482 (neutron) disagree with "
+            "canonical 1.0653 / 0.9232 in atomic-tr-m-mpfr-50dps.witness.json. "
+            "DO NOT use for mass predictions. Use atomic_tr_m_mpfr_50dps.py "
+            "for canonical |tr_M| values. Deuteron entry removed entirely "
+            "(disjoint convention empirically wrong; recursive reducer "
+            "does not support averaged crossings)."
+        ),
         "description": (
             "Multi-atom Markov-trace anchor using the axiomatic "
             "recursive reducer (markov_trace_recursive). Computes "
-            "tr_M(β_K) for K ∈ {proton, neutron, deuteron} via "
+            "tr_M(β_K) for K ∈ {proton, neutron} via "
             "Hecke quadratic + Markov axioms + cyclicity, no "
-            "representation theory. Verifies the disjoint-product "
-            "property tr_M(p ⊗ n) = tr_M(p) · tr_M(n) on the H_6 "
-            "deuteron word, and cross-checks the proton against "
-            "the prior Hecke-power expansion in "
-            "markov_trace_atomic_proton_full.py."
+            "representation theory. The disjoint-product check on the "
+            "deuteron has been removed (see convention_status above)."
         ),
         "reference_blocks": [
             "prop:atomic-mass-gb-nf",

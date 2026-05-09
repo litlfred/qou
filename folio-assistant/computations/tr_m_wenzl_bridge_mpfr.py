@@ -165,7 +165,8 @@ def _hecke_factor_coo(sigma_coo, c: mp.mpf, d: mp.mpf, dim: int):
 
 
 def _chi_lambda_of_word_mpf(sigmas: list, dim: int,
-                              word: Sequence[tuple[float, float, int]]
+                              word: Sequence[tuple[float, float, int]],
+                              q: mp.mpf | None = None
                               ) -> mp.mpf:
     """χ_λ(W) at mpf precision for a Hecke-factor word.
 
@@ -175,12 +176,36 @@ def _chi_lambda_of_word_mpf(sigmas: list, dim: int,
     in the sparse COO of M = c·σ_g + d·I.  Cost per matmul:
     O(d × nnz(M)) ≈ O(d × 2d) = O(d²) instead of O(d³) for dense.
 
+    PRECISION SNAP (PR #564, 2026-05-08).  The atom_braid_word_3A
+    builder produces (c, d) values where c ∈ {1.0} and
+    d ∈ {0.0, -h, -h/2} with h = hecke_core.h, a Python f64 with
+    ~16-digit precision.  The previous `mp.mpf(str(d))` round-trip
+    inherited that 16-digit truncation, capping χ^λ accuracy at f64
+    even when the working dps is 50.  When q is provided, we now
+    recompute h_mp = q - 1/q at full mpmath precision and snap each
+    f64 d-value to its canonical mpmath counterpart based on which
+    of the three Hecke crossing types it represents.  This recovers
+    the full 50-dps precision in the matrix product.
+
     Returns trace(P) after all multiplications.
     """
     if dim == 0:
         return mp.mpf(0)
     zero = mp.mpf(0)
     one = mp.mpf(1)
+
+    # If q is provided, build the canonical mpmath d-values once.
+    # Otherwise fall back to the legacy (f64-truncating) path.
+    snap = None
+    if q is not None:
+        h_mp = q - one / q
+        # Map f64 d-value → canonical mpmath value, keyed by the f64
+        # value (rounded to 9 dp to avoid float-eq pitfalls).
+        snap = {
+            round(0.0, 9): zero,
+            round(float(-h_mp), 9): -h_mp,
+            round(float(-h_mp / 2), 9): -h_mp / 2,
+        }
 
     # P starts as the identity, stored as a dict-of-dicts for sparsity.
     # After the first multiplication it generally becomes dense, so
@@ -196,7 +221,12 @@ def _chi_lambda_of_word_mpf(sigmas: list, dim: int,
                 f"seminormal matrices were provided (partition λ has "
                 f"too few cells)")
         c_mp = c if isinstance(c, mp.mpf) else mp.mpf(str(c))
-        d_mp = d if isinstance(d, mp.mpf) else mp.mpf(str(d))
+        if isinstance(d, mp.mpf):
+            d_mp = d
+        elif snap is not None and round(float(d), 9) in snap:
+            d_mp = snap[round(float(d), 9)]
+        else:
+            d_mp = mp.mpf(str(d))
         M_coo = _hecke_factor_coo(sigmas[g], c_mp, d_mp, dim)
 
         # P_new = P @ M.  For each (j, k, v) in M_coo:
@@ -280,7 +310,7 @@ def tr_M_via_wenzl_bridge_mpfr(
             sigmas, dim = _build_seminormal_matrices_mpf(shape_t, q)
             if dim == 0:
                 continue
-            chi = _chi_lambda_of_word_mpf(sigmas, dim, word)
+            chi = _chi_lambda_of_word_mpf(sigmas, dim, word, q=q)
             contrib = y_lam * chi
             total += contrib
             if return_breakdown:
