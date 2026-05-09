@@ -76,6 +76,25 @@ regime-(3) if signs reinforce. The Habiro expansion is the natural
 target for the symbolic computation of these regimes (see
 [atomic Habiro expansion](#cor:habiro-expansion-atomic)).*
 
+**Tail control at the substrate value via the $q \leftrightarrow q^{-1}$
+involution.**
+*The QOU substrate value $q_0 \approx 1.110$ lies in the supercritical
+regime $q > 1$, where the naive Pochhammer monotonicity*
+$|(q;q)_{N+1}| \leq |(q;q)_N|$ *fails — each new factor $|1 - q^{N+1}|$
+exceeds $1$ and $|(q;q)_N|$ in fact grows roughly like $q^{N(N+1)/2}$.
+The Habiro completion is, however, symmetric under the involution
+$q \leftrightarrow q^{-1}$ \cite{habiro2004}: the explicit identity*
+$$
+  (q^{-1}; q^{-1})_N \;=\; (-1)^N q^{-N(N+1)/2} (q; q)_N
+$$
+*shows that control of the cyclotomic tail at $q_0 > 1$ is supplied
+by the monotone bound on the dual Pochhammer factor*
+$|(q_0^{-1}; q_0^{-1})_N|$, *which lives in the range
+$q_0^{-1} \in (0, 1)$ where the elementary monotone bound applies.
+The Lean corollary `habiro_truncation_bound_supercrit` discharges
+this bridge: at $q > 1$ the dual sequence
+$|(q^{-1}; q^{-1})_N|$ is non-increasing in $N$.*
+
 ## Proof
 
 The Habiro ring $\widehat{\mathbb{Z}[q]}$ is by definition the
