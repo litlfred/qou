@@ -56,6 +56,10 @@ References:
 
 import Mathlib.Algebra.BigOperators.Group.Finset
 import Mathlib.Data.Finset.Lattice.Fold
+import Mathlib.LinearAlgebra.Dimension.Finrank
+import Mathlib.LinearAlgebra.Dimension.DivisionRing
+import Mathlib.LinearAlgebra.Span.Basic
+import Mathlib.Order.CompleteLattice
 
 namespace QOU.BraidKnot
 
@@ -162,5 +166,132 @@ theorem panel_7_2_total_rank :
     (86 : ℕ) =
       ∑ μ : Bool, (Finset.univ : Finset (Fin 3)).sup (panel_7_2_blockRank μ) :=
   PanelRankDecomposition.rank_formula
+
+/-! ## Submodule-level reformulation
+
+Lifts the ℕ-arithmetic `PanelRankDecomposition` to actual
+sub-spaces: the panel-image of each `(μ, ν)`-block is a
+`Submodule K V` for a finite-dimensional ambient `V`, the
+within-μ nesting becomes a *chain* (totally ordered by ≤) of
+sub-spaces, and across-μ independence becomes
+`CompleteLattice.Independent` of the per-μ joint sub-spaces.
+
+**Within-μ part is fully proved** (no `sorry`):
+
+| Lemma | Statement |
+|---|---|
+| `iSup_eq_νStar` | `⨆ ν, W μ ν = W μ (νStar μ)` |
+| `finrank_iSup_eq_νStar` | finrank of joint span = finrank of νStar block |
+| `finrank_blockRank_le` | each block's finrank ≤ νStar block's finrank |
+| `finrank_iSup_eq_finset_sup` | finrank of joint span = max-over-ν of block finranks |
+
+The **across-μ part** (sum-over-μ summation from
+`CompleteLattice.Independent`) is left as the
+`PanelRankDecomposition.total_eq_sum` axiom in the ℕ-rank class
+above.  Discharging it from `independent` requires a Mathlib
+lemma of the form
+`CompleteLattice.Independent.finrank_iSup_eq_sum_finrank`; that
+final connection is queued separately (the precise API name
+needs Lean-MCP verification).
+-/
+
+universe u v
+
+/-- **Panel-image Submodule structure.**
+
+    A finite-dimensional ambient space `V` over a field `K`,
+    together with a `(μ, ν)`-indexed family of sub-spaces
+    `W : (μ : μIdx) → νIdx μ → Submodule K V` carrying the two
+    structural hypotheses of the audit:
+
+    1. For each μ, there is a maximizing `νStar μ` such that
+       `W μ ν ≤ W μ (νStar μ)` for all ν (within-μ chain).
+    2. The per-μ joint sub-spaces `W μ (νStar μ)` are
+       complete-lattice-independent (across-μ orthogonality). -/
+-- Ref: [mathas2004mackey] Mackey filtration on cyclotomic Hecke induction
+-- Ref: [hu-mathas2012graded] Graded induction for Specht modules
+class PanelImageStructure
+    {K : Type u} [Field K]
+    {V : Type v} [AddCommGroup V] [Module K V] [FiniteDimensional K V]
+    (μIdx : Type) [Fintype μIdx] [DecidableEq μIdx]
+    (νIdx : μIdx → Type) [∀ μ, Fintype (νIdx μ)]
+    (W : (μ : μIdx) → νIdx μ → Submodule K V) : Prop where
+  /-- A maximizing ν for each μ (witness of the chain's top element). -/
+  νStar : (μ : μIdx) → νIdx μ
+  /-- Within-μ nesting: `νStar μ` dominates every ν in the inclusion order. -/
+  νStar_max : ∀ μ ν, W μ ν ≤ W μ (νStar μ)
+  /-- Across-μ independence of the per-μ joint sub-spaces. -/
+  independent :
+    CompleteLattice.Independent (fun μ : μIdx => W μ (νStar μ))
+
+namespace PanelImageStructure
+
+/-- **Within-μ joint span equals the maximum chain element.**
+
+    From the chain hypothesis (`νStar_max`), every ν-block is
+    contained in the `νStar`-block, so `⨆ ν, W μ ν = W μ (νStar μ)`. -/
+theorem iSup_eq_νStar
+    {K : Type u} [Field K]
+    {V : Type v} [AddCommGroup V] [Module K V] [FiniteDimensional K V]
+    {μIdx : Type} [Fintype μIdx] [DecidableEq μIdx]
+    {νIdx : μIdx → Type} [∀ μ, Fintype (νIdx μ)]
+    {W : (μ : μIdx) → νIdx μ → Submodule K V}
+    [P : PanelImageStructure μIdx νIdx W] (μ : μIdx) :
+    (⨆ ν : νIdx μ, W μ ν) = W μ (P.νStar μ) :=
+  le_antisymm (iSup_le (P.νStar_max μ)) (le_iSup (W μ) (P.νStar μ))
+
+/-- **Within-μ finrank equals the chain-maximum's finrank.**
+
+    Combines `iSup_eq_νStar` with `finrank` (no monotonicity
+    needed since the supremum is literally the maximum element). -/
+theorem finrank_iSup_eq_νStar
+    {K : Type u} [Field K]
+    {V : Type v} [AddCommGroup V] [Module K V] [FiniteDimensional K V]
+    {μIdx : Type} [Fintype μIdx] [DecidableEq μIdx]
+    {νIdx : μIdx → Type} [∀ μ, Fintype (νIdx μ)]
+    {W : (μ : μIdx) → νIdx μ → Submodule K V}
+    [P : PanelImageStructure μIdx νIdx W] (μ : μIdx) :
+    Module.finrank K (⨆ ν : νIdx μ, W μ ν) =
+      Module.finrank K (W μ (P.νStar μ)) := by
+  rw [iSup_eq_νStar (P := P) μ]
+
+/-- **finrank-monotonicity over the within-μ chain.**
+
+    Since `W μ ν ≤ W μ (νStar μ)`, finrank is monotone on
+    sub-spaces of a finite-dimensional space, so every block's
+    finrank is at most the `νStar`-block's. -/
+theorem finrank_blockRank_le
+    {K : Type u} [Field K]
+    {V : Type v} [AddCommGroup V] [Module K V] [FiniteDimensional K V]
+    {μIdx : Type} [Fintype μIdx] [DecidableEq μIdx]
+    {νIdx : μIdx → Type} [∀ μ, Fintype (νIdx μ)]
+    {W : (μ : μIdx) → νIdx μ → Submodule K V}
+    [P : PanelImageStructure μIdx νIdx W] (μ : μIdx) (ν : νIdx μ) :
+    Module.finrank K (W μ ν) ≤ Module.finrank K (W μ (P.νStar μ)) :=
+  Submodule.finrank_mono (P.νStar_max μ ν)
+
+/-- **Within-μ finrank equals the sup-over-ν of block finranks.**
+
+    Combines the chain hypothesis (every block ≤ νStar-block) with
+    finrank monotonicity: the supremum's finrank equals the
+    νStar-block's finrank, which is also the maximum of the
+    individual ν-block finranks. -/
+theorem finrank_iSup_eq_finset_sup
+    {K : Type u} [Field K]
+    {V : Type v} [AddCommGroup V] [Module K V] [FiniteDimensional K V]
+    {μIdx : Type} [Fintype μIdx] [DecidableEq μIdx]
+    {νIdx : μIdx → Type} [∀ μ, Fintype (νIdx μ)]
+    {W : (μ : μIdx) → νIdx μ → Submodule K V}
+    [P : PanelImageStructure μIdx νIdx W] (μ : μIdx) :
+    Module.finrank K (⨆ ν : νIdx μ, W μ ν) =
+      (Finset.univ : Finset (νIdx μ)).sup
+        (fun ν => Module.finrank K (W μ ν)) := by
+  rw [finrank_iSup_eq_νStar (P := P) μ]
+  apply le_antisymm
+  · exact Finset.le_sup (f := fun ν => Module.finrank K (W μ ν))
+      (Finset.mem_univ (P.νStar μ))
+  · exact Finset.sup_le fun ν _ => finrank_blockRank_le μ ν
+
+end PanelImageStructure
 
 end QOU.BraidKnot
