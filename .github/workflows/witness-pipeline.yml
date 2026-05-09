@@ -293,12 +293,19 @@ jobs:
           # content/package.json by running with --cwd content.
           set -o pipefail
           # Baselines (re-baseline after each clean-up parcel):
-          # 2026-05-08 (latest): Buckets 1+2+3+4+5′ — total 111 → 62.
+          # 2026-05-08: Buckets 1+2+3+4+5′ — total 111 → 62.
           #   const_zero 38 → 34, skel_inst 21 → 12, prop_true 15 →  1
           #   (only InSymmetricIdempotent, per-callsite by design),
           #   punit_type 14 → 0 (B4 ✓), punit_unit 2 → 0 (B4 ✓),
           #   one_def 10 → 9, holds_trivial 8 → 4.  +2 buffer per
           #   pattern to absorb local/CI minor discrepancies.
+          # 2026-05-09: PR #607 (merge `48732e1d`) replaced the 12
+          #   `_holds := trivial` placeholders in `CanonicalKnotIdSDP`
+          #   with structurally-discharged `by decide` proofs
+          #   (`structurallyValidBinding`, `evenPower`, `length ≤ 4`).
+          #   Trivial-skeleton-audit `holds_trivial` count: 12 → 0.
+          #   Budget stays at 2 — bumping it would only hide
+          #   future regressions.
           #
           # Strict-gate (B6): the `|| true` mask has been dropped.
           # Any new trivial-skeleton occurrence beyond the budget
