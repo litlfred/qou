@@ -119,9 +119,13 @@ def main() -> int:
         )
         .add_assertion(
             "ell_K_q_monotone_in_A",
+            # Per Copilot review: actually test ∀ i,j: A_i ≤ A_j ⟹
+            # ℓ_i ≤ ℓ_j. Previous version skipped the neutron row and
+            # didn't compare across A levels.
             computed=1.0 if all(
-                rows[i]["ell_K_q"] >= rows[0]["ell_K_q"]
-                for i in range(2, len(rows))
+                ri["ell_K_q"] <= rj["ell_K_q"]
+                for ri in rows for rj in rows
+                if ri["A"] <= rj["A"]
             ) else 0.0,
             expected=1.0,
             tolerance=0.0,

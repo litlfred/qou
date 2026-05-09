@@ -232,9 +232,14 @@ def main():
         "durationMs": duration_ms,
     }
 
+    # Per Copilot review (#581): preserve the SnapPy engine metadata
+    # rather than overriding to "python".
     out_path = (WitnessBuilder.wrap_legacy(
         "knot-volumes", witness,
-        script_path=__file__, engine="python")
+        script_path=__file__,
+        engine="snappea",
+        engine_version=f"snappy {snappy.__version__}",
+        )
         .save())
     print(f"\nWitness written to {out_path}")
     print(f"All passed: {all_passed} ({len(assertions)} assertions, {duration_ms}ms)")
