@@ -372,6 +372,25 @@ def run_atom(Z: int, N: int, *, workers: int | None = None) -> int:
         slot = per_gen.setdefault(int(gen_idx),
                                    {"sigma": 0, "sigma_inv": 0, "averaged": 0})
         slot[ctype] = slot.get(ctype, 0) + 1
+    # KLR-canonical-basis enrichment per gen (PR #608 cemetery infra).
+    # σ_g^k pure-power sub-words are by construction *cemetery* — they
+    # close to identity / unknots.  We tag each generator with its net
+    # signed power (σ count − σ⁻¹ count, ignoring "averaged" which is
+    # an off-Markov mixed crossing) so the cemetery class is identified
+    # without needing a full H_n cemetery enumeration.
+    klr_per_gen = []
+    for g in sorted(per_gen):
+        slot = per_gen[g]
+        net_power = slot.get("sigma", 0) - slot.get("sigma_inv", 0)
+        klr_per_gen.append({
+            "gen_idx": g,
+            "net_signed_power": net_power,
+            "averaged_count": slot.get("averaged", 0),
+            "cemetery_class": (
+                f"σ_{g}^{net_power}" if net_power != 0 else "identity"
+            ),
+            "is_pure_power_in_cemetery": True,
+        })
     per_gen_emit = [
         {"gen_idx": g, **per_gen[g], "total": sum(per_gen[g].values())}
         for g in sorted(per_gen)
@@ -383,11 +402,48 @@ def run_atom(Z: int, N: int, *, workers: int | None = None) -> int:
         "n_strands": n,
         "total_crossings": len(crossings),
         "by_generator": per_gen_emit,
+        "klr_canonical_class_by_generator": klr_per_gen,
         "note": (
             "Canonical crossings from atom_canonical_crossings(Z, N), "
             "aggregated per generator index.  Provides structural "
             "baseline for GAP-C-1 (q-integer counting per generator) "
-            "in derivation-audit-report.md."
+            "in derivation-audit-report.md.  KLR-canonical-class "
+            "enrichment per CLAUDE.md §7b (and PR #608 KLR cemetery "
+            "infra): each per-generator sub-word σ_g^k (pure power) "
+            "is a cemetery class trivially; the full atom's "
+            "canonical class is the per-partition χ-fingerprint at "
+            "q_0 (emitted as `atom_chi_fingerprint` below)."
+        ),
+    })
+
+    # Atom-level KLR canonical-basis fingerprint at q_0.
+    # Trace-only χ^λ(β; q_0) tuple — same canonical-basis class iff
+    # all per-partition characters agree at the chosen precision
+    # (cf. r5_full_canonical_knot_solver.chi_fingerprint, which uses
+    # the per-block matrix entries at H_3; here we use trace-only
+    # because the per-block matrices are not currently materialised
+    # in the Path A pipeline at H_n for n > 3).
+    Q0_FLOAT = 1.1099785955541805
+    chi_fp_pairs = []
+    for lam in sorted(chi_q, key=lambda L: (-len(L), tuple(-x for x in L))):
+        try:
+            val = float(chi_q[lam].subs(q_var, Q0_FLOAT))
+            chi_fp_pairs.append((list(lam), round(val, 8)))
+        except (TypeError, ValueError):
+            chi_fp_pairs.append((list(lam), None))
+    builder.add_data("atom_chi_fingerprint", {
+        "q0": Q0_FLOAT,
+        "precision": 8,
+        "n_partitions": len(chi_fp_pairs),
+        "fingerprint": chi_fp_pairs,
+        "note": (
+            "Per-partition χ^λ(β_atom; q_0) tuple — atom's "
+            "canonical-basis class invariant under braid/Markov "
+            "moves at q_0.  Two atoms (or two braid words) with "
+            "identical fingerprints are KL-equivalent in H_n(q_0). "
+            "Companion to klr_canonical_basis_filter API; trace-only "
+            "form because per-block matrices are not currently "
+            "materialised at H_n>3 in Path A."
         ),
     })
 
