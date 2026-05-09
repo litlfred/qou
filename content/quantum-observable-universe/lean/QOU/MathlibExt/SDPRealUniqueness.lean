@@ -201,6 +201,56 @@ theorem real_strict_complementarity_optimum_subsingleton
   rw [real_strict_complementarity_unique sc h₁_feas h₁_obj,
       real_strict_complementarity_unique sc h₂_feas h₂_obj]
 
+/-! ## §3.05  Active-empty closure (full proof, sorry-free)
+
+When the active set is empty, every dual variable is zero
+(`inactive_dual_zero` applied to all indices), so the dual slack
+`S(y*) = T − Σ y*_i A_i = T − 0 = T = cost`.  Adding the
+hypothesis that `T = cost` is PosDef (which is the QOU-relevant
+case for ³He's interior optimum), the active-empty closure
+reduces directly to `_unique_of_dualSlack_posDef`.
+
+This is **another sorry-free closure** of the categorical
+uniqueness theorem, complementing batch 12's interior-case
+closure with an explicit "active set empty" handle that
+downstream code can invoke when the empirical witness reports
+`active = ∅`. -/
+
+/-- **Uniqueness when the active set is empty + cost PosDef.**
+
+    Closed proof via `_unique_of_dualSlack_posDef` after
+    rewriting `dualSlack = cost`. -/
+theorem real_strict_complementarity_unique_of_active_empty_and_cost_posDef
+    {sdp : SDPPrimal n ℝ ι}
+    (sc : RealStrictComplementarityPair sdp)
+    (h_active_empty : sc.active = ∅)
+    (h_cost_posDef : sdp.cost.PosDef)
+    {Φ' : Matrix (Fin n) (Fin n) ℝ}
+    (h_feas : sdp.IsFeasible Φ')
+    (h_obj : sdp.objAt Φ' = sdp.objAt sc.Φstar) :
+    Φ' = sc.Φstar := by
+  -- Step 1: empty active set ⟹ all dual variables are zero.
+  have h_ystar_zero : ∀ i : ι, sc.ystar i = 0 := by
+    intro i
+    apply sc.inactive_dual_zero
+    rw [h_active_empty]
+    exact Set.notMem_empty _
+  -- Step 2: dualSlack ystar = cost (all summands vanish).
+  have h_dualSlack_eq_cost : sdp.dualSlack sc.ystar = sdp.cost := by
+    unfold SDPPrimal.dualSlack
+    have h_sum_zero : (∑ i, sc.ystar i • sdp.constraint i) = 0 := by
+      apply Finset.sum_eq_zero
+      intro i _
+      rw [h_ystar_zero i, zero_smul]
+    rw [h_sum_zero, sub_zero]
+  -- Step 3: cost PosDef ⟹ dualSlack PosDef.
+  have h_S_posDef : (sdp.dualSlack sc.ystar).PosDef := by
+    rw [h_dualSlack_eq_cost]
+    exact h_cost_posDef
+  -- Step 4: apply the interior-case closure.
+  exact real_strict_complementarity_unique_of_dualSlack_posDef
+    sc.toRealStrongDualityPair h_S_posDef h_feas h_obj
+
 /-! ## §3.1  Interior-optimum closure (active set empty)
 
 When the active set is empty (the optimum lies in the strict
