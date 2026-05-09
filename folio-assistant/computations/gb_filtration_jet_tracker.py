@@ -74,6 +74,7 @@ import sys as _p25_sys
 from pathlib import Path as _P25Path
 _p25_sys.path.insert(0, str(_P25Path(__file__).parent))
 from witness_polynomial import expose_polynomial  # noqa: F401
+from witness_base import WitnessBuilder  # noqa: E402
 
 
 # ───────────────────────────────────────────────────────────────────
@@ -264,16 +265,21 @@ def reduce_braid(name: str, n: int, word: list, expected: Optional[dict] = None)
     # Verify expected if provided
     actual_filtration = {grade: len(cert[grade]) for grade in cert}
     print(f"\n──── filtration shape ──── {actual_filtration}")
+    expected_pass: Optional[bool] = None
     if expected is not None:
         if actual_filtration == expected:
             print(f"  ✓ matches expected: {expected}")
+            expected_pass = True
         else:
             print(f"  ✗ expected {expected}, got {actual_filtration}")
+            expected_pass = False
 
     return {
         "name": name,
         "n": n,
         "word": list(word),
+        "expected_filtration": expected,
+        "expected_pass": expected_pass,
         "filtration_certificate": {
             str(grade): [
                 {"perm": list(w), "canonical_word": list(perm_to_canonical_word(w)),
@@ -302,9 +308,6 @@ def reduce_braid(name: str, n: int, word: list, expected: Optional[dict] = None)
 
 
 def main():
-    base = Path(__file__).parent
-    out_path = base / "gb-filtration-jet-order.witness.json"
-
     cases = []
 
     # Test 1: ELECTRON  σ_1^3 in H_2.
@@ -355,11 +358,11 @@ def main():
 
     # ── ITEM-3 EXTENSION (post-#580 batch): H_n for n ≥ 4 ──────────
     #
-    # Per `gb_filtration_jet_tracker_extension_plan.md`, extending
-    # the tracker to H_4 and beyond unlocks the canonical T_w for
-    # multi-nucleon atomic-braid closures. The reducer machinery is
-    # already polymorphic in n; we add test cases to verify
-    # behaviour at n ∈ {4, 5, 6}.
+    # Per `docs/audits/2026-05-09-item3-tier-a-batch-status.md` §1,
+    # extending the tracker to H_4 and beyond unlocks the canonical
+    # T_w for multi-nucleon atomic-braid closures. The reducer
+    # machinery is already polymorphic in n; we add test cases to
+    # verify behaviour at n ∈ {4, 5, 6}.
 
     # H_4 stabilisation of electron (σ_1^3): same closure (3_1
     # trefoil + 2 disjoint unknots from the extra strands).
@@ -444,9 +447,15 @@ def main():
         ),
     }
 
+    # Aggregate expected-pass results across all cases. Any False is
+    # a hard failure: exit non-zero so CI / local runs catch the
+    # regression rather than silently shipping an incorrect expected
+    # filtration shape (per Copilot review on PR #586).
+    failures = [c for c in cases
+                if c.get("expected_pass") is False]
+
     witness = {
         "computation": "gb-filtration-jet-order",
-        "computedAt": datetime.now(timezone.utc).isoformat(),
         "description": (
             "Proof-of-concept GB-filtration + jet-order tracker for the "
             "Iwahori-Hecke algebra H_n(q).  Provides the data model that "
@@ -481,6 +490,14 @@ def main():
         "test_cases": cases,
         "summary": {
             "n_cases": len(cases),
+            "n_cases_with_expected": sum(
+                1 for c in cases if c.get("expected_filtration") is not None
+            ),
+            "n_expected_pass": sum(
+                1 for c in cases if c.get("expected_pass") is True
+            ),
+            "n_expected_fail": len(failures),
+            "all_expected_pass": len(failures) == 0,
             "max_steps_in_any_case": max(c["n_steps"] for c in cases),
             "max_grade_observed": max(
                 int(g) for c in cases for g in c["filtration_certificate"]
@@ -494,12 +511,24 @@ def main():
         },
     }
 
-    with open(out_path, "w") as f:
-        json.dump(witness, f, indent=2, ensure_ascii=False)
-    print(f"\n→ wrote {out_path}")
+    saved_path = (
+        WitnessBuilder.wrap_legacy(
+            "gb-filtration-jet-order", witness,
+            script_path=__file__, engine="sympy",
+        )
+        .save()
+    )
+    print(f"\n→ wrote {saved_path}")
     print(f"  cases: {witness['summary']['n_cases']}")
     print(f"  max steps: {witness['summary']['max_steps_in_any_case']}")
     print(f"  max filtration grade: {witness['summary']['max_grade_observed']}")
+
+    if failures:
+        print(f"\n✗ {len(failures)} test case(s) failed expected-shape check:")
+        for c in failures:
+            print(f"    - {c['name']}: expected {c['expected_filtration']}, "
+                  f"got {c['filtration_shape']}")
+        sys.exit(1)
 
 
 if __name__ == "__main__":

@@ -89,7 +89,8 @@ as class-scaffolded with explicit Mathlib-upstream / theorem-bound
 gaps; no "fake" instances were authored, and `α_5 fit → derived`
 is now reachable via Term-7 χ_5 + canonical T_w through H_6.
 
-GitHub blob URLs (push pending):
+Affected files (relative paths):
 
-- https://github.com/litlfred/qou/blob/claude/item3-mathlib-tier-a-batch/folio-assistant/computations/gb_filtration_jet_tracker.py
-- https://github.com/litlfred/qou/blob/claude/item3-mathlib-tier-a-batch/docs/audits/2026-05-09-item3-tier-a-batch-status.md
+- [`folio-assistant/computations/gb_filtration_jet_tracker.py`](../../folio-assistant/computations/gb_filtration_jet_tracker.py)
+- [`folio-assistant/computations/gb-filtration-jet-order.witness.json`](../../folio-assistant/computations/gb-filtration-jet-order.witness.json)
+- [`docs/audits/2026-05-09-item3-tier-a-batch-status.md`](2026-05-09-item3-tier-a-batch-status.md)
