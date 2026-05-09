@@ -31,37 +31,60 @@ maximizing $|y_\lambda(q_0) \cdot \chi_\lambda(T_w)|$
 $d_\lambda$ is the number of standard Young tableaux of shape
 $\lambda$ (hook-length formula).*
 
-## Evidence
+## Evidence (heuristic, pre-binding-K refinement)
 
-The SDP witnesses for all four currently identified particles give:
+The SDP witnesses for all four currently identified particles give the
+following heuristic table.  **Caveat (issue #604, deliverable 4):** the
+"Dominant $\lambda^*$" entries here are *conjectural* and were
+populated before the H_{3·A} binding-K analysis below; they are kept
+for historical reference and reconciliation with the older narrative.
+The numerically verified rule (see "Critical structural finding" below)
+must be evaluated at the atomic strand count $n_0 = 3 \cdot A$:
 
-| Particle | Knot | $n_0$ | Dominant $\lambda^*$ | $\dim_q(\lambda^*)$ at $q_0$ | Obs.\ $\rho$ |
-|----------|------|-------|---------------------|------------------------------|--------------|
-| Proton/neutron | trefoil $3_1$ | $3$ | $(2,1)$ | $[2]_{q_0} \approx 2.22$ → rounded $\rho = 1$? | $1$ |
-| Deuterium $^2$H | $6_2$ | $6$ | $(3,2,1)$ | $[5]_{q_0}/\cdots \approx 1.0$? | $1$ |
-| Tritium $^3$H | $8_{11}$ | $6$ | $(3,3)$ | $[2]_{q_0} \approx 2.22$ → $\rho = 2$ | $2$ |
-| Helium-3 $^3$He | $L_{6a4}$ | $6$ | $(3,3)$ | $[2]_{q_0} \approx 2.22$ → $\rho = 2$ | $2$ |
+| Particle | Knot | $n_0 = 3\cdot A$ | Conjectural dominant $\lambda^*$ | $\dim_q(\lambda^*)$ at $q_0$ | Obs.\ $\rho$ |
+|----------|------|------------------|----------------------------------|------------------------------|--------------|
+| Proton/neutron | trefoil $3_1$ | $3$ ($A=1$) | $(2,1)$ | $[2]_{q_0} \approx 2.01$ → $\rho = 1$ (hook special case) | $1$ |
+| Deuterium $^2$H | $6_2$ | $6$ ($A=2$) | $(3,2,1)$ | $\approx 1.0$ | $1$ |
+| Tritium $^3$H | $8_{11}$ | $9$ ($A=3$) | $(3,3,3)$ (conjectural) | $\approx 2.0$ → $\rho = 2$ | $2$ |
+| Helium-3 $^3$He | $L_{6a4}$ | $9$ ($A=3$) | $(3,3,3)$ (conjectural) | $\approx 2.0$ → $\rho = 2$ | $2$ |
 
-The pattern $\rho = \lfloor\dim_q(\lambda^*)\rceil$ (nearest integer
-rounding) is consistent with all known cases, but the rule relating
-$\lambda^*$ to $(2,1)$ vs.\ $(3,3)$ as the dominant summand has not
-been derived from first principles.
+The earlier draft of this table (pre-deliverable-4) listed
+$n_0 = 6$ for ³H/³He, which conflicted with the joint-tower SDP
+convention $n_0 = 3 \cdot A$ used in
+[`prop:joint-tower-sdp-confinement`](#prop:joint-tower-sdp-confinement)
+and in
+[`joint-tower-sdp-h6-h9.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/joint-tower-sdp-h6-h9.witness.json)
+(`atomic_n_0 = 9` for ³H, ³He).  This table is now reconciled to
+$n_0 = 3 \cdot A$.  The conjectural $\lambda^* \vdash 9$ entries
+remain to be verified once Hoefsmit at $H_9$ is implemented (deferred
+— see "Critical structural finding" below).
+
+The pattern $\rho = \mathrm{round}[\dim_q(\lambda^*)]$ (nearest-integer
+rounding) is consistent with the four known cases under the
+hook-special-case caveat; the rule relating $\lambda^*$ to specific
+shapes has not been derived from first principles.
 
 ## The rounding question
 
 The exact quantum dimension $[2]_{q_0} = q_0 + q_0^{-1} \approx 2.01$
 (with $q_0 \approx 1.1097$), so $\dim_q((2,1)) \approx 2.01$.  The
-floor gives $\rho = 2$, but the proton/neutron uses $\rho = 1$.  This
-suggests the rule may be:
+nearest-integer round gives $\rho = 2$, but the proton/neutron uses
+$\rho = 1$.  This suggests the rule may be:
 
 $$
   \rho(\mathfrak{H})
   \;=\;
   \begin{cases}
     1 & \text{if $\lambda^*$ is the hook partition $(n_0-1, 1)$,} \\
-    \lfloor\dim_q(\lambda^*)\rceil & \text{otherwise.}
+    \mathrm{round}[\dim_q(\lambda^*)] & \text{otherwise.}
   \end{cases}
 $$
+
+(The symbol $\lfloor \cdot \rceil$ in earlier drafts denotes
+*round-to-nearest*, not floor.  The Lean class
+[`conj-rho-prefactor-structural.lean`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/conj-rho-prefactor-structural.lean)
+encodes this as the inequality
+$|\rho - \dim_q(\lambda^*)| \leq 1/2$.)
 
 Alternatively, the correct $\rho$ may count the number of
 **orthogonal Wedderburn copies** that fit inside the SDP feasible
