@@ -105,15 +105,25 @@ def build() -> DerivationChain:
     steps.append(DerivationStep(
         name="Atomic-braid recipe for T_w_n — chain reference",
         operation=(
-            "Reference `atomic-braid-recipe-n.derivation.json`: T_w_n "
-            "is the canonical 11-crossing σ-word for the neutron, "
-            "derived from quark content (u, d, d) + B₃ confinement + "
-            "pairwise crossings + ILP gluon term.  Type breakdown "
-            "{σ: 5, σ^{-1}: 4, averaged: 2}.  In the legacy 5-letter "
-            "convention used downstream (steps 5–7), this corresponds "
-            "to n_+=3, n_-=2 — the trivial / sign characters depend "
-            "only on σ vs σ^{-1} parity, so averaged crossings "
-            "(parity-neutral) do not affect q^{±(n_+ − n_-)}."
+            "Reference `atomic-braid-recipe-n.derivation.json`: the "
+            "canonical neutron σ-word is 11 crossings with type "
+            "breakdown {σ: 5, σ^{-1}: 4, averaged: 2}, derived from "
+            "quark content (u, d, d) + B₃ confinement + pairwise "
+            "crossings + ILP gluon term.  NOTE: Steps 5–7 below "
+            "compute χ^(3), χ^(2,1), χ^(1,1,1) under a LEGACY "
+            "5-letter σ-word convention (T_w_n = σ_1 σ_1^{-1} σ_2 "
+            "σ_1 σ_2^{-1}, n_+=3, n_-=2), with NO averaged "
+            "crossings.  The canonical convention's averaged factor "
+            "(σ − h/2·1 acts as q − h/2 = (q + q^{-1})/2 on the "
+            "1-dim trivial rep, and as -q^{-1} − h/2 = -(q + q^{-1})/2 "
+            "on the sign rep) is NOT applied in those steps; the "
+            "two conventions therefore yield symbolically different "
+            "χ^λ values.  The chain's leaf at q_0 (step 9) is "
+            "hardcoded against TR_M_AT_Q0 (which uses the canonical "
+            "convention via markov_trace_symbolic), so the symbolic "
+            "intermediate is illustrative-only under the legacy "
+            "convention.  Reconciling steps 5–7 with the canonical "
+            "convention is open frontier."
         ),
         inputs=["partitions_of_3", FirstPrinciple.HECKE_ENERGY.value],
         output_name="T_w_n",

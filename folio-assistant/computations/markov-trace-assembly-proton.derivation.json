@@ -75,7 +75,7 @@
       "jet_order": 0,
       "gb_filtration_level": 0,
       "citation": "kassel1995",
-      "notes": "1-dim rep; trace is a monomial in q.  No script needed.  Atomic-braid recipe: see `atomic-braid-recipe-p.derivation.json` (11-crossing canonical σ-word with breakdown {σ: 6, σ^{-1}: 3, averaged: 2}).  In the legacy 6-letter convention used in the operation field above, this corresponds to n_+=6, n_-=0 — the trivial / sign 1-dim characters depend only on the (σ, σ^{-1}) parity, so averaged crossings (which are inverse-parity-neutral) do not affect the closed-form q^{±6}."
+      "notes": "1-dim rep; under the LEGACY 6-letter σ-word convention (T_w_p = σ_1 σ_2 σ_1 σ_2 σ_1 σ_2, all positive, n_+=6, n_-=0) χ^(3)_q(T_w_p) = q^6.  CAVEAT: under the CANONICAL convention from `atomic-braid-recipe-p.derivation.json` (11 crossings = 6 σ + 3 σ^{-1} + 2 averaged), the same trivial rep evaluates differently: each averaged crossing (σ − h/2·1) acts as (q + q^{-1})/2 on the trivial rep (from σ ↦ +q ⇒ σ − h/2 ↦ q − (q − q^{-1})/2 = (q + q^{-1})/2), and each σ^{-1} acts as q^{-1}.  The two conventions therefore give different symbolic χ^(3) values; the chain leaf at q_0 is hardcoded against TR_M_AT_Q0 (canonical numerics via markov_trace_symbolic), so this legacy-convention monomial is illustrative.  Reconciling this step with the canonical convention is open frontier."
     },
     {
       "name": "Hoefsmit rep χ^(2,1)_q on proton braid word",
