@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T00:23:03.121824+00:00",
-  "commitSha": "35c41016513fe42e374b84159eb4bedd42c0fe9b",
+  "computedAt": "2026-05-09T00:41:40.727951+00:00",
+  "commitSha": "dbf5bb825b69396a95d4e08500f4a1121aa5bf10",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -438,7 +438,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 1,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
@@ -1413,6 +1413,7 @@
         "habiro-frobenius-probe.witness.json",
         "habiro-interpolate-cross-validation.witness.json",
         "habiro-motivic-orbit-relations.witness.json",
+        "habiro-tail-in-ideal-validation.witness.json",
         "hadron-knot-table.witness.json",
         "hecke-core-symbolic-migration.witness.json",
         "hh-trefoil-corrected.witness.json",
