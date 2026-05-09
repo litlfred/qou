@@ -66,7 +66,7 @@ structure QLocalSystem (M : Type*) where
   /-- The underlying substrate parameter family. -/
   sp : SubstrateParameter M
   /-- The representation type at each point (fibre of the local system). -/
-  fibreAt : M → Type*
+  fibreAt : M → Type
   /-- The monodromy endomorphism acting on the fibre at each point. -/
   monodromy : ∀ (p : M), fibreAt p → fibreAt p
   /-- q-monodromy residue: the `Ω_q(ρ)` term. -/
@@ -190,7 +190,7 @@ structure QLanglandsDual (M : Type*) where
   substrate_inverted : ∀ (p : M),
     dualSubstrate.field p = (gaugeGroup.field p)⁻¹
   /-- The dual group at each point. -/
-  dualGroupAt : M → Type*
+  dualGroupAt : M → Type
 
 /-- The Langlands involution preserves positivity: `q > 0 → q⁻¹ > 0`. -/
 theorem langlands_dual_pos {M : Type*} (ld : QLanglandsDual M)
