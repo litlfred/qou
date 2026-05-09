@@ -1,6 +1,15 @@
 #!/usr/bin/env python3
 """
-Atomic braid recipe — disjoint construction at ⁴He.
+Atomic braid recipe — disjoint construction at ⁴He.  **LEGACY
+CONVENTION** — see `build_atomic_braid_recipe_canonical_chain.py`
+for the canonical / SDP convention with averaged crossings I = σ −
+(h/2)·1.  This builder is kept for parity with
+`atomic_braid_gb_filtration_extension` (legacy bare-int word format
+consumed by `gb_filtration_jet_tracker.reduce_braid` and the
+`term7_alpha5_crystal_derivation.crystal_chi_lambda` crystal-limit
+function — neither tool yet handles averaged crossings, see
+`docs/audits/canonical-convention-migration-plan.md`); new
+production work should consume the canonical chain instead.
 
 Discharges (partially) the SCRIPT_CITED `atomic-braid-recipe-X`
 frontier called out as item #1 in `DERIVATION-CHAIN-METHODOLOGY.md`.

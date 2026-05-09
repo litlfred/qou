@@ -1,5 +1,5 @@
 {
-  "target": "T_w(deuteron) ∈ B_{6} (canonical/SDP)",
+  "target": "T_w(deuteron) ∈ B_{6} (canonical operator-valued)",
   "target_value": [
     [
       0,
@@ -96,7 +96,7 @@
   ],
   "target_tolerance": 0.0,
   "content_block": "prop:atomic-mass-gb-nf",
-  "description": "Atomic-braid recipe for deuteron in the canonical operator-valued convention (`canonical_braid_crossings.atom_canonical_crossings(1, 1)` — SDP-confirmed by PR #608's `r5_full_canonical_knot_solver`).  23 crossings on 6 strands.  Trust profile {axiom: 2, derived: 3, script-cited: 3}.  Replaces (in the canonical convention) the SCRIPT_CITED `atomic-braid-recipe-d` step in the per-atom mass-trace chains; closure of `conj:canonical-knot-id-sdp` (issue #604 GAP-A-1) upgrades all three SCRIPT_CITED steps to LEAN_PROVEN simultaneously.  Companion to the legacy-disjoint variant `atomic-braid-recipe-4he.derivation.json`; the two conventions differ at the per-irrep χ values for Hoefsmit (2,1) and reconciliation is open frontier.",
+  "description": "Atomic-braid recipe for deuteron in the canonical operator-valued convention (`canonical_braid_crossings.atom_canonical_crossings(1, 1)`).  Status: SDP-optimum verified for deuteron via PR #608's `r5_full_canonical_knot_solver` (the canonical word lies in the LP-optimum class for the (Z = 1, N = 1) atom under the operator-selection LP).  23 crossings on 6 strands.  Trust profile {axiom: 2, derived: 3, script-cited: 3}.  Canonical companion to the per-atom mass-trace `atomic-braid-recipe-d` SCRIPT_CITED step declared in PR #605's `markov-trace-assembly-deuteron.derivation.json`; that consumer does not yet reference this artifact, so the SCRIPT_CITED step there remains pending until the reference is wired up downstream.  Closure of `conj:canonical-knot-id-sdp` (issue #604 GAP-A-1) upgrades all three SCRIPT_CITED steps to LEAN_PROVEN simultaneously, at which point the legacy-disjoint variant can be deleted in favour of this chain.",
   "steps": [
     {
       "name": "Categorical R-matrix action of B_{6} on V^{⊗6}",
@@ -243,12 +243,12 @@
     },
     {
       "name": "Inter-nucleon averaged crossing rule",
-      "operation": "For atoms with `A ≥ 2`, the inter-block crossing at generator `3k + 2` (where `k = 1..A-1`) is the averaged operator `I_{3k+2} := σ_{3k+2} − (h/2) · 1`, encoding the `pp`, `pn`, `nn` channel selection of `prop:hecke-branching-trace-decomposition`.  For single-nucleon atoms (A = 1) this step contributes no crossings; for the deuteron (A = 2, pn channel), it contributes one averaged crossing at gen 2.",
+      "operation": "For atoms with `A ≥ 2`, the inter-block crossing between nucleon blocks `k` and `k + 1` sits at the 0-indexed generator `3k − 1` (for `k = 1..A − 1`); it is the averaged operator `I_{3k−1} := σ_{3k−1} − (h/2) · 1`, encoding the `pp`, `pn`, `nn` channel selection of `prop:hecke-branching-trace-decomposition`.  For single-nucleon atoms (A = 1) this step contributes no crossings; for the deuteron (A = 2, pn channel) it contributes one averaged crossing at gen_idx 2.",
       "inputs": [
         "nucleon_in_V3"
       ],
       "output_name": "inter_nucleon_rule",
-      "output_value": "I_{3k+2} := σ_{3k+2} − (h/2)·1, k = 1..A-1",
+      "output_value": "I_{3k−1} := σ_{3k−1} − (h/2)·1, k = 1..A − 1 (0-indexed gen_idx)",
       "trust_basis": "script-cited",
       "jet_order": 0,
       "citation": "manuscript:§Hecke-branching-trace-decomposition",
@@ -256,18 +256,18 @@
     },
     {
       "name": "Disjoint-block embedding B_3 ↪ B_{6}",
-      "operation": "For an atom with `A = 2` nucleons, the disjoint-strand embedding `B_3 ↪ B_{6}` for the `k`-th nucleon block (`k = 1..2`) is the index shift `σ_i ↦ σ_{i + 3(k - 1)}` extended sign-preservingly to negatives and to the averaged crossings.  Standard disjoint-product structure of the braid group: blocks of strands `3(k-1)+1, ..., 3k` are independently braided.",
+      "operation": "For an atom with `A = 2` nucleons, the disjoint-strand embedding `B_3 ↪ B_{6}` for the `k`-th nucleon block (`k = 1..2`) is the index shift `σ_i ↦ σ_{i + 3(k - 1)}` extended sign-preservingly to negatives and to the averaged crossings.  Generators are **0-indexed** here to match the `(gen_idx, ctype)` output of `canonical_braid_crossings.atom_canonical_crossings`; so `i, gen_idx ∈ {0, 1}` for the in-block generators of `B_3` and `gen_idx + 3(k-1) ∈ {0, 1, ..., 4}` for the embedded `B_{6}` generators (i.e. σ_g ranges over `g ∈ {0, ..., 4}`).  Standard disjoint-product structure of the braid group: blocks of strands `3(k-1), ..., 3k - 1` are independently braided.",
       "inputs": [
         "cat_action_general"
       ],
       "output_name": "disjoint_embedding",
-      "output_value": "(σ_i, k) ↦ σ_{i + 3(k - 1)}, k = 1..2",
+      "output_value": "(σ_i, k) ↦ σ_{i + 3(k - 1)}, k = 1..2 (0-indexed gen_idx)",
       "trust_basis": "derived",
       "jet_order": 0
     },
     {
       "name": "Atom assembly rule T_w(deuteron) ∈ B_{6}",
-      "operation": "Combine steps 3–6 into the atom assembly:\n  T_w(Z = 1, N = 1) := \n    ∏_{k=1}^1 (proton word shifted by block k) ∘\n    ∏_{k=Z+1}^{2} (neutron word shifted by block k) ∘\n    ∏_{k=1}^{2-1} (inter-nucleon averaged crossing at generator 3k+2).\nPure algebra: sequence of disjoint-block + interface crossings concatenated in B_{6}.",
+      "operation": "Combine steps 3–6 into the atom assembly:\n  T_w(Z = 1, N = 1) := \n    ∏_{k=1}^1 (proton word shifted by block k) ∘\n    ∏_{k=Z+1}^{2} (neutron word shifted by block k) ∘\n    ∏_{k=1}^{2-1} (inter-nucleon averaged crossing at 0-indexed generator 3k − 1).\nPure algebra: sequence of disjoint-block + interface crossings concatenated in B_{6}.",
       "inputs": [
         "proton_canonical_word",
         "neutron_canonical_word",

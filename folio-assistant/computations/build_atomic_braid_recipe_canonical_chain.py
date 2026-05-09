@@ -61,11 +61,21 @@ from canonical_braid_crossings import atom_canonical_crossings  # noqa: E402
 HERE = Path(__file__).parent
 
 # ── Atom registry ───────────────────────────────────────────────
-# Each entry: (slug, label, Z, N)
+# Each entry: (slug, label, Z, N).  ⁴He is the canonical-convention
+# successor to the legacy `atomic-braid-recipe-4he.derivation.json`
+# chain (which uses the bare-int disjoint-product format from
+# `atomic_braid_gb_filtration_extension`); the canonical word at
+# (Z=2, N=2) carries averaged crossings I = σ − (h/2)·1 not present
+# in the legacy form.  Note: PR #608's r5_full_canonical_knot_solver
+# currently SDP-confirms only A ≤ 3 (D, ³He, T deferred to B_5
+# Hoefsmit); the ⁴He canonical word is generated via the same
+# `mass_at_3A_proper.atom_braid_word_3A` pipeline but without
+# explicit SDP optimum verification.
 ATOMS = [
-    ("p", "proton",   1, 0),
-    ("n", "neutron",  0, 1),
-    ("d", "deuteron", 1, 1),
+    ("p",   "proton",   1, 0),
+    ("n",   "neutron",  0, 1),
+    ("d",   "deuteron", 1, 1),
+    ("4he", "⁴He",      2, 2),
 ]
 
 
@@ -183,18 +193,20 @@ def build_chain(slug: str, label: str, Z: int, N: int) -> DerivationChain:
     steps.append(DerivationStep(
         name="Inter-nucleon averaged crossing rule",
         operation=(
-            "For atoms with `A ≥ 2`, the inter-block crossing at "
-            "generator `3k + 2` (where `k = 1..A-1`) is the "
-            "averaged operator `I_{3k+2} := σ_{3k+2} − (h/2) · 1`, "
-            "encoding the `pp`, `pn`, `nn` channel selection of "
+            "For atoms with `A ≥ 2`, the inter-block crossing "
+            "between nucleon blocks `k` and `k + 1` sits at the "
+            "0-indexed generator `3k − 1` (for `k = 1..A − 1`); it "
+            "is the averaged operator "
+            "`I_{3k−1} := σ_{3k−1} − (h/2) · 1`, encoding the "
+            "`pp`, `pn`, `nn` channel selection of "
             "`prop:hecke-branching-trace-decomposition`.  For "
             "single-nucleon atoms (A = 1) this step contributes no "
-            "crossings; for the deuteron (A = 2, pn channel), it "
-            "contributes one averaged crossing at gen 2."
+            "crossings; for the deuteron (A = 2, pn channel) it "
+            "contributes one averaged crossing at gen_idx 2."
         ),
         inputs=["nucleon_in_V3"],
         output_name="inter_nucleon_rule",
-        output_value="I_{3k+2} := σ_{3k+2} − (h/2)·1, k = 1..A-1",
+        output_value="I_{3k−1} := σ_{3k−1} − (h/2)·1, k = 1..A − 1 (0-indexed gen_idx)",
         trust_basis=TrustBasis.SCRIPT_CITED,
         citation="manuscript:§Hecke-branching-trace-decomposition",
         jet_order=0,
@@ -218,13 +230,20 @@ def build_chain(slug: str, label: str, Z: int, N: int) -> DerivationChain:
             f"`k`-th nucleon block (`k = 1..{A}`) is the index "
             f"shift `σ_i ↦ σ_{{i + 3(k - 1)}}` extended sign-"
             f"preservingly to negatives and to the averaged "
-            f"crossings.  Standard disjoint-product structure of "
-            f"the braid group: blocks of strands `3(k-1)+1, ..., "
-            f"3k` are independently braided."
+            f"crossings.  Generators are **0-indexed** here to match "
+            f"the `(gen_idx, ctype)` output of "
+            f"`canonical_braid_crossings.atom_canonical_crossings`; "
+            f"so `i, gen_idx ∈ {{0, 1}}` for the in-block generators "
+            f"of `B_3` and `gen_idx + 3(k-1) ∈ {{0, 1, ..., {n_strands - 2}}}` "
+            f"for the embedded `B_{{{n_strands}}}` generators (i.e. "
+            f"σ_g ranges over `g ∈ {{0, ..., {n_strands - 2}}}`).  "
+            f"Standard disjoint-product structure of the braid group: "
+            f"blocks of strands `3(k-1), ..., 3k - 1` are "
+            f"independently braided."
         ),
         inputs=["cat_action_general"],
         output_name="disjoint_embedding",
-        output_value=f"(σ_i, k) ↦ σ_{{i + 3(k - 1)}}, k = 1..{A}",
+        output_value=f"(σ_i, k) ↦ σ_{{i + 3(k - 1)}}, k = 1..{A} (0-indexed gen_idx)",
         trust_basis=TrustBasis.DERIVED,
         jet_order=0,
     ))
@@ -237,7 +256,8 @@ def build_chain(slug: str, label: str, Z: int, N: int) -> DerivationChain:
             f"  T_w(Z = {Z}, N = {N}) := \n"
             f"    ∏_{{k=1}}^{Z} (proton word shifted by block k) ∘\n"
             f"    ∏_{{k=Z+1}}^{{{A}}} (neutron word shifted by block k) ∘\n"
-            f"    ∏_{{k=1}}^{{{A}-1}} (inter-nucleon averaged crossing at generator 3k+2).\n"
+            f"    ∏_{{k=1}}^{{{A}-1}} (inter-nucleon averaged crossing "
+            f"at 0-indexed generator 3k − 1).\n"
             f"Pure algebra: sequence of disjoint-block + interface "
             f"crossings concatenated in B_{{{n_strands}}}."
         ),
@@ -268,8 +288,63 @@ def build_chain(slug: str, label: str, Z: int, N: int) -> DerivationChain:
         jet_order=0,
     ))
 
+    # PR #608's r5_full_canonical_knot_solver only runs the SDP
+    # search for D (Z=1, N=1, A=2) and ³He (Z=2, N=1, A=3) per its
+    # stated prototype scope.  Other atoms — proton, neutron, T,
+    # ⁴He — have canonical-pipeline-generated words but are NOT
+    # directly SDP-optimum-verified by the solver.
+    SDP_DIRECTLY_VERIFIED = {(1, 1), (2, 1)}
+    if (Z, N) in SDP_DIRECTLY_VERIFIED:
+        sdp_status = (
+            f"SDP-optimum verified for {label} via PR #608's "
+            f"`r5_full_canonical_knot_solver` (the canonical word "
+            f"lies in the LP-optimum class for the (Z = {Z}, N = {N}) "
+            f"atom under the operator-selection LP)"
+        )
+    elif (Z, N) in {(1, 0), (0, 1)}:
+        sdp_status = (
+            f"the {label} canonical word is a single-nucleon "
+            f"component of the SDP-verified D / ³He assemblies "
+            f"(PR #608's solver runs on the multi-nucleon atoms "
+            f"and consumes the proton / neutron words as inputs); "
+            f"the solver does not run directly at the single-"
+            f"nucleon level (Z = {Z}, N = {N}, A = 1)"
+        )
+    else:
+        sdp_status = (
+            f"the convention is SDP-confirmed for D / ³He via "
+            f"PR #608's `r5_full_canonical_knot_solver`; the "
+            f"{label} word is generated by the same canonical "
+            f"pipeline (`mass_at_3A_proper.atom_braid_word_3A`) "
+            f"but is not yet SDP-optimum-verified at A = {A} "
+            f"(solver scope: A ≤ 3 with B_5 Hoefsmit pending for T)"
+        )
+
+    # Per-atom companion text — replaces the previous templated
+    # "(when ...)" conditionals that produced false / tautological
+    # text in the emitted artifacts.
+    if slug == "4he":
+        companion_text = (
+            "Canonical companion to the legacy-disjoint "
+            "`atomic-braid-recipe-4he.derivation.json`; the legacy "
+            "variant is retained for parity with the GS-filtration "
+            "tracker in `atomic_braid_gb_filtration_extension.py`, "
+            "which only consumes bare-int σ / σ⁻¹ words.  Downstream "
+            "consumers do not yet reference this canonical artifact, "
+            "so it is a companion rather than a replacement"
+        )
+    else:
+        companion_text = (
+            f"Canonical companion to the per-atom mass-trace "
+            f"`atomic-braid-recipe-{slug}` SCRIPT_CITED step declared "
+            f"in PR #605's `markov-trace-assembly-{label}.derivation.json`; "
+            f"that consumer does not yet reference this artifact, so "
+            f"the SCRIPT_CITED step there remains pending until the "
+            f"reference is wired up downstream"
+        )
+
     return DerivationChain(
-        target=f"T_w({label}) ∈ B_{{{n_strands}}} (canonical/SDP)",
+        target=f"T_w({label}) ∈ B_{{{n_strands}}} (canonical operator-valued)",
         target_value=canonical_word,
         target_tolerance=0.0,  # exact equality on (gen_idx, ctype) sequence
         content_block="prop:atomic-mass-gb-nf",
@@ -277,19 +352,14 @@ def build_chain(slug: str, label: str, Z: int, N: int) -> DerivationChain:
             f"Atomic-braid recipe for {label} in the canonical "
             f"operator-valued convention "
             f"(`canonical_braid_crossings.atom_canonical_crossings"
-            f"({Z}, {N})` — SDP-confirmed by PR #608's "
-            f"`r5_full_canonical_knot_solver`).  {n_crossings} "
+            f"({Z}, {N})`).  Status: {sdp_status}.  {n_crossings} "
             f"crossings on {n_strands} strands.  Trust profile "
             f"{{axiom: 2, derived: 3, script-cited: 3}}.  "
-            f"Replaces (in the canonical convention) the SCRIPT_CITED "
-            f"`atomic-braid-recipe-{slug}` step in the per-atom "
-            f"mass-trace chains; closure of "
+            f"{companion_text}.  Closure of "
             f"`conj:canonical-knot-id-sdp` (issue #604 GAP-A-1) "
             f"upgrades all three SCRIPT_CITED steps to LEAN_PROVEN "
-            f"simultaneously.  Companion to the legacy-disjoint "
-            f"variant `atomic-braid-recipe-4he.derivation.json`; "
-            f"the two conventions differ at the per-irrep χ values "
-            f"for Hoefsmit (2,1) and reconciliation is open frontier."
+            f"simultaneously, at which point the legacy-disjoint "
+            f"variant can be deleted in favour of this chain."
         ),
         steps=steps,
     )
