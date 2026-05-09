@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-09T13:07:02.935690+00:00",
-  "commitSha": "bedff55fe434ba5bd62e2cd9e8fa27026bdc3235",
+  "computedAt": "2026-05-09T13:13:59.681702+00:00",
+  "commitSha": "ca5d8253696323af79c0b04b1435c6d31239af8e",
   "assertions": [
     {
       "name": "tail_in_ideal_mod_p[p (proton, A=1)/finite(2)]",
@@ -114,7 +114,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 21,
+  "durationMs": 22,
   "computation": "markov-substrate-realization",
   "scriptFile": "markov_substrate_realizer.py",
   "scriptHash": "503dcd61edf3",

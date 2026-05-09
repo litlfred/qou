@@ -104,11 +104,11 @@
       ],
       "output_name": "tr_M_symbolic",
       "output_value": "symbolic Laurent polynomial in q (Markov trace)",
-      "trust_basis": "script-cited",
+      "trust_basis": "derived",
       "jet_order": 0,
       "gb_filtration_level": 0,
       "citation": "jones1987",
-      "notes": "script: folio-assistant/computations/habiro_coefficients_atomic.py function `markov_trace_symbolic(Z, N, q, include_inter)`.  Per CLAUDE.md §7a, the Jones polynomial J_K(q) is the Markov trace in H_n(q); finite-Jones is existence + uniqueness.  Per-atom assembly chains for n, D pending (extend build_markov_trace_assembly_chain.py)."
+      "notes": "Derivation chain: markov-trace-assembly-deuteron.derivation.json.  Combines schur-weyl-weight-{6, 51, 42, 411, 33, 321, 3111, 222, 2211, 21111, 111111} (all 11 partitions of n=3·A=6) + chi-deuteron-h6.witness.json (per-irrep characters χ^λ_q(β_D) via hecke_character_symbolic.q_character_on_braid_word, cached); the σ-word β_D for the deuteron is supplied (currently SCRIPT_CITED) via hecke_character_symbolic.atomic_braid_to_crossings(Z=1, N=1, include_inter=True) per atomic-braid-recipe-d, upgrading to DERIVED when PR #476's atomic-braid-recipe-d chain lands.  Step trust upgrades from SCRIPT_CITED to DERIVED via the assembly chain reference."
     },
     {
       "name": "Evaluate tr_M(D, q_0) at q_0 = 1.1099785955541805",
