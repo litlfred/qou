@@ -1,18 +1,11 @@
-<<<<<<< HEAD
 import Mathlib.Data.Real.Basic
 
 /-!
-# QOU.FluidDynamics.LeviDegeneracy
-
-Levi degeneracy conjecture: contact non-degeneracy at vortex collision determines NS regularity.
-=======
-/-!
-# QOU.NS.LeviDegeneracy — `conj:levi-degeneracy` axiomatised
+# QOU.FluidDynamics.LeviDegeneracy — `conj:levi-degeneracy` axiomatised
 
 Conjectural content: **the Levi form of the $q$-NS singularity locus
 degenerates exactly at the parameter values $q_\kappa = e^{i\pi/\kappa}$
 ($\kappa \geq 2$)**, and the degeneracy set is therefore countable.
->>>>>>> 5516e6841 (upgrade conjecture classes: real content + 1 SM instance proof)
 
 This Lean axiomatisation works in the **real-parameter projection**:
 the manuscript's complex principal-root family
@@ -28,7 +21,10 @@ LaTeX label: `conj:levi-degeneracy`
 
 ## Conjectural content
 
-Conjectural Levi-degeneracy: the contact form at a vortex-collision locus is non-degenerate iff the q-NS flow remains regular through the collision.
+Conjectural Levi-degeneracy: the contact form at a vortex-collision
+locus is non-degenerate iff the q-NS flow remains regular through
+the collision; equivalently, the Levi form on the q-NS singularity
+locus is positive-definite away from $\{q_\kappa\}_{\kappa \geq 2}$.
 
 ## Status
 
@@ -46,30 +42,29 @@ explicit `[Instance]` hypothesis to retain
 
 ## References
 
-- [manuscript] §Levi degeneracy conjecture: contact non-degeneracy at vortex collision determines NS regularity, `conj:levi-degeneracy`
+- [manuscript] §Levi degeneracy conjecture: contact non-degeneracy at
+  vortex collision determines NS regularity, `conj:levi-degeneracy`
 -/
 
 namespace QOU.FluidDynamics
 
-<<<<<<< HEAD
-/-- **Conjecture class** for `conj:levi-degeneracy`.
-
-    Encodes the conjectural content as a Lean type-class so that
-    downstream theorems can take `[LeviDegeneracy]` as an explicit
-    hypothesis (CLAUDE.md §3b-cond).  Concrete instances either
-    prove the conjecture or supply a `sorry` (read as conjecture).
-=======
 /-- **`conj:levi-degeneracy` (axiomatised).**
 
     The Levi form on the singularity locus of the $q$-NS evolution
     is positive-definite away from the discrete set
     $\{q_\kappa = e^{i\pi/\kappa} : \kappa \geq 2\}$ and degenerates
-    exactly on it. -/
+    exactly on it.  This Lean axiomatisation uses the
+    real-parameter projection: each principal root $q_\kappa$ on the
+    unit circle is identified by its angular reciprocal
+    $1/\kappa \in \mathbb{R}$ (see file docstring).  A direct
+    $\mathbb{C}$-valued formalisation awaits a complex-`q`
+    substrate API. -/
 class LeviDegeneracy where
   /-- The Levi-form pairing on the singularity locus. -/
   leviForm : ℝ → ℝ → ℝ
   /-- The degeneracy set: the locus on which the Levi form is not
-      positive-definite. -/
+      positive-definite, recorded as the real angular-reciprocal
+      projection of the complex root family. -/
   degeneracySet : Set ℝ
   /-- The Levi form is symmetric. -/
   leviForm_symm : ∀ x y, leviForm x y = leviForm y x
@@ -81,13 +76,5 @@ class LeviDegeneracy where
   -- Ref: [manuscript] fluid-dynamics/levi-degeneracy-conjecture
   levi_degeneracy_holds :
     degeneracySet = { x : ℝ | ∃ κ : ℕ, 2 ≤ κ ∧ x = 1 / (κ : ℝ) }
->>>>>>> 5516e6841 (upgrade conjecture classes: real content + 1 SM instance proof)
-
-    Ref: [manuscript] §Levi degeneracy conjecture: contact non-degeneracy at vortex collision determines NS regularity, `conj:levi-degeneracy` -/
-class LeviDegeneracy : Prop where
-  /-- The q-deformed Levi form degenerates at a finite
-      codimension  along the boundary of the q-Carnot
-      domain. -/
-  finite_codim : ∃ k : ℕ, k ≥ 1
 
 end QOU.FluidDynamics
