@@ -82,8 +82,32 @@ $w(K) c(\lambda) h$.  After Markov-averaging over $\lambda$ with
 weights $w_\lambda \chi_\lambda(T_w)$, the numerator gives
 $1 + w(K) h \langle c(\lambda) \rangle_\beta + O(h^2)$, where
 $\langle c(\lambda) \rangle_\beta$ is the Plancherel-weighted mean
-content.  The conjecture asserts $\langle c(\lambda) \rangle_\beta = 1$
-for all confined knots — i.e. the mean content is exactly $1$.
+content.
+
+The conjecture splits along **chirality class**:
+
+- **Amphichiral case (verified, 2026-05-09).** For amphichiral knots
+  the writhe $w(K) = 0$ and the bar-involution / transposition
+  symmetry $\chi^\lambda(T_w) = \chi^{\lambda^T}(T_w)$ combines with
+  $c(\lambda^T) = -c(\lambda)$ to give
+  $\langle c(\lambda) \rangle_\beta = 0$ exactly.  The chirality
+  factor is then $a_K = 1 + 0 \cdot 0 \cdot h + O(h^2) = 1 + O(h^2)$,
+  matching the empirical pattern $(1+h)(1-h) = 1 - h^2$ observed for
+  $D, T, {}^3\mathrm{He}, {}^4\mathrm{He}$.  Numerical confirmation
+  for the figure-eight knot $4_1$ at $q_0$ is recorded in
+  `chirality-avg-content.witness.json`:
+  $\langle c(\lambda) \rangle_{4_1} = -2.3 \times 10^{-15}$
+  (numerically zero at 50-dps precision).
+
+- **Chiral case (open).** For chiral nucleon and nuclear knots the
+  conjecture asserts $\langle c(\lambda) \rangle_\beta$ takes a
+  specific structural value (not zero, not necessarily one).  The
+  earlier conjectured value $\langle c \rangle = 1$ was empirically
+  falsified for the deuteron $^2$H ($w = +4$,
+  $\langle c \rangle_\beta \in \{-3.78, +2.51\}$ depending on
+  inter-nucleon-crossing convention; see falsification table at
+  `chirality-writhe-ribbon-derivation.md:122–126`).  The correct
+  structural form for chiral knots remains the open piece of GAP-A-2.
 
 ## Proof obligations
 
@@ -92,15 +116,25 @@ for all confined knots — i.e. the mean content is exactly $1$.
    structure used in the QOU model (not the quantum-group normalization,
    which may differ by a global phase).
 
-2. **Mean-content identity.**  Show
-   $\langle c(\lambda) \rangle_\beta := \sum_\lambda w_\lambda \chi_\lambda(T_w) c(\lambda) / \sum_\lambda w_\lambda \chi_\lambda(T_w) = 1$
-   for every nucleon/nuclear knot $T_w$.
+2. **Mean-content identity (amphichiral).**  *Discharged 2026-05-09
+   for the figure-eight $4_1$ via direct $H_3(R, q_0)$ computation*
+   (`chirality-avg-content.witness.json`).  Generalisation to all
+   amphichiral knots follows from the bar-involution symmetry
+   $\chi^\lambda = \chi^{\lambda^T}$, which is structural in
+   $H_n(q)$.
 
-3. **$O(h^2)$ bound.**  Estimate the second-order correction
+3. **Mean-content identity (chiral, open).**  For chiral nucleon and
+   nuclear knots ($3_1$ proton, $5_2$ neutron, $6_2$ deuteron, $8_{11}$
+   tritium, $L_{6a4}$ ${}^3\mathrm{He}$, etc.), determine the correct
+   value of $\langle c(\lambda) \rangle_\beta$.  The earlier
+   $\langle c \rangle = 1$ ansatz is falsified for $^2$H.  This is
+   the residual open piece of the conjecture.
+
+4. **$O(h^2)$ bound.**  Estimate the second-order correction
    $O(h^2)$ at $q = q_0$ and show it is $< 0.75\%$ of the leading
    term (matching the overall mass-formula accuracy).
 
-4. **Exact formula.**  For at least one chiral knot (trefoil $3_1$ as
+5. **Exact formula.**  For at least one chiral knot (trefoil $3_1$ as
    the proton model), evaluate the exact formula and compare with the
    first-order result.
 
