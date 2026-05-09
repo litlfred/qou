@@ -86,15 +86,20 @@ content.
 
 The conjecture splits along **chirality class**:
 
-- **Amphichiral case (verified, 2026-05-09).** For amphichiral knots
-  the writhe $w(K) = 0$ and the bar-involution / transposition
-  symmetry $\chi^\lambda(T_w) = \chi^{\lambda^T}(T_w)$ combines with
-  $c(\lambda^T) = -c(\lambda)$ to give
+- **Amphichiral case (verified, 2026-05-09).** Writhe is a property
+  of a chosen braid representative, not a knot invariant; for the
+  *canonical* amphichiral representatives used in the QOU model
+  (e.g. the figure-eight word
+  $\sigma_1 \sigma_2^{-1} \sigma_1 \sigma_2^{-1}$ in
+  `chirality-avg-content.witness.json`) the chosen representative
+  has writhe $w(\beta) = 0$.  The bar-involution / transposition
+  symmetry $\chi^\lambda(T_w) = \chi^{\lambda^T}(T_w)$ then combines
+  with $c(\lambda^T) = -c(\lambda)$ to give
   $\langle c(\lambda) \rangle_\beta = 0$ exactly.  The chirality
-  factor is then $a_K = 1 + 0 \cdot 0 \cdot h + O(h^2) = 1 + O(h^2)$,
+  factor is therefore $a_K = 1 + 0 \cdot 0 \cdot h + O(h^2) = 1 + O(h^2)$,
   matching the empirical pattern $(1+h)(1-h) = 1 - h^2$ observed for
   $D, T, {}^3\mathrm{He}, {}^4\mathrm{He}$.  Numerical confirmation
-  for the figure-eight knot $4_1$ at $q_0$ is recorded in
+  for the figure-eight braid representative at $q_0$ is recorded in
   `chirality-avg-content.witness.json`:
   $\langle c(\lambda) \rangle_{4_1} = -2.3 \times 10^{-15}$
   (numerically zero at 50-dps precision).

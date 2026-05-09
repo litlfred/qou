@@ -46,10 +46,12 @@ from hecke_characters import (  # noqa: E402
     chi_lambda_braid,
     partitions_of,
 )
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 mp.dps = 50
-Q0 = mpf("1.1099785955541805")
+# Authoritative q_0 from q_parameter.Q_50_DIGIT_STR (m_μ/m_e CODATA fix).
+Q0 = mpf(Q_50_DIGIT_STR)
 
 
 def q_int(k: int, q):
@@ -143,7 +145,11 @@ def main():
             c_lam = content_sum(shape)
             w_lam = dim_q(shape, Q0, n_fac_q) ** 2 / n_fac_q
             chi_raw = chi_lambda_braid(shape, word, Q0)
-            chi_val = mpf(str(complex(chi_raw).real))
+            # Keep mpmath precision: extract real part as mpf without
+            # casting through builtin complex / float (which would drop
+            # to 53-bit precision and invalidate the mp.dps = 50
+            # working precision).
+            chi_val = mp.re(chi_raw)
             num += w_lam * chi_val * c_lam
             den += w_lam * chi_val
             per_lam.append({
@@ -154,13 +160,20 @@ def main():
                 "weighted_chi_c": str(w_lam * chi_val * c_lam),
             })
         if abs(den) < mpf("1e-30"):
+            avg_c_mp = None
+            a_K_first_mp = None
             avg_c = None
             a_K_first = None
             note = "denominator ~ 0 (degenerate Markov trace at q_0)"
         else:
-            avg = num / den
-            avg_c = float(avg)
-            a_K_first = float(1 + w * avg * h_val)
+            # Keep full mpmath precision for the witness; convert to
+            # float only at the final report-emission stage so 50-dps
+            # results survive in the witness's `avg_content_c_beta_mp`
+            # string field.
+            avg_c_mp = num / den
+            a_K_first_mp = 1 + w * avg_c_mp * h_val
+            avg_c = float(avg_c_mp)
+            a_K_first = float(a_K_first_mp)
             note = ""
         print(f"  {case['name']:<45}  writhe={w:>+3}, "
               f"⟨c⟩_β={avg_c if avg_c is None else f'{avg_c:+.6f}':>12}, "
@@ -176,6 +189,11 @@ def main():
             "rows": per_lam,
             "numerator": str(num),
             "denominator": str(den),
+            # Full-precision (50-dps) string is the canonical witness
+            # value; the float fields are convenience truncations for
+            # downstream comparison at 53-bit precision.
+            "avg_content_c_beta_mp": (None if avg_c_mp is None else str(avg_c_mp)),
+            "a_K_first_order_mp": (None if a_K_first_mp is None else str(a_K_first_mp)),
             "avg_content_c_beta": (None if avg_c is None else avg_c),
             "a_K_first_order": (None if a_K_first is None else a_K_first),
             "note": note,

@@ -1,22 +1,22 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T13:25:31.624836+00:00",
-  "commitSha": "8c2a08911628606123952d1ecffd8500465a481f",
+  "computedAt": "2026-05-09T14:04:08.264840+00:00",
+  "commitSha": "c8f9603da097e91ff03cbedc51ad2b288a477bcb",
   "assertions": [
     {
-      "name": "n_star_rule_closes_to_5pct",
-      "computed": 0,
+      "name": "n_star_rule_falsified",
+      "computed": 1,
       "expected": 1,
-      "passed": false
+      "passed": true
     }
   ],
-  "allPassed": false,
-  "durationMs": 5,
+  "allPassed": true,
+  "durationMs": 6,
   "computation": "probe-phiq-n-star-rule",
   "scriptFile": "probe_phiq_n_star_rule.py",
-  "scriptHash": "1a69afbb92f7",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "c3c019497242",
+  "scriptCommitSha": "60214431a133780919029bec98a3180338207fbe",
   "description": "Per-atom n_⋆ probe of the brane-tower truncation rule n_⋆(𝔥) = ℓ·n_0 + k from conj:brane-level-selection.  Substitutes per-atom (n_⋆_D, n_⋆_T, n_⋆_³He) = (14, 27, 20) into Φ_q^{[≤n_⋆]} and checks ±5% closure of B(𝔥) against AME without per-atom retuning.  Tests proof-obligation 1 of conj:brane-level-selection — the empirical signature that n_⋆ is structurally correct (or falsifies the rule).",
   "auditOnly": "content/quantum-observable-universe/braids-and-knots/derivation-audit-report.md (GAP-A-3)",
   "parameters": {

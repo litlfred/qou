@@ -382,14 +382,22 @@ def run_atom(Z: int, N: int, *, workers: int | None = None) -> int:
     for g in sorted(per_gen):
         slot = per_gen[g]
         net_power = slot.get("sigma", 0) - slot.get("sigma_inv", 0)
+        avg_count = slot.get("averaged", 0)
         klr_per_gen.append({
             "gen_idx": g,
             "net_signed_power": net_power,
-            "averaged_count": slot.get("averaged", 0),
-            "cemetery_class": (
+            "averaged_count": avg_count,
+            # Cemetery class label: the *signed-power projection* of
+            # this generator's sub-word, ignoring averaged crossings.
+            # If averaged_count > 0, this label is a projection only.
+            "cemetery_class_signed_power_projection": (
                 f"σ_{g}^{net_power}" if net_power != 0 else "identity"
             ),
-            "is_pure_power_in_cemetery": True,
+            # Pure-power means the sub-word is exactly σ_g^k with no
+            # averaged (mixed / off-Markov) crossings.  Only then is
+            # the cemetery-class label a complete invariant of the
+            # sub-word.
+            "is_pure_power_in_cemetery": avg_count == 0,
         })
     per_gen_emit = [
         {"gen_idx": g, **per_gen[g], "total": sum(per_gen[g].values())}
@@ -423,7 +431,7 @@ def run_atom(Z: int, N: int, *, workers: int | None = None) -> int:
     # the per-block matrix entries at H_3; here we use trace-only
     # because the per-block matrices are not currently materialised
     # in the Path A pipeline at H_n for n > 3).
-    Q0_FLOAT = 1.1099785955541805
+    from q_parameter import Q as Q0_FLOAT  # noqa: E402  authoritative q_0
     chi_fp_pairs = []
     for lam in sorted(chi_q, key=lambda L: (-len(L), tuple(-x for x in L))):
         try:
@@ -432,7 +440,7 @@ def run_atom(Z: int, N: int, *, workers: int | None = None) -> int:
         except (TypeError, ValueError):
             chi_fp_pairs.append((list(lam), None))
     builder.add_data("atom_chi_fingerprint", {
-        "q0": Q0_FLOAT,
+        "q0": float(Q0_FLOAT),
         "precision": 8,
         "n_partitions": len(chi_fp_pairs),
         "fingerprint": chi_fp_pairs,

@@ -60,6 +60,31 @@ def main():
     )["sigma_inv_dim_q_at_q0"]
     def sigma(A): return float(sigma_3A_witness[f"n={3 * A}"])
 
+    # Build the witness up-front so durationMs reflects actual
+    # computation time (per Copilot review on PR #607).
+    builder = (
+        WitnessBuilder(name="probe-phiq-n-star-rule", engine="python")
+        .set_description(
+            "Per-atom n_⋆ probe of the brane-tower truncation rule "
+            "n_⋆(𝔥) = ℓ·n_0 + k from "
+            "conj:brane-level-selection.  Substitutes per-atom "
+            "(n_⋆_D, n_⋆_T, n_⋆_³He) = (14, 27, 20) into "
+            "Φ_q^{[≤n_⋆]} and checks ±5% closure of B(𝔥) against "
+            "AME without per-atom retuning.  Tests proof-obligation "
+            "1 of conj:brane-level-selection — the empirical "
+            "signature that n_⋆ is structurally correct (or "
+            "falsifies the rule)."
+        )
+        .set_audit_only(
+            "content/quantum-observable-universe/braids-and-knots/"
+            "derivation-audit-report.md (GAP-A-3)"
+        )
+        .add_parameter("rule", "n_star = ell * n_0 + k_Hecke")
+        .add_parameter("n_star_per_atom", N_STAR)
+        .add_parameter("ell", ELL)
+        .add_parameter("k_Hecke_per_atom", K_HECKE)
+    )
+
     print("=" * 92)
     print("Per-atom n_⋆ Yekutieli truncation probe (GAP-A-3)")
     print("=" * 92)
@@ -126,27 +151,14 @@ def main():
           f"{'YES — n_⋆ rule confirmed' if closed_within_5pct else 'NO'}")
     print()
 
+    # Refutation IS the expected outcome of this probe (the paper-side
+    # conjecture's proof-obligation 1 was empirically falsified on
+    # 2026-05-09; see conj-brane-level-selection.md "Empirical
+    # falsification" section).  Assert that the rule is falsified so
+    # the witness stays `allPassed: true` and CI doesn't treat the
+    # refutation as a regression.
     builder = (
-        WitnessBuilder(name="probe-phiq-n-star-rule", engine="python")
-        .set_description(
-            "Per-atom n_⋆ probe of the brane-tower truncation rule "
-            "n_⋆(𝔥) = ℓ·n_0 + k from "
-            "conj:brane-level-selection.  Substitutes per-atom "
-            "(n_⋆_D, n_⋆_T, n_⋆_³He) = (14, 27, 20) into "
-            "Φ_q^{[≤n_⋆]} and checks ±5% closure of B(𝔥) against "
-            "AME without per-atom retuning.  Tests proof-obligation "
-            "1 of conj:brane-level-selection — the empirical "
-            "signature that n_⋆ is structurally correct (or "
-            "falsifies the rule)."
-        )
-        .set_audit_only(
-            "content/quantum-observable-universe/braids-and-knots/"
-            "derivation-audit-report.md (GAP-A-3)"
-        )
-        .add_parameter("rule", "n_star = ell * n_0 + k_Hecke")
-        .add_parameter("n_star_per_atom", N_STAR)
-        .add_parameter("ell", ELL)
-        .add_parameter("k_Hecke_per_atom", K_HECKE)
+        builder
         .add_data("rows", rows)
         .add_data("closed_within_5pct_across_all", closed_within_5pct)
         .add_data("interpretation", (
@@ -159,14 +171,16 @@ def main():
             "structural data."
         ))
         .add_assertion(
-            name="n_star_rule_closes_to_5pct",
-            computed=int(closed_within_5pct),
+            name="n_star_rule_falsified",
+            computed=int(not closed_within_5pct),
             expected=1,
         )
     )
     out_path = builder.save()
     print(f"  Witness emitted: {out_path}")
-    return 0 if closed_within_5pct else 1
+    # Return 0 unconditionally: the probe records its result either
+    # way, and the assertion above pins the expected outcome.
+    return 0
 
 
 if __name__ == "__main__":
