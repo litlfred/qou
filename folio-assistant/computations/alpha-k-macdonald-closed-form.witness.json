@@ -1,0 +1,373 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-09T00:33:02.259808+00:00",
+  "commitSha": "3f2bd2de45209c7c48790f47f6a166d271d65e06",
+  "assertions": [
+    {
+      "name": "plancherel_completeness_n2",
+      "computed": "5.3455294201843912922810729343029637576303937602101e-51",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1.0e-40",
+      "source": "Markov axiom (M3): tr_M(1) = 1"
+    },
+    {
+      "name": "plancherel_completeness_n3",
+      "computed": "2.672764710092195646140536467151481878815196880105e-51",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1.0e-40",
+      "source": "Markov axiom (M3): tr_M(1) = 1"
+    },
+    {
+      "name": "plancherel_completeness_n4",
+      "computed": "2.672764710092195646140536467151481878815196880105e-51",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1.0e-40",
+      "source": "Markov axiom (M3): tr_M(1) = 1"
+    },
+    {
+      "name": "plancherel_completeness_n5",
+      "computed": "4.0091470651382934692108047007272228182227953201576e-51",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1.0e-40",
+      "source": "Markov axiom (M3): tr_M(1) = 1"
+    },
+    {
+      "name": "plancherel_completeness_n6",
+      "computed": "2.672764710092195646140536467151481878815196880105e-51",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1.0e-40",
+      "source": "Markov axiom (M3): tr_M(1) = 1"
+    },
+    {
+      "name": "y_lambda_table_size",
+      "computed": 28,
+      "expected": 28,
+      "passed": true,
+      "tolerance": 0,
+      "source": "cumulative p(2)+p(3)+p(4)+p(5)+p(6) = 2+3+5+7+11 = 28"
+    },
+    {
+      "name": "alpha_k_markov_axiom_k1",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1.0e-40",
+      "source": "Markov axiom (M2): tr_M(σ_{n-1}·x) = z·tr_M(x)"
+    },
+    {
+      "name": "alpha_k_markov_axiom_k2",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1.0e-40",
+      "source": "Markov axiom (M2): tr_M(σ_{n-1}·x) = z·tr_M(x)"
+    },
+    {
+      "name": "alpha_k_markov_axiom_k3",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1.0e-40",
+      "source": "Markov axiom (M2): tr_M(σ_{n-1}·x) = z·tr_M(x)"
+    },
+    {
+      "name": "cross_validation_h3_witness",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1.0e-25",
+      "source": "alpha-k-jones-markov-h3.witness.json"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 17,
+  "computation": "alpha-k-macdonald-closed-form",
+  "scriptFile": "alpha_k_macdonald_closed_form.py",
+  "scriptHash": "3d42dc77c7ae",
+  "scriptCommitSha": "unknown",
+  "description": "α_k mass-tower coefficients via the Macdonald hook-content closed form for y_λ.  Replaces the linear-system / Hoefsmit-matrix path used in alpha_k_jones_markov_h3.py by a rounding-free algebraic evaluation of y_λ for every partition λ ⊢ n at every n ≤ 6, and cross-checks against the Markov-axiom prediction tr_M(σ_1 ⋯ σ_{k-1}) = z^{k-1}.",
+  "contentBlock": "prop:macdonald-hook-telescope",
+  "data": {
+    "q_0": "1.1099785955541805752815940796095093779932822799587",
+    "z_markov": "0.49932033403359825002066908467672150636931636263446",
+    "dps": 50,
+    "y_lambda_by_n": {
+      "2": {
+        "n": 2,
+        "weights": [
+          {
+            "partition": [
+              2
+            ],
+            "f_lambda": 1,
+            "y_lambda_at_q0": "0.6963254203144306312939792962595014994129651427753"
+          },
+          {
+            "partition": [
+              1,
+              1
+            ],
+            "f_lambda": 1,
+            "y_lambda_at_q0": "0.3036745796855693687060207037404985005870348572247"
+          }
+        ]
+      },
+      "3": {
+        "n": 3,
+        "weights": [
+          {
+            "partition": [
+              3
+            ],
+            "f_lambda": 1,
+            "y_lambda_at_q0": "0.41539578633456654388991686217104299642456133060797"
+          },
+          {
+            "partition": [
+              2,
+              1
+            ],
+            "f_lambda": 2,
+            "y_lambda_at_q0": "0.28092963397986408740406243408845850298840381216733"
+          },
+          {
+            "partition": [
+              1,
+              1,
+              1
+            ],
+            "f_lambda": 1,
+            "y_lambda_at_q0": "0.022744945705705281301958269652039997598631045057365"
+          }
+        ]
+      },
+      "4": {
+        "n": 4,
+        "weights": [
+          {
+            "partition": [
+              4
+            ],
+            "f_lambda": 1,
+            "y_lambda_at_q0": "0.2275269301930642392050369483342721072196392241601"
+          },
+          {
+            "partition": [
+              3,
+              1
+            ],
+            "f_lambda": 3,
+            "y_lambda_at_q0": "0.18786885614150230468487991383677088920492210644787"
+          },
+          {
+            "partition": [
+              2,
+              2
+            ],
+            "f_lambda": 2,
+            "y_lambda_at_q0": "0.069473304641501939002240313603290977048209901409736"
+          },
+          {
+            "partition": [
+              2,
+              1,
+              1
+            ],
+            "f_lambda": 3,
+            "y_lambda_at_q0": "0.023587473196859843716942206648396636735271804309723"
+          },
+          {
+            "partition": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "f_lambda": 1,
+            "y_lambda_at_q0": "-0.00084252749115456241498393699635663913664075925235815"
+          }
+        ]
+      },
+      "5": {
+        "n": 5,
+        "weights": [
+          {
+            "partition": [
+              5
+            ],
+            "f_lambda": 1,
+            "y_lambda_at_q0": "0.11814839833360236251211793314108163217952709627638"
+          },
+          {
+            "partition": [
+              4,
+              1
+            ],
+            "f_lambda": 4,
+            "y_lambda_at_q0": "0.10937853185946187669291901519319047504011212788372"
+          },
+          {
+            "partition": [
+              3,
+              2
+            ],
+            "f_lambda": 5,
+            "y_lambda_at_q0": "0.06172371532319622932109454092465539505529159649133"
+          },
+          {
+            "partition": [
+              3,
+              1,
+              1
+            ],
+            "f_lambda": 6,
+            "y_lambda_at_q0": "0.016766608958844198670866357718925019109518382072825"
+          },
+          {
+            "partition": [
+              2,
+              2,
+              1
+            ],
+            "f_lambda": 5,
+            "y_lambda_at_q0": "0.0077495893183057096811457726786355819929183049184056"
+          },
+          {
+            "partition": [
+              2,
+              1,
+              1,
+              1
+            ],
+            "f_lambda": 4,
+            "y_lambda_at_q0": "-0.00092872508029006463506992374916396436716488268150758"
+          },
+          {
+            "partition": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "f_lambda": 1,
+            "y_lambda_at_q0": "0.000086197589135502220085986752807325230524123429149426"
+          }
+        ]
+      },
+      "6": {
+        "n": 6,
+        "weights": [
+          {
+            "partition": [
+              6
+            ],
+            "f_lambda": 1,
+            "y_lambda_at_q0": "0.059187716932148631726632017481638432709061246964532"
+          },
+          {
+            "partition": [
+              5,
+              1
+            ],
+            "f_lambda": 5,
+            "y_lambda_at_q0": "0.058960681401453730785485915659443199470465849311847"
+          },
+          {
+            "partition": [
+              4,
+              2
+            ],
+            "f_lambda": 9,
+            "y_lambda_at_q0": "0.040284386965935211236296233398315147983734378748849"
+          },
+          {
+            "partition": [
+              4,
+              1,
+              1
+            ],
+            "f_lambda": 10,
+            "y_lambda_at_q0": "0.010133463492072934671136866135432127585911899823021"
+          },
+          {
+            "partition": [
+              3,
+              3
+            ],
+            "f_lambda": 5,
+            "y_lambda_at_q0": "0.014120874004975287300431630623435029775788893853587"
+          },
+          {
+            "partition": [
+              3,
+              2,
+              1
+            ],
+            "f_lambda": 16,
+            "y_lambda_at_q0": "0.0073184543522857307843666769029052172957683238888939"
+          },
+          {
+            "partition": [
+              3,
+              1,
+              1,
+              1
+            ],
+            "f_lambda": 10,
+            "y_lambda_at_q0": "-0.00068530888551446678463718531941232577216184163908981"
+          },
+          {
+            "partition": [
+              2,
+              2,
+              2
+            ],
+            "f_lambda": 5,
+            "y_lambda_at_q0": "0.00077318673690538012239285368505156904988009656817746"
+          },
+          {
+            "partition": [
+              2,
+              2,
+              1,
+              1
+            ],
+            "f_lambda": 9,
+            "y_lambda_at_q0": "-0.00034205177088540122561375790932120435273011553866572"
+          },
+          {
+            "partition": [
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "f_lambda": 5,
+            "y_lambda_at_q0": "0.000098635576109803375181019479569565757727074496247949"
+          },
+          {
+            "partition": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "f_lambda": 1,
+            "y_lambda_at_q0": "-0.000012437986974301155095032726762240527202951067098523"
+          }
+        ]
+      }
+    },
+    "closed_form_formula": "y_λ = Q^{n(λ)} · (1-Q)^n / (1-X)^n · ∏ (1-X·Q^c)/(1-Q^h)"
+  }
+}

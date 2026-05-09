@@ -144,6 +144,8 @@ export default chapter({
         "lifted-crossing-locality",
         "q-holonomy-locality-derivation",
         "frobenius-packing-density",
+        "cpt-orbit-closure-density",
+        "bar-involution-invariance",
         "soft-confinement-at-q0",
       ],
     }),
