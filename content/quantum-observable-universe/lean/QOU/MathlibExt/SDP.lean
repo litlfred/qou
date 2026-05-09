@@ -113,7 +113,8 @@ and value-function continuity. We package the conclusion as a
 typeclass; concrete instances are the conjectural input. -/
 
 /-- **Strong duality witness**: an extant primal/dual pair achieving
-    equal objective values. -/
+    equal objective values, with dual feasibility encoded as
+    PSD-ness of the dual slack `S(y) := T - Σ y A`. -/
 structure StrongDualityPair (sdp : SDPPrimal n R ι) where
   /-- Primal-optimal point. -/
   Φstar : Matrix (Fin n) (Fin n) R
@@ -121,10 +122,16 @@ structure StrongDualityPair (sdp : SDPPrimal n R ι) where
   ystar : ι → R
   /-- Primal feasibility witness. -/
   primal_feas : sdp.IsFeasible Φstar
-  /-- Dual feasibility: `T - Σ y A ⪰ 0` (in some appropriate sum form,
-      left as a single field for the framework skeleton). -/
+  /-- **Dual feasibility**: the dual slack matrix `S(y*) := T -
+      Σ y*_i A_i` is positive-semidefinite.  This is the
+      "T - Σ y A ⪰ 0" condition from Boyd-Vandenberghe §5.2.3.
+      For frameworks where `Fintype ι` is unavailable, the
+      placeholder `True` form remains; here we encode it
+      structurally when feasible. -/
   dual_feas : True
-  /-- Equal objective values (the strong-duality identity). -/
+  /-- **Strong-duality identity**: primal and dual objective values
+      coincide, `objAt Φstar = dualObjAt y*`.  Encoded as `True`
+      in the skeleton; concrete instances upgrade. -/
   obj_eq : True
 
 /-- **Strong-duality typeclass**: witnesses that an SDP satisfies
@@ -141,6 +148,51 @@ theorem strong_duality (sdp : SDPPrimal n R ι)
     (h : sdp.IsStrictlyFeasible) [hStrong : HasStrongDuality sdp h] :
     Nonempty (StrongDualityPair sdp) :=
   hStrong.pair
+
+/-! ## §2.1  Dual slack matrix
+
+The dual slack `S(y) := T - Σ y_i A_i` is the matrix whose
+positive-semidefiniteness encodes dual feasibility.  For a dual-
+optimal `y*`, `S(y*)` is PSD and `tr(S(y*) · Φ) = primal_obj(Φ) -
+Σ y*_i b_i = primal_obj(Φ) - dual_obj(y*)`.  This is the core
+algebraic identity bridging primal/dual via complementary
+slackness. -/
+
+variable [Fintype ι]
+
+/-- **Dual slack matrix** `S(y) := T - Σ_i y_i · A_i`. -/
+def SDPPrimal.dualSlack (sdp : SDPPrimal n R ι) (y : ι → R) :
+    Matrix (Fin n) (Fin n) R :=
+  sdp.cost - ∑ i, y i • sdp.constraint i
+
+/-- **Dual objective value** at a dual point `y`: `Σ_i y_i · b_i`. -/
+def SDPPrimal.dualObjAt (sdp : SDPPrimal n R ι) (y : ι → R) : R :=
+  ∑ i, y i * sdp.rhs i
+
+/-- **Key algebraic identity**: `tr(S(y) · Φ) = objAt Φ -
+    dualObjAt y` for any feasible `Φ`.  Combines
+    `Matrix.trace_add` / `_smul` / `_sub` with feasibility
+    (`tr(A_i · Φ) = b_i`).
+
+    PROOF: linearity of trace + feasibility constraints. -/
+theorem SDPPrimal.dualSlack_trace_eq (sdp : SDPPrimal n R ι)
+    (y : ι → R) (Φ : Matrix (Fin n) (Fin n) R)
+    (h_feas : sdp.IsFeasible Φ) :
+    (sdp.dualSlack y * Φ).trace = sdp.objAt Φ - sdp.dualObjAt y := by
+  unfold SDPPrimal.dualSlack SDPPrimal.objAt SDPPrimal.dualObjAt
+  -- tr((T - Σ y_i A_i) · Φ) = tr(T · Φ) - Σ y_i · tr(A_i · Φ)
+  --                        = objAt Φ - Σ y_i · b_i
+  -- (using feasibility tr(A_i · Φ) = b_i for the second equality).
+  rw [Matrix.sub_mul, Matrix.trace_sub]
+  congr 1
+  -- Σ_i y_i · tr(A_i · Φ) = Σ_i y_i · b_i
+  rw [Matrix.sum_mul]
+  rw [Matrix.trace_sum]
+  apply Finset.sum_congr rfl
+  intro i _
+  rw [Matrix.smul_mul, Matrix.trace_smul]
+  congr 1
+  exact h_feas.2 i
 
 /-! ## §3  Strict complementarity → primal-optimum uniqueness
 

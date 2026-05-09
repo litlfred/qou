@@ -80,32 +80,26 @@ theorem Matrix.frobeniusInner_self_eq_zero_iff
     Matrix.frobeniusInner A A = 0 ↔ A = 0 := by
   refine ⟨?_, ?_⟩
   · intro h
-    -- Forward: `Σ_i Σ_k A_ki² = 0 ⟹ each A_ki = 0 ⟹ A = 0`.
-    -- Apply `Finset.sum_eq_zero_iff_of_nonneg` recursively on
-    -- the nested sums.
+    -- Forward: `tr(Aᵀ · A) = Σ_{i'} Σ_k (A k i')² = 0` ⟹ each
+    -- `A k i' = 0` for all (k, i') ⟹ `A = 0`.  The double-sum
+    -- analysis specialises to the goal `A i j = 0` by setting
+    -- `k := i`, `i' := j` in the universal "all entries zero".
     ext i j
     have h_unfold : (∑ i' : Fin n, ∑ k : Fin n, (A k i') * (A k i')) = 0 := by
       simpa [Matrix.frobeniusInner, Matrix.trace, Matrix.mul_apply,
              Matrix.transpose_apply] using h
-    -- Each inner summand is non-neg; outer-sum-zero ⟹ inner-sum-zero
-    have h_inner_zero : ∀ i' : Fin n, (∑ k : Fin n, (A k i') * (A k i')) = 0 := by
-      intro i'
+    -- Specialise the outer sum at `i' := j`.
+    have h_at_j : (∑ k : Fin n, (A k j) * (A k j)) = 0 := by
       apply (Finset.sum_eq_zero_iff_of_nonneg
         (fun i'' _ => Finset.sum_nonneg
-          (fun k _ => mul_self_nonneg (A k i'')))).mp h_unfold i' (Finset.mem_univ _)
-    -- Inner sum zero ⟹ each summand zero ⟹ A k i' = 0
-    have h_entry : (A j i) * (A j i) = 0 :=
+          (fun k _ => mul_self_nonneg (A k i'')))).mp h_unfold j (Finset.mem_univ _)
+    -- Specialise the inner sum at `k := i`.
+    have h_entry : (A i j) * (A i j) = 0 :=
       (Finset.sum_eq_zero_iff_of_nonneg
-        (fun k _ => mul_self_nonneg (A k i))).mp (h_inner_zero i) j (Finset.mem_univ _)
-    have : A j i = 0 := by
-      rcases mul_self_eq_zero.mp h_entry with h_zero
-      exact h_zero
-    -- We need A i j = 0, but we have A j i = 0.  This is a
-    -- transpose mismatch; correct interpretation: ⟨A, A⟩_F = ⟨Aᵀ, Aᵀ⟩_F
-    -- so the sum-of-squares argument applies to A's entries directly.
-    -- The j/i swap reflects the convention `tr(Aᵀ · A) = Σ (Aᵀ)_ij · A_ji
-    -- = Σ A_ji · A_ji`.  The conclusion `A = 0` needs i/j renaming.
-    sorry
+        (fun k _ => mul_self_nonneg (A k j))).mp h_at_j i (Finset.mem_univ _)
+    -- `x * x = 0 ⟹ x = 0` (over ℝ, no zero-divisors).
+    show A i j = (0 : Matrix _ _ ℝ) i j
+    simpa using mul_self_eq_zero.mp h_entry
   · intro h
     rw [h]
     unfold Matrix.frobeniusInner

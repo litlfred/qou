@@ -62,17 +62,42 @@ def heckeAsMatrix {n : ℕ} (x : HeckeElement n) :
     = (col x) i 0 · (col x) j 0 = x i · x j`. -/
 theorem heckeAsMatrix_posSemidef {n : ℕ} (x : HeckeElement n) :
     (heckeAsMatrix x).PosSemidef := by
-  -- Rank-1 outer product `x_i · x_j = (col x · (col x)ᵀ) i j`.
-  -- Mathlib has `Matrix.posSemidef_self_mul_conjTranspose` (or
-  -- `Matrix.posSemidef_transpose_mul_self`); apply directly.
-  -- Alternative direct route: prove symmetry and the quadratic-
-  -- form-non-negativity hypothesis manually:
-  --   * Symmetry: `x_i · x_j = x_j · x_i` by `mul_comm`.
-  --   * Quadratic form: `vᵀ M v = (v · x)²` (Σ_ij v_i x_i x_j v_j
-  --     = (Σ_i v_i x_i) · (Σ_j x_j v_j)).
-  -- Both are direct calculations.  Full close pending Mathlib API
-  -- verification.
-  sorry
+  -- Direct manual proof.  `Matrix.PosSemidef M := M.IsHermitian ∧
+  -- ∀ v, 0 ≤ star v ⬝ᵥ M.mulVec v`.  For real matrices `star = id`.
+  refine ⟨?_, ?_⟩
+  · -- IsHermitian: M.conjTranspose = M, i.e. Mᵀ = M for real.
+    ext i j
+    show (heckeAsMatrix x).conjTranspose i j = (heckeAsMatrix x) i j
+    simp only [Matrix.conjTranspose_apply, heckeAsMatrix,
+               star_trivial]
+    ring
+  · -- Quadratic-form non-negativity:
+    --   vᵀ M v = Σ_i v_i (Σ_j M_ij v_j)
+    --         = Σ_i v_i (Σ_j x_i x_j v_j)
+    --         = Σ_i v_i x_i · Σ_j x_j v_j
+    --         = (Σ_i v_i x_i)² ≥ 0
+    intro v
+    show 0 ≤ Matrix.dotProduct (star v) ((heckeAsMatrix x).mulVec v)
+    have h_unfold : Matrix.dotProduct (star v) ((heckeAsMatrix x).mulVec v) =
+        (∑ i, v i * x i) * (∑ j, x j * v j) := by
+      simp only [Matrix.dotProduct, Matrix.mulVec, heckeAsMatrix,
+                 star_trivial, Matrix.dotProduct]
+      rw [← Finset.sum_mul_sum]
+      apply Finset.sum_congr rfl
+      intro i _
+      rw [Finset.mul_sum]
+      apply Finset.sum_congr rfl
+      intro j _
+      ring
+    rw [h_unfold]
+    -- (Σ v_i x_i) * (Σ x_j v_j) = (Σ v_i x_i)² ≥ 0 (by mul_comm
+    -- in each summand).
+    have h_eq : (∑ j, x j * v j) = (∑ i, v i * x i) := by
+      apply Finset.sum_congr rfl
+      intros i _
+      ring
+    rw [h_eq]
+    exact mul_self_nonneg _
 
 /-- **Canonical T_w uniqueness** — Hecke-algebra-flavoured
     specialisation of `strict_complementarity_unique`.  Given an

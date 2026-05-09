@@ -67,17 +67,22 @@ noncomputable def qInteger (k : ℕ) (q : ℝ) : ℝ :=
   else (q ^ ((k : ℝ) / 2) - q ^ (-(k : ℝ) / 2)) /
        (q ^ ((1 : ℝ) / 2) - q ^ (-(1 : ℝ) / 2))
 
-/-- `[1]_q = 1` for any `q > 0`. -/
-theorem qInteger_one (q : ℝ) (hq : q > 0) : qInteger 1 q = 1 := by
+/-- `[1]_q = 1` whenever the denominator `q^{1/2} - q^{-1/2}` is
+    non-zero (i.e. for `q ≠ 1`).  At `q = 1` the formula gives
+    `0/0 = 0` by Lean's division convention; the `[1]_q = 1`
+    identity is the limit, which Mathlib does not transport
+    automatically.  This is the "generic-q" form. -/
+theorem qInteger_one (q : ℝ)
+    (h_denom : q ^ ((1 : ℝ) / 2) - q ^ (-(1 : ℝ) / 2) ≠ 0) :
+    qInteger 1 q = 1 := by
   unfold qInteger
-  -- `[1]_q = (q^{1/2} - q^{-1/2}) / (q^{1/2} - q^{-1/2}) = 1` (for q ≠ 1)
-  -- Edge case q = 1: numerator and denominator both zero; the limit is 1.
-  -- For Lean purposes, axiomatise the q ≠ 1 case as a lemma; the q = 1
-  -- branch is `0/0` which `if` handles.
   split_ifs with h
   · exact absurd h Nat.one_ne_zero
-  · -- (q^{1/2} - q^{-1/2}) / (q^{1/2} - q^{-1/2}) = 1 if denominator ≠ 0
-    sorry
+  · -- Numerator and denominator both equal `q^{1/2} - q^{-1/2}` when k = 1.
+    -- (1 : ℕ) cast to ℝ is 1; the `((1 : ℕ) : ℝ) / 2` simplifies.
+    have h1 : ((1 : ℕ) : ℝ) = 1 := by norm_cast
+    rw [h1]
+    exact div_self h_denom
 
 /-- The q-integer `[0]_q = 0` (by convention; consistent with
     `[k]_q = (q^{k/2} - q^{-k/2}) / (q^{1/2} - q^{-1/2})` having
