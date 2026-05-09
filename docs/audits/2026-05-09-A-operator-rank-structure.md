@@ -1,0 +1,149 @@
+# A^λ_{μν}(I) structural rank — empirical findings + interface taxonomy
+
+**Branch.** `claude/kite-tail-reconciliation` (PR #616).
+**Witness.** [`A-operator-rank-probe.witness.json`](../../folio-assistant/computations/A-operator-rank-probe.witness.json)
+**Probe.** [`A_operator_rank_probe.py`](../../folio-assistant/computations/A_operator_rank_probe.py)
+
+## TL;DR
+
+The operator-valued $A^\lambda_{\mu\nu}(I)$ from refined Sub-lemma
+2.1 has structural rank **far below** the naive ambient parameter
+count $\sum (d_\mu d_\nu)^2 \cdot c^\lambda_{\mu\nu}^2$.  At A=3
+the global compression is **0.135** (true rank / ambient).  At A=2
+no compression ($1.000$).  The compression jumps at A≥3 because
+the H_6 side's irreps grow large and the constraints become
+non-trivial.
+
+## Per-A summary
+
+| A | Split | λ count | Σ ambient | Σ true rank | Compression |
+|---|---|---|---|---|---|
+| 2 | 3+3 | 11 | 188 | 188 | **1.000** |
+| 3 | 3+6 | 22\* | 17 250 | 2 328 | **0.135** |
+| 4 | 6+6 | 77 | (not yet) | (not yet) | — |
+
+\*22 of 30 partitions had panel ≥ ambient and are SVD-determined;
+the remaining 8 had n_unknowns > 2442 and are deferred.
+
+## Drop ratios are exact zeros
+
+For all 22 rank-determined λ at A=3:
+
+```
+sv[true_rank-1] / sv[true_rank]  ∈  [10^13, 10^14]
+sv[true_rank+1..end]             ∈  [10^-30, 10^-16]
+```
+
+The drop is ~13 orders of magnitude — far above any numerical
+noise.  The null directions are **STRUCTURAL ZEROS**, not panel-
+limited approximations or numerical artifacts.
+
+## Per-pair upper bound vs observed rank
+
+For λ = [7, 2] at A=3 (5 support pairs):
+
+| (μ, ν) | $d_\mu$ | $d_\nu$ | rank X | rank Y | per-pair rank | n_entries |
+|---|---|---|---|---|---|---|
+| ((3), (6)) | 1 | 1 | 1 | 1 | 1 | 1 |
+| ((3), (5, 1)) | 1 | 5 | 1 | 16 | 16 | 25 |
+| ((3), (4, 2)) | 1 | 9 | 1 | 22 | 22 | 81 |
+| ((2, 1), (6)) | 2 | 1 | 4 | 1 | 4 | 4 |
+| ((2, 1), (5, 1)) | 2 | 5 | 4 | 16 | 64 | 100 |
+| **TOTAL** | | | | | **107** | **211** |
+| **OBSERVED** | | | | | **86** | |
+
+The per-pair upper bound is $\sum_p \mathrm{rank}(X_p) \cdot
+\mathrm{rank}(Y_p) = 107$.  Observed total rank $= 86 < 107$.
+The 21-dim shortfall is **inter-block redundancy** —
+constraints that link different (μ, ν) blocks within the same λ.
+
+## Multiple interfaces — operator-level dependence
+
+The user notes correctly that the inter-nucleon interface
+$I = \sigma_{n_1 - 1} - h/2$ is **only one** of the canonical
+choices.  The atomic mass formula uses three interface types
+depending on the nucleon-pair adjacency:
+
+| Pair type | $I$ | Hecke form |
+|---|---|---|
+| pp (proton-proton) | $\sigma$ | $(c, d) = (1, 0)$ |
+| nn (neutron-neutron) | $\sigma^{-1}$ | $(c, d) = (1, -h)$ |
+| pn (proton-neutron, mixed) | $(\sigma + \sigma^{-1})/2$ | $(c, d) = (1, -h/2)$ |
+
+**Important clarification on the rank's interface dependence.**
+The supply matrix $M$ used in the lstsq is **interface-INDEPENDENT**
+— the interface $I = c \cdot \sigma + d \cdot 1$ enters only the
+$\chi^\lambda$ TARGET values (RHS of $M \cdot \mathrm{vec}(A) = \chi$),
+not the bilinear coefficients.  So the SVD rank of $M$ (the
+0.135 compression factor at A=3) is the same across all three
+interface types.
+
+Where the interface dependence DOES live: the **operator
+solution** $\mathrm{vec}(A)$ within the rank-86 subspace.  Each
+interface produces a DIFFERENT $A^\lambda_{\mu\nu}(I)$ inside the
+same fixed-rank subspace.  The set
+$\{A^\lambda_{\mu\nu}(\sigma), A^\lambda_{\mu\nu}(\sigma^{-1}), A^\lambda_{\mu\nu}(\frac{\sigma+\sigma^{-1}}{2})\}$
+is **3-dimensional in operator space** by the linearity of the
+LR projection (Sub-lemma 2.1 is linear in I), so the three are
+related by:
+
+$$
+A^\lambda_{\mu\nu}\big(\tfrac{\sigma + \sigma^{-1}}{2}\big) \;=\; \tfrac{1}{2}\big(A^\lambda_{\mu\nu}(\sigma) + A^\lambda_{\mu\nu}(\sigma^{-1})\big).
+$$
+
+So extracting **two** of the three (e.g. pp and nn) determines
+the third (pn).  This is a useful redundancy check.
+
+**Implication for atomic-mass formula at A ≥ 3.**  The canonical
+pppnnn ordering creates inter-nucleon interfaces of all three
+types as A grows.  At A=2 only pn matters; at A=3 (pppnnn-split):
+both pp and pn contribute; at A=4 (pppnnn at A=4 means ppnn): pp,
+pn, nn all contribute.  The full multi-A operator extraction
+needs all three interface types.
+
+## Implications for symmetry reduction (item 4)
+
+The 0.135 global compression at A=3 establishes:
+
+1. **The naive (d_μ d_ν)² parameterization is overcomplete by ~7×.**
+2. **The reduction is structural** (true zeros, not approximation).
+3. **For A=4 with similar compression, ~135K free parameters fit
+   in the H_12 panel** — making it tractable in principle.
+
+The exact rank formula likely arises from one or more of:
+
+- **Schur-Weyl block structure** of $V_\mu \otimes V_\nu$ under
+  $H_{n_1} \otimes H_{n_2}$: dim of intertwiner space depends
+  on the multiplicity of irreducibles in $V_\mu \otimes V_\nu$
+  as a $H_{n_1+n_2}$-restricted module.
+- **Interface projection** for the specific I (averaged):
+  $(\sigma + \sigma^{-1})/2$ projects to the symmetric Hecke
+  eigenspace, halving the parameter count at H_2.
+- **Trace-pairing symmetry**: $\mathrm{Tr}(A \cdot X) = \mathrm{Tr}(X \cdot A)$
+  treats $A$ symmetrically in the bilinear pairing.
+- **LR multiplicity squares** (Wedderburn dim of centralizer):
+  $\Sigma c^\lambda_{\mu\nu}^2$ — a lower bound, not the rank
+  directly (5 vs observed 86 for [7,2]).
+
+## Recommended path
+
+1. **Empirical sweep**: probe rank across A=2, A=3 with all THREE
+   interface types (pp / nn / pn).  Compare ratios — if compression
+   factor varies by interface, the symmetry is interface-specific.
+2. **Per-pair structure**: for each (μ, ν) block, fit the
+   intra-block rank (independent of inter-block redundancy) — gives
+   a per-pair upper bound on A^λ_{μν}(I) dimensionality.
+3. **Closed-form prediction**: identify the symmetry that explains
+   the inter-block redundancy (the 21-dim gap at [7,2]).  Likely
+   candidates: cell-content / hook combinatorics on λ/μ skew
+   shapes, or higher Pieri rules.
+4. **Direct construction**: once the symmetry is named, parameterize
+   $A^\lambda_{\mu\nu}(I)$ in the reduced basis directly, bypassing
+   the dense lstsq.  This makes A=4 tractable.
+
+## Files
+
+- [`folio-assistant/computations/A_operator_rank_probe.py`](../../folio-assistant/computations/A_operator_rank_probe.py)
+- [`folio-assistant/computations/A-operator-rank-probe.witness.json`](../../folio-assistant/computations/A-operator-rank-probe.witness.json)
+- [`folio-assistant/computations/A_operator_extract_general.py`](../../folio-assistant/computations/A_operator_extract_general.py)
+- [`folio-assistant/computations/lr_coefficients.py`](../../folio-assistant/computations/lr_coefficients.py)

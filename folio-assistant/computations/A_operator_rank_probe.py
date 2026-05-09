@@ -51,6 +51,17 @@ from lr_coefficients import get_lr_table, partitions_of  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 
+# Note: the supply matrix M for the rank probe is INTERFACE-
+# INDEPENDENT — the interface I = c_int·σ + d_int·1 enters only
+# the χ^λ target values (the RHS of M·vec(A) = chi), not the
+# bilinear coefficients of M.  So rank(M) is a property of the
+# test panel + support structure only.  The interface dependence
+# shows up in the OPERATOR SOLUTION (vec(A)) within the rank
+# subspace.  See the per-interface probe in
+# `A_operator_per_interface_probe.py` (separate witness) for the
+# operator-level interface comparison.
+
+
 def probe_rank_per_lambda(n1: int, n2: int) -> dict:
     """Compute SVD rank for the supply matrix at each λ ⊢ (n1+n2).
 
