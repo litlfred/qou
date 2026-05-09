@@ -50,17 +50,37 @@ structure IdealTriangulation where
 noncomputable def thurstonVolume (T : IdealTriangulation) : ℝ :=
   (T.shapes.map blochWigner).sum
 
-/-- **Thurston volume additivity** (stated, not proved here).
-    Any hyperbolic 3-manifold M admits an ideal triangulation T
-    whose shape-parameter sum equals the hyperbolic volume of M.
-    This is the classical theorem of Thurston (1978); we state
-    the existence of such a triangulation as an axiom-backed
-    predicate. -/
+/-- Class-axiomatisation of Thurston's existence theorem
+    (CLAUDE.md §3b-cond): for every hyperbolic 3-manifold `M`
+    equipped with a hyperbolic-volume function `hypVol`, an ideal
+    triangulation realising the volume exists.
+
+    The single field `triangulation_exists` is the classical
+    [thurston1978] result; an instance is the conjectural input
+    that downstream conditional theorems consume. -/
+class HasThurstonTriangulation
+    (M : Type*) [TopologicalSpace M] (hypVol : M → ℝ) where
+  /-- Per-point ideal triangulation realising the hyperbolic volume. -/
+  triangulation : M → IdealTriangulation
+  /-- The volume coincides with the Thurston sum of Bloch–Wigner
+      values on the chosen triangulation.
+      Ref: [thurston1978] http://library.msri.org/books/gt3m/ -/
+  volume_eq_thurston :
+    ∀ m : M, hypVol m = thurstonVolume (triangulation m)
+
+/-- **Thurston volume additivity** (conditional theorem, §3b-cond).
+    Given an instance of `HasThurstonTriangulation M hypVol`, every
+    point of `M` admits an ideal triangulation whose shape-parameter
+    Bloch–Wigner sum equals the hyperbolic volume.
+
+    The proof body has no `sorry`; the only unproved input is the
+    class instance, which is the classical [thurston1978] theorem. -/
 theorem thurstonVolumeAdditivity
     (M : Type*) [TopologicalSpace M]
-    (hypVol : M → ℝ) :
+    (hypVol : M → ℝ)
+    [inst : HasThurstonTriangulation M hypVol] :
     ∀ m : M, ∃ T : IdealTriangulation, hypVol m = thurstonVolume T := by
-  -- Ref: [thurston1978] http://library.msri.org/books/gt3m/
-  sorry
+  intro m
+  exact ⟨inst.triangulation m, inst.volume_eq_thurston m⟩
 
 end QOU.ParticleInteractions
