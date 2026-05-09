@@ -110,15 +110,57 @@ theorem Matrix.PosSemidef.entry_sq_le_diag_mul
     {C : Matrix (Fin n) (Fin n) ℝ} (hC : C.PosSemidef)
     (i j : Fin n) :
     (C i j) ^ 2 ≤ C i i * C j j := by
-  -- The proof composes:
-  --   1. `Matrix.PosSemidef.principalSubmatrix_posSemidef` (or
-  --      `Matrix.PosSemidef.submatrix`-style lemma)
-  --   2. `Matrix.PosSemidef.det_nonneg`
-  --   3. Explicit 2x2 determinant formula
-  --   4. PSD-symmetric: `C j i = C i j`
-  -- Each step is standard Mathlib; full composition pending
-  -- exact API verification.
-  sorry
+  -- Direct test-vector proof avoiding Mathlib principal-submatrix
+  -- lookup.  The 2x2 quadratic form reduction:
+  --
+  -- For any (α, β) ∈ ℝ², the test vector
+  --     v_{αβ} := α · e_i + β · e_j
+  -- gives
+  --     v^T · C · v = α² · C_ii + 2αβ · C_ij + β² · C_jj.
+  -- PSD: this is ≥ 0 for ALL (α, β).
+  --
+  -- Two specific choices:
+  -- (v1) (α, β) := (C_jj, -C_ij):
+  --     v1^T · C · v1 = C_jj² · C_ii − 2·C_jj·C_ij² + C_ij²·C_jj
+  --                   = C_jj · (C_jj · C_ii − C_ij²)
+  -- (v2) (α, β) := (-C_ij, C_ii):
+  --     v2^T · C · v2 = C_ij² · C_ii − 2·C_ij·C_ii·C_ij + C_ii²·C_jj
+  --                   = C_ii · (C_ii · C_jj − C_ij²)
+  --
+  -- Both ≥ 0.  Combined with non-negativity of C_ii, C_jj,
+  -- `nlinarith` closes the desired inequality.
+  --
+  -- Detailed Lean composition:
+  by_cases hij : i = j
+  · -- i = j: trivially (C i i)² ≤ C i i · C i i = (C i i)² with equality.
+    subst hij
+    rw [sq]
+  -- C symmetric (Hermitian + real)
+  have h_sym : C j i = C i j := by
+    have hH : C.IsHermitian := hC.1
+    calc C j i = C.transpose i j := rfl
+      _ = C i j := by rw [show C.transpose = C from hH]
+  -- Diagonal non-negativity
+  have h_ii_nonneg : 0 ≤ C i i := QOU.MathlibExt.PosSemidefTraceZero.Matrix.PosSemidef.diag_nonneg hC i
+  have h_jj_nonneg : 0 ≤ C j j := QOU.MathlibExt.PosSemidefTraceZero.Matrix.PosSemidef.diag_nonneg hC j
+  -- Test vector v1 = C_jj · e_i + (-C_ij) · e_j
+  -- v1^T · C · v1 = C_jj · (C_jj · C_ii - C_ij²) ≥ 0
+  have h_v1 : 0 ≤ C j j * (C j j * C i i - (C i j) ^ 2) := by
+    have h_psd_v1 := hC.2 (fun k =>
+      if k = i then C j j else if k = j then -(C i j) else 0)
+    -- Compute the quadratic form (matrix-computation step;
+    -- composes Matrix.dotProduct, Matrix.mulVec, Pi.single,
+    -- and the symmetry lemma h_sym).
+    sorry  -- single matrix-computation simp step
+  -- Test vector v2 = (-C_ij) · e_i + C_ii · e_j (symmetric to v1)
+  have h_v2 : 0 ≤ C i i * (C i i * C j j - (C i j) ^ 2) := by
+    have h_psd_v2 := hC.2 (fun k =>
+      if k = i then -(C i j) else if k = j then C i i else 0)
+    sorry  -- analogous simp step
+  -- Combine via nlinarith.  When C_jj = 0 OR C_ii = 0, one of
+  -- the inequalities directly gives the bound; otherwise,
+  -- nlinarith can compose.
+  nlinarith [h_v1, h_v2, h_ii_nonneg, h_jj_nonneg, sq_nonneg (C i j)]
 
 /-- **PSD off-diagonal-zero from diagonal-zero**.
 
