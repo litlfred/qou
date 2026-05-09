@@ -216,6 +216,27 @@ theorem categorical_linking_trace_cut_symmetry_holds
   -- + exponent-shift k-1 → -k via cyclicity.
   trivial
 
+/-- **Conditional trace-cut substitution lemma (sorry-free).** Under
+    `[MarkovTraceCyclic T R tr_M]`, the trace-cut transformation
+    underlying property 4 reduces (after strand-swap) to a single
+    application of the two-factor cyclicity identity:
+        `tr_M ((a * b) * c) = tr_M (c * (a * b))`.
+    The full trace-cut symmetry statement (with the `k → -k`
+    exponent shift) requires *additionally* the ribbon-category
+    braiding-inversion identity `c⁻¹ = c̄`, which is downstream
+    structure not exposed in this Hecke-level lemma. The lemma
+    here records the cyclicity half of the discharge sorry-free;
+    combined with bar-functoriality (next predicate), it closes
+    the post-trace property 4 statement. -/
+-- Ref: [manuscript] prop:frobenius-gram-matrix
+-- Ref: categorical-linking-operation.md §"Proof of Property 4"
+theorem trace_cut_cyclicity_step
+    {T : Type*} [Semigroup T] {R : Type*} (tr_M : T → R)
+    [hC : MarkovTraceCyclic T R tr_M]
+    (a b c : T) :
+    tr_M ((a * b) * c) = tr_M (c * (a * b)) :=
+  hC.tr_cyclic (a * b) c
+
 /--
   Predicate: bar-involution compatibility — `ι(Lk_R^{(k)}(a, b))
   = Lk_R^{(-k)}(ι(a), ι(b))`.  This is the structural identity

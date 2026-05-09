@@ -272,8 +272,18 @@ def main(also_symbolic: bool = False) -> int:
         ),
         "results": results,
     }
-    OUT.write_text(json.dumps(out, indent=2))
-    print(f"\n  Output: {OUT.relative_to(HERE.parent.parent)}")
+    sys.path.insert(0, str(HERE))
+    from witness_base import WitnessBuilder  # noqa: E402
+    out_path = (
+        WitnessBuilder.wrap_legacy(
+            "atomic-tr-m-mpfr-50dps", out,
+            script_path=__file__, engine="mpmath",
+        )
+        .set_audit_only(
+            "docs/audits/2026-05-09-refocused-1ppb-workplan-v3.md")
+        .save()
+    )
+    print(f"\n  Output: {out_path}")
     return 0
 
 
