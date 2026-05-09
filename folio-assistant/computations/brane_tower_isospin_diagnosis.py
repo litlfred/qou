@@ -80,6 +80,60 @@ This script just documents the diagnosis.  It does NOT propose a fix;
 fixing requires a derivation-level change to T2/T3 that is beyond
 the scope of a follow-up commit.
 
+POSTSCRIPT (PR #577 audit, 2026-05-09)
+══════════════════════════════════════════════════════════════════
+The full-tree compute audit identified the same structural bug
+across three scripts — `atom_mass_derived.py` (multiplicative
+`tr_M(atom NF) × E_0`), `atomic_braid_mass_table.py`
+(multiplicative `|tr_p|^Z · |tr_n|^N` carrier base), and the
+brane-tower diagnosis above.  All three are manifestations of
+the same combination-law mistake:
+
+   atomic mass is *additive* in constituents
+        M_atom = Z·M_p + N·M_n + Z·M_e − E_binding(A, Z)
+   not multiplicative.
+
+The corrected additive constituent baseline lives in
+`atom_mass_additive_baseline.py`; AME2020 hydrogen is reproduced
+to <100 ppb (publication-rounding-limited) and the per-isotope
+binding-energy residuals average 7.224 MeV/A — within 4% of
+empirical SEMF.
+
+This re-frames the conclusions above:
+
+  · Path (A) — auditing the (c, d) tables — is **likely a wild
+    goose chase**.  The 470 MeV p/n asymmetry is not a wrong
+    per-generator volume; it is the brane-tower formula picking
+    up exponential sensitivity through `Φ_q` because the
+    carrier composition is multiplicative.  Even with perfect
+    (c, d) values, the Σ Φ_q(|V̂_i|) sum will keep the same
+    pathology because `Φ_q` is super-linear in the per-generator
+    volumes.
+
+  · Path (B) — normalising `Φ_q` — partially addresses the
+    symptom, not the cause.
+
+  · Path (C) — `Φ_q` only applies at roots of unity — is closer
+    to the truth: the brane-tower formula is structurally
+    appropriate for a different regime, not generic q.
+
+  · The right path: recast T2/T3 as **additive contributions to
+    E_binding(A, Z)**, matching the binding-energy column in
+    `atom-mass-additive-baseline.witness.json`.  Each Δ_binding
+    column entry (e.g. ⁴He ≈ 28.3 MeV, ⁷Li ≈ 39.2 MeV) is a
+    target for an additive Σ tower formula, not a multiplicative
+    one.
+
+This script's output remains useful as a CHARACTERISATION of the
+multiplicative pathology, not as evidence about (c, d) values.
+The QOU `ρ_F · V_hyp` law in
+`rem:frobenius-packing-density` is the natural additive
+reformulation: `ρ_F` is structural (Type-B fold orbit closure,
+`prop:cpt-orbit-closure-density`), `V_hyp` is geometric
+(Thurston volume of the atomic-link complement), and their
+product gives a per-isotope additive binding contribution
+that any Σ-form tower must reproduce.
+
 Output: `brane-tower-isospin-diagnosis.witness.json`
 """
 from __future__ import annotations
