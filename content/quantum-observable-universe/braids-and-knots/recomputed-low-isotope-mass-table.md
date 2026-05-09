@@ -29,21 +29,38 @@ PR #564, **three independent production paths** to* $\mathrm{tr}_M(\beta_K)$
 | $T$ | 1 | 2 | 9 | 0.1040521187 | 0.1040521187 | $1.07 \times 10^{-14}$ |
 | $^{3}\mathrm{He}$ | 2 | 1 | 9 | 0.2065408586 | 0.2065408586 | $1.03 \times 10^{-14}$ |
 
-## Mass-table predictions (ρ_K leading-order ansatz)
+## Mass-table predictions (direct binding formulation)
 
-Per PR #564's
+The atomic-mass formula is
+
+$$
+  \mathcal{M}(K) \;=\; (Z m_p + N m_n) \;+\; \mathrm{Binding}(K), \qquad
+  \mathrm{Binding}(K) \;=\; m_e \cdot \sum_{\lambda \vdash 3A} y_\lambda(q)\,\chi^\lambda(\beta_K)\,\Delta_\lambda(K),
+$$
+
+with $y_\lambda$ the canonical Wenzl Markov weight (see
+[`prop:markov-trace-recursive-reducer`](markov-trace-recursive-reducer.md)),
+$\chi^\lambda$ the Hoefsmit q-character of the atomic braid, and
+$\Delta_\lambda(K)$ the per-Wedderburn-block binding fraction.
+
+This direct form supersedes the equivalent but cosmetically
+tautological factorisation
+$\mathcal{M}(K) = \rho_K \cdot m_e \cdot |\mathrm{tr}_M(K)|$ with
+$\rho_K = \rho_K^{\mathrm{LO}} + (\Sigma_\lambda y_\lambda \chi^\lambda \Delta_\lambda)/|\mathrm{tr}_M|$:
+the leading-order term $\rho_K^{\mathrm{LO}} = (Z m_p + N m_n)/(m_e\,|\mathrm{tr}_M|)$
+has the $|\mathrm{tr}_M|$ factor cancel against the formula's outer
+$|\mathrm{tr}_M|$ multiplier, so $\rho_K^{\mathrm{LO}}\cdot m_e\,|\mathrm{tr}_M| = Z m_p + N m_n$
+identically.  The factorisation packages constituent + binding
+into a single symbol $\rho_K$, but the only physical content is
+the $\Delta_\lambda$ correction; we therefore write the formula
+with constituent sum and binding side by side.
+
+Reference scripts:
 [`atomic_mass_via_rho_k.py`](../../../folio-assistant/computations/atomic_mass_via_rho_k.py)
-with the resolved T6 unit-convention
-([`prop:atomic-mass-gb-nf`](atomic-mass-gb-nf.md)):
-
-$$
-  \mathcal{M}(K) \;=\; \rho_K(Z, N) \cdot m_e \cdot |\mathrm{tr}_M(K)|, \qquad \rho_K^{\mathrm{LO}}(Z, N) \;=\; \frac{Z m_p + N m_n}{m_e \cdot |\mathrm{tr}_M(K)|}.
-$$
-
-Substitution shows $\mathcal{M}^{\mathrm{LO}}(K) = Z m_p + N m_n$ — the
-$|\mathrm{tr}_M|$ factor cancels.  The leading-order ρ_K formula
-predicts the **free-constituent sum** for every atom; nuclear
-binding is recovered only at higher orders of $\rho_K$.
+(LO baseline, retained as reference);
+[`binding_K_direct.py`](../../../folio-assistant/computations/binding_K_direct.py)
+(direct binding formulation; consumes $\Delta_\lambda$ from the
+in-flight derivation race in PRs #602 / #603 / #613).
 
 | Atom | $\mathcal{M}_{\text{pred}}^{\mathrm{LO}}$ (MeV) | $\mathcal{M}_{\text{CODATA}}$ (MeV) | $\Delta$ (MeV) | rel err | binding (CODATA) |
 |---|---:|---:|---:|---:|---:|

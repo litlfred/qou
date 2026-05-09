@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T19:53:40.645164+00:00",
-  "commitSha": "58a623a3b6e6759e3080356c166b84555ea7e8b7",
+  "computedAt": "2026-05-09T19:54:20.214286+00:00",
+  "commitSha": "a94174421fa6df2b37e4af87f108150d8fec2c93",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,7 +559,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 2,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
@@ -2054,6 +2054,7 @@
         "beta-ew-delta-I-conjugate-pairing.witness.json",
         "beta-ew-delta-I-eigenvalues.witness.json",
         "beta-ew-delta-I-numerical-spectrum.witness.json",
+        "binding-K-direct.witness.json",
         "binding-canonical.witness.json",
         "binding-k-enumerator.witness.json",
         "binding-k-solver.witness.json",

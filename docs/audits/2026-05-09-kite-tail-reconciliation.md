@@ -161,3 +161,54 @@ intermediate state.
 - **PR #545 D(u) at A=2**: ✓ verified exactly in un-reduced form.
 - **A=1 prefactor mismatch**: ✓ RESOLVED — corrected formula $2^{2A+\delta_{ZN}}$.
 - **Neutron shift (19 vs 22)**: ⚠ open — likely a `markov_peel` numerator-absorption artefact, deferred.
+
+## ρ_K^LO tautology — direct binding formulation
+
+The ρ_K mass formula
+$\mathcal{M}(K) = \rho_K \cdot m_e \cdot |\mathrm{tr}_M(K)|$
+with leading-order
+$\rho_K^{\mathrm{LO}} = (Z m_p + N m_n)/(m_e\,|\mathrm{tr}_M|)$
+has the $|\mathrm{tr}_M|$ factor cancel against itself, reducing
+the LO contribution to the constituent sum $Z m_p + N m_n$. The
+only physical content is the second-order correction
+$(\Sigma_\lambda y_\lambda \chi^\lambda \Delta_\lambda) / |\mathrm{tr}_M|$,
+equivalently the binding energy
+$$
+\mathrm{Binding}(K) = m_e \cdot \sum_\lambda y_\lambda(q)\,\chi^\lambda(\beta_K)\,\Delta_\lambda(K).
+$$
+
+The new
+[`folio-assistant/computations/binding_K_direct.py`](../../folio-assistant/computations/binding_K_direct.py)
+script computes this binding directly, surfacing the physical
+content rather than packaging it through the ρ_K · m_e · |tr_M|
+intermediate.  The legacy
+[`atomic_mass_via_rho_k.py`](../../folio-assistant/computations/atomic_mass_via_rho_k.py)
+is retained as the LO baseline reference; both scripts now flag
+the LO tautology in their docstrings.  The content block
+[`recomputed-low-isotope-mass-table.md`](../../content/quantum-observable-universe/braids-and-knots/recomputed-low-isotope-mass-table.md)
+has been rewritten to lead with the direct-binding formula.
+
+## V̂_i ↔ Δ_λ bridge (open)
+
+Per parallel investigation (Explore agent, 2026-05-09): no
+formulaic connection currently exists between the single-particle
+Frobenius volumes $\hat V_i$ (used in `mass_endomorphism.py`
+single-particle formula) and the atomic Wedderburn binding
+fractions $\Delta_\lambda(K)$ (used in `binding_K_direct.py`).
+The bridge is **partial and open**:
+
+- **Single-particle**: $\mathfrak{m}(\beta) = |\prod \hat V_i| + \sum_i \Phi_q(|\hat V_i|) + \sum_{i<j} z^2 \Phi_q(|\hat V_i \hat V_j|)$ — basis-dependent in evaluation per `six-term-mass-formula-complete.md` §Term 2.
+- **Atomic binding**: $\Delta_\lambda(K)$ derived in `rho_k_h3a_frobenius_pairing.py` (Option G) as a Frobenius-norm optimisation over $Z(H_{3A})$, **not** as a function of $\hat V_i$.
+- **Closest candidate bridge**: [`wedderburn_pair_volumes.py`](../../folio-assistant/computations/wedderburn_pair_volumes.py)
+  Wedderburn-decomposes pair volumes
+  $|\hat V_i \hat V_j|_{\mathrm{Wedd}} = w_{\mathrm{sym}}\,\lambda_i^{\mathrm{sym}}\lambda_j^{\mathrm{sym}} + w_{\mathrm{std}}[\ldots] + w_{\mathrm{alt}}\,\lambda_i^{\mathrm{alt}}\lambda_j^{\mathrm{alt}}$,
+  giving per-λ weight structure that may be invertible to extract
+  $\Delta_\lambda$ from $\hat V_i$ pair data.
+
+**Recommended 1-2 hour follow-up:** invert the
+`wedderburn_pair_volumes.py` per-λ weight structure to test whether
+$\Delta_\lambda^G$ from the Frobenius-pairing closure factors as
+$f_\lambda(\hat V_i, \hat V_j)$.  If it does, single-particle
+substrate fixes the atomic-binding correction directly — closing
+the gap between mass_endomorphism (single-particle) and the
+binding formula (atomic).
