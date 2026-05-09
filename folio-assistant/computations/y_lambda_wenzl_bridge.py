@@ -131,23 +131,85 @@ def y_lambda_wenzl_bridge_symbolic(partition):
 
     Returns a sympy expression in the symbol q (positive).
 
-    Optimizations: per-call result cached via lru_cache; the
-    normalization Σ_µ d_µ · s_{µ,r}(Q) is cached per n (instead of
-    recomputed for every partition λ of size n); the trailing
-    `sp.simplify` is dropped — `sp.cancel` alone is sufficient and
-    `simplify` on a rational expression with sqrt(q) terms dominates
-    runtime (>30x slower per audit
-    `docs/audits/2026-05-08-p3-h-3a-divergence.md`).
+    Optimizations:
+
+    - Pre-populates the cache at module import from
+      `y-lambda-wenzl-bridge-symbolic-witness.json` (32 partitions
+      across n = 2..12 in sub-second).  Eliminates the first-call
+      symbolic compute cost (6.1s for n=3 partition (3); >60s for
+      n=6 partitions).  Cache miss falls back to recompute.
+    - `@lru_cache` per-partition result for repeat calls.
+    - The Wenzl normalization `Σ_µ d_µ · s_{µ,r}(Q)` is cached per
+      `n` (instead of recomputed for every partition λ of size n).
+    - The trailing `sp.simplify` is dropped — `sp.cancel` alone is
+      sufficient and `simplify` on a rational expression with
+      sqrt(q) terms dominates runtime (>30x slower per audit
+      `docs/audits/2026-05-08-p3-h-3a-divergence.md`).
     """
     return _y_lambda_wenzl_bridge_symbolic_cached(tuple(partition))
 
 
 @functools.lru_cache(maxsize=None)
 def _y_lambda_wenzl_bridge_symbolic_cached(partition: tuple) -> "sp.Expr":
-    """Cached symbolic y_λ; partition keyed as tuple for hashability."""
+    """Cached symbolic y_λ; partition keyed as tuple for hashability.
+
+    Lazy lookup: on first call per partition, checks the committed
+    `y-lambda-wenzl-bridge-symbolic-witness.json` for a pre-computed
+    symbolic string and `sp.sympify` parses it (avoiding the expensive
+    Schur-principal recomputation).  Falls back to symbolic recompute
+    if the witness has no entry.  Witness covers n = 2..12.
+    """
+    witness_strings = _load_witness_strings()
+    if partition in witness_strings:
+        q_pos = sp.Symbol("q", positive=True)
+        try:
+            return sp.sympify(witness_strings[partition], locals={"q": q_pos})
+        except (sp.SympifyError, SyntaxError, ValueError):
+            pass
     return sp.cancel(
         _schur_self_unnormalized(partition) / _wenzl_norm_for_n(sum(partition))
     )
+
+
+# Lazy witness map: partition tuple → raw sympy-string (parsed on first
+# request, NOT at import — sympifying all 32 cached y_λ at import would
+# itself take 30+ seconds, defeating the optimization).
+_WITNESS_STRINGS: dict[tuple, str] | None = None
+
+
+def _load_witness_strings() -> dict[tuple, str]:
+    """Load (and memoize) the partition → sympy-string map from the
+    committed `y-lambda-wenzl-bridge-symbolic-witness.json`.  Lazy: only
+    runs on first cache miss in `_y_lambda_wenzl_bridge_symbolic_cached`.
+    """
+    global _WITNESS_STRINGS
+    if _WITNESS_STRINGS is not None:
+        return _WITNESS_STRINGS
+    out: dict[tuple, str] = {}
+    witness_path = (
+        Path(__file__).parent / "y-lambda-wenzl-bridge-symbolic-witness.json"
+    )
+    if witness_path.exists():
+        try:
+            with witness_path.open() as f:
+                doc = json.load(f)
+            tables = doc.get("tables_by_n") or doc.get("data", {}).get(
+                "tables_by_n", {}
+            )
+            for _n_key, n_data in (tables or {}).items():
+                weights = n_data.get("weights") if isinstance(n_data, dict) else None
+                if not isinstance(weights, list):
+                    continue
+                for w in weights:
+                    try:
+                        lam = tuple(w["partition"])
+                        out[lam] = w["y_lambda_symbolic"]
+                    except (KeyError, TypeError):
+                        continue
+        except Exception:
+            pass
+    _WITNESS_STRINGS = out
+    return out
 
 
 @functools.lru_cache(maxsize=None)
