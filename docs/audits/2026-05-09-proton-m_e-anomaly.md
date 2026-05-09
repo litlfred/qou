@@ -307,12 +307,148 @@ committed code supports.
 The viable resolutions reduce to **A / B / D / E** as enumerated
 in §5. Recommendation remains **D** (relabel-then-derive).
 
-## 9 — Cross-reference
+## 9 — Addendum (2026-05-09 evening): Items 1–4 already resolved by Strategy-3
 
-- Phase 0 audit: `docs/audits/2026-05-09-mass-table-1ppb-audit.md`
-- Phase 1 diagnostic witness: `folio-assistant/computations/proton-residual-rootcause.witness.json`
-- Phase 1.5 audit witness: `folio-assistant/computations/proton-m_e-anomaly-audit.witness.json`
-- Plan: `/root/.claude/plans/lots-of-new-math-parallel-lagoon.md`
-- Real edit commits for the literal: `1861df6` (root squash, Apr 29 20:34),
-  `0312a1e` (centralization, Apr 29 21:38). All other matches are
-  squash-rebase artefacts (verified by blob-hash equality).
+After this audit was written, a closer reading of the 10-day commit
+window revealed that the Option B prerequisites I listed in §5 had
+**already been resolved upstream** in commits `5c3919b` (May 5),
+`dbaf2aa` / `57a6f2f` (May 6), and the `atomic_braid_mass_table.py`
+"Strategy-3" mass table.  The `proton-mass-50dps.derivation.json`
+chain is therefore a **stale scaffold** that no longer represents the
+canonical mass derivation.  The 544k ppb "defect" is an artefact of
+that staleness, not of the framework.
+
+### 9.1 What Strategy-3 actually computes
+
+`atomic_braid_mass_table.py` (canonical mass-table chain, anchored in
+`atomic_braid_mass_terms.py`) implements the unit-reconciled formula
+
+```
+total_hecke = T1 + T2 + T3 + T4         (cat units)
+M_pred      = E_0 · total_hecke + T6_MeV (MeV; T5 multiplicative on T1)
+E_0         = (M_p − T6_MeV[p]) / total_hecke[p]   (proton-calibrated)
+```
+
+with documented unit conventions in
+[`atomic_braid_mass_terms.py`](../../folio-assistant/computations/atomic_braid_mass_terms.py):
+
+> **Dimensionality conventions:**
+> - Hecke-unit terms (T1, T2, T3, T4) are returned in cat units —
+>   they get scaled by `E_0` (MeV/cat-unit) at the assembly site.
+> - T6 is returned in MeV directly; **do not** multiply by `E_0`
+>   again at the assembly site.
+
+### 9.2 Verification at q_0 (this session)
+
+Running `atomic_braid_mass_table.py` produces:
+
+```
+|tr_M(p)|_atomic     = 1.6331535640481      (matches Phase 1.6 to 14 digits)
+total_hecke[p]       = 4.6912 cat units
+T2[p]=0.4986   T3[p]=0.0622   T4[p]=2.4973   T6[p]=0.6807 MeV
+E_0                  = 199.859751695 MeV / cat-unit
+M_pred[p]            = 938.2721 MeV          (= CODATA, by calibration)
+```
+
+The placeholder literal `M_HECKE_PIPELINE_AT_Q0["p"] = 1.4283` matches
+**neither** `total_hecke[p] = 4.6912` **nor** `|tr_M(p)| = 1.6332`.
+It is a dead literal that does not correspond to any quantity in the
+canonical chain.
+
+### 9.3 Status of the Option B prerequisites (Items 1–4)
+
+| Item | Status | Resolution |
+|------|--------|-----------|
+| **1.** Unit reconciliation across T1–T6 | **RESOLVED** | `atomic_braid_mass_terms.py` documents the conventions; `atomic_braid_mass_table.py:322` does the assembly `M_pred = E_0 · total_hecke + T6_MeV` |
+| **2.** A=1 brane-tower extension | **RESOLVED** | Strategy-3 populates A=1 (proton, neutron) with T2=0.4986, T3=0.0622; uses `t2_markov` / `t3_markov` (not the `terms-2-3-atom-per-gen-mpfr-50dps.witness.json` which was A≥2 only) |
+| **3.** T5 sign / scale audit | **RESOLVED** | Strategy-3 uses T5 = (a_K − 1)·T1·E_{0,β}; for proton a_K=1 ⇒ T5=0. The −7.79 MeV from `mass_formula_6term_mpfr_50dps.py` was a different (structurally inequivalent) T5 formulation; that script is not on the canonical chain. |
+| **4.** Replace `M_HECKE_PIPELINE_AT_Q0["p"]` | **REFRAMED** | The literal does not correspond to any quantity in Strategy-3. Right action is **deprecate the registry + the legacy chain**, not "replace with derived value". |
+
+### 9.4 Δ_n² and Δ_I — the full-twist + knot-operator scalars
+
+The user's mention of "δ and δ²" refers to two distinct scalars that
+the Strategy-3 chain consumes explicitly:
+
+**Δ_n² — full-twist saturated-shell scalar** (per
+`conj:categorical-neutrality-saturated-shells` and
+`full_twist_delta_n2_verification.py`):
+the full twist Δ_n² ∈ Z(B_n) ↪ Z(H_n(q)) acts on each Wedderburn block
+V_λ as the central scalar `q^{c(λ)}` where `c(λ) = Σ_{(i,j)∈λ} (j−i)`
+is the partition's content sum.  At magic n ∈ {2,8,20,28,50,82,126}
+the categorical mass endomorphism Φ_n is invariant under this action.
+
+**Δ_I — knot-operator quotient-braid Jones factor** (per
+`atomic_braid_mass_table.py:T1`):
+the per-atom multiplicative coupling `a(Z, N)` derived from the
+canonical-knot-id-SDP solver (when available; falls back to
+`jones_quotient_fallback` otherwise).  Embeds into T1 as
+
+```
+|tr_M_atomic(K)| = |tr_M(p)|^Z · |tr_M(n)|^N · |a(Z,N)| · Δ_n²-scalar
+```
+
+These were both upgraded in the May 6 PR #548 work to preserve 50-dps
+precision (`57a6f2f`) and to disambiguate dim-irrep from |S_n|
+(`dbaf2aa`).  My Phase 1.5 audit didn't catch them because it focused
+on the legacy `proton-mass-50dps.derivation.json` chain that doesn't
+consume them.
+
+### 9.5 Strategy-3 prediction errors (the new bottleneck)
+
+The proton sits at 0% error by construction (E_0 is calibrated
+against M_p).  The actual 1 ppb work has shifted to closing the
+**other-atom** errors:
+
+| Atom | Strategy-3 M_pred | M_codata | Error |
+|------|-------------------|----------|-------|
+| p    | 938.272 MeV       | 938.272  | 0.000% (calibration anchor) |
+| n    | 861.345           | 939.565  | **−8.325%** |
+| D    | 1420.831          | 1875.613 | **−24.247%** |
+| T    | 1287.884          | 2808.921 | **−54.150%** |
+| ³He  | 1391.177          | 2808.392 | **−50.464%** |
+| ⁴He  | 2243.587          | 3727.379 | **−39.808%** |
+
+The 8% neutron error and 24+% nucleon-binding errors at A ≥ 2 are
+the **real precision frontier**.  These trace primarily to:
+- The `canonical_a_k(jet-knot)` values for A=3,4 atoms (T, ³He, ⁴He)
+- The T2 / T3 brane-tower computations at A ≥ 2 (Markov-cumulant form)
+- Δ_n² coupling for higher A (n=6, 9, 12 partitions)
+
+### 9.6 Recommended next steps (revised from §5)
+
+1. **Deprecate the legacy chain.** Update
+   `M_HECKE_PIPELINE_AT_Q0` and `build_proton_mass_50dps_chain.py`
+   docstrings to mark them DEPRECATED and point to
+   `atomic_braid_mass_table.py` as the canonical chain.
+
+2. **Re-anchor 1ppb work on Strategy-3.** The mass-table-1ppb-audit
+   (Phase 0) and the subsequent T1 / T3 / T2 / T5 / T4 / T6 queue
+   should be rescoped against Strategy-3's actual prediction errors,
+   not the legacy chain's `544k ppb` artefact.
+
+3. **Investigate the −8% neutron error.** The neutron has the same
+   T2/T3/T4/T6 and a(Z,N)=1 as the proton, differing only in
+   |tr_M(n)| = 1.2482 vs |tr_M(p)| = 1.6332.  But the Strategy-3
+   prediction is 861 MeV vs CODATA 939.6 — an 8.3% gap.  This
+   localises the unit-conversion bug somewhere in the proton-only
+   calibration of E_0.
+
+4. **Audit the canonical_a_k jet-knot invariants.** A=3,4 errors
+   are −54%, −50%, −40%; these are dominated by `a(Z,N)` for T,
+   ³He, ⁴He.  Either the canonical-a_k values are wrong, or the
+   product structure `|tr_M(p)|^Z · |tr_M(n)|^N · a(Z,N)` is
+   missing a piece.
+
+### 9.7 Cross-references
+
+- Categorical chain γγ → 6-term derivation:
+  `docs/audits/2026-05-05-categorical-chain-gamma-to-six-term.md`
+  (commit `5c3919b`)
+- Six-term per-weight derivation:
+  `docs/audits/2026-05-04-six-term-per-weight-derivation.md`
+- Δ_n² verification:
+  `folio-assistant/computations/full_twist_delta_n2_verification.py`
+- Strategy-3 canonical chain:
+  `folio-assistant/computations/atomic_braid_mass_table.py`
+- Shared term utilities:
+  `folio-assistant/computations/atomic_braid_mass_terms.py`
