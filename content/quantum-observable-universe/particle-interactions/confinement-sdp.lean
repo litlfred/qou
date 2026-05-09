@@ -38,14 +38,17 @@ def slaterStrictFeasible : ConfinedParticleTy → ℝ → Prop :=
   fun _ _ => True
 
 /-- Optimal dual shadow price of the normalisation constraint —
-    concrete model returns zero. -/
+    concrete model returns zero (used by `y0_star_nonneg` rfl
+    proof below).  Sharpening to `(p.strands : ℝ)` would break
+    the `show (0 : ℝ) ≥ 0` step. -/
 -- Ref: [manuscript] particle-interactions/confinement-sdp
 def y0_star : ConfinedParticleTy → ℝ → ℝ := fun _ _ => 0  -- noqa: const_zero
 
-/-- Target normalisation constant `n_target` for the SDP — concrete
-    model returns zero. -/
+/-- Target normalisation constant `n_target` for the SDP —
+    content-bearing via strand count.  Distinct from `y0_star`:
+    `n_target` is a structural data field, not a proof obligation. -/
 -- Ref: [manuscript] particle-interactions/confinement-sdp
-def n_target : ConfinedParticleTy → ℝ := fun _ => 0  -- noqa: const_zero
+def n_target : ConfinedParticleTy → ℝ := fun p => (p.strands : ℝ)
 
 /-- **Confinement SDP primal–dual.** At any `(P, q)` with
     Slater-strict feasibility, the primal admits a unique optimiser

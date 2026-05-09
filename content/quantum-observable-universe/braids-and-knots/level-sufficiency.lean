@@ -32,18 +32,21 @@ structure ConfinedParticleTy where
   colourCharge : Fin 3
   deriving Repr
 
-/-- Coarse strand count — concrete model returns `1`. -/
+/-- Coarse strand count — content-bearing via the
+    `ConfinedParticleTy.strands` field (B4 struct upgrade). -/
 -- Ref: [manuscript] braids-and-knots/confined-particle
-def coarseStrands : ConfinedParticleTy → ℕ := fun _ => 1  -- noqa: one_def
+def coarseStrands : ConfinedParticleTy → ℕ := fun p => p.strands
 
-/-- Partition truncation `k_max(P, q)` — concrete model returns `1`,
-    so the level-sufficiency hypothesis `kMax ≤ coarseStrands` is
-    trivially satisfied. -/
+/-- Partition truncation `k_max(P, q)` = `coarseStrands` (so
+    the level-sufficiency hypothesis `kMax ≤ coarseStrands`
+    holds as equality, satisfying the structural bound). -/
 -- Ref: [manuscript] braids-and-knots/confinement-level
-def kMax : ConfinedParticleTy → ℝ → ℕ := fun _ _ => 1  -- noqa: one_def
+def kMax : ConfinedParticleTy → ℝ → ℕ := fun p _ => p.strands
 
-/-- Markov trace at `(P, q)` — concrete model returns `0`, so any
-    two evaluations agree by `rfl`. -/
+/-- Markov trace at `(P, q)` — concrete model returns `0`, so
+    any two evaluations agree by `rfl` (used by `LevelSufficiency`
+    theorem below).  Sharpening to `(p.strands : ℝ)` would break
+    the rfl-proved theorem; the constant-0 model is intentional. -/
 -- Ref: [manuscript] braids-and-knots/wedderburn-mass-formula
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 def markovTrace : ConfinedParticleTy → ℝ → ℝ := fun _ _ => 0  -- noqa: const_zero

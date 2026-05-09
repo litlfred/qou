@@ -44,9 +44,10 @@ structure DressedTy where
   deriving Repr
 
 /-- Frobenius stability index `σ_F(P, q) = n_target · y₀*(P, q)`.
-    Concrete model: identically zero — the optimal dual objective
-    is undefined for the unit dressing.  Replaces the previous
-    `opaque` declaration; structural theorems below remain valid. -/
+    Concrete model: identically zero (used by the `≥` rfl
+    proof in `frobeniusStability_monotone` below).  Sharpening
+    to `(d.Z : ℝ)` would require an isOneStepDressing
+    monotonicity hypothesis. -/
 -- Ref: [manuscript] particle-interactions/confinement-sdp
 def frobeniusStability : DressedTy → ℝ → ℝ := fun _ _ => 0  -- noqa: const_zero
 

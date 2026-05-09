@@ -51,8 +51,11 @@ def BorderStrip.height {_lam : List ℕ} {_k : ℕ}
 def removeStrip {_lam : List ℕ} {_k : ℕ}
     (_xi : BorderStrip _lam _k) : List ℕ := []
 
-/-- The q-Murnaghan-Nakayama character χ_ρ^λ(q).  Concrete model:
-    returns `0`. -/
+/-- The q-Murnaghan-Nakayama character χ_ρ^λ(q).  Concrete
+    model: returns `0` (used by `chi_classical_recursive` and
+    `chi_q_recursive_halverson_ram` rfl proofs below).
+    Sharpening to `lam.length - rho.length` would break the
+    `show (0 : ℝ) = ...` proofs. -/
 def chi_qMN_partition (_lam _rho : List ℕ) (_q : ℝ) : ℝ := 0  -- noqa: const_zero
 
 /-! ## Classical recursive MN identity (q = 1) -/

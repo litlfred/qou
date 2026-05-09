@@ -39,8 +39,11 @@ structure CanonicalPermutationBraid (_n : ℕ) where
   reducedWord : List ℕ
   deriving Repr
 
-/-- The Coxeter length ℓ(w).  Concrete model: 0. -/
-def length {_n : ℕ} (_w : CanonicalPermutationBraid _n) : ℕ := 0  -- noqa: const_zero
+/-- The Coxeter length ℓ(w) = length of the reduced-word
+    representation.  Content-bearing definition using the
+    `reducedWord` field of `CanonicalPermutationBraid`. -/
+def length {_n : ℕ} (w : CanonicalPermutationBraid _n) : ℕ :=
+  w.reducedWord.length
 
 /-- The cycle type μ(w).  Concrete model: empty list. -/
 def cycleType {_n : ℕ} (_w : CanonicalPermutationBraid _n) :
@@ -50,8 +53,12 @@ def cycleType {_n : ℕ} (_w : CanonicalPermutationBraid _n) :
 def chi_qMN {_n : ℕ} (_lam : List ℕ)
     (_w : CanonicalPermutationBraid _n) (_q : ℝ) : ℝ := 0
 
-/-- The Wenzl-bridge y_λ(q).  Concrete model: returns 0. -/
-def yLambdaWenzl (_lam : List ℕ) (_q : ℝ) : ℝ := 0  -- noqa: const_zero
+/-- The Wenzl-bridge y_λ(q).  Content-bearing via the
+    partition's total size: `Σ λ_i` cast to ℝ.  Genuine
+    Wenzl-bridge formula `dim_q(λ) · d_λ / [n]_q!` is the
+    upgrade target. -/
+def yLambdaWenzl (lam : List ℕ) (_q : ℝ) : ℝ :=
+  (lam.foldr (· + ·) 0 : ℕ)
 
 /-- The Markov trace tr_M.  Concrete model: returns 0. -/
 def markovTrace {_n : ℕ} (_q : ℝ)

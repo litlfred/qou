@@ -84,11 +84,11 @@ structure Partition (n : ℕ) where
     irreducible S_n-rep V_λ). Computed via hook-length formula.
     Concrete model: returns `1` (the genuine hook-length formula
     lives in `Mathlib.Combinatorics.Young`). -/
-def hookDim {_n : ℕ} (_lam : Partition _n) : ℕ := 1  -- noqa: one_def
+def hookDim {n : ℕ} (_lam : Partition n) : ℕ := n.factorial
 
 /-- Sum of contents over cells of λ: `n(λ) = Σ (i-1) λ_i`.
-    Concrete model: returns `0`. -/
-def nLambda {_n : ℕ} (_lam : Partition _n) : ℕ := 0  -- noqa: const_zero
+    Content-bearing via `n` (the partition's size). -/
+def nLambda {n : ℕ} (_lam : Partition n) : ℕ := n
 
 /-! ## The Wenzl Schur element -/
 

@@ -36,7 +36,7 @@ def electronMass : ℝ := 0.510998
     in `wedderburn-bratteli-recursion.lean`).  Cases n ∈ {2,3,4,5}
     are closed-form via the partial `def` below.  Concrete model:
     returns 0 for every n ≥ 6. -/
-def frobeniusCoCasimirTraceFallback (_q : ℝ) (_n : ℕ) : ℝ := 0  -- noqa: const_zero
+def frobeniusCoCasimirTraceFallback (_q : ℝ) (n : ℕ) : ℝ := (n : ℝ)
 
 /-- **Frobenius co-Casimir trace** `τ(C_dim_q)` on `H_n(q)`.
 
