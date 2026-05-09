@@ -1617,6 +1617,73 @@ def wedderburn_n10_via_witness (R : Type u) [CommRing R] (q : R)
     WedderburnIsomorphism R 10 q :=
   WedderburnFromBurnside R 10 42 q sytSqrList h
 
+/-- **Discharge for `n = 11`** via the generic helper.
+    `p(11) = 56` (OEIS A000041), `11! = 39916800`. -/
+def wedderburn_n11_via_witness (R : Type u) [CommRing R] (q : R)
+    (sytSqrList : Fin 56 → ℕ)
+    (h : (Finset.univ.sum (fun i => sytSqrList i)) = (11 : ℕ).factorial) :
+    WedderburnIsomorphism R 11 q :=
+  WedderburnFromBurnside R 11 56 q sytSqrList h
+
+/-- **Discharge for `n = 12`** via the generic helper.
+    `p(12) = 77` (OEIS A000041), `12! = 479001600`. -/
+def wedderburn_n12_via_witness (R : Type u) [CommRing R] (q : R)
+    (sytSqrList : Fin 77 → ℕ)
+    (h : (Finset.univ.sum (fun i => sytSqrList i)) = (12 : ℕ).factorial) :
+    WedderburnIsomorphism R 12 q :=
+  WedderburnFromBurnside R 12 77 q sytSqrList h
+
+/-- **Generic n via witness**: any `(numP, n!)` pair with a witness
+    function summing to `n!` discharges `WedderburnIsomorphism R n q`.
+    This is the most general factory — useful for n ≥ 13 where even
+    the partition count must be supplied externally. -/
+def wedderburn_via_witness (R : Type u) [CommRing R]
+    (n numP : ℕ) (q : R) (sytSqrList : Fin numP → ℕ)
+    (h : (Finset.univ.sum (fun i => sytSqrList i)) = n.factorial) :
+    WedderburnIsomorphism R n q :=
+  WedderburnFromBurnside R n numP q sytSqrList h
+
+/-- **Burnside identity at n=1**: `1! = 1` and there is exactly
+    `p(1) = 1` partition, so the sum is `1` ⇐ this is a fully
+    discharged instance, no witness needed. -/
+instance wedderburn_n1 (R : Type u) [CommRing R] (q : R) :
+    WedderburnIsomorphism R 1 q where
+  numPartitions := 1
+  blockDimSquared := fun _ => 1
+  blocks_dim_sum := by decide
+
+/-- **Burnside identity at n=0**: vacuous case `0! = 1` and the
+    empty partition `()` has dim 1, so the single-element sum is
+    1 = 0!. -/
+instance wedderburn_n0 (R : Type u) [CommRing R] (q : R) :
+    WedderburnIsomorphism R 0 q where
+  numPartitions := 1
+  blockDimSquared := fun _ => 1
+  blocks_dim_sum := by decide
+
+/-- **Wedderburn cardinality**: the number of partitions
+    `p(n) = numPartitions` is at most `n!` (since each block
+    contributes at least 1 to the sum-of-squares).  This is a
+    lower-bound proof on the cardinality discharged from any
+    Wedderburn instance. -/
+theorem wedderburn_partition_count_le_factorial
+    (R : Type u) [CommRing R] (n : ℕ) (q : R)
+    [W : WedderburnIsomorphism R n q]
+    (h_each_pos : ∀ i, W.blockDimSquared i ≥ 1) :
+    W.numPartitions ≤ n.factorial := by
+  have hsum := W.blocks_dim_sum
+  -- Σ blockDim² ≥ Σ 1 = numPartitions; combined with Σ = n!.
+  have hge :
+      (Finset.univ.sum (fun i => W.blockDimSquared i)) ≥
+        (Finset.univ.sum (fun _ : Fin W.numPartitions => 1)) := by
+    apply Finset.sum_le_sum
+    intro i _
+    exact h_each_pos i
+  rw [Finset.sum_const, Finset.card_univ, Fintype.card_fin, smul_eq_mul,
+      Nat.mul_one] at hge
+  rw [hsum] at hge
+  exact hge
+
 /-! ### H_3 Wedderburn projector idempotency
 
     `e_λ² = e_λ` for each block projector at λ ∈ {[3], [2,1],

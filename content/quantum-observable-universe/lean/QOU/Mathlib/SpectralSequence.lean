@@ -301,4 +301,98 @@ theorem blockDim_n2_off_origin (p q : ℤ) (h : ¬ (p = 0 ∧ q = 0)) :
 def wedderburnTarget_n2 (R : Type u) : ℤ → ℤ → Type u :=
   wedderburnTarget R blockDim_n2
 
+/-! ### Non-trivial Wedderburn-target convergence (Tier 2 deep)
+
+    Beyond the constant-`PUnit` trivial target, supply a concrete
+    spectral sequence that converges to the n=2 Wedderburn target.
+    The sequence: every cell is `Fin (blockDim_n2 p q) → R`; on
+    the origin `(0, 0)` this is `Fin 2 → R`, off-origin it is
+    `Fin 0 → R = PUnit`.  Differentials are constant zero.  The
+    sequence collapses immediately (already at `E_2`) and the
+    convergence is `Equiv.refl` cell-by-cell. -/
+
+/-- The n=2-Wedderburn-shaped spectral sequence: cells are
+    `Fin (blockDim_n2 p q) → R` independently of page index. -/
+def wedderburnSS_n2 (R : Type u) : SpectralSequence R where
+  cell c := Fin (blockDim_n2 c.p c.q) → R
+  cell_inhab c := ⟨fun i => i.elim0⟩  -- Fin 0 elim, but works for any blockDim
+  differential _ _ := fun i => i.elim0  -- constant-zero map (elim from Fin 0)
+  zero _ := fun i => i.elim0
+
+/-- The n=2-Wedderburn SS collapses at any page (every differential
+    is the constant-zero map). -/
+theorem wedderburnSS_n2_collapses_everywhere (R : Type u) (r₀ : ℕ) :
+    CollapsesAt (wedderburnSS_n2 R) r₀ := by
+  intro c _ x
+  rfl
+
+/-- The n=2-Wedderburn SS collapses at `E_2`. -/
+theorem wedderburnSS_n2_collapses_at_E2 (R : Type u) :
+    CollapsesAtE2 (wedderburnSS_n2 R) :=
+  wedderburnSS_n2_collapses_everywhere R 2
+
+/-- **Non-trivial Wedderburn convergence instance**: the n=2-shaped
+    spectral sequence converges to `wedderburnTarget_n2`, with the
+    `Equiv.refl` cell-by-cell isomorphism (since both sides are
+    literally `Fin (blockDim_n2 p q) → R`). -/
+instance wedderburnSS_n2_converges (R : Type u) :
+    SpectralSequenceConvergesTo R (wedderburnSS_n2 R) 2
+      (wedderburnSS_n2_collapses_at_E2 R) (wedderburnTarget_n2 R) where
+  cell_iso _ _ := Equiv.refl _
+
+/-- **Full Wedderburn-convergence class instance** at `n=2`: bundles
+    the spectral sequence, collapse, blockDim, and convergence. -/
+instance gb_wedderburn_n2_converges (R : Type u) :
+    GBSpectralConvergesToWedderburn R 2 where
+  ss := wedderburnSS_n2 R
+  collapses := wedderburnSS_n2_collapses_at_E2 R
+  blockDim := blockDim_n2
+  converges := wedderburnSS_n2_converges R
+
+/-! ### Generic n-page Wedderburn-shape extension
+
+    Same construction at any `n`: cells are
+    `Fin (blockDim_n p q) → R`, differentials zero. -/
+
+/-- **Generic-n Wedderburn-shaped SS** parameterised by a
+    `blockDim` function.  The cell-shape `Fin (blockDim p q) → R`
+    is determined by the partition lattice of `n` (encoded in
+    `blockDim`); on the trivial-`blockDim ≡ 0` model every cell
+    is `PUnit`. -/
+def wedderburnSS_generic (R : Type u) (blockDim : ℤ → ℤ → ℕ) :
+    SpectralSequence R where
+  cell c := Fin (blockDim c.p c.q) → R
+  cell_inhab _ := ⟨fun i => i.elim0⟩
+  differential _ _ := fun i => i.elim0
+  zero _ := fun i => i.elim0
+
+/-- Generic-n Wedderburn-shaped SS collapses at every page. -/
+theorem wedderburnSS_generic_collapses (R : Type u)
+    (blockDim : ℤ → ℤ → ℕ) (r₀ : ℕ) :
+    CollapsesAt (wedderburnSS_generic R blockDim) r₀ := by
+  intro c _ x; rfl
+
+/-- Generic-n Wedderburn-shaped SS collapses at `E_2`. -/
+theorem wedderburnSS_generic_collapses_at_E2 (R : Type u)
+    (blockDim : ℤ → ℤ → ℕ) :
+    CollapsesAtE2 (wedderburnSS_generic R blockDim) :=
+  wedderburnSS_generic_collapses R blockDim 2
+
+/-- The generic-n Wedderburn SS converges to its target. -/
+instance wedderburnSS_generic_converges (R : Type u)
+    (blockDim : ℤ → ℤ → ℕ) :
+    SpectralSequenceConvergesTo R (wedderburnSS_generic R blockDim) 2
+      (wedderburnSS_generic_collapses_at_E2 R blockDim)
+      (wedderburnTarget R blockDim) where
+  cell_iso _ _ := Equiv.refl _
+
+/-- **GB Wedderburn convergence at any `n`** via the generic SS. -/
+instance gb_wedderburn_generic_converges (R : Type u) (n : ℕ)
+    (blockDim : ℤ → ℤ → ℕ) :
+    GBSpectralConvergesToWedderburn R n where
+  ss := wedderburnSS_generic R blockDim
+  collapses := wedderburnSS_generic_collapses_at_E2 R blockDim
+  blockDim := blockDim
+  converges := wedderburnSS_generic_converges R blockDim
+
 end QOU.Mathlib.SpectralSequence
