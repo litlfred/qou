@@ -21,21 +21,58 @@ Atomic-braid mass-table compute (Strategy 3 — knot operator + Δ_n full-twist)
 
   Migration tracker: `docs/coordination/1ppb.md` §Open phases · P4‴.
 
-Re-derives the six-term mass formula using:
+⚠️  STRUCTURAL BUG IN T1 BASE  ⚠️ (PR #577 audit, this branch)
+  ───────────────────────────────────────────────────────────────────────
+  Underlying root-cause analysis: the T1 base
+  `t1_atomic_with_coupling` uses
 
-  • Per-carrier (proton/neutron) atomic-braid Markov traces
-    (PR #534/#547, recursive axiomatic reducer).
-  • Inter-nucleon Δ_I coupling via the quotient-braid Jones-
-    polynomial factor a(Z, N) = J_{\bar\beta}(q)
-    (per `prop:jet-filtered-knot-factor` and the H_3(R,q)
-    crossing-balance identity δV_pn = h/2).
-  • Full-twist Δ_n² action at saturated shells
-    (per `conj:categorical-neutrality-saturated-shells`):
-    Δ_n²·Φ_n = Φ_n at every magic n ∈ {2, 8, 20, 28, 50, 82, 126},
-    so the saturated-shell mass is a fixed point of the
-    full-twist scalar action.
+    base = |tr_p|^Z · |tr_n|^N      (multiplicative product)
 
-The compound-atom Markov-trace anchor reads:
+over the per-carrier nucleon traces.  Atomic mass is *additive* in
+its constituents (`Z·M_p + N·M_n + Z·M_e − E_binding`), so the
+multiplicative carrier composition is the same structural error
+fixed in `atom_mass_additive_baseline.py`.  Predictions diverge:
+
+    atom    err%
+       p   0.000  (anchor)
+       n  -8.331
+       D -24.194
+       T -54.117
+
+Mean |err%| (atoms ≠ p) = 35.4%.  The a(Z, N) and Δ_n² coupling
+factors are downstream curve-fitting against a wrong base.
+
+For the correct additive constituent baseline, see
+`atom_mass_additive_baseline.py`.  Closing this script's gap
+requires:
+
+  1. Replace the multiplicative T1 base with `Z · |tr_p| + N · |tr_n|`.
+  2. Re-derive the a(Z, N) Jones-polynomial coupling factor in the
+     additive setting (the multiplicative form was a special case
+     of the wrong base).
+  3. Re-anchor E_0 against the additive carrier sum, not the
+     multiplicative product.
+
+The Δ_n²-saturated-shell scalar (full-twist invariant) is correct
+at any combination law and can be carried over unchanged.
+
+Original (legacy) docstring:
+
+    Re-derives the six-term mass formula using:
+
+      • Per-carrier (proton/neutron) atomic-braid Markov traces
+        (PR #534/#547, recursive axiomatic reducer).
+      • Inter-nucleon Δ_I coupling via the quotient-braid Jones-
+        polynomial factor a(Z, N) = J_{\bar\beta}(q)
+        (per `prop:jet-filtered-knot-factor` and the H_3(R,q)
+        crossing-balance identity δV_pn = h/2).
+      • Full-twist Δ_n² action at saturated shells
+        (per `conj:categorical-neutrality-saturated-shells`):
+        Δ_n²·Φ_n = Φ_n at every magic n ∈ {2, 8, 20, 28, 50, 82, 126},
+        so the saturated-shell mass is a fixed point of the
+        full-twist scalar action.
+
+The compound-atom Markov-trace anchor (LEGACY, structurally wrong) reads:
 
   |tr_M_atomic(K)| = |tr_M(p)|^Z · |tr_M(n)|^N · |a(Z, N)|
 

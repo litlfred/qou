@@ -2,12 +2,45 @@
 """
 DERIVED atomic mass for Z=1-20 — no fitted parameters.
 
-Builds each atom from the categorical construction:
-  γγ → quarks → B₃ confinement → nucleon NF → nuclear assembly → atom
+⚠️  STRUCTURAL BUG — DO NOT TRUST OUTPUT  ⚠️
+═══════════════════════════════════════════════════════════════════
+This script computes
+    M_derived = tr_M(atom NF) × E_0
+multiplicatively from the assembled atom's normal form.  Atomic
+mass is *additive* in its constituents
+    M_atom = Z·M_p + N·M_n + Z·M_e − E_binding(A, Z),
+not multiplicative, so the multiplicative chain produces results
+that diverge structurally from CODATA: ¹H is +55% high, ⁴He
+comes out negative, ⁷Li negative, etc.
 
-Mass = Markov trace of atom NF × energy scale E₀.
-The ONLY inputs are: q₀ (from Vol(4₁)/m_μ/m_e) and m_e (energy scale).
-No Bethe-Weizsacker, no CODATA m_p/m_n.
+Use `atom_mass_additive_baseline.py` for the structurally-correct
+constituent baseline + Δ_binding residual column.  The Δ_binding
+column is the per-isotope binding energy that the QOU
+ρ_F · V_hyp law (rem:frobenius-packing-density) is expected to
+reproduce — that is the open compute task.
+
+This file is preserved for two reasons:
+1. Its proton/neutron Hecke-trace primitives (PROTON_TR,
+   NEUTRON_TR) are correct and are still used by downstream
+   scripts (cross-check-trM-1ppb, atomic-braid-mass-table) for
+   per-nucleon character data.  Don't delete those.
+2. Provenance: the computational chain that produces the bad
+   atomic-mass table feeds existing audits' "deprecated lineage"
+   records.  Removing it would break those audits.
+
+If you're authoring a new mass-formula path, do NOT extend this
+script — extend `atom_mass_additive_baseline.py` and hook its
+Δ_binding column to your derivation.
+
+Original (legacy) docstring:
+
+    Builds each atom from the categorical construction:
+        γγ → quarks → B₃ confinement → nucleon NF → nuclear
+        assembly → atom
+
+    Mass = Markov trace of atom NF × energy scale E₀.
+    The ONLY inputs are: q₀ (from Vol(4₁)/m_μ/m_e) and m_e
+    (energy scale).  No Bethe-Weizsacker, no CODATA m_p/m_n.
 
 Usage:
     python3 folio-assistant/computations/atom_mass_derived.py

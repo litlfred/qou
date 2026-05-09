@@ -4,12 +4,10 @@
 
   Steps (1) and (2) — q-integer bar-invariance and Plancherel-weight
   transpose-symmetry — are unconditional.  Step (1)'s base lemma
-  `q_integer_bar_invariant` is currently a cited `sorry` deferred to
-  the standard q-integer identity in [kassel1995] (Quantum Groups,
-  Ch. IV); the algebraic identity is direct (numerator and
-  denominator both flip sign under `q ↦ q⁻¹`) and a Mathlib
-  `field_simp` / `zpow` chase will discharge it.  Step (2) is
-  reduced to `hookLengths_transpose` (axiomatised, pending the
+  `q_integer_bar_invariant` is closed by an `inv_pow` / `zpow_neg`
+  rewrite chain followed by `field_simp; ring` (citing [kassel1995]
+  for the underlying identity).  Step (2) is reduced to
+  `hookLengths_transpose` (axiomatised, pending the
   `Mathlib.Combinatorics.Young.YoungDiagram.transpose_hookLengths`
   lemma).  Step (3) — bar-invariance of folded normal forms — is
   conditional on conj:symmetric-crystal-pair-production
@@ -56,23 +54,39 @@ noncomputable def qInteger (k : ℕ) (q : ℝ) : ℝ :=
 
 /-- **Step (1) base lemma**: `[k]_{q^{-1}} = [k]_q` for `q > 0, q ≠ 1`.
 
-    Direct calculation: numerator and denominator both flip sign
-    under `q ↦ q⁻¹`, and the signs cancel. -/
+    Direct calculation: under `q ↦ 1/q`,
+
+    * numerator `q^k − q^{−k}` flips sign and swaps terms
+      (since `(1/q)^k = q^{−k}` and `(1/q)^{−k} = q^k`),
+    * denominator `q − q⁻¹` flips sign
+      (since `(1/q)⁻¹ = q`).
+
+    The two sign flips cancel.  Closed with `field_simp; ring` after
+    expanding `(1/q)^k = (q^k)⁻¹` via `inv_pow` and the ℤ-power
+    `q^{−k} = (q^k)⁻¹` via `zpow_neg_natCast`. -/
 theorem q_integer_bar_invariant
     (k : ℕ) (q : ℝ) (hq_pos : 0 < q) (hq_ne_one : q ≠ 1) :
     qInteger k (barInvolution q) = qInteger k q := by
   unfold qInteger barInvolution
-  -- (1/q)^k - (1/q)^{-k}
-  --   = q^{-k} - q^{k}
-  --   = -(q^k - q^{-k}).
-  -- Denominator (1/q) - (1/q)^{-1} = 1/q - q = -(q - 1/q).
-  -- Quotient: numerator/denominator preserved.
   have hq_ne_zero : q ≠ 0 := ne_of_gt hq_pos
+  have hqk_ne_zero : q ^ k ≠ 0 := pow_ne_zero k hq_ne_zero
+  -- Rewrite (1/q)^k = (q^k)⁻¹ and (1/q)^{−(k:ℤ)} = q^k via the
+  -- standard Mathlib lemmas.  After these rewrites, both sides
+  -- are rational expressions in `q` and `q^k` with no zpow, and
+  -- field_simp + ring close the equality.
+  rw [show (1 / q : ℝ) = q⁻¹ from one_div q]
+  rw [inv_pow, zpow_neg, zpow_natCast, inv_zpow, zpow_natCast,
+      inv_inv]
+  -- Goal: ((q^k)⁻¹ - q^k) / (q⁻¹ - q⁻¹⁻¹) = (q^k - (q^k)⁻¹) / (q - q⁻¹)
+  -- via inv_inv, q⁻¹⁻¹ = q.
+  rw [inv_inv]
+  -- Goal: ((q^k)⁻¹ - q^k) / (q⁻¹ - q) = (q^k - (q^k)⁻¹) / (q - q⁻¹)
+  -- Both numerator and denominator flip sign together; the
+  -- quotient is preserved.
+  field_simp
+  ring
   -- Ref: [kassel1995] Kassel, "Quantum Groups", Ch. IV
-  -- Skeleton: numerator and denominator both flip sign under
-  -- `q ↦ q⁻¹`, so the quotient is preserved.  Full `field_simp;
-  -- ring` closure pending Mathlib `zpow` simplification chase.
-  sorry
+  --      (q-integer bar-invariance: `[k]_{q⁻¹} = [k]_q`)
 
 /-! ## Plancherel weights
 
