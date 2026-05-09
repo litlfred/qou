@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T06:06:46.699750+00:00",
-  "commitSha": "6b4a4e21ffe052d7e4a260d265fea640a2351a65",
+  "computedAt": "2026-05-09T13:06:00.346598+00:00",
+  "commitSha": "8e6b4a1eec06dfd3c0d0e0e3da5665aabdf521f3",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -464,7 +464,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 4,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
@@ -1506,6 +1506,7 @@
         "joint-tower-sdp-h6-h9.witness.json",
         "joint-tower-sdp-rust.witness.json",
         "kashaev-integration-identity.witness.json",
+        "kazhdan-lusztig-canonical-basis.witness.json",
         "knot-operator-table.witness.json",
         "knot-volumes.witness.json",
         "laurentq-a5-ceiling-measure.witness.json",
@@ -1589,6 +1590,7 @@
         "proton-mass-codata-50dps.witness.json",
         "q-pinning-50-digit.witness.json",
         "q-pochhammer-seed.witness.json",
+        "r5-full-canonical-knot-solver.witness.json",
         "rho-f-categorical-probe.witness.json",
         "rho-f-volume-binding-gap.witness.json",
         "rho-k-h3a-refinement.witness.json",

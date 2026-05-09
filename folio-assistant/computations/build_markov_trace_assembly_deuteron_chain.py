@@ -266,7 +266,7 @@ def build() -> DerivationChain:
         notes=(
             "Cross-checked at machine precision against the upstream "
             "habiro_coefficients_atomic.py / habiro-coefficients-atomic "
-            "witness for the deuteron (Z=1, N=1, include_inter=False) — "
+            "witness for the deuteron (Z=1, N=1, include_inter=True) — "
             "rel_diff ≤ 1e-12 against that script's `tr_M_at_q0` field."
         ),
     ))

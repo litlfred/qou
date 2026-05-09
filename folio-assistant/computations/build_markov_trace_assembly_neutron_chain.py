@@ -12,8 +12,12 @@ For the **neutron** (A=1, partitions of 3 = {(3), (2,1), (1,1,1)}):
   - The character values χ^λ_q(T_w_n) follow directly from these
     counts via the per-λ Hoefsmit recipes (DERIVED).
   - All three weights (w_(3), w_(2,1), w_(1,1,1)) reference the
-    existing per-λ chains (DERIVED), so the assembly is
-    **fully-trusted** with no SCRIPT_CITED steps.
+    existing per-λ chains (DERIVED).
+  - The atomic-braid recipe step (the 5-letter T_w_n word) is
+    SCRIPT_CITED until PR #476's `atomic-braid-recipe-n` chain
+    lands; trust profile is therefore
+    `{axiom: 1, derived: 6, script-cited: 1, computational: 1}`
+    (one frontier item: the recipe step).
 
 Output: `markov-trace-assembly-neutron.derivation.json`.
 """
@@ -98,31 +102,43 @@ def build() -> DerivationChain:
         ),
     ))
 
-    # 4 — Atomic-braid recipe for the neutron
+    # 4 — Atomic-braid recipe for the neutron (legacy 5-letter convention)
     steps.append(DerivationStep(
-        name="Atomic-braid recipe for T_w_n",
+        name="Atomic-braid recipe for T_w_n (legacy 5-letter convention)",
         operation=(
-            "The neutron σ-word has 5 crossings on 3 strands, with the "
-            "mixed σ / σ^{-1} type pattern σ_1 σ_1^{-1} σ_2 σ_1 σ_2^{-1} "
-            "(per the substrate-level neutron-cross table).  Currently "
-            "produced by `hecke_character_symbolic.atomic_braid_to_crossings"
-            "(Z=0, N=1, include_inter=False)`.  When the dedicated "
-            "`atomic-braid-recipe-n.derivation.json` chain ships "
-            "(PR #476 family, currently in review), this step upgrades "
-            "to DERIVED via that chain reference."
+            "T_w_n is the legacy 5-letter σ-word "
+            "σ_1 σ_1^{-1} σ_2 σ_1 σ_2^{-1} encoding the neutron "
+            "(per the substrate-level neutron-cross table, PR #480 era). "
+            "5 letters give n_+ = 3 positive σ + n_- = 2 negative σ^{-1}, "
+            "fully determining the χ^(3) and χ^(1,1,1) trivial/sign "
+            "characters via the 1-dim rep formulas (steps 5 and 7).  "
+            "NOTE: This is independent of the canonical re-export "
+            "`hecke_character_symbolic.atomic_braid_to_crossings = "
+            "canonical_braid_crossings.atom_canonical_crossings`, "
+            "which (post-PR #572) encodes the same atom with 11 "
+            "crossings including 2 averaged crossings, and would "
+            "give symbolically different per-irrep χ values for the "
+            "Hoefsmit (2,1) rep (step 6).  Reconciling the two "
+            "conventions for the (2,1) rep is open frontier; the "
+            "leaf value at q_0 (step 9) is anchored against "
+            "`TR_M_AT_Q0` and matches both conventions numerically.  "
+            "When the dedicated `atomic-braid-recipe-n.derivation.json` "
+            "chain ships (PR #476 family, currently in review), this "
+            "step upgrades to DERIVED via that chain reference."
         ),
         inputs=["partitions_of_3", FirstPrinciple.HECKE_ENERGY.value],
         output_name="T_w_n",
-        output_value="T_w_n = σ-word of length 5",
+        output_value="T_w_n = σ_1 σ_1^{-1} σ_2 σ_1 σ_2^{-1} (length 5; n_+=3, n_-=2)",
         trust_basis=TrustBasis.SCRIPT_CITED,
         citation="manuscript:§Atomic-braid recipe",
         jet_order=0,
         notes=(
-            "script: folio-assistant/computations/hecke_character_symbolic.py "
-            "function `atomic_braid_to_crossings(Z=0, N=1, "
-            "include_inter=False)`.  SCRIPT_CITED until PR #476 "
-            "(claude/phase-a-precision) ships the `atomic-braid-recipe-n` "
-            "derivation chain on main."
+            "script: folio-assistant/computations/build_markov_trace_assembly_neutron_chain.py "
+            "(this builder; T_w_n is encoded inline as the legacy "
+            "5-letter σ-word σ_1 σ_1^{-1} σ_2 σ_1 σ_2^{-1} per the "
+            "PR #480 convention).  SCRIPT_CITED until PR #476 "
+            "(claude/phase-a-precision) ships the "
+            "`atomic-braid-recipe-n` derivation chain on main."
         ),
     ))
 
@@ -252,8 +268,10 @@ def build() -> DerivationChain:
             "schur-weyl-weight-{3,21,111} + hoefsmit-rep-21-{sigma1,"
             "sigma2} + atomic-braid-recipe-n via the finite-Jones "
             "axiom into tr_M(n, q_0) ≈ 1.5894.  Trust profile is "
-            "{axiom: 1, mathlib-cited: 0, derived: 7, script-cited: 0, "
-            "computational: 1} — fully-trusted, no SCRIPT_CITED.  "
+            "{axiom: 1, mathlib-cited: 0, derived: 6, script-cited: 1, "
+            "computational: 1} — one SCRIPT_CITED frontier item (the "
+            "atomic-braid recipe T_w_n step), pending PR #476's "
+            "`atomic-braid-recipe-n` derivation chain.  "
             "Companion to `markov-trace-assembly-proton.derivation.json`."
         ),
         steps=steps,

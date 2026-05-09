@@ -108,7 +108,7 @@
       "jet_order": 0,
       "gb_filtration_level": 0,
       "citation": "jones1987",
-      "notes": "Derivation chain: markov-trace-assembly-neutron.derivation.json.  Combines schur-weyl-weight-{3,21,111} + hoefsmit-rep-21-{sigma1,sigma2}; the σ-word T_w_n is supplied (currently SCRIPT_CITED) via hecke_character_symbolic.atomic_braid_to_crossings(Z=0, N=1, include_inter=False), upgrading to DERIVED when PR #476's atomic-braid-recipe-n chain lands via the finite-Jones axiom."
+      "notes": "Derivation chain: markov-trace-assembly-neutron.derivation.json. Combines schur-weyl-weight-{3,21,111} + hoefsmit-rep-21-{sigma1,sigma2}; the σ-word T_w_n is the legacy 5-letter word σ_1 σ_1^{-1} σ_2 σ_1 σ_2^{-1} (n_+=3, n_-=2; PR #480 convention) supplied inline (currently SCRIPT_CITED in the assembly chain), upgrading to DERIVED when PR #476's atomic-braid-recipe-n chain lands.  NOTE: This is the legacy convention, independent of the post-PR #572 canonical re-export `atomic_braid_to_crossings = atom_canonical_crossings`; the leaf value at q_0 matches both conventions numerically (anchored against TR_M_AT_Q0)."
     },
     {
       "name": "Evaluate tr_M(n, q_0) at q_0 = 1.1099785955541805",

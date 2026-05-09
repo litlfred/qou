@@ -3,7 +3,7 @@
   "target_value": 2.12258250945273,
   "target_tolerance": 1e-09,
   "content_block": "prop:full-pole-structure-mass-trace",
-  "description": "Markov-trace assembly chain for the proton: combines the schur-weyl-weight-{3,21,111} chains + the hoefsmit-rep-21-sigma1 chain (with σ_2 covered by SYT-relabelling symmetry) via the finite-Jones axiom into tr_M(p, q_0) ≈ 2.1226.  The proton σ-word T_w_p is supplied inline (n_+ = 6, n_- = 0 for the trivial / sign reps) using `hecke_character_symbolic.atomic_braid_to_crossings`.  Trust profile is {axiom: 1, mathlib-cited: 0, derived: 6, script-cited: 0, computational: 1} — fully-trusted (every Wedderburn weight now references its own per-λ chain).  Closes 5 of 5 SCRIPT_CITED steps in the proton atom-tr-M-q0 chain.  Every Wedderburn weight now references its own per-λ chain (schur-weyl-weight-3, schur-weyl-weight-21, schur-weyl-weight-111) — assembly chain has zero SCRIPT_CITED steps.",
+  "description": "Markov-trace assembly chain for the proton: combines the schur-weyl-weight-{3,21,111} chains + the hoefsmit-rep-21-sigma1 chain (with σ_2 covered by SYT-relabelling symmetry) via the finite-Jones axiom into tr_M(p, q_0) ≈ 2.1226.  The proton σ-word T_w_p is the legacy 6-letter word σ_1 σ_2 σ_1 σ_2 σ_1 σ_2 (n_+ = 6, n_- = 0), supplied inline via the 1-dim rep formulas for the trivial/sign characters.  NOTE: The legacy 6-letter convention is independent of the canonical re-export `hecke_character_symbolic.atomic_braid_to_crossings = atom_canonical_crossings`, which (post-PR #572) encodes the proton with 11 crossings including σ^{-1} and averaged crossings; the leaf value at q_0 is anchored against TR_M_AT_Q0 and matches both conventions numerically.  Trust profile is {axiom: 1, mathlib-cited: 0, derived: 6, script-cited: 0, computational: 1} — fully-trusted (every Wedderburn weight now references its own per-λ chain).  Closes 5 of 5 SCRIPT_CITED steps in the proton atom-tr-M-q0 chain.  Every Wedderburn weight now references its own per-λ chain (schur-weyl-weight-3, schur-weyl-weight-21, schur-weyl-weight-111) — assembly chain has zero SCRIPT_CITED steps.",
   "steps": [
     {
       "name": "Partitions of 3 — Schur–Weyl basis at A=1",
@@ -75,7 +75,7 @@
       "jet_order": 0,
       "gb_filtration_level": 0,
       "citation": "kassel1995",
-      "notes": "1-dim rep; trace is a monomial in q.  No script needed.  Atomic-braid recipe (`hecke_character_symbolic.atomic_braid_to_crossings(Z=1, N=0, include_inter=False)`) supplies the n_±=6/0 count.  When PR #476's dedicated `atomic-braid-recipe-p.derivation.json` chain lands on main, this note can reference that chain instead."
+      "notes": "1-dim rep; trace is a monomial in q.  No script needed.  Atomic-braid recipe: legacy 6-letter σ-word σ_1 σ_2 σ_1 σ_2 σ_1 σ_2 (PR #480 convention, n_+=6, n_-=0) supplies the n_±=6/0 count inline.  Independent of the post-PR #572 canonical re-export `atomic_braid_to_crossings = atom_canonical_crossings` which encodes the proton with 11 crossings + averaged types. When PR #476's dedicated `atomic-braid-recipe-p.derivation.json` chain lands on main, this note can reference that chain instead."
     },
     {
       "name": "Hoefsmit rep χ^(2,1)_q on proton braid word",

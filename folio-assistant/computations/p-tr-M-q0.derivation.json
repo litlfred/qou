@@ -108,7 +108,7 @@
       "jet_order": 0,
       "gb_filtration_level": 0,
       "citation": "jones1987",
-      "notes": "Derivation chain: markov-trace-assembly-proton.derivation.json.  Combines schur-weyl-weight-{3,21,111} + hoefsmit-rep-21-sigma1 (σ_2 covered by SYT-relabelling symmetry within the (2,1) block); the σ-word T_w_p is supplied inline via hecke_character_symbolic.atomic_braid_to_crossings via the finite-Jones axiom."
+      "notes": "Derivation chain: markov-trace-assembly-proton.derivation.json. Combines schur-weyl-weight-{3,21,111} + hoefsmit-rep-21-sigma1 (σ_2 covered by SYT-relabelling symmetry within the (2,1) block); the σ-word T_w_p is the legacy 6-letter word σ_1 σ_2 σ_1 σ_2 σ_1 σ_2 (n_+=6, n_-=0; PR #480 convention) supplied inline.  NOTE: This is the legacy convention, independent of the post-PR #572 canonical re-export `atomic_braid_to_crossings = atom_canonical_crossings`; the leaf value at q_0 matches both conventions numerically (anchored against TR_M_AT_Q0).  Combines via the finite-Jones axiom."
     },
     {
       "name": "Evaluate tr_M(p, q_0) at q_0 = 1.1099785955541805",
