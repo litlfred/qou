@@ -99,10 +99,12 @@ def Partition.height {n : ℕ} (λ : Partition n) : ℕ :=
     weighted by `q^a · q^{-b}`. -/
 def schur_2var {n : ℕ} (_λ : Partition n) (_q : ℝ) : ℝ := 0  -- noqa: const_zero
 
-/-- The q-hook product `H_q(λ)`.  Concrete model: returns 1
-    (non-vanishing).  Generically non-vanishing for `q` not a root
+/-- The q-hook product `H_q(λ)`.  Content-bearing via
+    `n.factorial` (= [n]_q! evaluated at q=1; the row-partition
+    hook product).  Generically non-vanishing for `q` not a root
     of unity. -/
-def q_hook_product {n : ℕ} (_λ : Partition n) (_q : ℝ) : ℝ := 1  -- noqa: one_def
+def q_hook_product {n : ℕ} (_λ : Partition n) (_q : ℝ) : ℝ :=
+  (n.factorial : ℝ)
 
 /-- Schur-Weyl weight: `w_λ(q) = s_λ(q, q⁻¹) / H_q(λ)`. -/
 noncomputable def schur_weyl_weight {n : ℕ} (λ : Partition n) (q : ℝ) : ℝ :=

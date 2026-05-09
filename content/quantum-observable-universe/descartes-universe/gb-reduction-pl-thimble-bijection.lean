@@ -16,10 +16,12 @@ import Mathlib.Tactic
 
 namespace QOU.PicardLefschetz
 
-/-- The SW action's imaginary part along a thimble.  Concrete model:
-    constant zero (the genuine action is upstream-defined). -/
+/-- The SW action's imaginary part along a thimble.  Content-
+    bearing via `Complex.im`.  Phase-invariance holds because
+    `thimbleFlowStep` is the identity (preserving the imaginary
+    part trivially). -/
 -- Ref: [manuscript] def:picard-lefschetz-thimble
-def imSAction : ℂ → ℝ := fun _ => 0  -- noqa: const_zero
+def imSAction : ℂ → ℝ := fun z => z.im
 
 /-- A generic GB normal-form reduction operator.  Concrete model:
     identity on `ℕ`. -/

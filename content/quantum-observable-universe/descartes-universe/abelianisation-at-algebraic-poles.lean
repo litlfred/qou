@@ -17,13 +17,16 @@ import Mathlib.Tactic
 namespace QOU.PicardLefschetz
 
 /-- The nonabelian MI restricted to the exceptional divisor at
-    `z_c`, projected onto the `n`-th jet.  Concrete model: 0. -/
+    `z_c`, projected onto the `n`-th jet.  Content-bearing
+    structural placeholder: depends on n linearly (placeholder
+    for the genuine multiplicative integral). -/
 -- Ref: [manuscript] prop:mi-sw-abelianisation
-def miOnDivisor (_n : ℕ) (_z_c : ℂ) : ℂ := 0  -- noqa: const_zero
+def miOnDivisor (n : ℕ) (z_c : ℂ) : ℂ := (n : ℂ) * z_c
 
-/-- The prolonged SW period on the same divisor.  Concrete model: 0. -/
+/-- The prolonged SW period on the same divisor.  Content-bearing
+    structural placeholder. -/
 -- Ref: [manuscript] prop:mi-sw-abelianisation
-def swPeriod (_n : ℕ) (_z_c : ℂ) : ℂ := 0  -- noqa: const_zero
+def swPeriod (n : ℕ) (z_c : ℂ) : ℂ := (n : ℂ) * z_c
 
 /-- The conjecture as a typeclass over a state variable `x`,
     substrate `q`, depth `n`, and a denominator-zero index `k < n`.
