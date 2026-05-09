@@ -208,10 +208,38 @@ Two structural facts:
 $\mu$, all support pairs share the same $X_\mu$ side.  The joint
 $Y$-side col-span $\sum_\nu Y_\nu \subseteq \bigoplus_\nu \mathrm{End}(V_\nu)$
 is the panel-image of $H_{n_2}$ in the multi-irrep
-$\bigoplus_\nu V_\nu$.  By Schur-Weyl, this image is contained in
+$\bigoplus_\nu V_\nu$.  By Schur–Weyl, this image is contained in
 the largest single irrep's panel-image (the $V_\nu$ with largest
 $\mathrm{rank}(Y_\nu)$).  Formal closure of this argument is open
 but the numerical verification at λ=[7,2] is rigorous.
+
+**Relation to the literature.**  The two structural ingredients
+both have published precedents — we are not claiming this rank
+formula is new.
+
+- **Cross-μ independence (sum over μ).** Wedderburn block-
+  diagonality for $H_n(q)$ semisimple — folklore, used freely in
+  Geck–Pfeiffer (2000), §8–9 \[`geck-pfeiffer2000`\].
+- **Within-μ nesting (max over ν).** The Mackey filtration on
+  induced modules for cyclotomic Hecke algebras (Mathas 2004,
+  *J. Algebra* 271, §3) \[`mathas2004mackey`\] and its graded
+  refinement (Hu–Mathas 2012, IMRN) \[`hu-mathas2012graded`\]
+  establish that the layers of $\mathrm{Ind}_{H_{n_1}\otimes
+  H_{n_2}}^{H_{n_1+n_2}} (S^\mu \boxtimes S^\nu)$ form a *nested
+  Specht filtration*, not a direct sum.  The fitting-matrix
+  column-rank consequence used here is mechanically a corollary
+  of those filtrations once column spaces are identified with
+  filtration layers, but is not stated as a rank identity in
+  either source.
+
+**Lean formalization.**  The two structural inputs are
+axiomatized as a `class PanelRankDecomposition` in
+[`QOU.BraidKnot.StructuralRank`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/StructuralRank.lean)
+(§3b-cond conditional-class pattern); the rank identity is
+derived as an unconditional ℕ-arithmetic theorem from the class
+fields.  A concrete instance encoding the empirical λ=[7,2]
+numbers (per-block ranks 1, 16, 22 for μ=[3]; 4, 64 for μ=[2,1])
+verifies $22 + 64 = 86$ by `decide`.
 
 ## Falsified hypothesis
 

@@ -1,0 +1,166 @@
+/-!
+# QOU.BraidKnot.StructuralRank — Hecke panel structural rank decomposition (conditional on Mackey-filtration nesting)
+
+Backs the audit
+[`docs/audits/2026-05-09-A-operator-rank-structure.md`](../../../../../docs/audits/2026-05-09-A-operator-rank-structure.md).
+
+Encodes — at the level of ℕ-valued ranks — the structural rank
+identity for the operator-valued least-squares supply matrix `M_λ`
+arising from the Hecke branching `H_{n_1+n_2}(q) ⊃ H_{n_1}(q) ⊗
+H_{n_2}(q)`:
+
+  rank(M_λ) = Σ_{μ ∈ supp_λ} max_{ν : c^λ_{μν} > 0} rank(X_μ) · rank(Y_ν)
+
+where `X_μ`, `Y_ν` are the test-panel image matrices for the
+Hoefsmit reps `V_μ`, `V_ν`, and `c^λ_{μν}` are LR coefficients.
+
+Two structural ingredients enter as **class hypotheses** (per
+§3b-cond conditional-class pattern):
+
+1. **Within-μ nesting (max over ν).** For fixed μ, the column spaces
+   of the (μ, ν)-blocks vary with ν as a *nested chain*, not a
+   direct sum.  Joint column-span rank = `max_ν rank(block μ ν)`.
+   Closest published precedent: the Mackey filtration on induced
+   modules for cyclotomic Hecke algebras
+   ([Mathas 2004](https://doi.org/10.1016/S0021-8693(02)00075-3))
+   and its graded refinement
+   ([Hu–Mathas 2012](https://arxiv.org/abs/1008.1462)).  Neither
+   states the column-span / fitting-matrix rank consequence
+   explicitly, but both establish the underlying nested-filtration
+   structure.
+
+2. **Across-μ independence (sum over μ).** Different μ-blocks
+   contribute orthogonal column spaces, so total rank = `Σ_μ` of
+   per-μ joint ranks.  This is Wedderburn block-diagonality for
+   `H_n(q)` semisimple — folklore, freely used in
+   [Geck–Pfeiffer (2000), §8–9](https://global.oup.com/academic/product/9780198502500).
+
+Given both hypotheses, the rank formula is an unconditional ℕ
+arithmetic consequence (proved here without `sorry`).  Numerical
+sanity at λ = [7, 2] matches the empirical extract
+(`A_operator_rank_probe.witness.json` v1.1, A=3): 22 + 64 = 86.
+
+LaTeX: not yet — audit-only.
+
+References:
+- `docs/audits/2026-05-09-A-operator-rank-structure.md`
+- Mathas, A. (2004). Filtrations on the Mackey decomposition for
+  cyclotomic Hecke algebras. J. Algebra 271(2), 522–560.
+- Hu, J. & Mathas, A. (2012). Graded induction for Specht modules.
+  IMRN 2012(6), 1230–1263.
+- Geck, M. & Pfeiffer, G. (2000). Characters of Finite Coxeter
+  Groups and Iwahori–Hecke Algebras.  LMS Monograph 21, OUP.
+- Mathas, A. (1999). Iwahori–Hecke and Schur algebras of the
+  symmetric group.  AMS Univ. Lect. Series 15.
+-/
+
+import Mathlib.Algebra.BigOperators.Group.Finset
+import Mathlib.Data.Finset.Lattice.Fold
+
+namespace QOU.BraidKnot
+
+/-- **Structural rank decomposition class** for a Hecke panel
+    matrix indexed by `(μ, ν)`-blocks.
+
+    Class hypotheses encode the two structural facts from the audit:
+    (a) within-μ nesting (joint = max), and
+    (b) across-μ independence (total = sum of joints).
+
+    Conjectural status: §3b-cond.  The within-μ nesting field is
+    the Mackey-filtration / Specht-filtration nesting (Mathas 2004;
+    Hu–Mathas 2012), specialized to test-panel column spaces.  Not
+    explicitly stated in the published literature for the
+    fitting-matrix / column-rank shape used here, but mechanically
+    a corollary of those filtration results once the column spaces
+    are identified with Specht-filtration layers. -/
+-- Ref: [mathas2004mackey] Filtrations on the Mackey decomposition for cyclotomic Hecke algebras
+-- Ref: [hu-mathas2012graded] Graded induction for Specht modules
+-- Ref: [geck-pfeiffer2000] Characters of Finite Coxeter Groups and Iwahori-Hecke Algebras §8-9
+class PanelRankDecomposition
+    (μIdx : Type) [Fintype μIdx]
+    (νIdx : μIdx → Type) [∀ μ, Fintype (νIdx μ)]
+    (blockRank : (μ : μIdx) → νIdx μ → ℕ)
+    (jointRankMu : μIdx → ℕ)
+    (totalRank : ℕ) : Prop where
+  /-- **Within-μ nesting** (Mackey/Specht filtration; cf. Mathas
+      2004, Hu–Mathas 2012).  The joint column-span rank across
+      all ν-blocks for a fixed μ equals the maximum of the
+      individual ν-block ranks — column spaces vary as a nested
+      chain in ν, not as a direct sum. -/
+  joint_eq_max :
+    ∀ μ : μIdx,
+      jointRankMu μ = (Finset.univ : Finset (νIdx μ)).sup (blockRank μ)
+  /-- **Across-μ independence** (Wedderburn block-diagonality for
+      `H_n(q)` semisimple; standard).  Total rank decomposes
+      additively across μ-blocks. -/
+  total_eq_sum :
+    totalRank = ∑ μ : μIdx, jointRankMu μ
+
+namespace PanelRankDecomposition
+
+/-- **Structural rank formula** (derived).
+
+    Given the within-μ nesting and across-μ independence
+    hypotheses, the total rank of the panel matrix is the sum
+    over μ of the maximum over ν of the per-block rank.  Pure ℕ
+    arithmetic — proved unconditionally from the class fields. -/
+theorem rank_formula
+    {μIdx : Type} [Fintype μIdx]
+    {νIdx : μIdx → Type} [∀ μ, Fintype (νIdx μ)]
+    {blockRank : (μ : μIdx) → νIdx μ → ℕ}
+    {jointRankMu : μIdx → ℕ}
+    {totalRank : ℕ}
+    [D : PanelRankDecomposition μIdx νIdx blockRank jointRankMu totalRank] :
+    totalRank =
+      ∑ μ : μIdx, (Finset.univ : Finset (νIdx μ)).sup (blockRank μ) := by
+  rw [D.total_eq_sum]
+  exact Finset.sum_congr rfl (fun μ _ => D.joint_eq_max μ)
+
+end PanelRankDecomposition
+
+/-! ## Numerical sanity at λ = [7, 2], A = 3
+
+Matches the empirical SVD rank probe
+(`A_operator_rank_probe.witness.json`, A=3): with two μ-blocks
+(`μ = [3]` and `μ = [2,1]`), per-(μ,ν) ranks measured at the
+H_3 ⊗ H_6 panel are:
+
+| μ      | ν-blocks (with c^λ_{μν} > 0) | per-block ranks    | max_ν |
+|--------|------------------------------|--------------------|-------|
+| [3]    | [6], [5,1], [4,2]            | 1, 16, 22          | 22    |
+| [2,1]  | [6], [5,1]                   | 4, 64              | 64    |
+
+Total rank = 22 + 64 = **86**, matching `A_operator_rank_probe`
+exactly (drop ratio 10^13 → exact zero in the SVD spectrum).
+-/
+
+/-- **λ = [7, 2] empirical rank decomposition** —
+    encoded as a `PanelRankDecomposition` instance over the two
+    LR-support μ-partitions and their respective ν-blocks. -/
+def panel_7_2_blockRank : Bool → Fin 3 → ℕ
+  | false, ⟨0, _⟩ => 1     -- μ = [3], ν = [6]
+  | false, ⟨1, _⟩ => 16    -- μ = [3], ν = [5,1]
+  | false, ⟨2, _⟩ => 22    -- μ = [3], ν = [4,2]
+  | true,  ⟨0, _⟩ => 4     -- μ = [2,1], ν = [6]
+  | true,  ⟨1, _⟩ => 64    -- μ = [2,1], ν = [5,1]
+  | true,  ⟨2, _⟩ => 0     -- placeholder: c^λ = 0 for μ=[2,1], ν=[4,2]
+
+/-- The per-μ joint rank: `max_ν` of `panel_7_2_blockRank`. -/
+def panel_7_2_jointRankMu : Bool → ℕ
+  | false => 22
+  | true  => 64
+
+instance : PanelRankDecomposition Bool (fun _ => Fin 3)
+    panel_7_2_blockRank panel_7_2_jointRankMu 86 where
+  joint_eq_max := by
+    intro μ
+    cases μ <;> decide
+  total_eq_sum := by decide
+
+/-- **Empirical match** — the rank formula yields 86 at λ = [7, 2]. -/
+theorem panel_7_2_total_rank :
+    (86 : ℕ) =
+      ∑ μ : Bool, (Finset.univ : Finset (Fin 3)).sup (panel_7_2_blockRank μ) :=
+  PanelRankDecomposition.rank_formula
+
+end QOU.BraidKnot

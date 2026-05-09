@@ -2365,6 +2365,57 @@ export const references: CSLData[] = [
     URL: "https://doi.org/10.1090/ulect/015",
   }),
 
+  // ── Mathas 2004 (Mackey filtration for cyclotomic Hecke) ────
+  ref({
+    id: "mathas2004mackey",
+    type: "article-journal",
+    title: "Filtrations on the Mackey decomposition for cyclotomic Hecke algebras",
+    author: [
+      { family: "Mathas", given: "Andrew" },
+    ],
+    "container-title": "Journal of Algebra",
+    issued: { "date-parts": [[2004]] },
+    volume: "271",
+    issue: "2",
+    page: "522-560",
+    DOI: "10.1016/S0021-8693(02)00075-3",
+    URL: "https://doi.org/10.1016/S0021-8693(02)00075-3",
+  }),
+
+  // ── Hu-Mathas 2012 (Graded induction for Specht modules) ─────
+  ref({
+    id: "hu-mathas2012graded",
+    type: "article-journal",
+    title: "Graded induction for Specht modules",
+    author: [
+      { family: "Hu", given: "Jun" },
+      { family: "Mathas", given: "Andrew" },
+    ],
+    "container-title": "International Mathematics Research Notices",
+    issued: { "date-parts": [[2012]] },
+    volume: "2012",
+    issue: "6",
+    page: "1230-1263",
+    DOI: "10.1093/imrn/rnr058",
+    URL: "https://arxiv.org/abs/1008.1462",
+  }),
+
+  // ── Geck-Pfeiffer 2000 (Characters of finite Coxeter groups) ─
+  ref({
+    id: "geck-pfeiffer2000",
+    type: "book",
+    title: "Characters of Finite Coxeter Groups and Iwahori–Hecke Algebras",
+    author: [
+      { family: "Geck", given: "Meinolf" },
+      { family: "Pfeiffer", given: "Götz" },
+    ],
+    publisher: "Oxford University Press",
+    issued: { "date-parts": [[2000]] },
+    "collection-title": "London Mathematical Society Monographs",
+    "collection-number": 21,
+    ISBN: "9780198502500",
+  }),
+
   // ── Bach et al. 2013 (controlled double-slit diffraction) ────
   ref({
     id: "bach2013",
