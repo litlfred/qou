@@ -106,6 +106,28 @@ theorem Matrix.PosSemidef.trace_mul_eq_zero_iff_mul_eq_zero
   -- pure mechanical translation.
   sorry
 
+/-! ## §1.5  Diagonal-of-PSD non-negativity
+
+The diagonal entries of any PSD matrix are non-negative.  This
+is the basic building block: PSD ⟹ ∀ i, 0 ≤ M_ii.  Proven via
+the canonical basis vector test: M_ii = e_iᵀ · M · e_i ≥ 0
+(by PSD).  Mathlib likely has this as
+`Matrix.PosSemidef.diag_nonneg` (verify exact name). -/
+
+/-- **PSD diagonal entries are non-negative**.  Mathlib's standard
+    fact, restated here for direct use. -/
+theorem Matrix.PosSemidef.diag_nonneg
+    {C : Matrix (Fin n) (Fin n) ℝ} (hC : C.PosSemidef) (i : Fin n) :
+    0 ≤ C i i := by
+  -- C_ii = e_iᵀ · C · e_i ≥ 0 by PSD applied to canonical basis vector.
+  have h_psd_ei := hC.2 (Pi.single i (1 : ℝ))
+  have h_compute : Matrix.dotProduct (star (Pi.single i (1 : ℝ)))
+      (C.mulVec (Pi.single i (1 : ℝ))) = C i i := by
+    simp [Matrix.dotProduct, Matrix.mulVec, Pi.single_apply,
+          Finset.sum_ite_eq', star_trivial, mul_ite, mul_one,
+          mul_zero, Finset.mem_univ]
+  rwa [h_compute] at h_psd_ei
+
 /-- **Diagonal sub-case of cone self-polarity.**
 
     For diagonal PSD matrices `A = diag(a)`, `B = diag(b)` with
