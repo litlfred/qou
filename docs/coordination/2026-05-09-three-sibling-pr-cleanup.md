@@ -68,3 +68,52 @@ After each merge: re-rebase the next two onto the new main (witness conflicts au
 
 - `origin/main` watch is armed via Monitor (poll every 5 min); will integrate any new commits per skill §3 checklist.
 - No new sibling PRs opened since this ledger was created.
+
+## Post-merge KLR-positivity correction (follow-up to #618)
+
+After all six PRs merged, the user pointed out that KLR
+(Khovanov-Lauda-Rouquier) positivity should guarantee non-negativity
+of certain Wedderburn observables — contradicting #618's "LP
+unbounded for mixed-sign $t$" finding. Investigation confirmed:
+
+- **#618's finding was a setup error**, not an LP-theory issue.
+  The supply vector `t_k = pair["full"]` is a sum of seminormal-
+  basis matrix entries (`(M_i M_j)_{12}` etc.), **not** a Markov
+  trace. KLR positivity does NOT apply to matrix-entry projections
+  on a chosen seminormal basis (which can have signs).
+- **The KLR-positive replacement** is `t_k = tr_M(σ_i σ_j) =
+  Σ_λ y_λ · χ_λ(σ_i σ_j)`, the actual pair Markov trace. By KLR
+  positivity (operators in the canonical-basis cone are non-
+  negative at q > 0), `t_k ≥ 0` for every pair (verified:
+  `min t_k = +5 × 10⁻⁶` for triton).
+- **Plus** `M_bound = 0` (enforces `x ≥ 0`, matching the natural
+  "operator selection" reading of `prop:knot-operator-lp-selection`)
+  is needed alongside the KLR fix — without it, low-`t` entries
+  still let the LP scale linearly with `M`.
+
+**Result**: with both fixes, strong duality holds on every atom in
+the computable sweep (proton, neutron, deuteron, triton — all gap
+= 0). ⁴He remains deferred-by-budget pending `pyhecke_native`
+installation.
+
+**Branch**: `claude/klr-positive-supply-vector` (this entry will be
+updated with the merge SHA when the follow-up PR lands).
+
+**Files**:
+- [`folio-assistant/computations/wedderburn_lp_ew_wiring.py`](../../folio-assistant/computations/wedderburn_lp_ew_wiring.py)
+  — added `_klr_positive_supply_vector(...)`, switched LP calls
+  to `M_bound=0.0`, kept legacy matrix-entry sum under
+  `t_legacy_matrix_entries_*` for comparison.
+- [`docs/audits/2026-05-09-wedderburn-lp-ew-wiring.md`](../audits/2026-05-09-wedderburn-lp-ew-wiring.md)
+  — appended §0 KLR-positivity correction with post-fix table
+  (gap = 0 for every atom).
+- [`folio-assistant/computations/wedderburn-lp-ew-wiring.witness.json`](../../folio-assistant/computations/wedderburn-lp-ew-wiring.witness.json)
+  — regenerated; assertions
+  `lp_strong_duality_all_klr_atoms` (4/4),
+  `klr_positivity_supply_vector_all_atoms` (4/4),
+  `weinberg_minimal_delta_I_optimal` (✓) all pass.
+
+**No sibling-PR coordination needed**: all six PRs from today are
+merged; this is a forward-only correction landing on top of the
+merged #618 content. The audit doc patch documents the historical
+sequence (PR #618 first attempt → KLR correction).

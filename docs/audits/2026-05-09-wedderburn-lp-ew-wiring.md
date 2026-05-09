@@ -1,10 +1,77 @@
 # 2026-05-09 — Wedderburn pair-volume LP/SDP-EW wiring + Δ_I-word Weinberg probe
 
-**Branch:** `claude/wedderburn-lp-sdp-wiring`
+**Branch:** `claude/wedderburn-lp-sdp-wiring` (PR #618; superseded by
+`claude/klr-positive-supply-vector` for the §0 correction below)
 **Predecessor:** [`2026-05-09-refocused-1ppb-workplan-v3.md`](2026-05-09-refocused-1ppb-workplan-v3.md) §3 item 4
 **Companion to:**
 [`prop:knot-operator-lp-selection`](../../content/quantum-observable-universe/braids-and-knots/knot-operator-lp-selection.md),
 [`def:ew-interface-knot`](../../content/quantum-observable-universe/braids-and-knots/ew-interface-knot.md)
+
+## 0. KLR-positivity correction (post-#618)
+
+**The "LP unbounded for mixed-sign $t$" finding in §2 below was a
+setup error, not an LP-theory issue.** KLR (Khovanov-Lauda-Rouquier)
+positivity guarantees that Markov traces of compound operators in
+the canonical-basis cone are non-negative at $q > 0$
+[Kashiwara-Saito, Brundan-Kleshchev]. The supply vector $t_k$ used
+by [`wedderburn_lp_ew_wiring.py`](../../folio-assistant/computations/wedderburn_lp_ew_wiring.py)
+on PR #618 was
+
+$$
+  t_k^{(\text{PR #618})}
+  \;=\; w_{\rm sym} \, \lambda_i^{\rm sym} \lambda_j^{\rm sym}
+  \;+\; w_{\rm std} \, \big(z \cdot (M_i M_j)_{12}
+                           + (M_i M_j)_{22}\big)
+  \;+\; w_{\rm alt} \, \lambda_i^{\rm alt} \lambda_j^{\rm alt},
+$$
+
+i.e. the `pair["full"]` field from `wedderburn_pair_volumes`. This
+is a **sum of seminormal-basis matrix entries** (specifically
+$(M_i M_j)_{12}$ and $(M_i M_j)_{22}$ for the std channel), **not**
+a Markov trace. Matrix entries on a chosen seminormal basis can
+have signs, and the deuteron / triton runs picked up such negative
+entries — driving the LP $\min \langle t, x \rangle$ unbounded.
+
+The KLR-positive replacement is the actual pair Markov trace
+
+$$
+  t_k^{\rm KLR}
+  \;=\; \mathrm{tr}_M(\sigma_i \sigma_j)
+  \;=\; \sum_{\lambda \,\vdash\, 3A} y_\lambda(q) \cdot
+        \chi_\lambda(\sigma_i \sigma_j),
+$$
+
+evaluated via the same Hoefsmit-matrix cache that `_full_wedderburn_gram`
+already builds. By KLR positivity, $t_k^{\rm KLR} \ge 0$ for every
+pair (verified: $\min_k t_k = +5 \times 10^{-6}$ for triton, all
+positive within numerical noise).
+
+A second adjustment is needed alongside the KLR fix: the LP
+$\min \langle t, x \rangle$ s.t. $\sum x = n_{\text{target}},
+G x \ge 0, x_i \ge -M$ remains bounded only with $x \ge 0$
+explicitly (the natural reading of "operator selection" — operator
+coefficients are non-negative). The default `M_bound = 10^6` in
+`solve_operator_selection_lp` is intended for sign-indefinite
+problems; passing `M_bound = 0.0` enforces $x \ge 0$. With both
+fixes, **strong duality holds for every computable atom** (gap = 0,
+verified):
+
+| Atom | $(Z, N)$ | $H_n$ | # pairs | $t_{\min}^{\rm KLR}$ | $t_{\max}^{\rm KLR}$ | primal_obj | dual_obj | gap | $y_0^\star$ |
+|------|---------:|------:|--------:|---------------------:|---------------------:|-----------:|---------:|----:|------------:|
+| proton | (1, 0) | $H_3$ | 1 | +7.27 × 10⁻² | +7.27 × 10⁻² | +2.64 × 10⁻³ | +2.64 × 10⁻³ | 0 | +0.0727 |
+| neutron | (0, 1) | $H_3$ | 1 | +7.27 × 10⁻² | +7.27 × 10⁻² | +2.64 × 10⁻³ | +2.64 × 10⁻³ | 0 | +0.0727 |
+| deuteron | (1, 1) | $H_6$ | 10 | +4.63 × 10⁻⁴ | +2.74 × 10⁻³ | +3.15 × 10⁻⁶ | +3.15 × 10⁻⁶ | 0 | +0.0005 |
+| triton | (1, 2) | $H_9$ | 28 | +5.36 × 10⁻⁶ | +1.20 × 10⁻⁴ | +1.67 × 10⁻⁹ | +1.67 × 10⁻⁹ | 0 | +0.0000 |
+| ⁴He | (2, 2) | $H_{12}$ | 55 | DEFERRED — `pyhecke_native` Rust kernel needed for the H_12 Hoefsmit precomputation in session budget | | | | | |
+
+The legacy `pair["full"]` matrix-entry sum is preserved under
+`t_legacy_matrix_entries_min` / `_max` in the witness for diff /
+comparison.
+
+The "53 active for ⁴He" interpretation correction (§2 `active_set`
+discussion) and the LP-statement contract correction (§2 dual
+program) remain as written — both of those were genuine findings
+independent of the supply-vector choice.
 
 ## 1. Two deliverables
 
