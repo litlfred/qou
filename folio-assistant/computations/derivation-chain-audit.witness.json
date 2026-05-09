@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T15:15:15.755728+00:00",
-  "commitSha": "b67f72a8d850af24dea9b73e3956544ea5551c50",
+  "computedAt": "2026-05-09T15:22:23.029003+00:00",
+  "commitSha": "0fa5c342b469ecd1b2f7a3447763085f1b5fca52",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -626,7 +626,7 @@
       },
       {
         "chain": "atomic-braid-recipe-4he-canonical.derivation.json",
-        "target": "T_w(⁴He) ∈ B_{12} (canonical/SDP)",
+        "target": "T_w(⁴He) ∈ B_{12} (canonical operator-valued)",
         "target_value": [
           [
             0,
@@ -858,7 +858,7 @@
       },
       {
         "chain": "atomic-braid-recipe-d-canonical.derivation.json",
-        "target": "T_w(deuteron) ∈ B_{6} (canonical/SDP)",
+        "target": "T_w(deuteron) ∈ B_{6} (canonical operator-valued)",
         "target_value": [
           [
             0,
@@ -966,7 +966,7 @@
       },
       {
         "chain": "atomic-braid-recipe-n-canonical.derivation.json",
-        "target": "T_w(neutron) ∈ B_{3} (canonical/SDP)",
+        "target": "T_w(neutron) ∈ B_{3} (canonical operator-valued)",
         "target_value": [
           [
             0,
@@ -1026,7 +1026,7 @@
       },
       {
         "chain": "atomic-braid-recipe-p-canonical.derivation.json",
-        "target": "T_w(proton) ∈ B_{3} (canonical/SDP)",
+        "target": "T_w(proton) ∈ B_{3} (canonical operator-valued)",
         "target_value": [
           [
             0,
