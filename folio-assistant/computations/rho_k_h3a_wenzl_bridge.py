@@ -227,7 +227,17 @@ def main() -> int:
     q_mp = Q_MP
     z_markov = 1 / (mp.sqrt(q_mp) + 1 / mp.sqrt(q_mp))
 
-    def b_for_variant(var: dict) -> mp.mpf:
+    def b_for_variant(
+        var: dict,
+        *,
+        delta_rho: mp.mpf,
+        abs_tr_M: mp.mpf,
+        z_markov: mp.mpf,
+        n: int,
+    ) -> mp.mpf:
+        """Per-variant RHS. Constants passed explicitly (not captured) per
+        Gemini PR #609 review — keeps a single canonical site for each
+        magic value and prevents scope-dependent side effects."""
         if var["kind"] == "deuteron":
             return delta_rho * abs_tr_M
         ell_mu = len(var["mu"])
@@ -236,8 +246,12 @@ def main() -> int:
 
     b_full = mp.matrix(len(variants), 1)
     for i, var in enumerate(variants):
-        b_full[i, 0] = b_for_variant(var)
-    b_sel = np.array([float(b_full[i, 0]) for i in chosen_rows])
+        b_full[i, 0] = b_for_variant(
+            var, delta_rho=delta_rho, abs_tr_M=abs_tr_M,
+            z_markov=z_markov, n=n,
+        )
+    # b_sel kept in mpmath (50 dps) for the final solve — see Step 7.
+    # numpy float64 narrowing is reserved for rank/cond checks only.
 
     # ── Step 7: solve M_sel · u = b_sel where u_λ = y_λ · Δ_λ ──
     # The defining equation per `prop:rho-k-h3a-refinement` is
@@ -246,20 +260,50 @@ def main() -> int:
     #   M[i, λ] · u_λ = b_i
     # which is an 11×11 linear system once we solve for u, then
     # divide by y_λ(q_0) to recover Δ_λ.
+    #
+    # Gemini PR #609 review: solve in mpmath (50 dps) rather than
+    # numpy float64 — the matrix is well-conditioned (cond ≈ 31.7)
+    # so float64 would be numerically fine, but the rest of the
+    # pipeline carries 50-dps precision and we should not introduce
+    # a discontinuity here. M_np / b_sel above are float64 only for
+    # the rank check + row selection.
     if outcome == "uniquely-solvable":
-        u = np.linalg.solve(M_sel, b_sel)
+        M_sel_mp = mp.matrix([
+            [M_full[i, j] for j in range(len(parts))]
+            for i in chosen_rows
+        ])
+        b_sel_mp = mp.matrix([b_full[i, 0] for i in chosen_rows])
+        u_mp = mp.lu_solve(M_sel_mp, b_sel_mp)
+
+        # Tolerance dynamically tied to current precision (mp.dps),
+        # not a hardcoded literal — Gemini PR #609 review.
+        zero_tol = mp.mpf(10) ** -(mp.mp.dps - 5)
+
         Delta_lambda = []
+        u = []  # float64 mirror, kept for downstream prints / witness
         for j, lam in enumerate(parts):
-            y_j = float(y_at_q0[lam])
-            if abs(y_j) < 1e-40:
-                d_j = float("inf")
+            y_j = y_at_q0[lam]  # mpmath
+            u_j_mp = u_mp[j]
+            if abs(y_j) < zero_tol:
+                d_j = mp.inf
             else:
-                d_j = u[j] / y_j
-            Delta_lambda.append((lam, u[j], y_j, d_j))
-        # Residual check
-        resid = M_sel @ u - b_sel
-        max_resid = float(np.max(np.abs(resid)))
-        print(f"\n  Solved 11×11 system.  max |residual| = {max_resid:.4e}")
+                d_j = u_j_mp / y_j
+            Delta_lambda.append((lam, u_j_mp, y_j, d_j))
+            u.append(float(u_j_mp))
+
+        # Residual check in mpmath (50-dps norm) — replaces float64
+        # `M_sel @ u - b_sel` from the prior implementation.
+        resid_mp = M_sel_mp * u_mp - b_sel_mp
+        max_resid_mp = mp.mpf(0)
+        for k in range(resid_mp.rows):
+            r_k = abs(resid_mp[k, 0])
+            if r_k > max_resid_mp:
+                max_resid_mp = r_k
+        max_resid = float(max_resid_mp)
+        print(f"\n  Solved 11×11 system (mpmath, {mp.mp.dps} dps).  "
+              f"max |residual| = {mp.nstr(max_resid_mp, 6)}")
+        # b_sel float mirror for downstream closure-check printing
+        b_sel = np.array([float(b_full[i, 0]) for i in chosen_rows])
     else:
         Delta_lambda = []
         max_resid = None
@@ -275,17 +319,24 @@ def main() -> int:
     delta_rows = []
     for lam, u_lam, y_lam, d_lam in Delta_lambda:
         if mp.isfinite(d_lam):
-            offset = d_lam - delta_rho_float
+            offset_mp = d_lam - delta_rho_float
+            offset = float(offset_mp)
         else:
+            offset_mp = mp.nan
             offset = float("nan")
-        print(f"    {str(list(lam)):<24}{u_lam:>22.6e}"
-              f"{d_lam:>22.6e}{offset:>18.2e}")
+        # u_lam / d_lam are mpmath values now; convert to float for
+        # the f-string format spec (display only — full-precision
+        # values are kept in delta_rows below).
+        u_lam_f = float(u_lam)
+        d_lam_f = float(d_lam) if mp.isfinite(d_lam) else float("inf")
+        print(f"    {str(list(lam)):<24}{u_lam_f:>22.6e}"
+              f"{d_lam_f:>22.6e}{offset:>18.2e}")
         delta_rows.append({
             "partition": list(lam),
             "y_lambda_at_q0": str(y_at_q0[lam]),
             "u_lambda": str(u_lam),
             "Delta_lambda": str(d_lam),
-            "Delta_minus_delta_rho": str(offset),
+            "Delta_minus_delta_rho": str(offset_mp),
         })
 
     # ── Step 9: closure check (M(D) reconstruction) ────────────
