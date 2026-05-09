@@ -353,9 +353,55 @@ def main():
         expected=None,
     ))
 
-    # Test 2d: HELIUM-3 L_6a4 reuses the Borromean reduction —
-    # volume-equivalent (both = 8G); identical Bloch class.
-    # Documented in extension plan; no separate case needed.
+    # ── ITEM-3 EXTENSION (post-#580 batch): H_n for n ≥ 4 ──────────
+    #
+    # Per `gb_filtration_jet_tracker_extension_plan.md`, extending
+    # the tracker to H_4 and beyond unlocks the canonical T_w for
+    # multi-nucleon atomic-braid closures. The reducer machinery is
+    # already polymorphic in n; we add test cases to verify
+    # behaviour at n ∈ {4, 5, 6}.
+
+    # H_4 stabilisation of electron (σ_1^3): same closure (3_1
+    # trefoil + 2 disjoint unknots from the extra strands).
+    cases.append(reduce_braid(
+        name="electron-stab σ_1^3 in H_4 (trefoil + 2 unknots)",
+        n=4, word=[1, 1, 1],
+        expected={1: 1, 0: 1},  # same Hecke shape as electron in H_2
+    ))
+
+    # H_4 longest element: σ_1 σ_2 σ_3 σ_1 σ_2 σ_1 (S_4 longest).
+    cases.append(reduce_braid(
+        name="ascending σ_1 σ_2 σ_3 σ_1 σ_2 σ_1 in H_4 (longest)",
+        n=4, word=[1, 2, 3, 1, 2, 1],
+        expected=None,  # let reducer compute; longest element of S_4
+    ))
+
+    # H_4 nuclear interface mock: Borromean braid stabilised
+    # disjointly with σ_3 (mocking proton ⊗ extra strand in H_4).
+    cases.append(reduce_braid(
+        name="Borromean ⊗ σ_3 in H_4 (proton-stab)",
+        n=4, word=[1, -2, 1, -2, 1, -2, 3],
+        expected=None,
+    ))
+
+    # H_5 ascending: σ_1..σ_4 (descending then ascending nucleon).
+    cases.append(reduce_braid(
+        name="ascending σ_1 σ_2 σ_3 σ_4 in H_5 (single descending)",
+        n=5, word=[1, 2, 3, 4],
+        expected={4: 1},  # all ascending → single grade-4 term
+    ))
+
+    # H_6 deuteron interface mock: proton (σ_1σ_2^{-1})^3 disjoint
+    # with neutron via σ_3..σ_5 stabilisation. This is the
+    # *atomic-braid* representative for ²H in H_6, modulo the
+    # explicit Hopf-link interface knot (which σ_3 substitutes
+    # here as a placeholder; full Markov-trace identification of
+    # ²H = K_{6_2} closure requires the binding operator ⋈).
+    cases.append(reduce_braid(
+        name="²H disjoint mock (σ_1σ_2^{-1})^3 ⊗ σ_3..σ_5 in H_6",
+        n=6, word=[1, -2, 1, -2, 1, -2, 3, 4, 5],
+        expected=None,
+    ))
 
     # Test 3: simple ascending case to baseline jet-order.
     cases.append(reduce_braid(
