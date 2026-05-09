@@ -1,0 +1,791 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-09T21:06:41.568150+00:00",
+  "commitSha": "1e023055d516982f1ec6fb8d543e2a1c505f4264",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 111778,
+  "computation": "delta-lambda-2row-stratum",
+  "scriptFile": "delta_lambda_2row_stratum_analysis.py",
+  "scriptHash": "bdb52b2d305d",
+  "scriptCommitSha": "121dcefd06165c538402c806fa04153a98c2b789",
+  "description": "2-row Wedderburn stratum analysis follow-up to Proposal 1's empirical Δ_λ tabulation. The dominant block per atom always lands in the 2-row stratum; this script (a) measures what fraction of |tr_M| the 2-row sector carries vs > 2-row, (b) restricts the Δ_λ ansätze to the 2-row stratum, and (c) tests several selector hypotheses inside 2-row to find the categorical rule that picks (5,1) for D, (6,3) for T+³He, (9,3) for ⁴He.  Mixed-precision: tier-2 chi data is float64 (numpy); per-row arithmetic uses mpmath but does not exceed float64 input precision.",
+  "contentBlock": "prop:rho-k-h3a-refinement",
+  "parameters": {
+    "q_0": "1.1099785955541805752815940796095093779932822799587",
+    "m_e_MeV": "0.51099895",
+    "m_p_MeV": "938.27208816",
+    "m_n_MeV": "939.56542052"
+  },
+  "data": {
+    "per_atom": {
+      "p": {
+        "atom": "p",
+        "n": 3,
+        "Z": 1,
+        "N": 0,
+        "n_partitions_total": 3,
+        "n_partitions_2row": 2,
+        "abs_tr_M": "1.065306228592435304097936194743016",
+        "tr_M_signed": "1.065306228592435304097936194743016",
+        "contribution_total_abs": "1.0989334274727477738477387053037001417642060309583",
+        "sector_mass_2row": "1.0821198280325915582555214517260954890473657887617",
+        "sector_mass_gt_2row": "0.016813599440156215592217253577604652716840242196592",
+        "fraction_in_2row_sector": 0.9847000746179657,
+        "rows_2row_top5": [
+          {
+            "lambda": [
+              3
+            ],
+            "y": 0.41539578633438373,
+            "chi": 1.382494514546446,
+            "abs_contrib": 0.574282395972993
+          },
+          {
+            "lambda": [
+              2,
+              1
+            ],
+            "y": 0.2809296339799948,
+            "chi": 1.8077033200981636,
+            "abs_contrib": 0.5078374320595985
+          }
+        ],
+        "e1_2row_single_block_top3": [
+          {
+            "lambda": [
+              3
+            ],
+            "delta": 0.0,
+            "abs_delta": 0.0
+          },
+          {
+            "lambda": [
+              2,
+              1
+            ],
+            "delta": 0.0,
+            "abs_delta": 0.0
+          }
+        ],
+        "e2_2row_content_monotonic": {
+          "alpha": "0.0",
+          "norm_delta_2": "0.0"
+        },
+        "e3_2row_uniform": {
+          "delta": "0.0"
+        },
+        "e4_selector_hypotheses": {
+          "max_y": {
+            "lambda": [
+              3
+            ],
+            "abs_contribution": 0.574282395972993
+          },
+          "max_abs_chi": {
+            "lambda": [
+              2,
+              1
+            ],
+            "abs_contribution": 0.5078374320595985
+          },
+          "max_abs_contribution": {
+            "lambda": [
+              3
+            ],
+            "abs_contribution": 0.574282395972993
+          },
+          "max_dim_q": {
+            "lambda": [
+              2,
+              1
+            ],
+            "abs_contribution": 0.5078374320595985
+          },
+          "max_specht_dim": {
+            "lambda": [
+              2,
+              1
+            ],
+            "abs_contribution": 0.5078374320595985
+          },
+          "canonical_3A_minus_N_N": {
+            "lambda": [
+              3,
+              0
+            ],
+            "abs_contribution": "n/a"
+          }
+        },
+        "canonical_3A_minus_N_N_predicted": [
+          3,
+          0
+        ]
+      },
+      "n": {
+        "atom": "n",
+        "n": 3,
+        "Z": 0,
+        "N": 1,
+        "n_partitions_total": 3,
+        "n_partitions_2row": 2,
+        "abs_tr_M": "0.923233297169676360703463926886587",
+        "tr_M_signed": "0.923233297169676360703463926886587",
+        "contribution_total_abs": "0.96466377103266021401764501191724025809549567513287",
+        "sector_mass_2row": "0.94394853410116829742660516461664639721529661309489",
+        "sector_mass_gt_2row": "0.020715236931491916591039847300593860880199062037985",
+        "fraction_in_2row_sector": 0.9785259511619094,
+        "rows_2row_top5": [
+          {
+            "lambda": [
+              2,
+              1
+            ],
+            "y": 0.2809296339799948,
+            "chi": 1.7008888500891666,
+            "abs_contrib": 0.47783008209620387
+          },
+          {
+            "lambda": [
+              3
+            ],
+            "y": 0.41539578633438373,
+            "chi": 1.1221068372363079,
+            "abs_contrib": 0.46611845200496443
+          }
+        ],
+        "e1_2row_single_block_top3": [
+          {
+            "lambda": [
+              2,
+              1
+            ],
+            "delta": 0.0,
+            "abs_delta": 0.0
+          },
+          {
+            "lambda": [
+              3
+            ],
+            "delta": 0.0,
+            "abs_delta": 0.0
+          }
+        ],
+        "e2_2row_content_monotonic": {
+          "alpha": "0.0",
+          "norm_delta_2": "0.0"
+        },
+        "e3_2row_uniform": {
+          "delta": "0.0"
+        },
+        "e4_selector_hypotheses": {
+          "max_y": {
+            "lambda": [
+              3
+            ],
+            "abs_contribution": 0.46611845200496443
+          },
+          "max_abs_chi": {
+            "lambda": [
+              2,
+              1
+            ],
+            "abs_contribution": 0.47783008209620387
+          },
+          "max_abs_contribution": {
+            "lambda": [
+              2,
+              1
+            ],
+            "abs_contribution": 0.47783008209620387
+          },
+          "max_dim_q": {
+            "lambda": [
+              2,
+              1
+            ],
+            "abs_contribution": 0.47783008209620387
+          },
+          "max_specht_dim": {
+            "lambda": [
+              2,
+              1
+            ],
+            "abs_contribution": 0.47783008209620387
+          },
+          "canonical_3A_minus_N_N": {
+            "lambda": [
+              2,
+              1
+            ],
+            "abs_contribution": 0.47783008209620387
+          }
+        },
+        "canonical_3A_minus_N_N_predicted": [
+          2,
+          1
+        ]
+      },
+      "D": {
+        "atom": "D",
+        "n": 6,
+        "Z": 1,
+        "N": 1,
+        "n_partitions_total": 11,
+        "n_partitions_2row": 4,
+        "abs_tr_M": "0.388286471289024626071247461314695509",
+        "tr_M_signed": "0.388286471289024626071247461314695509",
+        "contribution_total_abs": "0.4321003509791159399333080800893505554832001231316",
+        "sector_mass_2row": "0.40935621233580214273321159053733706827866529636868",
+        "sector_mass_gt_2row": "0.022744138643313797200096489552013487204534826762925",
+        "fraction_in_2row_sector": 0.9473637579979354,
+        "rows_2row_top5": [
+          {
+            "lambda": [
+              5,
+              1
+            ],
+            "y": 0.05896068139733709,
+            "chi": 3.2158914339387135,
+            "abs_contrib": 0.189611150244886
+          },
+          {
+            "lambda": [
+              6
+            ],
+            "y": 0.05918771713724117,
+            "chi": 1.559758739418077,
+            "abs_contrib": 0.092318559071017
+          },
+          {
+            "lambda": [
+              4,
+              2
+            ],
+            "y": 0.04028438657433148,
+            "chi": 1.6737481247387067,
+            "abs_contrib": 0.06742591648503644
+          },
+          {
+            "lambda": [
+              3,
+              3
+            ],
+            "y": 0.014120874074270585,
+            "chi": 4.249070292623656,
+            "abs_contrib": 0.060000586534862704
+          }
+        ],
+        "e1_2row_single_block_top3": [
+          {
+            "lambda": [
+              5,
+              1
+            ],
+            "delta": -22.95944767091862,
+            "abs_delta": 22.95944767091862
+          },
+          {
+            "lambda": [
+              6
+            ],
+            "delta": -47.15592753696768,
+            "abs_delta": 47.15592753696768
+          },
+          {
+            "lambda": [
+              4,
+              2
+            ],
+            "delta": -64.56519256710843,
+            "abs_delta": 64.56519256710843
+          }
+        ],
+        "e2_2row_content_monotonic": {
+          "alpha": "-1.206450260639284283246686697869027437278670693996",
+          "norm_delta_2": "22.245843626952945323088781941649829460336765618893"
+        },
+        "e3_2row_uniform": {
+          "delta": "-10.634667682284993071689127164543813315087500637891"
+        },
+        "e4_selector_hypotheses": {
+          "max_y": {
+            "lambda": [
+              6
+            ],
+            "abs_contribution": 0.092318559071017
+          },
+          "max_abs_chi": {
+            "lambda": [
+              3,
+              3
+            ],
+            "abs_contribution": 0.060000586534862704
+          },
+          "max_abs_contribution": {
+            "lambda": [
+              5,
+              1
+            ],
+            "abs_contribution": 0.189611150244886
+          },
+          "max_dim_q": {
+            "lambda": [
+              4,
+              2
+            ],
+            "abs_contribution": 0.06742591648503644
+          },
+          "max_specht_dim": {
+            "lambda": [
+              4,
+              2
+            ],
+            "abs_contribution": 0.06742591648503644
+          },
+          "canonical_3A_minus_N_N": {
+            "lambda": [
+              5,
+              1
+            ],
+            "abs_contribution": 0.189611150244886
+          }
+        },
+        "canonical_3A_minus_N_N_predicted": [
+          5,
+          1
+        ]
+      },
+      "T": {
+        "atom": "T",
+        "n": 9,
+        "Z": 1,
+        "N": 2,
+        "n_partitions_total": 30,
+        "n_partitions_2row": 5,
+        "abs_tr_M": "0.10405398879467265360993549095228623019",
+        "tr_M_signed": "0.10405398879467265360993549095228623019",
+        "contribution_total_abs": "0.13461186713550502040193134067994321722672544517673",
+        "sector_mass_2row": "0.11312988881316184550769583496721493093530776885217",
+        "sector_mass_gt_2row": "0.02148197832234317489423550571272828629141767632456",
+        "fraction_in_2row_sector": 0.8404154196842195,
+        "rows_2row_top5": [
+          {
+            "lambda": [
+              6,
+              3
+            ],
+            "y": 0.004456576547457841,
+            "chi": 10.16741952165563,
+            "abs_contrib": 0.045311883388375496
+          },
+          {
+            "lambda": [
+              8,
+              1
+            ],
+            "y": 0.007306412680316064,
+            "chi": 3.7402811795852773,
+            "abs_contrib": 0.027328037838469394
+          },
+          {
+            "lambda": [
+              7,
+              2
+            ],
+            "y": 0.00626904182167138,
+            "chi": 3.1900195401578078,
+            "abs_contrib": 0.0199983659091982
+          },
+          {
+            "lambda": [
+              9
+            ],
+            "y": 0.006554744690557455,
+            "chi": 1.5768015283810746,
+            "abs_contrib": 0.010335531446218729
+          },
+          {
+            "lambda": [
+              5,
+              4
+            ],
+            "y": 0.0022956559536403817,
+            "chi": 4.424038460464791,
+            "abs_contrib": 0.010156070230900026
+          }
+        ],
+        "e1_2row_single_block_top3": [
+          {
+            "lambda": [
+              6,
+              3
+            ],
+            "delta": -366.31585160936055,
+            "abs_delta": 366.31585160936055
+          },
+          {
+            "lambda": [
+              8,
+              1
+            ],
+            "delta": -607.3784458857608,
+            "abs_delta": 607.3784458857608
+          },
+          {
+            "lambda": [
+              7,
+              2
+            ],
+            "delta": -829.9908715942829,
+            "abs_delta": 829.9908715942829
+          }
+        ],
+        "e2_2row_content_monotonic": {
+          "alpha": "-7.1809592969303303265694906832207769843847933153407",
+          "norm_delta_2": "379.57330903151156950929543527600007061991032945705"
+        },
+        "e3_2row_uniform": {
+          "delta": "-146.72038773811379603085048802371374253394000496408"
+        },
+        "e4_selector_hypotheses": {
+          "max_y": {
+            "lambda": [
+              8,
+              1
+            ],
+            "abs_contribution": 0.027328037838469394
+          },
+          "max_abs_chi": {
+            "lambda": [
+              6,
+              3
+            ],
+            "abs_contribution": 0.045311883388375496
+          },
+          "max_abs_contribution": {
+            "lambda": [
+              6,
+              3
+            ],
+            "abs_contribution": 0.045311883388375496
+          },
+          "max_dim_q": {
+            "lambda": [
+              6,
+              3
+            ],
+            "abs_contribution": 0.045311883388375496
+          },
+          "max_specht_dim": {
+            "lambda": [
+              6,
+              3
+            ],
+            "abs_contribution": 0.045311883388375496
+          },
+          "canonical_3A_minus_N_N": {
+            "lambda": [
+              7,
+              2
+            ],
+            "abs_contribution": 0.0199983659091982
+          }
+        },
+        "canonical_3A_minus_N_N_predicted": [
+          7,
+          2
+        ]
+      },
+      "3He": {
+        "atom": "3He",
+        "n": 9,
+        "Z": 2,
+        "N": 1,
+        "n_partitions_total": 30,
+        "n_partitions_2row": 5,
+        "abs_tr_M": "0.206544128895854401369125763487286978274",
+        "tr_M_signed": "0.206544128895854401369125763487286978274",
+        "contribution_total_abs": "0.22429602285173363152949083407081859606907908381666",
+        "sector_mass_2row": "0.20037567355370809494082095144308205446153774668329",
+        "sector_mass_gt_2row": "0.023920349298025536588669882627736541607541337133371",
+        "fraction_in_2row_sector": 0.8933536627448914,
+        "rows_2row_top5": [
+          {
+            "lambda": [
+              6,
+              3
+            ],
+            "y": 0.004456576547457841,
+            "chi": 16.06473221702975,
+            "abs_contrib": 0.07159370883960518
+          },
+          {
+            "lambda": [
+              8,
+              1
+            ],
+            "y": 0.007306412680316064,
+            "chi": 6.567663928203207,
+            "abs_contrib": 0.04798606300507832
+          },
+          {
+            "lambda": [
+              7,
+              2
+            ],
+            "y": 0.00626904182167138,
+            "chi": 7.5675725819338036,
+            "abs_contrib": 0.047441429004676676
+          },
+          {
+            "lambda": [
+              5,
+              4
+            ],
+            "y": 0.0022956559536403817,
+            "chi": 7.695237783827572,
+            "abs_contrib": 0.01766561843312218
+          },
+          {
+            "lambda": [
+              9
+            ],
+            "y": 0.006554744690557455,
+            "chi": 2.3935111147542574,
+            "abs_contrib": 0.015688854271225725
+          }
+        ],
+        "e1_2row_single_block_top3": [
+          {
+            "lambda": [
+              6,
+              3
+            ],
+            "delta": -210.9644653894709,
+            "abs_delta": 210.9644653894709
+          },
+          {
+            "lambda": [
+              8,
+              1
+            ],
+            "delta": -314.7524002750201,
+            "abs_delta": 314.7524002750201
+          },
+          {
+            "lambda": [
+              7,
+              2
+            ],
+            "delta": -318.365800260946,
+            "abs_delta": 318.365800260946
+          }
+        ],
+        "e2_2row_content_monotonic": {
+          "alpha": "-3.6882044155552656965863709319719531066480127752238",
+          "norm_delta_2": "194.95221968398892041689222497625056297498819630762"
+        },
+        "e3_2row_uniform": {
+          "delta": "-75.377056719155014431557165061726968495372384336835"
+        },
+        "e4_selector_hypotheses": {
+          "max_y": {
+            "lambda": [
+              8,
+              1
+            ],
+            "abs_contribution": 0.04798606300507832
+          },
+          "max_abs_chi": {
+            "lambda": [
+              6,
+              3
+            ],
+            "abs_contribution": 0.07159370883960518
+          },
+          "max_abs_contribution": {
+            "lambda": [
+              6,
+              3
+            ],
+            "abs_contribution": 0.07159370883960518
+          },
+          "max_dim_q": {
+            "lambda": [
+              6,
+              3
+            ],
+            "abs_contribution": 0.07159370883960518
+          },
+          "max_specht_dim": {
+            "lambda": [
+              6,
+              3
+            ],
+            "abs_contribution": 0.07159370883960518
+          },
+          "canonical_3A_minus_N_N": {
+            "lambda": [
+              8,
+              1
+            ],
+            "abs_contribution": 0.04798606300507832
+          }
+        },
+        "canonical_3A_minus_N_N_predicted": [
+          8,
+          1
+        ]
+      },
+      "4He": {
+        "atom": "4He",
+        "n": 12,
+        "Z": 2,
+        "N": 2,
+        "n_partitions_total": 77,
+        "n_partitions_2row": 7,
+        "abs_tr_M": "0.05534834587669883177840180502090732346933",
+        "tr_M_signed": "0.05534834587669883177840180502090732346933",
+        "contribution_total_abs": "0.061723464007511801491836971102397665129463681316052",
+        "sector_mass_2row": "0.05128837179224691715367169006875699571570975095862",
+        "sector_mass_gt_2row": "0.010435092215264884338165281033640669413753930357432",
+        "fraction_in_2row_sector": 0.8309380009197973,
+        "rows_2row_top5": [
+          {
+            "lambda": [
+              9,
+              3
+            ],
+            "y": 0.0005870537936059485,
+            "chi": 27.331191373309558,
+            "abs_contrib": 0.01604487957947155
+          },
+          {
+            "lambda": [
+              8,
+              4
+            ],
+            "y": 0.00043096777104569087,
+            "chi": 30.262869451455778,
+            "abs_contrib": 0.013042321392940627
+          },
+          {
+            "lambda": [
+              10,
+              2
+            ],
+            "y": 0.0007121291177018276,
+            "chi": 10.461121094404168,
+            "abs_contrib": 0.007449668935130017
+          },
+          {
+            "lambda": [
+              7,
+              5
+            ],
+            "y": 0.00026178320382065813,
+            "chi": 21.773345101891422,
+            "abs_contrib": 0.005699896038665971
+          },
+          {
+            "lambda": [
+              11,
+              1
+            ],
+            "y": 0.0007670122284469954,
+            "chi": 7.390200966330934,
+            "abs_contrib": 0.005668374511856629
+          }
+        ],
+        "e1_2row_single_block_top3": [
+          {
+            "lambda": [
+              9,
+              3
+            ],
+            "delta": -3451.1436910977163,
+            "abs_delta": 3451.1436910977163
+          },
+          {
+            "lambda": [
+              8,
+              4
+            ],
+            "delta": -4245.6540723714625,
+            "abs_delta": 4245.6540723714625
+          },
+          {
+            "lambda": [
+              10,
+              2
+            ],
+            "delta": -7432.972581371417,
+            "abs_delta": 7432.972581371417
+          }
+        ],
+        "e2_2row_content_monotonic": {
+          "alpha": "-29.160928576778721945748528775484922677704717083118",
+          "norm_delta_2": "3280.5720636958475671507584164795929551073723642935"
+        },
+        "e3_2row_uniform": {
+          "delta": "-1079.6440401620701120305829307014234778022522618646"
+        },
+        "e4_selector_hypotheses": {
+          "max_y": {
+            "lambda": [
+              11,
+              1
+            ],
+            "abs_contribution": 0.005668374511856629
+          },
+          "max_abs_chi": {
+            "lambda": [
+              8,
+              4
+            ],
+            "abs_contribution": 0.013042321392940627
+          },
+          "max_abs_contribution": {
+            "lambda": [
+              9,
+              3
+            ],
+            "abs_contribution": 0.01604487957947155
+          },
+          "max_dim_q": {
+            "lambda": [
+              7,
+              5
+            ],
+            "abs_contribution": 0.005699896038665971
+          },
+          "max_specht_dim": {
+            "lambda": [
+              7,
+              5
+            ],
+            "abs_contribution": 0.005699896038665971
+          },
+          "canonical_3A_minus_N_N": {
+            "lambda": [
+              10,
+              2
+            ],
+            "abs_contribution": 0.007449668935130017
+          }
+        },
+        "canonical_3A_minus_N_N_predicted": [
+          10,
+          2
+        ]
+      }
+    },
+    "reference_blocks": [
+      "prop:rho-k-h3a-refinement",
+      "prop:sigma-shell-from-beta-chain-derivation",
+      "prop:categorical-mass-markov"
+    ]
+  }
+}
