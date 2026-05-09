@@ -71,7 +71,7 @@ noncomputable def qInt (q : ℝ) (n : ℕ) : ℝ :=
 
     The `q_correction` field is the **conjectural input**: providing
     it is the role of mathematicians (not Lean).  Downstream
-    theorems consuming `[ZeqNRhoCorrection K A]` are conditional on
+    theorems consuming `[ZeqNRhoCorrection A K]` are conditional on
     it. -/
 class ZeqNRhoCorrection (A : ℕ) (K : KnotAssignment A) where
   /-- Mass of the electron in MeV — a numerical constant. -/
