@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T15:39:57.982261+00:00",
-  "commitSha": "d37b36f631bc3605d4eb2137b2cb2ff40458c7eb",
+  "computedAt": "2026-05-09T16:09:44.200171+00:00",
+  "commitSha": "5a3ed8a70675f7033879ac1b580b83fdbc13aa85",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -520,7 +520,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 6,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
@@ -1996,6 +1996,7 @@
         "channel-product-mass.witness.json",
         "chi-deuteron-h6.witness.json",
         "chi-helium-3-h9.witness.json",
+        "chi-helium-4-h12.witness.json",
         "chi-tritium-h9.witness.json",
         "chirality-avg-content.witness.json",
         "chirality-braid-average.witness.json",
@@ -2144,7 +2145,12 @@
         "r5-full-canonical-knot-solver.witness.json",
         "rho-f-categorical-probe.witness.json",
         "rho-f-volume-binding-gap.witness.json",
+        "rho-k-h3a-co-casimir.witness.json",
+        "rho-k-h3a-frobenius-pairing.witness.json",
+        "rho-k-h3a-gg-trajectory.witness.json",
+        "rho-k-h3a-lp-dual.witness.json",
         "rho-k-h3a-refinement.witness.json",
+        "rho-k-h3a-wenzl-bridge.witness.json",
         "rho-k-leading-order-verification.witness.json",
         "rho-k-markov-multiplicativity.witness.json",
         "rho-k-pair-gen-extension.witness.json",

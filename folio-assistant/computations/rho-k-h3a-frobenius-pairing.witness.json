@@ -1,0 +1,239 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-09T14:17:42.686342+00:00",
+  "commitSha": "d3d2a8d9095d043c7239d72d28b50087f970f67f",
+  "assertions": [
+    {
+      "name": "frobenius_pairing_closure_at_50dps",
+      "computed": 1.0691058840368783e-50,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-40
+    },
+    {
+      "name": "min_norm_vs_occam_singleton",
+      "computed": 56.841150447723635,
+      "expected": 56.841150447723635,
+      "passed": true,
+      "tolerance": 1e-12,
+      "source": "‖δ^G‖² should be ≤ ‖δ^A‖² (min-norm property)"
+    },
+    {
+      "name": "min_norm_vs_wenzl_bridge_constant",
+      "computed": 56.841150447723635,
+      "expected": 56.841150447723635,
+      "passed": true,
+      "tolerance": 1e-12,
+      "source": "‖δ^G‖² should be ≤ ‖δ^F‖² (min-norm property)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 12,
+  "computation": "rho-k-h3a-frobenius-pairing",
+  "scriptFile": "rho_k_h3a_frobenius_pairing.py",
+  "scriptHash": "18d267865f23",
+  "scriptCommitSha": "fe5a7741cc91c7376d16b769719ab9aafb798890",
+  "description": "Option G in the Δ_λ derivation race: Δ_λ derived from the Frobenius-pairing minimum-norm closure on Z(H_n(q)). Δ_λ^G(K) = (-B(K)/m_e) · (1/S_K) · χ^λ(β_K) / d_λ, where S_K = Σ_μ y_μ χ^μ(β_K)² / d_μ is the Frobenius norm² of β_K's projection onto the center.  Sibling of PR #600's race; structurally distinct from A/B/C/D/F because Δ_λ depends on β_K (vortex-aware).  Deuteron-only for now; T / ³He / ⁴He extension requires full per-λ chi caches.",
+  "data": {
+    "computation_status": "deuteron",
+    "atom": "deuteron",
+    "Z": 1,
+    "N": 1,
+    "A": 2,
+    "n_strands": 6,
+    "n_partitions": 11,
+    "source_witness": "rho-k-h3a-refinement.witness.json",
+    "abs_tr_M_at_q0_50dps": "0.3882864715477132785110659223165687998713135876719",
+    "rho_K_LO": "9464.2399476222402644936590084821725363213426591396",
+    "rho_K_codata": "9453.0282068049061232379807700611810852137428762323",
+    "delta_rho_residual": "-11.211740817334141255678238420991451107599782907313",
+    "target_yc_delta_sum": "-4.353367281870148656861232298031140768488858930132",
+    "S_central_projection": {
+      "value": "0.33341701463778983301221501890716124375500362636245",
+      "formula": "S = Σ_μ y_μ · χ^μ(β_D)² / d_μ",
+      "interpretation": "S itself is a squared Frobenius norm: S = ⟨β_K, β_K^(Z)⟩_F = ‖β_K^(Z)‖_F², the Frobenius norm² of β_K's orthogonal projection onto Z(H_n(q)).  Smaller S ⇒ larger ‖δ_K‖_F (binding requires more 'central mass')."
+    },
+    "delta_lambda_formula": {
+      "expression": "Δ_λ^G(K) = (-B(K)/m_e) / S_K · χ^λ(β_K) / d_λ",
+      "derivation": "Min-Frobenius-norm element δ_K ∈ Z(H_n(q)) satisfying ⟨β_K, δ_K⟩_F = -B(K)/m_e.  Lagrange multiplier on a 1-dim affine subspace ⇒ unique orthogonal-projection answer.",
+      "vortex_aware": true,
+      "free_parameters": 0
+    },
+    "per_lambda": [
+      {
+        "partition": [
+          6
+        ],
+        "d_lambda": 1,
+        "y_lambda_at_q0": "0.059187716932148631726632017481638432709061246964529",
+        "chi_lambda_beta_D_at_q0": "1.5597587394180613474788665244555934948534877939985",
+        "y_chi_product": "0.092318558751121195077358729185788532393727977834903",
+        "chi_over_d_lambda": "1.5597587394180613474788665244555934948534877939985",
+        "Delta_lambda_frobenius_pairing": "-20.36549535772853313142784896277647841975678220615",
+        "y_chi_Delta_contribution": "-1.8801131796781475455881006286734532772955565133015"
+      },
+      {
+        "partition": [
+          5,
+          1
+        ],
+        "d_lambda": 5,
+        "y_lambda_at_q0": "0.058960681401453730785485915659443199470465849311845",
+        "chi_lambda_beta_D_at_q0": "3.2158914339386873128784472462978051568372154356128",
+        "y_chi_product": "0.18961115025812313016914536057171259868832724451837",
+        "chi_over_d_lambda": "0.64317828678773746257568944925956103136744308712256",
+        "Delta_lambda_frobenius_pairing": "-8.3978656972645019946351366654615500183339389647031",
+        "y_chi_Delta_contribution": "-1.5923289745715574578980678076884152901474453802022"
+      },
+      {
+        "partition": [
+          4,
+          2
+        ],
+        "d_lambda": 9,
+        "y_lambda_at_q0": "0.040284386965935211236296233398315147983734378748849",
+        "chi_lambda_beta_D_at_q0": "1.6737481247387004963839340269207117288136410247938",
+        "y_chi_product": "0.067425917140482208360553363912676662585540529909909",
+        "chi_over_d_lambda": "0.18597201385985561070932600299119019209040455831042",
+        "Delta_lambda_frobenius_pairing": "-2.4282038556446117698990347738590711847151014156725",
+        "y_chi_Delta_contribution": "-0.1637238719708930146850008101989361430117401565273"
+      },
+      {
+        "partition": [
+          4,
+          1,
+          1
+        ],
+        "d_lambda": 10,
+        "y_lambda_at_q0": "0.010133463492072934671136866135432127585911899823022",
+        "chi_lambda_beta_D_at_q0": "-0.47019148000472144246476155275233920272035694259016",
+        "y_chi_product": "-0.0047646681969115859858117404189352329560631255475315",
+        "chi_over_d_lambda": "-0.047019148000472144246476155275233920272035694259016",
+        "Delta_lambda_frobenius_pairing": "0.61392074051479942537732256667176549992962423754854",
+        "y_chi_Delta_contribution": "-0.0029251286277552750328668612534125829669689969070403"
+      },
+      {
+        "partition": [
+          3,
+          3
+        ],
+        "d_lambda": 5,
+        "y_lambda_at_q0": "0.014120874004975287300431630623435029775788893853587",
+        "chi_lambda_beta_D_at_q0": "4.2490702926236505900647331330454182072731397862965",
+        "y_chi_product": "0.060000586240422044867861509735170570422375244722244",
+        "chi_over_d_lambda": "0.8498140585247301180129466266090836414546279572593",
+        "Delta_lambda_frobenius_pairing": "-11.095872602884053937936366903814663453589759923971",
+        "y_chi_Delta_contribution": "-0.66575886102208090711045493667286770896836539435742"
+      },
+      {
+        "partition": [
+          3,
+          2,
+          1
+        ],
+        "d_lambda": 16,
+        "y_lambda_at_q0": "0.0073184543522857307843666769029052172957683238888947",
+        "chi_lambda_beta_D_at_q0": "-1.9728210551001285049496437509574067414460258016939",
+        "y_chi_product": "-0.014438000836978462960296828680734165283580943741507",
+        "chi_over_d_lambda": "-0.12330131594375803155935273443483792134037661260587",
+        "Delta_lambda_frobenius_pairing": "1.6099235824069176998969826932628048005796583872143",
+        "y_chi_Delta_contribution": "-0.023244078030262443237589381349372167266743098214902"
+      },
+      {
+        "partition": [
+          3,
+          1,
+          1,
+          1
+        ],
+        "d_lambda": 10,
+        "y_lambda_at_q0": "-0.0006853088855144667846371853194123257721618416390897",
+        "chi_lambda_beta_D_at_q0": "-0.48998813829170552523126588270765227788218253200051",
+        "y_chi_product": "0.00033579322496799714026187243306333341606849317753425",
+        "chi_over_d_lambda": "-0.048998813829170552523126588270765227788218253200051",
+        "Delta_lambda_frobenius_pairing": "0.63976888883756713742867158640709137059379442493864",
+        "y_chi_Delta_contribution": "0.00021483005841695873621690545114389183473931513911398"
+      },
+      {
+        "partition": [
+          2,
+          2,
+          2
+        ],
+        "d_lambda": 5,
+        "y_lambda_at_q0": "0.00077318673690538012239285368505156904988009656817756",
+        "chi_lambda_beta_D_at_q0": "-3.4975646652884290952655280198503765208286836804627",
+        "y_chi_product": "-0.0027042706106699185154715449299092262561365192603624",
+        "chi_over_d_lambda": "-0.69951293305768581905310560397007530416573673609254",
+        "Delta_lambda_frobenius_pairing": "9.1334172592438618048347633610289124159707849947471",
+        "y_chi_Delta_contribution": "-0.024699231869158571633211040988037295886772371932108"
+      },
+      {
+        "partition": [
+          2,
+          2,
+          1,
+          1
+        ],
+        "d_lambda": 9,
+        "y_lambda_at_q0": "-0.00034205177088540122561375790932120435273011553866567",
+        "chi_lambda_beta_D_at_q0": "-0.81971595589104680333865394268852609738826066586904",
+        "y_chi_product": "0.00028038529433555199823591444804738865188314582854933",
+        "chi_over_d_lambda": "-0.091079550654560755926517104743169566376473407318782",
+        "Delta_lambda_frobenius_pairing": "1.1892096637531936030266748685208453673762201285866",
+        "y_chi_Delta_contribution": "0.00033343690159812201081739755666600349275571858352063"
+      },
+      {
+        "partition": [
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "d_lambda": 5,
+        "y_lambda_at_q0": "0.000098635576109803375181019479569565757727074496247923",
+        "chi_lambda_beta_D_at_q0": "2.1554159875264378405157641866290182935325203505091",
+        "y_chi_product": "0.00021260069768595096197700159456262478286170814490355",
+        "chi_over_d_lambda": "0.43108319750528756810315283732580365870650407010182",
+        "Delta_lambda_frobenius_pairing": "-5.6285774432424037039666586459919622701086960713754",
+        "y_chi_Delta_contribution": "-0.001196639491412741079172872206751906554191451772143"
+      },
+      {
+        "partition": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "d_lambda": 1,
+        "y_lambda_at_q0": "-0.000012437986974301155095032726762240527202951067098518",
+        "chi_lambda_beta_D_at_q0": "-0.67692506452720922588632538437367541966217634834114",
+        "y_chi_product": "0.0000084195851351673972522844651257134263098320848925795",
+        "chi_over_d_lambda": "-0.67692506452720922588632538437367541966217634834114",
+        "Delta_lambda_frobenius_pairing": "8.8384914350936267380784124869876122670482380839834",
+        "y_chi_Delta_contribution": "0.000074416431104218656197737992295708281429399360008811"
+      }
+    ],
+    "closure_check": {
+      "sum_y_chi_Delta": "-4.353367281870148656861232298031140768488858930132",
+      "target": "-4.353367281870148656861232298031140768488858930132",
+      "residual": "-1.069105884036878258456214586860592751526078752042e-50",
+      "match_at_machine_eps": true
+    },
+    "frobenius_norm_squared": {
+      "option_G_this_PR": "56.84115044772363804521648767984291680675436224213",
+      "option_A_occam_singleton": "155.4015587071506227988851867315703457603644817931",
+      "option_F_wenzl_bridge_constant": "125.70313215507643779897432782532119388209130083496",
+      "min_norm_holds": true,
+      "interpretation": "The Frobenius-pairing-derived δ^G has the smallest norm among all δ ∈ Z(H_n(q)) satisfying the binding constraint.  Options A and F are feasible but suboptimal in this norm."
+    },
+    "open_followup": {
+      "task": "Extend Option G to T (n=9, p(9)=30), ³He (n=9), ⁴He (n=12, p(12)=77).  Mechanically the same formula; needs full per-λ χ^λ data which is not yet in the canonical witness (chi-tritium-h9.witness.json and chi-helium-3-h9 are partial; ⁴He has no chi cache).",
+      "status": "deferred to follow-up PR"
+    }
+  }
+}
