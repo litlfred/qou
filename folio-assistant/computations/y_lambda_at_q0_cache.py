@@ -42,24 +42,37 @@ Q_MP_STR = str(Q_MP)
 def _eval_one(args: tuple) -> dict:
     """Worker: evaluate one symbolic y_λ(q) at q = q_0 to 50 dps.
 
-    Robust to imaginary residuals (takes real part if Im < 1e-30).
+    Uses sympy.lambdify(modules='mpmath') for fast, correct
+    numeric evaluation.  The plain `subs(q, ...).evalf()` path
+    was broken because sympify creates a fresh `q` symbol whose
+    assumptions differ from the explicit `positive=True` symbol;
+    substitution silently fails to match across the assumption
+    boundary, leaving the expression unevaluated.  lambdify
+    bypasses that pitfall by binding the symbol via signature
+    matching.
     """
     n, partition, y_sym_str = args
     mp.mp.dps = 60
-    q = sp.symbols("q", positive=True)
     y_sym = sp.sympify(y_sym_str)
-    val = y_sym.subs(q, sp.sympify(Q_MP_STR)).evalf(50)
-    if hasattr(val, "as_real_imag"):
-        re_val, _ = val.as_real_imag()
-        s = str(re_val)
+    free = list(y_sym.free_symbols)
+    if not free:
+        # Constant (e.g. y_λ ≡ 0 or scalar).
+        val = complex(y_sym)
+        return {"n": n, "partition": list(partition),
+                "y_at_q0_50dps": str(mp.mpf(val.real))}
+    # Use the free symbol from the sympified expression directly.
+    q_sym = free[0]
+    y_func = sp.lambdify(q_sym, y_sym, modules=["mpmath"])
+    q0 = mp.mpf(Q_MP_STR)
+    val = y_func(q0)
+    # mpmath returns mpf for real, mpc for complex
+    if hasattr(val, "imag") and abs(val.imag) > mp.mpf("1e-30"):
+        # genuine complex residual; take real part
+        s = str(val.real)
+    elif hasattr(val, "real"):
+        s = str(val.real)
     else:
         s = str(val)
-    # Sanity: parse to mp.mpf to validate the string format.
-    try:
-        _ = mp.mpf(s)
-    except (ValueError, TypeError):
-        # Fallback: convert via complex
-        s = str(complex(val).real)
     return {"n": n, "partition": list(partition), "y_at_q0_50dps": s}
 
 

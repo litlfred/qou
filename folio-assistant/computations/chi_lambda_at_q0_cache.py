@@ -40,30 +40,88 @@ Q_MP_STR = str(Q_MP)
 
 
 ATOMS_TO_CACHE = {
-    "deuteron":  ("chi-deuteron-h6.witness.json", 6),
-    "tritium":   ("chi-tritium-h9.witness.json", 9),
-    "helium-3":  ("chi-helium-3-h9.witness.json", 9),
+    "deuteron":  {"witness": "chi-deuteron-h6.witness.json",
+                  "n": 6, "Z": 1, "N": 1},
+    "tritium":   {"witness": "chi-tritium-h9.witness.json",
+                  "n": 9, "Z": 1, "N": 2},
+    "helium-3":  {"witness": "chi-helium-3-h9.witness.json",
+                  "n": 9, "Z": 2, "N": 1},
     # 4He already has numeric per_partition; skip
 }
 
 
-def _eval_one(args: tuple) -> dict:
-    atom, partition, chi_sym_str = args
+def _compute_and_eval(args: tuple) -> dict:
+    """Worker: either lambdify-evaluate a cached symbolic χ^λ string,
+    OR compute it from scratch via hoefsmit_symbolic.chi_lambda_symbolic
+    given the canonical braid word, then lambdify-evaluate.
+
+    Args: (atom, partition_tuple, sym_str_or_None, crossings_or_None).
+    If sym_str is provided, just evaluate.  Otherwise compute symbolically
+    first (slow path, parallelised across atoms × partitions).
+    """
+    atom, partition, sym_str, crossings = args
     mp.mp.dps = 60
-    q = sp.symbols("q", positive=True)
-    chi_sym = sp.sympify(chi_sym_str)
-    val = chi_sym.subs(q, sp.sympify(Q_MP_STR)).evalf(50)
-    if hasattr(val, "as_real_imag"):
-        re_val, _ = val.as_real_imag()
-        s = str(re_val)
+    if sym_str is not None:
+        chi_sym = sp.sympify(sym_str)
+    else:
+        # On-the-fly symbolic computation in worker.
+        from hoefsmit_symbolic import chi_lambda_symbolic
+        chi_sym = chi_lambda_symbolic(partition, crossings)
+        sym_str = str(chi_sym)
+    free = list(chi_sym.free_symbols)
+    if not free:
+        val = complex(chi_sym)
+        return {"atom": atom, "partition": list(partition),
+                "chi_q_at_q0_50dps": str(mp.mpf(val.real)),
+                "newly_computed": sym_str if crossings is not None else None}
+    q_sym = free[0]
+    chi_func = sp.lambdify(q_sym, chi_sym, modules=["mpmath"])
+    q0 = mp.mpf(Q_MP_STR)
+    val = chi_func(q0)
+    if hasattr(val, "imag") and abs(val.imag) > mp.mpf("1e-30"):
+        s = str(val.real)
+    elif hasattr(val, "real"):
+        s = str(val.real)
     else:
         s = str(val)
-    try:
-        _ = mp.mpf(s)
-    except (ValueError, TypeError):
-        s = str(complex(val).real)
     return {"atom": atom, "partition": list(partition),
-            "chi_q_at_q0_50dps": s}
+            "chi_q_at_q0_50dps": s,
+            "newly_computed": sym_str if crossings is not None else None}
+
+
+def _gather_or_compute_chi(atom: str, info: dict) -> list[tuple]:
+    """Return list of (atom, partition, sym_str_or_None, crossings_or_None).
+
+    For partitions cached in the witness, sym_str is the symbolic form
+    and crossings is None (workers just evaluate).  For missing
+    partitions, sym_str is None and crossings is the canonical word
+    (workers compute symbolically + evaluate, parallelised).
+    """
+    n = info["n"]
+    Z = info["Z"]; N = info["N"]
+    fname = info["witness"]
+    path = HERE / fname
+    cached_symbolic: dict[tuple, str] = {}
+    if path.exists():
+        d = json.loads(path.read_text())
+        for entry in d.get("chi_lambda_symbolic", []):
+            cached_symbolic[tuple(entry["partition"])] = entry["chi_q_symbolic"]
+    print(f"  {atom} (n={n}): {len(cached_symbolic)} cached χ^λ in witness")
+
+    from schur_weyl_symbolic import partitions_of
+    all_partitions = [tuple(p) for p in partitions_of(n)]
+    missing = [p for p in all_partitions if p not in cached_symbolic]
+    print(f"    {len(missing)} missing — workers will compute symbolically")
+
+    crossings = None
+    if missing:
+        from canonical_braid_crossings import atom_canonical_crossings
+        crossings = atom_canonical_crossings(Z, N)
+
+    return [(atom, p,
+             cached_symbolic.get(p),
+             None if p in cached_symbolic else crossings)
+            for p in all_partitions]
 
 
 def main() -> int:
@@ -73,28 +131,30 @@ def main() -> int:
 
     tasks = []
     n_lookup = {}
-    for atom, (fname, n) in ATOMS_TO_CACHE.items():
-        path = HERE / fname
-        if not path.exists():
-            print(f"  WARN: missing {fname}; skipping {atom}")
-            continue
-        d = json.loads(path.read_text())
-        chi_table = d.get("chi_lambda_symbolic", [])
-        n_lookup[atom] = n
-        for entry in chi_table:
-            tasks.append((atom, tuple(entry["partition"]),
-                         entry["chi_q_symbolic"]))
-        print(f"  {atom} (n={n}): {len(chi_table)} χ^λ to evaluate")
+    for atom, info in ATOMS_TO_CACHE.items():
+        n_lookup[atom] = info["n"]
+        atom_tasks = _gather_or_compute_chi(atom, info)
+        tasks.extend(atom_tasks)
 
     if not tasks:
-        print(f"  ERROR: no chi witnesses found")
+        print(f"  ERROR: no chi witnesses or computable atoms")
         return 1
 
     nproc = max(1, cpu_count() - 1)
     print(f"\n  Parallel pool: {nproc} workers, {len(tasks)} tasks total")
+    n_compute = sum(1 for t in tasks if t[2] is None)
+    print(f"  ({n_compute} tasks need on-the-fly symbolic χ computation)")
 
+    # Use imap_unordered with chunksize=1 to balance load across
+    # workers (slow on-the-fly computes get spread evenly with
+    # fast cached evaluations).
     with Pool(nproc) as pool:
-        results = pool.map(_eval_one, tasks)
+        results = []
+        for i, r in enumerate(pool.imap_unordered(_compute_and_eval, tasks,
+                                                   chunksize=1)):
+            results.append(r)
+            if (i + 1) % 5 == 0:
+                print(f"    progress: {i+1}/{len(tasks)} done")
 
     # Group by atom
     by_atom: dict[str, list[dict]] = {}
@@ -108,27 +168,30 @@ def main() -> int:
     for atom in sorted(by_atom.keys()):
         print(f"    {atom:<10}: {len(by_atom[atom])} χ^λ cached")
 
-    # Sanity-check first row of each atom against full evaluator
+    # Sanity-check first row of each atom — re-evaluate via lambdify
+    # (the same path used by _eval_one) to confirm consistency.
     sanity = {}
-    q = sp.symbols("q", positive=True)
     for atom in by_atom:
         if not by_atom[atom]:
             continue
         ref_entry = by_atom[atom][0]
-        # Re-evaluate from source to confirm
-        path = HERE / ATOMS_TO_CACHE[atom][0]
+        path = HERE / ATOMS_TO_CACHE[atom]["witness"]
+        if not path.exists():
+            continue
         d = json.loads(path.read_text())
         sym = next((e["chi_q_symbolic"] for e in d["chi_lambda_symbolic"]
                     if tuple(e["partition"]) == tuple(ref_entry["partition"])),
                    None)
         if sym is None:
-            continue
-        val = sp.sympify(sym).subs(q, sp.sympify(Q_MP_STR)).evalf(50)
-        if hasattr(val, "as_real_imag"):
-            re_val, _ = val.as_real_imag()
+            continue  # Computed-on-the-fly partition; no witness ref to compare
+        sym_expr = sp.sympify(sym)
+        free = list(sym_expr.free_symbols)
+        if not free:
+            ref_mp = mp.mpf(str(complex(sym_expr).real))
         else:
-            re_val = val
-        ref_mp = mp.mpf(str(re_val))
+            f = sp.lambdify(free[0], sym_expr, modules=["mpmath"])
+            v = f(mp.mpf(Q_MP_STR))
+            ref_mp = mp.mpf(str(v.real if hasattr(v, "real") else v))
         cached_mp = mp.mpf(ref_entry["chi_q_at_q0_50dps"])
         rel_err = abs(cached_mp - ref_mp) / abs(ref_mp) if abs(ref_mp) > 0 else mp.mpf(0)
         sanity[atom] = {

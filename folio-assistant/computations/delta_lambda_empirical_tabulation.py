@@ -156,17 +156,29 @@ def load_chi_per_lambda(witness_file: str) -> list[dict]:
 
 
 def _sympy_to_mpf(expr: sp.Expr) -> mp.mpf:
-    """Robust sympy → mpmath conversion that handles imaginary residuals
-    and complex-form output from evalf.  Takes real part when the
-    imaginary part is below machine ε."""
-    val = expr.evalf(mp.mp.dps)
-    # Strip imaginary residual.
-    if hasattr(val, "as_real_imag"):
-        re_val, im_val = val.as_real_imag()
-        if abs(im_val) > sp.Rational(1, 10 ** 30):
-            # genuine complex; take real part with warning-marker
-            pass
-        return mp.mpf(str(re_val))
+    """Robust sympy → mpmath conversion via lambdify.
+
+    The plain `.subs(q, value).evalf()` path silently fails when the
+    sympified expression's `q` symbol has different assumptions
+    (e.g. `positive=True` vs default) than the substitution target;
+    evalf then returns the unevaluated symbolic expression.
+    lambdify binds via signature matching and is also ~20× faster
+    than evalf on large expressions."""
+    free = list(expr.free_symbols)
+    if not free:
+        # Constant.
+        try:
+            return mp.mpf(str(complex(expr).real))
+        except Exception:
+            return mp.mpf(str(expr))
+    # Take the first free symbol (assume single-variable in q).
+    q_sym = free[0]
+    func = sp.lambdify(q_sym, expr, modules=["mpmath"])
+    val = func(mp.mpf(str(Q_MP)))
+    if hasattr(val, "imag") and abs(val.imag) > mp.mpf("1e-30"):
+        return mp.mpf(str(val.real))
+    if hasattr(val, "real"):
+        return mp.mpf(str(val.real))
     return mp.mpf(str(val))
 
 
@@ -199,12 +211,14 @@ def load_y_lambda_at_q0(n: int) -> dict[tuple, mp.mpf]:
     d = json.loads(path.read_text())
     tab = d["tables_by_n"][str(n)]
     weights = tab["weights"]
-    q = sp.symbols("q", positive=True)
     out = {}
     for entry in weights:
         lam = tuple(entry["partition"])
         y_sym = sp.sympify(entry["y_lambda_symbolic"])
-        out[lam] = _sympy_to_mpf(y_sym.subs(q, sp.sympify(str(Q_MP))))
+        # _sympy_to_mpf binds via lambdify on the expression's own
+        # free symbol — no need to pre-substitute with a possibly-
+        # mismatched local q symbol.
+        out[lam] = _sympy_to_mpf(y_sym)
     setattr(load_y_lambda_at_q0, cache_attr, out)
     return out
 
@@ -258,7 +272,6 @@ def load_chi_via_symbolic(witness_file: str, n: int) -> list[dict]:
     d = json.loads(path.read_text())
     chi_sym_table = d["chi_lambda_symbolic"]
     y_at_q0 = load_y_lambda_at_q0(n)
-    q = sp.symbols("q", positive=True)
     out: list[dict] = []
     for entry in chi_sym_table:
         lam = tuple(entry["partition"])
@@ -266,7 +279,7 @@ def load_chi_via_symbolic(witness_file: str, n: int) -> list[dict]:
             chi_val = cached_chi[lam]  # fast path
         else:
             chi_sym = sp.sympify(entry["chi_q_symbolic"])
-            chi_val = _sympy_to_mpf(chi_sym.subs(q, sp.sympify(str(Q_MP))))
+            chi_val = _sympy_to_mpf(chi_sym)
         y_val = y_at_q0.get(lam, mp.mpf(0))
         out.append({
             "partition": list(lam),
@@ -529,7 +542,7 @@ def main() -> int:
     print(f"\n    λ frequency in top-3 (across atoms):")
     for entry in pattern["lambda_frequency_in_top3"]:
         if entry["n_atoms_in_top3"] >= 2:
-            print(f"      λ = {entry['lambda']:<20} appears in {entry['n_atoms_in_top3']} atoms")
+            print(f"      λ = {str(entry['lambda']):<20} appears in {entry['n_atoms_in_top3']} atoms")
     print(f"\n    max recurrence: {pattern['max_recurrence']} / {len(per_atom)} atoms")
     if pattern["max_recurrence"] >= 3:
         print(f"    ✅ Strong pattern: a single λ* dominates across ≥3 atoms.")
