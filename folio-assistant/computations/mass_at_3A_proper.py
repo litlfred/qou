@@ -49,6 +49,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as Q0, Q_INV as QI, HA as HA_VAL
 from hecke_core import (_PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1,
                          E_0_CALIBRATION_MEV)
+from syt_prefix_cache import BlockCache, build_seminormal_matrices_cached  # F6
 from hecke_characters import (partitions_of, build_seminormal_matrices,
                                 dim_q, qfac)
 
@@ -136,6 +137,18 @@ def normalized_plancherel_weights_3A(A: int):
 # so at minimum this saves one re-build per run.
 _SEMINORMAL_CACHE: dict[tuple[int, tuple[int, ...]], tuple] = {}
 
+# F6 (audit follow-up): module-level BlockCache for content-distance
+# arithmetic across all shape calls. Lazy-init to avoid module-import
+# circular issues with q_parameter.
+_BLOCK_CACHE: BlockCache | None = None
+
+
+def _ensure_block_cache() -> BlockCache:
+    global _BLOCK_CACHE
+    if _BLOCK_CACHE is None:
+        _BLOCK_CACHE = BlockCache(float(Q0), float(HA_VAL))
+    return _BLOCK_CACHE
+
 # Disk cache for seminormal matrices: standard_young_tableaux is slow
 # (multi-second for dim > 5000 partitions at n=12), so we persist the
 # built matrices.  Keyed by (n, shape, q0).
@@ -182,7 +195,12 @@ def _cached_seminormal(shape: tuple[int, ...]):
             return data
         except Exception:
             pass
-    data = build_seminormal_matrices(shape)
+    # F6 (audit follow-up, finishing wire): use BlockCache-backed
+    # rebuild path. Composes with the .npz disk cache below; the
+    # in-memory BlockCache amortises content-distance arithmetic
+    # across shape calls within a single run.
+    cache = _ensure_block_cache()
+    data = build_seminormal_matrices_cached(shape, cache=cache)
     _SEMINORMAL_CACHE[key] = data
     try:
         sigmas, dim, syts = data
