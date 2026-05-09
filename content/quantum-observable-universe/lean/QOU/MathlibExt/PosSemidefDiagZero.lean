@@ -73,14 +73,31 @@ theorem Matrix.PosSemidef.entry_zero_of_diag_zero
   -- The i = j case is the hypothesis.
   by_cases hij : i = j
   · subst hij; exact h_diag
-  · -- i ≠ j case: use the quadratic test vector.
-    -- Standard Horn-Johnson 7.1.1 argument.
-    -- The full Lean proof requires constructing the test vector
-    -- and applying PSD's quadratic-form non-negativity, then
-    -- analysing the resulting quadratic in t.
-    -- Mathlib's `Matrix.PosSemidef.re_dotProduct_nonneg` gives
-    -- the quadratic-form input; the discriminant analysis is
-    -- finite-dimensional polynomial reasoning.
+  · -- i ≠ j case.  Strategy: exhibit a 1-parameter family of
+    -- non-negative quadratics and conclude `C i j = 0`.
+    --
+    -- For test vector v_t := e_i + t · e_j, PSD gives
+    --     0 ≤ v_t^T · C · v_t
+    --       = C_ii + t · (C_ij + C_ji) + t² · C_jj
+    --       = 0 + 2t · C_ij + t² · C_jj   (using h_diag and PSD-symmetry)
+    -- A quadratic `2 a t + b t²` with `b ≥ 0` non-negative for ALL t ∈ ℝ
+    -- forces `a = 0`:
+    --   * If `b > 0`: minimum is at `t = -a/b`, value `-a²/b`, ≤ 0
+    --     ⟹ `a² = 0` ⟹ `a = 0`.
+    --   * If `b = 0`: expression is `2at`; non-neg for all t (incl t = -1)
+    --     ⟹ `a = 0`.
+    --
+    -- The full Lean composition needs:
+    --   1. Construct v_t : Fin n → ℝ via Pi.single + scalar mul
+    --   2. Compute v_t^T · C · v_t via Matrix.dotProduct/mulVec unfold
+    --   3. Apply hC.2 (PSD non-negativity) at each t
+    --   4. Case-analyse on (C j j > 0 vs C j j = 0); each closes via
+    --      the discriminant argument above.
+    --
+    -- Steps 1-3 are mechanical; step 4 uses arithmetic in ℝ
+    -- (sq_nonneg, mul_self_nonneg, neg_le_iff_add_nonneg, etc.).
+    -- The full proof is ~20-30 lines once the Mathlib unfolding
+    -- patterns are verified.
     sorry
 
 /-- **PSD row-zero from diagonal-zero**: if `C_ii = 0` and `C` is
