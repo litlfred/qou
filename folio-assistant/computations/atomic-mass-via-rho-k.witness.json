@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-09T12:10:31.412159+00:00",
-  "commitSha": "2f3e5fe120f97c8291d69ce49085b3023c43614e",
+  "computedAt": "2026-05-09T12:25:18.962011+00:00",
+  "commitSha": "2f915783850411586032e4731a658449ef1e18c1",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "atomic-mass-via-rho-k",
   "scriptFile": "atomic_mass_via_rho_k.py",
   "scriptHash": "6dffdc49d919",
-  "scriptCommitSha": "ceb6104f7e57111dd38a2226030e5fba0cf82112",
+  "scriptCommitSha": "2f915783850411586032e4731a658449ef1e18c1",
   "description": "Atomic mass-table predictions using the resolved ρ_K assembly M(K) = ρ_K · m_e · |tr_M(K)| from PR #564 §3.3a (Options A + C: no additive T6, Mittag-Leffler complementarity). Calibration anchors: m_e (CODATA), m_p (CODATA), m_n (CODATA via Q_β = m_n - m_p - m_e). Reads |tr_M(K)| from atomic-tr-m-mpfr-50dps.witness.json. Atoms not in that witness are flagged tr_M_unavailable rather than fabricating values. Direct successor to atomic_braid_mass_table.py — see the side-by-side improvement_factor field.",
   "auditOnly": "AUDIT-DEEP-2026-05.md",
   "parameters": {

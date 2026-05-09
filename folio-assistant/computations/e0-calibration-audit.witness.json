@@ -2,7 +2,7 @@
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "computation": "e0-calibration-audit",
   "description": "Audit of E_0 / Q_β(n) calibration constants across folio-assistant/computations. Reports value-precision drift, anchor-of-pinning violations vs CAL-3, and the PDG-derived uncertainty floor on every E_0-dependent quantity.",
-  "computedAt": "2026-05-09T17:14:29.592106+00:00",
+  "computedAt": "2026-05-09T19:17:03.925335+00:00",
   "reference_blocks": [
     "prop:three-calibration-inputs",
     "rem:calibration-inputs"
@@ -35,7 +35,7 @@
       },
       {
         "file": "folio-assistant/computations/binding_canonical.py",
-        "line": 188,
+        "line": 187,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
         "context": "print(f\"q₀ = {Q0_NUM}, E_0 = 0.78233341 MeV (β-decay Q)\")",
@@ -43,7 +43,7 @@
       },
       {
         "file": "folio-assistant/computations/binding_canonical.py",
-        "line": 224,
+        "line": 223,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
         "context": "\"|tr_M_atom|) with E_0 = 0.78233341 MeV (β-decay Q).\"",
@@ -51,7 +51,7 @@
       },
       {
         "file": "folio-assistant/computations/binding_canonical.py",
-        "line": 227,
+        "line": 226,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
         "context": "\"parameters\": {\"q0\": Q0_NUM, \"E_0_MeV\": 0.78233341},",

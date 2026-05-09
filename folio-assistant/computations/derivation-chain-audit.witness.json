@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T17:15:14.403330+00:00",
-  "commitSha": "5242c8158087db0dab06b981ebacd7f56442af07",
+  "computedAt": "2026-05-09T19:17:03.255184+00:00",
+  "commitSha": "243369b5c70b8b0f76ea6be4928c7fbde2d4d929",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -520,7 +520,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
@@ -2019,7 +2019,6 @@
         "delta-q-decoration.witness.json",
         "demazure-markov-trace.witness.json",
         "deuteron_tr_M_symbolic.witness.json",
-        "e0-calibration-audit.witness.json",
         "entanglement-orders.witness.json",
         "ew-higgs-sdp-probe.witness.json",
         "ew-interface-knot-probe.witness.json",
