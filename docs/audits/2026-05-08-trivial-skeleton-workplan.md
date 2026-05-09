@@ -377,3 +377,102 @@ Future tightening targets (incremental):
   confirmed across a few PRs.
 - `const_zero` and `skel_inst` carry the largest residuals; keep
   per-PR delta budgets to surface regressions early.
+
+---
+
+## Bigger-ticket follow-up items (queued for separate PRs)
+
+The following items are out of scope for this PR but are tracked
+here so they don't get lost.  Each is "open Lean work" — none is
+mathematical conjecture.
+
+### Tier 1 — placeholder sharpenings blocked by `rfl` proofs
+
+The following `noqa: const_zero` / `noqa: one_def` exemptions
+remain because their concrete-zero/one values back nearby `rfl`
+or `show 0 = …` proofs.  Sharpening any of them requires
+simultaneously rewriting the dependent proof:
+
+| File | Symbol | Proof gating sharpening |
+|---|---|---|
+| `confinement-nf-partial-proof.lean` | `primal_obj`, `dual_obj` | `strong_duality` via `show \|(0:ℝ) - 0\| = 0` |
+| `qmn-recursive-memoized.lean` | `chi_qMN_partition` | 3 × `show (0 : ℝ) = …` proofs |
+| `y-lambda-closed-form-wenzl-bridge.lean` | `wenzlSchurElement`, `jonesMarkovTrace`, `jonesMarkovCoefficient` | `y_lambda_closed_form_wenzl_bridge` via `show (0 : ℝ) = …` |
+| `pl-jsj-mass-integration-equivalence.lean` | `lambdaSW`, `thimbleIntegral`, `descendedJSJVolume`, `algebraicMarkovTrace` | canonical-instance `mass_equality` via `simp` on 0+Σ·0 |
+| `denominator-zeros-as-sw-critical-points.lean` | `colorTubeDiscriminant` | skeleton instance `zero_lifts_to_critical := fun _ => rfl` |
+| `Conjectures.lean` | `HyperbolicVolume` | `have hHV : HyperbolicVolume K_knot = 0 := rfl` |
+
+**Recommended approach (separate PR):** sharpen each placeholder
+to a content-bearing value AND simultaneously upgrade the
+dependent proof from a `show 0 = …` shell to a real algebraic
+manipulation (`ring`, `field_simp`, `simp [...]` over the new
+non-zero value).  Without lake-build available locally, this is
+high-risk for blind agents — keep batches small (one symbol +
+one proof at a time).
+
+### Tier 2 — Mathlib-deferred upstream files
+
+These already have skeleton implementations in
+`content/quantum-observable-universe/lean/QOU/Mathlib/`; the
+remaining work is to grow them into genuine upstream theorems:
+
+- **`HeckeAlgebra.lean`** — H_n(q) Wedderburn isomorphism is
+  established at n=2..8 via `decide`; n≥9 currently uses witness
+  data.  Upstream gap: a `Fintype (Partition n)` instance (or
+  Mathlib's `YoungDiagram.numStandardYoungTableaux`) so the
+  Wedderburn factory generalises.
+- **`NonAbelianStokes.lean`** — piecewise-affine line integral and
+  multiplicative Stokes-style identity proven on a finite
+  partition; full Yekutieli (continuous-path 2-form pairing)
+  awaits Mathlib's path-integral API.
+- **`SpectralSequence.lean`** — E_r-page convergence stated as a
+  class with concrete instance; the genuine convergence theorem
+  (E_r → E_∞ stabilisation) needs `Mathlib.Algebra.Homology` and
+  the GB filtration grading API.
+- **`ArchimedeanRealization.lean`** — τ_arch as a ring
+  homomorphism with concrete witnesses; full functoriality over
+  the categorical substrate awaits Mathlib's enriched-category
+  framework at the right granularity.
+- **`WenzlBridgeConcrete.lean`** — dim_q hook formulas covering
+  partitions of n ∈ {2,…,8} via decide-driven cohort tables;
+  partitions of n ≥ 9 are placeholders pending a complete
+  partition enumerator.
+
+### Tier 3 — narrative-Lean equivalence audit
+
+CLAUDE.md §3b conditional-class pattern (Option B) is established
+for the §3b-cond residual cone (3 instances, 53 axiomatised
+conjectures).  Open work:
+
+1. **Conditional-banner sweep**: the `proof-narrative-lean-equivalence`
+   audit should verify every block that `uses[]` a `conj:` includes
+   the explicit "Theorem (conditional on …)." banner mandated by
+   §3b-cond #3.  Currently spot-checked, not gated.
+2. **`uses[]` propagation completeness**: the conditional-class
+   exception requires `uses[]` to include the conjecture *explicitly*
+   (not transitively); enforce via the audit pipeline.
+3. **Class hypothesis-on-Lean cross-check**: the audit should grep
+   each block's `.lean` declaration for the class instance hypothesis
+   matching one of the conjectures in its transitive `uses[]` cone,
+   and surface any mismatches.
+
+### Tier 4 — other deferred items from this audit
+
+- **Coxeter `lengthFn4` table extension**: enumerated for n=4 (24
+  permutations); n=5 (120) and beyond would benefit from the
+  Mathlib `Equiv.Perm.length` API once it lands, rather than the
+  current `decide`-driven manual table.
+- **`H_4` multiplication tailoring**: the `mul_HnC4_tailored`
+  layer encodes σ_i action and embedding `H_3 ↪ H_4`; the full
+  basis-element multiplication table (24×24) is not enumerated.
+  The recursive `MarkovTraceRecursionWithMul.canonical_lift`
+  factory provides higher-n lift in principle; an explicit
+  H_n-table generator script is the natural follow-up.
+- **`InSymmetricIdempotent` non-trivial witnesses**: this PR
+  upgraded the predicate from `True` to `∃ b, tracedVolCleared x =
+  tracedVolCleared b` (Murphy 1992 shape).  The trivial witness
+  `b = x` always works; downstream call sites that demand a
+  *non-trivial* factorisation (e.g. for the symmetric-character
+  multiset-invariance argument) await an explicit Young
+  symmetric idempotent in Mathlib (not yet upstreamed).
+

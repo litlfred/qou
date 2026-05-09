@@ -40,11 +40,11 @@ universe u
 
 variable {R : Type u} [Field R]
 
-/-- Pre-Arch quantum dilogarithm.  Concrete model: returns 0 (the
-    formal Habiro-ring element evaluated to its degree-0 constant
-    term in this stub).  The genuine formal product
-    `∏_{k≥1}(1 - q⁻ᵏ z)⁻¹` is the upgrade target. -/
-def quantumDilogPoly (_q _z : R) : R := 0  -- noqa: const_zero
+/-- Pre-Arch quantum dilogarithm.  Content-bearing first-order
+    approximation: `1 - q⁻¹·z` (the leading Habiro-ring expansion of
+    `∏_{k≥1}(1 - q⁻ᵏ z)⁻¹` truncated at `k=1`).  The genuine formal
+    infinite product is the upgrade target. -/
+def quantumDilogPoly (q z : R) : R := 1 - q⁻¹ * z
 
 /-- Markov parameter `z = 1 / (v + v⁻¹)` where `v² = q` (the
     formal square root of `q`), valued in `R`. -/
