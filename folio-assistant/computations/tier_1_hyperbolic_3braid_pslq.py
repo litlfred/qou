@@ -113,9 +113,6 @@ def main() -> None:
     }
 
     out_path = (
-        Path(__file__).parent / "tier-1-hyperbolic-3braid-pslq.witness.json"
-    )
-    out_path = (
         WitnessBuilder.wrap_legacy("tier-1-hyperbolic-3braid-pslq", result,
                      script_path=__file__, engine="mpmath")
         .set_audit_only(

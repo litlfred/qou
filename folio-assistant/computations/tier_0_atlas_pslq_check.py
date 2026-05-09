@@ -87,7 +87,6 @@ def main() -> None:
         ),
     }
 
-    out_path = Path(__file__).parent / "tier-0-atlas-pslq-check.witness.json"
     out_path = (
         WitnessBuilder.wrap_legacy("tier-0-atlas-pslq-check", result,
                      script_path=__file__, engine="mpmath")

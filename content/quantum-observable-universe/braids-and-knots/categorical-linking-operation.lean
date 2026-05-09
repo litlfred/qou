@@ -150,12 +150,11 @@ theorem categorical_linking_multiplicativity_pretrace_holds
 
 /-- **Two-factor Markov-trace swap (sorry-free, conditional on
     `MarkovTraceCyclic`).** Direct restatement of the class field
-    `tr_cyclic`. Renamed from `..._multiplicativity_posttrace` to
-    reflect that the conclusion is exactly the two-factor swap,
-    not the full post-trace multiplicativity-in-`k` identity.
-    The full post-trace identity follows from this swap *plus* the
-    pre-trace integer-power group law of `c_{A,A}` and is captured
-    by `markov_trace_cyclic_three_factor` below. -/
+    `tr_cyclic`. The conclusion is exactly the two-factor swap,
+    not the full post-trace multiplicativity-in-`k` identity; the
+    latter follows from this swap *plus* the pre-trace integer-power
+    group law of `c_{A,A}` and is captured by
+    `markov_trace_cyclic_three_factor` below. -/
 -- Ref: [manuscript] prop:frobenius-gram-matrix § "Markov trace
 --      of NF basis elements"
 theorem markov_trace_swap

@@ -31,9 +31,7 @@ gb_filtration_jet_tracker output (extended in this PR for 4_1, 6_2,
 # Ref: [manuscript] conj:shell-correction-term-seven
 # Ref: [mayer1949] DOI 10.1103/PhysRev.75.1969
 
-import json
 import sys
-from math import factorial
 from pathlib import Path
 
 import mpmath
