@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T20:54:46.004269+00:00",
-  "commitSha": "552d4e8b3cd430495a3cd9e2736095e216bcbeb2",
+  "computedAt": "2026-05-09T20:54:47.607232+00:00",
+  "commitSha": "a00ae6f7f3a7fbcaef900b2f8b9b8b98374b89e6",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 10,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "b540c436e909",
@@ -26,7 +26,7 @@
       "P15": 84,
       "P16": 70,
       "P21": 17,
-      "P30": 94
+      "P30": 93
     },
     "top_files": [
       {
@@ -1896,13 +1896,6 @@
         "line": 1,
         "snippet": "Hoefsmit construction without BlockCache",
         "note": "syt_prefix_cache.BlockCache caches block values by content distance ρ; precomputed SYT→index dict eliminates O(d_λ²) swap-partner search. Numerical-q callers can wire it directly. Ref: ocneanu_weights.py wiring."
-      },
-      {
-        "pattern": "P30",
-        "file": "wedderburn_lp_ew_wiring.py",
-        "line": 1,
-        "snippet": "json.dump → .witness.json without WitnessBuilder",
-        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
       },
       {
         "pattern": "P16",

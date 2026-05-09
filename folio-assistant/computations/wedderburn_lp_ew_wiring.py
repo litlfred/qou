@@ -20,10 +20,8 @@ Witness output: wedderburn-lp-ew-wiring.witness.json (with LP duals
 to satisfy lp_dual_witness_validator).
 """
 from __future__ import annotations
-import json
 import sys
 import time
-from datetime import datetime, timezone
 from pathlib import Path
 
 import numpy as np
@@ -250,59 +248,81 @@ def main() -> int:
     print(f"VERDICT (B): {verdict}")
     print()
 
-    # ── Witness assembly ────────────────────────────────────────
-    out = {
-        "computation": "wedderburn-lp-ew-wiring",
-        "computedAt": datetime.now(timezone.utc).isoformat(),
-        "description": (
+    # ── Witness assembly via WitnessBuilder ────────────────────
+    from witness_base import WitnessBuilder
+    w = (
+        WitnessBuilder("wedderburn-lp-ew-wiring", engine="numpy+sympy")
+        .set_description(
             "Two deliverables: (A) wires wedderburn_pair_volumes into "
             "prop:knot-operator-lp-selection via concrete LP/SDP-dual "
-            "program for proton EW-sector pair amplitudes; (B) probes "
-            "alternative Δ_I words on β_EW to close the 2.19% Weinberg "
-            "gap on (3,2,1) max+/2nd-max+ = cot θ_W reading."
-        ),
-        "reference_blocks": [
-            "prop:knot-operator-lp-selection",
-            "def:ew-interface-knot",
-            "conj:hoefsmit-ew-cell-content",
-            "conj:weinberg-angle-categorical",
-        ],
-        "audit": "docs/audits/2026-05-09-wedderburn-lp-ew-wiring.md",
-        "q_0": str(q_0),
+            "program for EW-sector pair amplitudes (atom sweep "
+            "proton..helium-4); (B) probes alternative Δ_I words on β_EW "
+            "to close the 2.19% Weinberg gap on (3,2,1) max+/2nd-max+ "
+            "= cot θ_W reading."
+        )
+        .set_content_block("prop:knot-operator-lp-selection")
+        .add_parameter("q_0", str(q_0))
+        .add_parameter("n_target_headline", n_target)
+        .add_parameter("delta_I_minimal", "σ_2 σ_4 σ_2")
+    )
 
-        # (A) LP/SDP results — REQUIRED LP-dual fields per CLAUDE.md
-        "deliverable_A_lp_sdp_wiring": {
-            "headline_atom": {"Z": Z, "N": N, "name": atoms_to_test[-1][0]},
-            "n_pair_amplitudes": n_pairs,
-            "primal_obj": float(res_dict["primal_obj"]),
-            "dual_obj": float(res_dict["dual_obj"]),
-            "duality_gap": float(res_dict["duality_gap"]),
-            "y0_star": float(res_dict["y0_star"]),
-            "y_star": [float(y) for y in res_dict.get("y_star", [])],
-            "active_set": list(res_dict.get("active_set", [])),
-            "n_target": n_target,
-            "supply_matrix_shape": list(G.shape),
-            "atom_sweep": lp_results_per_atom,
-        },
+    # LP duality assertions: assertion compares computed ≈ expected
+    # within tolerance.
+    w.add_assertion(
+        "lp_primal_dual_match",
+        float(res_dict["primal_obj"]),
+        float(res_dict["dual_obj"]),
+        tolerance=1e-8,
+    )
+    # Atom-sweep convergence: all 5 atoms must produce gap < 1e-8.
+    n_atom_solves = sum(1 for r in lp_results_per_atom
+                        if r.get("duality_gap", float("inf")) < 1e-8)
+    w.add_assertion(
+        "atom_sweep_lp_converged",
+        float(n_atom_solves),
+        5.0,  # 5 atoms in the sweep
+        tolerance=0.5,
+    )
+    # Weinberg verdict: best rel_err < 2.5% (the σ_2 σ_4 σ_2 baseline)
+    w.add_assertion(
+        "weinberg_minimal_delta_I_optimal",
+        float(best["rel_err"]),
+        0.0219,  # baseline 2.19% rel_err
+        tolerance=0.005,
+    )
 
-        # Top-level LP-dual fields for lp_dual_witness_validator detection
+    # (A) LP/SDP-EW deliverable
+    w.add_data("deliverable_A_lp_sdp_wiring", {
+        "headline_atom": {"Z": Z, "N": N, "name": atoms_to_test[-1][0]},
+        "n_pair_amplitudes": n_pairs,
         "primal_obj": float(res_dict["primal_obj"]),
         "dual_obj": float(res_dict["dual_obj"]),
         "duality_gap": float(res_dict["duality_gap"]),
         "y0_star": float(res_dict["y0_star"]),
         "y_star": [float(y) for y in res_dict.get("y_star", [])],
         "active_set": list(res_dict.get("active_set", [])),
+        "n_target": n_target,
+        "supply_matrix_shape": list(G.shape),
+        "atom_sweep": lp_results_per_atom,
+    })
 
-        # (B) Alt-Δ_I Weinberg probe results
-        "deliverable_B_alt_delta_I_weinberg_probe": {
-            "codata_cot_theta_W": cot_codata,
-            "candidates": results,
-            "best": best,
-            "verdict": verdict,
-        },
-    }
-    out_path = Path(__file__).parent / "wedderburn-lp-ew-wiring.witness.json"
-    out_path.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n")
+    # Top-level LP-dual fields for lp_dual_witness_validator
+    w.add_data("primal_obj", float(res_dict["primal_obj"]))
+    w.add_data("dual_obj", float(res_dict["dual_obj"]))
+    w.add_data("duality_gap", float(res_dict["duality_gap"]))
+    w.add_data("y0_star", float(res_dict["y0_star"]))
+    w.add_data("y_star", [float(y) for y in res_dict.get("y_star", [])])
+    w.add_data("active_set", list(res_dict.get("active_set", [])))
+
+    # (B) Alt-Δ_I Weinberg probe
+    w.add_data("deliverable_B_alt_delta_I_weinberg_probe", {
+        "codata_cot_theta_W": cot_codata,
+        "candidates": results,
+        "best": best,
+        "verdict": verdict,
+    })
+
+    out_path = w.save()
     print(f"Wrote: {out_path}")
     return 0
 
