@@ -43,9 +43,10 @@ PIPELINE
 
 For the deuteron (A=2, n=6, p(6)=11 partitions of 6) this script:
 
-  1. Loads |tr_M(β_D)| from ``atomic-tr-m-mpfr-50dps.witness.json``.
-  2. Loads y_λ(q_0) and χ^λ(β_D) at q_0 from
-     ``rho-k-h3a-refinement.witness.json`` (the sibling Occam witness;
+  1. Loads |tr_M(β_D)| from ``rho-k-h3a-refinement.witness.json``
+     (Occam baseline, field ``data.abs_tr_M_at_q0_50dps``).
+  2. Loads y_λ(q_0) and χ^λ(β_D) at q_0 from the same
+     ``rho-k-h3a-refinement.witness.json`` (sibling Occam witness;
      the Schur–Weyl identity is also re-validated against tr_M for safety).
   3. Computes Δ_λ^B := 1/dim_q(λ) at q_0 for each λ ⊢ 6 via the
      q-hook-length formula (``q_dim_sym`` in
@@ -87,10 +88,8 @@ REFERENCES
 from __future__ import annotations
 
 import argparse
-import hashlib
 import json
 import sys
-from datetime import datetime, timezone
 from pathlib import Path
 
 import mpmath as mp
@@ -100,11 +99,16 @@ HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
+# IMPORTANT: set mpmath precision BEFORE importing codata_constants
+# (or any module that constructs ``mp.mpf`` literals at import time).
+# Otherwise CODATA constants are parsed at the default precision and
+# later serialised with spurious binary tail digits.
+mp.mp.dps = 50
+
 from codata_constants import M_E_MEV, M_P_MEV, M_N_MEV, M_D_MEV  # noqa: E402
 from murnaghan_nakayama import partitions_of, hook_lengths  # noqa: E402
 from q_parameter import Q_MP  # noqa: E402
-
-mp.mp.dps = 50
+from witness_base import WitnessBuilder  # noqa: E402
 
 q_sym = sp.Symbol("q", positive=True, real=True)
 
@@ -171,13 +175,7 @@ def load_occam_witness() -> dict:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument(
-        "--rescale", action="store_true",
-        help="(diagnostic only) report what scalar λ_scale would close "
-             "the mass equation if we permitted Δ_λ → λ_scale · Δ_λ^B. "
-             "Does NOT modify the witness; pure diagnostic.",
-    )
-    args = parser.parse_args()
+    parser.parse_args()
 
     print("=" * 96)
     print("  ρ_K H_{3A} refinement — OPTION B (Frobenius co-Casimir restriction)")
@@ -324,12 +322,8 @@ def main() -> int:
     print(f"    Σ_λ Δ_λ^B (= τ(C_dim_q))        = {mp.nstr(co_casimir_sum_abs, 6)}")
 
     # ── Step 7: emit witness ────────────────────────────────────────
-    script_bytes = Path(__file__).read_bytes()
-    script_hash = "sha256:" + hashlib.sha256(script_bytes).hexdigest()
-
     witness = {
         "computation": "rho-k-h3a-co-casimir",
-        "computedAt": datetime.now(timezone.utc).isoformat(),
         "description": (
             "Option B for the underdetermined Δ_λ(K) selector in "
             "prop:rho-k-h3a-refinement (deuteron, A=2, n=6).  Replaces "
@@ -340,13 +334,11 @@ def main() -> int:
             "the resulting mass-equation residual; honest reporting — "
             "no rescaling applied to Δ_λ^B."
         ),
-        "engine": (
+        "engine_note": (
             "sympy q-hook-length symbolic dim_q + 50-dps mpmath evaluation; "
             "y_λ(q_0) and χ^λ(β_D) reused verbatim from "
             "rho-k-h3a-refinement.witness.json (Occam baseline)."
         ),
-        "scriptFile": "rho_k_h3a_co_casimir.py",
-        "scriptHash": script_hash,
         "selector": {
             "name": "Frobenius co-Casimir per-isotypic restriction",
             "formula": "Δ_λ(K) := tr_M(C_dim_q · 1_λ) = 1 / dim_q(λ)",
@@ -455,8 +447,13 @@ def main() -> int:
             "cohomology; D: minimum-norm pseudoinverse)."
         ),
     }
-    out = HERE / "rho-k-h3a-co-casimir.witness.json"
-    out.write_text(json.dumps(witness, indent=2) + "\n")
+    builder = WitnessBuilder.wrap_legacy(
+        "rho-k-h3a-co-casimir",
+        witness,
+        script_path=__file__,
+        engine="python+mpmath",
+    )
+    out = builder.save()
     print(f"\n  Wrote {out.name} ({out.stat().st_size} bytes).")
     print("=" * 96)
     # Honest exit code: success if we wrote the witness (irrespective of
