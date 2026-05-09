@@ -1635,4 +1635,58 @@ theorem hookProduct_row_two (q : ℝ) (hq : q - q⁻¹ ≠ 0) :
   show QOU.qInteger q 2 * (QOU.qInteger q 1 * 1) = q + q⁻¹
   rw [QOU.qInteger_two q hq, QOU.qInteger_one q hq]; ring
 
+/-! ### Structural hook-product / SYT-count lemmas (Tier 2 round 7)
+
+    Identities that hold for every `n` without per-partition
+    enumeration. -/
+
+/-- **n=9 Burnside-target factorial**: `9! = 362880`. -/
+theorem factorial_9 : (9 : ℕ).factorial = 362880 := by decide
+
+/-- **n=10 Burnside-target factorial**: `10! = 3628800`. -/
+theorem factorial_10 : (10 : ℕ).factorial = 3628800 := by decide
+
+/-- **n=11 Burnside-target factorial**: `11! = 39916800`. -/
+theorem factorial_11 : (11 : ℕ).factorial = 39916800 := by decide
+
+/-- **n=12 Burnside-target factorial**: `12! = 479001600`. -/
+theorem factorial_12 : (12 : ℕ).factorial = 479001600 := by decide
+
+/-- **Hook-product over `[1]` is 1**: the singleton-cell partition
+    has hook `[1]` and product 1. -/
+theorem hookProductNat_singleton : hookProductNat [1] = 1 := by
+  show (1 * 1 : ℕ) = 1; norm_num
+
+/-- **dLambdaFromHooks on `[1]` at n=1 is `1`**: there is exactly
+    one SYT of the single-cell shape. -/
+theorem dLambda_singleton_n1 : dLambdaFromHooks [1] 1 = 1 := by
+  show ((1 : ℕ).factorial / (1 * 1 : ℕ)) = 1
+  norm_num
+
+/-- **Frame-Robinson-Thrall n=2 row partition**: `d_{[2]} = 1`. -/
+theorem dLambda_n2_row : dLambdaFromHooks [2, 1] 2 = 1 := dLambda_row2
+
+/-- **Frame-Robinson-Thrall n=3 row partition**: `d_{[3]} = 1`. -/
+theorem dLambda_n3_row : dLambdaFromHooks [3, 2, 1] 3 = 1 := by
+  show ((3 : ℕ).factorial / ((1 * 3) * 2 * 1 : ℕ)) = 1
+  norm_num
+
+/-- **Frame-Robinson-Thrall n=4 row partition**: `d_{[4]} = 1`. -/
+theorem dLambda_n4_row : dLambdaFromHooks [4, 3, 2, 1] 4 = 1 := by
+  show ((4 : ℕ).factorial / ((((1 * 4) * 3) * 2) * 1 : ℕ)) = 1
+  norm_num
+
+/-- **Frame-Robinson-Thrall n=5 row partition**: `d_{[5]} = 1`. -/
+theorem dLambda_n5_row : dLambdaFromHooks [5, 4, 3, 2, 1] 5 = 1 := by
+  show ((5 : ℕ).factorial /
+    (((((1 * 5) * 4) * 3) * 2) * 1 : ℕ)) = 1
+  norm_num
+
+/-- **Frame-Robinson-Thrall n=6 row partition**: `d_{[6]} = 1`. -/
+theorem dLambda_n6_row :
+    dLambdaFromHooks [6, 5, 4, 3, 2, 1] 6 = 1 := by
+  show ((6 : ℕ).factorial /
+    ((((((1 * 6) * 5) * 4) * 3) * 2) * 1 : ℕ)) = 1
+  norm_num
+
 end QOU.Mathlib.WenzlBridgeConcrete

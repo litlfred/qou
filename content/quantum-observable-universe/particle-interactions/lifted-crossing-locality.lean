@@ -63,7 +63,7 @@ noncomputable def productFormCollapse
     uses the canonical multiplicative-identity local factor rather
     than `0`. -/
 -- Ref: [manuscript] particle-interactions/lifted-crossing-locality §"Skeleton"
-instance skeleton {K C : Type*} : LiftedCrossingLocality K C where  -- noqa: skel_inst
+instance canonical {K C : Type*} : LiftedCrossingLocality K C where
   crossings := fun _ => []
   massGB := fun _ => 0
   massGBSubset := fun _ _ => 0

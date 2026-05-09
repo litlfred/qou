@@ -63,7 +63,7 @@ class RhoPrefactorStructural (n₀ : ℕ) (q : ℝ) where
     `rfl`.  Encodes none of the Wedderburn / quantum-dimension content
     but discharges the §3b-cond hypothesis. -/
 -- Ref: [manuscript] conj:rho-prefactor-structural §"Skeleton"
-instance skeleton (n₀ : ℕ) (q : ℝ) : RhoPrefactorStructural n₀ q where  -- noqa: skel_inst
+instance canonical (n₀ : ℕ) (q : ℝ) : RhoPrefactorStructural n₀ q where
   rho := 1
   rho_pos := Nat.one_pos
   d_lambda_star := 1

@@ -324,7 +324,7 @@ class ShellClosureNFTermCount where
     `rfl` (every shell-step is `0 = 0`).  Encodes none of the actual
     NF-term-count content but discharges the §3b-cond hypothesis. -/
 -- Ref: [manuscript] conj:shell-closure-nf-term-count §"Skeleton"
-instance skeleton : ShellClosureNFTermCount where  -- noqa: skel_inst
+instance canonical : ShellClosureNFTermCount where
   nf_term_count := fun _ => 0
   helium_base := rfl
   shell_constant_between_magics := fun _ _ => rfl

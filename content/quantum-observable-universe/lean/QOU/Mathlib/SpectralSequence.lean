@@ -243,4 +243,62 @@ instance gb_trivial_converges (R : Type u) (n : ℕ) :
              fun _ => rfl, fun f => funext fun i => i.elim0⟩
   }
 
+/-! ### Page-monotonicity + d² = 0 (Tier 2 round 7)
+
+    Additional structural lemmas on the spectral-sequence API. -/
+
+/-- **Collapse is monotone in the page index**: if `S` collapses at
+    `r₀`, it also collapses at any later page `r₁ ≥ r₀`.  The
+    `d_r = 0` condition for `r ≥ r₀` immediately implies it for
+    `r ≥ r₁` since `r ≥ r₁ ≥ r₀`. -/
+theorem CollapsesAt.mono {R : Type u} (S : SpectralSequence R)
+    (r₀ r₁ : ℕ) (h : r₀ ≤ r₁) (h_collapses : CollapsesAt S r₀) :
+    CollapsesAt S r₁ := by
+  intro c hc x
+  exact h_collapses c (le_trans h hc) x
+
+/-- **d² = 0 on the trivial spectral sequence**: composing the
+    differential with itself yields the zero map.  This is the
+    fundamental defining axiom of a spectral sequence. -/
+theorem trivial_d_squared_zero (R : Type u) (c : CellIndex)
+    (x : (trivial R).cell c) :
+    (trivial R).differential c.next ((trivial R).differential c x) =
+      (trivial R).zero c.next.next := by
+  rfl
+
+/-- **Late-page collapse**: every spectral sequence trivially
+    collapses at sufficiently large `r₀` if every cell is `PUnit`
+    (which makes every map a constant-zero map). -/
+theorem trivial_collapses_at_arbitrary_late (R : Type u) (r : ℕ) :
+    CollapsesAt (trivial R) r :=
+  trivial_collapses_everywhere R r
+
+/-! ### Concrete n = 2 Wedderburn target
+
+    For `H_2(q)` the partition lattice is `{(2), (1,1)}` and each
+    Wedderburn block has dimension 1.  The Wedderburn target at
+    bidegree `(p, q) = (0, 0)` is `Fin 2 → R` (one block per
+    partition of 2). -/
+
+/-- The block-dimension function for the n=2 Wedderburn target:
+    `blockDim_n2 0 0 = 2` (two 1-dimensional blocks, summed),
+    zero elsewhere.  The "summed" form lets a single bidegree
+    cell encode both blocks. -/
+def blockDim_n2 : ℤ → ℤ → ℕ := fun p q =>
+  if p = 0 ∧ q = 0 then 2 else 0
+
+/-- The block-dimension at `(0, 0)` is 2. -/
+theorem blockDim_n2_at_origin : blockDim_n2 0 0 = 2 := by
+  unfold blockDim_n2; simp
+
+/-- The block-dimension is zero off-origin. -/
+theorem blockDim_n2_off_origin (p q : ℤ) (h : ¬ (p = 0 ∧ q = 0)) :
+    blockDim_n2 p q = 0 := by
+  unfold blockDim_n2; simp [h]
+
+/-- **n=2 Wedderburn target**: the type-family at bidegree
+    `(p, q)` is `Fin (blockDim_n2 p q) → R`. -/
+def wedderburnTarget_n2 (R : Type u) : ℤ → ℤ → Type u :=
+  wedderburnTarget R blockDim_n2
+
 end QOU.Mathlib.SpectralSequence

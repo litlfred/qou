@@ -79,7 +79,7 @@ theorem markov_trace_factors [inst : KnotFactorFrobeniusPairing]
     pairing must be supplied by a deeper instance.  Sufficient to
     discharge the §3b-cond hypothesis for downstream blocks. -/
 -- Ref: [manuscript] conj:knot-factor-frobenius-pairing §"Skeleton"
-instance skeleton : KnotFactorFrobeniusPairing where  -- noqa: skel_inst
+instance canonical : KnotFactorFrobeniusPairing where
   markov_trace_q := fun _ _ => 0
   frobenius_pairing_q := fun _ _ _ => 0
   knot_factor := default

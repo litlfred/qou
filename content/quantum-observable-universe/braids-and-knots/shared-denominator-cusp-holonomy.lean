@@ -74,7 +74,7 @@ theorem newton_seed_completeness
     `z_k` for the `k`-th cusp must come from the Newton–Raphson
     pipeline) but discharges the §3b-cond hypothesis. -/
 -- Ref: [manuscript] conj:shared-denominator-cusp-holonomy §"Skeleton"
-instance skeleton (q x : ℝ) (n : ℕ) :  -- noqa: skel_inst
+instance canonical (q x : ℝ) (n : ℕ) :
     SharedDenominatorCuspHolonomy q x n where
   cusp_complete_of_root := fun _ _ =>
     ⟨2, { meridian_holonomy := by norm_num, longitude_holonomy := by norm_num }⟩

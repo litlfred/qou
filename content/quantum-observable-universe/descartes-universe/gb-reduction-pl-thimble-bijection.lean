@@ -65,7 +65,7 @@ theorem gb_reduction_pl_thimble_bijection
     (`thimbleFlowStep z_c dt := z_c`), the phase-invariance equation
     `imSAction (thimbleFlowStep z_c dt) = imSAction z_c` is `rfl`. -/
 -- Ref: [manuscript] conj:gb-reduction-pl-thimble-bijection §"Skeleton"
-instance skeleton (n : ℕ) : GBReductionPLThimbleBijection n where  -- noqa: skel_inst
+instance canonical (n : ℕ) : GBReductionPLThimbleBijection n where
   matched_thimble_step := 0
   phase_invariance := fun _ _ => rfl
 

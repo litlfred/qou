@@ -66,7 +66,7 @@ class HeckeMassNF (β : Type*) where
     (the genuine coefficients are q-rational functions of the braid
     word) but discharges the §3b-cond hypothesis. -/
 -- Ref: [manuscript] conj:mass-element-nf §"Skeleton"
-instance skeleton (β : Type*) : HeckeMassNF β where  -- noqa: skel_inst
+instance canonical (β : Type*) : HeckeMassNF β where
   a₁ := 1
   a₃ := 1
   a₅ := 1

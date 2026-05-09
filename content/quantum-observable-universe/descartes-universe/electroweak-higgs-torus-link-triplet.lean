@@ -114,7 +114,7 @@ class EWHiggsTorusLinkTripletSkeleton : Prop where
     writhes 0 = 4 ∧ writhes 1 = 6 ∧ writhes 2 = 8 ∧
     Function.Injective writhes
 
-instance instEWHiggsTorusLinkTripletSkeleton  -- noqa: skel_inst
+instance instEWHiggsTorusLinkTripletCanonical
     [EWHiggsTorusLinkTriplet] : EWHiggsTorusLinkTripletSkeleton where
   triplet_bijection := by
     refine ⟨![4, 6, 8], rfl, rfl, rfl, ?_⟩

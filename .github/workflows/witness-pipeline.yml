@@ -293,6 +293,16 @@ jobs:
             --max-per-pattern \
               "const_zero=3,skel_inst=2,prop_true=2,punit_type=2,one_def=2,holds_trivial=2,punit_unit=2,id_def=2,const_zero_typed=2,first_arg=12"
 
+      - name: §3b-cond conditional-class banner audit (strict)
+        run: |
+          # Enforces CLAUDE.md §3b-cond compliance: every conditional-
+          # on-class proposition must (a) carry a "Theorem (conditional
+          # on …)." banner in its .md, AND (b) carry the upstream
+          # conjecture's class as an explicit [Instance] hypothesis in
+          # its .lean.  PR #566 brought this to 12/12 fully compliant;
+          # CI gates against regression.
+          bun run content/pipeline/conditional-class-banner-audit.ts --strict
+
       - name: Detect drift in committed witnesses
         run: |
           # The validators rewrite their output witnesses on every run.

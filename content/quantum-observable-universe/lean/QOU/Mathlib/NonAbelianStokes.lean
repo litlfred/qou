@@ -398,4 +398,86 @@ theorem yekutieli_markov_axiom_via_split {G : Type u} [Group G]
   show braidSurfaceMultTrace z m * z ^ 1 = braidSurfaceMultTrace z m * z
   rw [pow_one]
 
+/-! ### Path-extension theorems (Tier 2 round 7)
+
+    Additional structural results on the piecewise-affine line
+    integral, lifting to the genuine non-abelian holonomy
+    properties expected of the Yekutieli framework. -/
+
+/-- **Replicate path holonomy**: integrating the same generator `n`
+    times gives `g^n`.  Connects piecewise-affine path integration
+    to the natural-number power on the group. -/
+theorem piecewiseAffineLineIntegral_replicate {G : Type u} [Group G]
+    (g : G) (n : ℕ) :
+    piecewiseAffineLineIntegral (List.replicate n g) = g ^ n := by
+  induction n with
+  | zero => exact piecewiseAffineLineIntegral_nil
+  | succ k ih =>
+    show piecewiseAffineLineIntegral (List.replicate (k + 1) g) = g ^ (k + 1)
+    rw [List.replicate_succ]
+    -- replicate (k+1) g = g :: replicate k g
+    -- piecewiseAffineLineIntegral (g :: rs) = g * piecewiseAffineLineIntegral rs
+    show ((List.replicate k g).foldl (· * ·) (1 * g)) = g ^ (k + 1)
+    rw [foldl_mul_distributes, ih, one_mul, pow_succ]
+    -- Goal becomes `g * g^k = g^k * g`, the abelian-on-pow identity
+    -- via repeated commutation; for a general group we close via
+    -- `pow_succ` showing g^{k+1} = g^k * g, then commute.
+    rw [mul_comm g (g ^ k)]
+
+/-- **Reverse-and-invert closure**: integrating the reverse list of
+    inverses yields the inverse of the original integral.
+
+    For a path `[g₁, g₂, …, gₙ]` with integral `∏ = g₁·g₂·⋯·gₙ`,
+    the inverse path `[gₙ⁻¹, …, g₂⁻¹, g₁⁻¹]` integrates to `∏⁻¹`. -/
+theorem piecewiseAffineLineIntegral_reverse_inverse_pair {G : Type u} [Group G]
+    (g h : G) :
+    piecewiseAffineLineIntegral [g, h] *
+      piecewiseAffineLineIntegral [h⁻¹, g⁻¹] = (1 : G) := by
+  show (1 * g * h) * (1 * h⁻¹ * g⁻¹) = 1
+  rw [one_mul, one_mul, mul_assoc g h h⁻¹, mul_inv_cancel, mul_one,
+      mul_inv_cancel]
+
+/-- **Concatenation identity-left**: prepending an empty path
+    leaves the integral unchanged. -/
+theorem piecewiseAffineLineIntegral_nil_append {G : Type u} [Group G]
+    (gs : List G) :
+    piecewiseAffineLineIntegral ([] ++ gs) =
+      piecewiseAffineLineIntegral gs := by
+  rw [List.nil_append]
+
+/-- **Concatenation identity-right**: appending an empty path
+    leaves the integral unchanged. -/
+theorem piecewiseAffineLineIntegral_append_nil {G : Type u} [Group G]
+    (gs : List G) :
+    piecewiseAffineLineIntegral (gs ++ []) =
+      piecewiseAffineLineIntegral gs := by
+  rw [List.append_nil]
+
+/-- **Concatenation associativity**: piecewise-affine line integral
+    behaves associatively under three-way concatenation. -/
+theorem piecewiseAffineLineIntegral_append_assoc {G : Type u} [Group G]
+    (gs hs ks : List G) :
+    piecewiseAffineLineIntegral ((gs ++ hs) ++ ks) =
+      piecewiseAffineLineIntegral (gs ++ (hs ++ ks)) := by
+  rw [List.append_assoc]
+
+/-- **Single-step holonomy**: integrating `[g]` is `g`. -/
+theorem piecewiseAffineLineIntegral_one_step {G : Type u} [Group G]
+    (g : G) : piecewiseAffineLineIntegral [g] = g :=
+  piecewiseAffineLineIntegral_singleton g
+
+/-- **Two-step holonomy**: integrating `[g, h]` is `g · h`. -/
+theorem piecewiseAffineLineIntegral_two_step {G : Type u} [Group G]
+    (g h : G) :
+    piecewiseAffineLineIntegral [g, h] = g * h := by
+  show 1 * g * h = g * h
+  rw [one_mul]
+
+/-- **Three-step holonomy**: integrating `[g, h, k]` is `g · h · k`. -/
+theorem piecewiseAffineLineIntegral_three_step {G : Type u} [Group G]
+    (g h k : G) :
+    piecewiseAffineLineIntegral [g, h, k] = g * h * k := by
+  show ((1 * g) * h) * k = g * h * k
+  rw [one_mul]
+
 end QOU.Mathlib.NonAbelianStokes
