@@ -205,58 +205,38 @@ def lp_select_delta_lambda(
     delta = delta_plus - delta_minus
     primal_obj = float(t_np @ (delta_plus + delta_minus))
 
-    # ── Dual extraction (Copilot PR #613 review, line 252):
-    #
-    # Naming convention here is split-variable-LP-specific, not the
-    # canonical Frobenius-positivity convention from `lp_dual_solver.py`.
-    # Per Copilot's review, we expose BOTH:
-    #   - the canonical row dual (`y0_star`) — scipy's marginal of the
-    #     mass-equation row, which IS the canonical LP-dual scalar;
-    #   - the split-variable per-λ contributions
-    #     `lp_split_per_lambda_contribution = |y0_star| · |Δ_λ|`
-    #     which encode the L¹-min-on-cost selection magnitude;
-    #   - a separate `y_star` field populated below from the canonical
-    #     `solve_operator_selection_lp` call so downstream tooling that
-    #     follows the Frobenius-positivity-marginal convention works.
-    #
-    # The split-variable contributions are NOT the same as canonical
-    # Frobenius-positivity duals (different LP formulations), so we
-    # rename them explicitly here and document the distinction in the
-    # witness `notes` field.
+    # ── Canonical dual extraction (Gemini PR #613 review):
+    # Per CLAUDE.md "LP / SDP duals — first-class infra" and the
+    # convention used by `solve_operator_selection_lp` and
+    # `rho_k_h3a_gg_trajectory.py`, `y_star` reports the dual shadow
+    # prices (reduced costs) of the per-λ non-negativity constraints
+    # and `active_set` indexes the entries with non-zero shadow price
+    # (the saturated constraints).  In the split-variable formulation
+    # `z = [Δ⁺ ; Δ⁻]` (length 2d), each LP irrep channel λ has both a
+    # plus and minus reduced cost; we take the smaller of the two so
+    # `y_star[i] ≥ 0` and `y_star[i] = 0` ⇔ at least one direction is
+    # interior.
     y0_star = float(res.eqlin.marginals[0])
+    rc_plus = res.lower.marginals[:d]
+    rc_minus = res.lower.marginals[d:]
+    y_star = [float(min(p, m)) for p, m in zip(rc_plus, rc_minus)]
+    active_set = [i for i, s in enumerate(y_star) if s > 1e-9]
+
+    # Keep the split-variable per-λ contribution magnitude available
+    # under its descriptive name for downstream tooling.
     lp_split_per_lambda_contribution = [abs(y0_star) * abs(d_i) for d_i in delta]
-    # Active set := indices with strictly positive contribution
-    # magnitude.  Use a relative threshold so highs slack noise does
-    # not produce spurious actives.
-    contrib_max = max(lp_split_per_lambda_contribution) if lp_split_per_lambda_contribution else 0.0
-    thresh = max(1e-12, 1e-9 * contrib_max)
-    active_set = [i for i, c_i in enumerate(lp_split_per_lambda_contribution) if c_i > thresh]
     dual_obj = float(target_np * y0_star)
     duality_gap = abs(primal_obj - dual_obj)
-
-    # Sanity check (Copilot review line 213): warn if the LP optimum
-    # sits within 5% of the prior `M_bound` cap — that would have
-    # silently clipped under the old `bounds = [(0.0, M_bound)]`.
-    z_max = float(np.max(z))
-    near_cap = z_max > 0.95 * M_bound
 
     return {
         "x_star": list(delta),
         "y0_star": y0_star,
-        # Canonical LP-dual y_star convention (≥ 0): we expose the
-        # split-variable contributions under their *real* name and keep
-        # an ALIAS `y_star` for the witness validator (which expects
-        # this field) — the values are nonnegative and active_set is
-        # consistent with them.  See the witness `notes` for the
-        # convention caveat.
-        "y_star": list(lp_split_per_lambda_contribution),
+        "y_star": y_star,
         "lp_split_per_lambda_contribution": list(lp_split_per_lambda_contribution),
         "active_set": active_set,
         "primal_obj": primal_obj,
         "dual_obj": dual_obj,
         "duality_gap": duality_gap,
-        "near_M_bound_cap": near_cap,
-        "M_bound_threshold_used_only_for_warning": float(M_bound),
         "feasible": True,
         "scipy_status": res.message,
         "delta_plus": list(delta_plus),

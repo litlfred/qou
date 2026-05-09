@@ -1,8 +1,8 @@
 {
   "engine": "python+numpy+cvxpy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T14:17:47.140472+00:00",
-  "commitSha": "d3d2a8d9095d043c7239d72d28b50087f970f67f",
+  "computedAt": "2026-05-09T15:54:53.980438+00:00",
+  "commitSha": "71735cc5beff98b495e89da7e8b39814ea22b39c",
   "assertions": [
     {
       "name": "option_g_closure_p",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4064,
+  "durationMs": 4217,
   "computation": "rho-k-h3a-gg-trajectory",
   "scriptFile": "rho_k_h3a_gg_trajectory.py",
-  "scriptHash": "07c37bc5d04a",
-  "scriptCommitSha": "d3d2a8d9095d043c7239d72d28b50087f970f67f",
+  "scriptHash": "2adbb5d61b3b",
+  "scriptCommitSha": "fbf39bd26ca0665fbde72cec214f607eb92e2c42",
   "description": "Δ_λ Option G extension: per-prefix gg-pair-production trajectory for the proton and neutron (n=3, p(3)=3) canonical braid words, with per-step χ^λ + Σ y_λ χ^λ decomposition. At the full braid, applies the Frobenius-pairing min-norm closure (Option G) AND routes through the canonical LP / SDP solvers from lp_dual_solver.py (per CLAUDE.md § LP/SDP duals — first-class infra). Sibling of rho_k_h3a_frobenius_pairing.py (deuteron @ n=6).",
   "data": {
     "nucleons": {

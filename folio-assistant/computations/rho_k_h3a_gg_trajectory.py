@@ -334,7 +334,7 @@ def main() -> int:
         except Exception as e:
             sdp_dict = {"feasible": False, "error": str(e)}
 
-        print(f"\n  ── LP dual (canonical operator-selection LP, t = 1/dim_q) ──")
+        print(f"\n  ── LP dual (canonical operator-selection LP, t = 1/(dim_q · max(|y·χ|, floor))) ──")
         if lp_dict.get("feasible") is not False:
             print(f"     y0_star      = {lp_dict.get('y0_star'):+.6g}  (shadow price of mass equation)")
             print(f"     y_star       = {[f'{y:+.4g}' for y in lp_dict.get('y_star', [])]}")

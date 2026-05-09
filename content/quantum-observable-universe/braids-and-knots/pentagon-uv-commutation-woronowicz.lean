@@ -8,11 +8,18 @@ left-covariant Woronowicz calculus with modular automorphism
 `σ_q(x) = q^(2 · deg x) · x`.
 
 Under this class:
-1. The bimodule LEFT RULE `x · ω = ω · σ_q(x)` is an axiom of the
-   Woronowicz calculus on quantum-group-like Hopf algebras.
-2. The q-commutation `Û · V̂ = q · V̂ · Û` on the transient summand
-   `ker τ̂_n` follows by direct computation in `J^1(A_n) = A_n ⊕ Ω¹(A_n)`
-   for any q-homogeneous `x` of grade 1.
+1. The bimodule LEFT RULE `x · ω = ω · σ_q(x)` with modular automorphism
+   `σ_q(x) = q^(2 · deg x) · x` is an axiom of the Woronowicz calculus
+   on quantum-group-like Hopf algebras.
+2. The q-commutation `Û · V̂ = q^(2 · deg x) · V̂ · Û` on the transient
+   summand `ker τ̂_n` follows by direct computation in
+   `J^1(A_n) = A_n ⊕ Ω¹(A_n)`.  For a q-homogeneous element of grade 1
+   (e.g. a single Hecke generator `σ_i`) this specialises to
+   `Û · V̂ = q² · V̂ · Û` (theorem `q_commutation_grade_one` below).
+   Recovering the bare `q` factor `Û · V̂ = q · V̂ · Û` (the form
+   most commonly seen in pentagon-identity statements) requires
+   half-integer grading: `2 · deg σ_i = 1` in the ½ℤ-graded
+   q-decomposition (theorem `q_commutation_grade_one_half`).
 3. The Faddeev–Kashaev pentagon identity for `Φ_q` then applies as an
    operator identity on the q-commuting pair (Û, V̂), giving the
    triple-absorption rule (a triple Φ_q(|V_i V_j V_k|) at level n

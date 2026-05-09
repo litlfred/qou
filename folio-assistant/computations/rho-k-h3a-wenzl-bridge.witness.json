@@ -1,8 +1,8 @@
 {
-  "engine": "mpmath.lu_solve at 50 dps for the 11×11 selected system; numpy.linalg only for rank-check + row-selection greedy.  Reuses chi_numeric / load_y_lambda_n6 from rho_k_h3a_refinement.py (sequential evaluation; deuteron is small enough that the prior Pool closure-pickle bug is sidestepped).",
+  "engine": "python+numpy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T14:17:42.479591+00:00",
-  "commitSha": "d3d2a8d9095d043c7239d72d28b50087f970f67f",
+  "computedAt": "2026-05-09T15:54:26.070760+00:00",
+  "commitSha": "71735cc5beff98b495e89da7e8b39814ea22b39c",
   "assertions": [
     {
       "name": "wenzl_bridge_unique_solvability",
@@ -14,19 +14,19 @@
     },
     {
       "name": "closure_residual_at_dps",
-      "computed": -6.077317535295897e-17,
+      "computed": 0.0,
       "expected": 0.0,
-      "passed": false,
+      "passed": true,
       "tolerance": 1e-40,
       "source": "M(D) reconstruction residual after Δ_λ insertion"
     }
   ],
-  "allPassed": false,
-  "durationMs": 19,
+  "allPassed": true,
+  "durationMs": 0,
   "computation": "rho-k-h3a-wenzl-bridge",
   "scriptFile": "rho_k_h3a_wenzl_bridge.py",
-  "scriptHash": "sha256:2afc9192af317a327cf0fb29e6bc5c22446e90f5d91c2dd4bc7c0723ed916529",
-  "scriptCommitSha": "fe5a7741cc91c7376d16b769719ab9aafb798890",
+  "scriptHash": "363958c10fca",
+  "scriptCommitSha": "fbf39bd26ca0665fbde72cec214f607eb92e2c42",
   "description": "Δ_λ derivation via Wenzl-bridge augmented Markov system (Option F).  Augments the single mass equation Δρ |tr_M| = Σ_λ y_λ χ^λ(β_D) Δ_λ with 10 cycle-type Markov-axiom constraints, building an 11×11 linear system M[μ, λ] = χ^λ(w_μ) and solving M·u = b where u_λ = y_λ Δ_λ. Sibling of #564 (Occam) and PRs #602 / #603 (Frobenius / LP-shadow-price options).  By Wenzl-bridge linearity, the unique solution is Δ_λ = Δρ_D uniformly, i.e. the binding is distributed proportionally to y_λ across all 11 Wedderburn blocks.",
   "parameters": {
     "q_0_50dps": "1.1099785955541805752815940796095093779932822799587",
@@ -331,9 +331,9 @@
       "max_observed_offset": "4.3812782378120643e-16"
     },
     "closure_check": {
-      "M_pred_MeV": "1875.6129425700000865010035222826916651866732132879",
+      "M_pred_MeV": "1875.612942570000086561776697635650634765625",
       "M_codata_MeV": "1875.612942570000086561776697635650634765625",
-      "closure_err_MeV": "-6.077317535295897e-17"
+      "closure_err_MeV": "0.0"
     },
     "comparison_to_option_a_occam": {
       "occam_partition": [

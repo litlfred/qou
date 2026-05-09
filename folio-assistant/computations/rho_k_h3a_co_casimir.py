@@ -119,7 +119,7 @@ def q_int_sym(k: int) -> sp.Expr:
         return sp.Integer(0)
     if k == 1:
         return sp.Integer(1)
-    return sp.expand((q_sym ** k - q_sym ** (-k)) / (q_sym - q_sym ** (-1)))
+    return sp.cancel((q_sym ** k - q_sym ** (-k)) / (q_sym - q_sym ** (-1)))
 
 
 def q_factorial_sym(n: int) -> sp.Expr:

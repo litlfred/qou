@@ -346,7 +346,12 @@ def main() -> int:
     # so by construction the Option F solution reproduces the
     # deuteron mass exactly (this is the trivial first-row check).
     if outcome == "uniquely-solvable":
-        rho_K_check = rho_K_LO + b_sel[0] / abs_tr_M
+        # Keep the closure check in mpmath: pulling `b_sel[0]` from
+        # the float64 mirror introduced ~1e-16 rounding error and
+        # caused the `closure_residual_at_dps` assertion to fail
+        # (Copilot PR #613 review).  Source `b_full[0, 0]` directly
+        # in mp precision.
+        rho_K_check = rho_K_LO + b_full[chosen_rows[0], 0] / abs_tr_M
         M_pred = rho_K_check * M_E_MEV * abs_tr_M
         closure_err_MeV = float(M_pred - M_D_MEV)
         print(f"\n  Closure check (deuteron row reconstruction):")
@@ -505,18 +510,21 @@ def main() -> int:
         ),
     }
     # WitnessBuilder.wrap_legacy migration (Copilot PR #613 review,
-    # line 381 + json:8): preserves the existing top-level payload
-    # layout while adding canonical metadata (engineVersion,
-    # assertions, allPassed, scriptHash, scriptCommitSha, durationMs,
-    # commitSha) so the witness conforms to the standard
-    # ComputationWitness schema and `lp_dual_witness_validator` /
-    # `bound_state_observable_validator` accept it without warnings.
+    # rho-k-h3a-wenzl-bridge.witness.json:24 + :28 + .py:535):
+    # `wrap_legacy` preserves the existing top-level payload layout
+    # AND emits canonical staleness metadata (`scriptHash` as the
+    # 12-hex `file_content_hash` prefix, not a `sha256:` digest;
+    # `scriptCommitSha`, `engineVersion`, `computedAt`, `durationMs`).
+    # `WitnessBuilder.save(extra=witness)` was overriding these
+    # canonical fields with the same-named legacy keys from `witness`,
+    # making the witness perpetually stale.
     builder = (
-        WitnessBuilder(
-            name="rho-k-h3a-wenzl-bridge",
+        WitnessBuilder.wrap_legacy(
+            "rho-k-h3a-wenzl-bridge",
+            witness,
+            script_path=__file__,
             engine="python+numpy+mpmath",
         )
-        .set_description(witness["description"])
         .add_assertion(
             name="wenzl_bridge_unique_solvability",
             computed=1.0 if outcome == "uniquely-solvable" else 0.0,
@@ -532,7 +540,7 @@ def main() -> int:
             source="M(D) reconstruction residual after Δ_λ insertion",
         )
     )
-    out = builder.save(extra=witness)
+    out = builder.save()
     print(f"\n  Wrote {out.name} ({out.stat().st_size} bytes).")
     print("=" * 96)
     print(f"  OUTCOME: {outcome}")
