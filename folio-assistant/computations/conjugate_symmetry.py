@@ -81,9 +81,12 @@ def _eval_chi_direct(shape: tuple[int, ...], word: tuple[int, ...],
     """Evaluate χ^λ(T_w) directly via Hoefsmit seminormal matrices."""
     import numpy as np
     # F6 (PR follow-up #582): numerical-q Hoefsmit through BlockCache.
+    # Per Gemini review on #583: use the *provided* q_val (not the
+    # global q_0) so detect_conjugate_formula's convention-detection
+    # loop sees the correct cache. h = q − q⁻¹ is derived from q_val.
     from syt_prefix_cache import BlockCache, build_seminormal_matrices_cached
-    from q_parameter import Q as q0, HA
-    cache = BlockCache(q0, HA)
+    h_val = q_val - 1.0 / q_val
+    cache = BlockCache(q_val, h_val)
     sigmas, dim, _ = build_seminormal_matrices_cached(shape, cache=cache)
     if dim == 0:
         return 0.0
