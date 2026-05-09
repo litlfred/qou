@@ -413,12 +413,23 @@ noncomputable def heckeH6DimQ (q : ℝ) (i : Fin 11) : ℝ :=
 
 /-- **`Fin 11` sum decomposition.**  Mathlib provides
     `Fin.sum_univ_two`/`_three`/.../`_eight` as `rfl`-provable lemmas;
-    we extend that pattern to `Fin 11` for the eleven partitions of 6. -/
+    we extend that pattern to `Fin 11` for the eleven partitions of 6.
+
+    Proof strategy: peel off the last three indices via
+    `Fin.sum_univ_castSucc` (which states
+    `∑ i : Fin (n+1), f i = (∑ i : Fin n, f i.castSucc) + f (Fin.last n)`),
+    then bridge through Mathlib's `Fin.sum_univ_eight` for the
+    remaining 8.  Each `Fin.castSucc` chain reduces definitionally
+    so the final `rfl` closes the goal.  This is exactly the same
+    recursive pattern Mathlib uses internally for `Fin.sum_univ_eight`
+    via `Fin.sum_univ_castSucc + Fin.sum_univ_seven`. -/
 private lemma Fin_sum_univ_eleven {M : Type*} [AddCommMonoid M]
     (f : Fin 11 → M) :
     ∑ i, f i = f 0 + f 1 + f 2 + f 3 + f 4 + f 5 + f 6 + f 7
                 + f 8 + f 9 + f 10 := by
-  simp [Fin.sum_univ_succ, Fin.sum_univ_zero, add_assoc]
+  rw [Fin.sum_univ_castSucc, Fin.sum_univ_castSucc, Fin.sum_univ_castSucc,
+      Fin.sum_univ_eight]
+  rfl
 
 /-- **H_6 specialisation: τ(C_dim_q) = Σ_{λ⊢6} 1/dim_q(λ).**
 
@@ -530,12 +541,21 @@ noncomputable def heckeH7DimQ (q : ℝ) (i : Fin 15) : ℝ :=
     heckeH7DimQ q 14 = 1 := rfl
 
 /-- **`Fin 15` sum decomposition.**  Extension of the `Fin.sum_univ_*`
-    pattern to fifteen elements (partitions of 7). -/
+    pattern to fifteen elements (partitions of 7).
+
+    Proof strategy: peel off the last seven indices via
+    `Fin.sum_univ_castSucc`, then bridge through Mathlib's
+    `Fin.sum_univ_eight` for the remaining 8 (= 15 − 7).  Each
+    `Fin.castSucc` chain reduces definitionally so the final `rfl`
+    closes the goal. -/
 private lemma Fin_sum_univ_fifteen {M : Type*} [AddCommMonoid M]
     (f : Fin 15 → M) :
     ∑ i, f i = f 0 + f 1 + f 2 + f 3 + f 4 + f 5 + f 6 + f 7
                 + f 8 + f 9 + f 10 + f 11 + f 12 + f 13 + f 14 := by
-  simp [Fin.sum_univ_succ, Fin.sum_univ_zero, add_assoc]
+  rw [Fin.sum_univ_castSucc, Fin.sum_univ_castSucc, Fin.sum_univ_castSucc,
+      Fin.sum_univ_castSucc, Fin.sum_univ_castSucc, Fin.sum_univ_castSucc,
+      Fin.sum_univ_castSucc, Fin.sum_univ_eight]
+  rfl
 
 /-- **H_7 specialisation: τ(C_dim_q) = Σ_{λ⊢7} 1/dim_q(λ).**
 
