@@ -1,7 +1,7 @@
 {
   "audit": "conjectural-propagation (CLAUDE.md §3b + §3b-cond)",
-  "generated": "2026-05-08T19:26:54.368Z",
-  "total_blocks": 1450,
+  "generated": "2026-05-09T13:41:35.660Z",
+  "total_blocks": 1479,
   "class_axiomatised_conjectures": [
     "conj:abelianisation-at-algebraic-poles",
     "conj:algebraic-geometric-dilog-equivalence",
@@ -11,6 +11,7 @@
     "conj:borromean-quark",
     "conj:brane-level-selection",
     "conj:brane-tower-z-habiro",
+    "conj:bring-hyperbolic-knot-bloch-decomposition",
     "conj:canonical-knot-id-sdp",
     "conj:categorical-higgs-mechanism",
     "conj:categorical-linking-operation",
@@ -65,9 +66,10 @@
     "conj:symmetric-crystal-pair-production",
     "conj:topological-decomposition-mass",
     "conj:weak-spectral-completeness",
-    "conj:weinberg-angle-categorical"
+    "conj:weinberg-angle-categorical",
+    "conj:z-eq-n-rho-correction"
   ],
-  "provable_blocks_touching_conjecture": 261,
+  "provable_blocks_touching_conjecture": 277,
   "violators": [],
   "conditional_on_class": [
     {
@@ -85,6 +87,8 @@
         "conj:baryon-period-ratio",
         "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/commutative-chirality-vanishes.ts"
@@ -103,6 +107,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -123,6 +129,8 @@
         "conj:baryon-period-ratio",
         "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/habiro-expansion-atomic.ts"
@@ -141,6 +149,8 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -160,6 +170,8 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -179,6 +191,8 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -198,6 +212,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -218,6 +234,8 @@
         "conj:baryon-period-ratio",
         "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/degree-one-braid-trivial-volume.ts"
@@ -236,6 +254,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -255,6 +275,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -287,6 +309,8 @@
         "conj:baryon-period-ratio",
         "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/tower-pair-equality-fixed-level.ts"
@@ -306,6 +330,8 @@
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/vhat-pair-commutation-trace.ts"
@@ -324,6 +350,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -344,6 +372,8 @@
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
         "conj:borromean-quark",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/algebraic-quantum-volume-specialization.ts"
@@ -363,6 +393,8 @@
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/descartes-universe/alpha-em-categorical-trace-ratio.ts"
@@ -381,6 +413,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -401,6 +435,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:borromean-quark",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/alpha-k-derivation-procedure.ts"
@@ -420,6 +456,8 @@
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/alpha-shift-torus-knot.ts"
@@ -438,10 +476,36 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/descartes-universe/antiparticle-crossing-reversal.ts"
+    },
+    {
+      "label": "prop:archimedean-functor-uniqueness",
+      "kind": "proposition",
+      "conj": [
+        "conj:dilogarithm-archimedean-limit",
+        "conj:kashaev-volume-conjecture",
+        "conj:mass-endomorphism",
+        "conj:brane-tower-z-habiro",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/archimedean-functor-uniqueness.ts"
     },
     {
       "label": "prop:archimedean-hartree-derivation",
@@ -458,6 +522,8 @@
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/descartes-universe/archimedean-hartree-derivation.ts"
@@ -477,6 +543,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:borromean-quark",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.ts"
@@ -495,6 +563,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -512,6 +582,8 @@
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
@@ -533,6 +605,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -552,10 +626,34 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/descartes-universe/bar-apply-transfer.ts"
+    },
+    {
+      "label": "prop:bar-involution-invariance",
+      "kind": "proposition",
+      "conj": [
+        "conj:symmetric-crystal-pair-production",
+        "conj:crystal-graph-realization",
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:shell-correction-term-seven"
+      ],
+      "file": "content/quantum-observable-universe/particle-interactions/bar-involution-invariance.ts"
     },
     {
       "label": "prop:bar-self-dual-confinement-band",
@@ -571,6 +669,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -590,6 +690,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -606,6 +708,8 @@
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
@@ -628,6 +732,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -647,10 +753,39 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/particle-interactions/beta-decay-transfer-matrix.ts"
+    },
+    {
+      "label": "prop:bloch-group-quotient-construction",
+      "kind": "proposition",
+      "conj": [
+        "conj:dilogarithm-archimedean-limit",
+        "conj:kashaev-volume-conjecture",
+        "conj:mass-endomorphism",
+        "conj:brane-tower-z-habiro",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark",
+        "conj:bring-hyperbolic-knot-bloch-decomposition",
+        "conj:kazhdan-lusztig-classical-limit",
+        "conj:hecke-anyonic-substrate"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/bloch-group-quotient-construction.ts"
     },
     {
       "label": "prop:bohr-radius-categorical",
@@ -667,6 +802,8 @@
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/descartes-universe/bohr-radius-categorical.ts"
@@ -686,6 +823,8 @@
         "conj:borromean-quark",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/information-theory/boltzmann-constant.ts"
@@ -704,6 +843,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -721,6 +862,8 @@
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
@@ -737,6 +880,8 @@
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
@@ -762,6 +907,8 @@
         "conj:baryon-period-ratio",
         "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/quantum-observable-universes/categorical-coordinate-ring.ts"
@@ -781,6 +928,8 @@
         "conj:baryon-period-ratio",
         "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/quantum-observable-universes/categorical-fourier-transform-exists.ts"
@@ -800,6 +949,8 @@
         "conj:baryon-period-ratio",
         "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/quantum-observable-universes/categorical-fourier-transform-unique.ts"
@@ -819,6 +970,8 @@
         "conj:baryon-period-ratio",
         "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/quantum-observable-universes/categorical-laplace-transform-exists.ts"
@@ -838,6 +991,8 @@
         "conj:baryon-period-ratio",
         "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/quantum-observable-universes/categorical-laplace-transform-unique.ts"
@@ -856,6 +1011,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -875,6 +1032,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -895,7 +1054,9 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:shell-correction-term-seven",
-        "conj:borromean-quark"
+        "conj:borromean-quark",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/chirality-dual-space-derivation.ts"
     },
@@ -913,6 +1074,8 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -932,6 +1095,8 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:borromean-quark",
         "conj:shell-correction-term-seven"
       ],
@@ -952,9 +1117,38 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:shell-correction-term-seven",
-        "conj:borromean-quark"
+        "conj:borromean-quark",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/chirality-writhe-ribbon-derivation.ts"
+    },
+    {
+      "label": "prop:cl2-pentagon-and-faddeev-partial",
+      "kind": "proposition",
+      "conj": [
+        "conj:dilogarithm-archimedean-limit",
+        "conj:kashaev-volume-conjecture",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
+        "conj:shell-correction-term-seven",
+        "conj:bring-hyperbolic-knot-bloch-decomposition",
+        "conj:mass-endomorphism",
+        "conj:brane-tower-z-habiro",
+        "conj:kazhdan-lusztig-classical-limit",
+        "conj:hecke-anyonic-substrate"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/cl2-pentagon-and-faddeev-partial.ts"
     },
     {
       "label": "prop:co-lp-dual-binding",
@@ -970,6 +1164,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -989,6 +1185,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -1008,6 +1206,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -1052,6 +1252,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/information-theory/composite-crossing-parity.ts"
@@ -1071,6 +1273,8 @@
         "conj:baryon-period-ratio",
         "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/confined-knot-binding.ts"
@@ -1090,7 +1294,9 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
-        "conj:borromean-quark"
+        "conj:borromean-quark",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/confinement-categorical.ts"
     },
@@ -1103,6 +1309,8 @@
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
@@ -1128,6 +1336,8 @@
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/confinement-level-exists.ts"
@@ -1147,6 +1357,8 @@
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/confinement-level-unique.ts"
@@ -1165,6 +1377,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -1174,18 +1388,20 @@
       "label": "prop:confinement-nf-partial-proof",
       "kind": "proposition",
       "conj": [
+        "conj:crystal-graph-realization",
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
-        "conj:borromean-quark",
-        "conj:knot-factor-frobenius-pairing",
+        "conj:classical-limit-stpart",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
-        "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
-        "conj:shell-correction-term-seven"
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/confinement-nf-partial-proof.ts"
     },
@@ -1203,6 +1419,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -1222,6 +1440,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -1241,6 +1461,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -1260,6 +1482,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -1279,6 +1503,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -1297,6 +1523,76 @@
       "file": "content/quantum-observable-universe/fluid-dynamics/core-levi-form.ts"
     },
     {
+      "label": "prop:cpt-orbit-closure-density",
+      "kind": "proposition",
+      "conj": [
+        "conj:symmetric-crystal-pair-production",
+        "conj:crystal-graph-realization",
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:shell-correction-term-seven"
+      ],
+      "file": "content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.ts"
+    },
+    {
+      "label": "prop:crystal-basis-resolves-mass-tower-open-problems",
+      "kind": "proposition",
+      "conj": [
+        "conj:crystal-graph-realization",
+        "conj:kazhdan-lusztig-classical-limit",
+        "conj:hecke-anyonic-substrate",
+        "conj:dilogarithm-archimedean-limit",
+        "conj:kashaev-volume-conjecture",
+        "conj:mass-endomorphism",
+        "conj:brane-tower-z-habiro",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark",
+        "conj:bring-hyperbolic-knot-bloch-decomposition"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/crystal-basis-resolves-mass-tower-open-problems.ts"
+    },
+    {
+      "label": "prop:crystal-r-matrix-sub-lemma",
+      "kind": "proposition",
+      "conj": [
+        "conj:crystal-graph-realization",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:classical-limit-stpart",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:shell-correction-term-seven"
+      ],
+      "file": "content/quantum-observable-universe/braids-and-knots/crystal-r-matrix-sub-lemma.ts"
+    },
+    {
       "label": "prop:curvature-rank-gb-stratification",
       "kind": "proposition",
       "conj": [
@@ -1311,6 +1607,8 @@
         "conj:baryon-period-ratio",
         "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/curvature-rank-gb-stratification.ts"
@@ -1327,6 +1625,8 @@
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
@@ -1348,6 +1648,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -1367,10 +1669,33 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/particle-interactions/demand-stability.ts"
+    },
+    {
+      "label": "prop:demazure-fiber-markov-trace",
+      "kind": "proposition",
+      "conj": [
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:classical-limit-stpart",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
+        "conj:shell-correction-term-seven",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture"
+      ],
+      "file": "content/quantum-observable-universe/braids-and-knots/demazure-fiber-markov-trace.ts"
     },
     {
       "label": "prop:derived-mass-formula-light-isotopes",
@@ -1387,7 +1712,9 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
-        "conj:borromean-quark"
+        "conj:borromean-quark",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/derived-mass-formula-light-isotopes.ts"
     },
@@ -1405,6 +1732,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -1424,6 +1753,8 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -1444,7 +1775,9 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:shell-correction-term-seven",
-        "conj:borromean-quark"
+        "conj:borromean-quark",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/e-infinity-page-identifications.ts"
     },
@@ -1460,12 +1793,39 @@
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/eigenvalue-product-expansion.ts"
+    },
+    {
+      "label": "prop:em-coupling-bring-zero-mode",
+      "kind": "proposition",
+      "conj": [
+        "conj:dilogarithm-archimedean-limit",
+        "conj:bring-hyperbolic-knot-bloch-decomposition",
+        "conj:kashaev-volume-conjecture",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
+        "conj:shell-correction-term-seven",
+        "conj:mass-endomorphism",
+        "conj:brane-tower-z-habiro"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/em-coupling-bring-zero-mode.ts"
     },
     {
       "label": "prop:em-coupling-projection",
@@ -1481,6 +1841,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -1501,7 +1863,9 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:shell-correction-term-seven",
-        "conj:borromean-quark"
+        "conj:borromean-quark",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/explicit-alpha-k-h3.ts"
     },
@@ -1520,7 +1884,9 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:shell-correction-term-seven",
-        "conj:borromean-quark"
+        "conj:borromean-quark",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/explicit-alpha-k-h4.ts"
     },
@@ -1539,6 +1905,8 @@
         "conj:baryon-period-ratio",
         "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/exterior-square-borromean.ts"
@@ -1557,6 +1925,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -1576,6 +1946,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -1595,6 +1967,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -1614,6 +1988,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -1633,6 +2009,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -1653,6 +2031,8 @@
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/force-carrier-intertwining-correspondence.ts"
@@ -1671,6 +2051,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -1690,6 +2072,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -1709,6 +2093,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -1729,6 +2115,8 @@
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/frobenius-s-classification.ts"
@@ -1748,6 +2136,8 @@
         "conj:baryon-period-ratio",
         "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/full-pole-structure-mass-trace.ts"
@@ -1767,6 +2157,8 @@
         "conj:baryon-period-ratio",
         "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/gb-residue-spectral-sum.ts"
@@ -1785,6 +2177,8 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -1804,6 +2198,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -1823,6 +2219,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -1860,6 +2258,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -1879,6 +2279,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -1899,6 +2301,8 @@
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/graded-markov-trace-from-gs-filtration.ts"
@@ -1918,6 +2322,8 @@
         "conj:baryon-period-ratio",
         "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/graded-trace-residue-split.ts"
@@ -1937,7 +2343,9 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:shell-correction-term-seven",
-        "conj:borromean-quark"
+        "conj:borromean-quark",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization"
       ],
       "file": "content/quantum-observable-universe/descartes-universe/gram-determinant-plancherel-ratio.ts"
     },
@@ -1955,6 +2363,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -1975,7 +2385,9 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
-        "conj:borromean-quark"
+        "conj:borromean-quark",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization"
       ],
       "file": "content/quantum-observable-universe/observations/gravity-spectral-prefactor.ts"
     },
@@ -1993,6 +2405,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -2012,6 +2426,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -2032,6 +2448,8 @@
         "conj:baryon-period-ratio",
         "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/habiro-residue-sum-equivalence.ts"
@@ -2051,6 +2469,8 @@
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/hecke-branching-trace-decomposition.ts"
@@ -2067,6 +2487,8 @@
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark",
         "conj:hyperbolic-volume-transcendence",
@@ -2088,6 +2510,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -2107,6 +2531,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -2135,6 +2561,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -2151,6 +2579,8 @@
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
@@ -2174,6 +2604,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/descartes-universe/hydrogen-shell-writhe.ts"
@@ -2192,6 +2624,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -2211,6 +2645,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -2231,6 +2667,8 @@
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
         "conj:borromean-quark",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/descartes-universe/jet-gb-pl-correspondence.ts"
@@ -2239,18 +2677,20 @@
       "label": "prop:jet-prefix-gb-filtration",
       "kind": "proposition",
       "conj": [
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
+        "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
         "conj:classical-limit-stpart",
-        "conj:q-integer-mass-formula",
-        "conj:palindromicity-orbital-type",
-        "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
-        "conj:shell-correction-term-seven",
-        "conj:borromean-quark"
+        "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/jet-prefix-gb-filtration.ts"
     },
@@ -2268,6 +2708,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -2288,6 +2730,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:borromean-quark",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.ts"
@@ -2306,6 +2750,8 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -2326,6 +2772,8 @@
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/knot-operator-energy-exists.ts"
@@ -2345,6 +2793,8 @@
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/knot-operator-energy-unique.ts"
@@ -2367,6 +2817,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -2386,6 +2838,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -2402,6 +2856,8 @@
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
@@ -2424,6 +2880,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -2442,6 +2900,8 @@
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark",
         "conj:hyperbolic-volume-transcendence",
@@ -2468,10 +2928,33 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/particle-interactions/lp-dual-stability.ts"
+    },
+    {
+      "label": "prop:macdonald-hook-telescope",
+      "kind": "proposition",
+      "conj": [
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:classical-limit-stpart",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
+        "conj:shell-correction-term-seven",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture"
+      ],
+      "file": "content/quantum-observable-universe/braids-and-knots/macdonald-hook-telescope.ts"
     },
     {
       "label": "prop:magic-numbers-from-q",
@@ -2483,6 +2966,8 @@
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
@@ -2507,6 +2992,8 @@
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/markov-pair-z2.ts"
@@ -2526,6 +3013,8 @@
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/markov-trace-antipode-polynomial-symmetry.ts"
@@ -2545,6 +3034,8 @@
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/markov-trace-axiomatic-closed-form.ts"
@@ -2563,6 +3054,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -2582,6 +3075,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -2602,6 +3097,8 @@
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.ts"
@@ -2620,6 +3117,8 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -2639,6 +3138,8 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:borromean-quark",
         "conj:shell-correction-term-seven"
       ],
@@ -2658,6 +3159,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -2677,6 +3180,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -2696,6 +3201,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -2715,6 +3222,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -2732,6 +3241,8 @@
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
@@ -2751,6 +3262,8 @@
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
@@ -2772,6 +3285,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -2790,6 +3305,8 @@
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark",
         "conj:hyperbolic-volume-transcendence",
@@ -2815,6 +3332,8 @@
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark",
         "conj:hyperbolic-volume-transcendence",
@@ -2850,6 +3369,8 @@
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
@@ -2872,6 +3393,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -2891,6 +3414,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -2910,6 +3435,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -2930,6 +3457,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/descartes-universe/orbital-fourier-decomposition.ts"
@@ -2949,6 +3478,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/descartes-universe/orbital-space-normal-bundle.ts"
@@ -2967,6 +3498,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -2986,6 +3519,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -3006,6 +3541,8 @@
         "conj:baryon-period-ratio",
         "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/partition-sum-proton-residual.ts"
@@ -3025,7 +3562,9 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:shell-correction-term-seven",
-        "conj:borromean-quark"
+        "conj:borromean-quark",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/pauli-factor-wedderburn.ts"
     },
@@ -3043,6 +3582,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -3067,6 +3608,8 @@
         "conj:borromean-quark",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/per-braid-mass-tower.ts"
@@ -3085,6 +3628,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -3104,6 +3649,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -3124,6 +3671,8 @@
         "conj:baryon-period-ratio",
         "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/phi-q-categorical-truncation.ts"
@@ -3142,6 +3691,8 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -3162,6 +3713,8 @@
         "conj:baryon-period-ratio",
         "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/pieri-photon-shift.ts"
@@ -3181,7 +3734,9 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
-        "conj:borromean-quark"
+        "conj:borromean-quark",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/plancherel-term-7-formulation.ts"
     },
@@ -3200,7 +3755,9 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
-        "conj:borromean-quark"
+        "conj:borromean-quark",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/plancherel-weight-boundedness.ts"
     },
@@ -3218,6 +3775,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -3238,6 +3797,8 @@
         "conj:baryon-period-ratio",
         "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/quantum-observable-universes/q-dilogarithm-exists.ts"
@@ -3257,6 +3818,8 @@
         "conj:baryon-period-ratio",
         "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/quantum-observable-universes/q-dilogarithm-unique.ts"
@@ -3276,6 +3839,8 @@
         "conj:baryon-period-ratio",
         "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/quantum-observable-universes/q-exponential-exists.ts"
@@ -3295,6 +3860,8 @@
         "conj:baryon-period-ratio",
         "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/information-theory/q-exponential-taylor.ts"
@@ -3314,6 +3881,8 @@
         "conj:baryon-period-ratio",
         "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/quantum-observable-universes/q-exponential-unique.ts"
@@ -3332,6 +3901,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -3352,6 +3923,8 @@
         "conj:baryon-period-ratio",
         "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/information-theory/q-gaussian-solves-q-heat.ts"
@@ -3371,9 +3944,32 @@
         "conj:baryon-period-ratio",
         "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/information-theory/q-heat-kernel-peter-weyl.ts"
+    },
+    {
+      "label": "prop:q-hecke-seminormal-character-closure",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/braids-and-knots/q-hecke-seminormal-character-closure.ts"
     },
     {
       "label": "prop:q-logarithm-exists",
@@ -3390,6 +3986,8 @@
         "conj:baryon-period-ratio",
         "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/quantum-observable-universes/q-logarithm-exists.ts"
@@ -3409,6 +4007,8 @@
         "conj:baryon-period-ratio",
         "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/quantum-observable-universes/q-logarithm-unique.ts"
@@ -3428,6 +4028,8 @@
         "conj:baryon-period-ratio",
         "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/quantum-observable-universes/q-resolvent-exists.ts"
@@ -3447,6 +4049,8 @@
         "conj:baryon-period-ratio",
         "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/quantum-observable-universes/q-resolvent-unique.ts"
@@ -3463,6 +4067,8 @@
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
@@ -3485,6 +4091,8 @@
         "conj:baryon-period-ratio",
         "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/quantum-dilogarithm-stratified.ts"
@@ -3503,6 +4111,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -3522,6 +4132,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -3541,6 +4153,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -3560,6 +4174,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -3580,6 +4196,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/reidemeister-mass-invariance.ts"
@@ -3599,6 +4217,8 @@
         "conj:baryon-period-ratio",
         "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/residue-at-root.ts"
@@ -3617,10 +4237,33 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/rho-k-graded-expansion.ts"
+    },
+    {
+      "label": "prop:rho-k-h3a-refinement",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
+        "conj:shell-correction-term-seven"
+      ],
+      "file": "content/quantum-observable-universe/braids-and-knots/rho-k-h3a-refinement.ts"
     },
     {
       "label": "prop:rj-canonical-inner-product",
@@ -3636,6 +4279,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -3668,6 +4313,8 @@
         "conj:baryon-period-ratio",
         "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/schur-weyl-mass-decomposition.ts"
@@ -3687,6 +4334,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:borromean-quark",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/schur-weyl-vanishing.ts"
@@ -3706,6 +4355,8 @@
         "conj:baryon-period-ratio",
         "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/observations/sdp-regime-switch.ts"
@@ -3724,6 +4375,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -3743,6 +4396,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -3763,6 +4418,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/descartes-universe/shell-structure-eigenvalues.ts"
@@ -3782,9 +4439,32 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/shell-transition-knot.ts"
+    },
+    {
+      "label": "prop:sigma-shell-from-beta-chain-derivation",
+      "kind": "proposition",
+      "conj": [
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:classical-limit-stpart",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
+        "conj:shell-correction-term-seven",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture"
+      ],
+      "file": "content/quantum-observable-universe/braids-and-knots/sigma-shell-from-beta-chain-derivation.ts"
     },
     {
       "label": "prop:six-term-per-derivation-weights",
@@ -3801,6 +4481,8 @@
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/six-term-per-derivation-weights.ts"
@@ -3819,6 +4501,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -3838,6 +4522,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -3857,6 +4543,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -3877,6 +4565,8 @@
         "conj:baryon-period-ratio",
         "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/quantum-observable-universes/spectral-chart-correspondence.ts"
@@ -3896,6 +4586,8 @@
         "conj:baryon-period-ratio",
         "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/spectral-sequence-collapse.ts"
@@ -3915,7 +4607,9 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:shell-correction-term-seven",
-        "conj:borromean-quark"
+        "conj:borromean-quark",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/spectral-sequence-h3-explicit.ts"
     },
@@ -3933,6 +4627,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -3965,6 +4661,8 @@
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
         "conj:borromean-quark",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/descartes-universe/sw-period-thimble-equivalence.ts"
@@ -3983,6 +4681,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -4002,6 +4702,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -4021,6 +4723,8 @@
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
@@ -4044,7 +4748,9 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:shell-correction-term-seven",
-        "conj:borromean-quark"
+        "conj:borromean-quark",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/terms-2-6-higher-operations.ts"
     },
@@ -4062,6 +4768,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -4081,6 +4789,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -4100,6 +4810,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -4117,6 +4829,8 @@
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
@@ -4138,6 +4852,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -4157,6 +4873,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -4177,6 +4895,8 @@
         "conj:baryon-period-ratio",
         "conj:borromean-quark",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/topological-mass-formula-algebraic.ts"
@@ -4195,6 +4915,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -4214,6 +4936,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -4233,6 +4957,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -4252,6 +4978,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -4272,6 +5000,8 @@
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/particle-interactions/tower-binding-energy.ts"
@@ -4290,6 +5020,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -4309,6 +5041,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -4318,6 +5052,28 @@
       "label": "prop:transfer-matrix-level-independence",
       "kind": "proposition",
       "conj": [
+        "conj:crystal-graph-realization",
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:shell-correction-term-seven"
+      ],
+      "file": "content/quantum-observable-universe/braids-and-knots/transfer-matrix-level-independence.ts"
+    },
+    {
+      "label": "prop:type-b-folded-crystal-combinatorics",
+      "kind": "proposition",
+      "conj": [
+        "conj:knot-factor-frobenius-pairing",
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
         "conj:kashaev-volume-conjecture",
@@ -4327,11 +5083,18 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
-        "conj:knot-factor-frobenius-pairing",
         "conj:shell-correction-term-seven",
-        "conj:borromean-quark"
+        "conj:borromean-quark",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
+        "conj:kazhdan-lusztig-classical-limit",
+        "conj:hecke-anyonic-substrate",
+        "conj:dilogarithm-archimedean-limit",
+        "conj:mass-endomorphism",
+        "conj:brane-tower-z-habiro",
+        "conj:bring-hyperbolic-knot-bloch-decomposition"
       ],
-      "file": "content/quantum-observable-universe/braids-and-knots/transfer-matrix-level-independence.ts"
+      "file": "content/quantum-observable-universe/descartes-universe/type-b-folded-crystal-combinatorics.ts"
     },
     {
       "label": "prop:unified-curvature-rank-mass-formula",
@@ -4348,7 +5111,9 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
-        "conj:borromean-quark"
+        "conj:borromean-quark",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/unified-curvature-rank-mass-formula.ts"
     },
@@ -4361,6 +5126,8 @@
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
@@ -4383,6 +5150,8 @@
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark",
         "conj:hyperbolic-volume-transcendence",
@@ -4401,6 +5170,33 @@
       "file": "content/quantum-observable-universe/fluid-dynamics/p4-universality.ts"
     },
     {
+      "label": "prop:upstream-mathlib-additions",
+      "kind": "proposition",
+      "conj": [
+        "conj:dilogarithm-archimedean-limit",
+        "conj:bring-hyperbolic-knot-bloch-decomposition",
+        "conj:kashaev-volume-conjecture",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
+        "conj:shell-correction-term-seven",
+        "conj:mass-endomorphism",
+        "conj:brane-tower-z-habiro",
+        "conj:kazhdan-lusztig-classical-limit",
+        "conj:hecke-anyonic-substrate"
+      ],
+      "file": "content/quantum-observable-universe/descartes-universe/upstream-mathlib-additions.ts"
+    },
+    {
       "label": "prop:vertex-algebra-jet-relations",
       "kind": "proposition",
       "conj": [
@@ -4414,6 +5210,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -4433,6 +5231,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -4452,6 +5252,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -4469,6 +5271,8 @@
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark",
         "conj:hyperbolic-volume-transcendence",
@@ -4506,6 +5310,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -4523,6 +5329,8 @@
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
@@ -4545,7 +5353,9 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:shell-correction-term-seven",
-        "conj:borromean-quark"
+        "conj:borromean-quark",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/wedderburn-bratteli-recursion.ts"
     },
@@ -4563,6 +5373,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -4582,6 +5394,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -4599,6 +5413,8 @@
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
@@ -4618,6 +5434,8 @@
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
@@ -4640,6 +5458,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:borromean-quark",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/wenzl-qmn-synergy.ts"
@@ -4658,6 +5478,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -4677,6 +5499,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -4694,6 +5518,8 @@
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
@@ -4716,6 +5542,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:borromean-quark",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/y-lambda-cyclotomic-factorization.ts"
@@ -4734,10 +5562,33 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/y-lambda-recipe-from-partition.ts"
+    },
+    {
+      "label": "thm:confinement-grading-correspondence-conditional",
+      "kind": "theorem",
+      "conj": [
+        "conj:crystal-graph-realization",
+        "conj:confinement-grading-correspondence",
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:shell-correction-term-seven"
+      ],
+      "file": "content/quantum-observable-universe/braids-and-knots/confinement-grading-correspondence-conditional.ts"
     },
     {
       "label": "thm:em-spectral-completeness",
@@ -4753,6 +5604,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -4772,6 +5625,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -4792,7 +5647,9 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:shell-correction-term-seven",
-        "conj:borromean-quark"
+        "conj:borromean-quark",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/frobenius-antipode-unifies-chirality-and-tower.ts"
     },
@@ -4807,6 +5664,8 @@
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
@@ -4829,6 +5688,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -4848,6 +5709,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -4867,6 +5730,8 @@
         "conj:shell-closure-nf-term-count",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -4886,6 +5751,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -4904,6 +5771,8 @@
         "conj:q-integer-mass-formula",
         "conj:palindromicity-orbital-type",
         "conj:shell-closure-nf-term-count",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark",
         "conj:hyperbolic-volume-transcendence",
@@ -4930,6 +5799,8 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:borromean-quark"
       ],
@@ -4950,7 +5821,9 @@
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
         "conj:shell-correction-term-seven",
-        "conj:borromean-quark"
+        "conj:borromean-quark",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.ts"
     },
@@ -4966,6 +5839,8 @@
         "conj:classical-limit-stpart",
         "conj:hyperbolic-volume-transcendence",
         "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
         "conj:shell-correction-term-seven",
         "conj:e-hartree-categorical-derivation",
         "conj:phi-q-tower-jsj-bridge",
