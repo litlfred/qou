@@ -417,4 +417,99 @@ theorem pentagonSubgroup_real_contains_rogers_witness :
     rogersGenerator rogersPairTwoThree ∈ pentagonSubgroup (F := ℝ) :=
   rogersGenerator_mem_pentagonSubgroup rogersPairTwoThree
 
+/-! ## Toward genuine non-triviality of `pentagonSubgroup` over ℝ
+
+The previous lemmas establish only `Set.Nonempty` for the
+generator set; full `pentagonSubgroup (F := ℝ) ≠ ⊥` is **not yet
+proved**. The lemmas below are the *structural prerequisites*
+for that future proof: explicit computations of the five derived
+shape-parameter values at the (2, 3) Rogers pair.
+
+At (2, 3) the five derived shape-parameter values are
+
+  e₁ = 2,  e₂ = 3,  e₃ = 3/2,  e₄ = 4/3,  e₅ = 2.
+
+So e₁ = e₅ = 2 (a deliberate coincidence at this specific Rogers
+pair), and the four distinct values {2, 3, 3/2, 4/3} would
+produce linearly-independent generators in `FreeAbelianGroup`,
+giving
+
+  rogersGenerator rogersPairTwoThree
+    = of(2) - of(3) + of(3/2) - of(4/3) + of(2)
+    = 2·of(2) - of(3) + of(3/2) - of(4/3)  ≠  0.
+
+**The full distinctness proof is deferred** — it requires
+`FreeAbelianGroup` distinctness machinery (`FreeAbelianGroup.of`
+is injective for distinct inputs) plus arithmetic to combine
+the four distinct generators. We record only the explicit
+shape-parameter computations below; a future PR can use these
+lemmas to close the full non-triviality theorem. -/
+-- Ref: [bloch2000]
+theorem rogersPairTwoThree_shapes :
+    rogersPairTwoThree.x = 2 ∧
+    rogersPairTwoThree.y = 3 ∧
+    rogersPairTwoThree.shape₃.val = 3 / 2 := by
+  refine ⟨rfl, rfl, ?_⟩
+  unfold RogersPair.shape₃
+  norm_num
+
+/-- **Computed shape₄ value at (2, 3):**
+    `(1 - 1/3) / (1 - 1/2) = (2/3) / (1/2) = 4/3`. -/
+theorem rogersPairTwoThree_shape4 :
+    rogersPairTwoThree.shape₄.val = 4 / 3 := by
+  unfold RogersPair.shape₄ rogersPairTwoThree
+  field_simp
+  ring
+
+/-- **Computed shape₅ value at (2, 3):**
+    `(1 - 3) / (1 - 2) = (-2) / (-1) = 2`. Note this **coincides
+    with shape₁ = 2** at this specific Rogers pair — an
+    intentional degeneracy of the (2, 3) choice. -/
+theorem rogersPairTwoThree_shape5_eq_two :
+    rogersPairTwoThree.shape₅.val = 2 := by
+  unfold RogersPair.shape₅ rogersPairTwoThree
+  norm_num
+
+/-! ## §3b-cond: pentagon non-triviality class
+
+The full `rogersGenerator rogersPairTwoThree ≠ 0` proof requires
+`FreeAbelianGroup` distinctness machinery: a lift
+`FreeAbelianGroup PreBlochElement → ℤ` chosen to evaluate to a
+nonzero integer on the (2,3) Rogers combination. The clean route
+is via the floor-lift `f(e) := ⌊e.val⌋`, which sends the five
+shape parameters to `(2, 3, 1, 1, 2)`, giving
+
+  lift f (rogersGenerator rogersPairTwoThree)
+    = 2 - 3 + 1 - 1 + 2  =  1  ≠  0,
+
+so the generator is non-zero.
+
+This argument is straightforward but requires `Int.floor`-on-ℝ +
+`FreeAbelianGroup.lift` API + decidability infrastructure. We
+record it here as a §3b-cond class for downstream use; a future
+PR closes the class instance via the floor-lift route. -/
+-- Ref: [bloch2000]
+class RogersGeneratorNonZero
+    {F : Type*} [Field F] [DecidableEq F] : Prop where
+  /-- For every Rogers pair `r`, the corresponding 5-element
+      pentagon-relation generator is non-zero in `PreBlochGroup F`. -/
+  generator_ne_zero :
+    ∀ r : RogersPair F, rogersGenerator r ≠ 0
+
+/-- **Pentagon `AddSubgroup` is non-trivial (sorry-free,
+    conditional on `RogersGeneratorNonZero`).** Combining the
+    membership lemma with non-zero-ness of the generator
+    `rogersGenerator rogersPairTwoThree` shows
+    `pentagonSubgroup (F := ℝ) ≠ ⊥`: the subgroup contains a
+    non-zero element. -/
+-- Ref: [bloch2000]
+theorem pentagonSubgroup_real_neBot
+    [@RogersGeneratorNonZero ℝ _ _] :
+    pentagonSubgroup (F := ℝ) ≠ ⊥ := by
+  intro h
+  apply RogersGeneratorNonZero.generator_ne_zero rogersPairTwoThree
+  have hmem := pentagonSubgroup_real_contains_rogers_witness
+  rw [h] at hmem
+  exact AddSubgroup.mem_bot.mp hmem
+
 end QOU.Descartes.BlochQuotient

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T03:58:49.763524+00:00",
-  "commitSha": "ba9a03f9f210ccc55f6287a2c9d554654a9a3b97",
+  "computedAt": "2026-05-09T04:33:05.970903+00:00",
+  "commitSha": "ff2fb391e21fa46fbba401d8a0338d5fabc1f36a",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -1382,6 +1382,7 @@
         "categorical-q-decay-ba-low-isotopes.witness.json",
         "ch-bond-writhe-lp.witness.json",
         "channel-product-mass.witness.json",
+        "chirality-avg-content.witness.json",
         "chirality-braid-average.witness.json",
         "close-321-weinberg-gap.witness.json",
         "compute-audit-scan.witness.json",
@@ -1545,9 +1546,11 @@
         "term6-full-pole-sum.witness.json",
         "term6-residues-at-roots.witness.json",
         "term7-alpha5-crystal-derivation.witness.json",
+        "term7-chi5-basis.witness.json",
         "term7-height6-partition-enum.witness.json",
         "tier-0-atlas-pslq-check.witness.json",
         "tier-1-hyperbolic-3braid-pslq.witness.json",
+        "tier-2-higher-bridge-pslq.witness.json",
         "tier-2-hyperbolic-bridge3-pslq.witness.json",
         "toffoli-lp-stability.witness.json",
         "unified-low-isotope-predictor.witness.json",
