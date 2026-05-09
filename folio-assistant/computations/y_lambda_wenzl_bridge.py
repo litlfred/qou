@@ -34,6 +34,7 @@ References:
 """
 from __future__ import annotations
 
+import functools
 import json
 import sys
 from datetime import datetime, timezone
@@ -128,16 +129,46 @@ def y_lambda_wenzl_bridge_numeric(partition, q_val, dps: int = 50):
 def y_lambda_wenzl_bridge_symbolic(partition):
     """y_λ via Wenzl-bridge with q kept symbolic in sympy.
 
-    Returns a sympy expression in the symbol q (positive)."""
+    Returns a sympy expression in the symbol q (positive).
+
+    Optimizations: per-call result cached via lru_cache; the
+    normalization Σ_µ d_µ · s_{µ,r}(Q) is cached per n (instead of
+    recomputed for every partition λ of size n); the trailing
+    `sp.simplify` is dropped — `sp.cancel` alone is sufficient and
+    `simplify` on a rational expression with sqrt(q) terms dominates
+    runtime (>30x slower per audit
+    `docs/audits/2026-05-08-p3-h-3a-divergence.md`).
+    """
+    return _y_lambda_wenzl_bridge_symbolic_cached(tuple(partition))
+
+
+@functools.lru_cache(maxsize=None)
+def _y_lambda_wenzl_bridge_symbolic_cached(partition: tuple) -> "sp.Expr":
+    """Cached symbolic y_λ; partition keyed as tuple for hashability."""
+    return sp.cancel(
+        _schur_self_unnormalized(partition) / _wenzl_norm_for_n(sum(partition))
+    )
+
+
+@functools.lru_cache(maxsize=None)
+def _wenzl_norm_for_n(n: int) -> "sp.Expr":
+    """Wenzl normalization Σ_µ d_µ · s_{µ,r}(Q) for n, cached per n."""
+    parts = partitions_of(n)
+    return sum(
+        classical_dim(mu) * _schur_self_unnormalized(tuple(mu))
+        for mu in parts
+    )
+
+
+@functools.lru_cache(maxsize=None)
+def _schur_self_unnormalized(partition: tuple) -> "sp.Expr":
+    """schur_principal(partition, X, Q) with X, Q as the canonical Wenzl
+    substitutions in q.  Cached per partition shape."""
     q = sp.Symbol("q", positive=True)
     z = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))
     Q = q ** 2
     X = q * z / (1 - Q + q * z)
-    n = sum(partition)
-    parts = partitions_of(n)
-    s_self = schur_principal(partition, X, Q)
-    norm = sum(classical_dim(mu) * schur_principal(mu, X, Q) for mu in parts)
-    return sp.simplify(sp.cancel(s_self / norm))
+    return schur_principal(list(partition), X, Q)
 
 
 # ════════════════════════════════════════════════════════════════════
