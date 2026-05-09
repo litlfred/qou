@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T19:26:03.984984+00:00",
-  "commitSha": "a67f2cbd76fb042ddc1a61840d95d6ce6f7fce77",
+  "computedAt": "2026-05-09T19:27:49.117084+00:00",
+  "commitSha": "2dfd7c338e96e1818ffe0b16008a73ee5a50dcc3",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2157,6 +2157,7 @@
         "lr-fusion-self-conj-test.witness.json",
         "markov-free-energy-qvalues.witness.json",
         "markov-peel-atomic-tr-m.witness.json",
+        "markov-substrate-realization.witness.json",
         "markov-trace-atomic-proton-full.witness.json",
         "markov-trace-axiomatic-multi-atom.witness.json",
         "markov-trace-axiomatic-proton.witness.json",
