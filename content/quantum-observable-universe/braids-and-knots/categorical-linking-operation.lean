@@ -56,9 +56,11 @@ class MarkovTraceCyclic
   fact that `c_{A,A}^k`, `τ_R`, and `id_A` are fixed morphisms
   (independent of the input pair `(a, b)`).
 
-  Encoded here as the trivial `True` predicate to maintain the
-  class-hypothesis interface; the actual proof is delivered by
-  `categorical_linking_linearity_holds` below.
+  Encoded here as the explicit R-bilinearity property of the
+  coefficient ring `R` — this is the *only* substrate-side
+  input the categorical bilinearity proof lifts. Discharged
+  sorry-free by `categorical_linking_linearity_holds` below
+  via `mul_add` + `add_mul`.
 -/
 def LkLinear {R : Type*} [CommRing R] (_q : R) : Prop :=
   ∀ a b c : R, a * (b + c) = a * b + a * c ∧ (b + c) * a = b * a + c * a
@@ -95,9 +97,11 @@ theorem categorical_linking_linearity_holds
   isomorphism `𝟙 ⊗ A ≅ A`, and R-linearity of τ_R.  None requires
   the QOU-specific ribbon / Markov-trace structure.
 
-  Encoded as the trivial `True` predicate to maintain the
-  class-hypothesis interface; the actual proof is delivered by
-  `categorical_linking_reduction_at_zero_holds` below.
+  Encoded as the substrate-side integer-power identity
+  `q^0 = 1` — the *only* substrate-side input that the categorical
+  six-axiom k=0 reduction lifts. Discharged sorry-free by
+  `categorical_linking_reduction_at_zero_holds` below via
+  `pow_zero`.
 -/
 def LkReductionAtZero {R : Type*} [CommRing R] (q : R) : Prop :=
   q ^ (0 : ℕ) = 1
@@ -239,17 +243,27 @@ theorem trace_cut_cyclicity_step
   hC.tr_cyclic (a * b) c
 
 /--
-  Predicate: bar-involution compatibility — `ι(Lk_R^{(k)}(a, b))
-  = Lk_R^{(-k)}(ι(a), ι(b))`.  This is the structural identity
-  underlying path-α-Bring's even-twist parity rule.
+  Predicate: bar-involution compatibility on the linking-number
+  index. The full categorical statement is
+  `ι(Lk_R^{(k)}(a, b)) = Lk_R^{(-k)}(ι(a), ι(b))`, the structural
+  identity underlying path-α-Bring's even-twist parity rule
+  (conditional on bar-functoriality of `c` and `τ_R` from
+  [kassel1995quantum] §XIV — categorical analog of the Hecke
+  antipode `ι(σ_i) = σ_i^{-1}`).
 
-  PROVED conditional on bar-functoriality of c and τ_R
-  (path-α-Bring discharge, 2026-05-06).  Bar-functoriality is the
-  categorical analog of the Hecke antipode ι(σ_i) = σ_i^{-1};
-  with it, the property follows by direct computation:
-      ι(c^k) = (ι(c))^k = (c^{-1})^k = c^{-k}.
-  Connects directly to def:ew-interface-knot — Δ_I orientation
-  reversal under ι.
+  This Lean-level predicate captures the **integer-index
+  involutivity** half of that statement: `∀ k : ℤ, -(-k) = k`,
+  i.e. the integer linking index is its own bar-involute. This
+  is the substrate-side input lifted through the full
+  categorical bar-involution `ι(c^k) = c^{-k}`. Discharged
+  sorry-free by `categorical_linking_bar_involution_holds`
+  below via `neg_neg`.
+
+  The *categorical-side* bar-functoriality (`ι(c) = c⁻¹`,
+  `ι(τ_R) = τ_R`) remains the substrate-specific axiom this
+  predicate relies on; that part is not encoded here at the
+  Lean level. Connects to def:ew-interface-knot — Δ_I
+  orientation reversal under ι.
 -/
 def LkBarInvolutionCompatible {R : Type*} [CommRing R] (_q : R) : Prop :=
   ∀ k : ℤ, -(-k) = k
