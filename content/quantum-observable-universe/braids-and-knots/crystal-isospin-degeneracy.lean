@@ -63,10 +63,23 @@ abbrev SignedBraidWord : Type := List SignedLetter
 
 /-- Invert a chosen subset of the letters of a word (specified by
     a predicate on positions).  Letters with index `k` such that
-    `flip k = true` are inverted; others are unchanged. -/
+    `flip k = true` are inverted; others are unchanged.  Implemented
+    via a recursive helper `flipAux` rather than `List.mapIdx` so
+    the induction step in `crystal_isospin_degeneracy` proceeds by
+    pattern-matching without reasoning about `mapIdx`'s internal
+    counter. -/
+def SignedBraidWord.flipAux
+    (flip : ℕ → Bool) (offset : ℕ)
+    : SignedBraidWord → SignedBraidWord
+  | []      => []
+  | ℓ :: w  =>
+      (if flip offset then ℓ.invert else ℓ)
+        :: flipAux flip (offset + 1) w
+
+/-- Top-level word-flipping operation. -/
 def SignedBraidWord.flipAt
-    (flip : ℕ → Bool) : SignedBraidWord → SignedBraidWord :=
-  List.mapIdx (fun k ℓ => if flip k then ℓ.invert else ℓ)
+    (flip : ℕ → Bool) (w : SignedBraidWord) : SignedBraidWord :=
+  SignedBraidWord.flipAux flip 0 w
 
 /-- **Conjectural class.**  A `CrystalSignBlind R` instance asserts
     that the crystal-limit character `χ` factors through the
@@ -121,6 +134,28 @@ theorem charLetter_flipAt (flip : Bool) (ℓ : SignedLetter) :
 
 end CrystalSignBlind
 
+/-- **Auxiliary lemma (depth-shifted invariance).**
+
+    Conditional on `[CrystalSignBlind R]`, the crystal character of
+    `flipAux flip offset w` equals the crystal character of `w` for
+    every offset `offset : ℕ`.  Proof: induction on `w`, using
+    `charLetter_flipAt` on the head and `charWord_cons` to factor
+    the per-letter contribution. -/
+-- Ref: [manuscript] braids-and-knots/crystal-isospin-degeneracy
+theorem crystal_isospin_degeneracy_aux
+    {R : Type u} [Ring R] [C : CrystalSignBlind R]
+    (flip : ℕ → Bool) (offset : ℕ) (w : SignedBraidWord) :
+    C.charWord (SignedBraidWord.flipAux flip offset w) = C.charWord w := by
+  induction w generalizing offset with
+  | nil => rfl
+  | cons ℓ tail ih =>
+    -- LHS = charWord ((if flip offset then ℓ.invert else ℓ) :: flipAux flip (offset+1) tail)
+    --     = charLetter (if … then ℓ.invert else ℓ) * charWord (flipAux flip (offset+1) tail)
+    --     = charLetter ℓ * charWord tail   (by charLetter_flipAt and ih)
+    --     = charWord (ℓ :: tail)           (by charWord_cons)
+    simp only [SignedBraidWord.flipAux, C.charWord_cons,
+               CrystalSignBlind.charLetter_flipAt, ih]
+
 /-- **Theorem (crystal isospin degeneracy).**
 
     Conditional on `[CrystalSignBlind R]`, the crystal character
@@ -130,27 +165,18 @@ end CrystalSignBlind
 
       `charWord (flipAt flip w) = charWord w`.
 
-    Proof goes by induction on `w` using
-    `charLetter_flipAt`.  The induction step uses
-    `charWord_cons` to peel off the head letter, applies
-    `charLetter_flipAt` to the head, and recurses on the tail.
-
-    The use of `mapIdx` makes the proof slightly longer than the
-    plain-`map` analogue: we must thread the depth-shifted
-    predicate through the inductive call. -/
+    Proof: instance of `crystal_isospin_degeneracy_aux` at
+    `offset = 0`. -/
 -- Ref: [manuscript] braids-and-knots/crystal-isospin-degeneracy
 -- Ref: [kashiwara1991] https://doi.org/10.1215/S0012-7094-91-06321-0
 theorem crystal_isospin_degeneracy
-    {R : Type u} [Ring R] [C : CrystalSignBlind R]
+    {R : Type u} [Ring R] [_C : CrystalSignBlind R]
     (flip : ℕ → Bool) (w : SignedBraidWord) :
-    C.charWord (SignedBraidWord.flipAt flip w) = C.charWord w := by
-  -- The List.mapIdx induction principle is non-trivial; we package
-  -- the proof against an arbitrary depth offset.  Defer the formal
-  -- argument to the conditional class until the
-  -- crystal-graph-realization conjecture's full content is wired
-  -- through.
-  -- Ref: [manuscript] §crystal-isospin-degeneracy proof
-  sorry
+    CrystalSignBlind.charWord (R := R)
+        (SignedBraidWord.flipAt flip w)
+      = CrystalSignBlind.charWord (R := R) w := by
+  unfold SignedBraidWord.flipAt
+  exact crystal_isospin_degeneracy_aux flip 0 w
 
 /-- **Corollary (T--³He crystal degeneracy).**
 
