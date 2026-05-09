@@ -9,9 +9,11 @@ Issue #604 deliverable 4 (closes / narrows GAP-A-4).
 The conjecture asserts that the SDP multiplicity ρ(𝔥) of a confined
 particle 𝔥 with canonical Hecke element T_w ∈ H_{n_0}(q) satisfies
 
-    ρ(𝔥) = dim_q(λ*(T_w))   where   λ*(T_w) = argmax_{λ ⊢ n_0} |y_λ(q_0) · χ_λ(T_w)|
+    ρ(𝔥) = round(dim_q(λ*(T_w)))   where   λ*(T_w) = argmax_{λ ⊢ n_0} |y_λ(q_0) · χ_λ(T_w)|
 
 with `dim_q(λ) = [d_λ]_q` (q-deformed SYT count via hook-length).
+Round-to-nearest matches the Lean class field
+`rho_eq_qdim : |(rho : ℝ) - q_int d_lambda_star| ≤ 1/2`.
 
 This script evaluates the conjecture numerically for every B_3 atomic
 identification (proton, neutron, ²H/6_2, ³He/L₆ₐ₄) and reports:
