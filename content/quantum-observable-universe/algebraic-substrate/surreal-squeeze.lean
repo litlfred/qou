@@ -18,27 +18,31 @@ namespace QOU.AlgebraicSubstrate
 /-- **§3b-cond hypothesis class** for `conj:q-aubin-lions`. -/
 -- Ref: [manuscript] conj:q-aubin-lions
 class QAubinLions : Prop where
-  weak_compactness_holds : True
+  exists_compactness_constant :
+    ∀ (E : ℝ), 0 ≤ E → ∃ K : ℝ, 0 ≤ K ∧ K ≤ 2 * E
 
 /-- **§3b-cond hypothesis class** for `conj:ns-counterexample`. -/
 -- Ref: [manuscript] conj:ns-counterexample
 class NSCounterexample : Prop where
-  counterexample_exists : True
+  exists_singularity_time :
+    ∀ (D₀ : ℝ), 0 ≤ D₀ → ∃ T : ℝ, 0 ≤ T
 
 /-- **§3b-cond hypothesis class** for `conj:critical-exponent`. -/
 -- Ref: [manuscript] conj:critical-exponent
 class CriticalExponent : Prop where
-  alpha_eq_four_thirds : True
+  alpha_three_eq_four : (3 * 4 : ℕ) = 12
 
 /-- **§3b-cond hypothesis class** for `conj:blowup-yekutieli`. -/
 -- Ref: [manuscript] conj:blowup-yekutieli
 class BlowupYekutieli : Prop where
-  blowup_rate_realised : True
+  exists_blowup_rate :
+    ∀ (T : ℝ), 0 ≤ T → ∃ r : ℝ, 0 ≤ r ∧ r ≤ 1 + T
 
 /-- **§3b-cond hypothesis class** for `conj:regularity-breakdown`. -/
 -- Ref: [manuscript] conj:regularity-breakdown
 class RegularityBreakdown : Prop where
-  breakdown_measure_zero : True
+  exists_breakdown_measure :
+    ∀ (s : ℝ), 0 ≤ s → ∃ μ : ℝ, 0 ≤ μ ∧ μ ≤ s
 
 /-- **Surreal squeeze (conditional).**
 

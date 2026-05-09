@@ -1,10 +1,4 @@
 /-!
-<<<<<<< HEAD
-# QOU.Descartes.EWMassEigenstateCount
-
-Exactly three distinct EW/Higgs mass eigenstates from broken
-$\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$.
-=======
 # QOU.Descartes.EWMassEigenstateCount — `conj:electroweak-mass-eigenstate-count`
 
 Conjectural content: **after EWSB the post-Higgs Wedderburn block
@@ -18,7 +12,6 @@ photon).  The conjecture is non-empty in two ways:
 2. The multiplicity sum `Σ multiplicities = 4` is determined by the
    broken-generator count $\dim(\mathfrak{g} / \mathfrak{u}(1)_{em}) = 3$
    plus the residual real Higgs scalar $1$.
->>>>>>> 5516e6841 (upgrade conjecture classes: real content + 1 SM instance proof)
 
 LaTeX label: `conj:electroweak-mass-eigenstate-count`
 
@@ -47,25 +40,12 @@ explicit `[Instance]` hypothesis.
 - [manuscript] §EW mass eigenstate count, `conj:electroweak-mass-eigenstate-count`
 -/
 
+import Mathlib.Data.Real.Basic
+import Mathlib.Data.Matrix.Notation
+import Mathlib.Tactic.FinCases
+
 namespace QOU.Descartes
 
-<<<<<<< HEAD
-/-- **Conjecture class** for `conj:electroweak-mass-eigenstate-count`.
-
-    An instance asserts that the broken-EW gauge sector has exactly
-    three distinct mass eigenstates (W±, Z), with the photon γ
-    massless.
-
-    Ref: [manuscript] §EW mass eigenstate count -/
-class EWMassEigenstateCount where
-  /-- The number of distinct massive eigenstates after EW breaking. -/
-  massive_count : ℕ
-  /-- The number of distinct massless eigenstates (the photon). -/
-  massless_count : ℕ
-  /-- **Conjectural identity:** `massive_count = 3` (W±, Z) and
-      `massless_count = 1` (γ). -/
-  count_axiom : massive_count = 3 ∧ massless_count = 1
-=======
 /-- **`conj:electroweak-mass-eigenstate-count` (axiomatised).**
 
     EW mass-eigenstate count from the Descartes substrate.  Encodes
@@ -104,6 +84,5 @@ instance standardModel : EWMassEigenstateCount where
   multiplicity := ![2, 1, 1]
   massEigenvalue_nonneg := by intro i; fin_cases i <;> norm_num
   ew_mass_count_holds := by refine ⟨rfl, ?_⟩; rfl
->>>>>>> 5516e6841 (upgrade conjecture classes: real content + 1 SM instance proof)
 
 end QOU.Descartes

@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-import Mathlib.Data.Real.Basic
-import Mathlib.Algebra.Module.LinearMap.Basic
-import Mathlib.Algebra.Module.End
-import Mathlib.Tactic.FinCases
-import Mathlib.Data.Matrix.Notation
-
-/-!
-# QOU.BraidKnot.WeakSpectralCompleteness
-
-Plancherel completeness for the EW/Higgs {T(2,4), T(2,6), T(2,8)} idempotent decomposition.
-=======
 /-!
 # QOU.WeakSpectralCompleteness — `conj:weak-spectral-completeness` axiomatised
 
@@ -18,7 +6,6 @@ weak-sector spectrum** — the spectral basis indexed by Hoefsmit cells
 is complete in the weak-interaction sub-algebra of $H_n(q)$.  In
 practice this requires lifting the $H_2(q)$-only formulation to
 $\mathrm{End}_R(A)$ with $n \geq 3$.
->>>>>>> 5516e6841 (upgrade conjecture classes: real content + 1 SM instance proof)
 
 LaTeX label: `conj:weak-spectral-completeness`
 
@@ -47,42 +34,6 @@ explicit `[Instance]` hypothesis to retain
 
 namespace QOU.BraidKnot
 
-<<<<<<< HEAD
-/-- **Conjecture class** for `conj:weak-spectral-completeness`,
-    operator-level form.
-
-    Parameterised by a base ring `R` (the Hecke-algebra coefficient
-    ring) and an EW/Higgs sector `R`-module `EWModule`.  The
-    conjecture asserts the three torus-knot Plancherel idempotents
-    `e_T_2_4`, `e_T_2_6`, `e_T_2_8` are pairwise-orthogonal
-    idempotents of `EWModule` whose sum is the identity (Plancherel
-    completeness for the {T(2,4), T(2,6), T(2,8)} idempotent
-    decomposition of the EW/Higgs sector). -/
-class WeakSpectralCompleteness (R : Type*) [Ring R] (EWModule : Type*)
-    [AddCommGroup EWModule] [Module R EWModule] where
-  /-- Idempotent projector for the T(2,4) torus knot. -/
-  e_T_2_4 : Module.End R EWModule
-  /-- Idempotent projector for the T(2,6) torus knot. -/
-  e_T_2_6 : Module.End R EWModule
-  /-- Idempotent projector for the T(2,8) torus knot. -/
-  e_T_2_8 : Module.End R EWModule
-  /-- Each `e_T_{2,2k}` is idempotent. -/
-  is_idempotent_24 : e_T_2_4 ∘ₗ e_T_2_4 = e_T_2_4
-  is_idempotent_26 : e_T_2_6 ∘ₗ e_T_2_6 = e_T_2_6
-  is_idempotent_28 : e_T_2_8 ∘ₗ e_T_2_8 = e_T_2_8
-  /-- Pairwise orthogonality (bidirectional, since `Module.End R EWModule`
-      is non-commutative under composition): `e_i ∘ e_j = 0` AND
-      `e_j ∘ e_i = 0` for every distinct `i ≠ j`. -/
-  orthogonal_24_26 : e_T_2_4 ∘ₗ e_T_2_6 = 0
-  orthogonal_26_24 : e_T_2_6 ∘ₗ e_T_2_4 = 0
-  orthogonal_24_28 : e_T_2_4 ∘ₗ e_T_2_8 = 0
-  orthogonal_28_24 : e_T_2_8 ∘ₗ e_T_2_4 = 0
-  orthogonal_26_28 : e_T_2_6 ∘ₗ e_T_2_8 = 0
-  orthogonal_28_26 : e_T_2_8 ∘ₗ e_T_2_6 = 0
-  /-- Plancherel completeness: the three idempotents sum to the
-      identity on the EW/Higgs sector. -/
-  spans : e_T_2_4 + e_T_2_6 + e_T_2_8 = LinearMap.id
-=======
 /-- **`conj:weak-spectral-completeness` (axiomatised).**
 
     The spectral basis indexed by Hoefsmit cell-content data spans
@@ -103,7 +54,6 @@ class WeakSpectralCompleteness where
       basis. -/
   -- Ref: [manuscript] braids-and-knots/weak-spectral-completeness
   weak_spectral_completeness_holds : completenessIndex = 1
->>>>>>> 5516e6841 (upgrade conjecture classes: real content + 1 SM instance proof)
 
 /-- **Structural skeleton** of `conj:weak-spectral-completeness`
     (kept for `uses` cone bookkeeping under §3b-cond — see CLAUDE.md).

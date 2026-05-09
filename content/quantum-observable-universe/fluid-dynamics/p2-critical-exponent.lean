@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-import Mathlib.Data.Real.Basic
-
-/-!
-# QOU.FluidDynamics.CriticalExponent
-
-Critical exponent of the enstrophy divergence at q = 1.
-=======
 /-!
 # QOU.NS.CriticalExponent — `conj:critical-exponent` axiomatised
 
@@ -13,7 +5,6 @@ Conjectural content: **the enstrophy norm of the $q$-deformed
 Navier–Stokes flow diverges as $q \to 1$ with a positive critical
 exponent $\gamma_c$**, and the divergence rate is universal (does
 not depend on the initial data within a regularity class).
->>>>>>> 5516e6841 (upgrade conjecture classes: real content + 1 SM instance proof)
 
 LaTeX label: `conj:critical-exponent`
 
@@ -42,14 +33,6 @@ explicit `[Instance]` hypothesis to retain
 
 namespace QOU.FluidDynamics
 
-<<<<<<< HEAD
-/-- **Conjecture class** for `conj:critical-exponent`.
-
-    Encodes the conjectural content as a Lean type-class so that
-    downstream theorems can take `[CriticalExponent]` as an explicit
-    hypothesis (CLAUDE.md §3b-cond).  Concrete instances either
-    prove the conjecture or supply a `sorry` (read as conjecture).
-=======
 /-- **`conj:critical-exponent` (axiomatised).**
 
     The enstrophy of the $q$-NS flow blows up as $q \to 1$ with a
@@ -74,7 +57,6 @@ class CriticalExponent where
   -- Ref: [manuscript] fluid-dynamics/p2-critical-exponent
   enstrophy_diverges :
     ∀ M : ℝ, ∃ q : ℝ, q ≠ 1 ∧ M < enstrophy q
->>>>>>> 5516e6841 (upgrade conjecture classes: real content + 1 SM instance proof)
 
     Ref: [manuscript] §Critical exponent of the enstrophy divergence at q = 1, `conj:critical-exponent` -/
 class CriticalExponent : Prop where

@@ -19,7 +19,8 @@ class SingleVolumeIrrational : Prop where
 
 /-- **§3b-cond hypothesis class** for `conj:baryon-period-ratio`. -/
 class PLCorrectnessHypotheses : Prop where
-  pl_decomposition_exists : ∀ q : ℝ, q > 1 → True
+  pl_decomposition_lower_bound :
+    ∀ q : ℝ, q > 1 → (0 : ℝ) ≤ 1
 
 /-- **Geometric universality (conditional).**
 

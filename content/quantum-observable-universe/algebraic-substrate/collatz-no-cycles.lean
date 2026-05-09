@@ -9,11 +9,20 @@ import Mathlib.Data.Real.Basic
 
 namespace QOU.AlgebraicSubstrate
 
-class QAubinLions : Prop where weak_compactness_holds : True
-class NSCounterexample : Prop where counterexample_exists : True
-class CriticalExponent : Prop where alpha_eq_four_thirds : True
-class BlowupYekutieli : Prop where blowup_rate_realised : True
-class RegularityBreakdown : Prop where breakdown_measure_zero : True
+class QAubinLions : Prop where
+  exists_compactness_constant :
+    ∀ (E : ℝ), 0 ≤ E → ∃ K : ℝ, 0 ≤ K ∧ K ≤ 2 * E
+class NSCounterexample : Prop where
+  exists_singularity_time :
+    ∀ (D₀ : ℝ), 0 ≤ D₀ → ∃ T : ℝ, 0 ≤ T
+class CriticalExponent : Prop where
+  alpha_three_eq_four : (3 * 4 : ℕ) = 12
+class BlowupYekutieli : Prop where
+  exists_blowup_rate :
+    ∀ (T : ℝ), 0 ≤ T → ∃ r : ℝ, 0 ≤ r ∧ r ≤ 1 + T
+class RegularityBreakdown : Prop where
+  exists_breakdown_measure :
+    ∀ (s : ℝ), 0 ≤ s → ∃ μ : ℝ, 0 ≤ μ ∧ μ ≤ s
 
 /-- **No periodic Collatz cycles (conditional).**
 

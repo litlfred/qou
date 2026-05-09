@@ -239,19 +239,19 @@ def H2.sigma (R : Type u) [CommRing R] : H2Carrier R := (0, 1)
 
 /-- Multiplication on `H_2(q)`: derived from the Hecke relation
     `σ_1² = (q - q⁻¹) σ_1 + 1`. -/
-def H2.mul {R : Type u} [CommRing R] (q : R)
+def H2.mul {R : Type u} [Field R] (q : R)
     (x y : H2Carrier R) : H2Carrier R :=
   (x.1 * y.1 + x.2 * y.2,
    x.1 * y.2 + x.2 * y.1 + x.2 * y.2 * (q - q⁻¹))
 
 /-- Identity: `1 · σ_1 = σ_1`. -/
-theorem H2.one_mul_sigma {R : Type u} [CommRing R] (q : R) :
+theorem H2.one_mul_sigma {R : Type u} [Field R] (q : R) :
     H2.mul q (H2.one R) (H2.sigma R) = H2.sigma R := by
   show (1 * 0 + 0 * 1, 1 * 1 + 0 * 0 + 0 * 1 * (q - q⁻¹)) = (0, 1)
   simp
 
 /-- Identity: `σ_1 · 1 = σ_1`. -/
-theorem H2.sigma_mul_one {R : Type u} [CommRing R] (q : R) :
+theorem H2.sigma_mul_one {R : Type u} [Field R] (q : R) :
     H2.mul q (H2.sigma R) (H2.one R) = H2.sigma R := by
   show (0 * 1 + 1 * 0, 0 * 0 + 1 * 1 + 1 * 0 * (q - q⁻¹)) = (0, 1)
   simp
@@ -260,7 +260,7 @@ theorem H2.sigma_mul_one {R : Type u} [CommRing R] (q : R) :
     `H2.mul q σ σ = ((q - q⁻¹), 1) · σ + (1, 0)` ... actually
     `σ_1² = 1 · 1 + (q - q⁻¹) · σ_1`, so the carrier value is
     `(1, q - q⁻¹)`. -/
-theorem H2.sigma_sq_eq {R : Type u} [CommRing R] (q : R) :
+theorem H2.sigma_sq_eq {R : Type u} [Field R] (q : R) :
     H2.mul q (H2.sigma R) (H2.sigma R) = (1, q - q⁻¹) := by
   show (0 * 0 + 1 * 1, 0 * 1 + 1 * 0 + 1 * 1 * (q - q⁻¹)) = (1, q - q⁻¹)
   simp
@@ -438,7 +438,7 @@ def H3.smul {R : Type u} [CommRing R] (a : R) (x : H3Carrier R) : H3Carrier R :=
     - `σ_1 · σ_2 σ_1 = σ_1 σ_2 σ_1` (basis position 6).
     - `σ_1 · σ_1 σ_2 σ_1 = (q-q⁻¹) σ_1 σ_2 σ_1 + σ_2 σ_1`
       (positions 5, 6). -/
-def H3.mulSigma1 {R : Type u} [CommRing R] (q : R) (x : H3Carrier R) :
+def H3.mulSigma1 {R : Type u} [Field R] (q : R) (x : H3Carrier R) :
     H3Carrier R :=
   (x.2.1,
    x.1 + x.2.1 * (q - q⁻¹),
@@ -457,7 +457,7 @@ def H3.mulSigma1 {R : Type u} [CommRing R] (q : R) (x : H3Carrier R) :
     - `σ_2 · σ_2 σ_1 = (q-q⁻¹) σ_2 σ_1 + σ_1` (positions 2, 5).
     - `σ_2 · σ_1 σ_2 σ_1 = (q-q⁻¹) σ_1 σ_2 σ_1 + σ_1 σ_2`
       (positions 4, 6). -/
-def H3.mulSigma2 {R : Type u} [CommRing R] (q : R) (x : H3Carrier R) :
+def H3.mulSigma2 {R : Type u} [Field R] (q : R) (x : H3Carrier R) :
     H3Carrier R :=
   (x.2.2.1,
    x.2.2.2.2.1,
@@ -495,7 +495,7 @@ theorem H3.braid_relation (q : ℝ) :
     + a₃·σ_2 + a₄·σ_1σ_2 + a₅·σ_2σ_1 + a₆·σ_1σ_2σ_1`, with
     each basis-element-times-y computed by iterated generator
     action. -/
-def H3.mul {R : Type u} [CommRing R] (q : R) (x y : H3Carrier R) :
+def H3.mul {R : Type u} [Field R] (q : R) (x y : H3Carrier R) :
     H3Carrier R :=
   let c1 := H3.smul x.1 y                                    -- 1 · y
   let c2 := H3.smul x.2.1 (H3.mulSigma1 q y)                 -- σ_1 · y
@@ -510,7 +510,7 @@ def H3.mul {R : Type u} [CommRing R] (q : R) (x y : H3Carrier R) :
   H3.add c1 (H3.add c2 (H3.add c3 (H3.add c4 (H3.add c5 c6))))
 
 /-- Identity law: `1 · y = y`. -/
-theorem H3.one_mul {R : Type u} [CommRing R] (q : R) (y : H3Carrier R) :
+theorem H3.one_mul {R : Type u} [Field R] (q : R) (y : H3Carrier R) :
     H3.mul q (H3.one R) y = y := by
   unfold H3.mul H3.one H3.smul H3.add
   obtain ⟨_, _, _, _, _, _⟩ := y

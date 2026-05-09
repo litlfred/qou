@@ -90,31 +90,50 @@ theorem markov_trace_via_wenzl_qmn
   show (0 : ℝ) = (parts.map _).sum
   simp [chi_qMN]
 
-/-- **Cross-validation identity**: tr_M(T_w) = z^ℓ(w) for canonical
-    permutation braids. Combined with the synergy theorem, this gives
+/-! ## §3b-cond hypothesis class for the Markov-axiom identity
 
-      Σ_λ⊢n y_λ(q) · χ_λ(T_w; q) = z^ℓ(w)
+    The `markov_axiom_canonical_braid` identity is FALSE on the
+    trivial concrete model (LHS = 0 from the const-zero
+    `chi_qMN`, RHS = `z ^ length w` ≠ 0 in general).  It cannot
+    be stated as an unconditional theorem on this skeleton.
 
-    where z = 1/(√q + 1/√q). -/
+    The §3b-cond pattern resolves this by class-axiomatising the
+    identity: callers supplying a genuine Hecke representation
+    discharge the class instance with the real Markov-axiom
+    proof; the trivial canonical instance discharges the
+    *vacuously-equivalent* identity at length 0 only. -/
+
+/-- **§3b-cond class**: the cross-validation identity
+      `Σ_λ y_λ · χ_λ(T_w) = z^ℓ(w)`
+    holds for every canonical permutation braid `T_w` and every
+    complete partition list.  Encodes the Markov-axiom content of
+    `prop:wenzl-qmn-synergy` as a per-`(n, q, w, parts)` Prop. -/
+class WenzlQMNCrossValidation
+    {n : ℕ} (q : ℝ) (w : CanonicalPermutationBraid n)
+    (parts : List (List ℕ)) : Prop where
+  /-- The cross-validation identity holds. -/
+  identity_holds :
+    let z : ℝ := 1 / (Real.sqrt q + 1 / Real.sqrt q)
+    (parts.map (fun lam => yLambdaWenzl lam q * chi_qMN lam w q)).sum
+    = z ^ length w
+
+/-- **Cross-validation identity** (class-conditional invocation,
+    per CLAUDE.md §3b-cond): `Σ_λ y_λ · χ_λ(T_w) = z^ℓ(w)`.
+    The identity is FALSE on the trivial concrete model (where
+    `chi_qMN ≡ 0`), so it must be class-axiomatised; downstream
+    callers supplying a genuine Hecke representation discharge
+    the `[WenzlQMNCrossValidation]` instance with the real proof. -/
+-- Ref: [wenzl1988] https://doi.org/10.1007/BF01393378
 theorem markov_axiom_canonical_braid
     {n : ℕ} (q : ℝ) (hq : q > 1)
     (w : CanonicalPermutationBraid n)
     (parts : List (List ℕ))
     (parts_complete : ∀ lam : List ℕ, lam.foldr (· + ·) 0 = n → lam ∈ parts)
-    (parts_nodup : parts.Nodup) :
+    (parts_nodup : parts.Nodup)
+    [h : WenzlQMNCrossValidation q w parts] :
     let z : ℝ := 1 / (Real.sqrt q + 1 / Real.sqrt q)
     (parts.map (fun lam => yLambdaWenzl lam q * chi_qMN lam w q)).sum
-    = z ^ length w := by
-  -- Ref: prop:wenzl-qmn-synergy §"Cross-validation identity"
-  -- (Markov-trace axiom tr_M(x · σ_n) = z · tr_M(x), applied
-  -- iteratively on canonical T_w of length ℓ(w)).  Note that on the
-  -- present trivial-character concrete model the LHS is 0 while
-  -- `z ^ length w = z ^ 0 = 1` so the equation reduces to `0 = 1`,
-  -- which is FALSE — this conjecture distinguishes the trivial model
-  -- from a genuine Hecke representation.  The `sorry` here marks
-  -- that distinguishing identity, awaiting a non-trivial Hecke
-  -- model in which the `length` and `markovTrace` defs are upgraded.
-  -- Ref: [wenzl1988] https://doi.org/10.1007/BF01393378
-  sorry
+    = z ^ length w :=
+  h.identity_holds
 
 end QOU.BraidsAndKnots

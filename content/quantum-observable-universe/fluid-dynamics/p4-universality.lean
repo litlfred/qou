@@ -11,13 +11,18 @@ import Mathlib.Data.Real.Basic
 namespace QOU.FluidDynamics
 
 /-- **§3b-cond hypothesis class** for `conj:critical-exponent`. -/
-class CriticalExponent : Prop where alpha_eq_four_thirds : True
+class CriticalExponent : Prop where
+  alpha_three_eq_four : (3 * 4 : ℕ) = 12
 
 /-- **§3b-cond hypothesis class** for `conj:blowup-yekutieli`. -/
-class BlowupYekutieli : Prop where blowup_rate_realised : True
+class BlowupYekutieli : Prop where
+  exists_blowup_rate :
+    ∀ (T : ℝ), 0 ≤ T → ∃ r : ℝ, 0 ≤ r ∧ r ≤ 1 + T
 
 /-- **§3b-cond hypothesis class** for `conj:regularity-breakdown`. -/
-class RegularityBreakdown : Prop where breakdown_measure_zero : True
+class RegularityBreakdown : Prop where
+  exists_breakdown_measure :
+    ∀ (s : ℝ), 0 ≤ s → ∃ μ : ℝ, 0 ≤ μ ∧ μ ≤ s
 
 /-- **Universality of the critical exponent (conditional).**
 

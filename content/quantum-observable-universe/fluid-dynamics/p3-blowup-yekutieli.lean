@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-import Mathlib.Data.Real.Basic
-
-/-!
-# QOU.FluidDynamics.BlowupYekutieli
-
-Blowup mechanism as Yekutieli lifting obstruction in the brane tower.
-=======
 /-!
 # QOU.NS.BlowupYekutieli — `conj:blowup-yekutieli` axiomatised
 
@@ -13,7 +5,6 @@ Conjectural content: **finite-time NS blowup is identified with the
 finite obstruction level of the Yekutieli archimedean lift** — the
 classical-NS blowup time $T^*$ matches the level at which the
 Yekutieli tower obstruction first becomes non-trivial.
->>>>>>> 5516e6841 (upgrade conjecture classes: real content + 1 SM instance proof)
 
 LaTeX label: `conj:blowup-yekutieli`
 
@@ -37,24 +28,12 @@ explicit `[Instance]` hypothesis to retain
 
 ## References
 
-<<<<<<< HEAD
-- [manuscript] §Blowup mechanism as Yekutieli lifting obstruction in the brane tower, `conj:blowup-yekutieli`
-=======
 - [yekutieli2010] §3-4 (archimedean lift / brane tower)
 - [manuscript] fluid-dynamics/p3-blowup-yekutieli
->>>>>>> 5516e6841 (upgrade conjecture classes: real content + 1 SM instance proof)
 -/
 
 namespace QOU.FluidDynamics
 
-<<<<<<< HEAD
-/-- **Conjecture class** for `conj:blowup-yekutieli`.
-
-    Encodes the conjectural content as a Lean type-class so that
-    downstream theorems can take `[BlowupYekutieli]` as an explicit
-    hypothesis (CLAUDE.md §3b-cond).  Concrete instances either
-    prove the conjecture or supply a `sorry` (read as conjecture).
-=======
 /-- **`conj:blowup-yekutieli` (axiomatised).**
 
     The classical-NS blowup time $T^*(u_0)$ for initial data $u_0$
@@ -79,7 +58,6 @@ class BlowupYekutieli where
   -- Ref: [manuscript] fluid-dynamics/p3-blowup-yekutieli
   blowup_yekutieli_holds :
     ∀ u₀, ∃ c : ℝ, blowupTime u₀ = c * (yekutieliLevel u₀ : ℝ) ^ yekutieliExponent
->>>>>>> 5516e6841 (upgrade conjecture classes: real content + 1 SM instance proof)
 
     Ref: [manuscript] §Blowup mechanism as Yekutieli lifting obstruction in the brane tower, `conj:blowup-yekutieli` -/
 class BlowupYekutieli : Prop where
