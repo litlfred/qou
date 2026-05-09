@@ -155,4 +155,22 @@ theorem habiro_truncation_bound
     linarith
   exact mul_le_of_le_one_right (abs_nonneg _) h_factor_lt_one
 
+/-- **Supercritical truncation bound** (q > 1, the QOU substrate
+    regime).  At `q₀ ≈ 1.110 > 1` the original `habiro_truncation_bound`
+    does not apply directly — each new factor `|1 - q^{N+1}|` exceeds
+    1.  Bridges via the Habiro `q ↔ q⁻¹` involution: `q > 1` implies
+    `0 < q⁻¹ < 1`, so the original bound applies to `qPochhammer q⁻¹`.
+
+    Ref: [habiro2004] https://doi.org/10.2140/gt.2004.8.1127. -/
+theorem habiro_truncation_bound_supercrit
+    (q : ℝ) (hq : 1 < q) (N : ℕ) :
+    |qPochhammer (q⁻¹) (N + 1)| ≤ |qPochhammer (q⁻¹) N| := by
+  have hqpos : (0 : ℝ) < q := lt_trans zero_lt_one hq
+  have hinvpos : (0 : ℝ) < q⁻¹ := inv_pos.mpr hqpos
+  have hinvlt : q⁻¹ < 1 := by
+    have hne : q ≠ 0 := ne_of_gt hqpos
+    have hmul : q⁻¹ * q = 1 := inv_mul_cancel₀ hne
+    nlinarith
+  exact habiro_truncation_bound (q⁻¹) hinvpos hinvlt N
+
 end QOU.BraidKnot
