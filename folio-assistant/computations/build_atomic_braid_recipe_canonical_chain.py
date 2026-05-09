@@ -235,9 +235,9 @@ def build_chain(slug: str, label: str, Z: int, N: int) -> DerivationChain:
         operation=(
             f"Combine steps 3–6 into the atom assembly:\n"
             f"  T_w(Z = {Z}, N = {N}) := \n"
-            f"    ∏_{{k=1}}^{Z} (proton word shifted by block k)  ∘\n"
+            f"    ∏_{{k=1}}^{Z} (proton word shifted by block k) ∘\n"
             f"    ∏_{{k=Z+1}}^{{{A}}} (neutron word shifted by block k) ∘\n"
-            f"    ∏_{{k=1}}^{{{A}-1}} (inter-nucleon averaged crossing at gen 3k+2).\n"
+            f"    ∏_{{k=1}}^{{{A}-1}} (inter-nucleon averaged crossing at generator 3k+2).\n"
             f"Pure algebra: sequence of disjoint-block + interface "
             f"crossings concatenated in B_{{{n_strands}}}."
         ),

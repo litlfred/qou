@@ -219,7 +219,7 @@
     },
     {
       "name": "Atom assembly rule T_w(proton) ∈ B_{3}",
-      "operation": "Combine steps 3–6 into the atom assembly:\n  T_w(Z = 1, N = 0) := \n    ∏_{k=1}^1 (proton word shifted by block k)  ∘\n    ∏_{k=Z+1}^{1} (neutron word shifted by block k) ∘\n    ∏_{k=1}^{1-1} (inter-nucleon averaged crossing at gen 3k+2).\nPure algebra: sequence of disjoint-block + interface crossings concatenated in B_{3}.",
+      "operation": "Combine steps 3–6 into the atom assembly:\n  T_w(Z = 1, N = 0) := \n    ∏_{k=1}^1 (proton word shifted by block k) ∘\n    ∏_{k=Z+1}^{1} (neutron word shifted by block k) ∘\n    ∏_{k=1}^{1-1} (inter-nucleon averaged crossing at generator 3k+2).\nPure algebra: sequence of disjoint-block + interface crossings concatenated in B_{3}.",
       "inputs": [
         "proton_canonical_word",
         "neutron_canonical_word",
