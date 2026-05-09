@@ -14,10 +14,21 @@ assembly** $M(K) = \rho_K \cdot m_e \cdot |\operatorname{tr}_M(K)|$
 that landed on `main` in [PR #564](https://github.com/litlfred/qou/pull/564)
 (commits `86aaeb51a` / `400c7961d`).
 
-The leading-order ansatz $\rho_K^{\text{LO}} = (Z\,m_p + N\,m_n) /
-(m_e\,|\operatorname{tr}_M|)$ is a **placeholder** — it numerically
-matches CODATA at 0.1-0.8% per atom but is NOT the categorical
-formula. The real structure lives **per Wedderburn block**:
+⚠ **The LO ρ_K ansatz is a tautology, not a prediction.** Per
+[PR #600's audit](https://github.com/litlfred/qou/pull/600#issue-…)
+([`docs/audits/2026-05-09-mass-table-fitting-audit.md`](2026-05-09-mass-table-fitting-audit.md)
+§"Δ_λ derivation status"): defining
+$\rho_K^{\text{LO}} \equiv (Z\,m_p + N\,m_n) / (m_e\,|\operatorname{tr}_M|)$
+makes $|\operatorname{tr}_M|$ cancel in
+$M(K) = \rho_K^{\text{LO}} \cdot m_e \cdot |\operatorname{tr}_M|$,
+yielding $M_{\text{pred}}^{\text{LO}} = Z\,m_p + N\,m_n$ by
+construction. The "0.119 / 0.302 / 0.275 / 0.759 % errors" on
+D / T / ³He / ⁴He **are exactly the AME binding energies** —
+the LO framework predicts **null binding**.
+
+The real structure lives **per Wedderburn block** in the
+$\Delta_\lambda(K)$ corrections, which **derive the binding energy
+from substrate**:
 
 $$
   \boxed{\;\;
@@ -30,15 +41,24 @@ per [`prop:rho-k-h3a-refinement`](../../content/quantum-observable-universe/brai
 with **per-block binding fractions** $\Delta_\lambda(K)$. The
 LO ansatz is the limit $\Delta_\lambda \equiv 0$.
 
-The open problem is deriving $\Delta_\lambda(K)$ categorically.
-PR #613's [Δ_λ derivation race](https://github.com/litlfred/qou/pull/613)
-tested 5 closure principles ($\text{Occam} / \text{co-Casimir} /
-\text{LP-shadow} / \text{Wenzl-bridge} / \text{Frobenius-pairing-min-norm}$)
-and **all 5 fail or trivialise**. Per the
-[GAP-A-3 / GAP-A-4 guidance](2026-05-09-gap-a-3-a-4-guidance.md),
+The open problem is **deriving $\Delta_\lambda(K)$ categorically as
+the binding-energy mass-defect**. PR #613's
+[Δ_λ derivation race](https://github.com/litlfred/qou/pull/613) +
+PR #600's audit catalogue 5 closure principles tested so far:
+
+| Option | Selector | Outcome |
+|---|---|---|
+| **Occam** | min \|Δ\| over single-support | underdetermined |
+| **B** Frob co-Casimir ([#602](https://github.com/litlfred/qou/pull/602)) | theorem-forced | fails — wrong sign |
+| **C** Demazure-fiber | $y_\lambda \cdot D_w / D_{w_0}$ | reproduces $M^{\text{LO}}$ trivially |
+| **D** LP shadow prices ([#603](https://github.com/litlfred/qou/pull/603)) | LP dual at min Σ\|Δ\|·w | reproduces Occam |
+| **E** crystal-graph weight (in-flight) | Kashiwara crystal at $q \to 1$ | TBD |
+| **F** Wenzl-bridge augmented Markov (in-flight) | augment Markov axioms | TBD |
+
+Per the [GAP-A-3 / GAP-A-4 guidance](2026-05-09-gap-a-3-a-4-guidance.md),
 the open problem is **GAP-A-3** (brane-tower level $n_*(K)$) and
 **GAP-A-4** (per-block $\Delta_\lambda$ structural rule) — not a
-sixth closure principle.
+seventh closure principle.
 
 This document records:
 1. What the ρ_K^full shift means for my prior PRs (#534, #547, #548).
@@ -292,39 +312,61 @@ Each proposal below either:
   5 in PR #613 were ruled out), or
 - furnishes empirical structure that constrains the search.
 
-### Proposal 1: empirical $\Delta_\lambda$ tabulation across atoms
+### Proposal 1: empirical $\Delta_\lambda$ tabulation across atoms (in flight)
 
-**Effort:** 1 PR, ~1 day (per-atom cached chi already exists).
-**Deliverable:** `delta_lambda_empirical_tabulation.py` + witness.
-For each $K \in \{D, T, {}^3\!He, {}^4\!He\}$:
+**Status:** in flight on this branch as
+[`delta_lambda_empirical_tabulation.py`](../../folio-assistant/computations/delta_lambda_empirical_tabulation.py)
++ caching helpers
+[`y_lambda_at_q0_cache.py`](../../folio-assistant/computations/y_lambda_at_q0_cache.py)
+and
+[`chi_lambda_at_q0_cache.py`](../../folio-assistant/computations/chi_lambda_at_q0_cache.py).
+Coordinated with [PR #600](https://github.com/litlfred/qou/pull/600#issuecomment-4413090489).
 
-1. Load $y_\lambda(q_0)$ and $\chi^\lambda(\beta_K)$ from existing
-   witnesses ([`y-lambda-wenzl-bridge-symbolic-witness.json`](../../folio-assistant/computations/y-lambda-wenzl-bridge-symbolic-witness.json),
-   [`chi-helium-4-h12.witness.json`](../../folio-assistant/computations/chi-helium-4-h12.witness.json),
-   [`chi-deuteron-h6.witness.json`](../../folio-assistant/computations/chi-deuteron-h6.witness.json)).
-2. **Solve the underdetermined system**
-   $\sum_\lambda y_\lambda \chi^\lambda \Delta_\lambda = \rho_K^{\text{full}} - \rho_K^{\text{LO}}$
-   under candidate ansätze:
+**Effort:** 1 PR, ~1 day (cached chi already exists; y_λ cache being
+built in parallel).
+**Deliverable:** for each $K \in \{D, T, {}^3\!He, {}^4\!He\}$:
+
+1. Load $y_\lambda(q_0)$ from cached
+   [`y-lambda-at-q0.witness.json`](../../folio-assistant/computations/y-lambda-at-q0.witness.json)
+   (built once via parallel `multiprocessing.Pool`; eliminates the
+   13-minute symbolic re-evaluation bottleneck).
+2. Load $\chi^\lambda(\beta_K)(q_0)$ from cached
+   [`chi-lambda-at-q0.witness.json`](../../folio-assistant/computations/chi-lambda-at-q0.witness.json)
+   (D / T / ³He) or `per_partition` table (⁴He).
+3. **Solve the underdetermined system**
+   $\sum_\lambda y_\lambda \chi^\lambda \Delta_\lambda = \Delta M / m_e$
+   (where $\Delta M = M_{\text{codata}} - (Z m_p + N m_n)$ is the
+   binding-energy mass-defect) under four candidate ansätze:
    - **(a) single-block**: $\Delta_\lambda \neq 0$ only for one
-     $\lambda^*$, swept over all $\lambda \vdash 3A$.
+     $\lambda^*$, swept over all $\lambda \vdash 3A$. *(Overlaps
+     with the existing Occam option in
+     [`rho_k_h3a_refinement.py`](../../folio-assistant/computations/rho_k_h3a_refinement.py);
+     reproduced here for cross-atom pattern check.)*
    - **(b) shell-supported**: $\Delta_\lambda \neq 0$ only for the
      "staircase" $\lambda_{\text{shell}}$ (per
      [`prop:sigma-shell-from-beta-chain-derivation`](../../content/quantum-observable-universe/braids-and-knots/sigma-shell-from-beta-chain-derivation.md)).
+     **Net-new** vs the 5 closure principles already tested.
    - **(c) Δ-monotonic**: $\Delta_\lambda \propto c(\lambda)$
      (uses content-sum data from PR #548).
+     **Net-new** vs the 5 closure principles already tested.
    - **(d) Δ-isotypic**: $\Delta_\lambda \propto \dim_q(\lambda) /
-     [n]_q!$ (Plancherel weight).
-3. For each ansatz, report which assignment minimises $\|\Delta\|_2$
+     [n]_q!$ (Plancherel weight). *(Likely overlaps with the
+     Demazure-fiber Option C from PR #613 race; reproduces
+     $M^{\text{LO}}$ trivially.)*
+4. For each ansatz, report which assignment minimises $\|\Delta\|_2$
    and matches CODATA.
-4. **Look for a categorical pattern** across atoms: does the same
+5. **Look for a categorical pattern** across atoms: does the same
    $\lambda^*$ dominate? Does $\Delta_\lambda$ scale with
    $|\!\!\operatorname{tr}_M\!|$ or $A$ in a clean way?
 
-**Why this contributes:** PR #613 tested 5 closure principles on
-the SUM equation. This proposal tabulates the per-block
-$\Delta_\lambda$ assignments and looks for a categorical regularity
-that none of the 5 closure principles captured. The cached $\chi^\lambda$
-data is ready; this is mostly bookkeeping + linear-system solving.
+**Why this contributes:** PR #600 catalogued 5 closure principles
+that all fail or trivialise on the SUM equation. Ansätze **(b) shell-
+supported** and **(c) content-monotonic** are genuinely new and use
+data not exploited by Options B/C/D/E/F. If either gives a clean
+cross-atom pattern (same $\lambda^*$ recurs, or single $\alpha$
+fits all atoms), that's a candidate categorical $\Delta_\lambda$
+rule. Negative result also informative — it would close (b) and (c)
+and narrow the search to (E), (F), or a sixth principle.
 
 ### Proposal 2: GAP-A-4 hypothesis-1 test (isotypic multiplicity)
 

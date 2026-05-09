@@ -214,6 +214,16 @@ jobs:
         run: |
           python3 folio-assistant/computations/full_twist_delta_n2_verification.py
 
+      - name: Empirical Δ_λ tabulation (ρ_K^full Proposal 1)
+        # Per `prop:rho-k-h3a-refinement` + workplan
+        # docs/audits/2026-05-09-workplan-update-rho-k.md Proposal 1:
+        # Solves Σ c_λ Δ_λ = ΔM/m_e under 4 candidate ansätze for
+        # K ∈ {D, T, ³He, ⁴He} from cached chi witnesses.  Reports
+        # best λ* per ansatz + cross-atom recurrence pattern.
+        # Informational; does not gate CI.
+        run: |
+          python3 folio-assistant/computations/delta_lambda_empirical_tabulation.py || true
+
       - name: Compute-audit static scan (P14/P15/P16/P21/P30, warn-only)
         # Per `local/compute-audit` skill: tracks the count of
         # P-pattern hits per file. Warn-only — purpose is to detect
