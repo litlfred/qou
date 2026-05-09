@@ -164,16 +164,38 @@ def main() -> None:
     q_0 = mpf("1.1099785955541805")
 
     cases = [
-        # figure-8 4_1: (σ_1 σ_2^{-1})^2 in B_3
+        # figure-8 4_1: (σ_1 σ_2^{-1})^2 in B_3 — writhe 0, amphichiral
         avg_content_for_braid(
             "figure-8 4_1", 3,
             [(1, 1), (-1, 2), (1, 1), (-1, 2)],
             q_0, dps=50,
         ),
-        # Borromean B_3: (σ_1 σ_2^{-1})^3 in B_3
+        # Borromean B_3: (σ_1 σ_2^{-1})^3 in B_3 — writhe 0, amphichiral
         avg_content_for_braid(
             "Borromean B_3", 3,
             [(1, 1), (-1, 2), (1, 1), (-1, 2), (1, 1), (-1, 2)],
+            q_0, dps=50,
+        ),
+        # Trefoil 3_1: σ_1^3 in B_2 — writhe +3, NON-amphichiral
+        # Direct test of the non-zero chirality first-order
+        # coefficient. Hecke H_2 has only 2 partitions
+        # {(2), (1,1)}, with c((2)) = 1, c((1,1)) = -1, so the
+        # Type-B fold gives c(λ) + c(λ^T) = 0 — same cancellation
+        # pattern as H_3 case. Expected: ⟨c⟩_β ≈ 0 again at H_2.
+        avg_content_for_braid(
+            "trefoil 3_1 (σ_1^3 in H_2)", 2,
+            [(1, 1), (1, 1), (1, 1)],
+            q_0, dps=50,
+        ),
+        # Trefoil-via-(2,3)-torus in H_3: σ_1 σ_2 σ_1 σ_2 σ_1 σ_2
+        # (the standard braid for T(2,3) embedded as 3-braid).
+        # Writhe +6, non-amphichiral. In H_3 the 3-element
+        # partition basis {(3), (2,1), (1,1,1)} has the
+        # transpose-symmetric cancellation; expect ⟨c⟩_β ≈ 0
+        # by the same Type-B argument.
+        avg_content_for_braid(
+            "T(2,3) torus knot in H_3 (writhe +6)", 3,
+            [(1, 1), (1, 2), (1, 1), (1, 2), (1, 1), (1, 2)],
             q_0, dps=50,
         ),
     ]
