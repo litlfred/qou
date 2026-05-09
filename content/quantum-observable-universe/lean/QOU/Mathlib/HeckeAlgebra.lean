@@ -958,6 +958,58 @@ noncomputable def MarkovTraceRecursion.h3_to_h4
     -- and everything else to length 1 (placeholder).
     (fun i => if i.val = 0 then 0 else 1)
 
+/-! ### Wiring the carrier multiplication for Markov-axiom
+
+    The `MarkovTraceRecursion` class's `markov_axiom_holds`
+    field is the placeholder for the genuine identity
+    `tr_M(x · σ_n) = z · tr_M(x)`, where `·` is the carrier
+    multiplication.  This section provides:
+
+    1. A `HasHnMul` class equipping `HnCarrier n R` with a
+       multiplication.
+    2. A `MarkovAxiomHolds` predicate stating the identity
+       concretely.
+    3. A genuine `MarkovTraceRecursion` upgrade where the
+       axiom field is the concrete predicate. -/
+
+/-- **`HasHnMul n R`** — class supplying carrier multiplication
+    on `HnCarrier n R`.  Concrete instances at small `n`
+    discharge from the H_2/H_3 mul tables. -/
+class HasHnMul (n : ℕ) (R : Type u) [CommRing R] where
+  /-- The multiplication on the carrier. -/
+  mul : HnCarrier n R → HnCarrier n R → HnCarrier n R
+
+/-- **`MarkovAxiomHolds`**: the concrete Markov axiom predicate
+    `tr_M^{(n+1)}(x · σ_n) = z · tr_M^{(n)}(x)` parameterised
+    by an explicit embedding `embedNm : HnCarrier n R → HnCarrier
+    (n+1) R` and the σ_n basis element. -/
+def MarkovAxiomHolds {n : ℕ} (R : Type u) [CommRing R] (z : R)
+    (trace_n : HnCarrier n R → R)
+    (trace_succ : HnCarrier (n + 1) R → R)
+    (mul_succ : HnCarrier (n + 1) R → HnCarrier (n + 1) R → HnCarrier (n + 1) R)
+    (sigma_n : HnCarrier (n + 1) R)
+    (embed : HnCarrier n R → HnCarrier (n + 1) R) : Prop :=
+  ∀ x : HnCarrier n R, trace_succ (mul_succ (embed x) sigma_n) = z * trace_n x
+
+/-- **`MarkovTraceRecursionWithMul`** — the substantive class
+    that wires the genuine Markov axiom via the carrier
+    multiplication.  Concrete instances supply the
+    multiplication, σ_n element, embedding, and axiom witness. -/
+class MarkovTraceRecursionWithMul (R : Type u) [CommRing R]
+    (n : ℕ) (q z : R) where
+  /-- Trace at level `n`. -/
+  trace_n : HnCarrier n R → R
+  /-- Trace at level `n+1`. -/
+  trace_succ : HnCarrier (n + 1) R → R
+  /-- Carrier multiplication at level `n+1`. -/
+  mul_succ : HnCarrier (n + 1) R → HnCarrier (n + 1) R → HnCarrier (n + 1) R
+  /-- The σ_n basis element in `HnCarrier (n+1) R`. -/
+  sigma_n : HnCarrier (n + 1) R
+  /-- Embedding `HnCarrier n R ↪ HnCarrier (n+1) R`. -/
+  embed : HnCarrier n R → HnCarrier (n + 1) R
+  /-- The Markov axiom holds with these concrete data. -/
+  axiom_witness : MarkovAxiomHolds R z trace_n trace_succ mul_succ sigma_n embed
+
 end QOU.Mathlib.HeckeAlgebra
 
 /-! ### Wedderburn isomorphism `H_n(q) ≅ ⊕_λ M_{d_λ}(R)`

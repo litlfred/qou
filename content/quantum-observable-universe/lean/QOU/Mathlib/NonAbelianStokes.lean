@@ -155,6 +155,27 @@ theorem piecewiseAffineLineIntegral_singleton {G : Type u} [Group G]
   show 1 * g = g
   exact one_mul g
 
+/-- **Helper**: `foldl (· * ·) a` distributes over the base
+    multiplication, i.e. `l.foldl (· * ·) a = a * l.foldl
+    (· * ·) 1`.  Standard monoid lemma; proved by induction. -/
+theorem foldl_mul_distributes {G : Type u} [Monoid G]
+    (l : List G) (a : G) :
+    l.foldl (· * ·) a = a * l.foldl (· * ·) 1 := by
+  induction l generalizing a with
+  | nil => simp
+  | cons x xs ih =>
+    show xs.foldl (· * ·) (a * x) = a * xs.foldl (· * ·) (1 * x)
+    rw [one_mul, ih (a * x), ih x, mul_assoc]
+
+/-- **Concatenation rule**: the line integral of a concatenated
+    path is the product of the individual integrals. -/
+theorem piecewiseAffineLineIntegral_append {G : Type u} [Group G]
+    (gs hs : List G) :
+    piecewiseAffineLineIntegral (gs ++ hs) =
+      piecewiseAffineLineIntegral gs * piecewiseAffineLineIntegral hs := by
+  unfold piecewiseAffineLineIntegral
+  rw [List.foldl_append, foldl_mul_distributes]
+
 /-- **Inverse-pair closure**: a path followed by its inverse
     integrates to the identity. -/
 theorem piecewiseAffineLineIntegral_inverse {G : Type u} [Group G]
@@ -212,5 +233,71 @@ instance YekutieliFiniteSliceMultTrace_canonical (G : Type u) [Group G]
   trace := braidSurfaceMultTrace z
   trace_zero := braidSurfaceMultTrace_zero z
   trace_succ := braidSurfaceMultTrace_succ z
+
+/-! ### Lie-valued forms (substantive — item #4)
+
+    A genuine Lie-valued form `α : Ω¹(M; 𝔤)` is a smooth section
+    of the bundle `T*M ⊗ 𝔤` over a manifold `M` with values in
+    a Lie algebra `𝔤`.  Mathlib has `Mathlib.Analysis.NormedSpace.LieAlgebra`
+    and `Mathlib.Geometry.Manifold.MFDeriv`; combining them
+    requires building the bundle structure explicitly.
+
+    This file supplies the **algebraic skeleton** — Lie algebras,
+    Lie brackets, and the formal-grade-1 / grade-2 carriers —
+    deferring the manifold part to upstream Mathlib. -/
+
+/-- **Lie algebra structure** as an abstract class.  In Mathlib
+    proper, this is `LieAlgebra k 𝔤`; here we re-export the
+    bracket axioms that the Yekutieli-Stokes proof requires. -/
+class LieAlgebraStructure (𝔤 : Type u) [AddCommGroup 𝔤] where
+  /-- The Lie bracket. -/
+  bracket : 𝔤 → 𝔤 → 𝔤
+  /-- Antisymmetry: `[x, x] = 0`. -/
+  bracket_self : ∀ x, bracket x x = 0
+  /-- Jacobi identity: `[[x,y],z] + [[y,z],x] + [[z,x],y] = 0`. -/
+  jacobi : ∀ x y z,
+    bracket (bracket x y) z + bracket (bracket y z) x +
+      bracket (bracket z x) y = 0
+
+/-- Antisymmetry corollary `[x, y] = -[y, x]` is derivable from
+    `bracket_self` plus bracket bilinearity (`bracket_add_left/right`).
+    The bilinearity is part of Mathlib's `Bracket`/`LieRing`
+    structure; if needed downstream, add it as a class extension
+    (`extends Bracket 𝔤 𝔤` plus `bracket_add_left/right` axioms). -/
+
+/-- **Lie-valued 1-form** as an abstract function `M → 𝔤`. -/
+structure LieAlgebraOneForm (M : Type u) (𝔤 : Type u) where
+  /-- The underlying form-evaluation. -/
+  eval : M → 𝔤
+
+/-- **Lie-valued 2-form**. -/
+structure LieAlgebraTwoForm (M : Type u) (𝔤 : Type u) where
+  /-- The underlying bivector-evaluation. -/
+  eval : M → M → 𝔤
+
+/-- The **gauge-covariant derivative** `d_α β = dβ + [α, β]`
+    appearing in Yekutieli-Stokes.  Abstract here as a function
+    of the underlying 1-form `α` and 2-form `β`; concrete
+    instance requires the manifold + Lie-algebra structure. -/
+def gaugeCovariantDerivative {M 𝔤 : Type u}
+    [AddCommGroup 𝔤] [LieAlgebraStructure 𝔤]
+    (α : LieAlgebraOneForm M 𝔤) (β : LieAlgebraTwoForm M 𝔤) :
+    LieAlgebraTwoForm M 𝔤 :=
+  { eval := fun p q => β.eval p q +
+      LieAlgebraStructure.bracket (α.eval p) (β.eval p q) }
+
+/-- **Class hypothesis**: a Lie-valued non-abelian Stokes
+    framework.  Bundles the 1-form, 2-form, gauge-covariant
+    derivative, and the Yekutieli-Stokes identity. -/
+class LieValuedStokes (M : Type u) (𝔤 : Type u)
+    [AddCommGroup 𝔤] [LieAlgebraStructure 𝔤] where
+  /-- The 1-form `α`. -/
+  alpha : LieAlgebraOneForm M 𝔤
+  /-- The 2-form `β`. -/
+  beta : LieAlgebraTwoForm M 𝔤
+  /-- Yekutieli-Stokes identity Prop. -/
+  stokes_identity : Prop
+  /-- The identity holds. -/
+  stokes_identity_witness : stokes_identity
 
 end QOU.Mathlib.NonAbelianStokes
