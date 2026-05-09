@@ -37,6 +37,8 @@ import sympy as sp
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 
+from witness_base import WitnessBuilder  # noqa: E402
+
 mp.mp.dps = 50
 
 from markov_trace_recursive import markov_trace_of_word, q as _q  # noqa: E402
@@ -230,12 +232,23 @@ def main() -> int:
         "checks": checks,
         "all_passed": disjoint_ok and cross_check_ok,
     }
-    from witness_base import WitnessBuilder
-
-    out = (WitnessBuilder
-
-        .wrap_legacy("markov-trace-axiomatic-multi-atom", witness, script_path=__file__, engine="sympy")
-
+    out = (WitnessBuilder.wrap_legacy(
+        "markov-trace-axiomatic-multi-atom", witness,
+        script_path=__file__, engine="sympy")
+        .add_assertion(
+            "disjoint_product_ok",
+            computed=1.0 if disjoint_ok else 0.0,
+            expected=1.0,
+            tolerance=0.0,
+            source="prop:markov-trace-axiomatic-closed-form § disjoint product",
+        )
+        .add_assertion(
+            "char_fast_cross_check_ok",
+            computed=1.0 if cross_check_ok else 0.0,
+            expected=1.0,
+            tolerance=0.0,
+            source="cross-check vs markov_trace_atomic_proton_full",
+        )
         .save())
     print(f"\n  Witness: {out}")
     return 0 if (disjoint_ok and cross_check_ok) else 1

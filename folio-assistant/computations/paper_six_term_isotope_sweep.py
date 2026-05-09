@@ -49,6 +49,7 @@ import numpy as np  # noqa: F401  (kept for downstream consumers)
 import mpmath as mp
 
 sys.path.insert(0, str(Path(__file__).parent))
+from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP  # noqa: E402
 from hecke_core import (  # noqa: E402
     atom_per_generator_volumes, h as h_val, z as z_mark,
@@ -835,6 +836,5 @@ if __name__ == "__main__":
             "tolerance": 1e6,
             "source": "this witness",
         })
-    out = Path(__file__).parent / "paper-six-term-isotope-sweep.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    out = WitnessBuilder.wrap_legacy("paper-six-term-isotope-sweep", witness, script_path=__file__, engine="mpmath").save()
     print(f"\nWitness: {out}")

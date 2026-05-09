@@ -31,6 +31,7 @@ further.
 # Ref: [manuscript] tier-0-atlas-pslq-check.witness.json (negative)
 
 import json
+from witness_base import WitnessBuilder  # noqa: E402
 from pathlib import Path
 
 import mpmath
@@ -114,8 +115,8 @@ def main() -> None:
     out_path = (
         Path(__file__).parent / "tier-1-hyperbolic-3braid-pslq.witness.json"
     )
-    with out_path.open("w") as f:
-        json.dump(result, f, indent=2)
+    out_path = WitnessBuilder.wrap_legacy("tier-1-hyperbolic-3braid-pslq", result,
+                     script_path=__file__, engine="mpmath").save()
 
     print(f"Result: {result['interpretation']}")
     if relation:

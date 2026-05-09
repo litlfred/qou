@@ -1,10 +1,16 @@
 {
-  "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-04T17:44:01.858687+00:00",
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-05-09T00:09:07.835480+00:00",
+  "commitSha": "0bf80848d4f0be0afbe05720b5d03621bd602453",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
   "computation": "delta-q-decoration",
   "scriptFile": "delta_q_decoration.py",
-  "description": "\u03b4_q Wedderburn decomposition for H_n(q), n=2,3,4. Tests the round-18 force-carrier intertwining correspondence (prop:force-carrier-intertwining-correspondence): does the bare H_2 molecular braid project onto the (3,1) and (2,1,1) Wedderburn channels matching T_{3,5} and T_{2,9} strand counts? Verifies the algebraic identity \u03b1_EM = h\u00b2/[q\u00b7\u03b4_q(T_29)\u00b7\u03b4_q(T_35)] (prop:alpha-em-categorical-trace-ratio).",
+  "scriptHash": "876a975f1f9b",
+  "scriptCommitSha": "dd10211f939dfab89055354f490ad2b42a6b6840",
+  "description": "δ_q Wedderburn decomposition for H_n(q), n=2,3,4. Tests the round-18 force-carrier intertwining correspondence (prop:force-carrier-intertwining-correspondence): does the bare H_2 molecular braid project onto the (3,1) and (2,1,1) Wedderburn channels matching T_{3,5} and T_{2,9} strand counts? Verifies the algebraic identity α_EM = h²/[q·δ_q(T_29)·δ_q(T_35)] (prop:alpha-em-categorical-trace-ratio).",
   "contentBlock": "def:delta-q-decoration",
   "parameters": {
     "q0": 1.1099785955541805,
@@ -377,50 +383,5 @@
       "q_5_at_q0": 5.220441324664572,
       "reference": "round-19 task 2 (dressed Wedderburn)"
     }
-  },
-  "assertions": [
-    {
-      "name": "Bare H_2 molecular braid projects onto (3,1) [T_{3,5}] and (2,1,1) [T_{2,9}]; (2,2) zero",
-      "computed": true,
-      "expected": true,
-      "passed": true,
-      "source": "prop:force-carrier-intertwining-correspondence (round-18)"
-    },
-    {
-      "name": "\u03b1_EM = h\u00b2 / [q \u00b7 \u03b4_q(T_{2,9}) \u00b7 \u03b4_q(T_{3,5})] within 10\u207b\u00b9\u00b2",
-      "computed": true,
-      "expected": true,
-      "passed": true,
-      "source": "prop:alpha-em-categorical-trace-ratio (round-12/14)"
-    },
-    {
-      "name": "(3,1) and (2,1,1) are transpose pair: equal dim_q, w, f",
-      "computed": true,
-      "expected": true,
-      "passed": true,
-      "source": "rem:bound-state-frobenius-self-dual-channel (round-18)"
-    },
-    {
-      "name": "All \u03c7_\u03bb(\u03c3_1\u03c3_2\u03c3_3) are clean q-monomials (q^3, -q, 0, q^-1, -q^-3)",
-      "computed": true,
-      "expected": true,
-      "passed": true,
-      "source": "round-19 task 1 (closed-form)"
-    },
-    {
-      "name": "Force-carrier (3,1)+(2,1,1) amplifies by \u2248 [5]_q under K-shell dressing",
-      "computed": true,
-      "expected": true,
-      "passed": true,
-      "source": "round-19 task 2 (dressed projection)"
-    },
-    {
-      "name": "Dressing UNZEROES \u03bb=(2,2) channel (selection-rule break)",
-      "computed": true,
-      "expected": true,
-      "passed": true,
-      "source": "round-19 task 2 (dressed projection)"
-    }
-  ],
-  "allPassed": true
+  }
 }

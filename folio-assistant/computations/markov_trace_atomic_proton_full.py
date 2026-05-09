@@ -38,6 +38,8 @@ import sympy as sp
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 
+from witness_base import WitnessBuilder  # noqa: E402
+
 q = sp.symbols("q", positive=True)
 h_sym = q - 1 / q
 z_sym = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))
@@ -185,12 +187,17 @@ def main() -> int:
         "rho_p_codata": rho_p,
         "matches_char_fast": abs(ratio_to_charfast - 1) < 0.01,
     }
-    from witness_base import WitnessBuilder
-
-    out = (WitnessBuilder
-
-        .wrap_legacy("markov-trace-atomic-proton-full", witness, script_path=__file__, engine="sympy")
-
+    matches_char_fast = abs(ratio_to_charfast - 1) < 0.01
+    out = (WitnessBuilder.wrap_legacy(
+        "markov-trace-atomic-proton-full", witness,
+        script_path=__file__, engine="sympy")
+        .add_assertion(
+            "matches_char_fast",
+            computed=1.0 if matches_char_fast else 0.0,
+            expected=1.0,
+            tolerance=0.0,
+            source="cross-check vs hecke_character_fast at q0 (1% tol)",
+        )
         .save())
     print(f"\n  Witness: {out}")
     return 0

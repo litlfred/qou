@@ -22,6 +22,7 @@ from itertools import combinations
 
 warnings.filterwarnings("ignore")
 sys.path.insert(0, str(Path(__file__).parent))
+from witness_base import WitnessBuilder  # noqa: E402
 
 import mpmath as mp
 mp.mp.dps = 50
@@ -292,8 +293,7 @@ def main() -> int:
         'diff_G_over_3_ppm': float(abs(alpha_star - G/3)/alpha_star * 1e6),
         'best_candidates': [(n, mp.nstr(v, 18), float(r)) for n,v,d,r in rows[:10]],
     }
-    out = Path(__file__).parent / "alpha-high-precision.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    out = WitnessBuilder.wrap_legacy("alpha-high-precision", witness, script_path=__file__, engine="mpmath").save()
     print(f"\n  Witness: {out}")
     return 0
 

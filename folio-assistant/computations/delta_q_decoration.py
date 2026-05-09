@@ -28,6 +28,7 @@ from pathlib import Path
 from datetime import datetime, timezone
 
 sys.path.insert(0, str(Path(__file__).parent))
+from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q as q0, Q_INV as qi0, HA, q_int
 from hecke_wedderburn import (
     wedderburn_decompose, alpha_em_from_delta_q, force_carrier_channel,
@@ -364,9 +365,11 @@ def _stringify_keys(obj):
     return obj
 
 WITNESS["allPassed"] = all(a["passed"] for a in WITNESS["assertions"])
-out_path = Path(__file__).parent / "delta-q-decoration.witness.json"
-with open(out_path, "w") as f:
-    json.dump(_stringify_keys(WITNESS), f, indent=2, default=str)
+out_path = (WitnessBuilder
+
+    .wrap_legacy("delta-q-decoration", _stringify_keys(WITNESS), script_path=__file__, engine="sympy")
+
+    .save())
 
 print(f"\n{'=' * 70}")
 print(f"Witness written: {out_path}")

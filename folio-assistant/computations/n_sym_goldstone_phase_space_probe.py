@@ -31,6 +31,7 @@ import mpmath
 mpmath.mp.dps = 100
 
 _sys.path.insert(0, str(Path(__file__).parent))
+from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR
 from experimental_constants import M_E_MEV, G_F_MEV
 
@@ -182,7 +183,5 @@ out = {
         else 'no clean match — C(q) factor needs separate categorical input'
     ),
 }
-out_path = Path(__file__).parent / 'n-sym-goldstone-phase-space-probe.witness.json'
-with open(out_path, 'w', encoding='utf-8') as f:
-    json.dump(out, f, indent=2, ensure_ascii=False, default=str)
+out_path = WitnessBuilder.wrap_legacy("n-sym-goldstone-phase-space-probe", out, script_path=__file__, engine="python").save()
 print(f"\n→ wrote {out_path}")
