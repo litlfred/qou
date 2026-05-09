@@ -211,4 +211,93 @@ theorem markovTrace_via_coxeter_basis_at_id (z : ℝ) (n : ℕ)
   · intro h
     exact absurd (Finset.mem_univ _) h
 
+/-! ### Compound permutation lengths
+
+    Coxeter lengths of products `σ_i · σ_j` and longer-word
+    permutations.  Each provable by `decide` after unfolding
+    the simple-transposition definitions, exploiting the
+    decidable equality on `Fin n × Fin n`. -/
+
+/-- σ_1 · σ_2 in S_3 has Coxeter length 2 (a length-2 element). -/
+theorem coxeterLength_sigma1_mul_sigma2_in_S3 :
+    coxeterLength (sigma1_in_S3 * sigma2_in_S3) = 2 := by
+  unfold coxeterLength sigma1_in_S3 sigma2_in_S3 simpleTransposition
+  decide
+
+/-- σ_2 · σ_1 in S_3 has Coxeter length 2. -/
+theorem coxeterLength_sigma2_mul_sigma1_in_S3 :
+    coxeterLength (sigma2_in_S3 * sigma1_in_S3) = 2 := by
+  unfold coxeterLength sigma2_in_S3 sigma1_in_S3 simpleTransposition
+  decide
+
+/-- The longest element of S_3 (= σ_1 · σ_2 · σ_1 = σ_2 · σ_1 · σ_2)
+    has Coxeter length 3. -/
+theorem coxeterLength_longest_in_S3 :
+    coxeterLength (sigma1_in_S3 * sigma2_in_S3 * sigma1_in_S3) = 3 := by
+  unfold coxeterLength sigma1_in_S3 sigma2_in_S3 simpleTransposition
+  decide
+
+/-- The braid relation manifests as length-equality:
+    `ℓ(σ_1 σ_2 σ_1) = ℓ(σ_2 σ_1 σ_2) = 3` (longest element of S_3). -/
+theorem coxeterLength_braid_S3_equal :
+    coxeterLength (sigma1_in_S3 * sigma2_in_S3 * sigma1_in_S3) =
+    coxeterLength (sigma2_in_S3 * sigma1_in_S3 * sigma2_in_S3) := by
+  unfold coxeterLength sigma1_in_S3 sigma2_in_S3 simpleTransposition
+  decide
+
+/-- σ_1 · σ_2 in S_4 has Coxeter length 2. -/
+theorem coxeterLength_sigma1_mul_sigma2_in_S4 :
+    coxeterLength (sigma1_in_S4 * sigma2_in_S4) = 2 := by
+  unfold coxeterLength sigma1_in_S4 sigma2_in_S4 simpleTransposition
+  decide
+
+/-- σ_1 · σ_3 in S_4 has Coxeter length 2 (far-commute case). -/
+theorem coxeterLength_sigma1_mul_sigma3_in_S4 :
+    coxeterLength (sigma1_in_S4 * sigma3_in_S4) = 2 := by
+  unfold coxeterLength sigma1_in_S4 sigma3_in_S4 simpleTransposition
+  decide
+
+/-- Far commutativity in S_4: `σ_1 · σ_3 = σ_3 · σ_1` (the
+    underlying permutations are equal, hence equal Coxeter
+    lengths). -/
+theorem coxeterLength_far_commute_S4 :
+    coxeterLength (sigma1_in_S4 * sigma3_in_S4) =
+    coxeterLength (sigma3_in_S4 * sigma1_in_S4) := by
+  unfold coxeterLength sigma1_in_S4 sigma3_in_S4 simpleTransposition
+  decide
+
+/-! ### Swap-length formula `ℓ(swap a b) = 2(b - a) - 1`
+
+    For positions `a < b` in `Fin n`, the transposition
+    `Equiv.swap a b` swaps `a ↔ b` (fixes everything else).
+    Its Coxeter length is `2(b - a) - 1`:
+    - 1 inversion at `(a, b)`
+    - `(b - a - 1)` inversions at `(a, j)` for `a < j < b`
+    - `(b - a - 1)` inversions at `(i, b)` for `a < i < b`
+    Total: `1 + 2(b - a - 1) = 2(b - a) - 1`. -/
+
+/-- Concrete swap-length: `ℓ(swap 0 2) = 3` in S_3 (= 2·2 - 1). -/
+theorem coxeterLength_swap_0_2_in_S3 :
+    coxeterLength (Equiv.swap (0 : Fin 3) ⟨2, by decide⟩) = 3 := by
+  unfold coxeterLength
+  decide
+
+/-- Concrete swap-length: `ℓ(swap 0 2) = 3` in S_4. -/
+theorem coxeterLength_swap_0_2_in_S4 :
+    coxeterLength (Equiv.swap (0 : Fin 4) ⟨2, by decide⟩) = 3 := by
+  unfold coxeterLength
+  decide
+
+/-- Concrete swap-length: `ℓ(swap 0 3) = 5` in S_4 (= 2·3 - 1). -/
+theorem coxeterLength_swap_0_3_in_S4 :
+    coxeterLength (Equiv.swap (0 : Fin 4) ⟨3, by decide⟩) = 5 := by
+  unfold coxeterLength
+  decide
+
+/-- Concrete swap-length: `ℓ(swap 1 3) = 3` in S_4 (= 2·2 - 1). -/
+theorem coxeterLength_swap_1_3_in_S4 :
+    coxeterLength (Equiv.swap (⟨1, by decide⟩ : Fin 4) ⟨3, by decide⟩) = 3 := by
+  unfold coxeterLength
+  decide
+
 end QOU.Mathlib.PermutationEnumeration
