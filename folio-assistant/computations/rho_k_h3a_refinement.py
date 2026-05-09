@@ -260,6 +260,11 @@ def load_y_lambda_n6():
     .evalf(50)` is fast on the unsimplified expression.
     """
     path = HERE / "y-lambda-wenzl-bridge-symbolic-witness.json"
+    if not path.exists():
+        raise FileNotFoundError(
+            f"Symbolic Wenzl-bridge witness not found at {path}; run "
+            "the y-lambda-wenzl-bridge symbolic generator first."
+        )
     d = json.loads(path.read_text())
     n6 = d["tables_by_n"]["6"]
     out = {}
@@ -441,10 +446,7 @@ def main() -> int:
         print(f"    |Δ_(3,2,1)| = {mp.nstr(abs(_d321), 8)}")
 
     # ── Step 6: verify M(D) reconstructs CODATA exactly ───────
-    # Using Occam's pick (smallest perturbation):
-    rho_K_refined = rho_K_LO + (occam_y_chi if occam_delta >= 0 else
-                                -occam_y_chi) / abs_tr_M  # placeholder shape
-    # Direct closed-form check:
+    # Direct closed-form check using Occam's pick (smallest perturbation):
     rho_K_check = rho_K_LO + occam_y_chi * occam_delta / abs_tr_M
     M_pred = rho_K_check * M_E_MEV * abs_tr_M
     closure_err_MeV = M_pred - M_D_MEV

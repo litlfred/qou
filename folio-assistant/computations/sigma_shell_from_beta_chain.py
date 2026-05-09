@@ -55,6 +55,13 @@ from pathlib import Path
 import mpmath as mp
 import sympy as sp
 
+# Canonical 50-digit q_0 from q_parameter; replaces any 17-digit
+# truncated literals (per audit F5 + Gemini review on PR #564).
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).parent))
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+
 HERE = Path(__file__).parent
 
 mp.mp.dps = 50
@@ -82,7 +89,7 @@ def evaluate_y_lambda(partition: list[int]) -> mp.mpf:
             q = sp.Symbol("q", positive=True, real=True)
             expr = sp.sympify(w["y_lambda_symbolic"])
             f = sp.lambdify(q, expr, modules="mpmath")
-            q0 = mp.mpf("1.1099785955541805")
+            q0 = mp.mpf(Q_50_DIGIT_STR)
             return mp.mpf(str(f(q0)))
     raise KeyError(f"partition {partition} not found in y_λ witness for n={n}")
 
@@ -103,7 +110,6 @@ def evaluate_chi_lambda_on_atom(
     # Use the canonical 50-dps q_0 string from q_parameter (not a 16-digit
     # truncation); evalf at the active mpmath precision (50 dps by default)
     # rather than a hardcoded 30 — per Gemini review on PR #564.
-    from q_parameter import Q_50_DIGIT_STR
     q0 = sp.Float(Q_50_DIGIT_STR, mp.mp.dps)
     chi_val = chi.subs(q, q0).evalf(mp.mp.dps)
     return mp.mpf(str(sp.re(chi_val)))
@@ -263,7 +269,7 @@ def main() -> int:
         "engine": "mpmath+sympy",
         "scriptFile": "sigma_shell_from_beta_chain.py",
         "parameters": {
-            "q0": "1.1099785955541805",
+            "q0": Q_50_DIGIT_STR,
             "m_e_MeV": str(M_E_MEV),
             "m_p_MeV": str(M_P_MEV),
             "B_D_MeV_AME2020": str(B_D_MEV),

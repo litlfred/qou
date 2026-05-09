@@ -118,6 +118,11 @@ def disjoint_product_value() -> tuple[mp.mpf, mp.mpf, mp.mpf]:
     """Return (|tr_M(⁴He)|, |tr_M(p)|, |tr_M(n)|) read from the
     legacy 50-dps witness."""
     path = HERE / "atomic-tr-m-mpfr-50dps.witness.json"
+    if not path.exists():
+        raise FileNotFoundError(
+            f"Required legacy |tr_M| witness not found at {path}; "
+            "run atomic_tr_m_mpfr_50dps.py first."
+        )
     d = json.loads(path.read_text())
     rows = {r["atom"]: r for r in d.get("results", [])}
     tr_p = abs(mp.mpf(rows["proton"]["tr_M_at_q0_50dps"]))

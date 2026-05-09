@@ -46,10 +46,14 @@ HERE = Path(__file__).parent
 
 mp.mp.dps = 50
 
-# ── Inputs (calibration anchors) ───────────────────────────────
-M_E_MEV = mp.mpf("0.51099895")
-M_P_MEV = mp.mpf("938.27208816")
-M_N_MEV = mp.mpf("939.56542052")  # = M_P + M_E + Q_β  (Q_β = 0.78233341 MeV)
+# ── Inputs (calibration anchors) — imported from codata_constants ──
+# Centralised per Gemini review on PR #564: avoids duplicating these
+# literals across atomic_braid_mass_table.py, atomic_tr_m_mpfr_50dps.py,
+# rho_k_h3a_refinement.py, sigma_shell_from_beta_chain.py, etc.
+import sys as _sys
+_sys.path.insert(0, str(HERE))
+from codata_constants import M_E_MEV, M_P_MEV, M_N_MEV  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 # ── CODATA reference data (kept identical to legacy table) ─────
 ATOMS_CODATA = {
@@ -236,7 +240,7 @@ def main() -> int:
         "scriptFile": "atomic_mass_via_rho_k.py",
         "scriptHash": None,  # will be filled by WitnessBuilder if/when wired
         "parameters": {
-            "q0": "1.1099785955541805",
+            "q0": Q_50_DIGIT_STR,
             "m_e_MeV": str(M_E_MEV),
             "m_p_MeV": str(M_P_MEV),
             "m_n_MeV": str(M_N_MEV),

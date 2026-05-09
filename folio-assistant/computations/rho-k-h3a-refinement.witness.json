@@ -1,10 +1,10 @@
 {
   "computation": "rho-k-h3a-refinement",
-  "computedAt": "2026-05-08T21:44:28.338308+00:00",
+  "computedAt": "2026-05-09T00:19:14.410653+00:00",
   "description": "Deuteron proof-of-concept for the H_{3A} Wedderburn refinement of \u03c1_K per prop:rho-k-h3a-refinement (PR #564). Computes y_\u03bb(q_0) \u03c7^\u03bb(\u03b2_D) for all 11 partitions \u03bb \u22a2 6, verifies the Schur-Weyl identity \u03a3_\u03bb y_\u03bb \u03c7^\u03bb = tr_M(\u03b2_D) to 50 dps, then extracts \u0394_\u03bb(D) under the singleton-support hypothesis (\u0394 supported on one partition).  Reports the Occam's-razor pick (smallest |\u0394|) and the prior heuristic (balanced partition (3,2,1)).  Both reconstruct M(D) = 1875.61294257 MeV exactly by construction (single equation, single unknown).",
   "engine": "mpmath numeric Hoefsmit at q_0 (50 dps), multiprocessing.Pool(4)",
   "scriptFile": "rho_k_h3a_refinement.py",
-  "scriptHash": "sha256:f3e85f874c807d65e68b34be21799d618ef6dcf2999336c1521c35b7b5b5761e",
+  "scriptHash": "sha256:2e3e3c6a0f2a12bb2c7442fa22b661336b5cd4625ac7d4a52d5ca92469d8f65b",
   "parameters": {
     "q_0_50dps": "1.1099785955541805752815940796095093779932822799587",
     "atom": "deuteron",
