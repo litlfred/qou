@@ -352,6 +352,59 @@ theorem mass_identity_witnessed_atoms_all_proved :
    mass_identity_oxygen16, mass_identity_neon20, mass_identity_magnesium24,
    mass_identity_calcium40⟩
 
+/-! ## Per-atom Hecke-level mapping (cohort wiring)
+
+    Each AME-validated atom's binding-energy derivation lives in
+    a specific Iwahori–Hecke algebra `H_n(q)` with `n` determined
+    by the atom's strand count `n_0`:
+
+    | Atom  | n_0 | Hecke H_n(q) | Wenzl cohort |
+    |-------|----:|:------------:|:------------:|
+    | ²H    |  3  | H_3(q)       | n3_cohort    |
+    | ³H    |  4  | H_4(q)       | n4_cohort    |
+    | ³He   |  5  | H_5(q)       | n5_cohort    |
+    | ⁴He   |  6  | H_6(q)       | n6_cohort    |
+    | ⁸Be   |  -  | (compound)   | -            |
+    | ¹²C   |  -  | (compound)   | -            |
+    | …     |     |              |              |
+
+    The mapping table is recorded as a string-typed function
+    (matching the `particle_name` field of the certificate); the
+    actual Hecke-level is in the certificate's `n_0` field. -/
+
+/-- The Hecke-algebra level for each witness-validated atom. -/
+def heckeLevelForAtom : MassDerivationCertificate → ℕ :=
+  fun cert => cert.n_0
+
+/-- The Wenzl cohort name for each witness-validated atom (string
+    label tying the certificate to the explicit `WenzlBridgeConcrete`
+    cohort).  Maps n_0 → cohort identifier. -/
+def cohortNameForAtom (cert : MassDerivationCertificate) : String :=
+  match cert.n_0 with
+  | 2 => "n2_cohort"
+  | 3 => "n3_cohort"
+  | 4 => "n4_cohort"
+  | 5 => "n5_cohort"
+  | 6 => "n6_cohort"
+  | 7 => "n7_cohort"
+  | 8 => "n8_cohort"
+  | _ => "compound (multi-Hecke)"
+
+/-- For every witness-validated atom in the collection, the
+    cohort lookup returns a non-empty string. -/
+theorem cohortName_nonempty :
+    cohortNameForAtom deuterium_cert ≠ "" ∧
+    cohortNameForAtom tritium_cert ≠ "" ∧
+    cohortNameForAtom helium3_cert ≠ "" ∧
+    cohortNameForAtom helium4_cert ≠ "" ∧
+    cohortNameForAtom beryllium8_cert ≠ "" ∧
+    cohortNameForAtom carbon12_cert ≠ "" ∧
+    cohortNameForAtom oxygen16_cert ≠ "" ∧
+    cohortNameForAtom neon20_cert ≠ "" ∧
+    cohortNameForAtom magnesium24_cert ≠ "" ∧
+    cohortNameForAtom calcium40_cert ≠ "" := by
+  refine ⟨?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_, ?_⟩ <;> decide
+
 /-- Pipeline stages (post-revision: single categorical pipeline). -/
 inductive PipelineStage where
   | jointTowerSdp                    -- 1 — produces canonical T_w + filtration

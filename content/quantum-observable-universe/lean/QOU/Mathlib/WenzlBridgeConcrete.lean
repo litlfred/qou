@@ -649,6 +649,88 @@ theorem dimqPartition1111_via_hook_formula (q : ℝ) (hq_one : q > 1) :
   unfold dimqPartition1111
   exact dimqPartition4_via_hook_formula q hq_one
 
+/-! ### n=5 dim_q values via the hook formula
+
+    For partitions of `n = 5`:
+    - `[5]`           : hooks `(5,4,3,2,1)`,   H = `[5]_q!`,
+                         `dim_q = 1`.
+    - `[4,1]`         : hooks `(5,3,2,1,1)`,   H = `[5]_q[3]_q[2]_q`,
+                         `dim_q = [4]_q`.
+    - `[3,2]`         : hooks `(4,3,2,1,1)`,   H = `[4]_q[3]_q[2]_q`,
+                         `dim_q = [5]_q`.
+    - `[3,1,1]`       : hooks `(5,2,1,2,1)`,   H = `[5]_q[2]_q²`,
+                         `dim_q = [4]_q[3]_q/[2]_q`.
+    - `[2,2,1]`       : hooks `(4,2,3,1,1)`,   H = `[4]_q[3]_q[2]_q`,
+                         `dim_q = [5]_q`.
+    - `[2,1,1,1]`     : hooks `(5,1,3,2,1)`,   H = `[5]_q[3]_q[2]_q`,
+                         `dim_q = [4]_q`.
+    - `[1,1,1,1,1]`   : hooks `(5,4,3,2,1)`,   H = `[5]_q!`,
+                         `dim_q = 1`.
+
+    Note: these are **hook-formula** values `dim_q_hook = [n]_q!/H_q(λ)`,
+    which match the SYT counts `d_λ` at `q = 1` and reduce to
+    `q + q⁻¹` (etc.) at small partitions.  The *genuine*
+    Jones–Markov-bridge coefficient `y_λ` may differ by a
+    normalisation factor; documented as a deferred lever in
+    the workplan. -/
+
+/-- `dim_q_hook([5]) = 1`. -/
+def dimqPartition5 (_q : ℝ) : ℝ := 1
+
+/-- `dim_q_hook([4,1]) = [4]_q`. -/
+noncomputable def dimqPartition41 (q : ℝ) : ℝ := QOU.qInteger q 4
+
+/-- `dim_q_hook([3,2]) = [5]_q`. -/
+noncomputable def dimqPartition32 (q : ℝ) : ℝ := QOU.qInteger q 5
+
+/-- `dim_q_hook([3,1,1]) = [4]_q · [3]_q / [2]_q`. -/
+noncomputable def dimqPartition311 (q : ℝ) : ℝ :=
+  QOU.qInteger q 4 * QOU.qInteger q 3 / QOU.qInteger q 2
+
+/-- `dim_q_hook([2,2,1]) = [5]_q`.  Equal to `dim_q_hook([3,2])`
+    (column-row duality at `n = 5`). -/
+noncomputable def dimqPartition221 (q : ℝ) : ℝ := QOU.qInteger q 5
+
+/-- `dim_q_hook([2,1,1,1]) = [4]_q`.  Equal to `dim_q_hook([4,1])`
+    (column-row duality at `n = 5`). -/
+noncomputable def dimqPartition2111 (q : ℝ) : ℝ := QOU.qInteger q 4
+
+/-- `dim_q_hook([1,1,1,1,1]) = 1`. -/
+def dimqPartition11111 (_q : ℝ) : ℝ := 1
+
+/-- Column-row duality at `n = 5`: dim_q_hook([4,1]) = dim_q_hook([2,1,1,1]). -/
+theorem dimqPartition41_eq_dimqPartition2111 (q : ℝ) :
+    dimqPartition41 q = dimqPartition2111 q := rfl
+
+/-- Column-row duality at `n = 5`: dim_q_hook([3,2]) = dim_q_hook([2,2,1]). -/
+theorem dimqPartition32_eq_dimqPartition221 (q : ℝ) :
+    dimqPartition32 q = dimqPartition221 q := rfl
+
+/-- Self-duality at `n = 5`: dim_q_hook([5]) = dim_q_hook([1,1,1,1,1]) = 1. -/
+theorem dimqPartition5_eq_dimqPartition11111 (q : ℝ) :
+    dimqPartition5 q = dimqPartition11111 q := rfl
+
+/-! ### Open issue: q-Plancherel normalisation
+
+    The genuine q-Plancherel identity
+      `Σ_λ dim_q(λ)² = [n]_q!`
+    does NOT hold for our hook-formula `dim_q_hook(λ) =
+    [n]_q!/H_q(λ)` — at `n = 2` the hook formula gives
+    `dim_q_hook([2]) = dim_q_hook([1,1]) = 1`, so
+    `Σ dim_q_hook² = 2`, while `[2]_q! = q + q⁻¹`.  Equality
+    holds only at `q = 1`.
+
+    The **genuine** Wenzl-bridge `y_λ(q)` satisfying tr_M(1) = 1
+    involves a Schur-element normalisation that the simple
+    hook-formula misses.  Resolving this would supply
+    `y_λ_genuine(q)` and the q-Plancherel proof; tracked as
+    medium-priority lever in the workplan §B5 "deferred".
+
+    Current state: the hook-formula `dim_q_hook` and the
+    derived `y_λ_naive := d_λ / H_q(λ)` are mathematically
+    consistent (closed forms match at every `q ≠ 1`); they
+    just don't satisfy the trace-normalisation identity. -/
+
 /-! ### Cohort: `n = 5` (7 partitions)
 
     Partition data:
