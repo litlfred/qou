@@ -4,7 +4,7 @@
 2026-05-09 after PR #606 (reconceive + recipes) and PR #615
 (canonical 4He + deprecation notices) landed.*
 
-## Where we are
+## Current state
 
 The canonical operator-valued convention `(gen_idx, ctype)` with
 `ctype ∈ {sigma, sigma_inv, averaged}` is now the production
