@@ -566,6 +566,7 @@ export default chapter({
         "six-term-mass-formula-complete",
         "six-term-per-derivation-weights",
         "shell-correction-term-seven",
+        "crystal-isospin-degeneracy",
         "chirality-dual-space-derivation",
         "frobenius-antipode-unifies-chirality-and-tower",
         "deuteron-first-principles",
