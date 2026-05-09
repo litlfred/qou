@@ -63,6 +63,14 @@ ATOMS_CODATA = {
     "T":   {"Z": 1, "N": 2, "M_MeV": "2808.92113298"},
     "3He": {"Z": 2, "N": 1, "M_MeV": "2808.39160743"},
     "4He": {"Z": 2, "N": 2, "M_MeV": "3727.379378"},
+    # Li isotopes — nuclear masses (no electrons), AME 2020.
+    # |tr_M| not yet in the canonical witness: p(15)=176, p(18)=385,
+    # p(21)=792 partitions exceed the hybrid 30-dps + float64 path's
+    # session budget. Rows flag tr_M_unavailable until the parallel-y_λ
+    # / full-50-dps mpmath path extends.
+    "5Li": {"Z": 3, "N": 2, "M_MeV": "4667.61728"},
+    "6Li": {"Z": 3, "N": 3, "M_MeV": "5601.51848"},
+    "7Li": {"Z": 3, "N": 4, "M_MeV": "6533.83341"},
 }
 
 # Map legacy mass-table labels → atomic-tr-m-mpfr witness labels
@@ -73,6 +81,9 @@ ATOM_LABEL_TO_TR_M_KEY = {
     "T":   "tritium",
     "3He": "helium-3",
     "4He": "helium-4",   # not yet in the witness; will be flagged
+    "5Li": "lithium-5",  # tr_M deferred (n=15)
+    "6Li": "lithium-6",  # tr_M deferred (n=18)
+    "7Li": "lithium-7",  # tr_M deferred (n=21)
 }
 
 
