@@ -796,6 +796,123 @@ theorem dimqColPartition6_via_hook_formula (q : ℝ) (hq_one : q > 1) :
     QOU.qFactorial q 6 / QOU.qHookProduct q [6, 5, 4, 3, 2, 1] = 1 :=
   dimqRowPartition6_via_hook_formula q hq_one
 
+/-! ### n=5 non-trivial hook-formula derivations
+
+    For partitions [4,1], [3,2], [3,1,1], [2,2,1], [2,1,1,1]
+    of n=5: explicit hook-formula computations giving the
+    `dim_q` values from `WenzlBridgeConcrete.lean`. -/
+
+/-- `dim_q([4,1]) = [4]_q` via hook formula at substrate q. -/
+theorem dimqPartition41_via_hook_formula (q : ℝ) (hq_one : q > 1) :
+    QOU.qFactorial q 5 / QOU.qHookProduct q [5, 3, 2, 1, 1]
+      = dimqPartition41 q := by
+  unfold dimqPartition41
+  have hq : q - q⁻¹ ≠ 0 := by
+    have hpos : q > 0 := by linarith
+    have hinv_lt : q⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq_one
+    have hinv_pos : q⁻¹ > 0 := inv_pos.mpr hpos
+    intro habs; linarith
+  show QOU.qInteger q 5 * (QOU.qInteger q 4 * (QOU.qInteger q 3 *
+      (QOU.qInteger q 2 * (QOU.qInteger q 1 * 1))))
+    / (QOU.qInteger q 5 * (QOU.qInteger q 3 * (QOU.qInteger q 2 *
+      (QOU.qInteger q 1 * (QOU.qInteger q 1 * 1)))))
+    = QOU.qInteger q 4
+  rw [QOU.qInteger_one q hq]
+  have h5 := QOU.qInteger_ne_zero q 5 hq_one (by norm_num)
+  have h3 := QOU.qInteger_ne_zero q 3 hq_one (by norm_num)
+  have h2 := QOU.qInteger_ne_zero q 2 hq_one (by norm_num)
+  field_simp
+  ring
+
+/-- `dim_q([3,2]) = [5]_q` via hook formula at substrate q. -/
+theorem dimqPartition32_via_hook_formula (q : ℝ) (hq_one : q > 1) :
+    QOU.qFactorial q 5 / QOU.qHookProduct q [4, 3, 2, 1, 1]
+      = dimqPartition32 q := by
+  unfold dimqPartition32
+  have hq : q - q⁻¹ ≠ 0 := by
+    have hpos : q > 0 := by linarith
+    have hinv_lt : q⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq_one
+    have hinv_pos : q⁻¹ > 0 := inv_pos.mpr hpos
+    intro habs; linarith
+  show QOU.qInteger q 5 * (QOU.qInteger q 4 * (QOU.qInteger q 3 *
+      (QOU.qInteger q 2 * (QOU.qInteger q 1 * 1))))
+    / (QOU.qInteger q 4 * (QOU.qInteger q 3 * (QOU.qInteger q 2 *
+      (QOU.qInteger q 1 * (QOU.qInteger q 1 * 1)))))
+    = QOU.qInteger q 5
+  rw [QOU.qInteger_one q hq]
+  have h4 := QOU.qInteger_ne_zero q 4 hq_one (by norm_num)
+  have h3 := QOU.qInteger_ne_zero q 3 hq_one (by norm_num)
+  have h2 := QOU.qInteger_ne_zero q 2 hq_one (by norm_num)
+  field_simp
+  ring
+
+/-- `dim_q([2,1,1,1]) = [4]_q` via hook formula at substrate q.
+    Same as `[4,1]` (column-row duality at n=5). -/
+theorem dimqPartition2111_via_hook_formula (q : ℝ) (hq_one : q > 1) :
+    QOU.qFactorial q 5 / QOU.qHookProduct q [5, 1, 3, 2, 1]
+      = dimqPartition2111 q := by
+  unfold dimqPartition2111
+  have hq : q - q⁻¹ ≠ 0 := by
+    have hpos : q > 0 := by linarith
+    have hinv_lt : q⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq_one
+    have hinv_pos : q⁻¹ > 0 := inv_pos.mpr hpos
+    intro habs; linarith
+  show QOU.qInteger q 5 * (QOU.qInteger q 4 * (QOU.qInteger q 3 *
+      (QOU.qInteger q 2 * (QOU.qInteger q 1 * 1))))
+    / (QOU.qInteger q 5 * (QOU.qInteger q 1 * (QOU.qInteger q 3 *
+      (QOU.qInteger q 2 * (QOU.qInteger q 1 * 1)))))
+    = QOU.qInteger q 4
+  rw [QOU.qInteger_one q hq]
+  have h5 := QOU.qInteger_ne_zero q 5 hq_one (by norm_num)
+  have h3 := QOU.qInteger_ne_zero q 3 hq_one (by norm_num)
+  have h2 := QOU.qInteger_ne_zero q 2 hq_one (by norm_num)
+  field_simp
+  ring
+
+/-- `dim_q([2,2,1]) = [5]_q` via hook formula at substrate q.
+    Same as `[3,2]` (column-row duality at n=5). -/
+theorem dimqPartition221_via_hook_formula (q : ℝ) (hq_one : q > 1) :
+    QOU.qFactorial q 5 / QOU.qHookProduct q [4, 2, 3, 1, 1]
+      = dimqPartition221 q := by
+  unfold dimqPartition221
+  have hq : q - q⁻¹ ≠ 0 := by
+    have hpos : q > 0 := by linarith
+    have hinv_lt : q⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq_one
+    have hinv_pos : q⁻¹ > 0 := inv_pos.mpr hpos
+    intro habs; linarith
+  show QOU.qInteger q 5 * (QOU.qInteger q 4 * (QOU.qInteger q 3 *
+      (QOU.qInteger q 2 * (QOU.qInteger q 1 * 1))))
+    / (QOU.qInteger q 4 * (QOU.qInteger q 2 * (QOU.qInteger q 3 *
+      (QOU.qInteger q 1 * (QOU.qInteger q 1 * 1)))))
+    = QOU.qInteger q 5
+  rw [QOU.qInteger_one q hq]
+  have h4 := QOU.qInteger_ne_zero q 4 hq_one (by norm_num)
+  have h3 := QOU.qInteger_ne_zero q 3 hq_one (by norm_num)
+  have h2 := QOU.qInteger_ne_zero q 2 hq_one (by norm_num)
+  field_simp
+  ring
+
+/-- `dim_q([3,1,1]) = [4]_q [3]_q / [2]_q` via hook formula. -/
+theorem dimqPartition311_via_hook_formula (q : ℝ) (hq_one : q > 1) :
+    QOU.qFactorial q 5 / QOU.qHookProduct q [5, 2, 1, 2, 1]
+      = dimqPartition311 q := by
+  unfold dimqPartition311
+  have hq : q - q⁻¹ ≠ 0 := by
+    have hpos : q > 0 := by linarith
+    have hinv_lt : q⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq_one
+    have hinv_pos : q⁻¹ > 0 := inv_pos.mpr hpos
+    intro habs; linarith
+  show QOU.qInteger q 5 * (QOU.qInteger q 4 * (QOU.qInteger q 3 *
+      (QOU.qInteger q 2 * (QOU.qInteger q 1 * 1))))
+    / (QOU.qInteger q 5 * (QOU.qInteger q 2 * (QOU.qInteger q 1 *
+      (QOU.qInteger q 2 * (QOU.qInteger q 1 * 1)))))
+    = QOU.qInteger q 4 * QOU.qInteger q 3 / QOU.qInteger q 2
+  rw [QOU.qInteger_one q hq]
+  have h5 := QOU.qInteger_ne_zero q 5 hq_one (by norm_num)
+  have h2 := QOU.qInteger_ne_zero q 2 hq_one (by norm_num)
+  field_simp
+  ring
+
 /-! ### Hook-formula SYT count (`d_λ`) helper
 
     Frame–Robinson–Thrall: `d_λ = n! / ∏ h(x)`.  The function
