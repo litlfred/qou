@@ -472,6 +472,7 @@ export default chapter({
         "jucys-murphy-central-elements-qou",
         "mass-formula-iterative-lp-dual",
         "alpha-5-jm-central-empirical-findings",
+        "lp-dual-isospin-invariance",
         "wigner-2-coefficient",
         "mass-endomorphism-tower",
         "mass-endomorphism-jet-tower",
