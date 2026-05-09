@@ -1,10 +1,11 @@
 # Discharge paths for upstream conjectural class instances
 
-PR #577 introduced five class-axiomatised conjectural inputs under
-CLAUDE.md §3b-cond.  Each isolates a single conjecture as a Lean
-class with one `sorry`-instance; downstream conditional theorems
-have no `sorry` in their proof bodies.  This audit tracks the
-discharge path for each instance — what it would take to
+Five class-axiomatised conjectural inputs in
+`particle-interactions/` and `braids-and-knots/` follow the
+CLAUDE.md §3b-cond pattern: each isolates a single conjecture as
+a Lean class with one `sorry`-instance, and downstream conditional
+theorems have no `sorry` in their proof bodies.  This audit tracks
+the discharge path for each instance — what it would take to
 instantiate the class.
 
 ## Inventory
@@ -119,7 +120,7 @@ each conditional theorem is `sorry`-free in its body, and the
 entire stack of conjectural assumptions is auditable from a
 single inventory.
 
-## Appendix: shared-partition-module dedup (deferred)
+## Appendix: shared-partition-module dedup (pending Mathlib)
 
 Three particle-interactions block-Lean files
 (`cpt-orbit-closure-density`, `mass-volume-factorization`,

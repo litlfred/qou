@@ -76,8 +76,8 @@ the LP active set + GB NF data is the prediction proper.
 2. [`atom-mass-additive-baseline`](atom-mass-additive-baseline.md)
    — additive constituent baseline + Δ_binding column.
 3. [`rho-f-volume-binding-gap`](rho-f-volume-binding-gap.md) —
-   ρ_F · V_hyp inversion analysis (no single primitive yet
-   matches; atom→link map TODO).
+   ρ_F · V_hyp inversion analysis (no single primitive matches
+   at canonical ρ_F; atom→atomic-link map is open).
 4. [`brundan-kleshchev-audit`](brundan-kleshchev-audit.md) —
    structural-evidence dossier for the BK isomorphism.
 5. `alpha-k-macdonald-closed-form.witness.json` — closed-form
