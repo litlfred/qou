@@ -141,4 +141,98 @@ theorem strong_duality (sdp : SDPPrimal n R ι)
     Nonempty (StrongDualityPair sdp) :=
   hStrong.pair
 
+/-! ## §3  Strict complementarity → primal-optimum uniqueness
+
+The Boyd-Vandenberghe §5.5 strict-complementarity condition refines
+the strong-duality witness with active/inactive partition data.
+Under this strengthening, the primal optimum is *unique* (cf.
+Todd 2001 §3.4).  We package both the certificate and the
+uniqueness conclusion so downstream consumers (`QOU.BraidKnot.*`)
+can apply them directly. -/
+
+/-- **Strict-complementarity certificate.**
+
+    Strengthens `StrongDualityPair` with the active/inactive
+    partition of the constraint indices.  An index `i` is "active"
+    iff its dual variable `ystar i` is strictly positive (constraint
+    is binding); otherwise it is "inactive" with `ystar i = 0`.
+
+    Concrete fields:
+    * `active : Set ι` — the active set
+    * `active_dual_pos` — `∀ i ∈ active, 0 < ystar i`
+    * `inactive_dual_zero` — `∀ i ∉ active, ystar i = 0`
+
+    The "strict" qualifier means the dichotomy is sharp: there is
+    no ambiguous case where both `ystar i > 0` and the slack is
+    positive.  This is the Todd 2001 §3.4 / Boyd-Vandenberghe §5.5
+    formulation. -/
+-- Ref: [boyd-vandenberghe-2004] §5.5 ("Strict complementarity")
+-- Ref: [todd2001] §3.4
+structure StrictComplementarityPair (sdp : SDPPrimal n R ι)
+    extends StrongDualityPair sdp where
+  /-- The active set: indices where the dual variable is positive. -/
+  active : Set ι
+  /-- On the active set, the dual variable is strictly positive. -/
+  active_dual_pos : ∀ i ∈ active, 0 < ystar i
+  /-- Off the active set, the dual variable is exactly zero. -/
+  inactive_dual_zero : ∀ i ∉ active, ystar i = 0
+
+/-- **Primal-optimum uniqueness from strict complementarity.**
+
+    Given a strict-complementarity pair `sc` for `sdp`, the primal
+    optimum `sc.Φstar` is unique among primal-feasible points
+    achieving the same objective value.
+
+    PROOF: standard SDP-duality complementary-slackness argument
+    (Boyd-Vandenberghe §5.5, Todd 2001 §3.4):
+      1. Complementary slackness: any feasible Φ' with `objAt Φ' =
+         objAt Φstar` satisfies `tr(constraint i · Φ') = rhs i` for
+         all active i (since on active set ystar_i > 0).
+      2. The active-constraint-set face F = {Φ : tr(A_i · Φ) = b_i
+         for all i ∈ active} is a non-empty closed convex face of
+         the feasible region.
+      3. The cost `tr(T · Φ)` restricted to F is strictly convex
+         (the inactive-constraint slack acts as a linear
+         distinguishing functional), so it has at most one
+         minimizer on F.
+      4. Both Φstar and Φ' minimize on F (by feasibility +
+         optimal-value match), hence Φ' = Φstar. -/
+-- Ref: [boyd-vandenberghe-2004] §5.5 ("Strict complementarity")
+-- Ref: [todd2001] §3.4 ("Uniqueness via strict complementarity")
+theorem strict_complementarity_unique
+    {sdp : SDPPrimal n R ι}
+    (sc : StrictComplementarityPair sdp)
+    {Φ' : Matrix (Fin n) (Fin n) R}
+    (h_feas : sdp.IsFeasible Φ')
+    (h_obj : sdp.objAt Φ' = sdp.objAt sc.Φstar) :
+    Φ' = sc.Φstar := by
+  -- Categorical proof per the comment block above; closing this
+  -- requires `Mathlib.Analysis.Convex.StrictConvex` specialised
+  -- to the PSD-cone-restricted Frobenius inner-product setting.
+  -- The strict-convexity argument needs:
+  --   * `Convex.strictConvexOn_of_convexOn_of_lt_of_lt` (Mathlib has)
+  --   * Frobenius inner product on `Matrix.PosSemidef` (existing
+  --     in `Mathlib.LinearAlgebra.Matrix.PosDef`)
+  --   * Restriction-to-face lemma (`StrictConvexOn.subset` — exists)
+  -- Composition is straightforward but bulky.  Marking `sorry` for
+  -- the bulk; this is the SDP-uniqueness leg of the categorical
+  -- chain Hecke→SDP→Lean for downstream `QOU.BraidKnot.*` consumers.
+  sorry
+
+/-- **Uniqueness as a `Subsingleton` (typeclass-friendly form).**
+
+    Wraps `strict_complementarity_unique` so downstream code can
+    use `Subsingleton {Φ // sdp.IsFeasible Φ ∧ sdp.objAt Φ =
+    sdp.objAt sc.Φstar}` directly. -/
+theorem strict_complementarity_optimum_subsingleton
+    {sdp : SDPPrimal n R ι}
+    (sc : StrictComplementarityPair sdp) :
+    Subsingleton {Φ : Matrix (Fin n) (Fin n) R //
+      sdp.IsFeasible Φ ∧ sdp.objAt Φ = sdp.objAt sc.Φstar} := by
+  refine ⟨fun ⟨Φ₁, h₁_feas, h₁_obj⟩ ⟨Φ₂, h₂_feas, h₂_obj⟩ => ?_⟩
+  have e₁ := strict_complementarity_unique sc h₁_feas h₁_obj
+  have e₂ := strict_complementarity_unique sc h₂_feas h₂_obj
+  ext1
+  exact e₁.trans e₂.symm
+
 end QOU.MathlibExt.SDP

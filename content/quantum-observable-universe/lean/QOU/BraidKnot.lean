@@ -17,6 +17,7 @@ import QOU.BraidKnot.GradedTraceResidueSplit
 import QOU.BraidKnot.GBResidueSpectralSum
 import QOU.BraidKnot.JetTowerUniformDeltaMax
 import QOU.BraidKnot.PhiQTowerAlgebraicStratification
+import QOU.BraidKnot.CanonicalKnotIdSDPUniqueness
 
 /-!
 # BraidKnot — Module Index
