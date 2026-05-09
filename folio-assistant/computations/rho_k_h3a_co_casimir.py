@@ -126,7 +126,9 @@ def q_factorial_sym(n: int) -> sp.Expr:
     out = sp.Integer(1)
     for k in range(1, n + 1):
         out *= q_int_sym(k)
-    return sp.simplify(out)
+    # sp.cancel is significantly faster than sp.simplify for q-rational
+    # products (Gemini PR #613 review).
+    return sp.cancel(out)
 
 
 def q_dim_sym(partition: tuple[int, ...]) -> sp.Expr:
@@ -139,7 +141,9 @@ def q_dim_sym(partition: tuple[int, ...]) -> sp.Expr:
     h = sp.Integer(1)
     for hk in hook_lengths(partition):
         h *= q_int_sym(hk)
-    return sp.simplify(q_factorial_sym(n) / h)
+    # sp.cancel is sufficient + faster than sp.simplify for the q-dim
+    # ratio (Gemini PR #613 review).
+    return sp.cancel(q_factorial_sym(n) / h)
 
 
 def conjugate_partition(partition: tuple[int, ...]) -> tuple[int, ...]:
@@ -290,7 +294,10 @@ def main() -> int:
     print(f"    closure gap (LHS-RHS) = {mp.nstr(closure_gap, 8)}")
 
     # ── Step 5: diagnostic — what scalar λ_scale would close the gap? ─
-    if abs(sum_contributions) > mp.mpf("1e-40"):
+    # Tolerance dynamically tied to mp.dps (Gemini PR #613 review):
+    # at mp.dps = 50, this gives 10^-40 (matching the prior literal).
+    _eps = mp.mpf(10) ** -(mp.mp.dps - 10)
+    if abs(sum_contributions) > _eps:
         lambda_scale = target / sum_contributions
     else:
         lambda_scale = mp.mpf("inf")

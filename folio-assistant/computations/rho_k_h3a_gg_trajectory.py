@@ -104,26 +104,10 @@ from lp_dual_solver import (  # noqa: E402
 )
 
 
-# ── d_λ via hook-length formula ──────────────────────────────────────
-def hook_lengths(lam):
-    out = []
-    for i, row_i in enumerate(lam):
-        for j in range(row_i):
-            arm = row_i - j - 1
-            leg = sum(1 for r in range(i + 1, len(lam)) if lam[r] > j)
-            out.append(arm + leg + 1)
-    return out
-
-
-def d_lambda(lam):
-    n = sum(lam)
-    fact = 1
-    for k in range(2, n + 1):
-        fact *= k
-    h = 1
-    for hk in hook_lengths(lam):
-        h *= hk
-    return fact // h
+# `hook_lengths`, `d_lambda`, `dim_q_lambda` imported from the shared
+# helper rather than re-implemented locally — Gemini PR #613 review
+# (dedup across the 4 ρ_K race scripts).
+from murnaghan_nakayama import hook_lengths, d_lambda, dim_q_lambda  # noqa: E402, F401
 
 
 # ── Build nucleon braid words (gg-pair-production cascade) ───────────
@@ -179,19 +163,9 @@ def _op_name(c, d, gi):
     return f"({c:.2g}σ_{gi}+{d:.2g}·𝟙)"
 
 
-# ── q-dim_λ for Plancherel weights in LP/SDP cost vector ────────────
-def q_dim(lam, q):
-    """[n]_q! / Π_x [h_x]_q  (positive at q > 1)."""
-    def qint(k):
-        return (q ** k - q ** (-k)) / (q - q ** (-1)) if k != 0 else mp.mpf(0)
-    n = sum(lam)
-    num = mp.mpf(1)
-    for k in range(1, n + 1):
-        num *= qint(k)
-    den = mp.mpf(1)
-    for h in hook_lengths(lam):
-        den *= qint(h)
-    return num / den
+# Local alias: q_dim is the imported `dim_q_lambda` (kept under the
+# old name for minimum diff to call sites below).
+q_dim = dim_q_lambda
 
 
 def main() -> int:
@@ -205,7 +179,13 @@ def main() -> int:
     builder = (
         WitnessBuilder(
             name="rho-k-h3a-gg-trajectory",
-            engine="mpmath+numpy+cvxpy",
+            # Canonical engine tag per probe-gamma-gamma-h3-psd-scan
+            # (Copilot PR #613 review).  mpmath is used UPSTREAM of the
+            # LP/SDP for the χ^λ trajectory at 50 dps, but the LP/SDP
+            # solvers themselves are float64; the canonical combined tag
+            # for python+numpy+cvxpy consumers groups this witness
+            # appropriately.
+            engine="python+numpy+cvxpy",
         )
         .set_description(
             "Δ_λ Option G extension: per-prefix gg-pair-production "
@@ -306,18 +286,41 @@ def main() -> int:
         print(f"     {'closure check (Σ y χ Δ)':<33}{float(check_sum):>30.10g}  "
               f"target = {float(target):.6g}  residual = {float(residual):.2e}")
 
-        # ── LP via canonical solver (Plancherel weights as cost) ─────
-        # Cast: x_λ = Δ_λ; constraint Σ x_λ = n_target where we
-        # absorb (y_λ χ^λ) into the cost. Since solve_operator_selection_lp
-        # expects sum(x) = n_target with non-negative G·x, we use
-        # x_λ' = (y_λ χ^λ) Δ_λ  ⇒ Σ x_λ' = target. Cost = (1/dim_q(λ))/(y_λ χ^λ).
-        # Use absolute value to keep the LP sane (signed cost can unbound).
+        # ── LP/SDP via canonical solver — operator-selection LP ──────
+        # Per Copilot PR #613 review (line 320): the original comment
+        # described a y·χ-absorbed variable change that does NOT match
+        # the implementation.  The actual setup:
+        #
+        #   Variables : x_λ ≥ 0 for each λ ⊢ n
+        #   Cost      : t_λ = 1 / (dim_q(λ) · |y_λ χ^λ(β_K)|)
+        #               (Plancherel × inverse-binding-weight, so the
+        #                LP minimises Σ_λ (1/dim_q) · |Δ_λ| after
+        #                interpreting x_λ as |y_λ χ^λ| · |Δ_λ|)
+        #   Equality  : Σ_λ x_λ = |target|        (= |B_test/m_e|)
+        #   G         : I (every channel free; Frobenius positivity
+        #               degenerates to non-negativity of x_λ)
+        #
+        # Per Gemini PR #613 review (line 317, HIGH): t_λ MUST include
+        # the 1/|y_λ χ^λ| factor for the LP to actually minimise the
+        # weighted L¹-norm of Δ_λ rather than the weighted sum of
+        # contributions.  Without that factor the LP minimises
+        # Σ_λ (1/dim_q) · (|y_λ χ^λ| · |Δ_λ|) = weighted sum of
+        # *contribution magnitudes*, NOT of Δ_λ.
         d_lp = len(parts)
-        # Build cost t_λ = 1/dim_q(λ)  (Plancherel weight; all positive)
-        t_arr = np.array([float(1 / dim_q_at_q0[lam]) for lam in parts], dtype=float)
-        # Frobenius positivity: G = identity, every channel free
+        # Compute |y_λ χ^λ(β_K)| at q_0 for each λ (final-step values).
+        y_chi_abs = [
+            abs(float(y_at_q0[lam] * final_chi[lam])) for lam in parts
+        ]
+        # Build cost t_λ = 1/(dim_q(λ) · |y_λ χ^λ|).  Guard against
+        # near-zero |y_λ χ^λ| (set to a large finite cost so the LP
+        # naturally avoids that channel).
+        _yc_floor = 1e-15
+        t_arr = np.array([
+            float(1.0 / (float(dim_q_at_q0[lam]) * max(yc, _yc_floor)))
+            for lam, yc in zip(parts, y_chi_abs)
+        ], dtype=float)
         G_arr = np.eye(d_lp, dtype=float)
-        n_target_lp = float(abs(target))  # work with positive target for LP
+        n_target_lp = float(abs(target))  # |target| ≥ 0 for the LP
         try:
             lp_result = solve_operator_selection_lp(t_arr, G_arr, n_target_lp)
             lp_dict = lp_result.to_dict()

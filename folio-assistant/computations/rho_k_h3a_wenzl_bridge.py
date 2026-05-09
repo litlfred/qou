@@ -59,15 +59,17 @@ from pathlib import Path
 
 import mpmath as mp
 import numpy as np
-import sympy as sp
+# `sympy` and `hoefsmit_symbolic.Q` were imported here in the initial
+# version but never used (Copilot PR #613 review).  Removed to keep the
+# script's dependency surface minimal.
 
 HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
-from hoefsmit_symbolic import Q as Q_SYM  # noqa: E402
 from q_parameter import Q_MP  # noqa: E402
 from codata_constants import M_E_MEV, M_P_MEV, M_N_MEV, M_D_MEV  # noqa: E402
+from witness_base import WitnessBuilder  # noqa: E402
 
 # Reuse the proven numeric Hoefsmit + character pipeline from sibling
 # rho_k_h3a_refinement.py (do NOT modify that script per task constraint).
@@ -375,6 +377,19 @@ def main() -> int:
     script_bytes = Path(__file__).read_bytes()
     script_hash = "sha256:" + hashlib.sha256(script_bytes).hexdigest()
 
+    # Engine string per Copilot PR #613 review (line 400): describe the
+    # ACTUAL solver used.  Step 7 now solves the selected 11×11 system
+    # in mpmath via `mp.lu_solve` at the `--dps` precision (Gemini
+    # PR #609 precision fix); numpy.linalg.* is retained ONLY for the
+    # rank-check + greedy row selection.
+    engine_str = (
+        f"mpmath.lu_solve at {args.dps} dps for the 11×11 selected "
+        "system; numpy.linalg only for rank-check + row-selection "
+        "greedy.  Reuses chi_numeric / load_y_lambda_n6 from "
+        "rho_k_h3a_refinement.py (sequential evaluation; deuteron is "
+        "small enough that the prior Pool closure-pickle bug is "
+        "sidestepped)."
+    )
     witness = {
         "computation": "rho-k-h3a-wenzl-bridge",
         "computedAt": datetime.now(timezone.utc).isoformat(),
@@ -390,14 +405,7 @@ def main() -> int:
             "is distributed proportionally to y_λ across all 11 "
             "Wedderburn blocks."
         ),
-        "engine": (
-            f"sequential mpmath at {args.dps} dps; numpy.linalg.solve "
-            "for the augmented 11×11 system; reuses chi_numeric / "
-            "load_y_lambda_n6 from rho_k_h3a_refinement.py "
-            "(no Pool — closure-pickle bug from prior Option F retry "
-            "is sidestepped by sequential evaluation, fast enough for "
-            "the deuteron pipeline)"
-        ),
+        "engine": engine_str,
         "scriptFile": "rho_k_h3a_wenzl_bridge.py",
         "scriptHash": script_hash,
         "parameters": {
@@ -496,8 +504,35 @@ def main() -> int:
             "the session fresh."
         ),
     }
-    out = HERE / "rho-k-h3a-wenzl-bridge.witness.json"
-    out.write_text(json.dumps(witness, indent=2) + "\n")
+    # WitnessBuilder.wrap_legacy migration (Copilot PR #613 review,
+    # line 381 + json:8): preserves the existing top-level payload
+    # layout while adding canonical metadata (engineVersion,
+    # assertions, allPassed, scriptHash, scriptCommitSha, durationMs,
+    # commitSha) so the witness conforms to the standard
+    # ComputationWitness schema and `lp_dual_witness_validator` /
+    # `bound_state_observable_validator` accept it without warnings.
+    builder = (
+        WitnessBuilder(
+            name="rho-k-h3a-wenzl-bridge",
+            engine="python+numpy+mpmath",
+        )
+        .set_description(witness["description"])
+        .add_assertion(
+            name="wenzl_bridge_unique_solvability",
+            computed=1.0 if outcome == "uniquely-solvable" else 0.0,
+            expected=1.0,
+            tolerance=0.0,
+            source="11×11 augmented Markov system uniquely solvable (rank 11)",
+        )
+        .add_assertion(
+            name="closure_residual_at_dps",
+            computed=float(closure_err_MeV) if closure_err_MeV is not None else 1.0,
+            expected=0.0,
+            tolerance=float(mp.mpf(10) ** -(mp.mp.dps - 10)),
+            source="M(D) reconstruction residual after Δ_λ insertion",
+        )
+    )
+    out = builder.save(extra=witness)
     print(f"\n  Wrote {out.name} ({out.stat().st_size} bytes).")
     print("=" * 96)
     print(f"  OUTCOME: {outcome}")

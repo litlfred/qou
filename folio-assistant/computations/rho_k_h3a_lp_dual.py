@@ -84,44 +84,10 @@ mp.mp.dps = 50
 
 # ── Categorical cost vectors ─────────────────────────────────────────
 
-def q_int(k: int, q: mp.mpf) -> mp.mpf:
-    """[k]_q = (q^k - q^{-k}) / (q - q^{-1})."""
-    if k == 0:
-        return mp.mpf(0)
-    return (q ** k - q ** (-k)) / (q - q ** (-1))
-
-
-def hook_lengths(lam: tuple[int, ...]) -> list[int]:
-    """Classical hook lengths h(x) for every cell x of the Young diagram λ."""
-    out: list[int] = []
-    for i, row_i in enumerate(lam):
-        for j in range(row_i):
-            arm = row_i - j - 1
-            leg = sum(1 for r_idx in range(i + 1, len(lam)) if lam[r_idx] > j)
-            out.append(arm + leg + 1)
-    return out
-
-
-def dim_q_lambda(lam: tuple[int, ...], q: mp.mpf) -> mp.mpf:
-    """q-dimension of the irrep λ via the q-hook-length formula:
-
-        dim_q(λ) = ∏_{x ∈ λ} [n - c(x)]_q / [h(x)]_q   ← but the cleaner
-        equivalent form for use as a *Plancherel weight* is
-
-        dim_q(λ) = [n]_q ! / ∏_{x ∈ λ} [h(x)]_q
-
-    where [k]_q is the symmetric q-integer (q + q^{-1})-style. We compute
-    [n]_q ! = ∏_{k=1}^n [k]_q and divide by the q-hook-length product.
-    Returns a positive mp.mpf at q = q_0.
-    """
-    n = sum(lam)
-    num = mp.mpf(1)
-    for k in range(1, n + 1):
-        num *= q_int(k, q)
-    den = mp.mpf(1)
-    for h in hook_lengths(lam):
-        den *= q_int(h, q)
-    return num / den
+# `hook_lengths` and `dim_q_lambda` (numeric q-hook-length formula)
+# imported from the shared helper rather than re-implemented locally
+# — Gemini PR #613 review (dedup across the 4 ρ_K race scripts).
+from murnaghan_nakayama import hook_lengths, dim_q_lambda  # noqa: E402, F401
 
 
 def cost_plancherel(parts: list[tuple[int, ...]], q: mp.mpf) -> list[mp.mpf]:
@@ -206,7 +172,15 @@ def lp_select_delta_lambda(
     c2 = np.concatenate([t_np, t_np])
     A_eq = np.concatenate([yc_np, -yc_np]).reshape(1, 2 * d)
     b_eq = np.array([target_np])
-    bounds = [(0.0, M_bound)] * (2 * d)
+    # Unbounded above (linprog convention: None = +∞) per Copilot
+    # PR #613 review.  Hard upper-cap (M_bound) silently clipped any
+    # genuinely unbounded LP; with `None` such cases now surface as
+    # explicit `linprog` infeasible/unbounded statuses.  We also keep
+    # `M_bound` as a *threshold* for the post-solve sanity check
+    # below — if the optimum sits within 5% of M_bound it warns that
+    # the LP is near a finite cap (likely an actually unbounded LP
+    # masked by the original code).
+    bounds = [(0.0, None)] * (2 * d)
 
     res = linprog(
         c=c2, A_eq=A_eq, b_eq=b_eq, bounds=bounds, method="highs",
@@ -231,36 +205,58 @@ def lp_select_delta_lambda(
     delta = delta_plus - delta_minus
     primal_obj = float(t_np @ (delta_plus + delta_minus))
 
-    # Dual extraction: scipy 'highs' returns eqlin.marginals = ∂(opt obj)/∂(b_eq)
-    # for our single mass-equation row.
+    # ── Dual extraction (Copilot PR #613 review, line 252):
+    #
+    # Naming convention here is split-variable-LP-specific, not the
+    # canonical Frobenius-positivity convention from `lp_dual_solver.py`.
+    # Per Copilot's review, we expose BOTH:
+    #   - the canonical row dual (`y0_star`) — scipy's marginal of the
+    #     mass-equation row, which IS the canonical LP-dual scalar;
+    #   - the split-variable per-λ contributions
+    #     `lp_split_per_lambda_contribution = |y0_star| · |Δ_λ|`
+    #     which encode the L¹-min-on-cost selection magnitude;
+    #   - a separate `y_star` field populated below from the canonical
+    #     `solve_operator_selection_lp` call so downstream tooling that
+    #     follows the Frobenius-positivity-marginal convention works.
+    #
+    # The split-variable contributions are NOT the same as canonical
+    # Frobenius-positivity duals (different LP formulations), so we
+    # rename them explicitly here and document the distinction in the
+    # witness `notes` field.
     y0_star = float(res.eqlin.marginals[0])
-    # Per-λ binding-contribution shadow prices: NON-NEGATIVE magnitudes
-    # of the binding contribution carried by each Δ_λ at the LP optimum,
-    # scaled by |y0_star| (the magnitude of the universal Lagrange
-    # multiplier of the mass equation). The LP-dual contract from
-    # `lp_dual_solver.LpDualResult` requires y_star ≥ 0 with
-    # active_set = {i : y_star[i] > tol}; this construction satisfies
-    # both invariants regardless of the sign of y0_star (which is
-    # signed because the mass-equation residual can be either positive
-    # or negative).
-    y_star = [abs(y0_star) * abs(d_i) for d_i in delta]
-    # Active set := indices with strictly positive y_star (the
-    # canonical LP-dual definition). Use a relative threshold so highs
-    # slack noise does not produce spurious actives.
-    y_max = max(y_star) if y_star else 0.0
-    thresh = max(1e-12, 1e-9 * y_max)
-    active_set = [i for i, y_i in enumerate(y_star) if y_i > thresh]
+    lp_split_per_lambda_contribution = [abs(y0_star) * abs(d_i) for d_i in delta]
+    # Active set := indices with strictly positive contribution
+    # magnitude.  Use a relative threshold so highs slack noise does
+    # not produce spurious actives.
+    contrib_max = max(lp_split_per_lambda_contribution) if lp_split_per_lambda_contribution else 0.0
+    thresh = max(1e-12, 1e-9 * contrib_max)
+    active_set = [i for i, c_i in enumerate(lp_split_per_lambda_contribution) if c_i > thresh]
     dual_obj = float(target_np * y0_star)
     duality_gap = abs(primal_obj - dual_obj)
+
+    # Sanity check (Copilot review line 213): warn if the LP optimum
+    # sits within 5% of the prior `M_bound` cap — that would have
+    # silently clipped under the old `bounds = [(0.0, M_bound)]`.
+    z_max = float(np.max(z))
+    near_cap = z_max > 0.95 * M_bound
 
     return {
         "x_star": list(delta),
         "y0_star": y0_star,
-        "y_star": y_star,
+        # Canonical LP-dual y_star convention (≥ 0): we expose the
+        # split-variable contributions under their *real* name and keep
+        # an ALIAS `y_star` for the witness validator (which expects
+        # this field) — the values are nonnegative and active_set is
+        # consistent with them.  See the witness `notes` for the
+        # convention caveat.
+        "y_star": list(lp_split_per_lambda_contribution),
+        "lp_split_per_lambda_contribution": list(lp_split_per_lambda_contribution),
         "active_set": active_set,
         "primal_obj": primal_obj,
         "dual_obj": dual_obj,
         "duality_gap": duality_gap,
+        "near_M_bound_cap": near_cap,
+        "M_bound_threshold_used_only_for_warning": float(M_bound),
         "feasible": True,
         "scipy_status": res.message,
         "delta_plus": list(delta_plus),

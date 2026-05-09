@@ -1,8 +1,8 @@
 {
-  "engine": "mpmath+numpy+cvxpy",
+  "engine": "python+numpy+cvxpy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T13:51:19.012822+00:00",
-  "commitSha": "fe5a7741cc91c7376d16b769719ab9aafb798890",
+  "computedAt": "2026-05-09T14:17:47.140472+00:00",
+  "commitSha": "d3d2a8d9095d043c7239d72d28b50087f970f67f",
   "assertions": [
     {
       "name": "option_g_closure_p",
@@ -22,7 +22,7 @@
     },
     {
       "name": "sdp_duality_gap_p",
-      "computed": 1.890973576612609e-06,
+      "computed": 2.9060642781075785e-09,
       "expected": 0.0,
       "passed": true,
       "tolerance": 0.0001,
@@ -46,7 +46,7 @@
     },
     {
       "name": "sdp_duality_gap_n",
-      "computed": 9.722249594279475e-08,
+      "computed": 3.228044831438126e-09,
       "expected": 0.0,
       "passed": true,
       "tolerance": 0.0001,
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 948,
+  "durationMs": 4064,
   "computation": "rho-k-h3a-gg-trajectory",
   "scriptFile": "rho_k_h3a_gg_trajectory.py",
-  "scriptHash": "875b28df5fd2",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "07c37bc5d04a",
+  "scriptCommitSha": "d3d2a8d9095d043c7239d72d28b50087f970f67f",
   "description": "Δ_λ Option G extension: per-prefix gg-pair-production trajectory for the proton and neutron (n=3, p(3)=3) canonical braid words, with per-step χ^λ + Σ y_λ χ^λ decomposition. At the full braid, applies the Frobenius-pairing min-norm closure (Option G) AND routes through the canonical LP / SDP solvers from lp_dual_solver.py (per CLAUDE.md § LP/SDP duals — first-class infra). Sibling of rho_k_h3a_frobenius_pairing.py (deuteron @ n=6).",
   "data": {
     "nucleons": {
@@ -210,55 +210,55 @@
             1.0653062285924353,
             -0.0
           ],
-          "y0_star": 0.4972905450085915,
+          "y0_star": 0.9792317651571432,
           "y_star": [
-            0.5027094549914085,
+            0.7620718287058095,
             0.0,
-            0.5027094549914085
+            58.49643277408972
           ],
           "active_set": [
             0,
             2
           ],
-          "primal_obj": 0.5297667150177793,
-          "dual_obj": 0.5297667150177793,
+          "primal_obj": 1.0431816986574696,
+          "dual_obj": 1.0431816986574696,
           "duality_gap": 0.0,
           "feasible": true
         },
         "sdp": {
           "X_star": [
-            6.769191769840103e-06,
-            1.0652926831163778,
-            6.769191767291295e-06
+            -5.06801303016341e-11,
+            1.0653062285923975,
+            5.062920756251869e-11
           ],
           "Z_star": [
-            0.49729870540389326,
-            0.5027012945383265,
-            0.0,
-            0.5027012945383266
+            0.979231765172965,
+            0.7620718287049405,
+            7.583971760106858e-16,
+            58.49643277407388
           ],
-          "primal_obj": 0.5297735173641455,
-          "dual_obj": 0.5297754083377221,
-          "duality_gap": 1.890973576612609e-06,
+          "primal_obj": 1.0431817015803888,
+          "dual_obj": 1.0431816986743245,
+          "duality_gap": 2.9060642781075785e-09,
           "eigenvalues": [
-            6.769191767291295e-06,
-            6.769191769840103e-06,
-            1.0652926831163778
+            -5.06801303016341e-11,
+            5.062920756251869e-11,
+            1.0653062285923975
           ],
           "feasible": true
         },
         "y_star": [
-          0.5027094549914085,
+          0.7620718287058095,
           0.0,
-          0.5027094549914085
+          58.49643277408972
         ],
         "active_set": [
           0,
           2
         ],
-        "y0_star": 0.4972905450085915,
-        "primal_obj": 0.5297667150177793,
-        "dual_obj": 0.5297667150177793,
+        "y0_star": 0.9792317651571432,
+        "primal_obj": 1.0431816986574696,
+        "dual_obj": 1.0431816986574696,
         "duality_gap": 0.0
       },
       "n": {
@@ -409,55 +409,55 @@
             0.9232332971696764,
             -0.0
           ],
-          "y0_star": 0.4972905450085915,
+          "y0_star": 1.0407267429187717,
           "y_star": [
-            0.5027094549914085,
+            1.1046506728402363,
             0.0,
-            0.5027094549914085
+            47.2329185601562
           ],
           "active_set": [
             0,
             2
           ],
-          "primal_obj": 0.4591151895195873,
-          "dual_obj": 0.4591151895195873,
+          "primal_obj": 0.9608335823175557,
+          "dual_obj": 0.9608335823175557,
           "duality_gap": 0.0,
           "feasible": true
         },
         "sdp": {
           "X_star": [
-            5.973898745213231e-08,
-            0.9232331773500914,
-            5.973898434967248e-08
+            -7.147629320811413e-11,
+            0.923233297170619,
+            7.041139774085728e-11
           ],
           "Z_star": [
-            0.49729050457496443,
-            0.50270949542533,
+            1.0407267429389262,
+            1.1046506728386474,
             0.0,
-            0.5027094954253298
+            47.23291856013605
           ],
-          "primal_obj": 0.4591152494124124,
-          "dual_obj": 0.45911515218991644,
-          "duality_gap": 9.722249594279475e-08,
+          "primal_obj": 0.960833585564208,
+          "dual_obj": 0.9608335823361631,
+          "duality_gap": 3.228044831438126e-09,
           "eigenvalues": [
-            5.973898434967248e-08,
-            5.973898745213231e-08,
-            0.9232331773500914
+            -7.147629320811413e-11,
+            7.041139774085728e-11,
+            0.923233297170619
           ],
           "feasible": true
         },
         "y_star": [
-          0.5027094549914085,
+          1.1046506728402363,
           0.0,
-          0.5027094549914085
+          47.2329185601562
         ],
         "active_set": [
           0,
           2
         ],
-        "y0_star": 0.4972905450085915,
-        "primal_obj": 0.4591151895195873,
-        "dual_obj": 0.4591151895195873,
+        "y0_star": 1.0407267429187717,
+        "primal_obj": 0.9608335823175557,
+        "dual_obj": 0.9608335823175557,
         "duality_gap": 0.0
       }
     },

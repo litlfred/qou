@@ -127,35 +127,10 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
 from witness_base import WitnessBuilder  # noqa: E402
-
-
-def hook_lengths(lam: tuple[int, ...]) -> list[int]:
-    """Classical hook lengths h(x) for every cell x of the Young diagram λ."""
-    out: list[int] = []
-    for i, row_i in enumerate(lam):
-        for j in range(row_i):
-            arm = row_i - j - 1
-            leg = sum(1 for r in range(i + 1, len(lam)) if lam[r] > j)
-            out.append(arm + leg + 1)
-    return out
-
-
-def factorial(n: int) -> int:
-    out = 1
-    for k in range(2, n + 1):
-        out *= k
-    return out
-
-
-def d_lambda(lam: tuple[int, ...]) -> int:
-    """Hook-length formula: d_λ = n! / Π_{x ∈ λ} h(x).  This is the
-    number of standard Young tableaux of shape λ and equals
-    χ^λ(1) = dim of irrep λ over Q."""
-    n = sum(lam)
-    prod = 1
-    for h in hook_lengths(lam):
-        prod *= h
-    return factorial(n) // prod
+# `hook_lengths` and `d_lambda` (= dim_specht, # of SYT, hook-length
+# formula) imported from the shared helper rather than re-implemented
+# locally — Gemini PR #613 review (dedup across the 4 race scripts).
+from murnaghan_nakayama import hook_lengths, d_lambda  # noqa: E402, F401
 
 
 def main() -> int:
@@ -386,7 +361,7 @@ def main() -> int:
                 "sum_y_chi_Delta": str(sum_check),
                 "target": str(target),
                 "residual": str(residual),
-                "match_at_machine_eps": abs(residual) < mp.mpf("1e-40"),
+                "match_at_machine_eps": abs(residual) < mp.mpf(10) ** -(mp.mp.dps - 10),
             }
         )
         .add_data(

@@ -60,13 +60,51 @@ def hook_lengths(partition):
 
 
 def dim_specht(partition):
-    """f^λ = n! / Π hook lengths (hook-length formula)."""
+    """f^λ = n! / Π hook lengths (hook-length formula).
+
+    Also exported as ``d_lambda`` for callers using that convention; both
+    names refer to the same hook-length count of standard Young tableaux.
+    """
     n = sum(partition)
     hooks = hook_lengths(partition)
     prod = 1
     for h in hooks:
         prod *= h
     return math.factorial(n) // prod
+
+
+# Alias used by some callers (e.g. ρ_K race scripts that follow
+# representation-theory naming d_λ rather than f^λ).
+d_lambda = dim_specht
+
+
+def dim_q_lambda(partition, q):
+    """Quantum dimension of the irrep λ via the q-hook-length formula.
+
+        dim_q(λ) = [n]_q! / Π_{x ∈ λ} [h(x)]_q
+
+    where [k]_q = (q^k − q^{−k}) / (q − q^{−1}) is the symmetric q-integer.
+    Numeric mpmath / float consumer (use the symbolic ``q_dim_sym`` in the
+    Frobenius co-Casimir script for sympy expressions).
+
+    Returns a positive value at q > 1; same type as the input q (mpmath
+    mpf or Python float). Shared helper for the ρ_K race scripts that
+    use Plancherel weights `1/dim_q(λ)` as LP cost vectors.
+    """
+    def qint(k):
+        if k == 0:
+            return q * 0  # type-preserving zero
+        return (q ** k - q ** (-k)) / (q - q ** (-1))
+    n = sum(partition)
+    num = qint(1)
+    for k in range(2, n + 1):
+        num = num * qint(k)
+    den = qint(1)
+    for h in hook_lengths(partition):
+        if h == 1:
+            continue  # qint(1) = 1 — multiplicative identity
+        den = den * qint(h)
+    return num / den
 
 
 def rim_hooks_of_size(partition, m):
