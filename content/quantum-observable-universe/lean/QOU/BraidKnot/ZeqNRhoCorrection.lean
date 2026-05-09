@@ -16,7 +16,9 @@ This is **conjecture-grade**: the empirical regularity holds at
 `10⁻³` precision for `²H, ⁴He, ¹²C, ¹⁶O` (per propagation through
 α-cluster).  The Lean class below axiomatises the conjecture; any
 downstream theorem that depends on it takes
-`[ZeqNRhoCorrection K A]` as a typeclass hypothesis and is then
+`[ZeqNRhoCorrection A K]` as a typeclass hypothesis (matches the
+declaration order `class ZeqNRhoCorrection (A : ℕ) (K : KnotAssignment A)`)
+and is then
 fully verified by Lean — the only unproved input is the class
 instance.
 
@@ -25,8 +27,8 @@ LaTeX label: `conj:z-eq-n-rho-correction`
 ## References
 
 - [manuscript] docs/audits/2026-05-03-z-eq-n-rho-correction-finding.md
-- [manuscript] docs/audits/2026-05-03-l1-A-q-as-markov-trace.md
-- [manuscript] docs/audits/2026-05-03-l2-selective-q-deformation-proof.md
+- L-1 (`[A]_q` as Markov-trace evaluation) — write-up open.
+- L-2 (selective q-deformation; ρ_struct q-independent on generic locus) — proof sketch open.
 -/
 
 import Mathlib.Data.Real.Basic
@@ -56,8 +58,11 @@ noncomputable def qInt (q : ℝ) (n : ℕ) : ℝ :=
 
     `B(q) = m_e · Vol_hyp(K_A) · (ρ_struct + A − [A]_q)`.
 
-    The class is parametrised by the atom mass number `A = 2k`
-    (assumed even) and the canonical knot assignment `K_A`.
+    The class is parametrised by the atom mass number `A` (the
+    conjecture's empirical regime is the doubly-symmetric `A = 2k`
+    line; the class itself does not enforce evenness — downstream
+    callers should restrict to even `A` or supply a separate
+    `Even A` hypothesis) and the canonical knot assignment `K_A`.
     Instances supply:
     - `bindingEnergy q` — the binding energy at substrate q.
     - `classical_limit` — recovery of the integer Kashaev law at

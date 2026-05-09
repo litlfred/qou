@@ -76,15 +76,38 @@ VOL_THREE_TWIST_ERR  = 1e-12
 VOL_BORROMEAN        = 7.327724753846269  # ± 1e-12
 VOL_BORROMEAN_ERR    = 1e-12
 
-# ── Hyperbolic-knot volumes at 50 dp (used by per_atom_rho_deviation
-#    and downstream Z=N ρ-correction probes — pulled from #523). ──
-VOL_6_2_50DP    = 4.4008325161230461014412038656409280339834854185165
-VOL_8_11_50DP   = 8.2863168178065925881
-VOL_L6A4_50DP   = 7.3277247538462690000000000000000000000000000000000  # Borromean
-VOL_7_SQ_1_50DP = 4.7494999818744385084980865556375718851941577840553  # Whitehead-pair / α-α coupling knot
+# ── Hyperbolic-knot volumes (used by per_atom_rho_deviation and
+#    downstream Z=N ρ-correction probes — pulled from #523). ──
+# Note on naming: these are stored as Python floats (≈15-decimal-
+# digit precision); the `_50DP` aliases below preserve the historical
+# import names used by callers but are NOT 50-dp values — full 50-dp
+# evaluation should use SnapPy / mpmath at the call site. Each value
+# carries an explicit `*_ERR` upper bound on the f64 storage error
+# (per the module's "every observed value has central + uncertainty"
+# convention).
+VOL_6_2          = 4.400832516123046  # SnapPy 6_2 volume; ± 1e-15 (f64 rep)
+VOL_6_2_ERR      = 1e-15
+VOL_8_11         = 8.286316817806593  # SnapPy 8_11 volume; ± 1e-15
+VOL_8_11_ERR     = 1e-15
+VOL_L6A4         = 7.327724753846269  # Borromean (= VOL_BORROMEAN); ± 1e-15
+VOL_L6A4_ERR     = 1e-15
+VOL_7_SQ_1       = 4.749499981874439  # Whitehead-pair / α-α coupling knot; ± 1e-15
+VOL_7_SQ_1_ERR   = 1e-15
+
 # 8·G with G = Catalan's constant — legacy magic-A volume input
-# (mass_table_ppb.py historical form; differs from VOL_L6A4_50DP at 1e-9).
-EIGHT_G_50DP    = 8.0 * 0.91596559417721901505460351493238411077  # ≈ 7.327724753417752
+# (mass_table_ppb.py historical form; differs from VOL_L6A4 at 1e-9
+# because 8·G ≈ 7.32772475341... vs Vol(L6a4) ≈ 7.32772475384...).
+EIGHT_G          = 8.0 * 0.91596559417721901505460351493238411077  # ≈ 7.327724753417752
+EIGHT_G_ERR      = 1e-15
+
+# Backwards-compat aliases for the kebab-case `_50DP` import names
+# used by per_atom_rho_deviation.py and possible future callers.
+# DO NOT rely on these for 50-dp precision — they are f64 floats.
+VOL_6_2_50DP    = VOL_6_2
+VOL_8_11_50DP   = VOL_8_11
+VOL_L6A4_50DP   = VOL_L6A4
+VOL_7_SQ_1_50DP = VOL_7_SQ_1
+EIGHT_G_50DP    = EIGHT_G
 
 # ── Observed half-lives (NNDC/ENSDF) ────────────────────────────
 

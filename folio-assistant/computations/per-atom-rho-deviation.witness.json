@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T03:08:15.737733+00:00",
-  "commitSha": "37543da0e2537712cfe35d6d5df0ddc116d27b0f",
+  "computedAt": "2026-05-09T03:21:08.098047+00:00",
+  "commitSha": "8d5d1ab84db79b644841226e423f0821e46650f2",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "per-atom-rho-deviation",
   "scriptFile": "per_atom_rho_deviation.py",
-  "scriptHash": "774d89ae0ddb",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "f2d41e5e4577",
+  "scriptCommitSha": "8d5d1ab84db79b644841226e423f0821e46650f2",
   "description": "Per-atom ρ-deviation decomposition. For each atom, computes ρ_true = B_AME/(m_e·Vol_hyp(K)) and tests δρ = ρ_true/ρ_struct − 1 against pre-specified categorical q-forms (no fitting). Generalises PR #512's ³He probe to all family-1/magic-A atoms in mass-table-ppb.",
   "auditOnly": "docs/audits/2026-05-03-z-eq-n-rho-correction-finding.md",
   "parameters": {
@@ -39,7 +39,7 @@
       "delta_rho_pct": -1.0785508085002005,
       "top_5_categorical_matches": [
         {
-          "form": "-[2]_q−round",
+          "form": "-[2]_q−floor",
           "value": -0.010896869118481867,
           "residual": 0.00011136103347986204,
           "abs_resid": 0.00011136103347986204
@@ -51,7 +51,7 @@
           "abs_resid": 0.00011136103347986204
         },
         {
-          "form": "-([2]_q−2)−round",
+          "form": "-([2]_q−2)−floor",
           "value": -0.010896869118481867,
           "residual": 0.00011136103347986204,
           "abs_resid": 0.00011136103347986204
@@ -63,7 +63,7 @@
           "abs_resid": 0.00011136103347986204
         },
         {
-          "form": "-([2]_q−2)/(A−1)−round",
+          "form": "-([2]_q−2)/(A−1)−floor",
           "value": -0.010896869118481867,
           "residual": 0.00011136103347986204,
           "abs_resid": 0.00011136103347986204
@@ -90,13 +90,13 @@
           "abs_resid": 0.00825848743161238
         },
         {
-          "form": "+ℏ_q²−round",
+          "form": "+ℏ_q²−floor",
           "value": 0.009817188513478667,
           "residual": -0.00825848743161238,
           "abs_resid": 0.00825848743161238
         },
         {
-          "form": "+[2]_q−round",
+          "form": "+[2]_q−floor",
           "value": 0.010896869118481867,
           "residual": -0.00933816803661558,
           "abs_resid": 0.00933816803661558
@@ -108,7 +108,7 @@
           "abs_resid": 0.011375889595344954
         },
         {
-          "form": "-ℏ_q²−round",
+          "form": "-ℏ_q²−floor",
           "value": -0.009817188513478667,
           "residual": 0.011375889595344954,
           "abs_resid": 0.011375889595344954
@@ -135,7 +135,7 @@
           "abs_resid": 0.008741183699477073
         },
         {
-          "form": "+([3]_q−3)/2−round",
+          "form": "+([3]_q−3)/2−floor",
           "value": 0.021853109115255842,
           "residual": 0.008741183699477073,
           "abs_resid": 0.008741183699477073
@@ -147,13 +147,13 @@
           "abs_resid": 0.008741183699477073
         },
         {
-          "form": "+([3]_q−3)/(A−1)−round",
+          "form": "+([3]_q−3)/(A−1)−floor",
           "value": 0.021853109115255842,
           "residual": 0.008741183699477073,
           "abs_resid": 0.008741183699477073
         },
         {
-          "form": "+[3]_q−round",
+          "form": "+[3]_q−floor",
           "value": 0.043706218230511684,
           "residual": -0.013111925415778769,
           "abs_resid": 0.013111925415778769
@@ -180,13 +180,13 @@
           "abs_resid": 0.0005735212917014065
         },
         {
-          "form": "-([4]_q−4)/2−round",
+          "form": "-([4]_q−4)/2−floor",
           "value": -0.054841217818854204,
           "residual": -0.0005735212917014065,
           "abs_resid": 0.0005735212917014065
         },
         {
-          "form": "-[3]_q−round",
+          "form": "-[3]_q−floor",
           "value": -0.043706218230511684,
           "residual": -0.011708520880043927,
           "abs_resid": 0.011708520880043927
@@ -198,7 +198,7 @@
           "abs_resid": 0.018853927231319477
         },
         {
-          "form": "-([4]_q−4)/3−round",
+          "form": "-([4]_q−4)/3−floor",
           "value": -0.036560811879236134,
           "residual": -0.018853927231319477,
           "abs_resid": 0.018853927231319477

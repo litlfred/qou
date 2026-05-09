@@ -23,7 +23,6 @@ Usage:
 """
 from __future__ import annotations
 
-import json
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -129,14 +128,16 @@ def decomposition_row(sym: str, knot: str, rho_struct: int, A: int,
     drho    = rho_tru / rho_struct - 1.0          # signed fractional deviation
 
     anchors = q_anchors(Q0, A)
-    # For each anchor a, test δρ = ±a and δρ = ±(a − ⌊a⌋) and δρ = ±(a − 1).
+    # For each anchor a, test δρ = ±a, δρ = ±(a − 1), and δρ = ±(a − ⌊a⌋)
+    # (fractional-part removal — matches the docstring's "−⌊a⌋" notation).
     # No fitting: just record the closest match by absolute residual.
+    import math
     best = []
     for label, val in anchors.items():
         for sign in (+1, -1):
             for offset_label, offset in (("",       0.0),
                                           ("−1",    1.0),
-                                          ("−round",round(val))):
+                                          ("−floor",math.floor(val))):
                 cand = sign * (val - offset)
                 resid = drho - cand
                 best.append({

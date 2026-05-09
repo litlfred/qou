@@ -78,17 +78,19 @@ A categorical derivation requires three lemmas:
 
 1. **L-1** (total-host-count): the Kashaev coefficient at finite $q$
    is intrinsically $\rho_{\rm struct} + A - [A]_q$, with the
-   integer $\rho_{\rm struct}$ as its $q\to 1$ limit. **Open** — see
-   the [identification of $[A]_q$ as a Markov trace audit](../../../docs/audits/2026-05-03-l1-A-q-as-markov-trace.md).
+   integer $\rho_{\rm struct}$ as its $q\to 1$ limit. **Open** —
+   the proposed identification of $[A]_q$ as a Markov-trace
+   evaluation has not been written up yet.
 2. **L-2** (selective q-deformation): the Wedderburn-block
    multiplicity $\rho_{\rm struct}$ is q-independent on the generic
-   locus. **Essentially classical** — see the [L-2 proof sketch](../../../docs/audits/2026-05-03-l2-selective-q-deformation-proof.md).
+   locus. **Essentially classical** — proof sketch deferred to a
+   follow-up audit.
 3. **L-3** (Z=N decoupling): the isospin-asymmetry correction
    $\delta_{\rm asym}(Z, N)$ vanishes at $Z = N$. Should follow from
    the Z↔N substrate symmetry; **tractable**.
 
 This block is the **conjectural form**; downstream theorems consume
 it via the Lean class
-[`QOU.BraidKnot.ZeqNRhoCorrection`](z-eq-n-rho-correction.lean) per
+`QOU.BraidKnot.ZeqNRhoCorrection` (resolved via the `lean.ref` field on this block; the `.lean` source lives at `content/quantum-observable-universe/lean/QOU/BraidKnot/ZeqNRhoCorrection.lean`) per
 the conditional-class policy of
 [CLAUDE.md §3b](../../../CLAUDE.md).
