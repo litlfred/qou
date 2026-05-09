@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T05:13:31.740409+00:00",
-  "commitSha": "3d22baeee1a4e39f6bb28ea9c3c7d9f4da06847a",
+  "computedAt": "2026-05-09T05:35:18.469466+00:00",
+  "commitSha": "229063add4c04b5aafbcde5ebf7b7f6f1b76e032",
   "assertions": [
     {
       "name": "weyl_dim_lambda=(1,)_n=2",
@@ -97,8 +97,8 @@
   "durationMs": 2,
   "computation": "crystal-basis-primitives",
   "scriptFile": "crystal_basis.py",
-  "scriptHash": "4d380b805c52",
-  "scriptCommitSha": "3d22baeee1a4e39f6bb28ea9c3c7d9f4da06847a",
+  "scriptHash": "93542dce7262",
+  "scriptCommitSha": "229063add4c04b5aafbcde5ebf7b7f6f1b76e032",
   "description": "Phase 0 of the S-poly → crystal-basis migration: validates Kashiwara f_i / e_i operators (signature rule), B(λ) BFS, and Demazure sub-crystal enumeration against the Weyl dimension formula s_λ(1,…,1) = #SSYT(λ,n).",
   "data": {
     "validation_cases": [

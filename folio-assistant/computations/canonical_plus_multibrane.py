@@ -412,8 +412,8 @@ def binding_canonical_plus_multibrane(
                                           m_pp=m_pp, m_pn=m_pn, m_nn=m_nn)
         free_elem = build_atom_symbolic(Z, N, include_inter=False,
                                           m_pp=m_pp, m_pn=m_pn, m_nn=m_nn)
-        atom_elem, _ = div.reduce(atom_elem)
-        free_elem, _ = div.reduce(free_elem)
+        atom_elem, _ = div.reduce(atom_elem, engine='laurent')
+        free_elem, _ = div.reduce(free_elem, engine='laurent')
         try:
             tr_a_sym = tr_M_element(atom_elem, 3 * A)
             tr_f_sym = tr_M_element(free_elem, 3 * A)
@@ -499,8 +499,8 @@ if __name__ == "__main__":
                                    m_pp=m_pp, m_pn=m_pn, m_nn=m_nn)
         fe = build_atom_symbolic(Z, N, include_inter=False,
                                    m_pp=m_pp, m_pn=m_pn, m_nn=m_nn)
-        ae, _ = div.reduce(ae)
-        fe, _ = div.reduce(fe)
+        ae, _ = div.reduce(ae, engine='laurent')
+        fe, _ = div.reduce(fe, engine='laurent')
         ta = complex(sp.N(tr_M_element(ae, 3 * (Z + N)).subs(q_sym, Q0)))
         tf = complex(sp.N(tr_M_element(fe, 3 * (Z + N)).subs(q_sym, Q0)))
         if abs(ta.imag) < 1e-9: ta = ta.real

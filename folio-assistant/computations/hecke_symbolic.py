@@ -1046,8 +1046,18 @@ class SymbolicHeckeDivision:
         strands (i.e. up to ``σ_2``).  For larger problems this method
         raises ``NotImplementedError`` with a pointer to the migration
         plan; the caller should fall back to ``engine='laurent'`` until
-        the canonical-basis-to-permutation transition matrix is built
-        (Phase 1.5).
+        the canonical-basis multiplication rule is implemented.
+
+        Phase 1.5 (canonical basis) infrastructure has landed in
+        ``kazhdan_lusztig.py`` — Kazhdan–Lusztig polynomials and the
+        ``T_w ↔ C_w`` change of basis for ``n ≤ 4``.  The current
+        ``reduce()`` operates in the ``T`` basis throughout, so simply
+        round-tripping ``T → C → T`` would be strictly slower than the
+        laurent path it delegates to.  The asymptotic-win move would
+        be to also re-implement the multiplication ``C_x · C_y``
+        directly in the ``C`` basis (KL structure constants); that is
+        deferred to Phase 2.  Until then this method delegates to
+        ``_reduce_via_laurent`` and tags the stats dict.
 
         For now the method validates the laurent NF against a crystal-
         basis cross-check on small inputs and returns the same sympy
@@ -1065,9 +1075,12 @@ class SymbolicHeckeDivision:
                 f"engine='crystal' is currently validated only for ≤ 4 "
                 f"strands (saw an element on {n_strands} strands); fall "
                 f"back to engine='laurent' until the canonical-basis "
-                f"transition matrix lands (Phase 1.5).  See "
-                f"folio-assistant/computations/crystal_basis.py for the "
-                f"primitives module."
+                f"multiplication rule (C_x · C_y in the C-basis) is "
+                f"implemented in Phase 2.  Phase 1.5 infrastructure "
+                f"(Kazhdan–Lusztig polynomials, T_w ↔ C_w change of "
+                f"basis) is shipped — see "
+                f"folio-assistant/computations/kazhdan_lusztig.py and "
+                f"folio-assistant/computations/crystal_basis.py."
             )
         # Within scope: delegate to laurent (proven-equivalent) and tag
         # the witness so downstream regression diffs are aware.  When
