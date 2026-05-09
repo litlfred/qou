@@ -154,6 +154,13 @@ ATOMIC_TEST_BENCH = [
     (2, 1, 1, "deuteron"),
     (3, 1, 2, "tritium"),
     (3, 2, 1, "helium-3"),
+    # ⁴He (4, 2, 2): timed out at 600s — y_λ at n=12 with 30-dps
+    # sympy Float requires ~6-13 minutes for the Wenzl-Schur sum
+    # over p(12)=77 partitions.  The hybrid 30-dps path is feasible
+    # for n ≤ 9; A=4 (n=12) needs either parallelisation
+    # (multiprocessing on the 77 partitions) or full 50-dps mpmath
+    # (#564's rho_k_h3a_refinement.py path).  Deferred to a
+    # follow-up that adds the parallel option.
 ]
 
 
@@ -186,9 +193,12 @@ def main() -> int:
     rows = []
     all_passed = True
     for A_param, Z, N, name in ATOMIC_TEST_BENCH:
-        if name not in canonical:
-            continue
-        canonical_val = canonical[name]
+        canonical_val = canonical.get(name)
+        # No canonical reference yet for ⁴He+ at canonical-word
+        # convention (per convention_status="DEPRECATED_DISJOINT" in
+        # PR #564's atomic-tr-m-helium4.witness.json).  Compute the
+        # value via this PR's hybrid-precision path and emit it as
+        # the FIRST canonical-word reference (no rel-err comparison).
         t0 = time.monotonic()
         try:
             total, breakdown = tr_m_via_partition_sum_q_hecke(
@@ -196,6 +206,45 @@ def main() -> int:
             )
             elapsed = time.monotonic() - t0
             new_abs = abs(total)
+            if canonical_val is None:
+                # No canonical reference: this PR establishes the first
+                # canonical-word value.  Future regeneration of
+                # atomic-tr-m-mpfr-50dps.witness.json will validate
+                # against this number.
+                rel_err = float("nan")
+                agrees_1e6 = False
+                agrees_1e3 = False
+                row = {
+                    "atom": name,
+                    "Z": Z,
+                    "N": N,
+                    "A": Z + N,
+                    "n_strands": 3 * (Z + N),
+                    "canonical_abs_tr_M": None,
+                    "canonical_status": (
+                        "no canonical-word reference yet — this PR's "
+                        "hybrid-precision value is the FIRST canonical "
+                        "(operator-valued interface) tr_M for this atom"
+                    ),
+                    "q_hecke_partition_sum": float(total),
+                    "q_hecke_abs": float(new_abs),
+                    "elapsed_sec": float(elapsed),
+                    "non_zero_partitions": len(breakdown),
+                    "top_3_contributions": sorted(
+                        breakdown,
+                        key=lambda r: -abs(r["contribution"]),
+                    )[:3],
+                }
+                rows.append(row)
+                builder.add_assertion(
+                    name=f"q_hecke_seminormal_value_finite[{name}]",
+                    computed=str(0 < new_abs < 1e6),
+                    expected="True",
+                )
+                print(f"  {name}: canonical=N/A (first-time computation), "
+                      f"q-Hecke seminormal={new_abs:.12f}, {elapsed:.2f}s",
+                      file=sys.stderr)
+                continue
             rel_err = (
                 abs(new_abs - canonical_val) / canonical_val
                 if canonical_val != 0
