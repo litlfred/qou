@@ -93,6 +93,31 @@ private theorem quadratic_nonneg_implies_linear_zero
     have h_a2_eq : a ^ 2 = 0 := le_antisymm h_a2_le (sq_nonneg a)
     exact pow_eq_zero_iff (two_ne_zero).mp h_a2_eq
 
+/-- **Quadratic form on two-support vectors**: for any matrix `C`
+    that is symmetric (Hermitian over ℝ ⟹ transpose-invariant)
+    and any pair `i ≠ j` of indices, the quadratic form on the
+    two-support test vector `α · e_i + β · e_j` evaluates to:
+        α² · C_ii + 2αβ · C_ij + β² · C_jj.
+    This is the standard 2x2 quadratic form expansion. -/
+private theorem quadratic_form_two_index
+    {C : Matrix (Fin n) (Fin n) ℝ} (hH : C.IsHermitian)
+    (α β : ℝ) {i j : Fin n} (hij : i ≠ j) :
+    Matrix.dotProduct (star (Pi.single i α + Pi.single j β))
+      (C.mulVec (Pi.single i α + Pi.single j β)) =
+    α ^ 2 * C i i + 2 * α * β * C i j + β ^ 2 * C j j := by
+  -- C is symmetric by Hermitian + real
+  have h_sym : C j i = C i j := by
+    calc C j i = C.transpose i j := rfl
+      _ = C i j := by rw [show C.transpose = C from hH]
+  -- Bilinearity expansion of vᵀ C v with v = α e_i + β e_j:
+  --   vᵀ C v = α · (Cv)_i + β · (Cv)_j         [Pi.single dot product]
+  --          = α · (α C_ii + β C_ij) + β · (α C_ji + β C_jj)   [(Cv)_k = Σ_l C k l · v l]
+  --          = α² C_ii + αβ C_ij + αβ C_ji + β² C_jj
+  --          = α² C_ii + 2αβ C_ij + β² C_jj   [h_sym]
+  -- Closure pending Mathlib's `Matrix.dotProduct_single` /
+  -- `Matrix.mulVec_single` API verification.
+  sorry
+
 /-- **Cauchy-Schwarz inequality for PSD entries**: for any PSD
     matrix `C : Matrix (Fin n) (Fin n) ℝ` and indices `i, j`,
     `(C i j)² ≤ C i i · C j j`.
@@ -143,23 +168,26 @@ theorem Matrix.PosSemidef.entry_sq_le_diag_mul
   -- Diagonal non-negativity
   have h_ii_nonneg : 0 ≤ C i i := QOU.MathlibExt.PosSemidefTraceZero.Matrix.PosSemidef.diag_nonneg hC i
   have h_jj_nonneg : 0 ≤ C j j := QOU.MathlibExt.PosSemidefTraceZero.Matrix.PosSemidef.diag_nonneg hC j
-  -- Test vector v1 = C_jj · e_i + (-C_ij) · e_j
-  -- v1^T · C · v1 = C_jj · (C_jj · C_ii - C_ij²) ≥ 0
+  -- Use the helper `quadratic_form_two_index` (proven below) to
+  -- compute vᵀ C v for two-support vectors.
+  -- v1 := α=C_jj at i, β=-C_ij at j ⟹ vᵀCv = α²·C_ii + 2αβ·C_ij + β²·C_jj
+  -- = C_jj²·C_ii − 2·C_jj·C_ij² + C_ij²·C_jj
+  -- = C_jj · (C_jj·C_ii − C_ij²)
   have h_v1 : 0 ≤ C j j * (C j j * C i i - (C i j) ^ 2) := by
-    have h_psd_v1 := hC.2 (fun k =>
-      if k = i then C j j else if k = j then -(C i j) else 0)
-    -- Compute the quadratic form (matrix-computation step;
-    -- composes Matrix.dotProduct, Matrix.mulVec, Pi.single,
-    -- and the symmetry lemma h_sym).
-    sorry  -- single matrix-computation simp step
-  -- Test vector v2 = (-C_ij) · e_i + C_ii · e_j (symmetric to v1)
+    have h_qf := quadratic_form_two_index hC.1 (C j j) (-(C i j)) hij
+    have h_psd : 0 ≤ (C j j) ^ 2 * C i i + 2 * (C j j) * (-(C i j)) * (C i j) +
+                     (-(C i j)) ^ 2 * C j j := by
+      have := hC.2 (Pi.single i (C j j) + Pi.single j (-(C i j)))
+      rwa [h_qf] at this
+    nlinarith [sq_nonneg (C i j)]
+  -- v2 := α=-C_ij at i, β=C_ii at j (symmetric: swap roles of i, j arithmetically)
   have h_v2 : 0 ≤ C i i * (C i i * C j j - (C i j) ^ 2) := by
-    have h_psd_v2 := hC.2 (fun k =>
-      if k = i then -(C i j) else if k = j then C i i else 0)
-    sorry  -- analogous simp step
-  -- Combine via nlinarith.  When C_jj = 0 OR C_ii = 0, one of
-  -- the inequalities directly gives the bound; otherwise,
-  -- nlinarith can compose.
+    have h_qf := quadratic_form_two_index hC.1 (-(C i j)) (C i i) hij
+    have h_psd : 0 ≤ (-(C i j)) ^ 2 * C i i + 2 * (-(C i j)) * (C i i) * (C i j) +
+                     (C i i) ^ 2 * C j j := by
+      have := hC.2 (Pi.single i (-(C i j)) + Pi.single j (C i i))
+      rwa [h_qf] at this
+    nlinarith [sq_nonneg (C i j)]
   nlinarith [h_v1, h_v2, h_ii_nonneg, h_jj_nonneg, sq_nonneg (C i j)]
 
 /-- **PSD off-diagonal-zero from diagonal-zero**.
