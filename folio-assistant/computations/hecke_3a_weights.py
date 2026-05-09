@@ -143,7 +143,23 @@ def q_dim(shape: tuple[int, ...]) -> float:
 
 
 def wedderburn_weight(shape: tuple[int, ...]) -> float:
-    """w_λ = d_q(λ)² / [n]_q!."""
+    """w_λ = d_q(λ)² / [n]_q!  (**symmetric Plancherel weight, not Markov-trace**).
+
+    .. warning::
+        This is the **symmetric Plancherel weight** (Hecke generalisation
+        of f^λ / n!), NOT the Jones-Markov weight y_λ(q) needed for
+        Markov-trace assembly at q ≠ 1.  The two coincide only at the
+        classical Plancherel point q = 1.
+
+        For Markov-trace contexts (the QOU paper's tr_M = Σ y_λ χ^λ
+        at q = q_0), use `markov_weights_symbolic.solve_y_lambda(n)` or
+        `wedderburn_jones_markov.y_lambda_at(n, q_val=q_0)` (numerical-
+        q-from-start, ~3.8s at n=6, ~63s at n=9).
+
+        Per docs/audits/2026-05-08-p3-h-3a-divergence.md, using this
+        symmetric-Plancherel weight in a Markov-trace context produces
+        the WRONG sum — for D it overstates Σ by ~3.5×; for ⁴He by ~8×.
+    """
     n = sum(shape)
     if n == 0:
         return 1.0

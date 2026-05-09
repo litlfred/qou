@@ -184,28 +184,13 @@ def deuteron_canonical_crossings():
     """Build the canonical 23-crossing deuteron word as
     (gen_idx, ctype) pairs for chi_numeric / chi_lambda_symbolic.
 
-    Source of truth: mass_at_3A_proper.atom_braid_word_3A(Z=1, N=1).
+    Thin wrapper around the shared
+    `canonical_braid_crossings.atom_canonical_crossings` utility
+    (gemini-code-assist on PR #572).  Source of truth:
+    `mass_at_3A_proper.atom_braid_word_3A(Z=1, N=1)`.
     """
-    from mass_at_3A_proper import atom_braid_word_3A
-    from hecke_core import h as h_val  # numeric h = q_0 - q_0^{-1}
-
-    triples = atom_braid_word_3A(1, 1)  # list of (c, d, gen_idx)
-    out = []
-    for (c, d, g) in triples:
-        # c is always 1 in this convention; classify by d.
-        if abs(d) < 1e-12:
-            ctype = "sigma"
-        elif abs(d - (-h_val)) < 1e-9:
-            ctype = "sigma_inv"
-        elif abs(d - (-h_val / 2)) < 1e-9:
-            ctype = "averaged"
-        else:
-            raise ValueError(
-                f"Unknown crossing (c={c}, d={d}) — "
-                f"expected one of (1,0), (1,-h), (1,-h/2)"
-            )
-        out.append((g, ctype))
-    return out
+    from canonical_braid_crossings import atom_canonical_crossings
+    return atom_canonical_crossings(1, 1)
 
 
 def word_to_crossings(word_1idx):
@@ -257,11 +242,6 @@ def load_y_lambda_n6():
     .evalf(50)` is fast on the unsimplified expression.
     """
     path = HERE / "y-lambda-wenzl-bridge-symbolic-witness.json"
-    if not path.exists():
-        raise FileNotFoundError(
-            f"Symbolic Wenzl-bridge witness not found at {path}; run "
-            "the y-lambda-wenzl-bridge symbolic generator first."
-        )
     d = json.loads(path.read_text())
     n6 = d["tables_by_n"]["6"]
     out = {}
@@ -443,8 +423,12 @@ def main() -> int:
         print(f"    |Δ_(3,2,1)| = {mp.nstr(abs(_d321), 8)}")
 
     # ── Step 6: verify M(D) reconstructs CODATA exactly ───────
-    # Direct closed-form check using Occam's pick (smallest perturbation):
-    rho_K_check = rho_K_LO + occam_y_chi * occam_delta / abs_tr_M
+    # By construction (Step 5):  signed(y_λ χ^λ) · Δ_λ = target = Δρ · |tr_M|
+    # so the contribution to ρ_K from the Occam pick is target / |tr_M| = Δρ
+    # exactly.  Use `target` directly — `occam_y_chi` is unsigned (line 418
+    # stores `abs(y_chi)`), and multiplying by `occam_delta` would flip sign
+    # when the underlying y_λ χ^λ is negative (gemini-code-assist on PR #572).
+    rho_K_check = rho_K_LO + target / abs_tr_M
     M_pred = rho_K_check * M_E_MEV * abs_tr_M
     closure_err_MeV = M_pred - M_D_MEV
     closure_err_ppm = closure_err_MeV / M_D_MEV * mp.mpf("1e6")

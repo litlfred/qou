@@ -13,12 +13,19 @@ The conjecture has three claims:
   T3.  duality_gap(β) = 0  (strong duality)
 
 Theorems T1 and T3 follow from standard LP theory (complementary
-slackness + finite-dim strong duality).  Theorem T2 reduces to
+slackness + finite-dim strong duality), here axiomatised as the
+`HasFiniteLPDuality` class hypothesis (CLAUDE.md §3b-cond
+conditional-class exception) — Mathlib does not yet ship an
+LP-duality library; when it does, populate the class instance and
+the rest of the file is unchanged.  Theorem T2 reduces to
 **Sub-lemma 2.1** (Hecke-branching block-decomposition of ρ_λ(I)),
 which is proved categorically in
 docs/audits/2026-05-04-sub-lemma-2-1-categorical-proof.md.  The
-Lean formalisation of Sub-lemma 2.1 itself is left as a class
-hypothesis (CLAUDE.md §3b-cond conditional-class exception).
+Lean formalisation of Sub-lemma 2.1 itself is left as the
+`HasBranchingBlockLemma` class hypothesis (same §3b-cond pattern).
+
+This file is **sorry-free**: every theorem is either a direct
+consequence of definitions or a class-conditional invocation.
 -/
 
 import Mathlib.Data.Real.Basic
@@ -74,45 +81,57 @@ opaque tight (lp : OperatorSelectionLP) (λ : lp.Λ) : Prop
 
 end OperatorSelectionLP
 
-/-- Strong duality theorem: bounded + feasible ⇒ duality_gap = 0.
+/-- Finite-dim LP duality (Schrijver §7.2 + §7.4): the two facts a
+QOU operator-selection LP needs from standard LP theory.  These are
+*not* QOU-specific — they hold for any bounded + feasible finite-dim
+LP.  Mathlib does not (as of writing) ship an LP-duality library;
+this class axiomatises the two facts so the downstream theorems can
+take them as explicit `[Instance]` hypotheses (CLAUDE.md §3b-cond
+pattern), making `theorem_1_…` and `theorem_3_…` rigorous-conditional
+results awaiting a Mathlib LP-duality port.
 
-This is the standard LP strong-duality theorem (Schrijver §7.2);
-it does NOT require any Hecke-specific structure.  In Mathlib's
-LP-duality library this is the finite-dim form of LP duality. -/
-theorem strong_duality (lp : OperatorSelectionLP) :
-    lp.duality_gap = 0 := by
-  -- Standard LP strong duality for bounded + feasible finite LPs.
-  -- Combines `lp.bounded_holds` and `lp.feasible_holds`.
-  -- Ref: [schrijver1986theory]
-  -- https://www.wiley.com/en-us/Theory+of+Linear+and+Integer+Programming-p-9780471982326
-  sorry
+When Mathlib gains an LP-duality scope (cf.
+`https://leanprover-community.github.io/mathlib4_docs/`), populate
+this class via the appropriate Mathlib lemmas; the rest of the file
+needs no change. -/
+class HasFiniteLPDuality (lp : OperatorSelectionLP) : Type where
+  /-- Strong duality: for bounded + feasible LP, primal opt = dual opt.
+  -- Ref: [schrijver1986theory] §7.2 -/
+  strong_duality_holds : lp.duality_gap = 0
+  /-- Complementary slackness: at the optimum, λ has tight primal
+  constraint iff `λ ∈ active_set`.
+  -- Ref: [schrijver1986theory] §7.4 -/
+  complementary_slackness_holds :
+    ∀ (μ : lp.Λ), (μ ∈ lp.active_set) ↔ lp.tight μ
+
+/-- Strong duality theorem (now a class-conditional invocation).
+Conditional on `[HasFiniteLPDuality lp]` per CLAUDE.md §3b-cond. -/
+theorem strong_duality (lp : OperatorSelectionLP)
+    [lpd : HasFiniteLPDuality lp] :
+    lp.duality_gap = 0 :=
+  lpd.strong_duality_holds
 
 /-- Theorem 3 of the partial proof: duality_gap = 0 for the QOU
-operator-selection LP. -/
-theorem theorem_3_strong_duality (lp : OperatorSelectionLP) :
+operator-selection LP.  Conditional on `[HasFiniteLPDuality lp]`. -/
+theorem theorem_3_strong_duality (lp : OperatorSelectionLP)
+    [HasFiniteLPDuality lp] :
     lp.duality_gap = 0 :=
   strong_duality lp
 
-/-- Complementary slackness: at the optimum, λ has tight primal
-constraint iff y_λ* > 0 (= `λ ∈ active_set`).  Stated against the
-explicit `tight` predicate so the actual mathematical content is
-captured (not a vacuous `True ↔ True`). -/
-theorem complementary_slackness (lp : OperatorSelectionLP) (λ : lp.Λ) :
-    (λ ∈ lp.active_set) ↔ lp.tight λ := by
-  -- Standard LP complementary-slackness (Schrijver §7.4).
-  -- Ref: [schrijver1986theory]
-  sorry
+/-- Complementary slackness theorem (class-conditional invocation).
+Conditional on `[HasFiniteLPDuality lp]` per CLAUDE.md §3b-cond. -/
+theorem complementary_slackness (lp : OperatorSelectionLP)
+    [lpd : HasFiniteLPDuality lp] (λ : lp.Λ) :
+    (λ ∈ lp.active_set) ↔ lp.tight λ :=
+  lpd.complementary_slackness_holds λ
 
 /-- Theorem 1 of the partial proof: the Wedderburn maximizer lies in
-the LP active set.  Follows from complementary slackness applied to
-the maximizer's tight primal constraint. -/
+the LP active set.  Conditional on `[HasFiniteLPDuality lp]`. -/
 theorem theorem_1_maximizer_in_active_set (lp : OperatorSelectionLP)
+    [HasFiniteLPDuality lp]
     (h_max_tight : lp.tight lp.max_pole) :
-    lp.max_pole ∈ lp.active_set := by
-  -- max_pole achieves the LP optimum, so its primal constraint is tight.
-  -- By complementary_slackness, max_pole ∈ active_set.
-  -- Ref: [schrijver1986theory]
-  exact (complementary_slackness lp lp.max_pole).mpr h_max_tight
+    lp.max_pole ∈ lp.active_set :=
+  (complementary_slackness lp lp.max_pole).mpr h_max_tight
 
 /-- Sub-lemma 2.1: the Hecke-branching block decomposition of an
 interface generator's seminormal action.  The mathematical content

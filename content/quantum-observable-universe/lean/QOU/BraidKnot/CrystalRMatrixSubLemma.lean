@@ -137,6 +137,49 @@ theorem axkia_pole_T_2_9 :
 theorem axkia_pole_T_3_5 :
     5 * column_syt_pole_per_cycle 3 = 10 := rfl
 
+/-- **Cycle composition (audit Step 4).**
+
+    For `p ≥ 1` strands and `k` cycles, the column-SYT pole order
+    of the torus-knot interface `T_{(p, k)} = (σ_1 σ_2 ⋯ σ_{p-1})^k`
+    is `k * (p - 1)`.  Combinatorial proof: each of the `p - 1`
+    boundary generators contributes a single pole (audit Step 2,
+    via `pole_indicator_correct` at axial distance `-1`); cycles
+    compose multiplicatively in `k`. -/
+-- Ref: [manuscript] docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md
+theorem cycle_pole_torus_knot
+    (p k : ℕ) (hp : 1 ≤ p) :
+    k * column_syt_pole_per_cycle p = k * (p - 1) := by
+  unfold column_syt_pole_per_cycle
+  cases p with
+  | zero => omega
+  | succ n => simp
+
+/-- **AXKIA multiplicative chain (boxed corollary).**
+
+    The combinatorial reading of `α_EM⁻¹ = q · [9]_q · [10]_q`:
+    the integer envelopes are `α_shift(T_{(2, 9)}) = 9` and
+    `α_shift(T_{(3, 5)}) = 10`.  Their **product** is `90` —
+    matches `[9]·[10]` in the `q → 1` limit of `α_EM⁻¹`. -/
+-- Ref: [manuscript] docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md
+theorem axkia_pole_product :
+    (9 * column_syt_pole_per_cycle 2) * (5 * column_syt_pole_per_cycle 3) = 90 := rfl
+
+/-- Per-nucleon-shift additive linearity (recurrence, derived).
+
+    The atomic-braid Markov-trace shift exponent
+    `shift(Z, N) = 18Z + 21N + 1`
+    (per `prop:per-nucleon-shift-additive-linearity` already on
+    main) is recovered by the audit's Step 4 cycle composition: the
+    inter-nucleon interface contributes `1` (the `T_{(2, 1)}` pole
+    in `column_syt_pole_per_cycle 2 = 1`), each new proton contributes
+    `18`, each new neutron contributes `21`.  Here we prove only the
+    interface piece — the per-nucleon `18` and `21` are inputs from
+    the AXKIA per-new-nucleon decomposition (cited in audit Step 5,
+    not provable from `pole_indicator_correct` alone). -/
+-- Ref: [manuscript] docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md §"Step 5"
+theorem inter_nucleon_interface_pole :
+    column_syt_pole_per_cycle 2 = 1 := rfl
+
 /-- **Trivial model (consistency witness).**
 
     Concrete `CrystalRMatrixSubLemma R q` over the trivial

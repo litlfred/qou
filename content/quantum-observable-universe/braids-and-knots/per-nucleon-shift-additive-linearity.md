@@ -83,6 +83,51 @@ increments are:
 - **per-new-neutron:** pole $+10.5$ (cancellation $= 1.5$,
   half-integer), shift $= 2 \cdot 10.5 = 21$.
 
+#### Path A categorical verification (proton + deuteron, 2026-05-09)
+
+Both the per-proton coefficient $18$ and the multi-nucleon
+combination $18 + 21 + 1 = 40$ are verified by direct symbolic
+Hoefsmit pole-order analysis:
+
+- **Proton ($A = 1$, $H_3$):**
+  [`per_irrep_pole_proton_h3.py`](../../folio-assistant/computations/per_irrep_pole_proton_h3.py)
+  (witness:
+  [`per-irrep-pole-proton-h3.witness.json`](../../folio-assistant/computations/per-irrep-pole-proton-h3.witness.json))
+  computes $\chi^\lambda_q(\beta_p)$ for each $\lambda \vdash 3$
+  via the Hoefsmit seminormal, sums
+  $\mathrm{tr}_M(\beta_p) = \sum_\lambda y_\lambda(q) \chi^\lambda_q(\beta_p)$
+  with the canonical Wenzl Jones-Markov weights, substitutes $q = u^2$
+  (per the $D(u)$ convention from
+  [`d_u_closed_form_proof.py`](../../folio-assistant/computations/d_u_closed_form_proof.py))
+  and reports $\mathrm{ord}_{u=0}(\mathrm{tr}_M(\beta_p)) = 19$,
+  matching $18 \cdot 1 + 21 \cdot 0 + 1$ exactly.
+- **Deuteron ($A = 2$, $H_6$):**
+  [`per_irrep_pole_deuteron_h6.py`](../../folio-assistant/computations/per_irrep_pole_deuteron_h6.py)
+  (witness:
+  [`per-irrep-pole-deuteron-h6.witness.json`](../../folio-assistant/computations/per-irrep-pole-deuteron-h6.witness.json))
+  uses three optimisations to make the symbolic $H_6$ analysis
+  tractable: (a) cached symbolic $y_\lambda(q)$ from
+  `y-lambda-wenzl-bridge-symbolic-witness.json` (skips the >5 min
+  `solve_y_lambda(6)` bottleneck), (b) cached symbolic
+  $\chi^\lambda_q(\beta_D)$ in
+  [`chi-deuteron-h6.witness.json`](../../folio-assistant/computations/chi-deuteron-h6.witness.json)
+  (first-run ~131 s, then <1 s), (c) per-term
+  $\mathrm{ord}_{u=0}(y_\lambda \cdot \chi^\lambda)$ analysis. The
+  per-term maximum is **uniquely $40$ at $\lambda = (4, 1, 1)$**
+  (next-highest $39$ at $(4, 2)$); since the maximum is unique,
+  lower-order terms cannot cancel it, so
+  $\mathrm{ord}_{u=0}(\mathrm{tr}_M(\beta_D)) = 40 = 18 \cdot 1 + 21 \cdot 1 + 1$
+  rigorously.
+
+**Reading note.** The per-irrep maximum $\mathrm{ord}_{q=0}^{(-)}\chi^\lambda_q(\beta_p) = 11$
+(at $\lambda = (2, 1)$); the "$18$" in the formula is the
+per-proton additive coefficient of the **full summed** $u$-pole
+order of $\mathrm{tr}_M$, NOT the q-pole order of any single
+per-irrep $\chi^\lambda_q$. See
+[`docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md`](../../docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md)
+for the reading correction and the optimisation strategy that
+makes multi-nucleon Path A tractable.
+
 The cancellation count enumerates the σ²-relation reductions
 ($\sigma^2 = h\sigma + 1$ in the Hecke quadratic) in the new
 nucleon's intrinsic $\sigma^{\pm 1}$-adjacencies plus its incoming

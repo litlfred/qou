@@ -30,7 +30,7 @@ from hecke_characters import (  # noqa: E402
     partitions_of, build_seminormal_matrices, qfac, dim_q,
     standard_young_tableaux,
 )
-from hecke_character_symbolic import atomic_braid_to_crossings  # noqa: E402
+from canonical_braid_crossings import atom_canonical_crossings as atomic_braid_to_crossings  # noqa: E402
 
 # ──────────────────────────────────────────────────────────────────────
 # Symbolic-q Hoefsmit seminormal representation

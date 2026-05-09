@@ -1,13 +1,17 @@
 # Partial formal proof of confinement-NF-structure-forcing
 
-**Proposition (partial proof).**
+**Proposition (partial proof, conditional on
+[`def:lp-duality-hypothesis-class`](lp-duality-hypothesis-class.md)
+per CLAUDE.md §3b-cond).**
 *The three claims of [`conj:confinement-nf-structure-forcing`](#conj:confinement-nf-structure-forcing)
 decompose as follows.*
 
 1. *(Wedderburn maximizer in active set, $T_1$.)*
    $\lambda^\star := \arg\max_{\lambda \vdash n} \mathrm{ord}_{q=0}^{(-)} \chi^\lambda(T_\beta) \in A$.
    **Fully proved** by LP complementary slackness applied to the
-   tight primal constraint at the maximizer (Schrijver §7.4).
+   tight primal constraint at the maximizer (Schrijver §7.4) — Lean
+   side now consumes the `HasFiniteLPDuality` class instance rather
+   than carrying a free-standing `sorry`.
 
 2. *(Shift decomposition, $T_2$.)*
    $\mathrm{shift}_{\mathrm{NF}}(\beta) = \alpha_{\mathrm{shift}}(I) + \Delta_{\mathrm{struct}}(\beta_1, \beta_2; A) + \Delta_{\mathrm{resid}}$,

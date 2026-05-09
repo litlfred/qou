@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-26T23:33:14.995Z",
+  "generated": "2026-05-09T03:32:21.598Z",
   "paper": "quantum-observable-universe",
   "entries": [
     {
@@ -30,6 +30,15 @@
       "lean": "qou:QOU.CategoricalTransport"
     },
     {
+      "slug": "cemetery-group",
+      "chapter": "braids-and-knots",
+      "chapterTitle": "Braids and Knots",
+      "section": "Atom, Isotope, and Confinement Levels",
+      "block": "def:cemetery-group",
+      "kind": "definition",
+      "lean": "qou:QOU.BraidKnot.CemeteryGroup"
+    },
+    {
       "slug": "compact-closed-category",
       "chapter": "glossary",
       "chapterTitle": "Glossary",
@@ -37,6 +46,15 @@
       "block": "rem:glossary-compact-closed-category",
       "kind": "remark",
       "lean": null
+    },
+    {
+      "slug": "delta-q-decoration",
+      "chapter": "braids-and-knots",
+      "chapterTitle": "Braids and Knots",
+      "section": "Nuclear Binding and Beta Stability",
+      "block": "def:delta-q-decoration",
+      "kind": "definition",
+      "lean": "qou:QOU.BraidKnot.delta_q"
     },
     {
       "slug": "descent",
@@ -73,6 +91,15 @@
       "block": "rem:glossary-left-dual",
       "kind": "remark",
       "lean": null
+    },
+    {
+      "slug": "markov-axiom-recursive-ascent",
+      "chapter": "braids-and-knots",
+      "chapterTitle": "Braids and Knots",
+      "section": "Nuclear Binding and Beta Stability",
+      "block": "def:markov-axiom-recursive-ascent",
+      "kind": "definition",
+      "lean": "qou:QOU.Interactions.markov_peel"
     },
     {
       "slug": "monoidal-category",
@@ -136,6 +163,15 @@
       "block": "rem:glossary-q-bit-skein",
       "kind": "remark",
       "lean": null
+    },
+    {
+      "slug": "q-dimension-layer",
+      "chapter": "braids-and-knots",
+      "chapterTitle": "Braids and Knots",
+      "section": "Nuclear Binding and Beta Stability",
+      "block": "def:delta-q-decoration",
+      "kind": "definition",
+      "lean": "qou:QOU.BraidKnot.delta_q"
     },
     {
       "slug": "quantum-flatness",

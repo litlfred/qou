@@ -44,7 +44,7 @@ from experimental_constants import M_E_MEV
 from hecke_characters import (
     partitions_of, build_seminormal_matrices, qfac, dim_q,
 )
-from hecke_character_symbolic import atomic_braid_to_crossings
+from canonical_braid_crossings import atom_canonical_crossings as atomic_braid_to_crossings
 from chi_sym_alt_closed_form import (
     chi_sym_closed_form, chi_alt_closed_form,
 )

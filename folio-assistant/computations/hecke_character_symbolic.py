@@ -228,46 +228,26 @@ def q_character_on_braid_word(shape, braid_crossings, q):
     return sp.cancel(M.trace())
 
 
-def atomic_braid_to_crossings(Z, N, include_inter=True):
-    """Translate proton_cross/neutron_cross into the gen_idx, cross_type
-    pairs suitable for q_character_on_braid_word.
-
-    cross_type ∈ {"sigma", "sigma_inv", "averaged"} depending on (c, d):
-      (1, 0)    → "sigma"
-      (1, -h)   → "sigma_inv"
-      (1, -h/2) → "averaged"
-    """
-    from mass_endomorphism import proton_cross, neutron_cross, HA
-    A = Z + N
-    nucleon_types = ['p'] * Z + ['n'] * N
-    out = []
-    h_val = HA  # numerical value for (c,d) key matching
-
-    def classify(c, d):
-        if d == 0.0:
-            return "sigma"
-        if abs(d - (-h_val)) < 1e-9:
-            return "sigma_inv"
-        if abs(d - (-h_val / 2)) < 1e-9:
-            return "averaged"
-        raise ValueError(f"Unknown crossing (c={c}, d={d})")
-
-    for k, nt in enumerate(nucleon_types):
-        src = proton_cross if nt == 'p' else neutron_cross
-        for c, d in src.get(0, []):
-            out.append((3 * k, classify(c, d)))
-        for c, d in src.get(1, []):
-            out.append((3 * k + 1, classify(c, d)))
-    if include_inter:
-        for k in range(A - 1):
-            pair = (nucleon_types[k], nucleon_types[k + 1])
-            if pair == ('p', 'p'):
-                out.append((3 * k + 2, "sigma"))
-            elif pair == ('n', 'n'):
-                out.append((3 * k + 2, "sigma_inv"))
-            else:
-                out.append((3 * k + 2, "averaged"))
-    return out
+# `atomic_braid_to_crossings` was REMOVED in PR #572 commit
+# (this file's most recent edit).  The function used a non-canonical
+# disjoint-product convention that did NOT reproduce the canonical
+# Markov-trace reducer's |tr_M(β)| values for multi-nucleon atoms
+# (per #564 commit c068550c "P3' canonical word fix" + #572 audit
+# `docs/audits/2026-05-08-q-hecke-character-gap-closure.md`).
+#
+# Use `canonical_braid_crossings.atom_canonical_crossings(Z, N)`
+# instead — bridges `mass_at_3A_proper.atom_braid_word_3A` (canonical
+# convention) → (gen_idx, ctype) format consumable by
+# `q_character_on_braid_word` and `chi_lambda_symbolic`.
+#
+# For backward-compatibility imports `from hecke_character_symbolic
+# import atomic_braid_to_crossings` we re-export the canonical
+# function under the old name; the underlying convention is now
+# correct (operator-valued interface I = σ_{n_1} − h/2·1 instead of
+# disjoint product).
+from canonical_braid_crossings import (
+    atom_canonical_crossings as atomic_braid_to_crossings,  # noqa: F401
+)
 
 
 # ─── Main: prove q-character distinguishes proton from neutron ──────────
