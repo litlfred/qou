@@ -1,6 +1,12 @@
 import Mathlib.Algebra.Order.Field.Basic
-import Mathlib.Algebra.GeomSum
+import Mathlib.Algebra.Group.NatPowAssoc
+import Mathlib.Algebra.Order.Field.GeomSum
+import Mathlib.Algebra.Order.Ring.GeomSum
+import Mathlib.Algebra.Ring.Regular
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.Abel
 import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.Positivity.Basic
 
 /-!
 # QOU.BraidKnot.JetTowerUniformDeltaMax — uniform per-level binding bound
