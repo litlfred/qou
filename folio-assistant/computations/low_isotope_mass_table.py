@@ -33,7 +33,7 @@ Sources of each predicted quantity (status as of this commit):
             file use B_4HE_MEV (AME anchor) and a c_αα fit from ¹²C;
             both are excluded under the no-calibration rule.
 
-The `derivation_status` field on every emitted row records which
+The `row_derivation_status` field on every emitted row records which
 bucket it falls into. Total mass M(Z, N) = A·u + Δ(Z, N) is reported
 ONLY for rows where every input (m_p, m_n, B) is derived; otherwise
 M_pred_MeV is null and a status string explains the gap.
