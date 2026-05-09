@@ -1,0 +1,397 @@
+{
+  "engine": "numpy+sympy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-09T20:48:51.115790+00:00",
+  "commitSha": "46e0e5e5798a786212ce6f8715955485d460bb2a",
+  "assertions": [
+    {
+      "name": "lp_strong_duality_when_t_nonneg",
+      "computed": 2.0,
+      "expected": 2.0,
+      "passed": true,
+      "tolerance": 0.5
+    },
+    {
+      "name": "lp_M_bound_detected_when_t_mixed_sign",
+      "computed": 2.0,
+      "expected": 2.0,
+      "passed": true,
+      "tolerance": 0.5
+    },
+    {
+      "name": "weinberg_minimal_delta_I_optimal",
+      "computed": 0.02189554298226038,
+      "expected": 0.0219,
+      "passed": true,
+      "tolerance": 0.005
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 40,
+  "computation": "wedderburn-lp-ew-wiring",
+  "scriptFile": "wedderburn_lp_ew_wiring.py",
+  "scriptHash": "401d88bbd80c",
+  "scriptCommitSha": "46e0e5e5798a786212ce6f8715955485d460bb2a",
+  "description": "Two deliverables: (A) wires wedderburn_pair_volumes into prop:knot-operator-lp-selection via concrete LP/SDP-dual program for EW-sector pair amplitudes (atom sweep proton..helium-4); (B) probes alternative Δ_I words on β_EW to close the 2.19% Weinberg gap on (3,2,1) max+/2nd-max+ = cot θ_W reading.",
+  "contentBlock": "prop:knot-operator-lp-selection",
+  "parameters": {
+    "q_0": "1.1099785955541805169583001889887986763787613849839",
+    "n_target_headline": 10.639939286748719,
+    "delta_I_minimal": "σ_2 σ_4 σ_2"
+  },
+  "data": {
+    "deliverable_A_lp_sdp_wiring": {
+      "headline_atom": {
+        "Z": 1,
+        "N": 2,
+        "name": "triton",
+        "max_full_gram_n_strands": 9
+      },
+      "n_pair_amplitudes": 28,
+      "primal_obj": -5267902.816071065,
+      "dual_obj": -7.592079793291268,
+      "duality_gap": 5267895.223991272,
+      "y0_star": -0.7135454055406744,
+      "y_star": [
+        25527.45000636099,
+        0.0,
+        2682.9820606699795,
+        595.6094233645712,
+        1664.4531198063155,
+        2561.632235819125,
+        745.4421462150272,
+        1036.201814523304,
+        669.0479960818493,
+        1571.5237505239008,
+        0.0,
+        618.1543714527888,
+        1570.7905522763494,
+        0.0,
+        0.0,
+        1464.0808301264192,
+        1681.4398647366636,
+        221.094602497248,
+        3787.232782437027,
+        1081.3661994414938,
+        2382.3395795216848,
+        723.6071402264187,
+        4437.897446213012,
+        409.42535735730416,
+        1754.8455311720625,
+        0.0,
+        0.0,
+        3953.7366721493727
+      ],
+      "active_set": [
+        0,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        11,
+        12,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        27
+      ],
+      "n_target": 10.639939286748719,
+      "supply_matrix_shape": [
+        28,
+        28
+      ],
+      "atom_sweep": [
+        {
+          "atom": "proton",
+          "Z": 1,
+          "N": 0,
+          "n_pairs": 1,
+          "n_strands": 3,
+          "t_min": 0.6003377241753288,
+          "t_max": 0.6003377241753288,
+          "primal_obj": 0.1802026915340066,
+          "dual_obj": 0.1802026915340066,
+          "duality_gap": 0.0,
+          "y0_star": 0.6003377241753288,
+          "n_active": 0,
+          "n_target": 0.3001688620876644
+        },
+        {
+          "atom": "neutron",
+          "Z": 0,
+          "N": 1,
+          "n_pairs": 1,
+          "n_strands": 3,
+          "t_min": 0.37270362710963467,
+          "t_max": 0.37270362710963467,
+          "primal_obj": 0.0694539968303388,
+          "dual_obj": 0.0694539968303388,
+          "duality_gap": 0.0,
+          "y0_star": 0.37270362710963467,
+          "n_active": 0,
+          "n_target": 0.18635181355481734
+        },
+        {
+          "atom": "deuteron",
+          "Z": 1,
+          "N": 1,
+          "n_pairs": 10,
+          "n_strands": 6,
+          "t_min": -0.1444393634223407,
+          "t_max": 2.1410692071962467,
+          "primal_obj": -1957698.3600435562,
+          "dual_obj": -1.415277756924908,
+          "duality_gap": 1957696.9447657992,
+          "y0_star": -0.36921960775479457,
+          "n_active": 7,
+          "n_target": 3.8331597975826344
+        },
+        {
+          "atom": "triton",
+          "Z": 1,
+          "N": 2,
+          "n_pairs": 28,
+          "n_strands": 9,
+          "t_min": -0.2464095254893219,
+          "t_max": 2.1410692071962467,
+          "primal_obj": -5267902.816071065,
+          "dual_obj": -7.592079793291268,
+          "duality_gap": 5267895.223991272,
+          "y0_star": -0.7135454055406744,
+          "n_active": 22,
+          "n_target": 10.639939286748719
+        },
+        {
+          "atom": "helium-4",
+          "Z": 2,
+          "N": 2,
+          "n_strands": 12,
+          "deferred_compute_budget": "H_12 sympy Hoefsmit precomputation (p(12) partitions × 11 generators) exceeds session budget without pyhecke_native. Re-run with the Rust kernel installed to lift this restriction."
+        }
+      ]
+    },
+    "primal_obj": -5267902.816071065,
+    "dual_obj": -7.592079793291268,
+    "duality_gap": 5267895.223991272,
+    "y0_star": -0.7135454055406744,
+    "y_star": [
+      25527.45000636099,
+      0.0,
+      2682.9820606699795,
+      595.6094233645712,
+      1664.4531198063155,
+      2561.632235819125,
+      745.4421462150272,
+      1036.201814523304,
+      669.0479960818493,
+      1571.5237505239008,
+      0.0,
+      618.1543714527888,
+      1570.7905522763494,
+      0.0,
+      0.0,
+      1464.0808301264192,
+      1681.4398647366636,
+      221.094602497248,
+      3787.232782437027,
+      1081.3661994414938,
+      2382.3395795216848,
+      723.6071402264187,
+      4437.897446213012,
+      409.42535735730416,
+      1754.8455311720625,
+      0.0,
+      0.0,
+      3953.7366721493727
+    ],
+    "active_set": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      11,
+      12,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      27
+    ],
+    "deliverable_B_alt_delta_I_weinberg_probe": {
+      "codata_cot_theta_W": 1.8230678710486174,
+      "candidates": [
+        {
+          "delta_I_name": "σ_2 σ_4 σ_2 (minimal, baseline)",
+          "delta_I_word": [
+            1,
+            3,
+            1
+          ],
+          "ratio": 1.7831508101184945,
+          "rel_err": 0.02189554298226038
+        },
+        {
+          "delta_I_name": "σ_4 σ_2 σ_4 (mirror)",
+          "delta_I_word": [
+            3,
+            1,
+            3
+          ],
+          "ratio": 1.4757110350947937,
+          "rel_err": 0.19053423159392646
+        },
+        {
+          "delta_I_name": "σ_2 σ_4",
+          "delta_I_word": [
+            1,
+            3
+          ],
+          "ratio": 1.7720299999589066,
+          "rel_err": 0.027995595720939417
+        },
+        {
+          "delta_I_name": "σ_4 σ_2",
+          "delta_I_word": [
+            3,
+            1
+          ],
+          "ratio": 1.7720299999588975,
+          "rel_err": 0.02799559572094441
+        },
+        {
+          "delta_I_name": "σ_2² σ_4²",
+          "delta_I_word": [
+            1,
+            1,
+            3,
+            3
+          ],
+          "ratio": 1.4276619323247515,
+          "rel_err": 0.2168904103918144
+        },
+        {
+          "delta_I_name": "σ_4² σ_2²",
+          "delta_I_word": [
+            3,
+            3,
+            1,
+            1
+          ],
+          "ratio": 1.42766193232475,
+          "rel_err": 0.21689041039181522
+        },
+        {
+          "delta_I_name": "σ_2 σ_4² σ_2",
+          "delta_I_word": [
+            1,
+            3,
+            3,
+            1
+          ],
+          "ratio": 1.4276619323247512,
+          "rel_err": 0.2168904103918145
+        },
+        {
+          "delta_I_name": "σ_4 σ_2² σ_4",
+          "delta_I_word": [
+            3,
+            1,
+            1,
+            3
+          ],
+          "ratio": 1.4276619323247506,
+          "rel_err": 0.21689041039181486
+        },
+        {
+          "delta_I_name": "σ_2 σ_4 σ_2 σ_4",
+          "delta_I_word": [
+            1,
+            3,
+            1,
+            3
+          ],
+          "ratio": 1.427661932324751,
+          "rel_err": 0.21689041039181461
+        },
+        {
+          "delta_I_name": "σ_4 σ_2 σ_4 σ_2",
+          "delta_I_word": [
+            3,
+            1,
+            3,
+            1
+          ],
+          "ratio": 1.4276619323247517,
+          "rel_err": 0.21689041039181425
+        },
+        {
+          "delta_I_name": "σ_2 σ_4 σ_2 σ_4 σ_2",
+          "delta_I_word": [
+            1,
+            3,
+            1,
+            3,
+            1
+          ],
+          "ratio": 1.4298341086346953,
+          "rel_err": 0.2156989153605875
+        },
+        {
+          "delta_I_name": "σ_2 (single)",
+          "delta_I_word": [
+            1
+          ],
+          "ratio": 1.7239064378749631,
+          "rel_err": 0.05439261738325589
+        },
+        {
+          "delta_I_name": "σ_4 (single)",
+          "delta_I_word": [
+            3
+          ],
+          "ratio": 1.9532232447096936,
+          "rel_err": 0.07139359742334306
+        },
+        {
+          "delta_I_name": "(empty Δ_I = trivial)",
+          "delta_I_word": [],
+          "ratio": 1.0,
+          "rel_err": 0.4514740696818895
+        }
+      ],
+      "best": {
+        "delta_I_name": "σ_2 σ_4 σ_2 (minimal, baseline)",
+        "delta_I_word": [
+          1,
+          3,
+          1
+        ],
+        "ratio": 1.7831508101184945,
+        "rel_err": 0.02189554298226038
+      },
+      "verdict": "near-miss-precision-5pct"
+    }
+  }
+}
