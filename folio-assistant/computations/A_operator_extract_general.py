@@ -91,34 +91,66 @@ def evaluate_word_matrix(shape: tuple, word: tuple) -> np.ndarray:
 
 def make_test_words(n_strands: int, count: int = 12) -> list[tuple]:
     """Diverse panel of test braid words on (n_strands - 1) generators.
-    For n_strands = 3: returns the canonical 12-word panel from the
-    A=2 extract.  For higher n: extends the panel with additional
-    σ_g products spanning all generators."""
-    words = [
-        (),                                                     # identity
-        ((1.0, 0.0, 0),),                                       # σ_0
-        ((1.0, 0.0, 1),),                                       # σ_1
-        ((1.0, 0.0, 0), (1.0, 0.0, 1)),                         # σ_0 σ_1
-        ((1.0, 0.0, 1), (1.0, 0.0, 0)),                         # σ_1 σ_0
-        ((1.0, 0.0, 0), (1.0, 0.0, 1), (1.0, 0.0, 0)),          # trefoil
-        ((1.0, -H, 0),),                                        # σ_0 - h
-        ((1.0, -H/2, 1),),                                      # σ_1 - h/2
-        ((1.0, 0.0, 0), (1.0, -H, 1)),                          # σ_0 (σ_1 - h)
-        ((1.0, -H, 0), (1.0, -H/2, 1)),                         # (σ_0 - h)(σ_1 - h/2)
-        ((1.0, 0.0, 0), (1.0, 0.0, 0)),                         # σ_0²
-        ((1.0, 0.0, 1), (1.0, 0.0, 1)),                         # σ_1²
-    ]
-    if n_strands <= 3:
-        return words[:count]
-    # Extend: add σ_g for each higher gen + a few mixtures.
-    extra = []
-    for g in range(2, n_strands - 1):
-        extra.append(((1.0, 0.0, g),))
-        extra.append(((1.0, -H, g),))
-    for g in range(0, n_strands - 2):
-        extra.append(((1.0, 0.0, g), (1.0, 0.0, g + 1)))
-        extra.append(((1.0, 0.0, g + 1), (1.0, 0.0, g)))
-    return (words + extra)[:max(count, 12 + 2 * (n_strands - 3))]
+
+    Generates a varied set covering:
+      - identity, all σ_i singletons + all σ_i^{-1} (= σ_i - h),
+      - all (σ_i - h/2) averaged singletons,
+      - all 2-letter words σ_i σ_j (not just adjacent),
+      - selected 3-letter words including braid + skew patterns,
+      - σ_i² and σ_i³ for higher powers.
+
+    The list is deduplicated and truncated to `count`.  For higher
+    n_strands the panel grows roughly as n_gens² (= (n_strands-1)²
+    pairs), giving K1*K2 ~ (n_strands)^4 panel pairs at quadratic
+    panel sizes.
+    """
+    n_gens = max(0, n_strands - 1)
+    words: list[tuple] = [()]                                    # identity
+    # Singletons
+    for g in range(n_gens):
+        words.append(((1.0, 0.0, g),))                           # σ_g
+        words.append(((1.0, -H, g),))                            # σ_g - h
+        words.append(((1.0, -H / 2, g),))                        # averaged
+    # 2-letter (all pairs, ordered)
+    for g in range(n_gens):
+        for h in range(n_gens):
+            if g != h:
+                words.append(((1.0, 0.0, g), (1.0, 0.0, h)))
+    # Mixed 2-letter
+    for g in range(n_gens):
+        for h in range(n_gens):
+            if g != h:
+                words.append(((1.0, -H, g), (1.0, 0.0, h)))
+                words.append(((1.0, 0.0, g), (1.0, -H, h)))
+    # σ_i² and σ_i³ + σ_i^{-2}
+    for g in range(n_gens):
+        words.append(((1.0, 0.0, g), (1.0, 0.0, g)))
+        words.append(((1.0, 0.0, g), (1.0, 0.0, g), (1.0, 0.0, g)))
+        words.append(((1.0, -H, g), (1.0, -H, g)))
+    # Adjacent braid relations and 3-letter
+    for g in range(n_gens - 1):
+        words.append(((1.0, 0.0, g), (1.0, 0.0, g + 1), (1.0, 0.0, g)))
+        words.append(((1.0, 0.0, g + 1), (1.0, 0.0, g), (1.0, 0.0, g + 1)))
+        words.append(((1.0, -H, g), (1.0, 0.0, g + 1), (1.0, -H, g)))
+    # Far-commute pairs (|i - j| ≥ 2) for n_gens ≥ 3
+    for g in range(n_gens):
+        for h in range(g + 2, n_gens):
+            words.append(((1.0, 0.0, g), (1.0, 0.0, h)))
+            words.append(((1.0, -H, g), (1.0, -H, h)))
+    # 4+ letter combos: cycle σ_0 σ_1 σ_2 ... σ_{n-2}
+    if n_gens >= 2:
+        words.append(tuple((1.0, 0.0, g) for g in range(n_gens)))
+        words.append(tuple((1.0, 0.0, g) for g in range(n_gens - 1, -1, -1)))
+    # Deduplicate while preserving order
+    seen: set = set()
+    deduped: list[tuple] = []
+    for w in words:
+        key = w
+        if key in seen:
+            continue
+        seen.add(key)
+        deduped.append(w)
+    return deduped[:max(count, len(deduped))]
 
 
 def disjoint_word(word_p: tuple, word_n: tuple, n1: int) -> tuple:
