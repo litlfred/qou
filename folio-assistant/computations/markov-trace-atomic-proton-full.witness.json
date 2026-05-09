@@ -1,11 +1,29 @@
 {
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-05-09T00:12:12.974016+00:00",
+  "commitSha": "0bf80848d4f0be0afbe05720b5d03621bd602453",
+  "assertions": [
+    {
+      "name": "matches_char_fast",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "cross-check vs hecke_character_fast at q0 (1% tol)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
   "computation": "markov-trace-atomic-proton-full",
-  "description": "Symbolic Markov-trace closed form for the actual atomic-braid 11-crossing proton word \u03c3_1^7 \u03c3_2^4 in H_3(q), derived via direct axiomatic reduction. Uses the Hecke-power recurrence \u03c3_i^k = a_k(h) \u03c3_i + b_k(h) where a_{k+1} = a_k h + b_k, b_{k+1} = a_k. Combined with Markov-axiom values on the H_3 basis to get the closed form in \u211a(q).",
+  "scriptFile": "markov_trace_atomic_proton_full.py",
+  "scriptHash": "6cc61e8eac6c",
+  "scriptCommitSha": "0bf80848d4f0be0afbe05720b5d03621bd602453",
+  "description": "Symbolic Markov-trace closed form for the actual atomic-braid 11-crossing proton word σ_1^7 σ_2^4 in H_3(q), derived via direct axiomatic reduction. Uses the Hecke-power recurrence σ_i^k = a_k(h) σ_i + b_k(h) where a_{k+1} = a_k h + b_k, b_{k+1} = a_k. Combined with Markov-axiom values on the H_3 basis to get the closed form in ℚ(q).",
   "reference_blocks": [
     "prop:atomic-mass-gb-nf",
     "prop:categorical-mass-markov"
   ],
-  "computedAt": "2026-05-05T22:46:14.246437+00:00",
   "hecke_power_a_7": "h**6 + 5*h**4 + 6*h**2 + 1",
   "hecke_power_b_7": "h**5 + 4*h**3 + 3*h",
   "hecke_power_a_4": "h**3 + 2*h",

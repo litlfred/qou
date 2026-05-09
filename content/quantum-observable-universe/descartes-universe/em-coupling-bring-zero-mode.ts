@@ -14,6 +14,12 @@ export default proposition({
     "conj:bring-hyperbolic-knot-bloch-decomposition",
   ],
   cites: ["jones1987", "kassel1995", "suslin1991", "bloch2000"],
+  computation: {
+    engine: "mpmath",
+    script: "folio-assistant/computations/q_pinning_50_digit.py",
+    witness: "folio-assistant/computations/q-pinning-50-digit.witness.json",
+    status: "verified",
+  },
   tags: [
     "alpha-em",
     "fine-structure",

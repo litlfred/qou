@@ -1,7 +1,17 @@
 {
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-09T00:09:07.495814+00:00",
+  "commitSha": "0bf80848d4f0be0afbe05720b5d03621bd602453",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
   "computation": "alpha-high-precision",
-  "description": "Bisect \u03b1* at dps=50 then run PSLQ to identify closed form for the optimal blend coefficient.",
-  "computedAt": "2026-04-27T21:04:09.628347+00:00",
+  "scriptFile": "alpha_high_precision.py",
+  "scriptHash": "86026ee1c3af",
+  "scriptCommitSha": "ccc484ea9419441c0e2e685743a6a8f4d34e2748",
+  "description": "Bisect α* at dps=50 then run PSLQ to identify closed form for the optimal blend coefficient.",
+  "timestamp": "2026-05-09T00:09:07.480393+00:00",
   "q_0": 1.1099785955541805,
   "alpha_star": "0.3058074307412403807140721",
   "alpha_star_float": 0.3058074307412404,
@@ -19,7 +29,7 @@
       0.00158781627484903
     ],
     [
-      "G\u00b78/24 (Vol(B_3)/|S_4|)",
+      "G·8/24 (Vol(B_3)/|S_4|)",
       "0.305321864725739672",
       0.00158781627484903
     ],
@@ -34,17 +44,17 @@
       0.00477295352420297
     ],
     [
-      "\u03c0\u00b2/32",
+      "π²/32",
       "0.308425137534042457",
       0.00855998425694585
     ],
     [
-      "sin(\u03c0/10)",
+      "sin(π/10)",
       "0.309016994374947424",
       0.010495374902851273
     ],
     [
-      "cos(\u03c0\u00b72/5)",
+      "cos(π·2/5)",
       "0.309016994374947424",
       0.010495374902851273
     ],
@@ -54,7 +64,7 @@
       0.012348020644430649
     ],
     [
-      "\u03c0/10",
+      "π/10",
       "0.314159265358979324",
       0.027310764154733266
     ]

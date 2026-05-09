@@ -57,7 +57,7 @@ $$
     \;=\;
     2\,\mathrm{Cl}_2\!\left(\tfrac{\pi}{3}\right)
     \;\approx\;
-    2.029883\ldots
+    :val[Vol_4_1]{precision=6}\ldots
   \;}
 $$
 
@@ -92,6 +92,6 @@ $2\,\mathrm{Cl}_2(\pi/3)$ and the $\pi$ in $1/\alpha_{EM}$'s
 correction $2/(3\pi) = 2g/(4\pi(g-1))$ at $g=4$ share a single
 provenance — the unique archimedean shadow of pentagon-coherent
 substrate data on Bring's surface, factored through the
-Bloch-Wigner dilogarithm. The numerical value $2.029883\ldots =
+Bloch-Wigner dilogarithm. The numerical value $:val[Vol_4_1]{precision=6}\ldots =
 2\,\mathrm{Cl}_2(\pi/3)$ matches the standard hyperbolic
 2-tetrahedra triangulation [`thurston1978`].

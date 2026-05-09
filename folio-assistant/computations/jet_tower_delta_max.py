@@ -37,6 +37,8 @@ DIR = Path(__file__).parent
 # per jet level — see unified_lift.py line 158 onward).
 sys.path.insert(0, str(DIR))
 
+from witness_base import WitnessBuilder  # noqa: E402
+
 try:
     from unified_lift import binding_unified
     from q_parameter import HBAR_Q
@@ -137,8 +139,19 @@ def main() -> int:
         "measurements": measurements,
         "aggregate_uniform_bound_pass": aggregate_pass,
     }
-    out = DIR / "jet-tower-delta-max.witness.json"
-    out.write_text(json.dumps(witness, indent=2))
+    # PR #578 (Copilot review): expose the script's pass/fail criterion
+    # via WitnessBuilder.add_assertion so allPassed reflects it.
+    out = (WitnessBuilder.wrap_legacy(
+        "jet-tower-delta-max", witness,
+        script_path=__file__, engine="python")
+        .add_assertion(
+            "aggregate_uniform_bound_pass",
+            computed=1.0 if aggregate_pass else 0.0,
+            expected=1.0,
+            tolerance=0.0,
+            source="conj:jet-tower-uniform-delta-max",
+        )
+        .save())
     print(f"  Witness written to {out.name}")
     print(f"  aggregate_uniform_bound_pass = {aggregate_pass}")
     for m in measurements:

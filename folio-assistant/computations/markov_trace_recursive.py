@@ -44,6 +44,8 @@ import sympy as sp
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 
+from witness_base import WitnessBuilder  # noqa: E402
+
 from gb_filtration_jet_tracker import HeckeElement, perm_apply_s
 
 # Sympy q, h, z (matching the jet_tracker convention)
@@ -238,8 +240,7 @@ def main() -> int:
         # drift. Fresh runs reproduce identical mathematical content.
         "test_cases": results,
     }
-    out = HERE / "markov-trace-recursive.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    out = WitnessBuilder.wrap_legacy("markov-trace-recursive", witness, script_path=__file__, engine="sympy").save()
     print(f"\n  Witness: {out}")
     return 0
 

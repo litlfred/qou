@@ -134,7 +134,7 @@ $\tau_{\text{arch}}$, not in different rings of the same kind. The
 shows the same dichotomy in concrete miniature: $4_1$ has
 $\mathrm{Vol}_q(4_1) \in \mathbb{Z}[q^{\pm 1/2}]$ on the substrate
 side and $\mathrm{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3) \approx
-2.02988$ on the laboratory side, with the bridge fixed by
+:val[Vol_4_1]{precision=6}$ on the laboratory side, with the bridge fixed by
 uniqueness.
 
 Two open computational sub-problems remain (both are now framed by

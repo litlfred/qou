@@ -31,6 +31,8 @@ import sympy as sp
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 
+from witness_base import WitnessBuilder  # noqa: E402
+
 q = sp.symbols("q", positive=True)
 h = q - 1 / q
 z = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))
@@ -162,8 +164,26 @@ def main() -> int:
         "rho_p_codata": rho_p_codata,
         "rho_p_over_8G": rho_p_codata / 7.328,
     }
-    out = HERE / "markov-trace-axiomatic-proton.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    anti_self_recip = abs(val_at_q0 + val_at_inv_q) < 1e-6
+    sym_q_inv = abs(diff) < 1e-6
+    out = (WitnessBuilder.wrap_legacy(
+        "markov-trace-axiomatic-proton", witness,
+        script_path=__file__, engine="sympy")
+        .add_assertion(
+            "anti_self_reciprocal",
+            computed=1.0 if anti_self_recip else 0.0,
+            expected=1.0,
+            tolerance=0.0,
+            source="prop:markov-trace-axiomatic-closed-form § anti-self-reciprocal",
+        )
+        .add_assertion(
+            "symmetric_under_q_inv",
+            computed=1.0 if sym_q_inv else 0.0,
+            expected=1.0,
+            tolerance=0.0,
+            source="prop:markov-trace-axiomatic-closed-form § q-inverse symmetry",
+        )
+        .save())
     print(f"\n  Witness: {out}")
     return 0
 
