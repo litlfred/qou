@@ -1,12 +1,12 @@
 {
   "audit": "trivial-skeleton-audit",
-  "generated": "2026-05-09T03:58:00.785Z",
-  "total_flagged": 58,
+  "generated": "2026-05-09T04:44:39.350Z",
+  "total_flagged": 56,
   "files_flagged": 35,
   "patterns": {
-    "const_zero": 34,
-    "skel_inst": 12,
-    "one_def": 9,
+    "const_zero": 31,
+    "skel_inst": 15,
+    "one_def": 7,
     "id_def": 1,
     "const_zero_typed": 1,
     "prop_true": 1
@@ -152,6 +152,20 @@
         "snippet": "def frobeniusStability : DressedTy → ℝ → ℝ := fun _ _ => 0"
       }
     ],
+    "braids-and-knots/weak-spectral-completeness.lean": [
+      {
+        "line": 116,
+        "pattern": "skel_inst",
+        "snippet": "instance instWeakSpectralCompletenessSkeleton"
+      }
+    ],
+    "braids-and-knots/weinberg-angle-categorical.lean": [
+      {
+        "line": 98,
+        "pattern": "skel_inst",
+        "snippet": "instance skeleton {R : Type*} [CommRing R] (q : R) :"
+      }
+    ],
     "braids-and-knots/wenzl-qmn-synergy.lean": [
       {
         "line": 43,
@@ -230,6 +244,13 @@
         "line": 60,
         "pattern": "skel_inst",
         "snippet": "instance skeleton (q : ℝ) (n : ℕ) :"
+      }
+    ],
+    "descartes-universe/electroweak-higgs-torus-link-triplet.lean": [
+      {
+        "line": 117,
+        "pattern": "skel_inst",
+        "snippet": "instance instEWHiggsTorusLinkTripletSkeleton"
       }
     ],
     "descartes-universe/gb-reduction-pl-thimble-bijection.lean": [
@@ -320,37 +341,6 @@
         "line": 327,
         "pattern": "skel_inst",
         "snippet": "instance skeleton : ShellClosureNFTermCount where"
-      }
-    ],
-    "observations/borromean-hopf-energy-crossover.lean": [
-      {
-        "line": 49,
-        "pattern": "one_def",
-        "snippet": "def milnor_mu_borromean : Int := 1"
-      },
-      {
-        "line": 53,
-        "pattern": "const_zero",
-        "snippet": "def milnor_mu_cfl : Int := 0"
-      }
-    ],
-    "observations/hopf-diquark.lean": [
-      {
-        "line": 71,
-        "pattern": "one_def",
-        "snippet": "def hopf_linking_number : Int := 1"
-      },
-      {
-        "line": 75,
-        "pattern": "const_zero",
-        "snippet": "def hopf_link_volume : ℝ := 0"
-      }
-    ],
-    "observations/n-v-tower-depth-ninety.lean": [
-      {
-        "line": 33,
-        "pattern": "const_zero",
-        "snippet": "def level_m_e : BraneTowerLevel := 0"
       }
     ],
     "particle-interactions/confinement-sdp.lean": [

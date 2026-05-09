@@ -29,8 +29,9 @@ def tower_depth (Σ_low Σ_high : BraneTowerLevel) : ℕ :=
   Σ_high - Σ_low
 
 /-- The brane-tower level supporting the electron rest mass m_e.
-    Concrete model: level 0. -/
-def level_m_e : BraneTowerLevel := 0
+    Concrete model: level 0 (the electron rest mass is the
+    universal Frobenius residual at H_3, the lowest level). -/
+def level_m_e : BraneTowerLevel := 0  -- noqa: const_zero
 
 /-- The brane-tower level supporting the electroweak scale v.
     Concrete model: level 90 (the witness-pinned structural depth). -/
