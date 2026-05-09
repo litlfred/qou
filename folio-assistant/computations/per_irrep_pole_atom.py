@@ -64,8 +64,14 @@ import sympy as sp  # noqa: E402
 
 from canonical_braid_crossings import atom_canonical_crossings  # noqa: E402
 from per_irrep_pole_proton_h3 import negative_q_pole_order  # noqa: E402
+from q_parameter import Q as Q0_FLOAT  # noqa: E402  authoritative q_0
 
 Y_LAMBDA_CACHE = HERE / "y-lambda-wenzl-bridge-symbolic-witness.json"
+
+# Precision (decimal places) for the per-partition χ-fingerprint
+# emitted under `atom_chi_fingerprint`.  Centralised constant per
+# Gemini review (PR #607).
+FINGERPRINT_PRECISION = 8
 
 ATOMS = {
     "proton":   (1, 0),
@@ -430,18 +436,18 @@ def run_atom(Z: int, N: int, *, workers: int | None = None) -> int:
     # (cf. r5_full_canonical_knot_solver.chi_fingerprint, which uses
     # the per-block matrix entries at H_3; here we use trace-only
     # because the per-block matrices are not currently materialised
-    # in the Path A pipeline at H_n for n > 3).
-    from q_parameter import Q as Q0_FLOAT  # noqa: E402  authoritative q_0
+    # in the Path A pipeline at H_n for n > 3).  Q0_FLOAT is imported
+    # at module top from q_parameter (per Gemini review PR #607).
     chi_fp_pairs = []
     for lam in sorted(chi_q, key=lambda L: (-len(L), tuple(-x for x in L))):
         try:
             val = float(chi_q[lam].subs(q_var, Q0_FLOAT))
-            chi_fp_pairs.append((list(lam), round(val, 8)))
+            chi_fp_pairs.append((list(lam), round(val, FINGERPRINT_PRECISION)))
         except (TypeError, ValueError):
             chi_fp_pairs.append((list(lam), None))
     builder.add_data("atom_chi_fingerprint", {
         "q0": float(Q0_FLOAT),
-        "precision": 8,
+        "precision": FINGERPRINT_PRECISION,
         "n_partitions": len(chi_fp_pairs),
         "fingerprint": chi_fp_pairs,
         "note": (

@@ -214,10 +214,13 @@ def main():
                 "contribution": str(contribution),
             })
 
-        avg_direct = num_direct / den if abs(den) > mpf("1e-30") else None
-        avg_pairwise = num_pairwise / den if abs(den) > mpf("1e-30") else None
+        # Tolerances tied to working precision (per Gemini review).
+        zero_tol = mpf(10) ** (-int(mp.dps * 0.6))
+        agree_tol = mpf(10) ** (-int(mp.dps * 0.8))
+        avg_direct = num_direct / den if abs(den) > zero_tol else None
+        avg_pairwise = num_pairwise / den if abs(den) > zero_tol else None
         agree = (avg_direct is not None and avg_pairwise is not None
-                 and abs(avg_direct - avg_pairwise) < mpf("1e-40"))
+                 and abs(avg_direct - avg_pairwise) < agree_tol)
 
         # First-order chirality factor.
         h_val = Q0 - 1 / Q0
@@ -299,10 +302,11 @@ def main():
         WitnessBuilder(name="chirality-avg-content-atomic", engine="mpmath")
         .set_description(
             "Chiral residual of GAP-A-2 at the AUDITED atomic nucleon "
-            "and nuclear braids — D (H_6), T (H_9), ³He (H_9), ⁴He "
-            "(H_12).  Computes ⟨c(λ)⟩_β at q_0 via two equivalent "
-            "forms (direct sum + per-pair-symmetric) using the "
-            "atomic-braid words from "
+            "and nuclear braids — D (H_6), T (H_9), ³He (H_9).  ⁴He "
+            "(H_12, 77 partitions) is deferred for performance and "
+            "is not included in this witness.  Computes ⟨c(λ)⟩_β at "
+            "q_0 via two equivalent forms (direct sum + per-pair-"
+            "symmetric) using the atomic-braid words from "
             "term7-alpha5-crystal-derivation.witness.json.  Tests "
             "whether the first-order chirality factor a_K(β) = 1 + "
             "w(β)·⟨c⟩_β·h matches the empirical (1+h)(1-h) = 1-h² "

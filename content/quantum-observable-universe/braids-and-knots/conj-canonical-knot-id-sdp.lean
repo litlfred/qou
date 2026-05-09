@@ -407,15 +407,34 @@ class R5FullWitness (n : LightNucleus) where
     primal optimum is unique (Boyd–Vandenberghe §5.5).  The
     R5-full witness records the primal–dual data; whether the
     structural inequalities hold is a categorical question about
-    the geometry of the feasible set. -/
+    the geometry of the feasible set.
+
+    Concrete fields (per Gemini review):
+    * `min_block_eig` — minimum Wedderburn-block min-eigenvalue
+      across the witness's `per_block_summary`.  Active set is
+      empty iff this is positive.
+    * `min_dual_y_on_active` — minimum dual variable value on the
+      active set (binding constraints).  Strict complementarity
+      requires this to be strictly positive whenever the active
+      set is non-empty.
+    * `max_inactive_dual` — maximum dual variable value on the
+      inactive set (slack constraints).  Strict complementarity
+      requires this to be exactly zero. -/
 -- Ref: [BoydVandenberghe2004] §5.5 ("Strict complementarity")
-structure StrictComplementarity (n : LightNucleus) [w : R5FullWitness n] : Prop where
-  /-- Active-set slack at `T_w*` is zero. -/
-  active_slack_zero : Prop
-  active_slack_zero_holds : active_slack_zero
-  /-- Inactive-set dual variables are zero. -/
-  inactive_dual_zero : Prop
-  inactive_dual_zero_holds : inactive_dual_zero
+structure StrictComplementarity (n : LightNucleus)
+    [w : R5FullWitness n] : Prop where
+  /-- Concrete real-valued field: minimum eigenvalue across all
+      Wedderburn blocks in the witness's `per_block_summary`. -/
+  min_block_eig : ℝ
+  /-- Active set is empty when `min_block_eig > 0`; in that case the
+      strict-complementarity inequalities below hold vacuously. -/
+  min_dual_y_on_active : ℝ
+  max_inactive_dual : ℝ
+  /-- The active-set dual variables are positive (or vacuous if the
+      active set is empty per `min_block_eig > 0`). -/
+  active_dual_pos_or_empty : 0 < min_dual_y_on_active ∨ 0 < min_block_eig
+  /-- The inactive-set dual variables are exactly zero. -/
+  inactive_dual_zero : max_inactive_dual = 0
 
 /-- **Categorical uniqueness theorem (closure path for GAP-A-1).**
 

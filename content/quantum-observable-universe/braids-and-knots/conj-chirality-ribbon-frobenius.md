@@ -38,6 +38,23 @@ $$
 model, this exact form equals $1 + w(K) \cdot h$ to the precision
 required by the $0.75\%$ accuracy of the mass formula.*
 
+> **Status note (2026-05-09; refutation pending reconciliation).**
+> Direct numerical evaluation of the ratio above for the audited
+> atomic braids D ($H_6$), T ($H_9$), $^3$He ($H_9$) at $q_0$ — see
+> `chirality-avg-content-atomic.witness.json` and the "Generalisation"
+> subsection below — finds the exact ratio diverges by $\sim 10^4$
+> (T) and $\sim 10^4$ (³He) from the empirical $(1+h)(1-h) \approx
+> 0.956$ pattern, and the first-order linearisation does not match
+> either.  The conjecture **Statement** above is therefore **scoped
+> as historical/aspirational** for the audited atomic braids until
+> reconciled.  Current best understanding: the chirality factor for
+> atomic braids is *not* the ribbon-twist Markov-trace ratio above
+> in its stated form; an alternate construction is needed (see
+> "Implications" / "Residual" at the end of the **Generalisation**
+> section).  The Hecke-character invariants $\langle c \rangle_\beta$
+> from this conjecture are still well-defined and witnessed; only
+> the specific way they feed into $a_K$ is in question.
+
 ## Derivation sketch
 
 **Step 1: Ribbon twist.**  In the Hecke algebra $H_n(q)$, the ribbon

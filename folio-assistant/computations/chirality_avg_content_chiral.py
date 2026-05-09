@@ -159,7 +159,9 @@ def main():
                 "chi_lambda_beta": str(chi_val),
                 "weighted_chi_c": str(w_lam * chi_val * c_lam),
             })
-        if abs(den) < mpf("1e-30"):
+        # Tolerance tied to working precision (per Gemini review).
+        zero_tol = mpf(10) ** (-int(mp.dps * 0.6))
+        if abs(den) < zero_tol:
             avg_c_mp = None
             a_K_first_mp = None
             avg_c = None

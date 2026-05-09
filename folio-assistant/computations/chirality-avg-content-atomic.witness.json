@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-09T14:38:34.471059+00:00",
-  "commitSha": "3ef8da15279d1c13d73aab68b69203b06ae3c042",
+  "computedAt": "2026-05-09T15:49:30.066523+00:00",
+  "commitSha": "b899227ffea3f4486974a2ddc0ebb8b792662293",
   "assertions": [
     {
       "name": "direct_eq_pairwise_all_atoms",
@@ -12,12 +12,12 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 16,
   "computation": "chirality-avg-content-atomic",
   "scriptFile": "chirality_avg_content_atomic.py",
-  "scriptHash": "4f1475d1ce26",
-  "scriptCommitSha": "3ef8da15279d1c13d73aab68b69203b06ae3c042",
-  "description": "Chiral residual of GAP-A-2 at the AUDITED atomic nucleon and nuclear braids — D (H_6), T (H_9), ³He (H_9), ⁴He (H_12).  Computes ⟨c(λ)⟩_β at q_0 via two equivalent forms (direct sum + per-pair-symmetric) using the atomic-braid words from term7-alpha5-crystal-derivation.witness.json.  Tests whether the first-order chirality factor a_K(β) = 1 + w(β)·⟨c⟩_β·h matches the empirical (1+h)(1-h) = 1-h² pattern observed across these isotopes.",
+  "scriptHash": "7f8969e3640e",
+  "scriptCommitSha": "4ee6c17c32fe683848a8a4d1591698cf7d2cfbef",
+  "description": "Chiral residual of GAP-A-2 at the AUDITED atomic nucleon and nuclear braids — D (H_6), T (H_9), ³He (H_9).  ⁴He (H_12, 77 partitions) is deferred for performance and is not included in this witness.  Computes ⟨c(λ)⟩_β at q_0 via two equivalent forms (direct sum + per-pair-symmetric) using the atomic-braid words from term7-alpha5-crystal-derivation.witness.json.  Tests whether the first-order chirality factor a_K(β) = 1 + w(β)·⟨c⟩_β·h matches the empirical (1+h)(1-h) = 1-h² pattern observed across these isotopes.",
   "auditOnly": "content/quantum-observable-universe/braids-and-knots/derivation-audit-report.md (GAP-A-2 chiral residual at atomic level)",
   "parameters": {
     "q_0": 1.1099785955541805,
