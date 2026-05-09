@@ -517,6 +517,7 @@ export default chapter({
         "alpha-shift-torus-knot",
         "per-nucleon-shift-additive-linearity",
         "confinement-nf-structure-forcing",
+        "lp-duality-hypothesis-class",
         "confinement-nf-partial-proof",
         "bound-state-frobenius-self-dual-channel",
         "confinement-categorical",
