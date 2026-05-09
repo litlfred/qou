@@ -260,7 +260,7 @@ If any of these shift unexpectedly, re-audit the diff.
 - **Complements**: `proof-simplifier` (Lean side),
   `proof-exposition-review` (integrating new content),
   `scientific-accuracy` (correctness gate — run before this skill)
-- **Pairs with**: `one-voice` (tone consistency across the paper)
+- **Pairs with**: `one-voice-style-guide` (author voice profile) and `one-voice-audit` (mechanical sweep for status leaks)
 
 ## Checklist
 

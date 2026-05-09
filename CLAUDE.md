@@ -15,6 +15,60 @@ This repository is a formal mathematics paper with:
 - **LaTeX** as a rendering target (generated from content objects)
 - **Lean 4** formalization linked to content objects
 
+## Agent work-plan policy (STRICT)
+
+Every session must run from a **prioritized work-plan** maintained
+via the TodoWrite tool. The plan is the agent's source of truth for
+"what next" — not the user's last message, not the most recently
+mentioned file.
+
+1. **Start a todo list at session start.** As soon as you have
+   enough context (after reading the user's first request, the
+   SessionStart hooks, and the current branch / PR state), draft a
+   TodoWrite list with the requested work decomposed into concrete
+   tasks. If the request is one trivial task, you may skip — but
+   any time there are ≥ 2 distinct steps, draft the list.
+
+2. **Queue, do not pivot.** When a new request, review comment, or
+   sibling-PR ask arrives mid-session, **append** it to the plan in
+   priority order — do not abandon the in-progress task. Pivot only
+   when the user explicitly says so ("stop", "drop that", "switch
+   to X first"). Inferred urgency is not enough.
+
+3. **Parallelize independent tasks.** When two queued tasks have no
+   dependency between them (e.g. one Lean fix + one .md edit on
+   different blocks), batch them into a single response with
+   parallel tool calls. Use background `Agent(run_in_background=true)`
+   for independent research / triage that does not block the
+   foreground task.
+
+4. **Work the queue while idle.** When you are waiting on a
+   long-running script, a background agent, a Lean build, or a CI
+   run, pull the next pending todo and work on it. Never just sleep
+   or poll. (Exception: if the only remaining todos depend on the
+   in-flight task, idle and wait for the notification.)
+
+5. **Update the plan when upstream lands.** The session-start hook
+   arms `local/watch` on `origin/main` (and `local/coordinate`
+   triages sibling PRs). Whenever a `<github-webhook-activity>` or
+   watcher event reports a new commit / PR / review comment that
+   affects this branch, walk the §3 watch checklist; if the result
+   is "queue work", insert the new todo at the right priority slot
+   (do not push to the bottom blindly, do not jump above the
+   current in-progress task unless it is a blocker).
+
+6. **End-of-session: surface the plan.** If the session ends with
+   pending todos and the next step is **not unambiguous**, show the
+   remaining todo list to the author before closing — even if the
+   user said "we're done". Use a numbered list so they can reply
+   "1, 2" to pick what's next. If the next step *is* unambiguous
+   (one todo, clearly the user's stated goal), skip the prompt.
+
+This policy makes the agent durable to interruptions, sibling-PR
+churn, and long async waits. It is enforced by review tooling: a
+session that pivots without a `TodoWrite` update or that idles
+without pulling the queue is an audit flag.
+
 ## Always provide GitHub links — default to `.md`
 
 Whenever a skill or agent creates or modifies a file, the reply **must**
@@ -141,7 +195,11 @@ When a user request arrives, route to the right skill(s):
 | "notation check / symbol audit / register compliance" | `local/rendering-auditor` (pass 2) + `local/ontologist` | reader |
 | "fix rendering / rendering fix / quick fix" | `local/rendering-fixes` | reader |
 | "check markdown render / GitHub view / proof markdown" | `local/markdown-render-check` | reader |
-| "one voice / status leak / TODO in prose / strip emoji / scholarly voice" | `local/one-voice-audit` | collaborator |
+| "one voice / status leak / TODO in prose / strip emoji / scholarly voice" | `local/one-voice-audit` (sweep) + `local/one-voice-style-guide` (author voice profile) | collaborator |
+| "coordinate PRs / sibling PRs / cross-PR / cherry-pick / inconsistent finding" | `local/coordinate` (or `/coordinate` slash command) | collaborator |
+| "watch main / watch upstream / watch this PR / watch branch X" | `local/watch` | reader |
+| "session todos / work plan / what's left / track progress" | `local/todo-manager` (session work-plan, TodoWrite) | reader |
+| "process feedback / review todos / triage open feedback" | `local/todo-review` (content-feedback triage) | reader |
 
 ### External skill packages
 

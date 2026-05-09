@@ -113,8 +113,11 @@ cycle.
 
 ## 3. One-voice review
 
-- Invoke the `one-voice` skill across every `.md` file touched on this
-  branch. Fix voice / style inconsistencies before proceeding.
+- Invoke the `one-voice-audit` skill across every `.md` file touched
+  on this branch (mechanical sweep: status leaks, emoji, Unicode
+  crashes, first-person work tone). When rewriting, consult
+  `one-voice-style-guide` for the author voice profile.
+  Fix voice / style inconsistencies before proceeding.
 
 ## 4. 100% Lean — build + resolutions
 
