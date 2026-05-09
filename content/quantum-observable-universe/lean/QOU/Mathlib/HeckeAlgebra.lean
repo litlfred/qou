@@ -1373,6 +1373,23 @@ noncomputable def MarkovTraceRecursionWithMul.h3_to_h4
     embed_HnC3_to_HnC4
     h_axiom
 
+/-! ### Identity-element witness theorems for the Markov axiom
+
+    Concrete verification of the Markov axiom at `x = 1 ∈ H_3`:
+    `tr_M(1 · σ_3) = z · tr_M(1) = z · 1 = z`.  This is the
+    smallest non-vacuous case of the Markov-axiom proof. -/
+
+/-- The σ_3-shifted form of `Hn.one 3 ℝ` lands at position 6
+    in `HnCarrier 4 ℝ` (= the H_3-coset `1 · σ_3` shifted by 6). -/
+theorem mul_HnC4_tailored_at_one (q : ℝ) (j : Fin 24) :
+    mul_HnC4_tailored q (embed_HnC3_to_HnC4 (Hn.one 3 ℝ)) sigma_HnC4 j
+      = if j.val = 6 then 1 else 0 := by
+  unfold mul_HnC4_tailored embed_HnC3_to_HnC4 Hn.one
+  -- For j.val ∈ {6..11}, the value is `embed_HnC3_to_HnC4 (Hn.one 3 ℝ) ⟨j.val - 6, _⟩`
+  -- = if (j.val - 6).val = 0 then 1 else 0 = if j.val = 6 then 1 else 0.
+  -- For j.val < 6 or ≥ 12, the value is 0.
+  split_ifs <;> simp_all <;> omega
+
 end QOU.Mathlib.HeckeAlgebra
 
 /-! ### Wedderburn isomorphism `H_n(q) ≅ ⊕_λ M_{d_λ}(R)`

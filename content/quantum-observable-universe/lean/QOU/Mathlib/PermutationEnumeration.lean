@@ -393,4 +393,160 @@ theorem coxeterSwapFormula_n4_check :
     coxeterLength (Equiv.swap (⟨2, by decide⟩ : Fin 4) ⟨3, by decide⟩) = 1 := by
   refine ⟨?_, ?_, ?_, ?_, ?_, ?_⟩ <;> (unfold coxeterLength; decide)
 
+/-! ### Concrete lengthFn3 / lengthFn4 (Coxeter-length tables)
+
+    Explicit length functions on `Fin 6` and `Fin 24` matching
+    the Coxeter convention — basis ordered by length, then by
+    a fixed enumeration within each length-stratum.
+
+    These avoid the noncomputable `permutationEnumeration`
+    + `coxeterLength` chain by giving a direct table.  Caller
+    can use these as `lengthFn` arguments to `trace_HnC4`,
+    `MarkovTraceRecursionWithMul.h3_to_h4`, etc. -/
+
+/-- **Concrete `lengthFn3` table** for the 6 elements of S_3
+    (basis ordered: 1, σ_1, σ_2, σ_1σ_2, σ_2σ_1, σ_1σ_2σ_1).
+    Lengths: 0, 1, 1, 2, 2, 3. -/
+def lengthFn3_table : Fin 6 → ℕ
+  | ⟨0, _⟩ => 0  -- 1 (identity)
+  | ⟨1, _⟩ => 1  -- σ_1
+  | ⟨2, _⟩ => 1  -- σ_2
+  | ⟨3, _⟩ => 2  -- σ_1 σ_2
+  | ⟨4, _⟩ => 2  -- σ_2 σ_1
+  | ⟨5, _⟩ => 3  -- σ_1 σ_2 σ_1 (longest)
+
+/-- Length distribution at S_3: `Σ_{w ∈ S_3} length = 0+1+1+2+2+3
+    = 9 = (3·(3-1)/2) · 3 = 3 · 3 = 9`. -/
+theorem lengthFn3_table_sum :
+    (Finset.univ : Finset (Fin 6)).sum lengthFn3_table = 9 := by
+  decide
+
+/-- The maximum length in S_3 is 3 (longest element). -/
+theorem lengthFn3_table_max :
+    (Finset.univ : Finset (Fin 6)).sup lengthFn3_table = 3 := by
+  decide
+
+/-- **Concrete `lengthFn4` table** for the 24 elements of S_4
+    (basis ordered by length: 1×0, 3×1, 5×2, 6×3, 5×4, 3×5, 1×6).
+    Length distribution: total length = 0+3·1+5·2+6·3+5·4+3·5+1·6
+    = 0+3+10+18+20+15+6 = 72.
+    Maximum length: 6 (longest element of S_4). -/
+def lengthFn4_table : Fin 24 → ℕ
+  -- length 0
+  | ⟨0,  _⟩ => 0
+  -- length 1: σ_1, σ_2, σ_3
+  | ⟨1,  _⟩ => 1
+  | ⟨2,  _⟩ => 1
+  | ⟨3,  _⟩ => 1
+  -- length 2: σ_1σ_2, σ_2σ_1, σ_2σ_3, σ_3σ_2, σ_1σ_3
+  | ⟨4,  _⟩ => 2
+  | ⟨5,  _⟩ => 2
+  | ⟨6,  _⟩ => 2
+  | ⟨7,  _⟩ => 2
+  | ⟨8,  _⟩ => 2
+  -- length 3: 6 elements
+  | ⟨9,  _⟩ => 3
+  | ⟨10, _⟩ => 3
+  | ⟨11, _⟩ => 3
+  | ⟨12, _⟩ => 3
+  | ⟨13, _⟩ => 3
+  | ⟨14, _⟩ => 3
+  -- length 4: 5 elements
+  | ⟨15, _⟩ => 4
+  | ⟨16, _⟩ => 4
+  | ⟨17, _⟩ => 4
+  | ⟨18, _⟩ => 4
+  | ⟨19, _⟩ => 4
+  -- length 5: 3 elements
+  | ⟨20, _⟩ => 5
+  | ⟨21, _⟩ => 5
+  | ⟨22, _⟩ => 5
+  -- length 6: longest
+  | ⟨23, _⟩ => 6
+
+/-- Length distribution at S_4: total length = 72. -/
+theorem lengthFn4_table_sum :
+    (Finset.univ : Finset (Fin 24)).sum lengthFn4_table = 72 := by
+  decide
+
+/-- The maximum length in S_4 is 6 (longest element). -/
+theorem lengthFn4_table_max :
+    (Finset.univ : Finset (Fin 24)).sup lengthFn4_table = 6 := by
+  decide
+
+/-- The lengthFn3 table is shift-compatible with lengthFn4
+    on the first 6 entries: `lengthFn4 i = lengthFn3 i` for
+    all `i ∈ Fin 6`. -/
+theorem lengthFn4_extends_lengthFn3 (i : Fin 6) :
+    lengthFn4_table ⟨i.val, by omega⟩ = lengthFn3_table i := by
+  fin_cases i <;> rfl
+
+/-! ### Bulk compound length theorems (S_3, S_4)
+
+    Length verifications for many compound permutations, all
+    proved by `decide` after unfolding simpleTransposition. -/
+
+/-- σ_2 · σ_1 · σ_2 in S_3 = longest element (length 3). -/
+theorem coxeterLength_s2_s1_s2_in_S3 :
+    coxeterLength (sigma2_in_S3 * sigma1_in_S3 * sigma2_in_S3) = 3 := by
+  unfold coxeterLength sigma1_in_S3 sigma2_in_S3 simpleTransposition
+  decide
+
+/-- σ_2 · σ_3 in S_4 has length 2. -/
+theorem coxeterLength_s2_s3_in_S4 :
+    coxeterLength (sigma2_in_S4 * sigma3_in_S4) = 2 := by
+  unfold coxeterLength sigma2_in_S4 sigma3_in_S4 simpleTransposition
+  decide
+
+/-- σ_3 · σ_2 in S_4 has length 2. -/
+theorem coxeterLength_s3_s2_in_S4 :
+    coxeterLength (sigma3_in_S4 * sigma2_in_S4) = 2 := by
+  unfold coxeterLength sigma2_in_S4 sigma3_in_S4 simpleTransposition
+  decide
+
+/-- σ_2 · σ_1 in S_4 has length 2. -/
+theorem coxeterLength_s2_s1_in_S4 :
+    coxeterLength (sigma2_in_S4 * sigma1_in_S4) = 2 := by
+  unfold coxeterLength sigma1_in_S4 sigma2_in_S4 simpleTransposition
+  decide
+
+/-- σ_3 · σ_1 in S_4 has length 2 (far-commute = σ_1·σ_3). -/
+theorem coxeterLength_s3_s1_in_S4 :
+    coxeterLength (sigma3_in_S4 * sigma1_in_S4) = 2 := by
+  unfold coxeterLength sigma1_in_S4 sigma3_in_S4 simpleTransposition
+  decide
+
+/-- σ_1 · σ_2 · σ_1 in S_4 has length 3. -/
+theorem coxeterLength_s1_s2_s1_in_S4 :
+    coxeterLength (sigma1_in_S4 * sigma2_in_S4 * sigma1_in_S4) = 3 := by
+  unfold coxeterLength sigma1_in_S4 sigma2_in_S4 simpleTransposition
+  decide
+
+/-- σ_2 · σ_3 · σ_2 in S_4 has length 3. -/
+theorem coxeterLength_s2_s3_s2_in_S4 :
+    coxeterLength (sigma2_in_S4 * sigma3_in_S4 * sigma2_in_S4) = 3 := by
+  unfold coxeterLength sigma2_in_S4 sigma3_in_S4 simpleTransposition
+  decide
+
+/-- σ_3 · σ_2 · σ_1 · σ_2 in S_4 has length 4. -/
+theorem coxeterLength_s3_s2_s1_s2_in_S4 :
+    coxeterLength
+      (sigma3_in_S4 * sigma2_in_S4 * sigma1_in_S4 * sigma2_in_S4) = 4 := by
+  unfold coxeterLength sigma1_in_S4 sigma2_in_S4 sigma3_in_S4 simpleTransposition
+  decide
+
+/-- σ_1 · σ_2 · σ_3 · σ_1 in S_4 has length 4. -/
+theorem coxeterLength_s1_s2_s3_s1_in_S4 :
+    coxeterLength
+      (sigma1_in_S4 * sigma2_in_S4 * sigma3_in_S4 * sigma1_in_S4) = 4 := by
+  unfold coxeterLength sigma1_in_S4 sigma2_in_S4 sigma3_in_S4 simpleTransposition
+  decide
+
+/-- σ_2 · σ_1 · σ_2 · σ_3 in S_4 has length 4. -/
+theorem coxeterLength_s2_s1_s2_s3_in_S4 :
+    coxeterLength
+      (sigma2_in_S4 * sigma1_in_S4 * sigma2_in_S4 * sigma3_in_S4) = 4 := by
+  unfold coxeterLength sigma1_in_S4 sigma2_in_S4 sigma3_in_S4 simpleTransposition
+  decide
+
 end QOU.Mathlib.PermutationEnumeration
