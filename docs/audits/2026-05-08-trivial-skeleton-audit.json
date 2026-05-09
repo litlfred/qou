@@ -1,6 +1,6 @@
 {
   "audit": "trivial-skeleton-audit",
-  "generated": "2026-05-09T00:22:41.825Z",
+  "generated": "2026-05-09T00:27:10.864Z",
   "total_flagged": 77,
   "files_flagged": 42,
   "patterns": {
@@ -408,12 +408,12 @@
         "snippet": "def dimqPartition1111 (_q : ℝ) : ℝ := 1"
       },
       {
-        "line": 679,
+        "line": 705,
         "pattern": "one_def",
         "snippet": "def dimqPartition5 (_q : ℝ) : ℝ := 1"
       },
       {
-        "line": 700,
+        "line": 726,
         "pattern": "one_def",
         "snippet": "def dimqPartition11111 (_q : ℝ) : ℝ := 1"
       }

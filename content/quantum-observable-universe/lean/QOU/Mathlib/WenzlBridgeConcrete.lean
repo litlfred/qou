@@ -650,6 +650,32 @@ theorem dimqPartition1111_via_hook_formula (q : ℝ) (hq_one : q > 1) :
   unfold dimqPartition1111
   exact dimqPartition4_via_hook_formula q hq_one
 
+/-- Row partition `[3]` hook-formula: hooks `(3, 2, 1)`, hook product
+    = `[3]_q!`, so `dim_q([3]) = 1`. -/
+theorem dimqPartition3_via_hook_formula (q : ℝ) (hq_one : q > 1) :
+    QOU.qFactorial q 3 / QOU.qHookProduct q [3, 2, 1]
+      = dimqPartition3 q := by
+  unfold dimqPartition3
+  show QOU.qInteger q 3 * (QOU.qInteger q 2 * (QOU.qInteger q 1 * 1))
+    / (QOU.qInteger q 3 * (QOU.qInteger q 2 * (QOU.qInteger q 1 * 1))) = 1
+  have hne : QOU.qInteger q 3 * (QOU.qInteger q 2 * (QOU.qInteger q 1 * 1)) ≠ 0 := by
+    have h3 : QOU.qInteger q 3 ≠ 0 :=
+      QOU.qInteger_ne_zero q 3 hq_one (by norm_num)
+    have h2 : QOU.qInteger q 2 ≠ 0 :=
+      QOU.qInteger_ne_zero q 2 hq_one (by norm_num)
+    have h1 : QOU.qInteger q 1 ≠ 0 :=
+      QOU.qInteger_ne_zero q 1 hq_one (by norm_num)
+    exact mul_ne_zero h3 (mul_ne_zero h2 (mul_ne_zero h1 one_ne_zero))
+  exact div_self hne
+
+/-- Column partition `[1,1,1]` hook-formula: same hook multiset as
+    row `[3]`, so `dim_q([1,1,1]) = 1`. -/
+theorem dimqPartition111_via_hook_formula (q : ℝ) (hq_one : q > 1) :
+    QOU.qFactorial q 3 / QOU.qHookProduct q [3, 2, 1]
+      = dimqPartition111 q := by
+  unfold dimqPartition111
+  exact dimqPartition3_via_hook_formula q hq_one
+
 /-! ### n=5 dim_q values via the hook formula
 
     For partitions of `n = 5`:
