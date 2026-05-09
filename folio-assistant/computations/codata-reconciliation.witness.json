@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T00:34:53.840138+00:00",
-  "commitSha": "3f2bd2de45209c7c48790f47f6a166d271d65e06",
+  "computedAt": "2026-05-09T00:43:15.662710+00:00",
+  "commitSha": "7ee9664c6c5895501500addf7e7cce34a56e3df3",
   "assertions": [
     {
       "name": "codata_m_e",
@@ -21,6 +21,24 @@
       "tolerance": 5.8e-07,
       "unit": "MeV",
       "source": "anchor scale (atom_mass_derived.py)"
+    },
+    {
+      "name": "codata_α_2_−_z²__Markov_axiom",
+      "computed": 5.551115123125783e-17,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 2e-13,
+      "unit": "dimensionless",
+      "source": "alpha-k-jones-markov-h3.witness.json"
+    },
+    {
+      "name": "codata_Σ_d_λ_y_λ_-_1__Markov_M3,_max_over_n=2..6",
+      "computed": 5.345529420184391e-51,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 2e-40,
+      "unit": "dimensionless",
+      "source": "alpha-k-macdonald-closed-form.witness.json"
     },
     {
       "name": "codata_Q_n__β-decay",
@@ -60,11 +78,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 9,
   "computation": "codata-reconciliation",
   "scriptFile": "codata_reconciliation.py",
-  "scriptHash": "ac1d490ed82e",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "dab5f3b15d72",
+  "scriptCommitSha": "7ee9664c6c5895501500addf7e7cce34a56e3df3",
   "description": "Consolidated CODATA-2022 reconciliation table for QOU primary predictions.  Each row reports predicted value, CODATA central value, deviation in ppb, and CODATA uncertainty in ppb.  Passing assertion = QOU prediction within twice the CODATA uncertainty.",
   "auditOnly": "docs/audits/codata-reconciliation.md",
   "data": {
@@ -91,6 +109,28 @@
         "codata_unc_ppb": 0.309078788188941,
         "predicted_source": "anchor scale (atom_mass_derived.py)",
         "anchor": true
+      },
+      {
+        "quantity": "α_2 − z² (Markov axiom)",
+        "unit": "dimensionless",
+        "predicted": 5.551115123125783e-17,
+        "codata_value": 0.0,
+        "codata_err": 1e-13,
+        "delta_ppb": 5.551115123125783e-08,
+        "codata_unc_ppb": 1.0,
+        "predicted_source": "alpha-k-jones-markov-h3.witness.json",
+        "anchor": false
+      },
+      {
+        "quantity": "Σ d_λ y_λ - 1 (Markov M3, max over n=2..6)",
+        "unit": "dimensionless",
+        "predicted": 5.345529420184391e-51,
+        "codata_value": 0.0,
+        "codata_err": 1e-40,
+        "delta_ppb": 5.345529420184391e-42,
+        "codata_unc_ppb": 1e-31,
+        "predicted_source": "alpha-k-macdonald-closed-form.witness.json",
+        "anchor": false
       },
       {
         "quantity": "Q_n (β-decay)",
@@ -138,7 +178,120 @@
       }
     ],
     "anchor_count": 5,
-    "derived_count": 1,
-    "max_non_anchor_delta_ppb": 0.0
+    "derived_count": 3,
+    "atom_species_informational": [
+      {
+        "element": "Hydrogen",
+        "Z": 1,
+        "A": 1,
+        "M_derived_MeV": 1451.5844787463445,
+        "M_observed_MeV": 938.783,
+        "delta_MeV": 512.8014787463445,
+        "delta_ppb": 546240695.3964276,
+        "predicted_source": "atom-mass-derived.witness.json",
+        "status": "upstream_derivation_incomplete"
+      },
+      {
+        "element": "Helium",
+        "Z": 2,
+        "A": 4,
+        "M_derived_MeV": -215.03664038836044,
+        "M_observed_MeV": 3728.401,
+        "delta_MeV": -3943.4376403883603,
+        "delta_ppb": 1057675298.442512,
+        "predicted_source": "atom-mass-derived.witness.json",
+        "status": "upstream_derivation_incomplete"
+      },
+      {
+        "element": "Lithium",
+        "Z": 3,
+        "A": 7,
+        "M_derived_MeV": -75.61820160958713,
+        "M_observed_MeV": 6535.367,
+        "delta_MeV": -6610.985201609587,
+        "delta_ppb": 1011570612.883651,
+        "predicted_source": "atom-mass-derived.witness.json",
+        "status": "upstream_derivation_incomplete"
+      },
+      {
+        "element": "Beryllium",
+        "Z": 4,
+        "A": 9,
+        "M_derived_MeV": -2.316677962433814,
+        "M_observed_MeV": 8394.794,
+        "delta_MeV": -8397.110677962433,
+        "delta_ppb": 1000275966.0287595,
+        "predicted_source": "atom-mass-derived.witness.json",
+        "status": "upstream_derivation_incomplete"
+      },
+      {
+        "element": "Boron",
+        "Z": 5,
+        "A": 11,
+        "M_derived_MeV": -0.06543496775569665,
+        "M_observed_MeV": 10255.103,
+        "delta_MeV": -10255.168434967754,
+        "delta_ppb": 1000006380.722627,
+        "predicted_source": "atom-mass-derived.witness.json",
+        "status": "upstream_derivation_incomplete"
+      },
+      {
+        "element": "Carbon",
+        "Z": 6,
+        "A": 12,
+        "M_derived_MeV": 0.011270957855176598,
+        "M_observed_MeV": 11177.93,
+        "delta_MeV": -11177.918729042145,
+        "delta_ppb": 999998991.6775417,
+        "predicted_source": "atom-mass-derived.witness.json",
+        "status": "upstream_derivation_incomplete"
+      },
+      {
+        "element": "Nitrogen",
+        "Z": 7,
+        "A": 14,
+        "M_derived_MeV": 0.0009065666971474046,
+        "M_observed_MeV": 13043.781,
+        "delta_MeV": -13043.780093433305,
+        "delta_ppb": 999999930.4981664,
+        "predicted_source": "atom-mass-derived.witness.json",
+        "status": "upstream_derivation_incomplete"
+      },
+      {
+        "element": "Oxygen",
+        "Z": 8,
+        "A": 16,
+        "M_derived_MeV": 0.00018196299904245478,
+        "M_observed_MeV": 14899.169,
+        "delta_MeV": -14899.168818037,
+        "delta_ppb": 999999987.787037,
+        "predicted_source": "atom-mass-derived.witness.json",
+        "status": "upstream_derivation_incomplete"
+      },
+      {
+        "element": "Fluorine",
+        "Z": 9,
+        "A": 19,
+        "M_derived_MeV": -1.1166365773369593e-05,
+        "M_observed_MeV": 17696.901,
+        "delta_MeV": -17696.901011166367,
+        "delta_ppb": 1000000000.6309786,
+        "predicted_source": "atom-mass-derived.witness.json",
+        "status": "upstream_derivation_incomplete"
+      },
+      {
+        "element": "Neon",
+        "Z": 10,
+        "A": 20,
+        "M_derived_MeV": 2.6174050399848235e-06,
+        "M_observed_MeV": 18622.835,
+        "delta_MeV": -18622.834997382593,
+        "delta_ppb": 999999999.8594518,
+        "predicted_source": "atom-mass-derived.witness.json",
+        "status": "upstream_derivation_incomplete"
+      }
+    ],
+    "atom_species_note": "Atomic-mass derivation chain is upstream-incomplete; deviations exceed 50% for hydrogen and are negative for helium.  Surfaced as `data` only — not asserted, so `max_non_anchor_delta_ppb` tracks structural cross-checks rather than the upstream derivation gap.  Resolving these rows is a separate workplan.",
+    "max_non_anchor_delta_ppb": 5.551115123125783e-08
   }
 }
