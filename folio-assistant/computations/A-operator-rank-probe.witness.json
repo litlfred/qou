@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.4",
-  "computedAt": "2026-05-09T21:23:24.609806+00:00",
-  "commitSha": "86c534ac86a1656b3a84e366b1b4ff645175a4c2",
+  "computedAt": "2026-05-09T21:44:13.948774+00:00",
+  "commitSha": "948e296e451624afc2cb559bb783ef887a0b9cdf",
   "assertions": [
     {
       "name": "all_drops_are_exact_zeros",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 6,
   "computation": "A-operator-rank-probe",
   "scriptFile": "A_operator_rank_probe.py",
-  "scriptHash": "b6be9069dc2b",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "c7dd36cc66b8",
+  "scriptCommitSha": "948e296e451624afc2cb559bb783ef887a0b9cdf",
   "description": "Structural rank probe of the A^λ_{μν}(I) supply matrix at A=3 (split 3+6).  For each λ, builds the full M matrix from the test panel and computes the SVD spectrum.  Rank is the count of singular values above the relative threshold 1e-12 · sv[0]; the drop ratio between sv[rank-1] and sv[rank] establishes whether the null directions are EXACT zeros (drop ≫ 1e6) or panel-limited approximations.  Empirical finding: rank is structurally less than ambient n_unknowns for all multi-block λ — establishing item 4 (symmetry reductions) is required for full A=4 closure.",
   "contentBlock": "conj:operator-valued-sublemma-2-1",
   "auditOnly": "docs/audits/2026-05-09-kite-tail-reconciliation.md",
