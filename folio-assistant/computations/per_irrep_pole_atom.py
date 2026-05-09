@@ -359,6 +359,38 @@ def run_atom(Z: int, N: int, *, workers: int | None = None) -> int:
         computed=int(unique_max),
         expected=1,
     )
+
+    # Per-generator crossing inventory (GAP-C-1 partial closure).
+    # The q-integer-mass-formula.md narrative cites empirical counts
+    # like "7 crossings on generator 0" without machine-verifiable
+    # backing.  Emit the canonical list here so future work can wire
+    # per-generator pole-order disaggregation onto a structural
+    # baseline.
+    crossings = atom_canonical_crossings(Z, N)
+    per_gen: dict[int, dict[str, int]] = {}
+    for gen_idx, ctype in crossings:
+        slot = per_gen.setdefault(int(gen_idx),
+                                   {"sigma": 0, "sigma_inv": 0, "averaged": 0})
+        slot[ctype] = slot.get(ctype, 0) + 1
+    per_gen_emit = [
+        {"gen_idx": g, **per_gen[g], "total": sum(per_gen[g].values())}
+        for g in sorted(per_gen)
+    ]
+    builder.add_data("per_generator_crossings", {
+        "atom": atom_name,
+        "Z": Z,
+        "N": N,
+        "n_strands": n,
+        "total_crossings": len(crossings),
+        "by_generator": per_gen_emit,
+        "note": (
+            "Canonical crossings from atom_canonical_crossings(Z, N), "
+            "aggregated per generator index.  Provides structural "
+            "baseline for GAP-C-1 (q-integer counting per generator) "
+            "in derivation-audit-report.md."
+        ),
+    })
+
     out_path = builder.save()
     print(f"\n  Witness emitted: {out_path}")
     return 0 if success else 1
