@@ -2,7 +2,7 @@
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "computation": "e0-calibration-audit",
   "description": "Audit of E_0 / Q_β(n) calibration constants across folio-assistant/computations. Reports value-precision drift, anchor-of-pinning violations vs CAL-3, and the PDG-derived uncertainty floor on every E_0-dependent quantity.",
-  "computedAt": "2026-05-09T04:11:17.461039+00:00",
+  "computedAt": "2026-05-09T12:49:41.061965+00:00",
   "reference_blocks": [
     "prop:three-calibration-inputs",
     "rem:calibration-inputs"
@@ -115,7 +115,7 @@
       },
       {
         "file": "folio-assistant/computations/crt_markov.py",
-        "line": 554,
+        "line": 578,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
         "context": "print(f\"    E_0 (β)    = 0.78233341 / Q_cat = {E_0_cat!s} MeV/cat.unit\")",
@@ -123,7 +123,7 @@
       },
       {
         "file": "folio-assistant/computations/crt_markov.py",
-        "line": 616,
+        "line": 640,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
         "context": "\"β-decay calibration: E_0 = 0.78233341 / (|tr_M(n)| - |tr_M(p)|).\"",
