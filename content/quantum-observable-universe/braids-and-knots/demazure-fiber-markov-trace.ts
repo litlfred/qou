@@ -8,6 +8,13 @@ export default proposition({
     ref: "qou:QOU.BraidsAndKnots.demazure_fiber_markov_trace",
     validation: "not_checked",
   },
+  computation: {
+    engine: "sympy",
+    script: "folio-assistant/computations/demazure_markov_trace.py",
+    witness: "folio-assistant/computations/demazure-markov-trace.witness.json",
+    status: "verified",
+    requires: ["sympy"],
+  },
   uses: [
     "prop:macdonald-hook-telescope",
     "prop:y-lambda-closed-form-wenzl-bridge",

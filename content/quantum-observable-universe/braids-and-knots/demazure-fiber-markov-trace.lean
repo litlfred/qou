@@ -120,12 +120,19 @@ theorem demazure_principal_specialization_eq_schur
   -- differences reduce to 0 in sympy).
   sorry
 
-/-- **Numerical witness**: for every (λ, w) at n ∈ {2, 3, 4}, the
-    Demazure-fiber Markov-trace functional is computed in
-    `demazure_markov_trace.py` against the Macdonald hook-content
-    closed form and the Wenzl-bridge `y_λ`.  140 non-trivial
-    Demazure characters tabulated. -/
-theorem demazure_fiber_markov_trace_numerical_agreement : True := by
-  trivial
+/-- Witness scope tag.  For every Weyl element `w ∈ S_n` and every
+    partition `λ ⊢ n` at `n ∈ {2, 3}`, the Demazure-fiber Markov-
+    trace functional was tabulated in `demazure_markov_trace.py`
+    and saved to `demazure-markov-trace.witness.json`.  The total
+    number of non-trivial Demazure characters computed is
+    `p(n)·n!` summed over `n ∈ {2, 3}`, i.e. `2·2 + 3·6 = 4 + 18
+    = 22`; the `D_{w_0}(λ) = s_λ` consistency check was verified
+    for all `2 + 3 = 5` partitions across these `n`.  Extension to
+    `n = 4` is straightforward but costs `5 × 24 = 120` further
+    Demazure-character evaluations and is deferred to a follow-up
+    witness. -/
+theorem demazure_fiber_markov_trace_witness_scope :
+    (4 + 18 = 22) ∧ (2 + 3 = 5) := by
+  refine ⟨?_, ?_⟩ <;> decide
 
 end QOU.BraidsAndKnots

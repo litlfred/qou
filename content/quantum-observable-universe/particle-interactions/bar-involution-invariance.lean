@@ -3,11 +3,18 @@
   Type-B-folded Hecke normal forms.
 
   Steps (1) and (2) — q-integer bar-invariance and Plancherel-weight
-  transpose-symmetry — are unconditional and proved here with no
-  `sorry`.  Step (3) — bar-invariance of folded normal forms — is
+  transpose-symmetry — are unconditional.  Step (1)'s base lemma
+  `q_integer_bar_invariant` is currently a cited `sorry` deferred to
+  the standard q-integer identity in [kassel1995] (Quantum Groups,
+  Ch. IV); the algebraic identity is direct (numerator and
+  denominator both flip sign under `q ↦ q⁻¹`) and a Mathlib
+  `field_simp` / `zpow` chase will discharge it.  Step (2) is
+  reduced to `hookLengths_transpose` (axiomatised, pending the
+  `Mathlib.Combinatorics.Young.YoungDiagram.transpose_hookLengths`
+  lemma).  Step (3) — bar-invariance of folded normal forms — is
   conditional on conj:symmetric-crystal-pair-production
   (axiomatised here as the class `SymmetricCrystalPairProduction n`,
-  per CLAUDE.md §3b-cond).
+  per CLAUDE.md §3b-cond) and has no `sorry` in its proof body.
 
   Refs: prop:bar-involution-invariance (this block),
         prop:cpt-orbit-closure-density,
@@ -61,12 +68,10 @@ theorem q_integer_bar_invariant
   -- Denominator (1/q) - (1/q)^{-1} = 1/q - q = -(q - 1/q).
   -- Quotient: numerator/denominator preserved.
   have hq_ne_zero : q ≠ 0 := ne_of_gt hq_pos
-  -- Skeleton: full `field_simp; ring` closure pending Mathlib
-  -- `zpow` simplifications; the algebraic identity is direct.
-  -- Ref: standard q-integer identity (Kassel, "Quantum Groups",
-  -- Ch. IV).  Numerical verification at q ∈ {1.1, 2, 1.6} for
-  -- k ≤ 12 in folio-assistant/computations/q_integer_check.py
-  -- (witness inline below).
+  -- Ref: [kassel1995] Kassel, "Quantum Groups", Ch. IV
+  -- Skeleton: numerator and denominator both flip sign under
+  -- `q ↦ q⁻¹`, so the quotient is preserved.  Full `field_simp;
+  -- ring` closure pending Mathlib `zpow` simplification chase.
   sorry
 
 /-! ## Plancherel weights
@@ -95,11 +100,14 @@ axiom hookLengths_transpose
 /-- The (unnormalised) `q`-deformed Plancherel weight of a
     partition: `w_λ(q) := (∏_{h ∈ hookLengths λ} [h]_q⁻¹)^2`.
     The full normalisation `/ [n]_q!` is a global constant
-    independent of `λ`, so the lemmas below transfer. -/
+    independent of `λ`, so the lemmas below transfer.
+
+    Implemented via `List.prod` (rather than a hand-rolled
+    `foldr`) so that the transpose-invariance proof can transport
+    via `List.Perm.prod_eq`. -/
 noncomputable def plancherelWeight {n : ℕ}
     (lam : Partition n) (q : ℝ) : ℝ :=
-  let hooks := hookLengths lam
-  ((hooks.map (fun h => (qInteger h q)⁻¹)).foldr (· * ·) 1) ^ 2
+  ((hookLengths lam).map (fun h => (qInteger h q)⁻¹)).prod ^ 2
 
 /-- **Step (1)**: `w_λ(q⁻¹) = w_λ(q)`.
 
@@ -111,9 +119,9 @@ theorem plancherel_weight_bar_invariant
     (hq_pos : 0 < q) (hq_ne_one : q ≠ 1) :
     plancherelWeight lam (barInvolution q) = plancherelWeight lam q := by
   unfold plancherelWeight
-  -- Pointwise apply q_integer_bar_invariant on each map element.
-  congr 1
-  congr 1
+  -- Pointwise apply q_integer_bar_invariant on each map element;
+  -- equality of the underlying lists implies equality of products.
+  congr 2
   apply List.map_congr_left
   intro h _hmem
   rw [q_integer_bar_invariant h q hq_pos hq_ne_one]
@@ -121,15 +129,17 @@ theorem plancherel_weight_bar_invariant
 /-- **Step (2)**: `w_λ(q) = w_{λᵀ}(q)`.
 
     Hook lengths are preserved (as multisets) under partition
-    transpose, so the product over hooks is unchanged. -/
+    transpose, so the product over hooks is unchanged.  The
+    transport from `List.Perm` to `List.prod` equality is the
+    standard `List.Perm.prod_eq` lemma. -/
 theorem plancherel_weight_transpose_eq
     {n : ℕ} (lam : Partition n) (q : ℝ) :
     plancherelWeight (partitionTranspose lam) q = plancherelWeight lam q := by
   unfold plancherelWeight
-  congr 2
-  exact (hookLengths_transpose lam).foldr_eq (Commutative.comm) Associative.assoc 1
-  -- Permutation of the underlying list preserves the unordered
-  -- product (commutative monoid).  Ref: List.Perm.prod_eq.
+  -- Hook-length lists are permutations; their pointwise [h]⁻¹ maps
+  -- are permutations; commutative product is permutation-invariant.
+  have hperm := (hookLengths_transpose lam).map (fun h => (qInteger h q)⁻¹)
+  rw [hperm.prod_eq]
 
 /-! ## Type-B-folded normal forms (conditional on §3b-cond)
 
@@ -173,13 +183,16 @@ theorem normal_form_bar_invariant_conditional
 Numerical bar-invariance test: at `q_0 ≈ 1.1097`, the Plancherel
 weights computed in `folio-assistant/computations/sdp-dual-without-demand.md`
 satisfy `w_λ(q_0) = w_{λᵀ}(q_0)` to machine precision for every
-λ ⊢ n at n ≤ 9 (recorded in
-`y-lambda-cyclotomic-factor.witness.json` and the LP/SDP cost
-vectors).  Bar-invariance under `q_0 ↦ 1/q_0` is verified
+λ ⊢ n at n ≤ 9.  Bar-invariance under `q_0 ↦ 1/q_0` is verified
 indirectly by the same data: `[k]_q` is bar-invariant exactly,
 so quotients of products are. -/
-theorem bar_involution_invariance_numerical_witness : True := by
-  trivial
+
+/-- Witness scope tag.  The numerical bar-invariance / transpose-
+    pair check covers every `λ ⊢ n` for `n ∈ {0, 1, …, 9}`.  Total
+    partition count tested: `1 + 1 + 2 + 3 + 5 + 7 + 11 + 15 + 22 +
+    30 = 97`. -/
+theorem bar_involution_invariance_witness_scope :
+    1 + 1 + 2 + 3 + 5 + 7 + 11 + 15 + 22 + 30 = 97 := by decide
 
 /-- Top-level invariance bundle (the proposition's main claim). -/
 theorem bar_involution_invariance

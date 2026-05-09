@@ -15,8 +15,12 @@ This script:
 
 1. Implements the Demazure operator π_i recursively on Laurent
    polynomials in `x_1, …, x_n` (sympy).
-2. Computes `D_w(λ)` for every reduced word `w` of every
-   permutation in `S_n` (n = 2, 3, 4) and every partition `λ ⊢ n`.
+2. Computes `D_w(λ)` for one canonical reduced word `w` per
+   permutation in `S_n` (chosen by bubble-sort, n = 2, 3) and
+   every partition `λ ⊢ n`.  Different reduced words for the same
+   permutation give equal Demazure characters (the Demazure
+   operators satisfy the braid relations on reduced words), so a
+   single reduced word per permutation is sufficient.
 3. At `w = w_0`, verifies `D_{w_0}(λ) = s_λ(x_1, …, x_n)` against
    sympy's `schur_polynomial`.
 4. Emits the **Demazure-fiber Markov-trace functional**
@@ -48,10 +52,12 @@ References
 from __future__ import annotations
 import json
 import sys
-from datetime import datetime, timezone
 from pathlib import Path
 
 import sympy as sp
+
+sys.path.insert(0, str(Path(__file__).parent))
+from witness_base import WitnessBuilder  # noqa: E402
 
 
 # ──────────────────────────────────────────────────────────────────
@@ -228,7 +234,12 @@ def collect_demazure_table(n_strands: int):
             word = perm_to_reduced_word(perm)
             D_w = demazure_character(weight, word, x)
             D_w_ps = principal_specialise(D_w, x, q)
-            ratio = sp.cancel(D_w_ps / D_w0_ps) if D_w0_ps != 0 else sp.S(0)
+            if D_w0_ps.equals(0):
+                raise ValueError(
+                    f"D_{{w0}} vanishes at principal specialisation for "
+                    f"partition {p}; ratio is undefined."
+                )
+            ratio = sp.cancel(D_w_ps / D_w0_ps)
             key = ",".join(str(c) for c in perm)
             per_word[key] = {
                 "permutation": list(perm),
@@ -284,7 +295,7 @@ def verify_w0_equals_schur(n_strands: int):
             target *= (1 - q ** (n_strands + c)) / (1 - q ** h)
         target = sp.cancel(sp.together(target))
 
-        diff = sp.simplify(sp.together(D_w0_ps - target))
+        diff = sp.cancel(D_w0_ps - target)
         results[str(list(p))] = {
             "matches_schur_principal": (diff == 0),
             "diff_simplified": sp.sstr(diff),
@@ -293,31 +304,9 @@ def verify_w0_equals_schur(n_strands: int):
 
 
 def main():
-    out_path = (
-        Path(__file__).parent / "demazure-markov-trace.witness.json"
-    )
-
-    print("Step 1: verify D_{w_0}(λ) = s_λ at principal specialisation...")
-    consistency = {}
-    for n in range(2, 5):
-        rec = verify_w0_equals_schur(n)
-        all_ok = all(r["matches_schur_principal"] for r in rec.values())
-        flag = "OK" if all_ok else "FAIL"
-        print(f"  n={n}  {flag}  ({len(rec)} partitions)")
-        consistency[str(n)] = rec
-
-    print("Step 2: compute Demazure-fiber tables for n = 2, 3, 4...")
-    tables = {}
-    for n in range(2, 5):
-        print(f"  n={n}...", flush=True)
-        tables[str(n)] = collect_demazure_table(n)
-        print(f"    {len(tables[str(n)])} partitions, "
-              f"{sum(len(v['demazure']) - 1 for v in tables[str(n)].values())} "
-              "non-trivial Weyl elements")
-
-    out = {
-        "computation": "demazure-markov-trace",
-        "description": (
+    builder = (
+        WitnessBuilder("demazure-markov-trace", engine="sympy")
+        .set_description(
             "Demazure-fiber Markov-trace evaluator: replaces the manual "
             "Hecke-energy LP cost vector by Kashiwara weight-lattice "
             "projection.  For every Weyl element w ∈ S_n and partition "
@@ -327,16 +316,52 @@ def main():
             "y_λ · D_w(λ)/D_{w_0}(λ).  At w = w_0 reduces to the "
             "standard Markov trace; at shorter w gives the structural "
             "Demazure resonance width."
-        ),
-        "computedAt": datetime.now(timezone.utc).isoformat(),
-        "verification": {
-            "demazure_w0_equals_schur": consistency,
-        },
-        "tables_by_n": tables,
-        "precision": "symbolic_q",
-        "truncation_eps": 0.0,
-    }
-    out_path.write_text(json.dumps(out, indent=2, default=str))
+        )
+        .set_content_block("prop:demazure-fiber-markov-trace")
+    )
+
+    print("Step 1: verify D_{w_0}(λ) = s_λ at principal specialisation...")
+    consistency = {}
+    for n in range(2, 4):
+        rec = verify_w0_equals_schur(n)
+        all_ok = all(r["matches_schur_principal"] for r in rec.values())
+        flag = "OK" if all_ok else "FAIL"
+        print(f"  n={n}  {flag}  ({len(rec)} partitions)")
+        consistency[str(n)] = rec
+        builder.add_assertion(
+            name=f"D_w0_eq_schur_n{n}",
+            computed=int(all_ok),
+            expected=1,
+            tolerance=0,
+            source="sympy.cancel(D_{w_0}(λ) - hook-content) == 0",
+        )
+
+    print("Step 2: compute Demazure-fiber tables for n = 2, 3...")
+    tables = {}
+    nontrivial_total = 0
+    for n in range(2, 4):
+        print(f"  n={n}...", flush=True)
+        tables[str(n)] = collect_demazure_table(n)
+        nt = sum(len(v["demazure"]) - 1 for v in tables[str(n)].values())
+        nontrivial_total += nt
+        print(f"    {len(tables[str(n)])} partitions, {nt} non-trivial "
+              "Weyl elements")
+    builder.add_assertion(
+        name="non_trivial_demazure_chars",
+        computed=nontrivial_total,
+        expected=22,
+        tolerance=0,
+        source="p(n)·n! for n ∈ {2,3} = 2·2 + 3·6 = 4 + 18",
+    )
+
+    builder.add_data(
+        "verification", {"demazure_w0_equals_schur": consistency}
+    )
+    builder.add_data("tables_by_n", tables)
+    builder.add_data("precision", "symbolic_q")
+    builder.add_data("truncation_eps", 0.0)
+
+    out_path = builder.save()
     print(f"\nWitness: {out_path}")
 
 

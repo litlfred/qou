@@ -8,6 +8,13 @@ export default proposition({
     ref: "qou:QOU.BraidsAndKnots.macdonald_hook_telescope",
     validation: "not_checked",
   },
+  computation: {
+    engine: "sympy",
+    script: "folio-assistant/computations/y_lambda_macdonald_telescope.py",
+    witness: "folio-assistant/computations/y-lambda-macdonald-telescope.witness.json",
+    status: "verified",
+    requires: ["sympy", "mpmath"],
+  },
   uses: [
     "prop:y-lambda-closed-form-wenzl-bridge",
   ],

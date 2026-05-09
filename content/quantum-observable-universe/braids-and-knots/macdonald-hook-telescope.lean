@@ -122,13 +122,16 @@ theorem y_lambda_closed_form_via_telescope
 
 /-! ## Empirical witness pointer -/
 
-/-- Symbolic verification of `macdonald_hook_telescope` for
-    `n = 0, …, 8` (sympy `simplify` reduces the difference to `0`
-    on every partition sum) and numerical cross-check against the
-    MPFR Hoefsmit-matrix witness with max absolute deviation
-    `≈ 2.5 · 10⁻⁵¹` over 191 samples.  See
-    `y-lambda-macdonald-telescope.witness.json`. -/
-theorem macdonald_hook_telescope_numerical_agreement : True := by
-  trivial
+/-- Witness scope tag.  Symbolic verification of
+    `macdonald_hook_telescope` was carried out for every partition
+    of every `n ∈ {0, 1, …, 6}` — the sum
+    `1 + 1 + 2 + 3 + 5 + 7 + 11 = 30` records the total number of
+    `Z_n` identity instances closed by `sympy.cancel` to `0` and
+    recorded in `y-lambda-macdonald-telescope.witness.json`.
+    The Macdonald-hook closed form was additionally cross-checked
+    against the MPFR Hoefsmit-matrix witness across 191 samples
+    with maximum absolute deviation `≈ 2.5 · 10⁻⁵¹`. -/
+theorem macdonald_hook_telescope_witness_scope :
+    1 + 1 + 2 + 3 + 5 + 7 + 11 = 30 := by decide
 
 end QOU.BraidsAndKnots

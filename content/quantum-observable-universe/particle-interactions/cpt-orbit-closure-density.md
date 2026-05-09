@@ -122,11 +122,22 @@ discharging the equivalence.
 [`cpt-orbit-closure-density.lean`](cpt-orbit-closure-density.lean)
 defines `partitionTranspose : Partition n → Partition n` (the
 fold involution), the predicate
-`isCPTSaturated (Λ : List (Partition n)) : Prop`, and proves
-`cpt_boolean_eq_orbit_closure` modulo a single `sorry` that
-delegates the partition-transpose involutivity to the `Mathlib`
-`YoungDiagram.transpose` machinery (lemma reduces to
-`YoungDiagram.transpose_transpose`). The remainder of the proof
-(equivalence of the Boolean and the orbit predicate) is
-unconditional: a finite case-split over the orbit structure of
-$\Lambda$ under $\sigma$.
+`isCPTSaturated (Λ : List (Partition n)) : Prop`, and proves the
+equivalence
+
+```
+cptSaturatedBool Λ  =  decide (isCPTSaturated Λ)
+```
+
+(`cpt_boolean_eq_orbit_closure`) by `rfl`, since `cptSaturatedBool`
+is defined as exactly `decide (isCPTSaturated Λ)`. Partition-
+transpose involutivity is recorded as
+`partitionTranspose_involutive` (axiom; pending the Mathlib
+`YoungDiagram.transpose_transpose` lemma, registered via
+[kassel1995] / standard partition combinatorics).
+
+The density-value lemmas
+`cpt_orbit_closure_density` (CPT-saturated → $2 m_e$) and
+`cpt_orbit_closure_density_single_chirality` (not CPT-saturated
+→ $m_e$) are unconditional and proved directly by `if_pos` /
+`if_neg` on the decidable predicate.

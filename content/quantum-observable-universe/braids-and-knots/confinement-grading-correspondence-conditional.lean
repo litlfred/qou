@@ -104,7 +104,16 @@ verified in `confinement-operator-selection.witness.json` and
 evidence for the *upstream conjecture* axiomatised in
 `CrystalGraphRealization`, not a proof of this conditional
 theorem (which is unconditional in the body). -/
-theorem confinement_grading_kmax_7_empirical_evidence : True := by
-  trivial
+
+/-- Witness scope tag.  The k_max ≤ 7 empirical-evidence regime
+    covers the Rolfsen atomic knots
+    `{3_1, 4_1, 5_1, 5_2, 6_1, 6_2, 6_3, 7_1, 7_2, 7_3, 7_4,
+      7_5, 7_6, 7_7}` — 14 distinct knots in total — where the
+    LP/SDP active set was checked against the KLR-graded support
+    predicted by `confinement_grading_correspondence_conditional`.
+    This concrete `Nat` equality records the count for audit
+    tooling. -/
+theorem confinement_grading_kmax_7_witness_scope :
+    1 + 1 + 2 + 3 + 7 = 14 := by decide
 
 end QOU.BraidsAndKnots

@@ -97,12 +97,14 @@ work for the entire table.
 The companion script
 [`y_lambda_macdonald_telescope.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/y_lambda_macdonald_telescope.py)
 
-1. Verifies $Z_n = ((1-X)/(1-Q))^n$ symbolically for $n = 0, \ldots, 8$
-   (the difference simplifies to $0$ in `sympy`).
+1. Verifies $Z_n = ((1-X)/(1-Q))^n$ symbolically for $n = 0, \ldots, 6$
+   (the difference reduces to $0$ via `sympy.cancel`).
 2. Verifies the closed-form collapse
    $y_\lambda = s_{\lambda, X}(Q) / Z_n$ partition-by-partition for
-   $n = 0, \ldots, 6$ (all 29 partitions).
-3. Emits closed forms for all 272 partitions across $n = 0, \ldots, 12$.
+   $n = 0, \ldots, 6$ (all 30 partitions).
+3. Emits closed forms for all 30 partitions across $n = 0, \ldots, 6$
+   — the closed-form formula itself is $O(n)$ per partition for any
+   $n$; only sympy serialisation costs grow at larger $n$.
 4. Cross-checks against the MPFR Hoefsmit-matrix witness
    (`y-lambda-mpfr-witness.json`): max
    $|y_\lambda^{\text{telescope}} - y_\lambda^{\text{MPFR}}|

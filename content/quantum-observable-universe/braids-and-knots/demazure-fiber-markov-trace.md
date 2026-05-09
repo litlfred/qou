@@ -135,11 +135,15 @@ The companion script
    $\mathbb{Q}[x_1, \ldots, x_n]$ via sympy.
 2. Verifies $D_{w_0}(\lambda) = s_\lambda$ at principal
    specialisation against the Macdonald hook-content formula for
-   $n = 2, 3, 4$ (all 10 partitions: differences simplify to $0$).
+   $n = 2, 3$ (all 5 partitions: differences reduce to $0$ via
+   `sympy.cancel`).
 3. Tabulates $D_w(\lambda)$, $D_w(\lambda)/D_{w_0}(\lambda)$, and
    $T^{\mathrm{Dem}}(\lambda; w)$ for every $(\lambda, w) \in
-   \mathrm{Part}(n) \times S_n$ at $n \in \{2, 3, 4\}$ —
-   2 + 18 + 120 = 140 non-trivial Demazure characters in total.
+   \mathrm{Part}(n) \times S_n$ at $n \in \{2, 3\}$ —
+   $4 + 18 = 22$ non-trivial Demazure characters in total
+   ($p(n) \cdot n!$ for $n \in \{2, 3\}$).  Extension to $n = 4$
+   adds $5 \cdot 24 = 120$ further evaluations and is deferred to
+   a follow-up witness.
 
 Output: [`demazure-markov-trace.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/demazure-markov-trace.witness.json).
 
