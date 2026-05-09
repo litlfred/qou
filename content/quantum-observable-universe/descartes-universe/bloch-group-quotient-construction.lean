@@ -371,4 +371,50 @@ instance hasBlochGroup_real :
   bloch_quotient_is_abelian := trivial
   bloch_wigner_regulator_exists := trivial
 
+/-! ## Non-triviality of the constrained pentagon set -/
+
+/-- A concrete `RogersPair ℝ` witness, using `(x, y) = (2, 3)`:
+    `2 ≠ 0, 2 ≠ 1, 3 ≠ 0, 3 ≠ 1, 2 ≠ 3` are all unconditional
+    real-number facts closed by `norm_num`. -/
+-- Ref: [bloch2000]
+def rogersPairTwoThree : RogersPair ℝ where
+  x := 2
+  y := 3
+  hx_ne_zero := by norm_num
+  hx_ne_one := by norm_num
+  hy_ne_zero := by norm_num
+  hy_ne_one := by norm_num
+  hxy_ne := by norm_num
+
+/-- **Constrained generator set is non-empty (sorry-free).** The
+    constrained pentagon-relation generator set
+    `validPentagonRelationGenerators (F := ℝ)` contains at least
+    the image of the explicit Rogers pair `(2, 3)` under
+    `rogersGenerator`.
+
+    **Caveat (per PR #579 review).** This is `Set.Nonempty`, *not*
+    `pentagonSubgroup ≠ ⊥`. The generator value
+    `rogersGenerator rogersPairTwoThree ∈ PreBlochGroup ℝ`
+    could in principle equal `0` (in which case the closure
+    contains only `0`), so this lemma alone does not establish
+    non-triviality of the quotient. A full non-triviality lemma
+    would require showing
+    `rogersGenerator rogersPairTwoThree ≠ 0` — provable since the
+    5 derived `PreBlochElement` values `(2, 3, 3/2, 4/3, 2)`
+    contain four distinct entries, but the proof depends on
+    `FreeAbelianGroup` distinctness arithmetic and is deferred. -/
+-- Ref: [bloch2000]
+theorem validPentagonRelationGenerators_nonempty :
+    (validPentagonRelationGenerators (F := ℝ)).Nonempty :=
+  ⟨rogersGenerator rogersPairTwoThree, rogersPairTwoThree, rfl⟩
+
+/-- **Concrete corollary:** `pentagonSubgroup (F := ℝ)` contains
+    the image of `rogersPairTwoThree` under `rogersGenerator`.
+    (Same caveat as above: this membership does not by itself
+    establish `pentagonSubgroup ≠ ⊥`.) -/
+-- Ref: [bloch2000]
+theorem pentagonSubgroup_real_contains_rogers_witness :
+    rogersGenerator rogersPairTwoThree ∈ pentagonSubgroup (F := ℝ) :=
+  rogersGenerator_mem_pentagonSubgroup rogersPairTwoThree
+
 end QOU.Descartes.BlochQuotient
