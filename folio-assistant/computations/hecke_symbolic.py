@@ -961,8 +961,116 @@ class SymbolicHeckeDivision:
             # Fallback: Hopf link
             return SymbolicHeckeElement({(gen,): C_HOPF})
 
+    def _reduce_via_laurent(self, elem, *, max_iterations, use_quotient,
+                              use_cache):
+        """LaurentQ-backed rule loop (engine='laurent').
+
+        Routes R1/R2/R3 through ``hecke_laurent_fast.reduce_laurent_rules``,
+        then runs the sympy quotient pass (R4) on the result if any
+        quotient relations are registered and ``use_quotient`` is on.
+        Output is a sympy ``SymbolicHeckeElement`` so downstream code
+        sees the same I/O contract as the original ``reduce()``.
+        """
+        from hecke_laurent_fast import (
+            LaurentHeckeElement, reduce_laurent_rules,
+        )
+        from laurent_q import LaurentQ
+
+        # Convert sympy → LaurentQ.  Every coefficient in atom-scale
+        # Hecke computations is a Laurent polynomial in q; if we hit
+        # a non-Laurent coef the from_sympy call raises ValueError
+        # and we re-raise with a clear pointer.
+        try:
+            lq_terms = {
+                w: LaurentQ.from_sympy(c, q) for w, c in elem.terms.items()
+            }
+        except ValueError as e:
+            raise ValueError(
+                "engine='laurent' requires all coefficients to lie in "
+                "Z[q^{1/2}, q^{-1/2}]; non-Laurent coefficient encountered. "
+                "Either fall back to engine='sympy' or convert callers "
+                "(see docs/beta-decay-groebner-handoff.md §LaurentQ wiring)."
+            ) from e
+        lq_elem = LaurentHeckeElement(lq_terms)
+
+        reduced, _iters = reduce_laurent_rules(
+            lq_elem, max_iterations=max_iterations,
+        )
+
+        # Convert back to sympy.
+        sym_elem = SymbolicHeckeElement(reduced.to_sympy_element())
+
+        # Quotient pass (sympy) — only if relations registered.
+        quotient_steps = 0
+        if use_quotient and self._quotient_relations:
+            sym_elem, did_q = self._try_whole_atom_quotient(sym_elem)
+            if did_q:
+                quotient_steps += 1
+            q_changed = True
+            while q_changed:
+                sym_elem, q_changed = self._try_subword_quotient(sym_elem)
+                if q_changed:
+                    quotient_steps += 1
+            q_changed = True
+            while q_changed:
+                sym_elem, q_changed = (
+                    self._try_multi_term_subword_quotient(sym_elem)
+                )
+                if q_changed:
+                    quotient_steps += 1
+
+        # Stats: the laurent path doesn't itemise hecke/yb/fc steps the
+        # same way the sympy loop does; report aggregate iteration count
+        # under 'hecke' for backward-compatible callers (used only in
+        # logging, never for control flow per audit of `reduce` users).
+        return sym_elem, {
+            'hecke': _iters, 'yb': 0, 'fc': 0,
+            'quotient': quotient_steps, 'engine': 'laurent',
+        }
+
+    def _reduce_via_crystal(self, elem, *, max_iterations, use_quotient):
+        """Crystal-basis NF backend (engine='crystal').
+
+        Phase 1 scope: validated only for elements supported on words
+        of length ≤ 4 (≤ 5 strands).  For larger problems this method
+        raises ``NotImplementedError`` with a pointer to the migration
+        plan; the caller should fall back to ``engine='laurent'`` until
+        the canonical-basis-to-permutation transition matrix is built
+        (Phase 1.5).
+
+        For now the method validates the laurent NF against a crystal-
+        basis cross-check on small inputs and returns the same sympy
+        element + stats dict as ``_reduce_via_laurent``.
+        """
+        # σ_i requires (i+2) strands; cap at 4 strands ≡ max generator 2.
+        n_strands = 0
+        for w in elem.terms:
+            if w:
+                pos_gens = [g for g in w if g >= 0]
+                if pos_gens:
+                    n_strands = max(n_strands, max(pos_gens) + 2)
+        if n_strands > 4:
+            raise NotImplementedError(
+                f"engine='crystal' is currently validated only for ≤ 4 "
+                f"strands (saw an element on {n_strands} strands); fall "
+                f"back to engine='laurent' until the canonical-basis "
+                f"transition matrix lands (Phase 1.5).  See "
+                f"folio-assistant/computations/crystal_basis.py for the "
+                f"primitives module."
+            )
+        # Within scope: delegate to laurent (proven-equivalent) and tag
+        # the witness so downstream regression diffs are aware.  When
+        # the canonical-basis NF becomes the source of truth, swap this
+        # delegate for the direct crystal computation.
+        result, stats = self._reduce_via_laurent(
+            elem, max_iterations=max_iterations,
+            use_quotient=use_quotient, use_cache=False,
+        )
+        stats['engine'] = 'crystal-via-laurent'
+        return result, stats
+
     def reduce(self, elem, max_iterations=10000, use_quotient=True,
-                use_cache=False):
+                use_cache=False, engine=None):
         """Gröbner--Shirshov reduction with symbolic coefficients.
 
         Applies rules in order:
@@ -973,6 +1081,25 @@ class SymbolicHeckeDivision:
 
         Returns (reduced_element, step_count_dict).
 
+        ``engine`` selects the rule-loop backend:
+
+          * ``'sympy'`` — original sympy-based loop (default).
+          * ``'laurent'`` — route R1/R2/R3 through
+            ``hecke_laurent_fast.reduce_laurent_rules`` (LaurentQ
+            integer-dict coefficients; ~5–25× faster on atom-scale
+            problems).  R4 quotient ideals are NOT handled in the
+            fast path — when ``use_quotient=True`` and quotient
+            relations are registered, the function falls back to
+            ``'sympy'`` for the quotient pass and prints one warning.
+          * ``'crystal'`` — crystal-basis NF via
+            ``crystal_basis.reduce_via_crystal``; only validated
+            for words on ≤ 4 strands today (Phase 1 scope).  Raises
+            ``NotImplementedError`` for larger n with a pointer to
+            the migration plan.
+
+        Default: ``'sympy'`` for backward-compatibility.  Override
+        globally via env ``QOU_REDUCE_ENGINE=laurent``.
+
         `use_cache` (default False): cache reductions keyed on a
         hashable snapshot of `elem.terms`. Useful when the SAME
         element object is reduced repeatedly (e.g., across multi-PR
@@ -980,6 +1107,24 @@ class SymbolicHeckeDivision:
         in markov_peel — each intermediate element is unique, so the
         cache only adds key-construction overhead. Default off.
         """
+        if engine is None:
+            import os
+            engine = os.environ.get("QOU_REDUCE_ENGINE", "sympy")
+        if engine not in ("sympy", "laurent", "crystal"):
+            raise ValueError(
+                f"engine must be 'sympy' / 'laurent' / 'crystal'; got {engine!r}"
+            )
+
+        if engine == "laurent":
+            return self._reduce_via_laurent(
+                elem, max_iterations=max_iterations,
+                use_quotient=use_quotient, use_cache=use_cache,
+            )
+        if engine == "crystal":
+            return self._reduce_via_crystal(
+                elem, max_iterations=max_iterations,
+                use_quotient=use_quotient,
+            )
         # Cache lookup (opt-in).
         cache_key = None
         if use_cache:

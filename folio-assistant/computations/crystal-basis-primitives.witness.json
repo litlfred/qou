@@ -1,0 +1,198 @@
+{
+  "computation": "crystal-basis-primitives",
+  "description": "Phase 0 of the S-poly \u2192 crystal-basis migration: validates Kashiwara f_i / e_i operators (signature rule), B(\u03bb) BFS, and Demazure sub-crystal enumeration against the Weyl dimension formula s_\u03bb(1,\u2026,1) = #SSYT(\u03bb,n).",
+  "timestamp": "2026-05-09T04:48:32.464710+00:00",
+  "compute_engine": "crystal-basis",
+  "results": {
+    "validation_cases": [
+      {
+        "shape": [
+          1
+        ],
+        "n": 2,
+        "B_lambda_count": 2,
+        "ssyt_count_direct": 2,
+        "agree": true,
+        "demazure_w0_recovers_full": true,
+        "demazure_empty_is_singleton": true,
+        "ok": true
+      },
+      {
+        "shape": [
+          2
+        ],
+        "n": 2,
+        "B_lambda_count": 3,
+        "ssyt_count_direct": 3,
+        "agree": true,
+        "demazure_w0_recovers_full": true,
+        "demazure_empty_is_singleton": true,
+        "ok": true
+      },
+      {
+        "shape": [
+          1,
+          1
+        ],
+        "n": 2,
+        "B_lambda_count": 1,
+        "ssyt_count_direct": 1,
+        "agree": true,
+        "demazure_w0_recovers_full": true,
+        "demazure_empty_is_singleton": true,
+        "ok": true
+      },
+      {
+        "shape": [
+          2,
+          1
+        ],
+        "n": 3,
+        "B_lambda_count": 8,
+        "ssyt_count_direct": 8,
+        "agree": true,
+        "demazure_w0_recovers_full": true,
+        "demazure_empty_is_singleton": true,
+        "ok": true
+      },
+      {
+        "shape": [
+          3
+        ],
+        "n": 3,
+        "B_lambda_count": 10,
+        "ssyt_count_direct": 10,
+        "agree": true,
+        "demazure_w0_recovers_full": true,
+        "demazure_empty_is_singleton": true,
+        "ok": true
+      },
+      {
+        "shape": [
+          2,
+          1
+        ],
+        "n": 4,
+        "B_lambda_count": 20,
+        "ssyt_count_direct": 20,
+        "agree": true,
+        "demazure_w0_recovers_full": true,
+        "demazure_empty_is_singleton": true,
+        "ok": true
+      },
+      {
+        "shape": [
+          2,
+          2
+        ],
+        "n": 3,
+        "B_lambda_count": 6,
+        "ssyt_count_direct": 6,
+        "agree": true,
+        "demazure_w0_recovers_full": true,
+        "demazure_empty_is_singleton": true,
+        "ok": true
+      },
+      {
+        "shape": [
+          3,
+          1
+        ],
+        "n": 3,
+        "B_lambda_count": 15,
+        "ssyt_count_direct": 15,
+        "agree": true,
+        "demazure_w0_recovers_full": true,
+        "demazure_empty_is_singleton": true,
+        "ok": true
+      },
+      {
+        "shape": [
+          2,
+          1,
+          1
+        ],
+        "n": 4,
+        "B_lambda_count": 15,
+        "ssyt_count_direct": 15,
+        "agree": true,
+        "demazure_w0_recovers_full": true,
+        "demazure_empty_is_singleton": true,
+        "ok": true
+      },
+      {
+        "shape": [
+          3,
+          2
+        ],
+        "n": 4,
+        "B_lambda_count": 60,
+        "ssyt_count_direct": 60,
+        "agree": true,
+        "demazure_w0_recovers_full": true,
+        "demazure_empty_is_singleton": true,
+        "ok": true
+      },
+      {
+        "shape": [
+          2,
+          2,
+          1
+        ],
+        "n": 4,
+        "B_lambda_count": 20,
+        "ssyt_count_direct": 20,
+        "agree": true,
+        "demazure_w0_recovers_full": true,
+        "demazure_empty_is_singleton": true,
+        "ok": true
+      }
+    ],
+    "all_passed": true,
+    "demazure_growth_demo": {
+      "shape": [
+        2,
+        1
+      ],
+      "n": 4,
+      "full_crystal_size": 20,
+      "by_reduced_word_length": [
+        {
+          "reduced_word_length": 0,
+          "subcrystal_size": 1,
+          "fraction_of_full": 0.05
+        },
+        {
+          "reduced_word_length": 1,
+          "subcrystal_size": 2,
+          "fraction_of_full": 0.1
+        },
+        {
+          "reduced_word_length": 2,
+          "subcrystal_size": 5,
+          "fraction_of_full": 0.25
+        },
+        {
+          "reduced_word_length": 3,
+          "subcrystal_size": 8,
+          "fraction_of_full": 0.4
+        },
+        {
+          "reduced_word_length": 4,
+          "subcrystal_size": 16,
+          "fraction_of_full": 0.8
+        },
+        {
+          "reduced_word_length": 5,
+          "subcrystal_size": 20,
+          "fraction_of_full": 1.0
+        },
+        {
+          "reduced_word_length": 6,
+          "subcrystal_size": 20,
+          "fraction_of_full": 1.0
+        }
+      ]
+    }
+  }
+}
