@@ -1075,9 +1075,12 @@ class SymbolicHeckeDivision:
                 f"engine='crystal' is currently validated only for ≤ 4 "
                 f"strands (saw an element on {n_strands} strands); fall "
                 f"back to engine='laurent' until the canonical-basis "
-                f"transition matrix lands (Phase 1.5).  See "
-                f"folio-assistant/computations/crystal_basis.py for the "
-                f"primitives module."
+                f"multiplication rule (C_x · C_y in the C-basis) is "
+                f"implemented in Phase 2.  Phase 1.5 infrastructure "
+                f"(Kazhdan–Lusztig polynomials, T_w ↔ C_w change of "
+                f"basis) is shipped — see "
+                f"folio-assistant/computations/kazhdan_lusztig.py and "
+                f"folio-assistant/computations/crystal_basis.py."
             )
         # Within scope: delegate to laurent (proven-equivalent) and tag
         # the witness so downstream regression diffs are aware.  When

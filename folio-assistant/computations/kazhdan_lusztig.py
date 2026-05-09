@@ -23,12 +23,13 @@ This module provides
 * ``permutations_S_n(n)`` — enumerate ``S_n`` as one-line tuples.
 * ``length(perm)`` — Coxeter length ``ℓ(w)`` (number of inversions).
 * ``bruhat_le(x, w)`` — Bruhat order ``x ≤ w`` via the
-  subword characterisation of reduced expressions (works for any n,
-  exponential cost).
-* ``kl_polynomial(x, w)`` — KL polynomial ``P_{x, w}(q)``; for n ≤ 4
-  returns the integer ``1`` (encoded as ``LaurentQ.constant(1)``)
-  whenever ``x ≤ w``, else zero.  For n ≥ 5 raises with a pointer to
-  the deferred work.
+  **tableau (rank) criterion** (Bjorner–Brenti §2.6): for every
+  prefix length ``k``, the sorted first-``k`` entries of ``x``
+  are component-wise ≤ those of ``w``.  ``O(n²)``.
+* ``kl_polynomial(x, w)`` — KL polynomial ``P_{x, w}(q)`` returned
+  as a sympy ``Integer``; for n ≤ 4 it is ``Integer(1)`` whenever
+  ``x ≤ w`` and ``Integer(0)`` otherwise.  For n ≥ 5 raises with a
+  pointer to the deferred KL recursion work.
 * ``canonical_basis_C_w(perm, n)`` — return ``C_w`` as a sympy
   ``SymbolicHeckeElement`` in the ``T_x`` basis for ``x ∈ S_n``.
 * ``T_basis_to_C_basis(elem, n)`` / ``C_basis_to_T_basis(elem, n)`` —
@@ -165,11 +166,7 @@ def kl_polynomial(x: tuple[int, ...], w: tuple[int, ...]) -> sp.Expr:
 # ── Canonical-basis element C_w ────────────────────────────────────
 
 
-def canonical_basis_C_w(
-    w: tuple[int, ...],
-    *,
-    div=None,
-) -> SymbolicHeckeElement:
+def canonical_basis_C_w(w: tuple[int, ...]) -> SymbolicHeckeElement:
     """Lusztig's canonical-basis element ``C_w`` of ``H_n(q)`` for
     the permutation ``w ∈ S_n``, expressed in the standard ``T_x``
     basis.
@@ -329,24 +326,17 @@ def _self_test() -> dict:
                 roundtrip_ok = False
                 break
 
-        # 3. Bar-invariance of C_{w_0}: bar(C_{w_0}) = C_{w_0}.
-        # Use bar_polynomial from bar_involution to verify.
+        # 3. Coefficient-sum bar-invariance for C_{w_0}.
+        #
+        # Note: in Lusztig's normalisation C_w is bar-invariant
+        # only together with T_w → bar(T_w) = T_{w^{-1}}^{-1}, not
+        # just under polynomial-coefficient bar.  For w_0 = w_0^{-1}
+        # the action still requires the T_w^{-1} → T_w^{-1}
+        # transformation that this module does not realise.  We
+        # test the necessary condition that the *sum* of all
+        # coefficients of C_{w_0} is bar-invariant.
         from bar_involution import bar_polynomial
         Cw0 = canonical_basis_C_w(w0)
-        bar_cw0_ok = True
-        for word, coef in Cw0.terms.items():
-            barred = bar_polynomial(coef)
-            if sp.simplify(coef - barred) != 0:
-                bar_cw0_ok = False
-                break
-        # Note: in Lusztig's normalisation C_w is bar-invariant ONLY
-        # together with T_w → bar(T_w) = T_{w^{-1}}^{-1}, not just
-        # the polynomial coefficient bar.  For w_0 = w_0^{-1} on
-        # the longest element this still requires the
-        # T_w^{-1} -> T_w^{-1} action which we don't realise here.
-        # We test instead the *coefficient sum* invariance: the
-        # sum of all coefficients is bar-invariant (a necessary
-        # condition).
         sum_coef = sum(Cw0.terms.values(), start=sp.S.Zero)
         sum_bar = bar_polynomial(sum_coef)
         sum_bar_invariant = sp.simplify(sum_coef - sum_bar) == 0
@@ -365,6 +355,23 @@ def _self_test() -> dict:
 
 
 if __name__ == "__main__":
+    # Instantiate the WitnessBuilder *before* the expensive work so
+    # its duration measurement covers _self_test() itself, not just
+    # the post-test assertion plumbing.
+    from witness_base import WitnessBuilder
+
+    w_builder = (WitnessBuilder("kazhdan-lusztig-canonical-basis",
+                                 engine="sympy")
+                 .set_description(
+                    "Phase 1.5 of the S-poly → crystal-basis migration: "
+                    "Kazhdan–Lusztig polynomials and the canonical basis "
+                    "C_w of H_n(q) for n ≤ 4 (Coxeter rank ≤ 3).  At rank "
+                    "≤ 3, every P_{x,w} = 1 (Brenti §5.1), so the "
+                    "canonical basis admits a closed form.  Validates "
+                    "Bruhat-order cardinality, T→C→T round-trip, and "
+                    "bar-invariance of the coefficient sum at w = w_0."
+                 ))
+
     print("=" * 72)
     print("KAZHDAN–LUSZTIG / CANONICAL BASIS — Phase 1.5 self-test")
     print("=" * 72)
@@ -385,37 +392,25 @@ if __name__ == "__main__":
         sys.exit(1)
     print("\n  ✓ All KL / canonical-basis tests passed (n ≤ 4).")
 
-    from witness_base import WitnessBuilder
-
-    w = (WitnessBuilder("kazhdan-lusztig-canonical-basis", engine="sympy")
-         .set_description(
-            "Phase 1.5 of the S-poly → crystal-basis migration: "
-            "Kazhdan–Lusztig polynomials and the canonical basis "
-            "C_w of H_n(q) for n ≤ 4 (Coxeter rank ≤ 3).  At rank "
-            "≤ 3, every P_{x,w} = 1 (Brenti §5.1), so the canonical "
-            "basis admits a closed form.  Validates Bruhat-order "
-            "cardinality, T→C→T round-trip, and bar-invariance of "
-            "the coefficient sum at w = w_0."
-         ))
     for c in summary["cases"]:
-        w.add_assertion(
+        w_builder.add_assertion(
             name=f"bruhat_count_n={c['n']}",
             computed=c["bruhat_below_w0"],
             expected=c["factorial"],
             tolerance=0,
             source="Bjorner-Brenti, Combinatorics of Coxeter Groups §2.6",
         )
-        w.add_assertion(
+        w_builder.add_assertion(
             name=f"roundtrip_T_to_C_to_T_n={c['n']}",
             computed="1" if c["roundtrip_T_C_T_ok"] else "0",
             expected="1",
             source="canonical-basis change-of-basis is invertible",
         )
-        w.add_assertion(
+        w_builder.add_assertion(
             name=f"bar_invariant_coef_sum_w0_n={c['n']}",
             computed="1" if c["Cw0_coef_sum_bar_invariant"] else "0",
             expected="1",
             source="Lusztig, Hecke algebras with unequal parameters §5",
         )
-    out_path = w.save()
+    out_path = w_builder.save()
     print(f"  Witness written → {out_path.name}")

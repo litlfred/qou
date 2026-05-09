@@ -348,12 +348,18 @@ def demazure_dim(
     n: int,
     reduced_word: tuple[int, ...],
 ) -> int:
-    """Cardinality of ``B_w(λ)`` without materialising the set —
-    exact same DP as ``demazure_subcrystal`` but counting only.
+    """Cardinality of ``B_w(λ)``.
+
+    Convenience wrapper around ``demazure_subcrystal``: it
+    materialises the full sub-crystal as a Python ``set`` and
+    returns its size.  A true counting-only DP (e.g. via Demazure
+    character coefficients summed at weight ``1``) is future work;
+    until then this helper has the same memory profile as
+    ``demazure_subcrystal``, just discards the result.
 
     Useful for benchmarking the asymptotic-win shape (full crystal
-    versus partial-Weyl sub-crystal) on inputs where the sub-crystal
-    itself is too large to hold in memory.
+    vs. partial-Weyl sub-crystal) when the caller doesn't need the
+    tableaux themselves.
     """
     return len(demazure_subcrystal(shape, n, reduced_word))
 

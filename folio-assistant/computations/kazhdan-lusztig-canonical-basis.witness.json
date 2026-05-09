@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-09T05:26:42.472563+00:00",
-  "commitSha": "6b4a4e21ffe052d7e4a260d265fea640a2351a65",
+  "computedAt": "2026-05-09T05:35:18.342551+00:00",
+  "commitSha": "229063add4c04b5aafbcde5ebf7b7f6f1b76e032",
   "assertions": [
     {
       "name": "bruhat_count_n=2",
@@ -72,10 +72,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 267,
   "computation": "kazhdan-lusztig-canonical-basis",
   "scriptFile": "kazhdan_lusztig.py",
-  "scriptHash": "a9b6b6498bc0",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "196294215543",
+  "scriptCommitSha": "229063add4c04b5aafbcde5ebf7b7f6f1b76e032",
   "description": "Phase 1.5 of the S-poly → crystal-basis migration: Kazhdan–Lusztig polynomials and the canonical basis C_w of H_n(q) for n ≤ 4 (Coxeter rank ≤ 3).  At rank ≤ 3, every P_{x,w} = 1 (Brenti §5.1), so the canonical basis admits a closed form.  Validates Bruhat-order cardinality, T→C→T round-trip, and bar-invariance of the coefficient sum at w = w_0."
 }
