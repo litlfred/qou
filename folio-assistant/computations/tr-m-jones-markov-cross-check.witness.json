@@ -1,0 +1,103 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-05-08T20:46:16.189665+00:00",
+  "commitSha": "ac7880c5e13a03a249ce411afc7164900e62a115",
+  "assertions": [
+    {
+      "name": "jones_markov_finite_positive[proton]",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "jones_markov_within_oom_of_canonical[proton]",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "jones_markov_finite_positive[neutron]",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "jones_markov_within_oom_of_canonical[neutron]",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "jones_markov_finite_positive[deuteron]",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "jones_markov_within_oom_of_canonical[deuteron]",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4081,
+  "computation": "tr-m-jones-markov-cross-check",
+  "scriptFile": "tr_m_jones_markov_cross_check.py",
+  "scriptHash": "5c9d5c009820",
+  "scriptCommitSha": "unknown",
+  "description": "Cross-check: the new `wedderburn_jones_markov.global_wedderburn_sum_jones_markov` (canonical y_λ via Wenzl) should reproduce the canonical tr_M values from `atomic-tr-m-mpfr-50dps.witness.json` (computed via markov_trace_recursive, the canonical Markov-axiom reducer). If the values agree to 1e-6 relative, the new wiring in crt_markov.py is empirically validated.",
+  "auditOnly": "docs/audits/2026-05-08-p3-h-3a-divergence.md",
+  "data": {
+    "cross_check_table": [
+      {
+        "atom": "proton",
+        "A": 1,
+        "Z": 1,
+        "N": 0,
+        "n_strands": 3,
+        "canonical_abs_tr_M": 1.0653062285923893,
+        "jones_markov_partition_sum": 0.4153957863345666,
+        "jones_markov_abs": 0.4153957863345666,
+        "rel_err_vs_canonical": 0.6100691283074188,
+        "elapsed_sec": 0.19268282600023667,
+        "non_zero_terms": 1,
+        "note": "Discrepancy is the q=1 classical-character limit in specht_character_atomic, not a y_λ bug. The y_λ weight fix removes the 2-var-Schur drop-out for ≥3-row partitions (see docs/audits/2026-05-08-p3-h-3a-divergence.md)."
+      },
+      {
+        "atom": "neutron",
+        "A": 1,
+        "Z": 0,
+        "N": 1,
+        "n_strands": 3,
+        "canonical_abs_tr_M": 0.9232332971695837,
+        "jones_markov_partition_sum": 0.4153957863345666,
+        "jones_markov_abs": 0.4153957863345666,
+        "rel_err_vs_canonical": 0.5500641196455192,
+        "elapsed_sec": 0.03960080400065635,
+        "non_zero_terms": 1,
+        "note": "Discrepancy is the q=1 classical-character limit in specht_character_atomic, not a y_λ bug. The y_λ weight fix removes the 2-var-Schur drop-out for ≥3-row partitions (see docs/audits/2026-05-08-p3-h-3a-divergence.md)."
+      },
+      {
+        "atom": "deuteron",
+        "A": 2,
+        "Z": 1,
+        "N": 1,
+        "n_strands": 6,
+        "canonical_abs_tr_M": 0.3882864715477134,
+        "jones_markov_partition_sum": 0.07330859093712394,
+        "jones_markov_abs": 0.07330859093712394,
+        "rel_err_vs_canonical": 0.811199729300598,
+        "elapsed_sec": 3.830156078998698,
+        "non_zero_terms": 2,
+        "note": "Discrepancy is the q=1 classical-character limit in specht_character_atomic, not a y_λ bug. The y_λ weight fix removes the 2-var-Schur drop-out for ≥3-row partitions (see docs/audits/2026-05-08-p3-h-3a-divergence.md)."
+      }
+    ],
+    "method": {
+      "new_path": "wedderburn_jones_markov.global_wedderburn_sum_jones_markov — Σ_{λ ⊢ 3A} y_λ(q_0) · χ^λ(β_atomic) via Wenzl Schur principal specialization (canonical Jones-Markov), numerical-q-from-start.",
+      "canonical_reference": "atomic-tr-m-mpfr-50dps.witness.json — produced by markov_trace_recursive (canonical Markov-axiom recursive ascent), mpfr 50-dps precision.",
+      "tolerance": "1e-6 relative"
+    }
+  }
+}

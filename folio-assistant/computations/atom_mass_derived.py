@@ -2,12 +2,50 @@
 """
 DERIVED atomic mass for Z=1-20 — no fitted parameters.
 
-Builds each atom from the categorical construction:
-  γγ → quarks → B₃ confinement → nucleon NF → nuclear assembly → atom
+⚠️  STRUCTURAL BUG — DO NOT TRUST OUTPUT  ⚠️
+═══════════════════════════════════════════════════════════════════
+This script computes
+    M_derived = tr_M(atom NF) × E_0
+multiplicatively from the assembled atom's normal form.  This is
+the wrong combination law: composing nucleon Markov traces by
+multiplication does not represent atomic mass.
 
-Mass = Markov trace of atom NF × energy scale E₀.
-The ONLY inputs are: q₀ (from Vol(4₁)/m_μ/m_e) and m_e (energy scale).
-No Bethe-Weizsacker, no CODATA m_p/m_n.
+The right structural object on the QOU side is the LP-dual
+shadow price y_λ* per Wedderburn block (`prop:operator-selection-lp`)
+together with the GB normal form in H_n(R, q).  The active set
+{λ : y_λ* > 0} identifies which Wedderburn blocks the bound
+state saturates.
+
+The right experimental comparison object (separate question) is
+the *additive* constituent sum
+    M_atom = Z·M_p + N·M_n + Z·M_e − E_binding(A, Z),
+implemented correctly in `atom_mass_additive_baseline.py`.
+Whether the LP active set reproduces empirical Δ_binding via
+ρ_F · V_hyp is the interpretive question tracked in
+docs/audits/rho-f-volume-binding-gap.md (not a 1ppb gate).
+
+This file is preserved for two reasons:
+1. Its proton/neutron Hecke-trace primitives (PROTON_TR,
+   NEUTRON_TR) are correct and are still used by downstream
+   scripts (cross-check-trM-1ppb, atomic-braid-mass-table) for
+   per-nucleon character data.  Don't delete those.
+2. Provenance: the computational chain that produces the bad
+   atomic-mass table feeds existing audits' "deprecated lineage"
+   records.  Removing it would break those audits.
+
+If you're authoring a new mass-formula path, do NOT extend this
+script — extend `atom_mass_additive_baseline.py` and hook its
+Δ_binding column to your derivation.
+
+Original (legacy) docstring:
+
+    Builds each atom from the categorical construction:
+        γγ → quarks → B₃ confinement → nucleon NF → nuclear
+        assembly → atom
+
+    Mass = Markov trace of atom NF × energy scale E₀.
+    The ONLY inputs are: q₀ (from Vol(4₁)/m_μ/m_e) and m_e
+    (energy scale).  No Bethe-Weizsacker, no CODATA m_p/m_n.
 
 Usage:
     python3 folio-assistant/computations/atom_mass_derived.py

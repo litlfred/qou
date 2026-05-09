@@ -97,7 +97,7 @@ def build_atom_nf_symbolic(Z: int, N: int,
         elem = elem * _factor_from(c_f, d_f, g)
         since_reduce += 1
         if since_reduce >= reduce_every:
-            elem, _ = div.reduce(elem)
+            elem, _ = div.reduce(elem, engine='laurent')
             n_reductions += 1
             since_reduce = 0
             if verbose:

@@ -98,7 +98,7 @@ def build_atom_symbolic(Z: int, N: int, *, include_inter: bool = True,
         elem = elem * _factor_from(c_f, d_f, g)
         since_last_reduce += 1
         if since_last_reduce >= reduce_every:
-            elem, _ = div.reduce(elem)
+            elem, _ = div.reduce(elem, engine='laurent')
             since_last_reduce = 0
             if elem.n_terms() > max_terms:
                 raise RuntimeError(
@@ -106,7 +106,7 @@ def build_atom_symbolic(Z: int, N: int, *, include_inter: bool = True,
                     f"(Z={Z}, N={N}, gen={g}); current terms = "
                     f"{elem.n_terms()}")
     if since_last_reduce > 0:
-        elem, _ = div.reduce(elem)
+        elem, _ = div.reduce(elem, engine='laurent')
     return elem
 
 
@@ -130,8 +130,8 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
                                       m_pp=m_pp, m_pn=m_pn, m_nn=m_nn)
 
     if reduce_before_trace:
-        atom_elem, _ = div.reduce(atom_elem)
-        free_elem, _ = div.reduce(free_elem)
+        atom_elem, _ = div.reduce(atom_elem, engine='laurent')
+        free_elem, _ = div.reduce(free_elem, engine='laurent')
 
     if verbose:
         print(f"  atom NF: {atom_elem.n_terms()} terms;  "

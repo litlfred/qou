@@ -7,14 +7,6 @@ positivity, 2×2 pair PSD. Dual matrix inequality
 `y₀ I + Σ y_λ π_λ − T ⪯ 0`. The scalar LP
 (`prop:confinement-lp`) is the diagonal rank-1 projection.
 
-**Implementation.**  Replaces the previous `opaque` declarations
-with concrete `def`s on the trivial-SDP model: every particle is
-Slater-strictly feasible, the dual shadow price `y₀*` is the
-constant zero, and `n_target` is constant zero.  Under this concrete
-model the headline non-negativity holds by `le_refl`.  The genuine
-SDP solver lives in `folio-assistant/computations/lp_dual_solver.py`
-and the Mathlib SDP-duality machinery is the upgrade target.
-
 LaTeX: `\label{prop:confinement-sdp}`
 -/
 
@@ -24,48 +16,54 @@ namespace QOU.ParticleInteractions
 
 universe u
 
-/-- Concrete model of a confined particle (strand count + colour
-    charge).  Downstream proofs never inspect the fields. -/
-structure ConfinedParticleTy where
-  strands : ℕ
-  colourCharge : Fin 3
-  deriving Repr
+/-- Placeholder for a confined particle. -/
+opaque ConfinedParticleTy : Type
 
-/-- Feasibility of the Slater-strict confinement SDP at `(P, q)` —
-    concrete model returns constant `True`. -/
+/-- Feasibility of the Slater-strict confinement SDP at `(P, q)`. -/
 -- Ref: [manuscript] particle-interactions/confinement-sdp
-def slaterStrictFeasible : ConfinedParticleTy → ℝ → Prop :=
-  fun _ _ => True
+opaque slaterStrictFeasible : ConfinedParticleTy → ℝ → Prop
 
-/-- Optimal dual shadow price of the normalisation constraint —
-    concrete model returns zero (used by `y0_star_nonneg` rfl
-    proof below).  Sharpening to `(p.strands : ℝ)` would break
-    the `show (0 : ℝ) ≥ 0` step. -/
+/-- Optimal dual shadow price of the normalisation constraint. -/
 -- Ref: [manuscript] particle-interactions/confinement-sdp
-def y0_star : ConfinedParticleTy → ℝ → ℝ := fun _ _ => 0  -- noqa: const_zero
+opaque y0_star : ConfinedParticleTy → ℝ → ℝ
 
-/-- Target normalisation constant `n_target` for the SDP —
-    content-bearing via strand count.  Distinct from `y0_star`:
-    `n_target` is a structural data field, not a proof obligation. -/
+/-- Target normalisation constant `n_target` for the SDP. -/
 -- Ref: [manuscript] particle-interactions/confinement-sdp
-def n_target : ConfinedParticleTy → ℝ := fun p => (p.strands : ℝ)
+opaque n_target : ConfinedParticleTy → ℝ
 
-/-- **Confinement SDP primal–dual.** At any `(P, q)` with
-    Slater-strict feasibility, the primal admits a unique optimiser
-    `Φ* ⪰ 0`, the dual admits `(y₀*, y_λ*)` with `y_λ* ≥ 0`, and
-    strong duality holds: the primal and dual optimal objectives
-    coincide, and complementary slackness is a matrix equation
-    `Φ* · (y₀* I + Σ y_λ* π_λ − T) = 0`.
+/-- Class-axiomatisation of the confinement SDP's strong-duality
+    consequence (CLAUDE.md §3b-cond).  Under Slater-strict
+    feasibility, the dual shadow price `y₀*` is non-negative.
 
-    Under the concrete model `y0_star ≡ 0`, the headline
-    non-negativity is immediate. -/
--- Ref: [manuscript] particle-interactions/confinement-sdp
--- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
+    This is a standard SDP-duality result
+    [boyd-vandenberghe-2004] which Mathlib does not yet provide
+    in a form usable here; class-axiomatising the conclusion
+    isolates the SDP-theory dependency to a single named field
+    and produces a `sorry`-free downstream proof body. -/
+class ConfinementSDPDuality where
+  /-- Slater-strict feasibility implies non-negative dual shadow. -/
+  y0_star_nonneg :
+    ∀ (P : ConfinedParticleTy) (q : ℝ),
+      slaterStrictFeasible P q → y0_star P q ≥ 0
+
+/-- **Confinement SDP primal–dual** (conditional theorem, §3b-cond).
+    At any `(P, q)` with Slater-strict feasibility, the dual shadow
+    price is non-negative.  Stated as a corollary of strong duality
+    for the matrix-Frobenius-positivity SDP described in the file
+    header; the full primal–dual statement (uniqueness of `Φ* ⪰ 0`,
+    matrix complementary slackness) is the upstream axiom packaged
+    by `ConfinementSDPDuality`.
+
+    Proof body has no `sorry`; the only unproved input is the
+    class instance.
+
+    Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
+    Ref: [manuscript] particle-interactions/confinement-sdp -/
 theorem ConfinementSDP
+    [inst : ConfinementSDPDuality]
     (P : ConfinedParticleTy) (q : ℝ)
-    (_h : slaterStrictFeasible P q) :
-    y0_star P q ≥ 0 := by
-  show (0 : ℝ) ≥ 0
-  exact le_refl 0
+    (h : slaterStrictFeasible P q) :
+    y0_star P q ≥ 0 :=
+  inst.y0_star_nonneg P q h
 
 end QOU.ParticleInteractions

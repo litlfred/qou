@@ -61,10 +61,11 @@ HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
+from hecke_character_symbolic import hoefsmit_matrices_symbolic  # noqa: E402
 from hoefsmit_symbolic import Q, chi_lambda_symbolic  # noqa: E402
-from hecke_character_symbolic import (  # noqa: E402
-    atomic_braid_to_crossings,
-    hoefsmit_matrices_symbolic,
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402  — single source of truth
+from canonical_braid_crossings import (  # noqa: E402
+    atom_canonical_crossings as atomic_braid_to_crossings,
 )
 from hecke_characters import partitions_of  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
@@ -250,7 +251,7 @@ def main() -> int:
         print(f"  y_{shape} = {y}")
         # Cross-check: at q_0 the value should match the alpha_k_jones_markov_h3
         # numerical solution.
-        val_q0 = float(sp.N(y.subs(Q, sp.Float("1.1099785955541805", 50)), 30))
+        val_q0 = float(sp.N(y.subs(Q, sp.Float(Q_50_DIGIT_STR, 50)), 30))
         print(f"           ≈ {val_q0:+.10f}  at q_0")
 
     # Sanity: Σ y_λ · dim_C(λ) = 1  (since tr_M(1) = 1 and χ^λ(1) = f^λ = dim)
@@ -273,7 +274,7 @@ def main() -> int:
     print(f"  [{time.time() - t0:.2f}s]")
     print()
     print(f"  closed form: {trM_p}")
-    val_q0 = float(sp.N(trM_p.subs(Q, sp.Float("1.1099785955541805", 50)), 30))
+    val_q0 = float(sp.N(trM_p.subs(Q, sp.Float(Q_50_DIGIT_STR, 50)), 30))
     print(f"  at q_0 ≈ 1.1097 : {val_q0}")
     print(f"  markov_peel ref : 1.0653062285923893")
 
@@ -284,7 +285,7 @@ def main() -> int:
     print("Neutron internal braid:")
     trM_n, _ = tr_M_canonical(neutron, n)
     print(f"  closed form: {trM_n}")
-    val_n = float(sp.N(trM_n.subs(Q, sp.Float("1.1099785955541805", 50)), 30))
+    val_n = float(sp.N(trM_n.subs(Q, sp.Float(Q_50_DIGIT_STR, 50)), 30))
     print(f"  at q_0 ≈ 1.1097 : {val_n}")
     print(f"  markov_peel ref : 0.9232332971695837")
 
@@ -303,7 +304,7 @@ def main() -> int:
         "n": n,
         "y_lambda": {str(sh): str(y) for sh, y in y_lam.items()},
         "y_lambda_at_q0": {
-            str(sh): float(sp.N(y.subs(Q, sp.Float("1.1099785955541805", 50)), 30))
+            str(sh): float(sp.N(y.subs(Q, sp.Float(Q_50_DIGIT_STR, 50)), 30))
             for sh, y in y_lam.items()
         },
         "tr_M_proton_closed_form": str(trM_p),

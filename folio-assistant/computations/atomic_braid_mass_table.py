@@ -21,21 +21,70 @@ Atomic-braid mass-table compute (Strategy 3 — knot operator + Δ_n full-twist)
 
   Migration tracker: `docs/coordination/1ppb.md` §Open phases · P4‴.
 
-Re-derives the six-term mass formula using:
+⚠️  STRUCTURAL BUG IN T1 BASE  ⚠️ (PR #577 audit, this branch)
+  ───────────────────────────────────────────────────────────────────────
+  Underlying root-cause analysis: the T1 base
+  `t1_atomic_with_coupling` uses
 
-  • Per-carrier (proton/neutron) atomic-braid Markov traces
-    (PR #534/#547, recursive axiomatic reducer).
-  • Inter-nucleon Δ_I coupling via the quotient-braid Jones-
-    polynomial factor a(Z, N) = J_{\bar\beta}(q)
-    (per `prop:jet-filtered-knot-factor` and the H_3(R,q)
-    crossing-balance identity δV_pn = h/2).
-  • Full-twist Δ_n² action at saturated shells
-    (per `conj:categorical-neutrality-saturated-shells`):
-    Δ_n²·Φ_n = Φ_n at every magic n ∈ {2, 8, 20, 28, 50, 82, 126},
-    so the saturated-shell mass is a fixed point of the
-    full-twist scalar action.
+    base = |tr_p|^Z · |tr_n|^N      (multiplicative product)
 
-The compound-atom Markov-trace anchor reads:
+over the per-carrier nucleon traces.  Multiplicative composition
+is the wrong combination law for representing atomic-scale
+quantities — physically these compose additively, and the
+structural QOU-side object is the LP active-set / GB-NF data,
+not a multiplicative trace product.
+
+Predictions against AME diverge accordingly:
+
+    atom    err%
+       p   0.000  (anchor)
+       n  -8.331
+       D -24.194
+       T -54.117
+
+Mean |err%| (atoms ≠ p) = 35.4%.  The a(Z, N) and Δ_n² coupling
+factors are downstream curve-fitting against a wrong base.
+
+What to use instead:
+
+  · QOU structural side: LP-dual shadow prices y_λ* and GB normal
+    forms (`prop:operator-selection-lp`,
+    `def:hecke-normal-form`).  The active set
+    {λ : y_λ* > 0} is the actual prediction.
+  · Comparison-against-AME side: the additive constituent sum in
+    `atom_mass_additive_baseline.py` (Z·M_p + N·M_n + Z·M_e),
+    which is informational only — QOU does not curve-fit
+    against AME.
+
+If reworking T1 here is desired, the path is:
+
+  1. Replace the multiplicative T1 base with `Z · |tr_p| + N · |tr_n|`.
+  2. Re-derive the a(Z, N) Jones-polynomial coupling factor in the
+     additive setting (the multiplicative form was a special case
+     of the wrong base).
+  3. Re-anchor E_0 against the additive carrier sum, not the
+     multiplicative product.
+
+The Δ_n²-saturated-shell scalar (full-twist invariant) is correct
+at any combination law and can be carried over unchanged.
+
+Original (legacy) docstring:
+
+    Re-derives the six-term mass formula using:
+
+      • Per-carrier (proton/neutron) atomic-braid Markov traces
+        (PR #534/#547, recursive axiomatic reducer).
+      • Inter-nucleon Δ_I coupling via the quotient-braid Jones-
+        polynomial factor a(Z, N) = J_{\bar\beta}(q)
+        (per `prop:jet-filtered-knot-factor` and the H_3(R,q)
+        crossing-balance identity δV_pn = h/2).
+      • Full-twist Δ_n² action at saturated shells
+        (per `conj:categorical-neutrality-saturated-shells`):
+        Δ_n²·Φ_n = Φ_n at every magic n ∈ {2, 8, 20, 28, 50, 82, 126},
+        so the saturated-shell mass is a fixed point of the
+        full-twist scalar action.
+
+The compound-atom Markov-trace anchor (LEGACY, structurally wrong) reads:
 
   |tr_M_atomic(K)| = |tr_M(p)|^Z · |tr_M(n)|^N · |a(Z, N)|
 
@@ -226,12 +275,13 @@ def t1_atomic_with_coupling(atom_label: str, Z: int, N: int,
 
       |tr_M_atomic(K)| = |tr_M(p)|^Z · |tr_M(n)|^N · |a(Z, N)| · Δ_n²-scalar
 
-    The disjoint-product piece is the per-carrier base; the
-    multiplicative knot factor a(Z, N) couples the carriers via
-    the Δ_I inter-nucleon interface knot.  When the atom is
-    covered by `jet-knot-invariants.witness.json`, the canonical
-    convergent a_k is used; otherwise the Jones-quotient fallback.
-    Δ_n² adds the saturated-shell scalar.
+    ⚠ STRUCTURAL BUG (PR #577 audit): the multiplicative carrier
+    base ``|tr_M(p)|^Z · |tr_M(n)|^N`` is structurally wrong.
+    Atomic mass is *additive* in its constituents.  See the
+    file-header banner and `atom_mass_additive_baseline.py` for
+    the correct construction.  This function is preserved unchanged
+    so existing audits/witnesses remain reproducible; do NOT cite
+    its output as a physical prediction.
     """
     A = Z + N
     base = abs(tr_p) ** Z * abs(tr_n) ** N
@@ -243,6 +293,64 @@ def t1_atomic_with_coupling(atom_label: str, Z: int, N: int,
         "a_ZN": a_ZN,
         "a_ZN_source": a_source,
         "full_twist_delta_n2": delta_n2,
+    }
+
+
+def t1_atomic_additive(atom_label: str, Z: int, N: int,
+                        tr_p: mp.mpf, tr_n: mp.mpf) -> tuple:
+    """Additive replacement for `t1_atomic_with_coupling` (scaffold).
+
+    Implements the additive carrier sum
+
+        base_additive  =  Z · |tr_M(p)|  +  N · |tr_M(n)|,
+
+    which is the right combination law for compositions of
+    independent constituent traces.
+
+    Important framing: this is **NOT** a curve-fit against the
+    AME atomic-mass column.  QOU's primary structural prediction
+    is the LP-dual shadow-price stack (`prop:operator-selection-lp`
+    and friends — the active set {λ : y_λ* > 0} per Wedderburn
+    block).  The additive carrier sum here is the alternative
+    additive-trace computation that is *consistent* with both the
+    additive-constituent atomic-mass formula
+    (Z·M_p + N·M_n + Z·M_e in MeV) AND the structural sum-over-
+    populated-blocks Σ_λ y_λ* w_λ on the QOU side.  It replaces
+    the multiplicative product `|tr_p|^Z · |tr_n|^N` because that
+    product has no structural meaning — it does not match the
+    LP-dual sum, and it does not match the additive constituent
+    sum.
+
+    The Δ_I inter-nucleon coupling and Δ_n² saturated-shell
+    scalar require re-derivation in the additive / LP-active-set
+    setting; they are currently passed through unchanged with a
+    TODO marker.
+
+    Currently NOT used by the main loop in `main()`; provided as
+    a scaffold for the recast follow-up workplan.
+
+    Ref: prop:operator-selection-lp (LP-dual shadow prices)
+    Ref: prop:cpt-orbit-closure-density (Type-B fold orbit closure)
+    Ref: docs/audits/atom-mass-additive-baseline.md (informational)
+    """
+    A = Z + N
+    base = mp.mpf(Z) * abs(tr_p) + mp.mpf(N) * abs(tr_n)
+    a_ZN, a_source = jones_quotient_factor(atom_label, Z, N)
+    delta_n2 = full_twist_scalar(A)
+    # TODO: re-derive a_ZN and delta_n2 in the additive setting.
+    # Currently kept multiplicative as a placeholder; their roles
+    # in additive form are an open derivation question.
+    t1 = base + a_ZN * delta_n2  # additive composition
+    return t1, {
+        "base_additive": base,
+        "a_ZN": a_ZN,
+        "a_ZN_source": a_source,
+        "full_twist_delta_n2": delta_n2,
+        "note": "Additive scaffold.  QOU prediction proper is the "
+                "LP active-set / GB-NF data; this is the additive "
+                "carrier-sum consistent with both that and AME's "
+                "additive-constituent law.  a_ZN / Δ_n² not yet "
+                "re-derived in additive setting.",
     }
 
 

@@ -1,0 +1,2998 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-05-09T02:58:07.580232+00:00",
+  "commitSha": "f7ad5dc1be45dfa96301da1e91946efbed968e34",
+  "assertions": [
+    {
+      "name": "Z_0_identity",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "sympy.cancel(Z_n - ((1-X)/(1-Q))^n) == 0"
+    },
+    {
+      "name": "Z_1_identity",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "sympy.cancel(Z_n - ((1-X)/(1-Q))^n) == 0"
+    },
+    {
+      "name": "Z_2_identity",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "sympy.cancel(Z_n - ((1-X)/(1-Q))^n) == 0"
+    },
+    {
+      "name": "Z_3_identity",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "sympy.cancel(Z_n - ((1-X)/(1-Q))^n) == 0"
+    },
+    {
+      "name": "Z_4_identity",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "sympy.cancel(Z_n - ((1-X)/(1-Q))^n) == 0"
+    },
+    {
+      "name": "Z_5_identity",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "sympy.cancel(Z_n - ((1-X)/(1-Q))^n) == 0"
+    },
+    {
+      "name": "Z_6_identity",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "sympy.cancel(Z_n - ((1-X)/(1-Q))^n) == 0"
+    },
+    {
+      "name": "closed_form_collapse_n0",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "y_λ telescope = s_λ / Z_n per partition"
+    },
+    {
+      "name": "closed_form_collapse_n1",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "y_λ telescope = s_λ / Z_n per partition"
+    },
+    {
+      "name": "closed_form_collapse_n2",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "y_λ telescope = s_λ / Z_n per partition"
+    },
+    {
+      "name": "closed_form_collapse_n3",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "y_λ telescope = s_λ / Z_n per partition"
+    },
+    {
+      "name": "closed_form_collapse_n4",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "y_λ telescope = s_λ / Z_n per partition"
+    },
+    {
+      "name": "closed_form_collapse_n5",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "y_λ telescope = s_λ / Z_n per partition"
+    },
+    {
+      "name": "closed_form_collapse_n6",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "y_λ telescope = s_λ / Z_n per partition"
+    },
+    {
+      "name": "closed_forms_emitted",
+      "computed": 30,
+      "expected": 30,
+      "passed": true,
+      "tolerance": 0,
+      "source": "cumulative p(0)+...+p(6)"
+    },
+    {
+      "name": "mpfr_cross_check_max_abs_diff",
+      "computed": "2.5422586207322251556063305849663509277011735949437e-51",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 1e-30,
+      "source": "y-lambda-mpfr-witness.json"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 19166,
+  "computation": "y-lambda-macdonald-telescope",
+  "scriptFile": "y_lambda_macdonald_telescope.py",
+  "scriptHash": "2ff0b5edbeb3",
+  "scriptCommitSha": "3f2bd2de45209c7c48790f47f6a166d271d65e06",
+  "description": "Macdonald hook-content telescope: Z_n = ((1-X)/(1-Q))^n, giving the clean closed form y_λ = Q^{n(λ)} (1-Q)^n / (1-X)^n · ∏ (1-X·Q^c)/(1-Q^h) — sorry-free, O(n) per partition, no sympy.simplify needed.  Resolves the 'Open: a telescope for general n?' question in y-lambda-clean-closed-forms.md.",
+  "contentBlock": "prop:macdonald-hook-telescope",
+  "data": {
+    "telescope_identity": "Z_n := Σ_{λ ⊢ n} f_λ · s_{λ,X}(Q) = ((1-X)/(1-Q))^n",
+    "closed_form": "y_λ = Q^{n(λ)} · (1-Q)^n / (1-X)^n · ∏_{x ∈ λ} (1-X·Q^{c(x)})/(1-Q^{h(x)})",
+    "verification": {
+      "identity": {
+        "0": {
+          "num_partitions": 1,
+          "Z_n_minus_target_simplified": "0",
+          "identity_holds": true
+        },
+        "1": {
+          "num_partitions": 1,
+          "Z_n_minus_target_simplified": "0",
+          "identity_holds": true
+        },
+        "2": {
+          "num_partitions": 2,
+          "Z_n_minus_target_simplified": "0",
+          "identity_holds": true
+        },
+        "3": {
+          "num_partitions": 3,
+          "Z_n_minus_target_simplified": "0",
+          "identity_holds": true
+        },
+        "4": {
+          "num_partitions": 5,
+          "Z_n_minus_target_simplified": "0",
+          "identity_holds": true
+        },
+        "5": {
+          "num_partitions": 7,
+          "Z_n_minus_target_simplified": "0",
+          "identity_holds": true
+        },
+        "6": {
+          "num_partitions": 11,
+          "Z_n_minus_target_simplified": "0",
+          "identity_holds": true
+        }
+      },
+      "collapse": {
+        "0": {
+          "()": {
+            "matches_raw_wenzl": true,
+            "diff_simplified": "0"
+          }
+        },
+        "1": {
+          "(1,)": {
+            "matches_raw_wenzl": true,
+            "diff_simplified": "0"
+          }
+        },
+        "2": {
+          "(2,)": {
+            "matches_raw_wenzl": true,
+            "diff_simplified": "0"
+          },
+          "(1, 1)": {
+            "matches_raw_wenzl": true,
+            "diff_simplified": "0"
+          }
+        },
+        "3": {
+          "(3,)": {
+            "matches_raw_wenzl": true,
+            "diff_simplified": "0"
+          },
+          "(2, 1)": {
+            "matches_raw_wenzl": true,
+            "diff_simplified": "0"
+          },
+          "(1, 1, 1)": {
+            "matches_raw_wenzl": true,
+            "diff_simplified": "0"
+          }
+        },
+        "4": {
+          "(4,)": {
+            "matches_raw_wenzl": true,
+            "diff_simplified": "0"
+          },
+          "(3, 1)": {
+            "matches_raw_wenzl": true,
+            "diff_simplified": "0"
+          },
+          "(2, 2)": {
+            "matches_raw_wenzl": true,
+            "diff_simplified": "0"
+          },
+          "(2, 1, 1)": {
+            "matches_raw_wenzl": true,
+            "diff_simplified": "0"
+          },
+          "(1, 1, 1, 1)": {
+            "matches_raw_wenzl": true,
+            "diff_simplified": "0"
+          }
+        },
+        "5": {
+          "(5,)": {
+            "matches_raw_wenzl": true,
+            "diff_simplified": "0"
+          },
+          "(4, 1)": {
+            "matches_raw_wenzl": true,
+            "diff_simplified": "0"
+          },
+          "(3, 2)": {
+            "matches_raw_wenzl": true,
+            "diff_simplified": "0"
+          },
+          "(3, 1, 1)": {
+            "matches_raw_wenzl": true,
+            "diff_simplified": "0"
+          },
+          "(2, 2, 1)": {
+            "matches_raw_wenzl": true,
+            "diff_simplified": "0"
+          },
+          "(2, 1, 1, 1)": {
+            "matches_raw_wenzl": true,
+            "diff_simplified": "0"
+          },
+          "(1, 1, 1, 1, 1)": {
+            "matches_raw_wenzl": true,
+            "diff_simplified": "0"
+          }
+        },
+        "6": {
+          "(6,)": {
+            "matches_raw_wenzl": true,
+            "diff_simplified": "0"
+          },
+          "(5, 1)": {
+            "matches_raw_wenzl": true,
+            "diff_simplified": "0"
+          },
+          "(4, 2)": {
+            "matches_raw_wenzl": true,
+            "diff_simplified": "0"
+          },
+          "(4, 1, 1)": {
+            "matches_raw_wenzl": true,
+            "diff_simplified": "0"
+          },
+          "(3, 3)": {
+            "matches_raw_wenzl": true,
+            "diff_simplified": "0"
+          },
+          "(3, 2, 1)": {
+            "matches_raw_wenzl": true,
+            "diff_simplified": "0"
+          },
+          "(3, 1, 1, 1)": {
+            "matches_raw_wenzl": true,
+            "diff_simplified": "0"
+          },
+          "(2, 2, 2)": {
+            "matches_raw_wenzl": true,
+            "diff_simplified": "0"
+          },
+          "(2, 2, 1, 1)": {
+            "matches_raw_wenzl": true,
+            "diff_simplified": "0"
+          },
+          "(2, 1, 1, 1, 1)": {
+            "matches_raw_wenzl": true,
+            "diff_simplified": "0"
+          },
+          "(1, 1, 1, 1, 1, 1)": {
+            "matches_raw_wenzl": true,
+            "diff_simplified": "0"
+          }
+        }
+      }
+    },
+    "closed_forms_by_n": {
+      "0": {
+        "n": 0,
+        "num_partitions": 1,
+        "weights": [
+          {
+            "partition": [],
+            "f_lambda": 1,
+            "n_lambda": 0,
+            "y_lambda_closed_form": "1"
+          }
+        ]
+      },
+      "1": {
+        "n": 1,
+        "num_partitions": 1,
+        "weights": [
+          {
+            "partition": [
+              1
+            ],
+            "f_lambda": 1,
+            "n_lambda": 0,
+            "y_lambda_closed_form": "1"
+          }
+        ]
+      },
+      "2": {
+        "n": 2,
+        "num_partitions": 2,
+        "weights": [
+          {
+            "partition": [
+              2
+            ],
+            "f_lambda": 1,
+            "n_lambda": 0,
+            "y_lambda_closed_form": "(1 - q**2)*(-q**3/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)/((1 - q**4)*(-q/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1))"
+          },
+          {
+            "partition": [
+              1,
+              1
+            ],
+            "f_lambda": 1,
+            "n_lambda": 1,
+            "y_lambda_closed_form": "q**2*(1 - q**2)*(1 - 1/(q*(sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)))/((1 - q**4)*(-q/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1))"
+          }
+        ]
+      },
+      "3": {
+        "n": 3,
+        "num_partitions": 3,
+        "weights": [
+          {
+            "partition": [
+              3
+            ],
+            "f_lambda": 1,
+            "n_lambda": 0,
+            "y_lambda_closed_form": "(1 - q**2)**2*(-q**3/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)*(-q**5/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)/((1 - q**4)*(1 - q**6)*(-q/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)**2)"
+          },
+          {
+            "partition": [
+              2,
+              1
+            ],
+            "f_lambda": 2,
+            "n_lambda": 1,
+            "y_lambda_closed_form": "q**2*(1 - q**2)*(1 - 1/(q*(sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)))*(-q**3/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)/((1 - q**6)*(-q/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)**2)"
+          },
+          {
+            "partition": [
+              1,
+              1,
+              1
+            ],
+            "f_lambda": 1,
+            "n_lambda": 3,
+            "y_lambda_closed_form": "q**6*(1 - q**2)**2*(1 - 1/(q**3*(sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)))*(1 - 1/(q*(sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)))/((1 - q**4)*(1 - q**6)*(-q/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)**2)"
+          }
+        ]
+      },
+      "4": {
+        "n": 4,
+        "num_partitions": 5,
+        "weights": [
+          {
+            "partition": [
+              4
+            ],
+            "f_lambda": 1,
+            "n_lambda": 0,
+            "y_lambda_closed_form": "(1 - q**2)**3*(-q**3/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)*(-q**5/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)*(-q**7/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)/((1 - q**4)*(1 - q**6)*(1 - q**8)*(-q/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)**3)"
+          },
+          {
+            "partition": [
+              3,
+              1
+            ],
+            "f_lambda": 3,
+            "n_lambda": 1,
+            "y_lambda_closed_form": "q**2*(1 - q**2)**2*(1 - 1/(q*(sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)))*(-q**3/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)*(-q**5/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)/((1 - q**4)*(1 - q**8)*(-q/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)**3)"
+          },
+          {
+            "partition": [
+              2,
+              2
+            ],
+            "f_lambda": 2,
+            "n_lambda": 2,
+            "y_lambda_closed_form": "q**4*(1 - q**2)**3*(1 - 1/(q*(sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)))*(-q**3/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)/((1 - q**4)**2*(1 - q**6)*(-q/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)**2)"
+          },
+          {
+            "partition": [
+              2,
+              1,
+              1
+            ],
+            "f_lambda": 3,
+            "n_lambda": 3,
+            "y_lambda_closed_form": "q**6*(1 - q**2)**2*(1 - 1/(q**3*(sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)))*(1 - 1/(q*(sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)))*(-q**3/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)/((1 - q**4)*(1 - q**8)*(-q/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)**3)"
+          },
+          {
+            "partition": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "f_lambda": 1,
+            "n_lambda": 6,
+            "y_lambda_closed_form": "q**12*(1 - q**2)**3*(1 - 1/(q**5*(sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)))*(1 - 1/(q**3*(sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)))*(1 - 1/(q*(sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)))/((1 - q**4)*(1 - q**6)*(1 - q**8)*(-q/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)**3)"
+          }
+        ]
+      },
+      "5": {
+        "n": 5,
+        "num_partitions": 7,
+        "weights": [
+          {
+            "partition": [
+              5
+            ],
+            "f_lambda": 1,
+            "n_lambda": 0,
+            "y_lambda_closed_form": "(1 - q**2)**4*(-q**3/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)*(-q**5/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)*(-q**7/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)*(-q**9/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)/((1 - q**4)*(1 - q**6)*(1 - q**8)*(1 - q**10)*(-q/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)**4)"
+          },
+          {
+            "partition": [
+              4,
+              1
+            ],
+            "f_lambda": 4,
+            "n_lambda": 1,
+            "y_lambda_closed_form": "q**2*(1 - q**2)**3*(1 - 1/(q*(sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)))*(-q**3/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)*(-q**5/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)*(-q**7/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)/((1 - q**4)*(1 - q**6)*(1 - q**10)*(-q/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)**4)"
+          },
+          {
+            "partition": [
+              3,
+              2
+            ],
+            "f_lambda": 5,
+            "n_lambda": 2,
+            "y_lambda_closed_form": "q**4*(1 - q**2)**3*(1 - 1/(q*(sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)))*(-q**3/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)*(-q**5/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)/((1 - q**4)*(1 - q**6)*(1 - q**8)*(-q/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)**3)"
+          },
+          {
+            "partition": [
+              3,
+              1,
+              1
+            ],
+            "f_lambda": 6,
+            "n_lambda": 3,
+            "y_lambda_closed_form": "q**6*(1 - q**2)**3*(1 - 1/(q**3*(sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)))*(1 - 1/(q*(sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)))*(-q**3/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)*(-q**5/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)/((1 - q**4)**2*(1 - q**10)*(-q/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)**4)"
+          },
+          {
+            "partition": [
+              2,
+              2,
+              1
+            ],
+            "f_lambda": 5,
+            "n_lambda": 4,
+            "y_lambda_closed_form": "q**8*(1 - q**2)**3*(1 - 1/(q**3*(sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)))*(1 - 1/(q*(sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)))*(-q**3/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)/((1 - q**4)*(1 - q**6)*(1 - q**8)*(-q/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)**3)"
+          },
+          {
+            "partition": [
+              2,
+              1,
+              1,
+              1
+            ],
+            "f_lambda": 4,
+            "n_lambda": 6,
+            "y_lambda_closed_form": "q**12*(1 - q**2)**3*(1 - 1/(q**5*(sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)))*(1 - 1/(q**3*(sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)))*(1 - 1/(q*(sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)))*(-q**3/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)/((1 - q**4)*(1 - q**6)*(1 - q**10)*(-q/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)**4)"
+          },
+          {
+            "partition": [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "f_lambda": 1,
+            "n_lambda": 10,
+            "y_lambda_closed_form": "q**20*(1 - q**2)**4*(1 - 1/(q**7*(sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)))*(1 - 1/(q**5*(sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)))*(1 - 1/(q**3*(sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)))*(1 - 1/(q*(sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)))/((1 - q**4)*(1 - q**6)*(1 - q**8)*(1 - q**10)*(-q/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)**4)"
+          }
+        ]
+      },
+      "6": {
+        "n": 6,
+        "num_partitions": 11,
+        "weights": [
+          {
+            "partition": [
+              6
+            ],
+            "f_lambda": 1,
+            "n_lambda": 0,
+            "y_lambda_closed_form": "(1 - q**2)**5*(-q**3/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)*(-q**5/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)*(-q**7/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)*(-q**9/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)*(-q**11/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)/((1 - q**4)*(1 - q**6)*(1 - q**8)*(1 - q**10)*(1 - q**12)*(-q/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)**5)"
+          },
+          {
+            "partition": [
+              5,
+              1
+            ],
+            "f_lambda": 5,
+            "n_lambda": 1,
+            "y_lambda_closed_form": "q**2*(1 - q**2)**4*(1 - 1/(q*(sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)))*(-q**3/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)*(-q**5/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)*(-q**7/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)*(-q**9/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)/((1 - q**4)*(1 - q**6)*(1 - q**8)*(1 - q**12)*(-q/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)**5)"
+          },
+          {
+            "partition": [
+              4,
+              2
+            ],
+            "f_lambda": 9,
+            "n_lambda": 2,
+            "y_lambda_closed_form": "q**4*(1 - q**2)**4*(1 - 1/(q*(sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)))*(-q**3/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)*(-q**5/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)*(-q**7/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)/((1 - q**4)**2*(1 - q**8)*(1 - q**10)*(-q/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)**4)"
+          },
+          {
+            "partition": [
+              4,
+              1,
+              1
+            ],
+            "f_lambda": 10,
+            "n_lambda": 3,
+            "y_lambda_closed_form": "q**6*(1 - q**2)**4*(1 - 1/(q**3*(sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)))*(1 - 1/(q*(sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)))*(-q**3/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)*(-q**5/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)*(-q**7/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)/((1 - q**4)**2*(1 - q**6)*(1 - q**12)*(-q/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)**5)"
+          },
+          {
+            "partition": [
+              3,
+              3
+            ],
+            "f_lambda": 5,
+            "n_lambda": 3,
+            "y_lambda_closed_form": "q**6*(1 - q**2)**5*(1 - 1/(q*(sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)))*(-q**3/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)**2*(-q**5/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)/((1 - q**4)**2*(1 - q**6)**2*(1 - q**8)*(-q/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)**4)"
+          },
+          {
+            "partition": [
+              3,
+              2,
+              1
+            ],
+            "f_lambda": 16,
+            "n_lambda": 4,
+            "y_lambda_closed_form": "q**8*(1 - q**2)**3*(1 - 1/(q**3*(sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)))*(1 - 1/(q*(sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)))*(-q**3/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)*(-q**5/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)/((1 - q**6)**2*(1 - q**10)*(-q/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)**4)"
+          },
+          {
+            "partition": [
+              3,
+              1,
+              1,
+              1
+            ],
+            "f_lambda": 10,
+            "n_lambda": 6,
+            "y_lambda_closed_form": "q**12*(1 - q**2)**4*(1 - 1/(q**5*(sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)))*(1 - 1/(q**3*(sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)))*(1 - 1/(q*(sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)))*(-q**3/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)*(-q**5/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)/((1 - q**4)**2*(1 - q**6)*(1 - q**12)*(-q/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)**5)"
+          },
+          {
+            "partition": [
+              2,
+              2,
+              2
+            ],
+            "f_lambda": 5,
+            "n_lambda": 6,
+            "y_lambda_closed_form": "q**12*(1 - q**2)**5*(1 - 1/(q**3*(sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)))*(1 - 1/(q*(sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)))**2*(-q**3/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)/((1 - q**4)**2*(1 - q**6)**2*(1 - q**8)*(-q/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)**4)"
+          },
+          {
+            "partition": [
+              2,
+              2,
+              1,
+              1
+            ],
+            "f_lambda": 9,
+            "n_lambda": 7,
+            "y_lambda_closed_form": "q**14*(1 - q**2)**4*(1 - 1/(q**5*(sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)))*(1 - 1/(q**3*(sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)))*(1 - 1/(q*(sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)))*(-q**3/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)/((1 - q**4)**2*(1 - q**8)*(1 - q**10)*(-q/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)**4)"
+          },
+          {
+            "partition": [
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "f_lambda": 5,
+            "n_lambda": 10,
+            "y_lambda_closed_form": "q**20*(1 - q**2)**4*(1 - 1/(q**7*(sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)))*(1 - 1/(q**5*(sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)))*(1 - 1/(q**3*(sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)))*(1 - 1/(q*(sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)))*(-q**3/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)/((1 - q**4)*(1 - q**6)*(1 - q**8)*(1 - q**12)*(-q/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)**5)"
+          },
+          {
+            "partition": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "f_lambda": 1,
+            "n_lambda": 15,
+            "y_lambda_closed_form": "q**30*(1 - q**2)**5*(1 - 1/(q**9*(sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)))*(1 - 1/(q**7*(sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)))*(1 - 1/(q**5*(sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)))*(1 - 1/(q**3*(sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)))*(1 - 1/(q*(sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)))/((1 - q**4)*(1 - q**6)*(1 - q**8)*(1 - q**10)*(1 - q**12)*(-q/((sqrt(q) + 1/sqrt(q))*(-q**2 + q/(sqrt(q) + 1/sqrt(q)) + 1)) + 1)**5)"
+          }
+        ]
+      }
+    },
+    "mpfr_cross_check": {
+      "available": true,
+      "samples": [
+        {
+          "n": 3,
+          "partition": [
+            3
+          ],
+          "y_mpfr": "0.41539578633456659696386950060551865095490170518139",
+          "y_telescope": "0.41539578633456659696386950060551865095490170518139",
+          "abs_diff": "6.6819117752304891153513411678787046970379922002626e-52"
+        },
+        {
+          "n": 3,
+          "partition": [
+            2,
+            1
+          ],
+          "y_mpfr": "0.28092963397986407006459730931916479078137537741344",
+          "y_telescope": "0.28092963397986407006459730931916479078137537741344",
+          "abs_diff": "1.3363823550460978230702682335757409394075984400525e-51"
+        },
+        {
+          "n": 3,
+          "partition": [
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "0.022744945705705262906935880756151767482347539991734",
+          "y_telescope": "0.022744945705705262906935880756151767482347539991735",
+          "abs_diff": "1.2946204064509072660993223512764990350511109888009e-51"
+        },
+        {
+          "n": 4,
+          "partition": [
+            4
+          ],
+          "y_mpfr": "0.22752693019306428866046032911517615385813758796042",
+          "y_telescope": "0.22752693019306428866046032911517615385813758796042",
+          "abs_diff": "2.3386691213306711903729694087575466439632972700919e-51"
+        },
+        {
+          "n": 4,
+          "partition": [
+            3,
+            1
+          ],
+          "y_mpfr": "0.18786885614150230830340917149034249709676411722097",
+          "y_telescope": "0.18786885614150230830340917149034249709676411722097",
+          "abs_diff": "2.3386691213306711903729694087575466439632972700919e-51"
+        },
+        {
+          "n": 4,
+          "partition": [
+            2,
+            2
+          ],
+          "y_mpfr": "0.069473304641501935693951750516178645977986860332321",
+          "y_telescope": "0.069473304641501935693951750516178645977986860332321",
+          "abs_diff": "3.3409558876152445576756705839393523485189961001313e-52"
+        },
+        {
+          "n": 4,
+          "partition": [
+            2,
+            1,
+            1
+          ],
+          "y_mpfr": "0.023587473196859826067236387312643647706624399860146",
+          "y_telescope": "0.023587473196859826067236387312643647706624399860145",
+          "abs_diff": "9.6052481768938281033175529288256380019921137878775e-52"
+        },
+        {
+          "n": 4,
+          "partition": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "-0.0008425274911545631603005065564918802242768598684073",
+          "y_telescope": "-0.00084252749115456316030050655649188022427685986840984",
+          "abs_diff": "2.5422586207322251556063305849663509277011735949437e-51"
+        },
+        {
+          "n": 5,
+          "partition": [
+            5
+          ],
+          "y_mpfr": "0.11814839833360239957997346869636832427838592414852",
+          "y_telescope": "0.11814839833360239957997346869636832427838592414852",
+          "abs_diff": "1.169334560665335595186484704378773321981648635046e-51"
+        },
+        {
+          "n": 5,
+          "partition": [
+            4,
+            1
+          ],
+          "y_mpfr": "0.1093785318594618890804868604188078295797516638119",
+          "y_telescope": "0.1093785318594618890804868604188078295797516638119",
+          "abs_diff": "1.5034301494268600509540517627727085568335482450591e-51"
+        },
+        {
+          "n": 5,
+          "partition": [
+            3,
+            2
+          ],
+          "y_mpfr": "0.061723715323196231666369078851522059866362545042893",
+          "y_telescope": "0.061723715323196231666369078851522059866362545042892",
+          "abs_diff": "5.8466728033266779759324235218938666099082431752298e-52"
+        },
+        {
+          "n": 5,
+          "partition": [
+            3,
+            1,
+            1
+          ],
+          "y_mpfr": "0.01676660895884418755655323222001260765064990836618",
+          "y_telescope": "0.016766608958844187556553232220012607650649908366181",
+          "abs_diff": "1.1275726120701450382155388220795314176251611837943e-51"
+        },
+        {
+          "n": 5,
+          "partition": [
+            2,
+            2,
+            1
+          ],
+          "y_mpfr": "0.0077495893183057040275826716646565861116243152894285",
+          "y_telescope": "0.0077495893183057040275826716646565861116243152894281",
+          "abs_diff": "3.7585753735671501273851294069317713920838706126477e-52"
+        },
+        {
+          "n": 5,
+          "partition": [
+            2,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "-0.00092872508029006551689951657202554605564982379546336",
+          "y_telescope": "-0.00092872508029006551689951657202554605564982379546425",
+          "abs_diff": "8.8483128586059992582191588121518784855307787339415e-52"
+        },
+        {
+          "n": 5,
+          "partition": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "0.000086197589135502356599010015533665831372963927054617",
+          "y_telescope": "0.000086197589135502356599010015533665831372963927054406",
+          "abs_diff": "2.1125673215145223155224577178718072711582519285498e-52"
+        },
+        {
+          "n": 6,
+          "partition": [
+            6
+          ],
+          "y_mpfr": "0.059187716932148656184759383996463418531982475914565",
+          "y_telescope": "0.059187716932148656184759383996463418531982475914565",
+          "abs_diff": "1.6704779438076222788378352919696761742594980500657e-52"
+        },
+        {
+          "n": 6,
+          "partition": [
+            5,
+            1
+          ],
+          "y_mpfr": "0.058960681401453743395214084699904905746403448233954",
+          "y_telescope": "0.058960681401453743395214084699904905746403448233954",
+          "abs_diff": "4.1761948595190556970945882299241904356487451251641e-52"
+        },
+        {
+          "n": 6,
+          "partition": [
+            4,
+            2
+          ],
+          "y_mpfr": "0.040284386965935216736067416300036696370221245273992",
+          "y_telescope": "0.040284386965935216736067416300036696370221245273992",
+          "abs_diff": "4.1761948595190556970945882299241904356487451251641e-52"
+        },
+        {
+          "n": 6,
+          "partition": [
+            4,
+            1,
+            1
+          ],
+          "y_mpfr": "0.010133463492072928949205359418866227463126970303953",
+          "y_telescope": "0.010133463492072928949205359418866227463126970303953",
+          "abs_diff": "4.5938143454709612668040470529166094792136196376806e-52"
+        },
+        {
+          "n": 6,
+          "partition": [
+            3,
+            3
+          ],
+          "y_mpfr": "0.014120874004975288826197492418493063794195961257136",
+          "y_telescope": "0.014120874004975288826197492418493063794195961257136",
+          "abs_diff": "2.0880974297595278485472941149620952178243725625821e-53"
+        },
+        {
+          "n": 6,
+          "partition": [
+            3,
+            2,
+            1
+          ],
+          "y_mpfr": "0.0073184543522857261041041701329922997019453385117647",
+          "y_telescope": "0.0073184543522857261041041701329922997019453385117648",
+          "abs_diff": "1.3572633293436931015557411747253618915858421656783e-52"
+        },
+        {
+          "n": 6,
+          "partition": [
+            3,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "-0.00068530888551446749675629733184591951442240044953734",
+          "y_telescope": "-0.00068530888551446749675629733184591951442240044953707",
+          "abs_diff": "2.7275772676233832521649029376692368782830866598728e-52"
+        },
+        {
+          "n": 6,
+          "partition": [
+            2,
+            2,
+            2
+          ],
+          "y_mpfr": "0.00077318673690537948183169058499393668533296373811382",
+          "y_telescope": "0.00077318673690537948183169058499393668533296373811378",
+          "abs_diff": "3.9151826807991147160261764655539285334206985548414e-53"
+        },
+        {
+          "n": 6,
+          "partition": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "y_mpfr": "-0.00034205177088540155835318905332965027565398696045026",
+          "y_telescope": "-0.00034205177088540155835318905332965027565398696045051",
+          "abs_diff": "2.4796156978394393201499117615174880711664424180662e-52"
+        },
+        {
+          "n": 6,
+          "partition": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "0.000098635576109803538209969813150023734426563614524083",
+          "y_telescope": "0.000098635576109803538209969813150023734426563614523329",
+          "abs_diff": "7.5432519650062943528770999903005689743905458823277e-52"
+        },
+        {
+          "n": 6,
+          "partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "-0.000012437986974301181610959797616357903053599687468985",
+          "y_telescope": "-0.000012437986974301181610959797616357903053599687468923",
+          "abs_diff": "6.1725301951973542944850188339748654534710700653671e-53"
+        },
+        {
+          "n": 7,
+          "partition": [
+            7
+          ],
+          "y_mpfr": "0.0289087336230925820771786150517768267665407059337",
+          "y_telescope": "0.028908733623092582077178615051776826766540705933701",
+          "abs_diff": "6.6819117752304891153513411678787046970379922002626e-52"
+        },
+        {
+          "n": 7,
+          "partition": [
+            6,
+            1
+          ],
+          "y_mpfr": "0.030278983309056074107580768944686591765441769980864",
+          "y_telescope": "0.030278983309056074107580768944686591765441769980864",
+          "abs_diff": "8.3523897190381113941891764598483808712974902503283e-53"
+        },
+        {
+          "n": 7,
+          "partition": [
+            5,
+            2
+          ],
+          "y_mpfr": "0.023082016196973814512153064193392130347892388086996",
+          "y_telescope": "0.023082016196973814512153064193392130347892388086996",
+          "abs_diff": "2.9233364016633389879662117609469333049541215876149e-52"
+        },
+        {
+          "n": 7,
+          "partition": [
+            5,
+            1,
+            1
+          ],
+          "y_mpfr": "0.0055996818954238547754802515618261836330692901660939",
+          "y_telescope": "0.0055996818954238547754802515618261836330692901660938",
+          "abs_diff": "1.4616682008316694939831058804734666524770607938074e-52"
+        },
+        {
+          "n": 7,
+          "partition": [
+            4,
+            3
+          ],
+          "y_mpfr": "0.012243994950715511992059767790548925391015257825107",
+          "y_telescope": "0.012243994950715511992059767790548925391015257825107",
+          "abs_diff": "6.2642922892785835456418823448862856534731176877462e-53"
+        },
+        {
+          "n": 7,
+          "partition": [
+            4,
+            2,
+            1
+          ],
+          "y_mpfr": "0.0049583758182458902318545843160956406313135993618891",
+          "y_telescope": "0.004958375818245890231854584316095640631313599361889",
+          "abs_diff": "1.4616682008316694939831058804734666524770607938074e-52"
+        },
+        {
+          "n": 7,
+          "partition": [
+            4,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "-0.00042459422159681605812947645905559680125591922402919",
+          "y_telescope": "-0.00042459422159681605812947645905559680125591922402922",
+          "abs_diff": "3.4584113680392179991564558779059702045216170567766e-53"
+        },
+        {
+          "n": 7,
+          "partition": [
+            3,
+            3,
+            1
+          ],
+          "y_mpfr": "0.001876879054259776834137724627944138403180703432029",
+          "y_telescope": "0.0018768790542597768341377246279441384031807034320292",
+          "abs_diff": "1.5399718544476517883036294097845452231454747649043e-52"
+        },
+        {
+          "n": 7,
+          "partition": [
+            3,
+            2,
+            2
+          ],
+          "y_mpfr": "0.00081852599559788716784439674501203005193732554397449",
+          "y_telescope": "0.00081852599559788716784439674501203005193732554397469",
+          "abs_diff": "2.0358949940155396523336117620880428373787632485175e-52"
+        },
+        {
+          "n": 7,
+          "partition": [
+            3,
+            2,
+            1,
+            1
+          ],
+          "y_mpfr": "-0.00033532651581782812973253555605950938448628982612811",
+          "y_telescope": "-0.00033532651581782812973253555605950938448628982612794",
+          "abs_diff": "1.6835285527436193278912558801881892693709003785818e-52"
+        },
+        {
+          "n": 7,
+          "partition": [
+            3,
+            1,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "0.000074611851900176691105714683269186671319808600620201",
+          "y_telescope": "0.000074611851900176691105714683269186671319808600620099",
+          "abs_diff": "1.0195788231247694572984834545713355555783069153233e-52"
+        },
+        {
+          "n": 7,
+          "partition": [
+            2,
+            2,
+            2,
+            1
+          ],
+          "y_mpfr": "-0.000045339258692507686012706160018093366604361805860849",
+          "y_telescope": "-0.000045339258692507686012706160018093366604361805860913",
+          "abs_diff": "6.3784851174685577248593124917982752356978880622624e-53"
+        },
+        {
+          "n": 7,
+          "partition": [
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "0.000038614003624934257392052662747952475436664671538464",
+          "y_telescope": "0.000038614003624934257392052662747952475436664671538349",
+          "abs_diff": "1.1492692494262401322668505499928094382478675549524e-52"
+        },
+        {
+          "n": 7,
+          "partition": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "-0.000014590279415307410287797532867115412329909657635057",
+          "y_telescope": "-0.000014590279415307410287797532867115412329909657635119",
+          "abs_diff": "6.2051567175373469171185703045211481912495758866575e-53"
+        },
+        {
+          "n": 7,
+          "partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "0.0000021522924410062286768377352507575092763099701659485",
+          "y_telescope": "0.0000021522924410062286768377352507575092763099701661958",
+          "abs_diff": "2.4732433301949095110417962399264172239440779998454e-52"
+        },
+        {
+          "n": 8,
+          "partition": [
+            8
+          ],
+          "y_mpfr": "0.013860941071566501154180907275051272908846860420131",
+          "y_telescope": "0.013860941071566501154180907275051272908846860420131",
+          "abs_diff": "1.4616682008316694939831058804734666524770607938074e-52"
+        },
+        {
+          "n": 8,
+          "partition": [
+            7,
+            1
+          ],
+          "y_mpfr": "0.01504779255152608092299770777672555385769384551357",
+          "y_telescope": "0.01504779255152608092299770777672555385769384551357",
+          "abs_diff": "1.6704779438076222788378352919696761742594980500657e-52"
+        },
+        {
+          "n": 8,
+          "partition": [
+            6,
+            2
+          ],
+          "y_mpfr": "0.012305178247137375757977141803612853558444849938145",
+          "y_telescope": "0.012305178247137375757977141803612853558444849938145",
+          "abs_diff": "8.3523897190381113941891764598483808712974902503283e-53"
+        },
+        {
+          "n": 8,
+          "partition": [
+            6,
+            1,
+            1
+          ],
+          "y_mpfr": "0.0029260125103926174266059193643481843493030745291493",
+          "y_telescope": "0.0029260125103926174266059193643481843493030745291493",
+          "abs_diff": "1.044048714879763924273647057481047608912186281291e-53"
+        },
+        {
+          "n": 8,
+          "partition": [
+            5,
+            3
+          ],
+          "y_mpfr": "0.0078644349597264087170584569769394251295884746664754",
+          "y_telescope": "0.0078644349597264087170584569769394251295884746664754",
+          "abs_diff": "2.0880974297595278485472941149620952178243725625821e-53"
+        },
+        {
+          "n": 8,
+          "partition": [
+            5,
+            2,
+            1
+          ],
+          "y_mpfr": "0.0029124029901100300371174654128398516598590634823753",
+          "y_telescope": "0.0029124029901100300371174654128398516598590634823752",
+          "abs_diff": "8.3523897190381113941891764598483808712974902503283e-53"
+        },
+        {
+          "n": 8,
+          "partition": [
+            5,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "-0.00023873360507879268824313321536185237609284784543073",
+          "y_telescope": "-0.00023873360507879268824313321536185237609284784543078",
+          "abs_diff": "4.7634722616389229044985146997572797156618499083903e-53"
+        },
+        {
+          "n": 8,
+          "partition": [
+            4,
+            4
+          ],
+          "y_mpfr": "0.0026901571331231832681563078643717387604675258874824",
+          "y_telescope": "0.0026901571331231832681563078643717387604675258874825",
+          "abs_diff": "1.044048714879763924273647057481047608912186281291e-52"
+        },
+        {
+          "n": 8,
+          "partition": [
+            4,
+            3,
+            1
+          ],
+          "y_mpfr": "0.001689402857865920006845002949237761500959257271149",
+          "y_telescope": "0.001689402857865920006845002949237761500959257271149",
+          "abs_diff": "1.3050608935997049053420588218513095111402328516138e-53"
+        },
+        {
+          "n": 8,
+          "partition": [
+            4,
+            2,
+            2
+          ],
+          "y_mpfr": "0.00058946649820109436391068226023918157937105488179729",
+          "y_telescope": "0.00058946649820109436391068226023918157937105488179723",
+          "abs_diff": "5.8727740211986720740392646983308928001310478322621e-53"
+        },
+        {
+          "n": 8,
+          "partition": [
+            4,
+            2,
+            1,
+            1
+          ],
+          "y_mpfr": "-0.00023289652793115417601856630622115410887577627343262",
+          "y_telescope": "-0.0002328965279311541760185663062211541088757762734325",
+          "abs_diff": "1.2169692832817248242314698513763461191382671341299e-52"
+        },
+        {
+          "n": 8,
+          "partition": [
+            4,
+            1,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "0.000047035911413130806132223062527409683712704894834032",
+          "y_telescope": "0.000047035911413130806132223062527409683712704894834052",
+          "abs_diff": "2.0146877544945444476218033062329590578227344646788e-53"
+        },
+        {
+          "n": 8,
+          "partition": [
+            3,
+            3,
+            2
+          ],
+          "y_mpfr": "0.00027888570912920719002913360548577136988685685154305",
+          "y_telescope": "0.00027888570912920719002913360548577136988685685154285",
+          "abs_diff": "1.9771672538035529315932191151047339093774527701949e-52"
+        },
+        {
+          "n": 8,
+          "partition": [
+            3,
+            3,
+            1,
+            1
+          ],
+          "y_mpfr": "-0.000091409512735350362736411926779394467665410690662552",
+          "y_telescope": "-0.000091409512735350362736411926779394467665410690662688",
+          "abs_diff": "1.3621573076946919949507738953073043022526180388719e-52"
+        },
+        {
+          "n": 8,
+          "partition": [
+            3,
+            2,
+            2,
+            1
+          ],
+          "y_mpfr": "-0.000049826211732414386095419120712922897320586189365412",
+          "y_telescope": "-0.000049826211732414386095419120712922897320586189365388",
+          "abs_diff": "2.4225192837444522305411966880614932800540572308081e-53"
+        },
+        {
+          "n": 8,
+          "partition": [
+            3,
+            2,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "0.000038805736581090795117861797653962089375483327332575",
+          "y_telescope": "0.000038805736581090795117861797653962089375483327332631",
+          "abs_diff": "5.5954485813087347816540771986874895290137483512941e-53"
+        },
+        {
+          "n": 8,
+          "partition": [
+            3,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "-0.000011229796094044910144370176912185101768379621546586",
+          "y_telescope": "-0.000011229796094044910144370176912185101768379621546584",
+          "abs_diff": "1.8964166110120711905751792255026841333756508625013e-54"
+        },
+        {
+          "n": 8,
+          "partition": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "y_mpfr": "-0.0000012507069114984884467066773840855080369918030693819",
+          "y_telescope": "-0.0000012507069114984884467066773840855080369918030692282",
+          "abs_diff": "1.5373719284486836261875182769753883174787500822702e-52"
+        },
+        {
+          "n": 8,
+          "partition": [
+            2,
+            2,
+            2,
+            1,
+            1
+          ],
+          "y_mpfr": "0.0000057376599514051885294196380789150387532161865735131",
+          "y_telescope": "0.0000057376599514051885294196380789150387532161865737033",
+          "abs_diff": "1.9016164630100075148074014911209979447091002277694e-52"
+        },
+        {
+          "n": 8,
+          "partition": [
+            2,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "-0.0000059293929075617262552287729849246526920348423679947",
+          "y_telescope": "-0.000005929392907561726255228772984924652692034842367985",
+          "abs_diff": "9.6961946079165575389085776529734011335496987647244e-54"
+        },
+        {
+          "n": 8,
+          "partition": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "0.000002568909586299226111801417029994342130504806279319",
+          "y_telescope": "0.00000256890958629922611180141702999434213050480627945",
+          "abs_diff": "1.3103627034799537065200109358150804560292400475735e-52"
+        },
+        {
+          "n": 8,
+          "partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "-0.00000041661714529299743496368177923683285419483611329783",
+          "y_telescope": "-0.00000041661714529299743496368177923683285419483611325421",
+          "abs_diff": "4.3622042710628808249604803051675484660695624930284e-53"
+        },
+        {
+          "n": 9,
+          "partition": [
+            9
+          ],
+          "y_mpfr": "0.0065546394309398086735491915159263203546318912619596",
+          "y_telescope": "0.0065546394309398086735491915159263203546318912619598",
+          "abs_diff": "2.1925023012475042409746588207101999787155911907112e-52"
+        },
+        {
+          "n": 9,
+          "partition": [
+            8,
+            1
+          ],
+          "y_mpfr": "0.0073063016406266924806317157591249525542149691581712",
+          "y_telescope": "0.0073063016406266924806317157591249525542149691581711",
+          "abs_diff": "8.3523897190381113941891764598483808712974902503283e-53"
+        },
+        {
+          "n": 9,
+          "partition": [
+            7,
+            2
+          ],
+          "y_mpfr": "0.0062689450192913551556522308763869469706446165653821",
+          "y_telescope": "0.0062689450192913551556522308763869469706446165653821",
+          "abs_diff": "2.0880974297595278485472941149620952178243725625821e-53"
+        },
+        {
+          "n": 9,
+          "partition": [
+            7,
+            1,
+            1
+          ],
+          "y_mpfr": "0.0014725458916080332867137611412136543328342597900166",
+          "y_telescope": "0.0014725458916080332867137611412136543328342597900166",
+          "abs_diff": "1.044048714879763924273647057481047608912186281291e-53"
+        },
+        {
+          "n": 9,
+          "partition": [
+            6,
+            3
+          ],
+          "y_mpfr": "0.0044564421255197764309285214117287429369331745016035",
+          "y_telescope": "0.0044564421255197764309285214117287429369331745016035",
+          "abs_diff": "2.0880974297595278485472941149620952178243725625821e-53"
+        },
+        {
+          "n": 9,
+          "partition": [
+            6,
+            2,
+            1
+          ],
+          "y_mpfr": "0.0015797911023262441713963895154971636508670588711595",
+          "y_telescope": "0.0015797911023262441713963895154971636508670588711595",
+          "abs_diff": "2.3491096084794688296157058793323571200524191329048e-53"
+        },
+        {
+          "n": 9,
+          "partition": [
+            6,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "-0.00012632448354166003150423129236263363439824413202688",
+          "y_telescope": "-0.00012632448354166003150423129236263363439824413202682",
+          "abs_diff": "5.8075209765186868287721617572383273245740361896814e-53"
+        },
+        {
+          "n": 9,
+          "partition": [
+            5,
+            4
+          ],
+          "y_mpfr": "0.0022956141636942735569526570486098716349778574312174",
+          "y_telescope": "0.0022956141636942735569526570486098716349778574312174",
+          "abs_diff": "4.6982192169589376592314117586647142401048382658097e-53"
+        },
+        {
+          "n": 9,
+          "partition": [
+            5,
+            3,
+            1
+          ],
+          "y_mpfr": "0.0011123786705123587291772785166008105576774427336545",
+          "y_telescope": "0.0011123786705123587291772785166008105576774427336545",
+          "abs_diff": "2.6101217871994098106841176437026190222804657032276e-53"
+        },
+        {
+          "n": 9,
+          "partition": [
+            5,
+            2,
+            2
+          ],
+          "y_mpfr": "0.00035942354871827982424635140627548635346199727736784",
+          "y_telescope": "0.00035942354871827982424635140627548635346199727736788",
+          "abs_diff": "4.1109418148390704518274852888316249600917334825834e-53"
+        },
+        {
+          "n": 9,
+          "partition": [
+            5,
+            2,
+            1,
+            1
+          ],
+          "y_mpfr": "-0.00013919033144685268770255402553360890214743539980674",
+          "y_telescope": "-0.00013919033144685268770255402553360890214743539980671",
+          "abs_diff": "3.1321461446392917728209411724431428267365588438731e-53"
+        },
+        {
+          "n": 9,
+          "partition": [
+            5,
+            1,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "0.000026781209909720030963652102534390160452831686402838",
+          "y_telescope": "0.000026781209909720030963652102534390160452831686402754",
+          "abs_diff": "8.4217210790105957172854733347592316890768151205703e-53"
+        },
+        {
+          "n": 9,
+          "partition": [
+            4,
+            4,
+            1
+          ],
+          "y_mpfr": "0.00039454296942890971120365081576186712548966845626504",
+          "y_telescope": "0.00039454296942890971120365081576186712548966845626506",
+          "abs_diff": "2.2186035191194983390814999971472261689383958477434e-53"
+        },
+        {
+          "n": 9,
+          "partition": [
+            4,
+            3,
+            2
+          ],
+          "y_mpfr": "0.0002668270012294272595706047190458140234610282643567",
+          "y_telescope": "0.00026682700122942725957060471904581402346102826435665",
+          "abs_diff": "4.828725306318908149765617640849845191218861550971e-53"
+        },
+        {
+          "n": 9,
+          "partition": [
+            4,
+            3,
+            1,
+            1
+          ],
+          "y_mpfr": "-0.000084345783304775693106531102170730205668882183127221",
+          "y_telescope": "-0.000084345783304775693106531102170730205668882183127247",
+          "abs_diff": "2.6427483095394024333176691142489017600589715245179e-53"
+        },
+        {
+          "n": 9,
+          "partition": [
+            4,
+            2,
+            2,
+            1
+          ],
+          "y_mpfr": "-0.000036784051746612719906273865082118797551970659927244",
+          "y_telescope": "-0.000036784051746612719906273865082118797551970659927302",
+          "abs_diff": "5.774894454178694206138610286692044586795530368391e-53"
+        },
+        {
+          "n": 9,
+          "partition": [
+            4,
+            2,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "0.00002742363856708692469679268656530379649251196942885",
+          "y_telescope": "0.000027423638567086924696792686565303796492511969428759",
+          "abs_diff": "9.1354262551979343373944117529591665779816299612966e-53"
+        },
+        {
+          "n": 9,
+          "partition": [
+            4,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "-0.0000071689370636761495282217265722842732326387609975125",
+          "y_telescope": "-0.0000071689370636761495282217265722842732326387609974602",
+          "abs_diff": "5.2324785202763168548558170888600940712278710894391e-53"
+        },
+        {
+          "n": 9,
+          "partition": [
+            3,
+            3,
+            3
+          ],
+          "y_mpfr": "0.000030103763766488354859069329020312045516900626122311",
+          "y_telescope": "0.000030103763766488354859069329020312045516900626122292",
+          "abs_diff": "1.8964166110120711905751792255026841333756508625013e-53"
+        },
+        {
+          "n": 9,
+          "partition": [
+            3,
+            3,
+            2,
+            1
+          ],
+          "y_mpfr": "-0.000018045055866708424400540442580354699091072038936112",
+          "y_telescope": "-0.000018045055866708424400540442580354699091072038936091",
+          "abs_diff": "2.0717841685895315372305183796889538489351196519369e-53"
+        },
+        {
+          "n": 9,
+          "partition": [
+            3,
+            3,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "0.000010981326436133754770659617971690437094543531400583",
+          "y_telescope": "0.000010981326436133754770659617971690437094543531400651",
+          "abs_diff": "6.8067082231809608969246755427182361690407769666982e-53"
+        },
+        {
+          "n": 9,
+          "partition": [
+            3,
+            2,
+            2,
+            2
+          ],
+          "y_mpfr": "-0.0000014609844113993314722982096305401989946968129021105",
+          "y_telescope": "-0.0000014609844113993314722982096305401989946968129021142",
+          "abs_diff": "3.746952174983527755571926695549658166750277913813e-54"
+        },
+        {
+          "n": 9,
+          "partition": [
+            3,
+            2,
+            2,
+            1,
+            1
+          ],
+          "y_mpfr": "0.0000064638802923060896836933965800907983171533224001006",
+          "y_telescope": "0.0000064638802923060896836933965800907983171533224001194",
+          "abs_diff": "1.8821425074883244181730004571386854355975545656868e-53"
+        },
+        {
+          "n": 9,
+          "partition": [
+            3,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "-0.0000060631087144359740332839034631229425287254958969857",
+          "y_telescope": "-0.0000060631087144359740332839034631229425287254958968982",
+          "abs_diff": "8.752064617703021021450181974040344409084186561135e-53"
+        },
+        {
+          "n": 9,
+          "partition": [
+            3,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "0.0000020022496840672134171354531232221139929846353478258",
+          "y_telescope": "0.0000020022496840672134171354531232221139929846353477742",
+          "abs_diff": "5.1641667391269573012168186974038145890041245261124e-53"
+        },
+        {
+          "n": 9,
+          "partition": [
+            2,
+            2,
+            2,
+            2,
+            1
+          ],
+          "y_mpfr": "0.00000021027749990084302559153224645469095770500983287452",
+          "y_telescope": "0.00000021027749990084302559153224645469095770500983288609",
+          "abs_diff": "1.1565528656439377040774265911714034166230300849787e-53"
+        },
+        {
+          "n": 9,
+          "partition": [
+            2,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "-0.00000093649784080174417986529074763045052164214565933582",
+          "y_telescope": "-0.00000093649784080174417986529074763045052164214565930223",
+          "abs_diff": "3.3587475380787717847055291202216221539638375558037e-53"
+        },
+        {
+          "n": 9,
+          "partition": [
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "0.0000010702136476759919579204212258287403583327991882582",
+          "y_telescope": "0.0000010702136476759919579204212258287403583327991882154",
+          "abs_diff": "4.2817212677124693359249812674723236656510998909001e-53"
+        },
+        {
+          "n": 9,
+          "partition": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "-0.00000050355374544397926325445731905651222081262825654023",
+          "y_telescope": "-0.00000050355374544397926325445731905651222081262825653951",
+          "abs_diff": "7.2135201736077439103867704410921990557165214259122e-55"
+        },
+        {
+          "n": 9,
+          "partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "0.000000086936600150981828290775539819679366617792143553686",
+          "y_telescope": "0.0000000869366001509818282907755398196793666177921432853",
+          "abs_diff": "2.6838580463061753643263993729132975632022499775647e-52"
+        },
+        {
+          "n": 10,
+          "partition": [
+            10
+          ],
+          "y_mpfr": "0.003067123136168792435495412045998742869822390675359",
+          "y_telescope": "0.0030671231361687924354954120459987428698223906753591",
+          "abs_diff": "7.8303653615982294320523529311078570668413971096828e-53"
+        },
+        {
+          "n": 10,
+          "partition": [
+            9,
+            1
+          ],
+          "y_mpfr": "0.0034875162947710162380537794699275774848095005866007",
+          "y_telescope": "0.0034875162947710162380537794699275774848095005866007",
+          "abs_diff": "5.2202435743988196213682352874052380445609314064552e-54"
+        },
+        {
+          "n": 10,
+          "partition": [
+            8,
+            2
+          ],
+          "y_mpfr": "0.0030970861866722902473412399659817069032292249763128",
+          "y_telescope": "0.0030970861866722902473412399659817069032292249763129",
+          "abs_diff": "7.3083410041583474699155294023673332623853039690372e-53"
+        },
+        {
+          "n": 10,
+          "partition": [
+            8,
+            1,
+            1
+          ],
+          "y_mpfr": "0.00072169915918338599523669632321566816617624359525758",
+          "y_telescope": "0.00072169915918338599523669632321566816617624359525757",
+          "abs_diff": "1.044048714879763924273647057481047608912186281291e-53"
+        },
+        {
+          "n": 10,
+          "partition": [
+            7,
+            3
+          ],
+          "y_mpfr": "0.0023568405176889685926417707987567098399879767433767",
+          "y_telescope": "0.0023568405176889685926417707987567098399879767433767",
+          "abs_diff": "5.2202435743988196213682352874052380445609314064552e-54"
+        },
+        {
+          "n": 10,
+          "partition": [
+            7,
+            2,
+            1
+          ],
+          "y_mpfr": "0.00081501831493009631566922011164853022742741484569251",
+          "y_telescope": "0.00081501831493009631566922011164853022742741484569252",
+          "abs_diff": "5.2202435743988196213682352874052380445609314064552e-54"
+        },
+        {
+          "n": 10,
+          "partition": [
+            7,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "-0.000064171582505449024192155293650544060769398650933505",
+          "y_telescope": "-0.000064171582505449024192155293650544060769398650933479",
+          "abs_diff": "2.5774952648594171880505661731563362845019598819372e-53"
+        },
+        {
+          "n": 10,
+          "partition": [
+            6,
+            4
+          ],
+          "y_mpfr": "0.0014582334034067689987535767697918680332169074225735",
+          "y_telescope": "0.0014582334034067689987535767697918680332169074225735",
+          "abs_diff": "3.1321461446392917728209411724431428267365588438731e-53"
+        },
+        {
+          "n": 10,
+          "partition": [
+            6,
+            3,
+            1
+          ],
+          "y_mpfr": "0.0006413682044240388395331738431801650637282903356532",
+          "y_telescope": "0.0006413682044240388395331738431801650637282903356532",
+          "abs_diff": "2.6101217871994098106841176437026190222804657032276e-54"
+        },
+        {
+          "n": 10,
+          "partition": [
+            6,
+            2,
+            2
+          ],
+          "y_mpfr": "0.0001998617878597593825838551979022900171612861888594",
+          "y_telescope": "0.00019986178785975938258385519790229001716128618885942",
+          "abs_diff": "2.2512300414594909617150514676935089067169016690338e-53"
+        },
+        {
+          "n": 10,
+          "partition": [
+            6,
+            2,
+            1,
+            1
+          ],
+          "y_mpfr": "-0.000076457204887650366389859637233821657449932499045615",
+          "y_telescope": "-0.00007645720488765036638985963723382165744993249904562",
+          "abs_diff": "4.8939783509988933950327205819424106667758731935517e-54"
+        },
+        {
+          "n": 10,
+          "partition": [
+            6,
+            1,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "0.0000143043038514393590777836385217320838210870179523",
+          "y_telescope": "0.000014304303851439359077783638521732083821087017952276",
+          "abs_diff": "2.3572662390644669852740937469689278044970455882274e-53"
+        },
+        {
+          "n": 10,
+          "partition": [
+            5,
+            5
+          ],
+          "y_mpfr": "0.00049224449008774575766425837301780909509458104902736",
+          "y_telescope": "0.00049224449008774575766425837301780909509458104902737",
+          "abs_diff": "7.8303653615982294320523529311078570668413971096828e-54"
+        },
+        {
+          "n": 10,
+          "partition": [
+            5,
+            4,
+            1
+          ],
+          "y_mpfr": "0.00034513627019975880053482190580019450666636895961654",
+          "y_telescope": "0.00034513627019975880053482190580019450666636895961654",
+          "abs_diff": "3.9151826807991147160261764655539285334206985548414e-54"
+        },
+        {
+          "n": 10,
+          "partition": [
+            5,
+            3,
+            2
+          ],
+          "y_mpfr": "0.00018238309305971317605855773405540103955034499720193",
+          "y_telescope": "0.00018238309305971317605855773405540103955034499720196",
+          "abs_diff": "2.6753748318793950559512205847951844978374773458083e-53"
+        },
+        {
+          "n": 10,
+          "partition": [
+            5,
+            3,
+            1,
+            1
+          ],
+          "y_mpfr": "-0.000056508897171152086949274966434950052267561558817143",
+          "y_telescope": "-0.000056508897171152086949274966434950052267561558817167",
+          "abs_diff": "2.4225192837444522305411966880614932800540572308081e-53"
+        },
+        {
+          "n": 10,
+          "partition": [
+            5,
+            2,
+            2,
+            1
+          ],
+          "y_mpfr": "-0.000022821332201192734396061525682204703249633908693511",
+          "y_telescope": "-0.0000228213322011927343960615256822047032496339086935",
+          "abs_diff": "1.1215367054372464030283318000284691111361376068556e-53"
+        },
+        {
+          "n": 10,
+          "partition": [
+            5,
+            2,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "0.000016597102813142500032642103817367510819692566749612",
+          "y_telescope": "0.000016597102813142500032642103817367510819692566749578",
+          "abs_diff": "3.3686884316042382869141893339036926756307260482281e-53"
+        },
+        {
+          "n": 10,
+          "partition": [
+            5,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "-0.0000041201967548618281467736398047094341879478982990906",
+          "y_telescope": "-0.0000041201967548618281467736398047094341879478982991011",
+          "abs_diff": "1.0511857666416373104747364416630469578012344296983e-53"
+        },
+        {
+          "n": 10,
+          "partition": [
+            4,
+            4,
+            2
+          ],
+          "y_mpfr": "0.00006985512282733660342682552366166821891564695726594",
+          "y_telescope": "0.000069855122827336603426825523661668218915646957265878",
+          "abs_diff": "6.1664127222586056777412279332474374401376002238752e-53"
+        },
+        {
+          "n": 10,
+          "partition": [
+            4,
+            4,
+            1,
+            1
+          ],
+          "y_mpfr": "-0.000020448423598185692757996613699995600092347460617301",
+          "y_telescope": "-0.000020448423598185692757996613699995600092347460617355",
+          "abs_diff": "5.3996894472687790458527683754097931023427134235521e-53"
+        },
+        {
+          "n": 10,
+          "partition": [
+            4,
+            3,
+            3
+          ],
+          "y_mpfr": "0.000032287298822348079289056335229815561311537248648953",
+          "y_telescope": "0.000032287298822348079289056335229815561311537248648962",
+          "abs_diff": "8.6460284200980449978911396947649255113040426419414e-54"
+        },
+        {
+          "n": 10,
+          "partition": [
+            4,
+            3,
+            2,
+            1
+          ],
+          "y_mpfr": "-0.000017698513479970599203834873901070796316500938760164",
+          "y_telescope": "-0.000017698513479970599203834873901070796316500938760146",
+          "abs_diff": "1.8311635663320859453080762844101186578186392199206e-53"
+        },
+        {
+          "n": 10,
+          "partition": [
+            4,
+            3,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "0.000010310050944532685804575351865286243007527775067392",
+          "y_telescope": "0.00001031005094453268580457535186528624300752777506742",
+          "abs_diff": "2.8323899706406095523751870367991701733965366107681e-53"
+        },
+        {
+          "n": 10,
+          "partition": [
+            4,
+            2,
+            2,
+            2
+          ],
+          "y_mpfr": "-0.0000011196509444932068392987569528505036440159209959263",
+          "y_telescope": "-0.0000011196509444932068392987569528505036440159209959085",
+          "abs_diff": "1.7804395198816286648074767325451947139286184508833e-53"
+        },
+        {
+          "n": 10,
+          "partition": [
+            4,
+            2,
+            2,
+            1,
+            1
+          ],
+          "y_mpfr": "0.0000048554448790438205329212914540072056581801085221997",
+          "y_telescope": "0.0000048554448790438205329212914540072056581801085222524",
+          "abs_diff": "5.273261673201307633147756427042947493451003366052e-53"
+        },
+        {
+          "n": 10,
+          "partition": [
+            4,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "-0.0000043389600696320816733460605713571629928884809104954",
+          "y_telescope": "-0.0000043389600696320816733460605713571629928884809104926",
+          "abs_diff": "2.8344291282868590912897840037083128445076932245987e-54"
+        },
+        {
+          "n": 10,
+          "partition": [
+            4,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "0.000001290219760817760291897973803782323948197618212111",
+          "y_telescope": "0.0000012902197608177602918979738037823239481976182121335",
+          "abs_diff": "2.2530143043999593082653238137390087439391637061356e-53"
+        },
+        {
+          "n": 10,
+          "partition": [
+            3,
+            3,
+            3,
+            1
+          ],
+          "y_mpfr": "-0.0000021835350558597244299870062095035157946366225266839",
+          "y_telescope": "-0.0000021835350558597244299870062095035157946366225266698",
+          "abs_diff": "1.4131362488509304678156980680358710800315333846381e-53"
+        },
+        {
+          "n": 10,
+          "partition": [
+            3,
+            3,
+            2,
+            2
+          ],
+          "y_mpfr": "-0.00000059313471714768130353232668410031181665415893467366",
+          "y_telescope": "-0.00000059313471714768130353232668410031181665415893465399",
+          "abs_diff": "1.966894997160570879310936894299927703655001328023e-53"
+        },
+        {
+          "n": 10,
+          "partition": [
+            3,
+            3,
+            2,
+            1,
+            1
+          ],
+          "y_mpfr": "0.0000024301273862695805368137642143199248367196812853681",
+          "y_telescope": "0.0000024301273862695805368137642143199248367196812853781",
+          "abs_diff": "1.0047949301894603001676554444800511900224214650511e-53"
+        },
+        {
+          "n": 10,
+          "partition": [
+            3,
+            3,
+            1,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "-0.0000017588518946685115707294981079157307497039249520874",
+          "y_telescope": "-0.0000017588518946685115707294981079157307497039249521475",
+          "abs_diff": "6.0055741629106732958523921682888092562451223079829e-53"
+        },
+        {
+          "n": 10,
+          "partition": [
+            3,
+            2,
+            2,
+            2,
+            1
+          ],
+          "y_mpfr": "0.0000002518012502415566705328740064106164659732670284191",
+          "y_telescope": "0.00000025180125024155667053287400641061646597326702844824",
+          "abs_diff": "2.9141474475199270032323091788126091432594720965405e-53"
+        },
+        {
+          "n": 10,
+          "partition": [
+            3,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "-0.0000010734932232488680565745330946469486437197344358975",
+          "y_telescope": "-0.0000010734932232488680565745330946469486437197344359594",
+          "abs_diff": "6.1931766663656308759953131239299349984715307804024e-53"
+        },
+        {
+          "n": 10,
+          "partition": [
+            3,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "0.0000011081964731134872673661883107968998575866444017807",
+          "y_telescope": "0.0000011081964731134872673661883107968998575866444017013",
+          "abs_diff": "7.9407347692014857258049137650652041407327488332665e-53"
+        },
+        {
+          "n": 10,
+          "partition": [
+            3,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "-0.00000039616654986403414212870899135710981279962726608431",
+          "y_telescope": "-0.00000039616654986403414212870899135710981279962726606066",
+          "abs_diff": "2.3645307381792309676573454415827485703305410249991e-53"
+        },
+        {
+          "n": 10,
+          "partition": [
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "y_mpfr": "-0.000000003049321587698236691875127548845390889737581733653",
+          "y_telescope": "-0.0000000030493215876982366918751275488453908897375816786781",
+          "abs_diff": "5.4974873683283113755742250569282557204481943433147e-53"
+        },
+        {
+          "n": 10,
+          "partition": [
+            2,
+            2,
+            2,
+            2,
+            1,
+            1
+          ],
+          "y_mpfr": "-0.000000038474428753015408249466632407080117378519613916788",
+          "y_telescope": "-0.000000038474428753015408249466632407080117378519613883477",
+          "abs_diff": "3.33107553158240108865353746771239699990072006968e-53"
+        },
+        {
+          "n": 10,
+          "partition": [
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "0.00000017546981120013928495870897942357823945610839059223",
+          "y_telescope": "0.00000017546981120013928495870897942357823945610839054068",
+          "abs_diff": "5.1548949442041664289645106134888065062955842976012e-53"
+        },
+        {
+          "n": 10,
+          "partition": [
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "-0.00000021345263663763459440447606439173773870995360392378",
+          "y_telescope": "-0.00000021345263663763459440447606439173773870995360402659",
+          "abs_diff": "1.0280891201140390173623717336562106720437745958571e-52"
+        },
+        {
+          "n": 10,
+          "partition": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "0.00000010606544105768947327872773669233533069695261359743",
+          "y_telescope": "0.00000010606544105768947327872773669233533069695261354774",
+          "abs_diff": "4.9685509833590034861204424733619172563955927977803e-53"
+        },
+        {
+          "n": 10,
+          "partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "-0.000000019128840906707644987952196872655964079160470241122",
+          "y_telescope": "-0.000000019128840906707644987952196872655964079160470262445",
+          "abs_diff": "2.1322897993743420747120752571961715433114698029431e-53"
+        },
+        {
+          "n": 11,
+          "partition": [
+            11
+          ],
+          "y_mpfr": "0.0014235866892470211781820574333324578988647978058599",
+          "y_telescope": "0.0014235866892470211781820574333324578988647978058599",
+          "abs_diff": "3.9151826807991147160261764655539285334206985548414e-53"
+        },
+        {
+          "n": 11,
+          "partition": [
+            10,
+            1
+          ],
+          "y_mpfr": "0.0016435364469217712573133546126662849709575928694991",
+          "y_telescope": "0.0016435364469217712573133546126662849709575928694992",
+          "abs_diff": "5.2202435743988196213682352874052380445609314064552e-53"
+        },
+        {
+          "n": 11,
+          "partition": [
+            9,
+            2
+          ],
+          "y_mpfr": "0.0014970389205899104822348657798709451581828671177828",
+          "y_telescope": "0.0014970389205899104822348657798709451581828671177828",
+          "abs_diff": "3.3931583233592327538893529368134047289646054141959e-53"
+        },
+        {
+          "n": 11,
+          "partition": [
+            9,
+            1,
+            1
+          ],
+          "y_mpfr": "0.00034694092725933449850555907739034735566904059931879",
+          "y_telescope": "0.00034694092725933449850555907739034735566904059931879",
+          "abs_diff": "2.6101217871994098106841176437026190222804657032276e-54"
+        },
+        {
+          "n": 11,
+          "partition": [
+            8,
+            3
+          ],
+          "y_mpfr": "0.0011936144590017539655113423652010570103213416808013",
+          "y_telescope": "0.0011936144590017539655113423652010570103213416808013",
+          "abs_diff": "4.6982192169589376592314117586647142401048382658097e-53"
+        },
+        {
+          "n": 11,
+          "partition": [
+            8,
+            2,
+            1
+          ],
+          "y_mpfr": "0.00040643280708062579959503182090970473472501617772879",
+          "y_telescope": "0.00040643280708062579959503182090970473472501617772877",
+          "abs_diff": "1.6965791616796163769446764684067023644823027070979e-53"
+        },
+        {
+          "n": 11,
+          "partition": [
+            8,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "-0.000031674575156574302863894575084383924217813181789992",
+          "y_telescope": "-0.000031674575156574302863894575084383924217813181789988",
+          "abs_diff": "3.9967489866490962726100551419196353778669631080672e-54"
+        },
+        {
+          "n": 11,
+          "partition": [
+            7,
+            4
+          ],
+          "y_mpfr": "0.00081973890127081951556895459313456327257372825942399",
+          "y_telescope": "0.00081973890127081951556895459313456327257372825942399",
+          "abs_diff": "1.3050608935997049053420588218513095111402328516138e-54"
+        },
+        {
+          "n": 11,
+          "partition": [
+            7,
+            3,
+            1
+          ],
+          "y_mpfr": "0.00034348715741639511156147384042108955709290680315138",
+          "y_telescope": "0.00034348715741639511156147384042108955709290680315138",
+          "abs_diff": "1.3050608935997049053420588218513095111402328516138e-54"
+        },
+        {
+          "n": 11,
+          "partition": [
+            7,
+            2,
+            2
+          ],
+          "y_mpfr": "0.00010491353012660467063760217461782695251726209122863",
+          "y_telescope": "0.00010491353012660467063760217461782695251726209122864",
+          "abs_diff": "1.1256150207297454808575257338467544533584508345169e-53"
+        },
+        {
+          "n": 11,
+          "partition": [
+            7,
+            2,
+            1,
+            1
+          ],
+          "y_mpfr": "-0.000039815179693529266124887724300091016907770226416296",
+          "y_telescope": "-0.000039815179693529266124887724300091016907770226416275",
+          "abs_diff": "2.0473142768345370702553547767792417956012402859691e-53"
+        },
+        {
+          "n": 11,
+          "partition": [
+            7,
+            1,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "0.0000073181723446545447966270057339308803561847572727739",
+          "y_telescope": "0.0000073181723446545447966270057339308803561847572727846",
+          "abs_diff": "1.0695381854578831607061091438453309978016439541741e-53"
+        },
+        {
+          "n": 11,
+          "partition": [
+            6,
+            5
+          ],
+          "y_mpfr": "0.00041541853952472642149655587166262807015767488262551",
+          "y_telescope": "0.00041541853952472642149655587166262807015767488262551",
+          "abs_diff": "1.9575913403995573580130882327769642667103492774207e-54"
+        },
+        {
+          "n": 11,
+          "partition": [
+            6,
+            4,
+            1
+          ],
+          "y_mpfr": "0.00022307596261122306168806630499467669048550428052404",
+          "y_telescope": "0.00022307596261122306168806630499467669048550428052404",
+          "abs_diff": "4.2414479041990409423616911710167559112057567677448e-54"
+        },
+        {
+          "n": 11,
+          "partition": [
+            6,
+            3,
+            2
+          ],
+          "y_mpfr": "0.00010779891633457503584695240238225341172062150727964",
+          "y_telescope": "0.00010779891633457503584695240238225341172062150727965",
+          "abs_diff": "1.4845067664696643298265919098558645689220148687107e-53"
+        },
+        {
+          "n": 11,
+          "partition": [
+            6,
+            3,
+            1,
+            1
+          ],
+          "y_mpfr": "-0.000032993831938154369563318704617854595570742255301897",
+          "y_telescope": "-0.000032993831938154369563318704617854595570742255301879",
+          "abs_diff": "1.794458728699594244845330880045550577817820170969e-53"
+        },
+        {
+          "n": 11,
+          "partition": [
+            6,
+            2,
+            2,
+            1
+          ],
+          "y_mpfr": "-0.000012850658601420323900699379097790347076597409648888",
+          "y_telescope": "-0.000012850658601420323900699379097790347076597409648874",
+          "abs_diff": "1.4355669829596753958762647040364404622542561367752e-53"
+        },
+        {
+          "n": 11,
+          "partition": [
+            6,
+            2,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "0.0000092024653454535931990461707819143021051773923214053",
+          "y_telescope": "0.0000092024653454535931990461707819143021051773923214087",
+          "abs_diff": "3.3850016927742345982309650691768340445199789588733e-54"
+        },
+        {
+          "n": 11,
+          "partition": [
+            6,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "-0.0000022163338386687789178895379941130986402751316419228",
+          "y_telescope": "-0.0000022163338386687789178895379941130986402751316419169",
+          "abs_diff": "5.9288508564705343941906812883323162556878547126049e-54"
+        },
+        {
+          "n": 11,
+          "partition": [
+            5,
+            5,
+            1
+          ],
+          "y_mpfr": "0.000076825950563019336167702501355181024936906166401855",
+          "y_telescope": "0.000076825950563019336167702501355181024936906166401859",
+          "abs_diff": "3.9151826807991147160261764655539285334206985548414e-54"
+        },
+        {
+          "n": 11,
+          "partition": [
+            5,
+            4,
+            2
+          ],
+          "y_mpfr": "0.000063435143444386943949059998993562692957771192579432",
+          "y_telescope": "0.000063435143444386943949059998993562692957771192579434",
+          "abs_diff": "2.1207239520995204711808455855083779556028783838724e-54"
+        },
+        {
+          "n": 11,
+          "partition": [
+            5,
+            4,
+            1,
+            1
+          ],
+          "y_mpfr": "-0.000018200786418870541270006899543225901713812679888804",
+          "y_telescope": "-0.000018200786418870541270006899543225901713812679888802",
+          "abs_diff": "2.36542286964946514093248161460549848894167204355e-54"
+        },
+        {
+          "n": 11,
+          "partition": [
+            5,
+            3,
+            3
+          ],
+          "y_mpfr": "0.000023458114005707743708992118684975483877053607804167",
+          "y_telescope": "0.000023458114005707743708992118684975483877053607804172",
+          "abs_diff": "5.1794604214738288430762959492223846223377991298422e-54"
+        },
+        {
+          "n": 11,
+          "partition": [
+            5,
+            3,
+            2,
+            1
+          ],
+          "y_mpfr": "-0.000012309080724956547446446786005390549005101310461308",
+          "y_telescope": "-0.000012309080724956547446446786005390549005101310461305",
+          "abs_diff": "3.4461764221617207656688740764511141778546773737927e-54"
+        },
+        {
+          "n": 11,
+          "partition": [
+            5,
+            3,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "0.0000069948019108293713304974237315209940220946868348426",
+          "y_telescope": "0.0000069948019108293713304974237315209940220946868348177",
+          "abs_diff": "2.4887919072475622452655981126086300911666471803041e-53"
+        },
+        {
+          "n": 11,
+          "partition": [
+            5,
+            2,
+            2,
+            2
+          ],
+          "y_mpfr": "-0.00000071209694702933262137422237385197470841329912655066",
+          "y_telescope": "-0.00000071209694702933262137422237385197470841329912656161",
+          "abs_diff": "1.0954099980946741856850581615050786375244434921504e-53"
+        },
+        {
+          "n": 11,
+          "partition": [
+            5,
+            2,
+            2,
+            1,
+            1
+          ],
+          "y_mpfr": "0.000003050504072213469572458861794828167540478110543272",
+          "y_telescope": "0.0000030505040722134695724588617948281675404781105432399",
+          "abs_diff": "3.2126928716661485599475213653542783356272450901836e-53"
+        },
+        {
+          "n": 11,
+          "partition": [
+            5,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "-0.0000026506685153539340693603524908959528480576229498545",
+          "y_telescope": "-0.0000026506685153539340693603524908959528480576229498879",
+          "abs_diff": "3.3396304351451823573811825554484096122967443011414e-53"
+        },
+        {
+          "n": 11,
+          "partition": [
+            5,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "0.00000074680559916088484047625068029961730038485629273081",
+          "y_telescope": "0.00000074680559916088484047625068029961730038485629270364",
+          "abs_diff": "2.7169226689217294113361337855689664217272933526077e-53"
+        },
+        {
+          "n": 11,
+          "partition": [
+            4,
+            4,
+            3
+          ],
+          "y_mpfr": "0.000011229930350818544618860066220904693876594459609427",
+          "y_telescope": "0.000011229930350818544618860066220904693876594459609413",
+          "abs_diff": "1.3825488841571873840967435643987310133641841771784e-53"
+        },
+        {
+          "n": 11,
+          "partition": [
+            4,
+            4,
+            2,
+            1
+          ],
+          "y_mpfr": "-0.0000048099509678688851410945415527991679187186949229518",
+          "y_telescope": "-0.0000048099509678688851410945415527991679187186949229691",
+          "abs_diff": "1.7332839993121080774074218727712704444831217560496e-53"
+        },
+        {
+          "n": 11,
+          "partition": [
+            4,
+            4,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "0.0000025623137885537336531048273960294695401839141944328",
+          "y_telescope": "0.0000025623137885537336531048273960294695401839141944157",
+          "abs_diff": "1.7072847393224264562463105446797013878158749297088e-53"
+        },
+        {
+          "n": 11,
+          "partition": [
+            4,
+            3,
+            3,
+            1
+          ],
+          "y_mpfr": "-0.0000024007455341782090387958496760646164421108187646244",
+          "y_telescope": "-0.0000024007455341782090387958496760646164421108187646235",
+          "abs_diff": "9.4820830550603559528758961275134206668782543125065e-55"
+        },
+        {
+          "n": 11,
+          "partition": [
+            4,
+            3,
+            2,
+            2
+          ],
+          "y_mpfr": "-0.00000060390312616458163980271162234474371221021494572312",
+          "y_telescope": "-0.00000060390312616458163980271162234474371221021494570473",
+          "abs_diff": "1.8391927495641935047843018416148679253188183868788e-53"
+        },
+        {
+          "n": 11,
+          "partition": [
+            4,
+            3,
+            2,
+            1,
+            1
+          ],
+          "y_mpfr": "0.0000024251668731976240623050149555282807616401003344435",
+          "y_telescope": "0.0000024251668731976240623050149555282807616401003344562",
+          "abs_diff": "1.2688658453787755896079626592140270989172029561198e-53"
+        },
+        {
+          "n": 11,
+          "partition": [
+            4,
+            3,
+            1,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "-0.0000016722316280480432413319142177925013163909262962993",
+          "y_telescope": "-0.0000016722316280480432413319142177925013163909262962693",
+          "abs_diff": "3.0021498446908836670153845319852975434003247121694e-53"
+        },
+        {
+          "n": 11,
+          "partition": [
+            4,
+            2,
+            2,
+            2,
+            1
+          ],
+          "y_mpfr": "0.00000019634912870070742187817704334621477660759307636878",
+          "y_telescope": "0.00000019634912870070742187817704334621477660759307635785",
+          "abs_diff": "1.0933389786102019977249206169879806121771750562287e-53"
+        },
+        {
+          "n": 11,
+          "partition": [
+            4,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "-0.00000081657519506798052372076233969545742054569543179962",
+          "y_telescope": "-0.00000081657519506798052372076233969545742054569543180145",
+          "abs_diff": "1.8339674080956790613156471139101898305964795639377e-54"
+        },
+        {
+          "n": 11,
+          "partition": [
+            4,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "0.00000080051526883787616106696847702674859210576376748374",
+          "y_telescope": "0.00000080051526883787616106696847702674859210576376746605",
+          "abs_diff": "1.7692241528272562007771934145449100228172570748147e-53"
+        },
+        {
+          "n": 11,
+          "partition": [
+            4,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "-0.00000025710110718100070964524535354404194429300184795438",
+          "y_telescope": "-0.00000025710110718100070964524535354404194429300184803616",
+          "abs_diff": "8.1777868455779946246268111682530396574047051910792e-53"
+        },
+        {
+          "n": 11,
+          "partition": [
+            3,
+            3,
+            3,
+            2
+          ],
+          "y_mpfr": "-0.000000095352513783202526681453882495837198919038111075597",
+          "y_telescope": "-0.00000009535251378320252668145388249583719891903811106067",
+          "abs_diff": "1.492743051650219108098831221512323638956920879261e-53"
+        },
+        {
+          "n": 11,
+          "partition": [
+            3,
+            3,
+            3,
+            1,
+            1
+          ],
+          "y_mpfr": "0.00000031256299210168713549029734905693784639323434899149",
+          "y_telescope": "0.00000031256299210168713549029734905693784639323434901436",
+          "abs_diff": "2.2866604055630767003561737677398628172732478343413e-53"
+        },
+        {
+          "n": 11,
+          "partition": [
+            3,
+            3,
+            2,
+            2,
+            1
+          ],
+          "y_mpfr": "0.0000001061209228001028629518388207402690944750941220794",
+          "y_telescope": "0.00000010612092280010286295183882074026909447509412211141",
+          "abs_diff": "3.200521649465096624551020719115333017432529051382e-53"
+        },
+        {
+          "n": 11,
+          "partition": [
+            3,
+            3,
+            2,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "-0.00000041372340182983352393338691100556286578874752023609",
+          "y_telescope": "-0.0000004137234018298335239333869110055628657887475202038",
+          "abs_diff": "3.2290061328361448712642971006274197045164980008288e-53"
+        },
+        {
+          "n": 11,
+          "partition": [
+            3,
+            3,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "0.00000032710313520936519453580302088233343247574886430637",
+          "y_telescope": "0.00000032710313520936519453580302088233343247574886432561",
+          "abs_diff": "1.9243913049715570525598063652874851526818306584905e-53"
+        },
+        {
+          "n": 11,
+          "partition": [
+            3,
+            2,
+            2,
+            2,
+            2
+          ],
+          "y_mpfr": "-0.000000003790562647366601814834817854762704966972198782243",
+          "y_telescope": "-0.000000003790562647366601814834817854762704966972198784753",
+          "abs_diff": "2.5100357878825134963797782327128625280942045595476e-54"
+        },
+        {
+          "n": 11,
+          "partition": [
+            3,
+            2,
+            2,
+            2,
+            1,
+            1
+          ],
+          "y_mpfr": "-0.00000004687823861188701248230703982110470014244797122092",
+          "y_telescope": "-0.000000046878238611887012482307039821104700142447971236257",
+          "abs_diff": "1.5337173756045457806640140253429091865967240884206e-53"
+        },
+        {
+          "n": 11,
+          "partition": [
+            3,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "0.00000020368361226083300356192319587517634275715648729595",
+          "y_telescope": "0.00000020368361226083300356192319587517634275715648728208",
+          "abs_diff": "1.3872325743759167937912084727681680860726220245706e-53"
+        },
+        {
+          "n": 11,
+          "partition": [
+            3,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "-0.00000022310554319458709179850638298735850975202471729426",
+          "y_telescope": "-0.00000022310554319458709179850638298735850975202471737244",
+          "abs_diff": "7.8182897249118454437924740176927778113550165371544e-53"
+        },
+        {
+          "n": 11,
+          "partition": [
+            3,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "0.000000084040100511553659315042745174290641245399299444053",
+          "y_telescope": "0.000000084040100511553659315042745174290641245399299347935",
+          "abs_diff": "9.6117925984647602172715875694996677620894820453903e-53"
+        },
+        {
+          "n": 11,
+          "partition": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            1
+          ],
+          "y_mpfr": "0.00000000074124105966836512295969030591731407723461713474752",
+          "y_telescope": "0.00000000074124105966836512295969030591731407723461710607493",
+          "abs_diff": "2.86725926768674333047999322803043526795135115894e-53"
+        },
+        {
+          "n": 11,
+          "partition": [
+            2,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "0.0000000076625687992032391098807171081072686866937402773205",
+          "y_telescope": "0.0000000076625687992032391098807171081072686866937402467051",
+          "abs_diff": "3.0615363284081236567723286210130834202332471122256e-53"
+        },
+        {
+          "n": 11,
+          "partition": [
+            2,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "-0.000000035876369859896957713094933559705371987741836927739",
+          "y_telescope": "-0.000000035876369859896957713094933559705371987741836988102",
+          "abs_diff": "6.0362810094977513134921238379557819012978908482843e-53"
+        },
+        {
+          "n": 11,
+          "partition": [
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "0.000000045529276416849455107125252155326143029812950422572",
+          "y_telescope": "0.000000045529276416849455107125252155326143029812950333956",
+          "abs_diff": "8.8615657902147101287117620681809080800414911327362e-53"
+        },
+        {
+          "n": 11,
+          "partition": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "-0.000000023503935870713641143440260637281453578259635990264",
+          "y_telescope": "-0.000000023503935870713641143440260637281453578259636134146",
+          "abs_diff": "1.438823262826030128330511735569477665184884354486e-52"
+        },
+        {
+          "n": 11,
+          "partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "y_mpfr": "0.0000000043750949640059961554880637646254894990991658996139",
+          "y_telescope": "0.0000000043750949640059961554880637646254894990991658717013",
+          "abs_diff": "2.791256337495169634582301344928807854576174291153e-53"
+        }
+      ],
+      "num_samples": 191,
+      "max_abs_diff": "2.5422586207322251556063305849663509277011735949437e-51"
+    },
+    "precision": "symbolic_q",
+    "truncation_eps": 0.0
+  }
+}

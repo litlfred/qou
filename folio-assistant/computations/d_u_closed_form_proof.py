@@ -42,7 +42,7 @@ HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
-from hecke_character_symbolic import atomic_braid_to_crossings  # noqa: E402
+from canonical_braid_crossings import atom_canonical_crossings as atomic_braid_to_crossings  # noqa: E402
 
 
 def count_averaged_crossings(Z: int, N: int) -> dict:

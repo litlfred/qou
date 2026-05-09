@@ -1,0 +1,321 @@
+{
+  "engine": "numpy",
+  "engineVersion": "numpy 2.4.4",
+  "computedAt": "2026-05-09T00:16:36.911225+00:00",
+  "commitSha": "f178edd94a6d880523fadda22b11180b48760635",
+  "assertions": [
+    {
+      "name": "q_hecke_seminormal_closes_gap[proton]_to_1e-3",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "q_hecke_seminormal_closes_gap[proton]_to_1e-6",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "q_hecke_seminormal_closes_gap[neutron]_to_1e-3",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "q_hecke_seminormal_closes_gap[neutron]_to_1e-6",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "q_hecke_seminormal_closes_gap[deuteron]_to_1e-3",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "q_hecke_seminormal_closes_gap[deuteron]_to_1e-6",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "q_hecke_seminormal_closes_gap[tritium]_to_1e-3",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "q_hecke_seminormal_closes_gap[tritium]_to_1e-6",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "q_hecke_seminormal_closes_gap[helium-3]_to_1e-3",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "q_hecke_seminormal_closes_gap[helium-3]_to_1e-6",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 59463,
+  "computation": "tr-m-q-hecke-seminormal",
+  "scriptFile": "tr_m_q_hecke_seminormal.py",
+  "scriptHash": "ce83de9142e8",
+  "scriptCommitSha": "f178edd94a6d880523fadda22b11180b48760635",
+  "description": "Closes the character gap in the partition-sum tr_M path: tr_M(β) = Σ_λ y_λ(q) · χ^λ_q(β) via canonical Wenzl y_λ (numerical-q-from-start) + Hoefsmit seminormal χ^λ_q at q_0. Cross-checks against `markov_trace_recursive` reference (atomic-tr-m-mpfr-50dps.witness.json). Closes the residual gap identified in tr-m-jones-markov-cross-check.witness.json (rel err ~55-80% with q=1 MN character → expected ~1e-6 with q-Hecke seminormal character).",
+  "data": {
+    "cross_check_table": [
+      {
+        "atom": "proton",
+        "Z": 1,
+        "N": 0,
+        "A": 1,
+        "n_strands": 3,
+        "canonical_abs_tr_M": 1.0653062285923893,
+        "q_hecke_partition_sum": 1.0653062285923935,
+        "q_hecke_abs": 1.0653062285923935,
+        "rel_err_vs_canonical": 3.9602204327201236e-15,
+        "agrees_to_1e_minus_3": true,
+        "agrees_to_1e_minus_6": true,
+        "elapsed_sec": 0.15184295099993506,
+        "non_zero_partitions": 3,
+        "top_3_contributions": [
+          {
+            "partition": [
+              3
+            ],
+            "dim": 1,
+            "y_at_q0": 0.4153957863345666,
+            "chi_q_at_q0": 1.382494514546446,
+            "contribution": 0.5742823959732458
+          },
+          {
+            "partition": [
+              2,
+              1
+            ],
+            "dim": 2,
+            "y_at_q0": 0.2809296339798641,
+            "chi_q_at_q0": 1.8077033200981636,
+            "contribution": 0.5078374320593622
+          },
+          {
+            "partition": [
+              1,
+              1,
+              1
+            ],
+            "dim": 1,
+            "y_at_q0": 0.022744945705705264,
+            "chi_q_at_q0": -0.7392235469701234,
+            "contribution": -0.016813599440214322
+          }
+        ]
+      },
+      {
+        "atom": "neutron",
+        "Z": 0,
+        "N": 1,
+        "A": 1,
+        "n_strands": 3,
+        "canonical_abs_tr_M": 0.9232332971695837,
+        "q_hecke_partition_sum": 0.9232332971695876,
+        "q_hecke_abs": 0.9232332971695876,
+        "rel_err_vs_canonical": 4.208882628151452e-15,
+        "agrees_to_1e_minus_3": true,
+        "agrees_to_1e_minus_6": true,
+        "elapsed_sec": 0.000795348999986345,
+        "non_zero_partitions": 3,
+        "top_3_contributions": [
+          {
+            "partition": [
+              2,
+              1
+            ],
+            "dim": 2,
+            "y_at_q0": 0.2809296339798641,
+            "chi_q_at_q0": 1.7008888500891666,
+            "contribution": 0.4778300820959815
+          },
+          {
+            "partition": [
+              3
+            ],
+            "dim": 1,
+            "y_at_q0": 0.4153957863345666,
+            "chi_q_at_q0": 1.1221068372363079,
+            "contribution": 0.46611845200516966
+          },
+          {
+            "partition": [
+              1,
+              1,
+              1
+            ],
+            "dim": 1,
+            "y_at_q0": 0.022744945705705264,
+            "chi_q_at_q0": -0.910762206232366,
+            "contribution": -0.020715236931563505
+          }
+        ]
+      },
+      {
+        "atom": "deuteron",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "n_strands": 6,
+        "canonical_abs_tr_M": 0.3882864715477134,
+        "q_hecke_partition_sum": 0.3882864715477161,
+        "q_hecke_abs": 0.3882864715477161,
+        "rel_err_vs_canonical": 7.00525671030851e-15,
+        "agrees_to_1e_minus_3": true,
+        "agrees_to_1e_minus_6": true,
+        "elapsed_sec": 3.0886311740000565,
+        "non_zero_partitions": 11,
+        "top_3_contributions": [
+          {
+            "partition": [
+              5,
+              1
+            ],
+            "dim": 5,
+            "y_at_q0": 0.058960681401453746,
+            "chi_q_at_q0": 3.2158914339387135,
+            "contribution": 0.18961115025812472
+          },
+          {
+            "partition": [
+              6
+            ],
+            "dim": 1,
+            "y_at_q0": 0.05918771693214866,
+            "chi_q_at_q0": 1.559758739418077,
+            "contribution": 0.09231855875112216
+          },
+          {
+            "partition": [
+              4,
+              2
+            ],
+            "dim": 9,
+            "y_at_q0": 0.04028438696593522,
+            "chi_q_at_q0": 1.6737481247387067,
+            "contribution": 0.06742591714048247
+          }
+        ]
+      },
+      {
+        "atom": "tritium",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "n_strands": 9,
+        "canonical_abs_tr_M": 0.10405211867552573,
+        "q_hecke_partition_sum": 0.10405211867552684,
+        "q_hecke_abs": 0.10405211867552684,
+        "rel_err_vs_canonical": 1.0669874277978483e-14,
+        "agrees_to_1e_minus_3": true,
+        "agrees_to_1e_minus_6": true,
+        "elapsed_sec": 55.84989316999997,
+        "non_zero_partitions": 30,
+        "top_3_contributions": [
+          {
+            "partition": [
+              6,
+              3
+            ],
+            "dim": 48,
+            "y_at_q0": 0.0044564421255197766,
+            "chi_q_at_q0": 10.16741952165563,
+            "contribution": 0.04531051666413828
+          },
+          {
+            "partition": [
+              8,
+              1
+            ],
+            "dim": 8,
+            "y_at_q0": 0.007306301640626693,
+            "chi_q_at_q0": 3.7402811795852773,
+            "contribution": 0.027327622518809054
+          },
+          {
+            "partition": [
+              7,
+              2
+            ],
+            "dim": 27,
+            "y_at_q0": 0.0062689450192913556,
+            "chi_q_at_q0": 3.1900195401578078,
+            "contribution": 0.01999805710771439
+          }
+        ]
+      },
+      {
+        "atom": "helium-3",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "n_strands": 9,
+        "canonical_abs_tr_M": 0.20654085856226276,
+        "q_hecke_partition_sum": 0.2065408585622649,
+        "q_hecke_abs": 0.2065408585622649,
+        "rel_err_vs_canonical": 1.0347489292338557e-14,
+        "agrees_to_1e_minus_3": true,
+        "agrees_to_1e_minus_6": true,
+        "elapsed_sec": 0.35315382099997805,
+        "non_zero_partitions": 30,
+        "top_3_contributions": [
+          {
+            "partition": [
+              6,
+              3
+            ],
+            "dim": 48,
+            "y_at_q0": 0.0044564421255197766,
+            "chi_q_at_q0": 16.06473221702975,
+            "contribution": 0.0715915493871661
+          },
+          {
+            "partition": [
+              8,
+              1
+            ],
+            "dim": 8,
+            "y_at_q0": 0.007306301640626693,
+            "chi_q_at_q0": 6.567663928203207,
+            "contribution": 0.04798533373371584
+          },
+          {
+            "partition": [
+              7,
+              2
+            ],
+            "dim": 27,
+            "y_at_q0": 0.0062689450192913556,
+            "chi_q_at_q0": 7.5675725819338036,
+            "contribution": 0.047440696445639745
+          }
+        ]
+      }
+    ],
+    "method": {
+      "formula": "tr_M(β) = Σ_{λ ⊢ 3A} y_λ(q_0) · χ^λ_q(β_atomic)",
+      "y_lambda_source": "wedderburn_jones_markov.y_lambda_at — Wenzl Schur principal specialization with numerical-q-from-start (closes the WEIGHT bug; PR #572 ac7880c5)",
+      "chi_q_source": "hecke_characters.build_seminormal_matrices + mass_at_3A_proper.chi_lambda_of_word — Hoefsmit seminormal matrices at q = q_0, traced through the atomic braid word (closes the CHARACTER gap; this PR's contribution)",
+      "canonical_reference": "atomic-tr-m-mpfr-50dps.witness.json — produced by markov_trace_recursive (canonical Markov-axiom recursive ascent), mpfr 50-dps.",
+      "tolerance_tight": "1e-6 relative (full-precision agreement)",
+      "tolerance_loose": "1e-3 relative (engineering tolerance)"
+    }
+  }
+}

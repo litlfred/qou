@@ -99,12 +99,25 @@ work toward an explicit closed form.
 The refined statement modifies the bottleneck for closing the
 nucleon-mass anchors $m_\mathfrak{p}/m_e$ and $m_\mathfrak{n}/m_e$
 ([`prop:atomic-mass-gb-nf`](#prop:atomic-mass-gb-nf)):
-the empirical atomic-shift coefficients $(18, 3, 1)$
+the atomic-shift coefficients $(18, 3, 1)$
 ([w3 audit](../../docs/audits/2026-05-03-w3-habiro-unblocked.md))
 are **not isolated scalars** but **maximum pole orders over the
 matrix entries of $A^\lambda_{\mu, \nu}(\sigma_{n_1})$ in the
-maximizing LR block**. Closing $(18, 3, 1)$ categorically reduces to
+maximizing LR block** — closing $(18, 3, 1)$ categorically reduces to
 explicit Hoefsmit-block computations for the relevant $(\lambda, \mu, \nu)$.
+The closing computation is now executed for the proton and deuteron
+in
+[`per_irrep_pole_atom.py`](../../folio-assistant/computations/per_irrep_pole_atom.py)
+(witnesses
+[`per-irrep-pole-proton-h3.witness.json`](../../folio-assistant/computations/per-irrep-pole-proton-h3.witness.json)
++
+[`per-irrep-pole-deuteron-h6.witness.json`](../../folio-assistant/computations/per-irrep-pole-deuteron-h6.witness.json)),
+yielding $\mathrm{shift}_{\mathrm{NF}}(\beta_p) = 19$ and
+$\mathrm{shift}_{\mathrm{NF}}(\beta_D) = 40$ — exact matches to
+$18 \cdot Z + 21 \cdot N + 1$ from
+[`prop:per-nucleon-shift-additive-linearity`](#prop:per-nucleon-shift-additive-linearity).
+A ≥ 3 atoms (T, ³He, ⁴He) follow the same pipeline; chi cache
+emission is the only new compute per atom.
 
 ## Witnesses
 

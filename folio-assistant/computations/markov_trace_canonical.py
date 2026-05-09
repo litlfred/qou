@@ -287,7 +287,7 @@ if __name__ == "__main__":
     s1_inv = SymbolicHeckeElement({(1,): sp.Integer(1),
                                      (): -H_SYMB_full})
     figure_8 = s0 * s1_inv * s0 * s1_inv
-    figure_8, _ = div.reduce(figure_8)
+    figure_8, _ = div.reduce(figure_8, engine='laurent')
     # Symbolic trace
     tr_sym = tr_M_element(figure_8, 3)
     tr_num = complex(tr_sym.subs(q_sym, q0_num))
