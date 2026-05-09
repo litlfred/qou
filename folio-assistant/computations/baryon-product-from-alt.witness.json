@@ -1,8 +1,8 @@
 {
   "engine": "scipy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T13:14:11.262791+00:00",
-  "commitSha": "ca5d8253696323af79c0b04b1435c6d31239af8e",
+  "computedAt": "2026-05-09T16:09:54.874919+00:00",
+  "commitSha": "d9e424d0424708d5306ee1e7d350c40f528423c9",
   "assertions": [
     {
       "name": "pointwise: ∏ dc_k/dz = sign · Δ_root · ∏ ∂F/∂z / ∏ ∂F/∂c",
@@ -39,11 +39,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 342,
+  "durationMs": 225,
   "computation": "baryon-product-from-alt",
   "scriptFile": "baryon_product_from_alt.py",
   "scriptHash": "a6060bc4cd59",
-  "scriptCommitSha": "387882728a6d0b242a0358baf8c51a8b009d3d32",
+  "scriptCommitSha": "c4e7ab96dd5009ca3902a3aba37a345f8c305229",
   "description": "Numerical archimedean witness for prop:baryon-product-from-alt: the simultaneous 3-root product ∏ dc_k/dz equals the sign-isotype (Alt^3) projection of the color-tube Jacobian, expressible as Δ_root(z) · (∏ ∂F/∂z) / (∏ ∂F/∂c).  Pointwise ratio is verified along PL thimbles and the integrated thimble period is cross-checked against the Vandermonde form.",
   "contentBlock": "prop:baryon-product-from-alt",
   "parameters": {
