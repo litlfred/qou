@@ -122,13 +122,21 @@ $$
 $$
 
 a finite combinatorial sum over height-6 partitions of $3A$.
-By the
-[ontological-agnosticism principle](#rem:ontological-agnosticism),
-the value is *atom-independent* — the same for $A=2,3,4,\ldots$
-modulo a normalisation that absorbs into the $1/[3A]_q!$
-denominator. This converts $\alpha_5$ from an AME-fitted
-parameter (current value $\approx -4.2 \times 10^5$ MeV) to a
-**derived q-rational**, with no fitting required.
+This is the **simplest closed-form ansatz** consistent with the
+LP-dual characterisation of
+[`prop:mass-formula-iterative-lp-dual`](#prop:mass-formula-iterative-lp-dual);
+it is *conjectural*, not implied by the central-element theorem.
+
+**Empirical status.** The companion witness
+[`alpha-5-jucys-murphy-central.witness.json`](folio-assistant/computations/alpha-5-jucys-murphy-central.witness.json)
+**refutes** this ansatz at $\ell = 5$: the relative spread of
+the normalised quantity across $A \in \{2, 3, 4\}$ is
+$\approx 482\%$ at $q_0$, and the spread is uniformly bad
+across the entire physical regime $|q| \in (1, \varphi)$.
+See [`rem:alpha-5-jm-central-empirical-findings`](#rem:alpha-5-jm-central-empirical-findings)
+for the full table and analysis. The structural framework
+(Murphy 1992 + LP-dual extraction) is intact; the simplest
+closed form is not.
 
 **Remark (categorical content).** The Jucys–Murphy elements
 are the Hecke-algebraic shadow of *commuting Casimirs* in

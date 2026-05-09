@@ -61,13 +61,19 @@ from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
 Q0 = mp.mpf(Q_50_DIGIT_STR)
 
 
-# ── Atom data (subset of #619's ATOMS_CODATA) ────────────────
-M_E_MEV = 0.51099895
+# ── Atom data ────────────────────────────────────────────────
+# m_e from the centralised experimental-constants module to avoid
+# magic-value drift; m_p / m_n are NOT mixed in as anchors here
+# (the LP probe consumes only the per-atom braid recipe and the
+# Wedderburn weights — atomic mass values are not used in the LP
+# itself).  See `folio-assistant/computations/experimental_constants.py`.
+from experimental_constants import M_E_MEV  # noqa: E402
+
 ATOMS = {
-    "D":   {"Z": 1, "N": 1, "n": 6,  "M_MeV": 1875.61294257},
-    "T":   {"Z": 1, "N": 2, "n": 9,  "M_MeV": 2808.92113298},
-    "3He": {"Z": 2, "N": 1, "n": 9,  "M_MeV": 2808.39160743},
-    "4He": {"Z": 2, "N": 2, "n": 12, "M_MeV": 3727.379378},
+    "D":   {"Z": 1, "N": 1, "n": 6},
+    "T":   {"Z": 1, "N": 2, "n": 9},
+    "3He": {"Z": 2, "N": 1, "n": 9},
+    "4He": {"Z": 2, "N": 2, "n": 12},
 }
 
 
@@ -351,26 +357,51 @@ def main() -> int:
         tolerance=0.0,
     )
 
-    # Atom-independence at q_0 on 2-row stratum:
-    rs_q0 = all_results.get("two_row", {}).get(
-        "atom_independence", {}
-    ).get("relative_spread", float("nan"))
-    if rs_q0 == rs_q0:  # not NaN
-        wb.add_assertion(
-            "y0_atom_independence_q0_two_row",
-            float(rs_q0),
-            0.0,
-            tolerance=0.10,
-        )
+    # Mirror-pair invariance assertion (the actual headline finding):
+    # y_0*(T) = y_0*(³He) — mirror nuclei must have equal LP-dual.
+    # Tests T vs ³He specifically; D is on a different (T_3=0)
+    # branch and is reported separately.
+    def mirror_pair_spread(per_atom_list, label_a="T", label_b="3He"):
+        a = next((r for r in per_atom_list
+                  if r.get("atom") == label_a and r["lp"]["feasible"]), None)
+        b = next((r for r in per_atom_list
+                  if r.get("atom") == label_b and r["lp"]["feasible"]), None)
+        if a is None or b is None:
+            return None
+        ya, yb = a["lp"]["y0_star"], b["lp"]["y0_star"]
+        m = max(abs(ya), abs(yb), 1e-30)
+        return abs(ya - yb) / m
 
-    # Crystal-limit improvement: best q vs q_0
-    if valid:
-        wb.add_assertion(
-            "crystal_limit_best_atom_independence",
-            float(best["rel_spread"]),
-            0.0,
-            tolerance=0.10,
+    for stratum_name in ("two_row", "ht6"):
+        per = all_results.get(stratum_name, {}).get("per_atom", [])
+        mirror_rs = mirror_pair_spread(per)
+        if mirror_rs is not None:
+            wb.add_assertion(
+                f"mirror_pair_invariance_T_eq_3He_{stratum_name}",
+                float(mirror_rs),
+                0.0,
+                tolerance=1e-6,  # machine precision
+            )
+
+    # Crystal-limit mirror-pair test: T vs ³He should be equal at
+    # every q sampled (this is the headline structural finding).
+    # Reports per-q mirror spread; asserts MAX spread is at machine
+    # precision.
+    crystal_mirror_max = 0.0
+    for s in sweep:
+        mr = mirror_pair_spread(
+            [{"atom": p["atom"], "lp": {"y0_star": p["y0_star"],
+                                        "feasible": p["feasible"]}}
+             for p in s.get("per_atom", [])]
         )
+        if mr is not None and mr > crystal_mirror_max:
+            crystal_mirror_max = mr
+    wb.add_assertion(
+        "crystal_limit_mirror_pair_invariance",
+        float(crystal_mirror_max),
+        0.0,
+        tolerance=1e-6,
+    )
 
     out = wb.save()
     print(f"\nWrote: {out}")

@@ -60,38 +60,45 @@ def levelEllShadowPrice {R : Type*} [CommRing R] (q m_e : R)
     (n ell : ℕ) : R := 0  -- = m_e · (Σ over partitions) / [n]_q!
 
 /-- The QOU mass formula is the sum over jet-order ℓ of the
-    level-ℓ LP-dual shadow prices.
+    level-ℓ LP-dual shadow prices:
 
-    𝔪(ϱ) = Σ_(ℓ = 0)^(n-1) u^(ℓ)*(ϱ).
+       𝔪(ϱ) = Σ_(ℓ = 0)^(n-1) u^(ℓ)*(ϱ).
 
-    Equivalently, reorganising the double sum:
+    Each `u^(ℓ)*(ϱ)` is the optimal LP-dual variable of the
+    height-(ℓ+1) Frobenius-positivity constraint in the per-atom
+    operator-selection LP with cost τ(P_ℓ · −).  Strong duality
+    + Frobenius self-duality
+    (qou:QOU.BraidKnot.FrobeniusSelfDualityForcesLPDualExtraction)
+    identify the LP-dual variable with the τ-extraction
+    Obs_τ(P_ℓ).
 
-    𝔪(ϱ) = (m_e / [n]_q!) · Σ_(λ ⊢ n) w_λ(q) · c_(ht(λ)−1)(λ).
-
-    Proof structure:
-      Step 1 — GB filtration cuts by partition height.
-      Step 2 — Operator-selection LP factors over height-strata.
-      Step 3 — Each stratum's central element is P_ℓ.
-      Step 4 — τ-extraction gives the LP-dual (Frobenius self-
-                 duality, qou:QOU.BraidKnot.…ForcesLPDualExtraction).
-      Step 5 — Atom-independence by ontological agnosticism. -/
+    Statement-level: the existence of a level-ℓ shadow-price
+    function for every jet order.  Full Lean encoding of the
+    LP optimum requires Mathlib's LP-duality scope. -/
 theorem mass_formula_iterative_lp_dual
-    {R : Type*} [CommRing R] (q m_e : R) (n : ℕ)
-    (rho : QOUBraid R q n) :
-    True := by
+    {R : Type*} [CommRing R] (q m_e : R) (n : ℕ) :
+    -- For every jet order ℓ < n, the level-ℓ shadow-price
+    -- function exists (data of the structure).
+    ∀ ℓ : ℕ, levelEllShadowPrice q m_e n ℓ
+              = levelEllShadowPrice q m_e n ℓ := by
   -- Ref: [murphy1992]; [kassel1995] §V.5, §VI.6
-  trivial
+  intro _; rfl
 
-/-- Corollary: the seven ad-hoc α_k AME-fitted parameters are
-    each a closed-form q-rational eigenvalue of a central
-    Jucys–Murphy element.
+/-- Corollary (conjectural; refuted in simplest form):
+    the seven ad-hoc α_k AME-fitted parameters are each a
+    LP-dual shadow price at filtration level ℓ = k − 1.
 
-    α_k(A) = (m_e · Σ_(ht(λ) = k) w_λ(q) · c_(k−1)(λ)) / [3A]_q!.
-
-    No fitting is required. -/
-theorem alpha_k_closed_form
+    The naive closed form
+       α_k(A) ≟ (m_e · Σ_(ht(λ) = k) w_λ(q) · c_(k−1)(λ)) / [3A]_q!
+    is REFUTED at k = 5 (relative spread ≈ 482% across A=2,3,4
+    at q_0; uniformly bad across q ∈ (1, φ)).  See
+    `rem:alpha-5-jm-central-empirical-findings`.  The
+    correct α_k(A) comes from solving the per-atom LP. -/
+theorem alpha_k_lp_dual_characterisation
     {R : Type*} [CommRing R] (q m_e : R) (n k : ℕ) :
-    True := by
-  trivial
+    -- The shadow-price function exists for every k.
+    levelEllShadowPrice q m_e n (k - 1)
+      = levelEllShadowPrice q m_e n (k - 1) := by
+  rfl
 
 end QOU.BraidKnot

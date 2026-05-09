@@ -91,34 +91,55 @@ $T_w \in H_n(R, q)$ decomposes as
 $$\mathfrak{m}(\varrho) = \sum_{\ell = 0}^{\ell_{\max}} u^{(\ell)*}(T_w)$$
 
 where each $u^{(\ell)*}$ is the LP-dual variable of the level-$\ell$
-Frobenius-positivity constraint, expressed as a Markov trace of the
-$\ell$-th Jucys–Murphy elementary symmetric polynomial:
+Frobenius-positivity constraint in the per-atom operator-selection LP
+with cost operator $\tau(P_\ell \cdot -)$ and $P_\ell := e_\ell(J_1,
+\ldots, J_n) \in Z(H_n(R, q))$ (Murphy 1992 central element). The
+LP-dual *characterisation* — that $\mathfrak{m}(\varrho)$ is a sum
+of shadow prices at each filtration level $\ell$ — is the rigorous
+content of the framework.
 
-$$u^{(\ell)*}(T_w) = m_e \cdot \mathrm{tr}_M\bigl(P_\ell \cdot T_w\bigr) / [n]_q!$$
+A naive *closed-form* ansatz
 
-with $P_\ell := e_\ell(J_1, \ldots, J_n) \in Z(H_n(R, q))$.
+$$u^{(\ell)*}(T_w) \stackrel{?}{=} m_e \cdot \mathrm{tr}_M\bigl(P_\ell \cdot T_w\bigr) / [n]_q!$$
 
-### Properties of each $u^{(\ell)*}$
+has been **empirically refuted at $\ell = 5$** (relative spread
+$\approx 482\%$ across $A \in \{2, 3, 4\}$ at $q_0$; uniformly bad
+across the physical regime $|q| \in (1, \varphi)$ — see
+[`rem:alpha-5-jm-central-empirical-findings`](../../content/quantum-observable-universe/braids-and-knots/alpha-5-jm-central-empirical-findings.md)).
+The correct closed form for $u^{(\ell)*}$ is obtained by *solving*
+the per-atom LP, not by substituting the Markov trace of $P_\ell$
+directly.
 
-1. **Centrality.** $P_\ell \in Z(H_n(q))$ (Murphy 1981, by JM-element
-   theorem). Hence $u^{(\ell)*}$ acts as a **scalar** $c_\ell(\lambda)$
-   on each Wedderburn block $V_\lambda$.
+### Properties of each $u^{(\ell)*}$ (LP-dual characterisation)
 
-2. **Flatness.** $\nabla_q u^{(\ell)*} = 0$ — flat section of the
-   categorical q-connection
+1. **Centrality of cost.** $P_\ell \in Z(H_n(q))$ (Murphy 1992).
+   Hence the cost operator $\tau(P_\ell \cdot -)$ block-diagonalises
+   on Wedderburn blocks with leading-order scalar $c_\ell(\lambda)$
+   on $V_\lambda$.
+
+2. **Flatness of LP-dual.** $\nabla_q u^{(\ell)*} = 0$ — flat
+   section of the categorical q-connection
    ([def:categorical-q-connection](../../content/quantum-observable-universe/quantum-observable-universes/categorical-q-connection.md)).
    *Proof:* complementary slackness at the LP optimum forces
-   $\partial_q u^{(\ell)*} = 0$ along binding constraints; the
-   q-connection moves only along the parameter direction.
+   $\partial_q u^{(\ell)*} = 0$ along binding constraints.
 
-3. **Crystal-limit invariance.**
-   $u^{(\ell)*}\big|_{q = q_0} = u^{(\ell)*}\big|_{q \to 0}$
-   ([rem:ontological-agnosticism](../../content/quantum-observable-universe/braids-and-knots/ontological-agnosticism.md)).
+3. **Crystal-limit / mirror-pair invariance.** The LP-dual
+   $u^{(\ell)*}$ inherits the spin-involution invariance
+   $u^{(\ell)*}(\sigma(\beta)) = u^{(\ell)*}(\beta)$ (proved
+   generically in
+   [`prop:spin-involution-lp-dual-invariance`](../../content/quantum-observable-universe/braids-and-knots/spin-involution-lp-dual-invariance.md)),
+   so mirror nuclei give identical shadow prices — empirically
+   confirmed at $\ell = 5$
+   ([`rem:lp-dual-isospin-invariance`](../../content/quantum-observable-universe/braids-and-knots/lp-dual-isospin-invariance.md):
+   $y_0^*(T) = y_0^*({}^3\mathrm{He})$ exactly).
 
-4. **Atom-independence.** $c_\ell(\lambda)$ depends only on the partition
-   $\lambda$ (via cell-content sum), not on the specific atom braid $T_w$.
-   So $\alpha_\ell := \sum_{\rm relevant\;\lambda} w_\lambda c_\ell(\lambda)$
-   is a **purely combinatorial constant** at each level.
+4. **Conjectural closed form (status: open).** The simplest
+   closed-form ansatz $\alpha_\ell := \sum w_\lambda c_\ell(\lambda)$
+   (purely combinatorial, atom-independent) is **refuted at $\ell = 5$**.
+   The correct $u^{(\ell)*}(A, T_3)$ depends on $A$ and $|T_3|$ — a
+   non-trivial function of the per-atom recipe that the LP solves
+   for. Whether a refined closed form exists is the central open
+   research question of this audit.
 
 ### Recursion (iterative proof structure)
 

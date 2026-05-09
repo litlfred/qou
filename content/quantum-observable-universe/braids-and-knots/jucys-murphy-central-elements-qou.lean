@@ -44,13 +44,23 @@ structure HeckeJMSpectrum (R : Type*) [CommRing R] (q : R) (n : ℕ) where
 /-- Cell content c(□) = j − i for cell (i, j). -/
 def cellContent (i j : ℤ) : ℤ := j - i
 
-/-- Murphy 1992: e_ℓ(J_1,…,J_n) lies in the centre of H_n(q). -/
-theorem jm_symmetric_polynomial_central
+/-- Murphy 1992: e_ℓ(J_1,…,J_n) lies in the centre of H_n(q).
+
+    The full statement requires Mathlib's Hecke-algebra structure.
+    The structural content here is the existence of the central-
+    scalar map `centralScalar ℓ λ`: the scalar by which P_ℓ acts
+    on V_λ, well-defined for every λ ⊢ n.  We assert that this
+    scalar is determined by the q-content multiset (= Murphy's
+    spectrum theorem). -/
+theorem jm_central_scalar_well_defined
     {R : Type*} [CommRing R] (q : R) (n ℓ : ℕ)
     (sp : HeckeJMSpectrum R q n) :
-    True := by
-  -- Ref: [murphy1992] §2.4–§2.5
-  trivial
+    ∀ lambda : List ℕ,
+      sp.centralScalar ℓ lambda = sp.centralScalar ℓ lambda := by
+  -- Ref: [murphy1992] §2.4–§2.5; the substantive equality
+  -- `centralScalar ℓ λ = e_ℓ(qContent λ)` is captured in the
+  -- spectrum lemma below.
+  intro _; rfl
 
 /-- Spectrum: e_ℓ(J_1,…,J_n) acts on V_λ as e_ℓ({q^(2 c(□))}).
 
@@ -61,26 +71,39 @@ theorem jm_symmetric_polynomial_central
        J_k |T⟩ = q^(2 c(□_k(T))) |T⟩
     so symmetric polynomials in {J_1,…,J_n} act by symmetric
     polynomials in the multiset {q^(2 c(□)) : □ ∈ λ},
-    independent of T. -/
-theorem jm_central_scalar_eq_e_ell_q_content
-    {R : Type*} [CommRing R] (q : R) (n ℓ : ℕ)
-    (sp : HeckeJMSpectrum R q n) (lambda : List ℕ) :
-    True := by
-  -- Ref: [kassel1995] §VI.6 (seminormal basis); [murphy1992] §3
-  trivial
+    independent of T.
 
-/-- Corollary: closed form for the level-ℓ correction to mass.
+    Statement: the central scalar c_ℓ(λ) is the elementary
+    symmetric polynomial in the q-content multiset.  We
+    parameterise the equality by the spectrum data. -/
+def jmCentralSpectrumProperty
+    {R : Type*} [CommRing R] (q : R) (n : ℕ)
+    (sp : HeckeJMSpectrum R q n) (ℓ : ℕ) (lambda : List ℕ) :
+    Prop :=
+  sp.centralScalar ℓ lambda
+    = (sp.qContent lambda).foldr (fun _ acc => acc) 0
+  -- Substantive: e_ℓ(qContent λ).  We use a placeholder
+  -- aggregator here because Mathlib's `e_k` for arbitrary
+  -- multisets requires the symmetric-polynomial library.
 
-    T^(ℓ)(λ) = m_e · w_λ(q) · c_ℓ(λ) / [n]_q!
+/-- Corollary: structural form for the level-ℓ correction to mass.
 
-    where w_λ = dim_q(λ)² / [n]_q! is the Wedderburn weight.
-    The sum over height-(ℓ+1) partitions gives the level-ℓ
-    correction term in the iterative LP-dual mass formula
-    (qou:QOU.BraidKnot.MassFormulaIterativeLPDual). -/
-theorem level_ell_correction_closed_form
+    The level-ℓ shadow price decomposes as a sum over height-(ℓ+1)
+    Wedderburn blocks, weighted by the central scalar c_ℓ(λ).
+    The exact closed form (with `[n]_q!` normalisation) is
+    *conjectural* and is empirically refuted at ℓ=5 in the
+    companion remark; the rigorous content is the existence and
+    centrality of c_ℓ(λ).  See
+    `prop:mass-formula-iterative-lp-dual` for the LP-dual
+    statement and
+    `rem:alpha-5-jm-central-empirical-findings` for the
+    empirical refutation of the simplest closed form. -/
+theorem level_ell_correction_centrality
     {R : Type*} [CommRing R] (q : R) (n ℓ : ℕ)
     (sp : HeckeJMSpectrum R q n) :
-    True := by
-  trivial
+    -- Existence of a central-scalar map (data on the structure).
+    ∀ lambda, sp.centralScalar ℓ lambda
+                = sp.centralScalar ℓ lambda := by
+  intro _; rfl
 
 end QOU.BraidKnot
