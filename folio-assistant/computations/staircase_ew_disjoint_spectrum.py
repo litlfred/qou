@@ -34,15 +34,14 @@ import numpy as np
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-from hecke_characters import build_seminormal_matrices
-from q_parameter import Q as q0
+from q_parameter import Q as q0, HA
 from witness_base import WitnessBuilder
-# F6 (PR #581 follow-up): wire numerical-q Hoefsmit through BlockCache.
+# F6 (PR #582): wire numerical-q Hoefsmit through BlockCache.
 from syt_prefix_cache import BlockCache, build_seminormal_matrices_cached
 
 
 EW_EXPONENTS = (18, 10, 6, 2, -2, -6, -10, -18)
-_BLOCK_CACHE = BlockCache(float(q0), float(q0 - 1.0 / q0))
+_BLOCK_CACHE = BlockCache(q0, HA)
 
 
 def staircase_partition(k: int) -> tuple[int, ...]:

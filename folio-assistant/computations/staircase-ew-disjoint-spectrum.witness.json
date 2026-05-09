@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.4",
-  "computedAt": "2026-05-09T00:44:53.555755+00:00",
-  "commitSha": "456a232accd89b7cc0edcbd93fe151925618cb7f",
+  "computedAt": "2026-05-09T00:53:02.825715+00:00",
+  "commitSha": "1d068aa544b72ce722545243741cc1e5b2ee9b5e",
   "assertions": [
     {
       "name": "rho_3 dimension",
@@ -42,11 +42,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 203,
+  "durationMs": 212,
   "computation": "staircase-ew-disjoint-spectrum",
   "scriptFile": "staircase_ew_disjoint_spectrum.py",
-  "scriptHash": "d7e33c67dfaa",
-  "scriptCommitSha": "fe9e6b064d9c0c191ccf4547521f79cb4caac8a8",
+  "scriptHash": "896720d5bfb4",
+  "scriptCommitSha": "1d068aa544b72ce722545243741cc1e5b2ee9b5e",
   "description": "Restored staircase EW probe for the disjoint braid β_EW = σ₁⁴σ₃⁶σ₅⁸ on ρ₃, ρ₄, and the diagonal sector of ρ₅.",
   "auditOnly": "docs/audits/2026-05-07-staircase-ew-disjoint-spectrum.md",
   "parameters": {

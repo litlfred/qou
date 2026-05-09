@@ -42,11 +42,11 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from witness_base import WitnessBuilder  # noqa: E402
-from hecke_characters import standard_young_tableaux  # noqa: E402
+from hecke_characters import standard_young_tableaux, partitions_of  # noqa: E402
 from q_parameter import Q as Q0  # noqa: E402
 
 
-def crystal_chi_at_q0(shape: tuple[int, ...], gen_index: int) -> int:
+def crystal_chi_at_q_zero(shape: tuple[int, ...], gen_index: int) -> int:
     """Crystal-limit χ_λ(σ_{gen_index}) at q → 0.
 
     By Kashiwara crystal axioms (per #567's audit, conditional on
@@ -83,8 +83,8 @@ def main() -> int:
     print("Crystal-limit transport probe — scaffolding")
     print(f"  q_0 = {Q0:.6f}\n")
     rows = []
-    for shape in [(3,), (2, 1), (1, 1, 1)]:
-        chi_crystal = crystal_chi_at_q0(shape, gen_index=1)
+    for shape in partitions_of(3):
+        chi_crystal = crystal_chi_at_q_zero(shape, gen_index=1)
         rows.append({
             "shape": list(shape),
             "chi_crystal_q0": int(chi_crystal),
@@ -96,6 +96,7 @@ def main() -> int:
     print("  records the crystal-side numbers as input to that work.")
 
     out = (WitnessBuilder("crystal-limit-transport-probe", engine="python")
+        .set_audit_only("docs/audits/2026-05-08-compute-infrastructure-audit.md")
         .set_description(
             "L2 scaffolding probe: crystal-limit χ_λ(σ_1) values at "
             "q → 0 for H_3 partitions. Per rem:ontological-agnosticism "

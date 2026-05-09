@@ -40,11 +40,10 @@ import numpy as np
 sys.path.insert(0, str(Path(__file__).parent))
 from experimental_constants import M_E_MEV
 from hecke_character_symbolic import atomic_braid_to_crossings
-from light_isotope_sweep import partitions_of, dim_q
-from light_isotope_sweep import build_seminormal_matrices, H_VAL
+from light_isotope_sweep import partitions_of, dim_q, H_VAL
 from q_parameter import Q as Q_0
 from witness_base import WitnessBuilder
-# F6 (PR #581 follow-up): wire numerical-q Hoefsmit through BlockCache.
+# F6 (PR #582): wire numerical-q Hoefsmit through BlockCache.
 from syt_prefix_cache import BlockCache, build_seminormal_matrices_cached
 
 # Crossing-type → d for ρ_λ matrix construction (per
