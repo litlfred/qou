@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-09T19:54:58.196678+00:00",
-  "commitSha": "a94174421fa6df2b37e4af87f108150d8fec2c93",
+  "computedAt": "2026-05-09T19:55:38.174681+00:00",
+  "commitSha": "b72816b336ecaab14ada3347abb3383b05305427",
   "assertions": [
     {
       "name": "kite_power_drops_under_cancel[proton]",
@@ -34,7 +34,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6043,
+  "durationMs": 6017,
   "computation": "kite-tail-reconciliation",
   "scriptFile": "kite_tail_reconciliation.py",
   "scriptHash": "e76f4f36f73d",

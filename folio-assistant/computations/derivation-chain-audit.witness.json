@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T19:54:20.214286+00:00",
-  "commitSha": "a94174421fa6df2b37e4af87f108150d8fec2c93",
+  "computedAt": "2026-05-09T19:54:59.427084+00:00",
+  "commitSha": "b72816b336ecaab14ada3347abb3383b05305427",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2282,6 +2282,7 @@
         "unified-low-isotope-predictor.witness.json",
         "unified-mass-molecular.witness.json",
         "universal-ilp.witness.json",
+        "v-hat-to-delta-lambda-bridge.witness.json",
         "wall-violations-sweep.witness.json",
         "wall-violations.witness.json",
         "wedderburn-pair-volumes.witness.json",

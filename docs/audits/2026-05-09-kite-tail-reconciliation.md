@@ -188,27 +188,61 @@ the LO tautology in their docstrings.  The content block
 [`recomputed-low-isotope-mass-table.md`](../../content/quantum-observable-universe/braids-and-knots/recomputed-low-isotope-mass-table.md)
 has been rewritten to lead with the direct-binding formula.
 
-## V̂_i ↔ Δ_λ bridge (open)
+## V̂_i ↔ Δ_λ bridge — partial closure (1-dim channels exact)
 
-Per parallel investigation (Explore agent, 2026-05-09): no
-formulaic connection currently exists between the single-particle
-Frobenius volumes $\hat V_i$ (used in `mass_endomorphism.py`
-single-particle formula) and the atomic Wedderburn binding
-fractions $\Delta_\lambda(K)$ (used in `binding_K_direct.py`).
-The bridge is **partial and open**:
+**Probe.** [`v_hat_to_delta_lambda_bridge.py`](../../folio-assistant/computations/v_hat_to_delta_lambda_bridge.py)
+([witness](../../folio-assistant/computations/v-hat-to-delta-lambda-bridge.witness.json))
+tests whether the q-character $\chi^\lambda(\beta_K)$ that appears
+in Option G's $\Delta_\lambda^G = (\text{target}/S) \cdot \chi^\lambda / d_\lambda$
+factors through the per-channel Wedderburn-decomposed pair volumes
+$\sum_{i<j} (\hat V_i \hat V_j)_\lambda$ from `wedderburn_pair_volumes.py`.
 
-- **Single-particle**: $\mathfrak{m}(\beta) = |\prod \hat V_i| + \sum_i \Phi_q(|\hat V_i|) + \sum_{i<j} z^2 \Phi_q(|\hat V_i \hat V_j|)$ — basis-dependent in evaluation per `six-term-mass-formula-complete.md` §Term 2.
-- **Atomic binding**: $\Delta_\lambda(K)$ derived in `rho_k_h3a_frobenius_pairing.py` (Option G) as a Frobenius-norm optimisation over $Z(H_{3A})$, **not** as a function of $\hat V_i$.
-- **Closest candidate bridge**: [`wedderburn_pair_volumes.py`](../../folio-assistant/computations/wedderburn_pair_volumes.py)
-  Wedderburn-decomposes pair volumes
-  $|\hat V_i \hat V_j|_{\mathrm{Wedd}} = w_{\mathrm{sym}}\,\lambda_i^{\mathrm{sym}}\lambda_j^{\mathrm{sym}} + w_{\mathrm{std}}[\ldots] + w_{\mathrm{alt}}\,\lambda_i^{\mathrm{alt}}\lambda_j^{\mathrm{alt}}$,
-  giving per-λ weight structure that may be invertible to extract
-  $\Delta_\lambda$ from $\hat V_i$ pair data.
+**Result (proton + neutron at $H_3$).** The 1-dim channels close
+**exactly**:
 
-**Recommended 1-2 hour follow-up:** invert the
-`wedderburn_pair_volumes.py` per-λ weight structure to test whether
-$\Delta_\lambda^G$ from the Frobenius-pairing closure factors as
-$f_\lambda(\hat V_i, \hat V_j)$.  If it does, single-particle
-substrate fixes the atomic-binding correction directly — closing
-the gap between mass_endomorphism (single-particle) and the
-binding formula (atomic).
+| Atom | Channel | $d_\lambda$ | $\chi^\lambda(\beta_K)$ | $\sum_{i<j}(\hat V_i \hat V_j)_\lambda$ | rel. error |
+|---|---|---|---|---|---|
+| proton | sym | 1 | $1.3824945145464390$ | $1.3824945145464391$ | $5\!\times\!10^{-17}$ ✓ |
+| proton | alt | 1 | $-0.7392235469701222$ | $-0.7392235469701223$ | $6\!\times\!10^{-17}$ ✓ |
+| proton | std | 2 | $1.8077033200981562$ | $0.7381826740041164$ | $0.59$ ✗ |
+| neutron | sym | 1 | $1.1221068372363025$ | $1.1221068372363027$ | $2\!\times\!10^{-16}$ ✓ |
+| neutron | alt | 1 | $-0.910762206232365$ | $-0.910762206232365$ | $2\!\times\!10^{-16}$ ✓ |
+| neutron | std | 2 | $1.7008888500891589$ | $0.5047761849051495$ | $0.70$ ✗ |
+
+**4/4 one-dimensional channels match to ~1e-17 precision.** This
+**closes the bridge for 1-dim Wedderburn channels exactly**:
+
+$$
+\chi^\lambda(\beta_K) \;=\; \sum_{i<j}\big(\hat V_i \hat V_j\big)_\lambda
+\quad \text{for } \dim V_\lambda = 1
+$$
+
+via the canonical Wedderburn pair-volume decomposition.  Therefore
+$\Delta_\lambda^G$ for 1-dim partitions $\lambda$ factors as
+
+$$
+\Delta_\lambda^G(K) \;=\; \frac{\text{target}_K}{S_K} \cdot \frac{\sum_{i<j}(\hat V_i \hat V_j)_\lambda}{d_\lambda},
+\qquad d_\lambda = 1.
+$$
+
+**The 2-dim std channel does NOT close** as a scalar pair-sum
+because $\mathrm{tr}$ on a 2-dim irrep includes off-diagonal
+coupling.  `wedderburn_pair_volumes.std` already computes the
+correct matrix-valued combination
+$z \cdot (M_i M_j)_{12} + (M_i M_j)_{22}$ — but that's the
+2-dim trace formulation, not a scalar pair-sum.  Closing the
+std bridge requires reconciling these two scalar evaluations of
+the 2-dim trace.
+
+**Implication for 1ppb mass precision.** For atomic structure
+where the std channel contribution is small or its ratio is
+constrained by symmetry (e.g. saturated shells), the 1-dim
+bridge alone may suffice to pin $\Delta_\lambda$ from
+single-particle $\hat V_i$.  For shells where std dominates,
+the matrix-trace reconciliation is the next concrete step.
+
+**Status (2026-05-09):** bridge **closed on 1-dim Wedderburn
+channels** (substantive new result); std channel reconciliation
+queued as follow-up.  The deuteron at $H_6$ has additional
+generator handling required in `chi_lambda_symbolic`; that test
+is queued separately.
