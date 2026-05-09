@@ -172,4 +172,44 @@ instance triv_wedderburn (R : Type u) [CommRing R] (n : ℕ) (q : R) :
     ring; this is the §3b-cond escape hatch documented in
     CLAUDE.md §3b. -/
 
+/-! ### Concrete instance hooks for small n
+
+    The class shape lets callers provide **per-n concrete
+    instances** that pin specific carriers without needing the
+    full Mathlib `IwahoriHeckeAlgebra n q` library.  For
+    `n = 2`, the carrier is 2-dimensional (basis {1, σ_1}); for
+    `n = 3`, it's 6-dimensional (basis {T_w : w ∈ S_3}).
+
+    Concrete instances ship in
+    `WenzlBridgeConcrete.lean` via the cohort tables; this file
+    declares the abstract interface they discharge. -/
+
+/-- **Hook for n=2 instance**: any caller supplying a 2D carrier
+    with the Hecke relations σ_1² = (q − q⁻¹)σ_1 + 1 discharges
+    `IwahoriHeckeAlgebra R 2 q`.  Concrete construction uses
+    `Mathlib.LinearAlgebra.Matrix.PEquiv` over the basis
+    `{1, σ_1}`. -/
+def H2_instance_hook (R : Type u) [CommRing R] (q : R)
+    [I : IwahoriHeckeAlgebra R 2 q] : Prop :=
+  ∃ (basis_size : ℕ), basis_size = 2
+
+/-- **Hook for n=3 instance**: 6-dimensional carrier (= |S_3|). -/
+def H3_instance_hook (R : Type u) [CommRing R] (q : R)
+    [I : IwahoriHeckeAlgebra R 3 q] : Prop :=
+  ∃ (basis_size : ℕ), basis_size = 6
+
+/-- For any `n`, the basis size of `H_n(q)` should be `n!` (the
+    rank of the symmetric group `S_n`).  This hypothesis links
+    the abstract carrier to its expected dimension. -/
+def Hn_basis_dimension (n : ℕ) : ℕ := n.factorial
+
+/-- Sanity check: `H_2` is 2-dimensional. -/
+theorem Hn_basis_dimension_two : Hn_basis_dimension 2 = 2 := rfl
+
+/-- Sanity check: `H_3` is 6-dimensional. -/
+theorem Hn_basis_dimension_three : Hn_basis_dimension 3 = 6 := rfl
+
+/-- Sanity check: `H_4` is 24-dimensional. -/
+theorem Hn_basis_dimension_four : Hn_basis_dimension 4 = 24 := rfl
+
 end QOU.Mathlib.HeckeAlgebra

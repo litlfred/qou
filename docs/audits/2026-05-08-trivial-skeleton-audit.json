@@ -1,13 +1,13 @@
 {
   "audit": "trivial-skeleton-audit",
-  "generated": "2026-05-09T00:01:38.980Z",
-  "total_flagged": 75,
-  "files_flagged": 41,
+  "generated": "2026-05-09T00:10:45.059Z",
+  "total_flagged": 77,
+  "files_flagged": 42,
   "patterns": {
     "const_zero": 34,
     "one_def": 17,
-    "skel_inst": 12,
-    "holds_trivial": 9,
+    "skel_inst": 13,
+    "holds_trivial": 10,
     "id_def": 1,
     "const_zero_typed": 1,
     "prop_true": 1
@@ -362,6 +362,18 @@
         "line": 161,
         "pattern": "holds_trivial",
         "snippet": "blocks_orthogonal_holds := trivial"
+      }
+    ],
+    "lean/QOU/Mathlib/NonAbelianStokes.lean": [
+      {
+        "line": 107,
+        "pattern": "skel_inst",
+        "snippet": "instance trivial (M G : Type u) [Group G] : NonAbelianStokes M G where"
+      },
+      {
+        "line": 113,
+        "pattern": "holds_trivial",
+        "snippet": "finite_slice_holds := trivial"
       }
     ],
     "lean/QOU/Mathlib/WenzlBridgeConcrete.lean": [

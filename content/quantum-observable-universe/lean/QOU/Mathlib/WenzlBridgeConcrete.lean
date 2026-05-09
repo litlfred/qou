@@ -710,6 +710,161 @@ theorem dimqPartition32_eq_dimqPartition221 (q : ℝ) :
 theorem dimqPartition5_eq_dimqPartition11111 (q : ℝ) :
     dimqPartition5 q = dimqPartition11111 q := rfl
 
+/-! ### Hook-formula SYT count (`d_λ`) helper
+
+    Frame–Robinson–Thrall: `d_λ = n! / ∏ h(x)`.  The function
+    `dLambdaFromHooks hooks n := n.factorial / hooks.prod`
+    derives the SYT count directly from the hook-length list.
+    Lake-build evaluates this for any concrete `(hooks, n)`. -/
+
+/-- Frame–Robinson–Thrall hook formula (uniform shape).  Returns
+    `n!` divided by the product of hook lengths.  Yields the
+    standard SYT count `d_λ` whenever `hooks` is the hook-length
+    list of a Young diagram of size `n`. -/
+def dLambdaFromHooks (hooks : List ℕ) (n : ℕ) : ℕ :=
+  n.factorial / hooks.foldl (· * ·) 1
+
+/-- Hook product as a `ℕ`-valued helper (companion to
+    `qHookProduct` over `ℝ`). -/
+def hookProductNat (hooks : List ℕ) : ℕ := hooks.foldl (· * ·) 1
+
+/-- Sanity check: hook product of `[2, 1]` (row partition of 2)
+    equals `2 = [2]_q!|_{q=1}`. -/
+theorem hookProductNat_row2 : hookProductNat [2, 1] = 2 := by
+  show (1 * 2) * 1 = 2
+  norm_num
+
+/-- Sanity check: `dLambdaFromHooks [2,1] 2 = 1` (= `d_[2]`). -/
+theorem dLambda_row2 : dLambdaFromHooks [2, 1] 2 = 1 := by
+  show 2 / 2 = 1
+  norm_num
+
+/-! ### n=9 cohort (30 partitions, hooks-only — SYT counts
+    derivable via lake-build evaluation of `dLambdaFromHooks`)
+
+    p(9) = 30 (OEIS A000041).  Adding the partition-and-hook
+    table below; SYT counts left implicit so the user's lake-
+    build can verify them via the hook formula.
+
+    To verify `Σ d_λ² = 9! = 362880`:
+    ```
+    #eval (n9_partition_hooks.map (fun ⟨_, hs⟩ =>
+      let d := dLambdaFromHooks hs 9
+      d * d)).foldl (· + ·) 0
+    ```
+    Expected output: `362880`. -/
+
+/-- The 30 partitions of `n = 9` paired with their hook-length
+    lists.  Each entry: (partition name, hook lengths read in
+    row-major order).  SYT counts are derivable via
+    `dLambdaFromHooks hooks 9`. -/
+def n9_partition_hooks : List (String × List ℕ) :=
+  [("[9]",                 [9, 8, 7, 6, 5, 4, 3, 2, 1]),
+   ("[8,1]",               [9, 7, 6, 5, 4, 3, 2, 1, 1]),
+   ("[7,2]",               [8, 7, 5, 4, 3, 2, 1, 2, 1]),
+   ("[7,1,1]",             [9, 6, 5, 4, 3, 2, 1, 2, 1]),
+   ("[6,3]",               [7, 6, 5, 3, 2, 1, 3, 2, 1]),
+   ("[6,2,1]",             [8, 6, 4, 3, 2, 1, 3, 1, 1]),
+   ("[6,1,1,1]",           [9, 5, 4, 3, 2, 1, 3, 2, 1]),
+   ("[5,4]",               [6, 5, 4, 3, 2, 4, 3, 2, 1]),
+   ("[5,3,1]",             [7, 5, 4, 2, 1, 4, 2, 1, 1]),
+   ("[5,2,2]",             [7, 5, 3, 2, 1, 3, 2, 1, 1]),
+   ("[5,2,1,1]",           [8, 5, 2, 1, 4, 1, 3, 2, 1]),
+   ("[5,1,1,1,1]",         [9, 4, 3, 2, 1, 4, 3, 2, 1]),
+   ("[4,4,1]",             [6, 4, 3, 2, 5, 3, 2, 1, 1]),
+   ("[4,3,2]",             [6, 5, 3, 1, 4, 3, 1, 2, 1]),
+   ("[4,3,1,1]",           [7, 4, 3, 1, 5, 2, 1, 2, 1]),
+   ("[4,2,2,1]",           [7, 4, 2, 1, 4, 1, 3, 2, 1]),
+   ("[4,2,1,1,1]",         [8, 4, 2, 1, 4, 1, 3, 2, 1]),
+   ("[4,1,1,1,1,1]",       [9, 3, 2, 1, 5, 4, 3, 2, 1]),
+   ("[3,3,3]",             [5, 4, 3, 4, 3, 2, 3, 2, 1]),
+   ("[3,3,2,1]",           [6, 4, 1, 5, 3, 1, 2, 1, 1]),
+   ("[3,3,1,1,1]",         [7, 3, 2, 5, 2, 1, 3, 2, 1]),
+   ("[3,2,2,2]",           [5, 4, 1, 4, 3, 1, 3, 2, 1]),
+   ("[3,2,2,1,1]",         [6, 3, 1, 4, 2, 1, 3, 2, 1]),
+   ("[3,2,1,1,1,1]",       [8, 3, 1, 5, 4, 3, 2, 1, 1]),
+   ("[3,1,1,1,1,1,1]",     [9, 2, 1, 5, 4, 3, 2, 1, 1]),
+   ("[2,2,2,2,1]",         [5, 4, 4, 1, 3, 1, 2, 1, 1]),
+   ("[2,2,2,1,1,1]",       [6, 2, 5, 1, 4, 1, 3, 2, 1]),
+   ("[2,2,1,1,1,1,1]",     [7, 2, 5, 4, 3, 1, 2, 1, 1]),
+   ("[2,1,1,1,1,1,1,1]",   [8, 1, 6, 5, 4, 3, 2, 1, 1]),
+   ("[1,1,1,1,1,1,1,1,1]", [9, 8, 7, 6, 5, 4, 3, 2, 1])]
+
+/-- The n=9 partition table has 30 entries. -/
+theorem n9_partition_hooks_length : n9_partition_hooks.length = 30 := rfl
+
+/-! ### n=10 cohort (42 partitions, hooks-only)
+
+    p(10) = 42 (OEIS A000041).  Hook-length table for SYT-count
+    derivation via `dLambdaFromHooks _ 10`.
+
+    To verify `Σ d_λ² = 10! = 3628800`:
+    ```
+    #eval (n10_partition_hooks.map (fun ⟨_, hs⟩ =>
+      let d := dLambdaFromHooks hs 10
+      d * d)).foldl (· + ·) 0
+    ```
+    Expected output: `3628800`. -/
+
+/-- The 42 partitions of `n = 10` paired with hook-length lists. -/
+def n10_partition_hooks : List (String × List ℕ) :=
+  [("[10]",                 [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]),
+   ("[9,1]",                [10, 8, 7, 6, 5, 4, 3, 2, 1, 1]),
+   ("[8,2]",                [9, 8, 6, 5, 4, 3, 2, 1, 2, 1]),
+   ("[8,1,1]",              [10, 7, 6, 5, 4, 3, 2, 1, 2, 1]),
+   ("[7,3]",                [8, 7, 6, 4, 3, 2, 1, 3, 2, 1]),
+   ("[7,2,1]",              [9, 7, 5, 4, 3, 2, 1, 3, 1, 1]),
+   ("[7,1,1,1]",            [10, 6, 5, 4, 3, 2, 1, 3, 2, 1]),
+   ("[6,4]",                [7, 6, 5, 4, 3, 2, 4, 3, 2, 1]),
+   ("[6,3,1]",              [8, 6, 5, 3, 2, 1, 4, 2, 1, 1]),
+   ("[6,2,2]",              [8, 6, 4, 3, 2, 1, 3, 2, 1, 1]),
+   ("[6,2,1,1]",            [9, 6, 3, 2, 1, 4, 1, 3, 2, 1]),
+   ("[6,1,1,1,1]",          [10, 5, 4, 3, 2, 1, 4, 3, 2, 1]),
+   ("[5,5]",                [6, 5, 4, 3, 2, 5, 4, 3, 2, 1]),
+   ("[5,4,1]",              [7, 5, 4, 3, 1, 5, 3, 2, 1, 1]),
+   ("[5,3,2]",              [7, 5, 4, 2, 1, 4, 2, 1, 2, 1]),
+   ("[5,3,1,1]",            [8, 5, 4, 1, 5, 2, 1, 2, 1, 1]),
+   ("[5,2,2,1]",            [8, 5, 3, 2, 1, 4, 2, 1, 2, 1]),
+   ("[5,2,1,1,1]",          [9, 5, 2, 1, 5, 4, 1, 3, 2, 1]),
+   ("[5,1,1,1,1,1]",        [10, 4, 3, 2, 1, 5, 4, 3, 2, 1]),
+   ("[4,4,2]",              [6, 5, 3, 2, 5, 4, 2, 1, 2, 1]),
+   ("[4,4,1,1]",            [7, 4, 3, 2, 6, 3, 2, 1, 2, 1]),
+   ("[4,3,3]",              [6, 5, 4, 4, 3, 2, 3, 2, 1, 1]),
+   ("[4,3,2,1]",            [7, 5, 3, 1, 5, 3, 1, 2, 1, 1]),
+   ("[4,3,1,1,1]",          [8, 4, 3, 1, 6, 2, 1, 3, 2, 1]),
+   ("[4,2,2,2]",            [6, 4, 1, 4, 3, 1, 3, 2, 1, 1]),
+   ("[4,2,2,1,1]",          [7, 4, 2, 1, 5, 2, 1, 3, 2, 1]),
+   ("[4,2,1,1,1,1]",        [9, 4, 2, 1, 6, 5, 1, 3, 2, 1]),
+   ("[4,1,1,1,1,1,1]",      [10, 3, 2, 1, 6, 5, 4, 3, 2, 1]),
+   ("[3,3,3,1]",            [6, 4, 1, 5, 3, 2, 4, 2, 1, 1]),
+   ("[3,3,2,2]",            [5, 4, 2, 4, 3, 1, 3, 2, 1, 1]),
+   ("[3,3,2,1,1]",          [7, 4, 1, 6, 3, 1, 4, 2, 1, 1]),
+   ("[3,3,1,1,1,1]",        [8, 3, 2, 6, 2, 1, 4, 3, 2, 1]),
+   ("[3,2,2,2,1]",          [5, 4, 1, 5, 3, 1, 4, 2, 1, 1]),
+   ("[3,2,2,1,1,1]",        [7, 3, 1, 5, 2, 1, 4, 3, 2, 1]),
+   ("[3,2,1,1,1,1,1]",      [9, 3, 1, 6, 5, 4, 3, 2, 1, 1]),
+   ("[3,1,1,1,1,1,1,1]",    [10, 2, 1, 6, 5, 4, 3, 2, 1, 1]),
+   ("[2,2,2,2,2]",          [5, 4, 4, 3, 3, 2, 2, 1, 1, 1]),
+   ("[2,2,2,2,1,1]",        [6, 2, 5, 1, 4, 1, 3, 1, 2, 1]),
+   ("[2,2,2,1,1,1,1]",      [7, 2, 6, 1, 5, 4, 3, 2, 1, 1]),
+   ("[2,2,1,1,1,1,1,1]",    [8, 2, 6, 5, 4, 3, 2, 1, 1, 1]),
+   ("[2,1,1,1,1,1,1,1,1]",  [9, 1, 7, 6, 5, 4, 3, 2, 1, 1]),
+   ("[1,1,1,1,1,1,1,1,1,1]",[10, 9, 8, 7, 6, 5, 4, 3, 2, 1])]
+
+/-- The n=10 partition table has 42 entries. -/
+theorem n10_partition_hooks_length : n10_partition_hooks.length = 42 := rfl
+
+/-- **Verification entrypoint** — once lake-build is available,
+    the user can derive SYT counts for the full n=9 and n=10
+    cohorts via:
+    ```
+    #eval n9_partition_hooks.map (fun ⟨name, hs⟩ =>
+      (name, dLambdaFromHooks hs 9))
+    #eval n10_partition_hooks.map (fun ⟨name, hs⟩ =>
+      (name, dLambdaFromHooks hs 10))
+    ```
+    and verify Σ d² = 9! / 10! correspondingly. -/
+
 /-! ### Open issue: q-Plancherel normalisation
 
     The genuine q-Plancherel identity

@@ -122,4 +122,33 @@ instance canonical (R : Type u) : GBFiltrationCollapsesAtE2 R where
   ss := trivial R
   collapses := trivial_collapses_at_E2 R
 
+/-! ### Convergence + E_∞ page
+
+    A spectral sequence **converges** to a target if its
+    `E_∞` page (the colimit of the `E_r` pages, equivalently
+    the `r`-stable cells once `d_r = 0` for all `r ≥ r₀`)
+    matches the target.  At collapse, `E_∞ = E_{r₀}` directly. -/
+
+/-- The `E_∞` page (post-stabilisation) of a spectral sequence
+    that collapses at `r₀`.  Definition: the cell at index
+    `(p, q)` on the `E_∞` page IS the cell at the same `(p, q)`
+    on the `r₀` page (since all higher differentials vanish). -/
+def EInfinityCell {R : Type u} (S : SpectralSequence R) (r₀ : ℕ)
+    (_h : CollapsesAt S r₀) (p q : ℤ) : Type u :=
+  S.cell { r := r₀, p := p, q := q }
+
+/-- The trivial spectral sequence's `E_∞` cell is `PUnit`. -/
+example (R : Type u) (p q : ℤ) :
+    EInfinityCell (trivial R) 2 (trivial_collapses_at_E2 R) p q = PUnit := rfl
+
+/-- **Convergence predicate**: an SS `S` converges to a target
+    type-family `T : ℤ → ℤ → Type*` if its `E_∞` page agrees
+    with `T` cell-by-cell.  For the QOU GB filtration, the
+    target is the Wedderburn-block decomposition of `H_n(q)`. -/
+class SpectralSequenceConvergesTo (R : Type u) (S : SpectralSequence R)
+    (r₀ : ℕ) (collapses : CollapsesAt S r₀)
+    (target : ℤ → ℤ → Type u) where
+  /-- Per-cell isomorphism between `E_∞` and the target. -/
+  cell_iso : ∀ p q, EInfinityCell S r₀ collapses p q ≃ target p q
+
 end QOU.Mathlib.SpectralSequence
