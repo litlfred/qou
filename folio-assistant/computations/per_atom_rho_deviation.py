@@ -2,19 +2,20 @@
 """
 Per-atom ρ-deviation diagnostic — path to 1 ppb.
 
-For a curated set of light Z=N atoms (²H, ⁴He, ¹²C, ¹⁶O — the four
-hard-coded entries in `AME` below), the canonical Kashaev-law
-family-1 prediction is `B_pred = ρ_F · m_e · Vol_hyp(K)` with ρ_F a
-structural integer (1 or 2). PR #512 showed that the "true" ρ
+For the small hard-coded light-atom probe in `AME` below (`²H, ³H,
+³He, ⁴He`), the canonical Kashaev-law family-1 prediction is
+`B_pred = ρ_F · m_e · Vol_hyp(K)` with ρ_F a structural integer
+(1 or 2). PR #512 showed that the "true" ρ
 (= B_AME / (m_e · Vol_hyp(K))) for ³He is 2.062, not 2 — a +3.1%
 substrate-q correction beyond the integer.
 
-This script focuses on the doubly-symmetric Z=N=k subset (²H, ⁴He,
-¹²C, ¹⁶O). For each, it computes the "true" ρ implied by AME and
-the canonical Vol·m_e factor, then tests whether the deviation
-δρ = ρ_true / ρ_struct − 1 matches any pre-specified categorical
-q-arithmetic form. Extending to the full mass-table-ppb iteration
-is a follow-up — the four Z=N atoms are sufficient to surface the
+This script computes the "true" ρ implied by AME and the canonical
+Vol·m_e factor for those four seed atoms, then tests whether the
+deviation δρ = ρ_true / ρ_struct − 1 matches any pre-specified
+categorical q-arithmetic form. The Z=N regularity is then propagated
+through the α-cluster chain (`⁸Be, ¹²C, ¹⁶O, ²⁰Ne, ²⁴Mg, ⁴⁰Ca`) in the
+second half of the script. Extending to a full mass-table-ppb sweep is
+a follow-up; this focused probe is enough to surface the
 +δρ = -([A]_q − A) / ρ_struct regularity that motivates the
 `conj:z-eq-n-rho-correction` block.
 
@@ -303,12 +304,13 @@ def main() -> int:
     out = {
         "computation":   "per-atom-rho-deviation",
         "computedAt":    datetime.now(timezone.utc).isoformat(),
-        "description":   ("Per-atom ρ-deviation decomposition. For each "
-                          "atom, computes ρ_true = B_AME/(m_e·Vol_hyp(K)) "
-                          "and tests δρ = ρ_true/ρ_struct − 1 against "
-                          "pre-specified categorical q-forms (no fitting). "
-                          "Generalises PR #512's ³He probe to all family-1/"
-                          "magic-A atoms in mass-table-ppb."),
+        "description":   ("Per-atom ρ-deviation decomposition for the "
+                          "hard-coded light-atom probe {²H, ³H, ³He, ⁴He}. "
+                          "Computes ρ_true = B_AME/(m_e·Vol_hyp(K)) and "
+                          "tests δρ = ρ_true/ρ_struct − 1 against "
+                          "pre-specified categorical q-forms (no fitting), "
+                          "then propagates the Z=N correction through the "
+                          "α-cluster chain {⁸Be, ¹²C, ¹⁶O, ²⁰Ne, ²⁴Mg, ⁴⁰Ca}."),
         "parameters": {
             "q_0": Q0,
             "m_e_MeV": M_E_MEV,
