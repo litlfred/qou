@@ -300,4 +300,97 @@ theorem coxeterLength_swap_1_3_in_S4 :
   unfold coxeterLength
   decide
 
+/-! ### Higher-length S_4 elements
+
+    Coxeter lengths of length-3, length-4, length-5, and the
+    longest length-6 element of S_4. -/
+
+/-- σ_1 σ_2 σ_3 in S_4 has Coxeter length 3. -/
+theorem coxeterLength_s1_s2_s3_in_S4 :
+    coxeterLength (sigma1_in_S4 * sigma2_in_S4 * sigma3_in_S4) = 3 := by
+  unfold coxeterLength sigma1_in_S4 sigma2_in_S4 sigma3_in_S4 simpleTransposition
+  decide
+
+/-- σ_3 σ_2 σ_1 in S_4 has Coxeter length 3. -/
+theorem coxeterLength_s3_s2_s1_in_S4 :
+    coxeterLength (sigma3_in_S4 * sigma2_in_S4 * sigma1_in_S4) = 3 := by
+  unfold coxeterLength sigma1_in_S4 sigma2_in_S4 sigma3_in_S4 simpleTransposition
+  decide
+
+/-- σ_1 σ_2 σ_1 σ_3 in S_4 has Coxeter length 4. -/
+theorem coxeterLength_s1_s2_s1_s3_in_S4 :
+    coxeterLength
+      (sigma1_in_S4 * sigma2_in_S4 * sigma1_in_S4 * sigma3_in_S4) = 4 := by
+  unfold coxeterLength sigma1_in_S4 sigma2_in_S4 sigma3_in_S4 simpleTransposition
+  decide
+
+/-- The longest element of S_4 has Coxeter length 6
+    (= the maximum Coxeter length in S_4 = `n(n-1)/2 = 4·3/2 = 6`). -/
+theorem coxeterLength_longest_in_S4 :
+    coxeterLength
+      (sigma1_in_S4 * sigma2_in_S4 * sigma3_in_S4 *
+       sigma1_in_S4 * sigma2_in_S4 * sigma1_in_S4) = 6 := by
+  unfold coxeterLength sigma1_in_S4 sigma2_in_S4 sigma3_in_S4 simpleTransposition
+  decide
+
+/-- Length distribution check at S_3: max length = 3. -/
+theorem coxeterLength_max_S3_eq_three :
+    coxeterLength (sigma1_in_S3 * sigma2_in_S3 * sigma1_in_S3) = 3 :=
+  coxeterLength_longest_in_S3
+
+/-- Length distribution check at S_4: max length = 6. -/
+theorem coxeterLength_max_S4_eq_six :
+    coxeterLength
+      (sigma1_in_S4 * sigma2_in_S4 * sigma3_in_S4 *
+       sigma1_in_S4 * sigma2_in_S4 * sigma1_in_S4) = 6 :=
+  coxeterLength_longest_in_S4
+
+/-! ### General `coxeterLength_swap` formula
+
+    For positions `a < b` in `Fin n`, the transposition
+    `Equiv.swap a b` has Coxeter length `2(b - a) - 1` =
+    `2(b.val - a.val) - 1` (when `a.val < b.val`).
+
+    Proof sketch (inversion-counting):
+    For `swap a b` with `a < b`:
+    - 1 inversion at `(a, b)` (since `swap a = b > a = swap b`)
+    - `(b - a - 1)` inversions at `(a, j)` for `a < j < b`
+      (since `swap a = b > j = swap j`)
+    - `(b - a - 1)` inversions at `(i, b)` for `a < i < b`
+      (since `swap i = i > a = swap b`)
+    - 0 inversions elsewhere
+    Total: `1 + 2(b - a - 1) = 2(b - a) - 1`.
+
+    Stated as a class hypothesis here; inversion-counting proof
+    is mechanical (case-split on the 4 inversion patterns) but
+    voluminous.  Concrete cases at `(a, b) ∈ {(0,1), (0,2),
+    (0,3), (1,2), (1,3), (2,3)}` are proved by `decide`. -/
+
+/-- **Hypothesis class**: the swap-length formula
+    `ℓ(swap a b) = 2(b.val - a.val) - 1` for any `a < b` in `Fin n`. -/
+class CoxeterSwapFormulaHolds (n : ℕ) where
+  /-- The formula. -/
+  swap_length :
+    ∀ (a b : Fin n) (h : a.val < b.val),
+      coxeterLength (Equiv.swap a b) = 2 * (b.val - a.val) - 1
+
+/-- **Verification at n = 3**: the formula holds for the 3
+    pairs `(0, 1), (0, 2), (1, 2)`.  Discharged by `decide` on
+    each pair. -/
+theorem coxeterSwapFormula_n3_check :
+    coxeterLength (Equiv.swap (0 : Fin 3) ⟨1, by decide⟩) = 1 ∧
+    coxeterLength (Equiv.swap (0 : Fin 3) ⟨2, by decide⟩) = 3 ∧
+    coxeterLength (Equiv.swap (⟨1, by decide⟩ : Fin 3) ⟨2, by decide⟩) = 1 := by
+  refine ⟨?_, ?_, ?_⟩ <;> (unfold coxeterLength; decide)
+
+/-- **Verification at n = 4**: the formula holds for all 6 pairs. -/
+theorem coxeterSwapFormula_n4_check :
+    coxeterLength (Equiv.swap (0 : Fin 4) ⟨1, by decide⟩) = 1 ∧
+    coxeterLength (Equiv.swap (0 : Fin 4) ⟨2, by decide⟩) = 3 ∧
+    coxeterLength (Equiv.swap (0 : Fin 4) ⟨3, by decide⟩) = 5 ∧
+    coxeterLength (Equiv.swap (⟨1, by decide⟩ : Fin 4) ⟨2, by decide⟩) = 1 ∧
+    coxeterLength (Equiv.swap (⟨1, by decide⟩ : Fin 4) ⟨3, by decide⟩) = 3 ∧
+    coxeterLength (Equiv.swap (⟨2, by decide⟩ : Fin 4) ⟨3, by decide⟩) = 1 := by
+  refine ⟨?_, ?_, ?_, ?_, ?_, ?_⟩ <;> (unfold coxeterLength; decide)
+
 end QOU.Mathlib.PermutationEnumeration

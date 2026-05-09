@@ -1,6 +1,6 @@
 {
   "audit": "trivial-skeleton-audit",
-  "generated": "2026-05-09T03:01:55.395Z",
+  "generated": "2026-05-09T03:11:19.313Z",
   "total_flagged": 78,
   "files_flagged": 42,
   "patterns": {
@@ -364,7 +364,7 @@
         "snippet": "blocks_orthogonal_holds := trivial"
       },
       {
-        "line": 897,
+        "line": 966,
         "pattern": "skel_inst",
         "snippet": "instance HasGeneratorAction_trivial (n : ℕ) (q : ℝ) :"
       }

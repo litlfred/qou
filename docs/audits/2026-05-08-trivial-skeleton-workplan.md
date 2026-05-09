@@ -39,7 +39,9 @@ work can promote them to faithful instances.
 | `const_zero_typed` | 1 | 1 | 0 |
 | **Total**        | **111** | **78** | **-33 (30 % reduction)** |
 
-### Upstream-Mathlib infrastructure (8 new files)
+### Upstream-Mathlib infrastructure (9 new files)
+
+**Capstone**: `Summary.lean` imports the 8 below + provides `master_upstream_complete` aggregate.
 
 | File | Purpose |
 |---|---|

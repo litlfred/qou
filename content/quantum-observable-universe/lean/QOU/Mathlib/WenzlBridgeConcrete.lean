@@ -737,6 +737,65 @@ theorem dimqPartition32_eq_dimqPartition221 (q : ℝ) :
 theorem dimqPartition5_eq_dimqPartition11111 (q : ℝ) :
     dimqPartition5 q = dimqPartition11111 q := rfl
 
+/-! ### n=5 row/column hook-formula derivations (substrate-q) -/
+
+/-- Row partition `[5]` hook-formula at substrate q: dim_q = 1.
+    Hook product = `[5]_q!`. -/
+theorem dimqPartition5_via_hook_formula (q : ℝ) (hq_one : q > 1) :
+    QOU.qFactorial q 5 / QOU.qHookProduct q [5, 4, 3, 2, 1]
+      = dimqPartition5 q := by
+  unfold dimqPartition5
+  show QOU.qInteger q 5 * (QOU.qInteger q 4 * (QOU.qInteger q 3 *
+      (QOU.qInteger q 2 * (QOU.qInteger q 1 * 1))))
+    / (QOU.qInteger q 5 * (QOU.qInteger q 4 * (QOU.qInteger q 3 *
+      (QOU.qInteger q 2 * (QOU.qInteger q 1 * 1))))) = 1
+  have hne : QOU.qInteger q 5 * (QOU.qInteger q 4 * (QOU.qInteger q 3 *
+      (QOU.qInteger q 2 * (QOU.qInteger q 1 * 1)))) ≠ 0 := by
+    have h5 := QOU.qInteger_ne_zero q 5 hq_one (by norm_num)
+    have h4 := QOU.qInteger_ne_zero q 4 hq_one (by norm_num)
+    have h3 := QOU.qInteger_ne_zero q 3 hq_one (by norm_num)
+    have h2 := QOU.qInteger_ne_zero q 2 hq_one (by norm_num)
+    have h1 := QOU.qInteger_ne_zero q 1 hq_one (by norm_num)
+    exact mul_ne_zero h5 (mul_ne_zero h4 (mul_ne_zero h3
+      (mul_ne_zero h2 (mul_ne_zero h1 one_ne_zero))))
+  exact div_self hne
+
+/-- Column partition `[1,1,1,1,1]` hook-formula at substrate q:
+    same hook multiset as row [5], so reduces to the row case. -/
+theorem dimqPartition11111_via_hook_formula (q : ℝ) (hq_one : q > 1) :
+    QOU.qFactorial q 5 / QOU.qHookProduct q [5, 4, 3, 2, 1]
+      = dimqPartition11111 q := by
+  unfold dimqPartition11111
+  exact dimqPartition5_via_hook_formula q hq_one
+
+/-! ### n=6 row/column hook-formula derivations -/
+
+/-- Row partition `[6]` hook-formula at substrate q: dim_q = 1.
+    Hook product = `[6]_q!`. -/
+theorem dimqRowPartition6_via_hook_formula (q : ℝ) (hq_one : q > 1) :
+    QOU.qFactorial q 6 / QOU.qHookProduct q [6, 5, 4, 3, 2, 1] = 1 := by
+  show QOU.qInteger q 6 * (QOU.qInteger q 5 * (QOU.qInteger q 4 *
+      (QOU.qInteger q 3 * (QOU.qInteger q 2 * (QOU.qInteger q 1 * 1)))))
+    / (QOU.qInteger q 6 * (QOU.qInteger q 5 * (QOU.qInteger q 4 *
+      (QOU.qInteger q 3 * (QOU.qInteger q 2 * (QOU.qInteger q 1 * 1)))))) = 1
+  have hne : QOU.qInteger q 6 * (QOU.qInteger q 5 * (QOU.qInteger q 4 *
+      (QOU.qInteger q 3 * (QOU.qInteger q 2 * (QOU.qInteger q 1 * 1))))) ≠ 0 := by
+    have h6 := QOU.qInteger_ne_zero q 6 hq_one (by norm_num)
+    have h5 := QOU.qInteger_ne_zero q 5 hq_one (by norm_num)
+    have h4 := QOU.qInteger_ne_zero q 4 hq_one (by norm_num)
+    have h3 := QOU.qInteger_ne_zero q 3 hq_one (by norm_num)
+    have h2 := QOU.qInteger_ne_zero q 2 hq_one (by norm_num)
+    have h1 := QOU.qInteger_ne_zero q 1 hq_one (by norm_num)
+    exact mul_ne_zero h6 (mul_ne_zero h5 (mul_ne_zero h4
+      (mul_ne_zero h3 (mul_ne_zero h2 (mul_ne_zero h1 one_ne_zero)))))
+  exact div_self hne
+
+/-- Column partition `[1,1,1,1,1,1]` hook-formula: same hook
+    multiset, reduces to row [6] case. -/
+theorem dimqColPartition6_via_hook_formula (q : ℝ) (hq_one : q > 1) :
+    QOU.qFactorial q 6 / QOU.qHookProduct q [6, 5, 4, 3, 2, 1] = 1 :=
+  dimqRowPartition6_via_hook_formula q hq_one
+
 /-! ### Hook-formula SYT count (`d_λ`) helper
 
     Frame–Robinson–Thrall: `d_λ = n! / ∏ h(x)`.  The function
