@@ -39,6 +39,7 @@ import Mathlib.LinearAlgebra.Matrix.PosDef
 import Mathlib.LinearAlgebra.Matrix.Spectrum
 import Mathlib.Tactic
 import QOU.MathlibExt.PosSemidefDiagZero
+import QOU.MathlibExt.FrobeniusInnerProduct
 
 namespace QOU.MathlibExt.PosSemidefTraceZero
 
@@ -97,25 +98,18 @@ theorem Matrix.PosSemidef.trace_mul_eq_zero_iff_mul_eq_zero
   have hXX_T_trace_zero : (X * X.transpose).trace = 0 := by
     rw [hXX_T, Matrix.trace_mul_comm, ← Matrix.mul_assoc, hAsq]
     exact h_trace
-  -- X · X^T is PSD; its trace is 0; Mathlib gives X · X^T = 0.
-  -- Mathlib: `Matrix.posSemidef_self_mul_conjTranspose` (or similar)
-  -- gives X · X^T PSD; `Matrix.PosSemidef.trace_zero_iff_zero` (or via
-  -- eigenvalues) gives X · X^T = 0 from PSD + trace 0.
-  have hXXT_psd : (X * X.transpose).PosSemidef := by
-    -- For real X, X · X^T is PSD.
-    -- Mathlib: posSemidef_self_mul_transpose or similar.
-    sorry
-  have hXXT_zero : X * X.transpose = 0 := by
-    -- Mathlib: PSD with trace 0 ⟹ zero matrix.
-    -- This is itself a sub-step of cone-self-polarity (the
-    -- "single-matrix" version).
-    sorry
-  -- X · X^T = 0 ⟹ X = 0 (Frobenius / sum of squares).
+  -- Direct closure via Frobenius inner product (proven in batch 10):
+  -- tr(X · X^T) = tr(X^T · X) = frobeniusInner X X (def + trace cyclicity).
+  -- frobeniusInner X X = 0 ⟹ X = 0 (`frobeniusInner_self_eq_zero_iff`,
+  -- proven in `QOU.MathlibExt.FrobeniusInnerProduct`, batch 10).
+  -- This sidesteps the PSD detour entirely.
   have hX_zero : X = 0 := by
-    -- (X · X^T) i j = Σ_k X i k · (X^T) k j = Σ_k X i k · X j k
-    -- (X · X^T) i i = Σ_k X i k · X i k = Σ_k (X i k)² = 0 ⟹ each X i k = 0.
-    -- Mathlib: `Matrix.mul_transpose_self_eq_zero_iff_eq_zero`
-    sorry
+    have h_fro : QOU.MathlibExt.FrobeniusInnerProduct.Matrix.frobeniusInner X X = 0 := by
+      -- frobeniusInner X X = tr(X^T · X) = tr(X · X^T) (cyclic) = 0.
+      show (X.transpose * X).trace = 0
+      rw [Matrix.trace_mul_comm]
+      exact hXX_T_trace_zero
+    exact (QOU.MathlibExt.FrobeniusInnerProduct.Matrix.frobeniusInner_self_eq_zero_iff X).mp h_fro
   -- A · B = Asqrt² · Bsqrt² = Asqrt · (Asqrt · Bsqrt) · Bsqrt = Asqrt · X · Bsqrt
   --      = Asqrt · 0 · Bsqrt = 0.
   calc A * B
