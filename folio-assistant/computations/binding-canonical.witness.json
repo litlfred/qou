@@ -1,26 +1,75 @@
 {
-  "computedAt": "2026-04-18T10:53:04.158950+00:00",
   "computation": "binding-canonical-markov",
-  "description": "Direction-1 canonical Jones-Markov trace binding on D.",
-  "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
+  "description": "Atom binding via the canonical Jones-Markov trace (Direction 1 of validity audit): matches the prop's explicit-values table tr_M(\u03c3_0)=z, tr_M(\u03c3_0\u03c3_1)=z\u00b2, tr_M(\u03c3_0\u03c3_1\u03c3_0)=hz\u00b2+z.  Replaces the Plancherel-weighted trace used in binding_3A and atom_markov_trace.  Binding = E_0\u00b7(|tr_M_free| \u2212 |tr_M_atom|) with E_0 = 0.78233341 MeV (\u03b2-decay Q).",
+  "timestamp": "2026-05-09T05:18:33.607119+00:00",
+  "parameters": {
+    "q0": 1.1099785955541805,
+    "E_0_MeV": 0.78233341
+  },
   "results": [
     {
       "status": "solved",
       "Z": 1,
       "N": 1,
       "A": 2,
-      "tr_M_atom": "0.3882864715477132",
+      "tr_M_atom": "0.38828647154771295",
       "tr_M_free": "0.9835261819186453",
-      "E_0_MeV": 0.782,
-      "B_MeV": 0.465477453510069,
+      "E_0_MeV": 0.7823334100000222,
+      "B_MeV": 0.46567591238191713,
       "n_atom_terms": 32,
       "n_free_terms": 16,
-      "trace_time_sec": 131.55084252357483,
+      "trace_time_sec": 0.009290456771850586,
+      "atom": "D",
       "B_AME_MeV": 2.22452,
-      "delta_m_over_m_pct": 0.0937384120217768,
-      "atom": "D"
+      "delta_m_over_m_pct": 0.09372783625740098
+    },
+    {
+      "status": "solved",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "tr_M_atom": "0.10405211867552604",
+      "tr_M_free": "0.9080241197853626",
+      "E_0_MeV": 0.7823334100000222,
+      "B_MeV": 0.6289741571728001,
+      "n_atom_terms": 256,
+      "n_free_terms": 64,
+      "trace_time_sec": 0.21845793724060059,
+      "atom": "T",
+      "B_AME_MeV": 8.481821,
+      "delta_m_over_m_pct": 0.2789825993182929
+    },
+    {
+      "status": "solved",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "tr_M_atom": "0.20654085856226245",
+      "tr_M_free": "1.0477565675816238",
+      "E_0_MeV": 0.7823334100000222,
+      "B_MeV": 0.6581111541827034,
+      "n_atom_terms": 128,
+      "n_free_terms": 64,
+      "trace_time_sec": 0.08052802085876465,
+      "atom": "3He",
+      "B_AME_MeV": 7.71804,
+      "delta_m_over_m_pct": 0.25081315602218035
+    },
+    {
+      "status": "solved",
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "tr_M_atom": "0.05534834587669799",
+      "tr_M_free": "0.9673237505194684",
+      "E_0_MeV": 0.7823334100000222,
+      "B_MeV": 0.7134688281503286,
+      "n_atom_terms": 1024,
+      "n_free_terms": 256,
+      "trace_time_sec": 2.313950777053833,
+      "atom": "4He",
+      "B_AME_MeV": 28.295674,
+      "delta_m_over_m_pct": 0.7349202888887676
     }
-  ],
-  "precision": "f64_numeric_fallback",
-  "truncation_eps": 0
+  ]
 }
