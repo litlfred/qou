@@ -42,6 +42,7 @@ specialisation closes too.
 import Mathlib.Tactic
 import QOU.MathlibExt.SDP
 import QOU.MathlibExt.SDPEmptyConstraints
+import QOU.MathlibExt.SDPRealUniqueness
 import QOU.HeckeAlgebra.Common
 import QOU.BraidKnot.LightNucleus
 import QOU.BraidKnot.WitnessR5Full
@@ -98,5 +99,66 @@ theorem helium3_uniqueness_via_empty_sdp :
     `Φstar := 0`). -/
 theorem helium3_emptySDP_Φstar_eq_zero :
     helium3_trivialStrictCompPair.Φstar = (0 : Matrix _ _ ℝ) := rfl
+
+/-! ### Interior-case closure for ³He via the new ℝ-uniqueness layer
+
+The empty-constraint SDP for ³He has cost matrix `T = 1`
+(identity), no equality constraints, hence dual slack
+`S(y) = T - Σ y_i A_i = 1` (identity, regardless of `y` since
+the sum is empty).  The identity matrix is positive-DEFINITE,
+so `real_strict_complementarity_unique_of_dualSlack_posDef`
+(batch 12) applies and gives full sorry-free uniqueness. -/
+
+open QOU.MathlibExt.SDPRealUniqueness
+
+/-- **Real strong-duality pair** for the ³He empty SDP.  All
+    fields are concrete — `dualSlack_psd` follows from
+    "dual slack = identity = PosDef ⟹ PSD" (PosDef is
+    strictly stronger than PSD). -/
+def helium3_realStrongDualityPair : RealStrongDualityPair helium3_emptySDP where
+  Φstar := 0
+  ystar := fun i => i.elim
+  primal_feas := zero_isFeasible helium3_emptySDP
+  dualSlack_psd := by
+    -- dualSlack = T - Σ y A = 1 - 0 = 1 (identity matrix), which
+    -- is PosDef (hence PSD).  Mathlib: `Matrix.PosDef.one`,
+    -- then `.posSemidef`.
+    show (helium3_emptySDP.dualSlack (fun i => i.elim)).PosSemidef
+    -- Unfold dualSlack: T - Σ_i (i.elim) • A_i = T = 1
+    have h_eq : helium3_emptySDP.dualSlack (fun i => i.elim) = 1 := by
+      unfold SDPPrimal.dualSlack helium3_emptySDP
+      simp [Finset.sum_empty]
+    rw [h_eq]
+    exact Matrix.PosDef.one.posSemidef
+  obj_eq_dualObj := by
+    -- objAt 0 = tr(T · 0) = 0; dualObjAt 0 = Σ 0 · b_i = 0
+    unfold SDPPrimal.objAt SDPPrimal.dualObjAt
+    simp
+
+/-- **Dual slack is PosDef** for the ³He empty SDP. -/
+theorem helium3_dualSlack_posDef :
+    (helium3_emptySDP.dualSlack helium3_realStrongDualityPair.ystar).PosDef := by
+  show (helium3_emptySDP.dualSlack (fun i => i.elim)).PosDef
+  have h_eq : helium3_emptySDP.dualSlack (fun i => i.elim) = 1 := by
+    unfold SDPPrimal.dualSlack helium3_emptySDP
+    simp [Finset.sum_empty]
+  rw [h_eq]
+  exact Matrix.PosDef.one
+
+/-- **Closed sorry-free uniqueness for ³He's empty SDP** —
+    via the interior-case closure of the strict-complementarity
+    uniqueness theorem.  No `sorry` in the entire chain
+    `Helium3Witness → helium3_realStrongDualityPair →
+    helium3_dualSlack_posDef → real_strict_complementarity_
+    unique_of_dualSlack_posDef`. -/
+theorem helium3_uniqueness_closed
+    {Φ' : Matrix (Fin (heckeDim 3)) (Fin (heckeDim 3)) ℝ}
+    (h_feas : helium3_emptySDP.IsFeasible Φ')
+    (h_obj : helium3_emptySDP.objAt Φ' =
+             helium3_emptySDP.objAt helium3_realStrongDualityPair.Φstar) :
+    Φ' = helium3_realStrongDualityPair.Φstar :=
+  real_strict_complementarity_unique_of_dualSlack_posDef
+    helium3_realStrongDualityPair helium3_dualSlack_posDef
+    h_feas h_obj
 
 end QOU.BraidKnot
