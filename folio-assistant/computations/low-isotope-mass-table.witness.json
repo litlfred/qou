@@ -1,9 +1,9 @@
 {
-  "computedAt": "2026-05-09T20:07:44.341062+00:00",
+  "computedAt": "2026-05-09T20:08:09.476486+00:00",
   "name": "low-isotope-mass-table",
   "description": "Low-isotope mass + mass-excess table (Z ≤ 10) from the categorical derivation chain. Predicted columns are emitted ONLY for rows whose every input (m_p, m_n, B) traces to a fit-free derivation rooted in q₀. Rows lacking such a chain (m_n MeV scale; B(⁴He) and beyond) are emitted with row_derivation_status='derivation_pending' and predicted values set to null. The framework consumes a small set of scale/unit CODATA constants (m_e MeV scale, atomic mass unit u) — these live in derivation_inputs.scale_constants. CODATA / AME values used purely as comparison anchors (M_P_REF, M_N_REF, AME binding energies, AME mass excesses) live in comparison_only_constants and are never consumed in the predicted column.",
   "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
-  "timestamp": "2026-05-09T20:07:44.341081+00:00",
+  "timestamp": "2026-05-09T20:08:09.476508+00:00",
   "derivation_inputs": {
     "m_p_derived_MeV": 937.7615319092894,
     "m_p_derived_source": "proton-mass-codata-50dps.witness.json",
