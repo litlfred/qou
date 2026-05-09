@@ -28,11 +28,20 @@ $$
 
 *has a unique global minimizer $T_w^*$, achieved at:*
 
-| Nucleus | Knot type | $n_0$ | $\rho$ | $B_\mathrm{AME}$ (MeV) |
-|---------|-----------|-------|--------|------------------------|
-| $^2\mathrm{H}$ | $6_2$ (Miller's knot) | $6$ | $1$ | $2.2246$ |
-| $^3\mathrm{H}$ | $8_{11}$ | $6$ | $2$ | $8.4820$ |
-| $^3\mathrm{He}$ | $L_{6a4}$ | $6$ | $2$ | $7.7181$ |
+| Nucleus | Knot type | $n_0 = 3 \cdot A$ | $\rho$ | $B_\mathrm{AME}$ (MeV) |
+|---------|-----------|-------------------|--------|------------------------|
+| $^2\mathrm{H}$ | $6_2$ (Miller's knot) | $6$ ($A=2$) | $1$ | $2.2246$ |
+| $^3\mathrm{H}$ | $8_{11}$ | $9$ ($A=3$) | $2$ | $8.4820$ |
+| $^3\mathrm{He}$ | $L_{6a4}$ | $9$ ($A=3$) | $2$ | $7.7181$ |
+
+(Earlier drafts of this table listed $n_0 = 6$ for ³H/³He.  Reconciled
+with the joint-tower SDP convention $n_0 = 3 \cdot A$ used in
+[`prop:joint-tower-sdp-confinement`](#prop:joint-tower-sdp-confinement)
+and in
+[`joint-tower-sdp-h6-h9.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/joint-tower-sdp-h6-h9.witness.json)
+— `atomic_n_0 = 9` for ³H/³He.  See "Structural decomposition" below
+for the binding-K factorisation that motivates the $n_0 = 3 \cdot A$
+convention.)
 
 *with residual $< 0.5\%$ of $B_{\mathrm{AME}}(\mathfrak{H})$.*
 
@@ -77,6 +86,56 @@ residual.
 3. **Uniqueness of $\rho$.**  Show that $\rho = 1$ for $^2$H and
    $\rho = 2$ for $^3$H/$^3$He are the unique positive-integer
    multiplicities in the feasible SDP region.
+
+## Structural decomposition (issue #604, deliverables 3 + 4)
+
+The numerical evidence from
+[`folio-assistant/computations/r5-full-canonical-knot-solver.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/r5-full-canonical-knot-solver.witness.json)
+(deliverable 1) and
+[`rho-prefactor-structural-verifier.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/rho-prefactor-structural-verifier.witness.json)
+(deliverable 4) shows that the canonical $T_w$ at the **braid strand
+count** alone does *not* uniquely identify the bound state — proton
+and ³He have Markov-equivalent braid words in $H_3(q_0)$ (mutual
+inverses), yet they are distinct bound states with distinct $\rho$.
+
+The structural fix is to factor:
+
+$$
+T_w(\mathfrak{H})
+\;=\;
+K(\mathfrak{H})
+\,\cdot\,
+\bigotimes_{i=1}^{A} T_w(\text{nucleon}_i)
+$$
+
+where $K(\mathfrak{H}) \in H_{3 \cdot A}(q_0)$ is the **binding
+operator** linking the $A$ nucleon-trefoils.  This splits the SDP
+uniqueness conjecture into:
+
+(a) **Constituent uniqueness** — each $T_w(\text{nucleon}_i)$ is the
+    unique PSD-feasible canonical element at $H_3(q_0)$.  *Closed
+    numerically* by the R5-minimal verifier
+    ([`joint_tower_sdp_solver_v2.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/joint_tower_sdp_solver_v2.py)).
+
+(b) **Binding-K uniqueness** — $K(\mathfrak{H}) \in H_{3 \cdot A}(q_0)$
+    is the unique PSD-feasible Hecke element satisfying the joint-tower
+    SDP cross-level consistency constraints (4) of
+    [`prop:joint-tower-sdp-confinement`](#prop:joint-tower-sdp-confinement).
+    *Open* — this is the categorical uniqueness theorem still required
+    to fully close GAP-A-1.
+
+The Lean class
+[`conj-canonical-knot-id-sdp.lean`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/conj-canonical-knot-id-sdp.lean)
+records (a) and (b) as **separate** sub-assertions
+(`constituentUniqueness`, `bindingKUniqueness`), so a downstream
+conditional theorem can use only the closed (a) part once the binding-K
+SDP solver mode lands and discharges (b) per-particle.
+
+| Nucleus | $A$ | $n_0 = 3A$ | binding $K$ | constituents | $\rho$ |
+|---------|-----|-----------|-------------|--------------|--------|
+| ²H | 2 | 6 | $L_H$ (Hopf) | $\{p, n\}$ | 1 |
+| ³H | 3 | 9 | 8₁₁-class link | $\{p, n, n\}$ | 2 |
+| ³He | 3 | 9 | $L_{6a4}$ | $\{p, p, n\}$ | 2 |
 
 ## Relationship to GAP-A-1
 
