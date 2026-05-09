@@ -2,7 +2,7 @@
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "computation": "e0-calibration-audit",
   "description": "Audit of E_0 / Q_β(n) calibration constants across folio-assistant/computations. Reports value-precision drift, anchor-of-pinning violations vs CAL-3, and the PDG-derived uncertainty floor on every E_0-dependent quantity.",
-  "computedAt": "2026-05-09T00:22:51.877324+00:00",
+  "computedAt": "2026-05-09T01:10:20.775279+00:00",
   "reference_blocks": [
     "prop:three-calibration-inputs",
     "rem:calibration-inputs"
@@ -218,7 +218,7 @@
       },
       {
         "file": "folio-assistant/computations/paper_six_term_isotope_sweep.py",
-        "line": 560,
+        "line": 561,
         "pattern": "literal_0_782",
         "match": "0.782",
         "context": "#   T1 (descended Markov):  E_0_β = 0.782 MeV per cat unit",
@@ -490,10 +490,26 @@
       },
       {
         "file": "folio-assistant/computations/codata_constants.py",
-        "line": 52,
+        "line": 56,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "Q_BETA_MEV_ERR = mp.sqrt(",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/codata_constants.py",
+        "line": 61,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "\"M_E_MEV\", \"M_P_MEV\", \"M_N_MEV\", \"Q_BETA_MEV\",",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/codata_constants.py",
+        "line": 63,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "\"M_E_MEV_ERR\", \"M_P_MEV_ERR\", \"M_N_MEV_ERR\", \"Q_BETA_MEV_ERR\",",
         "kind": "doc"
       }
     ],

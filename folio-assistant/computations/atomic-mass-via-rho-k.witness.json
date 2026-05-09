@@ -1,11 +1,17 @@
 {
-  "computation": "atomic-mass-via-rho-k",
-  "computedAt": "2026-05-09T00:36:04.160403+00:00",
-  "auditOnly": "AUDIT-DEEP-2026-05.md",
-  "description": "Atomic mass-table predictions using the resolved \u03c1_K assembly M(K) = \u03c1_K \u00b7 m_e \u00b7 |tr_M(K)| from PR #564 \u00a73.3a (Options A + C: no additive T6, Mittag-Leffler complementarity). Calibration anchors: m_e (CODATA), m_p (CODATA), m_n (CODATA via Q_\u03b2 = m_n - m_p - m_e). Reads |tr_M(K)| from atomic-tr-m-mpfr-50dps.witness.json. Atoms not in that witness are flagged tr_M_unavailable rather than fabricating values. Direct successor to atomic_braid_mass_table.py \u2014 see the side-by-side improvement_factor field.",
   "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-09T01:03:44.072349+00:00",
+  "commitSha": "9cd29e5460be025f80010446657d2357a10e57ec",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "atomic-mass-via-rho-k",
   "scriptFile": "atomic_mass_via_rho_k.py",
-  "scriptHash": null,
+  "scriptHash": "1cf9b5251e13",
+  "scriptCommitSha": "146b348f0512597ca93b03af4e8421b66b109b7a",
+  "description": "Atomic mass-table predictions using the resolved ρ_K assembly M(K) = ρ_K · m_e · |tr_M(K)| from PR #564 §3.3a (Options A + C: no additive T6, Mittag-Leffler complementarity). Calibration anchors: m_e (CODATA), m_p (CODATA), m_n (CODATA via Q_β = m_n - m_p - m_e). Reads |tr_M(K)| from atomic-tr-m-mpfr-50dps.witness.json. Atoms not in that witness are flagged tr_M_unavailable rather than fabricating values. Direct successor to atomic_braid_mass_table.py — see the side-by-side improvement_factor field.",
+  "auditOnly": "AUDIT-DEEP-2026-05.md",
   "parameters": {
     "q0": "1.10997859555418051695830018898879867637876138498395",
     "m_e_MeV": "0.51099895",
@@ -86,7 +92,7 @@
         "M_codata_MeV": "3727.379378",
         "err_pct": "0.75912957846492651813989834227172139492370180731304",
         "binding_residual_MeV": "28.29563936",
-        "tr_M_convention_status": "DEPRECATED_DISJOINT \u2014 value below uses the disjoint-product convention (44 crossings, no interface) which is empirically wrong per PR #564 audit. Canonical word atom_braid_word_3A(2,2) has 47 crossings with 3 interfaces (pp, pn, nn). y-lambda-mpfr-witness.json is now extended to n=12 at true 50 dps (regenerate_y_lambda_mpfr.py, PR #564) BUT canonical |tr_M(\u2074He)| at H_12 via the Wenzl bridge is INTRACTABLE with current Python mpmath: p(12)=77 partitions, max dim 7700 ((5,3,2,1,1)), ~2\u00d710\u00b9\u00b3 ops per partition \u00d7 47 crossings, timed out at 30 min. Canonical compute deferred pending (a) Rust kernel with rayon parallel partitions + block-sparse Hoefsmit, or (b) categorical reduction via Wenzl 1988 LR branching to avoid the full p(12)=77 sum. DO NOT use for mass predictions."
+        "tr_M_convention_status": "DEPRECATED_DISJOINT — value below uses the disjoint-product convention (44 crossings, no interface) which is empirically wrong per PR #564 audit. Canonical word atom_braid_word_3A(2,2) has 47 crossings with 3 interfaces (pp, pn, nn). y-lambda-mpfr-witness.json is now extended to n=12 at true 50 dps (regenerate_y_lambda_mpfr.py, PR #564) BUT canonical |tr_M(⁴He)| at H_12 via the Wenzl bridge is INTRACTABLE with current Python mpmath: p(12)=77 partitions, max dim 7700 ((5,3,2,1,1)), ~2×10¹³ ops per partition × 47 crossings, timed out at 30 min. Canonical compute deferred pending (a) Rust kernel with rayon parallel partitions + block-sparse Hoefsmit, or (b) categorical reduction via Wenzl 1988 LR branching to avoid the full p(12)=77 sum. DO NOT use for mass predictions."
       }
     ],
     "legacy_compare": [
@@ -99,35 +105,35 @@
       {
         "atom": "n",
         "rho_K_err_pct": "0.0",
-        "legacy_E0_err_pct": "-8.325168934008678",
-        "improvement_factor": 8325168934008.679
+        "legacy_E0_err_pct": "-8.331113281944141",
+        "improvement_factor": 8331113281944.142
       },
       {
         "atom": "D",
         "rho_K_err_pct": "0.11860475365199058",
-        "legacy_E0_err_pct": "-24.24710979702568",
-        "improvement_factor": 204.4362392773178
+        "legacy_E0_err_pct": "-24.194378496912112",
+        "improvement_factor": 203.99164242525325
       },
       {
         "atom": "T",
         "rho_K_err_pct": "0.30195921560110217",
-        "legacy_E0_err_pct": "-54.15021916237943",
-        "improvement_factor": 179.32957950822606
+        "legacy_E0_err_pct": "-54.11695166232587",
+        "improvement_factor": 179.2194073447856
       },
       {
         "atom": "3He",
         "rho_K_err_pct": "0.27481884611750584",
-        "legacy_E0_err_pct": "-50.46355873197802",
-        "improvement_factor": 183.6248111979956
+        "legacy_E0_err_pct": "-50.427614625431424",
+        "improvement_factor": 183.49401919790392
       },
       {
         "atom": "4He",
         "rho_K_err_pct": "0.7591295784649266",
-        "legacy_E0_err_pct": "-39.80791331653202",
-        "improvement_factor": 52.438891127163785
+        "legacy_E0_err_pct": "-39.76421238458452",
+        "improvement_factor": 52.381323969741366
       }
     ]
   },
-  "audit_reference": "AUDIT-DEEP-2026-05.md \u00a73.3a (P4\u2033)",
+  "audit_reference": "AUDIT-DEEP-2026-05.md §3.3a (P4″)",
   "pr": "#564"
 }

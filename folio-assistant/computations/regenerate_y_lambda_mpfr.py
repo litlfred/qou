@@ -151,6 +151,22 @@ def main() -> int:
         "audit_reference": "AUDIT-DEEP-2026-05.md §7; PR #564 convention/precision audit",
         "pr": "#564",
     }
+    # NOTE: Cannot use WitnessBuilder.wrap_legacy here because the
+    # output filename is `y-lambda-mpfr-witness.json` (without the
+    # standard `.witness.json` suffix), and consumers
+    # (tr_m_wenzl_bridge_mpfr.py:53 _Y_LAMBDA_DEFAULT) read that
+    # exact name. Migrating would break the consumer chain. Inject
+    # the WitnessBuilder staleness fields manually into the legacy
+    # emission so the output gets scriptHash/scriptCommitSha/
+    # commitSha/durationMs without changing the filename.
+    from witness_base import (
+        _git_head_sha, _git_file_sha, file_content_hash,
+    )
+    out["scriptHash"] = file_content_hash(__file__)
+    out["scriptCommitSha"] = _git_file_sha(__file__)
+    out["commitSha"] = _git_head_sha()
+    out["engineVersion"] = f"sympy {sp.__version__} + mpmath {mp.__version__}"
+    out["auditOnly"] = "AUDIT-DEEP-2026-05.md"
     OUTPUT.write_text(json.dumps(out, indent=2) + "\n")
     print(f"\n  Wrote {OUTPUT.name} ({OUTPUT.stat().st_size} bytes).")
     print(f"  tables_by_n keys: {sorted(out_tables.keys(), key=int)}")

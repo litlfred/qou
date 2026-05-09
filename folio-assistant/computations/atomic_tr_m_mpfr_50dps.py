@@ -56,7 +56,7 @@ from tr_m_wenzl_bridge_mpfr import tr_M_via_wenzl_bridge_mpfr
 Q0 = HERE / "q-pinning-50-digit.witness.json"
 OUT = HERE / "atomic-tr-m-mpfr-50dps.witness.json"
 
-M_E_MEV = mpf("0.51099895")  # CODATA 2022
+from codata_constants import M_E_MEV  # CODATA 2022 — centralised
 
 # Published Jones polynomials (from Kawauchi tables / KnotInfo).
 # Variable conventions: in our pipeline σ_i² = (q − q⁻¹)σ_i + 1, so

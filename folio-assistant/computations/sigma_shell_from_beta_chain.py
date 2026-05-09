@@ -288,8 +288,17 @@ def main() -> int:
             "explicit \"I do NOT want to derive Q_β\" directive."
         ),
     }
-    out = HERE / "sigma-shell-from-beta-chain.witness.json"
-    out.write_text(json.dumps(witness, indent=2) + "\n")
+    from witness_base import WitnessBuilder
+    out = (
+        WitnessBuilder.wrap_legacy(
+            "sigma-shell-from-beta-chain",
+            witness,
+            script_path=__file__,
+            engine="mpmath+sympy",
+            output_dir=HERE,
+        )
+        .save()
+    )
     print(f"\n  Wrote {out.name}")
     return 0
 

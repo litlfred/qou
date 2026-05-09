@@ -100,8 +100,8 @@ PROTON_WORD = [1] * 7 + [2] * 4
 NEUTRON_WORD = [1] * 6 + [2] * 4 + [-1]
 
 
-# ── CODATA reference data ──────────────────────────────────────
-M_E_MEV = mp.mpf("0.51099895")
+# ── CODATA reference data — centralised in codata_constants ───
+from codata_constants import M_E_MEV  # noqa: E402
 
 ATOMS_CODATA = {
     "p":   {"Z": 1, "N": 0, "M_MeV": "938.27208816"},
