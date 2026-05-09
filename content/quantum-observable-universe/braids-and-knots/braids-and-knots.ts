@@ -471,6 +471,7 @@ export default chapter({
         "frobenius-self-duality-forces-lp-dual-extraction",
         "jucys-murphy-central-elements-qou",
         "mass-formula-iterative-lp-dual",
+        "alpha-5-jm-central-empirical-findings",
         "wigner-2-coefficient",
         "mass-endomorphism-tower",
         "mass-endomorphism-jet-tower",

@@ -1,0 +1,194 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-09T20:43:10.424819+00:00",
+  "commitSha": "797b738b87bd9970c3d2ff818b55ca9d1c508f0d",
+  "assertions": [
+    {
+      "name": "alpha_5_atom_independent_normalized",
+      "computed": 4.821586949462138,
+      "expected": 0.0,
+      "passed": false,
+      "tolerance": 0.05
+    },
+    {
+      "name": "alpha_5_normalized_finite",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 1e-06
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 300,
+  "computation": "alpha-5-jucys-murphy-central",
+  "scriptFile": "alpha_5_jucys_murphy_central.py",
+  "scriptHash": "92a02fcfbe05",
+  "scriptCommitSha": "a3b8acf0e50a17dd14854262bb84afa08f80b78f",
+  "description": "α_5 derivation probe via the Jucys–Murphy central element P_5 := e_5(J_1, ..., J_n) restricted to height-6 partitions. By Murphy 1992, e_5(J_1..J_n) ∈ Z(H_n(q)) — central — so α_5(A) := Σ_{λ ⊢ 3A, ht=6} w_λ · c_5(λ) is computable as a finite combinatorial sum in q-rationals.  Tests atom-independence across A = 2..4: if the sum normalised by [3A]_q! is constant, α_5 is DERIVED.",
+  "contentBlock": "prop:mass-formula-iterative-lp-dual",
+  "parameters": {
+    "q_0": "1.1099785955541805169583001889887986763787613849839",
+    "alpha_5_AME_fit_MeV": -420000.0
+  },
+  "data": {
+    "results": {
+      "2": {
+        "alpha_5_raw_q0": 0.0005608243805720176,
+        "alpha_5_normalized_q0": 6.685718276641538e-07,
+        "alpha_5_raw_q1": 0.008333333333333333,
+        "alpha_5_normalized_q1": 1.1574074074074073e-05,
+        "n_height_6_partitions": 1,
+        "top_contributions_q0": [
+          {
+            "shape": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "f_lambda": 1,
+            "w_lambda": 0.0011921233292002003,
+            "c_5": 0.4704415783459892,
+            "contribution": 0.0005608243805720176
+          }
+        ]
+      },
+      "3": {
+        "alpha_5_raw_q0": 1.9780170459424862,
+        "alpha_5_normalized_q0": 3.3355759362181053e-06,
+        "alpha_5_raw_q1": 5.717013888888889,
+        "alpha_5_normalized_q1": 1.575455767440721e-05,
+        "n_height_6_partitions": 3,
+        "top_contributions_q0": [
+          {
+            "shape": [
+              4,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "f_lambda": 56,
+            "w_lambda": 0.008547590539316668,
+            "c_5": 63.24181867481896,
+            "contribution": 0.5405651709940628
+          },
+          {
+            "shape": [
+              3,
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "f_lambda": 105,
+            "w_lambda": 0.03098010280402894,
+            "c_5": 40.74125913855198,
+            "contribution": 1.262168396477924
+          },
+          {
+            "shape": [
+              2,
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            "f_lambda": 48,
+            "w_lambda": 0.0065345301697155795,
+            "c_5": 26.824189944497398,
+            "contribution": 0.17528347847049952
+          }
+        ]
+      },
+      "4": {
+        "alpha_5_raw_q0": 164.50019225986418,
+        "alpha_5_normalized_q0": 1.1199873717457154e-07,
+        "alpha_5_raw_q1": 144.0414732142857,
+        "alpha_5_normalized_q1": 3.007118832469155e-07,
+        "n_height_6_partitions": 11,
+        "top_contributions_q0": [
+          {
+            "shape": [
+              7,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "f_lambda": 462,
+            "w_lambda": 0.0005129129669788215,
+            "c_5": 2946.321546718118,
+            "contribution": 1.5112065262008203
+          },
+          {
+            "shape": [
+              6,
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "f_lambda": 2100,
+            "w_lambda": 0.011991974285223757,
+            "c_5": 1462.1763082524187,
+            "contribution": 17.53438068902641
+          },
+          {
+            "shape": [
+              5,
+              3,
+              1,
+              1,
+              1,
+              1
+            ],
+            "f_lambda": 3564,
+            "w_lambda": 0.03749443944047746,
+            "c_5": 896.6351544210053,
+            "contribution": 33.61883249764154
+          },
+          {
+            "shape": [
+              5,
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            "f_lambda": 3696,
+            "w_lambda": 0.04031159027651673,
+            "c_5": 748.6704527845143,
+            "contribution": 30.180096544783602
+          },
+          {
+            "shape": [
+              4,
+              4,
+              1,
+              1,
+              1,
+              1
+            ],
+            "f_lambda": 1925,
+            "w_lambda": 0.011395226298169338,
+            "c_5": 697.5726653339686,
+            "contribution": 7.948998380897719
+          }
+        ]
+      }
+    },
+    "verdict": "strongly atom-dependent (mechanism orthogonal to JM-central)",
+    "relative_spread_normalized": 4.821586949462138,
+    "relative_spread_raw": 83.16390992328519
+  }
+}

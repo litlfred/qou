@@ -1,4 +1,4 @@
-**Proposition.**
+**Proposition (framework — conditional on Step 5).**
 *Let $\varrho \in H_n(R, q)$ be a quantum-observable knot
 (QOU braid representative of a hadronic state) of strand count
 $n = 3A$, and let $J^\bullet \subset H_n(R, q)$ be the
@@ -123,17 +123,58 @@ $$
 $w_\lambda = \dim_q(\lambda)^2 / [n]_q!$ via cancellation
 through the Markov-trace normalisation.)
 
-**Step 5: Atom-independence by ontological agnosticism.**
-By [ontological-agnosticism](#rem:ontological-agnosticism),
-the τ-extracted observable is invariant under flat transport
-along the categorical $q$-connection. The level-$\ell$
-correction $u^{(\ell)*}(\varrho)$ depends on $\varrho$ only
-through the jet datum $J^\ell(\varrho)$ — and this datum is
-*atom-independent* (the same q-rational for all
-$A = 2, 3, 4, \ldots$ once $A$-dependent overall factors are
-absorbed into the $1/[n]_q!$ normalisation).
+**Step 5 (open).**
+The conjectural step is whether the level-$\ell$ correction
+$u^{(\ell)*}(\varrho)$ — i.e. the closed-form sum
 
-**Conclusion.** Summing over $\ell$:
+$$
+  u^{(\ell)*}(\varrho)
+  \;\propto\;
+  \sum_{\mathrm{ht}(\lambda) = \ell+1}
+    w_\lambda(q) \cdot c_\ell(\lambda)
+$$
+
+— depends on $A = |\varrho|/3$ only through an overall
+prefactor (atom-independence after normalisation), so that it
+yields the AME-fitted $\alpha_\ell$ when evaluated at
+$q = q_0$. By
+[ontological-agnosticism](#rem:ontological-agnosticism),
+the $\tau$-extracted observable is invariant under flat
+transport, which gives a *categorical* atom-independence; what
+is conjectural is whether the *finite* JM-central sum (which
+is the leading-order approximation to the $\tau$-extraction at
+the substrate parameter $q_0$) reproduces the AME mass term
+without further corrections.
+
+**Empirical status (2026-05-09).** The companion witness
+[`alpha-5-jucys-murphy-central.witness.json`](folio-assistant/computations/alpha-5-jucys-murphy-central.witness.json)
+computes the $\ell = 5$ (height-6) sum at $A \in \{2, 3, 4\}$
+and reports a **relative spread of $\approx 482\%$** in the
+$1/[3A]_q!$-normalised quantity at $q_0$. This means the
+simplest form of the closed-form recursion above **is not by
+itself atom-independent**; additional refinement is required.
+Candidate refinements:
+
+1. **Per-atom strand recipe.** The braid $\varrho$ corresponds
+   to a specific recipe (e.g.
+   [recursive-atom-knot-atlas](#prop:recursive-atom-knot-atlas));
+   $u^{(\ell)*}$ may need to be a weighted *sub-sum* over
+   partitions associated with that recipe, not all height-$(\ell{+}1)$
+   partitions of $3A$.
+2. **Refined jet stratification.** The GB-filtration may cut at
+   a finer index than partition height; e.g. by Frobenius
+   coordinate or by Demazure sub-crystal.
+3. **Higher-order $q$-corrections.** The leading-order
+   JM-central scalar $c_\ell(\lambda)$ may need
+   $O((q-1)^2)$ corrections from the categorical $q$-connection.
+
+The structural framework (Steps 1–4) — Frobenius self-duality
++ Murphy 1992 + GB-filtration — remains intact. What is open
+is the specific algebraic form of $u^{(\ell)*}$ that reproduces
+the empirical $\alpha_\ell$.
+
+**Conclusion (conditional).** Summing over $\ell$, *modulo*
+the open empirical question of Step 5:
 
 $$
   \mathfrak{m}(\varrho) \;=\;
