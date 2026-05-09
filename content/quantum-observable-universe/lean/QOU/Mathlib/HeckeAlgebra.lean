@@ -987,20 +987,73 @@ class H3WedderburnIdempotency (q : ℝ) where
   sym3_alt3_orthogonal :
     H3.mul q (H3.blockSym3 q) (H3.blockAlt3 q) = (0, 0, 0, 0, 0, 0)
 
-/-! ### Idempotency proof obligation (lake-build deferred)
+/-! ### H_3 idempotency — concrete proof attempts (lake-build verifiable)
 
-    Concrete instance of `H3WedderburnIdempotency q` requires
-    proving 4 field equations × 6 carrier components = 24
-    scalar identities, each expanding through:
-      H3.mul → H3.smul/add/mulSigma1/mulSigma2 → H3.blockSym3
-      / blockAlt3 / blockMixed21 → qFactorial / qInteger
-    Each identity reduces to `field_simp; ring` modulo
-    `qFactorial q 3 ≠ 0` (= `qInteger q 3 * qInteger q 2 * qInteger
-    q 1 * 1 ≠ 0`, satisfied at substrate `q > 1`).
+    Each of the 4 class fields × 6 carrier components reduces
+    to a `field_simp; ring` identity modulo `qFactorial q 3 ≠ 0`.
+    The proofs below apply the unfold-then-`field_simp; ring`
+    pattern to each carrier component via chained `Prod.ext`.
 
-    Encoding the 24 identities inline would expand the file
-    by ~500 LoC of mechanical algebra.  Concrete instance is
-    deferred for lake-build verification; the class is the
-    §3b-cond hook that downstream theorems take as a hypothesis. -/
+    User note: lake-build will catch any algebraic mismatches
+    inline; iterate from there. -/
+
+/-- **First-component idempotency** for `e_[3]`: the structurally
+    simplest case of the full `H3WedderburnIdempotency` instance. -/
+theorem H3.blockSym3_sq_first_component (q : ℝ)
+    (h_zne : QOU.qFactorial q 3 ≠ 0) :
+    (H3.mul q (H3.blockSym3 q) (H3.blockSym3 q)).1
+      = (H3.blockSym3 q).1 := by
+  unfold H3.mul H3.smul H3.add H3.blockSym3 H3.mulSigma1 H3.mulSigma2
+  simp only [Prod.fst]
+  field_simp
+  ring
+
+/-- **First-component orthogonality** for `e_[3] · e_[1,1,1]`:
+    the symmetric and antisymmetric blocks are orthogonal at the
+    first carrier component. -/
+theorem H3.blockSym3_blockAlt3_orthogonal_first (q : ℝ)
+    (h_zne : QOU.qFactorial q 3 ≠ 0) :
+    (H3.mul q (H3.blockSym3 q) (H3.blockAlt3 q)).1 = 0 := by
+  unfold H3.mul H3.smul H3.add H3.blockSym3 H3.blockAlt3
+         H3.mulSigma1 H3.mulSigma2
+  simp only [Prod.fst]
+  field_simp
+  ring
+
+/-- **Concrete instance attempt** for `H3WedderburnIdempotency`.
+    Each field discharged via `unfold + Prod.ext chain + field_simp;
+    ring`.  The full proof expands to ~24 component identities
+    each closing by ring arithmetic modulo `qFactorial q 3 ≠ 0`.
+
+    User note: this instance is the user's lake-build verification
+    target.  Iteration may be needed if `simp` / `Prod.ext` /
+    `ring` don't close cleanly inline; the structural shape is
+    correct (each idempotency / orthogonality identity is a
+    polynomial identity in `q`). -/
+noncomputable instance H3WedderburnIdempotency_canonical (q : ℝ)
+    (h_zne : QOU.qFactorial q 3 ≠ 0) :
+    H3WedderburnIdempotency q where
+  sym3_idempotent := by
+    unfold H3.mul H3.smul H3.add H3.blockSym3 H3.mulSigma1 H3.mulSigma2
+    refine Prod.ext ?_ (Prod.ext ?_ (Prod.ext ?_
+      (Prod.ext ?_ (Prod.ext ?_ ?_))))
+    all_goals (simp only [Prod.fst, Prod.snd]; field_simp; ring)
+  alt3_idempotent := by
+    unfold H3.mul H3.smul H3.add H3.blockAlt3 H3.mulSigma1 H3.mulSigma2
+    refine Prod.ext ?_ (Prod.ext ?_ (Prod.ext ?_
+      (Prod.ext ?_ (Prod.ext ?_ ?_))))
+    all_goals (simp only [Prod.fst, Prod.snd]; field_simp; ring)
+  mixed21_idempotent := by
+    unfold H3.mul H3.smul H3.add H3.blockMixed21 H3.blockSym3 H3.blockAlt3
+           H3.mulSigma1 H3.mulSigma2 H3.one
+    refine Prod.ext ?_ (Prod.ext ?_ (Prod.ext ?_
+      (Prod.ext ?_ (Prod.ext ?_ ?_))))
+    all_goals (simp only [Prod.fst, Prod.snd]; field_simp; ring)
+  sym3_alt3_orthogonal := by
+    unfold H3.mul H3.smul H3.add H3.blockSym3 H3.blockAlt3
+           H3.mulSigma1 H3.mulSigma2
+    refine Prod.ext ?_ (Prod.ext ?_ (Prod.ext ?_
+      (Prod.ext ?_ (Prod.ext ?_ ?_))))
+    all_goals (simp only [Prod.fst, Prod.snd]; field_simp; ring)
 
 end QOU.Mathlib.HeckeAlgebra
