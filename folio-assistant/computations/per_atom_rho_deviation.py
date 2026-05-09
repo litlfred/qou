@@ -336,12 +336,13 @@ def main() -> int:
             ],
         },
     }
-    # Save via the builder created at start of main(); pass `extra=`
-    # to fold the legacy top-level keys (description, parameters,
-    # data, ...) into the witness without using wrap_legacy.
-    # `durationMs` reflects elapsed time since builder instantiation.
+    # Save via the builder created at start of main(). Set the
+    # `description` through the builder API (rather than passing it
+    # as extra) so the structured fields keep wrap_legacy's order
+    # (description BEFORE auditOnly) — otherwise the drift check on
+    # the witness pipeline trips on a positional shift.
+    builder.set_description(out.pop("description", ""))
     out["computation"] = "per-atom-rho-deviation"
-    # Description / etc. live inside `out` already; preserve as extras.
     out_path = builder.save(extra=out)
     print(f"\nWitness: {out_path}")
     return 0
