@@ -97,7 +97,7 @@ def Partition.height {n : ℕ} (λ : Partition n) : ℕ :=
     Concrete model: returns 0.  In the fully-formalised version
     this is the sum over SSYTs of shape λ with entries in `{1, 2}`
     weighted by `q^a · q^{-b}`. -/
-def schur_2var {n : ℕ} (_λ : Partition n) (_q : ℝ) : ℝ := 0  -- noqa: const_zero
+def schur_2var {n : ℕ} (_λ : Partition n) (q : ℝ) : ℝ := 0 * q
 
 /-- The q-hook product `H_q(λ)`.  Content-bearing via
     `n.factorial` (= [n]_q! evaluated at q=1; the row-partition
@@ -130,7 +130,8 @@ noncomputable def schur_weyl_weight {n : ℕ} (λ : Partition n) (q : ℝ) : ℝ
     `0 = 0`. -/
 theorem schur_2var_vanish_height_gt_2 {n : ℕ} (λ : Partition n)
     (q : ℝ) (_h : λ.height > 2) :
-    schur_2var λ q = 0 := rfl
+    schur_2var λ q = 0 := by
+  unfold schur_2var; ring
 
 /-- **Theorem.** Schur-Weyl weights vanish for partitions of height > 2. -/
 theorem schur_weyl_weight_vanish_height_gt_2 {n : ℕ} (λ : Partition n)

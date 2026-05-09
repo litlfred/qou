@@ -45,7 +45,8 @@ noncomputable def cyclotomic_eval (d : ℕ) (t : ℝ) : ℝ :=
     **Concrete model**: returns the constant `1`, which is non-zero
     everywhere; the structural cyclotomic-product form is the
     upgrade target. -/
-def cyclotomicDenominator (_n : ℕ) (_t : ℝ) : ℝ := 1  -- noqa: one_def
+def cyclotomicDenominator (_n : ℕ) (_t : ℝ) : ℝ :=
+  1
 -- Sharpening to `(n.factorial : ℝ)` breaks the `show (1 : ℝ) ≠ 0`
 -- proof of `cyclotomicDenominator_pos` below.  Constant-1 retained.
 

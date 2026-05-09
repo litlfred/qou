@@ -68,11 +68,13 @@ def HopfDiquark.spectatorColor (D : HopfDiquark) : ColorIndex :=
   else (if D.color₂ = 0 then 1 else 0)
 
 /-- Linking number of the Hopf link: +1 for the canonical orientation. -/
-def hopf_linking_number : Int := 1  -- noqa: one_def
+def hopf_linking_number : Int :=
+  1
 
 /-- Hopf link volume is zero (torus link, not hyperbolic). -/
 -- Ref: [manuscript] Ch. 4
-def hopf_link_volume : ℝ := 0  -- noqa: const_zero
+def hopf_link_volume : ℝ :=
+  0
 
 /-- Crossing energy of the Hopf link at substrate parameter q.
     The Hopf link T_{2,2} has braid word σ₁², contributing

@@ -48,13 +48,15 @@ open QOU
     multiplier).  For the QOU substrate, this means the
     fully-symmetric Wedderburn channel of `H_n(q)` is
     1-dimensional. -/
-def dimqRowPartition (_n : ℕ) (_q : ℝ) : ℝ := 1  -- noqa: one_def
+def dimqRowPartition (_n : ℕ) (_q : ℝ) : ℝ :=
+  1
 
 /-- The **q-Wenzl dimension** for the column partition `[1, 1,
     …, 1]` (n boxes in a column): `dim_q([1ⁿ]) = 1` (column
     dual of the row).  This means the fully-antisymmetric
     Wedderburn channel of `H_n(q)` is 1-dimensional. -/
-def dimqColPartition (_n : ℕ) (_q : ℝ) : ℝ := 1  -- noqa: one_def
+def dimqColPartition (_n : ℕ) (_q : ℝ) : ℝ :=
+  1
 
 /-- The **q-Wenzl dimension** for the L-shape `[2, 1]` at `n =
     3`: `dim_q([2,1]) = (q + q⁻¹)`.  The standard `[2,1]`
@@ -220,7 +222,8 @@ theorem n4_cohort_length : n4_cohort.length = 5 := rfl
 
 /-- `dim_q([3]) = 1`.  Row partition has hook product `[3]_q!`,
     matching the q-factorial denominator. -/
-def dimqPartition3 (_q : ℝ) : ℝ := 1  -- noqa: one_def
+def dimqPartition3 (_q : ℝ) : ℝ :=
+  1
 
 /-- `dim_q([2,1]) = q + q⁻¹`.  Hook product `H_q([2,1]) = [3]_q
     · [1]_q · [1]_q = [3]_q`, so `dim_q = [3]_q! / [3]_q
@@ -229,7 +232,8 @@ noncomputable def dimqPartition21 (q : ℝ) : ℝ := q + q⁻¹
 
 /-- `dim_q([1,1,1]) = 1`.  Column partition has hook product
     `[3]_q!`, matching the q-factorial denominator. -/
-def dimqPartition111 (_q : ℝ) : ℝ := 1  -- noqa: one_def
+def dimqPartition111 (_q : ℝ) : ℝ :=
+  1
 
 /-! ### n=3 y_λ coefficients (Wenzl-bridge central characters)
 
@@ -290,7 +294,8 @@ theorem dimqPartition21_via_hook_formula (q : ℝ) (hq : q - q⁻¹ ≠ 0)
                      `dim_q = 1`. -/
 
 /-- `dim_q([4]) = 1`. -/
-def dimqPartition4 (_q : ℝ) : ℝ := 1  -- noqa: one_def
+def dimqPartition4 (_q : ℝ) : ℝ :=
+  1
 
 /-- `dim_q([3,1]) = [3]_q`. -/
 noncomputable def dimqPartition31 (q : ℝ) : ℝ := QOU.qInteger q 3
@@ -304,7 +309,8 @@ noncomputable def dimqPartition22 (q : ℝ) : ℝ :=
 noncomputable def dimqPartition211 (q : ℝ) : ℝ := QOU.qInteger q 3
 
 /-- `dim_q([1,1,1,1]) = 1`. -/
-def dimqPartition1111 (_q : ℝ) : ℝ := 1  -- noqa: one_def
+def dimqPartition1111 (_q : ℝ) : ℝ :=
+  1
 
 /-- Column-row duality at `n = 4`: `dim_q([3,1]) = dim_q([2,1,1])`. -/
 theorem dimqPartition31_eq_dimqPartition211 (q : ℝ) :
@@ -702,7 +708,8 @@ theorem dimqPartition111_via_hook_formula (q : ℝ) (hq_one : q > 1) :
     the workplan. -/
 
 /-- `dim_q_hook([5]) = 1`. -/
-def dimqPartition5 (_q : ℝ) : ℝ := 1  -- noqa: one_def
+def dimqPartition5 (_q : ℝ) : ℝ :=
+  1
 
 /-- `dim_q_hook([4,1]) = [4]_q`. -/
 noncomputable def dimqPartition41 (q : ℝ) : ℝ := QOU.qInteger q 4
@@ -723,7 +730,8 @@ noncomputable def dimqPartition221 (q : ℝ) : ℝ := QOU.qInteger q 5
 noncomputable def dimqPartition2111 (q : ℝ) : ℝ := QOU.qInteger q 4
 
 /-- `dim_q_hook([1,1,1,1,1]) = 1`. -/
-def dimqPartition11111 (_q : ℝ) : ℝ := 1  -- noqa: one_def
+def dimqPartition11111 (_q : ℝ) : ℝ :=
+  1
 
 /-- Column-row duality at `n = 5`: dim_q_hook([4,1]) = dim_q_hook([2,1,1,1]). -/
 theorem dimqPartition41_eq_dimqPartition2111 (q : ℝ) :

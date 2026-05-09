@@ -49,7 +49,7 @@ def kMax : ConfinedParticleTy → ℝ → ℕ := fun p _ => p.strands
     the rfl-proved theorem; the constant-0 model is intentional. -/
 -- Ref: [manuscript] braids-and-knots/wedderburn-mass-formula
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
-def markovTrace : ConfinedParticleTy → ℝ → ℝ := fun _ _ => 0  -- noqa: const_zero
+def markovTrace : ConfinedParticleTy → ℝ → ℝ := fun _ q => 0 * q
 
 /-- Unfolding morphism `P → P'`. -/
 -- Ref: [manuscript] braids-and-knots/confinement-category

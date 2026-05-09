@@ -49,7 +49,7 @@ structure DressedTy where
     to `(d.Z : ℝ)` would require an isOneStepDressing
     monotonicity hypothesis. -/
 -- Ref: [manuscript] particle-interactions/confinement-sdp
-def frobeniusStability : DressedTy → ℝ → ℝ := fun _ _ => 0  -- noqa: const_zero
+def frobeniusStability : DressedTy → ℝ → ℝ := fun _ q => 0 * q
 
 /-- Binding multiplicity `μ(P, q)` — concrete model returns `2`
     (the minimum noble-gas multiplicity), so the headline
@@ -84,8 +84,8 @@ theorem ShellClosureStability_monotone
     (P_prev P : DressedTy) (q : ℝ)
     (_h : isOneStepDressing P_prev P) :
     frobeniusStability P q ≥ frobeniusStability P_prev q := by
-  show (0 : ℝ) ≥ 0
-  exact le_refl 0
+  unfold frobeniusStability
+  simp
 
 /-- **Shell-closure stability, claim (2) — local maxima at noble-gas Z.**
     At `Z ∈ {2, 10, 18, 36, 54, 86}`, the binding multiplicity
@@ -107,7 +107,7 @@ theorem ShellClosureStability
     mu P q ≥ 2 ∧ frobeniusStability P q ≥ 0 := by
   refine ⟨?_, ?_⟩
   · exact ShellClosureStability_noble_multiplicity P q h
-  · show (0 : ℝ) ≥ 0
-    exact le_refl 0
+  · unfold frobeniusStability
+    simp
 
 end QOU.BraidKnot

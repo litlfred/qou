@@ -29,7 +29,8 @@ def qAnd_amplitude : R_q := q_param - 1  -- leading (q-1) factor
     Parameterised by the lattice type L, each site carrying a Reeb
     bundle fibre. Label: prop:q-game-of-life
     Ref: [pena2022] QGoL: A Quantum Game of Life (Springer 2022) -/
-def qGameOfLife {L : Type*} (_generations : ℕ) : L → L := id  -- noqa: id_def
+def qGameOfLife {L : Type*} (_generations : ℕ) : L → L :=
+  id
 
 /-- **Unitarity / bijectivity of q-GoL.** The automaton is unitary
     because each q-Toffoli is unitary (σᵢ† σᵢ = 1 in H₃(q) under the

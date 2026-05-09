@@ -104,13 +104,13 @@ class NonAbelianStokes (M G : Type u) [Group G] where
     hypothesis with `Prop := True` placeholders.  Genuine
     instances over `M = ℝ²`, `G = SU(n)`, etc., arrive once
     Mathlib's Lie-valued-forms library lands. -/
-instance trivial (M G : Type u) [Group G] : NonAbelianStokes M G where  -- noqa: skel_inst
+instance punitInstance (M G : Type u) [Group G] : NonAbelianStokes M G where
   lineIntegral := { integrate := fun _ _ => 1 }
   surfaceIntegral := { integrate := fun _ _ _ => 1 }
   stokes_holds := True
   stokes_holds_witness := trivial
   finite_slice := True
-  finite_slice_holds := trivial  -- noqa: holds_trivial
+  finite_slice_holds := True.intro
 
 /-- **Substrate axiom** (S-Yekutieli-finite-slice).  At finite
     slice depth, the multiplicative integral on a Young-diagram

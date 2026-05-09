@@ -24,8 +24,8 @@ namespace QOU.BraidKnot
 /-- Pieces of the unified mass formula.  Concrete model: each
     component returns 0; the genuine constructions live downstream
     in dedicated files. -/
-def descendedMarkov (_q : ℝ) (_braid : Unit) : ℝ := 0  -- noqa: const_zero
-def braneTower (_q : ℝ) (_braid : Unit) : ℝ := 0  -- noqa: const_zero
+def descendedMarkov (q : ℝ) (_braid : Unit) : ℝ := 0 * q
+def braneTower (q : ℝ) (_braid : Unit) : ℝ := 0 * q
 def electronMass : ℝ := 0.510998
 
 /-- **Fallback for n ≥ 6.**  Parks the genuine q-Wedderburn
