@@ -27,7 +27,10 @@ from hecke_characters import (
 )
 from hecke_character_symbolic import atomic_braid_to_crossings
 from chi_sym_alt_closed_form import chi_sym_closed_form, chi_alt_closed_form
-from q_parameter import Q as Q0_FLOAT
+from q_parameter import Q as Q0_FLOAT, HA
+# F6 (PR follow-up #582): wire numerical-q Hoefsmit through BlockCache.
+from syt_prefix_cache import BlockCache, build_seminormal_matrices_cached
+_BLOCK_CACHE = BlockCache(Q0_FLOAT, HA)
 from experimental_constants import M_E_MEV
 import json as _json
 from witness_base import WitnessBuilder
@@ -36,7 +39,9 @@ H_VAL = float(Q0_FLOAT - 1.0/Q0_FLOAT)
 
 
 def chi_lambda_numeric(shape, crossings):
-    sigmas, dim, _ = build_seminormal_matrices(shape)
+    sigmas, dim, _ = build_seminormal_matrices_cached(
+        shape, cache=_BLOCK_CACHE,
+    )
     if dim == 0:
         return 0.0, 0
     is_sparse = sp_sparse.issparse(sigmas[0]) if sigmas else False

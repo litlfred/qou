@@ -40,6 +40,9 @@ from hecke_characters import (
     partitions_of, build_seminormal_matrices, qfac, dim_q,
     standard_young_tableaux,
 )
+# F6 (PR follow-up #582): wire numerical-q Hoefsmit through BlockCache.
+from syt_prefix_cache import BlockCache, build_seminormal_matrices_cached
+_BLOCK_CACHE = BlockCache(Q0_FLOAT, HA)
 
 # ──────────────────────────────────────────────────────────────────────
 # Cache management
@@ -74,7 +77,9 @@ def chi_lambda(shape: Tuple[int, ...], word: Sequence[int]) -> float:
 
     Negative entries denote σ_i^{-1}.
     """
-    sigmas, dim, _ = build_seminormal_matrices(tuple(shape))
+    sigmas, dim, _ = build_seminormal_matrices_cached(
+        tuple(shape), cache=_BLOCK_CACHE,
+    )
     M = np.eye(dim, dtype=complex)
     for g in word:
         sgn = -1 if g < 0 else 1

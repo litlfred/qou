@@ -80,8 +80,11 @@ def _eval_chi_direct(shape: tuple[int, ...], word: tuple[int, ...],
                        q_val: float) -> float:
     """Evaluate χ^λ(T_w) directly via Hoefsmit seminormal matrices."""
     import numpy as np
-    from hecke_characters import build_seminormal_matrices
-    sigmas, dim, _ = build_seminormal_matrices(shape)
+    # F6 (PR follow-up #582): numerical-q Hoefsmit through BlockCache.
+    from syt_prefix_cache import BlockCache, build_seminormal_matrices_cached
+    from q_parameter import Q as q0, HA
+    cache = BlockCache(q0, HA)
+    sigmas, dim, _ = build_seminormal_matrices_cached(shape, cache=cache)
     if dim == 0:
         return 0.0
     try:
