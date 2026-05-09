@@ -223,10 +223,96 @@ For each: confirm whether the input Hecke values are derived or
 placeholder-magic, and whether the ratio matches CODATA m_p/m_e or
 (m_p − m_e)/m_e.
 
-## 8 — Cross-reference
+## 8 — Provenance archaeology (post-blame)
+
+A detailed `git log -S` and blob-hash audit of every commit that
+mentions `1.4283` was performed after the initial Phase 1.5 audit.
+Findings:
+
+### 8.1 Only two commits are real edits
+
+| Commit | Date (UTC) | Stat | What it did |
+|--------|-----------|------|-------------|
+| **`1861df6`** | 2026-04-29 20:34 | 6,578 files / 1,436,765 ins | **Root squash.** Hand-types `M_P_HECKE_PIPELINE = 1.4283` and `M_E_HECKE_PIPELINE = 0.0007783` into `build_proton_mass_50dps_chain.py:60-61`. Comment: `# rounded summary; see note above`. `derivation_chain.py` exists but does NOT contain the literal at this point. |
+| **`0312a1e`** | 2026-04-29 21:38 | 3 files / 28 ins / 16 del | **Centralization.** Moves the literal from the builder into a new `M_HECKE_PIPELINE_AT_Q0` registry in `derivation_chain.py`. Value is copied verbatim, not recomputed. |
+
+### 8.2 The other 8 "matching" commits are squash-rebase artefacts
+
+`git log --all -S '1.4283'` returns 10 commits (excluding my own), but
+blob-hash equality reveals that 6 of them share the **identical**
+`derivation_chain.py` blob `bd31a3ee19fd…`:
+
+| Commit | derivation_chain.py blob |
+|--------|--------------------------|
+| `0312a1e` Apr 29 21:38 | `bd31a3ee…` (created here) |
+| `c69f66a` May 1 | `bd31a3ee…` (unchanged) |
+| `20e428e` May 1 | `bd31a3ee…` |
+| `03ec39c` May 2 | `bd31a3ee…` |
+| `0866254` May 2 | `bd31a3ee…` |
+| `0a53e1e` May 2 | `bd31a3ee…` |
+| `bb61068` May 2 | `bd31a3ee…` |
+| `9e50eb5` May 2 | `99e6a3f9…` (unrelated edit) |
+| `a43d7f1` May 3 | `99e6a3f9…` (unrelated edit) |
+
+`9e50eb5` and `a43d7f1` change the blob but do NOT modify
+`M_HECKE_PIPELINE_AT_Q0["p"]` — they edit other parts of the file
+(q-Hecke probe / Kashaev integrand variables).
+
+The 6 commits with identical blobs are **omnibus rebase merges**
+(each touches 6,600+ files and 1.4M+ lines per commit-stat).
+Confirmed by the existence of `51efa18` `squash: rebase onto
+origin/main + resolve all conflicts (conflicts resolved in 8 files)`
+on the branch's main path. `git log -S` matches them because each
+rebase re-emits the registry block as `+` in its merge diff.
+
+### 8.3 No commit computes `1.4283` programmatically
+
+```bash
+git show 1861df6:folio-assistant/computations/mass_endomorphism.py | grep -c '1\.4283'
+# -> 0
+
+git show 1861df6:folio-assistant/computations/proton_mass_tower_derivation.py | grep -c '1\.4283'
+# -> 0
+```
+
+The docstring at `1861df6`'s `build_proton_mass_50dps_chain.py:53-57` claims
+the literal is a "rounded summary of the upstream
+`proton_mass_tower_derivation.py` output". That script's actual output is
+`m_p_Hecke ≈ 1,178,995` (f64) — verified by re-running it post-squash and by
+inspecting the script's body at `1861df6`. It has **never** produced `1.4283`
+in any committed code path.
+
+### 8.4 The literal sits at the wrong CODATA target
+
+`1.4283 / 0.0007783 = 1835.1535`. CODATA values:
+
+```
+(m_p − m_e) / m_e = 1835.1527    ← matches to ~1 ppm
+m_p / m_e         = 1836.1527    ← differs by exactly +1.000
+```
+
+Whoever typed the literal pre-squash was matching `(m_p − m_e)/m_e`,
+not `m_p/m_e`. Either deliberately (subtracting the bound electron
+of atomic hydrogen and forgetting to add it back), or as a mistaken
+calibration target.
+
+### 8.5 Implication for the audit
+
+This archaeology **rules out Option C** ("audit upstream provenance"):
+there is no committed upstream computation to find or refute. The
+literal is a placeholder hand-typed at the root squash, calibrated to
+the wrong target, with a docstring claiming a provenance that no
+committed code supports.
+
+The viable resolutions reduce to **A / B / D / E** as enumerated
+in §5. Recommendation remains **D** (relabel-then-derive).
+
+## 9 — Cross-reference
 
 - Phase 0 audit: `docs/audits/2026-05-09-mass-table-1ppb-audit.md`
 - Phase 1 diagnostic witness: `folio-assistant/computations/proton-residual-rootcause.witness.json`
+- Phase 1.5 audit witness: `folio-assistant/computations/proton-m_e-anomaly-audit.witness.json`
 - Plan: `/root/.claude/plans/lots-of-new-math-parallel-lagoon.md`
-- Approving commits for the literals: `1861df6` (Apr 29), `03ec39c` (May 2),
-  `0312a1e` (centralization, Apr 29).
+- Real edit commits for the literal: `1861df6` (root squash, Apr 29 20:34),
+  `0312a1e` (centralization, Apr 29 21:38). All other matches are
+  squash-rebase artefacts (verified by blob-hash equality).
