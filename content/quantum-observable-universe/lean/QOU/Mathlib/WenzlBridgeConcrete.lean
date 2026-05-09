@@ -37,6 +37,7 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Tactic
 import Mathlib.Combinatorics.Enumerative.Partition
 import QOU.GaugeFieldFluidDynamics
+import QOU.Mathlib.RSKBridge
 
 namespace QOU.Mathlib.WenzlBridgeConcrete
 
@@ -864,6 +865,93 @@ theorem n10_partition_hooks_length : n10_partition_hooks.length = 42 := rfl
       (name, dLambdaFromHooks hs 10))
     ```
     and verify Σ d² = 9! / 10! correspondingly. -/
+
+/-! ### Cohort-based RSK witnesses for n=2..8
+
+    Discharges `QOU.Mathlib.RSKBridge.CohortRSKWitness n` directly
+    from the explicit `n*_squares_sum_eq` theorems.  No upstream
+    Mathlib RSK theorem required for these `n` values. -/
+
+open QOU.Mathlib.RSKBridge
+
+/-- Cohort-based RSK witness at `n = 2`: 2 partitions, both with
+    `d = 1`, sum of squares = 2 = 2!. -/
+def n2_rsk_witness : CohortRSKWitness 2 where
+  syt_counts := n2_cohort.map (·.syt_count)
+  matches_partition_count := by simp
+  burnside_holds := by
+    show (n2_cohort.map (·.syt_count) |>.map (· ^ 2)).sum = 2
+    show (n2_cohort.map (fun p => p.syt_count ^ 2)).sum = 2
+    exact n2_squares_sum_eq
+
+/-- Cohort-based RSK witness at `n = 3`: 3 partitions, sum of
+    squares = 6 = 3!. -/
+def n3_rsk_witness : CohortRSKWitness 3 where
+  syt_counts := n3_cohort.map (·.syt_count)
+  matches_partition_count := by simp
+  burnside_holds := by
+    show (n3_cohort.map (fun p => p.syt_count ^ 2)).sum = 6
+    exact n3_squares_sum_eq
+
+/-- Cohort-based RSK witness at `n = 4`: 5 partitions, sum of
+    squares = 24 = 4!. -/
+def n4_rsk_witness : CohortRSKWitness 4 where
+  syt_counts := n4_cohort.map (·.syt_count)
+  matches_partition_count := by simp
+  burnside_holds := by
+    show (n4_cohort.map (fun p => p.syt_count ^ 2)).sum = 24
+    exact n4_squares_sum_eq
+
+/-- Cohort-based RSK witness at `n = 5`: 7 partitions, sum of
+    squares = 120 = 5!. -/
+def n5_rsk_witness : CohortRSKWitness 5 where
+  syt_counts := n5_cohort.map (·.syt_count)
+  matches_partition_count := by simp
+  burnside_holds := by
+    show (n5_cohort.map (fun p => p.syt_count ^ 2)).sum = 120
+    exact n5_squares_sum_eq
+
+/-- Cohort-based RSK witness at `n = 6`: 11 partitions, sum of
+    squares = 720 = 6!. -/
+def n6_rsk_witness : CohortRSKWitness 6 where
+  syt_counts := n6_cohort.map (·.syt_count)
+  matches_partition_count := by simp
+  burnside_holds := by
+    show (n6_cohort.map (fun p => p.syt_count ^ 2)).sum = 720
+    exact n6_squares_sum_eq
+
+/-- Cohort-based RSK witness at `n = 7`: 15 partitions, sum of
+    squares = 5040 = 7!. -/
+def n7_rsk_witness : CohortRSKWitness 7 where
+  syt_counts := n7_cohort.map (·.syt_count)
+  matches_partition_count := by simp
+  burnside_holds := by
+    show (n7_cohort.map (fun p => p.syt_count ^ 2)).sum = 5040
+    exact n7_squares_sum_eq
+
+/-- Cohort-based RSK witness at `n = 8`: 22 partitions, sum of
+    squares = 40320 = 8!. -/
+def n8_rsk_witness : CohortRSKWitness 8 where
+  syt_counts := n8_cohort.map (·.syt_count)
+  matches_partition_count := by simp
+  burnside_holds := by
+    show (n8_cohort.map (fun p => p.syt_count ^ 2)).sum = 40320
+    exact n8_squares_sum_eq
+
+/-- The cohort-based RSK witnesses cover `n = 2..8` (the
+    QOU-relevant Hecke levels for atomic mass derivations). -/
+theorem cohort_rsk_witnesses_complete :
+    ∀ n ∈ ([2, 3, 4, 5, 6, 7, 8] : List ℕ),
+      ∃ _w : CohortRSKWitness n, True := by
+  intro n hn
+  fin_cases hn
+  · exact ⟨n2_rsk_witness, trivial⟩
+  · exact ⟨n3_rsk_witness, trivial⟩
+  · exact ⟨n4_rsk_witness, trivial⟩
+  · exact ⟨n5_rsk_witness, trivial⟩
+  · exact ⟨n6_rsk_witness, trivial⟩
+  · exact ⟨n7_rsk_witness, trivial⟩
+  · exact ⟨n8_rsk_witness, trivial⟩
 
 /-! ### Open issue: q-Plancherel normalisation
 

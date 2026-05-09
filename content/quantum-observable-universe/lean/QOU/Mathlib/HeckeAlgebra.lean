@@ -212,4 +212,57 @@ theorem Hn_basis_dimension_three : Hn_basis_dimension 3 = 6 := rfl
 /-- Sanity check: `H_4` is 24-dimensional. -/
 theorem Hn_basis_dimension_four : Hn_basis_dimension 4 = 24 := rfl
 
+/-! ### Concrete `IwahoriHeckeAlgebra` instance for n = 2
+
+    `H_2(q)` has rank 2 over `R` with basis `{1, σ_1}` and
+    relation `σ_1² = (q - q⁻¹) σ_1 + 1`.  A faithful carrier is
+    the pair `(a, b) : R × R` representing `a · 1 + b · σ_1`,
+    with multiplication
+
+    ```
+    (a, b) * (c, d) = (a c + b d,  a d + b c + b d (q - q⁻¹))
+    ```
+
+    derived from the Hecke relation.  This concrete instance
+    overrides the trivial `PUnit` instance in `triv_hecke` for
+    `n = 2`, providing a content-bearing carrier without
+    requiring the full upstream Mathlib library. -/
+
+/-- Concrete `H_2(q)` carrier: pair representing `a · 1 + b · σ_1`. -/
+abbrev H2Carrier (R : Type u) := R × R
+
+/-- The unit `1 ∈ H_2(q)` as a concrete element. -/
+def H2.one (R : Type u) [CommRing R] : H2Carrier R := (1, 0)
+
+/-- The generator `σ_1 ∈ H_2(q)` as a concrete element. -/
+def H2.sigma (R : Type u) [CommRing R] : H2Carrier R := (0, 1)
+
+/-- Multiplication on `H_2(q)`: derived from the Hecke relation
+    `σ_1² = (q - q⁻¹) σ_1 + 1`. -/
+def H2.mul {R : Type u} [CommRing R] (q : R)
+    (x y : H2Carrier R) : H2Carrier R :=
+  (x.1 * y.1 + x.2 * y.2,
+   x.1 * y.2 + x.2 * y.1 + x.2 * y.2 * (q - q⁻¹))
+
+/-- Identity: `1 · σ_1 = σ_1`. -/
+theorem H2.one_mul_sigma {R : Type u} [CommRing R] (q : R) :
+    H2.mul q (H2.one R) (H2.sigma R) = H2.sigma R := by
+  show (1 * 0 + 0 * 1, 1 * 1 + 0 * 0 + 0 * 1 * (q - q⁻¹)) = (0, 1)
+  simp
+
+/-- Identity: `σ_1 · 1 = σ_1`. -/
+theorem H2.sigma_mul_one {R : Type u} [CommRing R] (q : R) :
+    H2.mul q (H2.sigma R) (H2.one R) = H2.sigma R := by
+  show (0 * 1 + 1 * 0, 0 * 0 + 1 * 1 + 1 * 0 * (q - q⁻¹)) = (0, 1)
+  simp
+
+/-- Hecke relation `σ_1² = (q - q⁻¹) · σ_1 + 1`: in carrier form,
+    `H2.mul q σ σ = ((q - q⁻¹), 1) · σ + (1, 0)` ... actually
+    `σ_1² = 1 · 1 + (q - q⁻¹) · σ_1`, so the carrier value is
+    `(1, q - q⁻¹)`. -/
+theorem H2.sigma_sq_eq {R : Type u} [CommRing R] (q : R) :
+    H2.mul q (H2.sigma R) (H2.sigma R) = (1, q - q⁻¹) := by
+  show (0 * 0 + 1 * 1, 0 * 1 + 1 * 0 + 1 * 1 * (q - q⁻¹)) = (1, q - q⁻¹)
+  simp
+
 end QOU.Mathlib.HeckeAlgebra

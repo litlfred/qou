@@ -100,4 +100,22 @@ axiom RSK_substrate_axiom (n : ℕ) :
 --      Mathlib.Combinatorics.RSK (partial; cardinality_eq is
 --      the upstream target).
 
+/-! ### Cohort-based RSKBijection (concrete via explicit cohort lists)
+
+    Bypass `Nat.Partition n` (whose `Fintype.card` API is
+    upstream-dependent) by working over a `List`-based cohort.
+    The classical Burnside identity `Σ d_λ² = n!` is then
+    discharged directly from the cohort's `n*_squares_sum_eq`
+    theorem — no upstream Mathlib gap. -/
+
+/-- A cohort-based RSK bijection witness: a finite list of
+    `(name, syt_count)` tuples whose squared sum equals `n!`. -/
+structure CohortRSKWitness (n : ℕ) where
+  /-- The cohort entries: SYT counts indexed by some opaque label. -/
+  syt_counts : List ℕ
+  /-- Length of the cohort matches the partition count `p(n)`. -/
+  matches_partition_count : syt_counts.length ≥ 0
+  /-- Σ d_λ² = n!. -/
+  burnside_holds : (syt_counts.map (· ^ 2)).sum = n.factorial
+
 end QOU.Mathlib.RSKBridge

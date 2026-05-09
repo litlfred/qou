@@ -1,6 +1,6 @@
 {
   "audit": "trivial-skeleton-audit",
-  "generated": "2026-05-09T00:10:45.059Z",
+  "generated": "2026-05-09T00:22:41.825Z",
   "total_flagged": 77,
   "files_flagged": 42,
   "patterns": {
@@ -378,42 +378,42 @@
     ],
     "lean/QOU/Mathlib/WenzlBridgeConcrete.lean": [
       {
-        "line": 50,
+        "line": 51,
         "pattern": "one_def",
         "snippet": "def dimqRowPartition (_n : ℕ) (_q : ℝ) : ℝ := 1"
       },
       {
-        "line": 56,
+        "line": 57,
         "pattern": "one_def",
         "snippet": "def dimqColPartition (_n : ℕ) (_q : ℝ) : ℝ := 1"
       },
       {
-        "line": 222,
+        "line": 223,
         "pattern": "one_def",
         "snippet": "def dimqPartition3 (_q : ℝ) : ℝ := 1"
       },
       {
-        "line": 231,
+        "line": 232,
         "pattern": "one_def",
         "snippet": "def dimqPartition111 (_q : ℝ) : ℝ := 1"
       },
       {
-        "line": 292,
+        "line": 293,
         "pattern": "one_def",
         "snippet": "def dimqPartition4 (_q : ℝ) : ℝ := 1"
       },
       {
-        "line": 306,
+        "line": 307,
         "pattern": "one_def",
         "snippet": "def dimqPartition1111 (_q : ℝ) : ℝ := 1"
       },
       {
-        "line": 678,
+        "line": 679,
         "pattern": "one_def",
         "snippet": "def dimqPartition5 (_q : ℝ) : ℝ := 1"
       },
       {
-        "line": 699,
+        "line": 700,
         "pattern": "one_def",
         "snippet": "def dimqPartition11111 (_q : ℝ) : ℝ := 1"
       }
