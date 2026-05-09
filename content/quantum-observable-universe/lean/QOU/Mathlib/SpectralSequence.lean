@@ -151,4 +151,40 @@ class SpectralSequenceConvergesTo (R : Type u) (S : SpectralSequence R)
   /-- Per-cell isomorphism between `E_∞` and the target. -/
   cell_iso : ∀ p q, EInfinityCell S r₀ collapses p q ≃ target p q
 
+/-! ### Concrete convergence: trivial SS to the trivial target
+
+    The trivial spectral sequence (every cell `PUnit`,
+    differentials zero) converges to the constant-`PUnit`
+    target.  This is the simplest non-vacuous instance of
+    `SpectralSequenceConvergesTo`, demonstrating the API
+    works end-to-end. -/
+
+/-- The constant-`PUnit` target type-family. -/
+def trivialTarget : ℤ → ℤ → Type u := fun _ _ => PUnit
+
+/-- The trivial spectral sequence converges to `trivialTarget`
+    at any `r₀`, with the `Equiv.refl` isomorphism on each cell. -/
+instance trivial_converges (R : Type u) :
+    SpectralSequenceConvergesTo R (trivial R) 2
+      (trivial_collapses_at_E2 R) trivialTarget where
+  cell_iso _ _ := Equiv.refl PUnit
+
+/-! ### Page-by-page stabilisation lemma
+
+    At a spectral sequence that collapses at `r₀`, the cells
+    on every page `r ≥ r₀` are *the same* (up to the abstract
+    cell-equality the SS supplies — here we record the property
+    as a class-level claim).  For the `trivial` SS this is
+    trivially true. -/
+
+/-- The cell at index `(r, p, q)` of the trivial SS is `PUnit`
+    for every `r`. -/
+theorem trivial_cell_eq_PUnit (R : Type u) (r : ℕ) (p q : ℤ) :
+    (trivial R).cell { r := r, p := p, q := q } = PUnit := rfl
+
+/-- The trivial SS's cells are the same at every page. -/
+theorem trivial_cells_stable (R : Type u) (r₁ r₂ : ℕ) (p q : ℤ) :
+    (trivial R).cell { r := r₁, p := p, q := q } =
+    (trivial R).cell { r := r₂, p := p, q := q } := rfl
+
 end QOU.Mathlib.SpectralSequence
