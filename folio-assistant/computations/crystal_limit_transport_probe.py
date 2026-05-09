@@ -87,7 +87,7 @@ def main() -> int:
         chi_crystal = crystal_chi_at_q_zero(shape, gen_index=1)
         rows.append({
             "shape": list(shape),
-            "chi_crystal_q0": int(chi_crystal),
+            "chi_crystal_q_zero": int(chi_crystal),
         })
         print(f"  λ = {shape!s:<10} chi_crystal(σ_1) = {chi_crystal}")
 
