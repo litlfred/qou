@@ -75,7 +75,7 @@
       "jet_order": 0,
       "gb_filtration_level": 0,
       "citation": "kassel1995",
-      "notes": "1-dim rep; trace is a monomial in q.  No script needed.  Atomic-braid recipe: legacy 6-letter σ-word σ_1 σ_2 σ_1 σ_2 σ_1 σ_2 (PR #480 convention, n_+=6, n_-=0) supplies the n_±=6/0 count inline.  Independent of the post-PR #572 canonical re-export `atomic_braid_to_crossings = atom_canonical_crossings` which encodes the proton with 11 crossings + averaged types. When PR #476's dedicated `atomic-braid-recipe-p.derivation.json` chain lands on main, this note can reference that chain instead."
+      "notes": "1-dim rep; trace is a monomial in q.  No script needed.  Atomic-braid recipe: see `atomic-braid-recipe-p.derivation.json` (11-crossing canonical σ-word with breakdown {σ: 6, σ^{-1}: 3, averaged: 2}).  In the legacy 6-letter convention used in the operation field above, this corresponds to n_+=6, n_-=0 — the trivial / sign 1-dim characters depend only on the (σ, σ^{-1}) parity, so averaged crossings (which are inverse-parity-neutral) do not affect the closed-form q^{±6}."
     },
     {
       "name": "Hoefsmit rep χ^(2,1)_q on proton braid word",

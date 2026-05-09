@@ -1,0 +1,104 @@
+{
+  "target": "β_n (neutron canonical σ-word; total crossing count)",
+  "target_value": 11,
+  "target_tolerance": 0.0,
+  "content_block": "prop:hecke-branching-trace-decomposition",
+  "description": "Atomic-braid recipe for the neutron: derives the canonical 11-crossing σ-word β_n from first principles (quark content (u,d,d) + B₃ confinement + pairwise quark crossings + ILP gluon term).  Type breakdown {σ: 5, σ^{-1}: 4, averaged: 2} matches the canonical encoding from `canonical_braid_crossings.atom_canonical_crossings(Z=0, N=1, include_inter=False)`.  Trust profile is {axiom: 3, mathlib-cited: 0, derived: 2, script-cited: 0, computational: 1} — fully-trusted, zero SCRIPT_CITED.  Discharges the SCRIPT_CITED frontier on step 4 of `markov-trace-assembly-neutron.derivation.json` (per n-tr-M-q0.derivation.json step 7 notes).  Companion to `atomic-braid-recipe-{p,d}.derivation.json`.",
+  "steps": [
+    {
+      "name": "Quark content of the neutron",
+      "operation": "By the brane substrate axiom, the neutron is a 3-strand configuration with quark content (u, d, d): one up quark and two down quarks.  The order is fixed by the substrate-level neutron-cross table; permutations are absorbed into the SYT-relabelling symmetry of H_3(q).",
+      "inputs": [
+        "Hecke.Energy",
+        "Cat.Action"
+      ],
+      "output_name": "neutron_quarks",
+      "output_value": "(u, d, d)",
+      "trust_basis": "axiom",
+      "jet_order": 0,
+      "lean_ref": "qou:STUB:NeutronQuarkContent",
+      "citation": "manuscript:§Brane substrate / neutron crossings"
+    },
+    {
+      "name": "B₃ confinement: (σ_0 σ_1^{-1})^3",
+      "operation": "By the brane-substrate axiom (3-strand confinement of a single nucleon), each nucleon contributes (σ_0 σ_1^{-1})^3.  Same as the proton recipe: 3× (c=1, d=0) on g_0 and 3× (c=1, d=−h) on g_1.",
+      "inputs": [
+        "Hecke.Energy"
+      ],
+      "output_name": "confinement_chains",
+      "output_value": {
+        "g0_confine": "3× (c=1, d=0)  [3 σ on σ_0]",
+        "g1_confine": "3× (c=1, d=−h)  [3 σ^{-1} on σ_1]"
+      },
+      "trust_basis": "axiom",
+      "jet_order": 0,
+      "lean_ref": "qou:STUB:BraneSubstrateB3Confinement",
+      "citation": "manuscript:§Brane substrate, B₃ confinement"
+    },
+    {
+      "name": "Pairwise quark crossings for (u, d, d)",
+      "operation": "Per the operator-valued interface I = σ − h/2·1, classify each pair by quark flavour:\n  (u, d) on g_0 → (1, −h/2)  [averaged]\n  (u, d) on g_0 → (1, −h/2)  [averaged]\n  (d, d) on g_1 → (1, −h)    [σ^{-1}, same-flavour d]\nTwo mixed (u, d) pairs both contribute on g_0; the same-flavour (d, d) pair contributes a σ^{-1} on g_1.",
+      "inputs": [
+        "neutron_quarks",
+        "Frobenius.Pairing"
+      ],
+      "output_name": "pairwise_chains",
+      "output_value": {
+        "g0_pairs": "2× (1, −h/2) [2 averaged for two ud pairs]",
+        "g1_pairs": "(1, −h) [σ^{-1} for dd pair]"
+      },
+      "trust_basis": "derived",
+      "jet_order": 0,
+      "citation": "manuscript:§Operator-valued interface; prop:hecke-branching-trace-decomposition"
+    },
+    {
+      "name": "Gluon self-coupling: 2× σ on g_0",
+      "operation": "Same as proton recipe: ILP-derived gluon term contributes 2 positive σ_0 (encoded as 2× (c=1, d=0) on g_0).",
+      "inputs": [
+        "Hecke.Energy"
+      ],
+      "output_name": "gluon_chain",
+      "output_value": "2× (c=1, d=0)  [2 σ on σ_0]",
+      "trust_basis": "axiom",
+      "jet_order": 0,
+      "lean_ref": "qou:STUB:GluonSelfCouplingILP",
+      "citation": "manuscript:§ILP gluon term"
+    },
+    {
+      "name": "Concatenate g_0 + g_1 → β_n (canonical encoding)",
+      "operation": "Concatenate the per-generator chains:\n  g_0 = confine_g0 + 2× ud_avg + 2× gluon = [(1,0)]·3 + [(1,−h/2)]·2 + [(1,0)]·2 = 7 entries\n  g_1 = confine_g1 + dd_inv = [(1,−h)]·3 + [(1,−h)] = 4 entries\nApply canonical encoding (d=0→σ, d=−h→σ^{-1}, d=−h/2→averaged):\n  Total: 11 entries with breakdown {σ: 5, σ^{-1}: 4, averaged: 2}.",
+      "inputs": [
+        "confinement_chains",
+        "pairwise_chains",
+        "gluon_chain"
+      ],
+      "output_name": "beta_n_canonical",
+      "output_value": {
+        "g_0_count": 7,
+        "g_1_count": 4,
+        "total": 11,
+        "type_breakdown": {
+          "sigma": 5,
+          "sigma_inv": 4,
+          "averaged": 2
+        }
+      },
+      "trust_basis": "derived",
+      "jet_order": 0,
+      "citation": "manuscript:§Atomic-braid recipe; prop:hecke-branching-trace-decomposition"
+    },
+    {
+      "name": "Emit β_n σ-word (computational leaf)",
+      "operation": "Run `canonical_braid_crossings.atom_canonical_crossings(Z=0, N=1, include_inter=False)`; verify the output is a list of 11 (gen_idx, ctype) pairs matching the breakdown from step 5.",
+      "inputs": [
+        "beta_n_canonical"
+      ],
+      "output_name": "beta_n_length",
+      "output_value": 11,
+      "trust_basis": "computational",
+      "jet_order": 0,
+      "gb_filtration_level": 0,
+      "notes": "Cross-check: `len(atom_canonical_crossings(Z=0, N=1, include_inter=False)) == 11`.  Type breakdown from the actual call: {sigma: 5, sigma_inv: 4, averaged: 2} — matches step 5 derivation."
+    }
+  ]
+}

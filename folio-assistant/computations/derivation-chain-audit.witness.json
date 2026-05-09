@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T19:21:56.759710+00:00",
-  "commitSha": "cbfedecb711e89ea2bfa96f01f8a2506e64ce219",
+  "computedAt": "2026-05-09T19:24:27.163363+00:00",
+  "commitSha": "2899a68145c0a739ac19af06903474fcf5321fd0",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -101,16 +101,55 @@
       "passed": true
     },
     {
+      "name": "chain_valid[atomic-braid-recipe-d.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "leaf_value[atomic-braid-recipe-d.derivation]",
+      "computed": 23.0,
+      "expected": 23.0,
+      "passed": true,
+      "tolerance": 0.0
+    },
+    {
       "name": "chain_valid[atomic-braid-recipe-n-canonical.derivation]",
       "computed": true,
       "expected": true,
       "passed": true
     },
     {
+      "name": "chain_valid[atomic-braid-recipe-n.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "leaf_value[atomic-braid-recipe-n.derivation]",
+      "computed": 11.0,
+      "expected": 11.0,
+      "passed": true,
+      "tolerance": 0.0
+    },
+    {
       "name": "chain_valid[atomic-braid-recipe-p-canonical.derivation]",
       "computed": true,
       "expected": true,
       "passed": true
+    },
+    {
+      "name": "chain_valid[atomic-braid-recipe-p.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "leaf_value[atomic-braid-recipe-p.derivation]",
+      "computed": 11.0,
+      "expected": 11.0,
+      "passed": true,
+      "tolerance": 0.0
     },
     {
       "name": "chain_valid[c-q-q0.derivation]",
@@ -520,7 +559,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
@@ -965,6 +1004,21 @@
         "has_script_frontier": true
       },
       {
+        "chain": "atomic-braid-recipe-d.derivation.json",
+        "target": "β_D (deuteron canonical σ-word; total crossing count)",
+        "target_value": 23.0,
+        "computed_value": 23.0,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "derived": 3,
+          "axiom": 1,
+          "computational": 1
+        },
+        "has_script_frontier": false
+      },
+      {
         "chain": "atomic-braid-recipe-n-canonical.derivation.json",
         "target": "T_w(neutron) ∈ B_{3} (canonical operator-valued)",
         "target_value": [
@@ -1023,6 +1077,21 @@
           "derived": 3
         },
         "has_script_frontier": true
+      },
+      {
+        "chain": "atomic-braid-recipe-n.derivation.json",
+        "target": "β_n (neutron canonical σ-word; total crossing count)",
+        "target_value": 11.0,
+        "computed_value": 11.0,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 3,
+          "derived": 2,
+          "computational": 1
+        },
+        "has_script_frontier": false
       },
       {
         "chain": "atomic-braid-recipe-p-canonical.derivation.json",
@@ -1085,6 +1154,21 @@
         "has_script_frontier": true
       },
       {
+        "chain": "atomic-braid-recipe-p.derivation.json",
+        "target": "β_p (proton canonical σ-word; total crossing count)",
+        "target_value": 11.0,
+        "computed_value": 11.0,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 3,
+          "derived": 2,
+          "computational": 1
+        },
+        "has_script_frontier": false
+      },
+      {
         "chain": "c-q-q0.derivation.json",
         "target": "c_q(q_0)",
         "target_value": 9.092678397655604,
@@ -1139,8 +1223,8 @@
         "issues": [],
         "trust_summary": {
           "axiom": 1,
-          "derived": 2,
-          "script-cited": 2,
+          "derived": 3,
+          "script-cited": 1,
           "computational": 1
         },
         "has_script_frontier": true
@@ -1155,11 +1239,10 @@
         "issues": [],
         "trust_summary": {
           "axiom": 1,
-          "derived": 6,
-          "script-cited": 1,
+          "derived": 7,
           "computational": 1
         },
-        "has_script_frontier": true
+        "has_script_frontier": false
       },
       {
         "chain": "markov-trace-assembly-proton.derivation.json",
