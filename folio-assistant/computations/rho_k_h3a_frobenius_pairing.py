@@ -166,6 +166,26 @@ def main() -> int:
     print("  #603 (D=LP shadow) / #609 (F=Wenzl-bridge)")
     print("=" * 96)
 
+    # WitnessBuilder is instantiated HERE (start of main) so durationMs
+    # captures the full computation runtime — per Copilot PR #611 review.
+    # The witness-data calls below populate it; final .save() is at end.
+    builder = (
+        WitnessBuilder(
+            name="rho-k-h3a-frobenius-pairing",
+            engine="mpmath",
+        )
+        .set_description(
+            "Option G in the Δ_λ derivation race: Δ_λ derived from the "
+            "Frobenius-pairing minimum-norm closure on Z(H_n(q)). "
+            "Δ_λ^G(K) = (-B(K)/m_e) · (1/S_K) · χ^λ(β_K) / d_λ, where "
+            "S_K = Σ_μ y_μ χ^μ(β_K)² / d_μ is the Frobenius norm² of "
+            "β_K's projection onto the center.  Sibling of PR #600's "
+            "race; structurally distinct from A/B/C/D/F because Δ_λ "
+            "depends on β_K (vortex-aware).  Deuteron-only for now; "
+            "T / ³He / ⁴He extension requires full per-λ chi caches."
+        )
+    )
+
     # ── Step 1: load Occam baseline (= source of truth for y_λ, χ^λ) ──
     occam_path = HERE / "rho-k-h3a-refinement.witness.json"
     if not occam_path.exists():
@@ -201,8 +221,7 @@ def main() -> int:
         y = mp.mpf(r["y_lambda_at_q0"])
         chi = mp.mpf(r["chi_lambda_beta_D_at_q0"])
         y_chi = mp.mpf(r["y_chi_product"])
-        contrib_S = y * chi * chi / dl  # = (y_λ χ^λ)² / (y_λ d_λ) · y_λ / 1 — see derivation below
-        # NB: the cleaner S_K = Σ y_μ χ^μ² / d_μ.
+        contrib_S = y * chi * chi / dl  # = y_λ χ^λ² / d_λ  (per Gemini PR #611 review — earlier "·y/1" was an algebra typo)
         rows.append({
             "partition": lam,
             "d_lambda": dl,
@@ -298,22 +317,12 @@ def main() -> int:
     else:
         print(f"    ✗ ‖δ^G‖_F² is NOT the smallest — error in derivation!")
 
-    # ── Step 7: emit witness ──────────────────────────────────────────
-    builder = (
-        WitnessBuilder(
-            name="rho-k-h3a-frobenius-pairing",
-            engine="mpmath",
-        )
-        .set_description(
-            "Option G in the Δ_λ derivation race: Δ_λ derived from the "
-            "Frobenius-pairing minimum-norm closure on Z(H_n(q)). "
-            "Δ_λ^G(K) = (-B(K)/m_e) · (1/S_K) · χ^λ(β_K) / d_λ, where "
-            "S_K = Σ_μ y_μ χ^μ(β_K)² / d_μ is the Frobenius norm² of "
-            "β_K's projection onto the center.  Sibling of PR #600's "
-            "race; structurally distinct from A/B/C/D/F because Δ_λ "
-            "depends on β_K (vortex-aware).  Deuteron-only for now; "
-            "T / ³He / ⁴He extension requires full per-λ chi caches."
-        )
+    # ── Step 7: populate the witness (builder created at top of main) ─
+    # Renamed `frobenius_norm_S_squared` → `S_central_projection` per
+    # Copilot PR #611 review (S itself IS a squared norm; the "_squared"
+    # suffix was misleading).
+    (
+        builder
         .add_data("computation_status", "deuteron")
         .add_data("atom", "deuteron")
         .add_data("Z", 1)
@@ -328,14 +337,16 @@ def main() -> int:
         .add_data("delta_rho_residual", str(delta_rho))
         .add_data("target_yc_delta_sum", str(target))
         .add_data(
-            "frobenius_norm_S_squared",
+            "S_central_projection",
             {
                 "value": str(S),
                 "formula": "S = Σ_μ y_μ · χ^μ(β_D)² / d_μ",
                 "interpretation": (
-                    "Frobenius norm² of β_K's projection onto Z(H_n(q)). "
-                    "Smaller S ⇒ larger ‖δ_K‖_F (binding requires more "
-                    "'central mass')."
+                    "S itself is a squared Frobenius norm: "
+                    "S = ⟨β_K, β_K^(Z)⟩_F = ‖β_K^(Z)‖_F², the "
+                    "Frobenius norm² of β_K's orthogonal projection onto "
+                    "Z(H_n(q)).  Smaller S ⇒ larger ‖δ_K‖_F (binding "
+                    "requires more 'central mass')."
                 ),
             }
         )
@@ -415,18 +426,25 @@ def main() -> int:
             expected=0.0,
             tolerance=1e-40,
         )
+        # Min-norm assertions encoded per Gemini + Copilot PR #611 review:
+        # `add_assertion` checks abs(computed - expected) ≤ tolerance, so
+        # to ENFORCE the inequality `‖δ^G‖² ≤ ‖δ^X‖²` we set
+        # `expected = min(norm_G, norm_X)`.  When G ≤ X, expected = G ⇒
+        # check passes; when G > X, expected = X ≠ G ⇒ check fails by
+        # |G - X| > 1e-12.  The earlier `tolerance = expected * 2` was a
+        # loose proximity check that didn't enforce the inequality.
         .add_assertion(
             name="min_norm_vs_occam_singleton",
             computed=float(norm_G_sq),
-            expected=float(norm_A_sq),
-            tolerance=float(norm_A_sq) * 2.0,
+            expected=float(min(norm_G_sq, norm_A_sq)),
+            tolerance=1e-12,
             source="‖δ^G‖² should be ≤ ‖δ^A‖² (min-norm property)",
         )
         .add_assertion(
             name="min_norm_vs_wenzl_bridge_constant",
             computed=float(norm_G_sq),
-            expected=float(norm_F_sq),
-            tolerance=float(norm_F_sq) * 2.0,
+            expected=float(min(norm_G_sq, norm_F_sq)),
+            tolerance=1e-12,
             source="‖δ^G‖² should be ≤ ‖δ^F‖² (min-norm property)",
         )
     )
