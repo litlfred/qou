@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T15:29:52.132146+00:00",
-  "commitSha": "8760e9f7703b0cd5e53b98bd04db431852e2f630",
+  "computedAt": "2026-05-09T15:39:57.982261+00:00",
+  "commitSha": "d37b36f631bc3605d4eb2137b2cb2ff40458c7eb",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -81,6 +81,12 @@
       "expected": 0.5514434199198297,
       "passed": true,
       "tolerance": 5.514434199198297e-13
+    },
+    {
+      "name": "chain_valid[atomic-braid-recipe-4he-canonical.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
     },
     {
       "name": "chain_valid[atomic-braid-recipe-4he.derivation]",
@@ -514,7 +520,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
@@ -619,6 +625,210 @@
         "has_script_frontier": false
       },
       {
+        "chain": "atomic-braid-recipe-4he-canonical.derivation.json",
+        "target": "T_w(⁴He) ∈ B_{12} (canonical operator-valued)",
+        "target_value": [
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "averaged"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "averaged"
+          ],
+          [
+            2,
+            "sigma"
+          ],
+          [
+            3,
+            "sigma"
+          ],
+          [
+            3,
+            "sigma"
+          ],
+          [
+            3,
+            "sigma"
+          ],
+          [
+            3,
+            "sigma"
+          ],
+          [
+            3,
+            "averaged"
+          ],
+          [
+            3,
+            "sigma"
+          ],
+          [
+            3,
+            "sigma"
+          ],
+          [
+            4,
+            "sigma_inv"
+          ],
+          [
+            4,
+            "sigma_inv"
+          ],
+          [
+            4,
+            "sigma_inv"
+          ],
+          [
+            4,
+            "averaged"
+          ],
+          [
+            5,
+            "averaged"
+          ],
+          [
+            6,
+            "sigma"
+          ],
+          [
+            6,
+            "sigma"
+          ],
+          [
+            6,
+            "sigma"
+          ],
+          [
+            6,
+            "averaged"
+          ],
+          [
+            6,
+            "averaged"
+          ],
+          [
+            6,
+            "sigma"
+          ],
+          [
+            6,
+            "sigma"
+          ],
+          [
+            7,
+            "sigma_inv"
+          ],
+          [
+            7,
+            "sigma_inv"
+          ],
+          [
+            7,
+            "sigma_inv"
+          ],
+          [
+            7,
+            "sigma_inv"
+          ],
+          [
+            8,
+            "sigma_inv"
+          ],
+          [
+            9,
+            "sigma"
+          ],
+          [
+            9,
+            "sigma"
+          ],
+          [
+            9,
+            "sigma"
+          ],
+          [
+            9,
+            "averaged"
+          ],
+          [
+            9,
+            "averaged"
+          ],
+          [
+            9,
+            "sigma"
+          ],
+          [
+            9,
+            "sigma"
+          ],
+          [
+            10,
+            "sigma_inv"
+          ],
+          [
+            10,
+            "sigma_inv"
+          ],
+          [
+            10,
+            "sigma_inv"
+          ],
+          [
+            10,
+            "sigma_inv"
+          ]
+        ],
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 2,
+          "script-cited": 3,
+          "derived": 3
+        },
+        "has_script_frontier": true
+      },
+      {
         "chain": "atomic-braid-recipe-4he.derivation.json",
         "target": "T_w(⁴He) ∈ B_{12}",
         "target_value": [
@@ -648,7 +858,7 @@
       },
       {
         "chain": "atomic-braid-recipe-d-canonical.derivation.json",
-        "target": "T_w(deuteron) ∈ B_{6} (canonical/SDP)",
+        "target": "T_w(deuteron) ∈ B_{6} (canonical operator-valued)",
         "target_value": [
           [
             0,
@@ -756,7 +966,7 @@
       },
       {
         "chain": "atomic-braid-recipe-n-canonical.derivation.json",
-        "target": "T_w(neutron) ∈ B_{3} (canonical/SDP)",
+        "target": "T_w(neutron) ∈ B_{3} (canonical operator-valued)",
         "target_value": [
           [
             0,
@@ -816,7 +1026,7 @@
       },
       {
         "chain": "atomic-braid-recipe-p-canonical.derivation.json",
-        "target": "T_w(proton) ∈ B_{3} (canonical/SDP)",
+        "target": "T_w(proton) ∈ B_{3} (canonical operator-valued)",
         "target_value": [
           [
             0,
