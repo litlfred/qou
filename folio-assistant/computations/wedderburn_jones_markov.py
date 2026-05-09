@@ -29,8 +29,10 @@ References:
 
 from __future__ import annotations
 
+import os
 import sys
 from math import factorial
+from multiprocessing import Pool
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -54,7 +56,19 @@ def _f_lambda(shape: tuple) -> int:
     return factorial(n) // prod
 
 
-def y_lambda_at(n: int, q_val: sp.Expr | float | None = None) -> dict[tuple, sp.Expr]:
+def _schur_principal_at_q(args):
+    """Top-level worker for multiprocessing.Pool.imap_unordered."""
+    sh, q_str = args
+    return sh, m.schur_principal_symbolic(list(sh)).subs(
+        Q_SYM, sp.sympify(q_str)
+    ).evalf(30)
+
+
+def y_lambda_at(
+    n: int,
+    q_val: sp.Expr | float | None = None,
+    workers: int | None = None,
+) -> dict[tuple, sp.Expr]:
     """Jones-Markov y_λ(q) at H_n.
 
     If `q_val` is None (default): returns symbolic y_λ via
@@ -68,7 +82,13 @@ def y_lambda_at(n: int, q_val: sp.Expr | float | None = None) -> dict[tuple, sp.
         n=3:  ~0.05s    (any path)
         n=6:  ~3.8s     (numerical-q-from-start)  vs  >60s (symbolic)
         n=9:  ~63s      (numerical)              vs  infeasible (symbolic)
-        n=12: ~150-300s (numerical)
+        n=12: ~150-300s sequential, parallelisable across the 77
+              partitions via `workers > 1` (multiprocessing).
+
+    The `workers` parameter (default: None = sequential) enables
+    process-pool parallelism for n ≥ 9 where partition count grows
+    rapidly.  Set to `os.cpu_count()` (or a smaller value to leave
+    cores free) for maximum throughput on the numerical-q path.
     """
     shapes = [tuple(s) for s in m.partitions_of(n)]
     if q_val is None:
@@ -76,11 +96,20 @@ def y_lambda_at(n: int, q_val: sp.Expr | float | None = None) -> dict[tuple, sp.
 
     # numerical-q-from-start path
     q_eval = sp.sympify(q_val)
-    s_vals = {}
-    for sh in shapes:
-        s_vals[sh] = (
-            m.schur_principal_symbolic(list(sh)).subs(Q_SYM, q_eval).evalf(30)
-        )
+    s_vals: dict[tuple, sp.Expr] = {}
+    if workers and workers > 1 and len(shapes) > 1:
+        q_str = str(q_eval)
+        with Pool(processes=workers) as pool:
+            for sh, val in pool.imap_unordered(
+                _schur_principal_at_q,
+                [(sh, q_str) for sh in shapes],
+            ):
+                s_vals[sh] = val
+    else:
+        for sh in shapes:
+            s_vals[sh] = (
+                m.schur_principal_symbolic(list(sh)).subs(Q_SYM, q_eval).evalf(30)
+            )
     Z = sp.Integer(0)
     for sh in shapes:
         Z = Z + s_vals[sh] * _f_lambda(sh)

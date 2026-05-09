@@ -60,11 +60,12 @@ from hoefsmit_symbolic import (  # noqa: E402
 )
 from hecke_characters import partitions_of, standard_young_tableaux  # noqa: E402
 from canonical_braid_crossings import atom_canonical_crossings as atomic_braid_to_crossings  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402  — single source of truth
 
 # Canonical 50-dps q_0 (full precision; matches y-lambda-mpfr-witness.json
 # and other round-3 scripts). Defined at module level to avoid duplicated
 # magic values across functions.
-Q0_CANONICAL = sp.Float('1.1099785955541805', 50)
+Q0_CANONICAL = sp.Float(Q_50_DIGIT_STR, 50)
 
 
 def main() -> int:
