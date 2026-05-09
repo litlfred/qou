@@ -90,17 +90,29 @@ async function main() {
     const hits: PatternHit[] = [];
     for (let i = 0; i < lines.length; i++) {
       const line = lines[i];
+      // Inline-exemption marker: `-- noqa: <pattern>` on the same line skips the audit flag.
+      // Use for content-bearing definitions where the matched value
+      // (e.g. `:= 1` for a row partition's q-Wenzl dimension) is the
+      // CORRECT mathematical value, not a placeholder skeleton.
+      const noqaMatch = line.match(/--\s*noqa:\s*([\w_,\s]+)/);
+      const exempted = (pat: string) =>
+        noqaMatch !== null && noqaMatch[1].split(",").map(s => s.trim()).includes(pat);
+
       let matched = false;
       for (const [name, pat] of PATTERNS) {
         if (pat.test(line)) {
-          hits.push({ line: i + 1, pattern: name, snippet: line.trim().slice(0, 90) });
+          if (!exempted(name)) {
+            hits.push({ line: i + 1, pattern: name, snippet: line.trim().slice(0, 90) });
+          }
           matched = true;
           break;
         }
       }
-      if (!matched && (SKEL_INSTANCE.test(line) || TRIV_INSTANCE.test(line))) {
+
+      if (!matched && (SKEL_INSTANCE.test(line) || TRIV_INSTANCE.test(line))
+          && !exempted("skel_inst")) {
         hits.push({ line: i + 1, pattern: "skel_inst", snippet: line.trim().slice(0, 90) });
-      } else if (!matched && HOLDS_TRIVIAL.test(line)) {
+      } else if (!matched && HOLDS_TRIVIAL.test(line) && !exempted("holds_trivial")) {
         hits.push({ line: i + 1, pattern: "holds_trivial", snippet: line.trim().slice(0, 90) });
       }
     }

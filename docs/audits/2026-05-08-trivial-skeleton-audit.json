@@ -1,13 +1,12 @@
 {
   "audit": "trivial-skeleton-audit",
-  "generated": "2026-05-09T03:43:32.368Z",
-  "total_flagged": 78,
-  "files_flagged": 42,
+  "generated": "2026-05-09T03:58:00.785Z",
+  "total_flagged": 58,
+  "files_flagged": 35,
   "patterns": {
     "const_zero": 34,
-    "one_def": 17,
-    "skel_inst": 14,
-    "holds_trivial": 10,
+    "skel_inst": 12,
+    "one_def": 9,
     "id_def": 1,
     "const_zero_typed": 1,
     "prop_true": 1
@@ -153,13 +152,6 @@
         "snippet": "def frobeniusStability : DressedTy → ℝ → ℝ := fun _ _ => 0"
       }
     ],
-    "braids-and-knots/weak-spectral-completeness.lean": [
-      {
-        "line": 50,
-        "pattern": "holds_trivial",
-        "snippet": "weak_spectral_completeness_holds := rfl"
-      }
-    ],
     "braids-and-knots/wenzl-qmn-synergy.lean": [
       {
         "line": 43,
@@ -240,13 +232,6 @@
         "snippet": "instance skeleton (q : ℝ) (n : ℕ) :"
       }
     ],
-    "descartes-universe/e-hartree-categorical-derivation.lean": [
-      {
-        "line": 83,
-        "pattern": "holds_trivial",
-        "snippet": "eh_holds := rfl"
-      }
-    ],
     "descartes-universe/gb-reduction-pl-thimble-bijection.lean": [
       {
         "line": 22,
@@ -279,13 +264,6 @@
         "line": 40,
         "pattern": "const_zero",
         "snippet": "def algebraicMarkovTrace (_k : ℕ) (_T_w : ℕ) : ℂ := 0"
-      }
-    ],
-    "fluid-dynamics/levi-degeneracy-conjecture.lean": [
-      {
-        "line": 61,
-        "pattern": "holds_trivial",
-        "snippet": "levi_degeneracy_holds := rfl"
       }
     ],
     "information-theory/q-game-of-life.lean": [
@@ -335,92 +313,6 @@
         "line": 80,
         "pattern": "const_zero",
         "snippet": "def obstructionSize (_n _r _p _q : ℕ) : ℝ := 0"
-      }
-    ],
-    "lean/QOU/Mathlib/HeckeAlgebra.lean": [
-      {
-        "line": 148,
-        "pattern": "holds_trivial",
-        "snippet": "hecke_holds := trivial"
-      },
-      {
-        "line": 150,
-        "pattern": "holds_trivial",
-        "snippet": "braid_holds := trivial"
-      },
-      {
-        "line": 152,
-        "pattern": "holds_trivial",
-        "snippet": "far_commute_holds := trivial"
-      },
-      {
-        "line": 159,
-        "pattern": "holds_trivial",
-        "snippet": "blocks_sum_holds := trivial"
-      },
-      {
-        "line": 161,
-        "pattern": "holds_trivial",
-        "snippet": "blocks_orthogonal_holds := trivial"
-      },
-      {
-        "line": 966,
-        "pattern": "skel_inst",
-        "snippet": "instance HasGeneratorAction_trivial (n : ℕ) (q : ℝ) :"
-      }
-    ],
-    "lean/QOU/Mathlib/NonAbelianStokes.lean": [
-      {
-        "line": 107,
-        "pattern": "skel_inst",
-        "snippet": "instance trivial (M G : Type u) [Group G] : NonAbelianStokes M G where"
-      },
-      {
-        "line": 113,
-        "pattern": "holds_trivial",
-        "snippet": "finite_slice_holds := trivial"
-      }
-    ],
-    "lean/QOU/Mathlib/WenzlBridgeConcrete.lean": [
-      {
-        "line": 51,
-        "pattern": "one_def",
-        "snippet": "def dimqRowPartition (_n : ℕ) (_q : ℝ) : ℝ := 1"
-      },
-      {
-        "line": 57,
-        "pattern": "one_def",
-        "snippet": "def dimqColPartition (_n : ℕ) (_q : ℝ) : ℝ := 1"
-      },
-      {
-        "line": 223,
-        "pattern": "one_def",
-        "snippet": "def dimqPartition3 (_q : ℝ) : ℝ := 1"
-      },
-      {
-        "line": 232,
-        "pattern": "one_def",
-        "snippet": "def dimqPartition111 (_q : ℝ) : ℝ := 1"
-      },
-      {
-        "line": 293,
-        "pattern": "one_def",
-        "snippet": "def dimqPartition4 (_q : ℝ) : ℝ := 1"
-      },
-      {
-        "line": 307,
-        "pattern": "one_def",
-        "snippet": "def dimqPartition1111 (_q : ℝ) : ℝ := 1"
-      },
-      {
-        "line": 705,
-        "pattern": "one_def",
-        "snippet": "def dimqPartition5 (_q : ℝ) : ℝ := 1"
-      },
-      {
-        "line": 726,
-        "pattern": "one_def",
-        "snippet": "def dimqPartition11111 (_q : ℝ) : ℝ := 1"
       }
     ],
     "molecular-construction/shell-closure-nf-term-count.lean": [
@@ -478,13 +370,6 @@
         "line": 66,
         "pattern": "skel_inst",
         "snippet": "instance skeleton {K C : Type*} : LiftedCrossingLocality K C where"
-      }
-    ],
-    "quantum-observable-universes/frobenius-su2.lean": [
-      {
-        "line": 52,
-        "pattern": "holds_trivial",
-        "snippet": "frobenius_holds := rfl"
       }
     ]
   }

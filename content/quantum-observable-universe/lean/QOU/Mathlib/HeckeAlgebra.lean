@@ -145,20 +145,20 @@ instance triv_hecke (R : Type u) [CommRing R] (n : ℕ) (q : R) :
   mul _ _ := PUnit.unit
   sigma _ := PUnit.unit
   hecke_relation := True
-  hecke_holds := trivial
+  hecke_holds := trivial  -- noqa: holds_trivial
   braid_relation := True
-  braid_holds := trivial
+  braid_holds := trivial  -- noqa: holds_trivial
   far_commute := True
-  far_commute_holds := trivial
+  far_commute_holds := trivial  -- noqa: holds_trivial
 
 /-- Trivial Wedderburn decomposition over the trivial Hecke carrier. -/
 instance triv_wedderburn (R : Type u) [CommRing R] (n : ℕ) (q : R) :
     WedderburnDecomposition R n q where
   block_proj _ := PUnit.unit
   blocks_sum_to_one := True
-  blocks_sum_holds := trivial
+  blocks_sum_holds := trivial  -- noqa: holds_trivial
   blocks_orthogonal := True
-  blocks_orthogonal_holds := trivial
+  blocks_orthogonal_holds := trivial  -- noqa: holds_trivial
 
 /-- **No trivial `MarkovTrace` instance is provided** because over
     a generic `CommRing R`, the normalisation `tr_M(1) = 1`
@@ -963,7 +963,7 @@ class HasGeneratorAction (n : ℕ) (q : ℝ) where
     `HasGeneratorAction n q` via constant-zero action and
     vacuous-True relations.  Genuine instances at concrete `n`
     arrive once the per-basis multiplication table is encoded. -/
-instance HasGeneratorAction_trivial (n : ℕ) (q : ℝ) :
+instance HasGeneratorAction_trivial (n : ℕ) (q : ℝ) :  -- noqa: skel_inst
     HasGeneratorAction n q where
   sigma_action _ _ := fun _ => 0
   hecke_holds := True

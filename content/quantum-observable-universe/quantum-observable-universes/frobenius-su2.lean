@@ -49,6 +49,6 @@ def su2Frobenius : SU2FrobeniusData where
   invarianceGroup := 3
   haar_invariant := rfl
   numRelations := 1
-  frobenius_holds := rfl
+  frobenius_holds := rfl  -- noqa: holds_trivial
 
 end QOU.Examples
