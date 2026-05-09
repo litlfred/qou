@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-08T23:34:10.389112+00:00",
-  "commitSha": "a0933f5d481c5f3d5e5c248766483eaede5abe52",
+  "computedAt": "2026-05-09T12:40:11.382528+00:00",
+  "commitSha": "6713879bea395995b98dcea994a0683ae05948db",
   "assertions": [
     {
       "name": "tr_M_q0_atomic_vs_interpolate[D (deuteron, A=2)]",
@@ -27,7 +27,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 10,
   "computation": "habiro-interpolate-cross-validation",
   "scriptFile": "habiro_interpolate_cross_validator.py",
   "scriptHash": "87fb556f407d",
