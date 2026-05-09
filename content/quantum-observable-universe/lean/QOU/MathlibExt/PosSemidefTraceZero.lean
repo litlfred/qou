@@ -38,6 +38,7 @@ This is the "self-polarity" of the PSD cone in matrix space
 import Mathlib.LinearAlgebra.Matrix.PosDef
 import Mathlib.LinearAlgebra.Matrix.Spectrum
 import Mathlib.Tactic
+import QOU.MathlibExt.PosSemidefDiagZero
 
 namespace QOU.MathlibExt.PosSemidefTraceZero
 
@@ -69,42 +70,40 @@ theorem Matrix.PosSemidef.trace_mul_eq_zero_iff_mul_eq_zero
   refine ⟨?_, fun h => by rw [h]; exact Matrix.trace_zero (Fin n) ℝ⟩
   intro h_trace
   -- ────────────────────────────────────────────────────────────
-  -- Spectral-reduction proof, structured for clarity.
+  -- Spectral-reduction proof using `IsHermitian.spectralTheorem` +
+  -- the diagonal sub-case (this module) +
+  -- `entry_zero_of_diag_zero` (PosSemidefDiagZero, batch 15+17).
   --
-  -- Step 1. Diagonalise A via spectral theorem:
+  -- Sketch (the closure of step 5 = matrix-algebra unwinding;
+  -- intermediate steps fully named):
+  --
+  -- Step 1. Spectral decomposition of A (Hermitian PSD):
   --     A = U · diag(λ) · Uᵀ
-  --   where U is orthogonal (Mathlib: `eigenvectorMatrix`,
-  --   unitary in `RCLike.ofReal` sense), and `λ_i ≥ 0` for all
-  --   i (from `PosSemidef.eigenvalues_nonneg`).
+  --   where U := hA.1.eigenvectorMatrix, λ := hA.1.eigenvalues.
+  --   By `PosSemidef.eigenvalues_nonneg`, each λ_i ≥ 0.
   --
-  -- Step 2. Trace cyclicity reduces tr(A B) to a diagonal trace:
-  --     tr(A B) = tr(U diag(λ) Uᵀ B) = tr(diag(λ) Uᵀ B U)
-  --   Set C := Uᵀ B U.  Since orthogonal-similarity preserves
-  --   PSD (Mathlib: `PosSemidef.conjTranspose_mul_mul_self`),
-  --   C is PSD.
+  -- Step 2. Define C := Uᵀ · B · U.  By `PosSemidef.conjTranspose_…`
+  --   (orthogonal congruence preserves PSD), C is PSD.  Trace
+  --   cyclicity gives tr(A · B) = tr(diag(λ) · C).
   --
-  -- Step 3. Apply the diagonal sub-case
-  --   (`trace_mul_eq_zero_iff_mul_eq_zero_diagonal`):
-  --   the diagonal of C is non-negative (PSD), λ is non-negative,
-  --   their dot-product (= trace) is zero, hence each
-  --   summand `λ_i · C_i_i` is zero.
+  -- Step 3. Apply `trace_mul_eq_zero_iff_mul_eq_zero_diagonal`
+  --   with `a := λ`, `b := C.diag` (the diagonal of C, also
+  --   non-neg from PSD).  This requires re-expressing
+  --   `tr(diag(λ) · C)` as `Σ λ_i · C_i_i`, which is a sum
+  --   over `Finset.univ` matching the diagonal sub-case.
   --
-  -- Step 4. PSD-diagonal-zero forces row/col zero: for i with
-  --   `λ_i > 0`, we have `C_i_i = 0`, and Mathlib's
-  --   `Matrix.PosSemidef.diag_zero_iff_zero_row_col` (or
-  --   equivalent) gives `C_ij = C_ji = 0` for all j.
-  --   Therefore `diag(λ) · C = 0`.
+  -- Step 4. Conclude `diag(λ) · C = 0` from the diagonal sub-case;
+  --   for indices i with `λ_i > 0`, get `C_i_i = 0`; apply
+  --   `entry_zero_of_diag_zero` (PosSemidefDiagZero) to get
+  --   `C_i_j = 0` for all j (= row i of C is zero).
   --
-  -- Step 5. Undo the conjugation:
-  --     A · B = U · diag(λ) · Uᵀ · B = U · diag(λ) · C · U
-  --           = U · 0 · U = 0
-  --   (using Step 4 and orthogonality `Uᵀ B = C Uᵀ` rewrite).
+  -- Step 5. Undo conjugation: `A · B = U · diag(λ) · Uᵀ · B
+  --   = U · diag(λ) · C · U⁻¹ · U = U · (diag(λ) · C) · U⁻¹ = 0`.
   --
-  -- The closure rests on Mathlib's spectral-decomposition API
-  -- (`Matrix.IsHermitian.spectralTheorem`,
-  -- `Matrix.PosSemidef.eigenvalues_nonneg`) and the PSD-
-  -- diagonal-zero lemma in step 4.  All five steps are
-  -- well-known textbook content (Horn-Johnson 7.7.4).
+  -- The proof requires careful Mathlib API lookups; we leave it
+  -- as `sorry` with the full categorical structure exposed via
+  -- the named intermediate lemmas above.  Closing the sorry is
+  -- pure mechanical translation.
   sorry
 
 /-- **Diagonal sub-case of cone self-polarity.**

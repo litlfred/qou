@@ -49,7 +49,6 @@ diagonalised product `D · C` is zero when `tr(D · C) = 0`.
 
 import Mathlib.LinearAlgebra.Matrix.PosDef
 import Mathlib.Tactic
-import QOU.MathlibExt.PosSemidefTraceZero
 
 namespace QOU.MathlibExt.PosSemidefDiagZero
 

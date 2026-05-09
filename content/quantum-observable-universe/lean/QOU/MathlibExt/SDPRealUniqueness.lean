@@ -150,12 +150,44 @@ theorem real_strict_complementarity_unique
   have h_S_Φstar : sdp.dualSlack sc.ystar * sc.Φstar = 0 :=
     sc.toRealStrongDualityPair.dualSlack_mul_feasible_eq_zero
       sc.primal_feas rfl
-  -- Step 3: kernel uniqueness from Slater + strict comp.
-  -- Subtract: `S · (Φ' - Φstar) = 0`.  Affine constraints match:
+  -- Step 3 (DERIVED): `S · (Φ' - Φstar) = 0`.
+  have h_S_diff : sdp.dualSlack sc.ystar * (Φ' - sc.Φstar) = 0 := by
+    rw [Matrix.mul_sub, h_S_Φ', h_S_Φstar, sub_zero]
+  -- Step 4 (DERIVED): affine constraints match for the difference:
   -- `tr(A_i · (Φ' - Φstar)) = b_i - b_i = 0` for all i.
-  -- Strict complementarity: on active i, ystar_i > 0; on
-  -- inactive i, slacks differ.  Combined: Φ' - Φstar = 0.
-  -- Full proof requires the kernel-uniqueness lemma.
+  have h_constraint_diff : ∀ i : ι,
+      Matrix.trace (sdp.constraint i * (Φ' - sc.Φstar)) = 0 := by
+    intro i
+    rw [Matrix.mul_sub, Matrix.trace_sub]
+    rw [h_feas.2 i, sc.primal_feas.2 i]
+    ring
+  -- Step 5 (KERNEL UNIQUENESS): the difference D := Φ' - Φstar
+  -- satisfies:
+  --   * S · D = 0  (Step 3)
+  --   * tr(A_i · D) = 0 for all i  (Step 4)
+  --   * D is the difference of two PSD matrices (so it's
+  --     symmetric, but may be indefinite)
+  -- Strict complementarity (sc.active_dual_pos + sc.inactive_dual_zero)
+  -- + the SDP structure forces D = 0.
+  --
+  -- Standard argument (Boyd-Vandenberghe §5.5.4): the SDP
+  -- optimum is unique iff the optimal face is a single point.
+  -- Strict complementarity implies the optimal face is the
+  -- intersection of the kernel of S with the affine constraint
+  -- set; by Slater + the rank-deficiency of S equal to
+  -- dim(active face), this intersection is {Φstar}.
+  --
+  -- Closing this requires:
+  --   * `Matrix.PosSemidef.rank_eq_n_sub_dim_kernel`
+  --   * Affine-Slater-implies-uniqueness lemma
+  --   * Composition with strict complementarity to identify
+  --     the active face dimension
+  --
+  -- These are open Mathlib SDP-theory items.  For practical use,
+  -- the interior-case closure
+  -- `real_strict_complementarity_unique_of_dualSlack_posDef` (below)
+  -- handles the no-active-constraints case (which is the QOU
+  -- ³He instance per PR #608).
   sorry
 
 /-- **Subsingleton wrapper** for typeclass-friendly use. -/
