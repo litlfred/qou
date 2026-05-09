@@ -68,6 +68,12 @@ M_P_MEV = mp.mpf("938.27208816")
 M_N_MEV = mp.mpf("939.56542052")
 
 ATOMS_CODATA = {
+    # Anchors (LO is exact by construction; ΔM = 0):
+    "p":   {"Z": 1, "N": 0, "n": 3,  "M_MeV": "938.27208816",
+            "chi_witness": "chi-proton-h3.witness.json"},
+    "n":   {"Z": 0, "N": 1, "n": 3,  "M_MeV": "939.56542052",
+            "chi_witness": "chi-neutron-h3.witness.json"},
+    # Compounds (binding-energy correction non-trivial):
     "D":   {"Z": 1, "N": 1, "n": 6,  "M_MeV": "1875.61294257",
             "chi_witness": "chi-deuteron-h6.witness.json"},
     "T":   {"Z": 1, "N": 2, "n": 9,  "M_MeV": "2808.92113298",

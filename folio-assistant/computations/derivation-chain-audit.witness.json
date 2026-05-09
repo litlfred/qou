@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T20:54:47.787936+00:00",
-  "commitSha": "a00ae6f7f3a7fbcaef900b2f8b9b8b98374b89e6",
+  "computedAt": "2026-05-09T20:16:22.473860+00:00",
+  "commitSha": "ec5f779f479318a13444eb4ebe7c3d55f8b69dd3",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2093,6 +2093,7 @@
         "compute-audit-scan.witness.json",
         "confined-knot-binding.witness.json",
         "confinement-operator-selection.witness.json",
+        "cross-check-trM-1ppb.witness.json",
         "crystal-alpha-shift-pole-orders.witness.json",
         "crystal-basis-primitives.witness.json",
         "crystal-limit-transport-probe.witness.json",
@@ -2101,9 +2102,13 @@
         "d-density-derivation.witness.json",
         "d-from-scratch.witness.json",
         "d-u-closed-form-proof.witness.json",
+        "delta-lambda-2row-stratum.witness.json",
+        "delta-lambda-empirical-tabulation.witness.json",
+        "delta-lambda-q-sweep-2row.witness.json",
         "delta-q-decoration.witness.json",
         "demazure-markov-trace.witness.json",
         "deuteron_tr_M_symbolic.witness.json",
+        "e0-calibration-audit.witness.json",
         "entanglement-orders.witness.json",
         "ew-higgs-sdp-probe.witness.json",
         "ew-interface-knot-probe.witness.json",
@@ -2283,8 +2288,8 @@
         "v-hat-to-delta-lambda-bridge.witness.json",
         "wall-violations-sweep.witness.json",
         "wall-violations.witness.json",
-        "wedderburn-lp-ew-wiring.witness.json",
         "wedderburn-pair-volumes.witness.json",
+        "y-lambda-at-q0.witness.json",
         "y-lambda-cyclotomic-factor.witness.json",
         "y-lambda-macdonald-telescope.witness.json",
         "y_lambda_equivalence_proof.witness.json"

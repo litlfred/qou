@@ -64,6 +64,11 @@ M_P_MEV = mp.mpf("938.27208816")
 M_N_MEV = mp.mpf("939.56542052")
 
 ATOMS_CODATA = {
+    # Anchors (LO exact by construction; ΔM = 0; included for sector-mass
+    # data only — Δ_λ ansätze trivially solve to 0):
+    "p":   {"Z": 1, "N": 0, "n": 3,  "M_MeV": "938.27208816"},
+    "n":   {"Z": 0, "N": 1, "n": 3,  "M_MeV": "939.56542052"},
+    # Compound atoms (binding-energy correction non-trivial):
     "D":   {"Z": 1, "N": 1, "n": 6,  "M_MeV": "1875.61294257"},
     "T":   {"Z": 1, "N": 2, "n": 9,  "M_MeV": "2808.92113298"},
     "3He": {"Z": 2, "N": 1, "n": 9,  "M_MeV": "2808.39160743"},

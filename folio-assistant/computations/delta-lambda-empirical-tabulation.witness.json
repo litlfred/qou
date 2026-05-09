@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-09T18:26:34.195146+00:00",
-  "commitSha": "049f475887f4497552cd6789e0797299ee7b0642",
+  "computedAt": "2026-05-09T19:53:35.811594+00:00",
+  "commitSha": "8fb765836ba9860d98409eb88e7bb968561dd62f",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 26,
+  "durationMs": 27,
   "computation": "delta-lambda-empirical-tabulation",
   "scriptFile": "delta_lambda_empirical_tabulation.py",
-  "scriptHash": "adf2dba664ae",
-  "scriptCommitSha": "049f475887f4497552cd6789e0797299ee7b0642",
+  "scriptHash": "ea5b95435004",
+  "scriptCommitSha": "a23232d64cba5a142422e5d2faaf666a310917d2",
   "description": "Empirical tabulation of per-Wedderburn-block binding fractions Δ_λ(K) for K ∈ {D, T, ³He, ⁴He} per the full ρ_K mass formula M(K) = m_e · Σ_λ y_λ · χ^λ · (1 + Δ_λ). Solves the underdetermined Σ c_λ Δ_λ = ΔM/m_e under four ansätze: (a) single-block sweep over all λ ⊢ 3A, (b) shell-supported λ_shell = staircase, (c) Δ-monotonic via content sum c(λ), (d) Δ-isotypic via dim_q(λ)/[n]_q!. Reports best λ* per ansatz, ‖Δ‖₂, and cross-atom recurrence pattern. Proposal 1 of docs/audits/2026-05-09-workplan-update-rho-k.md.",
   "contentBlock": "prop:rho-k-h3a-refinement",
   "parameters": {
@@ -20,6 +20,144 @@
   },
   "data": {
     "per_atom": {
+      "p": {
+        "Z": 1,
+        "N": 0,
+        "n": 3,
+        "n_partitions": 3,
+        "M_codata_MeV": "938.27208816",
+        "constituent_MeV": "938.27208816",
+        "delta_M_MeV": "0.0",
+        "tr_M": "1.065306228592435304097936194743016",
+        "abs_tr_M": "1.065306228592435304097936194743016",
+        "target_signed": "0.0",
+        "a_single_block": {
+          "ansatz": "a_single_block",
+          "best_lambda": [
+            3
+          ],
+          "best_delta": "0.0",
+          "best_abs_delta": "0.0",
+          "candidates_top5": [
+            {
+              "lambda": [
+                3
+              ],
+              "delta": "0.0",
+              "abs_delta": "0.0"
+            },
+            {
+              "lambda": [
+                2,
+                1
+              ],
+              "delta": "0.0",
+              "abs_delta": "0.0"
+            },
+            {
+              "lambda": [
+                1,
+                1,
+                1
+              ],
+              "delta": "0.0",
+              "abs_delta": "0.0"
+            }
+          ],
+          "n_candidates_skipped_singular": 0
+        },
+        "b_shell_supported": {
+          "ansatz": "b_shell_supported",
+          "lambda_shell": [
+            2,
+            1
+          ],
+          "c_shell": "0.50783743205959847776089461754928",
+          "delta": "0.0",
+          "abs_delta": "0.0"
+        },
+        "c_content_monotonic": {
+          "ansatz": "c_content_monotonic",
+          "alpha": "0.0",
+          "weighted_sum_yChi_cContent": "1.773287986239447773919690498760272",
+          "norm_delta_2": "0.0"
+        },
+        "d_isotypic": {
+          "ansatz": "d_isotypic",
+          "alpha": "0.0",
+          "weighted_sum_yChi_planch": "0.25792942466342875060262357654945091570598913199835",
+          "norm_delta_2": "0.0"
+        }
+      },
+      "n": {
+        "Z": 0,
+        "N": 1,
+        "n": 3,
+        "n_partitions": 3,
+        "M_codata_MeV": "939.56542052",
+        "constituent_MeV": "939.56542052",
+        "delta_M_MeV": "0.0",
+        "tr_M": "0.923233297169676360703463926886587",
+        "abs_tr_M": "0.923233297169676360703463926886587",
+        "target_signed": "0.0",
+        "a_single_block": {
+          "ansatz": "a_single_block",
+          "best_lambda": [
+            3
+          ],
+          "best_delta": "0.0",
+          "best_abs_delta": "0.0",
+          "candidates_top5": [
+            {
+              "lambda": [
+                3
+              ],
+              "delta": "0.0",
+              "abs_delta": "0.0"
+            },
+            {
+              "lambda": [
+                2,
+                1
+              ],
+              "delta": "0.0",
+              "abs_delta": "0.0"
+            },
+            {
+              "lambda": [
+                1,
+                1,
+                1
+              ],
+              "delta": "0.0",
+              "abs_delta": "0.0"
+            }
+          ],
+          "n_candidates_skipped_singular": 0
+        },
+        "b_shell_supported": {
+          "ansatz": "b_shell_supported",
+          "lambda_shell": [
+            2,
+            1
+          ],
+          "c_shell": "0.47783008209620381867922060433368",
+          "delta": "0.0",
+          "abs_delta": "0.0"
+        },
+        "c_content_monotonic": {
+          "ansatz": "c_content_monotonic",
+          "alpha": "0.0",
+          "weighted_sum_yChi_cContent": "1.460501066809369119239803594524081",
+          "norm_delta_2": "0.0"
+        },
+        "d_isotypic": {
+          "ansatz": "d_isotypic",
+          "alpha": "0.0",
+          "weighted_sum_yChi_planch": "0.22976096887406864265500966370047162182999080989259",
+          "norm_delta_2": "0.0"
+        }
+      },
       "D": {
         "Z": 1,
         "N": 1,
@@ -370,6 +508,34 @@
     },
     "cross_atom_pattern_ansatz_a": {
       "top3_by_atom": {
+        "p": [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "n": [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
         "D": [
           [
             5,
@@ -429,6 +595,27 @@
       "lambda_frequency_in_top3": [
         {
           "lambda": [
+            3
+          ],
+          "n_atoms_in_top3": 2
+        },
+        {
+          "lambda": [
+            2,
+            1
+          ],
+          "n_atoms_in_top3": 2
+        },
+        {
+          "lambda": [
+            1,
+            1,
+            1
+          ],
+          "n_atoms_in_top3": 2
+        },
+        {
+          "lambda": [
             6,
             3
           ],
@@ -472,20 +659,6 @@
           "lambda": [
             9,
             3
-          ],
-          "n_atoms_in_top3": 1
-        },
-        {
-          "lambda": [
-            8,
-            4
-          ],
-          "n_atoms_in_top3": 1
-        },
-        {
-          "lambda": [
-            10,
-            2
           ],
           "n_atoms_in_top3": 1
         }

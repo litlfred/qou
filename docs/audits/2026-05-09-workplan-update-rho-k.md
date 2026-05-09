@@ -513,6 +513,50 @@ Active-branch awareness as of 2026-05-09 16:40 UTC:
   p, n, D, ⁴He used in Proposal 4.
 - **PR #586** (Mathlib Tier-A batch) — merged; Lean
   formalization track, no direct mass-formula impact.
+- **PR #600** (Δ_λ derivation race + audit doc + ρ_K extension to
+  Li) — **merged 2026-05-09 ~17:30 UTC**; audit's "LO is tautology"
+  finding informed this workplan's TL;DR rewrite (commit `2f421d795`).
+  All 5 closure-race options (Occam / B / C / D / F) ruled out;
+  Option E (crystal-graph weight) still in flight. Cross-coordination
+  on PR #600 (3 comments before merge) documented the 2-row stratum
+  finding from this branch.
+- **PR #607** (chirality probes + Lean A-1 / A-4 §3b-cond instances)
+  — merged 2026-05-09; orthogonal to mass-formula scope.
+- **PR #612** (canonical atomic-braid-recipe-{p,n,d} chains +
+  perf cascade) — **merged 2026-05-09 ~19:30 UTC**; major impact
+  on this branch:
+    * `chi-proton-h3.witness.json` and `chi-neutron-h3.witness.json`
+      now ship symbolic χ^λ for all 3 partitions of n=3 — enables
+      extending Proposal 1 to proton + neutron rows. Done in
+      this branch on the post-rebase update.
+    * `y_lambda_wenzl_bridge.py` adds in-place `@lru_cache` plus
+      lazy-load from `y-lambda-wenzl-bridge-symbolic-witness.json`
+      (13× speedup). My `y-lambda-at-q0.witness.json` (270 entries
+      at 50-dps, parallel-built via lambdify) remains complementary
+      as a STANDALONE numeric snapshot for consumers that want
+      instant 50-dps without sympify cost.
+    * `hecke_character_symbolic.q_character_on_braid_word` adds
+      `atom_cache_label` parameter to read pre-computed χ^λ from
+      `chi-{atom}-h{n}.witness.json`. Largely supersedes my
+      `chi_lambda_at_q0_cache.py` for the in-cache atoms; my
+      script remains useful as a fallback that computes missing
+      partitions on-the-fly via `atom_canonical_crossings`.
+    * `tr_m_q_hecke_seminormal._y_lambda_cached(n)` provides
+      shared in-memory dict cache (T + ³He at n=9 share work).
+      Orthogonal to my disk cache.
+    * Convention migration `TR_M_AT_Q0 → canonical Wenzl-bridge
+      y_λ` (commit `2dfd7c338`): replaces the legacy
+      `schur_weyl_weight` (which vanishes on > 2-row partitions)
+      with the canonical `y_λ` (full-rank, > 2-row contributions
+      non-zero). My consumers already use the canonical path via
+      `wedderburn_jones_markov.global_wedderburn_sum_q_hecke_seminormal`
+      — no breakage. The 2-row dominance finding (83-95%) is
+      genuine empirical content under canonical y_λ; under legacy
+      it would have been 100% by construction.
+- **PR #617** (mass-table no-fits + 50dps cache + LP duals) —
+  open; coordinated.
+- **PR #618** (Wedderburn pair-vol LP/SDP-EW + alt-Δ_I Weinberg)
+  — open; coordinated.
 
 ## Cross-references
 
