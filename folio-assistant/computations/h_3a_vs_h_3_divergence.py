@@ -55,11 +55,12 @@ if str(HERE) not in sys.path:
 import sympy as sp  # noqa: E402
 
 import markov_weights_symbolic as m  # noqa: E402
+from q_parameter import Q as Q_FLOAT  # noqa: E402  — single source of truth
 from witness_base import WitnessBuilder  # noqa: E402
 
 # Substrate parameter (q_0 from CODATA / paper).
 Q_SYM = sp.symbols("q", positive=True)
-Q_0 = sp.Float("1.1099785955541805", 30)
+Q_0 = sp.Float(Q_FLOAT, 30)
 
 
 def _y_lambda_numeric(n: int) -> dict[tuple, float]:

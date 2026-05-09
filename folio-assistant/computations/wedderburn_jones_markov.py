@@ -139,7 +139,10 @@ def global_wedderburn_sum_jones_markov(
             )
         else:
             chi = specht_character_placeholder(lam)
-        if chi == 0:
+        # Use sp.sympify(...).is_zero — robust against unsimplified
+        # sympy expressions where structural `== 0` would miss
+        # mathematical zeros (gemini review on PR #572).
+        if sp.sympify(chi).is_zero:
             continue  # skip zero-character partitions
         contrib = y * chi
         total += contrib

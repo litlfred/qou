@@ -58,11 +58,11 @@ import sympy as sp  # noqa: E402
 
 from hecke_characters import build_seminormal_matrices, partitions_of  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A, chi_lambda_of_word  # noqa: E402
+from q_parameter import Q as Q_0_FLOAT  # noqa: E402  — single source of truth
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
-Q_0_FLOAT = 1.1099785955541805
-Q_0_HIGH = sp.Float("1.1099785955541805", 30)  # 30-dps for y_λ precision
+Q_0_HIGH = sp.Float(Q_0_FLOAT, 30)  # 30-dps for y_λ precision (derived from q_parameter.Q)
 REF_WITNESS = HERE / "atomic-tr-m-mpfr-50dps.witness.json"
 
 
