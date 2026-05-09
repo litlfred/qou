@@ -15,6 +15,7 @@ import QOU.Basic
 import QOU.MathlibExt
 import QOU.MathlibExt.SDP
 import QOU.MathlibExt.SDPEmptyConstraints
+import QOU.MathlibExt.SDPRealUniqueness
 import QOU.MathlibExt.PosSemidefTraceZero
 import QOU.MathlibExt.FrobeniusInnerProduct
 import QOU.MathlibExt.QPlancherel
