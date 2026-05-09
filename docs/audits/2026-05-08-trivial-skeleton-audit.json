@@ -1,12 +1,12 @@
 {
   "audit": "trivial-skeleton-audit",
-  "generated": "2026-05-09T01:01:28.079Z",
-  "total_flagged": 77,
+  "generated": "2026-05-09T01:05:48.535Z",
+  "total_flagged": 78,
   "files_flagged": 42,
   "patterns": {
     "const_zero": 34,
     "one_def": 17,
-    "skel_inst": 13,
+    "skel_inst": 14,
     "holds_trivial": 10,
     "id_def": 1,
     "const_zero_typed": 1,
@@ -362,6 +362,11 @@
         "line": 161,
         "pattern": "holds_trivial",
         "snippet": "blocks_orthogonal_holds := trivial"
+      },
+      {
+        "line": 897,
+        "pattern": "skel_inst",
+        "snippet": "instance HasGeneratorAction_trivial (n : ℕ) (q : ℝ) :"
       }
     ],
     "lean/QOU/Mathlib/NonAbelianStokes.lean": [
