@@ -14,7 +14,7 @@ Two independent computations:
 (B) c_αα via β-chain — uses only Q_β(³H):
     The framework's compound-β-decay-shell-calibration proposition
     claims y_target(A_magic) is derivable from the chain Q-values
-    reaching the magic anchor.  The single Q_β(³H) = 0.782 MeV plus
+    reaching the magic anchor.  The single Q_β(³H) = 0.78233341 MeV plus
     the chain of intermediate predictable Q values can in principle
     extract the cumulative shell contribution at A=12 and hence c_αα.
 

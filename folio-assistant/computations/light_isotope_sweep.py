@@ -13,7 +13,7 @@ on A = Z+N nucleons:
   3. Weight by w_λ = dim_q(λ)²/[3A]_q!
   4. Sum: tr_M(T_w) = Σ_λ w_λ · χ_λ / dim(λ)
 
-β-decay calibration: E_0 = 0.782 MeV / |tr_M(n) - tr_M(p)|.
+β-decay calibration: E_0 = 0.78233341 MeV / |tr_M(n) - tr_M(p)|.
 Binding: B = E_0 · (|tr_M(free)| - |tr_M(atom)|).
 
 Frobenius correction per prop:partition-sum-proton-residual and

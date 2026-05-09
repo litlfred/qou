@@ -12,7 +12,7 @@ each λ ⊢ 3A.
 
 Key design decisions:
 
-1. Calibration: E_0 = 0.782 MeV (free-neutron β-decay Q-value),
+1. Calibration: E_0 = 0.78233341 MeV (free-neutron β-decay Q-value),
    per prop:categorical-mass-markov.  NO Catalan / ALPHA.
 
 2. Braid word: uses the same walk as atom_per_generator_volumes —
@@ -571,7 +571,7 @@ def binding_3A_tower(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
         B     = E_0 · ( 𝔪_free − 𝔪_atom ).
 
     Replaces the H_3 per-generator weighting used in
-    tower_binding_full.  E_0 = 0.782 MeV (β-decay Q), no Catalan.
+    tower_binding_full.  E_0 = 0.78233341 MeV (β-decay Q), no Catalan.
     """
     from mass_endomorphism import mass_from_tower
     vols_atom = per_generator_V_hat_3A(
@@ -653,7 +653,7 @@ if __name__ == "__main__":
                     help="Max A to evaluate (p(3A) cost grows fast)")
     ap.add_argument("--E0", type=float, default=E_0_CALIBRATION_MEV,
                     help="Calibration E_0 in MeV "
-                         "(default = β-decay Q = 0.782)")
+                         "(default = β-decay Q = 0.78233341)")
     ap.add_argument("--verbose", "-v", action="store_true")
     args = ap.parse_args()
 
@@ -753,7 +753,7 @@ if __name__ == "__main__":
             "V̂_i = Σ_λ w_λ · χ_λ(W_i)/d_λ, then "
             "𝔪 = |Π V̂_i| + Σ Φ_q(|V̂_i|) + z² Σ_{adj} Φ_q(|V̂_i V̂_j|), "
             "and B = E_0 · (𝔪_free − 𝔪_atom).\n"
-            "E_0 = 0.782 MeV (free-neutron β-decay Q). No Catalan."
+            "E_0 = 0.78233341 MeV (free-neutron β-decay Q). No Catalan."
         ),
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "parameters": {"q0": Q0, "E_0_MeV": args.E0,
