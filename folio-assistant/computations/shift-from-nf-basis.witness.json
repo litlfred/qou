@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-08T18:08:34.290250+00:00",
-  "commitSha": "074545548b063ae3b21961bbc42bc1f749c8cc51",
+  "computedAt": "2026-05-09T03:14:15.758436+00:00",
+  "commitSha": "c1cf1d4231a62b15f909679c5058fe955e262617",
   "assertions": [
     {
       "name": "shift_proton_h3_finite",
@@ -36,11 +36,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 36,
+  "durationMs": 32,
   "computation": "shift-from-nf-basis",
   "scriptFile": "shift_from_nf_basis.py",
-  "scriptHash": "1473b0c2947c",
-  "scriptCommitSha": "242587075faabfacc3faddedf2a6d56a7d8e65c5",
+  "scriptHash": "4e768c43961b",
+  "scriptCommitSha": "cd523015984b3af986e24f697bdeb6381634f933",
   "description": "Symbolic-q NF reduction of per-nucleon braids β_p, β_n in H_3(q) = 6-dimensional Hecke algebra of B_3.  Decomposes each nucleon into the 6 fundamental knot operators (NF basis: γ, σ₀, σ₁, L₊, L₋, e⁻) with categorical coefficients c_b(q) ∈ Habiro ring.  Computes shift_NF(β_p), shift_NF(β_n) from the trace decomposition tr_M = Σ c_b · TR_M_SYM[b].  These are the H_3-context shifts; the embedded H_(3A)-context shifts (18 for p, 21 for n) require Littlewood-Richardson branching analysis.",
   "contentBlock": "prop:confinement-nf-partial-proof",
   "data": {

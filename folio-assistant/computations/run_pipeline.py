@@ -411,9 +411,28 @@ def main():
 
         stale_set = set(run_order)
         level_of: dict[str, int] = {}
-        for script in run_order:
+
+        def _level(script: str, on_stack: set[str]) -> int:
+            """Compute level via memoized DFS; robust to imperfect topo
+            order (e.g. when toposort's cycle-detection fallback puts
+            dependents before deps in run_order). Per F3 fix on PR
+            #588 — earlier `level_of[d]` lookup KeyError'd on
+            markov_trace_canonical.py because run_order is not a
+            strict topological sequence."""
+            if script in level_of:
+                return level_of[script]
+            if script in on_stack:
+                return 0  # cycle: break here
+            on_stack.add(script)
             stale_deps = graph.get(script, set()) & stale_set
-            level_of[script] = 1 + max((level_of[d] for d in stale_deps), default=-1)
+            lvl = 1 + max(
+                (_level(d, on_stack) for d in stale_deps), default=-1)
+            on_stack.discard(script)
+            level_of[script] = lvl
+            return lvl
+
+        for script in run_order:
+            _level(script, set())
 
         levels: dict[int, list[str]] = {}
         for script, lvl in level_of.items():
