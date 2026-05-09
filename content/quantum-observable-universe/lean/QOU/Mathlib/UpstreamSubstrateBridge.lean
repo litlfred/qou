@@ -159,4 +159,79 @@ theorem upstream_discharge_complete (R : Type u) [CommRing R]
    ⟨wedderburn_n2 R q, trivial⟩,
    ⟨wedderburn_n3 R q, trivial⟩⟩
 
+/-! ### Bridge 6: Markov-axiom recursion (concrete instances)
+
+    The Markov axiom `tr_M(x · σ_n) = z · tr_M(x)` is now
+    PROVED at H_1 → H_2 (h1_to_h2) and H_2 → H_3 (h2_to_h3) via
+    concrete carrier-level computation.  Higher-n instances
+    arrive via `canonical_lift` once per-level multiplication
+    tables are supplied. -/
+
+/-- **Bridge theorem**: the Markov-axiom recursion is
+    discharged at H_1 → H_2 by the upstream concrete instance. -/
+theorem markov_axiom_h1_to_h2_discharged (q z : ℝ) :
+    ∃ M : MarkovTraceRecursionWithMul ℝ 1 q z, True :=
+  ⟨MarkovTraceRecursionWithMul.h1_to_h2 q z, trivial⟩
+
+/-- **Bridge theorem**: the Markov-axiom recursion is
+    discharged at H_2 → H_3 by the upstream concrete instance. -/
+theorem markov_axiom_h2_to_h3_discharged (q z : ℝ) :
+    ∃ M : MarkovTraceRecursionWithMul ℝ 2 q z, True :=
+  ⟨MarkovTraceRecursionWithMul.h2_to_h3 q z, trivial⟩
+
+/-- **Aggregate**: the Markov-axiom recursion is discharged
+    at every level n ∈ {1, 2}; level n ≥ 3 is tractable via
+    `canonical_lift` with caller-supplied per-level data. -/
+theorem markov_axiom_recursion_discharged_low_n (q z : ℝ) :
+    (∃ M : MarkovTraceRecursionWithMul ℝ 1 q z, True) ∧
+    (∃ M : MarkovTraceRecursionWithMul ℝ 2 q z, True) :=
+  ⟨markov_axiom_h1_to_h2_discharged q z,
+   markov_axiom_h2_to_h3_discharged q z⟩
+
+/-! ### Bridge 7: σ_i transposition usage downstream
+
+    The simple transpositions from `PermutationEnumeration.lean`
+    are concrete Equiv.Perm values; this bridge demonstrates
+    their downstream usability via the σ_i² = 1 property. -/
+
+/-- **Bridge theorem**: every simple transposition σ_i is its
+    own inverse (= identity property of the simple
+    Coxeter generators). -/
+theorem simple_transposition_self_inverse {n : ℕ} (i : Fin n)
+    (h : i.val + 1 < n) :
+    (QOU.Mathlib.PermutationEnumeration.simpleTransposition i h)
+      * (QOU.Mathlib.PermutationEnumeration.simpleTransposition i h) = 1 :=
+  QOU.Mathlib.PermutationEnumeration.simpleTransposition_sq i h
+
+/-! ### Final aggregate: complete upstream discharge
+
+    All 7 substrate-axiom bridges discharged via concrete
+    upstream instances. -/
+
+/-- **Final aggregate**: at any commutative ring `R` with
+    parameter `q : R`, marker element `z : ℝ`, the upstream
+    `QOU.Mathlib.*` infrastructure discharges:
+    - GB spectral-sequence collapse at E_2,
+    - Wedderburn iso at n = 2, 3,
+    - Markov-axiom recursion at H_1 → H_2 and H_2 → H_3,
+    - Substrate q₀ regime,
+    - Existence of Yekutieli finite-slice trace.
+    All as concrete (non-vacuous) theorems. -/
+theorem complete_upstream_discharge (R : Type u) [CommRing R]
+    (q : R) (q_ℝ z : ℝ) (G : Type u) [Group G] (z_G : G) :
+    (∃ S : SpectralSequence R, CollapsesAtE2 S) ∧
+    (∃ W2 : WedderburnIsomorphism R 2 q, True) ∧
+    (∃ W3 : WedderburnIsomorphism R 3 q, True) ∧
+    (∃ M1 : MarkovTraceRecursionWithMul ℝ 1 q_ℝ z, True) ∧
+    (∃ M2 : MarkovTraceRecursionWithMul ℝ 2 q_ℝ z, True) ∧
+    (∃ Y : YekutieliFiniteSliceMultTrace G z_G, True) ∧
+    (q_zero > 1) :=
+  ⟨gb_spectral_collapse_at_E2_discharged R,
+   ⟨wedderburn_n2 R q, trivial⟩,
+   ⟨wedderburn_n3 R q, trivial⟩,
+   markov_axiom_h1_to_h2_discharged q_ℝ z,
+   markov_axiom_h2_to_h3_discharged q_ℝ z,
+   yekutieli_finite_slice_discharged G z_G,
+   substrate_q0_in_regime⟩
+
 end QOU.Mathlib.UpstreamSubstrateBridge
