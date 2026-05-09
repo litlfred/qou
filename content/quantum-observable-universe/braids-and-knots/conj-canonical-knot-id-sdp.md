@@ -70,6 +70,73 @@ when $T_w$ is set to these knot types.  The conjecture asserts that
 no other $T_w$ within the $\Delta_{\max}$ ball achieves a smaller
 residual.
 
+## Partial closure (PR #608, 2026-05-09)
+
+The R5-full canonical-knot SDP solver prototype
+([`r5_full_canonical_knot_solver.py`](../../../folio-assistant/computations/r5_full_canonical_knot_solver.py),
+witness
+[`r5-full-canonical-knot-solver.witness.json`](../../../folio-assistant/computations/r5-full-canonical-knot-solver.witness.json))
+gave the first **substrate-only** check of this conjecture for the
+three light nuclei.  Result:
+
+| Nucleus | Canonical $T_w$ | $\alpha^*$ | PSD-feasible at $q_0$? | Rank in 138 KLR-canonical classes |
+|---------|-----------------|------------|------------------------|------------------------------------|
+| $^3\mathrm{He}$ | $L_{6a4}$ | $0.000$ | **yes** ✓ | 24 (top 17 %) |
+| $^2\mathrm{H}$ | $6_2$ | $0.891$ | no (single-term cost) | 62 (top 45 %) |
+| $^3\mathrm{H}$ | $8_{11}$ | — | (deferred — needs $H_5$ Hoefsmit) | — |
+
+**Status by nucleus:**
+
+- **$^3\mathrm{He}$ — PSD-feasibility verified** at $q_0$: the
+  canonical $T_w = L_{6a4}$ sits on the structural target
+  ($\alpha^* = 0$) in the standard $(2,1)$ Wedderburn block.  The
+  $\chi$-fingerprint of the prototype's recovered word
+  $(\sigma_1 \sigma_2^{-1})^3$ matches the historical SnapPy braid
+  $[-1, 2, -1, 2, -1, 2]$ up to generator-sign convention (same KLR
+  canonical-basis class).  This discharges sub-deliverable 2 of
+  Issue #604 for $^3\mathrm{He}$.
+- **$^2\mathrm{H}$ — needs multi-term cost.** The prototype's
+  single-term flagship formula $B = m_e \cdot \rho \cdot |\mathrm{tr}_M(T_w)|$
+  does not make $6_2$ the structural winner (per the known offset
+  documented in `probe-sdp-canonical-paper-formula.witness.json`).
+  Wiring T2–T6 of
+  [`thm:knot-mass-formula-unified`](#thm:knot-mass-formula-unified)
+  into `cost_for_candidate` is the next-priority closure step.
+- **$^3\mathrm{H}$ — pipeline deferred.** Hoefsmit seminormal at
+  $H_5$ needs to land first (currently a deferral to
+  Rust `tools/hecke-engine`).
+
+**Categorical uniqueness theorem (proof obligation 2)** is now
+formally stated in
+[`conj-canonical-knot-id-sdp.lean`](conj-canonical-knot-id-sdp.lean)
+as `helium3_canonical_uniqueness_via_strict_complementarity`.  The
+Lean theorem takes:
+
+1. The R5-full numerical witness (`R5FullWitness LightNucleus.helium3`)
+   recording $\alpha_{\mathrm{gap}} = 0$ + strong duality
+   ($|\text{primal\_obj} - \text{dual\_obj}| \leq 10^{-6}$);
+2. A strict-complementarity certificate
+   (`StrictComplementarity LightNucleus.helium3`) — the categorical
+   hypothesis upgrading numerical PSD-feasibility to unique-minimizer
+   status per Boyd–Vandenberghe §5.5.
+
+and concludes
+`CanonicalKnotIdSDP LightNucleus.helium3` (the §3b-cond conditional
+class instance for $^3\mathrm{He}$).  This is the closure path for
+sub-deliverable 3 of Issue #604: under the strict-complementarity
+hypothesis (a categorical claim about the geometry of the SDP's
+feasible set, not a numerical certificate), the historical
+$L_{6a4}$ assignment for $^3\mathrm{He}$ is *the* unique R5-full
+canonical $T_w$.
+
+The Lean theorem currently carries a `sorry` for the convex-
+optimization step (Boyd–Vandenberghe-style strict-complementarity
+⇒ uniqueness in SDP).  Closing the `sorry` requires either
+upstream Mathlib convex-optimization infrastructure or a
+self-contained constructive argument from the active-set + dual
+variables recorded in
+[`r5-full-canonical-knot-solver.witness.json`](../../../folio-assistant/computations/r5-full-canonical-knot-solver.witness.json).
+
 ## Proof obligations
 
 1. **Finitude of candidate set.**  The Plancherel-weight boundedness

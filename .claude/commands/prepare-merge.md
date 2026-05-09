@@ -13,6 +13,96 @@ do not request external reviews until every earlier step has succeeded.
   a resolution is non-obvious). Re-run validation after each conflict fix.
 - Continue until the rebase completes cleanly.
 
+### 1·a Witness-drift conflicts — auto-resolve, do NOT prompt
+
+`folio-assistant/computations/*.witness.json` files are **machine-generated**
+by the validators that run during the witness-pipeline CI. Conflicts on
+these files during rebase are almost always **drift** caused by both branches
+re-running the same validator at different times — the underlying *content*
+is identical modulo `computedAt` / `commitSha` / `scriptCommitSha` /
+`scriptHash` / `durationMs` / `engineVersion` fields and a `files_scanned`
+counter that bumps when new Python files land on either branch.
+
+**Standardised auto-resolution** (do this without asking the user):
+
+```bash
+# Loop until the rebase finishes; each iteration regenerates the four
+# self-emitting audit witnesses, re-stages ONLY the regenerated four
+# (not all witness JSON), and continues the rebase.  Each validator's
+# exit code is checked so a script failure halts the loop instead of
+# proceeding silently with a stale or partial witness.
+# 30-iteration cap as a safety guard.
+WITNESS_REGEN_TARGETS=(
+  "folio-assistant/computations/compute-audit-scan.witness.json"
+  "folio-assistant/computations/derivation-chain-audit.witness.json"
+  "folio-assistant/computations/cross-check-trM-1ppb.witness.json"
+  "folio-assistant/computations/e0-calibration-audit.witness.json"
+)
+cnt=0
+loop_break=""
+while git status 2>/dev/null | grep -q "rebase in progress"; do
+  cnt=$((cnt+1)); [ $cnt -gt 30 ] && { echo "STUCK"; break; }
+  # Bail out to manual handling on any non-witness-json conflict.
+  # Use `cut -c 4-` (rather than `awk '{print $2}'`) so paths with
+  # spaces are preserved correctly.
+  while IFS= read -r f; do
+    case "$f" in
+      folio-assistant/computations/*.witness.json) : ;;
+      *) echo "MANUAL: $f"; loop_break=1; break ;;
+    esac
+  done < <(git status --short | grep "^UU" | cut -c 4-)
+  [ -n "$loop_break" ] && break
+  for s in compute_audit_scan derivation_chain_validator \
+           cross_check_trM_1ppb e0_calibration_audit; do
+    args=()
+    case "$s" in cross_check_trM_1ppb|e0_calibration_audit) args=(--strict);; esac
+    if ! python3 "folio-assistant/computations/${s}.py" "${args[@]}" \
+           >/dev/null 2>&1; then
+      echo "FAIL: ${s}.py exited non-zero — halting auto-resolve"
+      loop_break=1; break
+    fi
+  done
+  [ -n "$loop_break" ] && break
+  # Stage only the four witnesses we just regenerated, not every
+  # *.witness.json (over-broad globs can sweep in unrelated drift).
+  git add "${WITNESS_REGEN_TARGETS[@]}" 2>/dev/null
+  out=$(GIT_EDITOR=true git rebase --continue 2>&1 | tail -3)
+  echo "$out" | grep -q "Successfully rebased" && { echo "OK ($cnt)"; break; }
+done
+```
+
+The four scripts cover the four witnesses that **always drift** under rebase
+(`compute-audit-scan`, `derivation-chain-audit`, `cross-check-trM-1ppb`,
+`e0-calibration-audit`). The loop stops if any **non-witness** conflict
+appears (real conflict requiring human judgment), if any validator exits
+non-zero (real failure requiring investigation), or after 30 iterations as
+a safety guard.
+
+After the rebase finishes, also re-run the validators **once more** to
+catch the post-merge drift introduced by upstream's witness scans and any
+new Python files this branch added (which bump `files_scanned`).  Each
+validator's exit code is checked; the post-rebase commit is created only
+if all four succeed:
+
+```bash
+set -e
+python3 folio-assistant/computations/compute_audit_scan.py >/dev/null 2>&1
+python3 folio-assistant/computations/derivation_chain_validator.py >/dev/null 2>&1
+python3 folio-assistant/computations/cross_check_trM_1ppb.py --strict >/dev/null 2>&1
+python3 folio-assistant/computations/e0_calibration_audit.py --strict >/dev/null 2>&1
+set +e
+git add "${WITNESS_REGEN_TARGETS[@]}" 2>/dev/null
+git diff --cached --quiet || git commit -m "fix(witness-pipeline): post-rebase drift refresh"
+```
+
+This is the standard workflow per the witness-pipeline CI's "drift detector"
+step — fields outside the filtered set (`computedAt|durationMs|commitSha|
+scriptCommitSha|scriptHash|engineVersion|engine|engine_version`) are
+substantive and require a fresh witness committed alongside the script
+changes. **CI will fail without this refresh** if the new Python files this
+branch added bumped `files_scanned` or if any audit witness gained new
+inventory entries.
+
 ## 1a. Migrate any legacy `lean.ref` shapes pulled in from upstream
 
 - After every rebase / merge, **run the lean-ref migration script**:

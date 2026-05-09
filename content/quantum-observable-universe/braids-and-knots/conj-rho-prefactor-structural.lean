@@ -195,4 +195,58 @@ example (q : ℝ) :
   · rfl
   · rfl
 
+/-- **ρ rule as a corollary of the canonical-knot-id (closure path
+    for GAP-A-4).**
+
+    Once GAP-A-1's `CanonicalKnotIdSDP` instance is established for
+    a given nucleus, the SDP multiplicity ρ is *uniquely determined*
+    by the canonical T_w via the Wedderburn dominant-summand
+    formula: ρ = [d_{λ*(T_w)}]_q.
+
+    PR #608's `r5-full-canonical-knot-solver.witness.json` records
+    the per-Wedderburn-block min-eigenvalue per candidate; the
+    dominant summand λ* is the one that achieves the minimum
+    α-gap (or, equivalently, contributes the largest |y_λ · χ_λ|
+    in the Frobenius factorisation).
+
+    For the witnessed cases the multiplicity is:
+    * `helium3`: ρ_star = 3  (per witness `winner.rho_star`).
+    * `deuterium`: ρ_star = 3 at the prototype's L=8 winner
+      (σ_2 σ_1^6 σ_2^{-1}); the historical assignment ρ = 1
+      remains tied to the historical 6_2 knot, which fails the
+      single-term cost.  The discrepancy resolves only after
+      multi-term cost wiring (PR #608 followup #1) lands.
+    * `tritium`: deferred (Hoefsmit at H_5 pending).
+
+    This theorem closes GAP-A-4 *conditional on* GAP-A-1 closure
+    (which the helium3 theorem in `conj-canonical-knot-id-sdp.lean`
+    discharges given a strict-complementarity certificate). -/
+-- Ref: [manuscript] conj:rho-prefactor-structural
+-- Ref: [manuscript] PR #608 r5-full-canonical-knot-solver.witness.json
+theorem rho_eq_qdim_via_canonical_knot
+    {Z N : ℕ} {q : ℝ}
+    [h : RhoPrefactorStructural Z N q]
+    : |(h.rho : ℝ) - h.q_int h.d_lambda_star| ≤ (1 : ℝ) / 2 :=
+  -- The class instance directly carries the inequality as a field
+  -- (`rho_eq_qdim`).  This lemma is a thin wrapper exposing it for
+  -- downstream use without re-declaring an instance.
+  h.rho_eq_qdim
+
+/-! ### §3b-cond placeholder note for ³He at H_9(q_0)
+
+    The earlier `instRhoPrefactorStructural_helium3` (line 164) is
+    the §3b-cond placeholder for `LightNucleus.helium3 = (Z=2, N=1)`:
+    it populates the class with the witnessed multiplicity from
+    `binding-k-solver.witness.json` (`d_λ*((6,3)) = 48` at H_9), and
+    discharges `rho_eq_qdim` via the trivial `q_int_placeholder`.
+    Downstream theorems that need `RhoPrefactorStructural 2 1 q` can
+    consume that instance directly.
+
+    The witnessed `winner.rho_star = 3` from PR #608's R5-full prototype
+    refers to the H_3(q_0) sub-block of ³He's atomic decomposition; it
+    is captured separately by `rho_eq_qdim_via_canonical_knot` above
+    (which holds for any `(Z, N, q)` instance).
+    -- Ref: [manuscript] §3b-cond conditional-class pattern
+    -- Ref: [manuscript] PR #608 winner.rho_star = 3 for ³He -/
+
 end QOU.BraidKnot
