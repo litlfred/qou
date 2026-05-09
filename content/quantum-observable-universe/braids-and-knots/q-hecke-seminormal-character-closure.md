@@ -60,16 +60,20 @@ Both are now fixed (PR #572):
 [`folio-assistant/computations/tr_m_q_hecke_seminormal.py`](../../../folio-assistant/computations/tr_m_q_hecke_seminormal.py)
 produces
 [`tr-m-q-hecke-seminormal.witness.json`](../../../folio-assistant/computations/tr-m-q-hecke-seminormal.witness.json)
-(6 / 6 assertions pass):
+(10 / 10 assertions pass — five atoms × two tolerance bands at
+$10^{-3}$ and $10^{-6}$):
 
 | Atom | $|\mathrm{tr}_M|$ canonical | partition-sum (q-Hecke) | rel err |
 |---|---:|---:|---:|
-| proton | 1.06530622859 | 1.06530622859 | 4.31 × 10⁻¹⁴ |
-| neutron | 0.92323329717 | 0.92323329717 | 1.00 × 10⁻¹³ |
-| deuteron | 0.38828647155 | 0.38828647155 | 6.66 × 10⁻¹⁰ |
+| proton | 1.06530622859 | 1.06530622859 | 3.96 × 10⁻¹⁵ |
+| neutron | 0.92323329717 | 0.92323329717 | 4.21 × 10⁻¹⁵ |
+| deuteron | 0.38828647155 | 0.38828647155 | 7.01 × 10⁻¹⁵ |
+| tritium | 0.10405211868 | 0.10405211868 | 1.07 × 10⁻¹⁴ |
+| ³He | 0.20654085856 | 0.20654085856 | 1.03 × 10⁻¹⁴ |
 
-The numerical agreement is at the float64 precision floor for the
-n=3, n=6 cases. PR #564's
+The numerical agreement is at **machine epsilon** for all five
+atoms (hybrid precision: 30-dps sympy `Float` for $y_\lambda$ +
+float64 for $\chi^\lambda_q$). PR #564's
 [`rho_k_h3a_refinement.py`](https://github.com/litlfred/qou/blob/claude/refactor-computation-framework-iCqhG/folio-assistant/computations/rho_k_h3a_refinement.py)
 implements the same closure with **mpmath at 50 dps**, achieving
 $1.4 \times 10^{-16}$ on the deuteron (commit

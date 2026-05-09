@@ -279,16 +279,32 @@ def global_wedderburn_sum_q_hecke_seminormal(
     y_vals = y_lambda_at(n, q_val=q_val)
     n_gens_required = n - 1
 
+    # Validate that every braid-word generator is in range BEFORE the
+    # per-partition loop.  Catching IndexError per-partition (and
+    # silently skipping) would mask wiring bugs and give a wrong
+    # `total` without any signal (copilot-pull-request-reviewer on PR
+    # #572).  word entries are (c, d, gen_idx) tuples;
+    # gen_idx must satisfy 0 ≤ gen_idx < n_gens_required to act on
+    # the seminormal of any λ ⊢ n with full dimension.
+    bad_gens = [g for *_, g in word
+                if not (0 <= g < n_gens_required)]
+    if bad_gens:
+        raise ValueError(
+            f"Braid word contains out-of-range generator indices "
+            f"{sorted(set(bad_gens))} for n_gens_required = "
+            f"{n_gens_required} (n = {n}).  This indicates a wiring "
+            f"bug in atom_braid_word_3A or the caller; refusing to "
+            f"silently drop partitions and return a wrong total."
+        )
+
     rows = []
     total = 0.0
     for shape, y in y_vals.items():
         sigmas, dim, _syts = build_seminormal_matrices(shape, q=q_val)
         if dim == 0:
             continue
-        try:
-            chi = chi_lambda_of_word(sigmas, dim, word, n_gens_required)
-        except IndexError:
-            continue
+        # IndexError now propagates with context (no silent skip).
+        chi = chi_lambda_of_word(sigmas, dim, word, n_gens_required)
         contrib = float(y) * float(chi)
         total += contrib
         rows.append({
