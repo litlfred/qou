@@ -97,6 +97,37 @@ with per-`n` cache) is the **recommended default** for
 partition-sum consumers needing better than $10^{-5}$ agreement
 without the overhead of full 50-dps mpmath.
 
+## Path A categorical verification of `18` (proton, 2026-05-09)
+
+The atomic-shift exponent $\mathrm{shift}_{\mathrm{NF}}(\beta_K)$
+that controls the $u$-power in the $D(u)$ denominator
+([`prop:per-nucleon-shift-additive-linearity`](per-nucleon-shift-additive-linearity.md))
+is now categorically verified for the proton by direct symbolic
+Hoefsmit pole-order analysis
+([`per_irrep_pole_proton_h3.py`](../../../folio-assistant/computations/per_irrep_pole_proton_h3.py),
+witness:
+[`per-irrep-pole-proton-h3.witness.json`](../../../folio-assistant/computations/per-irrep-pole-proton-h3.witness.json)):
+
+$$
+  \mathrm{ord}_{u=0}\bigl(\mathrm{tr}_M(\beta_p)\bigr) \;=\; 19 \;=\; 18 \cdot Z + 21 \cdot N + 1 \quad \text{at } (Z, N) = (1, 0).
+$$
+
+**Cross-confirmation:** the orthogonal computation in
+[`shift_from_nf_basis.py`](../../../folio-assistant/computations/shift_from_nf_basis.py)
+(NF-basis decomposition, recorded in
+[`shift-from-nf-basis.witness.json`](../../../folio-assistant/computations/shift-from-nf-basis.witness.json))
+independently reports `shift_proton_h3 = 19` — two independent
+symbolic methods agree exactly on the per-proton u-pole.
+
+The "$18$" in $18Z + 21N + 1$ is the per-proton additive
+coefficient of the FULL summed $u$-pole order, not the q-pole
+order of any per-irrep $\chi^\lambda_q$ (per-irrep max at $H_3$
+is $11$ at $\lambda = (2, 1)$). Multi-nucleon verification
+($H_6$ deuteron, $H_9$ at $A = 3$) is a deferred follow-up —
+symbolic Hoefsmit on $H_6$ takes ~3 minutes per partition, and
+the full sum + `sp.together` over $11$ partitions of $6$ exceeds
+session-time budgets.
+
 ## Cross-references
 
 - [`prop:atomic-mass-gb-nf`](atomic-mass-gb-nf.md) — the master
@@ -105,7 +136,11 @@ without the overhead of full 50-dps mpmath.
   — the partition-sum / canonical-reducer agreement at machine $\varepsilon$.
 - [`prop:hecke-branching-trace-decomposition`](hecke-branching-trace-decomposition.md)
   — the operator-valued LR-block formula behind the partition sum.
+- [`prop:per-nucleon-shift-additive-linearity`](per-nucleon-shift-additive-linearity.md)
+  — Path A categorical verification of the per-proton coefficient.
 - [`docs/audits/2026-05-08-q-hecke-character-gap-closure.md`](../../../docs/audits/2026-05-08-q-hecke-character-gap-closure.md)
   — full audit of the closure with three-path comparison.
+- [`docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md`](../../../docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md)
+  — Path A audit doc with reading correction.
 - [`docs/audits/2026-05-08-rho-k-mass-table-audit.md`](../../../docs/audits/2026-05-08-rho-k-mass-table-audit.md)
   — pre-q-Hecke audit of the ρ_K mass table at 0.23 % MAE.

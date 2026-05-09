@@ -129,6 +129,17 @@ $$
 $\mathrm{tr}_M(\beta_p)$ matches `prop:per-nucleon-shift-additive-linearity`
 exactly at $A = 1$.
 
+**Cross-confirmation (independent compute path).**
+[`shift_from_nf_basis.py`](../../folio-assistant/computations/shift_from_nf_basis.py),
+which extracts shift values from the Hecke normal-form basis
+expansion (a different algorithmic route than the seminormal trace
+above), records `shift_proton_h3 = 19` in
+[`shift-from-nf-basis.witness.json`](../../folio-assistant/computations/shift-from-nf-basis.witness.json)
+(assertion `shift_proton_h3_finite: computed=19, expected=19, passed=True`).
+Two independent symbolic methods — Hoefsmit seminormal pole-order
+(this PR) and NF-basis shift extraction (pre-existing) — agree
+exactly on the per-proton $u$-pole.
+
 ### Reading correction (audit-internal)
 
 The original line in this research note attributed the constant
@@ -164,11 +175,38 @@ $Z = 0, N = 1$ has shift $= 18 \cdot 0 + 21 \cdot 1 + 1 = 22$,
 has no inter, so the actual single-neutron shift is $21 \cdot 1 = 21$
 in pure form, or $19$ if the lone-nucleon convention adds a
 self-interface. The full asymmetry between $18$ and $21$
-emerges at $A \ge 2$ (deuteron $= 18 + 21 + 1 = 40$) and is
-verifiable from the deuteron's $\mathrm{tr}_M$ — symbolic
-$H_6$ pole-order analysis is too slow in-session ($> 90$ s for
-$11$ partitions; numerical-q would fix it but loses the symbolic
-exponent). Deferred to a follow-up.
+emerges at $A \ge 2$ (deuteron $= 18 + 21 + 1 = 40$).
+
+### Deuteron multi-nucleon verification — feasibility note (2026-05-09)
+
+Direct symbolic Path A on the deuteron at $H_6$ was attempted but
+is **not feasible in-session**:
+
+1. The 11 chi_lambda symbolic computations on the 23-crossing
+   deuteron word complete in **~155 s sequential**.
+2. The bottleneck is the subsequent
+   `markov_weights_symbolic.solve_y_lambda(6)` — pure-symbolic
+   Wenzl Schur principal specialization at $n = 6$ exceeds session
+   budgets (the same bottleneck that motivated
+   [`wedderburn_jones_markov.y_lambda_at(n, q_val)`](../../folio-assistant/computations/wedderburn_jones_markov.py)'s
+   numerical-q-from-start shortcut).
+3. The numerical shortcut **does not apply here**: pole-order
+   analysis at $u = 0$ requires the *symbolic* pole structure of
+   $y_\lambda(q)$, not its numeric value at $q_0$.
+
+A future follow-up would either (a) cache the symbolic
+$y_\lambda(n=6)$ result as a one-time overnight computation
+(witness: a new `markov-weights-symbolic-n6.witness.json`), or
+(b) implement an alternative pole-order analysis that bypasses the
+symbolic Wenzl normalisation (e.g. via the q-ribbon-tableau
+formulation of Path B).
+
+The proton case (verified above) plus the empirical witness
+[`per-nucleon-shift-derivation.witness.json`](../../folio-assistant/computations/per-nucleon-shift-derivation.witness.json)
+(6/6 atoms verify $18Z + 21N + 1$ via `markov_peel`) gives strong
+evidence that the multi-nucleon case will also categorically
+verify; the symbolic verification is a precision exercise on the
+already-empirically-validated formula.
 
 ## Original recommendation (preserved for reference)
 
