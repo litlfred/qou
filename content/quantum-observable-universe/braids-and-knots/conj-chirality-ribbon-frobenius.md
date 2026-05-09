@@ -137,10 +137,52 @@ The conjecture splits along **chirality class**:
   The earlier conjectured universal value $\langle c \rangle = 1$
   was falsified for the deuteron $^2$H (see falsification table at
   `chirality-writhe-ribbon-derivation.md:122–126`); the closed
-  form above replaces it.  The remaining open piece is the
-  generalisation of this formula to higher braid groups $H_n(q)$
-  for $n > 3$, where the partition lattice has more shapes and
-  the cancellation pattern is non-trivial.
+  form above replaces it.
+
+  **Generalisation to $H_n(q_0)$, verified for D, T, $^3$He**
+  (commit pending):
+
+  $$
+    \langle c(\lambda) \rangle_\beta
+    \;=\;
+    \frac{
+      \sum_{\substack{[\lambda] \neq [\lambda^T] \\ [\lambda] < [\lambda^T]}}
+        c(\lambda) \bigl(\chi^\lambda(\beta) - \chi^{\lambda^T}(\beta)\bigr) w_\lambda
+    }{
+      \sum_\lambda \chi^\lambda(\beta) w_\lambda
+    },
+  $$
+
+  using $c(\lambda^T) = -c(\lambda)$ and $w_\lambda = w_{\lambda^T}$
+  (hook-length symmetry).  Self-conjugate $\lambda = \lambda^T$
+  contribute $0$ to the numerator since $c(\lambda) = 0$ for
+  self-conjugate partitions of $n$.  The witness
+  [`chirality-avg-content-atomic.witness.json`](../../../folio-assistant/computations/chirality-avg-content-atomic.witness.json)
+  records the audited atomic values:
+
+  | Atom | $H_n$ | writhe | $\langle c \rangle_\beta$ | $a_K$ (1st-order) |
+  |------|-------|--------|---------------------------|-------------------|
+  | $D$ ($^2$H) | $H_6$ | $+2$ | $+0.428$ | $+1.179$ |
+  | $T$ ($^3$H) | $H_9$ | $+3$ | $-8.857$ | $-4.555$ |
+  | $^3\mathrm{He}$ | $H_9$ | $+3$ | $+10.000$ | $+7.272$ |
+
+  Direct-sum and per-pair-symmetric forms agree to $10^{-40}$ for
+  all three atoms, confirming the partition-lattice cancellation
+  pattern generalises.  $^3\mathrm{He}$'s $\langle c \rangle = 10.000$
+  to f64 precision is suggestive of an exact integer structural
+  value.
+
+  **Open piece (residual).** The first-order chirality factor
+  $a_K^{(1)} = 1 + w \langle c \rangle h$ from these values does not
+  reproduce the empirical pattern $(1+h)(1-h) = 1 - h^2 \approx 0.956$
+  for D, T, $^3$He.  Two possible interpretations:
+  (i) the first-order truncation is insufficient at $H_n > 3$ and
+      the $O(h^2)$ correction dominates;
+  (ii) the model's chirality factor at the atomic level uses a form
+      other than the simple writhe-times-mean-content first-order
+      product (e.g. an exact ribbon-twist exponential rather than its
+      linearisation).
+  Discriminating between (i) and (ii) is the residual open piece.
 
 ## Proof obligations
 
