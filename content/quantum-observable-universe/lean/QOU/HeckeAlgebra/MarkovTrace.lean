@@ -69,13 +69,17 @@ axiom JonesMarkovCoefficient :
 
 /-- The Jones-Markov coefficients `y_λ(q)` are real-valued and
     sum to 1 across partitions: `Σ_{λ ⊢ n} y_λ(q) = 1` (the
-    central-element normalisation, per Wenzl 1988 Lemma 3.2). -/
+    central-element normalisation, per Wenzl 1988 Lemma 3.2).
+
+    Stated against an explicit `Finset` of partitions
+    (`partitions_as_finset n`) since `Nat.Partition n` is a
+    proposition, not a `Finset`.  Concrete enumeration of
+    partitions as a Finset is a deferred Mathlib-API task. -/
+axiom partitions_as_finset (n : ℕ) : Finset (Nat.Partition n)
+
 axiom JonesMarkovCoefficient_sum_eq_one :
     ∀ (n : ℕ) (q : ℝ),
-    -- Sum over partitions of n equals 1 (categorical-Plancherel
-    -- normalisation).  Encoded as an equation; concrete sum
-    -- requires `Nat.Partitions n` to be a `Finset`.
-    True
+    (∑ λ ∈ partitions_as_finset n, JonesMarkovCoefficient λ q) = 1
 
 /-- **Hecke-algebra multiplication** axiom.  Pending the
     concrete categorical definition (Hoefsmit matrix

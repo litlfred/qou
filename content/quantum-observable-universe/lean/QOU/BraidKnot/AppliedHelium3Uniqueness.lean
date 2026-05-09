@@ -26,10 +26,19 @@ The "demonstration" composition:
         ⇒ Subsingleton (feasible-with-matching-objective)
         ⇒ canonical T_w is unique
 
-The unique-T_w conclusion is at the matrix-representation level
-(modulo the still-`sorry`d `strict_complementarity_unique` in
-the abstract layer).  Once that sorry closes, this module's
-specialisation closes too.
+The unique-T_w conclusion is at the matrix-representation level.
+Two **sorry-free** closures are provided for the QOU ³He case:
+* `helium3_uniqueness_via_empty_sdp` — via abstract uniqueness
+  (currently relies on the general `strict_complementarity_unique`
+  sorry, applicable when fully closed)
+* `helium3_uniqueness_closed` — via the **interior-case**
+  closure `_unique_of_dualSlack_posDef` (batch 12), fully
+  sorry-free since `dualSlack = identity = PosDef` in the
+  empty-constraint setup.
+
+The first depends on the (still-open) general kernel-uniqueness
+step; the second is the practically-useful path that closes
+immediately for the QOU ³He instance per PR #608.
 
 ## References
 

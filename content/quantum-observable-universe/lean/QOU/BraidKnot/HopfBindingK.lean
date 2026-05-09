@@ -10,7 +10,7 @@ deuteron at `n_0 = 6`.
 
 - `hopfBindingWord : List Int` — the canonical word `[3, 3]`
 - `hopfBindingWord_evenPower` — proven via `decide`
-- `hopfBindingWord_strucutrallyValid` — proven via `decide`
+- `hopfBindingWord_structurallyValid` — proven via `decide`
 - `hopfBindingWord_lengthBound` — proven via `decide`
 - `hopfBindingWord_minimal` — proven from a finite-search argument
   over all length-1 words in `{σ_3, σ_3⁻¹}`

@@ -107,7 +107,7 @@ axiom markovTrace : (n : ℕ) → HeckeElement n → ℝ
     SDP-uniqueness arguments downstream.  Stated as an axiom
     pending the categorical definition. -/
 axiom markovTrace_linear (n : ℕ) :
-    LinearMap.IsLinear (fun x : HeckeElement n => markovTrace n x)
+    IsLinearMap ℝ (fun x : HeckeElement n => markovTrace n x)
 
 /-- **Absolute Markov trace** — the modulus of the Markov trace
     used in the QOU mass formula `M = ρ · m_e · |tr_M(T_w)|`.

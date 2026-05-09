@@ -83,12 +83,23 @@ axiom seminormalDim_pos : ∀ {n : ℕ} (λ : Nat.Partition n) (hn : 0 < n),
 axiom HoefsmitMatrix : ∀ {n : ℕ} (λ : Nat.Partition n) (_q : ℝ) (_i : Fin (n - 1)),
     Matrix (Fin (seminormalDim λ)) (Fin (seminormalDim λ)) ℝ
 
-/-- **Hecke relation** (axiomatised property of Hoefsmit
-    matrices): `σ_i² = (q - q^{-1}) σ_i + 1`. -/
+/-- **Hecke relation** (axiomatised, σ-form to match
+    `JonesMarkovWenzl.qInteger` and `QSubstrate.markovParameter`
+    conventions): `σ_i² = (q^{1/2} − q^{−1/2}) σ_i + 1`.
+
+    Note (per Gemini review): the original draft used the T-form
+    coefficient `q − q⁻¹`, which is inconsistent with the
+    σ-form `q^{1/2}` convention used elsewhere in the QOU Lean
+    layer.  Aligned to σ-form here for consistency.
+
+    The two conventions are related by rescaling: T-form Hecke
+    has `T_i² = (q−1)T_i + q`, while σ-form has
+    `σ_i² = (q^{1/2}−q^{−1/2})σ_i + 1`.  The σ-form is the
+    Kassel-Turaev/Jones convention used in QOU's manuscript. -/
 axiom HoefsmitMatrix_hecke_relation : ∀ {n : ℕ} (λ : Nat.Partition n) (q : ℝ)
-    (hq : q ≠ 0) (i : Fin (n - 1)),
+    (hq : 0 < q) (i : Fin (n - 1)),
     (HoefsmitMatrix λ q i) * (HoefsmitMatrix λ q i) =
-      (q - q⁻¹) • (HoefsmitMatrix λ q i) + 1
+      (q ^ ((1 : ℝ) / 2) - q ^ (-(1 : ℝ) / 2)) • (HoefsmitMatrix λ q i) + 1
 
 /-- **Braid relation** (axiomatised): `σ_i σ_{i+1} σ_i = σ_{i+1}
     σ_i σ_{i+1}` whenever both `i` and `i+1` index valid

@@ -97,9 +97,14 @@ theorem WedderburnDecomposition.PosSemidef.add
     embedding into `Matrix (Fin (heckeDim n))` requires the RSK
     bijection at the type level, deferred.)
 
-    Stub: returns the zero matrix.  Concrete embedding is open
-    Lean port. -/
-def wedderburnEmbed {n : ℕ} (_x : WedderburnDecomposition n) :
-    Matrix (Fin (heckeDim n)) (Fin (heckeDim n)) ℝ := 0
+    **Axiomatised** (per Gemini review): a stub returning `0`
+    would be logically inconsistent with `wenzlBridge` (which
+    asserts `tr_M(wedderburnEmbed x) = Σ_λ y_λ · tr(x λ)` —
+    non-zero in general for non-zero x) combined with
+    `markovTrace_zero` (the trace of zero is zero).  Using
+    `axiom` keeps the embedding opaque pending concrete
+    construction. -/
+axiom wedderburnEmbed : ∀ {n : ℕ}, WedderburnDecomposition n →
+    Matrix (Fin (heckeDim n)) (Fin (heckeDim n)) ℝ
 
 end QOU.HeckeAlgebra.Wedderburn

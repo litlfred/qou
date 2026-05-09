@@ -46,8 +46,9 @@ open QOU.MathlibExt.SDP QOU.HeckeAlgebra
     abstract `HeckeElement n` into a matrix in the dimension
     expected by `SDPPrimal`.  Concrete representation: the
     rank-1 outer product `x ⊗ x`, which is positive-semidefinite
-    iff `x` is non-zero.  The full Wedderburn-block representation
-    is the open Lean port of Hoefsmit. -/
+    for ALL `x` (including `x = 0`, where the result is the zero
+    matrix; PSD by convention).  The full Wedderburn-block
+    representation is the open Lean port of Hoefsmit. -/
 def heckeAsMatrix {n : ℕ} (x : HeckeElement n) :
     Matrix (Fin (heckeDim n)) (Fin (heckeDim n)) ℝ :=
   fun i j => x i * x j

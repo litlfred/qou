@@ -182,6 +182,7 @@ theorem Matrix.PosSemidef.entry_sq_le_diag_mul
   · -- i = j: trivially (C i i)² ≤ C i i · C i i = (C i i)² with equality.
     subst hij
     rw [sq]
+    exact le_rfl
   -- C symmetric (Hermitian + real)
   have h_sym : C j i = C i j := by
     have hH : C.IsHermitian := hC.1
