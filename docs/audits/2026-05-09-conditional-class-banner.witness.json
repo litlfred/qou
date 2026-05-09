@@ -1,0 +1,180 @@
+{
+  "audit": "§3b-cond conditional-class banner (CLAUDE.md §3b-cond #2 + #3)",
+  "generated": "2026-05-09T06:08:53.097Z",
+  "total_blocks": 1471,
+  "conditional_on_class": 12,
+  "fully_compliant": 0,
+  "missing_lean_class_hypothesis": 12,
+  "missing_md_conditional_banner": 0,
+  "findings": [
+    {
+      "label": "lem:surreal-squeeze",
+      "kind": "lemma",
+      "conj_cone": [
+        "conj:q-aubin-lions",
+        "conj:ns-counterexample",
+        "conj:critical-exponent",
+        "conj:blowup-yekutieli",
+        "conj:regularity-breakdown"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": true,
+      "lean_file": null,
+      "md_file": "content/quantum-observable-universe/algebraic-substrate/surreal-squeeze.md"
+    },
+    {
+      "label": "prop:collatz-contact-boundary",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:q-aubin-lions",
+        "conj:ns-counterexample",
+        "conj:critical-exponent",
+        "conj:blowup-yekutieli",
+        "conj:regularity-breakdown"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": true,
+      "lean_file": null,
+      "md_file": "content/quantum-observable-universe/algebraic-substrate/collatz-contact-boundary.md"
+    },
+    {
+      "label": "prop:collatz-no-cycles",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:q-aubin-lions",
+        "conj:ns-counterexample",
+        "conj:critical-exponent",
+        "conj:blowup-yekutieli",
+        "conj:regularity-breakdown"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": true,
+      "lean_file": null,
+      "md_file": "content/quantum-observable-universe/algebraic-substrate/collatz-no-cycles.md"
+    },
+    {
+      "label": "prop:core-levi-form",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:q-aubin-lions",
+        "conj:ns-counterexample",
+        "conj:critical-exponent",
+        "conj:blowup-yekutieli",
+        "conj:regularity-breakdown"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": true,
+      "lean_file": null,
+      "md_file": "content/quantum-observable-universe/fluid-dynamics/core-levi-form.md"
+    },
+    {
+      "label": "prop:geom-universality",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": true,
+      "lean_file": null,
+      "md_file": "content/quantum-observable-universe/braids-and-knots/geom-universality.md"
+    },
+    {
+      "label": "prop:geom-yekutieli-alignment",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": true,
+      "lean_file": "content/quantum-observable-universe/braids-and-knots/geom-yekutieli-alignment.lean",
+      "md_file": "content/quantum-observable-universe/braids-and-knots/geom-yekutieli-alignment.md"
+    },
+    {
+      "label": "prop:hoefsmit-scattering-pipeline",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": true,
+      "lean_file": "content/quantum-observable-universe/braids-and-knots/hoefsmit-scattering-pipeline.lean",
+      "md_file": "content/quantum-observable-universe/braids-and-knots/hoefsmit-scattering-pipeline.md"
+    },
+    {
+      "label": "prop:ns-obstruction-tower",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:q-aubin-lions",
+        "conj:ns-counterexample",
+        "conj:critical-exponent",
+        "conj:blowup-yekutieli",
+        "conj:regularity-breakdown"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": true,
+      "lean_file": null,
+      "md_file": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.md"
+    },
+    {
+      "label": "prop:root-of-unity-truncation",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:q-aubin-lions",
+        "conj:ns-counterexample",
+        "conj:critical-exponent",
+        "conj:blowup-yekutieli",
+        "conj:regularity-breakdown"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": true,
+      "lean_file": null,
+      "md_file": "content/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.md"
+    },
+    {
+      "label": "prop:surreal-rate-calculus",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:q-aubin-lions",
+        "conj:ns-counterexample",
+        "conj:critical-exponent",
+        "conj:blowup-yekutieli",
+        "conj:regularity-breakdown"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": true,
+      "lean_file": "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/SurrealRateCalculus.lean",
+      "md_file": "content/quantum-observable-universe/algebraic-substrate/surreal-rate-calculus.md"
+    },
+    {
+      "label": "prop:universality",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:critical-exponent",
+        "conj:blowup-yekutieli",
+        "conj:regularity-breakdown"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": true,
+      "lean_file": null,
+      "md_file": "content/quantum-observable-universe/fluid-dynamics/p4-universality.md"
+    },
+    {
+      "label": "prop:vorticity-lower-bound",
+      "kind": "proposition",
+      "conj_cone": [
+        "conj:q-aubin-lions",
+        "conj:ns-counterexample",
+        "conj:critical-exponent",
+        "conj:blowup-yekutieli",
+        "conj:regularity-breakdown"
+      ],
+      "has_lean_class_hypothesis": false,
+      "has_md_conditional_banner": true,
+      "lean_file": null,
+      "md_file": "content/quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.md"
+    }
+  ]
+}

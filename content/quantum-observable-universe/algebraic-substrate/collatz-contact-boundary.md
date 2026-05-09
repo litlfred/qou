@@ -1,4 +1,11 @@
-**Proposition ($[2]_q$-contact boundary).**
+**Proposition (conditional on
+[`conj:q-aubin-lions`](#conj:q-aubin-lions),
+[`conj:ns-counterexample`](#conj:ns-counterexample),
+[`conj:critical-exponent`](#conj:critical-exponent),
+[`conj:blowup-yekutieli`](#conj:blowup-yekutieli),
+and
+[`conj:regularity-breakdown`](#conj:regularity-breakdown);
+"$[2]_q$-contact boundary").**
 Let $\mathcal{R}_p = (S^3 \xrightarrow{\pi_H} S^2, \xi_q)$
 be the Reeb bundle
 ([Reeb bundle](#def:reeb-bundle)) with $U(1)$ fiber

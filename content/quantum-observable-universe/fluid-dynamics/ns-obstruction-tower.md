@@ -1,3 +1,12 @@
+**Proposition (conditional on
+[`conj:q-aubin-lions`](#conj:q-aubin-lions),
+[`conj:ns-counterexample`](#conj:ns-counterexample),
+[`conj:critical-exponent`](#conj:critical-exponent),
+[`conj:blowup-yekutieli`](#conj:blowup-yekutieli),
+and
+[`conj:regularity-breakdown`](#conj:regularity-breakdown);
+"NS obstruction tower").**
+
 Let $(\mathbf{C}, A, \tau)$ be a QOU with Euler characteristic
 $\chi(A)$ and [Yekutieli obstruction
 classes](#def:quantum-characteristic-classes)

@@ -1,3 +1,12 @@
+**Proposition (conditional on
+[`conj:q-aubin-lions`](#conj:q-aubin-lions),
+[`conj:ns-counterexample`](#conj:ns-counterexample),
+[`conj:critical-exponent`](#conj:critical-exponent),
+[`conj:blowup-yekutieli`](#conj:blowup-yekutieli),
+and
+[`conj:regularity-breakdown`](#conj:regularity-breakdown);
+"Core Levi form").**
+
 Let $\varrho$ be a [geodesic vortex](#rem:geodesic-vortices) in
 the [state bundle](#ex:c-quantum-observable-universe) $(\mathcal{S}, \varTheta)$
 with contact form $\varTheta$ and

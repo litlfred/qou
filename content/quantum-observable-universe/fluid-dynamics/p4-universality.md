@@ -1,3 +1,12 @@
+**Proposition (conditional on
+[`conj:q-aubin-lions`](#conj:q-aubin-lions),
+[`conj:ns-counterexample`](#conj:ns-counterexample),
+[`conj:critical-exponent`](#conj:critical-exponent),
+[`conj:blowup-yekutieli`](#conj:blowup-yekutieli),
+and
+[`conj:regularity-breakdown`](#conj:regularity-breakdown);
+"Universality of the critical exponent").**
+
 The [critical exponent](#conj:critical-exponent) $\alpha = 4/3$
 governs the rate at which enstrophy diverges as $q \to 1$.
 The question is whether $\alpha$ depends on the initial data
