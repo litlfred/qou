@@ -197,18 +197,57 @@ in Option G's $\Delta_\lambda^G = (\text{target}/S) \cdot \chi^\lambda / d_\lamb
 factors through the per-generator volumes $\hat V_i^\lambda$ from
 `wedderburn_pair_volumes.atom_per_generator_full_matrices`.
 
-**Universal formula (1-dim channels, any A).** The trace of a 1-dim
-representation is multiplicative, so
+**Universal formula (1-dim channels, any A).**
 
 $$
 \boxed{\;\chi^{1\text{-dim}}(\beta_K) \;=\; \prod_i \hat V_i^{1\text{-dim}}\;}
 \qquad \text{for } \dim V_\lambda = 1, \text{ any } A.
 $$
 
-(An earlier draft of this section had a $\sum_{i<j}(\hat V_i \hat V_j)_\lambda$
-form that coincides with the product only at $A=1$, where there are
-just two generators and so a single pair-product equals the
-two-factor product.  The product formula above is the universal one.)
+### Proof
+
+Let $\varphi: H_n(q) \to R$ be a one-dimensional irrep (an algebra
+homomorphism with one-dimensional image; the trace $\chi^\varphi$
+on $V_\varphi \cong R$ coincides with $\varphi$ itself).
+
+The atomic braid is a finite product of crossing operators:
+$$
+\beta_K \;=\; \prod_{k=1}^{m} \big(c_k\,\sigma_{i_k} + d_k\,\mathbf 1\big) \in H_n(q),
+$$
+where $i_k \in \{0, \ldots, n-2\}$ is the generator index of the
+$k$-th crossing and $(c_k, d_k) \in \{(1,0),\,(1,-h),\,(1,-h/2)\}$
+encodes the crossing type $\sigma$, $\sigma^{-1}$, or averaged.
+
+Apply $\varphi$:
+$$
+\varphi(\beta_K) \;=\; \prod_{k=1}^{m}\big(c_k\,\lambda_\varphi(i_k) + d_k\big),
+\qquad \lambda_\varphi(i) := \varphi(\sigma_i).
+$$
+The image is a product in the commutative target ring $R$, so the
+factors commute and we may regroup by generator index:
+$$
+\varphi(\beta_K) \;=\; \prod_{i=0}^{n-2}\;\prod_{\substack{k=1 \\ i_k = i}}^{m}\big(c_k\,\lambda_\varphi(i) + d_k\big)
+\;=\;\prod_{i=0}^{n-2} \hat V_i^\varphi,
+$$
+where $\hat V_i^\varphi := \prod_{k:\,i_k=i}(c_k\,\lambda_\varphi(i) + d_k)$
+is the per-generator volume in the $\varphi$-channel as computed by
+[`wedderburn_pair_volumes.atom_per_generator_full_matrices`](../../folio-assistant/computations/wedderburn_pair_volumes.py).
+
+Since $\chi^\varphi = \varphi$ on a 1-dim irrep, we conclude
+$\chi^\varphi(\beta_K) = \prod_i \hat V_i^\varphi$.  $\square$
+
+The proof is **independent of $A$, of $n$, and of the inter-nucleon
+braid structure** — it uses only the homomorphism property of
+$\varphi$ and the commutativity of the target ring.  The $H_3$
+1-dim irreps are `sym` ($\varphi(\sigma_i) = q$) and `alt`
+($\varphi(\sigma_i) = -q^{-1}$); at $H_n$ for any $n$ the same two
+1-dim irreps exist (corresponding to partitions $(n)$ and $(1^n)$).
+
+(An earlier draft of this section used a $\sum_{i<j}(\hat V_i \hat V_j)_\lambda$
+form that coincides with the product only at $A=1$ — only 2
+generators, so a single pair-product equals the two-factor
+product.  The proof above shows the **product** is the universal
+form.)
 
 **Result (proton, neutron at $H_3$ + deuteron at $H_6$).**
 
