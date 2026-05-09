@@ -26,6 +26,7 @@ import QOU.BraidKnot.Helium3Witness
 import QOU.BraidKnot.DeuteronWitness
 import QOU.BraidKnot.TritiumWitness
 import QOU.BraidKnot.MassFormulaCategorical
+import QOU.BraidKnot.AppliedHelium3Uniqueness
 
 /-!
 # BraidKnot — Module Index

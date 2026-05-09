@@ -75,6 +75,42 @@ theorem Matrix.PosSemidef.trace_mul_eq_zero_iff_mul_eq_zero
   -- but the diagonal-zero step needs hand-crafting.
   sorry
 
+/-- **Diagonal sub-case of cone self-polarity.**
+
+    For diagonal PSD matrices `A = diag(a)`, `B = diag(b)` with
+    `a, b : Fin n → ℝ` non-negative, `tr(A · B) = 0 ↔ A · B = 0`.
+
+    PROOF: `A · B = diag(a_i * b_i)`, so `tr(A · B) = Σ a_i b_i`.
+    Each summand is non-negative; sum zero ⟹ each summand zero
+    ⟹ each `a_i b_i = 0` ⟹ diagonal entries of `A · B` are zero
+    ⟹ `A · B = 0` (off-diagonal of a diagonal matrix is zero).
+
+    This is the foundation for the general spectral argument:
+    diagonalise `A = U D Uᵀ`, then the general case reduces to
+    this diagonal case via cyclicity of trace. -/
+theorem Matrix.PosSemidef.trace_mul_eq_zero_iff_mul_eq_zero_diagonal
+    {a b : Fin n → ℝ}
+    (ha : ∀ i, 0 ≤ a i) (hb : ∀ i, 0 ≤ b i) :
+    (Matrix.diagonal a * Matrix.diagonal b).trace = 0 ↔
+    Matrix.diagonal a * Matrix.diagonal b = 0 := by
+  rw [Matrix.diagonal_mul_diagonal]
+  refine ⟨?_, ?_⟩
+  · intro h
+    rw [Matrix.trace_diagonal] at h
+    have h_nonneg : ∀ i, 0 ≤ a i * b i :=
+      fun i => mul_nonneg (ha i) (hb i)
+    have h_each : ∀ i ∈ Finset.univ, a i * b i = 0 :=
+      (Finset.sum_eq_zero_iff_of_nonneg
+        (fun i _ => h_nonneg i)).mp h
+    ext i j
+    by_cases hij : i = j
+    · subst hij
+      simp [Matrix.diagonal_apply_eq, h_each i (Finset.mem_univ _)]
+    · simp [Matrix.diagonal_apply_ne _ hij]
+  · intro h
+    rw [h]
+    exact Matrix.trace_zero (Fin n) ℝ
+
 /-- **SDP complementary slackness** (matrix form).  If the dual
     slack `S := T - Σ_i y_i A_i` is PSD, the primal `Φ` is PSD,
     and the duality-gap measure `tr(S · Φ) = 0`, then `S · Φ = 0`.

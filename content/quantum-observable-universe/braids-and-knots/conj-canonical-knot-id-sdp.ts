@@ -22,4 +22,7 @@ export default conjecture({
     "gap-a",
     "audit",
   ],
+  lean: {
+    ref: "qou:QOU.BraidKnot.canonical_T_w_subsingleton",
+  },
 });
