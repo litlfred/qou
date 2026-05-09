@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T19:51:43.480274+00:00",
-  "commitSha": "8ef67c30532048ee1cc8552fbb0bab8b008d95bb",
+  "computedAt": "2026-05-09T19:52:22.162181+00:00",
+  "commitSha": "3a1a77065652888bd87dd81a5e15d01375d2b556",
   "assertions": [],
   "allPassed": true,
   "durationMs": 9,
@@ -26,7 +26,7 @@
       "P15": 84,
       "P16": 70,
       "P21": 17,
-      "P30": 94
+      "P30": 93
     },
     "top_files": [
       {
@@ -1060,37 +1060,30 @@
       {
         "pattern": "P15",
         "file": "kite_tail_reconciliation.py",
-        "line": 70,
+        "line": 64,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",
         "file": "kite_tail_reconciliation.py",
-        "line": 81,
+        "line": 79,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",
         "file": "kite_tail_reconciliation.py",
-        "line": 101,
+        "line": 91,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",
         "file": "kite_tail_reconciliation.py",
-        "line": 162,
+        "line": 165,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P30",
-        "file": "kite_tail_reconciliation.py",
-        "line": 1,
-        "snippet": "json.dump → .witness.json without WitnessBuilder",
-        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
       },
       {
         "pattern": "P30",

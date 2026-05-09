@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T19:51:43.625531+00:00",
-  "commitSha": "8ef67c30532048ee1cc8552fbb0bab8b008d95bb",
+  "computedAt": "2026-05-09T19:52:22.303471+00:00",
+  "commitSha": "3a1a77065652888bd87dd81a5e15d01375d2b556",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2146,6 +2146,7 @@
         "joint-tower-sdp-rust.witness.json",
         "kashaev-integration-identity.witness.json",
         "kazhdan-lusztig-canonical-basis.witness.json",
+        "kite-tail-reconciliation.witness.json",
         "kite_tail_reconciliation.witness.json",
         "knot-operator-table.witness.json",
         "knot-volumes.witness.json",

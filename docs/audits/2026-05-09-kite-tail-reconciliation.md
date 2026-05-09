@@ -1,7 +1,7 @@
 # Kite-tail reconciliation — PR #546 round-3 vs PR #545 D(u)
 
 **Branch.** `claude/kite-tail-reconciliation`
-**Witness.** [`kite_tail_reconciliation.witness.json`](../../folio-assistant/computations/kite_tail_reconciliation.witness.json)
+**Witness.** [`kite-tail-reconciliation.witness.json`](../../folio-assistant/computations/kite-tail-reconciliation.witness.json)
 **Script.** [`kite_tail_reconciliation.py`](../../folio-assistant/computations/kite_tail_reconciliation.py)
 **Continues.** [PR #546 round-3 audit](../../docs/audits/2026-05-05-r-and-kite-tails-exploration.md) (kite-tail status was `FALSIFIED-naive-form`).
 

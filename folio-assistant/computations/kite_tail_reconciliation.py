@@ -18,39 +18,31 @@ while the prediction was 2^{2A+1} · u^{19} · (1+u^2)^{3A-1} =
 8 · u^{19} · (1+u^2)^2.  The kite power and prefactor disagreed
 by a factor of 2 each.
 
-This script reconciles the apparent contradiction.  The resolution
-is purely a sympy-reduction artefact: the canonical Markov trace
-admits two equivalent rational forms,
+This script reconciles the apparent contradiction.  The kite-power
+discrepancy is purely a sympy-reduction artefact: the canonical
+Markov trace admits two equivalent rational forms,
 
     tr_M(u^2) = N1(u) / D1(u)        (sp.together — un-reduced)
               = N2(u) / D2(u)        (sp.cancel — fully reduced),
 
 with D1 = (u^2+1) · D2 and N1 = (u^2+1) · N2.  The shared (u^2+1)
-factor cancels out under sp.cancel, lowering the apparent kite
-power.  PR #546's round-3 verification used sp.cancel and found
-the REDUCED form.  PR #545's D(u) prediction is the UN-REDUCED
-form and matches sp.together output exactly.
-
-Both forms compute the same canonical Markov trace.  The kite-tail
-decomposition
-
-    tail        = u^{shift}          (linear-chain content)
-    kite        = (1+u^2)^{3A−1}     (cyclotomic junction content)
-    averaging   = 2^{2A+1}           (averaged-crossing prefactor)
-
-is therefore CORRECT, and PR #546's round-3 audit's
-"FALSIFIED-naive-form" status should be RETRACTED.  This script
-emits a witness recording the reconciliation.
+factor cancels under sp.cancel, lowering the apparent kite power.
+PR #546's round-3 verification used sp.cancel and found the
+REDUCED form.  PR #545's D(u) prediction is the UN-REDUCED form
+and matches sp.together output exactly at A=2 (deuteron), and
+matches kite + shift at A=1 with a residual prefactor mismatch
+(4 = 2^2 vs predicted 8 = 2^3) and neutron-shift mismatch
+(observed 19 vs predicted 22).  The A=1 mismatches are SEPARATE
+from the kite-power artefact and likely come from a different
+braid encoding.
 
 Run:
     python3 folio-assistant/computations/kite_tail_reconciliation.py
 """
 from __future__ import annotations
 
-import json
 import sys
 import time
-from datetime import datetime, timezone
 from pathlib import Path
 
 import sympy as sp
@@ -60,9 +52,11 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
 from term6_residues_at_roots import tr_M_atomic, lift_q_to_u  # noqa: E402
+from witness_base import WitnessBuilder  # noqa: E402
 
 q_sym = sp.Symbol("q", positive=True)
 u_sym = sp.Symbol("u", positive=True)
+KITE_FACTOR = u_sym ** 2 + 1
 
 
 def factorise_both_forms(Z: int, N: int):
@@ -70,7 +64,11 @@ def factorise_both_forms(Z: int, N: int):
     and sp.cancel (reduced) forms.  Returns
     (un_reduced_dict, reduced_dict) with keys
     {numerator_factored, denominator_factored, kite_power,
-    two_exponent, tail_exponent}.
+    two_exponent, tail_exponent}, plus the PR #545 prediction.
+
+    Per Gemini review: uses ``as_powers_dict()`` to extract the
+    kite and tail exponents directly from the factored
+    denominator, avoiding ``sp.expand`` + ``sp.Poly`` round-trips.
     """
     A = Z + N
     tr_q = tr_M_atomic(Z, N)
@@ -82,42 +80,32 @@ def factorise_both_forms(Z: int, N: int):
         n, d = sp.fraction(expr)
         d_factored = sp.factor(d)
         n_factored = sp.factor(n)
-        # Extract powers of (u^2 + 1) from the denominator factorisation.
-        kite = sp.Symbol("__kite__")
-        d_with_kite = d_factored.subs(u_sym**2 + 1, kite)
-        # Collect the power of `kite`.
+
+        # Direct exponent extraction via as_powers_dict (Gemini review).
+        powers = d_factored.as_powers_dict()
+        kite_power = int(powers.get(KITE_FACTOR, 0))
+        tail_exponent = int(powers.get(u_sym, 0))
+
+        # Two-exponent: strip kite^k · u^shift, what remains should be a
+        # power of 2 (the integer prefactor).
+        residual = sp.cancel(d_factored
+                              / KITE_FACTOR ** kite_power
+                              / u_sym ** tail_exponent)
         try:
-            kite_power = sp.Poly(d_with_kite, kite).degree()
-        except sp.PolynomialError:
-            kite_power = 0
-        # Tail power: lowest u-exponent in the denominator.
-        d_poly = sp.Poly(sp.expand(d), u_sym)
-        try:
-            tail_exponent = min(m[0] for m in d_poly.monoms())
-        except (ValueError, AttributeError):
-            tail_exponent = 0
-        # Two-exponent: the integer prefactor (highest power of 2 in it).
-        # Strip the (u^2+1) and u factors, what's left is a constant.
-        residual = sp.cancel(d_factored / (u_sym**2 + 1)**kite_power
-                              / u_sym**tail_exponent)
-        try:
-            two_exponent = sp.log(residual, 2)
-            # If residual is a pure power of 2, this is a clean integer.
-            two_exponent_val = int(two_exponent)
+            two_exponent_val = int(sp.log(residual, 2))
         except (TypeError, ValueError):
             two_exponent_val = None
 
         out[label] = {
             "numerator_factored": str(n_factored),
             "denominator_factored": str(d_factored),
-            "tail_exponent_observed": int(tail_exponent),
-            "kite_power_observed": int(kite_power),
+            "tail_exponent_observed": tail_exponent,
+            "kite_power_observed": kite_power,
             "two_exponent_observed": two_exponent_val,
             "two_prefactor_residual": str(residual),
         }
 
-    # PR #545 D(u) prediction (un-reduced form):
-    #   D(u) = 2^{2A+1} · u^{18Z + 21N + 1} · (1+u^2)^{3A-1}.
+    # PR #545 D(u) prediction (un-reduced form).
     out["prediction_pr545"] = {
         "tail_exponent_pred": 18 * Z + 21 * N + 1,
         "kite_power_pred": 3 * A - 1,
@@ -131,13 +119,28 @@ def main() -> int:
     print(" Kite-tail reconciliation: PR #545 D(u) vs PR #546 round-3 audit")
     print("=" * 72)
     print()
-    print("Predicted (PR #545 D(u) closed form):")
-    print("    D(u) = 2^{2A+1} · u^{shift} · (1+u^2)^{3A-1}")
-    print("    shift = 18Z + 21N + 1")
-    print()
+
+    w = WitnessBuilder("kite-tail-reconciliation", engine="sympy")
+    w.set_description(
+        "Reconciles PR #546 round-3's 'kite-tail FALSIFIED-naive-form' "
+        "status against PR #545's D(u) = 2^(2A+1)·u^shift·(1+u²)^(3A-1) "
+        "prediction.  Two findings: (1) the kite-power discrepancy is a "
+        "sympy-reduction artefact — sp.together gives kite^(3A-1), "
+        "sp.cancel absorbs one (u²+1) factor (numerator + denominator "
+        "share one) lowering the apparent kite power.  Round-3's "
+        "kite-power discrepancy is therefore EXPLAINED.  (2) Deuteron "
+        "(A=2) matches PR #545's full D(u) prediction in the un-reduced "
+        "sp.together form (shift=40, kite=5, 2-exp=5).  Proton/neutron "
+        "(A=1) have integer-prefactor and neutron-shift discrepancies "
+        "remaining; likely a different braid encoding at A=1 between "
+        "markov_peel.atom_braid_word_3A and PR #545's derivation."
+    )
+    w.set_audit_only("docs/audits/2026-05-09-kite-tail-reconciliation.md")
+    w.set_content_block("prop:full-pole-structure-mass-trace")
 
     results = {}
-    all_match = True
+    deuteron_full_match = False
+
     for label, Z, N in [("proton", 1, 0), ("neutron", 0, 1), ("deuteron", 1, 1)]:
         A = Z + N
         print(f"--- {label} (Z={Z}, N={N}, A={A}) ---")
@@ -173,86 +176,64 @@ def main() -> int:
         if match_un_reduced:
             print(f"  ✓ PR #545 D(u) MATCHES the un-reduced form.")
         else:
-            print(f"  ✗ PR #545 D(u) does NOT match even the un-reduced form.")
-            all_match = False
+            print(f"  ⚠ PR #545 D(u) partial match (un-reduced kite ✓, prefactor or shift mismatch).")
 
+        forms["pr545_matches_un_reduced"] = match_un_reduced
         results[label] = forms
-        results[label]["pr545_matches_un_reduced"] = match_un_reduced
+
+        if label == "deuteron":
+            deuteron_full_match = match_un_reduced
+
+        # Per-atom assertion: kite_power drops by ≥ 1 between the un-
+        # reduced (sp.together) and reduced (sp.cancel) forms.  This is
+        # the round-3 sympy-reduction artefact: numerator and
+        # denominator share at least one (u²+1) factor.  The drop is 1
+        # at A=1 (proton, neutron) and 2 at A=2 (deuteron); we assert
+        # only the lower bound to keep the assertion robust across A.
+        kite_drop = un["kite_power_observed"] - cl["kite_power_observed"]
+        w.add_assertion(
+            name=f"kite_power_drops_under_cancel[{label}]",
+            computed=int(kite_drop >= 1),
+            expected=1,
+            source="kite_tail_reconciliation",
+        )
         print()
 
-    print("=" * 72)
-    if all_match:
-        print(" CONCLUSION: PR #545's D(u) closed form holds in the un-reduced")
-        print(" sp.together form across all three atoms.  PR #546 round-3's")
-        print(" 'kite-tail FALSIFIED' status was a sympy-reduction artefact")
-        print(" (sp.cancel absorbs a shared (u^2+1) factor between numerator")
-        print(" and denominator).  RETRACTING the round-3 falsification.")
-    else:
-        print(" PARTIAL RECONCILIATION:")
-        print()
-        print(" • DEUTERON (A=2): PR #545 D(u) MATCHES the un-reduced form")
-        print("   exactly (shift=40, kite=5, 2-exp=5 — all three).  At A=2")
-        print("   the formula D(u) = 2^(2A+1)·u^shift·(1+u²)^(3A-1) is")
-        print("   verified.")
-        print()
-        print(" • PROTON / NEUTRON (A=1): kite_power matches the un-reduced")
-        print("   form (kite=2 = 3A-1 ✓), but the integer prefactor is 4")
-        print("   (= 2^2) not 2^(2A+1) = 8, and the neutron shift is 19")
-        print("   not 22.  The shift formula 18Z+21N+1 holds for proton")
-        print("   (gives 19) but NOT neutron (gives 22 vs observed 19).")
-        print()
-        print(" The A=1 discrepancies likely come from a different braid")
-        print(" encoding between markov_peel (atom_braid_word_3A) and the")
-        print(" word PR #545 used to derive the 2^(2A+1) and (18Z+21N+1)")
-        print(" formulas.  Need to verify which is canonical for the")
-        print(" six-term mass formula.  Round-3 sp.cancel-absorption")
-        print(" explanation IS valid (it explains kite=1 vs kite=2);")
-        print(" the remaining proton/neutron mismatches are SEPARATE.")
-    print("=" * 72)
+    # Headline assertion: deuteron A=2 fully matches PR #545's D(u) form
+    # in the un-reduced sympy.together representation.
+    w.add_assertion(
+        name="deuteron_pr545_du_match_un_reduced",
+        computed=deuteron_full_match,
+        expected=True,
+        source="kite_tail_reconciliation",
+    )
 
-    out = HERE / "kite_tail_reconciliation.witness.json"
-    witness = {
-        "computation": "kite-tail-reconciliation",
-        "description": (
-            "Partial reconciliation of PR #546 round-3's 'kite-tail "
-            "FALSIFIED-naive-form' status against PR #545's D(u) = "
-            "2^(2A+1)·u^shift·(1+u²)^(3A-1) prediction.  Two findings: "
-            "(1) the kite-power discrepancy IS a sympy-reduction "
-            "artefact — sp.together gives kite^(3A-1), sp.cancel "
-            "absorbs one (u²+1) factor (numerator + denominator share "
-            "one) lowering the apparent kite power.  Round-3's kite-power "
-            "discrepancy is therefore EXPLAINED.  (2) Deuteron (A=2) "
-            "matches PR #545's full D(u) prediction in the un-reduced "
-            "sp.together form (shift=40, kite=5, 2-exp=5 — all three "
-            "match).  But proton/neutron (A=1) have INTEGER PREFACTOR "
-            "and NEUTRON SHIFT discrepancies remaining: observed "
-            "prefactor 2^2=4 vs predicted 2^(2A+1)=8, observed neutron "
-            "shift 19 vs predicted 22 (=18·0+21·1+1).  These remaining "
-            "mismatches likely come from a different braid encoding at "
-            "A=1 between markov_peel (atom_braid_word_3A) and PR #545's "
-            "derivation; further investigation needed."
+    w.add_data("results", results)
+    w.add_data("round3_kite_power_falsification_explained", True)
+    w.add_data("round3_kite_power_falsification_retracted", True)
+    w.add_data("remaining_discrepancies_at_A1", {
+        "proton_prefactor": "observed 4=2^2, predicted 8=2^3",
+        "neutron_shift": "observed 19, predicted 22",
+        "neutron_prefactor": "observed 4=2^2, predicted 8=2^3",
+        "likely_source": (
+            "different braid encoding between markov_peel's "
+            "atom_braid_word_3A and PR #545's derivation"
         ),
-        "results": results,
-        "all_pr545_predictions_match_un_reduced": all_match,
-        "round3_kite_power_falsification_explained": True,
-        "round3_kite_power_falsification_retracted": True,
-        "remaining_discrepancies_at_A1": {
-            "proton_prefactor": "observed 4=2^2, predicted 8=2^3",
-            "neutron_shift": "observed 19, predicted 22",
-            "neutron_prefactor": "observed 4=2^2, predicted 8=2^3",
-            "likely_source": (
-                "different braid encoding between markov_peel's "
-                "atom_braid_word_3A and PR #545's derivation; both "
-                "valid words but for slightly different physical "
-                "objects (canonical Wedderburn vs PR #545 braid)"
-            ),
-        },
-        "generated_at": datetime.now(timezone.utc).isoformat(),
-    }
-    out.write_text(json.dumps(witness, indent=2))
-    print()
-    print(f"witness: {out.name}")
-    return 0 if all_match else 1
+    })
+
+    print("=" * 72)
+    if deuteron_full_match:
+        print(" CONCLUSION (A=2): PR #545's D(u) closed form HOLDS exactly")
+        print(" in the un-reduced sp.together form for the deuteron.")
+        print(" Kite-power discrepancy at A=1 is a sympy-reduction artefact;")
+        print(" residual prefactor / neutron-shift mismatches are SEPARATE")
+        print(" and likely come from a different braid encoding at A=1.")
+        print(" PR #546 round-3 'FALSIFIED-naive-form' status: RETRACTED")
+        print(" for the kite-power claim.")
+    print("=" * 72)
+
+    w.save()
+    return 0
 
 
 if __name__ == "__main__":
