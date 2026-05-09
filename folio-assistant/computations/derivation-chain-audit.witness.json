@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T12:41:07.642528+00:00",
-  "commitSha": "6713879bea395995b98dcea994a0683ae05948db",
+  "computedAt": "2026-05-09T13:07:18.832055+00:00",
+  "commitSha": "bedff55fe434ba5bd62e2cd9e8fa27026bdc3235",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -438,7 +438,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
@@ -1531,6 +1531,7 @@
         "proton-mass-codata-50dps.witness.json",
         "q-pinning-50-digit.witness.json",
         "q-pochhammer-seed.witness.json",
+        "r5-full-canonical-knot-solver.witness.json",
         "rho-f-categorical-probe.witness.json",
         "rho-f-volume-binding-gap.witness.json",
         "rho-k-h3a-refinement.witness.json",
