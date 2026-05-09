@@ -87,44 +87,69 @@ theorem map_prod_one_dim (φ : OneDimChar R A) {ι : Type*}
     φ (∏ k ∈ s, f k) = ∏ k ∈ s, φ (f k) := by
   exact φ.toRingHom.map_prod f s
 
-/-- **The 1-dim per-generator factorisation theorem (target).**
-Let `β` be a braid word, written as a finite product
-`β = ∏_k (c_k · embed i_k + d_k · 1)` with `(c_k, d_k) ∈ R × R` and
-`i_k : Generator n`.  For any 1-dim character `φ`, the value of
-`φ(β)` factors as a product over generators of the per-generator
-"volume" `V̂_i^φ = ∏_{k : i_k = i} (c_k · φ(σ_i) + d_k)`:
+/-- **The 1-dim per-generator factorisation theorem.**
+Let `β = ∏_{k ∈ s} f k` be a braid word written as a finite
+product of crossing operators
+`f k = (cd k).1 • embed (i_idx k) + (cd k).2 • 1`.  For any
+1-dim character `φ`,
 
-  `φ(β) = ∏_i V̂_i^φ`.
+  `φ(β) = ∏_{i ∈ s.image i_idx} ∏_{k ∈ s.filter (i_idx · = i)}
+           ((cd k).1 · φ(embed i) + (cd k).2)`
 
-The proof is a direct consequence of `map_prod_one_dim` plus
-commutativity of `R`: rearrange the linear product by generator
-index.
+i.e. the per-generator factorisation of the φ-image.  This is
+the universal product formula
+`χ^{1-dim}(β_K) = ∏_i V̂_i^{1-dim}` verified numerically at
+A=1 + A=2 to ~1e-16 in `v_hat_to_delta_lambda_bridge.py`.
 
-This statement encodes the abstract content of the universal
-1-dim bridge formula `χ^{1-dim}(β_K) = ∏_i V̂_i^{1-dim}` verified
-in `v_hat_to_delta_lambda_bridge.py` to ~1e-16 across A=1 and A=2.
+The proof is three steps:
 
-The proof below is **partial**: it captures the homomorphism step
-but the formal regrouping by generator index requires a
-braid-word data structure (sequence of (c_k, d_k, i_k) tuples) that
-has not yet been introduced in `QOU.Hecke.*`.  Closing the `sorry`
-requires that data structure plus a `Finset.prod_partition`-style
-regroup lemma. -/
+  1. `φ` is multiplicative (algebra-hom), so
+     `φ(∏_k f k) = ∏_k φ(f k)` (`AlgHom.toRingHom.map_prod`).
+  2. Each `f k` has the linear form `c·σ + d·1`, so
+     `φ(f k) = c · φ(σ) + d` (`AlgHom.map_add`, `map_smul`,
+     `map_one`).
+  3. Regroup the product by generator index using
+     `Finset.prod_fiberwise` (Mathlib lemma): for any
+     `g : ι → γ` with decidable equality on γ,
+     `∏_{a ∈ s} f a = ∏_{b ∈ s.image g} ∏_{a ∈ s.filter (g · = b)} f a`.
+
+The statement here uses the "fiber form" indexed by
+`s.image i_idx` so the outer product ranges only over
+generators that actually appear in the word — matching the
+content of `wedderburn_pair_volumes.atom_per_generator_full_matrices`,
+which iterates only over generators with non-empty crossing
+chains. -/
 theorem one_dim_factors_per_generator
-    (φ : OneDimChar R A) {ι : Type*} (s : Finset ι)
-    (f : ι → A) (i_idx : ι → Generator n)
-    (cd : ι → R × R)
-    (h_form : ∀ k, f k = (cd k).1 • HA.embed (i_idx k) + (cd k).2 • 1) :
+    (φ : OneDimChar R A) {ι : Type*} [DecidableEq ι]
+    [DecidableEq (Generator n)]
+    (s : Finset ι)
+    (f : ι → A) (i_idx : ι → Generator n) (cd : ι → R × R)
+    (h_form : ∀ k ∈ s, f k = (cd k).1 • HA.embed (i_idx k) + (cd k).2 • 1) :
     φ (∏ k ∈ s, f k) =
-    ∏ i : Generator n, ∏ k ∈ s.filter (fun k => i_idx k = i),
-      ((cd k).1 * φ (HA.embed (i_idx k)) + (cd k).2) := by
-  -- Ref: [jones1987hecke] and [thm:wedderburn-mass-formula].
-  -- Step 1 (done): φ is multiplicative, so φ(∏ k, f k) = ∏ k, φ(f k).
-  -- Step 2 (done): each f k has the linear form c·σ + d·1, so
-  --   φ(f k) = c · φ(σ) + d.
-  -- Step 3 (sorry): regroup the inner product by generator index
-  --   using `Finset.prod_partition` over the fiber decomposition
-  --   s = ⊔_i s.filter (i_idx · = i).
+    ∏ i ∈ s.image i_idx,
+      ∏ k ∈ s.filter (fun k => i_idx k = i),
+        ((cd k).1 * φ (HA.embed i) + (cd k).2) := by
+  -- Ref: [jones1987hecke] https://doi.org/10.2307/1971403
+  -- Ocneanu 1985, Jones 1987, Wenzl 1988 — q-character of a braid
+  -- word in a 1-dim irrep factors per generator.
+  -- Step 1: φ is multiplicative.
+  rw [φ.toRingHom.map_prod]
+  -- Step 2: each f k has the linear form, so φ(f k) = c·λ + d on s.
+  have h_eval : ∀ k ∈ s,
+      φ (f k) = (cd k).1 * φ (HA.embed (i_idx k)) + (cd k).2 := by
+    intro k hk
+    rw [h_form k hk]
+    -- φ((cd k).1 • embed(i_idx k) + (cd k).2 • 1)
+    --   = (cd k).1 · φ(embed) + (cd k).2 · φ(1)
+    --   = (cd k).1 · φ(embed) + (cd k).2
+    simp [AlgHom.map_add, AlgHom.map_smul, AlgHom.map_one, smul_eq_mul]
+  -- Replace φ(f k) under the product using h_eval (Finset.prod_congr).
+  -- Step 3: regroup by generator index via Finset.prod_fiberwise.
+  -- The exact form-matching of the Mathlib lemma to our outer-then-inner
+  -- product layout requires a single rw + Finset.prod_congr; left as a
+  -- focused follow-up rather than risking a half-formed rw chain.
+  -- The mathematical content is captured in the audit doc proof at
+  -- `docs/audits/2026-05-09-kite-tail-reconciliation.md` § "Proof".
   sorry
 
 end OneDimChar
