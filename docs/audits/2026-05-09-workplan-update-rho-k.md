@@ -126,7 +126,15 @@ underdetermined per atom without a categorical closure.
 The ρ_K^full assembly does NOT need:
 - T2 / T3 tower terms (Markov-axiom or li2q),
 - T4 Frobenius codim,
-- T6 cyclotomic tail,
+- T6 cyclotomic tail (now **diagnostic-only by design** — see
+  [`atomic_braid_mass_terms.t6_canonical_MeV`](../../folio-assistant/computations/atomic_braid_mass_terms.py)
+  docstring: by Mittag-Leffler complementarity per
+  [`AUDIT-DEEP-2026-05.md §3.3a`](../../AUDIT-DEEP-2026-05.md), T6's
+  cyclotomic principal-part `pp_at_roots(u)` is one of THREE
+  complementary pieces of `tr_M(u²)`, not an independent additive
+  correction; `markov_trace_recursive.py` returns the full
+  `|tr_M|` which already includes it; adding T6 again would
+  double-count),
 - inter-nucleon Δ_I knot factor a(Z,N),
 - full-twist Δ_n² scalar.
 
@@ -377,9 +385,28 @@ downstream consumers don't break. Adds optional emission of the
 per-block $\Delta_\lambda$ residuals when `tr-m-q-hecke-seminormal.witness.json`
 data is available.
 
+**Note on T6:** the existing `t6_canonical_MeV` import already
+returns 0 by design (Mittag-Leffler complementarity, per
+[`atomic_braid_mass_terms.py`](../../folio-assistant/computations/atomic_braid_mass_terms.py)
+docstring). So part of the simplification — dropping the T6
+addition — is already in effect via the upstream module; the
+remaining work is to drop the T2/T3/T4 layer and switch the
+formula to ρ_K^full.
+
+**Note on canonical-convention recipes (PR #615 batch 1):** the
+operator-valued canonical chains for p, n, D, ⁴He are now committed
+([`atomic-braid-recipe-{p,n,d,4he}-canonical.derivation.json`](../../folio-assistant/computations/atomic-braid-recipe-p-canonical.derivation.json)
++ [`build_atomic_braid_recipe_canonical_chain.py`](../../folio-assistant/computations/build_atomic_braid_recipe_canonical_chain.py)).
+The deprecation should adopt this canonical convention rather
+than my Strategy 3's ad-hoc `[1]*7+[2]*4` proton word. T/³He are
+not yet in the canonical chain (PR #615 batch 1 only covers
+p, n, D, ⁴He) — mark these atoms `compute_status: "tr_M_only"`
+in the witness until batch 2 lands.
+
 **Why this contributes:** P4‴ in the 1 ppb ledger; reduces
-maintenance burden and removes the misleading mass-table entry
-that suggested the legacy E₀ formula was viable.
+maintenance burden, removes the misleading mass-table entry that
+suggested the legacy E₀ formula was viable, and aligns with the
+canonical convention that #615 is rolling out.
 
 ### Proposal 5 (lowest priority): Δ_n² + Δ_λ correlation study
 
@@ -420,6 +447,31 @@ risks merge conflicts.
 **Defer Proposal 5** unless Proposal 1 leaves the per-block
 pattern unexplained.
 
+## Sibling-PR awareness
+
+Watching `origin/main` via the `local/watch` skill (5-minute poll,
+persistent monitor armed at session start). New commits are
+integrated into this workplan via the §3 checklist (overlap /
+conflict / reuse / act-or-defer).
+
+Active-branch awareness as of 2026-05-09 16:40 UTC:
+
+- **PR #564** (rho_K assembly + 1ppb plan) — merged, foundation
+  of this workplan.
+- **PR #572** (Hecke-NF + q-Hecke seminormal closure + Path A
+  proton/deuteron) — merged, foundation of Proposals 2 + 3.
+- **PR #613** (Δ_λ derivation race + Pentagon-uv-commutation
+  Woronowicz closure) — merged; rules out 5 closure principles
+  for $\Delta_\lambda$ (informs Proposal 1's ansatz space).
+- **PR #614** (Binding-K SDP solver + factorisation finding) —
+  merged; binding-K SDP at $H_{3A}$ is parallel infrastructure
+  to ρ_K^full, may inform Proposal 1.
+- **PR #615 batch 1** (canonical-convention migration: 4He +
+  deprecation notices) — merged; provides canonical chains for
+  p, n, D, ⁴He used in Proposal 4.
+- **PR #586** (Mathlib Tier-A batch) — merged; Lean
+  formalization track, no direct mass-formula impact.
+
 ## Cross-references
 
 - 1 ppb ledger: [`docs/coordination/1ppb.md`](../coordination/1ppb.md)
@@ -427,5 +479,7 @@ pattern unexplained.
 - GAP-A-3 + GAP-A-4 guidance: [`docs/audits/2026-05-09-gap-a-3-a-4-guidance.md`](2026-05-09-gap-a-3-a-4-guidance.md)
 - Path A verification (proton + deuteron): [`docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md`](2026-05-08-per-irrep-pole-18-21-research-note.md)
 - Conjecture closure tractability: [`docs/audits/2026-05-09-conjecture-closure-tractability.md`](2026-05-09-conjecture-closure-tractability.md)
+- T6 dissolution rationale: [`AUDIT-DEEP-2026-05.md` §3.3a](../../AUDIT-DEEP-2026-05.md) + [`atomic_braid_mass_terms.py:t6_canonical_MeV` docstring](../../folio-assistant/computations/atomic_braid_mass_terms.py)
+- Canonical recipe chains (PR #615): [`atomic-braid-recipe-{p,n,d,4he}-canonical.derivation.json`](../../folio-assistant/computations/atomic-braid-recipe-p-canonical.derivation.json) + [`build_atomic_braid_recipe_canonical_chain.py`](../../folio-assistant/computations/build_atomic_braid_recipe_canonical_chain.py)
 - My superseded workplan: [`docs/audits/2026-05-05-markov-trace-axiomatic-workplan.md`](2026-05-05-markov-trace-axiomatic-workplan.md)
 - My contributing PRs: [#534](https://github.com/litlfred/qou/pull/534) (axiomatic Markov-trace closed form), [#547](https://github.com/litlfred/qou/pull/547) (recursive reducer + multi-atom anchor), [#548](https://github.com/litlfred/qou/pull/548) (Δ_n² verification + T1 modes sweep)
