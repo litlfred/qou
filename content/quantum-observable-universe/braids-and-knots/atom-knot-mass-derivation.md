@@ -323,6 +323,38 @@ Markov-trace computation) and the production-scale Rust port
    `JointTowerSdpCertificate` schema.  Once R5-full lands, the
    deprecated `li-atom-knot-search` is fully retirable.
 
+   **Status (2026-05-09, issue #604 deliverable 1).** A first-pass
+   Python R5-full prototype landed at
+   [`folio-assistant/computations/r5_full_canonical_knot_solver.py`](https://github.com/litlfred/qou/blob/claude/issue-604-xIGUU/folio-assistant/computations/r5_full_canonical_knot_solver.py)
+   with witness
+   [`r5-full-canonical-knot-solver.witness.json`](https://github.com/litlfred/qou/blob/claude/issue-604-xIGUU/folio-assistant/computations/r5-full-canonical-knot-solver.witness.json).
+   It enumerates $B_3$ braid words up to length $L_{\max} = 8$,
+   filters via a KLR canonical-basis "cemetery" prune (drops $\sigma_i^{\pm k}$
+   pure-power Demazure-trivial classes per CLAUDE.md §7b symmetric-
+   crystal guidance) plus a $\chi$-fingerprint dedup that collapses
+   Markov-equivalent words to a single canonical-basis-class
+   representative, and emits an operator-selection LP with strong-
+   duality dual fields ($y_0^*$, $y_\lambda^*$, active set) per the
+   CLAUDE.md "LP / SDP duals — first-class infra" rule.
+
+   The cemetery + dedup pass compresses the search space by **99 %**
+   ($13088 \to 138$ canonical-basis classes at $L_{\max} = 8$).  The
+   historical canonical $T_w$ for ³He ($L_{6a4}$) is found to be
+   **fully PSD-feasible** at $q_0$ ($\alpha^* = 0$) and ranks in the
+   top 17 % of the 138 canonical-basis classes by single-term cost;
+   ²H ($6_2$) is **not** PSD-feasible on its own ($\alpha^* = 0.89$
+   on the standard $(2,1)$ block) and ranks in the top 45 %.  The
+   single-term flagship formula $B = m_e \cdot \rho \cdot |\mathrm{tr}_M(T_w)|$
+   has the known structural offset documented in
+   [`probe-sdp-canonical-paper-formula.witness.json`](https://github.com/litlfred/qou/blob/claude/issue-604-xIGUU/folio-assistant/computations/probe-sdp-canonical-paper-formula.witness.json),
+   which prevents the historical $T_w$ from being the unique global
+   winner; wiring the multi-term tower (T2--T6 of
+   [`thm:knot-mass-formula-unified`](#thm:knot-mass-formula-unified))
+   into the cost is the next-session deliverable.  ³H ($8_{11}$ in
+   $B_5$) is also next-session work — needs Hoefsmit seminormal at
+   $H_5$, consistent with the deferred-to-Rust posture in
+   [`joint_tower_sdp_solver_v2.py`](https://github.com/litlfred/qou/blob/claude/issue-604-xIGUU/folio-assistant/computations/joint_tower_sdp_solver_v2.py).
+
 A second item — the structural prefactor rule $\rho(Z, N)$ — is a
 downstream consequence: once the SDP-solver returns canonical $T_w$
 per atom, $\rho$ is read off as the multiplicity of $T_w$'s solution
