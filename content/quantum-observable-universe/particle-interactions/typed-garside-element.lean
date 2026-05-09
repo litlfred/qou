@@ -41,8 +41,13 @@ def neutronCount (ord : NuclearOrdering) : ℕ :=
   ord.filter (· == .neutron) |>.length
 
 /-- The total number of pairwise crossings in the Garside staircase
-    for A nucleons is C(A, 2) = A(A-1)/2. -/
-theorem garside_crossing_count (A : ℕ) (hA : 2 ≤ A) :
+    for A nucleons is C(A, 2) = A(A-1)/2.
+
+    The hypothesis `_hA : 2 ≤ A` is preserved (with leading-
+    underscore) for documentation consistency with the minimum-
+    arity assumption in `def:typed-garside-element`, even though
+    `Nat.choose_two_right` holds for all `A : ℕ`. -/
+theorem garside_crossing_count (A : ℕ) (_hA : 2 ≤ A) :
     A * (A - 1) / 2 = Nat.choose A 2 := by
   -- Ref: [manuscript] Definition def:typed-garside-element
   exact (Nat.choose_two_right A).symm

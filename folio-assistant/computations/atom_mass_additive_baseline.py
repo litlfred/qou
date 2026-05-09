@@ -16,9 +16,14 @@ additive constituent baseline and reports the residual
 
 for every isotope in `atom_mass_derived.py`'s ELEMENTS table.
 
-For Hydrogen, Δ_binding ≈ 1.4 × 10⁻⁵ MeV (the 13.6 eV atomic
-binding) so the additive baseline reproduces AME2020 to better
-than $10^{-2}$ ppb at $A = 1$ — a clean structural anchor.
+For Hydrogen, the *physical* Δ_binding is the 13.6 eV atomic
+binding ≈ 1.4 × 10⁻⁵ MeV ≈ 14 ppb at the 938 MeV scale.  The
+*observed* residual depends on the precision of the AME tabulation
+used: with AME2020 published to 3 decimal places (938.783 MeV),
+the residual is dominated by publication rounding (~5 × 10⁻⁴ MeV
+≈ 533 ppb floor; the table below reports 92.79 ppb).  A higher-
+precision AME entry (≥ 6 dp) would expose the 14 ppb physical
+binding.
 
 For heavier nuclei, the residual IS the QOU-derivable
 $\\rho_F \\cdot V_{\\text{hyp}}$ binding term
@@ -92,10 +97,13 @@ def main() -> None:
             "Z·M_e − E_binding(A, Z).  Records the constituent-vs-AME "
             "residual Δ_binding for every isotope in the "
             "`atom_mass_derived.py` ELEMENTS table.  At A = 1 the "
-            "residual is the 13.6 eV atomic binding (negligible at "
-            "the 1 ppb level).  At A ≥ 4 the residual is the nuclear "
-            "binding that the Frobenius-packing law (rem:frobenius-"
-            "packing-density) is expected to reproduce."
+            "physical Δ_binding is the 13.6 eV atomic binding ≈ 14 ppb "
+            "at the 938 MeV scale; the observed AME-residual is "
+            "publication-rounding-floor-limited (3 dp at 938.783 MeV "
+            "gives ~533 ppb floor; the witness reports 92.79 ppb).  "
+            "At A ≥ 4 the residual is the nuclear binding that the "
+            "Frobenius-packing law (rem:frobenius-packing-density) "
+            "is expected to reproduce."
         )
         .set_audit_only(
             "docs/audits/atom-mass-additive-baseline.md"

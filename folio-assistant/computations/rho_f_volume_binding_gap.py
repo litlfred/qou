@@ -14,10 +14,16 @@ atom→atomic-link mapping for general isotopes is paper-side
 content not yet wired through.  Instead, it inverts the law:
 given the empirical Δ_binding from
 `atom_mass_additive_baseline.py` and the SnapPy-known V_hyp of
-candidate atomic-link primitives (figure-eight, three-twist,
-Borromean, sums thereof), it reports the **required ρ_F** that
-each candidate link would need to reproduce the observed binding
-energy.
+the three currently-tabulated atomic-link primitives (figure-
+eight, three-twist, Borromean), it reports the **required ρ_F**
+that each candidate link would need to reproduce the observed
+binding energy.
+
+Composite-link cases (sums of the listed primitives, JSJ
+decompositions for heavier nuclei) are not modelled in the
+current row-by-row table — if the atom→atomic-link map turns
+out to require composite links, the table is extended by adding
+rows to `LINK_PRIMITIVES`.
 
 The output is the gap audit: which (link, ρ_F) candidates are
 close to the QOU prediction ρ_F ∈ {m_e, 2 m_e}, and which need

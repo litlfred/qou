@@ -25,11 +25,14 @@ experimental precision.
 | `Q_n` (β-decay) | CODATA arithmetic `m_n − m_p − m_e` | structural cross-check |
 | Knot volumes | SnapPy 3.3.2 | anchor (Thurston volumes) |
 
-Anchor rows pass at exactly 0 ppb by construction. The two structural
-cross-checks (Markov-axiom α_2 = z² and Plancherel completeness)
-hit IEEE-754 / 50-dps machine precision via the closed-form path
-licensed by `prop:macdonald-hook-telescope`. Current
-`max_non_anchor_delta_ppb = 0.000 ppb`.
+Anchor rows pass at exactly 0 ppb by construction. The two
+structural cross-checks (Markov-axiom α_2 = z² and Plancherel
+completeness) hit IEEE-754 / 50-dps machine precision via the
+closed-form path licensed by `prop:macdonald-hook-telescope`.
+Current `max_non_anchor_delta_ppb ≈ 92.79 ppb`, driven entirely
+by the `M(¹H)` row's AME publication-rounding floor (3 decimal
+places at 938.783 MeV); the structural cross-checks themselves
+hit ≤ 10⁻¹⁷.
 
 ## Atomic-species rows: replaced multiplicative chain (informational)
 
