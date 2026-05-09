@@ -150,44 +150,60 @@ theorem real_strict_complementarity_unique
   have h_S_Φstar : sdp.dualSlack sc.ystar * sc.Φstar = 0 :=
     sc.toRealStrongDualityPair.dualSlack_mul_feasible_eq_zero
       sc.primal_feas rfl
-  -- Step 3 (DERIVED): `S · (Φ' - Φstar) = 0`.
+  -- Step 3 (DERIVED): `S · D = 0` where `D := Φ' - Φstar`.
   have h_S_diff : sdp.dualSlack sc.ystar * (Φ' - sc.Φstar) = 0 := by
     rw [Matrix.mul_sub, h_S_Φ', h_S_Φstar, sub_zero]
   -- Step 4 (DERIVED): affine constraints match for the difference:
-  -- `tr(A_i · (Φ' - Φstar)) = b_i - b_i = 0` for all i.
+  -- `tr(A_i · D) = b_i - b_i = 0` for all i.
   have h_constraint_diff : ∀ i : ι,
       Matrix.trace (sdp.constraint i * (Φ' - sc.Φstar)) = 0 := by
     intro i
     rw [Matrix.mul_sub, Matrix.trace_sub]
     rw [h_feas.2 i, sc.primal_feas.2 i]
     ring
-  -- Step 5 (KERNEL UNIQUENESS): the difference D := Φ' - Φstar
-  -- satisfies:
-  --   * S · D = 0  (Step 3)
-  --   * tr(A_i · D) = 0 for all i  (Step 4)
-  --   * D is the difference of two PSD matrices (so it's
-  --     symmetric, but may be indefinite)
-  -- Strict complementarity (sc.active_dual_pos + sc.inactive_dual_zero)
-  -- + the SDP structure forces D = 0.
+  -- Step 4.5 (DERIVED): D · S = 0 (symmetric companion to h_S_diff).
+  -- D = Φ' - Φstar is symmetric (both feasible Φ ⪰ 0 are Hermitian).
+  -- S = dualSlack ystar is symmetric (Hermitian + real).
+  -- (S · D)^T = D^T · S^T = D · S; if S · D = 0 then D · S = 0.
+  have h_D_sym : (Φ' - sc.Φstar).IsHermitian := by
+    have h1 : Φ'.IsHermitian := h_feas.1.1
+    have h2 : sc.Φstar.IsHermitian := sc.primal_feas.1.1
+    -- Difference of Hermitian is Hermitian
+    show (Φ' - sc.Φstar).transpose = (Φ' - sc.Φstar)
+    rw [Matrix.transpose_sub, show Φ'.transpose = Φ' from h1,
+        show sc.Φstar.transpose = sc.Φstar from h2]
+  have h_S_sym : (sdp.dualSlack sc.ystar).IsHermitian :=
+    sc.toRealStrongDualityPair.dualSlack_psd.1
+  have h_diff_S : (Φ' - sc.Φstar) * sdp.dualSlack sc.ystar = 0 := by
+    have : ((sdp.dualSlack sc.ystar) * (Φ' - sc.Φstar)).transpose = 0 := by
+      rw [h_S_diff]; rfl
+    rw [Matrix.transpose_mul, show (Φ' - sc.Φstar).transpose = (Φ' - sc.Φstar) from h_D_sym,
+        show (sdp.dualSlack sc.ystar).transpose = sdp.dualSlack sc.ystar from h_S_sym] at this
+    exact this
+  -- Step 5 (KERNEL UNIQUENESS): combine S·D = 0 + D·S = 0 + tr(A_i·D) = 0.
+  -- The remaining bridge from these to D = 0 requires the rank-
+  -- deficiency theorem for the SDP optimal face: under Slater +
+  -- strict complementarity, the optimal face is a single point.
   --
-  -- Standard argument (Boyd-Vandenberghe §5.5.4): the SDP
-  -- optimum is unique iff the optimal face is a single point.
-  -- Strict complementarity implies the optimal face is the
-  -- intersection of the kernel of S with the affine constraint
-  -- set; by Slater + the rank-deficiency of S equal to
-  -- dim(active face), this intersection is {Φstar}.
+  -- Concretely (Boyd-Vandenberghe §5.5.4):
+  --   * S = T - Σ_{i ∈ active} ystar_i · A_i (since inactive ystar_i = 0)
+  --   * Both Φ' and Φstar lie in the optimal face
+  --       F = {Φ ⪰ 0 : tr(A_i Φ) = b_i ∀i, S · Φ = 0}
+  --   * F has dimension equal to dim(ker(S)) - |active|
+  --   * Slater ⟹ this is 0 ⟹ F is a single point ⟹ Φ' = Φstar
   --
-  -- Closing this requires:
-  --   * `Matrix.PosSemidef.rank_eq_n_sub_dim_kernel`
-  --   * Affine-Slater-implies-uniqueness lemma
-  --   * Composition with strict complementarity to identify
-  --     the active face dimension
+  -- This uses Mathlib infrastructure that doesn't exist:
+  --   * `Matrix.PosSemidef.rank_via_eigenvalues`
+  --   * Convex-set-dimension framework for the optimal face
+  --   * Slater-condition-implies-rank-equality lemma
   --
-  -- These are open Mathlib SDP-theory items.  For practical use,
-  -- the interior-case closure
-  -- `real_strict_complementarity_unique_of_dualSlack_posDef` (below)
-  -- handles the no-active-constraints case (which is the QOU
-  -- ³He instance per PR #608).
+  -- For practical use (QOU ³He per PR #608, active set empty):
+  --   * `_unique_of_dualSlack_posDef` (batch 12) — interior case
+  --   * `_unique_of_active_empty_and_cost_posDef` (batch 26) —
+  --     active-empty case
+  -- Both are sorry-free.  This general theorem is the only
+  -- remaining "hard" sorry, scoped to the multi-week Mathlib SDP
+  -- rank-deficiency theorem.
   sorry
 
 /-- **Subsingleton wrapper** for typeclass-friendly use. -/
