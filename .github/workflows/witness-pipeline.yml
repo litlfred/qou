@@ -299,16 +299,13 @@ jobs:
           #   punit_type 14 → 0 (B4 ✓), punit_unit 2 → 0 (B4 ✓),
           #   one_def 10 → 9, holds_trivial 8 → 4.  +2 buffer per
           #   pattern to absorb local/CI minor discrepancies.
-          # 2026-05-09: holds_trivial 4 → 12 — re-baseline. PR #604
-          #   ("binding-K SDP solver at H_{3·A} + per-particle Lean
-          #   instances", merge b54b2d59) added 4 trivial-True fields
-          #   × 3 nucleon instances on `CanonicalKnotIdSDP` in
-          #   `conj-canonical-knot-id-sdp.lean` (the §3b-cond
-          #   conditional-class `True` placeholders pending the
-          #   `bindingKUniqueness` proof). Spec-compliant under §3b-
-          #   cond ("class is inhabited"); the budget tightens again
-          #   once `bindingKUniqueness` is replaced with a faithful
-          #   proof.
+          # 2026-05-09: PR #607 (merge `48732e1d`) replaced the 12
+          #   `_holds := trivial` placeholders in `CanonicalKnotIdSDP`
+          #   with structurally-discharged `by decide` proofs
+          #   (`structurallyValidBinding`, `evenPower`, `length ≤ 4`).
+          #   Trivial-skeleton-audit `holds_trivial` count: 12 → 0.
+          #   Budget stays at 2 — bumping it would only hide
+          #   future regressions.
           #
           # Strict-gate (B6): the `|| true` mask has been dropped.
           # Any new trivial-skeleton occurrence beyond the budget
@@ -317,7 +314,7 @@ jobs:
           # up count and update the comment above.
           bun run --cwd content pipeline/trivial-skeleton-audit.ts \
             --max-per-pattern \
-              "const_zero=3,skel_inst=2,prop_true=2,punit_type=2,one_def=2,holds_trivial=12,punit_unit=2,id_def=2,const_zero_typed=2,first_arg=12"
+              "const_zero=3,skel_inst=2,prop_true=2,punit_type=2,one_def=2,holds_trivial=2,punit_unit=2,id_def=2,const_zero_typed=2,first_arg=12"
 
       - name: §3b-cond conditional-class banner audit (strict)
         run: |
