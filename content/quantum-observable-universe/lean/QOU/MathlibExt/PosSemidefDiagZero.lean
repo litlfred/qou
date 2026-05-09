@@ -57,6 +57,43 @@ open Matrix
 
 variable {n : ℕ}
 
+/-- **Helper lemma**: a quadratic `2 a t + b t²` non-negative
+    for all `t : ℝ`, with `b ≥ 0`, forces `a = 0`.
+
+    PROOF (case-split on `b`):
+    * `b = 0`: expression is `2 a t`.  Take `t = -1`: `-2 a ≥ 0`
+      gives `a ≤ 0`.  Take `t = 1`: `2 a ≥ 0` gives `a ≥ 0`.
+      So `a = 0`.
+    * `b > 0`: take `t = -a/b` (the minimum).  Then
+      `2(-a/b)·a + (-a/b)²·b = -2a²/b + a²/b = -a²/b`.  Non-neg
+      gives `-a²/b ≥ 0`, i.e. `a² ≤ 0` (since `b > 0`), so `a = 0`. -/
+private theorem quadratic_nonneg_implies_linear_zero
+    (a b : ℝ) (hb : 0 ≤ b)
+    (h : ∀ t : ℝ, 0 ≤ 2 * t * a + t ^ 2 * b) : a = 0 := by
+  rcases eq_or_lt_of_le hb with hb_eq | hb_pos
+  · -- b = 0 case
+    have h_neg : 0 ≤ 2 * (-1 : ℝ) * a + (-1 : ℝ) ^ 2 * b := h (-1)
+    have h_pos : 0 ≤ 2 * (1 : ℝ) * a + (1 : ℝ) ^ 2 * b := h 1
+    rw [← hb_eq] at h_neg h_pos
+    nlinarith
+  · -- b > 0 case: use t = -a/b
+    have hb_ne : b ≠ 0 := ne_of_gt hb_pos
+    have h_min := h (-a / b)
+    -- Compute: 2·(-a/b)·a + (-a/b)²·b = -2a²/b + a²/b = -a²/b
+    have h_compute : 2 * (-a / b) * a + (-a / b) ^ 2 * b = -(a ^ 2 / b) := by
+      field_simp
+      ring
+    rw [h_compute] at h_min
+    -- -a²/b ≥ 0 with b > 0 ⟹ a² ≤ 0 ⟹ a = 0
+    have h_a2_le : a ^ 2 ≤ 0 := by
+      have : 0 ≤ -(a ^ 2 / b) := h_min
+      have : a ^ 2 / b ≤ 0 := by linarith
+      exact (div_nonpos_iff.mp this).resolve_right
+        (fun ⟨_, hb_le⟩ => absurd hb_le (not_le.mpr hb_pos))
+        |>.1
+    have h_a2_eq : a ^ 2 = 0 := le_antisymm h_a2_le (sq_nonneg a)
+    exact pow_eq_zero_iff (two_ne_zero).mp h_a2_eq
+
 /-- **PSD off-diagonal-zero from diagonal-zero**.
 
     For a real PSD matrix `C`, if `C i i = 0` for some index `i`,
@@ -70,35 +107,49 @@ theorem Matrix.PosSemidef.entry_zero_of_diag_zero
     {C : Matrix (Fin n) (Fin n) ℝ} (hC : C.PosSemidef)
     {i : Fin n} (h_diag : C i i = 0) (j : Fin n) :
     C i j = 0 := by
-  -- The i = j case is the hypothesis.
   by_cases hij : i = j
   · subst hij; exact h_diag
-  · -- i ≠ j case.  Strategy: exhibit a 1-parameter family of
-    -- non-negative quadratics and conclude `C i j = 0`.
-    --
-    -- For test vector v_t := e_i + t · e_j, PSD gives
-    --     0 ≤ v_t^T · C · v_t
-    --       = C_ii + t · (C_ij + C_ji) + t² · C_jj
-    --       = 0 + 2t · C_ij + t² · C_jj   (using h_diag and PSD-symmetry)
-    -- A quadratic `2 a t + b t²` with `b ≥ 0` non-negative for ALL t ∈ ℝ
-    -- forces `a = 0`:
-    --   * If `b > 0`: minimum is at `t = -a/b`, value `-a²/b`, ≤ 0
-    --     ⟹ `a² = 0` ⟹ `a = 0`.
-    --   * If `b = 0`: expression is `2at`; non-neg for all t (incl t = -1)
-    --     ⟹ `a = 0`.
-    --
-    -- The full Lean composition needs:
-    --   1. Construct v_t : Fin n → ℝ via Pi.single + scalar mul
-    --   2. Compute v_t^T · C · v_t via Matrix.dotProduct/mulVec unfold
-    --   3. Apply hC.2 (PSD non-negativity) at each t
-    --   4. Case-analyse on (C j j > 0 vs C j j = 0); each closes via
-    --      the discriminant argument above.
-    --
-    -- Steps 1-3 are mechanical; step 4 uses arithmetic in ℝ
-    -- (sq_nonneg, mul_self_nonneg, neg_le_iff_add_nonneg, etc.).
-    -- The full proof is ~20-30 lines once the Mathlib unfolding
-    -- patterns are verified.
-    sorry
+  -- C is symmetric: C_ji = C_ij (from PSD ⟹ Hermitian, real ⟹ transpose = id).
+  have h_sym : C j i = C i j := by
+    have hH : C.IsHermitian := hC.1
+    calc C j i
+        = C.transpose i j := rfl
+      _ = C i j := by rw [show C.transpose = C from hH]
+  -- C j j ≥ 0 (PSD diagonal entry; from C.posSemidef.diag_nonneg).
+  have h_jj_nonneg : 0 ≤ C j j := by
+    -- Use the canonical e_j basis vector.
+    have h_psd_ej := hC.2 (Pi.single j (1 : ℝ))
+    -- Compute: e_jᵀ C e_j = C j j
+    have h_compute : Matrix.dotProduct (star (Pi.single j (1 : ℝ)))
+        (C.mulVec (Pi.single j (1 : ℝ))) = C j j := by
+      simp [Matrix.dotProduct, Matrix.mulVec, Pi.single_apply,
+            Finset.sum_ite_eq', star_trivial, mul_ite, mul_one,
+            mul_zero, Finset.mem_univ]
+    rwa [h_compute] at h_psd_ej
+  -- Quadratic-non-negativity for all t : ℝ.
+  have h_quad : ∀ t : ℝ, 0 ≤ 2 * t * (C i j) + t ^ 2 * (C j j) := by
+    intro t
+    -- Test vector v_t = Pi.single i 1 + Pi.single j t
+    -- (For i ≠ j, this is e_i + t·e_j with disjoint support.)
+    set v : Fin n → ℝ := Pi.single i 1 + Pi.single j t with hv_def
+    have h_psd := hC.2 v
+    -- Compute v^T · C · v explicitly.
+    have h_compute : Matrix.dotProduct (star v) (C.mulVec v) =
+        C i i + 2 * t * (C i j) + t ^ 2 * (C j j) := by
+      -- v_k = (e_i)_k + t · (e_j)_k
+      -- vᵀ C v = Σ_k Σ_l v_k C_kl v_l
+      --       = C_ii + t·C_ij + t·C_ji + t²·C_jj
+      --       = C_ii + 2t·C_ij + t²·C_jj  (by h_sym)
+      simp only [hv_def, Matrix.dotProduct, Matrix.mulVec, Pi.add_apply,
+                 Pi.single_apply, star_add, star_trivial, add_mul, mul_add,
+                 Finset.sum_add_distrib]
+      -- After simp, the sum reduces to C i i + t·C i j + t·C j i + t²·C j j
+      -- which equals our target via h_sym.
+      sorry  -- complex sum manipulation; tactic refinement pending build
+    rw [h_compute, h_diag, zero_add] at h_psd
+    exact h_psd
+  -- Apply the helper lemma.
+  exact quadratic_nonneg_implies_linear_zero (C i j) (C j j) h_jj_nonneg h_quad
 
 /-- **PSD row-zero from diagonal-zero**: if `C_ii = 0` and `C` is
     PSD, then the i-th row is zero. -/
