@@ -1390,6 +1390,50 @@ theorem mul_HnC4_tailored_at_one (q : ℝ) (j : Fin 24) :
   -- For j.val < 6 or ≥ 12, the value is 0.
   split_ifs <;> simp_all <;> omega
 
+/-! ### Markov-axiom identity-element witness
+
+    Concrete Markov-axiom verification at x = `Hn.one 3 ℝ`:
+    `tr_M(1 · σ_3) = z · tr_M(1) = z`.
+
+    The general H_3 → H_4 Markov axiom requires Finset.sum
+    manipulation chains (split + reindex + shift-compat
+    application).  This witness theorem handles the smallest
+    non-vacuous case (x = identity), avoiding the bulk
+    Finset.sum machinery. -/
+
+/-- **Identity-element Markov witness**: at x = 1, the Markov
+    axiom `tr_M(1 · σ_3) = z` reduces to a single z^lengthFn4
+    evaluation.  Caller supplies a length function whose value
+    at index 6 (the σ_3-coset of identity) is 1. -/
+theorem markov_axiom_identity_witness (q z : ℝ)
+    (lengthFn4 : Fin 24 → ℕ)
+    (h_six_one : lengthFn4 ⟨6, by decide⟩ = 1) :
+    trace_HnC4 z lengthFn4
+      (mul_HnC4_tailored q (embed_HnC3_to_HnC4 (Hn.one 3 ℝ)) sigma_HnC4)
+      = z := by
+  unfold trace_HnC4
+  -- Step 1: rewrite the mul value using mul_HnC4_tailored_at_one
+  have heq : ∀ j : Fin 24,
+      mul_HnC4_tailored q (embed_HnC3_to_HnC4 (Hn.one 3 ℝ)) sigma_HnC4 j *
+        z ^ lengthFn4 j
+      = (if j.val = 6 then 1 else 0) * z ^ lengthFn4 j := by
+    intro j
+    rw [mul_HnC4_tailored_at_one q j]
+  rw [Finset.sum_congr rfl (fun j _ => heq j)]
+  -- Step 2: only the j = ⟨6, _⟩ term contributes
+  rw [Finset.sum_eq_single (⟨6, by decide⟩ : Fin 24)]
+  · -- The value at j = ⟨6, _⟩
+    simp [h_six_one]
+  · -- Other indices contribute 0
+    intro j _ hne
+    have : j.val ≠ 6 := by
+      intro habs
+      apply hne
+      exact Fin.ext habs
+    simp [this]
+  · intro h
+    exact absurd (Finset.mem_univ _) h
+
 end QOU.Mathlib.HeckeAlgebra
 
 /-! ### Wedderburn isomorphism `H_n(q) ≅ ⊕_λ M_{d_λ}(R)`
