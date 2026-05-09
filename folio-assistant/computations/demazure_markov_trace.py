@@ -320,9 +320,24 @@ def main():
         .set_content_block("prop:demazure-fiber-markov-trace")
     )
 
-    print("Step 1: verify D_{w_0}(λ) = s_λ at principal specialisation...")
+    # Scope: defaults to {2, 3} for sandbox (n=4 is 5·24=120 chars,
+    # exceeds local 50 s wall-clock); CI sets QOU_EXTEND_SCOPE=1
+    # to push to {2, 3, 4} (4 + 18 + 120 = 142 non-trivial chars).
+    import os as _os
+    n_max = 4 if _os.environ.get("QOU_EXTEND_SCOPE") == "1" else 3
+    n_range = range(2, n_max + 1)
+
+    # Expected non-trivial char counts: p(n)·n!
+    pn_factorial = {2: 2 * 2, 3: 3 * 6, 4: 5 * 24}
+    expected_nontrivial = sum(pn_factorial[n] for n in n_range)
+    expected_partitions = sum(
+        {2: 2, 3: 3, 4: 5}[n] for n in n_range
+    )
+
+    print(f"Step 1: verify D_{{w_0}}(λ) = s_λ at principal specialisation "
+          f"(n = {list(n_range)})...")
     consistency = {}
-    for n in range(2, 4):
+    for n in n_range:
         rec = verify_w0_equals_schur(n)
         all_ok = all(r["matches_schur_principal"] for r in rec.values())
         flag = "OK" if all_ok else "FAIL"
@@ -336,10 +351,10 @@ def main():
             source="sympy.cancel(D_{w_0}(λ) - hook-content) == 0",
         )
 
-    print("Step 2: compute Demazure-fiber tables for n = 2, 3...")
+    print(f"Step 2: compute Demazure-fiber tables for n ∈ {list(n_range)}...")
     tables = {}
     nontrivial_total = 0
-    for n in range(2, 4):
+    for n in n_range:
         print(f"  n={n}...", flush=True)
         tables[str(n)] = collect_demazure_table(n)
         nt = sum(len(v["demazure"]) - 1 for v in tables[str(n)].values())
@@ -349,9 +364,10 @@ def main():
     builder.add_assertion(
         name="non_trivial_demazure_chars",
         computed=nontrivial_total,
-        expected=22,
+        expected=expected_nontrivial,
         tolerance=0,
-        source="p(n)·n! for n ∈ {2,3} = 2·2 + 3·6 = 4 + 18",
+        source=f"p(n)·n! summed over n ∈ {list(n_range)} = "
+               + " + ".join(str(pn_factorial[n]) for n in n_range),
     )
 
     builder.add_data(

@@ -1,0 +1,72 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-09T02:52:36.214720+00:00",
+  "commitSha": "f7ad5dc1be45dfa96301da1e91946efbed968e34",
+  "assertions": [
+    {
+      "name": "all_witnesses_present",
+      "computed": 7,
+      "expected": 7,
+      "passed": true,
+      "tolerance": 0,
+      "source": "dashboard inventory check"
+    },
+    {
+      "name": "codata_max_non_anchor_delta_ppb",
+      "computed": 92.79034663100428,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 200.0,
+      "unit": "ppb",
+      "source": "codata-reconciliation.witness.json"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 13,
+  "computation": "onepb-status-dashboard",
+  "scriptFile": "onepb_status_dashboard.py",
+  "scriptHash": "6987e804f9aa",
+  "scriptCommitSha": "unknown",
+  "description": "Aggregated 1ppb-readiness dashboard.  Single source of truth for the headline metric `max_non_anchor_delta_ppb` across the QOU primary observables (CODATA reconciliation), structural audits (Brundan–Kleshchev, Macdonald-telescope Plancherel completeness), and the open atomic-binding derivation gap (atom_mass_additive_baseline + rho_f_volume_binding_gap).",
+  "auditOnly": "docs/audits/onepb-status-dashboard.md",
+  "data": {
+    "summary": {
+      "max_non_anchor_delta_ppb": 92.79034663100428,
+      "atom_binding": {
+        "max_delta_binding_MeV": 160.65007630000036,
+        "avg_binding_per_nucleon_MeV": 7.223802835670109,
+        "law": "ρ_F · V_hyp (rem:frobenius-packing-density)",
+        "status": "atom→link map TODO; see rho_f_volume_binding_gap audit"
+      },
+      "brundan_kleshchev": {
+        "passed": 20,
+        "total": 20,
+        "tests": [
+          "dim H_n = n!",
+          "dim Z(H_n) = p(n)",
+          "Jucys-Murphy content separation",
+          "bar-invariant Plancherel sum"
+        ]
+      },
+      "macdonald_telescope_plancherel_residuals": [
+        "5.3455294201843912922810729343029637576303937602101e-51",
+        "2.672764710092195646140536467151481878815196880105e-51",
+        "2.672764710092195646140536467151481878815196880105e-51",
+        "4.0091470651382934692108047007272228182227953201576e-51",
+        "2.672764710092195646140536467151481878815196880105e-51"
+      ],
+      "witness_inventory": [
+        "codata_reconciliation",
+        "atom_mass_additive_baseline",
+        "rho_f_volume_binding_gap",
+        "brundan_kleshchev_audit",
+        "alpha_k_macdonald",
+        "y_lambda_macdonald_telescope",
+        "demazure_markov_trace"
+      ],
+      "missing_witnesses": []
+    },
+    "note": "Atomic binding-energy column requires the atom→atomic-link map to land before its rows join the asserted set."
+  }
+}

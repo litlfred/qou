@@ -277,6 +277,18 @@ def cross_check_mpfr(witness_path: Path) -> dict:
     }
 
 
+def _scope_n_max() -> int:
+    """Symbolic-verification range.  Defaults to 6 to fit the local
+    sandbox's wall-clock budget; CI sets `QOU_EXTEND_SCOPE=1` to
+    push to 8 (incurs n=7 + n=8 sympy.cancel costs that exceed
+    the local 50 s timeout).  Witness drift is allowed when this
+    flag toggles since both regimes produce a self-consistent
+    output. -/
+    """
+    import os
+    return 8 if os.environ.get("QOU_EXTEND_SCOPE") == "1" else 6
+
+
 def main():
     builder = (
         WitnessBuilder("y-lambda-macdonald-telescope", engine="sympy")
@@ -290,11 +302,13 @@ def main():
         .set_content_block("prop:macdonald-hook-telescope")
     )
 
-    print("Step 1: verify Z_n = ((1-X)/(1-Q))^n symbolically (n = 0..6)...")
-    # n_max=6 covers 30 partitions (1+1+2+3+5+7+11) and finishes in
-    # under 30 s of wall-clock; sympy.cancel on n ≥ 7 explodes
-    # combinatorially without changing the structural conclusion.
-    identity = verify_telescope_identity(n_max=6)
+    n_max = _scope_n_max()
+    expected_partition_total = sum(
+        len(partitions_of(n)) for n in range(0, n_max + 1)
+    )
+    print(f"Step 1: verify Z_n = ((1-X)/(1-Q))^n symbolically "
+          f"(n = 0..{n_max}, scope={'CI-extended' if n_max == 8 else 'sandbox'})...")
+    identity = verify_telescope_identity(n_max=n_max)
     for n_str, rec in identity.items():
         flag = "OK" if rec["identity_holds"] else "FAIL"
         print(f"  n={n_str:>2}  {flag}  ({rec['num_partitions']} partitions)")
@@ -306,8 +320,8 @@ def main():
             source="sympy.cancel(Z_n - ((1-X)/(1-Q))^n) == 0",
         )
 
-    print("Step 2: verify per-partition closed-form collapse (n = 0..6)...")
-    collapse = verify_telescope_collapse(n_max=6)
+    print(f"Step 2: verify per-partition closed-form collapse (n = 0..{n_max})...")
+    collapse = verify_telescope_collapse(n_max=n_max)
     for n_str, per_p in collapse.items():
         all_ok = all(rec["matches_raw_wenzl"] for rec in per_p.values())
         flag = "OK" if all_ok else "FAIL"
@@ -320,19 +334,16 @@ def main():
             source="y_λ telescope = s_λ / Z_n per partition",
         )
 
-    print("Step 3: emit closed forms (n = 0..6)...")
-    # Range matches the symbolic-verification scope (Step 1 above).
-    # The closed-form formula itself is O(n) per partition for any n;
-    # only sympy serialisation costs grow.
-    closed = emit_closed_forms(list(range(0, 7)))
+    print(f"Step 3: emit closed forms (n = 0..{n_max})...")
+    closed = emit_closed_forms(list(range(0, n_max + 1)))
     total = sum(rec["num_partitions"] for rec in closed.values())
     print(f"  emitted {total} closed forms")
     builder.add_assertion(
         name="closed_forms_emitted",
         computed=total,
-        expected=30,
+        expected=expected_partition_total,
         tolerance=0,
-        source="cumulative p(0)+...+p(6) = 1+1+2+3+5+7+11",
+        source=f"cumulative p(0)+...+p({n_max})",
     )
 
     print("Step 4: cross-check against MPFR witness...")

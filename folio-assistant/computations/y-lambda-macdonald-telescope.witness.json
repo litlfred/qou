@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-09T00:16:20.906046+00:00",
-  "commitSha": "085510542261673d61d79a8bbddeb1c6c992445a",
+  "computedAt": "2026-05-09T02:58:07.580232+00:00",
+  "commitSha": "f7ad5dc1be45dfa96301da1e91946efbed968e34",
   "assertions": [
     {
       "name": "Z_0_identity",
@@ -122,7 +122,7 @@
       "expected": 30,
       "passed": true,
       "tolerance": 0,
-      "source": "cumulative p(0)+...+p(6) = 1+1+2+3+5+7+11"
+      "source": "cumulative p(0)+...+p(6)"
     },
     {
       "name": "mpfr_cross_check_max_abs_diff",
@@ -134,11 +134,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 16705,
+  "durationMs": 19166,
   "computation": "y-lambda-macdonald-telescope",
   "scriptFile": "y_lambda_macdonald_telescope.py",
-  "scriptHash": "fe5cd902f3e6",
-  "scriptCommitSha": "02a4b3d3e32381fecdcf3240921872ec4873ae51",
+  "scriptHash": "2ff0b5edbeb3",
+  "scriptCommitSha": "3f2bd2de45209c7c48790f47f6a166d271d65e06",
   "description": "Macdonald hook-content telescope: Z_n = ((1-X)/(1-Q))^n, giving the clean closed form y_λ = Q^{n(λ)} (1-Q)^n / (1-X)^n · ∏ (1-X·Q^c)/(1-Q^h) — sorry-free, O(n) per partition, no sympy.simplify needed.  Resolves the 'Open: a telescope for general n?' question in y-lambda-clean-closed-forms.md.",
   "contentBlock": "prop:macdonald-hook-telescope",
   "data": {

@@ -263,12 +263,13 @@ def t1_atomic_with_coupling(atom_label: str, Z: int, N: int,
 
       |tr_M_atomic(K)| = |tr_M(p)|^Z · |tr_M(n)|^N · |a(Z, N)| · Δ_n²-scalar
 
-    The disjoint-product piece is the per-carrier base; the
-    multiplicative knot factor a(Z, N) couples the carriers via
-    the Δ_I inter-nucleon interface knot.  When the atom is
-    covered by `jet-knot-invariants.witness.json`, the canonical
-    convergent a_k is used; otherwise the Jones-quotient fallback.
-    Δ_n² adds the saturated-shell scalar.
+    ⚠ STRUCTURAL BUG (PR #577 audit): the multiplicative carrier
+    base ``|tr_M(p)|^Z · |tr_M(n)|^N`` is structurally wrong.
+    Atomic mass is *additive* in its constituents.  See the
+    file-header banner and `atom_mass_additive_baseline.py` for
+    the correct construction.  This function is preserved unchanged
+    so existing audits/witnesses remain reproducible; do NOT cite
+    its output as a physical prediction.
     """
     A = Z + N
     base = abs(tr_p) ** Z * abs(tr_n) ** N
@@ -280,6 +281,49 @@ def t1_atomic_with_coupling(atom_label: str, Z: int, N: int,
         "a_ZN": a_ZN,
         "a_ZN_source": a_source,
         "full_twist_delta_n2": delta_n2,
+    }
+
+
+def t1_atomic_additive(atom_label: str, Z: int, N: int,
+                        tr_p: mp.mpf, tr_n: mp.mpf) -> tuple:
+    """Additive replacement for `t1_atomic_with_coupling` (TODO).
+
+    Implements the structurally-correct carrier base
+
+        base_additive  =  Z · |tr_M(p)|  +  N · |tr_M(n)|,
+
+    matching the additive-constituent atomic-mass law
+
+        M_atom = Z·M_p + N·M_n + Z·M_e − E_binding(A, Z).
+
+    The Δ_I inter-nucleon coupling and Δ_n² saturated-shell scalar
+    require redefinition in the additive setting; they are
+    currently passed through unchanged with a TODO marker and
+    should be re-derived once the additive framework is wired
+    end-to-end.
+
+    Currently NOT used by the main loop in `main()`; provided as
+    a scaffold for the recast follow-up workplan.
+
+    Ref: prop:cpt-orbit-closure-density (orbit-closure binding density)
+    Ref: rem:frobenius-packing-density  (binding-energy law)
+    """
+    A = Z + N
+    base = mp.mpf(Z) * abs(tr_p) + mp.mpf(N) * abs(tr_n)
+    a_ZN, a_source = jones_quotient_factor(atom_label, Z, N)
+    delta_n2 = full_twist_scalar(A)
+    # TODO: re-derive a_ZN and delta_n2 in the additive setting.
+    # Currently kept multiplicative as a placeholder; their roles
+    # in additive form are an open derivation question.
+    t1 = base + a_ZN * delta_n2  # additive composition
+    return t1, {
+        "base_additive": base,
+        "a_ZN": a_ZN,
+        "a_ZN_source": a_source,
+        "full_twist_delta_n2": delta_n2,
+        "note": "Additive scaffold; a_ZN/Δ_n² not yet re-derived "
+                "in additive setting.  See "
+                "docs/audits/atom-mass-additive-baseline.md.",
     }
 
 
