@@ -20,6 +20,9 @@ import QOU.BraidKnot.PhiQTowerAlgebraicStratification
 import QOU.BraidKnot.CanonicalKnotIdSDPUniqueness
 import QOU.BraidKnot.PSDFeasibilityProxy
 import QOU.BraidKnot.HopfBindingK
+import QOU.BraidKnot.LightNucleus
+import QOU.BraidKnot.WitnessR5Full
+import QOU.BraidKnot.Helium3Witness
 
 /-!
 # BraidKnot — Module Index
