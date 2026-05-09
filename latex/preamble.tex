@@ -297,14 +297,21 @@
 %
 % Single-arg forms \defterm{slug} / \refterm{slug} use the slug as the
 % visible label (the common case where slug == display text).
-\makeatletter
-\newcommand{\defterm}[1]{\@ifnextchar\bgroup{\defterm@two{#1}}{\defterm@one{#1}}}
-\newcommand{\defterm@one}[1]{\phantomsection\label{term:#1}\textbf{\emph{#1}}}
-\newcommand{\defterm@two}[2]{\phantomsection\label{term:#1}\textbf{\emph{#2}}}
-\newcommand{\refterm}[1]{\@ifnextchar\bgroup{\refterm@two{#1}}{\refterm@one{#1}}}
-\newcommand{\refterm@one}[1]{\hyperref[term:#1]{#1}}
-\newcommand{\refterm@two}[2]{\hyperref[term:#1]{#2}}
-\makeatother
+% NOTE: defined with \NewDocumentCommand (intrinsically robust) and an
+% explicit optional brace-group argument `g` rather than the legacy
+% `\@ifnextchar\bgroup` lookahead.  The lookahead form was fragile in
+% moving arguments — when \refterm appeared in a section title (e.g.
+% "Čech--Yekutieli \refterm{descent} cocycle"), titlesec's title
+% machinery re-expanded the macro and the lookahead recursed until it
+% blew the input stack ("TeX capacity exceeded" — Build & Publish #3262).
+% \texorpdfstring keeps PDF bookmarks safe by stripping the hyperlink.
+\NewDocumentCommand{\defterm}{m g}{%
+  \phantomsection\label{term:#1}%
+  \textbf{\emph{\IfNoValueTF{#2}{#1}{#2}}}%
+}
+\NewDocumentCommand{\refterm}{m g}{%
+  \texorpdfstring{\hyperref[term:#1]{\IfNoValueTF{#2}{#1}{#2}}}{\IfNoValueTF{#2}{#1}{#2}}%
+}
 %
 % ── Proof-status legend (printed once in the document) ───────────────────────
 \newcommand{\proofstatuslegend}{%
