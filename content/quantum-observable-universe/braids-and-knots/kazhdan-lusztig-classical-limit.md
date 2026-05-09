@@ -1,7 +1,7 @@
 **Conjecture (Kazhdan–Lusztig classical limit).**
 *Let $\{b_w\} \subset H_n(R, q)$ be the KLR canonical basis
 \cite{khovanovlauda2009, kashiwara1991} associated to the
-[anyonic Hecke substrate](#conj:hecke-anyonic-substrate), and let
+[anyonic Hecke substrate](#conj\:hecke-anyonic-substrate), and let
 $\{C_w\} \subset \mathbb{Z}[S_n]$ be the Kazhdan–Lusztig basis of the
 group algebra of the symmetric group.  Define the classical-limit
 functor*
@@ -17,8 +17,8 @@ $$
 
 *sending each KLR canonical basis element to its
 $q \to 1$ specialisation in $\mathbb{Z}[S_n]$.  Then $\mathrm{KL}$ is
-a monoidal functor compatible with the
-[observation functor](#def:observation) $\tau$, and its action on
+a :refterm[monoidal functor]{#monoidal-functor} compatible with the
+[observation functor](#def\:observation) $\tau$, and its action on
 QOU particle states is precisely the topological-to-classical
 transition: the braid group $B_n$ collapses to $S_n$ via
 $\sigma_i^2 \mapsto 1$, the Hecke matrices lose their topological
@@ -28,7 +28,7 @@ Bose–Einstein occupation (bosons).*
 
 **Algorithmic role.**
 *The reduction engine implements the classical limit by replacing
-$T_{s_i}$ with the symmetric-group generator $s_i$ and the canonical
+$\sigma_{s_i}$ with the symmetric-group generator $s_i$ and the canonical
 basis element $b_w$ with the Kazhdan–Lusztig basis element $C_w$;
 the cyclotomic-KLR Wedderburn decomposition specialises to the
 ordinary $S_n$ Wedderburn decomposition, with multiplicities given

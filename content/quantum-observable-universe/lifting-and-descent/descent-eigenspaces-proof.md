@@ -1,4 +1,3 @@
-
 Since $\hat{\tau}_n$ is an idempotent endomorphism of the $R$-algebra
 $\mathrm{End}_{\mathbf{C}}(A_{n+1})$, the standard idempotent splitting
 gives a direct sum decomposition
@@ -26,11 +25,11 @@ For item (1), let $\alpha \in \mathrm{End}_{\mathbf{C}}(A_{n+1})$ lie
 in the image of the ascent $\ell_n$: $\alpha = \ell_n(\beta)$ for some
 $\beta \in \mathrm{End}_{\mathbf{C}}(A_n)$.  Bosonic modes are
 characterised categorically by the
-([algebraic filter](#rem:algebraic-filter)) as those commuting with the
+([algebraic filter](#rem\:algebraic-filter)) as those commuting with the
 categorical curvature.  Then
 $\hat{\tau}_n(\alpha) = \ell_n(\mathfrak{d}_{n+1}(\ell_n(\beta))) = \ell_n(\beta) = \alpha$,
 using $\mathfrak{d}_{n+1} \circ \ell_n = \mathrm{id}$
-([descent](#lem:descent)).  Hence $\alpha \in \mathcal{A}_{n+1}^{\mathrm{desc}}$.
+([:refterm[descent]{#descent}](#lem\:descent)).  Hence $\alpha \in \mathcal{A}_{n+1}^{\mathrm{desc}}$.
 
 For item (2), an endomorphism $\alpha \in \mathrm{End}_{\mathbf{C}}(A_{n+1})$ that does not factor through
 level $n$ satisfies $\mathfrak{d}_{n+1}(\alpha) = 0$ in

@@ -1,5 +1,5 @@
-**:defterm[Left dual]{#left-dual}.** An object $Y$ in a monoidal category has a *left dual*
-if there exists an object $X$ and an exact pairing $(X, Y)$ — that is,
+**:defterm[Left dual]{#left-dual}.** An object $Y$ in a :refterm[monoidal category]{#monoidal-category} has a *left dual*
+if there exists an object $X$ and an :refterm[exact pairing]{#exact-pairing} $(X, Y)$ — that is,
 $X$ is the left dual of $Y$.
 
 In practice, `HasLeftDual Y` asserts the existence of an `ExactPairing`

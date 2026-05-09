@@ -1,5 +1,4 @@
-
-The hexagon axioms of a braided monoidal category guarantee that
+The hexagon axioms of a :refterm[braided monoidal category]{#braided-monoidal-category} guarantee that
 $c_{V,V}$ satisfies the Yang--Baxter equation
 
 $$

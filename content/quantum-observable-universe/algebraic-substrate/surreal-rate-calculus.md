@@ -33,7 +33,14 @@ Here $\asymp$ means "equal up to a strictly positive standard-real
 prefactor", so the **order** of each quantity in $\varepsilon$ is an
 invariant of the substrate, independent of normalization conventions.
 
-**Proposition (Surreal rate calculus).** *In $\mathbb{R}(\varepsilon)$,
+**Proposition (conditional on
+[`conj:q-aubin-lions`](#conj:q-aubin-lions),
+[`conj:ns-counterexample`](#conj:ns-counterexample),
+[`conj:critical-exponent`](#conj:critical-exponent),
+[`conj:blowup-yekutieli`](#conj:blowup-yekutieli),
+and
+[`conj:regularity-breakdown`](#conj:regularity-breakdown);
+"Surreal rate calculus").** *In $\mathbb{R}(\varepsilon)$,
 the following strict inequalities hold:*
 
 1. *Positivity:* $\Delta_q > 0$ and $\Omega_q > 0$.

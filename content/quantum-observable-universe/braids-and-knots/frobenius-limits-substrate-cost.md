@@ -1,6 +1,6 @@
 **Remark.**
 *The Frobenius co-Casimir trace
-([universal Frobenius co-dimension](#thm:frobenius-codim-universal))*
+([universal Frobenius co-dimension](#thm\:frobenius-codim-universal))*
 
 $$
   \tau(C_{\dim_q}^{H_n(R, q)}) \;=\; \sum_{\lambda \,\vdash\, n} \frac{1}{\dim_q(\lambda)}
@@ -13,12 +13,12 @@ being processed.*
 
 **Limits (verified symbolically for $n = 3, 4, 5, 6$).**
 
-| $n$ | $q \to 0^+$ | $q = 1$ (classical) | $q_0 = 1.110$ | $q \to \infty$ |
-|---|---|---|---|---|
-| $3$ | $2$ | $5/2 = 2.500$ | $2.497$ | $2$ |
-| $4$ | $2$ | $19/6 \approx 3.167$ | $3.146$ | $2$ |
-| $5$ | $2$ | $46/15 \approx 3.067$ | $3.031$ | $2$ |
-| $6$ | $2$ | $473/144 \approx 3.285$ | $3.202$ | $2$ |
+| $n$ | $q \to 0^+$ | $q = 1$ (classical)     | $q_0 = 1.110$ | $q \to \infty$ |
+| --- | ----------- | ----------------------- | ------------- | -------------- |
+| $3$ | $2$         | $5/2 = 2.500$           | $2.497$       | $2$            |
+| $4$ | $2$         | $19/6 \approx 3.167$    | $3.146$       | $2$            |
+| $5$ | $2$         | $46/15 \approx 3.067$   | $3.031$       | $2$            |
+| $6$ | $2$         | $473/144 \approx 3.285$ | $3.202$       | $2$            |
 
 **Universal features:**
 
@@ -76,7 +76,7 @@ done.  Candidates and what they would require:*
    $m_e \cdot \tau(C_{\dim_q})$ to create any vortex.  No such
    argument has been constructed in this paper.*
 3. *Entropic-gravity analog (following
-   [entropic gravity](#rem:entropic-gravity)): would need
+   [entropic gravity](#rem\:entropic-gravity)): would need
    a holographic boundary computation yielding
    $\tau(C_{\dim_q})$ from an area law.*
 
@@ -88,7 +88,7 @@ limit structure is real; the physical reading is a conjecture.*
 
 *Where $\tau(C_{\dim_q})$ is vortex-independent substrate cost,
 the **brane tower**
-([mass endomorphism tower](#prop:mass-endomorphism-tower))*
+([mass endomorphism tower](#prop\:mass-endomorphism-tower))*
 
 $$
   \sum_i \Phi_q(|\hat V_i^{\mathrm{full}}|)
@@ -104,11 +104,11 @@ is the total computational work for that vortex.*
 
 *Contrast:*
 
-| piece | depends on | physical role |
-|---|---|---|
-| descended $\|\mathrm{tr}_M(T_w)\|$ | $T_w$, $q$ | "output amplitude" of the computation |
-| brane tower $\sum \Phi_q$ | $T_w$, $q$ | "processing cost" for that braid |
-| Frobenius $m_e \cdot \tau(C_{\dim_q})$ | only $n$, $q$, $m_e$ | "vacuum / substrate overhead" |
+| piece                                  | depends on           | physical role                         |
+| -------------------------------------- | -------------------- | ------------------------------------- |
+| descended $\|\mathrm{tr}_M(T_w)\|$     | $T_w$, $q$           | "output amplitude" of the computation |
+| brane tower $\sum \Phi_q$              | $T_w$, $q$           | "processing cost" for that braid      |
+| Frobenius $m_e \cdot \tau(C_{\dim_q})$ | only $n$, $q$, $m_e$ | "vacuum / substrate overhead"         |
 
 *The Landauer analogy: Frobenius = minimum energy to erase a
 bit ($k_B T \ln 2$); brane tower = energy to actually do the
@@ -121,9 +121,9 @@ up to the Frobenius bound.*
 the Hecke-algebra transfer matrices: $\Phi_q$, $[k]_q$,
 $z = 1/(q^{1/2} + q^{-1/2})$, and intermediate $\hat V_i$.  The
 only calibration that enters the unified mass formula
-([unified knot mass](#thm:knot-mass-formula-unified)) is $m_e$
+([unified knot mass](#thm\:knot-mass-formula-unified)) is $m_e$
 (equivalently $E_0$ via $\beta$-decay, or $m_\mu/m_e$ via
-[local substrate](#prop:local-substrate-q)).*
+[local substrate](#prop\:local-substrate-q)).*
 
 *Derived substrate constants — $\hbar_q = (q-1)/q$, $c_q = 1/(q-1)$,
 $G(q)$, $\eta_q$, $\chi_q$ — are all **functions of $q$ alone**,
@@ -149,18 +149,18 @@ formula $\dim_q((2,1)) = [2]_q \neq 2$.*
 
 **As $q$ moves:**
 
-- *$q \to 1$: substrate "heats up" to classical; vacuum cost
+* *$q \to 1$: substrate "heats up" to classical; vacuum cost
   rises to $\sum 1/d_\lambda$.  All representation channels
   become equally accessible (no $q$-suppression of middle
   partitions).*
-- *$q \to 0$ or $q \to \infty$: substrate "freezes" to the
+* \*$q \to 0$ or $q \to \infty$: substrate "freezes" to the
   self-dual endpoints; vacuum cost drops to $2 m_e$.  Middle
   representation channels are suppressed (their $1/\dim_q \to 0$
   because $\dim_q \to \infty$).  The substrate becomes "bosonic
-  + fermionic only" — no mixed statistics.*
-- *$q = q_0 \approx 1.11$: substrate sits in the intermediate
+  * fermionic only" — no mixed statistics.\*
+* *$q = q_0 \approx 1.11$: substrate sits in the intermediate
   regime, with mixed statistics slightly reduced from classical.
-  This is the observed value where nucleons + nuclei actually
+  This is the :refterm[observed value]{#observed-value} where nucleons + nuclei actually
   exist.*
 
 **Open: relation to Landauer / information-theoretic bounds.**

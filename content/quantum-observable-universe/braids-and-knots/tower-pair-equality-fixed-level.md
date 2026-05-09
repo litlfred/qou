@@ -1,5 +1,5 @@
 The jet-tower mass formula
-([rem:mass-endomorphism-jet-tower](#rem:mass-endomorphism-jet-tower))
+([rem:mass-endomorphism-jet-tower](#rem\:mass-endomorphism-jet-tower))
 contains a pair contribution
 
 $$
@@ -20,7 +20,7 @@ audit GAP 17b by replacing the bound with an equality.
 *Let $n \in \mathbb{N}$ be a brane jet level and let
 $\mathcal{P}_n = \{(i, j) : 0 \le i < j\}$ be the full set of
 unordered pair blow-up centres at jet level $n$
-([rem:mass-endomorphism-jet-tower §$\mathcal{P}_n$ all-pairs](#rem:mass-endomorphism-jet-tower)).
+([rem:mass-endomorphism-jet-tower §$\mathcal{P}_n$ all-pairs](#rem\:mass-endomorphism-jet-tower)).
 Then the pair contribution at level $n$ is the **exact** value*
 
 $$
@@ -37,7 +37,7 @@ inequality.*
 
 The original "upper bound" framing came from the pentagon-ascension
 argument. By
-[`lem:vhat-pair-commutation-trace`](#lem:vhat-pair-commutation-trace)
+[`lem:vhat-pair-commutation-trace`](#lem\:vhat-pair-commutation-trace)
 (P3.2), the pentagon identity in its operator form does **not** apply
 to scalar traced volumes $\hat V_i \in \mathbb{Z}[q^{\pm 1/2}, z]$;
 it applies only to inter-level operator lifts. Hence the pentagon
@@ -46,7 +46,7 @@ contribution. The bound was vacuous to begin with.
 
 The actual algebraic content of the pair contribution is the
 **Markov-pair identity**
-[`prop:markov-pair-z2`](#prop:markov-pair-z2):
+[`prop:markov-pair-z2`](#prop\:markov-pair-z2):
 
 $$
   \mathrm{tr}_M\!\bigl(\sigma_i \sigma_j\bigr) \;=\; z^2
@@ -57,27 +57,27 @@ which is an exact equality (proved by Markov peel, no inequality
 involved). Lifting this from raw braid generators $\sigma_i$ to
 traced volumes $\hat V_i^{(n)}$ via the algebraic-quantum-volume
 factorization
-([`def:algebraic-quantum-volume`](#def:algebraic-quantum-volume)) and
+([`def:algebraic-quantum-volume`](#def\:algebraic-quantum-volume)) and
 the Markov-trace factorization theorem
-([`thm:markov-trace-factorization`](#thm:markov-trace-factorization))
+([`thm:markov-trace-factorization`](#thm\:markov-trace-factorization))
 preserves the equality at every jet level $n$.
 
 ## Proof
 
 By the Markov-trace factorization theorem
-([`thm:markov-trace-factorization`](#thm:markov-trace-factorization)),
+([`thm:markov-trace-factorization`](#thm\:markov-trace-factorization)),
 the level-$n$ Markov trace of a product of factors decomposes as a
 sum over subset structures with weights determined by the Markov
 parameter $z$. For a pair $(i, j) \in \mathcal{P}_n$, the
 two-factor subset contributes the weight $z^2$ (from
-[`prop:markov-pair-z2`](#prop:markov-pair-z2): $\mathrm{tr}_M(\sigma_i \sigma_j) = z \cdot z = z^2$,
+[`prop:markov-pair-z2`](#prop\:markov-pair-z2): $\mathrm{tr}_M(\sigma_i \sigma_j) = z \cdot z = z^2$,
 adjacent or not). The dilogarithm $\Phi_q$ applied to the absolute
 value of the pair product $|\hat V_i^{(n)} \hat V_j^{(n)}|$ is the
 quantum-dilogarithm regularization of the pair's contribution to the
 jet-tower mass.
 
 Pair commutativity
-[`lem:vhat-pair-commutation-trace`](#lem:vhat-pair-commutation-trace)
+[`lem:vhat-pair-commutation-trace`](#lem\:vhat-pair-commutation-trace)
 ensures the pair index $(i, j)$ vs $(j, i)$ does not double-count
 (the absolute value $|\hat V_i^{(n)} \hat V_j^{(n)}| = |\hat V_j^{(n)} \hat V_i^{(n)}|$
 is symmetric). Summing over $\mathcal{P}_n$ — the set of unordered
@@ -95,7 +95,7 @@ as an exact equality. $\square$
 ## What the empirical residual is, then
 
 The empirical table on light atoms
-([rem:mass-endomorphism-jet-tower §all-pairs vs adjacent error](#rem:mass-endomorphism-jet-tower))
+([rem:mass-endomorphism-jet-tower §all-pairs vs adjacent error](#rem\:mass-endomorphism-jet-tower))
 shows that the all-pairs sum at jet level $0$ leaves a sub-1%
 residual to CODATA — e.g., $0.57\%$ for $^6\mathrm{Li}$, $0.86\%$
 for $^{16}\mathrm{O}$. The lemma above says **this residual is not
@@ -105,7 +105,7 @@ contribution** of the brane tower not yet captured by the level-$0$
 truncation.
 
 This is consistent with the jet-tower formula
-([eq:jet-tower-mass](#rem:mass-endomorphism-jet-tower)):
+([eq:jet-tower-mass](#rem\:mass-endomorphism-jet-tower)):
 
 $$
   \mathfrak{m}(\varrho)
@@ -121,18 +121,18 @@ $$
 
 Each term is exact at its level; the truncation error at level $N$
 is bounded by
-[`prop:jet-tower-convergence`](#prop:jet-tower-convergence) at
+[`prop:jet-tower-convergence`](#prop\:jet-tower-convergence) at
 $\le \Delta_{\max}\,\hbar_q^{2(N+1)} / (1 - \hbar_q^2)$ once the
 uniform $\Delta_{\max}$ bound is established (P3.4 in the workplan,
 still open).
 
 ## Status
 
-🟢 **Provable** — the lemma's content is `prop:markov-pair-z2`
+**Status: provable** — the lemma's content is `prop:markov-pair-z2`
 plus pair commutativity
-([`lem:vhat-pair-commutation-trace`](#lem:vhat-pair-commutation-trace))
+([`lem:vhat-pair-commutation-trace`](#lem\:vhat-pair-commutation-trace))
 plus Markov-trace factorization
-([`thm:markov-trace-factorization`](#thm:markov-trace-factorization)),
+([`thm:markov-trace-factorization`](#thm\:markov-trace-factorization)),
 all of which are themselves provable. The corresponding Lean stub
 [qou:QOU.BraidKnot.TowerPairEqualityFixedLevel](tower-pair-equality-fixed-level.lean)
 states the lemma in the abstract form `tr_M(prod over P_n) = z²·(sum
@@ -140,7 +140,7 @@ of dilogs)` and reduces to those upstream lemmas.
 
 This block closes audit GAP 17b
 ([line 114 of `derivation-audit-2026-04-20.md`](../../../docs/audits/derivation-audit-2026-04-20.md))
-and the corresponding "Descent involution on pairs / pentagon
+and the corresponding ":refterm[Descent]{#descent} involution on pairs / pentagon
 sharpness" subconjecture: the level-$n$ pair formula is an exact
 equality. The empirical residual to CODATA at light atoms reflects
 incomplete tower truncation (level $\ge 1$ contributions), not a
@@ -148,5 +148,5 @@ sharpness gap in the level-$n$ formula.
 
 The remaining open piece is the uniform $\Delta_{\max}$ bound for
 the truncation-error formula
-([`prop:jet-tower-convergence`](#prop:jet-tower-convergence)),
+([`prop:jet-tower-convergence`](#prop\:jet-tower-convergence)),
 tracked as workplan task **P3.4**.

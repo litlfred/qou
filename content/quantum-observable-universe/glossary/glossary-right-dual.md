@@ -1,5 +1,5 @@
-**:defterm[Right dual]{#right-dual}.** An object $X$ in a monoidal category has a *right dual*
-if there exists an object $Y$ and an exact pairing $(X, Y)$ — that is,
+**:defterm[Right dual]{#right-dual}.** An object $X$ in a :refterm[monoidal category]{#monoidal-category} has a *right dual*
+if there exists an object $Y$ and an :refterm[exact pairing]{#exact-pairing} $(X, Y)$ — that is,
 $Y$ is the right dual of $X$.
 
 The paper's notation $V^{\vee}$ corresponds to a right dual. When the

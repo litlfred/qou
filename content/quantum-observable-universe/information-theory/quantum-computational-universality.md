@@ -1,17 +1,17 @@
 **Conjecture.**
 *Let $\beta$ be a braid on $n$ strands with $c = 3N$ crossings,
 encoding a reversible computation of $N$ Toffoli gates
-([Toffoli transfer matrix](#prop:toffoli-transfer-matrix)).
+([Toffoli transfer matrix](#prop\:toffoli-transfer-matrix)).
 Let $P_L(q)$ be the Skein polynomial of the braid closure
 $\hat{\beta}$, with $\deg P_L \leq c^2 - 1$
-([transfer matrix product](#prop:skein-polynomial-transfer-matrix)).*
+([transfer matrix product](#prop\:skein-polynomial-transfer-matrix)).*
 
 *Then:*
 
 1. **(Quadratic level.)** *There exists a root of unity
    $q_k = e^{2\pi i/(k+2)}$ with $k \geq 3$ and*
 
-   $$k + 2  \leq  c^2 - 1$$
+   $k + 2  \leq  c^2 - 1$
 
    *such that $P_L(q_k) \neq 0$ — the Skein polynomial does
    not degenerate at $q_k$.  The level $k$ grows
@@ -28,9 +28,9 @@ $\hat{\beta}$, with $\deg P_L \leq c^2 - 1$
    with $N$ gates can be approximated to precision $\epsilon$
    by a braid $\beta$ with $c = O(N \cdot \mathrm{polylog}(1/\epsilon))$ crossings.*
 
-3. **(Descent projects quantum to classical.)** *The descent
+3. **(:refterm[Descent]{#descent} projects quantum to classical.)** *The :refterm[descent]{#descent}
    involution $\hat{\tau}$
-   ([descent involution](#def:descent-involution)) decomposes
+   ([:refterm[descent]{#descent} involution](#def\:descent-involution)) decomposes
    the endomorphism algebra at the root-of-unity level into*
 
    $$
@@ -39,7 +39,7 @@ $\hat{\beta}$, with $\deg P_L \leq c^2 - 1$
      \mathcal{A}^{\mathrm{desc}}  \oplus  \mathcal{A}^{\mathrm{trans}}
    $$
 
-   *([descent eigenspaces](#prop:descent-eigenspaces)).
+   *([:refterm[descent]{#descent} eigenspaces](#prop\:descent-eigenspaces)).
    The descended subalgebra $\mathcal{A}^{\mathrm{desc}} = \mathrm{im}\hat{\tau}$ is the classical shadow — the
    Toffoli computation at real $q$.  The transient complement
    $\mathcal{A}^{\mathrm{trans}} = \ker\hat{\tau}$ carries
@@ -55,7 +55,7 @@ $\hat{\beta}$, with $\deg P_L \leq c^2 - 1$
    computation is the crossing number $c$ of the braid
    closure — the minimum jet order at which the computation
    first becomes resolvable
-   ([jet–Planck steps](#rem:jet-planck-steps)).  The Skein
+   ([jet–Planck steps](#rem\:jet-planck-steps)).  The Skein
    polynomial encodes up to $c^2 - 1$ independent
    coefficients (the full quantum state); the factored form
    $P_L(q) = \prod_i \hat{V}_i(q)$ compresses this to
@@ -64,10 +64,10 @@ $\hat{\beta}$, with $\deg P_L \leq c^2 - 1$
 *The flow from real $q$ to the root of unity $q_k$ is the
 **lifting** of a classical computation to its quantum
 completion
-([complex substrate](#rem:complex-substrate-interpretation)):
+([complex substrate](#rem\:complex-substrate-interpretation)):
 $q$ leaves the real axis, traverses the complex plane, and
 arrives at a point on the unit circle where the full density
-of $\mathrm{SU}(2^n)$ becomes available.  The descent
+of $\mathrm{SU}(2^n)$ becomes available.  The :refterm[descent]{#descent}
 involution projects back.  The round-trip*
 
 $$
@@ -79,4 +79,4 @@ $$
 $$
 
 *is the quantum computation: the lift explores the full
-Hilbert space; the descent collapses it to the observable.*
+Hilbert space; the :refterm[descent]{#descent} collapses it to the observable.*

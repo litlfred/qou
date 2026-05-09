@@ -54,6 +54,8 @@ on:
       - "folio-assistant/computations/*.derivation.json"
       - "scripts/audit-wiring.ts"
       - "scripts/audit-wiring-migrate.ts"
+      - "content/pipeline/trivial-skeleton-audit.ts"
+      - "content/quantum-observable-universe/**/*.lean"
       - ".github/workflows/witness-pipeline.yml"
   push:
     branches: [main]
@@ -82,6 +84,8 @@ on:
       - "folio-assistant/computations/*.derivation.json"
       - "scripts/audit-wiring.ts"
       - "scripts/audit-wiring-migrate.ts"
+      - "content/pipeline/trivial-skeleton-audit.ts"
+      - "content/quantum-observable-universe/**/*.lean"
       - ".github/workflows/witness-pipeline.yml"
   workflow_dispatch:
 
@@ -262,6 +266,59 @@ jobs:
           curl -fsSL https://bun.sh/install | bash
           export PATH="$HOME/.bun/bin:$PATH"
           bun run scripts/audit-wiring.ts --warn-only
+
+      - name: Trivial-skeleton audit (baseline-strict)
+        # Flags `.lean` declarations whose body is a tautological
+        # constant — the def/instance is Lean-verified but encodes
+        # none of the conjectural content.  Spec-compliant under
+        # CLAUDE.md §3b-cond ("class is inhabited") but should be
+        # upgraded to faithful instances as the genuine mathematics
+        # is formalised.
+        #
+        # Patterns: const_zero, prop_true, punit_type, punit_unit,
+        # one_def, id_def, *skeleton/*trivial instances, holds_trivial.
+        #
+        # **Baseline-strict mode**: per-pattern budgets are pinned at
+        # the current counts (108 flagged total).  Any *new* trivial
+        # skeleton beyond the baseline fails CI.  As Buckets 1–4 land
+        # (workplan: docs/audits/2026-05-08-trivial-skeleton-workplan.md
+        # §"Buckets"), this section's budgets should be tightened
+        # accordingly.
+        #
+        # To re-baseline after a clean-up PR: drop the corresponding
+        # `name=N` entry's value to the post-clean-up count.
+        run: |
+          export PATH="$HOME/.bun/bin:$PATH"
+          # Ensure the script's deps (glob) resolve against
+          # content/package.json by running with --cwd content.
+          set -o pipefail
+          # Baselines (re-baseline after each clean-up parcel):
+          # 2026-05-08 (latest): Buckets 1+2+3+4+5′ — total 111 → 62.
+          #   const_zero 38 → 34, skel_inst 21 → 12, prop_true 15 →  1
+          #   (only InSymmetricIdempotent, per-callsite by design),
+          #   punit_type 14 → 0 (B4 ✓), punit_unit 2 → 0 (B4 ✓),
+          #   one_def 10 → 9, holds_trivial 8 → 4.  +2 buffer per
+          #   pattern to absorb local/CI minor discrepancies.
+          #
+          # Strict-gate (B6): the `|| true` mask has been dropped.
+          # Any new trivial-skeleton occurrence beyond the budget
+          # below fails CI.  To re-baseline after a clean-up PR,
+          # drop the corresponding `name=N` entry to the post-clean-
+          # up count and update the comment above.
+          bun run --cwd content pipeline/trivial-skeleton-audit.ts \
+            --max-per-pattern \
+              "const_zero=3,skel_inst=2,prop_true=2,punit_type=2,one_def=2,holds_trivial=2,punit_unit=2,id_def=2,const_zero_typed=2,first_arg=12"
+
+      - name: §3b-cond conditional-class banner audit (strict)
+        run: |
+          # Enforces CLAUDE.md §3b-cond compliance: every conditional-
+          # on-class proposition must (a) carry a "Theorem (conditional
+          # on …)." banner in its .md, AND (b) carry the upstream
+          # conjecture's class as an explicit [Instance] hypothesis in
+          # its .lean.  PR #566 brought this to 12/12 fully compliant;
+          # CI gates against regression.
+          export PATH="$HOME/.bun/bin:$PATH"
+          bun run content/pipeline/conditional-class-banner-audit.ts --strict
 
       - name: Detect drift in committed witnesses
         run: |

@@ -1,14 +1,13 @@
 > **Summary.** Finite-time NS blowup is identified with a finite obstruction level $n^*$ in the Yekutieli brane tower at which a velocity field ceases to lift.
 > A counter-example is encoded by the cohomological address $(v_0, T^*, \Sigma, n^*, \kappa_{n^*})$, with the singular set $\Sigma$ controlled by local cohomology at the unit defect $z=1$.
 
-The [regularity breakdown](#conj:regularity-breakdown) at $q = 1$
+The [regularity breakdown](#conj\:regularity-breakdown) at $q = 1$
 is a **cohomological obstruction** in the
-[Yekutieli lifting](#prop:yekutieli-lifting) framework.
+[Yekutieli lifting](#prop\:yekutieli-lifting) framework.
 
 ## Yekutieli tower and regularity
 
-
-The [recursive brane tower](#def:recursive-brane-tower)
+The [recursive brane tower](#def\:recursive-brane-tower)
 $\{A_n\}_{n \geq 0}$ with jet prolongations
 $A_n \hookrightarrow A_{n+1}$ produces a sequence of central
 extensions of gerbes
@@ -22,7 +21,7 @@ $$
 
 each carrying an obstruction class
 $\kappa_n \in H^2(\mathcal{S}, \mathcal{B})$
-([quantum characteristic classes](#def:quantum-characteristic-classes)).
+([quantum characteristic classes](#def\:quantum-characteristic-classes)).
 A velocity field $v$ on the state bundle $\mathcal{S}$ is
 **smooth** (infinitely differentiable) if and only if it lifts
 through the entire tower — i.e. $v$ admits a compatible
@@ -37,7 +36,7 @@ $$
 ## Regularity as lifting
 
 **Regularity as lifting.**
-The [q-NS solution](#thm:q-ns-wellposedness) $v_q(t)$ is smooth
+The [q-NS solution](#thm\:q-ns-wellposedness) $v_q(t)$ is smooth
 for $q > 1$ because the exponential damping of high modes ensures
 $v_q$ has exponentially decaying Fourier coefficients, which
 guarantees all Yekutieli obstruction classes vanish:
@@ -81,11 +80,11 @@ $$
 This is the level in the brane tower where the velocity field
 ceases to lift.  The blowup is localised at this level:
 
-- **Below $n^*$**: the velocity is smooth and lifts perfectly.
-- **At $n^*$**: the obstruction class $\kappa_{n^*}$ is nonzero
+* **Below $n^*$**: the velocity is smooth and lifts perfectly.
+* **At $n^*$**: the obstruction class $\kappa_{n^*}$ is nonzero
   — the twisted 2-cocycle condition
-  ([descent condition](#prop:descent-condition)) fails.
-- **Above $n^*$**: the solution does not exist in those gerbes.
+  ([:refterm[descent]{#descent} condition](#prop\:descent-condition)) fails.
+* **Above $n^*$**: the solution does not exist in those gerbes.
 
 ## Cohomological address of a counter-example
 
@@ -111,16 +110,16 @@ consisting of:
 The Hausdorff dimension $d_H(\Sigma)$ and the obstruction level
 $n^*$ are related by Sobolev embedding:
 
-| $d_H(\Sigma)$ | Blowup geometry | $n^*$ | Singular $H^s$ |
-|---|---|---|---|
-| $0$ | Point | $\geq 3$ | $s^* < 3/2$ |
-| $1$ | Filament | $\geq 2$ | $s^* < 2$ |
-| $2$ | Sheet | $\geq 1$ | $s^* < 5/2$ |
+| $d_H(\Sigma)$ | Blowup geometry | $n^*$    | Singular $H^s$ |
+| ------------- | --------------- | -------- | -------------- |
+| $0$           | Point           | $\geq 3$ | $s^* < 3/2$    |
+| $1$           | Filament        | $\geq 2$ | $s^* < 2$      |
+| $2$           | Sheet           | $\geq 1$ | $s^* < 5/2$    |
 
 ## Local cohomology and topological selection
 
 **The local cohomology connection.**
-The [local cohomology group](#def:local-cohomology-group)
+The [local cohomology group](#def\:local-cohomology-group)
 $H^1_{\mathfrak{m}_1}(A)$ at the unit defect $z = 1$ measures
 precisely the obstruction to extending sections across the
 singularity.  At $q = 1$, the defect locus $\{z = 1\}$ is the
@@ -142,8 +141,8 @@ For $q > 1$, the defect locus $\{z = q^{-1}\} \neq \{z = 1\}$
 is separated from the unit, and $H^1_{\mathfrak{m}_1}(A) = 0$
 — no obstruction, hence regularity.
 
-**The descent condition and vortex reconnection.**
-The [twisted 2-cocycle condition](#prop:descent-condition)
+**The :refterm[descent]{#descent} condition and vortex reconnection.**
+The [twisted 2-cocycle condition](#prop\:descent-condition)
 
 $$
   d(g_{ijk}^{(n)}) = a_{ij}^{(n)} \cdot g_{ijk}^{(n)}
@@ -153,7 +152,7 @@ $$
 fails at the singular set $\Sigma$ because the transition
 functions $g_{ij}^{(n)}$ develop discontinuities there.  In the
 fluid picture, these discontinuities correspond to
-[vortex reconnection](#rem:vortex-reconnection) events where the
+[vortex reconnection](#rem\:vortex-reconnection) events where the
 divisor topology changes.  The obstruction class $\kappa_{n^*}$
 measures the total topological change at $\Sigma$: it is the
 net "reconnection charge" — the signed count of reconnection
@@ -176,4 +175,3 @@ discrete lattice.  This is a **topological selection rule** on
 the blowup: not all vorticity concentrations are allowed, only
 those whose cohomological charge is compatible with the
 categorical structure.
-

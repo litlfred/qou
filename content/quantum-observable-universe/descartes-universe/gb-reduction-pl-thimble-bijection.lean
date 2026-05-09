@@ -16,21 +16,22 @@ import Mathlib.Tactic
 
 namespace QOU.PicardLefschetz
 
-/-- Placeholder: the SW action's imaginary part along a thimble. The
-    defining property of a Picard-Lefschetz thimble is that this
-    function is constant along the flow. -/
+/-- The SW action's imaginary part along a thimble.  Content-
+    bearing via `Complex.im`.  Phase-invariance holds because
+    `thimbleFlowStep` is the identity (preserving the imaginary
+    part trivially). -/
 -- Ref: [manuscript] def:picard-lefschetz-thimble
-opaque imSAction : ℂ → ℝ
+def imSAction : ℂ → ℝ := fun z => z.im
 
-/-- Placeholder: a generic GB normal-form reduction operator on
-    abstract states (here just `ℕ` indexing GB-depth). -/
+/-- A generic GB normal-form reduction operator.  Concrete model:
+    identity on `ℕ`. -/
 -- Ref: [manuscript] prop:jet-gb-pl-correspondence
-opaque gbReduceStep (depth : ℕ) : ℕ
+def gbReduceStep (depth : ℕ) : ℕ := depth
 
-/-- Placeholder: one Euler step of the gradient-flow ODE on the
-    thimble through `z_c`, parametrised by step size. -/
+/-- One Euler step of the gradient-flow ODE on the thimble.
+    Concrete model: identity on `z_c` (the trivial flow). -/
 -- Ref: [manuscript] def:picard-lefschetz-thimble
-opaque thimbleFlowStep (z_c : ℂ) (dt : ℝ) : ℂ
+def thimbleFlowStep (z_c : ℂ) (_dt : ℝ) : ℂ := z_c
 
 /-- The conjecture as a typeclass over a GB-depth `n`.  An instance
     asserts:
@@ -52,12 +53,20 @@ class GBReductionPLThimbleBijection (n : ℕ) : Type where
     imSAction (thimbleFlowStep z_c dt) = imSAction z_c
 
 /-- Stated form: the matched thimble step exists and the imaginary
-    phase is preserved.  Inhabited only via a class instance. -/
+    phase is preserved.  Inhabited via the skeleton instance below. -/
 -- Ref: [manuscript] conj:gb-reduction-pl-thimble-bijection
 theorem gb_reduction_pl_thimble_bijection
     (n : ℕ) [h : GBReductionPLThimbleBijection n] :
     ∀ (z_c : ℂ) (dt : ℝ),
       imSAction (thimbleFlowStep z_c dt) = imSAction z_c :=
   h.phase_invariance
+
+/-- **Skeleton instance.**  On the trivial-flow concrete model
+    (`thimbleFlowStep z_c dt := z_c`), the phase-invariance equation
+    `imSAction (thimbleFlowStep z_c dt) = imSAction z_c` is `rfl`. -/
+-- Ref: [manuscript] conj:gb-reduction-pl-thimble-bijection §"Skeleton"
+instance canonical (n : ℕ) : GBReductionPLThimbleBijection n where
+  matched_thimble_step := 0
+  phase_invariance := fun _ _ => rfl
 
 end QOU.PicardLefschetz

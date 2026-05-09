@@ -1,5 +1,5 @@
 The Hoefsmit / matrix-evaluation programme
-([prop:magic-numbers-from-q](#prop:magic-numbers-from-q),
+([prop:magic-numbers-from-q](#prop\:magic-numbers-from-q),
 [prop:hoefsmit-seminormal-form](../braids-and-knots/hoefsmit-seminormal-form.md))
 verifies the magic-number ladder at small partition sizes
 $k = 3, \dots, 10$ by direct computation of Wedderburn weights from
@@ -13,7 +13,7 @@ The algebraic refactor analytically bypasses this barrier. The
 homological-condensation conjecture
 ([`conj:homological-shell-condensation`](../lifting-and-descent/homological-shell-condensation.md))
 and the LR-fusion-rigidity conjecture
-([`conj:diagrammatic-double-magic-lr-fusion`](#conj:diagrammatic-double-magic-lr-fusion))
+([`conj:diagrammatic-double-magic-lr-fusion`](#conj\:diagrammatic-double-magic-lr-fusion))
 predict the saturated-shell pattern by *structural* arguments
 about the Białynicki-Birula stratification and the LR-content-sum
 arithmetic on Young's lattice — both of which are *partition-size
@@ -25,11 +25,11 @@ at $n = 50, 82, 126$ once the underlying conjectures are accepted.
 The matrix-evaluation programme produces, for each
 $n \leq 10$ and each $\lambda \vdash n$:
 
-- the seminormal-form matrices for $\sigma_1, \dots, \sigma_{n-1}$
+* the seminormal-form matrices for $\sigma_1, \dots, \sigma_{n-1}$
   acting on $V_\lambda$,
-- the full-twist eigenvalue $q^{c(\lambda)}$ via direct multiplication,
-- the BB-stratified spectral-sequence entries $E_\infty^{p, q}(n)$
-  by computing the descent-graded jet algebra at level $n$ and
+* the full-twist eigenvalue $q^{c(\lambda)}$ via direct multiplication,
+* the BB-stratified spectral-sequence entries $E_\infty^{p, q}(n)$
+  by computing the :refterm[descent]{#descent}-graded jet algebra at level $n$ and
   reading off cohomology.
 
 At $n \in \{2, 8\}$ (and partial coverage of $n = 20$ via
@@ -75,7 +75,7 @@ combinatorial objects with the categorical mass support.
 ## Empirical-verification reframing
 
 The historical empirical scorecard
-([prop:magic-numbers-from-q](#prop:magic-numbers-from-q)) records
+([prop:magic-numbers-from-q](#prop\:magic-numbers-from-q)) records
 agreement deltas $+33.2, +20.4, +4.4$ between framework predictions
 and CODATA at $\{2, 8, 20\}$. Under the refactor these deltas are
 **empirical computational verifications** of the homological

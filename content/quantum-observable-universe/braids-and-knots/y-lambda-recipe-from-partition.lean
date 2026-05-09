@@ -112,7 +112,7 @@ noncomputable def yLambdaRecipe {R : Type u} [Field R]
 
     Two distinct formulas for `tr_M = Σ_λ y_λ · χ_λ` circulate in
     the codebase (per the audit at
-    `docs/audits/categorical-vs-fitted-q-decay-ba.md` §"⚠️ CRITICAL"):
+    `docs/audits/categorical-vs-fitted-q-decay-ba.md` §"CRITICAL"):
 
     - **Plancherel**: `y_λ = dim_q(λ)² / [n]_q!` weighted by
       `1 / dim_λ_classical`.

@@ -4,8 +4,8 @@ degenerations occur simultaneously:
 1. **Planck constant**: $\hbar_q = 1 - q^{-1} \to 0$.
 2. **$q$-differential**: $d_q \to d$ (the Jackson derivative becomes
    the ordinary derivative).
-3. **Braiding**: The braided monoidal category $\mathbf{C}_q$
-   degenerates to a symmetric monoidal category $\mathbf{C}_1$, as
+3. **Braiding**: The :refterm[braided monoidal category]{#braided-monoidal-category} $\mathbf{C}_q$
+   degenerates to a :refterm[symmetric monoidal category]{#symmetric-monoidal-category} $\mathbf{C}_1$, as
    the $R$-matrix $R(q) \to \mathrm{id} \otimes \mathrm{id}$.
 4. **Reeb period**: $\Omega_q \to \infty$ (the discrete Reeb flow
    becomes a continuous one-parameter group).

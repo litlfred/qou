@@ -22,23 +22,23 @@ $$
 $$
 
 was claimed to be a **consequence** of the merged spectral-completeness
-program. Subsequent audit ([conj:alpha-em-gluon-octet-form](#conj:alpha-em-gluon-octet-form))
+program. Subsequent audit ([conj:alpha-em-gluon-octet-form](#conj\:alpha-em-gluon-octet-form))
 shows this claim is **not yet supported**: only the integer $45$ has a
 full structural derivation; the factors $[3]_q$, $\hbar_q^4 [5]_q$, and
 $8q$ are unproved or post-hoc identifications, and the formula
 disagrees with the alternative Chern-Simons form
-([conj:em-coupling-chern-simons](#conj:em-coupling-chern-simons))
+([conj:em-coupling-chern-simons](#conj\:em-coupling-chern-simons))
 at every $q \ne q_0$. The form is presently a single-point empirical
 match, not a derivation. Each factor was originally claimed to be
 forced by:
 
-| Factor | Upstream block |
-|---|---|
-| The two-strand braiding has *exactly two* central idempotents $e_+, e_-$ summing to identity (Plancherel completeness $w_+ + w_- = 1$) | [em-spectral-completeness](#thm:em-spectral-completeness) |
-| Any $R$-linear scalar coupling $A^{\otimes 2} \to \mathbf{1}$ is a unique multiple of $\mathrm{tr}_\tau(e_-) \cdot e_-$; $\alpha_{EM}$ is determined up to global normalisation | [gauge-coupling-uniqueness](#cor:gauge-coupling-uniqueness) |
-| The force-carrier sector is exactly $\{T_{2,9},\, T_{3,5}\}$ with categorical complexity $[9]_q \cdot [10]_q$ — supplying the integers $9$ and $10$ that appear (numerically $45 = \binom{10}{2}$) | [force-carrier-bring-uniqueness](#prop:force-carrier-bring-uniqueness) |
-| The Chern--Simons coupling correction $\kappa$ is a closed Plancherel-weighted character product over Wedderburn blocks | [gram-determinant-plancherel-ratio](#prop:gram-determinant-plancherel-ratio) |
-| The strand-pair representation $\Lambda^2 V_\mathrm{nat}^{10}$ has dimension $\binom{10}{2} = 45$ as an $S_{10}$-irrep direct sum $V_{(9,1)} \oplus V_{(8,1,1)}$ | [exterior-square-borromean](#prop:exterior-square-borromean) |
+| Factor                                                                                                                                                                                             | Upstream block                                                                |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| The two-strand braiding has *exactly two* central idempotents $e_+, e_-$ summing to identity (Plancherel completeness $w_+ + w_- = 1$)                                                             | [em-spectral-completeness](#thm\:em-spectral-completeness)                    |
+| Any $R$-linear scalar coupling $A^{\otimes 2} \to \mathbf{1}$ is a unique multiple of $\mathrm{tr}_\tau(e_-) \cdot e_-$; $\alpha_{EM}$ is determined up to global normalisation                    | [gauge-coupling-uniqueness](#cor\:gauge-coupling-uniqueness)                  |
+| The force-carrier sector is exactly $\{T_{2,9},\, T_{3,5}\}$ with categorical complexity $[9]_q \cdot [10]_q$ — supplying the integers $9$ and $10$ that appear (numerically $45 = \binom{10}{2}$) | [force-carrier-bring-uniqueness](#prop\:force-carrier-bring-uniqueness)       |
+| The Chern--Simons coupling correction $\kappa$ is a closed Plancherel-weighted character product over Wedderburn blocks                                                                            | [gram-determinant-plancherel-ratio](#prop\:gram-determinant-plancherel-ratio) |
+| The strand-pair representation $\Lambda^2 V_\mathrm{nat}^{10}$ has dimension $\binom{10}{2} = 45$ as an $S_{10}$-irrep direct sum $V_{(9,1)} \oplus V_{(8,1,1)}$                                   | [exterior-square-borromean](#prop\:exterior-square-borromean)                 |
 
 **What this remark does (and does not) claim.**
 
@@ -46,7 +46,7 @@ forced by:
 upstream spectral-completeness program does **not yet** supply a rigorous
 derivation of the displayed closed form. The form is a PSLQ-uniqueness
 match in a 52-element basis at $q_0$; outside $q_0$ it disagrees with
-the Chern-Simons-descent form. Treat as conjectural empirical formula
+the Chern-Simons-:refterm[descent]{#descent} form. Treat as conjectural empirical formula
 until each factor is structurally derived.*
 
 **Numerical witness.**
@@ -62,7 +62,7 @@ empirical confirmation of the categorical-completeness derivation.
 
 *Earlier drafts attempted to derive $\delta_{CS} = \hbar_q^4 \cdot [5]_q$
 and the $8q$ prefactor as separate propositions. Both are now subsumed
-into [gram-determinant-plancherel-ratio](#prop:gram-determinant-plancherel-ratio):
+into [gram-determinant-plancherel-ratio](#prop\:gram-determinant-plancherel-ratio):
 $\delta_{CS}$ is the leading non-trivial term of the Plancherel-weighted
 character product expansion, and the $8q$ second-order coefficient
 follows from the same closed form via genus-$4$ torus-knot enumeration.

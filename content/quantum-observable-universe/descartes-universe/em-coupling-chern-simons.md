@@ -3,7 +3,7 @@
 The Chern--Simons level $k$ appearing in this proposition is not an
 independent input: by the existence proof for a quantum observable
 universe
-([QOU existence](#prop:quantum-observable-universe-exists)), choosing
+([QOU existence](#prop\:quantum-observable-universe-exists)), choosing
 $q = e^{\pi i/(k + h^{\vee})}$ makes $\mathbf{C} = \mathbf{Rep}_{k}(\widehat{\mathfrak{g}})$
 the modular tensor category that simultaneously fixes (a) the braiding
 used in the Skein relation and (b) the CS-level partition function on
@@ -14,7 +14,7 @@ $\mathrm{CS}(T_{m, n})$ through the single RT construction.  The
 proposition's numerical prediction specialises the shared object rather
 than combining two independently postulated quantities.
 
-**Conjecture (Chern-Simons descent correction, $\kappa$ unproved).**
+**Conjecture (Chern-Simons :refterm[descent]{#descent} correction, $\kappa$ unproved).**
 *The fine structure constant is conjectured to receive corrections from
 the Chern–Simons invariants of the force-carrier torus knots
 $T_{2,9}$ and $T_{3,5}$ on Bring's surface:*
@@ -53,10 +53,10 @@ truncation is incomplete and missing higher-order contributions.*
 *Proof sketch (does not close $\kappa$).*
 The bare coupling $\alpha = q^{-1}/([9]_q \cdot [10]_q)$ comes
 from the antisymmetric braiding eigenvalue (Layer 2 of
-[EM coupling projection](#prop:em-coupling-projection))
+[EM coupling projection](#prop\:em-coupling-projection))
 normalized by the force-carrier $q$-dimensions (Layer 3).
 
-The correction arises from the descent decomposition of the
+The correction arises from the :refterm[descent]{#descent} decomposition of the
 coupling endomorphism $P_{\mathrm{anti}}$ on the force-carrier
 configuration.  The torus knots $T_{2,9}$ (strong, 9 crossings)
 and $T_{3,5}$ (weak, 10 crossings) are non-hyperbolic torus knots,
@@ -101,4 +101,4 @@ the resulting $\kappa$ has not been computed end-to-end. A direct fit
 to CODATA gives $\kappa \approx 1.8878$, which suggests either the
 formula is missing a higher-order term or that this entire ansatz is
 the wrong decomposition. Closing $\kappa$ structurally is an open
-problem — see [open problems](#rem:alpha-em-derivation-open-problems).$\square$
+problem — see [open problems](#rem\:alpha-em-derivation-open-problems).$\square$

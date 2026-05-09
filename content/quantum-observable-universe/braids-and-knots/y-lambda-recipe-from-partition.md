@@ -150,10 +150,10 @@ $$
 $y_{(2)}(q_0) = (1.1097 + 1.110 + 1) / ((1.110 + 1)(1.232 + 1))
              = 3.220 / (2.110 \cdot 2.232) = 3.220 / 4.708 = 0.6839$ ?
 
-Wait — let me verify by exact computation: $q^{3/2} \approx 1.169$,
-so numerator $= 1.169 + 1.110 + 1 = 3.279$, and denominator
-$= 2.110 \cdot 2.232 = 4.710$, giving $y_{(2)} = 0.6963$, matching the
-witness $0.69632542$ exactly. ✓
+Re-evaluating exactly: $q^{3/2} \approx 1.169$, so the numerator
+is $1.169 + 1.110 + 1 = 3.279$ and the denominator is
+$2.110 \cdot 2.232 = 4.710$, giving $y_{(2)} \approx 0.6963$, in
+agreement with the witness value $0.69632542$.
 
 ## Algorithm summary (pseudocode)
 

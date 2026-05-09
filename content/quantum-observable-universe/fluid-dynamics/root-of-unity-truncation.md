@@ -1,3 +1,12 @@
+**Proposition (conditional on
+[`conj:q-aubin-lions`](#conj:q-aubin-lions),
+[`conj:ns-counterexample`](#conj:ns-counterexample),
+[`conj:critical-exponent`](#conj:critical-exponent),
+[`conj:blowup-yekutieli`](#conj:blowup-yekutieli),
+and
+[`conj:regularity-breakdown`](#conj:regularity-breakdown);
+"Root-of-unity truncation").**
+
 The [QOU axiom](#def:substrate-parameter) requires that $q$ is
 **not** a root of unity.  But the limit $q \to 1$ passes through
 a dense set of roots of unity, and at each root the

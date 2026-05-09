@@ -1,18 +1,18 @@
 Discrete time at the Planck scale
-([discrete Planck step](#rem:discrete-planck-step)) gives
+([discrete Planck step](#rem\:discrete-planck-step)) gives
 the universe discrete mathematics for free.  The iteration
 $f_q(z) = z^2 + c(q)$ at each Planck step is a polynomial
 map on a finite set — combinatorics, not analysis.  The
 Toffoli braid $P_{7,6}(q)$
-([Toffoli transfer matrix](#prop:toffoli-transfer-matrix))
+([Toffoli transfer matrix](#prop\:toffoli-transfer-matrix))
 is a rational function of the substrate parameter $q$ with
 a factor $(q - 1)$ in its numerator.  This means:
 
-- For all $q \neq 1$, the q-AND amplitude is **non-zero**.
-- The combinatorial structure that makes reversible
+* For all $q \neq 1$, the q-AND amplitude is **non-zero**.
+* The combinatorial structure that makes reversible
   computation possible is present at every value of $q$.
-- As the universe cools from the Big Bang ($q \to \infty$)
-  to our epoch ($q = q_0$, [local substrate $q$](#prop:local-substrate-q)), the amplitude decreases but
+* As the universe cools from the Big Bang ($q \to \infty$)
+  to our epoch ($q = q_0$, [local substrate $q$](#prop\:local-substrate-q)), the amplitude decreases but
   **never vanishes**.
 
 This is why computers can be built from stones, from beads
@@ -28,7 +28,7 @@ performed with pebbles in the Sahara and one performed with
 photons in a superconducting circuit inhabit the same
 Iwahori--Hecke algebra $H_n(q)$ at the same $q$.
 
-**Consistency under descent.**
+**Consistency under :refterm[descent]{#descent}.**
 The discrete combinatorics at the Planck scale must be
 consistent with the continuous physics of the local universe.
 This is guaranteed by the rationality of $P_{7,6}(q)$ in
@@ -42,7 +42,7 @@ reduces the amplitude $P_{7,6}$ and stretches the Planck
 step $t_P(q) = q/(q-1)$.
 
 At $q = q_0$
-([local substrate $q$](#prop:local-substrate-q)):
+([local substrate $q$](#prop\:local-substrate-q)):
 
 $$
   P_{7,6}(q_0) = +0.0495, \qquad

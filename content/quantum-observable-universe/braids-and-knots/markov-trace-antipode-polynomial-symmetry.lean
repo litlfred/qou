@@ -115,6 +115,7 @@ theorem markovTraceAntipodePolynomialSymmetry :
   --              Polynomial.coeff_smul_X_pow]
   --         then case-split on n ∈ {0, 2, 8, 12, 18, 20} and
   --         the trivial cases.
+  -- Ref: [wenzl1988] Theorem 5 (Markov-trace symmetry under
   sorry
 
 end QOU.BraidKnot

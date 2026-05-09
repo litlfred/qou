@@ -19,7 +19,7 @@ $$
 *with the leading factor $E_{\mathrm{Hartree}} = m_e c^{2}\,\alpha_{EM}^{2}$
 the Hartree energy.*
 
-> ### ⚠ Derivation status
+> ### Caveat — derivation status
 >
 > This proposition **is not derived from QOU/Hecke structure
 > alone**. The two factors of $\alpha_{EM}$ are argued by
@@ -206,7 +206,7 @@ $\alpha^2$ scaling).
 
 ### Round 9 — sharpened 4d: bound state ⟺ Hopf link ⟺ 2 crossings (WITHDRAWN in round 10)
 
-> ### ⚠ Round 9 withdrawn
+> ### Caveat — Round 9 (withdrawn)
 >
 > The Hopf-link → 2-crossings → $\alpha^2$ argument presented
 > below was **refuted in Round 10** (see

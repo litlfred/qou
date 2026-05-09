@@ -5,7 +5,7 @@ generality of the base ring $R$ and the braiding.
 **Axioms 1 and 3 (category and fibre functor).**
 Over a field of characteristic zero, Deligne's theorem
 \cite{deligne1990} shows that every $R$-linear rigid *symmetric*
-monoidal category with sub-exponential dimension growth admits a
+:refterm[monoidal category]{#monoidal-category} with sub-exponential dimension growth admits a
 fibre functor --- so Axiom 3 would follow from Axiom 1 in the
 symmetric case.  Two features of our setting break this implication:
 (a) we require only braided, not symmetric, structure; and (b) we

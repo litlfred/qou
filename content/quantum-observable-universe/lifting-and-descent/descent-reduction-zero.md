@@ -11,16 +11,16 @@ reduce to purely algebraic invariants at each point $p\in M_k$.
    the group action.
 3. *Substrate parameter.*  The substrate parameter
    $q(p) = 1 + \lVert L\wedge F_A^{+}\rVert(p)$
-   ([$\mathbb{C}$-substrate via Levi form](#rem:c-substrate-via-levi)) assigns to each point a
+   ([$\mathbb{C}$-substrate via Levi form](#rem\:c-substrate-via-levi)) assigns to each point a
    definite quantum constant $q\in[1,\infty)$, encoding the full
    content of the quantum observable universe at that point.
 4. *Reeb direction.*  There is no tangent space, so the Reeb
-   vector field ([$q$-Reeb vector field](#ex:q-reeb-vector-field)) and the
+   vector field ([$q$-Reeb vector field](#ex\:q-reeb-vector-field)) and the
    horizontal distribution are absent; only the internal
    $\mathrm{SU}(2)$ fibre data persist.
 
 In this terminal stage every observable is determined by the fibre
 $\mathcal{S}_p$ and the value $q(p)$.  When $M_k$ consists of several points the
-descent data decompose into independent summands, one per point; when
+:refterm[descent]{#descent} data decompose into independent summands, one per point; when
 $M_k$ is connected---i.e. a single point---the entire quantum
 observable universe is captured by the pair $(\mathcal{S}_p, q(p))$.

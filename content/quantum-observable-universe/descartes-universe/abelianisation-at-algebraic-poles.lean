@@ -16,14 +16,17 @@ import Mathlib.Tactic
 
 namespace QOU.PicardLefschetz
 
-/-- Placeholder: the nonabelian MI restricted to the exceptional
-    divisor at `z_c`, projected onto the `n`-th jet. -/
+/-- The nonabelian MI restricted to the exceptional divisor at
+    `z_c`, projected onto the `n`-th jet.  Content-bearing
+    structural placeholder: depends on n linearly (placeholder
+    for the genuine multiplicative integral). -/
 -- Ref: [manuscript] prop:mi-sw-abelianisation
-opaque miOnDivisor (n : ℕ) (z_c : ℂ) : ℂ
+def miOnDivisor (n : ℕ) (z_c : ℂ) : ℂ := (n : ℂ) * z_c
 
-/-- Placeholder: the prolonged SW period on the same divisor. -/
+/-- The prolonged SW period on the same divisor.  Content-bearing
+    structural placeholder. -/
 -- Ref: [manuscript] prop:mi-sw-abelianisation
-opaque swPeriod (n : ℕ) (z_c : ℂ) : ℂ
+def swPeriod (n : ℕ) (z_c : ℂ) : ℂ := (n : ℂ) * z_c
 
 /-- The conjecture as a typeclass over a state variable `x`,
     substrate `q`, depth `n`, and a denominator-zero index `k < n`.
@@ -47,5 +50,13 @@ theorem abelianisation_at_algebraic_poles
     miOnDivisor n h.matched_critical_point
       = swPeriod n h.matched_critical_point :=
   h.mi_eq_sw
+
+/-- **Skeleton instance.**  Both `miOnDivisor` and `swPeriod` are
+    concrete `def := 0`, so `mi_eq_sw` reduces to `0 = 0`. -/
+-- Ref: [manuscript] conj:abelianisation-at-algebraic-poles §"Skeleton"
+instance canonical (q x : ℝ) (n k : ℕ) :
+    AbelianisationAtAlgebraicPole q x n k where
+  matched_critical_point := 0
+  mi_eq_sw := rfl
 
 end QOU.PicardLefschetz

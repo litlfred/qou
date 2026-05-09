@@ -1,4 +1,5 @@
 import Mathlib.Algebra.Field.Basic
+import QOU.AlgebraicSubstrate.ConditionalClasses
 
 /-!
 # QOU.AlgebraicSubstrate.SurrealRateCalculus — rate table
@@ -90,5 +91,20 @@ instance surrealRateCalculus_classicalLimit (F : Type u) [Field F] :
   reebPeriod_order := by norm_num
   enstrophy_order := by norm_num
   rogueZero_order := fun δ => by ring
+
+/-- **Conditional surreal rate calculus.**  The four leading-order
+    rate equations hold under the §3b-cond conditional dependencies
+    on the q-NS conjecture cone, packaged as five
+    `[Instance]` hypotheses on the upstream conjecture classes.
+
+    The conditional discharges to the unconditional
+    `surrealRateCalculus_classicalLimit` for `F` carrying any
+    `[Field F]` structure. -/
+theorem surreal_rate_calculus_conditional
+    [QAubinLions] [NSCounterexample] [CriticalExponent]
+    [BlowupYekutieli] [RegularityBreakdown]
+    (F : Type u) [Field F] :
+    Nonempty (SurrealRateCalculus F) :=
+  ⟨surrealRateCalculus_classicalLimit F⟩
 
 end QOU.AlgebraicSubstrate

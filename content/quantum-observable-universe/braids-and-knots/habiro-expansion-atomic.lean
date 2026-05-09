@@ -88,6 +88,7 @@ theorem habiro_expansion_const (c : ℤ) : HabiroExpansion (C c) := by
       simp [this]⟩
   · -- The Finset.range value is 1 (from our choice above), so
     -- the sum ranges over m = 0 only.
+    -- Ref: [manuscript] `prop:habiro-expansion-atomic` Step 2.
     sorry
 
 /-- **Sequential cyclotomic division: existence at m=0.**
@@ -147,6 +148,7 @@ theorem habiro_expansion_unique (p : ℤ[X])
   -- Uses: induction on m, the defining equation
   -- `p = Σ a_m · (u;u)_m`, and the fact that
   -- `(1 - u^{m+1}) ∤ (a_m - a_m')` when deg < m+1.
+  -- Ref: [manuscript] `prop:habiro-expansion-atomic` Step 2.
   sorry
 
 /-- **Termination bound.**

@@ -1,5 +1,5 @@
 Let $\mathcal{S}_q$ be the
-([categorical action](#def:categorical-action)).  The three variational
+([categorical action](#def\:categorical-action)).  The three variational
 equations are:
 
 1. *Gravity (vary $\int_A$)*:
@@ -28,7 +28,7 @@ equations are:
 
 3. *Matter (vary $\psi$)*:
    $\delta\mathcal{S}_q / \delta\psi = 0$ yields the
-   *categorical transport equation*:
+   *:refterm[categorical transport]{#categorical-transport} equation*:
 
    $$
      D_\nabla\psi =  0.
@@ -47,4 +47,3 @@ equations are:
 \qquad\text{(variational equations)}
 \end{equation}
 ```
-

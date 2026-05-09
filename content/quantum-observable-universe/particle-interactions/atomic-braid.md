@@ -4,19 +4,20 @@ $H_{A+Z}(q)$ obtained by assembling $Z$ protons, $N$ neutrons,
 and $Z$ electrons into a single Hecke algebra with $A + Z$ strands,
 where $A = Z + N$.  The crossing coefficients are:*
 
-| Pair | Crossing | $c$ | $d$ | Origin |
-|:-----|:---------|:----|:----|:-------|
-| $\mathfrak{p}\mathfrak{p}$ | $\sigma$ | $1$ | $0$ | strong repulsion |
-| $\mathfrak{n}\mathfrak{n}$ | $\sigma^{-1}$ | $1$ | $-(q - q^{-1})$ | strong inverse |
+| Pair                       | Crossing                             | $c$ | $d$             | Origin                 |
+| :------------------------- | :----------------------------------- | :-- | :-------------- | :--------------------- |
+| $\mathfrak{p}\mathfrak{p}$ | $\sigma$                             | $1$ | $0$             | strong repulsion       |
+| $\mathfrak{n}\mathfrak{n}$ | $\sigma^{-1}$                        | $1$ | $-(q - q^{-1})$ | strong inverse         |
 | $\mathfrak{p}\mathfrak{n}$ | $\tfrac{1}{2}(\sigma + \sigma^{-1})$ | $2$ | $-(q - q^{-1})$ | strong mixed (doubled) |
-| $\mathfrak{p}e$ | $\sigma^{-1}$ | $1$ | $-(q - q^{-1})$ | EM attraction |
-| $\mathfrak{n}e$ | $\mathrm{id}$ | $0$ | $1$ | no interaction |
-| $ee$ | $\sigma$ | $1$ | $0$ | EM repulsion |
+| $\mathfrak{p}e$            | $\sigma^{-1}$                        | $1$ | $-(q - q^{-1})$ | EM attraction          |
+| $\mathfrak{n}e$            | $\mathrm{id}$                        | $0$ | $1$             | no interaction         |
+| $ee$                       | $\sigma$                             | $1$ | $0$             | EM repulsion           |
 
 *The **ground-state ordering** is determined by:*
+
 1. *Nuclear ordering: minimize $\Phi_1$ over all permutations of
    $Z$ protons and $N$ neutrons (exact search for
-   $\binom{A}{Z} \leq 50000$, steepest descent otherwise).*
+   $\binom{A}{Z} \leq 50000$, steepest :refterm[descent]{#descent} otherwise).*
 2. *Electron insertion: greedily insert each of $Z$ electrons at
    the position minimizing $\Phi_1$.*
 

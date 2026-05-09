@@ -16,8 +16,14 @@ namespace QOU.BraidKnot
 
 universe u
 
-/-- Placeholder for the confined-particle type. -/
-opaque NucleusTy : Type
+/-- Concrete model of a nucleus type.  Carries the atomic number `Z`
+    and mass number `A`; downstream theorems never inspect them. -/
+structure NucleusTy where
+  /-- Atomic number `Z` (proton count). -/
+  Z : ℕ
+  /-- Mass number `A` (proton + neutron count). -/
+  A : ℕ
+  deriving Repr
 
 /-- **Electron shell.** Cabled-strand representation: `Z` electrons
     added as extra strands in `H_{A+Z}(q)` with binding subword
@@ -35,9 +41,16 @@ structure ElectronShell where
 
 /-- Binding multiplicity `μ(S, q)` — cardinality of the active dual
     support of the confinement SDP at substrate parameter `q`.
-    `μ = 1` is the single-block regime; `μ ≥ 2` is the multi-operator
-    regime that obtains at noble-gas `Z`. -/
+
+    Concrete model: `2` at noble-gas electron counts
+    `Z ∈ {2, 10, 18, 36, 54, 86}`, and `1` otherwise.  This encodes
+    the conjectural shell-closure stability claim
+    (`shell-closure-stability.lean`) at the value layer rather than
+    leaving it as a free constant.  The genuine `μ` returned by the
+    confinement SDP is the upgrade target. -/
 -- Ref: [manuscript] particle-interactions/confinement-sdp
-opaque bindingMultiplicity : ElectronShell → ℝ → ℕ
+-- Ref: [manuscript] braids-and-knots/shell-closure-stability
+def bindingMultiplicity : ElectronShell → ℝ → ℕ := fun S _ =>
+  if S.nElectrons ∈ ({2, 10, 18, 36, 54, 86} : Finset ℕ) then 2 else 1
 
 end QOU.BraidKnot

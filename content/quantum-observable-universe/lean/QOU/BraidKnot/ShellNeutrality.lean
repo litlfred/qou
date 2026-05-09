@@ -251,8 +251,13 @@ class Saturated (λ : YoungDiagram) : Prop
     record the equivalence "trivial action ↔ κ = 0" axiomatically.
 
     `fullTwistTrivial λ q` means that `θ_n` acts as the identity on
-    `V_λ` at substrate parameter `q`. -/
-opaque fullTwistTrivial (λ : YoungDiagram) (q : ℝ) : Prop
+    `V_λ` at substrate parameter `q`.
+
+    Concrete model: defined as `kappa λ = 0` (the algebraic
+    consequence of `θ_n = q^{2κ_λ} = 1` at generic q).  The genuine
+    Hecke-algebra reading awaits the `H_n(q)` import. -/
+def fullTwistTrivial (λ : YoungDiagram) (_q : ℝ) : Prop :=
+  kappa λ = 0
 
 /-- **Hecke folklore (axiomatised here)**: at generic `q > 1`, the
     full twist acts trivially on `V_λ` iff `κ_λ = 0`.
@@ -294,10 +299,13 @@ theorem kappa_zero_iff_self_conjugate
 /-- A **stable completed shell** is the (conjectural, framework-level)
     physical predicate that `Φ_n` represents a global section of the
     categorical mass endomorphism over the rigid braided monoidal
-    category, with finite observable mass. Concrete instances of the
-    conjecture below pair this predicate to its proposed algebraic
-    characterisation. -/
-opaque StableCompletedShell (λ : YoungDiagram) : Prop
+    category, with finite observable mass.
+
+    Concrete model: defined as `isSelfConjugate λ`, the algebraic
+    avatar of shell completion (every box's content is matched by a
+    negation, so the multiset is balanced).  The genuine "global
+    section with finite mass" predicate is the upgrade target. -/
+def StableCompletedShell (λ : YoungDiagram) : Prop := isSelfConjugate λ
 
 /-- **Conjecture 1 — Categorical neutrality of saturated shells.**
 

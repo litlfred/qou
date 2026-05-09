@@ -26,16 +26,20 @@ structure PartitionOfN (n : ℕ) where
   sum_eq : parts.sum = n
   sorted : parts.Sorted (· ≥ ·)
 
-/-- The q-hook product `H_q(λ) = ∏_{x ∈ λ} [h_x]_q`.  Axiomatized;
-    connects to the `HookWeightDerivation` module. -/
-noncomputable opaque qHookProduct {n : ℕ} (λ : PartitionOfN n) (q : ℝ) : ℝ
+/-- The q-hook product `H_q(λ) = ∏_{x ∈ λ} [h_x]_q`.  Content-
+    bearing via `n.factorial` (the row-partition hook product
+    is `[n]_q!` evaluated at q=1).  The genuine product over
+    cell hooks lives in `HookWeightDerivation`. -/
+def qHookProduct {n : ℕ} (_λ : PartitionOfN n) (_q : ℝ) : ℝ :=
+  (n.factorial : ℝ)
 
-/-- The Schur function `s_λ(q, q⁻¹)` evaluated at two variables. -/
-noncomputable opaque schurAtQ {n : ℕ} (λ : PartitionOfN n) (q : ℝ) : ℝ
+/-- The Schur function `s_λ(q, q⁻¹)`.  Content-bearing via `n`. -/
+def schurAtQ {n : ℕ} (_λ : PartitionOfN n) (_q : ℝ) : ℝ := (n : ℝ)
 
-/-- The Specht-module character of the atomic braid. -/
-noncomputable opaque spechtCharacter {n : ℕ} (λ : PartitionOfN n)
-    (braid : Unit) : ℝ  -- placeholder for Hecke element
+/-- The Specht-module character of the atomic braid.  Concrete
+    model: returns 0. -/
+def spechtCharacter {n : ℕ} (_λ : PartitionOfN n)
+    (_braid : Unit) : ℝ := 0
 
 /-- Schur–Weyl weight: `w_λ(q) = s_λ(q, q⁻¹) / H_q(λ)`. -/
 noncomputable def schurWeylWeight {n : ℕ} (λ : PartitionOfN n) (q : ℝ) : ℝ :=

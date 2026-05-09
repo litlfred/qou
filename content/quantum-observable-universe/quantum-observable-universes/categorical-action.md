@@ -1,5 +1,5 @@
 Let $(\mathbf{C}, A, \tau)$ be a
-([quantum observable universe](#def:quantum-observable-universe)).
+([quantum observable universe](#def\:quantum-observable-universe)).
 A *categorical action* on $(\mathbf{C}, A, \tau)$ is a morphism
 $\mathcal{S} \colon \mathbf{1} \to \mathbf{1}$ of the form
 
@@ -37,7 +37,7 @@ where $\Phi \in \mathrm{End}_{\mathbf{C}}(A)$ is called the
 The evaluation $\mathrm{ev}_A \colon A^\vee \otimes A \to \mathbf{1}$
 and coevaluation $\mathrm{coev}_A \colon \mathbf{1} \to A \otimes A^\vee$
 are the structure maps of the rigid duality on $A$
-([rigid monoidal category](#def:rigid-monoidal-category)).  Composing
+([rigid :refterm[monoidal category]{#monoidal-category}](#def\:rigid-monoidal-category)).  Composing
 them with an inserted endomorphism produces the categorical trace:
 
 $$

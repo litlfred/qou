@@ -9,37 +9,37 @@ statement about a global section.
 
 ## Notation
 
-Let $\mathbf{C}$ be the rigid braided monoidal category of the QOU
+Let $\mathbf{C}$ be the rigid :refterm[braided monoidal category]{#braided-monoidal-category} of the QOU
 substrate (Frobenius–Hopf object $A$, fibre functor $\tau$). For
 $n \in \mathbb{N}$ write
 
-- $H_n(q)$ for the Iwahori–Hecke algebra at parameter $q$, generated
+* $H_n(q)$ for the Iwahori–Hecke algebra at parameter $q$, generated
   by $\sigma_1, \dots, \sigma_{n-1}$ subject to the braid relations
   and $\sigma_i^2 = (q - q^{-1}) \sigma_i + 1$
   ([CLAUDE.md §7a](../../../CLAUDE.md));
-- $\Delta_n^2 = (\sigma_1 \sigma_2 \cdots \sigma_{n-1})^n
+* $\Delta_n^2 = (\sigma_1 \sigma_2 \cdots \sigma_{n-1})^n
   \in Z(B_n)$ for the **full-twist** generator of the centre of the
   braid group, mapped under the Hecke quotient to the central
   element $\Delta_n^2 \in Z(H_n(q))$
   \cite{kassel1995, geckpfeiffer2000};
-- $\Phi_n \in \mathrm{End}_{\mathbf{C}}(A^{\otimes n})$ for the
+* $\Phi_n \in \mathrm{End}_{\mathbf{C}}(A^{\otimes n})$ for the
   **categorical mass endomorphism** at level $n$ —
   the global section of the mass functor over the rigid braided
-  monoidal category, related to the Hecke-mass element
+  :refterm[monoidal category]{#monoidal-category}, related to the Hecke-mass element
   $\Phi_{\mathrm{mass}}$ by
   $\Phi_{\mathrm{mass}}(\beta) = (\tau \otimes \cdots \otimes \tau) \circ \Phi_n \circ \rho(\beta)$
-  ([Hecke mass element](#def:hecke-mass-element));
-- $\mathfrak{M} = \{2, 8, 20, 28, 50, 82, 126\}$ for the seven
+  ([Hecke mass element](#def\:hecke-mass-element));
+* $\mathfrak{M} = \{2, 8, 20, 28, 50, 82, 126\}$ for the seven
   observed nuclear magic numbers.
 
 ## Statement
 
 **Proposition (Conjecture — categorical neutrality of saturated
 shells).**
-*Let $\mathbf{C}$ be a rigid braided monoidal category satisfying the
-QOU substrate axioms ([Frobenius–Hopf substrate](#def:frobenius-hopf-substrate))
+*Let $\mathbf{C}$ be a rigid :refterm[braided monoidal category]{#braided-monoidal-category} satisfying the
+QOU substrate axioms ([Frobenius–Hopf substrate](#def\:frobenius-hopf-substrate))
 and let $\Phi_n$ be the categorical mass endomorphism at level $n$
-([mass-endomorphism conjecture](#conj:mass-endomorphism)). Then for
+([mass-endomorphism conjecture](#conj\:mass-endomorphism)). Then for
 every $n \in \mathfrak{M}$ the full-twist
 $\Delta_n^2$ acts trivially on $\Phi_n$:*
 
@@ -74,7 +74,7 @@ closure, replacing the *ad hoc* shell-model selection rule.
 ## Relation to the Hoefsmit / matrix-evaluation programme
 
 The Hoefsmit seminormal form
-([prop:hoefsmit-seminormal-form](#prop:hoefsmit-seminormal-form))
+([prop:hoefsmit-seminormal-form](#prop\:hoefsmit-seminormal-form))
 gives explicit matrices for $\sigma_i$ on each $V_\lambda$, with the
 full-twist eigenvalue $q^{c(\lambda)}$ recoverable by direct
 multiplication. Numerical verification at $k = 3, \dots, 10$ confirms
@@ -89,13 +89,13 @@ at $n \in \{50, 82, 126\}$ then follows without resort to matrices.
 ## Locality assumption: dropped
 
 Earlier formulations
-([atom-knot-mass-derivation](#prop:atom-knot-mass-derivation))
+([atom-knot-mass-derivation](#prop\:atom-knot-mass-derivation))
 treated $\Phi_n$ as a *local* object — defined per-vortex and
 combined by tensor product. In that setting "screening" or "local
 trivialisation" was needed to explain shell closure. The refactor
 drops the locality assumption: $\Phi_n$ is the **global section** of
 the mass functor over $\mathbf{C}$
-([rem:phi-n-global-section](#rem:phi-n-global-section)). A
+([rem:phi-n-global-section](#rem\:phi-n-global-section)). A
 non-trivial full-twist action would propagate unbounded ribbon /
 framing flux through the brane tower; finite observable mass forces
 **global topological neutrality** at saturation.
@@ -125,7 +125,7 @@ operator-correction with correlation $+0.74$ to the AME residual
 
 ## Status
 
-🟡 **Conjectural** under CLAUDE.md §3b. Numerical witnesses at
+**Status: conjectural** under CLAUDE.md §3b. Numerical witnesses at
 $k = 3, \dots, 10$ are supportive but not a proof; the conjecture
 asserts the saturation condition for all $n \in \mathfrak{M}$
 including $\{50, 82, 126\}$ where matrix-evaluation is unavailable.
@@ -133,9 +133,9 @@ including $\{50, 82, 126\}$ where matrix-evaluation is unavailable.
 The downstream cone (per the
 [2026-05-01 conjecture-cones audit](../../../docs/audits/conjecture-cones.md))
 is anticipated to include
-[`prop:magic-numbers-from-q`](#prop:magic-numbers-from-q) and the
+[`prop:magic-numbers-from-q`](#prop\:magic-numbers-from-q) and the
 shell-closure portion of the BW formula
-([`thm:wedderburn-mass-formula`](#thm:wedderburn-mass-formula)).
+([`thm:wedderburn-mass-formula`](#thm\:wedderburn-mass-formula)).
 Per §3b the upgrade of these to fully provable status requires
 either a derivation of this conjecture or its retention as a
 class-axiomatised input to a conditional theorem.

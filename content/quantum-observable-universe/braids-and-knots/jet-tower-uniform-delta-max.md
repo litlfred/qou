@@ -1,5 +1,5 @@
 The brane-tower convergence proposition
-([prop:jet-tower-convergence](#prop:jet-tower-convergence))
+([prop:jet-tower-convergence](#prop\:jet-tower-convergence))
 gives a geometric tail bound for the mass series
 $\mathfrak{m}(\varrho) = \mathfrak{m}^{(0)}(\varrho) +
 \sum_{n \ge 1} \hbar_q^{2n} \cdot \Delta^{(n)}(\varrho)$
@@ -52,13 +52,13 @@ runs `unified_lift.unified_atom_binding` (which already computes
 $\mathrm{D}$, $\mathrm{T}$, $^3\mathrm{He}$ across
 $n = 1, \dots, N_{\max}$ and reports
 
-- the maximum $|\Delta^{(n)}|$ observed (the empirical
+* the maximum $|\Delta^{(n)}|$ observed (the empirical
   $\Delta_{\max}$),
-- the geometric-decay ratio
+* the geometric-decay ratio
   $|\hbar_q^{2n} \Delta^{(n)}| / |\hbar_q^{2(n-1)} \Delta^{(n-1)}|$
   (which the conjecture predicts $= \hbar_q^2 \approx 0.00982$
   in the bounded regime),
-- a pass/fail flag for **uniform-bound consistency** (true if
+* a pass/fail flag for **uniform-bound consistency** (true if
   $|\Delta^{(n)}|$ does not grow over $n$).
 
 Witness output (paste-ready for the conjecture cone):
@@ -74,7 +74,7 @@ T       3         <empirical> <empirical>      ✓
 witness JSON is the canonical record.)
 
 The empirical observation
-([rem:mass-endomorphism-jet-tower](#rem:mass-endomorphism-jet-tower)
+([rem:mass-endomorphism-jet-tower](#rem\:mass-endomorphism-jet-tower)
 §"Open subconjecture 1") that `|hbar_q^(2n) Delta^(n)| ≤
 |hbar_q^(2(n-1)) Delta^(n-1)| · hbar_q^2` to three significant
 figures at $n = 1, 2, 3$ is consistent with a uniform-bound
@@ -98,12 +98,12 @@ is itself conjectural until the uniform bound is established.
 
 The current scoreboard:
 
-- 🟢 The geometric tail bound itself is *proved* in
-  [prop:jet-tower-convergence](#prop:jet-tower-convergence) §Proof
+* *(provable)* The geometric tail bound itself is *proved* in
+  [prop:jet-tower-convergence](#prop\:jet-tower-convergence) §Proof
   — assuming the bound on $\Delta^{(n)}$ as a hypothesis.
-- 🟡 The uniform bound on $\Delta^{(n)}$ is conjectural (this
+* *(conjectural)* The uniform bound on $\Delta^{(n)}$ is conjectural (this
   block).
-- 🟢 At $n = 1, 2, 3$ for D, T, ³He, the bound holds empirically
+* *(empirical)* At $n = 1, 2, 3$ for D, T, ³He, the bound holds empirically
   with margin.
 
 ## Path to a proof
@@ -117,12 +117,12 @@ Two structural avenues for promoting this conjecture to a theorem:
    pieces, automatically supplying a uniform bound. This is the
    workplan's path (a) for **P3.4**.
 
-2. **Yekutieli rigidity argument**. The descent involution
+2. **Yekutieli rigidity argument**. The :refterm[descent]{#descent} involution
    $\hat\tau_n$ ([def:descent-involution](../lifting-and-descent/descent-involution.md))
    is rigid on the categorical level
    ([yekutieli2010](https://doi.org/10.1090/conm/518/10212));
-   a level-uniform rigidity bound on the descent action implies
-   $\Delta^{(n)}$ is bounded by the descent norm, which is itself
+   a level-uniform rigidity bound on the :refterm[descent]{#descent} action implies
+   $\Delta^{(n)}$ is bounded by the :refterm[descent]{#descent} norm, which is itself
    uniform.
 
 Both paths require infrastructure beyond the scope of this block;
@@ -131,10 +131,10 @@ empirical motivation citable.
 
 ## Status
 
-🟡 **Conjectural** under CLAUDE.md §3b, with strong empirical
+**Status: conjectural** under CLAUDE.md §3b, with strong empirical
 support at $n = 1, 2, 3$ for D, T, ³He via `jet_tower_delta_max.py`.
 The downstream cone of this conjecture includes
-[prop:jet-tower-convergence](#prop:jet-tower-convergence) — but
+[prop:jet-tower-convergence](#prop\:jet-tower-convergence) — but
 that proposition's *statement* is provable in pure analysis (the
 conditional geometric-tail bound is unconditional once the
 hypothesis holds). Only the *unconditional* application of the

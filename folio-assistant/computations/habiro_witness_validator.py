@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Re-trigger CI for PR #566 (round 9 witness regen + audit gate).
 """
 Habiro divisibility validator — `tail_in_ideal` axiom witness.
 

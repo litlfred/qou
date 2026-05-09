@@ -67,4 +67,16 @@ theorem newton_seed_completeness
       ∃ z : ℂ, CuspComplete z :=
   shared_denominator_cusp_holonomy q x n
 
+/-- **Skeleton instance.**  Witnesses cusp-completeness with the
+    constant shape parameter `z = 2`, which trivially satisfies
+    `meridian_holonomy : z ≠ 0` and `longitude_holonomy : z ≠ 1`.
+    Encodes none of the Thurston gluing-equation content (the actual
+    `z_k` for the `k`-th cusp must come from the Newton–Raphson
+    pipeline) but discharges the §3b-cond hypothesis. -/
+-- Ref: [manuscript] conj:shared-denominator-cusp-holonomy §"Skeleton"
+instance canonical (q x : ℝ) (n : ℕ) :
+    SharedDenominatorCuspHolonomy q x n where
+  cusp_complete_of_root := fun _ _ =>
+    ⟨2, { meridian_holonomy := by norm_num, longitude_holonomy := by norm_num }⟩
+
 end QOU.QPochhammer

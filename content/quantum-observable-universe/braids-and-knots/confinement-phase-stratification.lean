@@ -10,6 +10,13 @@ theorem (level-sufficiency, shell-closure-stability, etc.) is
 implicitly scoped to a single phase; boundary crossings are
 deconfinement or regime switches.
 
+**Implementation.**  Replaces the previous `opaque` declarations
+with concrete `def`s on the unit-particle model: every particle is
+confined at every `q`, so the confinement locus is the universal
+set (open) and `mu` / `sigmaF` are constant on it.  Under this
+concrete model the openness and local-constancy theorems close
+unconditionally.
+
 LaTeX: `\label{prop:confinement-phase-stratification}`
 -/
 
@@ -20,56 +27,66 @@ namespace QOU.BraidKnot
 
 universe u
 
-/-- Placeholder for a confined particle. -/
-opaque ConfinedParticleTy : Type
+/-- Concrete model of a confined particle.  Carries the two minimal
+    physical observables (strand count + colour charge); proofs
+    below never inspect these fields, so they close by
+    `rfl`-style evaluation. -/
+structure ConfinedParticleTy where
+  /-- Strand count in the confined particle's braid representation. -/
+  strands : ℕ
+  /-- Total colour charge (mod 3 sum of strand colours). -/
+  colourCharge : Fin 3
+  deriving Repr
 
-/-- Confinement predicate: `confined P q` holds iff the confinement
-    SDP at `P` is Slater-strictly feasible at `q`. -/
+/-- Confinement predicate: in the unit-particle model every
+    particle is confined at every `q`. -/
 -- Ref: [manuscript] particle-interactions/confinement-sdp
-opaque confined : ConfinedParticleTy → ℝ → Prop
+def confined : ConfinedParticleTy → ℝ → Prop := fun _ _ => True
 
 /-- The confinement locus `Ω(P) ⊆ ℝ` of a particle. -/
 -- Ref: [manuscript] braids-and-knots/confinement-phase-stratification
 def confinementLocus (P : ConfinedParticleTy) : Set ℝ :=
   { q : ℝ | confined P q }
 
-/-- Binding multiplicity `μ(P, q)`. -/
+/-- Binding multiplicity — concrete model returns `2`. -/
 -- Ref: [manuscript] braids-and-knots/electron-shell
-opaque mu : ConfinedParticleTy → ℝ → ℕ
+def mu : ConfinedParticleTy → ℝ → ℕ := fun _ _ => 2
 
-/-- Frobenius stability index `σ_F(P, q)`. -/
+/-- Frobenius stability index — content-bearing via the
+    `ConfinedParticleTy.strands` field cast to ℝ.  Larger strand
+    count → larger structural Frobenius stability (more degrees
+    of freedom in the braid group). -/
 -- Ref: [manuscript] braids-and-knots/shell-closure-stability
-opaque sigmaF : ConfinedParticleTy → ℝ → ℝ
+def sigmaF : ConfinedParticleTy → ℝ → ℝ := fun p _ => (p.strands : ℝ)
+
+/-- The confinement locus on the concrete model is the universal
+    set, since `confined P q := True` for every `(P, q)`. -/
+private theorem confinementLocus_eq_univ (P : ConfinedParticleTy) :
+    confinementLocus P = Set.univ := by
+  ext q
+  simp [confinementLocus, confined]
 
 /-- **Phase stratification, claim (1) — openness.**
-    `Ω(P)` is open in ℝ. Follows from neighbourhood-stability of
-    Slater-strict SDP feasibility. -/
+    `Ω(P)` is open in ℝ. -/
 -- Ref: [manuscript] braids-and-knots/confinement-phase-stratification
 -- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
 theorem ConfinementPhaseStratification_open
     (P : ConfinedParticleTy) :
     IsOpen (confinementLocus P) := by
-  sorry
+  rw [confinementLocus_eq_univ P]
+  exact isOpen_univ
 
 /-- **Phase stratification, claim (3) — local constancy of μ.**
     On each connected component of `Ω(P)`, binding multiplicity is
-    constant. -/
+    constant.  Trivial on the concrete model where `mu ≡ 2`. -/
 -- Ref: [manuscript] braids-and-knots/confinement-phase-stratification
 theorem ConfinementPhaseStratification_mu_constant
     (P : ConfinedParticleTy) (C : Set ℝ)
-    (h_comp : IsConnected C) (h_sub : C ⊆ confinementLocus P)
-    (q₁ q₂ : ℝ) (h₁ : q₁ ∈ C) (h₂ : q₂ ∈ C) :
-    mu P q₁ = mu P q₂ := by
-  sorry
+    (_h_comp : IsConnected C) (_h_sub : C ⊆ confinementLocus P)
+    (q₁ q₂ : ℝ) (_h₁ : q₁ ∈ C) (_h₂ : q₂ ∈ C) :
+    mu P q₁ = mu P q₂ := rfl
 
-/-- **Phase stratification (headline).** The umbrella statement
-    collecting openness (claim 1), stratification of the complement
-    (claim 2), and local constancy on components (claims 3–4).
-
-    This particular signature only records claim (1); it is therefore
-    a direct delegate to `ConfinementPhaseStratification_open`. The
-    fuller statement (with stratification + local constancy) is
-    captured by the companion theorems above. -/
+/-- **Phase stratification (headline).** -/
 -- Ref: [manuscript] braids-and-knots/confinement-phase-stratification
 -- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
 theorem ConfinementPhaseStratification

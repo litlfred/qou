@@ -43,7 +43,7 @@ trivial pair* $1 < 2$.  *Therefore no SSYT of shape* $\lambda$
 zero.  Specialising at* $x = q$, $y = q^{-1}$ *preserves this:*
 $s_\lambda(q, q^{-1}) = 0$.  *Since the q-hook product*
 $H_q(\lambda)$ *is generically non-vanishing,*
-$w_\lambda = s_\lambda / H_q = 0$ *in* $\mathbb{Q}(q)$.  $\square$
+$w_\lambda = s_\lambda / H_q(\lambda) = 0$ *in* $\mathbb{Q}(q)$.  $\square$
 
 **Numerical verification (D atom braid at H_6).**
 

@@ -88,6 +88,7 @@ theorem term_6_plus_term_7_eq_high_strata
   -- Standard list-fold splitting; full proof requires Mathlib's
   -- List.foldl_append + filter-of-range identities.
   unfold unified_curvature_rank_mass
+  -- Ref: [manuscript] prop:unified-curvature-rank-mass-formula
   sorry
 
 /-- **Corollary (paper terminology mapping).**

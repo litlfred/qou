@@ -31,7 +31,8 @@ structure ReebBundle (q : ℝ) where
       equals exp(2πi / [2]_q) where [2]_q = q + q⁻¹ -/
   holonomy : ℝ := Real.exp (2 * Real.pi / (q + q⁻¹))
 
--- TODO: Reeb bundle formalization requires ExceptionalDivisor (Ch 6 §2)
+-- Note: full Reeb-bundle formalization is pending the
+-- ExceptionalDivisor structure (Ch 6 §2); tracked as a TodoItem.
 -- Ref: [manuscript] Ch 6 §2
 
 end QOU

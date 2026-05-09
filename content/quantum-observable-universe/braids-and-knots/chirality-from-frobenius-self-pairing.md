@@ -1,6 +1,6 @@
 The paper's chirality factors $\{1 + h,\ 1 - h^2,\ (1 - h^2)^2\}$
 for $\{D,\ T/^3{\rm He},\ {}^4{\rm He}\}$
-([figure-eight BW coefficients](#prop:figure-eight-bw-coefficients))
+([figure-eight BW coefficients](#prop\:figure-eight-bw-coefficients))
 arise from a "Frobenius-norm-deviation" argument that upstream
 commits describe but do not fully derive.  This proposition
 formalises the chirality factor as a **Frobenius self-pairing**
@@ -10,7 +10,7 @@ that definition.
 **Definition (Frobenius self-pairing chirality).**
 *Let $(A, \tau)$ be a self-dual Frobenius algebra (e.g., the Hecke
 algebra $H_n(R, q)$ under Markov trace
-([Jones–Markov trace](#thm:jones-markov-trace))), and let
+([Jones–Markov trace](#thm\:jones-markov-trace))), and let
 $\beta \in A$ be a braid word.  Let $\beta^* \in A$ denote the
 image of $\beta$ under the algebra **antipode** (the anti-involution
 $\sigma_i \mapsto \sigma_i^{-1}$, reverse word order).  Define the
@@ -33,7 +33,8 @@ normalised Frobenius norm of $\beta$ in the self-dual pairing.*
 $$
    a_K \;=\; 1 + w(K) \cdot h \;+\; O(h^2),
 $$
-   *to leading order in the Hecke deformation $h = q - q^{-1}$.*
+
+*to leading order in the Hecke deformation $h = q - q^{-1}$.*
 
 2. *For an **amphichiral knot** $K$ (i.e., $K = \overline{K}$ under
    mirror):*
@@ -41,9 +42,10 @@ $$
 $$
    a_K \;=\; 1 - c_K \cdot h^2 \;+\; O(h^4),
 $$
-   *where $c_K$ is a topological invariant (writhe-squared
-   contribution).  For the figure-eight $4_1$: $c_K = 1$, giving
-   $a_K = 1 - h^2$.*
+
+*where $c_K$ is a topological invariant (writhe-squared
+contribution).  For the figure-eight $4_1$: $c_K = 1$, giving
+$a_K = 1 - h^2$.*
 
 3. *For a **Borromean-type link** (multiple amphichiral sublinks):*
 
@@ -51,7 +53,7 @@ $$
    a_K \;=\; \prod_i (1 - c_{K_i} h^2).
 $$
 
-   *For $^4$He (two amphichiral pairs): $a_K = (1 - h^2)^2$.*
+*For $^4$He (two amphichiral pairs): $a_K = (1 - h^2)^2$.*
 
 **Derivation sketch.**
 
@@ -82,7 +84,7 @@ moments** when the braid is viewed as a morphism $\varrho: \mathbf{1}
 \to A$ (closure operation), not as an abstract algebra element.*
 
 *Paper's derivation
-([figure-eight BW coefficients](#prop:figure-eight-bw-coefficients)
+([figure-eight BW coefficients](#prop\:figure-eight-bw-coefficients)
 §Proof) uses the Fricke trace relation*
 
 $$
@@ -112,7 +114,7 @@ $1 + h$ factor for $D$ comes from the **closure** operation
 
 *A complete categorical derivation of all three cases requires
 tracking the **braid closure** (cylinder tensor product) in a
-braided monoidal category with ribbon structure.  The ribbon twist
+:refterm[braided monoidal category]{#braided-monoidal-category} with ribbon structure.  The ribbon twist
 $\varTheta_X$ encodes writhe; its interaction with the Frobenius
 pairing produces the first-order $h$ contribution for chiral knots.
 This derivation is **open**; paper's empirical values
@@ -126,9 +128,9 @@ $\{1+h, 1-h^2, (1-h^2)^2\}$ await a uniform categorical proof.*
    algebra with antipode — not just the Hecke case.*
 2. *A categorical framing that ties chirality to the **same**
    Frobenius structure producing the co-Casimir residual
-   ([Frobenius universal](#thm:frobenius-codim-universal)).*
-3. *A clear path to the missing derivation: ribbon-category closure
-   + writhe identification.*
+   ([Frobenius universal](#thm\:frobenius-codim-universal)).*
+3. \*A clear path to the missing derivation: ribbon-category closure
+   * writhe identification.\*
 
 *Recommended next step: formalise the ribbon-category closure of
 $\varrho: \mathbf{1} \to A$ and compute $a_K$ via the composite

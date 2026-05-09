@@ -1,18 +1,18 @@
 **Proof.**
 The coface maps are composites of the jet prolongation with the
 Cech face maps $\partial^i$ of the cover $\{U_i\}$.  The
-codegeneracy maps are composites of the descent homomorphism with the
+codegeneracy maps are composites of the :refterm[descent]{#descent} homomorphism with the
 Cech degeneracy maps $s^j$.  The identities
 $\delta^j \circ \delta^i = \delta^i \circ \delta^{j-1}$ for $i < j$
 and $\sigma^j \circ \sigma^i = \sigma^i \circ \sigma^{j+1}$ for $i \leq j$
-follow from the functoriality of jet prolongation and descent: the ascent
+follow from the functoriality of jet prolongation and :refterm[descent]{#descent}: the ascent
 $\ell_n$ is a natural transformation from the identity functor on
 $\mathfrak{G}_n$ to the restriction of $\mathfrak{G}_{n+1}$, and the
-descent $\mathfrak{d}_{n+1}$ is its left adjoint.  The mixed identity
+:refterm[descent]{#descent} $\mathfrak{d}_{n+1}$ is its left adjoint.  The mixed identity
 $\sigma^j \circ \delta^i$ reduces to three cases
 ($i < j$, $i = j$ or $i = j + 1$, $i > j + 1$), each verified using
 the retraction property $\mathfrak{d}_{n+1} \circ \ell_n = \mathrm{id}$
-([descent](#lem:descent)).
+([:refterm[descent]{#descent}](#lem\:descent)).
 
 For concreteness, the case $i < j$ proceeds as follows.  The coface
 $\delta^i$ inserts $\ell_n$ at position $i$, while the codegeneracy

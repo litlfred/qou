@@ -1,6 +1,6 @@
 The Hecke mass element
 $\Phi_{\mathrm{mass}}(\beta) \in H_3(R, q)$
-([Hecke mass element](#def:hecke-mass-element)) has a
+([Hecke mass element](#def\:hecke-mass-element)) has a
 specific normal form structure determined by the **word
 length filtration** on the NF basis.
 
@@ -26,7 +26,7 @@ particle through its brane tower weights.*
 
 ## Why $\gamma = 0$ (photon masslessness)
 
-The descent involution $\hat\tau_n$ at the first brane level
+The :refterm[descent]{#descent} involution $\hat\tau_n$ at the first brane level
 projects onto the $H_1(q)$ content of $H_3(R, q)$.  Since
 $H_1(q) = \mathrm{span}\{\gamma\}$ (the identity is the
 only degree-0 element), the descended component at level
@@ -46,14 +46,14 @@ the mass endomorphism has zero projection onto $\gamma$.
 
 The NF basis has word lengths (degrees):
 
-| Degree | Basis elements | Tower levels |
-|:---:|:---:|:---:|
-| $0$ | $\gamma$ | Descended (killed) |
-| $1$ | $\sigma_0, \sigma_1$ | $n = 1, 4, 7, \ldots$ |
-| $2$ | $L_+, L_-$ | $n = 2, 5, 8, \ldots$ |
-| $3$ | $e^-$ | $n = 3, 6, 9, \ldots$ |
+| Degree |    Basis elements    |      Tower levels     |
+| :----: | :------------------: | :-------------------: |
+|   $0$  |       $\gamma$       |   Descended (killed)  |
+|   $1$  | $\sigma_0, \sigma_1$ | $n = 1, 4, 7, \ldots$ |
+|   $2$  |      $L_+, L_-$      | $n = 2, 5, 8, \ldots$ |
+|   $3$  |         $e^-$        | $n = 3, 6, 9, \ldots$ |
 
-The descent involution at level $n$ kills elements of degree
+The :refterm[descent]{#descent} involution at level $n$ kills elements of degree
 $\leq (n-1) \bmod 3$, so the transient contribution at level
 $n$ lives in degree $(n \bmod 3)$ elements.  The tower cycles
 through degrees $1 \to 2 \to 3 \to 1 \to 2 \to 3 \to \cdots$,
@@ -74,11 +74,11 @@ $$
 
 gives:
 
-| Group | Contributes to | Fraction of $\mathrm{Li}_2$ | NF coefficient |
-|:---:|:---:|:---:|:---:|
-| $S_1$ ($n = 1, 4, 7, \ldots$) | $\sigma_0, \sigma_1$ | $76.9\%$ | $a_1 \approx 86.2$ |
-| $S_2$ ($n = 2, 5, 8, \ldots$) | $L_+, L_-$ | $16.7\%$ | $a_3 \approx 37.4$ |
-| $S_0$ ($n = 3, 6, 9, \ldots$) | $e^-$ | $6.4\%$ | $a_5 \approx 13.4$ |
+|             Group             |    Contributes to    | Fraction of $\mathrm{Li}_2$ |   NF coefficient   |
+| :---------------------------: | :------------------: | :-------------------------: | :----------------: |
+| $S_1$ ($n = 1, 4, 7, \ldots$) | $\sigma_0, \sigma_1$ |           $76.9\%$          | $a_1 \approx 86.2$ |
+| $S_2$ ($n = 2, 5, 8, \ldots$) |      $L_+, L_-$      |           $16.7\%$          | $a_3 \approx 37.4$ |
+| $S_0$ ($n = 3, 6, 9, \ldots$) |         $e^-$        |           $6.4\%$           | $a_5 \approx 13.4$ |
 
 The electron mass is mostly carried by the **crossing
 channels** ($\sigma_0, \sigma_1$), not by the trefoil

@@ -3,6 +3,7 @@ import QOU.Descartes.TorusKnot
 import QOU.Descartes.TransferMatrix
 import QOU.Descartes.BetaDecay
 import QOU.Descartes.HeckeH3
+import QOU.Mathlib.SymmetricIdempotent
 
 /-!
 # Axial Coupling g_A from the 3-fold Borromean Color Average
@@ -123,9 +124,14 @@ noncomputable def axialCouplingRatio : FractionRing R_t :=
     their ordering).
 
     Treated as a per-element predicate (so call sites supply the
-    factorisation witness) rather than an opaque structural fact. -/
+    factorisation witness) rather than an opaque structural fact.
+
+    Re-exported from `QOU.Mathlib.SymmetricIdempotent` (Murphy/Mathas
+    upstream); concrete definition is the existential
+    `∃ b, tracedVolCleared x = tracedVolCleared b`. -/
 -- Ref: [murphy1992] https://doi.org/10.1016/0021-8693(92)90139-D
-def InSymmetricIdempotent (_x : TMatrix) : Prop := True
+abbrev InSymmetricIdempotent (x : TMatrix) : Prop :=
+  QOU.Mathlib.InSymmetricIdempotent x
 
 /-- **Symmetric trace ordering-independence — proved theorem.**
 

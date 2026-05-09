@@ -91,6 +91,7 @@ noncomputable instance qouMotivicGaloisChar
     -- `habiro-frobenius-probe.witness.json` field
     -- `weil_pure_at_p` and `frob_p_complex` (none unit at any
     -- tested prime per atom).
+    -- Ref: [yekutieli2010] §3-4. Substrate axiom: for the QOU
     sorry
 
 end QOU.LiftingDescent.QOUInstance

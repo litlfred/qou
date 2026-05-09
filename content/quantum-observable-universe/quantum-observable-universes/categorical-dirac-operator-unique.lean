@@ -35,6 +35,7 @@ theorem CategoricalDirac.unique
   -- quotient by structural equivalence) — see
   -- `frobenius-pairing-unique.lean` for the pattern. Sorry retained
   -- with this diagnosis rather than closed-as-stated.
+  -- Ref: [connes1994]
   sorry
 
 end QOU

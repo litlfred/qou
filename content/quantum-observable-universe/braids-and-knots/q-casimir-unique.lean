@@ -32,6 +32,7 @@ theorem QCasimir.unique_up_to_scalar (qs : QuantumSu2) :
   -- quotient by structural equivalence) — see
   -- `frobenius-pairing-unique.lean` for the pattern. Sorry retained
   -- with this diagnosis rather than closed-as-stated.
+  -- Ref: [kassel1995] Quantum Groups, §VI.4.9
   sorry
 
 end QOU

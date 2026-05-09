@@ -1,3 +1,12 @@
+**Proposition (conditional on
+[`conj:q-aubin-lions`](#conj:q-aubin-lions),
+[`conj:ns-counterexample`](#conj:ns-counterexample),
+[`conj:critical-exponent`](#conj:critical-exponent),
+[`conj:blowup-yekutieli`](#conj:blowup-yekutieli),
+and
+[`conj:regularity-breakdown`](#conj:regularity-breakdown);
+"Vorticity lower bound").**
+
 Let $v_q$ be the q-NS solution for anti-parallel vortex pair
 initial data ([counter-example](#conj:ns-counterexample)) and let
 $v^*$ be the weak limit as $q \to 1$

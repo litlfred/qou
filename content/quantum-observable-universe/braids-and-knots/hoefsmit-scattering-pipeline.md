@@ -1,4 +1,7 @@
-**Proposition.**
+**Proposition (conditional on
+[`conj:hyperbolic-volume-transcendence`](#conj:hyperbolic-volume-transcendence)
+and
+[`conj:baryon-period-ratio`](#conj:baryon-period-ratio)).**
 *The mass of a nuclear state with braid word $\beta \in B_n$ is
 computed by the following pipeline, each stage of which is
 functorial:*

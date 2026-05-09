@@ -1,15 +1,15 @@
 The jet-tower decomposition
-([jet-tower remark](#rem:mass-endomorphism-jet-tower))
+([jet-tower remark](#rem\:mass-endomorphism-jet-tower))
 asserts that the descended (holonomy) contribution to the mass
 appears **once only**, at jet level $0$, and that levels
 $n \ge 1$ carry only singleton and quadratic transient
 contributions.  This proposition provides the derivation: the
 descended projector stabilises under composition, so iterated
-descent collapses to the base-level holonomy regardless of the
+:refterm[descent]{#descent} collapses to the base-level holonomy regardless of the
 jet level at which it is read off.
 
-**Proposition.**  Let $\hat\tau_n$ be the descent involution at
-level $n$ ([descent involution](#def:descent-involution)) and
+**Proposition.**  Let $\hat\tau_n$ be the :refterm[descent]{#descent} involution at
+level $n$ ([:refterm[descent]{#descent} involution](#def\:descent-involution)) and
 $\mathcal{A}^{\mathrm{desc}}_{n+1} = \mathrm{im}\,\hat\tau_n$
 the descended subalgebra.  For every jet level $n \ge 0$, the
 descended component of the mass integrand $\alpha^{(n+1)}$
@@ -32,8 +32,8 @@ $\mathcal{A}^{\mathrm{trans}}_{n+1} = \ker\hat\tau_n$.
 
 ## Derivation
 
-*Step 1 — Descent is idempotent.*  By construction
-([descent involution](#def:descent-involution)),
+*Step 1 — :refterm[Descent]{#descent} is idempotent.*  By construction
+([:refterm[descent]{#descent} involution](#def\:descent-involution)),
 $\hat\tau_n = \ell_n \circ \mathfrak{d}_{n+1}$ with
 $\mathfrak{d}_{n+1} \circ \ell_n = \mathrm{id}_{\mathrm{End}(A_n)}$,
 so
@@ -45,10 +45,9 @@ $$
 $$
 
 The descended subalgebra is the fixed-point subspace:
-$\hat\tau_n|_{\mathcal{A}^{\mathrm{desc}}_{n+1}}
-= \mathrm{id}$.
+$\hat\tau_n|_{\mathcal{A}^{\mathrm{desc}}_{n+1}} = \mathrm{id}$.
 
-*Step 2 — Descent factors through the base.*  For any
+*Step 2 — :refterm[Descent]{#descent} factors through the base.*  For any
 $\alpha \in \mathrm{End}(A_{n+1})$,
 
 $$
@@ -61,7 +60,7 @@ $$
 Writing $\alpha_n := \mathfrak{d}_{n+1}(\alpha)$ for the
 descended representative at level $n$, the compatibility of
 the categorical trace with $\ell_n$
-([topological mass proof](#prf:topological-mass), Step 2) gives
+([topological mass proof](#prf\:topological-mass), Step 2) gives
 
 $$
   \mathrm{tr}\bigl(\hat\tau_n(\alpha)\bigr)
@@ -74,7 +73,7 @@ trace of the descended representative — a level-lowering step.
 
 *Step 3 — Recursion to the base.*  Apply Step 2 iteratively.
 Let $\alpha^{(k)} := \mathfrak{d}_k(\alpha^{(k+1)})$ be the
-recursive descent to level $k$.  Then for all $0 \le k \le n$,
+recursive :refterm[descent]{#descent} to level $k$.  Then for all $0 \le k \le n$,
 
 $$
   \mathrm{tr}\bigl(\hat\tau_n \circ \hat\tau_{n-1} \circ \cdots
@@ -98,7 +97,7 @@ $$
 $n \ge 0$.  The descended norm is therefore a **single
 $n$-independent quantity**, namely the level-$0$ base-cycle
 mass.  In the explicit formula
-([mass endomorphism tower](#prop:mass-endomorphism-tower)):
+([mass endomorphism tower](#prop\:mass-endomorphism-tower)):
 
 $$
   \mathfrak{m}(\varrho_0)
@@ -148,9 +147,9 @@ to level $0$ for the descended term eliminates it.
 ## Correct formula
 
 Combining Step 4 with the transient decomposition of
-([topological mass proof](#prf:topological-mass)) and the
+([topological mass proof](#prf\:topological-mass)) and the
 quadratic closure of
-([jet-tower remark](#rem:mass-endomorphism-jet-tower)):
+([jet-tower remark](#rem\:mass-endomorphism-jet-tower)):
 
 $$
   \mathfrak{m}(\varrho)
@@ -169,7 +168,7 @@ The descended factor is pulled out of the level sum.  Only
 the transient contributions (singletons and pairs) retain
 the per-level $\hbar_q^{2n}$ weights, and they vanish
 geometrically by the jet-tower tail bound
-([jet-tower convergence](#prop:jet-tower-convergence)).
+([jet-tower convergence](#prop\:jet-tower-convergence)).
 
 ## Engineering consequence
 
@@ -191,13 +190,13 @@ the level-$0$ holonomy by the geometric series displayed above.
 
 At the base level, the Nakayama automorphism
 $\Psi = S^2 = \mathrm{id}$ in $H_n(R, q)$
-([categorical mass as Markov trace](#prop:categorical-mass-markov)),
+([categorical mass as Markov trace](#prop\:categorical-mass-markov)),
 so the single-level mass is simply $|\mathrm{tr}_M(\rho(\beta))|$.
 The base-level descended term $\prod_i \hat V_i^{(0)}$ is
 exactly this Markov trace by the factorization theorem
-([Markov trace factorization](#thm:markov-trace-factorization)).
+([Markov trace factorization](#thm\:markov-trace-factorization)).
 The descended contribution is therefore the **Nakayama-trivial
 holonomy at the base**, and its $n$-independence in Step 4 is
-the jet-tower expression of Nakayama triviality: every descent
+the jet-tower expression of Nakayama triviality: every :refterm[descent]{#descent}
 step undoes a jet prolongation without introducing new Nakayama
 twist.

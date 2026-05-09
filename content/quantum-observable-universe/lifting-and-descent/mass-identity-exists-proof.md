@@ -7,9 +7,9 @@ Each component of the composition is a morphism in $\mathbf{C}$:
    $\int_A$.
 3. $\mathrm{tr} \colon \mathrm{End}_{\mathbf{C}}(A) \to R$ exists via
    the rigid dual structure
-   ([rigid monoidal category](#def:rigid-monoidal-category)).
+   ([rigid :refterm[monoidal category]{#monoidal-category}](#def\:rigid-monoidal-category)).
 4. The norm $\lVert \cdot \rVert$ on $R$ induced by the
-   [Frobenius pairing](#def:frobenius-pairing) is defined on every
+   [Frobenius pairing](#def\:frobenius-pairing) is defined on every
    element of $R$.
 
 The composition therefore produces an element of $R$ for every cycle

@@ -114,8 +114,8 @@ obtained.
 | $8_{11}$ | Rolfsen | 8 | 8.2863 | Tritium $^3$H | `manual-historical-volume-match` |
 | $L_{6a4}$ | Thistlethwaite link | 6 | 7.3277 | $^3$He | `manual-historical-volume-match` |
 | $\mathcal{B}_3$ | Borromean | 6 | 7.3277… (hp50) | Proton/neutron $B_3$ | `principled-derivation` (closure of $(\sigma_1 \sigma_2^{-1})^3$) |
-| $K_{11a259}$ | HT-table | 11 | 12.5201 | $^6$Li (volume-match at $\rho = 5$) | `deprecated-volume-match` ⚠ |
-| $L_{11a62}$ | HT-table | 11 | 15.3600 | $^7$Li (volume-match at $\rho = 5$) | `deprecated-volume-match` ⚠ |
+| $K_{11a259}$ | HT-table | 11 | 12.5201 | $^6$Li (volume-match at $\rho = 5$) | `deprecated-volume-match` *(deprecated)* |
+| $L_{11a62}$ | HT-table | 11 | 15.3600 | $^7$Li (volume-match at $\rho = 5$) | `deprecated-volume-match` *(deprecated)* |
 
 ## Atlas
 
@@ -198,7 +198,7 @@ obtained.
 | Braid (NF) | $T_w \in H_{12}(q_0)$.  Magic A-rule formula: $B = A \cdot 8 G \cdot m_e$. |
 | Prediction | $B_\mathrm{pred} = 2 \cdot m_e \cdot 4 \cdot 8 G = 29.956$ MeV vs $B_\mathrm{AME} = 28.296$.  **err = +5.87%**. |
 
-### ⚠ Provisional / deprecated methodology — ⁶Li, ⁷Li
+### Caveat — provisional / deprecated methodology — ⁶Li, ⁷Li
 
 > **The two entries below are NOT principled.**  They come from a
 > brute-force SnapPy volume-match search
@@ -217,7 +217,7 @@ obtained.
 
 | Row | Content |
 |--:|---|
-| Methodology | ⚠ `deprecated-volume-match` (no GB-NF derivation in $H_{18}(q_0)$). |
+| Methodology | `deprecated-volume-match` *(deprecated)* — no GB-NF derivation in $H_{18}(q_0)$). |
 | Braid (NF) | *Not derived.*  Volume-match search at $\rho = 5$ returned closure $= K_{11a259}$ (HT-table 11-crossing alternating, $\mathrm{Vol} = 12.5201$).  No explicit $\sigma$-word in $H_{18}$ available. |
 | Provisional prediction | $B_\mathrm{pred} = 5 \cdot m_e \cdot 12.5201 = 31.989$ MeV vs $B_\mathrm{AME} = 31.994$.  err $= -164{,}991$ ppb (near search noise floor). |
 
@@ -225,7 +225,7 @@ obtained.
 
 | Row | Content |
 |--:|---|
-| Methodology | ⚠ `deprecated-volume-match` (no GB-NF derivation in $H_{21}(q_0)$). |
+| Methodology | `deprecated-volume-match` *(deprecated)* — no GB-NF derivation in $H_{21}(q_0)$). |
 | Braid (NF) | *Not derived.*  Volume-match search at $\rho = 5$ returned closure $= L_{11a62}$ (HT-table 11-crossing link, $\mathrm{Vol} = 15.3600$).  No explicit $\sigma$-word in $H_{21}$ available. |
 | Provisional prediction | $B_\mathrm{pred} = 5 \cdot m_e \cdot 15.3600 = 39.245$ MeV vs $B_\mathrm{AME} = 39.245$.  err $= +4{,}009$ ppb.  **Striking precision but cannot be distinguished from numerical coincidence in a $\sim 2400$-knot search absent an independent $\sigma$-word derivation.** |
 
@@ -288,7 +288,7 @@ The atlas is auto-rendered by
 **Deprecated input** (consumed only by the quarantined provisional
 section):
 
-6. [`li-atom-knot-search.witness.json`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/li-atom-knot-search.witness.json) — ⚠ provisional volume-match search.
+6. [`li-atom-knot-search.witness.json`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/li-atom-knot-search.witness.json) — *(provisional)* volume-match search.
 
 For `principled-derivation` entries (electron, proton, neutron) the
 hyperbolic volume of the Markov closure is computed from the

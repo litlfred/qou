@@ -1,5 +1,5 @@
 Before stating the formal definition, we pause to explain why a rigid
-monoidal category is the inevitable starting point for any theory of
+:refterm[monoidal category]{#monoidal-category} is the inevitable starting point for any theory of
 quantum-geometric structure. Two independent lines of reasoning
 converge on the same conclusion.
 
@@ -9,7 +9,7 @@ not an algebraic convenience but the *grammar* of any physical system
 possessing inputs and outputs. The moment one demands a compositional
 language — where composite systems are described by combining
 subsystems, and processes compose both sequentially (via $\circ$) and
-in parallel (via $\otimes$) — one is forced into a monoidal category.
+in parallel (via $\otimes$) — one is forced into a :refterm[monoidal category]{#monoidal-category}.
 Rigidity (the existence of duals) then follows from the requirement
 that every process be reversible at the level of type structure: a
 system of type $V$ can always be "bent around" to become an input of

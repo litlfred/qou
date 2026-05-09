@@ -116,7 +116,7 @@ place (step 1 of the algorithm).  In the current implementation:
 - For ⁶Li, ⁷Li the deprecated volume-match search runs *backwards*
   from step 6 to a candidate knot, bypassing step 1 entirely.
   Quarantined by [prop:recursive-atom-knot-atlas](#prop:recursive-atom-knot-atlas)
-  §"⚠ Provisional / deprecated methodology".  The principled atlas
+  §"Provisional / deprecated methodology".  The principled atlas
   excludes them.
 
 The collapsing-spectral-sequence framing

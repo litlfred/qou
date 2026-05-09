@@ -1,6 +1,6 @@
 Continuing
-[quantum characteristic classes for SU(2)](#ex:quantum-characteristic-classes-su2),
-we verify that the [Yekutieli lifting condition](#prop:yekutieli-lifting) holds
+[quantum characteristic classes for SU(2)](#ex\:quantum-characteristic-classes-su2),
+we verify that the [Yekutieli lifting condition](#prop\:yekutieli-lifting) holds
 in the brane tower for $G = \mathrm{SU}(2)$.
 
 **The central extensions.** The brane tower
@@ -19,7 +19,7 @@ The banding sheaf is
 $\mathcal{B} = \mathcal{O}^{\times}_{\mathbb{CP}^1}$, the sheaf of
 nowhere-vanishing holomorphic functions on $\mathbb{CP}^1$.
 
-**Yekutieli's criterion.** By [Yekutieli 2010], the lifting condition
+**Yekutieli's criterion.** By \[Yekutieli 2010], the lifting condition
 for a central extension of gerbes on a smooth projective variety $S$
 banded by $\mathcal{B}$ holds whenever $H^2(S, \mathcal{B})$ classifies
 gerbes faithfully --- that is, a lift of the Frobenius--Hopf object from
@@ -39,7 +39,7 @@ lifting condition is therefore satisfied: the obstruction
 $\kappa_n$ determines liftability completely.
 
 **Perpetual obstruction.** From the
-[quantum characteristic classes](#ex:quantum-characteristic-classes-su2),
+[quantum characteristic classes](#ex\:quantum-characteristic-classes-su2),
 each obstruction is $\kappa_n \geq 1 > 0$ (since $\kappa_0 = c_1(\text{Hopf}) = 1$
 and jet corrections are non-negative).  The vanishing condition
 $\kappa_n = 0$ is never met, so the lift from level $n$ to level $n{+}1$
@@ -51,5 +51,5 @@ $\mathrm{SU}(2) \to \mathbb{CP}^1$ is topologically non-trivial
 the brane tower.  The gerbe tower for $\mathrm{SU}(2)$ is perpetually
 obstructed: the central extensions never split, and the brane tower
 never terminates by a lifting shortcut.  This is precisely the behavior
-required by the [main theorem](#thm:qu-to-qou) --- the perpetual
-obstruction forces the full descent machinery to engage at every level.
+required by the [main theorem](#thm\:qu-to-qou) --- the perpetual
+obstruction forces the full :refterm[descent]{#descent} machinery to engage at every level.

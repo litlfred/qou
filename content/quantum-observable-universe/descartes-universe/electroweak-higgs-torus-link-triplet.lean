@@ -1,11 +1,10 @@
-import Mathlib.Data.Real.Basic
-import Mathlib.Tactic.FinCases
-import Mathlib.Data.Matrix.Notation
-
 /-!
-# QOU.Descartes.EWHiggsTorusLinkTriplet
+# QOU.Descartes.EWHiggsTorusLinkTriplet — `conj:electroweak-higgs-torus-link-triplet` axiomatised
 
-(W±, Z, H) ↔ (T(2,4), T(2,6), T(2,8)) non-Bring even-twist torus-link triplet.
+Conjectural content: **the EW/Higgs sector is realised as a torus-link
+triplet $T(2, 4), T(2, 6), T(2, 8)$ in the Descartes substrate**, with
+crossing counts $4 < 6 < 8$ and genera $1 < 2 < 3$ corresponding to
+the masses $m_W < m_Z < m_H$.
 
 LaTeX label: `conj:electroweak-higgs-torus-link-triplet`
 
@@ -34,37 +33,32 @@ explicit `[Instance]` hypothesis to retain
 
 namespace QOU.Descartes
 
-/-- Boson labels in the EW/Higgs triplet: `wPlus / wMinus / Z / H`. -/
-inductive EWHiggsBoson : Type
-  | wPlus
-  | wMinus
-  | z
-  | h
-  deriving DecidableEq, Repr
+/-- **`conj:electroweak-higgs-torus-link-triplet` (axiomatised).**
 
-/-- **Conjecture class** for `conj:electroweak-higgs-torus-link-triplet`,
-    operator-level form.
-
-    The triplet identification assigns each EW/Higgs carrier
-    (W±, Z, H) one of the three torus-link writhes {4, 6, 8} on the
-    triplet {T(2,4), T(2,6), T(2,8)}.  W± share the T(2,4) writhe
-    (electroweak-charge conjugate pair), Z carries T(2,6), H carries
-    T(2,8).  The map `writhe_of` is therefore *not* injective on the
-    full boson set — it is injective on the coset {W*, Z, H} after
-    quotienting by the W±-conjugation pair.  The class fixes only the
-    four writhe values (verified by `wPlus_writhe`, `wMinus_writhe`,
-    `z_writhe`, `h_writhe`); downstream theorems supply the
-    quotient-injectivity statement when needed. -/
+    The EW Higgs sector decomposes as a torus-link triplet
+    $(T(2, 4), T(2, 6), T(2, 8))$ with strictly monotone crossing
+    counts and genera matching the mass ordering $m_W < m_Z < m_H$. -/
 class EWHiggsTorusLinkTriplet where
-  /-- Each EW/Higgs boson carries a torus-link writhe in {4, 6, 8}. -/
-  writhe_of : EWHiggsBoson → ℕ
-  /-- W± both map to T(2,4). -/
-  wPlus_writhe  : writhe_of EWHiggsBoson.wPlus  = 4
-  wMinus_writhe : writhe_of EWHiggsBoson.wMinus = 4
-  /-- Z maps to T(2,6). -/
-  z_writhe      : writhe_of EWHiggsBoson.z      = 6
-  /-- H maps to T(2,8). -/
-  h_writhe      : writhe_of EWHiggsBoson.h      = 8
+  /-- The triplet of mass scales (W, Z, H) in some natural unit. -/
+  tripletPartition : Fin 3 → ℝ
+  /-- Crossing counts of the corresponding torus links. -/
+  crossings : Fin 3 → ℕ
+  /-- Genera of the corresponding torus links. -/
+  genus : Fin 3 → ℕ
+  /-- The Higgs scale (vacuum expectation value), positive. -/
+  higgsScale : ℝ
+  /-- Higgs scale is positive. -/
+  higgsScale_pos : 0 < higgsScale
+  /-- Mass scales are strictly increasing. -/
+  triplet_strict_mono : tripletPartition 0 < tripletPartition 1 ∧
+                        tripletPartition 1 < tripletPartition 2
+  /-- **The conjecture itself.**  The crossing counts are
+      $(4, 6, 8)$ and the genera are $(1, 2, 3)$ — the canonical
+      $T(2, 2k)$ family at $k = 2, 3, 4$. -/
+  -- Ref: [manuscript] descartes-universe/electroweak-higgs-torus-link-triplet
+  ew_higgs_triplet_holds :
+    crossings 0 = 4 ∧ crossings 1 = 6 ∧ crossings 2 = 8 ∧
+    genus 0 = 1 ∧ genus 1 = 2 ∧ genus 2 = 3
 
 /-- **Structural skeleton** of the conjecture (kept for `uses` cone
     bookkeeping under §3b-cond — see CLAUDE.md). The
@@ -75,7 +69,7 @@ class EWHiggsTorusLinkTripletSkeleton : Prop where
     writhes 0 = 4 ∧ writhes 1 = 6 ∧ writhes 2 = 8 ∧
     Function.Injective writhes
 
-instance instEWHiggsTorusLinkTripletSkeleton
+instance instEWHiggsTorusLinkTripletCanonical
     [EWHiggsTorusLinkTriplet] : EWHiggsTorusLinkTripletSkeleton where
   triplet_bijection := by
     refine ⟨![4, 6, 8], rfl, rfl, rfl, ?_⟩

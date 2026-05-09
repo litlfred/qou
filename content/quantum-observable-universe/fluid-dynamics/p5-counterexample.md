@@ -1,6 +1,6 @@
 Consider the $q \to 1$ limit of solutions to the
-[q-NS equation](#def:q-navier-stokes), using the
-[Yekutieli tower](#def:recursive-brane-tower) to identify the
+[q-NS equation](#def\:q-navier-stokes), using the
+[Yekutieli tower](#def\:recursive-brane-tower) to identify the
 homological stratum where blowup occurs.
 
 **The initial data.**
@@ -32,14 +32,14 @@ The separation $d$ is measured in units of the Planck length
 $\ell_q = (q-1)/q$.
 
 **Phase 1: q-deformed evolution ($q > 1$).**
-For $q > 1$, the [q-NS well-posedness](#thm:q-ns-wellposedness)
+For $q > 1$, the [q-NS well-posedness](#thm\:q-ns-wellposedness)
 guarantees a unique smooth global solution.  The two filaments
 approach, interact, and the outcome is determined by the
-[Hecke relation](#rem:braid-fluid):
+[Hecke relation](#rem\:braid-fluid):
 
-- With probability amplitude $q/(q+q^{-1})$: **pass-through**
+* With probability amplitude $q/(q+q^{-1})$: **pass-through**
   (symmetric channel).  The filaments continue past each other.
-- With probability amplitude $q^{-1}/(q+q^{-1})$:
+* With probability amplitude $q^{-1}/(q+q^{-1})$:
   **reconnection** (antisymmetric channel).  The filaments break
   and rejoin in a new topology.
 
@@ -51,10 +51,10 @@ $d_{\min} \sim \ell_q = (q-1)/q > 0$.
 
 As $q \to 1^+ = 1 + \varepsilon$:
 
-- $\ell_q \to 0$: the minimum separation vanishes.
-- $\nu_q \to 0$: viscous damping vanishes.
-- $Q_q \to 0$: quantum pressure vanishes.
-- $\Gamma_q = [1/2]_q[3/2]_q \to 1 \cdot 2 / 4 = 3/4$:
+* $\ell_q \to 0$: the minimum separation vanishes.
+* $\nu_q \to 0$: viscous damping vanishes.
+* $Q_q \to 0$: quantum pressure vanishes.
+* $\Gamma_q = [1/2]_q[3/2]_q \to 1 \cdot 2 / 4 = 3/4$:
   circulation approaches classical value.
 
 The filaments approach with velocity
@@ -86,10 +86,10 @@ intersection curve, which is 1-dimensional.
 
 **Claim 2 (Obstruction level).**
 $n^* = 2$ — the blowup occurs at the second level of the
-[brane tower](#def:recursive-brane-tower).
+[brane tower](#def\:recursive-brane-tower).
 
 *Reason:* From the
-[Yekutieli analysis](#conj:blowup-yekutieli), $n^*$ is
+[Yekutieli analysis](#conj\:blowup-yekutieli), $n^*$ is
 determined by the Sobolev regularity at blowup.  Anti-parallel
 vortex collision produces a velocity field with bounded
 $L^2$ norm but unbounded vorticity, placing it in $H^s$ with
@@ -112,7 +112,7 @@ where $\mathrm{lk}(\varrho_1, \varrho_2)$ is the linking number
 of the two filaments (an integer) and $[\mathcal{B}]$ is the
 fundamental class of the band sheaf.
 
-*Reason:* The [descent condition](#prop:descent-condition) fails
+*Reason:* The [:refterm[descent]{#descent} condition](#prop\:descent-condition) fails
 at $\Sigma$ because the transition functions $g_{ij}^{(2)}$ of
 the second jet prolongation acquire a discontinuity proportional
 to the linking number.  The linking number is a topological
@@ -120,7 +120,7 @@ invariant — it does not depend on the approach geometry but
 only on the knot type of the filament pair.
 
 **Claim 4 (Local cohomology).**
-The [local cohomology](#def:local-cohomology-group) at the
+The [local cohomology](#def\:local-cohomology-group) at the
 collision point $p \in \Sigma$ satisfies
 
 $$
@@ -155,15 +155,14 @@ $$
 
 This lives at:
 
-- **Brane tower level**: $n = 2$ (second jet prolongation)
-- **Gerbe**: $\mathfrak{G}_2$ (the gerbe of 2-jets of
+* **Brane tower level**: $n = 2$ (second jet prolongation)
+* **Gerbe**: $\mathfrak{G}_2$ (the gerbe of 2-jets of
   $\mathrm{SU}(2)$ connections)
-- **Obstruction**: $\kappa_2 \in H^2(\Sigma, \mathcal{O}_M^\times)$
+* **Obstruction**: $\kappa_2 \in H^2(\Sigma, \mathcal{O}_M^\times)$
   with value equal to the linking number
-- **Local cohomology**: $H^1_{\mathfrak{m}_1} \cong V_{1/2}^{\oplus 2}$
+* **Local cohomology**: $H^1_{\mathfrak{m}_1} \cong V_{1/2}^{\oplus 2}$
   at each point of $\Sigma$
-- **Descent failure**: the twisted 2-cocycle
+* **:refterm[Descent]{#descent} failure**: the twisted 2-cocycle
   $d(g_{ijk}^{(2)}) \neq a_{ij}^{(2)} \cdot g_{ijk}^{(2)}
   \cdot (a_{jk}^{(2)})^{-1}$
   fails on any triple intersection meeting $\Sigma$
-

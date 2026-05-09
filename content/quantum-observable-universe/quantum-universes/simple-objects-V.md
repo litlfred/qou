@@ -1,4 +1,4 @@
-In any rigid monoidal category $\mathbf{C}$ with a fibre functor
+In any rigid :refterm[monoidal category]{#monoidal-category} $\mathbf{C}$ with a fibre functor
 $\tau \colon \mathbf{C} \to R\text{-}\mathrm{Mod}$, an object $X$ is
 *simple* if every monomorphism into $X$ is either zero or an isomorphism.
 The simple objects are the irreducible building blocks: every object of
@@ -10,7 +10,7 @@ When $R$ is a field, the simple modules are precisely the irreducible
 representations of the emergent gauge group
 $G = \mathrm{Aut}^{\otimes}(\tau)$.
 
-The [fundamental object](#sec:fundamental-object-explication) $V$ is
+The [fundamental object](#rem\:fundamental-object-explication) $V$ is
 distinguished among the simples by two properties:
 
 1. **Categorical dimension $2$**: $\tau(V)$ is a rank-$2$ free

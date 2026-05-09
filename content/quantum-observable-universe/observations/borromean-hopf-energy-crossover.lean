@@ -46,11 +46,13 @@ theorem borromean_binding_large :
 
 /-- The Milnor triple linking invariant of the Borromean link. -/
 -- Ref: [manuscript] Ch. 4
-def milnor_mu_borromean : Int := 1
+def milnor_mu_borromean : Int :=
+  1
 
 /-- The Milnor triple linking invariant of the Hopf-diquark phase. -/
 -- Ref: [manuscript] Ch. 7
-def milnor_mu_cfl : Int := 0
+def milnor_mu_cfl : Int :=
+  0
 
 /-- The Milnor invariant jumps: this is a first-order transition. -/
 -- Ref: [manuscript] Ch. 7

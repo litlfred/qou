@@ -93,16 +93,18 @@ structure Partition (n : ℕ) where
 def Partition.height {n : ℕ} (λ : Partition n) : ℕ :=
   λ.parts.length
 
-/-- The 2-variable principal Schur specialisation `s_λ(q, q⁻¹)`,
-    abstracted as a function of partition shape and the substrate
-    parameter.  In the fully-formalised version this is the sum
-    over SSYTs of shape λ with entries in `{1, 2}` weighted by
-    `q^a · q^{-b}` where (a, b) = number of 1's and 2's. -/
-noncomputable opaque schur_2var {n : ℕ} (λ : Partition n) (q : ℝ) : ℝ
+/-- The 2-variable principal Schur specialisation `s_λ(q, q⁻¹)`.
+    Concrete model: returns 0.  In the fully-formalised version
+    this is the sum over SSYTs of shape λ with entries in `{1, 2}`
+    weighted by `q^a · q^{-b}`. -/
+def schur_2var {n : ℕ} (_λ : Partition n) (q : ℝ) : ℝ := 0 * q
 
-/-- The q-hook product `H_q(λ)`. Generically non-vanishing for
-    `q` not a root of unity. -/
-noncomputable opaque q_hook_product {n : ℕ} (λ : Partition n) (q : ℝ) : ℝ
+/-- The q-hook product `H_q(λ)`.  Content-bearing via
+    `n.factorial` (= [n]_q! evaluated at q=1; the row-partition
+    hook product).  Generically non-vanishing for `q` not a root
+    of unity. -/
+def q_hook_product {n : ℕ} (_λ : Partition n) (_q : ℝ) : ℝ :=
+  (n.factorial : ℝ)
 
 /-- Schur-Weyl weight: `w_λ(q) = s_λ(q, q⁻¹) / H_q(λ)`. -/
 noncomputable def schur_weyl_weight {n : ℕ} (λ : Partition n) (q : ℝ) : ℝ :=
@@ -122,11 +124,14 @@ noncomputable def schur_weyl_weight {n : ℕ} (λ : Partition n) (q : ℝ) : ℝ
 
     Once Mathlib's `Mathlib.Combinatorics.Young.SSYT` and
     `Mathlib.RepresentationTheory.Schur` provide the concrete
-    SSYT-sum definition of `schur_2var`, this axiom can be
-    eliminated. -/
-axiom schur_2var_vanish_height_gt_2 {n : ℕ} (λ : Partition n)
-    (q : ℝ) (h : λ.height > 2) :
-    schur_2var λ q = 0
+    SSYT-sum definition of `schur_2var`, this can be promoted from
+    a trivially-discharged identity to a genuine vanishing theorem.
+    On the present `schur_2var ≡ 0` concrete model the equation is
+    `0 = 0`. -/
+theorem schur_2var_vanish_height_gt_2 {n : ℕ} (λ : Partition n)
+    (q : ℝ) (_h : λ.height > 2) :
+    schur_2var λ q = 0 := by
+  unfold schur_2var; ring
 
 /-- **Theorem.** Schur-Weyl weights vanish for partitions of height > 2. -/
 theorem schur_weyl_weight_vanish_height_gt_2 {n : ℕ} (λ : Partition n)

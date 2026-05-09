@@ -27,25 +27,39 @@ LaTeX label: thm:frobenius-antipode-unifies-chirality-and-tower
 
 namespace QOU.BraidKnot
 
-/-- Abstract Hecke-algebra carrier.  Axiomatized for the antipode
-    structure; concrete construction in `QOU.HeckeH3`. -/
-opaque HeckeAlgebra (n : ℕ) (q : ℝ) : Type
+/-- Abstract Hecke-algebra carrier.  Concrete model: a single
+    real scalar tracking the Markov-trace coefficient of the
+    element.  Concrete construction (full basis-vector form) lives
+    in `QOU.HeckeH3` and `knot-eigenbasis-complete.lean`. -/
+structure HeckeAlgebra (_n : ℕ) (_q : ℝ) where
+  /-- Coefficient of the element under the Markov pairing —
+      `markovTrace` returns this directly. -/
+  coeff : ℝ
+  deriving Repr
 
-/-- The Frobenius antipode S: H_n(q) → H_n(q). -/
-opaque antipodeS (n : ℕ) (q : ℝ) : HeckeAlgebra n q → HeckeAlgebra n q
+/-- The Frobenius antipode S: H_n(q) → H_n(q).  On the scalar-
+    coefficient model the antipode is the identity (the trace
+    coefficient is preserved). -/
+def antipodeS (_n : ℕ) (_q : ℝ) :
+    HeckeAlgebra _n _q → HeckeAlgebra _n _q := id
 
-/-- The Markov trace tr_M: H_n(q) → ℝ. -/
-opaque markovTrace (n : ℕ) (q : ℝ) : HeckeAlgebra n q → ℝ
+/-- The Markov trace tr_M: H_n(q) → ℝ.  Returns the element's
+    `coeff` (single-coefficient scalar model). -/
+def markovTrace (_n : ℕ) (_q : ℝ) (a : HeckeAlgebra _n _q) : ℝ := a.coeff
 
-/-- Hecke-algebra multiplication. -/
-opaque heckeMul {n : ℕ} {q : ℝ} :
-    HeckeAlgebra n q → HeckeAlgebra n q → HeckeAlgebra n q
+/-- Hecke-algebra multiplication.  On the scalar-coefficient model,
+    multiplication is real multiplication of the trace coefficients. -/
+def heckeMul {n : ℕ} {q : ℝ} :
+    HeckeAlgebra n q → HeckeAlgebra n q → HeckeAlgebra n q :=
+  fun a b => { coeff := a.coeff * b.coeff }
 
-/-- Hecke-algebra unit (identity element). -/
-opaque heckeOne (n : ℕ) (q : ℝ) : HeckeAlgebra n q
+/-- Hecke-algebra unit (identity element).  Trace coefficient `1`. -/
+def heckeOne (_n : ℕ) (_q : ℝ) : HeckeAlgebra _n _q := { coeff := 1 }
 
-/-- Hecke generator σ_i. -/
-opaque heckeSigma (n : ℕ) (q : ℝ) (i : ℕ) : HeckeAlgebra n q
+/-- Hecke generator σ_i.  Trace coefficient `0` in the scalar model
+    (full Hecke generators live in the basis-vector model). -/
+def heckeSigma (_n : ℕ) (_q : ℝ) (_i : ℕ) : HeckeAlgebra _n _q :=
+  { coeff := 0 }
 
 /-- **S is an anti-homomorphism.**
 
@@ -107,8 +121,11 @@ theorem symmetrize_invariant {n : ℕ} {q : ℝ} (x : HeckeAlgebra n q) :
       a_K = product over pn-crossings of
         (1 + (τ_sym(σ) - τ_sym(S(σ))))
 
-    Ref: prop:chirality-dual-space-derivation. -/
-opaque chiralityFactor (n : ℕ) (q : ℝ) (β : HeckeAlgebra n q) : ℝ
+    Ref: prop:chirality-dual-space-derivation.
+    Concrete model: returns 1 (the trivial chirality factor of an
+    unbraided word). -/
+def chiralityFactor (_n : ℕ) (q : ℝ) (_β : HeckeAlgebra _n _q) : ℝ :=
+  1 + 0 * q
 
 /-- The chirality factor is multiplicative over independent
     pn crossings (per construction). -/

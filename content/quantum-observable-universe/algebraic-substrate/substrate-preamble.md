@@ -6,7 +6,7 @@ of this chapter is to exhibit, in full categorical detail, the algebraic
 object whose internal geometry generates the physics.
 
 The quantum vacuum is formalized as a self-dual Frobenius--Hopf algebra
-$A$ living in a rigid monoidal category $\mathbf{C}$. This object
+$A$ living in a rigid :refterm[monoidal category]{#monoidal-category} $\mathbf{C}$. This object
 carries three layers of structure. First, the Frobenius form
 $\lambda \colon A \to \mathbf{1}$ and the Hopf comultiplication
 $\Delta \colon A \to A \otimes A$ endow $A$ with both an inner product

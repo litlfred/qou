@@ -1,6 +1,6 @@
 The physics endomorphism $\Phi \in \mathrm{End}_{\mathbf{C}}(A)$ of the
 categorical action
-([categorical action](#def:categorical-action)) is not a single
+([categorical action](#def\:categorical-action)) is not a single
 knot operator: it is an element of a **vector space** that
 decomposes over the irreducible representations of $H_n(q)$.
 This decomposition, combined with the Frobenius self-duality
@@ -14,14 +14,14 @@ given interaction and with what weights.
 realisation $H_r(q)$, and let
 $\{\tau(r_i, s_i)\}_{i=1}^{6}$ be the embeddable torus knots on
 $\Sigma_4$
-([cohomological embedding](#prop:cohomological-embedding)).
+([cohomological embedding](#prop\:cohomological-embedding)).
 Let $\gamma_1, \gamma_2 \in H_3(q)$ be two incoming particle
 states.*
 
 **(i) Spectral decomposition of the mediating endomorphism.**
 *The physics endomorphism $\Phi$ decomposes via Schur
 orthogonality
-([RJ canonical inner product](#prop:rj-canonical-inner-product))
+([RJ canonical inner product](#prop\:rj-canonical-inner-product))
 as:*
 
 $$
@@ -65,9 +65,9 @@ $\int_A \circ \mu$ identifies the NF decomposition of each
 state with its dual.  For a state $K = \sum_i c_i b_i$ in the
 NF basis $\{b_i\} = \{\gamma, \sigma_0, \sigma_1, L_+, L_-, e^-\}$:*
 
-- *Positive coefficients $c_i > 0$ are **supply**: channels the
+* *Positive coefficients $c_i > 0$ are **supply**: channels the
   state provides.*
-- *Negative coefficients $c_i < 0$ are **demand**: channels the
+* *Negative coefficients $c_i < 0$ are **demand**: channels the
   state requires from its interaction partner.*
 
 *The Frobenius pairing
@@ -78,7 +78,7 @@ there exists a unique minimal-norm supply that satisfies it.*
 **(iv) Minimum-action selection.**
 *Among all $\Phi \in \mathrm{End}(A)$ compatible with the
 on-shell condition $\star_q F_\nabla = F_\nabla$
-([instanton on-shell](#rem:instanton-on-shell)), the physical
+([instanton on-shell](#rem\:instanton-on-shell)), the physical
 interaction selects the $\Phi$ minimizing the categorical
 action $|\mathcal{S}| = |\mathrm{tr}(\Phi)|$.  The dominant
 channel is the irrep $\lambda_*$ with largest
@@ -91,14 +91,14 @@ so $\mathrm{End}_{H_r(q)}(V^{\otimes r})$ decomposes as
 $\bigoplus_\lambda \mathrm{End}(V_\lambda)$ by the Wedderburn
 theorem.  The Markov trace projects onto each component with
 weight $d_\lambda(q)$ by Schur orthogonality
-([RJ inner product](#prop:rj-canonical-inner-product)).
+([RJ inner product](#prop\:rj-canonical-inner-product)).
 
 **(ii)** The categorical action
 $\mathcal{S} = \mathrm{ev}_A \circ (\mathrm{id}_{A^\vee} \otimes \Phi) \circ \mathrm{coev}_A = \mathrm{tr}(\Phi)$
 is linear in $\Phi$.  Substituting the spectral decomposition
 (i) and using the identification
-$\mathrm{tr} = \mathrm{tr}_M$ (archimedean descent,
-[RJ interpretation](#rem:rj-inner-product-interpretation))
+$\mathrm{tr} = \mathrm{tr}_M$ (archimedean :refterm[descent]{#descent},
+[RJ interpretation](#rem\:rj-inner-product-interpretation))
 gives the stated sum over channels.
 
 **(iii)** The Frobenius pairing
@@ -138,10 +138,11 @@ $$
 
 **All channels fire simultaneously.**  Two incoming photons
 can:
-- change polarisation (trivial operator, no pair created),
-- exchange a gluon ($T_{2,2}$, Hopf link),
-- create $e^-e^+$ ($T_{2,3}$, trefoil), and
-- create $\mu^-\mu^+$ ($T_{2,5}$, cinquefoil, suppressed by
+
+* change polarisation (trivial operator, no pair created),
+* exchange a gluon ($T_{2,2}$, Hopf link),
+* create $e^-e^+$ ($T_{2,3}$, trefoil), and
+* create $\mu^-\mu^+$ ($T_{2,5}$, cinquefoil, suppressed by
   higher crossing energy)
 
 in a single interaction, with each channel weighted by its

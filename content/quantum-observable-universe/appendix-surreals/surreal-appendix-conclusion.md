@@ -35,17 +35,16 @@ answers. A partial list:
    The strict QOU axioms ($\int \circ \eta = \mathrm{id}$,
    $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$) might force
    the $\varepsilon$-relaxed versions to coincide with the strict
-   ones in any rigid monoidal category. If so, the
+   ones in any rigid :refterm[monoidal category]{#monoidal-category}. If so, the
    $\varepsilon$-flexibility is illusory and the main paper loses
    nothing by ignoring it. We conjecture the flexibility is
    *real* when the ground ring is not a field
-   ([infinitesimal Frobenius](#conj:infinitesimal-frobenius)),
+   ([infinitesimal Frobenius](#conj\:infinitesimal-frobenius)),
    but a proof or counterexample is outstanding.
 
 6. **Kashaev as a surreal statement.** The reformulation
-   $\mathrm{st}\bigl(2 \pi \log |J_K(q_\omega, \omega)|/\omega\bigr)
-   = \mathrm{Vol}(S^3 \setminus K)$
-   ([Kashaev surreal](#conj:kashaev-surreal)) is equivalent to the
+   $\mathrm{st}\bigl(2 \pi \log |J_K(q_\omega, \omega)|/\omega\bigr) = \mathrm{Vol}(S^3 \setminus K)$
+   ([Kashaev surreal](#conj\:kashaev-surreal)) is equivalent to the
    classical conjecture modulo the meaning of $q_\omega$. Its
    value, if any, is separating the algebraic (Hecke/Markov)
    content from the transcendental (dilogarithm, hyperbolic
@@ -53,15 +52,15 @@ answers. A partial list:
 
 ## What this appendix **does** accomplish
 
-- It provides an explicit ambient for the $q \to 1$ limit and
+* It provides an explicit ambient for the $q \to 1$ limit and
   renormalisation blow-ups, avoiding informal $\infty$ notation.
-- It exhibits a surprising isomorphism between the Hoefsmit
+* It exhibits a surprising isomorphism between the Hoefsmit
   seminormal form (already central to the paper's mass formula)
   and Conway's $\{L \mid R\}$ construction.
-- It gives a disciplined framework for $\varepsilon$-relaxed
+* It gives a disciplined framework for $\varepsilon$-relaxed
   axioms that may be useful even to readers uninterested in
   surreals per se.
-- It catalogues which QOU constructions are purely algebraic
+* It catalogues which QOU constructions are purely algebraic
   (and therefore field-polymorphic) versus which are genuinely
   analytic.
 

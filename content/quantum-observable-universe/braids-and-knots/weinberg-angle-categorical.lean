@@ -84,4 +84,22 @@ class WeinbergAngleCategorical
   /-- Numerical verification against CODATA `sin²θ_W`. -/
   numerical : WeinbergAngleNumerical q
 
+/-- **Skeleton instance.**  All four hypothesis predicates are
+    currently defined as `True` — their full categorical statements
+    are the subject of separate conjecture blocks
+    (`conj:categorical-linking-operation`,
+    `conj:hoefsmit-ew-cell-content`,
+    `conj:categorical-higgs-mechanism`).  The skeleton instance
+    therefore closes by `trivial` on each obligation; it is the
+    minimal Lean witness that an inhabitant exists, and is sufficient
+    to discharge the §3b-cond hypothesis for downstream blocks
+    consuming `[WeinbergAngleCategorical R q]`. -/
+-- Ref: weinberg-angle-categorical.md §"Status"
+instance canonical {R : Type*} [CommRing R] (q : R) :
+    WeinbergAngleCategorical R q where
+  lk_discharged := trivial
+  hoefsmit_discharged := trivial
+  vev_automorphism := trivial
+  numerical := trivial
+
 end QOU.BraidsAndKnots

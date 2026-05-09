@@ -32,6 +32,7 @@ theorem QHeatEquation.unique_solution (S : Type*) :
   -- quotient by structural equivalence) — see
   -- `frobenius-pairing-unique.lean` for the pattern. Sorry retained
   -- with this diagnosis rather than closed-as-stated.
+  -- Ref: [kassel1995] §VII.4
   sorry
 
 end QOU

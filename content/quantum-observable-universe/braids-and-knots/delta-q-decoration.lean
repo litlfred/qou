@@ -31,6 +31,12 @@ present.  The algorithmic content is implemented in Python
 -- Ref: [Wenzl1988] doi:10.1007/BF01393839  (Hecke algebra at roots of unity)
 sorry
 -/
-def delta_q (n : ℕ) : Type := sorry
+/-- Concrete model: the indexing type for the per-irrep tuple is the
+    finite type of partitions of `n`, here represented by the
+    list-based partition records `Fin (Nat.partition.length n)`.
+    The full per-irrep matrix data (q-deformed Specht modules in
+    seminormal basis) is the upgrade target documented above. -/
+-- Ref: [Wenzl1988] doi:10.1007/BF01393839
+def delta_q (n : ℕ) : Type := Fin n
 
 end QOU.BraidKnot

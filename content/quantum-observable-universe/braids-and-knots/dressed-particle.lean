@@ -14,9 +14,24 @@ namespace QOU.BraidKnot
 
 universe u
 
-/-- Placeholder types resolved by sibling files. -/
-opaque BareTy : Type
-opaque ShellTy : Type
+/-- Concrete bare-particle type.  Carries the proton number and a
+    strand count for the bare braid representation; richer
+    realisations live in sibling files. -/
+structure BareTy where
+  /-- Proton number `Z`. -/
+  Z : ℕ
+  /-- Strand count `n₀` of the bare braid representation. -/
+  n_0 : ℕ
+  deriving Repr
+
+/-- Concrete electron-shell type.  Carries a principal quantum number
+    `n` and the electron count in the shell. -/
+structure ShellTy where
+  /-- Principal quantum number of the shell. -/
+  principal : ℕ
+  /-- Electron count occupying the shell. -/
+  electrons : ℕ
+  deriving Repr
 
 /-- **Dressed particle.** Codomain of a dressing morphism; carries
     a bare-particle core, a shell record, and the composite Markov
@@ -42,6 +57,7 @@ theorem dressComposition
     (h₀₁ : P₁.bare = P₀.bare)
     (h₁₂ : P₂.bare = P₁.bare) :
     P₂.level = P₀.level := by
+  -- Ref: [manuscript] braids-and-knots/dressed-particle
   sorry
 
 end QOU.BraidKnot

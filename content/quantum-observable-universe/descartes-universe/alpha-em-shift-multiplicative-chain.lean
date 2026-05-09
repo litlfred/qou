@@ -27,17 +27,18 @@ namespace QOU.Descartes.AlphaEmShiftChain
 
 open QOU.BraidKnot.AlphaShiftTorus
 
-/-- Abstract q-integer indexing function — opaque, since a full
-treatment would route through `QOU.Descartes.qInteger` from
-`em-coupling-projection.lean`. We expose only the structural
-property used by the chain. -/
-opaque qIntegerIndex (n : ℕ) : Type
+/-- Abstract q-integer indexing.  Concrete model: a record carrying
+    the integer index `n` itself (so `qIntegerIndex n` records the
+    target degree of the `[n]_q` q-integer being indexed). -/
+structure qIntegerIndex (_n : ℕ) where
+  /-- The numerical index `n` of the `[n]_q` q-integer. -/
+  idx : ℕ
+  deriving Repr
 
 /-- Abstract bare-form indexing for `α_EM⁻¹ = q · [9]_q · [10]_q`
-from prop:em-coupling-projection. The chain identity is the same
-expression with the indices `9` and `10` replaced by
-`alphaShift 2 9` and `alphaShift 3 5`. -/
-opaque alphaEmInvIndices : List ℕ
+    from prop:em-coupling-projection.  Concrete model: `[9, 10]`,
+    matching the `bareIndices` def below. -/
+def alphaEmInvIndices : List ℕ := [9, 10]
 
 /-- The chain-form indices: `[alphaShift 2 9, alphaShift 3 5]`. -/
 def chainIndices : List ℕ := [alphaShift 2 9, alphaShift 3 5]

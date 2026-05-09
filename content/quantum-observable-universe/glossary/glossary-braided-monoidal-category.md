@@ -1,4 +1,4 @@
-:defterm[Braided monoidal category]{#braided-monoidal-category}. A monoidal category equipped with a
+:defterm[Braided monoidal category]{#braided-monoidal-category}. A :refterm[monoidal category]{#monoidal-category} equipped with a
 natural isomorphism $\beta_{X,Y} \colon X \otimes Y \xrightarrow{\sim} Y \otimes X$ (the *braiding*) satisfying the two hexagon axioms.
 
 **Mathlib reference.**

@@ -144,7 +144,7 @@ succeeding):
 
 ### Status
 
-🟡 **Open**. Numerical value $\mathcal{N}_{\rm sym}(q_0) \approx 213.11$ is fixed by consistency. **Closed form requires categorical derivation, not ansatz-fitting** (per the methodological correction in PR #515 follow-up):
+**Status: open.** Numerical value $\mathcal{N}_{\rm sym}(q_0) \approx 213.11$ is fixed by consistency. **Closed form requires categorical derivation, not ansatz-fitting** (per the methodological correction in PR #515 follow-up):
 
 1. Discharging
    [`conj:force-carrier-knot-vs-link-dichotomy`](#conj:force-carrier-knot-vs-link-dichotomy)
@@ -194,7 +194,7 @@ This single artifact unlocks:
   categorical placement)
 
 Until that derivation exists, `conj:n-sym-symmetric-channel-normalization`
-remains 🟡 — the numerical value is pinned, the closed form is not.
+remains *open* — the numerical value is pinned, the closed form is not.
 
 ### Witness
 

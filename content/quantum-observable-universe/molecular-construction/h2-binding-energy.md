@@ -8,7 +8,7 @@ $$
 
 *where $\alpha = m_e \times 8G \approx 0.511 \times 7.328
 \approx 3.744 \;\mathrm{MeV}$ is the universal binding scale
-from the [Wedderburn mass formula](#thm:wedderburn-mass-formula).*
+from the [Wedderburn mass formula](#thm\:wedderburn-mass-formula).*
 
 *The optimal binding from the LP dual encodes:*
 
@@ -26,7 +26,7 @@ from the [Wedderburn mass formula](#thm:wedderburn-mass-formula).*
 
 *The LP dual shadow price $y_{\mathrm{cov}}^*$ directly gives
 the **bond dissociation energy** — the energy required to
-separate $H_2$ into two H atoms.  The observed value is
+separate $H_2$ into two H atoms.  The :refterm[observed value]{#observed-value} is
 $D_0(H_2) \approx 4.478 \;\mathrm{eV}$.*
 
 *Computationally, the $H_2$ braid is small enough ($H_4(q)$,

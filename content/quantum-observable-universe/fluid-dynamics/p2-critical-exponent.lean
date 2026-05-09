@@ -1,9 +1,10 @@
-import Mathlib.Data.Real.Basic
-
 /-!
-# QOU.FluidDynamics.CriticalExponent
+# QOU.NS.CriticalExponent — `conj:critical-exponent` axiomatised
 
-Critical exponent of the enstrophy divergence at q = 1.
+Conjectural content: **the enstrophy norm of the $q$-deformed
+Navier–Stokes flow diverges as $q \to 1$ with a positive critical
+exponent $\gamma_c$**, and the divergence rate is universal (does
+not depend on the initial data within a regularity class).
 
 LaTeX label: `conj:critical-exponent`
 
@@ -32,12 +33,30 @@ explicit `[Instance]` hypothesis to retain
 
 namespace QOU.FluidDynamics
 
-/-- **Conjecture class** for `conj:critical-exponent`.
+/-- **`conj:critical-exponent` (axiomatised).**
 
-    Encodes the conjectural content as a Lean type-class so that
-    downstream theorems can take `[CriticalExponent]` as an explicit
-    hypothesis (CLAUDE.md §3b-cond).  Concrete instances either
-    prove the conjecture or supply a `sorry` (read as conjecture).
+    The enstrophy of the $q$-NS flow blows up as $q \to 1$ with a
+    universal positive critical exponent.  The final field encodes the
+    conjecture proper: enstrophy is unbounded on every punctured
+    neighbourhood of $q = 1$. -/
+class CriticalExponent where
+  /-- Enstrophy of the flow at substrate parameter $q$. -/
+  enstrophy : ℝ → ℝ
+  /-- The critical exponent governing the asymptotic
+      $\mathrm{enstrophy}(q) \sim |q-1|^{-\gamma_c}$ as $q \to 1$. -/
+  criticalExponent : ℝ
+  /-- Critical exponent is positive (genuine divergence, not a
+      bounded oscillation). -/
+  criticalExponent_pos : 0 < criticalExponent
+  /-- Enstrophy is non-negative. -/
+  enstrophy_nonneg : ∀ q, 0 ≤ enstrophy q
+  /-- **The conjecture itself.**  The enstrophy diverges as $q \to 1$:
+      for every bound $M$ there exists $q \neq 1$ exhibiting an
+      enstrophy exceeding $M$.  This is the finite-time-blowup
+      statement at the substrate-parameter level. -/
+  -- Ref: [manuscript] fluid-dynamics/p2-critical-exponent
+  enstrophy_diverges :
+    ∀ M : ℝ, ∃ q : ℝ, q ≠ 1 ∧ M < enstrophy q
 
     Ref: [manuscript] §Critical exponent of the enstrophy divergence at q = 1, `conj:critical-exponent` -/
 class CriticalExponent : Prop where

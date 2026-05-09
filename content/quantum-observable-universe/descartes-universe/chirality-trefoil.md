@@ -1,9 +1,9 @@
 The chirality of the observable universe --- manifest in the three colour
 charges of quantum chromodynamics --- is encoded in the symmetry group of the
-descended surface $M_0$.  [genus-maximal descent](#prop:genus-maximal-descent)
+descended surface $M_0$.  [genus-maximal :refterm[descent]{#descent}](#prop\:genus-maximal-descent)
 identifies $M_0$ as a genus-$4$ Riemann surface.  We require a genus-$4$
 surface whose automorphism group contains three subgroups isomorphic to $S_3$
---- quotients of the trefoil knot group
+\--- quotients of the trefoil knot group
 $\pi_1(S^3 \setminus K) \cong \langle x, y \mid x^2 = y^3 \rangle$ ---
 corresponding to the three colour charges (red, green, blue).  These $S_3$
 subgroups generate a subgroup of the monodromy group, and the remaining

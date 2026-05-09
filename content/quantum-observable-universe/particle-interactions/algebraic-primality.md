@@ -1,12 +1,12 @@
 ## Definition
 
 **Definition (algebraic primality).**
-*Let $\mathbf{C}$ be the rigid braided monoidal category of the
+*Let $\mathbf{C}$ be the rigid :refterm[braided monoidal category]{#braided-monoidal-category} of the
 framework, $A \in \mathbf{C}$ a generating object, and $V_n =
 A^{\otimes n}$ the $n$-fold tensor power. Fix substrate $q > 1$
 (generic, not a root of unity). For each $n \in \mathbb{N}_{\geq 1}$,
 the confinement SDP at $(n, q)$
-([prop:confinement-sdp](#prop:confinement-sdp)) has a canonical
+([prop:confinement-sdp](#prop\:confinement-sdp)) has a canonical
 optimal state*
 
 $$
@@ -32,11 +32,11 @@ $$
 
 ## Three equivalent characterisations (conjecturally)
 
-| Form | Statement |
-|---|---|
-| **Tensor irreducibility** | $\psi_n(q)$ is not a tensor product of smaller-index canonical states |
-| **SDP rank excess** | $\rho(n, q) > \sum_i \rho(n_i, q)$ for every decomposition $n = \sum n_i$ |
-| **Unfolding distance** | the braid-equivalence distance from $w_n^*(q)$ to any tensor product $w_{n_1}^* \otimes \cdots \otimes w_{n_k}^*$ is at least $1$ |
+| Form                      | Statement                                                                                                                         |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| **Tensor irreducibility** | $\psi_n(q)$ is not a tensor product of smaller-index canonical states                                                             |
+| **SDP rank excess**       | $\rho(n, q) > \sum_i \rho(n_i, q)$ for every decomposition $n = \sum n_i$                                                         |
+| **Unfolding distance**    | the braid-equivalence distance from $w_n^*(q)$ to any tensor product $w_{n_1}^* \otimes \cdots \otimes w_{n_k}^*$ is at least $1$ |
 
 The three are conjecturally equivalent in the rigid braided monoidal
 category $\mathbf{C}$ at generic $q > 1$.
@@ -48,7 +48,7 @@ canonical states $\psi_{n_i}$ for $n_i < n$. The recursion bottoms
 out at $n = 1$: there, no decomposition into $k \geq 2$ parts each
 $\geq 1$ exists (sum lower-bound). $n = 1$ is therefore *vacuously*
 prime — see
-[prop:n-equals-1-vacuous-magic](#prop:n-equals-1-vacuous-magic).
+[prop:n-equals-1-vacuous-magic](#prop\:n-equals-1-vacuous-magic).
 
 **$q$-fixed and intrinsic.** The definition references only the SDP
 machinery and the tensor-product structure of $\mathbf{C}$. No
@@ -66,8 +66,8 @@ follows from the rationality structure of the SDP cost in $q$
 
 ## Connection to existing framework conjectures
 
-- **Homological condensation**:
-  [conj:homological-shell-condensation](#conj:homological-shell-condensation)
+* **Homological condensation**:
+  [conj:homological-shell-condensation](#conj\:homological-shell-condensation)
   characterises magic via spectral-sequence collapse. Tensor
   irreducibility translates to non-vanishing of certain higher
   $E_r$-page differentials.
@@ -75,7 +75,7 @@ follows from the rationality structure of the SDP cost in $q$
 ## Empirical-match conjecture
 
 The empirical magic ladder claim is the separate conjecture
-[conj:algebraic-primality-equals-empirical-at-q0](#conj:algebraic-primality-equals-empirical-at-q0):
+[conj:algebraic-primality-equals-empirical-at-q0](#conj\:algebraic-primality-equals-empirical-at-q0):
 at $q = q_0$, the set of algebraically prime integers equals
 $\{1, 2, 8, 20, 28, 50, 82, 126\}$. The "$1$" is vacuous;
 $\{2, 8, 20, 28, 50, 82, 126\}$ is the empirical nuclear magic

@@ -1,6 +1,6 @@
 Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe satisfying the
 Descartes condition $\chi(A) = -6$
-([Descartes condition](#def:descartes-condition)).  If the geometric descent
+([Descartes condition](#def\:descartes-condition)).  If the geometric :refterm[descent]{#descent}
 produces a compact one-complex-dimensional base $M_0$, then $M_0$ is a
 Riemann surface of genus $g = 4$.
 

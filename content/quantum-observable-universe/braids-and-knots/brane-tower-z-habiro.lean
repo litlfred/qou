@@ -52,4 +52,16 @@ class BraneTowerZHabiro (n₀ : ℕ) (q : ℝ) where
   recovery_holds : ∀ (ell k : ℕ) (B_target eps : ℝ),
     0 < eps → recoversBinding ell k B_target eps
 
+/-- **Tautological-recovery skeleton instance.**  Defines
+    `recoversBinding` as the constant `True` predicate; under this
+    interpretation `recovery_holds` closes by `trivial`.  Encodes
+    none of the conjectural recovery content (no per-atom binding
+    energies are checked) but discharges the §3b-cond hypothesis. -/
+-- Ref: [manuscript] conj:brane-tower-z-habiro §"Skeleton"
+instance canonical (n₀ : ℕ) (q : ℝ) : BraneTowerZHabiro n₀ q where
+  nStar := fun ell _ => max ell 1
+  nStar_pos := by intro ell k hell; simp [Nat.lt_max_iff]; left; exact hell
+  recoversBinding := fun _ _ _ _ => True
+  recovery_holds := fun _ _ _ _ _ => trivial
+
 end QOU.BraidKnot

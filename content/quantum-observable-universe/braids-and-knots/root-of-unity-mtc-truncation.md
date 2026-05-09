@@ -25,7 +25,7 @@ e^{2\pi i / k}$.*
 $k$-th root of unity converts the open-ended Hecke evaluation into a
 finite-rank fusion calculation: the engine enumerates the truncated
 crystal nodes and reads off the $F$- and $R$-matrices of
-$\mathrm{MTC}_k$ directly from the $T_{s_i}$ generators evaluated at
+$\mathrm{MTC}_k$ directly from the $\sigma_{s_i}$ generators evaluated at
 the chosen root.*
 
 **Why a conjecture and not a theorem.**

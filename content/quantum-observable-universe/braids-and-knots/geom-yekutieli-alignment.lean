@@ -14,6 +14,7 @@
 -/
 
 import QOU.BraidKnot.NuclearKnotClassification
+import QOU.BraidKnot.ConditionalClasses
 
 namespace QOU.BraidKnot
 
@@ -45,5 +46,23 @@ theorem frobenius_self_pairing_unitary (q : ℝ) (hq : q > 1) (vol : ℝ)
     apply pow_ne_zero; linarith [div_lt_one_of_lt hq hq_pos]
   field_simp
   ring
+
+/-- **Conditional Geom-Yekutieli alignment.**  The piecewise geometric
+    invariant `Geom(K)` agrees with Yekutieli's rigid-dualizing
+    evaluation on every nuclear knot type, conditional on the upstream
+    conjectures captured by `[GeomYekutieliConditional]`.
+
+    The hypotheses `[SingleVolumeIrrational]` and
+    `[PLCorrectnessHypotheses]` are the Lean-level encoding of the
+    §3b-cond conditional dependency on
+    [conj:hyperbolic-volume-transcendence] and
+    [conj:baryon-period-ratio].  The conditional discharges to the
+    unconditional `frobenius_self_pairing_unitary` proven above. -/
+theorem geom_yekutieli_alignment_conditional
+    [SingleVolumeIrrational] [PLCorrectnessHypotheses]
+    (q : ℝ) (hq : q > 1) (vol : ℝ) (hvol : vol > 0) :
+    let hbar_q2 := (1 - 1/q) ^ 2
+    (vol / hbar_q2) * (hbar_q2 / vol) = 1 :=
+  frobenius_self_pairing_unitary q hq vol hvol
 
 end QOU.BraidKnot
