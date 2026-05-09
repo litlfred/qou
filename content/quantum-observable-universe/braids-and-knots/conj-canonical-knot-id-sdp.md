@@ -70,6 +70,49 @@ when $T_w$ is set to these knot types.  The conjecture asserts that
 no other $T_w$ within the $\Delta_{\max}$ ball achieves a smaller
 residual.
 
+## Partial closure (PR #608, 2026-05-09)
+
+The R5-full canonical-knot SDP solver prototype
+([`r5_full_canonical_knot_solver.py`](../../../folio-assistant/computations/r5_full_canonical_knot_solver.py),
+witness
+[`r5-full-canonical-knot-solver.witness.json`](../../../folio-assistant/computations/r5-full-canonical-knot-solver.witness.json))
+gave the first **substrate-only** check of this conjecture for the
+three light nuclei.  Result:
+
+| Nucleus | Canonical $T_w$ | $\alpha^*$ | PSD-feasible at $q_0$? | Rank in 138 KLR-canonical classes |
+|---------|-----------------|------------|------------------------|------------------------------------|
+| $^3\mathrm{He}$ | $L_{6a4}$ | $0.000$ | **yes** ✓ | 24 (top 17 %) |
+| $^2\mathrm{H}$ | $6_2$ | $0.891$ | no (single-term cost) | 62 (top 45 %) |
+| $^3\mathrm{H}$ | $8_{11}$ | — | (deferred — needs $H_5$ Hoefsmit) | — |
+
+**Status by nucleus:**
+
+- **$^3\mathrm{He}$ — PSD-feasibility verified** at $q_0$: the
+  canonical $T_w = L_{6a4}$ sits on the structural target
+  ($\alpha^* = 0$) in the standard $(2,1)$ Wedderburn block.  The
+  $\chi$-fingerprint of the prototype's recovered word
+  $(\sigma_1 \sigma_2^{-1})^3$ matches the historical SnapPy braid
+  $[-1, 2, -1, 2, -1, 2]$ up to generator-sign convention (same KLR
+  canonical-basis class).  This discharges sub-deliverable 2 of
+  Issue #604 for $^3\mathrm{He}$.
+- **$^2\mathrm{H}$ — needs multi-term cost.** The prototype's
+  single-term flagship formula $B = m_e \cdot \rho \cdot |\mathrm{tr}_M(T_w)|$
+  does not make $6_2$ the structural winner (per the known offset
+  documented in `probe-sdp-canonical-paper-formula.witness.json`).
+  Wiring T2–T6 of
+  [`thm:knot-mass-formula-unified`](#thm:knot-mass-formula-unified)
+  into `cost_for_candidate` is the next-priority closure step.
+- **$^3\mathrm{H}$ — pipeline deferred.** Hoefsmit seminormal at
+  $H_5$ needs to land first (currently a deferral to
+  Rust `tools/hecke-engine`).
+
+**Categorical uniqueness theorem (proof obligation 2)** remains the
+open piece: the prototype gives a numerical PSD-feasibility
+certificate for $^3\mathrm{He}$, not a proof that no other Hecke
+element in the $\Delta_{\max}$ ball achieves a smaller residual.
+Sub-deliverable 3 of Issue #604 will discharge this for the cases
+where the prototype runs successfully.
+
 ## Proof obligations
 
 1. **Finitude of candidate set.**  The Plancherel-weight boundedness

@@ -37,11 +37,20 @@ $k \in \{1,2,3,4,5,6,8,10\}$.  Key observations:
    ($\sigma_i^2 = (q-q^{-1})\sigma_i + 1$).  Under the proposed
    formula this corresponds to:
 
-   | Particle | $\ell$ | $n_0$ | $k_{\mathrm{Hecke}}$ | $n_\star$ |
-   |----------|--------|-------|----------------------|-----------|
+   | Particle | $\ell$ | $n_0 = 3A$ | $k_{\mathrm{Hecke}}$ | $n_\star = \ell n_0 + k$ |
+   |----------|--------|------------|-----------------------|--------------------------|
    | Proton/neutron | $1$ | $3$ | $2$ | $5$ |
    | Electron | $0$ | $2$ | $2$ | $2$ |
    | Deuterium $^2$H | $2$ | $6$ | $2$ | $14$ |
+   | Tritium $^3$H | $2$ | $9$ | $9$ | $27$ |
+   | Helium-3 $^3$He | $2$ | $9$ | $2$ | $20$ |
+
+   The $n_0 = 3A$ rule (atomic-braid strand count, three strands per
+   nucleon) is the canonical definition per
+   [`def:confined-particle`](#def:confined-particle) lines 26–28 and
+   [`atomic-braid`](#def:atomic-braid) lines 2–4; the per-atom
+   $k_{\mathrm{Hecke}}$ values come from
+   `joint-tower-sdp-h6-h9.witness.json`.
 
 2. **Structural motivation.**  The formula $n_\star = \ell \cdot n_0 + k$
    counts the total GB filtration depth across all confinement levels:
