@@ -1,0 +1,27 @@
+{
+  "description": "Symbolic \u03c7^\u03bb_q(\u03b2_atomic(1, 2)) \u2014 tritium \u2014 for the canonical atomic braid word at H_9, per partition \u03bb \u22a2 9.  Incrementally saved per partition so a SIGTERM/timeout mid-loop preserves work done so far. PARTIAL \u2014 re-run to continue.",
+  "atom": "tritium",
+  "Z": 1,
+  "N": 2,
+  "n": 9,
+  "n_partitions": 2,
+  "n_partitions_total": 30,
+  "partial": true,
+  "compute_time_sec_so_far": 134.76778149604797,
+  "workers": 8,
+  "chi_lambda_symbolic": [
+    {
+      "partition": [
+        9
+      ],
+      "chi_q_symbolic": "(q**14 + 7*q**12 + 21*q**10 + 35*q**8 + 35*q**6 + 21*q**4 + 7*q**2 + 1)/(128*q**3)"
+    },
+    {
+      "partition": [
+        8,
+        1
+      ],
+      "chi_q_symbolic": "(q**34 + 7*q**32 + 21*q**30 + 35*q**28 + 34*q**26 + 22*q**24 + 24*q**22 + 36*q**20 + 24*q**18 - 7*q**16 - 24*q**14 - 26*q**12 - 31*q**10 - 41*q**8 - 41*q**6 - 25*q**4 - 8*q**2 - 1)/(128*q**15)"
+    }
+  ]
+}
