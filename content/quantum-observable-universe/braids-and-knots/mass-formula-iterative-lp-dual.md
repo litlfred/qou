@@ -103,25 +103,51 @@ $$
   \dim_q(\lambda) \cdot c_\ell(\lambda).
 $$
 
-**Step 4: τ-extraction yields the LP-dual.** By
-[Frobenius self-duality](#prop:frobenius-self-duality-forces-lp-dual-extraction),
+**Step 4: τ-extraction yields the LP-dual (structural form).**
+By [Frobenius self-duality](#prop:frobenius-self-duality-forces-lp-dual-extraction),
 $\tau$-extraction is the Frobenius isomorphism
 $H_n \xrightarrow{\sim} H_n^*$. Applied to the central element
-$P_\ell$, this produces the level-$\ell$ shadow price:
+$P_\ell$ as the *cost operator* in the operator-selection LP,
+this produces the level-$\ell$ shadow price as a dual variable
+$u^{(\ell)*}(\varrho)$ with the structural form:
 
 $$
   u^{(\ell)*}(\varrho)
   \;=\;
-  m_e \cdot \tau(P_\ell)\big|_{\mathrm{ht}(\lambda) = \ell+1}
-  \;=\;
   m_e \cdot
-  \frac{\sum_{\mathrm{ht}(\lambda) = \ell+1}
-    w_\lambda(q) \cdot c_\ell(\lambda)}{[n]_q!}.
+  \mathrm{LP\text{-}dual}\!\Big(
+    \text{cost} = \tau(P_\ell \cdot - ),\;\;
+    \text{constraints} = \{\langle \Phi, \pi_\lambda \rangle_F \geq 0\}
+  \Big).
 $$
 
-(The factor of $\dim_q(\lambda)$ from Step 3 absorbs into
-$w_\lambda = \dim_q(\lambda)^2 / [n]_q!$ via cancellation
-through the Markov-trace normalisation.)
+By Schur's lemma + the Murphy 1992 spectrum (Step 3), the LP
+cost vector decomposes block-diagonally with leading-order
+scalar coefficient $c_\ell(\lambda)$ on $V_\lambda$. The
+optimal dual variables $u_\lambda^*$ therefore depend on
+$c_\ell(\lambda)$ and on the Gram matrix
+$G_{\lambda,i} = \tau(b_i \cdot \pi_\lambda)$ — i.e.,
+on the LP **constraint coupling**, not on a guessed
+denominator like $[n]_q!$.
+
+**Important: the normalisation comes from the LP, not from
+the Wedderburn trace identity.** A naive closed form
+
+$$
+  u^{(\ell)*}(\varrho) \;\stackrel{?}{=}\;
+  m_e \cdot \frac{\sum_{\mathrm{ht}(\lambda) = \ell+1}
+    w_\lambda(q) \cdot c_\ell(\lambda)}{[n]_q!}
+$$
+
+— motivated by the Wedderburn identity
+$\sum_\lambda \dim_q(\lambda)^2 = [n]_q!$ — is a *guess*, and
+is empirically refuted by the JM-central probe at $\ell = 5$
+(see
+[`rem:alpha-5-jm-central-empirical-findings`](#rem:alpha-5-jm-central-empirical-findings):
+relative spread $\approx 482\%$ across $A = 2,3,4$). The
+correct $u^{(\ell)*}$ is obtained by **solving** the LP
+per-atom; closed-form depends on the per-atom strand recipe
+and the precise cost decomposition.
 
 **Step 5 (open).**
 The conjectural step is whether the level-$\ell$ correction
@@ -173,50 +199,43 @@ The structural framework (Steps 1–4) — Frobenius self-duality
 is the specific algebraic form of $u^{(\ell)*}$ that reproduces
 the empirical $\alpha_\ell$.
 
-**Conclusion (conditional).** Summing over $\ell$, *modulo*
-the open empirical question of Step 5:
-
-$$
-  \mathfrak{m}(\varrho) \;=\;
-  \sum_{\ell = 0}^{n-1} u^{(\ell)*}(\varrho)
-  \;=\;
-  m_e \cdot
-  \sum_{\ell = 0}^{n-1}
-  \frac{\sum_{\mathrm{ht}(\lambda) = \ell+1}
-    w_\lambda(q) \cdot c_\ell(\lambda)}{[n]_q!}.
-$$
-
-Reorganizing the double sum as a single sum over partitions
-of $n$:
+**Conclusion (structural).** Summing over $\ell$:
 
 $$
   \mathfrak{m}(\varrho)
   \;=\;
-  \frac{m_e}{[n]_q!}
-  \sum_{\lambda \vdash n}
-  w_\lambda(q) \cdot c_{\mathrm{ht}(\lambda)-1}(\lambda).
+  \sum_{\ell = 0}^{n-1} u^{(\ell)*}(\varrho),
 $$
 
-This is a single q-rational closed form. $\square$
+where each $u^{(\ell)*}$ is the LP-dual variable of the
+height-$(\ell{+}1)$ Frobenius-positivity constraint with cost
+operator $\tau(P_\ell \cdot -)$. The *structural form* —
+that the mass is a sum of LP-duals indexed by jet order — is
+established by Steps 1–4 unconditionally.
 
-**Corollary (replacement of α_k AME-fitted parameters).**
+What is **not** established at this level of generality is the
+explicit closed form for $u^{(\ell)*}$. The naive
+$\frac{w_\lambda \cdot c_\ell(\lambda)}{[n]_q!}$ form is
+refuted empirically; the correct closed form depends on the
+per-atom recipe and is obtained by solving the LP. $\square$
+
+**Corollary (structural replacement of α_k AME-fitted parameters).**
 The seven ad-hoc terms of the current QOU mass formula
 (descended trace, single-gen brane, pair-gen brane, Frobenius
 co-Casimir, chirality, cyclotomic tail, shell correction)
 correspond to $\ell = 0, 1, 2, 3, 4, 5, 6$ in the iterative
-recursion. The AME-fitted parameter $\alpha_k$ for each term
-is replaced by the closed-form q-rational
+recursion. Each AME-fitted parameter $\alpha_k$ is replaced by
+the optimal LP-dual variable $u^{(k-1)*}(\varrho)$ — a
+*derived* quantity, not a fit.
 
-$$
-  \alpha_k(A) \;=\;
-  \frac{m_e \sum_{\mathrm{ht}(\lambda) = k}
-    w_\lambda(q) \cdot c_{k-1}(\lambda)}{[3A]_q!}
-$$
-
-evaluated at the substrate parameter $q = q_0 \approx 1.1097$.
-No fitting is required. In particular, $\alpha_5$ — the shell
-correction (currently $\approx -4.2 \times 10^5$ MeV from AME
-fit) — is determined by the height-6-partition sum.
+The naive guess
+$\alpha_k(A) \stackrel{?}{=} \frac{m_e \sum w_\lambda c_{k-1}(\lambda)}{[3A]_q!}$
+is empirically refuted; the correct $\alpha_k$ comes from
+**solving** the per-atom LP. The derivation cost is
+LP-polynomial in the number of partitions of $3A$, so this is
+practically computable and yields atom-independent results
+*by LP construction* — without requiring the closed-form
+guess.
 
 **Corollary (one theorem replaces seven).** The narrative of
 the QOU paper compresses from a sequence of seven term

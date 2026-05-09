@@ -187,13 +187,105 @@ def alpha_5_at_A_num(A, q_val):
 
 
 def alpha_5_at_A_normalized(A, q_val):
-    """α_5(A) divided by [3A]_q! — the actual scaling-corrected
-    quantity that should be atom-independent if the JM-central
-    derivation is correct."""
+    """α_5(A) divided by [3A]_q! — naive guess at normalization,
+    motivated by Wedderburn trace identity Σ dim_q² = [n]_q!."""
     raw, contribs = alpha_5_at_A_num(A, q_val)
     n = 3 * A
     qfact = q_factorial_num(n, q_val)
     return raw / qfact, contribs
+
+
+def alpha_5_at_A_partial_normalized(A, q_val):
+    """α_5(A) normalised by the HEIGHT-6 PARTIAL Wedderburn budget:
+
+       β_6(A) := Σ_{λ ⊢ 3A, ht(λ)=6} dim_q(λ)²
+             = Σ over height-6 partitions of squared q-dim.
+
+    The result is the height-6-Plancherel-WEIGHTED AVERAGE of
+    the JM-central scalars c_5(λ):
+
+       α_5_partial(A) = Σ dim_q²(λ) c_5(λ) / Σ dim_q²(λ).
+
+    This is the structurally derived normaliser when the
+    operator-selection LP is restricted to the height-6
+    stratum (no full [n]_q! enters; only the partial budget).
+    """
+    n = 3 * A
+    num = mp.mpf(0)         # Σ dim_q² · c_5
+    den = mp.mpf(0)         # Σ dim_q²
+    contribs = []
+    for shape in partitions_of(n):
+        if height(shape) != 6:
+            continue
+        d = dim_q_num(shape, q_val)
+        c5 = e5_central_num(shape, q_val)
+        num = num + d * d * c5
+        den = den + d * d
+        contribs.append({
+            "shape": list(shape),
+            "f_lambda": f_lambda(shape),
+            "dim_q_squared": float(d * d),
+            "c_5": float(c5),
+        })
+    if den == 0:
+        return mp.mpf("inf"), contribs
+    return num / den, contribs
+
+
+def alpha_5_three_normalisations(A, q_val):
+    """Compute α_5(A) at q_val under THREE different normalisations:
+       (i)   raw = Σ w_λ(q) · c_5(λ)
+       (ii)  divide by [3A]_q!  (naive guess)
+       (iii) Plancherel-average over the height-6 stratum
+             = Σ dim_q² c_5 / Σ dim_q²        (partial budget)
+    """
+    raw, _ = alpha_5_at_A_num(A, q_val)
+    n = 3 * A
+    qfact = q_factorial_num(n, q_val)
+    naive_norm = raw / qfact if qfact != 0 else mp.mpf("inf")
+    partial, _ = alpha_5_at_A_partial_normalized(A, q_val)
+    return raw, naive_norm, partial
+
+
+def q_sweep_atom_independence():
+    """Sweep q across (1, φ) to find where (if anywhere) the
+    height-6 Plancherel-average of c_5(λ) is atom-independent.
+
+    Returns: list of dicts, one per q value.
+    """
+    q_0 = mp.mpf(Q_50_DIGIT_STR)
+    phi = (mp.mpf(1) + mp.sqrt(5)) / 2  # golden ratio ≈ 1.618
+    q_values = [
+        ("q_0 - 0.01", q_0 - mp.mpf("0.01")),
+        ("q_0", q_0),
+        ("q_0 + 0.01", q_0 + mp.mpf("0.01")),
+        ("q = 1.001", mp.mpf("1.001")),
+        ("q = 1.20", mp.mpf("1.20")),
+        ("q = 1.40", mp.mpf("1.40")),
+        ("q = 1.60", mp.mpf("1.60")),
+        ("q = phi - eps", phi - mp.mpf("0.01")),
+    ]
+    out = []
+    for label, q_val in q_values:
+        rows = []
+        partials = []
+        for A in [2, 3, 4]:
+            raw, naive, partial = alpha_5_three_normalisations(A, q_val)
+            rows.append((A, float(raw), float(naive), float(partial)))
+            partials.append(float(partial))
+        spread_partial = max(partials) - min(partials)
+        median_partial = sorted(partials)[1]
+        rel_spread_partial = (
+            spread_partial / abs(median_partial)
+            if median_partial != 0 else float("inf")
+        )
+        out.append({
+            "q_label": label,
+            "q_val": float(q_val),
+            "rows": rows,
+            "rel_spread_partial": rel_spread_partial,
+        })
+    return out
 
 
 def main() -> int:
@@ -302,6 +394,38 @@ def main() -> int:
     wb.add_data("verdict", verdict)
     wb.add_data("relative_spread_normalized", float(rel_spread_n))
     wb.add_data("relative_spread_raw", float(rel_spread_r))
+
+    # ── q-sweep across (1, φ) for the partial-Plancherel-norm ─────
+    print("\n" + "=" * 60)
+    print("q-SWEEP: height-6 Plancherel-average of c_5(λ) vs A")
+    print("(structurally derived normaliser; no [3A]_q! guess)")
+    print("=" * 60)
+    sweep = q_sweep_atom_independence()
+    sweep_summary = []
+    for entry in sweep:
+        print(f"\n  {entry['q_label']} (q = {entry['q_val']:.6f}):")
+        for A, raw, naive, partial in entry["rows"]:
+            print(f"    A={A}: partial-norm c_5 ≈ {partial:+.6e}")
+        rs = entry["rel_spread_partial"]
+        print(f"    Relative spread (partial-norm): {rs*100:.2f}%")
+        sweep_summary.append({
+            "q_label": entry["q_label"],
+            "q_val": entry["q_val"],
+            "rel_spread_partial": rs,
+        })
+
+    best = min(sweep_summary, key=lambda e: e["rel_spread_partial"])
+    print(f"\n  Best atom-independence at: {best['q_label']} "
+          f"(rel spread = {best['rel_spread_partial']*100:.2f}%)")
+
+    wb.add_data("q_sweep", sweep_summary)
+    wb.add_assertion(
+        "best_partial_norm_spread",
+        float(best["rel_spread_partial"]),
+        0.0,
+        tolerance=0.10,
+    )
+
     out_path = wb.save()
     print(f"\nWrote: {out_path}")
     return 0

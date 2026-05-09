@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-09T20:43:10.424819+00:00",
-  "commitSha": "797b738b87bd9970c3d2ff818b55ca9d1c508f0d",
+  "computedAt": "2026-05-09T20:55:14.608910+00:00",
+  "commitSha": "9eb5d9747168e06098e4876164be583b8d9ad245",
   "assertions": [
     {
       "name": "alpha_5_atom_independent_normalized",
@@ -17,14 +17,21 @@
       "expected": 1.0,
       "passed": true,
       "tolerance": 1e-06
+    },
+    {
+      "name": "best_partial_norm_spread",
+      "computed": 6.278911346239721,
+      "expected": 0.0,
+      "passed": false,
+      "tolerance": 0.1
     }
   ],
   "allPassed": false,
-  "durationMs": 300,
+  "durationMs": 1462,
   "computation": "alpha-5-jucys-murphy-central",
   "scriptFile": "alpha_5_jucys_murphy_central.py",
-  "scriptHash": "92a02fcfbe05",
-  "scriptCommitSha": "a3b8acf0e50a17dd14854262bb84afa08f80b78f",
+  "scriptHash": "18d041c02e2a",
+  "scriptCommitSha": "9eb5d9747168e06098e4876164be583b8d9ad245",
   "description": "α_5 derivation probe via the Jucys–Murphy central element P_5 := e_5(J_1, ..., J_n) restricted to height-6 partitions. By Murphy 1992, e_5(J_1..J_n) ∈ Z(H_n(q)) — central — so α_5(A) := Σ_{λ ⊢ 3A, ht=6} w_λ · c_5(λ) is computable as a finite combinatorial sum in q-rationals.  Tests atom-independence across A = 2..4: if the sum normalised by [3A]_q! is constant, α_5 is DERIVED.",
   "contentBlock": "prop:mass-formula-iterative-lp-dual",
   "parameters": {
@@ -189,6 +196,48 @@
     },
     "verdict": "strongly atom-dependent (mechanism orthogonal to JM-central)",
     "relative_spread_normalized": 4.821586949462138,
-    "relative_spread_raw": 83.16390992328519
+    "relative_spread_raw": 83.16390992328519,
+    "q_sweep": [
+      {
+        "q_label": "q_0 - 0.01",
+        "q_val": 1.0999785955541805,
+        "rel_spread_partial": 13.271821217862652
+      },
+      {
+        "q_label": "q_0",
+        "q_val": 1.1099785955541805,
+        "rel_spread_partial": 14.460849697738798
+      },
+      {
+        "q_label": "q_0 + 0.01",
+        "q_val": 1.1199785955541806,
+        "rel_spread_partial": 15.781742450471004
+      },
+      {
+        "q_label": "q = 1.001",
+        "q_val": 1.001,
+        "rel_spread_partial": 6.278911346239721
+      },
+      {
+        "q_label": "q = 1.20",
+        "q_val": 1.2,
+        "rel_spread_partial": 33.39406565054597
+      },
+      {
+        "q_label": "q = 1.40",
+        "q_val": 1.4,
+        "rel_spread_partial": 278.4622845147739
+      },
+      {
+        "q_label": "q = 1.60",
+        "q_val": 1.6,
+        "rel_spread_partial": 2562.2130834393274
+      },
+      {
+        "q_label": "q = phi - eps",
+        "q_val": 1.608033988749895,
+        "rel_spread_partial": 2797.2971155097002
+      }
+    ]
   }
 }

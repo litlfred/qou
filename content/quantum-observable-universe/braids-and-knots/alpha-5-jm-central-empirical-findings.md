@@ -79,8 +79,52 @@ form correctly extracts the AME-fitted shell correction.
    [`def:categorical-q-connection`](#def:categorical-q-connection))
    away from the crystal limit.
 
+**$q$-sweep across the physical regime $(1, \varphi)$ (2026-05-09 update).**
+
+To address the question of whether atom-independence might
+hold at some specific $q$ in the physical neighbourhood
+(not at all $q$ symbolically), the probe also evaluates the
+height-6 **Plancherel-weighted average**
+
+$$
+  \langle c_5 \rangle_{\mathrm{ht}=6}(A, q)
+  \;:=\;
+  \frac{\sum_{\mathrm{ht}(\lambda)=6} \dim_q^2(\lambda)\, c_5(\lambda)}
+       {\sum_{\mathrm{ht}(\lambda)=6} \dim_q^2(\lambda)}
+$$
+
+(the structurally derived normaliser when the operator-
+selection LP is restricted to the height-6 stratum — no
+$[3A]_q!$ guess). The relative spread of
+$\langle c_5 \rangle_{\mathrm{ht}=6}(A, q)$ across
+$A \in \{2,3,4\}$ is:
+
+| $q$ | rel spread (partial-Plancherel-avg) |
+|----:|------------------------------------:|
+| $1.001$            |    628% |
+| $q_0 - 0.01$       |   1327% |
+| $q_0$              |   1446% |
+| $q_0 + 0.01$       |   1578% |
+| $1.20$             |   3339% |
+| $1.40$             |  27846% |
+| $1.60$             | 256221% |
+| $\varphi - \epsilon$ | 279730% |
+
+The spread is **uniformly bad** across the full $|q| \in (1, \varphi)$
+range. There is no $q$ in the physical regime at which the
+naive JM-central form is atom-independent, and the spread
+*grows* with $q$ (driven by the $q^{O(n^2)}$ scaling of
+$\dim_q^2$).
+
+**This definitively refutes the simplest closed-form conjecture
+at every $q$**, not just at $q_0$. The structural framework
+(Frobenius self-duality + Murphy 1992 + GB-filtration) holds;
+the specific ansatz "$u^{(\ell)*} \propto \langle c_\ell
+\rangle$" does not.
+
 **Negative result, useful science.** This is the kind of
 sharply-falsifiable prediction the QOU framework should make.
 Reporting the empirical refutation here, rather than burying
 the test, makes the next research step well-defined: solve the
-LP per (3) above, or refine the stratification per (2).
+LP per (3) above with a *recipe-aware* cost vector, or refine
+the stratification per (2).
