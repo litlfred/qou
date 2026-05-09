@@ -69,42 +69,63 @@ theorem Matrix.PosSemidef.trace_mul_eq_zero_iff_mul_eq_zero
     (A * B).trace = 0 ↔ A * B = 0 := by
   refine ⟨?_, fun h => by rw [h]; exact Matrix.trace_zero (Fin n) ℝ⟩
   intro h_trace
-  -- ────────────────────────────────────────────────────────────
-  -- Spectral-reduction proof using `IsHermitian.spectralTheorem` +
-  -- the diagonal sub-case (this module) +
-  -- `entry_zero_of_diag_zero` (PosSemidefDiagZero, batch 15+17).
-  --
-  -- Sketch (the closure of step 5 = matrix-algebra unwinding;
-  -- intermediate steps fully named):
-  --
-  -- Step 1. Spectral decomposition of A (Hermitian PSD):
-  --     A = U · diag(λ) · Uᵀ
-  --   where U := hA.1.eigenvectorMatrix, λ := hA.1.eigenvalues.
-  --   By `PosSemidef.eigenvalues_nonneg`, each λ_i ≥ 0.
-  --
-  -- Step 2. Define C := Uᵀ · B · U.  By `PosSemidef.conjTranspose_…`
-  --   (orthogonal congruence preserves PSD), C is PSD.  Trace
-  --   cyclicity gives tr(A · B) = tr(diag(λ) · C).
-  --
-  -- Step 3. Apply `trace_mul_eq_zero_iff_mul_eq_zero_diagonal`
-  --   with `a := λ`, `b := C.diag` (the diagonal of C, also
-  --   non-neg from PSD).  This requires re-expressing
-  --   `tr(diag(λ) · C)` as `Σ λ_i · C_i_i`, which is a sum
-  --   over `Finset.univ` matching the diagonal sub-case.
-  --
-  -- Step 4. Conclude `diag(λ) · C = 0` from the diagonal sub-case;
-  --   for indices i with `λ_i > 0`, get `C_i_i = 0`; apply
-  --   `entry_zero_of_diag_zero` (PosSemidefDiagZero) to get
-  --   `C_i_j = 0` for all j (= row i of C is zero).
-  --
-  -- Step 5. Undo conjugation: `A · B = U · diag(λ) · Uᵀ · B
-  --   = U · diag(λ) · C · U⁻¹ · U = U · (diag(λ) · C) · U⁻¹ = 0`.
-  --
-  -- The proof requires careful Mathlib API lookups; we leave it
-  -- as `sorry` with the full categorical structure exposed via
-  -- the named intermediate lemmas above.  Closing the sorry is
-  -- pure mechanical translation.
-  sorry
+  -- Square-root proof (cleaner than spectral-theorem unrolling).
+  -- Let A^{1/2} := hA.sqrt (Mathlib: PSD has unique PSD square root).
+  -- Define M := A^{1/2} · B · A^{1/2} (PSD by sandwich).
+  -- tr(M) = tr(A^{1/2}·B·A^{1/2}) = tr(A^{1/2}·A^{1/2}·B) = tr(A·B) = 0.
+  -- M PSD with tr 0 ⟹ M = 0 (Mathlib: PSD trace-zero ⟹ zero matrix).
+  -- Then (A^{1/2}·B^{1/2}) · (A^{1/2}·B^{1/2})^T = A^{1/2}·B·A^{1/2} = M = 0.
+  -- X · X^T = 0 ⟹ X = 0 (Frobenius norm zero).
+  -- So A^{1/2}·B^{1/2} = 0.
+  -- A·B = (A^{1/2})² · (B^{1/2})² = A^{1/2} · (A^{1/2}·B^{1/2}) · B^{1/2} = 0.
+  set Asqrt := hA.sqrt with hAsqrt_def
+  set Bsqrt := hB.sqrt with hBsqrt_def
+  have hAsq : Asqrt * Asqrt = A := hA.sq_sqrt
+  have hBsq : Bsqrt * Bsqrt = B := hB.sq_sqrt
+  have hAsqrt_psd : Asqrt.PosSemidef := hA.posSemidef_sqrt
+  have hBsqrt_psd : Bsqrt.PosSemidef := hB.posSemidef_sqrt
+  have hAsqrt_herm : Asqrt.IsHermitian := hAsqrt_psd.1
+  have hBsqrt_herm : Bsqrt.IsHermitian := hBsqrt_psd.1
+  -- Define X := Asqrt · Bsqrt.  Then X · X^T = Asqrt · B · Asqrt.
+  set X := Asqrt * Bsqrt with hX_def
+  have hXX_T : X * X.transpose = Asqrt * B * Asqrt := by
+    rw [hX_def, Matrix.transpose_mul,
+        show Bsqrt.transpose = Bsqrt from hBsqrt_herm,
+        show Asqrt.transpose = Asqrt from hAsqrt_herm,
+        Matrix.mul_assoc, ← Matrix.mul_assoc Bsqrt Bsqrt _, hBsq]
+  -- tr(X · X^T) = tr(Asqrt · B · Asqrt) = tr(Asqrt² · B) = tr(A · B) = 0
+  have hXX_T_trace_zero : (X * X.transpose).trace = 0 := by
+    rw [hXX_T, Matrix.trace_mul_comm, ← Matrix.mul_assoc, hAsq]
+    exact h_trace
+  -- X · X^T is PSD; its trace is 0; Mathlib gives X · X^T = 0.
+  -- Mathlib: `Matrix.posSemidef_self_mul_conjTranspose` (or similar)
+  -- gives X · X^T PSD; `Matrix.PosSemidef.trace_zero_iff_zero` (or via
+  -- eigenvalues) gives X · X^T = 0 from PSD + trace 0.
+  have hXXT_psd : (X * X.transpose).PosSemidef := by
+    -- For real X, X · X^T is PSD.
+    -- Mathlib: posSemidef_self_mul_transpose or similar.
+    sorry
+  have hXXT_zero : X * X.transpose = 0 := by
+    -- Mathlib: PSD with trace 0 ⟹ zero matrix.
+    -- This is itself a sub-step of cone-self-polarity (the
+    -- "single-matrix" version).
+    sorry
+  -- X · X^T = 0 ⟹ X = 0 (Frobenius / sum of squares).
+  have hX_zero : X = 0 := by
+    -- (X · X^T) i j = Σ_k X i k · (X^T) k j = Σ_k X i k · X j k
+    -- (X · X^T) i i = Σ_k X i k · X i k = Σ_k (X i k)² = 0 ⟹ each X i k = 0.
+    -- Mathlib: `Matrix.mul_transpose_self_eq_zero_iff_eq_zero`
+    sorry
+  -- A · B = Asqrt² · Bsqrt² = Asqrt · (Asqrt · Bsqrt) · Bsqrt = Asqrt · X · Bsqrt
+  --      = Asqrt · 0 · Bsqrt = 0.
+  calc A * B
+      = (Asqrt * Asqrt) * (Bsqrt * Bsqrt) := by rw [hAsq, hBsq]
+    _ = (Asqrt * Asqrt * Bsqrt) * Bsqrt := by rw [Matrix.mul_assoc]
+    _ = (Asqrt * (Asqrt * Bsqrt)) * Bsqrt := by rw [Matrix.mul_assoc Asqrt Asqrt Bsqrt]
+    _ = (Asqrt * X) * Bsqrt := rfl
+    _ = (Asqrt * 0) * Bsqrt := by rw [hX_zero]
+    _ = 0 * Bsqrt := by rw [Matrix.mul_zero]
+    _ = 0 := Matrix.zero_mul _
 
 /-! ## §1.5  Diagonal-of-PSD non-negativity
 
