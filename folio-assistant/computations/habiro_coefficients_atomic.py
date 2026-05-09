@@ -47,37 +47,99 @@ sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as _Q_CANONICAL
 from hecke_character_symbolic import q_character_on_braid_word
 from canonical_braid_crossings import atom_canonical_crossings as atomic_braid_to_crossings
-from schur_weyl_symbolic import partitions_of, schur_weyl_weight
+from schur_weyl_symbolic import partitions_of
+from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_symbolic
+
+
+# (Z, N, include_inter) → chi-witness atom label.  Maps the canonical
+# atomic-braid recipe to the chi-{label}-h{n}.witness.json cache so
+# q_character_on_braid_word can return cached chi values.
+_ATOM_CHI_LABEL_BY_ZN: dict[tuple[int, int, bool], str] = {
+    (1, 0, False): "proton",
+    (1, 0, True):  "proton",
+    (0, 1, False): "neutron",
+    (0, 1, True):  "neutron",
+    (1, 1, True):  "deuteron",
+    (1, 2, True):  "tritium",
+    (2, 1, True):  "helium-3",
+    (2, 2, True):  "helium-4",
+}
 
 
 def markov_trace_symbolic(Z, N, q, include_inter=True):
-    """tr_M(T_w(Z,N), q) = Σ_{λ ⊢ 3A} w_λ(q) · χ^λ_q(T_w).
+    """tr_M(T_w(Z,N), q) = Σ_{λ ⊢ 3A} y_λ(q) · χ^λ_q(T_w).
+
+    Canonical Wenzl-bridge convention: y_λ via Wenzl Schur principal
+    specialization (`y_lambda_wenzl_bridge_symbolic`).  Replaces the
+    legacy 2-variable Schur weight `s_λ(q, q^{-1})/H_q(λ)` (which
+    vanishes for partitions with > 2 rows, dropping the sign-rep
+    contribution).  Per `docs/audits/2026-05-08-p3-h-3a-divergence.md`,
+    y_λ is the canonical Markov-trace weight for q ≠ 1; the q=1
+    classical Plancherel point is the only place where the two
+    conventions agree.  Cross-checks against the 1 ppb canonical
+    50-dps reducer (`cross-check-trM-1ppb.witness.json`) at q_0:
+      proton:   1.0653062285923893
+      neutron:  0.9232332971695838
+      deuteron: 0.388286471547713  (`include_inter=True`)
+
+    Performance: y_λ has sqrt(q) factors that make `sp.cancel`
+    catastrophic for the deuteron's n=6 partition sum.  Workaround:
+    work internally in u with q = u², so the sqrt(q) factors become
+    polynomial u; the final result is back-substituted to q via
+    u → sqrt(q).  Combined with the y_λ witness cache (n = 2..12)
+    and the chi witness caches (`chi-{atom}-h{n}.witness.json`) for
+    p / n / D / T / ³He / ⁴He, the full p + n + D pipeline runs in
+    seconds instead of minutes.
 
     Returns a sympy expression in q.
     """
     A = Z + N
     crossings = atomic_braid_to_crossings(Z, N, include_inter=include_inter)
-    total = Integer(0)
+    chi_cache_label = _ATOM_CHI_LABEL_BY_ZN.get((Z, N, include_inter))
+    q_pos = sp.Symbol("q", positive=True)
+
+    # Work internally in u_internal where u_internal² = q.  This
+    # eliminates sqrt(q) factors from y_λ before the symbolic
+    # multiplication, keeping per-term sp.cancel polynomial-time
+    # instead of catastrophic on the n=6 partition sum.
+    u_int = sp.Symbol("_markov_trace_u_internal", positive=True)
+    total_u = Integer(0)
     for lam in partitions_of(3 * A):
         try:
-            w = schur_weyl_weight(lam, q)
-            if w == 0:
+            w = y_lambda_wenzl_bridge_symbolic(tuple(lam))
+            # y_lambda_wenzl_bridge_symbolic uses Symbol("q", positive=True)
+            # internally; substitute u_int² for that q.
+            w_u = w.subs(q_pos, u_int ** 2)
+            if w_u == 0:
                 continue
-            chi = q_character_on_braid_word(lam, crossings, q)
-            if chi == 0:
+            chi = q_character_on_braid_word(
+                lam, crossings, q,
+                atom_cache_label=chi_cache_label,
+            )
+            chi_u = chi.subs(q, u_int ** 2)
+            if chi_u == 0:
                 continue
-            term = sp.cancel(w * chi)
-            # Guard against NaN/Inf produced by Hoefsmit edge cases
-            # (some 2x2 blocks at b² = 0 collapse to 1x1 and need
-            # special handling — flagged for follow-up at A ≥ 2).
-            if term.has(sp.nan) or term.has(sp.zoo):
+            # Skip per-term sp.cancel: the deuteron n=6 case had
+            # sympy spending minutes on cancel even after q→u² (the
+            # accumulated chi numerators are large polynomials in u);
+            # final sp.together at the end is sufficient for the
+            # downstream to_u_polynomial and runs in ~1 s for D.
+            if (w_u * chi_u).has(sp.nan) or (w_u * chi_u).has(sp.zoo):
                 raise ValueError(f"NaN/Inf in λ = {lam}")
-            total += term
+            total_u += w_u * chi_u
         except Exception as exc:
             raise RuntimeError(
                 f"Markov trace symbolic failed at λ = {lam} "
                 f"(A = {A}): {type(exc).__name__}: {exc}") from exc
-    return sp.cancel(total)
+
+    # Combine into a single fraction in u_int and reduce.  Working
+    # in u (where u² = q, no sqrt) keeps sp.cancel polynomial-time
+    # — the same operation on the back-substituted q-expression
+    # (with sqrt(q) factors) hits the heuristic-GCD ceiling for
+    # certain partition sums (e.g. the neutron's mixed σ/σ^{-1}/avg
+    # word).  Cancel here in u, then back-substitute.
+    total_u = sp.cancel(sp.together(total_u))
+    return total_u.subs(u_int, sp.sqrt(q))
 
 
 def to_u_polynomial(expr_in_q, q, u):
@@ -137,28 +199,28 @@ def cyclotomic_expansion(p_in_u, u, max_m=20):
     coeffs = []
     current = p
     for m in range(max_m):
-        if current.as_expr() == 0:
+        if current.is_zero:
             break
         next_factor = sp.Poly(1 - u ** (m + 1), u)
-        # a_m = p_m mod (1 - u^{m+1})   (degree < m+1)
-        _, a_m = sp.div(current, next_factor, u)
+        # Single sp.div gives BOTH a_m (= remainder, degree < m+1) and
+        # quotient (= (current - a_m) / next_factor) in one call.
+        # The previous implementation recomputed the quotient via a
+        # second sp.div on `current.as_expr() - a_m_expr`, doubling
+        # the work per iteration on a deg-194 polynomial.
+        quotient, a_m = sp.div(current, next_factor, u)
         a_m_expr = a_m.as_expr()
-        diff = sp.expand(current.as_expr() - a_m_expr)
-        try:
-            quotient, rem2 = sp.div(sp.Poly(diff, u), next_factor, u)
-        except sp.PolynomialError:
-            break
-        rem_zero = (rem2.as_expr() == 0)
         coeffs.append({
             "m": m,
             "a_m": str(a_m_expr),
             "deg_a_m": int(a_m.degree()) if a_m.as_expr() != 0 else 0,
             "integral": all(c.is_Integer for c in a_m.all_coeffs())
                           if a_m.as_expr() != 0 else True,
-            "remainder_nonzero": not rem_zero,
+            # `current = quotient * next_factor + a_m` is exact by
+            # construction of sp.div (the second sp.div in the prior
+            # implementation always returned remainder=0); only flag
+            # nonzero on a true PolynomialError.
+            "remainder_nonzero": False,
         })
-        if not rem_zero:
-            break
         current = quotient
     return coeffs
 
@@ -179,7 +241,11 @@ def reconstruct(coeffs_data, u, max_m=20):
 def analyse_atomic_braid(label, Z, N, include_inter, q):
     print(f"\n── {label} (Z={Z}, N={N}) ──")
     p_q = markov_trace_symbolic(Z, N, q, include_inter=include_inter)
-    print(f"  tr_M (in q): {sp.nsimplify(p_q)}")
+    # Skip sp.nsimplify in the log line — for the deuteron's
+    # ~degree-194 rational over q this call alone takes >30 s while
+    # adding zero diagnostic value (the polynomial is already in
+    # its symbolic form).  Use the raw repr instead.
+    print(f"  tr_M (in q) computed (free symbols: {p_q.free_symbols})")
     u = sp.Symbol('u', positive=True, real=True)
     p_u, shift, denom = to_u_polynomial(p_q, q, u)
     deg_p = int(sp.Poly(p_u, u).degree()) if p_u != 0 else 0
@@ -210,7 +276,10 @@ def analyse_atomic_braid(label, Z, N, include_inter, q):
           f"(via u-poly: {p_u_at_u0:+.6e})")
     return {
         "Z": Z, "N": N, "include_inter": include_inter,
-        "tr_M_in_q": str(sp.nsimplify(p_q)),
+        # str(p_q) directly — sp.nsimplify on a degree-194 rational
+        # adds 30+ seconds with no benefit for the witness consumer
+        # (downstream re-parses with sp.sympify).
+        "tr_M_in_q": str(p_q),
         "shift": int(shift),
         "denom_in_u": denom,
         "p_in_u": str(p_u),

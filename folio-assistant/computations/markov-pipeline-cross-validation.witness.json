@@ -1,29 +1,34 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
+<<<<<<< HEAD
   "computedAt": "2026-05-09T16:26:59.946414+00:00",
   "commitSha": "6b7e51fb89828b1ea779b117ffc68a3a782beb80",
+=======
+  "computedAt": "2026-05-09T16:06:31.822229+00:00",
+  "commitSha": "4f2c130ae7371de321ef029831b6ec193b13692a",
+>>>>>>> e0136102 (migrate: TR_M_AT_Q0 to canonical Wenzl-bridge convention)
   "assertions": [
     {
       "name": "tr_M_at_q0_archimedean[D (deuteron, A=2)]",
-      "computed": 0.17743692421543206,
-      "expected": 0.17743692421543206,
+      "computed": 0.3882864715477132,
+      "expected": 0.38828647154771373,
       "passed": true,
-      "tolerance": 1.7743692421543207e-10
+      "tolerance": 3.8828647154771376e-10
     },
     {
       "name": "tr_M_at_q0_archimedean[n (neutron, A=1)]",
-      "computed": 1.5893934459539047,
-      "expected": 1.5893934459539052,
+      "computed": 0.9232332971695835,
+      "expected": 0.9232332971695834,
       "passed": true,
-      "tolerance": 1.5893934459539053e-09
+      "tolerance": 9.232332971695835e-10
     },
     {
       "name": "tr_M_at_q0_archimedean[p (proton, A=1)]",
-      "computed": 2.12258250945273,
-      "expected": 2.12258250945273,
+      "computed": 1.065306228592389,
+      "expected": 1.0653062285923887,
       "passed": true,
-      "tolerance": 2.1225825094527304e-09
+      "tolerance": 1.065306228592389e-09
     },
     {
       "name": "no_atoms_only_in_realizer",
@@ -49,7 +54,11 @@
   "computation": "markov-pipeline-cross-validation",
   "scriptFile": "markov_pipeline_cross_validator.py",
   "scriptHash": "2ba19efaa410",
+<<<<<<< HEAD
   "scriptCommitSha": "e0a230a9d34fa9580760c826e7437e0350a09795",
+=======
+  "scriptCommitSha": "c4e7ab96dd5009ca3902a3aba37a345f8c305229",
+>>>>>>> e0136102 (migrate: TR_M_AT_Q0 to canonical Wenzl-bridge convention)
   "description": "Verifies archimedean tr_M(q_0) agreement between the polynomial-ring realization (markov_substrate_realizer.py) and the Mittag-Leffler full-pole-sum computation (term6_full_pole_sum.py).",
   "contentBlock": "prop:full-pole-structure-mass-trace",
   "parameters": {
@@ -68,26 +77,26 @@
     "checks": [
       {
         "atom": "D (deuteron, A=2)",
-        "realizer_value": 0.17743692421543206,
-        "term6_value": 0.17743692421543206,
-        "abs_diff": 0.0,
-        "rel_diff": 0.0,
+        "realizer_value": 0.3882864715477132,
+        "term6_value": 0.38828647154771373,
+        "abs_diff": 5.551115123125783e-16,
+        "rel_diff": 1.4296442265935721e-15,
         "agree": true
       },
       {
         "atom": "n (neutron, A=1)",
-        "realizer_value": 1.5893934459539047,
-        "term6_value": 1.5893934459539052,
-        "abs_diff": 4.440892098500626e-16,
-        "rel_diff": 2.7940797854714566e-16,
+        "realizer_value": 0.9232332971695835,
+        "term6_value": 0.9232332971695834,
+        "abs_diff": 1.1102230246251565e-16,
+        "rel_diff": 1.202537893757558e-16,
         "agree": true
       },
       {
         "atom": "p (proton, A=1)",
-        "realizer_value": 2.12258250945273,
-        "term6_value": 2.12258250945273,
-        "abs_diff": 0.0,
-        "rel_diff": 0.0,
+        "realizer_value": 1.065306228592389,
+        "term6_value": 1.0653062285923887,
+        "abs_diff": 4.440892098500626e-16,
+        "rel_diff": 4.168653087073815e-16,
         "agree": true
       }
     ],

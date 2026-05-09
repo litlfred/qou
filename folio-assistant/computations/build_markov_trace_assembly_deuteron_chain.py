@@ -17,24 +17,21 @@ For the **deuteron** (Z=1, N=1, A=2, n = 3·A = 6):
     main as part of the per-λ frontier paydown.  This step is
     DERIVED via the chain references.
   - The canonical σ-word β_D for the deuteron has 23 crossings
-    (11 σ + 7 σ^{-1} + 5 averaged) per
-    `canonical_braid_crossings.atom_canonical_crossings(Z=1, N=1)`.
-    The recipe step is SCRIPT_CITED until the dedicated
-    `atomic-braid-recipe-d.derivation.json` chain ships
-    (PR #476 family, currently in review).
+    (11 σ + 7 σ^{-1} + 5 averaged), derived via the dedicated
+    `atomic-braid-recipe-d.derivation.json` chain (DERIVED).
   - Per-irrep characters χ^λ_q(β_D) are computed via the
     Hoefsmit recipe by `hecke_character_symbolic.q_character_on_braid_word(λ, β_D, q)`
     and cached in `chi-deuteron-h6.witness.json` (~155 s first
-    run; O(1) on cache hits).  This step is SCRIPT_CITED
+    run; O(1) on cache hits).  This step remains SCRIPT_CITED
     until per-(λ, σ_i) Hoefsmit chains for n=6 ship (analogous
     to the existing `hoefsmit-rep-21-{sigma1,sigma2}` chains
     for n=3, but for the partitions of 6).
 
-Trust profile: {axiom: 1, derived: 2, script-cited: 2,
+Trust profile: {axiom: 1, derived: 3, script-cited: 1,
 computational: 1} — closes the per-λ Wedderburn-weight frontier
-for partitions of 6 (the 11 chains shipped on main); the two
-remaining SCRIPT_CITED steps (canonical recipe + per-λ Hoefsmit
-chi values) are well-defined follow-up frontiers.
+for partitions of 6 + the canonical β_D recipe (now references
+atomic-braid-recipe-d.derivation.json); only the per-λ Hoefsmit
+chi-values step remains SCRIPT_CITED.
 
 Output: `markov-trace-assembly-deuteron.derivation.json`.
 """
@@ -144,40 +141,30 @@ def build() -> DerivationChain:
         ),
     ))
 
-    # 3 — Atomic-braid recipe for β_D (canonical convention)
+    # 3 — Atomic-braid recipe for β_D — chain reference
     steps.append(DerivationStep(
-        name="Atomic-braid recipe for β_D (canonical)",
+        name="Atomic-braid recipe for β_D — chain reference",
         operation=(
-            "The deuteron canonical σ-word β_D has 23 crossings on 6 "
-            "strands, decomposing as 11 σ (positive) + 7 σ^{-1} "
-            "(negative) + 5 averaged crossings.  Produced by "
+            "Reference `atomic-braid-recipe-d.derivation.json`: β_D is "
+            "the canonical 23-crossing σ-word for the deuteron, "
+            "derived by composing atomic-braid-recipe-{p,n}.derivation.json "
+            "+ 1 inter-nucleon mixed crossing at σ_2.  Type breakdown "
+            "{σ: 11, σ^{-1}: 7, averaged: 5}.  Matches "
             "`canonical_braid_crossings.atom_canonical_crossings(Z=1, "
-            "N=1)`, which bridges `mass_at_3A_proper.atom_braid_word_3A` "
-            "(canonical convention) into the (gen_idx, ctype) format "
-            "consumable by `q_character_on_braid_word`.  Note: this "
-            "is the canonical convention introduced by PR #572 (audit "
-            "doc `docs/audits/2026-05-08-q-hecke-character-gap-closure.md`); "
-            "the legacy `atomic_braid_to_crossings` from "
-            "hecke_character_symbolic.py is now a re-export of "
-            "`atom_canonical_crossings`.  When the dedicated "
-            "`atomic-braid-recipe-d.derivation.json` chain ships "
-            "(PR #476 family), this step upgrades to DERIVED via "
-            "that chain reference."
+            "N=1, include_inter=True)`."
         ),
         inputs=["partitions_of_6", FirstPrinciple.HECKE_ENERGY.value],
         output_name="beta_D",
         output_value="β_D = canonical σ-word of length 23 (11 σ + 7 σ^{-1} + 5 averaged)",
-        trust_basis=TrustBasis.SCRIPT_CITED,
+        trust_basis=TrustBasis.DERIVED,
         citation="manuscript:§Atomic-braid recipe",
         jet_order=0,
         notes=(
-            "script: folio-assistant/computations/canonical_braid_crossings.py "
-            "function `atom_canonical_crossings(Z=1, N=1)`.  "
-            "SCRIPT_CITED until PR #476 ships the "
-            "`atomic-braid-recipe-d` derivation chain on main.  "
-            "Cross-checked: total crossing count 23 matches the "
-            "23-crossing word documented in chi-deuteron-h6.witness.json's "
-            "description."
+            "Derivation chain: atomic-braid-recipe-d.derivation.json "
+            "(builder: build_atomic_braid_recipe_d_chain.py).  "
+            "Fully-trusted with profile {axiom: 1, derived: 3, "
+            "computational: 1}.  Discharges this step's SCRIPT_CITED "
+            "frontier."
         ),
     ))
 
@@ -284,16 +271,16 @@ def build() -> DerivationChain:
             "irrep characters χ^λ_q(β_D) via the Hoefsmit recipe "
             "(cached in chi-deuteron-h6.witness.json) via the "
             "finite-Jones axiom into tr_M(D, q_0) ≈ 0.17744.  Trust "
-            "profile is {axiom: 1, mathlib-cited: 0, derived: 2, "
-            "script-cited: 2, computational: 1} — closes the per-λ "
+            "profile is {axiom: 1, mathlib-cited: 0, derived: 3, "
+            "script-cited: 1, computational: 1} — closes the per-λ "
             "Wedderburn-weight frontier for n=6 (all 11 weights now "
             "DERIVED via dedicated chains, replacing what would "
-            "otherwise be 11 SCRIPT_CITED weight steps).  The two "
-            "remaining SCRIPT_CITED steps are the canonical β_D "
-            "recipe (pending PR #476's atomic-braid-recipe-d chain) "
-            "and the per-irrep χ^λ values (pending per-(λ, σ_i) "
-            "Hoefsmit chains for n=6, analogous to the existing "
-            "hoefsmit-rep-21-{sigma1,sigma2} chains for n=3).  "
+            "otherwise be 11 SCRIPT_CITED weight steps).  The "
+            "remaining SCRIPT_CITED step is only the per-irrep χ^λ "
+            "values (pending per-(λ, σ_i) Hoefsmit chains for n=6, "
+            "analogous to the existing hoefsmit-rep-21-{sigma1,sigma2} "
+            "chains for n=3) — the β_D recipe step now references "
+            "atomic-braid-recipe-d.derivation.json.  "
             "Companion to markov-trace-assembly-{proton,neutron}.derivation.json."
         ),
         steps=steps,

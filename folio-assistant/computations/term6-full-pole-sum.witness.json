@@ -1,15 +1,15 @@
 {
   "engine": "python+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-03T22:43:09.412469+00:00",
-  "commitSha": "7a7d39d9817c2c2e447a15ac02ddace60f552d32",
+  "computedAt": "2026-05-09T16:06:04.901119+00:00",
+  "commitSha": "4f2c130ae7371de321ef029831b6ec193b13692a",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 18,
+  "durationMs": 15,
   "computation": "term6-full-pole-sum",
   "scriptFile": "term6_full_pole_sum.py",
   "scriptHash": "65aa9994b574",
-  "scriptCommitSha": "7a7d39d9817c2c2e447a15ac02ddace60f552d32",
+  "scriptCommitSha": "9d801a155dc4a2aaba5408e12bc66b0b71c3a589",
   "description": "Term 6 Mittag-Leffler full pole sum per prop:full-pole-structure-mass-trace. Computes Σ_{n≥2} Σ_{gcd(j,n)=1} r_n^{(j)}(T_w) / (q_0 − ζ_n^{(j)}) using symbolic Habiro residues + 1/(q_0 − ζ) kernel up to cutoff n_max=6. Upstream Habiro witness has proton, neutron, and deuteron; T, ³He, ⁴He+ pending — extension via habiro_coefficients_interpolate.py is the next step for A≥5 5–20% error assessment. Higher-order poles (e.g. deuteron at ζ_4 = ±i, where (u²+1)² appears in the u = sqrt(q) denominator) are now recovered via a chain-rule contour integral in u-space (_higher_order_q_residue_via_sqrt_sub); the deuteron Term-6 contribution that was previously emitted as 'incomplete' now resolves to ≈ 0.057 MeV.",
   "contentBlock": "prop:full-pole-structure-mass-trace",
   "parameters": {
@@ -22,27 +22,35 @@
       {
         "atom": "p (proton, A=1)",
         "n_max": 6,
-        "tr_M_at_q0_polynomial": 2.12258250945273,
+        "tr_M_at_q0_polynomial": 1.0653062285923887,
         "tr_M_polynomial": {
-          "polynomial_q": "(q**24 + 2*q**22 + 2*q**20 + q**19 + q**18 + 2*q**17 + q**16 + 2*q**15 + q**14 + 2*q**13 + q**11 - q**10 - q**8 - q**6 - 2*q**4 - 2*q**2 - 1)/(4*q**14 + 4*q**12 + 4*q**10)",
-          "polynomial_q_latex": "\\frac{q^{24} + 2 q^{22} + 2 q^{20} + q^{19} + q^{18} + 2 q^{17} + q^{16} + 2 q^{15} + q^{14} + 2 q^{13} + q^{11} - q^{10} - q^{8} - q^{6} - 2 q^{4} - 2 q^{2} - 1}{4 q^{14} + 4 q^{12} + 4 q^{10}}",
-          "value_at_q0": "2.1225825094527295505663838358689389853458325219767"
+          "polynomial_q": "(q**(39/2) + q**(35/2) - q**(33/2) + q**(31/2) - q**(29/2) + q**(27/2) + q**(23/2) + q**(21/2) - q**(19/2) - q**(17/2) - q**(13/2) + q**(11/2) - q**(9/2) + q**(7/2) - q**(5/2) - sqrt(q) + q**20 - q**18 + 2*q**12 + 2*q**8 - q**2 + 1)/(4*q**(21/2) + 4*q**(19/2))",
+          "polynomial_q_latex": "\\frac{q^{\\frac{39}{2}} + q^{\\frac{35}{2}} - q^{\\frac{33}{2}} + q^{\\frac{31}{2}} - q^{\\frac{29}{2}} + q^{\\frac{27}{2}} + q^{\\frac{23}{2}} + q^{\\frac{21}{2}} - q^{\\frac{19}{2}} - q^{\\frac{17}{2}} - q^{\\frac{13}{2}} + q^{\\frac{11}{2}} - q^{\\frac{9}{2}} + q^{\\frac{7}{2}} - q^{\\frac{5}{2}} - \\sqrt{q} + q^{20} - q^{18} + 2 q^{12} + 2 q^{8} - q^{2} + 1}{4 q^{\\frac{21}{2}} + 4 q^{\\frac{19}{2}}}",
+          "value_at_q0": "1.0653062285923887592387232627278973729480786821694"
         },
-        "term6_simple_residue_partial": 0.0,
-        "term6_in_MeV": 0.0,
+        "term6_simple_residue_partial": 1.4218153711706527,
+        "term6_in_MeV": 0.7265461617620638,
         "status": "complete-simple-poles-only",
         "higher_order_pole_unresolved": false,
         "higher_order_pole_resolved_via_sqrt_sub": false,
         "per_n_breakdown": [
           {
             "n": 2,
-            "n_real_contribution": 0.0,
+            "n_real_contribution": 1.4218153711706527,
             "roots": [
               {
                 "j_index": 0,
-                "zeta": "-1",
-                "residue": "0 or None",
-                "contribution": 0.0
+                "zeta_real": -1.0,
+                "zeta_imag": 0.0,
+                "residue_complex": [
+                  3.0,
+                  1.0
+                ],
+                "kernel_complex": [
+                  0.47393845705688425,
+                  0.0
+                ],
+                "contribution_real": 1.4218153711706527
               }
             ]
           },
@@ -135,27 +143,35 @@
       {
         "atom": "n (neutron, A=1)",
         "n_max": 6,
-        "tr_M_at_q0_polynomial": 1.5893934459539052,
+        "tr_M_at_q0_polynomial": 0.9232332971695834,
         "tr_M_polynomial": {
-          "polynomial_q": "(q**20 + 2*q**18 + 2*q**16 + q**15 + q**14 + 2*q**13 + q**12 + 2*q**11 + 2*q**9 - q**8 + q**7 - q**6 - 2*q**4 - 2*q**2 - 1)/(4*q**12 + 4*q**10 + 4*q**8)",
-          "polynomial_q_latex": "\\frac{q^{20} + 2 q^{18} + 2 q^{16} + q^{15} + q^{14} + 2 q^{13} + q^{12} + 2 q^{11} + 2 q^{9} - q^{8} + q^{7} - q^{6} - 2 q^{4} - 2 q^{2} - 1}{4 q^{12} + 4 q^{10} + 4 q^{8}}",
-          "value_at_q0": "1.5893934459539044137415087693689928372969565522957"
+          "polynomial_q": "(q**(39/2) + q**(35/2) - q**(33/2) + q**(31/2) - q**(29/2) + q**(27/2) - q**(25/2) - q**(21/2) + q**(19/2) + q**(15/2) - q**(13/2) + q**(11/2) - q**(9/2) + q**(7/2) - q**(5/2) - sqrt(q) + q**20 - q**18 + 4*q**10 - q**2 + 1)/(4*q**(21/2) + 4*q**(19/2))",
+          "polynomial_q_latex": "\\frac{q^{\\frac{39}{2}} + q^{\\frac{35}{2}} - q^{\\frac{33}{2}} + q^{\\frac{31}{2}} - q^{\\frac{29}{2}} + q^{\\frac{27}{2}} - q^{\\frac{25}{2}} - q^{\\frac{21}{2}} + q^{\\frac{19}{2}} + q^{\\frac{15}{2}} - q^{\\frac{13}{2}} + q^{\\frac{11}{2}} - q^{\\frac{9}{2}} + q^{\\frac{7}{2}} - q^{\\frac{5}{2}} - \\sqrt{q} + q^{20} - q^{18} + 4 q^{10} - q^{2} + 1}{4 q^{\\frac{21}{2}} + 4 q^{\\frac{19}{2}}}",
+          "value_at_q0": "0.92323329716958324698108314085315440447507447038194"
         },
-        "term6_simple_residue_partial": 0.0,
-        "term6_in_MeV": 0.0,
+        "term6_simple_residue_partial": 1.895753828227537,
+        "term6_in_MeV": 0.9687282156827517,
         "status": "complete-simple-poles-only",
         "higher_order_pole_unresolved": false,
         "higher_order_pole_resolved_via_sqrt_sub": false,
         "per_n_breakdown": [
           {
             "n": 2,
-            "n_real_contribution": 0.0,
+            "n_real_contribution": 1.895753828227537,
             "roots": [
               {
                 "j_index": 0,
-                "zeta": "-1",
-                "residue": "0 or None",
-                "contribution": 0.0
+                "zeta_real": -1.0,
+                "zeta_imag": 0.0,
+                "residue_complex": [
+                  4.0,
+                  1.0
+                ],
+                "kernel_complex": [
+                  0.47393845705688425,
+                  0.0
+                ],
+                "contribution_real": 1.895753828227537
               }
             ]
           },
@@ -248,27 +264,35 @@
       {
         "atom": "D (deuteron, A=2)",
         "n_max": 6,
-        "tr_M_at_q0_polynomial": 0.17743692421543206,
+        "tr_M_at_q0_polynomial": 0.38828647154771373,
         "tr_M_polynomial": {
-          "polynomial_q": "(q**52 + 3*q**50 + 6*q**48 + 9*q**46 + 21*q**44 + 35*q**42 + 47*q**40 + 50*q**38 + 70*q**36 + 73*q**34 + 54*q**32 + 7*q**30 - 8*q**28 - 35*q**26 - 59*q**24 - 82*q**22 - 62*q**20 - 46*q**18 - 24*q**16 - 11*q**14 + 8*q**12 + 11*q**10 + 11*q**8 + 7*q**6 + 6*q**4 + 3*q**2 + 1)/(32*q**38 + 128*q**36 + 288*q**34 + 480*q**32 + 672*q**30 + 832*q**28 + 896*q**26 + 832*q**24 + 672*q**22 + 480*q**20 + 288*q**18 + 128*q**16 + 32*q**14)",
-          "polynomial_q_latex": "\\frac{q^{52} + 3 q^{50} + 6 q^{48} + 9 q^{46} + 21 q^{44} + 35 q^{42} + 47 q^{40} + 50 q^{38} + 70 q^{36} + 73 q^{34} + 54 q^{32} + 7 q^{30} - 8 q^{28} - 35 q^{26} - 59 q^{24} - 82 q^{22} - 62 q^{20} - 46 q^{18} - 24 q^{16} - 11 q^{14} + 8 q^{12} + 11 q^{10} + 11 q^{8} + 7 q^{6} + 6 q^{4} + 3 q^{2} + 1}{32 q^{38} + 128 q^{36} + 288 q^{34} + 480 q^{32} + 672 q^{30} + 832 q^{28} + 896 q^{26} + 832 q^{24} + 672 q^{22} + 480 q^{20} + 288 q^{18} + 128 q^{16} + 32 q^{14}}",
-          "value_at_q0": "0.17743692421543195973343227177271915339983307423175"
+          "polynomial_q": "(-2*q**(85/2) + 4*q**(81/2) + 6*q**(77/2) - 4*q**(75/2) + 4*q**(73/2) - 9*q**(71/2) + 8*q**(69/2) - 7*q**(67/2) + 8*q**(65/2) - 6*q**(63/2) + 10*q**(61/2) - 14*q**(59/2) + 12*q**(57/2) - 13*q**(55/2) + 14*q**(53/2) - 15*q**(51/2) + 12*q**(49/2) - 12*q**(47/2) + 20*q**(45/2) + 20*q**(41/2) - 12*q**(39/2) + 12*q**(37/2) - 15*q**(35/2) + 14*q**(33/2) - 13*q**(31/2) + 12*q**(29/2) - 14*q**(27/2) + 10*q**(25/2) - 6*q**(23/2) + 8*q**(21/2) - 7*q**(19/2) + 8*q**(17/2) - 9*q**(15/2) + 4*q**(13/2) - 4*q**(11/2) + 6*q**(9/2) + 4*q**(5/2) - 2*sqrt(q) - q**43 - 2*q**42 + 6*q**41 + 2*q**40 - 2*q**39 - 6*q**38 + 2*q**37 + q**36 - 3*q**35 + q**33 + 3*q**32 + 15*q**31 - q**30 + 19*q**29 - 15*q**28 + 17*q**27 - 18*q**26 + 7*q**25 - 14*q**24 + 7*q**23 + 6*q**22 - 6*q**21 - 7*q**20 + 14*q**19 - 7*q**18 + 18*q**17 - 17*q**16 + 15*q**15 - 19*q**14 + q**13 - 15*q**12 - 3*q**11 - q**10 + 3*q**8 - q**7 - 2*q**6 + 6*q**5 + 2*q**4 - 2*q**3 - 6*q**2 + 2*q + 1)/(32*q**23 + 96*q**22 + 96*q**21 + 32*q**20)",
+          "polynomial_q_latex": "\\frac{- 2 q^{\\frac{85}{2}} + 4 q^{\\frac{81}{2}} + 6 q^{\\frac{77}{2}} - 4 q^{\\frac{75}{2}} + 4 q^{\\frac{73}{2}} - 9 q^{\\frac{71}{2}} + 8 q^{\\frac{69}{2}} - 7 q^{\\frac{67}{2}} + 8 q^{\\frac{65}{2}} - 6 q^{\\frac{63}{2}} + 10 q^{\\frac{61}{2}} - 14 q^{\\frac{59}{2}} + 12 q^{\\frac{57}{2}} - 13 q^{\\frac{55}{2}} + 14 q^{\\frac{53}{2}} - 15 q^{\\frac{51}{2}} + 12 q^{\\frac{49}{2}} - 12 q^{\\frac{47}{2}} + 20 q^{\\frac{45}{2}} + 20 q^{\\frac{41}{2}} - 12 q^{\\frac{39}{2}} + 12 q^{\\frac{37}{2}} - 15 q^{\\frac{35}{2}} + 14 q^{\\frac{33}{2}} - 13 q^{\\frac{31}{2}} + 12 q^{\\frac{29}{2}} - 14 q^{\\frac{27}{2}} + 10 q^{\\frac{25}{2}} - 6 q^{\\frac{23}{2}} + 8 q^{\\frac{21}{2}} - 7 q^{\\frac{19}{2}} + 8 q^{\\frac{17}{2}} - 9 q^{\\frac{15}{2}} + 4 q^{\\frac{13}{2}} - 4 q^{\\frac{11}{2}} + 6 q^{\\frac{9}{2}} + 4 q^{\\frac{5}{2}} - 2 \\sqrt{q} - q^{43} - 2 q^{42} + 6 q^{41} + 2 q^{40} - 2 q^{39} - 6 q^{38} + 2 q^{37} + q^{36} - 3 q^{35} + q^{33} + 3 q^{32} + 15 q^{31} - q^{30} + 19 q^{29} - 15 q^{28} + 17 q^{27} - 18 q^{26} + 7 q^{25} - 14 q^{24} + 7 q^{23} + 6 q^{22} - 6 q^{21} - 7 q^{20} + 14 q^{19} - 7 q^{18} + 18 q^{17} - 17 q^{16} + 15 q^{15} - 19 q^{14} + q^{13} - 15 q^{12} - 3 q^{11} - q^{10} + 3 q^{8} - q^{7} - 2 q^{6} + 6 q^{5} + 2 q^{4} - 2 q^{3} - 6 q^{2} + 2 q + 1}{32 q^{23} + 96 q^{22} + 96 q^{21} + 32 q^{20}}",
+          "value_at_q0": "0.38828647154771299936605791605018767686788680522830"
         },
-        "term6_simple_residue_partial": 0.11200453481724766,
-        "term6_in_MeV": 0.05723419968685199,
-        "status": "complete-with-sqrt-sub-fallback",
+        "term6_simple_residue_partial": Infinity,
+        "term6_in_MeV": Infinity,
+        "status": "complete-simple-poles-only",
         "higher_order_pole_unresolved": false,
-        "higher_order_pole_resolved_via_sqrt_sub": true,
+        "higher_order_pole_resolved_via_sqrt_sub": false,
         "per_n_breakdown": [
           {
             "n": 2,
-            "n_real_contribution": 0.0,
+            "n_real_contribution": Infinity,
             "roots": [
               {
                 "j_index": 0,
-                "zeta": "-1",
-                "residue": "0 or None",
-                "contribution": 0.0
+                "zeta_real": -1.0,
+                "zeta_imag": 0.0,
+                "residue_complex": [
+                  Infinity,
+                  0.0
+                ],
+                "kernel_complex": [
+                  0.47393845705688425,
+                  0.0
+                ],
+                "contribution_real": Infinity
               }
             ]
           },
@@ -292,39 +316,19 @@
           },
           {
             "n": 4,
-            "n_real_contribution": 0.11200453481724766,
+            "n_real_contribution": 0.0,
             "roots": [
               {
                 "j_index": 0,
-                "zeta_real": 0.0,
-                "zeta_imag": 1.0,
-                "residue_complex": [
-                  -1.780560045481919e-100,
-                  -0.125
-                ],
-                "kernel_complex": [
-                  0.4972905450085915,
-                  0.44801813926899064
-                ],
-                "contribution_real": 0.05600226740862383,
-                "method": "sqrt_substitution_contour",
-                "note": "higher-order pole resolved via u = sqrt(q) contour with chain-rule integrand 2u·U(u)"
+                "zeta": "I",
+                "residue": "0 or None",
+                "contribution": 0.0
               },
               {
                 "j_index": 1,
-                "zeta_real": 0.0,
-                "zeta_imag": -1.0,
-                "residue_complex": [
-                  6.911501881660007e-101,
-                  0.125
-                ],
-                "kernel_complex": [
-                  0.4972905450085915,
-                  -0.44801813926899064
-                ],
-                "contribution_real": 0.05600226740862383,
-                "method": "sqrt_substitution_contour",
-                "note": "higher-order pole resolved via u = sqrt(q) contour with chain-rule integrand 2u·U(u)"
+                "zeta": "-I",
+                "residue": "0 or None",
+                "contribution": 0.0
               }
             ]
           },

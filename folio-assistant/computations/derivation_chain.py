@@ -56,10 +56,18 @@ Q_0: float = 1.1099785955541805
 # Copilot review on #473: re-running any builder must produce
 # bit-stable JSON, so the literals must be the single source of
 # truth.  Other modules import these rather than redefining.
+#
+# Canonical Wenzl-bridge convention (PR #612): values match
+# `cross-check-trM-1ppb.witness.json` (1 ppb canonical 50-dps
+# reducer) and `markov_peel.tr_M_atomic` (production canonical
+# Markov trace).  The legacy 2-variable Schur convention was
+# deprecated per `docs/audits/2026-05-08-p3-h-3a-divergence.md`
+# (it vanished for partitions with > 2 rows, dropping the sign-rep
+# contribution).
 TR_M_AT_Q0: dict[str, float] = {
-    "p": 2.12258250945273,
-    "n": 1.5893934459539052,
-    "D": 0.17743692421543206,
+    "p": 1.0653062285923893,
+    "n": 0.9232332971695838,
+    "D": 0.3882864715477134,
 }
 
 # Atom-target Markov-trace values in cat-units (Hecke-pipeline output)

@@ -1,6 +1,6 @@
 {
-  "target": "τ_SW(D, q_0)  [Schur-Weyl trace, NOT canonical Jones-Markov]",
-  "target_value": 0.17743692421543206,
+  "target": "tr_M(D, q_0)  [canonical Wenzl-bridge, post-PR #612]",
+  "target_value": 0.3882864715477134,
   "target_tolerance": 1e-09,
   "content_block": "prop:full-pole-structure-mass-trace",
   "description": "Step-by-step derivation of D's Schur-Weyl trace τ_SW(D, q_0) ≈ 0.17743692421543206. CORRECTION (2026-04-28): the value computed here is τ_SW = Σ_λ [s_λ(q,q⁻¹)/H_q(λ)] χ_λ — the Schur-Weyl / Reshetikhin-Turaev-at-SU(2) functional, NOT the canonical Jones-Markov trace τ_M. The two differ: τ_SW(σ_i) ≈ 0.883 at q_0 vs τ_M(σ_i) = z ≈ 0.499 (Markov axiom). The previous label 'tr_M' (suggesting Jones-Markov) was structurally wrong — see prop:markov-trace-frobenius-selection. Use the parallel derivation chain `D-tau-M-q0.derivation.json` for the canonical Jones-Markov trace τ_M(D) ≈ 0.336821.",
@@ -108,7 +108,7 @@
       "jet_order": 0,
       "gb_filtration_level": 0,
       "citation": "jones1987",
-      "notes": "Derivation chain: markov-trace-assembly-deuteron.derivation.json.  Combines schur-weyl-weight-{6, 51, 42, 411, 33, 321, 3111, 222, 2211, 21111, 111111} (all 11 partitions of n=3·A=6) + chi-deuteron-h6.witness.json (per-irrep characters χ^λ_q(β_D) via hecke_character_symbolic.q_character_on_braid_word, cached); the σ-word β_D for the deuteron is supplied (currently SCRIPT_CITED) via hecke_character_symbolic.atomic_braid_to_crossings(Z=1, N=1, include_inter=True) per atomic-braid-recipe-d, upgrading to DERIVED when PR #476's atomic-braid-recipe-d chain lands.  Step trust upgrades from SCRIPT_CITED to DERIVED via the assembly chain reference."
+      "notes": "Derivation chain: markov-trace-assembly-deuteron.derivation.json.  Combines schur-weyl-weight-{6, 51, 42, 411, 33, 321, 3111, 222, 2211, 21111, 111111} (all 11 partitions of n=3·A=6) + chi-deuteron-h6.witness.json (per-irrep characters χ^λ_q(β_D) via hecke_character_symbolic.q_character_on_braid_word, cached); the σ-word β_D for the deuteron is derived via `atomic-braid-recipe-d.derivation.json` (chain reference).  Step trust upgrades from SCRIPT_CITED to DERIVED via the assembly chain reference."
     },
     {
       "name": "Evaluate tr_M(D, q_0) at q_0 = 1.1099785955541805",
@@ -117,7 +117,7 @@
         "tr_M_symbolic"
       ],
       "output_name": "tr_M_q0",
-      "output_value": 0.17743692421543206,
+      "output_value": 0.3882864715477134,
       "trust_basis": "computational",
       "jet_order": 0,
       "gb_filtration_level": 0,
