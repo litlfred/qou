@@ -41,7 +41,7 @@ export default proposition({
     "algorithm",
   ],
   computation: {
-    engine: "python+mpmath",
+    engine: "mpmath",
     script: "folio-assistant/computations/d_from_scratch.py",
     witness: [
       "folio-assistant/computations/d-from-scratch.witness.json",
@@ -56,6 +56,6 @@ export default proposition({
       "folio-assistant/computations/probe-sdp-canonical-paper-formula.witness.json",
       "folio-assistant/computations/unified-low-isotope-predictor.witness.json",
     ],
-    status: "experimental",
+    status: "not_run",
   },
 });

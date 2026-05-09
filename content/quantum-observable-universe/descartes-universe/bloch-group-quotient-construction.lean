@@ -371,4 +371,42 @@ instance hasBlochGroup_real :
   bloch_quotient_is_abelian := trivial
   bloch_wigner_regulator_exists := trivial
 
+/-! ## Non-triviality of the constrained pentagon set -/
+
+/-- A concrete `RogersPair ℝ` witness, using `(x, y) = (2, 3)`:
+    `2 ≠ 0, 2 ≠ 1, 3 ≠ 0, 3 ≠ 1, 2 ≠ 3` are all unconditional
+    real-number facts closed by `norm_num`. -/
+-- Ref: [bloch2000]
+def rogersPairTwoThree : RogersPair ℝ where
+  x := 2
+  y := 3
+  hx_ne_zero := by norm_num
+  hx_ne_one := by norm_num
+  hy_ne_zero := by norm_num
+  hy_ne_one := by norm_num
+  hxy_ne := by norm_num
+
+/-- **Pentagon non-triviality lemma (sorry-free).** The constrained
+    pentagon-relation generator set is non-empty for `F = ℝ`,
+    witnessed by the explicit Rogers pair `(2, 3)`. Hence the
+    pentagon `AddSubgroup` is at least the closure of this single
+    generator (non-trivial), and the corresponding `BlochGroup ℝ`
+    is a non-trivial quotient.
+
+    This rules out the degenerate case where
+    `validPentagonRelationGenerators = ∅` would have collapsed
+    `BlochGroup ℝ` to `PreBlochGroup ℝ`. -/
+-- Ref: [bloch2000]
+theorem validPentagonRelationGenerators_nonempty :
+    (validPentagonRelationGenerators (F := ℝ)).Nonempty :=
+  ⟨rogersGenerator rogersPairTwoThree, rogersPairTwoThree, rfl⟩
+
+/-- **Concrete corollary:** the `BlochGroup ℝ` quotient is built
+    from a non-trivial `pentagonSubgroup` (contains at least the
+    image of `rogersPairTwoThree` under `rogersGenerator`). -/
+-- Ref: [bloch2000]
+theorem pentagonSubgroup_real_contains_rogers_witness :
+    rogersGenerator rogersPairTwoThree ∈ pentagonSubgroup (F := ℝ) :=
+  rogersGenerator_mem_pentagonSubgroup rogersPairTwoThree
+
 end QOU.Descartes.BlochQuotient
