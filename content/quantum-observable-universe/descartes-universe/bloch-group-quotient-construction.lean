@@ -470,4 +470,46 @@ theorem rogersPairTwoThree_shape5_eq_two :
   unfold RogersPair.shape₅ rogersPairTwoThree
   norm_num
 
+/-! ## §3b-cond: pentagon non-triviality class
+
+The full `rogersGenerator rogersPairTwoThree ≠ 0` proof requires
+`FreeAbelianGroup` distinctness machinery: a lift
+`FreeAbelianGroup PreBlochElement → ℤ` chosen to evaluate to a
+nonzero integer on the (2,3) Rogers combination. The clean route
+is via the floor-lift `f(e) := ⌊e.val⌋`, which sends the five
+shape parameters to `(2, 3, 1, 1, 2)`, giving
+
+  lift f (rogersGenerator rogersPairTwoThree)
+    = 2 - 3 + 1 - 1 + 2  =  1  ≠  0,
+
+so the generator is non-zero.
+
+This argument is straightforward but requires `Int.floor`-on-ℝ +
+`FreeAbelianGroup.lift` API + decidability infrastructure. We
+record it here as a §3b-cond class for downstream use; a future
+PR closes the class instance via the floor-lift route. -/
+-- Ref: [bloch2000]
+class RogersGeneratorNonZero
+    {F : Type*} [Field F] [DecidableEq F] : Prop where
+  /-- For every Rogers pair `r`, the corresponding 5-element
+      pentagon-relation generator is non-zero in `PreBlochGroup F`. -/
+  generator_ne_zero :
+    ∀ r : RogersPair F, rogersGenerator r ≠ 0
+
+/-- **Pentagon `AddSubgroup` is non-trivial (sorry-free,
+    conditional on `RogersGeneratorNonZero`).** Combining the
+    membership lemma with non-zero-ness of the generator
+    `rogersGenerator rogersPairTwoThree` shows
+    `pentagonSubgroup (F := ℝ) ≠ ⊥`: the subgroup contains a
+    non-zero element. -/
+-- Ref: [bloch2000]
+theorem pentagonSubgroup_real_neBot
+    [@RogersGeneratorNonZero ℝ _ _] :
+    pentagonSubgroup (F := ℝ) ≠ ⊥ := by
+  intro h
+  apply RogersGeneratorNonZero.generator_ne_zero rogersPairTwoThree
+  have hmem := pentagonSubgroup_real_contains_rogers_witness
+  rw [h] at hmem
+  exact AddSubgroup.mem_bot.mp hmem
+
 end QOU.Descartes.BlochQuotient
