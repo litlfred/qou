@@ -25,6 +25,7 @@
 -/
 
 import Mathlib.Algebra.Field.Basic
+import QOU.BraidKnot.ConditionalClasses
 
 namespace QOU.BraidKnot
 
@@ -86,5 +87,20 @@ theorem pipeline_truncation_well_defined
     full - truncated = tail := by
   -- Ref: [manuscript] §5.13
   rw [h_split]; ring
+
+/-- **Conditional Hoefsmit pipeline.**  The pipeline truncation
+    identity is well-defined under the §3b-cond conditional
+    dependencies on [conj:hyperbolic-volume-transcendence] and
+    [conj:baryon-period-ratio], which are encoded as the
+    `[SingleVolumeIrrational]` and `[PLCorrectnessHypotheses]`
+    instance hypotheses.  The conditional discharges to the
+    unconditional `pipeline_truncation_well_defined` proven above. -/
+theorem hoefsmit_pipeline_conditional
+    [SingleVolumeIrrational] [PLCorrectnessHypotheses]
+    {R : Type u} [Field R] (q : R) (k : ℕ) (hk : k ≥ 3)
+    (full truncated tail : R)
+    (h_split : full = truncated + tail) :
+    full - truncated = tail :=
+  pipeline_truncation_well_defined q k hk full truncated tail h_split
 
 end QOU.BraidKnot
