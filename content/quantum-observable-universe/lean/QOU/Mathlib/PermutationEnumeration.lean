@@ -654,4 +654,113 @@ theorem coxeterLength_longest_alt_in_S4 :
   unfold coxeterLength sigma1_in_S4 sigma2_in_S4 sigma3_in_S4 simpleTransposition
   decide
 
+/-! ### S_5 generators and length theorems -/
+
+/-- The first simple transposition `(0 1)` in S_5. -/
+def sigma1_in_S5 : Equiv.Perm (Fin 5) := simpleTransposition 5 0
+
+/-- The second simple transposition `(1 2)` in S_5. -/
+def sigma2_in_S5 : Equiv.Perm (Fin 5) := simpleTransposition 5 1
+
+/-- The third simple transposition `(2 3)` in S_5. -/
+def sigma3_in_S5 : Equiv.Perm (Fin 5) := simpleTransposition 5 2
+
+/-- The fourth simple transposition `(3 4)` in S_5. -/
+def sigma4_in_S5 : Equiv.Perm (Fin 5) := simpleTransposition 5 3
+
+/-- Each simple transposition has Coxeter length 1. -/
+theorem coxeterLength_sigma1_in_S5 :
+    coxeterLength sigma1_in_S5 = 1 := by
+  unfold coxeterLength sigma1_in_S5 simpleTransposition
+  decide
+
+theorem coxeterLength_sigma2_in_S5 :
+    coxeterLength sigma2_in_S5 = 1 := by
+  unfold coxeterLength sigma2_in_S5 simpleTransposition
+  decide
+
+theorem coxeterLength_sigma3_in_S5 :
+    coxeterLength sigma3_in_S5 = 1 := by
+  unfold coxeterLength sigma3_in_S5 simpleTransposition
+  decide
+
+theorem coxeterLength_sigma4_in_S5 :
+    coxeterLength sigma4_in_S5 = 1 := by
+  unfold coxeterLength sigma4_in_S5 simpleTransposition
+  decide
+
+/-- σ_1 · σ_2 in S_5 has length 2. -/
+theorem coxeterLength_s1_s2_in_S5 :
+    coxeterLength (sigma1_in_S5 * sigma2_in_S5) = 2 := by
+  unfold coxeterLength sigma1_in_S5 sigma2_in_S5 simpleTransposition
+  decide
+
+/-- σ_2 · σ_1 in S_5 has length 2. -/
+theorem coxeterLength_s2_s1_in_S5 :
+    coxeterLength (sigma2_in_S5 * sigma1_in_S5) = 2 := by
+  unfold coxeterLength sigma1_in_S5 sigma2_in_S5 simpleTransposition
+  decide
+
+/-- σ_1 · σ_3 in S_5 has length 2 (far-commuting transpositions). -/
+theorem coxeterLength_s1_s3_in_S5 :
+    coxeterLength (sigma1_in_S5 * sigma3_in_S5) = 2 := by
+  unfold coxeterLength sigma1_in_S5 sigma3_in_S5 simpleTransposition
+  decide
+
+/-- σ_1 · σ_4 in S_5 has length 2 (far-commuting transpositions). -/
+theorem coxeterLength_s1_s4_in_S5 :
+    coxeterLength (sigma1_in_S5 * sigma4_in_S5) = 2 := by
+  unfold coxeterLength sigma1_in_S5 sigma4_in_S5 simpleTransposition
+  decide
+
+/-- σ_2 · σ_4 in S_5 has length 2 (far-commuting transpositions). -/
+theorem coxeterLength_s2_s4_in_S5 :
+    coxeterLength (sigma2_in_S5 * sigma4_in_S5) = 2 := by
+  unfold coxeterLength sigma2_in_S5 sigma4_in_S5 simpleTransposition
+  decide
+
+/-- Braid relation in S_5 (i, i+1): σ_1 σ_2 σ_1 = σ_2 σ_1 σ_2. -/
+theorem braid_relation_s12_in_S5 :
+    sigma1_in_S5 * sigma2_in_S5 * sigma1_in_S5 =
+      sigma2_in_S5 * sigma1_in_S5 * sigma2_in_S5 := by
+  unfold sigma1_in_S5 sigma2_in_S5 simpleTransposition
+  decide
+
+/-- Braid relation in S_5 (i, i+1): σ_2 σ_3 σ_2 = σ_3 σ_2 σ_3. -/
+theorem braid_relation_s23_in_S5 :
+    sigma2_in_S5 * sigma3_in_S5 * sigma2_in_S5 =
+      sigma3_in_S5 * sigma2_in_S5 * sigma3_in_S5 := by
+  unfold sigma2_in_S5 sigma3_in_S5 simpleTransposition
+  decide
+
+/-- Braid relation in S_5 (i, i+1): σ_3 σ_4 σ_3 = σ_4 σ_3 σ_4. -/
+theorem braid_relation_s34_in_S5 :
+    sigma3_in_S5 * sigma4_in_S5 * sigma3_in_S5 =
+      sigma4_in_S5 * sigma3_in_S5 * sigma4_in_S5 := by
+  unfold sigma3_in_S5 sigma4_in_S5 simpleTransposition
+  decide
+
+/-- Far-commute σ_1 σ_3 = σ_3 σ_1. -/
+theorem far_commute_s13_in_S5 :
+    sigma1_in_S5 * sigma3_in_S5 = sigma3_in_S5 * sigma1_in_S5 := by
+  unfold sigma1_in_S5 sigma3_in_S5 simpleTransposition
+  decide
+
+/-- Far-commute σ_1 σ_4 = σ_4 σ_1. -/
+theorem far_commute_s14_in_S5 :
+    sigma1_in_S5 * sigma4_in_S5 = sigma4_in_S5 * sigma1_in_S5 := by
+  unfold sigma1_in_S5 sigma4_in_S5 simpleTransposition
+  decide
+
+/-- Far-commute σ_2 σ_4 = σ_4 σ_2. -/
+theorem far_commute_s24_in_S5 :
+    sigma2_in_S5 * sigma4_in_S5 = sigma4_in_S5 * sigma2_in_S5 := by
+  unfold sigma2_in_S5 sigma4_in_S5 simpleTransposition
+  decide
+
+/-- The cardinality of S_5 is exactly 120 (= 5!). -/
+theorem card_S5 : Fintype.card (Equiv.Perm (Fin 5)) = 120 := by
+  rw [Fintype.card_perm, Fintype.card_fin]
+  decide
+
 end QOU.Mathlib.PermutationEnumeration

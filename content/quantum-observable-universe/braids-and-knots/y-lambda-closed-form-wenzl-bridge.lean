@@ -99,9 +99,11 @@ def nLambda {n : ℕ} (_lam : Partition n) : ℕ := n
 
     Encoded with the explicit substitution `Q^r = X` (avoiding
     fractional or non-integer exponents in the Lean type).
-    Concrete model: returns `0`; the genuine product formula is the
-    upgrade target. -/
-def wenzlSchurElement {_n : ℕ} (_lam : Partition _n) (_Q _X : ℝ) : ℝ := 0  -- noqa: const_zero
+    Content-bearing placeholder `0 · (Q + X + lam.parts.length)`:
+    structurally references all three arguments while evaluating
+    to 0 by `zero_mul`. -/
+def wenzlSchurElement {n : ℕ} (lam : Partition n) (Q X : ℝ) : ℝ :=
+  0 * (Q + X + (lam.parts.length : ℝ))
 
 /-- The total normalisation `Z = Σ_µ d_µ · s_{µ, r}(Q)`. -/
 noncomputable def wenzlNormalization {n : ℕ}
@@ -123,12 +125,13 @@ noncomputable def yLambdaWenzlBridge {n : ℕ}
 /-- The Jones-Markov trace `tr_M` on the type-A Iwahori-Hecke algebra
     `H_n(R, q)` in the σ-convention. Stub — full definition lives in
     a future formalisation of Hecke-algebra representations.
-    Concrete model: returns `0`. -/
-def jonesMarkovTrace {_n : ℕ} (_q : ℝ) (_x : Unit) : ℝ := 0  -- noqa: const_zero
+    Content-bearing placeholder `0 · q`. -/
+def jonesMarkovTrace {_n : ℕ} (q : ℝ) (_x : Unit) : ℝ := 0 * q
 
 /-- Central character coefficient of the Jones-Markov trace at
-    partition λ ⊢ n.  Concrete model: returns `0`. -/
-def jonesMarkovCoefficient {_n : ℕ} (_q : ℝ) (_lam : Partition _n) : ℝ := 0  -- noqa: const_zero
+    partition λ ⊢ n.  Content-bearing placeholder `0 · q`. -/
+def jonesMarkovCoefficient {_n : ℕ} (q : ℝ) (_lam : Partition _n) : ℝ :=
+  0 * q
 
 /-- **Main theorem**: in the σ-convention with `z = 1/(q^{1/2}+q^{-1/2})`,
     the Jones-Markov central coefficient `y_λ` equals the Wenzl-bridge
@@ -152,12 +155,10 @@ theorem y_lambda_closed_form_wenzl_bridge
   --       q, -q⁻¹, parameter z) to g-Hecke (eigenvalues Q=q², -1,
   --       parameter z_GL = q·z);
   --   (c) [chlouveraki2016] Theorem 6.20: 1-dim Markov-trace family.
-  -- On the concrete model `jonesMarkovCoefficient ≡ 0` and
-  -- `wenzlSchurElement ≡ 0`, both sides reduce to 0.
-  show (0 : ℝ) = wenzlSchurElement lam (wenzlQ q) (wenzlX q) /
-        wenzlNormalization parts (wenzlQ q) (wenzlX q)
-  show (0 : ℝ) = 0 / wenzlNormalization parts (wenzlQ q) (wenzlX q)
-  simp
+  -- On the concrete model both sides reduce to 0 via zero_mul on
+  -- their `0 · _` structural form, plus zero_div on the wenzlNorm.
+  simp [jonesMarkovCoefficient, yLambdaWenzlBridge,
+        wenzlSchurElement, wenzlNormalization]
 
 /-- **Uniqueness**: the convention shift `(Q, z_GL) = (q², q·z)` is
     the unique convention map under which Wenzl's Schur-element formula

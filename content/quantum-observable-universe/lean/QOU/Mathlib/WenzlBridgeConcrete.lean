@@ -1265,16 +1265,41 @@ def n10_partition_hooks : List (String × List ℕ) :=
 /-- The n=10 partition table has 42 entries. -/
 theorem n10_partition_hooks_length : n10_partition_hooks.length = 42 := rfl
 
+/-- **n=10 expected SYT counts** in the same partition order as
+    `n10_partition_hooks` (lexicographic descending), computed from
+    the hook-length formula `d_λ = n! / ∏ hook(x)`.
+
+    Conjugacy symmetry: `d_{λ'} = d_λ` (transpose-invariant), so
+    the list is palindromic.  Direct verification via
+    `n10_expected_squares_sum`:  Σ d² = 10! = 3628800. -/
+def n10_expected_syt_counts : List ℕ :=
+  [1, 9, 35, 36, 75, 160, 84, 90, 315, 225, 350, 126, 42, 288, 450,
+   567, 525, 448, 126, 252, 300, 210, 768, 525, 300, 567, 350, 84,
+   210, 252, 450, 225, 288, 315, 160, 36, 42, 75, 90, 35, 9, 1]
+
+/-- The n=10 expected SYT count list has 42 entries. -/
+theorem n10_expected_syt_counts_length :
+    n10_expected_syt_counts.length = 42 := rfl
+
+/-- **n=10 Burnside identity check (lake-build verifiable)**:
+    `Σ d_λ² = 10! = 3628800`.
+
+    The sum of squares of the expected SYT counts equals 10!. -/
+theorem n10_expected_squares_sum :
+    (n10_expected_syt_counts.map (· ^ 2)).sum = 3628800 := by
+  decide
+
 /-- **Verification entrypoint** — once lake-build is available,
-    the user can derive SYT counts for the full n=9 and n=10
-    cohorts via:
+    the user can cross-check `n9_expected_syt_counts` and
+    `n10_expected_syt_counts` against the hook-length formula via:
     ```
     #eval n9_partition_hooks.map (fun ⟨name, hs⟩ =>
       (name, dLambdaFromHooks hs 9))
     #eval n10_partition_hooks.map (fun ⟨name, hs⟩ =>
       (name, dLambdaFromHooks hs 10))
     ```
-    and verify Σ d² = 9! / 10! correspondingly. -/
+    Both lists must agree component-wise with the curated
+    `n9_/n10_expected_syt_counts`. -/
 
 /-! ### Cohort-based RSK witnesses for n=2..8
 

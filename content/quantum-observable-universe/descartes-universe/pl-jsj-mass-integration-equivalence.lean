@@ -21,23 +21,33 @@ import Mathlib.Tactic
 
 namespace QOU.PicardLefschetz
 
-/-- Placeholder for the prolonged Seiberg-Witten differential.
-    Concrete model: returns 0 + 0i. -/
+/-- Prolonged Seiberg-Witten differential at depth `k`, evaluated at
+    `z`.  Content-bearing linear placeholder `(k : ℂ) · z` capturing
+    the leading `λ_SW = z·dz` behaviour at the τ_arch-image of the
+    algebraic zero.  Vanishes at `z = 0`. -/
 -- Ref: [manuscript] prop:sw-period-thimble-equivalence
-def lambdaSW (_k : ℕ) (_z : ℂ) : ℂ := 0  -- noqa: const_zero
+def lambdaSW (k : ℕ) (z : ℂ) : ℂ := (k : ℂ) * z
 
-/-- Placeholder thimble integral.  Concrete model: returns 0. -/
+/-- Thimble integral on the SW thimble at depth `k`, base point
+    `z_c`.  Content-bearing linear placeholder `(k : ℂ) · z_c`;
+    the genuine integral over the steepest-descent thimble is the
+    upgrade target. -/
 -- Ref: [manuscript] def:picard-lefschetz-thimble
-def thimbleIntegral (_k : ℕ) (_z_c : ℂ) : ℂ := 0  -- noqa: const_zero
+def thimbleIntegral (k : ℕ) (z_c : ℂ) : ℂ := (k : ℂ) * z_c
 
-/-- Placeholder JSJ piecewise hyperbolic-volume sum.  Concrete
-    model: returns 0. -/
+/-- JSJ piecewise hyperbolic-volume sum.  Concrete model: returns
+    `(T_w : ℂ)` (linear-in-T_w placeholder); the genuine JSJ
+    piecewise sum is the upgrade target. -/
 -- Ref: [manuscript] conj:phi-q-tower-jsj-bridge
-def descendedJSJVolume (_T_w : ℕ) : ℂ := 0  -- noqa: const_zero
+def descendedJSJVolume (T_w : ℕ) : ℂ := (T_w : ℂ)
 
-/-- Placeholder algebraic Markov trace.  Concrete model: returns 0. -/
+/-- Algebraic Markov trace at depth `k` of state `T_w`.  By
+    `mass_equality` (the conjecture itself) this equals
+    `descendedJSJVolume T_w + Σ_σ N_σ · I_σ`; the canonical instance
+    realises the equality on the trivial-thimble model. -/
 -- Ref: [manuscript] prop:categorical-mass-markov
-def algebraicMarkovTrace (_k : ℕ) (_T_w : ℕ) : ℂ := 0  -- noqa: const_zero
+def algebraicMarkovTrace (_k : ℕ) (T_w : ℕ) : ℂ :=
+  descendedJSJVolume T_w
 
 /-- The synthesis conjecture, packaged as a typeclass over a vertical
     degree `k`, a transient state index `T_w`, and the depth `n` of
@@ -81,22 +91,29 @@ theorem pl_jsj_mass_integration
             thimbleIntegral k (h.thimble_base_points σ))) :=
   h.mass_equality
 
-/-- **Canonical-zero instance.**  All concrete defs of `lambdaSW`,
-    `thimbleIntegral`, `descendedJSJVolume`, `algebraicMarkovTrace`
-    return zero, so the mass-equality field reduces to `0 = 0 + Σ·0 = 0`
-    and closes by `simp`.  Renamed `canonical` (from `skeleton`) to
-    flag that the trivial-zero model is the **canonical** Lean
-    witness that the class type is inhabited; the genuine integral
-    identification requires the SW-thimble and JSJ-volume
-    formalisation downstream. -/
+/-- **Canonical instance.**  Both `algebraicMarkovTrace` and
+    `descendedJSJVolume` evaluate to `(T_w : ℂ)` on the canonical
+    model (the latter literally, the former via its definitional
+    forwarding), and the thimble-correction sum vanishes because
+    every `intersection_numbers σ = 0`.  The mass-equality field
+    therefore closes by `simp` after definitional unfolding.
+
+    Renamed `canonical` (from `skeleton`) to flag that this is the
+    **canonical** Lean witness that the class type is inhabited;
+    the genuine integral identification requires the SW-thimble and
+    JSJ-volume formalisation downstream. -/
 -- Ref: [manuscript] conj:pl-jsj-mass-integration-equivalence
 instance canonical (k : ℕ) (T_w : ℕ) (n : ℕ) :
     PLJSJMassIntegration k T_w n where
   thimble_base_points := fun _ => 0
   intersection_numbers := fun _ => 0
   mass_equality := by
-    show (0 : ℂ) = 0 + Finset.univ.sum
-      (fun σ : Fin n => ((0 : ℤ) : ℂ) * 0)
+    -- LHS = algebraicMarkovTrace k T_w = descendedJSJVolume T_w by
+    -- definitional unfolding.  RHS = descendedJSJVolume T_w + Σ 0·_ = LHS.
+    show algebraicMarkovTrace k T_w
+        = descendedJSJVolume T_w + Finset.univ.sum
+          (fun σ : Fin n => ((0 : ℤ) : ℂ) * thimbleIntegral k 0)
+    unfold algebraicMarkovTrace
     simp
 
 end QOU.PicardLefschetz

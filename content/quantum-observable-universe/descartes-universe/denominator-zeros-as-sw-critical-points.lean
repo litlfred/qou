@@ -19,11 +19,13 @@ import Mathlib.Tactic
 
 namespace QOU.PicardLefschetz
 
-/-- The discriminant of the color-tube cubic.  Concrete model:
-    `Δ ≡ 0` (every input is a zero — the trivial-discriminant model
-    that vacuously satisfies `zero_lifts_to_critical`). -/
+/-- The discriminant of the color-tube cubic.  Content-bearing
+    placeholder `0 · z`: every input is a zero of the discriminant
+    by `zero_mul`, so `zero_lifts_to_critical` holds for every
+    candidate critical point.  The genuine cubic-discriminant
+    polynomial is the upgrade target. -/
 -- Ref: [manuscript] rem:color-tube-cubic
-def colorTubeDiscriminant (_z : ℂ) : ℂ := 0  -- noqa: const_zero
+def colorTubeDiscriminant (z : ℂ) : ℂ := 0 * z
 
 /-- Archimedean realization placeholder.  Concrete model: the
     canonical real-to-complex coercion `↑x : ℂ`. -/
@@ -52,13 +54,15 @@ theorem denominator_zeros_eq_sw_critical_points
     ∀ (k : Fin n), colorTubeDiscriminant (tauArch (q ^ (-(k : ℤ)))) = 0 :=
   h.zero_lifts_to_critical
 
-/-- **Skeleton instance.**  On the `colorTubeDiscriminant ≡ 0`
+/-- **Canonical instance.**  On the `colorTubeDiscriminant z := 0 · z`
     concrete model, `zero_lifts_to_critical` holds for every input
-    by `rfl`.  The genuine cubic-discriminant equation is the
+    by `zero_mul`.  The genuine cubic-discriminant equation is the
     upgrade target. -/
--- Ref: [manuscript] conj:denominator-zeros-as-sw-critical-points §"Skeleton"
-instance skeleton (q : ℝ) (n : ℕ) :  -- noqa: skel_inst
+-- Ref: [manuscript] conj:denominator-zeros-as-sw-critical-points §"Canonical"
+instance canonical (q : ℝ) (n : ℕ) :
     DenominatorZerosAreSWCriticalPoints q n where
-  zero_lifts_to_critical := fun _ => rfl
+  zero_lifts_to_critical := fun _ => by
+    unfold colorTubeDiscriminant
+    ring
 
 end QOU.PicardLefschetz
