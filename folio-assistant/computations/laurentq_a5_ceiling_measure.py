@@ -47,17 +47,22 @@ sys.path.insert(0, str(Path(__file__).parent))
 from witness_base import WitnessBuilder  # noqa: E402
 
 
-def _bench_one(Z: int, N: int, timeout_s: float = 120.0) -> dict:
-    """Benchmark slow + fast paths on (Z, N). Skip with timeout note
-    if either exceeds timeout_s."""
+def _bench_one(Z: int, N: int) -> dict:
+    """Benchmark slow + fast paths on (Z, N).
+
+    Records walltime for each path and the numerical agreement at q_0.
+    Exceptions are captured into the result dict so the witness still
+    records partial data when one path fails or runs out of memory.
+    """
     from markov_peel import tr_M_atomic
+    from hecke_symbolic import q as q_sym
+    from q_parameter import Q as Q0
     A = Z + N
     result = {"Z": Z, "N": N, "A": A,
               "slow_s": None, "fast_s": None,
               "slow_skipped": False, "fast_skipped": False,
               "speedup": None,
               "agree_at_q0": None}
-    # Slow path (sympy)
     try:
         t0 = time.perf_counter()
         slow_result = tr_M_atomic(Z, N, use_fast=False)
@@ -66,7 +71,6 @@ def _bench_one(Z: int, N: int, timeout_s: float = 120.0) -> dict:
         result["slow_skipped"] = True
         result["slow_error"] = str(e)[:200]
         slow_result = None
-    # Fast path (LaurentQ)
     try:
         t0 = time.perf_counter()
         fast_result = tr_M_atomic(Z, N, use_fast=True)
@@ -75,15 +79,12 @@ def _bench_one(Z: int, N: int, timeout_s: float = 120.0) -> dict:
         result["fast_skipped"] = True
         result["fast_error"] = str(e)[:200]
         fast_result = None
-    # Speedup ratio
     if result["slow_s"] and result["fast_s"]:
         result["speedup"] = result["slow_s"] / result["fast_s"]
-    # Agreement check (numerical at q_0)
     if slow_result is not None and fast_result is not None:
         try:
-            from q_parameter import Q as Q0
-            slow_v = float(slow_result.subs(__import__("sympy").Symbol("q"), float(Q0)))
-            fast_v = float(fast_result.subs(__import__("sympy").Symbol("q"), float(Q0)))
+            slow_v = float(slow_result.subs(q_sym, float(Q0)).evalf())
+            fast_v = float(fast_result.subs(q_sym, float(Q0)).evalf())
             result["agree_at_q0"] = abs(slow_v - fast_v) < 1e-10
             result["slow_value_q0"] = slow_v
             result["fast_value_q0"] = fast_v
@@ -113,7 +114,7 @@ def main() -> int:
           f"{'speedup':>9} {'agree':>7}")
     print("  " + "-" * 60)
     for Z, N, name in cases:
-        r = _bench_one(Z, N, timeout_s=300.0)
+        r = _bench_one(Z, N)
         r["atom"] = name
         results.append(r)
         slow_s = f"{r['slow_s']:.3f}" if r['slow_s'] else "skip"
@@ -142,13 +143,19 @@ def main() -> int:
         })
         .add_assertion(
             "all_paths_agree_at_q0",
-            computed=1.0 if all(
-                (r.get("agree_at_q0") in (True, None))
-                for r in results
+            computed=1.0 if (
+                any(r.get("agree_at_q0") is True for r in results)
+                and all(
+                    r.get("agree_at_q0") is not False for r in results
+                )
             ) else 0.0,
             expected=1.0,
             tolerance=0.0,
-            source="numerical equivalence of slow vs fast at q_0",
+            source=(
+                "numerical equivalence of slow vs fast at q_0; "
+                "fails if any row disagrees, requires at least one "
+                "successfully-computed agreement"
+            ),
         )
         .add_assertion(
             "n_atoms_benchmarked",

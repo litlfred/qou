@@ -43,22 +43,15 @@ def alpha_shift_pk(p: int, k: int) -> int:
     return k * (p - 1)
 
 
-def q_integer(n: int, q: float) -> float:
-    if n == 0:
-        return 0.0
-    return (q**n - q**(-n)) / (q - 1.0 / q)
-
-
 def alpha_shift_braid_word(word: list[int]) -> int:
     """Sum α_shift contributions from each generator in the word.
 
     Each σ_i (or σ_i^{-1}) is a single (p=2, k=1) torus-knot
-    interface contributing α_shift(T_{2,1}) = 1·(2−1) = 1. The
-    total is then the word length — but only sign-distinct cycle
-    factors. We use the simple "1 per generator" reading;
-    cycle-structure refinement is research follow-on.
+    interface contributing α_shift(T_{2,1}) = 1·(2−1) = 1.
+    Cycle-structure refinement is research follow-on.
     """
-    return sum(1 for _ in word)
+    per_gen = alpha_shift_pk(2, 1)
+    return per_gen * len(word)
 
 
 def max_grade(n: int, word: list[int]) -> int:
