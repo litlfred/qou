@@ -1,0 +1,3350 @@
+{
+  "engine": "numpy",
+  "engineVersion": "numpy 2.4.4",
+  "computedAt": "2026-05-09T21:01:30.636592+00:00",
+  "commitSha": "0a5635fc7027f6c1fedb8006e5667ae7db6119ab",
+  "assertions": [
+    {
+      "name": "all_lambda_residuals_below_1e-10",
+      "computed": 0,
+      "expected": 1,
+      "passed": false,
+      "source": "A_operator_extract_general"
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 8,
+  "computation": "A-operator-extract-general",
+  "scriptFile": "A_operator_extract_general.py",
+  "scriptHash": "e6103127929b",
+  "scriptCommitSha": "unknown",
+  "description": "Operator-valued A^λ_{μν}(I) extraction at A=3 via the refined Sub-lemma 2.1 LR-decomposition formula. Generalized from the A=2-only sublemma_2_1_A_operator_extract.py to arbitrary atomic decompositions using lr_coefficients.lr_coef for the LR table.  Per λ ⊢ 9, fits a least-squares operator A^λ_{μν}(I) ∈ End(V_μ ⊗ V_ν)^(⊕ c^λ_{μν}) satisfying χ^λ(β_1·I·β_2) = Σ_(μ,ν) c^λ_{μν} · Tr(A^λ_{μν}(I) · (ρ_μ(β_1) ⊗ ρ_ν(β_2))).",
+  "contentBlock": "conj:operator-valued-sublemma-2-1",
+  "auditOnly": "docs/audits/2026-05-09-kite-tail-reconciliation.md",
+  "parameters": {
+    "A": 3,
+    "n_total": 9,
+    "splits": "[(3, 6)]"
+  },
+  "data": {
+    "max_relative_residual_overall": 2.355641228786905e-15,
+    "n_lambda_solved": 6,
+    "n_lambda_total": 30,
+    "per_split": {
+      "split_3_6": {
+        "n1": 3,
+        "n2": 6,
+        "elapsed_sec": 10.312962532043457,
+        "n_partitions": 30,
+        "results_per_lambda": {
+          "[9]": {
+            "support": [
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  6
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 1,
+                "n_entries": 1
+              }
+            ],
+            "n_unknowns": 1,
+            "n_equations": 216,
+            "rank": 1,
+            "max_relative_residual": 2.3616894762655714e-16,
+            "status": "solved"
+          },
+          "[8, 1]": {
+            "support": [
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  6
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 1,
+                "n_entries": 1
+              },
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  5,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 5,
+                "n_entries": 25
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  6
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 1,
+                "n_entries": 4
+              }
+            ],
+            "n_unknowns": 30,
+            "n_equations": 216,
+            "rank": 12,
+            "max_relative_residual": 1.6465016573994081e-15,
+            "status": "solved"
+          },
+          "[7, 2]": {
+            "support": [
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  6
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 1,
+                "n_entries": 1
+              },
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  5,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 5,
+                "n_entries": 25
+              },
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  4,
+                  2
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 9,
+                "n_entries": 81
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  6
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 1,
+                "n_entries": 4
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  5,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 5,
+                "n_entries": 100
+              }
+            ],
+            "n_unknowns": 211,
+            "n_equations": 216,
+            "rank": 40,
+            "max_relative_residual": 1.3832467306841465e-15,
+            "status": "solved"
+          },
+          "[7, 1, 1]": {
+            "support": [
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  5,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 5,
+                "n_entries": 25
+              },
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  4,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 10,
+                "n_entries": 100
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  6
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 1,
+                "n_entries": 4
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  5,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 5,
+                "n_entries": 100
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  6
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 1,
+                "n_entries": 1
+              }
+            ],
+            "n_unknowns": 230,
+            "n_equations": 216,
+            "status": "underdetermined"
+          },
+          "[6, 3]": {
+            "support": [
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  6
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 1,
+                "n_entries": 1
+              },
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  5,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 5,
+                "n_entries": 25
+              },
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  4,
+                  2
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 9,
+                "n_entries": 81
+              },
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  3,
+                  3
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 5,
+                "n_entries": 25
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  5,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 5,
+                "n_entries": 100
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  4,
+                  2
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 9,
+                "n_entries": 324
+              }
+            ],
+            "n_unknowns": 556,
+            "n_equations": 216,
+            "status": "underdetermined"
+          },
+          "[6, 2, 1]": {
+            "support": [
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  5,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 5,
+                "n_entries": 25
+              },
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  4,
+                  2
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 9,
+                "n_entries": 81
+              },
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  4,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 10,
+                "n_entries": 100
+              },
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  3,
+                  2,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 16,
+                "n_entries": 256
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  6
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 1,
+                "n_entries": 4
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  5,
+                  1
+                ],
+                "c": 2,
+                "d_mu": 2,
+                "d_nu": 5,
+                "n_entries": 100
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  4,
+                  2
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 9,
+                "n_entries": 324
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  4,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 10,
+                "n_entries": 400
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  5,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 5,
+                "n_entries": 25
+              }
+            ],
+            "n_unknowns": 1315,
+            "n_equations": 216,
+            "status": "underdetermined"
+          },
+          "[6, 1, 1, 1]": {
+            "support": [
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  4,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 10,
+                "n_entries": 100
+              },
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  3,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 10,
+                "n_entries": 100
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  5,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 5,
+                "n_entries": 100
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  4,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 10,
+                "n_entries": 400
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  6
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 1,
+                "n_entries": 1
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  5,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 5,
+                "n_entries": 25
+              }
+            ],
+            "n_unknowns": 726,
+            "n_equations": 216,
+            "status": "underdetermined"
+          },
+          "[5, 4]": {
+            "support": [
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  5,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 5,
+                "n_entries": 25
+              },
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  4,
+                  2
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 9,
+                "n_entries": 81
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  4,
+                  2
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 9,
+                "n_entries": 324
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  3,
+                  3
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 5,
+                "n_entries": 100
+              }
+            ],
+            "n_unknowns": 530,
+            "n_equations": 216,
+            "status": "underdetermined"
+          },
+          "[5, 3, 1]": {
+            "support": [
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  5,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 5,
+                "n_entries": 25
+              },
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  4,
+                  2
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 9,
+                "n_entries": 81
+              },
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  4,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 10,
+                "n_entries": 100
+              },
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  3,
+                  3
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 5,
+                "n_entries": 25
+              },
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  3,
+                  2,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 16,
+                "n_entries": 256
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  5,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 5,
+                "n_entries": 100
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  4,
+                  2
+                ],
+                "c": 2,
+                "d_mu": 2,
+                "d_nu": 9,
+                "n_entries": 324
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  4,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 10,
+                "n_entries": 400
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  3,
+                  3
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 5,
+                "n_entries": 100
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  3,
+                  2,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 16,
+                "n_entries": 1024
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  4,
+                  2
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 9,
+                "n_entries": 81
+              }
+            ],
+            "n_unknowns": 2516,
+            "n_equations": 216,
+            "status": "underdetermined"
+          },
+          "[5, 2, 2]": {
+            "support": [
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  4,
+                  2
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 9,
+                "n_entries": 81
+              },
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  3,
+                  2,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 16,
+                "n_entries": 256
+              },
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  2,
+                  2,
+                  2
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 5,
+                "n_entries": 25
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  5,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 5,
+                "n_entries": 100
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  4,
+                  2
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 9,
+                "n_entries": 324
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  4,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 10,
+                "n_entries": 400
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  3,
+                  2,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 16,
+                "n_entries": 1024
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  4,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 10,
+                "n_entries": 100
+              }
+            ],
+            "n_unknowns": 2310,
+            "n_equations": 216,
+            "status": "underdetermined"
+          },
+          "[5, 2, 1, 1]": {
+            "support": [
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  4,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 10,
+                "n_entries": 100
+              },
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  3,
+                  2,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 16,
+                "n_entries": 256
+              },
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  3,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 10,
+                "n_entries": 100
+              },
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  2,
+                  2,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 9,
+                "n_entries": 81
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  5,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 5,
+                "n_entries": 100
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  4,
+                  2
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 9,
+                "n_entries": 324
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  4,
+                  1,
+                  1
+                ],
+                "c": 2,
+                "d_mu": 2,
+                "d_nu": 10,
+                "n_entries": 400
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  3,
+                  2,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 16,
+                "n_entries": 1024
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  3,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 10,
+                "n_entries": 400
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  5,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 5,
+                "n_entries": 25
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  4,
+                  2
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 9,
+                "n_entries": 81
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  4,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 10,
+                "n_entries": 100
+              }
+            ],
+            "n_unknowns": 2991,
+            "n_equations": 216,
+            "status": "underdetermined"
+          },
+          "[5, 1, 1, 1, 1]": {
+            "support": [
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  3,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 10,
+                "n_entries": 100
+              },
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  2,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 5,
+                "n_entries": 25
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  4,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 10,
+                "n_entries": 400
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  3,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 10,
+                "n_entries": 400
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  5,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 5,
+                "n_entries": 25
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  4,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 10,
+                "n_entries": 100
+              }
+            ],
+            "n_unknowns": 1050,
+            "n_equations": 216,
+            "status": "underdetermined"
+          },
+          "[4, 4, 1]": {
+            "support": [
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  4,
+                  2
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 9,
+                "n_entries": 81
+              },
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  4,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 10,
+                "n_entries": 100
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  4,
+                  2
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 9,
+                "n_entries": 324
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  3,
+                  3
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 5,
+                "n_entries": 100
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  3,
+                  2,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 16,
+                "n_entries": 1024
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  3,
+                  3
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 5,
+                "n_entries": 25
+              }
+            ],
+            "n_unknowns": 1654,
+            "n_equations": 216,
+            "status": "underdetermined"
+          },
+          "[4, 3, 2]": {
+            "support": [
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  4,
+                  2
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 9,
+                "n_entries": 81
+              },
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  3,
+                  3
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 5,
+                "n_entries": 25
+              },
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  3,
+                  2,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 16,
+                "n_entries": 256
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  4,
+                  2
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 9,
+                "n_entries": 324
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  4,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 10,
+                "n_entries": 400
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  3,
+                  3
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 5,
+                "n_entries": 100
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  3,
+                  2,
+                  1
+                ],
+                "c": 2,
+                "d_mu": 2,
+                "d_nu": 16,
+                "n_entries": 1024
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  2,
+                  2,
+                  2
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 5,
+                "n_entries": 100
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  3,
+                  2,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 16,
+                "n_entries": 256
+              }
+            ],
+            "n_unknowns": 2566,
+            "n_equations": 216,
+            "status": "underdetermined"
+          },
+          "[4, 3, 1, 1]": {
+            "support": [
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  4,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 10,
+                "n_entries": 100
+              },
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  3,
+                  2,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 16,
+                "n_entries": 256
+              },
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  3,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 10,
+                "n_entries": 100
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  4,
+                  2
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 9,
+                "n_entries": 324
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  4,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 10,
+                "n_entries": 400
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  3,
+                  3
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 5,
+                "n_entries": 100
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  3,
+                  2,
+                  1
+                ],
+                "c": 2,
+                "d_mu": 2,
+                "d_nu": 16,
+                "n_entries": 1024
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  3,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 10,
+                "n_entries": 400
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  2,
+                  2,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 9,
+                "n_entries": 324
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  4,
+                  2
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 9,
+                "n_entries": 81
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  3,
+                  3
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 5,
+                "n_entries": 25
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  3,
+                  2,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 16,
+                "n_entries": 256
+              }
+            ],
+            "n_unknowns": 3390,
+            "n_equations": 216,
+            "status": "underdetermined"
+          },
+          "[4, 2, 2, 1]": {
+            "support": [
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  3,
+                  2,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 16,
+                "n_entries": 256
+              },
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  2,
+                  2,
+                  2
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 5,
+                "n_entries": 25
+              },
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  2,
+                  2,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 9,
+                "n_entries": 81
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  4,
+                  2
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 9,
+                "n_entries": 324
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  4,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 10,
+                "n_entries": 400
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  3,
+                  2,
+                  1
+                ],
+                "c": 2,
+                "d_mu": 2,
+                "d_nu": 16,
+                "n_entries": 1024
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  3,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 10,
+                "n_entries": 400
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  2,
+                  2,
+                  2
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 5,
+                "n_entries": 100
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  2,
+                  2,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 9,
+                "n_entries": 324
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  4,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 10,
+                "n_entries": 100
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  3,
+                  2,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 16,
+                "n_entries": 256
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  3,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 10,
+                "n_entries": 100
+              }
+            ],
+            "n_unknowns": 3390,
+            "n_equations": 216,
+            "status": "underdetermined"
+          },
+          "[4, 2, 1, 1, 1]": {
+            "support": [
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  3,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 10,
+                "n_entries": 100
+              },
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  2,
+                  2,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 9,
+                "n_entries": 81
+              },
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  2,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 5,
+                "n_entries": 25
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  4,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 10,
+                "n_entries": 400
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  3,
+                  2,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 16,
+                "n_entries": 1024
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  3,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 2,
+                "d_mu": 2,
+                "d_nu": 10,
+                "n_entries": 400
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  2,
+                  2,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 9,
+                "n_entries": 324
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  2,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 5,
+                "n_entries": 100
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  4,
+                  2
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 9,
+                "n_entries": 81
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  4,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 10,
+                "n_entries": 100
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  3,
+                  2,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 16,
+                "n_entries": 256
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  3,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 10,
+                "n_entries": 100
+              }
+            ],
+            "n_unknowns": 2991,
+            "n_equations": 216,
+            "status": "underdetermined"
+          },
+          "[4, 1, 1, 1, 1, 1]": {
+            "support": [
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  2,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 5,
+                "n_entries": 25
+              },
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 1,
+                "n_entries": 1
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  3,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 10,
+                "n_entries": 400
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  2,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 5,
+                "n_entries": 100
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  4,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 10,
+                "n_entries": 100
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  3,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 10,
+                "n_entries": 100
+              }
+            ],
+            "n_unknowns": 726,
+            "n_equations": 216,
+            "status": "underdetermined"
+          },
+          "[3, 3, 3]": {
+            "support": [
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  3,
+                  3
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 5,
+                "n_entries": 25
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  3,
+                  2,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 16,
+                "n_entries": 1024
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  2,
+                  2,
+                  2
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 5,
+                "n_entries": 25
+              }
+            ],
+            "n_unknowns": 1074,
+            "n_equations": 216,
+            "status": "underdetermined"
+          },
+          "[3, 3, 2, 1]": {
+            "support": [
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  3,
+                  2,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 16,
+                "n_entries": 256
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  3,
+                  3
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 5,
+                "n_entries": 100
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  3,
+                  2,
+                  1
+                ],
+                "c": 2,
+                "d_mu": 2,
+                "d_nu": 16,
+                "n_entries": 1024
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  3,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 10,
+                "n_entries": 400
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  2,
+                  2,
+                  2
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 5,
+                "n_entries": 100
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  2,
+                  2,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 9,
+                "n_entries": 324
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  3,
+                  2,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 16,
+                "n_entries": 256
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  2,
+                  2,
+                  2
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 5,
+                "n_entries": 25
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  2,
+                  2,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 9,
+                "n_entries": 81
+              }
+            ],
+            "n_unknowns": 2566,
+            "n_equations": 216,
+            "status": "underdetermined"
+          },
+          "[3, 3, 1, 1, 1]": {
+            "support": [
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  3,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 10,
+                "n_entries": 100
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  3,
+                  2,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 16,
+                "n_entries": 1024
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  3,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 10,
+                "n_entries": 400
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  2,
+                  2,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 9,
+                "n_entries": 324
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  2,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 5,
+                "n_entries": 100
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  3,
+                  3
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 5,
+                "n_entries": 25
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  3,
+                  2,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 16,
+                "n_entries": 256
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  2,
+                  2,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 9,
+                "n_entries": 81
+              }
+            ],
+            "n_unknowns": 2310,
+            "n_equations": 216,
+            "status": "underdetermined"
+          },
+          "[3, 2, 2, 2]": {
+            "support": [
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  2,
+                  2,
+                  2
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 5,
+                "n_entries": 25
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  3,
+                  2,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 16,
+                "n_entries": 1024
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  2,
+                  2,
+                  2
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 5,
+                "n_entries": 100
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  2,
+                  2,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 9,
+                "n_entries": 324
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  3,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 10,
+                "n_entries": 100
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  2,
+                  2,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 9,
+                "n_entries": 81
+              }
+            ],
+            "n_unknowns": 1654,
+            "n_equations": 216,
+            "status": "underdetermined"
+          },
+          "[3, 2, 2, 1, 1]": {
+            "support": [
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  2,
+                  2,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 9,
+                "n_entries": 81
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  3,
+                  2,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 16,
+                "n_entries": 1024
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  3,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 10,
+                "n_entries": 400
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  2,
+                  2,
+                  2
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 5,
+                "n_entries": 100
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  2,
+                  2,
+                  1,
+                  1
+                ],
+                "c": 2,
+                "d_mu": 2,
+                "d_nu": 9,
+                "n_entries": 324
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  2,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 5,
+                "n_entries": 100
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  3,
+                  2,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 16,
+                "n_entries": 256
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  3,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 10,
+                "n_entries": 100
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  2,
+                  2,
+                  2
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 5,
+                "n_entries": 25
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  2,
+                  2,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 9,
+                "n_entries": 81
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  2,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 5,
+                "n_entries": 25
+              }
+            ],
+            "n_unknowns": 2516,
+            "n_equations": 216,
+            "status": "underdetermined"
+          },
+          "[3, 2, 1, 1, 1, 1]": {
+            "support": [
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  2,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 5,
+                "n_entries": 25
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  3,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 10,
+                "n_entries": 400
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  2,
+                  2,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 9,
+                "n_entries": 324
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  2,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 2,
+                "d_mu": 2,
+                "d_nu": 5,
+                "n_entries": 100
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 1,
+                "n_entries": 4
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  3,
+                  2,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 16,
+                "n_entries": 256
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  3,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 10,
+                "n_entries": 100
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  2,
+                  2,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 9,
+                "n_entries": 81
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  2,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 5,
+                "n_entries": 25
+              }
+            ],
+            "n_unknowns": 1315,
+            "n_equations": 216,
+            "status": "underdetermined"
+          },
+          "[3, 1, 1, 1, 1, 1, 1]": {
+            "support": [
+              {
+                "mu": [
+                  3
+                ],
+                "nu": [
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 1,
+                "n_entries": 1
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  2,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 5,
+                "n_entries": 100
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 1,
+                "n_entries": 4
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  3,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 10,
+                "n_entries": 100
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  2,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 5,
+                "n_entries": 25
+              }
+            ],
+            "n_unknowns": 230,
+            "n_equations": 216,
+            "status": "underdetermined"
+          },
+          "[2, 2, 2, 2, 1]": {
+            "support": [
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  2,
+                  2,
+                  2
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 5,
+                "n_entries": 100
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  2,
+                  2,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 9,
+                "n_entries": 324
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  2,
+                  2,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 9,
+                "n_entries": 81
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  2,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 5,
+                "n_entries": 25
+              }
+            ],
+            "n_unknowns": 530,
+            "n_equations": 216,
+            "status": "underdetermined"
+          },
+          "[2, 2, 2, 1, 1, 1]": {
+            "support": [
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  2,
+                  2,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 9,
+                "n_entries": 324
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  2,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 5,
+                "n_entries": 100
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  2,
+                  2,
+                  2
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 5,
+                "n_entries": 25
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  2,
+                  2,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 9,
+                "n_entries": 81
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  2,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 5,
+                "n_entries": 25
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 1,
+                "n_entries": 1
+              }
+            ],
+            "n_unknowns": 556,
+            "n_equations": 216,
+            "status": "underdetermined"
+          },
+          "[2, 2, 1, 1, 1, 1, 1]": {
+            "support": [
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  2,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 5,
+                "n_entries": 100
+              },
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 1,
+                "n_entries": 4
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  2,
+                  2,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 9,
+                "n_entries": 81
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  2,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 5,
+                "n_entries": 25
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 1,
+                "n_entries": 1
+              }
+            ],
+            "n_unknowns": 211,
+            "n_equations": 216,
+            "rank": 40,
+            "max_relative_residual": 2.355641228786905e-15,
+            "status": "solved"
+          },
+          "[2, 1, 1, 1, 1, 1, 1, 1]": {
+            "support": [
+              {
+                "mu": [
+                  2,
+                  1
+                ],
+                "nu": [
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 2,
+                "d_nu": 1,
+                "n_entries": 4
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  2,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 5,
+                "n_entries": 25
+              },
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 1,
+                "n_entries": 1
+              }
+            ],
+            "n_unknowns": 30,
+            "n_equations": 216,
+            "rank": 12,
+            "max_relative_residual": 2.2084136519877236e-15,
+            "status": "solved"
+          },
+          "[1, 1, 1, 1, 1, 1, 1, 1, 1]": {
+            "support": [
+              {
+                "mu": [
+                  1,
+                  1,
+                  1
+                ],
+                "nu": [
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "c": 1,
+                "d_mu": 1,
+                "d_nu": 1,
+                "n_entries": 1
+              }
+            ],
+            "n_unknowns": 1,
+            "n_equations": 216,
+            "rank": 1,
+            "max_relative_residual": 5.319280166489957e-16,
+            "status": "solved"
+          }
+        }
+      }
+    }
+  }
+}
