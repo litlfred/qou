@@ -343,6 +343,55 @@ def demazure_subcrystal(
     return current
 
 
+def demazure_dim(
+    shape: tuple[int, ...],
+    n: int,
+    reduced_word: tuple[int, ...],
+) -> int:
+    """Cardinality of ``B_w(λ)`` without materialising the set —
+    exact same DP as ``demazure_subcrystal`` but counting only.
+
+    Useful for benchmarking the asymptotic-win shape (full crystal
+    versus partial-Weyl sub-crystal) on inputs where the sub-crystal
+    itself is too large to hold in memory.
+    """
+    return len(demazure_subcrystal(shape, n, reduced_word))
+
+
+def demazure_growth_profile(
+    shape: tuple[int, ...],
+    n: int,
+    reduced_word: tuple[int, ...],
+) -> list[tuple[int, int]]:
+    """Return ``[(prefix_length, sub-crystal cardinality), …]`` for
+    every prefix of ``reduced_word`` (including empty and full).
+
+    This is the data series the Demazure asymptotic-win demo plots:
+    monotone-non-decreasing growth from the singleton ``{u_λ}`` (at
+    prefix length 0) to ``B(λ)`` (at prefix length ``ℓ(w_0)``).
+    Useful for picking a "resonance" length k where the sub-crystal
+    is still ≪ ``|B(λ)|`` so the downstream Hecke-character sweep
+    fits in budget.
+    """
+    out: list[tuple[int, int]] = []
+    hw = highest_weight_tableau(shape)
+    current: set[SSYT] = {hw}
+    out.append((0, len(current)))
+    for j, i in enumerate(reduced_word, start=1):
+        next_set: set[SSYT] = set(current)
+        for T in current:
+            T_curr = T
+            while True:
+                T_next = kashiwara_lower(T_curr, i)
+                if T_next is None:
+                    break
+                next_set.add(T_next)
+                T_curr = T_next
+        current = next_set
+        out.append((j, len(current)))
+    return out
+
+
 def longest_reduced_word(n: int) -> tuple[int, ...]:
     """A reduced expression for the longest element ``w_0 ∈ S_n``,
     using the standard staircase ``s_1 (s_2 s_1) (s_3 s_2 s_1) …``.

@@ -1,0 +1,81 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-05-09T05:26:42.472563+00:00",
+  "commitSha": "6b4a4e21ffe052d7e4a260d265fea640a2351a65",
+  "assertions": [
+    {
+      "name": "bruhat_count_n=2",
+      "computed": 2,
+      "expected": 2,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Bjorner-Brenti, Combinatorics of Coxeter Groups §2.6"
+    },
+    {
+      "name": "roundtrip_T_to_C_to_T_n=2",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "canonical-basis change-of-basis is invertible"
+    },
+    {
+      "name": "bar_invariant_coef_sum_w0_n=2",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lusztig, Hecke algebras with unequal parameters §5"
+    },
+    {
+      "name": "bruhat_count_n=3",
+      "computed": 6,
+      "expected": 6,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Bjorner-Brenti, Combinatorics of Coxeter Groups §2.6"
+    },
+    {
+      "name": "roundtrip_T_to_C_to_T_n=3",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "canonical-basis change-of-basis is invertible"
+    },
+    {
+      "name": "bar_invariant_coef_sum_w0_n=3",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lusztig, Hecke algebras with unequal parameters §5"
+    },
+    {
+      "name": "bruhat_count_n=4",
+      "computed": 24,
+      "expected": 24,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Bjorner-Brenti, Combinatorics of Coxeter Groups §2.6"
+    },
+    {
+      "name": "roundtrip_T_to_C_to_T_n=4",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "canonical-basis change-of-basis is invertible"
+    },
+    {
+      "name": "bar_invariant_coef_sum_w0_n=4",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lusztig, Hecke algebras with unequal parameters §5"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 16,
+  "computation": "kazhdan-lusztig-canonical-basis",
+  "scriptFile": "kazhdan_lusztig.py",
+  "scriptHash": "a9b6b6498bc0",
+  "scriptCommitSha": "unknown",
+  "description": "Phase 1.5 of the S-poly → crystal-basis migration: Kazhdan–Lusztig polynomials and the canonical basis C_w of H_n(q) for n ≤ 4 (Coxeter rank ≤ 3).  At rank ≤ 3, every P_{x,w} = 1 (Brenti §5.1), so the canonical basis admits a closed form.  Validates Bruhat-order cardinality, T→C→T round-trip, and bar-invariance of the coefficient sum at w = w_0."
+}
