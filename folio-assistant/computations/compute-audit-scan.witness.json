@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-10T04:47:59.978449+00:00",
-  "commitSha": "08ba09c563203a96d60d9a69b5c6127cdd48d3f5",
+  "computedAt": "2026-05-10T04:48:02.679451+00:00",
+  "commitSha": "517be759dfdf897bce04620aa182f709213fed8e",
   "assertions": [],
   "allPassed": true,
   "durationMs": 7,
@@ -13,7 +13,7 @@
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 341,
+    "files_scanned": 347,
     "patterns": [
       "P15",
       "P16",
@@ -25,7 +25,7 @@
     "by_pattern_count": {
       "P15": 102,
       "P16": 70,
-      "P21": 18,
+      "P21": 19,
       "P30": 93
     },
     "top_files": [
@@ -154,6 +154,13 @@
       }
     ],
     "findings": [
+      {
+        "pattern": "P21",
+        "file": "A_operator_extract_general.py",
+        "line": 1,
+        "snippet": "Hoefsmit construction without BlockCache",
+        "note": "syt_prefix_cache.BlockCache caches block values by content distance ρ; precomputed SYT→index dict eliminates O(d_λ²) swap-partner search. Numerical-q callers can wire it directly. Ref: ocneanu_weights.py wiring."
+      },
       {
         "pattern": "P30",
         "file": "adjacent_vs_full_probe.py",

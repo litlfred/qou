@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-10T04:48:00.109450+00:00",
-  "commitSha": "08ba09c563203a96d60d9a69b5c6127cdd48d3f5",
+  "computedAt": "2026-05-10T04:48:02.814837+00:00",
+  "commitSha": "517be759dfdf897bce04620aa182f709213fed8e",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2027,6 +2027,11 @@
       ],
       "computational-only": [
         "4he-binding-full-pipeline.witness.json",
+        "A-operator-extract-general.witness.json",
+        "A-operator-extract-kron.witness.json",
+        "A-operator-extract-reduced.witness.json",
+        "A-operator-per-interface.witness.json",
+        "A-operator-rank-probe.witness.json",
         "adjacent-vs-full-probe.witness.json",
         "alpha-5-jucys-murphy-central.witness.json",
         "alpha-5-lp-dual-crystal.witness.json",
