@@ -61,6 +61,22 @@ def split_2row_vs_gt(rows: list[dict]) -> tuple[float, float, list[dict]]:
 
 
 def main() -> int:
+    # Construct WitnessBuilder up front to capture full durationMs
+    # (Copilot PR #619 review). Engine "python": the q-sweep uses
+    # global_wedderburn_sum_q_hecke_seminormal (float64 Hoefsmit numpy).
+    from witness_base import WitnessBuilder
+    w = (WitnessBuilder("delta-lambda-q-sweep-2row", engine="python")
+         .set_description(
+            "q-sweep for deuteron (n=6) testing whether the > 2-row "
+            "Wedderburn sector contribution vanishes as q → 1.  If yes, "
+            "the 2-row stratum dominance found in the Δ_λ tabulation is "
+            "the q-deformation of the Schur-Weyl restriction to V = ℂ² "
+            "(SU(2) fundamental), with the > 2-row content being a "
+            "deformation-induced correction that vanishes at q = 1.  "
+            "Numeric path: float64 (numpy/Hoefsmit)."
+         )
+         .set_content_block("prop:rho-k-h3a-refinement"))
+
     print("=" * 96)
     print("  Δ_λ q-sweep: does > 2-row sector vanish at q → 1?")
     print("=" * 96)
@@ -159,17 +175,7 @@ def main() -> int:
     else:
         verdict = "insufficient_data"
 
-    from witness_base import WitnessBuilder
-    w = (WitnessBuilder("delta-lambda-q-sweep-2row", engine="mpmath")
-         .set_description(
-            "q-sweep for deuteron (n=6) testing whether the > 2-row "
-            "Wedderburn sector contribution vanishes as q → 1.  If yes, "
-            "the 2-row stratum dominance found in the Δ_λ tabulation is "
-            "the q-deformation of the Schur-Weyl restriction to V = ℂ² "
-            "(SU(2) fundamental), with the > 2-row content being a "
-            "deformation-induced correction that vanishes at q = 1."
-         )
-         .set_content_block("prop:rho-k-h3a-refinement"))
+    # WitnessBuilder constructed at start of main(); now populate.
     w.parameters.update({
         "atom": "deuteron",
         "Z": 1, "N": 1, "n": 6,
