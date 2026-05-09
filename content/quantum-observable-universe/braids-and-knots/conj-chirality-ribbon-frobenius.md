@@ -172,17 +172,48 @@ The conjecture splits along **chirality class**:
   to f64 precision is suggestive of an exact integer structural
   value.
 
-  **Open piece (residual).** The first-order chirality factor
-  $a_K^{(1)} = 1 + w \langle c \rangle h$ from these values does not
-  reproduce the empirical pattern $(1+h)(1-h) = 1 - h^2 \approx 0.956$
-  for D, T, $^3$He.  Two possible interpretations:
-  (i) the first-order truncation is insufficient at $H_n > 3$ and
-      the $O(h^2)$ correction dominates;
-  (ii) the model's chirality factor at the atomic level uses a form
-      other than the simple writhe-times-mean-content first-order
-      product (e.g. an exact ribbon-twist exponential rather than its
-      linearisation).
-  Discriminating between (i) and (ii) is the residual open piece.
+  **Both interpretations (i) and (ii) refuted (2026-05-09).**  The
+  same witness records the **exact ribbon-twist formula**
+
+  $$
+    a_K^{\mathrm{exact}}
+    \;=\;
+    \frac{\sum_\lambda w_\lambda \cdot q_0^{2 w c(\lambda)} \cdot \chi^\lambda(T_w)}{\sum_\lambda w_\lambda \cdot \chi^\lambda(T_w)},
+  $$
+
+  evaluated at the audited atomic braids:
+
+  | Atom | $a_K^{(1)}$ first-order | $a_K^{\mathrm{exact}}$ | $(1+h)(1-h)$ |
+  |------|-------------------------|------------------------|---------------|
+  | $D$  | $+1.18$ | $-3.82$    | $+0.956$ |
+  | $T$  | $-4.56$ | $+15{,}589$ | $+0.956$ |
+  | $^3\mathrm{He}$ | $+7.27$ | $-20{,}796$ | $+0.956$ |
+
+  The exact form is *more* divergent, not less — at $H_9$ the
+  factors $q_0^{2 w c(\lambda)}$ with $|c(\lambda)| \leq 36$ (for
+  $\lambda = (9), (1^9)$) reach $q_0^{216} \approx 10^9$, blowing
+  up the numerator.
+
+  Therefore **neither (i) "$O(h^2)$ corrections fix it" nor (ii)
+  "use exact exponential, not linearisation" recovers the empirical
+  $(1+h)(1-h)$ pattern.**  The conjecture's stated formula —
+  $a_K$ as a ribbon-twist-weighted Markov-trace ratio — does **not**
+  apply at the audited atomic braids.
+
+  Either the empirical $(1+h)(1-h) \approx 0.956$ pattern reflects
+  a *different* underlying construction of the atomic chirality
+  factor (e.g. a per-quark chirality contribution that nearly
+  cancels at the atomic level, leaving a $1 - O(h^2)$ residual that
+  is *not* the ribbon-twist Markov ratio above), or the empirical
+  pattern itself is incidental to the mass derivation at $A \geq 2$.
+
+  **Residual** (now a structural rather than computational gap):
+  identify the construction that produces $a_K^{D, T, {}^3\mathrm{He}}
+  \approx 0.956$ from the substrate data, given that the
+  ribbon-twist Markov-ratio is conclusively wrong.  The closed-form
+  $\langle c \rangle_\beta$ values committed here remain a valid
+  invariant of the braid representative even if they no longer feed
+  into the chirality factor in the form the conjecture stated.
 
 ## Proof obligations
 

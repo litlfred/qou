@@ -224,14 +224,29 @@ def main():
         a_K_first = (1 + w * avg_direct * h_val
                       if avg_direct is not None else None)
 
+        # Exact ribbon-twist formula (per the conjecture's "Statement"):
+        #   a_K = (Σ w_λ · q^{2 w(K) c(λ)} · χ^λ(T_w)) / (Σ w_λ · χ^λ(T_w))
+        # Discriminates A-2 chiral residual interpretation (i) "O(h²)
+        # corrections dominate" vs (ii) "atomic-level uses exact
+        # exponential, not its linearisation".
+        num_exact = mpf(0)
+        for shape in parts:
+            shape_t_key = tuple(shape)
+            c_lam = content_sum(shape)
+            w_lam = dim_q(shape, Q0, n_fac_q) ** 2 / n_fac_q
+            chi_val = chi_dict[shape_t_key]
+            twist_factor = Q0 ** (2 * w * c_lam)
+            num_exact += w_lam * twist_factor * chi_val
+        a_K_exact = (num_exact / den
+                      if abs(den) > mpf("1e-30") else None)
+
         # Empirical comparison: paper assigns a_K = (1+h)(1-h) = 1-h²
-        # for the amphichiral pattern observed across these atoms.
-        # This is the empirical pattern's prediction, regardless of
-        # whether the BRAID is amphichiral (it's not for D, T, ³He).
-        # Comparison lets us see how close the first-order term is.
+        # for the pattern observed across these atoms.
         a_K_emp_pattern = 1 - h_val ** 2
         a_K_first_minus_pattern = (a_K_first - a_K_emp_pattern
                                      if a_K_first is not None else None)
+        a_K_exact_minus_pattern = (a_K_exact - a_K_emp_pattern
+                                     if a_K_exact is not None else None)
 
         print(f"  ⟨c⟩_β (direct  ) = {float(avg_direct):+.10f}" if avg_direct is not None else "  ⟨c⟩_β: degenerate")
         if avg_pairwise is not None:
@@ -240,10 +255,19 @@ def main():
         if a_K_first is not None:
             print(f"  a_K (first-order) = 1 + {w}·⟨c⟩·h "
                   f"= {float(a_K_first):+.6f}")
+        if a_K_exact is not None:
+            print(f"  a_K (exact ribbon-twist) "
+                  f"= Σ w_λ q^{{2w c(λ)}} χ^λ / Σ w_λ χ^λ "
+                  f"= {float(a_K_exact):+.6f}")
+        if a_K_emp_pattern is not None:
             print(f"  Empirical pattern a_K = (1+h)(1-h) = "
                   f"{float(a_K_emp_pattern):+.6f}")
-            print(f"  Δ (first-order minus pattern) = "
-                  f"{float(a_K_first_minus_pattern):+.6f}")
+            if a_K_first is not None:
+                print(f"  Δ first - pattern = "
+                      f"{float(a_K_first_minus_pattern):+.6f}")
+            if a_K_exact is not None:
+                print(f"  Δ exact - pattern = "
+                      f"{float(a_K_exact_minus_pattern):+.6f}")
         print()
 
         out_atoms.append({
@@ -263,8 +287,11 @@ def main():
             "avg_content_c_beta_pairwise_mp": (None if avg_pairwise is None else str(avg_pairwise)),
             "avg_content_c_beta_direct": (None if avg_direct is None else float(avg_direct)),
             "a_K_first_order": (None if a_K_first is None else float(a_K_first)),
+            "a_K_exact_ribbon_twist_mp": (None if a_K_exact is None else str(a_K_exact)),
+            "a_K_exact_ribbon_twist": (None if a_K_exact is None else float(a_K_exact)),
             "a_K_empirical_pattern_1_minus_h2": float(a_K_emp_pattern),
             "delta_first_order_vs_pattern": (None if a_K_first is None else float(a_K_first_minus_pattern)),
+            "delta_exact_vs_pattern": (None if a_K_exact is None else float(a_K_exact_minus_pattern)),
             "direct_pairwise_agree_within_1e_40": agree,
         })
 
