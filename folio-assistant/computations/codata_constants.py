@@ -48,7 +48,17 @@ M_HE3_MEV = mp.mpf("2808.39160743")
 # Helium-4 mass (α): 3727.3794066(11) MeV/c² (CODATA 2022)
 M_HE4_MEV = mp.mpf("3727.37940660")
 
+# ── Uncertainties (CODATA 2022 published σ; one-sigma) ───────
+M_E_MEV_ERR = mp.mpf("0.00000000015")  # 1.5×10⁻¹⁰ MeV
+M_P_MEV_ERR = mp.mpf("0.00000029")     # 2.9×10⁻⁷ MeV
+M_N_MEV_ERR = mp.mpf("0.00000054")     # 5.4×10⁻⁷ MeV
+# Combined uncertainty (uncorrelated upper bound)
+Q_BETA_MEV_ERR = mp.sqrt(
+    M_N_MEV_ERR ** 2 + M_P_MEV_ERR ** 2 + M_E_MEV_ERR ** 2
+)
+
 __all__ = [
     "M_E_MEV", "M_P_MEV", "M_N_MEV", "Q_BETA_MEV",
     "M_D_MEV", "M_T_MEV", "M_HE3_MEV", "M_HE4_MEV",
+    "M_E_MEV_ERR", "M_P_MEV_ERR", "M_N_MEV_ERR", "Q_BETA_MEV_ERR",
 ]

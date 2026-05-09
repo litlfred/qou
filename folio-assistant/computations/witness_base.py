@@ -394,6 +394,54 @@ class WitnessBuilder:
                 builder._extra_top_level[key] = value
         return builder
 
+    @staticmethod
+    def stamp_staleness_metadata(
+        payload: dict,
+        *,
+        script_path: Union[str, Path],
+        engine: str = "python",
+        engine_version: Optional[str] = None,
+    ) -> dict:
+        """Public helper: stamp the WitnessBuilder staleness fields onto
+        an existing dict in place (used when the legacy filename is
+        non-standard and ``wrap_legacy().save()`` cannot be applied
+        without breaking consumers).
+
+        Mutates and returns ``payload`` with ``scriptHash``,
+        ``scriptCommitSha``, ``commitSha``, ``engine``, ``engineVersion``,
+        ``computedAt``, and ``durationMs`` set. Avoids the need to
+        import the underscore-prefixed ``_git_head_sha`` /
+        ``_git_file_sha`` helpers from outside this module.
+        """
+        spath = str(script_path)
+        payload["scriptHash"] = file_content_hash(spath)
+        payload["scriptCommitSha"] = _git_file_sha(spath)
+        payload["commitSha"] = _git_head_sha()
+        payload["engine"] = engine
+        payload["computedAt"] = datetime.now(timezone.utc).isoformat()
+        payload["durationMs"] = 0
+        if engine_version is None:
+            # Mirror the auto-detection logic in __init__
+            try:
+                if engine == "mpmath":
+                    import mpmath
+                    engine_version = f"mpmath {mpmath.__version__}"
+                elif engine == "sympy":
+                    import sympy
+                    engine_version = f"sympy {sympy.__version__}"
+                elif engine == "python+mpmath":
+                    import mpmath
+                    engine_version = (
+                        f"python {sys.version_info.major}."
+                        f"{sys.version_info.minor} + "
+                        f"mpmath {mpmath.__version__}"
+                    )
+            except Exception:
+                pass
+        if engine_version is not None:
+            payload["engineVersion"] = engine_version
+        return payload
+
     def is_fresh(self) -> bool:
         """Return True if an existing witness JSON on disk records the
         same script content hash as the current source.

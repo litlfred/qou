@@ -266,10 +266,9 @@ def main() -> int:
             except (TypeError, ValueError):
                 continue
 
-    # ── Witness output ────────────────────────────────────────
+    # ── Witness output (via WitnessBuilder.wrap_legacy) ───────
     witness = {
         "computation": "atomic-mass-via-rho-k",
-        "computedAt": datetime.now(timezone.utc).isoformat(),
         "auditOnly": "AUDIT-DEEP-2026-05.md",
         "description": (
             "Atomic mass-table predictions using the resolved ρ_K assembly "
@@ -299,8 +298,17 @@ def main() -> int:
         "audit_reference": "AUDIT-DEEP-2026-05.md §3.3a (P4″)",
         "pr": "#564",
     }
-    out_path = HERE / "atomic-mass-via-rho-k.witness.json"
-    out_path.write_text(json.dumps(witness, indent=2) + "\n")
+    from witness_base import WitnessBuilder
+    out_path = (
+        WitnessBuilder.wrap_legacy(
+            "atomic-mass-via-rho-k",
+            witness,
+            script_path=__file__,
+            engine="mpmath",
+            output_dir=HERE,
+        )
+        .save()
+    )
     print(f"\n  Wrote {out_path.name}")
     return 0
 

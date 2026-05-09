@@ -299,7 +299,17 @@ def main() -> int:
             }
         ],
     }
-    out.write_text(json.dumps(witness, indent=2) + "\n")
+    from witness_base import WitnessBuilder
+    out = (
+        WitnessBuilder.wrap_legacy(
+            "atomic-tr-m-helium4",
+            witness,
+            script_path=__file__,
+            engine="mpmath",
+            output_dir=HERE,
+        )
+        .save()
+    )
     print(f"\n  Wrote {out.name}  (method = {method})")
     return 0
 

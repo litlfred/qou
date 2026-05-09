@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T00:41:40.727951+00:00",
-  "commitSha": "dbf5bb825b69396a95d4e08500f4a1121aa5bf10",
+  "computedAt": "2026-05-09T01:17:23.648137+00:00",
+  "commitSha": "686f6dc2409847fd2c0b8e188b1fdf870d62d12a",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -438,7 +438,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1,
+  "durationMs": 2,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
@@ -1374,6 +1374,7 @@
         "c-alpha-from-Q-beta-trace.witness.json",
         "canonical-mass-table.witness.json",
         "canonical-script-input-audit.witness.json",
+        "canonical-tr-m-helium4.witness.json",
         "canonical-tr-m-three-path-comparison.witness.json",
         "categorical-bypass-volmatch-demo.witness.json",
         "categorical-q-decay-ba-low-isotopes.witness.json",
