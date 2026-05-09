@@ -343,7 +343,7 @@ jobs:
           drift=$(git diff -- $PATHSPECS | \
                   grep -E "^[+-]" | \
                   grep -vE "^\+\+\+|^---" | \
-                  grep -vE '"(computedAt|durationMs|commitSha|scriptCommitSha|scriptHash|engineVersion|engine|engine_version)":' || true)
+                  grep -vE '"(computedAt|timestamp|durationMs|trace_time_sec|time_sec|elapsed_sec|elapsed_ms|commitSha|scriptCommitSha|scriptHash|engineVersion|engine|engine_version)":' || true)
           if [ -z "$drift" ]; then
             echo "Only environment / timestamp drift — OK."
             exit 0

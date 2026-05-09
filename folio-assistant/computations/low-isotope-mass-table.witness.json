@@ -1,8 +1,8 @@
 {
-  "computedAt": "2026-04-23T19:44:02.238452+00:00",
+  "computedAt": "2026-05-09T05:45:58.629994+00:00",
+  "name": "low-isotope-mass-table",
   "description": "Low-isotope mass + mass-excess table (Z ≤ 10) from the mass-volume binding framework.  Delta = Z·Δ_H + N·Δ_n - B_pred, M = A·u + Delta.",
   "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
-  "name": "low-isotope-mass-table",
   "constants": {
     "q_0": 1.1099785955541805,
     "U_MEV": 931.49410372,
@@ -18,11 +18,11 @@
       "Z": 1,
       "N": 0,
       "A": 1,
-      "B_AME_MeV": 0,
-      "B_pred_MeV": 0,
+      "B_AME_MeV": 0.0,
+      "B_pred_MeV": 0.0,
       "delta_obs_MeV": 7.28897,
       "delta_pred_MeV": 7.2889833899999985,
-      "delta_residual_MeV": 0.000013389999998558721,
+      "delta_residual_MeV": 1.3389999998558721e-05,
       "delta_err_pct": 0.00018370222402559926,
       "M_obs_MeV": 938.78307372,
       "M_pred_MeV": 938.78308711,
@@ -86,7 +86,7 @@
       "B_pred_MeV": 28.295674,
       "delta_obs_MeV": 2.42492,
       "delta_pred_MeV": 2.424926379999949,
-      "delta_residual_MeV": 0.000006379999948791237,
+      "delta_residual_MeV": 6.379999948791237e-06,
       "delta_err_pct": 0.00026310146102928085,
       "M_obs_MeV": 3728.40133488,
       "M_pred_MeV": 3728.4013412599998,
@@ -212,7 +212,7 @@
       "A": 12,
       "B_AME_MeV": 92.1617,
       "B_pred_MeV": 92.167990539075,
-      "delta_obs_MeV": 0,
+      "delta_obs_MeV": 0.0,
       "delta_pred_MeV": -0.006189399075154256,
       "delta_residual_MeV": -0.006189399075154256,
       "delta_err_pct": null,
@@ -387,7 +387,5 @@
     "delta_max_abs_MeV": 12.09355426476885,
     "M_mean_abs_ppm": 514.4562781396669,
     "M_max_abs_ppm": 2081.545232995459
-  },
-  "precision": "f64_numeric_fallback",
-  "truncation_eps": 0
+  }
 }

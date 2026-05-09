@@ -171,7 +171,6 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
         "B_MeV": float(B),
         "n_atom_terms": atom_elem.n_terms(),
         "n_free_terms": free_elem.n_terms(),
-        "trace_time_sec": dt,
     }
 
 
@@ -207,12 +206,12 @@ if __name__ == "__main__":
         dm = abs(r["B_MeV"] - B_AME) / M_total * 100
         print(f"  {name:>6} {A:>3} {3*A:>3} {B_AME:>8.3f} "
               f"{abs(tr_a):>12.6e} {abs(tr_f):>12.6e} "
-              f"{r['B_MeV']:>+10.4f} {dm:>8.4f}% "
-              f"{r['trace_time_sec']:>7.2f}s")
+              f"{r['B_MeV']:>+10.4f} {dm:>8.4f}%")
         results.append({**r, "atom": name, "B_AME_MeV": B_AME,
                          "delta_m_over_m_pct": dm})
 
     witness = {
+        "computedAt": datetime.now(timezone.utc).isoformat(),
         "computation": "binding-canonical-markov",
         "description": (
             "Atom binding via the canonical Jones-Markov trace "
@@ -223,10 +222,10 @@ if __name__ == "__main__":
             "atom_markov_trace.  Binding = E_0·(|tr_M_free| − "
             "|tr_M_atom|) with E_0 = 0.78233341 MeV (β-decay Q)."
         ),
-        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
         "parameters": {"q0": Q0_NUM, "E_0_MeV": 0.78233341},
         "results": results,
     }
     out = Path(__file__).parent / "binding-canonical.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    out.write_text(json.dumps(witness, indent=2, default=str, ensure_ascii=False) + "\n")
     print(f"\nWitness: {out}")

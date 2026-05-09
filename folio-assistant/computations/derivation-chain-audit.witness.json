@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T17:15:14.403330+00:00",
-  "commitSha": "5242c8158087db0dab06b981ebacd7f56442af07",
+  "computedAt": "2026-05-09T19:21:56.759710+00:00",
+  "commitSha": "cbfedecb711e89ea2bfa96f01f8a2506e64ce219",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2149,6 +2149,8 @@
         "rho-f-categorical-probe.witness.json",
         "rho-f-volume-binding-gap.witness.json",
         "rho-k-h3a-co-casimir.witness.json",
+        "rho-k-h3a-crystal.witness.json",
+        "rho-k-h3a-demazure.witness.json",
         "rho-k-h3a-frobenius-pairing.witness.json",
         "rho-k-h3a-gg-trajectory.witness.json",
         "rho-k-h3a-lp-dual.witness.json",
