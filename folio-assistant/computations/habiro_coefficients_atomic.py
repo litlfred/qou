@@ -53,6 +53,17 @@ from schur_weyl_symbolic import partitions_of, schur_weyl_weight
 def markov_trace_symbolic(Z, N, q, include_inter=True):
     """tr_M(T_w(Z,N), q) = Σ_{λ ⊢ 3A} w_λ(q) · χ^λ_q(T_w).
 
+    NOTE (convention): currently uses the legacy 2-variable Schur
+    weight `schur_weyl_weight = s_λ(q, q^{-1})/H_q(λ)` (vanishes for
+    partitions with > 2 rows, dropping the sign-rep contribution).
+    The canonical Wenzl-bridge convention `y_λ` is the more general
+    formula but is significantly slower symbolically due to sqrt(q)
+    factors that bog down sp.cancel for n ≥ 6.  See
+    `docs/audits/2026-05-08-p3-h-3a-divergence.md` for the full
+    convention discussion; full Wenzl-bridge migration is deferred
+    pending a deuteron-tractable symbolic pipeline (likely via
+    early q→u² substitution to convert sqrt(q) to polynomial u).
+
     Returns a sympy expression in q.
     """
     A = Z + N
@@ -137,28 +148,28 @@ def cyclotomic_expansion(p_in_u, u, max_m=20):
     coeffs = []
     current = p
     for m in range(max_m):
-        if current.as_expr() == 0:
+        if current.is_zero:
             break
         next_factor = sp.Poly(1 - u ** (m + 1), u)
-        # a_m = p_m mod (1 - u^{m+1})   (degree < m+1)
-        _, a_m = sp.div(current, next_factor, u)
+        # Single sp.div gives BOTH a_m (= remainder, degree < m+1) and
+        # quotient (= (current - a_m) / next_factor) in one call.
+        # The previous implementation recomputed the quotient via a
+        # second sp.div on `current.as_expr() - a_m_expr`, doubling
+        # the work per iteration on a deg-194 polynomial.
+        quotient, a_m = sp.div(current, next_factor, u)
         a_m_expr = a_m.as_expr()
-        diff = sp.expand(current.as_expr() - a_m_expr)
-        try:
-            quotient, rem2 = sp.div(sp.Poly(diff, u), next_factor, u)
-        except sp.PolynomialError:
-            break
-        rem_zero = (rem2.as_expr() == 0)
         coeffs.append({
             "m": m,
             "a_m": str(a_m_expr),
             "deg_a_m": int(a_m.degree()) if a_m.as_expr() != 0 else 0,
             "integral": all(c.is_Integer for c in a_m.all_coeffs())
                           if a_m.as_expr() != 0 else True,
-            "remainder_nonzero": not rem_zero,
+            # `current = quotient * next_factor + a_m` is exact by
+            # construction of sp.div (the second sp.div in the prior
+            # implementation always returned remainder=0); only flag
+            # nonzero on a true PolynomialError.
+            "remainder_nonzero": False,
         })
-        if not rem_zero:
-            break
         current = quotient
     return coeffs
 
@@ -179,7 +190,11 @@ def reconstruct(coeffs_data, u, max_m=20):
 def analyse_atomic_braid(label, Z, N, include_inter, q):
     print(f"\n── {label} (Z={Z}, N={N}) ──")
     p_q = markov_trace_symbolic(Z, N, q, include_inter=include_inter)
-    print(f"  tr_M (in q): {sp.nsimplify(p_q)}")
+    # Skip sp.nsimplify in the log line — for the deuteron's
+    # ~degree-194 rational over q this call alone takes >30 s while
+    # adding zero diagnostic value (the polynomial is already in
+    # its symbolic form).  Use the raw repr instead.
+    print(f"  tr_M (in q) computed (free symbols: {p_q.free_symbols})")
     u = sp.Symbol('u', positive=True, real=True)
     p_u, shift, denom = to_u_polynomial(p_q, q, u)
     deg_p = int(sp.Poly(p_u, u).degree()) if p_u != 0 else 0
@@ -210,7 +225,10 @@ def analyse_atomic_braid(label, Z, N, include_inter, q):
           f"(via u-poly: {p_u_at_u0:+.6e})")
     return {
         "Z": Z, "N": N, "include_inter": include_inter,
-        "tr_M_in_q": str(sp.nsimplify(p_q)),
+        # str(p_q) directly — sp.nsimplify on a degree-194 rational
+        # adds 30+ seconds with no benefit for the witness consumer
+        # (downstream re-parses with sp.sympify).
+        "tr_M_in_q": str(p_q),
         "shift": int(shift),
         "denom_in_u": denom,
         "p_in_u": str(p_u),
