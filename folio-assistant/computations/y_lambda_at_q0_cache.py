@@ -68,33 +68,15 @@ def _eval_one(args: tuple) -> dict:
     # mpmath returns mpf for real, mpc for complex
     if hasattr(val, "imag") and abs(val.imag) > mp.mpf("1e-30"):
         # genuine complex residual; take real part
-        re_val = val.real
+        s = str(val.real)
     elif hasattr(val, "real"):
-        re_val = val.real
+        s = str(val.real)
     else:
-        re_val = val
-    # Per Copilot PR #619 review: trim to exactly 50 dps so the field
-    # name ("y_at_q0_50dps") matches the stored precision (was ~60 dps).
-    s = mp.nstr(re_val, 50, strip_zeros=False)
+        s = str(val)
     return {"n": n, "partition": list(partition), "y_at_q0_50dps": s}
 
 
 def main() -> int:
-    # Construct WitnessBuilder up front to capture full durationMs
-    # (Copilot PR #619 review).
-    from witness_base import WitnessBuilder
-    w = (WitnessBuilder("y-lambda-at-q0", engine="mpmath")
-         .set_description(
-            "Numeric cache of y_λ(q_0) at 50 dps for n ∈ {2, ..., 12}, "
-            "evaluated from y-lambda-wenzl-bridge-symbolic-witness.json "
-            "in parallel via multiprocessing.Pool. Pre-computes the "
-            "expensive symbolic-to-numeric step so downstream consumers "
-            "(delta_lambda_empirical_tabulation.py and other ρ_K "
-            "Wedderburn-weighted formulas) can load instantly. "
-            "Output strings trimmed to exactly 50 dps via mp.nstr."
-         )
-         .set_content_block("prop:y-lambda-closed-form-wenzl-bridge"))
-
     print("=" * 96)
     print("  y_λ(q_0) numeric cache builder (parallel)")
     print("=" * 96)
@@ -110,10 +92,8 @@ def main() -> int:
     tasks = []
     for n_str, entry in sorted(tab.items(), key=lambda kv: int(kv[0])):
         n = int(n_str)
-        # Don't shadow the WitnessBuilder `w` defined above with the
-        # loop variable (Copilot PR #619 review pre-emptively dodged).
-        for wt in entry["weights"]:
-            tasks.append((n, tuple(wt["partition"]), wt["y_lambda_symbolic"]))
+        for w in entry["weights"]:
+            tasks.append((n, tuple(w["partition"]), w["y_lambda_symbolic"]))
     print(f"  Tasks: {len(tasks)} y_λ evaluations across n ∈ "
           f"{[int(k) for k in tab.keys()]}")
     nproc = max(1, cpu_count() - 1)
@@ -178,7 +158,18 @@ def main() -> int:
         except Exception as exc:
             sanity[atom] = {"error": f"{type(exc).__name__}: {exc}"}
 
-    # WitnessBuilder constructed at start of main(); now populate.
+    # Emit witness via WitnessBuilder
+    from witness_base import WitnessBuilder
+    w = (WitnessBuilder("y-lambda-at-q0", engine="mpmath")
+         .set_description(
+            "Numeric cache of y_λ(q_0) at 50 dps for n ∈ {2, ..., 12}, "
+            "evaluated from y-lambda-wenzl-bridge-symbolic-witness.json "
+            "in parallel via multiprocessing.Pool. Pre-computes the "
+            "expensive symbolic-to-numeric step so downstream consumers "
+            "(delta_lambda_empirical_tabulation.py and other ρ_K "
+            "Wedderburn-weighted formulas) can load instantly."
+         )
+         .set_content_block("prop:y-lambda-closed-form-wenzl-bridge"))
     w.parameters.update({
         "q_0": Q_MP_STR,
         "precision_dps": 50,

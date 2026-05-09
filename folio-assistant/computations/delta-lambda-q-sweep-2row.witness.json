@@ -1,16 +1,16 @@
 {
-  "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T21:04:29.766327+00:00",
-  "commitSha": "1e023055d516982f1ec6fb8d543e2a1c505f4264",
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-09T19:17:33.914375+00:00",
+  "commitSha": "a0f865a8a78d2554664a7be50f04f9d5c1775956",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 13588,
+  "durationMs": 27,
   "computation": "delta-lambda-q-sweep-2row",
   "scriptFile": "delta_lambda_q_sweep_2row_dominance.py",
-  "scriptHash": "93c12b19e6e7",
-  "scriptCommitSha": "6f69b715cb9c2a5a037527b04d2d074875083485",
-  "description": "q-sweep for deuteron (n=6) testing whether the > 2-row Wedderburn sector contribution vanishes as q → 1.  If yes, the 2-row stratum dominance found in the Δ_λ tabulation is the q-deformation of the Schur-Weyl restriction to V = ℂ² (SU(2) fundamental), with the > 2-row content being a deformation-induced correction that vanishes at q = 1.  Numeric path: float64 (numpy/Hoefsmit).",
+  "scriptHash": "72f4fcae049e",
+  "scriptCommitSha": "unknown",
+  "description": "q-sweep for deuteron (n=6) testing whether the > 2-row Wedderburn sector contribution vanishes as q → 1.  If yes, the 2-row stratum dominance found in the Δ_λ tabulation is the q-deformation of the Schur-Weyl restriction to V = ℂ² (SU(2) fundamental), with the > 2-row content being a deformation-induced correction that vanishes at q = 1.",
   "contentBlock": "prop:rho-k-h3a-refinement",
   "parameters": {
     "atom": "deuteron",
@@ -35,7 +35,7 @@
         "mass_2row": 0.3460274218231371,
         "mass_gt_2row": 0.06531014772061255,
         "frac_gt_2row": 0.15877506106007708,
-        "elapsed_sec": 5.752619028091431,
+        "elapsed_sec": 3.7702834606170654,
         "per_partition": [
           {
             "partition": [
@@ -158,7 +158,7 @@
         "mass_2row": 0.06393877096678054,
         "mass_gt_2row": 0.0016975902387288435,
         "frac_gt_2row": 0.02586356415179139,
-        "elapsed_sec": 1.1763625144958496,
+        "elapsed_sec": 0.9822933673858643,
         "per_partition": [
           {
             "partition": [
@@ -281,7 +281,7 @@
         "mass_2row": 0.12966863212134266,
         "mass_gt_2row": 0.009305508057228752,
         "frac_gt_2row": 0.0669585582272491,
-        "elapsed_sec": 1.118335247039795,
+        "elapsed_sec": 0.9651505947113037,
         "per_partition": [
           {
             "partition": [
@@ -404,7 +404,7 @@
         "mass_2row": 0.3444461409056568,
         "mass_gt_2row": 0.02032251061317462,
         "frac_gt_2row": 0.055713424189703036,
-        "elapsed_sec": 1.1428229808807373,
+        "elapsed_sec": 0.9715611934661865,
         "per_partition": [
           {
             "partition": [
@@ -527,7 +527,7 @@
         "mass_2row": 0.4093562123358021,
         "mass_gt_2row": 0.0227441386433138,
         "frac_gt_2row": 0.052636242002064605,
-        "elapsed_sec": 1.152226209640503,
+        "elapsed_sec": 1.0053319931030273,
         "per_partition": [
           {
             "partition": [

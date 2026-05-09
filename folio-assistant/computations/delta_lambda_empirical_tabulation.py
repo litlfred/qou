@@ -43,7 +43,6 @@ Output: `delta-lambda-empirical-tabulation.witness.json`.
 """
 from __future__ import annotations
 
-import functools
 import json
 import sys
 from datetime import datetime, timezone
@@ -60,25 +59,13 @@ if str(HERE) not in sys.path:
 mp.mp.dps = 50
 
 from q_parameter import Q_MP  # noqa: E402
-# Per Copilot PR #619 review: import CAL-3 constants from the
-# canonical experimental_constants module rather than hardcoding
-# (avoids drift across scripts; respects 3-input scheme).
-from experimental_constants import (  # noqa: E402
-    M_E_MEV as _M_E_MEV_FLOAT,
-    M_P_MEV as _M_P_MEV_FLOAT,
-    M_N_MEV as _M_N_MEV_FLOAT,
-)
 
 Q0 = mp.mpf(str(Q_MP))
 
-# ── CODATA 2022 anchors (CAL-3) ────────────────────────────────
-# Float values from experimental_constants.py; mpmath wrappers below.
-# Per CAL-3, m_p and m_e are independent inputs; m_n is technically
-# derivable from m_n = m_p + m_e + Q_β but the canonical anchor list
-# pins all three so we mirror that.
-M_E_MEV = mp.mpf(str(_M_E_MEV_FLOAT))
-M_P_MEV = mp.mpf(str(_M_P_MEV_FLOAT))
-M_N_MEV = mp.mpf(str(_M_N_MEV_FLOAT))
+# ── CODATA 2022 anchors (CAL-3, no derivation) ─────────────────
+M_E_MEV = mp.mpf("0.51099895")
+M_P_MEV = mp.mpf("938.27208816")
+M_N_MEV = mp.mpf("939.56542052")
 
 ATOMS_CODATA = {
     # Anchors (LO is exact by construction; ΔM = 0):
@@ -102,30 +89,17 @@ ATOMS_CODATA = {
 from schur_weyl_symbolic import partitions_of, hook_lengths  # noqa: E402
 
 
-@functools.lru_cache(maxsize=None)
 def content_sum(lam: tuple[int, ...]) -> int:
     return sum(j - i for i, row in enumerate(lam) for j in range(row))
 
 
-def padded_staircase_partition(n: int) -> tuple[int, ...]:
-    """Return the *padded* staircase partition for any n.
+def staircase_partition(n: int) -> tuple[int, ...]:
+    """Return the staircase partition (k, k-1, ..., 1) summing closest
+    to n, padded with the surplus added to the largest part if needed.
 
-    For triangular n = k(k+1)/2 this is the canonical staircase
-    ρ_k = (k, k-1, ..., 1) per
-    `content/quantum-observable-universe/braids-and-knots/staircase-partition.md`.
-
-    For non-triangular n (e.g. n = 9, 12) we PAD the largest part
-    with the surplus.  Examples:
-      n = 3   → (2, 1)        ← padded ρ_2 ∪ {1}; ρ_2 = (2,1) sums to 3 ✓
-      n = 6   → (3, 2, 1)     ← exact ρ_3; n = 6 = 1+2+3 triangular
-      n = 9   → (6, 2, 1)     ← padded; n = 9 not triangular
-      n = 12  → (6, 3, 2, 1)  ← padded; n = 12 not triangular
-
-    Per Copilot PR #619 review, this is NOT the canonical staircase
-    when n is not triangular — renamed accordingly to flag the
-    heuristic.  Caller is responsible for interpreting the
-    sub-ansatz "shell-supported" carefully on non-triangular n;
-    the canonical staircase lives only at triangular n.
+    For n = 6 → (3, 2, 1); n = 9 → (4, 3, 2); n = 12 → (5, 4, 3) all
+    exact staircase fits.  For non-triangular n, prepend the leftover
+    to the largest part.
     """
     # find k such that 1 + 2 + ... + k ≤ n
     k = 0
@@ -140,35 +114,21 @@ def padded_staircase_partition(n: int) -> tuple[int, ...]:
     return tuple(parts)
 
 
-def is_triangular(n: int) -> bool:
-    """Return True iff n = k(k+1)/2 for some k ≥ 0."""
-    if n < 0:
-        return False
-    # Solve k² + k − 2n = 0; k = (−1 + √(1+8n))/2
-    from math import isqrt
-    s = isqrt(1 + 8 * n)
-    return s * s == 1 + 8 * n and (s - 1) % 2 == 0
-
-
-@functools.lru_cache(maxsize=None)
 def dim_q_at_q0(lam: tuple[int, ...]) -> mp.mpf:
-    """dim_q(λ) at q_0 via [n]_q! / Π[h(x)]_q (mpmath; preserves dps).
-
-    Per Gemini PR #619 review: cache + reuse `n_factorial_q_at_q0`
-    instead of recomputing [n]_q! per call.
-    """
+    """dim_q(λ) at q_0 via [n]_q! / Π[h(x)]_q (mpmath; preserves dps)."""
     n = sum(lam)
     if n == 0:
         return mp.mpf(1)
     denom = Q0 - 1 / Q0
-    nfac_q = n_factorial_q_at_q0(n)
+    nfac_q = mp.mpf(1)
+    for k in range(1, n + 1):
+        nfac_q *= (Q0 ** k - 1 / Q0 ** k) / denom
     prod_h = mp.mpf(1)
     for h in hook_lengths(lam):
         prod_h *= (Q0 ** h - 1 / Q0 ** h) / denom
     return nfac_q / prod_h
 
 
-@functools.lru_cache(maxsize=None)
 def n_factorial_q_at_q0(n: int) -> mp.mpf:
     denom = Q0 - 1 / Q0
     val = mp.mpf(1)
@@ -220,7 +180,7 @@ def _sympy_to_mpf(expr: sp.Expr) -> mp.mpf:
     # Take the first free symbol (assume single-variable in q).
     q_sym = free[0]
     func = sp.lambdify(q_sym, expr, modules=["mpmath"])
-    val = func(Q0)  # use module-level Q0 (Gemini PR #619)
+    val = func(mp.mpf(str(Q_MP)))
     if hasattr(val, "imag") and abs(val.imag) > mp.mpf("1e-30"):
         return mp.mpf(str(val.real))
     if hasattr(val, "real"):
@@ -442,9 +402,7 @@ def ansatz_a_single_block(atom_data: dict) -> dict:
             "abs_delta": abs(delta),
             "y": r["y"], "chi": r["chi"], "c": r["c"],
         })
-    # mpmath.mpf supports direct comparison; no need to cast to float
-    # (Gemini PR #619 review).
-    candidates.sort(key=lambda x: x["abs_delta"])
+    candidates.sort(key=lambda x: float(x["abs_delta"]))
     return {
         "ansatz": "a_single_block",
         "best_lambda": candidates[0]["lambda"] if candidates else None,
@@ -463,7 +421,7 @@ def ansatz_a_single_block(atom_data: dict) -> dict:
 def ansatz_b_shell(atom_data: dict) -> dict:
     """Δ_λ = δ · 1_{λ=staircase(n)}.  Single fixed partition."""
     n = atom_data["n"]
-    lam_shell = padded_staircase_partition(n)
+    lam_shell = staircase_partition(n)
     target = atom_data["target_signed"]
     c_shell = None
     for r in atom_data["rows"]:
@@ -487,24 +445,21 @@ def ansatz_b_shell(atom_data: dict) -> dict:
 
 
 def ansatz_c_content_monotonic(atom_data: dict) -> dict:
-    """Δ_λ = α · c(λ).  Single linear scaling: Σ c_λ · α · c(λ) = target.
-
-    Per Gemini PR #619 review: accumulate Σ c(λ)² in the same loop
-    as Σ c_λ·c(λ), drop the unused `detail` list.
-    """
+    """Δ_λ = α · c(λ).  Single linear scaling: Σ c_λ · α · c(λ) = target."""
     target = atom_data["target_signed"]
     weighted_sum = mp.mpf(0)
-    norm_c2_sum = 0
+    detail = []
     for r in atom_data["rows"]:
         cs = content_sum(tuple(r["lambda"]))
         weighted_sum += r["c"] * cs
-        norm_c2_sum += cs ** 2
+        detail.append({"lambda": list(r["lambda"]),
+                       "content_sum": cs, "c": r["c"]})
     if abs(weighted_sum) < mp.mpf("1e-30"):
         return {"ansatz": "c_content_monotonic", "error":
                 f"Σ c_λ · c(λ) ≈ 0 ({weighted_sum}); ansatz infeasible"}
     alpha = target / weighted_sum
     # ‖Δ‖₂ = |α| · sqrt(Σ c(λ)²)
-    norm_c2 = mp.sqrt(norm_c2_sum)
+    norm_c2 = mp.sqrt(sum(content_sum(tuple(r["lambda"])) ** 2 for r in atom_data["rows"]))
     return {
         "ansatz": "c_content_monotonic",
         "alpha": str(alpha),
@@ -564,31 +519,6 @@ def find_recurring_lambda_star(per_atom_results: dict[str, dict]) -> dict:
 
 
 def main() -> int:
-    # Construct WitnessBuilder up front so durationMs captures the
-    # full compute (per Copilot PR #619 review).  Engine downgraded
-    # from "mpmath" to "python" since the tier-2 path
-    # (wedderburn_jones_markov.global_wedderburn_sum_q_hecke_seminormal)
-    # is float64 internally — the witness mixes float64 (per-row chi
-    # contributions) with mpmath (per-ansatz solutions); honest label
-    # is "python" (mixed precision).
-    from witness_base import WitnessBuilder
-    w = (WitnessBuilder("delta-lambda-empirical-tabulation", engine="python")
-         .set_description(
-            "Empirical tabulation of per-Wedderburn-block binding "
-            "fractions Δ_λ(K) for K ∈ {p, n, D, T, ³He, ⁴He} per the "
-            "full ρ_K mass formula M(K) = m_e · Σ_λ y_λ · χ^λ · "
-            "(1 + Δ_λ). Solves the underdetermined Σ c_λ Δ_λ = "
-            "ΔM/m_e under four ansätze: (a) single-block sweep, "
-            "(b) padded-staircase-supported, (c) Δ-monotonic via "
-            "content sum c(λ), (d) Δ-isotypic via dim_q(λ)/[n]_q!. "
-            "Reports best λ* per ansatz, ‖Δ‖₂, and cross-atom "
-            "recurrence pattern. Mixed-precision: tier-2 chi data "
-            "is float64 (numpy), per-ansatz solutions are mpmath. "
-            "Proposal 1 of "
-            "docs/audits/2026-05-09-workplan-update-rho-k.md."
-         )
-         .set_content_block("prop:rho-k-h3a-refinement"))
-
     print("=" * 96)
     print("  Empirical Δ_λ tabulation across atoms (Proposal 1)")
     print("=" * 96)
@@ -677,20 +607,26 @@ def main() -> int:
         print(f"    ✗ No cross-atom pattern in single-block ansatz.")
 
     # Emit witness via WitnessBuilder
-    # WitnessBuilder constructed above at start of main(); now populate.
+    from witness_base import WitnessBuilder
+    w = (WitnessBuilder("delta-lambda-empirical-tabulation", engine="mpmath")
+         .set_description(
+            "Empirical tabulation of per-Wedderburn-block binding "
+            "fractions Δ_λ(K) for K ∈ {D, T, ³He, ⁴He} per the full "
+            "ρ_K mass formula M(K) = m_e · Σ_λ y_λ · χ^λ · (1 + Δ_λ). "
+            "Solves the underdetermined Σ c_λ Δ_λ = ΔM/m_e under four "
+            "ansätze: (a) single-block sweep over all λ ⊢ 3A, "
+            "(b) shell-supported λ_shell = staircase, (c) Δ-monotonic "
+            "via content sum c(λ), (d) Δ-isotypic via dim_q(λ)/[n]_q!. "
+            "Reports best λ* per ansatz, ‖Δ‖₂, and cross-atom "
+            "recurrence pattern. Proposal 1 of "
+            "docs/audits/2026-05-09-workplan-update-rho-k.md."
+         )
+         .set_content_block("prop:rho-k-h3a-refinement"))
     w.parameters.update({
         "q_0": str(Q0),
         "m_e_MeV": str(M_E_MEV),
         "m_p_MeV": str(M_P_MEV),
         "m_n_MeV": str(M_N_MEV),
-        "precision_note": (
-            "Tier-2 chi data (D/T/³He/⁴He) is float64 from "
-            "wedderburn_jones_markov.global_wedderburn_sum_q_hecke_seminormal. "
-            "Per-ansatz solutions (δ, α, ‖Δ‖₂) are mpmath but inherit "
-            "tier-2's float64 precision through the constraint equation. "
-            "Treat all numeric outputs as ~1e-13 (float64 trace; "
-            "Hoefsmit matrices) — not 50 dps."
-        ),
     })
     w.add_data("per_atom", per_atom)
     w.add_data("cross_atom_pattern_ansatz_a", pattern)
