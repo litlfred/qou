@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T19:54:59.427084+00:00",
-  "commitSha": "b72816b336ecaab14ada3347abb3383b05305427",
+  "computedAt": "2026-05-09T20:07:12.378509+00:00",
+  "commitSha": "d3c5431c10fbc26322a37fa1b894e31938acd61a",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,7 +559,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
@@ -2154,7 +2154,6 @@
         "laurentq-a5-ceiling-measure.witness.json",
         "level1-qvalues.witness.json",
         "light-isotope-sweep.witness.json",
-        "low-isotope-mass-table.witness.json",
         "lp-confinement-nf-forcing.witness.json",
         "lp-duality-check.witness.json",
         "lr-fusion-self-conj-test.witness.json",

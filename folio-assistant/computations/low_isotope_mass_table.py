@@ -49,7 +49,7 @@ from pathlib import Path
 from datetime import datetime, timezone
 
 sys.path.insert(0, str(Path(__file__).parent))
-from low_isotope_binding_sweep import (
+from low_isotope_binding_sweep import (  # noqa: E402
     AME, M_E_MEV, Q0, strategy_A_census,
 )
 
@@ -161,8 +161,8 @@ def predict_row(symbol: str, Z: int, N: int) -> dict:
                            m_n is currently pending so Δ_pred is null
                            for every row with N > 0.
       * M_pred_MeV       — derived total mass; same gating as Δ_pred.
-      * derivation_status — string describing which inputs were
-                            derived vs pending for this row.
+      * row_derivation_status — string describing which inputs were
+                                derived vs pending for this row.
     """
     A = Z + N
     B_pred, b_status = _derived_binding(symbol, Z, N)
@@ -181,12 +181,10 @@ def predict_row(symbol: str, Z: int, N: int) -> dict:
                 "pending: B is derived (strategy A) but Δ requires m_n; "
                 "m_n is derivation-pending"
             )
-        elif B_pred is None:
-            delta_status = (
-                "pending: B is derivation-pending — see B_status"
-            )
         else:
-            delta_status = "pending"
+            delta_status = (
+                "pending: B is derivation-pending — see B_derivation_status"
+            )
 
     if B_pred is None or delta_pred is None:
         row_status = "derivation_pending"
@@ -223,8 +221,6 @@ def main() -> int:
     )
     print(header)
     print("  " + "-" * (len(header) - 2))
-
-    sweep_table = {sym: B_ame for sym, _, _, B_ame in AME}
 
     rows = []
     for symbol, Z, N, B_ame in AME:
@@ -308,8 +304,13 @@ def main() -> int:
             "fit-free derivation rooted in q₀. Rows lacking such a chain "
             "(m_n MeV scale; B(⁴He) and beyond) are emitted with "
             "row_derivation_status='derivation_pending' and predicted "
-            "values set to null. CODATA / AME constants appear ONLY in "
-            "*_ref fields for comparison."
+            "values set to null. The framework consumes a small set of "
+            "scale/unit CODATA constants (m_e MeV scale, atomic mass unit "
+            "u) — these live in derivation_inputs.scale_constants. CODATA "
+            "/ AME values used purely as comparison anchors (M_P_REF, "
+            "M_N_REF, AME binding energies, AME mass excesses) live in "
+            "comparison_only_constants and are never consumed in the "
+            "predicted column."
         ),
         "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
         "timestamp": datetime.now(timezone.utc).isoformat(),
@@ -323,13 +324,20 @@ def main() -> int:
             "delta_N_derivation_status": (
                 "pending: requires derived m_n"
             ),
+            "scale_constants": {
+                # Scale / unit inputs consumed by the framework
+                # (the same single CODATA-bounded constant the proton
+                # derivation chain consumes — see
+                # build_proton_mass_50dps_chain.py step 6 — plus the
+                # atomic mass unit u for total-mass assembly).
+                "M_E_MEV": M_E_MEV,
+                "U_MEV": U_MEV,
+                "q_0": Q0,
+            },
         },
-        "reference_constants_for_comparison_only": {
-            "q_0": Q0,
-            "U_MEV": U_MEV,
+        "comparison_only_constants": {
             "M_P_REF_MEV_codata": M_P_REF_MEV,
             "M_N_REF_MEV_codata": M_N_REF_MEV,
-            "M_E_MEV": M_E_MEV,
         },
         "rows": rows,
         "stats": {
