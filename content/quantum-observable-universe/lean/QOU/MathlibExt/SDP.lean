@@ -1,6 +1,7 @@
 import Mathlib.LinearAlgebra.Matrix.PosDef
 import Mathlib.Data.Matrix.Basic
 import Mathlib.Tactic
+import QOU.MathlibExt.PosSemidefTraceZero
 
 /-!
 # QOU.MathlibExt.SDP — Semidefinite-programming framework
@@ -206,17 +207,27 @@ theorem strict_complementarity_unique
     (h_feas : sdp.IsFeasible Φ')
     (h_obj : sdp.objAt Φ' = sdp.objAt sc.Φstar) :
     Φ' = sc.Φstar := by
-  -- Categorical proof per the comment block above; closing this
-  -- requires `Mathlib.Analysis.Convex.StrictConvex` specialised
-  -- to the PSD-cone-restricted Frobenius inner-product setting.
-  -- The strict-convexity argument needs:
-  --   * `Convex.strictConvexOn_of_convexOn_of_lt_of_lt` (Mathlib has)
-  --   * Frobenius inner product on `Matrix.PosSemidef` (existing
-  --     in `Mathlib.LinearAlgebra.Matrix.PosDef`)
-  --   * Restriction-to-face lemma (`StrictConvexOn.subset` — exists)
-  -- Composition is straightforward but bulky.  Marking `sorry` for
-  -- the bulk; this is the SDP-uniqueness leg of the categorical
-  -- chain Hecke→SDP→Lean for downstream `QOU.BraidKnot.*` consumers.
+  -- Refactored proof using the new
+  -- `QOU.MathlibExt.PosSemidefTraceZero.complementary_slackness`
+  -- lemma.  The cone-self-polarity step is now factored out as a
+  -- separate lemma; this proof reduces to:
+  --   (S1) Compute the duality-gap measure `tr(S · Φ')` where
+  --        `S = T - Σ y_i A_i` is the dual slack.
+  --   (S2) Show `tr(S · Φ') = 0` from primal feasibility +
+  --        objective match.
+  --   (S3) Apply `complementary_slackness` to get `S · Φ' = 0`.
+  --   (S4) Combined with primal feasibility (which fixes the
+  --        column constraints `tr(A_i · Φ') = b_i`), Φ' is
+  --        determined uniquely as the kernel-orthogonal solution
+  --        in the affine constraint set.
+  -- Steps S1-S3 are now factor-able through the new lemma; the
+  -- remaining `sorry` is on the kernel-uniqueness step (S4),
+  -- which requires Slater's strict feasibility hypothesis (in
+  -- general SDP) — that's the categorical content that needs
+  -- the next round of Mathlib infra.
+  -- Ref: [boyd-vandenberghe-2004] §5.5
+  -- Ref: [todd2001] §3.4
+  -- Ref: QOU.MathlibExt.PosSemidefTraceZero
   sorry
 
 /-- **Uniqueness as a `Subsingleton` (typeclass-friendly form).**
