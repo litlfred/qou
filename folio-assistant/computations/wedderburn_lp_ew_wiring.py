@@ -93,6 +93,57 @@ def _hoefsmit_f64_matrices(n: int, q0_value: float) -> dict:
     return out
 
 
+def _klr_positive_supply_vector(
+    pairs: list,
+    n_strands: int,
+    q_str: str,
+    *,
+    hoefsmit_cache: dict | None = None,
+) -> np.ndarray:
+    """KLR-positive supply vector ``t_k = tr_M(σ_i σ_j)`` per pair.
+
+    Replaces the signed `pair["full"]` matrix-entry sum used on PR
+    #618 with the genuine pair Markov trace
+    ``Σ_λ y_λ(q) · χ_λ(σ_i σ_j)`` evaluated in H_(3·A).  By KLR
+    positivity (operators in the canonical-basis cone are non-
+    negative at q > 0; cf. Kashiwara-Saito, Brundan-Kleshchev), this
+    vector is non-negative for every pair and the LP
+    ``min ⟨t, x⟩ s.t. Σx = n_target, Gx ≥ 0, x ≥ -M`` is bounded
+    for every atom.
+
+    Re-uses the same Hoefsmit cache as ``_full_wedderburn_gram`` to
+    avoid recomputing per-partition matrices.
+
+    Parameters
+    ----------
+    pairs
+        Pair list (only ``i`` / ``j`` indices consumed).
+    n_strands
+        Hecke algebra rank ``n = 3·A``.
+    q_str
+        ``q_0`` as 50-dps decimal string.
+    hoefsmit_cache
+        Optional precomputed cache from ``_hoefsmit_f64_matrices``;
+        built on demand if ``None``.
+
+    Returns
+    -------
+    numpy.ndarray
+        Real ``(n_pairs,)`` vector of pair Markov traces.
+    """
+    if hoefsmit_cache is None:
+        q0_value = float(__import__("sympy").Float(q_str, 50))
+        hoefsmit_cache = _hoefsmit_f64_matrices(n_strands, q0_value)
+    t = np.zeros(len(pairs), dtype=float)
+    for k, p in enumerate(pairs):
+        i, j = p["i"], p["j"]
+        for shape, info in hoefsmit_cache.items():
+            mats = info["matrices"]
+            M_ij = mats[i] @ mats[j]
+            t[k] += info["y"] * float(np.trace(M_ij))
+    return t
+
+
 def _full_wedderburn_gram(
     pairs: list,
     n_strands: int,
@@ -278,28 +329,58 @@ def main() -> int:
     #                          boundary and the dual is binding.)
     #
     # For the EW-sector wiring: each basis element b_k corresponds to
-    # a pair (i, j) of generators in the atom braid.  The pair carries
-    # channel-resolved amplitudes (sym, std, alt) from the H_3
-    # Wedderburn decomposition (`wedderburn_pair_volumes`); we use:
-    #   t_k = |V̂_i V̂_j|_full (Plancherel-weighted Markov trace)
-    #   G_{kk'} = Σ_λ w_λ · a_k^λ · a_{k'}^λ (Frobenius Gram on the
-    #               channel-resolved pair amplitudes — see
-    #               `_wedderburn_gram` above; this is the genuine
-    #               off-diagonal coupling, not a `t_k · t_k' / wt`
-    #               proxy).
+    # the Hecke element σ_i σ_j ∈ H_(3·A)(q) for pair (i, j).  We use:
+    #   t_k = tr_M(σ_i σ_j) = Σ_λ y_λ · χ_λ(σ_i σ_j)
+    #         (KLR-positive pair Markov trace; non-negative for every
+    #          pair by KLR positivity on the canonical-basis cone —
+    #          replaces PR #618's signed pair["full"] matrix-entry
+    #          sum, which was a setup error.  See audit doc §0.)
+    #   G_{kk'} = tr_M(σ_i σ_j σ_{i'} σ_{j'})
+    #           = Σ_λ y_λ · χ_λ(σ_i σ_j σ_{i'} σ_{j'})
+    #         (full Wedderburn Frobenius Gram on the pair-operator
+    #          algebra; see `_full_wedderburn_gram`).
     n_pairs = len(pairs)
-    t = np.array([p["full"] for p in pairs], dtype=float)
     n_strands_headline = 3 * (Z + N)
-    print(f"  Building full H_{n_strands_headline} Wedderburn Gram on "
-          f"{n_pairs} pairs (≤ {n_pairs * (n_pairs + 1) // 2} unique "
-          f"Markov-trace evals; cyclic class-cached)...")
-    G = _full_wedderburn_gram(pairs, n_strands_headline, Q_50_DIGIT_STR)
-    # Total target: half the sum of available "full" amplitudes
-    # (loose constraint to ensure feasibility)
+    print(f"  Pre-computing H_{n_strands_headline} Hoefsmit matrices for "
+          f"{n_pairs} pairs ({n_pairs} pair Markov traces + "
+          f"{n_pairs * (n_pairs + 1) // 2} unique pair-pair traces; "
+          f"shared Hoefsmit cache)...")
+    q_0_for_cache = float(sp.Float(Q_50_DIGIT_STR, 50))
+    hoefsmit_cache_h = _hoefsmit_f64_matrices(n_strands_headline,
+                                              q_0_for_cache)
+    t = _klr_positive_supply_vector(
+        pairs, n_strands_headline, Q_50_DIGIT_STR,
+        hoefsmit_cache=hoefsmit_cache_h,
+    )
+    # Sanity check: KLR positivity says t ≥ 0.  Tiny negative
+    # numerical noise is tolerated; a substantive negative entry is
+    # a bug or a non-canonical-basis pair (would need separate
+    # investigation).
+    if t.min() < -1e-9:
+        print(f"  WARN: KLR positivity violation — min(t) = {t.min():.3e}")
+    # Keep the legacy signed matrix-entry sum for diff/comparison.
+    t_legacy_matrix_entries = np.array(
+        [p["full"] for p in pairs], dtype=float
+    )
+    G = _full_wedderburn_gram(
+        pairs, n_strands_headline, Q_50_DIGIT_STR,
+        hoefsmit_cache=hoefsmit_cache_h,
+    )
+    # Total target: half the sum of available KLR-positive amplitudes
+    # (loose constraint to ensure feasibility).
     n_target = float(t.sum() * 0.5)
-    print(f"  t (Markov traces, top 3): {t[:3].tolist()}")
+    print(f"  t (KLR pair Markov traces, top 3): {t[:3].tolist()}")
+    print(f"  t.min = {t.min():.4e}, t.max = {t.max():.4e}")
+    print(f"  legacy(matrix-entry) t.min = {t_legacy_matrix_entries.min():.4e}, "
+          f"t.max = {t_legacy_matrix_entries.max():.4e}")
     print(f"  G shape: {G.shape}, n_target = {n_target:.6f}")
-    res = solve_operator_selection_lp(t, G, n_target)
+    # M_bound=0 enforces x ≥ 0 (operator coefficients are non-negative,
+    # the natural interpretation of "operator selection" in
+    # prop:knot-operator-lp-selection).  With KLR-positive t and x ≥ 0
+    # the LP is bounded for every atom and strong duality holds; the
+    # default M_bound=1e6 in `solve_operator_selection_lp` is intended
+    # for problems with signed coefficients (not this case).
+    res = solve_operator_selection_lp(t, G, n_target, M_bound=0.0)
     res_dict = res.to_dict()
 
     # Also run LP for each atom in atoms_to_test (sweep)
@@ -337,11 +418,20 @@ def main() -> int:
                 "n_pairs": 0, "skipped": "no pairs",
             })
             continue
-        ta = np.array([p["full"] for p in ps], dtype=float)
-        Ga = _full_wedderburn_gram(ps, n_strands_a, Q_50_DIGIT_STR)
+        # Reuse Hoefsmit cache for both supply vector + Gram.
+        cache_a = _hoefsmit_f64_matrices(n_strands_a, q_0_for_cache)
+        ta = _klr_positive_supply_vector(
+            ps, n_strands_a, Q_50_DIGIT_STR, hoefsmit_cache=cache_a
+        )
+        ta_legacy = np.array([p["full"] for p in ps], dtype=float)
+        Ga = _full_wedderburn_gram(
+            ps, n_strands_a, Q_50_DIGIT_STR, hoefsmit_cache=cache_a
+        )
         ntarget_a = float(ta.sum() * 0.5)
         try:
-            ra = solve_operator_selection_lp(ta, Ga, ntarget_a).to_dict()
+            ra = solve_operator_selection_lp(
+                ta, Ga, ntarget_a, M_bound=0.0
+            ).to_dict()
         except Exception as e:
             lp_results_per_atom.append({
                 "atom": atom_name, "Z": Za, "N": Na,
@@ -353,8 +443,10 @@ def main() -> int:
             "atom": atom_name, "Z": Za, "N": Na,
             "n_pairs": npairs_a,
             "n_strands": n_strands_a,
-            "t_min": float(ta.min()),
-            "t_max": float(ta.max()),
+            "t_min_klr": float(ta.min()),
+            "t_max_klr": float(ta.max()),
+            "t_legacy_matrix_entries_min": float(ta_legacy.min()),
+            "t_legacy_matrix_entries_max": float(ta_legacy.max()),
             "primal_obj": float(ra["primal_obj"]),
             "dual_obj": float(ra["dual_obj"]),
             "duality_gap": float(ra["duality_gap"]),
@@ -462,58 +554,37 @@ def main() -> int:
         .add_parameter("delta_I_minimal", "σ_2 σ_4 σ_2")
     )
 
-    # LP behaviour assertions.  With the FULL H_n Wedderburn Gram on
-    # the pair-operator algebra (no diagonal-only proxy), strong
-    # duality holds for atoms whose pair-amplitude vector ``t`` is
-    # *componentwise non-negative* (single-pair atoms: proton,
-    # neutron).  For multi-pair atoms with mixed-sign ``t``
-    # (deuteron, triton), the LP `min ⟨t, x⟩ s.t. Σx = n_target,
-    # G x ≥ 0, x_i ≥ -M` is unbounded along the negative-``t``
-    # directions: the solver drives ``x_i → -M`` for any ``i`` with
-    # ``t_i > 0`` to lower the objective without immediately
-    # violating ``G x ≥ 0``.  This is a real finding about
-    # `prop:knot-operator-lp-selection` — the LP as currently
-    # formulated needs an additional sign / non-negativity
-    # constraint to be well-posed for multi-pair atoms.  We assert:
-    #   (1) strong duality holds whenever ``t`` is non-negative,
-    #   (2) the LP solver reports a *bounded-by-M_bound* primal
-    #       (i.e. it identified the unbounded direction and stopped
-    #       at the lower bound) for mixed-sign atoms.
+    # LP behaviour assertions.  With the KLR-positive supply vector
+    # (t_k = tr_M(σ_i σ_j) ≥ 0 by KLR positivity on the canonical-
+    # basis cone) and the full H_n Wedderburn Gram on the pair-
+    # operator algebra, strong duality holds on every atom in the
+    # computable sweep.
     n_strong_dual = sum(
         1 for r in lp_results_per_atom
         if r.get("n_pairs", 0) > 0
-        and r.get("t_min", 0.0) >= -1e-12
         and r.get("duality_gap", float("inf")) < 1e-6
     )
-    n_expected_strong = sum(
-        1 for r in lp_results_per_atom
-        if r.get("n_pairs", 0) > 0 and r.get("t_min", 0.0) >= -1e-12
+    n_expected = sum(
+        1 for r in lp_results_per_atom if r.get("n_pairs", 0) > 0
     )
     w.add_assertion(
-        "lp_strong_duality_when_t_nonneg",
+        "lp_strong_duality_all_klr_atoms",
         float(n_strong_dual),
-        float(n_expected_strong),
+        float(n_expected),
         tolerance=0.5,
     )
-    # M_bound boundary detection: for mixed-sign-t atoms the primal
-    # should be near -d * M_bound * |t_negative_max| (one variable
-    # per negative-t direction pinned at -M).  We just check the
-    # primal magnitude exceeds the unconstrained-LP scale to
-    # distinguish from a numerical bug.
-    n_bounded_unbdd = sum(
+    # KLR positivity assertion: every atom's KLR supply vector
+    # min(t) ≥ -ε (tiny numerical noise tolerated; substantive
+    # negative would indicate a non-canonical-basis pair or a bug).
+    n_klr_positive = sum(
         1 for r in lp_results_per_atom
         if r.get("n_pairs", 0) > 0
-        and r.get("t_min", 0.0) < -1e-12
-        and abs(r.get("primal_obj", 0.0)) > 1e3  # vs ~1 unit otherwise
-    )
-    n_expected_unbdd = sum(
-        1 for r in lp_results_per_atom
-        if r.get("n_pairs", 0) > 0 and r.get("t_min", 0.0) < -1e-12
+        and r.get("t_min_klr", -1.0) >= -1e-9
     )
     w.add_assertion(
-        "lp_M_bound_detected_when_t_mixed_sign",
-        float(n_bounded_unbdd),
-        float(n_expected_unbdd),
+        "klr_positivity_supply_vector_all_atoms",
+        float(n_klr_positive),
+        float(n_expected),
         tolerance=0.5,
     )
     # Weinberg verdict: best rel_err < 2.5% (the σ_2 σ_4 σ_2 baseline)
