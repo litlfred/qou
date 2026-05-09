@@ -474,6 +474,7 @@ export default chapter({
         "alpha-5-jm-central-empirical-findings",
         "lp-dual-isospin-invariance",
         "spin-involution-lp-dual-invariance",
+        "lp-dual-scaling-conjecture",
         "wigner-2-coefficient",
         "mass-endomorphism-tower",
         "mass-endomorphism-jet-tower",
