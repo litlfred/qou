@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-09T19:53:00.311374+00:00",
-  "commitSha": "3a1a77065652888bd87dd81a5e15d01375d2b556",
+  "computedAt": "2026-05-09T19:53:39.402667+00:00",
+  "commitSha": "3615fc9cf5afcf1b02dac78cdb81db3a5912070f",
   "assertions": [
     {
       "name": "kite_power_drops_under_cancel[proton]",
@@ -34,11 +34,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6048,
+  "durationMs": 5738,
   "computation": "kite-tail-reconciliation",
   "scriptFile": "kite_tail_reconciliation.py",
   "scriptHash": "e76f4f36f73d",
-  "scriptCommitSha": "3a1a77065652888bd87dd81a5e15d01375d2b556",
+  "scriptCommitSha": "3615fc9cf5afcf1b02dac78cdb81db3a5912070f",
   "description": "Reconciles PR #546 round-3's 'kite-tail FALSIFIED-naive-form' status against PR #545's D(u) = 2^(2A+1)·u^shift·(1+u²)^(3A-1) prediction.  Two findings: (1) the kite-power discrepancy is a sympy-reduction artefact — sp.together gives kite^(3A-1), sp.cancel absorbs one (u²+1) factor (numerator + denominator share one) lowering the apparent kite power.  Round-3's kite-power discrepancy is therefore EXPLAINED.  (2) Deuteron (A=2) matches PR #545's full D(u) prediction in the un-reduced sp.together form (shift=40, kite=5, 2-exp=5).  Proton/neutron (A=1) have integer-prefactor and neutron-shift discrepancies remaining; likely a different braid encoding at A=1 between markov_peel.atom_braid_word_3A and PR #545's derivation.",
   "contentBlock": "prop:full-pole-structure-mass-trace",
   "auditOnly": "docs/audits/2026-05-09-kite-tail-reconciliation.md",
