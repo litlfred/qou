@@ -38,6 +38,7 @@ Output: `delta-lambda-2row-stratum.witness.json`.
 """
 from __future__ import annotations
 
+import functools
 import json
 import sys
 from datetime import datetime, timezone
@@ -59,9 +60,16 @@ Q0 = mp.mpf(str(Q_MP))
 
 
 # ── Reuse partition + atom data from Proposal 1 ────────────────
-M_E_MEV = mp.mpf("0.51099895")
-M_P_MEV = mp.mpf("938.27208816")
-M_N_MEV = mp.mpf("939.56542052")
+# Per Copilot PR #619 review: import CAL-3 constants from
+# experimental_constants module, not hardcoded.
+from experimental_constants import (  # noqa: E402
+    M_E_MEV as _M_E_MEV_FLOAT,
+    M_P_MEV as _M_P_MEV_FLOAT,
+    M_N_MEV as _M_N_MEV_FLOAT,
+)
+M_E_MEV = mp.mpf(str(_M_E_MEV_FLOAT))
+M_P_MEV = mp.mpf(str(_M_P_MEV_FLOAT))
+M_N_MEV = mp.mpf(str(_M_N_MEV_FLOAT))
 
 ATOMS_CODATA = {
     # Anchors (LO exact by construction; ΔM = 0; included for sector-mass
@@ -99,15 +107,26 @@ def specht_dim(lam: tuple[int, ...]) -> int:
     return factorial(n) // prod
 
 
+@functools.lru_cache(maxsize=None)
+def _nfac_q_at_q0(n: int) -> mp.mpf:
+    if n <= 0:
+        return mp.mpf(1)
+    denom = Q0 - 1 / Q0
+    val = mp.mpf(1)
+    for k in range(1, n + 1):
+        val *= (Q0 ** k - 1 / Q0 ** k) / denom
+    return val
+
+
+@functools.lru_cache(maxsize=None)
 def dim_q_at_q0(lam: tuple[int, ...]) -> mp.mpf:
-    """dim_q(λ) at q_0 (uses mpmath end-to-end)."""
+    """dim_q(λ) at q_0 (mpmath end-to-end).  Cached + reuses [n]_q!
+    factorial cache (Gemini PR #619 review)."""
     n = sum(lam)
     if n == 0:
         return mp.mpf(1)
     denom = Q0 - 1 / Q0
-    nfac_q = mp.mpf(1)
-    for k in range(1, n + 1):
-        nfac_q *= (Q0 ** k - 1 / Q0 ** k) / denom
+    nfac_q = _nfac_q_at_q0(n)
     prod_h = mp.mpf(1)
     for h in hook_lengths(lam):
         prod_h *= (Q0 ** h - 1 / Q0 ** h) / denom
@@ -274,6 +293,26 @@ def analyse_2row_sector(atom: str, atom_data: dict) -> dict:
 
 
 def main() -> int:
+    # Construct WitnessBuilder up front to capture full durationMs
+    # (Copilot PR #619 review).  Engine "python": tier-2 chi data is
+    # float64 from wedderburn_jones_markov; per-stratum analysis is
+    # mostly mpmath but inherits float64 precision.
+    from witness_base import WitnessBuilder
+    w = (WitnessBuilder("delta-lambda-2row-stratum", engine="python")
+         .set_description(
+            "2-row Wedderburn stratum analysis follow-up to Proposal 1's "
+            "empirical Δ_λ tabulation. The dominant block per atom always "
+            "lands in the 2-row stratum; this script (a) measures what "
+            "fraction of |tr_M| the 2-row sector carries vs > 2-row, "
+            "(b) restricts the Δ_λ ansätze to the 2-row stratum, and "
+            "(c) tests several selector hypotheses inside 2-row to find "
+            "the categorical rule that picks (5,1) for D, (6,3) for "
+            "T+³He, (9,3) for ⁴He.  Mixed-precision: tier-2 chi data is "
+            "float64 (numpy); per-row arithmetic uses mpmath but does "
+            "not exceed float64 input precision."
+         )
+         .set_content_block("prop:rho-k-h3a-refinement"))
+
     print("=" * 96)
     print("  Δ_λ 2-row Wedderburn stratum analysis (Proposal 1 follow-up)")
     print("=" * 96)
@@ -358,19 +397,7 @@ def main() -> int:
         row += f" [{n_match}/{len(actual_lambda)} match]"
         print(row)
 
-    from witness_base import WitnessBuilder
-    w = (WitnessBuilder("delta-lambda-2row-stratum", engine="mpmath")
-         .set_description(
-            "2-row Wedderburn stratum analysis follow-up to Proposal 1's "
-            "empirical Δ_λ tabulation. The dominant block per atom always "
-            "lands in the 2-row stratum; this script (a) measures what "
-            "fraction of |tr_M| the 2-row sector carries vs > 2-row, "
-            "(b) restricts the Δ_λ ansätze to the 2-row stratum, and "
-            "(c) tests several selector hypotheses inside 2-row to find "
-            "the categorical rule that picks (5,1) for D, (6,3) for "
-            "T+³He, (9,3) for ⁴He."
-         )
-         .set_content_block("prop:rho-k-h3a-refinement"))
+    # WitnessBuilder constructed at start of main(); now populate.
     w.parameters.update({
         "q_0": str(Q0),
         "m_e_MeV": str(M_E_MEV),

@@ -72,18 +72,22 @@ def _compute_and_eval(args: tuple) -> dict:
     if not free:
         val = complex(chi_sym)
         return {"atom": atom, "partition": list(partition),
-                "chi_q_at_q0_50dps": str(mp.mpf(val.real)),
+                "chi_q_at_q0_50dps": mp.nstr(mp.mpf(val.real), 50,
+                                              strip_zeros=False),
                 "newly_computed": sym_str if crossings is not None else None}
     q_sym = free[0]
     chi_func = sp.lambdify(q_sym, chi_sym, modules=["mpmath"])
     q0 = mp.mpf(Q_MP_STR)
     val = chi_func(q0)
     if hasattr(val, "imag") and abs(val.imag) > mp.mpf("1e-30"):
-        s = str(val.real)
+        re_val = val.real
     elif hasattr(val, "real"):
-        s = str(val.real)
+        re_val = val.real
     else:
-        s = str(val)
+        re_val = val
+    # Per Copilot PR #619 review: trim to exactly 50 dps via mp.nstr
+    # so the field name matches stored precision (was ~60 dps).
+    s = mp.nstr(re_val, 50, strip_zeros=False)
     return {"atom": atom, "partition": list(partition),
             "chi_q_at_q0_50dps": s,
             "newly_computed": sym_str if crossings is not None else None}
@@ -125,6 +129,22 @@ def _gather_or_compute_chi(atom: str, info: dict) -> list[tuple]:
 
 
 def main() -> int:
+    # Construct WitnessBuilder up front to capture full durationMs
+    # (Copilot PR #619 review).
+    from witness_base import WitnessBuilder
+    w = (WitnessBuilder("chi-lambda-at-q0", engine="mpmath")
+         .set_description(
+            "Numeric cache of χ^λ(β_K) at q_0 to 50 dps for atoms "
+            "{D, T, ³He}, evaluated from chi-{atom}-h{n}.witness.json "
+            "in parallel via multiprocessing.Pool. ⁴He is excluded — "
+            "its chi-helium-4-h12.witness.json already carries a "
+            "per_partition table with numeric chi_q_at_q0. "
+            "Pre-computes the symbolic-to-numeric step for fast "
+            "downstream reuse by delta_lambda_empirical_tabulation.py. "
+            "Output strings trimmed to exactly 50 dps via mp.nstr."
+         )
+         .set_content_block("prop:hecke-branching-trace-decomposition"))
+
     print("=" * 96)
     print("  χ^λ(β_K)(q_0) numeric cache builder (parallel)")
     print("=" * 96)
@@ -204,18 +224,7 @@ def main() -> int:
         tag = "✓" if float(rel_err) < 1e-15 else "✗"
         print(f"    {tag} {atom} λ={ref_entry['partition']}: rel_err = {mp.nstr(rel_err, 6)}")
 
-    from witness_base import WitnessBuilder
-    w = (WitnessBuilder("chi-lambda-at-q0", engine="mpmath")
-         .set_description(
-            "Numeric cache of χ^λ(β_K) at q_0 to 50 dps for atoms "
-            "{D, T, ³He}, evaluated from chi-{atom}-h{n}.witness.json "
-            "in parallel via multiprocessing.Pool. ⁴He is excluded — "
-            "its chi-helium-4-h12.witness.json already carries a "
-            "per_partition table with numeric chi_q_at_q0. "
-            "Pre-computes the symbolic-to-numeric step for fast "
-            "downstream reuse by delta_lambda_empirical_tabulation.py."
-         )
-         .set_content_block("prop:hecke-branching-trace-decomposition"))
+    # WitnessBuilder constructed at start of main(); now populate.
     w.parameters.update({
         "q_0": Q_MP_STR,
         "precision_dps": 50,
