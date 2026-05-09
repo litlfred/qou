@@ -23,6 +23,9 @@ import QOU.BraidKnot.HopfBindingK
 import QOU.BraidKnot.LightNucleus
 import QOU.BraidKnot.WitnessR5Full
 import QOU.BraidKnot.Helium3Witness
+import QOU.BraidKnot.DeuteronWitness
+import QOU.BraidKnot.TritiumWitness
+import QOU.BraidKnot.MassFormulaCategorical
 
 /-!
 # BraidKnot — Module Index
