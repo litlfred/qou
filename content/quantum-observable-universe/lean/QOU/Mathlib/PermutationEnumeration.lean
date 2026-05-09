@@ -108,4 +108,41 @@ theorem simpleTransposition_sq {n : ℕ} (i : Fin n) (h : i.val + 1 < n) :
   unfold simpleTransposition
   exact Equiv.swap_mul_self i ⟨i.val + 1, h⟩
 
+/-! ### Coxeter length via inversion count
+
+    The Coxeter length `ℓ(w) ∈ ℕ` of a permutation `w ∈ S_n`
+    equals the number of inversions of `w` (= pairs `i < j`
+    with `w i > w j`).  This is a standard combinatorial
+    invariant; equivalent to the length of any reduced
+    expression for `w` in the simple Coxeter generators. -/
+
+/-- The Coxeter length of `w ∈ S_n`: the number of pairs `i < j`
+    with `w i > w j`. -/
+def coxeterLength {n : ℕ} (perm : Equiv.Perm (Fin n)) : ℕ :=
+  (Finset.univ.filter (fun p : Fin n × Fin n =>
+    p.1 < p.2 ∧ perm p.1 > perm p.2)).card
+
+/-- The identity has Coxeter length 0 (no inversions). -/
+theorem coxeterLength_one (n : ℕ) :
+    coxeterLength (1 : Equiv.Perm (Fin n)) = 0 := by
+  unfold coxeterLength
+  simp
+  -- 1 i = i, so 1 i > 1 j iff i > j; with i < j, this is false
+  apply Finset.filter_false_of_mem
+  intro p _ ⟨h1, h2⟩
+  simp at h2
+  exact absurd h1 (not_lt.mpr (le_of_lt h2))
+
+/-- **Length function on `Fin n.factorial` via permutation
+    enumeration**: composes `permutationEnumeration` with
+    `coxeterLength`. -/
+noncomputable def lengthFn (n : ℕ) (i : Fin n.factorial) : ℕ :=
+  coxeterLength (permutationEnumeration n i)
+
+/-- Length-zero index always exists in `lengthFn n` for `n ≥ 0`,
+    via the identity permutation's preimage under
+    `permutationEnumeration`. -/
+noncomputable def identityIndex (n : ℕ) : Fin n.factorial :=
+  (permutationEnumeration n).symm 1
+
 end QOU.Mathlib.PermutationEnumeration
