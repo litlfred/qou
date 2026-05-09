@@ -33,9 +33,17 @@ import Mathlib.Data.List.Basic
 namespace QOU.ParticleInteractions
 
 /-- Abstract partition carrier (full structure in
-    `Mathlib.Combinatorics.Young.YoungDiagram`).  Mirrored from
-    `cpt-orbit-closure-density.lean` so this file is independent
-    of import order. -/
+    `Mathlib.Combinatorics.Young.YoungDiagram`).
+
+    Defined here in this namespace's own naming so that
+    `mass-volume-factorization.lean` and
+    `cpt-orbit-closure-density.lean` can each compile
+    independently of import order.  The two declarations are
+    intended to be definitionally identified once a single
+    `Partition` carrier is established in
+    `cpt-orbit-closure-density.lean` (deduplication tracked as a
+    follow-up: `Mathlib.Combinatorics.Young.YoungDiagram` is the
+    long-term target). -/
 constant PartitionMVF (n : ℕ) : Type
 
 /-- The Type-B fold involution on partitions (transpose). -/

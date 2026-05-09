@@ -45,7 +45,7 @@ def neutronCount (ord : NuclearOrdering) : ℕ :=
 theorem garside_crossing_count (A : ℕ) (hA : 2 ≤ A) :
     A * (A - 1) / 2 = Nat.choose A 2 := by
   -- Ref: [manuscript] Definition def:typed-garside-element
-  sorry
+  exact (Nat.choose_two_right A).symm
 
 /-- The typed Garside element has the standard Garside element Δ_A
     as its leading term (highest degree-lex word). -/
