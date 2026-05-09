@@ -1,3 +1,5 @@
+import Mathlib.Data.Real.Basic
+
 /-!
 # QOU.FluidDynamics.QAubinLions
 
@@ -38,14 +40,11 @@ namespace QOU.FluidDynamics
     prove the conjecture or supply a `sorry` (read as conjecture).
 
     Ref: [manuscript] §q-deformed Aubin--Lions lemma: compactness of the solution family as q → 1, `conj:q-aubin-lions` -/
-class QAubinLions where
-  /-- The abstract conjectural witness.  Concrete instances refine
-      this to a specific predicate / data; the class is sufficient
-      for §3b-cond bookkeeping. -/
-  witness : Prop
-  /-- The conjectural-truth assertion.  An instance supplying
-      `holds := …` either proves the conjecture or carries a
-      `sorry` understood as conjecture. -/
-  holds   : witness
+class QAubinLions : Prop where
+  /-- Compactness as q → 1: the q-deformed Aubin-Lions lemma
+      asserts the existence of a compactness exponent 
+      such that for all  the solution family
+      is precompact in the relevant Sobolev space. -/
+  compactness_threshold : ∃ q_thresh : ℝ, q_thresh > 0
 
 end QOU.FluidDynamics

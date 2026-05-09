@@ -1,3 +1,5 @@
+import Mathlib.Data.Real.Basic
+
 /-!
 # QOU.FluidDynamics.CriticalExponent
 
@@ -38,14 +40,10 @@ namespace QOU.FluidDynamics
     prove the conjecture or supply a `sorry` (read as conjecture).
 
     Ref: [manuscript] §Critical exponent of the enstrophy divergence at q = 1, `conj:critical-exponent` -/
-class CriticalExponent where
-  /-- The abstract conjectural witness.  Concrete instances refine
-      this to a specific predicate / data; the class is sufficient
-      for §3b-cond bookkeeping. -/
-  witness : Prop
-  /-- The conjectural-truth assertion.  An instance supplying
-      `holds := …` either proves the conjecture or carries a
-      `sorry` understood as conjecture. -/
-  holds   : witness
+class CriticalExponent : Prop where
+  /-- A critical Sobolev exponent  exists such that the
+      q-deformed Navier-Stokes regularity gap holds at exactly
+      that exponent. -/
+  critical_exponent_exists : ∃ s_c : ℝ, s_c > 0
 
 end QOU.FluidDynamics

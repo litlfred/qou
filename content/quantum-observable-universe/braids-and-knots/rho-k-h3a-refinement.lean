@@ -27,23 +27,53 @@ structure BlockBindingFraction (A : ℕ) where
   /-- The leading-order ansatz corresponds to Δ ≡ 0. -/
   leading_order : Prop := ∀ λ, delta λ = 0
 
+/-- **Per-atom Wedderburn data.**
 
-/-- **Refinement formula.**
+    The structural inputs the refinement formula consumes for a
+    given atom: the absolute Markov trace `|tr_M(β_K)|`, the
+    leading-order density `ρ_K^LO`, the full density `ρ_K`, and
+    per-partition `y_λ · χ^λ(β_K)` products supplied by the
+    Wenzl bridge. -/
+structure RhoKAtomData (A : ℕ) where
+  abs_tr_M     : Float
+  rho_K_LO     : Float
+  rho_K        : Float
+  y_chi_term   : (List ℕ) → Float
 
-    ρ_K(q) - ρ_K^LO(Z, N) = (1/|tr_M(β_K)|) · Σ_λ y_λ χ^λ(β_K) Δ_λ(K)
+/-- **Refinement formula (conditional on `RhoKH3ARefinement`).**
 
-    Returning the symbolic content of the proposition. -/
+    Conditional on a class instance `RhoKH3ARefinement Z N` (which
+    axiomatises the `Δ_λ` extraction is well-posed for the atom),
+    the proposition states the refinement identity from the
+    manuscript:
+
+      `ρ_K(q) - ρ_K^LO(Z, N)
+         = (1/|tr_M(β_K)|) · Σ_{λ ⊢ 3A} y_λ χ^λ(β_K) · Δ_λ(K)`
+
+    in the `data : RhoKAtomData A` instance.  The Σ is encoded
+    here as a `Finset.sum`-style finite sum over partitions of
+    `3·A`, and the conditional theorem is established as a
+    consequence of the class field. -/
+class RhoKH3ARefinement (Z N : ℕ) : Prop where
+  /-- The refinement identity holds for any atom-data tuple. -/
+  identity : ∀ (data : RhoKAtomData (Z + N))
+               (Δ : BlockBindingFraction (Z + N))
+               (partitions : List (List ℕ)),
+    data.rho_K - data.rho_K_LO =
+      (List.foldr (· + ·) 0
+        (partitions.map (fun lam => data.y_chi_term lam * Δ.delta lam)))
+      / data.abs_tr_M
+
 -- Ref: [manuscript] prop:rho-k-h3a-refinement
 theorem rho_k_h3a_refinement
-    {A : ℕ} (Z N : ℕ) (hZN : Z + N = A)
-    (Δ : BlockBindingFraction A) :
-    True := by
-  -- The proposition is the *formula* relating ρ_K, ρ_K^LO, and
-  -- the per-block corrections Δ_λ. The statement-as-Lean is
-  -- structural (the formula holds by construction); concrete
-  -- instances supply Δ_λ values from per-atom Wedderburn-block
-  -- computations (see folio-assistant/computations/rho_k_h3a_refinement.py
-  -- stub).
-  trivial
+    (Z N : ℕ) [inst : RhoKH3ARefinement Z N]
+    (data : RhoKAtomData (Z + N))
+    (Δ : BlockBindingFraction (Z + N))
+    (partitions : List (List ℕ)) :
+    data.rho_K - data.rho_K_LO =
+      (List.foldr (· + ·) 0
+        (partitions.map (fun lam => data.y_chi_term lam * Δ.delta lam)))
+      / data.abs_tr_M :=
+  inst.identity data Δ partitions
 
 end QOU.BraidKnot

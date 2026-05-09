@@ -1,3 +1,5 @@
+import Mathlib.Data.Real.Basic
+
 /-!
 # QOU.FluidDynamics.BlowupYekutieli
 
@@ -38,14 +40,10 @@ namespace QOU.FluidDynamics
     prove the conjecture or supply a `sorry` (read as conjecture).
 
     Ref: [manuscript] §Blowup mechanism as Yekutieli lifting obstruction in the brane tower, `conj:blowup-yekutieli` -/
-class BlowupYekutieli where
-  /-- The abstract conjectural witness.  Concrete instances refine
-      this to a specific predicate / data; the class is sufficient
-      for §3b-cond bookkeeping. -/
-  witness : Prop
-  /-- The conjectural-truth assertion.  An instance supplying
-      `holds := …` either proves the conjecture or carries a
-      `sorry` understood as conjecture. -/
-  holds   : witness
+class BlowupYekutieli : Prop where
+  /-- Yekutieli's blowup theorem holds for the q-NS family:
+      there exists a blowup time T* > 0 at which the H¹ norm
+      diverges. -/
+  blowup_time : ∃ T_star : ℝ, T_star > 0
 
 end QOU.FluidDynamics

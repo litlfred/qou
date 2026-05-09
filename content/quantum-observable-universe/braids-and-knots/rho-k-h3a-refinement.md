@@ -4,7 +4,7 @@ and let $\mathrm{tr}_M$ denote the canonical Markov trace on $H_{3A}(q)$
 ([gs-graded Markov trace existence](#prop:gs-graded-markov-trace-existence)).
 Then the categorical density
 $\rho_K = M(K) / (m_e \cdot |\mathrm{tr}_M(\beta_K)|)$
-admits the **Wedderburn-Schur decomposition*
+admits the **Wedderburn-Schur decomposition**
 
 $$
   \rho_K(q)

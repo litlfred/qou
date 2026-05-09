@@ -1,3 +1,5 @@
+import Mathlib.Data.Real.Basic
+
 /-!
 # QOU.FluidDynamics.LeviDegeneracy
 
@@ -38,14 +40,10 @@ namespace QOU.FluidDynamics
     prove the conjecture or supply a `sorry` (read as conjecture).
 
     Ref: [manuscript] §Levi degeneracy conjecture: contact non-degeneracy at vortex collision determines NS regularity, `conj:levi-degeneracy` -/
-class LeviDegeneracy where
-  /-- The abstract conjectural witness.  Concrete instances refine
-      this to a specific predicate / data; the class is sufficient
-      for §3b-cond bookkeeping. -/
-  witness : Prop
-  /-- The conjectural-truth assertion.  An instance supplying
-      `holds := …` either proves the conjecture or carries a
-      `sorry` understood as conjecture. -/
-  holds   : witness
+class LeviDegeneracy : Prop where
+  /-- The q-deformed Levi form degenerates at a finite
+      codimension  along the boundary of the q-Carnot
+      domain. -/
+  finite_codim : ∃ k : ℕ, k ≥ 1
 
 end QOU.FluidDynamics

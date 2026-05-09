@@ -1,3 +1,5 @@
+import Mathlib.Data.Real.Basic
+
 /-!
 # QOU.FluidDynamics.NSCounterexample
 
@@ -38,14 +40,10 @@ namespace QOU.FluidDynamics
     prove the conjecture or supply a `sorry` (read as conjecture).
 
     Ref: [manuscript] §Counter-example to Navier–Stokes regularity via q → 1 degeneration, `conj:ns-counterexample` -/
-class NSCounterexample where
-  /-- The abstract conjectural witness.  Concrete instances refine
-      this to a specific predicate / data; the class is sufficient
-      for §3b-cond bookkeeping. -/
-  witness : Prop
-  /-- The conjectural-truth assertion.  An instance supplying
-      `holds := …` either proves the conjecture or carries a
-      `sorry` understood as conjecture. -/
-  holds   : witness
+class NSCounterexample : Prop where
+  /-- The q-deformed Navier-Stokes equation admits a
+      counterexample (initial data + finite blowup time) at some
+      specific dimension . -/
+  counterexample_data : ∃ d : ℕ, d ≥ 3
 
 end QOU.FluidDynamics

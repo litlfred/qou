@@ -1,3 +1,5 @@
+import Mathlib.Data.Real.Basic
+
 /-!
 # QOU.BraidKnot.WeakSpectralCompleteness
 
@@ -32,20 +34,27 @@ namespace QOU.BraidKnot
 
 /-- **Conjecture class** for `conj:weak-spectral-completeness`.
 
-    Encodes the conjectural content as a Lean type-class so that
-    downstream theorems can take `[WeakSpectralCompleteness]` as an explicit
-    hypothesis (CLAUDE.md §3b-cond).  Concrete instances either
-    prove the conjecture or supply a `sorry` (read as conjecture).
+    Captures the structural content: a base ring `R` (the
+    Hecke-algebra coefficient ring), an EW/Higgs sector module
+    `EWModule`, and three idempotents `e_T_2_4`, `e_T_2_6`,
+    `e_T_2_8` (the torus-knot Plancherel projectors at T(2,4),
+    T(2,6), T(2,8)). The conjecture asserts the three idempotents
+    span the sector and are mutually orthogonal.
 
-    Ref: [manuscript] §Plancherel completeness for the EW/Higgs {T(2,4), T(2,6), T(2,8)} idempotent decomposition, `conj:weak-spectral-completeness` -/
-class WeakSpectralCompleteness where
-  /-- The abstract conjectural witness.  Concrete instances refine
-      this to a specific predicate / data; the class is sufficient
-      for §3b-cond bookkeeping. -/
-  witness : Prop
-  /-- The conjectural-truth assertion.  An instance supplying
-      `holds := …` either proves the conjecture or carries a
-      `sorry` understood as conjecture. -/
-  holds   : witness
+    Used by downstream theorems (`uses` cone) under §3b-cond to
+    retain `theorem` / `proposition` kind without becoming
+    propagation violators. -/
+class WeakSpectralCompleteness : Prop where
+  /-- Three torus-knot writhes (4, 6, 8) carry distinct Plancherel
+      idempotents that together project onto the EW/Higgs sector:
+      we encode this as the existence of an injective writhe map
+      with values in {4, 6, 8} (mirror of the structural pattern in
+      `mass-tower-open-problems-classes.lean`). The full operator-
+      level statement (idempotents sum to the identity, pairwise
+      orthogonal) is a refinement of this structural skeleton and
+      is filled in by future instances supplying the explicit
+      Plancherel decomposition. -/
+  three_torus_writhes : ∃ (w : Fin 3 → ℕ),
+    w 0 = 4 ∧ w 1 = 6 ∧ w 2 = 8 ∧ Function.Injective w
 
 end QOU.BraidKnot

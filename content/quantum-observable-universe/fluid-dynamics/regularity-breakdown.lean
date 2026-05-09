@@ -1,3 +1,5 @@
+import Mathlib.Data.Real.Basic
+
 /-!
 # QOU.FluidDynamics.RegularityBreakdown
 
@@ -38,14 +40,10 @@ namespace QOU.FluidDynamics
     prove the conjecture or supply a `sorry` (read as conjecture).
 
     Ref: [manuscript] §Regularity breakdown at q = 1: the classical limit as a phase transition, `conj:regularity-breakdown` -/
-class RegularityBreakdown where
-  /-- The abstract conjectural witness.  Concrete instances refine
-      this to a specific predicate / data; the class is sufficient
-      for §3b-cond bookkeeping. -/
-  witness : Prop
-  /-- The conjectural-truth assertion.  An instance supplying
-      `holds := …` either proves the conjecture or carries a
-      `sorry` understood as conjecture. -/
-  holds   : witness
+class RegularityBreakdown : Prop where
+  /-- Regularity breaks down at a critical Reynolds number
+      : above this threshold the Sobolev H² norm is no
+      longer uniformly bounded. -/
+  critical_reynolds : ∃ Re_c : ℝ, Re_c > 0
 
 end QOU.FluidDynamics

@@ -261,11 +261,12 @@ the trust basis from `derivation_chain.py`, and the audit verdict.
   `vertex-algebra-relations.lean`.
 * **Trust**: AXIOM
   (`derivation_chain.FirstPrinciple.FINITE_JONES`).
-* **Verdict**: ✅ Clean axiom; ⚠️ but actual **numeric evaluation**
-  via `markov_trace_canonical.py` and `markov_trace_recursive.py`
-  uses the symbolic `z_markov` from `hecke_symbolic.py`, while
-  `atomic_braid_mass_table.py` defines its own `Z_MARK = 1/(√q+1/√q)`
-  on line 66 — see convention table §4.
+* **Verdict**: ✅ Clean axiom. (Earlier note about `Z_MARK` vs
+  `z_markov` was withdrawn as a false positive — see F9, §4 C1, and
+  P2: both implement the same formula `1/(q^{1/2}+q^{-1/2})`; the
+  apparent difference was only between numerical engines (mpmath vs
+  sympy), not between definitions. Symbol-name unification is
+  cosmetic and not pursued here.)
 
 ---
 
@@ -519,7 +520,7 @@ on this branch.
 
 | # | Quantity | Site A | Definition A | Site B | Definition B | Severity | Canonical (proposed) |
 |---|----------|--------|--------------|--------|--------------|----------|----------------------|
-| C1 | $z$ for Markov skein | `atomic_braid_mass_table.py:66` | `Z_MARK = 1/(√q + 1/√q)` (= $1/[2]_{q^{1/2}}$) | `markov_trace_canonical.py:45` | imports `z_markov` from `hecke_symbolic` (the $q − q^{-1}$ form) | numerical | One symbol, one definition module‑wide. Fix `Z_MARK` to import from `hecke_symbolic`. |
+| C1 | $z$ for Markov skein | ~~`atomic_braid_mass_table.py:66`~~ | ~~`Z_MARK = 1/(√q + 1/√q)`~~ | ~~`markov_trace_canonical.py:45`~~ | ~~imports `z_markov` from `hecke_symbolic`~~ | ~~numerical~~ | **WITHDRAWN — false positive (see F9).** Both `Z_MARK` (mpmath) and `z_markov` (sympy) implement `1/(q^{1/2}+q^{-1/2})`; only the numerical engine differs. Symbol-name unification is cosmetic. |
 | C2 | $h$ | `q_parameter.py:42` | `HA = q − q⁻¹` | `DERIVATION-STATUS.md §41` | uses `h = q + q⁻¹ = [2]_q` interchangeably | structural | Reserve `h` for $q+q^{-1}$ everywhere; rename `HA` to `delta_q`. |
 | C3 | $[2]_q$ | `q_parameter.py:45` | `TWO_Q = q + q⁻¹` | mixed elsewhere | sometimes `2*math.cos(...)` shortcut | cosmetic | Use `TWO_Q` (or `[2]_q` symbolic) only. |
 | C4 | $q_0$ numeric | `q_parameter.py:88` | string literal `"1.10997859555…"` (50 dps) | 20+ scripts/witnesses | hard‑coded `1.1097…` (4 dps) | numerical | Pin to the `Q0_FLOAT` import; CI rule via `witnessed-values` skill. |

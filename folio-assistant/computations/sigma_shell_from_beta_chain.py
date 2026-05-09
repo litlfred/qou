@@ -100,8 +100,12 @@ def evaluate_chi_lambda_on_atom(
     crossings = atomic_braid_to_crossings(Z, N, include_inter=include_inter)
     q = sp.Symbol("q", positive=True, real=True)
     chi = q_character_on_braid_word(partition, crossings, q)
-    q0 = sp.Float("1.1099785955541805", 50)
-    chi_val = sp.N(chi.subs(q, q0), 30)
+    # Use the canonical 50-dps q_0 string from q_parameter (not a 16-digit
+    # truncation); evalf at the active mpmath precision (50 dps by default)
+    # rather than a hardcoded 30 — per Gemini review on PR #564.
+    from q_parameter import Q_50_DIGIT_STR
+    q0 = sp.Float(Q_50_DIGIT_STR, mp.mp.dps)
+    chi_val = chi.subs(q, q0).evalf(mp.mp.dps)
     return mp.mpf(str(sp.re(chi_val)))
 
 

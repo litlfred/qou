@@ -29,44 +29,52 @@ import QOU.Basic
 
 namespace QOU.BraidKnot
 
-/-- **Closed-form σ_shell extraction.**
+/-- **Per-magic-anchor σ_shell data tuple.**
 
-    Inputs: AME 2020 chain Q-values reaching A_magic + per-link
-    categorical density changes δρ^(k) along the chain.
+    Encodes the inputs and output of the corrected categorical
+    closed-form: the Wedderburn coefficient `C_{λ_shell}(q_0)`,
+    the central weight `y_{λ_shell}(q_0)`, the absolute character
+    `|χ^{λ_shell}(β_K)|`, the absolute Markov trace `|tr_M(β_K)|`,
+    and the extracted shell magnitude `y_target(A_magic)`. -/
+structure SigmaShellAtMagic where
+  /-- Magic anchor (one of {2, 8, 20, 28, 50, 82, 126}). -/
+  A_magic   : ℕ
+  /-- Wedderburn coefficient at the staircase partition. -/
+  C_lambda  : Float
+  /-- Jones-Markov central coefficient `y_{λ_shell}(q_0)`. -/
+  y_lambda  : Float
+  /-- `|χ^{λ_shell}(β_K)|` at q_0. -/
+  abs_chi   : Float
+  /-- `|tr_M(β_K)|` at q_0. -/
+  abs_tr_M  : Float
+  /-- Extracted σ_shell magnitude. -/
+  y_target  : Float
 
-    Output: y_target(A_magic) = (Σ Q^net - Σ δρ·m_e·|tr_M|)
-                                / (m_e · |tr_M(β_ref)|).
+/-- **The closed-form extraction (conditional on the
+    `SigmaShellFromBetaChainDerivation` class).**
 
-    Returns the structural data; numeric extraction is deferred
-    to the Python consumer
-    `folio-assistant/computations/sigma_shell_from_beta_chain.py`. -/
-structure SigmaShellFromBetaChain where
-  /-- The magic anchor (one of {2, 8, 20, 28, 50, 82, 126}). -/
-  A_magic : ℕ
-  /-- Cumulative AME Q-value along the β-chain reaching the magic
-      anchor (positive convention: energetically downhill chain). -/
-  Q_beta_net_MeV : Float
-  /-- Cumulative constituent-walk piece
-      Σ_k δρ^(k) · m_e · |tr_M(β_k)|. -/
-  constituent_walk_MeV : Float
-  /-- The reference braid's |tr_M| value (typically free p or n). -/
-  abs_tr_M_ref : Float
+    Asserts the corrected categorical identity from
+    `docs/audits/sigma-shell-categorical-identification.md`:
 
+      `y_target(A_magic)
+         = C_{λ_shell}(q_0) · y_{λ_shell}(q_0) · |χ^{λ_shell}(β_K)|
+           / |tr_M(β_K)|`
 
-/-- **The closed-form extraction.**
+    The class wraps the conjectural identification of `λ_shell`
+    with the staircase partition of `3·A_magic`; the conditional
+    theorem then states the equation pointwise on
+    `data : SigmaShellAtMagic`. -/
+class SigmaShellFromBetaChainDerivation : Prop where
+  identity : ∀ (data : SigmaShellAtMagic),
+    data.y_target =
+      data.C_lambda * data.y_lambda * data.abs_chi / data.abs_tr_M
 
-    y_target(A_magic) = (Q_beta_net - constituent_walk) / (m_e · |tr_M_ref|).
-
-    Numeric value computed by the consumer; this lemma states
-    structural existence. -/
 -- Ref: [manuscript] prop:sigma-shell-from-beta-chain-derivation
 theorem sigma_shell_from_beta_chain
-    (data : SigmaShellFromBetaChain) :
-    True := by
-  -- Structural statement: given the chain data, y_target is
-  -- uniquely determined by the formula in the .md file. The
-  -- compute layer (sigma_shell_from_beta_chain.py stub) instantiates
-  -- this for each magic anchor.
-  trivial
+    [inst : SigmaShellFromBetaChainDerivation]
+    (data : SigmaShellAtMagic) :
+    data.y_target =
+      data.C_lambda * data.y_lambda * data.abs_chi / data.abs_tr_M :=
+  inst.identity data
 
 end QOU.BraidKnot

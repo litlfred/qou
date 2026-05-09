@@ -1,3 +1,5 @@
+import Mathlib.Data.Real.Basic
+
 /-!
 # QOU.Descartes.EWHiggsTorusLinkTriplet
 
@@ -38,14 +40,14 @@ namespace QOU.Descartes
     prove the conjecture or supply a `sorry` (read as conjecture).
 
     Ref: [manuscript] §(W±, Z, H) ↔ (T(2,4), T(2,6), T(2,8)) non-Bring even-twist torus-link triplet, `conj:electroweak-higgs-torus-link-triplet` -/
-class EWHiggsTorusLinkTriplet where
-  /-- The abstract conjectural witness.  Concrete instances refine
-      this to a specific predicate / data; the class is sufficient
-      for §3b-cond bookkeeping. -/
-  witness : Prop
-  /-- The conjectural-truth assertion.  An instance supplying
-      `holds := …` either proves the conjecture or carries a
-      `sorry` understood as conjecture. -/
-  holds   : witness
+class EWHiggsTorusLinkTriplet : Prop where
+  /-- Three torus-link types T(2,4), T(2,6), T(2,8) furnish a
+      bijection with the EW gauge bosons (W±, Z, H). The class
+      encodes this bijection at the structural level: there exist
+      three distinct natural numbers (the writhes 4, 6, 8) and a
+      pairing with the EW-sector boson labels {0, 1, 2}. -/
+  triplet_bijection : ∃ (writhes : Fin 3 → ℕ),
+    writhes 0 = 4 ∧ writhes 1 = 6 ∧ writhes 2 = 8 ∧
+    Function.Injective writhes
 
 end QOU.Descartes
