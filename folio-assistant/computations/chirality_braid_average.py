@@ -11,10 +11,11 @@ Per `2026-05-09-refocused-1ppb-workplan-v3.md` §3 item #3:
 
 Concrete formula:
 
-  ⟨c⟩_β  :=  Σ_λ  w_λ(q_0) · χ_λ(β; q_0)  /  Σ_λ  w_λ(q_0) · dim(λ)
+  ⟨c⟩_β  :=  Σ_λ  w_λ(q_0) · χ_λ(β; q_0)  /  Σ_λ  w_λ(q_0) · dim_q(λ)
 
-evaluated on the canonical T_w for the figure-eight knot 4_1 and
-the Borromean rings B_3 (= L6a4). Per the Type-B folding theorem,
+evaluated on the canonical T_w for the four hyperbolic 3-braid
+knots already tracked on main: 4_1 (figure-eight), 6_2 (deuteron),
+8_11 (tritium), L6a4 (Borromean). Per the Type-B folding theorem,
 self-conjugate partitions contribute 0 to the imbalance; only
 λ ≠ λ' pairs survive.
 
@@ -76,14 +77,20 @@ def is_self_conjugate(shape: tuple[int, ...]) -> bool:
 
 def chi_lambda_braid_word(shape: tuple[int, ...], word: list[int],
                             q_val: float) -> float:
-    """Evaluate χ_λ(β) at q = q_val via Hoefsmit seminormal matrices."""
+    """Evaluate χ_λ(β) at q = q_val via Hoefsmit seminormal matrices.
+
+    Per Gemini review on #588: T_i^{-1} = T_i − (q − q^{-1}) is the
+    Hecke quadratic relation. Using it directly avoids the cost +
+    numerical instability of np.linalg.inv(S).
+    """
     sigmas, dim, _ = build_seminormal_matrices(shape, sparse=False, q=q_val)
     if dim == 0:
         return 0.0
+    h = q_val - 1.0 / q_val
+    I = np.eye(dim)
     M = np.eye(dim)
     for i in word:
         gen = abs(i)
-        # 1-indexed in Hoefsmit; sigmas[gen-1] is σ_gen.
         S = sigmas[gen - 1]
         if hasattr(S, "toarray"):
             S = S.toarray()
@@ -91,7 +98,8 @@ def chi_lambda_braid_word(shape: tuple[int, ...], word: list[int],
         if i > 0:
             M = M @ S
         else:
-            M = M @ np.linalg.inv(S)
+            # Hecke quadratic: T_i^{-1} = T_i − h · I
+            M = M @ (S - h * I)
     return float(np.trace(M))
 
 
@@ -149,6 +157,10 @@ def main() -> int:
             "word": word,
             "c_full": c_full,
             "c_typeB_folded": c_fold,
+            # Per Copilot review on #588: store denom_fold so the
+            # well-defined assertion can check it directly.
+            "denom_fold": denom_fold,
+            "denom_full": denom_full,
             "per_partition": per_lam,
         })
         print(f"  {name:<20} {c_full:>14.10f} {c_fold:>16.10f}")
@@ -180,25 +192,26 @@ def main() -> int:
         ])
         .add_data("knots", rows)
         .add_assertion(
-            "type_b_fold_well_defined",
-            # Folded denominator must be non-zero for ⟨c⟩_fold to be
-            # defined. (3) and (1,1,1) are non-trivial irreps so this
-            # always holds.
-            computed=1.0 if all(
-                abs(r["c_typeB_folded"]) < 1e10 for r in rows
-            ) else 0.0,
+            "type_b_fold_denominator_nonzero",
+            # Per Copilot review on #588: assert denom_fold itself
+            # (not abs(c_fold) which can be 1.0 with a finite denom).
+            computed=1.0 if all(abs(r["denom_fold"]) > 1e-12 for r in rows)
+                       else 0.0,
             expected=1.0,
             tolerance=0.0,
             source="non-degenerate folded denominator",
         )
         .add_assertion(
-            "amphicheiral_4_1_chirality_small",
-            # 4_1 is amphicheiral; chirality should be small.
-            computed=abs(rows[0]["c_typeB_folded"]),
+            "amphicheiral_4_1_full_average_small",
+            # Per Copilot review on #588: c_typeB_folded for 4_1 is
+            # 1.0 (max chirality channel artifact of the folding);
+            # the amphichirality signal lives in c_full, which
+            # should be small but nonzero at q_0 (would be 0 at
+            # the crystal limit q→0 by amphichirality).
+            computed=abs(rows[0]["c_full"]),
             expected=0.0,
-            tolerance=2.0,  # broad: amphicheiral ⇒ ⟨c⟩ = 0 at the
-                            # crystal limit, finite at q_0
-            source="4_1 amphichirality",
+            tolerance=0.5,  # 4_1 c_full = -0.166 at q_0; bounded
+            source="4_1 amphichirality (full average channel)",
         )
         .save())
     print(f"\n  Witness: {out}")

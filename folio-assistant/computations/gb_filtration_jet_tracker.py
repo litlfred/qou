@@ -158,17 +158,22 @@ class HeckeElement:
             # F10 (audit follow-up): sp.cancel suffices for rational
             # coefficients in q (Hecke algebra); faster than simplify.
             out[w] = sp.cancel(out.get(w, 0) + c)
-            if out[w] == 0:
+            # Per Gemini review on #588: .equals(0) is the robust
+            # zero-test for sympy expressions; defends against any
+            # non-canonical residue that slipped past sp.cancel.
+            if out[w].equals(0):
                 del out[w]
         merged = HeckeElement(n=self.n, terms=out, jet_log=list(self.jet_log),
                               step_counter=self.step_counter)
         return merged
 
     def _scalar(self, scalar) -> "HeckeElement":
+        # Per Gemini review on #588: walrus avoids double sp.cancel
+        # evaluation per term; .equals(0) for robust zero-test.
         return HeckeElement(
             n=self.n,
-            # F10: cancel instead of simplify.
-            terms={w: sp.cancel(c * scalar) for w, c in self.terms.items() if sp.cancel(c * scalar) != 0},
+            terms={w: res for w, c in self.terms.items()
+                   if not (res := sp.cancel(c * scalar)).equals(0)},
             jet_log=list(self.jet_log),
             step_counter=self.step_counter,
         )
@@ -204,8 +209,10 @@ class HeckeElement:
                     relation=relation, coefficient_change=f"+= {c} * (h * T_{w} + T_{wsi})",
                 )
             self.jet_log.append(ev)
-        # Strip zero coefficients
-        out = {w: c for w, c in out.items() if sp.cancel(c) != 0}  # F10
+        # Strip zero coefficients. Per Gemini review on #588:
+        # coefficients are already canonical (sp.cancel called above
+        # on lines 188/198/199); use .equals(0) directly.
+        out = {w: c for w, c in out.items() if not c.equals(0)}
         return HeckeElement(n=self.n, terms=out, jet_log=self.jet_log,
                             step_counter=self.step_counter)
 
