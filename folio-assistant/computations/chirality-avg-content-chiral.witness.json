@@ -1,0 +1,313 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-09T13:38:02.342202+00:00",
+  "commitSha": "d7fda20c1a22f147a07ab152049cf6f3f3d1175b",
+  "assertions": [
+    {
+      "name": "trefoil_chiral_avg_c_nonzero_and_antisymmetric",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "chiral_avg_c_not_universal_1",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 12,
+  "computation": "chirality-avg-content-chiral",
+  "scriptFile": "chirality_avg_content_chiral.py",
+  "scriptHash": "b9d619c25730",
+  "scriptCommitSha": "unknown",
+  "description": "Chiral residual of GAP-A-2 in derivation-audit-report.md. Computes ⟨c⟩_β = (Σ w_λ χ^λ(β) c(λ)) / (Σ w_λ χ^λ(β)) for chiral 3-braids at q_0 to expose the structural-but-non-zero values that the chiral case takes.  Companion to chirality-avg-content.witness.json (amphichiral case).",
+  "auditOnly": "content/quantum-observable-universe/braids-and-knots/derivation-audit-report.md (GAP-A-2 chiral residual)",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "n": 3,
+    "partitions": [
+      [
+        3
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        1,
+        1,
+        1
+      ]
+    ],
+    "precision_dps": 50
+  },
+  "data": {
+    "cases": [
+      {
+        "name": "trefoil 3_1 (σ_1^3)",
+        "knot_class": "3_1",
+        "amphichiral": false,
+        "braid_word": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "writhe": 3,
+        "n_partitions": 3,
+        "rows": [
+          {
+            "shape": [
+              3
+            ],
+            "content_c_lambda": 3,
+            "wedderburn_weight": "0.14181150503252750925695418910393075754445939383879",
+            "chi_lambda_beta": "1.3675518842725498",
+            "weighted_chi_c": "0.58180377275627752170146852265976137640473349496499"
+          },
+          {
+            "shape": [
+              2,
+              1
+            ],
+            "content_c_lambda": 0,
+            "wedderburn_weight": "0.63134619224631377460240609773677812028215593822787",
+            "chi_lambda_beta": "0.6363182020258704",
+            "weighted_chi_c": "0.0"
+          },
+          {
+            "shape": [
+              1,
+              1,
+              1
+            ],
+            "content_c_lambda": -3,
+            "wedderburn_weight": "0.14181150503252750925695418910393075754445939383879",
+            "chi_lambda_beta": "-0.7312336822466794",
+            "weighted_chi_c": "0.31109204702963579200431768681237442112378549450652"
+          }
+        ],
+        "numerator": "0.89289581978591331370578620947213579752851898947151",
+        "denominator": "0.49197431581493447728044229414263932790875341079922",
+        "avg_content_c_beta": 1.814923647603167,
+        "a_K_first_order": 2.138285566464893,
+        "note": ""
+      },
+      {
+        "name": "mirror trefoil (σ_1^-3)",
+        "knot_class": "3_1*",
+        "amphichiral": false,
+        "braid_word": [
+          [
+            -1,
+            1
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            -1,
+            1
+          ]
+        ],
+        "writhe": -3,
+        "n_partitions": 3,
+        "rows": [
+          {
+            "shape": [
+              3
+            ],
+            "content_c_lambda": 3,
+            "wedderburn_weight": "0.14181150503252750925695418910393075754445939383879",
+            "chi_lambda_beta": "0.7312336822466805",
+            "weighted_chi_c": "0.31109204702963625998228429415315496907260953747802"
+          },
+          {
+            "shape": [
+              2,
+              1
+            ],
+            "content_c_lambda": 0,
+            "wedderburn_weight": "0.63134619224631377460240609773677812028215593822787",
+            "chi_lambda_beta": "-0.6363182020258676",
+            "weighted_chi_c": "0.0"
+          },
+          {
+            "shape": [
+              1,
+              1,
+              1
+            ],
+            "content_c_lambda": -3,
+            "wedderburn_weight": "0.14181150503252750925695418910393075754445939383879",
+            "chi_lambda_beta": "-1.3675518842725483",
+            "weighted_chi_c": "0.58180377275627688354969587628596972011088252727658"
+          }
+        ],
+        "numerator": "0.8928958197859131435319801704391246891834920647546",
+        "denominator": "-0.49197431581493234080119091989254637309078807760051",
+        "avg_content_c_beta": -1.8149236476031745,
+        "a_K_first_order": 2.138285566464898,
+        "note": ""
+      },
+      {
+        "name": "(σ_1 σ_2)^3 toral 3_1",
+        "knot_class": "3_1 (toral form)",
+        "amphichiral": false,
+        "braid_word": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "writhe": 6,
+        "n_partitions": 3,
+        "rows": [
+          {
+            "shape": [
+              3
+            ],
+            "content_c_lambda": 3,
+            "wedderburn_weight": "0.14181150503252750925695418910393075754445939383879",
+            "chi_lambda_beta": "1.8701981561774017",
+            "weighted_chi_c": "0.79564684570972580971187277023278801524146951833459"
+          },
+          {
+            "shape": [
+              2,
+              1
+            ],
+            "content_c_lambda": 0,
+            "wedderburn_weight": "0.63134619224631377460240609773677812028215593822787",
+            "chi_lambda_beta": "2.000000000000001",
+            "weighted_chi_c": "0.0"
+          },
+          {
+            "shape": [
+              1,
+              1,
+              1
+            ],
+            "content_c_lambda": -3,
+            "wedderburn_weight": "0.14181150503252750925695418910393075754445939383879",
+            "chi_lambda_beta": "0.5347026980520377",
+            "weighted_chi_c": "-0.22748098306713774454303361083420375041161973125675"
+          }
+        ],
+        "numerator": "0.56816586264258806516883915939858426482984978707783",
+        "denominator": "1.6037349940849160319693065688096614315214393630976",
+        "avg_content_c_beta": 0.3542766509043977,
+        "a_K_first_order": 1.4443911442694166,
+        "note": ""
+      },
+      {
+        "name": "σ_1^2 σ_2^-1 σ_1^2 σ_2^-1 (B_3 chiral 6-cross)",
+        "knot_class": "5_2 candidate",
+        "amphichiral": false,
+        "braid_word": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            -1,
+            2
+          ]
+        ],
+        "writhe": 4,
+        "n_partitions": 3,
+        "rows": [
+          {
+            "shape": [
+              3
+            ],
+            "content_c_lambda": 3,
+            "wedderburn_weight": "0.14181150503252750925695418910393075754445939383879",
+            "chi_lambda_beta": "1.2320524825884345",
+            "weighted_chi_c": "0.52415765050478337171411357927496936673120509463278"
+          },
+          {
+            "shape": [
+              2,
+              1
+            ],
+            "content_c_lambda": 0,
+            "wedderburn_weight": "0.63134619224631377460240609773677812028215593822787",
+            "chi_lambda_beta": "2.18254929605285",
+            "weighted_chi_c": "0.0"
+          },
+          {
+            "shape": [
+              1,
+              1,
+              1
+            ],
+            "content_c_lambda": -3,
+            "wedderburn_weight": "0.14181150503252750925695418910393075754445939383879",
+            "chi_lambda_beta": "0.8116537356420812",
+            "weighted_chi_c": "-0.34530551345003025211123573346045386988165604325844"
+          }
+        ],
+        "numerator": "0.17885213705475311960287784581451549684954905137434",
+        "denominator": "1.6677652421044439748889182290877238541996985339621",
+        "avg_content_c_beta": 0.10724059510262446,
+        "a_K_first_order": 1.0896790133701637,
+        "note": ""
+      }
+    ],
+    "summary_observations": [
+      "trefoil 3_1 (σ_1^3) and its mirror (σ_1^-3) give ⟨c⟩_β = ±1.815 — antisymmetric under braid mirror as required.",
+      "The (σ_1 σ_2)^3 toral form of 3_1 (writhe 6) gives a different ⟨c⟩_β = +0.354, confirming that ⟨c⟩_β depends on the specific braid representative, not just the knot type.",
+      "None of the values match the ⟨c⟩ = 1 universal ansatz from the conjecture; the chiral case has knot-specific structural values that are NOT given by the simple writhe-content formula.",
+      "Combined with the deuteron empirical falsification (chirality-writhe-ribbon-derivation.md:122-126), this demarcates the chiral residual of GAP-A-2: a structural formula relating ⟨c⟩_β to the braid topology is the open piece."
+    ]
+  }
+}

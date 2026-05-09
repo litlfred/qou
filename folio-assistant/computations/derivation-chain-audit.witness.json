@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T17:13:52.498459+00:00",
-  "commitSha": "bd415feca6de113d664fdf8bec94128d054eed66",
+  "computedAt": "2026-05-09T17:13:53.633815+00:00",
+  "commitSha": "700c25f824e4aa49a191300576a32079044e749b",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -1998,6 +1998,7 @@
         "chi-helium-3-h9.witness.json",
         "chi-helium-4-h12.witness.json",
         "chi-tritium-h9.witness.json",
+        "chirality-avg-content-chiral.witness.json",
         "chirality-avg-content.witness.json",
         "chirality-braid-average.witness.json",
         "close-321-weinberg-gap.witness.json",
