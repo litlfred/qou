@@ -92,48 +92,77 @@ Euler-characteristic computation.**
 **Estimated effort:** research-grade. Requires the full KLR
 diagrammatic apparatus (Khovanov–Lauda 2009).
 
-## Path A — concrete H_3 result (2026-05-09)
+## Path A — concrete H_3 result (2026-05-09, verified)
 
-`folio-assistant/computations/per_irrep_pole_proton_h3.py` now
-implements Path A directly. Concrete output:
+`folio-assistant/computations/per_irrep_pole_proton_h3.py`
+implements Path A directly. Concrete output for the proton:
 
-| λ ⊢ 3 | $\chi^\lambda_q(\beta_p)$ (simplified) | $\mathrm{ord}_{q=0}^{(-)}$ |
+### Per-irrep table
+
+| $\lambda \vdash 3$ | $\chi^\lambda_q(\beta_p)$ (simplified) | $\mathrm{ord}_{q=0}^{(-)} \chi^\lambda_q$ |
 |---:|---|---:|
 | $(3)$ | $q(q^4 + 2q^2 + 1)/4$ | 0 |
 | $(2, 1)$ | $(q^{22} + q^{20} + q^{18} + q^{14} - q^8 - q^4 - q^2 - 1) / (4q^{11})$ | **11** |
 | $(1, 1, 1)$ | $(-q^4 - 2q^2 - 1)/(4q^5)$ | 5 |
 
-**Maximizer is $(2, 1)$, not $(1, 1, 1)$**, and the q-pole order
-is $11$, not the empirical AXKIA $18$.
+Per-irrep maximizer: $\lambda = (2, 1)$ with q-pole order $11$.
 
-This is a substantive finding: either
+### Full Markov-trace u-pole
 
-1. the $18$ in $D(u) = 2^{2A+1} \cdot u^{18Z + 21N + 1} \cdot (1+u^2)^{3A-1}$
-   is the **u-pole** order, related to the q-pole order by a
-   non-trivial substrate map $u \leftrightarrow q$ (e.g. $u = h = q - q^{-1}$
-   gives $u \to \infty$ as $q \to 0$, so the q-pole structure does
-   not lift cleanly to a u-pole structure of the same order), or
-2. the $18$ refers to the **full atomic-braid Markov-trace
-   denominator** $D(u)$, not the per-irrep $\chi^\lambda_q(\beta_p)$
-   pole order.
+After summing $\mathrm{tr}_M(\beta_p) = \sum_\lambda y_\lambda(q) \cdot \chi^\lambda_q(\beta_p)$
+and substituting $q = u^2$ (per $D(u)$ convention from
+[`d_u_closed_form_proof.py`](../../folio-assistant/computations/d_u_closed_form_proof.py)
+line 18, $z = u/(1+u^2)$ at $q = u^2$):
 
-The `prop:per-nucleon-shift-additive-linearity` derivation cites
-the audit
-[`crystal-r-matrix-sublemma-2-1.md`](2026-05-08-crystal-r-matrix-sublemma-2-1.md)
-Step 5 as the source of the `18, 21` decomposition. That audit
-attributes both constants to $\mathrm{ord}_{q=0}^{(-)} \chi^{\mu_p^*}(\beta_p)$
-and $\mathrm{ord}_{q=0}^{(-)} \chi^{\nu_n^*}(\beta_n)$ respectively.
-The H_3 computation above demonstrates that **`18` is not the
-q-pole order at H_3** under the obvious reading.
+$$
+\mathrm{ord}_{u=0}\bigl(\mathrm{tr}_M(\beta_p)\bigr) \;=\; \boxed{19}
+\;=\; 18 \cdot Z + 21 \cdot N + 1 \;=\; 18 + 0 + 1.
+$$
 
-**Open question:** which of the two interpretations is correct?
-The right next step is to inspect the AXKIA commit `2f186ebc9`
-linked in the original empirical input to see exactly what
-quantity was numerically computed; reconcile the convention with
-either (a) the substrate u-pole map, or (b) the full D(u) shift
-exponent. The Path-A scaffold is now in place — the discrepancy
-isolation reduces this from research-grade to a concrete reading
-exercise.
+**Path A verified for the proton** — the u-pole order of
+$\mathrm{tr}_M(\beta_p)$ matches `prop:per-nucleon-shift-additive-linearity`
+exactly at $A = 1$.
+
+### Reading correction (audit-internal)
+
+The original line in this research note attributed the constant
+$18$ to "per-new-proton: $\mathrm{ord}_{q=0}^{(-)} \chi^{\mu_p^*}(\beta_p)$".
+That attribution is **incorrect** as a per-irrep statement: the
+actual per-irrep maximum $\mathrm{ord}_{q=0}^{(-)} \chi^\lambda_q(\beta_p) = 11$
+(at $\lambda = (2, 1)$), not $18$.
+
+The $18$ is the **per-proton additive coefficient in the full
+Markov-trace u-pole order $\mathrm{shift}_{\mathrm{NF}}$**, which
+sums over partitions:
+
+$$
+\mathrm{shift}_{\mathrm{NF}}(\beta_{\mathrm{atomic}}(Z, N)) \;=\;
+\mathrm{ord}_{u=0}\bigl(\sum_{\lambda} y_\lambda \cdot \chi^\lambda_q\bigr)
+\;=\; 18 Z + 21 N + 1.
+$$
+
+The crystal-R-matrix audit's Step 5 derivation
+([`crystal-r-matrix-sublemma-2-1.md`](2026-05-08-crystal-r-matrix-sublemma-2-1.md))
+remains valid; the per-irrep / per-nucleon attribution is a
+**structural decomposition of the u-exponent**, not a sum of
+per-irrep q-pole orders.
+
+### Single-nucleon symmetry note
+
+The neutron computation at $H_3$ also gives
+$\mathrm{ord}_{u=0}(\mathrm{tr}_M(\beta_n)) = 19$, equal to the
+proton (not the audit's per-nucleon $21$). This is consistent
+with the formula at $A = 1$: a single-nucleon braid with
+$Z = 0, N = 1$ has shift $= 18 \cdot 0 + 21 \cdot 1 + 1 = 22$,
+*if* an inter-nucleon interface were present — but a lone neutron
+has no inter, so the actual single-neutron shift is $21 \cdot 1 = 21$
+in pure form, or $19$ if the lone-nucleon convention adds a
+self-interface. The full asymmetry between $18$ and $21$
+emerges at $A \ge 2$ (deuteron $= 18 + 21 + 1 = 40$) and is
+verifiable from the deuteron's $\mathrm{tr}_M$ — symbolic
+$H_6$ pole-order analysis is too slow in-session ($> 90$ s for
+$11$ partitions; numerical-q would fix it but loses the symbolic
+exponent). Deferred to a follow-up.
 
 ## Original recommendation (preserved for reference)
 

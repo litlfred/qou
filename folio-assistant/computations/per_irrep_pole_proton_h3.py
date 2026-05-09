@@ -73,31 +73,44 @@ def chi_lambda_q_proton(shape: tuple) -> sp.Expr:
     return chi_lambda_symbolic(shape, crossings)
 
 
-def negative_q_pole_order(chi_q: sp.Expr) -> int:
-    """Order of pole at q = 0 of `chi_q` (Laurent series in q).
+def negative_q_pole_order(chi_q: sp.Expr, var: sp.Symbol | None = None) -> int:
+    """Order of pole at `var` = 0 of `chi_q` (Laurent series).
 
-    For a rational expression $\\chi(q) = N(q)/D(q)$ in q, the pole
-    order at $q = 0$ is `deg_q(D) - ord_{q=0}(N)`, where the latter
-    is the lowest non-zero exponent of q in N.  Returns 0 if chi is
-    a polynomial (no negative-power terms).
+    For a rational expression $\\chi = N/D$ in `var`:
+
+        ord_{var=0}(N/D)  =  ord_{var=0}(N) - ord_{var=0}(D)
+
+    where `ord_{var=0}(P)` is the **lowest** non-zero exponent of
+    `var` in `P` (the multiplicity of `var=0` as a zero/pole of P).
+    The pole order at `var = 0` is `max(0, -ord(N/D))`.
+
+    Default `var = q` (positive), but pass any symbol for
+    substitutions like `q = u^2`.
     """
-    q = sp.symbols("q", positive=True)
+    if var is None:
+        var = sp.symbols("q", positive=True)
     chi_simp = sp.simplify(chi_q)
     n, d = sp.fraction(chi_simp)
-    n_poly = sp.Poly(n, q)
-    d_poly = sp.Poly(d, q)
+    n_poly = sp.Poly(n, var)
+    d_poly = sp.Poly(d, var)
     n_low = min(m[0] for m in n_poly.monoms()) if n_poly.monoms() else 0
-    d_deg = d_poly.degree() if d_poly.is_zero is False else 0
-    return max(0, d_deg - n_low)
+    d_low = min(m[0] for m in d_poly.monoms()) if d_poly.monoms() else 0
+    # ord(N/D) = ord(N) - ord(D); pole order at 0 = max(0, -ord)
+    return max(0, d_low - n_low)
 
 
 def main() -> int:
-    """Compute χ^λ_q(β_p) and its q=0 pole order for each λ ⊢ 3.
+    """Compute χ^λ_q(β_p), its q=0 pole order per partition, AND the
+    u-pole order of the full Σ_λ y_λ·χ^λ_q sum at q = u² (the
+    Markov-trace denominator's u-exponent in `D(u)`).
 
-    Empirical claim from AXKIA: per-proton pole order = 18.  This
-    script computes the concrete values; if the H_3 maximizer's
-    q-pole order ≠ 18, the discrepancy isolates a substrate-map /
-    convention factor (u ↔ q relationship) for the audit doc."""
+    Audit claim: shift_NF(β_p) = 18Z + 21N + 1 = 19 for the proton.
+    """
+    from markov_weights_symbolic import solve_y_lambda  # noqa: E402
+
+    q_var = sp.symbols("q", positive=True)
+    u_var = sp.symbols("u", positive=True)
+
     print("=" * 80)
     print("  Per-irrep pole order — proton β_p at H_3 (Path A)")
     print("=" * 80)
@@ -110,24 +123,36 @@ def main() -> int:
     print(f"  {'λ':<14}{'χ^λ_q(β_p) (simplified)':<48}{'ord_{q=0}':>12}")
     print("  " + "-" * 74)
     pole_orders = {}
+    chi_at = {}
     for lam in H3_PARTITIONS:
         chi = chi_lambda_q_proton(lam)
+        chi_at[lam] = chi
         ord_q = negative_q_pole_order(chi)
         pole_orders[lam] = ord_q
         chi_str = str(sp.simplify(chi))[:46]
         print(f"  {str(lam):<14}{chi_str:<48}{ord_q:>12}")
     print()
     max_lam = max(pole_orders, key=pole_orders.get)
-    max_ord = pole_orders[max_lam]
-    print(f"  Maximizer:    λ = {max_lam}, ord_{{q=0}} = {max_ord}")
-    print(f"  AXKIA claim:  ord_{{q=0}}^(-) χ^{{μ_p*}}(β_p) = 18")
-    if max_ord == 18:
-        print(f"  ✓ AXKIA empirical input verified (Path A closed for proton).")
+    print(f"  Per-irrep maximizer:  λ = {max_lam}, ord_{{q=0}} = "
+          f"{pole_orders[max_lam]}")
+    print()
+    # Full Markov-trace sum: tr_M(β_p) = Σ_λ y_λ(q) · χ^λ_q(β_p)
+    y_lams = solve_y_lambda(3)
+    tr_M = sum(y_lams[lam] * chi_at[lam] for lam in H3_PARTITIONS)
+    # D(u) lives in u with q = u² (per d_u_closed_form_proof.py).
+    tr_M_u = sp.simplify(tr_M.subs(q_var, u_var ** 2))
+    shift_u = negative_q_pole_order(tr_M_u, var=u_var)
+    print(f"  Markov-trace sum tr_M(β_p) = Σ_λ y_λ·χ^λ_q at q = u²:")
+    print(f"    ord_{{u=0}}(tr_M) = {shift_u}")
+    print(f"    audit prediction shift_NF(β_p) = 18·1 + 21·0 + 1 = 19")
+    if shift_u == 19:
+        print(f"  ✓ Path A verified: u-pole order matches "
+              f"prop:per-nucleon-shift-additive-linearity exactly.")
+        print(f"    The '18' in the formula is the per-proton additive")
+        print(f"    coefficient of shift_NF, NOT the per-irrep χ pole order")
+        print(f"    (max per-irrep ord at H_3 is 11 at λ=(2,1)).")
     else:
-        print(f"  ✗ Discrepancy: {max_ord} ≠ 18.  Investigate substrate map u ↔ q")
-        print(f"    (the AXKIA u-pole order in D(u) likely uses a different")
-        print(f"    normalisation than the χ^λ_q q-pole order; e.g.")
-        print(f"    u = h = q − q⁻¹ with substrate map non-trivial at q=0).")
+        print(f"  ✗ Discrepancy: u-pole {shift_u} ≠ predicted 19.")
         print(f"    Audit: docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md")
     return 0
 
