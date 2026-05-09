@@ -87,9 +87,13 @@ def main() -> None:
         ),
     }
 
-    out_path = Path(__file__).parent / "tier-0-atlas-pslq-check.witness.json"
-    out_path = WitnessBuilder.wrap_legacy("tier-0-atlas-pslq-check", result,
-                     script_path=__file__, engine="mpmath").save()
+    out_path = (
+        WitnessBuilder.wrap_legacy("tier-0-atlas-pslq-check", result,
+                     script_path=__file__, engine="mpmath")
+        .set_audit_only(
+            "docs/audits/2026-05-09-refocused-1ppb-workplan-v3.md")
+        .save()
+    )
 
     print(f"Result: {result['interpretation']}")
     if relation:

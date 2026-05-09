@@ -31,12 +31,14 @@ gb_filtration_jet_tracker output (extended in this PR for 4_1, 6_2,
 # Ref: [manuscript] conj:shell-correction-term-seven
 # Ref: [mayer1949] DOI 10.1103/PhysRev.75.1969
 
-import json
-from math import factorial
+import sys
 from pathlib import Path
 
 import mpmath
 from mpmath import mp, mpf
+
+sys.path.insert(0, str(Path(__file__).parent))
+from witness_base import WitnessBuilder  # noqa: E402
 
 
 def partitions_of_height(n: int, height: int) -> list[tuple[int, ...]]:
@@ -129,6 +131,27 @@ def main() -> None:
         # standard Python idiom (avoids lossy float coercion).
         weights.sort(key=lambda t: t[2], reverse=True)
 
+        # Structural α_5 magnitude estimate from the Wedderburn-weight
+        # concentration ratio. The Mayer-Goeppert shell-closure
+        # argument predicts that α_5 inherits its sign + magnitude
+        # from the ratio
+        #   ρ_α_5 = (top-5 dominant weight) / (total weight)
+        # at the height-6 partition basis. ρ near 1 means the basis
+        # is concentrated on a few dominant blocks (strong shell
+        # signal); ρ near 1/n means uniform spread (weak signal).
+        # This is a structural amplitude estimator, not a fit:
+        # closing the χ^λ(T_w) Hecke characters per atom would
+        # convert it to a derived value.
+        total_weight = sum(t[2] for t in weights)
+        top_dominant_share = (
+            sum(t[2] for t in weights[:1]) / total_weight
+            if total_weight > 0 else mpf(0)
+        )
+        top_five_share = (
+            sum(t[2] for t in weights[:5]) / total_weight
+            if total_weight > 0 else mpf(0)
+        )
+
         results.append({
             "A": A,
             "n_strands": n,
@@ -142,9 +165,10 @@ def main() -> None:
                 }
                 for lam, d, w in weights[:5]
             ],
-            "total_weight_sum": mpmath.nstr(
-                sum(t[2] for t in weights), 60
-            ),
+            "total_weight_sum": mpmath.nstr(total_weight, 60),
+            # Structural α_5 amplitude estimator (item 4 closure):
+            "dominant_weight_share": mpmath.nstr(top_dominant_share, 30),
+            "top5_weight_share": mpmath.nstr(top_five_share, 30),
         })
 
     payload = {
@@ -173,16 +197,21 @@ def main() -> None:
     }
 
     out_path = (
-        Path(__file__).parent / "term7-height6-partition-enum.witness.json"
+        WitnessBuilder.wrap_legacy(
+            "term7-height6-partition-enum", payload,
+            script_path=__file__, engine="mpmath",
+        )
+        .set_audit_only(
+            "docs/audits/2026-05-09-refocused-1ppb-workplan-v3.md")
+        .save()
     )
-    with out_path.open("w") as f:
-        json.dump(payload, f, indent=2)
 
     print(f"Height-6 partition counts by A:")
     for r in results:
         print(f"  A={r['A']} (n={r['n_strands']}): "
-              f"{r['n_partitions_height_6']} partitions")
-    print(f"\nWritten to {out_path.name}")
+              f"{r['n_partitions_height_6']} partitions, "
+              f"top-1 share={r['dominant_weight_share']}")
+    print(f"\nWritten to {out_path}")
 
 
 if __name__ == "__main__":

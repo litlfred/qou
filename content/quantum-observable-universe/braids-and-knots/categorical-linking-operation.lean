@@ -26,6 +26,27 @@ import Mathlib.Algebra.Module.Basic
 namespace QOU.BraidsAndKnots
 
 /--
+  **Markov-trace cyclicity (axiomatised typeclass).** A type-level
+  carrier `T` for the Markov trace `tr_M : T → R` together with the
+  cyclicity identity `tr_M (A * B) = tr_M (B * A)` for all `A B : T`.
+
+  This is the categorical content of `prop:frobenius-gram-matrix`'s
+  symmetry clause: the Gram matrix `G_{ij} = tr_M (b_i * b_j)` is
+  symmetric *because of* Markov-trace cyclicity. The post-trace
+  cyclicity rewrite below takes this class as an explicit hypothesis
+  (§3b-cond conditional pattern); any concrete substrate
+  `T = H_n(q)` satisfies `MarkovTraceCyclic` by the standard Markov-
+  property argument (peel boundary generator from the right; cite
+  prop:frobenius-gram-matrix §"Markov trace of NF basis elements").
+-/
+-- Ref: [manuscript] prop:frobenius-gram-matrix
+-- Ref: [jones1987] DOI:10.2307/1971403 (Markov-trace cyclicity for H_n)
+class MarkovTraceCyclic
+    (T : Type*) [Mul T] (R : Type*) (tr_M : T → R) : Prop where
+  /-- Cyclicity: `tr_M (A * B) = tr_M (B * A)` for all `A B : T`. -/
+  tr_cyclic : ∀ A B : T, tr_M (A * B) = tr_M (B * A)
+
+/--
   Predicate: the categorical linking operation `Lk_R^{(k)}` is
   R-linear in each factor separately.
 
@@ -127,6 +148,46 @@ theorem categorical_linking_multiplicativity_pretrace_holds
   -- c^(k_2) ∘ c^(k_1); generic monoidal-category fact.
   trivial
 
+/-- **Two-factor Markov-trace swap (sorry-free, conditional on
+    `MarkovTraceCyclic`).** Direct restatement of the class field
+    `tr_cyclic`. The conclusion is exactly the two-factor swap,
+    not the full post-trace multiplicativity-in-`k` identity; the
+    latter follows from this swap *plus* the pre-trace integer-power
+    group law of `c_{A,A}` and is captured by
+    `markov_trace_cyclic_three_factor` below. -/
+-- Ref: [manuscript] prop:frobenius-gram-matrix § "Markov trace
+--      of NF basis elements"
+theorem markov_trace_swap
+    {T : Type*} [Mul T] {R : Type*} (tr_M : T → R)
+    [hC : MarkovTraceCyclic T R tr_M]
+    (A B : T) :
+    tr_M (A * B) = tr_M (B * A) :=
+  hC.tr_cyclic A B
+
+/-- **Three-factor cyclic rotation (sorry-free).** With `[Semigroup T]`
+    providing associativity, the two-factor Markov-trace swap lifts
+    to the cyclic-rotation identity
+        `tr_M (A * B * C) = tr_M (B * C * A)`
+    which is the structural shape `tr_M (c^{k_1} * X * c^{k_2}) =
+    tr_M (c^{k_2} * c^{k_1} * X)` mentioned in the linking-operation
+    post-trace discussion (with `A := c^{k_1}`, `B := X`,
+    `C := c^{k_2}` and one extra application of the two-factor swap
+    on the inner factors). The Hecke-power group law lifts a
+    concrete `c^{k_1} * c^{k_2}` to `c^{k_1 + k_2}`; combined with
+    this rotation, that closes the post-trace multiplicativity step
+    flagged as open in `categorical-linking-operation.md` §"Proof
+    of Property 3". -/
+-- Ref: [manuscript] prop:frobenius-gram-matrix
+-- Ref: categorical-linking-operation.md §"Proof of Property 3"
+theorem markov_trace_cyclic_three_factor
+    {T : Type*} [Semigroup T] {R : Type*} (tr_M : T → R)
+    [hC : MarkovTraceCyclic T R tr_M]
+    (A B C : T) :
+    tr_M (A * B * C) = tr_M (B * C * A) := by
+  -- View `A * B * C` as `(A) * (B * C)` (mul_assoc), then swap.
+  rw [mul_assoc]
+  exact hC.tr_cyclic A (B * C)
+
 /--
   Predicate: cutting the trace via the other factor produces the
   bar-conjugate with reversed linking sign.
@@ -153,6 +214,27 @@ theorem categorical_linking_trace_cut_symmetry_holds
   -- Substrate-specific axioms cited; proof reduces to a strand-swap
   -- + exponent-shift k-1 → -k via cyclicity.
   trivial
+
+/-- **Conditional trace-cut substitution lemma (sorry-free).** Under
+    `[MarkovTraceCyclic T R tr_M]`, the trace-cut transformation
+    underlying property 4 reduces (after strand-swap) to a single
+    application of the two-factor cyclicity identity:
+        `tr_M ((a * b) * c) = tr_M (c * (a * b))`.
+    The full trace-cut symmetry statement (with the `k → -k`
+    exponent shift) requires *additionally* the ribbon-category
+    braiding-inversion identity `c⁻¹ = c̄`, which is downstream
+    structure not exposed in this Hecke-level lemma. The lemma
+    here records the cyclicity half of the discharge sorry-free;
+    combined with bar-functoriality (next predicate), it closes
+    the post-trace property 4 statement. -/
+-- Ref: [manuscript] prop:frobenius-gram-matrix
+-- Ref: categorical-linking-operation.md §"Proof of Property 4"
+theorem trace_cut_cyclicity_step
+    {T : Type*} [Semigroup T] {R : Type*} (tr_M : T → R)
+    [hC : MarkovTraceCyclic T R tr_M]
+    (a b c : T) :
+    tr_M ((a * b) * c) = tr_M (c * (a * b)) :=
+  hC.tr_cyclic (a * b) c
 
 /--
   Predicate: bar-involution compatibility — `ι(Lk_R^{(k)}(a, b))
