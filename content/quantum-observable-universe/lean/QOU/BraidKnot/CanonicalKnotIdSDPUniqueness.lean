@@ -53,13 +53,25 @@ def heckeAsMatrix {n : ℕ} (x : HeckeElement n) :
   fun i j => x i * x j
 
 /-- **Hecke-element-as-PSD-matrix** is positive-semidefinite —
-    rank-1 outer products always are. -/
+    rank-1 outer products always are.
+
+    PROOF: write `heckeAsMatrix x = (col x) · (col x)ᵀ`.  Then
+    apply Mathlib's `Matrix.posSemidef_self_mul_transpose` (or
+    similar — verify exact name).  Direct unfolding works:
+    `((col x) · (col x)ᵀ) i j = Σ_k (col x) i k · ((col x)ᵀ) k j
+    = (col x) i 0 · (col x) j 0 = x i · x j`. -/
 theorem heckeAsMatrix_posSemidef {n : ℕ} (x : HeckeElement n) :
     (heckeAsMatrix x).PosSemidef := by
-  -- A rank-1 outer product `x ⊗ x` is PSD because for any vector
-  -- `v`, `v^T (x ⊗ x) v = (x · v)^2 ≥ 0`.  Mathlib's
-  -- `Matrix.posSemidef_self_mul_conjTranspose_self` or similar
-  -- closes this via `(x.toMatrix * x.toMatrix.transpose).PosSemidef`.
+  -- Rank-1 outer product `x_i · x_j = (col x · (col x)ᵀ) i j`.
+  -- Mathlib has `Matrix.posSemidef_self_mul_conjTranspose` (or
+  -- `Matrix.posSemidef_transpose_mul_self`); apply directly.
+  -- Alternative direct route: prove symmetry and the quadratic-
+  -- form-non-negativity hypothesis manually:
+  --   * Symmetry: `x_i · x_j = x_j · x_i` by `mul_comm`.
+  --   * Quadratic form: `vᵀ M v = (v · x)²` (Σ_ij v_i x_i x_j v_j
+  --     = (Σ_i v_i x_i) · (Σ_j x_j v_j)).
+  -- Both are direct calculations.  Full close pending Mathlib API
+  -- verification.
   sorry
 
 /-- **Canonical T_w uniqueness** — Hecke-algebra-flavoured
