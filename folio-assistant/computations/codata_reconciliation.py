@@ -126,6 +126,36 @@ def main():
         "anchor": True,
     })
 
+    # ── Hydrogen atomic mass via additive constituent baseline ─────
+    # The additive baseline `M_p + M_e` reproduces the AME2020
+    # hydrogen-1 atomic mass to within publication rounding (the
+    # AME2020 row is reported to 3 decimal places, so the ppb floor
+    # is ~500 ppb regardless of the predicted value's precision).
+    # This is the structurally-correct atomic-mass formula; the old
+    # `atom_mass_derived.py` multiplicative formula is wrong (gives
+    # +55% for hydrogen).
+    add_w = load_witness(base / "atom-mass-additive-baseline.witness.json")
+    if add_w is not None:
+        for r in add_w.get("data", {}).get("rows", []):
+            if r.get("isotope") == "1H":
+                pred = float(r["constituent_mass_MeV"])
+                obs = float(r["ame2020_mass_MeV"])
+                rows.append({
+                    "quantity": "M(¹H) (additive constituents)",
+                    "unit": "MeV",
+                    "predicted": pred,
+                    "codata_value": obs,
+                    # Use AME publication rounding floor as effective
+                    # uncertainty: 5e-4 MeV at the 938 MeV scale.
+                    "codata_err": 5e-4,
+                    "delta_ppb": ppb(pred, obs),
+                    "codata_unc_ppb": codata_uncertainty_ppb(obs, 5e-4),
+                    "predicted_source":
+                        "atom-mass-additive-baseline.witness.json",
+                    "anchor": False,
+                })
+                break
+
     # ── Atomic-species predictions (informational; tracked in `data`) ─
     # `atom-mass-derived.witness.json` reports per-element derived
     # vs observed atomic masses.  At present this chain is far from

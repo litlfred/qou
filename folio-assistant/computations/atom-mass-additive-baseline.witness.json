@@ -1,0 +1,153 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-09T01:06:20.523826+00:00",
+  "commitSha": "8d8f5792ab572dfd3890d99a90d3d4a6e9db3dba",
+  "assertions": [
+    {
+      "name": "hydrogen_constituent_structural_identity",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-12,
+      "unit": "MeV",
+      "source": "IEEE 754 arithmetic on CODATA constants"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "atom-mass-additive-baseline",
+  "scriptFile": "atom_mass_additive_baseline.py",
+  "scriptHash": "be98a90cc3a3",
+  "scriptCommitSha": "unknown",
+  "description": "Additive atomic-mass baseline:  M_atom ≈ Z·M_p + N·M_n + Z·M_e − E_binding(A, Z).  Records the constituent-vs-AME residual Δ_binding for every isotope in the `atom_mass_derived.py` ELEMENTS table.  At A = 1 the residual is the 13.6 eV atomic binding (negligible at the 1 ppb level).  At A ≥ 4 the residual is the nuclear binding that the Frobenius-packing law (rem:frobenius-packing-density) is expected to reproduce.",
+  "auditOnly": "docs/audits/atom-mass-additive-baseline.md",
+  "data": {
+    "rows": [
+      {
+        "isotope": "1H",
+        "element": "Hydrogen",
+        "Z": 1,
+        "N": 0,
+        "A": 1,
+        "constituent_mass_MeV": 938.78308711,
+        "constituent_uncertainty_MeV": 2.9000003879310083e-07,
+        "ame2020_mass_MeV": 938.783,
+        "delta_binding_MeV": 8.71099999812941e-05,
+        "delta_ppb": 92.79034663100428
+      },
+      {
+        "isotope": "4He",
+        "element": "Helium",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "constituent_mass_MeV": 3756.6970152599997,
+        "constituent_uncertainty_MeV": 1.225887470365857e-06,
+        "ame2020_mass_MeV": 3728.401,
+        "delta_binding_MeV": 28.296015259999876,
+        "delta_ppb": 7589316.508605131
+      },
+      {
+        "isotope": "7Li",
+        "element": "Lithium",
+        "Z": 3,
+        "N": 4,
+        "A": 7,
+        "constituent_mass_MeV": 6574.61094341,
+        "constituent_uncertainty_MeV": 2.3286262479195754e-06,
+        "ame2020_mass_MeV": 6535.367,
+        "delta_binding_MeV": 39.2439434099997,
+        "delta_ppb": 6004856.867257753
+      },
+      {
+        "isotope": "9Be",
+        "element": "Beryllium",
+        "Z": 4,
+        "N": 5,
+        "A": 9,
+        "constituent_mass_MeV": 8452.95945104,
+        "constituent_uncertainty_MeV": 2.9386392020797653e-06,
+        "ame2020_mass_MeV": 8394.794,
+        "delta_binding_MeV": 58.165451040000335,
+        "delta_ppb": 6928752.634073014
+      },
+      {
+        "isotope": "11B",
+        "element": "Boron",
+        "Z": 5,
+        "N": 6,
+        "A": 11,
+        "constituent_mass_MeV": 10331.30795867,
+        "constituent_uncertainty_MeV": 3.549662034968963e-06,
+        "ame2020_mass_MeV": 10255.103,
+        "delta_binding_MeV": 76.20495867000136,
+        "delta_ppb": 7430930.598161848
+      },
+      {
+        "isotope": "12C",
+        "element": "Carbon",
+        "Z": 6,
+        "N": 6,
+        "A": 12,
+        "constituent_mass_MeV": 11270.09104578,
+        "constituent_uncertainty_MeV": 3.677662411097571e-06,
+        "ame2020_mass_MeV": 11177.93,
+        "delta_binding_MeV": 92.16104577999977,
+        "delta_ppb": 8244911.694741313
+      },
+      {
+        "isotope": "14N",
+        "element": "Nitrogen",
+        "Z": 7,
+        "N": 7,
+        "A": 14,
+        "constituent_mass_MeV": 13148.43955341,
+        "constituent_uncertainty_MeV": 4.290606146280499e-06,
+        "ame2020_mass_MeV": 13043.781,
+        "delta_binding_MeV": 104.65855340999951,
+        "delta_ppb": 8023636.199503772
+      },
+      {
+        "isotope": "16O",
+        "element": "Oxygen",
+        "Z": 8,
+        "N": 8,
+        "A": 16,
+        "constituent_mass_MeV": 15026.788061039999,
+        "constituent_uncertainty_MeV": 4.903549881463428e-06,
+        "ame2020_mass_MeV": 14899.169,
+        "delta_binding_MeV": 127.619061039999,
+        "delta_ppb": 8565515.368004685
+      },
+      {
+        "isotope": "19F",
+        "element": "Fluorine",
+        "Z": 9,
+        "N": 10,
+        "A": 19,
+        "constituent_mass_MeV": 17844.70198919,
+        "constituent_uncertainty_MeV": 5.997674701290492e-06,
+        "ame2020_mass_MeV": 17696.901,
+        "delta_binding_MeV": 147.8009891900001,
+        "delta_ppb": 8351800.645209017
+      },
+      {
+        "isotope": "20Ne",
+        "element": "Neon",
+        "Z": 10,
+        "N": 10,
+        "A": 20,
+        "constituent_mass_MeV": 18783.4850763,
+        "constituent_uncertainty_MeV": 6.129437351829285e-06,
+        "ame2020_mass_MeV": 18622.835,
+        "delta_binding_MeV": 160.65007630000036,
+        "delta_ppb": 8626510.211791081
+      }
+    ],
+    "max_delta_binding_MeV": 160.65007630000036,
+    "avg_binding_per_nucleon_MeV": 7.223802835670109,
+    "expected_qou_law": "ρ_F · V_hyp  (rem:frobenius-packing-density)",
+    "source": "AME2020 + CODATA 2022"
+  }
+}

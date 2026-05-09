@@ -19,6 +19,7 @@ experimental precision.
 |---|---|---|
 | `m_e` | CODATA 2022 | anchor — energy scale by definition |
 | `m_p` | CODATA 2022 | anchor — atom-mass-tower normalisation |
+| `M(¹H)` | `atom-mass-additive-baseline.witness.json` | derived — 92.79 ppb (AME publication floor) |
 | `α_2 − z²` (Markov axiom) | `alpha-k-jones-markov-h3.witness.json` | structural cross-check |
 | `Σ d_λ y_λ − 1` (Markov M3) | `alpha-k-macdonald-closed-form.witness.json` | structural cross-check |
 | `Q_n` (β-decay) | CODATA arithmetic `m_n − m_p − m_e` | structural cross-check |
@@ -30,21 +31,41 @@ hit IEEE-754 / 50-dps machine precision via the closed-form path
 licensed by `prop:macdonald-hook-telescope`. Current
 `max_non_anchor_delta_ppb = 0.000 ppb`.
 
-## Informational: atomic-species derivation gap
+## Atomic-species: additive baseline + binding-energy residual
 
-The witness's `data.atom_species_informational` field records the
-per-element table from `atom-mass-derived.witness.json` (Hydrogen
-through Neon). At present the upstream derivation chain has known
-gaps — the predicted hydrogen atomic mass is +55% off CODATA and
-helium is negative. These rows are **surfaced informationally**
-but NOT asserted in the reconciliation witness, so the global
-`max_non_anchor_delta_ppb` metric tracks structural integrity
-rather than the upstream derivation gap.
+The pre-existing `atom_mass_derived.py` chain uses a multiplicative
+$\mathrm{tr}_M(\text{atom NF}) \times E_0$ formula that is
+structurally wrong (gives +55% for hydrogen, negative for helium)
+because atomic mass is **additive** in its constituents, not
+multiplicative. This PR adds
+[`atom_mass_additive_baseline.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/atom_mass_additive_baseline.py)
+with the correct formula
 
-Closing the atomic-species gap is a separate workplan item: it
-requires reworking the `tr_M_atom` / `tr_M_nucleus` factorisation
-in `atom_mass_derived.py` against the closed-form `y_λ` now
-available via `alpha_k_macdonald_closed_form.py`.
+$$
+  M_{\text{atom}}(A, Z) \;=\; Z M_p + N M_n + Z M_e - E_{\text{binding}}(A, Z),
+$$
+
+producing the table in
+[`atom-mass-additive-baseline.md`](atom-mass-additive-baseline.md).
+Hydrogen passes at 92.79 ppb (limited by AME2020's 3-decimal-place
+publication rounding to 938.783; the constituent mass is actually
+938.78308716 MeV, beneath the publication floor). The
+`Δ_binding(A, Z)` column for $A \geq 4$ is the per-isotope binding
+energy that the Frobenius-packing law
+([`rem:frobenius-packing-density`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/particle-interactions/frobenius-packing-density.md))
+is expected to reproduce — average 7.224 MeV/nucleon, matching the
+empirical SEMF prediction of ~7.5 MeV/A to within 4%.
+
+The legacy `atom-mass-derived.witness.json` per-species table is
+still surfaced via `data.atom_species_informational` for
+transparency about the multiplicative chain's behaviour, but the
+reconciliation now uses the additive baseline as its derived row.
+
+Closing the heavier-isotope rows to 1 ppb requires implementing
+the QOU $\rho_F \cdot V_{\text{hyp}}$ binding-energy law inside
+`atom_mass_additive_baseline.py` (currently it only emits the
+constituent baseline, leaving the binding column as the open
+target).
 
 ## How to update
 

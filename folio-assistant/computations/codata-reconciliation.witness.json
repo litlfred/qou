@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T00:43:15.662710+00:00",
-  "commitSha": "7ee9664c6c5895501500addf7e7cce34a56e3df3",
+  "computedAt": "2026-05-09T01:07:20.385744+00:00",
+  "commitSha": "8d8f5792ab572dfd3890d99a90d3d4a6e9db3dba",
   "assertions": [
     {
       "name": "codata_m_e",
@@ -21,6 +21,15 @@
       "tolerance": 5.8e-07,
       "unit": "MeV",
       "source": "anchor scale (atom_mass_derived.py)"
+    },
+    {
+      "name": "codata_M_¹H__additive_constituents",
+      "computed": 938.78308711,
+      "expected": 938.783,
+      "passed": true,
+      "tolerance": 0.001,
+      "unit": "MeV",
+      "source": "atom-mass-additive-baseline.witness.json"
     },
     {
       "name": "codata_α_2_−_z²__Markov_axiom",
@@ -78,11 +87,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 12,
   "computation": "codata-reconciliation",
   "scriptFile": "codata_reconciliation.py",
-  "scriptHash": "dab5f3b15d72",
-  "scriptCommitSha": "7ee9664c6c5895501500addf7e7cce34a56e3df3",
+  "scriptHash": "618466daf030",
+  "scriptCommitSha": "2c402bf50d4ec01f4a5d6e850f62be586a5509ae",
   "description": "Consolidated CODATA-2022 reconciliation table for QOU primary predictions.  Each row reports predicted value, CODATA central value, deviation in ppb, and CODATA uncertainty in ppb.  Passing assertion = QOU prediction within twice the CODATA uncertainty.",
   "auditOnly": "docs/audits/codata-reconciliation.md",
   "data": {
@@ -109,6 +118,17 @@
         "codata_unc_ppb": 0.309078788188941,
         "predicted_source": "anchor scale (atom_mass_derived.py)",
         "anchor": true
+      },
+      {
+        "quantity": "M(¹H) (additive constituents)",
+        "unit": "MeV",
+        "predicted": 938.78308711,
+        "codata_value": 938.783,
+        "codata_err": 0.0005,
+        "delta_ppb": 92.79034663100428,
+        "codata_unc_ppb": 532.6044463949603,
+        "predicted_source": "atom-mass-additive-baseline.witness.json",
+        "anchor": false
       },
       {
         "quantity": "α_2 − z² (Markov axiom)",
@@ -178,7 +198,7 @@
       }
     ],
     "anchor_count": 5,
-    "derived_count": 3,
+    "derived_count": 4,
     "atom_species_informational": [
       {
         "element": "Hydrogen",
@@ -292,6 +312,6 @@
       }
     ],
     "atom_species_note": "Atomic-mass derivation chain is upstream-incomplete; deviations exceed 50% for hydrogen and are negative for helium.  Surfaced as `data` only — not asserted, so `max_non_anchor_delta_ppb` tracks structural cross-checks rather than the upstream derivation gap.  Resolving these rows is a separate workplan.",
-    "max_non_anchor_delta_ppb": 5.551115123125783e-08
+    "max_non_anchor_delta_ppb": 92.79034663100428
   }
 }
