@@ -22,6 +22,9 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).parent))
+from witness_base import WitnessBuilder  # noqa: E402
+
 try:
     import snappy
 except ImportError:
@@ -229,8 +232,10 @@ def main():
         "durationMs": duration_ms,
     }
 
-    out_path = Path(__file__).parent / "knot-volumes.witness.json"
-    out_path.write_text(json.dumps(witness, indent=2) + "\n")
+    out_path = (WitnessBuilder.wrap_legacy(
+        "knot-volumes", witness,
+        script_path=__file__, engine="python")
+        .save())
     print(f"\nWitness written to {out_path}")
     print(f"All passed: {all_passed} ({len(assertions)} assertions, {duration_ms}ms)")
 
