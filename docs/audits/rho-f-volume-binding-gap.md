@@ -44,7 +44,10 @@ complement.
 This script inverts the law: given empirical $\Delta_{\text{binding}}$
 and SnapPy-known $V_{\text{hyp}}$ for the available link primitives
 (figure-eight, three-twist, Borromean), it reports the **required
-$\rho_F / m_e$** that each candidate would need.
+$\rho_F / m_e$** that each candidate would need.  Complementary to
+`atomic_mass_via_rho_k.py` on main, which evaluates a related
+$\rho_K \cdot m_e \cdot |\mathrm{tr}_M(K)|$ density formula
+*directly* rather than inverting the law.
 
 ## Findings
 
