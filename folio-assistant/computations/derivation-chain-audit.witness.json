@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T12:13:22.533954+00:00",
-  "commitSha": "ca949840522ad7dcef3d190196ab73d3c1fc723f",
+  "computedAt": "2026-05-09T14:28:19.896562+00:00",
+  "commitSha": "b727f6390d1d4cdd0ea9bdd32403e795721a22c4",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -84,6 +84,24 @@
     },
     {
       "name": "chain_valid[atomic-braid-recipe-4he.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[atomic-braid-recipe-d-canonical.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[atomic-braid-recipe-n-canonical.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "chain_valid[atomic-braid-recipe-p-canonical.derivation]",
       "computed": true,
       "expected": true,
       "passed": true
@@ -496,7 +514,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
@@ -624,6 +642,234 @@
         "trust_summary": {
           "axiom": 2,
           "script-cited": 2,
+          "derived": 3
+        },
+        "has_script_frontier": true
+      },
+      {
+        "chain": "atomic-braid-recipe-d-canonical.derivation.json",
+        "target": "T_w(deuteron) ∈ B_{6} (canonical/SDP)",
+        "target_value": [
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "averaged"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "averaged"
+          ],
+          [
+            2,
+            "averaged"
+          ],
+          [
+            3,
+            "sigma"
+          ],
+          [
+            3,
+            "sigma"
+          ],
+          [
+            3,
+            "sigma"
+          ],
+          [
+            3,
+            "averaged"
+          ],
+          [
+            3,
+            "averaged"
+          ],
+          [
+            3,
+            "sigma"
+          ],
+          [
+            3,
+            "sigma"
+          ],
+          [
+            4,
+            "sigma_inv"
+          ],
+          [
+            4,
+            "sigma_inv"
+          ],
+          [
+            4,
+            "sigma_inv"
+          ],
+          [
+            4,
+            "sigma_inv"
+          ]
+        ],
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 2,
+          "script-cited": 3,
+          "derived": 3
+        },
+        "has_script_frontier": true
+      },
+      {
+        "chain": "atomic-braid-recipe-n-canonical.derivation.json",
+        "target": "T_w(neutron) ∈ B_{3} (canonical/SDP)",
+        "target_value": [
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "averaged"
+          ],
+          [
+            0,
+            "averaged"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ]
+        ],
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 2,
+          "script-cited": 3,
+          "derived": 3
+        },
+        "has_script_frontier": true
+      },
+      {
+        "chain": "atomic-braid-recipe-p-canonical.derivation.json",
+        "target": "T_w(proton) ∈ B_{3} (canonical/SDP)",
+        "target_value": [
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "averaged"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "averaged"
+          ]
+        ],
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 2,
+          "script-cited": 3,
           "derived": 3
         },
         "has_script_frontier": true
@@ -1482,7 +1728,6 @@
       "derivation-fully-trusted": [],
       "derivation-backed": [
         "atomic-braid-gb-filtration-extension.witness.json",
-        "habiro-coefficients-atomic.witness.json",
         "mass-endomorphism.witness.json",
         "mass-formula-6term-mpfr-50dps.witness.json",
         "term7-alpha5-crystal-derivation.witness.json"
