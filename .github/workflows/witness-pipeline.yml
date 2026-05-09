@@ -317,6 +317,7 @@ jobs:
           # conjecture's class as an explicit [Instance] hypothesis in
           # its .lean.  PR #566 brought this to 12/12 fully compliant;
           # CI gates against regression.
+          export PATH="$HOME/.bun/bin:$PATH"
           bun run content/pipeline/conditional-class-banner-audit.ts --strict
 
       - name: Detect drift in committed witnesses
