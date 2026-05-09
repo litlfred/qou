@@ -551,7 +551,7 @@ if __name__ == "__main__":
     print(f"    |tr_M(p)|  = {abs(tr_p)!s}")
     print(f"    |tr_M(n)|  = {abs(tr_n)!s}")
     print(f"    Q_cat      = |tr_M(n)| - |tr_M(p)| = {Q_beta_cat!s}")
-    print(f"    E_0 (β)    = 0.782 / Q_cat = {E_0_cat!s} MeV/cat.unit")
+    print(f"    E_0 (β)    = 0.78233341 / Q_cat = {E_0_cat!s} MeV/cat.unit")
     print()
 
     print(f"  {'Atom':>6} {'Z':>3} {'N':>3} {'A':>3} "
@@ -613,7 +613,7 @@ if __name__ == "__main__":
             "Track A: CRT-style high-precision Markov trace evaluation "
             "via mpmath. Avoids float underflow/overflow for heavy atoms. "
             "Evaluates tr_M(W) at q_0 with 50-digit precision. "
-            "β-decay calibration: E_0 = 0.782 / (|tr_M(n)| - |tr_M(p)|)."
+            "β-decay calibration: E_0 = 0.78233341 / (|tr_M(n)| - |tr_M(p)|)."
         ),
         "timestamp": datetime.now(timezone.utc).isoformat(),
         # P2.5 marker — mpmath-only numerical path; polynomial-in-q

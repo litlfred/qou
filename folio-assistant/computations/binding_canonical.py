@@ -117,7 +117,7 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
     """Binding via canonical Markov trace.
 
     B = E_0 · (|tr_M(W_free)| − |tr_M(W_atom)|),
-    E_0 = 0.782 MeV (free-neutron β-decay Q, per
+    E_0 = 0.78233341 MeV (free-neutron β-decay Q, per
     prop:categorical-mass-markov).
     """
     A = Z + N
@@ -185,7 +185,7 @@ if __name__ == "__main__":
     print("=" * 100)
     print("BINDING via CANONICAL Jones-Markov trace "
           "(prop:categorical-mass-markov)")
-    print(f"q₀ = {Q0_NUM}, E_0 = 0.782 MeV (β-decay Q)")
+    print(f"q₀ = {Q0_NUM}, E_0 = 0.78233341 MeV (β-decay Q)")
     print("=" * 100)
     results = []
     print(f"  {'Atom':>6} {'A':>3} {'3A':>3} {'B_AME':>8} "
@@ -221,10 +221,10 @@ if __name__ == "__main__":
             "tr_M(σ_0σ_1σ_0)=hz²+z.  Replaces the Plancherel-"
             "weighted trace used in binding_3A and "
             "atom_markov_trace.  Binding = E_0·(|tr_M_free| − "
-            "|tr_M_atom|) with E_0 = 0.782 MeV (β-decay Q)."
+            "|tr_M_atom|) with E_0 = 0.78233341 MeV (β-decay Q)."
         ),
         "timestamp": datetime.now(timezone.utc).isoformat(),
-        "parameters": {"q0": Q0_NUM, "E_0_MeV": 0.782},
+        "parameters": {"q0": Q0_NUM, "E_0_MeV": 0.78233341},
         "results": results,
     }
     out = Path(__file__).parent / "binding-canonical.witness.json"

@@ -28,7 +28,7 @@ letter — Φ_q acts AFTER Plancherel summation, not per-irrep).
 
 Binding:
    B(Z, N) = E_0 · ( 𝔪(W_free) − 𝔪(W_atom) )
-   E_0 = 0.782 MeV  (free-neutron β-decay Q, per prop).
+   E_0 = 0.78233341 MeV  (free-neutron β-decay Q, per prop).
 
 SCOPE & CAVEATS:
   1. V̂_i^{(n)} jet-lifting uses the MARKOV STABILIZATION rule
@@ -38,7 +38,7 @@ SCOPE & CAVEATS:
   2. Level 0 canonical trace is O(100s) per atom; level-n tower
      per brane adds additive cost.  N ≤ 5 is practical on D; heavy
      atoms need per-level caching.
-  3. E_0 = 0.782 MeV is the PROP's calibration for |tr_M| ≲ 1;
+  3. E_0 = 0.78233341 MeV is the PROP's calibration for |tr_M| ≲ 1;
      tower Φ_q values may be larger, so the SUM can exceed the
      bounded-trace regime.  An alternative calibration via proton-
      tower is also implemented (`E_0_calibration="proton_tower"`).

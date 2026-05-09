@@ -18,7 +18,7 @@ For this script:
   - Term 5: paper's BW with chirality factor per knot type
   - Term 6: absent (marked as missing)
 
-β-decay calibration: E_0 = 0.782 MeV, m_e = 0.511 MeV.  The
+β-decay calibration: E_0 = 0.78233341 MeV, m_e = 0.511 MeV.  The
 proton and neutron singly are calibrated (no tower needed); the
 formula is applied for bindings of D, T, ³He, ⁴He.
 
@@ -239,7 +239,7 @@ if __name__ == "__main__":
 
     # A=1 β-decay calibration (same as light_isotope_sweep.py).
     # Use the canonical CODATA-derived Q_NEUTRON_MEV (0.78233341 MeV)
-    # from experimental_constants.py rather than the truncated 0.782
+    # from experimental_constants.py rather than the truncated 0.78233341
     # to keep precision consistent with categorical_q_decay_ba_low_isotopes.
     t1_p = term_1_descended(1, 0, include_inter=False)
     t1_n = term_1_descended(0, 1, include_inter=False)
@@ -359,7 +359,7 @@ if __name__ == "__main__":
 
     print()
     print("KEY FINDING: n/p discrepancy is NOT visible here because we")
-    print("calibrate on β-decay Q_β(n) = 0.782 MeV. Both p and n match")
+    print("calibrate on β-decay Q_β(n) = 0.78233341 MeV. Both p and n match")
     print("CODATA to <0.2% by construction.")
     print()
     print("The A≥3 errors are from MISSING terms 2-5, NOT n/p:")

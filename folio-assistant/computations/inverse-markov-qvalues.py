@@ -266,7 +266,7 @@ for level, results_list, typed_d_fn, gs_fn, label in [
 
 print("\n\n" + "=" * 80)
 print("  DECOMPOSITION: Q = Q₀ + ΔB")
-print("  Q₀ = m_n - m_p - m_e = 0.782 MeV (free neutron Q-value)")
+print("  Q₀ = m_n - m_p - m_e = 0.78233341 MeV (free neutron Q-value)")
 print("  ΔB = B(daughter) - B(parent) (binding energy change)")
 print("=" * 80)
 

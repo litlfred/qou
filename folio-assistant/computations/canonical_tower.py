@@ -48,7 +48,7 @@ switch:
 
 Binding:
   B(Z, N) = E_0 · ( 𝔪^{(n)}(W_free) − 𝔪^{(n)}(W_atom) )
-  with E_0 = 0.782 MeV (β-decay Q, per prop:categorical-mass-markov).
+  with E_0 = 0.78233341 MeV (β-decay Q, per prop:categorical-mass-markov).
 
 The canonical Markov trace (tr_M_element) is used ONLY as a sanity
 check / comparison — the tower formula itself is a sum of Φ_q terms
@@ -573,7 +573,7 @@ if __name__ == "__main__":
     print("=" * 100)
     print("CANONICAL-WITH-PROPER-TOWER: JM-based V̂ + Φ_q tower "
           "(prop:mass-endomorphism-tower)")
-    print(f"q₀ = {Q0}, E_0 = 0.782 MeV (β-decay Q)")
+    print(f"q₀ = {Q0}, E_0 = 0.78233341 MeV (β-decay Q)")
     print("V̂_i = Plancherel-averaged JM eigenvalue at position i+1, "
           "weighted by crossing factors")
     print("=" * 100)
@@ -615,7 +615,7 @@ if __name__ == "__main__":
             "toggles the audit-flagged adjacent-only restriction."
         ),
         "timestamp": datetime.now(timezone.utc).isoformat(),
-        "parameters": {"q0": Q0, "E_0_MeV": 0.782},
+        "parameters": {"q0": Q0, "E_0_MeV": 0.78233341},
         "results": results,
     }
     out = Path(__file__).parent / "canonical-with-proper-tower.witness.json"
