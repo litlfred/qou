@@ -1,0 +1,144 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-09T00:34:53.840138+00:00",
+  "commitSha": "3f2bd2de45209c7c48790f47f6a166d271d65e06",
+  "assertions": [
+    {
+      "name": "codata_m_e",
+      "computed": 0.51099895,
+      "expected": 0.51099895,
+      "passed": true,
+      "tolerance": 3e-10,
+      "unit": "MeV",
+      "source": "anchor scale (by definition)"
+    },
+    {
+      "name": "codata_m_p",
+      "computed": 938.27208816,
+      "expected": 938.27208816,
+      "passed": true,
+      "tolerance": 5.8e-07,
+      "unit": "MeV",
+      "source": "anchor scale (atom_mass_derived.py)"
+    },
+    {
+      "name": "codata_Q_n__β-decay",
+      "computed": 0.7823334100000222,
+      "expected": 0.7823334100000222,
+      "passed": true,
+      "tolerance": 1.225887470365857e-06,
+      "unit": "MeV",
+      "source": "experimental_constants.py arithmetic"
+    },
+    {
+      "name": "codata_Vol_4_1",
+      "computed": 2.029883212819307,
+      "expected": 2.029883212819307,
+      "passed": true,
+      "tolerance": 2e-12,
+      "unit": "dimensionless",
+      "source": "SnapPy 3.3.2 (anchor)"
+    },
+    {
+      "name": "codata_Vol_twist3",
+      "computed": 2.828122088330783,
+      "expected": 2.828122088330783,
+      "passed": true,
+      "tolerance": 2e-12,
+      "unit": "dimensionless",
+      "source": "SnapPy 3.3.2 (anchor)"
+    },
+    {
+      "name": "codata_Vol_borromean",
+      "computed": 7.327724753846269,
+      "expected": 7.327724753846269,
+      "passed": true,
+      "tolerance": 2e-12,
+      "unit": "dimensionless",
+      "source": "SnapPy 3.3.2 (anchor)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 8,
+  "computation": "codata-reconciliation",
+  "scriptFile": "codata_reconciliation.py",
+  "scriptHash": "ac1d490ed82e",
+  "scriptCommitSha": "unknown",
+  "description": "Consolidated CODATA-2022 reconciliation table for QOU primary predictions.  Each row reports predicted value, CODATA central value, deviation in ppb, and CODATA uncertainty in ppb.  Passing assertion = QOU prediction within twice the CODATA uncertainty.",
+  "auditOnly": "docs/audits/codata-reconciliation.md",
+  "data": {
+    "rows": [
+      {
+        "quantity": "m_e",
+        "unit": "MeV",
+        "predicted": 0.51099895,
+        "codata": 1.5e-10,
+        "codata_value": 0.51099895,
+        "codata_err": 1.5e-10,
+        "delta_ppb": 0.0,
+        "codata_unc_ppb": 0.2935426775338775,
+        "predicted_source": "anchor scale (by definition)",
+        "anchor": true
+      },
+      {
+        "quantity": "m_p",
+        "unit": "MeV",
+        "predicted": 938.27208816,
+        "codata_value": 938.27208816,
+        "codata_err": 2.9e-07,
+        "delta_ppb": 0.0,
+        "codata_unc_ppb": 0.309078788188941,
+        "predicted_source": "anchor scale (atom_mass_derived.py)",
+        "anchor": true
+      },
+      {
+        "quantity": "Q_n (β-decay)",
+        "unit": "MeV",
+        "predicted": 0.7823334100000222,
+        "codata_value": 0.7823334100000222,
+        "codata_err": 6.129437351829285e-07,
+        "delta_ppb": 0.0,
+        "codata_unc_ppb": 783.4814765010626,
+        "predicted_source": "experimental_constants.py arithmetic",
+        "anchor": false
+      },
+      {
+        "quantity": "Vol(4_1)",
+        "unit": "dimensionless",
+        "predicted": 2.029883212819307,
+        "codata_value": 2.029883212819307,
+        "codata_err": 1e-12,
+        "delta_ppb": 0.0,
+        "codata_unc_ppb": 0.0004926391792812056,
+        "predicted_source": "SnapPy 3.3.2 (anchor)",
+        "anchor": true
+      },
+      {
+        "quantity": "Vol(twist3)",
+        "unit": "dimensionless",
+        "predicted": 2.828122088330783,
+        "codata_value": 2.828122088330783,
+        "codata_err": 1e-12,
+        "delta_ppb": 0.0,
+        "codata_unc_ppb": 0.00035359152425778795,
+        "predicted_source": "SnapPy 3.3.2 (anchor)",
+        "anchor": true
+      },
+      {
+        "quantity": "Vol(borromean)",
+        "unit": "dimensionless",
+        "predicted": 7.327724753846269,
+        "codata_value": 7.327724753846269,
+        "codata_err": 1e-12,
+        "delta_ppb": 0.0,
+        "codata_unc_ppb": 0.00013646800795500777,
+        "predicted_source": "SnapPy 3.3.2 (anchor)",
+        "anchor": true
+      }
+    ],
+    "anchor_count": 5,
+    "derived_count": 1,
+    "max_non_anchor_delta_ppb": 0.0
+  }
+}
