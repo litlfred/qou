@@ -1,15 +1,15 @@
 {
   "engine": "python+numpy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-28T02:06:56.440127+00:00",
-  "commitSha": "22bb3ae3624c26aa1ca15c334430a15f49d4ffa7",
+  "computedAt": "2026-05-09T00:53:03.321019+00:00",
+  "commitSha": "1d068aa544b72ce722545243741cc1e5b2ee9b5e",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 31,
+  "durationMs": 27,
   "computation": "probe-gamma-gamma-lr-embed-h6",
   "scriptFile": "probe_gamma_gamma_lr_embed_h6.py",
-  "scriptHash": "8cd3d26d1964",
-  "scriptCommitSha": "",
+  "scriptHash": "22c1334c6fac",
+  "scriptCommitSha": "1d068aa544b72ce722545243741cc1e5b2ee9b5e",
   "description": "Foreground γγ LR-embed test at H_6 (deuteron). Builds the deuteron atom braid via atomic_braid_to_crossings(Z=1, N=1) and checks PSD-feasibility on every Wedderburn block of H_6 via Hoefsmit seminormal matrices at q_0. Tests whether the B_3 cube's H_3 PSD-feasibility (per probe_gamma_gamma_h3_psd_scan.py) carries up to H_6 via LR-embedding.",
   "contentBlock": "rem:photon-channel-wedderburn-chain",
   "parameters": {
@@ -29,7 +29,7 @@
         "eigvals_sym_max": 1.5597587394180774,
         "eigvals_sym_count_negative": 0,
         "psd_or_close": true,
-        "walltime_sec": 0.0005633831024169922
+        "walltime_sec": 0.0005064010620117188
       },
       {
         "shape": [
@@ -42,7 +42,7 @@
         "eigvals_sym_max": 2.599591955547221,
         "eigvals_sym_count_negative": 3,
         "psd_or_close": false,
-        "walltime_sec": 0.0003714561462402344
+        "walltime_sec": 0.00028586387634277344
       },
       {
         "shape": [
@@ -55,7 +55,7 @@
         "eigvals_sym_max": 3.659797417658187,
         "eigvals_sym_count_negative": 4,
         "psd_or_close": false,
-        "walltime_sec": 0.00040793418884277344
+        "walltime_sec": 0.00031638145446777344
       },
       {
         "shape": [
@@ -69,7 +69,7 @@
         "eigvals_sym_max": 3.475119094947088,
         "eigvals_sym_count_negative": 6,
         "psd_or_close": false,
-        "walltime_sec": 0.0004603862762451172
+        "walltime_sec": 0.0002982616424560547
       },
       {
         "shape": [
@@ -82,7 +82,7 @@
         "eigvals_sym_max": 4.184511975125082,
         "eigvals_sym_count_negative": 2,
         "psd_or_close": false,
-        "walltime_sec": 0.00033164024353027344
+        "walltime_sec": 0.00024390220642089844
       },
       {
         "shape": [
@@ -96,7 +96,7 @@
         "eigvals_sym_max": 4.0697632598080755,
         "eigvals_sym_count_negative": 8,
         "psd_or_close": false,
-        "walltime_sec": 0.0004436969757080078
+        "walltime_sec": 0.00035572052001953125
       },
       {
         "shape": [
@@ -111,7 +111,7 @@
         "eigvals_sym_max": 1.7676587783888251,
         "eigvals_sym_count_negative": 4,
         "psd_or_close": false,
-        "walltime_sec": 0.00035190582275390625
+        "walltime_sec": 0.0003426074981689453
       },
       {
         "shape": [
@@ -125,7 +125,7 @@
         "eigvals_sym_max": 0.6067835740075286,
         "eigvals_sym_count_negative": 3,
         "psd_or_close": false,
-        "walltime_sec": 0.0002722740173339844
+        "walltime_sec": 0.0002415180206298828
       },
       {
         "shape": [
@@ -140,7 +140,7 @@
         "eigvals_sym_max": 1.542832746836086,
         "eigvals_sym_count_negative": 5,
         "psd_or_close": false,
-        "walltime_sec": 0.00031757354736328125
+        "walltime_sec": 0.0003056526184082031
       },
       {
         "shape": [
@@ -156,7 +156,7 @@
         "eigvals_sym_max": 2.1187429641963296,
         "eigvals_sym_count_negative": 2,
         "psd_or_close": false,
-        "walltime_sec": 0.0002560615539550781
+        "walltime_sec": 0.000278472900390625
       },
       {
         "shape": [
@@ -173,7 +173,7 @@
         "eigvals_sym_max": -0.6769250645272102,
         "eigvals_sym_count_negative": 1,
         "psd_or_close": false,
-        "walltime_sec": 0.00018143653869628906
+        "walltime_sec": 0.00013566017150878906
       }
     ],
     "psd_count": 1,
