@@ -194,7 +194,89 @@ def hoefsmit_matrices_symbolic(shape, q):
     return _hoefsmit_build(shape, q)
 
 
-def q_character_on_braid_word(shape, braid_crossings, q):
+# In-memory cache for χ^λ_q(T_w) keyed by (shape, frozen braid word, q symbol).
+# Avoids recomputing the Hoefsmit-matrix-product trace when the same
+# (partition, braid_word) pair is queried twice in a single process —
+# e.g. when habiro_coefficients_atomic evaluates atoms p, n, D in
+# sequence and several share generator-index sub-words.
+@functools.lru_cache(maxsize=None)
+def _q_character_cached_impl(shape_key: tuple, braid_key: tuple,
+                              q_name: str) -> "sp.Expr":
+    """Cached inner implementation; called via q_character_on_braid_word
+    when q is a sympy Symbol whose name fully identifies it."""
+    q = sp.Symbol(q_name, positive=True, real=True) if q_name else sp.Symbol("q")
+    return _q_character_compute(list(shape_key), list(braid_key), q)
+
+
+def _q_character_compute(shape, braid_crossings, q):
+    """Pure compute path (no caching).  Multiplies Hoefsmit matrices
+    through the braid word and returns the trace."""
+    matrices, dim, _ = hoefsmit_matrices_symbolic(shape, q)
+    if dim == 0:
+        return Integer(0)
+    h = q - q ** (-1)
+    M = sp.eye(dim)
+    for gen_idx, cross_d in braid_crossings:
+        if gen_idx < 0 or gen_idx >= len(matrices):
+            raise IndexError(f"gen_idx {gen_idx} out of range for shape {shape}")
+        sigma = matrices[gen_idx]
+        d_val = {"sigma": Integer(0), "sigma_inv": -h,
+                 "averaged": -h / 2}[cross_d]
+        cross = sigma + d_val * sp.eye(dim)
+        M = M * cross
+        # `cancel` — polynomial-division on rationals — is 5–10×
+        # faster than `simplify` and sufficient to keep entry
+        # complexity bounded for Hecke-algebra traces.
+        M = M.applyfunc(sp.cancel)
+    return sp.cancel(M.trace())
+
+
+# Lazy χ^λ map: (atom_label, partition tuple) → sympy-string, parsed on
+# first request only.  Backed by chi-{atom}-h{n}.witness.json caches that
+# already exist for atoms whose Hoefsmit-matrix products are too
+# expensive to recompute (n ≥ 6).
+_CHI_WITNESS_STRINGS: dict[str, dict[tuple, str]] = {}
+
+
+def _load_chi_witness(atom_label: str) -> dict[tuple, str]:
+    """Read chi-{atom_label}-h{n}.witness.json (n implied by atom_label)
+    and return {partition_tuple: chi_q_symbolic_string}.  Cached per
+    atom_label; lazy on first request."""
+    if atom_label in _CHI_WITNESS_STRINGS:
+        return _CHI_WITNESS_STRINGS[atom_label]
+    out: dict[tuple, str] = {}
+    here = Path(__file__).parent
+    # Try canonical naming patterns.  chi-deuteron-h6, chi-tritium-h9,
+    # chi-helium-3-h9, etc.
+    for pattern in (
+        f"chi-{atom_label}-h*.witness.json",
+        f"chi-{atom_label}.witness.json",
+    ):
+        for path in sorted(here.glob(pattern)):
+            try:
+                with path.open() as f:
+                    doc = json.load(f)
+                entries = doc.get("chi_lambda_symbolic")
+                if not isinstance(entries, list):
+                    continue
+                for w in entries:
+                    try:
+                        lam = tuple(w["partition"])
+                        out[lam] = w["chi_q_symbolic"]
+                    except (KeyError, TypeError):
+                        continue
+            except Exception:
+                continue
+            if out:
+                break
+        if out:
+            break
+    _CHI_WITNESS_STRINGS[atom_label] = out
+    return out
+
+
+def q_character_on_braid_word(shape, braid_crossings, q,
+                                *, atom_cache_label: str | None = None):
     """Compute χ^λ_q(T_w) symbolically for a braid word represented as
     a list of (gen_index, (c, d)) pairs.  Each crossing contributes
     c · ρ_λ(T_gen) + d · I_dim to the product; the final trace is the
@@ -203,29 +285,47 @@ def q_character_on_braid_word(shape, braid_crossings, q):
     For the atomic braid: c = 1, d ∈ {0, -h, -h/2} depending on
     crossing type (σ, σ^{-1}, averaged).
 
+    Optimizations:
+
+    - **Witness-cache lookup** (preferred for n ≥ 6): if
+      `atom_cache_label` is supplied (e.g. ``"deuteron"``,
+      ``"tritium"``, ``"helium-3"``) the function consults the
+      committed `chi-{label}-h{n}.witness.json` cache for the
+      requested partition.  These caches store the closed-form
+      symbolic χ^λ_q(β_atom) values (155+ s first-run compute) and
+      let downstream consumers skip the Hoefsmit-matrix-product
+      recomputation.  Returns the cached value when present.
+    - **In-memory lru_cache** (always on for sympy.Symbol q):
+      caches the final trace by `(shape, tuple(braid_crossings),
+      q.name)` so repeated calls in a single process hit the
+      previous result.
+
     Returns sympy expression for χ^λ_q(T_w).
     """
-    matrices, dim, _ = hoefsmit_matrices_symbolic(shape, q)
-    if dim == 0:
-        return Integer(0)
-    h = q - q ** (-1)
+    # 1. Witness-cache hit — most expensive computations skipped.
+    if atom_cache_label is not None:
+        cache = _load_chi_witness(atom_cache_label)
+        lam = tuple(shape)
+        if lam in cache:
+            try:
+                # Bind q-string to the caller's q symbol.  The cached
+                # strings always use the bare name "q"; sympify via
+                # `locals={"q": q}` ensures the returned expression
+                # composes with downstream callers' q.
+                return sp.sympify(cache[lam], locals={"q": q})
+            except (sp.SympifyError, SyntaxError, ValueError):
+                pass  # fall through to recompute
 
-    M = sp.eye(dim)
-    for gen_idx, cross_d in braid_crossings:
-        if gen_idx < 0 or gen_idx >= len(matrices):
-            raise IndexError(f"gen_idx {gen_idx} out of range for shape {shape}")
-        sigma = matrices[gen_idx]
-        # cross_d is one of 0, -h, -h/2
-        d_val = {"sigma": Integer(0), "sigma_inv": -h,
-                 "averaged": -h / 2}[cross_d]
-        # crossing matrix = 1·σ + d·I
-        cross = sigma + d_val * sp.eye(dim)
-        M = M * cross
-        # `cancel` — polynomial-division on rationals — is 5–10×
-        # faster than `simplify` and sufficient to keep entry
-        # complexity bounded for Hecke-algebra traces.
-        M = M.applyfunc(sp.cancel)
-    return sp.cancel(M.trace())
+    # 2. In-memory lru_cache for pure-Symbol q (Symbols are cheap to key
+    # by name; non-Symbol q goes straight to compute since cache keys
+    # would be unstable).
+    if isinstance(q, sp.Symbol):
+        return _q_character_cached_impl(
+            tuple(shape), tuple(braid_crossings), q.name
+        )
+
+    # 3. Fall through: pure compute (no caching available).
+    return _q_character_compute(shape, braid_crossings, q)
 
 
 # `atomic_braid_to_crossings` was REMOVED in PR #572 commit
