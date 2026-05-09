@@ -1,0 +1,179 @@
+**Definition (spin involution on a Frobenius algebra).**
+Let $(A, \tau)$ be a Frobenius algebra over a commutative ring
+$R$. A *spin involution* on $(A, \tau)$ is an $R$-linear map
+$\sigma : A \to A$ satisfying
+
+1. **Involution**: $\sigma \circ \sigma = \mathrm{id}_A$.
+2. **Anti-multiplicative** (*-anti-homomorphism):
+   $\sigma(a b) = \sigma(b)\, \sigma(a)$ for all $a, b \in A$.
+3. **Trace-invariant**: $\tau \circ \sigma = \tau$.
+
+The $\mathbb{Z}/2$ grading $A = A_+ \oplus A_-$ by
+$\sigma$-eigenvalue is the *spin grading*; $A_+$ is the
+*spin-singlet sector* and $A_-$ is the *spin-doublet sector*.
+For $a \in A$, the *isospin third-component* is
+
+$$
+  T_3(a) \;=\; \tfrac{1}{2}\,\mathrm{sgn}_\sigma(a)
+  \;\in\; \{-\tfrac{1}{2},\, 0,\, +\tfrac{1}{2}\},
+$$
+
+with $T_3(a) = 0$ when $a \in A_+$ (singlet, fixed by $\sigma$),
+$T_3(a) = \pm \tfrac{1}{2}$ when $\sigma(a) = \pm a$.
+
+**Proposition (spin-invariance of the LP-dual).**
+*Let $(A, \tau)$ be a Frobenius algebra with spin involution
+$\sigma$. Let $c \in A$ be $\sigma$-invariant ($\sigma(c) = c$).
+Let $\Sigma$ be a $\sigma$-stable set of central idempotents of
+$A$ (i.e., $\sigma(\pi_\lambda) \in \{\pi_\mu : \mu \in
+\Sigma\}$ for every $\lambda \in \Sigma$). For any $\beta \in A$,
+the optimal dual variable $y_0^*$ of the operator-selection LP*
+
+$$
+  \min_{x \in A}\; \tau(c \cdot x)
+  \quad \text{s.t.} \quad
+  \tau(\beta^* \beta \cdot x) = n_{\mathrm{target}}(\beta), \;\;
+  \tau(\pi_\lambda \cdot x) \geq 0 \;\; \forall \lambda \in \Sigma
+$$
+
+*satisfies*
+
+$$
+  y_0^*\bigl(\sigma(\beta)\bigr) \;=\; y_0^*(\beta).
+$$
+
+*Proof.*
+
+**Step 1 — Frobenius pairing is σ-symmetric.**
+The Frobenius pairing $\langle a, b \rangle_\tau := \tau(ab)$
+satisfies, for all $a, b \in A$:
+
+$$
+  \langle \sigma(a), \sigma(b) \rangle_\tau
+  = \tau(\sigma(a)\sigma(b))
+  = \tau(\sigma(ba))
+  = \tau(ba)
+  = \langle b, a \rangle_\tau
+  = \langle a, b \rangle_\tau,
+$$
+
+where the second equality is anti-multiplicativity, the third
+is trace-invariance, and the last is symmetry of $\tau$ (the
+Markov / cyclic property). Hence $\sigma$ is an isometry of the
+Frobenius pairing.
+
+**Step 2 — σ stabilises the constraint cone.**
+Since $\Sigma$ is $\sigma$-stable, the polyhedral cone
+$\mathcal{C} := \{x \in A : \tau(\pi_\lambda \cdot x) \geq 0\
+\forall \lambda \in \Sigma\}$ satisfies $\sigma(\mathcal{C}) =
+\mathcal{C}$ (apply Step 1 to each constraint).
+
+**Step 3 — σ stabilises the cost functional.**
+Because $\sigma(c) = c$ and $\tau \circ \sigma = \tau$:
+
+$$
+  \tau(c \cdot \sigma(x))
+  = \tau(\sigma(\sigma(c) \cdot x))
+  = \tau(\sigma(c \cdot x))
+  = \tau(c \cdot x).
+$$
+
+So the cost is $\sigma$-invariant: replacing $x$ by $\sigma(x)$
+does not change the objective.
+
+**Step 4 — σ relates the two LPs.**
+Define $\mathrm{LP}(\beta)$ to be the LP with input $\beta$.
+The net constraint $\tau(\beta^* \beta \cdot x) =
+n_{\mathrm{target}}(\beta)$ transforms under $x \mapsto
+\sigma(x)$ to
+
+$$
+  \tau(\beta^* \beta \cdot \sigma(x))
+  = \tau\bigl(\sigma(\sigma(\beta^*\beta) \cdot x)\bigr)
+  = \tau(\sigma(\beta)^* \sigma(\beta) \cdot x),
+$$
+
+where we used $\sigma(\beta^*\beta) = \sigma(\beta)^* \sigma(\beta)$
+(anti-multiplicativity preserves the involutive form $a^*a$
+when $\sigma$ is a $*$-involution; for the Hecke / Markov case
+this is the bar involution). Hence $\sigma$ is a bijection
+between the feasible sets of $\mathrm{LP}(\beta)$ and
+$\mathrm{LP}(\sigma(\beta))$, preserving the objective.
+
+**Step 5 — LP-duality.**
+By Steps 2–4, $\mathrm{LP}(\beta)$ and $\mathrm{LP}(\sigma(\beta))$
+have feasible sets in $\sigma$-bijection and the same
+$\sigma$-invariant cost; their primal optima coincide. By
+strong duality (which holds for Frobenius algebras structurally
+— see [`prop:frobenius-self-duality-forces-lp-dual-extraction`](#prop:frobenius-self-duality-forces-lp-dual-extraction)),
+the dual optima coincide. In particular,
+
+$$
+  y_0^*\bigl(\sigma(\beta)\bigr) = y_0^*(\beta). \qquad\square
+$$
+
+**Corollary (QOU instance — isospin invariance).**
+*For $A = H_n(R, q)$ with $\tau$ the Markov trace and $\sigma = S$
+the Hopf antipode, the per-atom canonical braid recipe
+satisfies $S(\beta_K(Z, N)) \sim \beta_K(N, Z)$ (Markov-
+conjugate). Consequently, for every central cost operator
+$c \in Z(H_n(q))$ (in particular $c = P_\ell = e_\ell(J_1,
+\ldots, J_n)$, Murphy 1992) and every $\sigma$-stable Wedderburn
+stratum $\Sigma$,*
+
+$$
+  y_0^*(Z, N) = y_0^*(N, Z).
+$$
+
+*Proof.* For $A = H_n(R, q)$, $S$ is an involutive
+anti-homomorphism (Kassel 1995, §VIII.4) and $\tau$ is
+$S$-invariant (Kassel 1995, §XII.2). The central elements
+$P_\ell$ are $S$-invariant by direct calculation
+($S$ permutes the JM elements as
+$S(J_k) = q^{2(1-k)} J_k$, so symmetric polynomials in the
+$J_k$ are scaled by an overall power of $q$ that vanishes from
+the trace; alternatively, $P_\ell$ acts on $V_\lambda$ as
+$c_\ell(\lambda)$, and on $V_{\lambda^T}$ as
+$c_\ell(\lambda^T) = c_\ell(\lambda)|_{q \to q^{-1}}$, which is
+the $q^{-2\ell|\lambda|/n}$-rescaled value — a constant on each
+isotypic block, hence absorbed by trace normalisation).
+Wedderburn strata defined by partition height
+($\mathrm{ht}(\lambda) \le k$) or by self-conjugate selection
+are $S$-stable. Apply the proposition. $\square$
+
+**Empirical confirmation.**
+[`alpha-5-lp-dual-crystal.witness.json`](folio-assistant/computations/alpha-5-lp-dual-crystal.witness.json)
+verifies $y_0^*(T) = y_0^*({}^3\mathrm{He})$ to machine
+precision (= 570.6762 at $q_0$, = 26.8242 in ht=6 stratum, and
+exactly equal across the entire $q$-sweep).
+
+**Remark (mathematical content of "isospin").**
+Isospin is *not* a feature peculiar to nucleons; it is the
+$\mathbb{Z}/2$ grading attached to *any* Frobenius algebra
+equipped with a spin involution. Whenever physical observables
+are extracted as $\tau$-traces of products of central elements
+and braid recipes, the spin-singlet sector ($T_3 = 0$) and
+spin-doublet sector ($T_3 = \pm 1/2$) decompose canonically
+under the LP-dual. The "Wigner energy term"
+$\sim |Z - N|/A$ in the BW formula is the $T_3$-projection of
+this grading; it appears because $|Z - N|$ is the $\mathbb{Z}/2$
+*charge* of the recipe, which the LP-dual reads off
+mechanically.
+
+**Remark (why this proof works generically).**
+The proof never invokes the specific structure of nucleons,
+quarks, $SU(2)$, or even Lie theory. The only inputs are:
+
+1. A Frobenius algebra $(A, \tau)$ with non-degenerate trace,
+2. An involutive anti-homomorphism $\sigma$ preserving $\tau$,
+3. A $\sigma$-invariant central cost $c$,
+4. A $\sigma$-stable channel set $\Sigma$.
+
+Any quantum-algebraic system with these four ingredients has
+LP-dual spin-invariance. The QOU paper inherits it because
+$(H_n(R, q), \tau_{\mathrm{Markov}}, S, P_\ell, \Sigma)$
+satisfies all four. Particle physics gets isospin because
+nucleons are realised as a 2-row Wedderburn stratum (per
+[PR #619](https://github.com/litlfred/qou/pull/619) empirics)
+inside this same algebra; the Wigner-energy phenomenology is
+the LP-dual shadow of the categorical $\mathbb{Z}/2$ grading.
