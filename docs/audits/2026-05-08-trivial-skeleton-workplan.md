@@ -31,10 +31,10 @@ work can promote them to faithful instances.
 | `const_zero`     | 38 | 34 | -4 |
 | `skel_inst`      | 21 | 14 | -7 (some new from §3b-cond classes) |
 | `prop_true`      | 15 |  1 | **-14** (only `InSymmetricIdempotent` remains, per-callsite by design) |
-| `punit_type`     | 14 |  0 | **-14 (B4 ✓)** |
+| `punit_type`     | 14 |  0 | **-14 (B4 done)** |
 | `one_def`        | 10 | 17 | +7 (concrete `dim_q := 1` sites — content-bearing) |
 | `holds_trivial`  | 8  | 10 | +2 (§3b-cond skeleton instances in upstream-Mathlib classes) |
-| `punit_unit`     | 2  |  0 | **-2 (B4 ✓)** |
+| `punit_unit`     | 2  |  0 | **-2 (B4 done)** |
 | `id_def`         | 1  |  1 | 0 |
 | `const_zero_typed` | 1 | 1 | 0 |
 | **Total**        | **111** | **78** | **-33 (30 % reduction)** |
@@ -345,7 +345,7 @@ Targets (6 substrate axioms):
   (`Polynomial.cyclotomic_eval` is in Mathlib; per-n closed forms
   for n=2..6 need the `factor` tactic over ℚ(t)).
 
-### Bucket 6 — CI strict-gate flip (governance) — ✅ landed 2026-05-08
+### Bucket 6 — CI strict-gate flip (governance) — landed 2026-05-08
 
 The `|| true` mask has been dropped from
 `.github/workflows/witness-pipeline.yml`.  The trivial-skeleton
