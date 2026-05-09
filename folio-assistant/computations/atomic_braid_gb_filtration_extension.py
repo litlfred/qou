@@ -54,7 +54,12 @@ ATOMIC_BRAIDS = [
 
 
 def _reduce_and_summarize(name: str, n: int, word: list[int]) -> dict:
-    """Run tracker on a braid word; return summary dict."""
+    """Run tracker on a braid word; return summary dict.
+
+    Per Copilot review on #585: emit the actual filtration certificate
+    (grade → list of (perm, canonical_word, coefficient)), not just
+    the term counts. Downstream magic-A consumers need the cert.
+    """
     E = HeckeElement.identity(n)
     for i in word:
         if i > 0:
@@ -65,6 +70,20 @@ def _reduce_and_summarize(name: str, n: int, word: list[int]) -> dict:
     grades = sorted(cert.keys())
     top = grades[-1] if grades else 0
     grade_term_counts = {int(g): len(cert[g]) for g in grades}
+    # Structured certificate: per-grade list of {perm, canonical_word,
+    # coefficient_str}. Coefficients are sympy expressions; stringify
+    # for JSON.
+    structured_cert = {}
+    for g in grades:
+        rows = []
+        for w, c in sorted(cert[g]):
+            cw = perm_to_canonical_word(w)
+            rows.append({
+                "perm": list(w),
+                "canonical_word": list(cw),
+                "coefficient": str(c),
+            })
+        structured_cert[str(int(g))] = rows
     return {
         "name": name,
         "n": n,
@@ -72,6 +91,7 @@ def _reduce_and_summarize(name: str, n: int, word: list[int]) -> dict:
         "ell_K_q": int(top),
         "n_terms_total": sum(grade_term_counts.values()),
         "grade_term_counts": grade_term_counts,
+        "filtration_certificate": structured_cert,
         "n_jet_events": len(E.jet_log),
         "n_steps_total": E.step_counter,
     }

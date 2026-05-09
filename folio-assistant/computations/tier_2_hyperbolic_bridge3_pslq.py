@@ -8,8 +8,9 @@ to include bridge-number ≥ 3 hyperbolic knots in H_n for n ∈ {4..8}.
 Per `2026-05-09-refocused-1ppb-workplan-v3.md` §3 item #1, this is
 the next search target after Tier-1 returned no small Z-linear
 relation for 2/(3π) over the 11-element 3-braid basis. Tier-2 adds
-hyperbolic 4-braid knots through 9 crossings (bridge-number ≥ 3),
-which are not in the Birman-Hilden 3-braid table.
+hyperbolic 4-braid knots **through 8 crossings** (bridge-number ≥ 3),
+which are not in the Birman-Hilden 3-braid table. The 9-crossing
+extension is reserved for Tier-3 (per the v3 doc).
 
 Basis additions (8-crossing bridge-3 hyperbolic knots, sourced from
 KnotInfo / SnapPy literature):
@@ -85,28 +86,30 @@ TIER2_LITERATURE = {
 }
 
 
-def _tier2_basis() -> tuple[mpf, ...]:
-    """Return Tier-2 additional volumes; uses SnapPy if available."""
+def _tier2_basis() -> tuple[tuple[mpf, ...], str]:
+    """Return (Tier-2 volumes, source-tag).
+
+    Per Copilot review on #585: track whether SnapPy HP volumes were
+    actually used (import success ≠ HP success). Returns the source
+    tag alongside the values so the witness records reality.
+    """
+    keys = ["8_5", "8_10", "8_15", "8_16", "8_17", "8_18"]
     try:
         import snappy
-        # Note: SnapPy gives volumes in float; for 50+ dps we'd need
-        # to use snappy's high_precision API. Fall through to lit
-        # values if not high-precision-capable.
         try:
             vals = []
-            for name in ["8_5", "8_10", "8_15", "8_16", "8_17", "8_18"]:
+            for name in keys:
                 m = snappy.Manifold(name)
                 m.set_peripheral_curves("shortest")
-                hp = m.high_precision()
-                vals.append(mpf(hp.volume()))
-            return tuple(vals)
+                hp = m.high_precision(bits=200)
+                vals.append(mpf(str(hp.volume())))
+            return tuple(vals), "snappy.high_precision(bits=200)"
         except Exception:
-            return tuple(TIER2_LITERATURE[k]
-                         for k in ["8_5", "8_10", "8_15", "8_16",
-                                  "8_17", "8_18"])
+            return (tuple(TIER2_LITERATURE[k] for k in keys),
+                    "knotinfo-literature-15dps (snappy HP failed)")
     except ImportError:
-        return tuple(TIER2_LITERATURE[k]
-                     for k in ["8_5", "8_10", "8_15", "8_16", "8_17", "8_18"])
+        return (tuple(TIER2_LITERATURE[k] for k in keys),
+                "knotinfo-literature-15dps (snappy unavailable)")
 
 
 def main() -> int:
@@ -116,7 +119,7 @@ def main() -> int:
 
     target = 2 / (3 * mp_pi)
     tier1 = _tier1_basis()
-    tier2 = _tier2_basis()
+    tier2, tier2_source = _tier2_basis()
 
     basis = (target,) + tier1 + tier2
     labels = (
@@ -128,7 +131,11 @@ def main() -> int:
         "Vol(8_16)", "Vol(8_17)", "Vol(8_18)",
     )
 
-    relation = pslq(list(basis), tol=mpf("1e-12"), maxcoeff=10**4)
+    # Per Gemini review on #585: tie tol to mp.eps so the search
+    # actually runs at the configured 50 dps. Hardcoded `1e-12`
+    # truncated PSLQ to f64-grade precision.
+    pslq_tol = mp.eps * mpf("1e3")
+    relation = pslq(list(basis), tol=pslq_tol, maxcoeff=10**4)
 
     has_snappy = False
     try:
@@ -160,13 +167,15 @@ def main() -> int:
         ),
         "contentBlock": "conj:bring-hyperbolic-knot-bloch-decomposition",
         "precision_dps": 50,
-        "tolerance": "1e-12",
+        "tolerance": str(pslq_tol),
         "maxcoeff": 10**4,
         "snappy_available": has_snappy,
-        "tier2_volume_source": ("snappy.high_precision" if has_snappy
-                                else "knotinfo-literature-15dps"),
+        "tier2_volume_source": tier2_source,
         "basis_labels": list(labels),
-        "basis_values_30dp": [str(b)[:35] for b in basis],
+        # Per Copilot review on #585: use mpmath.nstr for stable
+        # 30-decimal formatting (str(b)[:35] truncated mid-digit).
+        "basis_values_30dp": [mpmath.nstr(b, 30, strip_zeros=False)
+                              for b in basis],
         "tier_1_baseline": "tier-1-hyperbolic-3braid-pslq.witness.json (negative)",
         "relation_found": relation is not None,
         "relation": [int(x) for x in relation] if relation else None,
@@ -176,6 +185,9 @@ def main() -> int:
     out = (WitnessBuilder.wrap_legacy(
         "tier-2-hyperbolic-bridge3-pslq", result,
         script_path=__file__, engine="mpmath")
+        # Per Copilot review on #585: mark as audit-only so
+        # audit-wiring.ts doesn't bucket it as orphan.
+        .set_audit_only("docs/audits/2026-05-09-refocused-1ppb-workplan-v3.md")
         .add_assertion(
             "no_small_relation_found",
             computed=0.0 if relation is None else 1.0,
