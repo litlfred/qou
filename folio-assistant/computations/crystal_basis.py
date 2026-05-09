@@ -36,6 +36,21 @@ This module is **pure-Python integer arithmetic** — no sympy, no
 floating point.  Coefficients in the canonical basis are
 guaranteed-integer by construction; the bar invariance check is a
 combinatorial identity, not a polynomial expansion.
+
+See also (sibling modules — non-overlapping roles):
+
+* ``demazure_markov_trace.py`` — Demazure character ``D_w(λ)`` via the
+  *polynomial* Demazure operator ``π_i`` on Laurent polynomials in
+  ``x_1, …, x_n``.  Used by the Demazure-fiber Markov-trace functional
+  (``prop:demazure-fiber-markov-trace``).  Complementary to the
+  combinatorial enumerator here: ``D_w(λ)`` is a polynomial; the
+  ``demazure_subcrystal`` returned here is the *set of SSYTs* whose
+  weights sum to that polynomial.
+* ``brundan_kleshchev_audit.py`` — necessary-conditions audit for the
+  Brundan–Kleshchev isomorphism ``H_n(R, q) ≅ R_α^Λ``.  Provides the
+  empirical-evidence dossier for the conjectural class
+  ``CrystalGraphRealization``; this module supplies the SSYT-level
+  primitives that the conjectural isomorphism is *about*.
 """
 from __future__ import annotations
 
@@ -550,10 +565,7 @@ def _self_test() -> dict:
 
 
 if __name__ == "__main__":
-    import json
     import sys
-    from datetime import datetime, timezone
-    from pathlib import Path
 
     print("=" * 72)
     print("CRYSTAL-BASIS PRIMITIVES — Phase 0 self-test")
@@ -590,19 +602,31 @@ if __name__ == "__main__":
         print("\n  ✗ Some tests FAILED — see above.")
         sys.exit(1)
 
-    # Emit witness JSON.
-    witness = {
-        "computation": "crystal-basis-primitives",
-        "description": (
+    # Emit witness via WitnessBuilder (canonical ComputationWitness
+    # schema; matches scripts/audit-wiring.ts expectations and
+    # folio-assistant/schemas/types.ts).
+    from witness_base import WitnessBuilder
+
+    w = (WitnessBuilder("crystal-basis-primitives", engine="python")
+         .set_description(
             "Phase 0 of the S-poly → crystal-basis migration: validates "
             "Kashiwara f_i / e_i operators (signature rule), B(λ) BFS, "
             "and Demazure sub-crystal enumeration against the Weyl "
             "dimension formula s_λ(1,…,1) = #SSYT(λ,n)."
-        ),
-        "timestamp": datetime.now(timezone.utc).isoformat(),
-        "compute_engine": "crystal-basis",
-        "results": summary,
-    }
-    out_path = Path(__file__).parent / "crystal-basis-primitives.witness.json"
-    out_path.write_text(json.dumps(witness, indent=2) + "\n")
+         ))
+    w.add_data("validation_cases", summary["validation_cases"])
+    w.add_data("demazure_growth_demo", summary["demazure_growth_demo"])
+    w.add_data("all_passed", summary["all_passed"])
+    # One assertion per (shape, n) case — agreement of BFS count
+    # with direct SSYT enumeration (Weyl dimension formula).
+    for r in summary["validation_cases"]:
+        w.add_assertion(
+            name=f"weyl_dim_lambda={tuple(r['shape'])}_n={r['n']}",
+            computed=r["B_lambda_count"],
+            expected=r["ssyt_count_direct"],
+            tolerance=0,
+            source="Weyl dimension formula; "
+                   "Bump-Schilling, Crystal Bases (2017) §3.1",
+        )
+    out_path = w.save()
     print(f"\n  Witness written → {out_path.name}")

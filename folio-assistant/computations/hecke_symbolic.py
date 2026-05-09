@@ -966,11 +966,22 @@ class SymbolicHeckeDivision:
         """LaurentQ-backed rule loop (engine='laurent').
 
         Routes R1/R2/R3 through ``hecke_laurent_fast.reduce_laurent_rules``,
-        then runs the sympy quotient pass (R4) on the result if any
-        quotient relations are registered and ``use_quotient`` is on.
+        then — if ``use_quotient`` is True and quotient relations are
+        registered — runs the standard sympy quotient pass (R4) directly
+        on the converted result via ``_try_whole_atom_quotient`` and the
+        sub-word quotient helpers.  No fallback warning is printed; the
+        path is contiguous.
+
         Output is a sympy ``SymbolicHeckeElement`` so downstream code
         sees the same I/O contract as the original ``reduce()``.
+
+        ``use_cache`` is accepted for API symmetry with ``engine='sympy'``
+        but is currently a no-op on the laurent path: the LaurentQ inner
+        loop is fast enough that cache-key construction (frozen-set on
+        ``elem.terms``) typically costs more than it saves.  If your
+        caller relies on caching, stay on ``engine='sympy'``.
         """
+        del use_cache  # accepted for API symmetry; intentionally unused
         from hecke_laurent_fast import (
             LaurentHeckeElement, reduce_laurent_rules,
         )
@@ -1031,8 +1042,8 @@ class SymbolicHeckeDivision:
     def _reduce_via_crystal(self, elem, *, max_iterations, use_quotient):
         """Crystal-basis NF backend (engine='crystal').
 
-        Phase 1 scope: validated only for elements supported on words
-        of length ≤ 4 (≤ 5 strands).  For larger problems this method
+        Phase 1 scope: validated only for elements supported on ≤ 4
+        strands (i.e. up to ``σ_2``).  For larger problems this method
         raises ``NotImplementedError`` with a pointer to the migration
         plan; the caller should fall back to ``engine='laurent'`` until
         the canonical-basis-to-permutation transition matrix is built
@@ -1087,15 +1098,18 @@ class SymbolicHeckeDivision:
           * ``'laurent'`` — route R1/R2/R3 through
             ``hecke_laurent_fast.reduce_laurent_rules`` (LaurentQ
             integer-dict coefficients; ~5–25× faster on atom-scale
-            problems).  R4 quotient ideals are NOT handled in the
-            fast path — when ``use_quotient=True`` and quotient
-            relations are registered, the function falls back to
-            ``'sympy'`` for the quotient pass and prints one warning.
-          * ``'crystal'`` — crystal-basis NF via
-            ``crystal_basis.reduce_via_crystal``; only validated
-            for words on ≤ 4 strands today (Phase 1 scope).  Raises
-            ``NotImplementedError`` for larger n with a pointer to
-            the migration plan.
+            problems).  When ``use_quotient=True`` and quotient
+            relations are registered, the standard sympy R4 quotient
+            pass runs directly on the converted result — there is no
+            fallback warning; the path is contiguous.  See
+            ``_reduce_via_laurent`` for the implementation.
+          * ``'crystal'`` — crystal-basis NF scaffold; only validated
+            for elements supported on ≤ 4 strands today (Phase 1
+            scope).  Raises ``NotImplementedError`` for larger n with
+            a pointer to the migration plan.  See
+            ``_reduce_via_crystal`` for the implementation; the
+            primitives (Kashiwara ``f_i``/``e_i``, Demazure
+            sub-crystals) live in ``crystal_basis.py``.
 
         Default: ``'sympy'`` for backward-compatibility.  Override
         globally via env ``QOU_REDUCE_ENGINE=laurent``.

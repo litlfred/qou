@@ -1,9 +1,106 @@
 {
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-09T05:13:31.740409+00:00",
+  "commitSha": "3d22baeee1a4e39f6bb28ea9c3c7d9f4da06847a",
+  "assertions": [
+    {
+      "name": "weyl_dim_lambda=(1,)_n=2",
+      "computed": 2,
+      "expected": 2,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Weyl dimension formula; Bump-Schilling, Crystal Bases (2017) §3.1"
+    },
+    {
+      "name": "weyl_dim_lambda=(2,)_n=2",
+      "computed": 3,
+      "expected": 3,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Weyl dimension formula; Bump-Schilling, Crystal Bases (2017) §3.1"
+    },
+    {
+      "name": "weyl_dim_lambda=(1, 1)_n=2",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Weyl dimension formula; Bump-Schilling, Crystal Bases (2017) §3.1"
+    },
+    {
+      "name": "weyl_dim_lambda=(2, 1)_n=3",
+      "computed": 8,
+      "expected": 8,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Weyl dimension formula; Bump-Schilling, Crystal Bases (2017) §3.1"
+    },
+    {
+      "name": "weyl_dim_lambda=(3,)_n=3",
+      "computed": 10,
+      "expected": 10,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Weyl dimension formula; Bump-Schilling, Crystal Bases (2017) §3.1"
+    },
+    {
+      "name": "weyl_dim_lambda=(2, 1)_n=4",
+      "computed": 20,
+      "expected": 20,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Weyl dimension formula; Bump-Schilling, Crystal Bases (2017) §3.1"
+    },
+    {
+      "name": "weyl_dim_lambda=(2, 2)_n=3",
+      "computed": 6,
+      "expected": 6,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Weyl dimension formula; Bump-Schilling, Crystal Bases (2017) §3.1"
+    },
+    {
+      "name": "weyl_dim_lambda=(3, 1)_n=3",
+      "computed": 15,
+      "expected": 15,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Weyl dimension formula; Bump-Schilling, Crystal Bases (2017) §3.1"
+    },
+    {
+      "name": "weyl_dim_lambda=(2, 1, 1)_n=4",
+      "computed": 15,
+      "expected": 15,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Weyl dimension formula; Bump-Schilling, Crystal Bases (2017) §3.1"
+    },
+    {
+      "name": "weyl_dim_lambda=(3, 2)_n=4",
+      "computed": 60,
+      "expected": 60,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Weyl dimension formula; Bump-Schilling, Crystal Bases (2017) §3.1"
+    },
+    {
+      "name": "weyl_dim_lambda=(2, 2, 1)_n=4",
+      "computed": 20,
+      "expected": 20,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Weyl dimension formula; Bump-Schilling, Crystal Bases (2017) §3.1"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 2,
   "computation": "crystal-basis-primitives",
-  "description": "Phase 0 of the S-poly \u2192 crystal-basis migration: validates Kashiwara f_i / e_i operators (signature rule), B(\u03bb) BFS, and Demazure sub-crystal enumeration against the Weyl dimension formula s_\u03bb(1,\u2026,1) = #SSYT(\u03bb,n).",
-  "timestamp": "2026-05-09T04:48:32.464710+00:00",
-  "compute_engine": "crystal-basis",
-  "results": {
+  "scriptFile": "crystal_basis.py",
+  "scriptHash": "4d380b805c52",
+  "scriptCommitSha": "3d22baeee1a4e39f6bb28ea9c3c7d9f4da06847a",
+  "description": "Phase 0 of the S-poly → crystal-basis migration: validates Kashiwara f_i / e_i operators (signature rule), B(λ) BFS, and Demazure sub-crystal enumeration against the Weyl dimension formula s_λ(1,…,1) = #SSYT(λ,n).",
+  "data": {
     "validation_cases": [
       {
         "shape": [
@@ -148,7 +245,6 @@
         "ok": true
       }
     ],
-    "all_passed": true,
     "demazure_growth_demo": {
       "shape": [
         2,
@@ -193,6 +289,7 @@
           "fraction_of_full": 1.0
         }
       ]
-    }
+    },
+    "all_passed": true
   }
 }

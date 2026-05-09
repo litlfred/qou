@@ -2,9 +2,11 @@
 """Cross-engine regression test for ``SymbolicHeckeDivision.reduce``.
 
 Verifies that ``engine='sympy'``, ``engine='laurent'``, and
-``engine='crystal'`` produce **byte-identical NF coefficient
-expressions** (after sympy normalisation) on a battery of small
-Hecke elements.
+``engine='crystal'`` produce **algebraically-equal NF coefficients**
+(``sp.simplify(c_a − c_b) == 0`` term-by-term) on a battery of small
+Hecke elements.  This is a semantic-equality check, not a string /
+canonical-form comparison: ``(q²−1)/q`` and ``q − 1/q`` are accepted
+as equal even though their printed forms differ.
 
 This is the regression gate for Phase 1 of the S-poly → crystal-basis
 migration: every script we migrate to ``engine='laurent'`` must pass
