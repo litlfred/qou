@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T06:19:47.467234+00:00",
-  "commitSha": "1de583437db7b3977718a3aeb79af62867a1ea32",
+  "computedAt": "2026-05-09T12:13:22.533954+00:00",
+  "commitSha": "ca949840522ad7dcef3d190196ab73d3c1fc723f",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -81,6 +81,12 @@
       "expected": 0.5514434199198297,
       "passed": true,
       "tolerance": 5.514434199198297e-13
+    },
+    {
+      "name": "chain_valid[atomic-braid-recipe-4he.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
     },
     {
       "name": "chain_valid[c-q-q0.derivation]",
@@ -593,6 +599,34 @@
           "computational": 1
         },
         "has_script_frontier": false
+      },
+      {
+        "chain": "atomic-braid-recipe-4he.derivation.json",
+        "target": "T_w(⁴He) ∈ B_{12}",
+        "target_value": [
+          1,
+          2,
+          -1,
+          4,
+          5,
+          -4,
+          7,
+          -8,
+          7,
+          10,
+          -11,
+          10
+        ],
+        "computed_value": null,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "axiom": 2,
+          "script-cited": 2,
+          "derived": 3
+        },
+        "has_script_frontier": true
       },
       {
         "chain": "c-q-q0.derivation.json",

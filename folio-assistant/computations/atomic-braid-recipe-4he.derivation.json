@@ -1,0 +1,131 @@
+{
+  "target": "T_w(⁴He) ∈ B_{12}",
+  "target_value": [
+    1,
+    2,
+    -1,
+    4,
+    5,
+    -4,
+    7,
+    -8,
+    7,
+    10,
+    -11,
+    10
+  ],
+  "target_tolerance": 0.0,
+  "content_block": "prop:atomic-mass-gb-nf",
+  "description": "Atomic-braid recipe specialised to ⁴He.  Discharges the assembly rule (disjoint-block embedding B_3 ↪ B_{12} + concatenation of shifted nucleon words) rigorously from the categorical-action and Schur–Weyl axioms; the only SCRIPT_CITED steps are the canonical proton + neutron Hecke normal forms in B_3.  Trust profile {axiom: 2, derived: 3, script-cited: 2}.  Replaces the diffuse `atomic-braid-recipe-X` SCRIPT_CITED debt in the per-atom mass chains with two focused open Lean items (proton word + neutron word).  Item #1 of the open frontier in `DERIVATION-CHAIN-METHODOLOGY.md` — partial paydown.",
+  "steps": [
+    {
+      "name": "Categorical R-matrix action of B_n on V^{⊗n}",
+      "operation": "By the categorical-action axiom (FirstPrinciple `Cat.Action`), each braid generator `σ_i ∈ B_n` acts on `V^{⊗n}` (V the fundamental quark representation of `U_q(sl_2)`) via the Drinfeld–Jimbo R-matrix at strand `i`.  The action factors through the Hecke algebra `H_n(q)` by the Hecke quadratic relation.",
+      "inputs": [
+        "Cat.Action"
+      ],
+      "output_name": "cat_action_general",
+      "output_value": "σ_i : V^{⊗n} → V^{⊗n} via R-matrix at strand i",
+      "trust_basis": "axiom",
+      "jet_order": 0,
+      "lean_ref": "qou:STUB:CategoricalRMatrixAction",
+      "citation": "kassel1995"
+    },
+    {
+      "name": "Quark / nucleon irrep assignment via Schur–Weyl",
+      "operation": "By Schur–Weyl duality (FirstPrinciple `Schur`), the quark sits in `V`, the fundamental of `U_q(sl_2)`.  A nucleon is a 3-quark composite living in the color-singlet block of `V^{⊗3}`; its braid statistics are governed by `H_3(q)` acting on `V^{⊗3}`.",
+      "inputs": [
+        "Schur",
+        "cat_action_general"
+      ],
+      "output_name": "nucleon_in_V3",
+      "output_value": "nucleon ∈ singlet block of V^{⊗3}",
+      "trust_basis": "axiom",
+      "jet_order": 0,
+      "lean_ref": "qou:STUB:SchurWeylDuality",
+      "citation": "kassel1995"
+    },
+    {
+      "name": "Canonical proton braid word in B_3",
+      "operation": "Per `prop:atomic-mass-gb-nf` and `prop:jet-prefix-gb-filtration`, the proton's canonical Hecke normal form in `H_3(q)` is `T_w_p = σ_1 σ_2 σ_1^{-1}`, encoded as the word `[1, 2, -1]` (positive σ_1, positive σ_2, negative σ_1).  The (uud) quark content + the chirality convention fix the signs uniquely modulo Markov conjugation.",
+      "inputs": [
+        "nucleon_in_V3"
+      ],
+      "output_name": "proton_word_b3",
+      "output_value": [
+        1,
+        2,
+        -1
+      ],
+      "trust_basis": "script-cited",
+      "jet_order": 0,
+      "citation": "manuscript:§atomic-braid-recipe",
+      "notes": "script: folio-assistant/computations/atomic_braid_gb_filtration_extension.py (ATOMIC_BRAIDS table) + folio-assistant/computations/mass_at_3A_proper.py (`atom_braid_word_3A`).  Awaits Lean formalisation of the quark-content → Hecke-NF map (`uud → σ_1 σ_2 σ_1^{-1}`); once that lands, this step becomes LEAN_PROVEN and the atom mass-trace chains rebase to fully-trusted via this recipe."
+    },
+    {
+      "name": "Canonical neutron braid word in B_3",
+      "operation": "Per the same `prop:atomic-mass-gb-nf`, the neutron's canonical Hecke normal form in `H_3(q)` is `T_w_n = σ_1 σ_2^{-1} σ_1`, encoded as the word `[1, -2, 1]`.  The (udd) quark content flips the sign of the middle generator relative to the proton — this is the parity-distinguishing signature of the proton/neutron Hecke characters proved by `prop:hecke-branching-trace-decomposition`.",
+      "inputs": [
+        "nucleon_in_V3"
+      ],
+      "output_name": "neutron_word_b3",
+      "output_value": [
+        1,
+        -2,
+        1
+      ],
+      "trust_basis": "script-cited",
+      "jet_order": 0,
+      "citation": "manuscript:§atomic-braid-recipe",
+      "notes": "script: folio-assistant/computations/mass_at_3A_proper.py (`atom_braid_word_3A`).  Awaits Lean formalisation of the (udd) → `σ_1 σ_2^{-1} σ_1` map.  When closed jointly with the proton word (step 3), every atom mass chain becomes fully-trusted via this recipe."
+    },
+    {
+      "name": "Disjoint-block embedding B_3 ↪ B_{3A}",
+      "operation": "For an atom with `A = Z + N` nucleons, the disjoint-strand embedding `B_3 ↪ B_{3A}` for the `k`-th nucleon block (`k = 1..A`) is the index shift `σ_i ↦ σ_{i + 3(k - 1)}` extended sign-preservingly to negatives.  This is the standard disjoint-product structure of the braid group: blocks of strands `3(k-1)+1, ..., 3k` are independently braided, so the union of block-k-only braids embeds without relations.",
+      "inputs": [
+        "cat_action_general"
+      ],
+      "output_name": "disjoint_embedding",
+      "output_value": "(σ_i, k) ↦ σ_{i + 3(k - 1)}",
+      "trust_basis": "derived",
+      "jet_order": 0
+    },
+    {
+      "name": "Atom assembly rule T_w(Z, N) ∈ B_{3A}",
+      "operation": "Combine steps 3 (proton word), 4 (neutron word), and 5 (disjoint embedding) into the atom assembly:\n  T_w(Z, N) := \n    ∏_{k=1}^Z   (proton word shifted by block k) ∘\n    ∏_{k=Z+1}^{A} (neutron word shifted by block k).\nPure algebra; sequence of disjoint-block braids concatenated in B_{3A}.  The convention for the ordering — protons first, neutrons after — matches `atomic_braid_gb_filtration_extension.ATOMIC_BRAIDS`.",
+      "inputs": [
+        "proton_word_b3",
+        "neutron_word_b3",
+        "disjoint_embedding"
+      ],
+      "output_name": "atom_assembly",
+      "output_value": "T_w(Z, N) := concat(shifted proton + neutron blocks)",
+      "trust_basis": "derived",
+      "jet_order": 0
+    },
+    {
+      "name": "Specialisation: ⁴He = (Z = 2, N = 2)",
+      "operation": "Apply the assembly rule at (Z = 2, N = 2): two proton blocks (k = 1, 2) and two neutron blocks (k = 3, 4) in B_{12}.  Concatenating the shifted words yields the expected canonical 12-strand braid `[1, 2, -1, 4, 5, -4, 7, -8, 7, 10, -11, 10]`.  Internal assertion in `build_atomic_braid_recipe_4he_chain.py` guards that the assembly reproduces the literal `atomic_braid_gb_filtration_extension.ATOMIC_BRAIDS[3]` convention bit-for-bit.",
+      "inputs": [
+        "atom_assembly"
+      ],
+      "output_name": "he4_word",
+      "output_value": [
+        1,
+        2,
+        -1,
+        4,
+        5,
+        -4,
+        7,
+        -8,
+        7,
+        10,
+        -11,
+        10
+      ],
+      "trust_basis": "derived",
+      "jet_order": 0
+    }
+  ]
+}
