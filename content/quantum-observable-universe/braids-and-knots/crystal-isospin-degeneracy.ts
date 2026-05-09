@@ -12,6 +12,8 @@ export default proposition({
     "conj:shell-correction-term-seven",
     "conj:crystal-graph-realization",
     "prop:content-scaling-correspondence",
+    "prop:spin-involution-lp-dual-invariance",
+    "rem:lp-dual-isospin-invariance",
   ],
   tags: [
     "crystal-limit",

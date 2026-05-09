@@ -9,16 +9,16 @@ equality $\mathfrak{m}_{\mathrm{Markov}}(T) =
    tableau eigenline at the crystal limit.
 
 2. The **Hopf-antipode invariance** at every $q \in (1, \varphi)$
-   established in `prop:spin-involution-lp-dual-invariance` (sibling
-   investigation on
-   [`claude/term7-alpha5-derive-investigation`](https://github.com/litlfred/qou/tree/claude/term7-alpha5-derive-investigation))
+   established in
+   [spin-involution / LP-dual invariance](#prop:spin-involution-lp-dual-invariance)
    — applies to the canonical $\Delta_I$-coupled convention; the
    mechanism is the Frobenius-self-dual antipode
    $S \colon V_\lambda \leftrightarrow V_{\lambda^T}$, which acts as
    $Z \leftrightarrow N$ on the per-atom canonical braid recipe.
 
-The sibling proposition's empirical witness records exact equality
-of the LP-dual binding-energy shadow price
+The empirical witness recorded in
+[LP-dual isospin invariance](#rem:lp-dual-isospin-invariance)
+shows exact equality of the LP-dual binding-energy shadow price
 $y_0^*(T) = y_0^*({}^3\mathrm{He})$ in both 2-row and height-$6$
 strata across $q \in \{1.001, 1.050, 1.110\}$.
 

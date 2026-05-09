@@ -129,30 +129,34 @@ The proposition derives the legacy-convention equality from a
 *specific* mechanism (Hecke skein at $q = 0$ collapses
 $\sigma_i \leftrightarrow \sigma_i^{-1}$ to the same SYT action).
 
-**Convergent finding from the sibling investigation** on branch
-[`claude/term7-alpha5-derive-investigation`](https://github.com/litlfred/qou/tree/claude/term7-alpha5-derive-investigation):
-the LP-dual binding-energy shadow price
-$y_0^*(K)$ at *finite* $q$ in the *canonical* $\Delta_I$-coupled
-convention also satisfies $y_0^*(T) = y_0^*({}^3\mathrm{He})$
-exactly, in both 2-row and height-6 strata, at every probed
-$q \in \{1.001, 1.050, 1.110\}$.  The sibling proposition
-*spin-involution / LP-dual invariance* derives this from a
-**deeper structural mechanism** — the Hopf antipode
+**Convergent finding from
+[spin-involution / LP-dual invariance](#prop:spin-involution-lp-dual-invariance):**
+the LP-dual binding-energy shadow price $y_0^*(K)$ at *finite* $q$
+in the *canonical* $\Delta_I$-coupled convention also satisfies
+$y_0^*(T) = y_0^*({}^3\mathrm{He})$ exactly, in both 2-row and
+height-$6$ strata, at every probed
+$q \in \{1.001, 1.050, 1.110\}$ (witness:
+[LP-dual isospin invariance](#rem:lp-dual-isospin-invariance)).
+That proposition derives the equality from a **deeper structural
+mechanism** — the Hopf antipode
 $S \colon V_\lambda \leftrightarrow V_{\lambda^T}$ exchanging
 matter and antimatter (equivalently $Z \leftrightarrow N$) — which
-applies to the canonical convention without requiring the
-crystal limit.
+applies to the canonical convention without requiring the crystal
+limit.
 
-The two derivations are independent: my proposition above proves
-$T = {}^3\mathrm{He}$ at $q = 0$ under the *legacy* convention via
-sign-flip invariance; the sibling proves $T = {}^3\mathrm{He}$ at
-$q = q_0$ under the *canonical* convention via the Hopf antipode.
-Both predict the same observable equality through different
-algebraic levers.  The empirical $0.529$ MeV mass split must
-therefore live in a *different* sector that breaks the
-$Z \leftrightarrow N$ symmetry — most plausibly the
-electromagnetic / Coulomb correction, which is not a $\sigma$- or
-$S$-invariant perturbation of the Markov trace.
+The two derivations are independent: this proposition proves
+$T = {}^3\mathrm{He}$ at $q = 0$ under the legacy convention via
+sign-flip invariance;
+[spin-involution invariance](#prop:spin-involution-lp-dual-invariance)
+proves $T = {}^3\mathrm{He}$ at $q = q_0$ under the canonical
+convention via the Hopf antipode.  Both predict the same
+observable equality through different algebraic levers.  The
+empirical $0.529$ MeV mass split must therefore live in a
+*different* sector that breaks the $Z \leftrightarrow N$ symmetry
+— most plausibly the electromagnetic / Coulomb correction, which
+is not a $\sigma$- or $S$-invariant perturbation of the Markov
+trace (see
+[mirror-isobar EM localisation](#rem:isospin-mass-split-em-localisation)).
 
 **Corollary (q-curvature of isospin-mirror pairs).**
 *For any pair of isospin-mirror atoms $K, K'$ whose canonical braid
@@ -173,11 +177,11 @@ ontological-agnosticism remark in this chapter).*
 ## Open work: canonical $\Delta_I$ extension
 
 The proposition above is a structural identity proved at $q = 0$
-under the **legacy disjoint-product convention**.  The sibling
-LP-dual investigation suggests the analogous equality
-$T \leftrightarrow {}^3\mathrm{He}$ persists in the canonical
-$\Delta_I$-coupled convention via the Hopf antipode at finite $q$.
-Two follow-ups remain to bridge the two:
+under the **legacy disjoint-product convention**.  The
+[Hopf-antipode invariance](#prop:spin-involution-lp-dual-invariance)
+shows the analogous equality $T \leftrightarrow {}^3\mathrm{He}$
+persists in the canonical $\Delta_I$-coupled convention at finite
+$q$.  Two follow-ups remain to bridge the two:
 
 1. **Migrate
    [`term7_alpha5_crystal_derivation.py`](../../../folio-assistant/computations/term7_alpha5_crystal_derivation.py)
