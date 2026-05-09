@@ -150,4 +150,40 @@ theorem spectral_sum_finite (S : GBResidueSpectralSum) :
   -- The disjunct `ℓ < S.levelBound` is automatic from `h`.
   exact Or.inr h
 
+/-! ## Constructing instances from crystal-basis data
+
+A concrete `GBResidueSpectralSum` is determined by the data
+`(descended, levelBound, q, roots, gradedTrace, residue)`; the
+`mass` and `spectral_decomposition` fields are then forced.  The
+constructor below packages this fact and is the post-class
+analogue of "discharging" the previous `opaque` declarations: any
+caller that supplies the data gets a concrete instance with no
+residual abstraction.
+
+The intended source of the data is the crystal-basis derivation
+witness `term7-alpha5-crystal-derivation.witness.json` (per
+`prop:term7-shell-correction`), which supplies per-atom and
+per-level structural values from Schur–Weyl + Wedderburn +
+categorical R-matrix action evaluated at the crystal limit
+`q → 0`.  The corresponding compute-side derivation chain is
+`term7-s-crystal-4he.derivation.json`. -/
+
+/-- Construct a `GBResidueSpectralSum` from explicit per-level
+    data.  The `mass` field is forced to the canonical decomposition
+    `|descended| + Σ_ℓ residue ℓ`, and `spectral_decomposition`
+    holds by `rfl`. -/
+def GBResidueSpectralSum.fromCrystalData
+    (descended : ℝ) (levelBound : ℕ) (q : ℝ)
+    (roots : Fin levelBound → RootOfUnity)
+    (gradedTrace residue : Fin levelBound → ℝ) :
+    GBResidueSpectralSum where
+  descended := descended
+  levelBound := levelBound
+  q := q
+  roots := roots
+  gradedTrace := gradedTrace
+  residue := residue
+  mass := |descended| + ∑ ℓ : Fin levelBound, residue ℓ
+  spectral_decomposition := rfl
+
 end QOU.BraidKnot
