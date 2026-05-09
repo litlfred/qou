@@ -174,15 +174,9 @@ def main() -> int:
     # the witness JSON itself (which is bit-checked by CI drift
     # detection in .github/workflows/witness-pipeline.yml).
 
-    sys.path.insert(0, str(HERE))
-    from witness_base import WitnessBuilder  # noqa: E402
-    (WitnessBuilder.wrap_legacy(
-        "habiro-tail-in-ideal-validation", output,
-        script_path=__file__, engine="sympy",
-    )
-        .set_audit_only(
-            "docs/audits/2026-05-09-refocused-1ppb-workplan-v3.md")
-        .save())
+    with OUTPUT_WITNESS.open("w") as f:
+        json.dump(output, f, indent=2)
+        f.write("\n")
 
     # Console summary
     status = "PASS" if overall_pass else "FAIL"
