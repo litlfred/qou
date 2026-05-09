@@ -1,0 +1,102 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-09T19:37:20.406765+00:00",
+  "commitSha": "3d3c3680f39d590c3c98f82e94c88e09889d87a8",
+  "assertions": [
+    {
+      "name": "status_report_emitted",
+      "computed": 6,
+      "expected": 6,
+      "passed": true,
+      "source": "binding_K_direct"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 11,
+  "computation": "binding-K-direct",
+  "scriptFile": "binding_K_direct.py",
+  "scriptHash": "2f67b36c8439",
+  "scriptCommitSha": "unknown",
+  "description": "Direct binding-energy computation for atomic mass.  Surfaces the physical content of the ρ_K formula by removing the ρ_K^LO tautology (which has the |tr_M| factor cancel against itself).  Binding(K) = m_e · Σ_λ y_λ(q) χ^λ(β_K) Δ_λ(K) — the second-order correction that IS the binding energy.  Requires Δ_λ values from the in-flight derivation race (currently open).  When delta-lambda-witness.json is absent, this script reports per-atom status only.",
+  "contentBlock": "prop:atomic-mass-via-rho-k",
+  "auditOnly": "docs/audits/2026-05-09-kite-tail-reconciliation.md",
+  "parameters": {
+    "m_e_MeV": "0.51099895",
+    "m_p_MeV": "938.27208816",
+    "m_n_MeV": "939.56542052",
+    "delta_lambda_witness_present": false
+  },
+  "data": {
+    "results": [
+      {
+        "atom": "p",
+        "Z": 1,
+        "N": 0,
+        "A": 1,
+        "M_codata_MeV": "938.27208816",
+        "constituent_MeV": "938.27208816",
+        "binding_codata_MeV": "0.0",
+        "status": "delta_lambda_unavailable",
+        "abs_tr_M": "1.0653062285923892551532775699680661193337632009791"
+      },
+      {
+        "atom": "n",
+        "Z": 0,
+        "N": 1,
+        "A": 1,
+        "M_codata_MeV": "939.56542052",
+        "constituent_MeV": "939.56542052",
+        "binding_codata_MeV": "0.0",
+        "status": "delta_lambda_unavailable",
+        "abs_tr_M": "0.92323329716958364246376988091871375932688744507312"
+      },
+      {
+        "atom": "D",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "M_codata_MeV": "1875.61294257",
+        "constituent_MeV": "1877.83750868",
+        "binding_codata_MeV": "-2.2245661099999999999999999999999999999999999999983",
+        "status": "delta_lambda_unavailable",
+        "abs_tr_M": "0.3882864715477132785110659223165687998713135876719"
+      },
+      {
+        "atom": "T",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "M_codata_MeV": "2808.92113298",
+        "constituent_MeV": "2817.4029292",
+        "binding_codata_MeV": "-8.4817962199999999999999999999999999999999999999967",
+        "status": "delta_lambda_unavailable",
+        "abs_tr_M": "0.10405211867552565489795832743212275483532305732494"
+      },
+      {
+        "atom": "3He",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "M_codata_MeV": "2808.39160743",
+        "constituent_MeV": "2816.10959684",
+        "binding_codata_MeV": "-7.7179894099999999999999999999999999999999999999979",
+        "status": "delta_lambda_unavailable",
+        "abs_tr_M": "0.20654085856226262948910490901292677841811332568243"
+      },
+      {
+        "atom": "4He",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "M_codata_MeV": "3727.379378",
+        "constituent_MeV": "3755.67501736",
+        "binding_codata_MeV": "-28.29563936",
+        "status": "delta_lambda_unavailable",
+        "abs_tr_M": "0.96732375051946897893683751863134299804348930227964"
+      }
+    ],
+    "formula": "Binding(K) = m_e * sum_lambda(y_lambda(q) * chi^lambda(beta_K) * Delta_lambda(K))",
+    "tautology_note": "rho_K^LO * m_e * |tr_M| = (Z m_p + N m_n) by construction; the only physical content of the ρ_K formula is the second-order Δ_λ correction.  This script computes the second-order term directly, bypassing the LO ceremony."
+  }
+}

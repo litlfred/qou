@@ -2,6 +2,27 @@
 # polynomial_q_not_applicable: numerical mpmath consumer of pre-computed |tr_M| witness; no symbolic-q polynomial in this layer.
 """Atomic mass via the categorical density ρ_K  (P4″ from PR #564).
 
+⚠ **LO TAUTOLOGY NOTICE.**  The leading-order ρ_K^LO ansatz used here
+is mathematically tautological: by construction, the |tr_M| factor
+in `M(K) = ρ_K^LO · m_e · |tr_M(K)|` cancels against the |tr_M| in
+the denominator of `ρ_K^LO = (Z m_p + N m_n) / (m_e |tr_M|)`,
+producing back the constituent sum `Z m_p + N m_n` exactly.  The
+"residuals" reported below are not predictions — they are the
+actual binding energies (the framework's null prediction).
+
+The non-tautological content lives entirely in the second-order
+correction `Σ_λ y_λ(q) χ^λ(β_K) Δ_λ(K)` to ρ_K, equivalently
+`Binding(K) = m_e · Σ_λ y_λ(q) χ^λ(β_K) Δ_λ(K)`.  See
+[`binding_K_direct.py`](binding_K_direct.py) for the direct-binding
+formulation that surfaces the physical content without the LO
+ceremony, and audit doc
+[`docs/audits/2026-05-09-mass-table-fitting-audit.md`](../../docs/audits/2026-05-09-mass-table-fitting-audit.md) §"Δ_λ status".
+
+This script is retained as the LO baseline reference.  Downstream
+consumers that want non-tautological binding predictions should use
+`binding_K_direct.py` once Δ_λ values are derived (PRs #602, #603,
+#613 are racing the Δ_λ derivation).
+
 Per the resolved T6 unit-convention question
 (`AUDIT-DEEP-2026-05.md` §3.3a; PR #564 `e578392b8`), the right
 mass formula is
@@ -14,6 +35,8 @@ where ρ_K is the categorical density.  The leading-order ansatz
 
 reproduces atomic masses to ≤ 0.1 % residual on D, T, ³He
 (verified live in `rho-k-leading-order-verification.witness.json`).
+The 0.1 % residuals = the actual binding energies; this is a
+restatement of the LO tautology, not a prediction.
 
 This script is an **additive** alternative to
 `atomic_braid_mass_table.py`.  Where the legacy script anchors a

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T19:27:49.117084+00:00",
-  "commitSha": "2dfd7c338e96e1818ffe0b16008a73ee5a50dcc3",
+  "computedAt": "2026-05-09T19:54:59.427084+00:00",
+  "commitSha": "b72816b336ecaab14ada3347abb3383b05305427",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2054,6 +2054,7 @@
         "beta-ew-delta-I-conjugate-pairing.witness.json",
         "beta-ew-delta-I-eigenvalues.witness.json",
         "beta-ew-delta-I-numerical-spectrum.witness.json",
+        "binding-K-direct.witness.json",
         "binding-canonical.witness.json",
         "binding-k-enumerator.witness.json",
         "binding-k-solver.witness.json",
@@ -2146,6 +2147,8 @@
         "joint-tower-sdp-rust.witness.json",
         "kashaev-integration-identity.witness.json",
         "kazhdan-lusztig-canonical-basis.witness.json",
+        "kite-tail-reconciliation.witness.json",
+        "kite_tail_reconciliation.witness.json",
         "knot-operator-table.witness.json",
         "knot-volumes.witness.json",
         "laurentq-a5-ceiling-measure.witness.json",
@@ -2279,6 +2282,7 @@
         "unified-low-isotope-predictor.witness.json",
         "unified-mass-molecular.witness.json",
         "universal-ilp.witness.json",
+        "v-hat-to-delta-lambda-bridge.witness.json",
         "wall-violations-sweep.witness.json",
         "wall-violations.witness.json",
         "wedderburn-pair-volumes.witness.json",

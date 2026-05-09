@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T19:27:17.256154+00:00",
-  "commitSha": "2dfd7c338e96e1818ffe0b16008a73ee5a50dcc3",
+  "computedAt": "2026-05-09T19:54:59.276687+00:00",
+  "commitSha": "b72816b336ecaab14ada3347abb3383b05305427",
   "assertions": [],
   "allPassed": true,
   "durationMs": 10,
@@ -13,7 +13,7 @@
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 316,
+    "files_scanned": 319,
     "patterns": [
       "P15",
       "P16",
@@ -23,7 +23,7 @@
   },
   "data": {
     "by_pattern_count": {
-      "P15": 80,
+      "P15": 84,
       "P16": 70,
       "P21": 17,
       "P30": 93
@@ -1056,6 +1056,34 @@
         "line": 342,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P15",
+        "file": "kite_tail_reconciliation.py",
+        "line": 64,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "kite_tail_reconciliation.py",
+        "line": 79,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "kite_tail_reconciliation.py",
+        "line": 91,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "kite_tail_reconciliation.py",
+        "line": 165,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P30",
