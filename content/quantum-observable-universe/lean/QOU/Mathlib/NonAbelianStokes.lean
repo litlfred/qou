@@ -248,22 +248,40 @@ instance YekutieliFiniteSliceMultTrace_canonical (G : Type u) [Group G]
 
 /-- **Lie algebra structure** as an abstract class.  In Mathlib
     proper, this is `LieAlgebra k 𝔤`; here we re-export the
-    bracket axioms that the Yekutieli-Stokes proof requires. -/
+    bracket axioms (with bilinearity) that the Yekutieli-Stokes
+    proof requires. -/
 class LieAlgebraStructure (𝔤 : Type u) [AddCommGroup 𝔤] where
   /-- The Lie bracket. -/
   bracket : 𝔤 → 𝔤 → 𝔤
-  /-- Antisymmetry: `[x, x] = 0`. -/
+  /-- Antisymmetry on the diagonal: `[x, x] = 0`. -/
   bracket_self : ∀ x, bracket x x = 0
+  /-- Bilinearity (left): `[x + y, z] = [x, z] + [y, z]`. -/
+  bracket_add_left : ∀ x y z,
+    bracket (x + y) z = bracket x z + bracket y z
+  /-- Bilinearity (right): `[x, y + z] = [x, y] + [x, z]`. -/
+  bracket_add_right : ∀ x y z,
+    bracket x (y + z) = bracket x y + bracket x z
   /-- Jacobi identity: `[[x,y],z] + [[y,z],x] + [[z,x],y] = 0`. -/
   jacobi : ∀ x y z,
     bracket (bracket x y) z + bracket (bracket y z) x +
       bracket (bracket z x) y = 0
 
-/-- Antisymmetry corollary `[x, y] = -[y, x]` is derivable from
-    `bracket_self` plus bracket bilinearity (`bracket_add_left/right`).
-    The bilinearity is part of Mathlib's `Bracket`/`LieRing`
-    structure; if needed downstream, add it as a class extension
-    (`extends Bracket 𝔤 𝔤` plus `bracket_add_left/right` axioms). -/
+/-- Antisymmetry corollary: `[x, y] = -[y, x]`.
+
+    Derivation: `[x+y, x+y] = 0` (by `bracket_self`); expand
+    via bilinearity to `[x,x] + [x,y] + [y,x] + [y,y] = 0`;
+    apply `bracket_self` to drop `[x,x]` and `[y,y]`; conclude
+    `[x,y] + [y,x] = 0`, i.e. `[x,y] = -[y,x]`. -/
+theorem LieAlgebraStructure.bracket_antisym {𝔤 : Type u}
+    [AddCommGroup 𝔤] [L : LieAlgebraStructure 𝔤] (x y : 𝔤) :
+    L.bracket x y = -L.bracket y x := by
+  have h1 : L.bracket (x + y) (x + y) = 0 := L.bracket_self (x + y)
+  rw [L.bracket_add_left, L.bracket_add_right, L.bracket_add_right,
+      L.bracket_self, L.bracket_self] at h1
+  -- h1 : 0 + L.bracket x y + (L.bracket y x + 0) = 0
+  simp at h1
+  -- h1 : L.bracket x y + L.bracket y x = 0
+  exact add_eq_zero_iff_eq_neg.mp h1
 
 /-- **Lie-valued 1-form** as an abstract function `M → 𝔤`. -/
 structure LieAlgebraOneForm (M : Type u) (𝔤 : Type u) where

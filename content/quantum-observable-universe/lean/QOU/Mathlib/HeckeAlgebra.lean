@@ -1010,6 +1010,55 @@ class MarkovTraceRecursionWithMul (R : Type u) [CommRing R]
   /-- The Markov axiom holds with these concrete data. -/
   axiom_witness : MarkovAxiomHolds R z trace_n trace_succ mul_succ sigma_n embed
 
+/-! ### HnCarrier ↔ H{2,3}Carrier conversions
+
+    Bridge the function-typed `HnCarrier n R = Fin n.factorial → R`
+    with the concrete tuple-typed `H2Carrier R = R × R` and
+    `H3Carrier R = R × R × R × R × R × R`. -/
+
+/-- Convert `H2Carrier R` (= `R × R`) to `HnCarrier 2 R`
+    (= `Fin 2 → R`). -/
+def H2Carrier_to_HnCarrier {R : Type u} [CommRing R]
+    (x : H2Carrier R) : HnCarrier 2 R :=
+  fun i => if i.val = 0 then x.1 else x.2
+
+/-- Convert `HnCarrier 2 R` back to `H2Carrier R`. -/
+def HnCarrier_to_H2Carrier {R : Type u} [CommRing R]
+    (x : HnCarrier 2 R) : H2Carrier R :=
+  (x ⟨0, by decide⟩, x ⟨1, by decide⟩)
+
+/-- Convert `H3Carrier R` (= 6-tuple) to `HnCarrier 3 R`
+    (= `Fin 6 → R`). -/
+def H3Carrier_to_HnCarrier {R : Type u} [CommRing R]
+    (x : H3Carrier R) : HnCarrier 3 R :=
+  fun i =>
+    match i.val with
+    | 0 => x.1
+    | 1 => x.2.1
+    | 2 => x.2.2.1
+    | 3 => x.2.2.2.1
+    | 4 => x.2.2.2.2.1
+    | _ => x.2.2.2.2.2
+
+/-- Convert `HnCarrier 3 R` back to `H3Carrier R`. -/
+def HnCarrier_to_H3Carrier {R : Type u} [CommRing R]
+    (x : HnCarrier 3 R) : H3Carrier R :=
+  (x ⟨0, by decide⟩, x ⟨1, by decide⟩, x ⟨2, by decide⟩,
+   x ⟨3, by decide⟩, x ⟨4, by decide⟩, x ⟨5, by decide⟩)
+
+/-- Roundtrip: `HnCarrier_to_H2Carrier (H2Carrier_to_HnCarrier x) = x`. -/
+theorem H2Carrier_roundtrip {R : Type u} [CommRing R] (x : H2Carrier R) :
+    HnCarrier_to_H2Carrier (H2Carrier_to_HnCarrier x) = x := by
+  unfold HnCarrier_to_H2Carrier H2Carrier_to_HnCarrier
+  simp
+  rfl
+
+/-- `HnCarrier_to_H2Carrier` of `Hn.one` is `H2.one`. -/
+theorem HnCarrier_to_H2Carrier_one {R : Type u} [CommRing R] :
+    HnCarrier_to_H2Carrier (Hn.one 2 R) = H2.one R := by
+  unfold HnCarrier_to_H2Carrier Hn.one H2.one
+  simp
+
 end QOU.Mathlib.HeckeAlgebra
 
 /-! ### Wedderburn isomorphism `H_n(q) ≅ ⊕_λ M_{d_λ}(R)`

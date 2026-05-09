@@ -69,4 +69,43 @@ theorem permutationCount_n_six :
     Fintype.card (Equiv.Perm (Fin 6)) = 720 := by
   rw [Fintype.card_perm, Fintype.card_fin]; rfl
 
+/-! ### Concrete simple transpositions σ_i ∈ S_n
+
+    The Hecke generator `σ_i` lifts from the simple
+    transposition `s_i ∈ S_n` swapping `i` and `i+1`.
+    Mathlib's `Equiv.swap` supplies these directly. -/
+
+/-- Simple transposition `σ_i ∈ S_n`: swap positions `i` and
+    `i+1` (with `i+1 < n`). -/
+def simpleTransposition {n : ℕ} (i : Fin n) (h : i.val + 1 < n) :
+    Equiv.Perm (Fin n) :=
+  Equiv.swap i ⟨i.val + 1, h⟩
+
+/-- σ_1 in S_3: swap positions 1 and 2. -/
+def sigma1_in_S3 : Equiv.Perm (Fin 3) :=
+  simpleTransposition (n := 3) ⟨0, by decide⟩ (by decide)
+
+/-- σ_2 in S_3: swap positions 2 and 3. -/
+def sigma2_in_S3 : Equiv.Perm (Fin 3) :=
+  simpleTransposition (n := 3) ⟨1, by decide⟩ (by decide)
+
+/-- σ_1 in S_4: swap positions 1 and 2. -/
+def sigma1_in_S4 : Equiv.Perm (Fin 4) :=
+  simpleTransposition (n := 4) ⟨0, by decide⟩ (by decide)
+
+/-- σ_2 in S_4: swap positions 2 and 3. -/
+def sigma2_in_S4 : Equiv.Perm (Fin 4) :=
+  simpleTransposition (n := 4) ⟨1, by decide⟩ (by decide)
+
+/-- σ_3 in S_4: swap positions 3 and 4. -/
+def sigma3_in_S4 : Equiv.Perm (Fin 4) :=
+  simpleTransposition (n := 4) ⟨2, by decide⟩ (by decide)
+
+/-- Each simple transposition has order 2 (i.e., is its own
+    inverse).  This is `Equiv.swap_self` applied twice. -/
+theorem simpleTransposition_sq {n : ℕ} (i : Fin n) (h : i.val + 1 < n) :
+    (simpleTransposition i h) * (simpleTransposition i h) = 1 := by
+  unfold simpleTransposition
+  exact Equiv.swap_mul_self i ⟨i.val + 1, h⟩
+
 end QOU.Mathlib.PermutationEnumeration
