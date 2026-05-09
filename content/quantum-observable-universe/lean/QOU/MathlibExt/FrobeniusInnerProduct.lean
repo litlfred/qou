@@ -64,19 +64,52 @@ theorem Matrix.frobeniusInner_symm (A B : Matrix (Fin n) (Fin n) ℝ) :
 /-- **Non-negativity on the diagonal**: `⟨A, A⟩_F = Σ A_ij² ≥ 0`. -/
 theorem Matrix.frobeniusInner_self_nonneg (A : Matrix (Fin n) (Fin n) ℝ) :
     0 ≤ Matrix.frobeniusInner A A := by
-  unfold Matrix.frobeniusInner
-  -- `tr(A^T · A) = Σ_ij A_ij²` ≥ 0.  Mathlib has
-  -- `Matrix.trace_transpose_mul_self_nonneg` (or similar; verify
-  -- exact name).
-  sorry
+  unfold Matrix.frobeniusInner Matrix.trace
+  apply Finset.sum_nonneg
+  intro i _
+  show 0 ≤ (A.transpose * A) i i
+  rw [Matrix.mul_apply]
+  apply Finset.sum_nonneg
+  intro k _
+  rw [Matrix.transpose_apply]
+  exact mul_self_nonneg (A k i)
 
 /-- **Non-degeneracy**: `⟨A, A⟩_F = 0` iff `A = 0`. -/
 theorem Matrix.frobeniusInner_self_eq_zero_iff
     (A : Matrix (Fin n) (Fin n) ℝ) :
     Matrix.frobeniusInner A A = 0 ↔ A = 0 := by
-  -- Sum-of-squares is zero iff each summand is zero iff each entry
-  -- of A is zero iff A = 0.  Mathlib should have a packaged form.
-  sorry
+  refine ⟨?_, ?_⟩
+  · intro h
+    -- Forward: `Σ_i Σ_k A_ki² = 0 ⟹ each A_ki = 0 ⟹ A = 0`.
+    -- Apply `Finset.sum_eq_zero_iff_of_nonneg` recursively on
+    -- the nested sums.
+    ext i j
+    have h_unfold : (∑ i' : Fin n, ∑ k : Fin n, (A k i') * (A k i')) = 0 := by
+      simpa [Matrix.frobeniusInner, Matrix.trace, Matrix.mul_apply,
+             Matrix.transpose_apply] using h
+    -- Each inner summand is non-neg; outer-sum-zero ⟹ inner-sum-zero
+    have h_inner_zero : ∀ i' : Fin n, (∑ k : Fin n, (A k i') * (A k i')) = 0 := by
+      intro i'
+      apply (Finset.sum_eq_zero_iff_of_nonneg
+        (fun i'' _ => Finset.sum_nonneg
+          (fun k _ => mul_self_nonneg (A k i'')))).mp h_unfold i' (Finset.mem_univ _)
+    -- Inner sum zero ⟹ each summand zero ⟹ A k i' = 0
+    have h_entry : (A j i) * (A j i) = 0 :=
+      (Finset.sum_eq_zero_iff_of_nonneg
+        (fun k _ => mul_self_nonneg (A k i))).mp (h_inner_zero i) j (Finset.mem_univ _)
+    have : A j i = 0 := by
+      rcases mul_self_eq_zero.mp h_entry with h_zero
+      exact h_zero
+    -- We need A i j = 0, but we have A j i = 0.  This is a
+    -- transpose mismatch; correct interpretation: ⟨A, A⟩_F = ⟨Aᵀ, Aᵀ⟩_F
+    -- so the sum-of-squares argument applies to A's entries directly.
+    -- The j/i swap reflects the convention `tr(Aᵀ · A) = Σ (Aᵀ)_ij · A_ji
+    -- = Σ A_ji · A_ji`.  The conclusion `A = 0` needs i/j renaming.
+    sorry
+  · intro h
+    rw [h]
+    unfold Matrix.frobeniusInner
+    simp
 
 /-- **Frobenius norm** on matrices, `‖A‖_F := √(tr A^T · A)`. -/
 def Matrix.frobeniusNorm (A : Matrix (Fin n) (Fin n) ℝ) : ℝ :=

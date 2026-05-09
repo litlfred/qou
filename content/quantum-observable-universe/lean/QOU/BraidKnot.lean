@@ -19,6 +19,7 @@ import QOU.BraidKnot.JetTowerUniformDeltaMax
 import QOU.BraidKnot.PhiQTowerAlgebraicStratification
 import QOU.BraidKnot.CanonicalKnotIdSDPUniqueness
 import QOU.BraidKnot.PSDFeasibilityProxy
+import QOU.BraidKnot.HopfBindingK
 
 /-!
 # BraidKnot — Module Index

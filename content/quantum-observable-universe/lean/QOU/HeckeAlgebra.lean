@@ -8,3 +8,4 @@ import QOU.HeckeAlgebra.Common
 import QOU.HeckeAlgebra.Hoefsmit
 import QOU.HeckeAlgebra.Wedderburn
 import QOU.HeckeAlgebra.MarkovTrace
+import QOU.HeckeAlgebra.QSubstrate
