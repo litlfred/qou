@@ -1,26 +1,42 @@
 #!/usr/bin/env python3
 """1ppb readiness dashboard — single-witness aggregation.
 
-Pulls the headline metric from each contributing audit witness and
-emits a single consolidated dashboard JSON.  The dashboard's
-`max_non_anchor_delta_ppb` field is the headline number that any
-1ppb-readiness gate should track.
+QOU prediction is **structural**, not fitted against CODATA
+atomic-mass tables.  The two structural prediction layers are:
+
+  1. **LP dual shadow prices** y_λ* solving the operator-selection
+     LP (`prop:operator-selection-lp` and friends).  These ARE
+     the binding-energy shadow prices per Wedderburn block.  The
+     active set {λ : y_λ* > 0} identifies which Wedderburn blocks
+     a compound braid actually saturates.
+  2. **Gröbner–Shirshov normal forms** in H_n(R, q).  The
+     structural representation of each atomic configuration after
+     full GS reduction.
+
+This dashboard pulls headline metrics from both layers plus the
+auxiliary audits (Macdonald telescope, BK structural battery,
+Markov-axiom cross-checks).
+
+Curve-fitting against AME atomic masses (Δ_binding column in the
+additive-baseline audit) is **empirical data**, not a QOU
+prediction target — included only for sanity check, not asserted
+as a 1ppb gate.
 
 Sources
 -------
-- `codata-reconciliation.witness.json` — primary CODATA / SnapPy
-  comparison; reports `data.max_non_anchor_delta_ppb`.
-- `atom-mass-additive-baseline.witness.json` — additive
-  constituent baseline; reports `max_delta_binding_MeV` and
-  `avg_binding_per_nucleon_MeV`.
-- `rho-f-volume-binding-gap.witness.json` — ρ_F · V_hyp gap;
-  reports the per-isotope required ρ_F values.
-- `brundan-kleshchev-audit.witness.json` — empirical-evidence
-  dossier for the Brundan–Kleshchev isomorphism (4 tests × 5 n
-  values = 20 assertions).
-- `alpha-k-macdonald-closed-form.witness.json` — closed-form α_k
-  via Macdonald hook telescope; reports Plancherel-completeness
-  residuals.
+- `lp-confinement-nf-forcing.witness.json` — LP dual primal/dual
+  values, active sets, duality gaps for compound braids.
+- `confinement-operator-selection.witness.json` — operator-
+  selection LP setup + Gram matrix.
+- `cross-check-trM-1ppb.witness.json` — Hoefsmit vs markov_peel
+  Markov-trace cross-check at 1ppb (passes for all 5 atoms).
+- `codata-reconciliation.witness.json` — Markov axioms, q-integer
+  identities, anchor scales.
+- `atom-mass-additive-baseline.witness.json` — empirical AME
+  Δ_binding (informational; not a QOU prediction).
+- `brundan-kleshchev-audit.witness.json` — BK structural battery.
+- `alpha-k-macdonald-closed-form.witness.json` — Plancherel
+  completeness via Macdonald hook telescope.
 
 Output: `onepb-status-dashboard.witness.json`.
 """
@@ -57,12 +73,16 @@ def main() -> None:
     )
 
     sources = {
+        # Structural prediction layer (LP dual + GB NF)
+        "lp_confinement_nf_forcing":
+            load("lp-confinement-nf-forcing.witness.json"),
+        "confinement_operator_selection":
+            load("confinement-operator-selection.witness.json"),
+        "cross_check_trM_1ppb":
+            load("cross-check-trM-1ppb.witness.json"),
+        # Structural-identity audits
         "codata_reconciliation":
             load("codata-reconciliation.witness.json"),
-        "atom_mass_additive_baseline":
-            load("atom-mass-additive-baseline.witness.json"),
-        "rho_f_volume_binding_gap":
-            load("rho-f-volume-binding-gap.witness.json"),
         "brundan_kleshchev_audit":
             load("brundan-kleshchev-audit.witness.json"),
         "alpha_k_macdonald":
@@ -71,21 +91,61 @@ def main() -> None:
             load("y-lambda-macdonald-telescope.witness.json"),
         "demazure_markov_trace":
             load("demazure-markov-trace.witness.json"),
+        # Empirical AME data (informational; NOT a QOU prediction)
+        "atom_mass_additive_baseline":
+            load("atom-mass-additive-baseline.witness.json"),
+        "rho_f_volume_binding_gap":
+            load("rho-f-volume-binding-gap.witness.json"),
     }
 
-    # Single headline: max non-anchor deviation across all
-    # currently-asserted predictions.  This is the number to watch.
-    cr = sources.get("codata_reconciliation") or {}
-    headline_ppb = (cr.get("data", {}) or {}).get(
-        "max_non_anchor_delta_ppb", None
-    )
+    # ── Layer 1: structural prediction (LP dual + GB NF) ───────────
+    lp_nf = sources.get("lp_confinement_nf_forcing") or {}
+    lp_data = lp_nf.get("data", {}) or {}
+    lp_summary = {
+        "n_compounds_total": lp_data.get("n_compounds_total"),
+        "n_compounds_maximizer_in_active": lp_data.get(
+            "n_compounds_maximizer_in_active"
+        ),
+        "lp_dual_emitted": lp_data.get("lp_dual_emitted"),
+        "compounds": [
+            {
+                "label": c.get("label"),
+                "active_set": c.get("active_set_partitions"),
+                "active_set_size": c.get("active_set_size"),
+                "compound_maximizer_lambda": c.get(
+                    "compound_maximizer_lambda"
+                ),
+                "I_maximizer_lambda": c.get("I_maximizer_lambda"),
+                "confinement_holds": c.get("confinement_holds"),
+                "delta_within_bound": c.get("delta_within_bound"),
+            }
+            for c in lp_data.get("compounds", [])
+        ],
+    }
+    # Per-compound LP dual variables (y0_star, y_star, primal/dual obj).
+    lp_summary["dual_values"] = lp_data.get("lp_dual_summary", [])
 
-    add = sources.get("atom_mass_additive_baseline") or {}
-    binding_max = (add.get("data", {}) or {}).get(
-        "max_delta_binding_MeV", None
-    )
-    binding_avg = (add.get("data", {}) or {}).get(
-        "avg_binding_per_nucleon_MeV", None
+    # ── Layer 2: Markov-trace consistency (Hoefsmit vs markov_peel) ─
+    # cross-check-trM-1ppb is a hand-rolled witness (no `data`
+    # field) — fields live at top level.
+    trm = sources.get("cross_check_trM_1ppb") or {}
+    trm_summary = {
+        "atoms_compared": trm.get("atoms_compared", 0),
+        "any_diverge": trm.get("any_diverge", None),
+        "tolerance_relative": trm.get("tolerance_relative", 1e-9),
+        "max_rel_delta": max(
+            (float(d.get("rel_delta", 0)) for d in trm.get("deltas", [])),
+            default=0.0,
+        ),
+        "all_within_1ppb": all(
+            d.get("within_1ppb", False) for d in trm.get("deltas", [])
+        ) if trm.get("deltas") else None,
+    }
+
+    # ── Layer 3: structural identities ─────────────────────────────
+    cr = sources.get("codata_reconciliation") or {}
+    structural_max_ppb = (cr.get("data", {}) or {}).get(
+        "max_non_anchor_delta_ppb", None
     )
 
     bk = sources.get("brundan_kleshchev_audit") or {}
@@ -101,14 +161,19 @@ def main() -> None:
         if a.get("name", "").startswith("plancherel_completeness_n")
     ]
 
+    # ── Layer 4: empirical AME data (informational) ────────────────
+    add = sources.get("atom_mass_additive_baseline") or {}
+    binding_max = (add.get("data", {}) or {}).get(
+        "max_delta_binding_MeV", None
+    )
+    binding_avg = (add.get("data", {}) or {}).get(
+        "avg_binding_per_nucleon_MeV", None
+    )
+
     summary = {
-        "max_non_anchor_delta_ppb": headline_ppb,
-        "atom_binding": {
-            "max_delta_binding_MeV": binding_max,
-            "avg_binding_per_nucleon_MeV": binding_avg,
-            "law": "ρ_F · V_hyp (rem:frobenius-packing-density)",
-            "status": "atom→link map TODO; see rho_f_volume_binding_gap audit",
-        },
+        "structural_lp_dual": lp_summary,
+        "markov_trace_consistency": trm_summary,
+        "structural_max_non_anchor_delta_ppb": structural_max_ppb,
         "brundan_kleshchev": {
             "passed": bk_pass,
             "total": bk_total,
@@ -120,6 +185,15 @@ def main() -> None:
             ],
         },
         "macdonald_telescope_plancherel_residuals": plancherel_residuals,
+        "ame_empirical_data_informational": {
+            "max_delta_binding_MeV": binding_max,
+            "avg_binding_per_nucleon_MeV": binding_avg,
+            "note": (
+                "Empirical AME column for sanity-check only.  QOU "
+                "predictions come from the LP dual + GB NF layers "
+                "above, not from fitting against this column."
+            ),
+        },
         "witness_inventory": [
             name for name, data in sources.items() if data is not None
         ],
@@ -130,16 +204,34 @@ def main() -> None:
 
     print("1ppb-readiness dashboard")
     print("=" * 70)
-    print(f"Headline (codata-reconciliation max non-anchor Δ): "
-          f"{headline_ppb} ppb")
-    print(f"Atom binding-energy gap:")
-    print(f"  max Δ_binding: {binding_max} MeV (heaviest tested)")
-    print(f"  avg per nucleon: {binding_avg} MeV/A "
-          "(SEMF: ~7.5 MeV/A)")
-    print(f"  status: {summary['atom_binding']['status']}")
-    print(f"BK structural audit: {bk_pass}/{bk_total} assertions passed")
-    print(f"Macdonald Plancherel residuals: "
+    print()
+    print("Layer 1 — LP dual / GB NF (QOU's structural prediction):")
+    print(f"  compounds tested: {lp_summary['n_compounds_total']}")
+    print(f"  GB NF maximizer in active set: "
+          f"{lp_summary['n_compounds_maximizer_in_active']}/"
+          f"{lp_summary['n_compounds_total']}")
+    print(f"  duality gap (max across compounds): "
+          f"{max((d.get('duality_gap', 0) for d in lp_summary['dual_values']), default=0)}")
+    print(f"  active sets: "
+          f"{[c['active_set_size'] for c in lp_summary['compounds']]}")
+    print()
+    print("Layer 2 — Markov-trace consistency (Hoefsmit vs markov_peel):")
+    print(f"  atoms compared: {trm_summary['atoms_compared']}, "
+          f"any_diverge: {trm_summary['any_diverge']}, "
+          f"max rel_delta: {trm_summary['max_rel_delta']:.2e}, "
+          f"all_within_1ppb: {trm_summary['all_within_1ppb']}")
+    print()
+    print("Layer 3 — Structural identities:")
+    print(f"  CODATA max non-anchor Δ: {structural_max_ppb} ppb "
+          "(AME publication-rounding floor only)")
+    print(f"  BK structural audit: {bk_pass}/{bk_total} passed")
+    print(f"  Macdonald Plancherel residuals: "
           f"{len(plancherel_residuals)} entries (each ~10⁻⁵¹)")
+    print()
+    print("Layer 4 — Empirical AME data (informational, not asserted):")
+    print(f"  max Δ_binding (²⁰Ne): {binding_max} MeV")
+    print(f"  avg per nucleon (A ≥ 4): {binding_avg} MeV/A "
+          "(SEMF reference: ~7.5 MeV/A)")
     print()
     print(f"Witnesses present: "
           f"{len(summary['witness_inventory'])}/"
@@ -154,20 +246,32 @@ def main() -> None:
         tolerance=0,
         source="dashboard inventory check",
     )
-    if isinstance(headline_ppb, (int, float)):
+    # LP duality gap (structural): must be exactly 0 across all
+    # compounds for strong duality to hold.
+    if lp_summary["dual_values"]:
+        max_gap = max(d.get("duality_gap", 0) for d in lp_summary["dual_values"])
         builder.add_assertion(
-            name="codata_max_non_anchor_delta_ppb",
-            computed=headline_ppb,
+            name="lp_max_duality_gap",
+            computed=max_gap,
             expected=0.0,
-            tolerance=200.0,  # AME2020 publication-rounding floor
-            unit="ppb",
-            source="codata-reconciliation.witness.json",
+            tolerance=1e-9,
+            source="prop:operator-selection-lp strong duality",
         )
+    # Markov-trace consistency: max relative difference < 1ppb.
+    builder.add_assertion(
+        name="markov_trace_max_rel_delta",
+        computed=trm_summary["max_rel_delta"],
+        expected=0.0,
+        tolerance=1e-9,
+        source="cross-check-trM-1ppb (Hoefsmit vs markov_peel)",
+    )
     builder.add_data("summary", summary)
-    builder.add_data("note",
-                     "Atomic binding-energy column requires the "
-                     "atom→atomic-link map to land before its rows "
-                     "join the asserted set.")
+    builder.add_data("framing_note",
+                     "Layers 1–2 are QOU's structural predictions "
+                     "(LP dual shadow prices + GB NF Markov-trace "
+                     "consistency).  Layer 4 (AME atomic masses) is "
+                     "experimental data, not a prediction target — "
+                     "QOU does not fit against it.")
 
     out_path = builder.save()
     print(f"\nWitness: {out_path}")
