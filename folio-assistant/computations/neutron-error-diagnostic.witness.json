@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T20:25:18.584268+00:00",
-  "commitSha": "0c9e213e44c38025cd7688ebdf1ebde06210a878",
+  "computedAt": "2026-05-09T22:08:33.796682+00:00",
+  "commitSha": "c748cff8f81fe8a3a87abf94980be44912522bea",
   "assertions": [
     {
       "name": "neutron_gap_localised_to_T1",
@@ -13,7 +13,7 @@
     },
     {
       "name": "framework_overpredicts_n_minus_p_by_factor_~60",
-      "computed": 59.479742812449004,
+      "computed": 59.5229266369664,
       "expected": 60.0,
       "passed": true,
       "tolerance": 20.0
@@ -26,13 +26,14 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 21,
+  "durationMs": 9,
   "computation": "neutron-error-diagnostic",
   "scriptFile": "neutron_error_diagnostic.py",
-  "scriptHash": "ccc004af9ba4",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "6720a9f165e0",
+  "scriptCommitSha": "5362643ebb37a2008af703770e521ad0a83284e0",
   "description": "Strategy-3 component decomposition of the −8.3% neutron error.  All components except T1=|tr_M_atomic| are identical between proton and neutron at A=1; the entire gap localises to the trace ratio |tr_M(n)| / |tr_M(p)| = 0.764.  Root cause: σ↔σ⁻¹ asymmetry at q ≠ 1 in the proton-uud vs neutron-udd quark encoding (uu→σ, dd→σ⁻¹).  Physical splitting = 0.14% of m_p; framework's encoding predicts 8.3% — over-prediction factor ≈60×.  This diagnostic does NOT propose a fix; it identifies the structural target for the next agent.  See docs/audits/2026-05-09-proton-m_e-anomaly.md §9.5 for the 1ppb-frontier ranking.",
   "contentBlock": "prop:atomic-mass-gb-nf",
+  "auditOnly": "docs/audits/2026-05-09-mass-table-1ppb-audit.md",
   "parameters": {
     "q_0": 1.1099785955541805,
     "M_p_codata_MeV": 938.27208816,
@@ -93,8 +94,8 @@
       },
       {
         "component": "term6_cyclotomic_tail_MeV",
-        "proton": 0.6807154737511466,
-        "neutron": 0.6807154737511466,
+        "proton": 0.0,
+        "neutron": 0.0,
         "diff": 0.0,
         "identical": true
       },
@@ -106,10 +107,10 @@
         "identical": false
       }
     ],
-    "M_pred_n_MeV": 861.3450120161809,
-    "M_pred_n_err_pct": -8.325168934008678,
-    "framework_n_minus_p_MeV": 76.92707614381902,
-    "over_prediction_factor": 59.479742812449004,
+    "M_pred_n_MeV": 861.289160978504,
+    "M_pred_n_err_pct": -8.331113281944141,
+    "framework_n_minus_p_MeV": 76.98292718149594,
+    "over_prediction_factor": 59.5229266369664,
     "trace_ratio_n_over_p": 0.7643177587420618,
     "structural_origin": "σ ↔ σ⁻¹ asymmetry: proton uud has uu pair → σ on gen 0, neutron udd has dd pair → σ⁻¹ on gen 1. At q ≠ 1, σ has eigenvalues {q, −q⁻¹} while σ⁻¹ has eigenvalues {q⁻¹, −q}; the per-swap trace ratio q²/q⁻² ≈ q⁴ ≈ 1.52 at q₀ ≈ 1.11, compounded across multiple swaps → 30% trace gap.",
     "recommended_paths": [
@@ -119,18 +120,18 @@
     ],
     "m_e_accounting_hypotheses": {
       "hypothesis_A_bare_bare": {
-        "E_0": 199.8597516950009,
-        "M_pred_n_MeV": 861.3450120161808,
-        "err_pct": -8.32516893400869
+        "E_0": 200.0048550198844,
+        "M_pred_n_MeV": 861.2891609785039,
+        "err_pct": -8.331113281944145
       },
       "hypothesis_B_atomic_p_calib": {
-        "E_0": 199.96867774342522,
-        "M_pred_n_MeV": 861.8140847536739,
-        "err_pct": -8.275244497961069
+        "E_0": 200.1137810683087,
+        "M_pred_n_MeV": 861.7582337159969,
+        "err_pct": -8.281188845896533
       },
       "hypothesis_D_n_plus_m_e": {
-        "M_pred_n_MeV": 861.8560109661809,
-        "err_pct": -8.270782199584469
+        "M_pred_n_MeV": 861.800159928504,
+        "err_pct": -8.276726547519923
       },
       "m_e_shift_max_pct": 0.05438673442421805,
       "verdict": "m_e accounting can shift the neutron error by ±0.0544% = ±0.054%; the 8.3% gap is far larger.  The neutron error is NOT m_e-related; the σ↔σ⁻¹ asymmetry diagnosis stands."

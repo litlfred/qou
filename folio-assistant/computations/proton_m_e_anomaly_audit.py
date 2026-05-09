@@ -31,6 +31,11 @@ from witness_base import WitnessBuilder
 
 
 def main() -> int:
+    # Construct WitnessBuilder up-front so durationMs reflects actual
+    # end-to-end runtime (per Copilot review on PR #621).
+    w = WitnessBuilder("proton-m_e-anomaly-audit", engine="python")
+    w.set_audit_only("docs/audits/2026-05-09-proton-m_e-anomaly.md")
+
     M_E_HECKE = M_HECKE_PIPELINE_AT_Q0["e"]
     M_P_HECKE = M_HECKE_PIPELINE_AT_Q0["p"]
 
@@ -72,7 +77,6 @@ def main() -> int:
     print()
     print("  Resolution options A-E in docs/audits/2026-05-09-proton-m_e-anomaly.md.")
 
-    w = WitnessBuilder("proton-m_e-anomaly-audit", engine="python")
     w.set_description(
         "Diagnostic-only audit of the proton 544k ppb defect.  Documents "
         "that the placeholder literals M_HECKE_PIPELINE_AT_Q0['p']=1.4283 "

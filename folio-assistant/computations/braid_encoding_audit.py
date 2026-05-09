@@ -149,15 +149,24 @@ def _build_record(name, word_cd, h_num, gens=None):
 
 
 def _count_sigma_squared(word_cd) -> int:
-    """Count consecutive σ_i · σ_i pairs (γγ insertion sites)."""
+    """Count **disjoint** consecutive σ_i · σ_i pairs (γγ insertion sites).
+
+    Per Gemini review on PR #621 (consistency with the hardcoded electron
+    record `n_gamma_gamma_sites = 1` for σ_1^3): pairs are taken
+    disjointly, so σ_i^k contributes ⌊k/2⌋ sites at most. After detecting
+    a pair at index k, advance by 2 (skip the consumed second factor).
+    """
     count = 0
-    for k in range(len(word_cd) - 1):
+    k = 0
+    while k < len(word_cd) - 1:
         c1, d1, g1 = word_cd[k]
         c2, d2, g2 = word_cd[k + 1]
-        # Both σ (positive) on the same generator → σ²
         if g1 == g2 and abs(c1 - 1.0) < 1e-6 and abs(d1) < 1e-6 and \
            abs(c2 - 1.0) < 1e-6 and abs(d2) < 1e-6:
             count += 1
+            k += 2  # disjoint: consume both factors
+        else:
+            k += 1
     return count
 
 
@@ -325,13 +334,14 @@ def gamma_gamma_tracking(inventory: dict) -> dict:
     """
     out = {}
     for label, rec in inventory.items():
-        # per-generator σ-count = floor(consecutive-σ-on-same-gen / 2) potential γγ sites
+        # per-generator σ-count, plus disjoint γγ-site count via the
+        # canonical _count_sigma_squared (matches the hardcoded electron
+        # record and the rec["n_gamma_gamma_sites"] field).
         sigma_per_gen: Counter = Counter()
         for ((_c, d, g), lab) in zip(rec["word_cd"],
                                        [_l for _l in rec["word_str"].split(" · ")]):
             if "σ" in lab and "σ⁻¹" not in lab and "+" not in lab:
                 sigma_per_gen[g] += 1
-        gamma_gamma = sum(c // 2 for c in sigma_per_gen.values())
         out[label] = {
             "particle": rec["particle"],
             "n_sigma_per_gen": dict(sigma_per_gen),

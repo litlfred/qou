@@ -91,6 +91,11 @@ from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
 
 
 def main() -> int:
+    # Construct WitnessBuilder up-front so durationMs reflects actual
+    # end-to-end runtime (per Copilot review on PR #621).
+    w = WitnessBuilder("neutron-error-diagnostic", engine="python")
+    w.set_audit_only("docs/audits/2026-05-09-mass-table-1ppb-audit.md")
+
     # Load the canonical mass-table witness.
     here = Path(__file__).parent
     witness_path = here / "atomic-braid-mass-table.witness.json"
@@ -211,8 +216,7 @@ def main() -> int:
     print(f"     8.3% gap is far too large to be m_e-related.  The σ↔σ⁻¹")
     print(f"     asymmetry diagnosis stands.")
 
-    # Witness emission
-    w = WitnessBuilder("neutron-error-diagnostic", engine="python")
+    # Witness population (builder constructed at start of main())
     w.set_description(
         "Strategy-3 component decomposition of the −8.3% neutron error.  "
         "All components except T1=|tr_M_atomic| are identical between "

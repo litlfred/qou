@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# polynamic_q_not_applicable: numerical-only output.
+# polynomial_q_not_applicable: numerical-only output.
 """
 Item 2 from the Phase 1.8 actionable path: derive m_n via the
 difference formula

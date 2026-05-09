@@ -33,7 +33,11 @@ Hecke-power recurrence (a_k, b_k).  Then
 
   u^{(Δ_n²)*}(β) = m_e · Σ_λ y_λ(q₀) · q₀^{c(λ)} · χ^λ(β) / [3]_q!
 
-is reported per particle (proton, neutron) at q₀ to 50 dps.
+is reported for the **proton** at q₀ to 50 dps.  The neutron path
+requires a separate σ⁻¹-aware closed-form chain (the proton's
+σ_1^7 σ_2^4 word does not extend cleanly to udd via the same
+character-table reduction); it is deferred to a follow-up script
+and explicitly noted in the witness output.
 
 Output: delta-n2-lp-dual-extraction.witness.json
 """
@@ -50,7 +54,7 @@ import mpmath as mp
 mp.mp.dps = 50
 
 from witness_base import WitnessBuilder
-from q_parameter import Q as Q0_FLOAT
+from q_parameter import Q as Q0_FLOAT, Q_MP
 from experimental_constants import M_E_MEV
 
 
@@ -148,7 +152,7 @@ def main() -> int:
     y_at_q0 = {}
     for p in parts_3:
         f = sp.lambdify(q, y_h3[p], modules=["mpmath"])
-        y_at_q0[p] = mp.mpf(str(f(Q0_FLOAT)))
+        y_at_q0[p] = mp.mpf(str(f(Q_MP)))
         print(f"    y_{p}(q_0) = {mp.nstr(y_at_q0[p], 14)}")
 
     # q^{c(λ)} per block
@@ -174,7 +178,7 @@ def main() -> int:
         chi_at_q0[label] = {}
         for p in parts_3:
             f = sp.lambdify(q, sym_chi[p], modules=["mpmath"])
-            chi_at_q0[label][p] = mp.mpf(str(f(Q0_FLOAT)))
+            chi_at_q0[label][p] = mp.mpf(str(f(Q_MP)))
             print(f"    χ^{p}({label}) at q_0 = {mp.nstr(chi_at_q0[label][p], 14)}")
         sym_chi_proton = sym_chi   # save for later
 

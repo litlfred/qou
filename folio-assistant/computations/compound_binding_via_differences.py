@@ -273,8 +273,17 @@ def main() -> int:
         computed=len(results),
         expected=4,
     )
+    import math
     w.add_assertion(
         "predictions_finite",
+        computed=all(
+            math.isfinite(r["err_pct"]) and math.isfinite(r["B_pred_diff_MeV"])
+            for r in results.values()
+        ),
+        expected=True,
+    )
+    w.add_assertion(
+        "predictions_within_100pct_of_AME",
         computed=all(
             -100 < r["err_pct"] < 100 for r in results.values()
         ),

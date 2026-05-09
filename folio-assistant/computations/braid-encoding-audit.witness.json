@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T20:33:23.639989+00:00",
-  "commitSha": "7db0f14acd0edd76427139d83181a2f2477cdf58",
+  "computedAt": "2026-05-09T22:08:36.369953+00:00",
+  "commitSha": "c748cff8f81fe8a3a87abf94980be44912522bea",
   "assertions": [
     {
       "name": "delta_n_squared_is_placeholder",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 5,
   "computation": "braid-encoding-audit",
   "scriptFile": "braid_encoding_audit.py",
-  "scriptHash": "ec671c5419eb",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "08af5904dab9",
+  "scriptCommitSha": "70171528bcadd5f6bee4d40d5a2cb61749c10768",
   "description": "Phase 1.8 audit per user directive: validate braid encodings of p and n, classify all knot operations (SDP / Lean / fitted / fallback / placeholder), track γγ pair-production per particle, and identify where the structural differences really are.  Findings: (1) Δ_n² is a placeholder (returns 1.0 always); (2) canonical_a_k for ³H/³He/⁴He has method:unknown in source witness; (3) framework's own fresh_derivation_pn_true_sdp.py documents that absolute m_p / m_n are NOT directly derivable — only differences project to observables — but Strategy-3 ignores this and predicts m_n directly, hence the −8.3% error.",
   "contentBlock": "prop:atomic-mass-gb-nf",
   "parameters": {
@@ -134,7 +134,7 @@
           "gen_1_σ⁻¹": 3,
           "gen_1_½(σ+σ⁻¹)": 1
         },
-        "n_gamma_gamma_sites": 4
+        "n_gamma_gamma_sites": 3
       },
       "neutron": {
         "particle": "neutron (udd, B_3 + 2 gluon)",
@@ -206,7 +206,7 @@
           "gen_0_½(σ+σ⁻¹)": 2,
           "gen_1_σ⁻¹": 4
         },
-        "n_gamma_gamma_sites": 3
+        "n_gamma_gamma_sites": 2
       },
       "deuteron": {
         "particle": "deuteron (Z=1, N=1)",
@@ -343,7 +343,7 @@
           "gen_3_½(σ+σ⁻¹)": 2,
           "gen_4_σ⁻¹": 4
         },
-        "n_gamma_gamma_sites": 7
+        "n_gamma_gamma_sites": 5
       },
       "triton": {
         "particle": "triton (Z=1, N=2)",
@@ -544,7 +544,7 @@
           "gen_6_½(σ+σ⁻¹)": 2,
           "gen_7_σ⁻¹": 4
         },
-        "n_gamma_gamma_sites": 10
+        "n_gamma_gamma_sites": 7
       },
       "3He": {
         "particle": "3He (Z=2, N=1)",
@@ -746,7 +746,7 @@
           "gen_6_½(σ+σ⁻¹)": 2,
           "gen_7_σ⁻¹": 4
         },
-        "n_gamma_gamma_sites": 11
+        "n_gamma_gamma_sites": 8
       },
       "4He": {
         "particle": "4He (Z=2, N=2)",
@@ -1012,7 +1012,7 @@
           "gen_9_½(σ+σ⁻¹)": 2,
           "gen_10_σ⁻¹": 4
         },
-        "n_gamma_gamma_sites": 14
+        "n_gamma_gamma_sites": 10
       }
     },
     "knot_operation_classifications": [
@@ -1105,7 +1105,7 @@
         "n_sigma_per_gen": {
           "0": 6
         },
-        "n_gamma_gamma_sites": 4,
+        "n_gamma_gamma_sites": 3,
         "n_sigma_inverse": 5,
         "n_averaged": 2,
         "writhe": 3
@@ -1115,7 +1115,7 @@
         "n_sigma_per_gen": {
           "0": 5
         },
-        "n_gamma_gamma_sites": 3,
+        "n_gamma_gamma_sites": 2,
         "n_sigma_inverse": 6,
         "n_averaged": 2,
         "writhe": 1
@@ -1126,7 +1126,7 @@
           "0": 6,
           "3": 5
         },
-        "n_gamma_gamma_sites": 7,
+        "n_gamma_gamma_sites": 5,
         "n_sigma_inverse": 12,
         "n_averaged": 5,
         "writhe": 4
@@ -1138,7 +1138,7 @@
           "3": 5,
           "6": 5
         },
-        "n_gamma_gamma_sites": 10,
+        "n_gamma_gamma_sites": 7,
         "n_sigma_inverse": 19,
         "n_averaged": 7,
         "writhe": 4
@@ -1151,7 +1151,7 @@
           "3": 6,
           "6": 5
         },
-        "n_gamma_gamma_sites": 11,
+        "n_gamma_gamma_sites": 8,
         "n_sigma_inverse": 17,
         "n_averaged": 7,
         "writhe": 8
@@ -1165,7 +1165,7 @@
           "6": 5,
           "9": 5
         },
-        "n_gamma_gamma_sites": 14,
+        "n_gamma_gamma_sites": 10,
         "n_sigma_inverse": 24,
         "n_averaged": 9,
         "writhe": 8
@@ -1175,7 +1175,7 @@
       "proton": {
         "strategy_3_tr_M": 1.6331535640480814,
         "phase_1_6_closed_form": 1.6331535640480805,
-        "markov_trace_assembly_chain": 2.12258250945273,
+        "markov_trace_assembly_chain": 1.0653062285923893,
         "axiomatic_content_block": 1.63315
       },
       "neutron": {

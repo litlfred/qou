@@ -111,12 +111,19 @@ def q_factorial_num(n, q_val):
 def chi_lambda_numerical(shape, crossings_cd, q_val: float, h_val: float):
     """Compute χ^λ(β) numerically by tracing through Hoefsmit matrices.
 
+    Note: `build_seminormal_matrices(shape)` uses the canonical q from
+    `q_parameter` (= q_0).  The (q_val, h_val) parameters here are
+    accepted for caller-side documentation / future generalisation, but
+    the matrix construction itself pins to q_0; callers should not pass
+    a different q without first plumbing it through `build_seminormal_matrices`.
+
     crossings_cd: list of (c, d, gen_idx) triples (atom_braid_word_3A shape)
       σ_i positive crossing:  (1, 0, gen)         → step = σ_i
       σ_i⁻¹:                  (1, -h, gen)        → step = σ_i − h·I = σ_i⁻¹
       averaged ½(σ+σ⁻¹):      (1, -h/2, gen)      → step = σ_i − (h/2)·I
       generic c·σ + d·I:                          → step = c·σ_i + d·I
     """
+    del q_val, h_val   # q_val/h_val pinned to q_0 inside build_seminormal_matrices
     from hecke_characters import build_seminormal_matrices
     sigmas, dim, _ = build_seminormal_matrices(tuple(shape))
     if dim == 0:

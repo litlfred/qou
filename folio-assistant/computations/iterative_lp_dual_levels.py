@@ -22,8 +22,12 @@ At the Markov-trace level:
 
   u^{(ℓ)*}(T_w) = m_e · Σ_λ y_λ(q) · c_ℓ(λ) · χ^λ(T_w) / [n]_q!
 
-This script computes u^{(ℓ)*}(β) for proton + neutron at H_3, for
-ℓ ∈ {0, 1, 2, 3}, plus a structural sketch for the deuteron at H_6.
+This script computes u^{(ℓ)*}(β) precisely for the **proton** at H_3
+(ℓ ∈ {0, 1, 2, 3}) using the closed-form Markov-trace machinery, and
+estimates the per-level neutron contribution via a naive |tr_M(n)|/|tr_M(p)|
+scaling (the rigorous σ⁻¹-aware closed-form chain for the neutron is
+deferred to a separate script).  A structural sketch for the deuteron
+at H_6 is provided in `iterative_lp_dual_h6_deuteron.py`.
 
 Output: iterative-lp-dual-levels.witness.json
 """
@@ -41,7 +45,7 @@ import mpmath as mp
 mp.mp.dps = 50
 
 from witness_base import WitnessBuilder
-from q_parameter import Q as Q0_FLOAT
+from q_parameter import Q as Q0_FLOAT, Q_MP
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
 
 
@@ -171,7 +175,7 @@ def main() -> int:
     y_at_q0 = {}
     for p in parts_3:
         f = sp.lambdify(q, y_h3[p], modules=["mpmath"])
-        y_at_q0[p] = mp.mpf(str(f(Q0_FLOAT)))
+        y_at_q0[p] = mp.mpf(str(f(Q_MP)))
 
     # χ^λ(proton) at q_0
     chi_proton = {
@@ -182,7 +186,7 @@ def main() -> int:
     chi_proton_at_q0 = {}
     for p in parts_3:
         f = sp.lambdify(q, chi_proton[p], modules=["mpmath"])
-        chi_proton_at_q0[p] = mp.mpf(str(f(Q0_FLOAT)))
+        chi_proton_at_q0[p] = mp.mpf(str(f(Q_MP)))
 
     # c_ℓ(λ) for each partition × each level
     print("\n  c_ℓ(λ) = e_ℓ({q_0^{2c(□)} : □ ∈ λ}) per partition × level:")
@@ -199,7 +203,7 @@ def main() -> int:
         for ell in range(n_total + 1):
             sym = c_ell(p, ell)
             f = sp.lambdify(q, sym, modules=["mpmath"])
-            v = mp.mpf(str(f(Q0_FLOAT)))
+            v = mp.mpf(str(f(Q_MP)))
             c_ell_at_q0[p][ell] = v
             print(f"{float(v):>10.5f}  ", end="")
         print()
@@ -207,7 +211,7 @@ def main() -> int:
     # u^{(ℓ)*}(proton) at each level
     print("\n  u^{(ℓ)*}(proton σ_1^7 σ_2^4):")
     qfact_3 = q_factorial(3, q)
-    qfact_3_at_q0 = mp.mpf(str(sp.lambdify(q, qfact_3, modules=["mpmath"])(Q0_FLOAT)))
+    qfact_3_at_q0 = mp.mpf(str(sp.lambdify(q, qfact_3, modules=["mpmath"])(Q_MP)))
     m_e_mp = mp.mpf(M_E_MEV)
     print(f"    [3]_q!  at q_0 = {mp.nstr(qfact_3_at_q0, 12)}")
     print(f"    m_e     = {M_E_MEV} MeV")

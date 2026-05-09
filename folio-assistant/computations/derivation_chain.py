@@ -96,7 +96,11 @@ TR_M_AT_Q0: dict[str, float] = {
 # 544,145 ppb "defect" reported by that chain is an artefact of this
 # staleness, not of the framework.
 #
-# DO NOT ADD NEW CONSUMERS. For mass predictions, run
+# DO NOT ADD NEW PRODUCTION CONSUMERS. (Audit / diagnostic-only
+# scripts that explicitly mark themselves audit-only — e.g.
+# `proton_m_e_anomaly_audit.py` — may consume these literals to
+# document the anomaly; that does not contradict this guidance.)
+# For real mass predictions, run
 # `atomic_braid_mass_table.py` and consume
 # `atomic-braid-mass-table.witness.json`.
 M_HECKE_PIPELINE_AT_Q0: dict[str, float] = {
