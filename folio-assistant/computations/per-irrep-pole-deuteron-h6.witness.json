@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-09T02:43:29.043713+00:00",
-  "commitSha": "b3441009eed83094ca6dcb53df922af4806709df",
+  "computedAt": "2026-05-09T03:25:17.116367+00:00",
+  "commitSha": "77601c75b3520a37328adaf3566d4f2b02c8f27e",
   "assertions": [
     {
       "name": "deuteron_full_tr_M_u_pole_eq_shift_NF",
@@ -18,12 +18,12 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 20,
+  "durationMs": 19,
   "computation": "per-irrep-pole-deuteron-h6",
-  "scriptFile": "per_irrep_pole_deuteron_h6.py",
-  "scriptHash": "de3e257b7526",
-  "scriptCommitSha": "b3441009eed83094ca6dcb53df922af4806709df",
-  "description": "Path A: per-term symbolic u-pole-order analysis of the deuteron's tr_M = Σ_λ y_λ(q) · χ^λ_q(β_D) at q = u² (per the D(u) convention).  Loads cached symbolic y_λ from y-lambda-wenzl-bridge-symbolic-witness.json (skips solve_y_lambda(6) bottleneck) and cached chi_λ(β_D) from chi-deuteron-h6.witness.json (auto-emit on first run, ~155 s).  Per-term ord_{u=0}(y_λ · χ^λ) avoids the sp.together bottleneck on 11-term sum.  Verifies shift_NF(β_D) = 40 = 18·1 + 21·1 + 1, matching prop:per-nucleon-shift-additive-linearity for the deuteron multi-nucleon case.",
+  "scriptFile": "per_irrep_pole_atom.py",
+  "scriptHash": "91589adcaa46",
+  "scriptCommitSha": "e9c217d428b70cb133908e6efa32d9805ac82df2",
+  "description": "Path A: per-term symbolic u-pole-order analysis of the deuteron's tr_M = Σ_λ y_λ(q) · χ^λ_q(β_{1,1}) at q = u² (per the D(u) convention).  Loads cached symbolic y_λ from y-lambda-wenzl-bridge-symbolic-witness.json and cached chi_λ from chi-deuteron-h6.witness.json (auto-emit on first run, multiprocessing).  Per-term ord_{u=0}(y_λ · χ^λ) avoids the sp.together bottleneck.  Verifies shift_NF(β_deuteron) = 40 = 18·1 + 21·1 + 1, matching prop:per-nucleon-shift-additive-linearity.",
   "auditOnly": "docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md",
   "data": {
     "per_term_u_pole_orders": [
@@ -132,8 +132,9 @@
       "value": 40,
       "rigorous": true,
       "expected": 40,
-      "formula": "shift_NF(β_D) = 18·Z + 21·N + 1 at (Z=1, N=1) = 40",
-      "justification": "Unique-max per-term pole equals full-sum pole because lower-order terms cannot cancel a strict maximum."
+      "Z": 1,
+      "N": 1,
+      "formula": "shift_NF(β_deuteron) = 18·1 + 21·1 + 1 = 40"
     }
   }
 }

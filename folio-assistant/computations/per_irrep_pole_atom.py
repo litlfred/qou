@@ -112,71 +112,100 @@ def _chi_worker(args):
     return lam, str(chi)
 
 
-def load_or_build_chi_atom(
-    Z: int, N: int, atom_name: str, q_sym: sp.Symbol,
-    *, workers: int | None = None,
-) -> tuple[dict[tuple, sp.Expr], float]:
-    """Load (or compute + cache) symbolic χ^λ_q(β_atomic(Z, N)) for each λ ⊢ 3(Z+N)."""
-    n = 3 * (Z + N)
-    cache_path = HERE / f"chi-{atom_name}-h{n}.witness.json"
-    if cache_path.exists():
-        d = json.loads(cache_path.read_text())
-        out: dict[tuple, sp.Expr] = {}
-        for entry in d["chi_lambda_symbolic"]:
-            lam = tuple(entry["partition"])
-            expr = sp.sympify(entry["chi_q_symbolic"])
-            free = expr.free_symbols
-            if free:
-                other_q = next(iter(free))
-                if other_q is not q_sym:
-                    expr = expr.subs(other_q, q_sym)
-            out[lam] = expr
-        return out, 0.0
-    # First-run: parallel build + emit cache.
-    crossings = atom_canonical_crossings(Z, N)
-    shapes = parts_of(n)
-    workers_eff = workers if workers else max(1, os.cpu_count() or 1)
-    print(f"  (first run — building chi cache for {atom_name} h{n}: "
-          f"{len(shapes)} partitions, {workers_eff} workers)")
-    t0 = time.time()
-    out_str: dict[tuple, str] = {}
-    if workers_eff > 1 and len(shapes) > 1:
-        with Pool(processes=workers_eff) as pool:
-            for lam, chi_str in pool.imap_unordered(
-                _chi_worker, [(sh, crossings) for sh in shapes],
-            ):
-                out_str[lam] = chi_str
-                print(f"    λ={str(lam):24} chi computed "
-                      f"({time.time() - t0:.1f}s elapsed)")
-    else:
-        for sh in shapes:
-            lam, chi_str = _chi_worker((sh, crossings))
-            out_str[lam] = chi_str
-    elapsed = time.time() - t0
+def _write_chi_cache(
+    cache_path: Path, atom_name: str, Z: int, N: int, n: int,
+    out_str: dict[tuple, str], elapsed: float, workers_eff: int,
+    partial: bool,
+) -> None:
+    """Persist (or update) the chi cache JSON, including partial state."""
     cache_payload = {
         "description": (
             f"Symbolic χ^λ_q(β_atomic({Z}, {N})) — {atom_name} — "
             f"for the canonical atomic braid word at H_{n}, per "
-            f"partition λ ⊢ {n}.  First-run cache (parallel-built); "
-            f"subsequent loads are O(1).  Used by Path A pole-order "
-            f"verification in per_irrep_pole_atom.py."
+            f"partition λ ⊢ {n}.  Incrementally saved per partition "
+            f"so a SIGTERM/timeout mid-loop preserves work done so far."
+            + (" PARTIAL — re-run to continue."
+               if partial else "")
         ),
         "atom": atom_name,
         "Z": Z,
         "N": N,
         "n": n,
         "n_partitions": len(out_str),
-        "compute_time_sec": elapsed,
+        "n_partitions_total": len(parts_of(n)),
+        "partial": partial,
+        "compute_time_sec_so_far": elapsed,
         "workers": workers_eff,
         "chi_lambda_symbolic": [
             {"partition": list(lam), "chi_q_symbolic": s}
-            for lam, s in sorted(out_str.items(), key=lambda kv: tuple(-x for x in kv[0]))
+            for lam, s in sorted(out_str.items(),
+                                 key=lambda kv: tuple(-x for x in kv[0]))
         ],
     }
     cache_path.write_text(json.dumps(cache_payload, indent=2))
-    print(f"  chi cache emitted: {cache_path.name} ({elapsed:.1f}s)")
-    out = {}
-    for lam, s in out_str.items():
+
+
+def load_or_build_chi_atom(
+    Z: int, N: int, atom_name: str, q_sym: sp.Symbol,
+    *, workers: int | None = None,
+) -> tuple[dict[tuple, sp.Expr], float]:
+    """Load (or compute + cache) symbolic χ^λ_q(β_atomic(Z, N)) for each λ ⊢ 3(Z+N).
+
+    The cache supports **incremental saves**: each completed partition
+    is appended and the JSON is rewritten so a SIGTERM/timeout mid-loop
+    preserves the work done so far.  Re-running the script on the
+    partial cache will skip already-cached partitions and only compute
+    the remaining ones.
+    """
+    n = 3 * (Z + N)
+    cache_path = HERE / f"chi-{atom_name}-h{n}.witness.json"
+    cached_str: dict[tuple, str] = {}
+    cached_was_partial = False
+    if cache_path.exists():
+        d = json.loads(cache_path.read_text())
+        for entry in d["chi_lambda_symbolic"]:
+            lam = tuple(entry["partition"])
+            cached_str[lam] = entry["chi_q_symbolic"]
+        cached_was_partial = bool(d.get("partial", False))
+    crossings = atom_canonical_crossings(Z, N)
+    shapes = parts_of(n)
+    missing = [sh for sh in shapes if sh not in cached_str]
+    workers_eff = workers if workers else max(1, os.cpu_count() or 1)
+    n_have = len(cached_str)
+    if not missing and not cached_was_partial:
+        print(f"  (chi cache complete: {n_have}/{len(shapes)} cached)")
+    else:
+        print(f"  (chi cache: {n_have}/{len(shapes)} cached; "
+              f"computing {len(missing)} more, {workers_eff} workers)")
+    t0 = time.time()
+    if missing:
+        if workers_eff > 1 and len(missing) > 1:
+            with Pool(processes=workers_eff) as pool:
+                for lam, chi_str in pool.imap_unordered(
+                    _chi_worker, [(sh, crossings) for sh in missing],
+                ):
+                    cached_str[lam] = chi_str
+                    # incremental save so timeout doesn't lose work
+                    _write_chi_cache(
+                        cache_path, atom_name, Z, N, n, cached_str,
+                        time.time() - t0, workers_eff,
+                        partial=(len(cached_str) < len(shapes)),
+                    )
+                    print(f"    λ={str(lam):24} chi computed "
+                          f"({time.time() - t0:.1f}s; "
+                          f"{len(cached_str)}/{len(shapes)} done)")
+        else:
+            for sh in missing:
+                lam, chi_str = _chi_worker((sh, crossings))
+                cached_str[lam] = chi_str
+                _write_chi_cache(
+                    cache_path, atom_name, Z, N, n, cached_str,
+                    time.time() - t0, workers_eff,
+                    partial=(len(cached_str) < len(shapes)),
+                )
+    elapsed = time.time() - t0
+    out: dict[tuple, sp.Expr] = {}
+    for lam, s in cached_str.items():
         expr = sp.sympify(s)
         free = expr.free_symbols
         if free:
@@ -184,6 +213,10 @@ def load_or_build_chi_atom(
             if other_q is not q_sym:
                 expr = expr.subs(other_q, q_sym)
         out[lam] = expr
+    if elapsed > 0:
+        print(f"  chi cache: +{elapsed:.1f}s new compute; "
+              f"{len(cached_str)}/{len(shapes)} total")
+    # Discard the rest of the original block — replaced by helper above.
     return out, elapsed
 
 
