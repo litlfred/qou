@@ -229,12 +229,40 @@ extending Path A to A ≥ 3 is a straightforward port of
 `per_irrep_pole_deuteron_h6.py` — the chi cache emission is the
 only new work, and it parallelises trivially across partitions.
 
-## Original recommendation (preserved for reference)
+## Performance note: per-step `sp.cancel` is correct
 
-Path A — the seminormal pole-order analysis. Pre-existing
-infrastructure (`hoefsmit_symbolic`, `canonical_braid_crossings`)
-makes it tractable. If the proton case yields `18` cleanly, the
-neutron `21` follows.
+A profiling investigation (2026-05-09) confirmed that the existing
+`hecke_character_symbolic.q_character_on_braid_word` design — calling
+`M.applyfunc(sp.cancel)` after each crossing — is **the right
+algorithm**, not the bottleneck.
+
+Profile data on `chi^{(4,2)}_q(β_D)` at $H_6$:
+
+| Strategy | Wall time | Status |
+|---|---:|---|
+| Existing path (`q`-rationals + per-step `sp.cancel`) | **13 s** | ✓ |
+| `q = u^2` substituted first, no per-step cancel, single final cancel | >240 s | ✗ timed out |
+
+Removing per-step `sp.cancel` lets matrix entries grow exponentially
+in the number of crossings (each entry becomes a sum of products of
+Hecke eigenvalues without simplification), so the final `sp.cancel`
+on the trace becomes intractable. The per-step cancel keeps each
+entry's polynomial complexity bounded.
+
+The earlier "130 s per partition" wall-clock observation in the bg
+runs was **CPU contention**, not per-shape cost. Running tritium with
+`--workers 8` and ³He with `--workers 4` simultaneously on a 4-core
+machine over-provisioned by 3× — each worker received ~1/3 of a
+core, tripling effective wall time per partition. Re-launching with
+`--workers 4` (one per core) on a single atom recovers the expected
+~13–60 s per shape.
+
+### Provisioning recommendation
+
+For multi-atom Path A runs, set `--workers` to the **number of CPU
+cores**, and run atoms sequentially (one at a time) rather than
+concurrently. The chi cache is permanent, so a sequential schedule
+is no slower than a parallel-atom schedule, and avoids contention.
 
 A focused PR: `claude/per-irrep-pole-18-21` would extend
 [`prop:per-nucleon-shift-additive-linearity`](../../content/quantum-observable-universe/braids-and-knots/per-nucleon-shift-additive-linearity.md)

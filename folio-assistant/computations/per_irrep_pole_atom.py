@@ -28,6 +28,20 @@ parameterised by (Z, N) and parallelised across partitions:
 Witness: per-irrep-pole-{atom}-h{n}.witness.json (CI-integrated)
 Chi cache: chi-{atom}-h{n}.witness.json
 
+## Provisioning
+
+Set `--workers` to the **number of CPU cores** (`nproc`) and run
+**one atom at a time**, sequentially.  Over-provisioning (e.g.
+`--workers 8` on a 4-core machine, or running multiple atoms in
+parallel) triples per-shape wall time due to scheduler contention
+without any throughput benefit.  Profile data: a single shape at
+$H_6$ takes ~13 s on a clean core, ~40 s under 3× over-provision.
+See `docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md`
+§"Performance note" for the full investigation.
+
+The chi cache is permanent (incrementally saved per partition), so a
+sequential atom schedule is no slower than a concurrent one.
+
 Audit doc: docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md
 
 @module folio-assistant/computations/per_irrep_pole_atom
