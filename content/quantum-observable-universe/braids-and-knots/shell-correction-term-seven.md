@@ -184,26 +184,54 @@ numerical-Hoefsmit pipeline used for the other terms.
 ## Status
 
 *This is a **conjecture** — the empirical signal supports the
-functional form and level choice, but the constant $\alpha_5$ is
-presently fit, not derived from first principles.  A full
-derivation would require:*
+functional form and level choice.  As of the 2026-05-09 crystal-
+basis derivation, the **structural side** has been closed: the
+factor $\chi_5$ admits the closed form*
 
-- *An algebraic identification of $\chi_5$ with a specific
-  cohomological pairing (candidates: a Hochschild $H^2$ class
-  of $H_{3A}(q)$ localised on height-$6$ partitions, or a
-  Frobenius-co-Casimir variant of
-  [Frobenius universal](#thm:frobenius-codim-universal)
-  weighted by $\mathbf{1}_{\ell = 5}$).*
+$$
+  S_\mathrm{crystal}(A) \;:=\; \sum_{\substack{\lambda \,\vdash\, 3A \\ \mathrm{height}(\lambda) \,\leq\, 6}}
+    w_\lambda(q = 1) \cdot \chi_\lambda^\mathrm{crystal}(\beta_A),
+$$
 
-- *A derivation of $\alpha_5$ from substrate constants
-  ($q_0$, $\hbar_q$, Catalan $G$) without empirical fitting.*
+*The bound $\mathrm{height}(\lambda) \leq 6$ matches the implemented
+enumeration in `term7_alpha5_crystal_derivation.py` (cumulative GS-
+filtration sum through level $5$); it refines the per-stratum
+$\chi_5$ projector defined earlier in this document by including
+contributions from the lower strata $\ell = 0, \ldots, 4$.  For
+$A = 1$ the sum reduces to those lower strata only, since no
+partition of $3$ can have exactly six parts.*
 
-Until both are supplied, Term 7 is a phenomenological
-extension, not a purely algebraic derivation.  It is
-**downstream of** the existing six-term formula and inherits
-its algebraic structure — the conjecture is that shell
-corrections sit naturally at a specific GB-filtration level
-rather than requiring new physics inputs.
+*evaluated at the crystal limit $q \to 0$ (witness:
+[`term7-alpha5-crystal-derivation.witness.json`](../../../folio-assistant/computations/term7-alpha5-crystal-derivation.witness.json),
+chain:
+[`term7-s-crystal-4he.derivation.json`](../../../folio-assistant/computations/term7-s-crystal-4he.derivation.json)).
+$\chi_\lambda^\mathrm{crystal}(\beta_A)$ is the trace of the
+crystal-limit signed-permutation action on $\mathrm{SYT}(\lambda)$,
+conditional on
+[crystal-graph realisation](#conj:crystal-graph-realization).
+For $A = 4$ (${}^4\mathrm{He}$, doubly magic),
+$S_\mathrm{crystal}({}^4\mathrm{He}) \approx -0.991241$ — no free
+parameter.*
+
+*Term $7$ then takes the form*
+
+$$
+  \mathrm{Term~7}(A) \;=\; \alpha_5 \cdot S_\mathrm{crystal}(A),
+$$
+
+*with $\alpha_5$ the **AME-calibrated** proportionality constant
+(empirical fit $\alpha_5 \approx -4.2 \times 10^5\;\mathrm{MeV}$).
+Atom-independence of $\alpha_5$ across $A = 1$–$4$ is a
+flat-transport check on the $q \to 0 \rightsquigarrow q_0$
+connection — passing this check upgrades Term $7$ from
+phenomenological extension to a derived prediction; failing it
+diagnoses curvature in the connection map at the level-$5$ stratum.*
+
+*A purely-algebraic derivation of $\alpha_5$ itself (without AME
+calibration) would require either (a) closure of the $q$-FSC ↔ $q_0$
+identification, or (b) a substrate-level identification of the
+crystal-limit signed-permutation trace with a closed-form $q_0$-
+algebraic functional.*
 
 ## Computational support
 
