@@ -48,18 +48,24 @@ from hecke_character_symbolic import atomic_braid_to_crossings
 from chi_sym_alt_closed_form import (
     chi_sym_closed_form, chi_alt_closed_form,
 )
+# F6 (PR #565 follow-up): BlockCache wiring for numerical-q Hoefsmit.
+from syt_prefix_cache import BlockCache, build_seminormal_matrices_cached
+from witness_base import WitnessBuilder  # noqa: E402
 
 
 M_E = M_E_MEV
 Q0 = _Q_CANONICAL
 H_VAL = float(Q0 - 1.0 / Q0)
+_BLOCK_CACHE = BlockCache(float(Q0), H_VAL)
 FROB_N3 = M_E * (2.0 + 1.0 / (Q0 + 1.0 / Q0))  # m_e · (2 + 1/[2]_q)
 CLOSED_FORM_USED = True  # use exact 1-dim irrep closed forms for sym/alt
 
 
 def chi_lambda_numeric(shape, crossings):
     """Evaluate χ^λ_q(T_w) numerically for the atomic braid word."""
-    sigmas, dim, _syts = build_seminormal_matrices(shape)
+    sigmas, dim, _syts = build_seminormal_matrices_cached(
+        shape, cache=_BLOCK_CACHE,
+    )
     if dim == 0:
         return 0.0, 0
 
@@ -324,6 +330,8 @@ if __name__ == "__main__":
         "rows": rows,
     }
     suffix = "" if CONV == "plancherel" else f".{CONV}"
-    out = Path(__file__).parent / f"light-isotope-sweep{suffix}.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    out = (WitnessBuilder.wrap_legacy(
+        f"light-isotope-sweep{suffix}", witness,
+        script_path=__file__, engine="sympy")
+        .save())
     print(f"\nWitness: {out}")

@@ -30,8 +30,7 @@ energy-coefficient layer is collapsed.
 from __future__ import annotations
 
 import sys
-# Per Copilot review on #590: datetime/timezone were unused;
-# WitnessBuilder.save() handles `computedAt` automatically.
+from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
@@ -44,46 +43,17 @@ from gb_filtration_jet_tracker import HeckeElement  # noqa: E402
 # Each entry: (label, n, word, atom_letter, A, Z, N).
 # `word` is a list of ints; positive = T_i, negative = T_i^{-1}.
 # Indexing matches gb_filtration_jet_tracker (1-indexed generators).
-def _disjoint_word(Z: int, N: int) -> list[int]:
-    """Build the canonical disjoint-cluster atomic braid word for
-    Z protons + N neutrons, A = Z + N nucleons on n = 3A strands.
-
-    Each nucleon k (0-indexed; protons first) lives on its own H_3
-    cluster at strand offset 3k. Proton word = [1, 2, -1] (intra-
-    nucleon); neutron word = [1, -2, 1]. Mapping into H_{3A}:
-      proton at offset s : [s+1, s+2, -(s+1)]
-      neutron at offset s: [s+1, -(s+2), s+1]
-    Indexing matches gb_filtration_jet_tracker (1-indexed gens).
-    """
-    word: list[int] = []
-    ordering = ['p'] * Z + ['n'] * N
-    for k, nuc in enumerate(ordering):
-        s = 3 * k  # strand offset
-        if nuc == 'p':
-            word.extend([s + 1, s + 2, -(s + 1)])
-        else:
-            word.extend([s + 1, -(s + 2), s + 1])
-    return word
-
-
 ATOMS = [
     # Single nucleons (H_3 = 3-strand)
-    ("p (proton)",       3, _disjoint_word(1, 0), "p",   1, 1, 0),
-    ("n (neutron)",      3, _disjoint_word(0, 1), "n",   1, 0, 1),
+    ("p (proton)",       3, [1,  2, -1],         "p",   1, 1, 0),
+    ("n (neutron)",      3, [1, -2,  1],         "n",   1, 0, 1),
     # Disjoint two-nucleon (H_6 = two H_3 clusters)
-    ("D (deuteron disj)", 6, _disjoint_word(1, 1), "D",  2, 1, 1),
+    ("D (deuteron disj)",  6, [1, 2, -1, 4, -5, 4],  "D", 2, 1, 1),
     # Three-nucleon (H_9): pp ⊗ n  for ³He, p ⊗ nn for ³H
-    ("³He disjoint",     9, _disjoint_word(2, 1), "3He", 3, 2, 1),
-    ("³H (T) disjoint",  9, _disjoint_word(1, 2), "T",   3, 1, 2),
+    ("³He disjoint",     9, [1, 2, -1, 4, 5, -4, 7, -8, 7],   "3He", 3, 2, 1),
+    ("³H (T) disjoint",  9, [1, 2, -1, 4, -5, 4, 7, -8, 7],   "T",   3, 1, 2),
     # Four-nucleon (H_12): pp ⊗ nn for ⁴He
-    ("⁴He disjoint",    12, _disjoint_word(2, 2), "4He", 4, 2, 2),
-    # L1 v2: extend to A = 5..7
-    ("⁵Li (Z=3, N=2)",  15, _disjoint_word(3, 2), "5Li", 5, 3, 2),
-    ("⁵He (Z=2, N=3)",  15, _disjoint_word(2, 3), "5He", 5, 2, 3),
-    ("⁶Li (Z=3, N=3)",  18, _disjoint_word(3, 3), "6Li", 6, 3, 3),
-    ("⁶He (Z=2, N=4)",  18, _disjoint_word(2, 4), "6He", 6, 2, 4),
-    ("⁷Li (Z=3, N=4)",  21, _disjoint_word(3, 4), "7Li", 7, 3, 4),
-    ("⁷Be (Z=4, N=3)",  21, _disjoint_word(4, 3), "7Be", 7, 4, 3),
+    ("⁴He disjoint",    12, [1, 2, -1, 4, 5, -4, 7, -8, 7, 10, -11, 10], "4He", 4, 2, 2),
 ]
 
 
@@ -125,10 +95,6 @@ def main() -> int:
     # this is a NEW script, so wrap_legacy is the wrong tool — it's
     # only for migrating existing payload-shaped emitters.
     out = (WitnessBuilder("per-atom-grading-bound", engine="sympy")
-        # Per Copilot review on #590: mark audit-only so
-        # audit-wiring.ts doesn't bucket as orphan (no content
-        # block currently references this witness).
-        .set_audit_only("docs/audits/2026-05-08-compute-infrastructure-audit.md")
         .set_description(
             "Per-atom intrinsic grading bound ℓ(K, q) for the canonical "
             "topological braid words. ℓ(K, q) is the top non-zero "
