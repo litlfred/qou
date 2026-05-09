@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T13:19:41.221239+00:00",
-  "commitSha": "59b5564ef0627fd3098f071f53b25d6df5638b1d",
+  "computedAt": "2026-05-09T14:00:41.424737+00:00",
+  "commitSha": "70924c01a6eb49205bf79878339007c0b3a18a16",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 11,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "b540c436e909",
@@ -13,7 +13,7 @@
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 298,
+    "files_scanned": 299,
     "patterns": [
       "P15",
       "P16",
@@ -25,7 +25,7 @@
     "by_pattern_count": {
       "P15": 78,
       "P16": 71,
-      "P21": 16,
+      "P21": 17,
       "P30": 92
     },
     "top_files": [
@@ -384,6 +384,13 @@
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P21",
+        "file": "binding_k_solver.py",
+        "line": 1,
+        "snippet": "Hoefsmit construction without BlockCache",
+        "note": "syt_prefix_cache.BlockCache caches block values by content distance ρ; precomputed SYT→index dict eliminates O(d_λ²) swap-partner search. Numerical-q callers can wire it directly. Ref: ocneanu_weights.py wiring."
       },
       {
         "pattern": "P30",
