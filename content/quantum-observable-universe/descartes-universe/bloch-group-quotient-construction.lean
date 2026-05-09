@@ -417,28 +417,33 @@ theorem pentagonSubgroup_real_contains_rogers_witness :
     rogersGenerator rogersPairTwoThree ∈ pentagonSubgroup (F := ℝ) :=
   rogersGenerator_mem_pentagonSubgroup rogersPairTwoThree
 
-/-! ## Genuine non-triviality of `pentagonSubgroup` over ℝ
+/-! ## Toward genuine non-triviality of `pentagonSubgroup` over ℝ
 
 The previous lemmas establish only `Set.Nonempty` for the
-generator set. To establish that `pentagonSubgroup (F := ℝ)` is
-genuinely nontrivial (`≠ ⊥`), we exhibit a **distinct-element
-witness**: at the (2, 3) Rogers pair, the five derived
-shape-parameter values are
+generator set; full `pentagonSubgroup (F := ℝ) ≠ ⊥` is **not yet
+proved**. The lemmas below are the *structural prerequisites*
+for that future proof: explicit computations of the five derived
+shape-parameter values at the (2, 3) Rogers pair.
+
+At (2, 3) the five derived shape-parameter values are
 
   e₁ = 2,  e₂ = 3,  e₃ = 3/2,  e₄ = 4/3,  e₅ = 2.
 
 So e₁ = e₅ = 2 (a deliberate coincidence at this specific Rogers
-pair), and the four distinct values {2, 3, 3/2, 4/3} produce
-linearly-independent generators in `FreeAbelianGroup`. Hence
+pair), and the four distinct values {2, 3, 3/2, 4/3} would
+produce linearly-independent generators in `FreeAbelianGroup`,
+giving
 
   rogersGenerator rogersPairTwoThree
     = of(2) - of(3) + of(3/2) - of(4/3) + of(2)
     = 2·of(2) - of(3) + of(3/2) - of(4/3)  ≠  0.
 
-The full Lean proof requires a `FreeAbelianGroup` distinctness
-argument; we record the explicit shape-parameter values and the
-non-triviality as a *theorem with abstracted proof obligation*
-keyed to `[bloch2000]`-standard generator independence. -/
+**The full distinctness proof is deferred** — it requires
+`FreeAbelianGroup` distinctness machinery (`FreeAbelianGroup.of`
+is injective for distinct inputs) plus arithmetic to combine
+the four distinct generators. We record only the explicit
+shape-parameter computations below; a future PR can use these
+lemmas to close the full non-triviality theorem. -/
 -- Ref: [bloch2000]
 theorem rogersPairTwoThree_shapes :
     rogersPairTwoThree.x = 2 ∧
