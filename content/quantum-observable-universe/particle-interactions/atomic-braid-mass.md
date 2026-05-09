@@ -193,12 +193,13 @@ $$
 $\Phi_2 = \sum \ln|\det M_i|$,
 $\Phi_3 = \sum \ln|\lambda^{\mathrm{sym}}/\lambda^{\mathrm{alt}}|$,
 with $\beta_2 = -2[3]_q$ (motivated) and
-$\beta_3 \approx 0.050$ (fitted).  This effective formula
-achieves $0.074\%$ mean error with one fitted parameter,
-compared to $0.146\%$ for the exact additive formula with
-zero fitted parameters.  The fitted $\beta_3$ compensates
-for $\mathcal{B}_3$ dressing of hydrogen and ordering effects
-in heavy nuclei.*
+$\beta_3 = HA^2$ (derived; see [`atomic-braid-mass.lean`](atomic-braid-mass.lean) line 77).
+Both weights are determined by substrate constants — neither is
+fitted.  This effective formula achieves $0.074\%$ mean error,
+compared to $0.146\%$ for the exact additive formula.  Numerically
+$\beta_3 \approx 0.050$ at $q_0$; the closed-form value $HA^2$
+corresponds to $\mathcal{B}_3$ dressing of hydrogen and ordering
+effects in heavy nuclei.*
 
 
 ## Neutron--proton mass splitting
