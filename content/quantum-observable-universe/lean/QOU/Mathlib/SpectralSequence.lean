@@ -187,4 +187,60 @@ theorem trivial_cells_stable (R : Type u) (r₁ r₂ : ℕ) (p q : ℤ) :
     (trivial R).cell { r := r₁, p := p, q := q } =
     (trivial R).cell { r := r₂, p := p, q := q } := rfl
 
+/-! ### Convergence to non-trivial targets — Wedderburn block target
+
+    For the QOU GB-filtration spectral sequence, the `E_∞`
+    page coincides with the Wedderburn-block decomposition
+    `H_n(q) ≅ ⊕_λ M_{d_λ}(R)`.  The target type-family
+    indexed by bidegree `(p, q)` is therefore non-trivial:
+    each non-zero cell corresponds to a Wedderburn block.
+
+    This file demonstrates the API on a Wedderburn-shaped
+    target.  Concrete instances at small `n` (n = 2, 3, 4)
+    arrive via the cohort-RSK witnesses in
+    `WenzlBridgeConcrete.lean`. -/
+
+/-- A Wedderburn-block target type-family: at bidegree `(p, q)`,
+    the cell is `Fin (blockDim p q) → R` (a `blockDim`-dim
+    `R`-module representing a single Wedderburn block).  The
+    `blockDim` function records the per-bidegree block-rank. -/
+def wedderburnTarget (R : Type u) (blockDim : ℤ → ℤ → ℕ) :
+    ℤ → ℤ → Type u :=
+  fun p q => Fin (blockDim p q) → R
+
+/-- **Spectral sequence converging to a Wedderburn target**: a
+    §3b-cond class capturing the QOU GB-filtration's structure
+    via the convergence-to-Wedderburn property. -/
+class GBSpectralConvergesToWedderburn (R : Type u) (n : ℕ) where
+  /-- The underlying spectral sequence. -/
+  ss : SpectralSequence R
+  /-- It collapses at `E_2`. -/
+  collapses : CollapsesAtE2 ss
+  /-- The Wedderburn-block-rank per bidegree (zero outside the
+      partition-indexed support). -/
+  blockDim : ℤ → ℤ → ℕ
+  /-- The convergence: `E_∞ ≃ wedderburnTarget`. -/
+  converges :
+    SpectralSequenceConvergesTo R ss 2 collapses (wedderburnTarget R blockDim)
+
+/-- **Trivial Wedderburn convergence instance**: `blockDim ≡ 0`
+    means every cell is `Fin 0 → R = PUnit`, and the trivial SS
+    converges via `Equiv.refl PUnit` cell-by-cell.  This is
+    structurally an instance over the trivial Wedderburn target.
+    Genuine instances arrive at small `n` (n = 2, 3, 4) once the
+    explicit cohort data is wired. -/
+instance gb_trivial_converges (R : Type u) (n : ℕ) :
+    GBSpectralConvergesToWedderburn R n where
+  ss := trivial R
+  collapses := trivial_collapses_at_E2 R
+  blockDim _ _ := 0
+  converges := {
+    cell_iso := fun p q => by
+      show EInfinityCell (trivial R) 2 (trivial_collapses_at_E2 R) p q ≃
+        wedderburnTarget R (fun _ _ => 0) p q
+      show PUnit ≃ (Fin 0 → R)
+      exact ⟨fun _ => fun i => i.elim0, fun _ => PUnit.unit,
+             fun _ => rfl, fun f => funext fun i => i.elim0⟩
+  }
+
 end QOU.Mathlib.SpectralSequence
