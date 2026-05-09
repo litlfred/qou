@@ -558,7 +558,7 @@ def run_sweep_for_mode(tower_mode: str, isotopes: list, *, verbose: bool = True)
 # ── Per-derivation weights (no proton-fitting) ───────────────────────
 # Per docs/audits/2026-05-04-six-term-per-weight-derivation.md, the
 # six terms have DIFFERENT physical scales from the derivation:
-#   T1 (descended Markov):  E_0_β = 0.782 MeV per cat unit
+#   T1 (descended Markov):  E_0_β = 0.78233341 MeV per cat unit
 #       (`prop:categorical-mass-markov`; binding from |tr_free|−|tr_atom|)
 #   T2, T3 (brane tower):   α = m_e · 8G ≈ 3.7445 MeV per cat unit
 #       (`prop:atomic-braid-mass`, `prop:binding-scale-catalan`)

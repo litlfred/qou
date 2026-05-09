@@ -156,17 +156,25 @@ class HeckeElement:
     def _add(self, other: "HeckeElement") -> "HeckeElement":
         out = dict(self.terms)
         for w, c in other.terms.items():
-            out[w] = sp.simplify(out.get(w, 0) + c)
-            if out[w] == 0:
+            # F10 (audit follow-up): sp.cancel suffices for rational
+            # coefficients in q (Hecke algebra); faster than simplify.
+            out[w] = sp.cancel(out.get(w, 0) + c)
+            # Per Gemini review on #588: .equals(0) is the robust
+            # zero-test for sympy expressions; defends against any
+            # non-canonical residue that slipped past sp.cancel.
+            if out[w].equals(0):
                 del out[w]
         merged = HeckeElement(n=self.n, terms=out, jet_log=list(self.jet_log),
                               step_counter=self.step_counter)
         return merged
 
     def _scalar(self, scalar) -> "HeckeElement":
+        # Per Gemini review on #588: walrus avoids double sp.cancel
+        # evaluation per term; .equals(0) for robust zero-test.
         return HeckeElement(
             n=self.n,
-            terms={w: sp.simplify(c * scalar) for w, c in self.terms.items() if sp.simplify(c * scalar) != 0},
+            terms={w: res for w, c in self.terms.items()
+                   if not (res := sp.cancel(c * scalar)).equals(0)},
             jet_log=list(self.jet_log),
             step_counter=self.step_counter,
         )
@@ -183,7 +191,7 @@ class HeckeElement:
             if l_wsi > l_w:
                 # Ascending: T_w · T_i = T_{wsi}
                 relation = "ascending"
-                out[wsi] = sp.simplify(out.get(wsi, 0) + c)
+                out[wsi] = sp.cancel(out.get(wsi, 0) + c)  # F10
                 ev = JetEvent(
                     step=self.step_counter, multiplier=i,
                     predecessor=w, successor=wsi,
@@ -193,8 +201,8 @@ class HeckeElement:
             else:
                 # Descending: T_w · T_i = (q - q^{-1}) T_w + T_{wsi}
                 relation = "hecke-quadratic"
-                out[w] = sp.simplify(out.get(w, 0) + c * H)
-                out[wsi] = sp.simplify(out.get(wsi, 0) + c)
+                out[w] = sp.cancel(out.get(w, 0) + c * H)  # F10
+                out[wsi] = sp.cancel(out.get(wsi, 0) + c)  # F10
                 ev = JetEvent(
                     step=self.step_counter, multiplier=i,
                     predecessor=w, successor=wsi,
@@ -202,8 +210,10 @@ class HeckeElement:
                     relation=relation, coefficient_change=f"+= {c} * (h * T_{w} + T_{wsi})",
                 )
             self.jet_log.append(ev)
-        # Strip zero coefficients
-        out = {w: c for w, c in out.items() if sp.simplify(c) != 0}
+        # Strip zero coefficients. Per Gemini review on #588:
+        # coefficients are already canonical (sp.cancel called above
+        # on lines 188/198/199); use .equals(0) directly.
+        out = {w: c for w, c in out.items() if not c.equals(0)}
         return HeckeElement(n=self.n, terms=out, jet_log=self.jet_log,
                             step_counter=self.step_counter)
 

@@ -46,17 +46,13 @@ HERE = Path(__file__).parent
 ROOT = HERE.parent.parent
 OUT = HERE / "e0-calibration-audit.witness.json"
 
-# ── PDG / CODATA 2022 inputs ──────────────────────────────────
-# From CODATA 2022 fundamental constants (NIST):
-M_N_MEV     = mpf("939.56542052")  # neutron mass
-M_N_ERR     = mpf("0.00000054")    # ±5.4×10⁻⁷ MeV
-M_P_MEV     = mpf("938.27208816")  # proton mass
-M_P_ERR     = mpf("0.00000029")    # ±2.9×10⁻⁷ MeV
-M_E_MEV     = mpf("0.51099895000") # electron mass
-M_E_ERR     = mpf("0.00000000015") # ±1.5×10⁻¹⁰ MeV
-
-# Derived:
-Q_BETA_N    = M_N_MEV - M_P_MEV - M_E_MEV
+# ── PDG / CODATA 2022 inputs — centralised in codata_constants ──
+from codata_constants import (
+    M_N_MEV, M_P_MEV, M_E_MEV, Q_BETA_MEV as Q_BETA_N,
+    M_N_MEV_ERR as M_N_ERR,
+    M_P_MEV_ERR as M_P_ERR,
+    M_E_MEV_ERR as M_E_ERR,
+)
 # Combined uncertainty (uncorrelated for atomic masses; this is an
 # upper bound — neutron and proton mass measurements share some
 # systematic anchors, so the true σ is slightly smaller).

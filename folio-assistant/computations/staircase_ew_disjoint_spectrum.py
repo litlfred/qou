@@ -34,12 +34,14 @@ import numpy as np
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-from hecke_characters import build_seminormal_matrices
-from q_parameter import Q as q0
+from q_parameter import Q as q0, HA
 from witness_base import WitnessBuilder
+# F6 (PR #582): wire numerical-q Hoefsmit through BlockCache.
+from syt_prefix_cache import BlockCache, build_seminormal_matrices_cached
 
 
 EW_EXPONENTS = (18, 10, 6, 2, -2, -6, -10, -18)
+_BLOCK_CACHE = BlockCache(q0, HA)
 
 
 def staircase_partition(k: int) -> tuple[int, ...]:
@@ -51,7 +53,9 @@ def expected_bucket_counter(q: float, multiplicity: int) -> Counter:
 
 
 def beta_ew_matrix(shape: tuple[int, ...]) -> np.ndarray:
-    sigmas, dim, _ = build_seminormal_matrices(shape, sparse=False, q=q0)
+    sigmas, dim, _ = build_seminormal_matrices_cached(
+        shape, cache=_BLOCK_CACHE, sparse=False, q_val=float(q0),
+    )
     if dim == 0:
         return np.zeros((0, 0))
     return (

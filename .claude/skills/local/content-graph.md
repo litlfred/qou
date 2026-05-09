@@ -435,7 +435,7 @@ Directory names are **descriptive slugs** with NO chapter numbers:
 | New content proposed | Run placement checklist (PR1–PR7) before accepting |
 | Block too long / multi-topic | `block-density` — single-topic coherence audit |
 | Large table found in block | `block-density` R3 — extract to `table` block |
-| Feature branch ready to merge | `prepare-for-merge` — upstream check + placement + density |
+| Feature branch ready to merge | `/prepare-merge` (slash command) — upstream check + placement + density + one-voice |
 
 ## Output artefacts
 

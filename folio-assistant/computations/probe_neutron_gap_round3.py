@@ -14,7 +14,7 @@ Round 3 (this script) tests the canonical-3-input hypothesis from
 
   *The Hecke trace ALONE cannot distinguish m_n from m_p; the
   splitting m_n − m_p requires a Skein-pair structural input
-  (μ_d − μ_u, equivalently Q_β(n) = m_n − m_p − m_e ≈ 0.782 MeV)
+  (μ_d − μ_u, equivalently Q_β(n) = m_n − m_p − m_e ≈ 0.78233341 MeV)
   as the THIRD canonical input alongside m_μ/m_e (fixes q_0) and
   m_e (leptonic scale).*
 

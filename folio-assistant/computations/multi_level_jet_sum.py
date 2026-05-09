@@ -103,7 +103,7 @@ def get_ilp_ground(Z, N):
 # E_0_PROTON_TOWER_MEV · m_proton_tower_cat = 938.272 MeV.  Used by
 # the H_3-per-generator tower path (tower_binding_full) as its
 # per-cat-unit MeV conversion.  Distinct from the β-decay calibration
-# E_0_BETA_DECAY_MEV = 0.782 MeV used by the canonical Markov-trace
+# E_0_BETA_DECAY_MEV = 0.78233341 MeV used by the canonical Markov-trace
 # path — which path applies depends on which tower is being summed.
 _M_PROTON_TOWER_CAT = 1178995.5254  # from mass_endomorphism.py witness
 E_0_PROTON_TOWER_MEV = 938.272 / _M_PROTON_TOWER_CAT
@@ -120,7 +120,7 @@ def binding_flat_all_pairs(Z, N, E_0=E_0_PROTON_TOWER_MEV):
     ``E_0`` defaults to the proton-tower calibration
     (E_0_PROTON_TOWER_MEV) since this path uses the H_3-per-generator
     V̂ built via atom_per_generator_volumes — same convention as
-    tower_binding_full.  The β-decay calibration (0.782 MeV) applies
+    tower_binding_full.  The β-decay calibration (0.78233341 MeV) applies
     to the canonical Markov-trace path, not this tower.
     """
     gs = get_ilp_ground(Z, N)

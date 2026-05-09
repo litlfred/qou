@@ -92,7 +92,7 @@ ATOMS = {
     # Use atomic_tr_m_mpfr_50dps.py for canonical |tr_M(deuteron)|.
 }
 
-M_E_MEV = mp.mpf("0.51099895")
+from codata_constants import M_E_MEV  # CODATA 2022 — centralised
 
 
 def evaluate_at_q0(expr: sp.Expr) -> mp.mpf:

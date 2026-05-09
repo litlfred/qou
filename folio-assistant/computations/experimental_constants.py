@@ -76,6 +76,24 @@ VOL_THREE_TWIST_ERR  = 1e-12
 VOL_BORROMEAN        = 7.327724753846269  # ± 1e-12
 VOL_BORROMEAN_ERR    = 1e-12
 
+# ── Hyperbolic-knot volumes (used by per_atom_rho_deviation and
+#    downstream Z=N ρ-correction probes — pulled from #523). ──
+# Stored as Python floats (≈15-decimal-digit precision); each
+# value carries an explicit `*_ERR` upper bound on the f64 storage
+# error (per the module's "every observed value has central +
+# uncertainty" convention). For true high-precision (50 dp+)
+# evaluation, callers should compute via SnapPy / mpmath at the
+# call site.
+VOL_6_2          = 4.400832516123046  # SnapPy 6_2 volume
+VOL_6_2_ERR      = 1e-15
+VOL_8_11         = 8.286316817806593  # SnapPy 8_11 volume
+VOL_8_11_ERR     = 1e-15
+VOL_L6A4         = 7.327724753846269  # Borromean (= VOL_BORROMEAN)
+VOL_L6A4_ERR     = 1e-15
+VOL_7_SQ_1       = 4.749499981874439  # Whitehead-pair / α-α coupling knot
+VOL_7_SQ_1_ERR   = 1e-15
+# EIGHT_G defined later (depends on CATALAN constant defined below).
+
 # ── Observed half-lives (NNDC/ENSDF) ────────────────────────────
 
 HALFLIFE_TRITIUM_YR     = 12.32    # ± 0.02 yr
@@ -146,6 +164,15 @@ SEC_PER_DAY = 86400.0             # exact
 # Catalan's constant G = sum_{n=0}^∞ (-1)^n / (2n+1)^2 — used in the
 # binding-scale calibration α_bind = m_e · 8·G per prop:binding-scale-catalan.
 CATALAN     = 0.91596559417721901505460351493238411077  # OEIS A006752, ≥30 dp
+
+# 8·G with G = Catalan's constant — legacy magic-A volume input
+# (mass_table_ppb.py historical form; differs from VOL_L6A4 at 1e-9
+# because 8·G ≈ 7.32772475341... vs Vol(L6a4) ≈ 7.32772475384...).
+# Defined here (not earlier with the other VOL_* constants) so it
+# can reference CATALAN as the single source of truth — avoids
+# divergence from a duplicated literal (per Copilot review on PR #591).
+EIGHT_G     = 8.0 * CATALAN  # ≈ 7.327724753417752
+EIGHT_G_ERR = 1e-15
 
 # ── Error propagation helpers ────────────────────────────────────
 

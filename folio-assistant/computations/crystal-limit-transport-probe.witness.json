@@ -1,0 +1,54 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-05-09T03:48:10.951326+00:00",
+  "commitSha": "cd8283e1cd4cd42281719d4aeb06762e375284d0",
+  "assertions": [
+    {
+      "name": "all_partitions_h3_covered",
+      "computed": 3,
+      "expected": 3,
+      "passed": true,
+      "tolerance": 0,
+      "source": "H_3 has 3 partitions: (3), (2,1), (1,1,1)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 11,
+  "computation": "crystal-limit-transport-probe",
+  "scriptFile": "crystal_limit_transport_probe.py",
+  "scriptHash": "3f270d0f77e1",
+  "scriptCommitSha": "cd8283e1cd4cd42281719d4aeb06762e375284d0",
+  "description": "L2 scaffolding probe: crystal-limit χ_λ(σ_1) values at q → 0 for H_3 partitions. Per rem:ontological-agnosticism (main, PR #571), these values transport flatly to the generic fibre at q = q_0 along the flat q-connection. Full transport-map verification is deferred research.",
+  "auditOnly": "docs/audits/2026-05-08-compute-infrastructure-audit.md",
+  "data": {
+    "narrative_block": "rem:ontological-agnosticism",
+    "conditional_on": [
+      "conj:crystal-graph-realization"
+    ],
+    "rows": [
+      {
+        "shape": [
+          3
+        ],
+        "chi_crystal_q_zero": 1
+      },
+      {
+        "shape": [
+          2,
+          1
+        ],
+        "chi_crystal_q_zero": 0
+      },
+      {
+        "shape": [
+          1,
+          1,
+          1
+        ],
+        "chi_crystal_q_zero": -1
+      }
+    ],
+    "status": "scaffolding-only"
+  }
+}

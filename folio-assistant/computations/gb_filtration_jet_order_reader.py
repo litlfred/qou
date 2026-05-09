@@ -213,8 +213,17 @@ def main() -> int:
         "audit_reference": "AUDIT-DEEP-2026-05.md §5 P6, docs/coordination/1ppb.md",
         "pr": "#564",
     }
-    out_path = HERE / "gb-filtration-jet-order-reader.witness.json"
-    out_path.write_text(json.dumps(out, indent=2) + "\n")
+    from witness_base import WitnessBuilder
+    out_path = (
+        WitnessBuilder.wrap_legacy(
+            "gb-filtration-jet-order-reader",
+            out,
+            script_path=__file__,
+            engine="python",
+            output_dir=HERE,
+        )
+        .save()
+    )
     print(f"\n  Wrote {out_path.name}")
     return 0
 

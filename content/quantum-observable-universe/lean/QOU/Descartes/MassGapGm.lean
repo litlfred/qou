@@ -102,9 +102,8 @@ theorem massGapReal_eq_zero_iff {q₀ : ℝ} (hq : q₀ ≠ 0) :
   · rintro ((h | h) | h)
     · -- q₀ - q₀⁻¹ = 0 means q₀ = q₀⁻¹ means q₀² = 1
       have hinv : q₀ = q₀⁻¹ := by linarith
-      -- Per Gemini review: `eq_inv_iff_mul_eq_one₀` captures
-      -- `a = b⁻¹ ↔ a * b = 1` directly.
-      have hsq : q₀ * q₀ = 1 := (eq_inv_iff_mul_eq_one₀ hq).mp hinv
+      have hsq : q₀ * q₀ = 1 := by
+        nth_rewrite 2 [hinv]; exact mul_inv_cancel₀ hq
       have : (q₀ - 1) * (q₀ + 1) = 0 := by nlinarith [hsq]
       rcases mul_eq_zero.mp this with h1 | h1
       · left; linarith
@@ -240,21 +239,21 @@ theorem massGapReal_mono {q₁ q₂ : ℝ} (hq₁ : 1 < q₁) (hq₂ : q₁ ≤ 
     The 6×6 matrix is the block-diagonal direct sum:
     `T₆ = T_sym ⊕ T_std ⊕ T_std ⊕ T_alt` -/
 structure FullRepTransferMatrix where
-  λ_sym : R_q
+  lamSym : R_q
   T_std : Matrix (Fin 2) (Fin 2) R_q
-  λ_alt : R_q
+  lamAlt : R_q
 
 /-- Construct from a 2×2 crossing matrix. -/
 noncomputable def FullRepTransferMatrix.fromCrossingMatrix
     (M : TMatrix) : FullRepTransferMatrix where
-  λ_sym := tracedVolCleared M
+  lamSym := tracedVolCleared M
   T_std := M
-  λ_alt := M 0 0 * M 1 1 - M 0 1 * M 1 0
+  lamAlt := M 0 0 * M 1 1 - M 0 1 * M 1 0
 
 /-- The spectral product (product of all eigenvalues). -/
 noncomputable def FullRepTransferMatrix.spectralProduct
     (M : FullRepTransferMatrix) : R_q :=
-  M.λ_sym * M.λ_alt * (M.T_std 0 0 * M.T_std 1 1 - M.T_std 0 1 * M.T_std 1 0)
+  M.lamSym * M.lamAlt * (M.T_std 0 0 * M.T_std 1 1 - M.T_std 0 1 * M.T_std 1 0)
 
 /-! ## §4  GS NF → spectral gap bridge -/
 
@@ -267,7 +266,7 @@ theorem gs_nf_determines_spectrum
 
 /-- The alternating eigenvalue of the pp crossing is `−1`. -/
 theorem pp_alternating_eigenvalue_neg_one :
-    (FullRepTransferMatrix.fromCrossingMatrix T_pp).λ_alt = -1 := by
+    (FullRepTransferMatrix.fromCrossingMatrix T_pp).lamAlt = -1 := by
   unfold FullRepTransferMatrix.fromCrossingMatrix T_pp transferMatrix
   simp [Matrix.of_apply, Matrix.cons_val_zero, Matrix.cons_val_one,
         Matrix.vecHead, Matrix.vecTail]

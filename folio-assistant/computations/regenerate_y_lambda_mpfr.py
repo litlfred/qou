@@ -151,6 +151,20 @@ def main() -> int:
         "audit_reference": "AUDIT-DEEP-2026-05.md §7; PR #564 convention/precision audit",
         "pr": "#564",
     }
+    # NOTE: Cannot use WitnessBuilder.wrap_legacy().save() here
+    # because the output filename is `y-lambda-mpfr-witness.json`
+    # (without the standard `.witness.json` suffix), and consumers
+    # (tr_m_wenzl_bridge_mpfr.py:53 _Y_LAMBDA_DEFAULT) read that
+    # exact name. Use the public WitnessBuilder.stamp_staleness_metadata
+    # helper to inject scriptHash/scriptCommitSha/commitSha/engine/
+    # engineVersion/computedAt/durationMs in place, then write to
+    # the legacy filename — keeps the consumer chain unbroken.
+    from witness_base import WitnessBuilder
+    out["auditOnly"] = "AUDIT-DEEP-2026-05.md"
+    WitnessBuilder.stamp_staleness_metadata(
+        out, script_path=__file__, engine="python+mpmath",
+        engine_version=f"sympy {sp.__version__} + mpmath {mp.__version__}",
+    )
     OUTPUT.write_text(json.dumps(out, indent=2) + "\n")
     print(f"\n  Wrote {OUTPUT.name} ({OUTPUT.stat().st_size} bytes).")
     print(f"  tables_by_n keys: {sorted(out_tables.keys(), key=int)}")

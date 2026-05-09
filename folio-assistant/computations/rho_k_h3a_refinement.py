@@ -161,11 +161,8 @@ def _per_partition_symbolic(args):
     sub = chi_sym.subs(Q_SYM, sp.sympify(q_str_50dps))
     return lam, str(sub.evalf(dps))
 
-# ── Calibration anchors (CODATA, MeV) ──────────────────────────
-M_E_MEV = mp.mpf("0.51099895")
-M_P_MEV = mp.mpf("938.27208816")
-M_N_MEV = mp.mpf("939.56542052")
-M_D_MEV = mp.mpf("1875.61294257")  # CODATA deuteron mass
+# ── Calibration anchors (CODATA) — centralised in codata_constants ──
+from codata_constants import M_E_MEV, M_P_MEV, M_N_MEV, M_D_MEV  # noqa: E402
 
 # ── Deuteron braid word (3A=6 strands) ─────────────────────────
 # Canonical convention (matches atomic-tr-m-mpfr-50dps.witness.json):

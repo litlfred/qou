@@ -22,11 +22,19 @@ from hecke_characters import partitions_of, build_seminormal_matrices, qfac, dim
 from q_parameter import Q as Q0_FLOAT
 from experimental_constants import M_E_MEV
 from witness_base import WitnessBuilder
+# F6 (PR #565 follow-up): wire numerical-q Hoefsmit through BlockCache.
+# Builds Hoefsmit matrices once per shape and reuses across braid-word
+# evaluations; expected speed-up is 5–20× per call on n ≥ 8.
+from syt_prefix_cache import BlockCache, build_seminormal_matrices_cached
 
 H_VAL = float(Q0_FLOAT - 1.0/Q0_FLOAT)
+_BLOCK_CACHE = BlockCache(float(Q0_FLOAT), H_VAL)
+
 
 def chi_lambda_braid_word(shape, braid_word):
-    sigmas, dim, _ = build_seminormal_matrices(shape)
+    sigmas, dim, _ = build_seminormal_matrices_cached(
+        shape, cache=_BLOCK_CACHE,
+    )
     if dim == 0: return 0.0, 0
     is_sparse = sp_sparse.issparse(sigmas[0]) if sigmas else False
     if is_sparse:

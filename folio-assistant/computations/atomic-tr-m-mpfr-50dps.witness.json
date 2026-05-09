@@ -1,14 +1,24 @@
 {
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-09T03:07:22.082895+00:00",
+  "commitSha": "8b97d536ebde00d797b393b9d9068b8723e80d98",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
   "computation": "atomic-tr-m-mpfr-50dps",
-  "description": "Plan F advance \u2014 tr_M(T_w, q_0) via the 3A-strand atom-braid convention for proton, neutron, deuteron, tritium, \u00b3He, evaluated at q_0 to 50 dps via the Hoefsmit + Wenzl bridge (\u03a3_\u03bb y_\u03bb \u00b7 \u03c7_\u03bb) and (where applicable) compared against the published Jones polynomial of the historical knot ID. Companion to proton-mass-mpfr-50dps.witness.json.  Tritium / \u00b3He at H_9 unblocked vs. legacy sympy path (>4-min timeout).",
-  "computedAt": "2026-05-08T21:44:10.052871+00:00",
+  "scriptFile": "atomic_tr_m_mpfr_50dps.py",
+  "scriptHash": "87b97ea80ed9",
+  "scriptCommitSha": "ceb6104f7e57111dd38a2226030e5fba0cf82112",
+  "description": "Plan F advance — tr_M(T_w, q_0) via the 3A-strand atom-braid convention for proton, neutron, deuteron, tritium, ³He, evaluated at q_0 to 50 dps via the Hoefsmit + Wenzl bridge (Σ_λ y_λ · χ_λ) and (where applicable) compared against the published Jones polynomial of the historical knot ID. Companion to proton-mass-mpfr-50dps.witness.json.  Tritium / ³He at H_9 unblocked vs. legacy sympy path (>4-min timeout).",
+  "auditOnly": "docs/audits/2026-05-09-refocused-1ppb-workplan-v3.md",
   "precision": "mpfr_50dps",
-  "method": "hoefsmit_wenzl_bridge: tr_M(W) = \u03a3_{\u03bb \u22a2 n} y_\u03bb(q) \u00b7 \u03c7_\u03bb(W); y_\u03bb from y-lambda-mpfr-witness.json; \u03c7_\u03bb via per-partition Young-seminormal matrices in mpmath (sparse COO) at 50 dps; W is the atom_braid_word_3A Hecke-factor word",
-  "structural_reference": "prop:full-pole-structure-mass-trace \u2014 tr_M(T_w, q) is meromorphic in q with simple poles at every primitive root of unity \u03b6_n^(j) (gcd(j,n)=1, n>=2); this witness reports tr_M evaluated at q = q_0 \u2248 1.11, the regular point used throughout the paper.  The prop's Mittag-Leffler / Habiro cyclotomic expansion expresses the same function as a sum over these poles; Habiro's convergence theorem guarantees the order-m Habiro truncation neglects only the \u03b6_1, \u2026, \u03b6_m residues, so the values reported here are the LHS of the prop's equations (Mittag-Leffler eq. and Habiro eq.) at q = q_0.",
+  "method": "hoefsmit_wenzl_bridge: tr_M(W) = Σ_{λ ⊢ n} y_λ(q) · χ_λ(W); y_λ from y-lambda-mpfr-witness.json; χ_λ via per-partition Young-seminormal matrices in mpmath (sparse COO) at 50 dps; W is the atom_braid_word_3A Hecke-factor word",
+  "structural_reference": "prop:full-pole-structure-mass-trace — tr_M(T_w, q) is meromorphic in q with simple poles at every primitive root of unity ζ_n^(j) (gcd(j,n)=1, n>=2); this witness reports tr_M evaluated at q = q_0 ≈ 1.11, the regular point used throughout the paper.  The prop's Mittag-Leffler / Habiro cyclotomic expansion expresses the same function as a sum over these poles; Habiro's convergence theorem guarantees the order-m Habiro truncation neglects only the ζ_1, …, ζ_m residues, so the values reported here are the LHS of the prop's equations (Mittag-Leffler eq. and Habiro eq.) at q = q_0.",
   "y_lambda_witness": "y-lambda-mpfr-witness.json",
   "q_0_50dps": "1.1099785955541805752815940796095093779932822799587",
   "symbolic_cross_check_enabled": false,
-  "precision_caveat": "y-lambda-mpfr-witness.json was computed with q at f64 precision (its 'q' field stores str(float(Q0))); the y_\u03bb values inherit f64-limited input. Bridge results agree with the prop-table canonical values to ~1e-15. To upgrade to full 50-dps precision, regenerate that witness with q_str at 50 dps (see y_lambda_mpfr_witness.py).",
+  "precision_caveat": "y-lambda-mpfr-witness.json was computed with q at f64 precision (its 'q' field stores str(float(Q0))); the y_λ values inherit f64-limited input. Bridge results agree with the prop-table canonical values to ~1e-15. To upgrade to full 50-dps precision, regenerate that witness with q_str at 50 dps (see y_lambda_mpfr_witness.py).",
   "results": [
     {
       "atom": "proton",
@@ -20,10 +30,10 @@
       "word_length_3A": 11,
       "tr_M_at_q0_50dps": "1.0653062285923892551532775699680661193337632009791",
       "term1_b_pred_mev_50dps": "0.54437036423917088737460692731223332051012769524897",
-      "bridge_elapsed_sec": 0.0014224052429199219,
+      "bridge_elapsed_sec": 0.002651214599609375,
       "symbolic_cross_check": null,
       "peel_cross_check": {
-        "elapsed_sec": 0.01132345199584961,
+        "elapsed_sec": 0.02434682846069336,
         "tr_M_at_q0_50dps": "1.0653062285923892551532775699680661193337632009792",
         "abs_diff_vs_bridge": "8.0182941302765869384216094014544456364455906403151e-50"
       },
@@ -39,10 +49,10 @@
       "word_length_3A": 11,
       "tr_M_at_q0_50dps": "0.92323329716958364246376988091871375932688744507312",
       "term1_b_pred_mev_50dps": "0.47177124545869521323616182219108776636659219120055",
-      "bridge_elapsed_sec": 0.001617431640625,
+      "bridge_elapsed_sec": 0.0024471282958984375,
       "symbolic_cross_check": null,
       "peel_cross_check": {
-        "elapsed_sec": 0.005130767822265625,
+        "elapsed_sec": 0.00606226921081543,
         "tr_M_at_q0_50dps": "0.92323329716958364246376988091871375932688744507317",
         "abs_diff_vs_bridge": "4.6773382426613423807459388175150932879265945401838e-50"
       },
@@ -58,10 +68,10 @@
       "word_length_3A": 23,
       "tr_M_at_q0_50dps": "0.3882864715477132785110659223165687998713135876719",
       "term1_b_pred_mev_50dps": "0.19841397926008636022021224968454822433700137842108",
-      "bridge_elapsed_sec": 0.04686570167541504,
+      "bridge_elapsed_sec": 0.047556161880493164,
       "symbolic_cross_check": null,
       "peel_cross_check": {
-        "elapsed_sec": 0.1288907527923584,
+        "elapsed_sec": 0.12867975234985352,
         "tr_M_at_q0_50dps": "0.38828647154771327851106592231656879987131358767193",
         "abs_diff_vs_bridge": "2.7395838278445005372940498788302689257855768021077e-50"
       },
@@ -70,7 +80,7 @@
         "J_K_published": "q - 1 + 2/q - 2/q**2 + 2/q**3 - 2/q**4 + q**(-5)",
         "J_K_at_q0_50dps": "1.0269200125513209933037540710311544269138710880777",
         "tr_M_over_J_K_at_q0_50dps": "0.37810780469945161420056385740581900511099501210889",
-        "note": "If the ratio is a power of q_0, then tr_M = q_0^k \u00b7 J_K, i.e. they agree up to writhe normalisation. q_0 = 1.1099785955541805752815940796..., so log(ratio)/log(q_0) should be close to an integer."
+        "note": "If the ratio is a power of q_0, then tr_M = q_0^k · J_K, i.e. they agree up to writhe normalisation. q_0 = 1.1099785955541805752815940796..., so log(ratio)/log(q_0) should be close to an integer."
       }
     },
     {
@@ -83,10 +93,10 @@
       "word_length_3A": 35,
       "tr_M_at_q0_50dps": "0.10405211867552565489795832743212275483532305732494",
       "term1_b_pred_mev_50dps": "0.053170523388469000350919062461570923991957505203836",
-      "bridge_elapsed_sec": 27.46313762664795,
+      "bridge_elapsed_sec": 29.491105794906616,
       "symbolic_cross_check": null,
       "peel_cross_check": {
-        "elapsed_sec": 1.6906883716583252,
+        "elapsed_sec": 1.725538730621338,
         "tr_M_at_q0_50dps": "0.10405211867552565489795832743212275483532305732495",
         "abs_diff_vs_bridge": "6.3478161864689646595837741094847694621860925902495e-51"
       },
@@ -102,10 +112,10 @@
       "word_length_3A": 35,
       "tr_M_at_q0_50dps": "0.20654085856226262948910490901292677841811332568243",
       "term1_b_pred_mev_50dps": "0.10554216185741471329317164494545112019853857040473",
-      "bridge_elapsed_sec": 28.9207501411438,
+      "bridge_elapsed_sec": 30.73434853553772,
       "symbolic_cross_check": null,
       "peel_cross_check": {
-        "elapsed_sec": 0.6986880302429199,
+        "elapsed_sec": 0.734424352645874,
         "tr_M_at_q0_50dps": "0.20654085856226262948910490901292677841811332568245",
         "abs_diff_vs_bridge": "1.9377544148168418434518889386848243621410177380762e-50"
       },

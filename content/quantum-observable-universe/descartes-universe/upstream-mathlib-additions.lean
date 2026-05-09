@@ -294,4 +294,30 @@ theorem Cl_2_double_angle_at_zero_unconditional :
   rw [mul_zero, Cl_2_zero, sub_zero, Cl_2_pi]
   ring
 
+/-- **Boundary unconditional check:** at `θ = π`, the double-angle
+    identity reduces to `Cl_2(2π) = 2·Cl_2(π) - 2·Cl_2(0) = 0`.
+    Uses `Cl_2_periodic` for the LHS and `Cl_2_pi` + `Cl_2_zero`
+    for the RHS. -/
+-- Ref: [zagier1986]
+theorem Cl_2_double_angle_at_pi_unconditional :
+    Cl_2 (2 * Real.pi) = 2 * Cl_2 Real.pi - 2 * Cl_2 (Real.pi - Real.pi) := by
+  rw [Cl_2_pi, sub_self, Cl_2_zero]
+  -- LHS: Cl_2 (2 π) = Cl_2 (0 + 2 π) = Cl_2 0 = 0 by 2π-periodicity
+  rw [show (2 * Real.pi : ℝ) = 0 + 2 * Real.pi by ring,
+      Cl_2_periodic, Cl_2_zero]
+  ring
+
+/-- **Boundary unconditional check:** at `θ = π/2`, the double-angle
+    identity becomes `Cl_2(π) = 2·Cl_2(π/2) - 2·Cl_2(π/2) = 0`, a
+    tautology that follows from `Cl_2_pi` alone. -/
+-- Ref: [zagier1986]
+theorem Cl_2_double_angle_at_pi_half_unconditional :
+    Cl_2 (2 * (Real.pi / 2))
+      = 2 * Cl_2 (Real.pi / 2) - 2 * Cl_2 (Real.pi - Real.pi / 2) := by
+  -- LHS: Cl_2 (2 · π/2) = Cl_2 π = 0
+  rw [show (2 * (Real.pi / 2) : ℝ) = Real.pi by ring, Cl_2_pi]
+  -- RHS: π - π/2 = π/2, so RHS = 2·Cl_2(π/2) - 2·Cl_2(π/2) = 0
+  rw [show (Real.pi - Real.pi / 2 : ℝ) = Real.pi / 2 by ring]
+  ring
+
 end QOU.Descartes.UpstreamAdditions

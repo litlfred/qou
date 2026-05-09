@@ -12,7 +12,7 @@ each λ ⊢ 3A.
 
 Key design decisions:
 
-1. Calibration: E_0 = 0.782 MeV (free-neutron β-decay Q-value),
+1. Calibration: E_0 = 0.78233341 MeV (free-neutron β-decay Q-value),
    per prop:categorical-mass-markov.  NO Catalan / ALPHA.
 
 2. Braid word: uses the same walk as atom_per_generator_volumes —
@@ -49,8 +49,10 @@ sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as Q0, Q_INV as QI, HA as HA_VAL
 from hecke_core import (_PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1,
                          E_0_CALIBRATION_MEV)
-from hecke_characters import (partitions_of, build_seminormal_matrices,
-                                dim_q, qfac)
+from syt_prefix_cache import BlockCache, build_seminormal_matrices_cached  # F6
+# Per Copilot review on #590: drop unused build_seminormal_matrices
+# (replaced by the cached path everywhere).
+from hecke_characters import partitions_of, dim_q, qfac
 
 h = HA_VAL
 
@@ -136,6 +138,18 @@ def normalized_plancherel_weights_3A(A: int):
 # so at minimum this saves one re-build per run.
 _SEMINORMAL_CACHE: dict[tuple[int, tuple[int, ...]], tuple] = {}
 
+# F6 (audit follow-up): module-level BlockCache for content-distance
+# arithmetic across all shape calls. Lazy-init to avoid module-import
+# circular issues with q_parameter.
+_BLOCK_CACHE: BlockCache | None = None
+
+
+def _ensure_block_cache() -> BlockCache:
+    global _BLOCK_CACHE
+    if _BLOCK_CACHE is None:
+        _BLOCK_CACHE = BlockCache(float(Q0), float(HA_VAL))
+    return _BLOCK_CACHE
+
 # Disk cache for seminormal matrices: standard_young_tableaux is slow
 # (multi-second for dim > 5000 partitions at n=12), so we persist the
 # built matrices.  Keyed by (n, shape, q0).
@@ -182,7 +196,12 @@ def _cached_seminormal(shape: tuple[int, ...]):
             return data
         except Exception:
             pass
-    data = build_seminormal_matrices(shape)
+    # F6 (audit follow-up, finishing wire): use BlockCache-backed
+    # rebuild path. Composes with the .npz disk cache below; the
+    # in-memory BlockCache amortises content-distance arithmetic
+    # across shape calls within a single run.
+    cache = _ensure_block_cache()
+    data = build_seminormal_matrices_cached(shape, cache=cache)
     _SEMINORMAL_CACHE[key] = data
     try:
         sigmas, dim, syts = data
@@ -552,7 +571,7 @@ def binding_3A_tower(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
         B     = E_0 · ( 𝔪_free − 𝔪_atom ).
 
     Replaces the H_3 per-generator weighting used in
-    tower_binding_full.  E_0 = 0.782 MeV (β-decay Q), no Catalan.
+    tower_binding_full.  E_0 = 0.78233341 MeV (β-decay Q), no Catalan.
     """
     from mass_endomorphism import mass_from_tower
     vols_atom = per_generator_V_hat_3A(
@@ -634,7 +653,7 @@ if __name__ == "__main__":
                     help="Max A to evaluate (p(3A) cost grows fast)")
     ap.add_argument("--E0", type=float, default=E_0_CALIBRATION_MEV,
                     help="Calibration E_0 in MeV "
-                         "(default = β-decay Q = 0.782)")
+                         "(default = β-decay Q = 0.78233341)")
     ap.add_argument("--verbose", "-v", action="store_true")
     args = ap.parse_args()
 
@@ -734,7 +753,7 @@ if __name__ == "__main__":
             "V̂_i = Σ_λ w_λ · χ_λ(W_i)/d_λ, then "
             "𝔪 = |Π V̂_i| + Σ Φ_q(|V̂_i|) + z² Σ_{adj} Φ_q(|V̂_i V̂_j|), "
             "and B = E_0 · (𝔪_free − 𝔪_atom).\n"
-            "E_0 = 0.782 MeV (free-neutron β-decay Q). No Catalan."
+            "E_0 = 0.78233341 MeV (free-neutron β-decay Q). No Catalan."
         ),
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "parameters": {"q0": Q0, "E_0_MeV": args.E0,

@@ -1,4 +1,8 @@
 import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Module.LinearMap.Basic
+import Mathlib.Algebra.Module.End
+import Mathlib.Tactic.FinCases
+import Mathlib.Data.Matrix.Notation
 
 /-!
 # QOU.BraidKnot.WeakSpectralCompleteness
@@ -32,29 +36,57 @@ explicit `[Instance]` hypothesis to retain
 
 namespace QOU.BraidKnot
 
-/-- **Conjecture class** for `conj:weak-spectral-completeness`.
+/-- **Conjecture class** for `conj:weak-spectral-completeness`,
+    operator-level form.
 
-    Captures the structural content: a base ring `R` (the
-    Hecke-algebra coefficient ring), an EW/Higgs sector module
-    `EWModule`, and three idempotents `e_T_2_4`, `e_T_2_6`,
-    `e_T_2_8` (the torus-knot Plancherel projectors at T(2,4),
-    T(2,6), T(2,8)). The conjecture asserts the three idempotents
-    span the sector and are mutually orthogonal.
+    Parameterised by a base ring `R` (the Hecke-algebra coefficient
+    ring) and an EW/Higgs sector `R`-module `EWModule`.  The
+    conjecture asserts the three torus-knot Plancherel idempotents
+    `e_T_2_4`, `e_T_2_6`, `e_T_2_8` are pairwise-orthogonal
+    idempotents of `EWModule` whose sum is the identity (Plancherel
+    completeness for the {T(2,4), T(2,6), T(2,8)} idempotent
+    decomposition of the EW/Higgs sector). -/
+class WeakSpectralCompleteness (R : Type*) [Ring R] (EWModule : Type*)
+    [AddCommGroup EWModule] [Module R EWModule] where
+  /-- Idempotent projector for the T(2,4) torus knot. -/
+  e_T_2_4 : Module.End R EWModule
+  /-- Idempotent projector for the T(2,6) torus knot. -/
+  e_T_2_6 : Module.End R EWModule
+  /-- Idempotent projector for the T(2,8) torus knot. -/
+  e_T_2_8 : Module.End R EWModule
+  /-- Each `e_T_{2,2k}` is idempotent. -/
+  is_idempotent_24 : e_T_2_4 ∘ₗ e_T_2_4 = e_T_2_4
+  is_idempotent_26 : e_T_2_6 ∘ₗ e_T_2_6 = e_T_2_6
+  is_idempotent_28 : e_T_2_8 ∘ₗ e_T_2_8 = e_T_2_8
+  /-- Pairwise orthogonality (bidirectional, since `Module.End R EWModule`
+      is non-commutative under composition): `e_i ∘ e_j = 0` AND
+      `e_j ∘ e_i = 0` for every distinct `i ≠ j`. -/
+  orthogonal_24_26 : e_T_2_4 ∘ₗ e_T_2_6 = 0
+  orthogonal_26_24 : e_T_2_6 ∘ₗ e_T_2_4 = 0
+  orthogonal_24_28 : e_T_2_4 ∘ₗ e_T_2_8 = 0
+  orthogonal_28_24 : e_T_2_8 ∘ₗ e_T_2_4 = 0
+  orthogonal_26_28 : e_T_2_6 ∘ₗ e_T_2_8 = 0
+  orthogonal_28_26 : e_T_2_8 ∘ₗ e_T_2_6 = 0
+  /-- Plancherel completeness: the three idempotents sum to the
+      identity on the EW/Higgs sector. -/
+  spans : e_T_2_4 + e_T_2_6 + e_T_2_8 = LinearMap.id
 
-    Used by downstream theorems (`uses` cone) under §3b-cond to
-    retain `theorem` / `proposition` kind without becoming
-    propagation violators. -/
-class WeakSpectralCompleteness : Prop where
-  /-- Three torus-knot writhes (4, 6, 8) carry distinct Plancherel
-      idempotents that together project onto the EW/Higgs sector:
-      we encode this as the existence of an injective writhe map
-      with values in {4, 6, 8} (mirror of the structural pattern in
-      `mass-tower-open-problems-classes.lean`). The full operator-
-      level statement (idempotents sum to the identity, pairwise
-      orthogonal) is a refinement of this structural skeleton and
-      is filled in by future instances supplying the explicit
-      Plancherel decomposition. -/
+/-- **Structural skeleton** of `conj:weak-spectral-completeness`
+    (kept for `uses` cone bookkeeping under §3b-cond — see CLAUDE.md).
+    A `WeakSpectralCompleteness R EWModule` instance implies the
+    skeleton via the writhe assignment `4, 6, 8`. -/
+class WeakSpectralCompletenessSkeleton : Prop where
   three_torus_writhes : ∃ (w : Fin 3 → ℕ),
     w 0 = 4 ∧ w 1 = 6 ∧ w 2 = 8 ∧ Function.Injective w
+
+instance instWeakSpectralCompletenessSkeleton
+    {R : Type*} [Ring R] {EWModule : Type*}
+    [AddCommGroup EWModule] [Module R EWModule]
+    [WeakSpectralCompleteness R EWModule] :
+    WeakSpectralCompletenessSkeleton where
+  three_torus_writhes := by
+    refine ⟨![4, 6, 8], rfl, rfl, rfl, ?_⟩
+    intro i j hij
+    fin_cases i <;> fin_cases j <;> simp_all
 
 end QOU.BraidKnot
