@@ -23,7 +23,7 @@ to ⁴He with leaf
 
   T_w(2, 2) = [1, 2, -1, 4, 5, -4, 7, -8, 7, 10, -11, 10]  ∈ B_{12}.
 
-Trust profile {axiom: 2, derived: 3, script-cited: 2, computational: 1}
+Trust profile {axiom: 2, derived: 3, script-cited: 2}
 — **NOT fully-trusted by design**.  The two SCRIPT_CITED steps are:
 
   * the canonical proton word `σ_1 σ_2 σ_1^{-1}` in B_3 (paper-

@@ -61,7 +61,7 @@ from canonical_braid_crossings import atom_canonical_crossings  # noqa: E402
 HERE = Path(__file__).parent
 
 # ── Atom registry ───────────────────────────────────────────────
-# Each entry: (slug, label, Z, N, conjecture_label)
+# Each entry: (slug, label, Z, N)
 ATOMS = [
     ("p", "proton",   1, 0),
     ("n", "neutron",  0, 1),

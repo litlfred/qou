@@ -189,9 +189,17 @@ basis derivation, the **structural side** has been closed: the
 factor $\chi_5$ admits the closed form*
 
 $$
-  S_\mathrm{crystal}(A) \;:=\; \sum_{\substack{\lambda \,\vdash\, 3A \\ \mathrm{height}(\lambda) \,=\, 6}}
+  S_\mathrm{crystal}(A) \;:=\; \sum_{\substack{\lambda \,\vdash\, 3A \\ \mathrm{height}(\lambda) \,\leq\, 6}}
     w_\lambda(q = 1) \cdot \chi_\lambda^\mathrm{crystal}(\beta_A),
 $$
+
+*The bound $\mathrm{height}(\lambda) \leq 6$ matches the implemented
+enumeration in `term7_alpha5_crystal_derivation.py` (cumulative GS-
+filtration sum through level $5$); it refines the per-stratum
+$\chi_5$ projector defined earlier in this document by including
+contributions from the lower strata $\ell = 0, \ldots, 4$.  For
+$A = 1$ the sum reduces to those lower strata only, since no
+partition of $3$ can have exactly six parts.*
 
 *evaluated at the crystal limit $q \to 0$ (witness:
 [`term7-alpha5-crystal-derivation.witness.json`](../../../folio-assistant/computations/term7-alpha5-crystal-derivation.witness.json),
