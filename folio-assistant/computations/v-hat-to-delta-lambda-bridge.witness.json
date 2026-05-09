@@ -1,23 +1,23 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-09T20:01:45.194203+00:00",
-  "commitSha": "7159261d7c1fea3766eb7103f304c52573f05428",
+  "computedAt": "2026-05-09T20:40:32.334616+00:00",
+  "commitSha": "cb1bf50d1e832377e18f1bc9cebbe69c3ec9578b",
   "assertions": [
     {
       "name": "one_dim_universal_product_formula_closes",
-      "computed": 6,
-      "expected": 6,
+      "computed": 12,
+      "expected": 12,
       "passed": true,
       "source": "v_hat_to_delta_lambda_bridge"
     }
   ],
   "allPassed": true,
-  "durationMs": 966,
+  "durationMs": 1796,
   "computation": "v-hat-to-delta-lambda-bridge",
   "scriptFile": "v_hat_to_delta_lambda_bridge.py",
-  "scriptHash": "c3a9cba27d04",
-  "scriptCommitSha": "7159261d7c1fea3766eb7103f304c52573f05428",
+  "scriptHash": "735455c3970a",
+  "scriptCommitSha": "e417a34df0c42ec25caca0c3673d3fa899c0c1c4",
   "description": "Tests whether the Option G Δ_λ^G factors through the Wedderburn-decomposed pair volumes |V̂_i V̂_j|_λ.  Specifically: is χ^λ(β_K) (the q-character that appears in Δ_λ^G = (target/S) · χ^λ/d_λ) proportional to Σ_pair (V̂_i V̂_j)_λ across the three n=3 channels {sym, std, alt}?  Tests three candidate proportionality forms (direct, dimension-scaled, squared) and reports per-atom constancy across channels.  If constant → bridge closes; if partial → per-channel correction factor needed; if inconclusive → χ^λ doesn't factor as pair-sum.",
   "contentBlock": "prop:atomic-mass-via-rho-k",
   "auditOnly": "docs/audits/2026-05-09-kite-tail-reconciliation.md",
@@ -153,11 +153,140 @@
         },
         "best_sigma": "0.0",
         "verdict": "bridge_closed"
+      },
+      {
+        "atom": "tritium",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "chi_lambda": {
+          "sym": "1.5768015283810493944346284600657921967274944007548",
+          "alt": "-0.68432152317619179687687188117025384004655600966337"
+        },
+        "product_per_generator_per_channel": {
+          "sym": "1.5768015283810498802368619568078439391357442279121",
+          "alt": "-0.68432152317619169626478497923646038972605059833906"
+        },
+        "pair_volumes_summed_at_A1_only": {
+          "sym": "0.0",
+          "std": "0.0",
+          "alt": "0.0"
+        },
+        "ratios": {
+          "direct (χ^λ / Σ V̂_λ_pair)": {
+            "sym": "nan",
+            "std": "nan",
+            "alt": "nan"
+          },
+          "dimension_scaled ((χ^λ/d_λ) / Σ V̂_λ_pair)": {
+            "sym": "nan",
+            "std": "nan",
+            "alt": "nan"
+          },
+          "squared (χ^λ² / Σ V̂_λ_pair)": {
+            "sym": "nan",
+            "std": "nan",
+            "alt": "nan"
+          }
+        },
+        "constancy_sigma": {
+          "direct": "0.0",
+          "dimension_scaled": "0.0",
+          "squared": "0.0"
+        },
+        "best_sigma": "0.0",
+        "verdict": "bridge_closed"
+      },
+      {
+        "atom": "helium-3",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "chi_lambda": {
+          "sym": "2.3935111147542199527544410041501670826169861313881",
+          "alt": "-0.45081855563435273474565566875069591994097858988763"
+        },
+        "product_per_generator_per_channel": {
+          "sym": "2.3935111147542208201209680841978349964161507445042",
+          "alt": "-0.45081855563435271008118530629054996047829317719632"
+        },
+        "pair_volumes_summed_at_A1_only": {
+          "sym": "0.0",
+          "std": "0.0",
+          "alt": "0.0"
+        },
+        "ratios": {
+          "direct (χ^λ / Σ V̂_λ_pair)": {
+            "sym": "nan",
+            "std": "nan",
+            "alt": "nan"
+          },
+          "dimension_scaled ((χ^λ/d_λ) / Σ V̂_λ_pair)": {
+            "sym": "nan",
+            "std": "nan",
+            "alt": "nan"
+          },
+          "squared (χ^λ² / Σ V̂_λ_pair)": {
+            "sym": "nan",
+            "std": "nan",
+            "alt": "nan"
+          }
+        },
+        "constancy_sigma": {
+          "direct": "0.0",
+          "dimension_scaled": "0.0",
+          "squared": "0.0"
+        },
+        "best_sigma": "0.0",
+        "verdict": "bridge_closed"
+      },
+      {
+        "atom": "helium-4",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "chi_lambda": {
+          "sym": "2.4196639445338709621005650603717029076282970501622",
+          "alt": "-0.45574444917808254603490672787786792811056531695422"
+        },
+        "product_per_generator_per_channel": {
+          "sym": "2.4196639445338719315017832489855370488824946475099",
+          "alt": "-0.45574444917808246361839227270349947969256333903913"
+        },
+        "pair_volumes_summed_at_A1_only": {
+          "sym": "0.0",
+          "std": "0.0",
+          "alt": "0.0"
+        },
+        "ratios": {
+          "direct (χ^λ / Σ V̂_λ_pair)": {
+            "sym": "nan",
+            "std": "nan",
+            "alt": "nan"
+          },
+          "dimension_scaled ((χ^λ/d_λ) / Σ V̂_λ_pair)": {
+            "sym": "nan",
+            "std": "nan",
+            "alt": "nan"
+          },
+          "squared (χ^λ² / Σ V̂_λ_pair)": {
+            "sym": "nan",
+            "std": "nan",
+            "alt": "nan"
+          }
+        },
+        "constancy_sigma": {
+          "direct": "0.0",
+          "dimension_scaled": "0.0",
+          "squared": "0.0"
+        },
+        "best_sigma": "0.0",
+        "verdict": "bridge_closed"
       }
     ],
     "hypothesis": "χ^λ(β_K) ∝ Σ_{i<j} (V̂_i V̂_j)_Wedd_λ for each channel λ. Bridge closes if any of {direct, dimension-scaled, squared} ratio is constant across all three n=3 channels.",
-    "n_one_dim_channels_matched": 6,
-    "n_one_dim_channels_total": 6,
+    "n_one_dim_channels_matched": 12,
+    "n_one_dim_channels_total": 12,
     "universal_formula": "χ^{1-dim}(β_K) = ∏_i V̂_i^{1-dim}  for any A (any number of generators).  Multiplicative property of 1-dim Wedderburn irreps.  Verified at A=1 (proton, neutron sym + alt) and A=2 (deuteron sym, alt) to ~1e-14 precision.  An earlier Σ_pair form was a degenerate special case at A=1 (only 2 generators → 1 pair → sum coincides with product); the product formula is the universal one.",
     "two_dim_status": "2-dim and higher-dim Wedderburn channels (std at H_3, the 9 multi-dim irreps at H_6, etc.) do NOT factor as a scalar V̂_i product.  The trace is intrinsically tr(∏ M_i) where M_i are the Hoefsmit matrices.  A bridge for these channels would require either: (a) recognizing that χ^{multi-dim}(β_K) = tr(M_full) directly (no factorisation; just call Hoefsmit), or (b) discovering a per-pair Markov-trace decomposition that wedderburn_pair_volumes already partially provides for the z·M_12 + M_22 std combination.  This is open work."
   }

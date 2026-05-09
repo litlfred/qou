@@ -2,7 +2,7 @@
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "computation": "cross-check-trM-1ppb",
   "description": "Pairwise comparison of tr_M(β_atom) @ q_0 between the Hoefsmit/mpfr 50-dps brute-force path and the Markov-axiom recursive ascent (markov_peel, production witness from PR #520). Tolerance is 1 ppb (1e-9 relative).",
-  "computedAt": "2026-05-10T04:47:58.489652+00:00",
+  "computedAt": "2026-05-10T04:48:00.171386+00:00",
   "tolerance_relative": "0.000000001000000000000000062281591457779856418897068692786",
   "working_precision_dps": 50,
   "atoms_compared": 5,

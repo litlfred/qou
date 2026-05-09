@@ -251,19 +251,26 @@ form.)
 
 **Result (proton, neutron at $H_3$ + deuteron at $H_6$).**
 
-| Atom | Channel | $d_\lambda$ | $\chi^\lambda(\beta_K)$ | $\prod_i \hat V_i^\lambda$ | rel. error |
-|---|---|---|---|---|---|
-| proton (A=1) | sym=(3) | 1 | $1.3824945145464$ | $1.3824945145464$ | $5\!\times\!10^{-17}$ ✓ |
-| proton (A=1) | alt=(1,1,1) | 1 | $-0.7392235469701$ | $-0.7392235469701$ | $5\!\times\!10^{-17}$ ✓ |
-| neutron (A=1) | sym=(3) | 1 | $1.1221068372363$ | $1.1221068372363$ | $1\!\times\!10^{-16}$ ✓ |
-| neutron (A=1) | alt=(1,1,1) | 1 | $-0.9107622062324$ | $-0.9107622062324$ | $2\!\times\!10^{-16}$ ✓ |
-| **deuteron (A=2)** | **sym=(6)** | 1 | $1.5597587394181$ | $1.5597587394181$ | $3\!\times\!10^{-16}$ ✓ |
-| **deuteron (A=2)** | **alt=(1⁶)** | 1 | $-0.6769250645272$ | $-0.6769250645272$ | $2\!\times\!10^{-17}$ ✓ |
-| proton std=(2,1) | 2 | $1.8077033200982$ | matrix tr ✗ no scalar | — |
-| neutron std=(2,1) | 2 | $1.7008888500892$ | matrix tr ✗ no scalar | — |
+| Atom | A | Channel | $d_\lambda$ | $\chi^\lambda(\beta_K)$ | $\prod_i \hat V_i^\lambda$ | rel. error |
+|---|---|---|---|---|---|---|
+| proton | 1 | sym=(3) | 1 | $1.3824945145464$ | $1.3824945145464$ | $5\!\times\!10^{-17}$ ✓ |
+| proton | 1 | alt=(1³) | 1 | $-0.7392235469701$ | $-0.7392235469701$ | $5\!\times\!10^{-17}$ ✓ |
+| neutron | 1 | sym=(3) | 1 | $1.1221068372363$ | $1.1221068372363$ | $1\!\times\!10^{-16}$ ✓ |
+| neutron | 1 | alt=(1³) | 1 | $-0.9107622062324$ | $-0.9107622062324$ | $2\!\times\!10^{-16}$ ✓ |
+| deuteron | 2 | sym=(6) | 1 | $1.5597587394181$ | $1.5597587394181$ | $3\!\times\!10^{-16}$ ✓ |
+| deuteron | 2 | alt=(1⁶) | 1 | $-0.6769250645272$ | $-0.6769250645272$ | $2\!\times\!10^{-17}$ ✓ |
+| **tritium** | **3** | **sym=(9)** | 1 | $1.5768015283810$ | $1.5768015283810$ | $3\!\times\!10^{-16}$ ✓ |
+| **tritium** | **3** | **alt=(1⁹)** | 1 | $-0.6843215231762$ | $-0.6843215231762$ | $1\!\times\!10^{-16}$ ✓ |
+| **³He** | **3** | **sym=(9)** | 1 | $2.3935111147542$ | $2.3935111147542$ | $4\!\times\!10^{-16}$ ✓ |
+| **³He** | **3** | **alt=(1⁹)** | 1 | $-0.4508185556344$ | $-0.4508185556344$ | $5\!\times\!10^{-17}$ ✓ |
+| **⁴He** | **4** | **sym=(12)** | 1 | $2.4196639445339$ | $2.4196639445339$ | $4\!\times\!10^{-16}$ ✓ |
+| **⁴He** | **4** | **alt=(1¹²)** | 1 | $-0.4557444491781$ | $-0.4557444491781$ | $2\!\times\!10^{-16}$ ✓ |
+| proton std=(2,1) | 1 | 2 | $1.8077033200982$ | matrix tr ✗ no scalar | — |
+| neutron std=(2,1) | 1 | 2 | $1.7008888500892$ | matrix tr ✗ no scalar | — |
 
-**6/6 one-dimensional channels match to ~$10^{-16}$ precision** at A=1
-AND A=2.  Therefore $\Delta_\lambda^G$ for 1-dim partitions factors as
+**12/12 one-dimensional channels match to ~$10^{-16}$ precision** across
+A=1, 2, 3, 4 (all six low-A atoms × two 1-dim channels each).
+Therefore $\Delta_\lambda^G$ for 1-dim partitions factors as
 
 $$
 \Delta_\lambda^G(K) \;=\; \frac{\text{target}_K}{S_K} \cdot \frac{\prod_i \hat V_i^\lambda}{d_\lambda},

@@ -260,7 +260,14 @@ def main() -> int:
     w.set_content_block("prop:atomic-mass-via-rho-k")
 
     results = []
-    for atom_label, Z, N in [("proton", 1, 0), ("neutron", 0, 1), ("deuteron", 1, 1)]:
+    for atom_label, Z, N in [
+        ("proton", 1, 0),
+        ("neutron", 0, 1),
+        ("deuteron", 1, 1),
+        ("tritium", 1, 2),
+        ("helium-3", 2, 1),
+        ("helium-4", 2, 2),
+    ]:
         print(f"--- {atom_label} (Z={Z}, N={N}) ---")
         try:
             r = test_bridge_for_atom(Z, N, atom_label)
