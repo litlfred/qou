@@ -109,14 +109,19 @@ private theorem quadratic_form_two_index
   have h_sym : C j i = C i j := by
     calc C j i = C.transpose i j := rfl
       _ = C i j := by rw [show C.transpose = C from hH]
-  -- Bilinearity expansion of vᵀ C v with v = α e_i + β e_j:
-  --   vᵀ C v = α · (Cv)_i + β · (Cv)_j         [Pi.single dot product]
-  --          = α · (α C_ii + β C_ij) + β · (α C_ji + β C_jj)   [(Cv)_k = Σ_l C k l · v l]
-  --          = α² C_ii + αβ C_ij + αβ C_ji + β² C_jj
-  --          = α² C_ii + 2αβ C_ij + β² C_jj   [h_sym]
-  -- Closure pending Mathlib's `Matrix.dotProduct_single` /
-  -- `Matrix.mulVec_single` API verification.
-  sorry
+  -- Bilinearity in BOTH arguments of dotProduct:
+  rw [Matrix.mulVec_add, Matrix.dotProduct_add, star_add,
+      Matrix.add_dotProduct, Matrix.add_dotProduct]
+  -- 4 cross-terms; each reduces via Mathlib's `single_dotProduct` +
+  -- `mulVec_single` family.
+  --   T1: ⟨e_i α, C(e_i α)⟩ = α · α · C i i = α² · C_ii
+  --   T2: ⟨e_i α, C(e_j β)⟩ = α · β · C i j
+  --   T3: ⟨e_j β, C(e_i α)⟩ = β · α · C j i = αβ · C_ij     (h_sym)
+  --   T4: ⟨e_j β, C(e_j β)⟩ = β · β · C j j = β² · C_jj
+  -- Sum = α² C_ii + 2αβ C_ij + β² C_jj.
+  simp only [star_trivial, Matrix.single_dotProduct,
+             Matrix.mulVec_single, smul_eq_mul, h_sym]
+  ring
 
 /-- **Cauchy-Schwarz inequality for PSD entries**: for any PSD
     matrix `C : Matrix (Fin n) (Fin n) ℝ` and indices `i, j`,
