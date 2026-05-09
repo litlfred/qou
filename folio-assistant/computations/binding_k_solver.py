@@ -2,8 +2,16 @@
 # polynomial_q_not_applicable: numerical Wedderburn-block evaluation at
 # q_0; symbolic-q binding-K closed form deferred.
 """
-Binding-K SDP solver — atomic-strand-count Wedderburn analysis at
-H_{3·A}(q_0) for ²H, ³H, ³He.
+Binding-K factorisation evaluator — atomic-strand-count Wedderburn
+analysis at H_{3·A}(q_0) for ²H, ³H, ³He.
+
+(Earlier drafts called this an "SDP solver"; per Copilot's PR #614
+review the name was misleading because the implementation does not
+perform any optimisation / feasibility search.  It EVALUATES the
+algebraic factorisation T_w(𝔥) = K · cp at H_{3·A} given the
+historical T_w(𝔥) braid word, by braid-word concatenation
+K_word = atom_word ++ cp_inv_word.  The actual SEARCH for K from
+substrate alone is in `binding_k_enumerator.py`.)
 
 Issue #604, follow-up to PR #608 (R5-full prototype) + PR #610 (binding-K
 factorisation finding at H_3).  Implements items 1–5 of the open-work
@@ -354,10 +362,17 @@ def operator_selection_lp_for_K(per_lambda: list) -> dict:
         "channel_lambdas": [r["lambda"] for r in per_lambda],
         "channel_t_costs": t.tolist(),
         "interpretation": (
-            "argmin t = dominant Wedderburn block λ*(K) of the binding "
-            "operator K ∈ H_{n_0}(q_0); the LP dual y_star marks the "
-            "saturating block.  Per conj:rho-prefactor-structural, "
-            "ρ(𝔥) = round(dim_q(λ*(K)))."
+            "PRIMAL: argmin_i (t_i) = -|y_λ · χ_λ(K)| picks the channel "
+            "with maximum |y_λ · χ_λ| ⇒ the dominant Wedderburn block "
+            "λ*(K) of the binding operator K ∈ H_{n_0}(q_0) (this is "
+            "where x_i^* > 0).  DUAL: in the operator-selection LP "
+            "with G = I and constraints x ≥ 0, y_star[i] > 0 marks "
+            "channels where the x_i ≥ 0 constraint is TIGHT at the "
+            "optimum (i.e., x_i^* = 0 — channels NOT selected).  The "
+            "DOMINANT channel is therefore the one with x_i^* > 0 and "
+            "y_star[i] = 0 — NOT in the active_set; the active_set "
+            "complementary identifies it.  Per conj:rho-prefactor-"
+            "structural, ρ(𝔥) = round(dim_q(λ*(K)))."
         ),
     }
 

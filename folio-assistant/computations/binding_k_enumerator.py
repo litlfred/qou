@@ -52,18 +52,11 @@ import numpy as np
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as Q_FLOAT  # noqa: E402
 from experimental_constants import M_E_MEV  # noqa: E402
-from hecke_characters import partitions_of, dim_q  # noqa: E402
+from hecke_characters import partitions_of  # noqa: E402
 from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from binding_k_solver import (  # noqa: E402
-    block_rep_braid_word,
-    per_block_evaluation,
-    constituent_product_word,
-    invert_braid_word,
-    NUCLEON_BRAID_LOCAL,
-)
-from klr_canonical_basis_filter import (  # noqa: E402
-    build_cemetery_fingerprints,
+    constituent_product_word, per_block_evaluation,
 )
 
 Q0 = float(Q_FLOAT)
@@ -229,6 +222,72 @@ def enumerate_K_candidates(
 # Per-atom search: enumerate K candidates, evaluate each, rank.
 # ───────────────────────────────────────────────────────────────────
 
+def _precompute_per_block_generators(n_0: int, q: float = Q0) -> dict:
+    """Precompute σ_k seminormal matrices per Wedderburn block at H_n_0(q).
+
+    Returns {λ: {"sigmas": [σ_1, ..., σ_{n_0-1}], "inv_sigmas": [σ_1^{-1}, ...]}}
+    where σ_k is a numpy array.  Used by `_eval_word_per_block_cached` to
+    avoid re-invoking `build_seminormal_matrices` for every braid word.
+
+    This addresses Gemini's PR #614 review comment: at n_0 = 9 with
+    30 partitions and hundreds of K candidates, the un-cached path
+    rebuilds 30 sets of matrices per call → thousands of redundant
+    constructions.  Precomputing once per atom amortises the cost.
+    """
+    from hecke_characters import build_seminormal_matrices
+    h = q - 1.0 / q
+    cache: dict = {}
+    for lam in partitions_of(n_0):
+        sigmas, dim, _ = build_seminormal_matrices(lam, q=q, sparse=False)
+        if dim == 0:
+            continue
+        I = np.eye(dim)
+        inv_sigmas = [s - h * I for s in sigmas]
+        cache[lam] = {
+            "sigmas": sigmas, "inv_sigmas": inv_sigmas,
+            "dim": dim, "I": I,
+        }
+    return cache
+
+
+def _eval_word_per_block_cached(
+    braid_word: list, n_0: int, gen_cache: dict,
+) -> dict:
+    """Evaluate ρ_λ(T_β) for each Wedderburn block λ ⊢ n_0 using
+    precomputed σ_k matrices.  Same output shape as
+    `per_block_evaluation`; same numerical result; no
+    `build_seminormal_matrices` calls inside the per-word loop."""
+    out = {}
+    min_eig_overall = float("inf")
+    for lam, blk in gen_cache.items():
+        sigmas = blk["sigmas"]; inv_sigmas = blk["inv_sigmas"]
+        dim = blk["dim"]
+        M = np.eye(dim)
+        for g in braid_word:
+            idx = abs(g) - 1
+            if idx < 0 or idx >= len(sigmas):
+                raise ValueError(
+                    f"generator σ_{abs(g)} out of range for H_{n_0}"
+                )
+            M = M @ (sigmas[idx] if g > 0 else inv_sigmas[idx])
+        chi = float(np.trace(M))
+        det = float(np.linalg.det(M))
+        Msym = (M + M.T) / 2.0
+        eigs = sorted(np.linalg.eigvalsh(Msym).tolist())
+        min_eig = eigs[0]
+        min_eig_overall = min(min_eig_overall, min_eig)
+        out[lam] = {
+            "chi": chi, "det": det, "eigenvalues_sym": eigs,
+            "min_eig_sym": min_eig, "psd_within_tol": min_eig >= -1e-9,
+            "matrix": M.tolist(),
+        }
+    return {
+        "per_block": out,
+        "alpha_gap": max(0.0, -min_eig_overall),
+        "min_eig_overall": min_eig_overall,
+    }
+
+
 def search_K_for_atom(
     atom: dict, L_K_max: int = 4, top_k: int = 8, *,
     use_extended_generators: bool = False,
@@ -240,6 +299,9 @@ def search_K_for_atom(
             if use_extended_generators
             else atom["inter_nucleon_generators_minimal"])
     gen_set = "extended" if use_extended_generators else "minimal"
+
+    # Precompute σ_k matrices per Wedderburn block at H_n_0(q_0) ONCE.
+    gen_cache = _precompute_per_block_generators(n_0)
 
     # Reference: T_w(atom_braid) at H_{n_braid} (the historical
     # canonical knot at the BRAID strand count).  Markov trace at
@@ -254,7 +316,7 @@ def search_K_for_atom(
     # The historical T_atom braid lives in B_{n_braid}; we evaluate
     # its Markov trace there once and use it as the fingerprint target.
     cp_word = constituent_product_word(atom["constituent_offsets"])
-    cp_eval = per_block_evaluation(cp_word, n_0, q=Q0)
+    cp_eval = _eval_word_per_block_cached(cp_word, n_0, gen_cache)
     cp_signature = chi_signature(cp_eval)
 
     atom_eval_at_braid = per_block_evaluation(
@@ -283,12 +345,12 @@ def search_K_for_atom(
     n_psd_feasible = 0
     for word in enumerate_K_candidates(gens, L_K_min=1, L_K_max=L_K_max):
         n_seen += 1
-        K_eval = per_block_evaluation(list(word), n_0, q=Q0)
+        K_eval = _eval_word_per_block_cached(list(word), n_0, gen_cache)
         psd = K_eval["alpha_gap"] <= 1e-6
         if psd:
             n_psd_feasible += 1
         T_pred_word = cp_word + list(word)
-        T_pred_eval = per_block_evaluation(T_pred_word, n_0, q=Q0)
+        T_pred_eval = _eval_word_per_block_cached(T_pred_word, n_0, gen_cache)
         T_pred_sig = chi_signature(T_pred_eval)
         T_pred_markov = markov_trace_at_n(T_pred_eval, n_0)
 

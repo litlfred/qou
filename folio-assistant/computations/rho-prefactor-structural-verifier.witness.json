@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T13:31:18.246462+00:00",
-  "commitSha": "3e8ffbd07672083466b42463bd060bbd14b47e8a",
+  "computedAt": "2026-05-09T15:15:46.271258+00:00",
+  "commitSha": "7ebeae4c7807e5be6d97d10e2e5f8681abc183fa",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 420,
+  "durationMs": 397,
   "computation": "rho-prefactor-structural-verifier",
   "scriptFile": "rho_prefactor_structural_verifier.py",
-  "scriptHash": "b48127022df6",
-  "scriptCommitSha": "3e8ffbd07672083466b42463bd060bbd14b47e8a",
+  "scriptHash": "f5eb7236334d",
+  "scriptCommitSha": "0cfd02a5d587a21cff1a53515385ced8dfc5b5ef",
   "description": "Structural ρ(Z, N) rule verifier — operator-selection LP / shadow-price / primal-dual / lp-duality evaluation of the rule ρ(𝔥) = dim_q(λ*(T_w)) per conj:rho-prefactor-structural (issue #604 deliverable 4 / closes-or-narrows GAP-A-4). For each canonical T_w ∈ H_3(q_0) of {proton, neutron, ²H/6_2, ³He/L₆ₐ₄}, decomposes into Wedderburn blocks via Hoefsmit seminormal form, evaluates |y_λ · χ_λ(T_w)| per partition λ ⊢ 3, identifies the dominant λ*, and tests five candidate rules (exact dim_q / round / floor / hook-special-case / classical d_λ) against the observed ρ ∈ {1, 1, 1, 2}.  The rule that matches all four observations is reported as the structural form of ρ(Z, N) at B_3.  Tritium (B_5 / 8_11) deferred — needs Hoefsmit at H_5 (consistent with the joint_tower_sdp_solver_v2.py / R5-full prototype posture).",
   "contentBlock": "conj:rho-prefactor-structural",
   "parameters": {
@@ -232,7 +232,7 @@
             -0.4153957863345666,
             -0.022744945705705264
           ],
-          "interpretation": "argmin_i t_i (= argmax_λ |y_λ·χ_λ|) is the dominant Wedderburn summand λ* per conj:rho-prefactor-structural; the LP dual y_star marks the saturating (dominant) channel."
+          "interpretation": "PRIMAL: argmin_i t_i (with t_i = -|y_λ·χ_λ|) ⇒ argmax_λ |y_λ·χ_λ|, i.e. the dominant Wedderburn summand λ* per conj:rho-prefactor-structural — the channel with x_i^* > 0.  DUAL: in the operator-selection LP with G = I and constraints x ≥ 0, y_star[i] > 0 (active_set membership) marks channels where x_i ≥ 0 is TIGHT at the optimum (x_i^* = 0, NOT selected).  The dominant channel has x_i^* > 0 and y_star[i] = 0 — its complement is the active_set."
         }
       },
       {
@@ -359,7 +359,7 @@
             -0.4153957863345666,
             -0.022744945705705264
           ],
-          "interpretation": "argmin_i t_i (= argmax_λ |y_λ·χ_λ|) is the dominant Wedderburn summand λ* per conj:rho-prefactor-structural; the LP dual y_star marks the saturating (dominant) channel."
+          "interpretation": "PRIMAL: argmin_i t_i (with t_i = -|y_λ·χ_λ|) ⇒ argmax_λ |y_λ·χ_λ|, i.e. the dominant Wedderburn summand λ* per conj:rho-prefactor-structural — the channel with x_i^* > 0.  DUAL: in the operator-selection LP with G = I and constraints x ≥ 0, y_star[i] > 0 (active_set membership) marks channels where x_i ≥ 0 is TIGHT at the optimum (x_i^* = 0, NOT selected).  The dominant channel has x_i^* > 0 and y_star[i] = 0 — its complement is the active_set."
         }
       },
       {
@@ -485,7 +485,7 @@
             -0.24192449894659748,
             -0.01846102014901198
           ],
-          "interpretation": "argmin_i t_i (= argmax_λ |y_λ·χ_λ|) is the dominant Wedderburn summand λ* per conj:rho-prefactor-structural; the LP dual y_star marks the saturating (dominant) channel."
+          "interpretation": "PRIMAL: argmin_i t_i (with t_i = -|y_λ·χ_λ|) ⇒ argmax_λ |y_λ·χ_λ|, i.e. the dominant Wedderburn summand λ* per conj:rho-prefactor-structural — the channel with x_i^* > 0.  DUAL: in the operator-selection LP with G = I and constraints x ≥ 0, y_star[i] > 0 (active_set membership) marks channels where x_i ≥ 0 is TIGHT at the optimum (x_i^* = 0, NOT selected).  The dominant channel has x_i^* > 0 and y_star[i] = 0 — its complement is the active_set."
         }
       },
       {
@@ -612,7 +612,7 @@
             -0.4153957863345666,
             -0.022744945705705264
           ],
-          "interpretation": "argmin_i t_i (= argmax_λ |y_λ·χ_λ|) is the dominant Wedderburn summand λ* per conj:rho-prefactor-structural; the LP dual y_star marks the saturating (dominant) channel."
+          "interpretation": "PRIMAL: argmin_i t_i (with t_i = -|y_λ·χ_λ|) ⇒ argmax_λ |y_λ·χ_λ|, i.e. the dominant Wedderburn summand λ* per conj:rho-prefactor-structural — the channel with x_i^* > 0.  DUAL: in the operator-selection LP with G = I and constraints x ≥ 0, y_star[i] > 0 (active_set membership) marks channels where x_i ≥ 0 is TIGHT at the optimum (x_i^* = 0, NOT selected).  The dominant channel has x_i^* > 0 and y_star[i] = 0 — its complement is the active_set."
         }
       }
     ],

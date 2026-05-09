@@ -360,9 +360,15 @@ def operator_selection_lp_per_atom(analysis: dict) -> dict:
         "channel_lambdas": [r["lambda"] for r in per_lambda],
         "channel_t_costs": t.tolist(),
         "interpretation": (
-            "argmin_i t_i (= argmax_λ |y_λ·χ_λ|) is the dominant Wedderburn "
-            "summand λ* per conj:rho-prefactor-structural; the LP dual y_star "
-            "marks the saturating (dominant) channel."
+            "PRIMAL: argmin_i t_i (with t_i = -|y_λ·χ_λ|) ⇒ argmax_λ "
+            "|y_λ·χ_λ|, i.e. the dominant Wedderburn summand λ* per "
+            "conj:rho-prefactor-structural — the channel with x_i^* > 0.  "
+            "DUAL: in the operator-selection LP with G = I and "
+            "constraints x ≥ 0, y_star[i] > 0 (active_set membership) "
+            "marks channels where x_i ≥ 0 is TIGHT at the optimum "
+            "(x_i^* = 0, NOT selected).  The dominant channel has "
+            "x_i^* > 0 and y_star[i] = 0 — its complement is the "
+            "active_set."
         ),
     }
 
