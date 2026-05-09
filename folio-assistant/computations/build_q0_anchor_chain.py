@@ -83,9 +83,14 @@ def build() -> DerivationChain:
             "Numerical solution of `G(q_0) = 1` (the Planck-"
             "normalised gravitational-constant fixed-point) at the "
             "canonical fit precision yields "
-            f"`q_0 ≈ {Q_0:.16g}`.  Single source of truth in the "
-            "compute pipeline: `derivation_chain.Q_0` literal, "
-            "produced by `q_parameter.py`."
+            f"`q_0 ≈ {Q_0:.16g}`.  The compute-pipeline source of "
+            "truth is the pinned literal `derivation_chain.Q_0`; "
+            "the upstream computation that produced this literal "
+            "lives in `q_parameter.py` (which derives `Q` from the "
+            "figure-eight knot volume and the muon-electron mass "
+            "ratio).  The pin is manually synchronised — when "
+            "`q_parameter.Q` is regenerated at higher precision, "
+            "`derivation_chain.Q_0` must be updated to match."
         ),
         inputs=["q_0_axiom"],
         output_name="q_0_anchor",
