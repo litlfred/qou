@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-09T03:00:13.076590+00:00",
-  "commitSha": "c66d42797839f5d21093deae0547be396515ce45",
+  "computedAt": "2026-05-09T03:16:59.417686+00:00",
+  "commitSha": "c1cf1d4231a62b15f909679c5058fe955e262617",
   "assertions": [
     {
       "name": "ell_K_q_proton_eq_3",
@@ -22,12 +22,13 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 18,
   "computation": "per-atom-grading-bound",
   "scriptFile": "per_atom_grading_bound.py",
-  "scriptHash": "9d6059fa47da",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "d87c280853de",
+  "scriptCommitSha": "c1cf1d4231a62b15f909679c5058fe955e262617",
   "description": "Per-atom intrinsic grading bound ℓ(K, q) for the canonical topological braid words. ℓ(K, q) is the top non-zero ℤ-grading degree of the KLR-module lift, equivalent to the max GS-filtration grade observed under gb_filtration_jet_tracker reduction.",
+  "auditOnly": "docs/audits/2026-05-08-compute-infrastructure-audit.md",
   "data": {
     "narrative_block": "prop:jet-prefix-gb-filtration",
     "atoms": [

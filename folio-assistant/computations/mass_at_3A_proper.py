@@ -50,8 +50,9 @@ from q_parameter import Q as Q0, Q_INV as QI, HA as HA_VAL
 from hecke_core import (_PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1,
                          E_0_CALIBRATION_MEV)
 from syt_prefix_cache import BlockCache, build_seminormal_matrices_cached  # F6
-from hecke_characters import (partitions_of, build_seminormal_matrices,
-                                dim_q, qfac)
+# Per Copilot review on #590: drop unused build_seminormal_matrices
+# (replaced by the cached path everywhere).
+from hecke_characters import partitions_of, dim_q, qfac
 
 h = HA_VAL
 

@@ -30,7 +30,8 @@ energy-coefficient layer is collapsed.
 from __future__ import annotations
 
 import sys
-from datetime import datetime, timezone
+# Per Copilot review on #590: datetime/timezone were unused;
+# WitnessBuilder.save() handles `computedAt` automatically.
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
@@ -124,6 +125,10 @@ def main() -> int:
     # this is a NEW script, so wrap_legacy is the wrong tool — it's
     # only for migrating existing payload-shaped emitters.
     out = (WitnessBuilder("per-atom-grading-bound", engine="sympy")
+        # Per Copilot review on #590: mark audit-only so
+        # audit-wiring.ts doesn't bucket as orphan (no content
+        # block currently references this witness).
+        .set_audit_only("docs/audits/2026-05-08-compute-infrastructure-audit.md")
         .set_description(
             "Per-atom intrinsic grading bound ℓ(K, q) for the canonical "
             "topological braid words. ℓ(K, q) is the top non-zero "
