@@ -1,8 +1,8 @@
 {
   "engine": "scipy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T19:18:21.491785+00:00",
-  "commitSha": "7f24595cdddf68bbbe0d6c4f8381f37d8fb90394",
+  "computedAt": "2026-05-09T19:20:04.195082+00:00",
+  "commitSha": "3e01b917db4a3d35f7bde6960cc97417aaebdd7c",
   "assertions": [
     {
       "name": "pointwise: ∏ dc_k/dz = sign · Δ_root · ∏ ∂F/∂z / ∏ ∂F/∂c",
