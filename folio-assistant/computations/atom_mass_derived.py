@@ -6,18 +6,23 @@ DERIVED atomic mass for Z=1-20 — no fitted parameters.
 ═══════════════════════════════════════════════════════════════════
 This script computes
     M_derived = tr_M(atom NF) × E_0
-multiplicatively from the assembled atom's normal form.  Atomic
-mass is *additive* in its constituents
-    M_atom = Z·M_p + N·M_n + Z·M_e − E_binding(A, Z),
-not multiplicative, so the multiplicative chain produces results
-that diverge structurally from CODATA: ¹H is +55% high, ⁴He
-comes out negative, ⁷Li negative, etc.
+multiplicatively from the assembled atom's normal form.  This is
+the wrong combination law: composing nucleon Markov traces by
+multiplication does not represent atomic mass.
 
-Use `atom_mass_additive_baseline.py` for the structurally-correct
-constituent baseline + Δ_binding residual column.  The Δ_binding
-column is the per-isotope binding energy that the QOU
-ρ_F · V_hyp law (rem:frobenius-packing-density) is expected to
-reproduce — that is the open compute task.
+The right structural object on the QOU side is the LP-dual
+shadow price y_λ* per Wedderburn block (`prop:operator-selection-lp`)
+together with the GB normal form in H_n(R, q).  The active set
+{λ : y_λ* > 0} identifies which Wedderburn blocks the bound
+state saturates.
+
+The right experimental comparison object (separate question) is
+the *additive* constituent sum
+    M_atom = Z·M_p + N·M_n + Z·M_e − E_binding(A, Z),
+implemented correctly in `atom_mass_additive_baseline.py`.
+Whether the LP active set reproduces empirical Δ_binding via
+ρ_F · V_hyp is the interpretive question tracked in
+docs/audits/rho-f-volume-binding-gap.md (not a 1ppb gate).
 
 This file is preserved for two reasons:
 1. Its proton/neutron Hecke-trace primitives (PROTON_TR,

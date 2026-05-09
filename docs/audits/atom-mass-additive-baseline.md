@@ -1,9 +1,22 @@
-# Additive atomic-mass baseline + binding-energy residual
+# Additive atomic-mass baseline (informational; replaces a buggy mult chain)
 
-**Status.** Tracking audit. **Witness:**
+**Status.** Layer-4 informational audit (see
+[`onepb-status-dashboard.md`](onepb-status-dashboard.md)).
+**Witness:**
 [`atom-mass-additive-baseline.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/atom-mass-additive-baseline.witness.json).
 
 **Script.** [`atom_mass_additive_baseline.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/atom_mass_additive_baseline.py).
+
+## Position in the audit stack
+
+This audit replaces the structurally-wrong multiplicative chain
+in `atom_mass_derived.py` with the correct additive constituent
+formula.  It is **informational, not a QOU prediction layer** —
+QOU's structural predictions live in Layers 1–3 of the
+[1ppb dashboard](onepb-status-dashboard.md) (LP dual / GB NF /
+Markov-trace consistency / structural identities).  AME atomic
+masses are experimental data; they are not a QOU fitting
+target.
 
 ## Why this exists
 
@@ -61,26 +74,20 @@ law should reproduce this column.
 
 ## Status of the QOU side
 
-Reaching 1 ppb on every row of the table requires a closed-form
-computation of $\Delta_{\text{binding}}$ from the QOU Frobenius
-packing law:
+The Δ_binding column above is empirical AME residual; it is
+**not** a QOU prediction target.  QOU's structural prediction is
+the LP active set + GB NF data in Layer 1 of the dashboard.
 
-$$
-  E_{\text{binding}}(A, Z)
-  \;=\;
-  \rho_F(\mathcal{K}_{A, Z}) \cdot V_{\text{hyp}}(\mathcal{K}_{A, Z}),
-$$
+The interpretive question — does the LP-dual shadow-price
+machinery `y_λ*` *also* reproduce empirical nuclear binding
+through the Frobenius-packing law? — is tracked separately in
+[`rho-f-volume-binding-gap.md`](rho-f-volume-binding-gap.md).
+That audit is informational, not a 1ppb gate.
 
-where $\rho_F \in \{m_e, 2 m_e\}$ depending on Type-B fold-orbit
-closure of the populated Wedderburn blocks
-([`prop:cpt-orbit-closure-density`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/particle-interactions/cpt-orbit-closure-density.md))
-and $V_{\text{hyp}}$ is the Thurston volume of the atomic-link
-complement ([`prop:topological-mass-formula`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/topological-mass-formula.md)).
-
-The hydrogen row already passes at <100 ppb (limited by AME2020
-publication rounding to 3 decimal places). The atomic-binding
-contribution at $A = 1$ is the 13.6 eV hydrogen ground-state
-binding, ~10⁻⁵ MeV ≈ 14 ppb — beneath the AME publication floor.
+Hydrogen passes at <100 ppb (limited by AME2020 publication
+rounding to 3 decimal places). The atomic-binding contribution at
+$A = 1$ is the 13.6 eV hydrogen ground-state binding,
+~10⁻⁵ MeV ≈ 14 ppb — beneath the AME publication floor.
 
 ## How to update
 

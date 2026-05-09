@@ -31,41 +31,34 @@ hit IEEE-754 / 50-dps machine precision via the closed-form path
 licensed by `prop:macdonald-hook-telescope`. Current
 `max_non_anchor_delta_ppb = 0.000 ppb`.
 
-## Atomic-species: additive baseline + binding-energy residual
+## Atomic-species rows: replaced multiplicative chain (informational)
 
-The pre-existing `atom_mass_derived.py` chain uses a multiplicative
+The pre-existing `atom_mass_derived.py` chain used a
+multiplicative
 $\mathrm{tr}_M(\text{atom NF}) \times E_0$ formula that is
-structurally wrong (gives +55% for hydrogen, negative for helium)
-because atomic mass is **additive** in its constituents, not
-multiplicative. This PR adds
+structurally wrong (gives +55% for hydrogen, negative for
+helium) because atomic mass is **additive** in its constituents,
+not multiplicative. This PR adds
 [`atom_mass_additive_baseline.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/atom_mass_additive_baseline.py)
-with the correct formula
+with the correct constituent formula
+$Z M_p + N M_n + Z M_e$.  Hydrogen passes at 92.79 ppb (limited
+by AME2020's 3-decimal-place publication rounding to 938.783).
 
-$$
-  M_{\text{atom}}(A, Z) \;=\; Z M_p + N M_n + Z M_e - E_{\text{binding}}(A, Z),
-$$
+**Note:** AME atomic masses are experimental data, not a QOU
+prediction target.  QOU's structural prediction lives in the
+LP-dual / GB-NF / Markov-trace layers of the
+[1ppb dashboard](onepb-status-dashboard.md).  The atomic-mass
+row above is included as a sanity-check for the constituent-sum
+arithmetic, not as evidence about whether QOU is "right."
 
-producing the table in
-[`atom-mass-additive-baseline.md`](atom-mass-additive-baseline.md).
-Hydrogen passes at 92.79 ppb (limited by AME2020's 3-decimal-place
-publication rounding to 938.783; the constituent mass is actually
-938.78308716 MeV, beneath the publication floor). The
-`Δ_binding(A, Z)` column for $A \geq 4$ is the per-isotope binding
-energy that the Frobenius-packing law
-([`rem:frobenius-packing-density`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/particle-interactions/frobenius-packing-density.md))
-is expected to reproduce — average 7.224 MeV/nucleon, matching the
-empirical SEMF prediction of ~7.5 MeV/A to within 4%.
-
-The legacy `atom-mass-derived.witness.json` per-species table is
-still surfaced via `data.atom_species_informational` for
-transparency about the multiplicative chain's behaviour, but the
-reconciliation now uses the additive baseline as its derived row.
-
-Closing the heavier-isotope rows to 1 ppb requires implementing
-the QOU $\rho_F \cdot V_{\text{hyp}}$ binding-energy law inside
-`atom_mass_additive_baseline.py` (currently it only emits the
-constituent baseline, leaving the binding column as the open
-target).
+The `Δ_binding` column for $A \geq 4$ in
+[`atom-mass-additive-baseline.md`](atom-mass-additive-baseline.md)
+records empirical nuclear binding — average 7.224 MeV/nucleon,
+within 4% of empirical SEMF.  Whether the QOU LP active set +
+Frobenius-packing law also reproduces this column is the
+**interpretive** question tracked by
+[`rho-f-volume-binding-gap.md`](rho-f-volume-binding-gap.md);
+it is not a 1ppb gate.
 
 ## How to update
 

@@ -1,9 +1,27 @@
-# ρ_F · V_hyp binding-energy gap analysis
+# ρ_F · V_hyp inversion analysis (interpretive, NOT a 1ppb gate)
 
-**Status.** Tracking audit. **Witness:**
+**Status.** Interpretive audit (Layer 4 of
+[`onepb-status-dashboard.md`](onepb-status-dashboard.md)).
+**Witness:**
 [`rho-f-volume-binding-gap.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/rho-f-volume-binding-gap.witness.json).
 
 **Script.** [`rho_f_volume_binding_gap.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/rho_f_volume_binding_gap.py).
+
+## Position in the audit stack
+
+QOU's structural prediction is the LP dual + GB NF stack
+(Layer 1 of the 1ppb dashboard).  This audit lives in **Layer 4
+(empirical AME data, informational only)** — it inverts the
+`E_binding = ρ_F · V_hyp` relation against AME's Δ_binding column
+to ask: "what V_hyp / ρ_F would each isotope need under
+[`rem:frobenius-packing-density`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/particle-interactions/frobenius-packing-density.md)
+for the simplest atomic-link-primitive candidates?"
+
+This is an **interpretive** question — does the QOU LP-dual
+shadow-price machinery *also* reproduce empirical nuclear
+binding? — not a **structural-prediction** gate.  QOU does not
+curve-fit against AME.  The 1ppb gate lives in Layers 1–3 of
+the dashboard.
 
 ## Why this exists
 
@@ -56,26 +74,40 @@ non-mutually-exclusive interpretations:
    dichotomy, the bound state's "effective" $\rho_F$ could land
    anywhere in $[m_e,\,160 m_e]$.
 
-## What's needed to close the gap
+## What this audit does NOT do
+
+This is **not** a 1ppb gate.  Closing the gap is not a
+prerequisite for QOU's structural correctness — the LP-dual
+shadow prices `y_λ*` from
+[`prop:operator-selection-lp`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/operator-selection-lp.md)
+are the QOU prediction for which Wedderburn blocks the bound
+state saturates.  Whether those LP-active blocks *also* match
+AME's empirical nuclear binding is an interpretive question.
+
+## What this audit IS useful for
+
+If the interpretive question is positively answered, this audit
+becomes the validation table.  Three follow-on inputs would
+turn it into a closure check:
 
 1. **Atom→atomic-link map.** A canonical assignment $(A, Z)
-   \mapsto K_{(A, Z)}$ recording the JSJ-decomposed link complement
-   for each isotope.  This is paper-side content not yet wired
-   through `frobenius-packing-density.md`.
+   \mapsto K_{(A, Z)}$ recording the JSJ-decomposed link
+   complement for each isotope.  Paper-side content.
 
-2. **SnapPy V_hyp for each $K_{(A, Z)}$.** For the simplest cases
-   (Hopf link $\to$ deuteron, Borromean $\to$ ³He, …), the values
-   are tractable; heavier nuclei need explicit triangulations.
+2. **SnapPy V_hyp for each $K_{(A, Z)}$.** For the simplest
+   cases (Hopf link $\to$ deuteron, Borromean $\to$ ³He, …),
+   the values are tractable.
 
-3. **Refined $\rho_F$ formula.** Either confirm
-   $\rho_F \in \{m_e, 2 m_e\}$ exactly (then the entire deviation
-   sits in V_hyp), or replace by a parametric form — e.g.
-   $\rho_F(K) = \kappa_F(K) \cdot m_e$ with $\kappa_F$ derived
-   from the Wedderburn-block populated set.
+3. **$\rho_F$ link to LP active set.** If $\rho_F$ is determined
+   by the LP-active set's Type-B fold-orbit closure
+   (`prop:cpt-orbit-closure-density`), then $\rho_F \in
+   \{m_e, 2 m_e\}$ is fixed by structural data already in
+   Layer 1 of the dashboard, and the V_hyp side is the only
+   degree of freedom.
 
-The witness emitted by this script provides the per-isotope,
-per-link-primitive table that any of these resolutions can be
-checked against.
+Once those land, the witness this script emits becomes the
+per-isotope check that the interpretive question has been
+answered.  Until then, it is informational only.
 
 ## How to update
 

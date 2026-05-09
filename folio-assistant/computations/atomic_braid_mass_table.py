@@ -28,10 +28,13 @@ Atomic-braid mass-table compute (Strategy 3 — knot operator + Δ_n full-twist)
 
     base = |tr_p|^Z · |tr_n|^N      (multiplicative product)
 
-over the per-carrier nucleon traces.  Atomic mass is *additive* in
-its constituents (`Z·M_p + N·M_n + Z·M_e − E_binding`), so the
-multiplicative carrier composition is the same structural error
-fixed in `atom_mass_additive_baseline.py`.  Predictions diverge:
+over the per-carrier nucleon traces.  Multiplicative composition
+is the wrong combination law for representing atomic-scale
+quantities — physically these compose additively, and the
+structural QOU-side object is the LP active-set / GB-NF data,
+not a multiplicative trace product.
+
+Predictions against AME diverge accordingly:
 
     atom    err%
        p   0.000  (anchor)
@@ -42,9 +45,18 @@ fixed in `atom_mass_additive_baseline.py`.  Predictions diverge:
 Mean |err%| (atoms ≠ p) = 35.4%.  The a(Z, N) and Δ_n² coupling
 factors are downstream curve-fitting against a wrong base.
 
-For the correct additive constituent baseline, see
-`atom_mass_additive_baseline.py`.  Closing this script's gap
-requires:
+What to use instead:
+
+  · QOU structural side: LP-dual shadow prices y_λ* and GB normal
+    forms (`prop:operator-selection-lp`,
+    `def:hecke-normal-form`).  The active set
+    {λ : y_λ* > 0} is the actual prediction.
+  · Comparison-against-AME side: the additive constituent sum in
+    `atom_mass_additive_baseline.py` (Z·M_p + N·M_n + Z·M_e),
+    which is informational only — QOU does not curve-fit
+    against AME.
+
+If reworking T1 here is desired, the path is:
 
   1. Replace the multiplicative T1 base with `Z · |tr_p| + N · |tr_n|`.
   2. Re-derive the a(Z, N) Jones-polynomial coupling factor in the
@@ -286,27 +298,40 @@ def t1_atomic_with_coupling(atom_label: str, Z: int, N: int,
 
 def t1_atomic_additive(atom_label: str, Z: int, N: int,
                         tr_p: mp.mpf, tr_n: mp.mpf) -> tuple:
-    """Additive replacement for `t1_atomic_with_coupling` (TODO).
+    """Additive replacement for `t1_atomic_with_coupling` (scaffold).
 
-    Implements the structurally-correct carrier base
+    Implements the additive carrier sum
 
         base_additive  =  Z · |tr_M(p)|  +  N · |tr_M(n)|,
 
-    matching the additive-constituent atomic-mass law
+    which is the right combination law for compositions of
+    independent constituent traces.
 
-        M_atom = Z·M_p + N·M_n + Z·M_e − E_binding(A, Z).
+    Important framing: this is **NOT** a curve-fit against the
+    AME atomic-mass column.  QOU's primary structural prediction
+    is the LP-dual shadow-price stack (`prop:operator-selection-lp`
+    and friends — the active set {λ : y_λ* > 0} per Wedderburn
+    block).  The additive carrier sum here is the alternative
+    additive-trace computation that is *consistent* with both the
+    additive-constituent atomic-mass formula
+    (Z·M_p + N·M_n + Z·M_e in MeV) AND the structural sum-over-
+    populated-blocks Σ_λ y_λ* w_λ on the QOU side.  It replaces
+    the multiplicative product `|tr_p|^Z · |tr_n|^N` because that
+    product has no structural meaning — it does not match the
+    LP-dual sum, and it does not match the additive constituent
+    sum.
 
-    The Δ_I inter-nucleon coupling and Δ_n² saturated-shell scalar
-    require redefinition in the additive setting; they are
-    currently passed through unchanged with a TODO marker and
-    should be re-derived once the additive framework is wired
-    end-to-end.
+    The Δ_I inter-nucleon coupling and Δ_n² saturated-shell
+    scalar require re-derivation in the additive / LP-active-set
+    setting; they are currently passed through unchanged with a
+    TODO marker.
 
     Currently NOT used by the main loop in `main()`; provided as
     a scaffold for the recast follow-up workplan.
 
-    Ref: prop:cpt-orbit-closure-density (orbit-closure binding density)
-    Ref: rem:frobenius-packing-density  (binding-energy law)
+    Ref: prop:operator-selection-lp (LP-dual shadow prices)
+    Ref: prop:cpt-orbit-closure-density (Type-B fold orbit closure)
+    Ref: docs/audits/atom-mass-additive-baseline.md (informational)
     """
     A = Z + N
     base = mp.mpf(Z) * abs(tr_p) + mp.mpf(N) * abs(tr_n)
@@ -321,9 +346,11 @@ def t1_atomic_additive(atom_label: str, Z: int, N: int,
         "a_ZN": a_ZN,
         "a_ZN_source": a_source,
         "full_twist_delta_n2": delta_n2,
-        "note": "Additive scaffold; a_ZN/Δ_n² not yet re-derived "
-                "in additive setting.  See "
-                "docs/audits/atom-mass-additive-baseline.md.",
+        "note": "Additive scaffold.  QOU prediction proper is the "
+                "LP active-set / GB-NF data; this is the additive "
+                "carrier-sum consistent with both that and AME's "
+                "additive-constituent law.  a_ZN / Δ_n² not yet "
+                "re-derived in additive setting.",
     }
 
 
