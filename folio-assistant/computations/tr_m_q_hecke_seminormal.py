@@ -45,8 +45,10 @@ Audit-only: docs/audits/2026-05-08-q-hecke-character-gap-closure.md
 from __future__ import annotations
 
 import json
+import os
 import sys
 import time
+from multiprocessing import Pool
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -89,15 +91,45 @@ def _load_canonical_tr_m() -> dict[str, float]:
     return out
 
 
+def _chi_contribution_worker(args):
+    """Top-level worker for multiprocessing.Pool over partitions.
+
+    Computes the per-partition contribution
+    `y_λ · χ^λ_q(β_atomic)` for one shape.  Returns the row dict (or
+    None if the partition cannot support the generator count, e.g. a
+    column partition (1^k) at H_n with k < n_gens_required + 1).
+    """
+    shape, y_val, q_val, word, n_gens_required = args
+    sigmas, dim, _syts = build_seminormal_matrices(shape, q=q_val)
+    if dim == 0:
+        return None
+    try:
+        chi = chi_lambda_of_word(sigmas, dim, word, n_gens_required)
+    except IndexError:
+        return None
+    contrib = float(y_val) * float(chi)
+    return {
+        "partition": list(shape),
+        "dim": int(dim),
+        "y_at_q0": float(y_val),
+        "chi_q_at_q0": float(chi),
+        "contribution": float(contrib),
+    }
+
+
 def tr_m_via_partition_sum_q_hecke(
     Z: int, N: int, q_val: float = Q_0_FLOAT,
-    *, include_inter: bool = True,
+    *, include_inter: bool = True, workers: int | None = None,
 ) -> tuple[float, list[dict]]:
     """tr_M(β_atomic(Z, N)) = Σ_{λ ⊢ 3A} y_λ(q) · χ^λ_q(β_atomic).
 
     Composes:
       - y_λ via Wenzl (numerical-q-from-start for n ≥ 6)
       - χ^λ_q via Hoefsmit seminormal matrices at q_val (numerical)
+
+    `workers` (default None = sequential) enables `multiprocessing.Pool`
+    over the per-partition χ^λ_q loop.  Recommended for n ≥ 9 where
+    partition count is large (n=9: 30 partitions; n=12: 77).
 
     Returns (tr_M_value, per_partition_breakdown).
     """
@@ -115,32 +147,23 @@ def tr_m_via_partition_sum_q_hecke(
     # timeouts for full symbolic.
     y_vals = _y_lambda_cached(n)
 
-    # Per-partition contribution.
     n_gens_required = n - 1
+    work = [(shape, y, q_val, word, n_gens_required)
+            for shape, y in y_vals.items()]
+
     rows = []
-    total = 0.0
-    for shape, y in y_vals.items():
-        # Seminormal matrices at q_val.
-        sigmas, dim, _syts = build_seminormal_matrices(
-            shape, q=q_val
-        )
-        if dim == 0:
-            continue
-        # χ^λ_q(β_atomic) = trace of product over the braid word.
-        try:
-            chi = chi_lambda_of_word(sigmas, dim, word, n_gens_required)
-        except IndexError:
-            # partition too small to support all generators in word
-            continue
-        contrib = float(y) * float(chi)
-        total += contrib
-        rows.append({
-            "partition": list(shape),
-            "dim": int(dim),
-            "y_at_q0": float(y),
-            "chi_q_at_q0": float(chi),
-            "contribution": float(contrib),
-        })
+    if workers and workers > 1 and len(work) > 1:
+        with Pool(processes=workers) as pool:
+            for row in pool.imap_unordered(_chi_contribution_worker, work):
+                if row is not None:
+                    rows.append(row)
+    else:
+        for w in work:
+            row = _chi_contribution_worker(w)
+            if row is not None:
+                rows.append(row)
+
+    total = sum(r["contribution"] for r in rows)
     return total, rows
 
 
