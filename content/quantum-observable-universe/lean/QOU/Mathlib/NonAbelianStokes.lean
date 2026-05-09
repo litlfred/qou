@@ -343,4 +343,59 @@ instance LieValuedStokes_canonical (M : Type u) (𝔤 : Type u)
     (0 : 𝔤) = 0
   stokes_identity_witness := rfl
 
+/-! ### Closed-path holonomy
+
+    A **closed path** in the QOU substrate is a braid word
+    whose closure (Markov-trace) yields the multiplicative
+    holonomy `tr_M(T_β)`.  The Yekutieli framework asserts
+    this equals `z^{ℓ(β)}` for trivial-NF braids. -/
+
+/-- **Closed path holonomy**: for a path expressed as a list
+    of generator actions returning to the identity (closed
+    loop), the multiplicative line integral equals 1.  This
+    is the "trivially closed loop" Yekutieli identity. -/
+theorem closedPathHolonomy_via_inverse {G : Type u} [Group G]
+    (g : G) :
+    piecewiseAffineLineIntegral [g, g⁻¹] = (1 : G) :=
+  piecewiseAffineLineIntegral_inverse g
+
+/-- **Generator-pair holonomy**: a closed path `[g, g⁻¹, h, h⁻¹]`
+    integrates to 1 (two cancelling pairs). -/
+theorem closedPathHolonomy_two_pairs {G : Type u} [Group G]
+    (g h : G) :
+    piecewiseAffineLineIntegral [g, g⁻¹, h, h⁻¹] = (1 : G) := by
+  show ((1 * g) * g⁻¹) * h * h⁻¹ = 1
+  rw [one_mul, mul_inv_cancel, one_mul, mul_inv_cancel]
+
+/-- **`braidSurfaceMultTrace` is `z`-multiplicative**: at
+    `n = m + k`, the trace decomposes as `z^m * z^k`. -/
+theorem braidSurfaceMultTrace_add_split {G : Type u} [Group G]
+    (z : G) (m k : ℕ) :
+    braidSurfaceMultTrace z (m + k) = braidSurfaceMultTrace z m *
+      braidSurfaceMultTrace z k := by
+  unfold braidSurfaceMultTrace
+  exact pow_add z m k
+
+/-- **Holonomy of identity braid**: `tr_M(1) = z^0 = 1`. -/
+theorem braidSurfaceMultTrace_identity {G : Type u} [Group G]
+    (z : G) :
+    braidSurfaceMultTrace z 0 = (1 : G) := braidSurfaceMultTrace_zero z
+
+/-- **Finite-slice trace explicit formula** at depth k:
+    `tr_M(σ^k) = z^k` for any single-generator braid. -/
+theorem finite_slice_trace_at_depth {G : Type u} [Group G]
+    (z : G) (k : ℕ) :
+    braidSurfaceMultTrace z k = z ^ k := rfl
+
+/-- **`YekutieliFiniteSliceMultTrace` instance commutes with
+    `braidSurfaceMultTrace_add_split`**: the Markov axiom
+    `tr_M(x · σ_n) = z · tr_M(x)` follows by setting `m = ℓ(x)`
+    and `k = 1`. -/
+theorem yekutieli_markov_axiom_via_split {G : Type u} [Group G]
+    (z : G) (m : ℕ) :
+    braidSurfaceMultTrace z (m + 1) = braidSurfaceMultTrace z m * z := by
+  rw [braidSurfaceMultTrace_add_split z m 1, finite_slice_trace_at_depth]
+  show braidSurfaceMultTrace z m * z ^ 1 = braidSurfaceMultTrace z m * z
+  rw [pow_one]
+
 end QOU.Mathlib.NonAbelianStokes

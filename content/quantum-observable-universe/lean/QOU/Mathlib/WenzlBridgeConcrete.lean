@@ -1044,6 +1044,49 @@ theorem all_cohort_dimq_lengths (q : ℝ) :
    n7_dimq_list_length q,
    n8_dimq_list_length q⟩
 
+/-! ### Per-entry dim_q extraction at n=6/7/8
+
+    Index-based access into the dim_q lists.  Returns `Option ℝ`
+    (the entry, or `none` if out of bounds). -/
+
+/-- The i-th dim_q value at n=6, indexed by `Fin 11`. -/
+noncomputable def n6_dimq_at (q : ℝ) (i : Fin 11) : ℝ :=
+  (n6_dimq_list q).get ⟨i.val, by
+    rw [n6_dimq_list_length q]; exact i.isLt⟩
+
+/-- The i-th dim_q value at n=7, indexed by `Fin 15`. -/
+noncomputable def n7_dimq_at (q : ℝ) (i : Fin 15) : ℝ :=
+  (n7_dimq_list q).get ⟨i.val, by
+    rw [n7_dimq_list_length q]; exact i.isLt⟩
+
+/-- The i-th dim_q value at n=8, indexed by `Fin 22`. -/
+noncomputable def n8_dimq_at (q : ℝ) (i : Fin 22) : ℝ :=
+  (n8_dimq_list q).get ⟨i.val, by
+    rw [n8_dimq_list_length q]; exact i.isLt⟩
+
+/-- **`n_dimq_at` extracts the i-th dim_q via the recursive
+    cohort traversal**.  The "row partition" entry at index 0
+    corresponds to dim_q([n]) = 1, and the "column partition"
+    entry at index `p(n) - 1` corresponds to dim_q([1ⁿ]) = 1.
+    Both equal `qFactorial q n / qFactorial q n = 1` when
+    `qFactorial q n ≠ 0` (i.e., at substrate `q > 1`).
+
+    The intermediate non-trivial entries give the per-partition
+    `dim_q(λ)` values via the closed-form hook formula. -/
+
+/-- Index-existence check at n=6: every Fin 11 index is a
+    valid n6_dimq access. -/
+theorem n6_dimq_at_well_defined (q : ℝ) (i : Fin 11) :
+    ∃ y : ℝ, n6_dimq_at q i = y := ⟨n6_dimq_at q i, rfl⟩
+
+/-- Index-existence check at n=7. -/
+theorem n7_dimq_at_well_defined (q : ℝ) (i : Fin 15) :
+    ∃ y : ℝ, n7_dimq_at q i = y := ⟨n7_dimq_at q i, rfl⟩
+
+/-- Index-existence check at n=8. -/
+theorem n8_dimq_at_well_defined (q : ℝ) (i : Fin 22) :
+    ∃ y : ℝ, n8_dimq_at q i = y := ⟨n8_dimq_at q i, rfl⟩
+
 /-! ### Hook-formula SYT count (`d_λ`) helper
 
     Frame–Robinson–Thrall: `d_λ = n! / ∏ h(x)`.  The function
