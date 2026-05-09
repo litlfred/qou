@@ -109,18 +109,35 @@ private theorem quadratic_form_two_index
   have h_sym : C j i = C i j := by
     calc C j i = C.transpose i j := rfl
       _ = C i j := by rw [show C.transpose = C from hH]
-  -- Bilinearity in BOTH arguments of dotProduct:
-  rw [Matrix.mulVec_add, Matrix.dotProduct_add, star_add,
-      Matrix.add_dotProduct, Matrix.add_dotProduct]
-  -- 4 cross-terms; each reduces via Mathlib's `single_dotProduct` +
-  -- `mulVec_single` family.
-  --   T1: ⟨e_i α, C(e_i α)⟩ = α · α · C i i = α² · C_ii
-  --   T2: ⟨e_i α, C(e_j β)⟩ = α · β · C i j
-  --   T3: ⟨e_j β, C(e_i α)⟩ = β · α · C j i = αβ · C_ij     (h_sym)
-  --   T4: ⟨e_j β, C(e_j β)⟩ = β · β · C j j = β² · C_jj
+  -- Direct manual unfold using Finset.sum_eq_add_of_mem.
+  -- For v = Pi.single i α + Pi.single j β, support = {i, j} (i ≠ j).
+  -- vᵀ C v = Σ_k Σ_l v_k · C k l · v_l, where only (k, l) ∈ {i, j}²
+  -- contribute.  Manual case analysis on the 4 pairs:
+  --   (i, i) → α · C i i · α = α² · C_ii
+  --   (i, j) → α · C i j · β = αβ · C_ij
+  --   (j, i) → β · C j i · α = αβ · C_ji = αβ · C_ij  (h_sym)
+  --   (j, j) → β · C j j · β = β² · C_jj
   -- Sum = α² C_ii + 2αβ C_ij + β² C_jj.
-  simp only [star_trivial, Matrix.single_dotProduct,
-             Matrix.mulVec_single, smul_eq_mul, h_sym]
+  show (∑ k : Fin n, star ((Pi.single i α + Pi.single j β) k) *
+        (C.mulVec (Pi.single i α + Pi.single j β)) k) = _
+  -- Unfold mulVec at each k and dotProduct over Fin n.
+  -- For ℝ, star = id; the bilinearity reduces to a 4-cell sum.
+  simp only [Pi.add_apply, Pi.single_apply, Matrix.mulVec, Matrix.dotProduct,
+             star_add, star_trivial, star_ite, mul_add, add_mul,
+             Finset.sum_add_distrib, mul_ite, ite_mul, mul_zero, zero_mul,
+             mul_one, one_mul]
+  -- Collapse the if-then-else sums via Finset.sum_ite_eq'/sum_ite_eq.
+  rw [Finset.sum_ite_eq' Finset.univ i, Finset.sum_ite_eq' Finset.univ j]
+  -- After collapsing, only `if i ∈ Finset.univ then ... else 0` remains,
+  -- which becomes the inner expression since `i ∈ Finset.univ` is true.
+  simp only [Finset.mem_univ, if_true]
+  -- The inner expressions involve `Σ_l C k l * (Pi.single … l)`, which
+  -- also collapse via sum_ite_eq.  Apply once more.
+  rw [Finset.sum_ite_eq' Finset.univ i, Finset.sum_ite_eq' Finset.univ j]
+  simp only [Finset.mem_univ, if_true]
+  -- Now have explicit C i i, C i j, C j i, C j j terms.
+  -- Apply h_sym to identify C j i with C i j.
+  rw [h_sym]
   ring
 
 /-- **Cauchy-Schwarz inequality for PSD entries**: for any PSD
