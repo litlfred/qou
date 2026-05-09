@@ -1,7 +1,7 @@
 {
   "computation": "binding-canonical-markov",
-  "description": "Atom binding via the canonical Jones-Markov trace (Direction 1 of validity audit): matches the prop's explicit-values table tr_M(\u03c3_0)=z, tr_M(\u03c3_0\u03c3_1)=z\u00b2, tr_M(\u03c3_0\u03c3_1\u03c3_0)=hz\u00b2+z.  Replaces the Plancherel-weighted trace used in binding_3A and atom_markov_trace.  Binding = E_0\u00b7(|tr_M_free| \u2212 |tr_M_atom|) with E_0 = 0.78233341 MeV (\u03b2-decay Q).",
-  "timestamp": "2026-05-09T05:18:33.607119+00:00",
+  "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
+  "description": "Atom binding via the canonical Jones-Markov trace (Direction 1 of validity audit): matches the prop's explicit-values table tr_M(σ_0)=z, tr_M(σ_0σ_1)=z², tr_M(σ_0σ_1σ_0)=hz²+z.  Replaces the Plancherel-weighted trace used in binding_3A and atom_markov_trace.  Binding = E_0·(|tr_M_free| − |tr_M_atom|) with E_0 = 0.78233341 MeV (β-decay Q).",
   "parameters": {
     "q0": 1.1099785955541805,
     "E_0_MeV": 0.78233341
@@ -71,5 +71,6 @@
       "B_AME_MeV": 28.295674,
       "delta_m_over_m_pct": 0.7349202888887676
     }
-  ]
+  ],
+  "computedAt": "2026-05-09T05:18:33.607119+00:00"
 }
