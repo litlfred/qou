@@ -2,7 +2,7 @@
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "computation": "e0-calibration-audit",
   "description": "Audit of E_0 / Q_β(n) calibration constants across folio-assistant/computations. Reports value-precision drift, anchor-of-pinning violations vs CAL-3, and the PDG-derived uncertainty floor on every E_0-dependent quantity.",
-  "computedAt": "2026-05-09T03:34:57.132290+00:00",
+  "computedAt": "2026-05-09T03:53:56.667442+00:00",
   "reference_blocks": [
     "prop:three-calibration-inputs",
     "rem:calibration-inputs"
@@ -91,26 +91,18 @@
       },
       {
         "file": "folio-assistant/computations/canonical_tower.py",
-        "line": 51,
+        "line": 53,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
-        "context": "with E_0 = 0.78233341 MeV (β-decay Q, per prop:categorical-mass-markov).",
+        "context": "`calibrate_E0_tower` below — NOT the β-decay Q-value 0.78233341 MeV",
         "kind": "doc"
       },
       {
         "file": "folio-assistant/computations/canonical_tower.py",
-        "line": 576,
+        "line": 627,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
-        "context": "print(f\"q₀ = {Q0}, E_0 = 0.78233341 MeV (β-decay Q)\")",
-        "kind": "doc"
-      },
-      {
-        "file": "folio-assistant/computations/canonical_tower.py",
-        "line": 618,
-        "pattern": "literal_0_78233341",
-        "match": "0.78233341",
-        "context": "\"parameters\": {\"q0\": Q0, \"E_0_MeV\": 0.78233341},",
+        "context": "\"this module does NOT use the β-decay Q-value 0.78233341 \"",
         "kind": "doc"
       },
       {
@@ -158,7 +150,7 @@
         "line": 444,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
-        "context": "print(f\"    Q = m_n − m_p − m_e = 939.565 − 938.272 − 0.511 = 0.78233341 MeV\")",
+        "context": "print(f\"    Q = m_n − m_p − m_e ≈ 939.56542 − 938.27209 − 0.51100 = 0.78233341 MeV\")",
         "kind": "doc"
       },
       {
@@ -203,7 +195,7 @@
       },
       {
         "file": "folio-assistant/computations/mass_at_3A_proper.py",
-        "line": 555,
+        "line": 574,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
         "context": "tower_binding_full.  E_0 = 0.78233341 MeV (β-decay Q), no Catalan.",
@@ -211,7 +203,7 @@
       },
       {
         "file": "folio-assistant/computations/mass_at_3A_proper.py",
-        "line": 637,
+        "line": 656,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
         "context": "\"(default = β-decay Q = 0.78233341)\")",
@@ -219,7 +211,7 @@
       },
       {
         "file": "folio-assistant/computations/mass_at_3A_proper.py",
-        "line": 737,
+        "line": 756,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
         "context": "\"E_0 = 0.78233341 MeV (free-neutron β-decay Q). No Catalan.\"",
@@ -239,14 +231,6 @@
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
         "context": "# Use the canonical CODATA-derived Q_NEUTRON_MEV (0.78233341 MeV)",
-        "kind": "doc"
-      },
-      {
-        "file": "folio-assistant/computations/mass_formula_6term.py",
-        "line": 242,
-        "pattern": "literal_0_78233341",
-        "match": "0.78233341",
-        "context": "# from experimental_constants.py rather than the truncated 0.78233341",
         "kind": "doc"
       },
       {
@@ -335,7 +319,7 @@
       },
       {
         "file": "folio-assistant/computations/canonical_tower.py",
-        "line": 442,
+        "line": 446,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
         "context": "Matches hecke_core.E_0_CALIBRATION_MEV's SPIRIT but in the",
@@ -343,7 +327,7 @@
       },
       {
         "file": "folio-assistant/computations/canonical_tower.py",
-        "line": 455,
+        "line": 459,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
         "context": "# `hecke_core.E_0_CALIBRATION_MEV` = Q_β(n). This proton-tower-",
@@ -351,7 +335,7 @@
       },
       {
         "file": "folio-assistant/computations/canonical_tower.py",
-        "line": 524,
+        "line": 528,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
         "context": "# canonical E_0 is `hecke_core.E_0_CALIBRATION_MEV` = Q_β(n).",
@@ -415,7 +399,7 @@
       },
       {
         "file": "folio-assistant/computations/mass_at_3A_proper.py",
-        "line": 537,
+        "line": 556,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
         "context": "E_0: float = E_0_CALIBRATION_MEV,",
@@ -423,7 +407,7 @@
       },
       {
         "file": "folio-assistant/computations/mass_at_3A_proper.py",
-        "line": 592,
+        "line": 611,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
         "context": "E_0: float = E_0_CALIBRATION_MEV,",
@@ -431,7 +415,7 @@
       },
       {
         "file": "folio-assistant/computations/mass_at_3A_proper.py",
-        "line": 635,
+        "line": 654,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
         "context": "ap.add_argument(\"--E0\", type=float, default=E_0_CALIBRATION_MEV,",
@@ -439,7 +423,7 @@
       },
       {
         "file": "folio-assistant/computations/mass_at_3A_proper.py",
-        "line": 657,
+        "line": 676,
         "pattern": "E_0_CALIBRATION_MEV",
         "match": "E_0_CALIBRATION_MEV",
         "context": "f\"hecke_core.E_0_CALIBRATION_MEV)\")",
@@ -515,7 +499,7 @@
     "proton_mass_anchor": [
       {
         "file": "folio-assistant/computations/canonical_tower.py",
-        "line": 472,
+        "line": 476,
         "pattern": "proton_mass_anchor",
         "match": "938.272 / m_proton",
         "context": "Binding: B = E_0 · (𝔪_free − 𝔪_atom), E_0 = 938.272 / m_proton_tower.",
@@ -523,7 +507,7 @@
       },
       {
         "file": "folio-assistant/computations/canonical_tower.py",
-        "line": 538,
+        "line": 542,
         "pattern": "proton_mass_anchor",
         "match": "938.272 / m_proton",
         "context": "E_0 = 938.272 / m_proton_tower); E_0 auto-computed if not passed.",
