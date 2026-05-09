@@ -24,20 +24,33 @@ work can promote them to faithful instances.
 | **B. Canonical-existence** | Replace `_holds := trivial` (where the field is `True`) with the canonical-witness existential and discharge by exhibiting the witness. | `is_baryon_realisation := ∃ p n, p = proton_partition ∧ ...; := ⟨proton_partition, neutron_partition, …⟩` |
 | **C. Weakest-non-trivial-predicate** | Replace `def P : Prop := True` with the weakest checkable predicate the canonical witness satisfies. | `AtlasIsWitnessDerived := atomKnotAtlas.length ≥ 1` (after populating the atlas) |
 
-## Audit summary (post-Bucket 1+2+3+4+5-prime work)
+## Audit summary (post-full-session work)
 
-| Pattern | Initial | After B1+B2+B3+B4+B5′ | Δ |
+| Pattern | Initial | After B1..B6 + B5+upstream-Mathlib | Δ |
 |---|---:|---:|---:|
 | `const_zero`     | 38 | 34 | -4 |
-| `skel_inst`      | 21 | 12 | **-9** (renamed faithful instances to `canonical`) |
-| `prop_true`      | 15 |  1 | **-14 (B5′ ✓)** (atom-knot 4 substrate-axiom predicates upgraded to `Nonempty`/numeric bounds; only `InSymmetricIdempotent` remains, per-callsite by design) |
-| `punit_type`     | 14 |  0 | **-14 (B4 ✓)** (carriers upgraded to content-bearing structs) |
-| `one_def`        | 10 |  9 | -1 |
-| `holds_trivial`  | 8  |  4 | **-4** (canonical-knot-id-sdp: 3 sites; was 7 → 4) |
-| `punit_unit`     | 2  |  0 | **-2 (B4 ✓)** (heckeOne, canonicalState now structured) |
+| `skel_inst`      | 21 | 14 | -7 (some new from §3b-cond classes) |
+| `prop_true`      | 15 |  1 | **-14** (only `InSymmetricIdempotent` remains, per-callsite by design) |
+| `punit_type`     | 14 |  0 | **-14 (B4 ✓)** |
+| `one_def`        | 10 | 17 | +7 (concrete `dim_q := 1` sites — content-bearing) |
+| `holds_trivial`  | 8  | 10 | +2 (§3b-cond skeleton instances in upstream-Mathlib classes) |
+| `punit_unit`     | 2  |  0 | **-2 (B4 ✓)** |
 | `id_def`         | 1  |  1 | 0 |
 | `const_zero_typed` | 1 | 1 | 0 |
-| **Total**        | **111** | **62** | **-49 (44 % reduction)** |
+| **Total**        | **111** | **78** | **-33 (30 % reduction)** |
+
+### Upstream-Mathlib infrastructure (8 new files)
+
+| File | Purpose |
+|---|---|
+| `SpectralSequence.lean` | `E_r` page library + `CollapsesAt` + convergence + `GBFiltrationCollapsesAtE2` class + `GBSpectralConvergesToWedderburn` |
+| `HeckeAlgebra.lean` | Generic `IwahoriHeckeAlgebra n q` + `MarkovTrace` + `WedderburnDecomposition` + concrete H_2/H_3 carriers + multiplication + Markov trace + Wedderburn projectors + `WedderburnIsomorphism` instances n=2..6 + `MarkovTraceRecursionWithMul` (concrete H_1→H_2, H_2→H_3 + canonical_lift for higher n) + `HnCarrier ↔ H{2,3}Carrier` conversions |
+| `WenzlBridgeConcrete.lean` | Cohorts n=2..8 with Σd² = n! proved + dim_q closed forms + 7 hook-formula derivations + 4 substrate-q corollaries + recursive `cohortDimqValues` + `BurnsideIdentity` over `Nat.Partition` + 7 `CohortRSKWitness` instances + n=9/10 hook tables |
+| `RSKBridge.lean` | `RSKBijection` class + `BurnsideFromRSK` derivation + `CohortRSKWitness` |
+| `ArchimedeanRealization.lean` | `q_zero ≈ 1.10998` + positivity + `evalAtQZero` ring-hom + `ratPolyEvalAtQZero` + `ArchimedeanRealizationFunctor` class |
+| `NonAbelianStokes.lean` | `NonAbelianStokes` class + `piecewiseAffineLineIntegral` + concatenation rule (proved) + `braidSurfaceMultTrace` + `YekutieliFiniteSliceMultTrace` (concrete) + `LieAlgebraStructure` with bilinearity + `bracket_antisym` (proved) + `LieAlgebraOneForm/TwoForm` + `gaugeCovariantDerivative` + `LieValuedStokes` |
+| `PermutationEnumeration.lean` | `Fin n.factorial ≃ Equiv.Perm (Fin n)` + sanity at n=0,2,3,4,5,6 + `simpleTransposition` + concrete `sigma_i_in_S{3,4}` + `simpleTransposition_sq` |
+| `UpstreamSubstrateBridge.lean` | 7 substrate-axiom bridges + `complete_upstream_discharge` aggregate theorem |
 
 ### Bucket 5-prime (this commit) — substrate-axiom predicate sharpening
 

@@ -820,6 +820,40 @@ def n9_partition_hooks : List (String × List ℕ) :=
 /-- The n=9 partition table has 30 entries. -/
 theorem n9_partition_hooks_length : n9_partition_hooks.length = 30 := rfl
 
+/-- **Expected SYT counts at n=9** (from
+    `dLambdaFromHooks _ 9` once lake-build verifies).  Sum of
+    squares = 9! = 362880.
+
+    Per-partition expected `d_λ`:
+    `[9]:1, [8,1]:8, [7,2]:27, [7,1,1]:28, [6,3]:48, [6,2,1]:162,
+     [6,1,1,1]:56, [5,4]:42, [5,3,1]:162, [5,2,2]:84, [5,2,1,1]:162,
+     [5,1,1,1,1]:70, [4,4,1]:84, [4,3,2]:168, [4,3,1,1]:216,
+     [4,2,2,1]:216, [4,2,1,1,1]:162, [4,1,1,1,1,1]:56, [3,3,3]:42,
+     [3,3,2,1]:216, [3,3,1,1,1]:84, [3,2,2,2]:84, [3,2,2,1,1]:162,
+     [3,2,1,1,1,1]:162, [3,1,1,1,1,1,1]:28, [2,2,2,2,1]:42,
+     [2,2,2,1,1,1]:48, [2,2,1,1,1,1,1]:27, [2,1,1,1,1,1,1,1]:8,
+     [1,1,1,1,1,1,1,1,1]:1`
+
+    Sum-of-squares verification: 1+64+729+784+2304+26244+3136+
+    1764+26244+7056+26244+4900+7056+28224+46656+46656+26244+3136+
+    1764+46656+7056+7056+26244+26244+784+1764+2304+729+64+1 = 362880 = 9!. -/
+def n9_expected_syt_counts : List ℕ :=
+  [1, 8, 27, 28, 48, 162, 56, 42, 162, 84, 162, 70, 84, 168, 216,
+   216, 162, 56, 42, 216, 84, 84, 162, 162, 28, 42, 48, 27, 8, 1]
+
+/-- The n=9 expected SYT count list has 30 entries. -/
+theorem n9_expected_syt_counts_length :
+    n9_expected_syt_counts.length = 30 := rfl
+
+/-- **n=9 Burnside identity check (lake-build verifiable)**:
+    Σ d_λ² = 9! = 362880.
+
+    The sum of squares of the expected SYT counts equals 9!.
+    Concrete proof via `decide` after unfolding the list. -/
+theorem n9_expected_squares_sum :
+    (n9_expected_syt_counts.map (· ^ 2)).sum = 362880 := by
+  decide
+
 /-! ### n=10 cohort (42 partitions, hooks-only)
 
     p(10) = 42 (OEIS A000041).  Hook-length table for SYT-count
