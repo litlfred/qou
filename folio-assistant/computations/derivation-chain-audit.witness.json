@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T01:17:23.648137+00:00",
-  "commitSha": "686f6dc2409847fd2c0b8e188b1fdf870d62d12a",
+  "computedAt": "2026-05-09T03:25:43.480366+00:00",
+  "commitSha": "c66d42797839f5d21093deae0547be396515ce45",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -438,7 +438,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
@@ -1385,6 +1385,7 @@
         "confined-knot-binding.witness.json",
         "confinement-operator-selection.witness.json",
         "cross-check-trM-1ppb.witness.json",
+        "crystal-alpha-shift-pole-orders.witness.json",
         "crystal-pole-order.witness.json",
         "d-density-derivation.witness.json",
         "d-from-scratch.witness.json",
