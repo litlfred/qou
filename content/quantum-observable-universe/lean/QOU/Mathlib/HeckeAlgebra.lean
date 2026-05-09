@@ -1059,6 +1059,68 @@ theorem HnCarrier_to_H2Carrier_one {R : Type u} [CommRing R] :
   unfold HnCarrier_to_H2Carrier Hn.one H2.one
   simp
 
+/-! ### Concrete `MarkovTraceRecursionWithMul` instance at n = 1
+
+    Discharge the substantive class at the smallest non-trivial
+    Hecke level: H_1(q) = R (just the unit) ⊂ H_2(q) (R²).
+    The Markov axiom `tr_M(x · σ_1) = z · tr_M(x)` for x ∈ H_1
+    becomes `tr_M(a · σ_1) = z · a` (= `z * a`), which is the
+    H_2 trace formula evaluated on `a · (0, 1) = (0, a)`. -/
+
+/-- Carrier multiplication on `HnCarrier 2 ℝ` natively (via the
+    H_2 multiplication formula on the function representation). -/
+def mul_HnC2 (q : ℝ) (x y : HnCarrier 2 ℝ) : HnCarrier 2 ℝ :=
+  fun i =>
+    if i.val = 0 then
+      x ⟨0, by decide⟩ * y ⟨0, by decide⟩ +
+        x ⟨1, by decide⟩ * y ⟨1, by decide⟩
+    else
+      x ⟨0, by decide⟩ * y ⟨1, by decide⟩ +
+        x ⟨1, by decide⟩ * y ⟨0, by decide⟩ +
+        x ⟨1, by decide⟩ * y ⟨1, by decide⟩ * (q - q⁻¹)
+
+/-- The σ_1 generator in `HnCarrier 2 ℝ` form. -/
+def sigma_HnC2 : HnCarrier 2 ℝ :=
+  fun i => if i.val = 0 then 0 else 1
+
+/-- Embed `HnCarrier 1 ℝ` (= scalar) into `HnCarrier 2 ℝ` via
+    `a ↦ (a, 0) = a · 1`. -/
+def embed_HnC1_to_HnC2 (x : HnCarrier 1 ℝ) : HnCarrier 2 ℝ :=
+  fun i => if i.val = 0 then x ⟨0, by decide⟩ else 0
+
+/-- Markov trace at level 1: just evaluate at the unique index. -/
+def trace_HnC1 (x : HnCarrier 1 ℝ) : ℝ := x ⟨0, by decide⟩
+
+/-- Markov trace at level 2: `tr_M(a + b σ_1) = a + b z` where
+    `z = 1/(q + q⁻¹)`. -/
+def trace_HnC2 (z : ℝ) (x : HnCarrier 2 ℝ) : ℝ :=
+  x ⟨0, by decide⟩ + x ⟨1, by decide⟩ * z
+
+/-- **Concrete `MarkovTraceRecursionWithMul ℝ 1 q z` instance**.
+
+    All four "data" fields supplied concretely; the axiom_witness
+    proves the Markov axiom by direct algebraic computation. -/
+noncomputable def MarkovTraceRecursionWithMul.h1_to_h2 (q z : ℝ) :
+    MarkovTraceRecursionWithMul ℝ 1 q z where
+  trace_n := trace_HnC1
+  trace_succ := trace_HnC2 z
+  mul_succ := mul_HnC2 q
+  sigma_n := sigma_HnC2
+  embed := embed_HnC1_to_HnC2
+  axiom_witness := by
+    intro x
+    -- Goal: trace_HnC2 z (mul_HnC2 q (embed_HnC1_to_HnC2 x) sigma_HnC2)
+    --       = z * trace_HnC1 x
+    -- For x : HnCarrier 1 ℝ with x ⟨0, _⟩ = a:
+    --   embed x = (a, 0); sigma_HnC2 = (0, 1).
+    --   mul = (a*0 + 0*1, a*1 + 0*0 + 0*1*(q-q⁻¹)) = (0, a).
+    --   trace_HnC2 z (0, a) = 0 + a * z = a * z.
+    --   RHS: z * a.
+    --   Equal by mul_comm.
+    unfold trace_HnC2 trace_HnC1 mul_HnC2 sigma_HnC2 embed_HnC1_to_HnC2
+    simp
+    ring
+
 end QOU.Mathlib.HeckeAlgebra
 
 /-! ### Wedderburn isomorphism `H_n(q) ≅ ⊕_λ M_{d_λ}(R)`
