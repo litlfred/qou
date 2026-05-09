@@ -1,3 +1,5 @@
+import Mathlib.Algebra.Ring.Basic
+
 /-!
 # Algebraic stratification of the Φ_q tower
 
@@ -31,8 +33,6 @@ sum over GS-filtration strata) rather than being vacuous.
 - [prop:graded-markov-trace-from-gs-filtration]
 - [prop:gb-spectral-sequence]
 -/
-
-import Mathlib.Algebra.Ring.Basic
 
 namespace QOU.BraidKnot
 

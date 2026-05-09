@@ -1,3 +1,7 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Data.Int.Basic
+import Mathlib.Topology.Algebra.Module.Basic
+
 /-!
 # QOU.BraidKnot.ChiralityWritheRibbon — chirality factor from ribbon-twist framing
 
@@ -38,10 +42,6 @@ LaTeX label: `prop:chirality-writhe-ribbon-derivation`
 - [mathas1999] https://doi.org/10.1090/ulect/015
 - [manuscript] braids-and-knots / chirality-writhe-ribbon-derivation
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Data.Int.Basic
-import Mathlib.Topology.Algebra.Module.Basic
 
 namespace QOU.BraidKnot.ChiralityWritheRibbon
 
