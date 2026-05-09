@@ -76,6 +76,30 @@ ATOM_LABEL_TO_TR_M_KEY = {
 }
 
 
+def load_atomic_tr_m_status() -> dict[str, str]:
+    """Return atom → convention_status for any extension witness that
+    declares one (e.g. ⁴He's DEPRECATED_DISJOINT placeholder). The mass
+    formula is applied uniformly across all atoms — this is purely a
+    metadata channel so the result table can flag reduced-confidence
+    rows. Empty dict for atoms whose source witness is canonical."""
+    out: dict[str, str] = {}
+    for ext in sorted(HERE.glob("atomic-tr-m-*.witness.json")):
+        if ext.name == "atomic-tr-m-mpfr-50dps.witness.json":
+            continue
+        try:
+            d = json.loads(ext.read_text())
+        except json.JSONDecodeError:
+            continue
+        status = str(d.get("convention_status", ""))
+        if not status:
+            continue
+        for r in d.get("results", []):
+            atom = r.get("atom")
+            if atom is not None:
+                out[atom] = status
+    return out
+
+
 def load_atomic_tr_m() -> dict[str, mp.mpf]:
     """Load |tr_M(K)| values from the legacy 50-dps witness *and*
     any per-atom extension witnesses (e.g. `atomic-tr-m-helium4`).
@@ -98,23 +122,23 @@ def load_atomic_tr_m() -> dict[str, mp.mpf]:
 
     # Per-atom extension witnesses: any file matching
     # `atomic-tr-m-*.witness.json` whose name is NOT the legacy one.
-    # Witnesses carrying a `convention_status` starting with "DEPRECATED"
-    # are SKIPPED — their |tr_M| values use a non-canonical convention
-    # (e.g. disjoint product) that does not reproduce the canonical
-    # Schur-Weyl identity, so they would silently corrupt mass
-    # predictions if loaded as ground truth (per Copilot review on
-    # PR #564).  Such witnesses keep the extension file as a record
-    # but flag it explicitly in the convention_status field.
+    #
+    # The mass formula M(K) = ρ_K · m_e · |tr_M(K)| is applied
+    # uniformly across all atoms — including atoms whose extension
+    # witness carries `convention_status: DEPRECATED_*` (e.g. ⁴He's
+    # disjoint-product placeholder pending the Rust-kernel canonical
+    # H_12 compute). Single formula, no special case.
+    #
+    # The convention metadata is exposed separately via
+    # `load_atomic_tr_m_status()` so the result table can flag
+    # reduced-confidence rows; downstream consumers must check the
+    # status if they care about provenance.
     for ext in sorted(HERE.glob("atomic-tr-m-*.witness.json")):
         if ext.name == "atomic-tr-m-mpfr-50dps.witness.json":
             continue
         try:
             d = json.loads(ext.read_text())
         except json.JSONDecodeError:
-            continue
-        status = str(d.get("convention_status", ""))
-        if status.startswith("DEPRECATED"):
-            print(f"  skipping {ext.name}: convention_status={status[:60]}...")
             continue
         for r in d.get("results", []):
             atom = r.get("atom")
@@ -144,11 +168,16 @@ def main() -> int:
     print("=" * 96)
 
     tr_M_table = load_atomic_tr_m()
+    tr_M_status = load_atomic_tr_m_status()
     if not tr_M_table:
         print("ERROR: atomic-tr-m-mpfr-50dps.witness.json missing or empty.")
         return 1
     print(f"\n  Loaded |tr_M| for {len(tr_M_table)} atoms: "
           f"{', '.join(sorted(tr_M_table))}")
+    if tr_M_status:
+        print(f"  convention flags (informational; formula applied uniformly):")
+        for atom, st in sorted(tr_M_status.items()):
+            print(f"    {atom}: {st[:80]}{'...' if len(st) > 80 else ''}")
 
     print(f"\n  Calibration anchors:")
     print(f"    m_e = {mp.nstr(M_E_MEV, 8)} MeV (CODATA)")
@@ -179,15 +208,17 @@ def main() -> int:
         M_pred, rho_K = predict_mass(Z, N, abs_tr)
         err_pct = (M_pred - M_codata) / M_codata * 100
         binding = abs(M_pred - M_codata)
+        flag = tr_M_status.get(tr_key, "")
+        flag_marker = " ⚠" if flag.startswith("DEPRECATED") else ""
 
         print(f"  {atom:<5}{Z:>2}{N:>2}  "
               f"{mp.nstr(abs_tr, 9):>14}  "
               f"{mp.nstr(rho_K, 9):>14}  "
               f"{mp.nstr(M_pred, 10):>14}  "
               f"{mp.nstr(M_codata, 10):>16}  "
-              f"{mp.nstr(err_pct, 4):>9}%")
+              f"{mp.nstr(err_pct, 4):>9}%{flag_marker}")
 
-        rows.append({
+        row = {
             "atom": atom, "Z": Z, "N": N, "A": Z + N,
             "tr_M_at_q0": str(abs_tr),
             "rho_K_leading_order": str(rho_K),
@@ -195,7 +226,10 @@ def main() -> int:
             "M_codata_MeV": str(M_codata),
             "err_pct": str(err_pct),
             "binding_residual_MeV": str(binding),
-        })
+        }
+        if flag:
+            row["tr_M_convention_status"] = flag
+        rows.append(row)
 
     # ── Compare to legacy E_0-anchored predictions ─────────────
     legacy_path = HERE / "atomic-braid-mass-table.witness.json"
