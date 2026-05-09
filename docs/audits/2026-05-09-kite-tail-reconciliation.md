@@ -95,10 +95,69 @@ Three reconciliation paths to test:
   finding may directly explain the proton/neutron prefactor
   mismatch. Worth cross-checking.
 
-## Status
+## Update — A=1 prefactor RESOLVED
 
-- **Round-3 kite-power FALSIFICATION**: ✓ RETRACTED (sympy artefact).
+**Finding (2026-05-09 follow-up).** The A=1 prefactor mismatch
+(observed $2^2 = 4$ vs predicted $2^{2A+1} = 8$) is explained by a
+**convention issue in PR #545's $2^{2A+1}$ formula**, NOT the braid
+encoding.
+
+PR #545's commit message [`bcafe0d1d`](https://github.com/litlfred/qou/commit/bcafe0d1d) (also referenced in [`d_u_closed_form_proof.py`](../../folio-assistant/computations/d_u_closed_form_proof.py)) derives the $2^{2A+1}$
+prefactor by counting averaged crossings:
+
+> "each averaged crossing = $(\sigma + \sigma^{-1})/2$, contributing
+> a factor of $1/2$: each nucleon has 2 averaged ud-pair couplings →
+> $2A$ factors; canonical pppnnn ordering has exactly one mixed
+> $(p,n)$ inter-nucleon interface → $+1$ more, total $2A+1$."
+
+The `+1` from the p-n interface only applies when **both proton and
+neutron nucleons are present**. At A=1 (just p OR just n), there is
+no p-n interface, so the formula should be $2A + 0 = 2A$, giving
+$2^2 = 4$ — exactly the observed value.
+
+**Corrected formula.**
+
+$$
+\text{prefactor} = 2^{2A + \delta_{Z\,N}}, \qquad
+\delta_{Z\,N} = \begin{cases} 1 & Z > 0 \text{ and } N > 0 \\ 0 & \text{otherwise.} \end{cases}
+$$
+
+Verification across all atoms (PR #545 Dprime table values from the
+`d_u_closed_form_proof.py` history):
+
+| Atom | Z, N, A | Avg crossings | Predicted $2^k$ | Observed | Match? |
+|---|---|---|---|---|---|
+| proton | 1, 0, 1 | $2A = 2$ | $2^2 = 4$ | $4$ | ✓ |
+| neutron | 0, 1, 1 | $2A = 2$ | $2^2 = 4$ | $4$ | ✓ |
+| deuteron | 1, 1, 2 | $2A + 1 = 5$ | $2^5 = 32$ | $32$ | ✓ |
+| tritium | 1, 2, 3 | $2A + 1 = 7$ | $2^7 = 128$ | $128$ | ✓ |
+| ³He | 2, 1, 3 | $2A + 1 = 7$ | $2^7 = 128$ | $128$ | ✓ |
+| ⁴He | 2, 2, 4 | $2A + 1 = 9$ | $2^9 = 512$ | $512$ | ✓ |
+
+**The corrected formula matches all atoms exactly.** PR #545's
+$2^{2A+1}$ formula was off by one factor of 2 at A=1; the corrected
+$2^{2A + \delta_{Z\,N}}$ closes the prefactor mismatch entirely.
+
+## Update — Neutron shift discrepancy (still open)
+
+The shift formula `18Z + 21N + 1` predicts:
+- proton (Z=1, N=0): $18·1 + 21·0 + 1 = 19$ ✓ matches observed
+- neutron (Z=0, N=1): $18·0 + 21·1 + 1 = 22$ ✗ observed shift is $19$
+
+Even with the `+1` interface term removed for A=1 (yielding
+predicted $21$ for neutron), the prediction still doesn't match
+the observed $19$. The 3-unit gap is not yet explained by
+crossing-count arithmetic.
+
+**Hypothesis.** `markov_peel`'s symbolic reduction may absorb a
+$u^3$ factor from the numerator into the denominator-cancellation
+phase, lowering the apparent shift by 3 for the neutron word.
+Verification deferred — would need to inspect the `markov_peel`
+intermediate state.
+
+## Status (revised)
+
+- **Round-3 kite-power FALSIFICATION**: ✓ RETRACTED (sympy artefact, explained).
 - **PR #545 D(u) at A=2**: ✓ verified exactly in un-reduced form.
-- **PR #545 D(u) at A=1**: ⚠ partial — kite ✓, shift partial, prefactor ✗.
-- **Reconciliation roadmap**: three concrete paths above; each is
-  a 1-2 hour follow-up that needs cross-PR coordination.
+- **A=1 prefactor mismatch**: ✓ RESOLVED — corrected formula $2^{2A+\delta_{ZN}}$.
+- **Neutron shift (19 vs 22)**: ⚠ open — likely a `markov_peel` numerator-absorption artefact, deferred.
