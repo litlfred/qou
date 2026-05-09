@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.4",
-  "computedAt": "2026-05-07T13:02:53.142628+00:00",
-  "commitSha": "191bd9f54ee672873899ef66801bb13f0ffa6fa7",
+  "computedAt": "2026-05-09T00:44:53.555755+00:00",
+  "commitSha": "456a232accd89b7cc0edcbd93fe151925618cb7f",
   "assertions": [
     {
       "name": "rho_3 dimension",
@@ -42,11 +42,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 704,
+  "durationMs": 203,
   "computation": "staircase-ew-disjoint-spectrum",
   "scriptFile": "staircase_ew_disjoint_spectrum.py",
-  "scriptHash": "422c50396e33",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "d7e33c67dfaa",
+  "scriptCommitSha": "fe9e6b064d9c0c191ccf4547521f79cb4caac8a8",
   "description": "Restored staircase EW probe for the disjoint braid β_EW = σ₁⁴σ₃⁶σ₅⁸ on ρ₃, ρ₄, and the diagonal sector of ρ₅.",
   "auditOnly": "docs/audits/2026-05-07-staircase-ew-disjoint-spectrum.md",
   "parameters": {
@@ -72,11 +72,11 @@
         "0.811653735642": 2
       },
       "bestResidualScan": {
-        "relativeError": 0.0206519133438161,
-        "ratio": 1.0000000000000036,
+        "relativeError": 0.02065191334381632,
+        "ratio": 1.0000000000000033,
         "target": 1.0210874086805357,
-        "numeratorIndex": 0,
-        "denominatorIndex": 1
+        "numeratorIndex": 6,
+        "denominatorIndex": 7
       }
     },
     "rho4": {
@@ -88,18 +88,18 @@
       ],
       "dimension": 768,
       "bucketCounts": {
-        "2.838873499951": 96,
         "0.152875231087": 96,
         "0.811653735642": 96,
         "0.534702698052": 96,
+        "2.838873499951": 96,
         "6.5412820173": 96,
-        "1.870198156177": 96,
         "1.232052482588": 96,
+        "1.870198156177": 96,
         "0.352252398713": 96
       },
       "bestResidualScan": {
-        "relativeError": 0.014795277038868283,
-        "ratio": 1.0000000000000264,
+        "relativeError": 0.014795277038867845,
+        "ratio": 1.0000000000000269,
         "target": 1.015017464587894,
         "numeratorIndex": 672,
         "denominatorIndex": 767

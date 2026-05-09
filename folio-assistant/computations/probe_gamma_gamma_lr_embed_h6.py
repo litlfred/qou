@@ -44,15 +44,20 @@ from light_isotope_sweep import partitions_of, dim_q
 from light_isotope_sweep import build_seminormal_matrices, H_VAL
 from q_parameter import Q as Q_0
 from witness_base import WitnessBuilder
+# F6 (PR #581 follow-up): wire numerical-q Hoefsmit through BlockCache.
+from syt_prefix_cache import BlockCache, build_seminormal_matrices_cached
 
 # Crossing-type → d for ρ_λ matrix construction (per
 # light_isotope_sweep.chi_lambda_numeric)
 D_FOR = {"sigma": 0.0, "sigma_inv": -H_VAL, "averaged": -H_VAL / 2}
+_BLOCK_CACHE = BlockCache(float(Q_0), H_VAL)
 
 
 def chi_lambda_with_psd_check(shape, crossings, scipy_sparse=None):
     """Build ρ_λ(β) and report (chi, eigvals_sym, psd_or_close)."""
-    sigmas, dim, _ = build_seminormal_matrices(shape)
+    sigmas, dim, _ = build_seminormal_matrices_cached(
+        shape, cache=_BLOCK_CACHE,
+    )
     if dim == 0:
         return None
     is_sparse = False
