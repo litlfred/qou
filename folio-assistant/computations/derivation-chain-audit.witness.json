@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T13:19:41.356777+00:00",
-  "commitSha": "59b5564ef0627fd3098f071f53b25d6df5638b1d",
+  "computedAt": "2026-05-09T14:00:41.578787+00:00",
+  "commitSha": "70924c01a6eb49205bf79878339007c0b3a18a16",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -464,7 +464,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
@@ -1423,6 +1423,7 @@
         "beta-ew-delta-I-eigenvalues.witness.json",
         "beta-ew-delta-I-numerical-spectrum.witness.json",
         "binding-canonical.witness.json",
+        "binding-k-solver.witness.json",
         "binding-ladder-catalog.witness.json",
         "borromean-axial-coupling.witness.json",
         "branch-phase-fit-to-mass-tower.witness.json",
