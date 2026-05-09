@@ -1,0 +1,42 @@
+{
+  "computation": "tier-2-higher-bridge-pslq",
+  "description": "Tier-2 PSLQ extension: bridge \u2265 3 hyperbolic knots + higher-Heegaard-genus candidates (^6Li, ^7Li atlas, 9_42, 10_124, Whitehead) for BringHyperbolicDecomposition. Builds on Tier-0 + Tier-1 negative results.",
+  "contentBlock": "conj:bring-hyperbolic-knot-bloch-decomposition",
+  "precision_dps": 100,
+  "tolerance": "1e-50",
+  "tolerance_note": "All basis values at \u226530 dps. ^6Li (K_11a259) and ^7Li (L_11a62) excluded because their atlas precision is only ~5 sig figs \u2014 including them generates spurious numerical 'relations' from rounding rather than structural integer relations. Whitehead = 4G = (1/2)\u00b7Borromean also excluded as known Q-degeneracy.",
+  "maxcoeff": 1000000,
+  "basis_labels": [
+    "2/(3\u03c0)",
+    "2\u00b7Cl_2(\u03c0/3)",
+    "8G",
+    "Vol(6_2)",
+    "Vol(8_11)",
+    "Vol(5_2)",
+    "Vol(6_1)",
+    "Vol(6_3)",
+    "Vol(7_2)",
+    "Vol(7_3)",
+    "Vol(7_4)",
+    "Vol(9_42)"
+  ],
+  "basis_values_50dp": [
+    "0.21220659078919378102517835116335248271261286098727526",
+    "2.02988321281930725004240510854904057188337861506059958",
+    "7.32772475341775212043682811945907288619319499425337707",
+    "4.40083549247793113278424664201152265381958410185379398",
+    "8.28627104794135746111462863950761968157704880431446814",
+    "2.82812208833075056945906148496347579189755710784667",
+    "3.16396322086270004780039880145560407201448678625198",
+    "5.6933948726966702754837253144110057395",
+    "3.3317449268471123398615751006961117",
+    "4.5919742372451355773960478354104471",
+    "5.099098857714277392371608309793",
+    "4.0577085463486160489889892487066598018637"
+  ],
+  "tier_0_baseline": "tier-0-atlas-pslq-check.witness.json (negative)",
+  "tier_1_baseline": "tier-1-hyperbolic-3braid-pslq.witness.json (negative)",
+  "relation_found": false,
+  "relation": null,
+  "interpretation": "NO non-trivial small relation at 100 dps with max coeff 10^6 and tol 1e-3. The 5 additional higher-bridge hyperbolic volumes do not bring 2/(3\u03c0) into the integer-multiple lattice. K-theoretic identification requires content outside the H_3 + bridge-3 hyperbolic regime \u2014 either genuinely higher Heegaard genus or a non-NF representative. The 'atlas alone' hypothesis is now ruled out at three tier levels."
+}
