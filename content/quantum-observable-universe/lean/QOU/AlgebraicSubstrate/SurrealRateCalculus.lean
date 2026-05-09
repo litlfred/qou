@@ -1,4 +1,6 @@
 import Mathlib.Algebra.Field.Basic
+import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.Ring
 
 /-!
 # QOU.AlgebraicSubstrate.SurrealRateCalculus — rate table
