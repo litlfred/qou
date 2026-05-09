@@ -290,12 +290,61 @@ def load_chi_via_symbolic(witness_file: str, n: int) -> list[dict]:
     return out
 
 
+# ── Direct numerical path via wedderburn_jones_markov ──────────
+# (Preferred: gives ALL partitions for any (Z, N) in seconds via
+# numerical-q-from-start, no symbolic intermediate.  Per PR #572
+# audit, agrees with the recursive reducer to 1e-13 (A=1) — 1e-10
+# (A=2) at float64.  For higher precision, the rho_k_h3a_refinement
+# 50-dps mpmath path agrees at 1.4e-16.)
+def load_chi_via_numerical_path(Z: int, N: int) -> tuple[list[dict], mp.mpf]:
+    """Returns (per_partition_rows, abs_tr_M_total) computed at q_0
+    via global_wedderburn_sum_q_hecke_seminormal.  All partitions of
+    n = 3A included (no partial cache concerns)."""
+    from wedderburn_jones_markov import global_wedderburn_sum_q_hecke_seminormal
+    q0_float = float(Q_MP)
+    tr_M_total, terms = global_wedderburn_sum_q_hecke_seminormal(
+        Z=Z, N=N, q_val=q0_float
+    )
+    rows = []
+    for term in terms:
+        rows.append({
+            "partition": term["partition"],
+            "y_at_q0": str(term["y_at_q0"]),
+            "chi_q_at_q0": str(term["chi_q_at_q0"]),
+            "contribution": str(term["y_at_q0"] * term["chi_q_at_q0"]),
+        })
+    return rows, mp.mpf(abs(tr_M_total))
+
+
 # ── Per-atom data assembly ─────────────────────────────────────
 def assemble_per_atom(atom_label: str, info: dict) -> dict:
-    chi_data = load_chi_per_lambda(info["chi_witness"])
-    if chi_data is None:
-        chi_data = load_chi_via_symbolic(info["chi_witness"], info["n"])
     Z = info["Z"]; N = info["N"]; n = info["n"]
+    # Tier 1: per-atom witness with full numeric per_partition (e.g.
+    # 4He's chi-helium-4-h12.witness.json).  Instant.
+    chi_data = load_chi_per_lambda(info["chi_witness"])
+    if chi_data is not None:
+        # `chi_data` from load_chi_per_lambda has per-partition numeric
+        # y/chi already; check it covers ALL partitions of n.
+        from schur_weyl_symbolic import partitions_of
+        all_parts = {tuple(p) for p in partitions_of(n)}
+        cached_parts = {tuple(e["partition"]) for e in chi_data}
+        if all_parts.issubset(cached_parts):
+            print(f"      [tier 1: per-atom numeric witness covers all "
+                  f"{len(all_parts)} partitions]")
+        else:
+            chi_data = None  # fall through
+
+    if chi_data is None:
+        # Tier 2: numerical-q-from-start path (PR #572).  Fast for
+        # n ≤ 9; slow for n = 12 (~20 min).
+        try:
+            print(f"      [tier 2: wedderburn_jones_markov numerical path]")
+            chi_data, _ = load_chi_via_numerical_path(Z, N)
+        except Exception as exc:
+            # Tier 3: symbolic-witness path (legacy / 50-dps).
+            print(f"      [tier 2 failed: {type(exc).__name__}: {exc}; "
+                  f"tier 3 = symbolic witness path]")
+            chi_data = load_chi_via_symbolic(info["chi_witness"], info["n"])
     M_codata = mp.mpf(info["M_MeV"])
     constituent = Z * M_P_MEV + N * M_N_MEV  # = ρ_K^LO · m_e · |tr_M|
     delta_M = M_codata - constituent           # binding-energy + np-mass shift
