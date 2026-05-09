@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T04:00:27.452419+00:00",
-  "commitSha": "38f095d92790a4b372a7e3f9e44657c35f181ca6",
+  "computedAt": "2026-05-09T03:58:49.763524+00:00",
+  "commitSha": "ba9a03f9f210ccc55f6287a2c9d554654a9a3b97",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -1489,6 +1489,7 @@
         "path-b-evacuation.witness.json",
         "path-b-open-questions.witness.json",
         "per-atom-grading-bound.witness.json",
+        "per-atom-rho-deviation.witness.json",
         "per-nucleon-shift-derivation.witness.json",
         "photon-operator-table.witness.json",
         "picard-lefschetz-thimble.witness.json",

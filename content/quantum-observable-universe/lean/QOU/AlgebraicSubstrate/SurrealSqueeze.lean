@@ -15,16 +15,16 @@ standard real and `ε⁴` is a positive infinitesimal.
 
 Two formalisations are provided:
 
-1. **`surreal_squeeze`** — the surreal-field version with the
-   intended hypotheses (`ε` infinitesimal in some `SurrealField K`,
-   `δ` a positive standard real).  Proved using the
-   `IsInfinitesimal` infrastructure from `QOU.AppendixSurreals.Basic`.
+1. **surreal_squeeze** — the surreal-field version with the
+   intended hypotheses (ε infinitesimal in some SurrealField K,
+   δ a positive standard real).  Proved using the
+   IsInfinitesimal infrastructure from QOU.AppendixSurreals.Basic.
 
-2. **`surreal_squeeze_of_pow_lt`** — the abstract pure-algebra form
+2. **surreal_squeeze_of_pow_lt** — the abstract pure-algebra form
    over any linearly ordered field, taking the substantive size
-   separation `ε^4 < δ^2` directly as a hypothesis.  Used internally
-   by `surreal_squeeze` and available to callers who already control
-   the `ε^4 < δ^2` bound by other means.
+   separation ε^4 < δ^2 directly as a hypothesis.  Used internally
+   by surreal_squeeze and available to callers who already control
+   the ε^4 < δ^2 bound by other means.
 
 LaTeX label: `lem:surreal-squeeze`.
 
