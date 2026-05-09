@@ -150,6 +150,7 @@ def _write_chi_cache(
         "partial": partial,
         "compute_time_sec_so_far": elapsed,
         "workers": workers_eff,
+        "auditOnly": "docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md",
         "chi_lambda_symbolic": [
             {"partition": list(lam), "chi_q_symbolic": s}
             for lam, s in sorted(out_str.items(),

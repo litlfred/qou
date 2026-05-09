@@ -131,6 +131,7 @@ def load_or_build_chi_deuteron(q_sym: sp.Symbol) -> tuple[dict[tuple, sp.Expr], 
         ),
         "n_partitions": len(cache_entries),
         "compute_time_sec": elapsed,
+        "auditOnly": "docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md",
         "chi_lambda_symbolic": cache_entries,
     }
     CHI_CACHE.write_text(json.dumps(cache_payload, indent=2))
