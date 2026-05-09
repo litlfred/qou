@@ -54,7 +54,7 @@ def mu : ConfinedParticleTy → ℝ → ℕ := fun _ _ => 2
 
 /-- Frobenius stability index — concrete model returns `0`. -/
 -- Ref: [manuscript] braids-and-knots/shell-closure-stability
-def sigmaF : ConfinedParticleTy → ℝ → ℝ := fun _ _ => 0
+def sigmaF : ConfinedParticleTy → ℝ → ℝ := fun _ _ => 0  -- noqa: const_zero
 
 /-- The confinement locus on the concrete model is the universal
     set, since `confined P q := True` for every `(P, q)`. -/

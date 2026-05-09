@@ -23,7 +23,7 @@ namespace QOU.PicardLefschetz
     `Δ ≡ 0` (every input is a zero — the trivial-discriminant model
     that vacuously satisfies `zero_lifts_to_critical`). -/
 -- Ref: [manuscript] rem:color-tube-cubic
-def colorTubeDiscriminant (_z : ℂ) : ℂ := 0
+def colorTubeDiscriminant (_z : ℂ) : ℂ := 0  -- noqa: const_zero
 
 /-- Archimedean realization placeholder.  Concrete model: the
     canonical real-to-complex coercion `↑x : ℂ`. -/

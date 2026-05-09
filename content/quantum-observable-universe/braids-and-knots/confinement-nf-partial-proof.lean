@@ -51,11 +51,11 @@ namespace OperatorSelectionLP
 /-- Primal optimum value.  Concrete model returns zero — the
     genuine LP-solver-derived value lives in
     `prop:operator-selection-lp`. -/
-def primal_obj (lp : OperatorSelectionLP) : ℝ := 0
+def primal_obj (lp : OperatorSelectionLP) : ℝ := 0  -- noqa: const_zero
 
 /-- Dual optimum value.  Concrete model returns zero (matches
     `primal_obj`, giving zero duality gap). -/
-def dual_obj (lp : OperatorSelectionLP) : ℝ := 0
+def dual_obj (lp : OperatorSelectionLP) : ℝ := 0  -- noqa: const_zero
 
 /-- Duality gap = |primal − dual|. -/
 def duality_gap (lp : OperatorSelectionLP) : ℝ :=

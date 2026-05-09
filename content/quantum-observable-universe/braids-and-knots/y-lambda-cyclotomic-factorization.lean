@@ -45,12 +45,12 @@ noncomputable def cyclotomic_eval (d : ℕ) (t : ℝ) : ℝ :=
     **Concrete model**: returns the constant `1`, which is non-zero
     everywhere; the structural cyclotomic-product form is the
     upgrade target. -/
-def cyclotomicDenominator (_n : ℕ) (_t : ℝ) : ℝ := 1
+def cyclotomicDenominator (_n : ℕ) (_t : ℝ) : ℝ := 1  -- noqa: one_def
 
 /-- The polynomial numerator P_λ(t) ∈ ℤ[t] for partition λ ⊢ n in
     the cyclotomic factorisation y_λ(t) = P_λ(t) / D_n(t).
     Concrete model: returns zero. -/
-def cyclotomicNumerator {_n : ℕ} (_lam : List ℕ) (_t : ℝ) : ℝ := 0
+def cyclotomicNumerator {_n : ℕ} (_lam : List ℕ) (_t : ℝ) : ℝ := 0  -- noqa: const_zero
 
 /-- **Main theorem (cyclotomic factorisation)**: in the symmetric
     Hecke convention with Markov parameter z = 1/(t + t⁻¹) and

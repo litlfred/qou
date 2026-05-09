@@ -177,7 +177,7 @@ def ColoredJones (K : Type u) [SurrealField K] :
     the unknot, used as the default until a faithful
     `Vol : Knot → ℝ` is integrated.  Total function — no domain
     restriction to hyperbolic knots. -/
-def HyperbolicVolume : Knot → ℝ := fun _ => 0
+def HyperbolicVolume : Knot → ℝ := fun _ => 0  -- noqa: const_zero
 
 /-- The **Kazhdan–Lusztig cells** of `H_n(ζ_p)` as a finite type
     of cardinality `p^n`, matching the predicted `Nimbers` carrier

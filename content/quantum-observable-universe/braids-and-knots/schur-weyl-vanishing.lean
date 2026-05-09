@@ -97,12 +97,12 @@ def Partition.height {n : ℕ} (λ : Partition n) : ℕ :=
     Concrete model: returns 0.  In the fully-formalised version
     this is the sum over SSYTs of shape λ with entries in `{1, 2}`
     weighted by `q^a · q^{-b}`. -/
-def schur_2var {n : ℕ} (_λ : Partition n) (_q : ℝ) : ℝ := 0
+def schur_2var {n : ℕ} (_λ : Partition n) (_q : ℝ) : ℝ := 0  -- noqa: const_zero
 
 /-- The q-hook product `H_q(λ)`.  Concrete model: returns 1
     (non-vanishing).  Generically non-vanishing for `q` not a root
     of unity. -/
-def q_hook_product {n : ℕ} (_λ : Partition n) (_q : ℝ) : ℝ := 1
+def q_hook_product {n : ℕ} (_λ : Partition n) (_q : ℝ) : ℝ := 1  -- noqa: one_def
 
 /-- Schur-Weyl weight: `w_λ(q) = s_λ(q, q⁻¹) / H_q(λ)`. -/
 noncomputable def schur_weyl_weight {n : ℕ} (λ : Partition n) (q : ℝ) : ℝ :=

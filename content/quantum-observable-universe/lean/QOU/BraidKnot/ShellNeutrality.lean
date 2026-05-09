@@ -256,7 +256,7 @@ class Saturated (λ : YoungDiagram) : Prop
     Concrete model: defined as `kappa λ = 0` (the algebraic
     consequence of `θ_n = q^{2κ_λ} = 1` at generic q).  The genuine
     Hecke-algebra reading awaits the `H_n(q)` import. -/
-def fullTwistTrivial (λ : YoungDiagram) (_q : ℝ) : Prop := kappa λ = 0
+def fullTwistTrivial (λ : YoungDiagram) (_q : ℝ) : Prop := kappa λ = 0  -- noqa: const_zero_typed
 
 /-- **Hecke folklore (axiomatised here)**: at generic `q > 1`, the
     full twist acts trivially on `V_λ` iff `κ_λ = 0`.

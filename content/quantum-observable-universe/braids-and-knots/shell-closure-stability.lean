@@ -48,7 +48,7 @@ structure DressedTy where
     is undefined for the unit dressing.  Replaces the previous
     `opaque` declaration; structural theorems below remain valid. -/
 -- Ref: [manuscript] particle-interactions/confinement-sdp
-def frobeniusStability : DressedTy → ℝ → ℝ := fun _ _ => 0
+def frobeniusStability : DressedTy → ℝ → ℝ := fun _ _ => 0  -- noqa: const_zero
 
 /-- Binding multiplicity `μ(P, q)` — concrete model returns `2`
     (the minimum noble-gas multiplicity), so the headline

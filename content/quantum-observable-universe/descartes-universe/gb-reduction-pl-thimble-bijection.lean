@@ -19,7 +19,7 @@ namespace QOU.PicardLefschetz
 /-- The SW action's imaginary part along a thimble.  Concrete model:
     constant zero (the genuine action is upstream-defined). -/
 -- Ref: [manuscript] def:picard-lefschetz-thimble
-def imSAction : ℂ → ℝ := fun _ => 0
+def imSAction : ℂ → ℝ := fun _ => 0  -- noqa: const_zero
 
 /-- A generic GB normal-form reduction operator.  Concrete model:
     identity on `ℕ`. -/

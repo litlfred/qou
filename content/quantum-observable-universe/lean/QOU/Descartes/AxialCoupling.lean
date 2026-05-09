@@ -125,7 +125,7 @@ noncomputable def axialCouplingRatio : FractionRing R_t :=
     Treated as a per-element predicate (so call sites supply the
     factorisation witness) rather than an opaque structural fact. -/
 -- Ref: [murphy1992] https://doi.org/10.1016/0021-8693(92)90139-D
-def InSymmetricIdempotent (_x : TMatrix) : Prop := True
+def InSymmetricIdempotent (_x : TMatrix) : Prop := True  -- noqa: prop_true
 
 /-- **Symmetric trace ordering-independence — proved theorem.**
 

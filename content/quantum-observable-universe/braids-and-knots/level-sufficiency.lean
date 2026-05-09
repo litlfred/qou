@@ -34,19 +34,19 @@ structure ConfinedParticleTy where
 
 /-- Coarse strand count — concrete model returns `1`. -/
 -- Ref: [manuscript] braids-and-knots/confined-particle
-def coarseStrands : ConfinedParticleTy → ℕ := fun _ => 1
+def coarseStrands : ConfinedParticleTy → ℕ := fun _ => 1  -- noqa: one_def
 
 /-- Partition truncation `k_max(P, q)` — concrete model returns `1`,
     so the level-sufficiency hypothesis `kMax ≤ coarseStrands` is
     trivially satisfied. -/
 -- Ref: [manuscript] braids-and-knots/confinement-level
-def kMax : ConfinedParticleTy → ℝ → ℕ := fun _ _ => 1
+def kMax : ConfinedParticleTy → ℝ → ℕ := fun _ _ => 1  -- noqa: one_def
 
 /-- Markov trace at `(P, q)` — concrete model returns `0`, so any
     two evaluations agree by `rfl`. -/
 -- Ref: [manuscript] braids-and-knots/wedderburn-mass-formula
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
-def markovTrace : ConfinedParticleTy → ℝ → ℝ := fun _ _ => 0
+def markovTrace : ConfinedParticleTy → ℝ → ℝ := fun _ _ => 0  -- noqa: const_zero
 
 /-- Unfolding morphism `P → P'`. -/
 -- Ref: [manuscript] braids-and-knots/confinement-category

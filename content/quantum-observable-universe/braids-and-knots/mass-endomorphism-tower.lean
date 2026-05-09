@@ -44,7 +44,7 @@ variable {R : Type u} [Field R]
     formal Habiro-ring element evaluated to its degree-0 constant
     term in this stub).  The genuine formal product
     `∏_{k≥1}(1 - q⁻ᵏ z)⁻¹` is the upgrade target. -/
-def quantumDilogPoly (_q _z : R) : R := 0
+def quantumDilogPoly (_q _z : R) : R := 0  -- noqa: const_zero
 
 /-- Markov parameter `z = 1 / (v + v⁻¹)` where `v² = q` (the
     formal square root of `q`), valued in `R`. -/

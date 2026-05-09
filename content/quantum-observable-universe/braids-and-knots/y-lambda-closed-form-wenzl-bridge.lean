@@ -84,11 +84,11 @@ structure Partition (n : ℕ) where
     irreducible S_n-rep V_λ). Computed via hook-length formula.
     Concrete model: returns `1` (the genuine hook-length formula
     lives in `Mathlib.Combinatorics.Young`). -/
-def hookDim {_n : ℕ} (_lam : Partition _n) : ℕ := 1
+def hookDim {_n : ℕ} (_lam : Partition _n) : ℕ := 1  -- noqa: one_def
 
 /-- Sum of contents over cells of λ: `n(λ) = Σ (i-1) λ_i`.
     Concrete model: returns `0`. -/
-def nLambda {_n : ℕ} (_lam : Partition _n) : ℕ := 0
+def nLambda {_n : ℕ} (_lam : Partition _n) : ℕ := 0  -- noqa: const_zero
 
 /-! ## The Wenzl Schur element -/
 
@@ -101,7 +101,7 @@ def nLambda {_n : ℕ} (_lam : Partition _n) : ℕ := 0
     fractional or non-integer exponents in the Lean type).
     Concrete model: returns `0`; the genuine product formula is the
     upgrade target. -/
-def wenzlSchurElement {_n : ℕ} (_lam : Partition _n) (_Q _X : ℝ) : ℝ := 0
+def wenzlSchurElement {_n : ℕ} (_lam : Partition _n) (_Q _X : ℝ) : ℝ := 0  -- noqa: const_zero
 
 /-- The total normalisation `Z = Σ_µ d_µ · s_{µ, r}(Q)`. -/
 noncomputable def wenzlNormalization {n : ℕ}
@@ -124,11 +124,11 @@ noncomputable def yLambdaWenzlBridge {n : ℕ}
     `H_n(R, q)` in the σ-convention. Stub — full definition lives in
     a future formalisation of Hecke-algebra representations.
     Concrete model: returns `0`. -/
-def jonesMarkovTrace {_n : ℕ} (_q : ℝ) (_x : Unit) : ℝ := 0
+def jonesMarkovTrace {_n : ℕ} (_q : ℝ) (_x : Unit) : ℝ := 0  -- noqa: const_zero
 
 /-- Central character coefficient of the Jones-Markov trace at
     partition λ ⊢ n.  Concrete model: returns `0`. -/
-def jonesMarkovCoefficient {_n : ℕ} (_q : ℝ) (_lam : Partition _n) : ℝ := 0
+def jonesMarkovCoefficient {_n : ℕ} (_q : ℝ) (_lam : Partition _n) : ℝ := 0  -- noqa: const_zero
 
 /-- **Main theorem**: in the σ-convention with `z = 1/(q^{1/2}+q^{-1/2})`,
     the Jones-Markov central coefficient `y_λ` equals the Wenzl-bridge

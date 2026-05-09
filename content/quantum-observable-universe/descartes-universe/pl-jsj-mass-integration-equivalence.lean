@@ -24,20 +24,20 @@ namespace QOU.PicardLefschetz
 /-- Placeholder for the prolonged Seiberg-Witten differential.
     Concrete model: returns 0 + 0i. -/
 -- Ref: [manuscript] prop:sw-period-thimble-equivalence
-def lambdaSW (_k : ℕ) (_z : ℂ) : ℂ := 0
+def lambdaSW (_k : ℕ) (_z : ℂ) : ℂ := 0  -- noqa: const_zero
 
 /-- Placeholder thimble integral.  Concrete model: returns 0. -/
 -- Ref: [manuscript] def:picard-lefschetz-thimble
-def thimbleIntegral (_k : ℕ) (_z_c : ℂ) : ℂ := 0
+def thimbleIntegral (_k : ℕ) (_z_c : ℂ) : ℂ := 0  -- noqa: const_zero
 
 /-- Placeholder JSJ piecewise hyperbolic-volume sum.  Concrete
     model: returns 0. -/
 -- Ref: [manuscript] conj:phi-q-tower-jsj-bridge
-def descendedJSJVolume (_T_w : ℕ) : ℂ := 0
+def descendedJSJVolume (_T_w : ℕ) : ℂ := 0  -- noqa: const_zero
 
 /-- Placeholder algebraic Markov trace.  Concrete model: returns 0. -/
 -- Ref: [manuscript] prop:categorical-mass-markov
-def algebraicMarkovTrace (_k : ℕ) (_T_w : ℕ) : ℂ := 0
+def algebraicMarkovTrace (_k : ℕ) (_T_w : ℕ) : ℂ := 0  -- noqa: const_zero
 
 /-- The synthesis conjecture, packaged as a typeclass over a vertical
     degree `k`, a transient state index `T_w`, and the depth `n` of

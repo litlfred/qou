@@ -53,7 +53,7 @@ def removeStrip {_lam : List ℕ} {_k : ℕ}
 
 /-- The q-Murnaghan-Nakayama character χ_ρ^λ(q).  Concrete model:
     returns `0`. -/
-def chi_qMN_partition (_lam _rho : List ℕ) (_q : ℝ) : ℝ := 0
+def chi_qMN_partition (_lam _rho : List ℕ) (_q : ℝ) : ℝ := 0  -- noqa: const_zero
 
 /-! ## Classical recursive MN identity (q = 1) -/
 

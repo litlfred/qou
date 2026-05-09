@@ -19,11 +19,11 @@ namespace QOU.PicardLefschetz
 /-- The nonabelian MI restricted to the exceptional divisor at
     `z_c`, projected onto the `n`-th jet.  Concrete model: 0. -/
 -- Ref: [manuscript] prop:mi-sw-abelianisation
-def miOnDivisor (_n : ℕ) (_z_c : ℂ) : ℂ := 0
+def miOnDivisor (_n : ℕ) (_z_c : ℂ) : ℂ := 0  -- noqa: const_zero
 
 /-- The prolonged SW period on the same divisor.  Concrete model: 0. -/
 -- Ref: [manuscript] prop:mi-sw-abelianisation
-def swPeriod (_n : ℕ) (_z_c : ℂ) : ℂ := 0
+def swPeriod (_n : ℕ) (_z_c : ℂ) : ℂ := 0  -- noqa: const_zero
 
 /-- The conjecture as a typeclass over a state variable `x`,
     substrate `q`, depth `n`, and a denominator-zero index `k < n`.

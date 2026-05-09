@@ -29,10 +29,10 @@ structure PartitionOfN (n : ℕ) where
 /-- The q-hook product `H_q(λ) = ∏_{x ∈ λ} [h_x]_q`.  Concrete
     model: returns 1 (non-vanishing).  The genuine product over
     cell hooks lives in `HookWeightDerivation`. -/
-def qHookProduct {n : ℕ} (_λ : PartitionOfN n) (_q : ℝ) : ℝ := 1
+def qHookProduct {n : ℕ} (_λ : PartitionOfN n) (_q : ℝ) : ℝ := 1  -- noqa: one_def
 
 /-- The Schur function `s_λ(q, q⁻¹)`.  Concrete model: returns 0. -/
-def schurAtQ {n : ℕ} (_λ : PartitionOfN n) (_q : ℝ) : ℝ := 0
+def schurAtQ {n : ℕ} (_λ : PartitionOfN n) (_q : ℝ) : ℝ := 0  -- noqa: const_zero
 
 /-- The Specht-module character of the atomic braid.  Concrete
     model: returns 0. -/

@@ -40,7 +40,7 @@ structure CanonicalPermutationBraid (_n : ℕ) where
   deriving Repr
 
 /-- The Coxeter length ℓ(w).  Concrete model: 0. -/
-def length {_n : ℕ} (_w : CanonicalPermutationBraid _n) : ℕ := 0
+def length {_n : ℕ} (_w : CanonicalPermutationBraid _n) : ℕ := 0  -- noqa: const_zero
 
 /-- The cycle type μ(w).  Concrete model: empty list. -/
 def cycleType {_n : ℕ} (_w : CanonicalPermutationBraid _n) :
@@ -51,7 +51,7 @@ def chi_qMN {_n : ℕ} (_lam : List ℕ)
     (_w : CanonicalPermutationBraid _n) (_q : ℝ) : ℝ := 0
 
 /-- The Wenzl-bridge y_λ(q).  Concrete model: returns 0. -/
-def yLambdaWenzl (_lam : List ℕ) (_q : ℝ) : ℝ := 0
+def yLambdaWenzl (_lam : List ℕ) (_q : ℝ) : ℝ := 0  -- noqa: const_zero
 
 /-- The Markov trace tr_M.  Concrete model: returns 0. -/
 def markovTrace {_n : ℕ} (_q : ℝ)

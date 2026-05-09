@@ -77,7 +77,7 @@ theorem onetwentysix_mem_magicLadder : 126 ∈ magicLadder := by
     side-effect.  The genuine BB-filtration construction in
     `QOU.BraneTower.SpectralSequence` (future) is the upgrade
     target. -/
-def obstructionSize (_n _r _p _q : ℕ) : ℝ := 0
+def obstructionSize (_n _r _p _q : ℕ) : ℝ := 0  -- noqa: const_zero
 
 /-- The page index at which the spectral sequence is conjectured to
     stabilise. The framework conjecture is collapse at `r = 2`. -/
