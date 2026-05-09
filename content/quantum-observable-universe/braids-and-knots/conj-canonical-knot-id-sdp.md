@@ -106,12 +106,36 @@ three light nuclei.  Result:
   $H_5$ needs to land first (currently a deferral to
   Rust `tools/hecke-engine`).
 
-**Categorical uniqueness theorem (proof obligation 2)** remains the
-open piece: the prototype gives a numerical PSD-feasibility
-certificate for $^3\mathrm{He}$, not a proof that no other Hecke
-element in the $\Delta_{\max}$ ball achieves a smaller residual.
-Sub-deliverable 3 of Issue #604 will discharge this for the cases
-where the prototype runs successfully.
+**Categorical uniqueness theorem (proof obligation 2)** is now
+formally stated in
+[`conj-canonical-knot-id-sdp.lean`](conj-canonical-knot-id-sdp.lean)
+as `helium3_canonical_uniqueness_via_strict_complementarity`.  The
+Lean theorem takes:
+
+1. The R5-full numerical witness (`R5FullWitness LightNucleus.helium3`)
+   recording $\alpha_{\mathrm{gap}} = 0$ + strong duality
+   ($|\text{primal\_obj} - \text{dual\_obj}| \leq 10^{-6}$);
+2. A strict-complementarity certificate
+   (`StrictComplementarity LightNucleus.helium3`) — the categorical
+   hypothesis upgrading numerical PSD-feasibility to unique-minimizer
+   status per Boyd–Vandenberghe §5.5.
+
+and concludes
+`CanonicalKnotIdSDP LightNucleus.helium3` (the §3b-cond conditional
+class instance for $^3\mathrm{He}$).  This is the closure path for
+sub-deliverable 3 of Issue #604: under the strict-complementarity
+hypothesis (a categorical claim about the geometry of the SDP's
+feasible set, not a numerical certificate), the historical
+$L_{6a4}$ assignment for $^3\mathrm{He}$ is *the* unique R5-full
+canonical $T_w$.
+
+The Lean theorem currently carries a `sorry` for the convex-
+optimization step (Boyd–Vandenberghe-style strict-complementarity
+⇒ uniqueness in SDP).  Closing the `sorry` requires either
+upstream Mathlib convex-optimization infrastructure or a
+self-contained constructive argument from the active-set + dual
+variables recorded in
+[`r5-full-canonical-knot-solver.witness.json`](../../../folio-assistant/computations/r5-full-canonical-knot-solver.witness.json).
 
 ## Proof obligations
 

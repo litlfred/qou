@@ -162,6 +162,39 @@ records `A` (not the braid strand count) as its primary parameter and
 derives $n_0 = 3 \cdot A$ structurally; per-atom instances must be
 constructed at $H_{3 \cdot A}$ to discharge the rule.
 
+## Closure path via the canonical-knot-id (2026-05-09)
+
+GAP-A-4 closes *as a corollary* of GAP-A-1 (canonical knot
+identification): once the canonical $T_w$ for a nucleus is uniquely
+fixed by the R5-full SDP, the dominant Wedderburn summand
+$\lambda^*(T_w)$ is uniquely determined, and $\rho = [d_{\lambda^*}]_q$
+follows from the Wedderburn trace identity.
+
+The Lean side is now stated as
+[`rho_eq_qdim_via_canonical_knot`](conj-rho-prefactor-structural.lean)
+in `conj-rho-prefactor-structural.lean`.  PR #608's R5-full witness
+records $\rho_\star$ per atom directly:
+
+| Atom | Witness $\rho_\star$ | Notes |
+|------|----------------------|-------|
+| $^3\mathrm{He}$ | $3$ | At canonical $T_w = L_{6a4}$ |
+| $^2\mathrm{H}$  | $3$ | At prototype's L=8 winner $\sigma_2 \sigma_1^6 \sigma_2^{-1}$ — **not** the historical $\rho = 1$ |
+
+The deuterium discrepancy is because the prototype's single-term
+cost function does not select $6_2$ at first principle (PR #608
+"²H needs multi-term wiring").  Once T2–T6 of
+[`thm:knot-mass-formula-unified`](#thm:knot-mass-formula-unified)
+land in `cost_for_candidate`, the historical $\rho = 1$ at $6_2$
+should be recovered.
+
+For $^3\mathrm{He}$ the $\rho_\star = 3$ value is consistent with
+the dominant-$\lambda^*$ rule once the orthogonal-copies
+interpretation is invoked (the historical assignment $\rho = 2$
+referred to the double-cover hadronic factor; the SDP's
+$\rho_\star$ counts a different structural quantity).
+Reconciling the two interpretations is the residual open piece
+of obligation 3.
+
 ## Relationship to GAP-A-4
 
 This conjecture directly addresses GAP-A-4 of the

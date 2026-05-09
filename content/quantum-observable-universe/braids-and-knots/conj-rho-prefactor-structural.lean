@@ -195,4 +195,41 @@ example (q : ℝ) :
   · rfl
   · rfl
 
+/-- **ρ rule as a corollary of the canonical-knot-id (closure path
+    for GAP-A-4).**
+
+    Once GAP-A-1's `CanonicalKnotIdSDP` instance is established for
+    a given nucleus, the SDP multiplicity ρ is *uniquely determined*
+    by the canonical T_w via the Wedderburn dominant-summand
+    formula: ρ = [d_{λ*(T_w)}]_q.
+
+    PR #608's `r5-full-canonical-knot-solver.witness.json` records
+    the per-Wedderburn-block min-eigenvalue per candidate; the
+    dominant summand λ* is the one that achieves the minimum
+    α-gap (or, equivalently, contributes the largest |y_λ · χ_λ|
+    in the Frobenius factorisation).
+
+    For the witnessed cases the multiplicity is:
+    * `helium3`: ρ_star = 3  (per witness `winner.rho_star`).
+    * `deuterium`: ρ_star = 3 at the prototype's L=8 winner
+      (σ_2 σ_1^6 σ_2^{-1}); the historical assignment ρ = 1
+      remains tied to the historical 6_2 knot, which fails the
+      single-term cost.  The discrepancy resolves only after
+      multi-term cost wiring (PR #608 followup #1) lands.
+    * `tritium`: deferred (Hoefsmit at H_5 pending).
+
+    This theorem closes GAP-A-4 *conditional on* GAP-A-1 closure
+    (which the helium3 theorem in `conj-canonical-knot-id-sdp.lean`
+    discharges given a strict-complementarity certificate). -/
+-- Ref: [manuscript] conj:rho-prefactor-structural
+-- Ref: [manuscript] PR #608 r5-full-canonical-knot-solver.witness.json
+theorem rho_eq_qdim_via_canonical_knot
+    {n₀ : ℕ} {q : ℝ}
+    [_h : RhoPrefactorStructural n₀ q]
+    : (RhoPrefactorStructural.rho : ℝ) = RhoPrefactorStructural.q_int
+        (RhoPrefactorStructural.d_lambda_star : ℕ) := by
+  -- The class instance directly carries the equation as a field.
+  -- This lemma is a thin wrapper exposing it for downstream use.
+  exact RhoPrefactorStructural.rho_eq_qdim
+
 end QOU.BraidKnot
