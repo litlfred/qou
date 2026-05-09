@@ -1,16 +1,19 @@
-# Path A pole derivation of `18Z + 21N + 1` — proton CLOSED, multi-nucleon deferred
+# Path A pole derivation of `18Z + 21N + 1` — proton + deuteron CLOSED
 
-**Date:** 2026-05-08 (drafted) / 2026-05-09 (proton verified)
-**Status:** **Proton case verified** by direct symbolic Hoefsmit
-pole-order computation
-([`per_irrep_pole_proton_h3.py`](../../folio-assistant/computations/per_irrep_pole_proton_h3.py),
-witness:
-[`per-irrep-pole-proton-h3.witness.json`](../../folio-assistant/computations/per-irrep-pole-proton-h3.witness.json)).
-$\mathrm{ord}_{u=0}(\mathrm{tr}_M(\beta_p)) = 19 = 18 \cdot 1 + 21 \cdot 0 + 1$
-matches `prop:per-nucleon-shift-additive-linearity`. Multi-nucleon
-verification (deuteron at $H_6$, $A \ge 3$ at $H_9$) deferred —
-symbolic Hoefsmit chi_lambda on the deuteron's 11-partition $H_6$
-takes ~3 minutes; numerical-q-from-start path needs implementation.
+**Date:** 2026-05-08 (drafted) / 2026-05-09 (proton + deuteron verified)
+**Status:** **Both single- and multi-nucleon Path A verified** by
+direct symbolic Hoefsmit pole-order analysis:
+
+- **Proton** ($A = 1$, $H_3$): $\mathrm{ord}_{u=0}(\mathrm{tr}_M(\beta_p)) = 19 = 18 \cdot 1 + 21 \cdot 0 + 1$
+  ([`per_irrep_pole_proton_h3.py`](../../folio-assistant/computations/per_irrep_pole_proton_h3.py),
+  witness:
+  [`per-irrep-pole-proton-h3.witness.json`](../../folio-assistant/computations/per-irrep-pole-proton-h3.witness.json)).
+- **Deuteron** ($A = 2$, $H_6$): $\mathrm{ord}_{u=0}(\mathrm{tr}_M(\beta_D)) = 40 = 18 \cdot 1 + 21 \cdot 1 + 1$
+  ([`per_irrep_pole_deuteron_h6.py`](../../folio-assistant/computations/per_irrep_pole_deuteron_h6.py),
+  witness:
+  [`per-irrep-pole-deuteron-h6.witness.json`](../../folio-assistant/computations/per-irrep-pole-deuteron-h6.witness.json)).
+
+Both atoms match `prop:per-nucleon-shift-additive-linearity` exactly.
 
 ## Background
 
@@ -177,36 +180,54 @@ in pure form, or $19$ if the lone-nucleon convention adds a
 self-interface. The full asymmetry between $18$ and $21$
 emerges at $A \ge 2$ (deuteron $= 18 + 21 + 1 = 40$).
 
-### Deuteron multi-nucleon verification — feasibility note (2026-05-09)
+### Deuteron multi-nucleon verification — CLOSED (2026-05-09)
 
-Direct symbolic Path A on the deuteron at $H_6$ was attempted but
-is **not feasible in-session**:
+Three optimisations made the deuteron tractable in-session:
 
-1. The 11 chi_lambda symbolic computations on the 23-crossing
-   deuteron word complete in **~155 s sequential**.
-2. The bottleneck is the subsequent
-   `markov_weights_symbolic.solve_y_lambda(6)` — pure-symbolic
-   Wenzl Schur principal specialization at $n = 6$ exceeds session
-   budgets (the same bottleneck that motivated
-   [`wedderburn_jones_markov.y_lambda_at(n, q_val)`](../../folio-assistant/computations/wedderburn_jones_markov.py)'s
-   numerical-q-from-start shortcut).
-3. The numerical shortcut **does not apply here**: pole-order
-   analysis at $u = 0$ requires the *symbolic* pole structure of
-   $y_\lambda(q)$, not its numeric value at $q_0$.
+1. **Cached symbolic $y_\lambda(q)$**: pre-existing
+   [`y-lambda-wenzl-bridge-symbolic-witness.json`](../../folio-assistant/computations/y-lambda-wenzl-bridge-symbolic-witness.json)
+   (n=2 through n=12) is loaded directly, bypassing the
+   `solve_y_lambda(6)` symbolic bottleneck (>5 min via
+   `sp.cancel` on rationals in q with half-integer powers).
+2. **Cached symbolic $\chi^\lambda_q(\beta_D)$**: first run
+   computes the 11 `chi_lambda_symbolic` calls on the 23-crossing
+   deuteron word (~131 s) and emits
+   [`chi-deuteron-h6.witness.json`](../../folio-assistant/computations/chi-deuteron-h6.witness.json);
+   subsequent runs are <1 s.
+3. **Per-term pole order**: $\mathrm{ord}_{u=0}(y_\lambda \cdot \chi^\lambda)$
+   per partition, then take max. Avoids the `sp.together`
+   bottleneck on the 11-term sum. When the maximum is uniquely
+   achieved (lower-order terms cannot cancel a strict max), the
+   inferred full-sum pole order is rigorous.
 
-A future follow-up would either (a) cache the symbolic
-$y_\lambda(n=6)$ result as a one-time overnight computation
-(witness: a new `markov-weights-symbolic-n6.witness.json`), or
-(b) implement an alternative pole-order analysis that bypasses the
-symbolic Wenzl normalisation (e.g. via the q-ribbon-tableau
-formulation of Path B).
+Per-term u-pole orders for the deuteron:
 
-The proton case (verified above) plus the empirical witness
-[`per-nucleon-shift-derivation.witness.json`](../../folio-assistant/computations/per-nucleon-shift-derivation.witness.json)
-(6/6 atoms verify $18Z + 21N + 1$ via `markov_peel`) gives strong
-evidence that the multi-nucleon case will also categorically
-verify; the symbolic verification is a precision exercise on the
-already-empirically-validated formula.
+| $\lambda \vdash 6$ | $\mathrm{ord}_{u=0}(y_\lambda \cdot \chi^\lambda)$ |
+|---:|---:|
+| $(4, 1, 1)$ | **40** |
+| $(4, 2)$ | 39 |
+| $(3, 1, 1, 1)$ | 37 |
+| $(3, 3)$ | 35 |
+| $(2, 2, 1, 1)$ | 33 |
+| $(2, 2, 2)$ | 29 |
+| $(3, 2, 1)$ | 24 |
+| $(5, 1)$ | 23 |
+| $(2, 1, 1, 1, 1)$ | 22 |
+| $(1, 1, 1, 1, 1, 1)$ | 3 |
+| $(6)$ | 2 |
+
+**Maximizer $\lambda = (4, 1, 1)$ uniquely**, so
+$\mathrm{ord}_{u=0}(\mathrm{tr}_M(\beta_D)) = 40 = 18 \cdot 1 + 21 \cdot 1 + 1$
+matches `prop:per-nucleon-shift-additive-linearity` exactly.
+
+### Open: A ≥ 3 atoms ($H_9$, $H_{12}$, $\ldots$)
+
+Tritium / ³He at $H_9$ (30 partitions of 9) and ⁴He at $H_{12}$
+(77 partitions of 12) follow the same pattern but require more
+chi_lambda compute. The cached y_λ already exists for those n;
+extending Path A to A ≥ 3 is a straightforward port of
+`per_irrep_pole_deuteron_h6.py` — the chi cache emission is the
+only new work, and it parallelises trivially across partitions.
 
 ## Original recommendation (preserved for reference)
 

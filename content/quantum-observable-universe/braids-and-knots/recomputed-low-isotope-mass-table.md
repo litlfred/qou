@@ -119,14 +119,28 @@ $$
 independently reports `shift_proton_h3 = 19` — two independent
 symbolic methods agree exactly on the per-proton u-pole.
 
+**Multi-nucleon verification (deuteron, 2026-05-09):**
+[`per_irrep_pole_deuteron_h6.py`](../../../folio-assistant/computations/per_irrep_pole_deuteron_h6.py)
+(witness:
+[`per-irrep-pole-deuteron-h6.witness.json`](../../../folio-assistant/computations/per-irrep-pole-deuteron-h6.witness.json))
+extends Path A to $A = 2$ via three optimisations: cached
+symbolic $y_\lambda(q)$ for $n = 6$, auto-cached symbolic
+$\chi^\lambda_q(\beta_D)$
+([`chi-deuteron-h6.witness.json`](../../../folio-assistant/computations/chi-deuteron-h6.witness.json)),
+and per-term pole order. The per-term maximum is uniquely $40$
+at $\lambda = (4, 1, 1)$, so
+
+$$
+  \mathrm{ord}_{u=0}\bigl(\mathrm{tr}_M(\beta_D)\bigr) \;=\; 40 \;=\; 18 \cdot 1 + 21 \cdot 1 + 1
+$$
+
+rigorously (lower-order per-term poles cannot cancel a strict
+maximum). Multi-nucleon Path A closed.
+
 The "$18$" in $18Z + 21N + 1$ is the per-proton additive
 coefficient of the FULL summed $u$-pole order, not the q-pole
 order of any per-irrep $\chi^\lambda_q$ (per-irrep max at $H_3$
-is $11$ at $\lambda = (2, 1)$). Multi-nucleon verification
-($H_6$ deuteron, $H_9$ at $A = 3$) is a deferred follow-up —
-symbolic Hoefsmit on $H_6$ takes ~3 minutes per partition, and
-the full sum + `sp.together` over $11$ partitions of $6$ exceeds
-session-time budgets.
+is $11$ at $\lambda = (2, 1)$).
 
 ## Cross-references
 
