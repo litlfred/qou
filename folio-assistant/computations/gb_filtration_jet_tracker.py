@@ -384,9 +384,9 @@ def main():
         expected=None,
     ))
 
-    # H_5 ascending: σ_1..σ_4 (descending then ascending nucleon).
+    # H_5 ascending: σ_1..σ_4.
     cases.append(reduce_braid(
-        name="ascending σ_1 σ_2 σ_3 σ_4 in H_5 (single descending)",
+        name="ascending σ_1 σ_2 σ_3 σ_4 in H_5",
         n=5, word=[1, 2, 3, 4],
         expected={4: 1},  # all ascending → single grade-4 term
     ))
