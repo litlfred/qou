@@ -27,9 +27,13 @@ case "$BRANCH" in
     ;;
 esac
 
-# Don't re-arm if a previous session in the same repo already did
+# Don't re-arm if a previous session in the same repo already did.
+# Slugify the branch name (replace `/` with `_`) so refs like
+# `claude/add-coordinate-command-4rHOK` don't turn the flag path into a
+# directory tree. Same pattern as watch.md §1.
 STATE_DIR=".claude/local-state"
-ARMED_FLAG="$STATE_DIR/watch-main-armed.$BRANCH"
+SAFE_BRANCH=$(printf '%s' "$BRANCH" | tr '/' '_')
+ARMED_FLAG="$STATE_DIR/watch-main-armed.$SAFE_BRANCH"
 mkdir -p "$STATE_DIR"
 
 # Arm marker is per-branch and per-day to avoid stale flags surviving
