@@ -243,12 +243,25 @@ def _chi_lambda_of_word_mpf(sigmas: list, dim: int,
     return tr
 
 
+# Memoize parsed y_λ tables across calls — same n at same dps reuses
+# the parsed mpf dict instead of re-parsing the witness JSON. Mirrors
+# the 30-dps `_y_lambda_cached` pattern in `tr_m_q_hecke_seminormal.py`
+# but at 50 dps for the mpfr consumer (atomic_tr_m_mpfr_50dps.py and
+# any other 50-dps caller). Key includes mp.dps so a precision change
+# invalidates the cached parse.
+_Y_LAMBDA_CACHE: dict[tuple[str, int, int], dict] = {}
+
+
 def _load_y_lambda(n: int, path: Path | None = None) -> dict:
     """Load y_λ table for H_n from the mpfr witness.
 
     Returns dict: tuple(partition) -> mpf(y_lambda).
     """
     p = Path(path) if path else _Y_LAMBDA_DEFAULT
+    key = (str(p), n, mp.dps)
+    cached = _Y_LAMBDA_CACHE.get(key)
+    if cached is not None:
+        return cached
     with open(p) as f:
         W = json.load(f)
     table = W["tables_by_n"].get(str(n))
@@ -256,8 +269,10 @@ def _load_y_lambda(n: int, path: Path | None = None) -> dict:
         raise KeyError(
             f"y-lambda-mpfr-witness.json has no table for n={n}; "
             f"available: {sorted(W['tables_by_n'].keys(), key=int)}")
-    return {tuple(w["partition"]): mp.mpf(w["y_lambda"])
-            for w in table["weights"]}
+    parsed = {tuple(w["partition"]): mp.mpf(w["y_lambda"])
+              for w in table["weights"]}
+    _Y_LAMBDA_CACHE[key] = parsed
+    return parsed
 
 
 def tr_M_via_wenzl_bridge_mpfr(

@@ -1,20 +1,42 @@
 #!/usr/bin/env python3
 """
-Low-isotope mass + Q-value table — predicted vs AME2020 observed.
+Low-isotope mass + Q-value table — derived predictions vs AME2020.
 
-Uses the binding-energy predictions from low_isotope_binding_sweep.py
-to compute the atomic mass excess Δ(Z, N) and the total atomic mass
-M(Z, N) for all stable isotopes with Z ≤ 10, and compares against
-AME2020.
+Per branch `claude/ppb-math-infrastructure-p3oQQ` (1 ppb gate): this
+table now distinguishes **derived** values (rooted in q₀ via the
+categorical derivation chain) from **reference-only** values (CODATA /
+AME constants kept for comparison) and **derivation-pending** rows
+(no fit-free chain available yet). No fits, no numerology, no
+empirical calibration is permitted in the predicted column.
 
-    Δ(Z, N)  =  Z · Δ_H  +  N · Δ_n  -  B(Z, N)
-    M(Z, N)  =  A · u  +  Δ(Z, N)
+Sources of each predicted quantity (status as of this commit):
 
-where Δ_H = m_p + m_e - u and Δ_n = m_n - u are single-particle
-mass excesses.  Since M(Z, N) ~ A · u, percentage errors on total
-mass are parts-per-million even for multi-MeV binding errors —
-the useful comparison is on the mass excess Δ (MeV scale) or
-directly on B.
+    m_p   — DERIVED. Read from `proton-mass-codata-50dps.witness.json`
+            (producer `build_proton_mass_50dps_chain.py`); chain rooted
+            in tr_M(p, q₀) × M_E_MEV scale. Current rel_diff vs CODATA:
+            ~544 ppm; gap to 1 ppb tracked in that witness.
+    m_n   — DERIVATION_PENDING. The Markov-trace neutron chain
+            (`build_markov_trace_assembly_neutron_chain.py`) emits a
+            dimensionless tr_M only; the MeV scale conversion awaits
+            the Phase A tower-lift. Until then: NO predicted m_n.
+    B(⁴He) — DERIVATION_PENDING. The magic-A specialization
+            `magic_A_formula.magic_A_binding(2,2)` is a deprecation
+            candidate (PR #554) and uses ρ_F=2 from
+            `binding_ladder_catalog`, which is not chain-validated.
+            Canonical tr_M(H_12) compute is the open frontier.
+    B(D, T, ³He) — DERIVED via strategy A of
+            `low_isotope_binding_sweep.py` (census-knot volumes only;
+            pure m_e × Vol(K) — no fits at strategy A). Strategies B
+            and C of that file ARE fit-contaminated and are NOT
+            consumed here.
+    B(A ≥ 4) — DERIVATION_PENDING. Strategies B and C in the sweep
+            file use B_4HE_MEV (AME anchor) and a c_αα fit from ¹²C;
+            both are excluded under the no-calibration rule.
+
+The `derivation_status` field on every emitted row records which
+bucket it falls into. Total mass M(Z, N) = A·u + Δ(Z, N) is reported
+ONLY for rows where every input (m_p, m_n, B) is derived; otherwise
+M_pred_MeV is null and a status string explains the gap.
 
 Outputs:
     low-isotope-mass-table.witness.json
@@ -28,16 +50,77 @@ from datetime import datetime, timezone
 
 sys.path.insert(0, str(Path(__file__).parent))
 from low_isotope_binding_sweep import (
-    AME, predict, M_E_MEV, Q0,
+    AME, M_E_MEV, Q0, strategy_A_census,
 )
 
-# ── CODATA 2022 ─────────────────────────────────────────────────
-U_MEV    = 931.49410372      # atomic mass unit, MeV
-M_P_MEV  = 938.27208816      # proton
-M_N_MEV  = 939.56542052      # neutron
+HERE = Path(__file__).parent
 
-DELTA_H  = M_P_MEV + M_E_MEV - U_MEV    # ≈  7.2890 MeV  (¹H mass excess)
-DELTA_N  = M_N_MEV - U_MEV               # ≈  8.0714 MeV  (neutron mass excess)
+# ── Reference constants (CODATA / AME, comparison only) ─────────
+# These are NOT consumed as predictions. Kept so the witness can
+# report observed mass excesses next to derived predictions.
+U_MEV         = 931.49410372      # atomic mass unit, CODATA
+M_P_REF_MEV   = 938.27208816      # CODATA, comparison reference
+M_N_REF_MEV   = 939.56542052      # CODATA, comparison reference
+
+# ── Derived inputs ─────────────────────────────────────────────
+# m_p comes from the categorical derivation chain (build_proton_mass_50dps_chain.py).
+# Reading at module load enforces the dependency: if the witness is
+# missing or stale, the table cannot pretend to predict m_p.
+_PROTON_WITNESS = HERE / "proton-mass-codata-50dps.witness.json"
+if not _PROTON_WITNESS.exists():
+    raise FileNotFoundError(
+        f"Required derived-m_p witness not found: {_PROTON_WITNESS}\n"
+        f"Run `python build_proton_mass_50dps_chain.py` first."
+    )
+_proton_w = json.loads(_PROTON_WITNESS.read_text())
+M_P_DERIVED_MEV = float(_proton_w["data"]["m_p_pred_MeV"])
+M_P_DERIVED_REL_DIFF = float(_proton_w["data"]["rel_diff"])
+M_P_DERIVED_SOURCE = _PROTON_WITNESS.name
+
+# m_n: no fit-free derivation chain yet. Sentinel value; any consumer
+# that tries to use this in a prediction must either gate on the
+# `M_N_DERIVATION_STATUS` flag or accept that the row is pending.
+M_N_DERIVED_MEV: float | None = None
+M_N_DERIVATION_STATUS = (
+    "pending: tr_M(n, q_0) chain emits dimensionless trace only; "
+    "MeV scale conversion (build_markov_trace_assembly_neutron_chain.py) "
+    "awaits Phase A tower-lift"
+)
+
+# B(⁴He): see header docstring; magic_A is deprecation-flagged.
+B_4HE_DERIVED_MEV: float | None = None
+B_4HE_DERIVATION_STATUS = (
+    "pending: magic_A_formula is deprecation-candidate (PR #554, "
+    "ρ_F=2 not chain-validated); canonical tr_M(H_12) compute "
+    "(canonical_tr_m_helium4_stub.py) is the open frontier"
+)
+
+# Mass excesses computed only from derived inputs.
+DELTA_H_DERIVED = M_P_DERIVED_MEV + M_E_MEV - U_MEV   # ¹H derived
+DELTA_N_DERIVED: float | None = None                  # pending m_n
+
+
+def _derived_binding(symbol: str, Z: int, N: int) -> tuple[float | None, str]:
+    """Return (B_pred, derivation_status) using ONLY fit-free derivations.
+
+    Strategy A of low_isotope_binding_sweep (census-knot volumes,
+    B = ρ · m_e · Vol(K)) is the only sweep strategy admitted here:
+    strategies B and C use AME-anchored B(⁴He) and the c_αα fit
+    from ¹²C respectively, which both fail the no-calibration rule.
+
+    Returns (None, status_string) for any row where strategy A does
+    not fire (i.e. Z=1,N=0 proton; Z+N≥4 multi-α atoms).
+    """
+    if Z == 1 and N == 0:
+        return 0.0, "derived: ¹H is a free proton (B = 0 by definition)"
+    B_pred, tag = strategy_A_census(symbol, Z, N)
+    if B_pred is not None:
+        return float(B_pred), f"derived:strategy-A:{tag}"
+    return None, (
+        "pending: strategy A (census-knot volume) does not cover this "
+        "(Z,N); strategies B/C in the sweep are fit-contaminated and "
+        "are not consumed under the no-calibration rule"
+    )
 
 
 # ── AME2020 observed mass excesses (MeV, atomic) ────────────────
@@ -68,25 +151,80 @@ AME_DELTA = {
 }
 
 
-def predict_mass_excess(symbol: str, Z: int, N: int) -> tuple[float, float, str]:
-    """Return (B_pred, Delta_pred, strategy)."""
-    B_pred, tag = predict(symbol, Z, N)
-    delta_pred = Z * DELTA_H + N * DELTA_N - B_pred
-    return B_pred, delta_pred, tag
+def predict_row(symbol: str, Z: int, N: int) -> dict:
+    """Build one mass-table row from derived inputs only.
+
+    For each row we compute:
+      * B_pred_MeV       — derived binding (strategy A only) or None.
+      * delta_pred_MeV   — derived Δ = Z·Δ_H + N·Δ_n - B; emitted ONLY
+                           when m_n is derived AND B_pred is derived.
+                           m_n is currently pending so Δ_pred is null
+                           for every row with N > 0.
+      * M_pred_MeV       — derived total mass; same gating as Δ_pred.
+      * derivation_status — string describing which inputs were
+                            derived vs pending for this row.
+    """
+    A = Z + N
+    B_pred, b_status = _derived_binding(symbol, Z, N)
+
+    # Δ requires m_p (derived), m_e (CODATA scale, derived chain),
+    # m_n (pending), B_pred (derived for ¹H, D, T, ³He only).
+    if N == 0 and B_pred is not None:
+        delta_pred = Z * DELTA_H_DERIVED - B_pred
+        m_pred = A * U_MEV + delta_pred
+        delta_status = "derived (proton-only atom; no neutron dependency)"
+    else:
+        delta_pred = None
+        m_pred = None
+        if N > 0 and B_pred is not None:
+            delta_status = (
+                "pending: B is derived (strategy A) but Δ requires m_n; "
+                "m_n is derivation-pending"
+            )
+        elif B_pred is None:
+            delta_status = (
+                "pending: B is derivation-pending — see B_status"
+            )
+        else:
+            delta_status = "pending"
+
+    if B_pred is None or delta_pred is None:
+        row_status = "derivation_pending"
+    else:
+        row_status = "derived"
+
+    return {
+        "symbol": symbol,
+        "Z": Z,
+        "N": N,
+        "A": A,
+        "B_AME_MeV_ref": None,  # filled by caller from sweep table
+        "B_pred_MeV": B_pred,
+        "B_derivation_status": b_status,
+        "delta_pred_MeV": delta_pred,
+        "delta_derivation_status": delta_status,
+        "M_pred_MeV": m_pred,
+        "row_derivation_status": row_status,
+    }
 
 
 def main() -> int:
     print(f"\n  Substrate q_0 = {Q0:.6f}")
-    print(f"  u = {U_MEV:.4f} MeV,  m_p = {M_P_MEV:.4f},  m_n = {M_N_MEV:.4f}")
-    print(f"  Δ_H = {DELTA_H:.4f} MeV,  Δ_n = {DELTA_N:.4f} MeV\n")
+    print(f"  u = {U_MEV:.4f} MeV (CODATA, comparison ref)")
+    print(f"  m_p_derived = {M_P_DERIVED_MEV:.6f} MeV "
+          f"(rel_diff vs CODATA = {M_P_DERIVED_REL_DIFF:.3e})")
+    print(f"  m_n_derived = PENDING ({M_N_DERIVATION_STATUS})")
+    print(f"  Δ_H_derived = {DELTA_H_DERIVED:.4f} MeV,  Δ_n_derived = PENDING\n")
 
     header = (
         f"  {'atom':>6} {'A':>3} "
-        f"{'Δ_obs':>9} {'Δ_pred':>9} {'ΔΔ':>8} {'err_%':>7}  "
-        f"{'M_obs':>11} {'M_pred':>11}  strategy"
+        f"{'Δ_obs':>9} {'Δ_pred':>9} {'ΔΔ':>8}  "
+        f"{'M_obs':>11} {'M_pred':>11}  status"
     )
     print(header)
     print("  " + "-" * (len(header) - 2))
+
+    sweep_table = {sym: B_ame for sym, _, _, B_ame in AME}
 
     rows = []
     for symbol, Z, N, B_ame in AME:
@@ -94,93 +232,125 @@ def main() -> int:
         delta_obs = AME_DELTA.get(symbol)
         if delta_obs is None:
             continue
-        B_pred, delta_pred, tag = predict_mass_excess(symbol, Z, N)
 
-        # Total masses (MeV)
-        M_obs  = A * U_MEV + delta_obs
-        M_pred = A * U_MEV + delta_pred
-        ddelta = delta_pred - delta_obs
-        # For atoms where delta_obs is zero by AME definition (e.g. ¹²C),
-        # a residual-as-percentage-of-Δ is ill-defined.  Use the absolute
-        # residual divided by total mass (in ppm) as the meaningful metric
-        # and emit a sentinel for the Δ-fractional column.
-        if abs(delta_obs) > 1e-9:
-            err_pct = 100.0 * ddelta / abs(delta_obs)
+        row = predict_row(symbol, Z, N)
+        row["B_AME_MeV_ref"] = float(B_ame)
+        row["delta_obs_MeV_ref"] = float(delta_obs)
+
+        # Reference-only total mass (AME, comparison anchor).
+        M_obs = A * U_MEV + delta_obs
+        row["M_obs_MeV_ref"] = M_obs
+
+        # Residuals only when prediction exists.
+        delta_pred = row["delta_pred_MeV"]
+        if delta_pred is not None:
+            ddelta = delta_pred - delta_obs
+            row["delta_residual_MeV"] = ddelta
+            M_pred = row["M_pred_MeV"]
+            row["M_err_ppm"] = 1e6 * (M_pred - M_obs) / M_obs if M_obs > 0 else 0.0
+            ddelta_str = f"{ddelta:>+8.3f}"
+            mpred_str = f"{M_pred:>11.3f}"
         else:
-            err_pct = None   # undefined (AME-zero Δ); see M_err_ppm column
+            row["delta_residual_MeV"] = None
+            row["M_err_ppm"] = None
+            ddelta_str = f"{'pend':>8}"
+            mpred_str = f"{'pending':>11}"
 
-        err_pct_str = f"{err_pct:>+7.2f}" if err_pct is not None else f"{'—':>7}"
+        delta_pred_str = (
+            f"{delta_pred:>+9.3f}" if delta_pred is not None else f"{'pend':>9}"
+        )
         print(
             f"  {symbol:>6} {A:>3} "
-            f"{delta_obs:>+9.3f} {delta_pred:>+9.3f} "
-            f"{ddelta:>+8.3f} {err_pct_str}  "
-            f"{M_obs:>11.3f} {M_pred:>11.3f}  {tag}"
+            f"{delta_obs:>+9.3f} {delta_pred_str} "
+            f"{ddelta_str}  "
+            f"{M_obs:>11.3f} {mpred_str}  {row['row_derivation_status']}"
         )
 
-        rows.append({
-            "symbol": symbol,
-            "Z": Z,
-            "N": N,
-            "A": A,
-            "B_AME_MeV": B_ame,
-            "B_pred_MeV": B_pred,
-            "delta_obs_MeV": delta_obs,
-            "delta_pred_MeV": delta_pred,
-            "delta_residual_MeV": ddelta,
-            "delta_err_pct": err_pct,
-            "M_obs_MeV": M_obs,
-            "M_pred_MeV": M_pred,
-            "M_err_ppm": 1e6 * (M_pred - M_obs) / M_obs if M_obs > 0 else 0.0,
-            "strategy": tag,
-        })
+        rows.append(row)
 
-    # Summary: Q-values for α-decay chain (showcasing the framework)
-    print("\n  α-decay Q-values along the α-chain (MeV):")
-    alpha_chain = ["4He", "8Be", "12C", "16O", "20Ne", "22Ne"]
-    for sym in alpha_chain:
-        r = next((x for x in rows if x["symbol"] == sym), None)
-        if r is None:
-            continue
-        # Q_α(parent → daughter + α) = Δ(parent) - Δ(daughter) - Δ(α)
-        # For simplicity show Δ (not full Q); downstream readers can difference.
-        print(f"    {r['symbol']:>6}  Δ_obs={r['delta_obs_MeV']:>+8.3f}  "
-              f"Δ_pred={r['delta_pred_MeV']:>+8.3f}  "
-              f"ΔΔ={r['delta_residual_MeV']:>+7.3f}")
+    # Stats on Δ (mass excess) — derived rows only.
+    derived_rows = [r for r in rows if r["row_derivation_status"] == "derived"]
+    pending_rows = [r for r in rows if r["row_derivation_status"] != "derived"]
 
-    # Stats on Δ (mass excess)
-    delta_errs = [abs(r["delta_residual_MeV"]) for r in rows if r["delta_obs_MeV"] != 0]
-    mean_abs = sum(delta_errs) / len(delta_errs) if delta_errs else 0
-    max_abs  = max(delta_errs) if delta_errs else 0
-    m_ppms = [abs(r["M_err_ppm"]) for r in rows if r["M_obs_MeV"] > 0]
-    print(f"\n  Δ (mass excess) stats: mean|ΔΔ|={mean_abs:.3f} MeV, max|ΔΔ|={max_abs:.3f} MeV")
-    print(f"  M (total mass) stats:  mean|δM|={sum(m_ppms)/len(m_ppms):.1f} ppm, "
-          f"max|δM|={max(m_ppms):.1f} ppm")
+    delta_errs = [
+        abs(r["delta_residual_MeV"])
+        for r in derived_rows
+        if r["delta_residual_MeV"] is not None and r["delta_obs_MeV_ref"] != 0
+    ]
+    mean_abs = sum(delta_errs) / len(delta_errs) if delta_errs else 0.0
+    max_abs = max(delta_errs) if delta_errs else 0.0
+    m_ppms = [
+        abs(r["M_err_ppm"])
+        for r in derived_rows
+        if r["M_err_ppm"] is not None and r["M_obs_MeV_ref"] > 0
+    ]
+    print(
+        f"\n  Δ (mass excess) stats over {len(derived_rows)} derived rows: "
+        f"mean|ΔΔ|={mean_abs:.3f} MeV, max|ΔΔ|={max_abs:.3f} MeV"
+    )
+    if m_ppms:
+        print(
+            f"  M (total mass) stats:  mean|δM|={sum(m_ppms)/len(m_ppms):.1f} ppm, "
+            f"max|δM|={max(m_ppms):.1f} ppm"
+        )
+    print(
+        f"  {len(pending_rows)} rows DERIVATION_PENDING (m_n / B(⁴He+) "
+        f"chains not yet fit-free)"
+    )
 
     witness = {
         "computedAt": datetime.now(timezone.utc).isoformat(),
         "name": "low-isotope-mass-table",
         "description": (
             "Low-isotope mass + mass-excess table (Z ≤ 10) from the "
-            "mass-volume binding framework.  Delta = Z·Δ_H + N·Δ_n "
-            "- B_pred, M = A·u + Delta."
+            "categorical derivation chain. Predicted columns are emitted "
+            "ONLY for rows whose every input (m_p, m_n, B) traces to a "
+            "fit-free derivation rooted in q₀. Rows lacking such a chain "
+            "(m_n MeV scale; B(⁴He) and beyond) are emitted with "
+            "row_derivation_status='derivation_pending' and predicted "
+            "values set to null. CODATA / AME constants appear ONLY in "
+            "*_ref fields for comparison."
         ),
         "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
-        "constants": {
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "derivation_inputs": {
+            "m_p_derived_MeV": M_P_DERIVED_MEV,
+            "m_p_derived_source": M_P_DERIVED_SOURCE,
+            "m_p_derived_rel_diff_vs_codata": M_P_DERIVED_REL_DIFF,
+            "m_n_derivation_status": M_N_DERIVATION_STATUS,
+            "B_4He_derivation_status": B_4HE_DERIVATION_STATUS,
+            "delta_H_derived_MeV": DELTA_H_DERIVED,
+            "delta_N_derivation_status": (
+                "pending: requires derived m_n"
+            ),
+        },
+        "reference_constants_for_comparison_only": {
             "q_0": Q0,
             "U_MEV": U_MEV,
-            "M_P_MEV": M_P_MEV,
-            "M_N_MEV": M_N_MEV,
+            "M_P_REF_MEV_codata": M_P_REF_MEV,
+            "M_N_REF_MEV_codata": M_N_REF_MEV,
             "M_E_MEV": M_E_MEV,
-            "DELTA_H_MEV": DELTA_H,
-            "DELTA_N_MEV": DELTA_N,
         },
         "rows": rows,
         "stats": {
+            "n_rows_total": len(rows),
+            "n_rows_derived": len(derived_rows),
+            "n_rows_pending": len(pending_rows),
             "delta_mean_abs_MeV": mean_abs,
             "delta_max_abs_MeV": max_abs,
-            "M_mean_abs_ppm": sum(m_ppms)/len(m_ppms) if m_ppms else 0,
-            "M_max_abs_ppm": max(m_ppms) if m_ppms else 0,
+            "M_mean_abs_ppm": sum(m_ppms)/len(m_ppms) if m_ppms else None,
+            "M_max_abs_ppm": max(m_ppms) if m_ppms else None,
         },
+        "framework_refs": [
+            "conj:mass-volume-factorization",
+            "conj:crossing-graded-mass-expansion",
+            "conj:lifted-crossing-locality",
+        ],
+        "dual_witness_refs": [
+            "rho-k-h3a-lp-dual.witness.json",
+            "rho-k-h3a-gg-trajectory.witness.json",
+            "binding-k-solver.witness.json",
+        ],
     }
 
     out_path = Path(__file__).parent / "low-isotope-mass-table.witness.json"
