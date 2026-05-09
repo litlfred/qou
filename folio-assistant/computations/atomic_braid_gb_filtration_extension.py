@@ -1,6 +1,16 @@
 #!/usr/bin/env python3
 """atomic_braid_gb_filtration_extension.py — v3 #5
 
+**LEGACY CONVENTION.**  The `ATOMIC_BRAIDS` registry below uses the
+bare-int format `[1, 2, -1, ...]` (positive = σ_g, negative = σ_g⁻¹)
+because `gb_filtration_jet_tracker.reduce_braid` only accepts that
+shape.  The canonical operator-valued convention from
+`canonical_braid_crossings.atom_canonical_crossings(Z, N)` adds
+**averaged** crossings I = σ − (h/2)·1 that the GB-filtration
+tracker cannot currently process; migrating this script to canonical
+requires extending the tracker to handle averaged crossings (open
+research item, see `docs/audits/canonical-convention-migration-plan.md`).
+
 Per `2026-05-09-refocused-1ppb-workplan-v3.md` §3 item #5:
 
   "gb_filtration_jet_tracker.py extension to H_n for n ≥ 4 — the

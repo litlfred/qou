@@ -61,11 +61,21 @@ from canonical_braid_crossings import atom_canonical_crossings  # noqa: E402
 HERE = Path(__file__).parent
 
 # ── Atom registry ───────────────────────────────────────────────
-# Each entry: (slug, label, Z, N)
+# Each entry: (slug, label, Z, N).  ⁴He is the canonical-convention
+# successor to the legacy `atomic-braid-recipe-4he.derivation.json`
+# chain (which uses the bare-int disjoint-product format from
+# `atomic_braid_gb_filtration_extension`); the canonical word at
+# (Z=2, N=2) carries averaged crossings I = σ − (h/2)·1 not present
+# in the legacy form.  Note: PR #608's r5_full_canonical_knot_solver
+# currently SDP-confirms only A ≤ 3 (D, ³He, T deferred to B_5
+# Hoefsmit); the ⁴He canonical word is generated via the same
+# `mass_at_3A_proper.atom_braid_word_3A` pipeline but without
+# explicit SDP optimum verification.
 ATOMS = [
-    ("p", "proton",   1, 0),
-    ("n", "neutron",  0, 1),
-    ("d", "deuteron", 1, 1),
+    ("p",   "proton",   1, 0),
+    ("n",   "neutron",  0, 1),
+    ("d",   "deuteron", 1, 1),
+    ("4he", "⁴He",      2, 2),
 ]
 
 
