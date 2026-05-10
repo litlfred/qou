@@ -124,6 +124,240 @@
         }
       ],
       "compute_time_sec": 23.954381704330444
+    },
+    "9": {
+      "n": 9,
+      "n_partitions_height_le_6": 26,
+      "partitions": [
+        {
+          "partition": [
+            9
+          ],
+          "ord_y_at_u_eq_0": 0
+        },
+        {
+          "partition": [
+            8,
+            1
+          ],
+          "ord_y_at_u_eq_0": 3
+        },
+        {
+          "partition": [
+            7,
+            2
+          ],
+          "ord_y_at_u_eq_0": 7
+        },
+        {
+          "partition": [
+            7,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 6
+        },
+        {
+          "partition": [
+            6,
+            3
+          ],
+          "ord_y_at_u_eq_0": 11
+        },
+        {
+          "partition": [
+            6,
+            2,
+            1
+          ],
+          "ord_y_at_u_eq_0": 10
+        },
+        {
+          "partition": [
+            6,
+            1,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 9
+        },
+        {
+          "partition": [
+            5,
+            4
+          ],
+          "ord_y_at_u_eq_0": 15
+        },
+        {
+          "partition": [
+            5,
+            3,
+            1
+          ],
+          "ord_y_at_u_eq_0": 14
+        },
+        {
+          "partition": [
+            5,
+            2,
+            2
+          ],
+          "ord_y_at_u_eq_0": 17
+        },
+        {
+          "partition": [
+            5,
+            2,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 13
+        },
+        {
+          "partition": [
+            5,
+            1,
+            1,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 12
+        },
+        {
+          "partition": [
+            4,
+            4,
+            1
+          ],
+          "ord_y_at_u_eq_0": 18
+        },
+        {
+          "partition": [
+            4,
+            3,
+            2
+          ],
+          "ord_y_at_u_eq_0": 21
+        },
+        {
+          "partition": [
+            4,
+            3,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 17
+        },
+        {
+          "partition": [
+            4,
+            2,
+            2,
+            1
+          ],
+          "ord_y_at_u_eq_0": 20
+        },
+        {
+          "partition": [
+            4,
+            2,
+            1,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 16
+        },
+        {
+          "partition": [
+            4,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 15
+        },
+        {
+          "partition": [
+            3,
+            3,
+            3
+          ],
+          "ord_y_at_u_eq_0": 29
+        },
+        {
+          "partition": [
+            3,
+            3,
+            2,
+            1
+          ],
+          "ord_y_at_u_eq_0": 24
+        },
+        {
+          "partition": [
+            3,
+            3,
+            1,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 20
+        },
+        {
+          "partition": [
+            3,
+            2,
+            2,
+            2
+          ],
+          "ord_y_at_u_eq_0": 27
+        },
+        {
+          "partition": [
+            3,
+            2,
+            2,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 23
+        },
+        {
+          "partition": [
+            3,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 19
+        },
+        {
+          "partition": [
+            2,
+            2,
+            2,
+            2,
+            1
+          ],
+          "ord_y_at_u_eq_0": 30
+        },
+        {
+          "partition": [
+            2,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 26
+        }
+      ],
+      "compute_time_sec": 447.8914301395416
     }
   }
 }
