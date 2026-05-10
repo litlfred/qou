@@ -398,6 +398,8 @@ export default chapter({
         "bring-figure-eight-depth-2-witness",
         // 50-digit functional-equation cross-validated depth-3 witness.
         "bring-trilog-depth-3-witness",
+        // Im Li_3(ζ_5) = 4π³/125 (Tate-rational, Kummer reflection).
+        "bring-trilog-imaginary-tate-rational",
         // Hecke-algebra Baer-* foundation (generic q).
         "hecke-baer-star-generic",
         // Explicit central primitive idempotents via Murphy elements.
