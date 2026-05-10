@@ -83,23 +83,35 @@ axiom seminormalDim_pos : ∀ {n : ℕ} (λ : Nat.Partition n) (hn : 0 < n),
 axiom HoefsmitMatrix : ∀ {n : ℕ} (λ : Nat.Partition n) (_q : ℝ) (_i : Fin (n - 1)),
     Matrix (Fin (seminormalDim λ)) (Fin (seminormalDim λ)) ℝ
 
-/-- **Hecke relation** (axiomatised, σ-form to match
-    `JonesMarkovWenzl.qInteger` and `QSubstrate.markovParameter`
-    conventions): `σ_i² = (q^{1/2} − q^{−1/2}) σ_i + 1`.
+/-- **Hecke relation in T-form** (the F_p-friendly form, per
+    user direction "we want as many stmts to hold in F_p"):
 
-    Note (per Gemini review): the original draft used the T-form
-    coefficient `q − q⁻¹`, which is inconsistent with the
-    σ-form `q^{1/2}` convention used elsewhere in the QOU Lean
-    layer.  Aligned to σ-form here for consistency.
+        `T_i² = (q − 1) · T_i + q · 1`
 
-    The two conventions are related by rescaling: T-form Hecke
-    has `T_i² = (q−1)T_i + q`, while σ-form has
-    `σ_i² = (q^{1/2}−q^{−1/2})σ_i + 1`.  The σ-form is the
-    Kassel-Turaev/Jones convention used in QOU's manuscript. -/
+    INTEGER coefficients in q ⟹ holds uniformly across all F_p
+    when `q : ZMod p`.  The σ-form alternative
+    `σ_i² = (q^{1/2} − q^{−1/2}) σ_i + 1` requires `q^{1/2}` and
+    therefore lives over `ℚ(q^{1/2})` — losing F_p compatibility
+    at primes where `q^{1/2}` doesn't exist.
+
+    Conversion: `T_i = q^{1/2} σ_i` (in σ-form), so the two
+    formulations are related by a `q^{1/2}` rescaling that we
+    avoid by working in T-form throughout.
+
+    NOTE: previous draft (post-Gemini-review) used σ-form.
+    Reverted to T-form because:
+    1. F_p compatibility (per user direction).
+    2. The Mathlib-port aligns naturally with `ℤ[q, q⁻¹]`.
+    3. The σ-form's `q^{1/2}` necessitates `ℚ(q^{1/2})` which
+       has poor F_p reduction properties.
+
+    For the q-integer convention, the T-form analogue is
+    `[k]_q := (q^k − 1) / (q − 1)` (a polynomial in q, integer
+    coefficients).  See `QOU.HeckeAlgebra.JonesMarkovWenzl`. -/
 axiom HoefsmitMatrix_hecke_relation : ∀ {n : ℕ} (λ : Nat.Partition n) (q : ℝ)
-    (hq : 0 < q) (i : Fin (n - 1)),
+    (i : Fin (n - 1)),
     (HoefsmitMatrix λ q i) * (HoefsmitMatrix λ q i) =
-      (q ^ ((1 : ℝ) / 2) - q ^ (-(1 : ℝ) / 2)) • (HoefsmitMatrix λ q i) + 1
+      (q - 1) • (HoefsmitMatrix λ q i) + q • 1
 
 /-- **Braid relation** (axiomatised): `σ_i σ_{i+1} σ_i = σ_{i+1}
     σ_i σ_{i+1}` whenever both `i` and `i+1` index valid
