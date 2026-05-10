@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T20:17:04.974990+00:00",
-  "commitSha": "121dcefd06165c538402c806fa04153a98c2b789",
+  "computedAt": "2026-05-10T03:04:35.441438+00:00",
+  "commitSha": "3386d07c1126faff72c2f210a5fc2d0af8449afd",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2028,6 +2028,8 @@
       "computational-only": [
         "4he-binding-full-pipeline.witness.json",
         "adjacent-vs-full-probe.witness.json",
+        "alpha-5-jucys-murphy-central.witness.json",
+        "alpha-5-lp-dual-crystal.witness.json",
         "alpha-em-pslq-uniqueness.witness.json",
         "alpha-em-shift-multiplicative-chain.witness.json",
         "alpha-high-precision.witness.json",
@@ -2288,6 +2290,7 @@
         "v-hat-to-delta-lambda-bridge.witness.json",
         "wall-violations-sweep.witness.json",
         "wall-violations.witness.json",
+        "wedderburn-lp-ew-wiring.witness.json",
         "wedderburn-pair-volumes.witness.json",
         "y-lambda-at-q0.witness.json",
         "y-lambda-cyclotomic-factor.witness.json",

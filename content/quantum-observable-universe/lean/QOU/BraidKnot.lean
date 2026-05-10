@@ -17,6 +17,19 @@ import QOU.BraidKnot.GradedTraceResidueSplit
 import QOU.BraidKnot.GBResidueSpectralSum
 import QOU.BraidKnot.JetTowerUniformDeltaMax
 import QOU.BraidKnot.PhiQTowerAlgebraicStratification
+import QOU.BraidKnot.CanonicalKnotIdSDPUniqueness
+import QOU.BraidKnot.PSDFeasibilityProxy
+import QOU.BraidKnot.HopfBindingK
+import QOU.BraidKnot.LightNucleus
+import QOU.BraidKnot.WitnessR5Full
+import QOU.BraidKnot.Helium3Witness
+import QOU.BraidKnot.DeuteronWitness
+import QOU.BraidKnot.TritiumWitness
+import QOU.BraidKnot.MassFormulaCategorical
+import QOU.BraidKnot.AppliedHelium3Uniqueness
+import QOU.BraidKnot.AppliedDeuteronUniqueness
+import QOU.BraidKnot.AppliedTritiumUniqueness
+import QOU.BraidKnot.PerNucleusMassDerivation
 
 /-!
 # BraidKnot — Module Index

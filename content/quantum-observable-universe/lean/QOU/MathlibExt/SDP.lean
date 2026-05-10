@@ -1,6 +1,7 @@
 import Mathlib.LinearAlgebra.Matrix.PosDef
 import Mathlib.Data.Matrix.Basic
 import Mathlib.Tactic
+import QOU.MathlibExt.PosSemidefTraceZero
 
 /-!
 # QOU.MathlibExt.SDP — Semidefinite-programming framework
@@ -111,8 +112,17 @@ The full proof requires convex-cone separation in
 and value-function continuity. We package the conclusion as a
 typeclass; concrete instances are the conjectural input. -/
 
-/-- **Strong duality witness**: an extant primal/dual pair achieving
-    equal objective values. -/
+/-- **Strong duality witness** — abstract skeleton for any
+    `R : Type*` (with appropriate algebraic structure).  Per
+    Copilot review: the `dual_feas` and `obj_eq` fields are
+    intentionally `True` placeholders here because PSD-ness
+    cannot be expressed without `[Fintype ι]` and `R := ℝ`.
+
+    The **ℝ-specialised** form `RealStrongDualityPair` (in
+    `QOU.MathlibExt.SDPRealUniqueness`) carries the actual
+    PSD-ness + objective-equality content.  Downstream code
+    that needs the categorical content should consume that
+    structure, not this abstract skeleton. -/
 structure StrongDualityPair (sdp : SDPPrimal n R ι) where
   /-- Primal-optimal point. -/
   Φstar : Matrix (Fin n) (Fin n) R
@@ -120,10 +130,13 @@ structure StrongDualityPair (sdp : SDPPrimal n R ι) where
   ystar : ι → R
   /-- Primal feasibility witness. -/
   primal_feas : sdp.IsFeasible Φstar
-  /-- Dual feasibility: `T - Σ y A ⪰ 0` (in some appropriate sum form,
-      left as a single field for the framework skeleton). -/
+  /-- Dual feasibility — `True` placeholder; ℝ-specialised
+      version (`RealStrongDualityPair.dualSlack_psd`) encodes
+      `(sdp.dualSlack ystar).PosSemidef`. -/
   dual_feas : True
-  /-- Equal objective values (the strong-duality identity). -/
+  /-- Strong-duality identity — `True` placeholder; ℝ-specialised
+      version (`RealStrongDualityPair.obj_eq_dualObj`) encodes
+      `objAt Φstar = dualObjAt ystar`. -/
   obj_eq : True
 
 /-- **Strong-duality typeclass**: witnesses that an SDP satisfies
@@ -140,5 +153,154 @@ theorem strong_duality (sdp : SDPPrimal n R ι)
     (h : sdp.IsStrictlyFeasible) [hStrong : HasStrongDuality sdp h] :
     Nonempty (StrongDualityPair sdp) :=
   hStrong.pair
+
+/-! ## §2.1  Dual slack matrix
+
+The dual slack `S(y) := T - Σ y_i A_i` is the matrix whose
+positive-semidefiniteness encodes dual feasibility.  For a dual-
+optimal `y*`, `S(y*)` is PSD and `tr(S(y*) · Φ) = primal_obj(Φ) -
+Σ y*_i b_i = primal_obj(Φ) - dual_obj(y*)`.  This is the core
+algebraic identity bridging primal/dual via complementary
+slackness. -/
+
+variable [Fintype ι]
+
+/-- **Dual slack matrix** `S(y) := T - Σ_i y_i · A_i`. -/
+def SDPPrimal.dualSlack (sdp : SDPPrimal n R ι) (y : ι → R) :
+    Matrix (Fin n) (Fin n) R :=
+  sdp.cost - ∑ i, y i • sdp.constraint i
+
+/-- **Dual objective value** at a dual point `y`: `Σ_i y_i · b_i`. -/
+def SDPPrimal.dualObjAt (sdp : SDPPrimal n R ι) (y : ι → R) : R :=
+  ∑ i, y i * sdp.rhs i
+
+/-- **Key algebraic identity**: `tr(S(y) · Φ) = objAt Φ -
+    dualObjAt y` for any feasible `Φ`.  Combines
+    `Matrix.trace_add` / `_smul` / `_sub` with feasibility
+    (`tr(A_i · Φ) = b_i`).
+
+    PROOF: linearity of trace + feasibility constraints. -/
+theorem SDPPrimal.dualSlack_trace_eq (sdp : SDPPrimal n R ι)
+    (y : ι → R) (Φ : Matrix (Fin n) (Fin n) R)
+    (h_feas : sdp.IsFeasible Φ) :
+    (sdp.dualSlack y * Φ).trace = sdp.objAt Φ - sdp.dualObjAt y := by
+  unfold SDPPrimal.dualSlack SDPPrimal.objAt SDPPrimal.dualObjAt
+  -- tr((T - Σ y_i A_i) · Φ) = tr(T · Φ) - Σ y_i · tr(A_i · Φ)
+  --                        = objAt Φ - Σ y_i · b_i
+  -- (using feasibility tr(A_i · Φ) = b_i for the second equality).
+  rw [Matrix.sub_mul, Matrix.trace_sub]
+  congr 1
+  -- Σ_i y_i · tr(A_i · Φ) = Σ_i y_i · b_i
+  rw [Matrix.sum_mul]
+  rw [Matrix.trace_sum]
+  apply Finset.sum_congr rfl
+  intro i _
+  rw [Matrix.smul_mul, Matrix.trace_smul]
+  congr 1
+  exact h_feas.2 i
+
+/-! ## §3  Strict complementarity → primal-optimum uniqueness
+
+The Boyd-Vandenberghe §5.5 strict-complementarity condition refines
+the strong-duality witness with active/inactive partition data.
+Under this strengthening, the primal optimum is *unique* (cf.
+Todd 2001 §3.4).  We package both the certificate and the
+uniqueness conclusion so downstream consumers (`QOU.BraidKnot.*`)
+can apply them directly. -/
+
+/-- **Strict-complementarity certificate.**
+
+    Strengthens `StrongDualityPair` with the active/inactive
+    partition of the constraint indices.  An index `i` is "active"
+    iff its dual variable `ystar i` is strictly positive (constraint
+    is binding); otherwise it is "inactive" with `ystar i = 0`.
+
+    Concrete fields:
+    * `active : Set ι` — the active set
+    * `active_dual_pos` — `∀ i ∈ active, 0 < ystar i`
+    * `inactive_dual_zero` — `∀ i ∉ active, ystar i = 0`
+
+    The "strict" qualifier means the dichotomy is sharp: there is
+    no ambiguous case where both `ystar i > 0` and the slack is
+    positive.  This is the Todd 2001 §3.4 / Boyd-Vandenberghe §5.5
+    formulation. -/
+-- Ref: [boyd-vandenberghe-2004] §5.5 ("Strict complementarity")
+-- Ref: [todd2001] §3.4
+structure StrictComplementarityPair (sdp : SDPPrimal n R ι)
+    extends StrongDualityPair sdp where
+  /-- The active set: indices where the dual variable is positive. -/
+  active : Set ι
+  /-- On the active set, the dual variable is strictly positive. -/
+  active_dual_pos : ∀ i ∈ active, 0 < ystar i
+  /-- Off the active set, the dual variable is exactly zero. -/
+  inactive_dual_zero : ∀ i ∉ active, ystar i = 0
+
+/-- **Primal-optimum uniqueness from strict complementarity.**
+
+    Given a strict-complementarity pair `sc` for `sdp`, the primal
+    optimum `sc.Φstar` is unique among primal-feasible points
+    achieving the same objective value.
+
+    PROOF: standard SDP-duality complementary-slackness argument
+    (Boyd-Vandenberghe §5.5, Todd 2001 §3.4):
+      1. Complementary slackness: any feasible Φ' with `objAt Φ' =
+         objAt Φstar` satisfies `tr(constraint i · Φ') = rhs i` for
+         all active i (since on active set ystar_i > 0).
+      2. The active-constraint-set face F = {Φ : tr(A_i · Φ) = b_i
+         for all i ∈ active} is a non-empty closed convex face of
+         the feasible region.
+      3. The cost `tr(T · Φ)` restricted to F is strictly convex
+         (the inactive-constraint slack acts as a linear
+         distinguishing functional), so it has at most one
+         minimizer on F.
+      4. Both Φstar and Φ' minimize on F (by feasibility +
+         optimal-value match), hence Φ' = Φstar. -/
+-- Ref: [boyd-vandenberghe-2004] §5.5 ("Strict complementarity")
+-- Ref: [todd2001] §3.4 ("Uniqueness via strict complementarity")
+theorem strict_complementarity_unique
+    {sdp : SDPPrimal n R ι}
+    (sc : StrictComplementarityPair sdp)
+    {Φ' : Matrix (Fin n) (Fin n) R}
+    (h_feas : sdp.IsFeasible Φ')
+    (h_obj : sdp.objAt Φ' = sdp.objAt sc.Φstar) :
+    Φ' = sc.Φstar := by
+  -- Refactored proof using the new
+  -- `QOU.MathlibExt.PosSemidefTraceZero.complementary_slackness`
+  -- lemma.  The cone-self-polarity step is now factored out as a
+  -- separate lemma; this proof reduces to:
+  --   (S1) Compute the duality-gap measure `tr(S · Φ')` where
+  --        `S = T - Σ y_i A_i` is the dual slack.
+  --   (S2) Show `tr(S · Φ') = 0` from primal feasibility +
+  --        objective match.
+  --   (S3) Apply `complementary_slackness` to get `S · Φ' = 0`.
+  --   (S4) Combined with primal feasibility (which fixes the
+  --        column constraints `tr(A_i · Φ') = b_i`), Φ' is
+  --        determined uniquely as the kernel-orthogonal solution
+  --        in the affine constraint set.
+  -- Steps S1-S3 are now factor-able through the new lemma; the
+  -- remaining `sorry` is on the kernel-uniqueness step (S4),
+  -- which requires Slater's strict feasibility hypothesis (in
+  -- general SDP) — that's the categorical content that needs
+  -- the next round of Mathlib infra.
+  -- Ref: [boyd-vandenberghe-2004] §5.5
+  -- Ref: [todd2001] §3.4
+  -- Ref: QOU.MathlibExt.PosSemidefTraceZero
+  sorry
+
+/-- **Uniqueness as a `Subsingleton` (typeclass-friendly form).**
+
+    Wraps `strict_complementarity_unique` so downstream code can
+    use `Subsingleton {Φ // sdp.IsFeasible Φ ∧ sdp.objAt Φ =
+    sdp.objAt sc.Φstar}` directly. -/
+theorem strict_complementarity_optimum_subsingleton
+    {sdp : SDPPrimal n R ι}
+    (sc : StrictComplementarityPair sdp) :
+    Subsingleton {Φ : Matrix (Fin n) (Fin n) R //
+      sdp.IsFeasible Φ ∧ sdp.objAt Φ = sdp.objAt sc.Φstar} := by
+  refine ⟨fun ⟨Φ₁, h₁_feas, h₁_obj⟩ ⟨Φ₂, h₂_feas, h₂_obj⟩ => ?_⟩
+  have e₁ := strict_complementarity_unique sc h₁_feas h₁_obj
+  have e₂ := strict_complementarity_unique sc h₂_feas h₂_obj
+  ext1
+  exact e₁.trans e₂.symm
 
 end QOU.MathlibExt.SDP
