@@ -1,0 +1,178 @@
+import QOU.AppendixSurreals.Basic
+import QOU.AppendixSurreals.StandardPart
+
+/-!
+# QOU.AppendixSurreals.Blowup — Named infinite/infinitesimal surreals
+
+The first infinite surreal `ω` and the first positive infinitesimal
+`ε = 1/ω` live as members of the `SurrealField` typeclass (see
+`Basic.lean`).  This module derives the basic relations.
+
+The full theory of named infinities (`ω², ω^ω`, hyperseries) is
+substantial [@conway1976; @ehrlich2012] and is left to mathlib's
+ordinal-arithmetic development.  Here we only need the named
+endpoints used by the appendix's blow-up calculus.
+
+## References
+
+- [conway1976] Conway, *On Numbers and Games*, §0.
+- [ehrlich2012] Ehrlich, *The absolute arithmetic continuum*,
+  Bull. Symbolic Logic 18 (2012) 1–45.
+  https://doi.org/10.2178/bsl/1327328438
+
+LaTeX label: `def:surreal-blowup-calculus`
+-/
+
+namespace QOU.AppendixSurreals
+
+universe u
+
+variable (K : Type u) [SurrealField K]
+
+/-- Alias for the `SurrealField.omegaSurreal` member, for
+    convenience in downstream files. -/
+-- Ref: [conway1976] §0
+-- Ref: [ehrlich2012] Theorem 12.5 (every ordinal embeds in 𝐍𝐨)
+abbrev omegaSurreal : K := SurrealField.omegaSurreal
+
+/-- `ω` is greater than every natural number. -/
+-- Ref: [conway1976] §0
+theorem omegaSurreal_gt_natCast (n : ℕ) :
+    (n : K) < omegaSurreal K :=
+  SurrealField.omegaSurreal_gt_natCast n
+
+/-- `ω` is positive. -/
+theorem omegaSurreal_pos : (0 : K) < omegaSurreal K := by
+  have h := omegaSurreal_gt_natCast K 0
+  simpa using h
+
+/-- `ω` is non-zero. -/
+theorem omegaSurreal_ne_zero : omegaSurreal K ≠ 0 :=
+  ne_of_gt (omegaSurreal_pos K)
+
+/-- The **first positive infinitesimal** `ε := 1/ω`. -/
+-- Ref: [conway1976] §0
+noncomputable def epsilonSurreal : K :=
+  (omegaSurreal K)⁻¹
+
+/-- `ε` is positive. -/
+theorem epsilonSurreal_pos : (0 : K) < epsilonSurreal K := by
+  unfold epsilonSurreal
+  exact inv_pos.mpr (omegaSurreal_pos K)
+
+/-- `ε * ω = 1`. -/
+@[simp]
+theorem epsilonSurreal_mul_omegaSurreal :
+    epsilonSurreal K * omegaSurreal K = 1 := by
+  unfold epsilonSurreal
+  exact inv_mul_cancel₀ (omegaSurreal_ne_zero K)
+
+/-- `ω * ε = 1`. -/
+@[simp]
+theorem omegaSurreal_mul_epsilonSurreal :
+    omegaSurreal K * epsilonSurreal K = 1 := by
+  unfold epsilonSurreal
+  exact mul_inv_cancel₀ (omegaSurreal_ne_zero K)
+
+/-- `ε` is non-zero. -/
+theorem epsilonSurreal_ne_zero : epsilonSurreal K ≠ 0 := by
+  unfold epsilonSurreal
+  exact inv_ne_zero (omegaSurreal_ne_zero K)
+
+/-- `ε` is infinitesimal. -/
+theorem epsilonSurreal_isInfinitesimal :
+    SurrealField.IsInfinitesimal (epsilonSurreal K) := by
+  intro r hr
+  -- Strategy: pick natural n > 1/r.  Then 1/n < r, and ω > n implies
+  -- ε = 1/ω < 1/n in K, and 1/n = ofReal (1/n) < ofReal r.
+  have hε_pos : (0 : K) < epsilonSurreal K := epsilonSurreal_pos K
+  rw [abs_of_pos hε_pos]
+  -- Archimedean: exists natural n > 1/r.
+  have hinv_pos : (0 : ℝ) < 1 / r := one_div_pos.mpr hr
+  obtain ⟨n, hn_lt⟩ := exists_nat_gt (1 / r)
+  -- hn_lt : 1/r < n
+  have hn_pos_real : (0 : ℝ) < n := lt_of_lt_of_le hinv_pos hn_lt.le
+  have hn_pos_nat : 0 < n := by exact_mod_cast hn_pos_real
+  -- In K: ω > n, so 1/ω < 1/n (both positive).
+  have hω_gt_n : (n : K) < omegaSurreal K := omegaSurreal_gt_natCast K n
+  have hn_pos_K : (0 : K) < (n : K) := by exact_mod_cast hn_pos_nat
+  have hω_pos : (0 : K) < omegaSurreal K := omegaSurreal_pos K
+  -- ε = ω⁻¹; want ε < (n : K)⁻¹.
+  have hinv_lt : (omegaSurreal K)⁻¹ < ((n : K)⁻¹) :=
+    (inv_lt_inv₀ hω_pos hn_pos_K).mpr hω_gt_n
+  -- (n : K)⁻¹ = ofReal (1/n : ℝ).
+  have hnK_eq : (n : K) = SurrealField.ofReal ((n : ℝ)) := by
+    rw [← map_natCast SurrealField.ofReal n]
+  have hninv_eq : ((n : K)⁻¹) = SurrealField.ofReal (1 / n : ℝ) := by
+    rw [hnK_eq, ← map_inv₀]
+    congr 1
+    rw [one_div]
+  -- Final chain: ε = ω⁻¹ < (n : K)⁻¹ = ofReal (1/n) < ofReal r.
+  rw [hninv_eq] at hinv_lt
+  have h1n_lt_r : (1 / n : ℝ) < r := by
+    rw [div_lt_iff₀ hn_pos_real]
+    have := hn_lt
+    rw [div_lt_iff₀ hr] at this
+    linarith
+  have hofmono := SurrealField.ofReal_strictMono (K := K) h1n_lt_r
+  -- hinv_lt : (omegaSurreal K)⁻¹ < SurrealField.ofReal (1/n : ℝ)
+  -- hofmono : SurrealField.ofReal (1/n : ℝ) < SurrealField.ofReal r
+  -- Goal: (epsilonSurreal K) < SurrealField.ofReal r
+  show (omegaSurreal K)⁻¹ < SurrealField.ofReal r
+  exact hinv_lt.trans hofmono
+
+/-! ## The blow-up calculus
+
+A small bundle exposing the named-surreal cutoff `ω`, the
+corresponding infinitesimal unit `ε = 1/ω`, and the renormalisation
+operator `renormalise X C := st (X - C)` that strips a counter-term
+and projects to the real numbers.  This is the Lean form of
+`def:surreal-blowup-calculus`. -/
+
+namespace BlowupCalculus
+
+variable {K}
+
+/-- The named cutoff: `Λ := ω ∈ K`. -/
+abbrev Lambda : K := omegaSurreal K
+
+/-- The named infinitesimal unit: `ε := 1/ω ∈ K`. -/
+noncomputable abbrev Epsilon : K := epsilonSurreal K
+
+/-- **Renormalisation**: subtract a counter-term `C` from a
+    surreal-valued divergent expression `X`, then project to ℝ via
+    `standardPart`.  The result is `0` whenever `X - C` is not
+    finite — i.e. when the counter-term failed to absorb the
+    divergence. -/
+-- Ref: [conway1976] §0
+-- Ref: [ehrlich2012] §3
+noncomputable def renormalise (X C : K) : ℝ :=
+  standardPart (X - C)
+
+/-- A counter-term that exactly cancels the divergence renormalises
+    to `0`. -/
+@[simp]
+theorem renormalise_self (X : K) : renormalise X X = 0 := by
+  unfold renormalise
+  rw [sub_self]
+  exact standardPart_zero
+
+/-- If the counter-term recovers `X` up to an infinitesimal, the
+    renormalised value is `0`. -/
+theorem renormalise_eq_zero_of_isInfinitesimal {X C : K}
+    (h : SurrealField.IsInfinitesimal (X - C)) :
+    renormalise X C = 0 :=
+  standardPart_of_infinitesimal h
+
+/-- A real counter-term subtracted from a real expression
+    renormalises to the real difference. -/
+theorem renormalise_ofReal (x c : ℝ) :
+    renormalise (SurrealField.ofReal (K := K) x)
+                (SurrealField.ofReal (K := K) c) = x - c := by
+  unfold renormalise
+  rw [← map_sub]
+  exact standardPart_ofReal _
+
+end BlowupCalculus
+
+end QOU.AppendixSurreals
