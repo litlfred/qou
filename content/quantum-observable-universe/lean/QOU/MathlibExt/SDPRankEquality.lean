@@ -203,6 +203,67 @@ theorem kernel_disjoint_of_active_empty_and_cost_posDef
   -- Step 4: apply interior case
   exact kernel_disjoint_of_dualSlack_posDef sc h_S_posDef
 
+/-! ### Range-spanning instances
+
+The **range-spanning** statement
+`range(Φstar) + range(S) = ℝ^n`
+is the categorical SDP-strict-complementarity content.  When
+provided, the kernel-disjoint conclusion follows by the inner-
+product proof below.
+
+Specific structural cases admit direct proofs of range-spanning
+without invoking Goldman-Tucker. -/
+
+/-- **Range-spanning when dual slack is PosDef** — proven
+    directly: `S` PosDef ⟹ `range(S) = ℝ^n` ⟹ range-spanning
+    trivial (take a = 0, b = S⁻¹·v).
+
+    No axiom dependency — pure Mathlib `Matrix.PosDef` +
+    invertibility. -/
+theorem range_spans_of_dualSlack_posDef
+    {ι : Type*} [Fintype ι]
+    {sdp : SDPPrimal n ℝ ι} (sc : RealStrictComplementarityPair sdp)
+    (h_S_posDef : (sdp.dualSlack sc.ystar).PosDef) :
+    ∀ v : Fin n → ℝ, ∃ a b : Fin n → ℝ,
+      v = sc.Φstar.mulVec a + (sdp.dualSlack sc.ystar).mulVec b := by
+  intro v
+  -- S PosDef ⟹ det > 0 ⟹ invertible.
+  have h_det_pos : 0 < (sdp.dualSlack sc.ystar).det := h_S_posDef.det_pos
+  have h_isUnit : IsUnit (sdp.dualSlack sc.ystar).det := h_det_pos.ne'.isUnit
+  -- Take a := 0, b := S⁻¹ · v.  Then Φ·0 + S·(S⁻¹·v) = 0 + v = v.
+  refine ⟨0, (sdp.dualSlack sc.ystar)⁻¹.mulVec v, ?_⟩
+  rw [Matrix.mulVec_zero, zero_add]
+  -- S·(S⁻¹·v) = (S * S⁻¹)·v = 1·v = v
+  rw [← Matrix.mulVec_mulVec, Matrix.mul_nonsing_inv _ h_isUnit, Matrix.one_mulVec]
+
+/-- **Range-spanning when active set is empty + cost PosDef** —
+    proven via reduction to the interior case (S = cost
+    when ystar = 0).  No axiom dependency. -/
+theorem range_spans_of_active_empty_and_cost_posDef
+    {ι : Type*} [Fintype ι]
+    {sdp : SDPPrimal n ℝ ι} (sc : RealStrictComplementarityPair sdp)
+    (h_active_empty : sc.active = ∅)
+    (h_cost_posDef : sdp.cost.PosDef) :
+    ∀ v : Fin n → ℝ, ∃ a b : Fin n → ℝ,
+      v = sc.Φstar.mulVec a + (sdp.dualSlack sc.ystar).mulVec b := by
+  -- Same dualSlack-equals-cost reduction as kernel-disjoint version.
+  have h_ystar_zero : ∀ i : ι, sc.ystar i = 0 := by
+    intro i
+    apply sc.inactive_dual_zero
+    rw [h_active_empty]
+    exact Set.notMem_empty _
+  have h_dualSlack_eq_cost : sdp.dualSlack sc.ystar = sdp.cost := by
+    unfold SDPPrimal.dualSlack
+    have h_sum_zero : (∑ i, sc.ystar i • sdp.constraint i) = 0 := by
+      apply Finset.sum_eq_zero
+      intro i _
+      rw [h_ystar_zero i, zero_smul]
+    rw [h_sum_zero, sub_zero]
+  have h_S_posDef : (sdp.dualSlack sc.ystar).PosDef := by
+    rw [h_dualSlack_eq_cost]
+    exact h_cost_posDef
+  exact range_spans_of_dualSlack_posDef sc h_S_posDef
+
 /-- **Kernel disjointness from range spanning** — fully proven
     via Hermitian inner-product manipulation.  No axioms.
 
