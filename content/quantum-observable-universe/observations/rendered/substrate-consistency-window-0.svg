@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>The substrate consistency window</title>
+  <desc>
+    Three coloured vertical bands across a horizontal q-axis (1.10
+    to 1.12).  Each band is the q-range allowed by one independent
+    calibration scalar (m_μ/m_e, α_em, Q_β(n)).  Their intersection
+    — a tiny vertical sliver around q₀ ≈ 1.1097 — is the consistent
+    locus.  Caption: "single-parameter overdetermination — the
+    central falsifiability claim".
+  </desc>
+  <defs>
+    <style>
+      .bg     { fill: #ffffff; }
+      .axis   { stroke: #1a1a1a; stroke-width: 1.6; fill: none; }
+      .tick   { stroke: #1a1a1a; stroke-width: 1.2; fill: none; }
+      .ticklbl{ font-size: 11px; fill: #444; text-anchor: middle; }
+      .axislbl{ font-size: 13px; fill: #1a1a1a; text-anchor: middle;
+                font-style: italic; }
+      .b1     { fill: #c0392b; opacity: 0.20; stroke: #c0392b;
+                stroke-width: 1.2; stroke-dasharray: 4 3; }
+      .b2     { fill: #27ae60; opacity: 0.20; stroke: #27ae60;
+                stroke-width: 1.2; stroke-dasharray: 4 3; }
+      .b3     { fill: #2980b9; opacity: 0.20; stroke: #2980b9;
+                stroke-width: 1.2; stroke-dasharray: 4 3; }
+      .core   { fill: #1a1a1a; stroke: #1a1a1a; stroke-width: 1.5; }
+      .corelbl{ font-size: 13px; font-weight: 700; fill: #1a1a1a;
+                text-anchor: middle; }
+      .leg    { font-size: 12px; fill: #1a1a1a; }
+      .ttl    { font-size: 17px; font-style: italic; fill: #1a1a1a; }
+      .foot   { font-size: 11px; font-style: italic; fill: #666;
+                text-anchor: middle; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="800" height="420"/>
+
+  <text x="400" y="30" text-anchor="middle" class="ttl">The substrate consistency window</text>
+
+  <!-- ===== Plot area: x from 70 to 730 covers q in [1.100, 1.120]
+       Linear map: q = 1.100 + (x-70)/660 * 0.020   ⇔  x = 70 + (q-1.100)/0.020 * 660 -->
+  <!-- ===== Axis -->
+  <line class="axis" x1="70" y1="320" x2="740" y2="320"/>
+  <text x="400" y="395" class="axislbl">substrate parameter  q</text>
+
+  <!-- Ticks every 0.005 -->
+  <g>
+    <line class="tick" x1="70"  y1="320" x2="70"  y2="328"/>
+    <text x="70"  y="345" class="ticklbl">1.100</text>
+    <line class="tick" x1="235" y1="320" x2="235" y2="328"/>
+    <text x="235" y="345" class="ticklbl">1.105</text>
+    <line class="tick" x1="400" y1="320" x2="400" y2="328"/>
+    <text x="400" y="345" class="ticklbl">1.110</text>
+    <line class="tick" x1="565" y1="320" x2="565" y2="328"/>
+    <text x="565" y="345" class="ticklbl">1.115</text>
+    <line class="tick" x1="730" y1="320" x2="730" y2="328"/>
+    <text x="730" y="345" class="ticklbl">1.120</text>
+  </g>
+
+  <!-- ===== Three bands.  Centred around q₀ = 1.1097 (x ≈ 390).
+       Band 1 (m_μ/m_e):  q in [1.106, 1.113]   x in [268, 499]   width 231
+       Band 2 (α_em):     q in [1.108, 1.111]   x in [334, 433]   width 99
+       Band 3 (Q_β(n)):   q in [1.107, 1.112]   x in [301, 466]   width 165 -->
+  <rect class="b1" x="268" y="80"  width="231" height="240"/>
+  <rect class="b2" x="334" y="100" width="99"  height="220"/>
+  <rect class="b3" x="301" y="120" width="165" height="200"/>
+
+  <!-- Intersection (sliver) -->
+  <line class="core" x1="385" y1="80" x2="385" y2="320" stroke-width="3"/>
+  <text x="385" y="70" class="corelbl">q₀ ≈ 1.1097</text>
+
+  <!-- Band labels (right side stack) -->
+  <g transform="translate(580, 130)">
+    <rect x="0" y="0" width="14" height="14" class="b1"/>
+    <text x="22" y="11" class="leg">m_μ / m_e  consistency</text>
+    <rect x="0" y="22" width="14" height="14" class="b2"/>
+    <text x="22" y="33" class="leg">α_em  consistency</text>
+    <rect x="0" y="44" width="14" height="14" class="b3"/>
+    <text x="22" y="55" class="leg">Q_β(n)  consistency</text>
+    <line x1="6" y1="74" x2="6" y2="84" stroke="#1a1a1a" stroke-width="3"/>
+    <text x="22" y="83" class="leg">all three  ⇒  q₀</text>
+  </g>
+
+  <!-- Footer -->
+  <text x="400" y="412" class="foot">single-parameter overdetermination — the central falsifiability claim</text>
+</svg>

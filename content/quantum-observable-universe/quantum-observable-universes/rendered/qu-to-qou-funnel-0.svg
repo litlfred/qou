@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 720"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>From quantum universe to quantum observable universe</title>
+  <desc>
+    A funnel.  Top: wide cloud labelled "QUs — all rigid braided
+    monoidal categories with Frobenius–Hopf object A and fibre
+    functor τ".  Three sequential constrictions, each labelled
+    with one QOU axiom (non-degenerate volume, observability,
+    measurability), narrow the cloud.  Bottom outlet: small box
+    "QOU (𝐂, Θ, G, 𝒮) with G = SU₂(R) forced".  Side note: "and
+    χ(A) = −6 from the lifting obstruction (Ch 3)".
+  </desc>
+  <defs>
+    <style>
+      .bg      { fill: #ffffff; }
+      .funnel  { fill: #fafafa; stroke: #1a1a1a; stroke-width: 1.6; }
+      .cloud   { fill: #ffffff; stroke: #1a1a1a; stroke-width: 1.4;
+                 stroke-dasharray: 5 4; }
+      .outlet  { fill: #ffffff; stroke: #1a1a1a; stroke-width: 2; rx: 8; }
+      .axiom   { fill: #ffffff; stroke: #1a1a1a; stroke-width: 1.2; rx: 6; }
+      .lbl     { font-size: 13px; fill: #1a1a1a; text-anchor: middle; }
+      .lblb    { font-size: 14px; font-weight: 700; fill: #1a1a1a;
+                 text-anchor: middle; }
+      .lbls    { font-size: 11px; fill: #444; text-anchor: middle; }
+      .ttl     { font-size: 17px; font-style: italic; fill: #1a1a1a; }
+      .side    { font-size: 11px; fill: #666; font-style: italic; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="600" height="720"/>
+  <text x="300" y="30" text-anchor="middle" class="ttl">From QU to QOU: three constraints</text>
+
+  <!-- Top cloud -->
+  <ellipse class="cloud" cx="300" cy="80" rx="240" ry="32"/>
+  <text x="300" y="76" class="lblb">QUs</text>
+  <text x="300" y="94" class="lbls">all rigid braided monoidal (𝐂, A, τ)</text>
+
+  <!-- Funnel polygon: top edge wide, narrows in three steps -->
+  <!-- Coordinates chosen to taper smoothly -->
+  <polygon class="funnel" points="
+    60,112  540,112
+    490,220 110,220
+    430,360 170,360
+    370,500 230,500
+    330,580 270,580
+  "/>
+
+  <!-- Step 1 axiom badge -->
+  <rect class="axiom" x="420" y="135" width="160" height="50"/>
+  <text x="500" y="158" class="lblb">non-degenerate ∫_A</text>
+  <text x="500" y="176" class="lbls">volume axiom</text>
+  <line x1="420" y1="160" x2="370" y2="160"
+        stroke="#1a1a1a" stroke-width="1.2"/>
+
+  <!-- Step 2 axiom badge -->
+  <rect class="axiom" x="20" y="265" width="160" height="50"/>
+  <text x="100" y="288" class="lblb">Hom(𝟙, Ad A) = 0</text>
+  <text x="100" y="306" class="lbls">observability</text>
+  <line x1="180" y1="290" x2="230" y2="290"
+        stroke="#1a1a1a" stroke-width="1.2"/>
+
+  <!-- Step 3 axiom badge -->
+  <rect class="axiom" x="420" y="405" width="160" height="50"/>
+  <text x="500" y="428" class="lblb">c₁ = c₂ = 0</text>
+  <text x="500" y="446" class="lbls">measurability (Chern flat)</text>
+  <line x1="420" y1="430" x2="370" y2="430"
+        stroke="#1a1a1a" stroke-width="1.2"/>
+
+  <!-- Outlet -->
+  <rect class="outlet" x="200" y="600" width="200" height="80"/>
+  <text x="300" y="630" class="lblb">QOU</text>
+  <text x="300" y="650" class="lbls">(𝐂, Θ, G, 𝒮)</text>
+  <text x="300" y="668" class="lbls">G = SU₂(R) forced</text>
+
+  <!-- Side note -->
+  <text x="20" y="700" class="side">…and χ(A) = −6 from the lifting obstruction (Ch 3)</text>
+</svg>

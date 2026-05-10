@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 660"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>The recursive brane tower</title>
+  <desc>
+    Vertical stack of disks A_0 ⊂ A_1 ⊂ A_2 ⊂ … each connected to
+    the next by a labelled J^1 arrow.  A_n is the brane of A_{n+1};
+    each level adds one extra Ω^1 dimension via jet prolongation.
+    A side annotation marks the obstruction class κ_n where the
+    Yekutieli filtration controls liftability.
+  </desc>
+  <defs>
+    <marker id="tip" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a1a1a"/>
+    </marker>
+    <style>
+      .bg     { fill: #ffffff; }
+      .disk   { fill: #ffffff; stroke: #1a1a1a; stroke-width: 1.6; }
+      .arr    { stroke: #1a1a1a; stroke-width: 1.4; fill: none; }
+      .lbl    { font-size: 13px; font-style: italic;
+                fill: #1a1a1a; text-anchor: middle; }
+      .lblb   { font-size: 16px; font-weight: 700;
+                fill: #1a1a1a; text-anchor: middle; }
+      .ttl    { font-size: 17px; font-style: italic; fill: #1a1a1a; }
+      .side   { font-size: 11px; fill: #666; font-style: italic; }
+      .obs    { fill: #c0392b; stroke: #c0392b; }
+      .obslbl { fill: #c0392b; font-size: 11px; font-style: italic; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="480" height="660"/>
+
+  <text x="240" y="30" text-anchor="middle" class="ttl">The recursive brane tower</text>
+
+  <!-- Disks at increasing radii.  Layer y centres: 565, 470, 370, 265, 155 (from base up). -->
+  <!-- A_0 at base -->
+  <ellipse class="disk" cx="240" cy="565" rx="60" ry="20"/>
+  <text x="240" y="570" class="lblb">A₀ = A</text>
+
+  <ellipse class="disk" cx="240" cy="470" rx="80" ry="22"/>
+  <text x="240" y="475" class="lblb">A₁ = J¹(A₀)</text>
+
+  <ellipse class="disk" cx="240" cy="370" rx="100" ry="24"/>
+  <text x="240" y="375" class="lblb">A₂ = J¹(A₁)</text>
+
+  <ellipse class="disk" cx="240" cy="265" rx="120" ry="26"/>
+  <text x="240" y="270" class="lblb">A₃ = J¹(A₂)</text>
+
+  <ellipse class="disk" cx="240" cy="155" rx="140" ry="28"/>
+  <text x="240" y="160" class="lblb">A_{n+1} = J¹(A_n)</text>
+
+  <!-- Arrows between layers, on the right side -->
+  <line class="arr" x1="295" y1="555" x2="315" y2="490" marker-end="url(#tip)"/>
+  <text x="350" y="525" class="lbl">J¹</text>
+
+  <line class="arr" x1="315" y1="455" x2="335" y2="390" marker-end="url(#tip)"/>
+  <text x="370" y="425" class="lbl">J¹</text>
+
+  <line class="arr" x1="335" y1="350" x2="355" y2="285" marker-end="url(#tip)"/>
+  <text x="390" y="320" class="lbl">J¹</text>
+
+  <line class="arr" x1="355" y1="245" x2="375" y2="180" marker-end="url(#tip)"/>
+  <text x="410" y="215" class="lbl">J¹</text>
+
+  <!-- Obstruction stars on the left side -->
+  <g transform="translate(60, 470)"><circle class="obs" r="5"/><text class="obslbl" x="-12" y="-10">κ₁</text></g>
+  <g transform="translate(60, 370)"><circle class="obs" r="5"/><text class="obslbl" x="-12" y="-10">κ₂</text></g>
+  <g transform="translate(60, 265)"><circle class="obs" r="5"/><text class="obslbl" x="-12" y="-10">κ₃</text></g>
+  <g transform="translate(60, 155)"><circle class="obs" r="5"/><text class="obslbl" x="-22" y="-10">κ_{n+1}</text></g>
+  <text x="40" y="615" class="obslbl">Yekutieli obstruction classes</text>
+
+  <!-- Side annotation -->
+  <text x="240" y="115" text-anchor="middle" class="side">Aₙ is the brane of A_{n+1};  each level adds one Ω¹ dimension</text>
+  <text x="240" y="630" text-anchor="middle" class="side">A₀ ↪ A₁ ↪ A₂ ↪ A₃ ↪ ⋯  (canonical inclusions via the unit section)</text>
+</svg>
