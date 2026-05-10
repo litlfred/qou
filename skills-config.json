@@ -32,6 +32,24 @@
         "deep-research",
         "academic-pipeline"
       ]
+    },
+    {
+      "name": "anthropics-skills",
+      "repo": "anthropics/skills",
+      "path": "skills",
+      "ref": "main",
+      "skills": [
+        "algorithmic-art",
+        "brand-guidelines",
+        "canvas-design",
+        "docx",
+        "mcp-builder",
+        "pdf",
+        "pptx",
+        "theme-factory",
+        "web-artifacts-builder",
+        "xlsx"
+      ]
     }
   ]
 }
