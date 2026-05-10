@@ -245,11 +245,35 @@ def chi_pole_order_crystal(
 _Q_SYM = sp.Symbol("q")              # match sympify default (no flag)
 _U_SYM = sp.Symbol("u", positive=True)  # so sqrt(u²) → u
 _Y_LAMBDA_CACHE: dict[int, dict[tuple[int, ...], sp.Expr]] = {}
+_Y_POLE_CACHE: dict[int, dict[tuple[int, ...], int | None]] = {}
+
+
+def _load_y_pole_cache_disk() -> dict[int, dict[tuple[int, ...], int]]:
+    """Load the precomputed `ord_{u=0}(y_λ)` cache from
+    `y-lambda-pole-order-cache.json` (built once by
+    `y_lambda_pole_order_cache.py`).  Returns `{}` if cache file
+    missing — caller falls back to the slow sympy path."""
+    import json
+    here = Path(__file__).parent
+    path = here / "y-lambda-pole-order-cache.json"
+    if not path.exists():
+        return {}
+    w = json.loads(path.read_text())
+    out: dict[int, dict[tuple[int, ...], int]] = {}
+    for n_key, n_data in w.get("by_n", {}).items():
+        n = int(n_key)
+        out[n] = {}
+        for r in n_data.get("partitions", []):
+            shape = tuple(r["partition"])
+            ord_y = r.get("ord_y_at_u_eq_0")
+            if ord_y is not None:
+                out[n][shape] = int(ord_y)
+    return out
 
 
 def _load_y_lambda_n(n: int) -> dict[tuple[int, ...], sp.Expr]:
     """Load symbolic `y_λ(q)` for partitions of `n` from the cached
-    Wenzl-bridge witness."""
+    Wenzl-bridge witness (slow fallback path)."""
     if n in _Y_LAMBDA_CACHE:
         return _Y_LAMBDA_CACHE[n]
     import json
@@ -268,23 +292,29 @@ def _load_y_lambda_n(n: int) -> dict[tuple[int, ...], sp.Expr]:
 def y_lambda_pole_order_in_u(
     shape: tuple[int, ...],
     n: int,
-) -> int:
-    """`ord_{u=0}(y_λ(u²))`.  Lowest u-power in the cached symbolic
-    Wenzl-bridge `y_λ(q)`, after substituting `q = u²`."""
+) -> int | None:
+    """`ord_{u=0}(y_λ(u²))`.  Looked up from the precomputed pole-
+    order cache when available; otherwise falls back to symbolic
+    sympy (slow at H_n ≥ 9)."""
+    # Fast path: precomputed cache.
+    if not _Y_POLE_CACHE:
+        _Y_POLE_CACHE.update(_load_y_pole_cache_disk())
+    if n in _Y_POLE_CACHE and shape in _Y_POLE_CACHE[n]:
+        return _Y_POLE_CACHE[n][shape]
+    # Slow fallback: sympy simplify.
     y_lams = _load_y_lambda_n(n)
     if shape not in y_lams:
-        # Some partitions are absent from the cache (e.g. zero
-        # central coefficient); treat as +∞ (no contribution to
-        # min).
         return None
     y_q = y_lams[shape]
     y_u = sp.simplify(y_q.subs(_Q_SYM, _U_SYM ** 2))
+    if y_u == 0:
+        return None
     n_, d_ = sp.fraction(y_u)
     n_poly = sp.Poly(n_, _U_SYM)
     d_poly = sp.Poly(d_, _U_SYM)
     n_low = min(m[0] for m in n_poly.monoms()) if n_poly.monoms() else 0
     d_low = min(m[0] for m in d_poly.monoms()) if d_poly.monoms() else 0
-    return n_low - d_low  # ord_{u=0}(N/D) = ord(N) - ord(D)
+    return n_low - d_low
 
 
 # ───────────────────────────────────────────────────────────────────
