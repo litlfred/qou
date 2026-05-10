@@ -30,6 +30,12 @@
     </style>
   </defs>
 
+  <!-- Solid white background so the figure renders readably under both
+       light- and dark-mode page backgrounds (GitHub dark, viewer dark
+       theme, terminal preview, etc.).  The strokes are dark; a white
+       card behind them keeps the picture legible everywhere. -->
+  <rect x="0" y="0" width="720" height="280" fill="#ffffff"/>
+
   <!-- Title -->
   <text x="360" y="34" text-anchor="middle" class="ttl">The Hecke skein triple</text>
 

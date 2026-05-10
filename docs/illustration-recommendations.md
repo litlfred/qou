@@ -27,6 +27,13 @@ TikZ→SVG pipeline) to draw it.
   figure when colour is meaningful (e.g. red/green/blue for the
   three coral tubes); thin (0.5 pt) lines, generous whitespace,
   serif Computer-Modern-style labels via `<text>` elements.
+- **Background**: every SVG must include an explicit white-fill
+  background rectangle covering the whole `viewBox`
+  (`<rect width="100%" height="100%" fill="#ffffff"/>` as the first
+  child). Strokes are dark. This guarantees the figure stays
+  readable under both light- and dark-mode page backgrounds
+  (GitHub dark, viewer dark theme, terminal preview, printed PDF).
+  Do not rely on the page background or `prefers-color-scheme`.
 - **Math inside SVG `<text>`**: the embedded SVG is rendered as a
   raster/vector asset by the LaTeX pipeline (`\includesvg`) and by
   the HTML viewer; **its text content is *not* run through LaTeX,
