@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 580"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>Operator-selection LP / SDP active set</title>
+  <desc>
+    A 2D feasibility polytope (intersection of half-planes G ≽ 0
+    and the net constraint).  The optimum vertex is marked with a
+    star.  The active faces (binding constraints — those whose
+    Frobenius positivity is tight at the optimum) are drawn bold;
+    inactive faces are lighter.  Outward normal arrows show the
+    dual variables u_λ* > 0 on each active face.  Caption: "active
+    demand channels = Wedderburn blocks the bound state saturates
+    (LP shadow prices)".
+  </desc>
+  <defs>
+    <marker id="tip-r" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#c0392b"/>
+    </marker>
+    <style>
+      .bg     { fill: #ffffff; }
+      .axis   { stroke: #1a1a1a; stroke-width: 1.4; fill: none; }
+      .axislbl{ font-size: 12px; fill: #1a1a1a; font-style: italic; }
+      .poly   { fill: #f0f0f6; stroke: #1a1a1a; stroke-width: 1.6; }
+      .active { fill: none; stroke: #c0392b; stroke-width: 4;
+                stroke-linecap: round; }
+      .opt    { fill: #c0392b; stroke: #1a1a1a; stroke-width: 1.4; }
+      .obj    { stroke: #2980b9; stroke-width: 1.2; fill: none;
+                stroke-dasharray: 5 4; }
+      .arr_r  { stroke: #c0392b; stroke-width: 1.6; fill: none; }
+      .lbl    { font-size: 12px; fill: #1a1a1a; }
+      .lblb   { font-size: 13px; font-weight: 700; fill: #1a1a1a; }
+      .ttl    { font-size: 17px; font-style: italic; fill: #1a1a1a; }
+      .red    { fill: #c0392b; }
+      .blu    { fill: #2980b9; }
+      .sub    { font-size: 11px; fill: #444; text-anchor: middle; }
+      .leg    { font-size: 12px; fill: #1a1a1a; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="760" height="580"/>
+
+  <text x="380" y="32" text-anchor="middle" class="ttl">Operator-selection LP / SDP — active set + dual</text>
+
+  <!-- Plot area -->
+  <line class="axis" x1="80" y1="490" x2="600" y2="490"/>
+  <line class="axis" x1="80" y1="490" x2="80"  y2="80"/>
+  <text x="600" y="510" class="axislbl">x_1  (operator weight)</text>
+  <text x="60"  y="80"  class="axislbl">x_2</text>
+
+  <!-- Polytope: a pentagon-like feasible region.  Vertices: -->
+  <!-- A (90,440)   bottom-left
+       B (440,440)  bottom-right
+       C (550,250)  right
+       D (380,130)  top   ←  optimum
+       E (120,210)  upper-left -->
+  <polygon class="poly" points="90,440 440,440 550,250 380,130 120,210"/>
+
+  <!-- Active edges (binding at optimum D=(380,130)) -->
+  <line class="active" x1="120" y1="210" x2="380" y2="130"/>
+  <line class="active" x1="380" y1="130" x2="550" y2="250"/>
+
+  <!-- Optimum vertex -->
+  <circle class="opt" cx="380" cy="130" r="9"/>
+  <text x="395" y="120" class="lblb">x*  (optimum)</text>
+  <text x="395" y="138" class="lbl">primal:  Σ tᵢ xᵢ*  =  ⟨t, x*⟩</text>
+
+  <!-- Dual variables: outward normals on active faces -->
+  <line class="arr_r" x1="250" y1="170" x2="220" y2="105" marker-end="url(#tip-r)"/>
+  <text x="200" y="100" class="red" font-size="12" font-weight="700">u_λ₁* &gt; 0</text>
+
+  <line class="arr_r" x1="465" y1="190" x2="540" y2="155" marker-end="url(#tip-r)"/>
+  <text x="555" y="155" class="red" font-size="12" font-weight="700">u_λ₂* &gt; 0</text>
+
+  <!-- Inactive face annotation -->
+  <text x="270" y="465" class="lbl" text-anchor="middle">inactive  (u_λ = 0)</text>
+
+  <!-- Objective gradient -->
+  <line class="obj" x1="500" y1="450" x2="320" y2="170" marker-end="url(#tip-r)"/>
+  <text x="510" y="430" class="blu" font-size="12" font-style="italic">∇ obj  =  t</text>
+
+  <!-- Legend -->
+  <g transform="translate(620, 100)">
+    <text x="0" y="0" class="leg">Active set</text>
+    <line class="active" x1="0" y1="14" x2="40" y2="14"/>
+    <text x="48" y="18" class="leg">u_λ* &gt; 0</text>
+
+    <text x="0" y="48" class="leg">Inactive</text>
+    <line stroke="#1a1a1a" stroke-width="1.6" x1="0" y1="62" x2="40" y2="62"/>
+    <text x="48" y="66" class="leg">u_λ = 0</text>
+
+    <circle class="opt" cx="20" cy="100" r="6"/>
+    <text x="48" y="104" class="leg">optimum x*</text>
+
+    <line class="obj" x1="0" y1="135" x2="40" y2="135"/>
+    <text x="48" y="139" class="leg">∇ obj  =  t</text>
+  </g>
+
+  <!-- Caption -->
+  <text x="380" y="540" class="sub">active demand channels (red faces) = Wedderburn blocks the bound state saturates</text>
+  <text x="380" y="560" class="sub">u_λ* are the LP shadow prices  =  binding-energy thimble depths</text>
+</svg>
