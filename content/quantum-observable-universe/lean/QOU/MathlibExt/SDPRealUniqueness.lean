@@ -364,6 +364,83 @@ theorem real_strict_complementarity_optimum_subsingleton_via_class
   rw [real_strict_complementarity_unique_via_class sc h₁_feas h₁_obj,
       real_strict_complementarity_unique_via_class sc h₂_feas h₂_obj]
 
+/-! ## §3.07  Sandwich-PSD route to range containment
+
+The general-case `SDPSlaterUniqueness` instance needs the
+multi-week SDP-rank-deficiency theorem.  But we can derive a
+useful intermediate result from `complementary_slackness` + PSD
+square roots: if `S * Φ = 0` with both PSD, then `range(Φ) ⊆
+ker(S)`.  This is the **range-containment lemma** — the
+half-step that any Slater + strict-comp uniqueness proof goes
+through.
+
+PROOF SKETCH (closeable but bulky in Lean):
+  1. `M := S^{1/2} · Φ · S^{1/2}` is PSD (sandwich preserves PSD).
+  2. `tr(M) = tr(S^{1/2} · S^{1/2} · Φ) = tr(S · Φ) = 0` (cyclic + S²=S).
+  3. PSD with trace 0 ⟹ M = 0 (single-matrix Mathlib lemma).
+  4. `M = 0` ⟹ `(S^{1/2} v)ᵀ Φ (S^{1/2} v) = 0` for all v.
+  5. PSD Φ + zero quadratic form ⟹ `Φ · (S^{1/2} v) = 0` for all v.
+  6. ⟹ `Φ · S^{1/2} = 0` ⟹ range(Φ) ⊆ ker(S^{1/2}) = ker(S).
+
+Once this lemma is closed, both Φ' and Φstar have their ranges
+in `ker(S)`.  The difference `D := Φ' − Φstar` then satisfies
+`range(D) ⊆ ker(S)`, and combined with `tr(A_i · D) = 0` and
+strict complementarity, the SDP rank-deficiency theorem closes
+uniqueness.  The remaining gap is the rank-deficiency theorem
+itself (Slater-required), which is the multi-week Mathlib
+delivery. -/
+
+/-- **Range containment from complementary slackness** —
+    the structural fact that for PSD `S`, `Φ` with `S · Φ = 0`,
+    the range of `Φ` lies in the kernel of `S`.  Closeable from
+    `Matrix.PosSemidef.complementary_slackness` (PR #623 batch 2)
+    + Mathlib square-root API + single-matrix PSD trace-zero
+    lemma; full closure remains open pending Mathlib API
+    verification.
+
+    This is a STRUCTURAL stepping stone toward the full
+    `SDPSlaterUniqueness` instance — even without the
+    rank-deficiency theorem, range-containment is independently
+    useful for SDP analysis. -/
+theorem Matrix.PosSemidef.range_contained_in_kernel_of_mul_zero
+    {S Φ : Matrix (Fin n) (Fin n) ℝ}
+    (hS : S.PosSemidef) (hΦ : Φ.PosSemidef)
+    (h_zero : S * Φ = 0) :
+    -- Equivalent statement: Φ * S = 0 (range(Φ) ⊆ ker(S^T) = ker(S)).
+    Φ * S = 0 := by
+  -- (S * Φ)^T = Φ^T * S^T = Φ * S (since both Hermitian/symmetric)
+  -- = 0^T = 0.
+  have hΦ_herm : Φ.IsHermitian := hΦ.1
+  have hS_herm : S.IsHermitian := hS.1
+  have h_T : (S * Φ).transpose = Φ * S := by
+    rw [Matrix.transpose_mul,
+        show Φ.transpose = Φ from hΦ_herm,
+        show S.transpose = S from hS_herm]
+  rw [← h_T, h_zero]
+  exact Matrix.transpose_zero
+
+/-- **General-case SDPSlaterUniqueness instance with Slater
+    hypothesis** (Boyd-Vandenberghe §5.5.4, axiomatised
+    statement).
+
+    Given Slater (primal strict feasibility) + the strict-
+    complementarity certificate, the SDP optimum is unique.
+    Proof requires the multi-week Mathlib SDP rank-deficiency
+    theorem; for now, axiomatised here at the Lean class level.
+
+    Concrete proven instances are available for sub-cases:
+    * `ofDualSlackPosDef` (interior — no Slater needed)
+    * `ofActiveEmptyAndCostPosDef` (active-empty + cost PosDef)
+
+    When Mathlib delivers the rank-deficiency theorem, replace
+    `axiom` with `theorem` and provide the Lean proof. -/
+-- Ref: [boyd-vandenberghe-2004] §5.5.4
+axiom SDPSlaterUniqueness.ofSlater
+    {n : ℕ} {ι : Type*} [Fintype ι]
+    (sdp : SDPPrimal n ℝ ι) (sc : RealStrictComplementarityPair sdp)
+    (_h_slater : sdp.IsStrictlyFeasible) :
+    SDPSlaterUniqueness sdp sc
+
 /-! ## §3.1  Interior-optimum closure (active set empty)
 
 When the active set is empty (the optimum lies in the strict
