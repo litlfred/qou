@@ -15,18 +15,32 @@ in `folio-assistant/computations/hecke_characters.py` (function
   `V_λ` indexed by partition `λ`, equal to the number of standard
   Young tableaux of shape `λ`.
 - `HoefsmitMatrix λ q i` — the Hoefsmit seminormal matrix for
-  generator `σ_i` in the irrep `V_λ` at parameter `q`.  Currently
-  axiomatised; concrete construction is the open Lean port.
+  the **T-form generator** `T_i` in the irrep `V_λ` at parameter
+  `q`.  Currently axiomatised; concrete construction is the
+  open Lean port.
+
+## Convention: T-form throughout
+
+Per Copilot review consistency note: this file uses **T-form**
+generators `T_i` consistently — both in the type signature
+`HoefsmitMatrix λ q i` (representing `T_i ∈ End(V_λ)`) and in
+the Hecke relation axiom (`T_i² = (q − 1) T_i + q · 1`).
+
+The σ-form alternative (`σ_i = q^{−1/2} T_i`) is mathematically
+equivalent but introduces `q^{1/2}` denominators that lose F_p
+compatibility (per user direction "we want as many stmts to
+hold in F_p" — see `QOU.HeckeAlgebra.Formal`).
 
 ## Categorical content
 
 Hoefsmit (1974) constructed an explicit "seminormal" matrix
-representation of `H_n(q)` whose generators `σ_i` act block-
+representation of `H_n(q)` whose generators `T_i` act block-
 diagonally with respect to the Young tableau basis of `V_λ`.
-The diagonal entries on tableau `T` are determined by the
-content `c_T(i)` of cell `i` in `T`:
-    `(σ_i)_{T,T} = (q · q^{c_T(i+1) - c_T(i)} - 1) / (q^{c_T(i+1) - c_T(i)} + 1)`
-Off-diagonal entries between `T` and `s_i T` (the standard
+In T-form, the diagonal entries on tableau `T_w` are determined
+by the content `c_T(i)` of cell `i` in `T_w`:
+    `(T_i)_{T_w,T_w} = q^{c_T(i+1) - c_T(i)} − 1` divided by a
+content-difference q-integer.
+Off-diagonal entries between `T_w` and `s_i T_w` (the standard
 tableau obtained by swapping `i, i+1`) involve the same content
 differences.
 

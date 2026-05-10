@@ -193,25 +193,30 @@ relation since the coefficients `q − 1, q ∈ ℤ[q, q⁻¹]` map to
 This is the central F_p-compatibility consequence of choosing
 T-form over σ-form. -/
 
-/-- **The T-relation holds uniformly in F_p**.  If
-    `T_i² = (q − 1) T_i + q · 1` holds over `ℤ[q, q⁻¹]`, then
-    its reduction mod p holds over `F_p[q, q⁻¹]` for every prime p.
+/-- **The T-relation holds uniformly in F_p — sketch only**.
 
-    Proven from the integer-coefficient nature of the relation
-    + ring-homomorphism preservation by `reduceModP`. -/
-theorem T_relation_holds_in_Fp (p : ℕ) [Fact p.Prime] {n : ℕ} (i : Fin (n - 1))
-    (h_Z_relation :
-      heckeFormalMul (heckeFormalGenerator (R := ℤ) (n := n) i)
-                     (heckeFormalGenerator (R := ℤ) (n := n) i) =
-      (heckeFormalSMul (formalQ ℤ - 1) (heckeFormalGenerator i)) +
-        (heckeFormalSMul (formalQ ℤ) (heckeFormalOne n))) :
-    -- The reduced relation holds in F_p[q, q⁻¹]
-    True := by
-  -- Sketch: apply `reduceModP_HeckeFormalElement` to both sides;
-  -- ring-homomorphism preserves multiplication, addition, scalar
-  -- multiplication.  The integer coefficients (q − 1), q reduce
-  -- pointwise to their F_p analogues.  Concrete formalisation
-  -- pending Lean port of the algebra structure.
-  trivial
+    PER COPILOT REVIEW: this lemma's previous form returned
+    `True` and was informationally empty despite the docstring
+    suggesting it encoded the F_p reduction.  Removed the
+    `: True := trivial` body.  The actual statement would be
+    something like:
+
+      reduceModP_HeckeFormalElement p (heckeFormalMul (gen i) (gen i))
+        = reduceModP_HeckeFormalElement p (smul (q − 1) (gen i)
+                                           + smul q (one n))
+
+    But this requires concrete algebra structure on
+    `HeckeFormalElement` (with multiplication respecting the
+    reduction map), which is not yet defined.  The theorem is
+    intentionally OMITTED until that structure lands.
+
+    The conceptual content (T-relation has integer coefficients
+    ⟹ holds uniformly in F_p) is documented here without a
+    formal Lean statement.  Downstream code can rely on the
+    existing `reduceModP` ring homomorphism (proven) for the
+    coefficient-level reduction; algebra-level reduction
+    is deferred. -/
+-- (theorem body removed; see docstring above for status)
+
 
 end QOU.HeckeAlgebra.Formal

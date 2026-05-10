@@ -425,15 +425,23 @@ theorem real_strict_complementarity_optimum_subsingleton_via_class
   rw [real_strict_complementarity_unique_via_class sc h₁_feas h₁_obj,
       real_strict_complementarity_unique_via_class sc h₂_feas h₂_obj]
 
-/-! ## §3.07  Sandwich-PSD route to range containment
+/-! ## §3.07  Multiplication-commutativity for PSD pairs at zero
 
-The general-case `SDPSlaterUniqueness` instance needs the
-multi-week SDP-rank-deficiency theorem.  But we can derive a
-useful intermediate result from `complementary_slackness` + PSD
-square roots: if `S * Φ = 0` with both PSD, then `range(Φ) ⊆
-ker(S)`.  This is the **range-containment lemma** — the
-half-step that any Slater + strict-comp uniqueness proof goes
-through.
+Per Copilot review: the section originally claimed to provide
+the **range-containment lemma** `range(Φ) ⊆ ker(S)` from
+`S * Φ = 0`.  In fact the proven Lean theorem only establishes
+the (weaker but related) **commuted-multiplication identity**
+`Φ * S = 0`.  Range containment is an EQUIVALENT statement
+modulo the range/kernel encoding (`A * v = 0 ⟺ v ∈ ker(A)`,
+and `B * A = 0 ⟺ range(A) ⊆ ker(B)`), but those equivalences
+require additional Lean infrastructure (`Submodule.range`,
+`LinearMap.ker`) not yet wired into our matrix types.
+
+The full **range-containment lemma** (sandwich-PSD route via
+square roots, sketched in the proof outline below) is genuine
+multi-week Mathlib work and remains open.  The proven
+`mul_zero_comm` is the linear-algebraic stepping stone that
+actually compiles.
 
 PROOF SKETCH (closeable but bulky in Lean):
   1. `M := S^{1/2} · Φ · S^{1/2}` is PSD (sandwich preserves PSD).
@@ -451,23 +459,24 @@ uniqueness.  The remaining gap is the rank-deficiency theorem
 itself (Slater-required), which is the multi-week Mathlib
 delivery. -/
 
-/-- **Range containment from complementary slackness** —
-    the structural fact that for PSD `S`, `Φ` with `S · Φ = 0`,
-    the range of `Φ` lies in the kernel of `S`.  Closeable from
-    `Matrix.PosSemidef.complementary_slackness` (PR #623 batch 2)
-    + Mathlib square-root API + single-matrix PSD trace-zero
-    lemma; full closure remains open pending Mathlib API
-    verification.
+/-- **PSD multiplication commutes when product is zero** —
+    proven from PSD ⟹ Hermitian ⟹ symmetric (real) +
+    transpose-of-product.
 
-    This is a STRUCTURAL stepping stone toward the full
-    `SDPSlaterUniqueness` instance — even without the
-    rank-deficiency theorem, range-containment is independently
-    useful for SDP analysis. -/
-theorem Matrix.PosSemidef.range_contained_in_kernel_of_mul_zero
+    For PSD `S, Φ` with `S * Φ = 0`, taking transpose:
+    `(S * Φ)ᵀ = Φᵀ * Sᵀ = Φ * S = 0ᵀ = 0`.
+
+    Note (per Copilot review): the lemma name was originally
+    `range_contained_in_kernel_of_mul_zero` based on the
+    intuitive meaning (`Φ * S = 0` ⟺ `range(S) ⊆ ker(Φ)`),
+    but the Lean statement only encodes the commuted-
+    multiplication form.  Renamed to reflect what's actually
+    proven; the range-inclusion interpretation is documented
+    but not stated as the theorem's type. -/
+theorem Matrix.PosSemidef.mul_zero_comm
     {S Φ : Matrix (Fin n) (Fin n) ℝ}
     (hS : S.PosSemidef) (hΦ : Φ.PosSemidef)
     (h_zero : S * Φ = 0) :
-    -- Equivalent statement: Φ * S = 0 (range(Φ) ⊆ ker(S^T) = ker(S)).
     Φ * S = 0 := by
   -- (S * Φ)^T = Φ^T * S^T = Φ * S (since both Hermitian/symmetric)
   -- = 0^T = 0.
@@ -554,11 +563,13 @@ theorem SDPSlaterUniqueness.ofSlater_proven
     exact SDPRankUniqueness sdp sc h_slater h_feas h_S_diff h_constraint_diff
 
 
--- Ref: [boyd-vandenberghe-2004] §5.5.4
-axiom SDPSlaterUniqueness.ofSlater
-    {n : ℕ} {ι : Type*} [Fintype ι]
-    (sdp : SDPPrimal n ℝ ι) (sc : RealStrictComplementarityPair sdp)
-    (_h_slater : sdp.IsStrictlyFeasible) :
-    SDPSlaterUniqueness sdp sc
+-- Per Copilot review: removed the redundant
+-- `SDPSlaterUniqueness.ofSlater` axiom that had the same
+-- effective content as the (more granular) `SDPRankUniqueness`
+-- axiom + `ofSlater_proven` theorem combination.  Downstream
+-- code should use `SDPSlaterUniqueness.ofSlater_proven` (which
+-- composes from `SDPRankUniqueness`) — single source of truth
+-- for the multi-week Mathlib gap.
+-- Removed: `axiom SDPSlaterUniqueness.ofSlater`.
 
 end QOU.MathlibExt.SDPRealUniqueness
