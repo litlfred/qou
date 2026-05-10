@@ -148,14 +148,19 @@ Phase 1 + Phase 2 partial delivery on PR #631
   Path A partial chain as an interim, with T2 as the highest-
   priority follow-up audit (likely contaminated by the same
   legacy-weight bug as PR #621/#630).
-- **Phase 5 (n=8 Frobenius co-Casimir)**: the mechanical-generator
-  approach hit a convention issue — `heckeH7DimQ`'s `dim_q(λ)`
-  is NOT `∏_x [h_x]_q` (the hook-product); it appears to be a
-  Wenzl-bridge-level Schur-element specialisation that gives
-  `dim_q((n)) = 1`. **Investigation needed** before mechanical
-  n=8 generation: cite the exact convention in
-  `heckeH7DimQ`'s docstring and pin which Wenzl level $r$ it
-  corresponds to.
+- **Phase 5 (n=8 Frobenius co-Casimir)** — DELIVERED: convention
+  pinned (quantum hook-length formula
+  $\dim_q(\lambda) = [n]_q! / \prod_x [h_x]_q$), `heckeH8DimQ`,
+  22 simp lemmas, `Fin_sum_univ_twentytwo`, and
+  `hecke_n8_frobenius_codim` integrated into
+  `frobenius-codim-universal.lean`. Conjugate-symmetric ordering
+  matches the n=6 / n=7 pattern (idx i ↔ idx (21-i)); 10 conjugate
+  pairs + 2 self-conjugates ((4,2,1,1) at idx 10, (3,3,2) at idx 11).
+  Closure unblocks ⁴He's H_{12} block. Generator script
+  `phase5_n8_dim_q_table.py` + table `phase5-n8-dim-q-table.json`
+  committed for downstream extension to n=9 (triton/³He at H_9)
+  and n=12 (⁴He). Paper-side documentation in
+  [`frobenius-codim-universal.md §"Explicit Lean closures by partition count $n$"`](../../content/quantum-observable-universe/braids-and-knots/frobenius-codim-universal.md).
 
 - **Phase 8 (graded Hecke energy infrastructure)** — DELIVERED:
   new content block
