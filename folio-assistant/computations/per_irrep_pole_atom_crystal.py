@@ -1,0 +1,458 @@
+#!/usr/bin/env python3
+"""per_irrep_pole_atom_crystal.py — crystal-bases Path A pole-order
+verifier for **any atom (Z, N)**, including ⁴He at H_12 where the
+existing GS-reduction-bound `per_irrep_pole_atom.py` doesn't return.
+
+**Replaces** the symbolic `chi_lambda_symbolic` per-partition compute
+with a per-SYT-eigenline u-pole tally, valid in the Kashiwara crystal
+limit q → 0:
+
+    χ^λ(β)(q = u²)  =  Σ_{T ∈ SYT(λ)}  Π_{letter ∈ β}  eig_letter,T(u)
+
+Per-letter `eig_letter,T(u)` (q = u², h = q - q⁻¹):
+
+| letter `(c, d, gen)` | eig on T sym (ρ_T(gen) > 0) | eig on T anti (ρ_T(gen) < 0) |
+|---|---|---|
+| σ        (`d = 0`)    | `q = u²`     | `−q⁻¹ = −u⁻²` |
+| σ⁻¹      (`d = −h`)   | `q⁻¹ = u⁻²`  | `−q = −u²`    |
+| Δ_I      (`d = −h/2`) | `+½(u² + u⁻²)` | `−½(u² + u⁻²)` |
+
+For each SYT `T`, the eigenvalue product is a Laurent monomial in `u`
+(for σ/σ⁻¹) or a sum of two monomials (for Δ_I).  The **dominant
+u-pole** at u → 0 picks the most-negative power.  Per-letter
+contributions to `ord_{u=0}` of the eigenvalue product on `T`:
+
+| letter | ρ > 0 (sym) | ρ < 0 (anti) | ρ = 0 (degen) |
+|---|--:|--:|--:|
+| σ        | +2  | −2  | (treated as zero contribution) |
+| σ⁻¹      | −2  | +2  | (zero) |
+| Δ_I      | −2  | −2  | (zero) |
+
+The leading-coefficient sign factor per letter:
+
+| letter | ρ > 0 sign | ρ < 0 sign |
+|---|--:|--:|
+| σ        | +1  | −1  |
+| σ⁻¹      | +1  | −1  |
+| Δ_I      | +½  | −½  |
+
+Per-T `(ord_T, leading_coeff_T)`:
+- `ord_T   = Σ per-letter contribution`
+- `coeff_T = Π per-letter sign factor` (rational; tracks signed ½ from Δ_I)
+
+Per-λ `(ord_λ, coeff_λ)`:
+- `ord_λ   = min over T of ord_T` (most-negative)
+- `coeff_λ = Σ over T (with ord_T == ord_λ) of coeff_T`
+- if `coeff_λ == 0`: leading-coefficient cancellation; need higher-
+  order analysis (here we re-take min over surviving T)
+
+Per-atom `ord_{u=0}(tr_M) = min over λ of (ord_y_λ + ord_χ^λ)` where
+`ord_y_λ` is computed symbolically from the cached Wenzl-bridge
+`y_λ(q)` after `q → u²` substitution.  Pole order = `−ord` (when
+negative), matching the existing `negative_q_pole_order` convention.
+
+Predicted shifts (per `prop:per-nucleon-shift-additive-linearity`):
+
+| atom | (Z, N) | n | shift |
+|------|---|---|---|
+| p    | (1, 0) | 3  | 19  |
+| n    | (0, 1) | 3  | 22  |
+| D    | (1, 1) | 6  | 40  |
+| T    | (1, 2) | 9  | 61  |
+| ³He  | (2, 1) | 9  | 58  |
+| ⁴He  | (2, 2) | 12 | 79  |
+| ⁵Li  | (3, 2) | 15 | 97  |
+| ⁶Li  | (3, 3) | 18 | 118 |
+
+Output: `per-irrep-pole-{atom}-h{n}-crystal.witness.json` per atom,
+plus aggregate `per-irrep-pole-atom-crystal.witness.json`.
+"""
+from __future__ import annotations
+
+import sys
+import time
+from functools import lru_cache
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent))
+
+import sympy as sp
+
+from witness_base import WitnessBuilder
+from canonical_braid_crossings import atom_canonical_crossings
+from hecke_characters import standard_young_tableaux, partitions_of
+
+
+ATOMS = [
+    # (label, Z, N, expected_shift)
+    ("proton",   1, 0, 18 * 1 + 21 * 0 + 1),
+    ("neutron",  0, 1, 18 * 0 + 21 * 1 + 1),
+    ("deuteron", 1, 1, 18 * 1 + 21 * 1 + 1),
+    ("tritium",  1, 2, 18 * 1 + 21 * 2 + 1),
+    ("helium-3", 2, 1, 18 * 2 + 21 * 1 + 1),
+    ("helium-4", 2, 2, 18 * 2 + 21 * 2 + 1),
+    ("lithium-5", 3, 2, 18 * 3 + 21 * 2 + 1),
+    ("lithium-6", 3, 3, 18 * 3 + 21 * 3 + 1),
+]
+
+
+# ───────────────────────────────────────────────────────────────────
+# Caches (Phase 2: C1, C2)
+# ───────────────────────────────────────────────────────────────────
+
+@lru_cache(maxsize=None)
+def _syt_for_shape(shape: tuple[int, ...]) -> tuple:
+    """C1: cached `(syts, cells, contents)` for a partition shape."""
+    return standard_young_tableaux(shape)
+
+
+@lru_cache(maxsize=None)
+def _rho_table_for_shape(
+    shape: tuple[int, ...],
+    n_strands: int,
+) -> tuple[tuple[int, ...], ...]:
+    """C2: precompute `ρ_T(gen)` for every (T, gen) pair.
+
+    Returns: tuple-of-tuples `rho[t_idx][gen_idx] = ρ_T(gen_idx)`,
+    or `None` if T doesn't have both entries (gen_idx+1, gen_idx+2).
+
+    Encoded ρ-categorisation:
+        ρ > 0  → +1   (sym eigenline)
+        ρ < 0  → -1   (anti eigenline)
+        ρ = 0  → 0    (degenerate; treated as zero contribution)
+        N/A    → -2   (vacuum: T missing the entry pair for this gen)
+    """
+    syts, _cells, contents = _syt_for_shape(shape)
+    table = []
+    for T in syts:
+        row = []
+        for gen in range(n_strands - 1):
+            e_lo = gen + 1
+            e_hi = gen + 2
+            if e_lo not in T or e_hi not in T:
+                row.append(-2)  # vacuum
+                continue
+            rho = contents[T[e_hi]] - contents[T[e_lo]]
+            if rho > 0:
+                row.append(1)
+            elif rho < 0:
+                row.append(-1)
+            else:
+                row.append(0)
+        table.append(tuple(row))
+    return tuple(table)
+
+
+# ───────────────────────────────────────────────────────────────────
+# Per-letter pole / sign contributions (the crystal-limit lookup)
+# ───────────────────────────────────────────────────────────────────
+
+# Indexed by (ctype, rho_class) → (ord_delta, sign_factor).
+# rho_class: 1 (sym), -1 (anti), 0 (degenerate).  sign_factor is a
+# Rational (may be ±½ for Δ_I letters).
+
+_LETTER_CONTRIB: dict[tuple[str, int], tuple[int, sp.Rational]] = {
+    ("sigma",     1):  (2, sp.Integer(1)),    # σ on sym:  eig = u²,  +2
+    ("sigma",    -1):  (-2, sp.Integer(-1)),  # σ on anti: eig = -u⁻², -2
+    ("sigma",     0):  (None, sp.Integer(0)), # degenerate
+    ("sigma_inv", 1):  (-2, sp.Integer(1)),   # σ⁻¹ on sym:  eig = u⁻², -2
+    ("sigma_inv",-1):  (2, sp.Integer(-1)),   # σ⁻¹ on anti: eig = -u², +2
+    ("sigma_inv", 0):  (None, sp.Integer(0)),
+    ("averaged",  1):  (-2, sp.Rational(1, 2)),   # Δ_I on sym:  +½ u⁻²
+    ("averaged", -1):  (-2, sp.Rational(-1, 2)),  # Δ_I on anti: -½ u⁻²
+    ("averaged",  0):  (None, sp.Integer(0)),
+}
+
+
+def _per_T_ord_and_coeff(
+    rho_row: tuple[int, ...],
+    crossings: tuple[tuple[int, str], ...],
+) -> tuple[int | None, sp.Rational]:
+    """Compute `(ord_{u=0}(eig_T), leading_coeff_T)` on a single SYT.
+
+    Returns `(None, 0)` if T's contribution vanishes (any zero
+    sign-factor or any vacuum letter that should be present).
+    """
+    ord_u = 0
+    coeff = sp.Integer(1)
+    for gen, ctype in crossings:
+        rho_class = rho_row[gen]
+        if rho_class == -2:
+            # Vacuum: T doesn't have entries (gen+1, gen+2).
+            # Per the existing per_irrep_pole_*.py convention this
+            # case never arises for height-≤6 partitions of 3A
+            # because every gen ∈ {0, …, 3A-2} is acted on by the
+            # canonical word, and the partition has enough cells.
+            # If we hit it, treat conservatively as zero.
+            return (None, sp.Integer(0))
+        delta, sf = _LETTER_CONTRIB[(ctype, rho_class)]
+        if delta is None:
+            return (None, sp.Integer(0))
+        ord_u += delta
+        coeff *= sf
+        if coeff == 0:
+            return (None, sp.Integer(0))
+    return (ord_u, coeff)
+
+
+def chi_pole_order_crystal(
+    shape: tuple[int, ...],
+    n_strands: int,
+    crossings: tuple[tuple[int, str], ...],
+) -> tuple[int | None, sp.Rational, int]:
+    """Crystal-asymptotic `(ord_χ, coeff_χ, n_T_at_min)` per partition.
+
+    Returns:
+      ord_χ        — `ord_{u=0}(χ^λ(β))` (most-negative u-power
+                     surviving non-zero leading coefficient), or
+                     `None` if the leading coefficients cancel.
+      coeff_χ      — leading coefficient at `ord_χ` (sympy Rational).
+      n_T_at_min   — number of SYTs achieving `ord_χ` (for unique-max
+                     diagnostic).
+    """
+    rho_table = _rho_table_for_shape(shape, n_strands)
+    contributions: list[tuple[int, sp.Rational]] = []
+    for rho_row in rho_table:
+        ord_T, coeff_T = _per_T_ord_and_coeff(rho_row, crossings)
+        if ord_T is not None:
+            contributions.append((ord_T, coeff_T))
+    if not contributions:
+        return (None, sp.Integer(0), 0)
+    # Sort ascending by ord_u: most-negative first.
+    contributions.sort(key=lambda r: r[0])
+    # Walk from the most-negative until we find a non-zero leading
+    # coefficient sum (handles cancellation by going to next-higher
+    # order).
+    i = 0
+    while i < len(contributions):
+        cur_ord = contributions[i][0]
+        j = i
+        leading = sp.Integer(0)
+        while j < len(contributions) and contributions[j][0] == cur_ord:
+            leading += contributions[j][1]
+            j += 1
+        if leading != 0:
+            return (cur_ord, leading, j - i)
+        i = j
+    # Total cancellation across all T — chi^λ vanishes.
+    return (None, sp.Integer(0), 0)
+
+
+# ───────────────────────────────────────────────────────────────────
+# y_λ pole order (Wenzl-bridge symbolic; cached witness on disk)
+# ───────────────────────────────────────────────────────────────────
+
+_Q_SYM = sp.Symbol("q")              # match sympify default (no flag)
+_U_SYM = sp.Symbol("u", positive=True)  # so sqrt(u²) → u
+_Y_LAMBDA_CACHE: dict[int, dict[tuple[int, ...], sp.Expr]] = {}
+
+
+def _load_y_lambda_n(n: int) -> dict[tuple[int, ...], sp.Expr]:
+    """Load symbolic `y_λ(q)` for partitions of `n` from the cached
+    Wenzl-bridge witness."""
+    if n in _Y_LAMBDA_CACHE:
+        return _Y_LAMBDA_CACHE[n]
+    import json
+    here = Path(__file__).parent
+    path = here / "y-lambda-wenzl-bridge-symbolic-witness.json"
+    w = json.loads(path.read_text())
+    rows = w["tables_by_n"][str(n)]["weights"]
+    out: dict[tuple[int, ...], sp.Expr] = {}
+    for r in rows:
+        shape = tuple(r["partition"])
+        out[shape] = sp.sympify(r["y_lambda_symbolic"])
+    _Y_LAMBDA_CACHE[n] = out
+    return out
+
+
+def y_lambda_pole_order_in_u(
+    shape: tuple[int, ...],
+    n: int,
+) -> int:
+    """`ord_{u=0}(y_λ(u²))`.  Lowest u-power in the cached symbolic
+    Wenzl-bridge `y_λ(q)`, after substituting `q = u²`."""
+    y_lams = _load_y_lambda_n(n)
+    if shape not in y_lams:
+        # Some partitions are absent from the cache (e.g. zero
+        # central coefficient); treat as +∞ (no contribution to
+        # min).
+        return None
+    y_q = y_lams[shape]
+    y_u = sp.simplify(y_q.subs(_Q_SYM, _U_SYM ** 2))
+    n_, d_ = sp.fraction(y_u)
+    n_poly = sp.Poly(n_, _U_SYM)
+    d_poly = sp.Poly(d_, _U_SYM)
+    n_low = min(m[0] for m in n_poly.monoms()) if n_poly.monoms() else 0
+    d_low = min(m[0] for m in d_poly.monoms()) if d_poly.monoms() else 0
+    return n_low - d_low  # ord_{u=0}(N/D) = ord(N) - ord(D)
+
+
+# ───────────────────────────────────────────────────────────────────
+# Per-atom verification
+# ───────────────────────────────────────────────────────────────────
+
+def _height_le_6_partitions(n: int) -> list[tuple[int, ...]]:
+    return [tuple(p) for p in partitions_of(n) if len(p) <= 6]
+
+
+def verify_atom(
+    label: str,
+    Z: int,
+    N: int,
+    expected_shift: int,
+    *,
+    verbose: bool = True,
+) -> dict:
+    """Compute crystal-asymptotic `ord_{u=0}(tr_M(β_atom))` and
+    compare to the predicted `expected_shift`.
+
+    Returns dict suitable for witness JSON.
+    """
+    A = Z + N
+    n = 3 * A
+    crossings = tuple(atom_canonical_crossings(Z, N))
+    partitions = _height_le_6_partitions(n)
+    if verbose:
+        print(f"  {label:<10} (Z={Z}, N={N}, n={n}, "
+              f"|word|={len(crossings)}, |partitions|={len(partitions)})",
+              flush=True)
+
+    t0 = time.time()
+    rows = []
+    # Pole order of tr_M = max over λ of pole(y_λ · χ^λ) in pole-
+    # order convention (= -ord_{u=0}).  Equivalently min over λ of
+    # ord_{u=0}(y_λ · χ^λ).
+    min_ord = None
+    min_lam = None
+    second_min_ord = None
+    for shape in partitions:
+        ord_chi, coeff_chi, n_T = chi_pole_order_crystal(
+            shape, n, crossings)
+        ord_y = y_lambda_pole_order_in_u(shape, n)
+        if ord_chi is None or ord_y is None:
+            total_ord = None
+        else:
+            total_ord = ord_y + ord_chi
+        rows.append({
+            "lambda": list(shape),
+            "ord_y_at_u_0": ord_y,
+            "ord_chi_at_u_0": ord_chi,
+            "n_T_at_min": n_T,
+            "leading_coeff_chi": str(coeff_chi),
+            "total_ord_y_chi": total_ord,
+        })
+        if total_ord is not None:
+            if min_ord is None or total_ord < min_ord:
+                second_min_ord = min_ord
+                min_ord = total_ord
+                min_lam = shape
+            elif second_min_ord is None or total_ord < second_min_ord:
+                if total_ord != min_ord:
+                    second_min_ord = total_ord
+    elapsed = time.time() - t0
+
+    pole_order = -min_ord if min_ord is not None and min_ord < 0 else 0
+    match = (pole_order == expected_shift)
+
+    if verbose:
+        print(f"    ord_min  = {min_ord}    (λ_min = {min_lam})", flush=True)
+        print(f"    pole_u   = {pole_order}    expected = {expected_shift}    "
+              f"{'MATCH ✓' if match else 'MISMATCH ✗'}", flush=True)
+        print(f"    elapsed  = {elapsed:.2f}s", flush=True)
+        print(flush=True)
+
+    return {
+        "atom": label, "Z": Z, "N": N, "A": A, "n_strands": n,
+        "n_partitions": len(partitions),
+        "word_length": len(crossings),
+        "min_total_ord_u_eq_0": min_ord,
+        "min_total_lambda": list(min_lam) if min_lam else None,
+        "second_min_total_ord": second_min_ord,
+        "u_pole_order_inferred": pole_order,
+        "expected_shift": expected_shift,
+        "match": match,
+        "elapsed_sec": elapsed,
+        "per_partition": rows,
+    }
+
+
+def main(argv: list[str]) -> int:
+    """Run the crystal-asymptotic Path A pole-order check across
+    all listed atoms.  Stops at the first MISMATCH unless
+    `--continue-on-mismatch` is passed."""
+    cont = "--continue-on-mismatch" in argv
+    only = None
+    if "--only" in argv:
+        only = argv[argv.index("--only") + 1]
+
+    print("=" * 70, flush=True)
+    print(" Per-irrep pole order — crystal-bases (Path A; "
+          "GS-reduction-free)", flush=True)
+    print("=" * 70, flush=True)
+
+    out = (WitnessBuilder("per-irrep-pole-atom-crystal", engine="sympy")
+        .set_content_block("rem:option-e-isospin-test")
+        .set_description(
+            "Crystal-bases Path A pole-order verification of "
+            "shift_NF(β_K) = 18Z + 21N + 1 for each atom K, "
+            "computed via per-SYT-eigenline u-pole tally at q → 0 "
+            "(Kashiwara crystal limit) on the canonical Δ_I-coupled "
+            "atomic braid word.  Replaces the GS-reduction-bound "
+            "per_irrep_pole_atom.py path that doesn't return at H_12. "
+            "Per-letter contributions: σ on sym/anti = ±2; σ⁻¹ on "
+            "sym/anti = ∓2; Δ_I = -2 always (leading u⁻² term)."
+        )
+        .add_data("conditional_on", ["conj:crystal-graph-realization"])
+        .add_data("inputs", {
+            "atom_braid_words":
+                "mass_at_3A_proper.atom_braid_word_3A "
+                "(canonical Δ_I-coupled (gen, ctype) crossings)",
+            "y_lambda":
+                "y-lambda-wenzl-bridge-symbolic-witness.json "
+                "(symbolic Wenzl-bridge per partition)",
+            "chi_lambda_pole_order":
+                "per-SYT crystal-limit u-power tally (this script); "
+                "no symbolic-q matrix multiplication",
+        })
+    )
+
+    atoms_results = []
+    all_match = True
+    for label, Z, N, expected in ATOMS:
+        if only and label != only:
+            continue
+        try:
+            row = verify_atom(label, Z, N, expected)
+        except Exception as e:
+            print(f"  ✗ {label}: ERROR {e}", flush=True)
+            all_match = False
+            if not cont:
+                break
+            continue
+        atoms_results.append(row)
+        if not row["match"]:
+            all_match = False
+            if not cont:
+                print(f"  Stopping at first mismatch ({label}). "
+                      f"Pass --continue-on-mismatch to override.",
+                      flush=True)
+                break
+
+    out.add_data("atoms", atoms_results)
+    out.add_data("all_match", all_match)
+    out.add_assertion(
+        "all_atoms_match_predicted_shift",
+        computed=1.0 if all_match else 0.0,
+        expected=1.0,
+        tolerance=0.0,
+        source=("prop:per-nucleon-shift-additive-linearity + "
+                "crystal-bases Path A (this script)"),
+    )
+
+    p = out.save()
+    print(f"\n  Witness: {p}", flush=True)
+    return 0 if all_match else 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main(sys.argv[1:]))
