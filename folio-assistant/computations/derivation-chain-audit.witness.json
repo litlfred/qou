@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-10T04:55:40.628193+00:00",
-  "commitSha": "cf8e3b34f6b19d35ae8908508129e4fbef573d50",
+  "computedAt": "2026-05-10T05:08:13.770234+00:00",
+  "commitSha": "a82b66281c7d15b7e8c0b96e3b7e05100c4c6c48",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2103,7 +2103,6 @@
         "compute-audit-scan.witness.json",
         "confined-knot-binding.witness.json",
         "confinement-operator-selection.witness.json",
-        "cross-check-trM-1ppb.witness.json",
         "crystal-alpha-shift-pole-orders.witness.json",
         "crystal-basis-primitives.witness.json",
         "crystal-limit-transport-probe.witness.json",
@@ -2121,7 +2120,6 @@
         "demazure-markov-trace.witness.json",
         "deuteron-delta-i-audit.witness.json",
         "deuteron_tr_M_symbolic.witness.json",
-        "e0-calibration-audit.witness.json",
         "entanglement-orders.witness.json",
         "ew-higgs-sdp-probe.witness.json",
         "ew-interface-knot-probe.witness.json",
