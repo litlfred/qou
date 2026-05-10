@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>Möbius energy as a Frobenius pairing</title>
+  <desc>
+    Closed knot K with two highlighted points x, y and a dashed
+    segment of length |x − y|.  Right inset: the Möbius energy
+    integrand 1/|x−y|² ds dt over K × K \ Δ — a Frobenius
+    kernel that gives the topological-mass term.
+  </desc>
+  <defs>
+    <style>
+      .bg     { fill: #ffffff; }
+      .knot   { fill: none; stroke: #1a1a1a; stroke-width: 2.4;
+                stroke-linecap: round; }
+      .pt     { fill: #c0392b; }
+      .ptlbl  { fill: #c0392b; font-size: 13px; font-weight: 700; }
+      .seg    { stroke: #c0392b; stroke-width: 1.5; fill: none;
+                stroke-dasharray: 5 4; }
+      .lbl    { font-size: 13px; fill: #1a1a1a; }
+      .lbls   { font-size: 11px; fill: #444; }
+      .ttl    { font-size: 17px; font-style: italic; fill: #1a1a1a; }
+      .eq     { font-size: 17px; fill: #1a1a1a; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="700" height="400"/>
+
+  <text x="350" y="32" text-anchor="middle" class="ttl">Möbius energy  as  a  Frobenius  pairing  on  K × K</text>
+
+  <!-- Closed knot curve (stylised trefoil) -->
+  <g transform="translate(220, 200)">
+    <circle class="knot" cx="0"   cy="-32" r="60"/>
+    <circle class="knot" cx="28"  cy="16"  r="60"/>
+    <circle class="knot" cx="-28" cy="16"  r="60"/>
+  </g>
+
+  <!-- Two points x, y on the knot -->
+  <circle class="pt" cx="170" cy="160" r="6"/>
+  <text x="155" y="150" class="ptlbl">x</text>
+  <circle class="pt" cx="270" cy="240" r="6"/>
+  <text x="285" y="248" class="ptlbl">y</text>
+  <line class="seg" x1="170" y1="160" x2="270" y2="240"/>
+  <text x="225" y="190" class="ptlbl">|x − y|</text>
+
+  <text x="220" y="305" text-anchor="middle" class="lbl">closed curve  K  ⊂  ℝ³</text>
+  <text x="220" y="322" text-anchor="middle" class="lbls">trefoil shown; the construction is functorial in K</text>
+
+  <!-- Right side -->
+  <text x="430" y="160" class="eq" font-style="italic">E(K)  =  ∬_{K×K \ Δ}  ds dt / |x − y|²</text>
+  <text x="430" y="195" class="lbl">→ Frobenius kernel: pairwise pairing on K × K</text>
+  <text x="430" y="220" class="lbl">→ minimised on round configurations</text>
+  <text x="430" y="245" class="lbl">→ knot type fixes a positive lower bound</text>
+  <text x="430" y="285" class="lbl" font-style="italic">— gives the topological-mass term —</text>
+</svg>

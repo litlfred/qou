@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>Crossing-energy stratification</title>
+  <desc>
+    Step function of binding energy vs net crossing number.
+    Horizontal axis: writhe (# positive crossings minus #
+    negative).  Vertical axis: binding energy.  Staircase shows
+    energy quanta at each integer.
+  </desc>
+  <defs>
+    <style>
+      .bg     { fill: #ffffff; }
+      .axis   { stroke: #1a1a1a; stroke-width: 1.4; fill: none; }
+      .step   { stroke: #1a1a1a; stroke-width: 2.4; fill: none; }
+      .ticklbl { font-size: 11px; fill: #444; text-anchor: middle; }
+      .axislbl { font-size: 12px; fill: #1a1a1a; font-style: italic; }
+      .lbl    { font-size: 13px; fill: #1a1a1a; }
+      .lbls   { font-size: 11px; fill: #444; text-anchor: middle; }
+      .ttl    { font-size: 17px; font-style: italic; fill: #1a1a1a; }
+      .quant  { fill: #c0392b; }
+      .quantlbl { fill: #c0392b; font-size: 12px; font-style: italic; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="800" height="460"/>
+
+  <text x="400" y="32" text-anchor="middle" class="ttl">Crossing-energy stratification</text>
+
+  <!-- Plot area: x [60, 740], y [60, 380] -->
+  <line class="axis" x1="60" y1="380" x2="740" y2="380"/>
+  <line class="axis" x1="400" y1="60" x2="400" y2="380"/>
+  <text x="755" y="385" class="axislbl">writhe  w(K)</text>
+  <text x="395" y="55" class="axislbl">E_bind</text>
+
+  <!-- x ticks at -3..3 -->
+  <g class="ticklbl">
+    <text x="100" y="395">-3</text>
+    <text x="200" y="395">-2</text>
+    <text x="300" y="395">-1</text>
+    <text x="400" y="395">0</text>
+    <text x="500" y="395">+1</text>
+    <text x="600" y="395">+2</text>
+    <text x="700" y="395">+3</text>
+  </g>
+
+  <!-- Staircase: monotone increasing as |w| grows -->
+  <!-- Heights: w=-3 → 6, -2 → 4, -1 → 2, 0 → 0, +1 → 2, +2 → 4, +3 → 6 (in unit y per step = 40px) -->
+  <!-- y = 380 - 40*h.   So h=0 → y=380, h=2 → 300, h=4 → 220, h=6 → 140 -->
+  <path class="step" d="M 60 140 H 100 V 220 H 200 V 300 H 300 V 380 H 500 V 300 H 600 V 220 H 700 V 140 H 740"/>
+
+  <!-- Highlight quanta at each step -->
+  <circle class="quant" cx="100" cy="140" r="5"/>
+  <circle class="quant" cx="200" cy="220" r="5"/>
+  <circle class="quant" cx="300" cy="300" r="5"/>
+  <circle class="quant" cx="500" cy="300" r="5"/>
+  <circle class="quant" cx="600" cy="220" r="5"/>
+  <circle class="quant" cx="700" cy="140" r="5"/>
+
+  <text x="400" y="425" class="lbls">energy is symmetric in writhe (chirality-invariant) and quantised in integer steps</text>
+  <text x="400" y="445" class="quantlbl" text-anchor="middle">red dots mark the energy quanta at each integer crossing</text>
+</svg>

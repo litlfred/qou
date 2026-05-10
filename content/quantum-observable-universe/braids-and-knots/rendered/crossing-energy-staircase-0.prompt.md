@@ -1,0 +1,3 @@
+# Crossing-energy stratification
+
+F4.9 (P2 / P1). A step function plot. Horizontal axis: writhe $w(K)$, the net number of positive minus negative crossings, ticked at integer values $-3, -2, -1, 0, +1, +2, +3$. Vertical axis: binding energy $E_{\mathrm{bind}}$. The staircase rises symmetrically away from $w = 0$ in integer steps: each unit of writhe adds one quantum of energy. Red dots at each step mark the energy quanta. Footer: "energy is symmetric in writhe (chirality-invariant) and quantised in integer steps". This figure makes the topological-mass quantisation immediate. Layout: 2D step plot. Density: 7 ticks, 6 quanta. Style: schematic line-and-step chart. Colour: monochrome plus red on the quantisation markers.

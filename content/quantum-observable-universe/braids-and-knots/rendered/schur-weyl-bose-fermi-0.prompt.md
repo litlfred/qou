@@ -1,0 +1,3 @@
+# Schur–Weyl boson / fermion split on V^⊗3
+
+F4.6 (P1). A square representing $V^{\otimes 3}$ split by a diagonal into two regions. The upper-left triangle is shaded warm and labelled "$V_{3/2}$ — spin 3/2 — symmetric — B₃ acts as scalar ⇒ bosonic". The lower-right triangle is shaded cool and labelled "$V_{1/2}^{\oplus 2}$ — spin 1/2 — mixed symmetry — B₃ acts non-trivially ⇒ fermionic". Footer notes that the boson/fermion split is a categorical artefact of the $B_3$ representation, not an appeal to topology. This figure visualises the central result of the categorical-statistics block. Layout: a single square with a diagonal split. Density: 3 lines of label per region. Style: schematic. Colour: monochrome with two contrasting fills (filter-invert keeps the contrast).

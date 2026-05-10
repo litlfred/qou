@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 460"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>Schur–Weyl boson / fermion split on V^⊗3</title>
+  <desc>
+    The space V^⊗³ ≅ V_{3/2} ⊕ V_{1/2}^{⊕2} drawn as a square
+    split into a shaded triangle (the symmetric V_{3/2}, "boson")
+    and a quadrilateral (the mixed-symmetry V_{1/2}^{⊕2},
+    "fermion").  B₃ generators act as scalars on the boson side
+    and non-trivially on the fermion side.
+  </desc>
+  <defs>
+    <style>
+      .bg     { fill: #ffffff; }
+      .frame  { fill: none; stroke: #1a1a1a; stroke-width: 2; }
+      .bose   { fill: #f0e6d2; stroke: #1a1a1a; stroke-width: 1.4; }
+      .fermi  { fill: #d2e6f0; stroke: #1a1a1a; stroke-width: 1.4; }
+      .lblb   { font-size: 16px; font-weight: 700; fill: #1a1a1a;
+                text-anchor: middle; }
+      .lbl    { font-size: 13px; fill: #1a1a1a; text-anchor: middle; }
+      .lbls   { font-size: 11px; fill: #444; text-anchor: middle; }
+      .ttl    { font-size: 17px; font-style: italic; fill: #1a1a1a; }
+      .eq     { font-size: 16px; fill: #1a1a1a; text-anchor: middle; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="700" height="460"/>
+
+  <text x="350" y="32" text-anchor="middle" class="ttl">Schur–Weyl decomposition  V^⊗³  ≅  V_{3/2}  ⊕  V_{1/2}^{⊕2}</text>
+
+  <!-- 320×320 square centred at (350, 230) -->
+  <g transform="translate(190, 70)">
+    <rect class="frame" x="0" y="0" width="320" height="320"/>
+    <!-- Boson region: top-left triangle (symmetric) -->
+    <polygon class="bose" points="2,2 318,2 2,318"/>
+    <text x="100" y="100" class="lblb">V_{3/2}</text>
+    <text x="100" y="122" class="lbl">spin 3/2 — symmetric</text>
+    <text x="100" y="142" class="lbls">B₃ acts as scalar  ⇒  bosonic</text>
+
+    <!-- Fermion region: bottom-right quadrilateral (mixed) -->
+    <polygon class="fermi" points="318,2 318,318 2,318"/>
+    <text x="220" y="220" class="lblb">V_{1/2}^{⊕2}</text>
+    <text x="220" y="242" class="lbl">spin 1/2 — mixed symmetry</text>
+    <text x="220" y="262" class="lbls">B₃ acts non-trivially  ⇒  fermionic</text>
+  </g>
+
+  <!-- Explanation -->
+  <text x="350" y="430" class="lbls" font-style="italic">no appeal to topology — the boson/fermion split is a categorical artefact of the B₃ representation</text>
+</svg>

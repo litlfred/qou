@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 540"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>Brane-tower mass decomposition</title>
+  <desc>
+    Exploded view: input knot K on the left; arrow splits it
+    into three contributions stacked on the right — Markov
+    trace |tr_M(T_w)|, brane-tower stack ∑ Φ_q(|V̂_i|), Frobenius
+    co-Casimir ∑ 1/dim_q(λ).
+  </desc>
+  <defs>
+    <marker id="tip" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a1a1a"/>
+    </marker>
+    <style>
+      .bg     { fill: #ffffff; }
+      .knot   { fill: none; stroke: #1a1a1a; stroke-width: 2.4; }
+      .term   { fill: #ffffff; stroke: #1a1a1a; stroke-width: 1.6; rx: 8; }
+      .markov { fill: #c0392b; }
+      .tower  { fill: #2980b9; }
+      .casi   { fill: #27ae60; }
+      .lblb   { font-size: 15px; font-weight: 700; fill: #1a1a1a; }
+      .lbl    { font-size: 13px; fill: #1a1a1a; }
+      .lbls   { font-size: 11px; fill: #444; }
+      .ttl    { font-size: 17px; font-style: italic; fill: #1a1a1a; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1000" height="540"/>
+  <text x="500" y="32" text-anchor="middle" class="ttl">Brane-tower mass decomposition  m(K) = |tr_M(T_w)|  +  tower(T_w)  +  tr_M(C_dimq)</text>
+
+  <!-- Left: knot K -->
+  <g transform="translate(150, 270)">
+    <circle class="knot" cx="0"   cy="-30" r="50"/>
+    <circle class="knot" cx="24"  cy="14"  r="50"/>
+    <circle class="knot" cx="-24" cy="14"  r="50"/>
+  </g>
+  <text x="150" y="370" text-anchor="middle" class="lblb">K  with  Hecke word  T_w</text>
+  <text x="150" y="390" text-anchor="middle" class="lbls">closed braid representative</text>
+
+  <!-- Arrow to the right -->
+  <line stroke="#1a1a1a" stroke-width="1.6" fill="none" x1="240" y1="270" x2="370" y2="270" marker-end="url(#tip)"/>
+  <text x="305" y="258" text-anchor="middle" class="lbls" font-style="italic">decompose</text>
+
+  <!-- Right: 3 terms stacked, each with a coloured bar of representative magnitude -->
+  <!-- Term 1: Markov trace -->
+  <rect class="term" x="400" y="100" width="560" height="100"/>
+  <text x="420" y="130" class="lblb">|tr_M(T_w)|</text>
+  <text x="420" y="150" class="lbl">descended Markov trace</text>
+  <text x="420" y="168" class="lbls">∑_λ y_λ(q) χ_λ(T_w)   —   Wenzl-bridge × q-character</text>
+  <rect class="markov" x="700" y="135" width="240" height="36"/>
+
+  <!-- Term 2: brane tower -->
+  <rect class="term" x="400" y="220" width="560" height="100"/>
+  <text x="420" y="250" class="lblb">tower(T_w)</text>
+  <text x="420" y="270" class="lbl">brane-tower contribution</text>
+  <text x="420" y="288" class="lbls">∑ Φ_q(|V̂_i|) + z² ∑ Φ_q(|V̂_i V̂_j|)</text>
+  <rect class="tower" x="700" y="240" width="180" height="14"/>
+  <rect class="tower" x="700" y="258" width="140" height="14"/>
+  <rect class="tower" x="700" y="276" width="100" height="14"/>
+  <rect class="tower" x="700" y="294" width="60"  height="14"/>
+
+  <!-- Term 3: Frobenius co-Casimir -->
+  <rect class="term" x="400" y="340" width="560" height="100"/>
+  <text x="420" y="370" class="lblb">tr_M(C_dimq)</text>
+  <text x="420" y="390" class="lbl">Frobenius co-Casimir</text>
+  <text x="420" y="408" class="lbls">∑_{λ ⊢ n} 1 / dim_q(λ)   —   universal correction</text>
+  <rect class="casi" x="700" y="375" width="80" height="20"/>
+
+  <text x="500" y="490" text-anchor="middle" class="lbls" font-style="italic">three additive terms; total mass m(K) is finite, exact, pre-Archimedean (lives in ℚ(q))</text>
+</svg>
