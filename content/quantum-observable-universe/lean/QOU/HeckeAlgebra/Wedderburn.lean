@@ -89,17 +89,17 @@ theorem WedderburnDecomposition.PosSemidef.add
   exact (hx λ).add (hy λ)
 
 /-- **Wedderburn embedding** into the global matrix algebra.
-    Takes a per-block decomposition and assembles a block-
-    diagonal matrix of total dimension `Σ_λ f^λ`.  (Note: this
-    is *not* the same as `heckeDim n = n!`; the difference
-    `n! - Σ_λ f^λ` is the off-block-diagonal content and equals
-    zero by RSK iff `Σ_λ (f^λ)² = n!`, which it does — so the
-    embedding into `Matrix (Fin (heckeDim n))` requires the RSK
-    bijection at the type level, deferred.)
+    Takes a per-block decomposition `⊕_λ M_{f^λ}(ℝ)` (total
+    vector-space dimension `Σ_λ (f^λ)²` per Robinson-Schensted-
+    Knuth) and assembles a block-diagonal matrix of dimension
+    `heckeDim n = n!`.  The dimension identity `Σ_λ (f^λ)² = n!`
+    is the RSK bijection — which we don't have at the Lean
+    type level yet, so the embedding is axiomatised.
 
     **Axiomatised** (per Gemini review): a stub returning `0`
-    would be logically inconsistent with `wenzlBridge` (which
-    asserts `tr_M(wedderburnEmbed x) = Σ_λ y_λ · tr(x λ)` —
+    would be logically inconsistent with the categorical
+    Markov-trace structure (which asserts non-zero traces for
+    non-zero per-block elements via the Wenzl bridge —
     non-zero in general for non-zero x) combined with
     `markovTrace_zero` (the trace of zero is zero).  Using
     `axiom` keeps the embedding opaque pending concrete

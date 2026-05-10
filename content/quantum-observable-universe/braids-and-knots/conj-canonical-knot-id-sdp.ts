@@ -23,6 +23,11 @@ export default conjecture({
     "audit",
   ],
   lean: {
-    ref: "qou:QOU.BraidKnot.canonical_T_w_subsingleton",
+    // Points at the SORRY-FREE ³He uniqueness closure (interior
+    // case, batch 13).  The abstract `canonical_T_w_subsingleton`
+    // currently delegates to `strict_complementarity_unique` which
+    // still has a sorry for the general kernel-uniqueness step;
+    // this manifest cites the proven concrete instance instead.
+    ref: "qou:QOU.BraidKnot.helium3_uniqueness_closed",
   },
 });

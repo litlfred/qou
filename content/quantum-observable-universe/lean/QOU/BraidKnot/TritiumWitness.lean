@@ -43,11 +43,12 @@ namespace QOU.BraidKnot
     `α_gap = 0` (assumed PSD-feasible), `ρ⋆ = 2` (placeholder),
     strong-duality slack = 0.
 
-    USE WITH CARE: this witness is provisional and will be
-    REPLACED once the Python H_5 Hoefsmit port lands and
-    `r5_full_canonical_knot_solver.py` produces a real witness
-    for tritium. -/
-instance instR5FullWitness_tritium_placeholder :
+    Intentionally NOT registered as a global `instance` (per
+    Copilot review — placeholder values shouldn't be picked up
+    silently by typeclass resolution).  Downstream theorems
+    needing a tritium witness must consume this `def`
+    explicitly, signalling the H_5 Hoefsmit dependency. -/
+def witnessR5Full_tritium_placeholder :
     R5FullWitness LightNucleus.tritium where
   alpha_gap := 0
   alpha_gap_nonneg := le_refl 0

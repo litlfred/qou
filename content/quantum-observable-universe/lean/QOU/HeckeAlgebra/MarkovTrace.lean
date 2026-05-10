@@ -116,19 +116,29 @@ axiom MarkovTrace_markov_axiom :
     -- z := QSubstrate.markovParameter
     markovTrace (n + 1) (heckeStab x) = z * markovTrace n x
 
+/-- **Categorical Markov trace on a Wedderburn decomposition**
+    (axiomatised) — the categorical-level Markov trace `tr_M`
+    applied directly to a `WedderburnDecomposition n`.  Bridges
+    the gap between the abstract `markovTrace : HeckeElement n →
+    ℝ` (vector form) and the per-block decomposition.  The
+    `wenzlBridge` below relates this trace to the block-trace
+    sum form. -/
+axiom markovTraceOnWedderburn :
+    ∀ {n : ℕ}, WedderburnDecomposition n → ℝ
+
 /-- **Wenzl bridge** (categorical identity): the Markov trace
     of an element via its Wedderburn decomposition equals the
     weighted sum of block traces.
 
-    `tr_M(wedderburnEmbed x) = Σ_{λ ⊢ n} y_λ(q) · tr(x λ)`
+    `tr_M(x) = Σ_{λ ⊢ n} y_λ(q) · tr(x λ)`
 
     where `tr` is the ordinary matrix trace per block.  This is
     the categorical content that the Python compute layer
     implements in `wedderburn_jones_markov.py`. -/
 axiom wenzlBridge :
     ∀ {n : ℕ} (q : ℝ) (x : WedderburnDecomposition n),
-    markovTrace n (wedderburnEmbed x) =
-      ∑ λ ∈ (Nat.partitions n), JonesMarkovCoefficient λ q * (x λ).trace
+    markovTraceOnWedderburn x =
+      ∑ λ ∈ partitions_as_finset n, JonesMarkovCoefficient λ q * (x λ).trace
 
 /-- **Trace of the zero element is zero** — axiomatic property
     of the Markov trace (consistent with linearity). -/

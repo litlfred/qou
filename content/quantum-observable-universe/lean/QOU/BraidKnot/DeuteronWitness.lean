@@ -44,9 +44,11 @@ namespace QOU.BraidKnot
     (PSD-feasible), `ρ⋆ = 1` (single-term winner; will change
     under multi-term cost), strong-duality slack = 0.
 
-    USE WITH CARE: downstream theorems consuming this instance
-    inherit the multi-term-cost-pending caveat. -/
-instance instR5FullWitness_deuterium_placeholder :
+    Intentionally NOT registered as a global `instance` (per
+    Copilot review — placeholder values shouldn't be picked up
+    silently by typeclass resolution).  Downstream theorems that
+    need a deuteron witness must consume this `def` explicitly. -/
+def witnessR5Full_deuterium_placeholder :
     R5FullWitness LightNucleus.deuterium where
   alpha_gap := 0
   alpha_gap_nonneg := le_refl 0

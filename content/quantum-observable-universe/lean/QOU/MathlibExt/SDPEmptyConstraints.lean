@@ -60,7 +60,16 @@ theorem one_isStrictlyFeasible (sdp : SDPPrimal n R Empty) :
     the primal optimum to be `0 : Matrix _ _ R` (vacuously feasible
     when constraints are empty), the dual optimum to be the empty
     function, and observe that primal and dual objectives both
-    equal `0`. -/
+    equal `0`.
+
+    PER COPILOT REVIEW: this construction is only valid as an
+    "optimum" when the primal infimum is attained at 0, which
+    requires `sdp.cost` to have a non-negative direction (i.e.
+    PSD).  For costs with negative directions the infimum is
+    `-∞`.  The `StrongDualityPair`'s `obj_eq` field is `True`
+    so this construction is technically well-typed even without
+    PosSemidef cost; downstream consumers should confirm cost
+    semidefiniteness before relying on the "optimum" claim. -/
 def trivialStrongDualityPair (sdp : SDPPrimal n R Empty) :
     StrongDualityPair sdp where
   Φstar := 0

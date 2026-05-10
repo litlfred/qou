@@ -209,7 +209,11 @@ class CanonicalKnotIdSDP (n : LightNucleus) where
   /-- The Markov-trace match leg.  The DECIDABLE structural proxy
       is `bindingKWord.structurallyValidBinding n.n₀` — Markov-trace
       match cannot be checked at the type level without Hecke infra,
-      but structural validity is necessary. -/
+      but structural validity is necessary.  Note: this duplicates
+      `constituentUniqueness`'s proxy at the class level — that's
+      correct since both Props share the same necessary structural
+      floor; per-instance categorical content (when the Hecke port
+      lands) will distinguish them. -/
   bindingKMatchesHistoricalMarkovTrace : Prop
   bindingKMatchesHistoricalMarkovTrace_holds : bindingKMatchesHistoricalMarkovTrace
   /-- ── Decidable structural sub-Props (Lean-checkable). ─────────
@@ -299,7 +303,8 @@ instance instCanonicalKnotIdSDP_deuterium : CanonicalKnotIdSDP .deuterium where
   bindingKPSDFeasible_holds := by decide
   bindingKMinimalLength := bindingKWord.length ≤ 4
   bindingKMinimalLength_holds := by decide
-  bindingKMatchesHistoricalMarkovTrace := bindingKWord ≠ []
+  bindingKMatchesHistoricalMarkovTrace :=
+    bindingKWord.structurallyValidBinding LightNucleus.deuterium.n₀
   bindingKMatchesHistoricalMarkovTrace_holds := by decide
   -- The DECIDABLE structural Props below are KERNEL-VERIFIED for
   -- bindingKWord = [3, 3] at LightNucleus.deuterium.n₀ = 6:
@@ -328,7 +333,8 @@ instance instCanonicalKnotIdSDP_tritium : CanonicalKnotIdSDP .tritium where
   bindingKPSDFeasible_holds := by decide
   bindingKMinimalLength := bindingKWord.length ≤ 4
   bindingKMinimalLength_holds := by decide
-  bindingKMatchesHistoricalMarkovTrace := bindingKWord ≠ []
+  bindingKMatchesHistoricalMarkovTrace :=
+    bindingKWord.structurallyValidBinding LightNucleus.tritium.n₀
   bindingKMatchesHistoricalMarkovTrace_holds := by decide
   bindingKStructurallyValid := by decide
   bindingKEvenPower := by decide
@@ -352,7 +358,8 @@ instance instCanonicalKnotIdSDP_helium3 : CanonicalKnotIdSDP .helium3 where
   bindingKPSDFeasible_holds := by decide
   bindingKMinimalLength := bindingKWord.length ≤ 4
   bindingKMinimalLength_holds := by decide
-  bindingKMatchesHistoricalMarkovTrace := bindingKWord ≠ []
+  bindingKMatchesHistoricalMarkovTrace :=
+    bindingKWord.structurallyValidBinding LightNucleus.helium3.n₀
   bindingKMatchesHistoricalMarkovTrace_holds := by decide
   bindingKStructurallyValid := by decide
   bindingKEvenPower := by decide
@@ -533,8 +540,8 @@ theorem helium3_canonical_uniqueness_via_strict_complementarity
   obtain ⟨_min_block_eig, _min_dual_y_on_active, _max_inactive_dual,
           _active_dual_pos_or_empty, _inactive_dual_zero⟩ := sc
   exact {
-    canonicalKnotId := "L6a4"
-    bindingLinkName := "L_{6a4} 3-component link in B_9"
+    canonicalKnotId := "L6a4 (canonical-id name; bindingKWord = [3,3] placeholder)"
+    bindingLinkName := "L_{6a4} 3-component link in B_9 — placeholder pending L > 2 enumeration"
     bindingKWord := ([3, 3] : BraidWord)
     rho := w.rho_star
     rho_pos := w.rho_star_pos
@@ -545,7 +552,8 @@ theorem helium3_canonical_uniqueness_via_strict_complementarity
     bindingKPSDFeasible_holds := by decide
     bindingKMinimalLength := ([3, 3] : BraidWord).length ≤ 4
     bindingKMinimalLength_holds := by decide
-    bindingKMatchesHistoricalMarkovTrace := ([3, 3] : BraidWord) ≠ []
+    bindingKMatchesHistoricalMarkovTrace :=
+      ([3, 3] : BraidWord).structurallyValidBinding LightNucleus.helium3.n₀
     bindingKMatchesHistoricalMarkovTrace_holds := by decide
     bindingKStructurallyValid := by decide
     bindingKEvenPower := by decide
@@ -582,8 +590,8 @@ theorem deuterium_canonical_uniqueness_pending_multiterm_cost
   obtain ⟨_min_block_eig, _min_dual_y_on_active, _max_inactive_dual,
           _active_dual_pos_or_empty, _inactive_dual_zero⟩ := sc
   exact {
-    canonicalKnotId := "6_2"
-    bindingLinkName := "L_H (Hopf, σ_3² in B_6)"
+    canonicalKnotId := "6_2 (canonical-id name; bindingKWord = [3,3] placeholder)"
+    bindingLinkName := "L_H (Hopf, σ_3² in B_6) — placeholder pending L > 2 enumeration"
     bindingKWord := ([3, 3] : BraidWord)
     rho := w.rho_star
     rho_pos := w.rho_star_pos
@@ -594,7 +602,8 @@ theorem deuterium_canonical_uniqueness_pending_multiterm_cost
     bindingKPSDFeasible_holds := by decide
     bindingKMinimalLength := ([3, 3] : BraidWord).length ≤ 4
     bindingKMinimalLength_holds := by decide
-    bindingKMatchesHistoricalMarkovTrace := ([3, 3] : BraidWord) ≠ []
+    bindingKMatchesHistoricalMarkovTrace :=
+      ([3, 3] : BraidWord).structurallyValidBinding LightNucleus.deuterium.n₀
     bindingKMatchesHistoricalMarkovTrace_holds := by decide
     bindingKStructurallyValid := by decide
     bindingKEvenPower := by decide
@@ -625,8 +634,8 @@ theorem tritium_canonical_uniqueness_pending_hoefsmit_h5
   obtain ⟨_min_block_eig, _min_dual_y_on_active, _max_inactive_dual,
           _active_dual_pos_or_empty, _inactive_dual_zero⟩ := sc
   exact {
-    canonicalKnotId := "8_11"
-    bindingLinkName := "8_11-class link in B_9"
+    canonicalKnotId := "8_11 (canonical-id name; bindingKWord = [3,3] placeholder)"
+    bindingLinkName := "8_11-class link in B_9 — placeholder pending L > 2 enumeration"
     bindingKWord := ([3, 3] : BraidWord)
     rho := w.rho_star
     rho_pos := w.rho_star_pos
@@ -637,7 +646,8 @@ theorem tritium_canonical_uniqueness_pending_hoefsmit_h5
     bindingKPSDFeasible_holds := by decide
     bindingKMinimalLength := ([3, 3] : BraidWord).length ≤ 4
     bindingKMinimalLength_holds := by decide
-    bindingKMatchesHistoricalMarkovTrace := ([3, 3] : BraidWord) ≠ []
+    bindingKMatchesHistoricalMarkovTrace :=
+      ([3, 3] : BraidWord).structurallyValidBinding LightNucleus.tritium.n₀
     bindingKMatchesHistoricalMarkovTrace_holds := by decide
     bindingKStructurallyValid := by decide
     bindingKEvenPower := by decide
@@ -693,8 +703,8 @@ theorem helium3_existence_with_witness_rho
     ∃ inst : CanonicalKnotIdSDP LightNucleus.helium3,
       inst.rho = w.rho_star := by
   refine ⟨{
-    canonicalKnotId := "L6a4"
-    bindingLinkName := "L_{6a4} 3-component link in B_9"
+    canonicalKnotId := "L6a4 (canonical-id name; bindingKWord = [3,3] placeholder)"
+    bindingLinkName := "L_{6a4} 3-component link in B_9 — placeholder pending L > 2 enumeration"
     bindingKWord := ([3, 3] : BraidWord)
     rho := w.rho_star
     rho_pos := w.rho_star_pos
@@ -705,7 +715,8 @@ theorem helium3_existence_with_witness_rho
     bindingKPSDFeasible_holds := by decide
     bindingKMinimalLength := ([3, 3] : BraidWord).length ≤ 4
     bindingKMinimalLength_holds := by decide
-    bindingKMatchesHistoricalMarkovTrace := ([3, 3] : BraidWord) ≠ []
+    bindingKMatchesHistoricalMarkovTrace :=
+      ([3, 3] : BraidWord).structurallyValidBinding LightNucleus.helium3.n₀
     bindingKMatchesHistoricalMarkovTrace_holds := by decide
     bindingKStructurallyValid := by decide
     bindingKEvenPower := by decide

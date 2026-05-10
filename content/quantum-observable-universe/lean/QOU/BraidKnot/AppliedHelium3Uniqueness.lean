@@ -10,7 +10,7 @@ statement for ³He.
 
 ## What this module proves
 
-For the empty-constraint SDP at dimension `heckeDim 3 = 6`:
+For the empty-constraint SDP at dimension `heckeDim LightNucleus.helium3.n₀ = heckeDim 9 = 362880 (³He has n₀ = 9)`:
 - The trivial strict-complementarity pair (active set empty)
   yields `Subsingleton {Φ // feasible Φ ∧ obj Φ = 0}`.
 - This applies abstractly: ³He's witness records all-positive
@@ -66,13 +66,13 @@ open QOU.HeckeAlgebra
 /-- **Abstract empty-constraint SDP at H_3(q_0) dimension.**
     Cost matrix is the identity (smallest non-degenerate Cost),
     no equality constraints (`ι := Empty`).  The dimension is
-    `heckeDim 3 = 6`. -/
-def helium3_emptySDP : SDPPrimal (heckeDim 3) ℝ Empty where
+    `heckeDim LightNucleus.helium3.n₀ = heckeDim 9 = 362880 (³He has n₀ = 9)`. -/
+def helium3_emptySDP : SDPPrimal (heckeDim LightNucleus.helium3.n₀) ℝ Empty where
   cost := 1  -- identity matrix as cost
   constraint := fun i => i.elim
   rhs := fun i => i.elim
 
-/-- The empty-constraint SDP at `heckeDim 3` is strictly
+/-- The empty-constraint SDP at `heckeDim LightNucleus.helium3.n₀` is strictly
     feasible (identity matrix is positive-definite, no
     constraints to violate). -/
 theorem helium3_emptySDP_strictlyFeasible :
@@ -97,7 +97,7 @@ def helium3_trivialStrictCompPair :
 
     Subsingleton-typed for typeclass propagation. -/
 theorem helium3_uniqueness_via_empty_sdp :
-    Subsingleton {Φ : Matrix (Fin (heckeDim 3)) (Fin (heckeDim 3)) ℝ //
+    Subsingleton {Φ : Matrix (Fin (heckeDim LightNucleus.helium3.n₀)) (Fin (heckeDim LightNucleus.helium3.n₀)) ℝ //
       helium3_emptySDP.IsFeasible Φ ∧
       helium3_emptySDP.objAt Φ = helium3_emptySDP.objAt
         helium3_trivialStrictCompPair.Φstar} :=
@@ -161,7 +161,7 @@ theorem helium3_dualSlack_posDef :
     helium3_dualSlack_posDef → real_strict_complementarity_
     unique_of_dualSlack_posDef`. -/
 theorem helium3_uniqueness_closed
-    {Φ' : Matrix (Fin (heckeDim 3)) (Fin (heckeDim 3)) ℝ}
+    {Φ' : Matrix (Fin (heckeDim LightNucleus.helium3.n₀)) (Fin (heckeDim LightNucleus.helium3.n₀)) ℝ}
     (h_feas : helium3_emptySDP.IsFeasible Φ')
     (h_obj : helium3_emptySDP.objAt Φ' =
              helium3_emptySDP.objAt helium3_realStrongDualityPair.Φstar) :

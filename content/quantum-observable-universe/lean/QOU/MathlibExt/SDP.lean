@@ -112,9 +112,17 @@ The full proof requires convex-cone separation in
 and value-function continuity. We package the conclusion as a
 typeclass; concrete instances are the conjectural input. -/
 
-/-- **Strong duality witness**: an extant primal/dual pair achieving
-    equal objective values, with dual feasibility encoded as
-    PSD-ness of the dual slack `S(y) := T - Σ y A`. -/
+/-- **Strong duality witness** — abstract skeleton for any
+    `R : Type*` (with appropriate algebraic structure).  Per
+    Copilot review: the `dual_feas` and `obj_eq` fields are
+    intentionally `True` placeholders here because PSD-ness
+    cannot be expressed without `[Fintype ι]` and `R := ℝ`.
+
+    The **ℝ-specialised** form `RealStrongDualityPair` (in
+    `QOU.MathlibExt.SDPRealUniqueness`) carries the actual
+    PSD-ness + objective-equality content.  Downstream code
+    that needs the categorical content should consume that
+    structure, not this abstract skeleton. -/
 structure StrongDualityPair (sdp : SDPPrimal n R ι) where
   /-- Primal-optimal point. -/
   Φstar : Matrix (Fin n) (Fin n) R
@@ -122,16 +130,13 @@ structure StrongDualityPair (sdp : SDPPrimal n R ι) where
   ystar : ι → R
   /-- Primal feasibility witness. -/
   primal_feas : sdp.IsFeasible Φstar
-  /-- **Dual feasibility**: the dual slack matrix `S(y*) := T -
-      Σ y*_i A_i` is positive-semidefinite.  This is the
-      "T - Σ y A ⪰ 0" condition from Boyd-Vandenberghe §5.2.3.
-      For frameworks where `Fintype ι` is unavailable, the
-      placeholder `True` form remains; here we encode it
-      structurally when feasible. -/
+  /-- Dual feasibility — `True` placeholder; ℝ-specialised
+      version (`RealStrongDualityPair.dualSlack_psd`) encodes
+      `(sdp.dualSlack ystar).PosSemidef`. -/
   dual_feas : True
-  /-- **Strong-duality identity**: primal and dual objective values
-      coincide, `objAt Φstar = dualObjAt y*`.  Encoded as `True`
-      in the skeleton; concrete instances upgrade. -/
+  /-- Strong-duality identity — `True` placeholder; ℝ-specialised
+      version (`RealStrongDualityPair.obj_eq_dualObj`) encodes
+      `objAt Φstar = dualObjAt ystar`. -/
   obj_eq : True
 
 /-- **Strong-duality typeclass**: witnesses that an SDP satisfies
