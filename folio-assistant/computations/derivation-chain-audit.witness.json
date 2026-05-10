@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-10T05:55:13.750592+00:00",
-  "commitSha": "c597dde1a4535f2327f6fcb56af696213452274f",
+  "computedAt": "2026-05-10T05:55:15.135814+00:00",
+  "commitSha": "2f401ecafe0f8425590be2b42213048089fa2f2b",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2104,6 +2104,7 @@
         "compute-audit-scan.witness.json",
         "confined-knot-binding.witness.json",
         "confinement-operator-selection.witness.json",
+        "cross-check-trM-1ppb.witness.json",
         "crystal-alpha-shift-pole-orders.witness.json",
         "crystal-basis-primitives.witness.json",
         "crystal-limit-transport-probe.witness.json",
@@ -2121,6 +2122,7 @@
         "demazure-markov-trace.witness.json",
         "deuteron-delta-i-audit.witness.json",
         "deuteron_tr_M_symbolic.witness.json",
+        "e0-calibration-audit.witness.json",
         "entanglement-orders.witness.json",
         "ew-higgs-sdp-probe.witness.json",
         "ew-interface-knot-probe.witness.json",
@@ -2226,6 +2228,7 @@
         "per-irrep-pole-deuteron-h6.witness.json",
         "per-irrep-pole-proton-h3.witness.json",
         "per-nucleon-shift-derivation.witness.json",
+        "phase2-m-e-hecke-diagnostic.witness.json",
         "photon-operator-table.witness.json",
         "picard-lefschetz-thimble.witness.json",
         "piece1-dimensional-bridge.witness.json",

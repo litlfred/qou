@@ -2,6 +2,7 @@
   "engine": "python",
   "engineVersion": "python 3.11.15",
 <<<<<<< HEAD
+<<<<<<< HEAD
   "computedAt": "2026-05-10T04:44:17.855451+00:00",
   "commitSha": "1e37649c0198b161b01803ed85d02243d8623f93",
 =======
@@ -13,6 +14,10 @@
   "commitSha": "796c89d8adc6650f11c67cb86437300d55f2bb8c",
 >>>>>>> 97593d60c (fix(witnesses): clean stale merge-conflict markers + audit drift)
 >>>>>>> 42c8127c2 (fix(witnesses): clean stale merge-conflict markers + audit drift)
+=======
+  "computedAt": "2026-05-10T05:06:42.274998+00:00",
+  "commitSha": "247b5c745150cdc8970bdbe582c971e56baab25c",
+>>>>>>> 468445bda (fix(witnesses): clean post-rebase merge-conflict markers + audit drift)
   "assertions": [
     {
       "name": "tr_M_at_q0_archimedean[D (deuteron, A=2)]",
@@ -59,11 +64,7 @@
   "computation": "markov-pipeline-cross-validation",
   "scriptFile": "markov_pipeline_cross_validator.py",
   "scriptHash": "2ba19efaa410",
-<<<<<<< HEAD
-  "scriptCommitSha": "dd4436dc0decabd08e078f9c92e6c99f53f82e1a",
-=======
   "scriptCommitSha": "17196bef047e22599b4588737d39dde18dde3805",
->>>>>>> 97593d60c (fix(witnesses): clean stale merge-conflict markers + audit drift)
   "description": "Verifies archimedean tr_M(q_0) agreement between the polynomial-ring realization (markov_substrate_realizer.py) and the Mittag-Leffler full-pole-sum computation (term6_full_pole_sum.py).",
   "contentBlock": "prop:full-pole-structure-mass-trace",
   "parameters": {
