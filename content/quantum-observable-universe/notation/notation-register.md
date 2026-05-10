@@ -37,6 +37,8 @@ refers to it.
 | Concept | Font | Symbols |
 |---------|------|---------|
 | $q$-shuffle Hopf algebra | calligraphic | $\mathcal{H}_q$ — convolution algebra of $\mathrm{End}_{\mathbf{C}}(A)$ under $\ast_q$; carries the grouplikes $\exp_q$, $\log_q$, $\mathrm{Li}_2^q$. Never plain $H_q$. |
+| Goncharov period filtration | calligraphic | $\mathcal{P}_n$ — weight-$n$ periods in the Goncharov motivic filtration ([Kontsevich–Zagier, Goncharov]). Used in [`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence). Distinct from $P_\ell$ (elementary symmetric polynomials in JM elements, [`prop:jucys-murphy-central-elements-qou`](#prop:jucys-murphy-central-elements-qou)). |
+| Primitive root of unity | Greek + sub | $\zeta_n := e^{2\pi i / n}$ — primitive $n$-th root of unity. **Always with subscript:** $\zeta_5$ for Bring $S_5$-symmetry shape, $\zeta_6 = e^{i\pi/3}$ for figure-8 ideal-tetrahedron shape. **Never bare $\zeta$** (collides with Riemann zeta $\zeta(s)$ — always parenthesised — and with character $\chi_\zeta$ — always with $\chi$ prefix). |
 | Vortex morphism | Greek | $\varrho \colon \mathbf{1} \to A$ — generic closed vortex. Never $\gamma$ for a vortex; $\gamma$ is reserved. |
 
 ### Information theory (Chapter 8)

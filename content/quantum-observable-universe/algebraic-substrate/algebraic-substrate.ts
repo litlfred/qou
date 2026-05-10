@@ -93,6 +93,24 @@ export default chapter({
         "q-from-epsilon",
         "surreal-rate-calculus",
         "surreal-squeeze",
+        // Graded-Mikusiński keystone: GS-depth = Goncharov period-depth.
+        "gb-depth-period-correspondence",
+        // Bi-filtration H_q^(n,K): depth axis × knot axis.
+        "hq-bi-filtration",
+        // Joint motivic-Galois × braid-group action on the bi-filtration.
+        "joint-galois-braid-action",
+        // Joint action verified on figure-8 cell (self-conjugate trivial case).
+        "joint-galois-braid-figure-8-verified",
+        // Joint action discharged in general (disjoint structure).
+        "joint-galois-braid-discharged",
+        // Graded Baer-* on H_q across the depth filtration.
+        "graded-baer-star-Hq",
+        // Two-filtration bridge: iterated-integral depth ↔ partition GB-depth.
+        "two-filtration-bridge",
+        // Two-filtration bridge map verified at small partitions (n ≤ 4).
+        "two-filtration-bridge-small-cases",
+        // Geometric realisation question for Cl_3(2π/5) at Bring's ζ_5.
+        "cl3-zeta5-geometric-realization",
         "classical-riemann-zeta",
         "classical-riemann-hypothesis",
         "macroscopic-stability-equivalence",
@@ -110,6 +128,9 @@ export default chapter({
         "collatz-surreal-bound",
         "p-vs-np-conjecture",
         "p-vs-np-surreal-bound",
+        // Unifies the four surreal-bound remarks as graded-Mikusiński
+        // std-collapse instances at different depths.
+        "surreal-bounds-graded-mikusinski",
         "millennium-unification",
       ],
     }),

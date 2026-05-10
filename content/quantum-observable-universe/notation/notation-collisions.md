@@ -13,6 +13,19 @@ paper to keep them disambiguated:
   Never use $\gamma$ for a vortex or closed cycle; use $\varrho$.
 - **$\chi_q$** = Lyapunov exponent (distinct from $\chi_\zeta(c)$,
   the character).
+- **$\zeta$** = three distinct uses, never bare. $\zeta_n := e^{2\pi i/n}$
+  (primitive $n$-th root of unity, **always with integer subscript** —
+  e.g. $\zeta_5$, $\zeta_6 = e^{i\pi/3}$); $\zeta(s)$ (Riemann
+  zeta function, **always parenthesised**, e.g. $\zeta(2) = \pi^2/6$,
+  $\zeta(3)$ — Apéry's constant); $\chi_\zeta(c)$ (character, **always
+  with $\chi$ prefix and argument**). The bare token $\zeta$ alone is
+  **not used**.
+- **$\mathcal{P}_n$** = Goncharov period filtration class (weight-$n$
+  periods modulo lower-weight). Distinct from $P_\ell$ = elementary
+  symmetric polynomials in Jucys–Murphy elements
+  ([`prop:jucys-murphy-central-elements-qou`](#prop:jucys-murphy-central-elements-qou)),
+  which are non-calligraphic and indexed by symmetric-polynomial
+  degree.
 - **$H_q$** alone = not used. Three distinct concepts share the
   letter $H$: $\mathcal{H}_q$ (shuffle Hopf algebra), $\hat{H}_q$
   (Hamiltonian operator), $H_n(q)$ or $H_q(\lambda)$ (Hecke /

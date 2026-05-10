@@ -1,0 +1,23 @@
+import { proposition } from "../../schema/builders";
+
+export default proposition({
+  label: "prop:joint-galois-braid-figure-8-verified",
+  title:
+    "Joint Galois $\\times$ braid action commutes on the figure-8 bi-filtration cell — verified directly",
+  uses: [
+    "conj:joint-galois-braid-action",
+    "def:hq-bi-filtration",
+    "rem:chirality-period-pairing",
+    "prop:b1-figure-8-row-theorem",
+    "prop:two-filtration-bridge-small-cases",
+  ],
+  cites: [],
+  tags: [
+    "joint-action",
+    "figure-8-knot",
+    "self-conjugate-cell",
+    "verification",
+    "graded-mikusinski",
+    "theorem-level",
+  ],
+});

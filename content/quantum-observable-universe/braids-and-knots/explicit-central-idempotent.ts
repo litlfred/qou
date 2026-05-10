@@ -1,0 +1,28 @@
+import { proposition } from "../../schema/builders";
+
+export default proposition({
+  label: "prop:explicit-central-idempotent",
+  title:
+    "Explicit central primitive idempotents $e_\\lambda$ via Murphy elements",
+  lean: {
+    ref: "qou:QOU.BraidKnot.ExplicitCentralIdempotent.explicit_central_idempotent_via_murphy",
+    validation: "not_checked",
+  },
+  uses: [
+    "prop:hoefsmit-seminormal-form",
+    "prop:wedderburn-weight-canonical",
+    "prop:jucys-murphy-central-elements-qou",
+    "prop:hecke-baer-star-generic",
+    "conj:gb-depth-period-correspondence",
+    "conj:bring-figure-eight-depth-2-witness",
+  ],
+  cites: [],
+  tags: [
+    "central-idempotent",
+    "murphy-elements",
+    "lagrange-interpolation",
+    "hecke-algebra",
+    "explicit-formula",
+    "computability",
+  ],
+});

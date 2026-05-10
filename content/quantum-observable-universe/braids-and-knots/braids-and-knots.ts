@@ -391,6 +391,34 @@ export default chapter({
         "phi-q-tower-algebraic-stratification",
         "kashaev-volume-conjecture",
         "figure-8-archimedean-illustration",
+        // Graded-Mikusiński depth-2 instance: VC = depth-2 case of
+        // conj:gb-depth-period-correspondence.
+        "vc-as-depth-2-instance",
+        // 50-digit numerical witness on the Bring-figure-8 embedding.
+        "bring-figure-eight-depth-2-witness",
+        // 50-digit functional-equation cross-validated depth-3 witness.
+        "bring-trilog-depth-3-witness",
+        // Im Li_3(ζ_5) = 4π³/125 (Tate-rational, Kummer reflection).
+        "bring-trilog-imaginary-tate-rational",
+        // Cl_3(2π/5) + Cl_3(4π/5) = -(12/25)ζ(3) — orbit-sum identity.
+        "cl3-zeta5-orbit-sum-identity",
+        // PSLQ certifies Cl_3(2π/5) - Cl_3(4π/5) is irreducible at 10^8.
+        "cl3-zeta5-pslq-independence",
+        // Hecke-algebra Baer-* foundation (generic q).
+        "hecke-baer-star-generic",
+        // Explicit central primitive idempotents via Murphy elements.
+        "explicit-central-idempotent",
+        // Bar involution → period chirality structure.
+        "chirality-period-pairing",
+        // Bring-embeddable knots: genus-bounded falsifiability targets.
+        "bring-embeddable-knots",
+        // Placement of paper's existing knot-indexed convolutions in
+        // the bi-filtration grid.
+        "knot-indexed-convolution-grid",
+        // Conway-KT mutant pair: B1 Vol-injectivity sanity check.
+        "conway-kt-vol-injectivity-test",
+        // Tightening of Q3: Jones-faithfulness theorem at crossing ≤ 10.
+        "jones-faithfulness-crossing-8",
         "archimedean-remainder-exponential-decay",
         "wedderburn-as-noncomm-fourier",
         "degree-one-braid-trivial-volume",

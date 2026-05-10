@@ -14,6 +14,32 @@ export default chapter({
       title: "What survives and what breaks",
       blocks: [
         "algebraic-core-survives",
+        // Dual ledger: every transcendental in the paper, indexed
+        // by Goncharov period-depth.
+        "transcendental-accounting",
+        // K-theory ↔ depth filtration Rosetta: Beilinson regulator
+        // matches iterated-integral grading on H_q.
+        "k-theory-period-rosetta",
+        // Borel's theorem partial-discharges the keystone's
+        // sharpness target with explicit Borel-rank dimensions.
+        "borel-partial-resolution",
+        // Depth-2 identification of G^(2) with K_3^ind ⊗ Q via
+        // Bloch–Suslin — theorem-level discharge of the keystone
+        // at depth 2 over every Bring-natural number field.
+        "depth-2-identification-bloch-suslin",
+        // QOU infra (Hecke NF + Bring S_5) potentially discharges
+        // Goncharov's conjecture at F = Q(ζ_5) for depth 3.
+        "qou-infra-discharges-goncharov-zeta5",
+        // Soft-sharpness version of B1 is theorem-level (Borel + Lewin).
+        "b1-soft-sharpness-theorem",
+        // B1 at the figure-8 row is theorem (Bloch-Suslin + Murakami-Murakami).
+        "b1-figure-8-row-theorem",
+        // B1 at torus-knot rows is theorem (Bloch-Suslin + Garoufalidis-Lê).
+        "b1-torus-knot-rows-theorem",
+        // B1 at additional hyperbolic-knot rows (Borromean, Whitehead).
+        "b1-hyperbolic-rows-theorem",
+        // Canonical B1 current-status synthesis (rounds 1-11).
+        "b1-current-status",
         "analytic-obstructions",
         "calculus-up-to-epsilon",
       ],
