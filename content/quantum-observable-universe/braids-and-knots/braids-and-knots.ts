@@ -411,6 +411,8 @@ export default chapter({
         "knot-indexed-convolution-grid",
         // Conway-KT mutant pair: B1 Vol-injectivity sanity check.
         "conway-kt-vol-injectivity-test",
+        // Tightening of Q3: Jones-faithfulness theorem at crossing ≤ 10.
+        "jones-faithfulness-crossing-8",
         "archimedean-remainder-exponential-decay",
         "wedderburn-as-noncomm-fourier",
         "degree-one-braid-trivial-volume",

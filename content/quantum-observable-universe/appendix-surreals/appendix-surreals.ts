@@ -30,6 +30,12 @@ export default chapter({
         // QOU infra (Hecke NF + Bring S_5) potentially discharges
         // Goncharov's conjecture at F = Q(ζ_5) for depth 3.
         "qou-infra-discharges-goncharov-zeta5",
+        // Soft-sharpness version of B1 is theorem-level (Borel + Lewin).
+        "b1-soft-sharpness-theorem",
+        // B1 at the figure-8 row is theorem (Bloch-Suslin + Murakami-Murakami).
+        "b1-figure-8-row-theorem",
+        // B1 at torus-knot rows is theorem (Bloch-Suslin + Garoufalidis-Lê).
+        "b1-torus-knot-rows-theorem",
         "analytic-obstructions",
         "calculus-up-to-epsilon",
       ],

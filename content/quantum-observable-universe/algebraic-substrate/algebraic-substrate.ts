@@ -103,6 +103,8 @@ export default chapter({
         "graded-baer-star-Hq",
         // Two-filtration bridge: iterated-integral depth ↔ partition GB-depth.
         "two-filtration-bridge",
+        // Two-filtration bridge map verified at small partitions (n ≤ 4).
+        "two-filtration-bridge-small-cases",
         // Geometric realisation question for Cl_3(2π/5) at Bring's ζ_5.
         "cl3-zeta5-geometric-realization",
         "classical-riemann-zeta",
