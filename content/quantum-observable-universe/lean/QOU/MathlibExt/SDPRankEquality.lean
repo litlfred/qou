@@ -4,6 +4,37 @@
 The Goldman-Tucker / Alizadeh-Haeberly-Overton 1997 rank-equality
 theorem for SDP under strict complementarity.
 
+## ⚠ Archimedean wall
+
+Per the QOU manuscript's archimedean-wall principle (categorical
+/ pre-archimedean content vs archimedean / realified content),
+**this entire module lives on the ARCHIMEDEAN side**.  Every
+statement and proof here uses real-valued (`ℝ`) PSD matrices,
+real spectral analysis, real inner products, and real
+invertibility — all post-realification machinery.
+
+The pre-archimedean content (categorical Hecke algebra, formal
+q-deformation in `ℤ[q, q⁻¹]`, Markov-trace-as-symbolic-rational-
+function) lives in `QOU.HeckeAlgebra.*` and is **not entangled
+with the SDP analysis here**.  The realification map
+`Hecke_n(formal q) → HeckeElement n(q_0 ∈ ℝ)` happens BEFORE
+the SDP machinery is invoked.
+
+Conclusions drawn here (e.g. `helium3_uniqueness_closed`) are
+**archimedean statements** about the realified SDP at `q_0`,
+not categorical statements about the pre-archimedean Hecke
+algebra.  Pulling back to a categorical claim requires
+additional infrastructure (e.g. realification-map injectivity
+on the relevant Hecke sub-algebra) that this module does not
+attempt to bridge.
+
+This wall-respect is intentional: SDP uniqueness is naturally
+an archimedean statement (the PSD cone, eigenvalue analysis,
+Slater's interior-point hypothesis are all real-analytic
+notions); forcing it into the pre-archimedean side would
+require formal-power-series PSD machinery that's both heavier
+and not what the QOU paper actually claims.
+
 ## Headline statement
 
 For PSD matrices `Φ` (primal optimum) and `S` (dual slack) of a
