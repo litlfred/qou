@@ -74,12 +74,13 @@ Laurent polynomial at `q := q_0`. -/
 
     For `f ∈ ℝ[q, q⁻¹]`, `realifyAt q_0 f = f(q_0) ∈ ℝ`.
 
-    Uses Mathlib's `LaurentPolynomial.eval`. -/
+    Uses Mathlib's `LaurentPolynomial.eval₂RingHom` with the
+    identity coefficient embedding and `q_0` as the evaluation
+    value (must be a unit; here `q_0 ≠ 0` from `q_0 > 1` gives
+    `IsUnit q_0` in the field ℝ). -/
 noncomputable def realifyAtRealQ0 : LaurentPolynomial ℝ →+* ℝ :=
-  -- Evaluate at q_0; q_0 must be a unit (q_0 > 0 from QSubstrate
-  -- gives q_0 ≠ 0).
-  -- Mathlib: `LaurentPolynomial.evalRingHom` (when q_0 unit).
-  sorry
+  LaurentPolynomial.eval₂RingHom (RingHom.id ℝ)
+    (isUnit_iff_ne_zero.mpr q_0_ne_zero).unit
 
 /-! ### §2  Realification at q_0 via embedded ℤ → ℝ
 

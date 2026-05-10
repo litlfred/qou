@@ -389,17 +389,29 @@ theorem rank_sum_le_of_mul_zero
     {ι : Type*} [Fintype ι]
     {sdp : SDPPrimal n ℝ ι} (sc : RealStrictComplementarityPair sdp) :
     sc.Φstar.rank + (sdp.dualSlack sc.ystar).rank ≤ n := by
-  -- Step 1: from primal feasibility + dualSlack PSD, we have S * Φstar = 0
-  -- (proven via dualSlack_mul_feasible_eq_zero + sc.primal_feas).
+  -- Step 1: from primal feasibility + dualSlack PSD, we have S * Φstar = 0.
   have h_S_Φstar : sdp.dualSlack sc.ystar * sc.Φstar = 0 :=
     sc.toRealStrongDualityPair.dualSlack_mul_feasible_eq_zero
       sc.primal_feas rfl
-  -- Step 2: range(Φstar) ⊆ ker(S) via range_contained_in_kernel_of_mul_zero.
-  -- Already proven in QOU.MathlibExt.SDPRealUniqueness.
-  -- Step 3: rank-nullity.  Mathlib's `Matrix.rank` machinery + dim
-  -- arithmetic gives `rank(Φstar) ≤ n - rank(S)`.
-  -- Pending Mathlib `Matrix.rank_le_of_range_le_kernel` lemma
-  -- verification.
+  -- Step 2: bridge to LinearMap.  range(Φstar.toLin') ⊆ ker(S.toLin')
+  -- since for any v: S · (Φstar · v) = (S * Φstar) · v = 0 · v = 0.
+  have h_range_le_ker :
+      LinearMap.range sc.Φstar.toLin' ≤
+        LinearMap.ker (sdp.dualSlack sc.ystar).toLin' := by
+    rintro w ⟨v, rfl⟩
+    show (sdp.dualSlack sc.ystar).toLin' (sc.Φstar.toLin' v) = 0
+    rw [← Matrix.toLin'_mul_apply, h_S_Φstar]
+    simp
+  -- Step 3: finrank(range Φ) ≤ finrank(ker S) by submodule monotonicity.
+  have h_finrank_le :
+      Module.finrank ℝ (LinearMap.range sc.Φstar.toLin') ≤
+        Module.finrank ℝ (LinearMap.ker (sdp.dualSlack sc.ystar).toLin') :=
+    Submodule.finrank_mono h_range_le_ker
+  -- Step 4: composition with rank-nullity
+  -- (`finrank(ker S) + finrank(range S) = n`) gives the conclusion.
+  -- Pending Mathlib lemma name verification:
+  -- `Matrix.rank_eq_finrank_range_toLin'` (rank = finrank range)
+  -- `LinearMap.finrank_range_add_finrank_ker` (rank-nullity)
   sorry
 
 /-- **Rank equality from strict complementarity** —
