@@ -17,8 +17,8 @@ paper to keep them disambiguated:
   (primitive $n$-th root of unity, **always with integer subscript** —
   e.g. $\zeta_5$, $\zeta_6 = e^{i\pi/3}$); $\zeta(s)$ (Riemann
   zeta function, **always parenthesised**, e.g. $\zeta(2) = \pi^2/6$,
-  $\zeta(3) = $ Apéry); $\chi_\zeta(c)$ (character, **always with
-  $\chi$ prefix and argument**). The bare token $\zeta$ alone is
+  $\zeta(3)$ — Apéry's constant); $\chi_\zeta(c)$ (character, **always
+  with $\chi$ prefix and argument**). The bare token $\zeta$ alone is
   **not used**.
 - **$\mathcal{P}_n$** = Goncharov period filtration class (weight-$n$
   periods modulo lower-weight). Distinct from $P_\ell$ = elementary

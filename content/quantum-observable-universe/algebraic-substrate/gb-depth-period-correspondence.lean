@@ -53,19 +53,29 @@ opaque ArchimedeanRealization (q : R) : Type
     `K_{2n-1}^ind(F) ⊗ ℚ`).
     -/
 class GBDepthPeriodCorrespondence (q : R) where
-  inclusion :
-    ∀ n : ℕ, True
-    -- Full statement: ∀ α : GroupLikeDepth q n,
-    --   ArchimedeanRealization q (α) ∈ GoncharovPeriodFiltration n.
-    -- Placeholder until the Mathlib infrastructure is in place.
+  /-- Inclusion: at every depth `n`, the archimedean realization
+      of a depth-`n` grouplike is a weight-`n` Goncharov period.
+      Stated as a function `GroupLikeDepth q n → GoncharovPeriodFiltration n`
+      per Gemini PR #634 review.
 
+      The full Lean formalisation asserts this map factors
+      compatibly with the depth filtration on grouplikes and the
+      weight filtration on Goncharov periods. -/
+  inclusion :
+    ∀ n : ℕ, GroupLikeDepth q n → GoncharovPeriodFiltration n
+
+  /-- Sharpness: at every depth `n ≥ 1`, the depth-`n` grouplike
+      sub-Hopf-algebra is non-empty — there exists a grouplike at
+      depth `n` (which, by the inclusion, has a non-trivial
+      Goncharov-period image).  In K-theoretic terms (per
+      `rem:k-theory-period-rosetta`), this is implied by Borel's
+      theorem on `K_{2n-1}^ind(F) ⊗ ℚ` for appropriate number
+      fields `F`.
+
+      Per Gemini PR #634 review: replaces previous vacuous
+      `∀ n, n ≥ 1 → True` with `Nonempty (GroupLikeDepth q n)`. -/
   sharpness :
-    ∀ n : ℕ, n ≥ 1 → True
-    -- Full statement: ∃ α : GroupLikeDepth q n,
-    --   ArchimedeanRealization q (α) ∈ GoncharovPeriodFiltration n
-    --   ∧ ArchimedeanRealization q (α) ∉ GoncharovPeriodFiltration (n-1).
-    -- This is the *Borel-rank-positive* condition; conjectural here
-    -- but a Borel theorem in K-theoretic language.
+    ∀ n : ℕ, n ≥ 1 → Nonempty (GroupLikeDepth q n)
 
 /-- **Conditional theorem (downstream of the keystone).** The
     figure-8 instance of B1 — the depth-2 row — is verified

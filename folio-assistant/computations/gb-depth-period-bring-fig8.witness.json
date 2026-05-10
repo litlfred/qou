@@ -1,7 +1,7 @@
 {
   "computation": "gb-depth-period-bring-fig8",
-  "description": "Depth-2 numerical witness for conj:bring-figure-eight-depth-2-witness \u2014 the depth-2 instance of the keystone conjecture conj:gb-depth-period-correspondence.  The figure-8 knot 4_1 embeds in Bring's genus-4 surface via the 4-strand braid word sigma_1 sigma_2^{-1} sigma_1 sigma_2^{-1}.  The depth-2 grouplike Li_2^q at the regular-ideal-tetrahedron shape z = e^(i pi/3) has std-part 2 Cl_2(pi/3) = Vol(S^3 \\ 4_1) by Lobachevsky-Thurston.  Verified at 50 decimal digits via two independent paths (polylog routine and direct Clausen series); cross-residual below 1e-40.",
-  "timestamp": "2026-05-10T05:29:22.769562+00:00",
+  "description": "Depth-2 numerical witness for conj:bring-figure-eight-depth-2-witness \u2014 the depth-2 instance of the keystone conjecture conj:gb-depth-period-correspondence.  The figure-8 knot 4_1 embeds in Bring's genus-4 surface via the 4-strand braid word sigma_1 sigma_2^{-1} sigma_1 sigma_2^{-1}.  The depth-2 grouplike Li_2^q at the regular-ideal-tetrahedron shape z = e^(i pi/3) has std-part 2 Cl_2(pi/3) = Vol(S^3 \\ 4_1) by Lobachevsky-Thurston. Computed at 50 decimal digits via mpmath.polylog. The Clausen-series 2M-term partial sum is a low-precision sanity check (~13-digit / SnapPy-range agreement), NOT a 50-digit independent cross-validation. Per Copilot PR #634 review.",
+  "timestamp": "2026-05-10T15:41:30.854594+00:00",
   "precision_decimal_digits": 50,
   "shape_parameter": {
     "form": "e^(i pi/3)",
@@ -21,7 +21,7 @@
     "purpose": "sanity check at SnapPy precision range only"
   },
   "sanity_check_residual": "0.00000000000043301226887919267271865228222666908823651476713813",
-  "sanity_check_below_1e12": true,
+  "sanity_check_below_1e_minus_12": true,
   "fifty_digit_value_authority": "mpmath.polylog at mp.dps=50 is the canonical computation; cross-validation to 50 digits would require an independent high-precision routine (e.g. Lobachevsky integral via mpmath.quad or BBP-style formula) \u2014 deferred",
   "geometric_identification": {
     "claim": "2 D(e^(i pi/3)) = Vol(S^3 \\ 4_1)",

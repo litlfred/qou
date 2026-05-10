@@ -68,15 +68,38 @@ namespace IwahoriHeckeAlgebra
 
 variable {n : ℕ} {R : Type*} [CommRing R] {q : R} {h_unit : IsUnit q}
 
-/-! ## Hecke relations (axioms) -/
+/-! ## Hecke relations (axioms)
+
+Note: These relation classes assume an `Algebra R H.carrier`
+instance providing the scalar action `R → H.carrier`, plus a
+`Field R` constraint so `q⁻¹` is well-defined. The instance is
+declared as a separate field on the structure.
+
+Per Copilot PR #634 review: the previous formulation used
+`Ring.inverse q` (incorrect — that's the standard `Ring` partial
+inverse, not the Hecke-algebra-natural inverse via `IsUnit`) and
+`(q : R) • (1 : H.carrier)` without an `SMul R H.carrier` instance.
+This rewrite restricts to `[Field R]` so `q⁻¹` is `R`'s field
+inverse and the scalar action comes from any algebra-style
+embedding `R → H.carrier`. -/
+
+/-- Algebra hom from `R` to the Hecke-algebra carrier — provides
+    the scalar embedding required to write `(q : R) ↪ H.carrier`. -/
+class HeckeRingHom {R : Type*} [Field R] {q : R} {h_unit : IsUnit q}
+    (H : IwahoriHeckeAlgebra n R q h_unit) where
+  scalarOf : R → H.carrier
+  scalarOf_one :
+    letI : Ring H.carrier := H.ring
+    scalarOf 1 = (1 : H.carrier)
 
 /-- The quadratic Hecke relation: `(σ_i - q)(σ_i + q⁻¹) = 0`. -/
-class HeckeQuadratic (H : IwahoriHeckeAlgebra n R q h_unit) : Prop where
+class HeckeQuadratic [Field R]
+    (H : IwahoriHeckeAlgebra n R q h_unit) [HeckeRingHom H] : Prop where
   quadratic :
     ∀ i : Fin (n - 1),
       letI : Ring H.carrier := H.ring
-      (H.sigma i - (q : R) • (1 : H.carrier)) *
-        (H.sigma i + (Ring.inverse q : R) • 1) = 0
+      (H.sigma i - HeckeRingHom.scalarOf (R := R) q) *
+        (H.sigma i + HeckeRingHom.scalarOf (R := R) (q⁻¹ : R)) = 0
 
 /-- The braid relation: `σ_i σ_{i+1} σ_i = σ_{i+1} σ_i σ_{i+1}`. -/
 class HeckeBraid (H : IwahoriHeckeAlgebra n R q h_unit) : Prop where
@@ -196,17 +219,37 @@ theorem central_idempotent_orthogonal
   -- follow from Lagrange interpolation in commuting variables.
   sorry
 
+/-- Transpose of a partition (Young-diagram conjugate).  For each
+    column index `j` (0-indexed up to the row length of the first
+    row), the transposed partition's `j`-th entry is the number of
+    original rows with at least `j + 1` boxes.  Examples:
+
+      `transpose [3, 1] = [2, 1, 1]`  (Young diagram with 3 + 1 = 4 boxes)
+      `transpose [2, 2] = [2, 2]`     (self-conjugate)
+      `transpose [4]    = [1, 1, 1, 1]`
+
+    Per Gemini PR #634 review: replaces the previous incorrect
+    `List.reverse` placeholder.  Reversal does NOT yield the
+    transpose (e.g. `[3, 1].reverse = [1, 3]` which is not even a
+    valid partition; the correct transpose is `[2, 1, 1]`). -/
+def partitionTranspose : List ℕ → List ℕ
+  | [] => []
+  | h :: t =>
+    (List.range h).map fun j =>
+      ((h :: t).filter (· > j)).length
+
 /-- Bar involution acts on central idempotents by partition
     transpose: `star (e_λ) = e_{λ'}`. -/
 theorem bar_central_idempotent_transpose
     (H : IwahoriHeckeAlgebra n R q h_unit) [HeckeBar H]
     (lam : List ℕ) :
     letI : StarRing H.carrier := H.star_ring
-    star (centralIdempotent H lam) = centralIdempotent H lam.reverse := by
+    star (centralIdempotent H lam) =
+      centralIdempotent H (partitionTranspose lam) := by
   -- Ref: [manuscript] §prop:explicit-central-idempotent
-  -- "Cross-checks" §3-4 — bar acts by partition transpose
-  -- (here represented by `List.reverse` as a placeholder for
-  -- the proper transpose-Young-diagram operation).
+  -- "Cross-checks" §3-4 — bar acts by partition transpose;
+  -- the `partitionTranspose` function above implements the
+  -- proper Young-diagram conjugate.
   sorry
 
 /-! ## Failure locus characterisation -/

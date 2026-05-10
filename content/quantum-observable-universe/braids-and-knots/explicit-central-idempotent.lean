@@ -45,8 +45,17 @@ def qContent {R : Type*} [Field R] (i j : ℤ) (q : R) : R :=
   q ^ (2 * (j - i))
 
 /-- Murphy–Lagrange formula for the central primitive idempotent
-    `e_λ ∈ Z(H_n(q))`. Placeholder type. -/
-opaque centralIdempotent (lam : List ℕ) (q : R) : Type
+    `e_λ ∈ Z(H_n(q))`. Placeholder element-of-the-algebra constant.
+
+    Per Gemini PR #634 review: previous `: Type` signature was a
+    type-mismatch — `centralIdempotent` is an *element* of the
+    algebra carrier, not a type. The full Lean formalisation
+    binds it to `H.carrier` for an `IwahoriHeckeAlgebra` `H`; this
+    placeholder fixes the signature to return a value in the
+    underlying ring `R`, allowing element-level identities
+    (orthogonality, self-adjointness, bar-pairing) to typecheck. -/
+opaque centralIdempotent {R : Type*} [CommRing R]
+    (lam : List ℕ) (q : R) : R
 
 /-- **Theorem (`prop:explicit-central-idempotent`).** The central
     primitive idempotent `e_λ` for partition `λ ⊢ n` is given by

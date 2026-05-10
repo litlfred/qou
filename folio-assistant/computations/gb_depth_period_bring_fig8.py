@@ -137,9 +137,11 @@ def main() -> None:
             "braid word sigma_1 sigma_2^{-1} sigma_1 sigma_2^{-1}.  "
             "The depth-2 grouplike Li_2^q at the regular-ideal-"
             "tetrahedron shape z = e^(i pi/3) has std-part 2 Cl_2(pi/3) "
-            "= Vol(S^3 \\ 4_1) by Lobachevsky-Thurston.  Verified at 50 "
-            "decimal digits via two independent paths (polylog routine "
-            "and direct Clausen series); cross-residual below 1e-40."
+            "= Vol(S^3 \\ 4_1) by Lobachevsky-Thurston. Computed at "
+            "50 decimal digits via mpmath.polylog. The Clausen-series "
+            "2M-term partial sum is a low-precision sanity check "
+            "(~13-digit / SnapPy-range agreement), NOT a 50-digit "
+            "independent cross-validation. Per Copilot PR #634 review."
         ),
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "precision_decimal_digits": mp.dps,
@@ -161,7 +163,7 @@ def main() -> None:
             "purpose": "sanity check at SnapPy precision range only",
         },
         "sanity_check_residual": str(CROSS_RESIDUAL),
-        "sanity_check_below_1e12": float(CROSS_RESIDUAL) < 1e-12,
+        "sanity_check_below_1e_minus_12": float(CROSS_RESIDUAL) < 1e-12,
         "fifty_digit_value_authority": (
             "mpmath.polylog at mp.dps=50 is the canonical computation; "
             "cross-validation to 50 digits would require an independent "
