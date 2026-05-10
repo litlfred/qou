@@ -1,0 +1,250 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-10T03:46:08.967024+00:00",
+  "commitSha": "c74a8516d0b4efa6beb4c7a991f8aad498a25f96",
+  "assertions": [
+    {
+      "name": "option_e_breaks_S_invariance_as_structurally_expected",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "c_λ ≠ c_{λᵀ} for non-self-conjugate λ ⇒ W_c not Hopf-antipode invariant; see rem:option-e-isospin-test"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 23,
+  "computation": "option-e-isospin-probe",
+  "scriptFile": "option_e_isospin_probe.py",
+  "scriptHash": "7493070c2ee0",
+  "scriptCommitSha": "c74a8516d0b4efa6beb4c7a991f8aad498a25f96",
+  "description": "H follow-up to PR #619: tests whether the Option E Kashiwara crystal weight c_λ(q) (per rho_k_h3a_crystal) preserves the T = ³He isospin invariance established for the LP-dual shadow price (PR #622 Hopf-antipode) under the canonical Δ_I-coupled atomic braid words. Probes W_c(K) := Σ_λ c_λ(q_0)·χ^λ(β_K)(q_0) for K ∈ {D, T, ³He}.",
+  "auditOnly": "rem:option-e-isospin-test",
+  "data": {
+    "narrative_block": "rem:option-e-isospin-test",
+    "conditional_on": [
+      "conj:crystal-graph-realization"
+    ],
+    "q_0": "1.1099785955541805752815940796095093779932822799587",
+    "inputs": {
+      "atom_braid_words": "mass_at_3A_proper.atom_braid_word_3A",
+      "c_lambda_q": "rho_k_h3a_crystal.c_lambda_q (Macdonald hook-content)",
+      "chi_lambda": "hoefsmit_symbolic.chi_lambda_symbolic"
+    },
+    "atoms": [
+      {
+        "atom": "D",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "n_strands": 6,
+        "n_partitions": 11,
+        "W_c_q0": "28044.628999946936184796953450799716868491800405715",
+        "n_nonzero_contributions": 11,
+        "top_contributions": [
+          {
+            "lambda": [
+              5,
+              1
+            ],
+            "c_lambda_q0": "5717.8815011985559179404036460227575387686176395956",
+            "chi_lambda_q0": "3.215891433938687",
+            "contribution": "18388.086139980915191493384738299180997026752649059"
+          },
+          {
+            "lambda": [
+              3,
+              3
+            ],
+            "c_lambda_q0": "2583.8180742168265953175403727237685531703378505344",
+            "chi_lambda_q0": "4.2490702926236485",
+            "contribution": "10978.82462069876344336936248825794226021772083215"
+          },
+          {
+            "lambda": [
+              4,
+              2
+            ],
+            "c_lambda_q0": "6044.2471825083261935489735007101711147642633593417",
+            "chi_lambda_q0": "1.6737481247386992",
+            "contribution": "10116.547387180476904544787948817715556856407366161"
+          },
+          {
+            "lambda": [
+              3,
+              2,
+              1
+            ],
+            "c_lambda_q0": "4648.6370411314641390128057833643607062537120991676",
+            "chi_lambda_q0": "-1.9728210551001286",
+            "contribution": "-9170.9290322625150775847119157660649835117296871994"
+          },
+          {
+            "lambda": [
+              6
+            ],
+            "c_lambda_q0": "2597.994261715933429651112888219270407857561831498",
+            "chi_lambda_q0": "1.5597587394180614",
+            "contribution": "4052.244254669401482974522422623187175062555874721"
+          },
+          {
+            "lambda": [
+              2,
+              2,
+              2
+            ],
+            "c_lambda_q0": "893.34395355797603719265810564245600915651074869313",
+            "chi_lambda_q0": "-3.4975646652884276",
+            "contribution": "-3124.5282459134430482715442361458971155972515727214"
+          }
+        ]
+      },
+      {
+        "atom": "T",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "n_strands": 9,
+        "n_partitions": 26,
+        "W_c_q0": "14784242.75570104060427370976619155242763023566577",
+        "n_nonzero_contributions": 26,
+        "top_contributions": [
+          {
+            "lambda": [
+              6,
+              3
+            ],
+            "c_lambda_q0": "13289941.998882871846360501918457691683910362807048",
+            "chi_lambda_q0": "10.16741952165554",
+            "contribution": "135124415.72111156992715242525801995363187651693127"
+          },
+          {
+            "lambda": [
+              6,
+              2,
+              1
+            ],
+            "c_lambda_q0": "19864928.699735271629176925545524365348480539074603",
+            "chi_lambda_q0": "-6.340255676914585",
+            "contribution": "-125948726.96000001755931153546324987534553773863885"
+          },
+          {
+            "lambda": [
+              5,
+              2,
+              2
+            ],
+            "c_lambda_q0": "12368646.533483796035242622470094141101669891902027",
+            "chi_lambda_q0": "-9.370718720007323",
+            "contribution": "-115903107.61247029238630732854930239792267973595138"
+          },
+          {
+            "lambda": [
+              4,
+              3,
+              2
+            ],
+            "c_lambda_q0": "13006529.937429410664669391623139564956508990637727",
+            "chi_lambda_q0": "7.0274638407886165",
+            "contribution": "91402918.829419810408290870335558364964814379310382"
+          },
+          {
+            "lambda": [
+              5,
+              2,
+              1,
+              1
+            ],
+            "c_lambda_q0": "14376128.914304712752340875949806095100539189250698",
+            "chi_lambda_q0": "-5.974292298351307",
+            "contribution": "-85887196.252836187506200926280200124257097566622379"
+          },
+          {
+            "lambda": [
+              4,
+              3,
+              1,
+              1
+            ],
+            "c_lambda_q0": "12340782.617533764587129233195386788607213305113957",
+            "chi_lambda_q0": "-3.74411465171731",
+            "contribution": "-46205305.011966465004092215875142122952380807738152"
+          }
+        ]
+      },
+      {
+        "atom": "³He",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "n_strands": 9,
+        "n_partitions": 26,
+        "W_c_q0": "292762137.68275144918658432820009594827690930162716",
+        "n_nonzero_contributions": 26,
+        "top_contributions": [
+          {
+            "lambda": [
+              6,
+              3
+            ],
+            "c_lambda_q0": "13289941.998882871846360501918457691683910362807048",
+            "chi_lambda_q0": "16.0647322170296",
+            "contribution": "213499359.39190844157155906697119462326157302158242"
+          },
+          {
+            "lambda": [
+              5,
+              3,
+              1
+            ],
+            "c_lambda_q0": "21210405.465738290016610748064502395349897496277854",
+            "chi_lambda_q0": "6.781882180538924",
+            "contribution": "143846470.87009590142584153158181979531791235033328"
+          },
+          {
+            "lambda": [
+              5,
+              2,
+              2
+            ],
+            "c_lambda_q0": "12368646.533483796035242622470094141101669891902027",
+            "chi_lambda_q0": "-9.994187764381497",
+            "contribution": "-123614575.84690337117224642893029283958391117147023"
+          },
+          {
+            "lambda": [
+              5,
+              2,
+              1,
+              1
+            ],
+            "c_lambda_q0": "14376128.914304712752340875949806095100539189250698",
+            "chi_lambda_q0": "-7.859076205353146",
+            "contribution": "-112983092.67550152444776655160405903671475813973581"
+          },
+          {
+            "lambda": [
+              4,
+              3,
+              2
+            ],
+            "c_lambda_q0": "13006529.937429410664669391623139564956508990637727",
+            "chi_lambda_q0": "8.649919881440566",
+            "contribution": "112505441.89432257450218882110376339404333590550553"
+          },
+          {
+            "lambda": [
+              7,
+              2
+            ],
+            "c_lambda_q0": "11663381.530688906872780015051466618814916326001946",
+            "chi_lambda_q0": "7.567572581933726",
+            "contribution": "88263486.284273587579951627865379599900062197500899"
+          }
+        ]
+      }
+    ],
+    "isospin_split_T_minus_3He": "277977894.92705040858231061843390439584927906596139"
+  }
+}
