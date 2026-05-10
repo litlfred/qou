@@ -404,16 +404,11 @@ def main() -> int:
         print("  there is intrinsically tr(∏ M_i) and requires the full Hoefsmit")
         print("  matrix evaluation.  A separate matrix-trace bridge is needed")
         print("  to close the multi-dim sector.")
-    elif n_closed == len(results):
-        print("  CONCLUSION: bridge CLOSES uniformly across all atoms tested.")
-    elif n_closed > 0:
-        print(f"  CONCLUSION: bridge closes for {n_closed}/{len(results)} atoms.")
+    elif one_dim_total == 0:
+        print("  CONCLUSION: no 1-dim channels in scope.")
     else:
-        any_partial = any(r.get("verdict") == "bridge_partial" for r in results)
-        if any_partial:
-            print("  CONCLUSION: bridge is PARTIAL across the constancy candidates.")
-        else:
-            print("  CONCLUSION: bridge does NOT close under the candidate forms.")
+        print(f"  CONCLUSION: 1-dim bridge closes for {one_dim_matches}/"
+              f"{one_dim_total} channels — partial.")
     print("=" * 88)
 
     w.save()
