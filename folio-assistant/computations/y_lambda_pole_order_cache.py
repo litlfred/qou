@@ -21,6 +21,11 @@ from pathlib import Path
 
 import sympy as sp
 
+# n=12 y_λ expressions are nested products of 12 (1 - q^k/D)-style
+# terms; sympify hits Python's default 1000-frame recursion cap.
+# Bump globally and re-bump inside multiprocessing workers.
+sys.setrecursionlimit(50000)
+
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
@@ -51,6 +56,8 @@ def _worker(args: tuple[list[int], str]) -> tuple[list[int], int | None, float]:
     `(shape, ord_y, elapsed)`.  Re-imports inside the worker because
     sympy state isn't always picklable across spawn."""
     import time as _time
+    import sys as _sys
+    _sys.setrecursionlimit(50000)  # n=12 expressions exceed 1000 frames
     shape_list, y_str = args
     t0 = _time.time()
     y_q = sp.sympify(y_str)
