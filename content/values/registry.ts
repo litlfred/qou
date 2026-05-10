@@ -416,6 +416,42 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       units: null,
       needsReview: true,
     }),
+
+    // ── Hyperbolic volumes (encounter chapter) ──────────────────
+    // Vol(4_1) computed via the Clausen-function identity
+    // 2 · Cl_2(π/3) at 50 dps in `hyperbolic_volumes.py`; the
+    // 15-digit serialisation feeds the Lean literal
+    // `MostowRigidity.figureEight.volume` via the `:leanval[vol_4_1]`
+    // tag and the `codemod-leanval.ts` codemod.
+
+    vol_4_1: Object.freeze({
+      name: "vol_4_1",
+      description:
+        "Hyperbolic volume of the figure-eight knot complement " +
+        "Vol(4_1) = 2 Cl_2(π/3); smallest known orientable " +
+        "cusped hyperbolic 3-manifold (Cao-Meyerhoff 2001).",
+      symbol: "\\mathrm{Vol}(4_1)",
+      witnessFile:
+        "folio-assistant/computations/hyperbolic-volumes.witness.json",
+      witnessPath: "data.vol_4_1_decimal_15",
+      defaultPrecision: 15,
+      units: null,
+    }),
+
+    mostow_gap_4_1: Object.freeze({
+      name: "mostow_gap_4_1",
+      description:
+        "Conservative lower bound on the volume gap " +
+        "Vol(5_2) - Vol(4_1) ≈ 0.798; consumed by " +
+        "MostowRigidity.figureEight.mostow_gap. " +
+        "Replace with SnapPy-computed value once SnapPy is in CI.",
+      symbol: "\\Delta_{\\mathrm{Mostow}}(4_1)",
+      witnessFile:
+        "folio-assistant/computations/hyperbolic-volumes.witness.json",
+      witnessPath: "data.gap_lower_bound",
+      defaultPrecision: 1,
+      units: null,
+    }),
   });
 
 /** Return the entry registered under `name`, or `undefined`. */

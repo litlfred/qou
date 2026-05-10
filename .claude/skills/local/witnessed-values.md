@@ -219,3 +219,49 @@ literals, **first check the registry**.  If the value is registered,
 use `:val[name]`.  If it should be registered but isn't, add it
 (with `needsReview: true` if the witness is uncertain) and *then*
 cite it.  Avoid hard-coded literals in newly-authored prose.
+
+## Lean-side companion: `:leanval[...]` codemod
+
+Numeric literals inside `.lean` source files use the same registry
+via a sibling codemod
+[`content/pipeline/codemod-leanval.ts`](../../../content/pipeline/codemod-leanval.ts).
+
+**Tag syntax** (line-anchored, end-of-line comment):
+
+```lean
+volume     := 2.029883212819307  -- :leanval[vol_4_1]
+mostow_gap := 0.5                -- :leanval[mostow_gap_4_1]{precision=1}
+show (0 : ℝ) < 2.029883212819307  -- :leanval[vol_4_1]
+```
+
+The codemod scans all `.lean` files (skipping `.lake/`,
+`lake-packages/`, `build/`), finds lines whose final end-of-line
+comment starts `-- :leanval[NAME]`, and rewrites the **immediately
+preceding decimal literal on the same line** to the witness value
+at `entry.witnessPath`, formatted to either the per-occurrence
+`{precision=N}` attribute or the registry default.
+
+**Modes** (all from repo root):
+
+```bash
+bun run content/pipeline/codemod-leanval.ts            # dry-run, summarises diffs
+bun run content/pipeline/codemod-leanval.ts --write    # apply rewrites
+bun run content/pipeline/codemod-leanval.ts --check    # CI gate (exit 1 on drift)
+```
+
+**CI integration** — `witness-pipeline.yml` runs `--check` after
+the witness producers, so a Lean literal that has drifted from its
+witness fails CI before merge.  The fix is always the same:
+`bun run content/pipeline/codemod-leanval.ts --write`.
+
+**When to use the Lean tag** — any `.lean` field/literal that
+quotes a numerical invariant tracked by a witness JSON
+(hyperbolic volumes, q-pinning constants, AME masses, …).  Class
+fields like `MostowRigidity.figureEight.volume` are the canonical
+example.  Tactic-level literals inside `show` / `norm_num` proofs
+may also be tagged so the proof and the field stay in sync.
+
+**When *not* to use it** — opaque mathematical constants computed
+inline by Lean tactics (e.g. `1/2`, `√2` produced by `decide` /
+`norm_num`).  The codemod is a numerical-drift safety net, not a
+generic literal rewriter.

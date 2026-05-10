@@ -202,9 +202,13 @@ instance unknot : MostowRigidity Unknot where
     hyperbolic 3-manifolds of minimum volume*, Invent. Math. 146
     (2001) 451–478. -/
 instance figureEight : MostowRigidity FigureEight where
-  volume := 2.02988
+  -- Both numeric literals below are kept in sync with the
+  -- canonical witness `hyperbolic-volumes.witness.json` by
+  -- `content/pipeline/codemod-leanval.ts`.  Never hand-edit
+  -- the literals; rerun the codemod after a witness update.
+  volume := 2.02988321281931  -- :leanval[vol_4_1]
   volume_nonneg := by norm_num
-  mostow_gap := 0.5
+  mostow_gap := 0.5  -- :leanval[mostow_gap_4_1]
   mostow_gap_pos := by norm_num
 
 /-- **Volume comparison: unknot < figure-eight**.
@@ -218,7 +222,10 @@ instance figureEight : MostowRigidity FigureEight where
     use of `volumeInvariant`. -/
 theorem unknot_volume_lt_figureEight_volume :
     volumeInvariant Unknot < volumeInvariant FigureEight := by
-  show (0 : ℝ) < 2.02988
+  -- The literal below is `:leanval[vol_4_1]`-tagged so that the
+  -- codemod keeps it in sync with the witness whenever Vol(4_1)
+  -- is recomputed.
+  show (0 : ℝ) < 2.02988321281931  -- :leanval[vol_4_1]
   norm_num
 
 end QOU.Encounter.MostowRigidity

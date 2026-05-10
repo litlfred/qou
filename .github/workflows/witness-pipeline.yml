@@ -104,6 +104,14 @@ jobs:
       - name: Install dependencies
         run: pip install sympy mpmath numpy scipy
 
+      - name: Run hyperbolic_volumes (Vol(4_1) for MostowRigidity)
+        # Emits hyperbolic-volumes.witness.json containing Vol(4_1)
+        # at 50 dps via the Clausen-function identity, and a
+        # conservative gap lower bound.  Source of truth for the
+        # `:leanval[vol_4_1]` / `:leanval[mostow_gap_4_1]` Lean
+        # literals in QOU/Encounter/MostowRigidity.lean.
+        run: python3 folio-assistant/computations/hyperbolic_volumes.py
+
       - name: Run habiro_witness_validator
         run: python3 folio-assistant/computations/habiro_witness_validator.py
 
@@ -336,6 +344,17 @@ jobs:
           # CI gates against regression.
           export PATH="$HOME/.bun/bin:$PATH"
           bun run content/pipeline/conditional-class-banner-audit.ts --strict
+
+      - name: :leanval codemod gate (strict)
+        # Verifies that every Lean numeric literal carrying a
+        # `-- :leanval[NAME]` tag matches the canonical witness
+        # registered in content/values/registry.ts.  Produces a
+        # non-zero exit if any tagged literal has drifted from
+        # its witness; the fix is `bun run pipeline/codemod-leanval.ts
+        # --write`.
+        run: |
+          export PATH="$HOME/.bun/bin:$PATH"
+          bun run content/pipeline/codemod-leanval.ts --check
 
       - name: Detect drift in committed witnesses
         run: |

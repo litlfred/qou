@@ -72,9 +72,15 @@ spectrum (both in
 * **`MostowRigidity.figureEight : MostowRigidity FigureEight`**
   — the figure-eight knot complement $4_1$, smallest known
   orientable cusped hyperbolic 3-manifold (Cao--Meyerhoff 2001):
-  volume $2 \, \Lambda(\pi/3) \approx 2.02988$, gap
-  conservatively set to $0.5 < \mathrm{Vol}(5_2) - \mathrm{Vol}(4_1)
-  \approx 0.798$.
+  volume $\mathrm{Vol}(4_1) = 2 \, \mathrm{Cl}_2(\pi/3) \approx
+  2.02988321281931$ (witnessed at $50$ decimal digits in
+  [`hyperbolic-volumes.witness.json`](https://github.com/litlfred/qou/blob/claude/improve-paper-exposition-4a0OT/folio-assistant/computations/hyperbolic-volumes.witness.json)
+  via the Clausen-function identity), gap conservatively set to
+  $0.5 < \mathrm{Vol}(5_2) - \mathrm{Vol}(4_1) \approx 0.798$.
+  Both Lean literals carry `:leanval[...]` tags so the
+  [`codemod-leanval.ts`](https://github.com/litlfred/qou/blob/claude/improve-paper-exposition-4a0OT/content/pipeline/codemod-leanval.ts)
+  pipeline keeps them in lock-step with the witness; CI gates
+  on `--check`.
 
 The fully-proved comparison theorem
 `unknot_volume_lt_figureEight_volume`
