@@ -17,6 +17,10 @@ chapters/*.md
 *.fdb_latexmk
 *.synctex.gz
 *.pdf
+# Whitelist authored figure PDFs (SVG→PDF companions for the
+# LaTeX renderer; see content/pipeline/render-latex.ts image case).
+!content/**/rendered/*.pdf
+!figures/*.pdf
 diff.tex
 main-flat.tex
 tikz-cache/
