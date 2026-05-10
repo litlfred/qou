@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 540"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>Borromean quarks (3-strand braid view, variant B) (dark mode)</title>
+  <desc>
+    Variant B: render the Borromean colour confinement as a closed
+    3-strand braid where each strand is one quark colour
+    (R/G/B), with crossings drawn explicitly.  Different layout
+    from variant A (3 interlocked rings).
+  </desc>
+  <defs>
+    <style>
+      .bg { fill: #0e0e12; }
+      .red { fill: none; stroke: #c0392b; stroke-width: 4; stroke-linecap: round; }
+      .grn { fill: none; stroke: #27ae60; stroke-width: 4; stroke-linecap: round; }
+      .blu { fill: none; stroke: #2980b9; stroke-width: 4; stroke-linecap: round; }
+      .lbl { font-size: 13px; fill: #e6e6ea; text-anchor: middle; }
+      .lblb { font-size: 16px; font-weight: 700; fill: #e6e6ea; text-anchor: middle; }
+      .ttl { font-size: 17px; font-style: italic; fill: #e6e6ea; }
+      .frame { fill: none; stroke: #888; stroke-width: 1; stroke-dasharray: 4 3; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="600" height="540"/>
+  <text x="300" y="32" text-anchor="middle" class="ttl">Borromean quarks  —  3-strand braid view  (variant B)</text>
+
+  <!-- Frame box -->
+  <rect class="frame" x="200" y="80" width="200" height="380" rx="8"/>
+
+  <!-- Three strands threading down with three crossings, alternating colours.
+       Strands at x = 240, 300, 360.  Box from y=100 to y=440. -->
+  <!-- Top entry (3 strands, vertical) -->
+  <line class="red" x1="240" y1="100" x2="240" y2="160"/>
+  <line class="grn" x1="300" y1="100" x2="300" y2="160"/>
+  <line class="blu" x1="360" y1="100" x2="360" y2="160"/>
+
+  <!-- Crossing 1 (red over green): R goes from 240 to 300, G from 300 to 240 with gap -->
+  <line class="red" x1="240" y1="160" x2="300" y2="220"/>
+  <line class="grn" x1="300" y1="160" x2="270" y2="180"/>
+  <line class="grn" x1="248" y1="200" x2="240" y2="220"/>
+  <line class="blu" x1="360" y1="160" x2="360" y2="220"/>
+
+  <!-- Crossing 2 (green over blue): G from 240 to 360 — actually rearrange.
+       Let strands be at 240, 300, 360 throughout but show colour swaps via crossings.
+       Simpler: at each crossing, two adjacent colour strands swap. -->
+  <!-- After crossing 1: strands at x=240,300,360 are now G, R, B -->
+  <line class="grn" x1="240" y1="220" x2="240" y2="270"/>
+  <line class="red" x1="300" y1="220" x2="300" y2="270"/>
+  <line class="blu" x1="360" y1="220" x2="360" y2="270"/>
+
+  <!-- Crossing 2 (red over blue at strands 2,3) -->
+  <line class="grn" x1="240" y1="270" x2="240" y2="330"/>
+  <line class="red" x1="300" y1="270" x2="360" y2="330"/>
+  <line class="blu" x1="360" y1="270" x2="330" y2="290"/>
+  <line class="blu" x1="308" y1="310" x2="300" y2="330"/>
+
+  <!-- After crossing 2: G, B, R -->
+  <line class="grn" x1="240" y1="330" x2="240" y2="380"/>
+  <line class="blu" x1="300" y1="330" x2="300" y2="380"/>
+  <line class="red" x1="360" y1="330" x2="360" y2="380"/>
+
+  <!-- Crossing 3 (green over blue, strands 1,2) -->
+  <line class="grn" x1="240" y1="380" x2="300" y2="440"/>
+  <line class="blu" x1="300" y1="380" x2="270" y2="400"/>
+  <line class="blu" x1="248" y1="420" x2="240" y2="440"/>
+  <line class="red" x1="360" y1="380" x2="360" y2="440"/>
+
+  <!-- Closures top + bottom (semicircles outside the box) -->
+  <path class="red" d="M 240 100 C 200 100, 200 80, 240 80 V 100"/>
+  <path class="grn" d="M 300 100 V 80"/>
+  <path class="blu" d="M 360 100 V 80"/>
+  <path class="grn" d="M 240 440 V 460"/>
+  <path class="blu" d="M 300 440 V 460"/>
+  <path class="red" d="M 360 440 V 460"/>
+
+  <text x="240" y="74" class="lbl" font-weight="700" fill="#c0392b">u</text>
+  <text x="300" y="74" class="lbl" font-weight="700" fill="#27ae60">d</text>
+  <text x="360" y="74" class="lbl" font-weight="700" fill="#2980b9">s</text>
+
+  <text x="300" y="490" class="lblb">closure(σ_R σ_B σ_G)  =  Borromean link</text>
+  <text x="300" y="510" class="lbl">colours interleave; remove any one strand and the others uncross</text>
+  <text x="300" y="528" class="lbl">— this IS the Borromean link, drawn as a 3-braid —</text>
+</svg>

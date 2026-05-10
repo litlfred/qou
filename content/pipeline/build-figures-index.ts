@@ -91,8 +91,12 @@ function listSvgsInChapter(chapterDir: string): string[] {
 }
 
 function parseSlug(filename: string): { slug: string; family: string; variant?: string } {
+  // Treat trailing `-A` / `-B` / `-0` etc. as a variant marker.
+  // The `0` form is the default initial drop produced by the
+  // illustration-author skill; later variants use letters
+  // (`-A`, `-B`, …).  Both group under the same family.
   const slug = basename(filename, ".svg");
-  const m = slug.match(/^(.+)-([A-Z])$/);
+  const m = slug.match(/^(.+)-([A-Z0-9])$/);
   return m
     ? { slug, family: m[1], variant: m[2] }
     : { slug, family: slug };

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 800"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>The particle ↔ knot dictionary (vertical compact, variant B) (dark mode)</title>
+  <desc>
+    Variant B: vertical single-column list of particles each with
+    its knot identification, in compact form.  Different layout
+    from variant A (2-row × 5-column grid).
+  </desc>
+  <defs>
+    <style>
+      .bg { fill: #0e0e12; }
+      .row { fill: #0e0e12; stroke: #e6e6ea; stroke-width: 1; }
+      .row-hdr { fill: #e6e6ea; }
+      .strand { fill: none; stroke: #e6e6ea; stroke-width: 2; }
+      .red { fill: none; stroke: #c0392b; stroke-width: 2.4; }
+      .grn { fill: none; stroke: #27ae60; stroke-width: 2.4; }
+      .blu { fill: none; stroke: #2980b9; stroke-width: 2.4; }
+      .lbl { font-size: 13px; fill: #e6e6ea; }
+      .lblb { font-size: 14px; font-weight: 700; fill: #e6e6ea; }
+      .lblh { font-size: 13px; font-weight: 700; fill: #fff; }
+      .lbls { font-size: 11px; fill: #aaa; }
+      .ttl { font-size: 17px; font-style: italic; fill: #e6e6ea; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="700" height="800"/>
+  <text x="350" y="32" text-anchor="middle" class="ttl">The particle ↔ knot dictionary  (variant B — vertical)</text>
+
+  <!-- Header row -->
+  <rect class="row-hdr" x="40" y="60" width="620" height="34"/>
+  <text x="80" y="83" class="lblh">particle</text>
+  <text x="240" y="83" class="lblh">knot</text>
+  <text x="400" y="83" class="lblh">Hecke word</text>
+  <text x="540" y="83" class="lblh">role</text>
+
+  <!-- Row 1: ν_e — unknot -->
+  <rect class="row" x="40" y="94" width="620" height="60"/>
+  <text x="80" y="130" class="lblb">ν_e</text>
+  <circle class="strand" cx="240" cy="124" r="18"/>
+  <text x="400" y="130" class="lbl">∅</text>
+  <text x="540" y="130" class="lbl">neutrino — trivial braid</text>
+
+  <!-- Row 2: e⁻ — trefoil -->
+  <rect class="row" x="40" y="154" width="620" height="60"/>
+  <text x="80" y="190" class="lblb">e⁻</text>
+  <g transform="translate(240, 184)">
+    <circle class="strand" cx="0" cy="-10" r="12"/>
+    <circle class="strand" cx="9" cy="6" r="12"/>
+    <circle class="strand" cx="-9" cy="6" r="12"/>
+  </g>
+  <text x="400" y="190" class="lbl">3₁ = T(2,3)</text>
+  <text x="540" y="190" class="lbl">electron — simplest knot</text>
+
+  <!-- Row 3: μ⁻ — T(2,5) -->
+  <rect class="row" x="40" y="214" width="620" height="60"/>
+  <text x="80" y="250" class="lblb">μ⁻</text>
+  <polygon class="strand" transform="translate(240, 244)" points="0,-22 5,-7 21,-7 8,3 13,18 0,9 -13,18 -8,3 -21,-7 -5,-7"/>
+  <text x="400" y="250" class="lbl">5₁ = T(2,5)</text>
+  <text x="540" y="250" class="lbl">muon — brane-tower lvl 2</text>
+
+  <!-- Row 4: τ⁻ — T(2,7) -->
+  <rect class="row" x="40" y="274" width="620" height="60"/>
+  <text x="80" y="310" class="lblb">τ⁻</text>
+  <polygon class="strand" transform="translate(240, 304)" points="0,-22 5,-9 19,-10 11,1 19,12 5,8 0,22 -5,8 -19,12 -11,1 -19,-10 -5,-9"/>
+  <text x="400" y="310" class="lbl">7₁ = T(2,7)</text>
+  <text x="540" y="310" class="lbl">tau — brane-tower lvl 3</text>
+
+  <!-- Row 5: u quark — Borromean -->
+  <rect class="row" x="40" y="334" width="620" height="60"/>
+  <text x="80" y="370" class="lblb">u, d, (s)</text>
+  <g transform="translate(240, 364)">
+    <circle class="red" cx="0" cy="-8" r="14"/>
+    <circle class="grn" cx="-8" cy="6" r="14"/>
+    <circle class="blu" cx="8" cy="6" r="14"/>
+  </g>
+  <text x="400" y="370" class="lbl">Borromean 𝓑₃</text>
+  <text x="540" y="370" class="lbl">colour-confined triple</text>
+
+  <!-- Row 6: proton -->
+  <rect class="row" x="40" y="394" width="620" height="60"/>
+  <text x="80" y="430" class="lblb">𝔭 (proton)</text>
+  <text x="240" y="430" class="lbl" text-anchor="middle">closed 3-braid</text>
+  <text x="400" y="430" class="lbl">σ₁ σ₂⁻¹ σ₁</text>
+  <text x="540" y="430" class="lbl">baryon (uud)</text>
+
+  <!-- Row 7: neutron -->
+  <rect class="row" x="40" y="454" width="620" height="60"/>
+  <text x="80" y="490" class="lblb">𝔫 (neutron)</text>
+  <text x="240" y="490" class="lbl" text-anchor="middle">closed 3-braid</text>
+  <text x="400" y="490" class="lbl">σ₁⁻¹ σ₂ σ₁⁻¹</text>
+  <text x="540" y="490" class="lbl">baryon (udd)</text>
+
+  <!-- Row 8: 4He -->
+  <rect class="row" x="40" y="514" width="620" height="60"/>
+  <text x="80" y="550" class="lblb">⁴He (α)</text>
+  <text x="240" y="550" class="lbl" text-anchor="middle">closed 8-braid</text>
+  <text x="400" y="550" class="lbl">2 𝔭 ⊕ 2 𝔫</text>
+  <text x="540" y="550" class="lbl">α-particle (magic)</text>
+
+  <!-- Row 9: 12C -->
+  <rect class="row" x="40" y="574" width="620" height="60"/>
+  <text x="80" y="610" class="lblb">¹²C</text>
+  <text x="240" y="610" class="lbl" text-anchor="middle">closed 24-braid</text>
+  <text x="400" y="610" class="lbl">3 × ⁴He</text>
+  <text x="540" y="610" class="lbl">carbon (magic)</text>
+
+  <!-- Row 10: ... -->
+  <rect class="row" x="40" y="634" width="620" height="40"/>
+  <text x="350" y="660" class="lbls" text-anchor="middle">…  the table extends to every nuclide via Hecke words in H_n(q)  …</text>
+
+  <text x="350" y="730" text-anchor="middle" class="lbl" font-style="italic">vertical compact form: each row is one particle / atom and its full categorical datum</text>
+  <text x="350" y="755" text-anchor="middle" class="lbls">[Hecke word] is the canonical normal form modulo Markov equivalence</text>
+</svg>

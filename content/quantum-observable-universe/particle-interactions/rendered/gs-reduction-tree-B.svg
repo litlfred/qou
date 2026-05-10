@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 380"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>The Gröbner–Shirshov reduction (linear horizontal flow, variant B)</title>
+  <desc>
+    Variant B: linear horizontal sequence of rewrite steps from
+    unreduced Hecke word to canonical normal form.  Each step
+    annotated with its rewrite rule.  Different from variant A
+    (rooted branching tree).
+  </desc>
+  <defs>
+    <marker id="tip" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a1a1a"/>
+    </marker>
+    <style>
+      .bg { fill: #ffffff; }
+      .step { fill: #ffffff; stroke: #1a1a1a; stroke-width: 1.4; rx: 6; }
+      .canon { fill: #ffffff; stroke: #c0392b; stroke-width: 2.4; rx: 6; }
+      .arr { stroke: #1a1a1a; stroke-width: 1.4; fill: none; }
+      .lbl { font-size: 12px; fill: #1a1a1a; text-anchor: middle; }
+      .lblb { font-size: 13px; font-weight: 700; fill: #1a1a1a; text-anchor: middle; }
+      .rule { font-size: 11px; fill: #555; font-style: italic; text-anchor: middle; }
+      .ttl { font-size: 17px; font-style: italic; fill: #1a1a1a; }
+      .canlbl { font-size: 11px; fill: #c0392b; font-weight: 700; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1100" height="380"/>
+  <text x="550" y="32" text-anchor="middle" class="ttl">Gröbner–Shirshov reduction  —  linear flow  (variant B)</text>
+
+  <!-- 5 steps in a row at y=170 -->
+  <!-- Step 1: input -->
+  <rect class="step" x="40" y="140" width="180" height="60"/>
+  <text x="130" y="165" class="lblb">σ₁ σ₂ σ₁ σ₂⁻¹ σ₁ σ₂</text>
+  <text x="130" y="185" class="lbl">unreduced</text>
+
+  <line class="arr" x1="220" y1="170" x2="260" y2="170" marker-end="url(#tip)"/>
+  <text x="240" y="160" class="rule">braid</text>
+
+  <!-- Step 2 -->
+  <rect class="step" x="260" y="140" width="180" height="60"/>
+  <text x="350" y="165" class="lblb">σ₂ σ₁ σ₂² σ₂⁻¹ σ₁ σ₂</text>
+  <text x="350" y="185" class="lbl">σ₁σ₂σ₁ → σ₂σ₁σ₂</text>
+
+  <line class="arr" x1="440" y1="170" x2="480" y2="170" marker-end="url(#tip)"/>
+  <text x="460" y="160" class="rule">cancel</text>
+
+  <!-- Step 3 -->
+  <rect class="step" x="480" y="140" width="180" height="60"/>
+  <text x="570" y="165" class="lblb">σ₂ σ₁ σ₂ σ₁ σ₂</text>
+  <text x="570" y="185" class="lbl">σ₂² σ₂⁻¹ = σ₂</text>
+
+  <line class="arr" x1="660" y1="170" x2="700" y2="170" marker-end="url(#tip)"/>
+  <text x="680" y="160" class="rule">Skein</text>
+
+  <!-- Step 4 -->
+  <rect class="step" x="700" y="140" width="180" height="60"/>
+  <text x="790" y="165" class="lblb">σ₁ σ₂ σ₁ + (q−q⁻¹) σ₁ σ₂</text>
+  <text x="790" y="185" class="lbl">expand σ²</text>
+
+  <line class="arr" x1="880" y1="170" x2="920" y2="170" marker-end="url(#tip)"/>
+  <text x="900" y="160" class="rule">collect</text>
+
+  <!-- Step 5: canonical normal form -->
+  <rect class="canon" x="920" y="140" width="160" height="60"/>
+  <text x="1000" y="165" class="lblb">σ₁ σ₂ σ₁ + (q−q⁻¹) σ₁ σ₂</text>
+  <text x="1000" y="185" class="lbl">★ canonical NF</text>
+  <text x="1000" y="130" class="canlbl" text-anchor="middle">canonical normal form</text>
+
+  <!-- Footer -->
+  <text x="550" y="270" text-anchor="middle" class="lbl" font-style="italic">linear sequence of rewrites — every Hecke word reduces in finitely many steps</text>
+  <text x="550" y="295" text-anchor="middle" class="rule">braid · cancel · Skein · collect · normal form</text>
+  <text x="550" y="330" text-anchor="middle" class="lbl">canonical leaves enumerate Wedderburn blocks (Ch 11 §3)</text>
+  <text x="550" y="350" text-anchor="middle" class="lbl" font-style="italic">— each cell stays the same size; reduction is just substitution —</text>
+</svg>

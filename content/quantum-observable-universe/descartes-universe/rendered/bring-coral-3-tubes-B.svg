@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 540"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>Bring's surface as a handlebody (variant B)</title>
+  <desc>
+    Variant B: render Bring's surface as a 4-handle handlebody —
+    a sphere with four tube-handles drilled through, three
+    coloured (R/G/B) and one black for time/Reeb.  Different from
+    variant A (horizontal coral with arched handles).
+  </desc>
+  <defs>
+    <style>
+      .bg { fill: #ffffff; }
+      .body { fill: #f6f6f6; stroke: #1a1a1a; stroke-width: 2; }
+      .tube_r { fill: #ffffff; stroke: #c0392b; stroke-width: 4; }
+      .tube_g { fill: #ffffff; stroke: #27ae60; stroke-width: 4; }
+      .tube_b { fill: #ffffff; stroke: #2980b9; stroke-width: 4; }
+      .tube_k { fill: #ffffff; stroke: #1a1a1a; stroke-width: 4; }
+      .lbl { font-size: 13px; fill: #1a1a1a; text-anchor: middle; }
+      .lblb { font-size: 14px; font-weight: 700; fill: #1a1a1a; text-anchor: middle; }
+      .ttl { font-size: 17px; font-style: italic; fill: #1a1a1a; }
+      .stat { font-size: 12px; fill: #1a1a1a; text-anchor: middle; }
+      .sub { font-size: 11px; fill: #444; text-anchor: middle; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="760" height="540"/>
+  <text x="380" y="32" text-anchor="middle" class="ttl">Bring's surface as a handlebody  (variant B)</text>
+
+  <!-- Sphere body -->
+  <circle class="body" cx="380" cy="280" r="180"/>
+  <ellipse class="body" cx="380" cy="280" rx="180" ry="60" fill="none" stroke="#888" stroke-width="1.2" stroke-dasharray="3 3"/>
+
+  <!-- Four tube handles (4 ellipses showing handle openings on the sphere) -->
+  <!-- Handle positions on sphere: top, bottom, left, right -->
+  <ellipse class="tube_r" cx="280" cy="170" rx="40" ry="14"
+           transform="rotate(-30 280 170)"/>
+  <text x="280" y="148" class="lbl" fill="#c0392b" font-weight="700">c_r</text>
+
+  <ellipse class="tube_g" cx="480" cy="170" rx="40" ry="14"
+           transform="rotate(30 480 170)"/>
+  <text x="480" y="148" class="lbl" fill="#27ae60" font-weight="700">c_g</text>
+
+  <ellipse class="tube_b" cx="280" cy="390" rx="40" ry="14"
+           transform="rotate(30 280 390)"/>
+  <text x="280" y="420" class="lbl" fill="#2980b9" font-weight="700">c_b</text>
+
+  <ellipse class="tube_k" cx="480" cy="390" rx="40" ry="14"
+           transform="rotate(-30 480 390)"/>
+  <text x="480" y="420" class="lbl" fill="#1a1a1a" font-weight="700">σ (Reeb)</text>
+
+  <!-- Outer "tubes" hinted with curved lines -->
+  <path stroke="#c0392b" stroke-width="3" fill="none" d="M 245 162 Q 220 100, 240 60 Q 290 40, 320 90"/>
+  <path stroke="#27ae60" stroke-width="3" fill="none" d="M 515 162 Q 540 100, 520 60 Q 470 40, 440 90"/>
+  <path stroke="#2980b9" stroke-width="3" fill="none" d="M 245 398 Q 220 460, 240 500 Q 290 520, 320 470"/>
+  <path stroke="#1a1a1a" stroke-width="3" fill="none" d="M 515 398 Q 540 460, 520 500 Q 470 520, 440 470"/>
+
+  <!-- Statistics -->
+  <text x="380" y="500" class="stat">handlebody Σ₄  ·  4 handles  ·  genus g = 4  ·  χ = −6</text>
+  <text x="380" y="518" class="sub">3 colour tubes (R/G/B) + 1 time tube (Reeb) — 4 handles total</text>
+</svg>

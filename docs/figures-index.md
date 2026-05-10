@@ -19,7 +19,7 @@ Do not edit by hand — re-run the script after adding or modifying a figure und
 - **Variants** — sibling design alternatives in the same recommended slot.
 - **Wired in** — the chapter `.md` block that currently embeds this SVG; `(not wired)` means the figure is on disk but not yet referenced from any block.
 
-**Status:** 64 authored figure(s) across 18 chapter(s) · 53 wired into a block · 11 hand-tuned dark-mode override(s).
+**Status:** 70 authored figure(s) across 18 chapter(s) · 53 wired into a block · 16 hand-tuned dark-mode override(s).
 
 ## Algebraic Substrate
 
@@ -111,7 +111,19 @@ Do not edit by hand — re-run the script after adding or modifying a figure und
 
 > F4.5 (P0). Three unknotted circles in the classic Borromean configuration (pairwise unlinked, but rigidly bound as a triple) drawn centred over a faint dashed ellipse representing a small patch of the exceptional divisor $\mathcal{S}_p \subset \Sigma_4$. The three circles are co…
 
-**Variants:** — · **Wired in:** [`braids-and-knots/confined-particle.md`](../content/quantum-observable-universe/braids-and-knots/confined-particle.md) · **Prompt file:** [`borromean-quarks-0.prompt.md`](../content/quantum-observable-universe/braids-and-knots/rendered/borromean-quarks-0.prompt.md)
+**Variants:** [B](../content/quantum-observable-universe/braids-and-knots/rendered/borromean-quarks-B.svg) · **Wired in:** [`braids-and-knots/confined-particle.md`](../content/quantum-observable-universe/braids-and-knots/confined-particle.md) · **Prompt file:** [`borromean-quarks-0.prompt.md`](../content/quantum-observable-universe/braids-and-knots/rendered/borromean-quarks-0.prompt.md)
+
+---
+
+### `borromean-quarks-B` — Borromean quarks — 3-strand braid view (variant B)
+
+<a href="../content/quantum-observable-universe/braids-and-knots/rendered/borromean-quarks-B.svg"><img src="../content/quantum-observable-universe/braids-and-knots/rendered/borromean-quarks-B.svg" width="540" alt="Borromean quarks — 3-strand braid view (variant B)"></a>  <a href="../content/quantum-observable-universe/braids-and-knots/rendered/borromean-quarks-B.dark.svg"><img src="../content/quantum-observable-universe/braids-and-knots/rendered/borromean-quarks-B.dark.svg" width="540" alt="Borromean quarks — 3-strand braid view (variant B) (dark)"></a>
+
+<sub>**Light** *(primary)*  ·  **Dark** *(hand-tuned override)*</sub>
+
+> F4.5 (P0), variant B. The Borromean colour-confinement structure rendered as a closed 3-strand braid (rather than three interlocked rings as in variant A). Three coloured strands — red ($u$), green ($d$), blue ($s$) — enter at the top of a faint dashed frame and descend; three o…
+
+**Variants:** [0](../content/quantum-observable-universe/braids-and-knots/rendered/borromean-quarks-0.svg) · **Wired in:** *(not wired)* · **Prompt file:** [`borromean-quarks-B.prompt.md`](../content/quantum-observable-universe/braids-and-knots/rendered/borromean-quarks-B.prompt.md)
 
 ---
 
@@ -195,7 +207,19 @@ Do not edit by hand — re-run the script after adding or modifying a figure und
 
 > F4.1 (P0). A 2-row grid mapping knot types to particle identities. Top row (5 cards): the four charged-lepton + one closure cell, with each card showing a stylised torus knot $T(2,2k+1)$ above its particle label. Cards left-to-right: unknot $0_1 \to \nu_e$ (a circle, trivial bra…
 
-**Variants:** — · **Wired in:** [`braids-and-knots/intro.md`](../content/quantum-observable-universe/braids-and-knots/intro.md) · **Prompt file:** [`particle-knot-dictionary-0.prompt.md`](../content/quantum-observable-universe/braids-and-knots/rendered/particle-knot-dictionary-0.prompt.md)
+**Variants:** [B](../content/quantum-observable-universe/braids-and-knots/rendered/particle-knot-dictionary-B.svg) · **Wired in:** [`braids-and-knots/intro.md`](../content/quantum-observable-universe/braids-and-knots/intro.md) · **Prompt file:** [`particle-knot-dictionary-0.prompt.md`](../content/quantum-observable-universe/braids-and-knots/rendered/particle-knot-dictionary-0.prompt.md)
+
+---
+
+### `particle-knot-dictionary-B` — The particle ↔ knot dictionary (vertical compact)
+
+<a href="../content/quantum-observable-universe/braids-and-knots/rendered/particle-knot-dictionary-B.svg"><img src="../content/quantum-observable-universe/braids-and-knots/rendered/particle-knot-dictionary-B.svg" width="540" alt="The particle ↔ knot dictionary (vertical compact)"></a>  <a href="../content/quantum-observable-universe/braids-and-knots/rendered/particle-knot-dictionary-B.dark.svg"><img src="../content/quantum-observable-universe/braids-and-knots/rendered/particle-knot-dictionary-B.dark.svg" width="540" alt="The particle ↔ knot dictionary (vertical compact) (dark)"></a>
+
+<sub>**Light** *(primary)*  ·  **Dark** *(hand-tuned override)*</sub>
+
+> F4.1 (P0), variant B. Single-column vertical table with header row "particle · knot · Hecke word · role" and 10 data rows running top-to-bottom: $\nu_e$ → unknot; $e^-$ → trefoil $3_1$; $\mu^-$ → $T(2,5)$; $\tau^-$ → $T(2,7)$; $u, d, s$ → Borromean (with RGB rings); proton $\mat…
+
+**Variants:** [0](../content/quantum-observable-universe/braids-and-knots/rendered/particle-knot-dictionary-0.svg) · **Wired in:** *(not wired)* · **Prompt file:** [`particle-knot-dictionary-B.prompt.md`](../content/quantum-observable-universe/braids-and-knots/rendered/particle-knot-dictionary-B.prompt.md)
 
 ---
 
@@ -257,7 +281,19 @@ Do not edit by hand — re-run the script after adding or modifying a figure und
 
 > F5.1 (P0). A schematic genus-4 surface drawn as a "coral": a horizontal body (large translucent ellipse) with four arched handles rising above. Three of the handles are coloured red, green, blue — the colour tubes carrying the spectral coordinates $c_r$, $c_g$, $c_b$ from Chapte…
 
-**Variants:** — · **Wired in:** [`descartes-universe/brings-surface.md`](../content/quantum-observable-universe/descartes-universe/brings-surface.md) · **Prompt file:** [`bring-coral-3-tubes-0.prompt.md`](../content/quantum-observable-universe/descartes-universe/rendered/bring-coral-3-tubes-0.prompt.md)
+**Variants:** [B](../content/quantum-observable-universe/descartes-universe/rendered/bring-coral-3-tubes-B.svg) · **Wired in:** [`descartes-universe/brings-surface.md`](../content/quantum-observable-universe/descartes-universe/brings-surface.md) · **Prompt file:** [`bring-coral-3-tubes-0.prompt.md`](../content/quantum-observable-universe/descartes-universe/rendered/bring-coral-3-tubes-0.prompt.md)
+
+---
+
+### `bring-coral-3-tubes-B` — Bring's surface as a handlebody (variant B)
+
+<a href="../content/quantum-observable-universe/descartes-universe/rendered/bring-coral-3-tubes-B.svg"><img src="../content/quantum-observable-universe/descartes-universe/rendered/bring-coral-3-tubes-B.svg" width="540" alt="Bring's surface as a handlebody (variant B)"></a>  <a href="../content/quantum-observable-universe/descartes-universe/rendered/bring-coral-3-tubes-B.dark.svg"><img src="../content/quantum-observable-universe/descartes-universe/rendered/bring-coral-3-tubes-B.dark.svg" width="540" alt="Bring's surface as a handlebody (variant B) (dark)"></a>
+
+<sub>**Light** *(primary)*  ·  **Dark** *(hand-tuned override)*</sub>
+
+> F5.1 (P0), variant B. Bring's surface rendered as a 4-handle handlebody (sphere with four tube-handles drilled through), as opposed to variant A's horizontal coral. A central sphere is drawn with a faint dashed equator. Four small coloured ellipses on the sphere mark the four ha…
+
+**Variants:** [0](../content/quantum-observable-universe/descartes-universe/rendered/bring-coral-3-tubes-0.svg) · **Wired in:** *(not wired)* · **Prompt file:** [`bring-coral-3-tubes-B.prompt.md`](../content/quantum-observable-universe/descartes-universe/rendered/bring-coral-3-tubes-B.prompt.md)
 
 ---
 
@@ -529,7 +565,19 @@ Do not edit by hand — re-run the script after adding or modifying a figure und
 
 > F0.2 (P0). Equilateral triangle with three vertex boxes carrying the threefold structures observed in nature: three colours (R/G/B), three generations of matter (e/μ/τ leptons; u/d, c/s, t/b quarks), and three-fold chirality. Three dashed spokes connect the vertices to a central…
 
-**Variants:** — · **Wired in:** [`introduction/intro.md`](../content/quantum-observable-universe/introduction/intro.md) · **Prompt file:** [`three-fold-triangle-0.prompt.md`](../content/quantum-observable-universe/introduction/rendered/three-fold-triangle-0.prompt.md)
+**Variants:** [B](../content/quantum-observable-universe/introduction/rendered/three-fold-triangle-B.svg) · **Wired in:** [`introduction/intro.md`](../content/quantum-observable-universe/introduction/intro.md) · **Prompt file:** [`three-fold-triangle-0.prompt.md`](../content/quantum-observable-universe/introduction/rendered/three-fold-triangle-0.prompt.md)
+
+---
+
+### `three-fold-triangle-B` — Three observations, one constraint (radial spiral)
+
+<a href="../content/quantum-observable-universe/introduction/rendered/three-fold-triangle-B.svg"><img src="../content/quantum-observable-universe/introduction/rendered/three-fold-triangle-B.svg" width="540" alt="Three observations, one constraint (radial spiral)"></a>  <a href="../content/quantum-observable-universe/introduction/rendered/three-fold-triangle-B.dark.svg"><img src="../content/quantum-observable-universe/introduction/rendered/three-fold-triangle-B.dark.svg" width="540" alt="Three observations, one constraint (radial spiral) (dark)"></a>
+
+<sub>**Light** *(primary)*  ·  **Dark** *(hand-tuned override)*</sub>
+
+> F0.2 (P0), variant B. Radial layout. Three coloured spokes (red, green, blue) radiate from a central white disk labelled $\chi = -6$ — the topological invariant. Each spoke ends in a coloured dot with a small label: red dot above ("Three colours, R · G · B"), green dot lower-lef…
+
+**Variants:** [0](../content/quantum-observable-universe/introduction/rendered/three-fold-triangle-0.svg) · **Wired in:** *(not wired)* · **Prompt file:** [`three-fold-triangle-B.prompt.md`](../content/quantum-observable-universe/introduction/rendered/three-fold-triangle-B.prompt.md)
 
 ---
 
@@ -669,7 +717,19 @@ Do not edit by hand — re-run the script after adding or modifying a figure und
 
 > F12.1 (P0). A horizontal axis showing the substrate parameter $q$ across the range $[1.100, 1.120]$, ticked every $0.005$. Three translucent vertical bands span the axis, each bounded by the $q$-range allowed by one independent calibration: red = $m_\mu/m_e$ consistency, green =…
 
-**Variants:** — · **Wired in:** [`observations/substrate-consistency-window.md`](../content/quantum-observable-universe/observations/substrate-consistency-window.md) · **Prompt file:** [`substrate-consistency-window-0.prompt.md`](../content/quantum-observable-universe/observations/rendered/substrate-consistency-window-0.prompt.md)
+**Variants:** [B](../content/quantum-observable-universe/observations/rendered/substrate-consistency-window-B.svg) · **Wired in:** [`observations/substrate-consistency-window.md`](../content/quantum-observable-universe/observations/substrate-consistency-window.md) · **Prompt file:** [`substrate-consistency-window-0.prompt.md`](../content/quantum-observable-universe/observations/rendered/substrate-consistency-window-0.prompt.md)
+
+---
+
+### `substrate-consistency-window-B` — Substrate consistency window — bullseye (variant B)
+
+<a href="../content/quantum-observable-universe/observations/rendered/substrate-consistency-window-B.svg"><img src="../content/quantum-observable-universe/observations/rendered/substrate-consistency-window-B.svg" width="540" alt="Substrate consistency window — bullseye (variant B)"></a>  <a href="../content/quantum-observable-universe/observations/rendered/substrate-consistency-window-B.dark.svg"><img src="../content/quantum-observable-universe/observations/rendered/substrate-consistency-window-B.dark.svg" width="540" alt="Substrate consistency window — bullseye (variant B) (dark)"></a>
+
+<sub>**Light** *(primary)*  ·  **Dark** *(hand-tuned override)*</sub>
+
+> F12.1 (P0), variant B. Bullseye / nested-annulus view (instead of variant A's three vertical bands across a horizontal $q$ axis). Three concentric translucent dashed circles centred near $(300, 290)$, each representing the $q$-allowed annulus for one calibration scalar: red oute…
+
+**Variants:** [0](../content/quantum-observable-universe/observations/rendered/substrate-consistency-window-0.svg) · **Wired in:** *(not wired)* · **Prompt file:** [`substrate-consistency-window-B.prompt.md`](../content/quantum-observable-universe/observations/rendered/substrate-consistency-window-B.prompt.md)
 
 ---
 
@@ -745,7 +805,19 @@ Do not edit by hand — re-run the script after adding or modifying a figure und
 
 > F11.1 (P0). A rooted tree showing one full Gröbner–Shirshov reduction. Root at top: the unreduced Hecke word $T_w = \sigma_1 \sigma_2 \sigma_1 \sigma_2^{-1} \sigma_1 \sigma_2 \in H_3(q)$. Three downward branches, each annotated with a rewrite-rule label: *by braid* (σ₁σ₂σ₁ = σ₂σ…
 
-**Variants:** — · **Wired in:** [`particle-interactions/nuclear-groebner-reduction.md`](../content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.md) · **Prompt file:** [`gs-reduction-tree-0.prompt.md`](../content/quantum-observable-universe/particle-interactions/rendered/gs-reduction-tree-0.prompt.md)
+**Variants:** [B](../content/quantum-observable-universe/particle-interactions/rendered/gs-reduction-tree-B.svg) · **Wired in:** [`particle-interactions/nuclear-groebner-reduction.md`](../content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.md) · **Prompt file:** [`gs-reduction-tree-0.prompt.md`](../content/quantum-observable-universe/particle-interactions/rendered/gs-reduction-tree-0.prompt.md)
+
+---
+
+### `gs-reduction-tree-B` — Gröbner–Shirshov reduction — linear flow (variant B)
+
+<a href="../content/quantum-observable-universe/particle-interactions/rendered/gs-reduction-tree-B.svg"><img src="../content/quantum-observable-universe/particle-interactions/rendered/gs-reduction-tree-B.svg" width="540" alt="Gröbner–Shirshov reduction — linear flow (variant B)"></a>  <a href="../content/quantum-observable-universe/particle-interactions/rendered/gs-reduction-tree-B.svg"><img src="../content/quantum-observable-universe/particle-interactions/rendered/gs-reduction-tree-B.svg" width="540" alt="Gröbner–Shirshov reduction — linear flow (variant B) (dark — filter inverted)"></a>
+
+<sub>**Light** *(primary)*  ·  **Dark** *(viewer applies invert + hue-rotate filter at render time)*</sub>
+
+> F11.1 (P0), variant B. A horizontal left-to-right linear sequence of five rewrite steps connected by rule-labelled arrows: input "$\sigma_1 \sigma_2 \sigma_1 \sigma_2^{-1} \sigma_1 \sigma_2$ (unreduced)" → *braid* → "$\sigma_2 \sigma_1 \sigma_2^2 \sigma_2^{-1} \sigma_1 \sigma_2$…
+
+**Variants:** [0](../content/quantum-observable-universe/particle-interactions/rendered/gs-reduction-tree-0.svg) · **Wired in:** *(not wired)* · **Prompt file:** [`gs-reduction-tree-B.prompt.md`](../content/quantum-observable-universe/particle-interactions/rendered/gs-reduction-tree-B.prompt.md)
 
 ---
 
@@ -826,4 +898,4 @@ Do not edit by hand — re-run the script after adding or modifying a figure und
 ---
 
 
-<sub>Generated 2026-05-10 from 64 authored SVG file(s).</sub>
+<sub>Generated 2026-05-10 from 70 authored SVG file(s).</sub>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>Substrate consistency window — bullseye view (variant B)</title>
+  <desc>
+    Variant B: bullseye view.  Three concentric annuli, each
+    representing the q-allowed-band of one calibration scalar
+    (red = m_μ/m_e, green = α_em, blue = Q_β(n)).  Their
+    intersection is the central black dot at q₀.  Different from
+    variant A (vertical bands across a horizontal q axis).
+  </desc>
+  <defs>
+    <style>
+      .bg { fill: #ffffff; }
+      .b1 { fill: rgba(192, 57, 43, 0.18); stroke: #c0392b; stroke-width: 1.4; stroke-dasharray: 4 3; }
+      .b2 { fill: rgba(39, 174, 96, 0.20); stroke: #27ae60; stroke-width: 1.4; stroke-dasharray: 4 3; }
+      .b3 { fill: rgba(41, 128, 185, 0.22); stroke: #2980b9; stroke-width: 1.4; stroke-dasharray: 4 3; }
+      .core { fill: #1a1a1a; }
+      .corelbl { font-size: 14px; font-weight: 700; fill: #1a1a1a; text-anchor: middle; }
+      .lbl { font-size: 12px; fill: #1a1a1a; }
+      .ttl { font-size: 17px; font-style: italic; fill: #1a1a1a; }
+      .leg { font-size: 12px; fill: #1a1a1a; }
+      .foot { font-size: 11px; font-style: italic; fill: #666; text-anchor: middle; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="600" height="600"/>
+  <text x="300" y="32" text-anchor="middle" class="ttl">Substrate consistency window — bullseye  (variant B)</text>
+
+  <!-- Three concentric annuli centred at (300, 300) -->
+  <circle class="b1" cx="300" cy="290" r="220"/>
+  <circle class="b2" cx="305" cy="280" r="160"/>
+  <circle class="b3" cx="295" cy="295" r="120"/>
+
+  <!-- Centre: q₀ -->
+  <circle class="core" cx="300" cy="290" r="6"/>
+  <text x="300" y="265" class="corelbl">q₀ ≈ 1.1097</text>
+
+  <!-- Outer band labels -->
+  <text x="300" y="80" class="lbl" fill="#c0392b" font-weight="700" text-anchor="middle">m_μ / m_e  band</text>
+  <text x="300" y="115" class="lbl" fill="#27ae60" font-weight="700" text-anchor="middle">α_em  band</text>
+  <text x="300" y="150" class="lbl" fill="#2980b9" font-weight="700" text-anchor="middle">Q_β(n)  band</text>
+
+  <!-- Legend right -->
+  <g transform="translate(60, 530)">
+    <text x="0" y="0" class="leg">three concentric annuli intersect at the dot:  q = q₀</text>
+    <text x="0" y="20" class="leg" font-style="italic">each band shows where one calibration scalar is consistent;</text>
+    <text x="0" y="38" class="leg" font-style="italic">the joint intersection is a single point — overdetermination</text>
+  </g>
+
+  <text x="300" y="585" class="foot">single-parameter overdetermination — the central falsifiability claim</text>
+</svg>
