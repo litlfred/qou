@@ -1,44 +1,21 @@
-The scalar [confinement LP](#prop:confinement-lp) is the diagonal
-projection of a richer **semidefinite program** over matrix-valued
-operators.  The SDP is the actual selection principle computed by
-the multi-level pipeline
+The scalar [confinement LP](#prop:confinement-lp) is the
+diagonal projection of a richer **semidefinite program** over
+matrix-valued operators.  The SDP is the actual selection
+principle computed by the multi-level pipeline
 (`folio-assistant/computations/multi_level_sdp.py`,
-`sdp_cross_channel.py`, `misdp_cross_channel.py`); the LP obtains
-only when every Wedderburn block decouples.
-
-### Spectral-gap feasibility (algebraic form)
-
-From the categorical origin of the crossing energy
-([crossing energy](#def:crossing-energy)), the SDP's feasibility is
-equivalent to a **Hecke spectral-gap condition**: the feasible cone is
-non-empty if and only if
-
-$$
-  \Delta_{\sigma}(q) \;:=\; \lvert q + q^{-1} \rvert \;>\; 0,
-$$
-
-i.e.\ the Hecke generator $\sigma$ on $V \otimes V$ has non-degenerate
-eigenvalues $(q, -q^{-1})$ on $S^{2} V \oplus \Lambda^{2} V$.  The dual
-certificate at optimum is the pair of Jones--Wenzl projectors
-onto the two isotypic components; the SDP's complementary slackness
-matrix is their orthogonal decomposition.  **Deconfinement $=$
-spectral-gap closure:** $\Delta_{\sigma}(q) \to 0$ at $q = \pm i$ (Kauffman
-bracket degeneracy) and the feasible cone collapses.
-
-The SDP retains its role as a numerical certificate at given $q$, but
-its existence is guaranteed by the categorical volume constraint and
-can be produced from the eigenvalue structure alone without invoking
-continuous optimisation.
+`sdp_cross_channel.py`, `misdp_cross_channel.py`); the LP
+obtains only when every Wedderburn block decouples.
 
 ## Primal SDP (matrix operator selection)
 
 **Proposition.**
-*Let $n$ be the Hecke strand count at confinement level $\ell$ and
-let $(\pi_\lambda)_{\lambda \vdash k, k \le n}$ be the central
-idempotents projecting onto the Wedderburn blocks of $H_n(q)$.
-Let $T \in \mathrm{End}_R(H_n(R, q))$ be the cost operator
-(Markov-trace weighting, or the $q$-Laplacian resolvent).  The
-confined operator at $q$ is the solution $\Phi^* \succeq 0$ of:*
+*Let $n$ be the Hecke strand count at confinement level $\ell$
+and let $(\pi_\lambda)_{\lambda \vdash k, k \le n}$ be the
+central idempotents projecting onto the Wedderburn blocks of
+$H_n(q)$.  Let $T \in \mathrm{End}_R(H_n(R, q))$ be the cost
+operator (Markov-trace weighting, or the $q$-Laplacian
+resolvent).  The confined operator at $q$ is the solution
+$\Phi^* \succeq 0$ of:*
 
 $$
   \min_{\Phi} \quad \langle T, \Phi \rangle
@@ -99,65 +76,36 @@ $$
 
 *The dual variable $y_0$ is the shadow price of the normalisation
 constraint; $(y_\lambda)$ are the per-block shadow prices.
-Strong duality holds under Slater's condition (a strictly feasible
-$\Phi \succ 0$ exists at generic $q$).*
-
-## Complementary slackness is a matrix equation
-
-*At optimum:*
+Strong duality holds under Slater's condition (a strictly
+feasible $\Phi \succ 0$ exists at generic $q$), and at optimum*
 
 $$
   \Phi^* \cdot \bigl(y_0^* I + \textstyle\sum_\lambda y_\lambda^* \pi_\lambda - T\bigr) \;=\; 0
 $$
 
-*This is a **matrix** equality, not a sum of scalar complementary
-slackness relations.  Its rank counts the **active dual support**
-— the number of Wedderburn blocks simultaneously coupled at the
-optimum.  When the rank exceeds one, the confined state is a sum
-of operators from distinct blocks, which is what the
-`electron-shell-ilp` witness observes when it reports "electrons
-alternate between $\sigma_1^{-1}$ and $\sigma_0^{-1}$": those are
-two tight dual blocks at the same $\Phi^*$.*
+*as a matrix equation.*
 
-## Multi-operator binding
+## Companion interpretive remarks
 
-*For any two confined particles
-$P_1, P_2$ ([confined particle](#def:confined-particle))
-whose composite satisfies the SDP, the **binding subword** is:*
+The exposition of *why* this SDP is the right object — feasibility
+as a Hecke spectral-gap, the active-support reading of the dual,
+the relation to the scalar LP, and the integer-restricted MISDP
+variant — has been split into four companion remarks so that the
+proposition statement above stays minimal:
 
-$$
-  W_{\mathrm{bind}}
-  \;=\;
-  \sum_{\lambda \in \mathcal{S}^*} y_\lambda^* \cdot \pi_\lambda \cdot \Phi^*
-$$
+* [Spectral-gap feasibility](#rem:confinement-sdp-spectral-gap):
+  feasibility iff $|q + q^{-1}| > 0$; deconfinement = gap closure.
+* [Multi-operator binding](#rem:confinement-sdp-multi-operator):
+  active support $\mathcal{S}^*$, binding multiplicity, and why
+  complementary slackness is a *matrix* equation.
+* [Relation to the scalar LP](#rem:confinement-sdp-vs-lp):
+  the LP as the diagonal restriction of the SDP; when each is
+  exact.
+* [MISDP variant](#rem:confinement-misdp): integer-constrained
+  confinement levels.
 
-*where $\mathcal{S}^* = \{\lambda : y_\lambda^* > 0\}$ is the
-**active support** at optimum.  The cardinality
-$|\mathcal{S}^*| \ge 1$ is the **binding multiplicity**:
-$|\mathcal{S}^*| = 1$ recovers the scalar LP regime
-(single-channel binding); $|\mathcal{S}^*| \ge 2$ is the generic
-multi-operator regime and includes all shell-closure and
-magic-number configurations.*
-
-## Relation to the scalar LP
-
-*The scalar [confinement LP](#prop:confinement-lp) is obtained by
-restricting $\Phi$ to the diagonal span of the NF basis
-$\{b_i\}$ and dropping the 2×2 pair blocks.  Equivalently: the LP
-is the SDP with the rank-1 restriction $\Phi = \mathrm{diag}(x)$
-and the simplification $\pi_\lambda \mapsto \mathbf{1}_\lambda$
-(indicator vector).  The LP is exact when every Wedderburn block is
-one-dimensional (no cross-channel coupling); in general it is a
-**lower bound** on the SDP and misses the multi-operator binding
-structure.*
-
-## MISDP (mixed-integer SDP)
-
-*When operator counts are constrained to integers — as in the
-confinement hierarchy at levels $\ell \le 3$ where crossing
-multiplicities must be integral — the feasible region becomes
-$\Phi \succeq 0 \wedge \mathrm{rank}\text{-content}(\Phi)
-\in \mathbb{Z}_{\ge 0}^{|\mathcal{S}|}$.  The MISDP is solved
-by continuous SDP relaxation plus branch-and-cut (see
-`misdp_cross_channel.py`), matching the confinement framework
-at every level of the hierarchy.*
+The geometric face of this proposition — SDP optimality as
+Picard--Lefschetz steepest descent, dual variables as thimble
+depths — is developed in
+[Chapter `encounter`](#chap:encounter), in particular
+[the SDP-as-thimble-flow remark](#rem:sdp-as-thimble-flow).
