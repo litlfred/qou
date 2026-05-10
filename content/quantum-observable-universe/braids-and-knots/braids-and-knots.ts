@@ -570,6 +570,8 @@ export default chapter({
         "shell-correction-term-seven",
         "crystal-isospin-degeneracy",
         "isospin-mass-split-em-localisation",
+        "option-e-isospin-test",
+        "crystal-bases-path-a",
         "chirality-dual-space-derivation",
         "frobenius-antipode-unifies-chirality-and-tower",
         "deuteron-first-principles",

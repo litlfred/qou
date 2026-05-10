@@ -1,0 +1,900 @@
+{
+  "by_n": {
+    "3": {
+      "n": 3,
+      "n_partitions_height_le_6": 3,
+      "partitions": [
+        {
+          "partition": [
+            3
+          ],
+          "ord_y_at_u_eq_0": 0
+        },
+        {
+          "partition": [
+            2,
+            1
+          ],
+          "ord_y_at_u_eq_0": 3
+        },
+        {
+          "partition": [
+            1,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 6
+        }
+      ],
+      "compute_time_sec": 0.866553783416748
+    },
+    "6": {
+      "n": 6,
+      "n_partitions_height_le_6": 11,
+      "partitions": [
+        {
+          "partition": [
+            6
+          ],
+          "ord_y_at_u_eq_0": 0
+        },
+        {
+          "partition": [
+            5,
+            1
+          ],
+          "ord_y_at_u_eq_0": 3
+        },
+        {
+          "partition": [
+            4,
+            2
+          ],
+          "ord_y_at_u_eq_0": 7
+        },
+        {
+          "partition": [
+            4,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 6
+        },
+        {
+          "partition": [
+            3,
+            3
+          ],
+          "ord_y_at_u_eq_0": 11
+        },
+        {
+          "partition": [
+            3,
+            2,
+            1
+          ],
+          "ord_y_at_u_eq_0": 10
+        },
+        {
+          "partition": [
+            3,
+            1,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 9
+        },
+        {
+          "partition": [
+            2,
+            2,
+            2
+          ],
+          "ord_y_at_u_eq_0": 17
+        },
+        {
+          "partition": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 13
+        },
+        {
+          "partition": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 12
+        },
+        {
+          "partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 15
+        }
+      ],
+      "compute_time_sec": 23.954381704330444
+    },
+    "9": {
+      "n": 9,
+      "n_partitions_height_le_6": 26,
+      "partitions": [
+        {
+          "partition": [
+            9
+          ],
+          "ord_y_at_u_eq_0": 0
+        },
+        {
+          "partition": [
+            8,
+            1
+          ],
+          "ord_y_at_u_eq_0": 3
+        },
+        {
+          "partition": [
+            7,
+            2
+          ],
+          "ord_y_at_u_eq_0": 7
+        },
+        {
+          "partition": [
+            7,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 6
+        },
+        {
+          "partition": [
+            6,
+            3
+          ],
+          "ord_y_at_u_eq_0": 11
+        },
+        {
+          "partition": [
+            6,
+            2,
+            1
+          ],
+          "ord_y_at_u_eq_0": 10
+        },
+        {
+          "partition": [
+            6,
+            1,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 9
+        },
+        {
+          "partition": [
+            5,
+            4
+          ],
+          "ord_y_at_u_eq_0": 15
+        },
+        {
+          "partition": [
+            5,
+            3,
+            1
+          ],
+          "ord_y_at_u_eq_0": 14
+        },
+        {
+          "partition": [
+            5,
+            2,
+            2
+          ],
+          "ord_y_at_u_eq_0": 17
+        },
+        {
+          "partition": [
+            5,
+            2,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 13
+        },
+        {
+          "partition": [
+            5,
+            1,
+            1,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 12
+        },
+        {
+          "partition": [
+            4,
+            4,
+            1
+          ],
+          "ord_y_at_u_eq_0": 18
+        },
+        {
+          "partition": [
+            4,
+            3,
+            2
+          ],
+          "ord_y_at_u_eq_0": 21
+        },
+        {
+          "partition": [
+            4,
+            3,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 17
+        },
+        {
+          "partition": [
+            4,
+            2,
+            2,
+            1
+          ],
+          "ord_y_at_u_eq_0": 20
+        },
+        {
+          "partition": [
+            4,
+            2,
+            1,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 16
+        },
+        {
+          "partition": [
+            4,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 15
+        },
+        {
+          "partition": [
+            3,
+            3,
+            3
+          ],
+          "ord_y_at_u_eq_0": 29
+        },
+        {
+          "partition": [
+            3,
+            3,
+            2,
+            1
+          ],
+          "ord_y_at_u_eq_0": 24
+        },
+        {
+          "partition": [
+            3,
+            3,
+            1,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 20
+        },
+        {
+          "partition": [
+            3,
+            2,
+            2,
+            2
+          ],
+          "ord_y_at_u_eq_0": 27
+        },
+        {
+          "partition": [
+            3,
+            2,
+            2,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 23
+        },
+        {
+          "partition": [
+            3,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 19
+        },
+        {
+          "partition": [
+            2,
+            2,
+            2,
+            2,
+            1
+          ],
+          "ord_y_at_u_eq_0": 30
+        },
+        {
+          "partition": [
+            2,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 26
+        }
+      ],
+      "compute_time_sec": 447.8914301395416
+    },
+    "12": {
+      "n": 12,
+      "n_partitions_height_le_6": 58,
+      "partitions": [
+        {
+          "partition": [
+            12
+          ],
+          "ord_y_at_u_eq_0": 0
+        },
+        {
+          "partition": [
+            9,
+            3
+          ],
+          "ord_y_at_u_eq_0": 11
+        },
+        {
+          "partition": [
+            10,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 6
+        },
+        {
+          "partition": [
+            9,
+            2,
+            1
+          ],
+          "ord_y_at_u_eq_0": 10
+        },
+        {
+          "partition": [
+            10,
+            2
+          ],
+          "ord_y_at_u_eq_0": 7
+        },
+        {
+          "partition": [
+            8,
+            4
+          ],
+          "ord_y_at_u_eq_0": 15
+        },
+        {
+          "partition": [
+            8,
+            3,
+            1
+          ],
+          "ord_y_at_u_eq_0": 14
+        },
+        {
+          "partition": [
+            8,
+            2,
+            2
+          ],
+          "ord_y_at_u_eq_0": 17
+        },
+        {
+          "partition": [
+            9,
+            1,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 9
+        },
+        {
+          "partition": [
+            8,
+            2,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 13
+        },
+        {
+          "partition": [
+            7,
+            5
+          ],
+          "ord_y_at_u_eq_0": 19
+        },
+        {
+          "partition": [
+            7,
+            4,
+            1
+          ],
+          "ord_y_at_u_eq_0": 18
+        },
+        {
+          "partition": [
+            8,
+            1,
+            1,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 12
+        },
+        {
+          "partition": [
+            7,
+            3,
+            2
+          ],
+          "ord_y_at_u_eq_0": 21
+        },
+        {
+          "partition": [
+            7,
+            2,
+            2,
+            1
+          ],
+          "ord_y_at_u_eq_0": 20
+        },
+        {
+          "partition": [
+            7,
+            3,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 17
+        },
+        {
+          "partition": [
+            7,
+            2,
+            1,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 16
+        },
+        {
+          "partition": [
+            6,
+            6
+          ],
+          "ord_y_at_u_eq_0": 23
+        },
+        {
+          "partition": [
+            6,
+            5,
+            1
+          ],
+          "ord_y_at_u_eq_0": 22
+        },
+        {
+          "partition": [
+            6,
+            4,
+            2
+          ],
+          "ord_y_at_u_eq_0": 25
+        },
+        {
+          "partition": [
+            6,
+            3,
+            3
+          ],
+          "ord_y_at_u_eq_0": 29
+        },
+        {
+          "partition": [
+            6,
+            4,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 21
+        },
+        {
+          "partition": [
+            7,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 15
+        },
+        {
+          "partition": [
+            6,
+            3,
+            2,
+            1
+          ],
+          "ord_y_at_u_eq_0": 24
+        },
+        {
+          "partition": [
+            6,
+            3,
+            1,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 20
+        },
+        {
+          "partition": [
+            6,
+            2,
+            2,
+            2
+          ],
+          "ord_y_at_u_eq_0": 27
+        },
+        {
+          "partition": [
+            6,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 19
+        },
+        {
+          "partition": [
+            6,
+            2,
+            2,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 23
+        },
+        {
+          "partition": [
+            5,
+            5,
+            2
+          ],
+          "ord_y_at_u_eq_0": 29
+        },
+        {
+          "partition": [
+            5,
+            4,
+            3
+          ],
+          "ord_y_at_u_eq_0": 33
+        },
+        {
+          "partition": [
+            5,
+            5,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 25
+        },
+        {
+          "partition": [
+            5,
+            4,
+            2,
+            1
+          ],
+          "ord_y_at_u_eq_0": 28
+        },
+        {
+          "partition": [
+            5,
+            3,
+            3,
+            1
+          ],
+          "ord_y_at_u_eq_0": 32
+        },
+        {
+          "partition": [
+            5,
+            4,
+            1,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 24
+        },
+        {
+          "partition": [
+            5,
+            3,
+            2,
+            2
+          ],
+          "ord_y_at_u_eq_0": 31
+        },
+        {
+          "partition": [
+            5,
+            3,
+            1,
+            1,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 23
+        },
+        {
+          "partition": [
+            5,
+            3,
+            2,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 27
+        },
+        {
+          "partition": [
+            4,
+            4,
+            4
+          ],
+          "ord_y_at_u_eq_0": 41
+        },
+        {
+          "partition": [
+            5,
+            2,
+            2,
+            2,
+            1
+          ],
+          "ord_y_at_u_eq_0": 30
+        },
+        {
+          "partition": [
+            5,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 26
+        },
+        {
+          "partition": [
+            4,
+            4,
+            3,
+            1
+          ],
+          "ord_y_at_u_eq_0": 36
+        },
+        {
+          "partition": [
+            4,
+            4,
+            1,
+            1,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 27
+        },
+        {
+          "partition": [
+            4,
+            4,
+            2,
+            2
+          ],
+          "ord_y_at_u_eq_0": 35
+        },
+        {
+          "partition": [
+            4,
+            4,
+            2,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 31
+        },
+        {
+          "partition": [
+            4,
+            3,
+            3,
+            2
+          ],
+          "ord_y_at_u_eq_0": 39
+        },
+        {
+          "partition": [
+            4,
+            3,
+            3,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 35
+        },
+        {
+          "partition": [
+            4,
+            3,
+            2,
+            2,
+            1
+          ],
+          "ord_y_at_u_eq_0": 34
+        },
+        {
+          "partition": [
+            4,
+            2,
+            2,
+            2,
+            2
+          ],
+          "ord_y_at_u_eq_0": 37
+        },
+        {
+          "partition": [
+            4,
+            3,
+            2,
+            1,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 30
+        },
+        {
+          "partition": [
+            4,
+            2,
+            2,
+            2,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 33
+        },
+        {
+          "partition": [
+            3,
+            3,
+            3,
+            3
+          ],
+          "ord_y_at_u_eq_0": 50
+        },
+        {
+          "partition": [
+            3,
+            3,
+            3,
+            2,
+            1
+          ],
+          "ord_y_at_u_eq_0": 42
+        },
+        {
+          "partition": [
+            3,
+            3,
+            3,
+            1,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 38
+        },
+        {
+          "partition": [
+            3,
+            3,
+            2,
+            2,
+            2
+          ],
+          "ord_y_at_u_eq_0": 41
+        },
+        {
+          "partition": [
+            3,
+            3,
+            2,
+            2,
+            1,
+            1
+          ],
+          "ord_y_at_u_eq_0": 37
+        },
+        {
+          "partition": [
+            3,
+            2,
+            2,
+            2,
+            2,
+            1
+          ],
+          "ord_y_at_u_eq_0": 40
+        },
+        {
+          "partition": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "ord_y_at_u_eq_0": 47
+        },
+        {
+          "partition": [
+            11,
+            1
+          ],
+          "ord_y_at_u_eq_0": 3
+        }
+      ],
+      "compute_time_sec": 2436.5219893455505
+    }
+  }
+}
