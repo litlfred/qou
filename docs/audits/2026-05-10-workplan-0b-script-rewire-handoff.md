@@ -93,14 +93,60 @@ Why risky:
    must land first — otherwise the rewired predictions will look
    ~25% off when the real signal is the placeholder, not the
    discipline fix. **Workplan 0b depends on Workplan 2.**
-5. **$E_0$ provenance.** `canonical-mass-table.witness.json` parameters block has `E_0_MeV: 0.782`
-   (truncated 4 sig figs). The framework defines
+5. **$E_0$ provenance — second discipline violation discovered
+   2026-05-10 during Phase 0b.2.** The framework defines
    $E_0 = Q_\beta(n) / |\Delta(\mathrm{net})|$ with
-   $\Delta(\mathrm{net}) = h(h-2)/2$. The script that computes $E_0$
-   from $Q_\beta$ and $\Delta(\mathrm{net})$ needs to be
-   identified (or written) and audited. Sibling agent: search for
-   `E_0` `derive`, `Delta(net)`, `h*(h-2)/2` in
-   `folio-assistant/computations/`.
+   $\Delta(\mathrm{net}) = h(h-2)/2$ from the symbolic NF
+   difference between neutron and proton. The compute infra
+   currently has **three different conventions in flight**, none
+   of which match the symbolic formula:
+
+   - [`hecke_core.E_0_CALIBRATION_MEV`](../../folio-assistant/computations/hecke_core.py)
+     line 2922: `E_0 = Q_β(n) ≈ 0.782` MeV/cat-unit (i.e. it sets
+     $|\Delta(\mathrm{net})| = 1$, skipping the symbolic step).
+   - [`canonical-mass-table.witness.json`](../../folio-assistant/computations/canonical-mass-table.witness.json)
+     parameters block: `E_0_MeV: 0.782` (truncated 4 sig figs of
+     the same convention).
+   - [`atomic_braid_mass_table.py`](../../folio-assistant/computations/atomic_braid_mass_table.py)
+     "Strategy-3" (per
+     [`derivation_chain.py:90`](../../folio-assistant/computations/derivation_chain.py)):
+     `E_0 ≈ 199.86 MeV/cat-unit` — **back-fitted** from
+     `total_hecke[p] · E_0 = 938.272 MeV` (proton CODATA). This
+     is a 4th-calibration violation **parallel to** the
+     `M_P_MEV` / `M_N_MEV` one this handoff is meant to fix.
+
+   **Demonstration of the inconsistency.** The newly-added
+   [`derived_masses.derivation_summary()`](../../folio-assistant/computations/derived_masses.py)
+   shows the naive single-term `m_p = |tr_M(p, q_0)| · E_0` with
+   $E_0 = Q_\beta$ gives `1.065 × 0.782 ≈ 0.83` MeV — off by 3
+   orders of magnitude vs CODATA `m_p = 938.272` MeV. The
+   "Strategy-3" pipeline gets the right number only because
+   `total_hecke[p] = T1+T2+T3+T4 ≈ 4.6912` cat-units (from the
+   Wenzl-bridge multi-term sum in
+   [`atomic_braid_mass_terms.py`](../../folio-assistant/computations/atomic_braid_mass_terms.py))
+   *and* $E_0$ is back-fitted to make the product hit CODATA. The
+   `total_hecke[p]` cat-unit sum is genuine framework output
+   (categorical, no fit); the $E_0$ back-fit is a hidden calibration.
+
+   **Resolution path** (Phase 0b.2 prerequisite):
+   1. Find or write the script that computes
+      $\Delta(\mathrm{net}) = h(h-2)/2$ symbolically from the
+      neutron / proton braid NF difference. Sibling agent: search
+      for `Delta_net`, `h*(h-2)/2`, `symbolic_q_value`,
+      `Q_value_symbolic`, `nucleon_mass_splitting` in
+      `folio-assistant/computations/` and `content/`.
+   2. Compute $|\Delta(\mathrm{net})|$ at $q_0$.
+   3. Compute $E_0 = Q_\beta / |\Delta(\mathrm{net})|$. Verify this
+      matches `atomic_braid_mass_table.py`'s back-fitted 199.86
+      MeV/cat-unit (within $\Phi_q$-tower truncation residual). If
+      it does NOT match, that's a real falsifier — the framework's
+      $E_0$ formula needs revisiting.
+   4. Replace `E_0_CALIBRATION_MEV` in `hecke_core.py` with the
+      derived value, and remove the back-fit from
+      `atomic_braid_mass_table.py`.
+   5. Drop the `NotImplementedError` stubs from
+      [`derived_masses.py`](../../folio-assistant/computations/derived_masses.py)
+      and wire in the categorical predictions.
 
 ## Migration plan for the sibling agent
 

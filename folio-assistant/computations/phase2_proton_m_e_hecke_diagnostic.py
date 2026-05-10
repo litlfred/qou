@@ -52,7 +52,7 @@ import mpmath as mp
 
 mp.mp.dps = 50
 
-from codata_constants import M_E_MEV, M_P_MEV
+from codata_constants import M_E_MEV, M_P_MEV_VALIDATION as M_P_MEV  # validation-only
 from derivation_chain import M_HECKE_PIPELINE_AT_Q0, TR_M_AT_Q0
 from witness_base import WitnessBuilder
 
