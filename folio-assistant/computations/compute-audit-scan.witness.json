@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-10T03:04:34.963960+00:00",
-  "commitSha": "3386d07c1126faff72c2f210a5fc2d0af8449afd",
+  "computedAt": "2026-05-10T04:23:35.026534+00:00",
+  "commitSha": "044e6e11774924906d78328fd4d2263d93e10855",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 8,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "b540c436e909",
@@ -794,7 +794,7 @@
       {
         "pattern": "P16",
         "file": "hecke_character_symbolic.py",
-        "line": 407,
+        "line": 422,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
