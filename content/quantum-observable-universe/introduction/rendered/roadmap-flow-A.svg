@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>F0.1 — The roadmap as argument flow (variant A: horizontal three-band)</title>
+  <desc>
+    Three horizontal bands. Top: three inputs (everyday observations,
+    categorical language, three calibration scalars). Middle: four forced
+    consequences (QOU axioms, SU₂(R) emerges, χ=−6 forced, Bring's surface
+    canonical). Bottom: five families of predictions (particle masses,
+    Q-values, αₑₘ, nuclear binding, molecular barriers). Red dashed
+    rectangles outline the SU(2) running example as it threads through
+    each band.
+  </desc>
+
+  <defs>
+    <marker id="tip" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a1a1a"/>
+    </marker>
+    <style>
+      .bg          { fill: #ffffff; }
+      .bandlabel   { font-size: 14px; font-style: italic; fill: #666;
+                     letter-spacing: 0.18em; }
+      .box         { fill: #ffffff; stroke: #1a1a1a; stroke-width: 1.5; }
+      .boxtitle    { font-size: 14px; font-weight: 700; fill: #1a1a1a; }
+      .boxsub      { font-size: 11px; fill: #444; }
+      .arrow       { stroke: #1a1a1a; stroke-width: 1.4; fill: none; }
+      .stepname    { font-size: 12px; font-style: italic; fill: #1a1a1a; }
+      .thread      { fill: none; stroke: #c0392b; stroke-width: 1.5;
+                     stroke-dasharray: 5 4; }
+      .threadlabel { font-size: 11px; font-style: italic; fill: #c0392b; }
+      .title       { font-size: 18px; font-style: italic; fill: #1a1a1a; }
+      .footer      { font-size: 11px; font-style: italic; fill: #666; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1000" height="700"/>
+
+  <text x="500" y="30" text-anchor="middle" class="title">The roadmap as argument flow</text>
+
+  <!-- ===== TOP BAND: INPUTS ===== -->
+  <text x="500" y="56" text-anchor="middle" class="bandlabel">INPUTS</text>
+
+  <rect class="box" x="50"  y="76" width="280" height="104" rx="6"/>
+  <text x="190" y="100" text-anchor="middle" class="boxtitle">Everyday observations</text>
+  <text x="190" y="122" text-anchor="middle" class="boxsub">colour mixing · rotation</text>
+  <text x="190" y="140" text-anchor="middle" class="boxsub">time · volume · free will</text>
+  <text x="190" y="158" text-anchor="middle" class="boxsub">computation</text>
+
+  <rect class="box" x="360" y="76" width="280" height="104" rx="6"/>
+  <text x="500" y="100" text-anchor="middle" class="boxtitle">Categorical language</text>
+  <text x="500" y="122" text-anchor="middle" class="boxsub">rigid braided monoidal</text>
+  <text x="500" y="140" text-anchor="middle" class="boxsub">Frobenius–Hopf object A</text>
+  <text x="500" y="158" text-anchor="middle" class="boxsub">fibre functor τ</text>
+
+  <rect class="box" x="670" y="76" width="280" height="104" rx="6"/>
+  <text x="810" y="100" text-anchor="middle" class="boxtitle">Three calibration scalars</text>
+  <text x="810" y="122" text-anchor="middle" class="boxsub">m_μ / m_e</text>
+  <text x="810" y="140" text-anchor="middle" class="boxsub">m_e</text>
+  <text x="810" y="158" text-anchor="middle" class="boxsub">Q_β(n)</text>
+
+  <!-- input → forced connectors -->
+  <line class="arrow" x1="190" y1="180" x2="190" y2="232" marker-end="url(#tip)"/>
+  <line class="arrow" x1="500" y1="180" x2="500" y2="232" marker-end="url(#tip)"/>
+  <line class="arrow" x1="810" y1="180" x2="810" y2="232" marker-end="url(#tip)"/>
+  <text x="500" y="252" text-anchor="middle" class="stepname">axioms  +  Tannaka–Krein  +  cohomological flatness</text>
+
+  <!-- ===== MIDDLE BAND: FORCED STRUCTURE ===== -->
+  <text x="500" y="282" text-anchor="middle" class="bandlabel">FORCED STRUCTURE</text>
+
+  <rect class="box" x="55"  y="300" width="200" height="80" rx="6"/>
+  <text x="155" y="332" text-anchor="middle" class="boxtitle">QOU axioms</text>
+  <text x="155" y="354" text-anchor="middle" class="boxsub">obs. · meas. · vol.</text>
+
+  <rect class="box" x="285" y="300" width="200" height="80" rx="6"/>
+  <text x="385" y="332" text-anchor="middle" class="boxtitle">SU₂(R) emerges</text>
+  <text x="385" y="354" text-anchor="middle" class="boxsub">not assumed — recovered</text>
+
+  <rect class="box" x="515" y="300" width="200" height="80" rx="6"/>
+  <text x="615" y="332" text-anchor="middle" class="boxtitle">χ = −6  forced</text>
+  <text x="615" y="354" text-anchor="middle" class="boxsub">Yekutieli obstruction</text>
+
+  <rect class="box" x="745" y="300" width="200" height="80" rx="6"/>
+  <text x="845" y="332" text-anchor="middle" class="boxtitle">Bring's Σ₄ canonical</text>
+  <text x="845" y="354" text-anchor="middle" class="boxsub">terminal genus-4 curve</text>
+
+  <!-- forced → predict connectors -->
+  <line class="arrow" x1="155" y1="380" x2="155" y2="432" marker-end="url(#tip)"/>
+  <line class="arrow" x1="385" y1="380" x2="385" y2="432" marker-end="url(#tip)"/>
+  <line class="arrow" x1="615" y1="380" x2="615" y2="432" marker-end="url(#tip)"/>
+  <line class="arrow" x1="845" y1="380" x2="845" y2="432" marker-end="url(#tip)"/>
+  <text x="500" y="452" text-anchor="middle" class="stepname">Hecke representation theory  +  Bring embeddability bound</text>
+
+  <!-- ===== BOTTOM BAND: PREDICTIONS ===== -->
+  <text x="500" y="482" text-anchor="middle" class="bandlabel">PREDICTIONS</text>
+
+  <rect class="box" x="35"  y="502" width="170" height="74" rx="6"/>
+  <text x="120" y="532" text-anchor="middle" class="boxtitle">particle masses</text>
+  <text x="120" y="554" text-anchor="middle" class="boxsub">m_p, m_n, m_e, m_μ …</text>
+
+  <rect class="box" x="225" y="502" width="170" height="74" rx="6"/>
+  <text x="310" y="532" text-anchor="middle" class="boxtitle">Q-values</text>
+  <text x="310" y="554" text-anchor="middle" class="boxsub">β-decay · α-emission</text>
+
+  <rect class="box" x="415" y="502" width="170" height="74" rx="6"/>
+  <text x="500" y="532" text-anchor="middle" class="boxtitle">α_em</text>
+  <text x="500" y="554" text-anchor="middle" class="boxsub">fine-structure constant</text>
+
+  <rect class="box" x="605" y="502" width="170" height="74" rx="6"/>
+  <text x="690" y="532" text-anchor="middle" class="boxtitle">nuclear binding</text>
+  <text x="690" y="554" text-anchor="middle" class="boxsub">B/A · shell closures</text>
+
+  <rect class="box" x="795" y="502" width="170" height="74" rx="6"/>
+  <text x="880" y="532" text-anchor="middle" class="boxtitle">molecular barriers</text>
+  <text x="880" y="554" text-anchor="middle" class="boxsub">C₆H₆ · organic chains</text>
+
+  <!-- ===== Red dashed thread: SU(2) running example ===== -->
+  <!-- Outline the boxes the running example traces through. -->
+  <rect class="thread" x="356" y="72" width="288" height="112" rx="8"/>
+  <rect class="thread" x="281" y="296" width="208" height="88" rx="8"/>
+  <rect class="thread" x="411" y="498" width="178" height="82" rx="8"/>
+  <text x="950" y="50" text-anchor="end" class="threadlabel">running example: SU(2)  ⤳</text>
+
+  <text x="500" y="685" text-anchor="middle" class="footer">
+    three inputs  ·  four forced consequences  ·  five families of predictions
+  </text>
+</svg>

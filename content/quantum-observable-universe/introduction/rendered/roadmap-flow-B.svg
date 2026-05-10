@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 820"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>F0.1 — The roadmap as argument flow (variant B: radial wheel)</title>
+  <desc>
+    A radial wheel: the QOU axioms occupy the centre, four forced
+    consequences sit on an inner ring at the four corners, three
+    inputs sit on the upper outer arc, and five families of
+    predictions sit on the lower outer arc. Arrows propagate from
+    inputs (outer top) through the centre to forced consequences
+    (inner) and out to predictions (outer bottom). A red dashed
+    outline marks the SU(2) running example as it threads from
+    Categorical language through SU₂(R) emerges to α_em.
+  </desc>
+
+  <defs>
+    <marker id="tip" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a1a1a"/>
+    </marker>
+    <style>
+      .bg     { fill: #ffffff; }
+      .center { fill: #ffffff; stroke: #1a1a1a; stroke-width: 2; }
+      .ring1  { fill: #ffffff; stroke: #1a1a1a; stroke-width: 1.4; }
+      .ring2  { fill: #ffffff; stroke: #1a1a1a; stroke-width: 1.2; }
+      .arr    { stroke: #1a1a1a; stroke-width: 1.2; fill: none; }
+      .lblC   { font-size: 16px; font-weight: 700; fill: #1a1a1a;
+                text-anchor: middle; }
+      .lbl1   { font-size: 13px; fill: #1a1a1a; text-anchor: middle; }
+      .lbl2   { font-size: 11px; fill: #444; text-anchor: middle; }
+      .thread { fill: none; stroke: #c0392b; stroke-width: 1.5;
+                stroke-dasharray: 5 4; }
+      .ttl    { font-size: 18px; font-style: italic; fill: #1a1a1a; }
+      .sub    { font-size: 11px; font-style: italic; fill: #666; }
+      .tlbl   { font-size: 11px; font-style: italic; fill: #c0392b; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="800" height="820"/>
+
+  <text x="400" y="32" text-anchor="middle" class="ttl">The roadmap as argument flow</text>
+  <text x="400" y="52" text-anchor="middle" class="sub">
+    inputs (outer top) → axioms (centre) → forced consequences (inner) → predictions (outer bottom)
+  </text>
+
+  <!-- ===== Centre: QOU axioms ===== -->
+  <circle class="center" cx="400" cy="410" r="78"/>
+  <text x="400" y="404" class="lblC">QOU</text>
+  <text x="400" y="424" class="lbl2">(𝐂, Θ, G, 𝒮)</text>
+
+  <!-- ===== Inner ring: 4 forced consequences ===== -->
+  <ellipse class="ring1" cx="527" cy="283" rx="80" ry="32"/>
+  <text x="527" y="280" class="lbl1">SU₂(R)</text>
+  <text x="527" y="298" class="lbl2">emerges, not assumed</text>
+
+  <ellipse class="ring1" cx="273" cy="283" rx="80" ry="32"/>
+  <text x="273" y="280" class="lbl1">χ = −6</text>
+  <text x="273" y="298" class="lbl2">Yekutieli obstruction</text>
+
+  <ellipse class="ring1" cx="273" cy="537" rx="80" ry="32"/>
+  <text x="273" y="534" class="lbl1">Bring's Σ₄</text>
+  <text x="273" y="552" class="lbl2">terminal genus-4 curve</text>
+
+  <ellipse class="ring1" cx="527" cy="537" rx="80" ry="32"/>
+  <text x="527" y="534" class="lbl1">Frobenius–Hopf</text>
+  <text x="527" y="552" class="lbl2">substrate object A</text>
+
+  <!-- centre → inner-ring arrows -->
+  <line class="arr" x1="453" y1="372" x2="490" y2="308" marker-end="url(#tip)"/>
+  <line class="arr" x1="347" y1="372" x2="310" y2="308" marker-end="url(#tip)"/>
+  <line class="arr" x1="347" y1="448" x2="310" y2="512" marker-end="url(#tip)"/>
+  <line class="arr" x1="453" y1="448" x2="490" y2="512" marker-end="url(#tip)"/>
+
+  <!-- ===== Outer ring (top): 3 inputs ===== -->
+  <rect class="ring2" x="60"  y="155" width="160" height="60" rx="6"/>
+  <text x="140" y="180" class="lbl1">Everyday observations</text>
+  <text x="140" y="198" class="lbl2">colour, rotation, time, …</text>
+
+  <rect class="ring2" x="320" y="80" width="160" height="60" rx="6"/>
+  <text x="400" y="105" class="lbl1">Categorical language</text>
+  <text x="400" y="123" class="lbl2">𝐂, Frobenius–Hopf, τ</text>
+
+  <rect class="ring2" x="580" y="155" width="160" height="60" rx="6"/>
+  <text x="660" y="180" class="lbl1">Three calibrations</text>
+  <text x="660" y="198" class="lbl2">m_μ/m_e,  m_e,  Q_β(n)</text>
+
+  <!-- inputs → centre arrows -->
+  <line class="arr" x1="200" y1="215" x2="335" y2="380" marker-end="url(#tip)"/>
+  <line class="arr" x1="400" y1="140" x2="400" y2="330" marker-end="url(#tip)"/>
+  <line class="arr" x1="600" y1="215" x2="465" y2="380" marker-end="url(#tip)"/>
+
+  <!-- ===== Outer ring (bottom): 5 predictions ===== -->
+  <rect class="ring2" x="60"  y="610" width="160" height="50" rx="6"/>
+  <text x="140" y="640" class="lbl1">molecular barriers</text>
+
+  <rect class="ring2" x="180" y="700" width="160" height="50" rx="6"/>
+  <text x="260" y="730" class="lbl1">nuclear binding</text>
+
+  <rect class="ring2" x="320" y="760" width="160" height="50" rx="6"/>
+  <text x="400" y="790" class="lbl1">α_em</text>
+
+  <rect class="ring2" x="460" y="700" width="160" height="50" rx="6"/>
+  <text x="540" y="730" class="lbl1">Q-values</text>
+
+  <rect class="ring2" x="580" y="610" width="160" height="50" rx="6"/>
+  <text x="660" y="640" class="lbl1">particle masses</text>
+
+  <!-- forced → predictions arrows -->
+  <line class="arr" x1="220" y1="555" x2="200" y2="610" marker-end="url(#tip)"/>
+  <line class="arr" x1="248" y1="569" x2="248" y2="700" marker-end="url(#tip)"/>
+  <line class="arr" x1="400" y1="569" x2="400" y2="760" marker-end="url(#tip)"/>
+  <line class="arr" x1="552" y1="569" x2="552" y2="700" marker-end="url(#tip)"/>
+  <line class="arr" x1="580" y1="555" x2="600" y2="610" marker-end="url(#tip)"/>
+
+  <!-- ===== Red dashed thread: SU(2) running example ===== -->
+  <rect class="thread" x="318" y="78"  width="164" height="64" rx="8"/>
+  <ellipse class="thread" cx="527" cy="283" rx="84" ry="36"/>
+  <rect class="thread" x="318" y="758" width="164" height="54" rx="8"/>
+  <text x="780" y="98" text-anchor="end" class="tlbl">running example: SU(2)  ⤳</text>
+</svg>

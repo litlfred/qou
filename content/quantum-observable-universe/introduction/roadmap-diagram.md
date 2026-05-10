@@ -1,3 +1,7 @@
+![The roadmap as argument flow. Three inputs (top — everyday observations, the categorical language of rigid braided monoidal categories with a Frobenius--Hopf object, and three calibration scalars $m_\mu/m_e$, $m_e$, $Q_\beta(n)$) deduce four forced consequences (middle — the QOU axioms, the emergence of $\mathrm{SU}_2(R)$, the forced Euler characteristic $\chi=-6$, and the canonicality of Bring's surface $\Sigma_4$), which in turn predict five families of physical observables (bottom). The red dashed outlines mark the SU(2) running example as it threads through one box per band.](rendered/roadmap-flow-A.svg)
+
+The chapter sequence below renders the argument linearly for cross-reference.
+
 ```tex
 \begin{tikzcd}[
   row sep=2.2em, column sep=1.8em,
