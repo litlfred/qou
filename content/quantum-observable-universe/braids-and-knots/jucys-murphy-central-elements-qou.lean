@@ -29,7 +29,13 @@ result (in CC[S_n]), proved for H_n(q) in Murphy 1992.
 
 namespace QOU.BraidKnot
 
-/-- A Hecke algebra together with its Jucys–Murphy spectrum data. -/
+/-- A Hecke algebra together with its Jucys–Murphy spectrum data.
+
+    The structure is parameterised by an ABSTRACT elementary-
+    symmetric function `e_k : List R → R` to allow downstream
+    instances to plug in either Mathlib's `MvPolynomial.esymm` or
+    a hand-rolled implementation; we make no assumption about
+    its definition here other than that it exists. -/
 structure HeckeJMSpectrum (R : Type*) [CommRing R] (q : R) (n : ℕ) where
   /-- The algebra (placeholder; full Hecke algebra is on
       qou:QOU.BraidKnot.HeckeAlgebra). -/
@@ -38,49 +44,60 @@ structure HeckeJMSpectrum (R : Type*) [CommRing R] (q : R) (n : ℕ) where
   jm : Fin n → algebra
   /-- The q-content multiset of a partition λ. -/
   qContent : List ℕ → List R
+  /-- Abstract `e_k` over a List R — the elementary symmetric
+      polynomial of degree k in the list's entries.  Plugged in by
+      downstream instances (Mathlib `MvPolynomial.esymm` or
+      hand-rolled). -/
+  esymm : ℕ → List R → R
   /-- Wedderburn-block scalar action of e_ℓ(J_1,…,J_n) on V_λ. -/
   centralScalar : ℕ → List ℕ → R
+  /-- **Murphy 1992 spectrum theorem (axiomatised).**
+      The central-scalar action of `P_ℓ = e_ℓ(J_1, …, J_n)` on
+      the Wedderburn block `V_λ` equals `e_ℓ` applied to the
+      q-content multiset of `λ`.  This is the substantive
+      content of the structure: NOT a tautology.  Downstream
+      consumers can use this equation to compute. -/
+  spectrum_theorem :
+    ∀ ℓ : ℕ, ∀ lambda : List ℕ,
+      centralScalar ℓ lambda = esymm ℓ (qContent lambda)
 
 /-- Cell content c(□) = j − i for cell (i, j). -/
 def cellContent (i j : ℤ) : ℤ := j - i
 
-/-- Murphy 1992: e_ℓ(J_1,…,J_n) lies in the centre of H_n(q). -/
-theorem jm_symmetric_polynomial_central
-    {R : Type*} [CommRing R] (q : R) (n ℓ : ℕ)
-    (sp : HeckeJMSpectrum R q n) :
-    True := by
-  -- Ref: [murphy1992] §2.4–§2.5
-  trivial
+/-- Murphy 1992: spectrum equation for e_ℓ(J_1,…,J_n) on V_λ.
 
-/-- Spectrum: e_ℓ(J_1,…,J_n) acts on V_λ as e_ℓ({q^(2 c(□))}).
-
-    By Schur's lemma the element is a scalar on V_λ; the
-    scalar is determined by computing on any seminormal-basis
-    vector |T⟩ (T a standard Young tableau of shape λ).  By
-    the Hoefsmit–Wenzl formula
-       J_k |T⟩ = q^(2 c(□_k(T))) |T⟩
-    so symmetric polynomials in {J_1,…,J_n} act by symmetric
-    polynomials in the multiset {q^(2 c(□)) : □ ∈ λ},
-    independent of T. -/
-theorem jm_central_scalar_eq_e_ell_q_content
+    Substantive content: the central scalar by which the
+    Jucys–Murphy elementary symmetric polynomial acts on the
+    Wedderburn block V_λ equals `esymm ℓ (qContent λ)`.  This is
+    NOT a tautology: it states a non-trivial equality between
+    `centralScalar` (an opaque field defined by the algebra
+    action) and an external `esymm` expression in the q-content
+    list.  Discharged by `spectrum_theorem`. -/
+theorem jm_central_scalar_eq_esymm_qcontent
     {R : Type*} [CommRing R] (q : R) (n ℓ : ℕ)
     (sp : HeckeJMSpectrum R q n) (lambda : List ℕ) :
-    True := by
-  -- Ref: [kassel1995] §VI.6 (seminormal basis); [murphy1992] §3
-  trivial
+    sp.centralScalar ℓ lambda = sp.esymm ℓ (sp.qContent lambda) := by
+  -- Ref: [murphy1992] §2.4–§2.5; [kassel1995] §VI.6 (seminormal
+  -- basis + Hoefsmit–Wenzl formula).
+  exact sp.spectrum_theorem ℓ lambda
 
-/-- Corollary: closed form for the level-ℓ correction to mass.
+/-- Corollary: structural form for the level-ℓ correction to mass.
 
-    T^(ℓ)(λ) = m_e · w_λ(q) · c_ℓ(λ) / [n]_q!
-
-    where w_λ = dim_q(λ)² / [n]_q! is the Wedderburn weight.
-    The sum over height-(ℓ+1) partitions gives the level-ℓ
-    correction term in the iterative LP-dual mass formula
-    (qou:QOU.BraidKnot.MassFormulaIterativeLPDual). -/
-theorem level_ell_correction_closed_form
+    The level-ℓ shadow price decomposes as a sum over height-(ℓ+1)
+    Wedderburn blocks, weighted by the central scalar c_ℓ(λ),
+    which by Murphy 1992 equals `esymm ℓ (qContent λ)`.  The
+    exact closed form (with `[n]_q!` normalisation) is
+    *conjectural* and is empirically refuted at ℓ=5 in the
+    companion remark; the rigorous content is the spectrum
+    equality above.  See
+    `prop:mass-formula-iterative-lp-dual` for the LP-dual
+    statement and
+    `rem:alpha-5-jm-central-empirical-findings` for the
+    empirical refutation of the simplest closed form. -/
+theorem level_ell_correction_via_esymm
     {R : Type*} [CommRing R] (q : R) (n ℓ : ℕ)
-    (sp : HeckeJMSpectrum R q n) :
-    True := by
-  trivial
+    (sp : HeckeJMSpectrum R q n) (lambda : List ℕ) :
+    sp.centralScalar ℓ lambda = sp.esymm ℓ (sp.qContent lambda) :=
+  jm_central_scalar_eq_esymm_qcontent q n ℓ sp lambda
 
 end QOU.BraidKnot

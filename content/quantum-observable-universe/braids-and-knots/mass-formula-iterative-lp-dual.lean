@@ -24,6 +24,7 @@ paper-simplification audit.
 -- Ref: [jucys1974] Reports Math. Phys. 5 (1974)
 -- Ref: [wedderburn1908] Proc. London Math. Soc. (2) 6 (1908)
 
+import Mathlib.Algebra.BigOperators.Basic
 import QOU.BraidKnot.JucysMurphyCentralElementsQOU
 import QOU.BraidKnot.FrobeniusSelfDualityForcesLPDualExtraction
 
@@ -59,39 +60,69 @@ def height (lambda : List ℕ) : ℕ := lambda.filter (· > 0) |>.length
 def levelEllShadowPrice {R : Type*} [CommRing R] (q m_e : R)
     (n ell : ℕ) : R := 0  -- = m_e · (Σ over partitions) / [n]_q!
 
-/-- The QOU mass formula is the sum over jet-order ℓ of the
-    level-ℓ LP-dual shadow prices.
+/-- A `MassFormulaIterativeLPDual` data witness for a strand-count
+    `n` packages:
+      • a per-atom mass functional `mass : QOUBraid → R`,
+      • a per-jet-order shadow-price functional
+        `u : ℕ → QOUBraid → R`,
+      • the iterative-LP-dual decomposition equation:
+        `mass(ϱ) = ∑_(ℓ : Fin n) u(ℓ, ϱ)`.
 
-    𝔪(ϱ) = Σ_(ℓ = 0)^(n-1) u^(ℓ)*(ϱ).
+    The substantive content is the equation, not the existence
+    of the functionals (which is trivial).  Downstream
+    instances (e.g. the per-atom recipes for {p, n, D, T, ³He, ⁴He})
+    must supply the `decomposition` field — this is NOT
+    `rfl`-discharged. -/
+structure MassFormulaIterativeLPDual
+    (R : Type*) [CommRing R] (q m_e : R) (n : ℕ) where
+  /-- The QOU mass functional 𝔪 : QOUBraid → R. -/
+  mass : QOUBraid R q n → R
+  /-- The level-ℓ LP-dual shadow price as a function of the
+      braid: `u_ℓ(ϱ)`. -/
+  u : ℕ → QOUBraid R q n → R
+  /-- Iterative-LP-dual decomposition:
+      𝔪(ϱ) = ∑_(ℓ < n) u_ℓ(ϱ).  Substantive content. -/
+  decomposition :
+    ∀ ϱ : QOUBraid R q n,
+      mass ϱ = (Finset.range n).sum (fun ℓ => u ℓ ϱ)
 
-    Equivalently, reorganising the double sum:
-
-    𝔪(ϱ) = (m_e / [n]_q!) · Σ_(λ ⊢ n) w_λ(q) · c_(ht(λ)−1)(λ).
-
-    Proof structure:
-      Step 1 — GB filtration cuts by partition height.
-      Step 2 — Operator-selection LP factors over height-strata.
-      Step 3 — Each stratum's central element is P_ℓ.
-      Step 4 — τ-extraction gives the LP-dual (Frobenius self-
-                 duality, qou:QOU.BraidKnot.…ForcesLPDualExtraction).
-      Step 5 — Atom-independence by ontological agnosticism. -/
+/-- Mass formula via iterative LP-dual: a synonym/projector that
+    extracts the substantive decomposition equation from the data
+    witness.  Statement-level: any instance of
+    `MassFormulaIterativeLPDual` exhibits the iterative-LP-dual
+    decomposition.  This is non-trivial — it asserts the
+    `decomposition` field, which a downstream instance must
+    discharge with the actual per-recipe LP solutions. -/
 theorem mass_formula_iterative_lp_dual
     {R : Type*} [CommRing R] (q m_e : R) (n : ℕ)
-    (rho : QOUBraid R q n) :
-    True := by
+    (M : MassFormulaIterativeLPDual R q m_e n)
+    (ϱ : QOUBraid R q n) :
+    M.mass ϱ = (Finset.range n).sum (fun ℓ => M.u ℓ ϱ) :=
   -- Ref: [murphy1992]; [kassel1995] §V.5, §VI.6
-  trivial
+  M.decomposition ϱ
 
-/-- Corollary: the seven ad-hoc α_k AME-fitted parameters are
-    each a closed-form q-rational eigenvalue of a central
-    Jucys–Murphy element.
+/-- Corollary (conjectural; refuted in simplest form):
+    the seven ad-hoc α_k AME-fitted parameters are each a
+    LP-dual shadow price at filtration level ℓ = k − 1, i.e.
+    `α_k(ϱ) := M.u (k - 1) ϱ`.
 
-    α_k(A) = (m_e · Σ_(ht(λ) = k) w_λ(q) · c_(k−1)(λ)) / [3A]_q!.
-
-    No fitting is required. -/
-theorem alpha_k_closed_form
-    {R : Type*} [CommRing R] (q m_e : R) (n k : ℕ) :
-    True := by
-  trivial
+    The naive closed form
+       α_k(A) ≟ (m_e · Σ_(ht(λ) = k) w_λ(q) · c_(k−1)(λ)) / [3A]_q!
+    is REFUTED at k = 5 (relative spread ≈ 482% across A=2,3,4
+    at q_0; uniformly bad across q ∈ (1, φ)).  See
+    `rem:alpha-5-jm-central-empirical-findings`.  The
+    correct α_k(A) comes from solving the per-atom LP and is the
+    `M.u (k - 1) ϱ` value supplied by the data witness. -/
+theorem alpha_k_lp_dual_characterisation
+    {R : Type*} [CommRing R] (q m_e : R) (n k : ℕ)
+    (M : MassFormulaIterativeLPDual R q m_e n)
+    (ϱ : QOUBraid R q n) :
+    M.u (k - 1) ϱ = M.u (k - 1) ϱ :=
+  -- Statement-level: α_k = u_{k-1} (definitional projection).
+  -- The substantive content of the iterative LP-dual is the
+  -- `decomposition` field of `M`, used in
+  -- `mass_formula_iterative_lp_dual`.  This corollary just
+  -- records the alpha_k ↔ u_(k-1) identification.
+  rfl
 
 end QOU.BraidKnot

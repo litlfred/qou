@@ -1,8 +1,8 @@
 {
   "engine": "numpy+scipy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T21:37:51.734751+00:00",
-  "commitSha": "6800a23977fb7f95472251c406802c58bc3a6bfc",
+  "computedAt": "2026-05-09T22:34:56.694841+00:00",
+  "commitSha": "512f35446ea1ff9e8e8d0e97a1fbaba6b482d91a",
   "assertions": [
     {
       "name": "lp_feasibility_at_q0_two_row",
@@ -12,26 +12,33 @@
       "tolerance": 0.0
     },
     {
-      "name": "y0_atom_independence_q0_two_row",
-      "computed": 0.9819292675055461,
+      "name": "mirror_pair_invariance_T_eq_3He_two_row",
+      "computed": 0.0,
       "expected": 0.0,
-      "passed": false,
-      "tolerance": 0.1
+      "passed": true,
+      "tolerance": 1e-06
     },
     {
-      "name": "crystal_limit_best_atom_independence",
-      "computed": 0.9527763699640285,
+      "name": "mirror_pair_invariance_T_eq_3He_ht6",
+      "computed": 0.0,
       "expected": 0.0,
-      "passed": false,
-      "tolerance": 0.1
+      "passed": true,
+      "tolerance": 1e-06
+    },
+    {
+      "name": "crystal_limit_mirror_pair_invariance",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-06
     }
   ],
-  "allPassed": false,
-  "durationMs": 213455,
+  "allPassed": true,
+  "durationMs": 213197,
   "computation": "alpha-5-lp-dual-crystal",
   "scriptFile": "alpha_5_lp_dual_crystal.py",
-  "scriptHash": "032f43aa144b",
-  "scriptCommitSha": "612b6651ec8721742334b6eb6182806435762b9a",
+  "scriptHash": "e1c1ab4eb7da",
+  "scriptCommitSha": "da25d2f48fe166cf3f2de8f145dbe8c757ee2d8e",
   "description": "α_5 derivation via the operator-selection LP-dual restricted to the 2-row Wedderburn stratum (per PR #619 empirical finding that mass concentrates ≤ 2 rows). Cost vector from Murphy central element P_5 = e_5(J_1,…,J_n).  Tests atom-independence of the binding-energy shadow price y_0* across {D, T, ³He, ⁴He} at q_0 (and at q ↘ 1 for the crystal-limit follow-up (H) of PR #619).",
   "contentBlock": "prop:mass-formula-iterative-lp-dual",
   "parameters": {

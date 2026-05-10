@@ -63,16 +63,27 @@ where $\preceq_\tau$ denotes the partial order induced by the
 Frobenius pairing: $a \preceq_\tau b \iff \tau(c \cdot (b - a))
 \geq 0$ for all $c \succeq_\tau 0$.
 
-**Step 4: Primal-dual coincidence.** Under $\Phi_\tau$, the
-primal feasible set
+**Step 4: Primal-dual coincidence (under standard LP
+hypotheses).** Under $\Phi_\tau$, the primal feasible set
 $P = \{x \in H_n : \tau(\pi_\lambda \cdot x) \geq 0\}$ is
 $\Phi_\tau$-isomorphic to the dual feasible cone
 $D = \{u : u \succeq_\tau 0\}$. The cost functional
 $x \mapsto \tau(\Theta \cdot x)$ is, under $\Phi_\tau$,
 identified with the dual objective $u \mapsto \langle u, \Theta
-\rangle$. **Strong duality holds structurally**, not by
-analytic argument: it is a consequence of the Frobenius pairing
-being non-degenerate.
+\rangle$. **Strong duality holds whenever the standard finite-
+dimensional LP regularity conditions are met** — primal
+feasibility and primal boundedness (or, equivalently for the
+canonical operator-selection LP of
+[`prop:operator-selection-lp`](#prop:operator-selection-lp),
+existence of a strictly feasible point, i.e. Slater's
+condition). For the per-atom operator-selection LP these
+hypotheses are verified by direct construction in
+[`prop:operator-selection-lp`](#prop:operator-selection-lp);
+the proposition above adds *structurally* that the primal-
+dual identification itself does not require additional
+analytic argument because the Frobenius pairing is non-
+degenerate. Strong duality + the Frobenius identification
+together imply the $\tau$-extraction is the dual map.
 
 **Step 5: τ-extraction is the dual map.** The Observation
 Frame $\mathrm{Obs}_\tau : H_n(R,q) \to H_n(R,q)^*$ defined by

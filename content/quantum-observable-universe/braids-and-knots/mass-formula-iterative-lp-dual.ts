@@ -45,7 +45,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:mass-formula-iterative-lp-dual",
   title:
-    "QOU mass formula as iterative LP-dual: $\\mathfrak{m}(\\varrho) = \\sum_\\ell u^{(\\ell)*}$ where each $u^{(\\ell)*}$ is the LP-dual of the height-$(\\ell{+}1)$ Frobenius-positivity constraint with cost $\\tau(P_\\ell \\cdot -)$",
+    "QOU mass formula as iterative LP-dual: $\\mathfrak{m}(\\varrho) = \\sum_\\ell u^{(\\ell)*}$ where each $u^{(\\ell)*}$ is the LP-dual of the height-$(\\ell{+}1)$ Frobenius-positivity constraint with cost $\\tau(P_\\ell \\cdot -)$ (LP-dual characterisation; explicit closed form is conditional and refuted in its simplest version)",
   lean: {
     ref: "qou:QOU.BraidKnot.MassFormulaIterativeLPDual",
     validation: "not_checked",

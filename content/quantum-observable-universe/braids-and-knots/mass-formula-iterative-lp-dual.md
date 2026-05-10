@@ -1,33 +1,25 @@
-**Proposition (framework — conditional on Step 5).**
+**Proposition (LP-dual characterisation of the QOU mass formula).**
 *Let $\varrho \in H_n(R, q)$ be a quantum-observable knot
 (QOU braid representative of a hadronic state) of strand count
 $n = 3A$, and let $J^\bullet \subset H_n(R, q)$ be the
 Gröbner–Shirshov filtration with associated graded
 $\mathrm{gr}^\ell$ ($\ell = 0, 1, 2, \ldots, n-1$) at
-**jet-order $\ell$**. Then the QOU mass*
+**jet-order $\ell$**. Then the QOU mass decomposes as*
 
 $$
   \mathfrak{m}(\varrho)
   \;=\;
-  \sum_{\ell = 0}^{n-1} u^{(\ell)*}(\varrho)
+  \sum_{\ell = 0}^{n-1} u^{(\ell)*}(\varrho),
 $$
 
-*where each $u^{(\ell)*}$ is the optimal LP-dual variable of
-the Frobenius positivity constraint at jet-order $\ell$, and
-admits the closed form*
-
-$$
-  u^{(\ell)*}(\varrho)
-  \;=\;
-  m_e \cdot
-  \frac{\sum_{\lambda \vdash n,\;\mathrm{ht}(\lambda) = \ell+1}
-    w_\lambda(q) \cdot c_\ell(\lambda)}{[n]_q!}
-$$
-
-*with $w_\lambda(q) = \dim_q(\lambda)^2 / [n]_q!$ the
-Wedderburn weight and $c_\ell(\lambda) = e_\ell(\{q^{2c(\square)}
-: \square \in \lambda\})$ the q-content elementary symmetric
-polynomial.*
+*where each $u^{(\ell)*}(\varrho)$ is the optimal dual variable
+of the Frobenius-positivity constraint at jet-order $\ell$ in
+the per-atom operator-selection LP with cost operator
+$\tau(P_\ell \cdot -)$ (and $P_\ell = e_\ell(J_1, \ldots, J_n)$
+the Murphy central element). The LP-dual characterisation is
+the rigorous content of the proposition; an explicit closed
+form for $u^{(\ell)*}$ is conjectural and is examined in
+Step 5 below.*
 
 *Proof.*
 
@@ -241,7 +233,7 @@ guess.
 the QOU paper compresses from a sequence of seven term
 derivations to a single iterative theorem and its closed-form
 corollary. See the
-[2026-05-09 simplification audit](docs/audits/2026-05-09-paper-simplification-iterative-lp-dual.md)
+[2026-05-09 simplification audit](../../../docs/audits/2026-05-09-paper-simplification-iterative-lp-dual.md)
 for the proposed paper restructuring.
 
 **Remark (categorical content).** This proposition is the
