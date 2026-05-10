@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-10T05:10:55.287082+00:00",
-  "commitSha": "76708a21f89d1846591d1834cb5327f87dabac5d",
+  "computedAt": "2026-05-10T05:55:11.047946+00:00",
+  "commitSha": "5d0c7e46d84c7f60ece5b2082e312d46aa8a24b6",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2041,6 +2041,7 @@
         "alpha-k-jones-markov-h3.witness.json",
         "alpha-k-macdonald-closed-form.witness.json",
         "alpha-shift-torus.witness.json",
+        "applied-uniqueness-mass-table.witness.json",
         "atom-mass-additive-baseline.witness.json",
         "atom-mass-derived.witness.json",
         "atom-nf-symbolic-D.witness.json",
@@ -2103,7 +2104,6 @@
         "compute-audit-scan.witness.json",
         "confined-knot-binding.witness.json",
         "confinement-operator-selection.witness.json",
-        "cross-check-trM-1ppb.witness.json",
         "crystal-alpha-shift-pole-orders.witness.json",
         "crystal-basis-primitives.witness.json",
         "crystal-limit-transport-probe.witness.json",
@@ -2121,7 +2121,6 @@
         "demazure-markov-trace.witness.json",
         "deuteron-delta-i-audit.witness.json",
         "deuteron_tr_M_symbolic.witness.json",
-        "e0-calibration-audit.witness.json",
         "entanglement-orders.witness.json",
         "ew-higgs-sdp-probe.witness.json",
         "ew-interface-knot-probe.witness.json",
