@@ -38,7 +38,10 @@ $$
   \mathrm{Binding}(K) \;=\; m_e \cdot \sum_{\lambda \vdash 3A} y_\lambda(q)\,\chi^\lambda(\beta_K)\,\Delta_\lambda(K),
 $$
 
-with $y_\lambda$ the canonical Wenzl Markov weight (see
+with $\beta_K = \mathtt{atom\_braid\_word\_3A}(Z, N) \in H_{3A}(q)$
+the canonical 3A-strand atomic braid (β-decay-operator-unfolded form;
+see [`mass_at_3A_proper.atom_braid_word_3A`](../../../folio-assistant/computations/mass_at_3A_proper.py)),
+$y_\lambda$ the canonical Wenzl Markov weight (see
 [`prop:markov-trace-recursive-reducer`](markov-trace-recursive-reducer.md)),
 $\chi^\lambda$ the Hoefsmit q-character of the atomic braid, and
 $\Delta_\lambda(K)$ the per-Wedderburn-block binding fraction.
