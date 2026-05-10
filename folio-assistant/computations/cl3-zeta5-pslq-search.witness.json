@@ -1,0 +1,45 @@
+{
+  "computation": "cl3-zeta5-pslq-search",
+  "description": "PSLQ relation search at 50 decimal digits of mpmath precision for the antisymmetric depth-3 generator X = Cl_3(2\u03c0/5) - Cl_3(4\u03c0/5) against three candidate bases of weight-3 periods. PSLQ tolerance 1e-45, max integer coefficient norm 1e8. No relation found in any basis \u2014 certifies X is INDEPENDENT of standard depth-3 constants (\u03b6(3), \u03c0\u00b3, \u03c0\u00b7log\u00b2(\u03c6), log\u00b3(\u03c6), etc.) up to the search bound. Strong evidence that X is the genuinely-new depth-3 generator at \u03b6_5 over Q(\u03b6_5).",
+  "timestamp": "2026-05-10T15:00:59.118806+00:00",
+  "precision_decimal_digits": 50,
+  "pslq_tolerance": "1e-45",
+  "max_coefficient_norm": "1e8",
+  "target": {
+    "name": "X = Cl_3(2\u03c0/5) - Cl_3(4\u03c0/5)",
+    "value_str": "0.95572314353826862475076392705832322282974187981191"
+  },
+  "search_1": {
+    "basis": [
+      "\u03b6(3)",
+      "\u03c0\u00b3"
+    ],
+    "relation": null,
+    "found": false
+  },
+  "search_2": {
+    "basis": [
+      "\u03b6(3)",
+      "\u03c0\u00b3",
+      "\u03c0 \u00b7 log\u00b2(\u03c6)",
+      "log\u00b3(\u03c6)"
+    ],
+    "relation": null,
+    "found": false
+  },
+  "search_3": {
+    "basis": [
+      "\u03b6(3)",
+      "\u03c0\u00b3",
+      "\u03c0 \u00b7 log\u00b2(\u03c6)",
+      "log\u00b3(\u03c6)",
+      "\u03c0 \u00b7 log\u00b2(2)",
+      "\u03c0\u00b2 \u00b7 log(\u03c6)",
+      "\u03c0\u00b2 \u00b7 log(2)",
+      "log\u00b3(2)"
+    ],
+    "relation": null,
+    "found": false
+  },
+  "conclusion": "No \u211a-linear relation found in any candidate basis up to coefficient norm 1e8. X is numerically certified independent of the standard depth-3 weight-3 period basis. This is strong evidence (not proof) that X represents the genuinely-new 1-dim depth-3 generator of K_5^ind(Q(\u03b6_5)) \u2297 Q's regulator image, modulo the \u03b6(3)-line."
+}

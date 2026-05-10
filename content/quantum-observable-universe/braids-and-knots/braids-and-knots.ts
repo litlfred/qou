@@ -402,6 +402,8 @@ export default chapter({
         "bring-trilog-imaginary-tate-rational",
         // Cl_3(2π/5) + Cl_3(4π/5) = -(12/25)ζ(3) — orbit-sum identity.
         "cl3-zeta5-orbit-sum-identity",
+        // PSLQ certifies Cl_3(2π/5) - Cl_3(4π/5) is irreducible at 10^8.
+        "cl3-zeta5-pslq-independence",
         // Hecke-algebra Baer-* foundation (generic q).
         "hecke-baer-star-generic",
         // Explicit central primitive idempotents via Murphy elements.
