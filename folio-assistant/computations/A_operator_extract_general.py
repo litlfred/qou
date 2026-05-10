@@ -50,8 +50,8 @@ from q_parameter import Q as Q0  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 
-H = 0.20906032198987945  # h = q − q⁻¹ at q_0
 Q_VAL = float(Q0)
+H = Q_VAL - 1.0 / Q_VAL  # h = q − q⁻¹ at q_0
 
 
 @functools.lru_cache(maxsize=4096)
