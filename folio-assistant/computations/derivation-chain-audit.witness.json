@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-10T05:55:15.135814+00:00",
-  "commitSha": "2f401ecafe0f8425590be2b42213048089fa2f2b",
+  "computedAt": "2026-05-10T05:55:38.385998+00:00",
+  "commitSha": "76bab718676f2acda47a6649994246344dd3ceb7",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2135,6 +2135,7 @@
         "gb-filtration-jet-order-reader.witness.json",
         "gb-filtration-jet-order.witness.json",
         "gb-nf-event-count-universality.witness.json",
+        "graded-hecke-energy-probe.witness.json",
         "gram-matrix-dual.witness.json",
         "gt-matrix-pslq-probe.witness.json",
         "h-3a-vs-h-3-divergence.witness.json",
