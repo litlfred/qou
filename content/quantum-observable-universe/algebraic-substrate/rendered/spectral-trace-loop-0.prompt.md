@@ -1,0 +1,3 @@
+# Spectral trace = closure of f into a loop
+
+F7.2 (P2 / P1). Two side-by-side string diagrams. Left: an open endomorphism $f \in \mathrm{End}(A)$ — vertical strand labelled $A$ above and below a small white box labelled $f$. Right: the same box $f$ inserted into a closed loop — strand goes up out of the box, curves around, and comes back into the bottom of the box, forming a closed circle. An arrow "↦" between them reads as "take the trace by closing the strand into a loop". Caption: "$\mathrm{tr}(f) = $ closure $\to k$". This makes the categorical trace concrete via the string-diagram convention. Layout: 2 panels side-by-side connected by ↦. Density: 2 string-diagram glyphs. Style: standard string-diagram. Colour: monochrome.

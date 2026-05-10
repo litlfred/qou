@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 600"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>The S₅ permutohedron</title>
+  <desc>
+    A truncated-octahedron-style projection of the order-5
+    permutohedron — the polytope whose 120 vertices are the
+    permutations of (1, 2, 3, 4, 5).  A small subset of vertices
+    is highlighted to indicate one S₅ orbit; an annotation
+    relates the orbit class to magic numbers 2, 8, 20.
+  </desc>
+  <defs>
+    <style>
+      .bg     { fill: #ffffff; }
+      .face   { fill: #f6f6f6; stroke: #1a1a1a; stroke-width: 1.4; }
+      .vert   { fill: #1a1a1a; stroke: #1a1a1a; stroke-width: 1; }
+      .vsel   { fill: #c0392b; stroke: #c0392b; }
+      .lbl    { font-size: 12px; fill: #1a1a1a; }
+      .lbls   { font-size: 11px; fill: #444; }
+      .ttl    { font-size: 17px; font-style: italic; fill: #1a1a1a; }
+      .selnote{ fill: #c0392b; font-size: 12px; font-style: italic; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="700" height="600"/>
+
+  <text x="350" y="32" text-anchor="middle" class="ttl">The S₅ permutohedron — 120 vertices</text>
+
+  <!-- Schematic permutohedron drawn as nested hexagons / quadrilateral facets.
+       Real Π₅ is 4-dimensional; we render a 2D Schlegel projection. -->
+  <!-- Outer dodecagon (12 facets visible from one direction) -->
+  <g transform="translate(350, 320)">
+    <!-- approximate hexagonal facet pattern: 6 outer + 6 inner -->
+    <polygon class="face" points="0,-180 156,-90 156,90 0,180 -156,90 -156,-90"/>
+    <polygon class="face" points="0,-110 96,-55 96,55 0,110 -96,55 -96,-55"/>
+    <polygon class="face" points="0,-50 44,-25 44,25 0,50 -44,25 -44,-25"/>
+    <!-- Connecting lines between layers -->
+    <line stroke="#1a1a1a" stroke-width="1" x1="0" y1="-180" x2="0" y2="-110"/>
+    <line stroke="#1a1a1a" stroke-width="1" x1="156" y1="-90" x2="96" y2="-55"/>
+    <line stroke="#1a1a1a" stroke-width="1" x1="156" y1="90" x2="96" y2="55"/>
+    <line stroke="#1a1a1a" stroke-width="1" x1="0" y1="180" x2="0" y2="110"/>
+    <line stroke="#1a1a1a" stroke-width="1" x1="-156" y1="90" x2="-96" y2="55"/>
+    <line stroke="#1a1a1a" stroke-width="1" x1="-156" y1="-90" x2="-96" y2="-55"/>
+    <line stroke="#1a1a1a" stroke-width="1" x1="0" y1="-110" x2="0" y2="-50"/>
+    <line stroke="#1a1a1a" stroke-width="1" x1="96" y1="-55" x2="44" y2="-25"/>
+    <line stroke="#1a1a1a" stroke-width="1" x1="96" y1="55" x2="44" y2="25"/>
+    <line stroke="#1a1a1a" stroke-width="1" x1="0" y1="110" x2="0" y2="50"/>
+    <line stroke="#1a1a1a" stroke-width="1" x1="-96" y1="55" x2="-44" y2="25"/>
+    <line stroke="#1a1a1a" stroke-width="1" x1="-96" y1="-55" x2="-44" y2="-25"/>
+
+    <!-- Vertices -->
+    <g>
+      <circle class="vert" cx="0"   cy="-180" r="3.5"/>
+      <circle class="vsel" cx="156" cy="-90"  r="4.5"/>
+      <circle class="vert" cx="156" cy="90"   r="3.5"/>
+      <circle class="vsel" cx="0"   cy="180"  r="4.5"/>
+      <circle class="vert" cx="-156" cy="90"  r="3.5"/>
+      <circle class="vsel" cx="-156" cy="-90" r="4.5"/>
+      <circle class="vert" cx="0"   cy="-110" r="3"/>
+      <circle class="vert" cx="96"  cy="-55"  r="3"/>
+      <circle class="vert" cx="96"  cy="55"   r="3"/>
+      <circle class="vert" cx="0"   cy="110"  r="3"/>
+      <circle class="vert" cx="-96" cy="55"   r="3"/>
+      <circle class="vert" cx="-96" cy="-55"  r="3"/>
+      <circle class="vert" cx="0"   cy="-50"  r="3"/>
+      <circle class="vert" cx="44"  cy="-25"  r="3"/>
+      <circle class="vert" cx="44"  cy="25"   r="3"/>
+      <circle class="vert" cx="0"   cy="50"   r="3"/>
+      <circle class="vert" cx="-44" cy="25"   r="3"/>
+      <circle class="vert" cx="-44" cy="-25"  r="3"/>
+    </g>
+  </g>
+
+  <!-- Side annotation -->
+  <text x="50" y="60" class="lbl" font-weight="700">Aut(Σ₄) = S₅,  |Aut| = 120</text>
+  <text x="50" y="80" class="lbls">120 permutations = 120 vertices</text>
+
+  <text x="640" y="60" text-anchor="end" class="selnote">red = 'magic-number' orbit</text>
+  <text x="640" y="80" text-anchor="end" class="selnote">stable nucleon classes</text>
+
+  <text x="350" y="555" text-anchor="middle" class="lbl">2D Schlegel projection of the 4-dim permutohedron Π₅</text>
+  <text x="350" y="575" text-anchor="middle" class="lbls">all 24 hexagonal + 30 quadrilateral facets visible from this direction</text>
+</svg>

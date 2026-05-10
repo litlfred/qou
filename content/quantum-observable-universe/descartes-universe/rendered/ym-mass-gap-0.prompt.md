@@ -1,0 +1,3 @@
+# Yang–Mills mass gap — categorical spectral picture
+
+F5.3 (P1). A horizontal energy axis. A single solid black dot at $E = 0$ labelled $|\Omega\rangle$ (vacuum). A shaded gap region (light pink with red dashed border) from $E = 0$ to $E = \Delta$ labelled "mass gap $\Delta > 0$". To the right of $\Delta$ a translucent grey band labelled "continuum — excited states". The boundary at $\Delta$ carries a small label "first Hecke eigenvalue". Footer: "QOU prediction: $\Delta = (q - q^{-1}) \cdot \kappa_n$ where $\kappa_n$ is the smallest non-zero Hecke eigenvalue at level $n$". Layout: horizontal spectrum axis with three regions. Density: minimal — vacuum dot, gap, continuum. Style: schematic spectrum diagram. Colour: monochrome plus red dashed border on the gap.

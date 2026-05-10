@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>Tannaka–Krein spectral trace as a string-diagram closure</title>
+  <desc>
+    Spectral trace tr: End(A) → k drawn as the closure of an
+    open string diagram into a loop.  Left: open input strand
+    A with an endomorphism box f.  Right: same diagram with the
+    strand bent around to form a loop, representing the trace.
+  </desc>
+  <defs>
+    <style>
+      .bg     { fill: #ffffff; }
+      .strand { fill: none; stroke: #1a1a1a; stroke-width: 2.6; }
+      .box    { fill: #ffffff; stroke: #1a1a1a; stroke-width: 1.6; }
+      .lbl    { font-size: 14px; fill: #1a1a1a; text-anchor: middle; }
+      .lblb   { font-size: 14px; font-weight: 700; fill: #1a1a1a;
+                text-anchor: middle; }
+      .ttl    { font-size: 17px; font-style: italic; fill: #1a1a1a; }
+      .eq     { font-size: 24px; font-weight: 700; fill: #1a1a1a;
+                text-anchor: middle; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="600" height="360"/>
+
+  <text x="300" y="32" text-anchor="middle" class="ttl">Spectral trace = closure of f into a loop</text>
+
+  <!-- Left: open f : A → A -->
+  <g transform="translate(180, 180)">
+    <line class="strand" x1="0" y1="-110" x2="0" y2="-30"/>
+    <text x="-15" y="-115" class="lbl">A</text>
+    <rect class="box" x="-20" y="-30" width="40" height="40"/>
+    <text x="0" y="-2" class="lblb">f</text>
+    <line class="strand" x1="0" y1="10" x2="0" y2="100"/>
+    <text x="-15" y="115" class="lbl">A</text>
+  </g>
+  <text x="180" y="305" class="lbl" text-anchor="middle">f  ∈  End(A)</text>
+
+  <!-- Equality symbol -->
+  <text x="300" y="180" class="eq">↦</text>
+
+  <!-- Right: trace = closure -->
+  <g transform="translate(420, 180)">
+    <!-- closure: strand goes up, around, and back down -->
+    <path class="strand" d="M 0 -30
+                            C 0 -90, -60 -90, -60 -30
+                            L -60 30
+                            C -60 90, 0 90, 0 30 Z"/>
+    <rect class="box" x="-20" y="-30" width="40" height="40"/>
+    <text x="0" y="-2" class="lblb">f</text>
+  </g>
+  <text x="420" y="305" class="lbl" text-anchor="middle">tr(f) = closure → k</text>
+</svg>

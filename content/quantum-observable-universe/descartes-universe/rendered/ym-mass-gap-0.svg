@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>Yang–Mills mass gap — spectral picture</title>
+  <desc>
+    Energy spectrum on a horizontal axis.  A single dot at 0
+    (the vacuum), a shaded gap from 0 to Δ, then a continuum
+    starting at Δ.  Annotation: "Δ = first Hecke eigenvalue".
+  </desc>
+  <defs>
+    <style>
+      .bg     { fill: #ffffff; }
+      .axis   { stroke: #1a1a1a; stroke-width: 1.6; fill: none; }
+      .vac    { fill: #1a1a1a; }
+      .gap    { fill: #f0e6e6; stroke: #c0392b; stroke-width: 1.4;
+                stroke-dasharray: 4 3; }
+      .cont   { fill: #1a1a1a; }
+      .ticklbl{ font-size: 11px; fill: #444; text-anchor: middle; }
+      .axislbl{ font-size: 13px; fill: #1a1a1a; font-style: italic; }
+      .lbl    { font-size: 13px; fill: #1a1a1a; }
+      .lblb   { font-size: 14px; font-weight: 700; fill: #1a1a1a; }
+      .ttl    { font-size: 17px; font-style: italic; fill: #1a1a1a; }
+      .gaplbl { fill: #c0392b; font-size: 13px; font-style: italic; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="800" height="360"/>
+
+  <text x="400" y="32" text-anchor="middle" class="ttl">Yang–Mills mass gap — categorical spectral picture</text>
+
+  <!-- Horizontal energy axis -->
+  <line class="axis" x1="80" y1="220" x2="720" y2="220"
+        marker-end="url(#tip)"/>
+
+  <!-- Vacuum at E=0 (x=120) -->
+  <circle class="vac" cx="120" cy="220" r="8"/>
+  <text x="120" y="252" text-anchor="middle" class="lblb">|Ω⟩</text>
+  <text x="120" y="270" text-anchor="middle" class="ticklbl">vacuum (E=0)</text>
+
+  <!-- Gap region from E=0 to E=Δ (x=120 to x=350) -->
+  <rect class="gap" x="120" y="190" width="230" height="60"/>
+  <text x="235" y="200" text-anchor="middle" class="gaplbl">mass gap  Δ &gt; 0</text>
+
+  <!-- Continuum from x=350 onwards -->
+  <rect class="cont" x="350" y="200" width="370" height="40" fill-opacity="0.15"/>
+  <line stroke="#1a1a1a" stroke-width="1.4" x1="350" y1="200" x2="350" y2="240"/>
+  <text x="350" y="195" text-anchor="middle" class="lblb">Δ</text>
+  <text x="350" y="270" text-anchor="middle" class="ticklbl">first Hecke eigenvalue</text>
+
+  <text x="540" y="225" text-anchor="middle" class="lblb">continuum</text>
+  <text x="540" y="270" text-anchor="middle" class="ticklbl">excited states</text>
+
+  <!-- Energy axis label -->
+  <text x="730" y="225" class="axislbl">E</text>
+
+  <!-- Footer -->
+  <text x="400" y="320" text-anchor="middle" class="lbl" font-style="italic">
+    QOU prediction: Δ = (q − q⁻¹) · κ_n where κ_n is the smallest non-zero Hecke eigenvalue at level n
+  </text>
+</svg>
