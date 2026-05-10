@@ -407,12 +407,29 @@ theorem rank_sum_le_of_mul_zero
       Module.finrank ℝ (LinearMap.range sc.Φstar.toLin') ≤
         Module.finrank ℝ (LinearMap.ker (sdp.dualSlack sc.ystar).toLin') :=
     Submodule.finrank_mono h_range_le_ker
-  -- Step 4: composition with rank-nullity
-  -- (`finrank(ker S) + finrank(range S) = n`) gives the conclusion.
-  -- Pending Mathlib lemma name verification:
-  -- `Matrix.rank_eq_finrank_range_toLin'` (rank = finrank range)
-  -- `LinearMap.finrank_range_add_finrank_ker` (rank-nullity)
-  sorry
+  -- Step 4: rank-nullity for S.toLin' over the n-dim space.
+  -- finrank(range S) + finrank(ker S) = finrank(domain) = n.
+  have h_S_rank_nullity :
+      Module.finrank ℝ (LinearMap.range (sdp.dualSlack sc.ystar).toLin') +
+      Module.finrank ℝ (LinearMap.ker (sdp.dualSlack sc.ystar).toLin') =
+      Module.finrank ℝ (Fin n → ℝ) :=
+    LinearMap.finrank_range_add_finrank_ker (sdp.dualSlack sc.ystar).toLin'
+  -- finrank (Fin n → ℝ) = n
+  have h_dim_n : Module.finrank ℝ (Fin n → ℝ) = n := by
+    simp [Module.finrank_pi]
+  rw [h_dim_n] at h_S_rank_nullity
+  -- Matrix.rank = finrank of toLin' range (Mathlib def).
+  -- Pending exact Mathlib name; using `Matrix.rank_eq_finrank_range_toLin'` here.
+  rw [show sc.Φstar.rank =
+        Module.finrank ℝ (LinearMap.range sc.Φstar.toLin') from
+        Matrix.rank_eq_finrank_range_toLin' sc.Φstar,
+      show (sdp.dualSlack sc.ystar).rank =
+        Module.finrank ℝ (LinearMap.range (sdp.dualSlack sc.ystar).toLin') from
+        Matrix.rank_eq_finrank_range_toLin' (sdp.dualSlack sc.ystar)]
+  -- Now goal: finrank(range Φ) + finrank(range S) ≤ n.
+  -- From h_finrank_le: finrank(range Φ) ≤ finrank(ker S).
+  -- From h_S_rank_nullity: finrank(range S) + finrank(ker S) = n.
+  omega
 
 /-- **Rank equality from strict complementarity** —
     proven from kernel disjointness (R2) + range containment
