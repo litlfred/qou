@@ -61,6 +61,15 @@ def _sigma_matrices(shape: tuple) -> tuple:
     Uses `build_seminormal_matrices` (canonical) rather than the cached
     `_compiled_sigmas` which has a stale cache returning dim=1 for all
     shapes.  Returns (sigma_mats: tuple of ndarray, dim: int).
+
+    Caching strategy: `lru_cache(maxsize=4096)` memoizes per-shape, so
+    every shape is built exactly once per process.  This is sufficient
+    for the panels here (≤ ~30 shapes per A=3 run); `BlockCache` /
+    SYT-prefix sharing would only matter if `_sigma_matrices` were
+    called per test-pair (it isn't — the lstsq sweep reuses the cached
+    matrices via `evaluate_word_matrix`).  Bottleneck at A=3 is the
+    `chi_lambda` × K1·K2 sweep (~336s for split 3+6), not seminormal
+    construction.
     """
     sigmas, dim, _ = build_seminormal_matrices(shape, q=Q_VAL)
     if dim == 0:

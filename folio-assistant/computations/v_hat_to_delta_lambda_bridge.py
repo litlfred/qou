@@ -164,53 +164,70 @@ def test_bridge_for_atom(Z: int, N: int, label: str) -> dict:
     Returns dict with per-channel match data + verdict.
     """
     chi = load_chi_lambda_at_q0(Z, N)
-    pairs = project_pair_volumes_per_channel(Z, N) if (Z + N) == 1 else {"sym": mp.mpf(0), "std": mp.mpf(0), "alt": mp.mpf(0)}
     products = product_volumes_per_1dim_channel(Z, N)
+    A = Z + N
 
-    # Three candidate projections:
-    #   r_direct[λ] = χ^λ / Σ_pair V̂_λ
-    #   r_dscaled[λ] = (χ^λ / d_λ) / Σ_pair V̂_λ
-    #   r_squared[λ] = χ^λ² / Σ_pair V̂_λ
-    # Bridge closes if r is constant across λ for any candidate.
-    r_direct: dict[str, mp.mpf] = {}
-    r_dscaled: dict[str, mp.mpf] = {}
-    r_squared: dict[str, mp.mpf] = {}
-    for ch in ("sym", "std", "alt"):
-        denom = pairs[ch]
-        if denom == 0:
-            r_direct[ch] = mp.mpf("nan")
-            r_dscaled[ch] = mp.mpf("nan")
-            r_squared[ch] = mp.mpf("nan")
-            continue
-        r_direct[ch] = chi[ch] / denom
-        r_dscaled[ch] = (chi[ch] / mp.mpf(D_LAMBDA[ch])) / denom
-        r_squared[ch] = chi[ch] * chi[ch] / denom
+    # Pair-sum verdict logic is only well-defined at A=1 (where the
+    # 2-strand pair sum coincides with the per-generator product).
+    # At A>1 the pair-sum projection has no meaningful denominator
+    # under the Wenzl-bridge convention; the multi-dim sector requires
+    # the operator-valued formula in `A_operator_extract_general.py`,
+    # not a scalar pair-sum.  Skip the constancy / verdict block
+    # entirely for A>1 instead of running it on all-zero denominators
+    # (which yielded NaN ratios + spurious "bridge_closed" verdicts).
+    if A == 1:
+        pairs = project_pair_volumes_per_channel(Z, N)
+        # Three candidate projections:
+        #   r_direct[λ] = χ^λ / Σ_pair V̂_λ
+        #   r_dscaled[λ] = (χ^λ / d_λ) / Σ_pair V̂_λ
+        #   r_squared[λ] = χ^λ² / Σ_pair V̂_λ
+        # Bridge closes if r is constant across λ for any candidate.
+        r_direct: dict[str, mp.mpf] = {}
+        r_dscaled: dict[str, mp.mpf] = {}
+        r_squared: dict[str, mp.mpf] = {}
+        for ch in ("sym", "std", "alt"):
+            denom = pairs[ch]
+            if denom == 0:
+                r_direct[ch] = mp.mpf("nan")
+                r_dscaled[ch] = mp.mpf("nan")
+                r_squared[ch] = mp.mpf("nan")
+                continue
+            r_direct[ch] = chi[ch] / denom
+            r_dscaled[ch] = (chi[ch] / mp.mpf(D_LAMBDA[ch])) / denom
+            r_squared[ch] = chi[ch] * chi[ch] / denom
 
-    # Check constancy: max(|r - mean|/|mean|) across the 3 channels.
-    def constancy(rdict):
-        vals = [v for v in rdict.values() if not mp.isnan(v)]
-        if len(vals) < 2:
-            return mp.mpf(0)
-        m = sum(vals) / len(vals)
-        if m == 0:
-            return mp.mpf("inf")
-        return max(abs(v - m) / abs(m) for v in vals)
+        def constancy(rdict):
+            vals = [v for v in rdict.values() if not mp.isnan(v)]
+            if len(vals) < 2:
+                return mp.mpf(0)
+            m = sum(vals) / len(vals)
+            if m == 0:
+                return mp.mpf("inf")
+            return max(abs(v - m) / abs(m) for v in vals)
 
-    sigma_direct = constancy(r_direct)
-    sigma_dscaled = constancy(r_dscaled)
-    sigma_squared = constancy(r_squared)
-
-    # Verdict: bridge "closed" if any candidate is constant to <1e-3
-    # across all three channels.  Bridge "partial" if any candidate
-    # is constant on 2 channels but differs on the third (suggests
-    # a per-channel correction factor).  Otherwise "inconclusive".
-    best_sigma = min(sigma_direct, sigma_dscaled, sigma_squared)
-    if best_sigma < mp.mpf("1e-3"):
-        verdict = "bridge_closed"
-    elif best_sigma < mp.mpf("0.5"):
-        verdict = "bridge_partial"
+        sigma_direct = constancy(r_direct)
+        sigma_dscaled = constancy(r_dscaled)
+        sigma_squared = constancy(r_squared)
+        best_sigma = min(sigma_direct, sigma_dscaled, sigma_squared)
+        if best_sigma < mp.mpf("1e-3"):
+            verdict = "bridge_closed"
+        elif best_sigma < mp.mpf("0.5"):
+            verdict = "bridge_partial"
+        else:
+            verdict = "bridge_inconclusive"
     else:
-        verdict = "bridge_inconclusive"
+        # A>1: pair-sum bridge is out of scope.  Verdict is "n/a (A>1)".
+        # The 1-dim product formula remains universally valid and is
+        # checked in the per-channel loop in main().
+        pairs = {"sym": mp.mpf(0), "std": mp.mpf(0), "alt": mp.mpf(0)}
+        r_direct = {ch: mp.mpf("nan") for ch in ("sym", "std", "alt")}
+        r_dscaled = {ch: mp.mpf("nan") for ch in ("sym", "std", "alt")}
+        r_squared = {ch: mp.mpf("nan") for ch in ("sym", "std", "alt")}
+        sigma_direct = mp.mpf("nan")
+        sigma_dscaled = mp.mpf("nan")
+        sigma_squared = mp.mpf("nan")
+        best_sigma = mp.mpf("nan")
+        verdict = "pair_sum_not_applicable_A_gt_1"
 
     return {
         "atom": label,
