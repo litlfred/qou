@@ -93,6 +93,8 @@ export default chapter({
         "q-from-epsilon",
         "surreal-rate-calculus",
         "surreal-squeeze",
+        // Graded-Mikusiński keystone: GS-depth = Goncharov period-depth.
+        "gb-depth-period-correspondence",
         "classical-riemann-zeta",
         "classical-riemann-hypothesis",
         "macroscopic-stability-equivalence",
@@ -110,6 +112,9 @@ export default chapter({
         "collatz-surreal-bound",
         "p-vs-np-conjecture",
         "p-vs-np-surreal-bound",
+        // Unifies the four surreal-bound remarks as graded-Mikusiński
+        // std-collapse instances at different depths.
+        "surreal-bounds-graded-mikusinski",
         "millennium-unification",
       ],
     }),

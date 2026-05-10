@@ -391,6 +391,11 @@ export default chapter({
         "phi-q-tower-algebraic-stratification",
         "kashaev-volume-conjecture",
         "figure-8-archimedean-illustration",
+        // Graded-Mikusiński depth-2 instance: VC = depth-2 case of
+        // conj:gb-depth-period-correspondence.
+        "vc-as-depth-2-instance",
+        // 50-digit numerical witness on the Bring-figure-8 embedding.
+        "bring-figure-eight-depth-2-witness",
         "archimedean-remainder-exponential-decay",
         "wedderburn-as-noncomm-fourier",
         "degree-one-braid-trivial-volume",
