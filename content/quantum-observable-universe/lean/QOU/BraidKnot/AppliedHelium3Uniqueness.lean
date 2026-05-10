@@ -170,4 +170,23 @@ theorem helium3_uniqueness_closed
     helium3_realStrongDualityPair helium3_dualSlack_posDef
     h_feas h_obj
 
+/-! ## §6  Demonstration: optimum is the zero matrix
+
+For the empty-constraint SDP with identity cost, the optimum is
+trivially `Φ = 0`.  This concrete equation is built into the
+`trivialStrongDualityPair`'s `Φstar := 0` field.  Demonstrated
+here as a kernel-verified `rfl` proof. -/
+
+theorem helium3_optimum_is_zero :
+    helium3_realStrongDualityPair.Φstar =
+      (0 : Matrix (Fin (heckeDim LightNucleus.helium3.n₀))
+                  (Fin (heckeDim LightNucleus.helium3.n₀)) ℝ) := rfl
+
+/-- The objective value at the (zero) optimum is exactly 0
+    (identity cost · zero matrix has trace 0). -/
+theorem helium3_objAt_optimum_eq_zero :
+    helium3_emptySDP.objAt helium3_realStrongDualityPair.Φstar = 0 := by
+  unfold SDPPrimal.objAt helium3_emptySDP
+  simp [helium3_optimum_is_zero]
+
 end QOU.BraidKnot
