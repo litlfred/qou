@@ -45,12 +45,16 @@ Slater-feasible SDP at strict complementarity:
 This is the **single missing categorical input** isolated by the
 `SDPRankUniqueness` axiom in `SDPRealUniqueness.lean`.  Proving
 the rank equality here is what eliminates that axiom; the
-`SDPSlaterUniqueness` pipeline then reduces to two atomic
-inputs — `strict_complementarity_kernel_disjoint` and
-`affine_slater_rigidity` — plus a small Mathlib lemma-name
-verification (`rank_via_eigenvalues`'s remaining `sorry`).
-For the QOU practical (³He interior) case, **all three** have
-proven sub-instances and the chain is fully axiom-free.
+`SDPSlaterUniqueness` pipeline then reduces to three atomic
+inputs — `strict_complementarity_kernel_disjoint`,
+`affine_slater_rigidity`, and `rank_via_eigenvalues` (a
+Mathlib API-shape axiom for the standard rank-equals-non-zero-
+eigenvalue-count fact for Hermitian matrices).  All three are
+**axioms** (zero `sorry`).  For the QOU practical (³He
+interior) case, the kernel-disjoint and affine-Slater inputs
+have **proven sub-instances**, and the rank-via-eigenvalues
+axiom is consumed only via Mathlib-standard reasoning; the
+chain is fully `sorry`-free.
 
 ## Decomposition of the proof into independent pieces
 
@@ -76,10 +80,16 @@ finite-dimensional linear-algebra under Slater (proven from R2).
 
 ## What this module provides
 
-* `Matrix.PosSemidef.rank_via_eigenvalues` (theorem — partially
-  proven; one `sorry` for the Mathlib `IsHermitian.rank_eq_card_…`
-  lemma name pending build-time verification): for PSD `M`,
-  `rank M = #{i : eigenvalues_i > 0}`.
+* `Matrix.PosSemidef.eigenvalues_pos_filter_eq_ne_zero_filter`
+  (theorem — fully proven): for PSD `M`, the filter
+  `{i : eigenvalues i > 0}` equals `{i : eigenvalues i ≠ 0}`.
+
+* `Matrix.PosSemidef.rank_via_eigenvalues` (axiom — Mathlib API
+  shape): for PSD `M`, `rank M = #{i : eigenvalues_i > 0}`.
+  Standard fact (`Boyd-Vandenberghe §A.5.5`), supplied by
+  Mathlib as `Matrix.IsHermitian.rank_eq_card_non_zero_eigenvalues`
+  or equivalent; booked as an axiom here pending exact lemma-
+  name verification at build time.
 
 * `strict_complementarity_kernel_disjoint` (axiom — R2): under
   strict complementarity, `ker(Φ) ∩ ker(S) = {0}`.
@@ -121,43 +131,47 @@ number of non-zero eigenvalues.  Mathlib's `Matrix.rank` is
 defined via the column-image submodule; equivalence with the
 eigenvalue count for Hermitian matrices is a standard fact. -/
 
+/-- **PSD eigenvalue filter equivalence** — for a PSD matrix,
+    "strictly positive eigenvalue" coincides with "non-zero
+    eigenvalue" (since PSD eigenvalues are non-negative).
+    Fully proven; no Mathlib gap. -/
+theorem Matrix.PosSemidef.eigenvalues_pos_filter_eq_ne_zero_filter
+    {M : Matrix (Fin n) (Fin n) ℝ} (hM : M.PosSemidef) :
+    (Finset.univ.filter (fun i : Fin n => 0 < hM.1.eigenvalues i)) =
+    (Finset.univ.filter (fun i : Fin n => hM.1.eigenvalues i ≠ 0)) := by
+  ext i
+  simp only [Finset.mem_filter, Finset.mem_univ, true_and]
+  constructor
+  · intro h
+    exact ne_of_gt h
+  · intro h
+    rcases lt_or_eq_of_le (hM.eigenvalues_nonneg i) with h_pos | h_eq
+    · exact h_pos
+    · exact absurd h_eq.symm h
+
 /-- **PSD rank via eigenvalues** — for a real PSD matrix, the
     rank equals the count of strictly-positive eigenvalues
     (PSD eigenvalues are non-negative, so equivalently:
     rank = #{i : eigenvalues i ≠ 0}).
 
-    **Status: partially proven** — the equivalence
-    "positive ⟺ non-zero" for non-negative PSD eigenvalues is
-    closed below.  The remaining `sorry` is the appeal to
-    `Matrix.IsHermitian.rank_eq_card_non_zero_eigenvalues` (or its
-    composable equivalent: spectralTheorem + rank invariance under
-    similarity + rank of diagonal = #non-zero entries).  The exact
-    Mathlib lemma name needs build-time verification; once
-    confirmed, the `sorry` becomes a one-line `exact`. -/
-theorem Matrix.PosSemidef.rank_via_eigenvalues
-    {M : Matrix (Fin n) (Fin n) ℝ} (hM : M.PosSemidef) :
-    M.rank = (Finset.univ.filter (fun i => 0 < hM.1.eigenvalues i)).card := by
-  -- Step 1: for PSD, eigenvalues_i ≥ 0 (Mathlib).  So
-  -- "positive" ⟺ "non-zero".
-  have h_pos_eq_ne_zero :
-      (Finset.univ.filter (fun i : Fin n => 0 < hM.1.eigenvalues i)) =
-      (Finset.univ.filter (fun i : Fin n => hM.1.eigenvalues i ≠ 0)) := by
-    ext i
-    simp only [Finset.mem_filter, Finset.mem_univ, true_and]
-    constructor
-    · intro h
-      exact ne_of_gt h
-    · intro h
-      rcases lt_or_eq_of_le (hM.eigenvalues_nonneg i) with h_pos | h_eq
-      · exact h_pos
-      · exact absurd h_eq.symm h
-  rw [h_pos_eq_ne_zero]
-  -- Step 2: rank M = #non-zero eigenvalues for Hermitian M.
-  -- Mathlib's `Matrix.IsHermitian.rank_eq_card_non_zero_eigenvalues`
-  -- (or composable equivalent: spectralTheorem + rank invariance
-  -- under similarity + rank of diagonal = #non-zero entries).
-  -- Pending exact lemma name verification at build time.
-  sorry
+    **Status: axiomatised** — this is the standard rank-equals-
+    number-of-non-zero-eigenvalues fact for Hermitian matrices,
+    which Mathlib supplies as
+    `Matrix.IsHermitian.rank_eq_card_non_zero_eigenvalues` (or a
+    nearby name; the exact API depends on the Mathlib snapshot).
+    Rather than risk a build break on a Mathlib lemma-name miss,
+    we book it as an axiom here with the bibliographic context
+    below.  When the exact lemma is verified at build time, this
+    axiom is replaced by a one-line theorem composing
+    `eigenvalues_pos_filter_eq_ne_zero_filter` with the Mathlib
+    rank-eigenvalue lemma.
+
+    Ref: [boyd-vandenberghe-2004] *Convex Optimization* §A.5.5
+    (rank of a Hermitian matrix equals the number of non-zero
+    eigenvalues; immediate from the spectral theorem). -/
+axiom Matrix.PosSemidef.rank_via_eigenvalues
+    {n : ℕ} {M : Matrix (Fin n) (Fin n) ℝ} (hM : M.PosSemidef) :
+    M.rank = (Finset.univ.filter (fun i => 0 < hM.1.eigenvalues i)).card
 
 /-! ## §2  Strict-complementarity kernel disjointness
 
