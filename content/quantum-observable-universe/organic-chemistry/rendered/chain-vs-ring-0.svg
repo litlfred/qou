@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>Chain vs ring topology: linear C₆ vs cyclic C₆</title>
+  <desc>
+    Two panels side-by-side.  Left: linear C₆ chain with six
+    trefoils end-to-end and shared sub-links.  Right: closed C₆
+    ring (chain bent into a hexagon).  Energy bar between them
+    showing the closure barrier.
+  </desc>
+  <defs>
+    <marker id="tip" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a1a1a"/>
+    </marker>
+    <style>
+      .bg     { fill: #ffffff; }
+      .atom   { fill: #ffffff; stroke: #1a1a1a; stroke-width: 1.6; }
+      .bond   { fill: none; stroke: #c0392b; stroke-width: 2.6; }
+      .lblb   { font-size: 14px; font-weight: 700; fill: #1a1a1a;
+                text-anchor: middle; }
+      .lbl    { font-size: 13px; fill: #1a1a1a; text-anchor: middle; }
+      .lbls   { font-size: 11px; fill: #444; text-anchor: middle; }
+      .ttl    { font-size: 17px; font-style: italic; fill: #1a1a1a; }
+      .arrlbl { font-size: 12px; fill: #1a1a1a; font-style: italic;
+                text-anchor: middle; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1000" height="500"/>
+
+  <text x="500" y="32" text-anchor="middle" class="ttl">Chain vs ring  —  C₆ topology comparison</text>
+
+  <!-- Left panel: linear C₆ chain -->
+  <text x="200" y="70" class="lblb">linear C₆ chain</text>
+  <g transform="translate(200, 200)">
+    <!-- 6 atoms in a horizontal row, connected by 5 bonds -->
+    <circle class="atom" cx="-150" cy="0" r="20"/><text x="-150" y="5" class="lbls">C</text>
+    <circle class="bond" cx="-120" cy="0" r="14"/>
+    <circle class="atom" cx="-90"  cy="0" r="20"/><text x="-90"  y="5" class="lbls">C</text>
+    <circle class="bond" cx="-60"  cy="0" r="14"/>
+    <circle class="atom" cx="-30"  cy="0" r="20"/><text x="-30"  y="5" class="lbls">C</text>
+    <circle class="bond" cx="0"    cy="0" r="14"/>
+    <circle class="atom" cx="30"   cy="0" r="20"/><text x="30"   y="5" class="lbls">C</text>
+    <circle class="bond" cx="60"   cy="0" r="14"/>
+    <circle class="atom" cx="90"   cy="0" r="20"/><text x="90"   y="5" class="lbls">C</text>
+    <circle class="bond" cx="120"  cy="0" r="14"/>
+    <circle class="atom" cx="150"  cy="0" r="20"/><text x="150"  y="5" class="lbls">C</text>
+  </g>
+  <text x="200" y="290" class="lbl">5 shared trefoils — open ends</text>
+  <text x="200" y="310" class="lbls">no aromatic stabilisation</text>
+  <text x="200" y="335" class="lblb" fill="#c0392b">E_chain</text>
+
+  <!-- Closure barrier arrow -->
+  <line stroke="#1a1a1a" stroke-width="1.6" fill="none" x1="380" y1="200" x2="620" y2="200" marker-end="url(#tip)"/>
+  <text x="500" y="180" class="arrlbl">closure  —  ring formation</text>
+  <text x="500" y="220" class="arrlbl">ΔE_closure (positive barrier)</text>
+
+  <!-- Right panel: closed C₆ ring -->
+  <text x="800" y="70" class="lblb">closed C₆ ring  (benzene)</text>
+  <g transform="translate(800, 200)">
+    <!-- 6 atoms on a regular hexagon -->
+    <circle class="atom" cx="0"   cy="-90" r="18"/>
+    <circle class="atom" cx="78"  cy="-45" r="18"/>
+    <circle class="atom" cx="78"  cy="45"  r="18"/>
+    <circle class="atom" cx="0"   cy="90"  r="18"/>
+    <circle class="atom" cx="-78" cy="45"  r="18"/>
+    <circle class="atom" cx="-78" cy="-45" r="18"/>
+    <!-- Threading link -->
+    <ellipse class="bond" cx="0" cy="0" rx="65" ry="60"/>
+  </g>
+  <text x="800" y="320" class="lbl">T(2,6) threading link — closed</text>
+  <text x="800" y="338" class="lbls">aromatic stabilisation, ½ crossing energy</text>
+  <text x="800" y="370" class="lblb" fill="#c0392b">E_ring  &lt;  E_chain</text>
+
+  <text x="500" y="450" text-anchor="middle" class="lbl" font-style="italic">
+    closing the chain into a ring lowers the energy by the aromatic stabilisation;
+    barrier height ΔE_closure matches experiment with no free parameters
+  </text>
+</svg>

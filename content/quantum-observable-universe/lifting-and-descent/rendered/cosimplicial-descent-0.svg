@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>Cosimplicial descent diagram for A^⊗n</title>
+  <desc>
+    Standard cosimplicial Δ• schematic showing face / degeneracy
+    maps as horizontal arrows between A^⊗n for n = 1, 2, 3.  Used
+    to descend invariants along the brane tower.
+  </desc>
+  <defs>
+    <marker id="tip" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a1a1a"/>
+    </marker>
+    <style>
+      .bg     { fill: #ffffff; }
+      .node   { fill: #ffffff; stroke: #1a1a1a; stroke-width: 1.6; rx: 6; }
+      .lblb   { font-size: 16px; font-weight: 700; fill: #1a1a1a;
+                text-anchor: middle; }
+      .lbl    { font-size: 12px; fill: #1a1a1a; text-anchor: middle; }
+      .arrlbl { font-size: 11px; fill: #444; font-style: italic;
+                text-anchor: middle; }
+      .ttl    { font-size: 17px; font-style: italic; fill: #1a1a1a; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="800" height="380"/>
+
+  <text x="400" y="32" text-anchor="middle" class="ttl">Cosimplicial descent diagram</text>
+
+  <!-- Three nodes: A, A⊗A, A⊗A⊗A at x = 130, 400, 670 -->
+  <rect class="node" x="80"  y="160" width="100" height="60"/>
+  <text x="130" y="186" class="lblb">A</text>
+  <text x="130" y="206" class="lbl">n = 1</text>
+
+  <rect class="node" x="350" y="160" width="100" height="60"/>
+  <text x="400" y="186" class="lblb">A ⊗ A</text>
+  <text x="400" y="206" class="lbl">n = 2</text>
+
+  <rect class="node" x="620" y="160" width="100" height="60"/>
+  <text x="670" y="186" class="lblb">A^⊗³</text>
+  <text x="670" y="206" class="lbl">n = 3</text>
+
+  <!-- Multiple parallel arrows between adjacent nodes -->
+  <!-- A → A⊗A: two coface maps d⁰, d¹ -->
+  <line stroke="#1a1a1a" stroke-width="1.4" x1="180" y1="180" x2="350" y2="180" marker-end="url(#tip)"/>
+  <line stroke="#1a1a1a" stroke-width="1.4" x1="180" y1="200" x2="350" y2="200" marker-end="url(#tip)"/>
+  <text x="265" y="170" class="arrlbl">d⁰</text>
+  <text x="265" y="218" class="arrlbl">d¹</text>
+
+  <!-- A⊗A → A⊗A⊗A: three coface maps -->
+  <line stroke="#1a1a1a" stroke-width="1.4" x1="450" y1="170" x2="620" y2="170" marker-end="url(#tip)"/>
+  <line stroke="#1a1a1a" stroke-width="1.4" x1="450" y1="190" x2="620" y2="190" marker-end="url(#tip)"/>
+  <line stroke="#1a1a1a" stroke-width="1.4" x1="450" y1="210" x2="620" y2="210" marker-end="url(#tip)"/>
+  <text x="535" y="160" class="arrlbl">d⁰</text>
+  <text x="535" y="206" class="arrlbl">d¹</text>
+  <text x="535" y="228" class="arrlbl">d²</text>
+
+  <!-- Backwards co-degeneracy maps (single arrow, dashed) -->
+  <line stroke="#1a1a1a" stroke-width="1.2" stroke-dasharray="4 3" x1="350" y1="240" x2="180" y2="240" marker-end="url(#tip)"/>
+  <text x="265" y="258" class="arrlbl">s⁰</text>
+
+  <line stroke="#1a1a1a" stroke-width="1.2" stroke-dasharray="4 3" x1="620" y1="240" x2="450" y2="240" marker-end="url(#tip)"/>
+  <text x="535" y="258" class="arrlbl">s⁰, s¹</text>
+
+  <text x="400" y="320" text-anchor="middle" class="lbl" font-style="italic">
+    coface maps d^i  (insert unit)  and  co-degeneracy maps s^i  (multiply two factors)
+  </text>
+  <text x="400" y="340" text-anchor="middle" class="arrlbl">
+    descent: invariants of A are equalisers along this cosimplicial diagram
+  </text>
+</svg>

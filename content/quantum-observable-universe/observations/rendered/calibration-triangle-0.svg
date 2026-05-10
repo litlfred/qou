@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 600"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>Three calibrations, N predictions</title>
+  <desc>
+    Triangle whose three vertices are the calibration scalars
+    (m_μ/m_e, m_e, Q_β(n)).  Inside the triangle, ~30 prediction
+    dots labelled with predicted observables.  Each input vertex
+    feeds every prediction; no vertex-to-vertex arrows.
+  </desc>
+  <defs>
+    <style>
+      .bg     { fill: #ffffff; }
+      .edge   { stroke: #1a1a1a; stroke-width: 1.6; fill: none; }
+      .vbox   { fill: #ffffff; stroke: #1a1a1a; stroke-width: 1.6; rx: 6; }
+      .vlbl   { font-size: 14px; font-weight: 700; fill: #1a1a1a;
+                text-anchor: middle; }
+      .pred   { fill: #1a1a1a; }
+      .predlbl { font-size: 9px; fill: #1a1a1a; }
+      .ttl    { font-size: 17px; font-style: italic; fill: #1a1a1a; }
+      .lbls   { font-size: 11px; fill: #444; text-anchor: middle; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="700" height="600"/>
+
+  <text x="350" y="32" text-anchor="middle" class="ttl">Three calibrations, dozens of predictions</text>
+
+  <!-- Triangle vertices: A=(350, 80), B=(80, 480), C=(620, 480) -->
+  <polygon class="edge" points="350,90 90,480 610,480"/>
+
+  <!-- Vertex boxes -->
+  <rect class="vbox" x="270" y="60" width="160" height="50"/>
+  <text x="350" y="80" class="vlbl">m_μ / m_e</text>
+  <text x="350" y="98" class="lbls">leptonic ratio</text>
+
+  <rect class="vbox" x="20" y="500" width="140" height="50"/>
+  <text x="90" y="520" class="vlbl">m_e</text>
+  <text x="90" y="538" class="lbls">leptonic scale</text>
+
+  <rect class="vbox" x="540" y="500" width="140" height="50"/>
+  <text x="610" y="520" class="vlbl">Q_β(n)</text>
+  <text x="610" y="538" class="lbls">hadronic scale</text>
+
+  <!-- Prediction dots scattered inside the triangle -->
+  <g class="predlbl">
+    <circle class="pred" cx="350" cy="180" r="3"/><text x="358" y="183">m_p</text>
+    <circle class="pred" cx="290" cy="220" r="3"/><text x="298" y="223">m_n</text>
+    <circle class="pred" cx="410" cy="220" r="3"/><text x="418" y="223">m_τ</text>
+    <circle class="pred" cx="240" cy="270" r="3"/><text x="248" y="273">α_em</text>
+    <circle class="pred" cx="460" cy="270" r="3"/><text x="468" y="273">m_W</text>
+    <circle class="pred" cx="200" cy="320" r="3"/><text x="208" y="323">m_Z</text>
+    <circle class="pred" cx="500" cy="320" r="3"/><text x="508" y="323">Λ_QCD</text>
+    <circle class="pred" cx="170" cy="380" r="3"/><text x="178" y="383">B/A(⁴He)</text>
+    <circle class="pred" cx="340" cy="350" r="3"/><text x="348" y="353">B/A(⁵⁶Fe)</text>
+    <circle class="pred" cx="540" cy="380" r="3"/><text x="548" y="383">B/A(²³⁸U)</text>
+    <circle class="pred" cx="270" cy="420" r="3"/><text x="278" y="423">α(⁴He)</text>
+    <circle class="pred" cx="430" cy="420" r="3"/><text x="438" y="423">Q_β(³H)</text>
+    <circle class="pred" cx="200" cy="450" r="3"/><text x="208" y="453">m(C₆H₆)</text>
+    <circle class="pred" cx="500" cy="450" r="3"/><text x="508" y="453">E(H₂)</text>
+    <circle class="pred" cx="350" cy="270" r="3"/><text x="358" y="273">m_μ</text>
+    <circle class="pred" cx="350" cy="430" r="3"/><text x="358" y="433">G(q)</text>
+  </g>
+
+  <text x="350" y="585" text-anchor="middle" class="lbls">three inputs (corners) feed every prediction (interior dot) — no free parameters</text>
+</svg>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 600"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>Bring's three power-sum equations as nested constraints</title>
+  <desc>
+    Three concentric ellipses in P^4 schematic.  Outer ellipse:
+    ∑ x_i = 0 (linear).  Middle: ∑ x_i² = 0 (quadric).  Inner:
+    ∑ x_i³ = 0 (cubic).  Their intersection — drawn as a small
+    central curve — is Bring's surface Σ₄ with g = 4.
+  </desc>
+  <defs>
+    <style>
+      .bg     { fill: #ffffff; }
+      .e1     { fill: rgba(192, 57, 43, 0.10); stroke: #c0392b;
+                stroke-width: 1.6; }
+      .e2     { fill: rgba(39, 174, 96, 0.13); stroke: #27ae60;
+                stroke-width: 1.6; }
+      .e3     { fill: rgba(41, 128, 185, 0.16); stroke: #2980b9;
+                stroke-width: 1.6; }
+      .center { fill: #1a1a1a; stroke: #1a1a1a; stroke-width: 1.6; }
+      .lblr   { fill: #c0392b; font-size: 14px; font-weight: 700; }
+      .lblg   { fill: #27ae60; font-size: 14px; font-weight: 700; }
+      .lblb   { fill: #2980b9; font-size: 14px; font-weight: 700; }
+      .ttl    { font-size: 17px; font-style: italic; fill: #1a1a1a; }
+      .lbl    { font-size: 13px; fill: #1a1a1a; text-anchor: middle; }
+      .lbls   { font-size: 11px; fill: #444; text-anchor: middle; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="700" height="600"/>
+
+  <text x="350" y="32" text-anchor="middle" class="ttl">Bring's surface  Σ₄  ⊂  ℙ⁴  —  three nested constraints</text>
+
+  <!-- Centre: (350, 290).  Three concentric ellipses. -->
+  <ellipse class="e1" cx="350" cy="290" rx="280" ry="200"/>
+  <text x="630" y="92" class="lblr" text-anchor="end">∑ xᵢ = 0   (linear hyperplane)</text>
+
+  <ellipse class="e2" cx="350" cy="290" rx="200" ry="150"/>
+  <text x="540" y="155" class="lblg" text-anchor="end">∑ xᵢ² = 0   (quadric)</text>
+
+  <ellipse class="e3" cx="350" cy="290" rx="120" ry="100"/>
+  <text x="460" y="218" class="lblb" text-anchor="end">∑ xᵢ³ = 0   (cubic)</text>
+
+  <!-- Centre: Σ₄ -->
+  <ellipse class="center" cx="350" cy="290" rx="40" ry="22"/>
+  <text x="350" y="295" class="lbl" fill="#fff" font-weight="700">Σ₄</text>
+
+  <!-- Footer -->
+  <text x="350" y="540" class="lbl" font-style="italic">three power-sum equations cut out a smooth genus-4 curve in ℙ⁴</text>
+  <text x="350" y="560" class="lbls">χ(Σ₄) = 2 − 2g = −6  ·  Aut(Σ₄) = S₅  ·  intersection is transverse</text>
+  <text x="350" y="580" class="lbls">at  (1, ζ, ζ², ζ³, ζ⁴)  with  ζ = e^{2πi/5}, all three power sums vanish</text>
+</svg>
