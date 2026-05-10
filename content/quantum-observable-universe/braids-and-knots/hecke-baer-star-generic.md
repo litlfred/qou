@@ -9,8 +9,9 @@ idempotent* (a projection).*
 
 ### Proof
 
-By the classical Wedderburn decomposition for $H_n(q)$ at generic
-$q$ (Tits–Iwahori 1965; see also [`prop:hoefsmit-seminormal-form`](#prop:hoefsmit-seminormal-form)):
+By the canonical Wedderburn decomposition for $H_n(q)$ at generic
+$q$ ([`prop:wedderburn-weight-canonical`](#prop:wedderburn-weight-canonical),
+[`prop:hoefsmit-seminormal-form`](#prop:hoefsmit-seminormal-form)):
 
 $$
   H_n(q) \;\cong\; \bigoplus_{\lambda \vdash n} M_{d_\lambda}(R),

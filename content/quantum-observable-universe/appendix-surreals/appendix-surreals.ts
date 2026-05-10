@@ -14,6 +14,9 @@ export default chapter({
       title: "What survives and what breaks",
       blocks: [
         "algebraic-core-survives",
+        // Dual ledger: every transcendental in the paper, indexed
+        // by Goncharov period-depth.
+        "transcendental-accounting",
         "analytic-obstructions",
         "calculus-up-to-epsilon",
       ],

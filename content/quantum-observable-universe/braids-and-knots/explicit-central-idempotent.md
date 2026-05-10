@@ -1,16 +1,12 @@
 **Proposition (explicit formula for the central primitive
-idempotents $e_\lambda$ via Murphy elements).**
+idempotents $e_\lambda$ via Lagrange interpolation in Murphy elements).**
 
 *Let $H_n(q)$ be the Iwahori–Hecke algebra over $R$ at generic
-$q$, and let $\{L_1, \ldots, L_n\}$ be the Jucys–Murphy elements*
-
-$$
-  L_k \;:=\; \sum_{j < k} (j, k)_q \;\in\; H_n(q),
-$$
-
-*where $(j, k)_q$ is the $q$-deformed transposition. The Murphy
-elements pairwise commute and act diagonally on the Hoefsmit
-seminormal basis: $L_k \cdot v_T = c_T(k; q) \cdot v_T$ for any
+$q$, with Jucys–Murphy elements
+$\{J_1, \ldots, J_n\} \subset H_n(q)$ as in
+[`prop:jucys-murphy-central-elements-qou`](#prop:jucys-murphy-central-elements-qou).
+The JM elements pairwise commute and act diagonally on the Hoefsmit
+seminormal basis: $J_k \cdot v_T = c_T(k; q) \cdot v_T$ for any
 standard Young tableau $T$ of shape $\lambda \vdash n$, where*
 
 $$
@@ -22,22 +18,25 @@ $$
 [`prop:hoefsmit-seminormal-form`](#prop:hoefsmit-seminormal-form)).*
 
 *The central primitive idempotent $e_\lambda \in Z(H_n(q))$
-projecting onto the $\lambda$-Wedderburn block has the explicit
-formula:*
+projecting onto the $\lambda$-Wedderburn block
+([`prop:wedderburn-weight-canonical`](#prop:wedderburn-weight-canonical))
+has the explicit formula:*
 
 $$
   \boxed{\;
     e_\lambda \;=\; \sum_{T \in \mathrm{SYT}(\lambda)}
     \prod_{k=1}^{n}
     \prod_{\substack{\square \in \lambda \\ \square \neq T(k)}}
-    \frac{L_k - c(\square; q)}{c(T(k); q) - c(\square; q)}.
+    \frac{J_k - c(\square; q)}{c(T(k); q) - c(\square; q)}.
   \;}
 $$
 
 *The product over $\square$ ranges over boxes of $\lambda$ other
 than the position $T(k)$ assigned by tableau $T$. Each factor is
-a Lagrange-interpolation projector onto the eigenspace where $L_k$
-has eigenvalue $c(T(k); q)$.*
+a Lagrange-interpolation projector onto the eigenspace where $J_k$
+has eigenvalue $c(T(k); q)$. Together with
+[`prop:jucys-murphy-central-elements-qou`](#prop:jucys-murphy-central-elements-qou)
+this gives a complete explicit construction of $Z(H_n(q))$.*
 
 ### Cross-checks
 

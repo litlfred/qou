@@ -5,6 +5,7 @@ export default proposition({
   title:
     "Iwahori--Hecke algebra $H_n(q)$ is a Baer-*-ring at generic $q$",
   uses: [
+    "prop:wedderburn-weight-canonical",
     "prop:hoefsmit-seminormal-form",
     "prop:frobenius-gram-matrix",
     "prop:explicit-central-idempotent",

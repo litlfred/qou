@@ -6,6 +6,8 @@ export default proposition({
     "Explicit central primitive idempotents $e_\\lambda$ via Murphy elements",
   uses: [
     "prop:hoefsmit-seminormal-form",
+    "prop:wedderburn-weight-canonical",
+    "prop:jucys-murphy-central-elements-qou",
     "prop:hecke-baer-star-generic",
     "conj:gb-depth-period-correspondence",
     "conj:bring-figure-eight-depth-2-witness",
