@@ -13,7 +13,11 @@ Question: Form the c_λ-weighted observable
     W_c(K) := Σ_{λ ⊢ 3A,  ht(λ) ≤ 6}  c_λ(q_0) · χ^λ(β_K)(q_0)
 
 over the canonical Δ_I-coupled atomic word `β_K =
-mass_at_3A_proper.atom_braid_word_3A(Z, N)` for K ∈ {D, T, ³He, ⁴He}.
+mass_at_3A_proper.atom_braid_word_3A(Z, N)` for K ∈ {D, T, ³He}.
+(⁴He has 58 height-≤6 partitions at H_12 with much larger
+seminormal matrix dimensions; the probe is feasible there but
+intentionally deferred behind the (B) ⁴He Path A pole-order check
+in the same H follow-up queue.)
 
 If W_c(T) = W_c(³He) (to numerical precision), then Option E's
 crystal weight respects the Hopf-antipode V_λ ↔ V_{λᵀ} symmetry —
@@ -41,7 +45,13 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 import mpmath as mp
 
-mp.mp.dps = 15
+# 50 dps matches the precision policy of rho_k_h3a_crystal.py and
+# rho_k_h3a_refinement.py.  The c_λ Macdonald hook-content is
+# evaluated in mpmath at this precision and serialised in full;
+# the χ^λ matrix product is in numpy float64 (~1e-15 rel) for
+# speed but the resulting per-atom W_c value is recovered to ~1e-15
+# rel — well above the 1e-3 falsification threshold this probe uses.
+mp.mp.dps = 50
 
 from witness_base import WitnessBuilder
 from canonical_braid_crossings import atom_canonical_crossings
@@ -94,6 +104,36 @@ def height_le_6_partitions(n: int) -> list[tuple[int, ...]]:
 
 
 def main() -> int:
+    # Instantiate the witness up front so durationMs covers the
+    # actual probe runtime, not just serialization (per Copilot
+    # review on PR #629).
+    out = (WitnessBuilder("option-e-isospin-probe", engine="mpmath")
+        .set_content_block("rem:option-e-isospin-test")
+        .set_description(
+            "H follow-up to PR #619: tests whether the Option E "
+            "Kashiwara crystal weight c_λ(q) (per rho_k_h3a_crystal) "
+            "preserves the T = ³He isospin invariance established for "
+            "the LP-dual shadow price (PR #622 Hopf-antipode) under "
+            "the canonical Δ_I-coupled atomic braid words. Probes "
+            "W_c(K) := Σ_λ c_λ(q_0)·χ^λ(β_K)(q_0) for K ∈ {D, T, ³He}."
+        )
+        .add_data("narrative_block", "rem:option-e-isospin-test")
+        .add_data("conditional_on", ["conj:crystal-graph-realization"])
+        .add_data("q_0", str(Q_MP))
+        .add_parameter("mp_dps", str(mp.mp.dps))
+        .add_data("inputs", {
+            "atom_braid_words":
+                "mass_at_3A_proper.atom_braid_word_3A "
+                "(canonical Δ_I-coupled (c, d, gen_idx) triples)",
+            "c_lambda_q":
+                "rho_k_h3a_crystal.c_lambda_q "
+                "(mpmath at mp_dps; Macdonald hook-content)",
+            "chi_lambda":
+                "hoefsmit_matrices_numeric (mpmath seminormal "
+                "matrices) → chi_numeric_float (numpy float64 trace "
+                "of the canonical-word product)",
+        })
+    )
     print("Option E isospin probe — c_λ(q_0)-weighted observable\n",
           flush=True)
     print("Question: does W_c(T) = W_c(³He) under canonical Δ_I words?\n",
@@ -156,7 +196,7 @@ def main() -> int:
 
     print("─" * 60)
     print(f"  Isospin split:  |W_c(T) - W_c(³He)|  = "
-          f"{mp.nstr(isospin_split, 12) if isospin_split else 'n/a'}")
+          f"{mp.nstr(isospin_split, 12) if isospin_split is not None else 'n/a'}")
     if isospin_split is not None:
         rel_split = abs(isospin_split / W_T) if W_T != 0 else mp.mpf("nan")
         print(f"  Relative:        |Δ| / |W_c(T)|       = "
@@ -168,26 +208,12 @@ def main() -> int:
             print(f"\n  RESULT: Option E BREAKS isospin invariance "
                   f"(T ≠ ³He under canonical Δ_I words).")
 
-    out = (WitnessBuilder("option-e-isospin-probe", engine="mpmath")
-        .set_audit_only("rem:option-e-isospin-test")
-        .set_description(
-            "H follow-up to PR #619: tests whether the Option E Kashiwara "
-            "crystal weight c_λ(q) (per rho_k_h3a_crystal) preserves the "
-            "T = ³He isospin invariance established for the LP-dual "
-            "shadow price (PR #622 Hopf-antipode) under the canonical "
-            "Δ_I-coupled atomic braid words. Probes W_c(K) := "
-            "Σ_λ c_λ(q_0)·χ^λ(β_K)(q_0) for K ∈ {D, T, ³He}."
-        )
-        .add_data("narrative_block", "rem:option-e-isospin-test")
-        .add_data("conditional_on", ["conj:crystal-graph-realization"])
-        .add_data("q_0", str(Q_MP))
-        .add_data("inputs", {
-            "atom_braid_words": "mass_at_3A_proper.atom_braid_word_3A",
-            "c_lambda_q": "rho_k_h3a_crystal.c_lambda_q (Macdonald hook-content)",
-            "chi_lambda": "hoefsmit_symbolic.chi_lambda_symbolic",
-        })
+    out = (out
         .add_data("atoms", rows)
-        .add_data("isospin_split_T_minus_3He", str(isospin_split) if isospin_split else None)
+        .add_data(
+            "isospin_split_T_minus_3He",
+            str(isospin_split) if isospin_split is not None else None,
+        )
     )
     if isospin_split is not None:
         # Falsification probe: under the canonical Δ_I-coupled

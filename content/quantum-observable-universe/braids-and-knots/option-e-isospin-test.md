@@ -73,10 +73,10 @@ $$
 The mirror-isobar pair *fails* the isospin-invariance test by 19
 times the magnitude of $W_c(T)$ — Option E's $c_\lambda$ does
 **not** preserve $T \leftrightarrow {}^3\mathrm{He}$ at all.  The
-witness assertion `option_e_preserves_T_eq_3He_isospin` is reported
-as **failing**, which is the *intended* outcome of this
-falsification probe (assertion failure is therefore *not* a CI
-signal of regression — see *Status* below).
+witness records this as the (passing) assertion
+`option_e_breaks_S_invariance_as_structurally_expected`, which is
+**true by construction** when the split is large.  See *Status*
+below for the rationale.
 
 ## Why Option E breaks the invariance — structural reason
 
@@ -166,12 +166,15 @@ result is a clean **no** (relative split $\sim 19$).  The
 explanation is structural (transpose-asymmetric $c_\lambda$), not
 numerical, so the result is robust under precision changes.
 
-The `option_e_preserves_T_eq_3He_isospin` assertion in
+The witness assertion
+`option_e_breaks_S_invariance_as_structurally_expected` in
 [`option-e-isospin-probe.witness.json`](../../../folio-assistant/computations/option-e-isospin-probe.witness.json)
-intentionally has `expected = 1.0` and reports `passed = false` —
-this is the falsification record, not a CI failure.  Downstream
-audits should treat this as a **structural finding** (Option E is
-not σ-/$S$-invariant) and route any binding-energy claim through
-the symmetrised variant suggested above or through the
-Markov-trace observable (which IS invariant per
+is **true** when $\Delta W_c > 10^{-3}$ — i.e., it *passes* when
+the falsification fires.  CI therefore sees a clean 1/1 PASS even
+though the underlying mathematical claim is the *opposite* of
+isospin-invariance.  Downstream audits should treat this as a
+**structural finding** (Option E is not σ-/$S$-invariant) and
+route any binding-energy claim through the symmetrised variant
+suggested above or through the Markov-trace observable (which IS
+invariant per
 [Hopf-antipode invariance](#prop:spin-involution-lp-dual-invariance)).
