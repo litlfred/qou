@@ -28,7 +28,7 @@ non-zero **Chern–Simons invariant**
 $$
   \mathrm{CS}(T(p, q))
   \;=\;
-  -\frac{(p^2 - 1)(q^2 - 1)}{12 p q} \cdot \pi^2
+  -\frac{(p^2 - 1)(q^2 - 1)}{24 p q} \cdot \pi^2
   \pmod{\pi^2 \mathbb{Z}}
 $$
 
@@ -70,13 +70,13 @@ torus-knot rows confirm the framework on degenerate cases.
 
 | $T(p, q)$ | Genus $g$ | $\mathrm{Vol}$ | $\mathrm{CS} \pmod{\pi^2 \mathbb{Z}}$ |
 |---|---|---|---|
-| $T(2, 3) = 3_1$ | 1 | 0 | $-\pi^2 / 6$ |
-| $T(2, 5)$ | 2 | 0 | $-\frac{(2^2-1)(5^2-1)}{120} \pi^2 = -\frac{3 \cdot 24}{120} \pi^2 = -\frac{3}{5} \pi^2$ |
-| $T(2, 7)$ | 3 | 0 | $-\frac{3 \cdot 48}{168} \pi^2 = -\frac{6}{7} \pi^2$ |
-| $T(2, 9)$ | 4 | 0 | $-\frac{3 \cdot 80}{216} \pi^2 = -\frac{10}{9} \pi^2$ |
-| $T(3, 4)$ | 3 | 0 | $-\frac{8 \cdot 15}{144} \pi^2 = -\frac{5}{6} \pi^2$ |
-| $T(3, 5)$ | 4 | 0 | $-\frac{8 \cdot 24}{180} \pi^2 = -\frac{16}{15} \pi^2$ |
-| $T(5, 2)$ | 2 | 0 | $-\frac{24 \cdot 3}{120} \pi^2 = -\frac{3}{5} \pi^2$ |
+| $T(2, 3) = 3_1$ | 1 | 0 | $-\frac{3 \cdot 8}{24 \cdot 6} \pi^2 = -\frac{1}{6} \pi^2$ |
+| $T(2, 5)$ | 2 | 0 | $-\frac{3 \cdot 24}{24 \cdot 10} \pi^2 = -\frac{3}{10} \pi^2$ |
+| $T(2, 7)$ | 3 | 0 | $-\frac{3 \cdot 48}{24 \cdot 14} \pi^2 = -\frac{3}{7} \pi^2$ |
+| $T(2, 9)$ | 4 | 0 | $-\frac{3 \cdot 80}{24 \cdot 18} \pi^2 = -\frac{5}{9} \pi^2$ |
+| $T(3, 4)$ | 3 | 0 | $-\frac{8 \cdot 15}{24 \cdot 12} \pi^2 = -\frac{5}{12} \pi^2$ |
+| $T(3, 5)$ | 4 | 0 | $-\frac{8 \cdot 24}{24 \cdot 15} \pi^2 = -\frac{8}{15} \pi^2$ |
+| $T(5, 2)$ | 2 | 0 | $-\frac{24 \cdot 3}{24 \cdot 10} \pi^2 = -\frac{3}{10} \pi^2$ |
 
 Note $T(2, 5) \cong T(5, 2)$ (cyclic-renaming symmetry of torus
 knots), so the last two are equivalent.
