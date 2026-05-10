@@ -389,7 +389,7 @@ export const references: CSLData[] = [
   ref({
     id: "suslin1991",
     type: "article-journal",
-    title: "K_3 of a field, and the Bloch group",
+    title: "$K_3$ of a field, and the Bloch group",
     author: [
       { family: "Suslin", given: "A. A." },
     ],
@@ -2569,7 +2569,7 @@ export const references: CSLData[] = [
   ref({
     id: "wenzl1988",
     type: "article-journal",
-    title: "Hecke algebras of type A_n and subfactors",
+    title: "Hecke algebras of type $A_n$ and subfactors",
     author: [{ family: "Wenzl", given: "Hans" }],
     "container-title": "Inventiones Mathematicae",
     volume: "92",
