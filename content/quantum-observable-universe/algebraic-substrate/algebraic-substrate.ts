@@ -101,6 +101,8 @@ export default chapter({
         "joint-galois-braid-action",
         // Joint action verified on figure-8 cell (self-conjugate trivial case).
         "joint-galois-braid-figure-8-verified",
+        // Joint action discharged in general (disjoint structure).
+        "joint-galois-braid-discharged",
         // Graded Baer-* on H_q across the depth filtration.
         "graded-baer-star-Hq",
         // Two-filtration bridge: iterated-integral depth ↔ partition GB-depth.

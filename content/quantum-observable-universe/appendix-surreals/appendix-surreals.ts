@@ -38,6 +38,8 @@ export default chapter({
         "b1-torus-knot-rows-theorem",
         // B1 at additional hyperbolic-knot rows (Borromean, Whitehead).
         "b1-hyperbolic-rows-theorem",
+        // Canonical B1 current-status synthesis (rounds 1-11).
+        "b1-current-status",
         "analytic-obstructions",
         "calculus-up-to-epsilon",
       ],
