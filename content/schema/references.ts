@@ -257,7 +257,7 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[2022]] },
     URL: "https://physics.nist.gov/cgi-bin/cuu/Value?mmusme",
     publisher: "NIST Standard Reference Database",
-    note: "Muon--electron mass ratio m_\\mu/m_e = 206.768 2830(46)",
+    note: "Muon--electron mass ratio $m_\\mu/m_e = 206.768\\,2830(46)$",
   }),
 
   // ── Kronheimer and Mrowka 2004 ────────────────────────────────
@@ -382,7 +382,7 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[1974]] },
     page: "235-272",
     DOI: "10.24033/asens.1269",
-    note: "Borel's regulator: rank K_{2n-1}(O_F) ⊗ Q = r_1 + r_2 (n odd) or r_2 (n even), and Bloch-Wigner / polylogarithm regulator maps from K_{2n-1} to R^{r_2}.",
+    note: "Borel's regulator: rank $K_{2n-1}(O_F) \\otimes \\mathbb{Q} = r_1 + r_2$ ($n$ odd) or $r_2$ ($n$ even), and Bloch-Wigner / polylogarithm regulator maps from $K_{2n-1}$ to $\\mathbb{R}^{r_2}$.",
   }),
 
   // ── Suslin 1991 ───────────────────────────────────────────────
@@ -2736,7 +2736,7 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[1997]] },
     DOI: "10.1016/S0370-2693(97)00711-9",
     note:
-      "Empirical extraction of the Wigner energy term \u0394_W \u2248 6.3 MeV " +
+      "Empirical extraction of the Wigner energy term $\\Delta_W \\approx 6.3$ MeV " +
       "in the nuclear mass formula, attributed to T=0 isoscalar " +
       "proton-neutron pairing.",
   }),
@@ -2940,10 +2940,10 @@ export const references: CSLData[] = [
     DOI: "10.1007/978-3-0348-8268-2_19",
     URL: "https://doi.org/10.1007/978-3-0348-8268-2_19",
     note:
-      "Foundational survey of arc spaces L(X) = lim L_n(X) and " +
+      "Foundational survey of arc spaces $L(X) = \\varprojlim L_n(X)$ and " +
       "motivic integration. Provides the change-of-variables " +
       "formula for blow-ups and the motivic measure on cylindrical " +
-      "subsets of L(X).",
+      "subsets of $L(X)$.",
   }),
 
   // ── Mac Lane 1971 ─────────────────────────────────────────────

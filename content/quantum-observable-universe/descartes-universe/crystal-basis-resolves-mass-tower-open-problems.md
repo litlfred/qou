@@ -155,7 +155,7 @@ crystal-graph computation.
 |---|---|---|
 | Chirality $\langle c \rangle_\beta$ | Type-B folded crystal imbalance computation | finite Kashiwara graph traversal |
 | Term 7 $\alpha_5$ magnitude | height-6 crystal-vertex enumeration | RSK / hook-content sum at $\lambda \vdash 3A$, ht 6 |
-| z-Habiro $|V|\to 1$ | KL classical-limit integer regularisation | bounded by classical dim$(V_\lambda)$ sums |
+| z-Habiro $\lvert V\rvert\to 1$ | KL classical-limit integer regularisation | bounded by classical dim$(V_\lambda)$ sums |
 | Bloch decomposition of $2/(3\pi)$ | (transverse — crystal bases pre-archimedean) | Bloch-group integer relation search |
 
 Three of the four problems become **finite combinatorial

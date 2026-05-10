@@ -4,8 +4,7 @@ with no gap between photon pair and quark output.
 
 **Step 0: two colored photons collide.**
 Each photon is the Hecke algebra element
-$\gamma = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1
-+ \varphi_{01}\sigma_0\sigma_1$
+$\gamma = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1 + \varphi_{01}\sigma_0\sigma_1$
 with independent color weights $\varphi_0, \varphi_1, \varphi_{01}$
 ([pair production](#def:breit-wheeler-pair-production)).
 The derivation below uses the 3-term specialization $\varphi_{01} = 0$.

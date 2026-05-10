@@ -86,7 +86,7 @@ not a derivation.
 
 Per [`docs/audits/n-v-derivation-candidates.md`](../../../docs/audits/n-v-derivation-candidates.md),
 the closure $N_v = 120 \cdot q_0^{90}$ matches the experimental
-$N_v_{\mathrm{target}} = 1.4455 \times 10^6$ to within $-0.58\%$.
+$N_{v,\mathrm{target}} = 1.4455 \times 10^6$ to within $-0.58\%$.
 No other small-prefactor / integer-$L$ pair in a search space of
 $\sim 1000$ pairs gives a closer match; the next-best (`5²·h ·
 q^{120}`) is at $-0.93\%$.

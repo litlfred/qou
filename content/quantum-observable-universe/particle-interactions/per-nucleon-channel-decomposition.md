@@ -63,8 +63,8 @@ Alt $= $ Sign ($\lambda = -q^{-3}$).
 | Channel | $\lambda_c$ | $G_P(c)$ | Numeric at $q_0$ |
 |:---:|:---:|:---:|:---:|
 | Sym (Trivial) | $q^3$ | $q \cdot \tfrac{1}{2}[2]_q \cdot \tfrac{1}{2}[2]_q$ | $+1.122$ |
-| Std $\lambda_1$ (Unconf.) | $-q$ | $\langle v_1 | \Delta_3 | v_1 \rangle$ | $-1.174$ |
-| Std $\lambda_2$ (Conf.) | $q^{-1}$ | $\langle v_2 | \Delta_3 | v_2 \rangle$ | $+0.858$ |
+| Std $\lambda_1$ (Unconf.) | $-q$ | $\langle v_1 \mid \Delta_3 \mid v_1 \rangle$ | $-1.174$ |
+| Std $\lambda_2$ (Conf.) | $q^{-1}$ | $\langle v_2 \mid \Delta_3 \mid v_2 \rangle$ | $+0.858$ |
 | Alt (Sign) | $-q^{-3}$ | $(-q^{-1}) \cdot (-\tfrac{1}{2}[2]_q)^2$ | $-0.911$ |
 
 **Channel sum:** $a = \sum_c G_P(c) = -h/2$ (verified algebraically
@@ -79,8 +79,8 @@ $$
 | Channel | $\lambda_c$ | $G_N(c)$ | Numeric at $q_0$ |
 |:---:|:---:|:---:|:---:|
 | Sym (Trivial) | $q^3$ | $\tfrac{1}{2}[2]_q \cdot q^{-1} \cdot \tfrac{1}{2}[2]_q$ | $+0.9108$ |
-| Std $\lambda_1$ (Unconf.) | $-q$ | $\langle v_1 | \Delta_3 | v_1 \rangle$ | $-1.2222$ |
-| Std $\lambda_2$ (Conf.) | $q^{-1}$ | $\langle v_2 | \Delta_3 | v_2 \rangle$ | $+0.7995$ |
+| Std $\lambda_1$ (Unconf.) | $-q$ | $\langle v_1 \mid \Delta_3 \mid v_1 \rangle$ | $-1.2222$ |
+| Std $\lambda_2$ (Conf.) | $q^{-1}$ | $\langle v_2 \mid \Delta_3 \mid v_2 \rangle$ | $+0.7995$ |
 | Alt (Sign) | $-q^{-3}$ | $(-\tfrac{1}{2}[2]_q) \cdot (-q) \cdot (-\tfrac{1}{2}[2]_q)$ | $-1.1221$ |
 
 **Channel sum:** $b = \sum_c G_N(c) = -3(q^2-1)(q^2+1)^2/(4q^3)$

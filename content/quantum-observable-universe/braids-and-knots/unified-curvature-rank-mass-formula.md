@@ -49,7 +49,7 @@ to a curvature-rank stratum or partial sum:*
 
 | Stratum | Legacy name | Identification |
 |:-:|---|---|
-| $k = 0$ | Term 1 | descended Frobenius integral $\bigl|\!\int_A \rho(\beta_\mathcal{K})\bigr|$ |
+| $k = 0$ | Term 1 | descended Frobenius integral $\bigl\lvert\!\int_A \rho(\beta_\mathcal{K})\bigr\rvert$ |
 | $k = 1$ | Term 2 | single-row hook strata |
 | $k = 2$ | Term 3 | double-row hook strata |
 | all $k$ | Term 4 | universal Frobenius co-Casimir, $\sum_\lambda w_\lambda = 1$ |

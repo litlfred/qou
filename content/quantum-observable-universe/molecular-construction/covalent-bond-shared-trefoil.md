@@ -28,7 +28,7 @@ nucleus):*
 |:---|:---|:---|
 | Crossings | $\sigma^{-1}_{g(\mathfrak{p}_i)}$ (1 attractive) | $\sigma^{-1}_{g(\mathfrak{p}_i)} \cdot \sigma^{-1}_{g(\mathfrak{p}_j)}$ (2 attractive) |
 | Transfer matrix | $T_{\mathfrak{p}e}$ (single) | $T_{\mathfrak{p}_ie} \cdot T_{\mathfrak{p}_je}$ (product) |
-| $\Phi_1$ contribution | $\ln|V_e|$ | $\ln|V_{e,i}| + \ln|V_{e,j}|$ |
+| $\Phi_1$ contribution | $\ln\lvert V_e\rvert$ | $\ln\lvert V_{e,i}\rvert + \ln\lvert V_{e,j}\rvert$ |
 
 *A bond of order $k$ contributes $2k$ attractive crossings.  The
 LP dual finds the optimal assignment of electrons to bonding

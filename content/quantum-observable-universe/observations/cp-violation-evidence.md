@@ -19,7 +19,7 @@ CP violation is firmly established in three systems:
 
 2. **$B$ mesons** (2001).  The BaBar \cite{aubert2001} and Belle
    experiments measured CP-violating asymmetries in
-   $B^0 \to J/\psiK_S$ decays, confirming the
+   $B^0 \to J/\psi\, K_S$ decays, confirming the
    Kobayashi--Maskawa mechanism: the CKM quark-mixing matrix
    contains an irreducible complex phase $\delta_{\mathrm{CKM}}$
    that cannot be removed by field redefinitions.
