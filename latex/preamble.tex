@@ -180,6 +180,16 @@
   \marginnote{\scriptsize\itshape\raggedright #1}%
 }
 
+% \figtitle{text} — short generated title rendered immediately under
+% a figure's caption, taken from the first heading of the sibling
+% <name>.prompt.md sidecar.  Used so the printed PDF carries both
+% the long descriptive caption (alt-text) and a short declarative
+% title that matches what the figures index displays.
+\newcommand{\figtitle}[1]{%
+  \par\vspace{-0.4em}\noindent
+  \hbox to \linewidth{\hfill\textit{\small #1}\hfill}%
+}
+
 % ── Suppress hyperref math-in-bookmark warnings ─────────────────────────────
 % Math in theorem titles generates "Token not allowed in PDF string" warnings.
 % These are harmless (hyperref strips the math for bookmarks) but noisy.

@@ -163,7 +163,7 @@ let currentSourceDir: string | undefined;
  * when no sidecar is present.  The url is interpreted relative to
  * `currentSourceDir`; absolute / external urls return undefined.
  */
-function lookupFigurePrompt(url: string): string | undefined {
+function lookupFigurePrompt(url: string): PromptSidecar | undefined {
   if (!currentSourceDir) return undefined;
   return readPromptSidecar(currentSourceDir, url);
 }
@@ -176,17 +176,37 @@ function lookupFigurePrompt(url: string): string | undefined {
  * branch which reads `block.meta.file` directly without going through
  * mdast.
  */
-function readPromptSidecar(sourceDir: string, fileUrl: string): string | undefined {
+/** Parsed `<stem>.prompt.md` — title (first `# …` heading) + body. */
+interface PromptSidecar {
+  title?: string;
+  body: string;
+}
+
+function readPromptSidecar(sourceDir: string, fileUrl: string): PromptSidecar | undefined {
   if (!fileUrl || /^(https?:|data:)/i.test(fileUrl)) return undefined;
   const ext = extname(fileUrl);
   if (!ext) return undefined;
   const stem = fileUrl.slice(0, -ext.length);
   const promptPath = join(sourceDir, `${stem}.prompt.md`);
   if (!existsSync(promptPath)) return undefined;
-  return readFileSync(promptPath, "utf-8")
-    .replace(/\r/g, "")
-    .replace(/\s+/g, " ")
-    .trim() || undefined;
+  const raw = readFileSync(promptPath, "utf-8").replace(/\r/g, "");
+  const lines = raw.split("\n");
+  let title: string | undefined;
+  let bodyStart = 0;
+  // Pull a leading `# Title` heading off, if present.
+  for (let i = 0; i < lines.length; i++) {
+    const ln = lines[i].trim();
+    if (ln === "") continue;
+    const h = ln.match(/^#\s+(.*\S)\s*$/);
+    if (h) {
+      title = h[1].trim();
+      bodyStart = i + 1;
+    }
+    break;
+  }
+  const body = lines.slice(bodyStart).join("\n").replace(/\s+/g, " ").trim();
+  if (!title && !body) return undefined;
+  return { title, body };
 }
 
 export function markdownToLatex(md: string, sourceDir?: string): string {
@@ -430,14 +450,17 @@ function renderMdastNode(node: any): string {
       if (alt) {
         lines.push(`  \\caption{${escapeLatex(alt)}}`);
       }
-      // Look up sibling <stem>.prompt.md next to the image and, if
-      // present, emit its contents as a small italicised margin note
-      // under the caption.  This is how authored-SVG generation
-      // prompts surface in the printed PDF (per
-      // docs/illustration-recommendations.md).
-      const promptText = lookupFigurePrompt(url);
-      if (promptText) {
-        lines.push(`  \\figprompt{${escapeLatex(promptText)}}`);
+      // Look up sibling <stem>.prompt.md next to the image.  The
+      // first `# Title` line becomes a small italic line under the
+      // caption (\figtitle); the body becomes a margin note
+      // (\figprompt).  See local/illustration-author skill for the
+      // sidecar format.
+      const sidecar = lookupFigurePrompt(url);
+      if (sidecar?.title) {
+        lines.push(`  \\figtitle{${escapeLatex(sidecar.title)}}`);
+      }
+      if (sidecar?.body) {
+        lines.push(`  \\figprompt{${escapeLatex(sidecar.body)}}`);
       }
       lines.push("\\end{figure}");
       return lines.join("\n");
@@ -632,10 +655,13 @@ export function renderBlock(block: Block, mdContent: string, sourceDir?: string)
         // Caption from block.caption or block title (extra field from builders)
         const caption = block.caption || (block as any).title || "";
         if (caption) lines.push(`  \\caption{${escapeLatex(caption)}}`);
-        // Sibling <stem>.prompt.md margin-note, if present.
-        const promptText = sourceDir ? readPromptSidecar(sourceDir, figFile) : undefined;
-        if (promptText) {
-          lines.push(`  \\figprompt{${escapeLatex(promptText)}}`);
+        // Sibling <stem>.prompt.md — title line + body margin note.
+        const sidecar = sourceDir ? readPromptSidecar(sourceDir, figFile) : undefined;
+        if (sidecar?.title) {
+          lines.push(`  \\figtitle{${escapeLatex(sidecar.title)}}`);
+        }
+        if (sidecar?.body) {
+          lines.push(`  \\figprompt{${escapeLatex(sidecar.body)}}`);
         }
         lines.push("\\end{figure}");
       } else {

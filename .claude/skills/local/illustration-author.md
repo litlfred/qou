@@ -123,20 +123,35 @@ the LaTeX printed-PDF path always uses the light variant.
 ### 4. Prompt sidecar (every figure)
 
 Author `<slug>-N.prompt.md` next to each SVG. The pipeline reads
-this and emits its content as a small italic margin note via
-`\figprompt{…}` in the printed PDF (see
+this and emits the body as a small italic margin note via
+`\figprompt{…}` in the printed PDF, and the title as a small
+italic line under the caption via `\figtitle{…}` (see
 [`content/pipeline/render-latex.ts`](../../../content/pipeline/render-latex.ts)
 `readPromptSidecar`). Format:
 
 ```markdown
+# <Short generated title — 3–7 words>
+
 F<slot> (P<tier>). <one-paragraph description of what the figure
 depicts, what the elements mean, and any constraints inherited from
 the surrounding prose (notation register, accent-colour conventions,
 etc.). 2–4 sentences; this is the printed-PDF margin note.>
 ```
 
-Keep the sidecar plain prose with inline `$...$` math allowed — it
-*is* run through the markdown→LaTeX renderer (unlike the SVG `<text>`).
+The first line **must** be a markdown `#` heading carrying the
+figure's title. The title is auto-displayed:
+
+- in the figures index (`docs/figures-index.md`) as a column,
+- under the figure in the printed PDF (`\figtitle{…}` below the
+  `\caption{…}`),
+- in the viewer caption strip when present.
+
+The title should be short, declarative, and self-contained — readable
+without seeing the body. Examples: *"The Hecke skein triple"*, *"The
+roadmap as argument flow"*, *"Bring's surface as a coral"*.
+
+Keep the body plain prose with inline `$...$` math allowed — it *is*
+run through the markdown→LaTeX renderer (unlike the SVG `<text>`).
 
 ### 5. Wiring into the target block
 
@@ -151,6 +166,35 @@ margin note. Example:
 
 The alt-text becomes the figure caption in the printed PDF; keep it
 informative (1–2 sentences) and obey the notation register.
+
+## Iteration: edits to an existing figure must update the prompt
+
+When the author asks for a change to an authored figure ("make the
+arrows thinner", "swap the red thread for blue", "add a third
+panel", "use a square viewBox"), do **not** silently re-edit the
+SVG. The `.prompt.md` sidecar is the authoritative record of what
+the figure depicts; the printed PDF surfaces it as a margin note.
+A stale prompt is an audit-flag.
+
+Procedure for every iteration:
+
+1. **Update the title and body of `<slug>.prompt.md`** so they
+   describe the *new* state, not the previous one. Treat the prompt
+   as the spec; a follow-up author should be able to re-author the
+   SVG from scratch given only the prompt.
+2. **Re-author the SVG** to match the updated prompt.
+3. **Decide variant policy.** A *small tweak* (line weight, label
+   wording, viewBox tightening) keeps the same variant letter and
+   filename — the prompt edit captures the change. A *substantive
+   redesign* (different layout, different visual metaphor) bumps
+   the variant letter (`-A` → `-B`) and writes a new
+   `<family>-B.svg` + `<family>-B.prompt.md`; the original
+   variant stays on disk.
+4. **Re-run** `bun run content/pipeline/build-figures-index.ts`
+   so the index reflects the new title and prompt.
+
+Never edit the SVG without also editing the prompt. The two files
+are a unit.
 
 ## Variation generation
 

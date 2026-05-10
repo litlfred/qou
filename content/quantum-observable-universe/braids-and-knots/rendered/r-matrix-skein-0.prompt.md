@@ -1,3 +1,5 @@
+# The Hecke skein triple
+
 F4.2 (P0). Three side-by-side panels of local strand diagrams: a positive
 crossing $\sigma_i$ (over-strand running from lower-left to upper-right), its
 inverse $\sigma_i^{-1}$ (mirror), and the identity $1$ (two parallel strands).
