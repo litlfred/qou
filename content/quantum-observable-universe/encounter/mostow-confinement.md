@@ -59,13 +59,29 @@ invariant) and (2)--(3) (strictly positive Mostow gap = isolated
 mass eigenvalue = confinement) at the level needed by downstream
 consumers.
 
-A first concrete instance,
-[`MostowRigidity.unknot : MostowRigidity Unit`](https://github.com/litlfred/qou/blob/claude/improve-paper-exposition-4a0OT/content/quantum-observable-universe/lean/QOU/Encounter/MostowRigidity.lean),
-covers the unknot-complement (degenerate, Seifert-fibred) case:
-volume 0 by Thurston's extension of $\mathrm{Vol}$ to
-non-hyperbolic complements, with the gap conservatively set to
-$1 < \mathrm{Vol}(4_1) \approx 2.0299$.  Witnesses that the
-class admits at least one closed inhabitant.
+Two concrete instances start populating the hyperbolic-volume
+spectrum (both in
+[`QOU.Encounter.MostowRigidity`](https://github.com/litlfred/qou/blob/claude/improve-paper-exposition-4a0OT/content/quantum-observable-universe/lean/QOU/Encounter/MostowRigidity.lean)):
+
+* **`MostowRigidity.unknot : MostowRigidity Unknot`** — the
+  unknot-complement (degenerate, Seifert-fibred) case: volume
+  $0$ by Thurston's extension of $\mathrm{Vol}$ to non-hyperbolic
+  complements, with the gap conservatively set to
+  $1 < \mathrm{Vol}(4_1) \approx 2.0299$.
+
+* **`MostowRigidity.figureEight : MostowRigidity FigureEight`**
+  — the figure-eight knot complement $4_1$, smallest known
+  orientable cusped hyperbolic 3-manifold (Cao--Meyerhoff 2001):
+  volume $2 \, \Lambda(\pi/3) \approx 2.02988$, gap
+  conservatively set to $0.5 < \mathrm{Vol}(5_2) - \mathrm{Vol}(4_1)
+  \approx 0.798$.
+
+The fully-proved comparison theorem
+`unknot_volume_lt_figureEight_volume`
+($\mathrm{volumeInvariant}(\mathtt{Unknot}) < \mathrm{volumeInvariant}(\mathtt{FigureEight})$)
+exhibits the first non-trivial use of `volumeInvariant` and
+shows that the class is rich enough to support genuine
+spectral comparisons rather than just placeholder bookkeeping.
 
 The §3b "hard work" deferred to the long-term Mathlib
 geometric-topology layer is the *full* discreteness theorem

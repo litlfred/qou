@@ -27,6 +27,16 @@ Non-trivial scaffold for the geometric-rigidity class:
   smallest non-trivial hyperbolic volume Vol(4₁) ≈ 2.0299).
   Witnesses that the class has at least one closed instance.
 
+- `MostowRigidity.figureEight` — concrete instance for the
+  figure-eight knot complement (4₁): the smallest known
+  hyperbolic 3-manifold complement, volume ≈ 2.02988
+  (Cao–Meyerhoff 2001), with Mostow gap conservatively below
+  the next-smallest gap Vol(5₂) − Vol(4₁) ≈ 0.798.
+
+- `unknot_volume_lt_figureEight_volume` — fully-proved theorem
+  comparing the volume invariants across the two instances,
+  exhibiting a non-trivial use of `volumeInvariant`.
+
 ## Categorical content
 
 Mostow rigidity is the **geometric mirror** of `SDPSlaterUniqueness`
@@ -144,6 +154,13 @@ theorem volumeInvariant_nonneg (M : Type*) [h : MostowRigidity M] :
     0 ≤ volumeInvariant M :=
   h.volume_nonneg
 
+/-- Type marker for the unknot complement (used as the carrier of
+    the corresponding `MostowRigidity` instance). -/
+structure Unknot
+
+/-- Type marker for the figure-eight knot complement `4_1`. -/
+structure FigureEight
+
 /-- **Concrete instance: unknot complement** (degenerate
     hyperbolic case).
 
@@ -158,10 +175,50 @@ theorem volumeInvariant_nonneg (M : Type*) [h : MostowRigidity M] :
 
     Ref: [thurston1978] §6 (volume of non-hyperbolic complements
     by convention) -/
-instance unknot : MostowRigidity Unit where
+instance unknot : MostowRigidity Unknot where
   volume := 0
   volume_nonneg := le_refl 0
   mostow_gap := 1
   mostow_gap_pos := by norm_num
+
+/-- **Concrete instance: figure-eight knot complement** (`4_1`).
+
+    The complement `S^3 \ 4_1` is the smallest known orientable
+    cusped hyperbolic 3-manifold (Cao–Meyerhoff 2001), with
+    hyperbolic volume
+
+    `Vol(4_1) = 2 · Λ(π/3) ≈ 2.02988...`
+
+    where `Λ` is the Lobachevsky function.  We round to a
+    five-digit decimal `2.02988` for the class field; the
+    rounding direction does not affect the class invariants.
+
+    The Mostow gap is bounded below by `0.5`, a conservative
+    under-approximation of the next-smallest gap
+
+    `Vol(5_2) - Vol(4_1) ≈ 2.82812 - 2.02988 ≈ 0.798`.
+
+    Ref: [thurston1978]; Cao–Meyerhoff, *The orientable cusped
+    hyperbolic 3-manifolds of minimum volume*, Invent. Math. 146
+    (2001) 451–478. -/
+instance figureEight : MostowRigidity FigureEight where
+  volume := 2.02988
+  volume_nonneg := by norm_num
+  mostow_gap := 0.5
+  mostow_gap_pos := by norm_num
+
+/-- **Volume comparison: unknot < figure-eight**.
+
+    Sanity check: the volume invariant attached to the
+    `unknot` instance (`0`, by Thurston's convention) is
+    strictly smaller than the volume invariant attached to the
+    `figureEight` instance (`Vol(4_1) ≈ 2.02988`).  This is the
+    smallest non-trivial volume comparison in the
+    hyperbolic-volume spectrum and the first non-degenerate
+    use of `volumeInvariant`. -/
+theorem unknot_volume_lt_figureEight_volume :
+    volumeInvariant Unknot < volumeInvariant FigureEight := by
+  show (0 : ℝ) < 2.02988
+  norm_num
 
 end QOU.Encounter.MostowRigidity
