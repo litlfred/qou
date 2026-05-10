@@ -16,6 +16,7 @@ import QOU.MathlibExt
 import QOU.MathlibExt.SDP
 import QOU.MathlibExt.SDPEmptyConstraints
 import QOU.MathlibExt.SDPRealUniqueness
+import QOU.MathlibExt.SDPRankEquality
 import QOU.MathlibExt.PosSemidefTraceZero
 import QOU.MathlibExt.PosSemidefDiagZero
 import QOU.MathlibExt.FrobeniusInnerProduct
