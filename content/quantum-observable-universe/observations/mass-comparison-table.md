@@ -32,11 +32,30 @@ to six significant figures with $q = q_0$.
 
 | Particle | Knot formula | Mass formula | QOU (MeV) | Observed (MeV) | Source |
 |----------|-------------|-------------|-----------|----------------|--------|
-| Proton | $[u,u,d]_p \bowtie \mathcal{L}_H$ | $\mathcal{S}_{\mathfrak{u}\mathfrak{u}} + 2\mathcal{S}_{\mathfrak{u}\mathfrak{d}}$ | $938.272$ | $938.272$ | CODATA |
-| Neutron | $[u,d,d]_p \bowtie \mathcal{L}_H$ | $2\mathcal{S}_{\mathfrak{u}\mathfrak{d}} + \mathcal{S}_{\mathfrak{d}\mathfrak{d}}$ | $939.565$ | $939.565$ | CODATA |
-| $n$--$p$ splitting | | $\mathcal{S}_{\mathfrak{d}\mathfrak{d}} - \mathcal{S}_{\mathfrak{u}\mathfrak{u}}$ | $1.293$ | $1.293$ | CODATA |
+| Proton | $[u,u,d]_p \bowtie \mathcal{L}_H$ | $\mathcal{S}_{\mathfrak{u}\mathfrak{u}} + 2\mathcal{S}_{\mathfrak{u}\mathfrak{d}}$ | $938.272$ † | $938.272$ | CODATA |
+| Neutron | $[u,d,d]_p \bowtie \mathcal{L}_H$ | $2\mathcal{S}_{\mathfrak{u}\mathfrak{d}} + \mathcal{S}_{\mathfrak{d}\mathfrak{d}}$ | $939.565$ † | $939.565$ | CODATA |
+| $n$--$p$ splitting | | $\mathcal{S}_{\mathfrak{d}\mathfrak{d}} - \mathcal{S}_{\mathfrak{u}\mathfrak{u}}$ | $1.293$ † | $1.293$ | CODATA |
 | $\pi^{\pm}$ | $u \bowtie d^{\sigma}$ | $\mathcal{S}_{ud^{\sigma}}(q)$ | $139.570$ | $139.570$ | PDG |
 | $K^{\pm}$ | $u \bowtie s^{\sigma}$ | $\mathcal{S}_{us^{\sigma}}(q)$ | $493.677$ | $493.677$ | PDG |
+
+† **Tautological under the current compute pipeline.** The QOU
+proton, neutron, and $n$--$p$ splitting columns are reading back
+the CODATA inputs because the script chain consumes
+`M_P_MEV_VALIDATION` and `M_N_MEV_VALIDATION` (see
+[`folio-assistant/computations/codata_constants.py`](../../../folio-assistant/computations/codata_constants.py),
+deprecation banner) rather than deriving these masses from the
+[three calibration inputs](../braids-and-knots/three-calibration-inputs.md)
+(CAL-1 $m_e$, CAL-2 $m_\mu/m_e$, CAL-3 $Q_\beta$). The categorical
+prediction chain is
+$m_p = |\mathrm{tr}_M(p, q_0)| \cdot E_0$ and
+$m_n = m_p + Q_\beta + m_e$; once Workplan 0b
+([`docs/audits/2026-05-10-1ppb-workplan-update.md`](../../../docs/audits/2026-05-10-1ppb-workplan-update.md))
+rewires the scripts to this form, the proton/neutron rows will
+report a non-trivial residual reflecting the $\Phi_q$-tower
+truncation (~ 1.8 % at proton scale per
+[`mass_endomorphism.py`](../../../folio-assistant/computations/mass_endomorphism.py)).
+Pion and kaon entries do not have this issue ($m_\pi$, $m_K$ are
+predictions of $\mathcal{S}_{ud^\sigma}(q)$, $\mathcal{S}_{us^\sigma}(q)$).
 
 *Light nuclei (from multi-body Skein).*
 

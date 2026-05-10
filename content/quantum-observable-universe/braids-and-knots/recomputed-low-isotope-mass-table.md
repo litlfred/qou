@@ -72,12 +72,25 @@ in-flight derivation race in PRs #602 / #603 / #613).
 
 ## Two structural notes
 
-**1. The 0.000 % on $p$ and $n$ is a tautology, not a prediction.**
-The ρ_K leading-order ansatz is built from $m_p$ and $m_n$
-directly, so for $K = p$ ($Z = 1, N = 0$) and $K = n$ ($Z = 0, N = 1$)
-the formula returns the input mass exactly.  This is by
-construction; the framework's three CAL inputs are $m_e$, $m_p$,
-$m_n$ (CODATA), with $Q_\beta = m_n - m_p - m_e$ derived.
+**1. The 0.000 % on $p$ and $n$ is a calibration-discipline
+violation, not a prediction.** The ρ_K leading-order ansatz used
+in this table consumes $m_p$ and $m_n$ as CODATA inputs (via
+[`folio-assistant/computations/codata_constants.py`](../../../folio-assistant/computations/codata_constants.py)),
+so for $K = p$ ($Z = 1, N = 0$) and $K = n$ ($Z = 0, N = 1$)
+the formula returns the input mass exactly. **This is a bug, not
+a feature**: the QOU framework admits exactly three calibration
+inputs ([three calibration inputs](three-calibration-inputs.md))
+— CAL-1 $= m_e$, CAL-2 $= m_\mu/m_e$ (fixes $q_0$),
+CAL-3 $= Q_\beta(n)$ (fixes hadronic scale $E_0$). $m_p$ and $m_n$
+are **predictions** of the framework, derivable as
+$m_p = |\mathrm{tr}_M(p, q_0)| \cdot E_0$ and
+$m_n = m_p + Q_\beta + m_e$ per the 3-input convention recommended
+in [`neutron-gap-probes-round3.witness.json`](../../../folio-assistant/computations/neutron-gap-probes-round3.witness.json).
+The script-side migration is tracked as Workplan 0b
+(see [`docs/audits/2026-05-10-1ppb-workplan-update.md`](../../../docs/audits/2026-05-10-1ppb-workplan-update.md));
+until it lands, the $0.000\%$ rows above are tautologies and the
+$D / T / {}^{3}\mathrm{He}$ residuals understate the true binding
+prediction error by the n/p split scale ($\sim 0.14\%$).
 
 **2. The $\Delta$ column is the prediction target, not an error.**
 The $+2.225$ MeV / $+8.482$ MeV / $+7.718$ MeV differences are
