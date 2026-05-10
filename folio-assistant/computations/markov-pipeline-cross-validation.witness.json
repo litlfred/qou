@@ -1,13 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-<<<<<<< HEAD
-  "computedAt": "2026-05-09T16:26:59.946414+00:00",
-  "commitSha": "6b7e51fb89828b1ea779b117ffc68a3a782beb80",
-=======
-  "computedAt": "2026-05-09T16:06:31.822229+00:00",
-  "commitSha": "4f2c130ae7371de321ef029831b6ec193b13692a",
->>>>>>> e0136102 (migrate: TR_M_AT_Q0 to canonical Wenzl-bridge convention)
+  "computedAt": "2026-05-10T04:08:49.645164+00:00",
+  "commitSha": "03528c46b4e0c6d40fb90cdf20c8f2043ea20df1",
   "assertions": [
     {
       "name": "tr_M_at_q0_archimedean[D (deuteron, A=2)]",
@@ -50,15 +45,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 12,
   "computation": "markov-pipeline-cross-validation",
   "scriptFile": "markov_pipeline_cross_validator.py",
   "scriptHash": "2ba19efaa410",
-<<<<<<< HEAD
-  "scriptCommitSha": "e0a230a9d34fa9580760c826e7437e0350a09795",
-=======
-  "scriptCommitSha": "c4e7ab96dd5009ca3902a3aba37a345f8c305229",
->>>>>>> e0136102 (migrate: TR_M_AT_Q0 to canonical Wenzl-bridge convention)
+  "scriptCommitSha": "dd4436dc0decabd08e078f9c92e6c99f53f82e1a",
   "description": "Verifies archimedean tr_M(q_0) agreement between the polynomial-ring realization (markov_substrate_realizer.py) and the Mittag-Leffler full-pole-sum computation (term6_full_pole_sum.py).",
   "contentBlock": "prop:full-pole-structure-mass-trace",
   "parameters": {

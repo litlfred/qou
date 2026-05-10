@@ -395,15 +395,23 @@ if __name__ == "__main__":
     # 2-var-Schur weight `schur_weyl_weight` which vanishes on > 2-row
     # partitions and is wrong for the Markov-trace decomposition
     # (Ref: docs/audits/2026-05-08-p3-h-3a-divergence.md).
+    #
+    # Note: `solve_y_lambda` returns expressions in `hoefsmit_symbolic.Q`,
+    # NOT the local `q = sp.Symbol('q', positive=True, real=True)` used
+    # for χ.  We substitute Q→q so both factors share the same symbol
+    # (otherwise `total.subs(q, q0)` only hits χ and leaves y_λ
+    # un-substituted).
     print("\n── Markov-trace mass at A = 1 (canonical y_λ) ──")
     from markov_weights_symbolic import solve_y_lambda
+    from hoefsmit_symbolic import Q as _Q_HOEFSMIT
     y_lambda_dict = solve_y_lambda(3)
     for label in ["p", "n"]:
         total = Integer(0)
         for lam in partitions_of(3):
-            w = y_lambda_dict.get(tuple(lam), sp.Integer(0))
-            if w == 0:
+            w_in_Q = y_lambda_dict.get(tuple(lam), sp.Integer(0))
+            if w_in_Q == 0:
                 continue
+            w = w_in_Q.subs(_Q_HOEFSMIT, q)  # bridge to local q
             chi = q_character_on_braid_word(
                 lam, atomic_braid_to_crossings(
                     {"p": 1, "n": 0}[label], {"p": 0, "n": 1}[label],
