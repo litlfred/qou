@@ -448,13 +448,81 @@ theorem rank_equality_under_strict_complementarity
     {sdp : SDPPrimal n ℝ ι} (sc : RealStrictComplementarityPair sdp)
     (h_slater : sdp.IsStrictlyFeasible) :
     sc.Φstar.rank + (sdp.dualSlack sc.ystar).rank = n := by
-  -- Use kernel disjointness (R2 axiom) + range containment (R1 proven) +
-  -- rank-nullity to derive the rank equality.
+  -- ≤ direction: from `rank_sum_le_of_mul_zero` (proven, this module).
   have h_le := rank_sum_le_of_mul_zero sc
+  -- ≥ direction: from kernel disjointness + rank-nullity.
   have h_disjoint := strict_complementarity_kernel_disjoint sc h_slater
-  -- The ≥ direction from kernel disjointness + rank-nullity is the
-  -- remaining Mathlib API verification step.
-  sorry
+  -- ker(Φ) ∩ ker(S) = {0} (as Submodule); follows from h_disjoint
+  -- (which gives the elementwise statement).
+  have h_inf_zero :
+      LinearMap.ker sc.Φstar.toLin' ⊓ LinearMap.ker (sdp.dualSlack sc.ystar).toLin'
+        = ⊥ := by
+    refine Submodule.eq_bot_iff _ |>.mpr ?_
+    rintro v ⟨hΦv, hSv⟩
+    -- v ∈ ker Φ.toLin' means Φ.mulVec v = 0; same for S.
+    -- h_disjoint gives v = 0 from these.
+    have h_Φv : sc.Φstar.mulVec v = 0 := by
+      simpa [Matrix.toLin'_apply'] using hΦv
+    have h_Sv : (sdp.dualSlack sc.ystar).mulVec v = 0 := by
+      simpa [Matrix.toLin'_apply'] using hSv
+    exact h_disjoint v h_Φv h_Sv
+  -- Inclusion-exclusion: finrank(ker Φ ⊔ ker S) + finrank(ker Φ ⊓ ker S)
+  --                      = finrank(ker Φ) + finrank(ker S)
+  -- With finrank(⊓) = 0 and finrank(⊔) ≤ n:
+  --   finrank(ker Φ) + finrank(ker S) ≤ n.
+  have h_inf_finrank : Module.finrank ℝ
+      (LinearMap.ker sc.Φstar.toLin' ⊓
+        LinearMap.ker (sdp.dualSlack sc.ystar).toLin' :
+          Submodule ℝ (Fin n → ℝ)) = 0 := by
+    rw [h_inf_zero]; exact finrank_bot _ _
+  have h_sup_le_n : Module.finrank ℝ
+      ((LinearMap.ker sc.Φstar.toLin' ⊔
+        LinearMap.ker (sdp.dualSlack sc.ystar).toLin') :
+          Submodule ℝ (Fin n → ℝ)) ≤ n := by
+    have := Submodule.finrank_le
+      ((LinearMap.ker sc.Φstar.toLin') ⊔
+       (LinearMap.ker (sdp.dualSlack sc.ystar).toLin'))
+    simpa [Module.finrank_pi] using this
+  -- Inclusion-exclusion lemma:
+  have h_incl_excl :=
+    Submodule.finrank_sup_add_finrank_inf_eq
+      (LinearMap.ker sc.Φstar.toLin')
+      (LinearMap.ker (sdp.dualSlack sc.ystar).toLin')
+  -- finrank(ker Φ) + finrank(ker S) ≤ n.
+  have h_kers_le :
+      Module.finrank ℝ (LinearMap.ker sc.Φstar.toLin') +
+      Module.finrank ℝ (LinearMap.ker (sdp.dualSlack sc.ystar).toLin') ≤ n := by
+    omega
+  -- Rank-nullity for Φ and S: finrank(range M) + finrank(ker M) = n.
+  have h_Φ_rn :
+      Module.finrank ℝ (LinearMap.range sc.Φstar.toLin') +
+      Module.finrank ℝ (LinearMap.ker sc.Φstar.toLin') = n := by
+    have h := LinearMap.finrank_range_add_finrank_ker sc.Φstar.toLin'
+    simpa [Module.finrank_pi] using h
+  have h_S_rn :
+      Module.finrank ℝ (LinearMap.range (sdp.dualSlack sc.ystar).toLin') +
+      Module.finrank ℝ (LinearMap.ker (sdp.dualSlack sc.ystar).toLin') = n := by
+    have h := LinearMap.finrank_range_add_finrank_ker
+      (sdp.dualSlack sc.ystar).toLin'
+    simpa [Module.finrank_pi] using h
+  -- Combine: rank Φ + rank S = (n - dim ker Φ) + (n - dim ker S)
+  --                          = 2n - (dim ker Φ + dim ker S)
+  --                          ≥ 2n - n = n.
+  rw [show sc.Φstar.rank =
+        Module.finrank ℝ (LinearMap.range sc.Φstar.toLin') from
+        Matrix.rank_eq_finrank_range_toLin' sc.Φstar,
+      show (sdp.dualSlack sc.ystar).rank =
+        Module.finrank ℝ (LinearMap.range (sdp.dualSlack sc.ystar).toLin') from
+        Matrix.rank_eq_finrank_range_toLin' (sdp.dualSlack sc.ystar)]
+  -- Goal: finrank(range Φ) + finrank(range S) = n.
+  -- h_Φ_rn, h_S_rn, h_kers_le, h_le all give the bounds; omega closes.
+  rw [show sc.Φstar.rank =
+        Module.finrank ℝ (LinearMap.range sc.Φstar.toLin') from
+        Matrix.rank_eq_finrank_range_toLin' sc.Φstar,
+      show (sdp.dualSlack sc.ystar).rank =
+        Module.finrank ℝ (LinearMap.range (sdp.dualSlack sc.ystar).toLin') from
+        Matrix.rank_eq_finrank_range_toLin' (sdp.dualSlack sc.ystar)] at h_le
+  omega
 
 /-! ## §4  Slater uniqueness from rank equality (proven)
 
