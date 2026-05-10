@@ -71,42 +71,110 @@ TR_M_AT_Q0: dict[str, float] = {
 }
 
 # Atom-target Markov-trace values in cat-units (Hecke-pipeline output)
-# at q_0 — 4-sig-fig rounded summaries of the upstream
-# `mass_endomorphism.py` + `proton_mass_tower_derivation.py` tower.
+# at q_0 — partial Path A T1+T4 derivation per Workplan 2 Phase 2
+# (`docs/audits/2026-05-10-1ppb-workplan-update.md §Phase 2`).
 #
-# ⚠️ DEPRECATED 2026-05-09 — these literals are STALE PLACEHOLDERS.
+# 2026-05-10 — DEPRECATED-LITERAL → DERIVATION REPLACEMENT
 #
-# Per `docs/audits/2026-05-09-proton-m_e-anomaly.md §9`:
-#   1. The values 1.4283 / 0.0007783 do NOT correspond to any
-#      committed computation. The "rounded summary" docstring claim
-#      is unsupported (mass_endomorphism.py produces ~1,178,995, not
-#      1.4283; verified by `git show 1861df6:.../mass_endomorphism.py
-#      | grep 1.4283` returning 0 matches).
-#   2. The ratio 1.4283/0.0007783 = 1835.15 sits at CODATA
-#      (m_p − m_e)/m_e, not m_p/m_e — calibrated to the WRONG target.
-#   3. The canonical mass-table chain is now `atomic_braid_mass_table.py`
-#      ("Strategy-3"), with explicit unit conventions in
-#      `atomic_braid_mass_terms.py`. Its `total_hecke[p] = T1+T2+T3+T4
-#      = 4.6912` cat units, NOT 1.4283; E_0 = 199.86 MeV/cat-unit;
-#      M_pred[p] = 938.272 MeV (= CODATA, by proton calibration).
+# History: the original literals
+#     {"e": 0.0007783, "p": 1.4283}
+# were marked DEPRECATED 2026-05-09 (per
+# `docs/audits/2026-05-09-proton-m_e-anomaly.md §9`). Their ratio
+# 1.4283/0.0007783 = 1835.15 sits at CODATA `(m_p − m_e)/m_e`, not
+# `m_p/m_e` — a 472 ppb numerological tuning whose origin is
+# unattributable (no committed computation produces those values).
 #
-# The legacy `build_proton_mass_50dps_chain.py` and its emitted
-# `proton-mass-50dps.derivation.json` are kept for historical
-# traceability but are NOT the canonical mass derivation. The
-# 544,145 ppb "defect" reported by that chain is an artefact of this
-# staleness, not of the framework.
+# Per owner directive 2026-05-10 ("do workplans 2 phase 2. make sure
+# no fitting. all should be derived"), this dict now consumes the
+# **partial Path A T1+T4 derivation** from the trustable subset of
+# the six-term unified mass formula:
 #
-# DO NOT ADD NEW PRODUCTION CONSUMERS. (Audit / diagnostic-only
-# scripts that explicitly mark themselves audit-only — e.g.
-# `proton_m_e_anomaly_audit.py` — may consume these literals to
-# document the anomaly; that does not contradict this guidance.)
-# For real mass predictions, run
-# `atomic_braid_mass_table.py` and consume
-# `atomic-braid-mass-table.witness.json`.
-M_HECKE_PIPELINE_AT_Q0: dict[str, float] = {
-    "e": 0.0007783,  # DEPRECATED placeholder — see audit §9 above
-    "p": 1.4283,     # DEPRECATED placeholder — see audit §9 above
+#   * `derive_m_p_hecke_path_a.m_p_hecke_path_a_at_q0()`
+#     → reads T1 (descended Markov trace) + T4 (Frobenius co-Casimir
+#       per-vortex) for the proton at H_3 from
+#       `mass-formula-6term-mpfr-50dps.witness.json`.
+#
+#   * `derive_m_e_hecke_path_a.m_e_hecke_path_a_cat_units_at_q0()`
+#     → closed-form construction at H_2 (electron is the identity
+#       2-strand braid) from CAL-1 m_e + CAL-2 q_0 alone.
+#
+# T2/T3/T5/T6 are quarantined per the Phase 2 diagnostic finding
+# (A=1 brane tower structurally empty; T5 sign-indefinite; T6
+# small Habiro tail). The resulting predicted m_p will be **wildly
+# off CODATA** (~0.6 MeV vs 938 MeV) — that residual is what
+# Phase 2 EXPOSES, not what it tries to fit. Closing the residual
+# is the work of Phase 3+ (T2/T3 brane-tower closure via the
+# z-Habiro level-selection rule, T5 chirality-BW sign resolution,
+# T6 Habiro-tail integration).
+#
+# DO NOT ADD ALGEBRAIC +1 OR ANY OTHER TUNING TO MAKE THE NUMBERS
+# MATCH. The honest residual is the deliverable.
+
+def _path_a_at_q0() -> dict[str, float]:
+    """Lazy resolver — calls derive_m_{p,e}_hecke_path_a on first use.
+
+    Lazy because (a) we don't want to import-time read JSON witnesses
+    on every consumer, and (b) audit-only scripts that consume the
+    DEPRECATED legacy dict (e.g. proton_m_e_anomaly_audit.py) need
+    the legacy values for their "expose-the-anomaly" purpose; they
+    use M_HECKE_PIPELINE_AT_Q0_LEGACY directly.
+    """
+    # Local import so derivation_chain.py stays import-light.
+    from derive_m_p_hecke_path_a import m_p_hecke_path_a_at_q0
+    from derive_m_e_hecke_path_a import m_e_hecke_path_a_cat_units_at_q0
+    return {
+        "p": float(m_p_hecke_path_a_at_q0()),
+        "e": float(m_e_hecke_path_a_cat_units_at_q0()),
+    }
+
+
+# Legacy DEPRECATED placeholder values — kept for audit-only scripts
+# that document the pre-Phase-2 anomaly. Production consumers use
+# M_HECKE_PIPELINE_AT_Q0 (the dict below), which now returns derived
+# values.
+M_HECKE_PIPELINE_AT_Q0_LEGACY: dict[str, float] = {
+    "e": 0.0007783,  # numerological placeholder (audit only)
+    "p": 1.4283,     # numerological placeholder (audit only)
 }
+
+
+# Production dict — populated lazily on first attribute read.
+class _PathADict(dict):
+    """Dict that resolves Path A values lazily on first key lookup."""
+    _resolved = False
+
+    def _resolve(self):
+        if not self._resolved:
+            self.clear()
+            self.update(_path_a_at_q0())
+            self._resolved = True
+
+    def __getitem__(self, key):
+        self._resolve()
+        return super().__getitem__(key)
+
+    def get(self, key, default=None):
+        self._resolve()
+        return super().get(key, default)
+
+    def __contains__(self, key):
+        self._resolve()
+        return super().__contains__(key)
+
+    def items(self):
+        self._resolve()
+        return super().items()
+
+    def keys(self):
+        self._resolve()
+        return super().keys()
+
+    def values(self):
+        self._resolve()
+        return super().values()
+
+
+M_HECKE_PIPELINE_AT_Q0: dict[str, float] = _PathADict()
 
 
 # Pre-compiled module-level regex for SCRIPT_CITED `notes` validation
