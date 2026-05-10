@@ -1,8 +1,8 @@
 {
   "engine": "scipy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T20:07:15.362691+00:00",
-  "commitSha": "d3c5431c10fbc26322a37fa1b894e31938acd61a",
+  "computedAt": "2026-05-10T06:27:28.829890+00:00",
+  "commitSha": "fc40cc856b1856dbd7c9ae9c7af6d6af4cf2cb1e",
   "assertions": [
     {
       "name": "k=0 (electron) PLT vs GB — order-of-magnitude (A2.1+A2.2)",
@@ -38,7 +38,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1866,
+  "durationMs": 1852,
   "computation": "sw-period-thimble-equivalence",
   "scriptFile": "sw_period_thimble_equivalence.py",
   "scriptHash": "77ee95111bea",
