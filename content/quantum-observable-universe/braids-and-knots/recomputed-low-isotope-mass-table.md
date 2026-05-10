@@ -62,13 +62,71 @@ Reference scripts:
 (direct binding formulation; consumes $\Delta_\lambda$ from the
 in-flight derivation race in PRs #602 / #603 / #613).
 
+### Calibrated form (LO ρ_K with CODATA $m_p$, $m_n$ inputs)
+
+This table is the calibrated form: $\rho_K^{\mathrm{LO}} = (Z m_p + N m_n)/(m_e |\mathrm{tr}_M|)$
+consumes CODATA $m_p$ and $m_n$ as upstream inputs. Per the
+[three-calibration discipline](three-calibration-inputs.md), this
+violates CAL-1/2/3 by injecting $m_p$ and $m_n$ as 4th and 5th
+calibration constants (tracked under
+[Workplan 0b](../../../docs/audits/2026-05-10-workplan-0b-script-rewire-handoff.md)).
+The proton and neutron rows are **tautological** by construction.
+
+Witness:
+[`atomic-mass-via-rho-k.witness.json`](../../../folio-assistant/computations/atomic-mass-via-rho-k.witness.json).
+
 | Atom | $\mathcal{M}_{\text{pred}}^{\mathrm{LO}}$ (MeV) | $\mathcal{M}_{\text{CODATA}}$ (MeV) | $\Delta$ (MeV) | rel err | binding (CODATA) |
 |---|---:|---:|---:|---:|---:|
-| $p$ | 938.272088 | 938.272088 | 0.0000 | 0.000 % | (anchor) |
-| $n$ | 939.565421 | 939.565421 | 0.0000 | 0.000 % | (anchor) |
+| $p$ † | 938.272088 | 938.272088 | 0.0000 | 0.000 % | (anchor) |
+| $n$ † | 939.565421 | 939.565421 | 0.0000 | 0.000 % | (anchor) |
 | $D$ | 1877.837509 | 1875.612943 | $+2.2246$ | $+0.119$ % | 2.225 MeV |
 | $T$ | 2817.402929 | 2808.921133 | $+8.4818$ | $+0.302$ % | 8.482 MeV |
 | $^{3}\mathrm{He}$ | 2816.109597 | 2808.391607 | $+7.7180$ | $+0.275$ % | 7.718 MeV |
+| $^{4}\mathrm{He}$ | 3755.675017 | 3727.379378 | $+28.2956$ | $+0.759$ % | 28.295 MeV |
+
+† Proton and neutron predictions equal CODATA exactly because $m_p$
+and $m_n$ are upstream inputs in this LO form; $0.000\%$ is a
+calibration tautology, not a prediction quality.
+
+### Genuine categorical prediction (Strategy-3 multi-term, no CODATA $m_p$/$m_n$)
+
+Per [`prop:atom-knot-mass-derivation`](atom-knot-mass-derivation.md),
+the unified knot mass formula
+$M(\mathfrak{H}) = \rho \cdot [|\mathrm{tr}_M(T_w)| + \mathrm{tower}(T_w) + \mathrm{tr}_M(C_{\dim_q})]$
+with $T_w = \mathtt{atom\_braid\_word\_3A}(Z, N)$ — the
+β-decay-operator-unfolded canonical 3A-strand braid — gives the
+following predictions when **only $m_e$ is used as a calibration
+anchor** (no CODATA $m_p$ or $m_n$ injection). $E_0$ is back-fitted
+from the proton row, which is itself a 4th-calibration violation
+(see [Workplan 0b §5](../../../docs/audits/2026-05-10-workplan-0b-script-rewire-handoff.md));
+the multi-term sum (`total_hecke = T1+T2+T3+T4`) is genuine
+framework output.
+
+Witness:
+[`atomic-braid-mass-table.witness.json`](../../../folio-assistant/computations/atomic-braid-mass-table.witness.json),
+mean abs err $35.4\%$ (Strategy-3) vs $21.9\%$ (legacy GS-NF).
+
+| Atom | $\mathcal{M}_{\text{pred}}^{\text{Strategy-3}}$ (MeV) | $\mathcal{M}_{\text{CODATA}}$ (MeV) | $\Delta$ (MeV) | rel err |
+|---|---:|---:|---:|---:|
+| $p$ ‡ | 938.272 | 938.272 | (anchor) | (anchor) |
+| $n$ | 861.289 | 939.565 | $-78.276$ | $-8.33\%$ |
+| $D$ | 1421.820 | 1875.613 | $-453.793$ | $-24.19\%$ |
+| $T$ | 1288.819 | 2808.921 | $-1520.102$ | $-54.12\%$ |
+| $^{3}\mathrm{He}$ | 1392.187 | 2808.392 | $-1416.205$ | $-50.43\%$ |
+
+‡ Proton row is the back-fit anchor for Strategy-3's
+$E_0 \approx 200$ MeV/cat-unit; the neutron through $^{3}\mathrm{He}$
+predictions are genuine categorical output. The 8–54 % residuals
+attribute primarily to the multiplicative T1 base
+$|\mathrm{tr}_p|^Z \cdot |\mathrm{tr}_n|^N$ being structurally
+inadequate (per `atomic_braid_mass_table.py:24-46` deprecation
+banner): physical atomic-scale composition is additive, not
+multiplicative. The framework's correct path forward is the LP-dual
+shadow-price scheme of
+[`prop:operator-selection-lp`](operator-selection-lp.md), with
+the additive constituent baseline only as comparator. **Until
+Workplan 0b lands**, neither table above is fully discipline-clean:
+the LO form injects $m_p$/$m_n$, the Strategy-3 form back-fits $E_0$.
 
 ## Two structural notes
 
