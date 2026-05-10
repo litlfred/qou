@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 580"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>Knot operations: Reidemeister + Markov + smoothing</title>
+  <desc>
+    Six 4-panel before/after sequences illustrating elementary
+    knot operations: Reidemeister I, II, III; Markov M1, M2;
+    band-sum / smoothing.
+  </desc>
+  <defs>
+    <marker id="tip" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a1a1a"/>
+    </marker>
+    <style>
+      .bg { fill: #ffffff; }
+      .strand { fill: none; stroke: #1a1a1a; stroke-width: 2.4; stroke-linecap: round; }
+      .frame { fill: none; stroke: #888; stroke-width: 1; stroke-dasharray: 3 3; }
+      .lblb { font-size: 13px; font-weight: 700; fill: #1a1a1a; text-anchor: middle; }
+      .lbl { font-size: 11px; fill: #444; text-anchor: middle; }
+      .ttl { font-size: 17px; font-style: italic; fill: #1a1a1a; }
+      .eq { font-size: 18px; font-weight: 700; fill: #1a1a1a; text-anchor: middle; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1100" height="580"/>
+  <text x="550" y="32" text-anchor="middle" class="ttl">Knot operations — elementary moves</text>
+
+  <!-- Move 1: Reidemeister I (kink ↔ no kink) -->
+  <text x="180" y="76" class="lblb">R I — kink</text>
+  <rect class="frame" x="60" y="90" width="100" height="100"/>
+  <path class="strand" d="M 80 100 C 80 130, 130 130, 130 110 C 130 100, 100 100, 100 130 V 180"/>
+  <text x="170" y="145" class="eq">↔</text>
+  <rect class="frame" x="200" y="90" width="100" height="100"/>
+  <path class="strand" d="M 250 100 V 180"/>
+
+  <!-- Move 2: Reidemeister II (poke ↔ no poke) -->
+  <text x="490" y="76" class="lblb">R II — poke</text>
+  <rect class="frame" x="370" y="90" width="100" height="100"/>
+  <path class="strand" d="M 380 100 V 130"/>
+  <path class="strand" d="M 380 130 C 410 130, 440 145, 440 165 V 180"/>
+  <path class="strand" d="M 460 100 V 130"/>
+  <path class="strand" d="M 460 130 C 430 130, 405 150, 395 175"/>
+  <path class="strand" d="M 405 175 V 180"/>
+  <text x="480" y="145" class="eq">↔</text>
+  <rect class="frame" x="510" y="90" width="100" height="100"/>
+  <path class="strand" d="M 535 100 V 180"/>
+  <path class="strand" d="M 585 100 V 180"/>
+
+  <!-- Move 3: Reidemeister III (triangle move) -->
+  <text x="800" y="76" class="lblb">R III — triangle</text>
+  <rect class="frame" x="680" y="90" width="100" height="100"/>
+  <path class="strand" d="M 690 100 L 770 180"/>
+  <path class="strand" d="M 770 100 L 690 180"/>
+  <path class="strand" d="M 690 140 L 770 140"/>
+  <text x="790" y="145" class="eq">↔</text>
+  <rect class="frame" x="820" y="90" width="100" height="100"/>
+  <path class="strand" d="M 830 100 L 910 180"/>
+  <path class="strand" d="M 910 100 L 830 180"/>
+  <path class="strand" d="M 830 150 L 910 150"/>
+
+  <!-- Move 4: Markov M1 (conjugation) -->
+  <text x="180" y="276" class="lblb">M 1 — conjugation</text>
+  <rect class="frame" x="60" y="290" width="100" height="100"/>
+  <text x="110" y="345" class="lbl">β</text>
+  <text x="170" y="345" class="eq">↔</text>
+  <rect class="frame" x="200" y="290" width="100" height="100"/>
+  <text x="250" y="345" class="lbl">αβα⁻¹</text>
+
+  <!-- Move 5: Markov M2 (stabilisation) -->
+  <text x="490" y="276" class="lblb">M 2 — stabilisation</text>
+  <rect class="frame" x="370" y="290" width="100" height="100"/>
+  <text x="420" y="345" class="lbl">B_n</text>
+  <text x="480" y="345" class="eq">↔</text>
+  <rect class="frame" x="510" y="290" width="100" height="100"/>
+  <text x="560" y="345" class="lbl">β · σ_n^{±1} ∈ B_{n+1}</text>
+
+  <!-- Move 6: Smoothing -->
+  <text x="800" y="276" class="lblb">smoothing — Skein</text>
+  <rect class="frame" x="680" y="290" width="100" height="100"/>
+  <path class="strand" d="M 690 300 L 770 380"/>
+  <path class="strand" d="M 770 300 L 690 380"/>
+  <text x="790" y="345" class="eq">↦</text>
+  <rect class="frame" x="820" y="290" width="100" height="100"/>
+  <path class="strand" d="M 830 300 V 380"/>
+  <path class="strand" d="M 910 300 V 380"/>
+
+  <text x="550" y="450" text-anchor="middle" class="lbl" font-style="italic">
+    Reidemeister moves: knot equivalence  ·  Markov moves: braid → link equivalence  ·  smoothing: Skein triple
+  </text>
+  <text x="550" y="475" text-anchor="middle" class="lbl" font-style="italic">
+    GS reduction engine applies these as rewrite rules until canonical normal form
+  </text>
+</svg>

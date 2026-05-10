@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>q-deformed Kolmogorov scaling</title>
+  <desc>
+    Log-log plot of energy spectrum E(k) ~ k^{-5/3} with annotated
+    dissipation scale.  q-deformed bend in the curve at scale k_q.
+  </desc>
+  <defs>
+    <style>
+      .bg { fill: #ffffff; }
+      .axis { stroke: #1a1a1a; stroke-width: 1.4; fill: none; }
+      .ticklbl { font-size: 11px; fill: #444; text-anchor: middle; }
+      .axislbl { font-size: 12px; font-style: italic; fill: #1a1a1a; }
+      .classical { fill: none; stroke: #2980b9; stroke-width: 2.2; }
+      .qdef { fill: none; stroke: #c0392b; stroke-width: 2.2; }
+      .scalemark { stroke: #1a1a1a; stroke-width: 1.2; stroke-dasharray: 4 3; fill: none; }
+      .scalelbl { font-size: 12px; fill: #1a1a1a; }
+      .lbl { font-size: 12px; fill: #1a1a1a; text-anchor: middle; }
+      .ttl { font-size: 17px; font-style: italic; fill: #1a1a1a; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="800" height="460"/>
+  <text x="400" y="32" text-anchor="middle" class="ttl">q-deformed Kolmogorov scaling  E(k)  ∝  k^{−5/3}</text>
+
+  <!-- Plot -->
+  <line class="axis" x1="80" y1="380" x2="720" y2="380"/>
+  <line class="axis" x1="80" y1="380" x2="80" y2="80"/>
+  <text x="720" y="395" class="axislbl">log k</text>
+  <text x="60" y="80" class="axislbl">log E(k)</text>
+
+  <!-- Classical k^{-5/3}: straight line from (90, 100) to (640, 350) -->
+  <line class="classical" x1="100" y1="120" x2="640" y2="350"/>
+  <text x="650" y="350" class="lbl" fill="#2980b9">k^{−5/3}  classical</text>
+
+  <!-- q-deformed: same up to k_q (x ≈ 350), then bends to k^{-2} (steeper) -->
+  <path class="qdef" d="M 100 120 L 350 226 L 640 380"/>
+  <text x="650" y="380" class="lbl" fill="#c0392b">q-deformed</text>
+
+  <!-- Dissipation scale + bend -->
+  <line class="scalemark" x1="350" y1="226" x2="350" y2="380"/>
+  <text x="350" y="400" class="scalelbl" text-anchor="middle">k_q</text>
+
+  <line class="scalemark" x1="600" y1="350" x2="600" y2="380"/>
+  <text x="600" y="400" class="scalelbl" text-anchor="middle">k_d</text>
+
+  <text x="400" y="440" text-anchor="middle" class="lbl" font-style="italic">
+    classical: -5/3 power law down to dissipation scale k_d
+  </text>
+  <text x="400" y="455" text-anchor="middle" class="lbl" font-style="italic">
+    q-deformed: bend at k_q ≪ k_d as quantum corrections dominate
+  </text>
+</svg>

@@ -1,0 +1,3 @@
+# CH₄ tetrahedral symmetry
+
+F13.3 (P2). A regular tetrahedron in 2D projection with hydrogen atoms (white circles labelled H) at the four vertices and a carbon atom (white circle labelled C) at the centroid. The four C–H "edges" are drawn as faint dashed grey lines; on each, a small red filled circle marks the shared sub-Hopf link (the covalent bond). Footer: "$S_4$ tetrahedral symmetry — 24 elements: 4 $C_3$ rotations, 3 $C_2$, 6 $\sigma_d$, identity; all four C–H bonds equivalent ⇒ each shared trefoil contributes 1/4 of the C–H binding energy". Layout: 2D tetrahedron projection. Density: 4 H + 1 C + 4 bonds + footer. Style: schematic. Colour: monochrome plus red on the bond markers.

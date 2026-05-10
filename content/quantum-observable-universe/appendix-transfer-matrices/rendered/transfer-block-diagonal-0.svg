@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 540"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>Transfer-matrix Wedderburn block decomposition</title>
+  <desc>
+    Large block-diagonal matrix glyph; each block labelled with
+    its Wedderburn partition λ and dimension dim_q(λ).  Off-block
+    entries are 0.
+  </desc>
+  <defs>
+    <style>
+      .bg { fill: #ffffff; }
+      .frame { fill: none; stroke: #1a1a1a; stroke-width: 2.4; }
+      .blk { fill: #f0f0f6; stroke: #1a1a1a; stroke-width: 1.6; }
+      .zero { fill: #ffffff; stroke: #ddd; stroke-width: 1; }
+      .lblb { font-size: 14px; font-weight: 700; fill: #1a1a1a; text-anchor: middle; }
+      .lbl { font-size: 11px; fill: #444; text-anchor: middle; }
+      .ttl { font-size: 17px; font-style: italic; fill: #1a1a1a; }
+      .eq { font-size: 18px; fill: #1a1a1a; text-anchor: middle; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="800" height="540"/>
+  <text x="400" y="32" text-anchor="middle" class="ttl">Transfer matrix M_n  =  Wedderburn block-diagonal decomposition</text>
+
+  <text x="170" y="270" class="eq">M_n  =</text>
+
+  <!-- Block-diagonal matrix.  Big rectangle 380 × 380 starting at (300, 80). -->
+  <g transform="translate(300, 80)">
+    <rect class="frame" x="0" y="0" width="380" height="380"/>
+
+    <!-- Block 1: λ=(n) — symmetric, top-left.  60×60 -->
+    <rect class="blk" x="10" y="10" width="60" height="60"/>
+    <text x="40" y="38" class="lblb">M_(n)</text>
+    <text x="40" y="56" class="lbl">dim_q = 1</text>
+
+    <!-- Block 2: λ=(n-1,1) — std, 90×90 -->
+    <rect class="blk" x="80" y="80" width="90" height="90"/>
+    <text x="125" y="120" class="lblb">M_(n−1,1)</text>
+    <text x="125" y="140" class="lbl">dim_q = [n−1]_q</text>
+
+    <!-- Block 3: λ=(n-2, 2) — 100×100 -->
+    <rect class="blk" x="180" y="180" width="100" height="100"/>
+    <text x="230" y="220" class="lblb">M_(n−2, 2)</text>
+    <text x="230" y="240" class="lbl">dim_q = …</text>
+
+    <!-- Block 4: λ=(1^n) — alt, bottom-right -->
+    <rect class="blk" x="290" y="290" width="80" height="80"/>
+    <text x="330" y="330" class="lblb">M_(1ⁿ)</text>
+    <text x="330" y="348" class="lbl">dim_q = 1</text>
+
+    <!-- Off-diagonal zeros (light) -->
+    <rect class="zero" x="10" y="80" width="60" height="290"/>
+    <text x="40" y="225" class="lbl">0</text>
+    <rect class="zero" x="80" y="10" width="290" height="60"/>
+    <text x="220" y="44" class="lbl">0</text>
+    <rect class="zero" x="180" y="80" width="190" height="90"/>
+    <text x="275" y="125" class="lbl">0</text>
+    <rect class="zero" x="80" y="180" width="100" height="190"/>
+    <rect class="zero" x="290" y="180" width="80" height="100"/>
+  </g>
+
+  <text x="400" y="500" text-anchor="middle" class="lbl" font-style="italic">
+    Wedderburn: H_n(q) ≅ ⊕_{λ ⊢ n} M_{dim_q(λ)}(ℂ)  —  block decomposition fixes everything
+  </text>
+</svg>

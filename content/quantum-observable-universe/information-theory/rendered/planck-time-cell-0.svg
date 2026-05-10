@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>Planck-time computation cell</title>
+  <desc>
+    A spacetime diamond of side ℓ_P with a single bit "0/1"
+    inscribed; many such diamonds tiling a strip representing
+    one Planck-time of brane evolution.
+  </desc>
+  <defs>
+    <style>
+      .bg { fill: #ffffff; }
+      .cell { fill: #f0f0f6; stroke: #1a1a1a; stroke-width: 1.6; }
+      .bit { font-size: 11px; fill: #1a1a1a; text-anchor: middle; font-family: monospace; }
+      .ttl { font-size: 17px; font-style: italic; fill: #1a1a1a; }
+      .lbl { font-size: 12px; fill: #1a1a1a; text-anchor: middle; }
+      .lbls { font-size: 11px; fill: #444; text-anchor: middle; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="800" height="380"/>
+  <text x="400" y="32" text-anchor="middle" class="ttl">Planck-time computation cell</text>
+
+  <!-- Highlighted single cell on the left -->
+  <g transform="translate(120, 200)">
+    <polygon class="cell" points="0,-50 50,0 0,50 -50,0"/>
+    <text x="0" y="-15" class="bit">0</text>
+    <text x="0" y="10" class="bit">/</text>
+    <text x="0" y="35" class="bit">1</text>
+  </g>
+  <text x="120" y="290" class="lbl">single Planck cell</text>
+  <text x="120" y="308" class="lbls">side  ℓ_P  ≈  10⁻³⁵ m</text>
+  <text x="120" y="324" class="lbls">duration  τ_P  ≈  10⁻⁴³ s</text>
+
+  <!-- Tiling strip on the right -->
+  <g transform="translate(540, 200)">
+    <g>
+      <polygon class="cell" points="-160,-25 -135,0 -160,25 -185,0"/>
+      <polygon class="cell" points="-110,-25 -85,0 -110,25 -135,0"/>
+      <polygon class="cell" points="-60,-25 -35,0 -60,25 -85,0"/>
+      <polygon class="cell" points="-10,-25 15,0 -10,25 -35,0"/>
+      <polygon class="cell" points="40,-25 65,0 40,25 15,0"/>
+      <polygon class="cell" points="90,-25 115,0 90,25 65,0"/>
+      <polygon class="cell" points="140,-25 165,0 140,25 115,0"/>
+    </g>
+    <text x="-160" y="-3" class="bit">0</text>
+    <text x="-110" y="-3" class="bit">1</text>
+    <text x="-60"  y="-3" class="bit">1</text>
+    <text x="-10"  y="-3" class="bit">0</text>
+    <text x="40"   y="-3" class="bit">1</text>
+    <text x="90"   y="-3" class="bit">0</text>
+    <text x="140"  y="-3" class="bit">1</text>
+  </g>
+  <text x="540" y="290" class="lbl">7 Planck cells in 1 Planck-time of brane evolution</text>
+  <text x="540" y="308" class="lbls">each cell flips one bit</text>
+  <text x="540" y="324" class="lbls">throughput ≈ 1/τ_P bits per cell</text>
+
+  <text x="400" y="360" text-anchor="middle" class="lbls" font-style="italic">brane evolution = Turing-complete tape running at the Planck rate</text>
+</svg>

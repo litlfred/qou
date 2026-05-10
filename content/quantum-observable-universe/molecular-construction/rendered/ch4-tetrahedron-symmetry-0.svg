@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 540"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>CH₄ tetrahedral symmetry</title>
+  <desc>
+    Regular tetrahedron with H atoms at vertices and C at the
+    centre.  Each C–H edge replaced by a small shared-trefoil
+    glyph.  S₄ symmetry orbits highlighted.
+  </desc>
+  <defs>
+    <style>
+      .bg { fill: #ffffff; }
+      .edge { stroke: #1a1a1a; stroke-width: 1.4; fill: none; stroke-dasharray: 2 2; }
+      .shared { fill: none; stroke: #c0392b; stroke-width: 2.4; }
+      .atom { fill: #ffffff; stroke: #1a1a1a; stroke-width: 1.6; }
+      .atomlbl { font-size: 16px; font-weight: 700; fill: #1a1a1a; text-anchor: middle; }
+      .lbl { font-size: 13px; fill: #1a1a1a; text-anchor: middle; }
+      .lbls { font-size: 11px; fill: #444; text-anchor: middle; }
+      .ttl { font-size: 17px; font-style: italic; fill: #1a1a1a; }
+      .symlbl { fill: #2980b9; font-size: 12px; font-style: italic; text-anchor: middle; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="700" height="540"/>
+  <text x="350" y="32" text-anchor="middle" class="ttl">CH₄  tetrahedral symmetry</text>
+
+  <!-- Tetrahedron with H atoms at 4 vertices in 2D projection.
+       Vertices: top (350, 100), front-left (180, 360), front-right (520, 360), back (350, 270 deeper). -->
+  <g>
+    <!-- Edges -->
+    <line class="edge" x1="350" y1="100" x2="180" y2="360"/>
+    <line class="edge" x1="350" y1="100" x2="520" y2="360"/>
+    <line class="edge" x1="350" y1="100" x2="350" y2="320"/>
+    <line class="edge" x1="180" y1="360" x2="520" y2="360"/>
+    <line class="edge" x1="180" y1="360" x2="350" y2="320"/>
+    <line class="edge" x1="520" y1="360" x2="350" y2="320"/>
+
+    <!-- C-H bonds (shared trefoils on each spoke from centre) -->
+    <circle class="shared" cx="320" cy="170" r="14"/>
+    <circle class="shared" cx="232" cy="318" r="14"/>
+    <circle class="shared" cx="468" cy="318" r="14"/>
+    <circle class="shared" cx="350" cy="290" r="14"/>
+
+    <!-- Centre: C -->
+    <circle class="atom" cx="350" cy="240" r="32"/>
+    <text x="350" y="247" class="atomlbl">C</text>
+
+    <!-- Hydrogens at vertices -->
+    <circle class="atom" cx="350" cy="100" r="22"/>
+    <text x="350" y="107" class="atomlbl">H</text>
+    <circle class="atom" cx="180" cy="360" r="22"/>
+    <text x="180" y="367" class="atomlbl">H</text>
+    <circle class="atom" cx="520" cy="360" r="22"/>
+    <text x="520" y="367" class="atomlbl">H</text>
+    <circle class="atom" cx="350" cy="320" r="22"/>
+    <text x="350" y="327" class="atomlbl">H</text>
+  </g>
+
+  <!-- S4 symmetry annotation -->
+  <text x="350" y="425" class="symlbl">S₄ tetrahedral symmetry — 24 elements: 4 C₃ rotations, 3 C₂, 6 σ_d, identity</text>
+  <text x="350" y="450" class="lbl">all four C–H bonds equivalent</text>
+  <text x="350" y="470" class="lbls">⇒  each shared trefoil contributes 1/4 of the C–H binding energy</text>
+
+  <text x="350" y="510" text-anchor="middle" class="lbl" font-style="italic">red disks: shared sub-Hopf links (covalent bonds); dashed: tetrahedron skeleton</text>
+</svg>

@@ -1,0 +1,3 @@
+# Planck-time computation cell
+
+F8.3 (P2). Left: a single highlighted spacetime "diamond" cell of side $\ell_P$ with a "0/1" bit inscribed at its centre. Right: a horizontal strip of seven such diamonds tiling space, each with a bit value (0 or 1), representing one Planck-time of brane evolution. Captions: "single Planck cell — side $\ell_P \approx 10^{-35}$ m, duration $\tau_P \approx 10^{-43}$ s"; "7 Planck cells in 1 Planck-time of brane evolution — each cell flips one bit; throughput $\approx 1/\tau_P$ bits per cell". Footer: "brane evolution = Turing-complete tape running at the Planck rate". Layout: 1 highlighted cell + 7-cell strip + captions. Density: minimal. Style: schematic; cells as diamonds (rotated squares). Colour: monochrome.

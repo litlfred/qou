@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>Benzene aromaticity as bond equalisation</title>
+  <desc>
+    The C₆ ring with alternating double/single bonds (left) and
+    equalised "1.5" bonds (right); a ℤ/6 rotation symmetry arrow
+    between them.
+  </desc>
+  <defs>
+    <marker id="tip" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a1a1a"/>
+    </marker>
+    <style>
+      .bg { fill: #ffffff; }
+      .atom { fill: #ffffff; stroke: #1a1a1a; stroke-width: 1.6; }
+      .atomlbl { font-size: 12px; font-weight: 700; fill: #1a1a1a; text-anchor: middle; }
+      .single { stroke: #1a1a1a; stroke-width: 1.6; fill: none; }
+      .double { stroke: #1a1a1a; stroke-width: 1.6; fill: none; }
+      .equ { stroke: #c0392b; stroke-width: 2; fill: none; stroke-dasharray: 4 3; }
+      .ttl { font-size: 17px; font-style: italic; fill: #1a1a1a; }
+      .panel { font-size: 14px; font-weight: 700; fill: #1a1a1a; text-anchor: middle; }
+      .lbl { font-size: 12px; fill: #1a1a1a; text-anchor: middle; }
+      .arrlbl { font-size: 12px; fill: #1a1a1a; font-style: italic; text-anchor: middle; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="900" height="480"/>
+  <text x="450" y="32" text-anchor="middle" class="ttl">Benzene aromaticity:  Kekulé  ↔  delocalised</text>
+
+  <!-- Left: Kekulé structure — alternating single / double -->
+  <text x="220" y="68" class="panel">Kekulé structure</text>
+  <g transform="translate(220, 240)">
+    <!-- 6 carbons at hexagon vertices, side ~ 80, centre at (0,0) -->
+    <!-- Vertices: 0=(0,-90), 1=(78,-45), 2=(78,45), 3=(0,90), 4=(-78,45), 5=(-78,-45) -->
+    <line class="single" x1="0" y1="-90" x2="78" y2="-45"/>
+    <line class="double" x1="78" y1="-45" x2="78" y2="45"/>
+    <line class="single" x1="78" y1="45" x2="0" y2="90"/>
+    <line class="double" x1="0" y1="90" x2="-78" y2="45"/>
+    <line class="single" x1="-78" y1="45" x2="-78" y2="-45"/>
+    <line class="double" x1="-78" y1="-45" x2="0" y2="-90"/>
+    <!-- Inner double-bond lines parallel -->
+    <line class="double" x1="70" y1="-40" x2="70" y2="40"/>
+    <line class="double" x1="-7" y1="80" x2="-71" y2="40"/>
+    <line class="double" x1="-71" y1="-40" x2="-7" y2="-80"/>
+    <!-- Atoms -->
+    <circle class="atom" cx="0" cy="-90" r="14"/><text x="0" y="-86" class="atomlbl">C</text>
+    <circle class="atom" cx="78" cy="-45" r="14"/><text x="78" y="-41" class="atomlbl">C</text>
+    <circle class="atom" cx="78" cy="45" r="14"/><text x="78" y="49" class="atomlbl">C</text>
+    <circle class="atom" cx="0" cy="90" r="14"/><text x="0" y="94" class="atomlbl">C</text>
+    <circle class="atom" cx="-78" cy="45" r="14"/><text x="-78" y="49" class="atomlbl">C</text>
+    <circle class="atom" cx="-78" cy="-45" r="14"/><text x="-78" y="-41" class="atomlbl">C</text>
+  </g>
+  <text x="220" y="385" class="lbl">alternating single / double bonds — 3 of each</text>
+
+  <!-- Arrow with ℤ/6 -->
+  <line stroke="#1a1a1a" stroke-width="1.6" fill="none" x1="380" y1="240" x2="500" y2="240" marker-end="url(#tip)"/>
+  <line stroke="#1a1a1a" stroke-width="1.6" fill="none" x1="500" y1="240" x2="380" y2="240" marker-end="url(#tip)"/>
+  <text x="440" y="225" class="arrlbl">ℤ/6 rotation symmetry</text>
+
+  <!-- Right: equalised bonds -->
+  <text x="680" y="68" class="panel">delocalised aromatic</text>
+  <g transform="translate(680, 240)">
+    <!-- 6 carbons same positions, equalised bonds (red dashed inner) -->
+    <line class="single" x1="0" y1="-90" x2="78" y2="-45"/>
+    <line class="single" x1="78" y1="-45" x2="78" y2="45"/>
+    <line class="single" x1="78" y1="45" x2="0" y2="90"/>
+    <line class="single" x1="0" y1="90" x2="-78" y2="45"/>
+    <line class="single" x1="-78" y1="45" x2="-78" y2="-45"/>
+    <line class="single" x1="-78" y1="-45" x2="0" y2="-90"/>
+    <!-- Inner aromaticity ring -->
+    <circle class="equ" r="50"/>
+    <!-- Atoms -->
+    <circle class="atom" cx="0" cy="-90" r="14"/><text x="0" y="-86" class="atomlbl">C</text>
+    <circle class="atom" cx="78" cy="-45" r="14"/><text x="78" y="-41" class="atomlbl">C</text>
+    <circle class="atom" cx="78" cy="45" r="14"/><text x="78" y="49" class="atomlbl">C</text>
+    <circle class="atom" cx="0" cy="90" r="14"/><text x="0" y="94" class="atomlbl">C</text>
+    <circle class="atom" cx="-78" cy="45" r="14"/><text x="-78" y="49" class="atomlbl">C</text>
+    <circle class="atom" cx="-78" cy="-45" r="14"/><text x="-78" y="-41" class="atomlbl">C</text>
+  </g>
+  <text x="680" y="385" class="lbl">equalised "1.5" bonds — T(2,6) thread restores symmetry</text>
+
+  <text x="450" y="445" text-anchor="middle" class="lbl" font-style="italic">
+    aromaticity = the Kekulé form averages over its rotation orbit; T(2,6) thread is the categorical realisation
+  </text>
+</svg>

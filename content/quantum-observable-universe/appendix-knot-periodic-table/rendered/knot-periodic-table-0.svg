@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>Knot periodic table</title>
+  <desc>
+    Periodic-table-style grid of knots.  Columns by braid index n,
+    rows by crossing number c.  Each cell contains a small knot
+    icon, Hecke-word label, and associated particle / atom /
+    molecule.
+  </desc>
+  <defs>
+    <style>
+      .bg { fill: #ffffff; }
+      .cell { fill: #ffffff; stroke: #1a1a1a; stroke-width: 1.2; }
+      .header { fill: #1a1a1a; }
+      .hdrlbl { fill: #fff; font-size: 12px; font-weight: 700; text-anchor: middle; }
+      .knotlbl { font-size: 10px; font-weight: 700; fill: #1a1a1a; text-anchor: middle; }
+      .partlbl { font-size: 9px; fill: #c0392b; text-anchor: middle; }
+      .heckelbl { font-size: 8px; fill: #444; text-anchor: middle; font-style: italic; }
+      .icon { fill: none; stroke: #1a1a1a; stroke-width: 1.4; }
+      .ttl { font-size: 17px; font-style: italic; fill: #1a1a1a; }
+      .ax { font-size: 12px; font-style: italic; fill: #1a1a1a; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1200" height="720"/>
+  <text x="600" y="32" text-anchor="middle" class="ttl">Knot periodic table — by braid index n and crossing number c</text>
+
+  <!-- Axes -->
+  <text x="40" y="80" class="ax">crossings c ↓</text>
+  <text x="600" y="60" text-anchor="middle" class="ax">braid index  n  →</text>
+
+  <!-- Headers (top row) -->
+  <g>
+    <rect class="header" x="120" y="80" width="120" height="30"/>
+    <text x="180" y="100" class="hdrlbl">n = 2</text>
+    <rect class="header" x="240" y="80" width="120" height="30"/>
+    <text x="300" y="100" class="hdrlbl">n = 3</text>
+    <rect class="header" x="360" y="80" width="120" height="30"/>
+    <text x="420" y="100" class="hdrlbl">n = 4</text>
+    <rect class="header" x="480" y="80" width="120" height="30"/>
+    <text x="540" y="100" class="hdrlbl">n = 5</text>
+    <rect class="header" x="600" y="80" width="120" height="30"/>
+    <text x="660" y="100" class="hdrlbl">n = 6</text>
+    <rect class="header" x="720" y="80" width="120" height="30"/>
+    <text x="780" y="100" class="hdrlbl">n = 7</text>
+    <rect class="header" x="840" y="80" width="120" height="30"/>
+    <text x="900" y="100" class="hdrlbl">n = 8</text>
+    <rect class="header" x="960" y="80" width="120" height="30"/>
+    <text x="1020" y="100" class="hdrlbl">n = 10</text>
+  </g>
+
+  <!-- Row labels (left column) -->
+  <g>
+    <rect class="header" x="60" y="110" width="60" height="80"/>
+    <text x="90" y="155" class="hdrlbl">c = 0</text>
+    <rect class="header" x="60" y="190" width="60" height="80"/>
+    <text x="90" y="235" class="hdrlbl">c = 3</text>
+    <rect class="header" x="60" y="270" width="60" height="80"/>
+    <text x="90" y="315" class="hdrlbl">c = 4</text>
+    <rect class="header" x="60" y="350" width="60" height="80"/>
+    <text x="90" y="395" class="hdrlbl">c = 5</text>
+    <rect class="header" x="60" y="430" width="60" height="80"/>
+    <text x="90" y="475" class="hdrlbl">c = 6</text>
+    <rect class="header" x="60" y="510" width="60" height="80"/>
+    <text x="90" y="555" class="hdrlbl">c = 7</text>
+    <rect class="header" x="60" y="590" width="60" height="80"/>
+    <text x="90" y="635" class="hdrlbl">c = 8+</text>
+  </g>
+
+  <!-- Cell template grid: 8 cols × 7 rows of cells, each 120 × 80 -->
+  <g>
+    <!-- Row c=0: only n=2 → unknot -->
+    <rect class="cell" x="120" y="110" width="120" height="80"/>
+    <circle class="icon" cx="180" cy="140" r="16"/>
+    <text x="180" y="170" class="knotlbl">0₁ unknot</text>
+    <text x="180" y="183" class="partlbl">ν_e (neutrino)</text>
+    <!-- empty rest of c=0 -->
+    <rect class="cell" x="240" y="110" width="120" height="80"/>
+    <rect class="cell" x="360" y="110" width="120" height="80"/>
+    <rect class="cell" x="480" y="110" width="120" height="80"/>
+    <rect class="cell" x="600" y="110" width="120" height="80"/>
+    <rect class="cell" x="720" y="110" width="120" height="80"/>
+    <rect class="cell" x="840" y="110" width="120" height="80"/>
+    <rect class="cell" x="960" y="110" width="120" height="80"/>
+
+    <!-- Row c=3: n=2 → trefoil 3_1 -->
+    <rect class="cell" x="120" y="190" width="120" height="80"/>
+    <circle class="icon" cx="170" cy="220" r="10"/>
+    <circle class="icon" cx="190" cy="220" r="10"/>
+    <circle class="icon" cx="180" cy="232" r="10"/>
+    <text x="180" y="252" class="knotlbl">3₁ trefoil</text>
+    <text x="180" y="263" class="partlbl">e⁻ (electron)</text>
+
+    <rect class="cell" x="240" y="190" width="120" height="80"/>
+    <rect class="cell" x="360" y="190" width="120" height="80"/>
+    <rect class="cell" x="480" y="190" width="120" height="80"/>
+    <rect class="cell" x="600" y="190" width="120" height="80"/>
+    <rect class="cell" x="720" y="190" width="120" height="80"/>
+    <rect class="cell" x="840" y="190" width="120" height="80"/>
+    <rect class="cell" x="960" y="190" width="120" height="80"/>
+
+    <!-- Row c=4: n=2 → 4_1 figure-8 -->
+    <rect class="cell" x="120" y="270" width="120" height="80"/>
+    <ellipse class="icon" cx="170" cy="305" rx="14" ry="11"/>
+    <ellipse class="icon" cx="190" cy="305" rx="14" ry="11"/>
+    <text x="180" y="332" class="knotlbl">4₁ fig-8</text>
+    <text x="180" y="343" class="partlbl">— hyperbolic</text>
+
+    <rect class="cell" x="240" y="270" width="120" height="80"/>
+    <text x="300" y="320" class="knotlbl">box-braid</text>
+    <text x="300" y="333" class="partlbl">(W boson)</text>
+
+    <rect class="cell" x="360" y="270" width="120" height="80"/>
+    <rect class="cell" x="480" y="270" width="120" height="80"/>
+    <rect class="cell" x="600" y="270" width="120" height="80"/>
+    <rect class="cell" x="720" y="270" width="120" height="80"/>
+    <rect class="cell" x="840" y="270" width="120" height="80"/>
+    <rect class="cell" x="960" y="270" width="120" height="80"/>
+
+    <!-- Row c=5: n=2 → 5_1 = T(2,5), n=3 → 5_2 -->
+    <rect class="cell" x="120" y="350" width="120" height="80"/>
+    <polygon class="icon" points="180,388 187,403 203,403 191,413 196,427 180,420 164,427 169,413 157,403 173,403"/>
+    <text x="180" y="423" class="knotlbl">5₁ T(2,5)</text>
+    <text x="180" y="434" class="partlbl">μ⁻ (muon)</text>
+
+    <rect class="cell" x="240" y="350" width="120" height="80"/>
+    <text x="300" y="400" class="knotlbl">5₂</text>
+    <text x="300" y="413" class="partlbl">— twist knot</text>
+
+    <rect class="cell" x="360" y="350" width="120" height="80"/>
+    <rect class="cell" x="480" y="350" width="120" height="80"/>
+    <rect class="cell" x="600" y="350" width="120" height="80"/>
+    <rect class="cell" x="720" y="350" width="120" height="80"/>
+    <rect class="cell" x="840" y="350" width="120" height="80"/>
+    <rect class="cell" x="960" y="350" width="120" height="80"/>
+
+    <!-- Row c=6: Borromean -->
+    <rect class="cell" x="120" y="430" width="120" height="80"/>
+    <rect class="cell" x="240" y="430" width="120" height="80"/>
+    <circle class="icon" cx="290" cy="460" r="10"/>
+    <circle class="icon" cx="310" cy="460" r="10"/>
+    <circle class="icon" cx="300" cy="475" r="10"/>
+    <text x="300" y="498" class="knotlbl">𝓑₃ Borromean</text>
+    <text x="300" y="509" class="partlbl">u/d/s baryons</text>
+
+    <rect class="cell" x="360" y="430" width="120" height="80"/>
+    <rect class="cell" x="480" y="430" width="120" height="80"/>
+    <rect class="cell" x="600" y="430" width="120" height="80"/>
+    <rect class="cell" x="720" y="430" width="120" height="80"/>
+    <rect class="cell" x="840" y="430" width="120" height="80"/>
+    <rect class="cell" x="960" y="430" width="120" height="80"/>
+
+    <!-- Row c=7: T(2,7) tau -->
+    <rect class="cell" x="120" y="510" width="120" height="80"/>
+    <polygon class="icon" points="180,548 188,565 205,562 197,576 207,592 188,587 180,605 172,587 153,592 163,576 155,562 172,565"/>
+    <text x="180" y="603" class="knotlbl">7₁ T(2,7)</text>
+    <text x="180" y="614" class="partlbl">τ⁻ (tau)</text>
+
+    <rect class="cell" x="240" y="510" width="120" height="80"/>
+    <rect class="cell" x="360" y="510" width="120" height="80"/>
+    <rect class="cell" x="480" y="510" width="120" height="80"/>
+    <rect class="cell" x="600" y="510" width="120" height="80"/>
+    <rect class="cell" x="720" y="510" width="120" height="80"/>
+    <rect class="cell" x="840" y="510" width="120" height="80"/>
+    <rect class="cell" x="960" y="510" width="120" height="80"/>
+
+    <!-- Row c=8+: heavy isotopes -->
+    <rect class="cell" x="120" y="590" width="120" height="80"/>
+    <rect class="cell" x="240" y="590" width="120" height="80"/>
+    <rect class="cell" x="360" y="590" width="120" height="80"/>
+    <text x="420" y="625" class="knotlbl">⁴He</text>
+    <text x="420" y="638" class="partlbl">α-particle</text>
+    <text x="420" y="650" class="heckelbl">8 strands</text>
+
+    <rect class="cell" x="480" y="590" width="120" height="80"/>
+    <rect class="cell" x="600" y="590" width="120" height="80"/>
+    <text x="660" y="625" class="knotlbl">¹²C</text>
+    <text x="660" y="638" class="partlbl">carbon-12</text>
+
+    <rect class="cell" x="720" y="590" width="120" height="80"/>
+    <rect class="cell" x="840" y="590" width="120" height="80"/>
+    <rect class="cell" x="960" y="590" width="120" height="80"/>
+    <text x="1020" y="625" class="knotlbl">⁵⁶Fe</text>
+    <text x="1020" y="638" class="partlbl">iron-56</text>
+    <text x="1020" y="650" class="heckelbl">112 strands</text>
+  </g>
+
+  <text x="600" y="700" text-anchor="middle" class="ax">grid is illustrative — full periodic table rendered offline by appendix-knot-periodic-table chapter</text>
+</svg>
