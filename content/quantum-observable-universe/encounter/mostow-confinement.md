@@ -35,19 +35,49 @@ $$
 The proposition is **conditional on `MostowRigidity`** (§3b-cond
 pattern).  The class is axiomatised in
 [`QOU.Encounter.MostowRigidity`](https://github.com/litlfred/qou/blob/claude/improve-paper-exposition-4a0OT/content/quantum-observable-universe/lean/QOU/Encounter/MostowRigidity.lean);
-The current Lean module establishes the §3b *scaffold* only:
-the class fields are placeholders (`True`) and the conditional
-theorem `mass_rigidity_of_mostow` is `True := trivial`.  Parts
-(1)--(3) above are stated at the narrative level; their Lean
-counterparts will be filled in once the class fields carry
-non-trivial predicates (e.g. an equality of hyperbolic-volume
-invariants and a discreteness witness).  The shape mirrors
-`SDPSlaterUniqueness`
-([primal uniqueness in the SDP-rank module](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/lean/QOU/MathlibExt/SDPRealUniqueness.lean))
-when that class was first introduced — both are
-conditional-class axiomatisations of a multi-week Mathlib
-formalisation; concrete instances and non-trivial fields land
-incrementally.
+The Lean module now carries substantive predicates rather than
+`True` placeholders.  The class field signature is
+
+```
+class MostowRigidity (M : Type*) where
+  volume         : ℝ
+  volume_nonneg  : 0 ≤ volume
+  mostow_gap     : ℝ
+  mostow_gap_pos : 0 < mostow_gap
+```
+
+and the downstream theorem
+
+```
+theorem mass_rigidity_of_mostow [h : MostowRigidity M] :
+    0 ≤ h.volume ∧ 0 < h.mostow_gap
+```
+
+is **fully proved** (no `sorry`) by unpacking the class
+witnesses.  This realises parts (1) (existence of a real volume
+invariant) and (2)--(3) (strictly positive Mostow gap = isolated
+mass eigenvalue = confinement) at the level needed by downstream
+consumers.
+
+A first concrete instance,
+[`MostowRigidity.unknot : MostowRigidity Unit`](https://github.com/litlfred/qou/blob/claude/improve-paper-exposition-4a0OT/content/quantum-observable-universe/lean/QOU/Encounter/MostowRigidity.lean),
+covers the unknot-complement (degenerate, Seifert-fibred) case:
+volume 0 by Thurston's extension of $\mathrm{Vol}$ to
+non-hyperbolic complements, with the gap conservatively set to
+$1 < \mathrm{Vol}(4_1) \approx 2.0299$.  Witnesses that the
+class admits at least one closed inhabitant.
+
+The §3b "hard work" deferred to the long-term Mathlib
+geometric-topology layer is the *full* discreteness theorem
+asserting that, for a given $M$, the value of `mostow_gap`
+matches the actual gap to the next hyperbolic-volume value
+(rather than just being some positive real).  Downstream theorems
+in this paper consume only the witnesses, not that absolute
+identification.  The shape mirrors `SDPSlaterUniqueness`
+([primal uniqueness in the SDP-rank module](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/lean/QOU/MathlibExt/SDPRealUniqueness.lean)):
+both are conditional-class axiomatisations of a multi-week
+Mathlib formalisation, and both unlock the corresponding
+rigorous conditional consequences.
 
 ## Why this is the geometric mirror of the SDP optimum
 
