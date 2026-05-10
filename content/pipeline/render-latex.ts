@@ -148,9 +148,56 @@ export function clearMdAstCache(): void {
  *   | table         | \begin{tabular}...\end{tabular}      |
  *   | paragraph     | children + blank line                |
  */
-export function markdownToLatex(md: string): string {
-  const tree = parseMdCached(md);
-  return renderMdastNode(tree).trim();
+/**
+ * Source directory (absolute or repo-relative) of the currently-rendering
+ * .md block.  Set by `markdownToLatex(...)` and read by the `image` case
+ * in `renderMdastNode` so that a sibling `<image-stem>.prompt.md` can be
+ * resolved next to the SVG and emitted as a `\figprompt{...}` margin
+ * note under the figure caption.
+ */
+let currentSourceDir: string | undefined;
+
+/**
+ * Look up a sibling `<stem>.prompt.md` next to a markdown-image url and
+ * return its contents (trimmed, single-paragraph).  Returns `undefined`
+ * when no sidecar is present.  The url is interpreted relative to
+ * `currentSourceDir`; absolute / external urls return undefined.
+ */
+function lookupFigurePrompt(url: string): string | undefined {
+  if (!currentSourceDir) return undefined;
+  return readPromptSidecar(currentSourceDir, url);
+}
+
+/**
+ * Resolve `<sourceDir>/<stem>.prompt.md` for a given image relative
+ * url and return its trimmed contents, or `undefined` if the sidecar
+ * does not exist or the url is external.  Shared between the
+ * markdown-image case (`lookupFigurePrompt`) and the `diagram` block
+ * branch which reads `block.meta.file` directly without going through
+ * mdast.
+ */
+function readPromptSidecar(sourceDir: string, fileUrl: string): string | undefined {
+  if (!fileUrl || /^(https?:|data:)/i.test(fileUrl)) return undefined;
+  const ext = extname(fileUrl);
+  if (!ext) return undefined;
+  const stem = fileUrl.slice(0, -ext.length);
+  const promptPath = join(sourceDir, `${stem}.prompt.md`);
+  if (!existsSync(promptPath)) return undefined;
+  return readFileSync(promptPath, "utf-8")
+    .replace(/\r/g, "")
+    .replace(/\s+/g, " ")
+    .trim() || undefined;
+}
+
+export function markdownToLatex(md: string, sourceDir?: string): string {
+  const prev = currentSourceDir;
+  currentSourceDir = sourceDir;
+  try {
+    const tree = parseMdCached(md);
+    return renderMdastNode(tree).trim();
+  } finally {
+    currentSourceDir = prev;
+  }
 }
 
 /**
@@ -374,6 +421,15 @@ function renderMdastNode(node: any): string {
       if (alt) {
         lines.push(`  \\caption{${escapeLatex(alt)}}`);
       }
+      // Look up sibling <stem>.prompt.md next to the image and, if
+      // present, emit its contents as a small italicised margin note
+      // under the caption.  This is how authored-SVG generation
+      // prompts surface in the printed PDF (per
+      // docs/illustration-recommendations.md).
+      const promptText = lookupFigurePrompt(url);
+      if (promptText) {
+        lines.push(`  \\figprompt{${escapeLatex(promptText)}}`);
+      }
       lines.push("\\end{figure}");
       return lines.join("\n");
     }
@@ -525,7 +581,7 @@ export function renderBlock(block: Block, mdContent: string, sourceDir?: string)
 
   switch (block.kind) {
     case "prose": {
-      lines.push(markdownToLatex(mdContent));
+      lines.push(markdownToLatex(mdContent, sourceDir));
       break;
     }
 
@@ -536,6 +592,7 @@ export function renderBlock(block: Block, mdContent: string, sourceDir?: string)
       if (block.label) {
         lines.push("\\begin{equation}");
         lines.push(`  \\label{${block.label}}`);
+        lines.push(`  \\blockstub{${escapeLatex(block.label)}}`);
         lines.push(`  ${tex}`);
         lines.push("\\end{equation}");
       } else {
@@ -554,17 +611,25 @@ export function renderBlock(block: Block, mdContent: string, sourceDir?: string)
         lines.push("\\begin{figure}[htbp]");
         lines.push("  \\centering");
         lines.push(`  \\includegraphics[width=\\textwidth]{${figPath}}`);
-        if (block.label) lines.push(`  \\label{${block.label}}`);
+        if (block.label) {
+          lines.push(`  \\label{${block.label}}`);
+          lines.push(`  \\blockstub{${escapeLatex(block.label)}}`);
+        }
         // Caption from block.caption or block title (extra field from builders)
         const caption = block.caption || (block as any).title || "";
         if (caption) lines.push(`  \\caption{${escapeLatex(caption)}}`);
+        // Sibling <stem>.prompt.md margin-note, if present.
+        const promptText = sourceDir ? readPromptSidecar(sourceDir, figFile) : undefined;
+        if (promptText) {
+          lines.push(`  \\figprompt{${escapeLatex(promptText)}}`);
+        }
         lines.push("\\end{figure}");
       } else {
         // TeX-based diagram (tikzcd, etc.)
         // Use markdownToLatex (not extractMathContent) so that prose
         // paragraphs surrounding the tikzcd block render correctly —
         // in particular, inline math keeps its $...$ delimiters.
-        const tex = block.tex || markdownToLatex(mdContent);
+        const tex = block.tex || markdownToLatex(mdContent, sourceDir);
         if (block.label) lines.push(`% diagram: ${block.label}`);
         lines.push(tex);
         if (block.caption) lines.push(`% caption: ${escapeLatex(block.caption)}`);
@@ -578,7 +643,10 @@ export function renderBlock(block: Block, mdContent: string, sourceDir?: string)
       // simulator and its default view.
       const titleArg = block.title ? `[{${escapeLatex(block.title)}}]` : "[{Interactive Simulation}]";
       lines.push(`\\begin{remark}${titleArg}`);
-      if (block.label) lines.push(`  \\label{${block.label}}`);
+      if (block.label) {
+        lines.push(`  \\label{${block.label}}`);
+        lines.push(`  \\blockstub{${escapeLatex(block.label)}}`);
+      }
       if (block.uses?.length) {
         lines.push(`  \\uses{${block.uses.join(", ")}}`);
       }
@@ -589,7 +657,7 @@ export function renderBlock(block: Block, mdContent: string, sourceDir?: string)
         lines.push(`    \\includegraphics[width=0.8\\textwidth]{${snap.url}}`);
         lines.push(`  \\end{center}`);
       }
-      lines.push(markdownToLatex(mdContent));
+      lines.push(markdownToLatex(mdContent, sourceDir));
       lines.push(`\\end{remark}`);
       break;
     }
@@ -601,18 +669,24 @@ export function renderBlock(block: Block, mdContent: string, sourceDir?: string)
       if (block.label) lines.push(`% table: ${block.label}`);
       const caption = block.caption || ("title" in block && block.title) || "";
       // Use block.tex if provided, otherwise render from .md
-      const tex = block.tex || markdownToLatex(mdContent);
+      const tex = block.tex || markdownToLatex(mdContent, sourceDir);
       const isLongtable = tex.includes("\\begin{longtable");
       if (caption && !isLongtable) {
         lines.push("\\begin{table}[htbp]");
         lines.push("  \\centering");
         lines.push(`  \\caption{${escapeLatex(String(caption))}}`);
-        if (block.label) lines.push(`  \\label{${block.label}}`);
+        if (block.label) {
+          lines.push(`  \\label{${block.label}}`);
+          lines.push(`  \\blockstub{${escapeLatex(block.label)}}`);
+        }
       }
       lines.push(tex);
       if (caption && isLongtable) {
         // For longtable, caption and label go outside the float
-        if (block.label) lines.push(`\\label{${block.label}}`);
+        if (block.label) {
+          lines.push(`\\label{${block.label}}`);
+          lines.push(`\\blockstub{${escapeLatex(block.label)}}`);
+        }
       }
       if (caption && !isLongtable) {
         lines.push("\\end{table}");
@@ -628,9 +702,10 @@ export function renderBlock(block: Block, mdContent: string, sourceDir?: string)
       const titleArg = "title" in block && block.title ? `[{${escapeLatex(block.title)}}]` : "";
       lines.push(`\\begin{${envName}}${titleArg}`);
 
-      // Label
+      // Label + margin stub
       if ("label" in block && block.label) {
         lines.push(`  \\label{${block.label}}`);
+        lines.push(`  \\blockstub{${escapeLatex(block.label)}}`);
       }
 
       // Lean reference — emit the bare Lean declaration (without the
@@ -657,7 +732,7 @@ export function renderBlock(block: Block, mdContent: string, sourceDir?: string)
       }
 
       // Body content
-      const body = markdownToLatex(mdContent);
+      const body = markdownToLatex(mdContent, sourceDir);
       lines.push(body);
 
       lines.push(`\\end{${envName}}`);

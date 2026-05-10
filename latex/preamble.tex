@@ -147,7 +147,34 @@
 % Unicode maths symbols that appear in plain text (outside $ … $)
 % are handled by \newunicodechar in the block above.
 
-\geometry{margin=1in}
+% Page geometry: keep a 1in textual margin but reserve a wider right
+% margin so block stubs and figure prompts can live there as
+% \marginnote{...} annotations (see \blockstub / \figprompt below).
+\geometry{
+  inner=1in,
+  outer=1.9in,
+  marginparwidth=1.4in,
+  marginparsep=0.25in,
+}
+\usepackage{marginnote}        % \marginnote works in floats/theorems where \marginpar fails
+
+% \blockstub{label} — small typewriter tag emitted into the right
+% margin alongside a content block, so a print/PDF reader can see the
+% block's stable identifier (e.g. def:rigid-monoidal-category) at a
+% glance.  Emitted by content/pipeline/render-latex.ts immediately
+% after the block's \label{...}.  Override with \renewcommand to
+% suppress.
+\newcommand{\blockstub}[1]{%
+  \marginnote{\scriptsize\ttfamily\raggedright #1}%
+}
+
+% \figprompt{text} — small italicised note emitted into the right
+% margin under a figure's caption, carrying the original prompt /
+% specification used to author the SVG.  Emitted by the renderer when
+% a sibling <name>.prompt.md sidecar is present next to the SVG.
+\newcommand{\figprompt}[1]{%
+  \marginnote{\scriptsize\itshape\raggedright #1}%
+}
 
 % ── Suppress hyperref math-in-bookmark warnings ─────────────────────────────
 % Math in theorem titles generates "Token not allowed in PDF string" warnings.

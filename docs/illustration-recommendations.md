@@ -51,6 +51,9 @@ TikZ→SVG pipeline) to draw it.
 
 Total: **47 figures recommended** (16 P0, 22 P1, 9 P2).
 
+**Status legend** (per entry): a **Preview** subsection embeds the SVG once it
+has been authored; entries without a Preview are still spec-only.
+
 ---
 
 ## Chapter 0 — Introduction
@@ -253,6 +256,9 @@ Total: **47 figures recommended** (16 P0, 22 P1, 9 P2).
   ways) with an "$=$" between them.
 - **Why**: every Hecke / Skein passage in the paper presupposes
   the reader has this picture in mind.
+- **Preview** *(authored 2026-05-10, hand-SVG)*:
+
+  ![F4.2 — The Hecke skein triple.](../content/quantum-observable-universe/braids-and-knots/rendered/r-matrix-skein-0.svg)
 
 ### F4.3 (P0) — Markov closure: braid → link
 
