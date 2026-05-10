@@ -171,13 +171,22 @@ def y_lambda_numerical(shape, q_val, n=None):
     val = _Y_LAMBDA_CACHE[cache_key].get(tuple(shape))
     if val is None:
         return mp.mpc(0)
-    # Evaluate at the AMBIENT mpmath precision (mp.mp.dps) rather
-    # than the y_lambda_at internal evalf(30); this lets the
-    # interpolate path's 60-digit ambient precision propagate
-    # through to the witness output, matching the atomic path's
-    # precision floor.
+    # Convert SymPy → mpmath WITHOUT going through Python `complex`
+    # (which would round to 53-bit float and waste the precision
+    # buffer).  `wedderburn_jones_markov.y_lambda_at` currently
+    # returns values pre-evaluated at evalf(30); to keep the
+    # downstream value as an mpmath mpc/mpf at the ambient
+    # `mp.mp.dps`, parse via the SymPy sympify-then-evalf chain and
+    # cast through `mp.mpmathify` (which preserves arbitrary
+    # precision instead of clamping to float).
     target_dps = max(mp.mp.dps, 50)
-    return mp.mpc(complex(sp.sympify(val).evalf(target_dps)))
+    sym = sp.sympify(val)
+    re_part, im_part = sp.re(sym), sp.im(sym)
+    re_mp = mp.mpmathify(str(re_part.evalf(target_dps)))
+    if im_part == 0:
+        return mp.mpc(re_mp, 0)
+    im_mp = mp.mpmathify(str(im_part.evalf(target_dps)))
+    return mp.mpc(re_mp, im_mp)
 
 
 def markov_trace_numerical(Z, N, q_val, include_inter=True):

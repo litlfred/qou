@@ -13,28 +13,28 @@
     "prop:full-pole-structure-mass-trace",
     "thm:knot-mass-formula-unified"
   ],
-  "timestamp": "2026-05-10T04:02:18.949685+00:00",
+  "timestamp": "2026-05-10T04:20:12.128701+00:00",
   "polynomial_q_not_applicable": true,
   "results": {
     "p (proton, A=1)": {
       "Z": 1,
       "N": 0,
       "include_inter": false,
-      "tr_M_q0_numerical_60dps": "1.06530622859238878011152739965731947825118711235509956316002",
+      "tr_M_q0_numerical_60dps": "1.06530622859238875923872326272794716283305772124560741586965",
       "walltime_sec": 0.1858961582183838
     },
     "n (neutron, A=1)": {
       "Z": 0,
       "N": 1,
       "include_inter": false,
-      "tr_M_q0_numerical_60dps": "0.923233297169583268367126428055094627720959735755101550461980",
+      "tr_M_q0_numerical_60dps": "0.923233297169583246981083140853194893915756985799099745752522",
       "walltime_sec": 0.008180379867553711
     },
     "D (deuteron, A=2)": {
       "Z": 1,
       "N": 1,
       "include_inter": true,
-      "tr_M_q0_numerical_60dps": "0.388286471547713018768627770950989497855616962622983830860518",
+      "tr_M_q0_numerical_60dps": "0.388286471547712999366057916050166966643811356234972511308583",
       "walltime_sec": 0.12555170059204102
     },
     "T (triton, A=3)": {
