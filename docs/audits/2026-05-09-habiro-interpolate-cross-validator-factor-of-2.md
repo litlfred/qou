@@ -94,24 +94,81 @@ separate workstream.
    interpolate side still produces `2.1226`. The disagreement is
    structural, not stale.
 
-## Recommended next step
+## Resolution (2026-05-10)
 
-Open a separate issue (or audit doc) on `claude/term7-alpha5-derive-investigation`
-or whichever branch owns the markov-trace-assembly conventions, to
-align the two sides on a single trace normalisation
-(`tr_M` vs `Δ_n²·tr_M`).
+The original "Δ_n² convention gap" diagnosis above is **withdrawn**.
+Deeper analysis identified the true root cause: the interpolate path
+was using the SU_q(2)-restricted Schur–Weyl projector
+`w_λ(q) = s_λ(q, q⁻¹) / H_q(λ)` as its central weight, while the
+atomic path correctly uses the canonical Wenzl-bridge weight
+`y_λ` from
+[`prop:y-lambda-closed-form-wenzl-bridge`](../../content/quantum-observable-universe/braids-and-knots/y-lambda-closed-form-wenzl-bridge.md).
 
-For PR #621: accept the validate-job failure as a pre-existing main
-condition. The substantive content of PR #621 (Lean T1 closure +
-audit chain + Gemini/Copilot review fixes) is independent of this
-convention disagreement.
+The legacy weight vanishes identically for any partition with
+$\ell(\lambda) > 2$ — a textbook fact: Schur functions in $N$
+variables vanish when evaluated at fewer variables than the number
+of rows, $s_\lambda(x_1, \dots, x_N) = 0$ for $\ell(\lambda) > N$.
+For atomic braids at $H_{3A}$, partitions with $\ell(\lambda) \geq 3$
+carry non-trivial $\chi_\lambda$ contributions; truncating them via
+the SU_q(2) projector amputated the trace expansion. At the substrate
+value $q_0 \approx 1.110$ the dropped contributions happened to
+nearly equal the retained contributions for $A \in \{1, 2\}$,
+producing an apparent ratio close to 2 — but it was a structural
+truncation artefact, not a $\Delta_n^2$ rescaling.
+
+**Fix.**
+[`folio-assistant/computations/habiro_coefficients_interpolate.py`](../../folio-assistant/computations/habiro_coefficients_interpolate.py)
+now imports `y_lambda_wenzl_bridge_numeric` and uses it in
+`markov_trace_numerical`, matching the symbolic atomic path
+(`habiro_coefficients_atomic.markov_trace_symbolic`).
+
+**Formal backing.**
+[`prop:y-lambda-closed-form-wenzl-bridge`](../../content/quantum-observable-universe/braids-and-knots/y-lambda-closed-form-wenzl-bridge.md)
+proves $y_\lambda$ is the unique central weight of the Jones–Markov
+trace under the σ-Hecke convention, by composition of:
+
+1. Wenzl 1988 (existence of the principal-specialisation weight in
+   the g-Hecke convention),
+2. the convention isomorphism $g = q \sigma$ mapping σ-Hecke to
+   g-Hecke with $(Q, z_{\mathrm{GL}}) = (q^2, q z)$,
+3. Chlouveraki HDR Theorem 6.20 (1-dimensionality of the type-A
+   Markov-trace family).
+
+The Lean sibling [`y-lambda-closed-form-wenzl-bridge.lean`](../../content/quantum-observable-universe/braids-and-knots/y-lambda-closed-form-wenzl-bridge.lean)
+records the same theorem with `-- Ref:` citations.
+
+**Independent numerical verification (2026-05-10).**
+
+1. Plancherel identity $\sum_\lambda y_\lambda(q_0) \cdot d_\lambda = 1$
+   holds at 50 dps for $n \in \{1, \dots, 6\}$, with absolute
+   residuals $\leq 2.7 \times 10^{-51}$.
+2. Direct `markov_trace_numerical` evaluation under the fixed
+   weight reproduces the atomic-path values exactly:
+
+   | atom | fixed interpolate (40 dps) | atomic-path docstring | agreement |
+   |------|----------------------------|-----------------------|-----------|
+   | proton  | 1.0653062285924 | 1.0653062285923893 | 13 dps |
+   | neutron | 0.9232332971696 | 0.9232332971695838 | 13 dps |
+   | deuteron | 0.3882864715477 | 0.388286471547713 | 13 dps |
+
+The cross-validator's `rel_diff` for p, n, D drops from
+$\{0.498, 0.419, 0.543\}$ to $\leq 10^{-12}$ after the fix, clearing
+the validate-job failure.
 
 ## Cross-references
 
+- [`prop:y-lambda-closed-form-wenzl-bridge`](../../content/quantum-observable-universe/braids-and-knots/y-lambda-closed-form-wenzl-bridge.md)
+  — the operative theorem; identifies $y_\lambda$ as the unique
+  Jones–Markov central weight via Wenzl 1988 + Chlouveraki uniqueness
+- [`docs/audits/2026-05-08-p3-h-3a-divergence.md`](2026-05-08-p3-h-3a-divergence.md)
+  — earlier audit that flagged the legacy Schur–Weyl weight as
+  vanishing for $\ell(\lambda) > 2$; resolved on the atomic-path
+  symbolic side, but the interpolate path was missed
 - [`docs/audits/2026-05-09-braid-encoding-deepdive.md §4`](2026-05-09-braid-encoding-deepdive.md)
-  — independent identification of the factor-of-2 normalisation gap
-- [`folio-assistant/computations/delta-n2-lp-dual-extraction.witness.json`](../../folio-assistant/computations/delta-n2-lp-dual-extraction.witness.json)
-  — Phase 1.12 per-particle LP-dual extraction giving
-  `tr_M(Δ_n²·β_p) = 2.1111`
+  — earlier (independent) Δ_n² convention diagnosis; superseded by
+  this audit's resolution
+- [`folio-assistant/computations/y_lambda_wenzl_bridge.py`](../../folio-assistant/computations/y_lambda_wenzl_bridge.py)
+  — canonical implementation; `_y_lambda_wenzl_bridge_numeric_impl`
+  applies the principal-specialisation formula at $X = q z / (1 - q^2 + q z)$
 - [`folio-assistant/computations/habiro_interpolate_cross_validator.py`](../../folio-assistant/computations/habiro_interpolate_cross_validator.py)
-  — the failing validator
+  — the validator that originally surfaced the gap
