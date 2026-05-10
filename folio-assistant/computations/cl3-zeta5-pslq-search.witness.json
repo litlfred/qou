@@ -1,7 +1,7 @@
 {
   "computation": "cl3-zeta5-pslq-search",
   "description": "PSLQ relation search at 50 decimal digits of mpmath precision for the antisymmetric depth-3 generator X = Cl_3(2\u03c0/5) - Cl_3(4\u03c0/5) against three candidate bases of weight-3 periods. PSLQ tolerance 1e-45, max integer coefficient norm 1e8. No relation found in any basis \u2014 certifies X is INDEPENDENT of standard depth-3 constants (\u03b6(3), \u03c0\u00b3, \u03c0\u00b7log\u00b2(\u03c6), log\u00b3(\u03c6), etc.) up to the search bound. Strong evidence that X is the genuinely-new depth-3 generator at \u03b6_5 over Q(\u03b6_5).",
-  "timestamp": "2026-05-10T15:00:59.118806+00:00",
+  "timestamp": "2026-05-10T15:29:36.212618+00:00",
   "precision_decimal_digits": 50,
   "pslq_tolerance": "1e-45",
   "max_coefficient_norm": "1e8",

@@ -47,10 +47,19 @@ LOG_PHI = log(PHI)
 LOG_2 = log(2)
 
 
-def pslq_search(target, basis_vals, basis_names, tol=mpf('1e-45'),
+def pslq_search(target, basis_vals, basis_names, tol=None,
                 maxcoeff=10 ** 8):
     """Run PSLQ on [target] + basis_vals.  Returns the integer
-    relation if found, else None."""
+    relation if found, else None.
+
+    Default tolerance is dynamically tied to ``mp.dps`` with a
+    5-digit safety margin (per Gemini PR #634 review: hardcoded
+    tolerances violate the high-precision computation contract —
+    they should track ``mp.dps`` so that bumping precision tightens
+    the search consistently).
+    """
+    if tol is None:
+        tol = mpf(10) ** (-(mp.dps - 5))
     vec = [target] + basis_vals
     try:
         rel = pslq(vec, tol=tol, maxcoeff=maxcoeff)

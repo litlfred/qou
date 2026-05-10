@@ -30,10 +30,19 @@ variable {q : R}
 opaque SYT (lam : List ℕ) : Type
 
 /-- The q-content of a box at position `(i, j)` in a Young diagram:
-    `c(i, j; q) = q^(2(j - i))`. -/
-def qContent (i j : ℤ) (q : R) : R := q ^ (2 * (j - i)).toNat
-  -- For negative exponents, this is a placeholder; full version
-  -- requires invertibility of q and proper handling of (j - i) ∈ ℤ.
+    `c(i, j; q) = q^(2(j - i))`.
+
+    This is the integer (signed) power, so for boxes below the main
+    diagonal (`j < i`) the content is `q⁻²ᵏ` for some `k > 0`. We
+    therefore require the base ring to be a `GroupWithZero` (provided
+    by `Field`) so `q ^ (n : ℤ)` is well-defined via `zpow`.
+
+    Per Gemini PR #634 review: previous `(2 * (j - i)).toNat` was
+    mathematically incorrect — it forced `q^0 = 1` for all boxes
+    below the diagonal, which contradicts the standard q-content
+    definition (Hoefsmit, prop:hoefsmit-seminormal-form). -/
+def qContent {R : Type*} [Field R] (i j : ℤ) (q : R) : R :=
+  q ^ (2 * (j - i))
 
 /-- Murphy–Lagrange formula for the central primitive idempotent
     `e_λ ∈ Z(H_n(q))`. Placeholder type. -/
