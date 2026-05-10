@@ -95,6 +95,10 @@ export default chapter({
         "surreal-squeeze",
         // Graded-Mikusiński keystone: GS-depth = Goncharov period-depth.
         "gb-depth-period-correspondence",
+        // Graded Baer-* on H_q across the depth filtration.
+        "graded-baer-star-Hq",
+        // Two-filtration bridge: iterated-integral depth ↔ partition GB-depth.
+        "two-filtration-bridge",
         "classical-riemann-zeta",
         "classical-riemann-hypothesis",
         "macroscopic-stability-equivalence",

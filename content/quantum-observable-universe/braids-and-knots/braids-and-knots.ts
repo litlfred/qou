@@ -396,6 +396,16 @@ export default chapter({
         "vc-as-depth-2-instance",
         // 50-digit numerical witness on the Bring-figure-8 embedding.
         "bring-figure-eight-depth-2-witness",
+        // 50-digit functional-equation cross-validated depth-3 witness.
+        "bring-trilog-depth-3-witness",
+        // Hecke-algebra Baer-* foundation (generic q).
+        "hecke-baer-star-generic",
+        // Explicit central primitive idempotents via Murphy elements.
+        "explicit-central-idempotent",
+        // Bar involution → period chirality structure.
+        "chirality-period-pairing",
+        // Bring-embeddable knots: genus-bounded falsifiability targets.
+        "bring-embeddable-knots",
         "archimedean-remainder-exponential-decay",
         "wedderburn-as-noncomm-fourier",
         "degree-one-braid-trivial-volume",

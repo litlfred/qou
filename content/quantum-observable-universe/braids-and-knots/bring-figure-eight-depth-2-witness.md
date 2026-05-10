@@ -88,10 +88,17 @@ The keystone predicts analogous numerical witnesses at every depth:
 | Depth | Bring object | Predicted std-image |
 |---|---|---|
 | 2 | figure-8 in genus-4 ($4_1$) | $2\,\mathrm{Cl}_2(\pi/3) \approx 2.02988\ldots$ ✓ |
-| 3 | next $S_5$-symmetric knot embedding | weight-3 multiple polylog at Bring root |
-| $n$ | Bring-realised $n$-bridge knot | weight-$n$ Goncharov motivic period |
+| 3 | $\mathrm{Li}_3$ at $\zeta_5$ ($S_5$-natural Bring root of unity) | $\mathrm{Im}\,\mathrm{Li}_3(\zeta_5) \in \mathcal{P}_3/\mathcal{P}_2$ |
+| $n$ | $\mathrm{Li}_n^q$ at the $S_5$-orbit of $\zeta_5$ | weight-$n$ Goncharov motivic period |
 
-Computing the depth-3 instance is the natural next falsifiability
-test. The candidate is the Borromean rings (depth 3 known, Vol
-$\approx 7.32772\ldots$ = $8 G$ where $G$ is Catalan's constant);
-locating its $S_5$-symmetric Bring embedding is open.
+**Depth-2 ceiling for hyperbolic 3-manifold volumes.** *All* hyperbolic
+3-manifold volumes (figure-8, Borromean rings = $8G$, Whitehead link,
+…) are depth-2 periods — one $\mathrm{Li}_2$ factor in their
+Bloch–Wigner formula. Different knots correspond to different shape
+parameters at the same depth. A genuine depth-3 witness therefore
+requires either (a) a trilog $\mathrm{Li}_3$ at an algebraic argument,
+(b) a Chern–Simons invariant (the depth-3 part of the complexified
+volume $\mathrm{CS} + i\,\mathrm{Vol} \in \mathbb{C}/\pi^2\mathbb{Z}$),
+or (c) a multiple zeta value such as $\zeta(3)$. The Bring-natural
+choice is (a) at the primitive 5th root of unity $\zeta_5$ — see
+[`conj:bring-trilog-depth-3-witness`](#conj:bring-trilog-depth-3-witness).

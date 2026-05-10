@@ -1,0 +1,40 @@
+{
+  "computation": "bring-trilog-zeta5-depth-3",
+  "description": "Depth-3 numerical witness for conj:bring-trilog-depth-3-witness \u2014 the depth-3 instance of the keystone conjecture conj:gb-depth-period-correspondence.  Computes Li_3 at the primitive 5th root of unity zeta_5 (Bring-natural input via S_5 symmetry of Bring's curve).  Real and imaginary parts both lie in weight-3 Goncharov period class P_3/P_2.  Cross-validated by the Bring-orbit sum identity sum_{k=1}^4 Li_3(zeta_5^k) = (5^{-2} - 1) * zeta(3), which agrees to better than 1e-45 at 50 dps.",
+  "timestamp": "2026-05-10T06:03:07.513521+00:00",
+  "precision_decimal_digits": 50,
+  "shape_parameter": {
+    "form": "e^(2 pi i / 5)",
+    "value_str": "(0.30901699437494742410229341718281905886015458990288 + 0.95105651629515357211643933337938214340569863412575j)",
+    "primitive_root_of_unity_order": 5,
+    "S5_symmetry_motivation": "Bring's curve has S_5 symmetry; zeta_5 generates Q(zeta_5), the natural cyclotomic field for S_5-equivariant moduli of Bring.",
+    "sanity_zeta5_pow5_minus_1": "1.0332814878486095942479994954248575522547239911689e-51"
+  },
+  "depth_3_grouplike_values": {
+    "re_Li_3_zeta5": "0.18936791501083168387944480476641361363127422974423",
+    "re_Li_3_zeta5_alt_form": "Cl_3(2 pi / 5)",
+    "im_Li_3_zeta5": "0.99220085376959424561524208214724464647120923410832",
+    "im_Li_3_zeta5_alt_form": "S_3(2 pi / 5)"
+  },
+  "reference_depth_3_period": {
+    "zeta_3": "1.2020569031595942853997381615114499907649862923405",
+    "name": "Ap\u00e9ry's constant"
+  },
+  "functional_equation_cross_check": {
+    "identity": "sum_{k=1}^{N-1} Li_n(zeta_N^k) = (N^{1-n} - 1) zeta(n)",
+    "instance_N5_n3": "sum_{k=1}^4 Li_3(zeta_5^k) = (1/25 - 1) zeta(3)",
+    "computed_orbit_sum": "(-1.1539746270332105139837486350509919911343868406469 - 1.3363823550460978230702682335757409394075984400525e-51j)",
+    "predicted_orbit_sum": "-1.1539746270332105139837486350509919911343868406469",
+    "residual": "5.5100456060667437287906810636049511535683815150116e-51",
+    "residual_below_1e_45": true,
+    "imag_part_of_orbit_should_vanish": "-1.3363823550460978230702682335757409394075984400525e-51",
+    "imag_vanishes_below_1e_45": true
+  },
+  "depth_correspondence": {
+    "iterated_integral_depth": 3,
+    "goncharov_period_depth": 3,
+    "match": true,
+    "interpretation": "Li_3 grouplike at algebraic point (zeta_5) maps under tau_arch to weight-3 Goncharov period.  Both real (Cl_3) and imaginary (S_3) components are P_3/P_2 elements; bar involution exchanges them via complex conjugation."
+  },
+  "open_question_geometric_realisation": "Identifying a hyperbolic 4-manifold or Chern-Simons invariant whose volume / regulator equals Re Li_3(zeta_5) or Im Li_3(zeta_5) is open.  The natural candidates are (a) hyperbolic 4-manifolds with cusps shaped on Bring's S_5-orbit, (b) CS invariants of S_5-symmetric knots in S^3, (c) iterated integrals on the moduli space of Bring's curve."
+}
