@@ -1,0 +1,91 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-05-10T05:09:02.001725+00:00",
+  "commitSha": "9c0066d68d105140554078ff050df17c00f6d3a3",
+  "assertions": [
+    {
+      "name": "all_atoms_match_predicted_shift",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "prop:per-nucleon-shift-additive-linearity + crystal-bases Path A (this script)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 870,
+  "computation": "per-irrep-pole-atom-crystal",
+  "scriptFile": "per_irrep_pole_atom_crystal.py",
+  "scriptHash": "cbab377f4644",
+  "scriptCommitSha": "unknown",
+  "description": "Crystal-bases Path A pole-order verification of shift_NF(β_K) = 18Z + 21N + 1 for each atom K, computed via per-SYT-eigenline u-pole tally at q → 0 (Kashiwara crystal limit) on the canonical Δ_I-coupled atomic braid word.  Replaces the GS-reduction-bound per_irrep_pole_atom.py path that doesn't return at H_12. Per-letter contributions: σ on sym/anti = ±2; σ⁻¹ on sym/anti = ∓2; Δ_I = -2 always (leading u⁻² term).",
+  "contentBlock": "rem:option-e-isospin-test",
+  "data": {
+    "conditional_on": [
+      "conj:crystal-graph-realization"
+    ],
+    "inputs": {
+      "atom_braid_words": "mass_at_3A_proper.atom_braid_word_3A (canonical Δ_I-coupled (gen, ctype) crossings)",
+      "y_lambda": "y-lambda-wenzl-bridge-symbolic-witness.json (symbolic Wenzl-bridge per partition)",
+      "chi_lambda_pole_order": "per-SYT crystal-limit u-power tally (this script); no symbolic-q matrix multiplication"
+    },
+    "atoms": [
+      {
+        "atom": "proton",
+        "Z": 1,
+        "N": 0,
+        "A": 1,
+        "n_strands": 3,
+        "n_partitions": 3,
+        "word_length": 11,
+        "min_total_ord_u_eq_0": -19,
+        "min_total_lambda": [
+          2,
+          1
+        ],
+        "second_min_total_ord": -4,
+        "u_pole_order_inferred": 19,
+        "expected_shift": 19,
+        "match": true,
+        "elapsed_sec": 0.8438258171081543,
+        "per_partition": [
+          {
+            "lambda": [
+              3
+            ],
+            "ord_y_at_u_0": 0,
+            "ord_chi_at_u_0": 2,
+            "n_T_at_min": 1,
+            "leading_coeff_chi": "1/4",
+            "total_ord_y_chi": 2
+          },
+          {
+            "lambda": [
+              2,
+              1
+            ],
+            "ord_y_at_u_0": 3,
+            "ord_chi_at_u_0": -22,
+            "n_T_at_min": 1,
+            "leading_coeff_chi": "-1/4",
+            "total_ord_y_chi": -19
+          },
+          {
+            "lambda": [
+              1,
+              1,
+              1
+            ],
+            "ord_y_at_u_0": 6,
+            "ord_chi_at_u_0": -10,
+            "n_T_at_min": 1,
+            "leading_coeff_chi": "-1/4",
+            "total_ord_y_chi": -4
+          }
+        ]
+      }
+    ],
+    "all_match": true
+  }
+}
