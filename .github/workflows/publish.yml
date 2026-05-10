@@ -289,6 +289,10 @@ jobs:
           echo "── Reference cross-check"
           bun run pipeline/validate-references.ts || echo "::warning::Reference validation had issues"
 
+          echo "── TeX-source hazard audit"
+          bun run pipeline/audit-tex-source.ts --strict \
+            || echo "::error::TeX-source audit found hazards (see content/pipeline/audit-tex-source.ts)"
+
           echo "Generated chapters:"
           ls -la ../chapters/*.tex 2>/dev/null || echo "  (none)"
           echo "Generated main.tex:"
