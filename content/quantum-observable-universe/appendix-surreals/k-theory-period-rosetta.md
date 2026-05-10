@@ -1,14 +1,27 @@
-**Remark (K-theory ↔ depth filtration Rosetta — Beilinson regulator
-matches the iterated-integral grading on $\mathcal{H}_q$).**
+**Remark (K-theory ↔ depth filtration — known at depths 1–2,
+conjectural at depths $\geq 3$).**
 
 The graded-Mikusiński depth filtration
 ([`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence))
-on the substrate convolution algebra $\mathcal{H}_q$ admits an
-**equivalent K-theoretic description**: the depth axis matches
-the Beilinson–Borel regulator filtration on algebraic K-theory of
-the algebraic-number-field-of-definition. This connection, while
-not used elsewhere in the paper, is the standard period-theoretic
-language and worth recording for cross-reference.
+on the substrate convolution algebra $\mathcal{H}_q$ admits a
+K-theoretic description: the depth axis matches the Beilinson–Borel
+regulator on algebraic K-theory of the algebraic-number field of
+definition. **This correspondence is a theorem at depths 1 and 2,
+and Beilinson's conjecture at depths $\geq 3$.** Recording it
+provides the standard period-theoretic language for the framework.
+
+### Strength of the bridge by depth
+
+| Depth $n$ | Status | Reason |
+|---|---|---|
+| 1 | **theorem** | $K_1(F) = F^\times$; Dirichlet regulator + Baker–Wüstholz on $\log$-linear independence |
+| 2 | **theorem (essentially)** | Bloch–Suslin (Suslin 1986, Goncharov 1995): $D$ realises $K_3^{\mathrm{ind}}$ regulator; injectivity after rationalisation. Small open details about generation. |
+| 3 | **mostly conjectural** | $K_5^{\mathrm{ind}}(F) \otimes \mathbb{Q}$ has known Borel-rank; whether Goncharov regulator generates $\mathcal{P}_3 / \mathcal{P}_2$ is Beilinson's conjecture |
+| $\geq 4$ | **fully conjectural** | Beilinson's conjectures on motivic cohomology |
+
+So the framing is honest: "Rosetta" is an *analogy that becomes a
+theorem at low depth and a conjecture at high depth*, not a
+fully-established equivalence at all depths.
 
 ### The K-theoretic dictionary
 
@@ -79,29 +92,37 @@ should freely use whichever is cleaner in context:
   external results (Borel's regulator theorem, Beilinson's conjecture
   on $L$-values, Bloch's elliptic dilogarithm program).
 
-### Significance for B1's discharge
+### Significance for B1's discharge — what K-theory actually buys
 
-The keystone's discharge targets reduce to:
+The keystone's discharge targets, restated in K-theoretic language:
 
 1. **Inclusion target**: $\tau_{\mathrm{arch}}(G^{(n)}) \subseteq \mathcal{P}_n$.
-   *K-theoretic version*: image of $G^{(n)}$ under evaluation lies
-   in the Beilinson regulator's image. **This is essentially
-   trivial** in the K-theory language (the regulator is
-   surjective onto its image by definition); the content is the
-   identification of $G^{(n)}$ with $K_{2n-1}^{\mathrm{ind}}$.
+   *K-theoretic version*: identify $G^{(n)}$ with (a subspace of)
+   $K_{2n-1}^{\mathrm{ind}}(\mathbb{Q}(z_K)) \otimes \mathbb{Q}$
+   so that $\tau_{\mathrm{arch}}$ is the Beilinson regulator. The
+   *regulator → period* direction is then trivial (definition of
+   the regulator); the **content** is the identification.
 
 2. **Sharpness target**: image generates $\mathcal{P}_n / \mathcal{P}_{n-1}$
-   non-trivially. *K-theoretic version*: $K_{2n-1}^{\mathrm{ind}}(F)
-   \otimes \mathbb{Q}$ is non-zero for $n \geq 1$ when $F$ has
-   appropriate signature (Borel's theorem). **This is a theorem**,
-   not a conjecture, by Borel 1977. So the sharpness reduces to
-   a Borel-rank computation per number field $F = \mathbb{Q}(z_K)$.
+   non-trivially.
+   - **Borel's theorem (1977)**: $K_{2n-1}^{\mathrm{ind}}(F) \otimes \mathbb{Q}$
+     is non-zero of *known explicit rank* for $n \geq 2$ when $F$
+     has appropriate signature. **Theorem-level.**
+   - But "non-zero rank" is *weaker* than "image generates
+     $\mathcal{P}_n / \mathcal{P}_{n-1}$" — the latter is essentially
+     **Beilinson's conjecture**, still open at $n \geq 3$.
 
-So switching to K-theoretic language **trivialises one keystone
-discharge target** (sharpness via Borel) and reduces the other
-(inclusion) to identifying the depth-$n$ grouplikes with
-$K_{2n-1}^{\mathrm{ind}}$ generators. The Beilinson conjectures
-then close the loop.
+So the K-theoretic language **partially** reduces B1's
+discharge:
+
+- *Borel-rank-positive* $K_{2n-1}^{\mathrm{ind}}$ is a theorem (gives
+  non-emptiness of the image).
+- *Generation of the period quotient* is Beilinson's conjecture.
+
+The improvement over the original B1 statement is therefore
+**modest, not trivial**: Borel pins down dimensions; Beilinson
+remains the open piece. Calling K-theory a "free win" for B1
+would overstate it.
 
 ### Cross-references
 

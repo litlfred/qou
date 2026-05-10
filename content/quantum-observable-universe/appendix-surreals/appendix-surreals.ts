@@ -20,6 +20,9 @@ export default chapter({
         // K-theory ↔ depth filtration Rosetta: Beilinson regulator
         // matches iterated-integral grading on H_q.
         "k-theory-period-rosetta",
+        // Borel's theorem partial-discharges the keystone's
+        // sharpness target with explicit Borel-rank dimensions.
+        "borel-partial-resolution",
         "analytic-obstructions",
         "calculus-up-to-epsilon",
       ],
