@@ -26,3 +26,10 @@ The braid relation
 $\rho_n(\sigma_i)\rho_n(\sigma_{i+1})\rho_n(\sigma_i) = \rho_n(\sigma_{i+1})\rho_n(\sigma_i)\rho_n(\sigma_{i+1})$
 is equivalent to the Yang--Baxter equation for the braiding $c_{V,V}$.
 
+![The Hecke skein triple. Local pictures of the three elements appearing in the
+defining relation $\sigma_i - \sigma_i^{-1} = (q - q^{-1})\cdot 1$ of the
+Iwahori--Hecke algebra $H_n(q)$: a positive crossing $\sigma_i$ (over-strand
+running from lower-left to upper-right), its inverse $\sigma_i^{-1}$, and the
+identity $1$ (two parallel strands). The braid relation, equivalent to the
+Yang--Baxter equation for $c_{V,V}$, is the third Reidemeister move.](rendered/r-matrix-skein-0.svg)
+
