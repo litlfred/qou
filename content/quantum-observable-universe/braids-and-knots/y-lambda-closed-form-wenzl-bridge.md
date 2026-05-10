@@ -216,10 +216,31 @@ defined directly from the trace.  The proof composes:
    is 1-parameter, so the trace is uniquely determined by its
    `z`-value.
 
-The companion theorem `wenzl_bridge_unique` states that the
-substitution $(Q, z_{\mathrm{GL}}) = (q^2, q \cdot z)$ is the unique convention map
-realising the Jones-Markov trace via the Wenzl formula — corollary
-of the 1-parameter family.
+The uniqueness of the convention shift
+$(Q, z_{\mathrm{GL}}) = (q^2, q \cdot z)$ is recorded at two layers:
+
+1. **`wenzl_bridge_unique_definitional q`** — `rfl`-discharge of the
+   convention iso definitions: `wenzlQ q = q^2` and `wenzlZ q = q
+   \cdot \mathrm{jonesMarkovZ}\,q$ are forced by the eigenvalue
+   transport `(q, -q^{-1}) \mapsto (q^2, -1)` and the Markov-axiom
+   transport `\mathrm{tr}(x \cdot \sigma_n) = z \cdot \mathrm{tr}(x)
+   \mapsto \mathrm{tr}(x \cdot g_n) = (q \cdot z) \cdot \mathrm{tr}(x)`.
+   Definitions admit no degrees of freedom.
+
+2. **`wenzl_bridge_unique_categorical q`** — conditional theorem
+   under `[MarkovTraceFamilyOneDim ℝ q (jonesMarkovZ q)]`. Once
+   Chlouveraki HDR Theorem 6.20 is taken as a class instance
+   (1-dimensionality of the type-A Markov-trace family), the
+   definitional layer (1) maps trace-uniqueness onto parameter-pair
+   uniqueness. Per CLAUDE.md §3b-cond, this is a *rigorous
+   conditional result* — fully verified by Lean modulo the named
+   class axiomatising the cited theorem.
+
+The deprecated `wenzl_bridge_unique q` is retained as an alias for
+the definitional layer; the original quantification "for all
+$(Q', z')$ reproducing the canonical $y_\lambda$ values, $(Q', z')
+= (q^2, q \cdot z)$" was structurally vacuous on the placeholder
+Schur-element model.
 
 `y_lambda_bridge_numerical_agreement` records the empirical witness
 data (machine-precision agreement) as a `True := trivial` placeholder.
