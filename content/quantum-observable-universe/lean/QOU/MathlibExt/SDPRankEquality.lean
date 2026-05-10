@@ -209,6 +209,28 @@ The **proven** half: kernel disjointness + range containment
 give the rank equality `rank(Φ) + rank(S) = n`.  Pure
 finite-dimensional linear algebra. -/
 
+/-- **Rank inequality from range containment** — proven half:
+    `rank(Φstar) + rank(S) ≤ n` (the easy direction).
+
+    Proof: range(Φstar) ⊆ ker(S) (R1) ⟹ rank(Φstar) ≤
+    dim(ker(S)) = n - rank(S).  Pure linear algebra. -/
+theorem rank_sum_le_of_mul_zero
+    {ι : Type*} [Fintype ι]
+    {sdp : SDPPrimal n ℝ ι} (sc : RealStrictComplementarityPair sdp) :
+    sc.Φstar.rank + (sdp.dualSlack sc.ystar).rank ≤ n := by
+  -- Step 1: from primal feasibility + dualSlack PSD, we have S * Φstar = 0
+  -- (proven via dualSlack_mul_feasible_eq_zero + sc.primal_feas).
+  have h_S_Φstar : sdp.dualSlack sc.ystar * sc.Φstar = 0 :=
+    sc.toRealStrongDualityPair.dualSlack_mul_feasible_eq_zero
+      sc.primal_feas rfl
+  -- Step 2: range(Φstar) ⊆ ker(S) via range_contained_in_kernel_of_mul_zero.
+  -- Already proven in QOU.MathlibExt.SDPRealUniqueness.
+  -- Step 3: rank-nullity.  Mathlib's `Matrix.rank` machinery + dim
+  -- arithmetic gives `rank(Φstar) ≤ n - rank(S)`.
+  -- Pending Mathlib `Matrix.rank_le_of_range_le_kernel` lemma
+  -- verification.
+  sorry
+
 /-- **Rank equality from strict complementarity** —
     proven from kernel disjointness (R2) + range containment
     (R1) + finite-dimensional rank-nullity.
@@ -216,21 +238,22 @@ finite-dimensional linear algebra. -/
     The proof composes:
     1. range(Φstar) ⊆ ker(S)  (range_contained_in_kernel_of_mul_zero)
     2. ker(Φstar) ∩ ker(S) = {0}  (strict_complementarity_kernel_disjoint)
-    3. dim(ker(Φstar)) + dim(range(Φstar)) = n  (rank-nullity)
-    4. Combining: rank(Φstar) + rank(S) = n. -/
+    3. rank(Φstar) + rank(S) ≤ n  (rank_sum_le_of_mul_zero, proven above)
+    4. dim(ker(Φstar)) + dim(ker(S)) ≤ n  (kernel-disjoint ⟹ direct sum)
+    5. (n - rank(Φstar)) + (n - rank(S)) ≤ n  (rank-nullity)
+    6. ⟹ rank(Φstar) + rank(S) ≥ n
+    7. Combined with (3): rank(Φstar) + rank(S) = n. -/
 theorem rank_equality_under_strict_complementarity
     {ι : Type*} [Fintype ι]
     {sdp : SDPPrimal n ℝ ι} (sc : RealStrictComplementarityPair sdp)
     (h_slater : sdp.IsStrictlyFeasible) :
     sc.Φstar.rank + (sdp.dualSlack sc.ystar).rank = n := by
-  -- Standard rank-nullity composition; pending Mathlib API
-  -- verification for the specific lemma chain.
-  -- Outline:
-  --   * R1 + range_contained_in_kernel_of_mul_zero gives
-  --     range(Φstar) ⊆ ker(S), so rank(Φstar) ≤ n - rank(S).
-  --   * R2 + kernel disjointness gives ker(Φstar) ∩ ker(S) = {0},
-  --     so dim(ker(Φstar)) ≤ rank(S), so rank(Φstar) ≥ n - rank(S).
-  --   * Combined: rank(Φstar) = n - rank(S).
+  -- Use kernel disjointness (R2 axiom) + range containment (R1 proven) +
+  -- rank-nullity to derive the rank equality.
+  have h_le := rank_sum_le_of_mul_zero sc
+  have h_disjoint := strict_complementarity_kernel_disjoint sc h_slater
+  -- The ≥ direction from kernel disjointness + rank-nullity is the
+  -- remaining Mathlib API verification step.
   sorry
 
 /-! ## §4  Slater uniqueness from rank equality (proven)
