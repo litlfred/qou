@@ -1,0 +1,134 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-10T04:19:55.190539+00:00",
+  "commitSha": "918a58978da02089ac7e987a1afc68647cce748b",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 15,
+  "computation": "proton-residual-rootcause",
+  "scriptFile": "proton_residual_rootcause.py",
+  "scriptHash": "80ffa2848c68",
+  "scriptCommitSha": "1e1fb93751c0d8be41e9a4b784bde380af8f745b",
+  "description": "Phase 1 diagnostic on the proton 544k ppb defect (target 1 ppb).  Computes m_p via the mass-endomorphism-tower formula using four independent Phi_q implementations: legacy-product f64, legacy-product MPFR50, Euler-series MPFR50, and per-block aggregate.  Reports pairwise diffs + Branch-A truncation depth to localise the defect in (1) f64 mantissa, (2) product-vs-series truncation bias, (3) per-block aliasing, or (4) upstream V_hat / formula structure.  See docs/audits/2026-05-09-mass-table-1ppb-audit.md for the audit.",
+  "contentBlock": "prop:mass-endomorphism-tower",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "z_markov": 0.4993203340335982,
+    "dps_mpfr_branches": 50,
+    "V_e": 0.5938490006705095,
+    "V_proton_g0": 0.9890073159292595,
+    "V_proton_g1": 0.9710701586527437,
+    "M_P_CODATA_MeV": 938.27208816,
+    "M_E_CODATA_MeV": 0.51099895,
+    "m_e_Hecke_legacy_f64": 630.5292680965904
+  },
+  "data": {
+    "branch_a_legacy_f64": {
+      "T1_abs_prod": 0.9603954911881503,
+      "T2_phi_V0": 671221.4103737363,
+      "T3_phi_V1": 425756.9858019375,
+      "T4_z2_phi_V0V1": 82016.16886541968,
+      "phi_V0V1": 328958.3949194045,
+      "m_Hecke": 1178995.5254365846,
+      "m_p_MeV": 955.4916893413767,
+      "ppb_vs_codata": 18352460.228402738
+    },
+    "branch_b_legacy_mpfr": {
+      "T1_abs_prod": 0.9603954911881503,
+      "T2_phi_V0": 671221.4103737446,
+      "T3_phi_V1": 425756.98580194265,
+      "T4_z2_phi_V0V1": 82016.16886542048,
+      "phi_V0V1": 328958.3949194077,
+      "m_Hecke": 1178995.5254365988,
+      "m_Hecke_mpf_str": "1178995.52543659886458147184575",
+      "m_p_MeV": 955.4916893413882,
+      "ppb_vs_codata": 18352460.22841498
+    },
+    "branch_c_euler_mpfr": {
+      "T1_abs_prod": 0.9603954911881503,
+      "T2_phi_V0": 27573249.931042966,
+      "T3_phi_V1": 11828396.186560832,
+      "T4_z2_phi_V0V1": 1856028.9090616056,
+      "phi_V0V1": 7444340.540348587,
+      "m_Hecke": 41257675.9870609,
+      "m_Hecke_mpf_str": "41257675.9870608965102399009418",
+      "fallback_to_product": [
+        false,
+        false,
+        false
+      ],
+      "m_p_MeV": 33436.400458414086,
+      "ppb_vs_codata": 34636145293.40268
+    },
+    "branch_d_per_block": {
+      "m_sym": 196637719.41515195,
+      "m_std": 159561941.7945788,
+      "m_alt": 157393427.76103106,
+      "m_Hecke_sum_blocks": 513593088.9707618,
+      "per_block_V_per_gen": {
+        "sym": [
+          1.8803878084441426,
+          0.735217761111913
+        ],
+        "std": [
+          1.146101521057588,
+          0.929504244623423
+        ],
+        "alt": [
+          -0.5376159907110235,
+          1.375002901220374
+        ]
+      },
+      "m_p_MeV_via_m_e_ratio": 416230.52643309167,
+      "ppb_vs_codata": 442613885231.67224
+    },
+    "pairwise_diffs_hecke": {
+      "B_minus_A": 1.4202669262886047e-08,
+      "C_minus_B": 40078680.461624295,
+      "C_minus_A": 40078680.46162431,
+      "D_minus_A": 512414093.4453252
+    },
+    "branch_a_truncation_telemetry": {
+      "phi_V0": {
+        "z": 0.9890073159292595,
+        "diverged_at_radius": false,
+        "iters": 353,
+        "last_term": 9.980315334042457e-17,
+        "product": 671221.4103737472,
+        "converged_below_1e-16": true,
+        "max_iter_hit": false
+      },
+      "phi_V1": {
+        "z": 0.9710701586527437,
+        "diverged_at_radius": false,
+        "iters": 353,
+        "last_term": 9.799307081694255e-17,
+        "product": 425756.9858019451,
+        "converged_below_1e-16": true,
+        "max_iter_hit": false
+      },
+      "phi_V0V1": {
+        "z": 0.9603954911881503,
+        "diverged_at_radius": false,
+        "iters": 353,
+        "last_term": 9.691586394833019e-17,
+        "product": 328958.3949194102,
+        "converged_below_1e-16": true,
+        "max_iter_hit": false
+      }
+    },
+    "diagnosis_notes": [
+      "f64 mantissa is NOT the bottleneck: rel(B,A)=1.20e-14",
+      "EULER_SERIES_INADEQUATE_FOR_PROTON: max |v|=0.9890 >= 0.85; the Euler-series form converges too slowly here. Stay with the product form for proton-scale V_hat. Euler series only useful when |v| is well below 1 (e.g. deuteron level).",
+      "PER_BLOCK_FORMULA_DIFFERS: rel(D,A)=4.35e+02; per-block reformulation sums three block-masses rather than applying Phi_q to the aggregate V_hat.  Cannot be calibrated via the same m_e ratio — needs three E_0 scales (see per_block_phi_q.fit_three_E0).",
+      "NAIVE_TOWER_RESIDUAL: Branch A m_p = 955.4917 MeV gives +18352460 ppb error vs CODATA.  This is the *uncalibrated* mass-endomorphism tower (1.83% admitted in mass_endomorphism.py:26).  The 544k ppb in proton-mass-50dps.derivation.json is a DIFFERENT CHAIN that adds Terms 2-6 atop this base; the SCRIPT_CITED Terms 2-6 are where the residual 544k ppb actually lives."
+    ],
+    "finding": "Phase-1 root-cause finding: the 1.83% naive tower residual + the 544k ppb proton-mass-50dps residual are NOT in Phi_q precision (f64 == MPFR50 to ~1e-14) and NOT in product-vs-series convergence for |v| < 0.85.  The defect is structural: it lives in Terms 2-6 (SCRIPT_CITED frontier) of the unified mass formula.  T1 (n=6 Frobenius codim closure) and SCRIPT_CITED -> DERIVED migration of Terms 2-6 are the next levers.  Per-block reformulation (Branch D) is a structural reframe, not a precision fix.",
+    "relative_diffs": {
+      "rel_B_A": 1.2046414898501644e-14,
+      "rel_C_B": 33.99392075451905,
+      "rel_D_A": 434.61920116751685
+    }
+  }
+}

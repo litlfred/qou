@@ -344,6 +344,263 @@ theorem hecke_n5_frobenius_codim (q : ℝ) :
   simp
   ring
 
+/-- The q-hook-length dimensions of the eleven partitions of n=6.
+    Indexed by `Fin 11` (with `p(6) = 11`):
+      0 ↦ λ = (6)         : dim_q = 1
+      1 ↦ λ = (5,1)       : dim_q = [5]_q = q⁴+q²+1+q⁻²+q⁻⁴
+      2 ↦ λ = (4,2)       : dim_q = [6]_q · [3]_q / [2]_q
+                                  = (q⁴+1+q⁻⁴)·(q²+1+q⁻²)
+      3 ↦ λ = (4,1,1)     : dim_q = [5]_q · (q²+q⁻²)
+      4 ↦ λ = (3,3)       : dim_q = q⁶+q²+1+q⁻²+q⁻⁶
+      5 ↦ λ = (3,2,1)     : dim_q = [6]_q · [4]_q · [2]_q / [3]_q
+                                  = (q³+q⁻³)·(q³+q+q⁻¹+q⁻³)·(q+q⁻¹)
+                                  (self-conjugate)
+      6 ↦ λ = (3,1,1,1)   : dim_q = [5]_q · (q²+q⁻²)   (transp of (4,1,1))
+      7 ↦ λ = (2,2,2)     : dim_q = q⁶+q²+1+q⁻²+q⁻⁶   (transp of (3,3))
+      8 ↦ λ = (2,2,1,1)   : dim_q = (q⁴+1+q⁻⁴)·(q²+1+q⁻²) (transp of (4,2))
+      9 ↦ λ = (2,1,1,1,1) : dim_q = [5]_q              (transp of (5,1))
+     10 ↦ λ = (1ⁿ)         : dim_q = 1                   (transp of (6))
+
+    Computed via the q-hook-length formula
+    `dim_q(λ) = [n]_q! / ∏_{x ∈ λ} [h_λ(x)]_q` and verified against
+    the S_6 character-degree specialization at q=1
+    (1, 5, 9, 10, 5, 16, 10, 5, 9, 5, 1).
+
+    The (3,2,1) entry is the unique self-conjugate partition of 6;
+    the other ten partitions form five conjugate pairs, each pair
+    contributing identical 1/dim_q values to the trace sum.
+
+    Used in `hecke_n6_frobenius_codim`; this is the Lean closure of
+    the n=6 case of `frobeniusCoCasimirTrace`, eliminating the
+    opaque fallback for nuclei A ≥ 4 (⁴He onward) per the
+    1ppb-precision audit (`docs/audits/2026-05-09-mass-table-1ppb-audit.md`). -/
+noncomputable def heckeH6DimQ (q : ℝ) (i : Fin 11) : ℝ :=
+  match i with
+  | ⟨0, _⟩ => 1
+  | ⟨1, _⟩ => q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹
+  | ⟨2, _⟩ => (q ^ 4 + 1 + (q ^ 4)⁻¹) * (q ^ 2 + 1 + (q ^ 2)⁻¹)
+  | ⟨3, _⟩ => (q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹) * (q ^ 2 + (q ^ 2)⁻¹)
+  | ⟨4, _⟩ => q ^ 6 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 6)⁻¹
+  | ⟨5, _⟩ => (q ^ 3 + (q ^ 3)⁻¹) * (q ^ 3 + q + q⁻¹ + (q ^ 3)⁻¹) * (q + q⁻¹)
+  | ⟨6, _⟩ => (q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹) * (q ^ 2 + (q ^ 2)⁻¹)
+  | ⟨7, _⟩ => q ^ 6 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 6)⁻¹
+  | ⟨8, _⟩ => (q ^ 4 + 1 + (q ^ 4)⁻¹) * (q ^ 2 + 1 + (q ^ 2)⁻¹)
+  | ⟨9, _⟩ => q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹
+  | ⟨10, _⟩ => 1
+  | ⟨_+11, h⟩ => absurd h (by omega)
+
+@[simp] theorem heckeH6DimQ_zero (q : ℝ) : heckeH6DimQ q 0 = 1 := rfl
+@[simp] theorem heckeH6DimQ_one  (q : ℝ) :
+    heckeH6DimQ q 1 = q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹ := rfl
+@[simp] theorem heckeH6DimQ_two  (q : ℝ) :
+    heckeH6DimQ q 2 = (q ^ 4 + 1 + (q ^ 4)⁻¹) * (q ^ 2 + 1 + (q ^ 2)⁻¹) := rfl
+@[simp] theorem heckeH6DimQ_three (q : ℝ) :
+    heckeH6DimQ q 3 = (q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹) * (q ^ 2 + (q ^ 2)⁻¹) := rfl
+@[simp] theorem heckeH6DimQ_four (q : ℝ) :
+    heckeH6DimQ q 4 = q ^ 6 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 6)⁻¹ := rfl
+@[simp] theorem heckeH6DimQ_five (q : ℝ) :
+    heckeH6DimQ q 5 = (q ^ 3 + (q ^ 3)⁻¹) * (q ^ 3 + q + q⁻¹ + (q ^ 3)⁻¹) * (q + q⁻¹) := rfl
+@[simp] theorem heckeH6DimQ_six (q : ℝ) :
+    heckeH6DimQ q 6 = (q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹) * (q ^ 2 + (q ^ 2)⁻¹) := rfl
+@[simp] theorem heckeH6DimQ_seven (q : ℝ) :
+    heckeH6DimQ q 7 = q ^ 6 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 6)⁻¹ := rfl
+@[simp] theorem heckeH6DimQ_eight (q : ℝ) :
+    heckeH6DimQ q 8 = (q ^ 4 + 1 + (q ^ 4)⁻¹) * (q ^ 2 + 1 + (q ^ 2)⁻¹) := rfl
+@[simp] theorem heckeH6DimQ_nine (q : ℝ) :
+    heckeH6DimQ q 9 = q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹ := rfl
+@[simp] theorem heckeH6DimQ_ten (q : ℝ) :
+    heckeH6DimQ q 10 = 1 := rfl
+
+/-- **`Fin 11` sum decomposition.**  Mathlib provides
+    `Fin.sum_univ_two`/`_three`/.../`_eight` as `rfl`-provable lemmas;
+    we extend that pattern to `Fin 11` for the eleven partitions of 6.
+
+    Proof strategy: peel off the last three indices via
+    `Fin.sum_univ_castSucc` (which states
+    `∑ i : Fin (n+1), f i = (∑ i : Fin n, f i.castSucc) + f (Fin.last n)`),
+    then bridge through Mathlib's `Fin.sum_univ_eight` for the
+    remaining 8.  Each `Fin.castSucc` chain reduces definitionally
+    so the final `rfl` closes the goal.  This is exactly the same
+    recursive pattern Mathlib uses internally for `Fin.sum_univ_eight`
+    via `Fin.sum_univ_castSucc + Fin.sum_univ_seven`. -/
+private lemma Fin_sum_univ_eleven {M : Type*} [AddCommMonoid M]
+    (f : Fin 11 → M) :
+    ∑ i, f i = f 0 + f 1 + f 2 + f 3 + f 4 + f 5 + f 6 + f 7
+                + f 8 + f 9 + f 10 := by
+  rw [Fin.sum_univ_castSucc, Fin.sum_univ_castSucc, Fin.sum_univ_castSucc,
+      Fin.sum_univ_eight]
+  rfl
+
+/-- **H_6 specialisation: τ(C_dim_q) = Σ_{λ⊢6} 1/dim_q(λ).**
+
+    Closes the n=6 case of S3 by Fin-enumeration of the eleven
+    partitions of 6, eliminating the opaque
+    `frobeniusCoCasimirTraceFallback` for ⁴He onward.  After grouping
+    conjugate pairs (5 pairs + 1 self-conjugate (3,2,1)), the trace
+    is
+
+      Σ_{λ⊢6} 1/dim_q(λ)
+        = 2                                              -- (6) and (1⁶)
+          + 2/[5]_q                                       -- (5,1) and (2,1⁴)
+          + 2/((q⁴+1+q⁻⁴)·[3]_q)                          -- (4,2) and (2,2,1,1)
+          + 2/([5]_q·(q²+q⁻²))                            -- (4,1,1) and (3,1,1,1)
+          + 2/(q⁶+q²+1+q⁻²+q⁻⁶)                           -- (3,3) and (2,2,2)
+          + 1/((q³+q⁻³)·[4]_q·[2]_q)                      -- (3,2,1) self-conj.
+
+    Verified at q=1 (S_6 character-degree sum):
+    `2 + 2/5 + 2/9 + 2/10 + 2/5 + 1/16 = 720/720 = ?`
+    Numeric check: 2 + 0.4 + 0.222 + 0.2 + 0.4 + 0.0625 = 3.285,
+    matching `Σ 1/dim((6 partitions))` for S_6.
+
+    Ref: [manuscript] `prop:partition-sum-proton-residual` (n=6 base);
+    1ppb plan T1, `docs/audits/2026-05-09-mass-table-1ppb-audit.md`. -/
+theorem hecke_n6_frobenius_codim (q : ℝ) :
+    ∑ i : Fin 11, 1 / heckeH6DimQ q i
+      = 2
+        + 2 / (q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹)
+        + 2 / ((q ^ 4 + 1 + (q ^ 4)⁻¹) * (q ^ 2 + 1 + (q ^ 2)⁻¹))
+        + 2 / ((q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹) * (q ^ 2 + (q ^ 2)⁻¹))
+        + 2 / (q ^ 6 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 6)⁻¹)
+        + 1 / ((q ^ 3 + (q ^ 3)⁻¹) * (q ^ 3 + q + q⁻¹ + (q ^ 3)⁻¹) * (q + q⁻¹)) := by
+  rw [Fin_sum_univ_eleven]
+  simp
+  ring
+
+/-- The q-hook-length dimensions of the fifteen partitions of n=7.
+    Indexed by `Fin 15` (with `p(7) = 15`):
+      0 ↦ (7)         : dim_q = 1
+      1 ↦ (6,1)       : dim_q = [6]_q = q⁵+q³+q+q⁻¹+q⁻³+q⁻⁵
+      2 ↦ (5,2)       : dim_q = [7]_q · (q²+q⁻²)
+      3 ↦ (5,1,1)     : dim_q = [5]_q · (q⁴+1+q⁻⁴)
+      4 ↦ (4,3)       : dim_q = [7]_q · (q³+q⁻³)
+      5 ↦ (4,2,1)     : dim_q = [7]_q · [5]_q
+      6 ↦ (4,1,1,1)   : dim_q = [5]_q · (q³+q⁻³) · (q²+q⁻²)
+                                  (self-conjugate)
+      7 ↦ (3,3,1)     : dim_q = [7]_q · (q⁴+1+q⁻⁴)
+      8 ↦ (3,2,2)     : dim_q = [7]_q · (q⁴+1+q⁻⁴)   (transp of (3,3,1))
+      9 ↦ (3,2,1,1)   : dim_q = [7]_q · [5]_q          (transp of (4,2,1))
+     10 ↦ (3,1,1,1,1) : dim_q = [5]_q · (q⁴+1+q⁻⁴)    (transp of (5,1,1))
+     11 ↦ (2,2,2,1)   : dim_q = [7]_q · (q³+q⁻³)      (transp of (4,3))
+     12 ↦ (2,2,1,1,1) : dim_q = [7]_q · (q²+q⁻²)      (transp of (5,2))
+     13 ↦ (2,1⁵)      : dim_q = [6]_q                  (transp of (6,1))
+     14 ↦ (1⁷)        : dim_q = 1                      (transp of (7))
+
+    Verified against S_7 character-degree specialization at q=1
+    (1, 6, 14, 15, 14, 35, 20, 21, 21, 35, 15, 14, 14, 6, 1; sum=232=p(7)·… err, dim sum is unrelated to total).
+    Check: 1²+6²+14²+15²+14²+35²+20²+21²+21²+35²+15²+14²+14²+6²+1² = 1+36+196+225+196+1225+400+441+441+1225+225+196+196+36+1 = 5040 = 7!. ✓
+
+    Used in `hecke_n7_frobenius_codim`; closes the n=7 case for
+    nuclei A ≥ 5.  Ref: 1ppb plan T1. -/
+noncomputable def heckeH7DimQ (q : ℝ) (i : Fin 15) : ℝ :=
+  match i with
+  | ⟨0, _⟩ => 1
+  | ⟨1, _⟩ => q ^ 5 + q ^ 3 + q + q⁻¹ + (q ^ 3)⁻¹ + (q ^ 5)⁻¹
+  | ⟨2, _⟩ => (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹ + (q ^ 6)⁻¹) * (q ^ 2 + (q ^ 2)⁻¹)
+  | ⟨3, _⟩ => (q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹) * (q ^ 4 + 1 + (q ^ 4)⁻¹)
+  | ⟨4, _⟩ => (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹ + (q ^ 6)⁻¹) * (q ^ 3 + (q ^ 3)⁻¹)
+  | ⟨5, _⟩ => (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹ + (q ^ 6)⁻¹) * (q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹)
+  | ⟨6, _⟩ => (q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹) * (q ^ 3 + (q ^ 3)⁻¹) * (q ^ 2 + (q ^ 2)⁻¹)
+  | ⟨7, _⟩ => (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹ + (q ^ 6)⁻¹) * (q ^ 4 + 1 + (q ^ 4)⁻¹)
+  | ⟨8, _⟩ => (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹ + (q ^ 6)⁻¹) * (q ^ 4 + 1 + (q ^ 4)⁻¹)
+  | ⟨9, _⟩ => (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹ + (q ^ 6)⁻¹) * (q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹)
+  | ⟨10, _⟩ => (q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹) * (q ^ 4 + 1 + (q ^ 4)⁻¹)
+  | ⟨11, _⟩ => (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹ + (q ^ 6)⁻¹) * (q ^ 3 + (q ^ 3)⁻¹)
+  | ⟨12, _⟩ => (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹ + (q ^ 6)⁻¹) * (q ^ 2 + (q ^ 2)⁻¹)
+  | ⟨13, _⟩ => q ^ 5 + q ^ 3 + q + q⁻¹ + (q ^ 3)⁻¹ + (q ^ 5)⁻¹
+  | ⟨14, _⟩ => 1
+  | ⟨_+15, h⟩ => absurd h (by omega)
+
+@[simp] theorem heckeH7DimQ_zero (q : ℝ) : heckeH7DimQ q 0 = 1 := rfl
+@[simp] theorem heckeH7DimQ_one  (q : ℝ) :
+    heckeH7DimQ q 1 = q ^ 5 + q ^ 3 + q + q⁻¹ + (q ^ 3)⁻¹ + (q ^ 5)⁻¹ := rfl
+@[simp] theorem heckeH7DimQ_two  (q : ℝ) :
+    heckeH7DimQ q 2 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹ + (q ^ 6)⁻¹) * (q ^ 2 + (q ^ 2)⁻¹) := rfl
+@[simp] theorem heckeH7DimQ_three (q : ℝ) :
+    heckeH7DimQ q 3 = (q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹) * (q ^ 4 + 1 + (q ^ 4)⁻¹) := rfl
+@[simp] theorem heckeH7DimQ_four (q : ℝ) :
+    heckeH7DimQ q 4 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹ + (q ^ 6)⁻¹) * (q ^ 3 + (q ^ 3)⁻¹) := rfl
+@[simp] theorem heckeH7DimQ_five (q : ℝ) :
+    heckeH7DimQ q 5 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹ + (q ^ 6)⁻¹) * (q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹) := rfl
+@[simp] theorem heckeH7DimQ_six (q : ℝ) :
+    heckeH7DimQ q 6 = (q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹) * (q ^ 3 + (q ^ 3)⁻¹) * (q ^ 2 + (q ^ 2)⁻¹) := rfl
+@[simp] theorem heckeH7DimQ_seven (q : ℝ) :
+    heckeH7DimQ q 7 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹ + (q ^ 6)⁻¹) * (q ^ 4 + 1 + (q ^ 4)⁻¹) := rfl
+@[simp] theorem heckeH7DimQ_eight (q : ℝ) :
+    heckeH7DimQ q 8 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹ + (q ^ 6)⁻¹) * (q ^ 4 + 1 + (q ^ 4)⁻¹) := rfl
+@[simp] theorem heckeH7DimQ_nine (q : ℝ) :
+    heckeH7DimQ q 9 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹ + (q ^ 6)⁻¹) * (q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹) := rfl
+@[simp] theorem heckeH7DimQ_ten (q : ℝ) :
+    heckeH7DimQ q 10 = (q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹) * (q ^ 4 + 1 + (q ^ 4)⁻¹) := rfl
+@[simp] theorem heckeH7DimQ_eleven (q : ℝ) :
+    heckeH7DimQ q 11 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹ + (q ^ 6)⁻¹) * (q ^ 3 + (q ^ 3)⁻¹) := rfl
+@[simp] theorem heckeH7DimQ_twelve (q : ℝ) :
+    heckeH7DimQ q 12 = (q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹ + (q ^ 6)⁻¹) * (q ^ 2 + (q ^ 2)⁻¹) := rfl
+@[simp] theorem heckeH7DimQ_thirteen (q : ℝ) :
+    heckeH7DimQ q 13 = q ^ 5 + q ^ 3 + q + q⁻¹ + (q ^ 3)⁻¹ + (q ^ 5)⁻¹ := rfl
+@[simp] theorem heckeH7DimQ_fourteen (q : ℝ) :
+    heckeH7DimQ q 14 = 1 := rfl
+
+/-- **`Fin 15` sum decomposition.**  Extension of the `Fin.sum_univ_*`
+    pattern to fifteen elements (partitions of 7).
+
+    Proof strategy: peel off the last seven indices via
+    `Fin.sum_univ_castSucc`, then bridge through Mathlib's
+    `Fin.sum_univ_eight` for the remaining 8 (= 15 − 7).  Each
+    `Fin.castSucc` chain reduces definitionally so the final `rfl`
+    closes the goal. -/
+private lemma Fin_sum_univ_fifteen {M : Type*} [AddCommMonoid M]
+    (f : Fin 15 → M) :
+    ∑ i, f i = f 0 + f 1 + f 2 + f 3 + f 4 + f 5 + f 6 + f 7
+                + f 8 + f 9 + f 10 + f 11 + f 12 + f 13 + f 14 := by
+  rw [Fin.sum_univ_castSucc, Fin.sum_univ_castSucc, Fin.sum_univ_castSucc,
+      Fin.sum_univ_castSucc, Fin.sum_univ_castSucc, Fin.sum_univ_castSucc,
+      Fin.sum_univ_castSucc, Fin.sum_univ_eight]
+  rfl
+
+/-- **H_7 specialisation: τ(C_dim_q) = Σ_{λ⊢7} 1/dim_q(λ).**
+
+    Closes the n=7 case for nuclei with A ≥ 5.  After grouping
+    conjugate pairs (7 pairs + 1 self-conjugate (4,1,1,1)) and using
+    the identities
+
+      `[7]_q = q⁶+q⁴+q²+1+q⁻²+q⁻⁴+q⁻⁶`,
+      `[6]_q = q⁵+q³+q+q⁻¹+q⁻³+q⁻⁵`,
+      `[5]_q = q⁴+q²+1+q⁻²+q⁻⁴`,
+
+    the trace is
+
+      Σ_{λ⊢7} 1/dim_q(λ)
+        = 2                                              -- (7) and (1⁷)
+          + 2/[6]_q                                       -- (6,1) and (2,1⁵)
+          + 2/([7]_q·(q²+q⁻²))                            -- (5,2) and (2,2,1³)
+          + 2/([5]_q·(q⁴+1+q⁻⁴))                          -- (5,1,1) and (3,1⁴)
+          + 2/([7]_q·(q³+q⁻³))                            -- (4,3) and (2,2,2,1)
+          + 2/([7]_q·[5]_q)                                -- (4,2,1) and (3,2,1,1)
+          + 1/([5]_q·(q³+q⁻³)·(q²+q⁻²))                    -- (4,1,1,1) self-conj.
+          + 2/([7]_q·(q⁴+1+q⁻⁴))                          -- (3,3,1) and (3,2,2)
+
+    Ref: [manuscript] `prop:partition-sum-proton-residual` (n=7 base);
+    1ppb plan T1. -/
+theorem hecke_n7_frobenius_codim (q : ℝ) :
+    ∑ i : Fin 15, 1 / heckeH7DimQ q i
+      = 2
+        + 2 / (q ^ 5 + q ^ 3 + q + q⁻¹ + (q ^ 3)⁻¹ + (q ^ 5)⁻¹)
+        + 2 / ((q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹ + (q ^ 6)⁻¹)
+                * (q ^ 2 + (q ^ 2)⁻¹))
+        + 2 / ((q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹)
+                * (q ^ 4 + 1 + (q ^ 4)⁻¹))
+        + 2 / ((q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹ + (q ^ 6)⁻¹)
+                * (q ^ 3 + (q ^ 3)⁻¹))
+        + 2 / ((q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹ + (q ^ 6)⁻¹)
+                * (q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹))
+        + 1 / ((q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹)
+                * (q ^ 3 + (q ^ 3)⁻¹) * (q ^ 2 + (q ^ 2)⁻¹))
+        + 2 / ((q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹ + (q ^ 6)⁻¹)
+                * (q ^ 4 + 1 + (q ^ 4)⁻¹)) := by
+  rw [Fin_sum_univ_fifteen]
+  simp
+  ring
+
 /-- **Self-dual lower bound on the Frobenius co-Casimir trace.**
 
     For any semisimple Frobenius algebra with at least two blocks

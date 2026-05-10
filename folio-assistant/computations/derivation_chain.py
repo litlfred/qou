@@ -73,14 +73,39 @@ TR_M_AT_Q0: dict[str, float] = {
 # Atom-target Markov-trace values in cat-units (Hecke-pipeline output)
 # at q_0 — 4-sig-fig rounded summaries of the upstream
 # `mass_endomorphism.py` + `proton_mass_tower_derivation.py` tower.
-# Single source of truth so chain builders (e.g.
-# `build_proton_mass_50dps_chain.py`) don't redefine the literals
-# (per Gemini PR #484 review, "magic-value-centralisation").  When
-# the full-precision 50 dps tower-derivation chain lands these
-# summaries should be regenerated together with their consumers.
+#
+# ⚠️ DEPRECATED 2026-05-09 — these literals are STALE PLACEHOLDERS.
+#
+# Per `docs/audits/2026-05-09-proton-m_e-anomaly.md §9`:
+#   1. The values 1.4283 / 0.0007783 do NOT correspond to any
+#      committed computation. The "rounded summary" docstring claim
+#      is unsupported (mass_endomorphism.py produces ~1,178,995, not
+#      1.4283; verified by `git show 1861df6:.../mass_endomorphism.py
+#      | grep 1.4283` returning 0 matches).
+#   2. The ratio 1.4283/0.0007783 = 1835.15 sits at CODATA
+#      (m_p − m_e)/m_e, not m_p/m_e — calibrated to the WRONG target.
+#   3. The canonical mass-table chain is now `atomic_braid_mass_table.py`
+#      ("Strategy-3"), with explicit unit conventions in
+#      `atomic_braid_mass_terms.py`. Its `total_hecke[p] = T1+T2+T3+T4
+#      = 4.6912` cat units, NOT 1.4283; E_0 = 199.86 MeV/cat-unit;
+#      M_pred[p] = 938.272 MeV (= CODATA, by proton calibration).
+#
+# The legacy `build_proton_mass_50dps_chain.py` and its emitted
+# `proton-mass-50dps.derivation.json` are kept for historical
+# traceability but are NOT the canonical mass derivation. The
+# 544,145 ppb "defect" reported by that chain is an artefact of this
+# staleness, not of the framework.
+#
+# DO NOT ADD NEW PRODUCTION CONSUMERS. (Audit / diagnostic-only
+# scripts that explicitly mark themselves audit-only — e.g.
+# `proton_m_e_anomaly_audit.py` — may consume these literals to
+# document the anomaly; that does not contradict this guidance.)
+# For real mass predictions, run
+# `atomic_braid_mass_table.py` and consume
+# `atomic-braid-mass-table.witness.json`.
 M_HECKE_PIPELINE_AT_Q0: dict[str, float] = {
-    "e": 0.0007783,  # electron, atomic 2-strand braid
-    "p": 1.4283,     # proton, T1+T2+T3+T4 mass-endomorphism tower
+    "e": 0.0007783,  # DEPRECATED placeholder — see audit §9 above
+    "p": 1.4283,     # DEPRECATED placeholder — see audit §9 above
 }
 
 

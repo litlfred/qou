@@ -45,6 +45,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as _Q_CANONICAL
 from hecke_character_symbolic import standard_young_tableaux
 from canonical_braid_crossings import atom_canonical_crossings as atomic_braid_to_crossings
+from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric
 
 
 # ─── Hoefsmit at numerical q (mpmath, arbitrary precision) ─────────────
@@ -115,7 +116,14 @@ def chi_lambda_numerical(shape, q_val, crossings):
 
 
 def schur_weyl_weight_numerical(shape, q_val):
-    """w_λ(q) = s_λ(q, q⁻¹) / H_q(λ), numerically."""
+    """LEGACY weight w_λ(q) = s_λ(q, q⁻¹) / H_q(λ).
+
+    Retained for back-compat / cross-validation only. Vanishes for
+    partitions with > 2 rows, dropping the sign-rep contribution —
+    do NOT use as the Markov-trace weight; use
+    `y_lambda_wenzl_bridge_numeric` instead. See the atomic path
+    docstring (`habiro_coefficients_atomic.markov_trace_symbolic`).
+    """
     from schur_weyl_symbolic import schur_at_two_vars
     from hecke_characters import young_hooks
     q_sym = sp.Symbol('q_tmp', positive=True, real=True)
@@ -131,14 +139,25 @@ def schur_weyl_weight_numerical(shape, q_val):
     return s_val / H_val
 
 
-def markov_trace_numerical(Z, N, q_val, include_inter=True):
+def markov_trace_numerical(Z, N, q_val, include_inter=True, dps=None):
+    """tr_M numerical, canonical Wenzl-bridge weight y_λ.
+
+    Matches the atomic-path symbolic pipeline
+    (`habiro_coefficients_atomic.markov_trace_symbolic`). The earlier
+    implementation used the legacy `schur_weyl_weight_numerical`
+    which vanishes for partitions with > 2 rows, producing a
+    structurally-different value (~factor of 2 at q_0 for the
+    proton). See `docs/audits/2026-05-09-habiro-interpolate-cross-validator-factor-of-2.md`.
+    """
     from schur_weyl_symbolic import partitions_of
     A = Z + N
     crossings = atomic_braid_to_crossings(Z, N, include_inter=include_inter)
+    if dps is None:
+        dps = mp.mp.dps
     total = mp.mpc(0)
     for lam in partitions_of(3 * A):
-        w = schur_weyl_weight_numerical(lam, q_val)
-        if abs(w) < 1e-30:
+        w = y_lambda_wenzl_bridge_numeric(lam, q_val, dps=dps)
+        if abs(w) < mp.mpf(10) ** -(dps - 5):
             continue
         chi, d = chi_lambda_numerical(lam, q_val, crossings)
         if d == 0:
