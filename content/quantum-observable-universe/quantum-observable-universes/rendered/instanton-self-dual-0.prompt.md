@@ -1,0 +1,3 @@
+# Instanton self-duality projector
+
+F2.3 (P1). A coordinate plane with two perpendicular axes: horizontal $\Omega^+$ (self-dual 2-forms, $\star_q \omega = +\omega$), vertical $\Omega^-$ (anti-self-dual). A red vector labelled $F_\nabla$ lies along the $\Omega^+$ axis, illustrating that the curvature of an instanton connection lands entirely in the self-dual subspace. The equation "$\star_q F_\nabla = F_\nabla \Rightarrow F_\nabla \in \Omega^+$" appears at the bottom in italic red. This figure makes graphic the categorical instanton condition introduced in Chapter 2. Layout: 2-axis perpendicular coordinate plane with a single labelled vector. Density: minimal — 2 axes, 1 vector, 1 equation. Style: schematic. Colour: monochrome plus red on the curvature vector.

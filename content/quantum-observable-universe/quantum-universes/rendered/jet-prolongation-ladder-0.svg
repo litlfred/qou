@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>Jet prolongation as Kähler differential ladder</title>
+  <desc>
+    Short exact sequence 0 → Ω¹(A) → A ⊗ A → A → 0 drawn as a
+    ladder of three boxes connected by arrows.  Inset on the
+    right shows J¹(A) = A ⊗ Ω¹(A) as a thickening of A by an
+    extra Ω¹ slot.
+  </desc>
+  <defs>
+    <marker id="tip" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a1a1a"/>
+    </marker>
+    <style>
+      .bg     { fill: #ffffff; }
+      .box    { fill: #ffffff; stroke: #1a1a1a; stroke-width: 1.6; rx: 6; }
+      .arr    { stroke: #1a1a1a; stroke-width: 1.4; fill: none; }
+      .lbl    { font-size: 14px; fill: #1a1a1a; text-anchor: middle; }
+      .lblb   { font-size: 16px; font-weight: 700; fill: #1a1a1a;
+                text-anchor: middle; }
+      .lbls   { font-size: 11px; fill: #444; text-anchor: middle; }
+      .arrlbl { font-size: 12px; fill: #1a1a1a; font-style: italic; }
+      .ttl    { font-size: 17px; font-style: italic; fill: #1a1a1a; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="720" height="360"/>
+
+  <text x="360" y="32" text-anchor="middle" class="ttl">Jet prolongation: Kähler differentials and J¹(A)</text>
+
+  <!-- SES: 0 → Ω¹(A) → A⊗A → A → 0 -->
+  <text x="40" y="160" class="lbl">0</text>
+  <line class="arr" x1="60" y1="156" x2="100" y2="156" marker-end="url(#tip)"/>
+
+  <rect class="box" x="100" y="130" width="120" height="60"/>
+  <text x="160" y="158" class="lblb">Ω¹(A)</text>
+  <text x="160" y="178" class="lbls">Kähler bimodule</text>
+
+  <line class="arr" x1="220" y1="156" x2="280" y2="156" marker-end="url(#tip)"/>
+  <text x="250" y="148" class="arrlbl">⊂</text>
+
+  <rect class="box" x="280" y="130" width="120" height="60"/>
+  <text x="340" y="158" class="lblb">A ⊗ A</text>
+  <text x="340" y="178" class="lbls">tensor square</text>
+
+  <line class="arr" x1="400" y1="156" x2="460" y2="156" marker-end="url(#tip)"/>
+  <text x="430" y="148" class="arrlbl">m</text>
+
+  <rect class="box" x="460" y="130" width="120" height="60"/>
+  <text x="520" y="158" class="lblb">A</text>
+  <text x="520" y="178" class="lbls">multiplication target</text>
+
+  <line class="arr" x1="580" y1="156" x2="620" y2="156" marker-end="url(#tip)"/>
+  <text x="640" y="160" class="lbl">0</text>
+
+  <text x="360" y="100" class="lbls">Ω¹(A) = ker(m: A ⊗ A → A) — the Kähler differentials of A</text>
+
+  <!-- Jet inset: J¹(A) box below -->
+  <rect class="box" x="200" y="230" width="320" height="80"/>
+  <text x="360" y="258" class="lblb">J¹(A)  =  A  ⊗  Ω¹(A)</text>
+  <text x="360" y="280" class="lbls">"thickening" of A by one Ω¹ slot</text>
+  <text x="360" y="300" class="lbls">canonical Frobenius–Hopf inherited from A</text>
+
+  <line class="arr" x1="360" y1="190" x2="360" y2="230" marker-end="url(#tip)"
+        stroke-dasharray="4 3"/>
+</svg>

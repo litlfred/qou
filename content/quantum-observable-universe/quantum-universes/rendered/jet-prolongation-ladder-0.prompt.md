@@ -1,0 +1,3 @@
+# Jet prolongation: Kähler differentials and J¹(A)
+
+F1.3 (P2 / P1). The short exact sequence $0 \to \Omega^1(A) \to A \otimes A \xrightarrow{m} A \to 0$ drawn as a horizontal ladder of three labelled rounded-rectangle nodes connected by arrows. Each node carries a small subtitle: "Kähler bimodule", "tensor square", "multiplication target". Below the ladder, an inset rounded rectangle shows $J^1(A) = A \otimes \Omega^1(A)$ as a "thickening" of $A$ by one extra $\Omega^1$ slot, with the note "canonical Frobenius–Hopf inherited from $A$". A faint dashed arrow connects the ladder to the jet inset. Layout: horizontal SES with vertical inset below. Density: minimal — 3 ladder nodes, 1 jet box. Style: schematic categorical diagram. Colour: monochrome.

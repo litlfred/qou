@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>Yekutieli obstruction at level n</title>
+  <desc>
+    A staircase of levels n = 0, 1, 2, 3, 4.  At each step a small
+    red star marks the obstruction class κ_n.  Below each step a
+    vertical bar labelled "Kummer filtration K•" indicates the
+    layer controlling lift-ability.  The step where κ_n first
+    vanishes is annotated as "tower stabilises".
+  </desc>
+  <defs>
+    <style>
+      .bg     { fill: #ffffff; }
+      .step   { fill: #ffffff; stroke: #1a1a1a; stroke-width: 1.6; }
+      .stair  { stroke: #1a1a1a; stroke-width: 1.6; fill: none; }
+      .star   { fill: #c0392b; stroke: #c0392b; }
+      .starlbl{ fill: #c0392b; font-size: 12px; font-weight: 700; }
+      .lbl    { font-size: 12px; fill: #1a1a1a; text-anchor: middle; }
+      .kf     { fill: #2980b9; stroke: #2980b9; stroke-width: 2; }
+      .kflbl  { fill: #2980b9; font-size: 11px; font-style: italic; }
+      .ttl    { font-size: 17px; font-style: italic; fill: #1a1a1a; }
+      .ann    { font-size: 13px; fill: #1a1a1a; font-style: italic; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="800" height="480"/>
+
+  <text x="400" y="32" text-anchor="middle" class="ttl">Yekutieli obstruction κ_n along the brane tower</text>
+
+  <!-- Staircase: 5 steps rising left to right.  Each step 130 wide × 60 tall. -->
+  <!-- Bottom step at y=380.  Top step at y=80. -->
+  <g>
+    <!-- Step 0 -->
+    <line class="stair" x1="80"  y1="400" x2="200" y2="400"/>
+    <line class="stair" x1="200" y1="400" x2="200" y2="340"/>
+    <text x="140" y="425" class="lbl">A₀</text>
+    <text x="140" y="442" class="lbl">n = 0</text>
+
+    <!-- Step 1 -->
+    <line class="stair" x1="200" y1="340" x2="320" y2="340"/>
+    <line class="stair" x1="320" y1="340" x2="320" y2="280"/>
+    <text x="260" y="365" class="lbl">A₁</text>
+    <text x="260" y="382" class="lbl">n = 1</text>
+    <circle class="star" cx="260" cy="320" r="6"/>
+    <text x="270" y="318" class="starlbl">κ₁</text>
+
+    <!-- Step 2 -->
+    <line class="stair" x1="320" y1="280" x2="440" y2="280"/>
+    <line class="stair" x1="440" y1="280" x2="440" y2="220"/>
+    <text x="380" y="305" class="lbl">A₂</text>
+    <text x="380" y="322" class="lbl">n = 2</text>
+    <circle class="star" cx="380" cy="260" r="6"/>
+    <text x="390" y="258" class="starlbl">κ₂</text>
+
+    <!-- Step 3 -->
+    <line class="stair" x1="440" y1="220" x2="560" y2="220"/>
+    <line class="stair" x1="560" y1="220" x2="560" y2="160"/>
+    <text x="500" y="245" class="lbl">A₃</text>
+    <text x="500" y="262" class="lbl">n = 3</text>
+    <circle class="star" cx="500" cy="200" r="6"/>
+    <text x="510" y="198" class="starlbl">κ₃</text>
+
+    <!-- Step 4 — tower stabilises -->
+    <line class="stair" x1="560" y1="160" x2="720" y2="160"/>
+    <text x="640" y="185" class="lbl">A₄</text>
+    <text x="640" y="202" class="lbl">n = 4   κ₄ = 0</text>
+    <circle class="star" cx="640" cy="140" r="6"
+            fill="#27ae60" stroke="#27ae60"/>
+    <text x="650" y="138" class="starlbl" fill="#27ae60">κ₄ = 0</text>
+
+    <text x="640" y="80" class="ann">tower stabilises</text>
+    <text x="640" y="98" class="ann">(every higher κ vanishes)</text>
+  </g>
+
+  <!-- Kummer filtration bars below each step -->
+  <line class="kf" x1="140" y1="455" x2="140" y2="465"/>
+  <line class="kf" x1="260" y1="455" x2="260" y2="467"/>
+  <line class="kf" x1="380" y1="455" x2="380" y2="469"/>
+  <line class="kf" x1="500" y1="455" x2="500" y2="471"/>
+  <line class="kf" x1="640" y1="455" x2="640" y2="473"/>
+  <text x="710" y="466" class="kflbl">Kummer filtration K•</text>
+</svg>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 540"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>Tannaka–Krein reconstruction triangle</title>
+  <desc>
+    Triangle relating the QOU triple to the reconstructed group
+    and its representation category.  Top vertex: (𝐂, A, τ).
+    Bottom-left: G = Aut^⊗(τ).  Bottom-right: 𝐑𝐞𝐩(G).  Tannaka–
+    Krein is the equivalence 𝐂 ⥲ 𝐑𝐞𝐩(G) along the bottom edge.
+    A fourth node centred below shows τ landing in 𝐕𝐞𝐜𝐭_R.
+  </desc>
+  <defs>
+    <marker id="tip" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a1a1a"/>
+    </marker>
+    <style>
+      .bg     { fill: #ffffff; }
+      .node   { fill: #ffffff; stroke: #1a1a1a; stroke-width: 1.6; rx: 8; }
+      .lblb   { font-size: 16px; font-weight: 700; fill: #1a1a1a;
+                text-anchor: middle; }
+      .lbl    { font-size: 12px; fill: #444; text-anchor: middle; }
+      .arr    { stroke: #1a1a1a; stroke-width: 1.4; fill: none; }
+      .arrlbl { font-size: 13px; fill: #1a1a1a; font-style: italic; }
+      .ttl    { font-size: 17px; font-style: italic; fill: #1a1a1a; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="700" height="540"/>
+  <text x="350" y="32" text-anchor="middle" class="ttl">Tannaka–Krein reconstruction</text>
+
+  <!-- Top vertex: QOU triple -->
+  <rect class="node" x="270" y="60" width="160" height="60"/>
+  <text x="350" y="88" class="lblb">(𝐂, A, τ)</text>
+  <text x="350" y="106" class="lbl">QOU datum</text>
+
+  <!-- Bottom-left: group G -->
+  <rect class="node" x="40" y="320" width="200" height="60"/>
+  <text x="140" y="348" class="lblb">G  =  Aut^⊗(τ)</text>
+  <text x="140" y="366" class="lbl">reconstructed group</text>
+
+  <!-- Bottom-right: Rep(G) -->
+  <rect class="node" x="460" y="320" width="200" height="60"/>
+  <text x="560" y="348" class="lblb">𝐑𝐞𝐩(G)</text>
+  <text x="560" y="366" class="lbl">representation category</text>
+
+  <!-- Centre below: Vect_R -->
+  <rect class="node" x="290" y="450" width="120" height="44"/>
+  <text x="350" y="476" class="lblb">𝐕𝐞𝐜𝐭_R</text>
+
+  <!-- Edges -->
+  <!-- 𝐂 → G: down-left -->
+  <line class="arr" x1="290" y1="125" x2="160" y2="320" marker-end="url(#tip)"/>
+  <text x="190" y="220" class="arrlbl">Aut⊗(τ)</text>
+
+  <!-- 𝐂 → Rep(G): down-right -->
+  <line class="arr" x1="410" y1="125" x2="540" y2="320" marker-end="url(#tip)"/>
+  <text x="510" y="220" class="arrlbl">descent</text>
+
+  <!-- Tannaka–Krein equivalence (base) -->
+  <line class="arr" x1="240" y1="350" x2="460" y2="350" marker-end="url(#tip)"/>
+  <text x="350" y="338" text-anchor="middle" class="arrlbl">𝐂  ⥲  𝐑𝐞𝐩(G)   (Tannaka–Krein)</text>
+
+  <!-- τ → Vect -->
+  <line class="arr" x1="350" y1="125" x2="350" y2="450" marker-end="url(#tip)"
+        stroke-dasharray="6 4"/>
+  <text x="370" y="285" class="arrlbl">τ</text>
+</svg>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 540"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>Instanton self-duality projector</title>
+  <desc>
+    The 2-form bundle Ω²(A) split into self-dual Ω⁺ and anti-
+    self-dual Ω⁻ summands as two perpendicular axes.  A vector
+    F_∇ lands on the Ω⁺ axis with the caption "★_q F_∇ = F_∇".
+  </desc>
+  <defs>
+    <marker id="tip" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a1a1a"/>
+    </marker>
+    <style>
+      .bg     { fill: #ffffff; }
+      .axis   { stroke: #1a1a1a; stroke-width: 1.6; fill: none; }
+      .axislbl{ font-size: 16px; font-weight: 700; fill: #1a1a1a; }
+      .vec    { stroke: #c0392b; stroke-width: 3; fill: none; }
+      .veclbl { fill: #c0392b; font-size: 16px; font-weight: 700; }
+      .ttl    { font-size: 17px; font-style: italic; fill: #1a1a1a; }
+      .eq     { font-size: 18px; fill: #c0392b; font-style: italic; }
+      .lbl    { font-size: 13px; fill: #1a1a1a; text-anchor: middle; }
+      .lbls   { font-size: 11px; fill: #444; text-anchor: middle; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="600" height="540"/>
+  <text x="300" y="32" text-anchor="middle" class="ttl">Instanton:  ★_q F_∇  =  F_∇</text>
+
+  <!-- Axes: Ω⁻ (vertical), Ω⁺ (horizontal) -->
+  <line class="axis" x1="80"  y1="280" x2="540" y2="280" marker-end="url(#tip)"/>
+  <line class="axis" x1="300" y1="500" x2="300" y2="80"  marker-end="url(#tip)"/>
+
+  <text x="555" y="285" class="axislbl">Ω⁺</text>
+  <text x="290" y="70"  class="axislbl">Ω⁻</text>
+
+  <text x="300" y="490" class="lbls">anti-self-dual: ★_q ω = −ω</text>
+  <text x="500" y="305" class="lbls">self-dual: ★_q ω = +ω</text>
+
+  <!-- F_∇ vector pointing along Ω⁺ axis -->
+  <line class="vec" x1="300" y1="280" x2="490" y2="280" marker-end="url(#tip)"
+        stroke="#c0392b"/>
+  <text x="400" y="270" class="veclbl">F_∇</text>
+
+  <!-- Equation -->
+  <text x="300" y="460" text-anchor="middle" class="eq">★_q F_∇  =  F_∇   ⇒   F_∇ ∈ Ω⁺</text>
+</svg>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 460"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>The categorical Dirac square decomposition</title>
+  <desc>
+    A 2 × 2 block matrix glyph for D_∇².  The diagonal blocks are
+    shaded and labelled with the two curvature terms — Ricci
+    (spatial) and Yang–Mills (internal).  The off-diagonal blocks
+    are 0; a small caption notes "no cross terms — forced by
+    Frobenius–Hopf".
+  </desc>
+  <defs>
+    <style>
+      .bg     { fill: #ffffff; }
+      .frame  { fill: none; stroke: #1a1a1a; stroke-width: 2; }
+      .diag   { fill: #f0f0f6; stroke: #1a1a1a; stroke-width: 1.4; }
+      .off    { fill: #fafafa; stroke: #888; stroke-width: 1; }
+      .lblb   { font-size: 16px; font-weight: 700; fill: #1a1a1a;
+                text-anchor: middle; }
+      .lbl    { font-size: 13px; fill: #1a1a1a; text-anchor: middle; }
+      .lbls   { font-size: 11px; fill: #444; text-anchor: middle; }
+      .ttl    { font-size: 17px; font-style: italic; fill: #1a1a1a; }
+      .equation { font-size: 17px; fill: #1a1a1a; text-anchor: middle; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="700" height="460"/>
+
+  <text x="350" y="32" text-anchor="middle" class="ttl">The categorical Dirac square — D_∇²</text>
+
+  <text x="100" y="200" text-anchor="middle" class="equation">D_∇²  =</text>
+
+  <!-- 2x2 block matrix, centred at (380, 200), block size 130, gap 6 -->
+  <g transform="translate(380, 200)">
+    <rect class="frame" x="-150" y="-130" width="260" height="260"/>
+    <!-- top-left diag: Ricci -->
+    <rect class="diag" x="-148" y="-128" width="128" height="128"/>
+    <text x="-84" y="-72" class="lblb">Ric</text>
+    <text x="-84" y="-50" class="lbls">spatial curvature</text>
+    <!-- bottom-right diag: Yang–Mills -->
+    <rect class="diag" x="-20"  y="0"    width="128" height="128"/>
+    <text x="44"  y="56"  class="lblb">F_∇</text>
+    <text x="44"  y="78"  class="lbls">Yang–Mills</text>
+    <text x="44"  y="98"  class="lbls">internal curvature</text>
+    <!-- top-right off-diag: 0 -->
+    <rect class="off"  x="-20"  y="-128" width="128" height="128"/>
+    <text x="44"  y="-60" class="lbl">0</text>
+    <!-- bottom-left off-diag: 0 -->
+    <rect class="off"  x="-148" y="0"    width="128" height="128"/>
+    <text x="-84" y="68" class="lbl">0</text>
+  </g>
+
+  <text x="350" y="380" text-anchor="middle" class="lbl">no cross terms — forced by the Frobenius–Hopf compatibility</text>
+  <text x="350" y="402" text-anchor="middle" class="lbls">the squared Dirac operator splits cleanly into "geometry of space" + "geometry of gauge"</text>
+  <text x="350" y="422" text-anchor="middle" class="lbls">— this is the categorical analogue of the classical Lichnerowicz–Bochner formula —</text>
+</svg>
