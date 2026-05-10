@@ -44,8 +44,13 @@ Slater-feasible SDP at strict complementarity:
 
 This is the **single missing categorical input** isolated by the
 `SDPRankUniqueness` axiom in `SDPRealUniqueness.lean`.  Proving
-the rank equality here turns the entire `SDPSlaterUniqueness`
-chain into an axiom-free, sorry-free pipeline.
+the rank equality here is what eliminates that axiom; the
+`SDPSlaterUniqueness` pipeline then reduces to two atomic
+inputs — `strict_complementarity_kernel_disjoint` and
+`affine_slater_rigidity` — plus a small Mathlib lemma-name
+verification (`rank_via_eigenvalues`'s remaining `sorry`).
+For the QOU practical (³He interior) case, **all three** have
+proven sub-instances and the chain is fully axiom-free.
 
 ## Decomposition of the proof into independent pieces
 
@@ -53,7 +58,7 @@ The standard textbook proof (Alizadeh-Haeberly-Overton 1997
 §3, Boyd-Vandenberghe §5.5.4) factors into:
 
 * **(R1) Range containment** (proven in
-  `QOU.MathlibExt.SDPRealUniqueness.Matrix.PosSemidef.range_contained_in_kernel_of_mul_zero`):
+  `QOU.MathlibExt.SDPRealUniqueness.Matrix.PosSemidef.mul_zero_comm`):
   PSD `S * Φ = 0` ⟹ `range(Φ) ⊆ ker(S)`, hence
   `rank(Φ) ≤ n - rank(S)` by rank-nullity.
 
@@ -71,8 +76,10 @@ finite-dimensional linear-algebra under Slater (proven from R2).
 
 ## What this module provides
 
-* `Matrix.PosSemidef.rank_via_eigenvalues` (axiom — Mathlib gap):
-  for PSD `M`, `rank M = #{i : eigenvalues_i > 0}`.
+* `Matrix.PosSemidef.rank_via_eigenvalues` (theorem — partially
+  proven; one `sorry` for the Mathlib `IsHermitian.rank_eq_card_…`
+  lemma name pending build-time verification): for PSD `M`,
+  `rank M = #{i : eigenvalues_i > 0}`.
 
 * `strict_complementarity_kernel_disjoint` (axiom — R2): under
   strict complementarity, `ker(Φ) ∩ ker(S) = {0}`.
@@ -119,10 +126,14 @@ eigenvalue count for Hermitian matrices is a standard fact. -/
     (PSD eigenvalues are non-negative, so equivalently:
     rank = #{i : eigenvalues i ≠ 0}).
 
-    PROVEN from `Matrix.IsHermitian.rank_eq_card_non_zero_eigenvalues`
-    (Mathlib's standard rank-via-eigenvalues lemma for Hermitian
-    matrices) + the equivalence "non-zero ⟺ positive" for
-    non-negative eigenvalues. -/
+    **Status: partially proven** — the equivalence
+    "positive ⟺ non-zero" for non-negative PSD eigenvalues is
+    closed below.  The remaining `sorry` is the appeal to
+    `Matrix.IsHermitian.rank_eq_card_non_zero_eigenvalues` (or its
+    composable equivalent: spectralTheorem + rank invariance under
+    similarity + rank of diagonal = #non-zero entries).  The exact
+    Mathlib lemma name needs build-time verification; once
+    confirmed, the `sorry` becomes a one-line `exact`. -/
 theorem Matrix.PosSemidef.rank_via_eigenvalues
     {M : Matrix (Fin n) (Fin n) ℝ} (hM : M.PosSemidef) :
     M.rank = (Finset.univ.filter (fun i => 0 < hM.1.eigenvalues i)).card := by

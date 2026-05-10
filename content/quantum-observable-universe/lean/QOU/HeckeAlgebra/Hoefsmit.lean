@@ -127,9 +127,15 @@ axiom HoefsmitMatrix_hecke_relation : ∀ {n : ℕ} (λ : Nat.Partition n) (q : 
     (HoefsmitMatrix λ q i) * (HoefsmitMatrix λ q i) =
       (q - 1) • (HoefsmitMatrix λ q i) + q • 1
 
-/-- **Braid relation** (axiomatised): `σ_i σ_{i+1} σ_i = σ_{i+1}
-    σ_i σ_{i+1}` whenever both `i` and `i+1` index valid
-    generators (`i+1 < n - 1`). -/
+/-- **Braid relation** (axiomatised): `T_i T_{i+1} T_i = T_{i+1}
+    T_i T_{i+1}` whenever both `i` and `i+1` index valid
+    generators (`i+1 < n - 1`).
+
+    This is the T-form braid relation matching the T-form Hecke
+    relation `T_i^2 = (q − 1) T_i + q` above.  The braid relation
+    has the same shape as the σ-form (it does not depend on the
+    quadratic relation), but we phrase it in T's to keep this
+    file uniformly in the T-form / `ℤ[q, q⁻¹]`-friendly setup. -/
 axiom HoefsmitMatrix_braid_relation : ∀ {n : ℕ} (λ : Nat.Partition n) (q : ℝ)
     (i j : Fin (n - 1)) (_h_adj : j.val = i.val + 1),
     (HoefsmitMatrix λ q i) * (HoefsmitMatrix λ q j) * (HoefsmitMatrix λ q i) =
