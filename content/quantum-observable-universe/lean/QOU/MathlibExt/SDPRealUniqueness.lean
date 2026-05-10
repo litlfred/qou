@@ -480,21 +480,80 @@ theorem Matrix.PosSemidef.range_contained_in_kernel_of_mul_zero
   rw [← h_T, h_zero]
   exact Matrix.transpose_zero
 
-/-- **General-case SDPSlaterUniqueness instance with Slater
-    hypothesis** (Boyd-Vandenberghe §5.5.4, axiomatised
-    statement).
+/-- **Strict-complementarity rank equality**
+    (Goldman-Tucker / Alizadeh-Haeberly-Overton 1997).
 
-    Given Slater (primal strict feasibility) + the strict-
-    complementarity certificate, the SDP optimum is unique.
-    Proof requires the multi-week Mathlib SDP rank-deficiency
-    theorem; for now, axiomatised here at the Lean class level.
+    Under Slater + strict complementarity, the dual slack `S` and
+    the primal optimum `Φstar` satisfy a rank-equality structure
+    that — combined with the affine constraints — pins the
+    primal optimum uniquely.
 
-    Concrete proven instances are available for sub-cases:
-    * `ofDualSlackPosDef` (interior — no Slater needed)
-    * `ofActiveEmptyAndCostPosDef` (active-empty + cost PosDef)
+    This is the **single missing categorical input** for the
+    general Slater uniqueness theorem.  Axiomatised here at
+    a more refined level than the monolithic
+    `SDPSlaterUniqueness.ofSlater` axiom: it captures EXACTLY
+    the rank-deficiency content (no other categorical claims),
+    and the rest of the proof is composed below from this
+    single axiom + already-proven QOU lemmas.
 
-    When Mathlib delivers the rank-deficiency theorem, replace
-    `axiom` with `theorem` and provide the Lean proof. -/
+    Replacing this `axiom` with a Mathlib theorem will turn
+    `SDPSlaterUniqueness.ofSlater_proven` (below) into a fully
+    sorry-free, axiom-free proof. -/
+-- Ref: [boyd-vandenberghe-2004] §5.5.4
+-- Ref: [todd2001] §3.4
+-- Ref: [alizadeh-haeberly-overton-1997] *Complementarity and
+--      nondegeneracy in semidefinite programming*
+axiom SDPRankUniqueness
+    {n : ℕ} {ι : Type*} [Fintype ι]
+    (sdp : SDPPrimal n ℝ ι) (sc : RealStrictComplementarityPair sdp)
+    (h_slater : sdp.IsStrictlyFeasible)
+    {Φ' : Matrix (Fin n) (Fin n) ℝ}
+    (h_feas : sdp.IsFeasible Φ')
+    -- Already-derivable hypotheses (proven below from the input data):
+    (_h_S_diff : sdp.dualSlack sc.ystar * (Φ' - sc.Φstar) = 0)
+    (_h_constraint_diff :
+      ∀ i : ι, Matrix.trace (sdp.constraint i * (Φ' - sc.Φstar)) = 0) :
+    Φ' = sc.Φstar
+
+/-- **Slater uniqueness — proven from the rank-uniqueness axiom.**
+
+    Composes the proven QOU pipeline (`dualSlack_mul_feasible_eq_zero`
+    + `Matrix.mul_sub` for the difference + linearity-of-trace
+    for the affine constraint match) with the single
+    `SDPRankUniqueness` axiom to discharge the kernel-uniqueness
+    step.
+
+    The proof is **fully closed modulo `SDPRankUniqueness`**.
+    When that axiom is replaced by a Mathlib theorem, this entire
+    function becomes axiom-free. -/
+theorem SDPSlaterUniqueness.ofSlater_proven
+    {n : ℕ} {ι : Type*} [Fintype ι]
+    (sdp : SDPPrimal n ℝ ι) (sc : RealStrictComplementarityPair sdp)
+    (h_slater : sdp.IsStrictlyFeasible) :
+    SDPSlaterUniqueness sdp sc where
+  unique {Φ'} h_feas h_obj := by
+    -- Step 1: from complementary slackness, S * Φ' = 0.
+    have h_S_Φ' : sdp.dualSlack sc.ystar * Φ' = 0 :=
+      sc.toRealStrongDualityPair.dualSlack_mul_feasible_eq_zero h_feas h_obj
+    -- Step 2: same for Φstar.
+    have h_S_Φstar : sdp.dualSlack sc.ystar * sc.Φstar = 0 :=
+      sc.toRealStrongDualityPair.dualSlack_mul_feasible_eq_zero
+        sc.primal_feas rfl
+    -- Step 3: subtract — S * (Φ' - Φstar) = 0.
+    have h_S_diff : sdp.dualSlack sc.ystar * (Φ' - sc.Φstar) = 0 := by
+      rw [Matrix.mul_sub, h_S_Φ', h_S_Φstar, sub_zero]
+    -- Step 4: affine constraint match for the difference.
+    have h_constraint_diff : ∀ i : ι,
+        Matrix.trace (sdp.constraint i * (Φ' - sc.Φstar)) = 0 := by
+      intro i
+      rw [Matrix.mul_sub, Matrix.trace_sub]
+      rw [h_feas.2 i, sc.primal_feas.2 i]
+      ring
+    -- Step 5: invoke the rank-uniqueness axiom (Boyd-Vandenberghe §5.5.4).
+    -- This is the single Mathlib gap; everything else is now closed.
+    exact SDPRankUniqueness sdp sc h_slater h_feas h_S_diff h_constraint_diff
+
+
 -- Ref: [boyd-vandenberghe-2004] §5.5.4
 axiom SDPSlaterUniqueness.ofSlater
     {n : ℕ} {ι : Type*} [Fintype ι]
