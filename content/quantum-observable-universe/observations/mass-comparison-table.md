@@ -62,34 +62,32 @@ correction). FULL framework prediction below.
 
 #### FULL Q_β prediction (framework, no CODATA mass injection)
 
-Per [`prop:beta-decay-energy-scale`](../../braids-and-knots/beta-decay-energy-scale.md)
+Per [`prop:neutron-qvalue-symbolic`](../../particle-interactions/neutron-qvalue-symbolic.md)
 the framework predicts the β-decay Q-value from CAL-1 ($m_e$) and
-CAL-2 ($q_0$) only:
+CAL-2 ($q_0$) only via the closed form:
 
 $$
-E_0 = \frac{m_e}{q_0(q_0 - 1)} \approx 4.186\,\text{MeV},
-\qquad
-Q_\beta^{\text{pred}} = |\Delta(\mathrm{net})| \cdot E_0 \approx 0.7882\,\text{MeV}
+\boxed{
+Q_\beta^{\text{pred}} = \frac{m_e \cdot |q_0^2 - 2q_0 - 1| \cdot (q_0 + 1)}{2 q_0^3} \approx 0.7836 \text{ MeV}
+}
 $$
 
-vs CODATA $Q_\beta = 0.7823$ MeV — **0.75% framework prediction**,
-with $\Delta(\mathrm{net}) = -0.18829$ from the GS-NF coefficients
-of the canonical neutron and proton braids. The $n$-$p$ mass split
-follows: $\mathfrak{m}_n - \mathfrak{m}_p = Q_\beta + m_e \approx 1.299$ MeV
-(vs CODATA $1.293$, same 0.5% framework error, no CODATA $m_n - m_p$
+vs CODATA $0.7823$ MeV — **+0.168% / +1.31 keV framework prediction**.
+At single wrap the $L_\pm$ and $e^-$ contributions cancel exactly
+between proton and neutron, so $\Delta(\mathrm{net}) = h(h-2)/2$
+with $h = q_0 - q_0^{-1}$, and the entire $Q$-value lives in the
+$\gamma + \sigma_0 + \sigma_1$ channels.
+
+The $n$-$p$ mass split follows: $\mathfrak{m}_n - \mathfrak{m}_p = Q_\beta + m_e \approx 1.295$ MeV
+(vs CODATA $1.293$, same $0.17\%$ framework error, no CODATA $m_n - m_p$
 input).
 
-**Observable / virtual split** (per Coxeter length $\ell$):
-
-| Component | $\Delta \cdot E_0$ (MeV) | fraction | terms |
-|---|---:|---:|---|
-| **Observable** ($\ell \geq 2$) | $0.4608$ | $58.46\%$ | Hopf links $L_\pm$, trefoil $e^-$ |
-| **Virtual** ($\ell < 2$) | $0.3274$ | $41.54\%$ | identity $\gamma$, single crossings $\sigma_0, \sigma_1$ |
-| Total | $0.7882$ | $100\%$ |  |
-
-Observable = topologically non-trivial, physical kinetic energy
-released. Virtual = gauge / vacuum-debt, cancels in asymptotic
-states. Witness:
+The +1.31 keV residual is the **brane-tower truncation** — the
+derived $E_0$ uses the single-level Planck-tick approximation;
+exact tower-summed $E_0$ closes it (Workplan 2 Phase 2). The
+typed-crossings 6-term form gives a looser +0.747% prediction
+(0.7882 MeV) — kept in the witness only for cross-check, not used
+for production. Witness:
 [`q-beta-predicted.witness.json`](../../../folio-assistant/computations/q-beta-predicted.witness.json).
 
 *Light nuclei (from multi-body Skein).* All rows below come from

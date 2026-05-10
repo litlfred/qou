@@ -168,10 +168,40 @@ def e_0_calibrated_mev() -> mp.mpf:
 
 @lru_cache(maxsize=None)
 def q_beta_predicted_mev() -> mp.mpf:
-    """Q_β prediction = |Δ(net)| · E_0 (FULL chain).
+    """Q_β prediction via the symbolic single-wrap closed form.
 
-    All terms (γ, σ_0, σ_1, L_±, e^-) — observable + virtual.
-    ≈ 0.788 MeV vs CODATA 0.782 MeV (0.75% framework prediction).
+    Per [`prop:neutron-qvalue-symbolic`](../../content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.md):
+
+        Q_β = m_e · |q_0² - 2q_0 - 1| · (q_0 + 1) / (2 q_0³)
+
+    This is the canonical closed-form expression at single wrap. The
+    L_± and e^- contributions cancel exactly in Δ(net) = h(h-2)/2
+    with h = q - q^{-1}; only the γ, σ_0, σ_1 channels carry the
+    Q-value. Result ≈ 0.7836 MeV vs CODATA 0.7823 MeV (+0.18%).
+
+    Replaces the earlier typed-crossings implementation that used
+    Δ(net) = -0.18829 from beta-decay-energy-scale.witness.json
+    (which gave +0.747% — the residual was finite-size noise from
+    the 6-term decomposition's L_±/e^- channels picking up small
+    asymmetric pieces that should cancel exactly at single wrap).
+
+    The remaining +0.18% is the brane-tower truncation residual:
+    the derived E_0 = m_e/(q_0(q_0-1)) uses the single-level
+    (Planck-tick) approximation; the exact tower-summed E_0 would
+    absorb this 0.18% / 1.3 keV residual. Closure path: Workplan 2
+    Phase 2 50-dps m_e_Hecke lift.
+    """
+    q0 = _q_0()
+    return M_E_MEV * abs(q0 ** 2 - 2 * q0 - 1) * (q0 + 1) / (2 * q0 ** 3)
+
+
+@lru_cache(maxsize=None)
+def q_beta_predicted_typed_crossing_mev() -> mp.mpf:
+    """Q_β via typed-crossings 6-term decomposition (LEGACY, +0.747% err).
+
+    Reads `Δ(net) = -0.18829` from beta-decay-energy-scale.witness
+    and multiplies by E_0_full. Kept for cross-check against the
+    symbolic single-wrap form; do not use for production predictions.
     """
     w = _beta_witness()
     delta_net = mp.mpf(str(w["hecke_nf_differences"]["delta_net"]))

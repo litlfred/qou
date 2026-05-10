@@ -93,58 +93,78 @@ calibration tautology, not a prediction quality.
 
 ### FULL Q_β prediction (framework, no CODATA mass injection)
 
-Per [`prop:beta-decay-energy-scale`](../../../content/quantum-observable-universe/particle-interactions/beta-decay-energy-scale.md)
+Per [`prop:neutron-qvalue-symbolic`](../../../content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.md)
 the framework predicts the β-decay Q-value using only CAL-1 ($m_e$)
 and CAL-2 ($q_0$) — no CAL-3 ($Q_\beta$) input, no CODATA $m_p$ or
 $m_n$ injection. CAL-3 becomes the **output**, not an input.
 
+The canonical closed form at single wrap:
+
 $$
-E_0^{\text{full}} = \frac{m_e}{q_0(q_0 - 1)} = m_e \cdot c_q^2 \cdot \hbar_q \approx 4.186\,\text{MeV},
-\qquad
-Q_\beta^{\text{pred}} = |\Delta(\mathrm{net})| \cdot E_0^{\text{full}}
+\boxed{
+Q_\beta^{\text{pred}} \;=\;
+\frac{m_e \cdot |q_0^2 - 2q_0 - 1| \cdot (q_0 + 1)}{2 q_0^3}
+\;\approx\; 0.7836 \text{ MeV}
+}
 $$
 
-with $\Delta(\mathrm{net}) = \mathrm{net}(\mathfrak{n}) - \mathrm{net}(\mathfrak{p})
-= -0.18829$ from the GS-NF coefficients of the canonical neutron
-and proton braids. **Result**: $Q_\beta^{\text{pred}} = 0.7882$ MeV
-vs CODATA $0.7823$ MeV — $0.75\%$ framework prediction.
+vs CODATA $0.7823$ MeV — **+0.168% / +1.31 keV** framework prediction.
 
-The $0.75\%$ residual is the brane-tower correction
-([beta-decay-energy-scale.md §Calibration cross-check](../../../content/quantum-observable-universe/particle-interactions/beta-decay-energy-scale.md));
-the cross-check $E_0^{(\text{cal})} = Q_\beta^{\text{CODATA}} / |\Delta(\mathrm{net})| = 4.155$ MeV
-agrees with the derived $4.186$ MeV to the same $0.75\%$.
+The closed form is derived via $\Delta(\mathrm{net}) = h(h-2)/2$
+with $h = q_0 - q_0^{-1}$ (the symbolic NF difference between the
+single-wrap proton $\mathrm{NF} = L_+ - \tfrac{h}{2}\sigma_0$ and
+neutron $\mathrm{NF} = L_+ - h\sigma_0 - \tfrac{h}{2}\sigma_1 + \tfrac{h^2}{2}\gamma$),
+times the energy scale $E_0 = m_e/(q_0(q_0-1))$. At single wrap the
+$L_+$, $L_-$, and $e^-$ contributions cancel exactly between
+proton and neutron, so the $Q$-value is carried entirely by the
+$\gamma + \sigma_0 + \sigma_1$ channels:
 
-#### Observable / virtual decomposition
+| Channel | $\ell$ | $\Delta_i$ | $\Delta_i \cdot E_0$ (MeV) |
+|---|:-:|:-:|---:|
+| $\gamma$ (identity) | 0 | $h^2/2 \approx +0.02185$ | $+0.0915$ |
+| $\sigma_0$ | 1 | $-h/2 \approx -0.10453$ | $-0.4376$ |
+| $\sigma_1$ | 1 | $-h/2 \approx -0.10453$ | $-0.4376$ |
+| $L_+, L_-, e^-$ | $\ge 2$ | $0$ (single-wrap cancellation) | $0$ |
+| **Net** | | $h(h-2)/2 \approx -0.18722$ | **$+0.7836$** |
 
-Per [`beta-decay-energy-scale.md §"Observable vs virtual"`](../../../content/quantum-observable-universe/particle-interactions/beta-decay-energy-scale.md),
-NF terms split by Coxeter length $\ell$:
+The $+0.168\%$ / $+1.31$ keV residual is the **brane-tower
+truncation correction** ([`neutron-qvalue-symbolic.md:110-114`](../../../content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.md)):
+the derived $E_0 = m_e/(q_0(q_0-1))$ is the single-level
+(Planck-tick) approximation; the exact tower-summed $E_0$ would
+absorb this $0.17\%$. Closure path: Workplan 2 Phase 2 50-dps
+$m_e^{\mathrm{Hecke}}$ lift.
 
-| | $\ell$ | Knots / links | $\Delta_\lambda$ | $\Delta_\lambda \cdot E_0$ (MeV) | fraction |
-|---|:-:|---|---:|---:|---:|
-| $\gamma$ (identity) | 0 | photon | $-0.10205$ | $+0.4240$ | virtual |
-| $\sigma_0$ | 1 | virtual crossing | $+0.01240$ | $-0.0515$ | virtual |
-| $\sigma_1$ | 1 | virtual crossing | $+0.01143$ | $-0.0475$ | virtual |
-| $L_+$ | 2 | Hopf link | $-0.10899$ | $+0.4529$ | **observable** |
-| $L_-$ | 2 | Hopf link | $-0.00010$ | $+0.0004$ | **observable** |
-| $e^-$ | 3 | trefoil $3_1$ | $-0.00098$ | $+0.0041$ | **observable** |
-|  |  |  | **Sum** | **$+0.7882$** |  |
+#### Why "single-wrap symbolic" beats the typed-crossings 6-term form
 
-| Component | $\lvert\Delta\rvert$ | $\Delta \cdot E_0$ (MeV) | fraction |
-|---|---:|---:|---:|
-| **Observable** ($\ell \ge 2$): Hopf links $L_\pm$ + trefoil $e^-$ | $0.11007$ | $0.4608$ | **58.46%** |
-| **Virtual** ($\ell < 2$): identity $\gamma$ + crossings $\sigma_0, \sigma_1$ | $0.07822$ | $0.3274$ | $41.54\%$ |
-| Total | $0.18829$ | $0.7882$ | $100\%$ |
+An earlier draft used the typed-crossings 6-term decomposition
+([`beta-decay-energy-scale.md`](../../../content/quantum-observable-universe/particle-interactions/beta-decay-energy-scale.md))
+with $|\Delta(\mathrm{net})| = 0.18829$ from the witness, giving
+$Q_\beta^{(\text{6-term})} = 0.7882$ MeV ($+0.747\%$). The
+single-wrap form is **4.46× tighter** because the $L_\pm$ and
+$e^-$ contributions, which exactly vanish in the symbolic
+single-wrap difference, picked up small asymmetric finite-size
+contributions in the typed-crossings basis. The single-wrap form
+is the canonical clean prediction; the typed-crossings form is
+retained in the witness for cross-check only.
 
-The **observable** component is the topologically non-trivial
-part — physical kinetic energy released in the β-decay event. The
-**virtual** component is the gauge / vacuum-debt contribution that
-cancels in asymptotic states (single crossings $\sigma_0, \sigma_1$
-are gauge artefacts; identity $\gamma$ is the photon-debt baseline).
+#### Observable / virtual basis-dependence note
+
+The "observable vs virtual" decomposition by Coxeter length
+$\ell \ge 2$ vs $\ell < 2$ is only meaningful in the typed-
+crossings 6-term basis (where it gives $58.46\% / 41.54\%$).
+At single wrap, all $\ell \ge 2$ channels cancel by Hopf-content
+matching between proton and neutron — the entire single-wrap
+$Q$-value lives in the virtual ($\ell < 2$) sector. This is not
+a contradiction: the typed-crossings basis is finer, and the
+observable share reflects multi-wrap / finite-size structure
+absent from the single-wrap closed form.
 
 Witness:
 [`q-beta-predicted.witness.json`](../../../folio-assistant/computations/q-beta-predicted.witness.json)
 (2026-05-10, derived via
 [`derived_masses.q_beta_predicted_mev`](../../../folio-assistant/computations/derived_masses.py)).
+3 assertions pass: residual $<0.5\%$, residual $<2$ keV,
+single-wrap residual $<$ typed-crossings residual.
 
 ### Atomic-mass FULL chain — not yet wired
 
