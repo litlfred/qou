@@ -1,0 +1,305 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-10T05:19:46.835341+00:00",
+  "commitSha": "a72752fe9b8d804077fcd5164217261b7691b03b",
+  "assertions": [
+    {
+      "name": "cumulative_at_max_grade_matches_target[proton]",
+      "computed": 1.0653062285923887,
+      "expected": 1.0653062285923893,
+      "passed": true,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "cumulative_at_max_grade_matches_target[neutron]",
+      "computed": 0.9232332971695832,
+      "expected": 0.9232332971695838,
+      "passed": true,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "cumulative_at_max_grade_matches_target[deuteron]",
+      "computed": 0.388286471547713,
+      "expected": 0.3882864715477134,
+      "passed": true,
+      "tolerance": 1e-10
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 426,
+  "computation": "graded-hecke-energy-probe",
+  "scriptFile": "graded_hecke_energy_probe.py",
+  "scriptHash": "06d31cd52820",
+  "scriptCommitSha": "unknown",
+  "description": "Phase 8 of the 1 ppb workplan — graded Hecke energy probe demonstrating the truncation bound from `prop:graded-hecke-energy-truncation-bound`.  Stratifies the canonical Wenzl-bridge tr_M(β_K, q_0) per partition λ by the content sum n(λ) (natural ℤ-grade for the principal Schur specialisation underlying y_λ).  For each atom in {proton, neutron, deuteron}: per-partition rows sorted by grade, cumulative trace as grade grows, and the empirical confinement level (smallest ℓ at which |cum(≤ℓ) - tr_M| < 1e-12).",
+  "contentBlock": "prop:graded-hecke-energy-truncation-bound",
+  "auditOnly": "docs/audits/2026-05-10-1ppb-workplan-update.md",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "dps": 50
+  },
+  "data": {
+    "results": {
+      "proton": {
+        "Z": 1,
+        "N": 0,
+        "include_inter": false,
+        "target_tr_M": "1.0653062285923893",
+        "num_partitions": 3,
+        "num_grades": 3,
+        "max_grade": 3,
+        "effective_confinement_level_tight": 3,
+        "effective_confinement_level_loose_1e_minus_3": 3,
+        "per_grade_cumulative": [
+          {
+            "grade": 0,
+            "num_partitions_at_grade": 1,
+            "partitions_at_grade": [
+              [
+                3
+              ]
+            ],
+            "grade_sum_real": "0.57428239597324293175262255317647941410541534423828",
+            "grade_sum_imag": "0.0",
+            "cumulative_abs": "0.57428239597324293175262255317647941410541534423828"
+          },
+          {
+            "grade": 1,
+            "num_partitions_at_grade": 1,
+            "partitions_at_grade": [
+              [
+                2,
+                1
+              ]
+            ],
+            "grade_sum_real": "1.08211982803260298169334419071674346923828125",
+            "grade_sum_imag": "0.0",
+            "cumulative_abs": "1.08211982803260298169334419071674346923828125"
+          },
+          {
+            "grade": 3,
+            "num_partitions_at_grade": 1,
+            "partitions_at_grade": [
+              [
+                1,
+                1,
+                1
+              ]
+            ],
+            "grade_sum_real": "1.0653062285923886737259991264181735459715127944946",
+            "grade_sum_imag": "0.0",
+            "cumulative_abs": "1.0653062285923886737259991264181735459715127944946"
+          }
+        ]
+      },
+      "neutron": {
+        "Z": 0,
+        "N": 1,
+        "include_inter": false,
+        "target_tr_M": "0.9232332971695838",
+        "num_partitions": 3,
+        "num_grades": 3,
+        "max_grade": 3,
+        "effective_confinement_level_tight": 3,
+        "effective_confinement_level_loose_1e_minus_3": 3,
+        "per_grade_cumulative": [
+          {
+            "grade": 0,
+            "num_partitions_at_grade": 1,
+            "partitions_at_grade": [
+              [
+                3
+              ]
+            ],
+            "grade_sum_real": "0.46611845200516743847884981732931919395923614501953",
+            "grade_sum_imag": "0.0",
+            "cumulative_abs": "0.46611845200516743847884981732931919395923614501953"
+          },
+          {
+            "grade": 1,
+            "num_partitions_at_grade": 1,
+            "partitions_at_grade": [
+              [
+                2,
+                1
+              ]
+            ],
+            "grade_sum_real": "0.94394853410114676339759398615569807589054107666016",
+            "grade_sum_imag": "0.0",
+            "cumulative_abs": "0.94394853410114676339759398615569807589054107666016"
+          },
+          {
+            "grade": 3,
+            "num_partitions_at_grade": 1,
+            "partitions_at_grade": [
+              [
+                1,
+                1,
+                1
+              ]
+            ],
+            "grade_sum_real": "0.92323329716958326893183617301019694423303008079529",
+            "grade_sum_imag": "0.0",
+            "cumulative_abs": "0.92323329716958326893183617301019694423303008079529"
+          }
+        ]
+      },
+      "deuteron": {
+        "Z": 1,
+        "N": 1,
+        "include_inter": true,
+        "target_tr_M": "0.3882864715477134",
+        "num_partitions": 11,
+        "num_grades": 9,
+        "max_grade": 15,
+        "effective_confinement_level_tight": 15,
+        "effective_confinement_level_loose_1e_minus_3": 6,
+        "per_grade_cumulative": [
+          {
+            "grade": 0,
+            "num_partitions_at_grade": 1,
+            "partitions_at_grade": [
+              [
+                6
+              ]
+            ],
+            "grade_sum_real": "0.092318558751121201910727620543184457346796989440918",
+            "grade_sum_imag": "0.0",
+            "cumulative_abs": "0.092318558751121201910727620543184457346796989440918"
+          },
+          {
+            "grade": 1,
+            "num_partitions_at_grade": 1,
+            "partitions_at_grade": [
+              [
+                5,
+                1
+              ]
+            ],
+            "grade_sum_real": "0.28192970900924417543276234709992422722280025482178",
+            "grade_sum_imag": "0.0",
+            "cumulative_abs": "0.28192970900924417543276234709992422722280025482178"
+          },
+          {
+            "grade": 2,
+            "num_partitions_at_grade": 1,
+            "partitions_at_grade": [
+              [
+                4,
+                2
+              ]
+            ],
+            "grade_sum_real": "0.34935562614972630324228219933502259664237499237061",
+            "grade_sum_imag": "0.0",
+            "cumulative_abs": "0.34935562614972630324228219933502259664237499237061"
+          },
+          {
+            "grade": 3,
+            "num_partitions_at_grade": 2,
+            "partitions_at_grade": [
+              [
+                3,
+                3
+              ],
+              [
+                4,
+                1,
+                1
+              ]
+            ],
+            "grade_sum_real": "0.40459154419323668100405555492216080892831087112427",
+            "grade_sum_imag": "0.0",
+            "cumulative_abs": "0.40459154419323668100405555492216080892831087112427"
+          },
+          {
+            "grade": 4,
+            "num_partitions_at_grade": 1,
+            "partitions_at_grade": [
+              [
+                3,
+                2,
+                1
+              ]
+            ],
+            "grade_sum_real": "0.39015354335625824014344154022637667367234826087952",
+            "grade_sum_imag": "0.0",
+            "cumulative_abs": "0.39015354335625824014344154022637667367234826087952"
+          },
+          {
+            "grade": 6,
+            "num_partitions_at_grade": 2,
+            "partitions_at_grade": [
+              [
+                2,
+                2,
+                2
+              ],
+              [
+                3,
+                1,
+                1,
+                1
+              ]
+            ],
+            "grade_sum_real": "0.38778506597055632364873245521152966830413788557053",
+            "grade_sum_imag": "0.0",
+            "cumulative_abs": "0.38778506597055632364873245521152966830413788557053"
+          },
+          {
+            "grade": 7,
+            "num_partitions_at_grade": 1,
+            "partitions_at_grade": [
+              [
+                2,
+                2,
+                1,
+                1
+              ]
+            ],
+            "grade_sum_real": "0.38806545126489187531437091704944464254367630928755",
+            "grade_sum_imag": "0.0",
+            "cumulative_abs": "0.38806545126489187531437091704944464254367630928755"
+          },
+          {
+            "grade": 10,
+            "num_partitions_at_grade": 1,
+            "partitions_at_grade": [
+              [
+                2,
+                1,
+                1,
+                1,
+                1
+              ]
+            ],
+            "grade_sum_real": "0.38827805196257782647194754799269134082351229153574",
+            "grade_sum_imag": "0.0",
+            "cumulative_abs": "0.38827805196257782647194754799269134082351229153574"
+          },
+          {
+            "grade": 15,
+            "num_partitions_at_grade": 1,
+            "partitions_at_grade": [
+              [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ]
+            ],
+            "grade_sum_real": "0.38828647154771299388949527733178035404648653639015",
+            "grade_sum_imag": "0.0",
+            "cumulative_abs": "0.38828647154771299388949527733178035404648653639015"
+          }
+        ]
+      }
+    },
+    "phase": "Phase 8 of 1ppb workplan (2026-05-10)",
+    "workplan_doc": "docs/audits/2026-05-10-1ppb-workplan-update.md",
+    "truncation_proposition": "prop:graded-hecke-energy-truncation-bound",
+    "note": "Empirical effective confinement level may be higher than the Lean-side ConfinementLevel.level when the grading is by partition content-sum n(λ) rather than the categorical jet/filtration order; the two coincide modulo the GS-filtration descent (gs-graded-markov-trace-existence conjecture)."
+  }
+}

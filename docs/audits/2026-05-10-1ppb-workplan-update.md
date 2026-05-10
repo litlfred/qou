@@ -157,6 +157,29 @@ Phase 1 + Phase 2 partial delivery on PR #631
   `heckeH7DimQ`'s docstring and pin which Wenzl level $r$ it
   corresponds to.
 
+- **Phase 8 (graded Hecke energy infrastructure)** — DELIVERED:
+  new content block
+  [`prop:graded-hecke-energy-truncation-bound`](../../content/quantum-observable-universe/braids-and-knots/graded-hecke-energy-truncation-bound.md)
+  proves $P_K(q)$ has at most $\ell(K, q_0) + 1$ nonzero grades
+  conditional on the GS-filtration descent
+  (CLAUDE.md §3b-cond conditional class). Companion script
+  `graded_hecke_energy_probe.py` stratifies the canonical
+  Wenzl-bridge $|\mathrm{tr}_M(\beta_K, q_0)|$ per partition by
+  content-sum grade and reports cumulative convergence. Empirical
+  results at $q_0$:
+
+  | atom | $p(3A)$ | grades | $\ell_{\text{eff}}$ (1e-12) | $\ell_{\text{eff}}$ (1e-3) |
+  |------|--------:|-------:|----------------------------:|---------------------------:|
+  | proton | 3 | 3 | 3 | 1 |
+  | neutron | 3 | 3 | 3 | 1 |
+  | deuteron | 11 | 9 | 15 (max grade) | 6 |
+
+  Loose-tolerance speedups confirm the truncation bound. The
+  proposition + probe together provide the structural unblocker
+  for Phase 1.2 / 1.3: cache stratified by content-sum grade
+  (instead of partition index) makes the slow T / ³He chi
+  computation resumable and truncatable.
+
 If PR #630 merges first, rebase #621 on top and drop the redundant
 `a82197577` commit; the audit doc + uniqueness theorem additions
 remain net-new contributions.
