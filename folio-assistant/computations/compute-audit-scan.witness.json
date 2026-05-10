@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-10T07:50:15.083246+00:00",
-  "commitSha": "d83b0a45be208eec784081ccf4d5cd43cdc725ca",
+  "computedAt": "2026-05-10T08:19:11.789524+00:00",
+  "commitSha": "0143a83d64947370457ceee3f610bc902d95a269",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 8,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "b540c436e909",
@@ -13,7 +13,7 @@
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 351,
+    "files_scanned": 355,
     "patterns": [
       "P15",
       "P16",
@@ -24,7 +24,7 @@
   "data": {
     "by_pattern_count": {
       "P15": 104,
-      "P16": 70,
+      "P16": 72,
       "P21": 18,
       "P30": 93
     },
@@ -1640,6 +1640,13 @@
       },
       {
         "pattern": "P16",
+        "file": "per_irrep_pole_atom_crystal.py",
+        "line": 314,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
         "file": "per_irrep_pole_proton_h3.py",
         "line": 88,
         "snippet": "sp.simplify(...)",
@@ -2106,6 +2113,13 @@
         "line": 175,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P16",
+        "file": "y_lambda_pole_order_cache.py",
+        "line": 56,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P15",
