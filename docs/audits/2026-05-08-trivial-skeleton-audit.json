@@ -1,8 +1,18 @@
 {
   "audit": "trivial-skeleton-audit",
-  "generated": "2026-05-09T22:00:35.040Z",
-  "total_flagged": 0,
-  "files_flagged": 0,
-  "patterns": {},
-  "flagged": {}
+  "generated": "2026-05-10T06:27:40.843Z",
+  "total_flagged": 1,
+  "files_flagged": 1,
+  "patterns": {
+    "const_zero": 1
+  },
+  "flagged": {
+    "lean/QOU/BraidKnot/PerNucleusMassDerivation.lean": [
+      {
+        "line": 74,
+        "pattern": "const_zero",
+        "snippet": "def placeholder_T_w (n : LightNucleus) : HeckeElement n.n₀ := 0"
+      }
+    ]
+  }
 }

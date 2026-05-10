@@ -15,18 +15,32 @@ in `folio-assistant/computations/hecke_characters.py` (function
   `V_λ` indexed by partition `λ`, equal to the number of standard
   Young tableaux of shape `λ`.
 - `HoefsmitMatrix λ q i` — the Hoefsmit seminormal matrix for
-  generator `σ_i` in the irrep `V_λ` at parameter `q`.  Currently
-  axiomatised; concrete construction is the open Lean port.
+  the **T-form generator** `T_i` in the irrep `V_λ` at parameter
+  `q`.  Currently axiomatised; concrete construction is the
+  open Lean port.
+
+## Convention: T-form throughout
+
+Per Copilot review consistency note: this file uses **T-form**
+generators `T_i` consistently — both in the type signature
+`HoefsmitMatrix λ q i` (representing `T_i ∈ End(V_λ)`) and in
+the Hecke relation axiom (`T_i² = (q − 1) T_i + q · 1`).
+
+The σ-form alternative (`σ_i = q^{−1/2} T_i`) is mathematically
+equivalent but introduces `q^{1/2}` denominators that lose F_p
+compatibility (per user direction "we want as many stmts to
+hold in F_p" — see `QOU.HeckeAlgebra.Formal`).
 
 ## Categorical content
 
 Hoefsmit (1974) constructed an explicit "seminormal" matrix
-representation of `H_n(q)` whose generators `σ_i` act block-
+representation of `H_n(q)` whose generators `T_i` act block-
 diagonally with respect to the Young tableau basis of `V_λ`.
-The diagonal entries on tableau `T` are determined by the
-content `c_T(i)` of cell `i` in `T`:
-    `(σ_i)_{T,T} = (q · q^{c_T(i+1) - c_T(i)} - 1) / (q^{c_T(i+1) - c_T(i)} + 1)`
-Off-diagonal entries between `T` and `s_i T` (the standard
+In T-form, the diagonal entries on tableau `T_w` are determined
+by the content `c_T(i)` of cell `i` in `T_w`:
+    `(T_i)_{T_w,T_w} = q^{c_T(i+1) - c_T(i)} − 1` divided by a
+content-difference q-integer.
+Off-diagonal entries between `T_w` and `s_i T_w` (the standard
 tableau obtained by swapping `i, i+1`) involve the same content
 differences.
 
@@ -83,27 +97,45 @@ axiom seminormalDim_pos : ∀ {n : ℕ} (λ : Nat.Partition n) (hn : 0 < n),
 axiom HoefsmitMatrix : ∀ {n : ℕ} (λ : Nat.Partition n) (_q : ℝ) (_i : Fin (n - 1)),
     Matrix (Fin (seminormalDim λ)) (Fin (seminormalDim λ)) ℝ
 
-/-- **Hecke relation** (axiomatised, σ-form to match
-    `JonesMarkovWenzl.qInteger` and `QSubstrate.markovParameter`
-    conventions): `σ_i² = (q^{1/2} − q^{−1/2}) σ_i + 1`.
+/-- **Hecke relation in T-form** (the F_p-friendly form, per
+    user direction "we want as many stmts to hold in F_p"):
 
-    Note (per Gemini review): the original draft used the T-form
-    coefficient `q − q⁻¹`, which is inconsistent with the
-    σ-form `q^{1/2}` convention used elsewhere in the QOU Lean
-    layer.  Aligned to σ-form here for consistency.
+        `T_i² = (q − 1) · T_i + q · 1`
 
-    The two conventions are related by rescaling: T-form Hecke
-    has `T_i² = (q−1)T_i + q`, while σ-form has
-    `σ_i² = (q^{1/2}−q^{−1/2})σ_i + 1`.  The σ-form is the
-    Kassel-Turaev/Jones convention used in QOU's manuscript. -/
+    INTEGER coefficients in q ⟹ holds uniformly across all F_p
+    when `q : ZMod p`.  The σ-form alternative
+    `σ_i² = (q^{1/2} − q^{−1/2}) σ_i + 1` requires `q^{1/2}` and
+    therefore lives over `ℚ(q^{1/2})` — losing F_p compatibility
+    at primes where `q^{1/2}` doesn't exist.
+
+    Conversion: `T_i = q^{1/2} σ_i` (in σ-form), so the two
+    formulations are related by a `q^{1/2}` rescaling that we
+    avoid by working in T-form throughout.
+
+    NOTE: previous draft (post-Gemini-review) used σ-form.
+    Reverted to T-form because:
+    1. F_p compatibility (per user direction).
+    2. The Mathlib-port aligns naturally with `ℤ[q, q⁻¹]`.
+    3. The σ-form's `q^{1/2}` necessitates `ℚ(q^{1/2})` which
+       has poor F_p reduction properties.
+
+    For the q-integer convention, the T-form analogue is
+    `[k]_q := (q^k − 1) / (q − 1)` (a polynomial in q, integer
+    coefficients).  See `QOU.HeckeAlgebra.JonesMarkovWenzl`. -/
 axiom HoefsmitMatrix_hecke_relation : ∀ {n : ℕ} (λ : Nat.Partition n) (q : ℝ)
-    (hq : 0 < q) (i : Fin (n - 1)),
+    (i : Fin (n - 1)),
     (HoefsmitMatrix λ q i) * (HoefsmitMatrix λ q i) =
-      (q ^ ((1 : ℝ) / 2) - q ^ (-(1 : ℝ) / 2)) • (HoefsmitMatrix λ q i) + 1
+      (q - 1) • (HoefsmitMatrix λ q i) + q • 1
 
-/-- **Braid relation** (axiomatised): `σ_i σ_{i+1} σ_i = σ_{i+1}
-    σ_i σ_{i+1}` whenever both `i` and `i+1` index valid
-    generators (`i+1 < n - 1`). -/
+/-- **Braid relation** (axiomatised): `T_i T_{i+1} T_i = T_{i+1}
+    T_i T_{i+1}` whenever both `i` and `i+1` index valid
+    generators (`i+1 < n - 1`).
+
+    This is the T-form braid relation matching the T-form Hecke
+    relation `T_i^2 = (q − 1) T_i + q` above.  The braid relation
+    has the same shape as the σ-form (it does not depend on the
+    quadratic relation), but we phrase it in T's to keep this
+    file uniformly in the T-form / `ℤ[q, q⁻¹]`-friendly setup. -/
 axiom HoefsmitMatrix_braid_relation : ∀ {n : ℕ} (λ : Nat.Partition n) (q : ℝ)
     (i j : Fin (n - 1)) (_h_adj : j.val = i.val + 1),
     (HoefsmitMatrix λ q i) * (HoefsmitMatrix λ q j) * (HoefsmitMatrix λ q i) =

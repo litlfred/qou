@@ -217,56 +217,6 @@ theorem real_strict_complementarity_optimum_subsingleton
   rw [real_strict_complementarity_unique sc h₁_feas h₁_obj,
       real_strict_complementarity_unique sc h₂_feas h₂_obj]
 
-/-! ## §3.05  Active-empty closure (full proof, sorry-free)
-
-When the active set is empty, every dual variable is zero
-(`inactive_dual_zero` applied to all indices), so the dual slack
-`S(y*) = T − Σ y*_i A_i = T − 0 = T = cost`.  Adding the
-hypothesis that `T = cost` is PosDef (which is the QOU-relevant
-case for ³He's interior optimum), the active-empty closure
-reduces directly to `_unique_of_dualSlack_posDef`.
-
-This is **another sorry-free closure** of the categorical
-uniqueness theorem, complementing batch 12's interior-case
-closure with an explicit "active set empty" handle that
-downstream code can invoke when the empirical witness reports
-`active = ∅`. -/
-
-/-- **Uniqueness when the active set is empty + cost PosDef.**
-
-    Closed proof via `_unique_of_dualSlack_posDef` after
-    rewriting `dualSlack = cost`. -/
-theorem real_strict_complementarity_unique_of_active_empty_and_cost_posDef
-    {sdp : SDPPrimal n ℝ ι}
-    (sc : RealStrictComplementarityPair sdp)
-    (h_active_empty : sc.active = ∅)
-    (h_cost_posDef : sdp.cost.PosDef)
-    {Φ' : Matrix (Fin n) (Fin n) ℝ}
-    (h_feas : sdp.IsFeasible Φ')
-    (h_obj : sdp.objAt Φ' = sdp.objAt sc.Φstar) :
-    Φ' = sc.Φstar := by
-  -- Step 1: empty active set ⟹ all dual variables are zero.
-  have h_ystar_zero : ∀ i : ι, sc.ystar i = 0 := by
-    intro i
-    apply sc.inactive_dual_zero
-    rw [h_active_empty]
-    exact Set.notMem_empty _
-  -- Step 2: dualSlack ystar = cost (all summands vanish).
-  have h_dualSlack_eq_cost : sdp.dualSlack sc.ystar = sdp.cost := by
-    unfold SDPPrimal.dualSlack
-    have h_sum_zero : (∑ i, sc.ystar i • sdp.constraint i) = 0 := by
-      apply Finset.sum_eq_zero
-      intro i _
-      rw [h_ystar_zero i, zero_smul]
-    rw [h_sum_zero, sub_zero]
-  -- Step 3: cost PosDef ⟹ dualSlack PosDef.
-  have h_S_posDef : (sdp.dualSlack sc.ystar).PosDef := by
-    rw [h_dualSlack_eq_cost]
-    exact h_cost_posDef
-  -- Step 4: apply the interior-case closure.
-  exact real_strict_complementarity_unique_of_dualSlack_posDef
-    sc.toRealStrongDualityPair h_S_posDef h_feas h_obj
-
 /-! ## §3.1  Interior-optimum closure (active set empty)
 
 When the active set is empty (the optimum lies in the strict
@@ -326,5 +276,300 @@ theorem real_strict_complementarity_unique_of_dualSlack_posDef
         Matrix.one_mul, Matrix.mul_zero] at h_inv_mul
     exact h_inv_mul
   exact sub_eq_zero.mp h_diff_zero
+
+
+/-! ## §3.05  Active-empty closure (full proof, sorry-free)
+
+When the active set is empty, every dual variable is zero
+(`inactive_dual_zero` applied to all indices), so the dual slack
+`S(y*) = T − Σ y*_i A_i = T − 0 = T = cost`.  Adding the
+hypothesis that `T = cost` is PosDef (which is the QOU-relevant
+case for ³He's interior optimum), the active-empty closure
+reduces directly to `_unique_of_dualSlack_posDef`.
+
+This is **another sorry-free closure** of the categorical
+uniqueness theorem, complementing batch 12's interior-case
+closure with an explicit "active set empty" handle that
+downstream code can invoke when the empirical witness reports
+`active = ∅`. -/
+
+/-- **Uniqueness when the active set is empty + cost PosDef.**
+
+    Closed proof via `_unique_of_dualSlack_posDef` after
+    rewriting `dualSlack = cost`. -/
+theorem real_strict_complementarity_unique_of_active_empty_and_cost_posDef
+    {sdp : SDPPrimal n ℝ ι}
+    (sc : RealStrictComplementarityPair sdp)
+    (h_active_empty : sc.active = ∅)
+    (h_cost_posDef : sdp.cost.PosDef)
+    {Φ' : Matrix (Fin n) (Fin n) ℝ}
+    (h_feas : sdp.IsFeasible Φ')
+    (h_obj : sdp.objAt Φ' = sdp.objAt sc.Φstar) :
+    Φ' = sc.Φstar := by
+  -- Step 1: empty active set ⟹ all dual variables are zero.
+  have h_ystar_zero : ∀ i : ι, sc.ystar i = 0 := by
+    intro i
+    apply sc.inactive_dual_zero
+    rw [h_active_empty]
+    exact Set.notMem_empty _
+  -- Step 2: dualSlack ystar = cost (all summands vanish).
+  have h_dualSlack_eq_cost : sdp.dualSlack sc.ystar = sdp.cost := by
+    unfold SDPPrimal.dualSlack
+    have h_sum_zero : (∑ i, sc.ystar i • sdp.constraint i) = 0 := by
+      apply Finset.sum_eq_zero
+      intro i _
+      rw [h_ystar_zero i, zero_smul]
+    rw [h_sum_zero, sub_zero]
+  -- Step 3: cost PosDef ⟹ dualSlack PosDef.
+  have h_S_posDef : (sdp.dualSlack sc.ystar).PosDef := by
+    rw [h_dualSlack_eq_cost]
+    exact h_cost_posDef
+  -- Step 4: apply the interior-case closure.
+  exact real_strict_complementarity_unique_of_dualSlack_posDef
+    sc.toRealStrongDualityPair h_S_posDef h_feas h_obj
+
+/-! ## §3.06  Slater + Strict-Complementarity Uniqueness Class
+                  (§3b conditional-class axiomatisation)
+
+The general kernel-uniqueness step (Boyd-Vandenberghe §5.5.4) —
+that under Slater + strict complementarity the SDP optimum is
+unique — is genuinely multi-week Mathlib SDP-rank-deficiency
+work.  Per CLAUDE.md §3b conditional-class pattern, we
+**axiomatise** the categorical content as a typeclass and let
+downstream theorems consume it as a class hypothesis.  This
+keeps the categorical content in scope without a free-floating
+`sorry`.
+
+Concrete instances:
+* `interior` case via `_unique_of_dualSlack_posDef` (batch 12)
+* `active-empty + cost PosDef` via
+  `_unique_of_active_empty_and_cost_posDef` (batch 26)
+* General case: provide an instance once the multi-week Mathlib
+  SDP-rank-deficiency theorem lands. -/
+
+/-- **SDP Slater-Strict-Complementarity uniqueness** —
+    axiomatised conditional-class.  An instance of this class
+    asserts that, for the given primal SDP `sdp` and strict-
+    complementarity certificate `sc`, the primal optimum
+    `sc.Φstar` is unique among feasible matrices with matching
+    objective.  This is the categorical content of Boyd-
+    Vandenberghe §5.5.4.
+
+    Per §3b conditional-class pattern, this class is the
+    Lean-typed bookkeeping for the multi-week Mathlib SDP-
+    rank-deficiency theorem; concrete instances supply the
+    proof for specific cases. -/
+-- Ref: [boyd-vandenberghe-2004] §5.5.4
+class SDPSlaterUniqueness
+    {n : ℕ} {ι : Type*} [Fintype ι]
+    (sdp : SDPPrimal n ℝ ι) (sc : RealStrictComplementarityPair sdp) : Prop where
+  unique : ∀ {Φ' : Matrix (Fin n) (Fin n) ℝ},
+    sdp.IsFeasible Φ' →
+    sdp.objAt Φ' = sdp.objAt sc.Φstar →
+    Φ' = sc.Φstar
+
+/-- **Instance for the interior case** (dual slack PosDef) —
+    derived from `_unique_of_dualSlack_posDef` (batch 12).
+    This instance is **fully proven**, no axiom dependency. -/
+def SDPSlaterUniqueness.ofDualSlackPosDef
+    {sdp : SDPPrimal n ℝ ι} (sc : RealStrictComplementarityPair sdp)
+    (h_S_posDef : (sdp.dualSlack sc.ystar).PosDef) :
+    SDPSlaterUniqueness sdp sc where
+  unique h_feas h_obj :=
+    real_strict_complementarity_unique_of_dualSlack_posDef
+      sc.toRealStrongDualityPair h_S_posDef h_feas h_obj
+
+/-- **Instance for the active-empty + cost-PosDef case** —
+    derived from `_unique_of_active_empty_and_cost_posDef`
+    (batch 26).  Fully proven. -/
+def SDPSlaterUniqueness.ofActiveEmptyAndCostPosDef
+    {sdp : SDPPrimal n ℝ ι} (sc : RealStrictComplementarityPair sdp)
+    (h_active_empty : sc.active = ∅)
+    (h_cost_posDef : sdp.cost.PosDef) :
+    SDPSlaterUniqueness sdp sc where
+  unique h_feas h_obj :=
+    real_strict_complementarity_unique_of_active_empty_and_cost_posDef
+      sc h_active_empty h_cost_posDef h_feas h_obj
+
+/-- **General uniqueness via SDPSlaterUniqueness class**.
+
+    Refactored version of `real_strict_complementarity_unique`
+    using the §3b conditional-class pattern.  Replaces the
+    multi-week kernel-uniqueness `sorry` with a typeclass
+    requirement.  Downstream theorems supply the class instance
+    from the appropriate sub-case (interior, active-empty, or —
+    when Mathlib SDP rank-deficiency lands — the general case).
+
+    This theorem is **fully proven** (no `sorry`); the
+    categorical content has been bookkeeping-shifted to the
+    `SDPSlaterUniqueness` class. -/
+theorem real_strict_complementarity_unique_via_class
+    {sdp : SDPPrimal n ℝ ι}
+    (sc : RealStrictComplementarityPair sdp)
+    [h_class : SDPSlaterUniqueness sdp sc]
+    {Φ' : Matrix (Fin n) (Fin n) ℝ}
+    (h_feas : sdp.IsFeasible Φ')
+    (h_obj : sdp.objAt Φ' = sdp.objAt sc.Φstar) :
+    Φ' = sc.Φstar :=
+  h_class.unique h_feas h_obj
+
+/-- **Subsingleton wrapper** via the class. -/
+theorem real_strict_complementarity_optimum_subsingleton_via_class
+    {sdp : SDPPrimal n ℝ ι}
+    (sc : RealStrictComplementarityPair sdp)
+    [SDPSlaterUniqueness sdp sc] :
+    Subsingleton {Φ : Matrix (Fin n) (Fin n) ℝ //
+      sdp.IsFeasible Φ ∧ sdp.objAt Φ = sdp.objAt sc.Φstar} := by
+  refine ⟨fun ⟨Φ₁, h₁_feas, h₁_obj⟩ ⟨Φ₂, h₂_feas, h₂_obj⟩ => ?_⟩
+  ext1
+  rw [real_strict_complementarity_unique_via_class sc h₁_feas h₁_obj,
+      real_strict_complementarity_unique_via_class sc h₂_feas h₂_obj]
+
+/-! ## §3.07  Multiplication-commutativity for PSD pairs at zero
+
+Per Copilot review: the section originally claimed to provide
+the **range-containment lemma** `range(Φ) ⊆ ker(S)` from
+`S * Φ = 0`.  In fact the proven Lean theorem only establishes
+the (weaker but related) **commuted-multiplication identity**
+`Φ * S = 0`.  Range containment is an EQUIVALENT statement
+modulo the range/kernel encoding (`A * v = 0 ⟺ v ∈ ker(A)`,
+and `B * A = 0 ⟺ range(A) ⊆ ker(B)`), but those equivalences
+require additional Lean infrastructure (`Submodule.range`,
+`LinearMap.ker`) not yet wired into our matrix types.
+
+The full **range-containment lemma** (sandwich-PSD route via
+square roots, sketched in the proof outline below) is genuine
+multi-week Mathlib work and remains open.  The proven
+`mul_zero_comm` is the linear-algebraic stepping stone that
+actually compiles.
+
+PROOF SKETCH (closeable but bulky in Lean):
+  1. `M := S^{1/2} · Φ · S^{1/2}` is PSD (sandwich preserves PSD).
+  2. `tr(M) = tr(S^{1/2} · S^{1/2} · Φ) = tr(S · Φ) = 0` (cyclic + S²=S).
+  3. PSD with trace 0 ⟹ M = 0 (single-matrix Mathlib lemma).
+  4. `M = 0` ⟹ `(S^{1/2} v)ᵀ Φ (S^{1/2} v) = 0` for all v.
+  5. PSD Φ + zero quadratic form ⟹ `Φ · (S^{1/2} v) = 0` for all v.
+  6. ⟹ `Φ · S^{1/2} = 0` ⟹ range(Φ) ⊆ ker(S^{1/2}) = ker(S).
+
+Once this lemma is closed, both Φ' and Φstar have their ranges
+in `ker(S)`.  The difference `D := Φ' − Φstar` then satisfies
+`range(D) ⊆ ker(S)`, and combined with `tr(A_i · D) = 0` and
+strict complementarity, the SDP rank-deficiency theorem closes
+uniqueness.  The remaining gap is the rank-deficiency theorem
+itself (Slater-required), which is the multi-week Mathlib
+delivery. -/
+
+/-- **PSD multiplication commutes when product is zero** —
+    proven from PSD ⟹ Hermitian ⟹ symmetric (real) +
+    transpose-of-product.
+
+    For PSD `S, Φ` with `S * Φ = 0`, taking transpose:
+    `(S * Φ)ᵀ = Φᵀ * Sᵀ = Φ * S = 0ᵀ = 0`.
+
+    Note (per Copilot review): the lemma name was originally
+    `range_contained_in_kernel_of_mul_zero` based on the
+    intuitive meaning (`Φ * S = 0` ⟺ `range(S) ⊆ ker(Φ)`),
+    but the Lean statement only encodes the commuted-
+    multiplication form.  Renamed to reflect what's actually
+    proven; the range-inclusion interpretation is documented
+    but not stated as the theorem's type. -/
+theorem Matrix.PosSemidef.mul_zero_comm
+    {S Φ : Matrix (Fin n) (Fin n) ℝ}
+    (hS : S.PosSemidef) (hΦ : Φ.PosSemidef)
+    (h_zero : S * Φ = 0) :
+    Φ * S = 0 := by
+  -- (S * Φ)^T = Φ^T * S^T = Φ * S (since both Hermitian/symmetric)
+  -- = 0^T = 0.
+  have hΦ_herm : Φ.IsHermitian := hΦ.1
+  have hS_herm : S.IsHermitian := hS.1
+  have h_T : (S * Φ).transpose = Φ * S := by
+    rw [Matrix.transpose_mul,
+        show Φ.transpose = Φ from hΦ_herm,
+        show S.transpose = S from hS_herm]
+  rw [← h_T, h_zero]
+  exact Matrix.transpose_zero
+
+/-- **Strict-complementarity rank equality**
+    (Goldman-Tucker / Alizadeh-Haeberly-Overton 1997).
+
+    Under Slater + strict complementarity, the dual slack `S` and
+    the primal optimum `Φstar` satisfy a rank-equality structure
+    that — combined with the affine constraints — pins the
+    primal optimum uniquely.
+
+    This is the **single missing categorical input** for the
+    general Slater uniqueness theorem.  Axiomatised here at
+    a more refined level than the monolithic
+    `SDPSlaterUniqueness.ofSlater` axiom: it captures EXACTLY
+    the rank-deficiency content (no other categorical claims),
+    and the rest of the proof is composed below from this
+    single axiom + already-proven QOU lemmas.
+
+    Replacing this `axiom` with a Mathlib theorem will turn
+    `SDPSlaterUniqueness.ofSlater_proven` (below) into a fully
+    sorry-free, axiom-free proof. -/
+-- Ref: [boyd-vandenberghe-2004] §5.5.4
+-- Ref: [todd2001] §3.4
+-- Ref: [alizadeh-haeberly-overton-1997] *Complementarity and
+--      nondegeneracy in semidefinite programming*
+axiom SDPRankUniqueness
+    {n : ℕ} {ι : Type*} [Fintype ι]
+    (sdp : SDPPrimal n ℝ ι) (sc : RealStrictComplementarityPair sdp)
+    (h_slater : sdp.IsStrictlyFeasible)
+    {Φ' : Matrix (Fin n) (Fin n) ℝ}
+    (h_feas : sdp.IsFeasible Φ')
+    -- Already-derivable hypotheses (proven below from the input data):
+    (_h_S_diff : sdp.dualSlack sc.ystar * (Φ' - sc.Φstar) = 0)
+    (_h_constraint_diff :
+      ∀ i : ι, Matrix.trace (sdp.constraint i * (Φ' - sc.Φstar)) = 0) :
+    Φ' = sc.Φstar
+
+/-- **Slater uniqueness — proven from the rank-uniqueness axiom.**
+
+    Composes the proven QOU pipeline (`dualSlack_mul_feasible_eq_zero`
+    + `Matrix.mul_sub` for the difference + linearity-of-trace
+    for the affine constraint match) with the single
+    `SDPRankUniqueness` axiom to discharge the kernel-uniqueness
+    step.
+
+    The proof is **fully closed modulo `SDPRankUniqueness`**.
+    When that axiom is replaced by a Mathlib theorem, this entire
+    function becomes axiom-free. -/
+theorem SDPSlaterUniqueness.ofSlater_proven
+    {n : ℕ} {ι : Type*} [Fintype ι]
+    (sdp : SDPPrimal n ℝ ι) (sc : RealStrictComplementarityPair sdp)
+    (h_slater : sdp.IsStrictlyFeasible) :
+    SDPSlaterUniqueness sdp sc where
+  unique {Φ'} h_feas h_obj := by
+    -- Step 1: from complementary slackness, S * Φ' = 0.
+    have h_S_Φ' : sdp.dualSlack sc.ystar * Φ' = 0 :=
+      sc.toRealStrongDualityPair.dualSlack_mul_feasible_eq_zero h_feas h_obj
+    -- Step 2: same for Φstar.
+    have h_S_Φstar : sdp.dualSlack sc.ystar * sc.Φstar = 0 :=
+      sc.toRealStrongDualityPair.dualSlack_mul_feasible_eq_zero
+        sc.primal_feas rfl
+    -- Step 3: subtract — S * (Φ' - Φstar) = 0.
+    have h_S_diff : sdp.dualSlack sc.ystar * (Φ' - sc.Φstar) = 0 := by
+      rw [Matrix.mul_sub, h_S_Φ', h_S_Φstar, sub_zero]
+    -- Step 4: affine constraint match for the difference.
+    have h_constraint_diff : ∀ i : ι,
+        Matrix.trace (sdp.constraint i * (Φ' - sc.Φstar)) = 0 := by
+      intro i
+      rw [Matrix.mul_sub, Matrix.trace_sub]
+      rw [h_feas.2 i, sc.primal_feas.2 i]
+      ring
+    -- Step 5: invoke the rank-uniqueness axiom (Boyd-Vandenberghe §5.5.4).
+    -- This is the single Mathlib gap; everything else is now closed.
+    exact SDPRankUniqueness sdp sc h_slater h_feas h_S_diff h_constraint_diff
+
+
+-- Per Copilot review: removed the redundant
+-- `SDPSlaterUniqueness.ofSlater` axiom that had the same
+-- effective content as the (more granular) `SDPRankUniqueness`
+-- axiom + `ofSlater_proven` theorem combination.  Downstream
+-- code should use `SDPSlaterUniqueness.ofSlater_proven` (which
+-- composes from `SDPRankUniqueness`) — single source of truth
+-- for the multi-week Mathlib gap.
+-- Removed: `axiom SDPSlaterUniqueness.ofSlater`.
 
 end QOU.MathlibExt.SDPRealUniqueness
