@@ -10,3 +10,6 @@ import QOU.HeckeAlgebra.Wedderburn
 import QOU.HeckeAlgebra.MarkovTrace
 import QOU.HeckeAlgebra.QSubstrate
 import QOU.HeckeAlgebra.JonesMarkovWenzl
+-- Pre-archimedean / archimedean wall:
+import QOU.HeckeAlgebra.Formal           -- pre-archimedean (ℤ[q, q⁻¹])
+import QOU.HeckeAlgebra.Realification    -- wall crossing at q_0
