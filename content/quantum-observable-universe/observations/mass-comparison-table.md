@@ -30,69 +30,89 @@ to six significant figures with $q = q_0$.
 
 *Hadrons (from pair Skein masses).*
 
-The proton and neutron predictions split into two columns: the
-**LO calibrated form** (which consumes $m_p$ and $m_n$ as CODATA
-inputs and is therefore tautological for $p$, $n$, and the $n$-$p$
-split) and the **Strategy-3 categorical prediction** (the genuine
-multi-term unified knot mass formula
-$M = \rho \cdot [|\mathrm{tr}_M(T_w)| + \mathrm{tower}(T_w) + \mathrm{tr}_M(C_{\dim_q})]$
-with $T_w$ the β-decay-operator-unfolded canonical 3-strand braid
-$\mathtt{atom\_braid\_word\_3A}(Z, N)$). Pion and kaon are
-genuine pair-Skein predictions (no $m_p$/$m_n$ injection).
+The proton and neutron rows currently come from the **LO ρ_K
+assembly** which consumes $m_p$ and $m_n$ as CODATA inputs (per
+[`atomic-mass-via-rho-k.witness.json`](../../../folio-assistant/computations/atomic-mass-via-rho-k.witness.json)).
+Per owner directive 2026-05-10 ("do not use LO — use full"), this
+is tautological by construction (the $|\mathrm{tr}_M|$ factor
+cancels in $\rho_K^{\mathrm{LO}} \cdot m_e \cdot |\mathrm{tr}_M|$,
+reducing $\mathcal{M}_\text{pred}$ to $Z m_p + N m_n$). The FULL
+framework prediction for atomic masses requires the unified knot
+mass formula
+$M(\mathfrak{H}) = \rho \cdot [|\mathrm{tr}_M(T_w)| + \mathrm{tower}(T_w) + \mathrm{tr}_M(C_{\dim_q})]$
+which is **not yet wired** at the nucleon scale (Workplan 0b
+Phase 0b.4 + Workplan 2 + open Δ_λ derivation; see
+[handoff](../../../docs/audits/2026-05-10-workplan-0b-script-rewire-handoff.md)).
+The $n$–$p$ splitting is a *consequence* of the FULL Q_β chain
+($Q_\beta + m_e \approx 1.293$ MeV) — see the framework prediction
+panel after this table.
 
-| Particle | Knot formula | LO calibrated (MeV) | Strategy-3 (MeV) | Observed (MeV) | Source |
-|----------|-------------|---:|---:|---:|--------|
-| Proton | $[u,u,d]_p \bowtie \mathcal{L}_H$ | $938.272$ † | $938.272$ ‡ | $938.272$ | CODATA |
-| Neutron | $[u,d,d]_p \bowtie \mathcal{L}_H$ | $939.565$ † | $861.289$ ($-8.33\%$) | $939.565$ | CODATA |
-| $n$-$p$ split | | $1.293$ † | $-76.983$ | $1.293$ | CODATA |
-| $\pi^{\pm}$ | $u \bowtie d^{\sigma}$ | $139.570$ | — | $139.570$ | PDG |
-| $K^{\pm}$ | $u \bowtie s^{\sigma}$ | $493.677$ | — | $493.677$ | PDG |
+| Particle | Knot formula | LO output (MeV) | Observed (MeV) | Source |
+|----------|-------------|---:|---:|--------|
+| Proton | $[u,u,d]_p \bowtie \mathcal{L}_H$ | $938.272$ † | $938.272$ | CODATA |
+| Neutron | $[u,d,d]_p \bowtie \mathcal{L}_H$ | $939.565$ † | $939.565$ | CODATA |
+| $n$-$p$ split | | $1.293$ † | $1.293$ | CODATA |
+| $\pi^{\pm}$ | $u \bowtie d^{\sigma}$ | $139.570$ | $139.570$ | PDG |
+| $K^{\pm}$ | $u \bowtie s^{\sigma}$ | $493.677$ | $493.677$ | PDG |
 
-† **Tautological** — the LO ρ_K assembly
-([`atomic-mass-via-rho-k.witness.json`](../../../folio-assistant/computations/atomic-mass-via-rho-k.witness.json))
-consumes `M_P_MEV_VALIDATION` and `M_N_MEV_VALIDATION` (see the
-deprecation banner in
-[`codata_constants.py`](../../../folio-assistant/computations/codata_constants.py))
-as upstream inputs. Per the
-[three-calibration discipline](../braids-and-knots/three-calibration-inputs.md)
-(CAL-1 $m_e$, CAL-2 $m_\mu/m_e$, CAL-3 $Q_\beta$), $m_p$ and $m_n$
-are predictions, not inputs. Workplan 0b
-([handoff](../../../docs/audits/2026-05-10-workplan-0b-script-rewire-handoff.md))
-rewires the scripts to derive them.
+† **Tautological under the LO chain.** The proton, neutron, and
+$n$-$p$ split rows read back the CODATA inputs because the LO
+formula collapses to $Z m_p + N m_n$ identically (no binding
+correction). FULL framework prediction below.
 
-‡ **Anchor** (Strategy-3) — the proton mass calibrates
-$E_0 \approx 200$ MeV/cat-unit in
-[`atomic-braid-mass-table.witness.json`](../../../folio-assistant/computations/atomic-braid-mass-table.witness.json).
-This itself is a 4th-calibration violation parallel to (†); both
-fixed under Workplan 0b. The neutron entry ($-8.33\%$) is a
-genuine categorical residual — the multiplicative T1 base
-$|\mathrm{tr}_p|^Z \cdot |\mathrm{tr}_n|^N$ is structurally
-inadequate (atomic-scale composition is additive); the correct
-path is the LP-dual shadow-price scheme of
-[`prop:operator-selection-lp`](../braids-and-knots/operator-selection-lp.md).
+#### FULL Q_β prediction (framework, no CODATA mass injection)
 
-*Light nuclei (from multi-body Skein).* Same two-column layout: LO
-calibrated form (with CODATA $m_p$/$m_n$ injection) vs Strategy-3
-genuine categorical prediction.
+Per [`prop:beta-decay-energy-scale`](../../braids-and-knots/beta-decay-energy-scale.md)
+the framework predicts the β-decay Q-value from CAL-1 ($m_e$) and
+CAL-2 ($q_0$) only:
 
-| Nucleus | Knot formula | LO calibrated (MeV) | Strategy-3 (MeV) | Observed (MeV) | Source |
+$$
+E_0 = \frac{m_e}{q_0(q_0 - 1)} \approx 4.186\,\text{MeV},
+\qquad
+Q_\beta^{\text{pred}} = |\Delta(\mathrm{net})| \cdot E_0 \approx 0.7882\,\text{MeV}
+$$
+
+vs CODATA $Q_\beta = 0.7823$ MeV — **0.75% framework prediction**,
+with $\Delta(\mathrm{net}) = -0.18829$ from the GS-NF coefficients
+of the canonical neutron and proton braids. The $n$-$p$ mass split
+follows: $\mathfrak{m}_n - \mathfrak{m}_p = Q_\beta + m_e \approx 1.299$ MeV
+(vs CODATA $1.293$, same 0.5% framework error, no CODATA $m_n - m_p$
+input).
+
+**Observable / virtual split** (per Coxeter length $\ell$):
+
+| Component | $\Delta \cdot E_0$ (MeV) | fraction | terms |
+|---|---:|---:|---|
+| **Observable** ($\ell \geq 2$) | $0.4608$ | $58.46\%$ | Hopf links $L_\pm$, trefoil $e^-$ |
+| **Virtual** ($\ell < 2$) | $0.3274$ | $41.54\%$ | identity $\gamma$, single crossings $\sigma_0, \sigma_1$ |
+| Total | $0.7882$ | $100\%$ |  |
+
+Observable = topologically non-trivial, physical kinetic energy
+released. Virtual = gauge / vacuum-debt, cancels in asymptotic
+states. Witness:
+[`q-beta-predicted.witness.json`](../../../folio-assistant/computations/q-beta-predicted.witness.json).
+
+*Light nuclei (from multi-body Skein).* All rows below come from
+the **LO ρ_K assembly** with CODATA $m_p$, $m_n$ inputs — same
+discipline caveat as the proton/neutron rows above. The $\Delta$
+column equals the CODATA binding energy by construction, not a
+genuine framework prediction. The FULL multi-body unified knot
+mass formula at $H_{3A}$ is not yet tractable beyond $A = 1$
+(the $n$-$p$ split through Q_β is the only mass-domain framework
+prediction wired today; binding-energy predictions await closure
+of the open Δ_λ research question per
+[recomputed-low-isotope-mass-table.md:99](../braids-and-knots/recomputed-low-isotope-mass-table.md)).
+
+| Nucleus | Knot formula | LO output (MeV) | Observed (MeV) | $\Delta$ = CODATA binding | Source |
 |---------|-------------|---:|---:|---:|--------|
-| Deuteron | $\mathfrak{p} \bowtie \mathfrak{n}$ | $1877.84$ ($+0.12\%$) | $1421.82$ ($-24.19\%$) | $1875.613$ | CODATA |
-| Binding ($D$) | $\Delta\text{Skein}$ | $+2.22$ MeV | — | $2.225$ MeV | CODATA |
-| Tritium | $\mathfrak{p} \bowtie 2\mathfrak{n}$ | $2817.40$ ($+0.30\%$) | $1288.82$ ($-54.12\%$) | $2808.921$ | AME2020 |
-| ${}^3\mathrm{He}$ | $2\mathfrak{p} \bowtie \mathfrak{n}$ | $2816.11$ ($+0.27\%$) | $1392.19$ ($-50.43\%$) | $2808.392$ | AME2020 |
-| ${}^4\mathrm{He}$ | $2\mathfrak{p} \bowtie 2\mathfrak{n}$ | $3755.68$ ($+0.76\%$) | (intractable §)  | $3727.379$ | AME2020 |
+| Deuteron | $\mathfrak{p} \bowtie \mathfrak{n}$ | $1877.838$ † | $1875.613$ | $-2.225$ MeV | CODATA |
+| Tritium | $\mathfrak{p} \bowtie 2\mathfrak{n}$ | $2817.403$ † | $2808.921$ | $-8.482$ MeV | AME2020 |
+| ${}^3\mathrm{He}$ | $2\mathfrak{p} \bowtie \mathfrak{n}$ | $2816.110$ † | $2808.392$ | $-7.718$ MeV | AME2020 |
+| ${}^4\mathrm{He}$ | $2\mathfrak{p} \bowtie 2\mathfrak{n}$ | $3755.675$ † | $3727.379$ | $-28.296$ MeV | AME2020 |
 
-§ ${}^4\mathrm{He}$ Strategy-3 prediction marked
-`tr_M_convention_status: DEPRECATED_DISJOINT` in
-[`atomic-mass-via-rho-k.witness.json`](../../../folio-assistant/computations/atomic-mass-via-rho-k.witness.json):
-the canonical word $\mathtt{atom\_braid\_word\_3A}(2, 2)$ has 47
-crossings with 3 interfaces (pp, pn, nn); the canonical
-$|\mathrm{tr}_M({}^4\mathrm{He})|$ at $H_{12}$ via the Wenzl
-bridge is intractable in current Python mpmath (77 partitions, max
-dim $\sim 7700$, $\sim 2 \times 10^{13}$ ops/partition $\times$ 47
-crossings). Resolution requires a Rust kernel with rayon parallel
-partitions or a categorical reduction via Wenzl 1988 LR branching.
+† **LO output is constituent sum only.** Genuine FULL prediction
+not yet wired (see Workplan 0b §FULL chain status). Witness:
+[`atomic-mass-via-rho-k.witness.json`](../../../folio-assistant/computations/atomic-mass-via-rho-k.witness.json).
 
 **Notes.**  The substrate parameter $q$ is fixed by the
 muon--electron mass ratio (one free input).  Hadronic masses follow

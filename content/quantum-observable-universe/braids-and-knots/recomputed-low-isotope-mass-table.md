@@ -91,45 +91,83 @@ Witness:
 and $m_n$ are upstream inputs in this LO form; $0.000\%$ is a
 calibration tautology, not a prediction quality.
 
-### Genuine categorical prediction (Strategy-3 multi-term, no CODATA $m_p$/$m_n$)
+### FULL Q_β prediction (framework, no CODATA mass injection)
 
-Per [`prop:atom-knot-mass-derivation`](atom-knot-mass-derivation.md),
-the unified knot mass formula
-$M(\mathfrak{H}) = \rho \cdot [|\mathrm{tr}_M(T_w)| + \mathrm{tower}(T_w) + \mathrm{tr}_M(C_{\dim_q})]$
-with $T_w = \mathtt{atom\_braid\_word\_3A}(Z, N)$ — the
-β-decay-operator-unfolded canonical 3A-strand braid — gives the
-following predictions when **only $m_e$ is used as a calibration
-anchor** (no CODATA $m_p$ or $m_n$ injection). $E_0$ is back-fitted
-from the proton row, which is itself a 4th-calibration violation
-(see [Workplan 0b §5](../../../docs/audits/2026-05-10-workplan-0b-script-rewire-handoff.md));
-the multi-term sum (`total_hecke = T1+T2+T3+T4`) is genuine
-framework output.
+Per [`prop:beta-decay-energy-scale`](../../../content/quantum-observable-universe/particle-interactions/beta-decay-energy-scale.md)
+the framework predicts the β-decay Q-value using only CAL-1 ($m_e$)
+and CAL-2 ($q_0$) — no CAL-3 ($Q_\beta$) input, no CODATA $m_p$ or
+$m_n$ injection. CAL-3 becomes the **output**, not an input.
+
+$$
+E_0^{\text{full}} = \frac{m_e}{q_0(q_0 - 1)} = m_e \cdot c_q^2 \cdot \hbar_q \approx 4.186\,\text{MeV},
+\qquad
+Q_\beta^{\text{pred}} = |\Delta(\mathrm{net})| \cdot E_0^{\text{full}}
+$$
+
+with $\Delta(\mathrm{net}) = \mathrm{net}(\mathfrak{n}) - \mathrm{net}(\mathfrak{p})
+= -0.18829$ from the GS-NF coefficients of the canonical neutron
+and proton braids. **Result**: $Q_\beta^{\text{pred}} = 0.7882$ MeV
+vs CODATA $0.7823$ MeV — $0.75\%$ framework prediction.
+
+The $0.75\%$ residual is the brane-tower correction
+([beta-decay-energy-scale.md §Calibration cross-check](../../../content/quantum-observable-universe/particle-interactions/beta-decay-energy-scale.md));
+the cross-check $E_0^{(\text{cal})} = Q_\beta^{\text{CODATA}} / |\Delta(\mathrm{net})| = 4.155$ MeV
+agrees with the derived $4.186$ MeV to the same $0.75\%$.
+
+#### Observable / virtual decomposition
+
+Per [`beta-decay-energy-scale.md §"Observable vs virtual"`](../../../content/quantum-observable-universe/particle-interactions/beta-decay-energy-scale.md),
+NF terms split by Coxeter length $\ell$:
+
+| | $\ell$ | Knots / links | $\Delta_\lambda$ | $\Delta_\lambda \cdot E_0$ (MeV) | fraction |
+|---|:-:|---|---:|---:|---:|
+| $\gamma$ (identity) | 0 | photon | $-0.10205$ | $+0.4240$ | virtual |
+| $\sigma_0$ | 1 | virtual crossing | $+0.01240$ | $-0.0515$ | virtual |
+| $\sigma_1$ | 1 | virtual crossing | $+0.01143$ | $-0.0475$ | virtual |
+| $L_+$ | 2 | Hopf link | $-0.10899$ | $+0.4529$ | **observable** |
+| $L_-$ | 2 | Hopf link | $-0.00010$ | $+0.0004$ | **observable** |
+| $e^-$ | 3 | trefoil $3_1$ | $-0.00098$ | $+0.0041$ | **observable** |
+|  |  |  | **Sum** | **$+0.7882$** |  |
+
+| Component | $\lvert\Delta\rvert$ | $\Delta \cdot E_0$ (MeV) | fraction |
+|---|---:|---:|---:|
+| **Observable** ($\ell \ge 2$): Hopf links $L_\pm$ + trefoil $e^-$ | $0.11007$ | $0.4608$ | **58.46%** |
+| **Virtual** ($\ell < 2$): identity $\gamma$ + crossings $\sigma_0, \sigma_1$ | $0.07822$ | $0.3274$ | $41.54\%$ |
+| Total | $0.18829$ | $0.7882$ | $100\%$ |
+
+The **observable** component is the topologically non-trivial
+part — physical kinetic energy released in the β-decay event. The
+**virtual** component is the gauge / vacuum-debt contribution that
+cancels in asymptotic states (single crossings $\sigma_0, \sigma_1$
+are gauge artefacts; identity $\gamma$ is the photon-debt baseline).
 
 Witness:
-[`atomic-braid-mass-table.witness.json`](../../../folio-assistant/computations/atomic-braid-mass-table.witness.json),
-mean abs err $35.4\%$ (Strategy-3) vs $21.9\%$ (legacy GS-NF).
+[`q-beta-predicted.witness.json`](../../../folio-assistant/computations/q-beta-predicted.witness.json)
+(2026-05-10, derived via
+[`derived_masses.q_beta_predicted_mev`](../../../folio-assistant/computations/derived_masses.py)).
 
-| Atom | $\mathcal{M}_{\text{pred}}^{\text{Strategy-3}}$ (MeV) | $\mathcal{M}_{\text{CODATA}}$ (MeV) | $\Delta$ (MeV) | rel err |
-|---|---:|---:|---:|---:|
-| $p$ ‡ | 938.272 | 938.272 | (anchor) | (anchor) |
-| $n$ | 861.289 | 939.565 | $-78.276$ | $-8.33\%$ |
-| $D$ | 1421.820 | 1875.613 | $-453.793$ | $-24.19\%$ |
-| $T$ | 1288.819 | 2808.921 | $-1520.102$ | $-54.12\%$ |
-| $^{3}\mathrm{He}$ | 1392.187 | 2808.392 | $-1416.205$ | $-50.43\%$ |
+### Atomic-mass FULL chain — not yet wired
 
-‡ Proton row is the back-fit anchor for Strategy-3's
-$E_0 \approx 200$ MeV/cat-unit; the neutron through $^{3}\mathrm{He}$
-predictions are genuine categorical output. The 8–54 % residuals
-attribute primarily to the multiplicative T1 base
-$|\mathrm{tr}_p|^Z \cdot |\mathrm{tr}_n|^N$ being structurally
-inadequate (per `atomic_braid_mass_table.py:24-46` deprecation
-banner): physical atomic-scale composition is additive, not
-multiplicative. The framework's correct path forward is the LP-dual
-shadow-price scheme of
-[`prop:operator-selection-lp`](operator-selection-lp.md), with
-the additive constituent baseline only as comparator. **Until
-Workplan 0b lands**, neither table above is fully discipline-clean:
-the LO form injects $m_p$/$m_n$, the Strategy-3 form back-fits $E_0$.
+The proton, neutron, and light-nucleus rest masses do **not** yet
+have a FULL framework prediction wired. The LO form above is
+tautological by construction (the $|\mathrm{tr}_M|$ factor cancels
+exactly in $\rho_K^{\mathrm{LO}} \cdot m_e \cdot |\mathrm{tr}_M|$,
+so $\mathcal{M}^{\mathrm{LO}}_\text{pred} = Z m_p + N m_n$); the
+Strategy-3 multi-term implementation in
+[`atomic_braid_mass_table.py`](../../../folio-assistant/computations/atomic_braid_mass_table.py)
+has a known structural bug (multiplicative T1 base instead of
+additive LP active-set, per its own deprecation banner lines 24-46).
+Per owner directive 2026-05-10, neither is the FULL framework
+prediction — both should be replaced by the unified knot mass
+formula $M(\mathfrak{H}) = \rho \cdot [|\mathrm{tr}_M(T_w)| +
+\mathrm{tower}(T_w) + \mathrm{tr}_M(C_{\dim_q})]$ once the LP-dual
+shadow-price closure ([`prop:operator-selection-lp`](operator-selection-lp.md))
+or Phase 2 50-dps $m_e^{\mathrm{Hecke}}$ lift lands.
+
+The accessors
+[`derived_masses.proton_mass_mev`](../../../folio-assistant/computations/derived_masses.py)
+and friends raise `NotImplementedError` with pointers to these
+blockers; consumers must NOT fall back to the LO or Strategy-3 forms.
 
 ## Two structural notes
 

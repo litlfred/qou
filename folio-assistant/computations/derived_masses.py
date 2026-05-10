@@ -1,193 +1,324 @@
 #!/usr/bin/env python3
 # polynomial_q_not_applicable: derived-quantity module; consumes
-# upstream tr_M and Q_β, exposes predicted MeV masses.
-"""Framework-derived rest masses for nucleons + light nuclei.
+# upstream beta-decay-energy-scale witness, exposes predicted MeV
+# observables.
+"""Framework-derived energy observables for the QOU mass / β-decay
+sector.
 
-This module exposes the QOU framework's PREDICTIONS for nucleon and
-light-nucleus rest masses, derived from the three calibration inputs
-(CAL-1 = m_e, CAL-2 = q_0 via m_μ/m_e, CAL-3 = Q_β(n)) per
-[`prop:three-calibration-inputs`](../../content/quantum-observable-universe/braids-and-knots/three-calibration-inputs.md).
-
-It is the **categorical** counterpart to the `*_VALIDATION` literals
-exposed by `codata_constants.py`. Production prediction scripts that
-currently inject `M_P_MEV` / `M_N_MEV` / etc. as upstream inputs
-violate the three-calibration discipline (Workplan 0a discovery,
-2026-05-10) and should migrate to:
-
-    from derived_masses import proton_mass_mev, neutron_mass_mev
-    # ...
-    m_pred = proton_mass_mev()   # framework prediction, NOT CODATA
-
-The migration plan is documented in
-[`docs/audits/2026-05-10-workplan-0b-script-rewire-handoff.md`](../../docs/audits/2026-05-10-workplan-0b-script-rewire-handoff.md).
-This module is the **target of that migration** (Phase 0b.2).
+Predictions come from the **FULL** chain per
+[`prop:beta-decay-energy-scale`](../../content/quantum-observable-universe/particle-interactions/beta-decay-energy-scale.md)
+and [`prop:meson-to-proton-via-borromean`](../../content/quantum-observable-universe/descartes-universe/meson-to-proton-via-borromean.md),
+NOT from the LO simplification (where |tr_M| cancels exactly between
+numerator and denominator of ρ_K^LO and the prediction reduces to
+the constituent sum Z·m_p + N·m_n; cf.
+`atomic_mass_via_rho_k.py:188-194`). The LO form is structurally
+unable to predict binding — it returns CODATA inputs verbatim. Use
+the FULL form below.
 
 ══════════════════════════════════════════════════════════════════
- TARGET DERIVATION CHAIN — UNIFIED KNOT MASS FORMULA (paper)
+ FULL CHAIN FOR β-DECAY (Q_β prediction)
 ══════════════════════════════════════════════════════════════════
 
-Per `prop:atom-knot-mass-derivation`
-([`atom-knot-mass-derivation.md`](../../content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md)),
-the categorical mass invariant of a confined particle 𝔥 is
+The β-decay Q-value is a FRAMEWORK PREDICTION (not a calibration
+input) via:
 
-    M(𝔥) = ρ · m(𝔥) = ρ · [ |tr_M(T_w)| + tower(T_w) + tr_M(C_dim_q) ]
+    E_0 = m_e / (q_0 · (q_0 - 1)) = m_e · c_q² · ℏ_q   ≈ 4.186 MeV
 
-with three components:
-  (i)   |tr_M(T_w)|        — descended Markov trace via Wenzl bridge
-                             Σ_λ y_λ(q) χ_λ(T_w)
-  (ii)  tower(T_w)         — brane tower Σ_i Φ_q(|V̂_i|)
-                             + z² Σ_{i<j} Φ_q(|V̂_i V̂_j|)
-                             from per-generator additive-Wedderburn volumes
-  (iii) tr_M(C_dim_q)      — Frobenius co-Casimir trace
-                             Σ_{λ ⊢ n_0} 1/dim_q(λ)
+(uses CAL-1 m_e and CAL-2 q_0 only; CAL-3 Q_β is the OUTPUT)
 
-After the Archimedean realization functor (CAL-1 = m_e):
+    Q_β = |Δ(net)| · E_0                          ≈ 0.788 MeV
+                                              (vs CODATA 0.782; 0.75% err)
 
-    B(𝔥) = m_e · M(𝔥)|_{q = q_0}
+with Δ(net) = net(n) - net(p) the difference of GS-NF coefficient
+sums between the canonical neutron and proton braids
+(`free-neutron-decay.witness.json` typed crossings):
 
-The canonical Hecke element T_w(𝔥) is built by `mass_at_3A_proper.
-atom_braid_word_3A(Z, N)` — the **β-decay-operator-unfolded** 3A-strand
-braid word. For the proton (Z=1, N=0): an 11-letter word in H_3(q),
-since the β-decay operator T_β = σ_0σ_1^{-1} lives in H_3(q) and the
-nucleon lives at the same coarsest level (k_max ≤ 3, so unfolding to
-deeper levels is superfluous per `prop:level-sufficiency`).
+    net(n) = +0.81083, net(p) = +0.99913  →  Δ(net) = -0.18829
 
 ══════════════════════════════════════════════════════════════════
- STATUS — NONE OF THE BELOW IS WIRED YET (Phase 0b.2 scaffolding)
+ OBSERVABLE vs VIRTUAL DECOMPOSITION
 ══════════════════════════════════════════════════════════════════
 
-All accessors raise `NotImplementedError` with detailed pointers.
-The derivation chain is functionally specified above but is not
-wired here because:
+For β-decay specifically, NF terms split by Coxeter length ℓ
+(per beta-decay-energy-scale.md §"Observable vs virtual"):
 
-  * The brane-tower component (Φ_q expansion in `mass_endomorphism.py`)
-    has a known ~1.8% systematic residual at proton scale (Phase 2
-    m_e_Hecke 50-dps lift not yet landed; Workplan 2 in 1ppb workplan).
-  * The Frobenius co-Casimir component is straightforward (just sum
-    1/dim_q(λ) over λ ⊢ 3 for the proton) but not yet exposed as a
-    standalone helper.
-  * The closest existing assembly, `atomic_braid_mass_table.py`,
-    is "Strategy-3" with its own deprecation notice (lines 5–22 of
-    that file): it back-fits a single-anchor E_0 from CODATA m_p
-    (line 441), which is a 4th-calibration violation but only in the
-    deprecated script. The canonical replacement is
-    `atomic_mass_via_rho_k.py`, which uses
-    M(K) = ρ_K · m_e · |tr_M(K)| (Options A + C in PR #564).
-    Even there, ρ_K^LO consumes M_P_MEV / M_N_MEV as inputs — the
-    discipline violation this module addresses.
+  * **Observable** (ℓ ≥ 2): Hopf links L_±, trefoil e^-
+    — topologically non-trivial, physically observable
+    Δ(obs) = -0.11007 → Q_obs ≈ 0.457 MeV (58.5% of Q_β)
 
-Sibling agent (Phase 0b.4): wire each accessor to call into the
-canonical pipeline, using `atom_braid_word_3A` for T_w and the
-multi-term assembly for M(𝔥); add the m_e factor; emit a witness
-recording the input chain.
+  * **Virtual** (ℓ < 2): identity γ, single crossings σ_0, σ_1
+    — topologically trivial, gauge / off-shell debt
+    Δ(virt) = -0.07822 → Q_virt ≈ 0.325 MeV (41.5% of Q_β)
+
+The observable-only Q is the part that corresponds to physical
+kinetic energy released in the β-decay event; the virtual part is
+the framework's gauge / vacuum-debt contribution that cancels in
+asymptotic states.
+
+══════════════════════════════════════════════════════════════════
+ NUCLEON MASSES — FULL CHAIN NOT YET WIRED
+══════════════════════════════════════════════════════════════════
+
+The proton and neutron rest masses in the FULL form require the
+multi-term unified knot mass formula
+([`prop:atom-knot-mass-derivation`](../../content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md)):
+
+    M(𝔥) = ρ · [|tr_M(T_w)| + tower(T_w) + tr_M(C_dim_q)]
+    m_𝔥 = m_e · M(𝔥)|_{q = q_0}
+
+with T_w = atom_braid_word_3A(Z, N).
+
+The Strategy-3 implementation in `atomic_braid_mass_table.py` has
+a known structural bug (multiplicative T1 base instead of additive
+LP active-set; see lines 24-46 of that file) that produces 8-54 %
+residuals on n, D, T, ³He. The LO implementation in
+`atomic_mass_via_rho_k.py` is structurally tautological. Neither
+is the framework's FULL prediction.
+
+So `proton_mass_mev()` and `neutron_mass_mev()` raise
+`NotImplementedError` until either (a) the multiplicative-T1 bug
+is fixed via the LP-dual shadow-price scheme of
+[`prop:operator-selection-lp`](../../content/quantum-observable-universe/braids-and-knots/operator-selection-lp.md),
+or (b) a separate brane-tower-clean derivation is wired (Workplan 2
+Phase 2 50-dps m_e_Hecke).
+
+For now, consumers should:
+  * Use `q_beta_predicted_mev()` for Q_β predictions
+  * Use `q_beta_observable_mev()` / `q_beta_virtual_mev()` for the
+    decomposition
+  * Use `e_0_full_mev()` for the energy-scale anchor
+  * NOT consume CODATA `M_P_MEV_VALIDATION` / `M_N_MEV_VALIDATION`
+    as inputs to mass-prediction scripts (discipline violation,
+    Workplan 0b)
 """
 from __future__ import annotations
 
-from codata_constants import M_E_MEV, Q_BETA_MEV  # noqa: F401  (consumers)
+import json
+from functools import lru_cache
+from pathlib import Path
+
+import mpmath as mp
+
+from codata_constants import M_E_MEV, Q_BETA_MEV  # noqa: F401  (re-export)
+
+_HERE = Path(__file__).resolve().parent
+_BETA_DECAY_WITNESS = _HERE / "beta-decay-energy-scale.witness.json"
+_Q_PINNING_WITNESS = _HERE / "q-pinning-50-digit.witness.json"
 
 
-# ── All accessors are stubs (Phase 0b.2 scaffolding) ────────────
+@lru_cache(maxsize=None)
+def _q_0() -> mp.mpf:
+    """Substrate parameter q_0 at 50-dps from the q-pinning witness.
 
-def _stub(atom: str, extra: str = "") -> "mp.mpf":  # noqa: F821
+    Pulled from `q-pinning-50-digit.witness.json:derived_50_digit.q`
+    (the canonical CAL-2-derived q_0); legacy float64 fallback in
+    `q_parameter.Q_50_DIGIT_STR` is identical to ~50 digits.
+    """
+    with _Q_PINNING_WITNESS.open() as fh:
+        d = json.load(fh)
+    return mp.mpf(d["derived_50_digit"]["q"])
+
+
+@lru_cache(maxsize=None)
+def _beta_witness() -> dict:
+    """Read the β-decay-energy-scale witness."""
+    if not _BETA_DECAY_WITNESS.exists():
+        raise FileNotFoundError(
+            f"derived_masses: β-decay witness not found at "
+            f"{_BETA_DECAY_WITNESS}. Run the beta-decay-energy-scale "
+            f"compute first."
+        )
+    with _BETA_DECAY_WITNESS.open() as fh:
+        return json.load(fh)
+
+
+# ── Energy scale (FULL chain, derived from CAL-1 + CAL-2) ───────
+
+@lru_cache(maxsize=None)
+def e_0_full_mev() -> mp.mpf:
+    """E_0 from the FULL chain: m_e / (q_0 · (q_0 - 1)).
+
+    Per [`prop:beta-decay-energy-scale`](../../content/quantum-observable-universe/particle-interactions/beta-decay-energy-scale.md):
+    derived from CAL-1 m_e and CAL-2 q_0 only — no CAL-3 (Q_β)
+    needed here. CAL-3 becomes the *prediction*, not an input.
+
+    Returns ≈ 4.186 MeV at q_0 ≈ 1.110. Calibrated cross-check
+    via Q_β / |Δ(net)| gives 4.155 MeV (0.75% agreement; the
+    0.75% residual is the brane-tower correction).
+    """
+    q0 = _q_0()
+    return M_E_MEV / (q0 * (q0 - 1))
+
+
+@lru_cache(maxsize=None)
+def e_0_calibrated_mev() -> mp.mpf:
+    """E_0 cross-check via CODATA Q_β / |Δ(net)| ≈ 4.155 MeV.
+
+    Reads `Q_decay_MeV / hecke_nf_differences.delta_net` from the
+    β-decay witness. Used only for the 0.75% derived-vs-calibrated
+    consistency check, not for mass predictions.
+    """
+    w = _beta_witness()
+    q_beta_codata = mp.mpf(str(w["observed"]["Q_decay_MeV"]))
+    delta_net = mp.mpf(str(w["hecke_nf_differences"]["delta_net"]))
+    return q_beta_codata / abs(delta_net)
+
+
+# ── Q_β predictions (FULL framework chain) ──────────────────────
+
+@lru_cache(maxsize=None)
+def q_beta_predicted_mev() -> mp.mpf:
+    """Q_β prediction = |Δ(net)| · E_0 (FULL chain).
+
+    All terms (γ, σ_0, σ_1, L_±, e^-) — observable + virtual.
+    ≈ 0.788 MeV vs CODATA 0.782 MeV (0.75% framework prediction).
+    """
+    w = _beta_witness()
+    delta_net = mp.mpf(str(w["hecke_nf_differences"]["delta_net"]))
+    return abs(delta_net) * e_0_full_mev()
+
+
+@lru_cache(maxsize=None)
+def q_beta_observable_mev() -> mp.mpf:
+    """Q_β observable component = |Δ(obs)| · E_0.
+
+    Observable terms have Coxeter length ℓ ≥ 2 (Hopf links L_±,
+    trefoil e^-) — topologically non-trivial, physically observed.
+    ≈ 0.457 MeV (58.5% of full Q_β).
+
+    Per [`beta-decay-energy-scale`](../../content/quantum-observable-universe/particle-interactions/beta-decay-energy-scale.md)
+    §"Observable vs virtual: Q_{≥2}".
+    """
+    w = _beta_witness()
+    delta_obs = mp.mpf(str(w["observable_split"]["delta_obs"]))
+    return abs(delta_obs) * e_0_full_mev()
+
+
+@lru_cache(maxsize=None)
+def q_beta_virtual_mev() -> mp.mpf:
+    """Q_β virtual component = |Δ(virt)| · E_0.
+
+    Virtual terms have Coxeter length ℓ < 2 (identity γ, single
+    crossings σ_0, σ_1) — topologically trivial, gauge / vacuum
+    debt. ≈ 0.325 MeV (41.5% of full Q_β).
+
+    Sums to q_beta_predicted_mev() within rounding.
+    """
+    w = _beta_witness()
+    delta_virt = mp.mpf(str(w["observable_split"]["delta_virt"]))
+    return abs(delta_virt) * e_0_full_mev()
+
+
+# ── Nucleon + light-nucleus masses (FULL chain not yet wired) ──
+
+def _full_chain_stub(observable: str, blocker: str) -> mp.mpf:
     raise NotImplementedError(
-        f"Categorical mass prediction for {atom!r} is not wired yet "
-        f"(Workplan 0b Phase 0b.2 — derivation skeleton). "
-        f"Currently the production prediction scripts (binding_K_direct.py, "
-        f"atomic_mass_via_rho_k.py, applied_uniqueness_mass_table.py, "
-        f"rho_k_h3a_*.py, sigma_shell_from_beta_chain.py) consume CODATA "
-        f"m_p/m_n/m_D/m_T/m_3He/m_4He as upstream inputs, violating the "
-        f"three-calibration discipline. The replacement chain is the "
-        f"unified knot mass formula M(𝔥) = ρ · [|tr_M(T_w)| + tower(T_w) "
-        f"+ tr_M(C_dim_q)] with B(𝔥) = m_e · M(𝔥)|_{{q=q_0}} per "
-        f"prop:atom-knot-mass-derivation, and T_w via "
-        f"mass_at_3A_proper.atom_braid_word_3A(Z, N) — the "
-        f"β-decay-operator-unfolded canonical 3A-strand braid. "
-        f"Migrate per docs/audits/2026-05-10-workplan-0b-script-rewire-handoff.md "
-        f"to fill in this stub. Until then, use codata_constants."
-        f"M_{atom.upper()}_MEV_VALIDATION as a comparator only.{extra}"
+        f"derived_masses.{observable}: FULL-chain prediction not yet "
+        f"wired. {blocker} The LO chain in atomic_mass_via_rho_k.py "
+        f"is structurally tautological (|tr_M| cancels in ρ_K · m_e · "
+        f"|tr_M|, so M_pred = Z·m_p + N·m_n with CODATA inputs); the "
+        f"Strategy-3 chain in atomic_braid_mass_table.py uses a "
+        f"multiplicative T1 base that's structurally wrong (atomic-"
+        f"scale composition is additive, not multiplicative; see lines "
+        f"24-46 of that file). Neither is the FULL framework "
+        f"prediction. Per owner directive 2026-05-10: do not consume "
+        f"either as a substitute. Wire the FULL multi-term unified "
+        f"knot mass formula (prop:atom-knot-mass-derivation) once the "
+        f"LP-dual shadow-price closure (prop:operator-selection-lp) "
+        f"or Phase 2 m_e_Hecke 50-dps lift lands."
     )
 
 
-def proton_mass_mev():
-    return _stub(
-        "p",
-        extra=(
-            " Specific wiring path for the proton: "
-            "(1) T_w_p = mass_at_3A_proper.atom_braid_word_3A(1, 0) — "
-            "11-letter word in H_3(q) (β-decay-operator-unfolded form); "
-            "(2) |tr_M(T_w_p)| via Wenzl-bridge multi-term sum (≈ 1.0653 at q_0); "
-            "(3) tower(T_w_p) via mass_endomorphism Φ_q expansion "
-            "(currently ~1.8% systematic residual; Workplan 2 closes this); "
-            "(4) tr_M(C_dim_q) = Σ_{λ⊢3} 1/dim_q(λ); "
-            "(5) M_p = ρ_p · [(1) + (3) + (4)]; m_p_MeV = m_e · M_p|_{q=q_0}. "
-            "All factors are CAL-1 (m_e) and CAL-2 (q_0) only — no CAL-3, no "
-            "CODATA m_p back-fit."
-        ),
+def proton_mass_mev() -> mp.mpf:
+    return _full_chain_stub(
+        "proton_mass_mev",
+        "Proton-specific blocker: the brane tower component "
+        "tower(T_w) at H_3 with T_w = atom_braid_word_3A(1, 0) "
+        "needs the Φ_q-tower truncation to <1 ppb (currently ~1.8% "
+        "systematic in mass_endomorphism.py:5,26).",
     )
 
 
-def neutron_mass_mev():
-    return _stub(
-        "n",
-        extra=(
-            " Specific wiring path for the neutron: same chain as proton with "
-            "T_w_n = atom_braid_word_3A(0, 1). Cross-check: "
-            "m_n - m_p should equal Q_β + m_e per "
-            "neutron-gap-probes-round3.witness.json:recommendation; if the "
-            "categorical chain reproduces this within Φ_q-tower truncation, "
-            "CAL-3 is overdetermined (consistency check, not extra calibration)."
-        ),
+def neutron_mass_mev() -> mp.mpf:
+    return _full_chain_stub(
+        "neutron_mass_mev",
+        "Neutron-specific blocker: same as proton, plus the n/p "
+        "split should reproduce Q_β + m_e to <1 ppb under the "
+        "FULL chain (currently checked only via |Δ(net)| · E_0 = "
+        "0.788 MeV vs CODATA 0.782 MeV at 0.75%).",
     )
 
 
-def deuteron_mass_mev():
-    return _stub("D")
+def deuteron_mass_mev() -> mp.mpf:
+    return _full_chain_stub(
+        "deuteron_mass_mev",
+        "Light-nucleus blocker: requires nucleon FULL chain plus "
+        "categorical Δ_λ derivation (open per recomputed-low-isotope-"
+        "mass-table.md:99; 5 closure principles tested in PRs "
+        "#600/#602/#603, all fail or reproduce Occam).",
+    )
 
 
-def triton_mass_mev():
-    return _stub("T")
+def triton_mass_mev() -> mp.mpf:
+    return _full_chain_stub("triton_mass_mev", "Same as deuteron.")
 
 
-def helium3_mass_mev():
-    return _stub("HE3")
+def helium3_mass_mev() -> mp.mpf:
+    return _full_chain_stub("helium3_mass_mev", "Same as deuteron.")
 
 
-def helium4_mass_mev():
-    return _stub("HE4")
+def helium4_mass_mev() -> mp.mpf:
+    return _full_chain_stub(
+        "helium4_mass_mev",
+        "Light-nucleus blocker: same as deuteron, plus ⁴He H_12 "
+        "Wenzl-bridge intractable in current Python mpmath (77 "
+        "partitions, max dim 7700, ~2×10¹³ ops/partition × 47 "
+        "crossings); needs Rust kernel or Wenzl 1988 LR branching.",
+    )
 
 
 def derivation_summary() -> dict:
     """Document the current state for sibling-agent / consumer use."""
+    w = _beta_witness()
     return {
-        "phase": "0b.2 (skeleton only — no accessors are wired)",
+        "phase": "0b.4 (FULL Q_β chain wired; nucleon + light-nucleus masses stubbed)",
         "calibration_inputs_loaded": {
             "CAL-1_m_e_MeV": str(M_E_MEV),
-            "CAL-3_Q_beta_MeV": str(Q_BETA_MEV),
+            "CAL-2_q_0": str(_q_0()),
+            "CAL-3_Q_beta_MeV": str(Q_BETA_MEV) + " (cross-check only; predicted by framework below)",
         },
-        "wired_accessors": [],
-        "stubbed_accessors": [
-            "proton_mass_mev",
-            "neutron_mass_mev",
-            "deuteron_mass_mev",
-            "triton_mass_mev",
-            "helium3_mass_mev",
-            "helium4_mass_mev",
+        "wired_predictions": {
+            "E_0_full_MeV": str(e_0_full_mev()),
+            "E_0_calibrated_MeV": str(e_0_calibrated_mev()),
+            "E_0_derived_vs_calibrated_pct": float(
+                (e_0_full_mev() - e_0_calibrated_mev()) / e_0_calibrated_mev() * 100
+            ),
+            "Q_beta_predicted_MeV": str(q_beta_predicted_mev()),
+            "Q_beta_observable_MeV": str(q_beta_observable_mev()),
+            "Q_beta_virtual_MeV": str(q_beta_virtual_mev()),
+            "Q_beta_codata_MeV": str(w["observed"]["Q_decay_MeV"]),
+            "Q_beta_pred_vs_codata_pct": float(
+                (q_beta_predicted_mev() - mp.mpf(str(w["observed"]["Q_decay_MeV"])))
+                / mp.mpf(str(w["observed"]["Q_decay_MeV"])) * 100
+            ),
+            "Q_beta_observable_fraction": float(
+                q_beta_observable_mev() / q_beta_predicted_mev()
+            ),
+        },
+        "stubbed_predictions": [
+            "proton_mass_mev", "neutron_mass_mev",
+            "deuteron_mass_mev", "triton_mass_mev",
+            "helium3_mass_mev", "helium4_mass_mev",
         ],
-        "primary_blocker": (
-            "E_0 provenance: paper says E_0 = Q_β / |Δ(net)| with "
-            "Δ(net) = h(h-2)/2 from symbolic NF difference; "
-            "hecke_core.E_0_CALIBRATION_MEV simplifies to Q_β (Δ(net)=1); "
-            "atomic_braid_mass_table.py back-fits E_0 ≈ 199.86 MeV/cat-unit "
-            "from proton CODATA — a 4th-calibration discipline violation "
-            "parallel to the m_p/m_n one this module fixes. Resolve E_0 "
-            "first per Phase 0b.2 §\"E_0 provenance\" in the handoff."
-        ),
-        "secondary_blocker": (
-            "total_hecke[p] cat-unit sum: production uses 4-term "
-            "T1+T2+T3+T4 ≈ 4.6912 cat-units (atomic_braid_mass_terms.py); "
-            "naive |tr_M(p)| ≈ 1.065 alone is wrong by 3 OOM. Phase 2 "
-            "m_e_Hecke 50-dps derivation (Workplan 2 in 1ppb workplan) "
-            "must land before this is honestly wired."
+        "owner_directive_2026_05_10": (
+            "do not use LO -- use full. look at discussion on observable "
+            "vs nonobservable energy in case of beta decay. Per this "
+            "directive: do NOT pull mass predictions from LO ρ_K (which "
+            "is tautological by |tr_M| cancellation) or Strategy-3 "
+            "(which has the multiplicative T1 bug). Q_β has a clean FULL "
+            "chain — wired above. Nucleon + light-nucleus masses don't "
+            "yet have a FULL chain implementation; stubs raise "
+            "NotImplementedError pointing at the blockers."
         ),
         "handoff_doc": (
             "docs/audits/2026-05-10-workplan-0b-script-rewire-handoff.md"
@@ -196,6 +327,8 @@ def derivation_summary() -> dict:
 
 
 __all__ = [
+    "e_0_full_mev", "e_0_calibrated_mev",
+    "q_beta_predicted_mev", "q_beta_observable_mev", "q_beta_virtual_mev",
     "proton_mass_mev", "neutron_mass_mev",
     "deuteron_mass_mev", "triton_mass_mev",
     "helium3_mass_mev", "helium4_mass_mev",
@@ -204,5 +337,4 @@ __all__ = [
 
 
 if __name__ == "__main__":
-    import json
     print(json.dumps(derivation_summary(), indent=2))
