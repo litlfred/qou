@@ -217,6 +217,67 @@ theorem real_strict_complementarity_optimum_subsingleton
   rw [real_strict_complementarity_unique sc h₁_feas h₁_obj,
       real_strict_complementarity_unique sc h₂_feas h₂_obj]
 
+/-! ## §3.1  Interior-optimum closure (active set empty)
+
+When the active set is empty (the optimum lies in the strict
+interior of the feasible region), the dual slack `S(y*) = T - Σ
+y*_i A_i` simplifies to `T` (since all `y*_i = 0`).  If `T` is
+positive-DEFINITE, then `S * Φ = 0 ⟹ Φ = 0` directly via
+invertibility.  This closes the uniqueness theorem **without**
+needing the kernel-uniqueness machinery.
+
+This is exactly the situation for ³He per PR #608: all three
+Wedderburn-block min-eigs are positive (1.87, 0.53, 0.53), so
+the active set is empty and `T` is PosDef.  The interior
+closure applies. -/
+
+/-- **Interior-optimum uniqueness**: when the dual slack is
+    positive-DEFINITE (not just PSD), uniqueness closes
+    completely without the kernel-uniqueness sorry.
+
+    PROOF: from `dualSlack_mul_feasible_eq_zero`,
+    `S · Φ' = 0 = S · Φstar`.  Subtract: `S · (Φ' - Φstar) = 0`.
+    `S` PosDef ⟹ `S` invertible.  Multiply both sides on the
+    left by `S⁻¹`: `Φ' - Φstar = 0`, i.e. `Φ' = Φstar`. -/
+theorem real_strict_complementarity_unique_of_dualSlack_posDef
+    {sdp : SDPPrimal n ℝ ι}
+    (rs : RealStrongDualityPair sdp)
+    (h_S_posDef : (sdp.dualSlack rs.ystar).PosDef)
+    {Φ' : Matrix (Fin n) (Fin n) ℝ}
+    (h_feas : sdp.IsFeasible Φ')
+    (h_obj : sdp.objAt Φ' = sdp.objAt rs.Φstar) :
+    Φ' = rs.Φstar := by
+  have h_S_Φ' : sdp.dualSlack rs.ystar * Φ' = 0 :=
+    rs.dualSlack_mul_feasible_eq_zero h_feas h_obj
+  have h_S_Φstar : sdp.dualSlack rs.ystar * rs.Φstar = 0 :=
+    rs.dualSlack_mul_feasible_eq_zero rs.primal_feas rfl
+  -- S · (Φ' - Φstar) = 0
+  have h_diff : sdp.dualSlack rs.ystar * (Φ' - rs.Φstar) = 0 := by
+    rw [Matrix.mul_sub, h_S_Φ', h_S_Φstar, sub_zero]
+  -- S PosDef ⟹ S invertible ⟹ Φ' - Φstar = 0
+  -- Mathlib: PosDef.det_pos gives det > 0, hence isUnit, hence
+  -- the matrix is invertible.
+  have h_diff_zero : Φ' - rs.Φstar = 0 := by
+    -- From h_diff and h_S_posDef, multiply on left by S⁻¹.
+    -- S PosDef ⟹ S.det ≠ 0 ⟹ S invertible.
+    have h_det_pos : 0 < (sdp.dualSlack rs.ystar).det :=
+      h_S_posDef.det_pos
+    have h_isUnit : IsUnit (sdp.dualSlack rs.ystar).det :=
+      h_det_pos.ne'.isUnit
+    -- Matrix invertible from det invertible
+    have h_invertible : Invertible (sdp.dualSlack rs.ystar) :=
+      Matrix.invertibleOfIsUnitDet _ h_isUnit
+    -- Multiply both sides of `S · D = 0` on the left by S⁻¹
+    -- to get D = 0.
+    have h_inv_mul : (sdp.dualSlack rs.ystar)⁻¹ *
+        (sdp.dualSlack rs.ystar * (Φ' - rs.Φstar)) =
+        (sdp.dualSlack rs.ystar)⁻¹ * 0 := by rw [h_diff]
+    rw [← Matrix.mul_assoc, Matrix.nonsing_inv_mul _ h_isUnit,
+        Matrix.one_mul, Matrix.mul_zero] at h_inv_mul
+    exact h_inv_mul
+  exact sub_eq_zero.mp h_diff_zero
+
+
 /-! ## §3.05  Active-empty closure (full proof, sorry-free)
 
 When the active set is empty, every dual variable is zero
@@ -440,65 +501,5 @@ axiom SDPSlaterUniqueness.ofSlater
     (sdp : SDPPrimal n ℝ ι) (sc : RealStrictComplementarityPair sdp)
     (_h_slater : sdp.IsStrictlyFeasible) :
     SDPSlaterUniqueness sdp sc
-
-/-! ## §3.1  Interior-optimum closure (active set empty)
-
-When the active set is empty (the optimum lies in the strict
-interior of the feasible region), the dual slack `S(y*) = T - Σ
-y*_i A_i` simplifies to `T` (since all `y*_i = 0`).  If `T` is
-positive-DEFINITE, then `S * Φ = 0 ⟹ Φ = 0` directly via
-invertibility.  This closes the uniqueness theorem **without**
-needing the kernel-uniqueness machinery.
-
-This is exactly the situation for ³He per PR #608: all three
-Wedderburn-block min-eigs are positive (1.87, 0.53, 0.53), so
-the active set is empty and `T` is PosDef.  The interior
-closure applies. -/
-
-/-- **Interior-optimum uniqueness**: when the dual slack is
-    positive-DEFINITE (not just PSD), uniqueness closes
-    completely without the kernel-uniqueness sorry.
-
-    PROOF: from `dualSlack_mul_feasible_eq_zero`,
-    `S · Φ' = 0 = S · Φstar`.  Subtract: `S · (Φ' - Φstar) = 0`.
-    `S` PosDef ⟹ `S` invertible.  Multiply both sides on the
-    left by `S⁻¹`: `Φ' - Φstar = 0`, i.e. `Φ' = Φstar`. -/
-theorem real_strict_complementarity_unique_of_dualSlack_posDef
-    {sdp : SDPPrimal n ℝ ι}
-    (rs : RealStrongDualityPair sdp)
-    (h_S_posDef : (sdp.dualSlack rs.ystar).PosDef)
-    {Φ' : Matrix (Fin n) (Fin n) ℝ}
-    (h_feas : sdp.IsFeasible Φ')
-    (h_obj : sdp.objAt Φ' = sdp.objAt rs.Φstar) :
-    Φ' = rs.Φstar := by
-  have h_S_Φ' : sdp.dualSlack rs.ystar * Φ' = 0 :=
-    rs.dualSlack_mul_feasible_eq_zero h_feas h_obj
-  have h_S_Φstar : sdp.dualSlack rs.ystar * rs.Φstar = 0 :=
-    rs.dualSlack_mul_feasible_eq_zero rs.primal_feas rfl
-  -- S · (Φ' - Φstar) = 0
-  have h_diff : sdp.dualSlack rs.ystar * (Φ' - rs.Φstar) = 0 := by
-    rw [Matrix.mul_sub, h_S_Φ', h_S_Φstar, sub_zero]
-  -- S PosDef ⟹ S invertible ⟹ Φ' - Φstar = 0
-  -- Mathlib: PosDef.det_pos gives det > 0, hence isUnit, hence
-  -- the matrix is invertible.
-  have h_diff_zero : Φ' - rs.Φstar = 0 := by
-    -- From h_diff and h_S_posDef, multiply on left by S⁻¹.
-    -- S PosDef ⟹ S.det ≠ 0 ⟹ S invertible.
-    have h_det_pos : 0 < (sdp.dualSlack rs.ystar).det :=
-      h_S_posDef.det_pos
-    have h_isUnit : IsUnit (sdp.dualSlack rs.ystar).det :=
-      h_det_pos.ne'.isUnit
-    -- Matrix invertible from det invertible
-    have h_invertible : Invertible (sdp.dualSlack rs.ystar) :=
-      Matrix.invertibleOfIsUnitDet _ h_isUnit
-    -- Multiply both sides of `S · D = 0` on the left by S⁻¹
-    -- to get D = 0.
-    have h_inv_mul : (sdp.dualSlack rs.ystar)⁻¹ *
-        (sdp.dualSlack rs.ystar * (Φ' - rs.Φstar)) =
-        (sdp.dualSlack rs.ystar)⁻¹ * 0 := by rw [h_diff]
-    rw [← Matrix.mul_assoc, Matrix.nonsing_inv_mul _ h_isUnit,
-        Matrix.one_mul, Matrix.mul_zero] at h_inv_mul
-    exact h_inv_mul
-  exact sub_eq_zero.mp h_diff_zero
 
 end QOU.MathlibExt.SDPRealUniqueness
