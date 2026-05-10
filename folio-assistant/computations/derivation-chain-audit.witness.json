@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-10T06:27:29.266571+00:00",
-  "commitSha": "fc40cc856b1856dbd7c9ae9c7af6d6af4cf2cb1e",
+  "computedAt": "2026-05-10T08:19:02.936088+00:00",
+  "commitSha": "0143a83d64947370457ceee3f610bc902d95a269",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -563,7 +563,7 @@
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "875916a587c227572f421c22053ad81371976ccc",
+  "scriptCommitSha": "4ba4b9451c7232e7b07f828eb0f0cb5b3d5759b2",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
   "data": {
@@ -2153,6 +2153,7 @@
         "hecke-core-symbolic-migration.witness.json",
         "hh-trefoil-corrected.witness.json",
         "hh-vertex-volume.witness.json",
+        "hyperbolic-volumes.witness.json",
         "intermediate-knot-detection.witness.json",
         "inverse-markov-qvalues.witness.json",
         "isospin-mass-tower-collapse.witness.json",
@@ -2219,6 +2220,7 @@
         "onepb-status-dashboard.witness.json",
         "optimised-magic-verifier.witness.json",
         "option-b-proton-mass-full-chain.witness.json",
+        "option-e-isospin-probe.witness.json",
         "p2-5-symbolic-q-audit.witness.json",
         "paper-six-term-isotope-sweep.witness.json",
         "paper-six-term-shadow-price-sweep.witness.json",
@@ -2227,6 +2229,7 @@
         "path-b-open-questions.witness.json",
         "per-atom-grading-bound.witness.json",
         "per-atom-rho-deviation.witness.json",
+        "per-irrep-pole-atom-crystal.witness.json",
         "per-irrep-pole-deuteron-h6.witness.json",
         "per-irrep-pole-proton-h3.witness.json",
         "per-nucleon-shift-derivation.witness.json",

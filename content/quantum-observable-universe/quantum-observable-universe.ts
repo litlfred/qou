@@ -60,6 +60,7 @@ export default paper({
     // ── Part III: The Descartes Universe and Observations ────────────
     chapterRef({ dir: "descartes-universe" }),               // Bring's surface, χ = −6
     chapterRef({ dir: "particle-interactions" }),             // GB, LP, nuclear structure
+    chapterRef({ dir: "encounter" }),                         // Geometric encounter: SDP ↔ Mostow rigidity
     chapterRef({ dir: "observations" }),                     // Physical observations
     chapterRef({ dir: "molecular-construction" }),             // Molecular braids: H₂→benzene
     chapterRef({ dir: "organic-chemistry" }),                  // Organic chemistry (covalent / Hopf-ring)

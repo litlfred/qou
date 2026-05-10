@@ -1,0 +1,14 @@
+import { remark } from "../../schema/builders";
+
+export default remark({
+  interprets: "prop:confinement-sdp",
+  label: "rem:confinement-sdp-vs-lp",
+  title: "Relation of the confinement SDP to the scalar LP",
+  uses: ["prop:confinement-sdp", "prop:confinement-lp"],
+  tags: [
+    "interpretation",
+    "lp-relaxation",
+    "diagonal-restriction",
+    "wedderburn-decoupling",
+  ],
+});

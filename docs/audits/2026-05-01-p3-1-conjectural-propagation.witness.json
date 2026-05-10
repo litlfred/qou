@@ -1,7 +1,7 @@
 {
   "audit": "conjectural-propagation (CLAUDE.md §3b + §3b-cond)",
-  "generated": "2026-05-09T13:41:35.660Z",
-  "total_blocks": 1479,
+  "generated": "2026-05-10T08:29:43.231Z",
+  "total_blocks": 1503,
   "class_axiomatised_conjectures": [
     "conj:abelianisation-at-algebraic-poles",
     "conj:algebraic-geometric-dilog-equivalence",
@@ -69,8 +69,31 @@
     "conj:weinberg-angle-categorical",
     "conj:z-eq-n-rho-correction"
   ],
-  "provable_blocks_touching_conjecture": 277,
-  "violators": [],
+  "provable_blocks_touching_conjecture": 284,
+  "violators": [
+    {
+      "label": "prop:graded-hecke-energy-truncation-bound",
+      "kind": "proposition",
+      "conj": [
+        "conj:gs-graded-markov-trace-existence",
+        "conj:borromean-quark",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
+        "conj:shell-correction-term-seven"
+      ],
+      "file": "content/quantum-observable-universe/braids-and-knots/graded-hecke-energy-truncation-bound.ts"
+    }
+  ],
   "conditional_on_class": [
     {
       "label": "cor:commutative-chirality-vanishes",
@@ -1572,6 +1595,27 @@
       "file": "content/quantum-observable-universe/descartes-universe/crystal-basis-resolves-mass-tower-open-problems.ts"
     },
     {
+      "label": "prop:crystal-isospin-degeneracy",
+      "kind": "proposition",
+      "conj": [
+        "conj:shell-correction-term-seven",
+        "conj:crystal-graph-realization",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/braids-and-knots/crystal-isospin-degeneracy.ts"
+    },
+    {
       "label": "prop:crystal-r-matrix-sub-lemma",
       "kind": "proposition",
       "conj": [
@@ -2120,6 +2164,27 @@
         "conj:shell-correction-term-seven"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/frobenius-s-classification.ts"
+    },
+    {
+      "label": "prop:frobenius-self-duality-forces-lp-dual-extraction",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/braids-and-knots/frobenius-self-duality-forces-lp-dual-extraction.ts"
     },
     {
       "label": "prop:full-pole-structure-mass-trace",
@@ -2737,6 +2802,27 @@
       "file": "content/quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.ts"
     },
     {
+      "label": "prop:jucys-murphy-central-elements-qou",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/braids-and-knots/jucys-murphy-central-elements-qou.ts"
+    },
+    {
       "label": "prop:knot-factor-spectral-form",
       "kind": "proposition",
       "conj": [
@@ -3104,6 +3190,27 @@
       "file": "content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.ts"
     },
     {
+      "label": "prop:mass-formula-iterative-lp-dual",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/braids-and-knots/mass-formula-iterative-lp-dual.ts"
+    },
+    {
       "label": "prop:mass-formula-regime-switching",
       "kind": "proposition",
       "conj": [
@@ -3207,6 +3314,32 @@
         "conj:borromean-quark"
       ],
       "file": "content/quantum-observable-universe/descartes-universe/moduli-symmetry-d4.ts"
+    },
+    {
+      "label": "prop:mostow-confinement",
+      "kind": "proposition",
+      "conj": [
+        "conj:algebraic-geometric-dilog-equivalence",
+        "conj:gb-reduction-pl-thimble-bijection",
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark",
+        "conj:denominator-zeros-as-sw-critical-points",
+        "conj:shared-denominator-cusp-holonomy",
+        "conj:dilogarithm-archimedean-limit"
+      ],
+      "file": "content/quantum-observable-universe/encounter/mostow-confinement.ts"
     },
     {
       "label": "prop:n-equals-1-vacuous-magic",
@@ -4612,6 +4745,27 @@
         "conj:crystal-graph-realization"
       ],
       "file": "content/quantum-observable-universe/braids-and-knots/spectral-sequence-h3-explicit.ts"
+    },
+    {
+      "label": "prop:spin-involution-lp-dual-invariance",
+      "kind": "proposition",
+      "conj": [
+        "conj:e-hartree-categorical-derivation",
+        "conj:phi-q-tower-jsj-bridge",
+        "conj:kashaev-volume-conjecture",
+        "conj:classical-limit-stpart",
+        "conj:q-integer-mass-formula",
+        "conj:palindromicity-orbital-type",
+        "conj:shell-closure-nf-term-count",
+        "conj:hyperbolic-volume-transcendence",
+        "conj:baryon-period-ratio",
+        "conj:knot-factor-frobenius-pairing",
+        "conj:confinement-grading-correspondence",
+        "conj:crystal-graph-realization",
+        "conj:shell-correction-term-seven",
+        "conj:borromean-quark"
+      ],
+      "file": "content/quantum-observable-universe/braids-and-knots/spin-involution-lp-dual-invariance.ts"
     },
     {
       "label": "prop:substrate-consistency-window",

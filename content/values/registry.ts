@@ -316,40 +316,43 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
     m_p_MeV: Object.freeze({
       name: "m_p_MeV",
       description:
-        "Proton rest mass in MeV/c^2 (CODATA).  Canonical witness pending.",
+        "Proton rest mass in MeV/c^2.  CODATA 2022 value " +
+        "938.27208816 MeV, re-exported from codata_constants.py " +
+        "via the codata-masses witness.",
       symbol: "m_p",
       witnessFile:
-        "folio-assistant/computations/canonical-mass-table.witness.json",
-      witnessPath: "parameters.q0",
-      defaultPrecision: 6,
+        "folio-assistant/computations/codata-masses.witness.json",
+      witnessPath: "data.m_p_MeV",
+      defaultPrecision: 11,
       units: "MeV",
-      needsReview: true,
     }),
 
     m_n_MeV: Object.freeze({
       name: "m_n_MeV",
       description:
-        "Neutron rest mass in MeV/c^2 (CODATA).  Canonical witness pending.",
+        "Neutron rest mass in MeV/c^2.  CODATA 2022 + AME 2020 " +
+        "value 939.56542052 MeV, re-exported from " +
+        "codata_constants.py via the codata-masses witness.",
       symbol: "m_n",
       witnessFile:
-        "folio-assistant/computations/canonical-mass-table.witness.json",
-      witnessPath: "parameters.q0",
-      defaultPrecision: 6,
+        "folio-assistant/computations/codata-masses.witness.json",
+      witnessPath: "data.m_n_MeV",
+      defaultPrecision: 11,
       units: "MeV",
-      needsReview: true,
     }),
 
     m_e_MeV: Object.freeze({
       name: "m_e_MeV",
       description:
-        "Electron rest mass in MeV/c^2 (CODATA).  Canonical witness pending.",
+        "Electron rest mass in MeV/c^2.  CODATA 2022 value " +
+        "0.51099895 MeV, re-exported from codata_constants.py " +
+        "via the codata-masses witness.",
       symbol: "m_e",
       witnessFile:
-        "folio-assistant/computations/canonical-mass-table.witness.json",
-      witnessPath: "parameters.q0",
-      defaultPrecision: 6,
+        "folio-assistant/computations/codata-masses.witness.json",
+      witnessPath: "data.m_e_MeV",
+      defaultPrecision: 8,
       units: "MeV",
-      needsReview: true,
     }),
 
     inv_alpha: Object.freeze({
@@ -415,6 +418,53 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       defaultPrecision: 4,
       units: null,
       needsReview: true,
+    }),
+
+    // ── Hyperbolic volumes (encounter chapter) ──────────────────
+    // Vol(4_1) computed via the Clausen-function identity
+    // 2 · Cl_2(π/3) at 50 dps in `hyperbolic_volumes.py`; the
+    // 15-digit serialisation feeds the Lean literal
+    // `MostowRigidity.figureEight.volume` via the
+    // `:leanval[Vol_4_1]{precision=15}` tag and the
+    // `codemod-leanval.ts` codemod.  (Note: the registered name is
+    // `Vol_4_1` — uppercase — registered earlier in this file.)
+
+    // Vol_4_1 (uppercase) is registered above pointing at the
+    // canonical q-pinning witness; consume that entry for the
+    // figure-eight volume.  The hyperbolic-volumes witness retains
+    // a parallel `data.vol_4_1_decimal_15` field for self-tests
+    // and for cross-validating against the q-pinning value, but
+    // the Lean tag uses :leanval[Vol_4_1]{precision=15}.
+
+    vol_5_2: Object.freeze({
+      name: "vol_5_2",
+      description:
+        "Hyperbolic volume of the 5_2 knot complement " +
+        "Vol(5_2) ≈ 2.82812 (literature constant; " +
+        "Adams-Hildebrand-Weeks 1991, SnapPy verified). " +
+        "Second-smallest known orientable cusped hyperbolic " +
+        "3-manifold volume.",
+      symbol: "\\mathrm{Vol}(5_2)",
+      witnessFile:
+        "folio-assistant/computations/hyperbolic-volumes.witness.json",
+      witnessPath: "data.vol_5_2_decimal_15",
+      defaultPrecision: 15,
+      units: null,
+    }),
+
+    mostow_gap_4_1: Object.freeze({
+      name: "mostow_gap_4_1",
+      description:
+        "Conservative lower bound on the volume gap " +
+        "Vol(5_2) - Vol(4_1) ≈ 0.798; consumed by " +
+        "MostowRigidity.figureEight.mostow_gap. " +
+        "Replace with SnapPy-computed value once SnapPy is in CI.",
+      symbol: "\\Delta_{\\mathrm{Mostow}}(4_1)",
+      witnessFile:
+        "folio-assistant/computations/hyperbolic-volumes.witness.json",
+      witnessPath: "data.gap_lower_bound",
+      defaultPrecision: 1,
+      units: null,
     }),
   });
 

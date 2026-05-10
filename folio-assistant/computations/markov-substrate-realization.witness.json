@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-10T06:27:14.388341+00:00",
-  "commitSha": "fc40cc856b1856dbd7c9ae9c7af6d6af4cf2cb1e",
+  "computedAt": "2026-05-10T08:18:54.642707+00:00",
+  "commitSha": "0143a83d64947370457ceee3f610bc902d95a269",
   "assertions": [
     {
       "name": "tail_in_ideal_mod_p[p (proton, A=1)/finite(2)]",
@@ -114,11 +114,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 22,
+  "durationMs": 20,
   "computation": "markov-substrate-realization",
   "scriptFile": "markov_substrate_realizer.py",
   "scriptHash": "503dcd61edf3",
-  "scriptCommitSha": "a2a8dbb7e91be175d444d26291c42701d888fe8c",
+  "scriptCommitSha": "f17fc5d1108adc63f07ba0a5423ff2689faa0e81",
   "description": "Place-by-place realization of the Habiro Markov trace via the Lean MotivicSubstrate.realize map: Place.infty → ℝ (numerical at q_0), Place.finite(p) → 𝔽_p[u] (mod-p coefficient reduction).  Free consistency check: the tail_in_ideal axiom is re-verified in 𝔽_p[u].",
   "contentBlock": "prop:full-pole-structure-mass-trace",
   "parameters": {

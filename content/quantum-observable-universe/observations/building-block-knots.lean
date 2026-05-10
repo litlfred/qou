@@ -35,9 +35,9 @@ noncomputable def vol_unknot : ℝ := 0
 -- Ref: SnapPy census
 noncomputable def vol_trefoil : ℝ := 0
 
-/-- Vol(4₁) = 2.02988321281931 (figure-eight, exact: 3·Cl₂(π/3)). -/
+/-- Vol(4₁) = 2.02988321281930 (figure-eight, exact: 2·Cl₂(π/3)). -/
 -- Ref: [turaev2010], OEIS A091518
-noncomputable def vol_figure_eight : ℝ := 2.02988321281931
+noncomputable def vol_figure_eight : ℝ := 2.02988321281930  -- :leanval[Vol_4_1]{precision=15}
 
 /-- Vol(5₁) = 0 (cinquefoil, torus knot → non-hyperbolic). -/
 -- Ref: SnapPy census

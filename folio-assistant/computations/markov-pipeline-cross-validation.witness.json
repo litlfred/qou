@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-10T06:27:14.605749+00:00",
-  "commitSha": "fc40cc856b1856dbd7c9ae9c7af6d6af4cf2cb1e",
+  "computedAt": "2026-05-10T08:18:54.805675+00:00",
+  "commitSha": "0143a83d64947370457ceee3f610bc902d95a269",
   "assertions": [
     {
       "name": "tr_M_at_q0_archimedean[D (deuteron, A=2)]",
@@ -45,11 +45,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 8,
   "computation": "markov-pipeline-cross-validation",
   "scriptFile": "markov_pipeline_cross_validator.py",
   "scriptHash": "2ba19efaa410",
-  "scriptCommitSha": "a2a8dbb7e91be175d444d26291c42701d888fe8c",
+  "scriptCommitSha": "f17fc5d1108adc63f07ba0a5423ff2689faa0e81",
   "description": "Verifies archimedean tr_M(q_0) agreement between the polynomial-ring realization (markov_substrate_realizer.py) and the Mittag-Leffler full-pole-sum computation (term6_full_pole_sum.py).",
   "contentBlock": "prop:full-pole-structure-mass-trace",
   "parameters": {

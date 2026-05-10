@@ -54,6 +54,7 @@ import QOU.GradedFrobeniusHopf
 import QOU.ChannelSeparation
 import QOU.Descartes
 import QOU.Interactions
+import QOU.Encounter
 import QOU.BraidKnot
 import QOU.ArchimedeanMassFormula
 import QOU.CODATAChain
