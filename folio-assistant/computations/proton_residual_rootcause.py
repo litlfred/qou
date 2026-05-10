@@ -53,8 +53,13 @@ sys.path.insert(0, str(Path(__file__).parent))
 import mpmath
 from mpmath import mp, mpf
 
-# Production proton chain — Branch A
-from proton_mass_tower_derivation import (
+# Diagnostic-only chain — `proton_mass_tower_derivation` was demoted
+# to `_deprecated/` after PR #623's lean(infra) cleanup.  Resolve the
+# import at runtime via the deprecated path so this audit script still
+# regenerates its witness end-to-end (audit-only; no production
+# consumer depends on this module path).
+sys.path.insert(0, str(Path(__file__).parent / "_deprecated"))
+from proton_mass_tower_derivation import (  # noqa: E402  — late path-insert
     Phi_q as PhiQ_legacy_f64,
     electron_V_hat,
     nucleon_V_hat,

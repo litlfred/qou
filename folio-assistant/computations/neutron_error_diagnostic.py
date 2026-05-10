@@ -87,7 +87,12 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 from witness_base import WitnessBuilder
 from q_parameter import Q as Q0_FLOAT
-from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
+# CODATA anchors via the canonical mp.mpf-string source
+# (per Copilot review on PR #621 — single source of truth).
+from codata_constants import M_E_MEV as _M_E_MP, M_P_MEV as _M_P_MP, M_N_MEV as _M_N_MP
+M_E_MEV = float(_M_E_MP)
+M_P_MEV = float(_M_P_MP)
+M_N_MEV = float(_M_N_MP)
 
 
 def main() -> int:
