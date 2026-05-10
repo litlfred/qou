@@ -285,9 +285,12 @@ instance knot5_2 : MostowRigidity Knot5_2 where
     bookkeeping rather than a single anchored comparison. -/
 theorem figureEight_volume_lt_knot5_2_volume :
     volumeInvariant FigureEight < volumeInvariant Knot5_2 := by
-  -- Both literals below are `:leanval`-tagged.
-  show (2.02988321281931 : ℝ) < 2.82812208833410
-  -- :leanval[Vol_4_1]{precision=15} above, :leanval[vol_5_2] below
+  -- The two literals below are `:leanval`-tagged on separate lines
+  -- so the codemod (single-literal-per-line) can sync each one
+  -- independently.
+  have h41 : volumeInvariant FigureEight = 2.02988321281930 := rfl  -- :leanval[Vol_4_1]{precision=15}
+  have h52 : volumeInvariant Knot5_2 = 2.82812208833410 := rfl  -- :leanval[vol_5_2]{precision=15}
+  rw [h41, h52]
   norm_num
 
 /-- **Downstream consumer: mass eigenvalue is isolated**.

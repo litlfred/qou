@@ -74,8 +74,11 @@ const REPO_ROOT = resolve(import.meta.dir, "..", "..");
  *   4: tag NAME
  *   5: optional `{…}` attribute string (sans braces); empty if absent
  */
+// `(?<![\d./])` keeps us from matching mid-fraction (e.g. the `2`
+// in `1/2`) or a digit immediately preceded by another digit/period
+// that the prefix's non-greedy match would otherwise hand us.
 const LEAN_TAG_RE =
-  /^(\s*[^\n]*?)(-?\d+(?:\.\d+)?(?:[eE][+-]?\d+)?)(\s+--\s+:leanval\[)(\w+)\](?:\{([^}]*)\})?(.*)$/;
+  /^(\s*[^\n]*?)(?<![\d./])(-?\d+(?:\.\d+)?(?:[eE][+-]?\d+)?)(\s+--\s+:leanval\[)(\w+)\](?:\{([^}]*)\})?(.*)$/;
 
 interface LiteralRewrite {
   filePath: string;          // repo-root-relative
@@ -130,7 +133,13 @@ function formatLiteral(canonical: string, precision: number): string {
   let outFrac = fracRaw;
   if (visibleDigits > precision) {
     const intDigits = intPart === "0" ? 0 : intPart.length;
-    const fracKeep = Math.max(0, precision - intDigits);
+    // Leading zeros in the fraction are NOT significant digits when
+    // the integer part is "0" (e.g. "0.00123" has 3 sig digits, not
+    // 5).  Add them back into the kept-fraction count so precision=2
+    // yields "0.0012", not "0.00".
+    const leadingZeros =
+      intPart === "0" ? (fracRaw.match(/^0*/)?.[0].length ?? 0) : 0;
+    const fracKeep = Math.max(0, precision - intDigits + leadingZeros);
     outFrac = fracRaw.slice(0, fracKeep);
   }
   const lit = outFrac.length > 0 ? `${outInt}.${outFrac}` : outInt;
@@ -299,18 +308,19 @@ function main(): void {
   for (const r of results) {
     if (r.rewrites.length > 0) {
       console.log(`\n${r.filePath}`);
+      // Read once per file; apply all rewrites in memory; write once.
+      const absPath = resolve(REPO_ROOT, r.filePath);
+      const lines = write
+        ? readFileSync(absPath, "utf-8").split("\n")
+        : null;
       for (const rw of r.rewrites) {
         console.log(`  L${rw.lineNo}  [${rw.name}]`);
         console.log(`    - ${rw.oldLine.trim()}`);
         console.log(`    + ${rw.newLine.trim()}`);
-        if (write) {
-          const text = readFileSync(resolve(REPO_ROOT, rw.filePath), "utf-8");
-          const lines = text.split("\n");
-          lines[rw.lineNo - 1] = rw.newLine;
-          writeFileSync(resolve(REPO_ROOT, rw.filePath), lines.join("\n"));
-        }
+        if (write && lines) lines[rw.lineNo - 1] = rw.newLine;
         totalRewrites++;
       }
+      if (write && lines) writeFileSync(absPath, lines.join("\n"));
     }
     for (const sk of r.skipped) {
       console.log(`\n${r.filePath} L${sk.lineNo}  [${sk.name}] skipped: ${sk.reason}`);
