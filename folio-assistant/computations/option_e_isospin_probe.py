@@ -39,6 +39,7 @@ Output: option-e-isospin-probe.witness.json
 from __future__ import annotations
 
 import sys
+import time
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
@@ -154,8 +155,6 @@ def main() -> int:
 
         W_c = mp.mpf(0)
         per_partition = []
-        import time
-        t_start_atom = time.time()
         for k, shape in enumerate(partitions):
             t0 = time.time()
             c_lam = c_lambda_q(shape, n, Q_MP)

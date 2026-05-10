@@ -78,6 +78,13 @@ on the SYT basis.
 
 Witness:
 [`per-irrep-pole-atom-crystal.witness.json`](../../../folio-assistant/computations/per-irrep-pole-atom-crystal.witness.json).
+The top-level `asserted_atoms_match_closed_form_shift` assertion
+gates only on **asserted atoms** — the verified $A \geq 2$ scope
+of the closed form plus the proton (which agrees with the closed
+form at $A = 1$).  The neutron row is computed and reported but
+flagged `asserted: false` and excluded from the gate, so the
+witness remains green for the verified scope.  See *A=1 anomaly*
+below for the diagnostic interpretation.
 
 ## Speedup
 

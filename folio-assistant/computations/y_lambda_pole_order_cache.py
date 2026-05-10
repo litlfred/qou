@@ -1,10 +1,23 @@
 #!/usr/bin/env python3
 """y_lambda_pole_order_cache.py — precompute ord_{u=0}(y_λ(u²)) for
-every height-≤6 partition λ ⊢ n, n ∈ {3, 6, 9, 12, 15, 18}.
+every height-≤6 partition λ ⊢ n.
 
-Runs once, writes `y-lambda-pole-order-cache.json`.  Downstream
-consumers (per_irrep_pole_atom_crystal.py and friends) read the
-cache instead of re-sympifying the long Wenzl-bridge expressions.
+The default n-set tracks the upstream Wenzl-bridge witness
+[`y-lambda-wenzl-bridge-symbolic-witness.json`](./y-lambda-wenzl-bridge-symbolic-witness.json),
+which currently provides symbolic y_λ tables for n ∈ {2, 3, …, 12}.
+At n = 12 there are 58 height-≤6 partitions (out of 77 total).
+
+To extend coverage to n ∈ {15, 18} (⁵Li, ⁶Li): first extend the
+upstream Wenzl-bridge witness.  The script will pick up any newly-
+present n automatically when its `--n` argument names them; trying
+to cache an n the upstream witness lacks is a no-op (script logs a
+"no Wenzl-bridge data, skipping" line).
+
+Runs once per n, writes `y-lambda-pole-order-cache.json`.
+Downstream consumers (`per_irrep_pole_atom_crystal.py`) read the
+cache instead of re-sympifying the long Wenzl-bridge expressions
+(which are exponentially-nested in n and require a bumped Python
+recursion limit at n ≥ 12).
 
 Multi-processed via `multiprocessing.Pool` across partitions
 (per-partition sympify is independent).
@@ -82,7 +95,11 @@ def main(argv: list[str]) -> int:
     else:
         existing = {"by_n": {}}
 
-    target_ns = only_ns if only_ns else [3, 6, 9, 12, 15, 18]
+    # Default target ns are tied to what the upstream Wenzl-bridge
+    # witness actually provides.  Out-of-range entries are no-ops
+    # (logged but skipped); to extend, first extend the upstream
+    # witness (see module docstring).
+    target_ns = only_ns if only_ns else [3, 6, 9, 12]
 
     for n in target_ns:
         n_key = str(n)
