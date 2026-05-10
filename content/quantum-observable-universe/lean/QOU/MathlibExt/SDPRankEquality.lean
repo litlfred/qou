@@ -605,4 +605,54 @@ theorem SDPRankUniqueness_proven_via_rank_equality
   -- Step 4: D = 0 ⟹ Φ' = Φstar.
   exact sub_eq_zero.mp h_D_zero
 
+/-! ## §5  Clean end-to-end Slater uniqueness via the proven chain
+
+The combined chain — using `SDPRankUniqueness_proven_via_rank_equality`
+(proven this module) instead of the original `SDPRankUniqueness`
+axiom in `SDPRealUniqueness.lean`.
+
+This gives a `SDPSlaterUniqueness` class instance whose
+categorical input is exactly the two named atomic axioms
+(`strict_complementarity_kernel_disjoint` + `affine_slater_rigidity`)
+— and nothing else. -/
+
+/-- **`SDPSlaterUniqueness` class instance constructor — via
+    the proven rank-equality chain.**
+
+    Replaces the dependency on `SDPRankUniqueness` (axiom in
+    `SDPRealUniqueness.lean`) with the proven
+    `SDPRankUniqueness_proven_via_rank_equality` (this module).
+
+    Categorical content is now isolated to:
+    * `strict_complementarity_kernel_disjoint` (R2 axiom)
+    * `affine_slater_rigidity` (§4.5 axiom)
+
+    Both are atomic Goldman-Tucker statements; replacing them
+    with Mathlib theorems makes the entire chain axiom-free. -/
+def SDPSlaterUniqueness.ofSlater_via_rank_equality
+    {n : ℕ} {ι : Type*} [Fintype ι]
+    {sdp : SDPPrimal n ℝ ι} (sc : RealStrictComplementarityPair sdp)
+    (h_slater : sdp.IsStrictlyFeasible) :
+    QOU.MathlibExt.SDPRealUniqueness.SDPSlaterUniqueness sdp sc where
+  unique {Φ'} h_feas h_obj := by
+    -- Same 5-step composition as `ofSlater_proven`, but uses
+    -- `SDPRankUniqueness_proven_via_rank_equality` (proven, this
+    -- module) instead of `SDPRankUniqueness` (axiom).
+    have h_S_Φ' : sdp.dualSlack sc.ystar * Φ' = 0 :=
+      sc.toRealStrongDualityPair.dualSlack_mul_feasible_eq_zero h_feas h_obj
+    have h_S_Φstar : sdp.dualSlack sc.ystar * sc.Φstar = 0 :=
+      sc.toRealStrongDualityPair.dualSlack_mul_feasible_eq_zero
+        sc.primal_feas rfl
+    have h_S_diff : sdp.dualSlack sc.ystar * (Φ' - sc.Φstar) = 0 := by
+      rw [Matrix.mul_sub, h_S_Φ', h_S_Φstar, sub_zero]
+    have h_constraint_diff : ∀ i : ι,
+        Matrix.trace (sdp.constraint i * (Φ' - sc.Φstar)) = 0 := by
+      intro i
+      rw [Matrix.mul_sub, Matrix.trace_sub]
+      rw [h_feas.2 i, sc.primal_feas.2 i]
+      ring
+    -- Use the proven rank-equality version (not the axiom).
+    exact SDPRankUniqueness_proven_via_rank_equality sc h_slater
+      h_feas h_S_diff h_constraint_diff
+
 end QOU.MathlibExt.SDPRankEquality
