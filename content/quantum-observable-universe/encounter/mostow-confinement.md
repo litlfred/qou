@@ -32,6 +32,17 @@ $$
    are confined because there is no nearby hyperbolic structure
    they can slip into.*
 
+![Mostow staircase: discrete hyperbolic-volume spectrum and
+confinement.  The horizontal axis is
+$\mathrm{Vol}_{\mathrm{hyp}}(U \setminus K)$; each tread is a
+distinct knot-type plateau (Unknot/Seifert-fibred at
+$\mathrm{Vol} = 0$, then $4_1$, $5_2$, $6_1$).  Risers are the
+Mostow gaps; their strict positivity is the formal content of
+the rigidity statement.  The "no continuous deformation"
+annotation marks the impossibility of moving sideways across a
+gap, which is what *confinement* means at the geometric
+level.](rendered/mostow-staircase.svg)
+
 The proposition is **conditional on `MostowRigidity`** (§3b-cond
 pattern).  The class is axiomatised in
 [`QOU.Encounter.MostowRigidity`](https://github.com/litlfred/qou/blob/claude/improve-paper-exposition-4a0OT/content/quantum-observable-universe/lean/QOU/Encounter/MostowRigidity.lean);

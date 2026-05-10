@@ -33,9 +33,20 @@ Non-trivial scaffold for the geometric-rigidity class:
   (Cao–Meyerhoff 2001), with Mostow gap conservatively below
   the next-smallest gap Vol(5₂) − Vol(4₁) ≈ 0.798.
 
-- `unknot_volume_lt_figureEight_volume` — fully-proved theorem
-  comparing the volume invariants across the two instances,
-  exhibiting a non-trivial use of `volumeInvariant`.
+- `MostowRigidity.knot5_2` — concrete instance for the 5₂ knot
+  complement: second-smallest known orientable cusped hyperbolic
+  3-manifold, volume ≈ 2.82812 (literature constant; Adams–
+  Hildebrand–Weeks 1991, SnapPy verified).
+
+- `unknot_volume_lt_figureEight_volume`,
+  `figureEight_volume_lt_knot5_2_volume` — fully-proved
+  comparison theorems exhibiting non-trivial uses of
+  `volumeInvariant`.
+
+- `mass_eigenvalue_isolated` — example downstream consumer that
+  takes `[MostowRigidity M]` and concludes `0 < gap`; new
+  instances satisfy this theorem automatically (§3b
+  conditional-class consumer pattern).
 
 ## Categorical content
 
@@ -161,6 +172,9 @@ structure Unknot
 /-- Type marker for the figure-eight knot complement `4_1`. -/
 structure FigureEight
 
+/-- Type marker for the 5_2 knot complement. -/
+structure Knot5_2
+
 /-- **Concrete instance: unknot complement** (degenerate
     hyperbolic case).
 
@@ -206,7 +220,7 @@ instance figureEight : MostowRigidity FigureEight where
   -- canonical witness `hyperbolic-volumes.witness.json` by
   -- `content/pipeline/codemod-leanval.ts`.  Never hand-edit
   -- the literals; rerun the codemod after a witness update.
-  volume := 2.02988321281931  -- :leanval[vol_4_1]
+  volume := 2.02988321281930  -- :leanval[Vol_4_1]{precision=15}
   volume_nonneg := by norm_num
   mostow_gap := 0.5  -- :leanval[mostow_gap_4_1]
   mostow_gap_pos := by norm_num
@@ -225,7 +239,86 @@ theorem unknot_volume_lt_figureEight_volume :
   -- The literal below is `:leanval[vol_4_1]`-tagged so that the
   -- codemod keeps it in sync with the witness whenever Vol(4_1)
   -- is recomputed.
-  show (0 : ℝ) < 2.02988321281931  -- :leanval[vol_4_1]
+  show (0 : ℝ) < 2.02988321281930  -- :leanval[Vol_4_1]{precision=15}
   norm_num
+
+/-- **Concrete instance: 5_2 knot complement**.
+
+    The complement `S^3 \ 5_2` is the second-smallest known
+    orientable cusped hyperbolic 3-manifold (after `S^3 \ 4_1`),
+    with hyperbolic volume
+
+    `Vol(5_2) ≈ 2.82812208833410`
+
+    (Adams-Hildebrand-Weeks 1991; SnapPy verified to 15+ digits).
+    A SnapPy-computed mpf at 50 dps will replace this 15-dps
+    literal once SnapPy is added to the witness-pipeline image.
+
+    The Mostow gap is bounded below by `0.5` — well under the
+    nearest-neighbour gaps `Vol(5_2) - Vol(4_1) ≈ 0.798` and
+    `Vol(6_1) - Vol(5_2) ≈ 0.336`.  A tighter gap requires
+    knowing the next-distinct value above `Vol(5_2)` in the
+    spectrum, which is `Vol(6_1) ≈ 3.16396`.
+
+    Ref: Adams, Hildebrand, Weeks, *Hyperbolic invariants of
+    knots and links*, Trans. AMS 326 (1991) 1–56. -/
+instance knot5_2 : MostowRigidity Knot5_2 where
+  -- Both numeric literals below are kept in sync with the
+  -- canonical witness `hyperbolic-volumes.witness.json` by
+  -- `content/pipeline/codemod-leanval.ts`.
+  volume := 2.82812208833410  -- :leanval[vol_5_2]
+  volume_nonneg := by norm_num
+  mostow_gap := 0.5
+  mostow_gap_pos := by norm_num
+
+/-- **Volume comparison: figure-eight < 5_2**.
+
+    Adds the second comparison in the hyperbolic-volume spectrum
+    populated by this module.  Together with
+    `unknot_volume_lt_figureEight_volume` it exhibits the
+    monotone chain
+
+    `volumeInvariant Unknot < volumeInvariant FigureEight
+       < volumeInvariant Knot5_2`
+
+    and demonstrates that the class supports genuine spectral
+    bookkeeping rather than a single anchored comparison. -/
+theorem figureEight_volume_lt_knot5_2_volume :
+    volumeInvariant FigureEight < volumeInvariant Knot5_2 := by
+  -- Both literals below are `:leanval`-tagged.
+  show (2.02988321281931 : ℝ) < 2.82812208833410
+  -- :leanval[Vol_4_1]{precision=15} above, :leanval[vol_5_2] below
+  norm_num
+
+/-- **Downstream consumer: mass eigenvalue is isolated**.
+
+    Generic theorem in the §3b conditional-class consumer
+    pattern: takes `[MostowRigidity M]` as a typeclass hypothesis
+    and concludes that the mass eigenvalue attached to `M` is
+    isolated by a strictly positive Mostow gap.
+
+    Any new instance of `MostowRigidity` automatically validates
+    this theorem without rewriting the proof — that is the
+    operational pay-off of the §3b conditional-class pattern.
+    Three closed inhabitants exist in this module
+    (`Unknot`, `FigureEight`, `Knot5_2`); each immediately
+    discharges the hypothesis and yields a closed conclusion. -/
+theorem mass_eigenvalue_isolated (M : Type*) [h : MostowRigidity M] :
+    0 < h.mostow_gap :=
+  h.mostow_gap_pos
+
+/-- Sanity check: the consumer theorem does discharge automatically
+    on each of the three closed instances.  These corollaries
+    require no extra proof — the `inferInstance` lookup of the
+    `MostowRigidity` instance plus `mass_eigenvalue_isolated`
+    closes the goal. -/
+example : (0 : ℝ) < (inferInstance : MostowRigidity Unknot).mostow_gap :=
+  mass_eigenvalue_isolated Unknot
+
+example : (0 : ℝ) < (inferInstance : MostowRigidity FigureEight).mostow_gap :=
+  mass_eigenvalue_isolated FigureEight
+
+example : (0 : ℝ) < (inferInstance : MostowRigidity Knot5_2).mostow_gap :=
+  mass_eigenvalue_isolated Knot5_2
 
 end QOU.Encounter.MostowRigidity

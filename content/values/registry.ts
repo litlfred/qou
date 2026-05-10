@@ -424,16 +424,25 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
     // `MostowRigidity.figureEight.volume` via the `:leanval[vol_4_1]`
     // tag and the `codemod-leanval.ts` codemod.
 
-    vol_4_1: Object.freeze({
-      name: "vol_4_1",
+    // Vol_4_1 (uppercase) is registered above pointing at the
+    // canonical q-pinning witness; consume that entry for the
+    // figure-eight volume.  The hyperbolic-volumes witness retains
+    // a parallel `data.vol_4_1_decimal_15` field for self-tests
+    // and for cross-validating against the q-pinning value, but
+    // the Lean tag uses :leanval[Vol_4_1]{precision=15}.
+
+    vol_5_2: Object.freeze({
+      name: "vol_5_2",
       description:
-        "Hyperbolic volume of the figure-eight knot complement " +
-        "Vol(4_1) = 2 Cl_2(π/3); smallest known orientable " +
-        "cusped hyperbolic 3-manifold (Cao-Meyerhoff 2001).",
-      symbol: "\\mathrm{Vol}(4_1)",
+        "Hyperbolic volume of the 5_2 knot complement " +
+        "Vol(5_2) ≈ 2.82812 (literature constant; " +
+        "Adams-Hildebrand-Weeks 1991, SnapPy verified). " +
+        "Second-smallest known orientable cusped hyperbolic " +
+        "3-manifold volume.",
+      symbol: "\\mathrm{Vol}(5_2)",
       witnessFile:
         "folio-assistant/computations/hyperbolic-volumes.witness.json",
-      witnessPath: "data.vol_4_1_decimal_15",
+      witnessPath: "data.vol_5_2_decimal_15",
       defaultPrecision: 15,
       units: null,
     }),

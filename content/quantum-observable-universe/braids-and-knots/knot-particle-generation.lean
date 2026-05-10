@@ -30,7 +30,7 @@ namespace QOU.Torsion
 /-- The substrate parameter q, derived from the muon-electron mass ratio.
     CODATA 2022: m_μ/m_e = 206.7682830 → q ≈ 1.10997. -/
 -- Ref: CODATA 2022, [manuscript] §1
-noncomputable def q_substrate : ℝ := 1.10997
+noncomputable def q_substrate : ℝ := 1.10997  -- :leanval[q_0]{precision=6}
 
 /-- Quantum Planck constant ℏ_q = 1 - 1/q. -/
 -- Ref: [manuscript] §1/quantum-planck-constant
@@ -66,7 +66,7 @@ noncomputable def hyperbolicVolume (_T : TorusKnot) : ℝ := 0
 
 /-- Vol(4₁) = 3 Cl₂(π/3) ≈ 2.0298832128 (figure-eight knot, muon). -/
 -- Ref: SnapPy, Thurston
-noncomputable def vol_figure_eight : ℝ := 2.0298832128
+noncomputable def vol_figure_eight : ℝ := 2.0298832128  -- :leanval[Vol_4_1]{precision=11}
 
 /-- Vol(5₂) ≈ 2.8281220883 (three-twist knot, strange/down quark). -/
 -- Ref: SnapPy
