@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-10T05:55:11.047946+00:00",
-  "commitSha": "5d0c7e46d84c7f60ece5b2082e312d46aa8a24b6",
+  "computedAt": "2026-05-10T05:55:12.459446+00:00",
+  "commitSha": "d5e7b941f8d5c29d374bda2bff3309f0e6d8559d",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2178,7 +2178,6 @@
         "m-n-difference-formula.witness.json",
         "markov-free-energy-qvalues.witness.json",
         "markov-peel-atomic-tr-m.witness.json",
-        "markov-pipeline-cross-validation.witness.json",
         "markov-substrate-realization.witness.json",
         "markov-trace-atomic-proton-full.witness.json",
         "markov-trace-axiomatic-multi-atom.witness.json",
