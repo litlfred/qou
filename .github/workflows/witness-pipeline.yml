@@ -112,6 +112,14 @@ jobs:
         # literals in QOU/Encounter/MostowRigidity.lean.
         run: python3 folio-assistant/computations/hyperbolic_volumes.py
 
+      - name: Run codata_masses (m_e/m_p/m_n re-export)
+        # Emits codata-masses.witness.json re-exporting the CODATA
+        # 2022 + AME 2020 proton/neutron/electron masses from
+        # codata_constants.py.  Source of truth for the
+        # `:leanval[m_p_MeV]` / `:leanval[m_n_MeV]` /
+        # `:leanval[m_e_MeV]` tags in the .lean tree.
+        run: python3 folio-assistant/computations/codata_masses.py
+
       - name: Run habiro_witness_validator
         run: python3 folio-assistant/computations/habiro_witness_validator.py
 

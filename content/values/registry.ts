@@ -316,40 +316,43 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
     m_p_MeV: Object.freeze({
       name: "m_p_MeV",
       description:
-        "Proton rest mass in MeV/c^2 (CODATA).  Canonical witness pending.",
+        "Proton rest mass in MeV/c^2.  CODATA 2022 value " +
+        "938.27208816 MeV, re-exported from codata_constants.py " +
+        "via the codata-masses witness.",
       symbol: "m_p",
       witnessFile:
-        "folio-assistant/computations/canonical-mass-table.witness.json",
-      witnessPath: "parameters.q0",
-      defaultPrecision: 6,
+        "folio-assistant/computations/codata-masses.witness.json",
+      witnessPath: "data.m_p_MeV",
+      defaultPrecision: 11,
       units: "MeV",
-      needsReview: true,
     }),
 
     m_n_MeV: Object.freeze({
       name: "m_n_MeV",
       description:
-        "Neutron rest mass in MeV/c^2 (CODATA).  Canonical witness pending.",
+        "Neutron rest mass in MeV/c^2.  CODATA 2022 + AME 2020 " +
+        "value 939.56542052 MeV, re-exported from " +
+        "codata_constants.py via the codata-masses witness.",
       symbol: "m_n",
       witnessFile:
-        "folio-assistant/computations/canonical-mass-table.witness.json",
-      witnessPath: "parameters.q0",
-      defaultPrecision: 6,
+        "folio-assistant/computations/codata-masses.witness.json",
+      witnessPath: "data.m_n_MeV",
+      defaultPrecision: 11,
       units: "MeV",
-      needsReview: true,
     }),
 
     m_e_MeV: Object.freeze({
       name: "m_e_MeV",
       description:
-        "Electron rest mass in MeV/c^2 (CODATA).  Canonical witness pending.",
+        "Electron rest mass in MeV/c^2.  CODATA 2022 value " +
+        "0.51099895 MeV, re-exported from codata_constants.py " +
+        "via the codata-masses witness.",
       symbol: "m_e",
       witnessFile:
-        "folio-assistant/computations/canonical-mass-table.witness.json",
-      witnessPath: "parameters.q0",
-      defaultPrecision: 6,
+        "folio-assistant/computations/codata-masses.witness.json",
+      witnessPath: "data.m_e_MeV",
+      defaultPrecision: 8,
       units: "MeV",
-      needsReview: true,
     }),
 
     inv_alpha: Object.freeze({

@@ -41,14 +41,14 @@ noncomputable def invDimPartitionSum (_n : ℕ) : ℚ := 0
 def protonTowerMass : ℝ := 938.7228
 
 /-- The CODATA proton mass, in MeV.  CODATA 2022: 938.27208816 MeV. -/
-def protonCodata : ℝ := 938.27208816
+def protonCodata : ℝ := 938.27208816  -- :leanval[m_p_MeV]{precision=11}
 
 /-- The electron rest-mass, in MeV.  Pinned to the CODATA 2022 value
     `0.51099895069 MeV` (truncated; full uncertainty ≤ 1 keV).  The
     previous version was an `opaque` value bound to an interval via
     the `electronMass_witness` axiom; the axiom is now provable as a
     theorem on the concrete value. -/
-def electronMass : ℝ := 0.51099895
+def electronMass : ℝ := 0.51099895  -- :leanval[m_e_MeV]{precision=8}
 
 /-- The substrate parameter q_0 ≈ 1.10998 (witness-pinned). -/
 def qSubstrate : ℝ := 1.10998
