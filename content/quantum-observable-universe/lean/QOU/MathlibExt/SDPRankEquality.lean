@@ -112,11 +112,11 @@ multi-week SDP rank-equality work. -/
     containment (R1), this forces the orthogonal-direct-sum
     decomposition `ℝ^n = range(Φ) ⊕ range(S)`.
 
-    Axiomatised pending the Mathlib SDP-strict-complementarity
-    theorem.  Concrete instances exist for:
-    * Interior case (`S` PosDef ⟹ `ker(S) = {0}` trivially)
-    * Active-empty case (same)
-    * General case: requires the Goldman-Tucker proof. -/
+    For the **general** SDP case, this is the Goldman-Tucker /
+    AHO 1997 theorem and lives as the only remaining axiom.
+    For specific structural cases (dual slack PosDef,
+    active-empty + cost PosDef), it is **proven** from existing
+    Mathlib machinery — see the theorems below. -/
 -- Ref: [alizadeh-haeberly-overton-1997] Theorem 3.1
 axiom strict_complementarity_kernel_disjoint
     {ι : Type*} [Fintype ι]
@@ -129,6 +129,79 @@ axiom strict_complementarity_kernel_disjoint
       sc.Φstar.mulVec v = 0 →
       (sdp.dualSlack sc.ystar).mulVec v = 0 →
       v = 0
+
+/-! ### Provable kernel-disjointness instances
+
+For specific structural cases, kernel-disjointness follows
+directly from existing Mathlib `Matrix.PosDef` machinery.  These
+are **proven** lemmas that supersede the general axiom for the
+practical QOU cases. -/
+
+/-- **Interior-case kernel disjointness** — proven directly
+    from `Matrix.PosDef`.
+
+    When the dual slack `S` is positive-DEFINITE (not just PSD),
+    its kernel is trivially `{0}`.  So
+    `ker(Φstar) ∩ ker(S) = ker(Φstar) ∩ {0} = {0}` regardless
+    of `ker(Φstar)`.
+
+    PROOF: PosDef ⟹ `vᵀ S v > 0 for v ≠ 0`.  But `S v = 0` ⟹
+    `vᵀ S v = 0`, contradicting strict positivity unless v = 0. -/
+theorem kernel_disjoint_of_dualSlack_posDef
+    {ι : Type*} [Fintype ι]
+    {sdp : SDPPrimal n ℝ ι} (sc : RealStrictComplementarityPair sdp)
+    (h_S_posDef : (sdp.dualSlack sc.ystar).PosDef) :
+    ∀ v : Fin n → ℝ,
+      sc.Φstar.mulVec v = 0 →
+      (sdp.dualSlack sc.ystar).mulVec v = 0 →
+      v = 0 := by
+  intro v _h_Φ_v h_S_v
+  -- S.PosDef ⟹ S.mulVec v = 0 ⟹ v = 0
+  by_contra hv_ne
+  -- For non-zero v, vᵀ S v > 0 by PosDef.
+  have h_pos : 0 < Matrix.dotProduct v ((sdp.dualSlack sc.ystar).mulVec v) :=
+    h_S_posDef.2 v hv_ne
+  -- But S v = 0 ⟹ vᵀ S v = vᵀ 0 = 0.
+  have h_zero : Matrix.dotProduct v ((sdp.dualSlack sc.ystar).mulVec v) = 0 := by
+    rw [h_S_v, Matrix.dotProduct_zero]
+  -- Contradiction.
+  linarith
+
+/-- **Active-empty case kernel disjointness** — proven from
+    interior case via `dualSlack = cost` reduction.
+
+    When the active set is empty, all dual variables are zero,
+    so `dualSlack = cost`.  If the cost is PosDef, we reduce to
+    the interior case. -/
+theorem kernel_disjoint_of_active_empty_and_cost_posDef
+    {ι : Type*} [Fintype ι]
+    {sdp : SDPPrimal n ℝ ι} (sc : RealStrictComplementarityPair sdp)
+    (h_active_empty : sc.active = ∅)
+    (h_cost_posDef : sdp.cost.PosDef) :
+    ∀ v : Fin n → ℝ,
+      sc.Φstar.mulVec v = 0 →
+      (sdp.dualSlack sc.ystar).mulVec v = 0 →
+      v = 0 := by
+  -- Step 1: empty active set ⟹ ystar identically zero
+  have h_ystar_zero : ∀ i : ι, sc.ystar i = 0 := by
+    intro i
+    apply sc.inactive_dual_zero
+    rw [h_active_empty]
+    exact Set.notMem_empty _
+  -- Step 2: dualSlack ystar = cost
+  have h_dualSlack_eq_cost : sdp.dualSlack sc.ystar = sdp.cost := by
+    unfold SDPPrimal.dualSlack
+    have h_sum_zero : (∑ i, sc.ystar i • sdp.constraint i) = 0 := by
+      apply Finset.sum_eq_zero
+      intro i _
+      rw [h_ystar_zero i, zero_smul]
+    rw [h_sum_zero, sub_zero]
+  -- Step 3: dualSlack PosDef from cost PosDef + the rewrite
+  have h_S_posDef : (sdp.dualSlack sc.ystar).PosDef := by
+    rw [h_dualSlack_eq_cost]
+    exact h_cost_posDef
+  -- Step 4: apply interior case
+  exact kernel_disjoint_of_dualSlack_posDef sc h_S_posDef
 
 /-! ## §3  Rank equality from kernel disjointness
 
