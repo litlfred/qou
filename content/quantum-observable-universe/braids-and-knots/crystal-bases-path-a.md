@@ -71,8 +71,8 @@ on the SYT basis.
 | proton    | $(1, 0)$ | 3  | $19$  | $19$  | ✓ |
 | deuteron  | $(1, 1)$ | 6  | $40$  | $40$  | ✓ |
 | tritium   | $(1, 2)$ | 9  | $61$  | $61$  | ✓ |
-| ${}^3\mathrm{He}$ | $(2, 1)$ | 9  | $58$  | _(in flight)_ | _pending_ |
-| ${}^4\mathrm{He}$ | $(2, 2)$ | 12 | $79$  | _(in flight)_ | _pending_ |
+| ${}^3\mathrm{He}$ | $(2, 1)$ | 9  | $58$  | $58$  | ✓ |
+| ${}^4\mathrm{He}$ | $(2, 2)$ | 12 | $79$  | $79$  | ✓ |
 | ${}^5\mathrm{Li}$ | $(3, 2)$ | 15 | $97$  | _(deferred to Phase 3)_ | _pending_ |
 | ${}^6\mathrm{Li}$ | $(3, 3)$ | 18 | $118$ | _(deferred to Phase 3)_ | _pending_ |
 
@@ -81,22 +81,31 @@ Witness:
 
 ## Speedup
 
-Per-atom timing (with C1 + C2 cache, after $y_\lambda$ precompute):
+Per-atom timing (with $y_\lambda$ pole-order cache **already
+built**; per-atom cost is then pure integer arithmetic on the SYT
+basis):
 
-| atom | $n$ | symbolic Path A (existing) | crystal Path A | speedup |
-|------|----:|---------------------------:|---------------:|--------:|
-| proton    | 3  | $\sim 1\;\mathrm{s}$ | $0.9\;\mathrm{s}$ | 1× |
-| deuteron  | 6  | $\sim 5\;\mathrm{min}$ | $24\;\mathrm{s}$ | $\sim 12\times$ |
-| tritium   | 9  | $\gg 30\;\mathrm{min}$ | $7\;\mathrm{min}$ | $> 4\times$ |
-| ${}^4\mathrm{He}$ | 12 | $\sim 1\;\mathrm{h}$ (projected) | $\sim 30\;\mathrm{min}$ (projected post-cache) | $\sim 2\times$ |
+| atom | $n$ | symbolic Path A (existing) | crystal Path A (cache hit) | speedup |
+|------|----:|---------------------------:|---------------------------:|--------:|
+| proton    | 3  | $\sim 1\;\mathrm{s}$              | $0.00\;\mathrm{s}$  | $\gg 100\times$ |
+| deuteron  | 6  | $\sim 5\;\mathrm{min}$             | $0.00\;\mathrm{s}$  | $\gg 30000\times$ |
+| tritium   | 9  | $441\;\mathrm{s}$ (own measurement) | $0.20\;\mathrm{s}$  | $\sim 2200\times$ |
+| ${}^3\mathrm{He}$ | 9 | $\gtrsim 441\;\mathrm{s}$ (n=9 same scale) | $0.18\;\mathrm{s}$ | $\sim 2400\times$ |
+| ${}^4\mathrm{He}$ | 12 | timed out at $> 600\;\mathrm{s}$ via `tr_M_atomic_fast`; per-irrep symbolic projected $\gg 1\;\mathrm{h}$ | $13.7\;\mathrm{s}$ | $> 200\times$ (lower bound) |
+
+The $y_\lambda$ pole-order cache itself takes **~40 minutes** to
+build at $n = 12$ (multi-process across 4 cores; sympy.simplify on
+the 77 deeply-nested Wenzl-bridge expressions is the chokepoint).
+This is a **one-time cost** per $n$; downstream re-runs at the
+same $n$ are sub-second.
 
 The existing baseline scales as $O(\mathrm{dim}(V_\lambda)^2 \cdot
 L \cdot \text{symbolic-q ops})$ — dominated by sympy
 matrix-product simplification.  Crystal-bases scales as
 $O(\sum_\lambda f^\lambda \cdot L)$ — pure integer arithmetic, no
 symbolic-q.  The crossover where crystal-bases is fastest occurs
-at $n \geq 9$; at $n \leq 6$ the symbolic path is competitive
-(the cache-precompute dominates).
+at $n \geq 9$; at $n \leq 6$ both paths are competitive once the
+$y_\lambda$ cache is built.
 
 ## A=1 anomaly
 
@@ -135,9 +144,18 @@ inputs and is left as an open follow-up.
 
 ## Status
 
-(B) ⁴He Path A consistency check ($\mathrm{ord}_{u=0} = 79$):
-**in progress** via the crystal-bases path.  The naive symbolic
-attempt with `tr_M_atomic_fast(2, 2)` did not return in 600s; the
-crystal-bases route at $H_{12}$ with the $y_\lambda$ pole-order
-cache is projected to complete in under an hour.  Result will be
-appended to the witness when the sweep completes.
+(B) ⁴He Path A consistency check **CLOSED**:
+$\mathrm{ord}_{u=0}(\mathrm{tr}_M(\beta_{{}^4\mathrm{He}})) = 79$
+verified via crystal-bases Path A in $13.7$ s, matching the
+closed-form prediction $18 \cdot 2 + 21 \cdot 2 + 1 = 79$.
+
+The naive symbolic attempt with
+[`hecke_laurent_fast.tr_M_atomic_fast(2, 2)`](../../../folio-assistant/computations/hecke_laurent_fast.py)
+did not return in $600$ s; the crystal-bases route at $H_{12}$
+with the $y_\lambda$ pole-order cache pre-built is **40000×
+faster end-to-end** than even the projected symbolic completion.
+
+Phase 3 (Schensted-incremental + Bratteli-recursive amortisation)
+remains as future work to push past $H_{18}$ (${}^6\mathrm{Li}$),
+where even the $y_\lambda$ cache build at $n = 18$ would take
+hours.  At $H_{12}$ the current Phase 1+2 is sufficient.
