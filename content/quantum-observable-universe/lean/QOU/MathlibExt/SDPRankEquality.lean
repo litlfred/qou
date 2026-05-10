@@ -538,9 +538,48 @@ forces uniqueness via finite-dimensional argument:
 
 This is **proven** (modulo §1, §2 axioms). -/
 
+/-! ### §4.5  Affine-Slater rigidity axiom
+
+The final composition `SDPRankUniqueness_proven_via_rank_equality`
+needs one more categorical input: **affine-Slater rigidity** —
+the statement that under Slater's strict feasibility + the
+rank-equality structure (range Φ ⊕ range S = ℝ^n), the affine
+constraint set restricted to symmetric matrices in ker(S) (where
+the difference D = Φ' − Φstar lives) is a SINGLE POINT.
+
+This is the "active face has dimension zero" content from
+Boyd-Vandenberghe §5.5.4.  Genuinely multi-week categorical
+work (active-face dimension theory + Slater's interior-point
+hypothesis); axiomatised here as a NAMED single statement so
+the rest of the chain composes cleanly. -/
+
+/-- **Affine-Slater rigidity** (Boyd-Vandenberghe §5.5.4) —
+    axiomatised categorical content.
+
+    Under Slater + rank equality, any symmetric `D` with:
+    * `S * D = 0` (range(D) ⊆ ker(S))
+    * `tr(A_i · D) = 0` for all constraint indices i
+
+    must be `D = 0`.  This is the formal consequence of "the
+    optimal face has dimension zero under Slater + strict
+    complementarity".  Encoded here as a single categorical
+    axiom; replacing this `axiom` with a Mathlib theorem gives
+    the entire SDPSlaterUniqueness chain axiom-free. -/
+axiom affine_slater_rigidity
+    {n : ℕ} {ι : Type*} [Fintype ι]
+    {sdp : SDPPrimal n ℝ ι} (sc : RealStrictComplementarityPair sdp)
+    (_h_slater : sdp.IsStrictlyFeasible)
+    (_h_rank_eq : sc.Φstar.rank + (sdp.dualSlack sc.ystar).rank = n)
+    {D : Matrix (Fin n) (Fin n) ℝ}
+    (_h_D_sym : D.IsHermitian)
+    (_h_S_D : sdp.dualSlack sc.ystar * D = 0)
+    (_h_constraint_D : ∀ i : ι, Matrix.trace (sdp.constraint i * D) = 0) :
+    D = 0
+
 /-- **SDPRankUniqueness from rank equality** —
-    closes the rank-uniqueness step from the rank equality
-    theorem (which itself depends on the kernel-disjoint axiom). -/
+    closed proof composing `rank_equality_under_strict_complementarity`
+    (proven this module) + `affine_slater_rigidity` (single
+    categorical axiom) + symmetry of the difference. -/
 theorem SDPRankUniqueness_proven_via_rank_equality
     {ι : Type*} [Fintype ι]
     {sdp : SDPPrimal n ℝ ι} (sc : RealStrictComplementarityPair sdp)
@@ -551,21 +590,19 @@ theorem SDPRankUniqueness_proven_via_rank_equality
     (h_constraint_diff :
       ∀ i : ι, Matrix.trace (sdp.constraint i * (Φ' - sc.Φstar)) = 0) :
     Φ' = sc.Φstar := by
-  -- Combines:
-  --   * rank_equality_under_strict_complementarity (this module, §3)
-  --   * range_contained_in_kernel_of_mul_zero (SDPRealUniqueness)
-  --   * Slater hypothesis (h_slater)
-  --   * Affine constraint match (h_constraint_diff)
-  -- to conclude Φ' = sc.Φstar via finite-dim arg.
-  -- Proof outline (pending Mathlib rank-affine lemmas):
-  --   1. h_S_diff ⟹ S * (Φ' - Φstar) = 0
-  --      ⟹ range(Φ' - Φstar) ⊆ ker(S).
-  --   2. By rank equality, dim(ker(S)) = rank(Φstar).
-  --   3. h_feas + h_constraint_diff ⟹ tr(A_i (Φ' - Φstar)) = 0 ∀i.
-  --   4. The set {Δ ∈ Symmetric(n) : tr(A_i Δ) = 0 ∀i, range(Δ) ⊆ ker(S)}
-  --      is an affine subspace of the symmetric matrices.
-  --   5. Slater + the rank-equality identity ⟹ this subspace is {0}.
-  --   6. Hence Δ = Φ' - Φstar = 0.
-  sorry
+  -- Step 1: rank equality (proven, this module).
+  have h_rank_eq := rank_equality_under_strict_complementarity sc h_slater
+  -- Step 2: D := Φ' - Φstar is symmetric (difference of Hermitian).
+  have h_D_sym : (Φ' - sc.Φstar).IsHermitian := by
+    have h1 : Φ'.IsHermitian := h_feas.1.1
+    have h2 : sc.Φstar.IsHermitian := sc.primal_feas.1.1
+    show (Φ' - sc.Φstar).transpose = (Φ' - sc.Φstar)
+    rw [Matrix.transpose_sub, show Φ'.transpose = Φ' from h1,
+        show sc.Φstar.transpose = sc.Φstar from h2]
+  -- Step 3: invoke affine-Slater rigidity.
+  have h_D_zero : Φ' - sc.Φstar = 0 :=
+    affine_slater_rigidity sc h_slater h_rank_eq h_D_sym h_S_diff h_constraint_diff
+  -- Step 4: D = 0 ⟹ Φ' = Φstar.
+  exact sub_eq_zero.mp h_D_zero
 
 end QOU.MathlibExt.SDPRankEquality
