@@ -77,7 +77,7 @@ $$
 *The dual variable $y_0$ is the shadow price of the normalisation
 constraint; $(y_\lambda)$ are the per-block shadow prices.
 Strong duality holds under Slater's condition (a strictly
-feasible $\Phi \succ 0$ exists at generic $q$), and at optimum*
+feasible $\Phi \succ 0$ exists at generic $q$), and at optimum:*
 
 $$
   \Phi^* \cdot \bigl(y_0^* I + \textstyle\sum_\lambda y_\lambda^* \pi_\lambda - T\bigr) \;=\; 0

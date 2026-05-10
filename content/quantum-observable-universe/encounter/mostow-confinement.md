@@ -1,5 +1,5 @@
 **Proposition (conditional on
-[`MostowRigidity`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/lean/QOU/Encounter/MostowRigidity.lean)).**
+[`MostowRigidity`](https://github.com/litlfred/qou/blob/claude/improve-paper-exposition-4a0OT/content/quantum-observable-universe/lean/QOU/Encounter/MostowRigidity.lean)).**
 *Let $K \subset U$ be the link formed at an encounter
 ([approach](#sec:approach-to-exceptional-divisor)), and assume
 that the merged complement $U \setminus K$ admits a complete,
@@ -34,14 +34,20 @@ $$
 
 The proposition is **conditional on `MostowRigidity`** (§3b-cond
 pattern).  The class is axiomatised in
-[`QOU.Encounter.MostowRigidity`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/lean/QOU/Encounter/MostowRigidity.lean);
-parts (1)--(3) are downstream conditional theorems whose Lean
-proofs use the class fields as hypotheses, with no further
-`sorry`.  The status mirrors `SDPSlaterUniqueness`
-([primal uniqueness in the SDP-rank module](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/lean/QOU/MathlibExt/SDPRealUniqueness.lean)):
-both are conditional-class axiomatisations of a multi-week
-Mathlib formalisation, and both unlock the corresponding rigorous
-conditional consequences.
+[`QOU.Encounter.MostowRigidity`](https://github.com/litlfred/qou/blob/claude/improve-paper-exposition-4a0OT/content/quantum-observable-universe/lean/QOU/Encounter/MostowRigidity.lean);
+The current Lean module establishes the §3b *scaffold* only:
+the class fields are placeholders (`True`) and the conditional
+theorem `mass_rigidity_of_mostow` is `True := trivial`.  Parts
+(1)--(3) above are stated at the narrative level; their Lean
+counterparts will be filled in once the class fields carry
+non-trivial predicates (e.g. an equality of hyperbolic-volume
+invariants and a discreteness witness).  The shape mirrors
+`SDPSlaterUniqueness`
+([primal uniqueness in the SDP-rank module](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/lean/QOU/MathlibExt/SDPRealUniqueness.lean))
+when that class was first introduced — both are
+conditional-class axiomatisations of a multi-week Mathlib
+formalisation; concrete instances and non-trivial fields land
+incrementally.
 
 ## Why this is the geometric mirror of the SDP optimum
 

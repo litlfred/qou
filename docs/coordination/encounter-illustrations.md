@@ -13,7 +13,7 @@ figures).
 
 | Branch | Status | Classification |
 |--------|--------|----------------|
-| `claude/improve-paper-exposition-4a-0T` (this) | pushed (commit `d4d74824`); no PR yet | source of the new content |
+| `claude/improve-paper-exposition-4a0OT` (this) | pushed (commit `d4d74824`); no PR yet | source of the new content |
 | `claude/add-paper-illustrations-Diggj` | pushed (HEAD `2794c36f`); no PR yet | downstream consumer; needs slot list for new content |
 
 **Overlap**  None — different concerns. No file conflicts.
