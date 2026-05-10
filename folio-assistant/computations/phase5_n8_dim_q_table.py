@@ -13,11 +13,9 @@ For each partition λ ⊢ 8:
 3. Emit the surviving factor product as a Lean expression.
 4. Numerical spot-check at q_0 + q=1.
 
-The 22 partitions of 8, paired by transpose conjugation, give 11
-conjugate pairs. (No self-conjugate at n=8 since (5,3,1,1) ≠ its
-transpose (4,2,2,1,1) — wait, let me confirm: (4,2,1,1) ⊢ 8 has
-transpose (4,2,1,1). Yes, (4,2,1,1) IS self-conjugate. (3,3,2) has
-transpose (3,3,2). Both are self-conjugate.)
+The 22 partitions of 8 split as **10 conjugate pairs + 2 self-
+conjugate** partitions ((4,2,1,1) and (3,3,2)), giving the
+accounting 2·10 + 2 = 22.
 
 Output: `phase5-n8-dim-q-table.json` (raw data + Lean code chunks).
 """

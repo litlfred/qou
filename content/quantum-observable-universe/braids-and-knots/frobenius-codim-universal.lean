@@ -742,10 +742,14 @@ private lemma Fin_sum_univ_twentytwo {M : Type*} [AddCommMonoid M]
                          + 1/14 + 1/70 + 1/56) + 1/90 + 1/42
                   = 5.0028…
 
-    The proof tactic uses `field_simp` (rather than just `simp`) to
-    clear the rational denominators introduced by `dim_q(λ)` factors
-    of `[k]_q⁻¹` for the partitions whose hook-product cancellation
-    leaves residual `/[2]_q` (idx 6, 7, 14, 15).
+    The proof tactic mirrors the n=6 / n=7 closures: after
+    `Fin_sum_univ_twentytwo` unfolds the sum, `simp` discharges the
+    `heckeH8DimQ_*` lookup lemmas, and `ring` closes the algebraic
+    identity over ℝ.  Some partitions (idx 6, 7, 14, 15) carry a
+    residual `/[2]_q = (q + q⁻¹)⁻¹` factor in their `dim_q`
+    expression; `ring` handles these as field operations directly.
+    If a downstream Lean version surfaces a numeric discharge
+    failure on these terms, swap `simp; ring` for `field_simp; ring`.
 
     Ref: 1ppb plan T1 / Phase 5; closes the n=8 case for nuclei
     A ≥ 4 whose H_{12} block decomposes through n=8 Wedderburn

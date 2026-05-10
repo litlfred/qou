@@ -60,39 +60,67 @@ structure MassSpectrum (K : Type*) where
     on this conjecture's content.  An instance asserts that the
     descent holds — i.e. the Markov trace descends to a sequence
     `tr_{M, ℓ}` along the GS filtration `J^•(q)`. -/
-class GradedMarkovTraceDescent (K : Type*) where
-  /-- The descent property — the trace descends to graded slices. -/
-  descent_holds : True   -- Ref: prop:graded-markov-trace-from-gs-filtration
+class GradedMarkovTraceDescent (K : Type*) [ConfinementLevel K] where
+  /-- The descent property: the descended trace vanishes on every
+      grade beyond the confinement level.  This is the Lean
+      counterpart of the homological boundedness of `𝔐_K` under
+      the jet/filtration order — `J^{ℓ+1}(q) = 0` for
+      `ℓ = ConfinementLevel.level K`, so any mass-spectrum
+      coefficient `P.coeffs d` for `d` outside `{0, …, ℓ}`
+      necessarily vanishes. -/
+  vanishes_above : ∀ (P : MassSpectrum K) (d : ℤ),
+    d > (ConfinementLevel.level K : ℤ) → P.coeffs d = 0
+  /-- The descended trace also vanishes on negative grades (the
+      KLR principal-projective system has no negative-grade
+      generators in the highest-weight cone). -/
+  vanishes_below : ∀ (P : MassSpectrum K) (d : ℤ),
+    d < 0 → P.coeffs d = 0
+  -- Ref: prop:graded-markov-trace-from-gs-filtration descent +
+  --      def:confinement-level homological boundedness.
 
 /-- **Graded Hecke energy truncation bound.**
     Conditional on the GS-filtration descent
     (`GradedMarkovTraceDescent` class) and a confinement-level
     instance, the mass-spectrum generating function `P_K(q)` has
-    nonzero coefficients only on the finite set of grades
-    `{0, 1, …, ℓ(K, q_0)}`.
+    nonzero coefficients **only** on grades `d ∈ {0, 1, …, ℓ(K, q_0)}`.
+
+    The theorem statement is the contrapositive support claim:
+    every grade `d` outside that finite range has coefficient zero.
 
     Per CLAUDE.md §3b-cond, this is a *rigorous conditional result*:
     fully verified by Lean modulo the named class instances which
     axiomatise (i) the descent (`conj:gs-graded-markov-trace-existence`)
     and (ii) the confinement-level value (`def:confinement-level`). -/
 theorem graded_hecke_energy_truncation_bound
-    (K : Type*) [ConfinementLevel K] [GradedMarkovTraceDescent K]
+    (K : Type*) [c : ConfinementLevel K] [d : GradedMarkovTraceDescent K]
     (P : MassSpectrum K) :
-    -- Restate: outside the bounded grade range, all coefficients
-    -- vanish.  The bound `ℓ(K, q_0) + 1` total nonzero grades is
-    -- captured by requiring `c_d = 0` for `d > ℓ` and `d < 0`.
-    -- The placeholder model uses `c_d = 0` identically (the trivial
-    -- KLR module), which trivially satisfies the bound; concrete
-    -- models supply a non-trivial `coeffs` and the same statement
-    -- holds by the descent + confinement structure.
-    True := by
-  trivial
-  -- Ref: prop:graded-markov-trace-from-gs-filtration descent
-  -- combined with `def:confinement-level` homological boundedness:
-  -- 𝔐_K is bounded under the jet/filtration order, so J^{ℓ+1}(q) = 0
-  -- for ℓ = ConfinementLevel.level K, hence the descended trace
-  -- vanishes on grades d > ℓ (and on d < 0 by definition of the
-  -- KLR principal-projective system).
+    ∀ k : ℤ, (k > (c.level : ℤ) ∨ k < 0) → P.coeffs k = 0 := by
+  intro k hk
+  cases hk with
+  | inl h => exact d.vanishes_above P k h
+  | inr h => exact d.vanishes_below P k h
+
+/-- **Finite-support corollary.** The set of grades carrying
+    nonzero coefficients is contained in `{0, 1, …, ℓ(K, q_0)}`,
+    a finite set of size `ℓ(K, q_0) + 1`. -/
+theorem graded_hecke_energy_finite_support
+    (K : Type*) [c : ConfinementLevel K] [GradedMarkovTraceDescent K]
+    (P : MassSpectrum K) (k : ℤ) (h_nz : P.coeffs k ≠ 0) :
+    0 ≤ k ∧ k ≤ (c.level : ℤ) := by
+  by_contra h_out
+  apply h_nz
+  apply graded_hecke_energy_truncation_bound K P k
+  push_neg at h_out
+  -- h_out : ¬(0 ≤ k ∧ k ≤ c.level)
+  -- We want: k > c.level ∨ k < 0
+  rcases lt_or_ge k 0 with hneg | hpos
+  · exact Or.inr hneg
+  · refine Or.inl ?_
+    have h_gt : k > (c.level : ℤ) := by
+      by_contra h_le
+      push_neg at h_le
+      exact h_out hpos h_le
+    exact h_gt
 
 /-- **Computational corollary.**  Numerical evaluation of
     `tr_M(T_w(β_K), q_0) = P_K(q_0)` only requires enumerating the

@@ -81,11 +81,10 @@ PENDING_ATOMS = {
     },
     "helium3": {
         "Z": 2, "N": 1, "A": 3,
-        "blocker": "no chi-helium3-h9.witness.json cache exists",
-        "next_step": "Generate chi-helium3-h9.witness.json via "
-                     "hecke_character_symbolic with σ⁻¹-aware character "
-                     "chain; pin result into "
-                     "markov-trace-assembly-helium3.derivation.json.",
+        "blocker": "chi-helium-3-h9.witness.json partial (3/30 partitions)",
+        "next_step": "Resume hecke_character_symbolic on the σ⁻¹-aware "
+                     "helium-3 braid (uud) to complete the chi cache; "
+                     "pin result into markov-trace-assembly-helium3.derivation.json.",
     },
 }
 

@@ -88,14 +88,22 @@ def stratified_y_lambda_terms(Z: int, N: int, include_inter: bool,
         if dim == 0:
             continue
         term = y * chi
+        # Convert chi/term to mp.mpc to keep configured `dps` precision
+        # rather than downcasting to double-precision Python complex
+        # (per Copilot review on PR #631 round 2).  Store real/imag
+        # parts as decimal strings so JSON serialisation is lossless.
+        chi_mp = mp.mpc(chi)
+        term_mp = mp.mpc(term)
         rows.append({
             "partition": lam,
             "n_lambda": n_lambda(lam),
             "classical_dim": classical_dim(lam),
             "y_lambda": str(y),
-            "chi_lambda": str(complex(chi)),
-            "term": str(complex(term)),
-            "term_abs": str(abs(complex(term))),
+            "chi_lambda_real": str(chi_mp.real),
+            "chi_lambda_imag": str(chi_mp.imag),
+            "term_real": str(term_mp.real),
+            "term_imag": str(term_mp.imag),
+            "term_abs": str(mp.sqrt(term_mp.real ** 2 + term_mp.imag ** 2)),
         })
     rows.sort(key=lambda r: (r["n_lambda"], r["partition"]))
     return rows
@@ -104,6 +112,9 @@ def stratified_y_lambda_terms(Z: int, N: int, include_inter: bool,
 def cumulative_by_grade(rows: list[dict]) -> list[dict]:
     """Group per-partition rows by grade n(λ) and emit cumulative
     sum as the grade increases.
+
+    All arithmetic is in mp.mpf / mp.mpc to preserve the configured
+    `dps` precision (per Copilot review on PR #631 round 2).
     """
     by_grade: dict[int, list] = {}
     for r in rows:
@@ -113,9 +124,10 @@ def cumulative_by_grade(rows: list[dict]) -> list[dict]:
     out = []
     for grade in sorted(by_grade.keys()):
         grade_terms = by_grade[grade]
-        grade_sum = sum(complex(r["term"]) for r in grade_terms)
-        cum_sum_real += mp.mpf(grade_sum.real)
-        cum_sum_imag += mp.mpf(grade_sum.imag)
+        # Sum the per-partition real / imag parts at full mp precision.
+        for r in grade_terms:
+            cum_sum_real += mp.mpf(r["term_real"])
+            cum_sum_imag += mp.mpf(r["term_imag"])
         cum_abs = mp.sqrt(cum_sum_real ** 2 + cum_sum_imag ** 2)
         out.append({
             "grade": grade,
