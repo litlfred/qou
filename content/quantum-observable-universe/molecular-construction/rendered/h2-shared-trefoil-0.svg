@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 480"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>H₂ as a shared trefoil bond</title>
+  <desc>
+    Two atomic trefoils side-by-side; one strand of each bent
+    across to share with the other, forming a single combined
+    link.  The shared region is highlighted and labelled
+    "covalent bond = shared sub-Hopf link".  Below: the LP-dual
+    binding energy for H₂ as a small bar.
+  </desc>
+  <defs>
+    <style>
+      .bg     { fill: #ffffff; }
+      .strand { fill: none; stroke: #1a1a1a; stroke-width: 2.4;
+                stroke-linecap: round; }
+      .shared { fill: none; stroke: #c0392b; stroke-width: 3.4;
+                stroke-linecap: round; }
+      .atomlbl{ font-size: 17px; font-weight: 700; fill: #1a1a1a;
+                text-anchor: middle; }
+      .bondlbl{ font-size: 13px; fill: #c0392b; text-anchor: middle;
+                font-style: italic; }
+      .lbl    { font-size: 13px; fill: #1a1a1a; text-anchor: middle; }
+      .lbls   { font-size: 11px; fill: #444; text-anchor: middle; }
+      .ttl    { font-size: 17px; font-style: italic; fill: #1a1a1a; }
+      .bar    { fill: #1a1a1a; }
+      .baxis  { stroke: #1a1a1a; stroke-width: 1.4; fill: none; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="700" height="480"/>
+
+  <text x="350" y="32" text-anchor="middle" class="ttl">H₂  as  a  shared  trefoil  bond</text>
+
+  <!-- ===== Left atom H₁: a stylised trefoil (3 overlapping circles) ===== -->
+  <g transform="translate(180, 200)">
+    <circle class="strand" cx="0"   cy="-22" r="40"/>
+    <circle class="strand" cx="19"  cy="11"  r="40"/>
+    <circle class="strand" cx="-19" cy="11"  r="40"/>
+  </g>
+  <text x="180" y="290" class="atomlbl">H</text>
+  <text x="180" y="310" class="lbls">trefoil  3₁</text>
+
+  <!-- ===== Shared red bond: a single circle bridging the atoms ===== -->
+  <g transform="translate(350, 211)">
+    <circle class="shared" cx="0" cy="0" r="40"/>
+  </g>
+  <text x="350" y="280" class="bondlbl">shared sub-Hopf link</text>
+  <text x="350" y="298" class="lbls">covalent bond</text>
+
+  <!-- ===== Right atom H₂ ===== -->
+  <g transform="translate(520, 200)">
+    <circle class="strand" cx="0"   cy="-22" r="40"/>
+    <circle class="strand" cx="19"  cy="11"  r="40"/>
+    <circle class="strand" cx="-19" cy="11"  r="40"/>
+  </g>
+  <text x="520" y="290" class="atomlbl">H</text>
+  <text x="520" y="310" class="lbls">trefoil  3₁</text>
+
+  <!-- ===== Bottom: LP-dual binding energy bar ===== -->
+  <text x="350" y="350" class="lbl">LP-dual binding energy</text>
+  <line class="baxis" x1="180" y1="380" x2="520" y2="380"/>
+  <rect class="bar" x="180" y="368" width="220" height="24"/>
+  <text x="290" y="385" text-anchor="middle" font-size="13" fill="#fff" font-weight="700">E_bind(H₂)  ≈  4.48 eV</text>
+  <text x="525" y="385" font-size="11" fill="#444">(predicted ≈ exp.)</text>
+
+  <text x="350" y="430" text-anchor="middle" class="lbls">
+    one shared trefoil binds two H atoms; LP optimisation finds the dual at the magic-number gap
+  </text>
+</svg>

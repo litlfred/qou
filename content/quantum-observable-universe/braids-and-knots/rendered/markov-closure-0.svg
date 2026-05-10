@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 540"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>Markov closure: braid → link</title>
+  <desc>
+    Three panels.  Left: a 3-strand braid β drawn vertically in a
+    box with three crossings (σ₁ σ₂⁻¹ σ₁).  Centre: same braid
+    closed by arcs on top and bottom — top-i arcs to bottom-i
+    forming the closure 𝛽̂ as an oriented link.  Right: the two
+    Markov moves shown as schematic equivalences — (M1)
+    conjugation β ~ αβα⁻¹ as an isotopy of the closure, (M2)
+    stabilisation β ~ β·σ_n^±¹ as adding a strand and an extra
+    crossing.
+  </desc>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a1a1a"/>
+    </marker>
+    <style>
+      .bg     { fill: #ffffff; }
+      .frame  { fill: none; stroke: #b8b8b8; stroke-width: 1;
+                stroke-dasharray: 4 3; }
+      .strand { fill: none; stroke: #1a1a1a; stroke-width: 2.6;
+                stroke-linecap: round; }
+      .lbl    { font-size: 14px; fill: #1a1a1a; text-anchor: middle; }
+      .lblb   { font-size: 16px; font-weight: 700; fill: #1a1a1a;
+                text-anchor: middle; }
+      .ttl    { font-size: 17px; font-style: italic; fill: #1a1a1a; }
+      .eq     { font-size: 24px; font-weight: 700; fill: #1a1a1a;
+                text-anchor: middle; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1100" height="540"/>
+
+  <text x="550" y="32" text-anchor="middle" class="ttl">Markov closure: braid → link, and the two Markov moves</text>
+
+  <!-- ===== Panel 1: open braid β  (centred at x=140) ===== -->
+  <rect class="frame" x="80" y="60" width="120" height="280" rx="6"/>
+  <text x="140" y="78" class="lbl">β</text>
+  <g transform="translate(140, 200)">
+    <!-- 3 strands: x = -40, 0, 40.  3 crossings at y = -90, -30, 30 -->
+    <!-- top portion (above first crossing) -->
+    <line class="strand" x1="-40" y1="-130" x2="-40" y2="-100"/>
+    <line class="strand" x1="0"   y1="-130" x2="0"   y2="-100"/>
+    <line class="strand" x1="40"  y1="-130" x2="40"  y2="-100"/>
+    <!-- crossing 1: σ₁ between strands 1,2 -->
+    <line class="strand" x1="-40" y1="-100" x2="0"   y2="-60"/>
+    <line class="strand" x1="0"   y1="-100" x2="-13" y2="-87"/>
+    <line class="strand" x1="-27" y1="-73"  x2="-40" y2="-60"/>
+    <line class="strand" x1="40"  y1="-100" x2="40"  y2="-60"/>
+    <!-- between c1 and c2 -->
+    <line class="strand" x1="-40" y1="-60" x2="-40" y2="-30"/>
+    <line class="strand" x1="0"   y1="-60" x2="0"   y2="-30"/>
+    <line class="strand" x1="40"  y1="-60" x2="40"  y2="-30"/>
+    <!-- crossing 2: σ₂⁻¹ between 2,3 -->
+    <line class="strand" x1="-40" y1="-30" x2="-40" y2="0"/>
+    <line class="strand" x1="0"   y1="-30" x2="40"  y2="0"/>
+    <line class="strand" x1="40"  y1="-30" x2="27"  y2="-17"/>
+    <line class="strand" x1="13"  y1="-3"  x2="0"   y2="0"/>
+    <!-- between c2 and c3 -->
+    <line class="strand" x1="-40" y1="0" x2="-40" y2="30"/>
+    <line class="strand" x1="0"   y1="0" x2="0"   y2="30"/>
+    <line class="strand" x1="40"  y1="0" x2="40"  y2="30"/>
+    <!-- crossing 3: σ₁ between 1,2 -->
+    <line class="strand" x1="-40" y1="30" x2="0"   y2="70"/>
+    <line class="strand" x1="0"   y1="30" x2="-13" y2="43"/>
+    <line class="strand" x1="-27" y1="57" x2="-40" y2="70"/>
+    <line class="strand" x1="40"  y1="30" x2="40"  y2="70"/>
+    <!-- bottom portion -->
+    <line class="strand" x1="-40" y1="70" x2="-40" y2="100"/>
+    <line class="strand" x1="0"   y1="70" x2="0"   y2="100"/>
+    <line class="strand" x1="40"  y1="70" x2="40"  y2="100"/>
+  </g>
+  <text x="140" y="380" class="lblb">β  ∈  B_3</text>
+  <text x="140" y="400" class="lbl">σ₁ σ₂⁻¹ σ₁</text>
+
+  <!-- arrow → closure -->
+  <line stroke="#1a1a1a" stroke-width="1.6" x1="220" y1="200" x2="280" y2="200" marker-end="url(#arr)"/>
+  <text x="250" y="190" text-anchor="middle" class="lbl">close</text>
+
+  <!-- ===== Panel 2: closure 𝛽̂ (centred at x=380) ===== -->
+  <rect class="frame" x="320" y="60" width="120" height="280" rx="6"/>
+  <text x="380" y="78" class="lbl">𝛽̂  =  closure(β)</text>
+  <g transform="translate(380, 200)">
+    <!-- same 3-strand braid -->
+    <line class="strand" x1="-40" y1="-100" x2="0"   y2="-60"/>
+    <line class="strand" x1="0"   y1="-100" x2="-13" y2="-87"/>
+    <line class="strand" x1="-27" y1="-73"  x2="-40" y2="-60"/>
+    <line class="strand" x1="40"  y1="-100" x2="40"  y2="-60"/>
+    <line class="strand" x1="-40" y1="-60" x2="-40" y2="-30"/>
+    <line class="strand" x1="0"   y1="-60" x2="0"   y2="-30"/>
+    <line class="strand" x1="40"  y1="-60" x2="40"  y2="-30"/>
+    <line class="strand" x1="-40" y1="-30" x2="-40" y2="0"/>
+    <line class="strand" x1="0"   y1="-30" x2="40"  y2="0"/>
+    <line class="strand" x1="40"  y1="-30" x2="27"  y2="-17"/>
+    <line class="strand" x1="13"  y1="-3"  x2="0"   y2="0"/>
+    <line class="strand" x1="-40" y1="0" x2="-40" y2="30"/>
+    <line class="strand" x1="0"   y1="0" x2="0"   y2="30"/>
+    <line class="strand" x1="40"  y1="0" x2="40"  y2="30"/>
+    <line class="strand" x1="-40" y1="30" x2="0"   y2="70"/>
+    <line class="strand" x1="0"   y1="30" x2="-13" y2="43"/>
+    <line class="strand" x1="-27" y1="57" x2="-40" y2="70"/>
+    <line class="strand" x1="40"  y1="30" x2="40"  y2="70"/>
+    <!-- closing arcs LEFT (semicircles outside the box) -->
+    <path class="strand" d="M -40 -100 C -90 -100, -90 70, -40 70"/>
+    <path class="strand" d="M 0   -100 C -75 -100, -75 70, 0  70"/>
+    <path class="strand" d="M 40  -100 C -60 -100, -60 70, 40 70"/>
+  </g>
+  <text x="380" y="380" class="lblb">𝛽̂   (oriented link)</text>
+  <text x="380" y="400" class="lbl">trace = ∑_λ y_λ χ_λ(β)</text>
+
+  <!-- ===== Panel 3: Markov moves ===== -->
+  <text x="800" y="78" text-anchor="middle" class="lblb">Markov moves preserve the closure</text>
+
+  <!-- M1: conjugation -->
+  <g transform="translate(560, 110)">
+    <text x="0" y="0" font-size="14" fill="#1a1a1a">M1.  Conjugation</text>
+    <text x="0" y="22" font-size="14" fill="#1a1a1a" font-style="italic">β  ∼  α β α⁻¹</text>
+    <rect class="frame" x="20" y="40" width="80" height="80" rx="4"/>
+    <text x="60" y="85" class="lbl">β̂</text>
+    <text x="115" y="85" font-size="20" fill="#1a1a1a">∼</text>
+    <rect class="frame" x="135" y="40" width="80" height="80" rx="4"/>
+    <text x="175" y="85" class="lbl">αβα⁻¹</text>
+  </g>
+
+  <!-- M2: stabilisation -->
+  <g transform="translate(560, 280)">
+    <text x="0" y="0" font-size="14" fill="#1a1a1a">M2.  Stabilisation</text>
+    <text x="0" y="22" font-size="14" fill="#1a1a1a" font-style="italic">β  ∼  β · σ_n^±¹    (adds one strand)</text>
+    <rect class="frame" x="20" y="40" width="80" height="80" rx="4"/>
+    <text x="60" y="85" class="lbl">B_n</text>
+    <text x="115" y="85" font-size="20" fill="#1a1a1a">∼</text>
+    <rect class="frame" x="135" y="40" width="100" height="80" rx="4"/>
+    <text x="185" y="85" class="lbl">B_{n+1}</text>
+  </g>
+
+  <!-- Footer -->
+  <text x="550" y="500" text-anchor="middle" font-size="12" fill="#666" font-style="italic">
+    Markov's theorem: oriented links ↔ braids modulo (M1) + (M2)
+  </text>
+  <text x="550" y="518" text-anchor="middle" font-size="11" fill="#666" font-style="italic">
+    Markov trace tr_M descends from the braid to the link — backbone of the topological mass formula
+  </text>
+</svg>
