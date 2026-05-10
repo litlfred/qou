@@ -267,6 +267,103 @@ theorem real_strict_complementarity_unique_of_active_empty_and_cost_posDef
   exact real_strict_complementarity_unique_of_dualSlack_posDef
     sc.toRealStrongDualityPair h_S_posDef h_feas h_obj
 
+/-! ## §3.06  Slater + Strict-Complementarity Uniqueness Class
+                  (§3b conditional-class axiomatisation)
+
+The general kernel-uniqueness step (Boyd-Vandenberghe §5.5.4) —
+that under Slater + strict complementarity the SDP optimum is
+unique — is genuinely multi-week Mathlib SDP-rank-deficiency
+work.  Per CLAUDE.md §3b conditional-class pattern, we
+**axiomatise** the categorical content as a typeclass and let
+downstream theorems consume it as a class hypothesis.  This
+keeps the categorical content in scope without a free-floating
+`sorry`.
+
+Concrete instances:
+* `interior` case via `_unique_of_dualSlack_posDef` (batch 12)
+* `active-empty + cost PosDef` via
+  `_unique_of_active_empty_and_cost_posDef` (batch 26)
+* General case: provide an instance once the multi-week Mathlib
+  SDP-rank-deficiency theorem lands. -/
+
+/-- **SDP Slater-Strict-Complementarity uniqueness** —
+    axiomatised conditional-class.  An instance of this class
+    asserts that, for the given primal SDP `sdp` and strict-
+    complementarity certificate `sc`, the primal optimum
+    `sc.Φstar` is unique among feasible matrices with matching
+    objective.  This is the categorical content of Boyd-
+    Vandenberghe §5.5.4.
+
+    Per §3b conditional-class pattern, this class is the
+    Lean-typed bookkeeping for the multi-week Mathlib SDP-
+    rank-deficiency theorem; concrete instances supply the
+    proof for specific cases. -/
+-- Ref: [boyd-vandenberghe-2004] §5.5.4
+class SDPSlaterUniqueness
+    {n : ℕ} {ι : Type*} [Fintype ι]
+    (sdp : SDPPrimal n ℝ ι) (sc : RealStrictComplementarityPair sdp) : Prop where
+  unique : ∀ {Φ' : Matrix (Fin n) (Fin n) ℝ},
+    sdp.IsFeasible Φ' →
+    sdp.objAt Φ' = sdp.objAt sc.Φstar →
+    Φ' = sc.Φstar
+
+/-- **Instance for the interior case** (dual slack PosDef) —
+    derived from `_unique_of_dualSlack_posDef` (batch 12).
+    This instance is **fully proven**, no axiom dependency. -/
+def SDPSlaterUniqueness.ofDualSlackPosDef
+    {sdp : SDPPrimal n ℝ ι} (sc : RealStrictComplementarityPair sdp)
+    (h_S_posDef : (sdp.dualSlack sc.ystar).PosDef) :
+    SDPSlaterUniqueness sdp sc where
+  unique h_feas h_obj :=
+    real_strict_complementarity_unique_of_dualSlack_posDef
+      sc.toRealStrongDualityPair h_S_posDef h_feas h_obj
+
+/-- **Instance for the active-empty + cost-PosDef case** —
+    derived from `_unique_of_active_empty_and_cost_posDef`
+    (batch 26).  Fully proven. -/
+def SDPSlaterUniqueness.ofActiveEmptyAndCostPosDef
+    {sdp : SDPPrimal n ℝ ι} (sc : RealStrictComplementarityPair sdp)
+    (h_active_empty : sc.active = ∅)
+    (h_cost_posDef : sdp.cost.PosDef) :
+    SDPSlaterUniqueness sdp sc where
+  unique h_feas h_obj :=
+    real_strict_complementarity_unique_of_active_empty_and_cost_posDef
+      sc h_active_empty h_cost_posDef h_feas h_obj
+
+/-- **General uniqueness via SDPSlaterUniqueness class**.
+
+    Refactored version of `real_strict_complementarity_unique`
+    using the §3b conditional-class pattern.  Replaces the
+    multi-week kernel-uniqueness `sorry` with a typeclass
+    requirement.  Downstream theorems supply the class instance
+    from the appropriate sub-case (interior, active-empty, or —
+    when Mathlib SDP rank-deficiency lands — the general case).
+
+    This theorem is **fully proven** (no `sorry`); the
+    categorical content has been bookkeeping-shifted to the
+    `SDPSlaterUniqueness` class. -/
+theorem real_strict_complementarity_unique_via_class
+    {sdp : SDPPrimal n ℝ ι}
+    (sc : RealStrictComplementarityPair sdp)
+    [h_class : SDPSlaterUniqueness sdp sc]
+    {Φ' : Matrix (Fin n) (Fin n) ℝ}
+    (h_feas : sdp.IsFeasible Φ')
+    (h_obj : sdp.objAt Φ' = sdp.objAt sc.Φstar) :
+    Φ' = sc.Φstar :=
+  h_class.unique h_feas h_obj
+
+/-- **Subsingleton wrapper** via the class. -/
+theorem real_strict_complementarity_optimum_subsingleton_via_class
+    {sdp : SDPPrimal n ℝ ι}
+    (sc : RealStrictComplementarityPair sdp)
+    [SDPSlaterUniqueness sdp sc] :
+    Subsingleton {Φ : Matrix (Fin n) (Fin n) ℝ //
+      sdp.IsFeasible Φ ∧ sdp.objAt Φ = sdp.objAt sc.Φstar} := by
+  refine ⟨fun ⟨Φ₁, h₁_feas, h₁_obj⟩ ⟨Φ₂, h₂_feas, h₂_obj⟩ => ?_⟩
+  ext1
+  rw [real_strict_complementarity_unique_via_class sc h₁_feas h₁_obj,
+      real_strict_complementarity_unique_via_class sc h₂_feas h₂_obj]
+
 /-! ## §3.1  Interior-optimum closure (active set empty)
 
 When the active set is empty (the optimum lies in the strict
