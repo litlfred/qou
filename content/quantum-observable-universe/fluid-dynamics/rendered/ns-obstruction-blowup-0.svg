@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 460"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>NS obstruction: q-NS regular vs q=1 blowup</title>
+  <desc>
+    Two side-by-side phase portraits.  Left: q&gt;1 — bounded
+    enstrophy as time grows.  Right: q=1 — enstrophy shoots to
+    infinity at a finite time T*.  Both have time on the
+    horizontal axis, enstrophy on the vertical.
+  </desc>
+  <defs>
+    <style>
+      .bg     { fill: #ffffff; }
+      .axis   { stroke: #1a1a1a; stroke-width: 1.4; fill: none; }
+      .curve  { fill: none; stroke: #2980b9; stroke-width: 2.4; }
+      .blow   { fill: none; stroke: #c0392b; stroke-width: 2.4; }
+      .blowdash { fill: none; stroke: #c0392b; stroke-width: 1.4;
+                  stroke-dasharray: 4 3; }
+      .lblb   { font-size: 16px; font-weight: 700; fill: #1a1a1a;
+                text-anchor: middle; }
+      .lbl    { font-size: 13px; fill: #1a1a1a; text-anchor: middle; }
+      .axislbl{ font-size: 12px; fill: #1a1a1a; font-style: italic; }
+      .ticklbl{ font-size: 11px; fill: #444; text-anchor: middle; }
+      .ttl    { font-size: 17px; font-style: italic; fill: #1a1a1a; }
+      .case   { font-size: 14px; fill: #1a1a1a; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="900" height="460"/>
+
+  <text x="450" y="32" text-anchor="middle" class="ttl">NS obstruction: q-NS regularity (q &gt; 1)  vs  classical blowup (q = 1)</text>
+
+  <!-- Left panel: q > 1, bounded -->
+  <text x="220" y="68" class="lblb">q  &gt;  1   —   global regularity</text>
+  <line class="axis" x1="60"  y1="380" x2="380" y2="380"/>
+  <line class="axis" x1="60"  y1="380" x2="60"  y2="100"/>
+  <text x="380" y="395" class="axislbl">t</text>
+  <text x="50"  y="100" class="axislbl">‖ω‖</text>
+  <!-- Bounded curve: rises and asymptotes -->
+  <path class="curve" d="M 60 360 Q 200 280, 380 250"/>
+  <text x="220" y="425" class="case">enstrophy bounded for all t</text>
+  <text x="220" y="445" class="ticklbl">spectral Sobolev estimates close</text>
+
+  <!-- Vertical separator -->
+  <line stroke="#888" stroke-width="1" stroke-dasharray="3 3" x1="450" y1="80" x2="450" y2="440"/>
+
+  <!-- Right panel: q = 1, blowup -->
+  <text x="680" y="68" class="lblb">q  =  1   —   classical Navier–Stokes</text>
+  <line class="axis" x1="520" y1="380" x2="840" y2="380"/>
+  <line class="axis" x1="520" y1="380" x2="520" y2="100"/>
+  <text x="840" y="395" class="axislbl">t</text>
+  <text x="510" y="100" class="axislbl">‖ω‖</text>
+  <!-- Blowup curve: shoots to infinity at T* -->
+  <path class="blow" d="M 520 365 Q 660 320, 740 200 T 800 100"/>
+  <line class="blowdash" x1="800" y1="380" x2="800" y2="100"/>
+  <text x="800" y="395" class="ticklbl" fill="#c0392b">T*</text>
+  <text x="680" y="425" class="case">enstrophy → ∞ at finite T*</text>
+  <text x="680" y="445" class="ticklbl">obstruction to global regularity</text>
+</svg>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>Emergent gravity from information geometry</title>
+  <desc>
+    Two-panel: left, an information manifold with a Fisher metric
+    ellipsoid; right, the same metric reinterpreted as spacetime
+    curvature.  Arrow between them labelled "categorical
+    identification".
+  </desc>
+  <defs>
+    <marker id="tip" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a1a1a"/>
+    </marker>
+    <style>
+      .bg     { fill: #ffffff; }
+      .surf   { fill: #f0e6f0; stroke: #1a1a1a; stroke-width: 1.6; }
+      .surfg  { fill: #e6f0e6; stroke: #1a1a1a; stroke-width: 1.6; }
+      .ellipse { fill: none; stroke: #c0392b; stroke-width: 2; }
+      .lblb   { font-size: 14px; font-weight: 700; fill: #1a1a1a;
+                text-anchor: middle; }
+      .lbl    { font-size: 13px; fill: #1a1a1a; text-anchor: middle; }
+      .lbls   { font-size: 11px; fill: #444; text-anchor: middle; }
+      .ttl    { font-size: 17px; font-style: italic; fill: #1a1a1a; }
+      .arrlbl { font-size: 13px; font-style: italic; fill: #1a1a1a;
+                text-anchor: middle; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="800" height="380"/>
+
+  <text x="400" y="32" text-anchor="middle" class="ttl">Emergent gravity from information geometry</text>
+
+  <!-- Left panel: Fisher information manifold -->
+  <ellipse class="surf" cx="200" cy="200" rx="130" ry="80"/>
+  <ellipse class="ellipse" cx="200" cy="200" rx="60" ry="36"
+           transform="rotate(20 200 200)"/>
+  <text x="200" y="120" class="lblb">information manifold</text>
+  <text x="200" y="294" class="lbl">Fisher metric  g_ij(θ)</text>
+  <text x="200" y="312" class="lbls">probability distributions parametrised by θ</text>
+
+  <!-- Arrow -->
+  <line stroke="#1a1a1a" stroke-width="1.6" fill="none" x1="350" y1="200" x2="450" y2="200" marker-end="url(#tip)"/>
+  <text x="400" y="190" class="arrlbl">categorical</text>
+  <text x="400" y="210" class="arrlbl">identification</text>
+
+  <!-- Right panel: spacetime curvature -->
+  <path class="surfg" d="M 470 240 C 470 160, 730 160, 730 240
+                          C 730 320, 470 320, 470 240 Z"/>
+  <ellipse class="ellipse" cx="600" cy="220" rx="60" ry="32"
+           transform="rotate(20 600 220)"/>
+  <text x="600" y="120" class="lblb">spacetime  curvature</text>
+  <text x="600" y="294" class="lbl">Einstein-like  G_μν</text>
+  <text x="600" y="312" class="lbls">brane geometry sourced by information flow</text>
+</svg>

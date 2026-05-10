@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>Madelung decomposition: ψ = √ρ exp(iS/ℏ)</title>
+  <desc>
+    A wave ψ = √ρ exp(iS/ℏ) broken into two panels: left, density
+    ρ as a height map on the brane; right, phase S as a coloured
+    wheel.  An arrow combines them back into ψ.
+  </desc>
+  <defs>
+    <style>
+      .bg     { fill: #ffffff; }
+      .grid   { fill: none; stroke: #888; stroke-width: 0.6; }
+      .height { fill: #f0e6f0; stroke: #1a1a1a; stroke-width: 1.4; }
+      .wheel  { fill: none; stroke: #1a1a1a; stroke-width: 1.6; }
+      .arc1   { fill: #c0392b; }
+      .arc2   { fill: #e67e22; }
+      .arc3   { fill: #f1c40f; }
+      .arc4   { fill: #27ae60; }
+      .arc5   { fill: #2980b9; }
+      .arc6   { fill: #8e44ad; }
+      .lblb   { font-size: 16px; font-weight: 700; fill: #1a1a1a;
+                text-anchor: middle; }
+      .lbl    { font-size: 13px; fill: #1a1a1a; text-anchor: middle; }
+      .ttl    { font-size: 17px; font-style: italic; fill: #1a1a1a; }
+      .eq     { font-size: 18px; font-style: italic; fill: #1a1a1a;
+                text-anchor: middle; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="900" height="400"/>
+
+  <text x="450" y="32" text-anchor="middle" class="ttl">Madelung decomposition  ψ = √ρ · e^{iS/ℏ}</text>
+
+  <!-- Left panel: density ρ as height map -->
+  <text x="180" y="64" class="lblb">density  ρ(x)</text>
+  <g transform="translate(180, 200)">
+    <!-- Stylised height-map: bell curve outline filled -->
+    <path class="height" d="M -120 60 C -100 60, -60 -60, 0 -60 C 60 -60, 100 60, 120 60 Z"/>
+    <!-- Grid lines beneath -->
+    <line class="grid" x1="-120" y1="60" x2="120" y2="60"/>
+    <line class="grid" x1="-100" y1="60" x2="-100" y2="50"/>
+    <line class="grid" x1="-60" y1="60" x2="-60" y2="40"/>
+    <line class="grid" x1="-20" y1="60" x2="-20" y2="20"/>
+    <line class="grid" x1="20" y1="60" x2="20" y2="20"/>
+    <line class="grid" x1="60" y1="60" x2="60" y2="40"/>
+    <line class="grid" x1="100" y1="60" x2="100" y2="50"/>
+  </g>
+  <text x="180" y="320" class="lbl">amplitude — "where the fluid is"</text>
+
+  <!-- Centre: + symbol -->
+  <text x="450" y="220" class="eq" font-size="32">+</text>
+
+  <!-- Right panel: phase S as coloured wheel -->
+  <text x="720" y="64" class="lblb">phase  S(x)</text>
+  <g transform="translate(720, 200)">
+    <!-- 6-segment colour wheel approximating the phase circle -->
+    <path class="arc1" d="M 0 0 L 0 -80 A 80 80 0 0 1 69.3 -40 Z"/>
+    <path class="arc2" d="M 0 0 L 69.3 -40 A 80 80 0 0 1 69.3 40 Z"/>
+    <path class="arc3" d="M 0 0 L 69.3 40 A 80 80 0 0 1 0 80 Z"/>
+    <path class="arc4" d="M 0 0 L 0 80 A 80 80 0 0 1 -69.3 40 Z"/>
+    <path class="arc5" d="M 0 0 L -69.3 40 A 80 80 0 0 1 -69.3 -40 Z"/>
+    <path class="arc6" d="M 0 0 L -69.3 -40 A 80 80 0 0 1 0 -80 Z"/>
+    <circle class="wheel" cx="0" cy="0" r="80"/>
+  </g>
+  <text x="720" y="320" class="lbl">flow direction — "where the fluid is going"</text>
+
+  <text x="450" y="370" text-anchor="middle" class="eq">ψ  =  √ρ  ·  e^{iS/ℏ}</text>
+</svg>

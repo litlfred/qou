@@ -1,0 +1,3 @@
+# NS obstruction: q-NS regularity (q > 1) vs classical blowup (q = 1)
+
+F10.3 (P1). Two side-by-side phase portraits separated by a vertical dashed line. Left ($q > 1$): time on the horizontal axis, enstrophy $\|\omega\|$ on the vertical; a blue curve rises and asymptotes — bounded for all $t$. Caption: "global regularity; spectral Sobolev estimates close". Right ($q = 1$, classical NS): same axes; a red curve rises steeply and shoots to infinity at a finite time $T^*$, marked as a vertical dashed red line. Caption: "enstrophy → ∞ at finite $T^*$; obstruction to global regularity". Layout: 2 plots side-by-side. Density: minimal — 1 curve per plot, 2 axes, captions. Style: schematic chart. Colour: monochrome plus blue (regular case) and red (blowup case).
