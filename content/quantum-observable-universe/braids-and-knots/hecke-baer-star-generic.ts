@@ -4,6 +4,10 @@ export default proposition({
   label: "prop:hecke-baer-star-generic",
   title:
     "Iwahori--Hecke algebra $H_n(q)$ is a Baer-*-ring at generic $q$",
+  lean: {
+    ref: "qou:QOU.BraidKnot.HeckeBaerStarGeneric.hecke_baer_star_generic",
+    validation: "not_checked",
+  },
   uses: [
     "prop:wedderburn-weight-canonical",
     "prop:hoefsmit-seminormal-form",

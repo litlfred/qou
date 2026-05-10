@@ -17,6 +17,9 @@ export default chapter({
         // Dual ledger: every transcendental in the paper, indexed
         // by Goncharov period-depth.
         "transcendental-accounting",
+        // K-theory ↔ depth filtration Rosetta: Beilinson regulator
+        // matches iterated-integral grading on H_q.
+        "k-theory-period-rosetta",
         "analytic-obstructions",
         "calculus-up-to-epsilon",
       ],

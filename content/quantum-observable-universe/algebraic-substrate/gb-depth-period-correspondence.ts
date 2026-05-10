@@ -4,6 +4,10 @@ export default conjecture({
   label: "conj:gb-depth-period-correspondence",
   title:
     "GS-depth $\\leftrightarrow$ Goncharov period-depth correspondence",
+  lean: {
+    ref: "qou:QOU.AlgebraicSubstrate.GBDepthPeriodCorrespondence",
+    validation: "not_checked",
+  },
   uses: [
     "def:frobenius-hopf-substrate",
     "def:archimedean-realization-functor",

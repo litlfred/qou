@@ -4,6 +4,10 @@ export default proposition({
   label: "prop:explicit-central-idempotent",
   title:
     "Explicit central primitive idempotents $e_\\lambda$ via Murphy elements",
+  lean: {
+    ref: "qou:QOU.BraidKnot.ExplicitCentralIdempotent.explicit_central_idempotent_via_murphy",
+    validation: "not_checked",
+  },
   uses: [
     "prop:hoefsmit-seminormal-form",
     "prop:wedderburn-weight-canonical",

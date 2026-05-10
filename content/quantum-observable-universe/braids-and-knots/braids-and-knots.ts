@@ -406,6 +406,11 @@ export default chapter({
         "chirality-period-pairing",
         // Bring-embeddable knots: genus-bounded falsifiability targets.
         "bring-embeddable-knots",
+        // Placement of paper's existing knot-indexed convolutions in
+        // the bi-filtration grid.
+        "knot-indexed-convolution-grid",
+        // Conway-KT mutant pair: B1 Vol-injectivity sanity check.
+        "conway-kt-vol-injectivity-test",
         "archimedean-remainder-exponential-decay",
         "wedderburn-as-noncomm-fourier",
         "degree-one-braid-trivial-volume",

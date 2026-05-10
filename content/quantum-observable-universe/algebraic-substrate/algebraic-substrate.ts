@@ -95,10 +95,16 @@ export default chapter({
         "surreal-squeeze",
         // Graded-Mikusiński keystone: GS-depth = Goncharov period-depth.
         "gb-depth-period-correspondence",
+        // Bi-filtration H_q^(n,K): depth axis × knot axis.
+        "hq-bi-filtration",
+        // Joint motivic-Galois × braid-group action on the bi-filtration.
+        "joint-galois-braid-action",
         // Graded Baer-* on H_q across the depth filtration.
         "graded-baer-star-Hq",
         // Two-filtration bridge: iterated-integral depth ↔ partition GB-depth.
         "two-filtration-bridge",
+        // Geometric realisation question for Cl_3(2π/5) at Bring's ζ_5.
+        "cl3-zeta5-geometric-realization",
         "classical-riemann-zeta",
         "classical-riemann-hypothesis",
         "macroscopic-stability-equivalence",
