@@ -59,12 +59,27 @@ import mpmath
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as _Q_CANONICAL
 from crt_markov import (
-    markov_trace_three_channels,
     markov_trace_symbolic_eval,
     _build_crossings,
-    _h3_wedderburn_weights,
     _Phi_q_mp,
 )
+
+
+def markov_trace_three_channels(Z, N, include_inter, m_pp, m_pn, m_nn,
+                                  q_val, precision=50):
+    """Compatibility wrapper: returns `{"full": markov_trace_symbolic_eval(...)}`.
+
+    The legacy multi-channel return shape (`{"full", "pp", "pn", "nn"}`) was
+    removed when `crt_markov` migrated to the canonical Jones-Markov y_λ via
+    `markov_trace_symbolic_eval` (single-value descended trace).  Call sites
+    in this script only use the `"full"` field, so a single-key dict
+    suffices.  pp/pn/nn channel breakdown was experimental and is not
+    needed by the residue spectral sum.
+    """
+    val = markov_trace_symbolic_eval(
+        Z, N, include_inter, m_pp, m_pn, m_nn, q_val, precision=precision,
+    )
+    return {"full": val}
 
 
 def primitive_root_of_unity(n, precision=50):
@@ -109,9 +124,13 @@ def residue_at_root(Z, N, include_inter, m_pp, m_pn, m_nn,
         # magnitude of the relevant q-integer factors).
         w_real = mpmath.fabs(w)
         try:
+            # `channel` arg of the outer function is accepted for API
+            # stability but the current `markov_trace_symbolic_eval` returns
+            # the canonical Jones-Markov full-channel value (no per-channel
+            # split); keeping the outer param for caller compatibility.
             tr_w = markov_trace_symbolic_eval(
                 Z, N, include_inter, m_pp, m_pn, m_nn, w_real,
-                precision=precision, channel=channel)
+                precision=precision)
             qi = 1 / w_real
             # Use tr_M itself as the "Φ_q-weighted graded trace" surrogate;
             # the true Φ_q(tr_M) is finite wherever |tr_M| < w_real.
