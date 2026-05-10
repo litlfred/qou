@@ -390,13 +390,20 @@ if __name__ == "__main__":
               f"{diff:+.6e}  "
               f"[{'SAME' if abs(diff) < 1e-9 else 'DIFFER'}]")
 
-    # Schur-Weyl sum for p and n at A=1
-    print("\n── Schur-Weyl mass trace at A = 1 ──")
-    from schur_weyl_symbolic import schur_weyl_weight
+    # Markov-trace sum (canonical Wenzl-Jones-Markov y_λ) for p and n
+    # at A = 1.  Earlier versions of this self-test used the legacy
+    # 2-var-Schur weight `schur_weyl_weight` which vanishes on > 2-row
+    # partitions and is wrong for the Markov-trace decomposition
+    # (Ref: docs/audits/2026-05-08-p3-h-3a-divergence.md).
+    print("\n── Markov-trace mass at A = 1 (canonical y_λ) ──")
+    from markov_weights_symbolic import solve_y_lambda
+    y_lambda_dict = solve_y_lambda(3)
     for label in ["p", "n"]:
         total = Integer(0)
         for lam in partitions_of(3):
-            w = schur_weyl_weight(lam, q)
+            w = y_lambda_dict.get(tuple(lam), sp.Integer(0))
+            if w == 0:
+                continue
             chi = q_character_on_braid_word(
                 lam, atomic_braid_to_crossings(
                     {"p": 1, "n": 0}[label], {"p": 0, "n": 1}[label],

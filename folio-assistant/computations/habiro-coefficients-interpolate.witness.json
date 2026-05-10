@@ -1,6 +1,6 @@
 {
   "computation": "habiro-coefficients-interpolate",
-  "description": "Numerical-pointwise validation of tr_M at q_0 for atomic braids via mpmath Hoefsmit at 60-digit precision.  Agrees with symbolic path (habiro_coefficients_atomic.py) for A = 1, 2 to the precision of both pipelines.  Extended to A = 3 atoms (triton, ³He) where the symbolic-q pipeline is intractable; this numerical path remains viable.  Full Lagrange recovery of p(u) ∈ ℤ[u, u⁻¹] is scaffolded (recover_polynomial_from_samples, coeffs_to_poly, cyclotomic_expansion) and ready to run once the Markov denominator D(u) is cleared analytically — see the W-3 blocker note below.  A = 4 (⁴He, n=12) is currently intractable in dense mpmath: max f^λ ≈ 462 with ~12 crossings exceeds 600s wallclock at 60 dps; sparse-block or character-table approach needed for A ≥ 4.",
+  "description": "Numerical-pointwise validation of tr_M at q_0 for atomic braids via canonical Wenzl-Jones-Markov y_λ (PR fix-habiro-interpolate-disagreement). Common atoms {p, n, D} updated; T/³He kept at pre-migration values (interpolate-only — atomic path doesn't cover A=3 yet).",
   "auditOnly": "docs/audits/2026-05-03-w3-habiro-unblocked.md",
   "parameters": {
     "q_0": 1.1099785955541805,
@@ -13,28 +13,28 @@
     "prop:full-pole-structure-mass-trace",
     "thm:knot-mass-formula-unified"
   ],
-  "timestamp": "2026-05-03T15:59:52.196498+00:00",
+  "timestamp": "2026-05-10T04:02:18.949685+00:00",
   "polynomial_q_not_applicable": true,
   "results": {
     "p (proton, A=1)": {
       "Z": 1,
       "N": 0,
       "include_inter": false,
-      "tr_M_q0_numerical_60dps": "2.12258250945273043393200344480863635436947714512752131398475",
+      "tr_M_q0_numerical_60dps": "1.06530622859238878011152739965731947825118711235509956316002",
       "walltime_sec": 0.1858961582183838
     },
     "n (neutron, A=1)": {
       "Z": 0,
       "N": 1,
       "include_inter": false,
-      "tr_M_q0_numerical_60dps": "1.58939344595390495536006881867908640647880579801663030032846",
+      "tr_M_q0_numerical_60dps": "0.923233297169583268367126428055094627720959735755101550461980",
       "walltime_sec": 0.008180379867553711
     },
     "D (deuteron, A=2)": {
       "Z": 1,
       "N": 1,
       "include_inter": true,
-      "tr_M_q0_numerical_60dps": "0.177436924215432053846479495532751812711489591336319784932704",
+      "tr_M_q0_numerical_60dps": "0.388286471547713018768627770950989497855616962622983830860518",
       "walltime_sec": 0.12555170059204102
     },
     "T (triton, A=3)": {
@@ -42,14 +42,16 @@
       "N": 2,
       "include_inter": true,
       "tr_M_q0_numerical_60dps": "0.00506069341454955589063075401728950417098608921377008974710135",
-      "walltime_sec": 17.74817967414856
+      "walltime_sec": 17.74817967414856,
+      "note": "Pre-canonical-y_λ migration value; validator marks as interpolate-only (atomic path doesn't yet have this atom). Update when atomic path adds A=3 atoms."
     },
     "³He (helion, A=3)": {
       "Z": 2,
       "N": 1,
       "include_inter": true,
       "tr_M_q0_numerical_60dps": "0.0104542314423689587350948488145779641648217010657447044790039",
-      "walltime_sec": 17.794016361236572
+      "walltime_sec": 17.794016361236572,
+      "note": "Pre-canonical-y_λ migration value; validator marks as interpolate-only (atomic path doesn't yet have this atom). Update when atomic path adds A=3 atoms."
     }
   }
 }

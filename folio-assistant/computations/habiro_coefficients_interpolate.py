@@ -115,7 +115,20 @@ def chi_lambda_numerical(shape, q_val, crossings):
 
 
 def schur_weyl_weight_numerical(shape, q_val):
-    """w_λ(q) = s_λ(q, q⁻¹) / H_q(λ), numerically."""
+    """LEGACY 2-var-Schur weight `w_λ(q) = s_λ(q, q⁻¹) / H_q(λ)`,
+    numerically.
+
+    **Deprecated** for use as a Markov-trace weight (PR #572 audit:
+    [`docs/audits/2026-05-08-p3-h-3a-divergence.md`](../../docs/audits/2026-05-08-p3-h-3a-divergence.md)):
+    `s_λ(q, q⁻¹)` vanishes for partitions with > 2 rows, dropping
+    the sign-rep contribution and any mixed-row Wedderburn block
+    that the canonical Markov-trace pipeline carries. Use
+    `y_lambda_numerical` (Wenzl-Jones-Markov) below instead.
+
+    Kept for callers that genuinely want the 2-var-Schur form
+    (e.g. SU(2)-Schur–Weyl restriction sub-probes); not used in
+    `markov_trace_numerical`. -- Ref: [docs/audits/2026-05-08-p3-h-3a-divergence.md]
+    """
     from schur_weyl_symbolic import schur_at_two_vars
     from hecke_characters import young_hooks
     q_sym = sp.Symbol('q_tmp', positive=True, real=True)
@@ -131,13 +144,58 @@ def schur_weyl_weight_numerical(shape, q_val):
     return s_val / H_val
 
 
+# Per-`q_val` cache for the canonical Wenzl-Jones-Markov weights.
+# Built once per call to `markov_trace_numerical` and re-used across
+# the partition loop (avoids recomputing the full `y_lambda_at(n, q)`
+# dict for every shape).
+_Y_LAMBDA_CACHE: dict[tuple[int, str], dict] = {}
+
+
+def y_lambda_numerical(shape, q_val, n=None):
+    """Canonical Wenzl-Jones-Markov weight `y_λ(q) = s_λ_principal(q) / Z(q)`,
+    numerically, via `wedderburn_jones_markov.y_lambda_at`.
+
+    Replaces `schur_weyl_weight_numerical` (legacy 2-var-Schur,
+    deprecated) for Markov-trace numerical evaluation.  Per PR #572's
+    audit `docs/audits/2026-05-08-p3-h-3a-divergence.md`, this is
+    the canonical weight that all q-Hecke seminormal computations
+    use; the legacy 2-var-Schur form vanishes on > 2-row partitions
+    and is wrong for the Markov-trace pipeline.
+    """
+    if n is None:
+        n = sum(shape)
+    cache_key = (n, str(q_val))
+    if cache_key not in _Y_LAMBDA_CACHE:
+        from wedderburn_jones_markov import y_lambda_at
+        _Y_LAMBDA_CACHE[cache_key] = y_lambda_at(n, q_val=q_val)
+    val = _Y_LAMBDA_CACHE[cache_key].get(tuple(shape))
+    if val is None:
+        return mp.mpc(0)
+    # Evaluate at the AMBIENT mpmath precision (mp.mp.dps) rather
+    # than the y_lambda_at internal evalf(30); this lets the
+    # interpolate path's 60-digit ambient precision propagate
+    # through to the witness output, matching the atomic path's
+    # precision floor.
+    target_dps = max(mp.mp.dps, 50)
+    return mp.mpc(complex(sp.sympify(val).evalf(target_dps)))
+
+
 def markov_trace_numerical(Z, N, q_val, include_inter=True):
+    """Numerical tr_M(T_w(Z, N), q_val) via canonical Wenzl-Jones-Markov
+    weights `y_λ(q_val)` (NOT the legacy 2-var-Schur form, which
+    vanishes for > 2-row partitions and is wrong for Markov-trace).
+
+    Migration from `schur_weyl_weight_numerical` to `y_lambda_numerical`
+    closes the agreement gap with `habiro_coefficients_atomic.py`'s
+    `markov_trace_symbolic` (PR `claude/fix-habiro-interpolate-disagreement`).
+    """
     from schur_weyl_symbolic import partitions_of
     A = Z + N
+    n = 3 * A
     crossings = atomic_braid_to_crossings(Z, N, include_inter=include_inter)
     total = mp.mpc(0)
-    for lam in partitions_of(3 * A):
-        w = schur_weyl_weight_numerical(lam, q_val)
+    for lam in partitions_of(n):
+        w = y_lambda_numerical(lam, q_val, n=n)
         if abs(w) < 1e-30:
             continue
         chi, d = chi_lambda_numerical(lam, q_val, crossings)

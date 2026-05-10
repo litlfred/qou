@@ -1,13 +1,20 @@
 #!/usr/bin/env python3
 """Term 6 — Mittag-Leffler full pole sum per prop:full-pole-structure-mass-trace.
 
-⚠ CONVENTION CAVEAT (added 2026-05-03 in PR #537 follow-up).
+⚠ CONVENTION CAVEAT (updated 2026-05-09 — previously outdated).
 
-This script reads `habiro-coefficients-atomic.witness.json`, which is
-populated by `habiro_coefficients_atomic.py::markov_trace_symbolic`
-using `schur_weyl_weight(λ, q) = s_λ(q, q⁻¹) / H_q(λ)` (Schur function
-at two variables / q-hook product).  That is NOT the canonical Markov
-trace specified in the paper.
+This script reads `habiro-coefficients-atomic.witness.json`, which
+is now populated by `habiro_coefficients_atomic.py::markov_trace_symbolic`
+using the **canonical** Wenzl-Jones-Markov weight `y_λ(q)` (per
+PR #572 migration; see
+[`docs/audits/2026-05-08-p3-h-3a-divergence.md`](../../docs/audits/2026-05-08-p3-h-3a-divergence.md)).
+
+Earlier versions of this docstring claimed the upstream witness
+used the legacy `schur_weyl_weight(λ, q) = s_λ(q, q⁻¹) / H_q(λ)`
+(Schur 2-var / q-hook), which vanishes for > 2-row partitions
+and was the wrong Markov-trace weight.  That migration is now
+complete on the upstream witness; this script consumes the
+correct canonical values.
 
 Per `content/.../y-lambda-closed-form-wenzl-bridge.md:1-32` and
 `notation-register.md:28`, the Markov trace decomposition is
@@ -16,11 +23,12 @@ Per `content/.../y-lambda-closed-form-wenzl-bridge.md:1-32` and
     y_λ  = s_λ(1, Q, …, Q^{r-1}) / Σ_μ d_μ s_μ(1, Q, …, Q^{r-1}),
            Q = q²
 
-i.e. the **Wenzl-bridge central coefficient**, NOT s_λ(q, q⁻¹) / H_q(λ).
-At q_0 = 1.10998 the deuteron split is:
+At q_0 = 1.10998 the deuteron canonical-y_λ value is
 
-    canonical Markov tr_M (markov_peel ≡ Hoefsmit, 1ppb cross-check)  =  0.388
-    Schur-Weyl-weighted trace consumed by THIS script                  =  0.177
+    canonical Markov tr_M (markov_peel ≡ Hoefsmit ≡ canonical-y_λ)  =  0.388
+
+(the legacy 2-var-Schur-weighted value 0.177 is no longer used
+upstream and is recorded here only for historical comparison).
 
 The canonical Term-6 path is `term6_residues_at_roots.py` (PR #526),
 which consumes `markov_peel.tr_M_atomic` directly.  This script is
