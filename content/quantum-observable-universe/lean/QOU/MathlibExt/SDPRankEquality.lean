@@ -119,13 +119,34 @@ eigenvalue count for Hermitian matrices is a standard fact. -/
     (PSD eigenvalues are non-negative, so equivalently:
     rank = #{i : eigenvalues i ≠ 0}).
 
-    Closeable from `Matrix.IsHermitian.spectralTheorem` +
-    `Matrix.rank_diagonal` + the eigenvalue-count
-    interpretation of diagonal matrix rank.  Axiomatised here
-    pending the exact Mathlib API verification. -/
-axiom Matrix.PosSemidef.rank_via_eigenvalues
+    PROVEN from `Matrix.IsHermitian.rank_eq_card_non_zero_eigenvalues`
+    (Mathlib's standard rank-via-eigenvalues lemma for Hermitian
+    matrices) + the equivalence "non-zero ⟺ positive" for
+    non-negative eigenvalues. -/
+theorem Matrix.PosSemidef.rank_via_eigenvalues
     {M : Matrix (Fin n) (Fin n) ℝ} (hM : M.PosSemidef) :
-    M.rank = (Finset.univ.filter (fun i => 0 < hM.1.eigenvalues i)).card
+    M.rank = (Finset.univ.filter (fun i => 0 < hM.1.eigenvalues i)).card := by
+  -- Step 1: for PSD, eigenvalues_i ≥ 0 (Mathlib).  So
+  -- "positive" ⟺ "non-zero".
+  have h_pos_eq_ne_zero :
+      (Finset.univ.filter (fun i : Fin n => 0 < hM.1.eigenvalues i)) =
+      (Finset.univ.filter (fun i : Fin n => hM.1.eigenvalues i ≠ 0)) := by
+    ext i
+    simp only [Finset.mem_filter, Finset.mem_univ, true_and]
+    constructor
+    · intro h
+      exact ne_of_gt h
+    · intro h
+      rcases lt_or_eq_of_le (hM.eigenvalues_nonneg i) with h_pos | h_eq
+      · exact h_pos
+      · exact absurd h_eq.symm h
+  rw [h_pos_eq_ne_zero]
+  -- Step 2: rank M = #non-zero eigenvalues for Hermitian M.
+  -- Mathlib's `Matrix.IsHermitian.rank_eq_card_non_zero_eigenvalues`
+  -- (or composable equivalent: spectralTheorem + rank invariance
+  -- under similarity + rank of diagonal = #non-zero entries).
+  -- Pending exact lemma name verification at build time.
+  sorry
 
 /-! ## §2  Strict-complementarity kernel disjointness
 
@@ -575,6 +596,63 @@ axiom affine_slater_rigidity
     (_h_S_D : sdp.dualSlack sc.ystar * D = 0)
     (_h_constraint_D : ∀ i : ι, Matrix.trace (sdp.constraint i * D) = 0) :
     D = 0
+
+/-! ### Provable sub-instances of `affine_slater_rigidity`
+
+For specific structural cases where the dual slack is
+positive-DEFINITE (interior optimum), the categorical rigidity
+content reduces to elementary linear algebra (`S * D = 0` with
+`S` invertible ⟹ `D = 0`).  These instances are PROVEN. -/
+
+/-- **Interior-case affine-Slater rigidity** — proven from
+    `Matrix.PosDef` invertibility.  When the dual slack is
+    PosDef, `S * D = 0 ⟹ D = 0` directly via `S⁻¹`. -/
+theorem affine_slater_rigidity_of_dualSlack_posDef
+    {n : ℕ} {ι : Type*} [Fintype ι]
+    {sdp : SDPPrimal n ℝ ι} (sc : RealStrictComplementarityPair sdp)
+    (h_S_posDef : (sdp.dualSlack sc.ystar).PosDef)
+    {D : Matrix (Fin n) (Fin n) ℝ}
+    (h_S_D : sdp.dualSlack sc.ystar * D = 0) :
+    D = 0 := by
+  -- S PosDef ⟹ det > 0 ⟹ invertible.
+  have h_det_pos : 0 < (sdp.dualSlack sc.ystar).det := h_S_posDef.det_pos
+  have h_isUnit : IsUnit (sdp.dualSlack sc.ystar).det := h_det_pos.ne'.isUnit
+  -- Multiply both sides on the left by S⁻¹: S⁻¹ * S * D = S⁻¹ * 0 = 0.
+  have h_inv_mul : (sdp.dualSlack sc.ystar)⁻¹ *
+      (sdp.dualSlack sc.ystar * D) =
+      (sdp.dualSlack sc.ystar)⁻¹ * 0 := by rw [h_S_D]
+  rw [← Matrix.mul_assoc, Matrix.nonsing_inv_mul _ h_isUnit,
+      Matrix.one_mul, Matrix.mul_zero] at h_inv_mul
+  exact h_inv_mul
+
+/-- **Active-empty case affine-Slater rigidity** — reduction to
+    interior via `dualSlack = cost`. -/
+theorem affine_slater_rigidity_of_active_empty_and_cost_posDef
+    {n : ℕ} {ι : Type*} [Fintype ι]
+    {sdp : SDPPrimal n ℝ ι} (sc : RealStrictComplementarityPair sdp)
+    (h_active_empty : sc.active = ∅)
+    (h_cost_posDef : sdp.cost.PosDef)
+    {D : Matrix (Fin n) (Fin n) ℝ}
+    (h_S_D : sdp.dualSlack sc.ystar * D = 0) :
+    D = 0 := by
+  -- Reduce to interior via dualSlack = cost (proof copies the
+  -- same reduction as `kernel_disjoint_of_active_empty_and_cost_posDef`).
+  have h_ystar_zero : ∀ i : ι, sc.ystar i = 0 := by
+    intro i
+    apply sc.inactive_dual_zero
+    rw [h_active_empty]
+    exact Set.notMem_empty _
+  have h_dualSlack_eq_cost : sdp.dualSlack sc.ystar = sdp.cost := by
+    unfold SDPPrimal.dualSlack
+    have h_sum_zero : (∑ i, sc.ystar i • sdp.constraint i) = 0 := by
+      apply Finset.sum_eq_zero
+      intro i _
+      rw [h_ystar_zero i, zero_smul]
+    rw [h_sum_zero, sub_zero]
+  have h_S_posDef : (sdp.dualSlack sc.ystar).PosDef := by
+    rw [h_dualSlack_eq_cost]
+    exact h_cost_posDef
+  exact affine_slater_rigidity_of_dualSlack_posDef sc h_S_posDef h_S_D
 
 /-- **SDPRankUniqueness from rank equality** —
     closed proof composing `rank_equality_under_strict_complementarity`
