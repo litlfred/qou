@@ -17,3 +17,5 @@ This connects the QOU to Verlinde's entropic gravity programme:
 gravity is weak because most braiding at a typical fibre is
 **already resolved** (contributing to $T^{(q)}$ as matter), leaving
 only the in-progress tails to set the gravitational coupling.
+
+![Emergent gravity from information geometry.](rendered/emergent-gravity-0.svg)

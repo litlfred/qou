@@ -127,3 +127,5 @@ mass $\mathfrak{m}_{\mathrm{glue}} \geq \Delta_q > 0$.  Since
 isolated colour charges would require a vortex of infinite
 length (and hence infinite mass), confinement follows: all
 finite-energy excitations are colour singlets.
+
+![Yang–Mills mass gap — categorical spectral picture.](rendered/ym-mass-gap-0.svg)

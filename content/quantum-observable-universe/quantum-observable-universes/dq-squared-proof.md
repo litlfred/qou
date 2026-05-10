@@ -22,3 +22,5 @@ $\mathcal{L}_\xi\varTheta = 0$ (since $\iota_\xi d\varTheta = 0$ and $\varTheta(
 $\mathcal{L}_\xi(\varTheta \wedge \mathcal{L}_\xi\alpha) = \varTheta \wedge \mathcal{L}_\xi^2\alpha$;
 the factor $\varTheta \wedge \varTheta = 0$ in $b^2\varTheta \wedge \varTheta \wedge \mathcal{L}_\xi^2\alpha$ kills this term. Hence
 $d_q^2\alpha = abd\varTheta \wedge \mathcal{L}_\xi\alpha$.
+
+![The categorical Dirac square — D_∇².](rendered/dirac-square-blocks-0.svg)

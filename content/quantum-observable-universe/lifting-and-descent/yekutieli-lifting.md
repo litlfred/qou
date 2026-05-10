@@ -20,3 +20,4 @@ level $n{+}1$ exists if and only if the obstruction class
 $\kappa_n \in H^2(M, \mathcal{B})$
 ([quantum characteristic classes](#def:quantum-characteristic-classes)) vanishes.
 
+![Yekutieli obstruction along the brane tower.](rendered/yekutieli-staircase-0.svg)

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 380"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>Regime table — log scale of physical lengths (dark mode)</title>
+  <desc>
+    Horizontal log-scale axis from 10⁻³⁵ m (Planck) to 10²⁶ m
+    (Hubble).  Annotated bands: categorical substrate, Hecke
+    regime, thermodynamic, general relativity.  Vertical lines
+    at ℓ_P, ℏc/Q_β, atomic, nuclear, cosmological scales.
+  </desc>
+  <defs>
+    <style>
+      .bg     { fill: #0e0e12; }
+      .axis   { stroke: #e6e6ea; stroke-width: 1.6; fill: none; }
+      .ticklbl{ font-size: 11px; fill: #aaa; text-anchor: middle; }
+      .axislbl{ font-size: 13px; fill: #e6e6ea; font-style: italic; }
+      .band1  { fill: #182830; opacity: 0.7; }
+      .band2  { fill: #2e2818; opacity: 0.7; }
+      .band3  { fill: #182f18; opacity: 0.7; }
+      .band4  { fill: #2f1818; opacity: 0.7; }
+      .bandlbl{ font-size: 13px; font-weight: 700; fill: #e6e6ea;
+                text-anchor: middle; }
+      .scale  { stroke: #e6e6ea; stroke-width: 1.4; fill: none; }
+      .scalelbl{ font-size: 11px; fill: #e6e6ea; text-anchor: middle; }
+      .ttl    { font-size: 17px; font-style: italic; fill: #e6e6ea; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1100" height="380"/>
+
+  <text x="550" y="32" text-anchor="middle" class="ttl">Regime table — physical length scales</text>
+
+  <!-- Plot area: x=80..1020, exponent -35..26 covers 61 decades.  Width 940/61 ≈ 15.4 px/decade. -->
+  <!-- x = 80 + (exp + 35) * 15.4 -->
+  <!-- Bands: -->
+  <!-- Categorical substrate: exp -35 .. -23 (Planck → ?)  x = 80..265 -->
+  <rect class="band1" x="80" y="120" width="185" height="60"/>
+  <text x="172" y="155" class="bandlbl">categorical substrate</text>
+  <text x="172" y="172" class="ticklbl">below ℓ_P  ⇒  on the fibre</text>
+
+  <!-- Hecke regime: exp -23 .. -10  x = 265..465 -->
+  <rect class="band2" x="265" y="120" width="200" height="60"/>
+  <text x="365" y="155" class="bandlbl">Hecke regime</text>
+  <text x="365" y="172" class="ticklbl">braids · particles · nuclei</text>
+
+  <!-- Thermodynamic: exp -10 .. 7  x = 465..728 -->
+  <rect class="band3" x="465" y="120" width="263" height="60"/>
+  <text x="596" y="155" class="bandlbl">thermodynamic</text>
+  <text x="596" y="172" class="ticklbl">atoms · molecules · cells · everyday matter</text>
+
+  <!-- GR: exp 7 .. 26  x = 728..1020 -->
+  <rect class="band4" x="728" y="120" width="293" height="60"/>
+  <text x="874" y="155" class="bandlbl">general relativity</text>
+  <text x="874" y="172" class="ticklbl">planets · stars · galaxies · cosmology</text>
+
+  <!-- Axis line -->
+  <line class="axis" x1="80" y1="240" x2="1020" y2="240"/>
+
+  <!-- Major ticks at 10^k for k = -35, -25, -15, -5, 5, 15, 25 -->
+  <g>
+    <line x1="80"  y1="235" x2="80"  y2="245" stroke="#e6e6ea" stroke-width="1.4"/>
+    <text x="80"  y="262" class="ticklbl">10⁻³⁵</text>
+
+    <line x1="234" y1="235" x2="234" y2="245" stroke="#e6e6ea" stroke-width="1.4"/>
+    <text x="234" y="262" class="ticklbl">10⁻²⁵</text>
+
+    <line x1="388" y1="235" x2="388" y2="245" stroke="#e6e6ea" stroke-width="1.4"/>
+    <text x="388" y="262" class="ticklbl">10⁻¹⁵</text>
+
+    <line x1="542" y1="235" x2="542" y2="245" stroke="#e6e6ea" stroke-width="1.4"/>
+    <text x="542" y="262" class="ticklbl">10⁻⁵</text>
+
+    <line x1="696" y1="235" x2="696" y2="245" stroke="#e6e6ea" stroke-width="1.4"/>
+    <text x="696" y="262" class="ticklbl">10⁵</text>
+
+    <line x1="850" y1="235" x2="850" y2="245" stroke="#e6e6ea" stroke-width="1.4"/>
+    <text x="850" y="262" class="ticklbl">10¹⁵</text>
+
+    <line x1="1004" y1="235" x2="1004" y2="245" stroke="#e6e6ea" stroke-width="1.4"/>
+    <text x="1004" y="262" class="ticklbl">10²⁵</text>
+  </g>
+
+  <text x="1020" y="290" class="axislbl" text-anchor="end">length  /  metres</text>
+
+  <!-- Major reference scales as vertical thin lines -->
+  <line stroke="#888" stroke-width="1.2" stroke-dasharray="3 2" x1="80" y1="240" x2="80" y2="120"/>
+  <text x="80" y="113" class="scalelbl">Planck</text>
+
+  <line stroke="#888" stroke-width="1.2" stroke-dasharray="3 2" x1="388" y1="240" x2="388" y2="120"/>
+  <text x="388" y="113" class="scalelbl">nuclear</text>
+
+  <line stroke="#888" stroke-width="1.2" stroke-dasharray="3 2" x1="465" y1="240" x2="465" y2="120"/>
+  <text x="465" y="113" class="scalelbl">atomic</text>
+
+  <line stroke="#888" stroke-width="1.2" stroke-dasharray="3 2" x1="700" y1="240" x2="700" y2="120"/>
+  <text x="700" y="113" class="scalelbl">human</text>
+
+  <line stroke="#888" stroke-width="1.2" stroke-dasharray="3 2" x1="1004" y1="240" x2="1004" y2="120"/>
+  <text x="1004" y="113" class="scalelbl">Hubble</text>
+
+  <text x="550" y="340" text-anchor="middle" class="ticklbl" font-style="italic">
+    each band is the regime in which one descriptive language dominates;  the QOU substrate spans the leftmost
+  </text>
+</svg>

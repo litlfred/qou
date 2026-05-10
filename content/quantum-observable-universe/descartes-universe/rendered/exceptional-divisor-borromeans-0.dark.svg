@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 540"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>Quark Borromeans on the exceptional divisor (dark mode)</title>
+  <desc>
+    Two Borromean rings on a small ℙ¹(ℂ) at a corner of Σ₄ — one
+    triple of light up-type quarks (u, c, t) and one triple of
+    darker down-type quarks (d, s, b).  The exceptional divisor
+    is drawn as a small dashed circle; the Borromean rings are
+    overlaid.  Arrows show where the three coral tubes c_r, c_g,
+    c_b intersect each ring.
+  </desc>
+  <defs>
+    <style>
+      .bg     { fill: #0e0e12; }
+      .div    { fill: none; stroke: #555; stroke-width: 1.4;
+                stroke-dasharray: 4 3; }
+      .red    { fill: none; stroke: #c0392b; stroke-width: 3.4; }
+      .grn    { fill: none; stroke: #27ae60; stroke-width: 3.4; }
+      .blu    { fill: none; stroke: #2980b9; stroke-width: 3.4; }
+      .red2   { fill: none; stroke: #c0392b; stroke-width: 3.4;
+                stroke-dasharray: 7 5; }
+      .grn2   { fill: none; stroke: #27ae60; stroke-width: 3.4;
+                stroke-dasharray: 7 5; }
+      .blu2   { fill: none; stroke: #2980b9; stroke-width: 3.4;
+                stroke-dasharray: 7 5; }
+      .lblr   { fill: #c0392b; font-size: 16px; font-weight: 700;
+                text-anchor: middle; }
+      .lblg   { fill: #27ae60; font-size: 16px; font-weight: 700;
+                text-anchor: middle; }
+      .lblb   { fill: #2980b9; font-size: 16px; font-weight: 700;
+                text-anchor: middle; }
+      .ttl    { font-size: 17px; font-style: italic; fill: #e6e6ea; }
+      .sub    { font-size: 11px; fill: #aaa; text-anchor: middle; }
+      .cap    { font-size: 13px; fill: #e6e6ea; text-anchor: middle; }
+      .divlbl { fill: #aaa; font-size: 12px; font-style: italic; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="760" height="540"/>
+
+  <text x="380" y="32" text-anchor="middle" class="ttl">Quark Borromeans on the exceptional divisor</text>
+
+  <!-- ===== Left: up-type Borromean (u, c, t)   centred (200, 280) ===== -->
+  <circle class="div" cx="200" cy="280" r="155"/>
+  <text x="60" y="170" class="divlbl">𝒮_p ⊂ Σ₄</text>
+  <text x="60" y="186" class="divlbl">exceptional divisor</text>
+
+  <!-- 3 Borromean rings (solid) -->
+  <circle class="red" cx="200" cy="226" r="68"/>
+  <text x="200" y="170" class="lblr">u</text>
+  <circle class="grn" cx="153" cy="312" r="68"/>
+  <text x="124" y="396" class="lblg">d</text>
+  <circle class="blu" cx="247" cy="312" r="68"/>
+  <text x="278" y="396" class="lblb">s</text>
+
+  <text x="200" y="490" class="cap">light triple — generation 1</text>
+  <text x="200" y="510" class="sub">u, d, s   (light up-type + down-type)</text>
+
+  <!-- ===== Right: heavier triple (dashed)  centred (560, 280) ===== -->
+  <circle class="div" cx="560" cy="280" r="155"/>
+
+  <!-- 3 Borromean rings (dashed) -->
+  <circle class="red2" cx="560" cy="226" r="68"/>
+  <text x="560" y="170" class="lblr">c</text>
+  <circle class="grn2" cx="513" cy="312" r="68"/>
+  <text x="484" y="396" class="lblg">b</text>
+  <circle class="blu2" cx="607" cy="312" r="68"/>
+  <text x="638" y="396" class="lblb">t</text>
+
+  <text x="560" y="490" class="cap">heavy triple — generations 2, 3</text>
+  <text x="560" y="510" class="sub">c, b, t   (charm, bottom, top — heavier brane-tower levels)</text>
+</svg>

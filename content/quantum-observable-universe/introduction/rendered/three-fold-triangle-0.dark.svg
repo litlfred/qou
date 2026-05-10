@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 540"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>Three observations, one constraint (dark mode)</title>
+  <desc>
+    Equilateral triangle whose vertices carry the three threefold
+    structures observed in nature (three colours red/green/blue;
+    three generations of matter; three-fold chirality).  The
+    central node carries the topological invariant χ(A) = −6 that
+    forces all three; an arrow below points from the triangle to
+    the labelled box "Bring's surface Σ₄", the unique algebraic
+    surface realising χ = −6 with maximal symmetry.
+  </desc>
+  <defs>
+    <marker id="tip" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#e6e6ea"/>
+    </marker>
+    <style>
+      .bg     { fill: #0e0e12; }
+      .edge   { stroke: #e6e6ea; stroke-width: 1.6; fill: none; }
+      .spoke  { stroke: #888; stroke-width: 1.2; fill: none;
+                stroke-dasharray: 4 3; }
+      .vbox   { fill: #0e0e12; stroke: #e6e6ea; stroke-width: 1.4; rx: 6; }
+      .cnode  { fill: #0e0e12; stroke: #e6e6ea; stroke-width: 1.8; }
+      .vlbl   { font-size: 14px; fill: #e6e6ea; text-anchor: middle;
+                font-weight: 700; }
+      .vsub   { font-size: 11px; fill: #aaa; text-anchor: middle; }
+      .clbl   { font-size: 15px; font-weight: 700; fill: #e6e6ea;
+                text-anchor: middle; }
+      .ttl    { font-size: 17px; font-style: italic; fill: #e6e6ea; }
+      .out    { fill: #0e0e12; stroke: #e6e6ea; stroke-width: 1.6; rx: 6; }
+      .red    { fill: #c0392b; }
+      .green  { fill: #27ae60; }
+      .blue   { fill: #2980b9; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="600" height="540"/>
+
+  <text x="300" y="30" text-anchor="middle" class="ttl">Three observations, one constraint</text>
+
+  <!-- Triangle edges (vertex coords A=(300,90), B=(130,360), C=(470,360)) -->
+  <polygon class="edge" points="300,90 130,360 470,360"/>
+
+  <!-- Spokes from centre (300, 270) to each vertex -->
+  <line class="spoke" x1="300" y1="270" x2="300" y2="120"/>
+  <line class="spoke" x1="300" y1="270" x2="160" y2="345"/>
+  <line class="spoke" x1="300" y1="270" x2="440" y2="345"/>
+
+  <!-- Centre node -->
+  <ellipse class="cnode" cx="300" cy="270" rx="60" ry="32"/>
+  <text x="300" y="266" class="clbl">χ(A) = −6</text>
+  <text x="300" y="284" class="vsub">forced</text>
+
+  <!-- Vertex A: three colours -->
+  <rect class="vbox" x="220" y="60" width="160" height="60"/>
+  <text x="300" y="84" class="vlbl">Three colours</text>
+  <g transform="translate(265,98)">
+    <circle class="red"   cx="0"  cy="6" r="5"/>
+    <circle class="green" cx="20" cy="6" r="5"/>
+    <circle class="blue"  cx="40" cy="6" r="5"/>
+    <text x="20" y="20" class="vsub">R · G · B</text>
+  </g>
+
+  <!-- Vertex B: three generations -->
+  <rect class="vbox" x="50" y="340" width="160" height="60"/>
+  <text x="130" y="364" class="vlbl">Three generations</text>
+  <text x="130" y="384" class="vsub">e, μ, τ  ·  u/d, c/s, t/b</text>
+
+  <!-- Vertex C: three-fold chirality -->
+  <rect class="vbox" x="390" y="340" width="160" height="60"/>
+  <text x="470" y="364" class="vlbl">Three-fold chirality</text>
+  <text x="470" y="384" class="vsub">parity-violating triplet</text>
+
+  <!-- Output box -->
+  <line class="edge" x1="300" y1="430" x2="300" y2="465" marker-end="url(#tip)"/>
+  <rect class="out" x="200" y="475" width="200" height="50"/>
+  <text x="300" y="500" class="vlbl">Bring's surface  Σ₄</text>
+  <text x="300" y="518" class="vsub">unique genus-4, χ=−6, Aut = S₅</text>
+</svg>

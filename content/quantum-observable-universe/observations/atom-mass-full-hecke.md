@@ -120,3 +120,5 @@ with $q$-derived Bethe--Weizsäcker coefficients.
 
 **Witness**: `atom-mass-full-hecke.witness.json`
 (exact rationals, three-channel traces, Skein binding decomposition).
+
+![Predicted vs CODATA mass — 50 particles, atoms, isotopes.](rendered/predicted-vs-codata-0.svg)

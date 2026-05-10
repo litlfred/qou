@@ -73,3 +73,5 @@ $\mathrm{GS}(P_1) = \mathrm{GS}(P_2)$.*
   the canonical ILP ground-state configuration for $(Z,N)=(2,2)$.*
 - *`\benzene`: $\ell = 3$, $n_0 = 6$ atom-strands (six C-atoms
   in aromatic ring).*
+
+![Borromean quarks on the exceptional divisor.](rendered/borromean-quarks-0.svg)

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 540"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>Bring's surface as a coral with three colour tubes (dark mode)</title>
+  <desc>
+    A schematic genus-4 surface drawn as a "coral" — a horizontal
+    body with four arched handles rising above.  Three handles
+    are coloured red, green, blue (the colour tubes carrying the
+    spectral coordinates c_r, c_g, c_b); the fourth handle is
+    black (the time / Reeb direction).  Below the body: the
+    invariants χ = −6, Aut = S₅, Hurwitz bound 84(g−1) = 252.
+    This is the paper's iconic figure for Bring's surface Σ₄.
+  </desc>
+  <defs>
+    <style>
+      .bg     { fill: #0e0e12; }
+      .body   { fill: #16161c; stroke: #e6e6ea; stroke-width: 2; }
+      .tube_r { fill: none; stroke: #c0392b; stroke-width: 5;
+                stroke-linecap: round; }
+      .tube_g { fill: none; stroke: #27ae60; stroke-width: 5;
+                stroke-linecap: round; }
+      .tube_b { fill: none; stroke: #2980b9; stroke-width: 5;
+                stroke-linecap: round; }
+      .tube_k { fill: none; stroke: #e6e6ea; stroke-width: 5;
+                stroke-linecap: round; }
+      .hole   { fill: #0e0e12; stroke: #e6e6ea; stroke-width: 1.4; }
+      .lblr   { fill: #c0392b; font-size: 14px; font-weight: 700;
+                text-anchor: middle; }
+      .lblg   { fill: #27ae60; font-size: 14px; font-weight: 700;
+                text-anchor: middle; }
+      .lblb   { fill: #2980b9; font-size: 14px; font-weight: 700;
+                text-anchor: middle; }
+      .lblk   { fill: #e6e6ea; font-size: 14px; font-weight: 700;
+                text-anchor: middle; }
+      .ttl    { font-size: 17px; font-style: italic; fill: #e6e6ea; }
+      .stat   { font-size: 12px; fill: #e6e6ea; text-anchor: middle; }
+      .sub    { font-size: 11px; fill: #aaa; text-anchor: middle; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="760" height="540"/>
+
+  <text x="380" y="32" text-anchor="middle" class="ttl">Bring's surface  Σ₄  —  a coral with four handles</text>
+
+  <!-- Body: horizontal squashed ellipse, centred at (380, 350) -->
+  <ellipse class="body" cx="380" cy="350" rx="320" ry="60"/>
+
+  <!-- Four handles as arches above the body, equally spaced.
+       Each arch is a path from (x_left, 350) up to apex (x_mid, y_top) down to (x_right, 350).
+       Handle bounds (left, right):
+         R: 100–200 (apex 150, y_top 130)
+         G: 240–340 (apex 290, y_top 110)
+         B: 380–480 (apex 430, y_top 110)
+         K: 520–620 (apex 570, y_top 130)  -->
+  <!-- Handle holes (small ellipses where the handle meets body) -->
+
+  <!-- RED handle -->
+  <path class="tube_r" d="M 100 350 C 100 200, 200 200, 200 350"/>
+  <ellipse class="hole" cx="150" cy="345" rx="42" ry="10"/>
+  <text x="150" y="180" class="lblr">c_r</text>
+  <text x="150" y="160" class="lbls">red tube</text>
+
+  <!-- GREEN handle -->
+  <path class="tube_g" d="M 240 350 C 240 180, 340 180, 340 350"/>
+  <ellipse class="hole" cx="290" cy="345" rx="42" ry="10"/>
+  <text x="290" y="160" class="lblg">c_g</text>
+  <text x="290" y="140" class="lbls">green tube</text>
+
+  <!-- BLUE handle -->
+  <path class="tube_b" d="M 380 350 C 380 180, 480 180, 480 350"/>
+  <ellipse class="hole" cx="430" cy="345" rx="42" ry="10"/>
+  <text x="430" y="160" class="lblb">c_b</text>
+  <text x="430" y="140" class="lbls">blue tube</text>
+
+  <!-- BLACK (time / Reeb) handle -->
+  <path class="tube_k" d="M 520 350 C 520 200, 620 200, 620 350"/>
+  <ellipse class="hole" cx="570" cy="345" rx="42" ry="10"/>
+  <text x="570" y="180" class="lblk">σ  =  Reeb</text>
+  <text x="570" y="160" class="lbls">time direction</text>
+
+  <!-- Statistics below -->
+  <text x="380" y="450" class="stat">genus  g = 4   ·   χ(Σ₄) = 2 − 2g = −6   ·   Aut(Σ₄) = S₅   ·   |Aut| = 120</text>
+  <text x="380" y="470" class="sub">below the Hurwitz bound 84(g−1) = 252; uniquely the terminal genus-4 QOU</text>
+  <text x="380" y="495" class="sub">three colour tubes carry the spectral coordinates c_r, c_g, c_b; the time tube generates the Reeb flow</text>
+  <text x="380" y="518" class="sub">— the paper's iconic figure (referenced from Chs 5, 6, 9, 10) —</text>
+</svg>

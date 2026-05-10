@@ -15,3 +15,5 @@ $$
 
 and the norm of the sum equals the sum of the norms (by disjointness
 of the supports).  $\square$
+
+![Crossing-energy stratification.](rendered/crossing-energy-staircase-0.svg)

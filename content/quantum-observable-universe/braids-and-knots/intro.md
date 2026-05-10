@@ -23,3 +23,5 @@ unknots on the exceptional divisor.
 The geometry that carries these knots — Bring's surface — is developed in
 [Chapter 9](#chap:descartes-universe); the physical predictions it generates
 are collected in [Chapter 11](#chap:observations).
+
+![The particle ↔ knot dictionary.](rendered/particle-knot-dictionary-0.svg)

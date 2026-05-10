@@ -59,3 +59,5 @@ $$
 *where $\alpha = m_e \times 8G$ is the same binding scale as in
 the [atomic mass formula](#thm:wedderburn-mass-formula).  Positive
 $\mathbf{E}_{\mathrm{bind}}$ means the molecule is bound.*
+
+![Molecular braid progression: H₂ → CO → CO₂ → CH₄ → C₂H₆ → C₆H₆.](rendered/molecular-progression-0.svg)

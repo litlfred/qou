@@ -17,3 +17,5 @@ $\mathrm{Aut}(\Sigma_4) \cong S_5$ ($\lvert\mathrm{Aut}\rvert = 120$,
 the largest automorphism group for any genus-$4$ curve, though below the
 Hurwitz bound $84(g-1) = 252$) and Euler characteristic
 $\chi(\Sigma_4) = 2 - 2g = -6$.
+
+![Bring's surface as a coral with three colour tubes.](rendered/bring-coral-3-tubes-0.svg)

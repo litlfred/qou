@@ -32,3 +32,5 @@ should reference this table (`[regime-table](#rem:regime-table)`)
 rather than re-tabulate.  When a new derived quantity is added, it
 gets a column here; the per-section tables in the cited blocks
 should be re-projected to the relevant row(s).
+
+![Regime table — physical length scales.](rendered/regime-scale-0.svg)

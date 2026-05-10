@@ -57,3 +57,5 @@ The $\gamma$ term $\approx +0.998$ shows that $B_3$ is
 perturbatively close to the identity — the Borromean
 confinement is a small correction to free quarks, with
 net$(B_3) \approx 1$.
+
+![Knot operations — elementary moves.](rendered/knot-operations-grid-0.svg)

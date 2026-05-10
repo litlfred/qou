@@ -236,3 +236,5 @@ $\mathcal{W}(q) = \mathrm{tr}_{\mathrm{Markov}}((\sigma_1\sigma_2)^5)$
 and the crossing budget ($3 + 0 + 7$) must be
 verified by explicit Iwahori--Hecke algebra computation of the $T_{3,5}$
 braid word reduction.
+
+![β-decay = Markov-stabilisation chain.](rendered/beta-decay-tower-0.svg)

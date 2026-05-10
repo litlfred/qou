@@ -69,3 +69,5 @@ window $[1.109, 1.112]$ is narrow ($\Delta q / q \approx 0.3\%$)
 and will tighten as the individual determinations improve.  Any
 future measurement that falls outside this window would falsify the
 framework.
+
+![The substrate consistency window.](rendered/substrate-consistency-window-0.svg)

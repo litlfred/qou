@@ -137,3 +137,5 @@ ring closure becomes progressively harder.
    (pyridine, furan), the threading link $T(2,N)$ threads
    through atoms with different numbers of linking sites.  How
    does this modify the Alexander polynomial?
+
+![Chain vs ring — C₆ topology comparison.](rendered/chain-vs-ring-0.svg)

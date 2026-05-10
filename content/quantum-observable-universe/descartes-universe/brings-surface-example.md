@@ -19,3 +19,5 @@ This is a smooth curve of genus 4, so $\chi = 2 - 2g = 2 - 8 = -6$. Its automorp
 **Why Bring's surface specifically?** Among all genus-4 curves, Bring's surface is the **terminal object**: it has the largest automorphism group ($S_5$ has order 120), and any other genus-4 QOU maps to it. This is the Descartes theorem.
 
 **Concrete coordinates**: Pick the affine patch $x_5 = 1$. Then $x_4 = -(x_1+x_2+x_3+1)$ and the remaining two equations define a curve in $\mathbb{C}^3$. At $(x_1,x_2,x_3,x_4,x_5) = (1, \zeta, \zeta^2, \zeta^3, \zeta^4)$ where $\zeta = e^{2\pi i/5}$, all three power sums vanish.
+
+![Bring's surface Σ₄ ⊂ ℙ⁴ — three nested constraints.](rendered/bring-power-sums-0.svg)

@@ -255,3 +255,5 @@ complete: every knot with genus $\leq 4$ is reachable
 Faithfulness (whether distinct knots always give distinct Jones
 polynomials) remains an open question, but QOU uses Jones only
 for detection, not classification.
+
+![Knot periodic table — by braid index n and crossing number c.](rendered/knot-periodic-table-0.svg)

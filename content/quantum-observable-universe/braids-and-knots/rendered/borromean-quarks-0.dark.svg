@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 580"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>Borromean quarks on the exceptional divisor (dark mode)</title>
+  <desc>
+    Three unknotted circles in the canonical Borromean
+    configuration — pairwise unlinked, but rigidly bound as a
+    triple — drawn over a small genus-4 surface patch
+    representing the exceptional divisor.  The three circles are
+    coloured red, green, blue (the three quark colours).  Caption:
+    "any two unlinked, all three rigidly bound — the categorical
+    origin of confinement".
+  </desc>
+  <defs>
+    <style>
+      .bg     { fill: #0e0e12; }
+      .surf   { fill: #18181e; stroke: #888; stroke-width: 1.2;
+                stroke-dasharray: 5 4; }
+      .surfl  { font-size: 11px; fill: #bbb; font-style: italic; }
+      .red    { fill: none; stroke: #c0392b; stroke-width: 3.4;
+                stroke-linecap: round; }
+      .grn    { fill: none; stroke: #27ae60; stroke-width: 3.4;
+                stroke-linecap: round; }
+      .blu    { fill: none; stroke: #2980b9; stroke-width: 3.4;
+                stroke-linecap: round; }
+      .lblr   { fill: #c0392b; font-size: 16px; font-weight: 700;
+                text-anchor: middle; }
+      .lblg   { fill: #27ae60; font-size: 16px; font-weight: 700;
+                text-anchor: middle; }
+      .lblb   { fill: #2980b9; font-size: 16px; font-weight: 700;
+                text-anchor: middle; }
+      .ttl    { font-size: 17px; font-style: italic; fill: #e6e6ea; }
+      .cap    { font-size: 13px; font-style: italic; fill: #e6e6ea;
+                text-anchor: middle; }
+      .sub    { font-size: 11px; fill: #aaa; text-anchor: middle; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="600" height="580"/>
+
+  <text x="300" y="32" text-anchor="middle" class="ttl">Borromean quarks on the exceptional divisor</text>
+
+  <!-- Surface patch: an ellipse with a hint of curvature -->
+  <ellipse class="surf" cx="300" cy="290" rx="240" ry="160"/>
+  <text x="300" y="120" text-anchor="middle" class="surfl">exceptional divisor 𝒮_p ⊂ Σ₄ neighbourhood</text>
+
+  <!-- Three Borromean rings.  Standard configuration: each pair appears UNLINKED
+       when the third is removed, but all three together cannot be separated.
+       Approximate by three same-radius circles centred at vertices of an equilateral
+       triangle, with crossings drawn as broken arcs. -->
+  <!-- Centres: r=72 around (300, 290): top (300, 224), lower-left (243, 322), lower-right (357, 322) -->
+
+  <!-- For visual Borromean appearance with proper over/under, use SVG arcs with gaps.
+       Each circle has 6 crossings with the other two (2 per pair).  Drawing the full
+       crossing pattern is complex; here we use stylised circles with subtle visual
+       interleaving. -->
+
+  <!-- RED ring (top) — drawn as continuous circle behind the others -->
+  <circle class="red" cx="300" cy="224" r="78"/>
+  <text x="300" y="158" class="lblr">u</text>
+
+  <!-- GREEN ring (lower-left) — partly behind red, in front of blue -->
+  <circle class="grn" cx="243" cy="322" r="78"/>
+  <text x="200" y="430" class="lblg">d</text>
+
+  <!-- BLUE ring (lower-right) — partly behind green, in front of red -->
+  <circle class="blu" cx="357" cy="322" r="78"/>
+  <text x="400" y="430" class="lblb">s</text>
+
+  <!-- Visual note about colour confinement -->
+  <text x="300" y="500" class="cap">any two unlinked, all three rigidly bound</text>
+  <text x="300" y="522" class="sub">colour confinement is topological — not dynamical</text>
+  <text x="300" y="546" class="sub">remove any one ring and the other two fall apart</text>
+</svg>

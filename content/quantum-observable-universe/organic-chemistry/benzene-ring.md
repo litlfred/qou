@@ -95,3 +95,5 @@ that threading efficiency alone does not determine aromaticity:
 cyclobutadiene ($N = 4$) admits a threading link but is
 anti-aromatic.  The aromatic/anti-aromatic distinction likely
 requires an additional invariant beyond the Alexander weight.
+
+![Benzene aromaticity: Kekulé ↔ delocalised.](rendered/benzene-aromaticity-0.svg)

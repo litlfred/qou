@@ -70,3 +70,5 @@ $$
 - $c = 0$: $T(0, d) = d \cdot \mathbb{I}$ (scalar matrix)
 - $d = 0$: $T(c, 0) = c \cdot \begin{pmatrix} q - q^{-1} & 1 \\ 1 & 0 \end{pmatrix}$
 - $c = 1, d = 0$: The fundamental matrix $T_{pp}$ (see below)
+
+![Transfer matrix M_n = Wedderburn block-diagonal decomposition.](rendered/transfer-block-diagonal-0.svg)

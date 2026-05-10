@@ -33,3 +33,5 @@ elements:
 The residual linking number $\lambda(R) = 4$ places carbon in the
 middle of the [metallic character](#prop:metallic-character-knot)
 spectrum — neither metallic nor inert, but maximally covalent.
+
+![Carbon's half-filled valence shell.](rendered/carbon-half-filled-0.svg)

@@ -17,3 +17,5 @@ The repulsive kernel $1/r^2$ is thus the classical shadow of the
 resistance of the Frobenius--Hopf object $A$ to local deformations
 of the connection $\nabla$: the Frobenius form $\int_A$ assigns a
 diverging cost when two strands of $\gamma$ approach.  $\square$
+
+![Möbius energy as a Frobenius pairing on K × K.](rendered/mobius-pairing-0.svg)

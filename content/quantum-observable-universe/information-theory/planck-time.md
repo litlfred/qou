@@ -53,3 +53,5 @@ $$
 identically over any field.  The Planck length is always $1$;
 what varies with $q$ is how many discrete operations $t_P(q)$
 compose that unit displacement.
+
+![Planck-time computation cell.](rendered/planck-time-cell-0.svg)

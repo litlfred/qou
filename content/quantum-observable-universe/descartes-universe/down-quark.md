@@ -15,3 +15,5 @@ strand passes under where the up quark passes over.  This
 reversal contributes $q^{-1}$ instead of $q$ to the Skein
 polynomial, giving the down quark a Coulomb charge contribution
 of $-1/3$ relative to the proton.
+
+![Quark Borromeans on the exceptional divisor.](rendered/exceptional-divisor-borromeans-0.svg)

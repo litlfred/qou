@@ -374,3 +374,5 @@ conventional 3-manifold-theory language.
 - Iwahori--Hecke algebra + GB-NF: Kassel--Turaev (2008).
 - Confinement SDP: [prop:confinement-sdp](#prop:confinement-sdp).
 - AME 2020: Wang et al.\ (2021).
+
+![Brane-tower mass decomposition.](rendered/mass-decomposition-0.svg)

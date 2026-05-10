@@ -19,7 +19,7 @@ Do not edit by hand — re-run the script after adding or modifying a figure und
 - **Variants** — sibling design alternatives in the same recommended slot.
 - **Wired in** — the chapter `.md` block that currently embeds this SVG; `(not wired)` means the figure is on disk but not yet referenced from any block.
 
-**Status:** 64 authored figure(s) across 17 chapter(s) · 2 wired into a block · 0 hand-tuned dark-mode override(s).
+**Status:** 64 authored figure(s) across 18 chapter(s) · 53 wired into a block · 11 hand-tuned dark-mode override(s).
 
 ## Algebraic Substrate
 
@@ -31,7 +31,19 @@ Do not edit by hand — re-run the script after adding or modifying a figure und
 
 > F7.1 (P0). A three-layer cake stacked vertically. Bottom layer: the Hopf algebra structure $(m, \Delta, \eta, \varepsilon, S)$ on $A$, with the five string-diagram glyphs on the right (multiplication as a Y-shape, comultiplication as inverted Y, unit and counit as dots, antipode…
 
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`frobenius-hopf-cake-0.prompt.md`](../content/quantum-observable-universe/algebraic-substrate/rendered/frobenius-hopf-cake-0.prompt.md)
+**Variants:** — · **Wired in:** [`algebraic-substrate/frobenius-hopf-substrate.md`](../content/quantum-observable-universe/algebraic-substrate/frobenius-hopf-substrate.md) · **Prompt file:** [`frobenius-hopf-cake-0.prompt.md`](../content/quantum-observable-universe/algebraic-substrate/rendered/frobenius-hopf-cake-0.prompt.md)
+
+---
+
+### `s5-permutohedron-0` — The S₅ permutohedron — 120 vertices
+
+<a href="../content/quantum-observable-universe/algebraic-substrate/rendered/s5-permutohedron-0.svg"><img src="../content/quantum-observable-universe/algebraic-substrate/rendered/s5-permutohedron-0.svg" width="540" alt="The S₅ permutohedron — 120 vertices"></a>  <a href="../content/quantum-observable-universe/algebraic-substrate/rendered/s5-permutohedron-0.svg"><img src="../content/quantum-observable-universe/algebraic-substrate/rendered/s5-permutohedron-0.svg" width="540" alt="The S₅ permutohedron — 120 vertices (dark — filter inverted)"></a>
+
+<sub>**Light** *(primary)*  ·  **Dark** *(viewer applies invert + hue-rotate filter at render time)*</sub>
+
+> F6.4 (P1). A 2D Schlegel-style projection of the order-5 permutohedron $\Pi_5$ — a 4-dimensional polytope whose 120 vertices are the permutations of $(1,2,3,4,5)$. The figure renders nested hexagonal facets (with quadrilateral connectors) reproducing the visible structure when v…
+
+**Variants:** — · **Wired in:** [`algebraic-substrate/magic-numbers-bring.md`](../content/quantum-observable-universe/algebraic-substrate/magic-numbers-bring.md) · **Prompt file:** [`s5-permutohedron-0.prompt.md`](../content/quantum-observable-universe/algebraic-substrate/rendered/s5-permutohedron-0.prompt.md)
 
 ---
 
@@ -43,7 +55,7 @@ Do not edit by hand — re-run the script after adding or modifying a figure und
 
 > F7.2 (P2 / P1). Two side-by-side string diagrams. Left: an open endomorphism $f \in \mathrm{End}(A)$ — vertical strand labelled $A$ above and below a small white box labelled $f$. Right: the same box $f$ inserted into a closed loop — strand goes up out of the box, curves around,…
 
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`spectral-trace-loop-0.prompt.md`](../content/quantum-observable-universe/algebraic-substrate/rendered/spectral-trace-loop-0.prompt.md)
+**Variants:** — · **Wired in:** [`algebraic-substrate/spectral-trace-intro.md`](../content/quantum-observable-universe/algebraic-substrate/spectral-trace-intro.md) · **Prompt file:** [`spectral-trace-loop-0.prompt.md`](../content/quantum-observable-universe/algebraic-substrate/rendered/spectral-trace-loop-0.prompt.md)
 
 ---
 
@@ -57,7 +69,7 @@ Do not edit by hand — re-run the script after adding or modifying a figure und
 
 > FA.2 (P2). A 2 × 3 grid of before-after panels, each illustrating one elementary knot operation. Top row: Reidemeister I (kink ↔ straight strand), Reidemeister II (poke ↔ two parallel strands), Reidemeister III (triangle move — three strands intersecting in two ways). Bottom row…
 
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`knot-operations-grid-0.prompt.md`](../content/quantum-observable-universe/appendix-knot-operations/rendered/knot-operations-grid-0.prompt.md)
+**Variants:** — · **Wired in:** [`appendix-knot-operations/hecke-operations.md`](../content/quantum-observable-universe/appendix-knot-operations/hecke-operations.md) · **Prompt file:** [`knot-operations-grid-0.prompt.md`](../content/quantum-observable-universe/appendix-knot-operations/rendered/knot-operations-grid-0.prompt.md)
 
 ---
 
@@ -71,7 +83,7 @@ Do not edit by hand — re-run the script after adding or modifying a figure und
 
 > FA.1 (P1). A periodic-table-style grid with column headers $n = 2, 3, 4, 5, 6, 7, 8, 10$ (braid index) and row headers $c = 0, 3, 4, 5, 6, 7, 8+$ (crossing number). Each cell carries a small knot icon, the knot's standard name (e.g. $0_1$, $3_1$, $5_1$, $7_1$), and the associate…
 
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`knot-periodic-table-0.prompt.md`](../content/quantum-observable-universe/appendix-knot-periodic-table/rendered/knot-periodic-table-0.prompt.md)
+**Variants:** — · **Wired in:** [`appendix-knot-periodic-table/knot-periodic-table.md`](../content/quantum-observable-universe/appendix-knot-periodic-table/knot-periodic-table.md) · **Prompt file:** [`knot-periodic-table-0.prompt.md`](../content/quantum-observable-universe/appendix-knot-periodic-table/rendered/knot-periodic-table-0.prompt.md)
 
 ---
 
@@ -85,7 +97,7 @@ Do not edit by hand — re-run the script after adding or modifying a figure und
 
 > FA.3 (P2). A large square representing the transfer matrix $M_n$ of the Hecke algebra $H_n(q)$. Inside, four labelled diagonal blocks of varying sizes — top-left $M_{(n)}$ ($\dim_q = 1$, symmetric); upper-middle $M_{(n-1, 1)}$ ($\dim_q = [n-1]_q$, std); lower-middle $M_{(n-2, 2)…
 
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`transfer-block-diagonal-0.prompt.md`](../content/quantum-observable-universe/appendix-transfer-matrices/rendered/transfer-block-diagonal-0.prompt.md)
+**Variants:** — · **Wired in:** [`appendix-transfer-matrices/tm-general-form.md`](../content/quantum-observable-universe/appendix-transfer-matrices/tm-general-form.md) · **Prompt file:** [`transfer-block-diagonal-0.prompt.md`](../content/quantum-observable-universe/appendix-transfer-matrices/rendered/transfer-block-diagonal-0.prompt.md)
 
 ---
 
@@ -93,13 +105,13 @@ Do not edit by hand — re-run the script after adding or modifying a figure und
 
 ### `borromean-quarks-0` — Borromean quarks on the exceptional divisor
 
-<a href="../content/quantum-observable-universe/braids-and-knots/rendered/borromean-quarks-0.svg"><img src="../content/quantum-observable-universe/braids-and-knots/rendered/borromean-quarks-0.svg" width="540" alt="Borromean quarks on the exceptional divisor"></a>  <a href="../content/quantum-observable-universe/braids-and-knots/rendered/borromean-quarks-0.svg"><img src="../content/quantum-observable-universe/braids-and-knots/rendered/borromean-quarks-0.svg" width="540" alt="Borromean quarks on the exceptional divisor (dark — filter inverted)"></a>
+<a href="../content/quantum-observable-universe/braids-and-knots/rendered/borromean-quarks-0.svg"><img src="../content/quantum-observable-universe/braids-and-knots/rendered/borromean-quarks-0.svg" width="540" alt="Borromean quarks on the exceptional divisor"></a>  <a href="../content/quantum-observable-universe/braids-and-knots/rendered/borromean-quarks-0.dark.svg"><img src="../content/quantum-observable-universe/braids-and-knots/rendered/borromean-quarks-0.dark.svg" width="540" alt="Borromean quarks on the exceptional divisor (dark)"></a>
 
-<sub>**Light** *(primary)*  ·  **Dark** *(viewer applies invert + hue-rotate filter at render time)*</sub>
+<sub>**Light** *(primary)*  ·  **Dark** *(hand-tuned override)*</sub>
 
 > F4.5 (P0). Three unknotted circles in the classic Borromean configuration (pairwise unlinked, but rigidly bound as a triple) drawn centred over a faint dashed ellipse representing a small patch of the exceptional divisor $\mathcal{S}_p \subset \Sigma_4$. The three circles are co…
 
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`borromean-quarks-0.prompt.md`](../content/quantum-observable-universe/braids-and-knots/rendered/borromean-quarks-0.prompt.md)
+**Variants:** — · **Wired in:** [`braids-and-knots/confined-particle.md`](../content/quantum-observable-universe/braids-and-knots/confined-particle.md) · **Prompt file:** [`borromean-quarks-0.prompt.md`](../content/quantum-observable-universe/braids-and-knots/rendered/borromean-quarks-0.prompt.md)
 
 ---
 
@@ -111,7 +123,7 @@ Do not edit by hand — re-run the script after adding or modifying a figure und
 
 > F4.9 (P2 / P1). A step function plot. Horizontal axis: writhe $w(K)$, the net number of positive minus negative crossings, ticked at integer values $-3, -2, -1, 0, +1, +2, +3$. Vertical axis: binding energy $E_{\mathrm{bind}}$. The staircase rises symmetrically away from $w = 0$…
 
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`crossing-energy-staircase-0.prompt.md`](../content/quantum-observable-universe/braids-and-knots/rendered/crossing-energy-staircase-0.prompt.md)
+**Variants:** — · **Wired in:** [`braids-and-knots/topological-mass-cat-transient-proof.md`](../content/quantum-observable-universe/braids-and-knots/topological-mass-cat-transient-proof.md) · **Prompt file:** [`crossing-energy-staircase-0.prompt.md`](../content/quantum-observable-universe/braids-and-knots/rendered/crossing-energy-staircase-0.prompt.md)
 
 ---
 
@@ -123,7 +135,7 @@ Do not edit by hand — re-run the script after adding or modifying a figure und
 
 > F4.8 (P1). Left: a stylised trefoil drawn lightly with a small dashed red circle highlighting one meridian disk; labels mark the meridian and identify the trefoil as $K \subset \mathbb{P}^1(\mathbb{C})$ with $\pi_1$ of the complement generated by meridians. Centre: a large $\rho…
 
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`knot-complement-rho-0.prompt.md`](../content/quantum-observable-universe/braids-and-knots/rendered/knot-complement-rho-0.prompt.md)
+**Variants:** — · **Wired in:** [`braids-and-knots/knot-complement-group.md`](../content/quantum-observable-universe/braids-and-knots/knot-complement-group.md) · **Prompt file:** [`knot-complement-rho-0.prompt.md`](../content/quantum-observable-universe/braids-and-knots/rendered/knot-complement-rho-0.prompt.md)
 
 ---
 
@@ -135,7 +147,7 @@ Do not edit by hand — re-run the script after adding or modifying a figure und
 
 > F11.2 (P0). A 2D feasibility polytope drawn on $(x_1, x_2)$ axes. The polygon is filled light grey (the feasible region — the intersection of the half-planes $G \succeq 0$ and the net constraint). The polygon's two upper edges, terminating at the optimum vertex $x^*$, are drawn…
 
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`lp-active-set-0.prompt.md`](../content/quantum-observable-universe/braids-and-knots/rendered/lp-active-set-0.prompt.md)
+**Variants:** — · **Wired in:** [`braids-and-knots/knot-operator-lp-selection.md`](../content/quantum-observable-universe/braids-and-knots/knot-operator-lp-selection.md) · **Prompt file:** [`lp-active-set-0.prompt.md`](../content/quantum-observable-universe/braids-and-knots/rendered/lp-active-set-0.prompt.md)
 
 ---
 
@@ -147,7 +159,7 @@ Do not edit by hand — re-run the script after adding or modifying a figure und
 
 > F4.3 (P0). Three panels. Left: an open 3-strand braid $\beta = \sigma_1 \sigma_2^{-1} \sigma_1$ drawn vertically inside a faint dashed box, with three crossings (the gaps in the under-strands marking over/under). Centre: the *closure* $\hat\beta$ obtained by joining strand-$i$ a…
 
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`markov-closure-0.prompt.md`](../content/quantum-observable-universe/braids-and-knots/rendered/markov-closure-0.prompt.md)
+**Variants:** — · **Wired in:** [`braids-and-knots/hadron-interpretation.md`](../content/quantum-observable-universe/braids-and-knots/hadron-interpretation.md) · **Prompt file:** [`markov-closure-0.prompt.md`](../content/quantum-observable-universe/braids-and-knots/rendered/markov-closure-0.prompt.md)
 
 ---
 
@@ -159,7 +171,7 @@ Do not edit by hand — re-run the script after adding or modifying a figure und
 
 > F4.7 (P1). An exploded view: on the left, a stylised trefoil $K$ with its Hecke-word label $T_w$ underneath. An arrow labelled "decompose" points right to a stack of three rounded boxes, each carrying one term of the unified mass formula $m(K) = |\mathrm{tr}_M(T_w)| + \mathrm{to…
 
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`mass-decomposition-0.prompt.md`](../content/quantum-observable-universe/braids-and-knots/rendered/mass-decomposition-0.prompt.md)
+**Variants:** — · **Wired in:** [`braids-and-knots/atom-knot-mass-derivation.md`](../content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md) · **Prompt file:** [`mass-decomposition-0.prompt.md`](../content/quantum-observable-universe/braids-and-knots/rendered/mass-decomposition-0.prompt.md)
 
 ---
 
@@ -171,19 +183,19 @@ Do not edit by hand — re-run the script after adding or modifying a figure und
 
 > F4.4 (P1). A stylised trefoil drawn in the left half of the figure, with two points $x$ and $y$ marked on the curve in red, and a dashed red segment of length $|x - y|$ joining them. Right side: the Möbius integrand $E(K) = \iint_{K \times K \setminus \Delta} ds\, dt / |x - y|^2…
 
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`mobius-pairing-0.prompt.md`](../content/quantum-observable-universe/braids-and-knots/rendered/mobius-pairing-0.prompt.md)
+**Variants:** — · **Wired in:** [`braids-and-knots/mobius-energy-frobenius-kernel-proof.md`](../content/quantum-observable-universe/braids-and-knots/mobius-energy-frobenius-kernel-proof.md) · **Prompt file:** [`mobius-pairing-0.prompt.md`](../content/quantum-observable-universe/braids-and-knots/rendered/mobius-pairing-0.prompt.md)
 
 ---
 
 ### `particle-knot-dictionary-0` — The particle ↔ knot dictionary
 
-<a href="../content/quantum-observable-universe/braids-and-knots/rendered/particle-knot-dictionary-0.svg"><img src="../content/quantum-observable-universe/braids-and-knots/rendered/particle-knot-dictionary-0.svg" width="540" alt="The particle ↔ knot dictionary"></a>  <a href="../content/quantum-observable-universe/braids-and-knots/rendered/particle-knot-dictionary-0.svg"><img src="../content/quantum-observable-universe/braids-and-knots/rendered/particle-knot-dictionary-0.svg" width="540" alt="The particle ↔ knot dictionary (dark — filter inverted)"></a>
+<a href="../content/quantum-observable-universe/braids-and-knots/rendered/particle-knot-dictionary-0.svg"><img src="../content/quantum-observable-universe/braids-and-knots/rendered/particle-knot-dictionary-0.svg" width="540" alt="The particle ↔ knot dictionary"></a>  <a href="../content/quantum-observable-universe/braids-and-knots/rendered/particle-knot-dictionary-0.dark.svg"><img src="../content/quantum-observable-universe/braids-and-knots/rendered/particle-knot-dictionary-0.dark.svg" width="540" alt="The particle ↔ knot dictionary (dark)"></a>
 
-<sub>**Light** *(primary)*  ·  **Dark** *(viewer applies invert + hue-rotate filter at render time)*</sub>
+<sub>**Light** *(primary)*  ·  **Dark** *(hand-tuned override)*</sub>
 
 > F4.1 (P0). A 2-row grid mapping knot types to particle identities. Top row (5 cards): the four charged-lepton + one closure cell, with each card showing a stylised torus knot $T(2,2k+1)$ above its particle label. Cards left-to-right: unknot $0_1 \to \nu_e$ (a circle, trivial bra…
 
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`particle-knot-dictionary-0.prompt.md`](../content/quantum-observable-universe/braids-and-knots/rendered/particle-knot-dictionary-0.prompt.md)
+**Variants:** — · **Wired in:** [`braids-and-knots/intro.md`](../content/quantum-observable-universe/braids-and-knots/intro.md) · **Prompt file:** [`particle-knot-dictionary-0.prompt.md`](../content/quantum-observable-universe/braids-and-knots/rendered/particle-knot-dictionary-0.prompt.md)
 
 ---
 
@@ -207,21 +219,45 @@ Do not edit by hand — re-run the script after adding or modifying a figure und
 
 > F4.6 (P1). A square representing $V^{\otimes 3}$ split by a diagonal into two regions. The upper-left triangle is shaded warm and labelled "$V_{3/2}$ — spin 3/2 — symmetric — B₃ acts as scalar ⇒ bosonic". The lower-right triangle is shaded cool and labelled "$V_{1/2}^{\oplus 2}$…
 
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`schur-weyl-bose-fermi-0.prompt.md`](../content/quantum-observable-universe/braids-and-knots/rendered/schur-weyl-bose-fermi-0.prompt.md)
+**Variants:** — · **Wired in:** [`braids-and-knots/categorical-boson-fermion.md`](../content/quantum-observable-universe/braids-and-knots/categorical-boson-fermion.md) · **Prompt file:** [`schur-weyl-bose-fermi-0.prompt.md`](../content/quantum-observable-universe/braids-and-knots/rendered/schur-weyl-bose-fermi-0.prompt.md)
+
+---
+
+### `shell-closure-spectrum-0` — Nuclear shell closure as Hecke eigenvalue gap
+
+<a href="../content/quantum-observable-universe/braids-and-knots/rendered/shell-closure-spectrum-0.svg"><img src="../content/quantum-observable-universe/braids-and-knots/rendered/shell-closure-spectrum-0.svg" width="540" alt="Nuclear shell closure as Hecke eigenvalue gap"></a>  <a href="../content/quantum-observable-universe/braids-and-knots/rendered/shell-closure-spectrum-0.svg"><img src="../content/quantum-observable-universe/braids-and-knots/rendered/shell-closure-spectrum-0.svg" width="540" alt="Nuclear shell closure as Hecke eigenvalue gap (dark — filter inverted)"></a>
+
+<sub>**Light** *(primary)*  ·  **Dark** *(viewer applies invert + hue-rotate filter at render time)*</sub>
+
+> F11.3 (P1). Bar chart with horizontal axis $Z$ (proton number, $0$ to $130$) and vertical axis "Hecke-spectrum gap" $\Delta$. Most $Z$ values get small grey bars; bars at $Z = 2, 8, 20, 28, 50, 82, 126$ are tall and coloured red, with their numerical labels above. These are the…
+
+**Variants:** — · **Wired in:** [`braids-and-knots/shell-closure-stability.md`](../content/quantum-observable-universe/braids-and-knots/shell-closure-stability.md) · **Prompt file:** [`shell-closure-spectrum-0.prompt.md`](../content/quantum-observable-universe/braids-and-knots/rendered/shell-closure-spectrum-0.prompt.md)
 
 ---
 
 ## Descartes Universe
 
-### `bring-coral-3-tubes-0` — Bring's surface as a coral with three colour tubes
+### `beta-decay-tower-0` — β-decay = Markov-stabilisation chain
 
-<a href="../content/quantum-observable-universe/descartes-universe/rendered/bring-coral-3-tubes-0.svg"><img src="../content/quantum-observable-universe/descartes-universe/rendered/bring-coral-3-tubes-0.svg" width="540" alt="Bring's surface as a coral with three colour tubes"></a>  <a href="../content/quantum-observable-universe/descartes-universe/rendered/bring-coral-3-tubes-0.svg"><img src="../content/quantum-observable-universe/descartes-universe/rendered/bring-coral-3-tubes-0.svg" width="540" alt="Bring's surface as a coral with three colour tubes (dark — filter inverted)"></a>
+<a href="../content/quantum-observable-universe/descartes-universe/rendered/beta-decay-tower-0.svg"><img src="../content/quantum-observable-universe/descartes-universe/rendered/beta-decay-tower-0.svg" width="540" alt="β-decay = Markov-stabilisation chain"></a>  <a href="../content/quantum-observable-universe/descartes-universe/rendered/beta-decay-tower-0.svg"><img src="../content/quantum-observable-universe/descartes-universe/rendered/beta-decay-tower-0.svg" width="540" alt="β-decay = Markov-stabilisation chain (dark — filter inverted)"></a>
 
 <sub>**Light** *(primary)*  ·  **Dark** *(viewer applies invert + hue-rotate filter at render time)*</sub>
 
+> F11.4 (P1). A vertical chain. Top: a labelled box "parent nucleus" with a small braided knot inside. Arrow downward labelled "$\sigma_n$ (Markov stab)". Middle: a labelled box "emit $W^-$ box-braid" with a small red rectangle marked $W^-$. Arrow downward labelled "$\sigma_n^{-1}…
+
+**Variants:** — · **Wired in:** [`descartes-universe/beta-decay-skein.md`](../content/quantum-observable-universe/descartes-universe/beta-decay-skein.md) · **Prompt file:** [`beta-decay-tower-0.prompt.md`](../content/quantum-observable-universe/descartes-universe/rendered/beta-decay-tower-0.prompt.md)
+
+---
+
+### `bring-coral-3-tubes-0` — Bring's surface as a coral with three colour tubes
+
+<a href="../content/quantum-observable-universe/descartes-universe/rendered/bring-coral-3-tubes-0.svg"><img src="../content/quantum-observable-universe/descartes-universe/rendered/bring-coral-3-tubes-0.svg" width="540" alt="Bring's surface as a coral with three colour tubes"></a>  <a href="../content/quantum-observable-universe/descartes-universe/rendered/bring-coral-3-tubes-0.dark.svg"><img src="../content/quantum-observable-universe/descartes-universe/rendered/bring-coral-3-tubes-0.dark.svg" width="540" alt="Bring's surface as a coral with three colour tubes (dark)"></a>
+
+<sub>**Light** *(primary)*  ·  **Dark** *(hand-tuned override)*</sub>
+
 > F5.1 (P0). A schematic genus-4 surface drawn as a "coral": a horizontal body (large translucent ellipse) with four arched handles rising above. Three of the handles are coloured red, green, blue — the colour tubes carrying the spectral coordinates $c_r$, $c_g$, $c_b$ from Chapte…
 
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`bring-coral-3-tubes-0.prompt.md`](../content/quantum-observable-universe/descartes-universe/rendered/bring-coral-3-tubes-0.prompt.md)
+**Variants:** — · **Wired in:** [`descartes-universe/brings-surface.md`](../content/quantum-observable-universe/descartes-universe/brings-surface.md) · **Prompt file:** [`bring-coral-3-tubes-0.prompt.md`](../content/quantum-observable-universe/descartes-universe/rendered/bring-coral-3-tubes-0.prompt.md)
 
 ---
 
@@ -233,19 +269,19 @@ Do not edit by hand — re-run the script after adding or modifying a figure und
 
 > F9.1 (P0 / P1). Three concentric ellipses on a centred plot, each translucent and outlined in a distinct accent colour: outer red "$\sum x_i = 0$ (linear hyperplane)", middle green "$\sum x_i^2 = 0$ (quadric)", inner blue "$\sum x_i^3 = 0$ (cubic)". At the very centre: a small f…
 
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`bring-power-sums-0.prompt.md`](../content/quantum-observable-universe/descartes-universe/rendered/bring-power-sums-0.prompt.md)
+**Variants:** — · **Wired in:** [`descartes-universe/brings-surface-example.md`](../content/quantum-observable-universe/descartes-universe/brings-surface-example.md) · **Prompt file:** [`bring-power-sums-0.prompt.md`](../content/quantum-observable-universe/descartes-universe/rendered/bring-power-sums-0.prompt.md)
 
 ---
 
 ### `color-tube-coords-0` — Colour-tube coordinates c_r, c_g, c_b on Σ₄
 
-<a href="../content/quantum-observable-universe/descartes-universe/rendered/color-tube-coords-0.svg"><img src="../content/quantum-observable-universe/descartes-universe/rendered/color-tube-coords-0.svg" width="540" alt="Colour-tube coordinates c_r, c_g, c_b on Σ₄"></a>  <a href="../content/quantum-observable-universe/descartes-universe/rendered/color-tube-coords-0.svg"><img src="../content/quantum-observable-universe/descartes-universe/rendered/color-tube-coords-0.svg" width="540" alt="Colour-tube coordinates c_r, c_g, c_b on Σ₄ (dark — filter inverted)"></a>
+<a href="../content/quantum-observable-universe/descartes-universe/rendered/color-tube-coords-0.svg"><img src="../content/quantum-observable-universe/descartes-universe/rendered/color-tube-coords-0.svg" width="540" alt="Colour-tube coordinates c_r, c_g, c_b on Σ₄"></a>  <a href="../content/quantum-observable-universe/descartes-universe/rendered/color-tube-coords-0.dark.svg"><img src="../content/quantum-observable-universe/descartes-universe/rendered/color-tube-coords-0.dark.svg" width="540" alt="Colour-tube coordinates c_r, c_g, c_b on Σ₄ (dark)"></a>
 
-<sub>**Light** *(primary)*  ·  **Dark** *(viewer applies invert + hue-rotate filter at render time)*</sub>
+<sub>**Light** *(primary)*  ·  **Dark** *(hand-tuned override)*</sub>
 
 > F6.1 (P0). The Bring coral from F5.1 with coordinate arrows added. Each of the four coloured handles has an arrow rising from its apex labelled with the corresponding shifted Lagrange resolvent: $c_r = w_2 - z$ (red), $c_g = w_3 - z$ (green), $c_b = w_4 - z$ (blue), and the time…
 
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`color-tube-coords-0.prompt.md`](../content/quantum-observable-universe/descartes-universe/rendered/color-tube-coords-0.prompt.md)
+**Variants:** — · **Wired in:** [`descartes-universe/color-tube-coordinates.md`](../content/quantum-observable-universe/descartes-universe/color-tube-coordinates.md) · **Prompt file:** [`color-tube-coords-0.prompt.md`](../content/quantum-observable-universe/descartes-universe/rendered/color-tube-coords-0.prompt.md)
 
 ---
 
@@ -257,43 +293,19 @@ Do not edit by hand — re-run the script after adding or modifying a figure und
 
 > F5.2 (P1). A 2D plot with horizontal axis genus $g$ (ticked $1, 2, 3, 4, 5, 6$) and vertical axis $|\mathrm{Aut}|$. The Hurwitz bound $84(g-1)$ is drawn as a blue dashed diagonal ceiling line; the QOU constraint $\chi = -6 \Rightarrow g = 4$ is drawn as a red dashed vertical lin…
 
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`descartes-polytope-0.prompt.md`](../content/quantum-observable-universe/descartes-universe/rendered/descartes-polytope-0.prompt.md)
+**Variants:** — · **Wired in:** [`descartes-universe/descartes-condition.md`](../content/quantum-observable-universe/descartes-universe/descartes-condition.md) · **Prompt file:** [`descartes-polytope-0.prompt.md`](../content/quantum-observable-universe/descartes-universe/rendered/descartes-polytope-0.prompt.md)
 
 ---
 
 ### `exceptional-divisor-borromeans-0` — Quark Borromeans on the exceptional divisor
 
-<a href="../content/quantum-observable-universe/descartes-universe/rendered/exceptional-divisor-borromeans-0.svg"><img src="../content/quantum-observable-universe/descartes-universe/rendered/exceptional-divisor-borromeans-0.svg" width="540" alt="Quark Borromeans on the exceptional divisor"></a>  <a href="../content/quantum-observable-universe/descartes-universe/rendered/exceptional-divisor-borromeans-0.svg"><img src="../content/quantum-observable-universe/descartes-universe/rendered/exceptional-divisor-borromeans-0.svg" width="540" alt="Quark Borromeans on the exceptional divisor (dark — filter inverted)"></a>
+<a href="../content/quantum-observable-universe/descartes-universe/rendered/exceptional-divisor-borromeans-0.svg"><img src="../content/quantum-observable-universe/descartes-universe/rendered/exceptional-divisor-borromeans-0.svg" width="540" alt="Quark Borromeans on the exceptional divisor"></a>  <a href="../content/quantum-observable-universe/descartes-universe/rendered/exceptional-divisor-borromeans-0.dark.svg"><img src="../content/quantum-observable-universe/descartes-universe/rendered/exceptional-divisor-borromeans-0.dark.svg" width="540" alt="Quark Borromeans on the exceptional divisor (dark)"></a>
 
-<sub>**Light** *(primary)*  ·  **Dark** *(viewer applies invert + hue-rotate filter at render time)*</sub>
+<sub>**Light** *(primary)*  ·  **Dark** *(hand-tuned override)*</sub>
 
 > F6.3 (P0). Two side-by-side Borromean configurations of three rings each, drawn over small dashed circles representing patches of the exceptional divisor $\mathcal{S}_p \subset \Sigma_4$. Left panel: solid R/G/B Borromean labelled $u$, $d$, $s$ — the light quark triple, generati…
 
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`exceptional-divisor-borromeans-0.prompt.md`](../content/quantum-observable-universe/descartes-universe/rendered/exceptional-divisor-borromeans-0.prompt.md)
-
----
-
-### `s5-permutohedron-0` — The S₅ permutohedron — 120 vertices
-
-<a href="../content/quantum-observable-universe/descartes-universe/rendered/s5-permutohedron-0.svg"><img src="../content/quantum-observable-universe/descartes-universe/rendered/s5-permutohedron-0.svg" width="540" alt="The S₅ permutohedron — 120 vertices"></a>  <a href="../content/quantum-observable-universe/descartes-universe/rendered/s5-permutohedron-0.svg"><img src="../content/quantum-observable-universe/descartes-universe/rendered/s5-permutohedron-0.svg" width="540" alt="The S₅ permutohedron — 120 vertices (dark — filter inverted)"></a>
-
-<sub>**Light** *(primary)*  ·  **Dark** *(viewer applies invert + hue-rotate filter at render time)*</sub>
-
-> F6.4 (P1). A 2D Schlegel-style projection of the order-5 permutohedron $\Pi_5$ — a 4-dimensional polytope whose 120 vertices are the permutations of $(1,2,3,4,5)$. The figure renders nested hexagonal facets (with quadrilateral connectors) reproducing the visible structure when v…
-
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`s5-permutohedron-0.prompt.md`](../content/quantum-observable-universe/descartes-universe/rendered/s5-permutohedron-0.prompt.md)
-
----
-
-### `ym-mass-gap-0` — Yang–Mills mass gap — categorical spectral picture
-
-<a href="../content/quantum-observable-universe/descartes-universe/rendered/ym-mass-gap-0.svg"><img src="../content/quantum-observable-universe/descartes-universe/rendered/ym-mass-gap-0.svg" width="540" alt="Yang–Mills mass gap — categorical spectral picture"></a>  <a href="../content/quantum-observable-universe/descartes-universe/rendered/ym-mass-gap-0.svg"><img src="../content/quantum-observable-universe/descartes-universe/rendered/ym-mass-gap-0.svg" width="540" alt="Yang–Mills mass gap — categorical spectral picture (dark — filter inverted)"></a>
-
-<sub>**Light** *(primary)*  ·  **Dark** *(viewer applies invert + hue-rotate filter at render time)*</sub>
-
-> F5.3 (P1). A horizontal energy axis. A single solid black dot at $E = 0$ labelled $|\Omega\rangle$ (vacuum). A shaded gap region (light pink with red dashed border) from $E = 0$ to $E = \Delta$ labelled "mass gap $\Delta > 0$". To the right of $\Delta$ a translucent grey band la…
-
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`ym-mass-gap-0.prompt.md`](../content/quantum-observable-universe/descartes-universe/rendered/ym-mass-gap-0.prompt.md)
+**Variants:** — · **Wired in:** [`descartes-universe/down-quark.md`](../content/quantum-observable-universe/descartes-universe/down-quark.md) · **Prompt file:** [`exceptional-divisor-borromeans-0.prompt.md`](../content/quantum-observable-universe/descartes-universe/rendered/exceptional-divisor-borromeans-0.prompt.md)
 
 ---
 
@@ -405,7 +417,7 @@ Do not edit by hand — re-run the script after adding or modifying a figure und
 
 > F10.2 (P1). Two side-by-side panels with a "+" sign between them. Left: a bell-curve height map representing the density $\rho(x)$ on the brane (purple-tinted), with grid lines beneath. Caption: "amplitude — where the fluid is". Right: a six-segment coloured wheel representing t…
 
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`madelung-decomposition-0.prompt.md`](../content/quantum-observable-universe/fluid-dynamics/rendered/madelung-decomposition-0.prompt.md)
+**Variants:** — · **Wired in:** [`fluid-dynamics/madelung-fluid.md`](../content/quantum-observable-universe/fluid-dynamics/madelung-fluid.md) · **Prompt file:** [`madelung-decomposition-0.prompt.md`](../content/quantum-observable-universe/fluid-dynamics/rendered/madelung-decomposition-0.prompt.md)
 
 ---
 
@@ -417,7 +429,7 @@ Do not edit by hand — re-run the script after adding or modifying a figure und
 
 > F10.3 (P1). Two side-by-side phase portraits separated by a vertical dashed line. Left ($q > 1$): time on the horizontal axis, enstrophy $\|\omega\|$ on the vertical; a blue curve rises and asymptotes — bounded for all $t$. Caption: "global regularity; spectral Sobolev estimates…
 
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`ns-obstruction-blowup-0.prompt.md`](../content/quantum-observable-universe/fluid-dynamics/rendered/ns-obstruction-blowup-0.prompt.md)
+**Variants:** — · **Wired in:** [`fluid-dynamics/ns-obstruction.md`](../content/quantum-observable-universe/fluid-dynamics/ns-obstruction.md) · **Prompt file:** [`ns-obstruction-blowup-0.prompt.md`](../content/quantum-observable-universe/fluid-dynamics/rendered/ns-obstruction-blowup-0.prompt.md)
 
 ---
 
@@ -429,19 +441,19 @@ Do not edit by hand — re-run the script after adding or modifying a figure und
 
 > F10.4 (P2). Log-log plot of energy spectrum $E(k)$ on the brane. Two curves: a blue straight line representing the classical $k^{-5/3}$ Kolmogorov scaling, and a red broken-line that follows the classical slope until $k = k_q$ then bends to a steeper slope as $q$-deformation cor…
 
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`q-kolmogorov-0.prompt.md`](../content/quantum-observable-universe/fluid-dynamics/rendered/q-kolmogorov-0.prompt.md)
+**Variants:** — · **Wired in:** [`fluid-dynamics/braid-fluid.md`](../content/quantum-observable-universe/fluid-dynamics/braid-fluid.md) · **Prompt file:** [`q-kolmogorov-0.prompt.md`](../content/quantum-observable-universe/fluid-dynamics/rendered/q-kolmogorov-0.prompt.md)
 
 ---
 
 ### `q-vortex-spectrum-0` — q-vortex spectrum on the brane
 
-<a href="../content/quantum-observable-universe/fluid-dynamics/rendered/q-vortex-spectrum-0.svg"><img src="../content/quantum-observable-universe/fluid-dynamics/rendered/q-vortex-spectrum-0.svg" width="540" alt="q-vortex spectrum on the brane"></a>  <a href="../content/quantum-observable-universe/fluid-dynamics/rendered/q-vortex-spectrum-0.svg"><img src="../content/quantum-observable-universe/fluid-dynamics/rendered/q-vortex-spectrum-0.svg" width="540" alt="q-vortex spectrum on the brane (dark — filter inverted)"></a>
+<a href="../content/quantum-observable-universe/fluid-dynamics/rendered/q-vortex-spectrum-0.svg"><img src="../content/quantum-observable-universe/fluid-dynamics/rendered/q-vortex-spectrum-0.svg" width="540" alt="q-vortex spectrum on the brane"></a>  <a href="../content/quantum-observable-universe/fluid-dynamics/rendered/q-vortex-spectrum-0.dark.svg"><img src="../content/quantum-observable-universe/fluid-dynamics/rendered/q-vortex-spectrum-0.dark.svg" width="540" alt="q-vortex spectrum on the brane (dark)"></a>
 
-<sub>**Light** *(primary)*  ·  **Dark** *(viewer applies invert + hue-rotate filter at render time)*</sub>
+<sub>**Light** *(primary)*  ·  **Dark** *(hand-tuned override)*</sub>
 
 > F10.1 (P0). Two-panel composite. Left: Bring's coral (smaller copy of F5.1) with dashed-grey closed flow lines drawn looping around each of the four handles; each flow line is annotated with its $q$-quantised circulation $\Gamma_n = 2\pi [n]_q$ for $n = 1, 2, 3, 4$. A footnote d…
 
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`q-vortex-spectrum-0.prompt.md`](../content/quantum-observable-universe/fluid-dynamics/rendered/q-vortex-spectrum-0.prompt.md)
+**Variants:** — · **Wired in:** [`fluid-dynamics/geodesic-vortices.md`](../content/quantum-observable-universe/fluid-dynamics/geodesic-vortices.md) · **Prompt file:** [`q-vortex-spectrum-0.prompt.md`](../content/quantum-observable-universe/fluid-dynamics/rendered/q-vortex-spectrum-0.prompt.md)
 
 ---
 
@@ -455,7 +467,7 @@ Do not edit by hand — re-run the script after adding or modifying a figure und
 
 > F8.2 (P1). Two-panel composite. Left: an "information manifold" — an ellipse-shaped surface labelled "information manifold; Fisher metric $g_{ij}(\theta)$; probability distributions parametrised by $\theta$" with a red metric ellipsoid drawn on it. Right: the same metric ellipso…
 
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`emergent-gravity-0.prompt.md`](../content/quantum-observable-universe/information-theory/rendered/emergent-gravity-0.prompt.md)
+**Variants:** — · **Wired in:** [`information-theory/emergent-gravity-info.md`](../content/quantum-observable-universe/information-theory/emergent-gravity-info.md) · **Prompt file:** [`emergent-gravity-0.prompt.md`](../content/quantum-observable-universe/information-theory/rendered/emergent-gravity-0.prompt.md)
 
 ---
 
@@ -467,19 +479,19 @@ Do not edit by hand — re-run the script after adding or modifying a figure und
 
 > F8.3 (P2). Left: a single highlighted spacetime "diamond" cell of side $\ell_P$ with a "0/1" bit inscribed at its centre. Right: a horizontal strip of seven such diamonds tiling space, each with a bit value (0 or 1), representing one Planck-time of brane evolution. Captions: "si…
 
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`planck-time-cell-0.prompt.md`](../content/quantum-observable-universe/information-theory/rendered/planck-time-cell-0.prompt.md)
+**Variants:** — · **Wired in:** [`information-theory/planck-time.md`](../content/quantum-observable-universe/information-theory/planck-time.md) · **Prompt file:** [`planck-time-cell-0.prompt.md`](../content/quantum-observable-universe/information-theory/rendered/planck-time-cell-0.prompt.md)
 
 ---
 
 ### `regime-scale-0` — Regime table — physical length scales
 
-<a href="../content/quantum-observable-universe/information-theory/rendered/regime-scale-0.svg"><img src="../content/quantum-observable-universe/information-theory/rendered/regime-scale-0.svg" width="540" alt="Regime table — physical length scales"></a>  <a href="../content/quantum-observable-universe/information-theory/rendered/regime-scale-0.svg"><img src="../content/quantum-observable-universe/information-theory/rendered/regime-scale-0.svg" width="540" alt="Regime table — physical length scales (dark — filter inverted)"></a>
+<a href="../content/quantum-observable-universe/information-theory/rendered/regime-scale-0.svg"><img src="../content/quantum-observable-universe/information-theory/rendered/regime-scale-0.svg" width="540" alt="Regime table — physical length scales"></a>  <a href="../content/quantum-observable-universe/information-theory/rendered/regime-scale-0.dark.svg"><img src="../content/quantum-observable-universe/information-theory/rendered/regime-scale-0.dark.svg" width="540" alt="Regime table — physical length scales (dark)"></a>
 
-<sub>**Light** *(primary)*  ·  **Dark** *(viewer applies invert + hue-rotate filter at render time)*</sub>
+<sub>**Light** *(primary)*  ·  **Dark** *(hand-tuned override)*</sub>
 
 > F8.1 (P1). Horizontal log-scale axis from $10^{-35}$ m (Planck) to $10^{25}$ m (Hubble). Four coloured bands tile the axis: blue "categorical substrate" (below $\ell_P$ ⇒ on the fibre), warm "Hecke regime" (braids · particles · nuclei), green "thermodynamic" (atoms · molecules ·…
 
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`regime-scale-0.prompt.md`](../content/quantum-observable-universe/information-theory/rendered/regime-scale-0.prompt.md)
+**Variants:** — · **Wired in:** [`information-theory/regime-table.md`](../content/quantum-observable-universe/information-theory/regime-table.md) · **Prompt file:** [`regime-scale-0.prompt.md`](../content/quantum-observable-universe/information-theory/rendered/regime-scale-0.prompt.md)
 
 ---
 
@@ -511,13 +523,13 @@ Do not edit by hand — re-run the script after adding or modifying a figure und
 
 ### `three-fold-triangle-0` — Three observations, one constraint
 
-<a href="../content/quantum-observable-universe/introduction/rendered/three-fold-triangle-0.svg"><img src="../content/quantum-observable-universe/introduction/rendered/three-fold-triangle-0.svg" width="540" alt="Three observations, one constraint"></a>  <a href="../content/quantum-observable-universe/introduction/rendered/three-fold-triangle-0.svg"><img src="../content/quantum-observable-universe/introduction/rendered/three-fold-triangle-0.svg" width="540" alt="Three observations, one constraint (dark — filter inverted)"></a>
+<a href="../content/quantum-observable-universe/introduction/rendered/three-fold-triangle-0.svg"><img src="../content/quantum-observable-universe/introduction/rendered/three-fold-triangle-0.svg" width="540" alt="Three observations, one constraint"></a>  <a href="../content/quantum-observable-universe/introduction/rendered/three-fold-triangle-0.dark.svg"><img src="../content/quantum-observable-universe/introduction/rendered/three-fold-triangle-0.dark.svg" width="540" alt="Three observations, one constraint (dark)"></a>
 
-<sub>**Light** *(primary)*  ·  **Dark** *(viewer applies invert + hue-rotate filter at render time)*</sub>
+<sub>**Light** *(primary)*  ·  **Dark** *(hand-tuned override)*</sub>
 
 > F0.2 (P0). Equilateral triangle with three vertex boxes carrying the threefold structures observed in nature: three colours (R/G/B), three generations of matter (e/μ/τ leptons; u/d, c/s, t/b quarks), and three-fold chirality. Three dashed spokes connect the vertices to a central…
 
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`three-fold-triangle-0.prompt.md`](../content/quantum-observable-universe/introduction/rendered/three-fold-triangle-0.prompt.md)
+**Variants:** — · **Wired in:** [`introduction/intro.md`](../content/quantum-observable-universe/introduction/intro.md) · **Prompt file:** [`three-fold-triangle-0.prompt.md`](../content/quantum-observable-universe/introduction/rendered/three-fold-triangle-0.prompt.md)
 
 ---
 
@@ -531,7 +543,7 @@ Do not edit by hand — re-run the script after adding or modifying a figure und
 
 > F3.1 (P0). Vertical stack of disks of increasing radius, labelled bottom-to-top $A_0, A_1, A_2, A_3, \ldots, A_{n+1}$; each connected to the next by a $J^1$ jet-prolongation arrow on the right side. The disk at the base is the original Frobenius–Hopf object $A_0 = A$; each subse…
 
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`brane-tower-stack-0.prompt.md`](../content/quantum-observable-universe/lifting-and-descent/rendered/brane-tower-stack-0.prompt.md)
+**Variants:** — · **Wired in:** [`lifting-and-descent/recursive-brane-tower.md`](../content/quantum-observable-universe/lifting-and-descent/recursive-brane-tower.md) · **Prompt file:** [`brane-tower-stack-0.prompt.md`](../content/quantum-observable-universe/lifting-and-descent/rendered/brane-tower-stack-0.prompt.md)
 
 ---
 
@@ -543,7 +555,19 @@ Do not edit by hand — re-run the script after adding or modifying a figure und
 
 > F3.3 (P2 / P1). Three labelled nodes in a horizontal row representing $A$, $A \otimes A$, $A^{\otimes 3}$ for $n = 1, 2, 3$. Between adjacent nodes, multiple parallel arrows show the coface maps $d^i$ — two between $n=1$ and $n=2$ ($d^0, d^1$), three between $n=2$ and $n=3$ ($d^…
 
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`cosimplicial-descent-0.prompt.md`](../content/quantum-observable-universe/lifting-and-descent/rendered/cosimplicial-descent-0.prompt.md)
+**Variants:** — · **Wired in:** [`lifting-and-descent/cosimplicial-intro.md`](../content/quantum-observable-universe/lifting-and-descent/cosimplicial-intro.md) · **Prompt file:** [`cosimplicial-descent-0.prompt.md`](../content/quantum-observable-universe/lifting-and-descent/rendered/cosimplicial-descent-0.prompt.md)
+
+---
+
+### `jet-prolongation-ladder-0` — Jet prolongation: Kähler differentials and J¹(A)
+
+<a href="../content/quantum-observable-universe/lifting-and-descent/rendered/jet-prolongation-ladder-0.svg"><img src="../content/quantum-observable-universe/lifting-and-descent/rendered/jet-prolongation-ladder-0.svg" width="540" alt="Jet prolongation: Kähler differentials and J¹(A)"></a>  <a href="../content/quantum-observable-universe/lifting-and-descent/rendered/jet-prolongation-ladder-0.svg"><img src="../content/quantum-observable-universe/lifting-and-descent/rendered/jet-prolongation-ladder-0.svg" width="540" alt="Jet prolongation: Kähler differentials and J¹(A) (dark — filter inverted)"></a>
+
+<sub>**Light** *(primary)*  ·  **Dark** *(viewer applies invert + hue-rotate filter at render time)*</sub>
+
+> F1.3 (P2 / P1). The short exact sequence $0 \to \Omega^1(A) \to A \otimes A \xrightarrow{m} A \to 0$ drawn as a horizontal ladder of three labelled rounded-rectangle nodes connected by arrows. Each node carries a small subtitle: "Kähler bimodule", "tensor square", "multiplicatio…
+
+**Variants:** — · **Wired in:** [`lifting-and-descent/jet-prolongation.md`](../content/quantum-observable-universe/lifting-and-descent/jet-prolongation.md) · **Prompt file:** [`jet-prolongation-ladder-0.prompt.md`](../content/quantum-observable-universe/lifting-and-descent/rendered/jet-prolongation-ladder-0.prompt.md)
 
 ---
 
@@ -555,7 +579,21 @@ Do not edit by hand — re-run the script after adding or modifying a figure und
 
 > F3.2 (P1). A staircase rising left-to-right with five steps for $n = 0, 1, 2, 3, 4$. Each step represents the brane-tower level $A_n$. At each step (above the platform) a small red dot is the Yekutieli obstruction class $\kappa_n$. The final step is marked in green with $\kappa_…
 
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`yekutieli-staircase-0.prompt.md`](../content/quantum-observable-universe/lifting-and-descent/rendered/yekutieli-staircase-0.prompt.md)
+**Variants:** — · **Wired in:** [`lifting-and-descent/yekutieli-lifting.md`](../content/quantum-observable-universe/lifting-and-descent/yekutieli-lifting.md) · **Prompt file:** [`yekutieli-staircase-0.prompt.md`](../content/quantum-observable-universe/lifting-and-descent/rendered/yekutieli-staircase-0.prompt.md)
+
+---
+
+## Models Of Qous
+
+### `ym-mass-gap-0` — Yang–Mills mass gap — categorical spectral picture
+
+<a href="../content/quantum-observable-universe/models-of-qous/rendered/ym-mass-gap-0.svg"><img src="../content/quantum-observable-universe/models-of-qous/rendered/ym-mass-gap-0.svg" width="540" alt="Yang–Mills mass gap — categorical spectral picture"></a>  <a href="../content/quantum-observable-universe/models-of-qous/rendered/ym-mass-gap-0.svg"><img src="../content/quantum-observable-universe/models-of-qous/rendered/ym-mass-gap-0.svg" width="540" alt="Yang–Mills mass gap — categorical spectral picture (dark — filter inverted)"></a>
+
+<sub>**Light** *(primary)*  ·  **Dark** *(viewer applies invert + hue-rotate filter at render time)*</sub>
+
+> F5.3 (P1). A horizontal energy axis. A single solid black dot at $E = 0$ labelled $|\Omega\rangle$ (vacuum). A shaded gap region (light pink with red dashed border) from $E = 0$ to $E = \Delta$ labelled "mass gap $\Delta > 0$". To the right of $\Delta$ a translucent grey band la…
+
+**Variants:** — · **Wired in:** [`models-of-qous/yang-mills-mass-gap.md`](../content/quantum-observable-universe/models-of-qous/yang-mills-mass-gap.md) · **Prompt file:** [`ym-mass-gap-0.prompt.md`](../content/quantum-observable-universe/models-of-qous/rendered/ym-mass-gap-0.prompt.md)
 
 ---
 
@@ -569,31 +607,31 @@ Do not edit by hand — re-run the script after adding or modifying a figure und
 
 > F13.3 (P2). A regular tetrahedron in 2D projection with hydrogen atoms (white circles labelled H) at the four vertices and a carbon atom (white circle labelled C) at the centroid. The four C–H "edges" are drawn as faint dashed grey lines; on each, a small red filled circle marks…
 
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`ch4-tetrahedron-symmetry-0.prompt.md`](../content/quantum-observable-universe/molecular-construction/rendered/ch4-tetrahedron-symmetry-0.prompt.md)
+**Variants:** — · **Wired in:** [`molecular-construction/ch4-tetrahedral-symmetry.md`](../content/quantum-observable-universe/molecular-construction/ch4-tetrahedral-symmetry.md) · **Prompt file:** [`ch4-tetrahedron-symmetry-0.prompt.md`](../content/quantum-observable-universe/molecular-construction/rendered/ch4-tetrahedron-symmetry-0.prompt.md)
 
 ---
 
 ### `h2-shared-trefoil-0` — H₂ as a shared trefoil bond
 
-<a href="../content/quantum-observable-universe/molecular-construction/rendered/h2-shared-trefoil-0.svg"><img src="../content/quantum-observable-universe/molecular-construction/rendered/h2-shared-trefoil-0.svg" width="540" alt="H₂ as a shared trefoil bond"></a>  <a href="../content/quantum-observable-universe/molecular-construction/rendered/h2-shared-trefoil-0.svg"><img src="../content/quantum-observable-universe/molecular-construction/rendered/h2-shared-trefoil-0.svg" width="540" alt="H₂ as a shared trefoil bond (dark — filter inverted)"></a>
+<a href="../content/quantum-observable-universe/molecular-construction/rendered/h2-shared-trefoil-0.svg"><img src="../content/quantum-observable-universe/molecular-construction/rendered/h2-shared-trefoil-0.svg" width="540" alt="H₂ as a shared trefoil bond"></a>  <a href="../content/quantum-observable-universe/molecular-construction/rendered/h2-shared-trefoil-0.dark.svg"><img src="../content/quantum-observable-universe/molecular-construction/rendered/h2-shared-trefoil-0.dark.svg" width="540" alt="H₂ as a shared trefoil bond (dark)"></a>
 
-<sub>**Light** *(primary)*  ·  **Dark** *(viewer applies invert + hue-rotate filter at render time)*</sub>
+<sub>**Light** *(primary)*  ·  **Dark** *(hand-tuned override)*</sub>
 
 > F13.1 (P0). Two stylised hydrogen atoms drawn as trefoils ($3_1$) on left and right; between them a red shared circle representing a single sub-Hopf link bridging the two trefoils — the categorical realisation of a covalent bond. Each H atom carries the label "trefoil $3_1$"; th…
 
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`h2-shared-trefoil-0.prompt.md`](../content/quantum-observable-universe/molecular-construction/rendered/h2-shared-trefoil-0.prompt.md)
+**Variants:** — · **Wired in:** [`molecular-construction/h2-molecular-braid.md`](../content/quantum-observable-universe/molecular-construction/h2-molecular-braid.md) · **Prompt file:** [`h2-shared-trefoil-0.prompt.md`](../content/quantum-observable-universe/molecular-construction/rendered/h2-shared-trefoil-0.prompt.md)
 
 ---
 
 ### `molecular-progression-0` — Molecular braid progression: H₂ → CO → CO₂ → CH₄ → C₂H₆ → C₆H₆
 
-<a href="../content/quantum-observable-universe/molecular-construction/rendered/molecular-progression-0.svg"><img src="../content/quantum-observable-universe/molecular-construction/rendered/molecular-progression-0.svg" width="540" alt="Molecular braid progression: H₂ → CO → CO₂ → CH₄ → C₂H₆ → C₆H₆"></a>  <a href="../content/quantum-observable-universe/molecular-construction/rendered/molecular-progression-0.svg"><img src="../content/quantum-observable-universe/molecular-construction/rendered/molecular-progression-0.svg" width="540" alt="Molecular braid progression: H₂ → CO → CO₂ → CH₄ → C₂H₆ → C₆H₆ (dark — filter inverted)"></a>
+<a href="../content/quantum-observable-universe/molecular-construction/rendered/molecular-progression-0.svg"><img src="../content/quantum-observable-universe/molecular-construction/rendered/molecular-progression-0.svg" width="540" alt="Molecular braid progression: H₂ → CO → CO₂ → CH₄ → C₂H₆ → C₆H₆"></a>  <a href="../content/quantum-observable-universe/molecular-construction/rendered/molecular-progression-0.dark.svg"><img src="../content/quantum-observable-universe/molecular-construction/rendered/molecular-progression-0.dark.svg" width="540" alt="Molecular braid progression: H₂ → CO → CO₂ → CH₄ → C₂H₆ → C₆H₆ (dark)"></a>
 
-<sub>**Light** *(primary)*  ·  **Dark** *(viewer applies invert + hue-rotate filter at render time)*</sub>
+<sub>**Light** *(primary)*  ·  **Dark** *(hand-tuned override)*</sub>
 
 > F13.2 (P0). A 2 × 3 grid of molecular cells. Each cell shows the closed braid representation of one molecule, with the constituent atoms drawn as black-stroked circles labelled C, H, or O, and the *shared sub-Hopf links* (covalent bonds) drawn as red circles bridging the atomic…
 
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`molecular-progression-0.prompt.md`](../content/quantum-observable-universe/molecular-construction/rendered/molecular-progression-0.prompt.md)
+**Variants:** — · **Wired in:** [`molecular-construction/molecular-braid.md`](../content/quantum-observable-universe/molecular-construction/molecular-braid.md) · **Prompt file:** [`molecular-progression-0.prompt.md`](../content/quantum-observable-universe/molecular-construction/rendered/molecular-progression-0.prompt.md)
 
 ---
 
@@ -607,7 +645,7 @@ Do not edit by hand — re-run the script after adding or modifying a figure und
 
 > F12.2 (P1). A triangle whose three vertex boxes carry the three calibration inputs: top "$m_\mu / m_e$ — leptonic ratio", bottom-left "$m_e$ — leptonic scale", bottom-right "$Q_\beta(n)$ — hadronic scale". Inside the triangle: roughly 16 small black prediction dots labelled with…
 
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`calibration-triangle-0.prompt.md`](../content/quantum-observable-universe/observations/rendered/calibration-triangle-0.prompt.md)
+**Variants:** — · **Wired in:** [`observations/three-calibration-discipline.md`](../content/quantum-observable-universe/observations/three-calibration-discipline.md) · **Prompt file:** [`calibration-triangle-0.prompt.md`](../content/quantum-observable-universe/observations/rendered/calibration-triangle-0.prompt.md)
 
 ---
 
@@ -619,7 +657,7 @@ Do not edit by hand — re-run the script after adding or modifying a figure und
 
 > F12.3 (P1). A log-log scatter plot of QOU-predicted mass (vertical axis, MeV) against CODATA mass (horizontal axis, MeV), spanning $10^{-3}$ to $10^6$ MeV. A red dashed identity line $y = x$ runs corner-to-corner; ~30 black dots cluster tightly along it, each representing one pa…
 
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`predicted-vs-codata-0.prompt.md`](../content/quantum-observable-universe/observations/rendered/predicted-vs-codata-0.prompt.md)
+**Variants:** — · **Wired in:** [`observations/atom-mass-full-hecke.md`](../content/quantum-observable-universe/observations/atom-mass-full-hecke.md) · **Prompt file:** [`predicted-vs-codata-0.prompt.md`](../content/quantum-observable-universe/observations/rendered/predicted-vs-codata-0.prompt.md)
 
 ---
 
@@ -631,7 +669,7 @@ Do not edit by hand — re-run the script after adding or modifying a figure und
 
 > F12.1 (P0). A horizontal axis showing the substrate parameter $q$ across the range $[1.100, 1.120]$, ticked every $0.005$. Three translucent vertical bands span the axis, each bounded by the $q$-range allowed by one independent calibration: red = $m_\mu/m_e$ consistency, green =…
 
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`substrate-consistency-window-0.prompt.md`](../content/quantum-observable-universe/observations/rendered/substrate-consistency-window-0.prompt.md)
+**Variants:** — · **Wired in:** [`observations/substrate-consistency-window.md`](../content/quantum-observable-universe/observations/substrate-consistency-window.md) · **Prompt file:** [`substrate-consistency-window-0.prompt.md`](../content/quantum-observable-universe/observations/rendered/substrate-consistency-window-0.prompt.md)
 
 ---
 
@@ -645,7 +683,7 @@ Do not edit by hand — re-run the script after adding or modifying a figure und
 
 > F14.4 (P2). Two side-by-side hexagons of carbon atoms (the C₆ ring of benzene). Left: the Kekulé structure with alternating single and double bonds explicitly drawn (3 of each). Right: the delocalised aromatic structure with all six bonds equal and an inner red dashed circle rep…
 
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`benzene-aromaticity-0.prompt.md`](../content/quantum-observable-universe/organic-chemistry/rendered/benzene-aromaticity-0.prompt.md)
+**Variants:** — · **Wired in:** [`organic-chemistry/benzene-ring.md`](../content/quantum-observable-universe/organic-chemistry/benzene-ring.md) · **Prompt file:** [`benzene-aromaticity-0.prompt.md`](../content/quantum-observable-universe/organic-chemistry/rendered/benzene-aromaticity-0.prompt.md)
 
 ---
 
@@ -657,7 +695,7 @@ Do not edit by hand — re-run the script after adding or modifying a figure und
 
 > F14.1 (P0). Central carbon node "C" with eight equally-spaced linking sites around it on a circle, corresponding to the second-shell capacity $2n^2 = 8$. Four sites — north, east, south, west — are filled black (the closed inner shell $1s^2$). Four sites — northeast, southeast,…
 
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`carbon-half-filled-0.prompt.md`](../content/quantum-observable-universe/organic-chemistry/rendered/carbon-half-filled-0.prompt.md)
+**Variants:** — · **Wired in:** [`organic-chemistry/carbon-valence.md`](../content/quantum-observable-universe/organic-chemistry/carbon-valence.md) · **Prompt file:** [`carbon-half-filled-0.prompt.md`](../content/quantum-observable-universe/organic-chemistry/rendered/carbon-half-filled-0.prompt.md)
 
 ---
 
@@ -669,19 +707,19 @@ Do not edit by hand — re-run the script after adding or modifying a figure und
 
 > F14.3 (P1). Two panels side-by-side. Left: a linear C₆ chain — six C atoms in a horizontal row connected by five red shared-trefoil bond markers; caption "5 shared trefoils — open ends; no aromatic stabilisation"; energy label $E_{\mathrm{chain}}$. Right: a closed C₆ ring (benze…
 
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`chain-vs-ring-0.prompt.md`](../content/quantum-observable-universe/organic-chemistry/rendered/chain-vs-ring-0.prompt.md)
+**Variants:** — · **Wired in:** [`organic-chemistry/chain-ring-comparison.md`](../content/quantum-observable-universe/organic-chemistry/chain-ring-comparison.md) · **Prompt file:** [`chain-vs-ring-0.prompt.md`](../content/quantum-observable-universe/organic-chemistry/rendered/chain-vs-ring-0.prompt.md)
 
 ---
 
 ### `threading-link-benzene-0` — The threading link T(2, 6) — benzene
 
-<a href="../content/quantum-observable-universe/organic-chemistry/rendered/threading-link-benzene-0.svg"><img src="../content/quantum-observable-universe/organic-chemistry/rendered/threading-link-benzene-0.svg" width="540" alt="The threading link T(2, 6) — benzene"></a>  <a href="../content/quantum-observable-universe/organic-chemistry/rendered/threading-link-benzene-0.svg"><img src="../content/quantum-observable-universe/organic-chemistry/rendered/threading-link-benzene-0.svg" width="540" alt="The threading link T(2, 6) — benzene (dark — filter inverted)"></a>
+<a href="../content/quantum-observable-universe/organic-chemistry/rendered/threading-link-benzene-0.svg"><img src="../content/quantum-observable-universe/organic-chemistry/rendered/threading-link-benzene-0.svg" width="540" alt="The threading link T(2, 6) — benzene"></a>  <a href="../content/quantum-observable-universe/organic-chemistry/rendered/threading-link-benzene-0.dark.svg"><img src="../content/quantum-observable-universe/organic-chemistry/rendered/threading-link-benzene-0.dark.svg" width="540" alt="The threading link T(2, 6) — benzene (dark)"></a>
 
-<sub>**Light** *(primary)*  ·  **Dark** *(viewer applies invert + hue-rotate filter at render time)*</sub>
+<sub>**Light** *(primary)*  ·  **Dark** *(hand-tuned override)*</sub>
 
 > F14.2 (P0). A regular hexagon of six small carbon-atom rings (drawn as small white circles labelled C) and a single large red ellipse threading through all six — the threading link $T(2, 6)$. A second concentric dashed red ellipse hints at the link's two-component nature. A smal…
 
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`threading-link-benzene-0.prompt.md`](../content/quantum-observable-universe/organic-chemistry/rendered/threading-link-benzene-0.prompt.md)
+**Variants:** — · **Wired in:** [`organic-chemistry/threading-link.md`](../content/quantum-observable-universe/organic-chemistry/threading-link.md) · **Prompt file:** [`threading-link-benzene-0.prompt.md`](../content/quantum-observable-universe/organic-chemistry/rendered/threading-link-benzene-0.prompt.md)
 
 ---
 
@@ -699,18 +737,6 @@ Do not edit by hand — re-run the script after adding or modifying a figure und
 
 ---
 
-### `beta-decay-tower-0` — β-decay = Markov-stabilisation chain
-
-<a href="../content/quantum-observable-universe/particle-interactions/rendered/beta-decay-tower-0.svg"><img src="../content/quantum-observable-universe/particle-interactions/rendered/beta-decay-tower-0.svg" width="540" alt="β-decay = Markov-stabilisation chain"></a>  <a href="../content/quantum-observable-universe/particle-interactions/rendered/beta-decay-tower-0.svg"><img src="../content/quantum-observable-universe/particle-interactions/rendered/beta-decay-tower-0.svg" width="540" alt="β-decay = Markov-stabilisation chain (dark — filter inverted)"></a>
-
-<sub>**Light** *(primary)*  ·  **Dark** *(viewer applies invert + hue-rotate filter at render time)*</sub>
-
-> F11.4 (P1). A vertical chain. Top: a labelled box "parent nucleus" with a small braided knot inside. Arrow downward labelled "$\sigma_n$ (Markov stab)". Middle: a labelled box "emit $W^-$ box-braid" with a small red rectangle marked $W^-$. Arrow downward labelled "$\sigma_n^{-1}…
-
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`beta-decay-tower-0.prompt.md`](../content/quantum-observable-universe/particle-interactions/rendered/beta-decay-tower-0.prompt.md)
-
----
-
 ### `gs-reduction-tree-0` — The Gröbner–Shirshov reduction tree
 
 <a href="../content/quantum-observable-universe/particle-interactions/rendered/gs-reduction-tree-0.svg"><img src="../content/quantum-observable-universe/particle-interactions/rendered/gs-reduction-tree-0.svg" width="540" alt="The Gröbner–Shirshov reduction tree"></a>  <a href="../content/quantum-observable-universe/particle-interactions/rendered/gs-reduction-tree-0.svg"><img src="../content/quantum-observable-universe/particle-interactions/rendered/gs-reduction-tree-0.svg" width="540" alt="The Gröbner–Shirshov reduction tree (dark — filter inverted)"></a>
@@ -719,7 +745,7 @@ Do not edit by hand — re-run the script after adding or modifying a figure und
 
 > F11.1 (P0). A rooted tree showing one full Gröbner–Shirshov reduction. Root at top: the unreduced Hecke word $T_w = \sigma_1 \sigma_2 \sigma_1 \sigma_2^{-1} \sigma_1 \sigma_2 \in H_3(q)$. Three downward branches, each annotated with a rewrite-rule label: *by braid* (σ₁σ₂σ₁ = σ₂σ…
 
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`gs-reduction-tree-0.prompt.md`](../content/quantum-observable-universe/particle-interactions/rendered/gs-reduction-tree-0.prompt.md)
+**Variants:** — · **Wired in:** [`particle-interactions/nuclear-groebner-reduction.md`](../content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.md) · **Prompt file:** [`gs-reduction-tree-0.prompt.md`](../content/quantum-observable-universe/particle-interactions/rendered/gs-reduction-tree-0.prompt.md)
 
 ---
 
@@ -735,18 +761,6 @@ Do not edit by hand — re-run the script after adding or modifying a figure und
 
 ---
 
-### `shell-closure-spectrum-0` — Nuclear shell closure as Hecke eigenvalue gap
-
-<a href="../content/quantum-observable-universe/particle-interactions/rendered/shell-closure-spectrum-0.svg"><img src="../content/quantum-observable-universe/particle-interactions/rendered/shell-closure-spectrum-0.svg" width="540" alt="Nuclear shell closure as Hecke eigenvalue gap"></a>  <a href="../content/quantum-observable-universe/particle-interactions/rendered/shell-closure-spectrum-0.svg"><img src="../content/quantum-observable-universe/particle-interactions/rendered/shell-closure-spectrum-0.svg" width="540" alt="Nuclear shell closure as Hecke eigenvalue gap (dark — filter inverted)"></a>
-
-<sub>**Light** *(primary)*  ·  **Dark** *(viewer applies invert + hue-rotate filter at render time)*</sub>
-
-> F11.3 (P1). Bar chart with horizontal axis $Z$ (proton number, $0$ to $130$) and vertical axis "Hecke-spectrum gap" $\Delta$. Most $Z$ values get small grey bars; bars at $Z = 2, 8, 20, 28, 50, 82, 126$ are tall and coloured red, with their numerical labels above. These are the…
-
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`shell-closure-spectrum-0.prompt.md`](../content/quantum-observable-universe/particle-interactions/rendered/shell-closure-spectrum-0.prompt.md)
-
----
-
 ## Quantum Observable Universes
 
 ### `dirac-square-blocks-0` — The categorical Dirac square — D_∇²
@@ -757,7 +771,7 @@ Do not edit by hand — re-run the script after adding or modifying a figure und
 
 > F2.2 (P1). A $2 \times 2$ block-matrix glyph for $D_\nabla^2$. The diagonal blocks are shaded light grey and labelled: top-left "Ric — spatial curvature", bottom-right "$F_\nabla$ — Yang–Mills internal curvature". The off-diagonal blocks are drawn lighter and contain a single "0…
 
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`dirac-square-blocks-0.prompt.md`](../content/quantum-observable-universe/quantum-observable-universes/rendered/dirac-square-blocks-0.prompt.md)
+**Variants:** — · **Wired in:** [`quantum-observable-universes/dq-squared-proof.md`](../content/quantum-observable-universe/quantum-observable-universes/dq-squared-proof.md) · **Prompt file:** [`dirac-square-blocks-0.prompt.md`](../content/quantum-observable-universe/quantum-observable-universes/rendered/dirac-square-blocks-0.prompt.md)
 
 ---
 
@@ -769,7 +783,7 @@ Do not edit by hand — re-run the script after adding or modifying a figure und
 
 > F2.3 (P1). A coordinate plane with two perpendicular axes: horizontal $\Omega^+$ (self-dual 2-forms, $\star_q \omega = +\omega$), vertical $\Omega^-$ (anti-self-dual). A red vector labelled $F_\nabla$ lies along the $\Omega^+$ axis, illustrating that the curvature of an instanto…
 
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`instanton-self-dual-0.prompt.md`](../content/quantum-observable-universe/quantum-observable-universes/rendered/instanton-self-dual-0.prompt.md)
+**Variants:** — · **Wired in:** [`quantum-observable-universes/categorical-instanton.md`](../content/quantum-observable-universe/quantum-observable-universes/categorical-instanton.md) · **Prompt file:** [`instanton-self-dual-0.prompt.md`](../content/quantum-observable-universe/quantum-observable-universes/rendered/instanton-self-dual-0.prompt.md)
 
 ---
 
@@ -781,7 +795,7 @@ Do not edit by hand — re-run the script after adding or modifying a figure und
 
 > F2.1 (P0). A funnel diagram. Top: a wide dashed-outline cloud labelled "QUs — all rigid braided monoidal categories with Frobenius–Hopf object A and fibre functor τ". The cloud narrows through three sequential constrictions, each labelled with one of the QOU axioms: non-degenera…
 
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`qu-to-qou-funnel-0.prompt.md`](../content/quantum-observable-universe/quantum-observable-universes/rendered/qu-to-qou-funnel-0.prompt.md)
+**Variants:** — · **Wired in:** [`quantum-observable-universes/quantum-observable-universe.md`](../content/quantum-observable-universe/quantum-observable-universes/quantum-observable-universe.md) · **Prompt file:** [`qu-to-qou-funnel-0.prompt.md`](../content/quantum-observable-universe/quantum-observable-universes/rendered/qu-to-qou-funnel-0.prompt.md)
 
 ---
 
@@ -795,19 +809,7 @@ Do not edit by hand — re-run the script after adding or modifying a figure und
 
 > F1.1 (P0). Left: a Penrose / string-diagram zig-zag composite. Top entry strand labelled $A$ enters; a cap labelled $\mathrm{coev}_A$ creates an $A \otimes A^\vee$ pair; three middle strands run vertically; a cup labelled $\mathrm{ev}_A$ closes the first two strands together; th…
 
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`frobenius-snake-0.prompt.md`](../content/quantum-observable-universe/quantum-universes/rendered/frobenius-snake-0.prompt.md)
-
----
-
-### `jet-prolongation-ladder-0` — Jet prolongation: Kähler differentials and J¹(A)
-
-<a href="../content/quantum-observable-universe/quantum-universes/rendered/jet-prolongation-ladder-0.svg"><img src="../content/quantum-observable-universe/quantum-universes/rendered/jet-prolongation-ladder-0.svg" width="540" alt="Jet prolongation: Kähler differentials and J¹(A)"></a>  <a href="../content/quantum-observable-universe/quantum-universes/rendered/jet-prolongation-ladder-0.svg"><img src="../content/quantum-observable-universe/quantum-universes/rendered/jet-prolongation-ladder-0.svg" width="540" alt="Jet prolongation: Kähler differentials and J¹(A) (dark — filter inverted)"></a>
-
-<sub>**Light** *(primary)*  ·  **Dark** *(viewer applies invert + hue-rotate filter at render time)*</sub>
-
-> F1.3 (P2 / P1). The short exact sequence $0 \to \Omega^1(A) \to A \otimes A \xrightarrow{m} A \to 0$ drawn as a horizontal ladder of three labelled rounded-rectangle nodes connected by arrows. Each node carries a small subtitle: "Kähler bimodule", "tensor square", "multiplicatio…
-
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`jet-prolongation-ladder-0.prompt.md`](../content/quantum-observable-universe/quantum-universes/rendered/jet-prolongation-ladder-0.prompt.md)
+**Variants:** — · **Wired in:** [`quantum-universes/frobenius-pairing.md`](../content/quantum-observable-universe/quantum-universes/frobenius-pairing.md) · **Prompt file:** [`frobenius-snake-0.prompt.md`](../content/quantum-observable-universe/quantum-universes/rendered/frobenius-snake-0.prompt.md)
 
 ---
 
@@ -819,7 +821,7 @@ Do not edit by hand — re-run the script after adding or modifying a figure und
 
 > F1.2 (P1). Triangle relating the QOU datum to the reconstructed group and its representation category. Top vertex: a labelled box "(𝐂, A, τ) — QOU datum". Bottom-left vertex: "$G = \mathrm{Aut}^\otimes(\tau)$ — reconstructed group". Bottom-right vertex: "$\mathbf{Rep}(G)$ — rep…
 
-**Variants:** — · **Wired in:** *(not wired)* · **Prompt file:** [`tannaka-krein-triangle-0.prompt.md`](../content/quantum-observable-universe/quantum-universes/rendered/tannaka-krein-triangle-0.prompt.md)
+**Variants:** — · **Wired in:** [`quantum-universes/tannaka-krein-overview.md`](../content/quantum-observable-universe/quantum-universes/tannaka-krein-overview.md) · **Prompt file:** [`tannaka-krein-triangle-0.prompt.md`](../content/quantum-observable-universe/quantum-universes/rendered/tannaka-krein-triangle-0.prompt.md)
 
 ---
 

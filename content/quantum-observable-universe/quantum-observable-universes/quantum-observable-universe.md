@@ -85,3 +85,5 @@ $c_{V,V}^2 \neq \mathrm{id}$, since $\mathbf{C}$ is braided
 monoidal but not symmetric monoidal) induces a canonical
 admissible well-ordering on the Hecke basis.  See
 [braiding-induced ordering](#prop:braiding-induced-ordering).
+
+![From QU to QOU: three constraints.](rendered/qu-to-qou-funnel-0.svg)

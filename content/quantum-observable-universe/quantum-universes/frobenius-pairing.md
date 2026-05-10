@@ -29,3 +29,5 @@ A \xrightarrow{\rho^{-1}} A \otimes \mathbf{1}
 $$
 
 and its mirror are both equal to $\mathrm{id}_A$.
+
+![Rigidity: the zig-zag snake identity.](rendered/frobenius-snake-0.svg)

@@ -157,3 +157,5 @@ $\sigma_F(P^{(Z)}, q)$.  The local-maxima statement of claim (2)
 predicts the observed peaks of $I_1$ at $Z \in
 \mathcal{Z}_{\mathrm{noble}}$, recovering the classical
 periodic-table structure from the confinement SDP.*
+
+![Nuclear shell closure as Hecke eigenvalue gap.](rendered/shell-closure-spectrum-0.svg)

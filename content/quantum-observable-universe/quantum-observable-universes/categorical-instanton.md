@@ -24,3 +24,5 @@ Equivalently, the curvature factors through the self-dual projection:
 
 where $\pi^- = \tfrac{1}{2}(\mathrm{id} - \star_q)$ is the
 anti-self-dual projector and $\Omega^-(A) = \ker(\mathrm{id} + \star_q)$.
+
+![Instanton self-duality projector.](rendered/instanton-self-dual-0.svg)

@@ -11,3 +11,5 @@ $$
 maps each meridian generator to a Mobius transformation of the
 Riemann sphere.  The image of $\rho$ characterises the geometric
 structure on the knot complement.
+
+![π₁(ℙ¹(ℂ) \ K) → PSL(2, ℂ) via ρ.](rendered/knot-complement-rho-0.svg)

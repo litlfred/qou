@@ -65,3 +65,5 @@ the **topological helicity** of the vortex tangle — a refinement
 of classical helicity $H = \int v \cdot \omegadV$ that
 distinguishes configurations invisible to $H$ (e.g. trefoil
 from unknot).
+
+![q-deformed Kolmogorov scaling E(k) ∝ k^{−5/3}.](rendered/q-kolmogorov-0.svg)

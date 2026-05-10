@@ -54,3 +54,5 @@ $\mathcal{E}_q[\gamma_0] = \oint_{\gamma_0}
 \propto m$, reproducing the [mass identity](#def:mass-identity).
 The [geometric drag](#rem:geometric-drag) is the static limit
 of $\mathcal{E}_q$.
+
+![q-vortex spectrum on the brane.](rendered/q-vortex-spectrum-0.svg)

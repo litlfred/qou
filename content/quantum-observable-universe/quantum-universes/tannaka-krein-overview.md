@@ -40,3 +40,5 @@ reconstruction then recovers $\mathrm{SU}_q(2)$ as
 $\mathrm{End}^{\otimes}(\tau)$ with this categorically determined
 $q$. The full derivation is given in
 [§Substrate parameter](#sec:substrate-parameter).
+
+![Tannaka–Krein reconstruction.](rendered/tannaka-krein-triangle-0.svg)

@@ -15,3 +15,5 @@ converts the geometric sum over defects into a spectral trace over Reeb
 eigenvalues, culminating in an explicit formula that equates the geometric
 and spectral sides — the non-commutative analog of the classical explicit
 formula of prime number theory.
+
+![Spectral trace = closure of f into a loop.](rendered/spectral-trace-loop-0.svg)

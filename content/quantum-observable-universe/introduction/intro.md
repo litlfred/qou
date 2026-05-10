@@ -67,3 +67,5 @@ energy scale ($Q_\beta(n)$).  Every other mass, Q-value, binding
 energy, and coupling constant is a prediction.  That so much
 structure follows from so little input is, as Wigner put it,
 "something bordering on the mysterious."
+
+![Three observations, one constraint.](rendered/three-fold-triangle-0.svg)

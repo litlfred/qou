@@ -25,3 +25,5 @@ crossings.*
 *This establishes the computational programme: every small
 molecule's geometry is determined by the LP dual of its
 molecular braid, with no geometric input required.*
+
+![CH₄ tetrahedral symmetry.](rendered/ch4-tetrahedron-symmetry-0.svg)

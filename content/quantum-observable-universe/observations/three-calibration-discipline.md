@@ -138,3 +138,5 @@ A **fourth** dimensional input anywhere in the paper is a hard
 audit failure. The three calibrations are categorical: they sit in
 distinct cohomological degrees and cannot be replaced by other
 choices without violating the (co)homological alignment.
+
+![Three calibrations, dozens of predictions.](rendered/calibration-triangle-0.svg)

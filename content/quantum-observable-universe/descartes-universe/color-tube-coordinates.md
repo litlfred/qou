@@ -12,3 +12,5 @@ are the shifted spectral coordinates
 
 together with the space-like shift $\sigma = w_1 - z$.  The
 *color vector* is $c = (c_r, c_g, c_b)$.
+
+![Colour-tube coordinates c_r, c_g, c_b on Σ₄.](rendered/color-tube-coords-0.svg)

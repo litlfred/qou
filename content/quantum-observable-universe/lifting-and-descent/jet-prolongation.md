@@ -13,3 +13,4 @@ $(\mathbf{C}, J^1(A), \tau', q)$ --- where
 $\tau' = \tau \circ (\text{--} \otimes \Omega^1)$ is the induced fibre
 functor --- is again a quantum observable universe over $R$.
 
+![Jet prolongation: Kähler differentials and J¹(A).](rendered/jet-prolongation-ladder-0.svg)

@@ -181,3 +181,5 @@ LP/SDP duality, not an empirical fit per atomic mass.*
 [`confinement-operator-selection.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/confinement-operator-selection.witness.json).
 
 **Audit doc.** [`docs/audits/2026-05-05-path-alpha-bring-refinement.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-05-path-alpha-bring-refinement.md).
+
+![Operator-selection LP / SDP — active set + dual.](rendered/lp-active-set-0.svg)

@@ -6,3 +6,5 @@ decomposition: on the symmetric sector the generators act as scalars
 (bosonic exchange), while on the mixed-symmetry sector they act
 non-trivially (fermionic exchange).  This categorical distinction between
 bosons and fermions requires no appeal to topology.
+
+![Schur–Weyl boson / fermion split on V^⊗3.](rendered/schur-weyl-bose-fermi-0.svg)

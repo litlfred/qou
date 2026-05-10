@@ -85,3 +85,5 @@ $E_i \cong \mathbb{CP}^1$:
 The divisor structure of $\{\psi = 0\}$ — not $|\psi|^2$ itself — is
 therefore the correct object for tracking vortex topology and the
 associated particle content.
+
+![Madelung decomposition ψ = √ρ · e^{iS/ℏ}.](rendered/madelung-decomposition-0.svg)

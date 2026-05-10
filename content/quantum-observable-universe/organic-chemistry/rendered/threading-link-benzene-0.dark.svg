@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 580"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>The threading link T(2,6) — benzene (dark mode)</title>
+  <desc>
+    A six-fold ring (benzene C–C skeleton) drawn as six small
+    coloured atomic rings arranged on a hexagonal lattice; a
+    single large red link threads through all six small rings,
+    representing the threading link T(2,6).  Caption notes that
+    the Alexander polynomial of T(2,6) halves the crossing energy
+    compared to a six-membered open chain — the topological
+    origin of aromaticity.
+  </desc>
+  <defs>
+    <style>
+      .bg     { fill: #0e0e12; }
+      .atom   { fill: #0e0e12; stroke: #e6e6ea; stroke-width: 2; }
+      .atomlbl{ font-size: 14px; font-weight: 700; fill: #e6e6ea;
+                text-anchor: middle; }
+      .thread { fill: none; stroke: #c0392b; stroke-width: 3.4;
+                stroke-linecap: round; stroke-dasharray: 0; }
+      .ttl    { font-size: 17px; font-style: italic; fill: #e6e6ea; }
+      .cap    { font-size: 13px; fill: #e6e6ea; text-anchor: middle; }
+      .sub    { font-size: 11px; fill: #aaa; text-anchor: middle; }
+      .red    { fill: #c0392b; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="600" height="580"/>
+
+  <text x="300" y="32" text-anchor="middle" class="ttl">The threading link  T(2, 6)  =  benzene</text>
+
+  <!-- 6 atomic C atoms at vertices of a regular hexagon, centre (300, 280), radius 130 -->
+  <!-- Vertices: (300, 150), (412.6, 215), (412.6, 345), (300, 410), (187.4, 345), (187.4, 215) -->
+  <g>
+    <circle class="atom" cx="300"   cy="150" r="34"/>
+    <circle class="atom" cx="412.6" cy="215" r="34"/>
+    <circle class="atom" cx="412.6" cy="345" r="34"/>
+    <circle class="atom" cx="300"   cy="410" r="34"/>
+    <circle class="atom" cx="187.4" cy="345" r="34"/>
+    <circle class="atom" cx="187.4" cy="215" r="34"/>
+    <text x="300"   y="155" class="atomlbl">C</text>
+    <text x="412.6" y="220" class="atomlbl">C</text>
+    <text x="412.6" y="350" class="atomlbl">C</text>
+    <text x="300"   y="415" class="atomlbl">C</text>
+    <text x="187.4" y="350" class="atomlbl">C</text>
+    <text x="187.4" y="220" class="atomlbl">C</text>
+  </g>
+
+  <!-- The threading link: a single closed curve passing alternately above/below
+       each atomic ring as it traces the hexagon.  Approximate as an ellipse
+       offset from the centre, going through each atomic ring's centre. -->
+  <ellipse class="thread" cx="300" cy="280" rx="155" ry="148"/>
+
+  <!-- A second smaller "link" line offset to indicate this is a 2-component link -->
+  <ellipse class="thread" cx="300" cy="280" rx="115" ry="108"
+           stroke-dasharray="6 4"/>
+
+  <!-- Threading-link label -->
+  <g transform="translate(498, 80)">
+    <circle class="red" r="6"/>
+    <text x="14" y="4" font-size="12" fill="#c0392b" font-style="italic">T(2,6)  threading link</text>
+  </g>
+
+  <!-- Caption -->
+  <text x="300" y="475" class="cap">a single threading link T(2,6) bonds all six C atoms simultaneously</text>
+  <text x="300" y="498" class="sub">Alexander polynomial halves the crossing energy ⇒ aromaticity</text>
+  <text x="300" y="520" class="sub">predicted C₆ chain → benzene barrier matches experiment with no free parameters</text>
+</svg>

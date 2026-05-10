@@ -152,3 +152,5 @@ surface — not derived" flag in
 as a path-(b) deliverable: the algebraic claim is now stated
 explicitly, with the empirical match documented. The path-(a)
 proof is workplan **P1.4** and remains open.
+
+![The S₅ permutohedron — 120 vertices.](rendered/s5-permutohedron-0.svg)

@@ -90,3 +90,5 @@ The threading carries **half the Alexander weight** of the
 pairwise construction.  This factor of $\tfrac{1}{2}$ propagates
 directly into the crossing energy, halving the predicted
 ring-closure barrier.
+
+![The threading link T(2, 6) — benzene.](rendered/threading-link-benzene-0.svg)

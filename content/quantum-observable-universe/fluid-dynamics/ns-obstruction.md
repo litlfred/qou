@@ -45,3 +45,5 @@ This supplies an **algebraic failure criterion** for smoothness
 without reference to continuous energy estimates: the obstruction is
 tested by whether the Hecke spectral gap closes to first order or
 higher order in $(q - 1)$.
+
+![NS obstruction: q-NS regularity (q > 1) vs classical blowup (q = 1).](rendered/ns-obstruction-blowup-0.svg)

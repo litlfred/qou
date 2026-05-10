@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>Molecular braid progression: H₂ → CO → CO₂ → CH₄ → C₂H₆ → C₆H₆ (dark mode)</title>
+  <desc>
+    A 2 × 3 grid of molecular braids.  Each cell is a labelled
+    box showing the closed braid representation of one molecule
+    with shared trefoils marked in red.  Below each cell: the
+    predicted vs experimental binding energy in eV.  C₆H₆ shows
+    the threading-link T(2,6) structure.
+  </desc>
+  <defs>
+    <style>
+      .bg     { fill: #0e0e12; }
+      .cell   { fill: #0e0e12; stroke: #e6e6ea; stroke-width: 1.4; rx: 6; }
+      .strand { fill: none; stroke: #e6e6ea; stroke-width: 2.4;
+                stroke-linecap: round; }
+      .shared { fill: none; stroke: #c0392b; stroke-width: 3;
+                stroke-linecap: round; }
+      .ttl    { font-size: 17px; font-style: italic; fill: #e6e6ea; }
+      .mol    { font-size: 18px; font-weight: 700; fill: #e6e6ea;
+                text-anchor: middle; }
+      .desc   { font-size: 11px; fill: #aaa; text-anchor: middle; }
+      .energy { font-size: 12px; fill: #e6e6ea; text-anchor: middle; }
+      .err    { font-size: 11px; fill: #e6e6ea; text-anchor: middle;
+                font-style: italic; }
+      .arrow  { fill: #888; }
+      .arrlbl { font-size: 13px; fill: #aaa; text-anchor: middle;
+                font-style: italic; }
+      .atom   { font-size: 13px; font-weight: 700; fill: #e6e6ea;
+                text-anchor: middle; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1200" height="720"/>
+
+  <text x="600" y="30" text-anchor="middle" class="ttl">Molecular braid progression  H₂ → CO → CO₂ → CH₄ → C₂H₆ → C₆H₆</text>
+
+  <!-- Cell layout: 3 columns × 2 rows.  Cell w=380, h=300, gap=10.
+       Row 1: y 60..360.   Row 2: y 380..680.
+       Cols: x 10..390, 410..790, 810..1190.  -->
+
+  <!-- ===== Row 1, Col 1: H₂ ===== -->
+  <rect class="cell" x="10" y="60" width="380" height="300"/>
+  <text x="200" y="90" class="mol">H₂</text>
+  <g transform="translate(200, 200)">
+    <circle class="strand" cx="-50" cy="0" r="32"/>
+    <circle class="shared" cx="0"   cy="0" r="32"/>
+    <circle class="strand" cx="50"  cy="0" r="32"/>
+    <text x="-50" y="60" class="atom">H</text>
+    <text x="50"  y="60" class="atom">H</text>
+  </g>
+  <text x="200" y="320" class="energy">E_bind = 4.48 eV</text>
+  <text x="200" y="340" class="err">predicted ≈ exp.</text>
+
+  <!-- ===== Row 1, Col 2: CO ===== -->
+  <rect class="cell" x="410" y="60" width="380" height="300"/>
+  <text x="600" y="90" class="mol">CO</text>
+  <g transform="translate(600, 200)">
+    <!-- triple-bond CO: three shared trefoils between C and O -->
+    <circle class="strand" cx="-60" cy="0" r="32"/>
+    <text x="-60" y="60" class="atom">C</text>
+    <circle class="shared" cx="-25" cy="-22" r="22"/>
+    <circle class="shared" cx="0"   cy="0"   r="22"/>
+    <circle class="shared" cx="-25" cy="22"  r="22"/>
+    <circle class="strand" cx="60"  cy="0" r="32"/>
+    <text x="60"  y="60" class="atom">O</text>
+  </g>
+  <text x="600" y="320" class="energy">E_bind = 11.16 eV  (triple bond)</text>
+  <text x="600" y="340" class="err">3 shared trefoils</text>
+
+  <!-- ===== Row 1, Col 3: CO₂ ===== -->
+  <rect class="cell" x="810" y="60" width="380" height="300"/>
+  <text x="1000" y="90" class="mol">CO₂</text>
+  <g transform="translate(1000, 200)">
+    <circle class="strand" cx="-100" cy="0" r="28"/>
+    <text x="-100" y="55" class="atom">O</text>
+    <circle class="shared" cx="-65"  cy="0" r="22"/>
+    <circle class="shared" cx="-35"  cy="0" r="22"/>
+    <circle class="strand" cx="0"    cy="0" r="32"/>
+    <text x="0"    y="58" class="atom">C</text>
+    <circle class="shared" cx="35"   cy="0" r="22"/>
+    <circle class="shared" cx="65"   cy="0" r="22"/>
+    <circle class="strand" cx="100"  cy="0" r="28"/>
+    <text x="100"  y="55" class="atom">O</text>
+  </g>
+  <text x="1000" y="320" class="energy">E_bind = 16.56 eV  (2 × double bond)</text>
+  <text x="1000" y="340" class="err">linear O=C=O</text>
+
+  <!-- ===== Row 2, Col 1: CH₄ ===== -->
+  <rect class="cell" x="10" y="380" width="380" height="300"/>
+  <text x="200" y="410" class="mol">CH₄  (tetrahedral)</text>
+  <g transform="translate(200, 530)">
+    <!-- C at centre + 4 H around -->
+    <circle class="strand" cx="0" cy="0" r="34"/>
+    <text x="0" y="5" class="atom">C</text>
+    <!-- 4 hydrogens at tetrahedral 2D projection: NW, NE, SW, SE -->
+    <circle class="strand" cx="-65" cy="-50" r="22"/>
+    <text x="-65" y="-44" class="atom">H</text>
+    <circle class="strand" cx="65"  cy="-50" r="22"/>
+    <text x="65"  y="-44" class="atom">H</text>
+    <circle class="strand" cx="-65" cy="50"  r="22"/>
+    <text x="-65" y="56" class="atom">H</text>
+    <circle class="strand" cx="65"  cy="50"  r="22"/>
+    <text x="65"  y="56" class="atom">H</text>
+    <!-- shared trefoils on each bond -->
+    <circle class="shared" cx="-32" cy="-25" r="14"/>
+    <circle class="shared" cx="32"  cy="-25" r="14"/>
+    <circle class="shared" cx="-32" cy="25"  r="14"/>
+    <circle class="shared" cx="32"  cy="25"  r="14"/>
+  </g>
+  <text x="200" y="640" class="energy">E_bind = 18.18 eV  (4 × C-H)</text>
+  <text x="200" y="660" class="err">S₄ tetrahedral symmetry</text>
+
+  <!-- ===== Row 2, Col 2: C₂H₆ ethane ===== -->
+  <rect class="cell" x="410" y="380" width="380" height="300"/>
+  <text x="600" y="410" class="mol">C₂H₆  (ethane)</text>
+  <g transform="translate(600, 530)">
+    <circle class="strand" cx="-40" cy="0" r="30"/>
+    <text x="-40" y="5" class="atom">C</text>
+    <circle class="shared" cx="0"   cy="0" r="22"/>
+    <circle class="strand" cx="40"  cy="0" r="30"/>
+    <text x="40"  y="5" class="atom">C</text>
+    <!-- 3 H on each carbon -->
+    <circle class="strand" cx="-90" cy="-45" r="16"/>
+    <text x="-90" y="-40" class="atom">H</text>
+    <circle class="strand" cx="-90" cy="0"   r="16"/>
+    <text x="-90" y="5" class="atom">H</text>
+    <circle class="strand" cx="-90" cy="45"  r="16"/>
+    <text x="-90" y="50" class="atom">H</text>
+    <circle class="strand" cx="90"  cy="-45" r="16"/>
+    <text x="90"  y="-40" class="atom">H</text>
+    <circle class="strand" cx="90"  cy="0"   r="16"/>
+    <text x="90"  y="5" class="atom">H</text>
+    <circle class="strand" cx="90"  cy="45"  r="16"/>
+    <text x="90"  y="50" class="atom">H</text>
+  </g>
+  <text x="600" y="640" class="energy">E_bind = 30.07 eV  (1 C-C + 6 C-H)</text>
+  <text x="600" y="660" class="err">staggered conformer</text>
+
+  <!-- ===== Row 2, Col 3: C₆H₆ benzene with threading link ===== -->
+  <rect class="cell" x="810" y="380" width="380" height="300"/>
+  <text x="1000" y="410" class="mol">C₆H₆  (benzene)</text>
+  <g transform="translate(1000, 530)">
+    <!-- 6 carbons on hexagon -->
+    <circle class="strand" cx="0"   cy="-65" r="14"/>
+    <circle class="strand" cx="56"  cy="-32" r="14"/>
+    <circle class="strand" cx="56"  cy="32"  r="14"/>
+    <circle class="strand" cx="0"   cy="65"  r="14"/>
+    <circle class="strand" cx="-56" cy="32"  r="14"/>
+    <circle class="strand" cx="-56" cy="-32" r="14"/>
+    <!-- threading link: large red ellipse going through all 6 -->
+    <ellipse class="shared" cx="0" cy="0" rx="74" ry="68"/>
+    <ellipse class="shared" cx="0" cy="0" rx="40" ry="36"
+             stroke-dasharray="6 4"/>
+  </g>
+  <text x="1000" y="640" class="energy">E_bind = 49.34 eV  (T(2,6) threading)</text>
+  <text x="1000" y="660" class="err">aromaticity ⇒ ½ crossing energy</text>
+
+  <!-- Arrows between cells (column 1 → 2 → 3) -->
+  <g class="arrow">
+    <polygon points="392,205 405,200 405,210" />
+    <polygon points="792,205 805,200 805,210" />
+    <polygon points="392,525 405,520 405,530" />
+    <polygon points="792,525 805,520 805,530" />
+  </g>
+</svg>

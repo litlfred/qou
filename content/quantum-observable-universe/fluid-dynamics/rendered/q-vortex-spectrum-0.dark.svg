@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 540"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>q-vortex spectrum on the brane (dark mode)</title>
+  <desc>
+    Bring's coral on the left with closed flow lines drawn around
+    each of the four handles, each annotated with its q-quantised
+    circulation Γ_n = 2π[n]_q.  On the right: a side scale
+    showing the discrete vortex spectrum as a comb of vertical
+    bars whose heights are the q-integers [1]_q, [2]_q, [3]_q,
+    [4]_q, …
+  </desc>
+  <defs>
+    <style>
+      .bg     { fill: #0e0e12; }
+      .body   { fill: #16161c; stroke: #e6e6ea; stroke-width: 2; }
+      .tube_r { fill: none; stroke: #c0392b; stroke-width: 4; }
+      .tube_g { fill: none; stroke: #27ae60; stroke-width: 4; }
+      .tube_b { fill: none; stroke: #2980b9; stroke-width: 4; }
+      .tube_k { fill: none; stroke: #e6e6ea; stroke-width: 4; }
+      .flow   { fill: none; stroke: #555; stroke-width: 1.4;
+                stroke-dasharray: 4 3; }
+      .lbl    { font-size: 12px; fill: #e6e6ea; text-anchor: middle; }
+      .lblb   { font-size: 14px; font-weight: 700; fill: #e6e6ea;
+                text-anchor: middle; }
+      .ttl    { font-size: 17px; font-style: italic; fill: #e6e6ea; }
+      .axis   { stroke: #e6e6ea; stroke-width: 1.4; fill: none; }
+      .bar    { fill: #e6e6ea; }
+      .axislbl{ font-size: 12px; fill: #e6e6ea; font-style: italic; }
+      .sub    { font-size: 11px; fill: #aaa; text-anchor: middle; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="900" height="540"/>
+
+  <text x="450" y="32" text-anchor="middle" class="ttl">q-vortex spectrum on the brane</text>
+
+  <!-- ===== Left: Bring coral ===== -->
+  <text x="270" y="58" text-anchor="middle" class="lbl">closed flow lines around each handle</text>
+
+  <ellipse class="body" cx="270" cy="280" rx="240" ry="50"/>
+
+  <!-- 4 handles -->
+  <path class="tube_r" d="M 70  280 C 70 160, 130 160, 130 280"/>
+  <path class="tube_g" d="M 170 280 C 170 140, 230 140, 230 280"/>
+  <path class="tube_b" d="M 270 280 C 270 140, 330 140, 330 280"/>
+  <path class="tube_k" d="M 370 280 C 370 160, 430 160, 430 280"/>
+
+  <!-- Flow lines (small loops around each handle) -->
+  <ellipse class="flow" cx="100" cy="220" rx="50" ry="22"/>
+  <text x="100" y="195" class="lbl">Γ₁ = 2π[1]_q</text>
+
+  <ellipse class="flow" cx="200" cy="200" rx="55" ry="24"/>
+  <text x="200" y="173" class="lbl">Γ₂ = 2π[2]_q</text>
+
+  <ellipse class="flow" cx="300" cy="200" rx="55" ry="24"/>
+  <text x="300" y="173" class="lbl">Γ₃ = 2π[3]_q</text>
+
+  <ellipse class="flow" cx="400" cy="220" rx="50" ry="22"/>
+  <text x="400" y="195" class="lbl">Γ₄ = 2π[4]_q</text>
+
+  <text x="270" y="395" class="sub">circulation around each handle is q-quantised: Γ_n = 2π[n]_q</text>
+  <text x="270" y="415" class="sub">[n]_q = (q^n − q^{−n}) / (q − q^{−1})  is the q-integer</text>
+
+  <!-- ===== Right: spectrum bar chart ===== -->
+  <text x="720" y="58" text-anchor="middle" class="lbl">discrete vortex spectrum</text>
+
+  <line class="axis" x1="600" y1="370" x2="850" y2="370"/>
+  <line class="axis" x1="600" y1="370" x2="600" y2="120"/>
+
+  <text x="850" y="390" class="axislbl">n</text>
+  <text x="585" y="120" class="axislbl">[n]_q</text>
+
+  <!-- Bars at n = 1..7 with heights proportional to [n]_q at q ≈ 1.11 -->
+  <!-- [1]_q = 1, [2]_q ≈ 2.232, [3]_q ≈ 3.700, [4]_q ≈ 5.491, [5]_q ≈ 7.717, [6]_q ≈ 10.530, [7]_q ≈ 14.130 -->
+  <g>
+    <rect class="bar" x="615" y="358" width="20" height="12"/>
+    <text x="625" y="385" class="lbl">1</text>
+
+    <rect class="bar" x="645" y="340" width="20" height="30"/>
+    <text x="655" y="385" class="lbl">2</text>
+
+    <rect class="bar" x="675" y="320" width="20" height="50"/>
+    <text x="685" y="385" class="lbl">3</text>
+
+    <rect class="bar" x="705" y="298" width="20" height="72"/>
+    <text x="715" y="385" class="lbl">4</text>
+
+    <rect class="bar" x="735" y="270" width="20" height="100"/>
+    <text x="745" y="385" class="lbl">5</text>
+
+    <rect class="bar" x="765" y="232" width="20" height="138"/>
+    <text x="775" y="385" class="lbl">6</text>
+
+    <rect class="bar" x="795" y="186" width="20" height="184"/>
+    <text x="805" y="385" class="lbl">7</text>
+  </g>
+
+  <text x="720" y="415" class="sub">spectrum is geometric not arithmetic: gaps grow like q^n</text>
+  <text x="720" y="435" class="sub">vortices live ONLY at integer n; no continuum between</text>
+  <text x="720" y="475" class="sub">values shown at q ≈ 1.11 (substrate value)</text>
+</svg>

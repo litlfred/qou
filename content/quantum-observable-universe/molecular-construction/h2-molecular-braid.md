@@ -90,3 +90,5 @@ $$
 (the covalent partner).  This maximises the number of
 $\sigma^{-1}$ (attractive) crossings in adjacent positions,
 minimising $\Phi_1$.*
+
+![H₂ as a shared trefoil bond.](rendered/h2-shared-trefoil-0.svg)

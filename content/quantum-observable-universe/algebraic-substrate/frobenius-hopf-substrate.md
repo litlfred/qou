@@ -38,3 +38,5 @@ $\tilde{\eta} \colon \mathbf{1} \to A \otimes A$.
 non-degenerate Frobenius pairing identifies $A$ with its dual $A^\vee$
 canonically, so that the observer trace $\Phi = \lambda \circ \mu$ and
 the observed state space are intrinsically paired.
+
+![The Frobenius–Hopf substrate — three layers.](rendered/frobenius-hopf-cake-0.svg)

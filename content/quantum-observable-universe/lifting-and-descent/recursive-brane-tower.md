@@ -17,3 +17,5 @@ The *recursive brane tower* is the sequence
 $A_0 \hookrightarrow A_1 \hookrightarrow A_2 \hookrightarrow \cdots$
 in $\mathbf{C}$, where each embedding is the canonical inclusion
 $A_n \hookrightarrow J^1(A_n) = A_{n+1}$ via the unit section.
+
+![The recursive brane tower.](rendered/brane-tower-stack-0.svg)

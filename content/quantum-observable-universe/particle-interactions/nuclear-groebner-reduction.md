@@ -169,3 +169,5 @@ in $H_A$ is $\sigma_1 \sigma_2 \cdots \sigma_{A-1}$).  For
 ${}^{14}\mathrm{C}$ ($A = 14$): the normal form has at most
 $\binom{13}{k}$ terms of length $k$, totalling at most $2^{13} = 8192$ terms — tractable for numerical evaluation via the
 Markov trace.
+
+![The Gröbner–Shirshov reduction tree.](rendered/gs-reduction-tree-0.svg)

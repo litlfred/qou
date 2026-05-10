@@ -13,3 +13,5 @@ class $[A] \in K_0(\mathbf{C})$ has rank $-6$, which by
 produces $6$ branch points in the geometric :refterm[descent]{#descent} (with total ramification
 $R_{\mathrm{tot}} = 2d + 6$).  A quantum observable universe satisfying the
 Descartes condition is called a *Descartes universe*.
+
+![Bring's surface as a moduli-polytope corner.](rendered/descartes-polytope-0.svg)
