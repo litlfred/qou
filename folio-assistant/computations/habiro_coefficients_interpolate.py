@@ -321,26 +321,35 @@ if __name__ == "__main__":
         results[label] = run_validation(Z, N, inter, label)
 
     # A = 3 demo: triton (Z=1, N=2) and ³He (Z=2, N=1) — symbolic intractable.
+    # Skipped by default: post-Wenzl-bridge migration the n=9 symbolic
+    # weight evaluation is too slow (>>1 min).  The cross-validator does
+    # not check A=3 (T and ³He are interpolate-only — no atomic
+    # counterpart), so skipping has no validation impact.  Set
+    # HABIRO_INTERPOLATE_A3=1 to re-enable for offline runs.
+    import os
     a3_cases = [
         ("T (triton, A=3)",   1, 2, True),
         ("³He (helion, A=3)", 2, 1, True),
     ]
-    for label, Z, N, inter in a3_cases:
-        print(f"\n── DEMO: A=3 ({label}) — tr_M @ q_0 numerically ──")
-        try:
-            t0 = time.time()
-            tr_val = markov_trace_numerical(Z, N, float(_Q_CANONICAL),
-                                             include_inter=inter)
-            dt = time.time() - t0
-            print(f"  tr_M = {mp.nstr(tr_val.real, 18)}  ({dt:.2f}s)")
-            results[label] = {
-                "Z": Z, "N": N, "include_inter": inter,
-                "tr_M_q0_numerical_60dps": str(tr_val.real),
-                "walltime_sec": dt,
-            }
-        except Exception as exc:
-            print(f"  ERROR: {type(exc).__name__}: {exc}")
-            results[label] = {"error": str(exc)}
+    if os.environ.get("HABIRO_INTERPOLATE_A3"):
+        for label, Z, N, inter in a3_cases:
+            print(f"\n── DEMO: A=3 ({label}) — tr_M @ q_0 numerically ──")
+            try:
+                t0 = time.time()
+                tr_val = markov_trace_numerical(Z, N, float(_Q_CANONICAL),
+                                                 include_inter=inter)
+                dt = time.time() - t0
+                print(f"  tr_M = {mp.nstr(tr_val.real, 18)}  ({dt:.2f}s)")
+                results[label] = {
+                    "Z": Z, "N": N, "include_inter": inter,
+                    "tr_M_q0_numerical_60dps": str(tr_val.real),
+                    "walltime_sec": dt,
+                }
+            except Exception as exc:
+                print(f"  ERROR: {type(exc).__name__}: {exc}")
+                results[label] = {"error": str(exc)}
+    else:
+        print("\n── A=3 demos skipped (set HABIRO_INTERPOLATE_A3=1 to enable) ──")
 
     # A = 4 (⁴He) is intractable at this precision: max seminormal
     # dimension f^λ ≈ 462 (for λ ⊢ 12) and 12 crossings → mpmath dense

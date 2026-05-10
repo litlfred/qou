@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-10T03:55:59.363750+00:00",
-  "commitSha": "e05bbe77acfd895d0580493ff7f5fd03ab5a2779",
+  "computedAt": "2026-05-10T04:55:40.628193+00:00",
+  "commitSha": "cf8e3b34f6b19d35ae8908508129e4fbef573d50",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2027,6 +2027,11 @@
       ],
       "computational-only": [
         "4he-binding-full-pipeline.witness.json",
+        "A-operator-extract-general.witness.json",
+        "A-operator-extract-kron.witness.json",
+        "A-operator-extract-reduced.witness.json",
+        "A-operator-per-interface.witness.json",
+        "A-operator-rank-probe.witness.json",
         "adjacent-vs-full-probe.witness.json",
         "alpha-5-jucys-murphy-central.witness.json",
         "alpha-5-lp-dual-crystal.witness.json",
@@ -2174,6 +2179,7 @@
         "m-n-difference-formula.witness.json",
         "markov-free-energy-qvalues.witness.json",
         "markov-peel-atomic-tr-m.witness.json",
+        "markov-pipeline-cross-validation.witness.json",
         "markov-substrate-realization.witness.json",
         "markov-trace-atomic-proton-full.witness.json",
         "markov-trace-axiomatic-multi-atom.witness.json",
@@ -2300,6 +2306,7 @@
         "unified-low-isotope-predictor.witness.json",
         "unified-mass-molecular.witness.json",
         "universal-ilp.witness.json",
+        "v-hat-to-chi-lambda-integrated.witness.json",
         "v-hat-to-delta-lambda-bridge.witness.json",
         "wall-violations-sweep.witness.json",
         "wall-violations.witness.json",

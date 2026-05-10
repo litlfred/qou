@@ -110,7 +110,7 @@ def tr_M_at_q0(Z, N, include_inter, convention="plancherel"):
     A = Z + N
     k = 3 * A
     nfac = qfac(k)
-    crossings = atomic_braid_to_crossings(Z, N, include_inter)
+    crossings = atomic_braid_to_crossings(Z, N, include_inter=include_inter)
 
     # Lazy-load Wenzl y_λ if requested
     wenzl_y = None

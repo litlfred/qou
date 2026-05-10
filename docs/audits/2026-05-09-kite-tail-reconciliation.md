@@ -188,51 +188,125 @@ the LO tautology in their docstrings.  The content block
 [`recomputed-low-isotope-mass-table.md`](../../content/quantum-observable-universe/braids-and-knots/recomputed-low-isotope-mass-table.md)
 has been rewritten to lead with the direct-binding formula.
 
-## V̂_i ↔ Δ_λ bridge — partial closure (1-dim channels exact)
+## V̂_i ↔ Δ_λ bridge — universal 1-dim closure (corrected formulation)
 
 **Probe.** [`v_hat_to_delta_lambda_bridge.py`](../../folio-assistant/computations/v_hat_to_delta_lambda_bridge.py)
 ([witness](../../folio-assistant/computations/v-hat-to-delta-lambda-bridge.witness.json))
 tests whether the q-character $\chi^\lambda(\beta_K)$ that appears
 in Option G's $\Delta_\lambda^G = (\text{target}/S) \cdot \chi^\lambda / d_\lambda$
-factors through the per-channel Wedderburn-decomposed pair volumes
-$\sum_{i<j} (\hat V_i \hat V_j)_\lambda$ from `wedderburn_pair_volumes.py`.
+factors through the per-generator volumes $\hat V_i^\lambda$ from
+`wedderburn_pair_volumes.atom_per_generator_full_matrices`.
 
-**Result (proton + neutron at $H_3$).** The 1-dim channels close
-**exactly**:
-
-| Atom | Channel | $d_\lambda$ | $\chi^\lambda(\beta_K)$ | $\sum_{i<j}(\hat V_i \hat V_j)_\lambda$ | rel. error |
-|---|---|---|---|---|---|
-| proton | sym | 1 | $1.3824945145464390$ | $1.3824945145464391$ | $5\!\times\!10^{-17}$ ✓ |
-| proton | alt | 1 | $-0.7392235469701222$ | $-0.7392235469701223$ | $6\!\times\!10^{-17}$ ✓ |
-| proton | std | 2 | $1.8077033200981562$ | $0.7381826740041164$ | $0.59$ ✗ |
-| neutron | sym | 1 | $1.1221068372363025$ | $1.1221068372363027$ | $2\!\times\!10^{-16}$ ✓ |
-| neutron | alt | 1 | $-0.910762206232365$ | $-0.910762206232365$ | $2\!\times\!10^{-16}$ ✓ |
-| neutron | std | 2 | $1.7008888500891589$ | $0.5047761849051495$ | $0.70$ ✗ |
-
-**4/4 one-dimensional channels match to ~1e-17 precision.** This
-**closes the bridge for 1-dim Wedderburn channels exactly**:
+**Universal formula (1-dim channels, any A).**
 
 $$
-\chi^\lambda(\beta_K) \;=\; \sum_{i<j}\big(\hat V_i \hat V_j\big)_\lambda
-\quad \text{for } \dim V_\lambda = 1
+\boxed{\;\chi^{1\text{-dim}}(\beta_K) \;=\; \prod_i \hat V_i^{1\text{-dim}}\;}
+\qquad \text{for } \dim V_\lambda = 1, \text{ any } A.
 $$
 
-via the canonical Wedderburn pair-volume decomposition.  Therefore
-$\Delta_\lambda^G$ for 1-dim partitions $\lambda$ factors as
+### Proof
+
+Let $\varphi: H_n(q) \to R$ be a one-dimensional irrep (an algebra
+homomorphism with one-dimensional image; the trace $\chi^\varphi$
+on $V_\varphi \cong R$ coincides with $\varphi$ itself).
+
+The atomic braid is a finite product of crossing operators:
+$$
+\beta_K \;=\; \prod_{k=1}^{m} \big(c_k\,\sigma_{i_k} + d_k\,\mathbf 1\big) \in H_n(q),
+$$
+where $i_k \in \{0, \ldots, n-2\}$ is the generator index of the
+$k$-th crossing and $(c_k, d_k) \in \{(1,0),\,(1,-h),\,(1,-h/2)\}$
+encodes the crossing type $\sigma$, $\sigma^{-1}$, or averaged.
+
+Apply $\varphi$:
+$$
+\varphi(\beta_K) \;=\; \prod_{k=1}^{m}\big(c_k\,\lambda_\varphi(i_k) + d_k\big),
+\qquad \lambda_\varphi(i) := \varphi(\sigma_i).
+$$
+The image is a product in the commutative target ring $R$, so the
+factors commute and we may regroup by generator index:
+$$
+\varphi(\beta_K) \;=\; \prod_{i=0}^{n-2}\;\prod_{\substack{k=1 \\ i_k = i}}^{m}\big(c_k\,\lambda_\varphi(i) + d_k\big)
+\;=\;\prod_{i=0}^{n-2} \hat V_i^\varphi,
+$$
+where $\hat V_i^\varphi := \prod_{k:\,i_k=i}(c_k\,\lambda_\varphi(i) + d_k)$
+is the per-generator volume in the $\varphi$-channel as computed by
+[`wedderburn_pair_volumes.atom_per_generator_full_matrices`](../../folio-assistant/computations/wedderburn_pair_volumes.py).
+
+Since $\chi^\varphi = \varphi$ on a 1-dim irrep, we conclude
+$\chi^\varphi(\beta_K) = \prod_i \hat V_i^\varphi$.  $\square$
+
+The proof is **independent of $A$, of $n$, and of the inter-nucleon
+braid structure** — it uses only the homomorphism property of
+$\varphi$ and the commutativity of the target ring.  The $H_3$
+1-dim irreps are `sym` ($\varphi(\sigma_i) = q$) and `alt`
+($\varphi(\sigma_i) = -q^{-1}$); at $H_n$ for any $n$ the same two
+1-dim irreps exist (corresponding to partitions $(n)$ and $(1^n)$).
+
+(An earlier draft of this section used a $\sum_{i<j}(\hat V_i \hat V_j)_\lambda$
+form that coincides with the product only at $A=1$ — only 2
+generators, so a single pair-product equals the two-factor
+product.  The proof above shows the **product** is the universal
+form.)
+
+**Result (proton, neutron at $H_3$ + deuteron at $H_6$).**
+
+| Atom | A | Channel | $d_\lambda$ | $\chi^\lambda(\beta_K)$ | $\prod_i \hat V_i^\lambda$ | rel. error |
+|---|---|---|---|---|---|---|
+| proton | 1 | sym=(3) | 1 | $1.3824945145464$ | $1.3824945145464$ | $5\!\times\!10^{-17}$ ✓ |
+| proton | 1 | alt=(1³) | 1 | $-0.7392235469701$ | $-0.7392235469701$ | $5\!\times\!10^{-17}$ ✓ |
+| neutron | 1 | sym=(3) | 1 | $1.1221068372363$ | $1.1221068372363$ | $1\!\times\!10^{-16}$ ✓ |
+| neutron | 1 | alt=(1³) | 1 | $-0.9107622062324$ | $-0.9107622062324$ | $2\!\times\!10^{-16}$ ✓ |
+| deuteron | 2 | sym=(6) | 1 | $1.5597587394181$ | $1.5597587394181$ | $3\!\times\!10^{-16}$ ✓ |
+| deuteron | 2 | alt=(1⁶) | 1 | $-0.6769250645272$ | $-0.6769250645272$ | $2\!\times\!10^{-17}$ ✓ |
+| **tritium** | **3** | **sym=(9)** | 1 | $1.5768015283810$ | $1.5768015283810$ | $3\!\times\!10^{-16}$ ✓ |
+| **tritium** | **3** | **alt=(1⁹)** | 1 | $-0.6843215231762$ | $-0.6843215231762$ | $1\!\times\!10^{-16}$ ✓ |
+| **³He** | **3** | **sym=(9)** | 1 | $2.3935111147542$ | $2.3935111147542$ | $4\!\times\!10^{-16}$ ✓ |
+| **³He** | **3** | **alt=(1⁹)** | 1 | $-0.4508185556344$ | $-0.4508185556344$ | $5\!\times\!10^{-17}$ ✓ |
+| **⁴He** | **4** | **sym=(12)** | 1 | $2.4196639445339$ | $2.4196639445339$ | $4\!\times\!10^{-16}$ ✓ |
+| **⁴He** | **4** | **alt=(1¹²)** | 1 | $-0.4557444491781$ | $-0.4557444491781$ | $2\!\times\!10^{-16}$ ✓ |
+| proton std=(2,1) | 1 | 2 | $1.8077033200982$ | matrix tr ✗ no scalar | — |
+| neutron std=(2,1) | 1 | 2 | $1.7008888500892$ | matrix tr ✗ no scalar | — |
+
+**12/12 one-dimensional channels match to ~$10^{-16}$ precision** across
+A=1, 2, 3, 4 (all six low-A atoms × two 1-dim channels each).
+Therefore $\Delta_\lambda^G$ for 1-dim partitions factors as
 
 $$
-\Delta_\lambda^G(K) \;=\; \frac{\text{target}_K}{S_K} \cdot \frac{\sum_{i<j}(\hat V_i \hat V_j)_\lambda}{d_\lambda},
+\Delta_\lambda^G(K) \;=\; \frac{\text{target}_K}{S_K} \cdot \frac{\prod_i \hat V_i^\lambda}{d_\lambda},
 \qquad d_\lambda = 1.
 $$
 
-**The 2-dim std channel does NOT close** as a scalar pair-sum
-because $\mathrm{tr}$ on a 2-dim irrep includes off-diagonal
-coupling.  `wedderburn_pair_volumes.std` already computes the
-correct matrix-valued combination
-$z \cdot (M_i M_j)_{12} + (M_i M_j)_{22}$ — but that's the
-2-dim trace formulation, not a scalar pair-sum.  Closing the
-std bridge requires reconciling these two scalar evaluations of
-the 2-dim trace.
+**The multi-dim irreps DON'T factor as a scalar V̂_i product**
+because the trace is intrinsically $\mathrm{tr}\big(\prod_i M_i\big)$
+with non-commuting matrices.  More importantly, the connection
+between single-particle $\hat V_i$ and the LR-decomposition that
+defines $\Delta_\lambda$ for atomic braids is **operator-valued**,
+not scalar.  Per the existing audit
+[`docs/audits/2026-05-04-sublemma-2-1-refined.md`](2026-05-04-sublemma-2-1-refined.md)
+(refined Sub-lemma 2.1, PR #534's branch, 11/11 verified at $10^{-15}$):
+
+> Under the LR decomposition
+> $V_\lambda \big|_{H_{n_1}(q) \otimes H_{n_2}(q)} = \bigoplus_{(\mu, \nu)} c^\lambda_{\mu, \nu} \cdot V_\mu \otimes V_\nu$,
+> the action of any element involves an **operator-valued
+> interface coefficient $A^\lambda_{\mu, \nu}(I) \in \mathrm{End}(V_\mu \otimes V_\nu)^{\oplus c^\lambda_{\mu, \nu}}$**.
+
+So the bridge $\hat V_i \to \Delta_\lambda$ for **multi-dim
+irreps** runs through this operator-valued $A^\lambda_{\mu\nu}(I)$,
+not a scalar product.  The scalar product formula
+$\chi^{1\text{-dim}} = \prod_i \hat V_i^\lambda$ is the
+**1-dim specialisation** of the refined operator-valued sub-lemma
+— which is consistent with the existing audit's framing that
+the scalar form (categorical proof in PR #539) suffices for
+the W-3 maximizer at $V_{(1^p)}$ (1-dim column irrep), while the
+operator-valued form is needed for the general multi-dim case.
+
+**Closing multi-dim sectors** requires:
+1. Direct matrix evaluation: $\chi^\lambda(\beta_K) = \mathrm{tr}\big(\prod_i M_i\big)$ via Hoefsmit (always works, no factorisation).
+2. Operator-valued sub-lemma application: extract $A^\lambda_{\mu\nu}(I)$ for the inter-nucleon interface and combine with single-nucleon $\hat V_i$ blocks.
+   This is the path PR #534's `sublemma_2_1_A_operator_extract.py`
+   already implements; integrating it into the V̂_i ↔ Δ_λ
+   bridge is a concrete next step.
 
 **Implication for 1ppb mass precision.** For atomic structure
 where the std channel contribution is small or its ratio is

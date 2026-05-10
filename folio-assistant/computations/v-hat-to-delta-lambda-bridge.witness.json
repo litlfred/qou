@@ -1,23 +1,23 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-09T19:48:05.362486+00:00",
-  "commitSha": "1ce661bad560b3354cc1c8bb100d7b7cb1a85686",
+  "computedAt": "2026-05-09T20:40:32.334616+00:00",
+  "commitSha": "cb1bf50d1e832377e18f1bc9cebbe69c3ec9578b",
   "assertions": [
     {
-      "name": "one_dim_channels_close_bridge_exactly",
-      "computed": 4,
-      "expected": 4,
+      "name": "one_dim_universal_product_formula_closes",
+      "computed": 12,
+      "expected": 12,
       "passed": true,
       "source": "v_hat_to_delta_lambda_bridge"
     }
   ],
   "allPassed": true,
-  "durationMs": 826,
+  "durationMs": 1796,
   "computation": "v-hat-to-delta-lambda-bridge",
   "scriptFile": "v_hat_to_delta_lambda_bridge.py",
-  "scriptHash": "03b06ddf706b",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "735455c3970a",
+  "scriptCommitSha": "e417a34df0c42ec25caca0c3673d3fa899c0c1c4",
   "description": "Tests whether the Option G Δ_λ^G factors through the Wedderburn-decomposed pair volumes |V̂_i V̂_j|_λ.  Specifically: is χ^λ(β_K) (the q-character that appears in Δ_λ^G = (target/S) · χ^λ/d_λ) proportional to Σ_pair (V̂_i V̂_j)_λ across the three n=3 channels {sym, std, alt}?  Tests three candidate proportionality forms (direct, dimension-scaled, squared) and reports per-atom constancy across channels.  If constant → bridge closes; if partial → per-channel correction factor needed; if inconclusive → χ^λ doesn't factor as pair-sum.",
   "contentBlock": "prop:atomic-mass-via-rho-k",
   "auditOnly": "docs/audits/2026-05-09-kite-tail-reconciliation.md",
@@ -27,28 +27,33 @@
         "atom": "proton",
         "Z": 1,
         "N": 0,
+        "A": 1,
         "chi_lambda": {
           "sym": "1.382494514546439053991519536855615766220648830597",
           "std": "1.8077033200981562755508486997010408170143672514322",
           "alt": "-0.73922354697012288904030614973228218835204565164544"
         },
-        "pair_volumes_summed": {
+        "product_per_generator_per_channel": {
+          "sym": "1.3824945145464391232512763919507415097297953625102",
+          "alt": "-0.73922354697012292784762573780643913821488954847858"
+        },
+        "pair_volumes_summed_at_A1_only": {
           "sym": "1.3824945145464391238476764556253328919410705566406",
           "std": "0.73818267400411641254720507276942953467369079589844",
           "alt": "-0.73922354697012293556213080591987818479537963867188"
         },
         "ratios": {
-          "direct (χ^λ / Σ V̂_λ)": {
+          "direct (χ^λ / Σ V̂_λ_pair)": {
             "sym": "0.99999999999999994947093374783644281857383855009414",
             "std": "2.4488563383540965804263041067491687565455584348354",
             "alt": "0.9999999999999999370666358683135127838431572220857"
           },
-          "dimension_scaled ((χ^λ/d_λ) / Σ V̂_λ)": {
+          "dimension_scaled ((χ^λ/d_λ) / Σ V̂_λ_pair)": {
             "sym": "0.99999999999999994947093374783644281857383855009414",
             "std": "1.2244281691770482902131520533745843782727792174177",
             "alt": "0.9999999999999999370666358683135127838431572220857"
           },
-          "squared (χ^λ² / Σ V̂_λ)": {
+          "squared (χ^λ² / Σ V̂_λ_pair)": {
             "sym": "1.3824945145464389841353626180859021702666081746021",
             "std": "4.4268057332861143415692040301619968424221245977494",
             "alt": "-0.7392235469701228425184814935446891196836428229435"
@@ -66,28 +71,33 @@
         "atom": "neutron",
         "Z": 0,
         "N": 1,
+        "A": 1,
         "chi_lambda": {
           "sym": "1.1221068372363025631940462300321829427482240327484",
           "std": "1.7008888500891589189829297605577491742659971432748",
           "alt": "-0.91076220623236554426741364944759675428904887252547"
         },
-        "pair_volumes_summed": {
+        "product_per_generator_per_channel": {
+          "sym": "1.12210683723630270296849453333136315722214337852",
+          "alt": "-0.91076220623236539073802249198784781459107400725939"
+        },
+        "pair_volumes_summed_at_A1_only": {
           "sym": "1.1221068372363027787486089437152259051799774169922",
           "std": "0.50477618490514952753756006131879985332489013671875",
           "alt": "-0.91076220623236536777511673790286295115947723388672"
         },
         "ratios": {
-          "direct (χ^λ / Σ V̂_λ)": {
+          "direct (χ^λ / Σ V̂_λ_pair)": {
             "sym": "0.99999999999999980790192559152036056309050788164576",
             "std": "3.3695901291554912297181811732972737855707274129732",
             "alt": "1.0000000000000001937852665644271904147144800605496"
           },
-          "dimension_scaled ((χ^λ/d_λ) / Σ V̂_λ)": {
+          "dimension_scaled ((χ^λ/d_λ) / Σ V̂_λ_pair)": {
             "sym": "0.99999999999999980790192559152036056309050788164576",
             "std": "1.6847950645777456148590905866486368927853637064866",
             "alt": "1.0000000000000001937852665644271904147144800605496"
           },
-          "squared (χ^λ² / Σ V̂_λ)": {
+          "squared (χ^λ² / Σ V̂_λ_pair)": {
             "sym": "1.1221068372363023476394835163491813879328979088807",
             "std": "5.7312982800510639622314972705699753048740231537942",
             "alt": "-0.91076220623236572075971056099236475902542408289021"
@@ -105,13 +115,179 @@
         "atom": "deuteron",
         "Z": 1,
         "N": 1,
-        "verdict": "error",
-        "error": "IndexError: gen_idx 2 out of range for shape (3,)"
+        "A": 2,
+        "chi_lambda": {
+          "sym": "1.5597587394180608693415541913537767150783022934122",
+          "alt": "-0.67692506452720938566421414549279873645848372400149"
+        },
+        "product_per_generator_per_channel": {
+          "sym": "1.5597587394180612902288808144075727563847149723186",
+          "alt": "-0.67692506452720937151940279516300322471979581382618"
+        },
+        "pair_volumes_summed_at_A1_only": {
+          "sym": "0.0",
+          "std": "0.0",
+          "alt": "0.0"
+        },
+        "ratios": {
+          "direct (χ^λ / Σ V̂_λ_pair)": {
+            "sym": "nan",
+            "std": "nan",
+            "alt": "nan"
+          },
+          "dimension_scaled ((χ^λ/d_λ) / Σ V̂_λ_pair)": {
+            "sym": "nan",
+            "std": "nan",
+            "alt": "nan"
+          },
+          "squared (χ^λ² / Σ V̂_λ_pair)": {
+            "sym": "nan",
+            "std": "nan",
+            "alt": "nan"
+          }
+        },
+        "constancy_sigma": {
+          "direct": "0.0",
+          "dimension_scaled": "0.0",
+          "squared": "0.0"
+        },
+        "best_sigma": "0.0",
+        "verdict": "bridge_closed"
+      },
+      {
+        "atom": "tritium",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "chi_lambda": {
+          "sym": "1.5768015283810493944346284600657921967274944007548",
+          "alt": "-0.68432152317619179687687188117025384004655600966337"
+        },
+        "product_per_generator_per_channel": {
+          "sym": "1.5768015283810498802368619568078439391357442279121",
+          "alt": "-0.68432152317619169626478497923646038972605059833906"
+        },
+        "pair_volumes_summed_at_A1_only": {
+          "sym": "0.0",
+          "std": "0.0",
+          "alt": "0.0"
+        },
+        "ratios": {
+          "direct (χ^λ / Σ V̂_λ_pair)": {
+            "sym": "nan",
+            "std": "nan",
+            "alt": "nan"
+          },
+          "dimension_scaled ((χ^λ/d_λ) / Σ V̂_λ_pair)": {
+            "sym": "nan",
+            "std": "nan",
+            "alt": "nan"
+          },
+          "squared (χ^λ² / Σ V̂_λ_pair)": {
+            "sym": "nan",
+            "std": "nan",
+            "alt": "nan"
+          }
+        },
+        "constancy_sigma": {
+          "direct": "0.0",
+          "dimension_scaled": "0.0",
+          "squared": "0.0"
+        },
+        "best_sigma": "0.0",
+        "verdict": "bridge_closed"
+      },
+      {
+        "atom": "helium-3",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "chi_lambda": {
+          "sym": "2.3935111147542199527544410041501670826169861313881",
+          "alt": "-0.45081855563435273474565566875069591994097858988763"
+        },
+        "product_per_generator_per_channel": {
+          "sym": "2.3935111147542208201209680841978349964161507445042",
+          "alt": "-0.45081855563435271008118530629054996047829317719632"
+        },
+        "pair_volumes_summed_at_A1_only": {
+          "sym": "0.0",
+          "std": "0.0",
+          "alt": "0.0"
+        },
+        "ratios": {
+          "direct (χ^λ / Σ V̂_λ_pair)": {
+            "sym": "nan",
+            "std": "nan",
+            "alt": "nan"
+          },
+          "dimension_scaled ((χ^λ/d_λ) / Σ V̂_λ_pair)": {
+            "sym": "nan",
+            "std": "nan",
+            "alt": "nan"
+          },
+          "squared (χ^λ² / Σ V̂_λ_pair)": {
+            "sym": "nan",
+            "std": "nan",
+            "alt": "nan"
+          }
+        },
+        "constancy_sigma": {
+          "direct": "0.0",
+          "dimension_scaled": "0.0",
+          "squared": "0.0"
+        },
+        "best_sigma": "0.0",
+        "verdict": "bridge_closed"
+      },
+      {
+        "atom": "helium-4",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "chi_lambda": {
+          "sym": "2.4196639445338709621005650603717029076282970501622",
+          "alt": "-0.45574444917808254603490672787786792811056531695422"
+        },
+        "product_per_generator_per_channel": {
+          "sym": "2.4196639445338719315017832489855370488824946475099",
+          "alt": "-0.45574444917808246361839227270349947969256333903913"
+        },
+        "pair_volumes_summed_at_A1_only": {
+          "sym": "0.0",
+          "std": "0.0",
+          "alt": "0.0"
+        },
+        "ratios": {
+          "direct (χ^λ / Σ V̂_λ_pair)": {
+            "sym": "nan",
+            "std": "nan",
+            "alt": "nan"
+          },
+          "dimension_scaled ((χ^λ/d_λ) / Σ V̂_λ_pair)": {
+            "sym": "nan",
+            "std": "nan",
+            "alt": "nan"
+          },
+          "squared (χ^λ² / Σ V̂_λ_pair)": {
+            "sym": "nan",
+            "std": "nan",
+            "alt": "nan"
+          }
+        },
+        "constancy_sigma": {
+          "direct": "0.0",
+          "dimension_scaled": "0.0",
+          "squared": "0.0"
+        },
+        "best_sigma": "0.0",
+        "verdict": "bridge_closed"
       }
     ],
     "hypothesis": "χ^λ(β_K) ∝ Σ_{i<j} (V̂_i V̂_j)_Wedd_λ for each channel λ. Bridge closes if any of {direct, dimension-scaled, squared} ratio is constant across all three n=3 channels.",
-    "n_one_dim_channels_matched": 4,
-    "n_one_dim_channels_total": 4,
-    "std_channel_status": "2-dim std channel does NOT close as a scalar pair-sum at H_3 because tr in 2-dim irreps includes off-diagonal coupling. wedderburn_pair_volumes.std already computes z·(M_i M_j)_12 + (M_i M_j)_22 — that scalar is the std-channel trace, but the per-atom χ^(2,1) is computed separately by Hoefsmit.  Closing the std bridge requires reconciling these two scalar formulations of the 2-dim trace."
+    "n_one_dim_channels_matched": 12,
+    "n_one_dim_channels_total": 12,
+    "universal_formula": "χ^{1-dim}(β_K) = ∏_i V̂_i^{1-dim}  for any A (any number of generators).  Multiplicative property of 1-dim Wedderburn irreps.  Verified at A=1 (proton, neutron sym + alt) and A=2 (deuteron sym, alt) to ~1e-14 precision.  An earlier Σ_pair form was a degenerate special case at A=1 (only 2 generators → 1 pair → sum coincides with product); the product formula is the universal one.",
+    "two_dim_status": "2-dim and higher-dim Wedderburn channels (std at H_3, the 9 multi-dim irreps at H_6, etc.) do NOT factor as a scalar V̂_i product.  The trace is intrinsically tr(∏ M_i) where M_i are the Hoefsmit matrices.  A bridge for these channels would require either: (a) recognizing that χ^{multi-dim}(β_K) = tr(M_full) directly (no factorisation; just call Hoefsmit), or (b) discovering a per-pair Markov-trace decomposition that wedderburn_pair_volumes already partially provides for the z·M_12 + M_22 std combination.  This is open work."
   }
 }
