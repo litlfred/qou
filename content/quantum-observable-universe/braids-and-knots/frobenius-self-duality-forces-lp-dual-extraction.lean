@@ -40,17 +40,17 @@ structure FrobeniusTraceAlgebra (R : Type*) [CommRing R] where
   trace : algebra → R
   /-- Cyclicity: τ(ab) = τ(ba). -/
   trace_comm : ∀ a b : algebra, trace (mul a b) = trace (mul b a)
-  /-- Non-degeneracy: if τ(a·b) = 0 for every b, then a = 0.
-      This is exactly the Frobenius condition for `(algebra, trace)`. -/
+  /-- Non-degeneracy in injectivity form: the map
+      `a ↦ (b ↦ trace (mul a b))` is injective.  Equivalently,
+      `(∀ b, trace(a₁·b) = trace(a₂·b)) → a₁ = a₂`.  This avoids
+      requiring an additive structure (no `Zero algebra` needed)
+      while still encoding the actual Frobenius non-degeneracy
+      property — strictly stronger than the previous `P → P`
+      tautological form. -/
   nondegenerate :
-    ∀ a : algebra,
-      (∀ b : algebra, trace (mul a b) = 0) →
-        ∀ b : algebra, trace (mul a b) = 0
-  -- Note: full nondegeneracy ⇒ a = 0 requires `algebra` to carry an
-  -- additive structure (zero element).  We keep the weaker statement
-  -- here so the type-checker accepts without imposing `[AddZeroClass]`
-  -- on the carrier; the strong form is restated downstream where
-  -- the carrier is a known additive structure.
+    ∀ a₁ a₂ : algebra,
+      (∀ b : algebra, trace (mul a₁ b) = trace (mul a₂ b)) →
+        a₁ = a₂
 
 /-- The canonical Frobenius self-duality map a ↦ τ(a · −).  Maps
     the algebra to its R-linear dual.  By non-degeneracy of `trace`,
@@ -73,32 +73,46 @@ theorem observation_is_self_duality {R : Type*} [CommRing R]
     (FA : FrobeniusTraceAlgebra R) :
     observationFrame FA = frobeniusSelfDualityMap FA := rfl
 
+/-- The Frobenius self-duality map is INJECTIVE — this is the
+    substantive content of the structure.  Two algebra elements
+    that pair identically against the trace must be equal,
+    because `nondegenerate` says exactly that.  This injectivity
+    is the Lean-side encoding of "Φ_τ is a self-duality (an iso
+    in finite-dim, an injection in general)". -/
+theorem frobenius_self_duality_map_injective
+    {R : Type*} [CommRing R] (FA : FrobeniusTraceAlgebra R) :
+    Function.Injective (frobeniusSelfDualityMap FA) := by
+  intro a₁ a₂ h
+  -- `h : (b ↦ trace (mul a₁ b)) = (b ↦ trace (mul a₂ b))`
+  -- Apply `nondegenerate`.
+  apply FA.nondegenerate
+  intro b
+  exact congrFun h b
+
 /-- A τ-extracted observable on a Frobenius-positivity-constrained
     LP is canonically a shadow price (LP-dual variable), provided
     the LP satisfies the standard regularity conditions
     (primal feasible + bounded; equivalently Slater's condition
     for the operator-selection LP).
 
-    Proof outline:
-    - Frobenius pairing identifies `algebra` with `algebra → R`.
-    - Primal variable x ∈ algebra; dual variable u ∈ algebra → R.
-    - Under self-duality, the primal feasible cone maps to the
-      dual feasible cone.
-    - Cost functional `λ x, τ(Θ · x)` maps to dual objective
-      `λ u, ⟨u, Θ⟩` under the same identification.
-    - LP regularity hypotheses (feasibility + boundedness) imply
-      strong duality; the Frobenius identification implies that
-      strong duality is the SAME equality as Obs_τ = Φ_τ.
+    Statement: the observation frame `Obs_τ` is identical to the
+    Frobenius self-duality map `Φ_τ`, and that map is injective —
+    so τ-extracted observables uniquely determine elements of the
+    dual space.  Combining with Slater regularity (assumed at the
+    LP level) gives the LP-dual identification.
 
     Full Lean formalization is conditional on the Hecke-as-
     Frobenius-algebra construction being made fully precise in
     Mathlib (Hecke algebra with Markov trace as a Frobenius
-    structure on `Module R (HeckeAlg R q n)`). The current
-    statement encodes the structural pairing identity. -/
+    structure on `Module R (HeckeAlg R q n)`). -/
 theorem frobenius_self_duality_forces_lp_dual_extraction
     {R : Type*} [CommRing R] (FA : FrobeniusTraceAlgebra R) :
-    observationFrame FA = frobeniusSelfDualityMap FA := by
+    observationFrame FA = frobeniusSelfDualityMap FA
+      ∧ Function.Injective (observationFrame FA) := by
   -- Ref: [kassel1995] §XII.2; [frobenius1903]; [nakayama1939]
-  rfl
+  refine ⟨rfl, ?_⟩
+  -- Obs_τ = Φ_τ (definitionally), so injectivity of Obs_τ
+  -- reduces to injectivity of Φ_τ.
+  exact frobenius_self_duality_map_injective FA
 
 end QOU.BraidKnot

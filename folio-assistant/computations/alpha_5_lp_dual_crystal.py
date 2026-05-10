@@ -62,13 +62,13 @@ Q0 = mp.mpf(Q_50_DIGIT_STR)
 
 
 # ── Atom data ────────────────────────────────────────────────
-# m_e from the centralised experimental-constants module to avoid
-# magic-value drift; m_p / m_n are NOT mixed in as anchors here
-# (the LP probe consumes only the per-atom braid recipe and the
-# Wedderburn weights — atomic mass values are not used in the LP
-# itself).  See `folio-assistant/computations/experimental_constants.py`.
-from experimental_constants import M_E_MEV  # noqa: E402
-
+# The LP probe consumes only the per-atom braid recipe and the
+# Wedderburn weights — atomic mass values are NOT used in the LP
+# itself.  No CODATA mass constants are imported here (Copilot
+# review #r3214005450).  When a downstream analysis needs `m_e`,
+# `m_p`, or `m_n`, import them at that call site from
+# `experimental_constants.py` (the single source of truth) rather
+# than at module level.
 ATOMS = {
     "D":   {"Z": 1, "N": 1, "n": 6},
     "T":   {"Z": 1, "N": 2, "n": 9},

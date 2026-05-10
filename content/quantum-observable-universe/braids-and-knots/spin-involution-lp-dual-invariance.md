@@ -17,6 +17,20 @@ satisfying
 The $\mathbb{Z}/2$ grading $A = A_+ \oplus A_-$ by
 $\sigma$-eigenvalue is the *spin grading*; $A_+$ is the
 *spin-singlet sector* and $A_-$ is the *spin-doublet sector*.
+
+**Hypothesis (2 invertible).** Throughout this proposition we
+assume $2 \in R^\times$ — i.e., the base ring $R$ contains
+$\tfrac{1}{2}$. This is satisfied when $R$ is a field of
+characteristic $\neq 2$ (in particular $\mathbb{Q}$,
+$\mathbb{R}$, $\mathbb{C}$, $\mathbb{Z}[\tfrac{1}{2}]$, or any
+$\mathbb{Q}$-algebra). For the QOU substrate $R = \mathbb{R}$ or
+$R = \mathbb{Q}(q)$ this holds. Without this hypothesis, the
+$A_\pm$ projections $a_\pm := \tfrac{1}{2}(a \pm \sigma(a))$ are
+ill-defined; an alternative additive decomposition (without
+division) exists when $A$ has an idempotent splitting
+$\mathbf{1} = e_+ + e_-$ with $\sigma(e_\pm) = \pm e_\pm$, but
+that is more restrictive.
+
 Every $a \in A$ has the canonical decomposition
 $a = a_+ + a_-$ with $a_\pm := \tfrac{1}{2}(a \pm \sigma(a)) \in
 A_\pm$. The *isospin third-component* is **defined on

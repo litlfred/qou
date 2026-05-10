@@ -141,25 +141,27 @@ theorem spin_invariant_cost {R : Type*} [CommRing R]
   rw [S.trace_invariant]
   exact FA.trace_comm x c
 
-/-- Step 4.  σ is a bijection between the feasible sets of
-    LP(β) and LP(σ(β)) preserving the objective.
+/-- Step 4.  σ is a BIJECTION on `FA.algebra` (since σ ∘ σ = id),
+    so it bijects the feasible set of LP(β) with that of LP(σ(β)).
+    Combined with Steps 2 (cone is σ-stable) and 3 (objective is
+    σ-invariant), this yields an isomorphism of the two LPs.
 
-    The objective `τ(c · x)` is σ-invariant (Step 3); the
-    feasible cone is σ-stable (Step 2); the net constraint
-    `τ(β⋆ · β · x) = n_target` transforms to
-    `τ(σ(β)⋆ · σ(β) · x') = n_target` under x ↦ σ(x), using
-    *-compatibility of σ.
-
-    Statement-level: σ takes feasible points to feasible points
-    of the σ(β) LP, preserving the objective. -/
-theorem lp_isomorphism {R : Type*} [CommRing R]
-    {FA : FrobeniusTraceAlgebra R} (S : SpinInvolution FA)
-    (c beta : FA.algebra) (sigma_c : S.sigma c = c) (x : FA.algebra) :
-    FA.trace (FA.mul c (S.sigma x))
-      = FA.trace (FA.mul c x) := by
-  -- This is exactly Step 3 (the objective preservation half).
-  -- The feasibility-preservation half is Step 2.
-  exact spin_invariant_cost S c sigma_c x
+    Statement: σ is bijective on `FA.algebra`.  The companion
+    `spin_invariant_cost` (Step 3) gives the objective half;
+    `spin_stabilises_constraints` (Step 2) gives the constraint
+    half; together with this bijectivity they constitute the
+    LP isomorphism. -/
+theorem lp_isomorphism_sigma_bijective {R : Type*} [CommRing R]
+    {FA : FrobeniusTraceAlgebra R} (S : SpinInvolution FA) :
+    Function.Bijective S.sigma := by
+  refine ⟨?_, ?_⟩
+  · -- injective: σ(a) = σ(b) → σ(σ(a)) = σ(σ(b)) → a = b
+    intro a b h
+    have := congrArg S.sigma h
+    rwa [S.involutive, S.involutive] at this
+  · -- surjective: σ(σ(y)) = y so σ is its own inverse
+    intro y
+    exact ⟨S.sigma y, S.involutive y⟩
 
 /-- Step 5 (main theorem).  σ-invariance of the LP-dual
     shadow price y_0*:
