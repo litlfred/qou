@@ -23,6 +23,10 @@ export default chapter({
         // Borel's theorem partial-discharges the keystone's
         // sharpness target with explicit Borel-rank dimensions.
         "borel-partial-resolution",
+        // Depth-2 identification of G^(2) with K_3^ind ⊗ Q via
+        // Bloch–Suslin — theorem-level discharge of the keystone
+        // at depth 2 over every Bring-natural number field.
+        "depth-2-identification-bloch-suslin",
         "analytic-obstructions",
         "calculus-up-to-epsilon",
       ],
