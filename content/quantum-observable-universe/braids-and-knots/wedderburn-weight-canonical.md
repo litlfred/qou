@@ -12,10 +12,29 @@ $$
   \mathbb{Q}(q),
 $$
 
-*where $\dim_q(\lambda)$ is the $q$-Weyl dimension and
-$[n]_q! = \prod_{k=1}^{n}[k]_q$ is the $q$-factorial. The three
-named coefficient forms used elsewhere in the paper are immediate
-scalings of $w_\lambda$:*
+*where $\dim_q(\lambda)$ is the **quantum hook-length dimension**
+defined by the $q$-deformed Frame–Robinson–Thrall formula*
+
+$$
+  \dim_q(\lambda) \;=\; \frac{[n]_q!}{\displaystyle\prod_{x \in \lambda} [h_x]_q},
+  \qquad
+  [k]_q \;=\; \frac{q^k - q^{-k}}{q - q^{-1}},
+$$
+
+*with $h_x$ the hook length of cell $x$ in $\lambda$, and
+$[n]_q! = \prod_{k=1}^{n}[k]_q$ is the $q$-factorial. At $q = 1$,
+$\dim_q(\lambda) \to d_\lambda := n! / \prod_x h_x$ (classical
+Frame–Robinson–Thrall), recovering the $S_n$-irrep dimension.
+The convention is universal across this paper — the same
+$\dim_q$ appears in
+[`hecke_n6_frobenius_codim`](frobenius-codim-universal.lean),
+[`hecke_n7_frobenius_codim`](frobenius-codim-universal.lean), and
+[`hecke_n8_frobenius_codim`](frobenius-codim-universal.lean) Lean
+closures, in the Wenzl-bridge $y_\lambda$ closed form
+([y-lambda-closed-form-wenzl-bridge](#prop:y-lambda-closed-form-wenzl-bridge)),
+and in the Plancherel weight $w_\lambda = \dim_q(\lambda)^2 / [n]_q!$
+above. The three named coefficient forms used elsewhere in the
+paper are immediate scalings of $w_\lambda$:*
 
 | Named form | Identity | Where used |
 |------------|----------|------------|

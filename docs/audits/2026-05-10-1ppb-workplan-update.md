@@ -108,11 +108,82 @@ A growth amplifies the per-nucleon error.
 
 ## Updated work plan
 
-### Phase 0 — Land PR #621 (in flight)
+### Phase 0 — Land PR #621 (DONE — merged)
 
-`/prepare-merge` complete. CI validate failure (factor-of-2 cross-
-validator) skipped per user directive (PR #630 will close it
-upstream). Gemini quota exhausted; Copilot review requested.
+PR #621 merged 2026-05-10 as `d6bab3065`. Net-new contributions on
+main:
+
+- Wenzl-bridge factor-of-2 fix (canonical $y_\lambda$ in
+  `habiro_coefficients_interpolate.py`)
+- §3b-cond uniqueness-of-convention-shift theorem
+  (`wenzl_bridge_unique_definitional`,
+  `wenzl_bridge_unique_categorical`, no `sorry`)
+- T1: n=6 + n=7 Frobenius co-Casimir codimension theorems
+- Phase 1.8 braid-encoding deep-dive audit
+- Updated 1 ppb workplan (this document)
+
+PR #630 (parallel duplicate of the factor-of-2 fix) closed as
+redundant.
+
+### Session progress note (2026-05-10)
+
+Phase 1 + Phase 2 partial delivery on PR #631
+(`claude/wire-applied-uniqueness-mass-table`):
+
+- **Phase 1 delivered**: `applied_uniqueness_mass_table.py` consumes
+  canonical `|tr_M(β_K, q_0)|` from `derivation_chain.TR_M_AT_Q0`
+  and applies the categorical mass formula from
+  `QOU.BraidKnot.MassFormulaCategorical`. Reports
+  `applied-uniqueness-mass-table.witness.json` with err_ppb vs
+  CODATA / AME baselines. Predictions sit at $-2.5 \times 10^8$
+  to $-3.5 \times 10^8$ ppb with the placeholder $m_{e,\text{Hecke}}$;
+  Phase 2's substitution will tighten by ~5 orders of magnitude.
+- **Phase 1.2 / 1.3 (T, ³He)**: blocked on `chi-tritium-h9` partial
+  cache (2/30 partitions) and missing `chi-helium3-h9` cache.
+  Workplan-Phase-8 graded-Hecke-energy infrastructure (per-grade
+  truncation + resumable cache) would unblock.
+- **Phase 2 diagnostic**: `phase2_proton_m_e_hecke_diagnostic.py`
+  surveys three approaches (full 6-term, categorical-ratio,
+  placeholder-anomaly) and finds NONE close. Recommends T1+T4
+  Path A partial chain as an interim, with T2 as the highest-
+  priority follow-up audit (likely contaminated by the same
+  legacy-weight bug as PR #621/#630).
+- **Phase 5 (n=8 Frobenius co-Casimir)** — DELIVERED: convention
+  pinned (quantum hook-length formula
+  $\dim_q(\lambda) = [n]_q! / \prod_x [h_x]_q$), `heckeH8DimQ`,
+  22 simp lemmas, `Fin_sum_univ_twentytwo`, and
+  `hecke_n8_frobenius_codim` integrated into
+  `frobenius-codim-universal.lean`. Conjugate-symmetric ordering
+  matches the n=6 / n=7 pattern (idx i ↔ idx (21-i)); 10 conjugate
+  pairs + 2 self-conjugates ((4,2,1,1) at idx 10, (3,3,2) at idx 11).
+  Closure unblocks ⁴He's H_{12} block. Generator script
+  `phase5_n8_dim_q_table.py` + table `phase5-n8-dim-q-table.json`
+  committed for downstream extension to n=9 (triton/³He at H_9)
+  and n=12 (⁴He). Paper-side documentation in
+  [`frobenius-codim-universal.md §"Explicit Lean closures by partition count $n$"`](../../content/quantum-observable-universe/braids-and-knots/frobenius-codim-universal.md).
+
+- **Phase 8 (graded Hecke energy infrastructure)** — DELIVERED:
+  new content block
+  [`prop:graded-hecke-energy-truncation-bound`](../../content/quantum-observable-universe/braids-and-knots/graded-hecke-energy-truncation-bound.md)
+  proves $P_K(q)$ has at most $\ell(K, q_0) + 1$ nonzero grades
+  conditional on the GS-filtration descent
+  (CLAUDE.md §3b-cond conditional class). Companion script
+  `graded_hecke_energy_probe.py` stratifies the canonical
+  Wenzl-bridge $|\mathrm{tr}_M(\beta_K, q_0)|$ per partition by
+  content-sum grade and reports cumulative convergence. Empirical
+  results at $q_0$:
+
+  | atom | $p(3A)$ | grades | $\ell_{\text{eff}}$ (1e-12) | $\ell_{\text{eff}}$ (1e-3) |
+  |------|--------:|-------:|----------------------------:|---------------------------:|
+  | proton | 3 | 3 | 3 | 1 |
+  | neutron | 3 | 3 | 3 | 1 |
+  | deuteron | 11 | 9 | 15 (max grade) | 6 |
+
+  Loose-tolerance speedups confirm the truncation bound. The
+  proposition + probe together provide the structural unblocker
+  for Phase 1.2 / 1.3: cache stratified by content-sum grade
+  (instead of partition index) makes the slow T / ³He chi
+  computation resumable and truncatable.
 
 If PR #630 merges first, rebase #621 on top and drop the redundant
 `a82197577` commit; the audit doc + uniqueness theorem additions

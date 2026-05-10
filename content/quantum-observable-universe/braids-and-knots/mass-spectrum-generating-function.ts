@@ -12,6 +12,7 @@ export default remark({
     "def:confinement-level",
     "def:observation",
     "prop:three-calibration-inputs",
+    "prop:graded-hecke-energy-truncation-bound",
   ],
   cites: [
     "khovanovlauda2009",

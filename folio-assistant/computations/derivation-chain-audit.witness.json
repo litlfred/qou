@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-10T05:10:55.287082+00:00",
-  "commitSha": "76708a21f89d1846591d1834cb5327f87dabac5d",
+  "computedAt": "2026-05-10T06:11:47.279907+00:00",
+  "commitSha": "c4cb3bee56201942bd1ffc020babbc83ef150950",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2041,6 +2041,7 @@
         "alpha-k-jones-markov-h3.witness.json",
         "alpha-k-macdonald-closed-form.witness.json",
         "alpha-shift-torus.witness.json",
+        "applied-uniqueness-mass-table.witness.json",
         "atom-mass-additive-baseline.witness.json",
         "atom-mass-derived.witness.json",
         "atom-nf-symbolic-D.witness.json",
@@ -2134,6 +2135,7 @@
         "gb-filtration-jet-order-reader.witness.json",
         "gb-filtration-jet-order.witness.json",
         "gb-nf-event-count-universality.witness.json",
+        "graded-hecke-energy-probe.witness.json",
         "gram-matrix-dual.witness.json",
         "gt-matrix-pslq-probe.witness.json",
         "h-3a-vs-h-3-divergence.witness.json",
@@ -2228,6 +2230,7 @@
         "per-irrep-pole-deuteron-h6.witness.json",
         "per-irrep-pole-proton-h3.witness.json",
         "per-nucleon-shift-derivation.witness.json",
+        "phase2-m-e-hecke-diagnostic.witness.json",
         "photon-operator-table.witness.json",
         "picard-lefschetz-thimble.witness.json",
         "piece1-dimensional-bridge.witness.json",
