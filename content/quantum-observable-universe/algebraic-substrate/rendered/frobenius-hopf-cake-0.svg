@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 540"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>The Frobenius–Hopf substrate as a layered cake</title>
+  <desc>
+    Three horizontal layers stacked vertically.  Bottom layer:
+    the Hopf algebra structure (m, Δ, η, ε, S) drawn as
+    string-diagram glyphs.  Middle layer: the Frobenius pairing
+    ∫_A drawn as a cup–cap pair.  Top layer: the Reeb derivation
+    𝔯 drawn as a single straight arrow.  The cake structure
+    visualises how each higher level is forced by compatibility
+    with the lower ones.
+  </desc>
+  <defs>
+    <style>
+      .bg     { fill: #ffffff; }
+      .lay    { fill: #fafafa; stroke: #1a1a1a; stroke-width: 1.6; rx: 8; }
+      .strand { fill: none; stroke: #1a1a1a; stroke-width: 2.4;
+                stroke-linecap: round; }
+      .vert   { fill: #1a1a1a; }
+      .lblb   { font-size: 17px; font-weight: 700; fill: #1a1a1a;
+                text-anchor: middle; }
+      .lbl    { font-size: 13px; fill: #1a1a1a; text-anchor: middle; }
+      .lbls   { font-size: 11px; fill: #444; text-anchor: middle;
+                font-style: italic; }
+      .ttl    { font-size: 17px; font-style: italic; fill: #1a1a1a; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="760" height="540"/>
+
+  <text x="380" y="32" text-anchor="middle" class="ttl">The Frobenius–Hopf substrate — three layers</text>
+
+  <!-- ===== TOP LAYER: Reeb derivation ===== -->
+  <rect class="lay" x="60" y="60" width="640" height="100"/>
+  <text x="100" y="92" text-anchor="start" class="lblb">𝔯</text>
+  <text x="100" y="112" text-anchor="start" class="lbl">Reeb derivation</text>
+  <text x="100" y="130" text-anchor="start" class="lbls">arrow of time on A</text>
+
+  <!-- single straight arrow -->
+  <line class="strand" x1="380" y1="110" x2="660" y2="110"
+        marker-end="url(#trip)"/>
+  <defs>
+    <marker id="trip" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a1a1a"/>
+    </marker>
+  </defs>
+
+  <!-- ===== MIDDLE LAYER: Frobenius pairing ===== -->
+  <rect class="lay" x="60" y="180" width="640" height="140"/>
+  <text x="100" y="212" text-anchor="start" class="lblb">∫_A</text>
+  <text x="100" y="232" text-anchor="start" class="lbl">Frobenius pairing</text>
+  <text x="100" y="250" text-anchor="start" class="lbls">non-degenerate (a,b) ↦ ∫_A ab</text>
+
+  <!-- cup–cap pair -->
+  <g transform="translate(440, 250)">
+    <!-- cap -->
+    <path class="strand" d="M -50 0 C -50 -40, 50 -40, 50 0"/>
+    <text x="0" y="-50" class="lbl">coev (cap)</text>
+    <!-- cup -->
+    <path class="strand" d="M -100 30 C -100 70, 0 70, 0 30"/>
+    <text x="-50" y="84" class="lbl">ev (cup)</text>
+  </g>
+
+  <!-- ===== BOTTOM LAYER: Hopf algebra ===== -->
+  <rect class="lay" x="60" y="340" width="640" height="180"/>
+  <text x="100" y="372" text-anchor="start" class="lblb">A : Hopf algebra</text>
+  <text x="100" y="392" text-anchor="start" class="lbl">(m, Δ, η, ε, S)</text>
+  <text x="100" y="410" text-anchor="start" class="lbls">multiplication, comultiplication, unit, counit, antipode</text>
+
+  <!-- Hopf string-diagram glyphs at the right -->
+  <!-- m: trivalent vertex (Y shape) -->
+  <g transform="translate(360, 440)">
+    <path class="strand" d="M -25 -45 L 0 -10"/>
+    <path class="strand" d="M 25  -45 L 0 -10"/>
+    <path class="strand" d="M 0 -10 L 0 35"/>
+    <text x="0" y="55" class="lbl">m</text>
+  </g>
+  <!-- Δ: trivalent vertex (inverted Y) -->
+  <g transform="translate(450, 440)">
+    <path class="strand" d="M 0 -45 L 0 -10"/>
+    <path class="strand" d="M 0 -10 L -25 35"/>
+    <path class="strand" d="M 0 -10 L 25  35"/>
+    <text x="0" y="55" class="lbl">Δ</text>
+  </g>
+  <!-- η: dot at top, line down -->
+  <g transform="translate(540, 440)">
+    <circle class="vert" cx="0" cy="-40" r="5"/>
+    <path class="strand" d="M 0 -40 L 0 35"/>
+    <text x="0" y="55" class="lbl">η</text>
+  </g>
+  <!-- ε: line up to dot -->
+  <g transform="translate(610, 440)">
+    <path class="strand" d="M 0 -45 L 0 30"/>
+    <circle class="vert" cx="0" cy="30" r="5"/>
+    <text x="0" y="55" class="lbl">ε</text>
+  </g>
+  <!-- S: small loop -->
+  <g transform="translate(670, 440)">
+    <path class="strand" d="M 0 -45 L 0 -15
+                            C -15 -15, -15 15, 0 15
+                            C 15 15, 15 -15, 0 -15
+                            M 0 15 L 0 35"/>
+    <text x="0" y="55" class="lbl">S</text>
+  </g>
+</svg>
