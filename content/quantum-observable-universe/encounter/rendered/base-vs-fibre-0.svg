@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>Base M vs fibre 𝒮_p</title>
+  <desc>
+    Cross-section.  Left half: smooth surface labelled M with a
+    monotone scale gauge.  Right half: at a brane point the metric
+    gauge collapses to zero and a vertical fibre opens up labelled
+    𝒮_p.  Dashed boundary marks the threshold; under it, "below
+    Planck ⇔ on the fibre".
+  </desc>
+  <defs>
+    <style>
+      .bg { fill: #ffffff; }
+      .surf { fill: #f0f0f6; stroke: #1a1a1a; stroke-width: 1.6; }
+      .fibre { fill: #fafafa; stroke: #1a1a1a; stroke-width: 1.6; stroke-dasharray: 4 3; }
+      .gauge { stroke: #1a1a1a; stroke-width: 1.4; fill: none; }
+      .lblb { font-size: 14px; font-weight: 700; fill: #1a1a1a; }
+      .lbl { font-size: 12px; fill: #1a1a1a; }
+      .ttl { font-size: 17px; font-style: italic; fill: #1a1a1a; }
+      .threshold { stroke: #c0392b; stroke-width: 1.6; fill: none; stroke-dasharray: 5 4; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="900" height="480"/>
+  <text x="450" y="32" text-anchor="middle" class="ttl">Base M  vs  fibre  𝒮_p — different categorical registers</text>
+
+  <!-- Left half: base M -->
+  <path class="surf" d="M 50 250 C 100 230, 200 200, 320 220 L 320 320 L 50 320 Z"/>
+  <text x="180" y="180" class="lblb">M — base manifold</text>
+  <text x="180" y="200" class="lbl">smooth metric well-defined</text>
+  <!-- gauge bars -->
+  <g class="gauge">
+    <line x1="60" y1="350" x2="60" y2="370"/>
+    <line x1="100" y1="350" x2="100" y2="365"/>
+    <line x1="140" y1="350" x2="140" y2="362"/>
+    <line x1="180" y1="350" x2="180" y2="358"/>
+    <line x1="220" y1="350" x2="220" y2="356"/>
+    <line x1="260" y1="350" x2="260" y2="354"/>
+    <line x1="300" y1="350" x2="300" y2="352"/>
+    <line x1="50" y1="350" x2="320" y2="350"/>
+  </g>
+  <text x="180" y="395" class="lbl" text-anchor="middle">scale gauge: monotone, well-defined</text>
+
+  <!-- Threshold (vertical dashed) -->
+  <line class="threshold" x1="430" y1="60" x2="430" y2="430"/>
+  <text x="440" y="80" class="lbl" fill="#c0392b" font-style="italic">below Planck</text>
+  <text x="440" y="95" class="lbl" fill="#c0392b" font-style="italic">⇔ on the fibre</text>
+
+  <!-- Right half: fibre 𝒮_p -->
+  <ellipse class="fibre" cx="650" cy="270" rx="180" ry="120"/>
+  <text x="650" y="180" class="lblb" text-anchor="middle">𝒮_p — exceptional divisor</text>
+  <text x="650" y="200" class="lbl" text-anchor="middle">morphisms are knot operators</text>
+  <text x="650" y="290" class="lbl" text-anchor="middle">no metric — pure topology</text>
+
+  <text x="450" y="450" text-anchor="middle" class="lbl" font-style="italic">
+    the chapter's shift of register: from M (geometry, distance) to 𝒮_p (algebra, knot complement)
+  </text>
+</svg>

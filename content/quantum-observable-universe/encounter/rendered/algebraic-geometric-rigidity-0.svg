@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>Algebraic ↔ geometric rigidity pairing</title>
+  <desc>
+    Two parallel stacked rectangles.  Top: SDPSlaterUniqueness
+    (algebraic side, ℤ[q^±1/2]).  Bottom: MostowRigidity
+    (geometric side, ℝ).  Arrows τ_arch (down, solid) and GB↔PL
+    thimble bijection (curved up, hollow).  §3b conditional-class
+    marker on each.
+  </desc>
+  <defs>
+    <marker id="tip" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a1a1a"/>
+    </marker>
+    <marker id="hollow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#fff" stroke="#1a1a1a" stroke-width="1"/>
+    </marker>
+    <style>
+      .bg { fill: #ffffff; }
+      .alg { fill: #f0e6d2; stroke: #1a1a1a; stroke-width: 1.6; rx: 8; }
+      .geo { fill: #d2e6f0; stroke: #1a1a1a; stroke-width: 1.6; rx: 8; }
+      .lblb { font-size: 16px; font-weight: 700; fill: #1a1a1a; text-anchor: middle; }
+      .lbl { font-size: 13px; fill: #1a1a1a; text-anchor: middle; }
+      .lbls { font-size: 11px; fill: #444; text-anchor: middle; }
+      .ttl { font-size: 17px; font-style: italic; fill: #1a1a1a; }
+      .arrlbl { font-size: 12px; fill: #1a1a1a; font-style: italic; text-anchor: middle; }
+      .marker { fill: #c0392b; font-size: 11px; font-style: italic; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="800" height="460"/>
+  <text x="400" y="32" text-anchor="middle" class="ttl">Algebraic ↔ geometric rigidity pairing</text>
+
+  <!-- Algebraic side (top) -->
+  <rect class="alg" x="120" y="80" width="560" height="100"/>
+  <text x="400" y="108" class="lblb">Algebraic side</text>
+  <text x="400" y="130" class="lbl">SDPSlaterUniqueness — primal Φ* unique</text>
+  <text x="400" y="148" class="lbls">over  ℤ[q^{±1/2}]   ·   PR #628</text>
+  <text x="660" y="78" text-anchor="end" class="marker">§3b conditional-class</text>
+
+  <!-- Geometric side (bottom) -->
+  <rect class="geo" x="120" y="280" width="560" height="100"/>
+  <text x="400" y="308" class="lblb">Geometric side</text>
+  <text x="400" y="330" class="lbl">MostowRigidity — hyperbolic structure unique</text>
+  <text x="400" y="348" class="lbls">over  ℝ   ·   conjectural class on this branch</text>
+  <text x="660" y="278" text-anchor="end" class="marker">§3b conditional-class</text>
+
+  <!-- Arrows between -->
+  <line stroke="#1a1a1a" stroke-width="1.6" fill="none" x1="300" y1="180" x2="300" y2="280" marker-end="url(#tip)"/>
+  <text x="285" y="240" class="arrlbl" text-anchor="end">τ_arch</text>
+
+  <path stroke="#1a1a1a" stroke-width="1.6" fill="none" d="M 500 280 C 560 240, 560 220, 500 180" marker-end="url(#hollow)"/>
+  <text x="572" y="240" class="arrlbl">GB ↔ PL  (conjectural)</text>
+
+  <text x="400" y="430" text-anchor="middle" class="lbls" font-style="italic">two independently axiomatised rigidity classes — one on each side of the wall</text>
+</svg>

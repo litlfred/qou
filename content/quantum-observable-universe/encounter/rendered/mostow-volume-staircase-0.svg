@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>Mostow rigidity locks the volume spectrum</title>
+  <desc>
+    Staircase.  Horizontal axis: vol_hyp(U \ K).  Each step is a
+    knot type; gaps between steps shaded "Mostow gap".  Above:
+    "no continuous deformation"; below: "no nearby structures ⇒
+    confinement".
+  </desc>
+  <defs>
+    <style>
+      .bg { fill: #ffffff; }
+      .axis { stroke: #1a1a1a; stroke-width: 1.4; fill: none; }
+      .step { fill: #f0f0f6; stroke: #1a1a1a; stroke-width: 1.4; }
+      .gap { fill: #f0e6e6; opacity: 0.6; }
+      .lbl { font-size: 12px; fill: #1a1a1a; text-anchor: middle; }
+      .lblb { font-size: 14px; font-weight: 700; fill: #1a1a1a; }
+      .ttl { font-size: 17px; font-style: italic; fill: #1a1a1a; }
+      .gaplbl { fill: #c0392b; font-size: 11px; font-style: italic; }
+      .nodef { fill: #c0392b; }
+      .nodeflbl { fill: #c0392b; font-size: 13px; font-weight: 700; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="900" height="480"/>
+  <text x="450" y="32" text-anchor="middle" class="ttl">Mostow rigidity: the volume spectrum is discrete</text>
+
+  <!-- Horizontal axis -->
+  <line class="axis" x1="60" y1="380" x2="840" y2="380"/>
+  <text x="840" y="395" class="lbl" font-style="italic">vol_hyp(U \ K)</text>
+
+  <!-- Steps at fixed x positions (knot types) -->
+  <!-- Volumes (real): 4_1 ≈ 2.03, 5_2 ≈ 2.83, 6_2 ≈ 4.40, 6_3 ≈ 5.69, 7_4 ≈ 7.96, 8_19 ≈ 4.12 -->
+  <!-- Map vol 0..15 → x 60..820: scale 760/15 ≈ 50.7 px/unit -->
+
+  <!-- Gap 1: from x ≈ 60 to vol(4_1)=2.03 (x≈163) -->
+  <rect class="gap" x="60" y="240" width="103" height="140"/>
+  <text x="111" y="220" class="gaplbl">Mostow gap</text>
+
+  <rect class="step" x="163" y="240" width="40" height="140"/>
+  <text x="183" y="290" class="lbl" font-weight="700">4₁</text>
+  <text x="183" y="306" class="lbl">2.03</text>
+
+  <rect class="gap" x="203" y="240" width="38" height="140"/>
+
+  <rect class="step" x="241" y="220" width="40" height="160"/>
+  <text x="261" y="290" class="lbl" font-weight="700">5₂</text>
+  <text x="261" y="306" class="lbl">2.83</text>
+
+  <rect class="gap" x="281" y="220" width="40" height="160"/>
+
+  <rect class="step" x="321" y="200" width="40" height="180"/>
+  <text x="341" y="290" class="lbl" font-weight="700">6₂</text>
+  <text x="341" y="306" class="lbl">4.40</text>
+
+  <rect class="gap" x="361" y="200" width="60" height="180"/>
+
+  <rect class="step" x="421" y="180" width="40" height="200"/>
+  <text x="441" y="290" class="lbl" font-weight="700">6₃</text>
+  <text x="441" y="306" class="lbl">5.69</text>
+
+  <rect class="gap" x="461" y="180" width="100" height="200"/>
+
+  <rect class="step" x="561" y="160" width="40" height="220"/>
+  <text x="581" y="290" class="lbl" font-weight="700">7₄</text>
+  <text x="581" y="306" class="lbl">7.96</text>
+
+  <rect class="gap" x="601" y="160" width="100" height="220"/>
+
+  <rect class="step" x="701" y="140" width="40" height="240"/>
+  <text x="721" y="290" class="lbl" font-weight="700">𝓑₃</text>
+  <text x="721" y="306" class="lbl">10.15</text>
+
+  <!-- Above: no-entry sign -->
+  <text x="450" y="80" class="nodeflbl" text-anchor="middle">⊘  no continuous deformation between steps</text>
+  <text x="450" y="100" class="nodeflbl" text-anchor="middle">— Mostow rigidity —</text>
+
+  <!-- Below: confinement annotation -->
+  <text x="450" y="425" class="lbl" font-weight="700" text-anchor="middle">no nearby structures  ⇒  confinement  ⇒  mass quantised</text>
+</svg>

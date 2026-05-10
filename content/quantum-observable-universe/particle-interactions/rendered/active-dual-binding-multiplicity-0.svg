@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>Active dual support as binding multiplicity</title>
+  <desc>
+    Bar chart on Wedderburn blocks λ_1, λ_2, ... vs shadow-price
+    u_λ*.  Active blocks (u_λ* &gt; 0) coloured solid; inactive
+    drawn outline.  Bracket along top labels |𝒮*| = active count.
+    Two miniature panels showing |𝒮*| = 1 (LP) and |𝒮*| ≥ 2
+    (multi-operator).
+  </desc>
+  <defs>
+    <style>
+      .bg { fill: #ffffff; }
+      .axis { stroke: #1a1a1a; stroke-width: 1.4; fill: none; }
+      .ticklbl { font-size: 11px; fill: #444; text-anchor: middle; }
+      .axislbl { font-size: 12px; fill: #1a1a1a; font-style: italic; }
+      .active { fill: #c0392b; stroke: #1a1a1a; stroke-width: 1; }
+      .inactive { fill: none; stroke: #1a1a1a; stroke-width: 1.4; stroke-dasharray: 3 2; }
+      .lbl { font-size: 12px; fill: #1a1a1a; }
+      .lblb { font-size: 14px; font-weight: 700; fill: #1a1a1a; text-anchor: middle; }
+      .ttl { font-size: 17px; font-style: italic; fill: #1a1a1a; }
+      .bracket { fill: none; stroke: #c0392b; stroke-width: 1.6; }
+      .brlbl { fill: #c0392b; font-size: 12px; font-weight: 700; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="900" height="480"/>
+  <text x="450" y="32" text-anchor="middle" class="ttl">Active dual support  𝒮*  =  binding multiplicity</text>
+
+  <!-- Main bar chart: 8 Wedderburn blocks at x = 80, 160, ..., 640 -->
+  <line class="axis" x1="60" y1="320" x2="700" y2="320"/>
+  <line class="axis" x1="60" y1="320" x2="60" y2="100"/>
+  <text x="700" y="335" class="axislbl">Wedderburn block  λ</text>
+  <text x="40" y="100" class="axislbl">u_λ*</text>
+
+  <!-- Bars: 3 active (red) + 5 inactive (outline) -->
+  <rect class="active" x="100" y="180" width="50" height="140"/>
+  <text x="125" y="335" class="ticklbl">λ₁</text>
+  <rect class="active" x="180" y="220" width="50" height="100"/>
+  <text x="205" y="335" class="ticklbl">λ₂</text>
+  <rect class="active" x="260" y="200" width="50" height="120"/>
+  <text x="285" y="335" class="ticklbl">λ₃</text>
+  <rect class="inactive" x="340" y="310" width="50" height="10"/>
+  <text x="365" y="335" class="ticklbl">λ₄</text>
+  <rect class="inactive" x="420" y="310" width="50" height="10"/>
+  <text x="445" y="335" class="ticklbl">λ₅</text>
+  <rect class="inactive" x="500" y="310" width="50" height="10"/>
+  <text x="525" y="335" class="ticklbl">λ₆</text>
+  <rect class="inactive" x="580" y="310" width="50" height="10"/>
+  <text x="605" y="335" class="ticklbl">λ₇</text>
+  <rect class="inactive" x="660" y="310" width="50" height="10"/>
+  <text x="685" y="335" class="ticklbl">λ₈</text>
+
+  <!-- Bracket along top -->
+  <path class="bracket" d="M 100 160 L 100 145 L 310 145 L 310 160"/>
+  <text x="205" y="138" class="brlbl" text-anchor="middle">|𝒮*| = 3 — binding multiplicity</text>
+
+  <text x="380" y="380" class="lbl" font-style="italic">solid bars: active (u_λ &gt; 0); dashed: inactive</text>
+
+  <!-- Side miniatures: |S*| = 1 vs |S*| >= 2 -->
+  <g transform="translate(770, 130)">
+    <text x="-10" y="-10" class="lblb" text-anchor="end">LP regime</text>
+    <rect class="active" x="-30" y="0" width="20" height="60"/>
+    <rect class="inactive" x="-5" y="40" width="20" height="20"/>
+    <rect class="inactive" x="20" y="40" width="20" height="20"/>
+    <text x="0" y="80" class="ticklbl" text-anchor="middle">|𝒮*| = 1</text>
+  </g>
+  <g transform="translate(770, 240)">
+    <text x="-10" y="-10" class="lblb" text-anchor="end">multi-operator</text>
+    <rect class="active" x="-30" y="0" width="20" height="60"/>
+    <rect class="active" x="-5" y="20" width="20" height="40"/>
+    <rect class="active" x="20" y="30" width="20" height="30"/>
+    <text x="0" y="80" class="ticklbl" text-anchor="middle">|𝒮*| ≥ 2</text>
+  </g>
+
+  <text x="450" y="430" text-anchor="middle" class="lbl" font-style="italic">|𝒮*| counts the Wedderburn blocks the bound state actually saturates</text>
+  <text x="450" y="453" text-anchor="middle" class="lbl">shell-closure / magic-number configurations have higher |𝒮*|</text>
+</svg>

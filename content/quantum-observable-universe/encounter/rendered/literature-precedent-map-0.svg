@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 720"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>Literature precedent map for the Encounter chapter</title>
+  <desc>
+    Radial diagram.  Centre: "QOU encounter picture".  Six outer
+    satellites, each labelled with citation key (Mostow 1968,
+    Thurston 1978, Neumann–Zagier 1985, Witten 2011, Yekutieli
+    2015, Kashaev 1997), each pointing inward with a label naming
+    the ingredient supplied.
+  </desc>
+  <defs>
+    <marker id="tip" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a1a1a"/>
+    </marker>
+    <style>
+      .bg { fill: #ffffff; }
+      .center { fill: #ffffff; stroke: #1a1a1a; stroke-width: 2; }
+      .sat { fill: #ffffff; stroke: #1a1a1a; stroke-width: 1.4; rx: 8; }
+      .arr { stroke: #1a1a1a; stroke-width: 1.2; fill: none; }
+      .ttl { font-size: 17px; font-style: italic; fill: #1a1a1a; }
+      .lblb { font-size: 14px; font-weight: 700; fill: #1a1a1a; text-anchor: middle; }
+      .lbl { font-size: 12px; fill: #1a1a1a; text-anchor: middle; }
+      .lbls { font-size: 11px; fill: #444; text-anchor: middle; font-style: italic; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="800" height="720"/>
+  <text x="400" y="32" text-anchor="middle" class="ttl">Literature precedents</text>
+
+  <!-- Centre disk -->
+  <ellipse class="center" cx="400" cy="370" rx="100" ry="60"/>
+  <text x="400" y="365" class="lblb">QOU encounter</text>
+  <text x="400" y="385" class="lbl">picture</text>
+
+  <!-- 6 satellites at 60° intervals around centre -->
+  <!-- Top (90°): Mostow -->
+  <rect class="sat" x="320" y="100" width="160" height="50"/>
+  <text x="400" y="125" class="lblb">Mostow 1968</text>
+  <text x="400" y="143" class="lbls">rigidity of volume</text>
+
+  <!-- Top-right (30°): Thurston -->
+  <rect class="sat" x="600" y="190" width="170" height="50"/>
+  <text x="685" y="215" class="lblb">Thurston 1978</text>
+  <text x="685" y="233" class="lbls">gluing equations</text>
+
+  <!-- Bottom-right (-30°): Neumann–Zagier -->
+  <rect class="sat" x="600" y="500" width="170" height="50"/>
+  <text x="685" y="525" class="lblb">Neumann–Zagier 1985</text>
+  <text x="685" y="543" class="lbls">Newton potential</text>
+
+  <!-- Bottom (270°): Witten -->
+  <rect class="sat" x="320" y="600" width="160" height="50"/>
+  <text x="400" y="625" class="lblb">Witten 2011</text>
+  <text x="400" y="643" class="lbls">rigid phase concentration</text>
+
+  <!-- Bottom-left (210°): Yekutieli -->
+  <rect class="sat" x="30" y="500" width="170" height="50"/>
+  <text x="115" y="525" class="lblb">Yekutieli 2015</text>
+  <text x="115" y="543" class="lbls">non-abelian Stokes</text>
+
+  <!-- Top-left (150°): Kashaev -->
+  <rect class="sat" x="30" y="190" width="170" height="50"/>
+  <text x="115" y="215" class="lblb">Kashaev 1997</text>
+  <text x="115" y="233" class="lbls">volume conjecture</text>
+
+  <!-- Inward arrows -->
+  <line class="arr" x1="400" y1="150" x2="400" y2="310" marker-end="url(#tip)"/>
+  <line class="arr" x1="600" y1="225" x2="490" y2="335" marker-end="url(#tip)"/>
+  <line class="arr" x1="600" y1="525" x2="490" y2="410" marker-end="url(#tip)"/>
+  <line class="arr" x1="400" y1="600" x2="400" y2="430" marker-end="url(#tip)"/>
+  <line class="arr" x1="200" y1="525" x2="310" y2="410" marker-end="url(#tip)"/>
+  <line class="arr" x1="200" y1="225" x2="310" y2="335" marker-end="url(#tip)"/>
+
+  <text x="400" y="690" text-anchor="middle" class="lbls">every ingredient has a literature home — no bespoke constructions</text>
+</svg>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 540"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>SDP/LP dictionary across the Archimedean wall</title>
+  <desc>
+    Two-column figure with a vertical bar between them labelled
+    τ_arch.  Left: pre-τ (ℤ[q^±1/2]) — Primal feasible / Cost T /
+    Dual u_λ / Active support 𝒮*.  Right: post-τ (ℝ) — Admissible
+    knot topologies / Re(S) / Thimble depth / Saturating thimbles.
+  </desc>
+  <defs>
+    <marker id="tip" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1a1a1a"/>
+    </marker>
+    <style>
+      .bg { fill: #ffffff; }
+      .l { fill: #f0e6d2; stroke: #1a1a1a; stroke-width: 1.4; rx: 8; }
+      .r { fill: #d2e6f0; stroke: #1a1a1a; stroke-width: 1.4; rx: 8; }
+      .wall { stroke: #c0392b; stroke-width: 3; fill: none; }
+      .lbl { font-size: 14px; fill: #1a1a1a; text-anchor: middle; }
+      .lblb { font-size: 16px; font-weight: 700; fill: #1a1a1a; text-anchor: middle; }
+      .ttl { font-size: 17px; font-style: italic; fill: #1a1a1a; }
+      .reg { font-size: 12px; fill: #444; text-anchor: middle; font-style: italic; }
+      .tau { fill: #c0392b; font-size: 14px; font-style: italic; font-weight: 700; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="900" height="540"/>
+  <text x="450" y="32" text-anchor="middle" class="ttl">SDP/LP dictionary across the Archimedean wall</text>
+
+  <!-- Left column header -->
+  <text x="225" y="72" class="lblb">pre-τ  (algebraic side)</text>
+  <text x="225" y="92" class="reg">over  ℤ[q^{±1/2}]</text>
+
+  <!-- Right column header -->
+  <text x="675" y="72" class="lblb">post-τ  (geometric side)</text>
+  <text x="675" y="92" class="reg">over  ℝ  via  τ_arch</text>
+
+  <!-- Vertical wall down the centre -->
+  <line class="wall" x1="450" y1="120" x2="450" y2="500"/>
+  <text x="450" y="115" class="tau" text-anchor="middle">τ_arch</text>
+
+  <!-- Row 1: feasible region ↔ knot topologies -->
+  <rect class="l" x="40" y="120" width="370" height="60"/>
+  <text x="225" y="145" class="lblb">Primal feasible region</text>
+  <text x="225" y="165" class="lbl">{x ∈ ℤ[q^±1/2]^N : G(x) ≽ 0}</text>
+
+  <rect class="r" x="490" y="120" width="370" height="60"/>
+  <text x="675" y="145" class="lblb">Admissible knot topologies</text>
+  <text x="675" y="165" class="lbl">isotopy classes K with vol_hyp &lt; ∞</text>
+
+  <line stroke="#1a1a1a" stroke-width="1.4" x1="412" y1="150" x2="488" y2="150" marker-end="url(#tip)"/>
+
+  <!-- Row 2: cost T ↔ Re(S) -->
+  <rect class="l" x="40" y="200" width="370" height="60"/>
+  <text x="225" y="225" class="lblb">Cost  T(x)</text>
+  <text x="225" y="245" class="lbl">tr_M operator weight</text>
+
+  <rect class="r" x="490" y="200" width="370" height="60"/>
+  <text x="675" y="225" class="lblb">Re(S)  Picard–Lefschetz potential</text>
+  <text x="675" y="245" class="lbl">classical-action functional</text>
+
+  <line stroke="#1a1a1a" stroke-width="1.4" x1="412" y1="230" x2="488" y2="230" marker-end="url(#tip)"/>
+
+  <!-- Row 3: dual u_λ ↔ thimble depth -->
+  <rect class="l" x="40" y="280" width="370" height="60"/>
+  <text x="225" y="305" class="lblb">Dual variable  u_λ</text>
+  <text x="225" y="325" class="lbl">LP shadow price (Wedderburn)</text>
+
+  <rect class="r" x="490" y="280" width="370" height="60"/>
+  <text x="675" y="305" class="lblb">Thimble depth</text>
+  <text x="675" y="325" class="lbl">∫_{γ_λ} Re(S) along Lefschetz thimble</text>
+
+  <line stroke="#1a1a1a" stroke-width="1.4" x1="412" y1="310" x2="488" y2="310" marker-end="url(#tip)"/>
+
+  <!-- Row 4: active support ↔ saturating thimbles -->
+  <rect class="l" x="40" y="360" width="370" height="60"/>
+  <text x="225" y="385" class="lblb">Active support  𝒮*</text>
+  <text x="225" y="405" class="lbl">{ λ : u_λ &gt; 0 }</text>
+
+  <rect class="r" x="490" y="360" width="370" height="60"/>
+  <text x="675" y="385" class="lblb">Saturating thimbles</text>
+  <text x="675" y="405" class="lbl">contributing Lefschetz cycles</text>
+
+  <line stroke="#1a1a1a" stroke-width="1.4" x1="412" y1="390" x2="488" y2="390" marker-end="url(#tip)"/>
+
+  <text x="450" y="490" text-anchor="middle" class="lbl" font-style="italic">τ_arch realises every algebraic-side object as its geometric counterpart</text>
+  <text x="450" y="514" text-anchor="middle" class="reg">— this is the chapter's central dictionary —</text>
+</svg>

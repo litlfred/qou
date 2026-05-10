@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 460"
+     font-family="Georgia, 'Times New Roman', Times, serif">
+  <title>Hecke spectral gap and deconfinement</title>
+  <desc>
+    Complex-q plane with the unit circle.  Mark q = ±i with red
+    dots (Kauffman degeneracy).  Shaded wedge labelled "feasible
+    cone" away from those points.  As q → ±i the wedge collapses
+    (animation hint: arrowed sequence of three miniatures).
+    Annotation Δ_σ(q) = |q + q⁻¹|.
+  </desc>
+  <defs>
+    <style>
+      .bg { fill: #ffffff; }
+      .axis { stroke: #1a1a1a; stroke-width: 1.4; fill: none; }
+      .unit { fill: none; stroke: #1a1a1a; stroke-width: 2; }
+      .kauf { fill: #c0392b; stroke: #c0392b; }
+      .kauflbl { fill: #c0392b; font-size: 12px; font-weight: 700; }
+      .wedge { fill: #f0e6e6; stroke: #c0392b; stroke-width: 1.2; opacity: 0.6; }
+      .lbl { font-size: 12px; fill: #1a1a1a; text-anchor: middle; }
+      .lblb { font-size: 14px; font-weight: 700; fill: #1a1a1a; }
+      .ttl { font-size: 17px; font-style: italic; fill: #1a1a1a; }
+      .axislbl { font-size: 12px; font-style: italic; fill: #1a1a1a; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="900" height="460"/>
+  <text x="450" y="32" text-anchor="middle" class="ttl">Hecke spectral gap collapse: q → ±i  ⇒  deconfinement</text>
+
+  <!-- Three miniatures showing q at q ≈ 1.1, q closer to i, and q ≈ i -->
+  <!-- Miniature 1: q far from i — wide feasible cone -->
+  <g transform="translate(180, 240)">
+    <line class="axis" x1="-100" y1="0" x2="100" y2="0"/>
+    <line class="axis" x1="0" y1="-100" x2="0" y2="100"/>
+    <text x="105" y="5" class="axislbl">Re q</text>
+    <text x="-10" y="-105" class="axislbl">Im q</text>
+    <circle class="unit" cx="0" cy="0" r="80"/>
+    <!-- Wedge from 30° to 330° (avoiding ±i at 90°/-90°) -->
+    <path class="wedge" d="M 0 0 L 80 0 A 80 80 0 1 0 -80 0 Z"/>
+    <circle class="kauf" cx="0" cy="-80" r="5"/>
+    <text x="-15" y="-90" class="kauflbl">+i</text>
+    <circle class="kauf" cx="0" cy="80" r="5"/>
+    <text x="-15" y="100" class="kauflbl">−i</text>
+    <!-- q point well inside the wedge -->
+    <circle fill="#27ae60" cx="60" cy="-15" r="4"/>
+    <text x="68" y="-15" class="lbl" fill="#27ae60">q</text>
+  </g>
+  <text x="180" y="370" class="lbl">q ≈ 1.1   confined   wide feasible cone</text>
+
+  <!-- Miniature 2: q closer to ±i — narrowing wedge -->
+  <g transform="translate(450, 240)">
+    <line class="axis" x1="-100" y1="0" x2="100" y2="0"/>
+    <line class="axis" x1="0" y1="-100" x2="0" y2="100"/>
+    <circle class="unit" cx="0" cy="0" r="80"/>
+    <!-- Narrower wedge -->
+    <path class="wedge" d="M 0 0 L 75 30 A 80 80 0 1 0 75 -30 Z" opacity="0.4"/>
+    <circle class="kauf" cx="0" cy="-80" r="5"/>
+    <circle class="kauf" cx="0" cy="80" r="5"/>
+    <circle fill="#e67e22" cx="35" cy="-50" r="4"/>
+    <text x="42" y="-50" class="lbl" fill="#e67e22">q</text>
+  </g>
+  <text x="450" y="370" class="lbl">q approaches ±i   wedge narrows</text>
+
+  <!-- Miniature 3: q at ±i — wedge collapses -->
+  <g transform="translate(720, 240)">
+    <line class="axis" x1="-100" y1="0" x2="100" y2="0"/>
+    <line class="axis" x1="0" y1="-100" x2="0" y2="100"/>
+    <circle class="unit" cx="0" cy="0" r="80"/>
+    <!-- No feasible region: empty -->
+    <circle class="kauf" cx="0" cy="-80" r="6"/>
+    <circle class="kauf" cx="0" cy="80" r="6"/>
+    <text x="0" y="0" text-anchor="middle" class="kauflbl">∅</text>
+  </g>
+  <text x="720" y="370" class="lbl">q = ±i   deconfinement   feasible region collapses</text>
+
+  <!-- Annotation -->
+  <text x="450" y="420" text-anchor="middle" class="lblb" font-style="italic">Δ_σ(q) = |q + q⁻¹|   →   0   as   q → ±i</text>
+  <text x="450" y="445" text-anchor="middle" class="lbl">spectral gap is the categorical signature of confinement</text>
+</svg>
