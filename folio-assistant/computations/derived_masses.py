@@ -23,49 +23,63 @@ The migration plan is documented in
 This module is the **target of that migration** (Phase 0b.2).
 
 ══════════════════════════════════════════════════════════════════
+ TARGET DERIVATION CHAIN — UNIFIED KNOT MASS FORMULA (paper)
+══════════════════════════════════════════════════════════════════
+
+Per `prop:atom-knot-mass-derivation`
+([`atom-knot-mass-derivation.md`](../../content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md)),
+the categorical mass invariant of a confined particle 𝔥 is
+
+    M(𝔥) = ρ · m(𝔥) = ρ · [ |tr_M(T_w)| + tower(T_w) + tr_M(C_dim_q) ]
+
+with three components:
+  (i)   |tr_M(T_w)|        — descended Markov trace via Wenzl bridge
+                             Σ_λ y_λ(q) χ_λ(T_w)
+  (ii)  tower(T_w)         — brane tower Σ_i Φ_q(|V̂_i|)
+                             + z² Σ_{i<j} Φ_q(|V̂_i V̂_j|)
+                             from per-generator additive-Wedderburn volumes
+  (iii) tr_M(C_dim_q)      — Frobenius co-Casimir trace
+                             Σ_{λ ⊢ n_0} 1/dim_q(λ)
+
+After the Archimedean realization functor (CAL-1 = m_e):
+
+    B(𝔥) = m_e · M(𝔥)|_{q = q_0}
+
+The canonical Hecke element T_w(𝔥) is built by `mass_at_3A_proper.
+atom_braid_word_3A(Z, N)` — the **β-decay-operator-unfolded** 3A-strand
+braid word. For the proton (Z=1, N=0): an 11-letter word in H_3(q),
+since the β-decay operator T_β = σ_0σ_1^{-1} lives in H_3(q) and the
+nucleon lives at the same coarsest level (k_max ≤ 3, so unfolding to
+deeper levels is superfluous per `prop:level-sufficiency`).
+
+══════════════════════════════════════════════════════════════════
  STATUS — NONE OF THE BELOW IS WIRED YET (Phase 0b.2 scaffolding)
 ══════════════════════════════════════════════════════════════════
 
 All accessors raise `NotImplementedError` with detailed pointers.
-The derivation chain is itself an open question:
+The derivation chain is functionally specified above but is not
+wired here because:
 
-  * The paper's symbolic formula
-    [`prop:three-calibration-inputs`](../../content/quantum-observable-universe/braids-and-knots/three-calibration-inputs.md)
-    states E_0 = Q_β(n) / |Δ(net)| with Δ(net) = h(h-2)/2 from the
-    symbolic NF difference; the framework value is left implicit.
-  * `hecke_core.E_0_CALIBRATION_MEV` is currently set to Q_β(n)
-    directly (≈ 0.782 MeV/cat-unit) — this is ONE choice of the
-    "|Δ(net)|=1" normalisation but skips the symbolic Δ(net) step.
-  * `atomic_braid_mass_table.py` uses E_0 ≈ 199.86 MeV/cat-unit, which
-    is BACK-FITTED from `total_hecke[p] · E_0 = 938.272 MeV` (per
-    `derivation_chain.py:91`). Per CLAUDE.md three-calibration
-    discipline, this is a 4th calibration silently introduced — a
-    discipline violation parallel to the codata_constants one this
-    module is meant to fix.
-  * `canonical-mass-table.witness.json` parameters block records
-    `E_0_MeV: 0.782` (truncated 4 sig figs of Q_β).
+  * The brane-tower component (Φ_q expansion in `mass_endomorphism.py`)
+    has a known ~1.8% systematic residual at proton scale (Phase 2
+    m_e_Hecke 50-dps lift not yet landed; Workplan 2 in 1ppb workplan).
+  * The Frobenius co-Casimir component is straightforward (just sum
+    1/dim_q(λ) over λ ⊢ 3 for the proton) but not yet exposed as a
+    standalone helper.
+  * The closest existing assembly, `atomic_braid_mass_table.py`,
+    is "Strategy-3" with its own deprecation notice (lines 5–22 of
+    that file): it back-fits a single-anchor E_0 from CODATA m_p
+    (line 441), which is a 4th-calibration violation but only in the
+    deprecated script. The canonical replacement is
+    `atomic_mass_via_rho_k.py`, which uses
+    M(K) = ρ_K · m_e · |tr_M(K)| (Options A + C in PR #564).
+    Even there, ρ_K^LO consumes M_P_MEV / M_N_MEV as inputs — the
+    discipline violation this module addresses.
 
-The naive single-term derivation `m_p = |tr_M(p, q_0)| · E_0` with
-`E_0 = Q_β` gives `1.065 × 0.782 ≈ 0.83 MeV` — off by 3 orders of
-magnitude vs CODATA m_p = 938.272 MeV. The full categorical chain
-(per `atomic_braid_mass_table.py` "Strategy-3") uses a multi-term
-sum `total_hecke[p] = T1+T2+T3+T4 ≈ 4.6912` cat-units PLUS a
-back-fitted E_0; both pieces need their own derivation before this
-module can wire `proton_mass_mev()` honestly.
-
-Sibling agent: see Phase 0b.2 §"E_0 provenance" in the handoff doc.
-
-══════════════════════════════════════════════════════════════════
- TARGET DERIVATION CHAIN (per neutron-gap-probes-round3.witness.json)
-══════════════════════════════════════════════════════════════════
-
-    m_p_pred = total_hecke[p](q_0) · E_0                  (CAL-3-derived)
-    m_n_pred = m_p_pred + Q_β + m_e                       (3-input convention)
-    m_K_pred = (Z·m_p + N·m_n)_pred + Binding(K)          (categorical binding)
-
-Once each piece is wired (with E_0 derived as Q_β / |Δ(net)| from
-first principles, not back-fitted), every accessor below can drop
-its `NotImplementedError` and return an `mp.mpf` predicted value.
+Sibling agent (Phase 0b.4): wire each accessor to call into the
+canonical pipeline, using `atom_braid_word_3A` for T_w and the
+multi-term assembly for M(𝔥); add the m_e factor; emit a witness
+recording the input chain.
 """
 from __future__ import annotations
 
@@ -82,10 +96,12 @@ def _stub(atom: str, extra: str = "") -> "mp.mpf":  # noqa: F821
         f"atomic_mass_via_rho_k.py, applied_uniqueness_mass_table.py, "
         f"rho_k_h3a_*.py, sigma_shell_from_beta_chain.py) consume CODATA "
         f"m_p/m_n/m_D/m_T/m_3He/m_4He as upstream inputs, violating the "
-        f"three-calibration discipline. The replacement chain "
-        f"(m_p = total_hecke[p] · E_0; m_n = m_p + Q_β + m_e; "
-        f"m_K = Z·m_p + N·m_n + Binding(K)) requires E_0 to itself be "
-        f"derived as Q_β / |Δ(net)| rather than back-fitted to CODATA m_p. "
+        f"three-calibration discipline. The replacement chain is the "
+        f"unified knot mass formula M(𝔥) = ρ · [|tr_M(T_w)| + tower(T_w) "
+        f"+ tr_M(C_dim_q)] with B(𝔥) = m_e · M(𝔥)|_{{q=q_0}} per "
+        f"prop:atom-knot-mass-derivation, and T_w via "
+        f"mass_at_3A_proper.atom_braid_word_3A(Z, N) — the "
+        f"β-decay-operator-unfolded canonical 3A-strand braid. "
         f"Migrate per docs/audits/2026-05-10-workplan-0b-script-rewire-handoff.md "
         f"to fill in this stub. Until then, use codata_constants."
         f"M_{atom.upper()}_MEV_VALIDATION as a comparator only.{extra}"
@@ -96,10 +112,16 @@ def proton_mass_mev():
     return _stub(
         "p",
         extra=(
-            " Specific blocker for the proton: total_hecke[p] needs the "
-            "Wenzl-bridge multi-term sum from atomic_braid_mass_terms.py, "
-            "and E_0 needs the symbolic Δ(net) = h(h-2)/2 chain (currently "
-            "hecke_core.E_0_CALIBRATION_MEV simplifies Δ(net) → 1)."
+            " Specific wiring path for the proton: "
+            "(1) T_w_p = mass_at_3A_proper.atom_braid_word_3A(1, 0) — "
+            "11-letter word in H_3(q) (β-decay-operator-unfolded form); "
+            "(2) |tr_M(T_w_p)| via Wenzl-bridge multi-term sum (≈ 1.0653 at q_0); "
+            "(3) tower(T_w_p) via mass_endomorphism Φ_q expansion "
+            "(currently ~1.8% systematic residual; Workplan 2 closes this); "
+            "(4) tr_M(C_dim_q) = Σ_{λ⊢3} 1/dim_q(λ); "
+            "(5) M_p = ρ_p · [(1) + (3) + (4)]; m_p_MeV = m_e · M_p|_{q=q_0}. "
+            "All factors are CAL-1 (m_e) and CAL-2 (q_0) only — no CAL-3, no "
+            "CODATA m_p back-fit."
         ),
     )
 
@@ -108,9 +130,12 @@ def neutron_mass_mev():
     return _stub(
         "n",
         extra=(
-            " Specific blocker for the neutron: depends on proton_mass_mev() "
-            "via the 3-input convention m_n = m_p + Q_β + m_e per "
-            "neutron-gap-probes-round3.witness.json:recommendation."
+            " Specific wiring path for the neutron: same chain as proton with "
+            "T_w_n = atom_braid_word_3A(0, 1). Cross-check: "
+            "m_n - m_p should equal Q_β + m_e per "
+            "neutron-gap-probes-round3.witness.json:recommendation; if the "
+            "categorical chain reproduces this within Φ_q-tower truncation, "
+            "CAL-3 is overdetermined (consistency check, not extra calibration)."
         ),
     )
 

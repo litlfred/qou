@@ -93,60 +93,86 @@ Why risky:
    must land first — otherwise the rewired predictions will look
    ~25% off when the real signal is the placeholder, not the
    discipline fix. **Workplan 0b depends on Workplan 2.**
-5. **$E_0$ provenance — second discipline violation discovered
-   2026-05-10 during Phase 0b.2.** The framework defines
-   $E_0 = Q_\beta(n) / |\Delta(\mathrm{net})|$ with
-   $\Delta(\mathrm{net}) = h(h-2)/2$ from the symbolic NF
-   difference between neutron and proton. The compute infra
-   currently has **three different conventions in flight**, none
-   of which match the symbolic formula:
+5. **Use the unified knot mass formula, not a single-term `|tr_M|·E_0`
+   shortcut.** (Correction applied 2026-05-10 after owner pointed
+   out an earlier draft of this doc had the wrong formula.) The
+   canonical chain is
+   [`prop:atom-knot-mass-derivation`](../../content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md):
 
-   - [`hecke_core.E_0_CALIBRATION_MEV`](../../folio-assistant/computations/hecke_core.py)
-     line 2922: `E_0 = Q_β(n) ≈ 0.782` MeV/cat-unit (i.e. it sets
-     $|\Delta(\mathrm{net})| = 1$, skipping the symbolic step).
-   - [`canonical-mass-table.witness.json`](../../folio-assistant/computations/canonical-mass-table.witness.json)
-     parameters block: `E_0_MeV: 0.782` (truncated 4 sig figs of
-     the same convention).
-   - [`atomic_braid_mass_table.py`](../../folio-assistant/computations/atomic_braid_mass_table.py)
-     "Strategy-3" (per
-     [`derivation_chain.py:90`](../../folio-assistant/computations/derivation_chain.py)):
-     `E_0 ≈ 199.86 MeV/cat-unit` — **back-fitted** from
-     `total_hecke[p] · E_0 = 938.272 MeV` (proton CODATA). This
-     is a 4th-calibration violation **parallel to** the
-     `M_P_MEV` / `M_N_MEV` one this handoff is meant to fix.
+   $$M(\mathfrak{H}) = \rho \cdot \bigl[\,|\mathrm{tr}_M(T_w)| + \mathrm{tower}(T_w) + \mathrm{tr}_M(C_{\dim_q})\,\bigr]$$
 
-   **Demonstration of the inconsistency.** The newly-added
-   [`derived_masses.derivation_summary()`](../../folio-assistant/computations/derived_masses.py)
-   shows the naive single-term `m_p = |tr_M(p, q_0)| · E_0` with
-   $E_0 = Q_\beta$ gives `1.065 × 0.782 ≈ 0.83` MeV — off by 3
-   orders of magnitude vs CODATA `m_p = 938.272` MeV. The
-   "Strategy-3" pipeline gets the right number only because
-   `total_hecke[p] = T1+T2+T3+T4 ≈ 4.6912` cat-units (from the
-   Wenzl-bridge multi-term sum in
-   [`atomic_braid_mass_terms.py`](../../folio-assistant/computations/atomic_braid_mass_terms.py))
-   *and* $E_0$ is back-fitted to make the product hit CODATA. The
-   `total_hecke[p]` cat-unit sum is genuine framework output
-   (categorical, no fit); the $E_0$ back-fit is a hidden calibration.
+   $$B(\mathfrak{H}) = m_e \cdot M(\mathfrak{H})\big|_{q = q_0}$$
+
+   with three components:
+
+   - $|\mathrm{tr}_M(T_w)|$ — descended Markov trace via Wenzl bridge
+     $\sum_\lambda y_\lambda(q)\,\chi_\lambda(T_w)$.
+   - $\mathrm{tower}(T_w) = \sum_i \Phi_q(|\hat{V}_i|) + z^2 \sum_{i<j} \Phi_q(|\hat{V}_i \hat{V}_j|)$
+     — brane tower from per-generator additive-Wedderburn volumes
+     (see [`prop:mass-endomorphism-tower`](../../content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.md)).
+   - $\mathrm{tr}_M(C_{\dim_q}) = \sum_{\lambda \vdash n_0} 1/\dim_q(\lambda)$
+     — Frobenius co-Casimir trace
+     ([`thm:frobenius-codim-universal`](../../content/quantum-observable-universe/braids-and-knots/frobenius-codim-universal.md)).
+
+   The canonical Hecke element $T_w$ is built by
+   [`mass_at_3A_proper.atom_braid_word_3A(Z, N)`](../../folio-assistant/computations/mass_at_3A_proper.py)
+   — the **β-decay-operator-unfolded** 3A-strand word. For the
+   proton ($Z = 1$, $N = 0$): an 11-letter word in $H_3(q)$, since
+   the β-decay operator $T_\beta = \sigma_0 \sigma_1^{-1}$ lives in
+   $H_3(q)$ and the nucleon level satisfies the
+   [`prop:level-sufficiency`](../../content/quantum-observable-universe/braids-and-knots/level-sufficiency.md)
+   bound $k_{\max}(P, q) \le 3$ (deeper unfolding is superfluous
+   for trace-class invariants).
+
+   The earlier draft of this section claimed
+   `m_p = |tr_M(p, q_0)| · E_0` with $E_0 = Q_\beta$ as the
+   "categorical chain" — that's wrong. That single-term form is
+   shorthand and is structurally inadequate (verified empirically
+   in `probe-sdp-canonical-paper-formula.witness.json`: 87–100 %
+   error on $D, T, {}^3$He). The proper $m_p$ derivation uses the
+   unified formula above with all three components plus the $m_e$
+   conversion factor; **no CAL-3 entry, no $E_0$ scaling, no CODATA
+   m_p back-fit**.
+
+   **Caveat — the deprecated `atomic_braid_mass_table.py`.** That
+   script (lines 5–22 of
+   [`atomic_braid_mass_table.py`](../../folio-assistant/computations/atomic_braid_mass_table.py)
+   carry their own deprecation banner) contains a literal
+   `E_0 = (M_p_CODATA − t6) / total_hecke[p]` back-fit at line 441.
+   That **is** a 4th-calibration violation, but it lives in a script
+   already marked obsolete; the canonical replacement
+   `atomic_mass_via_rho_k.py` does not back-fit $E_0$ — it consumes
+   `M_P_MEV` and `M_N_MEV` directly via $\rho_K^{\mathrm{LO}}$,
+   which is the discipline violation Phase 0b is fixing. So the
+   right fix is **not** to derive $E_0$ from $Q_\beta / |\Delta(\mathrm{net})|$
+   (a different chain in the paper, used for Q-value spectral
+   decomposition per
+   [`spectral-decomposition-qvalue.md`](../../content/quantum-observable-universe/descartes-universe/spectral-decomposition-qvalue.md))
+   — the right fix is to drop $E_0$ from the proton-mass derivation
+   entirely and replace it with the unified knot mass formula above.
 
    **Resolution path** (Phase 0b.2 prerequisite):
-   1. Find or write the script that computes
-      $\Delta(\mathrm{net}) = h(h-2)/2$ symbolically from the
-      neutron / proton braid NF difference. Sibling agent: search
-      for `Delta_net`, `h*(h-2)/2`, `symbolic_q_value`,
-      `Q_value_symbolic`, `nucleon_mass_splitting` in
-      `folio-assistant/computations/` and `content/`.
-   2. Compute $|\Delta(\mathrm{net})|$ at $q_0$.
-   3. Compute $E_0 = Q_\beta / |\Delta(\mathrm{net})|$. Verify this
-      matches `atomic_braid_mass_table.py`'s back-fitted 199.86
-      MeV/cat-unit (within $\Phi_q$-tower truncation residual). If
-      it does NOT match, that's a real falsifier — the framework's
-      $E_0$ formula needs revisiting.
-   4. Replace `E_0_CALIBRATION_MEV` in `hecke_core.py` with the
-      derived value, and remove the back-fit from
-      `atomic_braid_mass_table.py`.
-   5. Drop the `NotImplementedError` stubs from
-      [`derived_masses.py`](../../folio-assistant/computations/derived_masses.py)
-      and wire in the categorical predictions.
+   1. Confirm the brane-tower component
+      ([`prop:mass-endomorphism-tower`](../../content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.md))
+      is callable from
+      [`mass_endomorphism.py`](../../folio-assistant/computations/mass_endomorphism.py).
+      Document the current ~1.8 % systematic residual (Φ_q
+      truncation) and note it as Workplan 2's Phase 2 target.
+   2. Add a Frobenius co-Casimir helper that returns
+      $\sum_{\lambda \vdash n_0} 1/\dim_q(\lambda)$ at $q_0$, given
+      $n_0$. Trivial for the proton ($n_0 = 3$); reusable for
+      neutron + light nuclei.
+   3. Wire `derived_masses.proton_mass_mev()` to call into the
+      multi-term assembly with $T_w = \texttt{atom\_braid\_word\_3A}(1, 0)$
+      and multiply by $m_e$. Drop the `NotImplementedError`.
+   4. Same for `neutron_mass_mev()` with $T_w = \texttt{atom\_braid\_word\_3A}(0, 1)$.
+   5. Cross-check $m_n - m_p \approx Q_\beta + m_e$ within the
+      Φ_q-tower truncation residual. If it agrees, CAL-3 is
+      overdetermined (consistency check); if it disagrees beyond
+      the truncation, that's a real falsifier — escalate.
+   6. Light nuclei: derive $\rho_K^{\mathrm{LO}}$ purely from the
+      derived $m_p$ and $m_n$ (NOT from CODATA literals), then
+      proceed with the binding pipeline as before.
 
 ## Migration plan for the sibling agent
 
