@@ -99,6 +99,8 @@ export default chapter({
         "hq-bi-filtration",
         // Joint motivic-Galois × braid-group action on the bi-filtration.
         "joint-galois-braid-action",
+        // Joint action verified on figure-8 cell (self-conjugate trivial case).
+        "joint-galois-braid-figure-8-verified",
         // Graded Baer-* on H_q across the depth filtration.
         "graded-baer-star-Hq",
         // Two-filtration bridge: iterated-integral depth ↔ partition GB-depth.

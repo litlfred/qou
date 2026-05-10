@@ -36,6 +36,8 @@ export default chapter({
         "b1-figure-8-row-theorem",
         // B1 at torus-knot rows is theorem (Bloch-Suslin + Garoufalidis-Lê).
         "b1-torus-knot-rows-theorem",
+        // B1 at additional hyperbolic-knot rows (Borromean, Whitehead).
+        "b1-hyperbolic-rows-theorem",
         "analytic-obstructions",
         "calculus-up-to-epsilon",
       ],
