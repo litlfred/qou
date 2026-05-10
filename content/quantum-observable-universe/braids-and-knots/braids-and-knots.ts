@@ -554,6 +554,7 @@ export default chapter({
         "y-lambda-closed-form-wenzl-bridge",
         "y-lambda-cyclotomic-factorization",
         "y-lambda-recipe-from-partition",
+        "graded-hecke-energy-truncation-bound",
         "descent-rate-probe-sim",
         "multi-level-jet-sum-sim",
         "macdonald-hook-telescope",
