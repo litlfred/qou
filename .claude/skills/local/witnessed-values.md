@@ -229,9 +229,9 @@ via a sibling codemod
 **Tag syntax** (line-anchored, end-of-line comment):
 
 ```lean
-volume     := 2.029883212819307  -- :leanval[vol_4_1]
+volume     := 2.029883212819307  -- :leanval[Vol_4_1]{precision=15}
 mostow_gap := 0.5                -- :leanval[mostow_gap_4_1]{precision=1}
-show (0 : ℝ) < 2.029883212819307  -- :leanval[vol_4_1]
+show (0 : ℝ) < 2.029883212819307  -- :leanval[Vol_4_1]{precision=15}
 ```
 
 The codemod scans all `.lean` files (skipping `.lake/`,

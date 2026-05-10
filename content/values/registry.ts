@@ -424,8 +424,10 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
     // Vol(4_1) computed via the Clausen-function identity
     // 2 · Cl_2(π/3) at 50 dps in `hyperbolic_volumes.py`; the
     // 15-digit serialisation feeds the Lean literal
-    // `MostowRigidity.figureEight.volume` via the `:leanval[vol_4_1]`
-    // tag and the `codemod-leanval.ts` codemod.
+    // `MostowRigidity.figureEight.volume` via the
+    // `:leanval[Vol_4_1]{precision=15}` tag and the
+    // `codemod-leanval.ts` codemod.  (Note: the registered name is
+    // `Vol_4_1` — uppercase — registered earlier in this file.)
 
     // Vol_4_1 (uppercase) is registered above pointing at the
     // canonical q-pinning witness; consume that entry for the

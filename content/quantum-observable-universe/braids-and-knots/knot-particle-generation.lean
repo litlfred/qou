@@ -64,7 +64,7 @@ noncomputable def hyperbolicVolume (_T : TorusKnot) : ℝ := 0
 -- Hyperbolic volumes of Skein descendants (mathematical constants)
 -- ═══════════════════════════════════════════════════════════════════
 
-/-- Vol(4₁) = 3 Cl₂(π/3) ≈ 2.0298832128 (figure-eight knot, muon). -/
+/-- Vol(4₁) = 2·Cl₂(π/3) ≈ 2.0298832128 (figure-eight knot, muon). -/
 -- Ref: SnapPy, Thurston
 noncomputable def vol_figure_eight : ℝ := 2.0298832128  -- :leanval[Vol_4_1]{precision=11}
 

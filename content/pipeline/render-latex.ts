@@ -365,7 +365,15 @@ function renderMdastNode(node: any): string {
 
     case "image": {
       // Markdown image: ![alt](url) → \includegraphics
-      const url: string = node.url ?? "";
+      // pdflatex cannot consume SVG natively; the convention is to
+      // commit a .pdf companion alongside any .svg asset (generated
+      // via cairosvg at authoring time) and rewrite the URL here so
+      // both the markdown viewer (SVG) and the LaTeX renderer (PDF)
+      // pick up the right format from the same source citation.
+      const rawUrl: string = node.url ?? "";
+      const url = rawUrl.endsWith(".svg")
+        ? rawUrl.slice(0, -4) + ".pdf"
+        : rawUrl;
       const alt: string = node.alt ?? "";
       const lines: string[] = [];
       lines.push("\\begin{figure}[htbp]");

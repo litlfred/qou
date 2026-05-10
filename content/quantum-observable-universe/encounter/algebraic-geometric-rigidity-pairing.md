@@ -11,7 +11,7 @@ single picture of why the encounter has a unique outcome.
   active-empty cases; the general case is a conditional class.
 
 * **Geometric side** (§3b-cond, post-$\tau$):
-  [`MostowRigidity`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/lean/QOU/Encounter/MostowRigidity.lean)
+  [`MostowRigidity`](https://github.com/litlfred/qou/blob/claude/improve-paper-exposition-4a0OT/content/quantum-observable-universe/lean/QOU/Encounter/MostowRigidity.lean)
   asserts that the hyperbolic structure on a finite-volume
   complete 3-manifold is uniquely determined by its fundamental
   group.  Its volume invariant is therefore a topological

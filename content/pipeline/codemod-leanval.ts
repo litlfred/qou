@@ -19,7 +19,7 @@
  * same line* tracks the witnessed value `NAME` (registered in
  * `WITNESSED_VALUES`).  Examples:
  *
- *     volume     := 2.029883212819307  -- :leanval[vol_4_1]
+ *     volume     := 2.029883212819307  -- :leanval[Vol_4_1]{precision=15}
  *     mostow_gap := 0.5                -- :leanval[mostow_gap_4_1]
  *
  * The codemod looks up `NAME`, formats the witness value to the
@@ -28,10 +28,12 @@
  *
  * ## Modes
  *
- *   bun run pipeline/codemod-leanval.ts              # dry-run, prints diff summary
- *   bun run pipeline/codemod-leanval.ts --write      # apply rewrites
- *   bun run pipeline/codemod-leanval.ts --check      # CI gate: exit 1 if any
- *                                                    # rewrite would happen
+ * Invoke from the repo root (the path the CI workflow uses):
+ *
+ *   bun run content/pipeline/codemod-leanval.ts              # dry-run, prints diff summary
+ *   bun run content/pipeline/codemod-leanval.ts --write      # apply rewrites
+ *   bun run content/pipeline/codemod-leanval.ts --check      # CI gate: exit 1 if any
+ *                                                            # rewrite would happen
  *
  * ## Idempotency / safety
  *
@@ -281,7 +283,7 @@ function* walkLeanFiles(root: string): Generator<string> {
 
 function usage(): never {
   console.error(
-    "usage: bun run codemod-leanval.ts [<lean-root>] [--write|--check]",
+    "usage: bun run content/pipeline/codemod-leanval.ts [<lean-root>] [--write|--check]",
   );
   process.exit(2);
 }
@@ -341,7 +343,7 @@ function main(): void {
   if (check && totalRewrites > 0) {
     console.error(
       "\n✗ --check: tagged Lean literals are out of sync with witnesses.\n" +
-        "  Run `bun run pipeline/codemod-leanval.ts --write` to refresh.",
+        "  Run `bun run content/pipeline/codemod-leanval.ts --write` to refresh.",
     );
     process.exit(1);
   }

@@ -203,9 +203,12 @@ instance unknot : MostowRigidity Unknot where
 
     `Vol(4_1) = 2 · Λ(π/3) ≈ 2.02988...`
 
-    where `Λ` is the Lobachevsky function.  We round to a
-    five-digit decimal `2.02988` for the class field; the
-    rounding direction does not affect the class invariants.
+    where `Λ` is the Lobachevsky function.  The class field
+    stores the 15-significant-digit truncation
+    `2.02988321281930` (kept in lock-step with the canonical
+    50-dps witness via `:leanval[Vol_4_1]{precision=15}`); the
+    direction of the truncation does not affect the class
+    invariants.
 
     The Mostow gap is bounded below by `0.5`, a conservative
     under-approximation of the next-smallest gap
