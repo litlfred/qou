@@ -34,7 +34,7 @@ import { join, basename, relative, dirname } from "path";
 const REPO_ROOT = join(import.meta.dir, "..", "..");
 const CONTENT_ROOT = join(REPO_ROOT, "content", "quantum-observable-universe");
 const OUT = join(REPO_ROOT, "docs", "figures-index.md");
-const THUMB_W = 220;
+const THUMB_W = 540;
 
 interface SvgEntry {
   slug: string;
@@ -216,15 +216,14 @@ function main() {
   lines.push("- Skill (prompt → SVG): [`.claude/skills/local/illustration-author.md`](../.claude/skills/local/illustration-author.md)");
   lines.push("- Coordination ledger: [`docs/coordination/illustrations.md`](coordination/illustrations.md)");
   lines.push("");
-  lines.push("**Reading the table:**");
+  lines.push("**Reading each entry:**");
   lines.push("");
-  lines.push("- *Stub* — repository-wide unique slug (filename without `.svg`).");
-  lines.push("- *Title* — short generated name from the first `# …` heading of the prompt sidecar; also rendered under the figure in the printed PDF via `\\figtitle{…}`.");
-  lines.push("- *Light* — primary SVG. Click for full size.");
-  lines.push("- *Dark* — hand-tuned dark-mode override if present; otherwise the same light SVG (viewer applies CSS `invert(1) hue-rotate(180deg)` filter automatically).");
-  lines.push("- *Prompt* — the textual prompt that produced the SVG (also surfaced in the printed PDF margin via `\\figprompt{…}`).");
-  lines.push("- *Variants* — sibling design alternatives in the same recommended slot.");
-  lines.push("- *Wired in* — the chapter `.md` block that currently embeds this SVG; `(not wired)` means the figure is on disk but not yet referenced from any block (the author can choose where to place it).");
+  lines.push("- **Stub** — repository-wide unique slug (filename without `.svg`).");
+  lines.push("- **Title** — short generated name from the first `# …` heading of the prompt sidecar; also rendered under the figure in the printed PDF via `\\figtitle{…}`.");
+  lines.push("- **Light + Dark previews** — large side-by-side thumbnails (click for full size). When a hand-tuned `<stem>.dark.svg` sibling exists, the right side shows it; otherwise the right side reuses the light SVG (the viewer applies CSS `invert(1) hue-rotate(180deg)` to the light SVG at render time).");
+  lines.push("- **Prompt** — the textual prompt that produced the SVG (also surfaced in the printed PDF margin via `\\figprompt{…}`).");
+  lines.push("- **Variants** — sibling design alternatives in the same recommended slot.");
+  lines.push("- **Wired in** — the chapter `.md` block that currently embeds this SVG; `(not wired)` means the figure is on disk but not yet referenced from any block.");
   lines.push("");
 
   // Collect all entries first so we can compute totals + variant siblings.
@@ -252,24 +251,33 @@ function main() {
 
     lines.push(`## ${chapterTitle(chapter)}`);
     lines.push("");
-    lines.push("| Stub | Title | Light | Dark | Prompt | Variants | Wired in |");
-    lines.push("|------|-------|-------|------|--------|----------|----------|");
 
     for (const e of entries) {
-      const stubCell = `\`${e.slug}\``;
-      const titleCell = e.title ? escapeCellMd(e.title) : "*(no title)*";
-      const lightCell = thumb(e.svgPath, e.title ?? e.slug);
-      const darkCell = e.darkPath
-        ? thumb(e.darkPath, `${e.title ?? e.slug} (dark)`)
-        : `${thumb(e.svgPath, `${e.title ?? e.slug} (filter-inverted)`)}<br><sub>filter</sub>`;
-      const promptCell = e.promptBody
-        ? escapeCellMd(summary(e.promptBody))
-        : "—";
+      const titleStr = e.title ?? "*(no title)*";
+      const lightUrl = relFromIndex(e.svgPath);
+      const darkUrl = e.darkPath ? relFromIndex(e.darkPath) : lightUrl;
+      const isFilterDark = !e.darkPath;
       const varCell = variantsCell(e.family, allEntries, e);
-      const wiredCellStr = wiredCell(e);
-      lines.push(`| ${stubCell} | ${titleCell} | ${lightCell} | ${darkCell} | ${promptCell} | ${varCell} | ${wiredCellStr} |`);
+      const wiredStr = wiredCell(e);
+
+      // Per-figure stacked panel: header + two big side-by-side previews
+      // (light + dark) + prompt + metadata.  HTML <img> width is honoured
+      // by GitHub's renderer.
+      lines.push(`### \`${e.slug}\` — ${escapeCellMd(titleStr)}`);
+      lines.push("");
+      lines.push(`<a href="${lightUrl}"><img src="${lightUrl}" width="${THUMB_W}" alt="${escapeCellMd(titleStr)}"></a>  <a href="${darkUrl}"><img src="${darkUrl}" width="${THUMB_W}" alt="${escapeCellMd(titleStr)} (dark${isFilterDark ? ' — filter inverted' : ''})"></a>`);
+      lines.push("");
+      lines.push(`<sub>**Light** *(primary)*  ·  **Dark** *${isFilterDark ? '(viewer applies invert + hue-rotate filter at render time)' : '(hand-tuned override)'}*</sub>`);
+      lines.push("");
+      if (e.promptBody) {
+        lines.push(`> ${summary(e.promptBody)}`);
+        lines.push("");
+      }
+      lines.push(`**Variants:** ${varCell} · **Wired in:** ${wiredStr}${e.promptPath ? ` · **Prompt file:** [\`${basename(e.promptPath)}\`](${relFromIndex(e.promptPath)})` : ""}`);
+      lines.push("");
+      lines.push("---");
+      lines.push("");
     }
-    lines.push("");
   }
 
   lines.push("");
