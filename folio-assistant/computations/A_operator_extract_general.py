@@ -89,8 +89,11 @@ def evaluate_word_matrix(shape: tuple, word: tuple) -> np.ndarray:
     return M
 
 
-def make_test_words(n_strands: int, count: int = 12) -> list[tuple]:
+def make_test_words(n_strands: int, count: int = 0) -> list[tuple]:
     """Diverse panel of test braid words on (n_strands - 1) generators.
+
+    `count > 0` truncates to exactly that many; `count <= 0` (default)
+    returns the full deduplicated list.
 
     Generates a varied set covering:
       - identity, all σ_i singletons + all σ_i^{-1} (= σ_i - h),
@@ -150,7 +153,7 @@ def make_test_words(n_strands: int, count: int = 12) -> list[tuple]:
             continue
         seen.add(key)
         deduped.append(w)
-    return deduped[:max(count, len(deduped))]
+    return deduped if count <= 0 else deduped[:count]
 
 
 def disjoint_word(word_p: tuple, word_n: tuple, n1: int) -> tuple:

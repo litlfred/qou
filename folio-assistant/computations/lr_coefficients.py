@@ -22,7 +22,6 @@ in this module's `__main__`).
 from __future__ import annotations
 
 import functools
-from typing import Iterator
 
 
 def partitions_of(n: int) -> list[tuple[int, ...]]:
@@ -65,90 +64,6 @@ def _is_yamanouchi(reverse_word: list[int], n_letters: int) -> bool:
             if counts[i] < counts[i + 1]:
                 return False
     return True
-
-
-def _enumerate_lr(skew_cells: list[tuple[int, int]],
-                  nu: tuple[int, ...],
-                  lam: tuple[int, ...],
-                  mu: tuple[int, ...]) -> int:
-    """Count LR skew tableaux of shape λ/μ with content ν.
-
-    Backtracks cell-by-cell in row-major order, maintaining:
-      - row-weak: f(i, j) ≥ f(i, j-1) when (i, j-1) is a filled cell
-      - column-strict: f(i, j) > f(i-1, j) when (i-1, j) is a filled
-      - Yamanouchi (checked on the partial reverse word).
-
-    Returns the count."""
-    n_letters = len(nu)
-    if n_letters == 0:
-        return 1 if not skew_cells else 0
-    target_counts = list(nu)
-    cur_counts = [0] * (n_letters + 1)  # 1-indexed
-    grid: dict[tuple[int, int], int] = {}
-
-    # Pre-fill mu-cells (no values; just absent from grid).  Cells
-    # outside both μ and λ are also absent.
-
-    def go(idx: int) -> int:
-        if idx == len(skew_cells):
-            # Check all of nu used.
-            if all(cur_counts[i + 1] == target_counts[i] for i in range(n_letters)):
-                return 1
-            return 0
-        i, j = skew_cells[idx]
-        # Compute lower bound from row-weak: need ≥ left neighbour.
-        # The left neighbour is (i, j-1) — either in μ (skip), or
-        # a previous skew cell (already filled).
-        left_val = 0
-        if j > 0:
-            mu_i = mu[i] if i < len(mu) else 0
-            if (i, j - 1) in grid:
-                left_val = grid[(i, j - 1)]
-            elif j - 1 >= mu_i:
-                # In skew but not yet filled — shouldn't happen in
-                # row-major order.
-                pass
-        # Column-strict: need > upper neighbour.
-        upper_val = 0
-        if i > 0 and (i - 1, j) in grid:
-            upper_val = grid[(i - 1, j)]
-
-        lower = max(left_val, upper_val + 1, 1)
-
-        total = 0
-        for v in range(lower, n_letters + 1):
-            if cur_counts[v] >= target_counts[v - 1]:
-                continue
-            # Yamanouchi early-prune: after placing this v, the
-            # reverse-word prefix property must hold.  A quick check:
-            # cur_counts[v] + 1 ≤ cur_counts[v - 1] for v > 1, AT THE
-            # MOMENT of placing v in the reverse-word position.
-            # Since reverse word reads cells in REVERSE order
-            # (bottom-right first), the prefix-Yamanouchi after
-            # filling cell `idx` corresponds to the suffix in our
-            # forward fill.  Full check at the leaf is reliable; the
-            # incremental check below approximates it.
-            if v > 1 and cur_counts[v] + 1 > cur_counts[v - 1]:
-                # Not strictly violating yet, but unlikely to recover.
-                # Keep this prune permissive (skip strict early-exit).
-                pass
-
-            grid[(i, j)] = v
-            cur_counts[v] += 1
-            total += go(idx + 1)
-            cur_counts[v] -= 1
-            del grid[(i, j)]
-        return total
-
-    raw_count = go(0)
-    if raw_count == 0:
-        return 0
-
-    # Final-pass Yamanouchi filter on each completed tableau.
-    # The simple early-prune above is permissive; verify on completion.
-    # We re-enumerate but record full tableaux and filter — for small
-    # partitions this is cheap.
-    return _enumerate_lr_with_yamanouchi_check(skew_cells, nu, lam, mu)
 
 
 def _enumerate_lr_with_yamanouchi_check(skew_cells, nu, lam, mu) -> int:

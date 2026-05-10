@@ -29,14 +29,17 @@ A^λ_{μν}(I) is 1×1 = a scalar.  The two closures are therefore
 unified by Sub-lemma 2.1 — my product formula is the 1-dim
 specialisation of the operator-valued statement.
 
-This script verifies the unification for the deuteron at two
-representative partitions:
-  - λ = (6) (1-dim, sym): closes via product formula alone.
-  - λ = (5, 1) (5-dim, multi-dim): closes via the operator-valued
-    formula.
+This script summarises the closure status for each λ ⊢ 6 by
+loading the pre-extracted A^λ_{μν}(I) witness
+(`sublemma-2-1-A-operator-extract.witness.json`) and reporting
+its per-λ residuals.  It does **not** recompute χ^λ or run an
+independent prediction-vs-ground-truth check — the operator
+extraction itself does that, and this script consumes the result.
 
-**Output.** `v-hat-to-chi-lambda-integrated.witness.json` with
-per-λ predictions vs Hoefsmit ground truth.
+**Output.** `v-hat-to-chi-lambda-integrated.witness.json`
+summarising 1-dim coverage (universal product formula) and
+multi-dim coverage (operator residuals from the upstream
+extract).
 
 Usage:
     python3 folio-assistant/computations/v_hat_to_chi_lambda_integrated.py

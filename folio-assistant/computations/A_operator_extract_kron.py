@@ -209,7 +209,8 @@ def extract_with_kron(n1: int, n2: int, *, K1: int = 12, K2: int = 12,
             "deferred_to_dense": False,
         }
         if verbose:
-            print(f"  {str(list(lam)):<22}({list(mu)},{list(nu)},{c}):>14"
+            tup = f"({list(mu)},{list(nu)},{c})"
+            print(f"  {str(list(lam)):<22}{tup:>14}"
                   f"  {d_mu}×{d_nu:<8}{resid:>14.4e}")
 
     return results
