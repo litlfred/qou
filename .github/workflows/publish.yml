@@ -186,7 +186,13 @@ jobs:
           # it, so install the providing package directly to be safe.
           sudo apt-get install -y --no-install-recommends \
               texlive-full texlive-extra-utils latexdiff latexmk \
-              graphviz ripgrep jq python3-pip
+              graphviz ripgrep jq python3-pip \
+              inkscape
+          # inkscape is required by the LaTeX `svg` package, which
+          # converts SVG figures to PDF on the fly during pdflatex.
+          # Without it, \includesvg{...} calls fail and any chapter
+          # embedding an authored SVG (see
+          # docs/illustration-recommendations.md) errors at compile.
           # Surface versions for the build log; fail-fast if any tool we
           # need later is missing.
           pdflatex --version | head -1

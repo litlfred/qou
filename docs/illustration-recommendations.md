@@ -3,12 +3,15 @@
 Audit date: 2026-05-10 — branch
 [`claude/add-paper-illustrations-Diggj`](https://github.com/litlfred/qou/tree/claude/add-paper-illustrations-Diggj).
 
-The paper is mathematically dense but visually sparse. Apart from
-auto-rendered `tikzcd` commutative diagrams in
-[`quantum-universes/rendered/`](https://github.com/litlfred/qou/tree/claude/add-paper-illustrations-Diggj/content/quantum-observable-universe/quantum-universes/rendered),
-no *illustrative* figures (knot diagrams, surfaces, flow lines,
-braid pictures, schematic block flows) appear anywhere in the 1,659
-`.md` content blocks across 22 chapters. This document recommends a
+The paper is mathematically dense but visually sparse. The existing
+auto-rendered TeX diagrams in
+[`quantum-universes/rendered/`](https://github.com/litlfred/qou/tree/claude/add-paper-illustrations-Diggj/content/quantum-observable-universe/quantum-universes/rendered)
+(commutative `tikzcd` squares plus a handful of `tikz` pictures —
+`frobenius-pairing-0.svg`, `categorical-action-0.svg`, etc.) are
+all dvisvgm output of TeX source. No *illustrative* figures (knot
+diagrams, surfaces, flow lines, braid pictures, schematic block
+flows) appear anywhere in the 1,659 `.md` content blocks across 22
+chapters. This document recommends a
 prioritised set of SVGs that should be authored, where each belongs,
 and a precise description sufficient for an SVG draftsperson (or a
 TikZ→SVG pipeline) to draw it.
@@ -23,8 +26,16 @@ TikZ→SVG pipeline) to draw it.
 - **Style**: monochrome line-art primary; a single accent colour per
   figure when colour is meaningful (e.g. red/green/blue for the
   three coral tubes); thin (0.5 pt) lines, generous whitespace,
-  serif Computer-Modern-style labels via `<text>` elements with
-  MathJax-compatible `$...$` content where supported.
+  serif Computer-Modern-style labels via `<text>` elements.
+- **Math inside SVG `<text>`**: the embedded SVG is rendered as a
+  raster/vector asset by the LaTeX pipeline (`\includesvg`) and by
+  the HTML viewer; **its text content is *not* run through LaTeX,
+  MathJax, or KaTeX**. Therefore SVG labels must be plain Unicode
+  glyphs (`σ`, `q`, `ⁱ`, `⁻¹`, etc.), not `$\sigma$`/`$q^{-1}$`,
+  or they will render with literal dollar signs in the figure. Any
+  math too complex for Unicode belongs in the surrounding prose
+  (the figure caption or the block body), where the LaTeX renderer
+  picks it up.
 - **Notation**: figures must obey the notation register
   (`$\mathbf{C}$` not `$\mathcal{C}$`, `$\sigma_i$` not `$T_i$`,
   bold particles `$\mathfrak{p},\mathfrak{n}$`, `$\mathcal{S}_p$`

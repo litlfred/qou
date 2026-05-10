@@ -411,13 +411,22 @@ function renderMdastNode(node: any): string {
       return "\\\\";
 
     case "image": {
-      // Markdown image: ![alt](url) → \includegraphics
+      // Markdown image: ![alt](url) → \includegraphics or \includesvg.
+      // pdflatex cannot read SVG natively; the `svg` LaTeX package
+      // (loaded in latex/preamble.tex) calls Inkscape at compile time
+      // to convert SVG → PDF.  CI installs inkscape; see publish.yml.
       const url: string = node.url ?? "";
       const alt: string = node.alt ?? "";
+      const isSvg = /\.svg(\?.*)?$/i.test(url);
       const lines: string[] = [];
       lines.push("\\begin{figure}[htbp]");
       lines.push("  \\centering");
-      lines.push(`  \\includegraphics[width=\\textwidth]{${url}}`);
+      if (isSvg) {
+        // \includesvg auto-strips the .svg extension; pass the url directly.
+        lines.push(`  \\includesvg[width=\\textwidth]{${url}}`);
+      } else {
+        lines.push(`  \\includegraphics[width=\\textwidth]{${url}}`);
+      }
       if (alt) {
         lines.push(`  \\caption{${escapeLatex(alt)}}`);
       }
@@ -608,9 +617,14 @@ export function renderBlock(block: Block, mdContent: string, sourceDir?: string)
       if (figFile) {
         // Image-based figure: meta.file points to an image asset
         const figPath = sourceDir ? join(sourceDir, figFile) : figFile;
+        const isSvg = /\.svg(\?.*)?$/i.test(figPath);
         lines.push("\\begin{figure}[htbp]");
         lines.push("  \\centering");
-        lines.push(`  \\includegraphics[width=\\textwidth]{${figPath}}`);
+        if (isSvg) {
+          lines.push(`  \\includesvg[width=\\textwidth]{${figPath}}`);
+        } else {
+          lines.push(`  \\includegraphics[width=\\textwidth]{${figPath}}`);
+        }
         if (block.label) {
           lines.push(`  \\label{${block.label}}`);
           lines.push(`  \\blockstub{${escapeLatex(block.label)}}`);

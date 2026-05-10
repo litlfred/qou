@@ -19,6 +19,10 @@
 \usepackage{mathtools}
 \usepackage{geometry}
 \usepackage{graphicx}
+\usepackage{svg}              % \includesvg{file} — runs Inkscape under the hood
+                               % to convert SVG to PDF before pdflatex picks it up
+                               % (see .github/workflows/publish.yml for the
+                               % matching apt install of inkscape).
 \usepackage{cite}
 \usepackage{ccicons}          % CC icon glyphs
 \usepackage{titlesec}         % Compact heading styles
