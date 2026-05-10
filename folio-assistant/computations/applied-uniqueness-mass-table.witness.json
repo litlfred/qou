@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-10T04:36:36.554888+00:00",
-  "commitSha": "d6bab30658311d3f632311cca6c3564a268b5877",
+  "computedAt": "2026-05-10T04:47:46.237623+00:00",
+  "commitSha": "92a43626d6b3903356dd06d010f8267d101c1e27",
   "assertions": [
     {
       "name": "all_predictions_finite",
@@ -18,13 +18,14 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 4,
   "computation": "applied-uniqueness-mass-table",
   "scriptFile": "applied_uniqueness_mass_table.py",
-  "scriptHash": "1084653eb977",
-  "scriptCommitSha": "unknown",
-  "description": "Phase 1 of the 1 ppb workplan — wires AppliedDeuteron/Tritium/Helium3Uniqueness theorems into mass-table predictions by applying the categorical mass formula M(K) = ρ · m_e · |tr_M| from QOU.BraidKnot.MassFormulaCategorical to the canonical |tr_M(β_K, q_0)| values pinned in markov-trace-assembly-*.derivation.json.  Currently uses placeholder m_e_Hecke literal (Phase 2 of the workplan replaces it with the Path A 50-dps derivation, expected to tighten predictions by ~5 orders of magnitude).",
+  "scriptHash": "fad55b01b753",
+  "scriptCommitSha": "e21277d8e3e1acea27d78d23086fcba4ebe5b2a3",
+  "description": "Phase 1 of the 1 ppb workplan — wires AppliedDeuteron/Tritium/Helium3Uniqueness theorems into mass-table predictions by applying the categorical mass formula M(K) = ρ · m_e · |tr_M| from QOU.BraidKnot.MassFormulaCategorical to the canonical |tr_M(β_K, q_0)| values from derivation_chain.TR_M_AT_Q0.  Currently uses placeholder m_e_Hecke literal (DEPRECATED in derivation_chain.py); Phase 2 of the workplan replaces it with the Path A 50-dps derivation, expected to tighten predictions by ~5 orders of magnitude.  AUDIT-ONLY scaffolding.",
   "contentBlock": "prop:atom-knot-mass-derivation",
+  "auditOnly": "docs/audits/2026-05-10-1ppb-workplan-update.md",
   "parameters": {
     "M_E_MEV_CODATA": "0.51099895",
     "M_P_MEV_CODATA": "938.27208816",
@@ -38,7 +39,8 @@
     }
   },
   "data": {
-    "pinned_tr_M_q0": {
+    "canonical_tr_M_q0_source": "derivation_chain.TR_M_AT_Q0",
+    "canonical_tr_M_q0_values": {
       "proton": "1.0653062285923893",
       "neutron": "0.9232332971695838",
       "deuteron": "0.3882864715477134"
@@ -47,17 +49,20 @@
       "proton": {
         "path": "folio-assistant/computations/markov-trace-assembly-proton.derivation.json",
         "target": "tr_M(p, q_0)  [canonical Wenzl-bridge]",
-        "target_value": 1.0653062285923893
+        "target_value": 1.0653062285923893,
+        "canonical_source": "derivation_chain.TR_M_AT_Q0"
       },
       "neutron": {
         "path": "folio-assistant/computations/markov-trace-assembly-neutron.derivation.json",
         "target": "tr_M(n, q_0)  [canonical Wenzl-bridge]",
-        "target_value": 0.9232332971695838
+        "target_value": 0.9232332971695838,
+        "canonical_source": "derivation_chain.TR_M_AT_Q0"
       },
       "deuteron": {
         "path": "folio-assistant/computations/markov-trace-assembly-deuteron.derivation.json",
         "target": "tr_M(D, q_0)  [canonical Wenzl-bridge]",
-        "target_value": 0.3882864715477134
+        "target_value": 0.3882864715477134,
+        "canonical_source": "derivation_chain.TR_M_AT_Q0"
       }
     },
     "rows": [
@@ -151,6 +156,7 @@
     "workplan_doc": "docs/audits/2026-05-10-1ppb-workplan-update.md",
     "lean_theorem": "QOU.BraidKnot.MassFormulaCategorical.categoricalMassMeV",
     "formula_in_lean": "categoricalMass rho m_e T_w := rho * m_e * absMarkovTrace n T_w",
-    "phase_2_note": "Predictions consume placeholder m_e_Hecke literal (M_HECKE_PIPELINE_AT_Q0['e'] in derivation_chain.py); Phase 2 replaces this with Path A 50-dps derivation, expected to tighten by ~5 orders of magnitude."
+    "formula_used_here": "M(K)_MeV = (ρ_K · |tr_M(β_K, q_0)|) / m_e_Hecke_placeholder · M_E_MEV_CODATA — ratio form so cat-units m_e cancels; the numerator's (m_e * |tr_M|) is implicit in the |tr_M|·(M_E_MEV/m_e_Hecke) reshuffle.",
+    "phase_2_note": "Predictions consume placeholder m_e_Hecke literal (M_HECKE_PIPELINE_AT_Q0['e'] in derivation_chain.py, marked DEPRECATED upstream).  Phase 2 replaces this with Path A 50-dps derivation; expected to tighten by ~5 orders of magnitude.  This script is set_audit_only until that substitution lands."
   }
 }

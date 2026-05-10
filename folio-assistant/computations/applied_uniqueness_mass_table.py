@@ -53,20 +53,22 @@ ASSEMBLY_DIR = Path(__file__).parent
 
 # ─── Canonical Wenzl-bridge |tr_M(β_K, q_0)| values ────────────────────
 #
-# Pinned in `markov-trace-assembly-{atom}.derivation.json` (target_value).
-# These are the **canonical** values per `prop:y-lambda-closed-form-
-# wenzl-bridge` — the legacy 2-variable Schur weight (which vanishes
-# for ℓ(λ) > 2) was replaced in PR #621 + #630.
+# Imported from `derivation_chain.TR_M_AT_Q0` — the single source of
+# truth for these literals (per Copilot review on PR #631; keeps JSON
+# outputs bit-stable across consumers).
 #
-# T (³H) and ³He are not yet in the assembly-derivation chain (chi
-# cache `chi-tritium-h9.witness.json` is partial: 2/30 partitions; ³He
-# has no chi cache yet).  Phase 1.2/1.3 of the workplan wires those in
-# once the cached witnesses complete.
-PINNED_TR_M_Q0 = {
-    "proton":   "1.0653062285923893",
-    "neutron":  "0.9232332971695838",
-    "deuteron": "0.3882864715477134",
-}
+# Per `prop:y-lambda-closed-form-wenzl-bridge`, these are the canonical
+# values; the legacy 2-variable Schur weight (which vanishes for
+# ℓ(λ) > 2) was replaced in PR #621 + #630.
+#
+# T (³H) and ³He are not yet in `TR_M_AT_Q0` upstream — chi cache
+# `chi-tritium-h9.witness.json` is partial (2/30 partitions); ³He has
+# no chi cache yet.  Phase 1.2/1.3 of the workplan wires those in once
+# the caches complete.
+from derivation_chain import TR_M_AT_Q0  # canonical Wenzl-bridge values
+
+# Local map: full atom name → 1-letter key used in TR_M_AT_Q0.
+_ATOM_KEY = {"proton": "p", "neutron": "n", "deuteron": "D"}
 
 PENDING_ATOMS = {
     "tritium": {
@@ -116,18 +118,27 @@ def ame_nucleus_mass_mev(Z: int, N: int, B_AME_MeV: mp.mpf) -> mp.mpf:
 
 
 def categorical_mass_via_ratio(
-    atom: str, tr_M_q0: mp.mpf, m_p_via_ratio: bool = True
+    atom: str, tr_M_q0: mp.mpf
 ) -> mp.mpf | None:
-    """Apply the categorical mass formula at the level of ratios.
+    """Apply the categorical mass formula `M(K) = ρ · m_e · |tr_M(T_w(K))|`
+    proved in `QOU.BraidKnot.MassFormulaCategorical`, expressed at the
+    level of ratios so the cat-units `m_e_Hecke` cancels with itself:
 
-    `M(K)_MeV = (ρ_K · |tr_M(β_K)|) / (ρ_e · |tr_M(β_e)|) · M_E_MEV_CODATA`
+        m_K_MeV = (ρ_K · |tr_M(β_K)|) / m_e_Hecke · M_E_MEV_CODATA
 
-    The electron-side ratio `ρ_e · |tr_M(β_e)|` is itself a derived
-    quantity (Phase 2 of the workplan); currently we proxy it via the
-    placeholder literal `M_HECKE_PIPELINE_AT_Q0['e']` so the formula's
-    structure is exposed.  When that placeholder is replaced with the
-    Path A 50-dps derivation of `m_e_Hecke` (Phase 2), the prediction
-    will tighten by ~5 orders of magnitude.
+    The denominator `m_e_Hecke` is the Hecke-encoded electron mass; in
+    the Lean theorem it is the `m_e` factor multiplying `absMarkovTrace`.
+    For the proton/neutron/deuteron-side ratio numerator, the same factor
+    of `m_e_Hecke` would appear and cancel; we therefore divide by it
+    once on the denominator and consume `M_E_MEV_CODATA` once on the
+    numerator side, matching the cat-units → MeV conversion in
+    `categoricalMassMeV` from the Lean module.
+
+    The denominator is currently the **placeholder literal**
+    `M_HECKE_PIPELINE_AT_Q0['e']` from `derivation_chain.py` (marked
+    DEPRECATED there); Phase 2 of the workplan replaces it with the
+    Path A 50-dps derivation of `m_e_Hecke`, expected to tighten the
+    predictions by ~5 orders of magnitude.
 
     Returns `None` if the placeholder is not configured for the atom.
     """
@@ -147,35 +158,50 @@ def categorical_mass_via_ratio(
 def main() -> int:
     # WitnessBuilder up-front so durationMs reflects end-to-end runtime.
     w = WitnessBuilder("applied-uniqueness-mass-table", engine="mpmath")
+    # Audit-only: consumes `derivation_chain.M_HECKE_PIPELINE_AT_Q0['e']`
+    # which is marked DEPRECATED upstream ("DO NOT ADD NEW PRODUCTION
+    # CONSUMERS").  Phase 2 of the workplan removes the placeholder
+    # dependency; until then this script is a Phase 1 scaffolding
+    # diagnostic, not a production prediction.  Per Copilot review on
+    # PR #631.
+    w.set_audit_only("docs/audits/2026-05-10-1ppb-workplan-update.md")
     w.set_description(
         "Phase 1 of the 1 ppb workplan — wires AppliedDeuteron/Tritium/"
         "Helium3Uniqueness theorems into mass-table predictions by "
         "applying the categorical mass formula M(K) = ρ · m_e · |tr_M| "
         "from QOU.BraidKnot.MassFormulaCategorical to the canonical "
-        "|tr_M(β_K, q_0)| values pinned in "
-        "markov-trace-assembly-*.derivation.json.  Currently uses "
-        "placeholder m_e_Hecke literal (Phase 2 of the workplan replaces "
-        "it with the Path A 50-dps derivation, expected to tighten "
-        "predictions by ~5 orders of magnitude)."
+        "|tr_M(β_K, q_0)| values from derivation_chain.TR_M_AT_Q0.  "
+        "Currently uses placeholder m_e_Hecke literal (DEPRECATED in "
+        "derivation_chain.py); Phase 2 of the workplan replaces it "
+        "with the Path A 50-dps derivation, expected to tighten "
+        "predictions by ~5 orders of magnitude.  AUDIT-ONLY scaffolding."
     )
     w.set_content_block("prop:atom-knot-mass-derivation")
 
-    # Load pinned tr_M values + assembly metadata.
+    # Load canonical tr_M values from derivation_chain.TR_M_AT_Q0
+    # (the single source of truth) + per-atom assembly metadata.
     tr_M = {}
     sources = {}
-    for atom, val_str in PINNED_TR_M_Q0.items():
+    for atom, key in _ATOM_KEY.items():
+        if key not in TR_M_AT_Q0:
+            continue
+        canonical_val = mp.mpf(str(TR_M_AT_Q0[key]))
         path = ASSEMBLY_DIR / f"markov-trace-assembly-{atom}.derivation.json"
         if path.exists():
             d = json.loads(path.read_text())
             sources[atom] = {
                 "path": str(path.relative_to(ASSEMBLY_DIR.parent.parent)),
                 "target": d.get("target", ""),
-                "target_value": d.get("target_value", val_str),
+                "target_value": d.get("target_value", str(canonical_val)),
+                "canonical_source": "derivation_chain.TR_M_AT_Q0",
             }
-            tr_M[atom] = mp.mpf(str(d.get("target_value", val_str)))
+            tr_M[atom] = mp.mpf(str(d.get("target_value", canonical_val)))
         else:
-            sources[atom] = {"path": None, "fallback": val_str}
-            tr_M[atom] = mp.mpf(val_str)
+            sources[atom] = {
+                "path": None,
+                "canonical_source": "derivation_chain.TR_M_AT_Q0",
+            }
+            tr_M[atom] = canonical_val
 
     print("=" * 80)
     print("PHASE 1 — APPLIED UNIQUENESS MASS TABLE")
@@ -247,48 +273,59 @@ def main() -> int:
             "next_step": info["next_step"],
         })
 
-    # Binding-energy translation for the deuteron — diff vs AME baseline.
-    if rows and rows[0]["atom"] == "proton":
-        # Need predicted m_p, m_n, m_D to compute B(D)_pred.
-        try:
-            m_p_pred = mp.mpf(rows[0]["m_K_predicted_MeV"])
-            m_n_pred = mp.mpf(rows[1]["m_K_predicted_MeV"])
-            m_D_pred = mp.mpf(rows[2]["m_K_predicted_MeV"])
-            B_D_pred = m_p_pred + m_n_pred - m_D_pred
-            B_D_ame = B_AME_MEV["deuteron"]
-            B_D_err_ppb = float((B_D_pred - B_D_ame) / B_D_ame * mp.mpf("1e9"))
-            print()
-            print(f"{'B(D) translated':>18}: {mp.nstr(B_D_pred, 12)} MeV  "
-                  f"(AME: {mp.nstr(B_D_ame, 12)} MeV, err: {B_D_err_ppb:+.2e} ppb)")
-            rows.append({
-                "atom": "deuteron-binding",
-                "B_predicted_MeV": str(B_D_pred),
-                "B_AME_MeV": str(B_D_ame),
-                "err_ppb": B_D_err_ppb,
-                "formula": "m_p_pred + m_n_pred - m_D_pred",
-                "status": "categorical_via_placeholder_m_e_Hecke",
-            })
-        except (IndexError, KeyError, ValueError):
-            pass
+    # Binding-energy translation for the deuteron — diff vs AME
+    # baseline.  Index by atom name (per Copilot review on PR #631);
+    # robust against loop-order changes or pending/skipped rows.
+    rows_by_atom = {r["atom"]: r for r in rows if "atom" in r}
+    needed = ("proton", "neutron", "deuteron")
+    if all(a in rows_by_atom and "m_K_predicted_MeV" in rows_by_atom[a]
+           for a in needed):
+        m_p_pred = mp.mpf(rows_by_atom["proton"]["m_K_predicted_MeV"])
+        m_n_pred = mp.mpf(rows_by_atom["neutron"]["m_K_predicted_MeV"])
+        m_D_pred = mp.mpf(rows_by_atom["deuteron"]["m_K_predicted_MeV"])
+        B_D_pred = m_p_pred + m_n_pred - m_D_pred
+        B_D_ame = B_AME_MEV["deuteron"]
+        B_D_err_ppb = float((B_D_pred - B_D_ame) / B_D_ame * mp.mpf("1e9"))
+        print()
+        print(f"{'B(D) translated':>18}: {mp.nstr(B_D_pred, 12)} MeV  "
+              f"(AME: {mp.nstr(B_D_ame, 12)} MeV, err: {B_D_err_ppb:+.2e} ppb)")
+        rows.append({
+            "atom": "deuteron-binding",
+            "B_predicted_MeV": str(B_D_pred),
+            "B_AME_MeV": str(B_D_ame),
+            "err_ppb": B_D_err_ppb,
+            "formula": "m_p_pred + m_n_pred - m_D_pred",
+            "status": "categorical_via_placeholder_m_e_Hecke",
+        })
 
     w.add_parameter("M_E_MEV_CODATA", str(M_E_MEV))
     w.add_parameter("M_P_MEV_CODATA", str(M_P_MEV))
     w.add_parameter("M_N_MEV_CODATA", str(M_N_MEV))
     w.add_parameter("rho_table", RHO)
-    w.add_data("pinned_tr_M_q0", PINNED_TR_M_Q0)
+    w.add_data("canonical_tr_M_q0_source", "derivation_chain.TR_M_AT_Q0")
+    w.add_data("canonical_tr_M_q0_values",
+               {atom: str(tr_M[atom]) for atom in tr_M})
     w.add_data("sources", sources)
     w.add_data("rows", rows)
     w.add_data("pending_atoms", PENDING_ATOMS)
     w.add_data("phase", "Phase 1 of 1ppb workplan (2026-05-10)")
     w.add_data("workplan_doc", "docs/audits/2026-05-10-1ppb-workplan-update.md")
-    w.add_data("lean_theorem", "QOU.BraidKnot.MassFormulaCategorical.categoricalMassMeV")
+    w.add_data("lean_theorem",
+               "QOU.BraidKnot.MassFormulaCategorical.categoricalMassMeV")
     w.add_data("formula_in_lean",
                "categoricalMass rho m_e T_w := rho * m_e * absMarkovTrace n T_w")
+    w.add_data("formula_used_here",
+               "M(K)_MeV = (ρ_K · |tr_M(β_K, q_0)|) / m_e_Hecke_placeholder "
+               "· M_E_MEV_CODATA — ratio form so cat-units m_e cancels; "
+               "the numerator's (m_e * |tr_M|) is implicit in the |tr_M|·"
+               "(M_E_MEV/m_e_Hecke) reshuffle.")
     w.add_data("phase_2_note",
                "Predictions consume placeholder m_e_Hecke literal "
-               "(M_HECKE_PIPELINE_AT_Q0['e'] in derivation_chain.py); "
-               "Phase 2 replaces this with Path A 50-dps derivation, "
-               "expected to tighten by ~5 orders of magnitude.")
+               "(M_HECKE_PIPELINE_AT_Q0['e'] in derivation_chain.py, "
+               "marked DEPRECATED upstream).  Phase 2 replaces this with "
+               "Path A 50-dps derivation; expected to tighten by ~5 "
+               "orders of magnitude.  This script is set_audit_only "
+               "until that substitution lands.")
 
     # Schematic assertions: predictions are all finite + non-negative.
     finite = all(
