@@ -27,6 +27,9 @@ export default chapter({
         // Bloch–Suslin — theorem-level discharge of the keystone
         // at depth 2 over every Bring-natural number field.
         "depth-2-identification-bloch-suslin",
+        // QOU infra (Hecke NF + Bring S_5) potentially discharges
+        // Goncharov's conjecture at F = Q(ζ_5) for depth 3.
+        "qou-infra-discharges-goncharov-zeta5",
         "analytic-obstructions",
         "calculus-up-to-epsilon",
       ],
