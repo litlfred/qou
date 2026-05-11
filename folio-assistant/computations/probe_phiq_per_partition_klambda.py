@@ -75,21 +75,12 @@ from witness_base import WitnessBuilder  # noqa: E402
 # (branch claude/close-level-selection-rule-bvMvw). Re-fetch via
 # `gh api repos/litlfred/qou/contents/...` if values need refresh.
 
-# ── Per-atom uniform-k tower magnitudes (from #638) ────────────
-UNIFORM_K_TOWER_ABS = {
-    "deuteron":  {1: 0.7194, 2: 8.5083, 3: 41.3437, 4: 17.3415, 5: 1523.7720},
-    "tritium":   {1: 5.0445, 2: 4.9876, 3: 95.5946, 4: 260.3530, 5: 446.7188},
-    "he3":       {1: 0.5751, 2: 10.5979, 3: 108.6373, 4: 617.6752, 5: 2452.6496},
-}
-
-# ── Per-atom uniform-k binding (from #638) ─────────────────────
-UNIFORM_K_BINDING_MEV = {
-    "deuteron":  {1: 2.0717, 2: 4.5654, 3: 21.4310, 4: 9.2171, 5: 778.2837},
-    "tritium":   {1: 2.9896, 2: 7.8035, 3: 49.4018, 4: 133.3364, 5: 228.8155},
-    "he3":       {1: 3.3986, 2: 13.6420, 3: 113.8380, 4: 617.6752, 5: 2452.6496},
-}
-# Note: he3 k=4,5 are tower_op values not B_op (witness inconsistency
-# at high k); for low k the binding is the relevant quantity.
+# Note: per-atom uniform-k tower magnitudes and binding values from
+# #638 are encoded directly in the per-atom signed-tower constants
+# below (not stored as separate dicts) — the LP-cost-style ranking
+# only needs the SIGNED dominant-partition contributions, which
+# carry the Laurent-form sign convention (only the bridge product
+# is wrapped in abs()). Per Gemini cycle-7 review on this file.
 
 AME_MEV = {"deuteron": 2.224566, "tritium": 8.481798, "he3": 7.71806}
 
@@ -191,8 +182,10 @@ def main() -> int:
     print("  " + "-" * 70)
     for atom in ("deuteron", "tritium", "he3"):
         r = per_partition_k_lambda_tower(atom, 2)
-        unif = -UNIFORM_K_TOWER_ABS[atom][2]  # signed total at uniform k=2
-        # We extracted signed totals from per-partition sums: deuteron = -5.34, tritium = -4.99, he3 = -10.60
+        # Signed total at uniform k=2 (per Laurent-form convention:
+        # signed sum, only the bridge product wraps in abs()). Values
+        # extracted from #638's witness via per-partition recomputation:
+        # deuteron = -5.34, tritium = -4.99, he3 = -10.60.
         unif_signed = {"deuteron": -5.3439, "tritium": -4.9876, "he3": -10.5979}[atom]
         delta = r["total_tower"] - unif_signed
         print(f"  {atom:>10} | {r['dominant_contrib']:>10.4f} | {r['non_dominant_sum']:>12.4f}"

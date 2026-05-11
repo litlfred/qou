@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-11T18:52:30.096201+00:00",
-  "commitSha": "35f2c3a52be91768bc0b25cdaec672b5a5273e50",
+  "computedAt": "2026-05-11T20:55:01.133107+00:00",
+  "commitSha": "4b0deb3f386389b99d9769a04743889ebb4e9930",
   "assertions": [
     {
       "name": "he3_dominant_partition_is_5_4",
@@ -36,11 +36,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 18,
   "computation": "probe-phiq-per-partition-klambda",
   "scriptFile": "probe_phiq_per_partition_klambda.py",
-  "scriptHash": "ce7d77ac0d51",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "b06acd247593",
+  "scriptCommitSha": "6c25f7a51772b3a776d7cd7a88874ef04d66c3e7",
   "description": "Per-partition k_λ closure probe: tests non-uniform truncation across Wedderburn blocks. Reads PR #638's per-eigenvalue spectra; recomputes per-partition contributions; finds that ONE dominant partition per atom drives the failure at uniform k=2 (³He: λ=[5,4] contributes -11.69 of -10.60 total; D: [2,2,1,1] contributes -6.22; T: [6,3] contributes -3.00). Assigning k_λ=1 to the dominant outlier and k_λ=2 to all others collapses tower magnitude to |tower|<2 for all 3 atoms — positive structural finding. Remaining open: pin the substrate invariant of λ that selects k_λ. Empirical: outlier partitions have the maximum eigenvalue magnitude in their ρ_λ(β_atom) spectrum (³He max |μ|=10.69 at [5,4]; T max |μ|=8.23 at [4,3,1,1]). Class C (diagnostic). Data source: probe-phiq-operator-valued.witness.json on PR #638.",
   "contentBlock": "conj:brane-tower-z-habiro",
   "parameters": {

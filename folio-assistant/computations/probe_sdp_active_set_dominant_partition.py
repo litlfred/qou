@@ -60,16 +60,12 @@ from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
 # ── Inputs extracted from PR #638 per-eigenvalue witness ────────
 # (Encoded inline to avoid bundling 400 KB raw data; refresh from
 #  source if needed: gh api .../probe-phiq-operator-valued.witness.json)
-
-# For each atom we record: per-partition (λ, y_λ, χ_q^λ, sum |μ_a|²)
-# The χ_q^λ values are the real part of tr(ρ_λ(β)) per #638's witness.
-
-PER_ATOM_DATA = {
-    # Source: probe-phiq-operator-valued.witness.json on PR #638
-    # data.per_atom[atom].rows[i] for atom ∈ {deuteron, tritium, he3}.
-    # Each row gives (partition, y_at_q0, chi_q_at_q0, sum_eigval_abs_sq).
-    # We store the FULL 30-ish partitions per atom for the LP solve.
-}
+#
+# For each atom we record per-partition (λ, y_λ, χ_q^λ, sum |μ_a|²)
+# directly in the per-atom PARTITIONS_* lists below — the empty
+# PER_ATOM_DATA stub previously here was unused (Gemini cycle-7
+# review) and removed. The χ_q^λ values are the real part of
+# tr(ρ_λ(β)) per #638's witness.
 
 # Empirical dominants from PR #639:
 EMPIRICAL_DOMINANT = {
