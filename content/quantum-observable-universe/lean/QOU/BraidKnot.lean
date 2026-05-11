@@ -1,4 +1,15 @@
 import QOU.BraidKnot.CyclotomicLValueDecomposition
+import QOU.BraidKnot.CyclotomicTrilogImaginary
+import QOU.BraidKnot.CyclotomicCl3OrbitSum
+import QOU.BraidKnot.CyclotomicDepth3DimensionSynthesis
+import QOU.BraidKnot.JonquiereCyclotomicTateRationality
+import QOU.BraidKnot.CyclotomicOrbitSumAllDepths
+import QOU.BraidKnot.CyclotomicDimensionSynthesisAllDepths
+import QOU.BraidKnot.QHeckeSeminormalCharacterClosure
+import QOU.BraidKnot.BringTrilogImaginaryTateRational
+import QOU.BraidKnot.Cl3Zeta5OrbitSum
+import QOU.BraidKnot.Cl3Zeta5PslqIndependence
+import QOU.BraidKnot.KnotIndexedConvolutionGrid
 import QOU.BraidKnot.ConfinedParticle
 import QOU.BraidKnot.ConfinementCategory
 import QOU.BraidKnot.ElectronShell
