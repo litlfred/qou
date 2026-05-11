@@ -195,6 +195,25 @@ The QOU mass-formula calibration depends on this conjecture
 at $q_0$, not the rate $c(K)$. Falsification of the rate would not
 invalidate the mass formula itself.
 
+### Application to $Q_\beta$ closure
+
+The same exponential bound supplies the eigenfunction-dampening
+principle behind both finite-depth presentations of the free-neutron
+$Q$-value
+([prop:q-beta-spectral-bridge](#prop:q-beta-spectral-bridge)):
+at brane-tower depth $N$, both Form A (NF counit) and Form B
+(transfer-matrix log-ratio) satisfy
+
+$$
+  \bigl\lvert Q_\beta^{(N)} - Q_\beta^{\mathrm{exact}} \bigr\rvert
+  \;\le\;
+  C(K) \cdot e^{-c(K)\,N}
+$$
+
+with $K$ the free-neutron sector class. At $N = 0$ this gives the
+observed $+1.31$ keV residual ($+0.168\%$); at $N \geq 1$ the bound
+is sub-keV.
+
 ### Relation to surreal QOUs
 
 The conjecture is stated entirely in $\mathbb{R}$. There is **no

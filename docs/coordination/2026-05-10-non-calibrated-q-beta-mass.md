@@ -244,3 +244,90 @@ identity shows the framework's Q_β formula uses the Frobenius counit
 directly (no $w_\lambda$ involved). Gaps 4 + 5 (Φ_q convergence + n_⋆
 existence) remain the bottleneck.
 
+## Coordination cycle 4 — post-merge of #637; sibling #638 appears
+
+2026-05-11T17:30Z — PR #637 merged at commit `86971534`. New sibling
+**#638** (`claude/close-level-selection-rule-bvMvw`, opened
+2026-05-11T17:04Z) refutes the **scalar-eigenvalue** form of the
+`n_⋆` level-selection rule from the `brane-tower-z-habiro` conjecture
+that my just-merged work depended on (Lean gap 5).
+
+### Scope map (post-merge)
+
+| PR | Title | Status | Classification |
+|---|---|---|---|
+| **#637** | FULL Q_β prediction + non-calibrated mass cleanup | **MERGED** at `86971534` | own (closed) |
+| **#638** (NEW) | Refute scalar-eigenvalue n_⋆; add operator-valued probe | open, clean review | **scope-overlap (brane-tower-z-habiro)** |
+| #635 | Mikusiński WitnessBuilder migration | open, waiting on CI | convention-overlap (deferred Tier-2 dependency) |
+| #632 | Paper illustrations (SVG figures) | open | no overlap |
+| #636 | Audit: Plancherel weight usage | merged or stale (not in latest open list) | no longer in scope |
+
+### #638 classification
+
+* **Scope overlap**: HIGH — both PRs cite `brane-tower-z-habiro`;
+  my `BraneTowerNStar.lean` declares `betaDecayNStarCandidates`
+  (scalar 3-way agreement at $n_\star = 2$ for $A = 1$ β-decay),
+  #638 refutes the scalar-eigenvalue form across $A \geq 2$
+  ($D, T, {}^3\mathrm{He}$).
+* **Dependency**: compatible at the data level — β-decay (#637) is
+  the multiplicity-trivial sub-case; D/T/³He (#638) exposes the
+  near-pole multiplicity asymmetry. #638 **supersedes** handoff
+  Task 2 (operator-valued recovery for BraneTowerNStar.lean) —
+  the multiplicity-refined branch is now the canonical successor.
+* **Cherry-pick**: none. #638 is a structural refutation.
+
+### Cross-check for §6 inconsistency: NONE
+
+| Artifact | Statement | Scope |
+|---|---|---|
+| #637 `betaDecayNStarCandidates` | scalar candidates agree at $n_\star = 2$ | $A = 1$, free β-decay, single near-pole entry |
+| #638 `nStar_all_probed_forms_refuted` | scalar AND per-eigenvalue forms fail | $A = 2, 3$, multi-strand binding, multiplicity ≥ 1 |
+
+These compose cleanly: the scalar form works precisely where the
+multiplicity profile is trivial (β-decay), and fails as soon as
+that profile diverges (D/T/³He). No silent reframing on my side.
+
+### Actions this cycle
+
+* Posted **one** coordination comment on #638:
+  https://github.com/litlfred/qou/pull/638#issuecomment-4423184876
+  (intent + classification + commitment to a one-line cross-ref
+  follow-up after #638 merges).
+* Subscribed to #638 activity for CI / review tracking.
+* Did **not** open a fix branch yet — the cross-ref follow-up is
+  blocked on #638 landing (avoid racing their branch).
+* Did **not** post on #635 (still convention-only overlap) or
+  #632 (no overlap).
+
+### Queued follow-up after #638 merges
+
+Tiny PR (`claude/brane-tower-nstar-xref-638`):
+* `BraneTowerNStar.lean` — add docstring note pointing to #638's
+  `witness_refutes_per_eigenvalue_operator_form`, clarifying that
+  `betaDecayNStarCandidates` is the $A = 1$ multiplicity-trivial
+  sub-case (not a counterexample to the broader refutation).
+* Estimated effort: < 15 minutes.
+
+### Watch baseline (post-merge)
+
+`origin/main` at `86971534` (= my #637 merge). Will re-fetch and
+re-classify each watcher cycle. Subscribed to #638 + still
+monitoring open queue.
+
+### Anti-patterns avoided this cycle
+
+* ✓ Did NOT add #638 to scope without first reading its body +
+  classifying against my just-merged work.
+* ✓ Did NOT post a duplicate review-triage comment — #638's owner
+  already addressed all 13 Gemini/Copilot threads cleanly.
+* ✓ Did NOT race the cross-ref fix into a branch while #638 is
+  still open (avoids spurious merge conflicts on
+  `brane-tower-z-habiro.{md,lean}`).
+* ✓ Did NOT silently rewrite #637's framing in response to #638's
+  refutation; documented the multiplicity-profile reconciliation
+  explicitly.
+
+## Last updated
+
+2026-05-11T17:35Z — cycle 4 (post-merge sibling triage; #638 added
+to scope after explicit classification).
