@@ -4,6 +4,10 @@ export default proposition({
   label: "prop:cyclotomic-trilog-imaginary-closed-form",
   title:
     "General closed form: Im Li$_3$($\\zeta_n$) = $(n - 1)(n - 2)\\pi^3 / (3 n^3)$ for every root of unity",
+  lean: {
+    ref: "qou:QOU.BraidKnot.CyclotomicTrilogImaginary.closed_form_holds",
+    validation: "not_checked",
+  },
   computation: {
     engine: "mpmath",
     script: "folio-assistant/computations/cyclotomic_trilog_imaginary.py",

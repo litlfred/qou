@@ -4,6 +4,10 @@ export default proposition({
   label: "prop:two-filtration-bridge-general",
   title:
     "Two-filtration bridge map in full generality: bar-class determines iterated-integral depth (self-conj $\\to$ 2, chiral pair $\\to$ 3) for all partitions",
+  lean: {
+    ref: "qou:QOU.AlgebraicSubstrate.TwoFiltrationBridgeGeneral.bridge_map_general",
+    validation: "not_checked",
+  },
   uses: [
     "conj:two-filtration-bridge",
     "prop:two-filtration-bridge-small-cases",
