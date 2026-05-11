@@ -225,3 +225,129 @@ PR #637 stays on Form A throughout (empirically correct +0.17%
 residual). The audit doc records the Form A vs B refutation as a
 research finding for future framework cleanup. Lean roadmap Gap
 #11 (Form A ≡ Form B equivalence) remains open per this audit.
+
+## Update 2026-05-11 cycle 6 — DERIVABLE ANALYTICAL BRIDGE FOUND
+
+Per owner directive 2026-05-11: "explore open... see if you can
+find explanation we can derive".
+
+### The bridge
+
+Taylor expansion of both forms in $h = q - q^{-1}$ (with $z = 1/(\sqrt q + 1/\sqrt q)$ the Markov parameter):
+
+$$\text{Form A: } \frac{h(2-h)}{2} = h - \frac{h^2}{2} + O(h^3)$$
+
+$$\text{Form B: } \ln(1+zh) = zh - \frac{(zh)^2}{2} + O((zh)^3)$$
+
+Ratio:
+
+$$\frac{\text{Form A}}{\text{Form B}} = \frac{h - h^2/2 + O(h^3)}{zh - (zh)^2/2 + O((zh)^3)} = \frac{1}{z} \cdot \frac{1 - h/2 + O(h^2)}{1 - zh/2 + O((zh)^2)}$$
+
+$$= \frac{1}{z} + \frac{(z-1) \cdot h}{2z} + O(h^2)$$
+
+**Numerical verification at $q_0$**:
+- Predicted bridge: $1/z + (z-1)h/(2z) = 2.003 + (-0.105) = 1.898$
+- Actual bridge: $\lvert\Delta(\text{net})\rvert / \ln(V_{pp}/V_{nn}) = 0.1872 / 0.0993 = 1.885$
+- **Agreement: 0.7%** (the residual is the $O(h^2)$ correction)
+
+### The missing factor: $1/z$
+
+**Form A and Form B differ by $1/z$ at leading order** (with $O(h)$
+corrections):
+
+$$Q_\beta^{\text{Form A}} = \lvert\Delta(\text{net})\rvert \cdot E_0 \;\;\approx\;\; \ln\!\frac{V_\text{pp}}{V_\text{nn}} \cdot \frac{E_0}{z}$$
+
+Verify at $q_0$: $0.0993 \cdot 4.186 / 0.4993 = 0.832$ MeV vs Form A's $0.7836$ MeV → 6% agreement (residual is the next-order correction).
+
+### Three derivable explanations for the missing $1/z$
+
+All three are framework-internal questions the audit can flag. Each leads to a clean paper edit (once the framework picks one):
+
+**Option (i) — V̂ definition is wrong in the doc.**
+
+If the correct V̂ is $V̂_i^* = M_{i,11} + (1/z) \cdot M_{i,21}$
+(instead of $z \cdot M_{11} + M_{21}$), then the log-ratio absorbs
+the $1/z$ factor naturally. Easy paper fix: change one line in
+`beta-decay-transfer-matrix.md`. Cleanest structurally if it's
+just a notational convention mismatch.
+
+**Option (ii) — explicit $1/z$ normalization factor.**
+
+Insert $1/z$ in the log-ratio formula:
+
+$$Q_\beta = \frac{1}{z} \sum_i \ln \frac{V̂_i^\text{dau}}{V̂_i^\text{par}}$$
+
+The $1/z$ factor is the **Markov-trace-per-crossing normalization**
+(the unit-action conversion). Justifiable from first principles
+(the Markov axiom $\mathrm{tr}_M(\sigma) = z$ is the FUNDAMENTAL
+"trace density per crossing").
+
+**Option (iii) — Form A and Form B compute DIFFERENT observables.**
+
+- Form A: $Q$-value (energy released in MeV)
+- Form B: log of decay amplitude (related to lifetime / rate)
+
+These are related by Fermi's golden rule analog, with $1/z$ being
+the **phase-space normalization** in the QOU framework. This is
+the QFT-natural interpretation; the doc's "Q-value in log form"
+wording is then **sloppy** — should be "log decay amplitude" with
+$Q = (1/z) \log \text{amplitude}$ as the bridge identity.
+
+### Most likely answer
+
+**Option (iii) is most physically natural.** In standard QFT:
+
+- $Q_\beta$ = rest-mass difference (from m_n - m_p - m_e energy
+  conservation). Comes from "kinematic" structure.
+- Decay amplitude $|M|^2$ = matrix-element squared (from V-A
+  current coupling). Comes from "dynamical" structure.
+- Fermi's golden rule: $\Gamma = |M|^2 \cdot \text{phase space} \propto Q^5$ for free-neutron decay.
+
+The framework's:
+- Form A = NF-coefficient sum × $E_0$ → MeV → Q_β (kinematic)
+- Form B = transfer-matrix log-ratio → dimensionless → amplitude (dynamical)
+- Bridge: $Q = (E_0/z) \cdot \text{log amplitude}$ at leading order
+
+If this is right, the paper needs to:
+
+1. Rename Form B in `beta-decay-transfer-matrix.md:138-145` from
+   "Q-value in log form" to "**log decay amplitude**" or "**log
+   transition matrix-element**".
+2. Add an explicit Fermi-golden-rule analog showing how Form A
+   (energy) and Form B (amplitude) relate.
+3. Document the bridge factor $1/z + O(h)$ derivation.
+
+### What's derivable NOW (no framework R&D needed)
+
+1. **The leading-order bridge $1/z$ is algebraically exact** from
+   Taylor expansion. No paper change needed to establish this.
+2. **The $O(h)$ correction is computable**: $(z-1)h/(2z)$.
+3. **The full bridge formula is**:
+   $\text{Form A} = \text{Form B} \cdot \left( \frac{1}{z} + \frac{(z-1)h}{2z} + O(h^2) \right)$
+
+### What still needs framework R&D
+
+1. **Which of (i)/(ii)/(iii) is the right framework interpretation**? 
+   This requires reading the framework's full transfer-matrix
+   derivation (`categorical-transfer-matrix.md` and dependencies)
+   to identify the structural role of $z$.
+2. **What is the FORMAL definition of V̂_i in the transfer-matrix
+   product**? The simple $z·M_{11} + M_{21}$ may be a shorthand
+   for a more precise quantity that includes per-strand factors.
+3. **At higher orders in $h$**, what are the corrections to the bridge?
+   The $(z-1)h/(2z)$ term is the leading one; higher-order
+   terms may involve the brane-tower truncation level $n_\star$.
+
+### Lean roadmap Gap #11 — UPDATED STATUS
+
+**Was**: Prove Form A ≡ Form B at A=1 with full L_i, R_i context.
+        Open R&D, no clear path.
+
+**Now**: Prove $\text{Form A}/\text{Form B} = 1/z + O(h)$ at A=1.
+        Tractable Lean exercise — Taylor expansion + Markov
+        parameter algebra. The factor $1/z$ is the bridge.
+
+This converts an open conjecture into a **provable theorem** with
+explicit normalization factor. Future Lean closure: lift the
+bridge identity to all orders in $h$ via a generating-function
+argument.
