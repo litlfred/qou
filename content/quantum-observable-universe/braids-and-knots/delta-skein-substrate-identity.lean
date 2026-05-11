@@ -16,6 +16,21 @@ noncomputable section
 namespace QOU
 namespace Borromean
 
+/-- Hyperbolic volume of the Borromean rings complement.
+    Local copy of the constant defined in
+    `borromean-baryon-mass-formula.lean` so this file elaborates
+    standalone (per Copilot review on PR #640 line 60).  Future
+    consolidation: move to a shared `QOU.Borromean.Constants`
+    module. -/
+def volBorromean : ℝ := 7.32772474
+
+/-- q-deformed Planck constant ℏ_q = (q − 1)/q.  Local copy
+    (same provenance note as `volBorromean` above). -/
+def hbarQ (q : ℝ) : ℝ := (q - 1) / q
+
+/-- ℏ_q² for convenience. -/
+def hbarQSq (q : ℝ) : ℝ := (hbarQ q) ^ 2
+
 /-- The proton–neutron mass splitting in units of m_e.
     Conventional CODATA identity Q_β = m_n − m_p − m_e gives
     (m_n − m_p) / m_e = (Q_β + m_e) / m_e. -/

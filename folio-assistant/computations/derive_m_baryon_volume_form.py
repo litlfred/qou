@@ -83,12 +83,15 @@ def _q_beta_closed_form(q: mp.mpf) -> mp.mpf:
     return M_E_MEV * abs(q ** 2 - 2 * q - 1) * (q + 1) / (2 * q ** 3)
 
 
-# Hyperbolic-volume topological constants (snappy / Hoste–Thistlethwaite
-# tables; both = k · Cl_2(π/3) with Cl_2 the Clausen function):
-#   Vol(4_1)  = 2 · Cl_2(π/3) = 2.02988321281930725004240510854904057483004159909893...
-#   Vol(ℬ_3) = 8 · Cl_2(π/3) = 8.11953285127722900016962043419616229932016639639571...
-# Wait — Vol(ℬ_3) commonly cited as 7.32772... Let me use the standard value
-# from `binding_canonical.py` / SnapPy: Vol(ℬ_3) = 7.32772475587766148...
+# Hyperbolic-volume topological constants (50-dps values from
+# SnapPy / Hoste–Thistlethwaite tables, identical to
+# `binding_canonical.py`):
+#   Vol(4_1)  = 2 · Cl_2(π/3) where Cl_2 is the Clausen function
+#               (figure-8 knot complement, 2 ideal tetrahedra).
+#   Vol(ℬ_3) = 8 · G          where G is Catalan's constant
+#               (Borromean rings complement, 8 ideal octahedra).
+# Both are standard hyperbolic-volume identities; the closed forms
+# match the SnapPy numerical values to 50 dps.
 VOL_4_1 = mp.mpf("2.02988321281930725004240510854904057483004159909893")
 VOL_BORROMEAN = mp.mpf("7.32772475587766148235147121870981010907842498879866")
 

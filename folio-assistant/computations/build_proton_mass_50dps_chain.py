@@ -40,6 +40,7 @@ from derivation_chain import (  # noqa: E402
     M_HECKE_PIPELINE_AT_Q0,
     Q_0,
     TR_M_AT_Q0,
+    TR_M_AT_Q0_50DPS,
     DerivationChain,
     DerivationStep,
     FirstPrinciple,
@@ -86,7 +87,9 @@ def build() -> DerivationChain:
         inputs=[FirstPrinciple.HECKE_ENERGY.value, FirstPrinciple.SCHUR.value,
                 FirstPrinciple.FINITE_JONES.value],
         output_name="tr_M_p_q0",
-        output_value=TR_M_AT_Q0["p"],
+        # Per Copilot review on PR #640: source from the 50-dps companion
+        # to avoid float64 truncation in a "50dps derivation chain".
+        output_value=TR_M_AT_Q0_50DPS["p"],
         trust_basis=TrustBasis.DERIVED,
         citation="manuscript:§Atomic-Markov-trace",
         jet_order=0,
@@ -140,7 +143,7 @@ def build() -> DerivationChain:
         ),
         inputs=["terms_50dps"],
         output_name="m_p_Hecke",
-        output_value=mp.nstr(M_P_HECKE_PIPELINE, 20),
+        output_value=mp.nstr(M_P_HECKE_PIPELINE, 50),
         trust_basis=TrustBasis.SCRIPT_CITED,
         citation="manuscript:§mass-endomorphism-tower",
         jet_order=0,
@@ -167,9 +170,9 @@ def build() -> DerivationChain:
             "Same tower formula applied to the electron's 2-strand "
             "atomic braid; 50 dps via the same mpmath pipeline."
         ),
-        inputs=["m_p_Hecke"],  # placeholder — electron is independent
+        inputs=[],  # electron is independent of proton/neutron
         output_name="m_e_Hecke",
-        output_value=mp.nstr(M_E_HECKE_PIPELINE, 20),
+        output_value=mp.nstr(M_E_HECKE_PIPELINE, 50),
         trust_basis=TrustBasis.SCRIPT_CITED,
         citation="manuscript:§mass-endomorphism-tower",
         jet_order=0,
@@ -195,7 +198,7 @@ def build() -> DerivationChain:
         ),
         inputs=["m_p_Hecke", "m_e_Hecke"],
         output_name="m_p_over_m_e",
-        output_value=mp.nstr(M_P_HECKE_PIPELINE / M_E_HECKE_PIPELINE, 20),
+        output_value=mp.nstr(M_P_HECKE_PIPELINE / M_E_HECKE_PIPELINE, 50),
         trust_basis=TrustBasis.DERIVED,
         citation="manuscript:§dimensionless-mass-ratio",
         jet_order=0,
@@ -212,7 +215,7 @@ def build() -> DerivationChain:
         ),
         inputs=["m_p_over_m_e"],
         output_name="m_p_pred_MeV",
-        output_value=mp.nstr(M_P_PRED_MEV, 20),
+        output_value=mp.nstr(M_P_PRED_MEV, 50),
         trust_basis=TrustBasis.COMPUTATIONAL,
         jet_order=0,
         spectral_stratum="archimedean (q_0 ∈ ℝ_{>1})",
@@ -228,7 +231,7 @@ def build() -> DerivationChain:
 
     return DerivationChain(
         target="m_p (MeV)",
-        target_value=mp.nstr(M_P_PRED_MEV, 20),
+        target_value=mp.nstr(M_P_PRED_MEV, 50),
         target_tolerance=0.01,
         content_block="prop:full-pole-structure-mass-trace",
         description=(
@@ -269,7 +272,7 @@ def emit_codata_witness(chain: DerivationChain) -> None:
     w.add_parameter("target_precision_ppb", "1.0")
     w.add_assertion(
         "m_p_within_1_ppb",
-        computed=mp.nstr(GAP_REL, 20),
+        computed=mp.nstr(GAP_REL, 50),
         expected="0",
         tolerance=1e-9,
     )
@@ -278,9 +281,9 @@ def emit_codata_witness(chain: DerivationChain) -> None:
         computed=bool(mp.mpf("0") < M_P_PRED_MEV < mp.mpf("1e3")),
         expected=True,
     )
-    w.add_data("m_p_pred_MeV", mp.nstr(M_P_PRED_MEV, 20))
+    w.add_data("m_p_pred_MeV", mp.nstr(M_P_PRED_MEV, 50))
     w.add_data("m_p_codata_MeV", mp.nstr(M_P_MEV_CODATA, 12))
-    w.add_data("rel_diff", mp.nstr(GAP_REL, 20))
+    w.add_data("rel_diff", mp.nstr(GAP_REL, 50))
     w.add_data("rel_diff_ppb", mp.nstr(GAP_REL * mp.mpf("1e9"), 12))
     w.add_data("target_ppb", "1.0")
     if GAP_REL == mp.mpf("0"):

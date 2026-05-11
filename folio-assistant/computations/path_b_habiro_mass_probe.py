@@ -94,7 +94,7 @@ def u_pochhammer_at_u0(m: int, u_val: mp.mpf) -> mp.mpf:
     return prod
 
 
-def evaluate_habiro_sum(habiro_entry: dict, q_val: mp.mpf = Q0) -> mp.mpf:
+def evaluate_habiro_sum(habiro_entry: dict, q_val: mp.mpf = Q0) -> tuple[mp.mpf, list[dict]]:
     """tr_M(T_w; q) = p_in_u(u) / denom_in_u(u),  u = q^{1/2}.
 
     The witness stores p_in_u (numerator) and denom_in_u (denominator)
@@ -260,25 +260,29 @@ def main() -> int:
         print(f"    Path B captures the canonical asymmetry "
               f"(factor in tr_M); brane-tower formula gave -737 MeV.")
 
-    witness = {
-        "computation": "path-b-habiro-mass-probe",
-        "description": (
-            "Probe of Path B from docs/audits/2026-05-03-T2T3-derivation-"
-            "chain-analysis.md: predict atomic mass via the Habiro "
-            "expansion sum_m a_m(T_w; q_0) (q_0;q_0)_m — using a "
-            "single-prefactor binding model alpha_M * |tr_M| "
-            "calibrated from deuteron.  Tests whether the Markov trace "
-            "via Habiro gives sensible binding without the Phi_q "
-            "brane-tower specialisation that produces the -737 MeV "
-            "isospin pathology."
-        ),
-        "computedAt": datetime.now(timezone.utc).isoformat(),
+    # Per gemini review on PR #640 (line 281): emit via WitnessBuilder
+    # for staleness tracking (scriptHash, commitSha, durationMs etc.).
+    from witness_base import WitnessBuilder
+    legacy_payload = {
         "alpha_M_MeV": alpha_M,
         "calibrated_from": "deuteron binding",
         "rows": rows,
     }
-    out = HERE / "path-b-habiro-mass-probe.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    builder = WitnessBuilder.wrap_legacy(
+        "path-b-habiro-mass-probe", legacy_payload,
+        script_path=__file__, engine="mpmath+sympy",
+    )
+    builder.set_description(
+        "Probe of Path B from docs/audits/2026-05-03-T2T3-derivation-"
+        "chain-analysis.md: predict atomic mass via the Habiro "
+        "expansion sum_m a_m(T_w; q_0) (q_0;q_0)_m — using a "
+        "single-prefactor binding model alpha_M * |tr_M| "
+        "calibrated from deuteron.  Tests whether the Markov trace "
+        "via Habiro gives sensible binding without the Phi_q "
+        "brane-tower specialisation that produces the -737 MeV "
+        "isospin pathology."
+    )
+    out = builder.save()
     print(f"\n  Witness: {out}")
     return 0
 

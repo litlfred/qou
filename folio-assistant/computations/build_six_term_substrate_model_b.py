@@ -44,7 +44,6 @@ mp.mp.dps = 50
 from paper_six_term_isotope_sweep import (  # noqa: E402
     Q0,
     Z_MARK,
-    term4_frobenius_codim,
 )
 from witness_base import WitnessBuilder  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402  # CAL-1
@@ -215,9 +214,12 @@ def main() -> int:
             t1 = t1_atoms[info["t1_atom"]]
         elif "t1_atom_a" in info:
             # At A=1, Model A == Model B (both use B_3 with 11 typed
-            # crossings).  Use Model A registry.
-            from derivation_chain import TR_M_AT_Q0
-            t1 = mp.mpf(str(TR_M_AT_Q0[info["t1_atom_a"][0]]))
+            # crossings).  Use Model A 50-dps registry.
+            # Explicit label → key map (per Copilot review on PR #640,
+            # line 220: avoid the brittle [0] slice).
+            _A_TO_REGISTRY_KEY = {"proton": "p", "neutron": "n"}
+            from derivation_chain import TR_M_AT_Q0_50DPS
+            t1 = mp.mpf(TR_M_AT_Q0_50DPS[_A_TO_REGISTRY_KEY[info["t1_atom_a"]]])
         else:
             t1 = None
         if t1 is None:

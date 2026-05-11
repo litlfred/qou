@@ -92,6 +92,21 @@ TR_M_AT_Q0: dict[str, float] = {
     "D": 0.3882864715477134,
 }
 
+# ── 50-dps decimal-string companion to TR_M_AT_Q0 ──────────────────
+# The float-typed registry above is preserved bit-for-bit (per the
+# bit-stable JSON requirement on #473) but is float64-limited (~15-17
+# digits).  Per gemini review on PR #640 (line 93): callers needing
+# the full 50-dps precision claimed by the "50dps derivation chain"
+# objective should consume these decimal strings via
+# `mp.mpf(TR_M_AT_Q0_50DPS["p"])`.  Source: atomic-tr-m-mpfr-50dps.witness.json
+# (1ppb canonical 50-dps reducer) and markov_peel.tr_M_atomic (the
+# production canonical Markov trace).
+TR_M_AT_Q0_50DPS: dict[str, str] = {
+    "p":  "1.06530622859238926516717822268022019929625396549950",
+    "n":  "0.92323329716958305546835587742253549151548430075493",
+    "D":  "0.38828647154771295246789009070198517292737960815430",
+}
+
 # Default Model B (SDP-canonical low-strand) τ_M values at q_0 ───────
 # Per owner directive 2026-05-11 ("migrate all compute to default B").
 #

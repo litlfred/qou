@@ -1,7 +1,16 @@
 {
+  "engine": "mpmath+sympy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-11T22:01:30.156823+00:00",
+  "commitSha": "15dd1c2fc5dac49c84c0d3c212d896dd0b7a6bbb",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
   "computation": "path-b-habiro-mass-probe",
-  "description": "Probe of Path B from docs/audits/2026-05-03-T2T3-derivation-chain-analysis.md: predict atomic mass via the Habiro expansion sum_m a_m(T_w; q_0) (q_0;q_0)_m \u2014 using a single-prefactor binding model alpha_M * |tr_M| calibrated from deuteron.  Tests whether the Markov trace via Habiro gives sensible binding without the Phi_q brane-tower specialisation that produces the -737 MeV isospin pathology.",
-  "computedAt": "2026-05-11T21:35:20.065571+00:00",
+  "scriptFile": "path_b_habiro_mass_probe.py",
+  "scriptHash": "434ee6fe0ebe",
+  "scriptCommitSha": "6a08255bdf23d9a2f5850f082968239f65dc680b",
+  "description": "Probe of Path B from docs/audits/2026-05-03-T2T3-derivation-chain-analysis.md: predict atomic mass via the Habiro expansion sum_m a_m(T_w; q_0) (q_0;q_0)_m — using a single-prefactor binding model alpha_M * |tr_M| calibrated from deuteron.  Tests whether the Markov trace via Habiro gives sensible binding without the Phi_q brane-tower specialisation that produces the -737 MeV isospin pathology.",
   "alpha_M_MeV": 5.729217454145902,
   "calibrated_from": "deuteron binding",
   "rows": [

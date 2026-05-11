@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-11T22:47:22.903559+00:00",
-  "commitSha": "1695fea1ca2051fb53d04b57d54632e1749ba9d2",
+  "computedAt": "2026-05-11T22:47:27.115785+00:00",
+  "commitSha": "41c75093dc051564475dbccd6065da2e8c9015a1",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2110,6 +2110,7 @@
         "brane-tower-two-avenues-probe.witness.json",
         "bring-trilog-zeta5-depth-3.witness.json",
         "brundan-kleshchev-audit.witness.json",
+        "build-six-term-substrate-model-b.witness.json",
         "bw-chirality-isotopes.witness.json",
         "c-alpha-from-Q-beta-trace.witness.json",
         "c-k-beta-decay-bound.witness.json",
@@ -2273,6 +2274,7 @@
         "paper-six-term-shadow-price-sweep.witness.json",
         "path-b-defect-binding-probe.witness.json",
         "path-b-evacuation.witness.json",
+        "path-b-habiro-mass-probe.witness.json",
         "path-b-open-questions.witness.json",
         "per-atom-grading-bound.witness.json",
         "per-atom-rho-deviation.witness.json",

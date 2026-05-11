@@ -1,6 +1,6 @@
 {
   "target": "m_p (MeV)",
-  "target_value": "0.59741814943166551439",
+  "target_value": "0.59741814943166551438821760220157252056898224810419",
   "target_tolerance": 0.01,
   "content_block": "prop:full-pole-structure-mass-trace",
   "description": "Mass-formula assembly chain for the proton at 50 dps.  Replaces the f64 chain `proton-mass-assembly-MeV` (PR #476) with a precision-lifted version anchored in the fully-trusted Markov-trace assembly chain (PR #480) and the Phase A 50 dps Terms 2–6 (PR #476).  Trust profile {axiom: 0, derived: 2, script-cited: 3, computational: 1} — the SCRIPT_CITED frontier still covers the T1+T2+T3+T4 mass-endomorphism tower assembly.  Current proton mass prediction: 0.597418 MeV vs CODATA 938.27208816 (rel_diff 0.9994, 9.9936e+8 ppb).  Target: 1 ppb.",
@@ -14,7 +14,7 @@
         "FiniteJones"
       ],
       "output_name": "tr_M_p_q0",
-      "output_value": 1.0653062285923893,
+      "output_value": "1.06530622859238926516717822268022019929625396549950",
       "trust_basis": "derived",
       "jet_order": 0,
       "gb_filtration_level": 0,
@@ -42,7 +42,7 @@
         "terms_50dps"
       ],
       "output_name": "m_p_Hecke",
-      "output_value": "2.3414190749367065786",
+      "output_value": "2.3414190749367065785503190875884592567932955101318",
       "trust_basis": "script-cited",
       "jet_order": 0,
       "citation": "manuscript:§mass-endomorphism-tower",
@@ -51,11 +51,9 @@
     {
       "name": "m_e_Hecke (electron mass in cat units, 50 dps)",
       "operation": "Same tower formula applied to the electron's 2-strand atomic braid; 50 dps via the same mpmath pipeline.",
-      "inputs": [
-        "m_p_Hecke"
-      ],
+      "inputs": [],
       "output_name": "m_e_Hecke",
-      "output_value": "2.0027223644625536786",
+      "output_value": "2.0027223644625536785706018688474338071008612121826",
       "trust_basis": "script-cited",
       "jet_order": 0,
       "citation": "manuscript:§mass-endomorphism-tower",
@@ -69,7 +67,7 @@
         "m_e_Hecke"
       ],
       "output_name": "m_p_over_m_e",
-      "output_value": "1.1691181546100349411",
+      "output_value": "1.1691181546100349411446297535475807153204174844277",
       "trust_basis": "derived",
       "jet_order": 0,
       "citation": "manuscript:§dimensionless-mass-ratio",
@@ -82,7 +80,7 @@
         "m_p_over_m_e"
       ],
       "output_name": "m_p_pred_MeV",
-      "output_value": "0.59741814943166551439",
+      "output_value": "0.59741814943166551438821760220157252056898224810419",
       "trust_basis": "computational",
       "jet_order": 0,
       "spectral_stratum": "archimedean (q_0 ∈ ℝ_{>1})",
