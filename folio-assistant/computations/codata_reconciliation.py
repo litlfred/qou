@@ -223,17 +223,24 @@ def main():
                     "anchor": False,
                 })
 
-    # ── Structural cross-check: Plancherel completeness Σ d_λ y_λ = 1 ─
+    # ── Structural cross-check: Markov-axiom (M3) Σ d_λ y_λ = 1 ─
     # `alpha-k-macdonald-closed-form.witness.json` reports the
     # max |Σ d_λ y_λ - 1| across n = 2..6 via the closed-form path.
-    # This is exactly the Markov axiom (M3) and must hit machine
-    # precision (~10⁻⁵⁰ at 50 dps).
+    # This is the Markov axiom (M3) — distinct from the Plancherel
+    # sum Σ d_λ²/n! = 1 — and must hit machine precision (~10⁻⁵⁰ at
+    # 50 dps).  See docs/audits/2026-05-11-plancherel-usage-audit.md
+    # (Finding D) for the disambiguation.
     macd_w = load_witness(base / "alpha-k-macdonald-closed-form.witness.json")
     if macd_w is not None:
-        # Find the largest planch-completeness assertion's computed.
+        # Find the largest M3-completeness assertion's computed.
+        # Accept both old (`plancherel_completeness_n*`) and new
+        # (`markov_m3_completeness_n*`) names while pre-rename
+        # witnesses are still in the tree.
         max_diff = 0.0
         for a in macd_w.get("assertions", []):
-            if a.get("name", "").startswith("plancherel_completeness_n"):
+            name = a.get("name", "")
+            if name.startswith("markov_m3_completeness_n") or \
+               name.startswith("plancherel_completeness_n"):
                 try:
                     max_diff = max(max_diff, float(a.get("computed", 0)))
                 except (ValueError, TypeError):

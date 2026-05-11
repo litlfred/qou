@@ -2,9 +2,21 @@
 
 **Date:** 2026-05-11
 **Branch:** `claude/audit-plancherel-usage-a6DgI`
+**PR:** #636
 **Trigger:** "audit compute — are Plancherel being used? correctly?"
 **Pattern:** P2 (Markov vs Plancherel vs partition-sum normalisation
 confusion) per `.claude/skills/local/compute-audit.md`.
+
+**Status (2026-05-11, post-fix commit):** All four findings
+addressed in-branch via the **narrow fix**: restrict the
+Wenzl-bridge claim to the self-conjugate stratum (where the only
+witness verifies it), rename the q-deformed Wedderburn weight
+`$\tilde w_\lambda$` distinct from the classical Plancherel
+measure `$w_\lambda$`, drop the falsified q-Plancherel identity
+claim in Term 7, and rename Python `plancherel_sum*` →
+`markov_m3_sum*` to disambiguate the Markov-axiom M3 check from
+the Plancherel identity. See *Implemented fixes* at the bottom of
+this document.
 
 ## Executive summary
 
@@ -353,3 +365,111 @@ needed to estimate the perturbation to downstream observables.
   per the inventory pass. The non-substantive references are
   narrative comments and witness-JSON output and are not
   individually scored.
+
+---
+
+## Implemented fixes (2026-05-11, in-branch, PR #636)
+
+The audit's findings were closed by the **narrow fix** rather than
+the larger restructure (R3 / R6 deferred). Specifically:
+
+### Narrative content blocks
+
+- [`wedderburn-weight-canonical.md`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/content/quantum-observable-universe/braids-and-knots/wedderburn-weight-canonical.md):
+  - Proposition title relabelled "canonical q-deformed
+    Wedderburn-block weight … BW and LP for all $\lambda$;
+    Wenzl-bridge on the self-conjugate stratum".
+  - Wenzl-bridge identity table row restricted to
+    self-conjugate $\lambda$ (`$y_\lambda = w_\lambda$` when
+    `$\kappa_\lambda = 0$`). Cited the in-repo witness
+    `probe-wedderburn-weight-scheme.witness.json` for the
+    non-self-conjugate falsification.
+  - "Why $w_\lambda$ is canonical" rewritten to state Markov
+    `$\mathrm{tr}_M = \sum y_\lambda \chi_\lambda$` (not
+    `$w_\lambda$`) and call out that `$y_\lambda$` and `$w_\lambda$`
+    coincide only on the self-conjugate stratum.
+  - Section "Wenzl-bridge: $y_\lambda = (-1)^{\kappa_\lambda}
+    w_\lambda$" retitled "Wenzl-bridge on the self-conjugate
+    stratum: $y_\lambda = w_\lambda$ when $\kappa_\lambda = 0$".
+- [`plancherel-term-7-formulation.md`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/content/quantum-observable-universe/braids-and-knots/plancherel-term-7-formulation.md):
+  - The q-deformed weight is now written `$\tilde w_\lambda$`
+    everywhere; the symbol `$w_\lambda$` is reserved for the
+    classical Plancherel measure.
+  - The falsified "q-Plancherel identity $\sum \dim_q^2 V_\lambda
+    = [n]_q!$" claim is removed from the proof. Replaced with a
+    finite-but-not-unit boundedness statement citing
+    `prop:plancherel-weight-boundedness` and the witness number
+    ($\sim 1.51$ at $q_0, n=12$).
+  - A new **Naming note** documents the disambiguation and points
+    to the legacy script.
+- [`unified-curvature-rank-mass-formula.md`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/content/quantum-observable-universe/braids-and-knots/unified-curvature-rank-mass-formula.md):
+  - $\Phi_k$ now uses `$\tilde w_\lambda$`. Classical Plancherel
+    measure `$w_\lambda$` cross-referenced.
+
+### Lean siblings
+
+- [`wedderburn-weight-canonical.lean`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/content/quantum-observable-universe/braids-and-knots/wedderburn-weight-canonical.lean):
+  - Class `WedderburnWeightCanonical` field `y_eq : ∀ λ, y λ =
+    (-1)^κ_λ · w λ` replaced with `y_eq_self_conjugate : ∀ λ,
+    kappa λ = 0 → y λ = w λ`. The `y_self_conjugate` theorem now
+    discharges to that hypothesis directly. Doc-string rewritten
+    to state the BW/LP scalings hold for all $\lambda$ and the
+    Wenzl-bridge identity is restricted to the self-conjugate
+    stratum.
+
+### TS manifests
+
+- [`wedderburn-weight-canonical.ts`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/content/quantum-observable-universe/braids-and-knots/wedderburn-weight-canonical.ts):
+  - Title updated. `computation.script` path corrected from
+    `folio-assistant/computations/bw_wenzl_shadow_equivalence.py`
+    to `…/computations/_deprecated/bw_wenzl_shadow_equivalence.py`
+    (the script was already silently moved). `uses[]` now
+    includes `prop:plancherel-weight-boundedness`. Tag
+    `self-conjugate` added.
+
+### Python scripts (Finding D — naming)
+
+Pure rename plus backward-compat alias:
+
+- [`alpha_k_macdonald_closed_form.py`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/alpha_k_macdonald_closed_form.py): `plancherel_sum` → `markov_m3_sum`; assertion name `plancherel_completeness_n{n}` → `markov_m3_completeness_n{n}`; module docstring updated.
+- [`y_lambda_wenzl_bridge.py`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/y_lambda_wenzl_bridge.py): `plancherel_sum_numeric` → `markov_m3_sum_numeric`.
+- [`y_lambda_symbolic_validate.py`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/y_lambda_symbolic_validate.py): `test_2_plancherel` → `test_2_markov_m3`; `DPS_PLANCHEREL` → `DPS_MARKOV_M3`; `TOL_PLANCHEREL` → `TOL_MARKOV_M3`; tolerance-table key `"plancherel"` → `"markov_m3"`; docstring updated.
+- [`codata_reconciliation.py`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/codata_reconciliation.py): assertion-name prefix accepts both old (`plancherel_completeness_n*`) and new (`markov_m3_completeness_n*`) during transition.
+
+Backward-compat aliases keep pre-rename callers working until the
+next witness regeneration; mark for removal after the next CI run
+refreshes the witness JSON.
+
+### Notation register
+
+- [`content/quantum-observable-universe/notation/notation-register.md`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/content/quantum-observable-universe/notation/notation-register.md): three new entries in the Braids-and-Knots register — `$w_\lambda$` (classical Plancherel), `$\tilde w_\lambda$` (q-deformed Wedderburn-block), `$\dim_q(\lambda)$` (quantum dimension). Jones–Markov entry strengthened to flag the three-family distinction.
+- [`content/quantum-observable-universe/notation/notation-collisions.md`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/content/quantum-observable-universe/notation/notation-collisions.md): new bullet codifying the three-family rule, the Wenzl-bridge self-conjugate restriction, and the bare-vs-tilde $w$ convention.
+- [`CLAUDE.md §7aa`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/CLAUDE.md): summary table mirrors the register; collisions bullet added.
+
+### Recommendations status
+
+| Rec | Status | Note |
+|-----|--------|------|
+| R1 | done | $w_\lambda$ → $\tilde w_\lambda$ across three blocks |
+| R2 | done | Wenzl-bridge restricted to self-conjugate stratum |
+| R3 | done | False q-Plancherel identity removed; boundedness restated honestly |
+| R4 | done | Python `plancherel_*` → `markov_m3_*` in four scripts |
+| R5 | done | Lean class field rewritten; tautological theorem replaced |
+| R6 | deferred | Chirality-script ratio-invariance audit still open |
+
+### Open follow-ups
+
+- **R6**: Confirm that `chirality_avg_content*.py`, which compute
+  ratios `Σ w χ c / Σ w χ`, are invariant under the renormalisation
+  that fixes `Σ w = 1`. If yes, those scripts are unaffected by the
+  $w \to \tilde w$ rename. If no, they need a one-line normalisation
+  fix.
+- **Witness regeneration**: re-run
+  `alpha_k_macdonald_closed_form.py` and `y_lambda_symbolic_validate.py`
+  to refresh witness JSONs under the new assertion names. The
+  backward-compat aliases in `codata_reconciliation.py` keep
+  downstream working in the meantime.
+- **Title of Term 7 block** still reads "Plancherel-weighted log
+  functional" — accurate at $q = 1$, misleading at $q \neq 1$.
+  Consider retitling on a subsequent pass; left unchanged here to
+  preserve the cross-reference label `prop:plancherel-term-7-formulation`.

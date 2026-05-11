@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:wedderburn-weight-canonical",
   title:
-    "Canonical Wedderburn-block weight $w_\\lambda$ and three named scalings",
+    "Canonical q-deformed Wedderburn-block weight $w_\\lambda$ and named scalings (BW, LP for all $\\lambda$; Wenzl-bridge on the self-conjugate stratum)",
   tags: [
     "wedderburn",
     "weight",
@@ -11,17 +11,20 @@ export default proposition({
     "bw",
     "shadow-price",
     "wenzl-bridge",
+    "self-conjugate",
     "consolidation",
   ],
   uses: [
     "thm:wedderburn-mass-formula",
     "thm:jones-markov-trace",
     "prop:wedderburn-as-noncomm-fourier",
+    "prop:plancherel-weight-boundedness",
   ],
   cites: ["jones1985", "wenzl1988", "kassel1995"],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/bw_wenzl_shadow_equivalence.py",
+    script:
+      "folio-assistant/computations/_deprecated/bw_wenzl_shadow_equivalence.py",
     witness: "docs/audits/2026-05-01-p1-3a-bw-equivalence.witness.json",
     status: "verified",
   },

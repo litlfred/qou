@@ -3,25 +3,34 @@ import Mathlib.Algebra.Field.Basic
 /-!
 # QOU.BraidKnot.wedderburnWeightCanonical
 
-The Wedderburn-block weight `w_λ = dim_q(λ)² / [n]_q!` is the
-canonical combinatorial coefficient associated with each
-partition `λ ⊢ n` in the Hecke algebra `H_n(R, q)`. The three
-named forms (BW mass coefficient, LP shadow-price, Wenzl-bridge
-sign-tracked) are immediate scalings:
+The q-deformed Wedderburn-block weight `w_λ = dim_q(λ)² / [n]_q!`
+is the canonical combinatorial coefficient associated with each
+partition `λ ⊢ n` in the Hecke algebra `H_n(R, q)`.
 
-  β_λ := -½ w_λ                    (BW form)
-  C_λ := w_λ · h/2,  h = q - q⁻¹   (LP shadow-price)
-  y_λ := (-1)^κ_λ · w_λ            (Wenzl-bridge; κ_λ = Σ c(x))
+The BW and LP scalings are definitional for every λ:
 
-For self-conjugate λ (κ_λ = 0), y_λ = w_λ.
+  β_λ := -½ w_λ                    (BW form, all λ)
+  C_λ := w_λ · h/2,  h = q - q⁻¹   (LP shadow-price, all λ)
 
-The ratios — verified symbolically in
-`folio-assistant/computations/bw_wenzl_shadow_equivalence.py` —
-are:
+The Markov coefficient `y_λ(q)` is given by Wenzl's hook–content
+closed form [wenzl1988]; on the self-conjugate stratum
+(`κ_λ = Σ c(x) = 0`) it coincides with `w_λ`:
 
-  β / C = -1/h
-  β / y = -1/2  (for self-conjugate λ)
-  C / y = h/2   (for self-conjugate λ)
+  y_λ = w_λ                         (Wenzl-bridge, κ_λ = 0)
+
+Off the self-conjugate stratum, `y_λ` and `w_λ` are genuinely
+distinct weight families — the in-repo witness
+`folio-assistant/computations/probe-wedderburn-weight-scheme.witness.json`
+records `|y_λ / w_λ|` ratios from ≈0.14 to ≈2.54 at q₀ for
+n ∈ {2, 3}.
+
+The BW/LP scaling ratios — verified symbolically in
+`folio-assistant/computations/_deprecated/bw_wenzl_shadow_equivalence.py`
+for `λ = (2,2)` and `λ = (3,2,1)` (both self-conjugate) — are:
+
+  β / C = -1/h        (all λ)
+  β / y = -1/2        (self-conjugate λ only)
+  C / y = h/2         (self-conjugate λ only)
 
 **Pre-Archimedean stub.** Polymorphic in the ground field `R`.
 The previous version typed every coefficient to `ℝ`; the
@@ -49,17 +58,22 @@ structure Partition where
 /-- The canonical Wedderburn-block weight discipline, polymorphic in
     the ground field `R`.
 
-    An instance asserts that the three named coefficient forms used
-    in the paper (BW, shadow-price, Wenzl-bridge) reduce to the
-    canonical `w_λ = dim_q(λ)² / [n]_q!` via the three explicit
-    scaling identities.
+    An instance asserts:
+      • the BW mass coefficient `β_λ = -½ w_λ` (for all λ);
+      • the LP shadow-price `C_λ = w_λ · h/2` (for all λ);
+      • the Markov coefficient `y_λ`, with the **self-conjugate
+        Wenzl-bridge identity** `y_λ = w_λ` whenever `κ_λ = 0`.
 
-    For self-conjugate partitions, the Wenzl-bridge sign vanishes
-    (`κ_λ = 0`) and `y = w`. -/
+    Off the self-conjugate stratum, `y_λ` is given by Wenzl's
+    hook–content closed form [wenzl1988] and is, in general,
+    distinct from `(-1)^κ_λ · w_λ` — see the in-repo witness
+    `probe-wedderburn-weight-scheme.witness.json` for empirical
+    `|y_λ / w_λ|` ratios at `q₀`. -/
 class WedderburnWeightCanonical (R : Type u) [Field R] where
   /-- The Hecke-generator scalar `h = q - q⁻¹` in `R`. -/
   h : R
-  /-- The canonical Wedderburn weight `w_λ ∈ R` (Laurent in `q`). -/
+  /-- The canonical q-deformed Wedderburn weight `w_λ ∈ R`
+      (Laurent in `q`). -/
   w : Partition → R
   /-- Content sum `κ_λ`. -/
   kappa : Partition → ℤ
@@ -67,25 +81,25 @@ class WedderburnWeightCanonical (R : Type u) [Field R] where
   beta : Partition → R
   /-- LP shadow-price `C_λ = w_λ · h/2`. -/
   C : Partition → R
-  /-- Wenzl-bridge sign-tracked coefficient `y_λ = (-1)^κ_λ · w_λ`. -/
+  /-- Markov coefficient `y_λ(q)` (Wenzl closed form; abstract
+      here, supplied per instance). -/
   y : Partition → R
-  /-- BW scaling identity. -/
+  /-- BW scaling identity (all λ). -/
   beta_eq : ∀ λ, beta λ = -(1 / 2 : R) * w λ
-  /-- LP shadow-price scaling identity. -/
+  /-- LP shadow-price scaling identity (all λ). -/
   C_eq : ∀ λ, C λ = w λ * (h / 2)
-  /-- Wenzl-bridge scaling identity.  The `(-1)^κ_λ` is realised
-      as `1` for `κ_λ` even and `-1` for `κ_λ` odd; `Int.toNat`
-      gives the absolute value. -/
-  y_eq : ∀ λ, y λ = ((-1 : R) ^ (kappa λ).toNat) * w λ
+  /-- **Wenzl-bridge identity, restricted to self-conjugate λ.**
+      Whenever `κ_λ = 0`, the Markov coefficient agrees with the
+      Wedderburn-block weight: `y_λ = w_λ`. -/
+  y_eq_self_conjugate : ∀ λ, kappa λ = 0 → y λ = w λ
 
-/-- For self-conjugate partitions (κ = 0), the Wenzl-bridge form
-    reduces to `w` exactly. -/
+/-- For self-conjugate partitions (κ = 0), the Markov coefficient
+    coincides with the Wedderburn-block weight. -/
 theorem WedderburnWeightCanonical.y_self_conjugate
     {R : Type u} [Field R] [c : WedderburnWeightCanonical R]
     (λ : Partition) (h_self : c.kappa λ = 0) :
-    c.y λ = c.w λ := by
-  rw [c.y_eq, h_self]
-  simp
+    c.y λ = c.w λ :=
+  c.y_eq_self_conjugate λ h_self
 
 /-- Cross-ratio: `β / C = -1/h` (when `C ≠ 0`). -/
 theorem WedderburnWeightCanonical.beta_over_C

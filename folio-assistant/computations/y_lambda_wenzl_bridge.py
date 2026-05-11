@@ -438,8 +438,11 @@ def cycle_type_word(mu):
     return word
 
 
-def plancherel_sum_numeric(n: int, q_val, dps: int = 50):
-    """Σ_λ y_λ(q_val) · d_λ at mpmath precision.  Should equal 1."""
+def markov_m3_sum_numeric(n: int, q_val, dps: int = 50):
+    """Σ_λ y_λ(q_val) · d_λ at mpmath precision.  Should equal 1 by
+    the Markov axiom (M3) tr_M(1) = 1 — *not* the Plancherel identity
+    Σ_λ d_λ²/n! = 1.  See docs/audits/2026-05-11-plancherel-usage-audit.md
+    (Finding D)."""
     mp.mp.dps = dps
     parts = partitions_of(n)
     total = mp.mpf(0)
@@ -447,6 +450,10 @@ def plancherel_sum_numeric(n: int, q_val, dps: int = 50):
         y = y_lambda_wenzl_bridge_numeric(lam, q_val, dps)
         total += y * classical_dim(lam)
     return total
+
+
+# Backward-compat alias; remove after downstream callers are updated.
+plancherel_sum_numeric = markov_m3_sum_numeric
 
 
 def markov_trace_lhs_numeric(n: int, mu, q_val, dps: int = 50):
