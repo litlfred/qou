@@ -184,3 +184,63 @@ follow-up; no blocker on #637 merge.
 * ✓ Did NOT fix the broken hoefsmit-symbolic.py URL myself
   (that's #636's review thread, not mine to address)
 
+## Coordination cycle 3 — major Q_β residual decomposition findings
+
+2026-05-11T16:30Z — user requested error-source analysis +
+re-derivation via Frobenius pairing / dual basis / Wenzl bridge.
+
+### New findings (worth coordinating with #636)
+
+1. **Frobenius factorization** of 1.00744 = 1.00168 (brane-tower
+   N=0) × 1.00579 (basis-change typed vs single-wrap). Exact
+   multiplicative split, numerically and structurally separable.
+
+2. **Dual-basis structural identity** $G^{-1} \cdot t = e_\gamma$ at H_3.
+   Proof: $G_{\gamma j} = \mathrm{tr}_M(b_j) = t_j$, so $G \cdot e_\gamma = t$.
+   Equivalently: the framework's "net" (= $\sum_i x_i$) IS the
+   Frobenius counit $\varepsilon$, the structurally-canonical
+   projection. **No weights are missing.**
+
+3. **Forms 2 (tr_M-weighted), 3 (Frobenius dual G⁻¹), 4 (Wenzl
+   y_λ χ_λ)** all FAIL to give Q_β — they measure different physical
+   quantities (cat-action, dual-paired γ-content, Markov-trace).
+   The framework's unweighted counit × $E_0$ form is correct.
+
+4. **Per-N bound vs lift formula**: per-braid-mass-tower bound
+   predicts ≤ 1 ppb at $N \geq 4$, but actual residual depends on
+   lift formula. 5 naive N=1 lifts all WORSE (42–134×). The
+   bound is the worst-case ceiling; the canonical $n_\star$
+   conjecture is the open piece.
+
+### #636 relevance
+
+The Wenzl-bridge form (Form 4) **does** use $y_\lambda$ weights — exactly
+the symbol-overload issue #636 audits. But I'm using $y_\lambda$ in
+the Markov-trace form (which is correct for tr_M), not in the
+mass formula (which uses the Frobenius counit instead). So no
+direct cross-PR concern — the rename (#636 R1 → `w̃_λ`) wouldn't
+affect my analysis.
+
+The cleanest categorical takeaway: **counit ≠ Markov trace**. They
+have different structural roles. Both are correct in their respective
+domains.
+
+### Action taken cycle 3
+
+Posted update on #636 with the dual-basis identity finding — useful
+data for their #R6 (invariance under weight renormalization) check.
+Did NOT post on #635 (no relevance) or #632 (no overlap).
+
+### Watch baseline
+
+`origin/main` still at `f5e47e52`. Monitor armed; no upstream
+landings during this session.
+
+### Open queue update
+
+Gap 6 (Wedderburn weights closed form) is now **NOT on the critical
+path** for closing the 1.31 keV residual, because the dual-basis
+identity shows the framework's Q_β formula uses the Frobenius counit
+directly (no $w_\lambda$ involved). Gaps 4 + 5 (Φ_q convergence + n_⋆
+existence) remain the bottleneck.
+
