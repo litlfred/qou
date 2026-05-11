@@ -41,25 +41,6 @@ DEPTHS = [2, 3, 4, 5]
 KS = [3, 4, 5, 6, 7]
 
 
-def jonquiere_closed_form(n: int, K: int) -> mpf:
-    """Closed-form value of the "wrong-parity" part of Li_n(zeta_K):
-    Im for n odd, Re for n even.  Value =
-    -(2 pi i)^n / (2 * [i or 1] * n!) * B_n(1/K).
-    """
-    # (2 pi i)^n  =  2^n pi^n i^n
-    # Im pickup for n odd:  divide by 2i.
-    # Re pickup for n even: divide by 2.
-    Bn = bernpoly(n, mpf(1) / K)
-    prefactor = -mpc(0, 2 * pi) ** n / factorial(n)
-    if n % 2 == 1:
-        result = prefactor / mpc(0, 2)
-    else:
-        result = prefactor / 2
-    return re(result * Bn) if n % 2 == 0 else im(result * Bn / mpc(0, 1) * mpc(0, 1))
-    # Simplified: closed form is real, just take re/im appropriately
-    # via direct division above.
-
-
 def jonquiere_closed_form_simple(n: int, K: int) -> mpf:
     """Simpler direct evaluation: closed form is the real-valued
     coefficient.  For n odd:  Im Li_n(zeta_K) = (2 pi)^n / (2 * n!) *

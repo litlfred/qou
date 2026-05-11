@@ -109,8 +109,8 @@ $\mathbb{Q}(\zeta_K)$-linear combinations.  This means:
 ### Catalan's constant ($n = 2$ instance)
 
 For $(n, K) = (2, 4)$ even case: Theorem A gives
-$\mathrm{Re}\,\mathrm{Li}_2(i) = -\pi^2/16$ (Bernoulli $B_2(1/4) = -1/48$,
-times $\pi^2 \cdot 4! / 2 = ...$). And $\mathrm{Im}\,\mathrm{Li}_2(i) =
+$\mathrm{Re}\,\mathrm{Li}_2(i) = -\pi^2/48$ (Bernoulli $B_2(1/4) = -1/48$,
+times $\pi^2 \cdot 2! / 2 = \pi^2$). And $\mathrm{Im}\,\mathrm{Li}_2(i) =
 \mathrm{Cl}_2(\pi/2) = G$ — Catalan's constant.
 
 $G$ is **not** Tate-rational (conjecturally transcendental); it's the

@@ -34,15 +34,15 @@ open QOU.Infra.DirichletL
 /-- **Theorem (`prop:cyclotomic-l-value-decomposition`,
     arithmetic core).**
 
-    Theorem A specialised at K = 4 equals β(3).  Pure rational
-    ring arithmetic: `(K − 1)(K − 2) / (3 K³)` at `K = 4` reduces
-    to `(3)(2) / (3 · 64) = 6 / 192 = 1 / 32`, so the closed form
-    `(K − 1)(K − 2) π³ / (3 K³)` reduces to `π³ / 32 = β(3)`.
-
-    No `sorry`, no `trivial` — fully verified by Lean. -/
-theorem beta_3_from_jonquiere : imLi3ZetaPredicted 4 = beta3 := by
-  unfold imLi3ZetaPredicted beta3
-  ring
+    `lean.ref` alias for the manuscript's
+    `prop:cyclotomic-l-value-decomposition` block.  Forwards to
+    the canonical proof in `QOU.Infra.Polylogarithm`
+    (`beta3_from_jonquiere`) to avoid duplicating the
+    arithmetic identity.  Per Gemini review:
+    central utility goes in the infra module; chapter modules
+    forward. -/
+theorem beta_3_from_jonquiere : imLi3ZetaPredicted 4 = beta3 :=
+  QOU.Infra.Polylogarithm.beta3_from_jonquiere
 
 /-- **Conditional-class wrapper for the full L-value decomposition.**
 

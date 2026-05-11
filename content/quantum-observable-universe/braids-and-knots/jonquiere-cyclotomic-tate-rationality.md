@@ -109,8 +109,8 @@ This is the special case $n = 3$ — recovers
 
 $$
   \mathrm{Re}\,\mathrm{Li}_4(\zeta_K)
-  \;=\; \frac{(2\pi)^4}{2 \cdot 4!}\,B_4(1/K)
-  \;=\; \frac{2\pi^4}{3}\,B_4(1/K).
+  \;=\; -\frac{(2\pi)^4}{2 \cdot 4!}\,B_4(1/K)
+  \;=\; -\frac{\pi^4}{3}\,B_4(1/K).
 $$
 
 **$n = 5$ (odd, Im part):** $B_5(x) = x^5 - 5x^4/2 + 5x^3/3 - x/6$.
