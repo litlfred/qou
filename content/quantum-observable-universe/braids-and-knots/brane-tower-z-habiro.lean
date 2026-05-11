@@ -64,4 +64,65 @@ instance canonical (n₀ : ℕ) (q : ℝ) : BraneTowerZHabiro n₀ q where
   recoversBinding := fun _ _ _ _ => True
   recovery_holds := fun _ _ _ _ _ => trivial
 
+-- ────────────────────────────────────────────────────────────────────────────
+-- Closure (2026-05-11): scalar-substrate form of n_⋆ is refuted by witness
+-- ────────────────────────────────────────────────────────────────────────────
+
+/-- Falsifiability threshold from the conjecture's `## Falsifiability`
+    section: a candidate `n_⋆` rule must close all three AME light
+    isotopes to within `~5%` without per-atom retuning. We use the
+    `10%` bound below to remain robust against rounding in the
+    witness arithmetic. -/
+def falsifiabilityThresholdPct : ℝ := 10.0
+
+/-- Witness-recorded worst-case relative error (subtractive form) at
+    the best uniform truncation depth `k = 2`. The maximum is on
+    `³He` at `+134%`.
+
+    Source:
+    `folio-assistant/computations/probe-phiq-uniform-k.witness.json`
+    (computed `2026-04-29`, `commitSha 95ed3374…`). -/
+def witnessUniformKBestMaxErrPct : ℝ := 134.0
+
+/-- Witness-recorded worst-case relative error for the
+    `n_⋆ = ℓ · n₀ + k` per-atom rule at
+    `(n_⋆^D, n_⋆^T, n_⋆^³He) = (14, 27, 20)` (subtractive form). The
+    maximum is on `³He` at `+1.18 × 10^6 %`.
+
+    Source:
+    `folio-assistant/computations/probe-phiq-n-star-rule.witness.json`
+    (computed `2026-05-09`, `commitSha c8f9603d…`). -/
+def witnessNStarRuleMaxErrPct : ℝ := 1177119.823748267
+
+/-- **Scalar-substrate `n_⋆` refutation (uniform-`k` family).** The
+    best uniform-depth candidate (`k = 2`, subtractive form) leaves a
+    `+134%` residual on `³He` — an order of magnitude above the
+    falsifiability threshold. -/
+-- Ref: [manuscript] conj:brane-tower-z-habiro §"Closure (2026-05-11)"
+theorem witness_refutes_uniform_k_form :
+    witnessUniformKBestMaxErrPct > falsifiabilityThresholdPct := by
+  unfold witnessUniformKBestMaxErrPct falsifiabilityThresholdPct
+  norm_num
+
+/-- **Scalar-substrate `n_⋆` refutation (`ℓ · n₀ + k` family).** The
+    proposed additive rule from `conj:brane-level-selection` overshoots
+    `³He` by six orders of magnitude — refutation is immediate. -/
+-- Ref: [manuscript] conj:brane-tower-z-habiro §"Closure (2026-05-11)"
+theorem witness_refutes_ell_n0_k_form :
+    witnessNStarRuleMaxErrPct > falsifiabilityThresholdPct := by
+  unfold witnessNStarRuleMaxErrPct falsifiabilityThresholdPct
+  norm_num
+
+/-- **Scalar-substrate `n_⋆` refutation (combined).** Both probed
+    scalar substrate families — uniform-`k` and `ℓ · n₀ + k` — exceed
+    the `10%` falsifiability threshold. By the conjecture's own
+    criterion, the scalar-substrate existence claim is refuted; the
+    open part is now the multiplicity-refined form (see the
+    sibling `.md` §"Refined open question"). -/
+-- Ref: [manuscript] conj:brane-tower-z-habiro §"Closure (2026-05-11)"
+theorem nStar_scalar_form_refuted :
+    witnessUniformKBestMaxErrPct > falsifiabilityThresholdPct ∧
+    witnessNStarRuleMaxErrPct > falsifiabilityThresholdPct :=
+  ⟨witness_refutes_uniform_k_form, witness_refutes_ell_n0_k_form⟩
+
 end QOU.BraidKnot

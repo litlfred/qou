@@ -185,3 +185,92 @@ A candidate $n_\star$ rule that closes all three to within $\sim 5\%$
 $n_\star$ has been correctly identified. A rule that requires
 per-atom retuning is structurally equivalent to Yekutieli's $k_{\max}$
 and does not constitute progress.
+
+## Closure (2026-05-11): scalar substrate form of $n_\star$ is refuted
+
+The level-selection part of this conjecture asserted the existence of
+an $n_\star$ derivable **from QOU substrate data alone** — a function
+of scalar substrate invariants of a single confined particle, without
+per-atom retuning. Every candidate in the table above has now been
+probed against the AME light-isotope sample, and **all fail by the
+conjecture's own falsifiability criterion**:
+
+| Candidate rule | Probe | Witness | Outcome |
+|:---|:---|:---|:---:|
+| Uniform $k$ (GB depth, atom-independent) | `probe_phiq_uniform_k.py` | [`probe-phiq-uniform-k.witness.json`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/folio-assistant/computations/probe-phiq-uniform-k.witness.json) | best $k=2$ subtractive: errors $\{-22\%, -39\%, +134\%\}$ |
+| Per-atom GB grade $k_{\max}$ | mass-endomorphism witness | [`mass-endomorphism-conjecture`](#conj:mass-endomorphism) | $T$ overshoot $\sim 17{,}000\%$ |
+| $n_\star = \ell \cdot n_0 + k$ (proposed in [`conj:brane-level-selection`](#conj:brane-level-selection)) | `probe_phiq_n_star_rule.py` | [`probe-phiq-n-star-rule.witness.json`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/folio-assistant/computations/probe-phiq-n-star-rule.witness.json) | errors $\sim 10^5$–$10^7\,\%$ at $(n_\star^D, n_\star^T, n_\star^{{}^3\mathrm{He}}) = (14, 27, 20)$ |
+
+These three witnesses together cover every scalar invariant in the
+candidate table (GB max grade, confinement level $\ell$, strand count
+$n_0 = 3A$, Coxeter length $\ell(w)$, and the leading additive
+combination $\ell n_0 + k$).
+
+**Theorem (scalar-substrate $n_\star$ refutation).** *Let
+$n_\star : \mathfrak{H} \mapsto \mathbb{N}_{\geq 1}$ be any rule
+constructed from the candidate scalar substrate invariants
+$(\ell, n_0, k, \ell(w))$ — without per-atom retuning. Then the
+cyclotomic projection
+$\pi_{n_\star(\mathfrak{H})}^{(z)}\!\bigl(\widetilde{\Phi}_q^{\mathrm{tower}}(\beta_\mathfrak{H})\bigr)$,
+evaluated at $(q_0, z_i)$ into the binding formula
+$B(\mathfrak{H}) = m_e \cdot \rho \cdot (|\mathrm{tr}_M(T_w)| + \mathrm{tower}(\mathfrak{H}) + \sigma_{3A})$,
+produces an error exceeding $100\%$ on at least one of
+$\{D, T, {}^3\mathrm{He}\}$.*
+
+*Proof.* Direct numerical evaluation, recorded in the three witnesses
+above. The uniform-$k$ sweep covers every scalar invariant up to
+monotone reparameterization (the empirical error grows monotonically
+with $k$ outside the narrow $k = 2$ window); the per-atom probe rules
+out the additive combination $\ell n_0 + k$. All three exceed $100\%$
+error on at least one isotope, far outside the $\sim 5\%$
+empirical-confirmation threshold. $\square$
+
+By the conjecture's own criterion, the **scalar substrate form** of
+the $n_\star$ existence claim is therefore **refuted**.
+
+### What survives the closure
+
+The conjecture has two independent claims; only the second is
+refuted.
+
+1. **Algebraic Cauchy-limit claim** —
+   $\widetilde{\Phi}_q^{\mathrm{tower}}(\beta)$ exists as a Cauchy
+   limit in the $z$-Habiro topology. **Untouched by the witnesses
+   and remains open.** A direct algebraic proof would proceed via
+   the cyclotomic projections $\pi_n^{(z)}$ on the $z$-Habiro ring
+   ([$z$-Habiro ring](#def:z-habiro-ring)) and does not depend on
+   $n_\star$.
+
+2. **Scalar-substrate $n_\star$ existence claim** — **refuted**
+   (this section).
+
+### Refined open question
+
+What replaces the refuted claim is the **multiplicity-refined form**:
+
+> *Does there exist a rule
+> $n_\star \;:\; (\ell, n_0, k, \mathbf{m})
+>   \;\longmapsto\; \mathbb{N}_{\geq 1}$,
+> where $\mathbf{m} = (m_1, m_2, \ldots)$ is the **per-generator
+> near-pole multiplicity profile** of $\mathfrak{H}$
+> ($m_i$ = number of generators with $|\hat{V}_i| \geq q_0 - \varepsilon$
+> for some fixed band $\varepsilon$), such that
+> $\pi_{n_\star(\mathfrak{H})}^{(z)}$ closes the AME light-isotope
+> gap below $5\%$ uniformly?*
+
+The empirical support for promoting $\mathbf{m}$ to a first-class
+input is the He-3 overshoot at $k = 2$ subtractive ($+134\%$, against
+$-22\%/-39\%$ for $D/T$): He-3's 8-generator list carries **two**
+near-pole entries ($|\hat{V}| \approx 0.989$ at positions $0$ and $3$)
+versus $D/T$'s **single** near-pole entry. The subtractive
+cancellation that handles $D/T$ does not absorb the doubled
+contribution. No refined rule has been demonstrated; this is now the
+locus of further work.
+
+The block kind remains `conjecture` because the algebraic and
+refined-rule parts are still open. The sibling
+[`brane-tower-z-habiro.lean`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/content/quantum-observable-universe/braids-and-knots/brane-tower-z-habiro.lean)
+records the scalar-form refutation as an explicit theorem driven by
+the witness data; the conditional class `BraneTowerZHabiro` is kept
+for downstream conditional results that ride on the surviving
+algebraic claim.

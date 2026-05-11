@@ -20,11 +20,16 @@ export default conjecture({
     "regularization",
     "quantum-dilogarithm",
     "open-problem",
+    "scalar-nstar-refuted",
+    "closure-2026-05-11",
   ],
   computation: {
     engine: "python",
     script: "folio-assistant/computations/probe_phiq_uniform_k.py",
-    witness: "folio-assistant/computations/probe-phiq-uniform-k.witness.json",
-    status: "experimental",
+    witness: [
+      "folio-assistant/computations/probe-phiq-uniform-k.witness.json",
+      "folio-assistant/computations/probe-phiq-n-star-rule.witness.json",
+    ],
+    status: "verified",
   },
 });
