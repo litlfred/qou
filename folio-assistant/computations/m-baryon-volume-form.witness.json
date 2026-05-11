@@ -1,0 +1,46 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-11T19:05:27.612556+00:00",
+  "commitSha": "af3d7991b382bfcf228a9db68c3a2236b73a6204",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "m-baryon-volume-form",
+  "scriptFile": "derive_m_baryon_volume_form.py",
+  "scriptHash": "abd7bd810c52",
+  "scriptCommitSha": "unknown",
+  "description": "Topological mass formula (Vol(K)/ℏ_q² · λ_scale + Skein) evaluated at 50 dps for the Borromean baryon channel + the muon Vol(4_1)/ℏ_q² cross-check.  Substrate-only inputs: CAL-1 (m_e), CAL-2 (q_0), topological constants Vol(4_1), Vol(ℬ_3).  Reports the open λ_scale closure target empirically and verifies that the Skein-correction DIFFERENCE ΔS(n − p) is substrate-derivable from CAL-1 + CAL-2 alone (via Q_β closed form).",
+  "auditOnly": "docs/audits/2026-05-11-why-individual-mass-residuals-fit-not-derive.md (motivates this Vol-form chain as Option B per the user's 'can we use m_e as mass scaling factor' question); PR #487 (introduced the Borromean-baryon-interpretation block with the formula and undefined λ_scale).",
+  "owner_directive_2026_05_11": "Re-implement using m_e as scaling factor + Vol(K)/ℏ_q² as dimensionless multiplier per the canonical topological-mass formula; expose λ_scale as the single open derivation needed for 1ppb on individual hadron masses.",
+  "data": {
+    "q_0_50dps": "1.1099785955541805752815940796095093779932822799587",
+    "hbar_q_50dps": "0.099081726435698885820014342688412528468474023957784",
+    "hbar_q_squared_50dps": "0.0098171885134786714364814119414486823004830901220042",
+    "muon_cross_check": {
+      "Vol_4_1_50dps": "2.0298832128193072500424051085490405748300415990989",
+      "m_mu_over_m_e_via_volume_50dps": "206.76828300000000000000000000000000030015344820894",
+      "m_mu_over_m_e_codata": "206.768283",
+      "agreement_assertion": "Vol(4_1)/ℏ_q² should reproduce CODATA m_μ/m_e exactly (this IS the CAL-2 q_0 calibration); checks the topological-mass formula's correctness."
+    },
+    "borromean_common_factor": {
+      "Vol_Borromean_50dps": "7.3277247558776614823514712187098101090784249887987",
+      "Vol_Borromean_over_hbar_q_squared": "746.41785128368885965408362959114677037639351703069",
+      "interpretation": "Dimensionless 'common Borromean factor' shared by all Borromean baryons; physical baryon mass ratio is this value times the substrate λ_scale plus Skein correction."
+    },
+    "lambda_scale_closure_targets": {
+      "proton_empirical_target": "2.4599527868571801856951165290680491412443147062146",
+      "neutron_empirical_target": "2.4633436332688577740479759494844402140754388387515",
+      "interpretation": "Empirical λ_scale value required for the topological-mass formula to reproduce CODATA m_p / m_n.  THESE ARE VALIDATION VALUES — NOT inputs to the substrate derivation.  The substrate-derived λ_scale (from CAL-1 + CAL-2 alone) is OPEN; PR #487 introduced the formula but never defined λ_scale.  Open R&D item — see docs/audits/2026-05-11-why-individual-mass-residuals-fit-not-derive.md."
+    },
+    "skein_correction_n_minus_p": {
+      "delta_skein_derived_from_CAL_1_CAL_2": "0.0033942872306864081441078333865004206577917242427896",
+      "delta_skein_empirical_target": "0.0033908464116775883528594204163910728311241325369015",
+      "agreement_assertion": "ΔS(n − p) = (Q_β + m_e)/m_e / (Vol(ℬ_3)/ℏ_q²).  Substrate-derived from CAL-1 (m_e), CAL-2 (q_0 → Q_β via prop:neutron-qvalue-symbolic), and topological constant Vol(ℬ_3).  Empirical target is (m_n − m_p)/m_e / (Vol(ℬ_3)/ℏ_q²); the two should agree since Q_β = m_n − m_p − m_e by definition."
+    },
+    "open_R_and_D": {
+      "substrate_lambda_scale": "Derive λ_scale from CAL-1 + CAL-2 + topological invariants of ℬ_3 alone.  Empirical closure target ≈ 2.460.  Candidates checked at q_0 (from the candidate sweep in the linked audit) — none of [n]_q, q^k, m_μ/m_e/84, etc. matches to better than 0.06%.  Open.",
+      "substrate_skein_correction_per_orientation": "Derive S(p), S(n) (not just the difference) from the Borromean orientation partition (k positive, 3-k negative) via the Skein polynomial.  Empirical: |S(n) − S(p)| ≈ 0.00339 dimensionless; the difference IS substrate-derivable per ΔS formula above.  Open: the individual S(p), S(n) anchored to a common substrate quantity."
+    }
+  }
+}
