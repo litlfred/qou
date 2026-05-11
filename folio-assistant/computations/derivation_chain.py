@@ -64,6 +64,28 @@ Q_0: float = 1.1099785955541805
 # deprecated per `docs/audits/2026-05-08-p3-h-3a-divergence.md`
 # (it vanished for partitions with > 2 rows, dropping the sign-rep
 # contribution).
+#
+# ⚠️ INCONSISTENCY ESCALATED 2026-05-11 (PR #640 audit):
+# These values disagree with the canonical τ_M values reported in
+# `content/quantum-observable-universe/braids-and-knots/markov-trace-frobenius-selection.md`
+# (commit 25a204efa, "PROVED: Frobenius non-degeneracy selects
+# Jones-Markov, not Schur-Weyl"):
+#
+#   value below     |  Frobenius-proof τ_M (from_scratch)  |  τ_SW (Schur-Weyl)
+#   ────────────────┼──────────────────────────────────────┼────────────────────
+#   D = 0.388286    |  D = 0.336821                        |  D = 0.177389
+#   p = 1.065306    |  p_free = 1.733914                   |  p     = 2.122600
+#   n = 0.923233    |  n_free = 1.406010                   |  n     = 1.589000
+#
+# The provenance comment cites PR #612 ("Canonical Wenzl-bridge"),
+# but the Frobenius selection proof on main (25a204efa) names a
+# *different* canonical Wenzl-bridge value via the `from_scratch/`
+# pipeline.  Until the discrepancy is resolved (by the author or a
+# follow-up audit), downstream chains should consume these values
+# with caution and label which convention they assume.
+#
+# Audit: `docs/audits/2026-05-11-why-individual-mass-residuals-fit-not-derive.md`
+# §"Update 2026-05-11 — τ_M / τ_SW conflation diagnosis"
 TR_M_AT_Q0: dict[str, float] = {
     "p": 1.0653062285923893,
     "n": 0.9232332971695838,

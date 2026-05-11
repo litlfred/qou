@@ -56,16 +56,37 @@ findings as content + audit so the open λ_scale problem is not lost.
 | #638 | [#638-comment-4424639946](https://github.com/litlfred/qou/pull/638#issuecomment-4424639946) | τ_M / τ_SW Frobenius selection alignment; flag wider registry conflation |
 | #639 | [#639-comment-4424641848](https://github.com/litlfred/qou/pull/639#issuecomment-4424641848) | Substrate $Q_\beta$ closed-form complementarity; ask Form A vs Form B |
 
-## Inconsistent findings — none to escalate (skill §6)
+## Inconsistent findings — ONE escalation to @litlfred (skill §6)
 
-PR #638's "canonical Jones-Markov" convention is consistent with my
-Frobenius-selection-theorem reading and the on-main proof in
-[`markov-trace-frobenius-selection.md`](../../content/quantum-observable-universe/braids-and-knots/markov-trace-frobenius-selection.md).
-PR #639's bridge identity is consistent with the substrate $Q_\beta$
-closed form on main (`derived_masses.py`).
+**Escalation: three different "canonical τ_M(D)" values on `main`**
+
+Discovered while annotating `derivation_chain.TR_M_AT_Q0` for the
+provenance audit (task 3):
+
+| Source | τ_M(D, q_0) | Convention claim |
+|--------|------------:|------------------|
+| `derivation_chain.TR_M_AT_Q0["D"]` | $0.388286$ | "Canonical Wenzl-bridge (PR #612)" |
+| Frobenius proof (commit 25a204efa, `markov-trace-frobenius-selection.md`) | $0.336821$ | "Canonical $\tau_M$ via `from_scratch/`" |
+| `habiro_coefficients_atomic.py` (Schur-Weyl) | $0.177389$ | $\tau_{SW}$ (degenerate, deprecated) |
+
+Two distinct values **both** labelled "canonical Wenzl-bridge τ_M".
+Annotated in `derivation_chain.py` as a warning comment (not silently
+rewritten). @litlfred — which one is the actual production
+canonical τ_M? The PR #612 production pipeline uses `markov_peel.tr_M_atomic`;
+the Frobenius proof uses `from_scratch/`. Are both supposed to give
+the same value, or do they implement different functionals?
+
+This escalation gates the registry relabel (task 2) and provenance
+annotation (task 3) — applying either fix while the convention is
+contested would silently pick a side.
+
+(Other inconsistencies — none to report.) PR #638's Jones-Markov
+choice is consistent with the Frobenius selection theorem;
+PR #639's bridge identity is consistent with `derived_masses.py` on
+main.
 
 No silent rewriting; no "split the difference" between conflicting
-readings — there are no conflicting readings to split.
+readings.
 
 ## Next concrete task (non-overlapping)
 
