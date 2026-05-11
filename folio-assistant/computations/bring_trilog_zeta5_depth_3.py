@@ -41,9 +41,8 @@ Output: ``bring-trilog-zeta5-depth-3.witness.json`` next to this file.
 """
 from __future__ import annotations
 
-import json
+import time
 from datetime import datetime, timezone
-from pathlib import Path
 
 from mpmath import mp, mpf, mpc, pi, exp, polylog, im, re, zeta
 from mpmath import fabs as mpabs
@@ -53,36 +52,39 @@ from witness_base import WitnessBuilder
 mp.dps = 50
 
 
-# ── shape parameter zeta_5 ────────────────────────────────────────
-THETA_5 = 2 * pi / mpf(5)
-ZETA_5 = exp(mpc(0, 1) * THETA_5)
-
-# Sanity: zeta_5^5 should be 1
-ZETA_5_TO_5 = ZETA_5 ** 5
-ZETA_5_AS_ROOT_OF_UNITY_CHECK = mpabs(ZETA_5_TO_5 - mpf(1))
-
-# ── depth-3 grouplike values ──────────────────────────────────────
-LI_3_ZETA_5 = polylog(3, ZETA_5)
-RE_LI_3 = re(LI_3_ZETA_5)   # = Cl_3(2 pi / 5)
-IM_LI_3 = im(LI_3_ZETA_5)   # = S_3(2 pi / 5)
-
-# ── reference: Apery's constant zeta(3) ───────────────────────────
-ZETA_3 = zeta(3)
-
-# ── Bring-orbit sum: sum over primitive 5th roots ─────────────────
-# Functional equation for sums of Li_n at all N-th roots of unity:
-#   sum_{k=1}^{N-1} Li_n(zeta_N^k) = (N^{1-n} - 1) * zeta(n)
-# For N=5, n=3: sum = (1/25 - 1) * zeta(3) = -(24/25) * zeta(3).
-ZETA_5_K = [exp(mpc(0, 1) * THETA_5 * k) for k in range(1, 5)]
-LI_3_ORBIT = sum(polylog(3, z) for z in ZETA_5_K)
-PREDICTED_ORBIT = (mpf(5) ** (1 - 3) - 1) * ZETA_3
-ORBIT_RESIDUAL = mpabs(LI_3_ORBIT - PREDICTED_ORBIT)
-
-# Imaginary parts cancel under the sum (complex-conjugate pairs):
-LI_3_ORBIT_IM = im(LI_3_ORBIT)
-
-
 def main() -> None:
+    # Capture start time BEFORE the heavy computation so the witness's
+    # `durationMs` reflects real runtime (Copilot PR #635 review).
+    start = time.monotonic()
+
+    # ── shape parameter zeta_5 ──────────────────────────────────
+    THETA_5 = 2 * pi / mpf(5)
+    ZETA_5 = exp(mpc(0, 1) * THETA_5)
+
+    # Sanity: zeta_5^5 should be 1
+    ZETA_5_TO_5 = ZETA_5 ** 5
+    ZETA_5_AS_ROOT_OF_UNITY_CHECK = mpabs(ZETA_5_TO_5 - mpf(1))
+
+    # ── depth-3 grouplike values ────────────────────────────────
+    LI_3_ZETA_5 = polylog(3, ZETA_5)
+    RE_LI_3 = re(LI_3_ZETA_5)   # = Cl_3(2 pi / 5)
+    IM_LI_3 = im(LI_3_ZETA_5)   # = S_3(2 pi / 5)
+
+    # ── reference: Apery's constant zeta(3) ─────────────────────
+    ZETA_3 = zeta(3)
+
+    # ── Bring-orbit sum: sum over primitive 5th roots ───────────
+    # Functional equation for sums of Li_n at all N-th roots of unity:
+    #   sum_{k=1}^{N-1} Li_n(zeta_N^k) = (N^{1-n} - 1) * zeta(n)
+    # For N=5, n=3: sum = (1/25 - 1) * zeta(3) = -(24/25) * zeta(3).
+    ZETA_5_K = [exp(mpc(0, 1) * THETA_5 * k) for k in range(1, 5)]
+    LI_3_ORBIT = sum(polylog(3, z) for z in ZETA_5_K)
+    PREDICTED_ORBIT = (mpf(5) ** (1 - 3) - 1) * ZETA_3
+    ORBIT_RESIDUAL = mpabs(LI_3_ORBIT - PREDICTED_ORBIT)
+
+    # Imaginary parts cancel under the sum (complex-conjugate pairs):
+    LI_3_ORBIT_IM = im(LI_3_ORBIT)
+
     print("=" * 72)
     print("graded-Mikusiński depth-3 witness — Bring trilog at zeta_5")
     print("=" * 72)
@@ -181,14 +183,15 @@ def main() -> None:
         ),
     }
     # WitnessBuilder.wrap_legacy preserves on-disk layout while adding
-    # canonical metadata (scriptHash, commitSha, computedAt, etc.) per
-    # Copilot PR #634 review.
+    # canonical metadata.  `_start_time` override captures real
+    # compute runtime per Copilot PR #635 review.
     builder = WitnessBuilder.wrap_legacy(
         "bring-trilog-zeta5-depth-3",
         witness,
         script_path=__file__,
         engine="mpmath",
     )
+    builder._start_time = start
     out = builder.save()
     print(f"\nwitness: {out}")
 

@@ -25,28 +25,14 @@ Output: cl3-zeta5-pslq-search.witness.json next to this file.
 """
 from __future__ import annotations
 
-import json
+import time
 from datetime import datetime, timezone
-from pathlib import Path
 
 from mpmath import mp, mpf, mpc, pi, exp, polylog, re, im, zeta, log, sqrt, pslq
 
 from witness_base import WitnessBuilder
 
 mp.dps = 50
-
-# ── target: antisymmetric Cl_3 difference ────────────────────────
-ZETA_5 = exp(mpc(0, 1) * 2 * pi / mpf(5))
-CL_3_2PI5 = re(polylog(3, ZETA_5))
-CL_3_4PI5 = re(polylog(3, ZETA_5 ** 2))
-X = CL_3_2PI5 - CL_3_4PI5
-
-# ── candidate basis ──────────────────────────────────────────────
-PHI = (1 + sqrt(5)) / 2  # golden ratio — natural at ζ_5
-ZETA_3 = zeta(3)
-PI = pi
-LOG_PHI = log(PHI)
-LOG_2 = log(2)
 
 
 def pslq_search(target, basis_vals, basis_names, tol=None,
@@ -70,41 +56,6 @@ def pslq_search(target, basis_vals, basis_names, tol=None,
         return None
 
 
-# ── Search 1: X vs {ζ(3), π³} — minimal candidate basis ──────────
-basis_1_vals = [ZETA_3, PI ** 3]
-basis_1_names = ["ζ(3)", "π³"]
-relation_1 = pslq_search(X, basis_1_vals, basis_1_names)
-
-# ── Search 2: X vs {ζ(3), π³, π · log²(φ), log³(φ)} — adds ─────
-# golden-ratio terms (natural at ζ_5)
-basis_2_vals = [
-    ZETA_3,
-    PI ** 3,
-    PI * LOG_PHI ** 2,
-    LOG_PHI ** 3,
-]
-basis_2_names = ["ζ(3)", "π³", "π · log²(φ)", "log³(φ)"]
-relation_2 = pslq_search(X, basis_2_vals, basis_2_names)
-
-# ── Search 3: X vs full weight-3 candidate basis ─────────────────
-# Add: π · log²(2), π² · log(φ), π² · log(2), log³(2)
-basis_3_vals = [
-    ZETA_3,
-    PI ** 3,
-    PI * LOG_PHI ** 2,
-    LOG_PHI ** 3,
-    PI * LOG_2 ** 2,
-    PI ** 2 * LOG_PHI,
-    PI ** 2 * LOG_2,
-    LOG_2 ** 3,
-]
-basis_3_names = [
-    "ζ(3)", "π³", "π · log²(φ)", "log³(φ)",
-    "π · log²(2)", "π² · log(φ)", "π² · log(2)", "log³(2)",
-]
-relation_3 = pslq_search(X, basis_3_vals, basis_3_names)
-
-
 def format_relation(rel, target_str, basis_names):
     """Format a PSLQ relation as a readable equation."""
     if rel is None:
@@ -125,12 +76,63 @@ def format_relation(rel, target_str, basis_names):
 
 
 def main() -> None:
+    # Capture start time BEFORE the heavy PSLQ computation so the
+    # witness's `durationMs` reflects real runtime (Copilot PR #635
+    # review).
+    start = time.monotonic()
+
+    # ── target: antisymmetric Cl_3 difference ────────────────
+    ZETA_5 = exp(mpc(0, 1) * 2 * pi / mpf(5))
+    CL_3_2PI5 = re(polylog(3, ZETA_5))
+    CL_3_4PI5 = re(polylog(3, ZETA_5 ** 2))
+    X = CL_3_2PI5 - CL_3_4PI5
+
+    # ── candidate basis ──────────────────────────────────────
+    PHI = (1 + sqrt(5)) / 2  # golden ratio — natural at ζ_5
+    ZETA_3 = zeta(3)
+    PI = pi
+    LOG_PHI = log(PHI)
+    LOG_2 = log(2)
+
+    # ── Search 1: X vs {ζ(3), π³} — minimal candidate basis ──
+    basis_1_vals = [ZETA_3, PI ** 3]
+    basis_1_names = ["ζ(3)", "π³"]
+    relation_1 = pslq_search(X, basis_1_vals, basis_1_names)
+
+    # ── Search 2: X vs {ζ(3), π³, π · log²(φ), log³(φ)} ──────
+    # adds golden-ratio terms (natural at ζ_5)
+    basis_2_vals = [
+        ZETA_3,
+        PI ** 3,
+        PI * LOG_PHI ** 2,
+        LOG_PHI ** 3,
+    ]
+    basis_2_names = ["ζ(3)", "π³", "π · log²(φ)", "log³(φ)"]
+    relation_2 = pslq_search(X, basis_2_vals, basis_2_names)
+
+    # ── Search 3: X vs full weight-3 candidate basis ─────────
+    basis_3_vals = [
+        ZETA_3,
+        PI ** 3,
+        PI * LOG_PHI ** 2,
+        LOG_PHI ** 3,
+        PI * LOG_2 ** 2,
+        PI ** 2 * LOG_PHI,
+        PI ** 2 * LOG_2,
+        LOG_2 ** 3,
+    ]
+    basis_3_names = [
+        "ζ(3)", "π³", "π · log²(φ)", "log³(φ)",
+        "π · log²(2)", "π² · log(φ)", "π² · log(2)", "log³(2)",
+    ]
+    relation_3 = pslq_search(X, basis_3_vals, basis_3_names)
+
     print("=" * 72)
     print("PSLQ relation search for Cl_3(2π/5) - Cl_3(4π/5)")
     print("=" * 72)
     print(f"Target X = Cl_3(2π/5) - Cl_3(4π/5) = {X}")
     print(f"Working precision: {mp.dps} decimal digits")
-    print(f"PSLQ tolerance: 1e-45")
+    print(f"PSLQ tolerance: dynamic (mp.dps-5 digits) = 10^-{mp.dps - 5}")
     print(f"Max integer coefficient norm: 1e8")
     print()
 
@@ -216,14 +218,15 @@ def main() -> None:
         ),
     }
     # WitnessBuilder.wrap_legacy preserves on-disk layout while adding
-    # canonical metadata (scriptHash, commitSha, computedAt, etc.) per
-    # Copilot PR #634 review.
+    # canonical metadata.  `_start_time` override captures real
+    # compute runtime per Copilot PR #635 review.
     builder = WitnessBuilder.wrap_legacy(
         "cl3-zeta5-pslq-search",
         witness,
         script_path=__file__,
         engine="mpmath",
     )
+    builder._start_time = start
     out = builder.save()
     print(f"\nwitness: {out}")
 

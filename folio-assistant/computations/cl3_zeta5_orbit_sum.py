@@ -31,9 +31,8 @@ Output: cl3-zeta5-orbit-sum.witness.json next to this file.
 """
 from __future__ import annotations
 
-import json
+import time
 from datetime import datetime, timezone
-from pathlib import Path
 
 from mpmath import mp, mpf, mpc, pi, exp, polylog, re, im, zeta
 from mpmath import fabs as mpabs
@@ -42,26 +41,30 @@ from witness_base import WitnessBuilder
 
 mp.dps = 50
 
-# ── inputs ────────────────────────────────────────────────────────
-ZETA_5 = exp(mpc(0, 1) * 2 * pi / mpf(5))
-ZETA_5_SQ = ZETA_5 ** 2
-
-# ── compute Cl_3(2π/5) and Cl_3(4π/5) directly ───────────────────
-CL_3_2PI5 = re(polylog(3, ZETA_5))
-CL_3_4PI5 = re(polylog(3, ZETA_5_SQ))
-
-# ── orbit sum identity: 2 (Cl_3(2π/5) + Cl_3(4π/5)) = -24 ζ(3) / 25
-ZETA_3 = zeta(3)
-PREDICTED_ORBIT_SUM = -mpf(12) * ZETA_3 / mpf(25)
-
-ACTUAL_ORBIT_SUM = CL_3_2PI5 + CL_3_4PI5
-ORBIT_SUM_RESIDUAL = mpabs(ACTUAL_ORBIT_SUM - PREDICTED_ORBIT_SUM)
-
-# ── antisymmetric (genuinely-new depth-3) generator ──────────────
-CL_3_DIFFERENCE = CL_3_2PI5 - CL_3_4PI5
-
 
 def main() -> None:
+    # Capture start time BEFORE the heavy computation so the witness's
+    # `durationMs` reflects real runtime (Copilot PR #635 review).
+    start = time.monotonic()
+
+    # ── inputs ────────────────────────────────────────────────────
+    ZETA_5 = exp(mpc(0, 1) * 2 * pi / mpf(5))
+    ZETA_5_SQ = ZETA_5 ** 2
+
+    # ── compute Cl_3(2π/5) and Cl_3(4π/5) directly ──────────────
+    CL_3_2PI5 = re(polylog(3, ZETA_5))
+    CL_3_4PI5 = re(polylog(3, ZETA_5_SQ))
+
+    # ── orbit sum identity: 2 (Cl_3(2π/5) + Cl_3(4π/5)) = -24 ζ(3) / 25
+    ZETA_3 = zeta(3)
+    PREDICTED_ORBIT_SUM = -mpf(12) * ZETA_3 / mpf(25)
+
+    ACTUAL_ORBIT_SUM = CL_3_2PI5 + CL_3_4PI5
+    ORBIT_SUM_RESIDUAL = mpabs(ACTUAL_ORBIT_SUM - PREDICTED_ORBIT_SUM)
+
+    # ── antisymmetric (genuinely-new depth-3) generator ─────────
+    CL_3_DIFFERENCE = CL_3_2PI5 - CL_3_4PI5
+
     print("=" * 72)
     print("Cl_3 orbit-sum identity at ζ_5 — depth-3 reduction")
     print("=" * 72)
@@ -136,14 +139,16 @@ def main() -> None:
         ),
     }
     # WitnessBuilder.wrap_legacy preserves on-disk layout while adding
-    # canonical metadata (scriptHash, commitSha, computedAt, etc.) per
-    # Copilot PR #634 review.
+    # canonical metadata (scriptHash, commitSha, computedAt, etc.).
+    # `_start_time` override captures real compute runtime per
+    # Copilot PR #635 review.
     builder = WitnessBuilder.wrap_legacy(
         "cl3-zeta5-orbit-sum",
         witness,
         script_path=__file__,
         engine="mpmath",
     )
+    builder._start_time = start
     out = builder.save()
     print(f"\nwitness: {out}")
 
