@@ -98,12 +98,14 @@ quadratic relation and the Markov axiom evaluate to the same
 $\tau$ value on a given $\beta$.
 
 **Step 2: All probed conventions respect $\tau$.**  Each of the
-six brane-tower convention families in PR #638 (scalar uniform-$k$,
-$\ell n_0 + k$, per-eigenvalue operator-valued, multiplicity /
-Type-B-fold, pair-knot product-volume, pair-knot Markov-trace) is
-a regularization of the divergent analytic $\Phi_q$ tower — none
-of them VARY the categorical trace $\tau(\beta_{\mathfrak{H}})$;
-they only differ in how the divergent tower is regularized.
+six brane-tower convention families probed in
+[`conj:brane-tower-z-habiro`](#conj:brane-tower-z-habiro) §"Closure"
+(scalar uniform-$k$, $\ell n_0 + k$, per-eigenvalue operator-valued,
+multiplicity / Type-B-fold, pair-knot product-volume, pair-knot
+Markov-trace) is a regularization of the divergent analytic $\Phi_q$
+tower — none of them VARY the categorical trace
+$\tau(\beta_{\mathfrak{H}})$; they only differ in how the divergent
+tower is regularized.
 
 **Step 3: $\Delta_{\mathrm{cat}}$ is convention-independent.**
 From Steps 1+2: any two probed conventions yield the same
