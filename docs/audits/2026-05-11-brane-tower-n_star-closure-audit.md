@@ -233,6 +233,43 @@ product-volume convention.  Whether the Markov-trace refinement
 restores the symmetry is one of the assertions of the family-5
 refinement probe.
 
+## Canonical ⁴He |tr_M| via `markov_peel` recursive (B.2 closure, 2026-05-11)
+
+User pushback: "where optimize ⁴He? are you using cached/recursion
+/full compute infra?" — I was building Hoefsmit seminormal matrices
+when [`markov_peel.tr_M_atomic`](../../folio-assistant/computations/markov_peel.py)
+(Gröbner-Shirshov reduction + Markov-axiom recursive peeling, with
+`@functools.lru_cache` on per-nucleon NFs) bypasses matrix
+construction entirely.
+
+[`probe_tr_m_he4_canonical.py`](../../folio-assistant/computations/probe_tr_m_he4_canonical.py)
+([witness](../../folio-assistant/computations/tr-m-he4-canonical.witness.json))
+runs `tr_M_atomic(2, 2, include_inter=True)` symbolically, then
+evaluates at $q_0$ with `mpmath` at 50dps. **NO FLOAT64** in the
+pipeline.
+
+Result: in **8.5 seconds**
+
+$$
+  |\mathrm{tr}_M(\beta_{^4\mathrm{He}})| \;=\; 0.05534834587669798511841\ldots
+  \quad \text{(50 dps)}
+$$
+
+Compare to the deprecated disjoint-word value in
+`chi-helium-4-h12.witness.json`: $0.05534834587669884$. Relative
+difference $1.54 \times 10^{-14}$ — **float64 precision floor**.
+The disjoint-word value was correct at float64 precision after all
+(an empirical accident of the $Z=N=2$ doubly-magic symmetry); the
+warning in `atomic_tr_m_helium4.py` about "deprecated convention"
+is correct for general atomic braids but happens to agree for ⁴He
+at the float64 level.
+
+**Consequence:** the ⁴He data point at $-19.4\%$ in the family 5
+pair-knot probe ([brane-tower-z-habiro.md §"Pair-knot magic-shell
+probe"](../../content/quantum-observable-universe/braids-and-knots/brane-tower-z-habiro.md))
+**stands unchanged** when re-computed with the canonical ⁴He
+|tr_M| at 50dps. The closest-to-closure finding is robust.
+
 ## Status of the surviving open paths (D-phase scoping, 2026-05-11)
 
 ### D.1 — Algebraic Cauchy-limit half (open, in flight on #639)
