@@ -410,6 +410,10 @@ export default chapter({
         "cyclotomic-cl3-orbit-sum-general",
         // Dimension synthesis: (K-3)/2 genuinely-new at each prime K.
         "cyclotomic-depth3-dimension-synthesis",
+        // General-depth theorems: Jonquière Tate-rationality + orbit-sum + dim.
+        "jonquiere-cyclotomic-tate-rationality",
+        "cyclotomic-orbit-sum-all-depths",
+        "cyclotomic-dimension-synthesis-all-depths",
         // Hecke-algebra Baer-* foundation (generic q).
         "hecke-baer-star-generic",
         // Explicit central primitive idempotents via Murphy elements.

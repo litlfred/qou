@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-11T21:07:09.811665+00:00",
-  "commitSha": "c5ba9f0fcdfe821c2d2a4586e2171db1893d2764",
+  "computedAt": "2026-05-11T21:07:11.708944+00:00",
+  "commitSha": "8c9829e6926887d9276281445e31c3578f55683d",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,7 +559,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
@@ -2177,6 +2177,7 @@
         "joint-tower-sdp-h3.witness.json",
         "joint-tower-sdp-h6-h9.witness.json",
         "joint-tower-sdp-rust.witness.json",
+        "jonquiere-cyclotomic-general.witness.json",
         "kashaev-integration-identity.witness.json",
         "kazhdan-lusztig-canonical-basis.witness.json",
         "kite-tail-reconciliation.witness.json",
