@@ -73,17 +73,17 @@ theorem summable_q_inv_geometric {q : ℝ} (hq : 1 < q) :
     summable_geometric_of_lt_one hq_inv_nonneg hq_inv_lt_one
   -- Rewrite q^(-(k+1)) = (1/q)^(k+1) = (1/q) · (1/q)^k
   -- and multiply by the constant 1/q
+  have hq_ne : q ≠ 0 := hq_pos.ne'
   have heq : (fun k : ℕ => q ^ (-((k : ℤ) + 1))) =
       (fun k : ℕ => (1 / q) * (1 / q) ^ k) := by
     funext k
-    rw [zpow_neg, zpow_natCast, ← one_div]
-    -- q^(k+1) = q * q^k, so 1/q^(k+1) = (1/q) · (1/q^k) = (1/q)(1/q)^k
-    have : (q : ℝ) ^ ((k : ℤ) + 1) = q * q ^ k := by
-      rw [zpow_add_one₀ (ne_of_gt hq_pos), zpow_natCast]
-    -- Ref: [habiro2002] §2 q-Pochhammer convergence (std analysis)
-    -- Ref: [manuscript] prop:beta-decay-energy-scale §"calibration cross-check"
-    sorry  -- mechanical Mathlib zpow_neg + zpow_natCast normalization;
-           -- conceptual content (geometric series with ratio 1/q) is complete
+    -- Step 1: normalize (k : ℤ) + 1 = ((k+1 : ℕ) : ℤ) for zpow_natCast.
+    have key_cast : (((k : ℤ) + 1)) = ((k + 1 : ℕ) : ℤ) := by push_cast; ring
+    -- Step 2: rewrite q^(-(k+1)) = (q^(k+1))⁻¹ = (q * q^k)⁻¹.
+    rw [key_cast, zpow_neg, zpow_natCast, pow_succ]
+    -- Goal becomes: (q * q^k)⁻¹ = (1/q) * (1/q)^k
+    rw [mul_inv, ← one_div, ← one_div, ← inv_pow, ← one_div]
+    ring
   rw [heq]
   exact h_geom.mul_left (1 / q)
 
@@ -121,25 +121,40 @@ theorem quantumDilog_factors_nonzero
     ∀ k : ℕ, (1 - q ^ (-((k : ℤ) + 1)) * z) ≠ 0 := by
   intro k
   have hq_pos : 0 < q := lt_trans zero_lt_one hq
-  -- |q^(-(k+1)) z| = q^(-(k+1)) |z| < q^(-(k+1)) · q ≤ 1
-  -- so 1 - q^(-(k+1)) z ≠ 0 (it's between 0 and 2)
+  have hq_ne : q ≠ 0 := hq_pos.ne'
+  -- |q^(-(k+1)) z| = q^(-(k+1)) |z| < q^(-(k+1)) · q = q^(-k) ≤ 1
+  -- so 1 - q^(-(k+1)) z ≠ 0 (it's strictly between 0 and 2).
   intro h
-  -- 1 = q^(-(k+1)) z = q^(-(k+1)) · z
-  have habs : |q ^ (-((k : ℤ) + 1)) * z| < 1 := by
-    -- |q^(-(k+1))| = q^(-(k+1)) since q > 0
-    rw [abs_mul]
-    rw [abs_zpow]
-    rw [abs_of_pos hq_pos]
-    -- |q^(-(k+1))| · |z| = q^(-(k+1)) · |z| < q^(-(k+1)) · q
-    --                                       = q^(-k) ≤ q^0 = 1 for k ≥ 0
-    -- Ref: [habiro2002] §2 q-Pochhammer (std analysis)
-    -- Ref: [manuscript] prop:beta-decay-energy-scale §"calibration cross-check"
-    sorry  -- Mathlib zpow_le_one_of_neg_exp pattern; conceptual:
-           -- q^{-k-1} · q ≤ 1 for q > 1 and k ≥ 0
-  -- 1 - q^(-(k+1)) z = 0 ⟹ |q^(-(k+1)) z| = 1, contradicting habs
-  have : q ^ (-((k : ℤ) + 1)) * z = 1 := by linarith
-  have : |q ^ (-((k : ℤ) + 1)) * z| = 1 := by
-    rw [this]; exact abs_one
+  -- Strategy: derive |q^(-(k+1)) z| < 1 and then contradict with the
+  -- consequence of 1 - q^(-(k+1)) z = 0.
+  have hz_pos_factor : 0 < q ^ (-((k : ℤ) + 1)) := zpow_pos hq_pos _
+  -- Step 1: q^(-(k+1)) · |z| < q^(-(k+1)) · q
+  have step1 : q ^ (-((k : ℤ) + 1)) * |z| < q ^ (-((k : ℤ) + 1)) * q :=
+    (mul_lt_mul_left hz_pos_factor).mpr hz
+  -- Step 2: q^(-(k+1)) · q = q^(-k).
+  have step2 : q ^ (-((k : ℤ) + 1)) * q = q ^ (-(k : ℤ)) := by
+    have : (q : ℝ) ^ (-((k : ℤ) + 1)) * q ^ (1 : ℤ) = q ^ (-((k : ℤ) + 1) + 1) :=
+      (zpow_add₀ hq_ne _ _).symm
+    rw [zpow_one] at this
+    rw [this]
+    congr 1; ring
+  -- Step 3: q^(-k) ≤ 1 (since q ≥ 1 and -k ≤ 0).
+  have step3 : q ^ (-(k : ℤ)) ≤ 1 := by
+    rw [show -((k : ℤ)) = -((k : ℕ) : ℤ) from rfl, zpow_neg, zpow_natCast]
+    apply inv_le_one_of_one_le₀
+    exact one_le_pow₀ hq.le
+  -- Combine: q^(-(k+1)) · |z| < 1
+  have habs : q ^ (-((k : ℤ) + 1)) * |z| < 1 := by
+    calc q ^ (-((k : ℤ) + 1)) * |z|
+        < q ^ (-((k : ℤ) + 1)) * q := step1
+      _ = q ^ (-(k : ℤ)) := step2
+      _ ≤ 1 := step3
+  -- Now: 1 - q^(-(k+1)) z = 0 implies q^(-(k+1)) z = 1, so its absolute
+  -- value is 1, contradicting habs.
+  have prod_eq_one : q ^ (-((k : ℤ) + 1)) * z = 1 := by linarith
+  have abs_eq_one : |q ^ (-((k : ℤ) + 1)) * z| = 1 := by
+    rw [prod_eq_one]; exact abs_one
+  rw [abs_mul, abs_zpow, abs_of_pos hq_pos] at abs_eq_one
   linarith
 
 /-! ## Gap 4 status summary
@@ -147,10 +162,10 @@ theorem quantumDilog_factors_nonzero
 What's now proved (this file):
 
   * `summable_q_inv_geometric` — Σ q^{-k} converges for 1 < q
-    (modulo one algebraic step left as sorry, mechanical
-    Mathlib zpow normalization)
+    (zpow normalization closed via key_cast + mul_inv + inv_pow)
   * `quantumDilog_factors_nonzero` — each factor (1 - q^{-k} z)
-    is non-zero in the domain (modulo one Mathlib lookup)
+    is non-zero in the domain (closed via zpow_pos + zpow_add₀
+    + inv_le_one_of_one_le₀)
 
 What this implies (Mathlib chain, not done here):
 
