@@ -77,10 +77,13 @@ $$
   -\frac{N^2 - 1}{2 N^2}\, \zeta(3).
 $$
 
-For even $N$, the middle term $k = N/2$ gives $\mathrm{Cl}_3(\pi) = 0$
-(direct evaluation: $\sum_j \cos(j\pi)/j^3$ converges to a specific
-value... actually $\mathrm{Cl}_3(\pi) = -3\zeta(3)/4$, see below), and
-the other $(N - 2)/2$ pairs contribute symmetrically.  $\square$
+For even $N$, the middle term $k = N/2$ gives
+$\mathrm{Cl}_3(\pi) = \sum_{j \geq 1} \cos(j\pi)/j^3 =
+\sum_{j \geq 1} (-1)^j/j^3 = -\frac{3}{4}\zeta(3)$ (alternating
+Dirichlet series for $\zeta(3)$), and the other $(N - 2)/2$
+pairs contribute symmetrically.  The closed form then takes the
+form recorded above ($N = 2$ in the table below verifies
+$-\frac{3}{4}\zeta(3)$ directly).  $\square$
 
 ### Verifications at small $N$
 

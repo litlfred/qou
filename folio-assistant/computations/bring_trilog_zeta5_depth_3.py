@@ -190,8 +190,8 @@ def main() -> None:
         witness,
         script_path=__file__,
         engine="mpmath",
+        start_time=start,
     )
-    builder._start_time = start
     out = builder.save()
     print(f"\nwitness: {out}")
 

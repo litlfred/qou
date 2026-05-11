@@ -16,10 +16,12 @@ open QOU.Infra.Polylogarithm
 /-- **Proposition (`prop:cl3-zeta5-orbit-sum-identity`,
     arithmetic core).**
     Theorem B specialised at N = 5: `-((5² - 1)/5²) · ζ(3)
-    = -(24/25) · ζ(3)`. -/
+    = -(24/25) · ζ(3)`.  Per Copilot review: `field_simp` to
+    clear denominators before `ring`. -/
 theorem orbit_sum_identity (zeta3 : ℝ) :
     cl3OrbitSumPredicted 5 zeta3 = -(24 / 25) * zeta3 := by
   unfold cl3OrbitSumPredicted
+  field_simp
   ring
 
 end QOU.BraidKnot.Cl3Zeta5OrbitSum

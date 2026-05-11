@@ -21,10 +21,13 @@ noncomputable def imLi3Zeta5Value : ℝ := 4 * Real.pi ^ 3 / 125
 /-- **Proposition (`prop:bring-trilog-imaginary-tate-rational`,
     arithmetic core).**
     Theorem A specialised at K = 5: `(K-1)(K-2)π³/(3K³)` at K=5
-    reduces to `4·3·π³/(3·125) = 12 π³/375 = 4 π³/125` by `ring`. -/
+    reduces to `4·3·π³/(3·125) = 12 π³/375 = 4 π³/125`.  Per
+    Copilot review: `field_simp` to clear denominators before
+    `ring`. -/
 theorem im_li3_zeta5_closed_form :
     imLi3ZetaPredicted 5 = imLi3Zeta5Value := by
   unfold imLi3ZetaPredicted imLi3Zeta5Value
+  field_simp
   ring
 
 end QOU.BraidKnot.BringTrilogImaginaryTateRational

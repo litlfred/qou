@@ -59,10 +59,15 @@ noncomputable def cl3OrbitSumPredicted (N : ℕ) (zeta3 : ℝ) : ℝ :=
 noncomputable def beta3 : ℝ := Real.pi ^ 3 / 32
 
 /-- **Arithmetic core of `prop:cyclotomic-l-value-decomposition`.**
-    Theorem A specialised at `K = 4` equals `β(3)`.  Proved by
-    pure `ring` arithmetic: `(3 · 2)/(3 · 64) = 6/192 = 1/32`. -/
+    Theorem A specialised at `K = 4` equals `β(3)`: the rational
+    coefficient `(3 · 2)/(3 · 64) = 6/192 = 1/32`.
+
+    Per Copilot review: `ring` alone may not close goals involving
+    division by numeric constants in every Mathlib version; clear
+    denominators with `field_simp` first, then `ring`. -/
 theorem beta3_from_jonquiere : imLi3ZetaPredicted 4 = beta3 := by
   unfold imLi3ZetaPredicted beta3
+  field_simp
   ring
 
 /-! ## Conditional-class wrappers for Theorems A and B -/
@@ -91,18 +96,17 @@ class TheoremA where
   /-- The witness value at `K = 4` is `β(3) = π³ / 32`. -/
   value_at_4 : imLi3ZetaPredicted 4 = beta3
 
-/-- **Trivial default instance for Theorem A.**
+/-- **Default instance for Theorem A — verified case only.**
 
-    Discharges `agrees_at` via a `True`-valued proposition and
-    `value_at_4` via the verified arithmetic.  This is the
-    canonical "vacuous" instance — it does *not* claim the
-    substantive identification of `Im Li_3(ζ_K)` with the closed
-    form (that's still conjectural).  Custom instances may
-    sharpen `agrees_at` to a stronger predicate when the
-    analytic equality is available. -/
+    Per Copilot review: an `agrees_at _ := True` default would
+    silently prove `agrees_at K` for every `K`, undermining the
+    conditional-class boundary that this class is meant to
+    enforce.  Restrict `agrees_at` to the **verified** index
+    `K = 4`; downstream consumers wanting larger `K` must furnish
+    their own (substantive) `TheoremA` instance. -/
 instance : TheoremA where
-  agrees_at _ := True
-  agrees_at_4 := trivial
+  agrees_at K := K = 4
+  agrees_at_4 := rfl
   value_at_4 := beta3_from_jonquiere
 
 /-- **Theorem B as a Lean class.**
@@ -123,16 +127,20 @@ class TheoremB where
   value_at_5 : cl3OrbitSumPredicted 5 zeta3_value =
       -(24 / 25) * zeta3_value
 
-/-- **Trivial default instance for Theorem B.**
+/-- **Default instance for Theorem B — verified case only.**
 
-    Takes `ζ(3)` symbolically (caller-supplied) and discharges
-    `agrees_at` trivially; the `N = 5` arithmetic is verified by
-    `ring`. -/
+    Same Copilot-noted concern as `TheoremA`: a `True`-valued
+    default would silently prove `agrees_at N` for every `N`.
+    Restrict to the verified index `N = 5`; the `N = 5`
+    arithmetic is verified by `field_simp; ring`. -/
 instance defaultTheoremB (zeta3 : ℝ) : TheoremB where
   zeta3_value := zeta3
-  agrees_at _ := True
-  agrees_at_5 := trivial
-  value_at_5 := by unfold cl3OrbitSumPredicted; ring
+  agrees_at N := N = 5
+  agrees_at_5 := rfl
+  value_at_5 := by
+    unfold cl3OrbitSumPredicted
+    field_simp
+    ring
 
 /-! ## Sample downstream theorem using `[TheoremA]` -/
 
