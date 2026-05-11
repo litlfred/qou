@@ -1,8 +1,13 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
+<<<<<<< HEAD
   "computedAt": "2026-05-10T08:18:54.642707+00:00",
   "commitSha": "0143a83d64947370457ceee3f610bc902d95a269",
+=======
+  "computedAt": "2026-05-11T03:47:23.893230+00:00",
+  "commitSha": "af2f4f6f051c7799d060252eb73bd27422e0c7bb",
+>>>>>>> 492f96bd (refresh witnesses for CI drift gate (Phase 2 + new probes propagation))
   "assertions": [
     {
       "name": "tail_in_ideal_mod_p[p (proton, A=1)/finite(2)]",
@@ -118,7 +123,11 @@
   "computation": "markov-substrate-realization",
   "scriptFile": "markov_substrate_realizer.py",
   "scriptHash": "503dcd61edf3",
+<<<<<<< HEAD
   "scriptCommitSha": "f17fc5d1108adc63f07ba0a5423ff2689faa0e81",
+=======
+  "scriptCommitSha": "ff32c71cb29854910445b88b522c54653824081f",
+>>>>>>> 492f96bd (refresh witnesses for CI drift gate (Phase 2 + new probes propagation))
   "description": "Place-by-place realization of the Habiro Markov trace via the Lean MotivicSubstrate.realize map: Place.infty → ℝ (numerical at q_0), Place.finite(p) → 𝔽_p[u] (mod-p coefficient reduction).  Free consistency check: the tail_in_ideal axiom is re-verified in 𝔽_p[u].",
   "contentBlock": "prop:full-pole-structure-mass-trace",
   "parameters": {

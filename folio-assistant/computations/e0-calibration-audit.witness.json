@@ -2,7 +2,7 @@
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "computation": "e0-calibration-audit",
   "description": "Audit of E_0 / Q_β(n) calibration constants across folio-assistant/computations. Reports value-precision drift, anchor-of-pinning violations vs CAL-3, and the PDG-derived uncertainty floor on every E_0-dependent quantity.",
-  "computedAt": "2026-05-10T18:26:34.147626+00:00",
+  "computedAt": "2026-05-11T17:06:42.460642+00:00",
   "reference_blocks": [
     "prop:three-calibration-inputs",
     "rem:calibration-inputs"
@@ -16,14 +16,31 @@
     "m_e_err_MeV": "1.5e-10"
   },
   "Q_beta_n": {
-    "value_MeV": "0.782333409999999999999999999952",
+    "value_MeV": "0.78233341",
     "abs_err_MeV": "0.00000061294373518292851542608324257",
-    "rel_err": "0.000000783481476501084768226993197961",
-    "rel_err_ppb": "783.481476501084768226993197961"
+    "rel_err": "0.000000783481476501084768226993197913",
+    "rel_err_ppb": "783.481476501084768226993197913"
   },
   "precision_floor": "Every E_0-dependent quantity inherits a relative uncertainty floor of 7.83e-7 (~783.0 ppb). 1 ppb is NOT physically achievable on these quantities without a tighter Q_β(n) measurement.",
   "findings_by_pattern": {
-    "literal_0_782": [],
+    "literal_0_782": [
+      {
+        "file": "folio-assistant/computations/derived_masses.py",
+        "line": 30,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "(vs CODATA 0.782; 0.75% err)",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/derived_masses.py",
+        "line": 278,
+        "pattern": "literal_0_782",
+        "match": "0.782",
+        "context": "\"0.788 MeV vs CODATA 0.782 MeV at 0.75%).\",",
+        "kind": "doc"
+      }
+    ],
     "literal_0_78233341": [
       {
         "file": "folio-assistant/computations/binding_canonical.py",
@@ -106,14 +123,6 @@
         "kind": "doc"
       },
       {
-        "file": "folio-assistant/computations/codata_constants.py",
-        "line": 37,
-        "pattern": "literal_0_78233341",
-        "match": "0.78233341",
-        "context": "Q_BETA_MEV = M_N_MEV - M_P_MEV - M_E_MEV  # ≈ 0.78233341 MeV",
-        "kind": "active"
-      },
-      {
         "file": "folio-assistant/computations/crt_markov.py",
         "line": 578,
         "pattern": "literal_0_78233341",
@@ -127,6 +136,22 @@
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
         "context": "\"β-decay calibration: E_0 = 0.78233341 / (|tr_M(n)| - |tr_M(p)|).\"",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/derive_e_0_lp_dual_h3.py",
+        "line": 216,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "codata = 0.78233341",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/derive_e_0_lp_dual_h3.py",
+        "line": 261,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "\"codata_Q_beta_MeV\": 0.78233341,",
         "kind": "doc"
       },
       {
@@ -342,6 +367,14 @@
         "kind": "doc"
       },
       {
+        "file": "folio-assistant/computations/derivation_chain.py",
+        "line": 268,
+        "pattern": "E_0_CALIBRATION_MEV",
+        "match": "E_0_CALIBRATION_MEV",
+        "context": "\"hecke_core.E_0_CALIBRATION_MEV (line 2922)\",",
+        "kind": "doc"
+      },
+      {
         "file": "folio-assistant/computations/hecke_characters.py",
         "line": 39,
         "pattern": "E_0_CALIBRATION_MEV",
@@ -428,6 +461,54 @@
         "match": "E_0_CALIBRATION_MEV",
         "context": "f\"hecke_core.E_0_CALIBRATION_MEV)\")",
         "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/phase3_triton_binding_convention_b.py",
+        "line": 30,
+        "pattern": "E_0_CALIBRATION_MEV",
+        "match": "E_0_CALIBRATION_MEV",
+        "context": "* E_0 = E_0_CALIBRATION_MEV from hecke_core (convention B; CAL-3",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/phase3_triton_binding_convention_b.py",
+        "line": 71,
+        "pattern": "E_0_CALIBRATION_MEV",
+        "match": "E_0_CALIBRATION_MEV",
+        "context": "E_0_CALIBRATION_MEV,",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/phase3_triton_binding_convention_b.py",
+        "line": 90,
+        "pattern": "E_0_CALIBRATION_MEV",
+        "match": "E_0_CALIBRATION_MEV",
+        "context": "print(f\"\\n  E_0 (convention B) = {float(E_0_CALIBRATION_MEV):.6f} MeV\")",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/phase3_triton_binding_convention_b.py",
+        "line": 125,
+        "pattern": "E_0_CALIBRATION_MEV",
+        "match": "E_0_CALIBRATION_MEV",
+        "context": "\"E_0_MeV\": float(E_0_CALIBRATION_MEV),",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/phase3_triton_binding_convention_b.py",
+        "line": 165,
+        "pattern": "E_0_CALIBRATION_MEV",
+        "match": "E_0_CALIBRATION_MEV",
+        "context": "\"E_0_MeV\": float(E_0_CALIBRATION_MEV),",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/phase3_triton_binding_convention_b.py",
+        "line": 166,
+        "pattern": "E_0_CALIBRATION_MEV",
+        "match": "E_0_CALIBRATION_MEV",
+        "context": "\"E_0_source\": \"hecke_core.E_0_CALIBRATION_MEV = Q_β CODATA\",",
+        "kind": "doc"
       }
     ],
     "Q_BETA_MEV": [
@@ -449,51 +530,139 @@
       },
       {
         "file": "folio-assistant/computations/codata_constants.py",
-        "line": 13,
+        "line": 21,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
-        "context": "from codata_constants import M_E_MEV, M_P_MEV, M_N_MEV, Q_BETA_MEV",
+        "context": "| CAL-3 | Q_β(n)               | Q_BETA_MEV           | cal-3-q-beta.witness.json               |",
         "kind": "doc"
       },
       {
         "file": "folio-assistant/computations/codata_constants.py",
-        "line": 33,
+        "line": 100,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
-        "context": "# By construction: M_N_MEV = M_P_MEV + M_E_MEV + Q_BETA_MEV",
-        "kind": "doc"
-      },
-      {
-        "file": "folio-assistant/computations/codata_constants.py",
-        "line": 37,
-        "pattern": "Q_BETA_MEV",
-        "match": "Q_BETA_MEV",
-        "context": "Q_BETA_MEV = M_N_MEV - M_P_MEV - M_E_MEV  # ≈ 0.78233341 MeV",
+        "context": "Q_BETA_MEV = _load_mpf(_CAL3_WITNESS, \"data.Q_beta_n_MeV\")",
         "kind": "active"
       },
       {
         "file": "folio-assistant/computations/codata_constants.py",
-        "line": 56,
+        "line": 101,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
-        "context": "Q_BETA_MEV_ERR = mp.sqrt(",
+        "context": "Q_BETA_MEV_ERR = _load_mpf(_CAL3_WITNESS, \"data.Q_beta_n_MeV_err\")",
         "kind": "active"
       },
       {
         "file": "folio-assistant/computations/codata_constants.py",
-        "line": 61,
+        "line": 130,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
-        "context": "\"M_E_MEV\", \"M_P_MEV\", \"M_N_MEV\", \"Q_BETA_MEV\",",
+        "context": "_q_beta_residual = abs(Q_BETA_MEV - _q_beta_from_codata_check)",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/codata_constants.py",
+        "line": 135,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "+ Q_BETA_MEV_ERR ** 2",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/codata_constants.py",
+        "line": 189,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "\"Q_BETA_MEV\", \"Q_BETA_MEV_ERR\",",
         "kind": "doc"
       },
       {
         "file": "folio-assistant/computations/codata_constants.py",
-        "line": 63,
+        "line": 189,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
-        "context": "\"M_E_MEV_ERR\", \"M_P_MEV_ERR\", \"M_N_MEV_ERR\", \"Q_BETA_MEV_ERR\",",
+        "context": "\"Q_BETA_MEV\", \"Q_BETA_MEV_ERR\",",
         "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/derived_masses.py",
+        "line": 102,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "from codata_constants import M_E_MEV, Q_BETA_MEV  # noqa: F401  (re-export)",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/derived_masses.py",
+        "line": 318,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "\"CAL-3_Q_beta_MeV\": str(Q_BETA_MEV) + \" (cross-check only; predicted by framework below)\",",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/probe_beta_decay_n1_brane_tower.py",
+        "line": 130,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "from codata_constants import Q_BETA_MEV",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/probe_beta_decay_n1_brane_tower.py",
+        "line": 131,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "q_codata = mp.mpf(str(Q_BETA_MEV))",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/probe_beta_decay_residue_sum_h3.py",
+        "line": 119,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "from codata_constants import M_E_MEV, Q_BETA_MEV  # noqa: E402",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/probe_beta_decay_residue_sum_h3.py",
+        "line": 196,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "q_codata = mp.mpf(str(Q_BETA_MEV))",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/probe_q_beta_residue_per_nucleon.py",
+        "line": 34,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "from codata_constants import M_E_MEV, Q_BETA_MEV  # noqa: E402",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/probe_q_beta_residue_per_nucleon.py",
+        "line": 110,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "q_codata = mp.mpf(str(Q_BETA_MEV))",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/q_beta_predicted.py",
+        "line": 50,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "from codata_constants import M_E_MEV, Q_BETA_MEV  # noqa: E402",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/q_beta_predicted.py",
+        "line": 70,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "q_codata = mp.mpf(str(Q_BETA_MEV))",
+        "kind": "active"
       }
     ],
     "proton_mass_anchor": [
@@ -516,5 +685,5 @@
     ]
   },
   "inconsistencies": [],
-  "achievable_precision_floor_ppb": "783.481476501084768226993197961"
+  "achievable_precision_floor_ppb": "783.481476501084768226993197913"
 }
