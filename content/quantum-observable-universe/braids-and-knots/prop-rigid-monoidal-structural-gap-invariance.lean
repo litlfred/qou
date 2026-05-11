@@ -166,19 +166,46 @@ theorem structural_gap_convention_independent
 
 -- Ref: [manuscript] prop:rigid-monoidal-structural-gap-invariance §"Status"
 
-/-- **Tautological skeleton instance.**  Sets `categorical_trace ≡ 0`.
-    The `convention_factorisation` field requires that every
-    operator-volume convention agrees with the zero categorical
-    trace — i.e. `c.markov_trace β = 0` for every `c` and `β`.
-    This is **not** derivable in the skeleton (different
-    conventions can have any `markov_trace` field); it's an
-    axiomatic placeholder marked `sorry` per §3b convention.
+/-! ### Mathlib LP-duality integration sketch
 
-    Real instances replace this with Jones-Wenzl uniqueness
-    of the Markov trace on `H_n(q)` (Jones 1985, Wenzl 1988) +
-    the canonical Hopf-antipode invariance — both of which
-    require Mathlib quantum-group infrastructure not yet in
-    scope.  The `sorry` here is the §3b conjecture marker. -/
+The `convention_factorisation` axiom of
+`RigidMonoidalStructuralGapInvariance` requires that every
+operator-volume convention's `markov_trace` agrees with the
+categorical Markov trace `τ` on `H_n(q)`.  In Lean, the genuine
+discharge proceeds in three structural layers:
+
+  **Layer 1 — Markov trace uniqueness (Jones 1985, Wenzl 1988).**
+  Any functional `τ : H_n(q) → ℂ_q` satisfying M1 (cyclicity), M2
+  (Markov axiom `τ^(n)(x σ_{n-1}) = z · τ^(n-1)(x)`), and M3
+  (`τ(1) = 1`) on the Iwahori-Hecke algebra is uniquely
+  determined.  Mathlib's `LinearAlgebra.Trace` infrastructure
+  provides cyclicity (M1); the Hecke quadratic + Markov axiom
+  recursion would need an additional `MarkovTraceAxiomatic` typeclass
+  (proposed but not in Mathlib).  Concretely: `MarkovTrace H_n(q)`
+  becomes a singleton up to scaling, and the operator-selection
+  LP machinery (`prop:operator-selection-lp`) extends to its
+  PSD-cone formulation via Mathlib's `Matrix.PosSemidef`.
+
+  **Layer 2 — Spin-involution invariance (S = Hopf antipode).**
+  `pair_knot_Z_N_trace_invariance` in
+  `spin-involution-lp-dual-invariance.lean` (this branch) proves
+  `τ ∘ S = τ` directly from the `SpinInvolution.trace_invariant`
+  field — already discharged, no Mathlib infrastructure needed.
+
+  **Layer 3 — Convention factorisation.**  Given Layer 1, any
+  operator-volume convention whose `markov_trace` satisfies M1-M3
+  + Hecke quadratic relation must equal `τ`.  The skeleton
+  instance below records the §3b `sorry` for the Layer-1
+  uniqueness step; Layers 2-3 follow.
+
+The Mathlib-LP integration is therefore staged: Layer 2 is
+production-Lean; Layer 1 needs the proposed `MarkovTraceAxiomatic`
+typeclass; Layer 3 then follows by structural induction on the
+Hecke quadratic relation. -/
+
+/-- **Tautological skeleton instance.**  Sets `categorical_trace ≡ 0`.
+    The §3b `sorry` marks the Layer-1 Jones-Wenzl uniqueness step
+    discussed above. -/
 -- Ref: [manuscript] prop:rigid-monoidal-structural-gap-invariance §"Skeleton"
 -- Ref: [jones1985] V. Jones, BAMS 12.1 (1985)
 -- Ref: [wenzl1988] H. Wenzl, Invent. Math. 92 (1988)
@@ -186,9 +213,12 @@ instance canonical (α : Type*) :
     RigidMonoidalStructuralGapInvariance α where
   categorical_trace _ := (0 : ℝ)
   convention_factorisation _ _ := by
-    -- Axiomatic placeholder per §3b conditional-class convention.
-    -- Genuine instances supply Jones-Wenzl uniqueness +
-    -- categorical-trace identification.
+    -- §3b axiomatic placeholder for Layer-1 Markov-trace
+    -- uniqueness.  See "Mathlib LP-duality integration sketch"
+    -- comment block above for the staged-discharge plan
+    -- (Layer 1: Mathlib `MarkovTraceAxiomatic` typeclass;
+    --  Layer 2: `pair_knot_Z_N_trace_invariance` — done;
+    --  Layer 3: structural induction on Hecke quadratic).
     sorry
 
 end QOU.BraidKnot

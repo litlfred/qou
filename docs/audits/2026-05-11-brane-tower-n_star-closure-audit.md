@@ -201,7 +201,7 @@ Notable structural finding: $\mathrm{tr}_M(\sigma_{pp}) = \mathrm{tr}_M(\sigma_{
 
 This is the operator-level $Z \leftrightarrow N$ isospin symmetry the
 LP-dual was pointing at.  The $1.326\times$ ratio asymmetry seen in
-family 5's $\Delta_{\text{shell}}$ calibration was an artifact of
+family 5's $\Delta_{\text{shell}}$ residual extraction was an artifact of
 the product-volume convention $|\hat V_{\text{shell}}| =
 \prod_{i} |\hat V_i|$ — the actual Markov-trace value is identical
 for both magic shells because the two shell sub-braids are
@@ -377,6 +377,52 @@ on Claim 1 of `conj:brane-tower-z-habiro`. Coordination intent
 posted [on #639](https://github.com/litlfred/qou/pull/639#issuecomment-4423678285);
 my refutation theorems will integrate with the
 `RecoversWithRelativeError` predicate after #639 merges (Phase B.3).
+
+### D.3 — `markov_peel` optimization for heavy atoms (scoping, deferred to follow-up)
+
+`markov_peel.tr_M_atomic` runs in **8.5 seconds for ⁴He** (n=12,
+47 crossings) but **timed out at 5 minutes for ¹⁶O** (n=48, ~80
+crossings).  The bottleneck is **Gröbner-Shirshov reduction in
+`H_n(q)`** at large n: each `incremental_reduced_element` step
+reduces in the full algebra, which grows exponentially with n.
+Per-nucleon NF caching via `@functools.lru_cache(maxsize=4)` on
+`_nucleon_nf_and_trace` is already in place but only amortises
+the intra-nucleon work.
+
+**Candidate optimizations** (for a future PR):
+
+1. **Crystal-bases replacement of Gröbner-Shirshov** (canonical
+   approach — CLAUDE.md §7b).  Replace incremental GS reduction in
+   `H_n(q)` with reduction via the **Kazhdan-Lusztig / Kashiwara
+   canonical basis**.  The KL basis has *direct combinatorial
+   structure* (i-strings on standard Young tableaux) that makes
+   Markov-trace evaluation polynomial in the partition data,
+   bypassing the exponential algebra-rank growth of naive GS.
+   Decategorifies to the KLR canonical basis on the categorified
+   side (CLAUDE.md §7b "decategorifying to KL bases for the
+   classical limit").  This is the natural canonical approach;
+   GS is the operational fallback.
+
+2. **Stratified reduction.** Reduce within each nucleon-strand
+   block first, then combine inter-nucleon crossings in a smaller
+   "reduced" algebra.  Could reduce the effective n at each step
+   to ~3A · (1 + log A) instead of full 3A.
+
+3. **Tensor-product factorisation.** For disjoint sub-braids,
+   `tr_M(α ⊗ β) = tr_M(α) · tr_M(β)` (when the strand sets are
+   disjoint).  Apply between nucleon-strand blocks; the
+   inter-nucleon crossings are the only coupling terms.
+
+4. **Parallelization over partitions.** For the Wedderburn-sum
+   path, distribute per-partition `χ^λ_q` computation across
+   workers (`y_lambda_at` already supports this).
+
+For PR #638 closure scope, ¹⁶O is not required — the AME light-
+isotope sample $\{D, T, ^3\mathrm{He}, ^4\mathrm{He}\}$ already
+delivers the refutation across six probe families.  ¹⁶O / ⁴⁰Ca
+predictions remain as falsifiability tests for the magic-shell
+stabilization conjecture's higher-magic-number behaviour, queued
+behind the optimisation work.
 
 ### D.2 — Other AME isotopes (scoping, deferred to follow-up)
 

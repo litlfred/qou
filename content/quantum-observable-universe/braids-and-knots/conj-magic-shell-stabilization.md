@@ -57,9 +57,12 @@ occupancy and satisfying:*
    $\mathrm{tr}_M(\sigma_{pp}) = \mathrm{tr}_M(\sigma_{nn})$ from
    [`prop:spin-involution-lp-dual-invariance` §"Corollary (pair-knot
    $Z \leftrightarrow N$ symmetry)"](#prop:spin-involution-lp-dual-invariance)).
-3. ***Substrate-derived:*** $\Delta_{\mathrm{shell}}(Z, N)$ is a
-   function of the magic-shell sub-braid $\sigma_{\mathrm{shell}}$
-   and its Hecke-algebra invariants only — no per-atom calibration.
+3. ***Substrate-derived (no calibration):*** $\Delta_{\mathrm{shell}}(Z, N)$
+   is a function of the magic-shell sub-braid $\sigma_{\mathrm{shell}}$
+   and its Hecke-algebra invariants only — **predicted** from
+   substrate data, not tuned to per-atom data.  Consistent with
+   the three-calibration discipline (only $m_e$, $q_0$, $Q_\beta$
+   are calibration anchors).
 
 The corrected formula $B^{\star}$ closes the AME light-isotope
 sample $\{D, T, {}^3\mathrm{He}, {}^4\mathrm{He}\}$ to within
@@ -69,7 +72,9 @@ $\sim 5\%$.
 
 The closure work (PR #638) does not pin down the canonical operator-
 volume convention for the underlying $B(\mathfrak{H})$. Different
-conventions give different calibrations of $\Delta_{\mathrm{shell}}$:
+conventions give different **measured residuals** for
+$\Delta_{\mathrm{shell}}$ (residuals to be matched by the conjecture's
+prediction, not free parameters):
 
 | Convention | $\Delta_{\mathrm{shell}}(Z=2)$ from ³He | $\Delta_{\mathrm{shell}}(Z=N=2)$ from ⁴He | Z↔N consistent? |
 |:---|---:|---:|:---:|
@@ -86,9 +91,18 @@ $\Delta_{\mathrm{shell}}$ is well-defined and Z↔N-symmetric is
 
 ### Empirical status (2026-05-11, post-instantiation probe)
 
+**Terminology note:** the table below is a **residual-extraction
+measurement**, not a calibration in the
+[three-calibration discipline](#prop:atomic-mass-three-calibration-discipline)
+sense.  Only $m_e$ (CAL-1), $q_0$ (CAL-2), and $Q_\beta$ (CAL-3)
+are calibration anchors; $\Delta_{\mathrm{cat}}$ values are
+measured structural gaps that the conjecture obligates the
+framework to **predict** from substrate data, not free parameters
+to tune.
+
 [`probe_magic_shell_empirical_instantiation.py`](../../../folio-assistant/computations/probe_magic_shell_empirical_instantiation.py)
 ([witness](../../../folio-assistant/computations/magic-shell-empirical-instantiation.witness.json))
-computes per-atom $\Delta_{\mathrm{cat}}(\mathfrak{H}) :=
+extracts per-atom $\Delta_{\mathrm{cat}}(\mathfrak{H}) :=
 \mathrm{AME}(\mathfrak{H}) - m_e \cdot \rho \cdot
 |\tau(\beta_{\mathfrak{H}})|$ at 50dps using
 `markov_peel.tr_M_atomic`:
@@ -176,9 +190,9 @@ closures couple beyond simple addition.
   stabilization, since both Z=2 and N=2 shells contribute.)
 
 The sign discrepancy in the empirical $\Delta_{\mathrm{shell}}$
-calibration (negative for ³He, positive for ⁴He under product-
-volume; sign undetermined under Markov-trace) is the central
-empirical puzzle this conjecture seeks to resolve.
+residual (negative for ³He, positive for ⁴He under product-volume;
+sign undetermined under Markov-trace) is the central empirical
+puzzle this conjecture seeks to resolve.
 
 ## Relation to nuclear physics
 

@@ -678,3 +678,34 @@ witness data (`witness_refutes_scalar_uniform_k_form`,
 `nStar_all_probed_forms_refuted`); the conditional class
 `BraneTowerZHabiro` is kept for downstream conditional results that
 ride on the surviving algebraic claim.
+
+## Per-partition $k_\lambda$ refinement (sibling PR #639)
+
+[PR #639's `per-partition-k-lambda-rule.md`](https://github.com/litlfred/qou/pull/639)
+sharpens the closure direction beyond the multiplicity-refined
+scalar form: the failure of uniform-$k$ in the per-eigenvalue
+operator form is dominated by **one specific partition per atom**:
+
+| Atom | dominant $\lambda$ | $\dim V_\lambda$ | contrib at $k = 2$ | contrib at $k = 1$ |
+|:-:|---:|---:|---:|---:|
+| $D$ | $[2, 2, 1, 1]$ | $9$ | $-6.220$ | $\approx 0$ |
+| $T$ | $[6, 3]$ | $48$ | $-3.001$ | $+0.050$ |
+| ${}^3\mathrm{He}$ | $[5, 4]$ | $42$ | $-11.692$ | $-0.028$ |
+
+Re-assigning $k_\lambda = 1$ for the dominant partition while
+keeping $k_\lambda = 2$ elsewhere collapses each atom's tower
+magnitude below 2.  The surviving sharpened open form is
+**per-partition** $k_\lambda$: there should exist a substrate-
+derivable map $k_\lambda : \{\text{partitions of } 3A\} \to \mathbb{N}_{\geq 1}$
+producing AME closure under non-uniform Wedderburn-block
+truncation.
+
+This is consistent with the magic-shell pair-knot finding of this
+PR: $\sigma_{pp}, \sigma_{nn}$ activate distinct partitions (the
+Type-B-fixed locus) under the LP-dual, which is the natural home
+of a per-partition $k_\lambda$ rule.  The two refinements
+(per-partition $k_\lambda$ from #639 + magic-shell $\Delta_{\text{shell}}$
+from [`conj:magic-shell-stabilization`](#conj:magic-shell-stabilization))
+target different layers: per-partition $k_\lambda$ regulates the
+$\Phi_q$ tower; magic-shell $\Delta_{\text{shell}}$ is the
+non-tower structural term.  Both are open.
