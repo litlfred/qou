@@ -309,8 +309,8 @@ theorem wenzl_bridge_atomic_tr_M (Z N : ℕ) (h_A : Z + N ≤ 4) :
 | 1. q_0 inversion | (none) | — | `q_0_inversion_unique` | — |
 | 2. Crossing recurrence | (none) | — | `additive_wedderburn_recurrence_matches_std_rep_trace` | — |
 | 3. Typed-crossings encoding | (none) | — | `typed_crossings_encoding_unique` | — |
-| **4. Φ_q convergence** | `mass-endomorphism-tower.lean` (existing) | metaphorical sorry | `phi_q_converges_absolutely` (promoted) | **PARTIAL → `QOU/MassEndomorphism/PhiQConvergence.lean`: `summable_q_inv_geometric` + `quantumDilog_factors_nonzero` (2 mechanical zpow sorries; conceptual proof complete)** |
-| **5. n_⋆ existence** | `brane-tower-z-habiro.lean` (existing) | TAUTOLOGICAL | `n_star_existence_conjecture` | **PARTIAL → `QOU/BraidKnot/BraneTowerNStar.lean`: `RecoversWithRelativeError` substantive predicate + β-decay-sector instance with n_⋆ = 2 (three substrate-derived candidates agree)** |
+| **4. Φ_q convergence** | `mass-endomorphism-tower.lean` (existing) | metaphorical sorry | `phi_q_converges_absolutely` (promoted) | **CLOSED (2026-05-11 cycle 4) → `QOU/MassEndomorphism/PhiQConvergence.lean`: `summable_q_inv_geometric` + `quantumDilog_factors_nonzero` are NOW FULLY PROVED (PR #639 commit 3575499e). Both prior mechanical zpow sorries discharged.** |
+| **5. n_⋆ existence** | `brane-tower-z-habiro.lean` (existing) | TAUTOLOGICAL | `n_star_existence_conjecture` | **UPDATED (2026-05-11 cycle 4) → `QOU/BraidKnot/BraneTowerNStar.lean`: `RecoversWithRelativeError` now takes `phiProj` as an EXPLICIT numerical argument (not ∃-bound) per #637 review. New fully-proved `betaDecayRecovery_at_N0_within_0_2_percent` instance at the empirical 0.2% tolerance. 1 ppb closure stays conjectural pending the lift formula. Scalar-eigenvalue form of n_⋆ now **REFUTED** by PR #638 across D/T/³He; β-decay scalar agreement persists as the multiplicity-trivial sub-case.** |
 | 6. Wedderburn weights | wedderburn-mass-formula.lean | count only | `wedderburn_weights_H3` | **DEMOTED** — Q_β uses Frobenius counit, not w_λ (per dual-basis identity in `docs/audits/2026-05-11-q-beta-residual-decomposition.md`) |
 | 7. Atomic braid word | (none) | — | `atom_braid_word_well_defined_all` | — |
 | 8. Per-nucleon shift | (none) | — | `per_nucleon_shift_additive` + `_at_A1` | — |
@@ -373,6 +373,20 @@ Coordination with sibling PRs:
     doesn't affect Q_β predictions (dual-basis identity, cycle 3)
   * PR #635 (Mikusiński WitnessBuilder migration): no direct
     Lean overlap
+  * PR #638 (cycle 4, scalar n_⋆ refutation): scalar-eigenvalue
+    form of n_⋆ refuted across D/T/³He; multiplicity-refined
+    n_⋆(ℓ, n_0, k, m) is the surviving open thread. β-decay's
+    scalar agreement (n_⋆ = 2, from BraneTowerNStar) survives as
+    the A=1 multiplicity-trivial sub-case (not a counterexample
+    per the cycle-4 coordination comment on #638)
+  * PR #639 (cycle 4, this branch): adds `prop:q-beta-spectral-
+    bridge` and `c(K)` witness; CLOSES Gap 4 sorries; refactors
+    Gap 5 predicate to require explicit `phiProj`
+  * PR #640 (cycle 5, neutron 50dps chain): independent sibling
+    extending `M_HECKE_PIPELINE_AT_Q0` registry with neutron
+    Path A entry; three-calibration audit confirms #637's
+    discipline as normative; my c(K) witness now tagged Class C
+    (comparator only)
 
 -/
 

@@ -327,7 +327,69 @@ monitoring open queue.
   refutation; documented the multiplicity-profile reconciliation
   explicitly.
 
+## Coordination cycle 5 — sibling #640 (neutron Path A)
+
+2026-05-11T18:35Z — PR #640 opened at `c4c2d382` extending
+`M_HECKE_PIPELINE_AT_Q0` with the neutron Path A entry. Direct
+extension of my just-merged #637 pipeline. Includes a comprehensive
+three-calibration-discipline audit
+([`docs/audits/2026-05-11-three-calibration-discipline-violations.md`](https://github.com/litlfred/qou/blob/claude/neutron-mass-50dps-chain/docs/audits/2026-05-11-three-calibration-discipline-violations.md))
+that flags two Class-A violations on `main` and reinforces the
+normative CAL-1/CAL-2/CAL-3 framing.
+
+### #640 classification
+
+* **Scope overlap**: MODERATE — registry entries split on dict key
+  ('p' in main, 'n' in #640). No file-level conflict expected.
+* **Dependency**: complementary, not blocking. Both #639 and #640
+  depend on #637's framework.
+* **Cherry-pick**: none.
+
+### Three-calibration self-audit on my #639 compute
+
+Cross-checked against #640's taxonomy:
+
+| Script | Class | Disposition |
+|---|---|---|
+| `q_beta_spectral_bridge_witness.py` | pure prediction (CAL-1 + CAL-2) | clean |
+| `c_k_beta_decay_witness.py` | **Class C (comparator)** — Q_BETA_MEV used to compare observation vs ceiling, NOT as a calibration input | clean with explicit docstring tag added (commit `ccecd506`) |
+
+### Actions cycle 5
+
+* Posted **one** coordination comment on #640:
+  https://github.com/litlfred/qou/pull/640#issuecomment-4423536222
+* Subscribed to #640 activity.
+* Added Class-C docstring tag to `c_k_beta_decay_witness.py`
+  (commit `ccecd506`).
+* Updated `MassComputationChainRoadmap.lean` "Coordination" section
+  with #638/#639/#640 entries + Gap 4 CLOSED + Gap 5 UPDATED.
+* Did **not** triage #640's 12 open Gemini/Copilot threads (their
+  owner is handling them).
+* CI failure on #639 validate: skipped per "ci=billing. skip".
+
+### §6 escalations: none
+
+No inconsistent numerical findings.
+
+## Coordination cycle 5b — share findings with #640
+
+User requested cycle 5 to also push my **c(K) ceiling**
+findings to #640 as positive-example material for their audit
+framework. Posted a second concise share-comment on #640 with:
+
+1. The substrate-derived per-N residual ceiling
+   `|R_N| ≤ C(K) · e^(-c(K) N)` (c(K) = 4.624 for β-decay),
+   useful framing for evaluating their neutron mass prediction's
+   residual against the same exponential bound.
+2. The Class-C / "comparator only" docstring convention they may
+   want to adopt for `M_N_MEV_CODATA` (currently hard-coded per
+   the open Copilot review at `build_neutron_mass_50dps_chain.py:71`).
+
+Second comment is reactive sharing, not a duplicate intent post —
+keeps the "one coordination comment, not a stream" anti-pattern
+intact because it serves a distinct request.
+
 ## Last updated
 
-2026-05-11T17:35Z — cycle 4 (post-merge sibling triage; #638 added
-to scope after explicit classification).
+2026-05-11T18:40Z — cycle 5+5b (sibling #640 coordination + share
+of c(K) ceiling and Class-C convention).
