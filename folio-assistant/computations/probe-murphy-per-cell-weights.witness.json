@@ -1,0 +1,355 @@
+{
+  "engine": "numpy",
+  "engineVersion": "numpy 2.4.4",
+  "computedAt": "2026-05-11T20:13:17.845771+00:00",
+  "commitSha": "6df41c98607d9261ee471aa54b44919a76e0e25f",
+  "assertions": [
+    {
+      "name": "total_cells_equals_n_factorial",
+      "computed": 720,
+      "expected": 720,
+      "passed": true
+    },
+    {
+      "name": "deuteron_per_partition_argmax_recorded",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4429,
+  "computation": "probe-murphy-per-cell-weights",
+  "scriptFile": "probe_murphy_per_cell_weights.py",
+  "scriptHash": "69fd44e0c66a",
+  "scriptCommitSha": "unknown",
+  "description": "Murphy / cellular per-cell weight decomposition of the deuteron braid word β_D at H_6(q_0). Computes w_{λ,S,T} = |⟨v_S, ρ_λ(β_D) v_T⟩| in the Hoefsmit seminormal basis for each cell (λ, S, T). Per-partition rollup is Σ_{S,T} w_{λ,S,T}; per-cell argmax gives the strictly-finer (λ, S, T) selector. Tests whether the cell-level structure recovers PR #639 cycle 5b's empirical max-|μ| dominant partition [2,2,1,1]. Substrate-only (CAL-2 q_0). Class C (diagnostic). Over Z[q^{±1}] (Murphy cellular basis parameter ring matches Habiro / brane-tower bicompletion).",
+  "contentBlock": "rem:per-partition-k-lambda-rule",
+  "parameters": {
+    "atom": "deuteron",
+    "n_strands": 6,
+    "q_0": 1.1099785955541805
+  },
+  "data": {
+    "per_partition_summary": [
+      {
+        "partition": [
+          4,
+          2
+        ],
+        "dim": 9,
+        "y_at_q0": 0.04028438657433148,
+        "n_cells": 81,
+        "weight_sum_unweighted": 33.23092056461015,
+        "weight_sum_y_weighted": 1.338687250245657,
+        "max_cell_indices": [
+          4,
+          2
+        ],
+        "max_cell_weight": 3.463917879723984,
+        "max_cell_y_weighted": 0.1395418069285396
+      },
+      {
+        "partition": [
+          5,
+          1
+        ],
+        "dim": 5,
+        "y_at_q0": 0.05896068139733709,
+        "n_cells": 25,
+        "weight_sum_unweighted": 14.761209520392574,
+        "weight_sum_y_weighted": 0.8703309715712055,
+        "max_cell_indices": [
+          0,
+          0
+        ],
+        "max_cell_weight": 2.797612974494332,
+        "max_cell_y_weighted": 0.16494916726221684
+      },
+      {
+        "partition": [
+          3,
+          2,
+          1
+        ],
+        "dim": 16,
+        "y_at_q0": 0.007318454387030996,
+        "n_cells": 256,
+        "weight_sum_unweighted": 62.430750975016494,
+        "weight_sum_y_weighted": 0.4568966033587491,
+        "max_cell_indices": [
+          2,
+          0
+        ],
+        "max_cell_weight": 4.805308014006714,
+        "max_cell_y_weighted": 0.035167427516142644
+      },
+      {
+        "partition": [
+          4,
+          1,
+          1
+        ],
+        "dim": 10,
+        "y_at_q0": 0.010133463722377592,
+        "n_cells": 100,
+        "weight_sum_unweighted": 34.644985415963966,
+        "weight_sum_y_weighted": 0.3510737028749716,
+        "max_cell_indices": [
+          3,
+          0
+        ],
+        "max_cell_weight": 3.6443780902621894,
+        "max_cell_y_weighted": 0.03693017316829963
+      },
+      {
+        "partition": [
+          3,
+          3
+        ],
+        "dim": 5,
+        "y_at_q0": 0.014120874074270585,
+        "n_cells": 25,
+        "weight_sum_unweighted": 16.13901764874675,
+        "weight_sum_y_weighted": 0.2278970359003834,
+        "max_cell_indices": [
+          2,
+          2
+        ],
+        "max_cell_weight": 3.958946135560044,
+        "max_cell_y_weighted": 0.055903779847063545
+      },
+      {
+        "partition": [
+          6
+        ],
+        "dim": 1,
+        "y_at_q0": 0.05918771713724117,
+        "n_cells": 1,
+        "weight_sum_unweighted": 1.559758739418077,
+        "weight_sum_y_weighted": 0.092318559071017,
+        "max_cell_indices": [
+          0,
+          0
+        ],
+        "max_cell_weight": 1.559758739418077,
+        "max_cell_y_weighted": 0.092318559071017
+      },
+      {
+        "partition": [
+          3,
+          1,
+          1,
+          1
+        ],
+        "dim": 10,
+        "y_at_q0": -0.0006853088808228615,
+        "n_cells": 100,
+        "weight_sum_unweighted": 29.10930702870324,
+        "weight_sum_y_weighted": 0.019948866621369674,
+        "max_cell_indices": [
+          2,
+          1
+        ],
+        "max_cell_weight": 3.879599813240049,
+        "max_cell_y_weighted": 0.0026587242060521206
+      },
+      {
+        "partition": [
+          2,
+          2,
+          2
+        ],
+        "dim": 5,
+        "y_at_q0": 0.000773186743667829,
+        "n_cells": 25,
+        "weight_sum_unweighted": 14.668447047341392,
+        "weight_sum_y_weighted": 0.011341448807197872,
+        "max_cell_indices": [
+          1,
+          1
+        ],
+        "max_cell_weight": 3.9589461355600433,
+        "max_cell_y_weighted": 0.003061004670910005
+      },
+      {
+        "partition": [
+          2,
+          2,
+          1,
+          1
+        ],
+        "dim": 9,
+        "y_at_q0": -0.0003420517656558436,
+        "n_cells": 81,
+        "weight_sum_unweighted": 26.038394836743993,
+        "weight_sum_y_weighted": 0.008906478928752284,
+        "max_cell_indices": [
+          1,
+          0
+        ],
+        "max_cell_weight": 3.4701782757013118,
+        "max_cell_y_weighted": 0.0011869806063441845
+      },
+      {
+        "partition": [
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "dim": 5,
+        "y_at_q0": 9.86355774189434e-05,
+        "n_cells": 25,
+        "weight_sum_unweighted": 8.66635909457789,
+        "weight_sum_y_weighted": 0.0008548113334136017,
+        "max_cell_indices": [
+          0,
+          0
+        ],
+        "max_cell_weight": 2.095203521883223,
+        "max_cell_y_weighted": 0.0002066616091911555
+      },
+      {
+        "partition": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "dim": 1,
+        "y_at_q0": -1.243798683735952e-05,
+        "n_cells": 1,
+        "weight_sum_unweighted": 0.6769250645272102,
+        "weight_sum_y_weighted": 8.419585042468184e-06,
+        "max_cell_indices": [
+          0,
+          0
+        ],
+        "max_cell_weight": 0.6769250645272102,
+        "max_cell_y_weighted": 8.419585042468184e-06
+      }
+    ],
+    "top_10_cells_by_y_weighted_magnitude": [
+      {
+        "partition": [
+          5,
+          1
+        ],
+        "S": 0,
+        "T": 0,
+        "weight": 2.797612974494332,
+        "y_weighted": 0.16494916726221684
+      },
+      {
+        "partition": [
+          5,
+          1
+        ],
+        "S": 3,
+        "T": 1,
+        "weight": 2.38916149180906,
+        "y_weighted": 0.14086658952534056
+      },
+      {
+        "partition": [
+          4,
+          2
+        ],
+        "S": 4,
+        "T": 2,
+        "weight": 3.463917879723984,
+        "y_weighted": 0.1395418069285396
+      },
+      {
+        "partition": [
+          4,
+          2
+        ],
+        "S": 1,
+        "T": 3,
+        "weight": 2.748252852409306,
+        "y_weighted": 0.11071168031046563
+      },
+      {
+        "partition": [
+          6
+        ],
+        "S": 0,
+        "T": 0,
+        "weight": 1.559758739418077,
+        "y_weighted": 0.092318559071017
+      },
+      {
+        "partition": [
+          4,
+          2
+        ],
+        "S": 3,
+        "T": 1,
+        "weight": 2.283103366968772,
+        "y_weighted": 0.09197341862412779
+      },
+      {
+        "partition": [
+          4,
+          2
+        ],
+        "S": 5,
+        "T": 4,
+        "weight": 2.1513477696359247,
+        "y_weighted": 0.08666572520783941
+      },
+      {
+        "partition": [
+          5,
+          1
+        ],
+        "S": 2,
+        "T": 3,
+        "weight": 1.4651899292888468,
+        "y_weighted": 0.08638859660738656
+      },
+      {
+        "partition": [
+          4,
+          2
+        ],
+        "S": 0,
+        "T": 1,
+        "weight": 1.908248209778924,
+        "y_weighted": 0.07687260856251016
+      },
+      {
+        "partition": [
+          5,
+          1
+        ],
+        "S": 3,
+        "T": 2,
+        "weight": 1.2172024338573832,
+        "y_weighted": 0.07176708489872845
+      }
+    ],
+    "total_cells": 720,
+    "empirical_dominant": [
+      2,
+      2,
+      1,
+      1
+    ],
+    "rollup_argmax": [
+      4,
+      2
+    ],
+    "cell_argmax_lambda": [
+      5,
+      1
+    ],
+    "rollup_matches_empirical": false,
+    "cell_argmax_matches_empirical": false
+  }
+}

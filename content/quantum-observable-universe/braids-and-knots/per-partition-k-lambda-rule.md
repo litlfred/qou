@@ -363,5 +363,67 @@ The σ-basis → Murphy expansion is the canonical bridge to the
 per-cell selector refinement. Atomic braid words
 $\beta_\mathfrak{H} = \mathtt{atom\_braid\_word\_3A}(Z, N)$ are
 specific σ-products; their Murphy expansion gives a substrate-
-derivable, $(q_0, \beta)$-aware decomposition into per-cell weights,
-which is the natural next probe direction.
+derivable, $(q_0, \beta)$-aware decomposition into per-cell weights.
+
+### Per-cell weights for deuteron at $H_6(q_0)$
+
+[`probe_murphy_per_cell_weights.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/probe_murphy_per_cell_weights.py)
+computes $w_{\lambda, S, T} = \lvert\langle v_S, \rho_\lambda(\beta_D) v_T\rangle\rvert$
+for all 720 cells of $H_6(q_0)$ (= $6!$, Wedderburn dimension check
+passes). Top-3 per-cell weights (y-weighted):
+
+| rank | $\lambda$ | $(S, T)$ | $w_{\lambda,S,T}$ | $y_\lambda \cdot w$ |
+|---:|---|---|---:|---:|
+| 1 | $[5, 1]$ | $(0, 0)$ | $2.798$ | $0.165$ |
+| 2 | $[5, 1]$ | $(3, 1)$ | $2.389$ | $0.141$ |
+| 3 | $[4, 2]$ | $(4, 2)$ | $3.464$ | $0.140$ |
+
+**Substantive negative finding.** The per-cell argmax partition is
+$[5, 1]$ (and the per-partition rollup argmax is $[4, 2]$), neither
+of which is the empirical max-$\lvert\mu\rvert$ dominant
+$[2, 2, 1, 1]$ identified by
+[`probe_phiq_per_partition_klambda.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/probe_phiq_per_partition_klambda.py).
+
+**Structural reason.** The two observables on $\rho_\lambda(\beta)$
+measure different things:
+
+| Observable | Quantity | Probe |
+|---|---|---|
+| Per-cell matrix entries | $\lvert\langle v_S, \rho_\lambda(\beta) v_T\rangle\rvert$ | this Murphy probe |
+| Per-partition $\Phi_q$ contribution | $\lvert y_\lambda \sum_a \Phi_q^{[\leq k]}(\mu_a^{(\lambda)})\rvert$ | PR #639 cycle 5b |
+
+The first is the bilinear-pairing observable (basis-expression
+strength). The second is the spectral observable (eigenvalue
+truncation-weighted dilogarithm). Both come from the same
+$\rho_\lambda(\beta_D)$, but they rank partitions by different
+properties of the operator.
+
+**Implication for the open question.** The per-cell Murphy
+ranking is a valid substrate-derivable selector, but it picks a
+*different* dominant partition than the empirical max-$\lvert\mu\rvert$
+selector that closes the brane-tower truncation gap. The
+structural identification of the brane-tower-relevant selector
+must privilege the **spectral** observable (eigenvalues of
+$\rho_\lambda(\beta)$) over the **bilinear** observable (matrix
+entries) — these are *not* equivalent rankings, despite being
+extractable from the same operator data.
+
+Surviving candidates for the spectral substrate-derivable selector:
+
+* **Hoefsmit hook-content asymptotic along a reduced braid word**
+  (the upper-bound route on $\max\lvert\mu(\rho_\lambda(\beta))\rvert$ —
+  already listed above).
+* **q-Casimir spectral bound**: in the centre of $H_n(q)$, the
+  q-Casimir element has spectrum on $V_\lambda$ given by a
+  $\lambda$-content polynomial; this bounds $\max\lvert\mu\rvert$
+  for any operator built from σ-generators with explicit
+  $(q, \beta)$-dependence.
+* **Operator-norm via Schur-Weyl duality**: $\rho_\lambda(\beta)$ in
+  $V_\lambda$ corresponds (via Schur-Weyl) to a $U_q(\mathfrak{sl}_n)$
+  intertwiner whose operator norm has a closed-form expression in
+  terms of the q-deformed weight diagram.
+
+Both Murphy/cell-level structure and the σ-basis Gram remain
+valuable for other questions (per-cell selectors, σ-basis SDP) —
+just not directly for the per-partition brane-tower selector
+$k_\lambda$.
