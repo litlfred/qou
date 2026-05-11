@@ -50,7 +50,7 @@ classical Plancherel measure $w_\lambda = (\dim V_\lambda)^2/n!$ —
 the two coincide at $q = 1$; see
 [`prop:plancherel-weight-boundedness`](#prop:plancherel-weight-boundedness)),
 where
-$\dim_q V_\lambda = \prod_{\square \in \lambda} [h(\square)]_q / [n]_q!$
+$\dim_q V_\lambda = [n]_q! \,/\, \prod_{\square \in \lambda} [h(\square)]_q$
 and $[h]_q = (q^h - q^{-h})/(q - q^{-1})$ is the symmetric quantum
 integer
 ([Hoefsmit pipeline](#prop:hoefsmit-scattering-pipeline)).

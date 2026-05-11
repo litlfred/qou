@@ -89,14 +89,21 @@ theorem spectral_sequence_collapses_to_centre
     `w_λ := (dim V_λ)² / n!` (which does sum to 1 exactly) is the
     distinct family — see `prop:plancherel-weight-boundedness`.
     Generic over a commutative ring `R`. -/
-def plancherelWeight {R : Type u} [CommRing R] (dim_q_lam : R) (n_q_fac_inv : R) : R :=
+def wedderburnWeight {R : Type u} [CommRing R] (dim_q_lam : R) (n_q_fac_inv : R) : R :=
   dim_q_lam * dim_q_lam * n_q_fac_inv
 
-/-- Plancherel weights are R-linear in `dim_q²`. -/
-theorem plancherelWeight_smul {R : Type u} [CommRing R]
+/-- Backward-compat alias: the legacy name `plancherelWeight` is kept
+    so older downstream code keeps compiling.  Prefer `wedderburnWeight`
+    in new code, since the quantity is the q-deformed Wedderburn-block
+    weight, **not** the (distinct) classical Plancherel measure. -/
+def plancherelWeight {R : Type u} [CommRing R] (dim_q_lam : R) (n_q_fac_inv : R) : R :=
+  wedderburnWeight dim_q_lam n_q_fac_inv
+
+/-- q-deformed Wedderburn-block weights are R-linear in `dim_q²`. -/
+theorem wedderburnWeight_smul {R : Type u} [CommRing R]
     (c d_lam n_inv : R) :
-    plancherelWeight (c * d_lam) n_inv = c * c * plancherelWeight d_lam n_inv := by
-  unfold plancherelWeight
+    wedderburnWeight (c * d_lam) n_inv = c * c * wedderburnWeight d_lam n_inv := by
+  unfold wedderburnWeight
   ring
 
 end QOU.WedderburnMass

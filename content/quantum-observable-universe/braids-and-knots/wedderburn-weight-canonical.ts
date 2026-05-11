@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:wedderburn-weight-canonical",
   title:
-    "Canonical q-deformed Wedderburn-block weight $w_\\lambda$ and named scalings (BW, LP for all $\\lambda$; Wenzl-bridge on the self-conjugate stratum)",
+    "Canonical q-deformed Wedderburn-block weight $\\tilde w_\\lambda$ and named scalings (BW, LP for all $\\lambda$; Wenzl-bridge on the self-conjugate stratum)",
   tags: [
     "wedderburn",
     "weight",

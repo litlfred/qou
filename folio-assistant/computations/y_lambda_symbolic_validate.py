@@ -390,11 +390,23 @@ def main(ns: list[int] | None = None) -> int:
 
         summary_by_n[str(n)] = n_summary
         # Incremental save (preserves prior n entries naturally).
+        # Drop stale pre-rename keys so the on-disk schema has a
+        # single canonical form (see PR #636 Copilot review).
+        for stale in ("dps_plancherel",):
+            existing.pop(stale, None)
+        # Also drop stale per-n `test_2_plancherel` entries from
+        # previous runs that did NOT re-touch that n (otherwise
+        # `summary_by_n` keeps both old and new test_2 names).
+        for _n_key, _n_summary in summary_by_n.items():
+            if isinstance(_n_summary, dict):
+                _n_summary.pop("test_2_plancherel", None)
         existing["all_passed"] = all_passed
         existing["probes"] = PROBES
         existing["dps_test"] = DPS_TEST
         existing["dps_ground_truth"] = DPS_GROUND
         existing["dps_markov_m3"] = DPS_MARKOV_M3
+        # Overwrite tolerances wholesale so stale keys
+        # ("plancherel", "markov") don't survive a merge-aware update.
         existing["tolerances"] = {
             "cross_q": "1e-30",
             "markov_trace_lhs": "1e-30",

@@ -3,25 +3,25 @@ import Mathlib.Algebra.Field.Basic
 /-!
 # QOU.BraidKnot.wedderburnWeightCanonical
 
-The q-deformed Wedderburn-block weight `w_λ = dim_q(λ)² / [n]_q!`
+The q-deformed Wedderburn-block weight `tilde w_λ = dim_q(λ)² / [n]_q!`
 is the canonical combinatorial coefficient associated with each
 partition `λ ⊢ n` in the Hecke algebra `H_n(R, q)`.
 
 The BW and LP scalings are definitional for every λ:
 
-  β_λ := -½ w_λ                    (BW form, all λ)
-  C_λ := w_λ · h/2,  h = q - q⁻¹   (LP shadow-price, all λ)
+  β_λ := -½ tilde w_λ                    (BW form, all λ)
+  C_λ := tilde w_λ · h/2,  h = q - q⁻¹   (LP shadow-price, all λ)
 
 The Markov coefficient `y_λ(q)` is given by Wenzl's hook–content
 closed form [wenzl1988]; on the self-conjugate stratum
-(`κ_λ = Σ c(x) = 0`) it coincides with `w_λ`:
+(`κ_λ = Σ c(x) = 0`) it coincides with `tilde w_λ`:
 
-  y_λ = w_λ                         (Wenzl-bridge, κ_λ = 0)
+  y_λ = tilde w_λ                         (Wenzl-bridge, κ_λ = 0)
 
-Off the self-conjugate stratum, `y_λ` and `w_λ` are genuinely
+Off the self-conjugate stratum, `y_λ` and `tilde w_λ` are genuinely
 distinct weight families — the in-repo witness
 `folio-assistant/computations/probe-wedderburn-weight-scheme.witness.json`
-records `|y_λ / w_λ|` ratios from ≈0.14 to ≈2.54 at q₀ for
+records `|y_λ / tilde w_λ|` ratios from ≈0.14 to ≈2.54 at q₀ for
 n ∈ {2, 3}.
 
 The BW/LP scaling ratios — verified symbolically in
@@ -59,27 +59,27 @@ structure Partition where
     the ground field `R`.
 
     An instance asserts:
-      • the BW mass coefficient `β_λ = -½ w_λ` (for all λ);
-      • the LP shadow-price `C_λ = w_λ · h/2` (for all λ);
+      • the BW mass coefficient `β_λ = -½ tilde w_λ` (for all λ);
+      • the LP shadow-price `C_λ = tilde w_λ · h/2` (for all λ);
       • the Markov coefficient `y_λ`, with the **self-conjugate
-        Wenzl-bridge identity** `y_λ = w_λ` whenever `κ_λ = 0`.
+        Wenzl-bridge identity** `y_λ = tilde w_λ` whenever `κ_λ = 0`.
 
     Off the self-conjugate stratum, `y_λ` is given by Wenzl's
     hook–content closed form [wenzl1988] and is, in general,
-    distinct from `(-1)^κ_λ · w_λ` — see the in-repo witness
+    distinct from `(-1)^κ_λ · tilde w_λ` — see the in-repo witness
     `probe-wedderburn-weight-scheme.witness.json` for empirical
-    `|y_λ / w_λ|` ratios at `q₀`. -/
+    `|y_λ / tilde w_λ|` ratios at `q₀`. -/
 class WedderburnWeightCanonical (R : Type u) [Field R] where
   /-- The Hecke-generator scalar `h = q - q⁻¹` in `R`. -/
   h : R
-  /-- The canonical q-deformed Wedderburn weight `w_λ ∈ R`
+  /-- The canonical q-deformed Wedderburn weight `tilde w_λ ∈ R`
       (Laurent in `q`). -/
   w : Partition → R
   /-- Content sum `κ_λ`. -/
   kappa : Partition → ℤ
-  /-- BW mass coefficient `β_λ = -½ w_λ`. -/
+  /-- BW mass coefficient `β_λ = -½ tilde w_λ`. -/
   beta : Partition → R
-  /-- LP shadow-price `C_λ = w_λ · h/2`. -/
+  /-- LP shadow-price `C_λ = tilde w_λ · h/2`. -/
   C : Partition → R
   /-- Markov coefficient `y_λ(q)` (Wenzl closed form; abstract
       here, supplied per instance). -/
@@ -90,7 +90,7 @@ class WedderburnWeightCanonical (R : Type u) [Field R] where
   C_eq : ∀ λ, C λ = w λ * (h / 2)
   /-- **Wenzl-bridge identity, restricted to self-conjugate λ.**
       Whenever `κ_λ = 0`, the Markov coefficient agrees with the
-      Wedderburn-block weight: `y_λ = w_λ`. -/
+      Wedderburn-block weight: `y_λ = tilde w_λ`. -/
   y_eq_self_conjugate : ∀ λ, kappa λ = 0 → y λ = w λ
 
 /-- For self-conjugate partitions (κ = 0), the Markov coefficient
