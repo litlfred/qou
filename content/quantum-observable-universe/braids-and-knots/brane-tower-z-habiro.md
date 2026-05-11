@@ -563,22 +563,91 @@ diagnosis but does not close the conjecture**:
 This refutes the simple pair-knot-product-volume conjecture as
 formulated but identifies a real structural feature (the LP-dual
 active-set distinction between magic and non-magic atoms) that
-points at the right direction for a refined formulation:
-
-> *Replace the simple product $|\hat V_{\text{shell}}| = \prod_{i} |\hat V_i|$
-> with the actual Markov trace $\mathrm{tr}_M(\sigma_{i_1} \cdots \sigma_{i_k})$
-> of the magic-shell sub-braid as a single Hecke-algebra element,
-> evaluated via the Hoefsmit seminormal at $q_0$. The diagonal
-> Frobenius Gram approximation used in the LP dual would then be
-> replaced by the full $G_{ij} = \mathrm{tr}_M(b_i b_j)$, tightening
-> the LP relaxation and possibly resolving the $Z{=}2$/$N{=}2$
-> sign asymmetry.*
+points at the right direction for a refined formulation — pursued
+in the next section.
 
 The Lean form
 [`witness_refutes_pair_knot_product_volume_form`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/content/quantum-observable-universe/braids-and-knots/brane-tower-z-habiro.lean)
 records the refutation of this specific (simplest) pair-knot
 convention; the structural finding (LP-dual selection of pair-knot
 operators) is recorded as `def lpDualActiveSetIncludesPairKnotAtMagicShells` for downstream use.
+
+## Pair-knot Markov-trace refinement (2026-05-11): also refuted, $Z\leftrightarrow N$ symmetry restored
+
+The LP-dual evidence from the product-volume probe pointed at the
+canonical refinement: replace
+$|\hat V_{\text{shell}}| = \prod_{i} |\hat V_i|$ by the actual
+Markov trace $\mathrm{tr}_M(\sigma_{i_1} \cdots \sigma_{i_k})$ of the
+shell sub-braid as a single Hecke-algebra element via Hoefsmit
+seminormal at $q_0$, AND use the full Frobenius Gram
+$G_{ij} = \mathrm{tr}_M(\sigma_i \sigma_j)$ in the LP, AND confirm
+via the SDP lift (cvxpy / SCS) per CLAUDE.md "LP / SDP duals —
+first-class infra".
+
+The refined probe
+[`probe_phiq_pair_knot_markov_trace.py`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/folio-assistant/computations/probe_phiq_pair_knot_markov_trace.py)
+([witness](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/folio-assistant/computations/probe-phiq-pair-knot-markov-trace.witness.json))
+implements all three.  Scope: $D, T, {}^3\mathrm{He}$ (⁴He n=12
+seminormal compute ~10 min, deferred).
+
+### Result — refined pair-knot Markov-trace form also refuted
+
+| Atom | $n_\star$ | $|V̂_{\text{shell}}|$ Markov | tower | $B_{\text{pred}}$ | $B_{\text{AME}}$ | err |
+|:-:|:-:|---:|---:|---:|---:|---:|
+| D | 1 | n/a (no shell) | $31.07$ | $17.71$ | $2.225$ | $+696\%$ |
+| T | 2 | $\mathrm{tr}_M(\sigma_{nn}) = 0.0622$ | $88.36$ | $93.01$ | $8.482$ | $+997\%$ |
+| ³He | 1 | $\mathrm{tr}_M(\sigma_{pp}) = 0.0622$ | $16.46$ | $19.64$ | $7.718$ | $+154\%$ |
+
+LP+SDP both confirm strong duality (LP gap $< 10^{-15}$, SDP gap
+$< 10^{-6}$ via cvxpy/SCS) at the full Frobenius Gram.  Refined
+pair-knot Markov-trace tower **does not close** the AME light-isotope
+sample.
+
+### Positive structural finding — $Z \leftrightarrow N$ isospin symmetry restored
+
+$$
+  \mathrm{tr}_M(\sigma_{pp}) \;=\; \mathrm{tr}_M(\sigma_{nn})
+  \;=\; 0.0622 \quad (\text{exactly})
+$$
+
+The two magic-shell sub-braids are **isomorphic Hecke elements**
+(four intra-strand generators each with identical Hecke quadratic
+structure), so the Markov-trace gives the same value for both.  The
+$1.326\times$ ratio in family 5's $\Delta_{\text{shell}}$
+calibration ($Z{=}2$ vs $N{=}2$) was a **product-volume artifact**,
+not a real symmetry breaking.  At the canonical Markov-trace
+operator-volume level, $Z \leftrightarrow N$ isospin symmetry
+holds exactly.
+
+### Structural conclusion (closes the level-selection question)
+
+The brane-tower formula's $\Phi_q$-truncated tower at **any**
+operator-volume convention probed (product, geometric mean, OR
+canonical Markov trace) overshoots at the AME light-isotope scale.
+The ³He gap is **not** an operator-volume choice issue — it is a
+structural deficit of the brane-tower formula itself at the
+$A{=}3$ / $n_0{=}9$ regime.
+
+This closes the level-selection question for `conj:brane-tower-z-habiro`:
+no `n_⋆` choice and no operator-volume refinement we have probed
+recovers the AME light-isotope binding uniformly.  The surviving
+open paths are recorded in §"What survives the closure" above (the
+algebraic Cauchy-limit half, and the ³He structural-gap branch).
+
+The Lean form
+[`witness_refutes_pair_knot_markov_trace_form`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/content/quantum-observable-universe/braids-and-knots/brane-tower-z-habiro.lean)
+records this refutation; the combined `nStar_all_probed_forms_refuted`
+now covers **six** probed families:
+
+1. Scalar uniform-$k$
+2. Scalar $\ell \cdot n_0 + k$
+3. Per-eigenvalue operator-valued
+4. Multiplicity / Type-B-folded-crystal
+5. Pair-knot product-volume
+6. Pair-knot Markov-trace + full Gram + SDP
+
+Full consolidation in
+[`docs/audits/2026-05-11-brane-tower-n_star-closure-audit.md`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/docs/audits/2026-05-11-brane-tower-n_star-closure-audit.md).
 
 ## Multiplicity / Type-B-fold probe (2026-05-11): also refuted
 

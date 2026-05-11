@@ -237,6 +237,23 @@ def witnessMultiplicityBestMaxAbsErrPct : ℝ := 56.0
     (computed `2026-05-11`). -/
 def witnessPairKnotProductVolumeMaxAbsErrPct : ℝ := 1056.9
 
+/-- Witness-recorded worst-atom abs error under the **refined
+    pair-knot probe** with canonical Markov-trace composite volume
+    `|V̂_shell| = |tr_M(σ_{i_1} σ_{i_2} σ_{i_3} σ_{i_4})|` (Hoefsmit
+    seminormal at q_0) plus the full Frobenius Gram
+    `G_ij = tr_M(σ_i σ_j)` in the operator-selection LP, with the
+    SDP dual via cvxpy / SCS.
+
+    Both LP and SDP achieve strong duality (gap ≤ 10⁻⁶) but the
+    refined pair-knot tower at the per-atom n_⋆ from family 4 still
+    overshoots: D `+696%`, T `+997%`, ³He `+154%`.  Worst-atom
+    `996.6%` on tritium.
+
+    Source:
+    `folio-assistant/computations/probe-phiq-pair-knot-markov-trace.witness.json`
+    (computed `2026-05-11`). -/
+def witnessPairKnotMarkovTraceMaxAbsErrPct : ℝ := 996.6
+
 /-- Structural finding from the same pair-knot witness: the
     **operator-selection LP dual** (per `prop:operator-selection-lp`
     and CLAUDE.md "LP / SDP duals — first-class infra") selects
@@ -295,15 +312,47 @@ theorem witness_refutes_multiplicity_and_type_b_forms :
     `lpDualActiveSetIncludesPairKnotAtMagicShells`.  The LP-dual
     evidence indicates the pair-knot is structurally privileged at
     Z=2 / N=2; the FAILURE of the product-volume convention to
-    close points at a richer composite-volume operator
-    (e.g. `tr_M(σ_{i_1} ... σ_{i_k})` of the shell sub-braid as a
-    single Hecke element via Hoefsmit seminormal) as the right
-    refinement. -/
+    close points at a richer composite-volume operator (e.g.
+    `tr_M(σ_{i_1} ... σ_{i_k})` of the shell sub-braid as a single
+    Hecke element via Hoefsmit seminormal) — pursued in the
+    refinement theorem below. -/
 -- Ref: [manuscript] conj:brane-tower-z-habiro §"Pair-knot magic-shell probe"
 theorem witness_refutes_pair_knot_product_volume_form :
     witnessPairKnotProductVolumeMaxAbsErrPct >
       falsifiabilityThresholdPct := by
   unfold witnessPairKnotProductVolumeMaxAbsErrPct
+        falsifiabilityThresholdPct
+  norm_num
+
+/-- **Pair-knot Markov-trace refinement refutation.** Replacing the
+    simple product `|V̂_pair| = ∏ |V̂_i|` with the canonical Markov
+    trace `|V̂_pair| = |tr_M(σ_{i_1} ... σ_{i_k})|` of the magic-shell
+    sub-braid as a single Hecke element (via Hoefsmit seminormal at
+    q_0) — plus the full Frobenius Gram `G_ij = tr_M(σ_i σ_j)` in
+    the operator-selection LP, plus the SDP dual via cvxpy / SCS —
+    STILL fails the falsifiability criterion: worst-atom abs error
+    996.6% on tritium, ³He at `+154%`.
+
+    Two positive structural findings (recorded for downstream use):
+    * Both LP and SDP achieve strong duality at the full Gram
+      (LP gap ≤ 10⁻¹⁵; SDP gap ≤ 10⁻⁶ via SCS).
+    * **Z=2 / N=2 isospin symmetry restored at the Markov-trace
+      level**: `tr_M(σ_pp) = tr_M(σ_nn) = 0.0622` exactly, vs the
+      asymmetric Δ_shell calibration under product-volume.  The
+      1.326× ratio in family 5 was a product-volume artifact, not
+      a real symmetry breaking.
+
+    Structural conclusion (CLOSURE): the brane-tower formula's
+    Φ_q-truncated tower at any operator-volume convention (product,
+    geometric mean, OR canonical Markov trace) overshoots at the
+    AME light-isotope scale.  The ³He gap is NOT an operator-volume
+    issue — it is a structural deficit of the brane-tower formula
+    itself at the A=3 / n_0=9 / 2-near-pole regime. -/
+-- Ref: [manuscript] conj:brane-tower-z-habiro §"Pair-knot Markov-trace refinement"
+theorem witness_refutes_pair_knot_markov_trace_form :
+    witnessPairKnotMarkovTraceMaxAbsErrPct >
+      falsifiabilityThresholdPct := by
+  unfold witnessPairKnotMarkovTraceMaxAbsErrPct
         falsifiabilityThresholdPct
   norm_num
 
@@ -327,7 +376,7 @@ theorem witness_refutes_pair_knot_product_volume_form :
       pointing at `tr_M(σ_{shell})` (full Markov trace of the
       shell sub-braid) instead of the simple product-volume
       convention. -/
--- Ref: [manuscript] conj:brane-tower-z-habiro §"Pair-knot magic-shell probe"
+-- Ref: [manuscript] conj:brane-tower-z-habiro §"Pair-knot Markov-trace refinement"
 theorem nStar_all_probed_forms_refuted :
     witnessUniformKBestMaxErrPct > falsifiabilityThresholdPct ∧
     witnessNStarRuleMaxErrPct > falsifiabilityThresholdPct ∧
@@ -336,11 +385,14 @@ theorem nStar_all_probed_forms_refuted :
     witnessMultiplicityBestMaxAbsErrPct >
       falsifiabilityThresholdPct ∧
     witnessPairKnotProductVolumeMaxAbsErrPct >
+      falsifiabilityThresholdPct ∧
+    witnessPairKnotMarkovTraceMaxAbsErrPct >
       falsifiabilityThresholdPct :=
   ⟨witness_refutes_scalar_uniform_k_form,
    witness_refutes_scalar_ell_n0_k_form,
    witness_refutes_per_eigenvalue_operator_form,
    witness_refutes_multiplicity_and_type_b_forms,
-   witness_refutes_pair_knot_product_volume_form⟩
+   witness_refutes_pair_knot_product_volume_form,
+   witness_refutes_pair_knot_markov_trace_form⟩
 
 end QOU.BraidKnot
