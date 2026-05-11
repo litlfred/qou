@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-11T22:47:17.158695+00:00",
-  "commitSha": "ccfce5edbe33ef65525598a5313cb49cc3b2ed42",
+  "computedAt": "2026-05-11T22:47:22.903559+00:00",
+  "commitSha": "1695fea1ca2051fb53d04b57d54632e1749ba9d2",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -262,10 +262,10 @@
     },
     {
       "name": "leaf_value[proton-mass-50dps.derivation]",
-      "computed": 0.5974181494316654,
-      "expected": 0.5974181494316654,
+      "computed": 0.5974181494316655,
+      "expected": 0.5974181494316655,
       "passed": true,
-      "tolerance": 0.005974181494316654
+      "tolerance": 0.005974181494316655
     },
     {
       "name": "chain_valid[q0-anchor.derivation]",
@@ -1324,8 +1324,8 @@
       {
         "chain": "proton-mass-50dps.derivation.json",
         "target": "m_p (MeV)",
-        "target_value": 0.5974181494316654,
-        "computed_value": 0.5974181494316654,
+        "target_value": 0.5974181494316655,
+        "computed_value": 0.5974181494316655,
         "structural_ok": true,
         "leaf_matches": true,
         "issues": [],
@@ -2049,6 +2049,7 @@
       "derivation-fully-trusted": [],
       "derivation-backed": [
         "atomic-braid-gb-filtration-extension.witness.json",
+        "electron-m_e-derivation.witness.json",
         "mass-endomorphism.witness.json",
         "mass-formula-6term-mpfr-50dps.witness.json",
         "neutron-m_n-derivation.witness.json",
@@ -2163,7 +2164,6 @@
         "deuteron-delta-i-audit.witness.json",
         "deuteron_tr_M_symbolic.witness.json",
         "e-0-lp-dual-h3.witness.json",
-        "electron-m_e-derivation.witness.json",
         "entanglement-orders.witness.json",
         "ew-higgs-sdp-probe.witness.json",
         "ew-interface-knot-probe.witness.json",
@@ -2223,6 +2223,7 @@
         "lp-confinement-nf-forcing.witness.json",
         "lp-duality-check.witness.json",
         "lr-fusion-self-conj-test.witness.json",
+        "m-baryon-volume-form.witness.json",
         "m-n-difference-formula.witness.json",
         "magic-shell-empirical-instantiation.witness.json",
         "markov-free-energy-qvalues.witness.json",
