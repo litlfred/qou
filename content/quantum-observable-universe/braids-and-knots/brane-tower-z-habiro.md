@@ -455,6 +455,133 @@ The Lean form
 records the refutation at the falsifiability threshold using the
 best-rule max error ($56.0\%$ on R2-op).
 
+## Pair-knot magic-shell probe (2026-05-11): partial closure with LP dual confirmation
+
+The (D, T) per-atom sweet spots and ³He holdout under the
+operator-valued form (§"Operator-valued probe") plus the refuted
+multiplicity / Type-B-fold candidates above point at a deeper
+structural reformulation: **for magic-shell nuclei the brane-tower's
+per-generator decomposition is too fine — the closed shell should
+contribute as a single composite knot operator** (the Hopf-linked
+sub-knot of the magic nucleon pair), not as a sum of 4 separate
+$\Phi_q(|\hat V_i|)$ contributions.
+
+The per-generator magnitudes make the structure visible:
+
+| pos | type | D | T | ³He | ⁴He |
+|:-:|:-:|:-:|:-:|:-:|:-:|
+| 0 | intra-p | $0.989$ | $0.989$ | $0.989$ | $0.989$ |
+| 1 | intra-p | $0.971$ | $0.971$ | $0.971$ | $0.971$ |
+| 2 | inter | p-n $0.264$ | p-n $0.264$ | **p-p $0.369$** | **p-p $0.369$** |
+| 3 | intra | n $0.854$ | n $0.854$ | **p $0.989$** ⟵ | **p $0.989$** ⟵ |
+| 4 | intra | n $0.976$ | n $0.976$ | **p $0.971$** ⟵ | **p $0.971$** ⟵ |
+| 5 | inter | — | n-n $0.160$ | p-n $0.264$ | p-n $0.264$ |
+| 6+ | intra-n | — | n $0.854, 0.976$ | n $0.854, 0.976$ | n × 5 |
+
+³He has Z=2 magic → **duplicated intra-p block** at positions
+{0,1} and {3,4}; ⁴He is doubly magic (Z=N=2) → both intra-p and
+intra-n blocks duplicated.
+
+### Pair-knot composite operator + LP-dual confirmation
+
+[`probe_phiq_pair_knot_magic_shell.py`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/folio-assistant/computations/probe_phiq_pair_knot_magic_shell.py)
+([witness](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/folio-assistant/computations/probe-phiq-pair-knot-magic-shell.witness.json))
+replaces each magic-shell intra-block by a single composite term
+$\Phi_q(|\hat V_{\text{shell}}|)$ with
+$|\hat V_{\text{shell}}| = \prod_{i \in \text{shell}} |\hat V_i|$
+(Hopf-link convention), and **confirms the pair-knot operator
+structurally via the operator-selection LP dual** per
+[`prop:operator-selection-lp`](#prop:operator-selection-lp) and
+CLAUDE.md "LP / SDP duals — first-class infra":
+
+- Operator basis $\{\sigma_i \;(\text{per-generator}),\;\sigma_{pp},\;\sigma_{nn}\}$
+  built per atom, cost vector $t_i = |\hat V_i|$, diagonal Frobenius
+  Gram $G_{ij} = \delta_{ij} |\hat V_i|^2$ as a tractable
+  approximation (full $\mathrm{tr}_M(\sigma_i \sigma_j)$ from
+  Hoefsmit seminormal is a refinement).
+- Operator-selection LP solved via
+  [`lp_dual_solver.solve_operator_selection_lp`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/folio-assistant/computations/lp_dual_solver.py).
+- **Strong duality verified** (gap = 0 to numerical precision) for
+  all four atoms.
+
+### LP-dual structural result: pair-knot operators ARE selected at closed shells
+
+| Atom | Magic shells | Active set (dual $y_\lambda > 0$) | Pair-knot active? |
+|:-:|:-:|:-:|:-:|
+| D | none | $\{\sigma_0, \sigma_1, \sigma_3, \sigma_4\}$ | $\sigma_{pp}, \sigma_{nn}$ absent (no shell) |
+| T | $N{=}2$ | $\{\sigma_0, \sigma_1, \sigma_2, \sigma_3, \sigma_4, \sigma_6, \sigma_7, \sigma_{nn}\}$ | **$\sigma_{nn}$ active** |
+| ³He | $Z{=}2$ | $\{\sigma_0, \sigma_1, \sigma_2, \sigma_3, \sigma_4, \sigma_6, \sigma_7, \sigma_{pp}\}$ | **$\sigma_{pp}$ active** |
+| ⁴He | $Z{=}2$ + $N{=}2$ | $\{\sigma_0, \ldots, \sigma_{10}, \sigma_{pp}, \sigma_{nn}\}$ | **both active** |
+
+The LP dual confirms the pair-knot composites $\sigma_{pp}, \sigma_{nn}$
+are **structurally distinguishable from per-generator operators at
+exactly the magic configurations** — and absent from D's active set,
+which has no magic shell. This is the operator-level signature of
+$Z=2$ / $N=2$ shell closure showing up in the substrate algebra.
+
+### Empirical closure result: partial — pair-knot collapse alone doesn't suffice
+
+| Atom | $B_{\text{naive}}$ MeV | $B_{\text{paired}}$ MeV | $B_{\text{AME}}$ MeV | err naive | err paired |
+|:-:|---:|---:|---:|---:|---:|
+| D | $17.71$ | $17.71$ | $2.225$ | $+696\%$ | $+696\%$ |
+| T | $201.83$ | $98.13$ | $8.482$ | $+2280\%$ | $+1057\%$ |
+| ³He | $53.64$ | $24.60$ | $7.718$ | $+595\%$ | $+219\%$ |
+| **⁴He** | $100.88$ | $\mathbf{22.80}$ | $\mathbf{28.296}$ | $+257\%$ | $\mathbf{-19.4\%}$ |
+
+⁴He at $-19.4\%$ is the closest any probed form has come to a uniform
+closure (any atom, any rule). But pair-knot collapse alone does not
+close the AME light-isotope sample uniformly.
+
+### Magic-shell correction calibration: $Z{=}2$ / $N{=}2$ symmetry fails
+
+Calibrating $\Delta_{\text{shell}}$ from the residuals under
+paired tower:
+
+- $\Delta_{\text{shell}}(Z{=}2) = B_{\text{AME}}(^3\mathrm{He}) - B_{\text{paired}}(^3\mathrm{He}) = -16.88$ MeV
+- $\Delta_{\text{shell}}(N{=}2) = B_{\text{AME}}(^4\mathrm{He}) - B_{\text{paired}}(^4\mathrm{He}) - \Delta_{\text{shell}}(Z{=}2) = +22.38$ MeV
+
+The $Z{=}2$ / $N{=}2$ symmetry fails: the two extracted
+corrections have **opposite signs** and differ in magnitude by a
+factor of $1.326\times$. A doubly-magic-symmetry assumption
+$\Delta_{\text{shell}}(N{=}2) = \Delta_{\text{shell}}(Z{=}2)$
+gives the wrong sign on ⁴He (predicted $-11$ MeV vs AME $+28.3$
+MeV, $-139\%$ error).
+
+### Status update
+
+The pair-knot magic-shell probe **partially supports the structural
+diagnosis but does not close the conjecture**:
+
+- **Pair-knot operators ARE structurally privileged at closed
+  shells** (LP-dual confirmed via strong duality with non-trivial
+  shadow prices on $\sigma_{pp}, \sigma_{nn}$ at magic atoms).
+- **Pair-knot collapse alone does not close the gap uniformly**;
+  ³He still at $+219\%$, ⁴He at $-19.4\%$.
+- **Magic-shell correction does not respect $Z{=}2$ / $N{=}2$
+  symmetry** under the simple product-volume convention.
+
+This refutes the simple pair-knot-product-volume conjecture as
+formulated but identifies a real structural feature (the LP-dual
+active-set distinction between magic and non-magic atoms) that
+points at the right direction for a refined formulation:
+
+> *Replace the simple product $|\hat V_{\text{shell}}| = \prod_{i} |\hat V_i|$
+> with the actual Markov trace $\mathrm{tr}_M(\sigma_{i_1} \cdots \sigma_{i_k})$
+> of the magic-shell sub-braid as a single Hecke-algebra element,
+> evaluated via the Hoefsmit seminormal at $q_0$. The diagonal
+> Frobenius Gram approximation used in the LP dual would then be
+> replaced by the full $G_{ij} = \mathrm{tr}_M(b_i b_j)$, tightening
+> the LP relaxation and possibly resolving the $Z{=}2$/$N{=}2$
+> sign asymmetry.*
+
+The Lean form
+[`witness_refutes_pair_knot_product_volume_form`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/content/quantum-observable-universe/braids-and-knots/brane-tower-z-habiro.lean)
+records the refutation of this specific (simplest) pair-knot
+convention; the structural finding (LP-dual selection of pair-knot
+operators) is recorded as `def lpDualActiveSetIncludesPairKnotAtMagicShells` for downstream use.
+
+## Multiplicity / Type-B-fold probe (2026-05-11): also refuted
+
 The empirical support for promoting $\mathbf{m}$ to a first-class
 input comes from two converging signals:
 

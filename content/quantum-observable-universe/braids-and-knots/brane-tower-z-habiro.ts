@@ -31,6 +31,7 @@ export default conjecture({
       "folio-assistant/computations/probe-phiq-n-star-rule.witness.json",
       "folio-assistant/computations/probe-phiq-operator-valued.witness.json",
       "folio-assistant/computations/probe-phiq-multiplicity-refined.witness.json",
+      "folio-assistant/computations/probe-phiq-pair-knot-magic-shell.witness.json",
       "folio-assistant/computations/probe-phiq-avg-chi-over-classical-dim.witness.json",
     ],
     status: "verified",

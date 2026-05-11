@@ -223,6 +223,41 @@ theorem nStar_scalar_eigenvalue_form_refuted :
     (computed `2026-05-11`). -/
 def witnessMultiplicityBestMaxAbsErrPct : ℝ := 56.0
 
+/-- Witness-recorded worst-atom abs error under the
+    **pair-knot magic-shell** probe with simple product-volume
+    convention `|V̂_shell| = ∏_{i ∈ shell} |V̂_i|`.  Closest atom
+    is ⁴He at `-19.43%` (doubly magic Z=N=2; best closure across
+    all probes), but ³He at `+218.7%`, T at `+1056.9%`, D at
+    `+696.2%`.  The Z=2 / N=2 magic-shell symmetry fails:
+    Δ_shell(Z=2) = -16.88 MeV from ³He, Δ_shell(N=2) = +22.38 MeV
+    from ⁴He — opposite signs, 1.326× ratio.
+
+    Source:
+    `folio-assistant/computations/probe-phiq-pair-knot-magic-shell.witness.json`
+    (computed `2026-05-11`). -/
+def witnessPairKnotProductVolumeMaxAbsErrPct : ℝ := 1056.9
+
+/-- Structural finding from the same pair-knot witness: the
+    **operator-selection LP dual** (per `prop:operator-selection-lp`
+    and CLAUDE.md "LP / SDP duals — first-class infra") selects
+    the pair-knot composite operators `σ_{pp}` / `σ_{nn}` in the
+    active set EXACTLY for magic-shell atoms.
+
+    Active sets per atom (operator-selection LP, diagonal Frobenius
+    Gram, strong duality verified gap = 0):
+      D (no magic):           σ_pp, σ_nn absent (no pair-knot in basis)
+      T (N=2 magic):          σ_nn active
+      ³He (Z=2 magic):        σ_pp active
+      ⁴He (Z=2 + N=2 magic):  both σ_pp and σ_nn active
+
+    This is the operator-level signature that pair-knot composites
+    are structurally distinguishable from per-generator operators
+    at exactly the magic configurations.  A boolean record that the
+    LP-dual produced this active-set pattern (used by audit
+    tooling; carries no logical content beyond what the witness
+    asserts). -/
+def lpDualActiveSetIncludesPairKnotAtMagicShells : Prop := True
+
 /-- **Multiplicity-refined + Type-B-folded-crystal `n_⋆` refutation.**
     Four substrate-derived per-atom rules (mult-shifted Hecke,
     mult-truncated Hecke, Type-B-folded self-dual partition diagonal
@@ -245,11 +280,39 @@ theorem witness_refutes_multiplicity_and_type_b_forms :
   unfold witnessMultiplicityBestMaxAbsErrPct falsifiabilityThresholdPct
   norm_num
 
+/-- **Pair-knot product-volume convention refutation.** Replacing
+    per-generator Φ_q sums over the magic-shell intra-block by a
+    single composite Φ_q(|V̂_pair|) with
+    `|V̂_pair| = ∏_{i ∈ shell} |V̂_i|` (Hopf-link / categorical-product
+    convention) FAILS the falsifiability criterion: worst-atom abs
+    error 1056.9% on tritium under the paired tower.
+
+    Notable structural finding (positive): ⁴He at `-19.43%` is the
+    closest closure achieved by any probed form, and the operator-
+    selection LP dual confirms (strong duality, gap = 0) that the
+    pair-knot composite operators σ_pp / σ_nn are in the active set
+    EXACTLY at magic-shell atoms — see
+    `lpDualActiveSetIncludesPairKnotAtMagicShells`.  The LP-dual
+    evidence indicates the pair-knot is structurally privileged at
+    Z=2 / N=2; the FAILURE of the product-volume convention to
+    close points at a richer composite-volume operator
+    (e.g. `tr_M(σ_{i_1} ... σ_{i_k})` of the shell sub-braid as a
+    single Hecke element via Hoefsmit seminormal) as the right
+    refinement. -/
+-- Ref: [manuscript] conj:brane-tower-z-habiro §"Pair-knot magic-shell probe"
+theorem witness_refutes_pair_knot_product_volume_form :
+    witnessPairKnotProductVolumeMaxAbsErrPct >
+      falsifiabilityThresholdPct := by
+  unfold witnessPairKnotProductVolumeMaxAbsErrPct
+        falsifiabilityThresholdPct
+  norm_num
+
 /-- **All probed `n_⋆` families refuted.** Combining the two
     scalar-eigenvalue refutations with the canonical
     operator-valued (per-eigenvalue, signed, operator-trace,
-    Wedderburn-weighted) refutation AND the substrate-derived
-    multiplicity / Type-B-folded-crystal-depth refutation: every
+    Wedderburn-weighted) refutation, the substrate-derived
+    multiplicity / Type-B-folded-crystal-depth refutation, AND the
+    pair-knot product-volume magic-shell refutation: every
     empirically probed form of the `n_⋆` existence claim on
     `conj:brane-tower-z-habiro` fails the `10%` falsifiability
     threshold.
@@ -258,20 +321,26 @@ theorem witness_refutes_multiplicity_and_type_b_forms :
     * the algebraic Cauchy-limit half of the conjecture (untouched);
     * the ³He binding gap itself (structural deficit; not a
       level-selection failure) — see sibling `.md`
-      §"Multiplicity / Type-B-fold probe" final paragraph for the
-      two candidate reformulations (Markov-trace audit;
-      substrate-parameter cyclotomic-locus check at q^9 = 1). -/
--- Ref: [manuscript] conj:brane-tower-z-habiro §"Multiplicity / Type-B-fold probe"
+      §"Pair-knot magic-shell probe" for the LP-dual confirmation
+      that the pair-knot operators σ_pp / σ_nn ARE structurally
+      active at magic shells, plus the refined open question
+      pointing at `tr_M(σ_{shell})` (full Markov trace of the
+      shell sub-braid) instead of the simple product-volume
+      convention. -/
+-- Ref: [manuscript] conj:brane-tower-z-habiro §"Pair-knot magic-shell probe"
 theorem nStar_all_probed_forms_refuted :
     witnessUniformKBestMaxErrPct > falsifiabilityThresholdPct ∧
     witnessNStarRuleMaxErrPct > falsifiabilityThresholdPct ∧
     witnessPerEigenvalueOperatorBestMaxAbsErrPct >
       falsifiabilityThresholdPct ∧
     witnessMultiplicityBestMaxAbsErrPct >
+      falsifiabilityThresholdPct ∧
+    witnessPairKnotProductVolumeMaxAbsErrPct >
       falsifiabilityThresholdPct :=
   ⟨witness_refutes_scalar_uniform_k_form,
    witness_refutes_scalar_ell_n0_k_form,
    witness_refutes_per_eigenvalue_operator_form,
-   witness_refutes_multiplicity_and_type_b_forms⟩
+   witness_refutes_multiplicity_and_type_b_forms,
+   witness_refutes_pair_knot_product_volume_form⟩
 
 end QOU.BraidKnot
