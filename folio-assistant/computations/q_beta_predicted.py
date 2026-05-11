@@ -11,11 +11,20 @@ This script produces `q-beta-predicted.witness.json` recording:
   * E_0 from the FULL chain: m_e / (q_0 (q_0 - 1)) ≈ 4.186 MeV
     — derived from CAL-1 m_e + CAL-2 q_0 only; CAL-3 Q_β is the
     OUTPUT, not an input.
-  * Q_β predicted = |Δ(net)| · E_0 ≈ 0.788 MeV
-    — vs CODATA 0.782 MeV (0.75% framework prediction).
-  * Observable / virtual decomposition (ℓ ≥ 2 vs ℓ < 2):
-    Q_obs ≈ 0.461 MeV (58.46% — Hopf links + trefoil)
-    Q_virt ≈ 0.327 MeV (41.54% — γ + σ_0 + σ_1)
+  * Q_β predicted (single-wrap symbolic closed form):
+        Q_β = m_e · |q_0² - 2q_0 - 1| · (q_0 + 1) / (2 q_0³)
+            ≈ 0.7836 MeV — vs CODATA 0.7823 MeV (+0.168% /
+        +1.31 keV residual)
+  * The typed-crossings 6-term form Q_β ≈ 0.788 MeV (+0.747%)
+    is retained in the witness as a legacy cross-check only;
+    the single-wrap closed form is 4.46× tighter and is the
+    canonical prediction.
+  * Observable / virtual decomposition (ℓ ≥ 2 vs ℓ < 2) is
+    reported on the typed-crossings basis where it is well-
+    defined: Q_obs ≈ 0.461 MeV (58.46% — Hopf links + trefoil),
+    Q_virt ≈ 0.327 MeV (41.54% — γ + σ_0 + σ_1). At single
+    wrap the L_± and e^- channels cancel exactly between proton
+    and neutron, so the entire Q-value lives in γ + σ_0 + σ_1.
 
 References:
   * `prop:beta-decay-energy-scale`
@@ -46,10 +55,12 @@ OUT = HERE / "q-beta-predicted.witness.json"
 def main() -> int:
     mp.mp.dps = 50
 
+    # Measure full end-to-end runtime (per Copilot review note on
+    # under-reporting; covers all symbolic + numerical work below
+    # plus the JSON write).
     t_start = time.time()
-    summary = dm.derivation_summary()
-    duration_ms = int((time.time() - t_start) * 1000)
 
+    summary = dm.derivation_summary()
     e0_full = dm.e_0_full_mev()
     e0_cal = dm.e_0_calibrated_mev()
     q_pred = dm.q_beta_predicted_mev()  # single-wrap symbolic
@@ -187,7 +198,7 @@ def main() -> int:
             },
         ],
         "allPassed": True,
-        "durationMs": duration_ms,
+        "durationMs": int((time.time() - t_start) * 1000),
         "summary_for_humans": summary,
     }
     out["allPassed"] = all(a["passed"] for a in out["assertions"])

@@ -124,7 +124,11 @@ def main() -> int:
     q = _q_0_50dps()
     h = q - 1 / q
     m_e = M_E_MEV
-    q_codata = mp.mpf("0.78233341")
+    # Use the canonical CAL-3 witness value via codata_constants
+    # rather than a hardcoded literal (per Copilot review on PR #637:
+    # single source of truth, no drift if CAL-3 witness is refreshed).
+    from codata_constants import Q_BETA_MEV
+    q_codata = mp.mpf(str(Q_BETA_MEV))
 
     # ── Single-wrap β-decay operator (per neutron-qvalue-symbolic.md) ──
     delta_net = h * (h - 2) / 2                         # = h^2/2 - h

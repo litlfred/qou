@@ -101,12 +101,14 @@ def main() -> int:
         ame = AME_2020_BINDING_MEV[label]
         try:
             t0 = time.time()
-            # First try canonical=True (the structurally-correct path)
+            # `canonical=True` already has internal Plancherel fallback
+            # on NotImplementedError in hecke_core._canon — relying on
+            # that rather than catching here masks real bugs (per
+            # Copilot review). Only catch NotImplementedError narrowly.
             try:
                 b_pred = binding_from_frobenius_pairing(Z, N, canonical=True)
                 trace_kind = "canonical_jones_markov"
-            except Exception as e:
-                # Fall back to Plancherel (legacy backward-compat path)
+            except NotImplementedError as e:
                 b_pred = binding_from_frobenius_pairing(Z, N, canonical=False)
                 trace_kind = f"plancherel_fallback ({type(e).__name__})"
             dt = time.time() - t0

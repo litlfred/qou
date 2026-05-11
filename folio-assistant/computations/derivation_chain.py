@@ -110,7 +110,7 @@ TR_M_AT_Q0: dict[str, float] = {
 # DO NOT ADD ALGEBRAIC +1 OR ANY OTHER TUNING TO MAKE THE NUMBERS
 # MATCH. The honest residual is the deliverable.
 
-def _path_a_at_q0() -> dict[str, float]:
+def _path_a_at_q0() -> dict[str, "mp.mpf"]:
     """Lazy resolver — calls derive_m_{p,e}_hecke_path_a on first use.
 
     Lazy because (a) we don't want to import-time read JSON witnesses
@@ -122,9 +122,12 @@ def _path_a_at_q0() -> dict[str, float]:
     # Local import so derivation_chain.py stays import-light.
     from derive_m_p_hecke_path_a import m_p_hecke_path_a_at_q0
     from derive_m_e_hecke_path_a import m_e_hecke_path_a_cat_units_at_q0
+    # Keep the values as mp.mpf to preserve 50-dps precision per the
+    # no-float64 directive. Legacy float-typed consumers can still
+    # `float(M_HECKE_PIPELINE_AT_Q0["p"])` if they need a Python float.
     return {
-        "p": float(m_p_hecke_path_a_at_q0()),
-        "e": float(m_e_hecke_path_a_cat_units_at_q0()),
+        "p": m_p_hecke_path_a_at_q0(),
+        "e": m_e_hecke_path_a_cat_units_at_q0(),
     }
 
 
@@ -160,6 +163,18 @@ class _PathADict(dict):
     def __contains__(self, key):
         self._resolve()
         return super().__contains__(key)
+
+    def __iter__(self):
+        self._resolve()
+        return super().__iter__()
+
+    def __len__(self):
+        self._resolve()
+        return super().__len__()
+
+    def __repr__(self):
+        self._resolve()
+        return super().__repr__()
 
     def items(self):
         self._resolve()
@@ -210,8 +225,12 @@ E_0_CONVENTIONS: dict[str, dict] = {
             "Closed-form algebraic substitution from CAL-1 m_e + "
             "CAL-2 q_0. Single-Hecke-reduction-step cost per "
             "`prop:beta-decay-energy-scale` / `rem:energy-scale-planck`. "
-            "Equivalent to the leading-order LP-dual y_0^* · m_e at "
-            "single wrap (N=0 brane-tower truncation)."
+            "Conjecturally equivalent to the LP-dual y_0^* · m_e at "
+            "the appropriate normalization; the existing direct LP-dual "
+            "probe at H_3 (derive_e_0_lp_dual_h3.py) reports y_0^* "
+            "DIMENSIONLESS, far from 4.186 MeV — so the MeV scale of "
+            "E_0 still comes from CAL-1 + CAL-2 outside the LP, not "
+            "from the LP dual directly. See convention D below."
         ),
         "operator_class": (
             "β-decay single-wrap Δ_NF = (h^2/2)γ - (h/2)σ_0 - (h/2)σ_1 "

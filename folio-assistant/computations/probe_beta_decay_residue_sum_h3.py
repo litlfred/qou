@@ -126,7 +126,7 @@ OUT = HERE / "beta-decay-residue-sum-h3-probe.witness.json"
 def main() -> int:
     q = sp.Symbol("q", positive=True)
     # Schur-Weyl weights at H_3
-    bracket_n = lambda n: sp.simplify((q ** n - q ** (-n)) / (q - q ** (-1)))
+    bracket_n = lambda n: sp.cancel((q ** n - q ** (-n)) / (q - q ** (-1)))
     one_q   = bracket_n(1)  # = 1
     two_q   = bracket_n(2)  # = q + q^{-1}
     three_q = bracket_n(3)  # = q^2 + 1 + q^{-2}
@@ -250,12 +250,18 @@ def main() -> int:
             if den_deriv_at_zeta == 0:
                 continue
             res_sym = sp.simplify(num_at_zeta / den_deriv_at_zeta)
-            res_num = complex(res_sym.evalf(50))
-            res_mp = mp.mpc(res_num)
-            if abs(res_mp) < mp.mpf("1e-40"):
+            # Preserve precision: evaluate at mp.dps, extract real/imag
+            # via sp.re/sp.im to strings, then construct mp.mpc
+            # component-wise. Avoids the precision-truncating round-trip
+            # through Python `complex`.
+            res_eval = res_sym.evalf(mp.dps)
+            res_mp = mp.mpc(mp.mpf(str(sp.re(res_eval))), mp.mpf(str(sp.im(res_eval))))
+            # Tolerance tied to current dps (10× safety margin vs
+            # working precision).
+            if abs(res_mp) < mp.mpf(10) ** (-mp.dps + 10):
                 continue
-            zeta_num = complex(zeta.evalf(50))
-            zeta_mp = mp.mpc(zeta_num)
+            zeta_eval = zeta.evalf(mp.dps)
+            zeta_mp = mp.mpc(mp.mpf(str(sp.re(zeta_eval))), mp.mpf(str(sp.im(zeta_eval))))
             weight = 1 / (mp.mpf(q_0) - zeta_mp)
             contribution = res_mp * weight
             contribution_real = contribution.real

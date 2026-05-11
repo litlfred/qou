@@ -69,11 +69,15 @@ def residue_sum_for_irrep(weight_sym, chi_sym, q_sym, q_0):
         if den_d_v == 0:
             continue
         res_sym = sp.simplify(num_v / den_d_v)
-        res_num = complex(res_sym.evalf(50))
-        res_mp = mp.mpc(res_num)
-        if abs(res_mp) < mp.mpf("1e-40"):
+        # Preserve precision via component-wise sp.re/sp.im → str → mp.mpf,
+        # avoiding the truncating round-trip through Python `complex`.
+        res_eval = res_sym.evalf(mp.dps)
+        res_mp = mp.mpc(mp.mpf(str(sp.re(res_eval))), mp.mpf(str(sp.im(res_eval))))
+        # Tolerance tied to current dps.
+        if abs(res_mp) < mp.mpf(10) ** (-mp.dps + 10):
             continue
-        zeta_mp = mp.mpc(complex(zeta.evalf(50)))
+        zeta_eval = zeta.evalf(mp.dps)
+        zeta_mp = mp.mpc(mp.mpf(str(sp.re(zeta_eval))), mp.mpf(str(sp.im(zeta_eval))))
         weight = 1 / (mp.mpf(q_0) - zeta_mp)
         contribution = res_mp * weight
         total += contribution.real
@@ -96,8 +100,12 @@ def evaluate_at_q0(expr_sym, q_sym, q_0):
 
 def main() -> int:
     q = sp.Symbol("q", positive=True)
-    q_0_str = "1.1099785955541805116869213459974864268543164030"
-    q_0 = mp.mpf(q_0_str)
+    # Load CAL-2 q_0 from the canonical pinning witness so this probe
+    # stays aligned with the single source of truth (per Copilot review).
+    q_pinning = HERE / "q-pinning-50-digit.witness.json"
+    with q_pinning.open() as fh:
+        q_0 = mp.mpf(json.load(fh)["derived_50_digit"]["q"])
+    q_0_str = str(q_0)
     m_e_f = M_E_MEV
     q_codata = mp.mpf(str(Q_BETA_MEV))
 

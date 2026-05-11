@@ -55,16 +55,23 @@ _WITNESS_DIR = Path(__file__).resolve().parent
 _VALIDATION_WITNESS = _WITNESS_DIR / "codata-2022-validation-masses.witness.json"
 _CAL3_WITNESS = _WITNESS_DIR / "cal-3-q-beta.witness.json"
 
+# Cache for parsed JSON content keyed by witness Path so repeated
+# _load_mpf calls on the same file don't re-parse.
+_WITNESS_CACHE: dict = {}
+
 
 def _load_mpf(witness_path: Path, dotted_key: str) -> mp.mpf:
     """Load an mpmath mpf from a witness JSON at a dotted key path.
 
     Witness values are stored as strings to preserve precision through
-    JSON round-trip; mp.mpf parses them at the active dps.
+    JSON round-trip; mp.mpf parses them at the active dps. Per-path
+    JSON parses are cached in `_WITNESS_CACHE` to avoid redundant I/O
+    when this module loads multiple values from the same witness.
     """
-    with witness_path.open("r", encoding="utf-8") as fh:
-        data = json.load(fh)
-    cursor = data
+    if witness_path not in _WITNESS_CACHE:
+        with witness_path.open("r", encoding="utf-8") as fh:
+            _WITNESS_CACHE[witness_path] = json.load(fh)
+    cursor = _WITNESS_CACHE[witness_path]
     for segment in dotted_key.split("."):
         cursor = cursor[segment]
     if not isinstance(cursor, str):
@@ -72,7 +79,12 @@ def _load_mpf(witness_path: Path, dotted_key: str) -> mp.mpf:
             f"Witness {witness_path.name}:{dotted_key} must be string for "
             f"precision-safe mpmath parsing; got {type(cursor).__name__}."
         )
-    return mp.mpf(cursor)
+    # Force ≥50 dps parsing regardless of caller's current mp.dps so
+    # the module-level constants don't silently truncate to a low-
+    # precision default at import time. Caller's dps is restored on
+    # exit (per Copilot review note).
+    with mp.workdps(max(50, mp.mp.dps)):
+        return +mp.mpf(cursor)  # unary `+` to force re-rounding at workdps
 
 
 # ── CAL-1: electron mass (legitimate calibration input) ─────────
