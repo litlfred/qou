@@ -43,6 +43,13 @@ from pathlib import Path
 
 import mpmath as mp
 
+# Set 50 dps BEFORE importing codata_constants — its mp.mpf
+# constants are built at import time and otherwise inherit the
+# default 15 dps (per Copilot review on PR #639 q-beta-predicted.
+# witness.json:8 / 10 — fixes binary-rounded m_e_MeV strings AND
+# lets the WitnessBuilder timer below cover the full computation).
+mp.mp.dps = 50
+
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
@@ -54,7 +61,11 @@ OUT = HERE / "q-beta-predicted.witness.json"
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    # Instantiate WitnessBuilder at the TOP of main so durationMs
+    # captures the full symbolic + numerical work (per Copilot
+    # review on q-beta-predicted.witness.json:10 — previously
+    # wrap_legacy was called at the END, giving durationMs = 0).
+    builder = WitnessBuilder("q-beta-predicted", engine="mpmath")
 
     # Measure full end-to-end runtime (per Copilot review note on
     # under-reporting; covers all symbolic + numerical work below
@@ -78,23 +89,25 @@ def main() -> int:
     sum_check = q_obs + q_virt
     sum_residual_mev = abs(sum_check - q_pred_tc)
 
+    # Set top-level metadata on the existing builder (instantiated
+    # at the top of main so durationMs covers full runtime).
+    builder.set_description(
+        "FULL-chain Q_β prediction per prop:beta-decay-energy-scale. "
+        "E_0 derived from CAL-1 m_e + CAL-2 q_0 only (no CAL-3 input); "
+        "Q_β predicted via |Δ(net)| · E_0; observable/virtual split by "
+        "Coxeter length ℓ ≥ 2 (Hopf links + trefoil) vs ℓ < 2 (γ + σ_0 "
+        "+ σ_1). Owner directive 2026-05-10: do not use LO; use FULL."
+    )
+    builder.set_content_block("prop:beta-decay-energy-scale")
+    builder.set_audit_only(
+        "docs/audits/2026-05-10-workplan-0b-script-rewire-handoff.md"
+    )
+
+    # Build the legacy 'out' payload (without engine/scriptFile/
+    # computedAt/durationMs/assertions/allPassed — those are auto-
+    # supplied by the builder; assertions are routed via add_assertion
+    # below).
     out = {
-        "engine": "mpmath",
-        "engineVersion": "mpmath 1.3.0",
-        "computedAt": time.strftime("%Y-%m-%dT%H:%M:%S+00:00", time.gmtime()),
-        "computation": "q-beta-predicted",
-        "scriptFile": "q_beta_predicted.py",
-        "description": (
-            "FULL-chain Q_β prediction per prop:beta-decay-energy-scale. "
-            "E_0 derived from CAL-1 m_e + CAL-2 q_0 only (no CAL-3 input); "
-            "Q_β predicted via |Δ(net)| · E_0; observable/virtual split by "
-            "Coxeter length ℓ ≥ 2 (Hopf links + trefoil) vs ℓ < 2 (γ + σ_0 "
-            "+ σ_1). Owner directive 2026-05-10: do not use LO; use FULL."
-        ),
-        "contentBlock": "prop:beta-decay-energy-scale",
-        "auditOnly": (
-            "docs/audits/2026-05-10-workplan-0b-script-rewire-handoff.md"
-        ),
         "calibration_inputs_used": [
             "CAL-1 (m_e_MeV from codata_constants)",
             "CAL-2 (q_0 from q-pinning-50-digit.witness.json)",
@@ -179,41 +192,40 @@ def main() -> int:
                 ),
             },
         },
-        "assertions": [
-            {
-                "name": "Q_beta_pred_within_0.5_pct_of_codata",
-                "computed": float(abs(q_pred - q_codata) / q_codata),
-                "expected": 0.005,
-                "passed": float(abs(q_pred - q_codata) / q_codata) < 0.005,
-                "tolerance": 0.005,
-            },
-            {
-                "name": "Q_beta_pred_residual_under_2_keV",
-                "computed": float(abs(q_pred - q_codata) * 1000),
-                "expected": 2.0,
-                "passed": float(abs(q_pred - q_codata) * 1000) < 2.0,
-                "tolerance": 2.0,
-            },
-            {
-                "name": "single_wrap_beats_typed_crossings",
-                "computed": float(abs(q_pred - q_codata)),
-                "expected": float(abs(q_pred_tc - q_codata)),
-                "passed": float(abs(q_pred - q_codata)) < float(abs(q_pred_tc - q_codata)),
-                "tolerance": "single-wrap residual < typed-crossings residual",
-            },
-        ],
-        "allPassed": True,
-        "durationMs": int((time.time() - t_start) * 1000),
         "summary_for_humans": summary,
     }
-    out["allPassed"] = all(a["passed"] for a in out["assertions"])
 
-    # Migrated to WitnessBuilder.wrap_legacy (#637 deferred Tier-2,
-    # adopted in PR #639) — adds scriptHash + staleness metadata.
-    saved = WitnessBuilder.wrap_legacy(
-        "q-beta-predicted", out,
-        script_path=__file__, engine="mpmath",
-    ).save()
+    # Route the three assertions through builder.add_assertion so they
+    # appear in the witness `assertions` array (per Copilot review on
+    # q-beta-predicted.witness.json:8 — wrap_legacy was previously
+    # routing them into _extra_top_level where they vanished from the
+    # standard schema).
+    builder.add_assertion(
+        "Q_beta_pred_within_0.5_pct_of_codata",
+        computed=float(abs(q_pred - q_codata) / q_codata),
+        expected=0.0,
+        tolerance=0.005,
+    )
+    builder.add_assertion(
+        "Q_beta_pred_residual_under_2_keV",
+        computed=float(abs(q_pred - q_codata) * 1000),
+        expected=0.0,
+        tolerance=2.0,
+    )
+    builder.add_assertion(
+        "single_wrap_beats_typed_crossings",
+        computed=float(abs(q_pred - q_codata)),
+        expected=0.0,
+        tolerance=float(abs(q_pred_tc - q_codata)),
+    )
+
+    # Route every remaining `out` key onto the builder via the
+    # `_extra_top_level` channel so the on-disk layout preserves the
+    # custom keys (calibration_inputs_used, parameters, data, etc.).
+    for k, v in out.items():
+        builder._extra_top_level[k] = v
+
+    saved = builder.save()
     print(f"Wrote {saved.name}")
     print(f"  E_0 full       = {mp.nstr(e0_full, 8)} MeV  (derived, CAL-1 + CAL-2 only)")
     print(f"  E_0 calibrated = {mp.nstr(e0_cal, 8)} MeV  (CODATA Q_β / |Δ(net)|)")
@@ -223,8 +235,9 @@ def main() -> int:
     print(f"  Q_β typed-crossings (legacy)          = {mp.nstr(q_pred_tc, 8)} MeV ({float((q_pred_tc - q_codata)/q_codata*100):+.4f}%)")
     print(f"  improvement single-wrap vs typed       = {float(abs(q_pred_tc - q_codata) / abs(q_pred - q_codata)):.2f}x")
     print(f"  Observable Q (typed-cross basis, ℓ ≥ 2) = {mp.nstr(q_obs, 8)} MeV ({float(q_obs / q_pred_tc) * 100:.2f}% of typed-cross)")
-    print(f"  All assertions passed: {out['allPassed']}")
-    return 0 if out["allPassed"] else 1
+    all_passed = all(a.passed for a in builder.assertions)
+    print(f"  All assertions passed: {all_passed}")
+    return 0 if all_passed else 1
 
 
 if __name__ == "__main__":

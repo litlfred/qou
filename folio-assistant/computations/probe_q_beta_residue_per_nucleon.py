@@ -28,13 +28,17 @@ from pathlib import Path
 import mpmath as mp
 import sympy as sp
 
+# Set 50 dps BEFORE importing codata_constants — its mp.mpf
+# constants are built at import time and otherwise inherit the
+# default 15 dps (per Copilot review on PR #639 q-beta-residue-per-
+# nucleon-probe.witness.json:20).
+mp.mp.dps = 50
+
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 from codata_constants import M_E_MEV, Q_BETA_MEV  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-
-mp.mp.dps = 50
 
 OUT = HERE / "q-beta-residue-per-nucleon-probe.witness.json"
 
