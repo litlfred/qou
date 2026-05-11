@@ -119,6 +119,50 @@ sensitive to $\lvert\mu\rvert$ as $k$ grows).
   the partition-only argmax of spread is the single-row / single-
   column family with spread $= n - 1$.
 
+## Writhe accounting (audit)
+
+The braid word $\beta_\mathfrak{H}$ that enters all of #639's
+per-partition compute (consumed via #638's
+[`probe_phiq_operator_valued.py`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/folio-assistant/computations/probe_phiq_operator_valued.py))
+encodes the writhe **implicitly** through the signed
+$(c, d)$ Hecke coefficients of
+[`atom_braid_word_3A(Z, N)`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/mass_at_3A_proper.py):
+
+| nucleon pair | $(c, d)$ | Hecke meaning | crossing sign |
+|---|---|---|---|
+| p–p | $(1.0,\, 0.0)$ | bare $\sigma_i$ | $+1$ (positive) |
+| n–n | $(1.0,\, -h)$ | $\sigma_i^{-1} = \sigma_i - h$ | $-1$ (negative) |
+| p–n / n–p | $(1.0,\, -h/2)$ | half-Hecke interpolant | sign-mixed |
+
+The total writhe $w(\mathfrak{H})$ is determined by the
+$(Z, N)$-conditional structure of `atom_braid_word_3A`. Per
+CLAUDE.md §7a (Hecke–Skein convention), the framework fixes the
+framing via the braid-word convention and defines
+$J_L(q) = \mathrm{tr}_M(\rho(\beta_L))$ **directly**, without an
+explicit $(-q)^{3w/2}$ Kauffman correction. Consequently:
+
+* The eigenvalue spectra $\{\mu_a^{(\lambda)}\}$ in #638's probe
+  are the spectra of the **writhe-encoded** operator
+  $\rho_\lambda(\beta_\mathfrak{H})$ — different writhes produce
+  different spectra even at the same $\lambda$ and $q_0$.
+* This is why ${}^3\mathrm{He}$'s spectrum at $[5, 4]$ differs from
+  $T$'s spectrum at the same $\lambda$: $(Z, N) = (2, 1)$ vs $(1, 2)$
+  gives different p–n / n–n crossing patterns and hence different
+  writhes, producing different eigenvalue magnitudes (³He max
+  $\lvert\mu\rvert \approx 10.69$ vs $T$'s $\approx 8.23$).
+* The candidate SDP-active-set selector (above) reads the writhe-
+  encoded SDP output and therefore inherits the writhe-dependence
+  automatically — no separate writhe normalization is needed in
+  the selector definition.
+
+The half-Hecke p–n interpolant $(1.0, -h/2)$ is a framework choice
+(it corresponds to a sign-mixed isospin crossing in the categorical
+encoding); the SDP solver consumes this directly. This subtlety
+explains why the per-partition $k_\lambda$ rule cannot be reduced
+to "count positive minus negative crossings" alone — the half-
+weight crossing carries a continuous, not integer, contribution
+to the algebraic writhe.
+
 ## Structural reason: the selector is intrinsically $(q, \beta)$-dependent
 
 The negative finding above is **not** a failure of imagination; it
@@ -165,6 +209,45 @@ dependence observation above:
 > partition $\lambda$ in isolation.*
 
 Candidate routes (all $(q, \beta)$-aware):
+
+* **(Most promising) SDP active-set / shadow-price selector.** The
+  operator-selection SDP of
+  [prop:operator-selection-sdp](#prop:operator-selection-sdp) —
+  routed through `lp_dual_solver.solve_psd_operator_selection_sdp(t, G, n_target)`
+  per CLAUDE.md §"LP / SDP duals — first-class infra" — produces,
+  for inputs $(q_0, \beta_\mathfrak{H})$, a primal-dual pair whose
+  **dual** carries:
+  - a shadow price $y_0^\star$ on the net constraint,
+  - per-block shadow prices $y_\lambda^\star \geq 0$ on the
+    Wedderburn Frobenius-positivity constraints,
+  - an **active set** $\mathrm{Active} = \{\lambda : y_\lambda^\star > 0\}$
+    of binding blocks.
+
+  The natural candidate for the per-partition selector is:
+
+  $$
+    \mathrm{isMaxEigSpectrum}(\lambda)
+    \;\stackrel{?}{=}\;
+    \lambda = \mathop{\mathrm{argmax}}_{\lambda' \in \mathrm{Active}}
+    \; y_{\lambda'}^\star.
+  $$
+
+  This is substrate-only (no eigenvalue evaluation), $(q_0, \beta)$-dependent
+  (the SDP inputs), and **already infrastructure-supported**: the SDP
+  emits the required dual fields per the LP / SDP first-class-infra
+  contract (`y_star`, `active_set`, `duality_gap`). Testable directly
+  against PR #639's empirical dominants $\{[2,2,1,1], [6,3], [5,4]\}$
+  by running the SDP at each atom's braid word and reading off the
+  argmax of $y_\lambda^\star$.
+
+  Predicted alignment: the dominant partition $\lambda_\mathrm{dom}$
+  identified empirically by max-$\lvert\mu\rvert$ should equal
+  $\mathrm{argmax}_\lambda y_\lambda^\star$ — both measure
+  "where the operator's binding-energy demand concentrates," one
+  via the spectrum, the other via the LP shadow price. The
+  prop:bw-coefficient-shadow-price linkage between BW coefficients
+  and SDP shadow prices (per the existing LP/SDP infra) supports
+  the structural equivalence.
 
 * **Hoefsmit hook-content asymptotic along a reduced braid word.**
   The maximum eigenvalue of $\rho_\lambda(\sigma_i)$ in the
