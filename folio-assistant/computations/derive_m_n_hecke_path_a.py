@@ -70,8 +70,6 @@ import mpmath as mp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
-from codata_constants import M_E_MEV  # noqa: E402  (CAL-1)
-
 mp.mp.dps = 50
 
 SIX_TERM_WITNESS = HERE / "mass-formula-6term-mpfr-50dps.witness.json"
