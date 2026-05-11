@@ -1,0 +1,135 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-11T18:29:58.371912+00:00",
+  "commitSha": "8697153434cc063c7b0fa2b53ee589b5b4ddce4a",
+  "assertions": [
+    {
+      "name": "self_conj_count_6_is_1",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "self_conj_count_9_is_2",
+      "computed": 2,
+      "expected": 2,
+      "passed": true
+    },
+    {
+      "name": "D_candidate_matches_observed_k",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "T_candidate_matches_observed_k",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "He3_no_closure_at_uniform_k",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 12,
+  "computation": "probe-phiq-type-b-fold-depth",
+  "scriptFile": "probe_phiq_type_b_fold_depth.py",
+  "scriptHash": "508b8f99bd6b",
+  "scriptCommitSha": "unknown",
+  "description": "Type-B-folded-crystal-depth n_⋆ candidate: count of self-conjugate partitions of n = 3A (fixed points of the Kashiwara λ ↔ λ^T involution). Combinatorial probe, substrate-only (no CODATA, no operator-data needed). Result: candidate reproduces D (k=1) and T (k=2) observed closure depths from PR #638's per-eigenvalue probe, but FAILS for ³He (n_⋆ predicts k=2, ³He doesn't close at any uniform k). Same multiplicity-driven exception as PR #638; Type-B fold-depth is the (ℓ, n_0, k) piece of the open multiplicity-refined n_⋆(ℓ, n_0, k, m) candidate. Class C (diagnostic / probe) per three-calibration-discipline audit.",
+  "contentBlock": "conj:brane-tower-z-habiro",
+  "parameters": {
+    "atoms": [
+      "D",
+      "T",
+      "He3"
+    ],
+    "observed_k_closure_source": "PR #638 probe_phiq_operator_valued.py at q_0 ≈ 1.11"
+  },
+  "data": {
+    "table": [
+      {
+        "atom": "D",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "strand_count": 6,
+        "self_conj_partitions": [
+          [
+            3,
+            2,
+            1
+          ]
+        ],
+        "n_star_candidate": 1,
+        "observed_k_closure": 1,
+        "observed_residual_pct": -6.87,
+        "match": true
+      },
+      {
+        "atom": "T",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "strand_count": 9,
+        "self_conj_partitions": [
+          [
+            5,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            3,
+            3,
+            3
+          ]
+        ],
+        "n_star_candidate": 2,
+        "observed_k_closure": 2,
+        "observed_residual_pct": -8.0,
+        "match": true
+      },
+      {
+        "atom": "He3",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "strand_count": 9,
+        "self_conj_partitions": [
+          [
+            5,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            3,
+            3,
+            3
+          ]
+        ],
+        "n_star_candidate": 2,
+        "observed_k_closure": null,
+        "observed_residual_pct": null,
+        "match": false
+      }
+    ],
+    "matches": [
+      "D",
+      "T"
+    ],
+    "misses": [
+      "He3"
+    ],
+    "note_he3_failure": "³He fails to close at any uniform k ∈ {1..10} (per #638). Candidate Type-B fold depth = 2 (= self-conj count of partitions of 9). Failure attributed to the multiplicity profile of ³He's braid word: 8 generators with two near-pole entries (|V̂| ≈ 0.989 at positions 0 and 3) vs D/T's one each. The fold-depth candidate alone is INSENSITIVE to per-generator multiplicity asymmetry.",
+    "refined_open_form": "n_⋆ : (ℓ, n_0, k, m) → ℕ where m = per-generator near-pole multiplicity profile. Type-B fold-depth contributes the (ℓ, n_0, k) component; m supplies the ³He correction. Same form as PR #638 refined open question."
+  }
+}
