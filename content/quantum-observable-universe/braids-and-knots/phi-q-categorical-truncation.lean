@@ -12,8 +12,10 @@ analytic Φ_q product truncates at depth k★(T_w) as a categorical
 identity — any deeper truncation is equal modulo E_∞^{≥1, *} = 0.
 
 This file states the claim. The proof reduces to
-spectral_sequence_collapses_to_centre + Plancherel-weighted projection
-identity.
+spectral_sequence_collapses_to_centre + q-deformed Wedderburn-weighted
+projection identity (tilde w_λ = dim_q²/[n]_q!; cf.
+prop:plancherel-weight-boundedness for the classical Plancherel
+measure).
 
 -- Ref: [manuscript] prop:phi-q-categorical-truncation
 -- Ref: [manuscript] prop:spectral-sequence-collapse
@@ -35,7 +37,9 @@ structure GBStratifiedAlgebra (R : Type*) [CommRing R] where
   centre : Set algebra
   /-- The GB-depth of a central idempotent. -/
   depth : algebra → ℕ
-  /-- The Plancherel weight of a partition. -/
+  /-- The q-deformed Wedderburn-block weight of a partition (tilde w_λ
+      = dim_q²/[n]_q!). Field name retained for backward compatibility;
+      distinct from the classical Plancherel measure. -/
   plancherel_weight : algebra → R
 
 /-- Hypothesis bundle: the GB spectral sequence collapses to E_∞^{0,*} =

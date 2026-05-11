@@ -49,9 +49,12 @@ principal specialisation $x_i \mapsto q^{i-1}$.  Then:*
 ## Replacing the manual Hecke-energy LP cost
 
 The LP / SDP cost vector
-$c_\lambda = w_\lambda(q) = \dim_q(V_\lambda)^2 / [n]_q!$ used in
+$c_\lambda = \tilde w_\lambda(q) = \dim_q(V_\lambda)^2 / [n]_q!$ used
+in
 [`sdp-dual-without-demand.md`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/sdp-dual-without-demand.md)
-is the Plancherel weight of the *full* Wedderburn block. It is
+is the q-deformed Wedderburn-block weight (the classical Plancherel
+measure is the bare-symbol $w_\lambda = (\dim V_\lambda)^2/n!$; see
+[`prop:plancherel-weight-boundedness`](#prop:plancherel-weight-boundedness)). It is
 computed by-hand via Hoefsmit matrices or the hook-content
 formula, with no structural reason for the chosen functional
 beyond the trace constraint.

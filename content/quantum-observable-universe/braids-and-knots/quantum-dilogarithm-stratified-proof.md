@@ -44,8 +44,12 @@ pole locus at $z_i = q^k$. We identify this locus with the
 depth-$k$ centre stratum $Z^{(k)}(A)$ via the $q$-content / hook-length
 structure:
 
-(a) The Plancherel weight is
-$w_\lambda = \dim_q^2 V_\lambda / [n]_q!$ where
+(a) The q-deformed Wedderburn-block weight is
+$\tilde w_\lambda = \dim_q^2 V_\lambda / [n]_q!$ (distinct from the
+classical Plancherel measure $w_\lambda = (\dim V_\lambda)^2/n!$ —
+the two coincide at $q = 1$; see
+[`prop:plancherel-weight-boundedness`](#prop:plancherel-weight-boundedness)),
+where
 $\dim_q V_\lambda = \prod_{\square \in \lambda} [h(\square)]_q / [n]_q!$
 and $[h]_q = (q^h - q^{-h})/(q - q^{-1})$ is the symmetric quantum
 integer

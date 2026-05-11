@@ -84,9 +84,10 @@ induces a specific $\mathrm{Lk}_R(W^a, \pi^a)$ braid topology
 with $\mathrm{lk} = 1$, identifying the pair as a 2-component
 link in $\mathrm{End}_R(A)$. The combined object now carries an
 additional operator-strand (the Goldstone-strand), and its
-Markov trace acquires the link-specific Plancherel weight.
+Markov trace acquires the link-specific q-deformed Wedderburn weight
+$\tilde w_\lambda = \dim_q^2/[n]_q!$.
 
-**Step D — Mass via Plancherel weight.**
+**Step D — Mass via q-deformed Wedderburn weight.**
 The mass of the post-EWSB boson is the Markov-trace eigenvalue of
 its 2-component-link image, weighted by the Hoefsmit cell-content
 projector

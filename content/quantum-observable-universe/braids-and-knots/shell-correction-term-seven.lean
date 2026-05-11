@@ -49,10 +49,11 @@ structure HeightPartition (n h : ℕ) where
 
 /-- Atomic-braid Wedderburn datum: the inputs Term 7 needs at each
     nucleus `(Z, N, A)`.  `partitions` enumerates the height-`h`
-    partitions of `3A` carrying non-negative Plancherel weight;
-    `m_codata` is the experimentally measured mass; `m_other` is the
-    sum of the other six terms of the unified mass formula evaluated
-    on the same nucleus. -/
+    partitions of `3A` carrying non-negative q-deformed Wedderburn
+    weight tilde w_λ = dim_q²/[n]_q!; `m_codata` is the
+    experimentally measured mass; `m_other` is the sum of the other
+    six terms of the unified mass formula evaluated on the same
+    nucleus. -/
 structure AtomicWedderburnDatum (h : ℕ) where
   Z : ℕ
   N : ℕ
@@ -111,7 +112,7 @@ class ShellCorrectionTermSeven where
 /-- **Downstream conditional theorem (A = 2 single-partition reduction).**
 
     Conditional on `[ShellCorrectionTermSeven]`, Term 7 at any nucleus
-    is the Plancherel-weighted sum specified by
+    is the q-deformed Wedderburn-weighted sum specified by
     `term_seven_decomposition`.  At `A = 2` and `h_star = 6` the only
     height-6 partition of `6 = 3·2` is `(3,2,1)`, so the sum collapses
     to a single shadow-price contribution — but that combinatorial

@@ -83,7 +83,7 @@ requires either:*
    $\sum_S z^{|S|}\,\mathrm{Vol}_q^{(S)}(\beta)$ — Markov-invariant
    by construction; or*
 2. *replacing the per-generator $\Phi_q(|\hat V_i|)$ with a
-   Plancherel-weighted trace expansion $\sum_n c_n\,\mathrm{tr}_M(\sigma_i^n)$
+   q-deformed Wedderburn-weighted trace expansion $\sum_n c_n\,\mathrm{tr}_M(\sigma_i^n)$
    (Heine identity; `brane-tower-plancherel-scaffold.witness.json`)
    — converges to $\Phi_q(z)$ but each summand is a trace; or*
 3. *using the Habiro-coefficient sum $\sum_m a_m(T_w)\,(u;u)_m / \mathrm{denom}(u)$

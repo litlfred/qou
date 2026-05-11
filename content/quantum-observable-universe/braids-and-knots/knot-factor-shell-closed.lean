@@ -3,8 +3,8 @@
 
 For `Z = N` even-even nuclei, Markov-chain equilibrium projects
 `β · β*` onto the trivial idempotent `e_{(n)}` alone, so the
-Plancherel-weighted knot-factor sum collapses to the trivial-block
-contribution and `a_K = 1` exactly.
+q-deformed Wedderburn-weighted knot-factor sum collapses to the
+trivial-block contribution and `a_K = 1` exactly.
 
 LaTeX label: `cor:knot-factor-shell-closed`
 

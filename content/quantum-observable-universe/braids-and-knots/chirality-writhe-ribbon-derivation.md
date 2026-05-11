@@ -221,7 +221,7 @@ normalisation) against paper's assigned factors for $D$, $T$.
 **No variant matches within $20\%$**.*
 
 *Best-match variant: $a = 1 + \langle c\rangle \cdot h$ (no
-writhe prefactor, Plancherel-weighted content), giving
+writhe prefactor, q-deformed Wedderburn-weighted content), giving
 $a_D^{\text{free}} = 1.524$ vs paper's $1.21$ ($26\%$ off).
 All 7 other variants diverge by $>80\%$.*
 

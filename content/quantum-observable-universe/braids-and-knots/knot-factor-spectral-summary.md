@@ -15,8 +15,9 @@ per-isotope $a_\mathcal{K}$ choices with derived expressions:
 The Hoefsmit pipeline
 ([Hoefsmit](#prop:hoefsmit-scattering-pipeline)) produces
 $\chi_\lambda(\beta_\mathcal{K})$ for any braid word.  The knot
-factor is then a single Plancherel-weighted sum, bounded by
-completeness with no truncation.  Implementation: replace per-isotope
+factor is then a single q-deformed Wedderburn-weighted sum,
+bounded (though not unit-normalised) by Wedderburn completeness with
+no truncation.  Implementation: replace per-isotope
 hand-fits in `folio-assistant/computations/atomic_mass_pipeline.py`
 with direct evaluation of
 ([knot factor](#prop:knot-factor-spectral-form)).

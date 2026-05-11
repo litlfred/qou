@@ -28,18 +28,22 @@ spectral sequence $E_r^{p, q} \Rightarrow \mathrm{HH}^{p+q}$ then has
 only $E_\infty^{p, 0}$ surviving with $p + 0 = 0$, giving
 $E_\infty^{0, 0} = \mathrm{HH}^0 = Z(A)$. $\square$
 
-**Corollary (mass functional is a Plancherel-weighted centre projection).**
+**Corollary (mass functional is a q-deformed Wedderburn-weighted centre projection).**
 *The categorical mass functional pairs the Frobenius integral
 $\int_A : A \to R$ with the centre via the Wedderburn decomposition
 ([categorical mass, Markov](#prop:categorical-mass-markov)):*
 
 $$
   \mathfrak{m}_{q,\mathcal{K}}
-  \;=\; \sum_{\lambda \,\vdash\, n} w_\lambda \cdot \frac{\chi_\lambda(\rho(\beta_\mathcal{K}))}{\dim_q V_\lambda},
-  \qquad w_\lambda = \frac{\dim_q^2 V_\lambda}{[n]_q!},
+  \;=\; \sum_{\lambda \,\vdash\, n} \tilde w_\lambda \cdot \frac{\chi_\lambda(\rho(\beta_\mathcal{K}))}{\dim_q V_\lambda},
+  \qquad \tilde w_\lambda = \frac{\dim_q^2 V_\lambda}{[n]_q!},
 $$
 
-*Plancherel weights summing to $1$.  Binning by GB-depth
+*q-deformed Wedderburn weights $\tilde w_\lambda$, bounded but
+$\sum \tilde w_\lambda \neq 1$ at $q \neq 1$ in general (cf.
+[`prop:plancherel-weight-boundedness`](#prop:plancherel-weight-boundedness)
+for the classical Plancherel measure $w_\lambda = (\dim V_\lambda)^2/n!$
+that does sum to $1$).  Binning by GB-depth
 ([curvature-rank stratification](#prop:curvature-rank-gb-stratification))
 gives the curvature-rank decomposition
 $\mathfrak{m}_{q,\mathcal{K}} = \sum_k \alpha_k \cdot

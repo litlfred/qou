@@ -12,7 +12,10 @@ Term 7 is the well-defined formulation:
   Φ_k(β) := Σ_{λ : depth(λ)=k} w_λ · log|χ_λ(β)|
   Term_7(β) := α · Σ_{k≥4} Φ_k(β),  α = m_e · 8G
 
-with w_λ = dim_q²(λ)/[n]_q! the Plancherel weight (bounded; sum=1).
+with tilde w_λ = dim_q²(λ)/[n]_q! the q-deformed Wedderburn-block
+weight (bounded; sum ≠ 1 at q ≠ 1 in general — distinct from the
+classical Plancherel measure (dim V_λ)²/n! that does sum to 1; see
+prop:plancherel-weight-boundedness).
 
 Properties:
 1. Plancherel boundedness: Σ_λ w_λ ≤ 1 (q-deformed Plancherel).
@@ -32,7 +35,7 @@ namespace QOU.WedderburnMass
 
 universe u
 
-/-- Abstract data for a Plancherel-weighted sum: each "partition" λ
+/-- Abstract data for a q-deformed Wedderburn-weighted sum: each "partition" λ
     has a weight `w` and a character value `χ`. -/
 structure WedderburnBlock where
   weight : ℝ

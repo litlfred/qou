@@ -110,8 +110,10 @@ in the standard normalization), the leading correction is
 $w(K) c(\lambda) h$.  After Markov-averaging over $\lambda$ with
 weights $w_\lambda \chi_\lambda(T_w)$, the numerator gives
 $1 + w(K) h \langle c(\lambda) \rangle_\beta + O(h^2)$, where
-$\langle c(\lambda) \rangle_\beta$ is the Plancherel-weighted mean
-content.
+$\langle c(\lambda) \rangle_\beta$ is the q-deformed
+Wedderburn-weighted mean content (the average is a ratio
+$\sum \tilde w_\lambda \chi_\lambda c / \sum \tilde w_\lambda \chi_\lambda$
+and is invariant under renormalisation of $\tilde w_\lambda$).
 
 The conjecture splits along **chirality class**:
 
@@ -142,11 +144,12 @@ The conjecture splits along **chirality class**:
     \frac{3 \bigl(\chi^{(3)}(\beta) - \chi^{(1,1,1)}(\beta)\bigr)}{
       \chi^{(3)}(\beta)
       \;+\; \chi^{(1,1,1)}(\beta)
-      \;+\; (w_{(2,1)} / w_{(3)}) \cdot \chi^{(2,1)}(\beta)
+      \;+\; (\tilde w_{(2,1)} / \tilde w_{(3)}) \cdot \chi^{(2,1)}(\beta)
     },
   $$
-  where the Plancherel-weight ratio at $q_0 \approx 1.10998$ is
-  $w_{(2,1)} / w_{(3)} \approx 4.454$ (and $w_{(3)} = w_{(1,1,1)}$
+  where the q-deformed Wedderburn-weight ratio at
+  $q_0 \approx 1.10998$ is $\tilde w_{(2,1)} / \tilde w_{(3)} \approx
+  4.454$ (and $\tilde w_{(3)} = \tilde w_{(1,1,1)}$
   by transposition symmetry).  The reduction follows from
   $c(\lambda) \in \{+3, 0, -3\}$ for $\lambda \in \{(3), (2,1),
   (1,1,1)\}$: the $(2,1)$ contribution drops from the numerator

@@ -49,8 +49,9 @@ $$
 $$
 
 is then read as: total hadron mass = sum over confinement layers,
-each layer contributing its Plancherel-weighted log-character
-content.
+each layer contributing its q-deformed Wedderburn-weighted
+log-character content (cf. $\tilde w_\lambda$ in
+[`prop:plancherel-term-7-formulation`](../braids-and-knots/plancherel-term-7-formulation.md)).
 
 | Stratum | Confinement layer | Physical content |
 |---|---|---|

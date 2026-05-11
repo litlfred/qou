@@ -134,13 +134,16 @@ succeeding):
    evaluates to zero correction; the correct scale is
    $\alpha_{\rm bind}^{\rm EW} = m_e \cdot \mathcal{N}_{\rm sym}(q_0)
    \approx 108.9$ MeV — a categorical EW-sector binding scale.
-3. **SHELL-7-SCALE reweighting** informed: the Plancherel weight
-   $w_\lambda = \dim_q^2/[n]_q!$ used in
+3. **SHELL-7-SCALE reweighting** informed: the q-deformed
+   Wedderburn-block weight
+   $\tilde w_\lambda = \dim_q^2/[n]_q!$ used in
    [`shell7-bb-stratum.witness.json`](../../folio-assistant/computations/shell7-bb-stratum.witness.json)
    blew up because it has no $q_0 > 1$ damping. $\mathcal{N}_{\rm sym}(q)$ likely
-   provides the correct $q_0$-bounded Plancherel weight (its closed
-   form is bounded above by the simple Plancherel $\dim_q^2$ growth
-   — needs the (b) or (c) Higgs/Hochschild structure to suppress).
+   provides the correct $q_0$-bounded q-deformed weight (its closed
+   form is bounded above by the simple $\dim_q^2$ growth — needs the
+   (b) or (c) Higgs/Hochschild structure to suppress). Distinct from
+   the classical Plancherel measure $w_\lambda = (\dim V_\lambda)^2/n!$
+   ([`prop:plancherel-weight-boundedness`](#prop:plancherel-weight-boundedness)).
 
 ### Status
 
