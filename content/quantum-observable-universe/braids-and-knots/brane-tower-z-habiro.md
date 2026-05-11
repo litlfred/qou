@@ -348,36 +348,6 @@ but missing a doubled-near-pole correction for ${}^3\mathrm{He}$ —
 the same multiplicity signature flagged in the scalar-form closure
 above.
 
-### Result — operator-valued form is also refuted at every uniform $k$
-
-| $k$ | $D$ err | $T$ err | ${}^3\mathrm{He}$ err | max\|err\| |
-|:-:|---:|---:|---:|---:|
-| 1 | $-14.71\%$ | $-67.89\%$ | $-62.98\%$ | $67.89\%$ |
-| **2** | $\mathbf{+8.15\%}$ | $\mathbf{-66.91\%}$ | $\mathbf{-62.01\%}$ | $\mathbf{66.91\%}$ |
-| 3 | $-80.56\%$ | $-71.81\%$ | $-60.44\%$ | $80.56\%$ |
-| 4 | $+3293\%$ | $+45.91\%$ | $-56.78\%$ | $3293\%$ |
-| 5 | $+43{,}954\%$ | $+1697\%$ | $-51.53\%$ | $43{,}954\%$ |
-| 6 | $+264{,}480\%$ | $+11{,}175\%$ | $-40.16\%$ | $264{,}480\%$ |
-| 8 | $+3.29\times 10^6\%$ | $+148{,}050\%$ | $+255\%$ | $3.29\times 10^6\%$ |
-| 10 | $+1.87\times 10^7\%$ | $+868{,}733\%$ | $+26{,}239\%$ | $1.87\times 10^7\%$ |
-
-Best uniform $k$ is $k = 2$: deuteron lands at $+8.15\%$
-(marginally below the $10\%$ working bound but above the
-conjecture's $\sim 5\%$ empirical-confirmation threshold), but
-tritium and ${}^3\mathrm{He}$ both undershoot by $\sim 67\%$ and
-$\sim 62\%$ respectively. Worst-atom abs error at $k = 2$ is
-$66.91\%$ on tritium — an order of magnitude above the falsifiability
-threshold.
-
-**Theorem (operator-valued $n_\star$ refutation).** *Under the
-Wedderburn-block promotion above, for every $k \in \{1, 2, 3, 4, 5,
-6, 8, 10\}$, the operator-valued tower
-$\mathrm{tower}_{\mathrm{op}}^{(k)}$ substituted into the binding
-formula produces an error exceeding the falsifiability threshold on
-at least one of $\{D, T, {}^3\mathrm{He}\}$.* The Lean form is
-[`witness_refutes_operator_valued_wedderburn_form`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/content/quantum-observable-universe/braids-and-knots/brane-tower-z-habiro.lean)
-in the sibling `.lean`.
-
 ### What survives the closure
 
 The conjecture has two independent claims:

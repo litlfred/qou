@@ -46,7 +46,7 @@ If no, the open question shifts to the strictly-stronger
 **per-eigenvalue operator** form: Φ_q applied to each eigenvalue of
 ρ_λ(β_𝔥), summed (= operator-trace), Wedderburn-weighted.
 
-Output: ``probe-phiq-operator-valued.witness.json``
+Output: ``probe-phiq-avg-chi-over-classical-dim.witness.json``
 """
 import sys
 import json
@@ -103,6 +103,33 @@ def main():
     )["sigma_inv_dim_q_at_q0"]
     def sigma(A):
         return float(sigma_3A_witness[f"n={3 * A}"])
+
+    # Start WitnessBuilder timer at the top so durationMs reflects the
+    # actual per-atom Wedderburn-sum compute (Copilot review on PR #638).
+    w = (
+        WitnessBuilder("probe-phiq-avg-chi-over-classical-dim", engine="python")
+        .set_description(
+            "Operator-valued Φ_q brane-tower probe in Wedderburn-block "
+            "form. For each isotope in {D, T, ³He} and each k in "
+            "{1,2,3,4,5,6,8,10}, computes "
+            "tower_op^(k) = Σ_λ y_λ Φ_q^{[≤k]}(|χ^λ_q(β)|/dim V_λ), "
+            "Wedderburn-summed across irreps of H_{3A}(q_0) via the "
+            "trusted q-Hecke seminormal infrastructure (per-irrep χ^λ "
+            "via Hoefsmit, y_λ via Wenzl Schur principal specialization). "
+            "Historical / superseded variant of the canonical "
+            "per-eigenvalue operator-valued probe in "
+            "probe_phiq_operator_valued.py: this one uses three "
+            "approximations (classical SYT-count dim_V_λ instead of "
+            "quantum dim_q; abs(χ) instead of signed χ; "
+            "mean-of-eigenvalues instead of per-eigenvalue Φ_q + "
+            "operator trace) that biased the k=2 ³He result."
+        )
+        .set_content_block("conj:brane-tower-z-habiro")
+        .add_parameter("q_0", float(Q0))
+        .add_parameter("m_e_MeV", M_E_MEV)
+        .add_parameter("k_sweep", SWEEP_K)
+        .add_parameter("threshold_pct", THRESHOLD_PCT)
+    )
 
     print("=" * 88)
     print("Operator-valued (Wedderburn-block) Φ_q brane-tower probe")
@@ -205,27 +232,7 @@ def main():
         print("  refinement (open).")
 
     w = (
-        WitnessBuilder("probe-phiq-avg-chi-over-classical-dim", engine="python")
-        .set_description(
-            "Operator-valued Φ_q brane-tower probe in Wedderburn-block "
-            "form. For each isotope in {D, T, ³He} and each k in "
-            "{1,2,3,4,5,6,8,10}, computes "
-            "tower_op^(k) = Σ_λ y_λ Φ_q^{[≤k]}(|χ^λ_q(β)|/dim V_λ), "
-            "Wedderburn-summed across irreps of H_{3A}(q_0) via the "
-            "trusted q-Hecke seminormal infrastructure (per-irrep χ^λ "
-            "via Hoefsmit, y_λ via Wenzl Schur principal specialization). "
-            "Promotes the scalar Φ_q-per-generator-volume probe to a "
-            "convolution-aware higher-irrep form that captures the "
-            "full Hecke R-matrix structure of the braid operator. "
-            "Tests whether the scalar-substrate refutation in "
-            "§'Closure (2026-05-11)' extends to the operator-valued "
-            "n_⋆ existence claim."
-        )
-        .set_content_block("conj:brane-tower-z-habiro")
-        .add_parameter("q_0", float(Q0))
-        .add_parameter("m_e_MeV", M_E_MEV)
-        .add_parameter("k_sweep", SWEEP_K)
-        .add_parameter("threshold_pct", THRESHOLD_PCT)
+        w
         .add_data("per_atom", {
             name: {
                 "Z": d["Z"], "N": d["N"], "A": d["A"],
@@ -249,12 +256,14 @@ def main():
             "scalar promotion. The strictly-stronger per-eigenvalue "
             "operator form (Φ_q applied to each eigenvalue of "
             "ρ_λ(β) in V_λ, summed as the operator trace, then "
-            "Wedderburn-weighted) remains the next refinement."
+            "Wedderburn-weighted) is in probe_phiq_operator_valued.py."
         )
     )
     out = w.save()
     print(f"\n  Witness: {out.name}")
-    return 0 if closed_any else 1
+    # Exit 0 whenever the witness assertions pass — a successful
+    # refutation IS the expected outcome (Copilot review on PR #638).
+    return 0
 
 
 if __name__ == "__main__":

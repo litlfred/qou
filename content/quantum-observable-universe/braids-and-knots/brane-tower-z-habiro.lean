@@ -65,21 +65,33 @@ instance canonical (n₀ : ℕ) (q : ℝ) : BraneTowerZHabiro n₀ q where
   recovery_holds := fun _ _ _ _ _ => trivial
 
 -- ────────────────────────────────────────────────────────────────────────────
--- Closure (2026-05-11): scalar-eigenvalue form of n_⋆ is refuted by witness
+-- Closure (2026-05-11): both scalar-eigenvalue AND operator-valued n_⋆ forms
+-- of the conjecture's level-selection claim are refuted by witness data.
 --
--- SCOPE.  "Scalar-eigenvalue" means BOTH (a) the candidate `n_⋆` is a function
--- of scalar substrate invariants of a single confined particle, AND (b) the
--- truncated quantum dilogarithm Φ_q^{[≤n_⋆]} is evaluated on a SCALAR argument
--- (the per-generator algebraic volume |V̂_i|).  These two assumptions together
--- collapse the Wedderburn decomposition of H_{3A}(q_0) onto its 1-dimensional
--- irreps; higher partitions λ contribute only through scalar reductions.  The
--- refutation theorems below cover this scoped form.
+-- SCOPE.
+-- (a) "Scalar-eigenvalue" means the candidate `n_⋆` is a function of scalar
+--     substrate invariants of a single confined particle AND Φ_q^{[≤n_⋆]} is
+--     evaluated on a SCALAR argument (the per-generator algebraic volume
+--     |V̂_i|).  Refuted by `witness_refutes_scalar_uniform_k_form` and
+--     `witness_refutes_scalar_ell_n0_k_form` below.
+-- (b) "Operator-valued (per-eigenvalue)" replaces the scalar Φ_q evaluation
+--     with `Σ_λ y_λ · tr_λ(Φ_q^{[≤k]}(ρ_λ(β)))` — Φ_q applied per eigenvalue
+--     of the braid operator in each Hecke irrep V_λ, summed as the operator
+--     trace, then Wedderburn-weighted.  Refuted by
+--     `witness_refutes_per_eigenvalue_operator_form` below.
 --
--- The strictly-stronger OPERATOR-VALUED form (Wedderburn-block Φ_q applied
--- across higher irreps, convolution-aware via χ^λ_q(β) of the full braid
--- operator) is probed separately and remains the open path.  See the
--- sibling `.md` §"Operator-valued probe" and witness file
---   folio-assistant/computations/probe-phiq-operator-valued.witness.json.
+-- Combined as `nStar_all_probed_forms_refuted`: every empirically probed
+-- form of the `n_⋆` existence claim fails the falsifiability threshold.
+-- The remaining open paths (untouched by these refutations) are: the
+-- algebraic Cauchy-limit half of the conjecture; the multiplicity-refined
+-- scalar form `n_⋆(ℓ, n₀, k, m)` with m = per-generator near-pole
+-- multiplicity profile; and crystal-basis derived candidates such as
+-- Type-B-folded-crystal depth (CLAUDE.md §7b).
+--
+-- Witnesses:
+--   folio-assistant/computations/probe-phiq-uniform-k.witness.json
+--   folio-assistant/computations/probe-phiq-n-star-rule.witness.json
+--   folio-assistant/computations/probe-phiq-operator-valued.witness.json
 -- ────────────────────────────────────────────────────────────────────────────
 
 /-- Falsifiability threshold from the conjecture's `## Falsifiability`

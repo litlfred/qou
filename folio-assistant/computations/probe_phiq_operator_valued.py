@@ -55,6 +55,7 @@ from q_parameter import Q as Q0
 from experimental_constants import M_E_MEV
 from witness_base import WitnessBuilder
 from hecke_characters import build_seminormal_matrices
+from syt_prefix_cache import BlockCache, build_seminormal_matrices_cached
 from wedderburn_jones_markov import y_lambda_at
 from mass_at_3A_proper import atom_braid_word_3A
 
@@ -120,13 +121,44 @@ def main():
 
     q0_val = float(Q0)
 
+    # Start WitnessBuilder timer at the top so durationMs reflects the
+    # actual per-atom eigenvalue compute (Copilot review on PR #638).
+    w = (
+        WitnessBuilder("probe-phiq-operator-valued", engine="python")
+        .set_description(
+            "Per-eigenvalue, signed-character, operator-trace promotion "
+            "of the scalar Φ_q brane-tower probe. For each isotope in "
+            "{D, T, ³He} and each k in {1,2,3,4,5,6,8,10}, computes "
+            "tower_op^(k) = |Σ_λ y_λ(q_0) · tr_λ(Φ_q^{[≤k]}(ρ_λ(β)))| "
+            "where ρ_λ(β) is the numerical braid operator in irrep V_λ "
+            "(via Hoefsmit seminormal at q_0). Eigenvalues μ_a^(λ) via "
+            "numpy.linalg.eigvals; Φ_q applied per eigenvalue; "
+            "operator-trace = Σ_a Φ_q^{[≤k]}(μ_a^(λ)); Wedderburn-summed "
+            "with signed y_λ (complex), final |·| at binding-formula "
+            "level. Replaces the prior _avg_chi_over_classical_dim "
+            "variant which used three approximations (classical dim, "
+            "abs χ, mean-of-eigenvalues) that biased the result. "
+            "Per-irrep eigenvalue spectra are persisted in "
+            "data.per_atom[atom].rows[i].eigenvalues_{real,imag} for "
+            "downstream audit and multiplicity-refined probes."
+        )
+        .set_content_block("conj:brane-tower-z-habiro")
+        .add_parameter("q_0", q0_val)
+        .add_parameter("m_e_MeV", M_E_MEV)
+        .add_parameter("k_sweep", SWEEP_K)
+        .add_parameter("threshold_pct", THRESHOLD_PCT)
+    )
+
+    # Per-q BlockCache shared across irreps (Copilot perf review).
+    block_cache = BlockCache(q0_val, q0_val - 1.0 / q0_val)
+
     print("=" * 88)
     print("Operator-valued Φ_q brane-tower probe — PER-EIGENVALUE form")
     print("=" * 88)
     print(f"  q_0 = {q0_val}, m_e = {M_E_MEV} MeV")
     print()
     print("  Building ρ_λ(β) and computing eigenvalues per atom × per irrep")
-    print("  (Hoefsmit seminormal at q_0; numpy.linalg.eigvals)")
+    print("  (Hoefsmit seminormal at q_0 via BlockCache; numpy.linalg.eigvals)")
     print()
 
     per_atom = {}
@@ -139,7 +171,9 @@ def main():
         rows = []
         tr_M = 0.0
         for shape, y in y_vals.items():
-            sigmas, dim, _ = build_seminormal_matrices(shape, q=q0_val)
+            sigmas, dim, _ = build_seminormal_matrices_cached(
+                shape, cache=block_cache,
+            )
             if dim == 0:
                 continue
             rho = rho_lambda_braid(sigmas, dim, word)
@@ -249,33 +283,12 @@ def main():
         print("  + per-eigenvalue operator-trace) now fail the AME light-")
         print("  isotope falsifiability threshold.")
 
-    # Trim large eigenvalue arrays before saving — keep summary only.
-    for name in per_atom:
-        for row in per_atom[name]["rows"]:
-            row.pop("eigenvalues_real", None)
-            row.pop("eigenvalues_imag", None)
+    # Per-irrep eigenvalue spectra kept in `per_atom[atom].rows[i].eigenvalues_{real,imag}`
+    # for downstream audit + the multiplicity-refined probe (PR #638
+    # Copilot review: persistence claim now matches reality).
 
     w = (
-        WitnessBuilder("probe-phiq-operator-valued", engine="python")
-        .set_description(
-            "Per-eigenvalue, signed-character, operator-trace promotion "
-            "of the scalar Φ_q brane-tower probe. For each isotope in "
-            "{D, T, ³He} and each k in {1,2,3,4,5,6,8,10}, computes "
-            "tower_op^(k) = |Σ_λ y_λ(q_0) · tr_λ(Φ_q^{[≤k]}(ρ_λ(β)))| "
-            "where ρ_λ(β) is the numerical braid operator in irrep V_λ "
-            "(via Hoefsmit seminormal at q_0). Eigenvalues μ_a^(λ) via "
-            "numpy.linalg.eigvals; Φ_q applied per eigenvalue; "
-            "operator-trace = Σ_a Φ_q^{[≤k]}(μ_a^(λ)); Wedderburn-summed "
-            "with signed y_λ (complex), final |·| at binding-formula "
-            "level. Replaces the prior _avg_chi_over_classical_dim "
-            "variant which used three approximations (classical dim, "
-            "abs χ, mean-of-eigenvalues) that biased the result."
-        )
-        .set_content_block("conj:brane-tower-z-habiro")
-        .add_parameter("q_0", q0_val)
-        .add_parameter("m_e_MeV", M_E_MEV)
-        .add_parameter("k_sweep", SWEEP_K)
-        .add_parameter("threshold_pct", THRESHOLD_PCT)
+        w
         .add_data("per_atom", per_atom)
         .add_data("results", results)
         .add_assertion(
@@ -299,7 +312,11 @@ def main():
     )
     out = w.save()
     print(f"\n  Witness: {out.name}")
-    return 0 if closed_any else 1
+    # Exit 0 whenever the witness assertions pass: the witness asserts
+    # `no_uniform_k_closes_within_threshold` and a successful refutation
+    # IS the expected outcome under the falsifiability criterion
+    # (Copilot review on PR #638).
+    return 0
 
 
 if __name__ == "__main__":

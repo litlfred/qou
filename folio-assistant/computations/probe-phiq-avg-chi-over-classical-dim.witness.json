@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-11T16:42:28.379431+00:00",
-  "commitSha": "a975fd24222fa084140b905b8d7dc25b8b28702b",
+  "computedAt": "2026-05-11T17:18:12.347895+00:00",
+  "commitSha": "e2204a4a5d5548d9e463ec2fbfaf502069377aa3",
   "assertions": [
     {
       "name": "no_uniform_k_closes_within_threshold",
@@ -12,12 +12,12 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 23,
-  "computation": "probe-phiq-operator-valued",
-  "scriptFile": "probe_phiq_operator_valued.py",
-  "scriptHash": "ed3a5bb6575a",
-  "scriptCommitSha": "unknown",
-  "description": "Operator-valued Φ_q brane-tower probe in Wedderburn-block form. For each isotope in {D, T, ³He} and each k in {1,2,3,4,5,6,8,10}, computes tower_op^(k) = Σ_λ y_λ Φ_q^{[≤k]}(|χ^λ_q(β)|/dim V_λ), Wedderburn-summed across irreps of H_{3A}(q_0) via the trusted q-Hecke seminormal infrastructure (per-irrep χ^λ via Hoefsmit, y_λ via Wenzl Schur principal specialization). Promotes the scalar Φ_q-per-generator-volume probe to a convolution-aware higher-irrep form that captures the full Hecke R-matrix structure of the braid operator. Tests whether the scalar-substrate refutation in §'Closure (2026-05-11)' extends to the operator-valued n_⋆ existence claim.",
+  "durationMs": 89747,
+  "computation": "probe-phiq-avg-chi-over-classical-dim",
+  "scriptFile": "probe_phiq_avg_chi_over_classical_dim.py",
+  "scriptHash": "c9554415dca3",
+  "scriptCommitSha": "e2204a4a5d5548d9e463ec2fbfaf502069377aa3",
+  "description": "Operator-valued Φ_q brane-tower probe in Wedderburn-block form. For each isotope in {D, T, ³He} and each k in {1,2,3,4,5,6,8,10}, computes tower_op^(k) = Σ_λ y_λ Φ_q^{[≤k]}(|χ^λ_q(β)|/dim V_λ), Wedderburn-summed across irreps of H_{3A}(q_0) via the trusted q-Hecke seminormal infrastructure (per-irrep χ^λ via Hoefsmit, y_λ via Wenzl Schur principal specialization). Historical / superseded variant of the canonical per-eigenvalue operator-valued probe in probe_phiq_operator_valued.py: this one uses three approximations (classical SYT-count dim_V_λ instead of quantum dim_q; abs(χ) instead of signed χ; mean-of-eigenvalues instead of per-eigenvalue Φ_q + operator trace) that biased the k=2 ³He result.",
   "contentBlock": "conj:brane-tower-z-habiro",
   "parameters": {
     "q_0": 1.1099785955541805,
@@ -271,6 +271,6 @@
   },
   "caveats": [
     "Absolute-form binding B = m_e·ρ·(|tr_M|+tower_op+σ_{3A}); subtractive form would require recomputing χ^λ at include_inter=False and is queued as a separate probe.",
-    "Wedderburn-weighted Φ_q at |χ^λ|/dim is the irrep-weighted scalar promotion. The strictly-stronger per-eigenvalue operator form (Φ_q applied to each eigenvalue of ρ_λ(β) in V_λ, summed as the operator trace, then Wedderburn-weighted) remains the next refinement."
+    "Wedderburn-weighted Φ_q at |χ^λ|/dim is the irrep-weighted scalar promotion. The strictly-stronger per-eigenvalue operator form (Φ_q applied to each eigenvalue of ρ_λ(β) in V_λ, summed as the operator trace, then Wedderburn-weighted) is in probe_phiq_operator_valued.py."
   ]
 }
