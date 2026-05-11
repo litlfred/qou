@@ -768,10 +768,13 @@ table with usage notes, open the content block above.
 | Crossing energy | plain italic | `$E_{\mathfrak{H}}$` (total crossing energy of hadron $\mathfrak{H}$). `$E_{\mathfrak{H}} = \mathfrak{m}_{\mathfrak{H}} \cdot c_q^2$`. |
 | Hook-length product | Latin cap + arg | `$H_q(\lambda) = \prod_{x \in \lambda} [h_x(\lambda)]_q$` — always with partition argument; unambiguous in knot/partition contexts. |
 | Iwahori–Hecke algebra | Latin cap | `$H_n(q)$` — always with subscript $n$; standard knot-theory convention (Kassel, Jones). |
-| Jones–Markov central coefficient | plain italic | `$y_\lambda$` — coefficient in $\mathrm{tr}_M = \sum_\lambda y_\lambda \chi_\lambda$ ([procedure](#prop:alpha-k-derivation-procedure)). Sign-indefinite at $n \geq 4$. **Never** confuse with $u_\lambda$ (LP shadow-price). |
+| Jones–Markov central coefficient | plain italic | `$y_\lambda$` — coefficient in $\mathrm{tr}_M = \sum_\lambda y_\lambda \chi_\lambda$ ([procedure](#prop:alpha-k-derivation-procedure)). Wenzl hook–content closed form. Sign-indefinite at $n \geq 4$. **Distinct** from Plancherel $w_\lambda$ and q-deformed $\tilde w_\lambda$ at $q \neq 1$. **Never** confuse with $u_\lambda$ (LP shadow-price). |
 | LP shadow-price | plain italic | `$u_\lambda, u_0$` (Schrijver linear-programming convention) for operator-selection LP dual variables ([BW shadow price](#prop:bw-coefficient-shadow-price)). Non-negative by LP duality. **Never** write `$y_\lambda$` here (collides with Jones–Markov). |
 | Markov parameter | plain italic | `$z = 1/(q^{1/2} + q^{-1/2})$` |
 | Mass | fraktur | `$\mathfrak{m}_{\mathcal{K}}$` (knot mass). |
+| Plancherel measure (classical) | plain italic | `$w_\lambda := (\dim V_\lambda)^2 / n!$` — classical Plancherel probability measure on partitions ([prop:plancherel-weight-boundedness](#prop:plancherel-weight-boundedness)). Sums to $1$ exactly. **Distinct** from the q-deformed Wedderburn weight `$\tilde w_\lambda$`; coincide only at $q = 1$. |
+| Quantum dimension | plain italic | `$\dim_q(\lambda) = [n]_q! / \prod_{x \in \lambda} [h_x]_q$` ($q$-deformed Frame–Robinson–Thrall). Used in `$\tilde w_\lambda$`. Reduces to `$\dim V_\lambda$` at $q = 1$. |
+| Wedderburn-block weight (q-deformed) | plain italic with tilde | `$\tilde w_\lambda := \dim_q^2(\lambda) / [n]_q!$` — q-deformed analogue of Plancherel `$w_\lambda$`. **Not** a probability measure at $q \neq 1$ (empirically `$\sum \tilde w_\lambda \approx 1.51$` at $q_0$, $n = 12$). Used in [prop:plancherel-term-7-formulation](#prop:plancherel-term-7-formulation) and [prop:wedderburn-weight-canonical](#prop:wedderburn-weight-canonical). **Never** call this "Plancherel weight" without the tilde. |
 
 #### descartes-universe
 
@@ -835,6 +838,15 @@ table with usage notes, open the content block above.
   **Never** use `$\gamma$` for a vortex or closed cycle; use `$\varrho$`.
 - `$\chi_q$` = Lyapunov exponent (distinct from `$\chi_\zeta(c)$` = character)
 - `$H_q$` alone = **not used**. Three distinct concepts share the letter $H$: `$\mathcal{H}_q$` (shuffle Hopf algebra), `$\hat{H}_q$` (Hamiltonian operator), `$H_n(q)$` or `$H_q(\lambda)$` (Hecke/hook-length, always with argument).
+- **Three partition-weight families** — Markov `$y_\lambda$`,
+  Plancherel `$w_\lambda$`, q-deformed Wedderburn `$\tilde w_\lambda$` —
+  are **distinct at $q \neq 1$** and must not be conflated.
+  Coincide at $q = 1$. Bare `$w_\lambda$` is **only** the classical
+  Plancherel probability measure `$(\dim V_\lambda)^2/n!$`; the
+  q-deformed analogue `$\dim_q^2/[n]_q!$` must carry the tilde
+  (`$\tilde w_\lambda$`). The Wenzl-bridge identification
+  `$y_\lambda = w_\lambda$` holds on the **self-conjugate stratum
+  only**. See `notation-collisions.md` for the full statement.
 - `$q = 1.1097$` (or any specific numerical value of the substrate
   parameter) **must not appear** outside the introduction and
   Chapter 7 (Physical Observations). Geometry chapters use symbolic `$q$`.

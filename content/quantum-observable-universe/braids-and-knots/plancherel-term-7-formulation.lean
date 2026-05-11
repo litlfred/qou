@@ -9,13 +9,17 @@ curvature-rank (= GB filtration depth).
 
 Term 7 is the well-defined formulation:
 
-  Φ_k(β) := Σ_{λ : depth(λ)=k} w_λ · log|χ_λ(β)|
+  Φ_k(β) := Σ_{λ : depth(λ)=k} tilde w_λ · log|χ_λ(β)|
   Term_7(β) := α · Σ_{k≥4} Φ_k(β),  α = m_e · 8G
 
-with w_λ = dim_q²(λ)/[n]_q! the Plancherel weight (bounded; sum=1).
+with tilde w_λ = dim_q²(λ)/[n]_q! the q-deformed Wedderburn-block
+weight (bounded; sum ≠ 1 at q ≠ 1 in general — distinct from the
+classical Plancherel measure (dim V_λ)²/n! that does sum to 1; see
+prop:plancherel-weight-boundedness).
 
 Properties:
-1. Plancherel boundedness: Σ_λ w_λ ≤ 1 (q-deformed Plancherel).
+1. Boundedness: Σ_λ tilde w_λ is finite (q-deformed Wedderburn
+   identity), bounded by a constant slightly > 1 at q ≠ 1.
 2. Logarithmic unbounding: log|χ_λ| can be O(10) even when
    characters are O(1), giving MeV-scale contributions.
 3. Curvature-rank binning: depth(λ) = height(λ)−1 stratifies the
@@ -32,7 +36,7 @@ namespace QOU.WedderburnMass
 
 universe u
 
-/-- Abstract data for a Plancherel-weighted sum: each "partition" λ
+/-- Abstract data for a q-deformed Wedderburn-weighted sum: each "partition" λ
     has a weight `w` and a character value `χ`. -/
 structure WedderburnBlock where
   weight : ℝ
@@ -47,14 +51,22 @@ noncomputable def phi_k (k : ℕ) (blocks : List WedderburnBlock) : ℝ :=
     (fun acc b => acc + b.weight * Real.log (|b.character|))
     0
 
-/-- Plancherel boundedness: total weight sum is bounded by 1. -/
+/-- Weight-sum boundedness: total weight sum, when assumed bounded
+    by 1 (as for the classical Plancherel measure
+    `w_λ = (dim V_λ)²/n!`), stays so.  For the q-deformed analogue
+    `tilde w_λ = dim_q²(λ)/[n]_q!` the bound is generally not 1 but
+    a finite constant; the theorem is stated parametrically over
+    the bound. -/
 theorem plancherel_total_bound (blocks : List WedderburnBlock)
     (h_total : (blocks.map (·.weight)).sum ≤ 1) :
     (blocks.map (·.weight)).sum ≤ 1 := h_total
 
-/-- **Theorem (Plancherel sum is bounded by 1).**
-    Under the Plancherel identity Σ_λ dim_q²(λ) = [n]_q!, the
-    weights w_λ = dim_q²(λ)/[n]_q! sum to exactly 1. -/
+/-- **Theorem (weight-sum identity, parametric).**
+    Under the *hypothesis* that the weights sum to 1 — true for the
+    classical Plancherel measure `w_λ = (dim V_λ)²/n!`; false in
+    general for the q-deformed `tilde w_λ = dim_q²/[n]_q!` (which
+    satisfies a different identity) — the sum is 1.  This is a
+    parametric restatement, not a proof of the q-deformed identity. -/
 theorem plancherel_sum_eq_one (blocks : List WedderburnBlock)
     (h_pl : (blocks.map (·.weight)).sum = 1) :
     (blocks.map (·.weight)).sum = 1 := h_pl
@@ -67,7 +79,7 @@ theorem phi_k_finite (k : ℕ) (blocks : List WedderburnBlock) :
 
 /-- **Logarithmic unbounding lemma.**  For any M ≥ 0 there exists a
     character value c with |c| > 0 such that log|c| > M.
-    This is why the bounded Plancherel sum can produce unbounded
+    This is why the bounded weight sum can produce unbounded
     log-functional values when binned by stratum. -/
 theorem log_unbounded (M : ℝ) :
     ∃ c : ℝ, c > 0 ∧ Real.log c > M := by

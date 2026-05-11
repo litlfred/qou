@@ -13,13 +13,20 @@ $$
     \qquad
     \mathfrak{m}^{(k)}_{q,\mathcal{K}}(\mathcal{T})
     \;=\; \!\!\sum_{\substack{\lambda \,\vdash\, n \\ \mathrm{depth}(\lambda) = k}}\!\!
-      w_\lambda \cdot \log\Bigl|\!\int_{A_\lambda}\!\rho(\beta_\mathcal{K}) \cdot \mathcal{T}\Bigr|
+      \tilde w_\lambda \cdot \log\Bigl|\!\int_{A_\lambda}\!\rho(\beta_\mathcal{K}) \cdot \mathcal{T}\Bigr|
   \;}
 $$
 
 *with $\alpha_k$ stratum-dependent prefactors, $A_\lambda = e_\lambda A
-e_\lambda$ the Wedderburn block, and $w_\lambda = \dim_q^2
-V_\lambda / [n]_q!$ the Plancherel weight ($\sum_\lambda w_\lambda = 1$).*
+e_\lambda$ the Wedderburn block, and $\tilde w_\lambda = \dim_q^2
+V_\lambda / [n]_q!$ the **q-deformed Wedderburn-block weight**
+([prop:wedderburn-weight-canonical](#prop:wedderburn-weight-canonical)).
+The classical Plancherel measure $w_\lambda = (\dim V_\lambda)^2/n!$
+([prop:plancherel-weight-boundedness](#prop:plancherel-weight-boundedness))
+satisfies $\sum_\lambda w_\lambda = 1$ exactly; the q-deformed
+analogue $\tilde w_\lambda$ has $\sum_\lambda \tilde w_\lambda$
+finite but generally $\neq 1$ at $q \neq 1$ (empirically $\approx
+1.51$ at $q_0, n = 12$). The two coincide at $q = 1$.*
 
 *The total mass is the sum, with $\mathcal{T} = 1$:*
 $\mathfrak{m}_{q,\mathcal{K}} := \mathfrak{m}_{q,\mathcal{K}}(1)$.
@@ -39,7 +46,7 @@ splits as $Z = \bigoplus_{k} Z_k$ with $Z_k$ the depth-$k$ direct
 summand.  The block-restricted Frobenius integral
 $\int_{A_\lambda} = \int_A \circ\, e_\lambda$
 ([Markov–Frobenius pairing](#conj:knot-factor-frobenius-pairing))
-extracts the $\lambda$-component.  Plancherel-weighted logarithms of
+extracts the $\lambda$-component.  Wedderburn-weighted logarithms of
 those components, binned by depth, give the $\mathfrak{m}^{(k)}$
 functionals.  $\square$
 
@@ -52,7 +59,7 @@ to a curvature-rank stratum or partial sum:*
 | $k = 0$ | Term 1 | descended Frobenius integral $\bigl|\!\int_A \rho(\beta_\mathcal{K})\bigr|$ |
 | $k = 1$ | Term 2 | single-row hook strata |
 | $k = 2$ | Term 3 | double-row hook strata |
-| all $k$ | Term 4 | universal Frobenius co-Casimir, $\sum_\lambda w_\lambda = 1$ |
+| all $k$ | Term 4 | universal Frobenius co-Casimir, $\sum_\lambda w_\lambda = 1$ (classical Plancherel) |
 | $k \geq 2$ | Term 5 | chirality projection (S-anti-invariant) |
 | $k = 3$ | Term 6 | $\mathfrak{m}^{(3)}$ (chirality knots, e.g. $6_1$) |
 | $k \geq 4$ | Term 7 | $\mathfrak{m}^{\geq 4}$ ([universal residue](#prop:plancherel-term-7-formulation)) |

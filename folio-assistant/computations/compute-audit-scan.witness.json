@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-10T18:26:33.375888+00:00",
-  "commitSha": "a9e607b8ff060a431206d678ac7d1c5786390d6f",
+  "computedAt": "2026-05-11T03:49:18.382231+00:00",
+  "commitSha": "528f9368bfbbec8c21bbc2d364c2e81c260233e6",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 11,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "b540c436e909",
-  "scriptCommitSha": "1f8c93034a3e556746a4c098ae7e7b70932af450",
+  "scriptCommitSha": "3072aa73e46ef9cec1880308eaf654600eacde71",
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
@@ -2159,35 +2159,35 @@
       {
         "pattern": "P15",
         "file": "y_lambda_symbolic_validate.py",
-        "line": 220,
+        "line": 234,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P16",
         "file": "y_lambda_symbolic_validate.py",
-        "line": 160,
+        "line": 170,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "y_lambda_symbolic_validate.py",
-        "line": 161,
+        "line": 171,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "y_lambda_symbolic_validate.py",
-        "line": 258,
+        "line": 272,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P16",
         "file": "y_lambda_symbolic_validate.py",
-        "line": 259,
+        "line": 273,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },

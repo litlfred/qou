@@ -84,7 +84,8 @@ form correctly extracts the AME-fitted shell correction.
 To address the question of whether atom-independence might
 hold at some specific $q$ in the physical neighbourhood
 (not at all $q$ symbolically), the probe also evaluates the
-height-6 **Plancherel-weighted average**
+height-6 **q-deformed Wedderburn-weighted average**
+(a ratio, so invariant under renormalisation of $\tilde w_\lambda$)
 
 $$
   \langle c_5 \rangle_{\mathrm{ht}=6}(A, q)

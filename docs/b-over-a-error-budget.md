@@ -220,8 +220,10 @@ This PR (#442) originally contained:
 - `folio-assistant/computations/b_over_a_evaluator_v2.py`
 - `folio-assistant/computations/b-over-a-witness-v2.json`
 
-implementing a Plancherel-weighted log-of-Markov-trace-ratio formula
-`(E_0/A) Σ_λ w_λ log|Λ_λ^free / Λ_λ^nuc|`.  Per `7588970f`, this is
+implementing a q-deformed Wedderburn-weighted log-of-Markov-trace-ratio
+formula `(E_0/A) Σ_λ \tilde w_λ log|Λ_λ^free / Λ_λ^nuc|` (with
+$\tilde w_\lambda = \dim_q^2/[n]_q!$ per
+`prop:plancherel-term-7-formulation`).  Per `7588970f`, this is
 **NOT the canonical formula**.  The canonical chain is family-aware:
 family-1 atoms use `B = ρ · m_e · Vol(T_w)`, family-2 (⁴He) uses
 `B = 2 · A · α`, family-3 (⁸Be–⁴⁰Ca) recurses on ⁴He cluster.

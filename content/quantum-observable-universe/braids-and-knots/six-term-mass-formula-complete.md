@@ -215,12 +215,13 @@ MeV against CODATA $+0.019$ MeV.
 (1-q^{-k}z)^{-1}$ admits two trace expansions that restore Markov-
 invariance:
 
-1. *Plancherel-weighted infinite series.*  Expand
+1. *q-deformed Wedderburn-weighted infinite series.*  Expand
    $\Phi_q(z) = \sum_{n\geq 0} z^n / (q; q)_n$ (the $q$-Pochhammer
    denominator).  Substituting $z = |\hat V_i|$ and recognising
    $|\hat V_i|^n$ as the $n$-th power evaluation of the per-generator
-   Wedderburn channels gives an expansion as a Plancherel-weighted
-   sum of $\mathrm{tr}_M(\sigma_i^n)$ — each term a trace.
+   Wedderburn channels gives an expansion as a q-deformed
+   Wedderburn-weighted sum of $\mathrm{tr}_M(\sigma_i^n)$ — each
+   term a trace.
 
 2. *Kähler-differential derivative.*  The expansion flow
    $\ln_q(1+t)/t$ in `prop:mass-endomorphism-tower`'s proof

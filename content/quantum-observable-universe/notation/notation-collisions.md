@@ -30,6 +30,24 @@ paper to keep them disambiguated:
   letter $H$: $\mathcal{H}_q$ (shuffle Hopf algebra), $\hat{H}_q$
   (Hamiltonian operator), $H_n(q)$ or $H_q(\lambda)$ (Hecke /
   hook-length, always with argument).
+- **Three partition-weight families** — Markov $y_\lambda$,
+  Plancherel $w_\lambda$, q-deformed Wedderburn $\tilde w_\lambda$ —
+  are distinct at $q \neq 1$ and must not be conflated. They
+  coincide at $q = 1$. Specifically:
+    - $y_\lambda$ = Jones–Markov central coefficient ($\mathrm{tr}_M
+      = \sum y_\lambda \chi_\lambda$, Wenzl hook–content closed
+      form);
+    - $w_\lambda = (\dim V_\lambda)^2 / n!$ = classical Plancherel
+      probability measure, $\sum w_\lambda = 1$ exactly;
+    - $\tilde w_\lambda = \dim_q^2(\lambda) / [n]_q!$ = q-deformed
+      Wedderburn-block weight, $\sum \tilde w_\lambda$ finite but
+      $\neq 1$ at $q \neq 1$ (empirically $\approx 1.51$ at $q_0$,
+      $n = 12$).
+  Use $w_\lambda$ unsubscripted **only** for the classical
+  Plancherel measure; mark the q-deformed analogue with the tilde
+  ($\tilde w_\lambda$). The Wenzl-bridge identity
+  $y_\lambda = w_\lambda$ holds on the **self-conjugate stratum
+  only** (where $\kappa_\lambda = \sum_{x} c(x) = 0$).
 - **$r$** = spinor information rate, $r = q^{1/2}$, $r^2 = q$.
   Eigenvalue of the elementary half-twist on the spin-½ fundamental
   rep of $\mathrm{SU}_q(2)$. Reserved exclusively for this purpose.

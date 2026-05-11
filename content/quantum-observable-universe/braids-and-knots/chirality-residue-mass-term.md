@@ -65,8 +65,8 @@ of the gluon-condensate vacuum.*
 
 **Numerical witness (atomic isotopes).**
 
-*The Plancherel-weighted character contribution from chirality cells
-is computed in
+*The q-deformed Wedderburn-weighted character contribution from
+chirality cells is computed in
 [`folio-assistant/computations/atomic_chirality_residue.py`](#).
 For $\mathcal{T} = 1$ (total mass), the chirality contribution to the
 binding energy via $\alpha = m_e \cdot 8G$ is:*
@@ -105,8 +105,8 @@ with the **Wigner $np$-pairing** Bethe--Weizsäcker term
 ([Wigner $np$ pairing](#prop:wigner-np-pairing)).
 This proposition therefore makes the
 $\lambda_{\mathrm{Wigner}}$ contribution constructible from the
-Plancherel-weighted character data of an atomic braid, with no
-fitting input.*
+q-deformed Wedderburn-weighted character data of an atomic braid,
+with no fitting input.*
 
 **Plancherel-boundedness of the chirality sub-sum.**
 

@@ -32,7 +32,7 @@ Outputs:
   form (no Hoefsmit matmul, no linear-system solve).
 - Markov-axiom cross-check: Σ_λ y_λ · χ_λ(σ_1 ⋯ σ_{k-1}) compared
   against z^{k-1} for k = 1, 2, 3.
-- Plancherel completeness: Σ_λ d_λ · y_λ = 1.
+- Markov-axiom (M3) completeness: Σ_λ d_λ · y_λ = 1.
 
 Witness: alpha-k-macdonald-closed-form.witness.json.
 
@@ -128,14 +128,25 @@ def y_lambda_macdonald(p, q_mp):
 
 
 # ──────────────────────────────────────────────────────────────────
-#  Plancherel completeness + Markov axiom cross-checks
+#  Markov-axiom (M3) cross-check
 # ──────────────────────────────────────────────────────────────────
+#
+# Note: an earlier name for `markov_m3_sum` was `plancherel_sum`.
+# That name conflated two distinct identities — the Plancherel sum
+# Σ_λ d_λ²/n! = 1 (probability measure on partitions) and the
+# Markov-axiom (M3) identity Σ_λ d_λ · y_λ = 1 (tr_M(1) = 1, with
+# y_λ the Markov coefficient).  This function computes the second.
+# See docs/audits/2026-05-11-plancherel-usage-audit.md (Finding D).
 
 
-def plancherel_sum(n, q_mp):
+def markov_m3_sum(n, q_mp):
     """Σ_λ d_λ · y_λ — must equal 1 by Markov-axiom (M3) tr_M(1)=1."""
     return sum(f_lambda(p) * y_lambda_macdonald(p, q_mp)
                for p in partitions_of(n))
+
+
+# Backward-compat alias; remove after downstream callers are updated.
+plancherel_sum = markov_m3_sum
 
 
 def alpha_k_via_telescope(n, k, q_mp):
@@ -169,14 +180,14 @@ def main():
 
     print(f"q_0 = {mp.nstr(q0, 20)}, dps = {mp.mp.dps}")
 
-    # Plancherel completeness for n = 2..6.
-    print("\nStep 1: Plancherel completeness Σ_λ d_λ · y_λ = 1...")
+    # Markov-axiom (M3) completeness for n = 2..6.
+    print("\nStep 1: Markov-axiom (M3) Σ_λ d_λ · y_λ = 1...")
     for n in range(2, 7):
-        s = plancherel_sum(n, q0)
+        s = markov_m3_sum(n, q0)
         diff = abs(s - 1)
         print(f"  n={n}: |Σ - 1| = {mp.nstr(diff, 5)}")
         builder.add_assertion(
-            name=f"plancherel_completeness_n{n}",
+            name=f"markov_m3_completeness_n{n}",
             computed=str(diff),
             expected="0",
             tolerance=mp.mpf("1e-40"),

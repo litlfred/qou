@@ -64,10 +64,11 @@ completions:
    the structurally determined level $n_\star(\mathfrak{H})$.
 
 The mass formula
-$\mathfrak{m}_{q,\mathcal{K}}(T_w) = \sum_\lambda w_\lambda(q) \cdot \chi_\lambda(\rho(\beta))/\dim_q V_\lambda$
-relates these two pieces through the Plancherel-weighted
-Markov-trace pairing, which depends on $q$ (through Plancherel
-weights $w_\lambda$) and on $z$ (through algebraic-volume coordinates).
+$\mathfrak{m}_{q,\mathcal{K}}(T_w) = \sum_\lambda \tilde w_\lambda(q) \cdot \chi_\lambda(\rho(\beta))/\dim_q V_\lambda$
+relates these two pieces through the q-deformed Wedderburn-weighted
+Markov-trace pairing, which depends on $q$ (through the q-deformed
+weights $\tilde w_\lambda = \dim_q^2/[n]_q!$) and on $z$ (through
+algebraic-volume coordinates).
 A single ambient ring carrying **both** cyclotomic structures is
 required to express the relation as an algebraic identity rather
 than a coincidence of two independent specialisations.

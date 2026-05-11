@@ -10,7 +10,10 @@ Tests:
    high-precision reference (Wenzl-bridge re-evaluated at 100 dps for
    the other probes).  Pass: max abs diff < 1e-30.
 
-2. Plancherel completeness: Σ_λ y_λ · d_λ = 1.  For n ≤ 4 the symbolic
+2. Markov-axiom (M3) completeness: Σ_λ y_λ · d_λ = 1.  This is the
+   Markov axiom (M3) tr_M(1) = 1 — *not* the Plancherel identity
+   Σ_λ d_λ²/n! = 1.  (See docs/audits/2026-05-11-plancherel-usage-audit.md
+   Finding D for the disambiguation.)  For n ≤ 4 the symbolic
    Wenzl-bridge form is reduced via sympy and the residue Σ y_λ d_λ - 1
    must be exactly 0.  For n ≥ 5 we verify numerically across all five
    q probes that |Σ y_λ d_λ - 1| < 1e-40 at 50 dps.
@@ -60,7 +63,7 @@ from y_lambda_wenzl_bridge import (
     markov_trace_lhs_numeric,
     markov_trace_target_numeric,
     partitions_of,
-    plancherel_sum_numeric,
+    markov_m3_sum_numeric,
     schur_principal,
     y_lambda_wenzl_bridge_numeric,
     y_lambda_wenzl_bridge_symbolic,
@@ -79,11 +82,13 @@ PROBES = ["1.05", "1.08", Q0_STR, "1.15", "1.20"]
 
 DPS_TEST = 50      # working precision for tests 1 + 3 (target 1e-30)
 DPS_GROUND = 100   # ground-truth precision for cross-q reference (tests 1)
-DPS_PLANCHEREL = 80  # 1e-40 numerical Plancherel target
+DPS_MARKOV_M3 = 80  # 1e-40 numerical Markov-axiom (M3) target
 
 TOL_CROSS_Q = mp.mpf("1e-30")
 TOL_MARKOV = mp.mpf("1e-30")
-TOL_PLANCHEREL = mp.mpf("1e-40")
+TOL_MARKOV_M3 = mp.mpf("1e-40")
+# Backward-compat alias; remove after downstream callers are updated.
+TOL_PLANCHEREL = TOL_MARKOV_M3
 
 
 # ────────────────────────────────────────────────────────────────
@@ -145,19 +150,24 @@ def test_1_cross_q(n: int, mpfr_witness: dict) -> list[tuple]:
 
 
 # ────────────────────────────────────────────────────────────────
-# Test 2 — Plancherel completeness
+# Test 2 — Markov-axiom (M3) completeness  Σ_λ y_λ · d_λ = 1
 # ────────────────────────────────────────────────────────────────
+#
+# NOTE: previously named `test_2_plancherel`; that name conflated
+# the Markov axiom (M3) tr_M(1)=1 with the genuine Plancherel
+# identity Σ_λ d_λ²/n!=1.  See
+# docs/audits/2026-05-11-plancherel-usage-audit.md (Finding D).
 
-def test_2_plancherel(n: int) -> dict:
+def test_2_markov_m3(n: int) -> dict:
     """Returns {'mode': 'symbolic'|'numeric', 'pass': bool, 'detail': ...}."""
     if n <= 4:
         # Symbolic — use Wenzl-bridge symbolic forms.
         q = sp.Symbol("q", positive=True)
-        plancherel = sp.Integer(0)
+        m3_sum = sp.Integer(0)
         for p in partitions_of(n):
             y_sym = y_lambda_wenzl_bridge_symbolic(p)
-            plancherel += y_sym * classical_dim(p)
-        simp = sp.simplify(plancherel)
+            m3_sum += y_sym * classical_dim(p)
+        simp = sp.simplify(m3_sum)
         is_one = sp.simplify(simp - 1) == 0
         return {
             "mode": "symbolic",
@@ -168,9 +178,9 @@ def test_2_plancherel(n: int) -> dict:
     probe_results = []
     overall_pass = True
     for q_str in PROBES:
-        s = plancherel_sum_numeric(n, q_str, DPS_PLANCHEREL)
+        s = markov_m3_sum_numeric(n, q_str, DPS_MARKOV_M3)
         residual = abs(s - 1)
-        ok = residual < TOL_PLANCHEREL
+        ok = residual < TOL_MARKOV_M3
         probe_results.append((q_str, str(residual), bool(ok)))
         if not ok:
             overall_pass = False
@@ -179,6 +189,10 @@ def test_2_plancherel(n: int) -> dict:
         "pass": overall_pass,
         "probes": probe_results,
     }
+
+
+# Backward-compat alias; remove after downstream callers are updated.
+test_2_plancherel = test_2_markov_m3
 
 
 # ────────────────────────────────────────────────────────────────
@@ -332,11 +346,11 @@ def main(ns: list[int] | None = None) -> int:
             if not ok:
                 all_passed = False
 
-        # Test 2 — Plancherel.
-        print(f"\n[Test 2] Plancherel Σ y_λ d_λ = 1  "
+        # Test 2 — Markov-axiom (M3): Σ y_λ d_λ = 1.
+        print(f"\n[Test 2] Markov-axiom (M3) Σ y_λ d_λ = 1  "
               f"({'symbolic' if n <= 4 else 'numeric < 1e-40'})")
-        t2 = test_2_plancherel(n)
-        n_summary["test_2_plancherel"] = t2
+        t2 = test_2_markov_m3(n)
+        n_summary["test_2_markov_m3"] = t2
         if t2["mode"] == "symbolic":
             tag = "PASS" if t2["pass"] else "FAIL"
             res_str = t2['result']
@@ -376,15 +390,27 @@ def main(ns: list[int] | None = None) -> int:
 
         summary_by_n[str(n)] = n_summary
         # Incremental save (preserves prior n entries naturally).
+        # Drop stale pre-rename keys so the on-disk schema has a
+        # single canonical form (see PR #636 Copilot review).
+        for stale in ("dps_plancherel",):
+            existing.pop(stale, None)
+        # Also drop stale per-n `test_2_plancherel` entries from
+        # previous runs that did NOT re-touch that n (otherwise
+        # `summary_by_n` keeps both old and new test_2 names).
+        for _n_key, _n_summary in summary_by_n.items():
+            if isinstance(_n_summary, dict):
+                _n_summary.pop("test_2_plancherel", None)
         existing["all_passed"] = all_passed
         existing["probes"] = PROBES
         existing["dps_test"] = DPS_TEST
         existing["dps_ground_truth"] = DPS_GROUND
-        existing["dps_plancherel"] = DPS_PLANCHEREL
+        existing["dps_markov_m3"] = DPS_MARKOV_M3
+        # Overwrite tolerances wholesale so stale keys
+        # ("plancherel", "markov") don't survive a merge-aware update.
         existing["tolerances"] = {
             "cross_q": "1e-30",
-            "markov": "1e-30",
-            "plancherel": "1e-40",
+            "markov_trace_lhs": "1e-30",
+            "markov_m3": "1e-40",
         }
         existing["computedAt"] = datetime.now(timezone.utc).isoformat()
         existing["summary_by_n"] = summary_by_n

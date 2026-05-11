@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T01:07:20.385744+00:00",
-  "commitSha": "8d8f5792ab572dfd3890d99a90d3d4a6e9db3dba",
+  "computedAt": "2026-05-11T03:50:35.661606+00:00",
+  "commitSha": "528f9368bfbbec8c21bbc2d364c2e81c260233e6",
   "assertions": [
     {
       "name": "codata_m_e",
@@ -87,11 +87,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 10,
   "computation": "codata-reconciliation",
   "scriptFile": "codata_reconciliation.py",
-  "scriptHash": "618466daf030",
-  "scriptCommitSha": "2c402bf50d4ec01f4a5d6e850f62be586a5509ae",
+  "scriptHash": "dcac17d5eb10",
+  "scriptCommitSha": "2e44f1ec9376f4fa1247a7ee3db1db09907b81df",
   "description": "Consolidated CODATA-2022 reconciliation table for QOU primary predictions.  Each row reports predicted value, CODATA central value, deviation in ppb, and CODATA uncertainty in ppb.  Passing assertion = QOU prediction within twice the CODATA uncertainty.",
   "auditOnly": "docs/audits/codata-reconciliation.md",
   "data": {

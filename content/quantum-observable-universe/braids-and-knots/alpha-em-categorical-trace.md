@@ -63,8 +63,9 @@ empirical confirmation of the categorical-completeness derivation.
 *Earlier drafts attempted to derive $\delta_{CS} = \hbar_q^4 \cdot [5]_q$
 and the $8q$ prefactor as separate propositions. Both are now subsumed
 into [gram-determinant-plancherel-ratio](#prop\:gram-determinant-plancherel-ratio):
-$\delta_{CS}$ is the leading non-trivial term of the Plancherel-weighted
-character product expansion, and the $8q$ second-order coefficient
+$\delta_{CS}$ is the leading non-trivial term of the q-deformed
+Wedderburn-weighted character product expansion, and the $8q$
+second-order coefficient
 follows from the same closed form via genus-$4$ torus-knot enumeration.
 A future remark can extract these as a numerical specialisation if
 desired; no separate proposition is required.*
