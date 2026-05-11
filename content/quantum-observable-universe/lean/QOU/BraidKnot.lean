@@ -1,3 +1,4 @@
+import QOU.BraidKnot.CyclotomicLValueDecomposition
 import QOU.BraidKnot.ConfinedParticle
 import QOU.BraidKnot.ConfinementCategory
 import QOU.BraidKnot.ElectronShell
