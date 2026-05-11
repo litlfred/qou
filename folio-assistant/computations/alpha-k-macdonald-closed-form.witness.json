@@ -1,11 +1,11 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-09T00:33:02.259808+00:00",
-  "commitSha": "3f2bd2de45209c7c48790f47f6a166d271d65e06",
+  "computedAt": "2026-05-11T15:40:15.161634+00:00",
+  "commitSha": "eedc8f66b7cad4f7de3f8f86b895e4c14dc971b7",
   "assertions": [
     {
-      "name": "plancherel_completeness_n2",
+      "name": "markov_m3_completeness_n2",
       "computed": "5.3455294201843912922810729343029637576303937602101e-51",
       "expected": "0",
       "passed": true,
@@ -13,7 +13,7 @@
       "source": "Markov axiom (M3): tr_M(1) = 1"
     },
     {
-      "name": "plancherel_completeness_n3",
+      "name": "markov_m3_completeness_n3",
       "computed": "2.672764710092195646140536467151481878815196880105e-51",
       "expected": "0",
       "passed": true,
@@ -21,7 +21,7 @@
       "source": "Markov axiom (M3): tr_M(1) = 1"
     },
     {
-      "name": "plancherel_completeness_n4",
+      "name": "markov_m3_completeness_n4",
       "computed": "2.672764710092195646140536467151481878815196880105e-51",
       "expected": "0",
       "passed": true,
@@ -29,7 +29,7 @@
       "source": "Markov axiom (M3): tr_M(1) = 1"
     },
     {
-      "name": "plancherel_completeness_n5",
+      "name": "markov_m3_completeness_n5",
       "computed": "4.0091470651382934692108047007272228182227953201576e-51",
       "expected": "0",
       "passed": true,
@@ -37,7 +37,7 @@
       "source": "Markov axiom (M3): tr_M(1) = 1"
     },
     {
-      "name": "plancherel_completeness_n6",
+      "name": "markov_m3_completeness_n6",
       "computed": "2.672764710092195646140536467151481878815196880105e-51",
       "expected": "0",
       "passed": true,
@@ -86,11 +86,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 17,
+  "durationMs": 38,
   "computation": "alpha-k-macdonald-closed-form",
   "scriptFile": "alpha_k_macdonald_closed_form.py",
-  "scriptHash": "3d42dc77c7ae",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "395ddae07e69",
+  "scriptCommitSha": "2e44f1ec9376f4fa1247a7ee3db1db09907b81df",
   "description": "α_k mass-tower coefficients via the Macdonald hook-content closed form for y_λ.  Replaces the linear-system / Hoefsmit-matrix path used in alpha_k_jones_markov_h3.py by a rounding-free algebraic evaluation of y_λ for every partition λ ⊢ n at every n ≤ 6, and cross-checks against the Markov-axiom prediction tr_M(σ_1 ⋯ σ_{k-1}) = z^{k-1}.",
   "contentBlock": "prop:macdonald-hook-telescope",
   "data": {

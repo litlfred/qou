@@ -455,21 +455,69 @@ refreshes the witness JSON.
 | R3 | done | False q-Plancherel identity removed; boundedness restated honestly |
 | R4 | done | Python `plancherel_*` → `markov_m3_*` in four scripts |
 | R5 | done | Lean class field rewritten; tautological theorem replaced |
-| R6 | deferred | Chirality-script ratio-invariance audit still open |
+| R6 | done | Chirality scripts are ratio-form, renormalisation-invariant (see below) |
 
-### Open follow-ups
+### R6 closure — chirality scripts are ratio-invariant
 
-- **R6**: Confirm that `chirality_avg_content*.py`, which compute
-  ratios `Σ w χ c / Σ w χ`, are invariant under the renormalisation
-  that fixes `Σ w = 1`. If yes, those scripts are unaffected by the
-  $w \to \tilde w$ rename. If no, they need a one-line normalisation
-  fix.
-- **Witness regeneration**: re-run
-  `alpha_k_macdonald_closed_form.py` and `y_lambda_symbolic_validate.py`
-  to refresh witness JSONs under the new assertion names. The
-  backward-compat aliases in `codata_reconciliation.py` keep
-  downstream working in the meantime.
-- **Title of Term 7 block** still reads "Plancherel-weighted log
-  functional" — accurate at $q = 1$, misleading at $q \neq 1$.
-  Consider retitling on a subsequent pass; left unchanged here to
-  preserve the cross-reference label `prop:plancherel-term-7-formulation`.
+All three chirality scripts —
+[`chirality_avg_content.py:142–143`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/chirality_avg_content.py),
+[`chirality_avg_content_chiral.py:189–190`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/chirality_avg_content_chiral.py),
+[`chirality_avg_content_atomic.py:213–214, 235, 269–273`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/chirality_avg_content_atomic.py)
+— compute the chirality average as a **ratio**
+
+$$
+  \langle c \rangle_\lambda
+  \;=\;
+  \frac{\sum_\lambda \tilde w_\lambda \cdot \chi_\lambda(\beta) \cdot c(\lambda)}
+       {\sum_\lambda \tilde w_\lambda \cdot \chi_\lambda(\beta)}
+$$
+
+with $\tilde w_\lambda$ entering linearly in both numerator and
+denominator. Any $\lambda$-independent rescaling $\tilde w_\lambda
+\mapsto Z \cdot \tilde w_\lambda$ — including the renormalisation
+$Z = 1 / \sum_\lambda \tilde w_\lambda$ that turns $\tilde w$ into
+a probability measure — cancels exactly, leaving the ratio
+unchanged. Therefore the $w_\lambda \to \tilde w_\lambda$ rename in
+these scripts is purely **cosmetic**: zero numerical impact on
+their witness values. The committed witnesses
+(`chirality-avg-content*.witness.json`) remain valid as-is.
+
+### Remaining follow-ups
+
+- **Witness regeneration** (still partial): `alpha_k_macdonald_closed_form.py`
+  witness regenerated with `markov_m3_completeness_n*` assertion
+  names (this branch). `y_lambda_symbolic_validate.py` witness *not*
+  regenerated — local mpmath produced a 5e-17 precision drift on the
+  pre-existing `test_1_cross_q` (unrelated to the rename), which
+  would introduce a real test_1 failure if pushed. The in-script
+  backward-compat alias (`test_2_plancherel = test_2_markov_m3`)
+  keeps existing tooling working. Author can refresh under a
+  reproducible environment.
+- **Title of Term 7 block** updated in
+  [`plancherel-term-7-formulation.ts`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/content/quantum-observable-universe/braids-and-knots/plancherel-term-7-formulation.ts)
+  to "q-deformed Wedderburn-weighted log functional"; label
+  `prop:plancherel-term-7-formulation` preserved to avoid breaking
+  cross-references.
+
+### Post-merge cherry-pick onto PR #637
+
+After PR #636 merges, the q-deformed Wedderburn weight symbol in
+two blocks on `claude/display-mass-tables-PAj4i` needs the same
+rename. The fixup is a single sed-style pass:
+
+```sed
+# tower-binding-energy.md lines 46-105
+s/\bw_\\lambda\b/\\tilde w_\\lambda/g
+# confined-knot-binding.md line 155
+s/\bw_\\lambda\b/\\tilde w_\\lambda/g
+```
+
+…with one accompanying narrative note on each block clarifying that
+$\tilde w_\lambda := \dim_q^2/[n]_q!$ is the q-deformed Wedderburn
+weight (not the classical Plancherel measure
+[`prop:plancherel-weight-boundedness`](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/content/quantum-observable-universe/braids-and-knots/plancherel-weight-boundedness.md)).
+
+Posted as a coordination comment on PR #637:
+[#637 comment 4417561229](https://github.com/litlfred/qou/pull/637#issuecomment-4417561229).
+This audit branch does **not** touch #637's files (per the
+session-start branch-discipline rule).
