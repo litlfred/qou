@@ -177,6 +177,166 @@ class _PathADict(dict):
 M_HECKE_PIPELINE_AT_Q0: dict[str, float] = _PathADict()
 
 
+# ── E_0 conventions registry ───────────────────────────────────
+#
+# Per `docs/audits/2026-05-10-hbar-q-scaling-audit.md` finding:
+# THREE distinct E_0 conventions co-exist in folio-assistant/
+# computations/, each correct for a specific operator class. Each
+# carries its own ℏ_q scaling. Conflating them at consumer sites
+# silently double-counts or omits ℏ_q factors.
+#
+# This registry surfaces the convention choice at every consumer
+# site. Each entry documents:
+#   * value_MeV   — numerical E_0 at q_0
+#   * scaling     — ℏ_q power signature (×ℏ_q^k for k an integer)
+#   * derivation  — how it's structurally derived
+#   * operator_class — which knot operators it correctly scales
+#   * canonical_for — which consumer chain treats this as primary
+#
+# The framework's structurally-canonical derivation is the LP-dual
+# shadow price y_0^* of the net constraint in
+# `prop:operator-selection-lp` (strong duality:
+# Σ t_i x_i^* = n_target · y_0^*). All three conventions below are
+# expected to agree at leading order via LP-duality; the differences
+# capture different operator scales / brane-tower depths.
+
+E_0_CONVENTIONS: dict[str, dict] = {
+    "A_single_hecke_tick": {
+        "value_MeV": "m_e / (q_0 (q_0 - 1)) ≈ 4.186 MeV",
+        "scaling": "ℏ_q^1 (× m_e c_q^2)",
+        "hecke_level": "H_3 (single-nucleon, d = 6 NF basis)",
+        "strand_count": "3",
+        "derivation": (
+            "Closed-form algebraic substitution from CAL-1 m_e + "
+            "CAL-2 q_0. Single-Hecke-reduction-step cost per "
+            "`prop:beta-decay-energy-scale` / `rem:energy-scale-planck`. "
+            "Equivalent to the leading-order LP-dual y_0^* · m_e at "
+            "single wrap (N=0 brane-tower truncation)."
+        ),
+        "operator_class": (
+            "β-decay single-wrap Δ_NF = (h^2/2)γ - (h/2)σ_0 - (h/2)σ_1 "
+            "in H_3(q). Δ(net) = h(h-2)/2 with h = q - q^{-1}."
+        ),
+        "canonical_for": [
+            "derived_masses.e_0_full_mev",
+            "q_beta_predicted.py",
+            "prop:neutron-qvalue-symbolic",
+        ],
+        "validity": (
+            "Q_β prediction within 0.168% / 1.31 keV of CODATA "
+            "(commit 4649650f). Residual sits inside the structural "
+            "ℏ_q^{2(N+1)} bound at N=0 per `per-braid-mass-tower.md`."
+        ),
+    },
+    "B_q_value_absorbed": {
+        "value_MeV": "Q_β^CODATA ≈ 0.7823 MeV",
+        "scaling": "ℏ_q^0 (|Δ(net)| = 1 implicit; ℏ_q^2 absorbed into the calibration)",
+        "hecke_level": "H_{3A} (atom-level: H_6 D, H_9 T/³He, H_12 ⁴He)",
+        "strand_count": "3·A (whole atom braid)",
+        "derivation": (
+            "Calibration to CAL-3 Q_β(n) directly. Sets the operator "
+            "Δ_NF ≡ 1 in cat-units; canonical for "
+            "`hecke_core._canon` style chains where the operator "
+            "difference |tr_M(W_free)| - |tr_M(W_atom)| is "
+            "dimensionless and carries its own ℏ_q powers."
+        ),
+        "operator_class": (
+            "Atom-level binding B(Z, N) = E_0 · (|tr_M(W_free)| - "
+            "|tr_M(W_atom)|) at H_{3A}. The trace-difference operator "
+            "carries the ℏ_q^2 scaling; E_0 is the unit-action scale."
+        ),
+        "canonical_for": [
+            "hecke_core.E_0_CALIBRATION_MEV (line 2922)",
+            "canonical_tower.py (lines 446-528)",
+            "hecke_characters.py (line 39)",
+            "mass_at_3A_proper.py (line 676)",
+            "adjacent_vs_full_probe.py (line 46)",
+        ],
+        "validity": (
+            "Phase 3+ Triton / ³He / ⁴He binding MUST use this "
+            "convention. Naively using convention A with a Δ(net)-"
+            "style operator difference would miss the 1/ℏ_q^2 factor "
+            "(≈ 102× error)."
+        ),
+    },
+    "C_proton_back_fit": {
+        "value_MeV": "(M_p^CODATA - t_6(p)) / total_hecke(p) ≈ 200 MeV",
+        "scaling": "ℏ_q^? (calibrated, not derived)",
+        "hecke_level": "H_{3A} (atom-level T1+T2+T3+T4 sum)",
+        "strand_count": "3·A",
+        "derivation": (
+            "Back-fit to CODATA m_p via "
+            "`atomic_braid_mass_table.py:441`. NOT a structural "
+            "derivation. Flagged as 4th-calibration violation under "
+            "Workplan 0b §5. To be replaced by LP-dual shadow-price "
+            "scheme of `prop:operator-selection-lp`."
+        ),
+        "operator_class": (
+            "Strategy-3 multi-term atomic mass assembly "
+            "(T1+T2+T3+T4 cat-units → MeV via E_0 back-fit)."
+        ),
+        "canonical_for": ["atomic_braid_mass_table.py"],
+        "validity": (
+            "⚠️ DISCIPLINE VIOLATION. Do not consume in new "
+            "production chains; use convention B instead."
+        ),
+    },
+    "D_lp_dual_canonical": {
+        "value_MeV": (
+            "y_0^* · m_e (LP-dual shadow price × CAL-1) — "
+            "STRUCTURAL ANSWER, not yet wired for β-decay sector"
+        ),
+        "scaling": "ℏ_q^? (encoded in y_0^*, depends on n_target choice)",
+        "hecke_level": (
+            "Either H_3 (β-decay, d=6 — tractable) OR H_{3A} "
+            "(atom binding: H_6 D d=720 tractable; H_9 T/³He d=362880 "
+            "requires per-Wedderburn-block reduction; H_12 ⁴He "
+            "d=4.79e8 requires Rust kernel per `prop:atomic-tr-m-canonical`)"
+        ),
+        "strand_count": "3 (β-decay) or 3·A (atom binding)",
+        "derivation": (
+            "Per `prop:operator-selection-lp` strong duality: "
+            "Σ t_i x_i^* = n_target · y_0^*. The dual variable "
+            "y_0^* on the net constraint IS the marginal energy "
+            "per unit target mass — i.e. E_0 dimensionlessly. "
+            "Multiplied by m_e (CAL-1) gives MeV. This is the "
+            "framework's structurally-canonical derivation; "
+            "conventions A, B, C above should each agree with "
+            "this at the appropriate brane-tower truncation depth."
+        ),
+        "operator_class": "any (universal — depends on Gram matrix + cost vector)",
+        "canonical_for": [
+            "lp_dual_solver.solve_operator_selection_lp",
+            "lp_dual_solver.solve_psd_operator_selection_sdp",
+        ],
+        "validity": (
+            "INFRASTRUCTURE EXISTS but no production witness wires "
+            "the real H_n Gram + tr_M cost vector through it for "
+            "β-decay specifically. `option_b_proton_mass_full_chain.py` "
+            "Phase F runs a degenerate demo (uniform t_costs, identity "
+            "G_gram); a real β-decay LP-dual derivation of E_0 is "
+            "an open deliverable. When wired, expected to: "
+            "(i) recover convention A at N=0, "
+            "(ii) close the 0.17% Q_β residual via the y_i^* "
+            "shadow prices on Frobenius constraints (which encode "
+            "the brane-tower corrections structurally)."
+        ),
+    },
+}
+
+
+def e_0_convention(script_name: str) -> str:
+    """Return the convention key (A/B/C/D) that `script_name` consumes.
+
+    Falls back to "unknown" for scripts not yet audited. Useful for
+    cross-consistency checks at consumer sites.
+    """
+    for key, entry in E_0_CONVENTIONS.items():
+        if any(script_name in c for c in entry["canonical_for"]):
+            return key
+    return "unknown"
+
+
 # Pre-compiled module-level regex for SCRIPT_CITED `notes` validation
 # (per Gemini PR #484 review): tolerates leading whitespace after the
 # colon AND requires a path-like token ending in a recognisable
