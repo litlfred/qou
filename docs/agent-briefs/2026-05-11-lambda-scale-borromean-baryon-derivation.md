@@ -212,4 +212,64 @@ Skein polynomial $Q(q_0)$ or a graded-Hecke-energy ratio. Start there.
 2. Was an empirical $\lambda_{\text{scale}}$ ever computed in any witness on the PR #487 branch?
 3. The PR table showed T1+T2+T3 algebraic Vol_q gave D binding to -5.5%. Did you check T1+T2+T3 against individual nucleon masses? Result?
 4. $\beta_{\text{Bor}} = (\sigma_1^{-1}\sigma_2)^3$ (6 crossings) vs the canonical 11-crossing proton braid (PR #612) — are these Markov-equivalent? If yes, why does the canonical recipe have 11 crossings?
+
+## Answers from PR #487 agent (2026-05-11)
+
+The PR #487 agent replied with the following findings (paraphrased; ✓ direct, ◐ partial, ✗ unknown):
+
+1. **λ_scale undefined in PR #487, no obvious substrate-only candidate matches 2.456** (✗). The agent tried $[2]_q \cdot q$, $[3]_q^2 / [2]_q^2$, $(q+1)$, and several other ratios — all 6–14% off. Closest match $q_0^{8.63} \approx 2.456$ has non-integer exponent (coincidence).
+
+2. **No closed-form Skein correction for $(p, n) = (k, 3-k)$ in PR #487** (✗). The natural candidate is the HOMFLYPT polynomial of $\mathcal{B}_3$ evaluated with orientation $(k, 3-k)$, but this was never computed symbolically.
+
+3. **T1+T2+T3 result on D** (✓): $\mathrm{Vol}_q^{\text{tower}}(D) = 3.827$ at $q_0$; T1+T2+T3 = 2.103 MeV vs AME 2.225 = −5.5%. T2+T3 in the agent's probe used **all per-generator volumes (intra + inter)**, not inter-only — different convention from Phase 2's "T2+T3 empty at A=1".
+
+4. **τ_M / τ_SW relabelling status** (◐) — *critical finding for this branch*:
+   - D was relabelled in PR #447 (`D-tr-M` is $\tau_{\mathrm{SW}}$; `D-tau-M` is canonical $\tau_M = 0.336821$).
+   - **Proton and neutron registry files are still labelled "tr_M" but carry $\tau_{\mathrm{SW}}$ values** ($2.123$ for proton, $1.589$ for neutron).
+   - Direct re-computation of the canonical $\tau_M$ on the free single-knot braid gives $|\tau_M(p_{\text{free}})| = 1.7339$, $|\tau_M(n_{\text{free}})| = 1.4060$.
+   - The existing `atomic-tr-m-wenzl-bridge.witness.json` reports $0.998$ for **both** proton and neutron — flagged as a witness-generation bug.
+   - **Consequence for this brief**: the `derivation_chain.TR_M_AT_Q0` table (with $p = 1.0653$, $n = 0.9232$, $D = 0.3883$) appears to be a **mixed-convention table**. The Frobenius non-degeneracy proof in commit `25a204efa` proves the canonical Frobenius pairing on $H_n(R, q)$ is $\tau_M$ (Jones-Markov), not $\tau_{\mathrm{SW}}$.
+
+5. **Vol/ℏ_q² vs ρ_K · m_e · |tr_M| identification** (◐): the two formalisms can only coincide if $\rho_K$ varies per knot — i.e. there is **no substrate-only identity** $\mathrm{Vol}(K) / \hbar_q^2 = \rho_K \cdot |\tau_M(K)|$ in $\{m_e, q_0\}$ alone. The two pipelines compute different invariants.
+
+6. **The 6-crossing $\beta_{\text{Bor}}$ and the 11-crossing canonical proton braid are NOT Markov-equivalent** (◐) — they have different component counts (3-link vs 1-knot). They are **alternative ansätze**, not different presentations of the same word. The atomic-braid-recipe registry uses the 11-crossing word as canonical for the $\tau_M$-based mass formula; the Borromean baryon is a separate, Vol-based formalism.
+
+7. **T5 quarantine consistent** (✓) — T5 dominates negatively (−5.63 MeV for D), flipping the naive 6-term sum, hence the sign-indefinite quarantine.
+
+8. **Best leads for $\lambda_{\text{scale}}$ derivation** (✗ open):
+   - **Most actionable**: compute $J_{\mathcal{B}_3}(q_0; \text{orientation} = (2, 1))$ and $J_{\mathcal{B}_3}(q_0; (1, 2))$ symbolically. If the ratio matches $m_p / m_n$, the Skein term is pinned and $\lambda_{\text{scale}}$ is constrained residually.
+   - **Calibration route** (least theoretically satisfying): $\lambda_{\text{scale}} = m_e \cdot \rho_p \cdot |\tau_M(p_{\text{free}})| / (\mathrm{Vol}(\mathcal{B}_3) / \hbar_q^2)$ — one equation in one unknown, but $\rho_p$ then becomes a free parameter per knot.
+   - The 2.46 may be a **representation-translation factor** between the Vol-based (3-link Borromean) and $\tau_M$-based (1-knot 11-crossing) formalisms, not a substrate quantity in either.
+
+## Implications for the Borromean-baryon programme
+
+The Vol-form derivation in this branch
+([`derive_m_baryon_volume_form.py`](../../folio-assistant/computations/derive_m_baryon_volume_form.py))
+sits in the **Borromean / Vol-based** formalism. Under PR #487 agent
+finding #6, this formalism's "proton" and "neutron" predictions
+correspond to **different braid representatives** than the canonical
+11-crossing $\tau_M$-based pipeline.
+
+The two formalisms must agree on observable mass values
+($m_p = 938.272\;\text{MeV}$ regardless of which braid you use to
+compute it) — but $\lambda_{\text{scale}}$ in the Vol formalism may
+NOT have a substrate derivation independent of the bridging map to
+the $\tau_M$ formalism.
+
+**Three diagnostic computations** would settle this:
+
+(a) Verify the PR #487 agent's direct $|\tau_M(p_{\text{free}})| = 1.7339$ against the canonical Wenzl-bridge / `from_scratch/` pipeline.
+
+(b) Compute $J_{\mathcal{B}_3}(q_0; \text{orientation} = (2, 1))$ vs $J_{\mathcal{B}_3}(q_0; (1, 2))$ at 50 dps.
+
+(c) Test whether $\lambda_{\text{scale}} = m_e \cdot |\tau_M(p_{\text{free}})| \cdot \rho_p / (\mathrm{Vol}(\mathcal{B}_3) / \hbar_q^2)$ with $\rho_p$ from
+[`rho-k-graded-expansion.md`](../../content/quantum-observable-universe/braids-and-knots/rho-k-graded-expansion.md).
+
+Until (a)–(c) close, the
+[`conj:borromean-baryon-mass-formula`](../../content/quantum-observable-universe/braids-and-knots/borromean-baryon-mass-formula.md)
+should be read as: *the Vol-based mass formula for the
+Borromean baryon ansatz, with $\lambda_{\text{scale}}$ as the
+representation-translation factor to the canonical $\tau_M$-based
+mass formula on the 11-crossing braid (not a free parameter, but
+not yet derived in $\{m_e, q_0\}$ either).*
 5. Is there a direct identity $|\mathrm{tr}_M(\beta_{\text{Bor}}, q_0)| = \mathrm{Vol}(\mathcal{B}_3)/\hbar_q^2 \cdot \lambda_{\text{scale}}$, or are these distinct dimensionless masses that the framework expects to coincide via a $\rho_K$ correction?
