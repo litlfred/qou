@@ -456,9 +456,14 @@ lemma alpha_tail_abs_summable (N : ℕ) :
 /-- The tail of the (signed) α-sequence is summable. -/
 lemma alpha_tail_summable (N : ℕ) :
     Summable (fun k : ℕ => P.alpha (N + 1 + k)) := by
-  have habs := alpha_tail_abs_summable (P := P) N
-  exact Summable.of_norm_bounded _ habs (fun k => by
-    rw [Real.norm_eq_abs])
+  -- For real-valued sequences, `‖·‖ = |·|`, so the
+  -- absolutely-summable tail is exactly "summable of norms",
+  -- and `Summable.of_norm` then gives summability of the signed
+  -- sequence itself.
+  have habs : Summable (fun k : ℕ => ‖P.alpha (N + 1 + k)‖) := by
+    simpa [Real.norm_eq_abs]
+      using alpha_tail_abs_summable (P := P) N
+  exact habs.of_norm
 
 /-- The squared geometric tail is summable. -/
 lemma geom_sq_tail_summable (N : ℕ) :
