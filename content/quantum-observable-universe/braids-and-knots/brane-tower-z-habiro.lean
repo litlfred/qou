@@ -65,7 +65,21 @@ instance canonical (n₀ : ℕ) (q : ℝ) : BraneTowerZHabiro n₀ q where
   recovery_holds := fun _ _ _ _ _ => trivial
 
 -- ────────────────────────────────────────────────────────────────────────────
--- Closure (2026-05-11): scalar-substrate form of n_⋆ is refuted by witness
+-- Closure (2026-05-11): scalar-eigenvalue form of n_⋆ is refuted by witness
+--
+-- SCOPE.  "Scalar-eigenvalue" means BOTH (a) the candidate `n_⋆` is a function
+-- of scalar substrate invariants of a single confined particle, AND (b) the
+-- truncated quantum dilogarithm Φ_q^{[≤n_⋆]} is evaluated on a SCALAR argument
+-- (the per-generator algebraic volume |V̂_i|).  These two assumptions together
+-- collapse the Wedderburn decomposition of H_{3A}(q_0) onto its 1-dimensional
+-- irreps; higher partitions λ contribute only through scalar reductions.  The
+-- refutation theorems below cover this scoped form.
+--
+-- The strictly-stronger OPERATOR-VALUED form (Wedderburn-block Φ_q applied
+-- across higher irreps, convolution-aware via χ^λ_q(β) of the full braid
+-- operator) is probed separately and remains the open path.  See the
+-- sibling `.md` §"Operator-valued probe" and witness file
+--   folio-assistant/computations/probe-phiq-operator-valued.witness.json.
 -- ────────────────────────────────────────────────────────────────────────────
 
 /-- Falsifiability threshold from the conjecture's `## Falsifiability`
@@ -76,7 +90,9 @@ instance canonical (n₀ : ℕ) (q : ℝ) : BraneTowerZHabiro n₀ q where
 def falsifiabilityThresholdPct : ℝ := 10.0
 
 /-- Witness-recorded worst-case relative error (subtractive form) at
-    the best uniform truncation depth `k = 2`. The maximum is on
+    the best uniform truncation depth `k = 2` under the
+    **scalar-eigenvalue** form: Φ_q evaluated at scalar
+    per-generator volumes `|V̂_i|`, then summed.  Maximum is on
     `³He` at `+134%`.
 
     Source:
@@ -85,44 +101,122 @@ def falsifiabilityThresholdPct : ℝ := 10.0
 def witnessUniformKBestMaxErrPct : ℝ := 134.0
 
 /-- Witness-recorded worst-case relative error for the
-    `n_⋆ = ℓ · n₀ + k` per-atom rule at
-    `(n_⋆^D, n_⋆^T, n_⋆^³He) = (14, 27, 20)` (subtractive form). The
-    maximum is on `³He` at `+1.18 × 10^6 %`.
+    `n_⋆ = ℓ · n₀ + k` per-atom rule (also scalar-eigenvalue form)
+    at `(n_⋆^D, n_⋆^T, n_⋆^³He) = (14, 27, 20)` (subtractive form).
+    Maximum is on `³He` at `+1.18 × 10^6 %`.
 
     Source:
     `folio-assistant/computations/probe-phiq-n-star-rule.witness.json`
     (computed `2026-05-09`, `commitSha c8f9603d…`). -/
 def witnessNStarRuleMaxErrPct : ℝ := 1177119.823748267
 
-/-- **Scalar-substrate `n_⋆` refutation (uniform-`k` family).** The
+/-- Witness-recorded best-case max-relative-error under the
+    **per-eigenvalue, signed, operator-trace** Wedderburn promotion,
+    `tower_op^(k)(β) = |Σ_λ y_λ(q₀) · tr_λ(Φ_q^{[≤k]}(ρ_λ(β)))|`,
+    where ρ_λ(β) is the braid operator in irrep V_λ (numerical
+    matrix via Hoefsmit seminormal at q₀), Φ_q is applied per
+    eigenvalue μ_a^(λ), and the operator trace `tr_λ` sums them.
+
+    Min-over-k of the max-over-atom absolute error is `64.75%` at
+    `k = 1`. Notable per-atom: D at `k=1` lands at `-6.87%` (within
+    10%), T at `k=2` lands at `-8.00%` (within 10%), but ³He never
+    gets within 50% at any uniform k — there is no single `k` that
+    closes all three simultaneously.
+
+    This is the *canonical* operator-valued promotion: it addresses
+    the three normalization issues with the prior
+    `_avg_chi_over_classical_dim` variant — classical→quantum dim
+    (resolved structurally by using operator trace), absolute→signed
+    χ (resolved by complex Φ_q + final |·|), mean→per-eigenvalue Φ_q
+    (resolved directly by `tr_λ` of Φ_q applied to ρ_λ).
+
+    Source:
+    `folio-assistant/computations/probe-phiq-operator-valued.witness.json`
+    (computed `2026-05-11`). -/
+def witnessPerEigenvalueOperatorBestMaxAbsErrPct : ℝ := 64.75
+
+/-- **Scalar-eigenvalue `n_⋆` refutation (uniform-`k` family).** The
     best uniform-depth candidate (`k = 2`, subtractive form) leaves a
     `+134%` residual on `³He` — an order of magnitude above the
     falsifiability threshold. -/
 -- Ref: [manuscript] conj:brane-tower-z-habiro §"Closure (2026-05-11)"
-theorem witness_refutes_uniform_k_form :
+theorem witness_refutes_scalar_uniform_k_form :
     witnessUniformKBestMaxErrPct > falsifiabilityThresholdPct := by
   unfold witnessUniformKBestMaxErrPct falsifiabilityThresholdPct
   norm_num
 
-/-- **Scalar-substrate `n_⋆` refutation (`ℓ · n₀ + k` family).** The
-    proposed additive rule from `conj:brane-level-selection` overshoots
-    `³He` by six orders of magnitude — refutation is immediate. -/
+/-- **Scalar-eigenvalue `n_⋆` refutation (`ℓ · n₀ + k` family).** The
+    proposed additive rule from `conj:brane-level-selection`
+    overshoots `³He` by six orders of magnitude — refutation is
+    immediate. -/
 -- Ref: [manuscript] conj:brane-tower-z-habiro §"Closure (2026-05-11)"
-theorem witness_refutes_ell_n0_k_form :
+theorem witness_refutes_scalar_ell_n0_k_form :
     witnessNStarRuleMaxErrPct > falsifiabilityThresholdPct := by
   unfold witnessNStarRuleMaxErrPct falsifiabilityThresholdPct
   norm_num
 
-/-- **Scalar-substrate `n_⋆` refutation (combined).** Both probed
-    scalar substrate families — uniform-`k` and `ℓ · n₀ + k` — exceed
-    the `10%` falsifiability threshold. By the conjecture's own
-    criterion, the scalar-substrate existence claim is refuted; the
-    open part is now the multiplicity-refined form (see the
-    sibling `.md` §"Refined open question"). -/
+/-- **Operator-valued `n_⋆` refutation (per-eigenvalue form).**
+    The canonical convolution-aware promotion — Φ_q applied to each
+    eigenvalue μ_a^(λ) of the braid operator ρ_λ(β) in each Hecke
+    irrep V_λ, summed via the operator trace `tr_λ`, then Wedderburn-
+    weighted by signed `y_λ(q₀)`, with `|·|` only at the
+    binding-formula level — fails the falsifiability criterion at
+    every uniform `k`. Best case `k = 1` leaves max abs error
+    `64.75%` on tritium, an order of magnitude above the `10%`
+    threshold.
+
+    Note: per-atom optimal `k` values DO achieve closure individually
+    (D at `k=1`: `-6.87%`; T at `k=2`: `-8.00%`), but ³He cannot be
+    closed at any uniform `k`. The conjecture's falsifiability
+    criterion forbids per-atom retuning ("does not constitute
+    progress"), so the operator-valued `n_⋆` existence claim is
+    refuted under this canonical promotion. -/
+-- Ref: [manuscript] conj:brane-tower-z-habiro §"Operator-valued probe"
+theorem witness_refutes_per_eigenvalue_operator_form :
+    witnessPerEigenvalueOperatorBestMaxAbsErrPct >
+      falsifiabilityThresholdPct := by
+  unfold witnessPerEigenvalueOperatorBestMaxAbsErrPct
+        falsifiabilityThresholdPct
+  norm_num
+
+/-- **Scalar-eigenvalue `n_⋆` refutation (combined).** Both probed
+    scalar-eigenvalue substrate families — uniform-`k` and
+    `ℓ · n₀ + k` — exceed the `10%` falsifiability threshold. By the
+    conjecture's own criterion, the **scalar-eigenvalue** existence
+    claim is refuted.  Note: the strictly-stronger operator-valued
+    refutation below (per-eigenvalue, signed, operator-trace) also
+    fails, so the `n_⋆` existence claim is refuted across every
+    empirically probed form. -/
 -- Ref: [manuscript] conj:brane-tower-z-habiro §"Closure (2026-05-11)"
-theorem nStar_scalar_form_refuted :
+theorem nStar_scalar_eigenvalue_form_refuted :
     witnessUniformKBestMaxErrPct > falsifiabilityThresholdPct ∧
     witnessNStarRuleMaxErrPct > falsifiabilityThresholdPct :=
-  ⟨witness_refutes_uniform_k_form, witness_refutes_ell_n0_k_form⟩
+  ⟨witness_refutes_scalar_uniform_k_form,
+   witness_refutes_scalar_ell_n0_k_form⟩
+
+/-- **All probed `n_⋆` families refuted.** Combining the two
+    scalar-eigenvalue refutations with the canonical
+    operator-valued (per-eigenvalue, signed, operator-trace,
+    Wedderburn-weighted) refutation: every empirically probed form
+    of the `n_⋆` existence claim on `conj:brane-tower-z-habiro`
+    fails the `10%` falsifiability threshold at every uniform `k`.
+
+    What survives the closure (open):
+    * the algebraic Cauchy-limit half of the conjecture (untouched);
+    * the **per-atom** rule restricted to the (D, T) pair where
+      D at `k=1` and T at `k=2` separately achieve closure under
+      the operator-valued form — but per-atom retuning violates the
+      conjecture's own criterion;
+    * the **multiplicity-refined** scalar form with `n_⋆` depending
+      on per-generator near-pole multiplicity profile `m`. -/
+-- Ref: [manuscript] conj:brane-tower-z-habiro §"Operator-valued probe"
+theorem nStar_all_probed_forms_refuted :
+    witnessUniformKBestMaxErrPct > falsifiabilityThresholdPct ∧
+    witnessNStarRuleMaxErrPct > falsifiabilityThresholdPct ∧
+    witnessPerEigenvalueOperatorBestMaxAbsErrPct >
+      falsifiabilityThresholdPct :=
+  ⟨witness_refutes_scalar_uniform_k_form,
+   witness_refutes_scalar_ell_n0_k_form,
+   witness_refutes_per_eigenvalue_operator_form⟩
 
 end QOU.BraidKnot

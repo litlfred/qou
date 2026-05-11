@@ -29,6 +29,8 @@ export default conjecture({
     witness: [
       "folio-assistant/computations/probe-phiq-uniform-k.witness.json",
       "folio-assistant/computations/probe-phiq-n-star-rule.witness.json",
+      "folio-assistant/computations/probe-phiq-operator-valued.witness.json",
+      "folio-assistant/computations/probe-phiq-avg-chi-over-classical-dim.witness.json",
     ],
     status: "verified",
   },

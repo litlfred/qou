@@ -1,0 +1,1192 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-11T16:54:23.893479+00:00",
+  "commitSha": "a975fd24222fa084140b905b8d7dc25b8b28702b",
+  "assertions": [
+    {
+      "name": "no_uniform_k_closes_within_threshold",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 16,
+  "computation": "probe-phiq-operator-valued",
+  "scriptFile": "probe_phiq_operator_valued.py",
+  "scriptHash": "f5d00402f957",
+  "scriptCommitSha": "unknown",
+  "description": "Per-eigenvalue, signed-character, operator-trace promotion of the scalar Φ_q brane-tower probe. For each isotope in {D, T, ³He} and each k in {1,2,3,4,5,6,8,10}, computes tower_op^(k) = |Σ_λ y_λ(q_0) · tr_λ(Φ_q^{[≤k]}(ρ_λ(β)))| where ρ_λ(β) is the numerical braid operator in irrep V_λ (via Hoefsmit seminormal at q_0). Eigenvalues μ_a^(λ) via numpy.linalg.eigvals; Φ_q applied per eigenvalue; operator-trace = Σ_a Φ_q^{[≤k]}(μ_a^(λ)); Wedderburn-summed with signed y_λ (complex), final |·| at binding-formula level. Replaces the prior _avg_chi_over_classical_dim variant which used three approximations (classical dim, abs χ, mean-of-eigenvalues) that biased the result.",
+  "contentBlock": "conj:brane-tower-z-habiro",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "m_e_MeV": 0.51099895,
+    "k_sweep": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8,
+      10
+    ],
+    "threshold_pct": 10.0
+  },
+  "data": {
+    "per_atom": {
+      "deuteron": {
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "n": 6,
+        "tr_M": 0.3882864712890246,
+        "n_partitions": 11,
+        "rows": [
+          {
+            "partition": [
+              6
+            ],
+            "dim": 1,
+            "y_at_q0": 0.05918771713724117,
+            "chi_q_at_q0": 1.559758739418077,
+            "max_eigval_abs": 1.559758739418077
+          },
+          {
+            "partition": [
+              5,
+              1
+            ],
+            "dim": 5,
+            "y_at_q0": 0.05896068139733709,
+            "chi_q_at_q0": 3.2158914339387135,
+            "max_eigval_abs": 2.9600553303540402
+          },
+          {
+            "partition": [
+              4,
+              2
+            ],
+            "dim": 9,
+            "y_at_q0": 0.04028438657433148,
+            "chi_q_at_q0": 1.6737481247387067,
+            "max_eigval_abs": 3.9871028687285968
+          },
+          {
+            "partition": [
+              4,
+              1,
+              1
+            ],
+            "dim": 10,
+            "y_at_q0": 0.010133463722377592,
+            "chi_q_at_q0": -0.47019148000472233,
+            "max_eigval_abs": 3.7764663686016133
+          },
+          {
+            "partition": [
+              3,
+              3
+            ],
+            "dim": 5,
+            "y_at_q0": 0.014120874074270585,
+            "chi_q_at_q0": 4.249070292623656,
+            "max_eigval_abs": 4.687831824305465
+          },
+          {
+            "partition": [
+              3,
+              2,
+              1
+            ],
+            "dim": 16,
+            "y_at_q0": 0.007318454387030996,
+            "chi_q_at_q0": -1.9728210551001428,
+            "max_eigval_abs": 4.54159165493179
+          },
+          {
+            "partition": [
+              3,
+              1,
+              1,
+              1
+            ],
+            "dim": 10,
+            "y_at_q0": -0.0006853088808228615,
+            "chi_q_at_q0": -0.48998813829170573,
+            "max_eigval_abs": 2.799218750057246
+          },
+          {
+            "partition": [
+              2,
+              2,
+              2
+            ],
+            "dim": 5,
+            "y_at_q0": 0.000773186743667829,
+            "chi_q_at_q0": -3.497564665288439,
+            "max_eigval_abs": 2.332605406062832
+          },
+          {
+            "partition": [
+              2,
+              2,
+              1,
+              1
+            ],
+            "dim": 9,
+            "y_at_q0": -0.0003420517656558436,
+            "chi_q_at_q0": -0.8197159558910511,
+            "max_eigval_abs": 3.1721435290240896
+          },
+          {
+            "partition": [
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "dim": 5,
+            "y_at_q0": 9.86355774189434e-05,
+            "chi_q_at_q0": 2.155415987526445,
+            "max_eigval_abs": 2.0748564520047696
+          },
+          {
+            "partition": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "dim": 1,
+            "y_at_q0": -1.243798683735952e-05,
+            "chi_q_at_q0": -0.6769250645272102,
+            "max_eigval_abs": 0.6769250645272102
+          }
+        ]
+      },
+      "tritium": {
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "n": 9,
+        "tr_M": 0.10405398879467263,
+        "n_partitions": 30,
+        "rows": [
+          {
+            "partition": [
+              9
+            ],
+            "dim": 1,
+            "y_at_q0": 0.006554744690557455,
+            "chi_q_at_q0": 1.5768015283810746,
+            "max_eigval_abs": 1.5768015283810746
+          },
+          {
+            "partition": [
+              8,
+              1
+            ],
+            "dim": 8,
+            "y_at_q0": 0.007306412680316064,
+            "chi_q_at_q0": 3.7402811795852777,
+            "max_eigval_abs": 3.0429670569300913
+          },
+          {
+            "partition": [
+              7,
+              2
+            ],
+            "dim": 27,
+            "y_at_q0": 0.00626904182167138,
+            "chi_q_at_q0": 3.1900195401578073,
+            "max_eigval_abs": 4.624538619724365
+          },
+          {
+            "partition": [
+              7,
+              1,
+              1
+            ],
+            "dim": 28,
+            "y_at_q0": 0.0014725610880208587,
+            "chi_q_at_q0": -0.5793963030209981,
+            "max_eigval_abs": 4.42285935480099
+          },
+          {
+            "partition": [
+              6,
+              3
+            ],
+            "dim": 48,
+            "y_at_q0": 0.004456576547457841,
+            "chi_q_at_q0": 10.16741952165563,
+            "max_eigval_abs": 6.357318364314369
+          },
+          {
+            "partition": [
+              6,
+              2,
+              1
+            ],
+            "dim": 105,
+            "y_at_q0": 0.0015798449711642644,
+            "chi_q_at_q0": -6.340255676914648,
+            "max_eigval_abs": 6.176050988194913
+          },
+          {
+            "partition": [
+              6,
+              1,
+              1,
+              1
+            ],
+            "dim": 56,
+            "y_at_q0": -0.00012632728028061393,
+            "chi_q_at_q0": -1.029277495953297,
+            "max_eigval_abs": 5.143511925146709
+          },
+          {
+            "partition": [
+              5,
+              4
+            ],
+            "dim": 42,
+            "y_at_q0": 0.0022956559536403817,
+            "chi_q_at_q0": 4.424038460464793,
+            "max_eigval_abs": 7.778779546344267
+          },
+          {
+            "partition": [
+              5,
+              3,
+              1
+            ],
+            "dim": 162,
+            "y_at_q0": 0.001112250443482201,
+            "chi_q_at_q0": 2.074188615131586,
+            "max_eigval_abs": 7.840247442786265
+          },
+          {
+            "partition": [
+              5,
+              2,
+              2
+            ],
+            "dim": 120,
+            "y_at_q0": 0.000359428349482226,
+            "chi_q_at_q0": -9.370718720007408,
+            "max_eigval_abs": 7.047966393133866
+          },
+          {
+            "partition": [
+              5,
+              2,
+              1,
+              1
+            ],
+            "dim": 189,
+            "y_at_q0": -0.00013918967393157421,
+            "chi_q_at_q0": -5.974292298351345,
+            "max_eigval_abs": 6.801202175953606
+          },
+          {
+            "partition": [
+              5,
+              1,
+              1,
+              1,
+              1
+            ],
+            "dim": 70,
+            "y_at_q0": 2.6781515365528343e-05,
+            "chi_q_at_q0": 6.044697902429196,
+            "max_eigval_abs": 4.822957258164281
+          },
+          {
+            "partition": [
+              4,
+              4,
+              1
+            ],
+            "dim": 84,
+            "y_at_q0": 0.00039454980055340645,
+            "chi_q_at_q0": -2.607834385525165,
+            "max_eigval_abs": 8.176074349269165
+          },
+          {
+            "partition": [
+              4,
+              3,
+              2
+            ],
+            "dim": 168,
+            "y_at_q0": 0.0002668398179040227,
+            "chi_q_at_q0": 7.027463840788609,
+            "max_eigval_abs": 8.398514274545914
+          },
+          {
+            "partition": [
+              4,
+              3,
+              1,
+              1
+            ],
+            "dim": 216,
+            "y_at_q0": -8.434796223060681e-05,
+            "chi_q_at_q0": -3.744114651717306,
+            "max_eigval_abs": 8.22656060280893
+          },
+          {
+            "partition": [
+              4,
+              2,
+              2,
+              1
+            ],
+            "dim": 216,
+            "y_at_q0": -3.678437312000996e-05,
+            "chi_q_at_q0": -2.1703201338969813,
+            "max_eigval_abs": 7.652563502323268
+          },
+          {
+            "partition": [
+              4,
+              2,
+              1,
+              1,
+              1
+            ],
+            "dim": 189,
+            "y_at_q0": 2.7424873906570932e-05,
+            "chi_q_at_q0": 3.7590034844388915,
+            "max_eigval_abs": 6.011694213255603
+          },
+          {
+            "partition": [
+              4,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "dim": 56,
+            "y_at_q0": -7.169085616435474e-06,
+            "chi_q_at_q0": -0.31102266081080676,
+            "max_eigval_abs": 4.522380243809047
+          },
+          {
+            "partition": [
+              3,
+              3,
+              3
+            ],
+            "dim": 42,
+            "y_at_q0": 3.010411408388393e-05,
+            "chi_q_at_q0": 9.451258089817207,
+            "max_eigval_abs": 8.771476397762267
+          },
+          {
+            "partition": [
+              3,
+              3,
+              2,
+              1
+            ],
+            "dim": 168,
+            "y_at_q0": -1.804545554954399e-05,
+            "chi_q_at_q0": -2.2176205965194087,
+            "max_eigval_abs": 8.73955844272913
+          },
+          {
+            "partition": [
+              3,
+              3,
+              1,
+              1,
+              1
+            ],
+            "dim": 120,
+            "y_at_q0": 1.0981291843846358e-05,
+            "chi_q_at_q0": 3.3704109254459533,
+            "max_eigval_abs": 6.612158956125316
+          },
+          {
+            "partition": [
+              3,
+              2,
+              2,
+              2
+            ],
+            "dim": 84,
+            "y_at_q0": -1.4609912836621997e-06,
+            "chi_q_at_q0": 2.8661386620115277,
+            "max_eigval_abs": 5.365779359297064
+          },
+          {
+            "partition": [
+              3,
+              2,
+              2,
+              1,
+              1
+            ],
+            "dim": 162,
+            "y_at_q0": 6.463636475934016e-06,
+            "chi_q_at_q0": 3.3816375104065743,
+            "max_eigval_abs": 6.694178731421394
+          },
+          {
+            "partition": [
+              3,
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "dim": 105,
+            "y_at_q0": -6.0631716335014305e-06,
+            "chi_q_at_q0": -1.049612218137806,
+            "max_eigval_abs": 5.12441220864613
+          },
+          {
+            "partition": [
+              3,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "dim": 28,
+            "y_at_q0": 2.00231429571477e-06,
+            "chi_q_at_q0": -2.2454406369439424,
+            "max_eigval_abs": 3.0798577746135436
+          },
+          {
+            "partition": [
+              2,
+              2,
+              2,
+              2,
+              1
+            ],
+            "dim": 42,
+            "y_at_q0": 2.1028192488609852e-07,
+            "chi_q_at_q0": 8.649844229996956,
+            "max_eigval_abs": 4.979656498717098
+          },
+          {
+            "partition": [
+              2,
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            "dim": 48,
+            "y_at_q0": -9.364922707075722e-07,
+            "chi_q_at_q0": -5.113738075027502,
+            "max_eigval_abs": 4.603818205969412
+          },
+          {
+            "partition": [
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "dim": 27,
+            "y_at_q0": 1.0702219824366549e-06,
+            "chi_q_at_q0": -1.8834918906730074,
+            "max_eigval_abs": 3.3609373427608595
+          },
+          {
+            "partition": [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "dim": 8,
+            "y_at_q0": -5.035638394407752e-07,
+            "chi_q_at_q0": 2.6619148276336446,
+            "max_eigval_abs": 2.097462707792611
+          },
+          {
+            "partition": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "dim": 1,
+            "y_at_q0": 8.693768467746071e-08,
+            "chi_q_at_q0": -0.684321523176193,
+            "max_eigval_abs": 0.684321523176193
+          }
+        ]
+      },
+      "he3": {
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "n": 9,
+        "tr_M": 0.2065441288958544,
+        "n_partitions": 30,
+        "rows": [
+          {
+            "partition": [
+              9
+            ],
+            "dim": 1,
+            "y_at_q0": 0.006554744690557455,
+            "chi_q_at_q0": 2.3935111147542574,
+            "max_eigval_abs": 2.3935111147542574
+          },
+          {
+            "partition": [
+              8,
+              1
+            ],
+            "dim": 8,
+            "y_at_q0": 0.007306412680316064,
+            "chi_q_at_q0": 6.567663928203207,
+            "max_eigval_abs": 4.538180200555173
+          },
+          {
+            "partition": [
+              7,
+              2
+            ],
+            "dim": 27,
+            "y_at_q0": 0.00626904182167138,
+            "chi_q_at_q0": 7.5675725819338036,
+            "max_eigval_abs": 6.528350396234151
+          },
+          {
+            "partition": [
+              7,
+              1,
+              1
+            ],
+            "dim": 28,
+            "y_at_q0": 0.0014725610880208587,
+            "chi_q_at_q0": 1.6704873634351625,
+            "max_eigval_abs": 6.403888084443471
+          },
+          {
+            "partition": [
+              6,
+              3
+            ],
+            "dim": 48,
+            "y_at_q0": 0.004456576547457841,
+            "chi_q_at_q0": 16.064732217029746,
+            "max_eigval_abs": 8.63340202515674
+          },
+          {
+            "partition": [
+              6,
+              2,
+              1
+            ],
+            "dim": 105,
+            "y_at_q0": 0.0015798449711642644,
+            "chi_q_at_q0": -2.8969106724341334,
+            "max_eigval_abs": 8.474440577911967
+          },
+          {
+            "partition": [
+              6,
+              1,
+              1,
+              1
+            ],
+            "dim": 56,
+            "y_at_q0": -0.00012632728028061393,
+            "chi_q_at_q0": -2.050052925402341,
+            "max_eigval_abs": 7.298591687647583
+          },
+          {
+            "partition": [
+              5,
+              4
+            ],
+            "dim": 42,
+            "y_at_q0": 0.0022956559536403817,
+            "chi_q_at_q0": 7.695237783827574,
+            "max_eigval_abs": 10.311977488081801
+          },
+          {
+            "partition": [
+              5,
+              3,
+              1
+            ],
+            "dim": 162,
+            "y_at_q0": 0.001112250443482201,
+            "chi_q_at_q0": 6.781882180538997,
+            "max_eigval_abs": 10.287302329017344
+          },
+          {
+            "partition": [
+              5,
+              2,
+              2
+            ],
+            "dim": 120,
+            "y_at_q0": 0.000359428349482226,
+            "chi_q_at_q0": -9.994187764381584,
+            "max_eigval_abs": 9.548823822218472
+          },
+          {
+            "partition": [
+              5,
+              2,
+              1,
+              1
+            ],
+            "dim": 189,
+            "y_at_q0": -0.00013918967393157421,
+            "chi_q_at_q0": -7.859076205353196,
+            "max_eigval_abs": 9.222064245730467
+          },
+          {
+            "partition": [
+              5,
+              1,
+              1,
+              1,
+              1
+            ],
+            "dim": 70,
+            "y_at_q0": 2.6781515365528343e-05,
+            "chi_q_at_q0": 5.479040191413255,
+            "max_eigval_abs": 5.6294540548975345
+          },
+          {
+            "partition": [
+              4,
+              4,
+              1
+            ],
+            "dim": 84,
+            "y_at_q0": 0.00039454980055340645,
+            "chi_q_at_q0": -1.7366642251213233,
+            "max_eigval_abs": 10.762291277894596
+          },
+          {
+            "partition": [
+              4,
+              3,
+              2
+            ],
+            "dim": 168,
+            "y_at_q0": 0.0002668398179040227,
+            "chi_q_at_q0": 8.64991988144057,
+            "max_eigval_abs": 10.875179515387904
+          },
+          {
+            "partition": [
+              4,
+              3,
+              1,
+              1
+            ],
+            "dim": 216,
+            "y_at_q0": -8.434796223060681e-05,
+            "chi_q_at_q0": -5.428685795250306,
+            "max_eigval_abs": 10.661079014055227
+          },
+          {
+            "partition": [
+              4,
+              2,
+              2,
+              1
+            ],
+            "dim": 216,
+            "y_at_q0": -3.678437312000996e-05,
+            "chi_q_at_q0": -6.521717019760819,
+            "max_eigval_abs": 10.202936199342194
+          },
+          {
+            "partition": [
+              4,
+              2,
+              1,
+              1,
+              1
+            ],
+            "dim": 189,
+            "y_at_q0": 2.7424873906570932e-05,
+            "chi_q_at_q0": 3.6338062379107425,
+            "max_eigval_abs": 6.8272860135876945
+          },
+          {
+            "partition": [
+              4,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "dim": 56,
+            "y_at_q0": -7.169085616435474e-06,
+            "chi_q_at_q0": 1.077172334891313,
+            "max_eigval_abs": 4.342036698646567
+          },
+          {
+            "partition": [
+              3,
+              3,
+              3
+            ],
+            "dim": 42,
+            "y_at_q0": 3.010411408388393e-05,
+            "chi_q_at_q0": 11.305166229993471,
+            "max_eigval_abs": 11.11526079920143
+          },
+          {
+            "partition": [
+              3,
+              3,
+              2,
+              1
+            ],
+            "dim": 168,
+            "y_at_q0": -1.804545554954399e-05,
+            "chi_q_at_q0": -2.9423453437429696,
+            "max_eigval_abs": 11.11342520965152
+          },
+          {
+            "partition": [
+              3,
+              3,
+              1,
+              1,
+              1
+            ],
+            "dim": 120,
+            "y_at_q0": 1.0981291843846358e-05,
+            "chi_q_at_q0": 2.1536654578904346,
+            "max_eigval_abs": 7.449314335046786
+          },
+          {
+            "partition": [
+              3,
+              2,
+              2,
+              2
+            ],
+            "dim": 84,
+            "y_at_q0": -1.4609912836621997e-06,
+            "chi_q_at_q0": -0.3696754946345283,
+            "max_eigval_abs": 5.622286168958646
+          },
+          {
+            "partition": [
+              3,
+              2,
+              2,
+              1,
+              1
+            ],
+            "dim": 162,
+            "y_at_q0": 6.463636475934016e-06,
+            "chi_q_at_q0": 2.110471664843928,
+            "max_eigval_abs": 7.457416237430067
+          },
+          {
+            "partition": [
+              3,
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "dim": 105,
+            "y_at_q0": -6.0631716335014305e-06,
+            "chi_q_at_q0": 1.128770286920232,
+            "max_eigval_abs": 5.065509326485198
+          },
+          {
+            "partition": [
+              3,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "dim": 28,
+            "y_at_q0": 2.00231429571477e-06,
+            "chi_q_at_q0": -2.381403633756616,
+            "max_eigval_abs": 2.4462396565291695
+          },
+          {
+            "partition": [
+              2,
+              2,
+              2,
+              2,
+              1
+            ],
+            "dim": 42,
+            "y_at_q0": 2.1028192488609852e-07,
+            "chi_q_at_q0": 6.659205125441179,
+            "max_eigval_abs": 4.336743542118982
+          },
+          {
+            "partition": [
+              2,
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            "dim": 48,
+            "y_at_q0": -9.364922707075722e-07,
+            "chi_q_at_q0": -3.720258560189076,
+            "max_eigval_abs": 4.178581996705978
+          },
+          {
+            "partition": [
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "dim": 27,
+            "y_at_q0": 1.0702219824366549e-06,
+            "chi_q_at_q0": -1.4695203542289217,
+            "max_eigval_abs": 2.7204550497010795
+          },
+          {
+            "partition": [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "dim": 8,
+            "y_at_q0": -5.035638394407752e-07,
+            "chi_q_at_q0": 1.8583356615342186,
+            "max_eigval_abs": 1.3781754675268463
+          },
+          {
+            "partition": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "dim": 1,
+            "y_at_q0": 8.693768467746071e-08,
+            "chi_q_at_q0": -0.4508185556343537,
+            "max_eigval_abs": 0.4508185556343537
+          }
+        ]
+      }
+    },
+    "results": {
+      "1": {
+        "deuteron": {
+          "tr_M_abs": 0.3882864712890246,
+          "tower_op_complex_real": -0.4638455495478569,
+          "tower_op_complex_imag": -4.626189116069951e-13,
+          "tower_op_abs": 0.4638455495478569,
+          "B_op_abs_MeV": 2.0717256713917753,
+          "AME_MeV": 2.224566,
+          "err_pct": -6.870568398879804,
+          "ame_close_within_threshold": true
+        },
+        "tritium": {
+          "tr_M_abs": 0.10405398879467263,
+          "tower_op_complex_real": 0.2773261039833357,
+          "tower_op_complex_imag": -3.2795811290764815e-13,
+          "tower_op_abs": 0.2773261039833357,
+          "B_op_abs_MeV": 2.9896135801134816,
+          "AME_MeV": 8.481798,
+          "err_pct": -64.7525963231678,
+          "ame_close_within_threshold": false
+        },
+        "he3": {
+          "tr_M_abs": 0.2065441288958544,
+          "tower_op_complex_real": 0.5750612597793091,
+          "tower_op_complex_imag": 2.2751548345336706e-15,
+          "tower_op_abs": 0.5750612597793091,
+          "B_op_abs_MeV": 3.3986429920472525,
+          "AME_MeV": 7.71806,
+          "err_pct": -55.96506127126179,
+          "ame_close_within_threshold": false
+        }
+      },
+      "2": {
+        "deuteron": {
+          "tr_M_abs": 0.3882864712890246,
+          "tower_op_complex_real": -5.343869834734316,
+          "tower_op_complex_imag": -4.6688076536691535e-12,
+          "tower_op_abs": 5.343869834734316,
+          "B_op_abs_MeV": 4.565412957096557,
+          "AME_MeV": 2.224566,
+          "err_pct": 105.22713001531793,
+          "ame_close_within_threshold": false
+        },
+        "tritium": {
+          "tr_M_abs": 0.10405398879467263,
+          "tower_op_complex_real": -4.987593736670297,
+          "tower_op_complex_imag": -3.180720281332394e-12,
+          "tower_op_abs": 4.987593736670297,
+          "B_op_abs_MeV": 7.803497209157526,
+          "AME_MeV": 8.481798,
+          "err_pct": -7.997134461849639,
+          "ame_close_within_threshold": true
+        },
+        "he3": {
+          "tr_M_abs": 0.2065441288958544,
+          "tower_op_complex_real": -10.597921061384387,
+          "tower_op_complex_imag": 2.0847838836099273e-12,
+          "tower_op_abs": 10.597921061384387,
+          "B_op_abs_MeV": 13.641984661282057,
+          "AME_MeV": 7.71806,
+          "err_pct": 76.75406334340568,
+          "ame_close_within_threshold": false
+        }
+      },
+      "3": {
+        "deuteron": {
+          "tr_M_abs": 0.3882864712890246,
+          "tower_op_complex_real": -38.34908815907635,
+          "tower_op_complex_imag": -2.478781689851269e-11,
+          "tower_op_abs": 38.34908815907635,
+          "B_op_abs_MeV": 21.431044865356093,
+          "AME_MeV": 2.224566,
+          "err_pct": 863.3809410624857,
+          "ame_close_within_threshold": false
+        },
+        "tritium": {
+          "tr_M_abs": 0.10405398879467263,
+          "tower_op_complex_real": -45.69055081020062,
+          "tower_op_complex_imag": -1.6207308137769194e-11,
+          "tower_op_abs": 45.69055081020062,
+          "B_op_abs_MeV": 49.40183386209566,
+          "AME_MeV": 8.481798,
+          "err_pct": 482.445300655541,
+          "ame_close_within_threshold": false
+        },
+        "he3": {
+          "tr_M_abs": 0.2065441288958544,
+          "tower_op_complex_real": -108.63730354414754,
+          "tower_op_complex_imag": 2.084148891071713e-11,
+          "tower_op_abs": 108.63730354414754,
+          "B_op_abs_MeV": 113.83802767596279,
+          "AME_MeV": 7.71806,
+          "err_pct": 1374.9565004154256,
+          "ame_close_within_threshold": false
+        }
+      },
+      "4": {
+        "deuteron": {
+          "tr_M_abs": 0.3882864712890246,
+          "tower_op_complex_real": 14.446950337861011,
+          "tower_op_complex_imag": -9.222847939426554e-11,
+          "tower_op_abs": 14.446950337861011,
+          "B_op_abs_MeV": 9.217077535959769,
+          "AME_MeV": 2.224566,
+          "err_pct": 314.3314936917929,
+          "ame_close_within_threshold": false
+        },
+        "tritium": {
+          "tr_M_abs": 0.10405398879467263,
+          "tower_op_complex_real": -127.81849622674024,
+          "tower_op_complex_imag": -3.6892672944026206e-11,
+          "tower_op_abs": 127.81849622674024,
+          "B_op_abs_MeV": 133.33642160911376,
+          "AME_MeV": 8.481798,
+          "err_pct": 1472.0301474889375,
+          "ame_close_within_threshold": false
+        },
+        "he3": {
+          "tr_M_abs": 0.2065441288958544,
+          "tower_op_complex_real": -601.6296762398744,
+          "tower_op_complex_imag": 1.0919914211454197e-10,
+          "tower_op_abs": 601.6296762398744,
+          "B_op_abs_MeV": 617.6751972870129,
+          "AME_MeV": 7.71806,
+          "err_pct": 7902.985170975774,
+          "ame_close_within_threshold": false
+        }
+      },
+      "5": {
+        "deuteron": {
+          "tr_M_abs": 0.3882864712890246,
+          "tower_op_complex_real": 1519.4727183286407,
+          "tower_op_complex_imag": -2.702834869336168e-10,
+          "tower_op_abs": 1519.4727183286407,
+          "B_op_abs_MeV": 778.2836647021917,
+          "AME_MeV": 2.224566,
+          "err_pct": 34885.86531944621,
+          "ame_close_within_threshold": false
+        },
+        "tritium": {
+          "tr_M_abs": 0.10405398879467263,
+          "tower_op_complex_real": 221.24245598046633,
+          "tower_op_complex_imag": 5.336101097022684e-11,
+          "tower_op_abs": 221.24245598046633,
+          "B_op_abs_MeV": 228.81551228710634,
+          "AME_MeV": 8.481798,
+          "err_pct": 2597.724141592459,
+          "ame_close_within_threshold": false
+        },
+        "he3": {
+          "tr_M_abs": 0.2065441288958544,
+          "tower_op_complex_real": -2397.107389729961,
+          "tower_op_complex_imag": 4.3699949322419984e-10,
+          "tower_op_abs": 2397.107389729961,
+          "B_op_abs_MeV": 2452.649649970683,
+          "AME_MeV": 7.71806,
+          "err_pct": 31678.058864153463,
+          "ame_close_within_threshold": false
+        }
+      },
+      "6": {
+        "deuteron": {
+          "tr_M_abs": 0.3882864712890246,
+          "tower_op_complex_real": 10582.03764138264,
+          "tower_op_complex_imag": -6.649663039909169e-10,
+          "tower_op_abs": 10582.03764138264,
+          "B_op_abs_MeV": 5409.244824689616,
+          "AME_MeV": 2.224566,
+          "err_pct": 243059.55672655324,
+          "ame_close_within_threshold": false
+        },
+        "tritium": {
+          "tr_M_abs": 0.10405398879467263,
+          "tower_op_complex_real": 3141.4580370679278,
+          "tower_op_complex_imag": 7.851133174342358e-10,
+          "tower_op_abs": 3141.4580370679278,
+          "B_op_abs_MeV": 3213.269703705771,
+          "AME_MeV": 8.481798,
+          "err_pct": 37784.2988680675,
+          "ame_close_within_threshold": false
+        },
+        "he3": {
+          "tr_M_abs": 0.2065441288958544,
+          "tower_op_complex_real": -7600.892441002432,
+          "tower_op_complex_imag": 1.5267609768947162e-09,
+          "tower_op_abs": 7600.892441002432,
+          "B_op_abs_MeV": 7770.907044422541,
+          "AME_MeV": 7.71806,
+          "err_pct": 100584.7192743065,
+          "ame_close_within_threshold": false
+        }
+      },
+      "8": {
+        "deuteron": {
+          "tr_M_abs": 0.3882864712890246,
+          "tower_op_complex_real": 152158.22633452315,
+          "tower_op_complex_imag": -2.5307010535471683e-09,
+          "tower_op_abs": 152158.22633452315,
+          "B_op_abs_MeV": 77754.52859188628,
+          "AME_MeV": 2.224566,
+          "err_pct": 3495167.328183847,
+          "ame_close_within_threshold": false
+        },
+        "tritium": {
+          "tr_M_abs": 0.10405398879467263,
+          "tower_op_complex_real": 42156.8074530591,
+          "tower_op_complex_imag": 1.1716579923440732e-08,
+          "tower_op_abs": 42156.8074530591,
+          "B_op_abs_MeV": 43086.87487461497,
+          "AME_MeV": 8.481798,
+          "err_pct": 507892.23082906444,
+          "ame_close_within_threshold": false
+        },
+        "he3": {
+          "tr_M_abs": 0.2065441288958544,
+          "tower_op_complex_real": -47137.79804185137,
+          "tower_op_complex_imag": 1.2300948530172212e-08,
+          "tower_op_abs": 47137.79804185137,
+          "B_op_abs_MeV": 48177.541540988386,
+          "AME_MeV": 7.71806,
+          "err_pct": 624118.2820681413,
+          "ame_close_within_threshold": false
+        }
+      },
+      "10": {
+        "deuteron": {
+          "tr_M_abs": 0.3882864712890246,
+          "tower_op_complex_real": 1020693.5902769942,
+          "tower_op_complex_imag": -3.4456327996981844e-09,
+          "tower_op_abs": 1020693.5902769942,
+          "B_op_abs_MeV": 521575.1876043568,
+          "AME_MeV": 2.224566,
+          "err_pct": 23446054.782746695,
+          "ame_close_within_threshold": false
+        },
+        "tritium": {
+          "tr_M_abs": 0.10405398879467263,
+          "tower_op_complex_real": 177250.8909592506,
+          "tower_op_complex_imag": 6.647627791066568e-08,
+          "tower_op_abs": 177250.8909592506,
+          "B_op_abs_MeV": 181152.7445203673,
+          "AME_MeV": 8.481798,
+          "err_pct": 2135682.348511098,
+          "ame_close_within_threshold": false
+        },
+        "he3": {
+          "tr_M_abs": 0.2065441288958544,
+          "tower_op_complex_real": -185498.44422814113,
+          "tower_op_complex_imag": 1.906727585972589e-08,
+          "tower_op_abs": 185498.44422814113,
+          "B_op_abs_MeV": 189581.83138601953,
+          "AME_MeV": 7.71806,
+          "err_pct": 2456240.4713881407,
+          "ame_close_within_threshold": false
+        }
+      }
+    }
+  },
+  "caveats": [
+    "Absolute-form binding B = m_e·ρ·(|tr_M|+|tower_op|+σ_{3A}); subtractive form would require recomputing all per-irrep eigenvalues at include_inter=False, deferred.",
+    "Eigenvalues computed via numpy float64. For braid words where |μ| exceeds q_0^k_max, the per-eigenvalue Φ_q^{[≤k]} can overflow numerically — values are surfaced as errors rather than silently producing NaN. mpmath promotion is the obvious refinement if higher-k cases need to be probed quantitatively."
+  ]
+}

@@ -1,0 +1,276 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-11T16:42:28.379431+00:00",
+  "commitSha": "a975fd24222fa084140b905b8d7dc25b8b28702b",
+  "assertions": [
+    {
+      "name": "no_uniform_k_closes_within_threshold",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 23,
+  "computation": "probe-phiq-operator-valued",
+  "scriptFile": "probe_phiq_operator_valued.py",
+  "scriptHash": "ed3a5bb6575a",
+  "scriptCommitSha": "unknown",
+  "description": "Operator-valued Φ_q brane-tower probe in Wedderburn-block form. For each isotope in {D, T, ³He} and each k in {1,2,3,4,5,6,8,10}, computes tower_op^(k) = Σ_λ y_λ Φ_q^{[≤k]}(|χ^λ_q(β)|/dim V_λ), Wedderburn-summed across irreps of H_{3A}(q_0) via the trusted q-Hecke seminormal infrastructure (per-irrep χ^λ via Hoefsmit, y_λ via Wenzl Schur principal specialization). Promotes the scalar Φ_q-per-generator-volume probe to a convolution-aware higher-irrep form that captures the full Hecke R-matrix structure of the braid operator. Tests whether the scalar-substrate refutation in §'Closure (2026-05-11)' extends to the operator-valued n_⋆ existence claim.",
+  "contentBlock": "conj:brane-tower-z-habiro",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "m_e_MeV": 0.51099895,
+    "k_sweep": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8,
+      10
+    ],
+    "threshold_pct": 10.0
+  },
+  "data": {
+    "per_atom": {
+      "deuteron": {
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "n_partitions": 11,
+        "tr_M": 0.3882864712890246
+      },
+      "tritium": {
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "n_partitions": 30,
+        "tr_M": 0.10405398879467263
+      },
+      "he3": {
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "n_partitions": 30,
+        "tr_M": 0.20654412889585438
+      }
+    },
+    "results": {
+      "1": {
+        "deuteron": {
+          "tr_M_abs": 0.3882864712890246,
+          "tower_op": 0.12271807714214887,
+          "B_op_abs_MeV": 1.8974098911763044,
+          "AME_MeV": 2.224566,
+          "err_pct": -14.706513936817133,
+          "ame_close_within_threshold": false
+        },
+        "tritium": {
+          "tr_M_abs": 0.10405398879467263,
+          "tower_op": 0.017151302571235788,
+          "B_op_abs_MeV": 2.723715479437398,
+          "AME_MeV": 8.481798,
+          "err_pct": -67.88752243996616,
+          "ame_close_within_threshold": false
+        },
+        "he3": {
+          "tr_M_abs": 0.20654412889585438,
+          "tower_op": 0.04499464435636901,
+          "B_op_abs_MeV": 2.8569160242249,
+          "AME_MeV": 7.71806,
+          "err_pct": -62.98401380366439,
+          "ame_close_within_threshold": false
+        }
+      },
+      "2": {
+        "deuteron": {
+          "tr_M_abs": 0.3882864712890246,
+          "tower_op": 1.1176760758524695,
+          "B_op_abs_MeV": 2.4058323838113793,
+          "AME_MeV": 2.224566,
+          "err_pct": 8.148393161244913,
+          "ame_close_within_threshold": true
+        },
+        "tritium": {
+          "tr_M_abs": 0.10405398879467263,
+          "tower_op": 0.09845400162456476,
+          "B_op_abs_MeV": 2.8068066671342327,
+          "AME_MeV": 8.481798,
+          "err_pct": -66.90788124010696,
+          "ame_close_within_threshold": false
+        },
+        "he3": {
+          "tr_M_abs": 0.20654412889585438,
+          "tower_op": 0.11824784586213201,
+          "B_op_abs_MeV": 2.931780642332067,
+          "AME_MeV": 7.71806,
+          "err_pct": -62.0140211098117,
+          "ame_close_within_threshold": false
+        }
+      },
+      "3": {
+        "deuteron": {
+          "tr_M_abs": 0.3882864712890246,
+          "tower_op": -2.7441592884412387,
+          "B_op_abs_MeV": 0.4324385675844273,
+          "AME_MeV": 2.224566,
+          "err_pct": -80.56076701772716,
+          "ame_close_within_threshold": false
+        },
+        "tritium": {
+          "tr_M_abs": 0.10405398879467263,
+          "tower_op": -0.308346418494466,
+          "B_op_abs_MeV": 2.3910574920534655,
+          "AME_MeV": 8.481798,
+          "err_pct": -71.8095444851025,
+          "ame_close_within_threshold": false
+        },
+        "he3": {
+          "tr_M_abs": 0.20654412889585438,
+          "tower_op": 0.23686053132999493,
+          "B_op_abs_MeV": 3.053002557793583,
+          "AME_MeV": 7.71806,
+          "err_pct": -60.443394353068214,
+          "ame_close_within_threshold": false
+        }
+      },
+      "4": {
+        "deuteron": {
+          "tr_M_abs": 0.3882864712890246,
+          "tower_op": 144.11169833895255,
+          "B_op_abs_MeV": 75.47562761653215,
+          "AME_MeV": 2.224566,
+          "err_pct": 3292.824830395329,
+          "ame_close_within_threshold": false
+        },
+        "tritium": {
+          "tr_M_abs": 0.10405398879467263,
+          "tower_op": 9.461435245797958,
+          "B_op_abs_MeV": 12.375753836418827,
+          "AME_MeV": 8.481798,
+          "err_pct": 45.90955639852338,
+          "ame_close_within_threshold": false
+        },
+        "he3": {
+          "tr_M_abs": 0.20654412889585438,
+          "tower_op": 0.5136664929242244,
+          "B_op_abs_MeV": 3.3358976692503663,
+          "AME_MeV": 7.71806,
+          "err_pct": -56.77802881487879,
+          "ame_close_within_threshold": false
+        }
+      },
+      "5": {
+        "deuteron": {
+          "tr_M_abs": 0.3882864712890246,
+          "tower_op": 1914.2431465280265,
+          "B_op_abs_MeV": 980.0109390031282,
+          "AME_MeV": 2.224566,
+          "err_pct": 43954.02847131208,
+          "ame_close_within_threshold": false
+        },
+        "tritium": {
+          "tr_M_abs": 0.10405398879467263,
+          "tower_op": 146.45030383687006,
+          "B_op_abs_MeV": 152.37808985987047,
+          "AME_MeV": 8.481798,
+          "err_pct": 1696.5305217109683,
+          "ame_close_within_threshold": false
+        },
+        "he3": {
+          "tr_M_abs": 0.20654412889585438,
+          "tower_op": 0.9098870865422322,
+          "B_op_abs_MeV": 3.7408342838647233,
+          "AME_MeV": 7.71806,
+          "err_pct": -51.53141743048482,
+          "ame_close_within_threshold": false
+        }
+      },
+      "6": {
+        "deuteron": {
+          "tr_M_abs": 0.3882864712890246,
+          "tower_op": 11514.568288095628,
+          "B_op_abs_MeV": 5885.767006002773,
+          "AME_MeV": 2.224566,
+          "err_pct": 264480.4622565828,
+          "ame_close_within_threshold": false
+        },
+        "tritium": {
+          "tr_M_abs": 0.10405398879467263,
+          "tower_op": 933.0503101826603,
+          "B_op_abs_MeV": 956.2816444852547,
+          "AME_MeV": 8.481798,
+          "err_pct": 11174.515668555827,
+          "ame_close_within_threshold": false
+        },
+        "he3": {
+          "tr_M_abs": 0.20654412889585438,
+          "tower_op": 1.7685044427795942,
+          "B_op_abs_MeV": 4.618339418842859,
+          "AME_MeV": 7.71806,
+          "err_pct": -40.16191350102411,
+          "ame_close_within_threshold": false
+        }
+      },
+      "8": {
+        "deuteron": {
+          "tr_M_abs": 0.3882864712890246,
+          "tower_op": 143280.4252889855,
+          "B_op_abs_MeV": 73217.98157930764,
+          "AME_MeV": 2.224566,
+          "err_pct": 3291237.7970942482,
+          "ame_close_within_threshold": false
+        },
+        "tritium": {
+          "tr_M_abs": 0.10405398879467263,
+          "tower_op": 12292.673672592027,
+          "B_op_abs_MeV": 12565.792865658565,
+          "AME_MeV": 8.481798,
+          "err_pct": 148050.1076264557,
+          "ame_close_within_threshold": false
+        },
+        "he3": {
+          "tr_M_abs": 0.20654412889585438,
+          "tower_op": 24.073947149204074,
+          "B_op_abs_MeV": 27.41445502337899,
+          "AME_MeV": 7.71806,
+          "err_pct": 255.19878082547933,
+          "ame_close_within_threshold": false
+        }
+      },
+      "10": {
+        "deuteron": {
+          "tr_M_abs": 0.3882864712890246,
+          "tower_op": 815011.8618496085,
+          "B_op_abs_MeV": 416472.04034377757,
+          "AME_MeV": 2.224566,
+          "err_pct": 18721396.253371563,
+          "ame_close_within_threshold": false
+        },
+        "tritium": {
+          "tr_M_abs": 0.10405398879467263,
+          "tower_op": 72103.84808790707,
+          "B_op_abs_MeV": 73692.68751464425,
+          "AME_MeV": 8.481798,
+          "err_pct": 868733.3241919256,
+          "ame_close_within_threshold": false
+        },
+        "he3": {
+          "tr_M_abs": 0.20654412889585438,
+          "tower_op": 1986.329155490253,
+          "B_op_abs_MeV": 2032.8351572119932,
+          "AME_MeV": 7.71806,
+          "err_pct": 26238.68040948105,
+          "ame_close_within_threshold": false
+        }
+      }
+    }
+  },
+  "caveats": [
+    "Absolute-form binding B = m_e·ρ·(|tr_M|+tower_op+σ_{3A}); subtractive form would require recomputing χ^λ at include_inter=False and is queued as a separate probe.",
+    "Wedderburn-weighted Φ_q at |χ^λ|/dim is the irrep-weighted scalar promotion. The strictly-stronger per-eigenvalue operator form (Φ_q applied to each eigenvalue of ρ_λ(β) in V_λ, summed as the operator trace, then Wedderburn-weighted) remains the next refinement."
+  ]
+}

@@ -186,14 +186,26 @@ $n_\star$ has been correctly identified. A rule that requires
 per-atom retuning is structurally equivalent to Yekutieli's $k_{\max}$
 and does not constitute progress.
 
-## Closure (2026-05-11): scalar substrate form of $n_\star$ is refuted
+## Closure (2026-05-11): scalar-eigenvalue form of $n_\star$ is refuted
+
+**Scope of this section.** "Scalar-eigenvalue" means **both** that
+the candidate $n_\star$ is a function of scalar substrate invariants
+of a single confined particle, **and** that the truncated quantum
+dilogarithm $\Phi_q^{[\leq n_\star]}$ is evaluated on a **scalar
+argument** (the per-generator algebraic volume $|\hat{V}_i|$). These
+two assumptions together collapse the Wedderburn decomposition of
+$H_{3A}(q_0)$ onto its 1-D eigenvalues; higher partitions $\lambda$
+contribute only through scalar reductions. The strictly-stronger
+**operator-valued** (Wedderburn-block, convolution-aware via
+$\chi^\lambda_q(\beta)$) form is probed separately in the next
+section.
 
 The level-selection part of this conjecture asserted the existence of
 an $n_\star$ derivable **from QOU substrate data alone** — a function
 of scalar substrate invariants of a single confined particle, without
-per-atom retuning. Every candidate in the table above has now been
-probed against the AME light-isotope sample, and **all fail by the
-conjecture's own falsifiability criterion**:
+per-atom retuning. Every scalar candidate in the table above has now
+been probed against the AME light-isotope sample, and **all fail by
+the conjecture's own falsifiability criterion**:
 
 | Candidate rule | Probe | Witness | Outcome |
 |:---|:---|:---|:---:|
@@ -206,11 +218,12 @@ candidate table (GB max grade, confinement level $\ell$, strand count
 $n_0 = 3A$, Coxeter length $\ell(w)$, and the leading additive
 combination $\ell n_0 + k$).
 
-**Theorem (scalar-substrate $n_\star$ refutation).** *Let
+**Theorem (scalar-eigenvalue $n_\star$ refutation).** *Let
 $n_\star : \mathfrak{H} \mapsto \mathbb{N}_{\geq 1}$ be any rule
 constructed from the candidate scalar substrate invariants
-$(\ell, n_0, k, \ell(w))$ — without per-atom retuning. Then the
-cyclotomic projection
+$(\ell, n_0, k, \ell(w))$, and let $\Phi_q^{[\leq n_\star]}$ be
+evaluated on the scalar per-generator volumes $|\hat{V}_i|$ — without
+per-atom retuning. Then the cyclotomic projection
 $\pi_{n_\star(\mathfrak{H})}^{(z)}\!\bigl(\widetilde{\Phi}_q^{\mathrm{tower}}(\beta_\mathfrak{H})\bigr)$,
 evaluated at $(q_0, z_i)$ into the binding formula
 $B(\mathfrak{H}) = m_e \cdot \rho \cdot (|\mathrm{tr}_M(T_w)| + \mathrm{tower}(\mathfrak{H}) + \sigma_{3A})$,
@@ -225,28 +238,183 @@ out the additive combination $\ell n_0 + k$. All three exceed $100\%$
 error on at least one isotope, far outside the $\sim 5\%$
 empirical-confirmation threshold. $\square$
 
-By the conjecture's own criterion, the **scalar substrate form** of
+By the conjecture's own criterion, the **scalar-eigenvalue form** of
 the $n_\star$ existence claim is therefore **refuted**.
+
+## Operator-valued probe (2026-05-11): per-eigenvalue form also refuted
+
+A natural objection to the closure above is: **the scalar form
+collapses $\Phi_q$ onto 1-D eigenvalues**. Hecke irreps $V_\lambda$
+for $\lambda \vdash 3A$ are mostly higher-dimensional, and the
+braid operator $\rho(\beta_\mathfrak{H}) \in H_{3A}(q)$ acts on each
+irrep via R-matrix **convolution**, not a per-generator scalar
+product. The conjecture's $n_\star$ existence claim might survive
+when $\Phi_q$ is promoted to the canonical operator-valued form.
+
+This section reports the **canonical operator-valued probe** —
+$\Phi_q$ applied **per eigenvalue** of $\rho_\lambda(\beta)$ in
+each Hecke irrep $V_\lambda$, summed via the operator trace, then
+Wedderburn-weighted by signed $y_\lambda$:
+
+$$
+  \mathrm{tower}_{\mathrm{op}}^{(k)}(\beta_\mathfrak{H})
+  \;:=\;
+  \Biggl|\,
+  \sum_{\lambda \vdash 3A} \;
+    y_\lambda(q_0) \cdot
+    \mathrm{tr}_\lambda\!\Bigl(
+      \Phi_q^{[\leq k]}\bigl(\rho_\lambda(\beta_\mathfrak{H})\bigr)
+    \Bigr)
+  \,\Biggr|
+  \;=\;
+  \Biggl|\,
+  \sum_\lambda y_\lambda(q_0) \cdot
+    \sum_{a=1}^{\dim V_\lambda}
+      \Phi_q^{[\leq k]}\!\bigl(\mu_a^{(\lambda)}\bigr)
+  \,\Biggr|,
+$$
+
+where $\mu_a^{(\lambda)}$ are the eigenvalues of $\rho_\lambda(\beta)$
+(complex, in general) and $\Phi_q^{[\leq k]}$ extends to a complex
+argument as the finite product $\prod_{j=1}^{k}(1 - q^{-j}\mu)^{-1}$.
+The implementation is
+[`probe_phiq_operator_valued.py`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/folio-assistant/computations/probe_phiq_operator_valued.py)
+([witness](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/folio-assistant/computations/probe-phiq-operator-valued.witness.json));
+it builds $\rho_\lambda(\beta)$ numerically from Hoefsmit seminormal
+matrices at $q_0$, computes eigenvalues via `numpy.linalg.eigvals`,
+applies $\Phi_q$ per eigenvalue, sums as the operator trace, and
+Wedderburn-weights with signed $y_\lambda(q_0)$ from the canonical
+Jones-Markov machinery
+([`wedderburn_jones_markov.y_lambda_at`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/folio-assistant/computations/wedderburn_jones_markov.py)).
+
+**Three normalization properties handled correctly** (vs the earlier
+[`_avg_chi_over_classical_dim`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/folio-assistant/computations/probe_phiq_avg_chi_over_classical_dim.py)
+variant, which used approximations on all three):
+
+1. **No per-irrep dimension denominator.** Replaced by the operator
+   trace $\mathrm{tr}_\lambda$ — classical-vs-quantum-dim question
+   resolved structurally.
+2. **Signed character throughout.** Complex Φ_q evaluation; final
+   $|\cdot|$ only at the binding-formula level.
+3. **Per-eigenvalue $\Phi_q$.** Applied to each $\mu_a^{(\lambda)}$
+   separately rather than to the per-irrep mean.
+
+### Result — per-eigenvalue operator form is also refuted
+
+| $k$ | $D$ err | $T$ err | ${}^3\mathrm{He}$ err | max\|err\| |
+|:-:|---:|---:|---:|---:|
+| **1** | $\mathbf{-6.87\%}$ ✓ | $-64.75\%$ | $-55.97\%$ | $64.75\%$ |
+| 2 | $+105.23\%$ | $\mathbf{-8.00\%}$ ✓ | $+76.75\%$ | $105.23\%$ |
+| 3 | $+863\%$ | $+482\%$ | $+1375\%$ | $1375\%$ |
+| 4 | $+314\%$ | $+1472\%$ | $+7903\%$ | $7903\%$ |
+| 5 | $+34{,}886\%$ | $+2598\%$ | $+31{,}678\%$ | $34{,}886\%$ |
+| 6 | $+243{,}060\%$ | $+37{,}784\%$ | $+100{,}585\%$ | $243{,}060\%$ |
+| 8 | $+3.50\times 10^6\%$ | $+507{,}892\%$ | $+624{,}118\%$ | $3.50\times 10^6\%$ |
+| 10 | $+2.34\times 10^7\%$ | $+2.14\times 10^6\%$ | $+2.46\times 10^6\%$ | $2.34\times 10^7\%$ |
+
+**Notable structural finding.** Two of three atoms find their
+*own* near-AME uniform $k$ under the per-eigenvalue form —
+**deuteron at $k = 1$ lands at $-6.87\%$** and **tritium at $k = 2$
+lands at $-8.00\%$**, both within $10\%$ of the AME value. But
+${}^3\mathrm{He}$ never gets within $50\%$ at any uniform $k$ in
+$\{1, \ldots, 10\}$ — and the (D, T) sweet spots are at *different*
+$k$ values, so **no single uniform $k$ closes all three**.
+
+**Theorem (per-eigenvalue operator $n_\star$ refutation).** *Under
+the canonical operator-valued promotion above, for every
+$k \in \{1, 2, 3, 4, 5, 6, 8, 10\}$, the tower
+$\mathrm{tower}_{\mathrm{op}}^{(k)}$ substituted into the binding
+formula produces an error exceeding the falsifiability threshold on
+at least one of $\{D, T, {}^3\mathrm{He}\}$.* The Lean form is
+[`witness_refutes_per_eigenvalue_operator_form`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/content/quantum-observable-universe/braids-and-knots/brane-tower-z-habiro.lean)
+in the sibling `.lean`.
+
+By the conjecture's own criterion (no per-atom retuning), the
+**operator-valued form** of the $n_\star$ existence claim is
+therefore also **refuted**.
+
+### Reading of the (D, T) per-atom sweet spots
+
+The fact that $D$ and $T$ each find their own near-AME uniform $k$
+($k = 1$ for $D$, $k = 2$ for $T$) under the canonical
+operator-valued form is structurally informative but **does not
+support the conjecture**: per-atom $k$ values are exactly what
+[`conj:brane-level-selection`](#conj:brane-level-selection) tried
+to predict via $n_\star = \ell \cdot n_0 + k$, and the conjecture
+explicitly rules out per-atom retuning as the empirical signature
+of correctness. The result is consistent with the refuted
+$\ell n_0 + k$ formula being approximately right for $D$ and $T$
+but missing a doubled-near-pole correction for ${}^3\mathrm{He}$ —
+the same multiplicity signature flagged in the scalar-form closure
+above.
+
+### Result — operator-valued form is also refuted at every uniform $k$
+
+| $k$ | $D$ err | $T$ err | ${}^3\mathrm{He}$ err | max\|err\| |
+|:-:|---:|---:|---:|---:|
+| 1 | $-14.71\%$ | $-67.89\%$ | $-62.98\%$ | $67.89\%$ |
+| **2** | $\mathbf{+8.15\%}$ | $\mathbf{-66.91\%}$ | $\mathbf{-62.01\%}$ | $\mathbf{66.91\%}$ |
+| 3 | $-80.56\%$ | $-71.81\%$ | $-60.44\%$ | $80.56\%$ |
+| 4 | $+3293\%$ | $+45.91\%$ | $-56.78\%$ | $3293\%$ |
+| 5 | $+43{,}954\%$ | $+1697\%$ | $-51.53\%$ | $43{,}954\%$ |
+| 6 | $+264{,}480\%$ | $+11{,}175\%$ | $-40.16\%$ | $264{,}480\%$ |
+| 8 | $+3.29\times 10^6\%$ | $+148{,}050\%$ | $+255\%$ | $3.29\times 10^6\%$ |
+| 10 | $+1.87\times 10^7\%$ | $+868{,}733\%$ | $+26{,}239\%$ | $1.87\times 10^7\%$ |
+
+Best uniform $k$ is $k = 2$: deuteron lands at $+8.15\%$
+(marginally below the $10\%$ working bound but above the
+conjecture's $\sim 5\%$ empirical-confirmation threshold), but
+tritium and ${}^3\mathrm{He}$ both undershoot by $\sim 67\%$ and
+$\sim 62\%$ respectively. Worst-atom abs error at $k = 2$ is
+$66.91\%$ on tritium — an order of magnitude above the falsifiability
+threshold.
+
+**Theorem (operator-valued $n_\star$ refutation).** *Under the
+Wedderburn-block promotion above, for every $k \in \{1, 2, 3, 4, 5,
+6, 8, 10\}$, the operator-valued tower
+$\mathrm{tower}_{\mathrm{op}}^{(k)}$ substituted into the binding
+formula produces an error exceeding the falsifiability threshold on
+at least one of $\{D, T, {}^3\mathrm{He}\}$.* The Lean form is
+[`witness_refutes_operator_valued_wedderburn_form`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/content/quantum-observable-universe/braids-and-knots/brane-tower-z-habiro.lean)
+in the sibling `.lean`.
 
 ### What survives the closure
 
-The conjecture has two independent claims; only the second is
-refuted.
+The conjecture has two independent claims:
 
 1. **Algebraic Cauchy-limit claim** —
    $\widetilde{\Phi}_q^{\mathrm{tower}}(\beta)$ exists as a Cauchy
-   limit in the $z$-Habiro topology. **Untouched by the witnesses
-   and remains open.** A direct algebraic proof would proceed via
-   the cyclotomic projections $\pi_n^{(z)}$ on the $z$-Habiro ring
-   ([$z$-Habiro ring](#def:z-habiro-ring)) and does not depend on
-   $n_\star$.
+   limit in the $z$-Habiro topology. **Untouched by any of the
+   witnesses and remains open.** A direct algebraic proof would
+   proceed via the cyclotomic projections $\pi_n^{(z)}$ on the
+   $z$-Habiro ring ([$z$-Habiro ring](#def:z-habiro-ring)) and does
+   not depend on $n_\star$.
 
-2. **Scalar-substrate $n_\star$ existence claim** — **refuted**
-   (this section).
+2. **$n_\star$ existence claim** — refuted across every empirically
+   probed form:
+   - Scalar-eigenvalue family (§"Closure (2026-05-11)"): **refuted**.
+   - Operator-valued per-eigenvalue family (§"Operator-valued
+     probe"): **refuted**. The canonical convolution-aware
+     promotion fails the falsifiability criterion at every uniform
+     $k$, even though $D$ and $T$ individually find near-AME values
+     at different $k$ (per-atom retuning is excluded).
+   - Multiplicity-refined scalar family: **open** (this section's
+     final §).
+
+A historical Wedderburn-block-average variant
+([`probe_phiq_avg_chi_over_classical_dim.py`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/folio-assistant/computations/probe_phiq_avg_chi_over_classical_dim.py))
+that used three approximations — classical $\dim V_\lambda$,
+$|\chi^\lambda|$ (abs), mean-of-eigenvalues — is preserved for
+audit purposes but superseded by the per-eigenvalue probe; its
+witness is
+[`probe-phiq-avg-chi-over-classical-dim.witness.json`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/folio-assistant/computations/probe-phiq-avg-chi-over-classical-dim.witness.json).
 
 ### Refined open question
 
-What replaces the refuted claim is the **multiplicity-refined form**:
+The (D, T) per-atom sweet spots under the operator-valued form
+($k = 1$ for D, $k = 2$ for T) and the ${}^3\mathrm{He}$ holdout at
+every $k$ point at the **multiplicity-refined** open question as
+the surviving thread:
 
 > *Does there exist a rule
 > $n_\star \;:\; (\ell, n_0, k, \mathbf{m})
@@ -259,18 +427,29 @@ What replaces the refuted claim is the **multiplicity-refined form**:
 > gap below $5\%$ uniformly?*
 
 The empirical support for promoting $\mathbf{m}$ to a first-class
-input is the He-3 overshoot at $k = 2$ subtractive ($+134\%$, against
-$-22\%/-39\%$ for $D/T$): He-3's 8-generator list carries **two**
-near-pole entries ($|\hat{V}| \approx 0.989$ at positions $0$ and $3$)
-versus $D/T$'s **single** near-pole entry. The subtractive
-cancellation that handles $D/T$ does not absorb the doubled
-contribution. No refined rule has been demonstrated; this is now the
-locus of further work.
+input comes from two converging signals:
 
-The block kind remains `conjecture` because the algebraic and
-refined-rule parts are still open. The sibling
+- **Scalar-form $k = 2$ subtractive** gives $\{-22\%, -39\%, +134\%\}$
+  for $\{D, T, {}^3\mathrm{He}\}$ — ${}^3\mathrm{He}$ overshoots
+  because its 8-generator list carries **two** near-pole entries
+  ($|\hat{V}| \approx 0.989$ at positions $0$ and $3$) versus
+  $D/T$'s **single** near-pole entry.
+- **Per-eigenvalue operator form** gives $D$ closure at $k = 1$
+  ($-6.87\%$), $T$ closure at $k = 2$ ($-8.00\%$), but
+  ${}^3\mathrm{He}$ failure at every $k$ — same underlying
+  multiplicity asymmetry showing up as a *uniform-$k$-non-closability*
+  rather than as overshoot.
+
+Both witnesses point to per-generator near-pole multiplicity as the
+missing structural input.
+
+The block kind remains `conjecture` because the algebraic and the
+multiplicity-refined parts are still open. The sibling
 [`brane-tower-z-habiro.lean`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/content/quantum-observable-universe/braids-and-knots/brane-tower-z-habiro.lean)
-records the scalar-form refutation as an explicit theorem driven by
-the witness data; the conditional class `BraneTowerZHabiro` is kept
-for downstream conditional results that ride on the surviving
-algebraic claim.
+records all three refutations as explicit theorems driven by the
+witness data (`witness_refutes_scalar_uniform_k_form`,
+`witness_refutes_scalar_ell_n0_k_form`,
+`witness_refutes_per_eigenvalue_operator_form`, combined as
+`nStar_all_probed_forms_refuted`); the conditional class
+`BraneTowerZHabiro` is kept for downstream conditional results that
+ride on the surviving algebraic claim.
