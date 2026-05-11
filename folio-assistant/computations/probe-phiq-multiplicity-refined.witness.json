@@ -1,0 +1,266 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-11T17:26:08.902753+00:00",
+  "commitSha": "00292059246cc3786b2263b25f0c5cc2a4136015",
+  "assertions": [
+    {
+      "name": "no_substrate_rule_closes_within_threshold",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 17,
+  "computation": "probe-phiq-multiplicity-refined",
+  "scriptFile": "probe_phiq_multiplicity_refined.py",
+  "scriptHash": "4fbfdb16029d",
+  "scriptCommitSha": "unknown",
+  "description": "Multiplicity-refined and Type-B-folded-crystal-depth `n_⋆` candidates for conj:brane-tower-z-habiro.  Tests four substrate-derived per-atom rules (R1 multiplicity-shifted Hecke; R2 multiplicity-truncated Hecke; R3 Type-B-folded self-dual partition diagonal depth; R4 combination) using the per-generator scalar volumes (hecke_core.atom_per_generator_volumes) and the per-irrep Wedderburn rows persisted in probe-phiq-operator-valued.witness.json (commit 00292059).  Substrate-derived per-atom n_⋆ is permitted by the conjecture's falsifiability criterion; ad-hoc retuning is not.  This is the remaining open branch of the n_⋆ existence claim after both scalar-eigenvalue and operator-valued (per-eigenvalue) uniform-k forms have been refuted.",
+  "contentBlock": "conj:brane-tower-z-habiro",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "m_e_MeV": 0.51099895,
+    "near_pole_epsilon": 0.15,
+    "threshold_pct": 10.0,
+    "rules_tested": [
+      "R1_mult_shifted",
+      "R2_mult_truncated",
+      "R3_type_b_depth",
+      "R4_combined"
+    ]
+  },
+  "data": {
+    "per_atom": {
+      "deuteron": {
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "n": 6,
+        "k_Hecke": 2,
+        "m_max": 3,
+        "near_pole_generator_indices": [
+          0,
+          1,
+          4
+        ],
+        "per_generator_magnitudes": [
+          0.98900731592926,
+          0.9710701586527439,
+          0.26414511559102966,
+          0.854210312825839,
+          0.975509471107746
+        ],
+        "lambda_star": [
+          3,
+          2,
+          1
+        ],
+        "depth_lambda_star": 2,
+        "lambda_star_yχ_magnitude": 0.014438000905524759,
+        "tr_M": 0.3882864712890246
+      },
+      "tritium": {
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "n": 9,
+        "k_Hecke": 9,
+        "m_max": 4,
+        "near_pole_generator_indices": [
+          0,
+          1,
+          4,
+          7
+        ],
+        "per_generator_magnitudes": [
+          0.98900731592926,
+          0.9710701586527439,
+          0.26414511559102966,
+          0.854210312825839,
+          0.975509471107746,
+          0.15961495459608993,
+          0.854210312825839,
+          0.975509471107746
+        ],
+        "lambda_star": [
+          3,
+          3,
+          3
+        ],
+        "depth_lambda_star": 3,
+        "lambda_star_yχ_magnitude": 0.0002845217517720881,
+        "tr_M": 0.10405398879467263
+      },
+      "he3": {
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "n": 9,
+        "k_Hecke": 2,
+        "m_max": 5,
+        "near_pole_generator_indices": [
+          0,
+          1,
+          3,
+          4,
+          7
+        ],
+        "per_generator_magnitudes": [
+          0.98900731592926,
+          0.9710701586527439,
+          0.36867527658596944,
+          0.98900731592926,
+          0.9710701586527439,
+          0.26414511559102966,
+          0.854210312825839,
+          0.975509471107746
+        ],
+        "lambda_star": [
+          3,
+          3,
+          3
+        ],
+        "depth_lambda_star": 3,
+        "lambda_star_yχ_magnitude": 0.00034033201392499543,
+        "tr_M": 0.2065441288958544
+      }
+    },
+    "results": {
+      "R1_mult_shifted": {
+        "deuteron": {
+          "n_star": 1,
+          "tower_scalar": 31.072871563342986,
+          "B_scalar_MeV": 17.71290582496377,
+          "err_scalar_pct": 696.2409667757114,
+          "tower_op": 0.4638455495478569,
+          "B_op_MeV": 2.0717256713917753,
+          "err_op_pct": -6.870568398879804,
+          "ame_close_op_within_threshold": true
+        },
+        "tritium": {
+          "n_star": 6,
+          "tower_scalar": 8742.884768907184,
+          "B_scalar_MeV": 8937.916060649353,
+          "err_scalar_pct": 105277.61050958009,
+          "tower_op": 3141.4580370679278,
+          "B_op_MeV": 3213.269703705771,
+          "err_op_pct": 37784.2988680675,
+          "ame_close_op_within_threshold": false
+        },
+        "he3": {
+          "n_star": 1,
+          "tower_scalar": 49.736481418097256,
+          "B_scalar_MeV": 53.64151115486586,
+          "err_scalar_pct": 595.0128808906106,
+          "tower_op": 0.5750612597793091,
+          "B_op_MeV": 3.3986429920472525,
+          "err_op_pct": -55.96506127126179,
+          "ame_close_op_within_threshold": false
+        }
+      },
+      "R2_mult_truncated": {
+        "deuteron": {
+          "n_star": 1,
+          "tower_scalar": 31.072871563342986,
+          "B_scalar_MeV": 17.71290582496377,
+          "err_scalar_pct": 696.2409667757114,
+          "tower_op": 0.4638455495478569,
+          "B_op_MeV": 2.0717256713917753,
+          "err_op_pct": -6.870568398879804,
+          "ame_close_op_within_threshold": true
+        },
+        "tritium": {
+          "n_star": 2,
+          "tower_scalar": 194.83501012623583,
+          "B_scalar_MeV": 201.82715807971908,
+          "err_scalar_pct": 2279.5327132256525,
+          "tower_op": 4.987593736670297,
+          "B_op_MeV": 7.803497209157526,
+          "err_op_pct": -7.997134461849639,
+          "ame_close_op_within_threshold": true
+        },
+        "he3": {
+          "n_star": 1,
+          "tower_scalar": 49.736481418097256,
+          "B_scalar_MeV": 53.64151115486586,
+          "err_scalar_pct": 595.0128808906106,
+          "tower_op": 0.5750612597793091,
+          "B_op_MeV": 3.3986429920472525,
+          "err_op_pct": -55.96506127126179,
+          "ame_close_op_within_threshold": false
+        }
+      },
+      "R3_type_b_depth": {
+        "deuteron": {
+          "n_star": 2,
+          "tower_scalar": 139.6997410442791,
+          "B_scalar_MeV": 73.22112207150919,
+          "err_scalar_pct": 3191.4789703478878,
+          "tower_op": 5.343869834734316,
+          "B_op_MeV": 4.565412957096557,
+          "err_op_pct": 105.22713001531793,
+          "ame_close_op_within_threshold": false
+        },
+        "tritium": {
+          "n_star": 3,
+          "tower_scalar": 653.7041288417756,
+          "B_scalar_MeV": 670.7904337818514,
+          "err_scalar_pct": 7808.587704892896,
+          "tower_op": 45.69055081020062,
+          "B_op_MeV": 49.40183386209566,
+          "err_op_pct": 482.445300655541,
+          "ame_close_op_within_threshold": false
+        },
+        "he3": {
+          "n_star": 3,
+          "tower_scalar": 777.2777722266746,
+          "B_scalar_MeV": 797.1871825245212,
+          "err_scalar_pct": 10228.854433944813,
+          "tower_op": 108.63730354414754,
+          "B_op_MeV": 113.83802767596279,
+          "err_op_pct": 1374.9565004154256,
+          "ame_close_op_within_threshold": false
+        }
+      },
+      "R4_combined": {
+        "deuteron": {
+          "n_star": 1,
+          "tower_scalar": 31.072871563342986,
+          "B_scalar_MeV": 17.71290582496377,
+          "err_scalar_pct": 696.2409667757114,
+          "tower_op": 0.4638455495478569,
+          "B_op_MeV": 2.0717256713917753,
+          "err_op_pct": -6.870568398879804,
+          "ame_close_op_within_threshold": true
+        },
+        "tritium": {
+          "n_star": 1,
+          "tower_scalar": 44.83512889540006,
+          "B_scalar_MeV": 48.52759446155551,
+          "err_scalar_pct": 472.1380591892841,
+          "tower_op": 0.2773261039833357,
+          "B_op_MeV": 2.9896135801134816,
+          "err_op_pct": -64.7525963231678,
+          "ame_close_op_within_threshold": false
+        },
+        "he3": {
+          "n_star": 1,
+          "tower_scalar": 49.736481418097256,
+          "B_scalar_MeV": 53.64151115486586,
+          "err_scalar_pct": 595.0128808906106,
+          "tower_op": 0.5750612597793091,
+          "B_op_MeV": 3.3986429920472525,
+          "err_op_pct": -55.96506127126179,
+          "ame_close_op_within_threshold": false
+        }
+      }
+    },
+    "closing_rules": []
+  },
+  "caveats": [
+    "depth(λ) = number of cells strictly above the diagonal is a proxy for full Kashiwara crystal depth on the Type-B-folded sub-crystal; the rigorous crystal depth (via BFS on the canonical-basis graph) would refine the (R3) / (R4) candidates but is heavier compute.",
+    "Near-pole multiplicity uses scalar |V̂_i(q_0)| from atom_per_generator_volumes; an alternative formulation would use per-irrep eigenvalue near-pole counts from probe-phiq-operator-valued.witness.json."
+  ]
+}

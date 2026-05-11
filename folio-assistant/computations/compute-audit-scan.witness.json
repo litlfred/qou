@@ -1,19 +1,19 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-11T22:02:06.163100+00:00",
-  "commitSha": "50ec6af8a69ca1f3eaf3802e8ebd679d37e01878",
+  "computedAt": "2026-05-11T22:19:23.020653+00:00",
+  "commitSha": "605c954cbc157b236f46b622b2a466b181cba21d",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 7,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "b540c436e909",
-  "scriptCommitSha": "e599f085c0c881ce745ff51ea0ca6f3fd8c138bd",
+  "scriptCommitSha": "3072aa73e46ef9cec1880308eaf654600eacde71",
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 388,
+    "files_scanned": 399,
     "patterns": [
       "P15",
       "P16",
@@ -23,7 +23,7 @@
   },
   "data": {
     "by_pattern_count": {
-      "P15": 107,
+      "P15": 111,
       "P16": 89,
       "P21": 21,
       "P30": 96
@@ -1903,6 +1903,34 @@
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P15",
+        "file": "probe_z_n_symmetry_symbolic.py",
+        "line": 87,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "probe_z_n_symmetry_symbolic.py",
+        "line": 99,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "probe_z_n_symmetry_symbolic.py",
+        "line": 105,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "probe_z_n_symmetry_symbolic.py",
+        "line": 129,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P16",

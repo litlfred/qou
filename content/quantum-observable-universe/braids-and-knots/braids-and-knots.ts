@@ -377,6 +377,8 @@ export default chapter({
         "z-habiro-ring",
         "brane-tower-z-habiro",
         "per-partition-k-lambda-rule",
+        "conj-magic-shell-stabilization",
+        "prop-rigid-monoidal-structural-gap-invariance",
         "qz-bicompletion",
         "quantum-dilogarithm-stratified",
         "quantum-dilogarithm-stratified-proof",

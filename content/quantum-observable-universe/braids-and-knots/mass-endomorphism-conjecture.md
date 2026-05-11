@@ -272,19 +272,53 @@ closes the gap:*
    $\pi_n^{(z)}$ that act as structural truncations at depth $n$,
    replacing Yekutieli's ad-hoc cutoff with a quotient by a
    structural ideal. The* [conjecture that the brane tower lives in
-   this ring](#conj:brane-tower-z-habiro) *— with a canonically
-   determined level-selection rule $n_\star(\mathfrak{H})$ derivable
-   from substrate data — is the structural form of the open problem.*
+   this ring](#conj:brane-tower-z-habiro) *has two independent claims:
+   (a) the algebraic Cauchy-limit (the partial sums converge in the
+   $z$-Habiro topology), and (b) the existence of a canonical
+   level-selection rule $n_\star(\mathfrak{H})$ derivable from
+   substrate data.*
 
-*Until either (1) extended uniformly across atoms (which requires
-understanding why Yekutieli depth differs by* $A$*) or (2) the
-[brane-tower-in-$z$-Habiro conjecture](#conj:brane-tower-z-habiro)
-is established with an explicit $n_\star$ rule, the brane tower
-contribution to the multi-term mass formula is not computable in closed
-form for* $|\hat{V}|\approx 1$. *Empirically the descended Markov
-trace plus Frobenius co-Casimir alone reproduces the binding within*
-$\sim 30\%$ *for low isotopes; closing the residual to AME requires the
-brane tower in some regularized form.*
+**Status (2026-05-11, PR [#638](https://github.com/litlfred/qou/pull/638)):**
+Claim (b) is **refuted across six probed families** — scalar
+uniform-$k$, scalar $\ell n_0 + k$, per-eigenvalue operator-valued,
+multiplicity / Type-B-folded-crystal, pair-knot product-volume, and
+pair-knot Markov-trace + full Frobenius Gram + LP/SDP duals — by
+the conjecture's own $\sim 5\%$ falsifiability criterion. See
+[`docs/audits/2026-05-11-brane-tower-n_star-closure-audit.md`](../../../docs/audits/2026-05-11-brane-tower-n_star-closure-audit.md)
+for the consolidated landscape. Claim (a) (algebraic Cauchy-limit)
+is **untouched** by the refutation; partial progress in
+[`PhiQConvergence.lean`](../lean/QOU/MassEndomorphism/PhiQConvergence.lean)
+(PR [#637](https://github.com/litlfred/qou/pull/637) +
+[#639](https://github.com/litlfred/qou/pull/639)).
+
+**Implication for this conjecture's open path.** The brane-tower
+contribution to the multi-term mass formula is **not** going to be
+closed by a level-selection rule alone — the ${}^3\mathrm{He}$
+residual survives every operator-volume convention probed, pointing
+at a structural deficit of the brane-tower formula itself at the
+$A=3$ / $n_0=9$ regime (positive LP-dual finding: pair-knot
+operators $\sigma_{pp}/\sigma_{nn}$ ARE structurally selected at
+magic shells; $\mathrm{tr}_M(\sigma_{pp}) = \mathrm{tr}_M(\sigma_{nn})
+= 0.0622$ exactly under Hoefsmit seminormal). The path forward is
+either:
+
+1. **Algebraic Cauchy-limit (claim a) without `n_\star`:** prove
+   convergence in the $z$-Habiro topology and use the cyclotomic
+   projection at arbitrary fixed depth as a structural object
+   independent of binding-formula closure.
+2. **Magic-shell structural term:** add a separate
+   $\Delta_{\text{shell}}(Z, N)$ contribution to the binding formula
+   distinguishing closed-shell stabilization from the brane-tower
+   transient (motivated by the LP-dual active-set finding).
+3. **Markov-trace audit on ${}^3\mathrm{He}$:** verify
+   $|\mathrm{tr}_M(\beta_{{}^3\mathrm{He}})|$ at q_0 against the
+   canonical reducer to confirm the structural gap is real and not
+   a Markov-trace mis-count.
+
+The brane tower contribution remains **not computable in closed
+form for** $|\hat{V}|\approx 1$ under the original conjecture; the
+descended Markov trace plus Frobenius co-Casimir alone reproduces
+the binding within $\sim 30\%$ for low isotopes empirically.
 
 ## Descended vs transient mass (computed)
 
