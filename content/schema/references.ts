@@ -185,6 +185,50 @@ export const references: CSLData[] = [
     publisher: "Springer Nature",
   }),
 
+  // ── PNAS: Bujack et al. 2022 — non-Riemannian color space ──────
+  ref({
+    id: "bujack2022",
+    type: "article-journal",
+    title: "The non-Riemannian nature of perceptual color space",
+    author: [
+      { family: "Bujack", given: "Roxana" },
+      { family: "Teti", given: "Emily" },
+      { family: "Miller", given: "Jonah" },
+      { family: "Caffrey", given: "Elektra" },
+      { family: "Turton", given: "Terece L." },
+    ],
+    "container-title":
+      "Proceedings of the National Academy of Sciences",
+    issued: { "date-parts": [[2022]] },
+    volume: "119",
+    issue: "18",
+    page: "e2119753119",
+    DOI: "10.1073/pnas.2119753119",
+    URL: "https://doi.org/10.1073/pnas.2119753119",
+    note:
+      "Shows that perceived color differences obey diminishing returns (sub-additivity along geodesics), contradicting the 100-year-old Riemann/Helmholtz/Schrodinger Riemannian paradigm. Hints at a second-order Weber-Fechner law.",
+  }),
+
+  // ── Schrödinger 1920 — color metric (original) ────────────────
+  ref({
+    id: "schrodinger1920color",
+    type: "article-journal",
+    title:
+      "Grundlinien einer Theorie der Farbenmetrik im Tagessehen",
+    author: [
+      { family: "Schrödinger", given: "Erwin" },
+    ],
+    "container-title": "Annalen der Physik",
+    issued: { "date-parts": [[1920]] },
+    volume: "368",
+    issue: "21",
+    page: "397--426",
+    DOI: "10.1002/andp.19203682102",
+    URL: "https://doi.org/10.1002/andp.19203682102",
+    note:
+      "Schrodinger's 1920 Riemannian line element for perceived color space. Together with Helmholtz, framed the paradigm that Bujack et al. (2022) overturn.",
+  }),
+
   // ── Nature: Guo et al. 2025 ───────────────────────────────────
   ref({
     id: "guo2025",

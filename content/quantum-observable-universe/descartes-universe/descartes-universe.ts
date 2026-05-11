@@ -236,6 +236,7 @@ export default chapter({
         "alpha-em-categorical-trace-ratio",
         "alpha-em-shift-multiplicative-chain",
         "q-chromaticity",
+        "schrodinger-color-falsifiability",
         // Integer stability and Diophantine valley
         "integer-stability",
         "diophantine-valley",
