@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-11T22:10:03.173237+00:00",
-  "commitSha": "3ee30bd85e93a6f0b6022cc558373f57456f423a",
+  "computedAt": "2026-05-11T22:48:01.762235+00:00",
+  "commitSha": "1601700a41a2f11327772a110186f00215bc5ce7",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -229,6 +229,19 @@
       "tolerance": 9.232332971695838e-10
     },
     {
+      "name": "chain_valid[neutron-mass-50dps.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "leaf_value[neutron-mass-50dps.derivation]",
+      "computed": 0.5611679331916536,
+      "expected": 0.5611679331916536,
+      "passed": true,
+      "tolerance": 0.005611679331916536
+    },
+    {
       "name": "chain_valid[p-tr-M-q0.derivation]",
       "computed": true,
       "expected": true,
@@ -249,10 +262,10 @@
     },
     {
       "name": "leaf_value[proton-mass-50dps.derivation]",
-      "computed": 0.5974181494316654,
-      "expected": 0.5974181494316654,
+      "computed": 0.5974181494316655,
+      "expected": 0.5974181494316655,
       "passed": true,
-      "tolerance": 0.005974181494316654
+      "tolerance": 0.005974181494316655
     },
     {
       "name": "chain_valid[q0-anchor.derivation]",
@@ -1277,6 +1290,21 @@
         "has_script_frontier": true
       },
       {
+        "chain": "neutron-mass-50dps.derivation.json",
+        "target": "m_n (MeV)",
+        "target_value": 0.5611679331916536,
+        "computed_value": 0.5611679331916536,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "derived": 2,
+          "script-cited": 3,
+          "computational": 1
+        },
+        "has_script_frontier": true
+      },
+      {
         "chain": "p-tr-M-q0.derivation.json",
         "target": "tr_M(p, q_0)  [canonical Wenzl-bridge]",
         "target_value": 1.0653062285923893,
@@ -1296,8 +1324,8 @@
       {
         "chain": "proton-mass-50dps.derivation.json",
         "target": "m_p (MeV)",
-        "target_value": 0.5974181494316654,
-        "computed_value": 0.5974181494316654,
+        "target_value": 0.5974181494316655,
+        "computed_value": 0.5974181494316655,
         "structural_ok": true,
         "leaf_matches": true,
         "issues": [],
@@ -2021,8 +2049,10 @@
       "derivation-fully-trusted": [],
       "derivation-backed": [
         "atomic-braid-gb-filtration-extension.witness.json",
+        "electron-m_e-derivation.witness.json",
         "mass-endomorphism.witness.json",
         "mass-formula-6term-mpfr-50dps.witness.json",
+        "neutron-m_n-derivation.witness.json",
         "term7-alpha5-crystal-derivation.witness.json"
       ],
       "computational-only": [
@@ -2080,6 +2110,7 @@
         "brane-tower-two-avenues-probe.witness.json",
         "bring-trilog-zeta5-depth-3.witness.json",
         "brundan-kleshchev-audit.witness.json",
+        "build-six-term-substrate-model-b.witness.json",
         "bw-chirality-isotopes.witness.json",
         "c-alpha-from-Q-beta-trace.witness.json",
         "c-k-beta-decay-bound.witness.json",
@@ -2136,7 +2167,6 @@
         "deuteron_tr_M_symbolic.witness.json",
         "e-0-lp-dual-h3.witness.json",
         "e0-calibration-audit.witness.json",
-        "electron-m_e-derivation.witness.json",
         "entanglement-orders.witness.json",
         "ew-higgs-sdp-probe.witness.json",
         "ew-interface-knot-probe.witness.json",
@@ -2196,6 +2226,7 @@
         "lp-confinement-nf-forcing.witness.json",
         "lp-duality-check.witness.json",
         "lr-fusion-self-conj-test.witness.json",
+        "m-baryon-volume-form.witness.json",
         "m-n-difference-formula.witness.json",
         "magic-shell-empirical-instantiation.witness.json",
         "markov-free-energy-qvalues.witness.json",
@@ -2227,6 +2258,7 @@
         "neutron-gap-probes-round6.witness.json",
         "neutron-gap-probes-round7.witness.json",
         "neutron-gap-probes.witness.json",
+        "neutron-mass-codata-50dps.witness.json",
         "nf-qvalues.witness.json",
         "nf-transition-lifting.witness.json",
         "nh-basis-shift.witness.json",
@@ -2244,6 +2276,7 @@
         "paper-six-term-shadow-price-sweep.witness.json",
         "path-b-defect-binding-probe.witness.json",
         "path-b-evacuation.witness.json",
+        "path-b-habiro-mass-probe.witness.json",
         "path-b-open-questions.witness.json",
         "per-atom-grading-bound.witness.json",
         "per-atom-rho-deviation.witness.json",

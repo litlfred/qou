@@ -64,10 +64,95 @@ Q_0: float = 1.1099785955541805
 # deprecated per `docs/audits/2026-05-08-p3-h-3a-divergence.md`
 # (it vanished for partitions with > 2 rows, dropping the sign-rep
 # contribution).
+#
+# ⚠️ INCONSISTENCY ESCALATED 2026-05-11 (PR #640 audit):
+# These values disagree with the canonical τ_M values reported in
+# `content/quantum-observable-universe/braids-and-knots/markov-trace-frobenius-selection.md`
+# (commit 25a204efa, "PROVED: Frobenius non-degeneracy selects
+# Jones-Markov, not Schur-Weyl"):
+#
+#   value below     |  Frobenius-proof τ_M (from_scratch)  |  τ_SW (Schur-Weyl)
+#   ────────────────┼──────────────────────────────────────┼────────────────────
+#   D = 0.388286    |  D = 0.336821                        |  D = 0.177389
+#   p = 1.065306    |  p_free = 1.733914                   |  p     = 2.122600
+#   n = 0.923233    |  n_free = 1.406010                   |  n     = 1.589000
+#
+# The provenance comment cites PR #612 ("Canonical Wenzl-bridge"),
+# but the Frobenius selection proof on main (25a204efa) names a
+# *different* canonical Wenzl-bridge value via the `from_scratch/`
+# pipeline.  Until the discrepancy is resolved (by the author or a
+# follow-up audit), downstream chains should consume these values
+# with caution and label which convention they assume.
+#
+# Audit: `docs/audits/2026-05-11-why-individual-mass-residuals-fit-not-derive.md`
+# §"Update 2026-05-11 — τ_M / τ_SW conflation diagnosis"
 TR_M_AT_Q0: dict[str, float] = {
     "p": 1.0653062285923893,
     "n": 0.9232332971695838,
     "D": 0.3882864715477134,
+}
+
+# ── 50-dps decimal-string companion to TR_M_AT_Q0 ──────────────────
+# The float-typed registry above is preserved bit-for-bit (per the
+# bit-stable JSON requirement on #473) but is float64-limited (~15-17
+# digits).  Per gemini review on PR #640 (line 93): callers needing
+# the full 50-dps precision claimed by the "50dps derivation chain"
+# objective should consume these decimal strings via
+# `mp.mpf(TR_M_AT_Q0_50DPS["p"])`.  Source: atomic-tr-m-mpfr-50dps.witness.json
+# (1ppb canonical 50-dps reducer) and markov_peel.tr_M_atomic (the
+# production canonical Markov trace).
+TR_M_AT_Q0_50DPS: dict[str, str] = {
+    "p":  "1.06530622859238926516717822268022019929625396549950",
+    "n":  "0.92323329716958305546835587742253549151548430075493",
+    "D":  "0.38828647154771295246789009070198517292737960815430",
+}
+
+# Default Model B (SDP-canonical low-strand) τ_M values at q_0 ───────
+# Per owner directive 2026-05-11 ("migrate all compute to default B").
+#
+# Model B uses the canonical hyperbolic knot for each isotope in the
+# minimum-strand braid group:
+#
+#   p, n : 11-crossing typed B_3 braid (operator-valued, with σ/σ^{-1}
+#          /averaged crossings encoding quark composition uud / udd);
+#          ρ = 1; canonical via atomic-braid-recipe-{p,n}.derivation.json.
+#          At A = 1, Model A and Model B converge (both use B_3 with
+#          typed crossings — there's no lower-strand braid).  Value
+#          source: canonical Wenzl-bridge τ_M via markov_peel.tr_M_atomic
+#          (same as TR_M_AT_Q0 above).
+#   D    : 6_2     in B_3,  ρ = 1, braid = [1, -2, 1, 1, 1, -2]
+#   T    : 8_11    in B_5,  ρ = 2, braid = [-1, 2, -3, 2, 1, -3, -3,
+#                                            4, -3, -2, -3, -4, -3, 2]
+#   ³He  : L6a4    in B_3,  ρ = 2, braid = [-1, 2, -1, 2, -1, 2]
+#                                  (= bare Borromean β_Bor)
+#   ⁴He  : open Model B canonical knot (12-strand atomic-braid-recipe-4he
+#          is the Model A 3A-strand encoding, not a low-strand knot).
+#
+# Source of truth for D, T, ³He: probe-sdp-canonical-paper-formula.witness.json.
+# Source of truth for p, n:      atomic-braid-recipe-{p,n}.derivation.json
+#                                (= Wenzl-bridge τ_M, identical to Model A
+#                                at A=1).
+#
+# n_canon (strand count of the canonical braid):
+#   p, n: 3, D: 3, T: 5, ³He: 3, ⁴He: open
+TR_M_CANONICAL_B_AT_Q0: dict[str, float] = {
+    "p":   1.0653062285923893,  # 11-crossing typed B_3 (uud)
+    "n":   0.9232332971695838,  # 11-crossing typed B_3 (udd)
+    "D":   0.288326,            # knot 6_2, SDP-canonical
+    "T":   0.012889,            # knot 8_11, SDP-canonical (H_5)
+    "3He": 0.998367,            # L6a4 = β_Bor (the bare Borromean)
+}
+
+# Per-isotope Model B canonical-braid metadata (knot, strand count,
+# topological prefactor ρ).
+MODEL_B_BRAID_META: dict[str, dict] = {
+    "p":   {"knot": "11-crossing typed B_3 (uud)", "n_canon": 3, "rho": 1},
+    "n":   {"knot": "11-crossing typed B_3 (udd)", "n_canon": 3, "rho": 1},
+    "D":   {"knot": "6_2",                         "n_canon": 3, "rho": 1},
+    "T":   {"knot": "8_11",                        "n_canon": 5, "rho": 2},
+    "3He": {"knot": "L6a4",                        "n_canon": 3, "rho": 2},
+    "4He": {"knot": "open (B_12 atomic-recipe is Model A)",
+            "n_canon": None, "rho": None},
 }
 
 # Atom-target Markov-trace values in cat-units (Hecke-pipeline output)
@@ -111,7 +196,7 @@ TR_M_AT_Q0: dict[str, float] = {
 # MATCH. The honest residual is the deliverable.
 
 def _path_a_at_q0() -> dict[str, "mp.mpf"]:
-    """Lazy resolver — calls derive_m_{p,e}_hecke_path_a on first use.
+    """Lazy resolver — calls derive_m_{p,n,e}_hecke_path_a on first use.
 
     Lazy because (a) we don't want to import-time read JSON witnesses
     on every consumer, and (b) audit-only scripts that consume the
@@ -121,12 +206,14 @@ def _path_a_at_q0() -> dict[str, "mp.mpf"]:
     """
     # Local import so derivation_chain.py stays import-light.
     from derive_m_p_hecke_path_a import m_p_hecke_path_a_at_q0
+    from derive_m_n_hecke_path_a import m_n_hecke_path_a_at_q0
     from derive_m_e_hecke_path_a import m_e_hecke_path_a_cat_units_at_q0
     # Keep the values as mp.mpf to preserve 50-dps precision per the
     # no-float64 directive. Legacy float-typed consumers can still
     # `float(M_HECKE_PIPELINE_AT_Q0["p"])` if they need a Python float.
     return {
         "p": m_p_hecke_path_a_at_q0(),
+        "n": m_n_hecke_path_a_at_q0(),
         "e": m_e_hecke_path_a_cat_units_at_q0(),
     }
 
