@@ -27,47 +27,53 @@ Output: kummer-reflection-zeta5.witness.json next to this file.
 """
 from __future__ import annotations
 
-import json
+import time
 from datetime import datetime, timezone
-from pathlib import Path
 
 from mpmath import mp, mpf, mpc, pi, exp, polylog, im, re, log
 from mpmath import fabs as mpabs
 
+from witness_base import WitnessBuilder
+
 mp.dps = 50
 
 
-# ── Inputs ────────────────────────────────────────────────────────
-ZETA_5 = exp(mpc(0, 1) * 2 * pi / mpf(5))
-
-# ── Direct computation of Im Li_3(ζ_5) ───────────────────────────
-LI_3_ZETA_5 = polylog(3, ZETA_5)
-S_3_DIRECT = im(LI_3_ZETA_5)
-
-# ── Closed-form computation: 4 π³ / 125 ──────────────────────────
-S_3_CLOSED_FORM = 4 * pi ** 3 / mpf(125)
-
-# ── Kummer reflection: independent path via the formula ──────────
-# log(-ζ_5) = log(exp(i(2π/5 + π))) — principal branch:
-# arg = 2π/5 + π = 7π/5 > π, subtract 2π → -3π/5.
-LOG_NEG_ZETA5 = mpc(0, -3 * pi / mpf(5))
-
-# RHS of Kummer: -log³(-z)/6 - π² log(-z)/6
-RHS_KUMMER = (
-    -LOG_NEG_ZETA5 ** 3 / mpf(6)
-    - pi ** 2 * LOG_NEG_ZETA5 / mpf(6)
-)
-
-# LHS of Kummer: Li_3(z) - Li_3(1/z) = 2i · Im Li_3(z)
-LHS_KUMMER = LI_3_ZETA_5 - polylog(3, 1 / ZETA_5)
-
-KUMMER_RESIDUAL = mpabs(LHS_KUMMER - RHS_KUMMER)
-
-# ── Closed-form vs direct cross-check ────────────────────────────
-CLOSED_VS_DIRECT_RESIDUAL = mpabs(S_3_DIRECT - S_3_CLOSED_FORM)
-
-
 def main() -> None:
+    # Capture start time BEFORE the heavy computation so the
+    # witness's `durationMs` reflects real runtime (Copilot PR #635
+    # review: `WitnessBuilder` constructed only at save would record
+    # near-zero duration).
+    start = time.monotonic()
+
+    # ── Inputs ────────────────────────────────────────────────────
+    ZETA_5 = exp(mpc(0, 1) * 2 * pi / mpf(5))
+
+    # ── Direct computation of Im Li_3(ζ_5) ──────────────────────
+    LI_3_ZETA_5 = polylog(3, ZETA_5)
+    S_3_DIRECT = im(LI_3_ZETA_5)
+
+    # ── Closed-form computation: 4 π³ / 125 ─────────────────────
+    S_3_CLOSED_FORM = 4 * pi ** 3 / mpf(125)
+
+    # ── Kummer reflection: independent path via the formula ─────
+    # log(-ζ_5) = log(exp(i(2π/5 + π))) — principal branch:
+    # arg = 2π/5 + π = 7π/5 > π, subtract 2π → -3π/5.
+    LOG_NEG_ZETA5 = mpc(0, -3 * pi / mpf(5))
+
+    # RHS of Kummer: -log³(-z)/6 - π² log(-z)/6
+    RHS_KUMMER = (
+        -LOG_NEG_ZETA5 ** 3 / mpf(6)
+        - pi ** 2 * LOG_NEG_ZETA5 / mpf(6)
+    )
+
+    # LHS of Kummer: Li_3(z) - Li_3(1/z) = 2i · Im Li_3(z)
+    LHS_KUMMER = LI_3_ZETA_5 - polylog(3, 1 / ZETA_5)
+
+    KUMMER_RESIDUAL = mpabs(LHS_KUMMER - RHS_KUMMER)
+
+    # ── Closed-form vs direct cross-check ───────────────────────
+    CLOSED_VS_DIRECT_RESIDUAL = mpabs(S_3_DIRECT - S_3_CLOSED_FORM)
+
     print("=" * 72)
     print("Kummer reflection at ζ_5 — depth-3 imaginary-part closed form")
     print("=" * 72)
@@ -151,10 +157,19 @@ def main() -> None:
             "Dim 2 confirmed by Galois-orbit + reality constraint."
         ),
     }
-    out = (
-        Path(__file__).parent / "kummer-reflection-zeta5.witness.json"
+    # WitnessBuilder.wrap_legacy preserves on-disk layout while adding
+    # canonical metadata (scriptHash, commitSha, computedAt, etc.).
+    # Override `_start_time` with the main() entry time so `durationMs`
+    # reflects the real compute runtime, not just the save step
+    # (Copilot PR #635 review).
+    builder = WitnessBuilder.wrap_legacy(
+        "kummer-reflection-zeta5",
+        witness,
+        script_path=__file__,
+        engine="mpmath",
+        start_time=start,
     )
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    out = builder.save()
     print(f"\nwitness: {out}")
 
 

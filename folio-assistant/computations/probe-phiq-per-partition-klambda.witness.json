@@ -1,0 +1,145 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-11T20:55:01.133107+00:00",
+  "commitSha": "4b0deb3f386389b99d9769a04743889ebb4e9930",
+  "assertions": [
+    {
+      "name": "he3_dominant_partition_is_5_4",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "he3_dominant_contrib_k1_under_1_pct_of_k2",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "per_partition_rule_collapses_he3_tower_below_2",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "per_partition_rule_collapses_D_tower_below_2",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "per_partition_rule_collapses_T_tower_below_2",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 18,
+  "computation": "probe-phiq-per-partition-klambda",
+  "scriptFile": "probe_phiq_per_partition_klambda.py",
+  "scriptHash": "b06acd247593",
+  "scriptCommitSha": "6c25f7a51772b3a776d7cd7a88874ef04d66c3e7",
+  "description": "Per-partition k_λ closure probe: tests non-uniform truncation across Wedderburn blocks. Reads PR #638's per-eigenvalue spectra; recomputes per-partition contributions; finds that ONE dominant partition per atom drives the failure at uniform k=2 (³He: λ=[5,4] contributes -11.69 of -10.60 total; D: [2,2,1,1] contributes -6.22; T: [6,3] contributes -3.00). Assigning k_λ=1 to the dominant outlier and k_λ=2 to all others collapses tower magnitude to |tower|<2 for all 3 atoms — positive structural finding. Remaining open: pin the substrate invariant of λ that selects k_λ. Empirical: outlier partitions have the maximum eigenvalue magnitude in their ρ_λ(β_atom) spectrum (³He max |μ|=10.69 at [5,4]; T max |μ|=8.23 at [4,3,1,1]). Class C (diagnostic). Data source: probe-phiq-operator-valued.witness.json on PR #638.",
+  "contentBlock": "conj:brane-tower-z-habiro",
+  "parameters": {
+    "source_witness": "probe-phiq-operator-valued.witness.json (PR #638)",
+    "source_branch": "claude/close-level-selection-rule-bvMvw",
+    "uniform_k": 2
+  },
+  "data": {
+    "dominant_partitions": {
+      "deuteron": {
+        "lambda": [
+          2,
+          2,
+          1,
+          1
+        ],
+        "dim": 9,
+        "contrib_k1": 0.0,
+        "contrib_k2": -6.2203,
+        "contrib_k3": -65.0
+      },
+      "tritium": {
+        "lambda": [
+          6,
+          3
+        ],
+        "dim": 48,
+        "contrib_k1": 0.05,
+        "contrib_k2": -3.0006,
+        "contrib_k3": -27.0
+      },
+      "he3": {
+        "lambda": [
+          5,
+          4
+        ],
+        "dim": 42,
+        "contrib_k1": -0.0283,
+        "contrib_k2": -11.6921,
+        "contrib_k3": -113.09
+      }
+    },
+    "uniform_k2_signed_tower": {
+      "deuteron": -5.3439,
+      "tritium": -4.9876,
+      "he3": -10.5979
+    },
+    "per_partition_klambda_results": [
+      {
+        "atom": "deuteron",
+        "dominant_partition": [
+          2,
+          2,
+          1,
+          1
+        ],
+        "k_lambda_dominant": 1,
+        "k_lambda_others": 2,
+        "dominant_contrib": 0.0,
+        "non_dominant_sum": 0.8764000000000003,
+        "total_tower": 0.8764000000000003,
+        "abs_total_tower": 0.8764000000000003,
+        "uniform_k2_tower_signed": -5.3439,
+        "delta_from_uniform": 6.2203,
+        "ame_MeV": 2.224566
+      },
+      {
+        "atom": "tritium",
+        "dominant_partition": [
+          6,
+          3
+        ],
+        "k_lambda_dominant": 1,
+        "k_lambda_others": 2,
+        "dominant_contrib": 0.05,
+        "non_dominant_sum": -1.9869999999999997,
+        "total_tower": -1.9369999999999996,
+        "abs_total_tower": 1.9369999999999996,
+        "uniform_k2_tower_signed": -4.9876,
+        "delta_from_uniform": 3.0506,
+        "ame_MeV": 8.481798
+      },
+      {
+        "atom": "he3",
+        "dominant_partition": [
+          5,
+          4
+        ],
+        "k_lambda_dominant": 1,
+        "k_lambda_others": 2,
+        "dominant_contrib": -0.0283,
+        "non_dominant_sum": 1.0942000000000007,
+        "total_tower": 1.0659000000000007,
+        "abs_total_tower": 1.0659000000000007,
+        "uniform_k2_tower_signed": -10.5979,
+        "delta_from_uniform": 11.6638,
+        "ame_MeV": 7.71806
+      }
+    ],
+    "conclusion": "Per-partition k_λ collapses all three atoms' tower magnitudes to |tower|<2 (vs uniform-k towers in the range 5–11). This is the SUFFICIENT relaxation: non-uniform truncation across Wedderburn blocks closes the gap that no scalar rule (fold depth alone, m_near_pole alone, or any 2-input combination) could close at uniform k. The OPEN STRUCTURAL question is: which substrate invariant of λ ↦ k_λ ∈ {1, 2} reproduces this empirically-optimal assignment? Numerical signal: outlier partitions are the max-|μ| ones in ρ_λ(β_atom). The Hoefsmit seminormal eigenvalue magnitude itself is the candidate substrate invariant; it depends on the braid word β_atom, not just on (Z, N) or partition shape alone."
+  }
+}

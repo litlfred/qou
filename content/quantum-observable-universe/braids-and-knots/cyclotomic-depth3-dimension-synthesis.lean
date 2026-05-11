@@ -1,0 +1,11 @@
+-- Sibling docstub for `prop:cyclotomic-depth3-dimension-synthesis`.
+--
+-- This file is documentation only.  The compiled formalisation
+-- lives in the Lake-built tree at:
+--
+--   lean/QOU/BraidKnot/CyclotomicDepth3DimensionSynthesis.lean
+--
+-- See `QOU.BraidKnot.CyclotomicDepth3DimensionSynthesis.dimension_synthesis_upper_bound`.
+--
+-- See the chapter umbrella `lean/QOU/BraidKnot.lean`
+-- for the import wiring.

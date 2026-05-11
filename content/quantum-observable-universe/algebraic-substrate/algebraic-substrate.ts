@@ -109,6 +109,8 @@ export default chapter({
         "two-filtration-bridge",
         // Two-filtration bridge map verified at small partitions (n ≤ 4).
         "two-filtration-bridge-small-cases",
+        // Two-filtration bridge in full generality (bar-eigenspace).
+        "two-filtration-bridge-general",
         // Geometric realisation question for Cl_3(2π/5) at Bring's ζ_5.
         "cl3-zeta5-geometric-realization",
         "classical-riemann-zeta",

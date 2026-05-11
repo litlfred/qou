@@ -1,0 +1,11 @@
+-- Sibling docstub for `prop:jonquiere-cyclotomic-tate-rationality`.
+--
+-- This file is documentation only.  The compiled formalisation
+-- lives in the Lake-built tree at:
+--
+--   lean/QOU/BraidKnot/JonquiereCyclotomicTateRationality.lean
+--
+-- See `QOU.BraidKnot.JonquiereCyclotomicTateRationality.jonquiere_tate_rationality`.
+--
+-- See the chapter umbrella `lean/QOU/BraidKnot.lean`
+-- for the import wiring.

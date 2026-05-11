@@ -1,0 +1,205 @@
+{
+  "engine": "numpy",
+  "engineVersion": "numpy 2.4.4",
+  "computedAt": "2026-05-11T20:08:10.591162+00:00",
+  "commitSha": "d96a099de2afea87e72419ed6064809c6bf1e71c",
+  "assertions": [
+    {
+      "name": "braid_word_basis_has_off_diagonal_entries",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "gram_is_symmetric_under_markov_trace",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "max_off_diagonal_strictly_positive",
+      "computed": "True",
+      "expected": true,
+      "passed": "True"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 620,
+  "computation": "probe-braid-word-basis-gram",
+  "scriptFile": "probe_braid_word_basis_gram.py",
+  "scriptHash": "a08ad22206c1",
+  "scriptCommitSha": "unknown",
+  "description": "Braid-word basis Gram-matrix probe at H_3(q_0). Computes G_wv = tr_M(σ_w · σ_v) for the 6-element reduced-word basis {e, σ_0, σ_1, σ_0σ_1, σ_1σ_0, σ_0σ_1σ_0} via the Wenzl bridge Σ_λ y_λ · tr_{V_λ}(ρ_λ(...)) and Hoefsmit seminormal matrices. Demonstrates that the paper-canonical σ_w basis (CLAUDE.md §7a) has GENUINE off-diagonal Gram entries — the structural property the per-partition basis lacks by Wedderburn orthogonality. The SDP shadow-price hypothesis is testable non-degenerately in this basis. Class C (diagnostic / structural). Substrate-only (CAL-2 q_0); no CAL-3 input.",
+  "contentBlock": "rem:per-partition-k-lambda-rule",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "basis_size_H3": 6,
+    "basis_words": [
+      "e",
+      "σ_0",
+      "σ_1",
+      "σ_0 σ_1",
+      "σ_1 σ_0",
+      "σ_0 σ_1 σ_0"
+    ]
+  },
+  "data": {
+    "y_lambda_at_q0": {
+      "[3]": 0.41539578633438373,
+      "[2, 1]": 0.2809296339799948,
+      "[1, 1, 1]": 0.02274494570562666
+    },
+    "t_vector_H3": [
+      1.0,
+      0.49932033403349374,
+      0.49932033403349363,
+      0.24932079597900464,
+      0.24932079597900464,
+      0.5514434199196377
+    ],
+    "G_matrix_H3": [
+      [
+        1.0,
+        0.49932033403349374,
+        0.49932033403349363,
+        0.24932079597900464,
+        0.24932079597900464,
+        0.5514434199196377
+      ],
+      [
+        0.49932033403349374,
+        1.1043880698091368,
+        0.24932079597900464,
+        0.5514434199196377,
+        0.5514434199196377,
+        0.3646057349066047
+      ],
+      [
+        0.49932033403349363,
+        0.24932079597900464,
+        1.1043880698091368,
+        0.551443419919638,
+        0.551443419919638,
+        0.3646057349066049
+      ],
+      [
+        0.24932079597900464,
+        0.5514434199196377,
+        0.551443419919638,
+        0.364605734906605,
+        1.219673008736737,
+        0.6276680122585698
+      ],
+      [
+        0.24932079597900464,
+        0.5514434199196377,
+        0.551443419919638,
+        1.2196730087367371,
+        0.3646057349066049,
+        0.6276680122585697
+      ],
+      [
+        0.5514434199196377,
+        0.3646057349066047,
+        0.364605734906605,
+        0.6276680122585697,
+        0.6276680122585698,
+        1.350893485482262
+      ]
+    ],
+    "off_diagonal_entries_H3": [
+      {
+        "w": "σ_0 σ_1",
+        "v": "σ_1 σ_0",
+        "G_wv": 1.219673008736737
+      },
+      {
+        "w": "σ_0 σ_1",
+        "v": "σ_0 σ_1 σ_0",
+        "G_wv": 0.6276680122585698
+      },
+      {
+        "w": "σ_1 σ_0",
+        "v": "σ_0 σ_1 σ_0",
+        "G_wv": 0.6276680122585697
+      },
+      {
+        "w": "σ_1",
+        "v": "σ_0 σ_1",
+        "G_wv": 0.551443419919638
+      },
+      {
+        "w": "σ_1",
+        "v": "σ_1 σ_0",
+        "G_wv": 0.551443419919638
+      },
+      {
+        "w": "e",
+        "v": "σ_0 σ_1 σ_0",
+        "G_wv": 0.5514434199196377
+      },
+      {
+        "w": "σ_0",
+        "v": "σ_0 σ_1",
+        "G_wv": 0.5514434199196377
+      },
+      {
+        "w": "σ_0",
+        "v": "σ_1 σ_0",
+        "G_wv": 0.5514434199196377
+      },
+      {
+        "w": "e",
+        "v": "σ_0",
+        "G_wv": 0.49932033403349374
+      },
+      {
+        "w": "e",
+        "v": "σ_1",
+        "G_wv": 0.49932033403349363
+      },
+      {
+        "w": "σ_1",
+        "v": "σ_0 σ_1 σ_0",
+        "G_wv": 0.3646057349066049
+      },
+      {
+        "w": "σ_0",
+        "v": "σ_0 σ_1 σ_0",
+        "G_wv": 0.3646057349066047
+      },
+      {
+        "w": "e",
+        "v": "σ_0 σ_1",
+        "G_wv": 0.24932079597900464
+      },
+      {
+        "w": "e",
+        "v": "σ_1 σ_0",
+        "G_wv": 0.24932079597900464
+      },
+      {
+        "w": "σ_0",
+        "v": "σ_1",
+        "G_wv": 0.24932079597900464
+      }
+    ],
+    "max_off_diagonal_magnitude_H3": 1.219673008736737,
+    "gram_is_symmetric_H3": true,
+    "lp_y0_star_H3": -0.0,
+    "lp_y_star_H3": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "lp_active_set_indices_H3": [
+      0
+    ],
+    "lp_primal_obj_H3": 5.2392693449203153e-17,
+    "lp_dual_obj_H3": -0.0,
+    "lp_duality_gap_H3": 5.2392693449203153e-17
+  }
+}

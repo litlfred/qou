@@ -136,14 +136,41 @@ $$
 $$
 
 The $Q$-value
-([transition energy](#def:Q-value-transition)) in log form:
+([transition energy](#def:Q-value-transition)) in **eigenfunction-basis
+(log-ratio) form**:
 
 $$
+  Q_\beta^{\mathrm{B}}
+  \;:=\;
   \ln \frac{P_{\mathrm{dau}}(q)}{P_{\mathrm{par}}(q)}
-  = 
-  \sum_{i=0}^{p} \ln \frac{\hat{V}_i^{\mathrm{dau}}(q)}{\hat{V}_i^{\mathrm{par}}(q)}
+  \cdot \frac{E_0}{z}
+  \;=\;
+  \frac{E_0}{z} \,
+  \sum_{i=0}^{p} \ln \frac{\hat{V}_i^{\mathrm{dau}}(q)}{\hat{V}_i^{\mathrm{par}}(q)},
 $$
 
 where the sum runs only over generators affected by the
-converting nucleon.  Generators $\sigma_i$ with $i > p$ cancel
-exactly (unaffected by the conversion).
+converting nucleon (generators $\sigma_i$ with $i > p$ cancel
+exactly), $z = 1/(\sqrt q + 1/\sqrt q)$ is the Markov–Jones
+parameter (Hecke–Skein normalization), and the $1/z$ factor is
+**not a calibration knob** — it is the normalization required to
+map the eigenfunction observable $\ln V_{\mathrm{pp}}/V_{\mathrm{nn}}$
+onto MeV.
+
+Form B is **not a separate observable** from the NF-counit form
+$Q_\beta^{\mathrm{A}} = |\Delta(\mathrm{net})| \cdot E_0$ of
+[prop:neutron-qvalue-symbolic](#prop:neutron-qvalue-symbolic);
+the two are basis-change equivalent at leading order, with the
+explicit bridge identity given in
+[prop:q-beta-spectral-bridge](#prop:q-beta-spectral-bridge):
+
+$$
+  Q_\beta^{\mathrm{A}}
+  \;=\;
+  Q_\beta^{\mathrm{B}} \cdot \bigl(1 + \tfrac{(z - 1)\,h}{2} + O(h^2)\bigr).
+$$
+
+Form B is the natural basis for $N \geq 1$ brane-tower truncation
+analysis (where it composes additively across generators); Form A
+is canonical at $N = 0$ free neutron (where the NF counit is a
+closed combinatorial datum).

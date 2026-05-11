@@ -4,6 +4,10 @@ export default proposition({
   label: "prop:borel-partial-resolution",
   title:
     "Borel's theorem partially discharges the keystone's sharpness target — explicit dimensions",
+  lean: {
+    ref: "qou:QOU.AppendixSurreals.BorelPartialResolution.borel_partial",
+    validation: "not_checked",
+  },
   uses: [
     "conj:gb-depth-period-correspondence",
     "rem:k-theory-period-rosetta",

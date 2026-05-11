@@ -40,6 +40,7 @@ from derivation_chain import (  # noqa: E402
     M_HECKE_PIPELINE_AT_Q0,
     Q_0,
     TR_M_AT_Q0,
+    TR_M_AT_Q0_50DPS,
     DerivationChain,
     DerivationStep,
     FirstPrinciple,
@@ -55,8 +56,14 @@ OUTPUT_CHAIN = HERE / "proton-mass-50dps.derivation.json"
 # `derivation_chain.M_HECKE_PIPELINE_AT_Q0` (single source of truth
 # per Gemini PR #484 review — see that registry's docstring for the
 # precision-lift roadmap).
-M_E_MEV_CODATA       = 0.51099895
-M_P_MEV_CODATA       = 938.27208816
+import mpmath as mp  # 50-dps arithmetic per the no-float64 directive
+mp.mp.dps = 50
+
+M_E_MEV_CODATA       = mp.mpf("0.51099895")
+M_P_MEV_CODATA       = mp.mpf("938.27208816")
+# `M_HECKE_PIPELINE_AT_Q0` returns `mp.mpf` (PR #637); preserved as
+# mp.mpf throughout per the no-float64 directive (derivation_chain.py
+# docstring §"Keep the values as mp.mpf to preserve 50-dps precision").
 M_E_HECKE_PIPELINE   = M_HECKE_PIPELINE_AT_Q0["e"]
 M_P_HECKE_PIPELINE   = M_HECKE_PIPELINE_AT_Q0["p"]
 M_P_PRED_MEV         = (M_P_HECKE_PIPELINE / M_E_HECKE_PIPELINE) * M_E_MEV_CODATA
@@ -80,7 +87,9 @@ def build() -> DerivationChain:
         inputs=[FirstPrinciple.HECKE_ENERGY.value, FirstPrinciple.SCHUR.value,
                 FirstPrinciple.FINITE_JONES.value],
         output_name="tr_M_p_q0",
-        output_value=TR_M_AT_Q0["p"],
+        # Per Copilot review on PR #640: source from the 50-dps companion
+        # to avoid float64 truncation in a "50dps derivation chain".
+        output_value=TR_M_AT_Q0_50DPS["p"],
         trust_basis=TrustBasis.DERIVED,
         citation="manuscript:§Atomic-Markov-trace",
         jet_order=0,
@@ -134,7 +143,7 @@ def build() -> DerivationChain:
         ),
         inputs=["terms_50dps"],
         output_name="m_p_Hecke",
-        output_value=M_P_HECKE_PIPELINE,
+        output_value=mp.nstr(M_P_HECKE_PIPELINE, 50),
         trust_basis=TrustBasis.SCRIPT_CITED,
         citation="manuscript:§mass-endomorphism-tower",
         jet_order=0,
@@ -161,9 +170,9 @@ def build() -> DerivationChain:
             "Same tower formula applied to the electron's 2-strand "
             "atomic braid; 50 dps via the same mpmath pipeline."
         ),
-        inputs=["m_p_Hecke"],  # placeholder — electron is independent
+        inputs=[],  # electron is independent of proton/neutron
         output_name="m_e_Hecke",
-        output_value=M_E_HECKE_PIPELINE,
+        output_value=mp.nstr(M_E_HECKE_PIPELINE, 50),
         trust_basis=TrustBasis.SCRIPT_CITED,
         citation="manuscript:§mass-endomorphism-tower",
         jet_order=0,
@@ -189,7 +198,7 @@ def build() -> DerivationChain:
         ),
         inputs=["m_p_Hecke", "m_e_Hecke"],
         output_name="m_p_over_m_e",
-        output_value=M_P_HECKE_PIPELINE / M_E_HECKE_PIPELINE,
+        output_value=mp.nstr(M_P_HECKE_PIPELINE / M_E_HECKE_PIPELINE, 50),
         trust_basis=TrustBasis.DERIVED,
         citation="manuscript:§dimensionless-mass-ratio",
         jet_order=0,
@@ -206,14 +215,14 @@ def build() -> DerivationChain:
         ),
         inputs=["m_p_over_m_e"],
         output_name="m_p_pred_MeV",
-        output_value=M_P_PRED_MEV,
+        output_value=mp.nstr(M_P_PRED_MEV, 50),
         trust_basis=TrustBasis.COMPUTATIONAL,
         jet_order=0,
         spectral_stratum="archimedean (q_0 ∈ ℝ_{>1})",
         notes=(
-            f"COMPUTATIONAL leaf: m_p_pred ≈ {M_P_PRED_MEV:.4f} MeV "
-            f"vs CODATA m_p = {M_P_MEV_CODATA} MeV.  Current relative "
-            f"error: {GAP_REL:.3e} = {GAP_REL*1e9:.0f} ppb (target: "
+            f"COMPUTATIONAL leaf: m_p_pred ≈ {mp.nstr(M_P_PRED_MEV, 6)} MeV "
+            f"vs CODATA m_p = {mp.nstr(M_P_MEV_CODATA, 12)} MeV.  Current relative "
+            f"error: {mp.nstr(GAP_REL, 4)} = {mp.nstr(GAP_REL * mp.mpf('1e9'), 5)} ppb (target: "
             "1 ppb, gap of ~6 orders of magnitude).  Closing the gap "
             "requires Phase A item completion (Terms 2-6 at full 50 "
             "dps without f64 chokepoints) + Phase B (q_0 derivation)."
@@ -222,7 +231,7 @@ def build() -> DerivationChain:
 
     return DerivationChain(
         target="m_p (MeV)",
-        target_value=M_P_PRED_MEV,
+        target_value=mp.nstr(M_P_PRED_MEV, 50),
         target_tolerance=0.01,
         content_block="prop:full-pole-structure-mass-trace",
         description=(
@@ -234,9 +243,9 @@ def build() -> DerivationChain:
             "profile {axiom: 0, derived: 2, script-cited: 3, "
             "computational: 1} — the SCRIPT_CITED frontier still "
             "covers the T1+T2+T3+T4 mass-endomorphism tower assembly.  "
-            f"Current proton mass prediction: {M_P_PRED_MEV:.4f} MeV "
-            f"vs CODATA {M_P_MEV_CODATA} (rel_diff "
-            f"{GAP_REL:.3e}, {GAP_REL*1e9:.0f} ppb).  Target: 1 ppb."
+            f"Current proton mass prediction: {mp.nstr(M_P_PRED_MEV, 6)} MeV "
+            f"vs CODATA {mp.nstr(M_P_MEV_CODATA, 12)} (rel_diff "
+            f"{mp.nstr(GAP_REL, 4)}, {mp.nstr(GAP_REL * mp.mpf('1e9'), 5)} ppb).  Target: 1 ppb."
         ),
         steps=steps,
     )
@@ -256,31 +265,33 @@ def emit_codata_witness(chain: DerivationChain) -> None:
         "Phase A tower-lift PRs land)."
     )
     w.set_content_block("prop:full-pole-structure-mass-trace")
+    # Witness values stored as 50-dps decimal strings (mp.nstr) so
+    # consumers retain full precision per the no-float64 directive.
     w.add_parameter("q_0", Q_0)
-    w.add_parameter("M_E_MEV_CODATA", M_E_MEV_CODATA)
-    w.add_parameter("target_precision_ppb", 1.0)
+    w.add_parameter("M_E_MEV_CODATA", mp.nstr(M_E_MEV_CODATA, 12))
+    w.add_parameter("target_precision_ppb", "1.0")
     w.add_assertion(
         "m_p_within_1_ppb",
-        computed=GAP_REL,
-        expected=1e-9,
+        computed=mp.nstr(GAP_REL, 50),
+        expected="0",
         tolerance=1e-9,
     )
     w.add_assertion(
         "m_p_pred_MeV_finite",
-        computed=bool(0 < M_P_PRED_MEV < 1e3),
+        computed=bool(mp.mpf("0") < M_P_PRED_MEV < mp.mpf("1e3")),
         expected=True,
     )
-    w.add_data("m_p_pred_MeV", M_P_PRED_MEV)
-    w.add_data("m_p_codata_MeV", M_P_MEV_CODATA)
-    w.add_data("rel_diff", GAP_REL)
-    w.add_data("rel_diff_ppb", GAP_REL * 1e9)
-    w.add_data("target_ppb", 1.0)
-    import math
-    if GAP_REL == 0:
-        oom_to_target = 0.0
+    w.add_data("m_p_pred_MeV", mp.nstr(M_P_PRED_MEV, 50))
+    w.add_data("m_p_codata_MeV", mp.nstr(M_P_MEV_CODATA, 12))
+    w.add_data("rel_diff", mp.nstr(GAP_REL, 50))
+    w.add_data("rel_diff_ppb", mp.nstr(GAP_REL * mp.mpf("1e9"), 12))
+    w.add_data("target_ppb", "1.0")
+    if GAP_REL == mp.mpf("0"):
+        oom_to_target = mp.mpf("0")
     else:
-        oom_to_target = math.log10(GAP_REL / 1e-9)
-    w.add_data("gap_orders_of_magnitude_to_1ppb", oom_to_target)
+        # mpmath log10 for full-precision OOM
+        oom_to_target = mp.log10(GAP_REL / mp.mpf("1e-9"))
+    w.add_data("gap_orders_of_magnitude_to_1ppb", mp.nstr(oom_to_target, 6))
     w.save()
 
 
@@ -291,9 +302,10 @@ def main() -> int:
     for i in issues:
         print(f"  - {i}")
     print(f"trust_summary: {chain.trust_summary()}")
-    print(f"target_value:  {chain.target_value:.6f} MeV")
-    print(f"CODATA m_p:    {M_P_MEV_CODATA} MeV")
-    print(f"rel_diff:      {GAP_REL:.3e} ({GAP_REL*1e9:.0f} ppb; target 1 ppb)")
+    print(f"target_value:  {mp.nstr(M_P_PRED_MEV, 8)} MeV")
+    print(f"CODATA m_p:    {mp.nstr(M_P_MEV_CODATA, 12)} MeV")
+    print(f"rel_diff:      {mp.nstr(GAP_REL, 4)} "
+          f"({mp.nstr(GAP_REL * mp.mpf('1e9'), 6)} ppb; target 1 ppb)")
     chain.save(OUTPUT_CHAIN)
     print(f"Wrote {OUTPUT_CHAIN}")
     emit_codata_witness(chain)

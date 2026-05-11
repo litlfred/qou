@@ -229,4 +229,62 @@ theorem isospin_is_spin_grading_under_spin_involution {R : Type*}
     ∀ a : FA.algebra, S.sigma (S.sigma a) = a :=
   S.involutive
 
+-- ────────────────────────────────────────────────────────────────────────────
+-- Pair-knot Z↔N corollary (PR #638 follow-up, 2026-05-11)
+--
+-- The Markov-trace pair-knot identity `τ(σ_pp) = τ(σ_nn)` is an
+-- immediate consequence of `SpinInvolution.trace_invariant`
+-- applied to σ_pp and its S-conjugate σ_nn.  This corollary is
+-- the algebraic basis for the `z_n_symmetry` axiom of
+-- `MagicShellStabilization` in
+-- conj-magic-shell-stabilization.lean.  Empirical verification at
+-- q_0: `tr_M(σ_pp) = tr_M(σ_nn) = 0.0622` (float64) per
+-- probe-phiq-pair-knot-markov-trace.witness.json.
+-- ────────────────────────────────────────────────────────────────────────────
+
+/-- **Pair-knot Z↔N corollary.**  For any element `a` of a
+    Frobenius algebra with spin involution `S`,
+    `τ(S.sigma a) = τ(a)`.
+
+    Applied at `a = σ_pp` (proton-pair sub-braid of magic-shell
+    atoms ³He, ⁴He), gives `τ(σ_pp) = τ(σ_nn)` where σ_nn is the
+    neutron-pair sub-braid (Z↔N image of σ_pp under S = Hopf
+    antipode permuting strand labels).
+
+    This is the **algebraic basis** for the `z_n_symmetry` axiom
+    in `conj:magic-shell-stabilization`. -/
+-- Ref: [manuscript] prop:spin-involution-lp-dual-invariance §"Corollary (pair-knot Z↔N symmetry)"
+theorem pair_knot_Z_N_trace_invariance
+    {R : Type*} [CommRing R]
+    {FA : FrobeniusTraceAlgebra R}
+    (S : SpinInvolution FA)
+    (sigma_pp : FA.algebra) :
+    FA.trace (S.sigma sigma_pp) = FA.trace sigma_pp :=
+  S.trace_invariant sigma_pp
+
+/-- **Mirror-nucleus Markov-trace equality.**  For magic-shell
+    composite operators `σ_pp` (Z=2 shell) and `σ_nn` (N=2 shell)
+    that are S-conjugate (`σ(σ_pp) = σ_nn`, expressing the
+    Hopf-antipode permutation of proton-shell ↔ neutron-shell
+    strand labels), the canonical Markov trace is equal:
+
+      τ(σ_pp) = τ(σ_nn).
+
+    This is the load-bearing positive finding (2) from the PR
+    #638 closure work: AME data confirms this symmetry directly
+    (substrate-binding difference between ³He and ³H vanishes
+    after Coulomb correction, to ~0.03 MeV ≈ 0.5%). -/
+-- Ref: [manuscript] prop:spin-involution-lp-dual-invariance §"Corollary"
+theorem mirror_nucleus_trace_equality
+    {R : Type*} [CommRing R]
+    {FA : FrobeniusTraceAlgebra R}
+    (S : SpinInvolution FA)
+    (sigma_pp sigma_nn : FA.algebra)
+    (h_conjugate : S.sigma sigma_pp = sigma_nn) :
+    FA.trace sigma_pp = FA.trace sigma_nn := by
+  have h : FA.trace (S.sigma sigma_pp) = FA.trace sigma_pp :=
+    S.trace_invariant sigma_pp
+  rw [h_conjugate] at h
+  exact h.symm
+
 end QOU.BraidKnot

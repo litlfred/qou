@@ -1,0 +1,48 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-11T18:13:59.023144+00:00",
+  "commitSha": "3575499e66db4f632b921402cae16c2b00824a8c",
+  "assertions": [
+    {
+      "name": "bridge_residual_within_O_h_squared",
+      "computed": 0.012475305595052914,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.04370621823051208
+    },
+    {
+      "name": "Q_beta_form_a_form_b_agree_within_O_h_squared_MeV",
+      "computed": 0.048749479289652294,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.182953391317803
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 12,
+  "computation": "q-beta-spectral-bridge",
+  "scriptFile": "q_beta_spectral_bridge_witness.py",
+  "scriptHash": "019fe6012756",
+  "scriptCommitSha": "b9e7332cabef6fb190ea7f16a36e5af9a9fa24a5",
+  "description": "Numerical witness for the leading-order bridge identity Form A / Form B = 1/z + (z-1) h / (2 z) + O(h²) of prop:q-beta-spectral-bridge. Form A is the NF-counit |Δ(net)| = |h(2-h)/2|; Form B is the eigenfunction-basis log-ratio ln(V_pp/V_nn), which at single wrap reduces to ln(1 + z h) via the Markov-traced volume identity in prop:beta-decay-transfer-matrix. Both forms map onto MeV via the same E_0 = m_e / (q (q-1)) derived from CAL-1 + CAL-2 only; Form B carries an additional 1/z Markov-Jones normalization (NOT a calibration knob). The residual |predicted - actual| is bounded by h² (the Taylor O(h²) remainder).",
+  "contentBlock": "prop:q-beta-spectral-bridge",
+  "parameters": {
+    "q_0_50dps": "1.1099785955541805752815940796095093779932822799587",
+    "m_e_MeV": "0.51099895"
+  },
+  "data": {
+    "h": "0.20906032198987946110160842229792190646175630391648",
+    "z_markov_jones": "0.49932033403359825002066908467672150636931636263446",
+    "h_squared_tolerance": "0.043706218230512077758279888274624924400632402099891",
+    "form_a_delta_net": "0.18720721287462342222246847816060944426144010286654",
+    "form_b_log_one_plus_zh": "0.09929139859715124615286031101378240194427062651409",
+    "predicted_bridge_ratio": "1.8979076342720563094253898311737533291201478649321",
+    "actual_bridge_ratio": "1.8854323286770033957635141432613236894630356314856",
+    "bridge_residual": "0.012475305595052913661875687912429639657112233446531",
+    "E_0_MeV": "4.1859808220625237732985519083214879046242353091078",
+    "Q_beta_form_a_MeV": "0.78364580284495003723288837004662358622224904295601",
+    "Q_beta_form_b_MeV": "0.83239528213460232989525163327219788914192509498492",
+    "Q_beta_agreement_MeV": "0.048749479289652292662363263225574302919676052028911"
+  }
+}

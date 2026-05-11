@@ -1,0 +1,11 @@
+-- Sibling docstub for `prop:cl3-zeta5-pslq-independence`.
+--
+-- This file is documentation only.  The compiled formalisation
+-- lives in the Lake-built tree at:
+--
+--   lean/QOU/BraidKnot/Cl3Zeta5PslqIndependence.lean
+--
+-- See `QOU.BraidKnot.Cl3Zeta5PslqIndependence.pslq_independence`.
+--
+-- See the chapter umbrella `lean/QOU/BraidKnot.lean`
+-- for the import wiring.

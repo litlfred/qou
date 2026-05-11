@@ -114,6 +114,8 @@ export default chapter({
         "ground-state-ordering",
         "transfer-matrix-identities",
         "neutron-qvalue-symbolic",
+        "q-beta-spectral-bridge",
+        "q-beta-form-a-n1-symbolic",
         "beta-decay-interpretation",
         "nucleon-nf-observability",
         "beta-decay-energy-scale",

@@ -1,0 +1,11 @@
+-- Sibling docstub for `prop:cyclotomic-cl3-orbit-sum-general`.
+--
+-- This file is documentation only.  The compiled formalisation
+-- lives in the Lake-built tree at:
+--
+--   lean/QOU/BraidKnot/CyclotomicCl3OrbitSum.lean
+--
+-- See `QOU.BraidKnot.CyclotomicCl3OrbitSum.orbit_sum_general`.
+--
+-- See the chapter umbrella `lean/QOU/BraidKnot.lean`
+-- for the import wiring.
