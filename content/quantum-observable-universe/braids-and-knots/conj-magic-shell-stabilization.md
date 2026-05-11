@@ -93,7 +93,7 @@ $\Delta_{\mathrm{shell}}$ is well-defined and Z↔N-symmetric is
 
 **Terminology note:** the table below is a **residual-extraction
 measurement**, not a calibration in the
-[three-calibration discipline](#prop:atomic-mass-three-calibration-discipline)
+[three-calibration discipline](#prop:three-calibration-inputs)
 sense.  Only $m_e$ (CAL-1), $q_0$ (CAL-2), and $Q_\beta$ (CAL-3)
 are calibration anchors; $\Delta_{\mathrm{cat}}$ values are
 measured structural gaps that the conjecture obligates the
