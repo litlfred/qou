@@ -269,3 +269,99 @@ Candidate routes (all $(q, \beta)$-aware):
 Closure of this open form would constitute the structural lift
 formula of [conj:brane-tower-z-habiro](#conj:brane-tower-z-habiro) — the missing piece flagged in
 that conjecture's "Status of $n_\star$" section.
+
+## Paper-canonical $\sigma_w$ basis (cycle 7)
+
+PR #639 cycle 6 established that the SDP shadow-price hypothesis
+**cannot** be tested in the per-partition basis: by Wedderburn
+orthogonality, the off-diagonal Gram entries are identically zero
+([probe-off-diagonal-gram-wedderburn.witness.json](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/probe-off-diagonal-gram-wedderburn.witness.json) —
+110/110 partition pairs of $H_6$ confirmed zero). The SDP-with-
+diagonal-Gram reduces to the LP cost ranking, which we refuted
+for $D$ and ${}^3\mathrm{He}$.
+
+The genuine SDP refinement uses the **paper-canonical reduced
+braid-word basis** $\{\sigma_w : w \text{ reduced}\}$ of $H_n(q)$
+(per CLAUDE.md §7a Hecke–Skein convention). Witness:
+[probe-braid-word-basis-gram.witness.json](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/probe-braid-word-basis-gram.witness.json).
+
+### Empirical content at $H_3(q_0)$ — full $6 \times 6$ Gram
+
+The Gram $G_{wv} = \mathrm{tr}_M(\sigma_w \cdot \sigma_v)$ in the
+six-element reduced-word basis $\{e, \sigma_0, \sigma_1, \sigma_0\sigma_1, \sigma_1\sigma_0, \sigma_0\sigma_1\sigma_0\}$
+at $q_0 = 1.10998$:
+
+|   | $e$ | $\sigma_0$ | $\sigma_1$ | $\sigma_0\sigma_1$ | $\sigma_1\sigma_0$ | $\sigma_0\sigma_1\sigma_0$ |
+|---|---:|---:|---:|---:|---:|---:|
+| $e$ | $1.000$ | $0.499$ | $0.499$ | $0.249$ | $0.249$ | $0.551$ |
+| $\sigma_0$ | $0.499$ | $1.104$ | $0.249$ | $0.551$ | $0.551$ | $0.365$ |
+| $\sigma_1$ | $0.499$ | $0.249$ | $1.104$ | $0.551$ | $0.551$ | $0.365$ |
+| $\sigma_0\sigma_1$ | $0.249$ | $0.551$ | $0.551$ | $0.365$ | $1.220$ | $0.628$ |
+| $\sigma_1\sigma_0$ | $0.249$ | $0.551$ | $0.551$ | $1.220$ | $0.365$ | $0.628$ |
+| $\sigma_0\sigma_1\sigma_0$ | $0.551$ | $0.365$ | $0.365$ | $0.628$ | $0.628$ | $1.351$ |
+
+**Structural findings**:
+
+1. **All 15 off-diagonal entries are non-zero.** Max magnitude
+   $G_{\sigma_0\sigma_1, \sigma_1\sigma_0} = 1.220$ — actually
+   *larger* than the diagonal $G_{\sigma_0\sigma_1, \sigma_0\sigma_1} = 0.365$.
+   The σ-basis is overcomplete with respect to the Markov bilinear form.
+2. **Symmetric** (Markov-trace cyclicity): $G_{wv} = G_{vw}$ for all
+   pairs, confirmed to numerical precision.
+3. **Substrate-only**: every entry is a $\mathbb{Z}[q^{\pm 1}]$ polynomial in $q$
+   evaluated at $q_0$ via the Wenzl bridge
+
+   $$
+     G_{wv}(q_0) = \sum_{\lambda \vdash 3} y_\lambda(q_0) \cdot
+       \mathrm{tr}_{V_\lambda}\!\bigl(\rho_\lambda(\sigma_w \cdot \sigma_v)\bigr),
+   $$
+
+   with $y_\lambda(q_0)$ from the canonical Jones-Markov machinery
+   and $\rho_\lambda(\sigma_w \sigma_v)$ from Hoefsmit seminormal
+   matrix products.
+
+### Operator-selection LP in $\sigma_w$ basis
+
+Running [`solve_operator_selection_lp`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/lp_dual_solver.py)
+on the $H_3$ basis with $\mathbf{t}_w = \mathrm{tr}_M(\sigma_w)$
+and unit categorical target gives strong-duality with gap $5\times 10^{-17}$;
+the active set picks out the identity $e$ alone (since $\mathbf{t}_e = 1$
+is the unit-norm channel and the LP is unconstrained at $n_\mathrm{target} = 1$).
+For atomic compute (β-decay, deuteron) the basis extends to $H_{3A}(q_0)$
+and the LP/SDP active set is the **substrate-derivable**
+$(q_0, \beta_\mathfrak{H})$-dependent ranking the per-partition
+basis could not produce.
+
+### Bridge to Murphy / cellular basis
+
+The reduced $\sigma_w$ basis and the Murphy basis $\{m_{S,T}^\lambda\}$
+of $H_n(q)$ (per Graham–Lehrer 1996; over $\mathbb{Z}[q^{\pm 1}]$, the
+same parameter ring) are related by a triangular change-of-basis:
+
+$$
+  \sigma_w = \sum_{(\lambda, S, T)} c^{\lambda, S, T}_w \cdot m_{S, T}^\lambda,
+  \qquad c^{\lambda, S, T}_w \in \mathbb{Z}[q^{\pm 1}].
+$$
+
+Pulling the σ-basis LP/SDP back through this expansion gives a
+per-cell ranking at $(\lambda, T)$-resolution — strictly finer than
+per-partition. The Murphy basis is:
+
+* **Over $\mathbb{Z}[q^{\pm 1}]$** — matches the paper's parameter ring
+  (Habiro / brane-tower bicompletion lives over the same ring).
+* **Cellular** — block-diagonal in $\lambda$ under dominance order
+  (same Wedderburn block-structure as Hoefsmit), but with genuine
+  off-diagonal $(S, T)$-structure *within each block*.
+* **Aligned with QOU's Gröbner–Shirshov filtration** — Murphy is
+  cellular w.r.t. the dominance order on partitions, which is the
+  natural partial order refining GS depth.
+* **NOT directly aligned with Type-B folding / Kashiwara crystals** —
+  those are functorial-categorical structures Murphy doesn't speak
+  to directly.
+
+The σ-basis → Murphy expansion is the canonical bridge to the
+per-cell selector refinement. Atomic braid words
+$\beta_\mathfrak{H} = \mathtt{atom\_braid\_word\_3A}(Z, N)$ are
+specific σ-products; their Murphy expansion gives a substrate-
+derivable, $(q_0, \beta)$-aware decomposition into per-cell weights,
+which is the natural next probe direction.
