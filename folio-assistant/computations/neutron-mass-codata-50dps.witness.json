@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-11T18:04:00.188162+00:00",
-  "commitSha": "8697153434cc063c7b0fa2b53ee589b5b4ddce4a",
+  "computedAt": "2026-05-11T18:25:33.951368+00:00",
+  "commitSha": "c4c2d382d90224492a2d72ac6c95b38e6107ab4d",
   "assertions": [
     {
       "name": "m_n_within_1_ppb",
@@ -22,8 +22,8 @@
   "durationMs": 4,
   "computation": "neutron-mass-codata-50dps",
   "scriptFile": "build_neutron_mass_50dps_chain.py",
-  "scriptHash": "01dc2061b9fe",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "9dd3f58588d2",
+  "scriptCommitSha": "c4c2d382d90224492a2d72ac6c95b38e6107ab4d",
   "description": "Cross-pipeline m_n prediction vs CODATA at the precision achievable by the current pipeline (currently f64-bounded via mass_endomorphism.py; will lift to 50 dps once the Phase A tower-lift PRs land, and to ~0 ppb once the chain rebases onto the ρ_K canonical path).",
   "contentBlock": "prop:full-pole-structure-mass-trace",
   "parameters": {

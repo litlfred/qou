@@ -131,10 +131,13 @@ def main() -> int:
     print("PHASE 2 — m_e_Hecke / m_p_Hecke DIAGNOSTIC (Path A construction survey)")
     print("=" * 90)
     print()
+    # M_HECKE_PIPELINE_AT_Q0 returns mp.mpf (PR #637); use mp.nstr
+    # for display, preserve precision per the no-float64 directive.
+    _p_over_e = M_HECKE_PIPELINE_AT_Q0['p'] / M_HECKE_PIPELINE_AT_Q0['e']
     print(f"  CODATA m_p / m_e  = {float(M_P_MEV/M_E_MEV):.4f}")
-    print(f"  Placeholder ratio = {M_HECKE_PIPELINE_AT_Q0['p']}/"
-          f"{M_HECKE_PIPELINE_AT_Q0['e']} = "
-          f"{M_HECKE_PIPELINE_AT_Q0['p']/M_HECKE_PIPELINE_AT_Q0['e']:.4f}")
+    print(f"  Path A ratio      = {mp.nstr(M_HECKE_PIPELINE_AT_Q0['p'], 6)}/"
+          f"{mp.nstr(M_HECKE_PIPELINE_AT_Q0['e'], 6)} = "
+          f"{mp.nstr(_p_over_e, 6)}")
     print()
 
     # ─── Approach A: full 6-term sum ────────────────────────────────────
@@ -179,29 +182,31 @@ def main() -> int:
               f"{float(M_P_MEV/M_E_MEV / ratio_pe):.1f}")
     print()
 
-    # ─── Approach C: placeholder anomaly ────────────────────────────────
-    print("C. Placeholder ratio (current state):")
-    p_placeholder = M_HECKE_PIPELINE_AT_Q0["p"]
-    e_placeholder = M_HECKE_PIPELINE_AT_Q0["e"]
-    placeholder_ratio = p_placeholder / e_placeholder
-    codata_pe = float(M_P_MEV / M_E_MEV)
-    codata_pe_minus_one = float((M_P_MEV - M_E_MEV) / M_E_MEV)
+    # ─── Approach C: Path A ratio (post-PR #637 derived values) ─────────
+    # M_HECKE_PIPELINE_AT_Q0 now returns substrate-derived mp.mpf
+    # (Path A T1+T4); preserve as mp.mpf, display via mp.nstr.
+    print("C. Path A ratio (substrate-derived state, post-PR #637):")
+    p_derived = M_HECKE_PIPELINE_AT_Q0["p"]
+    e_derived = M_HECKE_PIPELINE_AT_Q0["e"]
+    path_a_ratio = p_derived / e_derived
+    codata_pe = M_P_MEV / M_E_MEV
+    codata_pe_minus_one = (M_P_MEV - M_E_MEV) / M_E_MEV
     c_results = {
-        "M_p_Hecke_placeholder": p_placeholder,
-        "M_e_Hecke_placeholder": e_placeholder,
-        "placeholder_ratio": placeholder_ratio,
-        "codata_m_p_over_m_e": codata_pe,
-        "codata_m_p_minus_m_e_over_m_e": codata_pe_minus_one,
+        "M_p_Hecke_path_a": mp.nstr(p_derived, 12),
+        "M_e_Hecke_path_a": mp.nstr(e_derived, 12),
+        "path_a_ratio": mp.nstr(path_a_ratio, 12),
+        "codata_m_p_over_m_e": mp.nstr(codata_pe, 12),
+        "codata_m_p_minus_m_e_over_m_e": mp.nstr(codata_pe_minus_one, 12),
         "diff_to_codata_p_over_e_ppb":
-            (placeholder_ratio - codata_pe) / codata_pe * 1e9,
+            mp.nstr((path_a_ratio - codata_pe) / codata_pe * mp.mpf("1e9"), 6),
         "diff_to_codata_minus_one_ppb":
-            (placeholder_ratio - codata_pe_minus_one) / codata_pe_minus_one * 1e9,
+            mp.nstr((path_a_ratio - codata_pe_minus_one) / codata_pe_minus_one * mp.mpf("1e9"), 6),
     }
-    print(f"  placeholder ratio = {placeholder_ratio:.6f}")
-    print(f"  CODATA m_p/m_e    = {codata_pe:.6f}  diff = "
-          f"{c_results['diff_to_codata_p_over_e_ppb']:+.0f} ppb")
-    print(f"  CODATA (m_p-m_e)/m_e = {codata_pe_minus_one:.6f}  diff = "
-          f"{c_results['diff_to_codata_minus_one_ppb']:+.0f} ppb")
+    print(f"  Path A ratio     = {mp.nstr(path_a_ratio, 6)}")
+    print(f"  CODATA m_p/m_e   = {mp.nstr(codata_pe, 6)}  "
+          f"diff = {c_results['diff_to_codata_p_over_e_ppb']} ppb")
+    print(f"  CODATA (m_p-m_e)/m_e = {mp.nstr(codata_pe_minus_one, 6)}  "
+          f"diff = {c_results['diff_to_codata_minus_one_ppb']} ppb")
     print()
 
     # ─── Finding ────────────────────────────────────────────────────────
@@ -253,17 +258,17 @@ def main() -> int:
     )
     w.add_assertion(
         "approach_B_far_from_codata",
-        computed=abs(float(b_results["proton"]["categorical_ratio_to_m_e_Hecke"]) - codata_pe) > 100,
+        computed=abs(mp.mpf(b_results["proton"]["categorical_ratio_to_m_e_Hecke"]) - codata_pe) > 100,
         expected=True,
     )
     w.add_assertion(
-        "approach_C_placeholder_lands_at_minus_m_e",
-        computed=abs(c_results["diff_to_codata_minus_one_ppb"]) < 1000,
+        "approach_C_path_a_lands_at_minus_m_e",
+        computed=abs(mp.mpf(c_results["diff_to_codata_minus_one_ppb"])) < 1000,
         expected=True,
     )
     w.add_assertion(
-        "approach_C_placeholder_diverges_from_codata",
-        computed=abs(c_results["diff_to_codata_p_over_e_ppb"]) > 100_000,
+        "approach_C_path_a_diverges_from_codata",
+        computed=abs(mp.mpf(c_results["diff_to_codata_p_over_e_ppb"])) > 100_000,
         expected=True,
     )
     w.save()

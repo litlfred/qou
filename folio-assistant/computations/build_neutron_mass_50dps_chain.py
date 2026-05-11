@@ -67,8 +67,15 @@ OUTPUT_CHAIN = HERE / "neutron-mass-50dps.derivation.json"
 import mpmath as mp  # 50-dps arithmetic per no-float64 directive
 mp.mp.dps = 50
 
-M_E_MEV_CODATA       = mp.mpf("0.51099895")
-M_N_MEV_CODATA       = mp.mpf("939.56542052")
+# Per `folio-assistant/computations/README.md` and the
+# three-calibration discipline (Copilot review PR #640:71):
+# import CAL-1 (m_e) directly from the registry; the neutron mass
+# is loaded as VALIDATION-only (residual exposure, NOT a calibration
+# anchor — that would be a CAL discipline violation).
+from codata_constants import M_E_MEV, M_N_MEV_VALIDATION  # noqa: E402
+
+M_E_MEV_CODATA       = M_E_MEV  # CAL-1 (legitimate calibration input)
+M_N_MEV_CODATA       = M_N_MEV_VALIDATION  # validation-only (residual target)
 # `M_HECKE_PIPELINE_AT_Q0` returns `mp.mpf` post-PR #637 — preserved
 # as mp.mpf throughout per the no-float64 directive
 # (derivation_chain.py docstring §"Keep the values as mp.mpf to
@@ -166,17 +173,14 @@ def build() -> DerivationChain:
             "own derivation chain; the current value is T1+T4 only "
             "(trustable subset).  Phase A item (50 dps lift) on PR #476 "
             "brings each term individually to mpmath precision.  "
-            "**Precision note**: the stored `output_value` "
-            f"({M_N_HECKE_PIPELINE}) is a 4-sig-fig rounded summary "
-            "of the upstream pipeline output, kept short for "
-            "readability in the chain JSON.  The full-precision 50 dps "
-            "values live in `mass-formula-6term-mpfr-50dps.witness.json`; "
-            "downstream code that needs >4 sig figs should read from "
-            "that witness rather than from this chain step.  "
-            "**ρ_K cross-check (informational)**: the canonical "
-            "ρ_K path in `atomic-mass-via-rho-k.witness.json` predicts "
-            f"Note on alternative paths: the PR #564 ρ_K^LO path "
-            "consumes CODATA $m_p$ and $m_n$ to produce 0 ppb "
+            "**Precision note**: the stored `output_value` is a "
+            "20-significant-figure decimal string from `mp.nstr(..., 20)` "
+            "(50-dps full precision lives in the upstream "
+            "`mass-formula-6term-mpfr-50dps.witness.json`; consumers "
+            "needing more than 20 sig figs should read that witness "
+            "directly rather than this chain step).  "
+            "**Alternative-paths cross-reference**: the PR #564 ρ_K^LO "
+            "path consumes CODATA $m_p$ and $m_n$ to produce 0 ppb "
             "residuals for $\\{p, n\\}$ by construction; that path "
             "violates the three-calibration discipline (audit doc: "
             "docs/audits/2026-05-11-three-calibration-discipline-violations.md). "
@@ -193,21 +197,24 @@ def build() -> DerivationChain:
             "Same tower formula applied to the electron's 2-strand "
             "atomic braid; 50 dps via the same mpmath pipeline."
         ),
-        inputs=["m_n_Hecke"],  # placeholder — electron is independent
+        # Electron Path A derivation is independent of the neutron
+        # step (per Copilot review #640:196 — was previously
+        # ["m_n_Hecke"] placeholder which misrepresented the
+        # dependency graph).
+        inputs=[],
         output_name="m_e_Hecke",
         output_value=mp.nstr(M_E_HECKE_PIPELINE, 20),
         trust_basis=TrustBasis.SCRIPT_CITED,
         citation="manuscript:§mass-endomorphism-tower",
         jet_order=0,
         notes=(
-            "script: folio-assistant/computations/mass_endomorphism.py "
-            "electron-tower path.  SCRIPT_CITED until an "
-            "electron-tr-M-q0 chain ships.  "
-            "**Precision note**: the stored `output_value` "
-            f"({M_E_HECKE_PIPELINE}) is a 4-sig-fig rounded summary "
-            "of the upstream pipeline output, kept short for "
-            "readability in the chain JSON.  Full-precision 50 dps "
-            "values live in `mass-formula-6term-mpfr-50dps.witness.json`."
+            "script: folio-assistant/computations/derive_m_e_hecke_path_a.py "
+            "(electron Path A; consumed via M_HECKE_PIPELINE_AT_Q0['e']).  "
+            "SCRIPT_CITED until the electron-tr-M-q0 chain ships.  "
+            "**Precision note**: the stored `output_value` is a "
+            "20-significant-figure decimal string from `mp.nstr(..., 20)` "
+            "(full 50-dps precision lives in the upstream "
+            "`mass-formula-6term-mpfr-50dps.witness.json`)."
         ),
     ))
 

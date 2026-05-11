@@ -170,11 +170,13 @@ def main() -> int:
           f"\n  T6 (Habiro tail, "
           f"{mp.nstr(mp.mpf(n['quarantined']['t6_habiro_residue']['value_50dps']), 6)})")
 
-    out = {
-        "engine": "mpmath",
-        "engineVersion": "mpmath 1.3.0",
-        "computation": "derive-m-n-hecke-path-a",
-        "scriptFile": "derive_m_n_hecke_path_a.py",
+    # Per Copilot PR #640:203 — switch from raw json.dump to
+    # WitnessBuilder.wrap_legacy so the emitted witness carries
+    # staleness metadata (scriptHash, commitSha, computedAt, etc.)
+    # consumed by `run_pipeline.py`.  Preserves the on-disk shape
+    # (description, auditOnly, data) bit-for-bit.
+    from witness_base import WitnessBuilder
+    payload = {
         "description": (
             "Workplan 2 Phase 2 — partial Path A derivation of "
             "m_n_Hecke at 50 dps from the trustable subset (T1 + T4) "
@@ -198,9 +200,14 @@ def main() -> int:
         ),
         "data": {"neutron": n},
     }
-
-    OUT_WITNESS.write_text(json.dumps(out, indent=2))
-    print(f"\n  Wrote {OUT_WITNESS.name}")
+    builder = WitnessBuilder.wrap_legacy(
+        "neutron-m_n-derivation",
+        payload,
+        script_path=__file__,
+        engine="mpmath",
+    )
+    out_path = builder.save()
+    print(f"\n  Wrote {Path(out_path).name}")
     return 0
 
 

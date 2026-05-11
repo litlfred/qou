@@ -46,20 +46,18 @@
       "trust_basis": "script-cited",
       "jet_order": 0,
       "citation": "manuscript:§mass-endomorphism-tower",
-      "notes": "script: folio-assistant/computations/derive_m_n_hecke_path_a.py (neutron-side counterpart of derive_m_p_hecke_path_a.py).  SCRIPT_CITED — the T1+T2+T3+T4 assembly itself awaits its own derivation chain; the current value is T1+T4 only (trustable subset).  Phase A item (50 dps lift) on PR #476 brings each term individually to mpmath precision.  **Precision note**: the stored `output_value` (2.1993461435139010421919127717526077710441538842067) is a 4-sig-fig rounded summary of the upstream pipeline output, kept short for readability in the chain JSON.  The full-precision 50 dps values live in `mass-formula-6term-mpfr-50dps.witness.json`; downstream code that needs >4 sig figs should read from that witness rather than from this chain step.  **ρ_K cross-check (informational)**: the canonical ρ_K path in `atomic-mass-via-rho-k.witness.json` predicts Note on alternative paths: the PR #564 ρ_K^LO path consumes CODATA $m_p$ and $m_n$ to produce 0 ppb residuals for $\\{p, n\\}$ by construction; that path violates the three-calibration discipline (audit doc: docs/audits/2026-05-11-three-calibration-discipline-violations.md). This chain follows the discipline strictly — substrate-only T1+T4, no $m_n$ injection — so the residual is the honest open-R&D delta, not a calibration tautology."
+      "notes": "script: folio-assistant/computations/derive_m_n_hecke_path_a.py (neutron-side counterpart of derive_m_p_hecke_path_a.py).  SCRIPT_CITED — the T1+T2+T3+T4 assembly itself awaits its own derivation chain; the current value is T1+T4 only (trustable subset).  Phase A item (50 dps lift) on PR #476 brings each term individually to mpmath precision.  **Precision note**: the stored `output_value` is a 20-significant-figure decimal string from `mp.nstr(..., 20)` (50-dps full precision lives in the upstream `mass-formula-6term-mpfr-50dps.witness.json`; consumers needing more than 20 sig figs should read that witness directly rather than this chain step).  **Alternative-paths cross-reference**: the PR #564 ρ_K^LO path consumes CODATA $m_p$ and $m_n$ to produce 0 ppb residuals for $\\{p, n\\}$ by construction; that path violates the three-calibration discipline (audit doc: docs/audits/2026-05-11-three-calibration-discipline-violations.md). This chain follows the discipline strictly — substrate-only T1+T4, no $m_n$ injection — so the residual is the honest open-R&D delta, not a calibration tautology."
     },
     {
       "name": "m_e_Hecke (electron mass in cat units, 50 dps)",
       "operation": "Same tower formula applied to the electron's 2-strand atomic braid; 50 dps via the same mpmath pipeline.",
-      "inputs": [
-        "m_n_Hecke"
-      ],
+      "inputs": [],
       "output_name": "m_e_Hecke",
       "output_value": "2.0027223644625536786",
       "trust_basis": "script-cited",
       "jet_order": 0,
       "citation": "manuscript:§mass-endomorphism-tower",
-      "notes": "script: folio-assistant/computations/mass_endomorphism.py electron-tower path.  SCRIPT_CITED until an electron-tr-M-q0 chain ships.  **Precision note**: the stored `output_value` (2.0027223644625536785706018688474338071008612121826) is a 4-sig-fig rounded summary of the upstream pipeline output, kept short for readability in the chain JSON.  Full-precision 50 dps values live in `mass-formula-6term-mpfr-50dps.witness.json`."
+      "notes": "script: folio-assistant/computations/derive_m_e_hecke_path_a.py (electron Path A; consumed via M_HECKE_PIPELINE_AT_Q0['e']).  SCRIPT_CITED until the electron-tr-M-q0 chain ships.  **Precision note**: the stored `output_value` is a 20-significant-figure decimal string from `mp.nstr(..., 20)` (full 50-dps precision lives in the upstream `mass-formula-6term-mpfr-50dps.witness.json`)."
     },
     {
       "name": "Dimensionless mass ratio m_n/m_e at 50 dps",
