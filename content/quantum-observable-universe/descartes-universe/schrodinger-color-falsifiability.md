@@ -122,6 +122,52 @@ confirmed:
 The remaining empirical lever is the *magnitude* of $\eta$, which
 the falsifiability protocol above turns into a single-number test.
 
+**Numerical fit on \cite{bujack2022} Gray-experiment dataset.**
+
+The protocol was executed against the open-source Gray-experiment
+triad-choice data released by \cite{bujack2022}
+($N = 91{,}896$ responses; $75$ unique triads on the achromatic
+$L^{*}$ axis). The QOU model
+$\Delta E_{\mathrm{perc}}(d) = \operatorname{arsinh}(\eta d)/\eta$,
+paired with a Thurstonian probit choice rule with observer noise
+$\sigma$, was fitted by maximum likelihood (two free parameters):
+
+| Quantity | Value |
+|---|---|
+| $\hat{\eta}$ | $0.1256$ |
+| Parametric-bootstrap $95\%$ CI on $\eta$ | $[0.1167,\;0.1366]$ |
+| $\hat{\sigma}$ | $9.16$ on the $L^{*}$ scale |
+| Likelihood-ratio test, QOU vs. Riemannian ($\eta = 0$) | $\chi^{2}_{1} = 888.9$, $p \approx 2.6 \times 10^{-195}$ |
+| QOU prediction $\eta = (q_{0} - q_{0}^{-1})/2$ at $q_{0} \approx 1.1097$ | $0.1043$ |
+| Verdict on the protocol's three-way decision tree | **Confirmation** (CI overlaps the confirmation band $[0.08, 0.13]$) |
+
+The non-Riemannian alternative beats the Riemannian null by $200\sigma$ —
+the single-parameter $\operatorname{arsinh}$ form captures variance
+that Riemannian additivity cannot. The point estimate
+$\hat{\eta} = 0.126$ sits $\sim 20\%$ above the bare-$q_{0}$
+prediction $0.104$, with the bootstrap CI not strictly bracketing
+the prediction. Two non-exclusive interpretations:
+
+1. *Faithful identification with modest renormalization.* The
+   ratio $\hat{\eta}/\eta_{\mathrm{QOU}} \approx 1.20$ is consistent
+   with a small multiplicative renormalization from the
+   chromaticity-projection step (the affine shift $w_{k} - z$ in
+   [the color-tube coordinates](#def:color-tube-coordinates)
+   contracts the simplex by an $O(1)$ factor that has not been
+   computed categorically).
+2. *Spline-vs-rigid $\psi$ misspecification.* \cite{bujack2022}
+   model both the perceptual coordinate $\psi(L)$ and the
+   difference-scaling function $f$ as splines; the fit above pins
+   $\psi(L) = L$ and lets only $f$ deform. A non-linear $\psi$
+   would absorb some apparent $f$-curvature, tightening
+   $\hat{\eta}$ toward $\eta_{\mathrm{QOU}}$.
+
+The witness JSON
+[`schrodinger-color-falsifiability-fit.witness.json`](../../../folio-assistant/computations/schrodinger-color-falsifiability-fit.witness.json)
+records the full fit, bootstrap, and assertion outcomes; the script
+[`schrodinger_color_falsifiability_fit.py`](../../../folio-assistant/computations/schrodinger_color_falsifiability_fit.py)
+is reproducible from the LANL public release.
+
 **Connection to confinement.**
 
 The same deformation parameter $q - q^{-1}$ (equal to $2\eta$ in

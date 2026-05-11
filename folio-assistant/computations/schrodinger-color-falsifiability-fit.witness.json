@@ -1,0 +1,77 @@
+{
+  "engine": "numpy+scipy",
+  "engineVersion": "numpy 2.4.4 scipy scipy",
+  "computedAt": "2026-05-11T21:41:01.687786+00:00",
+  "commitSha": "b30c33df85a99b5bf99eb5ef28622e7f857ad80e",
+  "assertions": [
+    {
+      "name": "non_riemannian_significant",
+      "computed": 2.60015447185162e-195,
+      "expected_lt": 0.001,
+      "passed": true,
+      "source": "schrodinger_color_falsifiability_fit"
+    },
+    {
+      "name": "eta_within_refinement_band",
+      "computed": [
+        0.1166733601068793,
+        0.13661517921994992
+      ],
+      "expected_overlaps": [
+        0.02,
+        0.5
+      ],
+      "passed": true,
+      "source": "schrodinger_color_falsifiability_fit"
+    },
+    {
+      "name": "eta_within_confirmation_band",
+      "computed": [
+        0.1166733601068793,
+        0.13661517921994992
+      ],
+      "expected_overlaps": [
+        0.08,
+        0.13
+      ],
+      "passed": true,
+      "source": "schrodinger_color_falsifiability_fit"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 165308,
+  "computation": "schrodinger-color-falsifiability-fit",
+  "scriptFile": "schrodinger_color_falsifiability_fit.py",
+  "scriptHash": "d7ff2fa43f3c",
+  "scriptCommitSha": "b30c33df85a99b5bf99eb5ef28622e7f857ad80e",
+  "description": "MLE fit of the QOU one-parameter non-Riemannian color-perception model d_perc(d) = arsinh(eta * d) / eta to the Bujack et al. 2022 PNAS Gray-experiment triad-choice dataset (github.com/lanl/color). Two free parameters: eta (substrate deformation, predicted ~0.1043 from q_0 ~ 1.1097) and sigma (Thurstonian observer noise). Reports MLE, parametric bootstrap 95% CI on eta, Riemannian-vs-QOU likelihood-ratio test, and a three-way verdict against the prediction bands in the block.",
+  "contentBlock": "rem:schrodinger-color-falsifiability",
+  "parameters": {
+    "q_0": 1.1097,
+    "eta_QOU_predicted": 0.10427777327205545,
+    "confirmation_band": [
+      0.08,
+      0.13
+    ],
+    "refinement_band": [
+      0.02,
+      0.5
+    ],
+    "n_triads": 91896,
+    "bootstrap_replicates": 200,
+    "choice_sign_convention": -1
+  },
+  "data": {
+    "eta_hat": 0.12555346484488344,
+    "sigma_hat": 9.157823582023994,
+    "eta_ci95": [
+      0.1166733601068793,
+      0.13661517921994992
+    ],
+    "nll_full": 59866.44110354686,
+    "nll_riemannian": 60310.86774647981,
+    "lr_statistic": 888.8532858659019,
+    "lr_pvalue": 2.60015447185162e-195,
+    "verdict": "confirmation"
+  }
+}
