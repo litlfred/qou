@@ -309,6 +309,9 @@ export default chapter({
       blocks: [
         "borromean-baryon",
         "borromean-baryon-interpretation",
+        "borromean-baryon-mass-formula",
+        "delta-skein-substrate-identity",
+        "figure-8-muon-mass-cross-check",
         "typed-crossing-operator",
         "nucleon-hecke-element",
         "hadron-proton-example",
