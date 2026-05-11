@@ -1,0 +1,258 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-11T19:22:21.115047+00:00",
+  "commitSha": "fc936332abcdc3eb1567ff6ff7f47cdc12da9196",
+  "assertions": [
+    {
+      "name": "content_spread_alone_does_not_select_empirical_dominant_D",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "content_spread_alone_does_not_select_empirical_dominant_T",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "content_spread_alone_does_not_select_empirical_dominant_He3",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "selector_must_depend_on_braid_word_not_just_partition_shape",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 13,
+  "computation": "probe-hoefsmit-content-selector",
+  "scriptFile": "probe_hoefsmit_content_selector.py",
+  "scriptHash": "e438eb5426ef",
+  "scriptCommitSha": "unknown",
+  "description": "Hoefsmit content-asymptotic selector test for the per-partition k_λ rule's dominant partition. Computes the content spread Δc_max(λ) = max(j-i) - min(j-i) over cells of each partition of 3A and checks whether the argmax matches the empirically-identified dominant partition from probe_phiq_per_partition_klambda.py. Theoretical basis: Hoefsmit (1974) seminormal-form eigenvalues are q-powers of cell-content differences; max eigenvalue magnitude is bounded above by q^{Δc_max(λ)}. Substrate-only (partition-shape-only); Class C (diagnostic).",
+  "contentBlock": "rem:per-partition-k-lambda-rule",
+  "parameters": {
+    "atoms": [
+      "D",
+      "T",
+      "He3"
+    ],
+    "empirical_dominants_from": "PR #639 cycle 6"
+  },
+  "data": {
+    "per_atom_findings": [
+      {
+        "atom": "D",
+        "n": 6,
+        "empirical_dominant": [
+          2,
+          2,
+          1,
+          1
+        ],
+        "empirical_spread": 4,
+        "max_spread_value": 5,
+        "max_spread_partitions": [
+          [
+            6
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            4,
+            1,
+            1
+          ],
+          [
+            3,
+            1,
+            1,
+            1
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "hoefsmit_predicts_empirical": false,
+        "n_tied_argmax": 6
+      },
+      {
+        "atom": "T",
+        "n": 9,
+        "empirical_dominant": [
+          6,
+          3
+        ],
+        "empirical_spread": 6,
+        "max_spread_value": 8,
+        "max_spread_partitions": [
+          [
+            9
+          ],
+          [
+            8,
+            1
+          ],
+          [
+            7,
+            1,
+            1
+          ],
+          [
+            6,
+            1,
+            1,
+            1
+          ],
+          [
+            5,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            4,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            3,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "hoefsmit_predicts_empirical": false,
+        "n_tied_argmax": 9
+      },
+      {
+        "atom": "He3",
+        "n": 9,
+        "empirical_dominant": [
+          5,
+          4
+        ],
+        "empirical_spread": 5,
+        "max_spread_value": 8,
+        "max_spread_partitions": [
+          [
+            9
+          ],
+          [
+            8,
+            1
+          ],
+          [
+            7,
+            1,
+            1
+          ],
+          [
+            6,
+            1,
+            1,
+            1
+          ],
+          [
+            5,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            4,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            3,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "hoefsmit_predicts_empirical": false,
+        "n_tied_argmax": 9
+      }
+    ],
+    "hoefsmit_match_count": 0,
+    "hoefsmit_match_total": 3,
+    "disposition": "NEGATIVE"
+  }
+}

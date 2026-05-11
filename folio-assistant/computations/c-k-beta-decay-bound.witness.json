@@ -1,0 +1,94 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-11T18:13:59.127738+00:00",
+  "commitSha": "3575499e66db4f632b921402cae16c2b00824a8c",
+  "assertions": [
+    {
+      "name": "geometric_form_equals_exponential_form_to_50dps",
+      "computed": 9.354676485322685e-51,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-40
+    },
+    {
+      "name": "N0_observed_residual_within_per_braid_bound",
+      "computed": 0.16919994952796186,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1.0
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 12,
+  "computation": "c-k-beta-decay-bound",
+  "scriptFile": "c_k_beta_decay_witness.py",
+  "scriptHash": "91143084b7b6",
+  "scriptCommitSha": "unknown",
+  "description": "Substrate-derived dampening rate c(K) for the β-decay operator class. From the per-braid-mass-tower bound |R_N| ≤ ℏ_q^(2(N+1))/(1-ℏ_q²) and the substrate identity ℏ_q = (q_0-1)/q_0, the bound reads exactly C(K)·exp(-c(K)·N) with c(K) = -2 ln ℏ_q ≈ 4.624 and C(K) = ℏ_q²/(1-ℏ_q²) ≈ 0.00991. The observed N=0 residual (+0.168%, +1.31 keV) sits INSIDE the structural ceiling 0.991%, with a ~5.9× headroom. The actual c(K) for the operator may be larger than this ceiling rate — pinning it is the open lift-formula part of brane-tower-z-habiro. Witness CAL-1 + CAL-2 only; no CAL-3 (Q_β) input — N=0 prediction comes from prop:neutron-qvalue-symbolic.",
+  "contentBlock": "conj:archimedean-remainder-exponential-decay",
+  "parameters": {
+    "q_0_50dps": "1.1099785955541805752815940796095093779932822799587",
+    "m_e_MeV": "0.51099895",
+    "Q_beta_codata_MeV": "0.78233341"
+  },
+  "data": {
+    "hbar_q": "0.099081726435698885820014342688412528468474023957784",
+    "hbar_q_sq": "0.0098171885134786714364814119414486823004830901220042",
+    "c_K": "4.6236204996977784565765832853414623806855394993096",
+    "C_K": "0.0099145212374879787647086716795986403752381316747548",
+    "bound_table": [
+      {
+        "N": 0,
+        "bound_geometric": "0.0099145212374879787647086716795986403752381316747548",
+        "bound_exponential": "0.0099145212374879787647086716795986403752381316747548",
+        "ratio_geom_over_exp": "1.0",
+        "bound_pct": 0.9914521237487979,
+        "bound_ppm": 9914.52123748798,
+        "bound_ppb": 9914521.23748798
+      },
+      {
+        "N": 1,
+        "bound_geometric": "0.000097332724009307328227259738149958074755041552750586",
+        "bound_exponential": "0.000097332724009307328227259738149958074755041552750586",
+        "ratio_geom_over_exp": "1.0",
+        "bound_pct": 0.009733272400930732,
+        "bound_ppm": 97.33272400930733,
+        "bound_ppb": 97332.72400930733
+      },
+      {
+        "N": 2,
+        "bound_geometric": "0.00000095553370012976160257755890663283144959020454608996",
+        "bound_exponential": "0.00000095553370012976160257755890663283144959020454608996",
+        "ratio_geom_over_exp": "1.0",
+        "bound_pct": 9.555337001297616e-05,
+        "bound_ppm": 0.9555337001297616,
+        "bound_ppb": 955.5337001297617
+      },
+      {
+        "N": 3,
+        "bound_geometric": "0.000000009380654465155668903100394196119245382522095844271",
+        "bound_exponential": "0.0000000093806544651556689031003941961192453825220958442711",
+        "ratio_geom_over_exp": "0.99999999999999999999999999999999999999999999999999",
+        "bound_pct": 9.380654465155669e-07,
+        "bound_ppm": 0.00938065446515567,
+        "bound_ppb": 9.380654465155668
+      },
+      {
+        "N": 4,
+        "bound_geometric": "0.000000000092091653264238642860320335063431176548804593684902",
+        "bound_exponential": "0.000000000092091653264238642860320335063431176548804593684902",
+        "ratio_geom_over_exp": "1.0",
+        "bound_pct": 9.209165326423864e-09,
+        "bound_ppm": 9.209165326423864e-05,
+        "bound_ppb": 0.09209165326423864
+      }
+    ],
+    "Q_beta_form_a_MeV": "0.78364580284495003723288837004662358622224904295601",
+    "R_0_observed_relative": "0.0016775364929768718849529512572185639141361008166673",
+    "R_0_observed_keV": "1.3123928449500372328883700466235862222490429560071",
+    "R_0_bound_relative": "0.0099145212374879787647086716795986403752381316747548",
+    "margin_observed_over_bound": "0.16919994952796185155758589021986032309870763624332",
+    "speedup_bound_over_observed": "5.9101672476252174102534096844781846072048709638011"
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-11T19:23:26.620035+00:00",
+  "commitSha": "fc936332abcdc3eb1567ff6ff7f47cdc12da9196",
+  "assertions": [
+    {
+      "name": "n12_partitions_count_matches_partition_function_p12",
+      "computed": 77,
+      "expected": 77,
+      "passed": true
+    },
+    {
+      "name": "p4_top_candidate_aspect_in_2_to_3p5_range",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "p1_content_spread_includes_single_row_partition",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 13,
+  "computation": "probe-per-partition-he4-prediction",
+  "scriptFile": "probe_per_partition_he4_prediction.py",
+  "scriptHash": "b678fd2aebc0",
+  "scriptCommitSha": "unknown",
+  "description": "Forward prediction of the ⁴He (A=4, n=12) dominant partition under four substrate-only shape-based selector candidates. Tests P1 (content-spread argmax — already refuted at A=2,3), P2 (rectangular), P3 (self-conjugate max-dim), P4 (pattern-match from low-atom empirical aspect ratio 2.0–3.5). When #638's per-eigenvalue probe is run at n=12, the empirical result will refute or confirm each candidate. Class C (diagnostic / forward prediction).",
+  "contentBlock": "rem:per-partition-k-lambda-rule",
+  "parameters": {
+    "atoms_tested": [
+      "He4"
+    ],
+    "n_partitions_of_12": 77,
+    "empirical_low_atom_dominants": {
+      "D": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "T": [
+        6,
+        3
+      ],
+      "He3": [
+        5,
+        4
+      ]
+    }
+  },
+  "data": {
+    "p1_content_spread_argmax": [
+      [
+        12
+      ],
+      [
+        11,
+        1
+      ],
+      [
+        10,
+        1,
+        1
+      ],
+      [
+        9,
+        1,
+        1,
+        1
+      ],
+      [
+        8,
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "p2_rectangular_aspect_1": [
+      [
+        3,
+        3,
+        3,
+        3
+      ],
+      [
+        4,
+        4,
+        4
+      ],
+      [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        6,
+        6
+      ]
+    ],
+    "p3_self_conjugate_max_dim": [
+      [
+        5,
+        3,
+        2,
+        1,
+        1
+      ],
+      [
+        4,
+        4,
+        2,
+        2
+      ],
+      [
+        6,
+        2,
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "p4_pattern_match_aspect_2_to_3p5": [
+      [
+        6,
+        4,
+        2
+      ],
+      [
+        7,
+        3,
+        2
+      ],
+      [
+        6,
+        3,
+        3
+      ],
+      [
+        7,
+        4,
+        1
+      ],
+      [
+        6,
+        5,
+        1
+      ]
+    ],
+    "p4_top_candidate": [
+      6,
+      4,
+      2
+    ],
+    "confidence_ranking": "P4 (pattern-match from low-atom empirical dominants) > P3 (self-conjugate, Type-B fold-fixed) > P2 (rectangular aspect 1) > P1 (content-spread argmax — REFUTED at A=2,3 per probe_hoefsmit_content_selector.py)",
+    "falsifiability_notes": "When #638's per-eigenvalue probe is run for ⁴He at n=12, compare the empirical dominant against the four candidate lists. At most one will match; if none match, all four shape-only selectors are refuted, confirming the per-partition rule requires a braid-word-aware substrate invariant (consistent with the negative finding of the Hoefsmit content-spread test)."
+  }
+}

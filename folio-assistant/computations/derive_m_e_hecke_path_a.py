@@ -80,6 +80,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 from codata_constants import M_E_MEV  # noqa: E402  (CAL-1)
+from witness_base import WitnessBuilder  # noqa: E402
 
 mp.mp.dps = 50
 
@@ -159,10 +160,7 @@ def main() -> int:
     print(f"    m_e_Hecke (MeV,       partial T1+T4) = {mp.nstr(mp.mpf(e['m_e_hecke_partial']['MeV']), 14)}")
 
     out = {
-        "engine": "mpmath",
-        "engineVersion": "mpmath 1.3.0",
         "computation": "derive-m-e-hecke-path-a",
-        "scriptFile": "derive_m_e_hecke_path_a.py",
         "description": (
             "Workplan 2 Phase 2 — closed-form Path A derivation of "
             "m_e_Hecke at 50 dps for the electron at H_2 from CAL-1 "
@@ -181,8 +179,13 @@ def main() -> int:
         "data": {"electron": e},
     }
 
-    OUT_WITNESS.write_text(json.dumps(out, indent=2))
-    print(f"\n  Wrote {OUT_WITNESS.name}")
+    # Migrated to WitnessBuilder.wrap_legacy (#637 deferred Tier-2,
+    # adopted in PR #639) — adds scriptHash + staleness metadata.
+    saved = WitnessBuilder.wrap_legacy(
+        "electron-m_e-derivation", out,
+        script_path=__file__, engine="mpmath",
+    ).save()
+    print(f"\n  Wrote {saved.name}")
     return 0
 
 

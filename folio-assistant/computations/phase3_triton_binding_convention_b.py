@@ -72,6 +72,7 @@ from hecke_core import (  # noqa: E402
     binding_from_frobenius_pairing,
 )
 from derivation_chain import E_0_CONVENTIONS  # noqa: E402
+from witness_base import WitnessBuilder  # noqa: E402
 
 OUT = HERE / "phase3-triton-binding-convention-b.witness.json"
 
@@ -167,8 +168,11 @@ def main() -> int:
             "rows": rows,
         },
     }
-    OUT.write_text(json.dumps(out, indent=2))
-    print(f"\n  Wrote {OUT.name}")
+    saved = WitnessBuilder.wrap_legacy(
+        "phase3-triton-binding-convention-b", out,
+        script_path=__file__, engine="mpmath",
+    ).save()
+    print(f"\n  Wrote {saved.name}")
 
     # Surface the Triton row prominently
     triton_row = next((r for r in rows if r["atom"] == "T"), None)

@@ -1,0 +1,87 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-11T19:35:16.644025+00:00",
+  "commitSha": "987b2f414367ead380ed9a62d034bfc67982f533",
+  "assertions": [
+    {
+      "name": "lp_cost_argmax_does_not_match_for_D",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "lp_cost_argmax_matches_for_T",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "lp_cost_argmax_does_not_match_for_He3",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 11,
+  "computation": "probe-lp-cost-dominant-partition",
+  "scriptFile": "probe_lp_cost_dominant_partition.py",
+  "scriptHash": "2803d14abe20",
+  "scriptCommitSha": "unknown",
+  "description": "Tests the LP cost argmax hypothesis: dominant partition = argmax_λ |y_λ(q_0) · χ_q^λ(β_atom)|. The LP cost is the objective coefficient in the operator-selection LP (prop:operator-selection-lp). NEGATIVE FINDING: matches only T (1/3 atoms). For D the empirical dominant [2,2,1,1] isn't even in the top-5; for ³He [5,4] ranks 4th. This rules out the simpler LP-cost hypothesis and rules IN the full SDP shadow price y_λ^* (which is structurally different from the cost) as the next selector candidate. Substrate-only data from PR #638's per-eigenvalue probe. Class C.",
+  "contentBlock": "rem:per-partition-k-lambda-rule",
+  "parameters": {
+    "source": "PR #638 probe-phiq-operator-valued.witness.json"
+  },
+  "data": {
+    "per_atom_findings": [
+      {
+        "atom": "D",
+        "empirical_dominant": [
+          2,
+          2,
+          1,
+          1
+        ],
+        "lp_cost_argmax": [
+          5,
+          1
+        ],
+        "lp_cost_argmax_value": 0.189611,
+        "empirical_rank_in_top5": null,
+        "match": false
+      },
+      {
+        "atom": "T",
+        "empirical_dominant": [
+          6,
+          3
+        ],
+        "lp_cost_argmax": [
+          6,
+          3
+        ],
+        "lp_cost_argmax_value": 0.045312,
+        "empirical_rank_in_top5": 1,
+        "match": true
+      },
+      {
+        "atom": "He3",
+        "empirical_dominant": [
+          5,
+          4
+        ],
+        "lp_cost_argmax": [
+          6,
+          3
+        ],
+        "lp_cost_argmax_value": 0.071594,
+        "empirical_rank_in_top5": 4,
+        "match": false
+      }
+    ],
+    "matches": 1,
+    "conclusion": "LP-cost-argmax hypothesis REFUTED. Rules in the full SDP shadow price y_λ^* (operator-selection-sdp's dual variable) as the next selector candidate; the cost is the LP objective coefficient, while the shadow price is the dual marginal price that emerges from primal-dual coupling — distinct objects with different empirical content."
+  }
+}
