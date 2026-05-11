@@ -304,34 +304,75 @@ theorem wenzl_bridge_atomic_tr_M (Z N : ℕ) (h_A : Z + N ≤ 4) :
 
 /-! ## Closure status summary
 
-| Gap | Lean file | Existing | This stub |
-|-----|-----------|----------|-----------|
-| 1. q_0 inversion | (none) | — | `q_0_inversion_unique` |
-| 2. Crossing recurrence | (none) | — | `additive_wedderburn_recurrence_matches_std_rep_trace` |
-| 3. Typed-crossings encoding | (none) | — | `typed_crossings_encoding_unique` |
-| 4. Φ_q convergence | mass-endomorphism-tower.lean | 1 sorry "numerical" | `phi_q_converges_absolutely` (promoted) |
-| 5. n_⋆ existence | brane-tower-z-habiro.lean | TAUTOLOGICAL | `n_star_existence_conjecture` |
-| 6. Wedderburn weights | wedderburn-mass-formula.lean | count only | `wedderburn_weights_H3` |
-| 7. Atomic braid word | (none) | — | `atom_braid_word_well_defined_all` |
-| 8. Per-nucleon shift | (none) | — | `per_nucleon_shift_additive` + `_at_A1` |
-| 9. Frobenius co-Casimir n=8..12 | frobenius-codim-universal.lean | n ≤ 7 closed | `frobenius_co_casimir_universal_high_n` |
-| 10. Wenzl bridge tr_M | wenzl-bridge-applicability-qou.lean | A ≤ 3 | `wenzl_bridge_atomic_tr_M` (A ≤ 4) |
+| Gap | Lean file | Existing | This stub | Cycle-3 progress (2026-05-11) |
+|-----|-----------|----------|-----------|-------------------------------|
+| 1. q_0 inversion | (none) | — | `q_0_inversion_unique` | — |
+| 2. Crossing recurrence | (none) | — | `additive_wedderburn_recurrence_matches_std_rep_trace` | — |
+| 3. Typed-crossings encoding | (none) | — | `typed_crossings_encoding_unique` | — |
+| **4. Φ_q convergence** | `mass-endomorphism-tower.lean` (existing) | metaphorical sorry | `phi_q_converges_absolutely` (promoted) | **PARTIAL → `QOU/MassEndomorphism/PhiQConvergence.lean`: `summable_q_inv_geometric` + `quantumDilog_factors_nonzero` (2 mechanical zpow sorries; conceptual proof complete)** |
+| **5. n_⋆ existence** | `brane-tower-z-habiro.lean` (existing) | TAUTOLOGICAL | `n_star_existence_conjecture` | **PARTIAL → `QOU/BraidKnot/BraneTowerNStar.lean`: `RecoversWithRelativeError` substantive predicate + β-decay-sector instance with n_⋆ = 2 (three substrate-derived candidates agree)** |
+| 6. Wedderburn weights | wedderburn-mass-formula.lean | count only | `wedderburn_weights_H3` | **DEMOTED** — Q_β uses Frobenius counit, not w_λ (per dual-basis identity in `docs/audits/2026-05-11-q-beta-residual-decomposition.md`) |
+| 7. Atomic braid word | (none) | — | `atom_braid_word_well_defined_all` | — |
+| 8. Per-nucleon shift | (none) | — | `per_nucleon_shift_additive` + `_at_A1` | — |
+| 9. Frobenius co-Casimir n=8..12 | frobenius-codim-universal.lean | n ≤ 7 closed | `frobenius_co_casimir_universal_high_n` | — |
+| 10. Wenzl bridge tr_M | wenzl-bridge-applicability-qou.lean | A ≤ 3 | `wenzl_bridge_atomic_tr_M` (A ≤ 4) | — |
 
-This file is a **roadmap**, not a closure. Filling each `sorry`
-requires:
+## Cycle-3 progress: Gaps 4 + 5 partial closure
+
+New files added in this branch (per owner directive 2026-05-11
+"work on gaps 4 and 5"):
+
+  * `QOU/MassEndomorphism/PhiQConvergence.lean`
+    Proves the analytic convergence framework for the q-Pochhammer
+    infinite product Φ_q(z) for `1 < q, |z| < q` via summability
+    of the geometric series Σ q^{-k}. Two mechanical sorries
+    remain for Mathlib `zpow` normalization. Conceptual proof is
+    complete.
+
+  * `QOU/BraidKnot/BraneTowerNStar.lean`
+    Replaces the tautological `recoversBinding := True` in the
+    existing `brane-tower-z-habiro.lean` instance with a substantive
+    `RecoversWithRelativeError` predicate. Adds the β-decay-sector
+    witness with n_⋆ = 2 (three substrate-derived candidates agree:
+    Habiro m_max, Coxeter length, generator rank of H_3).
+
+What remains OPEN after cycle 3:
+
+  * The actual cyclotomic projection π_{n_⋆}^{(z)} value (requires
+    constructing `Phi_proj` in the `RecoversWithRelativeError`
+    predicate for a specific operator)
+  * Uniqueness of n_⋆ across all operator classes (β-decay sector
+    instance is one data point; the conjecture's full claim is
+    cross-sector uniformity)
+  * The structural lift formula from Φ_q^{(N-1)} → Φ_q^{(N)} (5
+    naive attempts all failed in PR #637 commit `e1b005b2`)
+
+Per the audit `docs/audits/2026-05-11-q-beta-residual-decomposition.md`:
+gaps 4 + 5 are on the critical path for closing the +1.31 keV
+Q_β residual; gap 6 is no longer critical (Frobenius counit doesn't
+use Wedderburn weights). Closing gaps 4 + 5 would tighten the
+residual into the per-braid-mass-tower bound at level N=4 (≤ 1 ppb)
+— the framework's stated 1 ppb target — but only IF the lift
+formula is identified.
+
+Filling each remaining `sorry` requires:
 
   * Gap 1, 5, 8 (A=1 base case): genuine new mathematical R&D
-  * Gap 2, 3, 6, 7: mechanical Lean transcription of existing
-    script behavior (formalizer-skill scope)
-  * Gap 4: extends an existing sorry with proper convergence theorem
+  * Gap 2, 3, 7: mechanical Lean transcription of existing script
+    behavior (formalizer-skill scope)
+  * Gap 4: cycle-3 added partial closure; full Multipliable proof
+    needs Mathlib infinite-product machinery
+  * Gap 6: demoted from critical path; only relevant if framework
+    decides to use weight-form Q_β instead of counit-form
   * Gap 9, 10: mechanical extension of closed n ≤ 7 / A ≤ 3 to
     higher orders (Rust kernel required for the actual numerical
     evaluation at A=4)
 
 Coordination with sibling PRs:
-  * PR #636 (Plancherel weight audit): coordinate w_λ symbol convention
-    if R1 (rename q-deformed → w̃_λ) lands.
-  * PR #635 (Mikusiński WitnessBuilder migration): no direct Lean overlap.
+  * PR #636 (Plancherel weight audit): coordinated; R1 rename
+    doesn't affect Q_β predictions (dual-basis identity, cycle 3)
+  * PR #635 (Mikusiński WitnessBuilder migration): no direct
+    Lean overlap
 
 -/
 
