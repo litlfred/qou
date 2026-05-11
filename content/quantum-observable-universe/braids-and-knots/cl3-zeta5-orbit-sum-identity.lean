@@ -1,0 +1,11 @@
+-- Sibling docstub for `prop:cl3-zeta5-orbit-sum-identity`.
+--
+-- This file is documentation only.  The compiled formalisation
+-- lives in the Lake-built tree at:
+--
+--   lean/QOU/BraidKnot/Cl3Zeta5OrbitSum.lean
+--
+-- See `QOU.BraidKnot.Cl3Zeta5OrbitSum.orbit_sum_identity`.
+--
+-- See the chapter umbrella `lean/QOU/BraidKnot.lean`
+-- for the import wiring.

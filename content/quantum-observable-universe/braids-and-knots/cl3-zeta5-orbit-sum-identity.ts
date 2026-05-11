@@ -4,6 +4,10 @@ export default proposition({
   label: "prop:cl3-zeta5-orbit-sum-identity",
   title:
     "Cl$_3$(2$\\pi$/5) + Cl$_3$(4$\\pi$/5) = $-$(12/25)$\\zeta$(3) — depth-3 reduces to a 1-dim antisymmetric generator",
+  lean: {
+    ref: "qou:QOU.BraidKnot.Cl3Zeta5OrbitSum.orbit_sum_identity",
+    validation: "not_checked",
+  },
   computation: {
     engine: "mpmath",
     script: "folio-assistant/computations/cl3_zeta5_orbit_sum.py",

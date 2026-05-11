@@ -1,19 +1,19 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-11T17:08:42.896678+00:00",
-  "commitSha": "248f7c547ab0e432e262056b2455999bdf5ec7e5",
+  "computedAt": "2026-05-11T21:07:45.137083+00:00",
+  "commitSha": "0cd7c9025544d627b5bddea3222a5ca866e01d64",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 11,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "b540c436e909",
-  "scriptCommitSha": "ff32c71cb29854910445b88b522c54653824081f",
+  "scriptCommitSha": "1f8c93034a3e556746a4c098ae7e7b70932af450",
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 370,
+    "files_scanned": 374,
     "patterns": [
       "P15",
       "P16",
@@ -26,7 +26,7 @@
       "P15": 107,
       "P16": 85,
       "P21": 18,
-      "P30": 107
+      "P30": 102
     },
     "top_files": [
       {
@@ -429,13 +429,6 @@
       },
       {
         "pattern": "P30",
-        "file": "bring_trilog_zeta5_depth_3.py",
-        "line": 1,
-        "snippet": "json.dump → .witness.json without WitnessBuilder",
-        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
-      },
-      {
-        "pattern": "P30",
         "file": "bw_chirality_isotopes.py",
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
@@ -475,20 +468,6 @@
         "line": 1,
         "snippet": "Hoefsmit construction without BlockCache",
         "note": "syt_prefix_cache.BlockCache caches block values by content distance ρ; precomputed SYT→index dict eliminates O(d_λ²) swap-partner search. Numerical-q callers can wire it directly. Ref: ocneanu_weights.py wiring."
-      },
-      {
-        "pattern": "P30",
-        "file": "cl3_zeta5_orbit_sum.py",
-        "line": 1,
-        "snippet": "json.dump → .witness.json without WitnessBuilder",
-        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
-      },
-      {
-        "pattern": "P30",
-        "file": "cl3_zeta5_pslq_search.py",
-        "line": 1,
-        "snippet": "json.dump → .witness.json without WitnessBuilder",
-        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
       },
       {
         "pattern": "P30",
@@ -717,13 +696,6 @@
       {
         "pattern": "P30",
         "file": "garside-irrep-qvalues.py",
-        "line": 1,
-        "snippet": "json.dump → .witness.json without WitnessBuilder",
-        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
-      },
-      {
-        "pattern": "P30",
-        "file": "gb_depth_period_bring_fig8.py",
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
@@ -1207,13 +1179,6 @@
       {
         "pattern": "P30",
         "file": "knot-operator-table.py",
-        "line": 1,
-        "snippet": "json.dump → .witness.json without WitnessBuilder",
-        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
-      },
-      {
-        "pattern": "P30",
-        "file": "kummer_reflection_zeta5.py",
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."

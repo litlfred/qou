@@ -1,0 +1,11 @@
+-- Sibling docstub for `prop:cyclotomic-dimension-synthesis-all-depths`.
+--
+-- This file is documentation only.  The compiled formalisation
+-- lives in the Lake-built tree at:
+--
+--   lean/QOU/BraidKnot/CyclotomicDimensionSynthesisAllDepths.lean
+--
+-- See `QOU.BraidKnot.CyclotomicDimensionSynthesisAllDepths.dimension_synthesis_all_depths`.
+--
+-- See the chapter umbrella `lean/QOU/BraidKnot.lean`
+-- for the import wiring.

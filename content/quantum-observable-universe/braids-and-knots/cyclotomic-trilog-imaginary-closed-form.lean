@@ -1,0 +1,11 @@
+-- Sibling docstub for `prop:cyclotomic-trilog-imaginary-closed-form`.
+--
+-- This file is documentation only.  The compiled formalisation
+-- lives in the Lake-built tree at:
+--
+--   lean/QOU/BraidKnot/CyclotomicTrilogImaginary.lean
+--
+-- See `QOU.BraidKnot.CyclotomicTrilogImaginary.closed_form_holds`.
+--
+-- See the chapter umbrella `lean/QOU/BraidKnot.lean`
+-- for the import wiring.

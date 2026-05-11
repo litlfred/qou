@@ -40,12 +40,13 @@ Outputs ``gb-depth-period-bring-fig8.witness.json`` next to this file.
 """
 from __future__ import annotations
 
-import json
+import time
 from datetime import datetime, timezone
-from pathlib import Path
 
 from mpmath import mp, mpf, mpc, pi, exp, polylog, im, arg, log, sin
 from mpmath import fabs as mpabs
+
+from witness_base import WitnessBuilder
 
 # 50-decimal-digit working precision (matches q_pinning_50_digit.py).
 mp.dps = 50
@@ -74,35 +75,39 @@ def clausen_series(theta: mpf, terms: int = 200) -> mpf:
     return s
 
 
-# ── shape parameter for the figure-8 ideal tetrahedron ─────────────
-THETA = pi / 3
-Z_FIG8 = exp(mpc(0, 1) * THETA)
-
-# ── algebraic side (path A): Bloch–Wigner via mpmath polylog ───────
-D_VIA_POLYLOG = bloch_wigner(Z_FIG8)            # = Cl_2(pi/3)
-ALG_VIA_POLYLOG = mpf(2) * D_VIA_POLYLOG        # = Vol(4_1)
-
-# ── algebraic side (path B): direct Clausen-series cross-check ─────
-# Cross-validates the polylog routine.  At 200 terms the series tail
-# is bounded by sum_{k>200} 1/k^2 < 5e-3 — too coarse for 50 digits,
-# so we bump terms until the tail is below the working precision.
-D_VIA_CLAUSEN = clausen_series(THETA, terms=2_000_000)
-ALG_VIA_CLAUSEN = mpf(2) * D_VIA_CLAUSEN
-
-# Sanity-check residual (expect ~1e-13 at 2M terms, not 50-digit).
-CROSS_RESIDUAL = mpabs(ALG_VIA_POLYLOG - ALG_VIA_CLAUSEN)
-
-# ── depth correspondence (structural) ──────────────────────────────
-# Vol(4_1) = 2 D(e^{i pi/3}) = 2 Im Li_2(e^{i pi/3}).
-# Number of dilog factors = 1 ⇒ iterated-integral depth = 2.
-# Goncharov period filtration: hyperbolic 3-mfld volumes are weight-2
-# (Bloch regulator on K_3^{ind}(C) ⊗ Q -> R/(2 pi i)^2 Q).
-ITERATED_INTEGRAL_DEPTH = 2
-GONCHAROV_PERIOD_DEPTH = 2
-DEPTH_MATCH = ITERATED_INTEGRAL_DEPTH == GONCHAROV_PERIOD_DEPTH
-
-
 def main() -> None:
+    # Capture start time BEFORE the heavy computation (incl. 2M-term
+    # Clausen series) so the witness's `durationMs` reflects real
+    # runtime (Copilot PR #635 review).
+    start = time.monotonic()
+
+    # ── shape parameter for the figure-8 ideal tetrahedron ────
+    THETA = pi / 3
+    Z_FIG8 = exp(mpc(0, 1) * THETA)
+
+    # ── algebraic side (path A): Bloch–Wigner via mpmath polylog
+    D_VIA_POLYLOG = bloch_wigner(Z_FIG8)            # = Cl_2(pi/3)
+    ALG_VIA_POLYLOG = mpf(2) * D_VIA_POLYLOG        # = Vol(4_1)
+
+    # ── algebraic side (path B): direct Clausen-series sanity ─
+    # Tail decays like 1/N (1/k^2 with sin bounded by 1), so 2M
+    # terms gives ~13-digit precision — sanity check at SnapPy
+    # range, NOT 50-digit cross-validation.
+    D_VIA_CLAUSEN = clausen_series(THETA, terms=2_000_000)
+    ALG_VIA_CLAUSEN = mpf(2) * D_VIA_CLAUSEN
+
+    # Sanity-check residual (expect ~1e-13 at 2M terms).
+    CROSS_RESIDUAL = mpabs(ALG_VIA_POLYLOG - ALG_VIA_CLAUSEN)
+
+    # ── depth correspondence (structural) ─────────────────────
+    # Vol(4_1) = 2 D(e^{i pi/3}) = 2 Im Li_2(e^{i pi/3}).
+    # Number of dilog factors = 1 ⇒ iterated-integral depth = 2.
+    # Goncharov period filtration: hyperbolic 3-mfld volumes are
+    # weight-2 (Bloch regulator on K_3^{ind}(C) ⊗ Q -> R/(2 pi i)^2 Q).
+    ITERATED_INTEGRAL_DEPTH = 2
+    GONCHAROV_PERIOD_DEPTH = 2
+    DEPTH_MATCH = ITERATED_INTEGRAL_DEPTH == GONCHAROV_PERIOD_DEPTH
+
     print("=" * 72)
     print("graded-Mikusiński depth-2 witness — figure-8 / Bring")
     print("=" * 72)
@@ -204,8 +209,18 @@ def main() -> None:
             "two filtrations is a follow-up open question."
         ),
     }
-    out = Path(__file__).parent / "gb-depth-period-bring-fig8.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    # WitnessBuilder.wrap_legacy preserves on-disk layout while adding
+    # canonical metadata.  `_start_time` override captures real
+    # compute runtime (incl. the 2M-term Clausen loop) per
+    # Copilot PR #635 review.
+    builder = WitnessBuilder.wrap_legacy(
+        "gb-depth-period-bring-fig8",
+        witness,
+        script_path=__file__,
+        engine="mpmath",
+        start_time=start,
+    )
+    out = builder.save()
     print(f"\nwitness: {out}")
 
 

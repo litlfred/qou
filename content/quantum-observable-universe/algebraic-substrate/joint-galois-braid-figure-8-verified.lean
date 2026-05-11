@@ -1,0 +1,11 @@
+-- Sibling docstub for `prop:joint-galois-braid-figure-8-verified`.
+--
+-- This file is documentation only.  The compiled formalisation
+-- lives in the Lake-built tree at:
+--
+--   lean/QOU/AlgebraicSubstrate/JointGaloisBraidFigure8.lean
+--
+-- See `QOU.AlgebraicSubstrate.JointGaloisBraidFigure8.figure_8_joint_action`.
+--
+-- See the chapter umbrella `lean/QOU/AlgebraicSubstrate.lean`
+-- for the import wiring.

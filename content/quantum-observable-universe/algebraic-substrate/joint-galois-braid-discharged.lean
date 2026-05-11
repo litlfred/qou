@@ -1,0 +1,11 @@
+-- Sibling docstub for `prop:joint-galois-braid-discharged`.
+--
+-- This file is documentation only.  The compiled formalisation
+-- lives in the Lake-built tree at:
+--
+--   lean/QOU/AlgebraicSubstrate/JointGaloisBraidDischarged.lean
+--
+-- See `QOU.AlgebraicSubstrate.JointGaloisBraidDischarged.joint_action_discharged`.
+--
+-- See the chapter umbrella `lean/QOU/AlgebraicSubstrate.lean`
+-- for the import wiring.

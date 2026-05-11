@@ -1,7 +1,17 @@
 {
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-05-11T00:44:27.772342+00:00",
+  "commitSha": "77083bddbf3a2b52b2fdb80414d0446d7433197b",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 17,
   "computation": "bring-trilog-zeta5-depth-3",
-  "description": "Depth-3 numerical witness for conj:bring-trilog-depth-3-witness \u2014 the depth-3 instance of the keystone conjecture conj:gb-depth-period-correspondence.  Computes Li_3 at the primitive 5th root of unity zeta_5 (Bring-natural input via S_5 symmetry of Bring's curve).  Real and imaginary parts both lie in weight-3 Goncharov period class P_3/P_2.  Cross-validated by the Bring-orbit sum identity sum_{k=1}^4 Li_3(zeta_5^k) = (5^{-2} - 1) * zeta(3), which agrees to better than 1e-45 at 50 dps.",
-  "timestamp": "2026-05-10T06:03:07.513521+00:00",
+  "scriptFile": "bring_trilog_zeta5_depth_3.py",
+  "scriptHash": "7a4ab31ac508",
+  "scriptCommitSha": "77083bddbf3a2b52b2fdb80414d0446d7433197b",
+  "description": "Depth-3 numerical witness for conj:bring-trilog-depth-3-witness — the depth-3 instance of the keystone conjecture conj:gb-depth-period-correspondence.  Computes Li_3 at the primitive 5th root of unity zeta_5 (Bring-natural input via S_5 symmetry of Bring's curve).  Real and imaginary parts both lie in weight-3 Goncharov period class P_3/P_2.  Cross-validated by the Bring-orbit sum identity sum_{k=1}^4 Li_3(zeta_5^k) = (5^{-2} - 1) * zeta(3), which agrees to better than 1e-45 at 50 dps.",
+  "timestamp": "2026-05-11T00:44:27.766354+00:00",
   "precision_decimal_digits": 50,
   "shape_parameter": {
     "form": "e^(2 pi i / 5)",
@@ -18,7 +28,7 @@
   },
   "reference_depth_3_period": {
     "zeta_3": "1.2020569031595942853997381615114499907649862923405",
-    "name": "Ap\u00e9ry's constant"
+    "name": "Apéry's constant"
   },
   "functional_equation_cross_check": {
     "identity": "sum_{k=1}^{N-1} Li_n(zeta_N^k) = (N^{1-n} - 1) zeta(n)",

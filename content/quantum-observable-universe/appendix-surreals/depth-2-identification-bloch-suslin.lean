@@ -1,0 +1,11 @@
+-- Sibling docstub for `prop:depth-2-identification-bloch-suslin`.
+--
+-- This file is documentation only.  The compiled formalisation
+-- lives in the Lake-built tree at:
+--
+--   lean/QOU/AppendixSurreals/Depth2IdentificationBlochSuslin.lean
+--
+-- See `QOU.AppendixSurreals.Depth2IdentificationBlochSuslin.depth_2_identification`.
+--
+-- See the chapter umbrella `lean/QOU/AppendixSurreals.lean`
+-- for the import wiring.

@@ -1,0 +1,11 @@
+-- Sibling docstub for `prop:bring-trilog-imaginary-tate-rational`.
+--
+-- This file is documentation only.  The compiled formalisation
+-- lives in the Lake-built tree at:
+--
+--   lean/QOU/BraidKnot/BringTrilogImaginaryTateRational.lean
+--
+-- See `QOU.BraidKnot.BringTrilogImaginaryTateRational.im_li3_zeta5_closed_form`.
+--
+-- See the chapter umbrella `lean/QOU/BraidKnot.lean`
+-- for the import wiring.

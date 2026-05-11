@@ -406,6 +406,15 @@ export default chapter({
         "cl3-zeta5-orbit-sum-identity",
         // PSLQ certifies Cl_3(2π/5) - Cl_3(4π/5) is irreducible at 10^8.
         "cl3-zeta5-pslq-independence",
+        // General cyclotomic theorems generalising rounds 10-11.
+        "cyclotomic-trilog-imaginary-closed-form",
+        "cyclotomic-cl3-orbit-sum-general",
+        // Dimension synthesis: (K-3)/2 genuinely-new at each prime K.
+        "cyclotomic-depth3-dimension-synthesis",
+        // General-depth theorems: Jonquière Tate-rationality + orbit-sum + dim.
+        "jonquiere-cyclotomic-tate-rationality",
+        "cyclotomic-orbit-sum-all-depths",
+        "cyclotomic-dimension-synthesis-all-depths",
         // Hecke-algebra Baer-* foundation (generic q).
         "hecke-baer-star-generic",
         // Explicit central primitive idempotents via Murphy elements.

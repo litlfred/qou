@@ -1,0 +1,11 @@
+-- Sibling docstub for `prop:borel-partial-resolution`.
+--
+-- This file is documentation only.  The compiled formalisation
+-- lives in the Lake-built tree at:
+--
+--   lean/QOU/AppendixSurreals/BorelPartialResolution.lean
+--
+-- See `QOU.AppendixSurreals.BorelPartialResolution.borel_partial`.
+--
+-- See the chapter umbrella `lean/QOU/AppendixSurreals.lean`
+-- for the import wiring.
