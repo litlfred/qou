@@ -20,14 +20,22 @@ the FULL form below.
 ══════════════════════════════════════════════════════════════════
 
 The β-decay Q-value is a FRAMEWORK PREDICTION (not a calibration
-input) via:
+input) via the symbolic single-wrap closed form:
 
-    E_0 = m_e / (q_0 · (q_0 - 1)) = m_e · c_q² · ℏ_q   ≈ 4.186 MeV
+    Q_β = m_e · |q_0² - 2 q_0 - 1| · (q_0 + 1) / (2 q_0³)
+                                                  ≈ 0.7836 MeV
+                                              (vs CODATA 0.7823; 0.168% err)
 
 (uses CAL-1 m_e and CAL-2 q_0 only; CAL-3 Q_β is the OUTPUT)
 
-    Q_β = |Δ(net)| · E_0                          ≈ 0.788 MeV
-                                              (vs CODATA 0.782; 0.75% err)
+The +1.31 keV residual is the brane-tower truncation residual at
+N=0; exact tower-summed E_0 closes it (Workplan 2 Phase 2).
+
+LEGACY typed-crossings form (kept for cross-check only):
+
+    E_0 = m_e / (q_0 · (q_0 - 1)) = m_e · c_q² · ℏ_q   ≈ 4.186 MeV
+    Q_β = |Δ(net)| · E_0                              ≈ 0.788 MeV
+                                                  (vs CODATA 0.782; 0.75% err)
 
 with Δ(net) = net(n) - net(p) the difference of GS-NF coefficient
 sums between the canonical neutron and proton braids

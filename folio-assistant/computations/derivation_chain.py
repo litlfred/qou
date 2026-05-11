@@ -189,7 +189,7 @@ class _PathADict(dict):
         return super().values()
 
 
-M_HECKE_PIPELINE_AT_Q0: dict[str, float] = _PathADict()
+M_HECKE_PIPELINE_AT_Q0: dict[str, mp.mpf] = _PathADict()
 
 
 # ── E_0 conventions registry ───────────────────────────────────
