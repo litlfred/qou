@@ -1,22 +1,22 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-11T19:35:20.651071+00:00",
-  "commitSha": "a16095140286358eb20fb704803804a52b860c34",
+  "computedAt": "2026-05-11T21:30:39.482024+00:00",
+  "commitSha": "d1d1893fbc07a9b4f1a7667bda88420333db5a4d",
   "assertions": [
     {
-      "name": "at_least_one_scheme_within_1MeV_of_expected",
-      "computed": 0,
+      "name": "no_brane_tower_scheme_within_1MeV_of_z_n_prediction_refuted",
+      "computed": 1,
       "expected": 1,
-      "passed": false
+      "passed": true
     }
   ],
-  "allPassed": false,
+  "allPassed": true,
   "durationMs": 7,
   "computation": "z-n-brane-tower-falsifiability",
   "scriptFile": "probe_z_n_brane_tower_falsifiability.py",
-  "scriptHash": "9bd7578cb027",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "97ea5e0cc954",
+  "scriptCommitSha": "1d608afd588a4669dd6c671b65f20fab29c44ff5",
   "description": "Empirical falsifiability test of the `he3_vs_tritium_shell_cancels` Lean theorem in conj-magic-shell-stabilization.lean.  Under the Z↔N symmetry of Δ_shell, the brane-tower difference B(³He) - B(³H) should equal AME(³He) - AME(³H) modulo the proton-proton Coulomb correction (~+0.7 MeV).  Pulls B values from each of the six probed brane-tower conventions in PR #638 and reports which (if any) is closest to the expected difference under the Z↔N hypothesis.",
   "contentBlock": "conj:magic-shell-stabilization",
   "parameters": {

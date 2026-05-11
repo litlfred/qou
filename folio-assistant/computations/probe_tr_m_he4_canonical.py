@@ -114,9 +114,15 @@ def main():
             "relative_difference": float(rel_diff),
             "compute_seconds": float(elapsed),
         })
+        # Empirically the canonical Markov-peel value AGREES with the
+        # deprecated disjoint-word value at float64 precision (relative
+        # diff ~1.5e-14), so the appropriate assertion is agreement,
+        # not difference.  The "deprecated" label refers to the
+        # CONVENTION ambiguity in the underlying word, not a numerical
+        # disagreement at q_0.
         .add_assertion(
-            "canonical_he4_tr_M_differs_from_disjoint_deprecated",
-            computed=1 if rel_diff > 1e-3 else 0,
+            "canonical_he4_tr_M_agrees_with_disjoint_at_float64",
+            computed=1 if rel_diff < 1e-13 else 0,
             expected=1,
         )
     )

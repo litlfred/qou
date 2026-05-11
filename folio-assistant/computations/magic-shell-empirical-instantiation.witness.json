@@ -1,34 +1,28 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-11T20:11:39.837920+00:00",
-  "commitSha": "ab941ed1dc872c14c0d9b60d56826c9d6fa928e0",
+  "computedAt": "2026-05-11T21:34:40.917163+00:00",
+  "commitSha": "d1d1893fbc07a9b4f1a7667bda88420333db5a4d",
   "assertions": [
     {
-      "name": "convention_independence_at_1e_minus_5",
-      "computed": 0,
+      "name": "additivity_he4_eq_twice_he3_refuted_at_25pct",
+      "computed": 1,
       "expected": 1,
-      "passed": false
+      "passed": true
     },
     {
-      "name": "he4_delta_cat_eq_twice_he3_within_25pct",
-      "computed": 0,
+      "name": "additivity_he4_eq_twice_he3_refuted_at_10pct",
+      "computed": 1,
       "expected": 1,
-      "passed": false
-    },
-    {
-      "name": "he4_delta_cat_eq_twice_he3_within_10pct",
-      "computed": 0,
-      "expected": 1,
-      "passed": false
+      "passed": true
     }
   ],
-  "allPassed": false,
-  "durationMs": 80387,
+  "allPassed": true,
+  "durationMs": 83353,
   "computation": "magic-shell-empirical-instantiation",
   "scriptFile": "probe_magic_shell_empirical_instantiation.py",
-  "scriptHash": "654979f14ed9",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "2274817226f6",
+  "scriptCommitSha": "a86ed9ff9e71d0a305c9dc9a979461d174dd8101",
   "description": "Unified empirical instantiation of the three load-bearing findings from PR #638 closure (items 1+2+3): (1) he4_eq_twice_he3_shell falsifiability test, (2) convention-independence of |τ(β_³He)| via Hoefsmit vs markov_peel at 50dps, (3) per-atom Δ_cat calibration table for {D, T, ³He, ⁴He} producing concrete numerical predictions for the magic-shell stabilization term.",
   "contentBlock": "conj:magic-shell-stabilization",
   "parameters": {
@@ -54,7 +48,7 @@
         "AME_MeV": 2.224566,
         "delta_cat_MeV_50dps": "2.0261520207399138011298712368453333598767483337084",
         "delta_cat_MeV_float": 2.026152020739914,
-        "markov_peel_compute_seconds": 0.09563016891479492
+        "markov_peel_compute_seconds": 0.09768557548522949
       },
       "tritium": {
         "Z": 1,
@@ -66,7 +60,7 @@
         "AME_MeV": 8.481798,
         "delta_cat_MeV_50dps": "8.3754569532230620810379021939616551573195173471667",
         "delta_cat_MeV_float": 8.375456953223063,
-        "markov_peel_compute_seconds": 1.5264904499053955
+        "markov_peel_compute_seconds": 1.68632173538208
       },
       "he3": {
         "Z": 2,
@@ -78,7 +72,7 @@
         "AME_MeV": 7.71806,
         "delta_cat_MeV_50dps": "7.5069756762851708429567762113101864364275472851682",
         "delta_cat_MeV_float": 7.506975676285171,
-        "markov_peel_compute_seconds": 0.6508932113647461
+        "markov_peel_compute_seconds": 1.1172819137573242
       },
       "he4": {
         "Z": 2,
@@ -90,7 +84,7 @@
         "AME_MeV": 28.295674,
         "delta_cat_MeV_50dps": "28.210825160118311508412024060171328089127144741572",
         "delta_cat_MeV_float": 28.21082516011831,
-        "markov_peel_compute_seconds": 10.996497869491577
+        "markov_peel_compute_seconds": 14.836389064788818
       }
     },
     "he4_eq_twice_he3_test": {

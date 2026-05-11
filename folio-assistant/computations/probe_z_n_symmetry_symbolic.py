@@ -84,7 +84,7 @@ def main():
     div_pp = SymbolicHeckeDivision()
     elem_pp = incremental_reduced_element(word_pp, div=div_pp)
     chi_pp_sym = tr_M_element(elem_pp, n=9, simplify=False)
-    chi_pp_simplified = sp.simplify(chi_pp_sym)
+    chi_pp_simplified = sp.cancel(chi_pp_sym)
     print(f"      reduced terms in elem: {len(elem_pp.terms)}")
     print(f"      tr_M(σ_pp) symbolic: {chi_pp_simplified}")
     print()
@@ -96,13 +96,13 @@ def main():
     div_nn = SymbolicHeckeDivision()
     elem_nn = incremental_reduced_element(word_nn, div=div_nn)
     chi_nn_sym = tr_M_element(elem_nn, n=9, simplify=False)
-    chi_nn_simplified = sp.simplify(chi_nn_sym)
+    chi_nn_simplified = sp.cancel(chi_nn_sym)
     print(f"      reduced terms in elem: {len(elem_nn.terms)}")
     print(f"      tr_M(σ_nn) symbolic: {chi_nn_simplified}")
     print()
 
     # ── Z↔N symmetry test (LITERAL symbolic equality) ─────────────────
-    diff_sym = sp.simplify(chi_pp_simplified - chi_nn_simplified)
+    diff_sym = sp.cancel(chi_pp_simplified - chi_nn_simplified)
     z_n_equal_symbolically = (diff_sym == 0)
     print(f"  Z↔N SYMBOLIC EQUALITY: tr_M(σ_pp) == tr_M(σ_nn) → "
           f"{z_n_equal_symbolically}")
@@ -126,7 +126,7 @@ def main():
     print("      (recursive symbolic, no Hoefsmit matrices)")
     try:
         tr_he4_sym = tr_M_atomic(2, 2, include_inter=True)
-        tr_he4_simplified = sp.simplify(tr_he4_sym) if not isinstance(
+        tr_he4_simplified = sp.cancel(tr_he4_sym) if not isinstance(
             tr_he4_sym, (int, float, sp.Integer, sp.Rational)
         ) else tr_he4_sym
         tr_he4_at_q0 = (

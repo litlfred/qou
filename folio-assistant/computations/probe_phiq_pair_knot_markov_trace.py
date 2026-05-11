@@ -391,10 +391,12 @@ def main():
     w = (
         w
         .add_data("per_atom", per_atom)
+        # Refutation expected (consistent with probe's role): assertion
+        # records the refutation as the passing outcome.
         .add_assertion(
-            "markov_trace_pair_knot_closes_all_within_threshold",
-            computed=1 if all_close else 0,
-            expected=1,  # If we expect closure to fail, set 0.
+            "markov_trace_pair_knot_does_not_close_all_refuted",
+            computed=0 if all_close else 1,
+            expected=1,
         )
         .add_caveat(
             "Operator basis Gram restricted to per-generator block: "

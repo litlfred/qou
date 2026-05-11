@@ -67,7 +67,7 @@ Under Type-B folding:
   ([`prop:spin-involution-lp-dual-invariance`](#prop:spin-involution-lp-dual-invariance)
   §"Step 2: cycle stable"); in particular
   $\tau(\sigma_{pp}) = \tau(\sigma_{nn})$
-  ([`pair_knot_Z_N_trace_invariance`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/content/quantum-observable-universe/braids-and-knots/spin-involution-lp-dual-invariance.lean)
+  ([`pair_knot_Z_N_trace_invariance`](spin-involution-lp-dual-invariance.lean)
   in the Lean sibling).
 - **Operator-selection LP** dual y_0* is S-invariant; magic-shell
   composite operators are in the active set EXACTLY at $Z = 2$ /
@@ -147,7 +147,7 @@ exhaustively).  The categorical content (Steps 1–3 of the proof)
 follows from established results in quantum-group representation
 theory (Jones 1985, Wenzl 1988, Kassel 1995).  Lean class
 `RigidMonoidalStructuralGapInvariance` in
-[sibling `.lean`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/content/quantum-observable-universe/braids-and-knots/prop-rigid-monoidal-structural-gap-invariance.lean)
+[sibling `.lean`](prop-rigid-monoidal-structural-gap-invariance.lean)
 axiomatizes the conjectural content per §3b conditional-class
 pattern; downstream conditional theorems are unconditional Lean
 theorems whenever the class is in scope.

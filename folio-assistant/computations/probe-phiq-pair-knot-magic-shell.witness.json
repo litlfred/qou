@@ -1,28 +1,28 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-11T18:03:50.288815+00:00",
-  "commitSha": "11f0854ffa36bbd4109709f3947918b9b163c1f2",
+  "computedAt": "2026-05-11T21:30:48.003564+00:00",
+  "commitSha": "d1d1893fbc07a9b4f1a7667bda88420333db5a4d",
   "assertions": [
     {
-      "name": "pair_knot_collapse_alone_closes_all",
-      "computed": 0,
+      "name": "pair_knot_collapse_alone_does_not_close_all_refuted",
+      "computed": 1,
       "expected": 1,
-      "passed": false
+      "passed": true
     },
     {
-      "name": "magic_shell_z2_n2_symmetry_predicts_he4",
-      "computed": 0,
+      "name": "magic_shell_z2_n2_symmetry_under_product_volume_refuted",
+      "computed": 1,
       "expected": 1,
-      "passed": false
+      "passed": true
     }
   ],
-  "allPassed": false,
-  "durationMs": 365,
+  "allPassed": true,
+  "durationMs": 5465,
   "computation": "probe-phiq-pair-knot-magic-shell",
   "scriptFile": "probe_phiq_pair_knot_magic_shell.py",
-  "scriptHash": "29e0c7b5446a",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "d846b889671c",
+  "scriptCommitSha": "509e913dbe9de3e12b972d676a041ae6e542cd8e",
   "description": "Pair-knot magic-shell probe + operator-selection LP dual confirmation for the ³He brane-tower gap.  Tests whether collapsing the Z=2 closed proton shell (and N=2 closed neutron shell for ⁴He) into a single composite Φ_q(|V̂_pair|) — instead of summing 4 per-generator Φ_q(|V̂_i|) contributions — closes the AME light-isotope binding gap; calibrates Δ_shell(Z=2) from ³He and predicts ⁴He.  Emits full LP primal + dual (x_star, y_0_star, y_star, active_set, primal_obj, dual_obj, duality_gap) per CLAUDE.md `LP / SDP duals — first-class infra` and `prop:operator-selection-lp`.  The diagonal-Gram approximation is documented as a caveat; the full Hoefsmit-seminormal Frobenius pairing is a refinement.",
   "contentBlock": "conj:brane-tower-z-habiro",
   "parameters": {

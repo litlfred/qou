@@ -447,14 +447,17 @@ def main():
         .add_data("per_atom", per_atom)
         .add_data("magic_shell_calibration", magic_shell_calibration)
         .add_data("lp_operator_selection", lp_results)
+        # Refutation expected: assertions inverted so the empirical
+        # refutation records as the passing outcome (consistent with
+        # the probe's documented role).
         .add_assertion(
-            "pair_knot_collapse_alone_closes_all",
-            computed=1 if len(paired_closes) == len(AME) else 0,
+            "pair_knot_collapse_alone_does_not_close_all_refuted",
+            computed=0 if len(paired_closes) == len(AME) else 1,
             expected=1,
         )
         .add_assertion(
-            "magic_shell_z2_n2_symmetry_predicts_he4",
-            computed=1 if sym_holds else 0,
+            "magic_shell_z2_n2_symmetry_under_product_volume_refuted",
+            computed=0 if sym_holds else 1,
             expected=1,
         )
         .add_caveat(

@@ -1,12 +1,20 @@
 {
   "audit": "trivial-skeleton-audit",
-  "generated": "2026-05-11T17:07:30.954Z",
-  "total_flagged": 1,
-  "files_flagged": 1,
+  "generated": "2026-05-11T21:21:13.286Z",
+  "total_flagged": 2,
+  "files_flagged": 2,
   "patterns": {
+    "prop_true": 1,
     "const_zero": 1
   },
   "flagged": {
+    "braids-and-knots/brane-tower-z-habiro.lean": [
+      {
+        "line": 276,
+        "pattern": "prop_true",
+        "snippet": "def lpDualActiveSetIncludesPairKnotAtMagicShells : Prop := True"
+      }
+    ],
     "lean/QOU/BraidKnot/PerNucleusMassDerivation.lean": [
       {
         "line": 74,

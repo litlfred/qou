@@ -154,7 +154,8 @@ closures couple beyond simple addition.
    $\Delta_{\mathrm{coupling}}(Z, N)$ accounting for doubly-magic
    super-additivity.
 
-4. **Calibrate** $\Delta_p$ from ³He, ⁴He, and the cross-shell
+4. **Extract** $\Delta_p$ as a measured residual from ³He, ⁴He,
+   and the cross-shell
    $\Delta_{\mathrm{coupling}}(2, 2) = \Delta_{\mathrm{cat}}(^4\mathrm{He})
    - 2 \Delta_{\mathrm{cat}}(^3\mathrm{He}) = 28.211 - 15.014 = +13.20$ MeV.
 

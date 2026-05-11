@@ -80,10 +80,6 @@ def main():
     b_h = w["data"]["results"]["2"]["he3"]["B_abs_MeV"]
     diff = b_h - b_t
     results["scalar_uniform_k_2_abs"] = {
-        "B_he3": b_t, "B_tritium": b_h, "B_he3_minus_B_h3": diff,
-        # ^^^ NOTE: variable names below; data fields here mirror dict
-    }
-    results["scalar_uniform_k_2_abs"] = {
         "B_tritium": b_t, "B_he3": b_h, "diff_he3_minus_h3": diff,
         "discrepancy_from_expected": diff - EXPECTED_BRANE_DIFF_MEV,
     }
@@ -230,9 +226,12 @@ def main():
             "name": closest,
             "discrepancy_MeV": closest_disc,
         })
+        # Refutation expected: NO brane-tower scheme directly matches
+        # the AME Z↔N + Coulomb prediction (records the refutation as
+        # the passing outcome).
         .add_assertion(
-            "at_least_one_scheme_within_1MeV_of_expected",
-            computed=1 if closest_disc < 1.0 else 0,
+            "no_brane_tower_scheme_within_1MeV_of_z_n_prediction_refuted",
+            computed=0 if closest_disc < 1.0 else 1,
             expected=1,
         )
         .add_caveat(

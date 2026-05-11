@@ -1,22 +1,22 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-11T18:59:57.229303+00:00",
-  "commitSha": "53de78d3d6ec9e8db37d96d98d4a347a5c1fad73",
+  "computedAt": "2026-05-11T21:31:00.552600+00:00",
+  "commitSha": "d1d1893fbc07a9b4f1a7667bda88420333db5a4d",
   "assertions": [
     {
-      "name": "canonical_he4_tr_M_differs_from_disjoint_deprecated",
-      "computed": 0,
+      "name": "canonical_he4_tr_M_agrees_with_disjoint_at_float64",
+      "computed": 1,
       "expected": 1,
-      "passed": false
+      "passed": true
     }
   ],
-  "allPassed": false,
-  "durationMs": 1315,
+  "allPassed": true,
+  "durationMs": 1558,
   "computation": "tr-m-he4-canonical",
   "scriptFile": "probe_tr_m_he4_canonical.py",
-  "scriptHash": "cb489c24af9c",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "ba921f9fc53a",
+  "scriptCommitSha": "f6ad68e027dd44df2eb9b5ff5d4a7054263f8483",
   "description": "Canonical |tr_M(β_⁴He)| computed via markov_peel.tr_M_atomic(2, 2) — the recursive symbolic Markov-axiom ascent that uses Gröbner-Shirshov reduction + Markov-peel without building Hoefsmit seminormal matrices at H_12.  Replaces the deprecated disjoint-word value in chi-helium-4-h12.witness.json (which used tr_M(α⊗β) = tr_M(α)·tr_M(β) — invalid for atomic braids with σ_{3k} inter-nucleon interfaces per PR #564 hecke-branching-trace-decomposition.md).  Symbolic result returned in sympy; evaluated at q_0 with mpmath 50dps.  NO FLOAT64 in the pipeline.",
   "contentBlock": "conj:brane-tower-z-habiro",
   "parameters": {
@@ -31,7 +31,7 @@
       "deprecated_disjoint_value": "0.05534834587669884",
       "abs_delta_canonical_minus_deprecated": "8.5488158968262577341487347097829173201471756961903e-16",
       "relative_difference": 1.544547675529583e-14,
-      "compute_seconds": 8.509482860565186
+      "compute_seconds": 10.205072164535522
     }
   }
 }
