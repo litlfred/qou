@@ -351,3 +351,131 @@ This converts an open conjecture into a **provable theorem** with
 explicit normalization factor. Future Lean closure: lift the
 bridge identity to all orders in $h$ via a generating-function
 argument.
+
+## Update 2026-05-11 cycle 7 — UNIFIED PICTURE VIA EIGENFUNCTION DAMPENING
+
+Per owner directive 2026-05-11: "does option 3 align to the
+eigenfunction discussion in the paper?" → "we need something that
+says this is correct... and that should be dampening of
+eigenfunction of observables (components of mass tower via jet
+order/GB filtration)".
+
+### Framework's existing principle
+
+The conjecture `archimedean-remainder-exponential-decay.md` states
+**precisely** the dampening principle:
+
+$$\lvert \mathcal{R}_n(K) \rvert \le C(K) \cdot e^{-c(K) \cdot n}$$
+
+where $\mathcal{R}_n(K)$ is the truncation residual at
+**Gröbner–Shirshov filtration depth** $n$ for a hyperbolic
+knot $K$. The constants $C(K), c(K) > 0$ depend on the local
+geometry of the cusp shape parameter $z_c \in \mathbb{C}$
+(Thurston gluing).
+
+**This IS the eigenfunction dampening the owner asks for.**
+
+### The unified physical picture (closes the Form A vs Form B question)
+
+1. **Loss of locality**: exact Q_β requires infinite eigenfunction
+   sum (spectral decomposition in torus knot basis per
+   `gs-spectral-decomposition-existence.md`).
+
+2. **Practical impossibility**: can't compute the infinite sum
+   physically or computationally — we cannot integrate over the
+   entire causally-connected state space.
+
+3. **BUT eigenfunctions damp exponentially in GB filtration depth**:
+   per `archimedean-remainder-exponential-decay.md`, the truncation
+   tail decays as $e^{-cn}$.
+
+4. **Finite-truncation predictions are asymptotically correct**:
+   $$Q_\beta^{\text{predicted at depth }n} = Q_\beta^{\text{exact}} + O(e^{-cn})$$
+
+5. **Empirically**: our Q_β +0.17% / +1.31 keV residual at depth
+   $n=0$ (single-wrap NF) sits at **17% of the per-braid-mass-tower
+   bound** ($\hbar_q^2/(1-\hbar_q^2) \approx 0.99\%$). Consistent
+   with the exponential-decay tail already being small at depth 0.
+
+### Refined Form A vs Form B answer
+
+Form A and Form B BOTH compute Q_β (same observable, energy released):
+
+| | Form A | Form B |
+|---|---|---|
+| Basis | NF (algebraic) | Torus knot (eigenfunction / spectral) |
+| At infinite depth | exact Q_β | exact Q_β |
+| At finite depth | leading $h$-order, depth 0 | spectral, truncated at $n_\star$ |
+| Bridge | $1/z + O(h)$ algebraic | basis-change coefficient |
+| Justification of finite truncation | **`archimedean-remainder-exponential-decay`** — eigenfunction dampening $\le Ce^{-cn}$ | same |
+
+**Option (iii) from cycle 6 was directionally correct but missed
+the unification**: Form B is NOT a "different observable" — it's
+the SAME observable Q_β expressed in the EIGENFUNCTION BASIS
+(torus knots). The $1/z$ bridge is the change-of-basis coefficient
+between NF and torus-knot bases at leading depth. **Both are
+finite-depth approximations** of the same infinite spectral
+decomposition.
+
+### What we can DERIVE vs what's CONJECTURAL
+
+DERIVABLE (proven this session or framework-existing):
+  * Bridge factor $1/z + O(h)$ — algebraically exact via Taylor
+    expansion.
+  * Form A at depth 0 — Frobenius counit on NF subtraction.
+  * Spectral decomposition existence — `gs-spectral-decomposition-
+    existence.md` (proven).
+
+CONJECTURAL (framework R&D, not yet closed):
+  * Exponential dampening rate $c(K)$ — `archimedean-remainder-
+    exponential-decay.md` is OPEN.
+  * Level-selection rule $n_\star$ — `brane-tower-z-habiro.md` is
+    OPEN (tautological instance per the current Lean class).
+
+WHAT MAKES THE CALCULATION CORRECT (the owner's structural
+question):
+
+  ✓ Eigenfunctions of mass observables are damped by GB filtration
+    (this IS the framework's principle).
+  ✓ Finite-truncation predictions are exponentially good (per the
+    conjecture).
+  ✗ The exponential dampening rate $c$ is conjectural — needs
+    closure of `archimedean-remainder-exponential-decay`.
+  ✗ The structural level $n_\star$ is conjectural — needs closure
+    of `brane-tower-z-habiro`.
+
+If both conjectures are proven, then **all finite-truncation
+predictions in the framework are structurally justified**, with
+exact bounds on the residuals.
+
+### Lean roadmap update (cycle 7)
+
+NEW Gap #12: **prove `archimedean-remainder-exponential-decay`**.
+  Currently OPEN in the framework. Once closed, all finite-depth
+  predictions (Form A at depth 0, Form B at depth $n_\star$,
+  brane-tower at level N) inherit explicit error bounds.
+
+Updated Gap #11: **Form A ↔ Form B bridge** = change-of-basis
+  in spectral decomposition. The $1/z + O(h)$ factor is the
+  leading-order basis-change coefficient. Now PROVABLE in Lean
+  (Taylor expansion + Markov-parameter algebra).
+
+### Why this resolves the owner's "are we using convolution
+operators correctly?" question
+
+**YES** — but with a subtle distinction:
+
+  * For free-neutron β-decay (A=1), Form A (NF counit) is the
+    correct depth-0 truncation.
+  * The "convolution knot operators" $F(\tau(r,s), N)$ in Form B
+    are the spectral / eigenfunction expansion of the SAME
+    observable, but in the torus-knot basis.
+  * At finite truncation, they differ by the algebraic bridge
+    $1/z + O(h)$.
+  * Both are correct uses of the framework's machinery; the paper's
+    sloppy notation conflates them when they're really TWO
+    REPRESENTATIONS of the same physical quantity.
+
+PER OWNER DIRECTIVE: NO PAPER CHANGES applied until the framework
+authors decide how to clarify the dual notation. This audit
+provides the derivation needed to make that decision.
