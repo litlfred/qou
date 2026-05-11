@@ -72,12 +72,12 @@ def residue_sum_for_irrep(weight_sym, chi_sym, q_sym, q_0):
         res_sym = sp.simplify(num_v / den_d_v)
         # Preserve precision via component-wise sp.re/sp.im → str → mp.mpf,
         # avoiding the truncating round-trip through Python `complex`.
-        res_eval = res_sym.evalf(mp.dps)
+        res_eval = res_sym.evalf(mp.mp.dps)
         res_mp = mp.mpc(mp.mpf(str(sp.re(res_eval))), mp.mpf(str(sp.im(res_eval))))
         # Tolerance tied to current dps.
-        if abs(res_mp) < mp.mpf(10) ** (-mp.dps + 10):
+        if abs(res_mp) < mp.mpf(10) ** (-mp.mp.dps + 10):
             continue
-        zeta_eval = zeta.evalf(mp.dps)
+        zeta_eval = zeta.evalf(mp.mp.dps)
         zeta_mp = mp.mpc(mp.mpf(str(sp.re(zeta_eval))), mp.mpf(str(sp.im(zeta_eval))))
         weight = 1 / (mp.mpf(q_0) - zeta_mp)
         contribution = res_mp * weight
