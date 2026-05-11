@@ -68,6 +68,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 from codata_constants import M_E_MEV  # noqa: E402  (CAL-1)
+from witness_base import WitnessBuilder  # noqa: E402
 
 GRAM_WITNESS = HERE / "gram-matrix-dual.witness.json"
 BETA_DECAY_WITNESS = HERE / "beta-decay-energy-scale.witness.json"
@@ -228,7 +229,6 @@ def main() -> int:
 
     out = {
         "computation": "e-0-lp-dual-h3",
-        "scriptFile": "derive_e_0_lp_dual_h3.py",
         "description": (
             "LP-dual derivation of E_0 at H_3 via the operator-"
             "selection LP per prop:operator-selection-lp. Solves "
@@ -273,8 +273,15 @@ def main() -> int:
             ),
         },
     }
-    OUT.write_text(json.dumps(out, indent=2))
-    print(f"\n  Wrote {OUT.name}")
+    # Migrated to WitnessBuilder.wrap_legacy (#637 deferred Tier-2,
+    # adopted in PR #639). Preserves on-disk layout bit-for-bit
+    # while adding scriptHash / scriptCommitSha / computedAt /
+    # durationMs staleness metadata required by `run_pipeline.py`.
+    builder = WitnessBuilder.wrap_legacy(
+        "e-0-lp-dual-h3", out, script_path=__file__, engine="scipy"
+    )
+    saved = builder.save()
+    print(f"\n  Wrote {saved.name}")
     return 0
 
 

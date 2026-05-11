@@ -99,6 +99,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 from codata_constants import M_E_MEV  # CAL-1, noqa: E402
+from witness_base import WitnessBuilder  # noqa: E402
 
 mp.mp.dps = 50
 
@@ -281,8 +282,11 @@ def main() -> int:
             "residual_N1_relative_keV": err_N1_rel_kev,
         },
     }
-    OUT.write_text(json.dumps(out, indent=2))
-    print(f"\n  Wrote {OUT.name}")
+    saved = WitnessBuilder.wrap_legacy(
+        "beta-decay-n1-brane-tower-probe", out,
+        script_path=__file__, engine="mpmath",
+    ).save()
+    print(f"\n  Wrote {saved.name}")
     return 0
 
 

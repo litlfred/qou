@@ -48,6 +48,7 @@ sys.path.insert(0, str(HERE))
 
 import derived_masses as dm  # noqa: E402
 from codata_constants import M_E_MEV, Q_BETA_MEV  # noqa: E402
+from witness_base import WitnessBuilder  # noqa: E402
 
 OUT = HERE / "q-beta-predicted.witness.json"
 
@@ -207,8 +208,13 @@ def main() -> int:
     }
     out["allPassed"] = all(a["passed"] for a in out["assertions"])
 
-    OUT.write_text(json.dumps(out, indent=2))
-    print(f"Wrote {OUT.name}")
+    # Migrated to WitnessBuilder.wrap_legacy (#637 deferred Tier-2,
+    # adopted in PR #639) — adds scriptHash + staleness metadata.
+    saved = WitnessBuilder.wrap_legacy(
+        "q-beta-predicted", out,
+        script_path=__file__, engine="mpmath",
+    ).save()
+    print(f"Wrote {saved.name}")
     print(f"  E_0 full       = {mp.nstr(e0_full, 8)} MeV  (derived, CAL-1 + CAL-2 only)")
     print(f"  E_0 calibrated = {mp.nstr(e0_cal, 8)} MeV  (CODATA Q_β / |Δ(net)|)")
     print(f"  Q_β predicted (single-wrap symbolic) = {mp.nstr(q_pred, 8)} MeV")

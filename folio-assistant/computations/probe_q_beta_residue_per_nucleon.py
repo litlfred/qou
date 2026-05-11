@@ -32,6 +32,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 from codata_constants import M_E_MEV, Q_BETA_MEV  # noqa: E402
+from witness_base import WitnessBuilder  # noqa: E402
 
 mp.mp.dps = 50
 
@@ -236,8 +237,11 @@ def main() -> int:
             "per_lambda_records": per_lambda_records,
         },
     }
-    OUT.write_text(json.dumps(out, indent=2))
-    print(f"\n  Wrote {OUT.name}")
+    saved = WitnessBuilder.wrap_legacy(
+        "q-beta-residue-per-nucleon-probe", out,
+        script_path=__file__, engine="mpmath",
+    ).save()
+    print(f"\n  Wrote {saved.name}")
     return 0
 
 

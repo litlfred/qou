@@ -53,6 +53,46 @@ LEAVES OPEN (gap remains conjectural):
 - [manuscript] prop:habiro-expansion-atomic (proven `m_max` bound)
 - [manuscript] prop:neutron-qvalue-symbolic (β-decay operator)
 - [manuscript] per-braid-mass-tower.md (remainder bound at level N)
+
+## Cross-PR context (cycles 4 + 5, 2026-05-11)
+
+The scalar-eigenvalue form of `n_⋆` (this file's
+`betaDecayNStarCandidates` agreement at 2 for β-decay) has been
+**refuted in the broader sense** by PR #638 across the multi-strand
+binding sector {D, T, ³He}:
+
+  See: `brane-tower-z-habiro.lean` on branch
+  `claude/close-level-selection-rule-bvMvw`, theorem
+  `witness_refutes_per_eigenvalue_operator_form` — the per-eigenvalue
+  operator-valued candidate also fails to close ³He at uniform `k`.
+
+**This file's β-decay agreement is NOT a counterexample** to that
+refutation. β-decay is the multiplicity-trivial sub-case (A = 1,
+single near-pole entry): all three scalar substrate invariants
+collapse to agreement at `n_⋆ = 2`. The refutation kicks in at
+A ≥ 2, where the per-generator near-pole multiplicity profile
+diverges (³He has 2 near-pole generators vs D/T's 1 each).
+
+**Surviving open question** (multiplicity-refined form, per
+PR #639 `probe_phiq_per_partition_klambda.py`):
+
+  n_⋆ : (ℓ, n_0, k, m) → ℕ
+       where m = per-generator near-pole multiplicity profile,
+       and the per-partition rule k_λ ∈ {1, 2} depends on the
+       maximum eigenvalue magnitude of ρ_λ(β_atom).
+
+The per-partition k_λ rule (Wedderburn-block-non-uniform truncation)
+collapses all three atoms' brane-tower magnitudes to |tower| < 2
+when each atom's dominant partition uses k_λ = 1 and the rest use
+k_λ = 2. See `probe-phiq-per-partition-klambda.witness.json` on
+PR #639 for the empirical evidence; the structural identification
+of the substrate invariant λ ↦ k_λ remains open.
+
+This Lean file's β-decay instance is consistent with both the
+refutation (#638) and the per-partition rule (#639): the β-decay
+case is A=1 where the dominant partition is the only partition with
+significant contribution, so per-partition and uniform-k coincide
+trivially.
 -/
 
 import Mathlib.Data.Nat.Basic

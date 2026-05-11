@@ -376,6 +376,7 @@ export default chapter({
         "habiro-expansion-atomic",
         "z-habiro-ring",
         "brane-tower-z-habiro",
+        "per-partition-k-lambda-rule",
         "qz-bicompletion",
         "quantum-dilogarithm-stratified",
         "quantum-dilogarithm-stratified-proof",
