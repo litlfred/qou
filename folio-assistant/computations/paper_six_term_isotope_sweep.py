@@ -144,7 +144,9 @@ _T1_ATOM_NAME = {
 # Mapping from sweep-table isotope labels to Model B witness atom names.
 _T1_ATOM_NAME_B = {
     "D": "deuteron", "T": "tritium", "3He": "he3",
-    # p, n, ⁴He: fall back to Model A (no Model B braid in witness yet).
+    # p, n: at A=1, Model A and Model B converge (both use B_3 with
+    # 11 typed crossings).  Fall through to Model A — same values.
+    # ⁴He: no Model B canonical low-strand braid yet; fall through.
 }
 
 

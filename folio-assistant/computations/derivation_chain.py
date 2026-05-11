@@ -98,35 +98,46 @@ TR_M_AT_Q0: dict[str, float] = {
 # Model B uses the canonical hyperbolic knot for each isotope in the
 # minimum-strand braid group:
 #
+#   p, n : 11-crossing typed B_3 braid (operator-valued, with σ/σ^{-1}
+#          /averaged crossings encoding quark composition uud / udd);
+#          ρ = 1; canonical via atomic-braid-recipe-{p,n}.derivation.json.
+#          At A = 1, Model A and Model B converge (both use B_3 with
+#          typed crossings — there's no lower-strand braid).  Value
+#          source: canonical Wenzl-bridge τ_M via markov_peel.tr_M_atomic
+#          (same as TR_M_AT_Q0 above).
 #   D    : 6_2     in B_3,  ρ = 1, braid = [1, -2, 1, 1, 1, -2]
 #   T    : 8_11    in B_5,  ρ = 2, braid = [-1, 2, -3, 2, 1, -3, -3,
 #                                            4, -3, -2, -3, -4, -3, 2]
 #   ³He  : L6a4    in B_3,  ρ = 2, braid = [-1, 2, -1, 2, -1, 2]
 #                                  (= bare Borromean β_Bor)
-#   p, n : β_Bor proxy in B_3, ρ = 1 (orientation distinction in T5)
+#   ⁴He  : open Model B canonical knot (12-strand atomic-braid-recipe-4he
+#          is the Model A 3A-strand encoding, not a low-strand knot).
 #
-# Source of truth: probe-sdp-canonical-paper-formula.witness.json
-# Computed via paper formula B = m_e · ρ · |τ_M| (Wenzl-Schur weights).
+# Source of truth for D, T, ³He: probe-sdp-canonical-paper-formula.witness.json.
+# Source of truth for p, n:      atomic-braid-recipe-{p,n}.derivation.json
+#                                (= Wenzl-bridge τ_M, identical to Model A
+#                                at A=1).
 #
-# n_canon (strand count of the canonical braid; ≠ 3A in general):
-#   D: 3, T: 5, ³He: 3, p/n: 3 (proxy), ⁴He: open
+# n_canon (strand count of the canonical braid):
+#   p, n: 3, D: 3, T: 5, ³He: 3, ⁴He: open
 TR_M_CANONICAL_B_AT_Q0: dict[str, float] = {
-    "p":   0.998366,    # β_Bor proxy (= ³He value at topological level)
-    "n":   0.998366,    # β_Bor proxy
-    "D":   0.288326,    # knot 6_2, SDP-canonical
-    "T":   0.012889,    # knot 8_11, SDP-canonical (H_5)
-    "3He": 0.998367,    # L6a4 = β_Bor (the bare Borromean)
+    "p":   1.0653062285923893,  # 11-crossing typed B_3 (uud)
+    "n":   0.9232332971695838,  # 11-crossing typed B_3 (udd)
+    "D":   0.288326,            # knot 6_2, SDP-canonical
+    "T":   0.012889,            # knot 8_11, SDP-canonical (H_5)
+    "3He": 0.998367,            # L6a4 = β_Bor (the bare Borromean)
 }
 
 # Per-isotope Model B canonical-braid metadata (knot, strand count,
 # topological prefactor ρ).
 MODEL_B_BRAID_META: dict[str, dict] = {
-    "p":   {"knot": "β_Bor proxy", "n_canon": 3, "rho": 1},
-    "n":   {"knot": "β_Bor proxy", "n_canon": 3, "rho": 1},
-    "D":   {"knot": "6_2",          "n_canon": 3, "rho": 1},
-    "T":   {"knot": "8_11",         "n_canon": 5, "rho": 2},
-    "3He": {"knot": "L6a4",         "n_canon": 3, "rho": 2},
-    "4He": {"knot": "open",         "n_canon": 7, "rho": None},
+    "p":   {"knot": "11-crossing typed B_3 (uud)", "n_canon": 3, "rho": 1},
+    "n":   {"knot": "11-crossing typed B_3 (udd)", "n_canon": 3, "rho": 1},
+    "D":   {"knot": "6_2",                         "n_canon": 3, "rho": 1},
+    "T":   {"knot": "8_11",                        "n_canon": 5, "rho": 2},
+    "3He": {"knot": "L6a4",                        "n_canon": 3, "rho": 2},
+    "4He": {"knot": "open (B_12 atomic-recipe is Model A)",
+            "n_canon": None, "rho": None},
 }
 
 # Atom-target Markov-trace values in cat-units (Hecke-pipeline output)

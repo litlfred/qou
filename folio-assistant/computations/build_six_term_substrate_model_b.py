@@ -64,13 +64,18 @@ E0_SUBSTRATE_MEV = mp.mpf(M_E_MEV) / (Q0 * (Q0 - mp.mpf(1)))
 # Orientation-partition distinction (uud vs udd) is in the Skein
 # corrections (T5/T6), not the topological |τ_M|.
 MODEL_B_BRAID_REGISTRY = {
-    # (Z, N) → (n_canon, ρ, knot_name, t1_source)
-    (1, 0): {"n_canon": 3, "rho": 1, "knot": "β_Bor proxy", "t1": None},
-    (0, 1): {"n_canon": 3, "rho": 1, "knot": "β_Bor proxy", "t1": None},
-    (1, 1): {"n_canon": 3, "rho": 1, "knot": "6_2",          "t1_atom": "deuteron"},
-    (1, 2): {"n_canon": 5, "rho": 2, "knot": "8_11",         "t1_atom": "tritium"},
-    (2, 1): {"n_canon": 3, "rho": 2, "knot": "L6a4",         "t1_atom": "he3"},
-    (2, 2): {"n_canon": 7, "rho": None, "knot": "open",      "t1": None},   # ⁴He open
+    # (Z, N) → (n_canon, ρ, knot_name, t1 source)
+    # At A=1, Model A and Model B converge (both use B_3 with 11 typed
+    # crossings); use Model A registry value via t1_atom_a.
+    (1, 0): {"n_canon": 3, "rho": 1,
+             "knot": "11-cross typed B_3 (uud)", "t1_atom_a": "proton"},
+    (0, 1): {"n_canon": 3, "rho": 1,
+             "knot": "11-cross typed B_3 (udd)", "t1_atom_a": "neutron"},
+    (1, 1): {"n_canon": 3, "rho": 1, "knot": "6_2",  "t1_atom": "deuteron"},
+    (1, 2): {"n_canon": 5, "rho": 2, "knot": "8_11", "t1_atom": "tritium"},
+    (2, 1): {"n_canon": 3, "rho": 2, "knot": "L6a4", "t1_atom": "he3"},
+    (2, 2): {"n_canon": None, "rho": None,
+             "knot": "open (no Model B low-strand)", "t1": None},
 }
 
 
@@ -189,29 +194,44 @@ def main() -> int:
         iso = _LABEL[(Z, N)]
         codata = _CODATA[(Z, N)]
         knot = info["knot"]
-        n_canon = info["n_canon"]
+        n_canon = info.get("n_canon")
         rho = info.get("rho")
 
-        if rho is None:
+        if rho is None or n_canon is None:
             # No Model B braid yet (e.g., ⁴He)
-            print(f"  {iso:>4}  {f'({Z},{N})':>6}  {n_canon:>5}  "
-                  f"{'—':>2}  {knot:>14}  "
+            print(f"  {iso:>4}  {f'({Z},{N})':>6}  {'—':>5}  "
+                  f"{'—':>2}  {knot:>26}  "
                   f"{'—':>12}  "
-                  f"{'—':>16}  {float(codata):>16.4f}  {'(missing)':>10}")
+                  f"{'—':>16}  {float(codata):>16.4f}  {'(open)':>10}")
             results.append({
                 "isotope": iso, "Z": Z, "N": N,
-                "n_canon": n_canon, "knot": knot,
-                "M_codata_MeV": str(codata),
-                "status": "model_b_braid_missing",
+                "knot": knot, "M_codata_MeV": str(codata),
+                "status": "model_b_braid_open",
             })
             continue
 
-        # T1: from probe witness OR β_Bor proxy
+        # T1: from probe witness OR Model A registry (for p, n)
         if "t1_atom" in info:
             t1 = t1_atoms[info["t1_atom"]]
+        elif "t1_atom_a" in info:
+            # At A=1, Model A == Model B (both use B_3 with 11 typed
+            # crossings).  Use Model A registry.
+            from derivation_chain import TR_M_AT_Q0
+            t1 = mp.mpf(str(TR_M_AT_Q0[info["t1_atom_a"][0]]))
         else:
-            # β_Bor proxy for free baryon: same |τ_M| as ³He
-            t1 = t1_atoms["he3"]
+            t1 = None
+        if t1 is None:
+            # No Model B braid (e.g., ⁴He)
+            print(f"  {iso:>4}  {f'({Z},{N})':>6}  {'—':>5}  "
+                  f"{'—':>2}  {knot:>26}  "
+                  f"{'—':>12}  "
+                  f"{'—':>16}  {float(codata):>16.4f}  {'(open)':>10}")
+            results.append({
+                "isotope": iso, "Z": Z, "N": N,
+                "knot": knot, "M_codata_MeV": str(codata),
+                "status": "model_b_braid_open",
+            })
+            continue
 
         six = six_term_model_b(Z, N, t1, n_canon=n_canon, rho=rho)
 
@@ -248,9 +268,10 @@ def main() -> int:
     print("  T6:   0 (open R&D; Habiro residue witness not yet generated)")
     print()
     print("  Notes:")
-    print("    - p, n use β_Bor proxy (same |τ_M| as ³He at the canonical-knot")
-    print("      level; orientation-partition distinction is in Skein/T5/T6).")
-    print("    - ⁴He Model B canonical knot not yet assigned (left blank).")
+    print("    - p, n use the 11-crossing typed B_3 braid (Wenzl-bridge τ_M);")
+    print("      at A=1 Model A and Model B converge.")
+    print("    - ⁴He Model B canonical low-strand knot is open (the existing")
+    print("      12-strand atomic-braid-recipe-4he is Model A 3A-encoding).")
     print("    - NO calibration to CODATA m_p (substrate E_0 only).")
     print()
 
