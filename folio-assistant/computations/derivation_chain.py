@@ -281,45 +281,48 @@ E_0_CONVENTIONS: dict[str, dict] = {
             "production chains; use convention B instead."
         ),
     },
-    "D_lp_dual_canonical": {
+    "D_lp_dual_decomposition": {
         "value_MeV": (
-            "y_0^* · m_e (LP-dual shadow price × CAL-1) — "
-            "STRUCTURAL ANSWER, not yet wired for β-decay sector"
+            "N/A — y_0^* is DIMENSIONLESS (cat-units). LP-dual is a "
+            "structural decomposition tool, NOT an E_0 derivation."
         ),
-        "scaling": "ℏ_q^? (encoded in y_0^*, depends on n_target choice)",
+        "scaling": "n/a (dimensionless; MeV scale is external)",
         "hecke_level": (
-            "Either H_3 (β-decay, d=6 — tractable) OR H_{3A} "
-            "(atom binding: H_6 D d=720 tractable; H_9 T/³He d=362880 "
-            "requires per-Wedderburn-block reduction; H_12 ⁴He "
-            "d=4.79e8 requires Rust kernel per `prop:atomic-tr-m-canonical`)"
+            "Either H_3 (β-decay, d=6 — tractable; LP solved in "
+            "derive_e_0_lp_dual_h3.py) OR H_{3A} (atom binding: H_6 D "
+            "d=720 tractable; H_9 T/³He d=362880 requires per-"
+            "Wedderburn-block reduction; H_12 ⁴He d=4.79e8 requires "
+            "Rust kernel per `prop:atomic-tr-m-canonical`)"
         ),
         "strand_count": "3 (β-decay) or 3·A (atom binding)",
         "derivation": (
             "Per `prop:operator-selection-lp` strong duality: "
-            "Σ t_i x_i^* = n_target · y_0^*. The dual variable "
-            "y_0^* on the net constraint IS the marginal energy "
-            "per unit target mass — i.e. E_0 dimensionlessly. "
-            "Multiplied by m_e (CAL-1) gives MeV. This is the "
-            "framework's structurally-canonical derivation; "
-            "conventions A, B, C above should each agree with "
-            "this at the appropriate brane-tower truncation depth."
+            "Σ t_i x_i^* = n_target · y_0^*. y_0^* is the marginal "
+            "*action* per unit target net — DIMENSIONLESS in "
+            "cat-units. NEGATIVE FINDING 2026-05-10 "
+            "(derive_e_0_lp_dual_h3.py): y_0^* · m_e ≠ E_0_MeV. "
+            "For n_target=1, the LP picks x*=(0,...,0,1) (pure e^- "
+            "channel) with y_0^* = 0.1245, giving 0.064 MeV — not "
+            "the 4.186 MeV of convention A. The MeV scale must "
+            "come from OUTSIDE the LP. The LP-dual remains a "
+            "valuable DECOMPOSITION tool (active-set identification, "
+            "channel shadow prices y_i^*, strong-duality audit), but "
+            "is NOT an alternative derivation of E_0 in MeV."
         ),
-        "operator_class": "any (universal — depends on Gram matrix + cost vector)",
+        "operator_class": "any (universal — Gram + cost vector)",
         "canonical_for": [
             "lp_dual_solver.solve_operator_selection_lp",
             "lp_dual_solver.solve_psd_operator_selection_sdp",
+            "derive_e_0_lp_dual_h3.py",
         ],
         "validity": (
-            "INFRASTRUCTURE EXISTS but no production witness wires "
-            "the real H_n Gram + tr_M cost vector through it for "
-            "β-decay specifically. `option_b_proton_mass_full_chain.py` "
-            "Phase F runs a degenerate demo (uniform t_costs, identity "
-            "G_gram); a real β-decay LP-dual derivation of E_0 is "
-            "an open deliverable. When wired, expected to: "
-            "(i) recover convention A at N=0, "
-            "(ii) close the 0.17% Q_β residual via the y_i^* "
-            "shadow prices on Frobenius constraints (which encode "
-            "the brane-tower corrections structurally)."
+            "Wired at H_3 (commit pending). y_0^* recovered for "
+            "four substrate-derived n_target choices; all in "
+            "cat-units, none MeV-bearing. The structural E_0 in "
+            "MeV remains convention A (single-tick m_e c_q^2 ℏ_q). "
+            "The 0.17% Q_β residual is NOT closable via LP-dual "
+            "alone — closure requires the brane-tower extension of "
+            "convention A (Workplan 2+ open R&D)."
         ),
     },
 }
