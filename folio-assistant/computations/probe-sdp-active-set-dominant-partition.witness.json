@@ -1,0 +1,496 @@
+{
+  "engine": "scipy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-11T19:49:19.974430+00:00",
+  "commitSha": "a45769ecee0cc4c914043907f3b033fbab6c0340",
+  "assertions": [
+    {
+      "name": "sdp_feasible_D",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "sdp_feasible_T",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "sdp_feasible_He3",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "sdp_matches_only_T_under_diagonal_gram_simplification",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "diagonal_gram_too_coarse_for_D_and_He3",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "duality_gap_zero_for_all_feasible_atoms",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 437,
+  "computation": "probe-sdp-active-set-dominant-partition",
+  "scriptFile": "probe_sdp_active_set_dominant_partition.py",
+  "scriptHash": "e2b5abd3c3a2",
+  "scriptCommitSha": "unknown",
+  "description": "SDP shadow-price selector probe: runs the operator-selection LP (prop:operator-selection-lp) at each atom's (q_0, β_atom) with t_λ = y_λ · χ_q^λ and diagonal Gram G = diag(Σ |μ_a|²). Reads argmax y_λ^* and compares to PR #639's empirical dominant partition. Tests whether the SDP active-set argmax is the substrate-derivable identification of isMaxEigSpectrum. Per CLAUDE.md 'LP/SDP duals — first-class infra'; emits full primal-dual pair via lp_dual_solver.solve_operator_selection_lp. Class C (diagnostic).",
+  "contentBlock": "rem:per-partition-k-lambda-rule",
+  "parameters": {
+    "atoms": [
+      "D",
+      "T",
+      "He3"
+    ],
+    "source": "PR #638 probe-phiq-operator-valued.witness.json (subset)"
+  },
+  "data": {
+    "per_atom_findings": [
+      {
+        "atom": "D",
+        "feasible": true,
+        "n_target": 0.388286,
+        "t_vector": [
+          0.092321005656,
+          0.18961165081200002,
+          0.067423983543,
+          0.01013346,
+          0.060003028285,
+          -0.01443783816,
+          0.00068531,
+          -0.00034205,
+          0.00010133,
+          0.009232097446
+        ],
+        "G_diagonal": [
+          1.0,
+          8.762192010000001,
+          15.89696641,
+          14.26195225,
+          1.0,
+          20.62613056,
+          7.8355206399999995,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "y0_star": -0.01443783816,
+        "y_star": [
+          0.10675884381600001,
+          0.02328749344218034,
+          0.005149524732687662,
+          0.001722856571757208,
+          0.074440866445,
+          0.0,
+          0.0019300757224474622,
+          0.01409578816,
+          0.014539168160000001,
+          0.023669935606000003
+        ],
+        "active_set_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          7,
+          8,
+          9
+        ],
+        "primal_obj": -0.00560601042779376,
+        "dual_obj": -0.00560601042779376,
+        "duality_gap": 0.0,
+        "argmax_y_star_partition": [
+          6
+        ],
+        "argmax_y_star_value": 0.10675884381600001,
+        "argmax_idx": 0,
+        "partitions_in_order": [
+          [
+            6
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            1,
+            1
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            2,
+            1
+          ],
+          [
+            3,
+            1,
+            1,
+            1
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "empirical_dominant": [
+          2,
+          2,
+          1,
+          1
+        ],
+        "sdp_matches_empirical": false
+      },
+      {
+        "atom": "T",
+        "feasible": true,
+        "n_target": 0.104054,
+        "t_vector": [
+          0.045311831492,
+          0.027328240129,
+          0.0199982376,
+          0.010335435192,
+          0.01015599984,
+          0.00042632542499999995,
+          -0.0014044866500000002,
+          -8.435e-05,
+          -3.678e-05,
+          -0.00013919
+        ],
+        "G_diagonal": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          67.7329,
+          61.465599999999995,
+          1.0,
+          67.7329,
+          58.52250000000001,
+          46.239999999999995
+        ],
+        "y0_star": -0.0014044866500000002,
+        "y_star": [
+          0.046716318142,
+          0.028732726779,
+          0.02140272425,
+          0.011739921842,
+          0.00017067756570293018,
+          2.9785962798703668e-05,
+          0.0,
+          1.9490331138929534e-05,
+          2.3370612157717117e-05,
+          2.7363681877162636e-05
+        ],
+        "active_set_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          8,
+          9
+        ],
+        "primal_obj": -0.0001461424538791,
+        "dual_obj": -0.0001461424538791,
+        "duality_gap": 0.0,
+        "argmax_y_star_partition": [
+          6,
+          3
+        ],
+        "argmax_y_star_value": 0.046716318142,
+        "argmax_idx": 0,
+        "partitions_in_order": [
+          [
+            6,
+            3
+          ],
+          [
+            8,
+            1
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            9
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            5,
+            3,
+            1
+          ],
+          [
+            6,
+            2,
+            1
+          ],
+          [
+            4,
+            3,
+            1,
+            1
+          ],
+          [
+            4,
+            2,
+            2,
+            1
+          ],
+          [
+            5,
+            2,
+            1,
+            1
+          ]
+        ],
+        "empirical_dominant": [
+          6,
+          3
+        ],
+        "sdp_matches_empirical": true
+      },
+      {
+        "atom": "He3",
+        "feasible": true,
+        "n_target": 0.206544,
+        "t_vector": [
+          0.07159362072599999,
+          0.047986440311,
+          0.047441587103999996,
+          0.017665562832,
+          0.015688650515,
+          -0.0012500577749999999,
+          0.0019289968500000002,
+          -8.435e-05,
+          -3.678e-05,
+          -0.00013919
+        ],
+        "G_diagonal": [
+          1.0,
+          1.0,
+          1.0,
+          114.27609999999999,
+          1.0,
+          105.88409999999999,
+          1.0,
+          113.6356,
+          104.03999999999999,
+          85.00840000000001
+        ],
+        "y0_star": -0.0012500577749999999,
+        "y_star": [
+          0.07284367850099999,
+          0.049236498086,
+          0.048691644879,
+          0.00016552560515278351,
+          0.01693870829,
+          0.0,
+          0.0031790546250000003,
+          1.025829735575823e-05,
+          1.1661647202998848e-05,
+          1.3067741246747378e-05
+        ],
+        "active_set_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6,
+          7,
+          8,
+          9
+        ],
+        "primal_obj": -0.0002581919330796,
+        "dual_obj": -0.0002581919330796,
+        "duality_gap": 0.0,
+        "argmax_y_star_partition": [
+          6,
+          3
+        ],
+        "argmax_y_star_value": 0.07284367850099999,
+        "argmax_idx": 0,
+        "partitions_in_order": [
+          [
+            6,
+            3
+          ],
+          [
+            8,
+            1
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            9
+          ],
+          [
+            5,
+            3,
+            1
+          ],
+          [
+            6,
+            2,
+            1
+          ],
+          [
+            4,
+            3,
+            1,
+            1
+          ],
+          [
+            4,
+            2,
+            2,
+            1
+          ],
+          [
+            5,
+            2,
+            1,
+            1
+          ]
+        ],
+        "empirical_dominant": [
+          5,
+          4
+        ],
+        "sdp_matches_empirical": false
+      }
+    ],
+    "sdp_match_count": 1,
+    "sdp_match_total": 3,
+    "disposition": "PARTIAL",
+    "y_star_D": [
+      0.10675884381600001,
+      0.02328749344218034,
+      0.005149524732687662,
+      0.001722856571757208,
+      0.074440866445,
+      0.0,
+      0.0019300757224474622,
+      0.01409578816,
+      0.014539168160000001,
+      0.023669935606000003
+    ],
+    "y0_star_D": -0.01443783816,
+    "active_set_D": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      8,
+      9
+    ],
+    "duality_gap_D": 0.0,
+    "y_star_T": [
+      0.046716318142,
+      0.028732726779,
+      0.02140272425,
+      0.011739921842,
+      0.00017067756570293018,
+      2.9785962798703668e-05,
+      0.0,
+      1.9490331138929534e-05,
+      2.3370612157717117e-05,
+      2.7363681877162636e-05
+    ],
+    "y0_star_T": -0.0014044866500000002,
+    "active_set_T": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      7,
+      8,
+      9
+    ],
+    "duality_gap_T": 0.0,
+    "y_star_He3": [
+      0.07284367850099999,
+      0.049236498086,
+      0.048691644879,
+      0.00016552560515278351,
+      0.01693870829,
+      0.0,
+      0.0031790546250000003,
+      1.025829735575823e-05,
+      1.1661647202998848e-05,
+      1.3067741246747378e-05
+    ],
+    "y0_star_He3": -0.0012500577749999999,
+    "active_set_He3": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      8,
+      9
+    ],
+    "duality_gap_He3": 0.0
+  }
+}
