@@ -379,22 +379,81 @@ audit purposes but superseded by the per-eigenvalue probe; its
 witness is
 [`probe-phiq-avg-chi-over-classical-dim.witness.json`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/folio-assistant/computations/probe-phiq-avg-chi-over-classical-dim.witness.json).
 
-### Refined open question
+### Multiplicity / Type-B-fold probe (2026-05-11): also refuted
 
 The (D, T) per-atom sweet spots under the operator-valued form
 ($k = 1$ for D, $k = 2$ for T) and the ${}^3\mathrm{He}$ holdout at
-every $k$ point at the **multiplicity-refined** open question as
-the surviving thread:
+every $k$ pointed at the **multiplicity-refined** form as the
+surviving open thread. That probe is now done.
 
-> *Does there exist a rule
-> $n_\star \;:\; (\ell, n_0, k, \mathbf{m})
->   \;\longmapsto\; \mathbb{N}_{\geq 1}$,
-> where $\mathbf{m} = (m_1, m_2, \ldots)$ is the **per-generator
-> near-pole multiplicity profile** of $\mathfrak{H}$
-> ($m_i$ = number of generators with $|\hat{V}_i| \geq q_0 - \varepsilon$
-> for some fixed band $\varepsilon$), such that
-> $\pi_{n_\star(\mathfrak{H})}^{(z)}$ closes the AME light-isotope
-> gap below $5\%$ uniformly?*
+**Probe.**
+[`probe_phiq_multiplicity_refined.py`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/folio-assistant/computations/probe_phiq_multiplicity_refined.py)
+([witness](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/folio-assistant/computations/probe-phiq-multiplicity-refined.witness.json))
+tests four substrate-derived per-atom rules built from the
+per-generator near-pole multiplicity $m_{\max}(\mathfrak{H})$ and the
+Type-B-folded-crystal structure of $H_{3A}(q_0)$ (CLAUDE.md §7b):
+
+| Rule | Formula | $n_\star^D, n_\star^T, n_\star^{{}^3\mathrm{He}}$ |
+|:---|:---|:---:|
+| R1 mult-shifted | $\max(1, k_{\mathrm{Hecke}} - m_{\max} + 1)$ | $1, 6, 1$ |
+| R2 mult-truncated | $\max(1, \lfloor k_{\mathrm{Hecke}} / m_{\max} \rfloor)$ | $1, 2, 1$ |
+| R3 Type-B depth | $\mathrm{depth}(\lambda_\star = \mathrm{argmax}_{\lambda=\lambda^T} |y_\lambda \chi^\lambda_q|)$ | $2, 3, 3$ |
+| R4 combined | $\max(1, \mathrm{depth}(\lambda_\star) - m_{\max} + 1)$ | $1, 1, 1$ |
+
+with $\lambda_\star^D = (3,2,1)$, $\lambda_\star^T = \lambda_\star^{{}^3\mathrm{He}} = (3,3,3)$;
+near-pole multiplicities (band $\varepsilon = 0.15$) $m_{\max}^D = 3$,
+$m_{\max}^T = 4$, $m_{\max}^{{}^3\mathrm{He}} = 5$.
+
+Each rule was evaluated in both the scalar tower and the
+per-eigenvalue operator-valued tower (using the spectra persisted in
+[`probe-phiq-operator-valued.witness.json`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/folio-assistant/computations/probe-phiq-operator-valued.witness.json)).
+
+### Result — refuted, but with structural finding worth recording
+
+| Rule × form | $D$ err | $T$ err | ${}^3\mathrm{He}$ err | max\|err\| |
+|:---|---:|---:|---:|---:|
+| R1 mult-shifted, op | $-6.87\%$ | $+37{,}784\%$ | $-55.97\%$ | $37{,}784\%$ |
+| **R2 mult-truncated, op** | $\mathbf{-6.87\%}$ ✓ | $\mathbf{-8.00\%}$ ✓ | $-55.97\%$ | $56.0\%$ |
+| R3 Type-B depth, op | $+105\%$ | $+482\%$ | $+1375\%$ | $1375\%$ |
+| R4 combined, op | $-6.87\%$ | $-64.75\%$ | $-55.97\%$ | $64.8\%$ |
+| (scalar forms, all rules) | $+472\%$–$+696\%$ | $+472\%$–$+105{,}278\%$ | $+595\%$–$+10{,}229\%$ | $\geq 472\%$ |
+
+**No rule closes uniformly** — the conjecture's $n_\star$ existence
+claim is refuted across every probed family.
+
+**Structural finding worth recording.** The R2 rule
+$n_\star = \max(1, \lfloor k_{\mathrm{Hecke}} / m_{\max} \rfloor)$,
+under the per-eigenvalue operator-valued form, **correctly identifies
+the per-atom optimal truncation depth from substrate data alone for
+$D$ and $T$**:
+
+- $D$: substrate gives $n_\star^D = \lfloor 2/3 \rfloor \to \max(1,0) = 1$;
+  operator-valued $\Phi_q^{[\leq 1]}$ tower closes $D$ to $-6.87\%$.
+- $T$: substrate gives $n_\star^T = \lfloor 9/4 \rfloor = 2$;
+  operator-valued $\Phi_q^{[\leq 2]}$ tower closes $T$ to $-8.00\%$.
+- ${}^3\mathrm{He}$: substrate gives $n_\star^{{}^3\mathrm{He}} = \lfloor 2/5 \rfloor \to \max(1,0) = 1$;
+  $-55.97\%$ residual.
+
+So **the structural blocker is the ${}^3\mathrm{He}$ gap itself, not
+the choice of $n_\star$**. No per-atom truncation depth — substrate-
+derived or otherwise — closes the ${}^3\mathrm{He}$ binding. The
+remaining open question shifts away from $n_\star$:
+
+> *What additional structural contribution to the ${}^3\mathrm{He}$
+> mass formula is missing? Two natural candidates:*
+> - *Markov-trace error: is $\mathrm{tr}_M(\beta_{{}^3\mathrm{He}})$
+>   itself under- or over-counted by ~7 MeV against the empirical
+>   value? (cross-check via mass-table audits and the ρ_K assembly
+>   path in [#564](https://github.com/litlfred/qou/pull/564)).*
+> - *Substrate-parameter inconsistency: is $q_0 \approx 1.110$
+>   calibrated against observables for which ${}^3\mathrm{He}$
+>   sits at a special locus (e.g. 3-strand $A = 3$ braid structure
+>   coinciding with the cyclotomic $q^9 = 1$ branch cut)?*
+
+The Lean form
+[`witness_refutes_multiplicity_and_type_b_forms`](https://github.com/litlfred/qou/blob/claude/close-level-selection-rule-bvMvw/content/quantum-observable-universe/braids-and-knots/brane-tower-z-habiro.lean)
+records the refutation at the falsifiability threshold using the
+best-rule max error ($56.0\%$ on R2-op).
 
 The empirical support for promoting $\mathbf{m}$ to a first-class
 input comes from two converging signals:

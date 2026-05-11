@@ -206,29 +206,72 @@ theorem nStar_scalar_eigenvalue_form_refuted :
   ⟨witness_refutes_scalar_uniform_k_form,
    witness_refutes_scalar_ell_n0_k_form⟩
 
+/-- Witness-recorded best-rule max-relative-error under the
+    substrate-derived multiplicity / Type-B-folded-crystal-depth
+    probe (`probe_phiq_multiplicity_refined.py`, four rules R1–R4
+    in both scalar and operator-valued forms).  The best rule is
+    `R2 mult-truncated, op` (n_⋆(𝔥) = max(1, ⌊k_Hecke / m_max⌋)
+    with per-eigenvalue operator-valued tower).  It identifies the
+    per-atom optimal truncation depth from substrate data alone for
+    D (n_⋆=1, err -6.87%) and T (n_⋆=2, err -8.00%), but the
+    ³He residual at n_⋆=1 is -55.97% — the worst-atom abs error
+    is therefore `55.97%` ≈ `56.0%`.  Structural blocker is the
+    ³He gap itself, not the n_⋆ choice.
+
+    Source:
+    `folio-assistant/computations/probe-phiq-multiplicity-refined.witness.json`
+    (computed `2026-05-11`). -/
+def witnessMultiplicityBestMaxAbsErrPct : ℝ := 56.0
+
+/-- **Multiplicity-refined + Type-B-folded-crystal `n_⋆` refutation.**
+    Four substrate-derived per-atom rules (mult-shifted Hecke,
+    mult-truncated Hecke, Type-B-folded self-dual partition diagonal
+    depth, combined) in BOTH scalar and operator-valued tower
+    formulations were probed.  The best — R2 mult-truncated in
+    operator-valued form — correctly identifies D and T per-atom
+    sweet spots from substrate data alone (a structurally
+    informative finding) but cannot close ³He at any per-atom
+    n_⋆.  Worst-atom abs error 55.97% > 10% threshold.
+
+    This refutation closes the multiplicity-refined open branch
+    that was queued in the operator-valued probe section.  The
+    open path now points BEYOND the n_⋆ choice: the ³He binding
+    gap is a structural deficit of the brane-tower formula at
+    A=3 / n_0=9 / 2-near-pole regime, not a level-selection
+    failure. -/
+-- Ref: [manuscript] conj:brane-tower-z-habiro §"Multiplicity / Type-B-fold probe"
+theorem witness_refutes_multiplicity_and_type_b_forms :
+    witnessMultiplicityBestMaxAbsErrPct > falsifiabilityThresholdPct := by
+  unfold witnessMultiplicityBestMaxAbsErrPct falsifiabilityThresholdPct
+  norm_num
+
 /-- **All probed `n_⋆` families refuted.** Combining the two
     scalar-eigenvalue refutations with the canonical
     operator-valued (per-eigenvalue, signed, operator-trace,
-    Wedderburn-weighted) refutation: every empirically probed form
-    of the `n_⋆` existence claim on `conj:brane-tower-z-habiro`
-    fails the `10%` falsifiability threshold at every uniform `k`.
+    Wedderburn-weighted) refutation AND the substrate-derived
+    multiplicity / Type-B-folded-crystal-depth refutation: every
+    empirically probed form of the `n_⋆` existence claim on
+    `conj:brane-tower-z-habiro` fails the `10%` falsifiability
+    threshold.
 
     What survives the closure (open):
     * the algebraic Cauchy-limit half of the conjecture (untouched);
-    * the **per-atom** rule restricted to the (D, T) pair where
-      D at `k=1` and T at `k=2` separately achieve closure under
-      the operator-valued form — but per-atom retuning violates the
-      conjecture's own criterion;
-    * the **multiplicity-refined** scalar form with `n_⋆` depending
-      on per-generator near-pole multiplicity profile `m`. -/
--- Ref: [manuscript] conj:brane-tower-z-habiro §"Operator-valued probe"
+    * the ³He binding gap itself (structural deficit; not a
+      level-selection failure) — see sibling `.md`
+      §"Multiplicity / Type-B-fold probe" final paragraph for the
+      two candidate reformulations (Markov-trace audit;
+      substrate-parameter cyclotomic-locus check at q^9 = 1). -/
+-- Ref: [manuscript] conj:brane-tower-z-habiro §"Multiplicity / Type-B-fold probe"
 theorem nStar_all_probed_forms_refuted :
     witnessUniformKBestMaxErrPct > falsifiabilityThresholdPct ∧
     witnessNStarRuleMaxErrPct > falsifiabilityThresholdPct ∧
     witnessPerEigenvalueOperatorBestMaxAbsErrPct >
+      falsifiabilityThresholdPct ∧
+    witnessMultiplicityBestMaxAbsErrPct >
       falsifiabilityThresholdPct :=
   ⟨witness_refutes_scalar_uniform_k_form,
    witness_refutes_scalar_ell_n0_k_form,
-   witness_refutes_per_eigenvalue_operator_form⟩
+   witness_refutes_per_eigenvalue_operator_form,
+   witness_refutes_multiplicity_and_type_b_forms⟩
 
 end QOU.BraidKnot
