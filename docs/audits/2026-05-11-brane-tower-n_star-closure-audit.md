@@ -233,6 +233,48 @@ product-volume convention.  Whether the Markov-trace refinement
 restores the symmetry is one of the assertions of the family-5
 refinement probe.
 
+## Cross-PR cherry-pick: #487 multi-term findings (2026-05-11)
+
+[PR #487](https://github.com/litlfred/qou/pull/487) (merged
+2026-04-29) tested an alternative multi-term mass-formula assembly
+under canonical τ_M (Wenzl-bridge):
+
+  T1 (descended Markov trace)
+  + T2+T3 (brane tower, algebraic Vol_q convention)
+  + T4 (Frobenius co-Casimir)
+  + T5 (chirality)
+  + T6 (Habiro, currently 0)
+
+Their finding for deuteron under canonical τ_M:
+
+| Term subset | $B$ MeV | err vs AME |
+|:---|---:|---:|
+| T1 alone | $0.147$ | $-93.4\%$ |
+| T1+T4 Frobenius | $1.423$ | $-36.0\%$ |
+| **T1+T2+T3 algebraic Vol_q** | $\mathbf{2.103}$ | $\mathbf{-5.5\%}$ ✓ |
+| T1+T2+T3+T4+T5 (naive sum) | $-2.25$ | $-201\%$ |
+
+Pulling the same T1+T2+T3 for tritium from their witness
+([deprecated](../../folio-assistant/computations/_deprecated/multi-term-tau-M-corrected.witness.json)):
+
+| Atom | T1+T2+T3 | AME | err |
+|:-:|---:|---:|---:|
+| D | $2.103$ | $2.225$ | $-5.5\%$ ✓ |
+| T | $3.55$ | $8.48$ | $-58.1\%$ ✗ |
+| ³He | not computed | — | — |
+
+**Cross-PR conclusion:** the T1+T2+T3 algebraic Vol_q formula
+closes D within 10% but **fails T by $-58\%$**.  The structural gap
+across the AME light-isotope sample is convention-independent:
+neither my six brane-tower probed conventions nor #487's alternative
+multi-term assembly closes all three of $\{D, T, {}^3\mathrm{He}\}$
+uniformly.
+
+This is consistent with the magic-shell stabilization hypothesis:
+the structural deficit is **not** an operator-volume choice issue
+but a missing additive structural term whose presence the
+LP-dual active-set finding flags at magic shells.
+
 ## Z↔N symmetry empirically supported by AME directly (falsifiability test, 2026-05-11)
 
 The Lean theorem `he3_vs_tritium_shell_cancels` in

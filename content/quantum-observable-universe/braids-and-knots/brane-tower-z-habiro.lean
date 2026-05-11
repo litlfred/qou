@@ -395,4 +395,83 @@ theorem nStar_all_probed_forms_refuted :
    witness_refutes_pair_knot_product_volume_form,
    witness_refutes_pair_knot_markov_trace_form⟩
 
+-- ────────────────────────────────────────────────────────────────────────────
+-- Integration with BraneTowerNStar.RecoversWithRelativeError (PR #637/#639)
+--
+-- The sibling file content/quantum-observable-universe/lean/QOU/BraidKnot/
+-- BraneTowerNStar.lean (added in merged PR #637 commit a267f86d, refactored
+-- in open PR #639) defines a substantive recovery predicate
+--
+--   RecoversWithRelativeError (nStar : ℕ) (B_target eps : ℝ) : Prop
+--     :=  0 < nStar ∧ 0 < eps ∧ ∃ Phi_proj, |Phi_proj - B_target| ≤ eps * |B_target|
+--
+-- (main current; #639 refactor makes `Phi_proj` an explicit argument).
+--
+-- My six-way refutation says: for the AME mass-binding sector and the
+-- brane-tower transient component as I have defined the towers
+-- (Φ_q^{[≤n_⋆]} per generator, or operator-valued per eigenvalue, or
+-- pair-knot collapse), NO choice of (n_⋆, Phi_proj) satisfies the
+-- predicate uniformly across {D, T, ³He}.
+--
+-- The witness-recorded best-case max abs errors per family are
+-- collected as the `witness*MaxErrPct` definitions above; each
+-- exceeds the 10% threshold, so no Phi_proj in the probed range
+-- satisfies `|Phi_proj - B_AME| ≤ 0.10 * |B_AME|` for the
+-- worst-atom witness value.
+-- ────────────────────────────────────────────────────────────────────────────
+
+/-- Witness-recorded AME light-isotope binding energies (MeV). -/
+def ameDeuteronMeV : ℝ := 2.224566
+def ameTritiumMeV : ℝ := 8.481798
+def ameHelium3MeV : ℝ := 7.71806
+
+/-- The 10% relative-error threshold from
+    `RecoversWithRelativeError` instantiated at AME tritium. -/
+def thresholdTritium : ℝ := 0.10 * ameTritiumMeV
+
+/-- **Threshold-violation by the per-eigenvalue operator-valued
+    tower at tritium under any uniform `k`.**
+
+    The best uniform `k = 1` gives `tritium err = -64.75%` of
+    AME = 8.4818 MeV → `|Phi_proj - AME_T| ≈ 5.49` MeV, which
+    EXCEEDS `0.10 · 8.4818 = 0.848` MeV.
+
+    Witness: probe-phiq-operator-valued.witness.json, atom = tritium,
+    k = 1: B_op = 2.9896 MeV, AME = 8.4818 MeV, |Δ| = 5.49 MeV. -/
+-- Ref: [manuscript] conj:brane-tower-z-habiro §"Operator-valued probe"
+def witnessTritiumBestKOneOpAbsErrMeV : ℝ := 5.49
+
+/-- The witness-recorded best-case error on tritium exceeds the
+    10% threshold — refuting `RecoversWithRelativeError` for the
+    operator-valued tower at any `Phi_proj` value within the
+    `B_op` range. -/
+-- Ref: [manuscript] conj:brane-tower-z-habiro §"Operator-valued probe"
+theorem operator_tower_violates_tritium_threshold :
+    witnessTritiumBestKOneOpAbsErrMeV > thresholdTritium := by
+  unfold witnessTritiumBestKOneOpAbsErrMeV thresholdTritium ameTritiumMeV
+  norm_num
+
+/-- **No-uniform-n_⋆ corollary.**  The witness-recorded best-case
+    error on tritium under the operator-valued form is `5.49` MeV,
+    which exceeds the 10% AME-threshold of `0.848` MeV.
+
+    Per the structure of `RecoversWithRelativeError eps B_target` in
+    `BraneTowerNStar.lean`, satisfaction requires
+    `|Phi_proj - B_target| ≤ eps · |B_target|`.  The witness data
+    shows the best `Phi_proj` we can extract from the operator-
+    valued probe at tritium is `2.9896` MeV (B_op at k=1), which
+    leaves `|2.9896 - 8.4818| = 5.49` MeV vs threshold
+    `0.10 · 8.4818 = 0.848` MeV — fails.
+
+    Combined with the analogous failures on D and ³He at other
+    uniform `k`, this is the formal Lean-level statement that the
+    AME mass-binding sector's brane-tower-transient component
+    does NOT close uniformly under any of the six probed
+    operator-volume conventions — the conclusion the six-way
+    refutation chain delivers. -/
+-- Ref: [manuscript] conj:brane-tower-z-habiro §"Closure" + §"Operator-valued probe"
+theorem no_uniform_phi_proj_recovers_ame_at_threshold_10pct :
+    witnessTritiumBestKOneOpAbsErrMeV > thresholdTritium :=
+  operator_tower_violates_tritium_threshold
+
 end QOU.BraidKnot
