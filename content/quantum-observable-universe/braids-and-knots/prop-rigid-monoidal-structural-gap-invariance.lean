@@ -166,23 +166,29 @@ theorem structural_gap_convention_independent
 
 -- Ref: [manuscript] prop:rigid-monoidal-structural-gap-invariance §"Status"
 
-/-- **Tautological skeleton instance.**  Sets the categorical
-    trace to the constant zero function.  Trivially satisfies the
-    convention factorisation when both conventions also use the
-    zero trace.  Real instances would supply the actual Jones-
-    Wenzl Markov trace; encoding that in Lean is conditional on
-    Mathlib's quantum-group infrastructure. -/
+/-- **Tautological skeleton instance.**  Sets `categorical_trace ≡ 0`.
+    The `convention_factorisation` field requires that every
+    operator-volume convention agrees with the zero categorical
+    trace — i.e. `c.markov_trace β = 0` for every `c` and `β`.
+    This is **not** derivable in the skeleton (different
+    conventions can have any `markov_trace` field); it's an
+    axiomatic placeholder marked `sorry` per §3b convention.
+
+    Real instances replace this with Jones-Wenzl uniqueness
+    of the Markov trace on `H_n(q)` (Jones 1985, Wenzl 1988) +
+    the canonical Hopf-antipode invariance — both of which
+    require Mathlib quantum-group infrastructure not yet in
+    scope.  The `sorry` here is the §3b conjecture marker. -/
 -- Ref: [manuscript] prop:rigid-monoidal-structural-gap-invariance §"Skeleton"
+-- Ref: [jones1985] V. Jones, BAMS 12.1 (1985)
+-- Ref: [wenzl1988] H. Wenzl, Invent. Math. 92 (1988)
 instance canonical (α : Type*) :
     RigidMonoidalStructuralGapInvariance α where
   categorical_trace _ := (0 : ℝ)
   convention_factorisation _ _ := by
-    -- The tautological skeleton only handles conventions whose
-    -- markov_trace is also identically 0; for the genuine
-    -- categorical instance the proof uses Jones-Wenzl uniqueness.
-    -- Here we record the structure shape only.
+    -- Axiomatic placeholder per §3b conditional-class convention.
+    -- Genuine instances supply Jones-Wenzl uniqueness +
+    -- categorical-trace identification.
     sorry
-    -- Ref: [jones1985] V. Jones, BAMS 12.1 (1985) §3
-    -- Ref: [wenzl1988] H. Wenzl, Invent. Math. 92 (1988)
 
 end QOU.BraidKnot
