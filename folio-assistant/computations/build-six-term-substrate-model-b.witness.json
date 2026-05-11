@@ -1,0 +1,86 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-11T20:59:25.780177+00:00",
+  "commitSha": "33c05968ba151f8ae22b7c48ab16a6b136d90f95",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 24,
+  "computation": "build-six-term-substrate-model-b",
+  "scriptFile": "build_six_term_substrate_model_b.py",
+  "scriptHash": "64e1a8978c59",
+  "scriptCommitSha": "unknown",
+  "description": "Six-term substrate-only mass predictor on Model B (SDP-canonical) T1 inputs.  Runs the same R-side-bare tower formula as paper_six_term_isotope_sweep.py with mode='r-side-bare', but with Model B T1 values from probe-sdp-canonical-paper-formula.witness.json instead of Model A's atomic_braid_word_3A.  Side-by-side comparison of A vs B predictions at q_0, calibrated to proton CODATA via Model A (Model B doesn't have a free-proton braid).",
+  "contentBlock": "thm:knot-mass-formula-unified",
+  "auditOnly": "docs/coordination/six-term-mass-pipeline.md (audit doc); docs/audits/2026-05-11-model-b-mass-table.md (Model B T1)",
+  "parameters": {
+    "q_0": "1.1099785955541805752815940796095093779932822799587",
+    "m_e_MeV": "0.51099895",
+    "tower_mode": "r-side-bare",
+    "E_0_MeV_per_hecke_unit": "576.21977357311275359"
+  },
+  "data": {
+    "results": [
+      {
+        "isotope": "p",
+        "t1_model_a": "1.0653062285923892551532775699680661193337632009791",
+        "t1_model_b": null,
+        "M_pred_a_MeV": "938.27208816",
+        "M_pred_b_MeV": null,
+        "M_codata_MeV": "938.27208816",
+        "err_a_pct": "0.0",
+        "err_b_pct": null
+      },
+      {
+        "isotope": "n",
+        "t1_model_a": "0.92323329716958364246376988091871375932688744507312",
+        "t1_model_b": null,
+        "M_pred_a_MeV": "856.4068557846825738947918059701667936752131549356",
+        "M_pred_b_MeV": null,
+        "M_codata_MeV": "939.56542052",
+        "err_a_pct": "-8.8507476881485844941840829625334630684484787773978",
+        "err_b_pct": null
+      },
+      {
+        "isotope": "D",
+        "t1_model_a": "0.3882864715477132785110659223165687998713135876719",
+        "t1_model_b": "0.2883259310126921",
+        "M_pred_a_MeV": "1348.6504655762944680614983111965738841175805595368",
+        "M_pred_b_MeV": "1279.0095098752170545591644586308274780783568420685",
+        "M_codata_MeV": "1875.61294257",
+        "err_a_pct": "-28.09548095097124204626892626440904757711401360514",
+        "err_b_pct": "-31.808451474924551466107637788541074511681367637681"
+      },
+      {
+        "isotope": "T",
+        "t1_model_a": "0.10405211867552565489795832743212275483532305732494",
+        "t1_model_b": "0.012888943963108688",
+        "M_pred_a_MeV": "2210.8577579467578322128313693309751059270874937674",
+        "M_pred_b_MeV": "2160.6236227435966508456091655741179029268217252351",
+        "M_codata_MeV": "2808.92113298",
+        "err_a_pct": "-21.291568781027091996440686434477867960837762682203",
+        "err_b_pct": "-23.079947052433648323613419305304674103651282885116"
+      },
+      {
+        "isotope": "3He",
+        "t1_model_a": "0.20654085856226262948910490901292677841811332568243",
+        "t1_model_b": "0.998366621838506",
+        "M_pred_a_MeV": "2267.3326803319555048154825454185989590460416742002",
+        "M_pred_b_MeV": "2703.6566957608224024811126383758696687678397690669",
+        "M_codata_MeV": "2808.39160743",
+        "err_a_pct": "-19.265793476472299656594386270648229436549905599495",
+        "err_b_pct": "-3.7293556707720700767130394110405223755778723461363"
+      },
+      {
+        "isotope": "4He",
+        "t1_model_a": "0.055348345876697992162807082650033407844603061676025",
+        "t1_model_b": null,
+        "M_pred_a_MeV": "3580.6233354466288679419759428033002084435166284098",
+        "M_pred_b_MeV": null,
+        "M_codata_MeV": "3727.37941",
+        "err_a_pct": "-3.9372454051671421358745998223105436845368894600989",
+        "err_b_pct": null
+      }
+    ]
+  }
+}
