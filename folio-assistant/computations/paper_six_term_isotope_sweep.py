@@ -76,7 +76,15 @@ def abs_mpf(v):
 
 
 # ── Canonical Term 1 from Hoefsmit+Wenzl bridge witness ────────────
+# Per owner directive 2026-05-11 ("migrate all compute to default B"),
+# canonical_t1 now defaults to Model B (SDP-canonical low-strand
+# τ_M).  Model A values remain available via t1_source="model-a".
 _T1_CACHE: dict | None = None
+_T1_CACHE_B: dict | None = None
+
+# Default T1 source.  Set to "model-a" via environment to revert.
+import os as _os  # noqa: E402
+_T1_DEFAULT_SOURCE = _os.environ.get("QOU_T1_SOURCE", "model-b")
 
 
 def _load_canonical_t1() -> dict:
@@ -97,6 +105,27 @@ def _load_canonical_t1() -> dict:
     return _T1_CACHE
 
 
+def _load_canonical_t1_model_b() -> dict:
+    """Atom name → |tr_M(canonical-knot)| at q_0 from Model B
+    (SDP-canonical low-strand) Wenzl-Schur via
+    probe-sdp-canonical-paper-formula.witness.json."""
+    global _T1_CACHE_B
+    if _T1_CACHE_B is not None:
+        return _T1_CACHE_B
+    path = HERE / "probe-sdp-canonical-paper-formula.witness.json"
+    if not path.exists():
+        raise FileNotFoundError(
+            f"missing Model B T1 witness: {path}.  Run "
+            f"probe_sdp_canonical_paper_formula.py first."
+        )
+    d = json.loads(path.read_text())
+    out: dict[str, mp.mpf] = {}
+    for atom_name, atom_data in d.get("data", {}).get("results", {}).items():
+        out[atom_name] = abs(mp.mpf(str(atom_data["tr_M_wenzl_schur"])))
+    _T1_CACHE_B = out
+    return _T1_CACHE_B
+
+
 # Markov-peel inline values for atoms not in the bridge witness (e.g. ⁴He
 # and beyond — see markov-peel-atomic-tr-m.witness.json, computed at
 # 50 dps via Markov-axiom recursive ascent and verified against the
@@ -112,9 +141,35 @@ _T1_ATOM_NAME = {
     "3He": "helium-3", "4He": "helium-4",
 }
 
+# Mapping from sweep-table isotope labels to Model B witness atom names.
+_T1_ATOM_NAME_B = {
+    "D": "deuteron", "T": "tritium", "3He": "he3",
+    # p, n, ⁴He: fall back to Model A (no Model B braid in witness yet).
+}
 
-def canonical_t1(isotope_label: str) -> mp.mpf:
-    """Return |tr_M(W)| at q_0 for the named isotope."""
+
+def canonical_t1(isotope_label: str, *, source: str | None = None) -> mp.mpf:
+    """Return |tr_M(W)| at q_0 for the named isotope.
+
+    source="model-b" (default per QOU_T1_SOURCE env var): use the
+    SDP-canonical low-strand braid via
+    `probe-sdp-canonical-paper-formula.witness.json`.  Falls back to
+    Model A for isotopes not yet covered by the Model B witness
+    (p, n, ⁴He).
+
+    source="model-a": use Model A `atom_braid_word_3A` via
+    `atomic-tr-m-mpfr-50dps.witness.json`.
+    """
+    src = source or _T1_DEFAULT_SOURCE
+    if src == "model-b":
+        b_name = _T1_ATOM_NAME_B.get(isotope_label)
+        if b_name:
+            table = _load_canonical_t1_model_b()
+            if b_name in table:
+                return table[b_name]
+        # Fall through to Model A for isotopes not in the Model B witness.
+
+    # Model A path (default fallback)
     name = _T1_ATOM_NAME.get(isotope_label, isotope_label)
     table = _load_canonical_t1()
     if name in table:

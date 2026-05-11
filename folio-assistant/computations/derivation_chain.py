@@ -92,6 +92,43 @@ TR_M_AT_Q0: dict[str, float] = {
     "D": 0.3882864715477134,
 }
 
+# Default Model B (SDP-canonical low-strand) τ_M values at q_0 ───────
+# Per owner directive 2026-05-11 ("migrate all compute to default B").
+#
+# Model B uses the canonical hyperbolic knot for each isotope in the
+# minimum-strand braid group:
+#
+#   D    : 6_2     in B_3,  ρ = 1, braid = [1, -2, 1, 1, 1, -2]
+#   T    : 8_11    in B_5,  ρ = 2, braid = [-1, 2, -3, 2, 1, -3, -3,
+#                                            4, -3, -2, -3, -4, -3, 2]
+#   ³He  : L6a4    in B_3,  ρ = 2, braid = [-1, 2, -1, 2, -1, 2]
+#                                  (= bare Borromean β_Bor)
+#   p, n : β_Bor proxy in B_3, ρ = 1 (orientation distinction in T5)
+#
+# Source of truth: probe-sdp-canonical-paper-formula.witness.json
+# Computed via paper formula B = m_e · ρ · |τ_M| (Wenzl-Schur weights).
+#
+# n_canon (strand count of the canonical braid; ≠ 3A in general):
+#   D: 3, T: 5, ³He: 3, p/n: 3 (proxy), ⁴He: open
+TR_M_CANONICAL_B_AT_Q0: dict[str, float] = {
+    "p":   0.998366,    # β_Bor proxy (= ³He value at topological level)
+    "n":   0.998366,    # β_Bor proxy
+    "D":   0.288326,    # knot 6_2, SDP-canonical
+    "T":   0.012889,    # knot 8_11, SDP-canonical (H_5)
+    "3He": 0.998367,    # L6a4 = β_Bor (the bare Borromean)
+}
+
+# Per-isotope Model B canonical-braid metadata (knot, strand count,
+# topological prefactor ρ).
+MODEL_B_BRAID_META: dict[str, dict] = {
+    "p":   {"knot": "β_Bor proxy", "n_canon": 3, "rho": 1},
+    "n":   {"knot": "β_Bor proxy", "n_canon": 3, "rho": 1},
+    "D":   {"knot": "6_2",          "n_canon": 3, "rho": 1},
+    "T":   {"knot": "8_11",         "n_canon": 5, "rho": 2},
+    "3He": {"knot": "L6a4",         "n_canon": 3, "rho": 2},
+    "4He": {"knot": "open",         "n_canon": 7, "rho": None},
+}
+
 # Atom-target Markov-trace values in cat-units (Hecke-pipeline output)
 # at q_0 — partial Path A T1+T4 derivation per Workplan 2 Phase 2
 # (`docs/audits/2026-05-10-1ppb-workplan-update.md §Phase 2`).
