@@ -22,10 +22,11 @@ negative average-difference coefficient ($\beta_{\bar d} = -0.005$,
 $t(60) = -5.566$, $p < 0.001$). The qualitative shape of the
 recovered scaling function $f$ matches a *concave, sub-linear*
 curve — they explicitly suggest a **second-order Weber–Fechner law**
-(logarithmic in the large-difference regime) and quote earlier
-power-law fits with exponent $\approx 0.5$ (Cannon 1979; MacAdam
-1974). The square-root form $f(\Delta\psi) = \sqrt{\Delta\psi}$
-appears as their canonical illustrative example.
+(logarithmic in the large-difference regime), and note that earlier
+psychophysical work fits perceived color difference to a power law
+with exponent $\approx 0.5$. The square-root form
+$f(\Delta\psi) = \sqrt{\Delta\psi}$ appears as their canonical
+illustrative example.
 
 **The QOU categorical prediction.**
 
@@ -38,7 +39,7 @@ form is the *quantum-integer arc-length*
 $$
   \Delta E_{\mathrm{perc}}(d)
   \;=\;
-  \frac{1}{\eta}\,\sinh^{-1}\!\bigl(\eta\,d\bigr),
+  \frac{1}{\eta}\,\operatorname{arsinh}\!\bigl(\eta\,d\bigr),
   \qquad
   \eta := \frac{q - q^{-1}}{2},
 $$
@@ -53,14 +54,14 @@ limit $\Delta E_{\mathrm{perc}} = d$.
 | Regime | $\Delta E_{\mathrm{perc}}$ | Comment |
 |---|---|---|
 | $\eta d \ll 1$ | $d - \tfrac{\eta^2}{6} d^3 + O(\eta^4 d^5)$ | Riemannian + cubic sub-additive correction |
-| $\eta d \sim 1$ | $\sinh^{-1}(\eta d)/\eta$ | Crossover regime |
+| $\eta d \sim 1$ | $\operatorname{arsinh}(\eta d)/\eta$ | Crossover regime |
 | $\eta d \gg 1$ | $\log(2\eta d)/\eta + O(1/d^2)$ | **Second-order Weber–Fechner** |
 
 The large-$d$ logarithmic asymptote is *exactly* the second-order
 Weber–Fechner law that \cite{bujack2022} hint at. The Cannon
 power-law exponent $\approx 0.5$ corresponds to the geometric mean
 of the linear and logarithmic regimes — the intermediate-$d$
-behavior of $\sinh^{-1}(\eta d)/\eta$.
+behavior of $\operatorname{arsinh}(\eta d)/\eta$.
 
 **Numerical prediction from the substrate parameter.**
 
@@ -87,7 +88,7 @@ the interval $[5, 10]$, bracketing the QOU prediction $d^{\,*}
 **Falsifiability protocol.**
 
 The categorical prediction is a one-parameter family
-$\Delta E_{\mathrm{perc}}(d) = \sinh^{-1}(\eta d)/\eta$. A
+$\Delta E_{\mathrm{perc}}(d) = \operatorname{arsinh}(\eta d)/\eta$. A
 sufficiently precise color-perception experiment — for example, a
 re-analysis of the \cite{bujack2022} dataset or a new MTurk
 campaign with $\Delta d \in \{1, 2, 5, 10, 20, 50\}$ — can fit a
@@ -98,7 +99,7 @@ The QOU framework then admits three distinct outcomes:
 |---|---|
 | $\eta \in [0.08, 0.13]$ | **Confirmation.** The substrate parameter $q_0$ predicts macroscopic color perception with no rescaling. |
 | $\eta \in [0.02, 0.50]$ but outside $[0.08, 0.13]$ | **Refinement.** A scale renormalization $q_{\mathrm{color}} = q_0^{\,\alpha}$ between substrate and retinal cone-cell physics is required; $\alpha$ is then a derived quantity from the cone-spectral-response cascade. |
-| $\eta \notin [0.02, 0.50]$ or the $\sinh^{-1}$ form is rejected at $p < 0.001$ | **Falsification of the direct identification.** Either the chromaticity-projection step decouples retinal perception from the Skein metric, or the $q$-chromaticity construction does not lift to macroscopic color perception by the obvious functor. |
+| $\eta \notin [0.02, 0.50]$ or the $\operatorname{arsinh}$ form is rejected at $p < 0.001$ | **Falsification of the direct identification.** Either the chromaticity-projection step decouples retinal perception from the Skein metric, or the $q$-chromaticity construction does not lift to macroscopic color perception by the obvious functor. |
 
 The third outcome would not falsify QOU as a whole — color
 perception is several decoherence layers above the substrate — but
@@ -115,19 +116,21 @@ confirmed:
 | Prediction | QOU origin | Empirical status |
 |---|---|---|
 | Non-Riemannian metric | $q \neq q^{-1}$ in the Skein relation | ✓ confirmed by \cite{bujack2022} |
-| Sub-additive (concave) scaling $f$ | $\sinh^{-1}$ is concave on $\mathbb{R}_{\geq 0}$ | ✓ confirmed (diminishing returns) |
-| Second-order Weber–Fechner asymptote | large-$d$ limit of $\sinh^{-1}(\eta d)/\eta$ is logarithmic | ✓ matches the explicit conjecture of \cite{bujack2022} |
+| Sub-additive (concave) scaling $f$ | $\operatorname{arsinh}(x)$ is concave for $x \geq 0$ | ✓ confirmed (diminishing returns) |
+| Second-order Weber–Fechner asymptote | large-$d$ limit of $\operatorname{arsinh}(\eta d)/\eta$ is logarithmic | ✓ matches the explicit conjecture of \cite{bujack2022} |
 
 The remaining empirical lever is the *magnitude* of $\eta$, which
 the falsifiability protocol above turns into a single-number test.
 
 **Connection to confinement.**
 
-The same $\eta = (q - q^{-1})/2$ controls the magnitude of the
-forced negative coefficient in the Skein relation
-$q[L_+] - q^{-1}[L_-] = 2\eta\,[L_0]$
-that drives [color confinement](#rem:q-chromaticity). So a
-successful color-perception fit of $\eta \approx 0.10$ would
-constitute an *independent macroscopic measurement of the same
-parameter that governs quark confinement* — a non-trivial
-cross-scale consistency check on the substrate framework.
+The same deformation parameter $q - q^{-1}$ (equal to $2\eta$ in
+the natural metric normalization, and proportional to the
+$(q^{1/2} - q^{-1/2})$ coefficient of the Jones-form Skein
+relation $q[L_+] - q^{-1}[L_-] = (q^{1/2} - q^{-1/2})[L_0]$)
+governs the magnitude of the forced negative coefficient that
+drives [color confinement](#rem:q-chromaticity). So a successful
+color-perception fit of $\eta \approx 0.10$ would constitute an
+*independent macroscopic measurement of the same underlying
+substrate deformation that governs quark confinement* — a
+non-trivial cross-scale consistency check on the framework.

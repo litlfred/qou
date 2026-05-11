@@ -206,7 +206,7 @@ export const references: CSLData[] = [
     DOI: "10.1073/pnas.2119753119",
     URL: "https://doi.org/10.1073/pnas.2119753119",
     note:
-      "Shows that perceived color differences obey diminishing returns (sub-additivity along geodesics), contradicting the 100-year-old Riemann/Helmholtz/Schrodinger Riemannian paradigm. Hints at a second-order Weber-Fechner law.",
+      "Shows that perceived color differences obey diminishing returns (sub-additivity along geodesics), contradicting the 100-year-old Riemann/Helmholtz/Schrödinger Riemannian paradigm. Hints at a second-order Weber-Fechner law.",
   }),
 
   // ── Schrödinger 1920 — color metric (original) ────────────────
@@ -226,7 +226,7 @@ export const references: CSLData[] = [
     DOI: "10.1002/andp.19203682102",
     URL: "https://doi.org/10.1002/andp.19203682102",
     note:
-      "Schrodinger's 1920 Riemannian line element for perceived color space. Together with Helmholtz, framed the paradigm that Bujack et al. (2022) overturn.",
+      "Schrödinger's 1920 Riemannian line element for perceived color space. Together with Helmholtz, framed the paradigm that Bujack et al. (2022) overturn.",
   }),
 
   // ── Nature: Guo et al. 2025 ───────────────────────────────────
