@@ -164,8 +164,8 @@ $\Delta_{\mathrm{coupling}}({}^{16}\mathrm{O}) = f(\tau(\sigma_{
 \text{O-shell}}))$ matches an empirical extraction, the closed-form
 conjecture gains a 3-atom calibration anchor → falsifiable
 prediction at ${}^{40}\mathrm{Ca}$ (Z=20 magic). **Compute: hours
-under crystal-bases; not feasible under naive GS.** ⟶ **TODO:
-crystal-bases `markov_peel` rewrite** (issue queued).
+under crystal-bases; not feasible under naive GS.** Open
+task: crystal-bases `markov_peel` rewrite (queued; see P3).
 
 **P0.2.** Test per-partition $k_\lambda$ rule (PR #639) on
 $\{D, T, {}^3\mathrm{He}, {}^4\mathrm{He}\}$ at uniform vs
@@ -283,8 +283,8 @@ move M0 → M1.
 
 - **#639 (Q_β spectral bridge + per-partition $k_\lambda$):** must
   land before P2.2 cherry-pick. Their refactor of `BraneTowerNStar.
-  RecoversWithRelativeError` is the predicate I integrate with in
-  B.3.
+  RecoversWithRelativeError` is the predicate this branch's
+  refutation theorems integrate with via B.3.
 - **#640 (neutron mass 50dps):** independent; produces $m_n$
   prediction at 999 ppb — directly contributes to the M3 milestone
   once Δ_shell prediction lands.
