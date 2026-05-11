@@ -117,3 +117,111 @@ symbolic) is empirically correct and structurally clean. Form B
 Q_β under any natural scaling; should be either renamed (to
 decay rate or transition amplitude) or have its Q_β-equivalence
 proved explicitly with the L_i, R_i context matrices.
+
+## Update 2026-05-11 cycle 5 — REFUTATION
+
+Per owner directive: "Form A ≡ Form B at single-wrap A=1 with full
+L_i, R_i context matrices [TEST THIS] … paper is sloppy. we need to
+see what we really need from derivation. no paper changes until it
+is worked out."
+
+**Numerical test done with full L_i · T · R_i context for β-decay's
+two changed crossings** (n → p: pos 1 = (u₁,d₂)→(u₁,u'₂) = ud→uu,
+pos 3 = (d₂,d₃)→(u'₂,d₃) = dd→ud):
+
+| Computation | Value | Scale to match Q_β=0.7823 |
+|---|---:|---:|
+| **(a)** Σ-per-position with proper L_i, R_i | 0.0909 dimensionless | 8.62 MeV/unit |
+| **(b)** Full-braid end-to-end log-ratio | 0.0993 dimensionless | 7.89 MeV/unit |
+| Form A reference | 0.7836 MeV | — (canonical) |
+
+**No natural framework scale matches** the required 8.62 MeV/unit:
+  - m_e = 0.511 MeV
+  - E_0 = 4.186 MeV (off by 2×)
+  - 2 · E_0 = 8.37 MeV (close but NOT exact)
+  - m_e · c_q² = 42.25 MeV (way too large)
+  - m_e / (q_0 − 1) = 4.65 MeV
+  - m_e / ℏ_q = 5.16 MeV
+
+The ratio Σ_per-position / |Δ(net)_A| = 0.4855 ≈ 1/2 hints at a
+missing factor of 2 (perhaps a kinematic Lorentz factor in
+β-decay's two-body decay vs three-body, or a Markov-parameter
+normalization), but 1/2 doesn't close exactly — the residual after
+the 2× correction is still 0.8%, not the 0.17% of Form A.
+
+### Verdict on the conjecture Form A ≡ Form B
+
+**REFUTED at the numerical level** under the V̂_i = z · M_{i,11} +
+M_{i,21} definition in `beta-decay-transfer-matrix.md` with any
+natural framework scaling.
+
+Three possibilities (all require framework R&D, NOT paper edits
+at this time per owner directive):
+
+1. **V̂ definition is wrong** in the existing markdown.
+   The doc's V̂_i = z · M_{11} + M_{21} may be incorrect or
+   incomplete. The correct V̂_i for energy purposes might involve
+   higher-order entries or a different normalization.
+
+2. **L_i, R_i interpretation is wrong**. I used parent (neutron)
+   matrices for L_i, R_i throughout. The doc's notation is
+   ambiguous — possibly L_i should be the daughter context, or
+   L_i should be the symmetrized par+dau context.
+
+3. **Form B genuinely computes a DIFFERENT observable**, not Q_β.
+   The transfer-matrix log-ratio is naturally a TRANSITION
+   AMPLITUDE or DECAY-RATE factor (probability flow); calling
+   it "Q-value in log form" in the doc was likely sloppy
+   notation that conflates two related but distinct observables.
+
+### Working hypothesis (most likely)
+
+Option 3 is most plausible — the framework has two related but
+DISTINCT observables conflated under the label "Q-value":
+
+- **Energy released** = Q_β (Form A canonical)
+- **Decay amplitude** = log-ratio (Form B, related to lifetime/rate)
+
+In standard QFT these are different: the energy is from rest-mass
+differences (Form A), the rate is from matrix elements (Form B).
+They're related via Fermi's golden rule but not equal.
+
+If this hypothesis is correct, the paper needs:
+- Form A explicitly canonical for Q-value (energy)
+- Form B explicitly renamed to "decay amplitude" / "transition
+  matrix-element log" (rate, lifetime, branching ratio, etc.)
+- Bridge formula (Fermi's golden rule analog) connecting them
+
+But these paper changes are DEFERRED per owner directive — first
+need to determine which derivation is the right one for which
+observable, then update the paper coherently.
+
+## What's needed from the derivation (per owner directive)
+
+The audit should drive the framework's authors to settle:
+
+1. **WHICH physical observable does each form compute?**
+   - Q-value (energy released)
+   - Decay rate (lifetime)
+   - Transition amplitude (cross-section)
+
+2. **WHAT bridge formula connects Form A and Form B** when both
+   should give related quantities?
+
+3. **IS the V̂_i definition correct** for energy-scale quantities?
+   The simple `z · M_{11} + M_{21}` may be incomplete.
+
+4. **WHAT is the canonical convention** for L_i, R_i context
+   matrices in the parent-vs-daughter computation?
+
+Until questions 1-4 are answered, the paper has notation drift
+that propagates into computational ambiguity. **No paper
+changes** in this PR until the underlying derivation is
+unambiguous.
+
+### What this PR delivers
+
+PR #637 stays on Form A throughout (empirically correct +0.17%
+residual). The audit doc records the Form A vs B refutation as a
+research finding for future framework cleanup. Lean roadmap Gap
+#11 (Form A ≡ Form B equivalence) remains open per this audit.
