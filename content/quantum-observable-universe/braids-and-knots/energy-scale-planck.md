@@ -1,33 +1,56 @@
-The calibrated energy scale $E_0 \approx 4.179$ MeV
-([energy scale](#rem:beta-decay-energy-scale)) has a
+The energy scale $E_0$ is **derived** from CAL-1 ($m_e$) and CAL-2
+($q_0$) alone — no β-decay calibration consumed. It has a
 natural interpretation in terms of the $q$-deformed Planck
 scale: it is the energy of one Hecke reduction step — the
 cost of resolving a single $\sigma_i^2 \to h\sigma_i + \mathbf{1}$
 in physical units.
 
-## The near-identity
-
-Numerically at $q_0$:
+## Derived form (single Hecke tick)
 
 $$
+  \boxed{
   E_0
-  \approx
+  =
   m_e \cdot c_q^2 \cdot \hbar_q
   =
   \frac{m_e}{(q-1)^2} \cdot \frac{q-1}{q}
   =
   \frac{m_e}{q(q-1)}
+  }
 $$
 
-| Quantity | Value | Formula |
-|----------|-------|---------|
-| $E_0$ (calibrated) | $4.179$ MeV | from $Q_\beta / \lvert\Delta\mathrm{net}\rvert$ |
-| $m_e c_q^2 \hbar_q$ | $4.196$ MeV | $m_e / q(q-1)$ |
-| Ratio | $0.990$ | $1\%$ discrepancy |
+At $q_0 \approx 1.110$, $E_0 \approx 4.186$ MeV.
 
-The $1\%$ residual is the difference between the calibrated
-$E_0$ (which depends on the specific NF coefficients of
-neutron decay) and the pure-$q$ expression.
+**Input-error propagation** (CAL-1 $\sigma_{m_e}/m_e \approx 0.3$ ppb,
+CAL-2 $\sigma_{q_0}/q_0 \approx 1.22$ ppb). The q_0 amplification
+factor $\partial \ln E_0 / \partial \ln q_0 = (1 - 2q_0)/(q_0 - 1)
+\approx -11.09$ at $q_0 = 1.110$:
+
+$$
+  \sigma_{E_0} / E_0
+  \approx
+  \sqrt{(0.3\,\mathrm{ppb})^2 + (11.09 \times 1.22\,\mathrm{ppb})^2}
+  \approx 13.5\,\mathrm{ppb}.
+$$
+
+That is $\sigma_{E_0} \approx 5.7 \times 10^{-8}$ MeV — completely
+negligible at the keV scale of β-decay observables.
+
+## Calibration-cross-check (NOT used for predictions)
+
+A historical "calibrated $E_0$" definition used CAL-3 ($Q_\beta$)
+as input via $E_0^{(\text{cal})} = Q_\beta^{\text{CODATA}}
+/ \lvert\Delta(\mathrm{net})\rvert \approx 4.155$ MeV. **This form
+is no longer used** in the prediction pipeline because it consumes
+CAL-3 as input rather than treating it as a prediction (per
+[`prop:neutron-qvalue-symbolic`](#prop:neutron-qvalue-symbolic)).
+
+The 0.74% gap between the derived $E_0 \approx 4.186$ MeV and the
+cross-check $\approx 4.155$ MeV is the brane-tower truncation
+residual at $N=0$, identical to the +0.17% / +1.31 keV residual
+in $Q_\beta$ prediction. Per the structural bound
+([`per-braid-mass-tower.md`](#prop:per-braid-mass-tower)) this is
+$O(\hbar_q^2/(1 - \hbar_q^2)) \approx 1\%$ at $N=0$.
 
 ## Physical meaning
 
