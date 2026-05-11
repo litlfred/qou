@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-11T21:07:07.940354+00:00",
-  "commitSha": "4ec9da1736d51b0f98a1927dca2540bf6cf2588b",
+  "computedAt": "2026-05-11T21:07:09.811665+00:00",
+  "commitSha": "c5ba9f0fcdfe821c2d2a4586e2171db1893d2764",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2117,6 +2117,7 @@
         "crystal-limit-transport-probe.witness.json",
         "crystal-pole-order.witness.json",
         "crystal-transport-h3-verification.witness.json",
+        "cyclotomic-depth3-dimension-pslq.witness.json",
         "cyclotomic-trilog-imaginary.witness.json",
         "d-density-derivation.witness.json",
         "d-from-scratch.witness.json",

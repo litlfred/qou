@@ -408,6 +408,8 @@ export default chapter({
         // General cyclotomic theorems generalising rounds 10-11.
         "cyclotomic-trilog-imaginary-closed-form",
         "cyclotomic-cl3-orbit-sum-general",
+        // Dimension synthesis: (K-3)/2 genuinely-new at each prime K.
+        "cyclotomic-depth3-dimension-synthesis",
         // Hecke-algebra Baer-* foundation (generic q).
         "hecke-baer-star-generic",
         // Explicit central primitive idempotents via Murphy elements.

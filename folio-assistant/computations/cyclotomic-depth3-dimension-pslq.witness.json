@@ -1,0 +1,37 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-05-11T02:19:33.776352+00:00",
+  "commitSha": "5e865af818831f1fbdaa91cb8b4c93cbc017eca0",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 25,
+  "computation": "cyclotomic-depth3-dimension-pslq",
+  "scriptFile": "cyclotomic_depth3_dimension_pslq.py",
+  "scriptHash": "f3b3967c1fe6",
+  "scriptCommitSha": "unknown",
+  "description": "PSLQ certification at 50 dps that the genuinely-new depth-3 content over Q(zeta_K) for prime K has Borel-rank-saturated dimension (K-3)/2. Verified at K = 5 (dim 1, reproduces PR #634 round 12) and K = 7 (dim 2 — two antisymmetric generators Y_1, Y_2 certified mutually independent and independent of {zeta(3), pi^3} up to coefficient norm 1e8).",
+  "timestamp": "2026-05-11T02:19:33.762803+00:00",
+  "precision_decimal_digits": 50,
+  "K_5": {
+    "borel_rank": 2,
+    "predicted_genuinely_new_dim": 1,
+    "antisymmetric_generator_X5_str": "0.95572314353826862475076392705832322282974187981191",
+    "pslq_X5_vs_zeta3_pi3": "NONE FOUND",
+    "saturated": true
+  },
+  "K_7": {
+    "borel_rank": 3,
+    "predicted_genuinely_new_dim": 2,
+    "cl3_2pi_7_str": "0.55201525870499399422904331448142745352549590086742",
+    "cl3_4pi_7_str": "-0.30861813586545893492324297937147866082669847279846",
+    "cl3_6pi_7_str": "-0.83215968765239756644036596523800593103266826513369",
+    "Y_1_str": "0.86063339457045292915228629385290611435219437366589",
+    "Y_2_str": "0.52354155178693863151712298586652727020596979233523",
+    "pslq_Y1_vs_zeta3_pi3": "NONE FOUND",
+    "pslq_Y2_vs_zeta3_pi3": "NONE FOUND",
+    "pslq_Y1_vs_Y2_zeta3_pi3": "NONE FOUND",
+    "saturated": true
+  },
+  "conclusion": "Dimension synthesis (Theorem D) numerically certified at K = 5 and K = 7. Saturated to Borel-predicted (K - 3) / 2 in both cases."
+}
