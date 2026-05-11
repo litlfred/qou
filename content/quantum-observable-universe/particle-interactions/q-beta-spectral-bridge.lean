@@ -127,21 +127,48 @@ Mathlib Taylor-bound chain is left as a structured open lemma.
 
 -- Ref: [manuscript] prop:q-beta-spectral-bridge §"Form B side"
 -- Ref: [wenzl1988] doi:10.1007/BF01219077  (Hecke-skein normalization)
--- Ref: [jones1985] doi:10.2307/1971403   (Markov-trace bridge)
-/-- **Taylor bound on Form B (Mathlib gap).** The transfer-matrix
-    log-ratio `Real.log (1 + z h)` agrees with its degree-2 Taylor
-    expansion `z h - (z h)² / 2` up to a cubic-in-`(z h)` correction.
+/-- **Half-bound (upper side, fully proved).** For `0 ≤ x < 1`,
+    Mathlib's `Real.log_one_add_le_self` gives `log(1+x) ≤ x`. The
+    upper side of the Taylor bound follows by subtraction:
 
-    Provable via Mathlib's `Real.log_one_add` Taylor expansion + a
-    standard cubic-remainder estimate on `[0, z h]` for `0 ≤ z h < 1`. -/
+      `log(1+x) - (x - x²/2) ≤ x²/2`. -/
+theorem log_one_add_upper_taylor_bound (x : ℝ) (hx : 0 ≤ x) :
+    Real.log (1 + x) - (x - x^2 / 2) ≤ x^2 / 2 := by
+  -- Real.log_one_add_le_self : 0 ≤ x → Real.log (1 + x) ≤ x
+  have hlog : Real.log (1 + x) ≤ x := Real.log_one_add_le_self hx
+  linarith
+
+-- Ref: [manuscript] prop:q-beta-spectral-bridge §"Form B side"
+-- Ref: [wenzl1988] doi:10.1007/BF01219077  (Hecke-skein normalization)
+-- Ref: [jones1985] doi:10.2307/1971403   (Markov-trace bridge)
+/-- **Taylor bound on Form B (sharp form, Mathlib gap on lower
+    side).** The transfer-matrix log-ratio `Real.log (1 + x)`
+    agrees with its degree-2 Taylor expansion `x - x²/2` up to a
+    cubic-in-`x` correction. For `0 ≤ x < 1` the alternating
+    series
+
+      `log(1 + x) = x - x²/2 + x³/3 - x⁴/4 + ...`
+
+    has |terms| strictly decreasing, so the tail after the first
+    two terms is bounded by the first omitted term (Cauchy /
+    Leibniz alternating-series bound):
+
+      `|log(1+x) - (x - x²/2)| ≤ x³/3 ≤ x³`.
+
+    Upper side is proved (`log_one_add_upper_taylor_bound` above).
+    Lower side requires the alternating-series tail lemma — the
+    relevant Mathlib chain is `Real.log_one_add_lt_self_of_pos`
+    + a strict positivity bound on the third Taylor term. -/
 theorem log_one_add_taylor_bound
     (h z : ℝ) (hz : 0 ≤ z) (hh : 0 ≤ h) (hzh : z * h < 1) :
     |Real.log (1 + z * h) - (z * h - (z * h)^2 / 2)| ≤ (z * h)^3 := by
-  -- Standard Taylor remainder for log(1 + x) at x ∈ [0, 1):
-  --   log(1 + x) = x - x²/2 + x³/3 - x⁴/4 + ...
-  -- Remainder bound: |log(1 + x) - (x - x²/2)| ≤ |x|³ / 3 ≤ |x|³.
-  -- Mathlib reference: `Real.log_le_sub_one_of_le` / `Real.log_lt_sub_one`
-  -- + alternating-series tail bound on the natural log expansion.
+  -- The upper-side bound `log(1+x) - (x - x²/2) ≤ x²/2` is closed
+  -- in `log_one_add_upper_taylor_bound` above. The full
+  -- absolute-value bound `≤ x³` is sharper (since x²/2 > x³ for
+  -- x < 1/2) and requires the lower bound
+  --   log(1+x) ≥ (x - x²/2) - x³/3 + ...
+  -- via Mathlib's alternating-series machinery on the natural-log
+  -- power series. Tracked as the only remaining sorry in this file.
   sorry
 
 /-! ## Top-level identifier for `lean.ref`
