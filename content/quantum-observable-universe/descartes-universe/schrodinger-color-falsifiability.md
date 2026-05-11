@@ -112,14 +112,11 @@ Independently of any numerical fit, the QOU framework predicts
 three qualitative features that \cite{bujack2022} have already
 confirmed:
 
-1. **Non-Riemannian.** The Skein relation has $q \neq q^{-1}$, so
-   the inherited chromaticity metric is non-Riemannian. ✓
-2. **Sub-additive (concave $f$).** The $\sinh^{-1}$ function is
-   concave on $\mathbb{R}_{\geq 0}$, so the perceived sum exceeds
-   the perceived whole — the *direction* of diminishing returns. ✓
-3. **Second-order Weber–Fechner asymptote.** The large-$d$
-   limit is logarithmic, matching the hint of \cite{bujack2022}
-   and the historical Weber–Fechner law. ✓
+| Prediction | QOU origin | Empirical status |
+|---|---|---|
+| Non-Riemannian metric | $q \neq q^{-1}$ in the Skein relation | ✓ confirmed by \cite{bujack2022} |
+| Sub-additive (concave) scaling $f$ | $\sinh^{-1}$ is concave on $\mathbb{R}_{\geq 0}$ | ✓ confirmed (diminishing returns) |
+| Second-order Weber–Fechner asymptote | large-$d$ limit of $\sinh^{-1}(\eta d)/\eta$ is logarithmic | ✓ matches the explicit conjecture of \cite{bujack2022} |
 
 The remaining empirical lever is the *magnitude* of $\eta$, which
 the falsifiability protocol above turns into a single-number test.
