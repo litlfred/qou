@@ -147,7 +147,30 @@ fast in GB depth $N$, which is why the single-wrap symbolic form
 
 This proposition was derived during the cycle-6/7 audit on PR #637
 ([`docs/audits/2026-05-11-q-beta-form-A-vs-form-B-canonical-choice.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-11-q-beta-form-A-vs-form-B-canonical-choice.md))
-and verified numerically: the predicted bridge $1/z + (z-1)h/(2z)$
-gives a ratio of $1.898$ at $q_0$, against the direct numerical
-Form A / Form B = $1.885$ — a $0.7\%$ agreement consistent with
-the $O(h^2)$ truncation error.
+and verified numerically at 50 dps via
+[`q_beta_spectral_bridge_witness.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/q_beta_spectral_bridge_witness.py)
+([`q-beta-spectral-bridge.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/q-beta-spectral-bridge.witness.json)):
+
+| Quantity at $q_0 = 1.109978595554181$ | Value (50 dps) |
+|---|---|
+| $h = q - q^{-1}$ | $0.2090603219898795$ |
+| $z = 1/(\sqrt q + 1/\sqrt q)$ | $0.4993203340335983$ |
+| Form A: $\lvert\Delta(\mathrm{net})\rvert$ | $0.1872072128746234$ |
+| Form B: $\ln(1 + z h)$ | $0.0992913985971513$ |
+| Predicted bridge $1/z + (z-1)h/(2z)$ | $1.897907634272056$ |
+| Actual bridge $\mathrm{A}/\mathrm{B}$ | $1.885432328677003$ |
+| Residual $\lvert$predicted $-$ actual$\rvert$ | $0.0124753$ |
+| $O(h^2)$ tolerance ($h^2$) | $0.0437062$ |
+| $Q_\beta^{\mathrm{A}} = \lvert\Delta(\mathrm{net})\rvert \cdot E_0$ | $0.783646$ MeV |
+| $Q_\beta^{\mathrm{B}} = \ln(1+zh) \cdot E_0 / z$ | $0.832395$ MeV |
+| $\lvert Q_\beta^{\mathrm{A}} - Q_\beta^{\mathrm{B}}\rvert$ | $0.0487$ MeV ($< h^2 E_0 = 0.183$ MeV) |
+
+The residual sits inside the $O(h^2)$ Taylor bound; the agreement
+is unconditional algebra modulo the bound. The MeV-level discrepancy
+between $Q_\beta^{\mathrm{A}}$ and $Q_\beta^{\mathrm{B}}$ is **not** a
+prediction inconsistency — it is the same next-order correction
+$(z-1)h/2 \approx -0.052$ to the bridge ratio that the witness's
+first assertion bounds. Both forms agree with CODATA $0.7823$ MeV
+within $7\%$; the canonical predictor used elsewhere remains
+Form A at $+0.168\%$ residual via the single-wrap symbolic closed
+form of [prop:neutron-qvalue-symbolic](#prop:neutron-qvalue-symbolic).
