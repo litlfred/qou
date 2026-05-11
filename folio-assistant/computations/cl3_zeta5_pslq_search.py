@@ -31,6 +31,8 @@ from pathlib import Path
 
 from mpmath import mp, mpf, mpc, pi, exp, polylog, re, im, zeta, log, sqrt, pslq
 
+from witness_base import WitnessBuilder
+
 mp.dps = 50
 
 # ── target: antisymmetric Cl_3 difference ────────────────────────
@@ -213,10 +215,16 @@ def main() -> None:
             else "Relation found — see search outputs."
         ),
     }
-    out = (
-        Path(__file__).parent / "cl3-zeta5-pslq-search.witness.json"
+    # WitnessBuilder.wrap_legacy preserves on-disk layout while adding
+    # canonical metadata (scriptHash, commitSha, computedAt, etc.) per
+    # Copilot PR #634 review.
+    builder = WitnessBuilder.wrap_legacy(
+        "cl3-zeta5-pslq-search",
+        witness,
+        script_path=__file__,
+        engine="mpmath",
     )
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    out = builder.save()
     print(f"\nwitness: {out}")
 
 

@@ -1,14 +1,24 @@
 {
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-05-11T00:30:31.396530+00:00",
+  "commitSha": "f5e47e52cee6f420f89a427a391c5f6f68b2741d",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
   "computation": "cl3-zeta5-orbit-sum",
-  "description": "Verification at 50 decimal digits of the orbit-sum identity Cl_3(2\u03c0/5) + Cl_3(4\u03c0/5) = -(12/25) \u03b6(3), derived from the multiplication formula \u03a3 Li_3(\u03b6_5^k) = -(24/25) \u03b6(3) restricted to real parts. Together with prop:bring-trilog-imaginary-tate-rational (round 10), reduces the 2-dim Bring trilog content to: \u03b6(3)-line (classical) \u2295 Cl_3(2\u03c0/5)-Cl_3(4\u03c0/5) (genuinely new, 1 real number).",
-  "timestamp": "2026-05-10T14:33:29.712891+00:00",
+  "scriptFile": "cl3_zeta5_orbit_sum.py",
+  "scriptHash": "dc53c7699839",
+  "scriptCommitSha": "1e7a9713f6aa236acd932ebccc1c09ebefef1749",
+  "description": "Verification at 50 decimal digits of the orbit-sum identity Cl_3(2π/5) + Cl_3(4π/5) = -(12/25) ζ(3), derived from the multiplication formula Σ Li_3(ζ_5^k) = -(24/25) ζ(3) restricted to real parts. Together with prop:bring-trilog-imaginary-tate-rational (round 10), reduces the 2-dim Bring trilog content to: ζ(3)-line (classical) ⊕ Cl_3(2π/5)-Cl_3(4π/5) (genuinely new, 1 real number).",
+  "timestamp": "2026-05-11T00:30:31.385697+00:00",
   "precision_decimal_digits": 50,
   "cl_3_values": {
     "cl_3_2pi_5": "0.18936791501083168387944480476641361363127422974423",
     "cl_3_4pi_5": "-0.76635522852743694087131912229190960919846765006767"
   },
   "orbit_sum_identity": {
-    "claim": "Cl_3(2\u03c0/5) + Cl_3(4\u03c0/5) = -(12/25) \u00b7 \u03b6(3)",
+    "claim": "Cl_3(2π/5) + Cl_3(4π/5) = -(12/25) · ζ(3)",
     "actual_str": "-0.57698731351660525699187431752549599556719342032344",
     "predicted_str": "-0.57698731351660525699187431752549599556719342032344",
     "residual_str": "1.3363823550460978230702682335757409394075984400525e-51",
@@ -16,17 +26,17 @@
   },
   "zeta_3_str": "1.2020569031595942853997381615114499907649862923405",
   "antisymmetric_generator": {
-    "expression": "Cl_3(2\u03c0/5) - Cl_3(4\u03c0/5)",
+    "expression": "Cl_3(2π/5) - Cl_3(4π/5)",
     "value_str": "0.95572314353826862475076392705832322282974187981191",
-    "interpretation": "The genuinely-new depth-3 element for B1 over Q(\u03b6_5). Lives in P_3 / (P_2 + \u03b6(3)\u00b7Q + Tate)."
+    "interpretation": "The genuinely-new depth-3 element for B1 over Q(ζ_5). Lives in P_3 / (P_2 + ζ(3)·Q + Tate)."
   },
   "borel_rank_2_decomposition": {
     "tate_dim": 1,
-    "tate_generator": "\u03b6(3) (or equivalently the orbit-sum)",
+    "tate_generator": "ζ(3) (or equivalently the orbit-sum)",
     "new_dim": 1,
-    "new_generator": "Cl_3(2\u03c0/5) - Cl_3(4\u03c0/5)",
+    "new_generator": "Cl_3(2π/5) - Cl_3(4π/5)",
     "total_dim": 2,
     "matches_borel_rank": true
   },
-  "sharp_open_content_at_depth_3_over_zeta5": "ONE real number: Cl_3(2\u03c0/5) - Cl_3(4\u03c0/5) \u2248 0.955. Whether this admits a closed form modulo lower-weight stuff is open (no Goncharov/Bloch-Suslin reduction beyond round 10's reflection-formula result)."
+  "sharp_open_content_at_depth_3_over_zeta5": "ONE real number: Cl_3(2π/5) - Cl_3(4π/5) ≈ 0.955. Whether this admits a closed form modulo lower-weight stuff is open (no Goncharov/Bloch-Suslin reduction beyond round 10's reflection-formula result)."
 }

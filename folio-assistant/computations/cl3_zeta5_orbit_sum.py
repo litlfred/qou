@@ -38,6 +38,8 @@ from pathlib import Path
 from mpmath import mp, mpf, mpc, pi, exp, polylog, re, im, zeta
 from mpmath import fabs as mpabs
 
+from witness_base import WitnessBuilder
+
 mp.dps = 50
 
 # ── inputs ────────────────────────────────────────────────────────
@@ -133,10 +135,16 @@ def main() -> None:
             "beyond round 10's reflection-formula result)."
         ),
     }
-    out = (
-        Path(__file__).parent / "cl3-zeta5-orbit-sum.witness.json"
+    # WitnessBuilder.wrap_legacy preserves on-disk layout while adding
+    # canonical metadata (scriptHash, commitSha, computedAt, etc.) per
+    # Copilot PR #634 review.
+    builder = WitnessBuilder.wrap_legacy(
+        "cl3-zeta5-orbit-sum",
+        witness,
+        script_path=__file__,
+        engine="mpmath",
     )
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    out = builder.save()
     print(f"\nwitness: {out}")
 
 

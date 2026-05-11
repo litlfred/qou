@@ -48,6 +48,8 @@ from pathlib import Path
 from mpmath import mp, mpf, mpc, pi, exp, polylog, im, re, zeta
 from mpmath import fabs as mpabs
 
+from witness_base import WitnessBuilder
+
 mp.dps = 50
 
 
@@ -178,10 +180,16 @@ def main() -> None:
             "Bring's curve."
         ),
     }
-    out = (
-        Path(__file__).parent / "bring-trilog-zeta5-depth-3.witness.json"
+    # WitnessBuilder.wrap_legacy preserves on-disk layout while adding
+    # canonical metadata (scriptHash, commitSha, computedAt, etc.) per
+    # Copilot PR #634 review.
+    builder = WitnessBuilder.wrap_legacy(
+        "bring-trilog-zeta5-depth-3",
+        witness,
+        script_path=__file__,
+        engine="mpmath",
     )
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    out = builder.save()
     print(f"\nwitness: {out}")
 
 

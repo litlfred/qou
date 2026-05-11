@@ -47,6 +47,8 @@ from pathlib import Path
 from mpmath import mp, mpf, mpc, pi, exp, polylog, im, arg, log, sin
 from mpmath import fabs as mpabs
 
+from witness_base import WitnessBuilder
+
 # 50-decimal-digit working precision (matches q_pinning_50_digit.py).
 mp.dps = 50
 
@@ -204,8 +206,18 @@ def main() -> None:
             "two filtrations is a follow-up open question."
         ),
     }
-    out = Path(__file__).parent / "gb-depth-period-bring-fig8.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str))
+    # Migrate to WitnessBuilder.wrap_legacy per Copilot PR #634
+    # review: preserves on-disk layout (every original key kept
+    # verbatim) but adds canonical metadata
+    # (scriptHash, commitSha, scriptCommitSha, computedAt,
+    # durationMs, engineVersion) for staleness detection.
+    builder = WitnessBuilder.wrap_legacy(
+        "gb-depth-period-bring-fig8",
+        witness,
+        script_path=__file__,
+        engine="mpmath",
+    )
+    out = builder.save()
     print(f"\nwitness: {out}")
 
 

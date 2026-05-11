@@ -1,7 +1,17 @@
 {
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-05-11T00:27:58.189829+00:00",
+  "commitSha": "f5e47e52cee6f420f89a427a391c5f6f68b2741d",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
   "computation": "gb-depth-period-bring-fig8",
-  "description": "Depth-2 numerical witness for conj:bring-figure-eight-depth-2-witness \u2014 the depth-2 instance of the keystone conjecture conj:gb-depth-period-correspondence.  The figure-8 knot 4_1 embeds in Bring's genus-4 surface via the 4-strand braid word sigma_1 sigma_2^{-1} sigma_1 sigma_2^{-1}.  The depth-2 grouplike Li_2^q at the regular-ideal-tetrahedron shape z = e^(i pi/3) has std-part 2 Cl_2(pi/3) = Vol(S^3 \\ 4_1) by Lobachevsky-Thurston. Computed at 50 decimal digits via mpmath.polylog. The Clausen-series 2M-term partial sum is a low-precision sanity check (~13-digit / SnapPy-range agreement), NOT a 50-digit independent cross-validation. Per Copilot PR #634 review.",
-  "timestamp": "2026-05-10T15:41:30.854594+00:00",
+  "scriptFile": "gb_depth_period_bring_fig8.py",
+  "scriptHash": "9e09a1672d45",
+  "scriptCommitSha": "0152a7da29f26769af842258e584b7152a237b9d",
+  "description": "Depth-2 numerical witness for conj:bring-figure-eight-depth-2-witness — the depth-2 instance of the keystone conjecture conj:gb-depth-period-correspondence.  The figure-8 knot 4_1 embeds in Bring's genus-4 surface via the 4-strand braid word sigma_1 sigma_2^{-1} sigma_1 sigma_2^{-1}.  The depth-2 grouplike Li_2^q at the regular-ideal-tetrahedron shape z = e^(i pi/3) has std-part 2 Cl_2(pi/3) = Vol(S^3 \\ 4_1) by Lobachevsky-Thurston. Computed at 50 decimal digits via mpmath.polylog. The Clausen-series 2M-term partial sum is a low-precision sanity check (~13-digit / SnapPy-range agreement), NOT a 50-digit independent cross-validation. Per Copilot PR #634 review.",
+  "timestamp": "2026-05-11T00:27:58.177757+00:00",
   "precision_decimal_digits": 50,
   "shape_parameter": {
     "form": "e^(i pi/3)",
@@ -22,7 +32,7 @@
   },
   "sanity_check_residual": "0.00000000000043301226887919267271865228222666908823651476713813",
   "sanity_check_below_1e_minus_12": true,
-  "fifty_digit_value_authority": "mpmath.polylog at mp.dps=50 is the canonical computation; cross-validation to 50 digits would require an independent high-precision routine (e.g. Lobachevsky integral via mpmath.quad or BBP-style formula) \u2014 deferred",
+  "fifty_digit_value_authority": "mpmath.polylog at mp.dps=50 is the canonical computation; cross-validation to 50 digits would require an independent high-precision routine (e.g. Lobachevsky integral via mpmath.quad or BBP-style formula) — deferred",
   "geometric_identification": {
     "claim": "2 D(e^(i pi/3)) = Vol(S^3 \\ 4_1)",
     "justification": "figure-8 complement = 2 regular ideal tetrahedra (Thurston 1978); regular-tet volume = D(e^(i pi/3)).",
@@ -34,6 +44,6 @@
   "iterated_integral_depth": 2,
   "goncharov_period_depth": 2,
   "depth_correspondence_verified": true,
-  "interpretation": "Single Li_2 \u21d2 iterated-integral depth 2 \u21d2 Goncharov period-class P_2/P_1 (Bloch regulator).  Predicted by conj:gb-depth-period-correspondence.",
-  "open_question_partition_filtration": "The cellular GB-depth on Z(H_n(q)) (max-hook of partition, per prop:curvature-rank-gb-stratification) is a SEPARATE filtration from the iterated-integral depth on G(H_q).  Their relationship is open: the (2,2) self-conjugate cell of H_4(q) \u2014 where the amphichiral 4_1 lives \u2014 has max-hook = 3, NOT 2.  The depth match here is iterated-integral vs Goncharov, not partition-cellular vs Goncharov.  Pinning the precise relationship between the two filtrations is a follow-up open question."
+  "interpretation": "Single Li_2 ⇒ iterated-integral depth 2 ⇒ Goncharov period-class P_2/P_1 (Bloch regulator).  Predicted by conj:gb-depth-period-correspondence.",
+  "open_question_partition_filtration": "The cellular GB-depth on Z(H_n(q)) (max-hook of partition, per prop:curvature-rank-gb-stratification) is a SEPARATE filtration from the iterated-integral depth on G(H_q).  Their relationship is open: the (2,2) self-conjugate cell of H_4(q) — where the amphichiral 4_1 lives — has max-hook = 3, NOT 2.  The depth match here is iterated-integral vs Goncharov, not partition-cellular vs Goncharov.  Pinning the precise relationship between the two filtrations is a follow-up open question."
 }
