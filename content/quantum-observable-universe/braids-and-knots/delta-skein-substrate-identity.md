@@ -31,10 +31,11 @@ $$
 $$
 
 *— a closed-form prediction in $\{m_e, q_0\}$ via the substrate
-$Q_\beta$ formula
-$Q_\beta(q_0) = m_e \cdot |q^2 - 2q - 1|(q+1)/(2q^3)$
+$Q_\beta$ Form A
+([prop:q-beta-spectral-bridge](#prop:q-beta-spectral-bridge))
+$Q_\beta^A(q_0) = m_e \cdot |q^2 - 2q - 1|(q+1)/(2q^3)$
 recorded in the
-[m-baryon-volume-form witness](https://github.com/litlfred/qou/blob/claude/audit-plancherel-usage-a6DgI/folio-assistant/computations/m-baryon-volume-form.witness.json),
+[m-baryon-volume-form witness](https://github.com/litlfred/qou/blob/claude/neutron-mass-50dps-chain/folio-assistant/computations/m-baryon-volume-form.witness.json),
 with no calibration to the proton or neutron individually.*
 
 ## Per-Borromean-quantum normalisation

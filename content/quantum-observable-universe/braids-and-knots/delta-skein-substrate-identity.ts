@@ -16,6 +16,7 @@ export default remark({
   uses: [
     "conj:borromean-baryon-mass-formula",
     "prop:three-calibration-inputs",
+    "prop:q-beta-spectral-bridge",
     "rem:beta-decay-energy-scale",
     "def:borromean-baryon",
     "def:quantum-planck-constant",
