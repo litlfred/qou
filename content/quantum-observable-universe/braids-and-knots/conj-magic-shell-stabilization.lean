@@ -492,8 +492,8 @@ instance canonicalCrossCoupling [_M : MagicShellStabilization] :
     show _M.delta_shell Z N
             = _M.delta_shell Z 0 + _M.delta_shell 0 N + 0
     -- Use canonical Δ_shell ≡ 0; both sides reduce to 0.
+    -- Ref: [manuscript] conj:magic-shell-stabilization §"Refined proof obligations (3)"
     sorry
-    -- Ref: [manuscript] conj:magic-shell-stabilization §"Refined proof obligations"
   coupling_non_magic_z _ _ _ := rfl
   coupling_non_magic_n _ _ _ := rfl
   coupling_z_n_symmetry _ _ := rfl

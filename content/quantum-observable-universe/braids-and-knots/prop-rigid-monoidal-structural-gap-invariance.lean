@@ -219,6 +219,8 @@ instance canonical (α : Type*) :
     -- (Layer 1: Mathlib `MarkovTraceAxiomatic` typeclass;
     --  Layer 2: `pair_knot_Z_N_trace_invariance` — done;
     --  Layer 3: structural induction on Hecke quadratic).
+    -- Ref: [jones1985] V. Jones, BAMS 12.1 (1985)
+    -- Ref: [wenzl1988] H. Wenzl, Invent. Math. 92 (1988)
     sorry
 
 end QOU.BraidKnot
