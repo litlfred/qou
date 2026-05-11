@@ -115,13 +115,59 @@ $n_⋆$ existence claim at the level of empirical witness data; their
 work closes the algebraic Cauchy-limit claim at the Lean structural
 level.  No contradiction.
 
-### Open path 2 — ³He structural gap
+### Open path 2 — ³He structural gap (real, audited)
 
 The ³He binding gap survives every probed `n_⋆` rule.  Under the
 best probed combination (R2 mult-truncated operator-valued at
 $n_⋆^{³\mathrm{He}} = 1$), ³He's residual is $-55.97\%$.  Under
 pair-knot product-volume collapse ($\sigma_{pp}$ as single
 composite), ³He is at $+218.7\%$; ⁴He at $-19.4\%$.
+
+**Markov-trace audit (B.1, 2026-05-11):**
+[`probe_tr_m_he3_audit.py`](../../folio-assistant/computations/probe_tr_m_he3_audit.py)
+([witness](../../folio-assistant/computations/tr-m-he3-audit.witness.json))
+cross-checked $|\mathrm{tr}_M(\beta)|$ for $\{D, T, ^3\mathrm{He}\}$
+via two independent canonical paths:
+
+- **Path 1 (Hoefsmit seminormal + Wedderburn sum):** the path used
+  in all six PR #638 probe families.
+- **Path 2 (Markov-axiom recursive ascent):**
+  `markov_peel.tr_M_atomic` — Gröbner-Shirshov reduction in
+  $H_n(q)$ then peel the top generator at 30 dps symbolic.
+
+Results:
+
+| Atom | Hoefsmit (float64) | Markov-peel (symbolic 30dps) | $|\Delta|$ |
+|:-:|---:|---:|---:|
+| D | $0.3882864713$ | $0.3882864715$ | $2.6 \times 10^{-10}$ |
+| T | $0.1040539888$ | $0.1040521187$ | $1.9 \times 10^{-6}$ |
+| ³He | $0.2065441289$ | $0.2065408586$ | $3.3 \times 10^{-6}$ |
+
+**Conclusion: the ³He structural gap is REAL.** The two canonical
+paths agree on ³He at $1.6 \times 10^{-5}$ relative precision —
+well within the $\sim 55\%$ binding-formula residual.  No
+Markov-trace mis-count can account for the gap.
+
+**Side-finding (precision):** $n = 9$ Hoefsmit seminormal in float64
+introduces $\sim 1.5 \times 10^{-5}$ relative error vs the symbolic
+50dps Markov-peel.  This is irrelevant for the structural-gap
+analysis (the gap is $\sim 10^4 \times$ larger than the precision
+floor) but matters for downstream $1$ ppb mass-prediction work — see
+[PR #640](https://github.com/litlfred/qou/pull/640) for 50dps
+neutron-mass chain.  The brane-tower probes in PR #638 should be
+re-run at mpmath 50dps if quantitative claims at the $10^{-5}$
+relative level become needed; the current $\sim 10\%$
+falsifiability bound is unaffected.
+
+**Cyclotomic-locus check (C.1, 2026-05-11):** $q_0 \approx 1.110$ is
+real and not near any cyclotomic locus $q^k = 1$ (only $q = 1$ is on
+$\mathbb{R}$; distance $0.11$ away).  The Hecke algebra $H_9(q_0)$
+is fully semisimple at $q_0$ since $[n]_{q_0} > 0$ for all $n \leq
+9$.  The ³He gap is therefore **not** a cyclotomic-degeneracy
+artifact; the structural deficit is in the brane-tower formula
+itself, not the substrate algebra.
+
+### What the LP-dual evidence points at next
 
 The LP-dual evidence suggests the right refinement: replace the
 simple product-volume convention $|\hat V_{\text{shell}}| =
