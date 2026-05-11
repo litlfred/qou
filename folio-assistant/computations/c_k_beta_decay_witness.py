@@ -35,6 +35,22 @@ of ~6 faster than the worst-case bound at N=0. Pinning the *actual*
 rate (vs the ceiling) is the open lift-formula part of the
 brane-tower conjecture.
 
+**Three-calibration discipline** (per
+`docs/audits/2026-05-11-three-calibration-discipline-violations.md`
+on PR #640): this script is **Class C (diagnostic / probe)**.
+Inputs:
+
+  * CAL-1 `m_e` — prediction input (via Form A = `prop:neutron-qvalue-symbolic`)
+  * CAL-2 `q_0` — prediction input (via canonical pinning witness)
+  * `Q_BETA_MEV` — **comparator only**, used to compute the
+    OBSERVED residual `Q_β^pred - Q_β^CODATA` for the
+    `N0_observed_residual_within_per_braid_bound` assertion. NOT
+    a calibration input to the prediction or the bound.
+
+The substrate-only prediction `Q_β^pred = Form A · E_0` consumes
+only CAL-1 + CAL-2. CAL-3 (`Q_BETA_MEV`) enters only as the
+empirical anchor for the ceiling-vs-observation comparison.
+
 Output: `c-k-beta-decay-bound.witness.json`.
 """
 from __future__ import annotations
