@@ -2,18 +2,47 @@
 
 **Date:** 2026-05-11
 **Branch:** `claude/neutron-mass-50dps-chain`
-**Trigger:** "we are fitting/guessing not relying on derivation"
+**Trigger:** "we are fitting/guessing not relying on derivation" +
+"1ppb target for ALL" + "make sure compute and paper don't have
+wrong E_0's".
 
-## Headline finding
+## Headline finding (updated 2026-05-11 after E_0 audit)
 
-**The framework's substrate-only formulas correctly predict
-DIFFERENCES (Q_β, Δm), but the formulas for INDIVIDUAL masses
-(m_p, m_n) are not actually derived — they depend on either (a) a
-fitted unit-scale, or (b) an implicit ansatz that cat-units ratios
-equal physical mass ratios.**
+The framework has **three E_0 conventions** in `derivation_chain.E_0_CONVENTIONS`:
 
-The 999M ppb residual on the substrate-only neutron chain is
-honest exposure of (b), not noise.
+- **Conv A** — $E_0 = m_e/(q_0(q_0-1)) \approx 4.186$ MeV — **substrate-derived** from CAL-1 + CAL-2 alone (the "categorical E_0").
+- **Conv B** — $E_0 = Q_\beta^{\text{CODATA}}/|\Delta(\text{net})| \approx 4.179$ MeV — calibration to CAL-3 directly.
+- **Conv C** — $E_0 \approx 200$ MeV — back-fit to CODATA $m_p$. The registry flags this as **"⚠️ DISCIPLINE VIOLATION. Do not consume in new production chains."**
+
+### Compute audit — Conv C consumers (2 scripts)
+
+| File | Line | Pattern |
+|------|------|---------|
+| `atomic_braid_mass_table.py` | 441 | `E_0 = (M_p - p_terms["t6_MeV"]) / p_terms["total_hecke"]` |
+| `atomic_braid_mass_table_modes_sweep.py` | 259 | same back-fit pattern |
+
+These two scripts explicitly back-fit $E_0$ to CODATA $m_p$, then "predict" other atoms with the fitted value. Both are already flagged in `E_0_CONVENTIONS["C_proton_back_fit"]` as discipline-violating. Per the registry, downstream production should consume Conv A (mass / Q_β predictions) or Conv B (binding predictions), not C.
+
+### Paper audit — Conv C in content blocks
+
+**Zero hits.** No `.md` content block cites $E_0 = 200$ MeV or "proton back-fit" as a paper-level formula. The paper consistently uses Conv A ($m_e/(q(q-1))$ ≈ 4.186 MeV) per `energy-scale-planck.md` and `calibration-inputs.md` — both substrate-derived. ✓ paper clean.
+
+### Where the residual really comes from
+
+With paper + Conv-A compute clean, the 999M ppb residual on the substrate-only neutron mass chain is NOT due to a wrong E_0. The chain uses
+$$m_n^{\text{pred}} = (m_n^{\text{Hecke}} / m_e^{\text{Hecke}}) \cdot m_e^{\text{CODATA}}$$
+— a cat-units ratio, not an E_0 prediction. The "fit" is the **implicit ansatz** that cat-units ratios equal physical mass ratios. Empirically the cat-units ratio is $\sim 1.17$ while the physical ratio is $\sim 1836$ — a structural gap of $\sim 1570\times$.
+
+Substituting Conv A explicitly: $m_p \approx E_0 \cdot |\mathrm{tr}_M(\beta_p)| \approx 4.186 \cdot 1.065 \approx 4.46$ MeV — also $\sim 99.5\%$ off. So Conv A applied directly to a single nucleon does not close the gap either. The framework's individual-mass formula is structurally incomplete regardless of which derived $E_0$ is used.
+
+**The 1ppb target on ALL quantities requires either:**
+1. Closure of the `brane-tower-z-habiro` $n_\star$ conjecture (open R&D, may close binding-energy residuals to ~5%, much further still to 1ppb).
+2. A **substrate-derived $\lambda_{\text{scale}}$** for the Borromean baryon-mass formula
+   $m(B) = \mathrm{Vol}(\mathcal{B}_3)/\hbar_q^2 \cdot \lambda_{\text{scale}} + \text{Skein corrections}$
+   from `borromean-baryon-interpretation.md`. **Status:** $\lambda_{\text{scale}}$ is **declared but not defined** anywhere in `content/` or `folio-assistant/computations/` — it's an undefined symbol in the paper's mass formula. This is the next concrete "open derivation" needed.
+3. Quark-mass / QCD-scale inputs (would expand the 3-cal discipline; needs author authorization).
+
+**The 999M ppb residual on PR #640 is honest substrate-only exposure of the missing $\lambda_{\text{scale}}$ / $n_\star$ closure.** Not noise to close via tweaks.
 
 ## What works (genuinely derived)
 
