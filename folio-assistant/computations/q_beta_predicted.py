@@ -69,9 +69,13 @@ def main() -> int:
     q_virt = dm.q_beta_virtual_mev()
     q_codata = mp.mpf(str(Q_BETA_MEV))
 
-    # Sanity: q_obs + q_virt should equal q_pred within rounding.
+    # Sanity: q_obs + q_virt is computed on the typed-crossings 6-term
+    # basis (Δ(net) = Δ(obs) + Δ(virt)), so it should equal q_pred_tc
+    # within rounding — NOT q_pred (the single-wrap closed form is
+    # ≈4.5 keV lower, an expected typed-crossings-vs-single-wrap
+    # mismatch, not a rounding residual).
     sum_check = q_obs + q_virt
-    sum_residual_mev = abs(sum_check - q_pred)
+    sum_residual_mev = abs(sum_check - q_pred_tc)
 
     out = {
         "engine": "mpmath",
