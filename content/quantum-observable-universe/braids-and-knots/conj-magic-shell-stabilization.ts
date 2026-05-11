@@ -3,6 +3,7 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:magic-shell-stabilization",
   title: "Magic-shell stabilization term $\\Delta_{\\mathrm{shell}}(Z, N)$ in the brane-tower binding formula",
+  lean: { ref: "qou:QOU.BraidKnot.MagicShellStabilization" },
   uses: [
     "conj:brane-tower-z-habiro",
     "prop:spin-involution-lp-dual-invariance",
