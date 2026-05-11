@@ -30,22 +30,87 @@ to six significant figures with $q = q_0$.
 
 *Hadrons (from pair Skein masses).*
 
-| Particle | Knot formula | Mass formula | QOU (MeV) | Observed (MeV) | Source |
-|----------|-------------|-------------|-----------|----------------|--------|
-| Proton | $[u,u,d]_p \bowtie \mathcal{L}_H$ | $\mathcal{S}_{\mathfrak{u}\mathfrak{u}} + 2\mathcal{S}_{\mathfrak{u}\mathfrak{d}}$ | $938.272$ | $938.272$ | CODATA |
-| Neutron | $[u,d,d]_p \bowtie \mathcal{L}_H$ | $2\mathcal{S}_{\mathfrak{u}\mathfrak{d}} + \mathcal{S}_{\mathfrak{d}\mathfrak{d}}$ | $939.565$ | $939.565$ | CODATA |
-| $n$--$p$ splitting | | $\mathcal{S}_{\mathfrak{d}\mathfrak{d}} - \mathcal{S}_{\mathfrak{u}\mathfrak{u}}$ | $1.293$ | $1.293$ | CODATA |
-| $\pi^{\pm}$ | $u \bowtie d^{\sigma}$ | $\mathcal{S}_{ud^{\sigma}}(q)$ | $139.570$ | $139.570$ | PDG |
-| $K^{\pm}$ | $u \bowtie s^{\sigma}$ | $\mathcal{S}_{us^{\sigma}}(q)$ | $493.677$ | $493.677$ | PDG |
+The proton and neutron rows currently come from the **LO ρ_K
+assembly** which consumes $m_p$ and $m_n$ as CODATA inputs (per
+[`atomic-mass-via-rho-k.witness.json`](../../../folio-assistant/computations/atomic-mass-via-rho-k.witness.json)).
+Per owner directive 2026-05-10 ("do not use LO — use full"), this
+is tautological by construction (the $|\mathrm{tr}_M|$ factor
+cancels in $\rho_K^{\mathrm{LO}} \cdot m_e \cdot |\mathrm{tr}_M|$,
+reducing $\mathcal{M}_\text{pred}$ to $Z m_p + N m_n$). The FULL
+framework prediction for atomic masses requires the unified knot
+mass formula
+$M(\mathfrak{H}) = \rho \cdot [|\mathrm{tr}_M(T_w)| + \mathrm{tower}(T_w) + \mathrm{tr}_M(C_{\dim_q})]$
+which is **not yet wired** at the nucleon scale (Workplan 0b
+Phase 0b.4 + Workplan 2 + open Δ_λ derivation; see
+[handoff](../../../docs/audits/2026-05-10-workplan-0b-script-rewire-handoff.md)).
+The $n$–$p$ splitting is a *consequence* of the FULL Q_β chain
+($Q_\beta + m_e \approx 1.293$ MeV) — see the framework prediction
+panel after this table.
 
-*Light nuclei (from multi-body Skein).*
+| Particle | Knot formula | LO output (MeV) | Observed (MeV) | Source |
+|----------|-------------|---:|---:|--------|
+| Proton | $[u,u,d]_p \bowtie \mathcal{L}_H$ | $938.272$ † | $938.272$ | CODATA |
+| Neutron | $[u,d,d]_p \bowtie \mathcal{L}_H$ | $939.565$ † | $939.565$ | CODATA |
+| $n$-$p$ split | | $1.293$ † | $1.293$ | CODATA |
+| $\pi^{\pm}$ | $u \bowtie d^{\sigma}$ | $139.570$ | $139.570$ | PDG |
+| $K^{\pm}$ | $u \bowtie s^{\sigma}$ | $493.677$ | $493.677$ | PDG |
 
-| Nucleus | Knot formula | Mass formula | QOU (MeV) | Observed (MeV) | Source |
-|---------|-------------|-------------|-----------|----------------|--------|
-| Deuteron | $\mathfrak{p} \bowtie \mathfrak{n}$ | $\mathcal{M}(L_6) - \Delta \mathbf{E}_{\mathrm{bind}}$ | $1875.613$ | $1875.613$ | CODATA |
-| Binding ($D$) | | $\Delta\text{Skein}$ | $2.224$ | $2.225$ | CODATA |
-| ${}^3\mathrm{He}$ | $2\mathfrak{p} \bowtie \mathfrak{n}$ | $\mathcal{M}(L_9) - \Delta E$ | $2808.39$ | $2808.39$ | AME2020 |
-| ${}^4\mathrm{He}$ | $2\mathfrak{p} \bowtie 2\mathfrak{n}$ | $\mathcal{M}(L_{12}) - \Delta E$ | $3727.38$ | $3727.38$ | AME2020 |
+† **Tautological under the LO chain.** The proton, neutron, and
+$n$-$p$ split rows read back the CODATA inputs because the LO
+formula collapses to $Z m_p + N m_n$ identically (no binding
+correction). FULL framework prediction below.
+
+#### FULL Q_β prediction (framework, no CODATA mass injection)
+
+Per [`prop:neutron-qvalue-symbolic`](../../particle-interactions/neutron-qvalue-symbolic.md)
+the framework predicts the β-decay Q-value from CAL-1 ($m_e$) and
+CAL-2 ($q_0$) only via the closed form:
+
+$$
+\boxed{
+Q_\beta^{\text{pred}} = \frac{m_e \cdot |q_0^2 - 2q_0 - 1| \cdot (q_0 + 1)}{2 q_0^3} \approx 0.7836 \text{ MeV}
+}
+$$
+
+vs CODATA $0.7823$ MeV — **+0.168% / +1.31 keV framework prediction**.
+At single wrap the $L_\pm$ and $e^-$ contributions cancel exactly
+between proton and neutron, so $\Delta(\mathrm{net}) = h(h-2)/2$
+with $h = q_0 - q_0^{-1}$, and the entire $Q$-value lives in the
+$\gamma + \sigma_0 + \sigma_1$ channels.
+
+The $n$-$p$ mass split follows: $\mathfrak{m}_n - \mathfrak{m}_p = Q_\beta + m_e \approx 1.295$ MeV
+(vs CODATA $1.293$, same $0.17\%$ framework error, no CODATA $m_n - m_p$
+input).
+
+The +1.31 keV residual is the **brane-tower truncation** — the
+derived $E_0$ uses the single-level Planck-tick approximation;
+exact tower-summed $E_0$ closes it (Workplan 2 Phase 2). The
+typed-crossings 6-term form gives a looser +0.747% prediction
+(0.7882 MeV) — kept in the witness only for cross-check, not used
+for production. Witness:
+[`q-beta-predicted.witness.json`](../../../folio-assistant/computations/q-beta-predicted.witness.json).
+
+*Light nuclei (from multi-body Skein).* All rows below come from
+the **LO ρ_K assembly** with CODATA $m_p$, $m_n$ inputs — same
+discipline caveat as the proton/neutron rows above. The $\Delta$
+column equals the CODATA binding energy by construction, not a
+genuine framework prediction. The FULL multi-body unified knot
+mass formula at $H_{3A}$ is not yet tractable beyond $A = 1$
+(the $n$-$p$ split through Q_β is the only mass-domain framework
+prediction wired today; binding-energy predictions await closure
+of the open Δ_λ research question per
+[recomputed-low-isotope-mass-table.md:99](../braids-and-knots/recomputed-low-isotope-mass-table.md)).
+
+| Nucleus | Knot formula | LO output (MeV) | Observed (MeV) | $\Delta$ = CODATA binding | Source |
+|---------|-------------|---:|---:|---:|--------|
+| Deuteron | $\mathfrak{p} \bowtie \mathfrak{n}$ | $1877.838$ † | $1875.613$ | $-2.225$ MeV | CODATA |
+| Tritium | $\mathfrak{p} \bowtie 2\mathfrak{n}$ | $2817.403$ † | $2808.921$ | $-8.482$ MeV | AME2020 |
+| ${}^3\mathrm{He}$ | $2\mathfrak{p} \bowtie \mathfrak{n}$ | $2816.110$ † | $2808.392$ | $-7.718$ MeV | AME2020 |
+| ${}^4\mathrm{He}$ | $2\mathfrak{p} \bowtie 2\mathfrak{n}$ | $3755.675$ † | $3727.379$ | $-28.296$ MeV | AME2020 |
+
+† **LO output is constituent sum only.** Genuine FULL prediction
+not yet wired (see Workplan 0b §FULL chain status). Witness:
+[`atomic-mass-via-rho-k.witness.json`](../../../folio-assistant/computations/atomic-mass-via-rho-k.witness.json).
 
 **Notes.**  The substrate parameter $q$ is fixed by the
 muon--electron mass ratio (one free input).  Hadronic masses follow

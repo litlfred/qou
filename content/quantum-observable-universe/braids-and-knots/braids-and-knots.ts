@@ -283,6 +283,7 @@ export default chapter({
         "knot-particle-generation-interpretation",
         "knot-particle-correspondence",
         "knot-particle-dictionary",
+        "binding-knots-visual-inventory",
       ],
     }),
 

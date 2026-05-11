@@ -7,9 +7,15 @@ channels of $H_3(q)$.
 
 **Proposition.**
 *Let $\mathcal{A}(Z, N)$ be a derived atom with $A$ nucleons
-and $A - 1$ generators in $H_A(q)$.  For each generator $i$
-and each irrep $\lambda \in \{\mathrm{sym}, \mathrm{std},
-\mathrm{alt}\}$, let $\hat{V}_i^\lambda$ be the vertex volume
+and $A - 1$ generators in $H_A(q)$, with canonical Hecke element
+$T_w = \mathtt{atom\_braid\_word\_3A}(Z, N) \in H_{3A}(q_0)$ in
+Gröbner–Shirshov normal form
+([def:atomic-braid](#def:atomic-braid),
+[`mass_at_3A_proper.atom_braid_word_3A`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/mass_at_3A_proper.py)).
+The per-generator vertex volumes $\hat{V}_i^\lambda$ below are read
+off generator $i$ of $T_w$ in irrep $\lambda \in \{\mathrm{sym},
+\mathrm{std}, \mathrm{alt}\}$.  For each generator $i$
+and each irrep $\lambda$, let $\hat{V}_i^\lambda$ be the vertex volume
 in channel $\lambda$, computed from the Garside staircase with
 LP-derived gluon crossings
 ([integer LP gluon](#prop:mass-endomorphism-tower)):*

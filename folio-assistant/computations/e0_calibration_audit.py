@@ -48,11 +48,15 @@ OUT = HERE / "e0-calibration-audit.witness.json"
 
 # ── PDG / CODATA 2022 inputs — centralised in codata_constants ──
 from codata_constants import (
-    M_N_MEV, M_P_MEV, M_E_MEV, Q_BETA_MEV as Q_BETA_N,
-    M_N_MEV_ERR as M_N_ERR,
-    M_P_MEV_ERR as M_P_ERR,
+    M_N_MEV_VALIDATION as M_N_MEV,
+    M_P_MEV_VALIDATION as M_P_MEV,
+    M_E_MEV,
+    Q_BETA_MEV as Q_BETA_N,
+    M_N_MEV_VALIDATION_ERR as M_N_ERR,
+    M_P_MEV_VALIDATION_ERR as M_P_ERR,
     M_E_MEV_ERR as M_E_ERR,
 )
+# All m_p, m_n imports above are validation-only comparators (audit script).
 # Combined uncertainty (uncorrelated for atomic masses; this is an
 # upper bound — neutron and proton mass measurements share some
 # systematic anchors, so the true σ is slightly smaller).

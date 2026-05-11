@@ -38,7 +38,10 @@ $$
   \mathrm{Binding}(K) \;=\; m_e \cdot \sum_{\lambda \vdash 3A} y_\lambda(q)\,\chi^\lambda(\beta_K)\,\Delta_\lambda(K),
 $$
 
-with $y_\lambda$ the canonical Wenzl Markov weight (see
+with $\beta_K = \mathtt{atom\_braid\_word\_3A}(Z, N) \in H_{3A}(q)$
+the canonical 3A-strand atomic braid (β-decay-operator-unfolded form;
+see [`mass_at_3A_proper.atom_braid_word_3A`](../../../folio-assistant/computations/mass_at_3A_proper.py)),
+$y_\lambda$ the canonical Wenzl Markov weight (see
 [`prop:markov-trace-recursive-reducer`](markov-trace-recursive-reducer.md)),
 $\chi^\lambda$ the Hoefsmit q-character of the atomic braid, and
 $\Delta_\lambda(K)$ the per-Wedderburn-block binding fraction.
@@ -62,22 +65,151 @@ Reference scripts:
 (direct binding formulation; consumes $\Delta_\lambda$ from the
 in-flight derivation race in PRs #602 / #603 / #613).
 
+### Calibrated form (LO ρ_K with CODATA $m_p$, $m_n$ inputs)
+
+This table is the calibrated form: $\rho_K^{\mathrm{LO}} = (Z m_p + N m_n)/(m_e |\mathrm{tr}_M|)$
+consumes CODATA $m_p$ and $m_n$ as upstream inputs. Per the
+[three-calibration discipline](three-calibration-inputs.md), this
+violates CAL-1/2/3 by injecting $m_p$ and $m_n$ as 4th and 5th
+calibration constants (tracked under
+[Workplan 0b](../../../docs/audits/2026-05-10-workplan-0b-script-rewire-handoff.md)).
+The proton and neutron rows are **tautological** by construction.
+
+Witness:
+[`atomic-mass-via-rho-k.witness.json`](../../../folio-assistant/computations/atomic-mass-via-rho-k.witness.json).
+
 | Atom | $\mathcal{M}_{\text{pred}}^{\mathrm{LO}}$ (MeV) | $\mathcal{M}_{\text{CODATA}}$ (MeV) | $\Delta$ (MeV) | rel err | binding (CODATA) |
 |---|---:|---:|---:|---:|---:|
-| $p$ | 938.272088 | 938.272088 | 0.0000 | 0.000 % | (anchor) |
-| $n$ | 939.565421 | 939.565421 | 0.0000 | 0.000 % | (anchor) |
+| $p$ † | 938.272088 | 938.272088 | 0.0000 | 0.000 % | (anchor) |
+| $n$ † | 939.565421 | 939.565421 | 0.0000 | 0.000 % | (anchor) |
 | $D$ | 1877.837509 | 1875.612943 | $+2.2246$ | $+0.119$ % | 2.225 MeV |
 | $T$ | 2817.402929 | 2808.921133 | $+8.4818$ | $+0.302$ % | 8.482 MeV |
 | $^{3}\mathrm{He}$ | 2816.109597 | 2808.391607 | $+7.7180$ | $+0.275$ % | 7.718 MeV |
+| $^{4}\mathrm{He}$ | 3755.675017 | 3727.379378 | $+28.2956$ | $+0.759$ % | 28.295 MeV |
+
+† Proton and neutron predictions equal CODATA exactly because $m_p$
+and $m_n$ are upstream inputs in this LO form; $0.000\%$ is a
+calibration tautology, not a prediction quality.
+
+### FULL Q_β prediction (framework, no CODATA mass injection)
+
+Per [`prop:neutron-qvalue-symbolic`](../../../content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.md)
+the framework predicts the β-decay Q-value using only CAL-1 ($m_e$)
+and CAL-2 ($q_0$) — no CAL-3 ($Q_\beta$) input, no CODATA $m_p$ or
+$m_n$ injection. CAL-3 becomes the **output**, not an input.
+
+The canonical closed form at single wrap:
+
+$$
+\boxed{
+Q_\beta^{\text{pred}} \;=\;
+\frac{m_e \cdot |q_0^2 - 2q_0 - 1| \cdot (q_0 + 1)}{2 q_0^3}
+\;\approx\; 0.7836 \text{ MeV}
+}
+$$
+
+vs CODATA $0.7823$ MeV — **+0.168% / +1.31 keV** framework prediction.
+
+The closed form is derived via $\Delta(\mathrm{net}) = h(h-2)/2$
+with $h = q_0 - q_0^{-1}$ (the symbolic NF difference between the
+single-wrap proton $\mathrm{NF} = L_+ - \tfrac{h}{2}\sigma_0$ and
+neutron $\mathrm{NF} = L_+ - h\sigma_0 - \tfrac{h}{2}\sigma_1 + \tfrac{h^2}{2}\gamma$),
+times the energy scale $E_0 = m_e/(q_0(q_0-1))$. At single wrap the
+$L_+$, $L_-$, and $e^-$ contributions cancel exactly between
+proton and neutron, so the $Q$-value is carried entirely by the
+$\gamma + \sigma_0 + \sigma_1$ channels:
+
+| Channel | $\ell$ | $\Delta_i$ | $\Delta_i \cdot E_0$ (MeV) |
+|---|:-:|:-:|---:|
+| $\gamma$ (identity) | 0 | $h^2/2 \approx +0.02185$ | $+0.0915$ |
+| $\sigma_0$ | 1 | $-h/2 \approx -0.10453$ | $-0.4376$ |
+| $\sigma_1$ | 1 | $-h/2 \approx -0.10453$ | $-0.4376$ |
+| $L_+, L_-, e^-$ | $\ge 2$ | $0$ (single-wrap cancellation) | $0$ |
+| **Net** | | $h(h-2)/2 \approx -0.18722$ | **$+0.7836$** |
+
+The $+0.168\%$ / $+1.31$ keV residual is the **brane-tower
+truncation correction** ([`neutron-qvalue-symbolic.md:110-114`](../../../content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.md)):
+the derived $E_0 = m_e/(q_0(q_0-1))$ is the single-level
+(Planck-tick) approximation; the exact tower-summed $E_0$ would
+absorb this $0.17\%$. Closure path: Workplan 2 Phase 2 50-dps
+$m_e^{\mathrm{Hecke}}$ lift.
+
+#### Why "single-wrap symbolic" beats the typed-crossings 6-term form
+
+An earlier draft used the typed-crossings 6-term decomposition
+([`beta-decay-energy-scale.md`](../../../content/quantum-observable-universe/particle-interactions/beta-decay-energy-scale.md))
+with $|\Delta(\mathrm{net})| = 0.18829$ from the witness, giving
+$Q_\beta^{(\text{6-term})} = 0.7882$ MeV ($+0.747\%$). The
+single-wrap form is **4.46× tighter** because the $L_\pm$ and
+$e^-$ contributions, which exactly vanish in the symbolic
+single-wrap difference, picked up small asymmetric finite-size
+contributions in the typed-crossings basis. The single-wrap form
+is the canonical clean prediction; the typed-crossings form is
+retained in the witness for cross-check only.
+
+#### Observable / virtual basis-dependence note
+
+The "observable vs virtual" decomposition by Coxeter length
+$\ell \ge 2$ vs $\ell < 2$ is only meaningful in the typed-
+crossings 6-term basis (where it gives $58.46\% / 41.54\%$).
+At single wrap, all $\ell \ge 2$ channels cancel by Hopf-content
+matching between proton and neutron — the entire single-wrap
+$Q$-value lives in the virtual ($\ell < 2$) sector. This is not
+a contradiction: the typed-crossings basis is finer, and the
+observable share reflects multi-wrap / finite-size structure
+absent from the single-wrap closed form.
+
+Witness:
+[`q-beta-predicted.witness.json`](../../../folio-assistant/computations/q-beta-predicted.witness.json)
+(2026-05-10, derived via
+[`derived_masses.q_beta_predicted_mev`](../../../folio-assistant/computations/derived_masses.py)).
+3 assertions pass: residual $<0.5\%$, residual $<2$ keV,
+single-wrap residual $<$ typed-crossings residual.
+
+### Atomic-mass FULL chain — not yet wired
+
+The proton, neutron, and light-nucleus rest masses do **not** yet
+have a FULL framework prediction wired. The LO form above is
+tautological by construction (the $|\mathrm{tr}_M|$ factor cancels
+exactly in $\rho_K^{\mathrm{LO}} \cdot m_e \cdot |\mathrm{tr}_M|$,
+so $\mathcal{M}^{\mathrm{LO}}_\text{pred} = Z m_p + N m_n$); the
+Strategy-3 multi-term implementation in
+[`atomic_braid_mass_table.py`](../../../folio-assistant/computations/atomic_braid_mass_table.py)
+has a known structural bug (multiplicative T1 base instead of
+additive LP active-set, per its own deprecation banner lines 24-46).
+Per owner directive 2026-05-10, neither is the FULL framework
+prediction — both should be replaced by the unified knot mass
+formula $M(\mathfrak{H}) = \rho \cdot [|\mathrm{tr}_M(T_w)| +
+\mathrm{tower}(T_w) + \mathrm{tr}_M(C_{\dim_q})]$ once the LP-dual
+shadow-price closure ([`prop:operator-selection-lp`](operator-selection-lp.md))
+or Phase 2 50-dps $m_e^{\mathrm{Hecke}}$ lift lands.
+
+The accessors
+[`derived_masses.proton_mass_mev`](../../../folio-assistant/computations/derived_masses.py)
+and friends raise `NotImplementedError` with pointers to these
+blockers; consumers must NOT fall back to the LO or Strategy-3 forms.
 
 ## Two structural notes
 
-**1. The 0.000 % on $p$ and $n$ is a tautology, not a prediction.**
-The ρ_K leading-order ansatz is built from $m_p$ and $m_n$
-directly, so for $K = p$ ($Z = 1, N = 0$) and $K = n$ ($Z = 0, N = 1$)
-the formula returns the input mass exactly.  This is by
-construction; the framework's three CAL inputs are $m_e$, $m_p$,
-$m_n$ (CODATA), with $Q_\beta = m_n - m_p - m_e$ derived.
+**1. The 0.000 % on $p$ and $n$ is a calibration-discipline
+violation, not a prediction.** The ρ_K leading-order ansatz used
+in this table consumes $m_p$ and $m_n$ as CODATA inputs (via
+[`folio-assistant/computations/codata_constants.py`](../../../folio-assistant/computations/codata_constants.py)),
+so for $K = p$ ($Z = 1, N = 0$) and $K = n$ ($Z = 0, N = 1$)
+the formula returns the input mass exactly. **This is a bug, not
+a feature**: the QOU framework admits exactly three calibration
+inputs ([three calibration inputs](three-calibration-inputs.md))
+— CAL-1 $= m_e$, CAL-2 $= m_\mu/m_e$ (fixes $q_0$),
+CAL-3 $= Q_\beta(n)$ (fixes hadronic scale $E_0$). $m_p$ and $m_n$
+are **predictions** of the framework, derivable as
+$m_p = |\mathrm{tr}_M(p, q_0)| \cdot E_0$ and
+$m_n = m_p + Q_\beta + m_e$ per the 3-input convention recommended
+in [`neutron-gap-probes-round3.witness.json`](../../../folio-assistant/computations/neutron-gap-probes-round3.witness.json).
+The script-side migration is tracked as Workplan 0b
+(see [`docs/audits/2026-05-10-1ppb-workplan-update.md`](../../../docs/audits/2026-05-10-1ppb-workplan-update.md));
+until it lands, the $0.000\%$ rows above are tautologies and the
+$D / T / {}^{3}\mathrm{He}$ residuals understate the true binding
+prediction error by the n/p split scale ($\sim 0.14\%$).
 
 **2. The $\Delta$ column is the prediction target, not an error.**
 The $+2.225$ MeV / $+8.482$ MeV / $+7.718$ MeV differences are

@@ -25,12 +25,12 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-from derivation_chain import M_HECKE_PIPELINE_AT_Q0  # the placeholders
+from derivation_chain import M_HECKE_PIPELINE_AT_Q0_LEGACY as M_HECKE_PIPELINE_AT_Q0  # noqa: E501  the documented placeholders, NOT the production Path A values (per Copilot review: audit script must pin the placeholder values it is documenting)
 # CODATA anchors via the canonical mp.mpf-string source
 # (per Copilot review on PR #621 — single source of truth).
-from codata_constants import M_E_MEV as _M_E_MP, M_P_MEV as _M_P_MP
+from codata_constants import M_E_MEV as _M_E_MP, M_P_MEV_VALIDATION as _M_P_MP
 M_E_MEV = float(_M_E_MP)
-M_P_MEV = float(_M_P_MP)
+M_P_MEV = float(_M_P_MP)  # validation-only comparator (audit script)
 from witness_base import WitnessBuilder
 
 

@@ -1,0 +1,88 @@
+{
+  "engine": "mpmath",
+  "computation": "phase3-triton-binding-convention-b",
+  "scriptFile": "phase3_triton_binding_convention_b.py",
+  "computedAt": "2026-05-11T00:37:48+00:00",
+  "description": "Phase 3 of the 1ppb workplan: atom binding at H_{3A} via the canonical hecke_core._canon chain (convention B, E_0 = Q_\u03b2^CODATA). NO FITTING per owner directive 2026-05-10. The residuals vs AME 2020 are the honest exposure of the brane-tower closure problem \u2014 the \u210f_q\u00b2 scaling is structurally correct (via |tr_M| difference); the gap is in the T2/T3 brane-tower terms, not in E_0.",
+  "auditOnly": "docs/audits/2026-05-10-1ppb-workplan-update.md (Phase 3); docs/audits/2026-05-10-hbar-q-scaling-audit.md (convention B)",
+  "convention_used": "B_q_value_absorbed",
+  "convention_metadata": {
+    "value_MeV": "Q_\u03b2^CODATA \u2248 0.7823 MeV",
+    "scaling": "\u210f_q^0 (|\u0394(net)| = 1 implicit; \u210f_q^2 absorbed into the calibration)",
+    "hecke_level": "H_{3A} (atom-level: H_6 D, H_9 T/\u00b3He, H_12 \u2074He)",
+    "strand_count": "3\u00b7A (whole atom braid)",
+    "derivation": "Calibration to CAL-3 Q_\u03b2(n) directly. Sets the operator \u0394_NF \u2261 1 in cat-units; canonical for `hecke_core._canon` style chains where the operator difference |tr_M(W_free)| - |tr_M(W_atom)| is dimensionless and carries its own \u210f_q powers.",
+    "operator_class": "Atom-level binding B(Z, N) = E_0 \u00b7 (|tr_M(W_free)| - |tr_M(W_atom)|) at H_{3A}. The trace-difference operator carries the \u210f_q^2 scaling; E_0 is the unit-action scale.",
+    "canonical_for": [
+      "hecke_core.E_0_CALIBRATION_MEV (line 2922)",
+      "canonical_tower.py (lines 446-528)",
+      "hecke_characters.py (line 39)",
+      "mass_at_3A_proper.py (line 676)",
+      "adjacent_vs_full_probe.py (line 46)"
+    ],
+    "validity": "Phase 3+ Triton / \u00b3He / \u2074He binding MUST use this convention. Naively using convention A with a \u0394(net)-style operator difference would miss the 1/\u210f_q^2 factor (\u2248 102\u00d7 error)."
+  },
+  "owner_directive_2026_05_10": "do workplans 2 phase 2 / Phase 3; no fitting/guessing; all should be derived",
+  "data": {
+    "E_0_MeV": 0.7823334100000222,
+    "E_0_source": "hecke_core.E_0_CALIBRATION_MEV = Q_\u03b2 CODATA",
+    "rows": [
+      {
+        "atom": "D",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "hecke_level": "H_6",
+        "trace_kind": "canonical_jones_markov",
+        "E_0_MeV": 0.7823334100000222,
+        "B_pred_MeV": 0.46567591238191713,
+        "B_ame_MeV": 2.22456612,
+        "residual_pct": -79.0666634632592,
+        "residual_keV": -1758.8902076180827,
+        "compute_time_s": 1.6047325134277344
+      },
+      {
+        "atom": "T",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "hecke_level": "H_9",
+        "trace_kind": "canonical_jones_markov",
+        "E_0_MeV": 0.7823334100000222,
+        "B_pred_MeV": 0.6289741571728001,
+        "B_ame_MeV": 8.481798,
+        "residual_pct": -92.58442423206967,
+        "residual_keV": -7852.823842827199,
+        "compute_time_s": 14.545109510421753
+      },
+      {
+        "atom": "3He",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "hecke_level": "H_9",
+        "trace_kind": "canonical_jones_markov",
+        "E_0_MeV": 0.7823334100000222,
+        "B_pred_MeV": 0.6581111541827034,
+        "B_ame_MeV": 7.7181,
+        "residual_pct": -91.47314553863382,
+        "residual_keV": -7059.988845817296,
+        "compute_time_s": 7.203949928283691
+      },
+      {
+        "atom": "4He",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "hecke_level": "H_12",
+        "trace_kind": "canonical_jones_markov",
+        "E_0_MeV": 0.7823334100000222,
+        "B_pred_MeV": 0.7134688281503286,
+        "B_ame_MeV": 28.29567,
+        "residual_pct": -97.47852293955107,
+        "residual_keV": -27582.201171849672,
+        "compute_time_s": 79.72103714942932
+      }
+    ]
+  }
+}

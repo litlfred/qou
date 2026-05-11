@@ -10,10 +10,17 @@ semi-empirical scalings**.
 be the [proton](#def:categorical-proton) and
 [neutron](#def:categorical-neutron) normal forms in $H_3(q)$,
 each constructed as $\mathcal{B}_3 \cdot \mathrm{crossings}(quarks)$
-([confinement selection](#prop:confinement-operator-selection)).
-Let $T_{pn} = \frac{1}{2}(\sigma_0 + \sigma_0^{-1})$ be the
-time-reversal symmetric crossing operator.  Then the deuterium
-binding energy is*
+([confinement selection](#prop:confinement-operator-selection))
+with $\mathcal{B}_3 = \sigma_0\sigma_1\sigma_2\sigma_0\sigma_1\sigma_2$.
+The full canonical deuteron braid word
+$\beta_D = \mathtt{atom\_braid\_word\_3A}(1, 1) \in H_6(q)$
+([`mass_at_3A_proper.atom_braid_word_3A`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/mass_at_3A_proper.py))
+factors as $\mathrm{NF}(\mathfrak{p}) \cdot T_{pn} \cdot \mathrm{NF}(\mathfrak{n})$
+under the H_3 → H_6 Hecke embedding, where
+$T_{pn} = \frac{1}{2}(\sigma_0 + \sigma_0^{-1})$ is the time-reversal
+symmetric crossing operator at the inter-nucleon site (the unique
+generator of $\beta_D$ that crosses a proton strand with a neutron
+strand). Then the deuterium binding energy is*
 
 $$
   B(d) = \bigl[\mathrm{tr}_M(\mathfrak{p})

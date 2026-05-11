@@ -1,0 +1,167 @@
+{
+  "computation": "q-beta-residue-per-nucleon-probe",
+  "scriptFile": "probe_q_beta_residue_per_nucleon.py",
+  "description": "Q_\u03b2 residue closure via per-nucleon residue diff. Computes \u03b4m_K = \u03a3_\u03bb residue-sum[w_\u03bb(q) \u03c7_\u03bb(\u03b2_K)] at roots of unity for each canonical nucleon braid, then takes \u03b4Q_\u03b2 = \u03b4m_n - \u03b4m_p. Characters loaded from chi-{proton,neutron}-h3.witness.json (substrate-derived). NO FITTING.",
+  "auditOnly": "docs/audits/2026-05-10-hbar-q-scaling-audit.md; schur-weyl-mass-decomposition.md (residue sum formula)",
+  "no_fitting_assertion": "All inputs (\u03c7_\u03bb for canonical \u03b2_p \u03b2_n, w_\u03bb from prop, poles from algebraic [n]_q factoring, q_0 from CAL-2, m_e from CAL-1) are substrate-derived. No parameter tuning anywhere.",
+  "data": {
+    "q_0_50dps": "1.1099785955541805116869213459974864268543164030",
+    "m_e_MeV": "0.51099894999999995182093925905064679682254791259766",
+    "Q_beta_codata_MeV": "0.78233341000000000686753764966852031648159027099609",
+    "leading_order_sum_proton": "2.4560199574928024504740455264953829075098084389007",
+    "leading_order_sum_neutron": "2.0970362215766316590331725932031327750425449849906",
+    "leading_order_diff": "-0.35898373591617079144087293329225013246726345391004",
+    "leading_order_diff_MeV": "-0.18344031212024054515145583827764539220381806898086",
+    "residue_total_proton": "0.082136705080998228269700557097739647767255123223266",
+    "residue_total_neutron": "-0.13904353230789346277960270557651742098207398360543",
+    "residue_diff_n_minus_p": "-0.22118023738889169104930326267425706874932910682869",
+    "residue_diff_MeV": "-0.11302286906647438513366227360110960297059518139615",
+    "residue_diff_keV": -113.02286906647439,
+    "baseline_Q_beta_residual_keV": 1.31,
+    "post_correction_residual_keV": -111.71286906647438,
+    "per_lambda_records": {
+      "(3,)": {
+        "proton_residue_contribution": 0.0,
+        "neutron_residue_contribution": 0.2252295683910753,
+        "difference_n_minus_p": 0.2252295683910753,
+        "poles_per_atom_proton": [],
+        "poles_per_atom_neutron": [
+          {
+            "pole_symb": "0",
+            "pole_num": [
+              0.0,
+              0.0
+            ],
+            "residue_symb": "1/4",
+            "contribution_real": 0.2252295683910753
+          }
+        ]
+      },
+      "(2, 1)": {
+        "proton_residue_contribution": 0.0,
+        "neutron_residue_contribution": -0.21546983210564644,
+        "difference_n_minus_p": -0.21546983210564644,
+        "poles_per_atom_proton": [],
+        "poles_per_atom_neutron": [
+          {
+            "pole_symb": "1/2 - sqrt(3)*I/2",
+            "pole_num": [
+              0.5,
+              -0.8660254037844386
+            ],
+            "residue_symb": "sqrt(3)/(4*(sqrt(3) + 3*I))",
+            "contribution_real": -0.04957457652355629
+          },
+          {
+            "pole_symb": "1/2 + sqrt(3)*I/2",
+            "pole_num": [
+              0.5,
+              0.8660254037844386
+            ],
+            "residue_symb": "sqrt(3)/(4*(sqrt(3) - 3*I))",
+            "contribution_real": -0.04957457652355629
+          },
+          {
+            "pole_symb": "-1/2 - sqrt(3)*I/2",
+            "pole_num": [
+              -0.5,
+              -0.8660254037844386
+            ],
+            "residue_symb": "-sqrt(3)/(4*sqrt(3) - 12*I)",
+            "contribution_real": -0.05816033952926692
+          },
+          {
+            "pole_symb": "-1/2 + sqrt(3)*I/2",
+            "pole_num": [
+              -0.5,
+              0.8660254037844386
+            ],
+            "residue_symb": "-1/16 + sqrt(3)*I/16",
+            "contribution_real": -0.05816033952926692
+          }
+        ]
+      },
+      "(1, 1, 1)": {
+        "proton_residue_contribution": 0.08213670508099823,
+        "neutron_residue_contribution": -0.14880326859332232,
+        "difference_n_minus_p": -0.23093997367432056,
+        "poles_per_atom_proton": [
+          {
+            "pole_symb": "1/2 - sqrt(3)*I/2",
+            "pole_num": [
+              0.5,
+              -0.8660254037844386
+            ],
+            "residue_symb": "1/16 + sqrt(3)*I/48",
+            "contribution_real": 0.061826287042021415
+          },
+          {
+            "pole_symb": "1/2 + sqrt(3)*I/2",
+            "pole_num": [
+              0.5,
+              0.8660254037844386
+            ],
+            "residue_symb": "1/16 - sqrt(3)*I/48",
+            "contribution_real": 0.061826287042021415
+          },
+          {
+            "pole_symb": "-1/2 - sqrt(3)*I/2",
+            "pole_num": [
+              -0.5,
+              -0.8660254037844386
+            ],
+            "residue_symb": "-1/16 + sqrt(3)*I/48",
+            "contribution_real": -0.0207579345015223
+          },
+          {
+            "pole_symb": "-1/2 + sqrt(3)*I/2",
+            "pole_num": [
+              -0.5,
+              0.8660254037844386
+            ],
+            "residue_symb": "-1/16 - sqrt(3)*I/48",
+            "contribution_real": -0.0207579345015223
+          }
+        ],
+        "poles_per_atom_neutron": [
+          {
+            "pole_symb": "1/2 - sqrt(3)*I/2",
+            "pole_num": [
+              0.5,
+              -0.8660254037844386
+            ],
+            "residue_symb": "-sqrt(3)*I/24",
+            "contribution_real": -0.055700431782788856
+          },
+          {
+            "pole_symb": "1/2 + sqrt(3)*I/2",
+            "pole_num": [
+              0.5,
+              0.8660254037844386
+            ],
+            "residue_symb": "(-sqrt(3) + I)/(8*(sqrt(3) + 3*I))",
+            "contribution_real": -0.055700431782788856
+          },
+          {
+            "pole_symb": "-1/2 - sqrt(3)*I/2",
+            "pole_num": [
+              -0.5,
+              -0.8660254037844386
+            ],
+            "residue_symb": "(sqrt(3) - I)/(8*(sqrt(3) + 3*I))",
+            "contribution_real": -0.01870120251387231
+          },
+          {
+            "pole_symb": "-1/2 + sqrt(3)*I/2",
+            "pole_num": [
+              -0.5,
+              0.8660254037844386
+            ],
+            "residue_symb": "(sqrt(3) + I)/(8*(sqrt(3) - 3*I))",
+            "contribution_real": -0.01870120251387231
+          }
+        ]
+      }
+    }
+  }
+}
