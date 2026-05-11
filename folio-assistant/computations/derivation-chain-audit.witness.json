@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-11T22:02:06.603608+00:00",
-  "commitSha": "50ec6af8a69ca1f3eaf3802e8ebd679d37e01878",
+  "computedAt": "2026-05-11T22:09:27.283873+00:00",
+  "commitSha": "17fbcaa1eb08ca2036285d021ad133a39c10a459",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -563,7 +563,7 @@
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "ad96291cb969de5b1b7c85dc46bc893536189b67",
+  "scriptCommitSha": "d2ef5a283d0202c90a48fc16a5e1116927bafe08",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
   "data": {
@@ -2114,7 +2114,6 @@
         "compute-audit-scan.witness.json",
         "confined-knot-binding.witness.json",
         "confinement-operator-selection.witness.json",
-        "cross-check-trM-1ppb.witness.json",
         "crystal-alpha-shift-pole-orders.witness.json",
         "crystal-basis-primitives.witness.json",
         "crystal-limit-transport-probe.witness.json",
@@ -2135,7 +2134,6 @@
         "deuteron-delta-i-audit.witness.json",
         "deuteron_tr_M_symbolic.witness.json",
         "e-0-lp-dual-h3.witness.json",
-        "e0-calibration-audit.witness.json",
         "electron-m_e-derivation.witness.json",
         "entanglement-orders.witness.json",
         "ew-higgs-sdp-probe.witness.json",
@@ -2197,6 +2195,7 @@
         "lp-duality-check.witness.json",
         "lr-fusion-self-conj-test.witness.json",
         "m-n-difference-formula.witness.json",
+        "magic-shell-empirical-instantiation.witness.json",
         "markov-free-energy-qvalues.witness.json",
         "markov-peel-atomic-tr-m.witness.json",
         "markov-pipeline-cross-validation.witness.json",
@@ -2272,8 +2271,13 @@
         "probe-off-diagonal-gram-wedderburn.witness.json",
         "probe-per-nucleon-self-duality.witness.json",
         "probe-per-partition-he4-prediction.witness.json",
+        "probe-phiq-avg-chi-over-classical-dim.witness.json",
+        "probe-phiq-multiplicity-refined.witness.json",
         "probe-phiq-multiplicity-refinement.witness.json",
         "probe-phiq-n-star-rule.witness.json",
+        "probe-phiq-operator-valued.witness.json",
+        "probe-phiq-pair-knot-magic-shell.witness.json",
+        "probe-phiq-pair-knot-markov-trace.witness.json",
         "probe-phiq-per-partition-klambda.witness.json",
         "probe-phiq-type-b-fold-depth.witness.json",
         "probe-phiq-uniform-k.witness.json",
@@ -2332,6 +2336,7 @@
         "tau-hat-n-proton-level-1-empty.witness.json",
         "tau-hat-n-proton-realisation.witness.json",
         "tau-lepton-nf.witness.json",
+        "tau-three-path-convention-independence.witness.json",
         "term6-full-pole-sum.witness.json",
         "term6-residues-at-roots.witness.json",
         "term7-chi5-basis.witness.json",
@@ -2341,6 +2346,8 @@
         "tier-2-higher-bridge-pslq.witness.json",
         "tier-2-hyperbolic-bridge3-pslq.witness.json",
         "toffoli-lp-stability.witness.json",
+        "tr-m-he3-audit.witness.json",
+        "tr-m-he4-canonical.witness.json",
         "tr-m-jones-markov-cross-check.witness.json",
         "tr-m-q-hecke-seminormal.witness.json",
         "unified-low-isotope-predictor.witness.json",
@@ -2355,7 +2362,8 @@
         "y-lambda-at-q0.witness.json",
         "y-lambda-cyclotomic-factor.witness.json",
         "y-lambda-macdonald-telescope.witness.json",
-        "y_lambda_equivalence_proof.witness.json"
+        "y_lambda_equivalence_proof.witness.json",
+        "z-n-brane-tower-falsifiability.witness.json"
       ]
     }
   }
