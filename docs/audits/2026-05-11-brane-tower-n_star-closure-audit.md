@@ -233,7 +233,38 @@ product-volume convention.  Whether the Markov-trace refinement
 restores the symmetry is one of the assertions of the family-5
 refinement probe.
 
-## Recommendations
+## Status of the surviving open paths (D-phase scoping, 2026-05-11)
+
+### D.1 — Algebraic Cauchy-limit half (open, in flight on #639)
+
+PR [#639](https://github.com/litlfred/qou/pull/639) is actively
+closing sorries in
+[`PhiQConvergence.lean`](../../content/quantum-observable-universe/lean/QOU/MassEndomorphism/PhiQConvergence.lean)
+— `summable_q_inv_geometric` and `quantumDilog_factors_nonzero` are
+both being closed in that PR. Their work is the direct path forward
+on Claim 1 of `conj:brane-tower-z-habiro`. Coordination intent
+posted [on #639](https://github.com/litlfred/qou/pull/639#issuecomment-4423678285);
+my refutation theorems will integrate with the
+`RecoversWithRelativeError` predicate after #639 merges (Phase B.3).
+
+### D.2 — Other AME isotopes (scoping, deferred to follow-up)
+
+Available chi caches in `folio-assistant/computations/`:
+`chi-proton-h3`, `chi-neutron-h3`, `chi-deuteron-h6`,
+`chi-tritium-h9`, `chi-helium-3-h9`, `chi-helium-4-h12` (the last
+uses a DEPRECATED disjoint-word convention; the canonical
+`atom_braid_word_3A(2,2)` is computed in this session via
+`markov_peel.tr_M_atomic` — see Phase B.2).
+
+Extension to A ≥ 5 isotopes (⁵Li at n=15, ⁶Li at n=18, ⁷Li at
+n=21, ⁹Be at n=27, ¹²C at n=36) is **heavy compute**: Hoefsmit
+seminormal at n=15 already has partition count ~176 with dims up
+to ~30000+; the recursive markov_peel path scales better but still
+~hours per atom symbolically. **Deferred to a follow-up PR**; not
+required for the level-selection closure (the AME light-isotope
+sample {D, T, ³He, ⁴He} suffices for the refutation across six
+families).
+
 
 1. **Ship the closure as-is.**  The five-way refutation + LP-dual
    structural finding is a substantive result independent of the
