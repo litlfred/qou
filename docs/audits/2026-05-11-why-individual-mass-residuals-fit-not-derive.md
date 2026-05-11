@@ -200,3 +200,96 @@ don't).
 - `2026-05-10-non-calibrated-mass-state-of-play.md` — comprehensive state of play.
 - `2026-05-10-hbar-q-scaling-audit.md` — three E_0 conventions audited.
 - `2026-05-11-three-calibration-discipline-violations.md` — earlier audit on the m_p, m_n input violations.
+
+## Update 2026-05-11 — τ_M / τ_SW conflation diagnosis
+
+Synthesised from the Frobenius non-degeneracy proof (commit
+[`25a204efa`](https://github.com/litlfred/qou/commit/25a204efa)
+on `main`, which introduced
+[`markov-trace-frobenius-selection.md`](../../content/quantum-observable-universe/braids-and-knots/markov-trace-frobenius-selection.md))
++ the PR #487 agent's reply documented in
+[`docs/agent-briefs/2026-05-11-lambda-scale-borromean-baryon-derivation.md`](../agent-briefs/2026-05-11-lambda-scale-borromean-baryon-derivation.md).
+
+### Two distinct Frobenius forms have been conflated
+
+The Hecke-algebra Markov-trace registry contains values for **two
+different** linear functionals, both labelled "tr_M":
+
+| Form | Source | $\tau(D, q_0)$ | $\tau(p, q_0)$ |
+|------|--------|---------------:|---------------:|
+| **Jones-Markov** $\tau_M$ | Wenzl-bridge, `from_scratch/` chain | $0.3368$ | $1.7339$ (free) |
+| **Schur-Weyl** $\tau_{\mathrm{SW}}$ | `schur-weyl-weight-*.derivation.json` | $0.1774$ | $2.1226$ |
+| Registry (mixed) | `derivation_chain.TR_M_AT_Q0` | $0.3883$ | $1.0653$ |
+
+The Frobenius proof on `main` proves $\tau_M$ is the **unique**
+non-degenerate Frobenius pairing on $H_n(R, q)$ and is therefore
+the canonical Markov trace for the QOU mass identity. $\tau_{\mathrm{SW}}$
+is degenerate on height-$> 2$ partitions (Schur-vanishing) and so
+cannot satisfy the Frobenius co-Casimir construction.
+
+### Affected scripts
+
+The `markov-trace-assembly-proton.derivation.json` chain combines
+the three `schur-weyl-weight-{3,21,111}` chains via the
+finite-Jones formula, producing $2.1226$ at $q_0$. The chain
+description labels this "canonical Wenzl-bridge τ_M", but
+the underlying weights $w_\lambda = s_\lambda(q, q^{-1}) / H_q(\lambda)$
+**are** the Schur-Weyl weights — so the assembly chain is actually
+computing $\tau_{\mathrm{SW}}$, not $\tau_M$.
+
+The `habiro_coefficients_atomic.py` pipeline (mislabelled
+"Markov trace") computes $\tau_{\mathrm{SW}}$ as well. The
+PR #472 agreement between polynomial and residue paths is between
+two computations of the *same* $\tau_{\mathrm{SW}}$ quantity — it
+does not confirm the canonical $\tau_M$.
+
+### Where the $\lambda_{\text{scale}} \approx 2.46$ might live
+
+The PR #487 agent reports $|\tau_M(p_{\text{free}})| = 1.7339$
+from the canonical `from_scratch/` pipeline (using the
+single-component free-proton braid, not the 11-crossing canonical
+recipe).
+
+If $\lambda_{\text{scale}}$ is the **representation-translation
+factor** between the Borromean (3-link, $\beta_{\text{Bor}}$,
+6-crossing) and canonical (1-knot, 11-crossing) ansätze, then
+
+$$
+  \frac{\mathrm{Vol}(\mathcal{B}_3)}{\hbar_q^2} \cdot \lambda_{\text{scale}}
+  \;\overset{?}{=}\;
+  m_e \cdot \rho_p \cdot |\tau_M(p_{\text{free}})|
+$$
+
+solves for $\rho_p$, but $\rho_p$ then becomes a free per-knot
+parameter — not a substrate-only quantity. This is consistent
+with the PR #487 agent's diagnosis that "the substrate-only
+identity doesn't exist".
+
+### Implication for 1ppb on individual hadron masses
+
+The framework's individual-hadron mass formulas as currently written
+are **two ansätze pinned at different braid representatives**, with
+a representation-translation factor ($\lambda_{\text{scale}}$ in the
+Vol formalism, $\rho_K$ in the $\tau_M$ formalism) that is **not
+substrate-derivable** in either direction. Closing this requires:
+
+- **Picking one ansatz** (3-link Borromean OR 1-knot canonical 11-crossing) and dropping the translation factor;
+- **Or deriving the translation factor** from the categorical bridge between the two ansätze (open R&D).
+
+Either way, the Vol-form Borromean baryon block on this branch
+([`borromean-baryon-mass-formula.md`](../../content/quantum-observable-universe/braids-and-knots/borromean-baryon-mass-formula.md))
+documents the formalism honestly: the formula is a *conjecture*
+because $\lambda_{\text{scale}}$ has no substrate derivation.
+
+### Action items (added 2026-05-11)
+
+4. **Relabel the registry**: rename `schur-weyl-weight-*.derivation.json`-derived
+   `tr_M` values to `tau_SW` (per Frobenius proof recommendation in
+   `markov-trace-frobenius-selection.md` § "Computational consequence").
+5. **Audit `derivation_chain.TR_M_AT_Q0`**: confirm whether the values
+   $p = 1.0653$, $n = 0.9232$, $D = 0.3883$ are $\tau_M$ or $\tau_{\mathrm{SW}}$;
+   add a comment annotating which.
+6. **Compute $J_{\mathcal{B}_3}(q_0; \text{orientation} = (k, 3-k))$
+   symbolically** for $k \in \{0, 1, 2, 3\}$ — diagnostic (b) for
+   pinning the Skein correction. (Per PR #487 agent's "most
+   actionable next step".)
