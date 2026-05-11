@@ -111,26 +111,71 @@ sensitive to $\lvert\mu\rvert$ as $k$ grows).
   $k$ for at most $2/3$ of $\{D, T, {}^3\mathrm{He}\}$).
 * Any rule constructed from scalar partitions of $(\ell, n_0, k, m)$
   alone (the four-tuple's $m$ is per-atom, not per-partition).
+* **Any partition-shape-only selector.** The Hoefsmit content
+  spread $\Delta c_{\max}(\lambda)$ test
+  ([probe-hoefsmit-content-selector.witness.json](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/probe-hoefsmit-content-selector.witness.json))
+  refutes content-spread argmax for all 3 atoms: empirical dominants
+  $\{[2,2,1,1], [6,3], [5,4]\}$ have spreads $\{4, 6, 5\}$, while
+  the partition-only argmax of spread is the single-row / single-
+  column family with spread $= n - 1$.
+
+## Structural reason: the selector is intrinsically $(q, \beta)$-dependent
+
+The negative finding above is **not** a failure of imagination; it
+is structurally forced. The operator-selection SDP / LP solver
+that produces the per-partition operator data
+([prop:operator-selection-sdp](#prop:operator-selection-sdp)
+and the LP / SDP infrastructure of CLAUDE.md §"LP / SDP duals —
+first-class infra") consumes **both** the substrate parameter
+$q_0$ (CAL-2) and the **braid word** $\beta_\mathfrak{H}$ as inputs:
+
+$$
+  \text{SDP}\bigl(q_0, \beta_\mathfrak{H}\bigr)
+  \;\longmapsto\;
+  \bigl\{\rho_\lambda(\beta_\mathfrak{H}), \,
+    \{\mu_a^{(\lambda)}\}_{a}, \,
+    y_\lambda(q_0), \, y_0^\star, \ldots\bigr\}.
+$$
+
+The selector $\lambda \mapsto k_\lambda$ is a property of the
+**SDP output spectrum**, not of the SDP inputs in isolation. Two
+atoms with the same strand count $n = 3A$ but different braid
+words $\beta_{T} \neq \beta_{{}^3\mathrm{He}}$ produce different
+SDP outputs even at the same $q_0$; the partition shape
+$\lambda \vdash n$ alone cannot resolve them. The empirical
+max-$\lvert\mu\rvert$ selector
+([probe-phiq-per-partition-klambda.witness.json](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/probe-phiq-per-partition-klambda.witness.json))
+*is* the right shape — it reads the SDP-output eigenvalue spectrum
+directly. The remaining structural identification problem is to
+express this max-$\lvert\mu\rvert$ predicate as a **closed-form
+function of $(q_0, \beta_\mathfrak{H}, \lambda)$**, not just
+$\lambda$.
 
 ## Open structural question
 
-The remaining identification problem:
+The remaining identification problem, sharpened by the SDP-
+dependence observation above:
 
 > *Express the empirical selector "$\lambda$ has the maximum
 > $\lvert\mu\rvert$ in the spectrum of $\rho_\lambda(\beta)$" as a
 > **closed-form structural rule** in terms of substrate data
-> (the braid word $\beta$, the partition $\lambda$, and substrate
-> constants $q_0$, $\hbar_q$) — without empirical evaluation of
-> the eigenvalue spectrum.*
+> $(q_0, \beta_\mathfrak{H}, \lambda)$ — without empirical
+> evaluation of the eigenvalue spectrum, but explicitly
+> consuming the braid word $\beta_\mathfrak{H}$, not just the
+> partition $\lambda$ in isolation.*
 
-Candidate routes:
+Candidate routes (all $(q, \beta)$-aware):
 
-* **Hoefsmit hook-content asymptotic.** The maximum eigenvalue of
-  $\rho_\lambda(\sigma_i)$ in the Hoefsmit seminormal form is
-  bounded by a hook-content product over the Young diagram of
-  $\lambda$. Iterating along a braid word's reduced expression
-  gives an a-priori upper bound on $\max \lvert\mu\rvert$ — possibly
-  large enough to select the dominant partition combinatorially.
+* **Hoefsmit hook-content asymptotic along a reduced braid word.**
+  The maximum eigenvalue of $\rho_\lambda(\sigma_i)$ in the
+  Hoefsmit seminormal form is bounded by a hook-content product
+  over the Young diagram of $\lambda$. Iterating along a braid
+  word's reduced expression $\beta = \sigma_{i_1}^{\varepsilon_1}
+  \cdots \sigma_{i_\ell}^{\varepsilon_\ell}$ gives an a-priori
+  upper bound on $\max \lvert\mu(\rho_\lambda(\beta))\rvert$ — the
+  bound is $\beta$-dependent (through the index sequence
+  $i_1, \ldots, i_\ell$) and $q_0$-dependent (through the
+  Hoefsmit matrix entries), matching the structural shape needed.
 * **Type-B-folded-crystal weight asymptotic** (the natural next
   refinement of [audit-2026-05-11-type-b-fold-depth-n-star.md](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-11-type-b-fold-depth-n-star.md)).
 * **Symbolic action of $\beta$ in the Kashiwara crystal.** The
