@@ -389,7 +389,101 @@ Second comment is reactive sharing, not a duplicate intent post —
 keeps the "one coordination comment, not a stream" anti-pattern
 intact because it serves a distinct request.
 
+## Coordination cycle 5c — cross-PR audit of #640 neutron chain
+
+2026-05-11T19:30Z — applied the #637 cycle-3 trust-basis audit
+pattern to PR #640's neutron Path A derivation. Posted findings:
+https://github.com/litlfred/qou/pull/640#issuecomment-4424275187
+
+Three structural findings flagged to #640:
+1. The 999 ppb residual is NOT a brane-tower truncation effect
+   (100× larger than per-braid N=0 bound 0.991%)
+2. The Path A T1+T4 dimensionless ratio m_n/m_e = 1.0982 ≈ q_0 —
+   collapsed onto the substrate parameter, missing ~1672× in scale
+3. Their recommended ρ_K fallback is SELF-REFUTED by their own
+   three-calibration audit (Class-A hard violation)
+
+Closure path likely runs through per-partition k_λ on the Wedderburn
+decomposition, not Phase A precision alone.
+
+## Coordination cycle 6 — sibling triage + #635 cherry-pick + SDP-with-Gram
+
+2026-05-11T19:55Z — /coordinate run on all open PRs updated today.
+
+### Sibling state
+
+| PR | Status | Cycle-6 action |
+|---|---|---|
+| **#639** (own) | open, 22+ commits | progress summarized below |
+| **#640** (neutron Path A) | open, 12 review threads | cycle 5c audit stands; no follow-up needed |
+| **#638** (refute scalar n_⋆) | open | cycle 4 stands; nothing new |
+| **#635** (Mikusiński WitnessBuilder) | open | **cherry-pick acknowledgement posted** ([4424413868](https://github.com/litlfred/qou/pull/635#issuecomment-4424413868)) — 7 #637-deferred scripts now use #635's `wrap_legacy` pattern |
+| #632 (illustrations) | open | no overlap; no action |
+
+`origin/main` advanced to `787f8d0f` ("Document knot volumes
+derivation and pipeline audit") — adds `docs/agent-briefs/lambda_scale.md`,
+no overlap with my files; no rebase required.
+
+### #639 progress this cycle
+
+**New substantive probes since cycle 5b:**
+
+* **LP-cost selector probe** (`probe_lp_cost_dominant_partition.py`):
+  tests $\mathop{\mathrm{argmax}} |y_\lambda \cdot \chi_q^\lambda|$.
+  Negative finding (1/3, T only). Rules out simple LP cost.
+* **Form A N=1 symbolic** (`q_beta_form_a_n1_extension.py` + content
+  block `prop:q-beta-form-a-n1-symbolic` + Lean): closed form
+  $Q_\beta^{A,N=1} = m_e \cdot (q+1)|q^2-2q-1|(2q^2-2q+1)/(2q^5)$
+  via geometric-series lift. Negative finding: overshoots per-braid
+  ceiling 97 ppm by ~120×.
+* **SDP-with-Gram active-set** (`probe_sdp_active_set_dominant_partition.py`):
+  runs the actual operator-selection LP via `lp_dual_solver` with
+  $t_\lambda = y_\lambda \cdot \chi_q^\lambda$ and **diagonal** Gram
+  $G = \mathrm{diag}(\sum_a |\mu_a|^2)$. PARTIAL match (1/3, T only)
+  — same as LP cost. The diagonal-Gram simplification collapses
+  the SDP dual to the LP cost; **the full off-diagonal Gram is
+  required to genuinely test the SDP hypothesis**. Strong duality
+  verified (gap = 0 for all 3 atoms). LP/SDP first-class-infra
+  contract satisfied.
+
+### Refutation chain status (cycle 6 snapshot)
+
+| Selector form | Verdict | Witness |
+|---|:---:|---|
+| Scalar n_⋆ (uniform k, GB grade, ℓn_0+k) | refuted | PR #638 |
+| Per-eigenvalue operator-valued uniform k | refuted | PR #638 |
+| Type-B fold depth (partition shape only) | partial (2/3) | PR #639 cycle 5b |
+| Hoefsmit content-spread (partition shape only) | refuted | PR #639 cycle 5c |
+| Multiplicity-refined 2-input rules (4 simple) | refuted | PR #639 cycle 5b |
+| LP cost argmax | refuted (1/3) | PR #639 cycle 6 |
+| **SDP with diagonal Gram** | refuted (1/3) | **PR #639 cycle 6** |
+| Per-partition k_λ (max-|μ| selector, EMPIRICAL) | **closes** | PR #639 cycle 5b |
+| SDP with full off-diagonal Gram | UNTESTED | next probe |
+
+### Open structural question (sharpened)
+
+The empirical max-|μ| selector closes all 3 atoms (cycle 5b).
+The closed-form **substrate-derivable** identification of that
+selector is the remaining open piece. Two routes remain:
+
+1. **Full off-diagonal SDP Gram** — compute Gram entries
+   $\mathrm{tr}_M(b_i \cdot b_j)$ across distinct Wedderburn blocks
+   via Hoefsmit matrix products. The diagonal simplification is
+   shown insufficient.
+2. **Hoefsmit hook-content asymptotic along a reduced braid word**
+   ($(q, \beta)$-aware, per `rem:per-partition-k-lambda-rule`'s
+   open question section).
+
+### Anti-patterns avoided cycle 6
+
+* ✓ Fetched `origin/main` and classified `787f8d0f` (no overlap)
+* ✓ Did NOT split the difference on inconsistent findings — SDP-
+  with-diagonal-Gram NEGATIVE result is documented as a refutation
+  of the simplified hypothesis, not a partial confirmation
+* ✓ Cherry-pick from #635 properly attributed (single comment, not
+  a stream)
+
 ## Last updated
 
-2026-05-11T18:40Z — cycle 5+5b (sibling #640 coordination + share
-of c(K) ceiling and Class-C convention).
+2026-05-11T19:55Z — cycle 6 (sibling triage + #635 cherry-pick
+acknowledgement + SDP-with-Gram negative finding logged).
