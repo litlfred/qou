@@ -214,6 +214,43 @@ with $K$ the free-neutron sector class. At $N = 0$ this gives the
 observed $+1.31$ keV residual ($+0.168\%$); at $N \geq 1$ the bound
 is sub-keV.
 
+**Substrate-derived rate constants** (closed-form from CAL-2 $q_0$):
+
+$$
+  \hbar_q := \frac{q_0 - 1}{q_0},
+  \qquad
+  c(K) = -2 \ln \hbar_q,
+  \qquad
+  C(K) = \frac{\hbar_q^2}{1 - \hbar_q^2}.
+$$
+
+The identity $\hbar_q^{2(N+1)} / (1 - \hbar_q^2) = C(K) \cdot e^{-c(K) N}$
+is unconditional algebra (geometric ↔ exponential form), and the
+left-hand side is the per-braid-mass-tower bound of
+[prop:per-braid-mass-tower](#prop:per-braid-mass-tower). At
+$q_0 \approx 1.1100$ ([`q-pinning-50-digit.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/q-pinning-50-digit.witness.json)):
+
+| Depth $N$ | $\lvert R_N\rvert$ bound | as % | as ppm | as ppb |
+|---:|---:|---:|---:|---:|
+| $0$ | $9.914 \times 10^{-3}$ | $0.9915\%$ | $9914.5$ | $9{,}914{,}521$ |
+| $1$ | $9.733 \times 10^{-5}$ | $0.0097\%$ | $97.3$ | $97{,}333$ |
+| $2$ | $9.555 \times 10^{-7}$ | $0.0001\%$ | $0.96$ | $955.5$ |
+| $3$ | $9.381 \times 10^{-9}$ | $10^{-7}\%$ | $0.0094$ | $9.38$ |
+| $4$ | $9.207 \times 10^{-11}$ | $10^{-9}\%$ | $0.00009$ | $0.092$ |
+
+with $c(K) = 4.6236$ and $C(K) = 9.91 \times 10^{-3}$. **Observation
+fits the ceiling**: the $N=0$ residual is
+$1.31\;\mathrm{keV}/783.6\;\mathrm{keV} = 1.677 \times 10^{-3}$, i.e.
+$5.9\times$ inside the bound ($9.914 \times 10^{-3}$). The actual
+$c(K)$ for the operator class may exceed the ceiling rate; pinning
+the *exact* fall-off requires the open lift formula of
+[conj:brane-tower-z-habiro](#conj:brane-tower-z-habiro).
+
+Witness: [`c_k_beta_decay_witness.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/c_k_beta_decay_witness.py)
+→ [`c-k-beta-decay-bound.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/c-k-beta-decay-bound.witness.json).
+Both assertions (50-dps geometric ↔ exponential agreement + $N=0$
+margin $\leq 1$) pass.
+
 ### Relation to surreal QOUs
 
 The conjecture is stated entirely in $\mathbb{R}$. There is **no

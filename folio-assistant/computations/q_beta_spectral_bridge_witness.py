@@ -37,6 +37,13 @@ from pathlib import Path
 
 import mpmath as mp
 
+# Set 50 dps BEFORE importing modules that build mp.mpf constants at
+# import time (codata_constants does this). Otherwise constants are
+# parsed at the default 15 dps and the witness JSON shows
+# binary-rounding artifacts at high precision (per Copilot review on
+# PR #639).
+mp.mp.dps = 50
+
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
@@ -53,7 +60,7 @@ def _load_q_0() -> mp.mpf:
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    # dps already set at module import (see top of file).
     w = WitnessBuilder("q-beta-spectral-bridge", engine="mpmath")
 
     q = _load_q_0()

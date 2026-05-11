@@ -144,4 +144,37 @@ theorem log_one_add_taylor_bound
   -- + alternating-series tail bound on the natural log expansion.
   sorry
 
+/-! ## Top-level identifier for `lean.ref`
+
+The `.ts` manifest references `qou:QOU.Interactions.q_beta_spectral_bridge`.
+We define it here as the conjunction of the three algebraic pieces
+above; the analytic Taylor-bound part is split out separately so
+its sorry is visible.
+-/
+
+-- Ref: [manuscript] prop:q-beta-spectral-bridge
+/-- **Q_β spectral bridge — algebraic core.** Combines the three
+    polynomial identities into the canonical export. The full
+    analytic statement (with the `Real.log` Taylor remainder)
+    follows from `log_one_add_taylor_bound` once that lemma is
+    closed; see `q-beta-spectral-bridge.md` for the proof outline. -/
+theorem q_beta_spectral_bridge :
+    -- Polynomial bridge identity
+    (∀ (h z : ℝ),
+        (h * (2 - h) / 2) * z = (1 - h / 2) * (z * h))
+    ∧
+    -- Leading-order ratio identity (under non-degeneracy)
+    (∀ (h z : ℝ), h ≠ 0 → z ≠ 0 → 1 - z * h / 2 ≠ 0 →
+        (h - h^2 / 2) / ((z * h - (z * h)^2 / 2) / z)
+        = (1 - h / 2) / (1 - z * h / 2))
+    ∧
+    -- Bridge first-order remainder identity
+    (∀ (h z : ℝ), 1 - z * h / 2 ≠ 0 →
+        (1 - h / 2) / (1 - z * h / 2) - (1 + (z - 1) * h / 2)
+        = (z * (z - 1) / 4) * h^2 / (1 - z * h / 2)) := by
+  refine ⟨?_, ?_, ?_⟩
+  · exact fun h z => polynomial_bridge_identity h z
+  · exact fun h z hh hz hzh => leading_order_ratio_identity h z hh hz hzh
+  · exact fun h z hzh => bridge_first_order_remainder h z hzh
+
 end QOU.Interactions
