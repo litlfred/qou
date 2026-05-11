@@ -111,7 +111,7 @@ TR_M_AT_Q0: dict[str, float] = {
 # MATCH. The honest residual is the deliverable.
 
 def _path_a_at_q0() -> dict[str, "mp.mpf"]:
-    """Lazy resolver — calls derive_m_{p,e}_hecke_path_a on first use.
+    """Lazy resolver — calls derive_m_{p,n,e}_hecke_path_a on first use.
 
     Lazy because (a) we don't want to import-time read JSON witnesses
     on every consumer, and (b) audit-only scripts that consume the
@@ -121,12 +121,14 @@ def _path_a_at_q0() -> dict[str, "mp.mpf"]:
     """
     # Local import so derivation_chain.py stays import-light.
     from derive_m_p_hecke_path_a import m_p_hecke_path_a_at_q0
+    from derive_m_n_hecke_path_a import m_n_hecke_path_a_at_q0
     from derive_m_e_hecke_path_a import m_e_hecke_path_a_cat_units_at_q0
     # Keep the values as mp.mpf to preserve 50-dps precision per the
     # no-float64 directive. Legacy float-typed consumers can still
     # `float(M_HECKE_PIPELINE_AT_Q0["p"])` if they need a Python float.
     return {
         "p": m_p_hecke_path_a_at_q0(),
+        "n": m_n_hecke_path_a_at_q0(),
         "e": m_e_hecke_path_a_cat_units_at_q0(),
     }
 

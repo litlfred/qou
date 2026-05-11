@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-11T22:10:03.173237+00:00",
-  "commitSha": "3ee30bd85e93a6f0b6022cc558373f57456f423a",
+  "computedAt": "2026-05-11T22:47:17.158695+00:00",
+  "commitSha": "ccfce5edbe33ef65525598a5313cb49cc3b2ed42",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -227,6 +227,19 @@
       "expected": 0.9232332971695838,
       "passed": true,
       "tolerance": 9.232332971695838e-10
+    },
+    {
+      "name": "chain_valid[neutron-mass-50dps.derivation]",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "leaf_value[neutron-mass-50dps.derivation]",
+      "computed": 0.5611679331916536,
+      "expected": 0.5611679331916536,
+      "passed": true,
+      "tolerance": 0.005611679331916536
     },
     {
       "name": "chain_valid[p-tr-M-q0.derivation]",
@@ -559,7 +572,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
@@ -1272,6 +1285,21 @@
           "mathlib-cited": 1,
           "script-cited": 4,
           "derived": 1,
+          "computational": 1
+        },
+        "has_script_frontier": true
+      },
+      {
+        "chain": "neutron-mass-50dps.derivation.json",
+        "target": "m_n (MeV)",
+        "target_value": 0.5611679331916536,
+        "computed_value": 0.5611679331916536,
+        "structural_ok": true,
+        "leaf_matches": true,
+        "issues": [],
+        "trust_summary": {
+          "derived": 2,
+          "script-cited": 3,
           "computational": 1
         },
         "has_script_frontier": true
@@ -2023,6 +2051,7 @@
         "atomic-braid-gb-filtration-extension.witness.json",
         "mass-endomorphism.witness.json",
         "mass-formula-6term-mpfr-50dps.witness.json",
+        "neutron-m_n-derivation.witness.json",
         "term7-alpha5-crystal-derivation.witness.json"
       ],
       "computational-only": [
@@ -2114,7 +2143,6 @@
         "compute-audit-scan.witness.json",
         "confined-knot-binding.witness.json",
         "confinement-operator-selection.witness.json",
-        "cross-check-trM-1ppb.witness.json",
         "crystal-alpha-shift-pole-orders.witness.json",
         "crystal-basis-primitives.witness.json",
         "crystal-limit-transport-probe.witness.json",
@@ -2135,7 +2163,6 @@
         "deuteron-delta-i-audit.witness.json",
         "deuteron_tr_M_symbolic.witness.json",
         "e-0-lp-dual-h3.witness.json",
-        "e0-calibration-audit.witness.json",
         "electron-m_e-derivation.witness.json",
         "entanglement-orders.witness.json",
         "ew-higgs-sdp-probe.witness.json",
@@ -2227,6 +2254,7 @@
         "neutron-gap-probes-round6.witness.json",
         "neutron-gap-probes-round7.witness.json",
         "neutron-gap-probes.witness.json",
+        "neutron-mass-codata-50dps.witness.json",
         "nf-qvalues.witness.json",
         "nf-transition-lifting.witness.json",
         "nh-basis-shift.witness.json",
