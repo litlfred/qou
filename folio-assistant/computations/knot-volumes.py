@@ -120,7 +120,7 @@ LINK_REGISTRY = [
 MASS_ASSERTIONS = [
     {
         "name": "m_μ/m_e (CODATA 2022)",
-        "expected": 206.7682830,
+        "expected": 206.7682830,  # noqa: P31 — test-expected value (CAL-2 anchor cross-check, not a prediction input)
         "tolerance": 0.0000001,
         "source": "CODATA 2022",
         "unit": "dimensionless",

@@ -61,7 +61,9 @@ mp.mp.dps = 50
 
 # CAL-1: m_e from codata_constants registry (P31-triage Phase A).
 from codata_constants import M_E_MEV as M_E_MEV_CODATA
-M_P_MEV_CODATA       = mp.mpf("938.27208816")
+# Comparison reference (P31-triage Phase B): validation-only CODATA m_p
+# used to report the proton-mass-chain residual, not as a prediction input.
+from codata_constants import M_P_MEV_VALIDATION as M_P_MEV_CODATA
 # `M_HECKE_PIPELINE_AT_Q0` returns `mp.mpf` (PR #637); preserved as
 # mp.mpf throughout per the no-float64 directive (derivation_chain.py
 # docstring §"Keep the values as mp.mpf to preserve 50-dps precision").

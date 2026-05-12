@@ -231,8 +231,12 @@ def main():
     m_n_over_m_p = n_total / p_total
     delta_np_in_me = (n_total - p_total) / e_total
 
-    M_P_AME = mp.mpf("938.27208816")
-    M_N_AME = mp.mpf("939.56542052")
+    # Comparison references (P31-triage Phase B): validation-only CODATA
+    # values used to report mass-endomorphism residuals against experiment.
+    from codata_constants import (
+        M_P_MEV_VALIDATION as M_P_AME,
+        M_N_MEV_VALIDATION as M_N_AME,
+    )
     M_E     = mp.mpf("0.51099895000")
     Q_BETA  = M_N_AME - M_P_AME - M_E   # = 0.7823... CODATA-derived
 

@@ -10,7 +10,7 @@ or whether other integer relations exist in the same basis.
 Method:
   1. Extend q_0 to 2000 dps via canonical formula
         q_0 = unique solution of  m_μ/m_e = Vol(4_1)/ℏ_q²
-     using m_μ/m_e = 206.7682830 (CODATA) — but the framework's
+     using m_μ/m_e = 206.7682830 (CODATA) — but the framework's  # noqa: P31 — docstring narrative; live value comes from q_parameter.MASS_RATIO_MU_E_STR
      internal value is fixed by q_parameter at 17 digits.
      Since m_μ/m_e is bounded to ~22 ppb, treating q_0 as having
      more precision than that is a "what-if" exercise testing

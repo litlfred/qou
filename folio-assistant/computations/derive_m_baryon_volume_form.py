@@ -27,7 +27,7 @@ This script:
 
   (a) Computes Vol(K)/ℏ_q² at 50 dps for the cross-check K = 4_1
       (figure-8, the muon Higgs-coupling knot) — should reproduce
-      m_μ/m_e ≈ 206.7682830 (CODATA, CAL-2 anchor) to all digits.
+      m_μ/m_e ≈ 206.7682830 (CODATA, CAL-2 anchor) to all digits.  # noqa: P31 — docstring narrative; CAL-2 anchor lives in q_parameter.MASS_RATIO_MU_E_STR
 
   (b) Computes Vol(ℬ_3)/ℏ_q² at 50 dps — the "common Borromean factor"
       ≈ 746.42 (dimensionless).

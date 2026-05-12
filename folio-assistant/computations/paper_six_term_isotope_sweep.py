@@ -552,7 +552,9 @@ def chirality_signs_for_isotope(iso):
 
 def run_sweep_for_mode(tower_mode: str, isotopes: list, *, verbose: bool = True):
     """Run the proton-calibrated 6-term sweep for one tower_mode."""
-    M_P_CODATA = 938.27208816
+    # Comparison reference (P31-triage Phase B): validation-only CODATA m_p
+    # used to report fit residuals, not as a prediction input.
+    from codata_constants import M_P_MEV_VALIDATION as M_P_CODATA  # noqa: E402
 
     # Proton calibration under this tower_mode
     p_terms = paper_six_term_mass(
