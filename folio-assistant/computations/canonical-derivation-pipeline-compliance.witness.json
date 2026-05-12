@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-05-12T14:34:10.660302+00:00",
-  "commitSha": "d4a86bace8ddb08582d90cf957bef2c3e61bc96a",
+  "computedAt": "2026-05-12T15:04:14.032229+00:00",
+  "commitSha": "ac31c98592d812ddf25f85b786805a4c8a112315",
   "assertions": [],
   "allPassed": true,
   "durationMs": 9,
   "computation": "canonical-derivation-pipeline-compliance",
   "scriptFile": "canonical_derivation_pipeline_compliance.py",
-  "scriptHash": "71281c73dcc3",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "f79a71f581bf",
+  "scriptCommitSha": "7c3086733013b58458a1a71c94aa6e9ab5ae5353",
   "description": "Aggregator dashboard of compute-infra compliance for the canonical-derivation chain. Joins four upstream audit witnesses into one current-state snapshot. See docs/audits/2026-05-12-canonical-derivation-compute-review.md §3 for the contract definitions.",
   "auditOnly": "docs/audits/2026-05-12-canonical-derivation-compute-review.md",
   "parameters": {
@@ -17,7 +17,8 @@
       "compute_audit_scan": "folio-assistant/computations/compute-audit-scan.witness.json",
       "canonical_script_input_audit": "folio-assistant/computations/canonical-script-input-audit.witness.json",
       "derivation_chain_audit": "folio-assistant/computations/derivation-chain-audit.witness.json",
-      "codata_reconciliation": "folio-assistant/computations/codata-reconciliation.witness.json"
+      "codata_reconciliation": "folio-assistant/computations/codata-reconciliation.witness.json",
+      "witness_reproducibility": "folio-assistant/computations/witness-reproducibility-check.witness.json"
     }
   },
   "data": {
@@ -151,6 +152,14 @@
         "computedAt": "2026-05-11T03:50:35.661606+00:00",
         "all_passed": true,
         "assertion_count": 9
+      },
+      "witness_reproducibility": {
+        "status": "loaded",
+        "computedAt": "2026-05-12T15:02:05.989063+00:00",
+        "by_status": {
+          "pass": 11
+        },
+        "pass_ratio": 1.0
       }
     },
     "contracts": [
@@ -188,9 +197,16 @@
         "metric": "9 reconciliation assertions; allPassed=True",
         "status": "pass",
         "remediation": "Refresh codata_constants.py against CODATA 2022 and re-run codata_reconciliation.py."
+      },
+      {
+        "name": "Witness reproducibility (P32)",
+        "source": "witness-reproducibility-check.witness.json",
+        "metric": "11/11 builders byte-equal (drift=0, error=0, timeout=0, skip=0)",
+        "status": "pass",
+        "remediation": "For drift: investigate non-determinism (PYTHONHASHSEED, timestamps, hand-edits to committed JSON not reproduced by the script). For error/timeout: install missing deps or bump PER_BUILDER_TIMEOUT_S. Reference: witness_reproducibility_check.py + docs/audits/2026-05-12-canonical-derivation-compute-review.md §4 P3.2."
       }
     ],
-    "infra_score": 0.4,
+    "infra_score": 0.5,
     "known_open_conflicts": [
       {
         "id": "TR_M_AT_Q0_vs_frobenius_proof",
@@ -200,10 +216,22 @@
         "blocks_fix": "P2.1 schur-weyl-weight-* → tau-sw-weight-* rename"
       }
     ],
+    "closed_recently": [
+      "P0.1 — aggregator compliance witness (this script)",
+      "P1.1 — deuteron_delta_i_audit Conv-C audit-only banner",
+      "P1.2 — content 'prediction' language audit (closed in-tree)",
+      "P3.1 — P31 hardcoded-CODATA scanner",
+      "P3.2 — witness reproducibility byte-equality check (P32 contract above)"
+    ],
     "recommended_next": [
       {
-        "priority": "P1.2",
-        "summary": "Audit content blocks downstream of atomic-mass-via-rho-k.witness.json for surviving 'prediction' / 'predicts' language now that LO tautology banner has landed.",
+        "priority": "P31-triage",
+        "summary": "Migrate the 40 P31 hits (hardcoded CODATA literals) to codata_constants validation aliases. Mechanical, one file at a time. Suggested batch order: highest-import files first (e.g. derivation_chain.py, experimental_constants consumers).",
+        "blocked_on": null
+      },
+      {
+        "priority": "P30-triage",
+        "summary": "Port the 96 hand-written .witness.json writers to witness_base.WitnessBuilder. Some hand-written witnesses encode review-only metadata that needs a builder pattern extension; case-by-case judgement required.",
         "blocked_on": null
       },
       {
@@ -212,8 +240,8 @@
         "blocked_on": "TR_M_AT_Q0_vs_frobenius_proof (see open conflicts)"
       },
       {
-        "priority": "P3.2",
-        "summary": "Witness reproducibility byte-equality CI check (run any *.derivation.json builder twice, assert equal).",
+        "priority": "Workplan-0b",
+        "summary": "112 over-count scripts to migrate to the 3-input scheme (derive m_n = m_p + Q_β instead of importing both). Largest-scope semantic change; needs per-script verification that downstream consumers still round-trip.",
         "blocked_on": null
       }
     ]

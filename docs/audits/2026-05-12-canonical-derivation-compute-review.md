@@ -215,7 +215,16 @@ Remaining items prioritized by **(infra leverage) / (risk × cost)**:
   **40 hits** to triage in a follow-up scoped PR.
 - **P3.2.** Add a witness reproducibility check (run any
   `*.derivation.json` builder twice; assert byte-equal output).
-  **Deferred.**
+  **✓ Implemented** — `witness_reproducibility_check.py` with
+  explicit registry of 11 (builder, output) pairs; runs
+  snapshot → re-run → byte-diff with auto-restore of the
+  committed file. Wired as 6th contract in
+  `canonical_derivation_pipeline_compliance.py` (P32). Baseline
+  **11/11 pass** after a one-line drift-fix to
+  `build_markov_trace_assembly_neutron_chain.py:260` (script
+  was missing the `[canonical Wenzl-bridge]` annotation that had
+  been hand-edited into the committed JSON). **infra_score
+  0.40 → 0.50.**
 
 ### Priority 4 — structural / R&D (out of compute-infra scope)
 
@@ -305,6 +314,26 @@ author/structural decisions (§2.C).
    surviving in those files refers to the genuine framework
    predictions ($m_\mu$, $Q_\beta$); LO atomic rows are explicitly
    disclaimed. No edit required.
+
+### Update — third pass (continuation push)
+
+6. **P3.2 — Witness reproducibility byte-equality check (P32)**.
+   New
+   [`witness_reproducibility_check.py`](../../folio-assistant/computations/witness_reproducibility_check.py)
+   with explicit registry of 11 (builder, output) pairs. Snapshots
+   each `*.derivation.json`, re-runs its builder, byte-compares,
+   and **auto-restores** the snapshot regardless of outcome (the
+   checker never mutates committed content). Catalogue entry P32
+   added to `local/compute-audit.md`. Wired as 6th contract in
+   the aggregator. **infra_score 0.40 → 0.50.**
+7. **Drift fix** to
+   [`build_markov_trace_assembly_neutron_chain.py:260`](../../folio-assistant/computations/build_markov_trace_assembly_neutron_chain.py)
+   — single-line update of the `target=` field to match the
+   `[canonical Wenzl-bridge]` annotation that had been hand-edited
+   into the committed JSON without a corresponding script update.
+   This was the **first real finding** from P32 — a stale
+   committed file that would silently regenerate-and-diff on the
+   next CI run. Caught before causing a confusing diff.
 
 All other items in §2.B / §4 are **deferred** with explicit
 rationale (multi-file scope, blocked on author decision, blocked

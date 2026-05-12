@@ -257,7 +257,7 @@ def build() -> DerivationChain:
     ))
 
     return DerivationChain(
-        target="tr_M(n, q_0)",
+        target="tr_M(n, q_0)  [canonical Wenzl-bridge]",
         target_value=NEUTRON_TR_M_Q0,
         target_tolerance=1e-9,
         content_block="prop:full-pole-structure-mass-trace",

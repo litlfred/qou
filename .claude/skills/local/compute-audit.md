@@ -209,6 +209,19 @@ numerical equivalence at q₀ before/after.
   bib / audit files.  Audit-only scripts may use them inside an
   explicit `# noqa: P31` comment justifying the audit purpose.
 
+- **P32. Non-deterministic `*.derivation.json` builder.** A builder
+  script must produce **byte-equal** output across two consecutive
+  runs in the same environment. Drift (different bytes) typically
+  indicates dict-iteration order (set `PYTHONHASHSEED=0`), an
+  embedded timestamp, float-precision variation, or hand-edits to
+  the committed JSON that the script does not reproduce. Reference
+  fix: `witness_reproducibility_check.py` (snapshot → re-run →
+  byte-diff). Audit-only: explicit registry of (script, output)
+  pairs avoids auto-discovery mistakes for builders with CLI args.
+  Failure mode this catches in practice: hand-edits to a committed
+  `.derivation.json` that drift on the next CI regeneration (see
+  build_markov_trace_assembly_neutron_chain.py 2026-05-12 fix).
+
 ## Pattern → fix-success references
 
 | Pattern | Reference fix |
@@ -223,6 +236,7 @@ numerical equivalence at q₀ before/after.
 | P26 | bar_involution.py (cbcc716e) |
 | P30 | witness_base.py:136-183 |
 | P31 | codata_constants.py + canonical_derivation_pipeline_compliance.py |
+| P32 | witness_reproducibility_check.py + build_markov_trace_assembly_neutron_chain.py:260 (drift fix) |
 
 ## Verification checklist before landing any speedup
 

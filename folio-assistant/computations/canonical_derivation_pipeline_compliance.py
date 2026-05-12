@@ -71,6 +71,9 @@ SOURCES = {
     ),
     "derivation_chain_audit": HERE / "derivation-chain-audit.witness.json",
     "codata_reconciliation": HERE / "codata-reconciliation.witness.json",
+    "witness_reproducibility": (
+        HERE / "witness-reproducibility-check.witness.json"
+    ),
 }
 
 
@@ -154,6 +157,22 @@ def _summarize_codata_recon(w: dict[str, Any] | None) -> dict[str, Any]:
     }
 
 
+def _summarize_repro(w: dict[str, Any] | None) -> dict[str, Any]:
+    """P32 byte-equality reproducibility check."""
+    if w is None:
+        return {
+            "status": "missing",
+            "note": "witness-reproducibility-check.witness.json not found",
+        }
+    data = w.get("data") or {}
+    return {
+        "status": "loaded",
+        "computedAt": w.get("computedAt"),
+        "by_status": data.get("by_status") or {},
+        "pass_ratio": data.get("pass_ratio"),
+    }
+
+
 # ── Contract definitions ──────────────────────────────────────────
 # Each contract maps to a single source-of-truth witness and a
 # threshold function that turns the source into pass/warn/fail.
@@ -196,6 +215,44 @@ def _contract_codata_registry(scan: dict[str, Any]) -> dict[str, Any]:
             "(_VALIDATION aliases) or experimental_constants. Tag "
             "audit-only consumers with `# noqa: P31` and a "
             "justifying comment."
+        ),
+    }
+
+
+def _contract_witness_reproducibility(repro: dict[str, Any]) -> dict[str, Any]:
+    """P32 measures byte-equality reproducibility of *.derivation.json builders."""
+    by_status = repro.get("by_status") or {}
+    pass_n = by_status.get("pass", 0)
+    drift_n = by_status.get("drift", 0)
+    error_n = by_status.get("error", 0)
+    timeout_n = by_status.get("timeout", 0)
+    skip_n = by_status.get("skip", 0)
+    total_checkable = pass_n + drift_n + error_n + timeout_n
+    pass_ratio = repro.get("pass_ratio")
+    return {
+        "name": "Witness reproducibility (P32)",
+        "source": "witness-reproducibility-check.witness.json",
+        "metric": (
+            f"{pass_n}/{total_checkable} builders byte-equal "
+            f"(drift={drift_n}, error={error_n}, "
+            f"timeout={timeout_n}, skip={skip_n})"
+        ),
+        # Drift = real non-determinism = fail.
+        # Error / timeout = environment issue = warn (not the
+        # builder's fault per se, but blocks coverage).
+        "status": (
+            "fail" if drift_n > 0 else
+            "warn" if (error_n + timeout_n) > 0 else
+            "pass" if pass_ratio == 1.0 or pass_n > 0 else
+            "fail"
+        ),
+        "remediation": (
+            "For drift: investigate non-determinism (PYTHONHASHSEED, "
+            "timestamps, hand-edits to committed JSON not reproduced "
+            "by the script). For error/timeout: install missing deps "
+            "or bump PER_BUILDER_TIMEOUT_S. Reference: "
+            "witness_reproducibility_check.py + "
+            "docs/audits/2026-05-12-canonical-derivation-compute-review.md §4 P3.2."
         ),
     }
 
@@ -291,14 +348,35 @@ KNOWN_OPEN_CONFLICTS = [
 
 
 # ── Recommended-next list (ranked from §4 of the review) ─────────
+# As items land they are removed from the list; the most recent
+# closure is recorded in the witness as `closed_recently` for audit.
+CLOSED_RECENTLY = [
+    "P0.1 — aggregator compliance witness (this script)",
+    "P1.1 — deuteron_delta_i_audit Conv-C audit-only banner",
+    "P1.2 — content 'prediction' language audit (closed in-tree)",
+    "P3.1 — P31 hardcoded-CODATA scanner",
+    "P3.2 — witness reproducibility byte-equality check (P32 contract above)",
+]
+
 RECOMMENDED_NEXT = [
     {
-        "priority": "P1.2",
+        "priority": "P31-triage",
         "summary": (
-            "Audit content blocks downstream of "
-            "atomic-mass-via-rho-k.witness.json for surviving "
-            "'prediction' / 'predicts' language now that LO "
-            "tautology banner has landed."
+            "Migrate the 40 P31 hits (hardcoded CODATA literals) to "
+            "codata_constants validation aliases. Mechanical, one "
+            "file at a time. Suggested batch order: highest-import "
+            "files first (e.g. derivation_chain.py, "
+            "experimental_constants consumers)."
+        ),
+        "blocked_on": None,
+    },
+    {
+        "priority": "P30-triage",
+        "summary": (
+            "Port the 96 hand-written .witness.json writers to "
+            "witness_base.WitnessBuilder. Some hand-written witnesses "
+            "encode review-only metadata that needs a builder pattern "
+            "extension; case-by-case judgement required."
         ),
         "blocked_on": None,
     },
@@ -311,10 +389,12 @@ RECOMMENDED_NEXT = [
         "blocked_on": "TR_M_AT_Q0_vs_frobenius_proof (see open conflicts)",
     },
     {
-        "priority": "P3.2",
+        "priority": "Workplan-0b",
         "summary": (
-            "Witness reproducibility byte-equality CI check (run "
-            "any *.derivation.json builder twice, assert equal)."
+            "112 over-count scripts to migrate to the 3-input scheme "
+            "(derive m_n = m_p + Q_β instead of importing both). "
+            "Largest-scope semantic change; needs per-script "
+            "verification that downstream consumers still round-trip."
         ),
         "blocked_on": None,
     },
@@ -335,6 +415,9 @@ def main() -> int:
     codata_summary = _summarize_codata_recon(
         sources_loaded["codata_reconciliation"]
     )
+    repro_summary = _summarize_repro(
+        sources_loaded["witness_reproducibility"]
+    )
 
     # Per-contract pass/warn/fail
     contracts = [
@@ -343,6 +426,7 @@ def main() -> int:
         _contract_three_input_scheme(input_summary),
         _contract_derivation_chains(chain_summary),
         _contract_codata_reconciliation(codata_summary),
+        _contract_witness_reproducibility(repro_summary),
     ]
 
     # Aggregate score: pass=1, warn=0.5, fail=0, missing=skip
@@ -409,10 +493,12 @@ def main() -> int:
             "canonical_script_input_audit": input_summary,
             "derivation_chain_audit": chain_summary,
             "codata_reconciliation": codata_summary,
+            "witness_reproducibility": repro_summary,
         })
         .add_data("contracts", contracts)
         .add_data("infra_score", infra_score)
         .add_data("known_open_conflicts", KNOWN_OPEN_CONFLICTS)
+        .add_data("closed_recently", CLOSED_RECENTLY)
         .add_data("recommended_next", RECOMMENDED_NEXT)
         .add_caveat(
             "Aggregator-only: this script does NOT re-run any of the "
