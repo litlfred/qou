@@ -1,0 +1,136 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-12T19:27:49.721542+00:00",
+  "commitSha": "69fdaf6deb1be19d8e0dfc41808979b98b90140b",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 26,
+  "computation": "delta-coupling-residual-closure-probe",
+  "scriptFile": "probe_delta_coupling_residual_closure.py",
+  "scriptHash": "77b56ac2e252",
+  "scriptCommitSha": "unknown",
+  "description": "P3.A follow-up: 50 dps probe of three structural correction families (H6 q-dilog/q-trilog additive, H7 multiplicative q-deformation [A−2]_q or log_q, H8 m_e/E₀·h micro-correction) for the +0.71% (~7100 ppm) residual of Δ_coupling(2,2) − 2·E_0·log(1/h(q_0)) at the doubly-magic anchor. Diagnostic probe — does NOT fit Δ_coupling to AME (forbidden by three-cal discipline).",
+  "contentBlock": "conj:magic-shell-stabilization",
+  "parameters": {
+    "mp_dps": 50,
+    "delta_cat_source": "magic-shell-empirical-instantiation.witness.json#per_atom_delta_cat",
+    "q_0_50dps": "1.1099785955541805677630215523262746828651420435574",
+    "m_e_MeV_CODATA": "0.51099895069",
+    "E_0_MeV_50dps": "4.1859808277148385734460236982827215126887330583474",
+    "t_h_50dps": "0.20906032198987944748055841654932851331250607120014"
+  },
+  "data": {
+    "delta_cat_inputs_MeV_50dps": {
+      "He3": "7.5069756762851708429567762113101864364275472851682",
+      "He4": "28.210825160118311508412024060171328089127144741572"
+    },
+    "anchor_22_doubly_magic": {
+      "Z": 2,
+      "N": 2,
+      "A": 4,
+      "value_MeV_50dps": "13.196873807547969822498471637550955216272050171236",
+      "H1_prediction_MeV_50dps": "13.103228829436929786653963086746968671125225217319",
+      "residual_R_MeV_50dps": "0.093644978111040035844508550803986545146824953916391",
+      "residual_over_E0_dimensionless_50dps": "0.02237109579934736610700647779189732561997851133147",
+      "relative_gap_to_anchor_pct": "0.709599708815"
+    },
+    "H6_q_dilog_additive_correction": {
+      "Li2_q_minus_h": {
+        "g_value_50dps": "1.8142123453304168945040583448773995160991206344781",
+        "c_coefficient_50dps": "0.0123310239051829335",
+        "c_close_to_small_rational": false
+      },
+      "Li2_q_plus_h": {
+        "g_value_50dps": "-2.0044353287792312263216043420199692506026360420955",
+        "c_coefficient_50dps": "-0.0111607969976123493",
+        "c_close_to_small_rational": false
+      },
+      "Li3_q_minus_h": {
+        "g_value_50dps": "1.8563843467896721266251542448254852485506771016226",
+        "c_coefficient_50dps": "0.0120508965926343299",
+        "c_close_to_small_rational": false
+      },
+      "log_one_plus_h": {
+        "g_value_50dps": "0.18984346450699245372071292222481212032644319888621",
+        "c_coefficient_50dps": "0.117839694178797382",
+        "c_close_to_small_rational": false
+      },
+      "h": {
+        "g_value_50dps": "0.20906032198987944748055841654932851331250607120014",
+        "c_coefficient_50dps": "0.107007851066212099",
+        "c_close_to_small_rational": false
+      },
+      "h_squared": {
+        "g_value_50dps": "0.043706218230512072063037688190524271136156890793728",
+        "c_coefficient_50dps": "0.511851555798294041",
+        "c_close_to_small_rational": false
+      },
+      "one_minus_h_log": {
+        "g_value_50dps": "1.2379253534356836287226996199778665304938146314907",
+        "c_coefficient_50dps": "0.0180714416562029446",
+        "c_close_to_small_rational": false
+      },
+      "verdict": "Probe reports c = R/(E₀·g) for each candidate g. A 'clean' closure would require c rational with small denominator (≤4) or a quantum integer at q_0. Inspection of the c column decides whether any candidate is structurally plausible."
+    },
+    "H7_multiplicative_q_deformation": {
+      "H7a_quantum_integer_prefactor": {
+        "quantum_integer_2_q0_50dps": "2.0108968691184816880454846881032208524177780159146",
+        "prediction_MeV_50dps": "13.174620914228874905756620082346683265318911481854",
+        "anchor_over_prediction_50dps": "1.00168907276072447",
+        "matches_unity_within_1pct": true
+      },
+      "H7b_q_deformed_log": {
+        "log_q_inv_h_50dps": "1.437835931792043526360874588555019391089778828689",
+        "prediction_MeV_50dps": "12.037507287761989077655497475204380899737118653251",
+        "anchor_over_prediction_50dps": "1.09631284053008702",
+        "matches_unity_within_1pct": false
+      },
+      "verdict": "If either H7a or H7b matches unity within 1%, the leading form acquires a structural q-deformation. Otherwise the ordinary log + classical (A−2) prefactor remains preferred."
+    },
+    "H8_additive_micro_correction": {
+      "m_e": {
+        "scale_MeV_50dps": "0.51099895069",
+        "c_coefficient_50dps": "0.183258650501320144",
+        "c_close_to_small_rational": false
+      },
+      "E0_times_h": {
+        "scale_MeV_50dps": "0.87512249968552623753038278958610208039547402101635",
+        "c_coefficient_50dps": "0.107007851066212099",
+        "c_close_to_small_rational": false
+      },
+      "E0_times_h_sq": {
+        "scale_MeV_50dps": "0.18295339156484429073853794188987864807266838712604",
+        "c_coefficient_50dps": "0.511851555798294041",
+        "c_close_to_small_rational": false
+      },
+      "E0_over_q0": {
+        "scale_MeV_50dps": "3.7712266204781165746231710474872459228272708459291",
+        "c_coefficient_50dps": "0.0248314374963676179",
+        "c_close_to_small_rational": false
+      },
+      "E0_over_q0_sq": {
+        "scale_MeV_50dps": "3.3975669761408786254770315013819736702273896368753",
+        "c_coefficient_50dps": "0.0275623641178095463",
+        "c_close_to_small_rational": false
+      },
+      "verdict": "Probe reports c = R/scale for each micro-correction scale. A clean closure would require c rational with small denominator. Inspection of the c column decides plausibility."
+    },
+    "summary": {
+      "anchor_relative_gap_after_H1_pct": "0.70959971",
+      "candidates_with_clean_coefficient": {
+        "H6_q_dilog_or_trilog": [],
+        "H7_q_deformation": [
+          "H7a_quantum_integer_prefactor"
+        ],
+        "H8_micro_correction": []
+      },
+      "structural_finding": "Some H6/H7/H8 candidates flagged as clean-coefficient — see candidates_with_clean_coefficient. These require cross-anchor consistency (post-#644 merge) before any substrate-derivation attempt."
+    }
+  },
+  "caveats": [
+    "DIAGNOSTIC PROBE ONLY — does not fit Δ_coupling to AME. A numerical near-fit is NOT acceptable as a Pattern-A/B Lean §3b-cond instance per CLAUDE.md §3b-cond + the trivial-skeleton workplan. Any closure candidate must be derived from substrate primitives (KLR / Markov-trace / quantum-integer structure) before promotion.",
+    "Single-anchor probe — closure candidates flagged here MUST be cross-validated against the (2,1) and (1,2) anchors after PR #644 merges (which adds proton/neutron Δ_cat to the canonical magic-shell-empirical-instantiation witness). A coefficient that varies across (Z,N) is not a structural closure.",
+    "The small-rational heuristic uses denominator ≤ 12 with tolerance 1e-3 (relative). Clean coefficients flagged here are candidates, not proofs."
+  ]
+}
