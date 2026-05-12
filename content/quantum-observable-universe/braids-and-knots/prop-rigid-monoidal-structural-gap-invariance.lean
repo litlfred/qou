@@ -203,24 +203,31 @@ production-Lean; Layer 1 needs the proposed `MarkovTraceAxiomatic`
 typeclass; Layer 3 then follows by structural induction on the
 Hecke quadratic relation. -/
 
-/-- **Tautological skeleton instance.**  Sets `categorical_trace ≡ 0`.
-    The §3b `sorry` marks the Layer-1 Jones-Wenzl uniqueness step
-    discussed above. -/
+/-- **Tautological skeleton instance.**  Pinned to `α := Empty`,
+    where `OperatorVolumeConvention Empty` is inhabited but every
+    `markov_trace` is a function out of an empty domain — so the
+    `convention_factorisation` obligation `∀ (c : …) (β : Empty), …`
+    is vacuously discharged by `Empty.elim`.  Encodes no
+    conjectural content; real instances over inhabited `α` must
+    supply the §3b Layer-1 Markov-trace uniqueness data discussed
+    in the comment block above.
+
+    The instance is intentionally NOT parameterised over an
+    arbitrary `α : Type*`: with `categorical_trace ≡ 0`, the
+    obligation `c.markov_trace β = 0` is genuinely false for any
+    inhabited `α` and a convention with non-zero `markov_trace`
+    (e.g. `⟨fun _ => 1, fun _ => 0⟩`) — so the universally-quantified
+    skeleton is unprovable, not §3b-conjectural.  Pinning to
+    `Empty` matches the §3b-cond pattern: tautological discharge,
+    no real content, no false claim.
+
+    Companion: `docs/audits/2026-05-12-lean-handover.md` §2 P4.A and
+    `docs/audits/2026-05-12-lean-p4-discharge-and-escalation.md`. -/
 -- Ref: [manuscript] prop:rigid-monoidal-structural-gap-invariance §"Skeleton"
 -- Ref: [jones1985] V. Jones, BAMS 12.1 (1985)
 -- Ref: [wenzl1988] H. Wenzl, Invent. Math. 92 (1988)
-instance canonical (α : Type*) :
-    RigidMonoidalStructuralGapInvariance α where
+instance canonical : RigidMonoidalStructuralGapInvariance Empty where
   categorical_trace _ := (0 : ℝ)
-  convention_factorisation _ _ := by
-    -- §3b axiomatic placeholder for Layer-1 Markov-trace
-    -- uniqueness.  See "Mathlib LP-duality integration sketch"
-    -- comment block above for the staged-discharge plan
-    -- (Layer 1: Mathlib `MarkovTraceAxiomatic` typeclass;
-    --  Layer 2: `pair_knot_Z_N_trace_invariance` — done;
-    --  Layer 3: structural induction on Hecke quadratic).
-    -- Ref: [jones1985] V. Jones, BAMS 12.1 (1985)
-    -- Ref: [wenzl1988] H. Wenzl, Invent. Math. 92 (1988)
-    sorry
+  convention_factorisation _ β := Empty.elim β
 
 end QOU.BraidKnot
