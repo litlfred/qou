@@ -248,10 +248,52 @@ an order of magnitude. From the M0 table, ⁴He AME binding is
 mass, so the canonical Model B knot's $\tau_M$ should be in the
 range $[0.05, 0.5]$ at $q_0$ to be plausible.
 
-**Status:** **DEFERRED — research-heavy, owner input needed on knot
-choice.** Suggest: produce a witness `model-b-he4-knot-survey.witness.json`
-that computes $\tau_M$ for each candidate above and lists the
-match-to-AME ranking, then present to owner for selection.
+**Status:** **Survey witness landed (2026-05-12); final knot
+selection still needs owner input.**
+
+- ✅ **Survey witness**:
+  `folio-assistant/computations/model-b-he4-knot-survey.witness.json`
+  via `probe_he4_model_b_knot_survey.py`. Computes $\tau_M(\beta)$
+  at $q_0$ in both Plancherel and Wenzl-Schur conventions for
+  $\{L6a4,\ 8_{17},\ 8_{18},\ 10_{123}\}$ in $B_3$; ranks against
+  AME$(^4\mathrm{He}) = 28.30$ MeV with the plausibility window
+  $\tau_M \in [0.05, 0.5]$.
+- ⏳ **Owner decision pending**: pick the canonical knot from the
+  ranking below.
+
+**Survey results (Wenzl-Schur convention at $q_0$):**
+
+| Rank | Knot | crossings | vol | $\lvert\tau_M\rvert$ | $T_1 = m_e \lvert\tau_M\rvert$ (MeV) | in window |
+|-----:|------|----------:|----:|---------------------:|-------------------------------------:|:---------:|
+| 1 | $8_{17}$ (high-vol amphichiral) |  8 | 10.986 | 0.186 | 0.0949 | ✓ |
+| 2 | $10_{123}$ (T(5,2)-like)        | 10 | 17.086 | 0.221 | 0.1130 | ✓ |
+| 3 | $8_{18}$ (4-bridge symmetric)   |  8 | 12.351 | 0.109 | 0.0558 | ✓ |
+| 4 | $L6a4$ (Borromean, ³He twin)    |  6 |  8.000 | 0.998 | 0.5102 | ✗ |
+
+**Reading of the survey:**
+
+- The ³He-twin $L6a4$ assignment is empirically excluded — its
+  $\lvert\tau_M\rvert$ at $q_0$ is $\approx 1.0$, an order of
+  magnitude above the plausibility window. The "degenerate
+  assignment" concern in the candidate list is borne out
+  numerically.
+- All three of $\{8_{17},\ 8_{18},\ 10_{123}\}$ pass the
+  plausibility window. The plan's primary structural candidate
+  ($8_{18}$, 4-fold symmetric) sits at the lower edge; $8_{17}$
+  and $10_{123}$ are closer to the geometric mean of the window
+  ($\approx 0.158$) and would shift $T_1(^4\mathrm{He})$ by
+  $\approx 2$x.
+- The Brunnian 4-component link enumerated in the candidate list
+  is **not yet surveyed** — no canonical braid word in hand;
+  surveying it requires either extending the Hoefsmit cache to
+  $H_4$ or sourcing a $B_3$ closure of an equivalent knot.
+
+**Owner decision needed:** select the canonical $^4\mathrm{He}$
+Model B knot from the surveyed candidates (or commission a
+4-strand follow-up survey for the Brunnian link). The survey
+itself is Markov-invariant and does not encode non-trace
+constraints (symmetry group, bridge index, chirality compatibility
+with the $[+1,-1,+1,-1]$ sign pattern).
 
 ### Phase 2 — Surviving brane-tower closure path
 
