@@ -482,18 +482,28 @@ theorem cross_coupling_mirror_symmetry
 -- Skeleton instance (Δ_coupling ≡ 0; recovers additivity trivially)
 -- ────────────────────────────────────────────────────────────────────────────
 
-instance canonicalCrossCoupling [_M : MagicShellStabilization] :
-    MagicShellCrossCoupling where
+/-- **Tautological cross-coupling skeleton instance.**  Pinned to
+    the `canonical` `MagicShellStabilization` (where `Δ_shell ≡ 0`),
+    so all three terms in `cross_decomposition` reduce to `0` and
+    `simp` closes the goal.  The instance is intentionally NOT
+    parameterised over an
+    arbitrary `[_M : MagicShellStabilization]`: cross-decomposition
+    additivity does not follow from the base axioms
+    (`magic_only_support`, `z_n_symmetry`) alone — so a "for-all-`M`"
+    instance is genuinely unprovable.  Real (non-skeleton) instances
+    must supply both their own `MagicShellStabilization` and a
+    matching `MagicShellCrossCoupling` whose `cross_decomposition`
+    follows from substrate-derived data.
+
+    This was the §3b `sorry` discharged in the 1 ppb plan's Phase 4
+    P4.B (companion: `docs/audits/2026-05-12-lean-handover.md`). -/
+-- Ref: [manuscript] conj:magic-shell-stabilization §"Refined proof obligations (3)"
+instance canonicalCrossCoupling : MagicShellCrossCoupling (M := canonical) where
   delta_coupling _ _ := (0 : ℝ)
-  cross_decomposition Z N := by
-    -- Under the canonical Δ_shell ≡ 0 + canonical additivity (also
-    -- 0 = 0 + 0), this is trivial.  Genuine instances would supply
-    -- a non-trivial `delta_coupling` predicted from substrate data.
-    show _M.delta_shell Z N
-            = _M.delta_shell Z 0 + _M.delta_shell 0 N + 0
-    -- Use canonical Δ_shell ≡ 0; both sides reduce to 0.
-    -- Ref: [manuscript] conj:magic-shell-stabilization §"Refined proof obligations (3)"
-    sorry
+  cross_decomposition _ _ := by
+    -- canonical.delta_shell _ _ ≡ 0 by definition; obligation reduces
+    -- to (0 : ℝ) = 0 + 0 + 0, which `simp` closes.
+    simp
   coupling_non_magic_z _ _ _ := rfl
   coupling_non_magic_n _ _ _ := rfl
   coupling_z_n_symmetry _ _ := rfl
