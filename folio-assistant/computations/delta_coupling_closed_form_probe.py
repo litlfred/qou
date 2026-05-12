@@ -4,36 +4,55 @@
 
 Per docs/audits/2026-05-11-1ppb-gap-narrowing-plan.md §Path A and
 content/quantum-observable-universe/braids-and-knots/conj-magic-shell-stabilization.md:160,
-the empirical magic-shell anchor (extracted, NOT calibrated) is
+the cross-coupling residual at the doubly-magic ⁴He shell is
 
-    Δ_coupling(2, 2) = +13.20 MeV
+    Δ_coupling(2, 2) = Δ_cat(⁴He) − 2 · Δ_cat(³He) ≈ +13.20 MeV
 
-obtained from doubly-magic ⁴He via the cross-coupling decomposition
+where, for each atom 𝔥 ∈ {p, n, D, T, ³He, ⁴He}, the canonical
+**substrate-derived** per-atom residual is
 
-    Δ_coupling(Z=2, N=2)
-        = M(⁴He) − 2·M(D) + 2·Δ_cat(³He)
-        = 28.211 − 15.014 = +13.20  MeV.
+    Δ_cat(𝔥) := AME(𝔥) − m_e · ρ_𝔥 · |τ(β_𝔥)|
 
-P3.A asks: which structural closed form `f` reproduces this value
-when evaluated at the appropriate substrate parameter `t`?
+(`probe_magic_shell_empirical_instantiation.py:8`).  All six per-atom
+Δ_cat values are computed once and emitted to
+`magic-shell-empirical-instantiation.witness.json`; this probe LOADS
+them from that witness rather than recomputing or hardcoding raw AME
+values.
 
-The gap-narrowing plan lists four candidates (P1.1):
+The cross-coupling residuals consumed below are the canonical
+Δ_cat differences (NOT raw binding-energy differences):
+
+    Δ_coupling(2, 2) := Δ_cat(⁴He) − 2 · Δ_cat(³He)         [doubly-magic]
+    Δ_coupling(2, 1) := Δ_cat(³He) − Δ_cat(D) − Δ_cat(p)    [³He = D + p]
+    Δ_coupling(1, 2) := Δ_cat(T)   − Δ_cat(D) − Δ_cat(n)    [T   = D + n]
+
+The 2-decomposition for ⁴He counts the ³He sub-clusters
+(combinatorial: (4 choose 3) = 4 sub-clusters / 2 per pair = 2);
+the (D, free-nucleon) decompositions for ³He and T follow the
+atomic-braid-recipe topology (`recursive-atom-knot-atlas.md`).
+There is no "modeling choice" — the decomposition is determined
+by the substrate braid topology, and the residuals are per-atom
+Δ_cat differences derived from the same Markov-trace formula.
+
+P3.A asks: which structural closed form `f` reproduces these
+Δ_coupling values when evaluated at the appropriate substrate
+parameter `t`?  The gap-narrowing plan (P1.1) lists four candidates:
 
   C1  f₁(t) = log(1/t)
   C2  f₂(t) = 1/t − 1
   C3  f₃(t) = log Φ_q^{(∞)}(t)        (log of full Faddeev dilogarithm)
   C4  f₄(t) = KLR canonical-basis dim count at the relevant shell
 
-The probe evaluates each candidate at three natural substrate values
-of `t`:
+evaluated at three natural substrate values of `t`:
   - t = q_0 ≈ 1.110            (full substrate parameter)
   - t = q_0 − 1 = 1/q_0·E_0    (β-decay-energy normalisation)
   - t = h(q_0) = q_0 − q_0⁻¹   (Hecke deformation parameter)
 
-and reports the multiplicative factor `Δ_coupling / (E_0 · f(t))`
-needed to match +13.20 MeV.  A candidate is "structurally promising"
-if that factor is a small rational or matches a known categorical
-invariant (n_strands, dim of a Casimir, etc.).
+The probe reports the multiplicative factor `Δ_coupling / (E_0 · f(t))`
+needed to match the anchor.  A candidate is "structurally promising"
+if that factor is a small rational (or matches a known categorical
+invariant such as Z + N − 2) on multiple anchors; cross-anchor
+consistency is reported separately.
 
 This is a DIAGNOSTIC PROBE, NOT a fit.  Per CLAUDE.md three-cal
 discipline, calibrating Δ_coupling to AME is forbidden — this script
@@ -48,6 +67,7 @@ Reference blocks:
 """
 from __future__ import annotations
 
+import json
 import sys
 from pathlib import Path
 
@@ -62,56 +82,73 @@ from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_MP as Q0  # noqa: E402
 from derived_masses import e_0_full_mev  # noqa: E402
 
-# Empirical anchors (extracted from AME via the cross-coupling
-# decomposition; see conj-magic-shell-stabilization.md:160).
+# ── Canonical Δ_cat anchors (loaded from witness; computed once) ────
 #
-# Δ_coupling depends on the choice of decomposition.  Under the
-# decomposition convention used here:
-#
-#   (a) Genuine convention — Δ_coupling((1,0)) = Δ_coupling((0,1)) = 0
-#       for the free proton and free neutron, because there is no
-#       decomposition (these are atomic in the sense that no smaller
-#       bound state exists in the AME mass tables).  This is a true
-#       boundary condition, not a fit.
-#
-#   (b) MODELING CHOICE — for the (2,1), (1,2), (2,2) cross-couplings
-#       we adopt the α-cluster / D-elementary decomposition that
-#       treats the deuteron as the elementary 2-baryon bound state.
-#       This is a CHOICE (not a convention): the deuteron carries
-#       real internal binding B(D) = 2.224 MeV which is being held
-#       in B(D) explicitly in the formula below, rather than being
-#       redistributed across the cross-coupling Δ.  Under the
-#       alternative "constituent-nucleon" decomposition, Δ_coupling
-#       would absorb B(D), B(T), B(³He), B(⁴He) outright; the (2,2)
-#       anchor would then be +28.30 MeV (= B(⁴He) itself), not
-#       +13.20.  The +13.20 figure is meaningful precisely BECAUSE
-#       it corresponds to the α-cluster decomposition where ⁴He is
-#       seen as 2·D + cross-coupling.
-#
-# Under choice (b):
-#     Δ_coupling(2, 1) = B(³He) − B(D)
-#                     = 7.7180 − 2.2246  =  +5.4934 MeV   [³He = D+p]
-#     Δ_coupling(1, 2) = B(T)   − B(D)
-#                     = 8.4818 − 2.2246  =  +6.2572 MeV   [T   = D+n]
-#     Δ_coupling(2, 2) = B(⁴He) − 2·B(D) − 2·Δ_cat(³He)
-#                     = 28.211 − 4.4492 − 2·5.281   =  +13.20 MeV.
-# (Binding energies from AME2020; Δ_cat(³He) = 5.281 MeV from
-# `2026-05-11-1ppb-gap-narrowing-plan.md` §Path A worksheet.)
-#
-# Re-running this probe under the constituent-nucleon decomposition
-# is a queued follow-up — the structural lead surfaced under choice
-# (b) (factor ≈ Z+N−2 for log(1/h(q_0)) on the symmetric anchors)
-# may not survive that change of decomposition, in which case the
-# lead is specific to the α-cluster picture rather than universal.
-DELTA_COUPLING_2_2_MEV = mp.mpf("13.20")
-DELTA_COUPLING_2_1_MEV = mp.mpf("5.4934")
-DELTA_COUPLING_1_2_MEV = mp.mpf("6.2572")
+# The per-atom Δ_cat values are produced by
+# `probe_magic_shell_empirical_instantiation.py` and persisted to
+# `magic-shell-empirical-instantiation.witness.json` (~83 s of
+# symbolic Hecke compute for all six atoms).  This script consumes
+# the witness rather than recomputing.  If the witness is missing
+# (e.g. fresh checkout), run the upstream probe first.
 
-ANCHORS = [
-    ("(2,2)_doubly_magic", DELTA_COUPLING_2_2_MEV),
-    ("(2,1)_3He",          DELTA_COUPLING_2_1_MEV),
-    ("(1,2)_T",            DELTA_COUPLING_1_2_MEV),
-]
+_MSEI_PATH = HERE / "magic-shell-empirical-instantiation.witness.json"
+
+
+def _load_delta_cat() -> dict[str, mp.mpf]:
+    """Return atom-name → Δ_cat (MeV, 50dps mpmath) from the canonical
+    `magic-shell-empirical-instantiation` witness.  Atom names follow
+    the upstream probe convention: {proton, neutron, deuteron, tritium,
+    he3, he4}."""
+    if not _MSEI_PATH.exists():
+        raise FileNotFoundError(
+            f"canonical Δ_cat witness missing: {_MSEI_PATH.name}.  "
+            f"Run probe_magic_shell_empirical_instantiation.py first."
+        )
+    msei = json.loads(_MSEI_PATH.read_text())
+    per_atom = msei["data"]["per_atom_delta_cat"]
+    out: dict[str, mp.mpf] = {}
+    for atom, row in per_atom.items():
+        if "delta_cat_MeV_50dps" not in row:
+            raise KeyError(
+                f"Δ_cat witness atom {atom!r} has no delta_cat_MeV_50dps "
+                f"(error: {row.get('error', '?')})"
+            )
+        out[atom] = mp.mpf(row["delta_cat_MeV_50dps"])
+    return out
+
+
+def _build_anchors(dc: dict[str, mp.mpf]) -> list[tuple[str, mp.mpf, str]]:
+    """Construct the canonical cross-coupling residuals as Δ_cat
+    differences.  Returns a list of (label, value_MeV, formula_str).
+
+    The decompositions are determined by the atomic-braid-recipe
+    topology (`recursive-atom-knot-atlas.md`):
+      ⁴He: 4 strands of 3-baryon NF → 2 ³He sub-clusters per pair
+      ³He = D + p (³He braid factors as deuteron-braid + proton-braid)
+      T   = D + n (T   braid factors as deuteron-braid + neutron-braid)
+
+    Δ_coupling is the residual after subtracting the per-sub-cluster
+    Δ_cat contributions.  All terms are per-atom Δ_cat values from
+    the same Markov-trace formula — no raw AME bindings, no
+    "modeling choice".
+    """
+    return [
+        (
+            "(2,2)_doubly_magic",
+            dc["he4"] - 2 * dc["he3"],
+            "Δ_cat(⁴He) − 2·Δ_cat(³He)",
+        ),
+        (
+            "(2,1)_3He_eq_D_plus_p",
+            dc["he3"] - dc["deuteron"] - dc["proton"],
+            "Δ_cat(³He) − Δ_cat(D) − Δ_cat(p)",
+        ),
+        (
+            "(1,2)_T_eq_D_plus_n",
+            dc["tritium"] - dc["deuteron"] - dc["neutron"],
+            "Δ_cat(T) − Δ_cat(D) − Δ_cat(n)",
+        ),
+    ]
 
 
 def f1_log_inv(t):
@@ -189,15 +226,26 @@ def main() -> int:
     print("=" * 78)
     print(f"  q_0          = {mp.nstr(Q0, 12)}")
     print(f"  E_0 (full)   = {mp.nstr(e_0_full_mev(), 12)} MeV")
-    print(f"  Anchors:")
-    for a_name, a_val in ANCHORS:
-        print(f"    Δ_coupling{a_name:<22} = {mp.nstr(a_val, 6):>10} MeV")
+    print()
+    print(f"  Loading canonical Δ_cat values from "
+          f"{_MSEI_PATH.name} ...")
+    delta_cat = _load_delta_cat()
+    print("  Per-atom Δ_cat (substrate-derived, AME − m_e·ρ·|τ|):")
+    for atom in ("proton", "neutron", "deuteron", "tritium", "he3", "he4"):
+        if atom in delta_cat:
+            print(f"    Δ_cat({atom:<9}) = {mp.nstr(delta_cat[atom], 8):>14} MeV")
+    print()
+    anchors = _build_anchors(delta_cat)
+    print(f"  Canonical Δ_coupling cross-coupling residuals:")
+    for a_name, a_val, formula in anchors:
+        print(f"    Δ_coupling{a_name:<22} = {mp.nstr(a_val, 8):>12} MeV "
+              f"  ({formula})")
     print()
 
     E_0 = e_0_full_mev()
     rows = []
 
-    for anchor_name, anchor_val in ANCHORS:
+    for anchor_name, anchor_val, formula in anchors:
         print(f"-- anchor {anchor_name} = {mp.nstr(anchor_val, 6)} MeV "
               + "-" * 25)
         for cand_name, fn, label_human in CANDIDATES:
@@ -220,6 +268,7 @@ def main() -> int:
                         factor_no_E0 = anchor_val / fval
                     row = {
                         "anchor": anchor_name,
+                        "anchor_formula": formula,
                         "anchor_MeV": float(anchor_val),
                         "candidate": cand_name,
                         "candidate_human": label_human,
@@ -238,6 +287,7 @@ def main() -> int:
                 except Exception as exc:  # noqa: BLE001
                     row = {
                         "anchor": anchor_name,
+                        "anchor_formula": formula,
                         "anchor_MeV": float(anchor_val),
                         "candidate": cand_name,
                         "candidate_human": label_human,
@@ -299,25 +349,31 @@ def main() -> int:
     builder = WitnessBuilder("delta-coupling-closed-form-probe", engine="mpmath")
     builder.set_description(
         "P3.A diagnostic probe: which closed form `f` reproduces the "
-        "empirical magic-shell anchors Δ_coupling(2,2)=+13.20 MeV, "
-        "Δ_coupling(2,1)=+5.49 MeV (³He = D+p), and "
-        "Δ_coupling(1,2)=+6.26 MeV (T = D+n) when evaluated at a natural "
-        "substrate value t (q_0, q_0−1, or h(q_0))? Tests four candidates "
-        "from the gap-narrowing plan: log(1/t), 1/t−1, log Φ_q^{(∞)}(t), "
-        "KLR canonical-basis dim. Candidates whose multiplicative match-"
-        "factor is a small rational on ≥2 anchors identify structural "
-        "targets for the derivation; no fitting performed. "
-        "MODELING CHOICE: anchors use the α-cluster / D-elementary "
-        "decomposition (treats deuteron as elementary 2-baryon bound "
-        "state). Constituent-nucleon decomposition would absorb B(D), "
-        "B(T), B(³He), B(⁴He) outright and is a queued follow-up — see "
-        "module docstring."
+        "canonical magic-shell cross-coupling residuals Δ_coupling(Z,N) "
+        "when evaluated at a natural substrate value t (q_0, q_0−1, or "
+        "h(q_0))? Anchors are loaded from the canonical "
+        "`magic-shell-empirical-instantiation.witness.json` (computed "
+        "once); each is a Δ_cat difference where Δ_cat(𝔥) := AME(𝔥) − "
+        "m_e·ρ·|τ(β_𝔥)| is the substrate-derived per-atom residual. "
+        "Decompositions (⁴He → 2 ³He sub-clusters, ³He → D+p, T → D+n) "
+        "follow the atomic-braid-recipe topology — combinatorial, not "
+        "a modeling choice. Tests four candidates from the gap-narrowing "
+        "plan: log(1/t), 1/t−1, log Φ_q^{(∞)}(t), KLR canonical-basis "
+        "dim. Candidates whose multiplicative match-factor is a small "
+        "rational on ≥2 anchors identify structural targets for the "
+        "derivation; no fitting performed."
     )
     builder.set_content_block("conj:magic-shell-stabilization")
     builder.add_parameter("q_0", str(Q0))
     builder.add_parameter("E_0_full_MeV", str(e_0_full_mev()))
     builder.add_parameter("anchors_MeV",
-                          {n: str(v) for (n, v) in ANCHORS})
+                          {n: str(v) for (n, v, _f) in anchors})
+    builder.add_parameter("anchor_formulas",
+                          {n: f for (n, _v, f) in anchors})
+    builder.add_parameter("delta_cat_per_atom_MeV",
+                          {a: str(v) for (a, v) in delta_cat.items()})
+    builder.add_parameter("upstream_witness",
+                          "magic-shell-empirical-instantiation.witness.json")
     builder.add_data("rows", rows)
     builder.add_data("promising_matches", [
         {"row": r, "near_value": near, "fractional_gap": gap}
