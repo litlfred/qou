@@ -356,17 +356,21 @@ CLOSED_RECENTLY = [
     "P1.2 — content 'prediction' language audit (closed in-tree)",
     "P3.1 — P31 hardcoded-CODATA scanner",
     "P3.2 — witness reproducibility byte-equality check (P32 contract above)",
+    "P31-triage Phase A — 12 m_e (CAL-1) and m_μ/m_e (CAL-2) module-constant migrations (40 → 28 hits, contract: fail → warn)",
 ]
 
 RECOMMENDED_NEXT = [
     {
-        "priority": "P31-triage",
+        "priority": "P31-triage Phase B",
         "summary": (
-            "Migrate the 40 P31 hits (hardcoded CODATA literals) to "
-            "codata_constants validation aliases. Mechanical, one "
-            "file at a time. Suggested batch order: highest-import "
-            "files first (e.g. derivation_chain.py, "
-            "experimental_constants consumers)."
+            "28 remaining P31 hits. Categorized: (a) ~9 mass-table dict "
+            "literals for m_p/m_n in mass-prediction scripts — OVERLAPS "
+            "with Workplan-0b (the right fix is to derive m_n from m_p "
+            "+ Q_β, not import the literal); (b) ~6 docstring / print-"
+            "format / json-data hits — add `# noqa: P31` with audit-"
+            "only justification; (c) ~13 m_p/m_n module constants in "
+            "non-prediction scripts (audits, comparisons) — replace "
+            "with M_P_MEV_VALIDATION / M_N_MEV_VALIDATION imports."
         ),
         "blocked_on": None,
     },
@@ -394,7 +398,8 @@ RECOMMENDED_NEXT = [
             "112 over-count scripts to migrate to the 3-input scheme "
             "(derive m_n = m_p + Q_β instead of importing both). "
             "Largest-scope semantic change; needs per-script "
-            "verification that downstream consumers still round-trip."
+            "verification that downstream consumers still round-trip. "
+            "Subsumes the (a) tranche of P31-triage Phase B."
         ),
         "blocked_on": None,
     },

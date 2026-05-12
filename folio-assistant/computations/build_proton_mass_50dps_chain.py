@@ -59,7 +59,8 @@ OUTPUT_CHAIN = HERE / "proton-mass-50dps.derivation.json"
 import mpmath as mp  # 50-dps arithmetic per the no-float64 directive
 mp.mp.dps = 50
 
-M_E_MEV_CODATA       = mp.mpf("0.51099895")
+# CAL-1: m_e from codata_constants registry (P31-triage Phase A).
+from codata_constants import M_E_MEV as M_E_MEV_CODATA
 M_P_MEV_CODATA       = mp.mpf("938.27208816")
 # `M_HECKE_PIPELINE_AT_Q0` returns `mp.mpf` (PR #637); preserved as
 # mp.mpf throughout per the no-float64 directive (derivation_chain.py

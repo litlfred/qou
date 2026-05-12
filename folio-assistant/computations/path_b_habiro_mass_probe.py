@@ -49,10 +49,12 @@ HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 
 from q_parameter import Q as Q0_FLOAT, Q_MP  # noqa: E402
+# CAL-1: m_e from codata_constants registry (P31-triage Phase A).
+from codata_constants import M_E_MEV as _M_E_MEV_MP
 
 # Constants
 Q0 = Q_MP
-M_E_MEV = mp.mpf("0.51099895")
+M_E_MEV = _M_E_MEV_MP
 M_P_MEV = mp.mpf("938.27208816")
 M_N_MEV = mp.mpf("939.56542052")
 G_CATALAN = mp.catalan

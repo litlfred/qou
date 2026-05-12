@@ -335,6 +335,26 @@ author/structural decisions (§2.C).
    committed file that would silently regenerate-and-diff on the
    next CI run. Caught before causing a confusing diff.
 
+### Update — fourth pass (P31-triage Phase A)
+
+8. **P31-triage Phase A — registry-source 12 module-constant
+   migrations.** Replaced the m_e (CAL-1) and m_μ/m_e (CAL-2)
+   literals in 12 files with imports from `codata_constants`
+   (`M_E_MEV`) and `q_parameter` (`MASS_RATIO_MU_E_STR`).
+   Files: `alpha_k_jones_markov_h3.py`, `binding_ladder_catalog.py`,
+   `isospin_mass_tower_collapse.py`, `low_isotope_binding_sweep.py`,
+   `d_from_scratch.py`, `probe_proton_with_wenzl_weights.py`,
+   `probe_wedderburn_weight_scheme.py`, `sdp_gamma_gamma_to_qqbar.py`,
+   `habiro_exact_mass_endomorphism.py`, `path_b_defect_binding_probe.py`,
+   `path_b_habiro_mass_probe.py`, `build_proton_mass_50dps_chain.py`.
+   Eight are clean wins (single-literal files now empty); four are
+   dual-literal partial wins (m_p/m_n side deferred to Workplan-0b).
+   **P31 hits 40 → 28; contract fail → warn; infra_score 0.50 → 0.58.**
+   Aggregator `RECOMMENDED_NEXT` rewritten with three-category
+   triage of the remaining 28 hits (mass-table dicts → Workplan-0b,
+   docstring/print → `# noqa: P31`, audit-script m_p/m_n → import
+   `*_VALIDATION` aliases).
+
 All other items in §2.B / §4 are **deferred** with explicit
 rationale (multi-file scope, blocked on author decision, blocked
 on structural R&D, or out of scope for "minimum change" in a single

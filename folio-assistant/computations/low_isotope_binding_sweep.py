@@ -46,13 +46,16 @@ from datetime import datetime, timezone
 
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as Q0, HBAR_Q, HBAR_Q_SQ
+# CAL-1: m_e sourced from codata_constants registry (P31-triage Phase A);
+# coerced to float for json-serialisable arithmetic in this script.
+from codata_constants import M_E_MEV as _M_E_MEV_MP
 
 # ── Framework constants ───────────────────────────────────────────
 
 CATALAN_G = 0.915965594177219015054603514932
 VOL_BORROMEAN = 8.0 * CATALAN_G          # ≈ 7.32772
 VOL_7_2_1 = 4.7495                        # 7²_1 link, SnapPy census
-M_E_MEV = 0.51099895
+M_E_MEV = float(_M_E_MEV_MP)
 
 # Strategy-(A) named census knots
 VOL_6_2 = 4.40083    # figure-eight-like hyperbolic knot, SnapPy

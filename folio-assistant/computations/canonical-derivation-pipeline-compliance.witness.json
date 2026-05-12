@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-05-12T15:04:14.032229+00:00",
-  "commitSha": "ac31c98592d812ddf25f85b786805a4c8a112315",
+  "computedAt": "2026-05-12T17:12:56.018911+00:00",
+  "commitSha": "67eb55612bf9bc7ba14f2f189b9f7cc1c65b47fa",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 7,
   "computation": "canonical-derivation-pipeline-compliance",
   "scriptFile": "canonical_derivation_pipeline_compliance.py",
-  "scriptHash": "f79a71f581bf",
-  "scriptCommitSha": "7c3086733013b58458a1a71c94aa6e9ab5ae5353",
+  "scriptHash": "0494fcd088dd",
+  "scriptCommitSha": "488e136af5afb763c84eb22767ce53cf8c0d9e65",
   "description": "Aggregator dashboard of compute-infra compliance for the canonical-derivation chain. Joins four upstream audit witnesses into one current-state snapshot. See docs/audits/2026-05-12-canonical-derivation-compute-review.md §3 for the contract definitions.",
   "auditOnly": "docs/audits/2026-05-12-canonical-derivation-compute-review.md",
   "parameters": {
@@ -25,16 +25,16 @@
     "source_summaries": {
       "compute_audit_scan": {
         "status": "loaded",
-        "computedAt": "2026-05-12T14:32:36.573528+00:00",
-        "files_scanned": 405,
+        "computedAt": "2026-05-12T17:12:08.478711+00:00",
+        "files_scanned": 407,
         "by_pattern_count": {
           "P15": 111,
           "P16": 89,
           "P21": 21,
           "P30": 96,
-          "P31": 40
+          "P31": 28
         },
-        "total_findings": 357,
+        "total_findings": 345,
         "top_files": [
           {
             "file": "markov_weights_symbolic.py",
@@ -155,7 +155,7 @@
       },
       "witness_reproducibility": {
         "status": "loaded",
-        "computedAt": "2026-05-12T15:02:05.989063+00:00",
+        "computedAt": "2026-05-12T15:05:49.173896+00:00",
         "by_status": {
           "pass": 11
         },
@@ -166,15 +166,15 @@
       {
         "name": "WitnessBuilder usage (P30)",
         "source": "compute-audit-scan.witness.json",
-        "metric": "96 of 405 files write witnesses without WitnessBuilder",
+        "metric": "96 of 407 files write witnesses without WitnessBuilder",
         "status": "fail",
         "remediation": "Batch-port hand-written .witness.json writers to witness_base.WitnessBuilder. Reference: docs/audits/2026-05-08-compute-audit-workplan.md §Tier 2."
       },
       {
         "name": "CODATA constants from registry only (P31)",
         "source": "compute-audit-scan.witness.json",
-        "metric": "40 hardcoded CODATA literals outside the allowlist",
-        "status": "fail",
+        "metric": "28 hardcoded CODATA literals outside the allowlist",
+        "status": "warn",
         "remediation": "Replace each hit with import from codata_constants (_VALIDATION aliases) or experimental_constants. Tag audit-only consumers with `# noqa: P31` and a justifying comment."
       },
       {
@@ -206,7 +206,7 @@
         "remediation": "For drift: investigate non-determinism (PYTHONHASHSEED, timestamps, hand-edits to committed JSON not reproduced by the script). For error/timeout: install missing deps or bump PER_BUILDER_TIMEOUT_S. Reference: witness_reproducibility_check.py + docs/audits/2026-05-12-canonical-derivation-compute-review.md §4 P3.2."
       }
     ],
-    "infra_score": 0.5,
+    "infra_score": 0.5833333333333334,
     "known_open_conflicts": [
       {
         "id": "TR_M_AT_Q0_vs_frobenius_proof",
@@ -221,12 +221,13 @@
       "P1.1 — deuteron_delta_i_audit Conv-C audit-only banner",
       "P1.2 — content 'prediction' language audit (closed in-tree)",
       "P3.1 — P31 hardcoded-CODATA scanner",
-      "P3.2 — witness reproducibility byte-equality check (P32 contract above)"
+      "P3.2 — witness reproducibility byte-equality check (P32 contract above)",
+      "P31-triage Phase A — 12 m_e (CAL-1) and m_μ/m_e (CAL-2) module-constant migrations (40 → 28 hits, contract: fail → warn)"
     ],
     "recommended_next": [
       {
-        "priority": "P31-triage",
-        "summary": "Migrate the 40 P31 hits (hardcoded CODATA literals) to codata_constants validation aliases. Mechanical, one file at a time. Suggested batch order: highest-import files first (e.g. derivation_chain.py, experimental_constants consumers).",
+        "priority": "P31-triage Phase B",
+        "summary": "28 remaining P31 hits. Categorized: (a) ~9 mass-table dict literals for m_p/m_n in mass-prediction scripts — OVERLAPS with Workplan-0b (the right fix is to derive m_n from m_p + Q_β, not import the literal); (b) ~6 docstring / print-format / json-data hits — add `# noqa: P31` with audit-only justification; (c) ~13 m_p/m_n module constants in non-prediction scripts (audits, comparisons) — replace with M_P_MEV_VALIDATION / M_N_MEV_VALIDATION imports.",
         "blocked_on": null
       },
       {
@@ -241,7 +242,7 @@
       },
       {
         "priority": "Workplan-0b",
-        "summary": "112 over-count scripts to migrate to the 3-input scheme (derive m_n = m_p + Q_β instead of importing both). Largest-scope semantic change; needs per-script verification that downstream consumers still round-trip.",
+        "summary": "112 over-count scripts to migrate to the 3-input scheme (derive m_n = m_p + Q_β instead of importing both). Largest-scope semantic change; needs per-script verification that downstream consumers still round-trip. Subsumes the (a) tranche of P31-triage Phase B.",
         "blocked_on": null
       }
     ]

@@ -31,8 +31,9 @@ import mpmath as mp
 mp.mp.dps = 50
 
 from q_parameter import Q as Q0_FLOAT, vol_4_1_at, Q_MP, Q_INV_MP
+# CAL-1: m_e from codata_constants registry (P31-triage Phase A).
+from codata_constants import M_E_MEV as m_e
 Q0 = Q_MP; QI = Q_INV_MP  # was f64 roundtrip
-m_e = mp.mpf("0.51099895")
 G = mp.catalan
 
 
