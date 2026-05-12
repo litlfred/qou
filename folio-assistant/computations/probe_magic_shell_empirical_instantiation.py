@@ -51,7 +51,8 @@ AME = {
     # categorical residual on top of vacuum — used downstream as the
     # canonical "free-nucleon Δ_cat" anchor in the cross-coupling
     # decompositions Δ_coupling(2,1) := Δ_cat(³He) − Δ_cat(D) − Δ_cat(p)
-    # and Δ_coupling(1,2) := Δ_cat(T) − Δ_cat(D) − Δ_cat(n).
+    # and Δ_coupling(1,2) := Δ_cat(T) − Δ_cat(D) − Δ_cat(n)
+    # (the ordered pair (Z, N) below denotes proton and neutron counts).
     "proton":   0.0,
     "neutron":  0.0,
     "deuteron": 2.224566,
