@@ -122,14 +122,27 @@ noncomputable def figureEightEntry : KnotEntry where
   identity := .higgsField
   atlas_url := "http://katlas.org/wiki/4_1"
 
-/-- **Trivial Knot (unknot alias)** — the photon background.
+/-- **Empty Knot (photon background)** — the identity braid
+    $\mathbf{1}$ with zero crossings.
     QOU identity: **Photon**.  Represents the background flux on the
-    exceptional divisor; topologically equivalent to the unknot but
-    distinguished by its physical role in the QOU gauge field.
+    exceptional divisor.  The closure of the identity braid is a
+    disjoint union of unknots; the entry is distinguished from the
+    single-component unknot ($0_1$, the neutrino) by carrying no
+    strand at all in its bare presentation.  Both have Jones
+    polynomial $1$, so transfer-matrix arithmetic coincides, but the
+    physical roles differ: photon (empty knot, $\varnothing$) vs.
+    neutrino (unknot, $0_1$).
 
-    Knot Atlas: <http://katlas.org/wiki/0_1> -/
+    Knot Atlas (closest entry, single-strand limit):
+    <http://katlas.org/wiki/0_1> -/
 noncomputable def photonEntry : KnotEntry where
-  ab_index := "0_1"
+  -- Unique key (not "0_1") so `lookup` can distinguish the photon
+  -- (empty knot ∅, identity braid) from the neutrino (unknot 0_1).
+  -- Both have Jones polynomial 1 and zero volume; the entry below
+  -- reuses the `unknot` diagram as a single-component placeholder
+  -- because `PlanarDiagram` does not yet model a genuinely empty
+  -- braid closure.
+  ab_index := "empty"
   diagram := unknot
   volume := {
     value := 0

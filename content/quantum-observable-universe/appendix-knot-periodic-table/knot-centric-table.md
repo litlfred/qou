@@ -164,7 +164,7 @@ The visualization should be an interactive HTML page
    [knot atom diagrams](#rem:knot-atom-diagrams):
    - Solid trefoil = forward-time fermion
    - Outlined trefoil = backward-time (antiparticle)
-   - Circle = unknot (neutrino / neutron)
+   - Circle = unknot (neutrino)
    - Interlocked circles = Hopf link
    - Borromean symbol = 3 interlocked rings (quark composite)
 
