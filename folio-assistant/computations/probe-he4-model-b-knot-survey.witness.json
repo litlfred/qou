@@ -1,0 +1,425 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-05-12T04:19:54.395846+00:00",
+  "commitSha": "81a17e01e89339962f5d3a66c966609945244d5c",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 11,
+  "computation": "probe-he4-model-b-knot-survey",
+  "scriptFile": "probe_he4_model_b_knot_survey.py",
+  "scriptHash": "25f866090e51",
+  "scriptCommitSha": "unknown",
+  "description": "P1.E candidate-survey for the ⁴He Model B canonical hyperbolic knot assignment.  Computes |τ_M(β)| at q_0 for four documented candidates (L6a4, 8_18, (8_18)², (L6a4)²) under both Plancherel and Wenzl-Schur Markov-trace conventions, and reports B = m_e · ρ · |τ_M| for ρ ∈ {1, 2, 4} against AME(⁴He) = 28.30 MeV.  Plausibility band per plan: |τ_M| ∈ [0.05, 0.50].  No fitting performed.  Brunnian 4-component candidate flagged as braid_word_pending — owner must specify the canonical representative before τ_M can be computed.  Witness is decision-support input for owner selection of the ⁴He Model B canonical knot.",
+  "contentBlock": "conj:magic-shell-stabilization",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "m_e_MeV": 0.51099895,
+    "B_AME_he4_MeV": 28.29566,
+    "plausibility_band_abs_tr_M": [
+      0.05,
+      0.5
+    ],
+    "rho_candidates": [
+      1,
+      2,
+      4
+    ]
+  },
+  "data": {
+    "candidates": [
+      {
+        "candidate_label": "L6a4_Borromean",
+        "knot_name": "L6a4",
+        "n_0": 3,
+        "braid_word": [
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2
+        ],
+        "braid_length": 6,
+        "tr_M_plancherel": 0.985519585733571,
+        "tr_M_wenzl_schur": 0.998366621838506,
+        "abs_tr_M_plancherel": 0.985519585733571,
+        "abs_tr_M_wenzl_schur": 0.998366621838506,
+        "in_plausibility_band_plancherel": false,
+        "in_plausibility_band_wenzl_schur": false,
+        "B_predicted_MeV": {
+          "rho=1": {
+            "plancherel": 0.5035994735142897,
+            "wenzl_schur": 0.5101642954745236,
+            "rel_err_plancherel_pct": -98.22022361904868,
+            "rel_err_wenzl_schur_pct": -98.19702281030192
+          },
+          "rho=2": {
+            "plancherel": 1.0071989470285794,
+            "wenzl_schur": 1.0203285909490472,
+            "rel_err_plancherel_pct": -96.44044723809736,
+            "rel_err_wenzl_schur_pct": -96.39404562060385
+          },
+          "rho=4": {
+            "plancherel": 2.0143978940571587,
+            "wenzl_schur": 2.0406571818980943,
+            "rel_err_plancherel_pct": -92.88089447619473,
+            "rel_err_wenzl_schur_pct": -92.78809124120768
+          }
+        },
+        "per_lambda": [
+          {
+            "lambda": [
+              3
+            ],
+            "d_lambda": 1,
+            "dim_q": 1.0,
+            "chi": 1.0000000000000024,
+            "w_planch": 0.16338322733975824,
+            "y_wenzl": 0.4153957863345666,
+            "contrib_P": 0.16338322733975863,
+            "contrib_W": 0.4153957863345676
+          },
+          {
+            "lambda": [
+              2,
+              1
+            ],
+            "d_lambda": 2,
+            "dim_q": 2.010896869118482,
+            "chi": 1.9941858103812145,
+            "w_planch": 0.6606737723483499,
+            "y_wenzl": 0.2809296339798641,
+            "contrib_P": 0.6587531310540541,
+            "contrib_W": 0.5602258897982332
+          },
+          {
+            "lambda": [
+              1,
+              1,
+              1
+            ],
+            "d_lambda": 1,
+            "dim_q": 1.0,
+            "chi": 1.0,
+            "w_planch": 0.16338322733975824,
+            "y_wenzl": 0.022744945705705264,
+            "contrib_P": 0.16338322733975824,
+            "contrib_W": 0.022744945705705264
+          }
+        ],
+        "note": "Already used for ³He; included so owner can verify the degenerate-assignment risk explicitly.  Same braid word as the ³He Model B canonical."
+      },
+      {
+        "candidate_label": "8_18",
+        "knot_name": "8_18",
+        "n_0": 3,
+        "braid_word": [
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2
+        ],
+        "braid_length": 8,
+        "tr_M_plancherel": -0.05994797096990051,
+        "tr_M_wenzl_schur": 0.10926573624236999,
+        "abs_tr_M_plancherel": 0.05994797096990051,
+        "abs_tr_M_wenzl_schur": 0.10926573624236999,
+        "in_plausibility_band_plancherel": true,
+        "in_plausibility_band_wenzl_schur": true,
+        "B_predicted_MeV": {
+          "rho=1": {
+            "plancherel": 0.030633350220249638,
+            "wenzl_schur": 0.055834676490828,
+            "rel_err_plancherel_pct": -99.8917383435472,
+            "rel_err_wenzl_schur_pct": -99.80267406206171
+          },
+          "rho=2": {
+            "plancherel": 0.061266700440499276,
+            "wenzl_schur": 0.111669352981656,
+            "rel_err_plancherel_pct": -99.78347668709442,
+            "rel_err_wenzl_schur_pct": -99.60534812412342
+          },
+          "rho=4": {
+            "plancherel": 0.12253340088099855,
+            "wenzl_schur": 0.223338705963312,
+            "rel_err_plancherel_pct": -99.56695337418884,
+            "rel_err_wenzl_schur_pct": -99.21069624824686
+          }
+        },
+        "per_lambda": [
+          {
+            "lambda": [
+              3
+            ],
+            "d_lambda": 1,
+            "dim_q": 1.0,
+            "chi": 1.0000000000000033,
+            "w_planch": 0.16338322733975824,
+            "y_wenzl": 0.4153957863345666,
+            "contrib_P": 0.1633832273397588,
+            "contrib_W": 0.415395786334568
+          },
+          {
+            "lambda": [
+              2,
+              1
+            ],
+            "d_lambda": 2,
+            "dim_q": 2.010896869118482,
+            "chi": -1.1706668005749643,
+            "w_planch": 0.6606737723483499,
+            "y_wenzl": 0.2809296339798641,
+            "contrib_P": -0.38671442564941755,
+            "contrib_W": -0.32887499579790325
+          },
+          {
+            "lambda": [
+              1,
+              1,
+              1
+            ],
+            "d_lambda": 1,
+            "dim_q": 1.0,
+            "chi": 1.0,
+            "w_planch": 0.16338322733975824,
+            "y_wenzl": 0.022744945705705264,
+            "contrib_P": 0.16338322733975824,
+            "contrib_W": 0.022744945705705264
+          }
+        ],
+        "note": "Hyperbolic 3-strand knot (σ₁σ₂⁻¹)^4.  4-fold rotational symmetry matches the α-particle structure of ⁴He.  Plan-cited candidate."
+      },
+      {
+        "candidate_label": "8_18_squared",
+        "knot_name": "(8_18)²",
+        "n_0": 3,
+        "braid_word": [
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2
+        ],
+        "braid_length": 16,
+        "tr_M_plancherel": 0.11880642174235526,
+        "tr_M_wenzl_schur": 0.26128450320038193,
+        "abs_tr_M_plancherel": 0.11880642174235526,
+        "abs_tr_M_wenzl_schur": 0.26128450320038193,
+        "in_plausibility_band_plancherel": true,
+        "in_plausibility_band_wenzl_schur": true,
+        "B_predicted_MeV": {
+          "rho=1": {
+            "plancherel": 0.0607099567636007,
+            "wenzl_schur": 0.13351610678666678,
+            "rel_err_plancherel_pct": -99.78544428098303,
+            "rel_err_wenzl_schur_pct": -99.52813927370252
+          },
+          "rho=2": {
+            "plancherel": 0.1214199135272014,
+            "wenzl_schur": 0.26703221357333357,
+            "rel_err_plancherel_pct": -99.57088856196603,
+            "rel_err_wenzl_schur_pct": -99.05627854740503
+          },
+          "rho=4": {
+            "plancherel": 0.2428398270544028,
+            "wenzl_schur": 0.5340644271466671,
+            "rel_err_plancherel_pct": -99.14177712393206,
+            "rel_err_wenzl_schur_pct": -98.11255709481006
+          }
+        },
+        "per_lambda": [
+          {
+            "lambda": [
+              3
+            ],
+            "d_lambda": 1,
+            "dim_q": 1.0,
+            "chi": 1.0000000000000069,
+            "w_planch": 0.16338322733975824,
+            "y_wenzl": 0.4153957863345666,
+            "contrib_P": 0.16338322733975938,
+            "contrib_W": 0.4153957863345695
+          },
+          {
+            "lambda": [
+              2,
+              1
+            ],
+            "d_lambda": 2,
+            "dim_q": 2.010896869118482,
+            "chi": -0.6295392420315798,
+            "w_planch": 0.6606737723483499,
+            "y_wenzl": 0.2809296339798641,
+            "contrib_P": -0.20796003293716236,
+            "contrib_W": -0.1768562288398928
+          },
+          {
+            "lambda": [
+              1,
+              1,
+              1
+            ],
+            "d_lambda": 1,
+            "dim_q": 1.0,
+            "chi": 1.0,
+            "w_planch": 0.16338322733975824,
+            "y_wenzl": 0.022744945705705264,
+            "contrib_P": 0.16338322733975824,
+            "contrib_W": 0.022744945705705264
+          }
+        ],
+        "note": "Exploratory: doubled 8_18.  Tests whether the chirality table sign pattern [+1,-1,+1,-1] survives doubling the period."
+      },
+      {
+        "candidate_label": "L6a4_squared",
+        "knot_name": "(L6a4)²",
+        "n_0": 3,
+        "braid_word": [
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2,
+          1,
+          -2
+        ],
+        "braid_length": 12,
+        "tr_M_plancherel": 0.9797688288233577,
+        "tr_M_wenzl_schur": 0.9934759841243718,
+        "abs_tr_M_plancherel": 0.9797688288233577,
+        "abs_tr_M_wenzl_schur": 0.9934759841243718,
+        "in_plausibility_band_plancherel": false,
+        "in_plausibility_band_wenzl_schur": false,
+        "B_predicted_MeV": {
+          "rho=1": {
+            "plancherel": 0.5006608427714655,
+            "wenzl_schur": 0.5076651847377706,
+            "rel_err_plancherel_pct": -98.23060906594344,
+            "rel_err_wenzl_schur_pct": -98.20585494475912
+          },
+          "rho=2": {
+            "plancherel": 1.001321685542931,
+            "wenzl_schur": 1.0153303694755411,
+            "rel_err_plancherel_pct": -96.46121813188691,
+            "rel_err_wenzl_schur_pct": -96.41170988951825
+          },
+          "rho=4": {
+            "plancherel": 2.002643371085862,
+            "wenzl_schur": 2.0306607389510822,
+            "rel_err_plancherel_pct": -92.9224362637738,
+            "rel_err_wenzl_schur_pct": -92.8234197790365
+          }
+        },
+        "per_lambda": [
+          {
+            "lambda": [
+              3
+            ],
+            "d_lambda": 1,
+            "dim_q": 1.0,
+            "chi": 1.000000000000005,
+            "w_planch": 0.16338322733975824,
+            "y_wenzl": 0.4153957863345666,
+            "contrib_P": 0.16338322733975907,
+            "contrib_W": 0.4153957863345687
+          },
+          {
+            "lambda": [
+              2,
+              1
+            ],
+            "d_lambda": 2,
+            "dim_q": 2.010896869118482,
+            "chi": 1.9767770463257783,
+            "w_planch": 0.6606737723483499,
+            "y_wenzl": 0.2809296339798641,
+            "contrib_P": 0.6530023741438404,
+            "contrib_W": 0.5553352520840977
+          },
+          {
+            "lambda": [
+              1,
+              1,
+              1
+            ],
+            "d_lambda": 1,
+            "dim_q": 1.0,
+            "chi": 1.0,
+            "w_planch": 0.16338322733975824,
+            "y_wenzl": 0.022744945705705264,
+            "contrib_P": 0.16338322733975824,
+            "contrib_W": 0.022744945705705264
+          }
+        ],
+        "note": "Exploratory: two L6a4 sub-words concatenated.  Tests the '⁴He = two ³He clusters' topological reading."
+      }
+    ],
+    "ranked_by_best_rel_err_to_AME": [
+      {
+        "candidate_label": "L6a4_Borromean",
+        "knot_name": "L6a4",
+        "best_abs_err_pct": 92.78809124120768,
+        "best_rho": 4,
+        "best_convention": "wenzl_schur",
+        "best_signed_err_pct": -92.78809124120768
+      },
+      {
+        "candidate_label": "L6a4_squared",
+        "knot_name": "(L6a4)²",
+        "best_abs_err_pct": 92.8234197790365,
+        "best_rho": 4,
+        "best_convention": "wenzl_schur",
+        "best_signed_err_pct": -92.8234197790365
+      },
+      {
+        "candidate_label": "8_18_squared",
+        "knot_name": "(8_18)²",
+        "best_abs_err_pct": 98.11255709481006,
+        "best_rho": 4,
+        "best_convention": "wenzl_schur",
+        "best_signed_err_pct": -98.11255709481006
+      },
+      {
+        "candidate_label": "8_18",
+        "knot_name": "8_18",
+        "best_abs_err_pct": 99.21069624824686,
+        "best_rho": 4,
+        "best_convention": "wenzl_schur",
+        "best_signed_err_pct": -99.21069624824686
+      }
+    ],
+    "pending_candidates": [
+      {
+        "candidate_label": "Brunnian_4_component",
+        "knot_name": "L?-Brunnian-4",
+        "braid_word": null,
+        "status": "braid_word_pending",
+        "note": "Plan §P1.E lists a Brunnian 4-component link as a candidate (matching the chirality-table sign pattern [+1,-1,+1,-1]).  Multiple inequivalent representatives exist in the literature; no single canonical braid word.  Owner input required to specify the candidate before |τ_M| can be computed.  When provided, run this script with the new braid word added to the CANDIDATES list."
+      }
+    ]
+  },
+  "caveats": [
+    "Survey emits ranked decision-support data for owner selection.  No claim is made that the lowest-error candidate IS the canonical Model B knot — the canonical assignment must be derived from the categorical structure (knot complement geometry, KLR-canonical-basis class, etc.), not back-fit to AME.  ρ is iterated over a fixed small set, not optimized.  Conventions: Plancherel weight w_λ = (dim V_λ)²/n!; Wenzl-Schur weight y_λ from y-lambda-wenzl-witness.json (Markov / Jones-Markov convention)."
+  ]
+}
