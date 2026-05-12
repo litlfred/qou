@@ -62,9 +62,56 @@ from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_MP as Q0  # noqa: E402
 from derived_masses import e_0_full_mev  # noqa: E402
 
-# Empirical anchor (extracted from AME via the cross-coupling
+# Empirical anchors (extracted from AME via the cross-coupling
 # decomposition; see conj-magic-shell-stabilization.md:160).
+#
+# Δ_coupling depends on the choice of decomposition.  Under the
+# decomposition convention used here:
+#
+#   (a) Genuine convention — Δ_coupling((1,0)) = Δ_coupling((0,1)) = 0
+#       for the free proton and free neutron, because there is no
+#       decomposition (these are atomic in the sense that no smaller
+#       bound state exists in the AME mass tables).  This is a true
+#       boundary condition, not a fit.
+#
+#   (b) MODELING CHOICE — for the (2,1), (1,2), (2,2) cross-couplings
+#       we adopt the α-cluster / D-elementary decomposition that
+#       treats the deuteron as the elementary 2-baryon bound state.
+#       This is a CHOICE (not a convention): the deuteron carries
+#       real internal binding B(D) = 2.224 MeV which is being held
+#       in B(D) explicitly in the formula below, rather than being
+#       redistributed across the cross-coupling Δ.  Under the
+#       alternative "constituent-nucleon" decomposition, Δ_coupling
+#       would absorb B(D), B(T), B(³He), B(⁴He) outright; the (2,2)
+#       anchor would then be +28.30 MeV (= B(⁴He) itself), not
+#       +13.20.  The +13.20 figure is meaningful precisely BECAUSE
+#       it corresponds to the α-cluster decomposition where ⁴He is
+#       seen as 2·D + cross-coupling.
+#
+# Under choice (b):
+#     Δ_coupling(2, 1) = B(³He) − B(D)
+#                     = 7.7180 − 2.2246  =  +5.4934 MeV   [³He = D+p]
+#     Δ_coupling(1, 2) = B(T)   − B(D)
+#                     = 8.4818 − 2.2246  =  +6.2572 MeV   [T   = D+n]
+#     Δ_coupling(2, 2) = B(⁴He) − 2·B(D) − 2·Δ_cat(³He)
+#                     = 28.211 − 4.4492 − 2·5.281   =  +13.20 MeV.
+# (Binding energies from AME2020; Δ_cat(³He) = 5.281 MeV from
+# `2026-05-11-1ppb-gap-narrowing-plan.md` §Path A worksheet.)
+#
+# Re-running this probe under the constituent-nucleon decomposition
+# is a queued follow-up — the structural lead surfaced under choice
+# (b) (factor ≈ Z+N−2 for log(1/h(q_0)) on the symmetric anchors)
+# may not survive that change of decomposition, in which case the
+# lead is specific to the α-cluster picture rather than universal.
 DELTA_COUPLING_2_2_MEV = mp.mpf("13.20")
+DELTA_COUPLING_2_1_MEV = mp.mpf("5.4934")
+DELTA_COUPLING_1_2_MEV = mp.mpf("6.2572")
+
+ANCHORS = [
+    ("(2,2)_doubly_magic", DELTA_COUPLING_2_2_MEV),
+    ("(2,1)_3He",          DELTA_COUPLING_2_1_MEV),
+    ("(1,2)_T",            DELTA_COUPLING_1_2_MEV),
+]
 
 
 def f1_log_inv(t):
@@ -138,65 +185,77 @@ def t_values():
 
 def main() -> int:
     print("=" * 78)
-    print("P3.A — closed-form f candidate probe for Δ_coupling(2,2)")
+    print("P3.A — closed-form f candidate probe for Δ_coupling (multi-anchor)")
     print("=" * 78)
     print(f"  q_0          = {mp.nstr(Q0, 12)}")
     print(f"  E_0 (full)   = {mp.nstr(e_0_full_mev(), 12)} MeV")
-    print(f"  Δ_coupling target = {mp.nstr(DELTA_COUPLING_2_2_MEV, 6)} MeV")
+    print(f"  Anchors:")
+    for a_name, a_val in ANCHORS:
+        print(f"    Δ_coupling{a_name:<22} = {mp.nstr(a_val, 6):>10} MeV")
     print()
 
     E_0 = e_0_full_mev()
     rows = []
 
-    for cand_name, fn, label_human in CANDIDATES:
-        for t_name, t_val in t_values():
-            try:
-                fval = fn(t_val)
-                if mp.isnan(fval) or mp.isinf(fval):
-                    raise ValueError("non-finite")
-                # Direct prediction in MeV: E_0 · f(t)
-                pred_MeV = E_0 * fval
-                # Multiplicative factor needed to match Δ_coupling:
-                if pred_MeV == 0:
-                    factor = mp.nan
-                else:
-                    factor = DELTA_COUPLING_2_2_MEV / pred_MeV
-                # Also: pure-combinatorial form (no E_0 prefactor)
-                if fval == 0:
-                    factor_no_E0 = mp.nan
-                else:
-                    factor_no_E0 = DELTA_COUPLING_2_2_MEV / fval
-                row = {
-                    "candidate": cand_name,
-                    "candidate_human": label_human,
-                    "t_name": t_name,
-                    "t_value": float(t_val),
-                    "f_at_t": float(fval),
-                    "E0_times_f_MeV": float(pred_MeV),
-                    "factor_to_match_Delta": float(factor),
-                    "factor_no_E0_prefactor": float(factor_no_E0),
-                }
-                rows.append(row)
-                print(f"  {cand_name:<22} @ t={t_name:<12} "
-                      f"f={float(fval):+.6e}  "
-                      f"E0·f={float(pred_MeV):+10.4f} MeV  "
-                      f"need×{float(factor):+8.4f}")
-            except Exception as exc:  # noqa: BLE001
-                row = {
-                    "candidate": cand_name,
-                    "candidate_human": label_human,
-                    "t_name": t_name,
-                    "t_value": float(t_val),
-                    "error": f"{type(exc).__name__}: {exc}",
-                }
-                rows.append(row)
-                print(f"  {cand_name:<22} @ t={t_name:<12} ERROR: {exc}")
+    for anchor_name, anchor_val in ANCHORS:
+        print(f"-- anchor {anchor_name} = {mp.nstr(anchor_val, 6)} MeV "
+              + "-" * 25)
+        for cand_name, fn, label_human in CANDIDATES:
+            for t_name, t_val in t_values():
+                try:
+                    fval = fn(t_val)
+                    if mp.isnan(fval) or mp.isinf(fval):
+                        raise ValueError("non-finite")
+                    # Direct prediction in MeV: E_0 · f(t)
+                    pred_MeV = E_0 * fval
+                    # Multiplicative factor needed to match anchor:
+                    if pred_MeV == 0:
+                        factor = mp.nan
+                    else:
+                        factor = anchor_val / pred_MeV
+                    # Also: pure-combinatorial form (no E_0 prefactor)
+                    if fval == 0:
+                        factor_no_E0 = mp.nan
+                    else:
+                        factor_no_E0 = anchor_val / fval
+                    row = {
+                        "anchor": anchor_name,
+                        "anchor_MeV": float(anchor_val),
+                        "candidate": cand_name,
+                        "candidate_human": label_human,
+                        "t_name": t_name,
+                        "t_value": float(t_val),
+                        "f_at_t": float(fval),
+                        "E0_times_f_MeV": float(pred_MeV),
+                        "factor_to_match_Delta": float(factor),
+                        "factor_no_E0_prefactor": float(factor_no_E0),
+                    }
+                    rows.append(row)
+                    print(f"  {cand_name:<22} @ t={t_name:<12} "
+                          f"f={float(fval):+.4e}  "
+                          f"E0·f={float(pred_MeV):+9.4f} MeV  "
+                          f"need×{float(factor):+8.4f}")
+                except Exception as exc:  # noqa: BLE001
+                    row = {
+                        "anchor": anchor_name,
+                        "anchor_MeV": float(anchor_val),
+                        "candidate": cand_name,
+                        "candidate_human": label_human,
+                        "t_name": t_name,
+                        "t_value": float(t_val),
+                        "error": f"{type(exc).__name__}: {exc}",
+                    }
+                    rows.append(row)
+                    print(f"  {cand_name:<22} @ t={t_name:<12} ERROR: {exc}")
+        print()
 
     # Identify candidates whose multiplicative factor is closest to
     # a small integer or simple fraction — the structurally-promising
-    # ones.
+    # ones.  A candidate that produces *consistent* small-rational
+    # factors across multiple anchors is a much stronger lead than one
+    # that hits a small rational on a single anchor.
     print()
-    print("Candidates with |factor| close to 1, 2, 3, 1/2, 1/3:")
+    print("Candidates with |factor| close to 1, 2, 3, 4, 1/2, 1/3, 1/4:")
     SIMPLE = [mp.mpf(k) for k in (1, 2, 3, 4)] + \
              [mp.mpf(1) / k for k in (2, 3, 4)]
     promising = []
@@ -208,30 +267,63 @@ def main() -> int:
             gap = abs(mp.mpf(f) - s) / s
             if gap < mp.mpf("0.05"):  # within 5%
                 promising.append((r, float(s), float(gap)))
-                print(f"  ✓ {r['candidate']} @ {r['t_name']}: "
+                print(f"  ✓ {r['anchor']:<22} {r['candidate']} @ {r['t_name']}: "
                       f"factor ≈ {f:+.4f}, near {float(s):.4f} "
                       f"(gap {float(gap)*100:.2f}%)")
+
+    # Cross-anchor consistency: which (candidate, t) pairs land near a
+    # small rational on >= 2 anchors?  Those are the structurally-
+    # informative leads.
+    print()
+    print("Cross-anchor consistency (small-rational matches on ≥2 anchors):")
+    by_pair: dict[tuple[str, str], list[tuple[str, float, float]]] = {}
+    for (r, near, gap) in promising:
+        key = (r["candidate"], r["t_name"])
+        by_pair.setdefault(key, []).append((r["anchor"], near, gap))
+    cross_consistent = []
+    for (cand, tn), hits in sorted(by_pair.items()):
+        if len(hits) >= 2:
+            anchors_hit = ", ".join(h[0] for h in hits)
+            print(f"  ★ {cand} @ {tn}: matches on {len(hits)} anchors "
+                  f"({anchors_hit})")
+            cross_consistent.append({
+                "candidate": cand,
+                "t_name": tn,
+                "anchors_matched": [h[0] for h in hits],
+                "near_values": [h[1] for h in hits],
+                "fractional_gaps": [h[2] for h in hits],
+            })
+    if not cross_consistent:
+        print("  (none — single-anchor matches only)")
 
     builder = WitnessBuilder("delta-coupling-closed-form-probe", engine="mpmath")
     builder.set_description(
         "P3.A diagnostic probe: which closed form `f` reproduces the "
-        "empirical magic-shell anchor Δ_coupling(2,2) = +13.20 MeV when "
-        "evaluated at a natural substrate value t (q_0, q_0−1, or h(q_0))? "
-        "Tests four candidates from the gap-narrowing plan: log(1/t), "
-        "1/t−1, log Φ_q^{(∞)}(t), KLR canonical-basis dim. Candidates "
-        "whose multiplicative match-factor is a small rational identify "
-        "structural targets for the derivation; no fitting performed."
+        "empirical magic-shell anchors Δ_coupling(2,2)=+13.20 MeV, "
+        "Δ_coupling(2,1)=+5.49 MeV (³He = D+p), and "
+        "Δ_coupling(1,2)=+6.26 MeV (T = D+n) when evaluated at a natural "
+        "substrate value t (q_0, q_0−1, or h(q_0))? Tests four candidates "
+        "from the gap-narrowing plan: log(1/t), 1/t−1, log Φ_q^{(∞)}(t), "
+        "KLR canonical-basis dim. Candidates whose multiplicative match-"
+        "factor is a small rational on ≥2 anchors identify structural "
+        "targets for the derivation; no fitting performed. "
+        "MODELING CHOICE: anchors use the α-cluster / D-elementary "
+        "decomposition (treats deuteron as elementary 2-baryon bound "
+        "state). Constituent-nucleon decomposition would absorb B(D), "
+        "B(T), B(³He), B(⁴He) outright and is a queued follow-up — see "
+        "module docstring."
     )
     builder.set_content_block("conj:magic-shell-stabilization")
     builder.add_parameter("q_0", str(Q0))
     builder.add_parameter("E_0_full_MeV", str(e_0_full_mev()))
-    builder.add_parameter("delta_coupling_target_MeV",
-                           str(DELTA_COUPLING_2_2_MEV))
+    builder.add_parameter("anchors_MeV",
+                          {n: str(v) for (n, v) in ANCHORS})
     builder.add_data("rows", rows)
     builder.add_data("promising_matches", [
         {"row": r, "near_value": near, "fractional_gap": gap}
         for (r, near, gap) in promising
     ])
+    builder.add_data("cross_anchor_consistent_leads", cross_consistent)
     out = builder.save()
     print(f"\n  → wrote {out}")
     return 0

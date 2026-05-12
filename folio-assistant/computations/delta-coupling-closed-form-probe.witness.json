@@ -1,25 +1,31 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-12T03:28:14.379610+00:00",
-  "commitSha": "01d2cf5f367acbaa897c0f088cf00478d85abbb2",
+  "computedAt": "2026-05-12T03:37:19.569257+00:00",
+  "commitSha": "ab1e03a2b81c35c88fac6dd6b38f9b35ea2e4c24",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 11,
   "computation": "delta-coupling-closed-form-probe",
   "scriptFile": "delta_coupling_closed_form_probe.py",
-  "scriptHash": "f2222ab82360",
-  "scriptCommitSha": "unknown",
-  "description": "P3.A diagnostic probe: which closed form `f` reproduces the empirical magic-shell anchor Δ_coupling(2,2) = +13.20 MeV when evaluated at a natural substrate value t (q_0, q_0−1, or h(q_0))? Tests four candidates from the gap-narrowing plan: log(1/t), 1/t−1, log Φ_q^{(∞)}(t), KLR canonical-basis dim. Candidates whose multiplicative match-factor is a small rational identify structural targets for the derivation; no fitting performed.",
+  "scriptHash": "a7ca320e6781",
+  "scriptCommitSha": "ab1e03a2b81c35c88fac6dd6b38f9b35ea2e4c24",
+  "description": "P3.A diagnostic probe: which closed form `f` reproduces the empirical magic-shell anchors Δ_coupling(2,2)=+13.20 MeV, Δ_coupling(2,1)=+5.49 MeV (³He = D+p), and Δ_coupling(1,2)=+6.26 MeV (T = D+n) when evaluated at a natural substrate value t (q_0, q_0−1, or h(q_0))? Tests four candidates from the gap-narrowing plan: log(1/t), 1/t−1, log Φ_q^{(∞)}(t), KLR canonical-basis dim. Candidates whose multiplicative match-factor is a small rational on ≥2 anchors identify structural targets for the derivation; no fitting performed. MODELING CHOICE: anchors use the α-cluster / D-elementary decomposition (treats deuteron as elementary 2-baryon bound state). Constituent-nucleon decomposition would absorb B(D), B(T), B(³He), B(⁴He) outright and is a queued follow-up — see module docstring.",
   "contentBlock": "conj:magic-shell-stabilization",
   "parameters": {
     "q_0": "1.1099785955541805752815940796095093779932822799587",
     "E_0_full_MeV": "4.1859808220625237732985519083214879046242353091078",
-    "delta_coupling_target_MeV": "13.2"
+    "anchors_MeV": {
+      "(2,2)_doubly_magic": "13.2",
+      "(2,1)_3He": "5.4934",
+      "(1,2)_T": "6.2572"
+    }
   },
   "data": {
     "rows": [
       {
+        "anchor": "(2,2)_doubly_magic",
+        "anchor_MeV": 13.2,
         "candidate": "C1_log_inv_t",
         "candidate_human": "log(1/t)",
         "t_name": "q_0",
@@ -30,6 +36,8 @@
         "factor_no_E0_prefactor": -126.50860086448391
       },
       {
+        "anchor": "(2,2)_doubly_magic",
+        "anchor_MeV": 13.2,
         "candidate": "C1_log_inv_t",
         "candidate_human": "log(1/t)",
         "t_name": "q_0_minus_1",
@@ -40,6 +48,8 @@
         "factor_no_E0_prefactor": 5.979697518989406
       },
       {
+        "anchor": "(2,2)_doubly_magic",
+        "anchor_MeV": 13.2,
         "candidate": "C1_log_inv_t",
         "candidate_human": "log(1/t)",
         "t_name": "h(q_0)",
@@ -50,6 +60,8 @@
         "factor_no_E0_prefactor": 8.433791036557862
       },
       {
+        "anchor": "(2,2)_doubly_magic",
+        "anchor_MeV": 13.2,
         "candidate": "C2_inv_t_minus_1",
         "candidate_human": "1/t - 1",
         "t_name": "q_0",
@@ -60,6 +72,8 @@
         "factor_no_E0_prefactor": -133.22335484905392
       },
       {
+        "anchor": "(2,2)_doubly_magic",
+        "anchor_MeV": 13.2,
         "candidate": "C2_inv_t_minus_1",
         "candidate_human": "1/t - 1",
         "t_name": "q_0_minus_1",
@@ -70,6 +84,8 @@
         "factor_no_E0_prefactor": 1.6311039870092896
       },
       {
+        "anchor": "(2,2)_doubly_magic",
+        "anchor_MeV": 13.2,
         "candidate": "C2_inv_t_minus_1",
         "candidate_human": "1/t - 1",
         "t_name": "h(q_0)",
@@ -80,6 +96,8 @@
         "factor_no_E0_prefactor": 3.489009752563075
       },
       {
+        "anchor": "(2,2)_doubly_magic",
+        "anchor_MeV": 13.2,
         "candidate": "C3_log_phi_q_full",
         "candidate_human": "log Φ_q^{(∞)}(t)",
         "t_name": "q_0",
@@ -90,6 +108,8 @@
         "factor_no_E0_prefactor": -0.119619339959434
       },
       {
+        "anchor": "(2,2)_doubly_magic",
+        "anchor_MeV": 13.2,
         "candidate": "C3_log_phi_q_full",
         "candidate_human": "log Φ_q^{(∞)}(t)",
         "t_name": "q_0_minus_1",
@@ -100,6 +120,8 @@
         "factor_no_E0_prefactor": -12.848671050359501
       },
       {
+        "anchor": "(2,2)_doubly_magic",
+        "anchor_MeV": 13.2,
         "candidate": "C3_log_phi_q_full",
         "candidate_human": "log Φ_q^{(∞)}(t)",
         "t_name": "h(q_0)",
@@ -110,6 +132,8 @@
         "factor_no_E0_prefactor": -6.585395802237853
       },
       {
+        "anchor": "(2,2)_doubly_magic",
+        "anchor_MeV": 13.2,
         "candidate": "C4_klr_dim",
         "candidate_human": "KLR canonical-basis dim count",
         "t_name": "q_0",
@@ -120,6 +144,8 @@
         "factor_no_E0_prefactor": 6.6
       },
       {
+        "anchor": "(2,2)_doubly_magic",
+        "anchor_MeV": 13.2,
         "candidate": "C4_klr_dim",
         "candidate_human": "KLR canonical-basis dim count",
         "t_name": "q_0_minus_1",
@@ -130,6 +156,8 @@
         "factor_no_E0_prefactor": 6.6
       },
       {
+        "anchor": "(2,2)_doubly_magic",
+        "anchor_MeV": 13.2,
         "candidate": "C4_klr_dim",
         "candidate_human": "KLR canonical-basis dim count",
         "t_name": "h(q_0)",
@@ -138,11 +166,301 @@
         "E0_times_f_MeV": 8.371961644125047,
         "factor_to_match_Delta": 1.5766914089080888,
         "factor_no_E0_prefactor": 6.6
+      },
+      {
+        "anchor": "(2,1)_3He",
+        "anchor_MeV": 5.4934,
+        "candidate": "C1_log_inv_t",
+        "candidate_human": "log(1/t)",
+        "t_name": "q_0",
+        "t_value": 1.1099785955541805,
+        "f_at_t": -0.10434073185379585,
+        "E0_times_f_MeV": -0.4367683024999577,
+        "factor_to_match_Delta": -12.577377910798672,
+        "factor_no_E0_prefactor": -52.64866272643605
+      },
+      {
+        "anchor": "(2,1)_3He",
+        "anchor_MeV": 5.4934,
+        "candidate": "C1_log_inv_t",
+        "candidate_human": "log(1/t)",
+        "t_name": "q_0_minus_1",
+        "t_value": 0.10997859555418057,
+        "f_at_t": 2.207469517995093,
+        "E0_times_f_MeV": 9.240425067615064,
+        "factor_to_match_Delta": 0.5944964609098699,
+        "factor_no_E0_prefactor": 2.488550784152758
+      },
+      {
+        "anchor": "(2,1)_3He",
+        "anchor_MeV": 5.4934,
+        "candidate": "C1_log_inv_t",
+        "candidate_human": "log(1/t)",
+        "t_name": "h(q_0)",
+        "t_value": 0.20906032198987945,
+        "f_at_t": 1.565132446699486,
+        "E0_times_f_MeV": 6.5516144058718435,
+        "factor_to_match_Delta": 0.8384803591427137,
+        "factor_no_E0_prefactor": 3.5098627030474967
+      },
+      {
+        "anchor": "(2,1)_3He",
+        "anchor_MeV": 5.4934,
+        "candidate": "C2_inv_t_minus_1",
+        "candidate_human": "1/t - 1",
+        "t_name": "q_0",
+        "t_value": 1.1099785955541805,
+        "f_at_t": -0.09908172643569889,
+        "E0_times_f_MeV": -0.4147542066766809,
+        "factor_to_match_Delta": -13.244953062724077,
+        "factor_no_E0_prefactor": -55.443119509681274
+      },
+      {
+        "anchor": "(2,1)_3He",
+        "anchor_MeV": 5.4934,
+        "candidate": "C2_inv_t_minus_1",
+        "candidate_human": "1/t - 1",
+        "t_name": "q_0_minus_1",
+        "t_value": 0.10997859555418057,
+        "f_at_t": 8.0926783976556,
+        "E0_times_f_MeV": 33.87579657170602,
+        "factor_to_match_Delta": 0.16216297640033167,
+        "factor_no_E0_prefactor": 0.678811109260366
+      },
+      {
+        "anchor": "(2,1)_3He",
+        "anchor_MeV": 5.4934,
+        "candidate": "C2_inv_t_minus_1",
+        "candidate_human": "1/t - 1",
+        "t_name": "h(q_0)",
+        "t_value": 0.20906032198987945,
+        "f_at_t": 3.7833084273562423,
+        "E0_times_f_MeV": 15.836856520860758,
+        "factor_to_match_Delta": 0.3468743934608448,
+        "factor_no_E0_prefactor": 1.4520095586916664
+      },
+      {
+        "anchor": "(2,1)_3He",
+        "anchor_MeV": 5.4934,
+        "candidate": "C3_log_phi_q_full",
+        "candidate_human": "log Φ_q^{(∞)}(t)",
+        "t_name": "q_0",
+        "t_value": 1.1099785955541805,
+        "f_at_t": -110.3500487837206,
+        "E0_times_f_MeV": -461.9231879223184,
+        "factor_to_match_Delta": -0.011892453428693918,
+        "factor_no_E0_prefactor": -0.049781581979784446
+      },
+      {
+        "anchor": "(2,1)_3He",
+        "anchor_MeV": 5.4934,
+        "candidate": "C3_log_phi_q_full",
+        "candidate_human": "log Φ_q^{(∞)}(t)",
+        "t_name": "q_0_minus_1",
+        "t_value": 0.10997859555418057,
+        "f_at_t": -1.0273436021720448,
+        "E0_times_f_MeV": -4.30044061636081,
+        "factor_to_match_Delta": -1.2774039895122922,
+        "factor_no_E0_prefactor": -5.3471886021246124
+      },
+      {
+        "anchor": "(2,1)_3He",
+        "anchor_MeV": 5.4934,
+        "candidate": "C3_log_phi_q_full",
+        "candidate_human": "log Φ_q^{(∞)}(t)",
+        "t_name": "h(q_0)",
+        "t_value": 0.20906032198987945,
+        "f_at_t": -2.0044353287792314,
+        "E0_times_f_MeV": -8.390527845334452,
+        "factor_to_match_Delta": -0.6547144710394593,
+        "factor_no_E0_prefactor": -2.7406222196979866
+      },
+      {
+        "anchor": "(2,1)_3He",
+        "anchor_MeV": 5.4934,
+        "candidate": "C4_klr_dim",
+        "candidate_human": "KLR canonical-basis dim count",
+        "t_name": "q_0",
+        "t_value": 1.1099785955541805,
+        "f_at_t": 2.0,
+        "E0_times_f_MeV": 8.371961644125047,
+        "factor_to_match_Delta": 0.6561664080072496,
+        "factor_no_E0_prefactor": 2.7467
+      },
+      {
+        "anchor": "(2,1)_3He",
+        "anchor_MeV": 5.4934,
+        "candidate": "C4_klr_dim",
+        "candidate_human": "KLR canonical-basis dim count",
+        "t_name": "q_0_minus_1",
+        "t_value": 0.10997859555418057,
+        "f_at_t": 2.0,
+        "E0_times_f_MeV": 8.371961644125047,
+        "factor_to_match_Delta": 0.6561664080072496,
+        "factor_no_E0_prefactor": 2.7467
+      },
+      {
+        "anchor": "(2,1)_3He",
+        "anchor_MeV": 5.4934,
+        "candidate": "C4_klr_dim",
+        "candidate_human": "KLR canonical-basis dim count",
+        "t_name": "h(q_0)",
+        "t_value": 0.20906032198987945,
+        "f_at_t": 2.0,
+        "E0_times_f_MeV": 8.371961644125047,
+        "factor_to_match_Delta": 0.6561664080072496,
+        "factor_no_E0_prefactor": 2.7467
+      },
+      {
+        "anchor": "(1,2)_T",
+        "anchor_MeV": 6.2572,
+        "candidate": "C1_log_inv_t",
+        "candidate_human": "log(1/t)",
+        "t_name": "q_0",
+        "t_value": 1.1099785955541805,
+        "f_at_t": -0.10434073185379585,
+        "E0_times_f_MeV": -0.4367683024999577,
+        "factor_to_match_Delta": -14.326131187142654,
+        "factor_no_E0_prefactor": -59.96891040373096
+      },
+      {
+        "anchor": "(1,2)_T",
+        "anchor_MeV": 6.2572,
+        "candidate": "C1_log_inv_t",
+        "candidate_human": "log(1/t)",
+        "t_name": "q_0_minus_1",
+        "t_value": 0.10997859555418057,
+        "f_at_t": 2.207469517995093,
+        "E0_times_f_MeV": 9.240425067615064,
+        "factor_to_match_Delta": 0.6771549960325549,
+        "factor_no_E0_prefactor": 2.8345578269560994
+      },
+      {
+        "anchor": "(1,2)_T",
+        "anchor_MeV": 6.2572,
+        "candidate": "C1_log_inv_t",
+        "candidate_human": "log(1/t)",
+        "t_name": "h(q_0)",
+        "t_value": 0.20906032198987945,
+        "f_at_t": 1.565132446699486,
+        "E0_times_f_MeV": 6.5516144058718435,
+        "factor_to_match_Delta": 0.9550623117245765,
+        "factor_no_E0_prefactor": 3.9978725207537766
+      },
+      {
+        "anchor": "(1,2)_T",
+        "anchor_MeV": 6.2572,
+        "candidate": "C2_inv_t_minus_1",
+        "candidate_human": "1/t - 1",
+        "t_name": "q_0",
+        "t_value": 1.1099785955541805,
+        "f_at_t": -0.09908172643569889,
+        "E0_times_f_MeV": -0.4147542066766809,
+        "factor_to_match_Delta": -15.08652570431374,
+        "factor_no_E0_prefactor": -63.15190726981062
+      },
+      {
+        "anchor": "(1,2)_T",
+        "anchor_MeV": 6.2572,
+        "candidate": "C2_inv_t_minus_1",
+        "candidate_human": "1/t - 1",
+        "t_name": "q_0_minus_1",
+        "t_value": 0.10997859555418057,
+        "f_at_t": 8.0926783976556,
+        "E0_times_f_MeV": 33.87579657170602,
+        "factor_to_match_Delta": 0.18471004768124574,
+        "factor_no_E0_prefactor": 0.7731927172359491
+      },
+      {
+        "anchor": "(1,2)_T",
+        "anchor_MeV": 6.2572,
+        "candidate": "C2_inv_t_minus_1",
+        "candidate_human": "1/t - 1",
+        "t_name": "h(q_0)",
+        "t_value": 0.20906032198987945,
+        "f_at_t": 3.7833084273562423,
+        "E0_times_f_MeV": 15.836856520860758,
+        "factor_to_match_Delta": 0.3951036616236207,
+        "factor_no_E0_prefactor": 1.653896350283157
+      },
+      {
+        "anchor": "(1,2)_T",
+        "anchor_MeV": 6.2572,
+        "candidate": "C3_log_phi_q_full",
+        "candidate_human": "log Φ_q^{(∞)}(t)",
+        "t_name": "q_0",
+        "t_value": 1.1099785955541805,
+        "f_at_t": -110.3500487837206,
+        "E0_times_f_MeV": -461.9231879223184,
+        "factor_to_match_Delta": -0.013545975096301668,
+        "factor_no_E0_prefactor": -0.05670319196925533
+      },
+      {
+        "anchor": "(1,2)_T",
+        "anchor_MeV": 6.2572,
+        "candidate": "C3_log_phi_q_full",
+        "candidate_human": "log Φ_q^{(∞)}(t)",
+        "t_name": "q_0_minus_1",
+        "t_value": 0.10997859555418057,
+        "f_at_t": -1.0273436021720448,
+        "E0_times_f_MeV": -4.30044061636081,
+        "factor_to_match_Delta": -1.4550136970139285,
+        "factor_no_E0_prefactor": -6.0906594315385965
+      },
+      {
+        "anchor": "(1,2)_T",
+        "anchor_MeV": 6.2572,
+        "candidate": "C3_log_phi_q_full",
+        "candidate_human": "log Φ_q^{(∞)}(t)",
+        "t_name": "h(q_0)",
+        "t_value": 0.20906032198987945,
+        "f_at_t": -2.0044353287792314,
+        "E0_times_f_MeV": -8.390527845334452,
+        "factor_to_match_Delta": -0.745745692683603,
+        "factor_no_E0_prefactor": -3.121677167709295
+      },
+      {
+        "anchor": "(1,2)_T",
+        "anchor_MeV": 6.2572,
+        "candidate": "C4_klr_dim",
+        "candidate_human": "KLR canonical-basis dim count",
+        "t_name": "q_0",
+        "t_value": 1.1099785955541805,
+        "f_at_t": 2.0,
+        "E0_times_f_MeV": 8.371961644125047,
+        "factor_to_match_Delta": 0.7473995063499768,
+        "factor_no_E0_prefactor": 3.1286
+      },
+      {
+        "anchor": "(1,2)_T",
+        "anchor_MeV": 6.2572,
+        "candidate": "C4_klr_dim",
+        "candidate_human": "KLR canonical-basis dim count",
+        "t_name": "q_0_minus_1",
+        "t_value": 0.10997859555418057,
+        "f_at_t": 2.0,
+        "E0_times_f_MeV": 8.371961644125047,
+        "factor_to_match_Delta": 0.7473995063499768,
+        "factor_no_E0_prefactor": 3.1286
+      },
+      {
+        "anchor": "(1,2)_T",
+        "anchor_MeV": 6.2572,
+        "candidate": "C4_klr_dim",
+        "candidate_human": "KLR canonical-basis dim count",
+        "t_name": "h(q_0)",
+        "t_value": 0.20906032198987945,
+        "f_at_t": 2.0,
+        "E0_times_f_MeV": 8.371961644125047,
+        "factor_to_match_Delta": 0.7473995063499768,
+        "factor_no_E0_prefactor": 3.1286
       }
     ],
     "promising_matches": [
       {
         "row": {
+          "anchor": "(2,2)_doubly_magic",
+          "anchor_MeV": 13.2,
           "candidate": "C1_log_inv_t",
           "candidate_human": "log(1/t)",
           "t_name": "h(q_0)",
@@ -154,6 +472,56 @@
         },
         "near_value": 2.0,
         "fractional_gap": 0.007385293323244335
+      },
+      {
+        "row": {
+          "anchor": "(2,1)_3He",
+          "anchor_MeV": 5.4934,
+          "candidate": "C2_inv_t_minus_1",
+          "candidate_human": "1/t - 1",
+          "t_name": "h(q_0)",
+          "t_value": 0.20906032198987945,
+          "f_at_t": 3.7833084273562423,
+          "E0_times_f_MeV": 15.836856520860758,
+          "factor_to_match_Delta": 0.3468743934608448,
+          "factor_no_E0_prefactor": 1.4520095586916664
+        },
+        "near_value": 0.3333333333333333,
+        "fractional_gap": 0.04062318038253443
+      },
+      {
+        "row": {
+          "anchor": "(1,2)_T",
+          "anchor_MeV": 6.2572,
+          "candidate": "C1_log_inv_t",
+          "candidate_human": "log(1/t)",
+          "t_name": "h(q_0)",
+          "t_value": 0.20906032198987945,
+          "f_at_t": 1.565132446699486,
+          "E0_times_f_MeV": 6.5516144058718435,
+          "factor_to_match_Delta": 0.9550623117245765,
+          "factor_no_E0_prefactor": 3.9978725207537766
+        },
+        "near_value": 1.0,
+        "fractional_gap": 0.04493768827542355
+      }
+    ],
+    "cross_anchor_consistent_leads": [
+      {
+        "candidate": "C1_log_inv_t",
+        "t_name": "h(q_0)",
+        "anchors_matched": [
+          "(2,2)_doubly_magic",
+          "(1,2)_T"
+        ],
+        "near_values": [
+          2.0,
+          1.0
+        ],
+        "fractional_gaps": [
+          0.007385293323244335,
+          0.04493768827542355
+        ]
       }
     ]
   }
