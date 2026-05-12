@@ -218,31 +218,45 @@ _T6_CACHE: dict | None = None
 
 
 def _load_canonical_t6_MeV() -> dict[int, mp.mpf]:
-    """A → Term 6 (cyclotomic residue tail) in MeV from Habiro witness.
-    Result is cached at module level.  Missing witness emits a warning and
-    returns {} (all T6 contributions silently set to zero).
+    """A → Term 6 (cyclotomic residue tail) in MeV from witness files.
+    Result is cached at module level.  Falls back to the legacy witness
+    location when the canonical file is absent.
     """
     global _T6_CACHE
     if _T6_CACHE is not None:
         return _T6_CACHE
-    path = HERE / "term6-habiro-residue-mpfr-50dps.witness.json"
-    if not path.exists():
-        warnings.warn(
-            f"T6 witness missing ({path}); Term 6 contributions set to 0 MeV. "
-            "Run term6_residues_at_roots.py to regenerate.",
-            stacklevel=2,
-        )
-        _T6_CACHE = {}
-        return _T6_CACHE
-    d = json.loads(path.read_text())
-    out: dict[int, mp.mpf] = {}
-    for r in d.get("results_by_atom", []):
-        try:
-            A = int(r["atom"].split("=")[1])
-            out[A] = mp.mpf(r["term6_b_pred_mev_50dps"])
-        except (KeyError, IndexError, ValueError):
+    candidate_paths = [
+        HERE / "term6-habiro-residue-mpfr-50dps.witness.json",
+        HERE / "_deprecated" / "term6-habiro-residue-mpfr-50dps.witness.json",
+    ]
+
+    for path in candidate_paths:
+        if not path.exists():
             continue
-    _T6_CACHE = out
+        d = json.loads(path.read_text())
+        out: dict[int, mp.mpf] = {}
+        for r in d.get("results_by_atom", []):
+            try:
+                A = int(str(r["atom"]).split("=")[1])
+                out[A] = mp.mpf(r["term6_b_pred_mev_50dps"])
+            except (KeyError, IndexError, ValueError):
+                continue
+        if out:
+            if path.parent.name == "_deprecated":
+                warnings.warn(
+                    f"Using legacy T6 witness fallback: {path}. "
+                    "Regenerate canonical T6 witness in computations/ when available.",
+                    stacklevel=2,
+                )
+            _T6_CACHE = out
+            return _T6_CACHE
+
+    warnings.warn(
+        "T6 witness missing in canonical and legacy locations; "
+        "Term 6 contributions set to 0 MeV.",
+        stacklevel=2,
+    )
+    _T6_CACHE = {}
     return _T6_CACHE
 
 
