@@ -12,7 +12,7 @@ $\mathrm{SU}_q(2)$ weight space.*
 | $-1$ | neutron nearest-neighbor | $N(N{-}1)/A^{1/3}$ |
 | $0$ | balanced (pn mixed) | $A^{2/3}$ or $\pm 1/\sqrt{A}$ |
 | $\pm 2$ | next-nearest same-type | $Z^{4/3}/A^{1/3}$ |
-| $|c| \geq 3$ | long-range | $T^p(T{+}1)^p/A^p$ |
+| $\lvert c\rvert \geq 3$ | long-range | $T^p(T{+}1)^p/A^p$ |
 
 *Each scaling function counts the number of nucleon pairs at
 spin projection $c$ in the nuclear ground state.* $\square$

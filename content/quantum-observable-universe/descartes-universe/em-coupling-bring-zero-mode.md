@@ -33,8 +33,7 @@ identifications in Bring's-surface terms*:
    *where the area is computed with constant negative curvature $-1$
    (Gauss-Bonnet: $\mathrm{Area} = -2\pi\chi = 4\pi(g-1) = 12\pi$).*
 2. **Sphere-volume ratio:**
-   $$\frac{2}{3\pi} \;=\; \frac{\mathrm{Vol}(S^2)}{3\cdot\mathrm{Vol}(S^3)}
-     \;=\; \frac{4\pi}{3\cdot 2\pi^2}.$$
+   $$\frac{2}{3\pi} \;=\; \frac{\mathrm{Vol}(S^2)}{3\cdot\mathrm{Vol}(S^3)} \;=\; \frac{4\pi}{3\cdot 2\pi^2}.$$
 
 ## Numerical match
 

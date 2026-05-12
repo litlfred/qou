@@ -9,7 +9,7 @@ is a prediction.*
 |----|----------|--------------|--------|
 | **CAL-1** | $m_e = 0.51099895\ldots\;\mathrm{MeV}$ | leptonic mass scale (MeV ↔ natural units) | leptonic size |
 | **CAL-2** | $m_\mu / m_e = 206.7682830\ldots$ | substrate parameter $q_0$ via $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$ | dimensionless ratio (shape) |
-| **CAL-3** | $Q_\beta(n) = 0.78233341\ldots\;\mathrm{MeV}$ | hadronic energy scale $E_0$ via $E_0 = Q_\beta(n)/|\Delta(\mathrm{net})|$ | hadronic interaction strength |
+| **CAL-3** | $Q_\beta(n) = 0.78233341\ldots\;\mathrm{MeV}$ | hadronic energy scale $E_0$ via $E_0 = Q_\beta(n)/\lvert\Delta(\mathrm{net})\rvert$ | hadronic interaction strength |
 
 *The three inputs are independent: one dimensionless ratio plus two
 dimensional scales. They align to the three (co)homological degrees

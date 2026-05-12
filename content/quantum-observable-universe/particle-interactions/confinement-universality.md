@@ -5,14 +5,12 @@ that created the constituent quarks.
 ## Statement
 
 **Proposition.**
-*Let $\gamma_k = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1
-+ \varphi_{01}\sigma_0\sigma_1$ be a 4-term photon
+*Let $\gamma_k = \mathbf{1} + \varphi_0\sigma_0 + \varphi_1\sigma_1 + \varphi_{01}\sigma_0\sigma_1$ be a 4-term photon
 ([Breit--Wheeler](#def:breit-wheeler-pair-production)).
 Let $\mathfrak{N}(\varphi_0, \varphi_1, \varphi_{01})$ denote the
 nucleon NF obtained by the derivation chain
 ([4-term pair nucleon](#prop:four-term-pair-nucleon)):
-$\gamma\gamma \to q\bar{q} \to \mathcal{B}_3 \cdot \mathrm{crossings}
-\to \mathfrak{N}$.*
+$\gamma\gamma \to q\bar{q} \to \mathcal{B}_3 \cdot \mathrm{crossings} \to \mathfrak{N}$.*
 
 *Then for all $\varphi_0, \varphi_1, \varphi_{01} \in \mathbb{R}$:*
 

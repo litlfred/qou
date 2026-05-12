@@ -143,7 +143,7 @@ sharply tagged:*
 | $T_w$, $H_n(R,q)$, $J^\bullet(q)$ | $R$ | filtered Hecke algebra |
 | $F(z, c)$, $\Delta(z)$, $\pi_{\mathrm{Alt}}$ | $R$ | algebraic over $R[z, c]$ |
 | $a(q) = (4-q)/(4q+3)$ as a Möbius transformation | $R$ | rational in $q$ |
-| $z_c \in \mathbb{C}$, $|H(z_c)|$, $\arg H(z_c)$ | archimedean | requires $R \hookrightarrow \mathbb{C}$ |
+| $z_c \in \mathbb{C}$, $\lvert H(z_c)\rvert$, $\arg H(z_c)$ | archimedean | requires $R \hookrightarrow \mathbb{C}$ |
 | $\mathcal{J}_\sigma$, $n_\sigma$, $\Pi^{(k)}$ | archimedean | complex contours |
 | $a(q_0)$ as a real number | archimedean | image of Möbius under $\tau$ |
 
