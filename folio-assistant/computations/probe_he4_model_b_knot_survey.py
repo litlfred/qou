@@ -68,9 +68,10 @@ from experimental_constants import M_E_MEV  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 
-# AME 2020 binding energy for ⁴He (MeV).  Documented in
-# `binding_ladder_catalog.py:63` and elsewhere.
-B_AME_HE4_MEV = 28.29566
+# AME 2020 binding energy for ⁴He (MeV).  Same precision as
+# `probe_magic_shell_empirical_instantiation.py:61` (the canonical
+# Δ_cat witness source) so the two anchors stay consistent.
+B_AME_HE4_MEV = 28.295674
 
 
 # Candidates — each is a (label, braid_word, n_0, knot_name, note) tuple.
