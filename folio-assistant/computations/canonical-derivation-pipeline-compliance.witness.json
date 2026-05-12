@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.12.3",
-  "computedAt": "2026-05-12T17:12:56.018911+00:00",
-  "commitSha": "67eb55612bf9bc7ba14f2f189b9f7cc1c65b47fa",
+  "computedAt": "2026-05-12T19:26:37.726976+00:00",
+  "commitSha": "21a2c62d8b60ac8a785eaac07d37a3629743d069",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 9,
   "computation": "canonical-derivation-pipeline-compliance",
   "scriptFile": "canonical_derivation_pipeline_compliance.py",
   "scriptHash": "0494fcd088dd",
-  "scriptCommitSha": "488e136af5afb763c84eb22767ce53cf8c0d9e65",
+  "scriptCommitSha": "a9b76d93d4f820682da6f3505d1945cee3412e6d",
   "description": "Aggregator dashboard of compute-infra compliance for the canonical-derivation chain. Joins four upstream audit witnesses into one current-state snapshot. See docs/audits/2026-05-12-canonical-derivation-compute-review.md §3 for the contract definitions.",
   "auditOnly": "docs/audits/2026-05-12-canonical-derivation-compute-review.md",
   "parameters": {
@@ -25,16 +25,16 @@
     "source_summaries": {
       "compute_audit_scan": {
         "status": "loaded",
-        "computedAt": "2026-05-12T17:12:08.478711+00:00",
+        "computedAt": "2026-05-12T19:26:28.139973+00:00",
         "files_scanned": 407,
         "by_pattern_count": {
           "P15": 111,
           "P16": 89,
           "P21": 21,
           "P30": 96,
-          "P31": 28
+          "P31": 10
         },
-        "total_findings": 345,
+        "total_findings": 327,
         "top_files": [
           {
             "file": "markov_weights_symbolic.py",
@@ -65,14 +65,6 @@
             ]
           },
           {
-            "file": "markov_trace_atomic_proton_full.py",
-            "count": 10,
-            "patterns": [
-              "P15",
-              "P31"
-            ]
-          },
-          {
             "file": "option_b_proton_mass_full_chain.py",
             "count": 10,
             "patterns": [
@@ -85,6 +77,13 @@
             "patterns": [
               "P15",
               "P16"
+            ]
+          },
+          {
+            "file": "markov_trace_atomic_proton_full.py",
+            "count": 9,
+            "patterns": [
+              "P15"
             ]
           },
           {
@@ -173,7 +172,7 @@
       {
         "name": "CODATA constants from registry only (P31)",
         "source": "compute-audit-scan.witness.json",
-        "metric": "28 hardcoded CODATA literals outside the allowlist",
+        "metric": "10 hardcoded CODATA literals outside the allowlist",
         "status": "warn",
         "remediation": "Replace each hit with import from codata_constants (_VALIDATION aliases) or experimental_constants. Tag audit-only consumers with `# noqa: P31` and a justifying comment."
       },

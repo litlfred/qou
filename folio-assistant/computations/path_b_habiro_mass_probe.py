@@ -51,12 +51,16 @@ sys.path.insert(0, str(HERE))
 from q_parameter import Q as Q0_FLOAT, Q_MP  # noqa: E402
 # CAL-1: m_e from codata_constants registry (P31-triage Phase A).
 from codata_constants import M_E_MEV as _M_E_MEV_MP
+# Comparison references (P31-triage Phase B): validation-only CODATA m_p/m_n
+# used to report fit residuals, not as prediction inputs.
+from codata_constants import (
+    M_P_MEV_VALIDATION as M_P_MEV,
+    M_N_MEV_VALIDATION as M_N_MEV,
+)
 
 # Constants
 Q0 = Q_MP
 M_E_MEV = _M_E_MEV_MP
-M_P_MEV = mp.mpf("938.27208816")
-M_N_MEV = mp.mpf("939.56542052")
 G_CATALAN = mp.catalan
 
 # AME 2020 atomic masses (MeV)

@@ -46,11 +46,17 @@ sys.path.insert(0, str(HERE))
 from q_parameter import Q as Q0_FLOAT, Q_MP  # noqa: E402
 # CAL-1: m_e from codata_constants registry (P31-triage Phase A).
 from codata_constants import M_E_MEV as _M_E_MEV_MP
+# Comparison references (P31-triage Phase B): validation-only CODATA m_p/m_n
+# used to report fit residuals against experiment, not as prediction inputs.
+from codata_constants import (
+    M_P_MEV_VALIDATION as _M_P_MEV_MP,
+    M_N_MEV_VALIDATION as _M_N_MEV_MP,
+)
 
 Q0 = Q_MP
 M_E_MEV = float(_M_E_MEV_MP)
-M_P_MEV = 938.27208816
-M_N_MEV = 939.56542052
+M_P_MEV = float(_M_P_MEV_MP)
+M_N_MEV = float(_M_N_MEV_MP)
 
 
 # Canonical Markov traces from the Hoefsmit+Wenzl bridge witness.

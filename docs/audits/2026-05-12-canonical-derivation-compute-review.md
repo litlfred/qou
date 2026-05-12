@@ -355,6 +355,34 @@ author/structural decisions (§2.C).
    docstring/print → `# noqa: P31`, audit-script m_p/m_n → import
    `*_VALIDATION` aliases).
 
+### Update — fifth pass (P31-triage Phase B continuation)
+
+9. **P31-triage Phase B — audit-script m_p/m_n + muon-ratio
+   migrations.** Continued the §4.8 triage on the (b) docstring/
+   print and (c) audit-script tranches:
+   - **m_p/m_n module constants** in 3 audit/probe scripts migrated
+     to `codata_constants.M_{P,N}_MEV_VALIDATION` aliases:
+     `path_b_defect_binding_probe.py`, `path_b_habiro_mass_probe.py`,
+     and the second occurrence in `paper_six_term_isotope_sweep.py`
+     (`run_atom_with_tower_combined`, distinct from the first
+     occurrence already migrated in pass 4).
+   - **m_μ/m_e CAL-2 anchor literals** in 3 scripts migrated to
+     `q_parameter.MASS_RATIO_MU_E_STR` / `MASS_RATIO_MU_E`:
+     `alpha_em_pslq_uniqueness.py` (PSLQ input), `derive_m_baryon_volume_form.py`
+     (validation cross-check), `knot-volumes.py` (snappy verification).
+   - **Audit-only dict literals** in 2 scripts annotated with
+     `# noqa: P31`: `canonical_a_k_magnitude_audit.py` (M_CODATA dict
+     including ⁶Li, not in `_VALIDATION` registry) and
+     `markov_trace_axiomatic_multi_atom.py` (per-atom proton/neutron
+     target ratios in audit ATOMS dict).
+   - **Docstring narrative** in `alpha_em_pslq_uniqueness.py:53`
+     annotated with `# noqa: P31`.
+   **P31 hits 18 → 10; infra_score remains 0.58 (P31 still warn,
+   not pass — 10 of the residual 12 are mass-table dict literals
+   for m_p/m_n that are explicitly deferred to Workplan-0b per
+   §4.8 (a) — the right fix is to derive m_n from m_p + Q_β rather
+   than import the literal).**
+
 All other items in §2.B / §4 are **deferred** with explicit
 rationale (multi-file scope, blocked on author decision, blocked
 on structural R&D, or out of scope for "minimum change" in a single

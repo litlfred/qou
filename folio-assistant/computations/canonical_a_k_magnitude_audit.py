@@ -69,9 +69,13 @@ CANONICAL_A_K = {
 
 
 # CODATA atomic masses + AME binding energies (MeV)
+# Audit-only: comparison references for canonical_a_k magnitude check.
+# Not migrated to codata_constants `_VALIDATION` aliases because this dict
+# includes 6Li, which is not in the validation registry; flat-literal
+# audit dict is the simplest clean form for the ⁶Li→⁷Li sweep.
 M_CODATA = {
-    "p":    938.27208816,
-    "n":    939.56542052,
+    "p":    938.27208816,  # noqa: P31 — audit-only comparison value (6Li sweep dict; not in `_VALIDATION` registry)
+    "n":    939.56542052,  # noqa: P31 — audit-only comparison value
     "D":   1875.61294257,
     "T":   2808.92113298,
     "3He": 2808.39160743,

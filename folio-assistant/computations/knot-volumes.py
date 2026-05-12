@@ -187,7 +187,9 @@ def main():
     # ── Mass ratio derivation ─────────────────────────────────
     vol_41 = next(a["computed"] for a in assertions if "4_1" in a["name"])
 
-    mu_e_ratio = 206.7682830  # CODATA 2022
+    # CAL-2: m_μ/m_e from q_parameter registry (P31-triage Phase B).
+    from q_parameter import MASS_RATIO_MU_E  # noqa: E402
+    mu_e_ratio = MASS_RATIO_MU_E
     hbar_q_sq = vol_41 / mu_e_ratio
     hbar_q = hbar_q_sq ** 0.5
     q = 1.0 / (1.0 - hbar_q)

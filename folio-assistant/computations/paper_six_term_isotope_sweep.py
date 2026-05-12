@@ -657,8 +657,14 @@ def assemble_per_derivation_weights(Z: int, N: int,
     Returns a dict with the per-term contributions in MeV plus
     M_pred and the constituent baseline.
     """
-    M_P_CODATA = 938.27208816
-    M_N_CODATA = 939.56542052
+    # Comparison references (P31-triage Phase B): validation-only CODATA m_p/m_n
+    # used to report fit residuals, not as prediction inputs.
+    from codata_constants import (  # noqa: E402
+        M_P_MEV_VALIDATION as M_P_CODATA,
+        M_N_MEV_VALIDATION as M_N_CODATA,
+    )
+    M_P_CODATA = float(M_P_CODATA)
+    M_N_CODATA = float(M_N_CODATA)
     constituent = Z * M_P_CODATA + N * M_N_CODATA + Z * M_E_MEV_DERIV
 
     A = Z + N

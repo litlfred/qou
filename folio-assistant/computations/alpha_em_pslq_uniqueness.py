@@ -50,7 +50,7 @@ def main():
     # Use the canonical q_0 string + extend digits via m_μ/m_e relation.
     # q_0 comes from solving m_μ/m_e = Vol(4_1) / ℏ_q² with ℏ_q = (q-1)/q.
     # Vol(4_1) = 2.029883212819307250042... (figure-eight, transcendental)
-    # m_μ/m_e = 206.7682830 (input, ~22 ppb).
+    # m_μ/m_e = 206.7682830 (input, ~22 ppb).  # noqa: P31 — comment narrative; live value via q_parameter.MASS_RATIO_MU_E_STR
     #
     # Since both inputs are CODATA-bounded, the "true" q_0 to 1000 dps
     # is not knowable — but we can test the formula's algebraic
@@ -63,7 +63,9 @@ def main():
     # value), so PSLQ runs past 30 dps were searching corrupted
     # input.  See q_parameter.vol_4_1_at for the canonical source.
     Vol_4_1 = vol_4_1_at(DPS)
-    m_mu_over_m_e = mp.mpf("206.7682830")
+    # CAL-2: m_μ/m_e from q_parameter registry (P31-triage Phase B).
+    from q_parameter import MASS_RATIO_MU_E_STR  # noqa: E402
+    m_mu_over_m_e = mp.mpf(MASS_RATIO_MU_E_STR)
 
     # Solve q · m_mu/m_e = q · Vol(4_1) / ℏ_q²
     # i.e. m_μ/m_e · ((q-1)/q)² = Vol(4_1)
