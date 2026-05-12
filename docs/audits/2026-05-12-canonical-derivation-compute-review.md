@@ -181,18 +181,22 @@ Remaining items prioritized by **(infra leverage) / (risk × cost)**:
 - **P0.1.** Add the canonical-derivation-pipeline-compliance
   aggregator witness (§2.B B-3). Single new script that loads the 3
   existing witnesses and emits a one-shot dashboard. Cost: ~30 min.
-  **Status: deferred to the next push.** (The current branch is
-  delivering the analytic synthesis; the aggregator is a separate
-  follow-up.)
+  **✓ Implemented** — `canonical_derivation_pipeline_compliance.py`
+  joins compute-audit-scan + canonical-script-input-audit +
+  derivation-chain-audit + codata-reconciliation. Baseline
+  infra_score = **0.40** (2026-05-12).
 
 ### Priority 1 — discipline cleanup (low risk)
 
 - **P1.1.** Annotate `deuteron_delta_i_audit.py:112` as an audit-only
-  Conv-C consumer (B-1). Single docstring line. **Implemented in
-  this PR — see §6.**
+  Conv-C consumer (B-1). Single docstring line. **✓ Implemented.**
 - **P1.2.** Audit content blocks downstream of
   `atomic-mass-via-rho-k.witness.json` for "prediction" language
-  (B-4). Content-only scan. **Deferred.**
+  (B-4). Content-only scan. **✓ Closed in-tree** —
+  `mass-comparison-table.md` and `recomputed-low-isotope-mass-table.md`
+  both already carry explicit tautology disclaimers; surviving
+  "prediction" language is correctly scoped to genuine predictions
+  ($m_\mu$, $Q_\beta$).
 
 ### Priority 2 — Frobenius / τ_M / τ_SW relabel (medium risk)
 
@@ -205,7 +209,10 @@ Remaining items prioritized by **(infra leverage) / (risk × cost)**:
 ### Priority 3 — infra scanner extensions
 
 - **P3.1.** Add P31 scanner: hardcoded-CODATA detection outside
-  registry files. **Deferred** — small but adds new code.
+  registry files. **✓ Implemented** in `compute_audit_scan.py`
+  with allowlist for legitimate audit-only / registry sources.
+  Catalogue entry added to `local/compute-audit.md`. Baseline:
+  **40 hits** to triage in a follow-up scoped PR.
 - **P3.2.** Add a witness reproducibility check (run any
   `*.derivation.json` builder twice; assert byte-equal output).
   **Deferred.**
@@ -263,6 +270,41 @@ author/structural decisions (§2.C).
    back-fits $E_0$ from CODATA $m_p$. Documents that this is an
    audit-only consumer of the deprecated Conv-C pattern, complying
    with the discipline carve-out for Class-C diagnostic probes.
+
+### Update — second pass (continuation push)
+
+3. **P3.1 — P31 hardcoded-CODATA scanner**. Extends
+   `compute_audit_scan.py` with a P31 detector for free-floating
+   CODATA literals (`"0.51099895"`, `"938.272..."`, `"939.565..."`,
+   `"0.78233"`, `"206.7682830"`) outside the
+   `codata_constants.py` / `experimental_constants.py` registry.
+   Allowlist (9 files) covers the legitimate audit-only / registry
+   sources. **Baseline: 40 hits across 38 files**, all genuine
+   discipline violations to be triaged. Pattern catalogue in
+   [`local/compute-audit.md`](../../.claude/skills/local/compute-audit.md)
+   updated with the P31 entry + remediation guidance.
+4. **P0.1 — Aggregator compliance witness**. New
+   [`canonical_derivation_pipeline_compliance.py`](../../folio-assistant/computations/canonical_derivation_pipeline_compliance.py)
+   joins four upstream audit witnesses (compute-audit-scan,
+   canonical-script-input-audit, derivation-chain-audit,
+   codata-reconciliation) into one current-state snapshot with a
+   single `infra_score` (0.0–1.0) over five canonical-derivation
+   contracts. Surfaces the open `TR_M_AT_Q0` ↔ Frobenius-proof
+   conflict and the ranked next-priority list. **Baseline score
+   2026-05-12: 0.40** (2 pass / 3 fail).
+5. **P1.2 — Content "prediction" language audit
+   (closed-in-tree, no edit needed)**. Verified by source-read
+   that both content blocks downstream of
+   `atomic-mass-via-rho-k.witness.json` —
+   [`mass-comparison-table.md`](../../content/quantum-observable-universe/observations/mass-comparison-table.md)
+   and
+   [`recomputed-low-isotope-mass-table.md`](../../content/quantum-observable-universe/braids-and-knots/recomputed-low-isotope-mass-table.md)
+   — already carry explicit tautology disclaimers (dagger †
+   footnotes; §"Atomic-mass FULL chain — not yet wired"; §"Two
+   structural notes" §1). The "prediction" / "predicts" language
+   surviving in those files refers to the genuine framework
+   predictions ($m_\mu$, $Q_\beta$); LO atomic rows are explicitly
+   disclaimed. No edit required.
 
 All other items in §2.B / §4 are **deferred** with explicit
 rationale (multi-file scope, blocked on author decision, blocked

@@ -1,0 +1,225 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-05-12T14:34:10.660302+00:00",
+  "commitSha": "d4a86bace8ddb08582d90cf957bef2c3e61bc96a",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 9,
+  "computation": "canonical-derivation-pipeline-compliance",
+  "scriptFile": "canonical_derivation_pipeline_compliance.py",
+  "scriptHash": "71281c73dcc3",
+  "scriptCommitSha": "unknown",
+  "description": "Aggregator dashboard of compute-infra compliance for the canonical-derivation chain. Joins four upstream audit witnesses into one current-state snapshot. See docs/audits/2026-05-12-canonical-derivation-compute-review.md §3 for the contract definitions.",
+  "auditOnly": "docs/audits/2026-05-12-canonical-derivation-compute-review.md",
+  "parameters": {
+    "sources": {
+      "compute_audit_scan": "folio-assistant/computations/compute-audit-scan.witness.json",
+      "canonical_script_input_audit": "folio-assistant/computations/canonical-script-input-audit.witness.json",
+      "derivation_chain_audit": "folio-assistant/computations/derivation-chain-audit.witness.json",
+      "codata_reconciliation": "folio-assistant/computations/codata-reconciliation.witness.json"
+    }
+  },
+  "data": {
+    "source_summaries": {
+      "compute_audit_scan": {
+        "status": "loaded",
+        "computedAt": "2026-05-12T14:32:36.573528+00:00",
+        "files_scanned": 405,
+        "by_pattern_count": {
+          "P15": 111,
+          "P16": 89,
+          "P21": 21,
+          "P30": 96,
+          "P31": 40
+        },
+        "total_findings": 357,
+        "top_files": [
+          {
+            "file": "markov_weights_symbolic.py",
+            "count": 14,
+            "patterns": [
+              "P15",
+              "P16",
+              "P21",
+              "P30"
+            ]
+          },
+          {
+            "file": "probe_beta_decay_residue_sum_h3.py",
+            "count": 13,
+            "patterns": [
+              "P15",
+              "P16",
+              "P30"
+            ]
+          },
+          {
+            "file": "schur_weyl_symbolic.py",
+            "count": 12,
+            "patterns": [
+              "P15",
+              "P16",
+              "P30"
+            ]
+          },
+          {
+            "file": "markov_trace_atomic_proton_full.py",
+            "count": 10,
+            "patterns": [
+              "P15",
+              "P31"
+            ]
+          },
+          {
+            "file": "option_b_proton_mass_full_chain.py",
+            "count": 10,
+            "patterns": [
+              "P15"
+            ]
+          },
+          {
+            "file": "hecke_symbolic.py",
+            "count": 9,
+            "patterns": [
+              "P15",
+              "P16"
+            ]
+          },
+          {
+            "file": "probe_term4_conventions.py",
+            "count": 8,
+            "patterns": [
+              "P16",
+              "P30"
+            ]
+          },
+          {
+            "file": "atom_nf_symbolic_D.py",
+            "count": 7,
+            "patterns": [
+              "P16",
+              "P30"
+            ]
+          },
+          {
+            "file": "frobenius_partition_sum.py",
+            "count": 7,
+            "patterns": [
+              "P16",
+              "P30"
+            ]
+          },
+          {
+            "file": "hecke_character_symbolic.py",
+            "count": 7,
+            "patterns": [
+              "P15",
+              "P16",
+              "P21",
+              "P30"
+            ]
+          }
+        ]
+      },
+      "canonical_script_input_audit": {
+        "status": "loaded",
+        "computedAt": "2026-04-27T21:31:45.085444+00:00",
+        "by_scheme": {
+          "no-hadronic-input (substrate-only or pure dimensionless)": 340,
+          "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)": 112,
+          "vol-hyp-fitted (uses hyperbolic volume; FITTED under option B)": 54,
+          "m_p-only (no Q_β; m_n derivation TBD)": 9,
+          "Q_β-only-hadronic": 12
+        },
+        "canonical_3input_count": 12,
+        "over_count_count": 112,
+        "vol_hyp_fitted_count": 54,
+        "total_classified": 527,
+        "canonical_ratio": 0.022770398481973434
+      },
+      "derivation_chain_audit": {
+        "status": "loaded",
+        "computedAt": "2026-05-11T22:48:01.762235+00:00",
+        "chain_count": 71,
+        "assertion_count": 91,
+        "all_passed": true,
+        "failed_assertion_count": 0
+      },
+      "codata_reconciliation": {
+        "status": "loaded",
+        "computedAt": "2026-05-11T03:50:35.661606+00:00",
+        "all_passed": true,
+        "assertion_count": 9
+      }
+    },
+    "contracts": [
+      {
+        "name": "WitnessBuilder usage (P30)",
+        "source": "compute-audit-scan.witness.json",
+        "metric": "96 of 405 files write witnesses without WitnessBuilder",
+        "status": "fail",
+        "remediation": "Batch-port hand-written .witness.json writers to witness_base.WitnessBuilder. Reference: docs/audits/2026-05-08-compute-audit-workplan.md §Tier 2."
+      },
+      {
+        "name": "CODATA constants from registry only (P31)",
+        "source": "compute-audit-scan.witness.json",
+        "metric": "40 hardcoded CODATA literals outside the allowlist",
+        "status": "fail",
+        "remediation": "Replace each hit with import from codata_constants (_VALIDATION aliases) or experimental_constants. Tag audit-only consumers with `# noqa: P31` and a justifying comment."
+      },
+      {
+        "name": "3-input canonical scheme (CAL-1/2/3)",
+        "source": "canonical-script-input-audit.witness.json",
+        "metric": "12 canonical / 112 over-count / 527 classified",
+        "status": "fail",
+        "remediation": "Migrate over-count scripts (consume both m_p and m_n) to the 3-input scheme: m_n = m_p + Q_β + m_e, with m_p derived from |tr_M(p, q_0)| · E_0. Reference: docs/audits/2026-05-10-workplan-0b-script-rewire-handoff.md."
+      },
+      {
+        "name": "Per-chain trust-basis validation",
+        "source": "derivation-chain-audit.witness.json",
+        "metric": "91 assertions across 71 chains; 0 failed",
+        "status": "pass",
+        "remediation": "Read derivation-chain-audit.witness.json `assertions` for failed chain IDs and trust-basis transitions. Each `script_cited` step that fails should be promoted to `derived` or `lean_proven`."
+      },
+      {
+        "name": "CAL-3 ↔ CODATA cross-check",
+        "source": "codata-reconciliation.witness.json",
+        "metric": "9 reconciliation assertions; allPassed=True",
+        "status": "pass",
+        "remediation": "Refresh codata_constants.py against CODATA 2022 and re-run codata_reconciliation.py."
+      }
+    ],
+    "infra_score": 0.4,
+    "known_open_conflicts": [
+      {
+        "id": "TR_M_AT_Q0_vs_frobenius_proof",
+        "where": "folio-assistant/computations/derivation_chain.py:68-93",
+        "summary": "Registry TR_M_AT_Q0 (Wenzl-bridge y_λ assembly) disagrees with Frobenius-selected τ_M (`from_scratch/` chain on commit 25a204efa). Two distinct canonical values for the same nominal quantity.",
+        "audit_doc": "docs/audits/2026-05-11-why-individual-mass-residuals-fit-not-derive.md §\"Update 2026-05-11 — τ_M / τ_SW conflation diagnosis\"",
+        "blocks_fix": "P2.1 schur-weyl-weight-* → tau-sw-weight-* rename"
+      }
+    ],
+    "recommended_next": [
+      {
+        "priority": "P1.2",
+        "summary": "Audit content blocks downstream of atomic-mass-via-rho-k.witness.json for surviving 'prediction' / 'predicts' language now that LO tautology banner has landed.",
+        "blocked_on": null
+      },
+      {
+        "priority": "P2.1",
+        "summary": "Rename schur-weyl-weight-* → tau-sw-weight-* across 21 derivation-JSONs + 8 Python consumers.",
+        "blocked_on": "TR_M_AT_Q0_vs_frobenius_proof (see open conflicts)"
+      },
+      {
+        "priority": "P3.2",
+        "summary": "Witness reproducibility byte-equality CI check (run any *.derivation.json builder twice, assert equal).",
+        "blocked_on": null
+      }
+    ]
+  },
+  "caveats": [
+    "Aggregator-only: this script does NOT re-run any of the four source audits. Stale source witnesses propagate stale results here. Each source's `computedAt` is preserved in `source_summaries` so reviewers can spot staleness directly.",
+    "Contract thresholds are heuristic (e.g. P30>50 = fail). They reflect 2026-05-12 baseline; tighten as the infra-discipline backlog drains."
+  ]
+}

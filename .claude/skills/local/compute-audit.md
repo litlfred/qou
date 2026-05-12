@@ -195,6 +195,20 @@ numerical equivalence at q₀ before/after.
   current and silently skip regeneration (workflow memory:
   run_pipeline.py:152-177).
 
+- **P31. Hardcoded CODATA literal outside the registry.** CODATA
+  mass / Q-value literals must come from `codata_constants.py`
+  (validation aliases) or `experimental_constants.py`, NEVER as
+  free-floating string literals in production scripts.  Free-floating
+  CODATA literals (`"0.51099895"`, `"938.272"`, `"939.565"`,
+  `"0.78233"`, `"206.7682830"`, etc.) silently inflate the
+  three-calibration count and bypass the deprecation warning that
+  `codata_constants.__getattr__` emits on legacy aliases.  Reference
+  fix: `codata_constants.py` (single source of truth + validation
+  cross-check).  Scanner: `compute_audit_scan.py` flags any of the
+  five canonical CODATA strings outside an allowlist of registry /
+  bib / audit files.  Audit-only scripts may use them inside an
+  explicit `# noqa: P31` comment justifying the audit purpose.
+
 ## Pattern → fix-success references
 
 | Pattern | Reference fix |
@@ -208,6 +222,7 @@ numerical equivalence at q₀ before/after.
 | P25 | det_pair_law.py |
 | P26 | bar_involution.py (cbcc716e) |
 | P30 | witness_base.py:136-183 |
+| P31 | codata_constants.py + canonical_derivation_pipeline_compliance.py |
 
 ## Verification checklist before landing any speedup
 
