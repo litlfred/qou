@@ -9,8 +9,15 @@ paper to keep them disambiguated:
   elliptic curve. Use $\mathcal{S}_p$, $\mathbf{E}$, or $\mathcal{E}_q$
   respectively. $E_{\mathfrak{H}}$ (with hadron subscript) is allowed
   for crossing energy.
-- **$\gamma$** = Euler–Mascheroni constant or Dirac matrices only.
-  Never use $\gamma$ for a vortex or closed cycle; use $\varrho$.
+- **$\gamma$** = three reserved meanings, all standard, disambiguated
+  by context: (i) the **photon** (default reading in particle / QED
+  contexts: pair production $\gamma\gamma \to e^+ e^-$, photonic
+  channels, Breit–Wheeler vertices); (ii) the **Euler–Mascheroni
+  constant** (only inside zeta-value identities, e.g.
+  $\zeta'(0) = -\tfrac{1}{2}\log(2\pi)$, $\gamma = \lim(H_n - \log n)$);
+  (iii) **Dirac matrices** $\gamma^\mu$ (always with an explicit
+  Lorentz index). Never use $\gamma$ for a vortex or closed cycle —
+  the vortex morphism is $\varrho$.
 - **$\chi_q$** = Lyapunov exponent (distinct from $\chi_\zeta(c)$,
   the character).
 - **$\zeta$** = three distinct uses, never bare. $\zeta_n := e^{2\pi i/n}$
