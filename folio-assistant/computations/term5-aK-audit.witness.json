@@ -1,15 +1,15 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-12T14:29:16.522079+00:00",
-  "commitSha": "f10907be14798a0d76c6dfb219f845f2f110ad5e",
+  "computedAt": "2026-05-12T17:07:30.552018+00:00",
+  "commitSha": "64c5bee1b8413e12dc4b854becc0a6b1ae5a5723",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 27,
+  "durationMs": 23,
   "computation": "term5-aK-audit",
   "scriptFile": "term5_aK_audit.py",
-  "scriptHash": "ac9430176bd7",
-  "scriptCommitSha": "e5b2c216909909ad28a09d215e602795b9ab21e3",
+  "scriptHash": "1f5919d70e1a",
+  "scriptCommitSha": "29c30128bf8ba76eb1f1c1724631851661f8bea8",
   "description": "Term 5 chirality factor a_K — audit of the production closed form `Π(1+sign·h)` over pn-crossings vs four Gram-matrix variants `tr_M(β · β*⁻¹)` (PR #520 follow-up).  The proton showed a 2.2% gap between closed-form (1.000) and Gram-V1 (1.022 = cosh⁴(log q)); this audit tabulates all four mirror conventions across the spectrum so the narrative can be reconciled to a single canonical definition.",
   "contentBlock": "conj:knot-factor-frobenius-pairing",
   "parameters": {
@@ -49,17 +49,50 @@
             "ops": 341
           }
         }
+      },
+      {
+        "atom": "neutron",
+        "Z": 0,
+        "N": 1,
+        "A": 1,
+        "closed_form_aK": 1.0,
+        "gram_variants": {
+          "V1": {
+            "variant": "V1",
+            "value_at_q0": 1.021972498709757,
+            "symbolic": "(q**8 + 4*q**6 + 6*q**4 + 4*q**2 + 1)/(16*q**4)",
+            "ops": 14
+          },
+          "V2": {
+            "variant": "V2",
+            "value_at_q0": 1.2267591396724156,
+            "symbolic": "(q**(527/2) + 5*q**(525/2) + 9*q**(523/2) + 5*q**(521/2) - 5*q**(519/2) - 9*q**(517/2) - 5*q**(515/2) - q**(513/2) - 2*q**(511/2) - 10*q**(509/2) - 16*q**(507/2) + 28*q**(503/2) + 28*q**(501/2) - 16*q**(497/2) - 9*q**(495/2) + 3*q**(493/2) + 5*q**(491/2) - 15*q**(489/2) - 40*q**(487/2) - 24*q**(485/",
+            "ops": 289
+          },
+          "V3": {
+            "variant": "V3",
+            "value_at_q0": 2.1336285766843535,
+            "symbolic": "(q**(601/2) + 5*q**(599/2) + 11*q**(597/2) + 15*q**(595/2) + 14*q**(593/2) + 6*q**(591/2) - 6*q**(589/2) - 14*q**(587/2) - 15*q**(585/2) - 11*q**(583/2) - 5*q**(581/2) - q**(579/2) + 2*q**(565/2) + 10*q**(563/2) + 22*q**(561/2) + 30*q**(559/2) + 28*q**(557/2) + 12*q**(555/2) - 12*q**(553/2) - 28*q**",
+            "ops": 259
+          },
+          "V4": {
+            "variant": "V4",
+            "value_at_q0": 1.2267591396724156,
+            "symbolic": "(q**(527/2) + 5*q**(525/2) + 9*q**(523/2) + 5*q**(521/2) - 5*q**(519/2) - 9*q**(517/2) - 5*q**(515/2) - q**(513/2) - 2*q**(511/2) - 10*q**(509/2) - 16*q**(507/2) + 28*q**(503/2) + 28*q**(501/2) - 16*q**(497/2) - 9*q**(495/2) + 3*q**(493/2) + 5*q**(491/2) - 15*q**(489/2) - 40*q**(487/2) - 24*q**(485/",
+            "ops": 289
+          }
+        }
       }
     ],
     "audited_atoms": [
+      "neutron",
       "proton"
     ],
     "skipped_atoms": [
-      "neutron",
       "deuteron",
       "tritium",
       "helium-3"
     ],
-    "coverage_note": "Partial run: 1/5 atoms audited. Skipped: ['neutron', 'deuteron', 'tritium', 'helium-3']. Re-run with `--atoms p,n,...` (or default = full spectrum) in a higher time budget to backfill."
+    "coverage_note": "Partial run: 2/5 atoms audited. Skipped: ['deuteron', 'tritium', 'helium-3']. Re-run with `--atoms p,n,...` (or default = full spectrum) in a higher time budget to backfill."
   }
 }

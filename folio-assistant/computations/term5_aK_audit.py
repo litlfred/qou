@@ -63,6 +63,7 @@ from __future__ import annotations
 
 import sys
 import time
+import json
 from pathlib import Path
 
 import sympy as sp
@@ -265,13 +266,23 @@ def main() -> int:
             "emitted witness flags partial coverage in `audited_atoms`."
         ),
     )
+    ap.add_argument(
+        "--merge-prior",
+        action="store_true",
+        help=(
+            "Merge results with a pre-existing term5-aK-audit.witness.json "
+            "in the same directory: rows for atoms NOT in --atoms are "
+            "carried over from the prior witness. Enables incremental "
+            "backfills (12+ min/atom) without losing previously-computed "
+            "atoms."
+        ),
+    )
     args = ap.parse_args()
     requested = {a.strip() for a in args.atoms.split(",") if a.strip()}
 
     print("Term 5 a_K — closed-form vs Gram-matrix audit", flush=True)
     print("=" * 64, flush=True)
 
-    rows = []
     full_spectrum = [
         ("proton",   1, 0),
         ("neutron",  0, 1),
@@ -281,6 +292,42 @@ def main() -> int:
     ]
     audited_labels = [lbl for lbl, _, _ in full_spectrum if lbl in requested]
     skipped_labels = [lbl for lbl, _, _ in full_spectrum if lbl not in requested]
+
+    # Optional merge of prior witness rows for atoms we are NOT
+    # re-auditing this run.  Lets a slow backfill add one atom at a
+    # time without losing the rows produced by earlier runs.
+    rows = []
+    carried_over_labels = []
+    if args.merge_prior:
+        prior_path = HERE / "term5-aK-audit.witness.json"
+        if prior_path.exists():
+            try:
+                prior = json.loads(prior_path.read_text())
+                prior_rows = prior.get("data", {}).get("results", []) or []
+                for prow in prior_rows:
+                    plabel = prow.get("atom")
+                    if plabel and plabel not in requested:
+                        rows.append(prow)
+                        carried_over_labels.append(plabel)
+                if carried_over_labels:
+                    print(
+                        f"  carried over {len(carried_over_labels)} prior "
+                        f"row(s): {carried_over_labels}",
+                        flush=True,
+                    )
+                    # Atoms carried over count as audited for the
+                    # coverage_note bookkeeping.
+                    for lbl in carried_over_labels:
+                        if lbl in skipped_labels:
+                            skipped_labels.remove(lbl)
+                        if lbl not in audited_labels:
+                            audited_labels.append(lbl)
+            except (OSError, json.JSONDecodeError) as exc:
+                print(
+                    f"  WARN: --merge-prior requested but prior witness "
+                    f"unreadable ({exc!r}); proceeding without merge.",
+                    flush=True,
+                )
     for label, Z, N in full_spectrum:
         if label not in requested:
             continue
