@@ -1,3 +1,12 @@
+import QOU.Mathlib.SpectralSequence
+import QOU.Mathlib.HeckeAlgebra
+import QOU.Mathlib.WenzlBridgeConcrete
+import QOU.Mathlib.RSKBridge
+import QOU.Mathlib.ArchimedeanRealization
+import QOU.Mathlib.NonAbelianStokes
+import QOU.Mathlib.PermutationEnumeration
+import QOU.Mathlib.UpstreamSubstrateBridge
+
 /-!
 # QOU.Mathlib.Summary — capstone import + master discharge
 
@@ -34,15 +43,6 @@ aggregate result.
 one statement.  Downstream files needing any of them can pick
 them out by destructuring the conjunction.
 -/
-
-import QOU.Mathlib.SpectralSequence
-import QOU.Mathlib.HeckeAlgebra
-import QOU.Mathlib.WenzlBridgeConcrete
-import QOU.Mathlib.RSKBridge
-import QOU.Mathlib.ArchimedeanRealization
-import QOU.Mathlib.NonAbelianStokes
-import QOU.Mathlib.PermutationEnumeration
-import QOU.Mathlib.UpstreamSubstrateBridge
 
 namespace QOU.Mathlib.Summary
 

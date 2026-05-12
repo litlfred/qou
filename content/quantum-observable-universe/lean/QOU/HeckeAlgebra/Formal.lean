@@ -1,3 +1,8 @@
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.ZMod.Basic
+import Mathlib.Tactic
+import QOU.HeckeAlgebra.Common
+
 /-!
 # QOU.HeckeAlgebra.Formal — pre-archimedean Hecke layer over ℤ[q, q⁻¹]
 
@@ -60,11 +65,6 @@ in `QOU.HeckeAlgebra.Realification` and is what crosses the wall.
 - [wenzl1988] Wenzl's y_λ Jones-Markov coefficients —
   rational-in-q.
 -/
-
-import Mathlib.Algebra.Polynomial.Laurent
-import Mathlib.Data.ZMod.Basic
-import Mathlib.Tactic
-import QOU.HeckeAlgebra.Common
 
 namespace QOU.HeckeAlgebra.Formal
 

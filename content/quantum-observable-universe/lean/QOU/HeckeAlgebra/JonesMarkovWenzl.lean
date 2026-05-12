@@ -1,3 +1,10 @@
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.Data.Nat.Partition
+import Mathlib.Tactic
+import QOU.HeckeAlgebra.Common
+import QOU.HeckeAlgebra.MarkovTrace
+import QOU.HeckeAlgebra.QSubstrate
+
 /-!
 # QOU.HeckeAlgebra.JonesMarkovWenzl
 
@@ -47,13 +54,6 @@ type-level interface; concrete computation is deferred.
 - `folio-assistant/computations/wedderburn_jones_markov.py` —
   Python implementation of the Wenzl closed form.
 -/
-
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import Mathlib.Data.Nat.Partition
-import Mathlib.Tactic
-import QOU.HeckeAlgebra.Common
-import QOU.HeckeAlgebra.MarkovTrace
-import QOU.HeckeAlgebra.QSubstrate
 
 namespace QOU.HeckeAlgebra.JonesMarkovWenzl
 

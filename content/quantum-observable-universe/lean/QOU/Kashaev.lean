@@ -1,3 +1,5 @@
+import QOU.PhiQPiece
+
 /-!
 # QOU.Kashaev — Kashaev volume conjecture as a typeclass
 
@@ -29,8 +31,6 @@ etc.) where the conjecture is actually proved.
 - [manuscript] Ch 3 §sec:calibration-algebraic-mass /
   kashaev-volume-conjecture
 -/
-
-import QOU.PhiQPiece
 
 namespace QOU.Kashaev
 

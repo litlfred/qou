@@ -1,3 +1,6 @@
+import QOU.Basic
+import QOU.BraidKnot.CrystalGraphRealization
+
 /-!
 # QOU.BraidKnot.CrystalRMatrixSubLemma — operator-valued Sub-lemma 2.1 (proposition, conditional on `conj:crystal-graph-realization`)
 
@@ -39,9 +42,6 @@ References:
 - Kashiwara, M. (1991). On crystal bases of the q-analogue of
   universal enveloping algebras. Duke Math. J. 63(2).
 -/
-
-import QOU.Basic
-import QOU.BraidKnot.CrystalGraphRealization
 
 namespace QOU.BraidKnot
 

@@ -1,3 +1,6 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Data.Nat.Basic
+
 /-!
 # QOU.BraidKnot.KnotFactorFrobeniusPairing
 
@@ -20,9 +23,6 @@ LaTeX label: `conj:knot-factor-frobenius-pairing`
 - [jones1985] https://www.jstor.org/stable/2007074
 - [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Data.Nat.Basic
 
 namespace QOU.BraidKnot
 

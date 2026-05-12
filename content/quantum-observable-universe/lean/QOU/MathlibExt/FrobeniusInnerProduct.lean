@@ -1,3 +1,7 @@
+import Mathlib.LinearAlgebra.Matrix.PosDef
+import Mathlib.Data.Matrix.Basic
+import Mathlib.Tactic
+
 /-!
 # QOU.MathlibExt.FrobeniusInnerProduct
 
@@ -34,10 +38,6 @@ for closing `strict_complementarity_unique` in
   inner product").
 - [boyd-vandenberghe-2004] §A.1.1 ("Inner product on matrices").
 -/
-
-import Mathlib.LinearAlgebra.Matrix.PosDef
-import Mathlib.Data.Matrix.Basic
-import Mathlib.Tactic
 
 namespace QOU.MathlibExt.FrobeniusInnerProduct
 

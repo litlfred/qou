@@ -1,3 +1,7 @@
+import Mathlib.Data.Nat.Basic
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidKnot.PerPartitionKLambda — per-partition $k_\lambda$ rule
 
@@ -55,10 +59,6 @@ Per PR #639 `probe-phiq-per-partition-klambda.witness.json`:
 Per-partition k_λ rule (`k_dom = 1`, `k_others = 2`) gives
 |tower|<2 for all three atoms.
 -/
-
-import Mathlib.Data.Nat.Basic
-import Mathlib.Data.Real.Basic
-import Mathlib.Tactic
 
 namespace QOU.BraidKnot.PerPartitionKLambda
 

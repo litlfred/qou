@@ -1,3 +1,6 @@
+import QOU.MathlibExt.SDP
+import QOU.HeckeAlgebra.Common
+
 /-!
 # QOU.BraidKnot.CanonicalKnotIdSDPUniqueness
 
@@ -34,9 +37,6 @@ machinery).
 - [todd2001] Todd, *Semidefinite optimization*, Acta Numerica 10
   (2001).
 -/
-
-import QOU.MathlibExt.SDP
-import QOU.HeckeAlgebra.Common
 
 namespace QOU.BraidKnot
 

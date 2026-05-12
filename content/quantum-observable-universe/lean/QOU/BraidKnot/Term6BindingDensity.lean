@@ -1,3 +1,6 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Data.Finset.Basic
+
 /-!
 # QOU.BraidKnot.Term6BindingDensity
 
@@ -31,9 +34,6 @@ LaTeX label: `prop:term6-binding-density`
 - `prop:gb-spectral-sequence`
 - `2026-05-02-Term6-binding-derivation.md` (audit memo)
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Data.Finset.Basic
 
 namespace QOU.BraidKnot
 

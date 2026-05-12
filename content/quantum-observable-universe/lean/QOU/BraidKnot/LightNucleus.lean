@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidKnot.LightNucleus
 
@@ -11,8 +13,6 @@ so it can be referenced from Lake-tracked modules.
 exposes the same API for use by Lake-tracked downstream
 modules.)
 -/
-
-import Mathlib.Tactic
 
 namespace QOU.BraidKnot
 

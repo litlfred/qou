@@ -1,3 +1,13 @@
+import Mathlib.Tactic
+import QOU.HeckeAlgebra.Common
+import QOU.HeckeAlgebra.QSubstrate
+import QOU.BraidKnot.LightNucleus
+import QOU.BraidKnot.WitnessR5Full
+import QOU.BraidKnot.Helium3Witness
+import QOU.BraidKnot.DeuteronWitness
+import QOU.BraidKnot.TritiumWitness
+import QOU.BraidKnot.MassFormulaCategorical
+
 /-!
 # QOU.BraidKnot.PerNucleusMassDerivation
 
@@ -40,16 +50,6 @@ concrete values follow.
 - `QOU.BraidKnot.MassFormulaCategorical` (the abstract formula)
 - `QOU.BraidKnot.{Helium3,Deuteron,Tritium}Witness` (R5-full data)
 -/
-
-import Mathlib.Tactic
-import QOU.HeckeAlgebra.Common
-import QOU.HeckeAlgebra.QSubstrate
-import QOU.BraidKnot.LightNucleus
-import QOU.BraidKnot.WitnessR5Full
-import QOU.BraidKnot.Helium3Witness
-import QOU.BraidKnot.DeuteronWitness
-import QOU.BraidKnot.TritiumWitness
-import QOU.BraidKnot.MassFormulaCategorical
 
 namespace QOU.BraidKnot.PerNucleusMassDerivation
 

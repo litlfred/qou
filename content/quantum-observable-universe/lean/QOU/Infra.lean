@@ -1,3 +1,8 @@
+import QOU.Infra.Polylogarithm
+import QOU.Infra.Clausen
+import QOU.Infra.DirichletL
+import QOU.Infra.BorelRank
+
 /-!
 # QOU axiomatic infrastructure for analytic number theory
 
@@ -18,8 +23,3 @@ See CLAUDE.md §3b-cond: downstream propositions using these
 classes via `[Instance]` hypotheses remain *theorem-level* in
 the manifest (conditional-class exception).
 -/
-
-import QOU.Infra.Polylogarithm
-import QOU.Infra.Clausen
-import QOU.Infra.DirichletL
-import QOU.Infra.BorelRank

@@ -1,3 +1,6 @@
+import QOU.PhiQPiece
+import QOU.Kashaev
+
 /-!
 # QOU.PhiQJSJ — Φ_q tower equals ρ_q · Σ_S Vol(K_S) (archimedean bridge)
 
@@ -28,9 +31,6 @@ bridge theorem is fully verified by Lean.  This is Workplan B from
 - [murakami-murakami2001] https://doi.org/10.1007/BF02392716
 - [thurston1978] https://doi.org/10.1007/978-1-4612-9903-6
 -/
-
-import QOU.PhiQPiece
-import QOU.Kashaev
 
 namespace QOU.PhiQJSJ
 

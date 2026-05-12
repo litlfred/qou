@@ -1,3 +1,7 @@
+import Mathlib.Data.List.Basic
+import Mathlib.Tactic
+import QOU.Interactions.BringShellBinding
+
 /-!
 # QOU.Interactions.DoubleMagicDeltaI — Δi ≤ 1 rule for double-magic isotopes
 
@@ -20,10 +24,6 @@ LaTeX label: `conj:double-magic-delta-i-bound`
 - [manuscript] conj:diagrammatic-double-magic-lr-fusion
 - [manuscript] prop:torus-knot-shell-binding
 -/
-
-import Mathlib.Data.List.Basic
-import Mathlib.Tactic
-import QOU.Interactions.BringShellBinding
 
 namespace QOU.Interactions.DoubleMagicDeltaI
 

@@ -1,3 +1,7 @@
+import Mathlib.Data.Nat.Basic
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
+
 /-!
 # Gap 5 closure: non-tautological brane-tower recovery predicate
 
@@ -94,10 +98,6 @@ case is A=1 where the dominant partition is the only partition with
 significant contribution, so per-partition and uniform-k coincide
 trivially.
 -/
-
-import Mathlib.Data.Nat.Basic
-import Mathlib.Data.Real.Basic
-import Mathlib.Tactic
 
 namespace QOU.BraidKnot.BraneTowerNStar
 

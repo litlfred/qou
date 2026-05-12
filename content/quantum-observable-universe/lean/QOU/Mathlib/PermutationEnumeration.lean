@@ -1,3 +1,6 @@
+import Mathlib.GroupTheory.Perm.Basic
+import Mathlib.Data.Fintype.Perm
+
 /-!
 # QOU.Mathlib.PermutationEnumeration — `Fin n! ≃ Equiv.Perm (Fin n)`
 
@@ -18,9 +21,6 @@ ready for use in encoding the H_n basis.
 **File status**: small upstream-shaped helper using
 existing Mathlib infrastructure.
 -/
-
-import Mathlib.GroupTheory.Perm.Basic
-import Mathlib.Data.Fintype.Perm
 
 namespace QOU.Mathlib.PermutationEnumeration
 

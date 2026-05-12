@@ -1,3 +1,6 @@
+import Mathlib.Combinatorics.Enumerative.Partition
+import Mathlib.Data.Fintype.Card
+
 /-!
 # QOU.Mathlib.RSKBridge — Robinson–Schensted–Knuth bridge to Burnside
 
@@ -42,9 +45,6 @@ hypothesis is content-bearing.
 - Stanley, *Enumerative Combinatorics* Vol 2, Ch. 7.
 - Mathlib partial: `Mathlib.Combinatorics.RSK`.
 -/
-
-import Mathlib.Combinatorics.Enumerative.Partition
-import Mathlib.Data.Fintype.Card
 
 namespace QOU.Mathlib.RSKBridge
 

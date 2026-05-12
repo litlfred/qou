@@ -1,3 +1,9 @@
+import Mathlib.LinearAlgebra.Matrix.PosDef
+import Mathlib.LinearAlgebra.Matrix.Spectrum
+import Mathlib.Tactic
+import QOU.MathlibExt.PosSemidefDiagZero
+import QOU.MathlibExt.FrobeniusInnerProduct
+
 /-!
 # QOU.MathlibExt.PosSemidefTraceZero
 
@@ -34,12 +40,6 @@ This is the "self-polarity" of the PSD cone in matrix space
 - [boyd-vandenberghe-2004] §2.6.1 ("Polar cones, self-polar cones")
 - [horn-johnson-2013] *Matrix Analysis*, Theorem 7.7.4
 -/
-
-import Mathlib.LinearAlgebra.Matrix.PosDef
-import Mathlib.LinearAlgebra.Matrix.Spectrum
-import Mathlib.Tactic
-import QOU.MathlibExt.PosSemidefDiagZero
-import QOU.MathlibExt.FrobeniusInnerProduct
 
 namespace QOU.MathlibExt.PosSemidefTraceZero
 

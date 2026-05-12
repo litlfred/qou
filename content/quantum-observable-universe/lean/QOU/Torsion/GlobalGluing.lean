@@ -1,3 +1,6 @@
+import Mathlib.Algebra.Group.Basic
+import Mathlib.Algebra.Ring.Basic
+
 /-!
 # QOU.Torsion.GlobalGluing — Global gluing of twisted deformations
 
@@ -16,9 +19,6 @@ LaTeX label: `prop:global-gluing`
 - [yekutieli2010] https://doi.org/10.1016/j.aim.2009.12.006
 - [manuscript] §3-lifting-of-quantum-torsion/global-gluing
 -/
-
-import Mathlib.Algebra.Group.Basic
-import Mathlib.Algebra.Ring.Basic
 
 namespace QOU.Torsion
 

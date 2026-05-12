@@ -1,3 +1,9 @@
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Data.Int.Basic
+import Mathlib.Data.Finset.Basic
+import Mathlib.Data.List.Basic
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+
 /-!
 # QOU.Hecke.MarkovTraceProduct — Product factorization of the Markov trace
 
@@ -22,12 +28,6 @@ LaTeX label: `thm:markov-trace-product`
 - [jones1987] https://doi.org/10.2307/1971403
 - [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 -/
-
-import Mathlib.Algebra.Polynomial.Laurent
-import Mathlib.Data.Int.Basic
-import Mathlib.Data.Finset.Basic
-import Mathlib.Data.List.Basic
-import Mathlib.Algebra.BigOperators.Group.Finset
 
 namespace QOU.Hecke
 
