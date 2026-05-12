@@ -1,3 +1,5 @@
+import Mathlib.Algebra.Group.Basic
+
 /-!
 # QOU.Mathlib.NonAbelianStokes — Yekutieli's non-abelian Stokes (axiomatised)
 
@@ -34,8 +36,6 @@ proof) is the upstream target.
   (World Scientific 2015), DOI 10.1142/9165.
 - [manuscript] `def:yekutieli-multiplicative-trace`.
 -/
-
-import Mathlib.Algebra.Group.Basic
 
 namespace QOU.Mathlib.NonAbelianStokes
 

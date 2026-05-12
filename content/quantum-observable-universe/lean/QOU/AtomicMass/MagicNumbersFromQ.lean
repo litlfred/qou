@@ -1,6 +1,6 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.List.Basic
-import Mathlib.Algebra.BigOperators.Group.Finset
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Tactic.NormNum
 

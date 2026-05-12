@@ -1,3 +1,6 @@
+import Mathlib.Tactic
+import QOU.MathlibExt.SDP
+
 /-!
 # QOU.MathlibExt.SDPEmptyConstraints
 
@@ -29,9 +32,6 @@ and each block's SDP is locally trivial-or-tractable).
 
 - [boyd-vandenberghe-2004] Example 4.4.4 ("Constraint-free SDP")
 -/
-
-import Mathlib.Tactic
-import QOU.MathlibExt.SDP
 
 namespace QOU.MathlibExt.SDPEmptyConstraints
 

@@ -1,3 +1,5 @@
+import Mathlib.Data.Real.Basic
+
 /-!
 # QOU.AppendixSurreals.ClassicalLimitStpart
 
@@ -21,8 +23,6 @@ LaTeX label: `conj:classical-limit-stpart`
 - [robinson1966] Non-standard Analysis
 - [berarducci-mantova2018] https://arxiv.org/abs/1503.00315
 -/
-
-import Mathlib.Data.Real.Basic
 
 namespace QOU.AppendixSurreals
 

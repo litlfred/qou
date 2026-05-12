@@ -1,3 +1,6 @@
+import QOU.Basic
+import QOU.BraidKnot.CrystalGraphRealization
+
 /-!
 # QOU.BraidKnot.CemeteryGroupEmergence — cemetery group as ker τ (conjecture)
 
@@ -16,9 +19,6 @@ References:
 - Khovanov, M. & Lauda, A. D. (2009). A diagrammatic approach …
 - Brundan, J. & Kleshchev, A. (2009). Blocks of cyclotomic Hecke …
 -/
-
-import QOU.Basic
-import QOU.BraidKnot.CrystalGraphRealization
 
 namespace QOU.BraidKnot
 

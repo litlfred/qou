@@ -1,5 +1,6 @@
 import QOU.Descartes.GroundRing
 
+set_option maxHeartbeats 4000000
 namespace QOU.Descartes.PauliWitness
 
 /-- F_Pauli for 8Li (Z=3, N=5, A=8), exact in t = q^{1/2}.

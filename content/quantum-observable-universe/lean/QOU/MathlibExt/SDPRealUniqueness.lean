@@ -1,3 +1,7 @@
+import Mathlib.Tactic
+import QOU.MathlibExt.SDP
+import QOU.MathlibExt.PosSemidefTraceZero
+
 /-!
 # QOU.MathlibExt.SDPRealUniqueness
 
@@ -47,10 +51,6 @@ batches 1-10 closed everything else.
 - `QOU.MathlibExt.SDP.dualSlack_trace_eq` (algebraic identity)
 - `QOU.MathlibExt.PosSemidefTraceZero.complementary_slackness`
 -/
-
-import Mathlib.Tactic
-import QOU.MathlibExt.SDP
-import QOU.MathlibExt.PosSemidefTraceZero
 
 namespace QOU.MathlibExt.SDPRealUniqueness
 

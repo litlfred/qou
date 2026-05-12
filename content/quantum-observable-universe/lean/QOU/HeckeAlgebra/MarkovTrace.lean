@@ -1,3 +1,9 @@
+import Mathlib.Data.Nat.Partition
+import Mathlib.Tactic
+import QOU.HeckeAlgebra.Common
+import QOU.HeckeAlgebra.Hoefsmit
+import QOU.HeckeAlgebra.Wedderburn
+
 /-!
 # QOU.HeckeAlgebra.MarkovTrace — extended Markov-trace structure
 
@@ -50,12 +56,6 @@ round.
   Neumann algebras*, Bull. AMS 12 (1985).
 - [kassel2008] Kassel-Turaev, *Braid Groups*, §13.6.
 -/
-
-import Mathlib.Data.Nat.Partition
-import Mathlib.Tactic
-import QOU.HeckeAlgebra.Common
-import QOU.HeckeAlgebra.Hoefsmit
-import QOU.HeckeAlgebra.Wedderburn
 
 namespace QOU.HeckeAlgebra.MarkovTrace
 

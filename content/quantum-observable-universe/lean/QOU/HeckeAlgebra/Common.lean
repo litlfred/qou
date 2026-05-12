@@ -1,3 +1,7 @@
+import Mathlib.Analysis.InnerProductSpace.EuclideanDist
+import Mathlib.Data.Nat.Factorial.Basic
+import Mathlib.Tactic
+
 /-!
 # QOU.HeckeAlgebra.Common — abstract Hecke-algebra-at-q₀ types
 
@@ -39,10 +43,6 @@ Hecke-algebra-valued primal points.
 - [hoefsmit1974] Hoefsmit, *Representations of Hecke algebras of
   finite groups with BN-pairs of classical type* (1974).
 -/
-
-import Mathlib.Analysis.InnerProductSpace.EuclideanDist
-import Mathlib.Data.Nat.Factorial.Basic
-import Mathlib.Tactic
 
 namespace QOU.HeckeAlgebra
 

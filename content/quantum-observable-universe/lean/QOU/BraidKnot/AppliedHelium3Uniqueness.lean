@@ -1,3 +1,13 @@
+import Mathlib.Tactic
+import QOU.MathlibExt.SDP
+import QOU.MathlibExt.SDPEmptyConstraints
+import QOU.MathlibExt.SDPRealUniqueness
+import QOU.HeckeAlgebra.Common
+import QOU.BraidKnot.LightNucleus
+import QOU.BraidKnot.WitnessR5Full
+import QOU.BraidKnot.Helium3Witness
+import QOU.BraidKnot.CanonicalKnotIdSDPUniqueness
+
 /-!
 # QOU.BraidKnot.AppliedHelium3Uniqueness — concrete uniqueness application
 
@@ -47,16 +57,6 @@ immediately for the QOU ³He instance per PR #608.
 - `QOU.BraidKnot.CanonicalKnotIdSDPUniqueness` (abstract bridge)
 - `r5-full-canonical-knot-solver.witness.json` (PR #608 source)
 -/
-
-import Mathlib.Tactic
-import QOU.MathlibExt.SDP
-import QOU.MathlibExt.SDPEmptyConstraints
-import QOU.MathlibExt.SDPRealUniqueness
-import QOU.HeckeAlgebra.Common
-import QOU.BraidKnot.LightNucleus
-import QOU.BraidKnot.WitnessR5Full
-import QOU.BraidKnot.Helium3Witness
-import QOU.BraidKnot.CanonicalKnotIdSDPUniqueness
 
 namespace QOU.BraidKnot
 

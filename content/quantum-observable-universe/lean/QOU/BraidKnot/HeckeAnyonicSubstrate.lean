@@ -1,3 +1,5 @@
+import QOU.Basic
+
 /-!
 # QOU.BraidKnot.HeckeAnyonicSubstrate — anyonic Hecke substrate (conjecture)
 
@@ -25,8 +27,6 @@ References:
 - Khovanov, M. & Lauda, A. D. (2009). A diagrammatic approach to
   categorification of quantum groups I. Representation Theory 13.
 -/
-
-import QOU.Basic
 
 namespace QOU.BraidKnot
 

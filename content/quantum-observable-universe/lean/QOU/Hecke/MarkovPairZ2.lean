@@ -1,3 +1,5 @@
+import QOU.Hecke.MarkovTraceProduct
+
 /-!
 # QOU.Hecke.MarkovPairZ2 — All-pairs Markov-trace identity
 
@@ -37,8 +39,6 @@ LaTeX label: `prop:markov-pair-z2`
 - [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 - [jones1987] https://doi.org/10.2307/1971403
 -/
-
-import QOU.Hecke.MarkovTraceProduct
 
 namespace QOU.Hecke
 

@@ -1,3 +1,6 @@
+import QOU.Interactions.AlgebraicPrimality
+import QOU.LiftingDescent.HomologicalCondensation
+
 /-!
 # QOU.Interactions.MagicLadderEquivalences — magic-ladder predicate equivalences
 
@@ -25,9 +28,6 @@ pairwise equivalent.
 - [manuscript] prop:torus-knot-shell-binding
 - [manuscript] conj:double-magic-delta-i-bound
 -/
-
-import QOU.Interactions.AlgebraicPrimality
-import QOU.LiftingDescent.HomologicalCondensation
 
 namespace QOU.Interactions.MagicLadderEquivalences
 

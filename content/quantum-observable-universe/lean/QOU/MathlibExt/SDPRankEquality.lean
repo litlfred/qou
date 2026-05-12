@@ -1,3 +1,10 @@
+import Mathlib.LinearAlgebra.Matrix.PosDef
+import Mathlib.LinearAlgebra.Matrix.Spectrum
+import Mathlib.LinearAlgebra.Matrix.Rank
+import Mathlib.Tactic
+import QOU.MathlibExt.PosSemidefTraceZero
+import QOU.MathlibExt.SDPRealUniqueness
+
 /-!
 # QOU.MathlibExt.SDPRankEquality
 
@@ -109,13 +116,6 @@ finite-dimensional linear-algebra under Slater (proven from R2).
   nondegeneracy in semidefinite programming*, Math. Programming
 - [todd2001] *Semidefinite optimization*, Acta Numerica §3.4
 -/
-
-import Mathlib.LinearAlgebra.Matrix.PosDef
-import Mathlib.LinearAlgebra.Matrix.Spectrum
-import Mathlib.LinearAlgebra.Matrix.Rank
-import Mathlib.Tactic
-import QOU.MathlibExt.PosSemidefTraceZero
-import QOU.MathlibExt.SDPRealUniqueness
 
 namespace QOU.MathlibExt.SDPRankEquality
 

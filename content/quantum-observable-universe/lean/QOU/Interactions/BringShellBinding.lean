@@ -1,3 +1,6 @@
+import Mathlib.Data.Set.Basic
+import QOU.LiftingDescent.HomologicalCondensation
+
 /-!
 # QOU.Interactions.BringShellBinding — Bring's surface, six torus knots, and the magic ladder
 
@@ -27,9 +30,6 @@ LaTeX label: cross-cutting; cross-references
 - [manuscript] descartes-universe / torus-knot-generators
 - [manuscript] conj:magic-requires-higher-cohomology
 -/
-
-import Mathlib.Data.Set.Basic
-import QOU.LiftingDescent.HomologicalCondensation
 
 namespace QOU.Interactions.BringShellBinding
 

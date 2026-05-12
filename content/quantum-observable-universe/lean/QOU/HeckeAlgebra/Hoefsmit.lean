@@ -1,3 +1,9 @@
+import Mathlib.Combinatorics.Young.YoungDiagram
+import Mathlib.Combinatorics.Young.SemistandardTableau
+import Mathlib.Data.Nat.Partition
+import Mathlib.Tactic
+import QOU.HeckeAlgebra.Common
+
 /-!
 # QOU.HeckeAlgebra.Hoefsmit — seminormal representation skeleton
 
@@ -64,12 +70,6 @@ This module captures the type-level interface; the construction
 - [kassel2008] Kassel-Turaev, *Braid Groups*, Springer GTM 247
   §13.6.
 -/
-
-import Mathlib.Combinatorics.Young.YoungDiagram
-import Mathlib.Combinatorics.Young.SemistandardTableau
-import Mathlib.Data.Nat.Partition
-import Mathlib.Tactic
-import QOU.HeckeAlgebra.Common
 
 namespace QOU.HeckeAlgebra.Hoefsmit
 

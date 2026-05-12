@@ -1,3 +1,6 @@
+import Mathlib.Tactic
+import QOU.BraidKnot.LightNucleus
+
 /-!
 # QOU.BraidKnot.WitnessR5Full
 
@@ -29,9 +32,6 @@ hardcoded numerical instance for `³He` with the values from
 - `r5-full-canonical-knot-solver.witness.json` (PR #608)
 - `binding-k-solver.witness.json` (PR #604 deliverable 4)
 -/
-
-import Mathlib.Tactic
-import QOU.BraidKnot.LightNucleus
 
 namespace QOU.BraidKnot
 

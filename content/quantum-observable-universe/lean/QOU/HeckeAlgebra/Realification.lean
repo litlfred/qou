@@ -1,3 +1,9 @@
+import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Tactic
+import QOU.HeckeAlgebra.Common
+import QOU.HeckeAlgebra.QSubstrate
+import QOU.HeckeAlgebra.Formal
+
 /-!
 # QOU.HeckeAlgebra.Realification — wall crossing at q = q_0
 
@@ -54,12 +60,6 @@ Consequences:
   formal categorical-to-real map.
 - `QOU.HeckeAlgebra.QSubstrate.q_0` — the substrate parameter.
 -/
-
-import Mathlib.Algebra.Polynomial.Laurent
-import Mathlib.Tactic
-import QOU.HeckeAlgebra.Common
-import QOU.HeckeAlgebra.QSubstrate
-import QOU.HeckeAlgebra.Formal
 
 namespace QOU.HeckeAlgebra.Realification
 

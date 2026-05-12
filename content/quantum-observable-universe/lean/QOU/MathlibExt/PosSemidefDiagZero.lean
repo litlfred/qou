@@ -1,3 +1,6 @@
+import Mathlib.LinearAlgebra.Matrix.PosDef
+import Mathlib.Tactic
+
 /-!
 # QOU.MathlibExt.PosSemidefDiagZero
 
@@ -46,9 +49,6 @@ diagonalised product `D · C` is zero when `tr(D · C) = 0`.
 - [boyd-vandenberghe-2004] §A.5.3 ("Positive semidefinite
   matrices have non-negative principal minors")
 -/
-
-import Mathlib.LinearAlgebra.Matrix.PosDef
-import Mathlib.Tactic
 
 namespace QOU.MathlibExt.PosSemidefDiagZero
 

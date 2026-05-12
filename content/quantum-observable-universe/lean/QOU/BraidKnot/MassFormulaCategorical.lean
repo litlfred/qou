@@ -1,3 +1,6 @@
+import Mathlib.Tactic
+import QOU.HeckeAlgebra.Common
+
 /-!
 # QOU.BraidKnot.MassFormulaCategorical
 
@@ -47,9 +50,6 @@ real `T_w` values awaits the Hoefsmit-machinery port.
 - `QOU.HeckeAlgebra.Common.markovTrace` (axiomatised tr_M)
 - `def:m-e-codata` (m_e MeV calibration)
 -/
-
-import Mathlib.Tactic
-import QOU.HeckeAlgebra.Common
 
 namespace QOU.BraidKnot.MassFormulaCategorical
 

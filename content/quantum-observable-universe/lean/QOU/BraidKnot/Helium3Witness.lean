@@ -1,3 +1,7 @@
+import Mathlib.Tactic
+import QOU.BraidKnot.LightNucleus
+import QOU.BraidKnot.WitnessR5Full
+
 /-!
 # QOU.BraidKnot.Helium3Witness — concrete R5-full witness for ³He
 
@@ -40,10 +44,6 @@ SDP search is the Python compute layer's responsibility (PR #608
 - `joint-tower-sdp-h6-h9.witness.json` (related Hopf
   identification at H_6)
 -/
-
-import Mathlib.Tactic
-import QOU.BraidKnot.LightNucleus
-import QOU.BraidKnot.WitnessR5Full
 
 namespace QOU.BraidKnot
 

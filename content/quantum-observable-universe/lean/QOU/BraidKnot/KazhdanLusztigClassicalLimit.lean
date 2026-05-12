@@ -1,3 +1,7 @@
+import QOU.Basic
+import QOU.BraidKnot.HeckeAnyonicSubstrate
+import QOU.BraidKnot.CrystalGraphRealization
+
 /-!
 # QOU.BraidKnot.KazhdanLusztigClassicalLimit — q → 1 classical limit (conjecture)
 
@@ -19,10 +23,6 @@ References:
 - Kashiwara, M. (1991).
 - Lecouvey, C. (2007).
 -/
-
-import QOU.Basic
-import QOU.BraidKnot.HeckeAnyonicSubstrate
-import QOU.BraidKnot.CrystalGraphRealization
 
 namespace QOU.BraidKnot
 

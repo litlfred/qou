@@ -1,3 +1,7 @@
+import Mathlib.Tactic
+import QOU.BraidKnot.LightNucleus
+import QOU.BraidKnot.WitnessR5Full
+
 /-!
 # QOU.BraidKnot.TritiumWitness — placeholder R5-full witness for ³H
 
@@ -31,10 +35,6 @@ seminormal representation.
 - `folio-assistant/computations/hecke_characters.py` (Python H_3
   / H_4 implementation; H_5 awaits port)
 -/
-
-import Mathlib.Tactic
-import QOU.BraidKnot.LightNucleus
-import QOU.BraidKnot.WitnessR5Full
 
 namespace QOU.BraidKnot
 

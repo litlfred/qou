@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # QOU.Encounter.MostowRigidity
 
@@ -98,8 +100,6 @@ not the absolute value.
 - [witten2011]  Witten, *Analytic continuation of Chern-Simons
   theory*, Chern-Simons Gauge Theory: 20 Years After (2011).
 -/
-
-import Mathlib.Tactic
 
 namespace QOU.Encounter.MostowRigidity
 

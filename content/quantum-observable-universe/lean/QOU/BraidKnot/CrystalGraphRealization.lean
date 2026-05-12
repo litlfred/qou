@@ -1,3 +1,5 @@
+import QOU.Basic
+
 /-!
 # QOU.BraidKnot.CrystalGraphRealization — crystal-graph realisation (conjecture)
 
@@ -21,8 +23,6 @@ References:
   systems of types A_n, B_n, C_n, D_n and G_2. MSJ Memoirs 17.
 - Khovanov, M. & Lauda, A. D. (2009). A diagrammatic approach …
 -/
-
-import QOU.Basic
 
 namespace QOU.BraidKnot
 
