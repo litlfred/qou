@@ -267,6 +267,19 @@ def main() -> int:
         ),
     )
     ap.add_argument(
+        "--variants",
+        default="V1,V2,V3,V4",
+        help=(
+            "Comma-separated subset of mirror variants {V1,V2,V3,V4} to "
+            "audit. Default = all four. V1 (β⁻¹ in Hecke) is fast (~0.5s "
+            "even at A=2); V2-V4 explore alternative mirror conventions "
+            "and exhibit symbolic blowup at A≥2 (V2 alone takes >34 min "
+            "for deuteron in this implementation). Use `--variants V1` "
+            "for fast incremental backfill of the canonical-Hecke variant "
+            "across the spectrum."
+        ),
+    )
+    ap.add_argument(
         "--merge-prior",
         action="store_true",
         help=(
@@ -279,6 +292,13 @@ def main() -> int:
     )
     args = ap.parse_args()
     requested = {a.strip() for a in args.atoms.split(",") if a.strip()}
+    requested_variants = [
+        v.strip() for v in args.variants.split(",")
+        if v.strip() in {"V1", "V2", "V3", "V4"}
+    ]
+    if not requested_variants:
+        print("ERROR: no valid variants in --variants", flush=True)
+        return 2
 
     print("Term 5 a_K — closed-form vs Gram-matrix audit", flush=True)
     print("=" * 64, flush=True)
@@ -356,7 +376,7 @@ def main() -> int:
             })
             continue
         variant_results = {}
-        for variant in ("V1", "V2", "V3", "V4"):
+        for variant in requested_variants:
             try:
                 t0 = time.time()
                 r = aK_via_gram_shared(

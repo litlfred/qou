@@ -136,10 +136,35 @@ stand up a new production-grade `term5_aK_canonical.py`); (b) emit
 (c) in `paper_six_term_mass()`, replace the
 `chirality_signs_for_isotope` lookup with a witness-driven $a_K$.
 
+**Status (2026-05-12, this PR):**
+- (a) ✅ Done — script lives at `folio-assistant/computations/term5_aK_audit.py`.
+- (b) ✅ V1 backfill done for {p, n, D, T, ³He}; V2–V4 done for {p, n}
+  only. ⁴He still blocked on P1.E (no canonical Model B braid). Witness:
+  `folio-assistant/computations/term5-aK-audit.witness.json`. Run with
+  `--merge-prior` for incremental backfills; use `--variants V1` to skip
+  the slow symbolic mirror conventions (V2 alone takes >34 min for
+  deuteron in this implementation — unbounded for A=3).
+- (c) ⏳ Blocked on owner choice of canonical mirror convention (V1 is
+  the natural Hecke choice; V2/V3/V4 are alternative "mirror knot"
+  conventions whose physical meaning differs).
+
+**V1 audit results (Δ vs heuristic closed-form):**
+
+| Atom    | closed-form $a_K$ | V1 ($\tau(\beta\beta^{-1})$) | Δ_V1 |
+|---------|------------------:|-----------------------------:|------:|
+| proton  | 1.000000          | 1.021972                     | 0.0220 |
+| neutron | 1.000000          | 1.021972                     | 0.0220 |
+| D       | 1.209060          | 1.055840                     | 0.1532 |
+| T       | 1.209060          | 1.079039                     | 0.1300 |
+| ³He     | 1.209060          | 1.079039                     | 0.1300 |
+
+V1(T) = V1(³He) is an emergent symmetry — flag for narrative
+reconciliation (heuristic gives the same closed-form for these two by
+construction; canonical Markov pairing also agrees).
+
 **Sanity check:** 2.2 % delta vs heuristic on the proton (per PR #520
-audit). If V1 (= reverse-and-invert, ie $\beta^{-1}$) gives different
-answers from V2 (= invert-each-keep-order, ie mirror knot $K^*$),
-flag it for narrative reconciliation.
+audit). At A≥2 the delta jumps to 13–15 % — production wiring of V1
+will shift the multi-nucleon mass predictions by O(15 %) on T5.
 
 **Calibration discipline note:** $\tau(\beta\beta^{*-1})$ is a Markov
 trace — Markov-invariant by construction, no calibration anchor used.
