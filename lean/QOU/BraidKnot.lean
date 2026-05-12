@@ -1,3 +1,15 @@
+import QOU.BraidKnot.CyclotomicLValueDecomposition
+import QOU.BraidKnot.CyclotomicTrilogImaginary
+import QOU.BraidKnot.CyclotomicCl3OrbitSum
+import QOU.BraidKnot.CyclotomicDepth3DimensionSynthesis
+import QOU.BraidKnot.JonquiereCyclotomicTateRationality
+import QOU.BraidKnot.CyclotomicOrbitSumAllDepths
+import QOU.BraidKnot.CyclotomicDimensionSynthesisAllDepths
+import QOU.BraidKnot.QHeckeSeminormalCharacterClosure
+import QOU.BraidKnot.BringTrilogImaginaryTateRational
+import QOU.BraidKnot.Cl3Zeta5OrbitSum
+import QOU.BraidKnot.Cl3Zeta5PslqIndependence
+import QOU.BraidKnot.KnotIndexedConvolutionGrid
 import QOU.BraidKnot.ConfinedParticle
 import QOU.BraidKnot.ConfinementCategory
 import QOU.BraidKnot.ElectronShell
@@ -9,6 +21,7 @@ import QOU.BraidKnot.MathlibBridge
 import QOU.BraidKnot.ConfinementPhaseStratification
 import QOU.BraidKnot.ThreeCalibrationInputs
 import QOU.BraidKnot.ConfinementLevel
+import QOU.BraidKnot.ChiralityWritheRibbon
 import QOU.BraidKnot.GradedMarkovTraceFromGSFiltration
 import QOU.BraidKnot.ResidueAtRoot
 import QOU.BraidKnot.GBSpectralSequence
@@ -16,6 +29,19 @@ import QOU.BraidKnot.GradedTraceResidueSplit
 import QOU.BraidKnot.GBResidueSpectralSum
 import QOU.BraidKnot.JetTowerUniformDeltaMax
 import QOU.BraidKnot.PhiQTowerAlgebraicStratification
+import QOU.BraidKnot.CanonicalKnotIdSDPUniqueness
+import QOU.BraidKnot.PSDFeasibilityProxy
+import QOU.BraidKnot.HopfBindingK
+import QOU.BraidKnot.LightNucleus
+import QOU.BraidKnot.WitnessR5Full
+import QOU.BraidKnot.Helium3Witness
+import QOU.BraidKnot.DeuteronWitness
+import QOU.BraidKnot.TritiumWitness
+import QOU.BraidKnot.MassFormulaCategorical
+import QOU.BraidKnot.AppliedHelium3Uniqueness
+import QOU.BraidKnot.AppliedDeuteronUniqueness
+import QOU.BraidKnot.AppliedTritiumUniqueness
+import QOU.BraidKnot.PerNucleusMassDerivation
 
 /-!
 # BraidKnot — Module Index
@@ -36,4 +62,5 @@ and phase stratification.
 - ShellNeutrality: full-twist θ_n = 1 ↔ κ_λ = 0 ↔ self-conjugate λ
 - MathlibBridge: fromMathlib bridge to Mathlib.Combinatorics.Young.YoungDiagram
 - ConfinementPhaseStratification: Ω(P) open, local μ constancy
+- ChiralityWritheRibbon: a_K = 1 + w·h + O(h²) from ribbon-twist framing
 -/

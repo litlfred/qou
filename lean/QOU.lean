@@ -12,6 +12,25 @@
 -- import Fred2005
 
 import QOU.Basic
+import QOU.MathlibExt
+import QOU.MathlibExt.SDP
+import QOU.MathlibExt.SDPEmptyConstraints
+import QOU.MathlibExt.SDPRealUniqueness
+-- Per Copilot review: `QOU.MathlibExt.SDPRankEquality` is kept
+-- OUT of the top-level umbrella while it still has `sorry`
+-- placeholders (rank-nullity Mathlib API + Goldman-Tucker
+-- categorical axiom).  Downstream code that needs the full
+-- rank-equality chain can import it directly:
+--   `import QOU.MathlibExt.SDPRankEquality`
+-- This keeps QOU's baseline dependency surface clean for
+-- consumers who only need the closed (interior + active-empty)
+-- cases via `SDPRealUniqueness`.
+import QOU.MathlibExt.PosSemidefTraceZero
+import QOU.MathlibExt.PosSemidefDiagZero
+import QOU.MathlibExt.FrobeniusInnerProduct
+import QOU.MathlibExt.QPlancherel
+import QOU.MathlibExt.MonoidalCalcVar
+import QOU.HeckeAlgebra
 import QOU.Glossary
 import QOU.KnotTheory
 import QOU.KnotRegistry
@@ -35,6 +54,7 @@ import QOU.GradedFrobeniusHopf
 import QOU.ChannelSeparation
 import QOU.Descartes
 import QOU.Interactions
+import QOU.Encounter
 import QOU.BraidKnot
 import QOU.ArchimedeanMassFormula
 import QOU.CODATAChain
@@ -55,3 +75,4 @@ import QOU.MassEndomorphism
 import QOU.PhiQPiece
 import QOU.Kashaev
 import QOU.PhiQJSJ
+import QOU.Infra

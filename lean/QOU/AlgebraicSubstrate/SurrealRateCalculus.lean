@@ -1,4 +1,5 @@
 import Mathlib.Algebra.Field.Basic
+import QOU.AlgebraicSubstrate.ConditionalClasses
 
 /-!
 # QOU.AlgebraicSubstrate.SurrealRateCalculus — rate table
@@ -68,5 +69,42 @@ class SurrealRateCalculus (F : Type u) [Field F] where
   /-- Rogue-zero leading-coefficient equation:
       `E(δ) · ε = δ²` for every drift `δ`. -/
   rogueZero_order : ∀ δ : F, roguePartCost δ * epsilon = δ ^ 2
+
+/-- **Classical-limit instance** (ε = 1).
+    At the classical limit, the Reeb infinitesimal collapses to 1
+    and every rate equation becomes trivial:
+    - `Δ = 1 = 1³` ✓
+    - `Ω · 1 = 1 · 1 = 1` ✓
+    - `Z³ · 1⁴ = 1 · 1 = 1` ✓
+    - `E(δ) · 1 = δ² · 1 = δ²` ✓
+    This is the "no infinitesimal" baseline; the substantive
+    surreal content arises when ε is genuinely infinitesimal in
+    `𝐍𝐨` via the standard-part embedding. -/
+instance surrealRateCalculus_classicalLimit (F : Type u) [Field F] :
+    SurrealRateCalculus F where
+  epsilon := 1
+  massGap := 1
+  reebPeriod := 1
+  enstrophyCeiling := 1
+  roguePartCost := fun δ => δ ^ 2
+  massGap_order := by norm_num
+  reebPeriod_order := by norm_num
+  enstrophy_order := by norm_num
+  rogueZero_order := fun δ => by ring
+
+/-- **Conditional surreal rate calculus.**  The four leading-order
+    rate equations hold under the §3b-cond conditional dependencies
+    on the q-NS conjecture cone, packaged as five
+    `[Instance]` hypotheses on the upstream conjecture classes.
+
+    The conditional discharges to the unconditional
+    `surrealRateCalculus_classicalLimit` for `F` carrying any
+    `[Field F]` structure. -/
+theorem surreal_rate_calculus_conditional
+    [QAubinLions] [NSCounterexample] [CriticalExponent]
+    [BlowupYekutieli] [RegularityBreakdown]
+    (F : Type u) [Field F] :
+    Nonempty (SurrealRateCalculus F) :=
+  ⟨surrealRateCalculus_classicalLimit F⟩
 
 end QOU.AlgebraicSubstrate

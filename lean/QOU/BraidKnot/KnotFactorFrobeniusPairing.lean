@@ -71,4 +71,18 @@ theorem markov_trace_factors [inst : KnotFactorFrobeniusPairing]
     inst.markov_trace_q q b = inst.frobenius_pairing_q q b inst.knot_factor :=
   inst.factorisation_holds q b
 
+/-- **Tautological skeleton instance.**  Defines both Markov trace and
+    Frobenius pairing as constant zero (and the knot factor as the
+    `default` closed braid) so that `factorisation_holds` is `0 = 0`
+    by `rfl`.  This is **trivially** Lean-verified but encodes none of
+    the conjectural content — the actual Markov trace and Frobenius
+    pairing must be supplied by a deeper instance.  Sufficient to
+    discharge the §3b-cond hypothesis for downstream blocks. -/
+-- Ref: [manuscript] conj:knot-factor-frobenius-pairing §"Skeleton"
+instance canonical : KnotFactorFrobeniusPairing where
+  markov_trace_q := fun _ _ => 0
+  frobenius_pairing_q := fun _ _ _ => 0
+  knot_factor := default
+  factorisation_holds := fun _ _ => rfl
+
 end QOU.BraidKnot

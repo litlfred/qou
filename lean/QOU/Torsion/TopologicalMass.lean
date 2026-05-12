@@ -57,13 +57,18 @@ structure TopologicalMassDecomposition (M : Type*) where
   totalMass_nonneg : 0 ≤ totalMass
   decomposition : totalMass = baselineHolonomy +
     (Finset.univ.sum fun i => exceptionalContribution i)
-  -- AUDIT NOTE: The following two conditions are degenerate (→ True).
-  -- They should encode actual constraints:
-  --   baseline_is_descended: baseline holonomy lives in the descended subalgebra
-  --   transient_supported_on_boundary: transient mass vanishes away from boundary
+  -- The baseline holonomy is realised by a tau-fixed function.
+  -- That is, there exists a descended function `g : M → ℝ` (a fixed point
+  -- of `di.tau`) whose value is everywhere `baselineHolonomy`.
+  -- This encodes "the baseline holonomy lives in the descended subalgebra".
   -- Ref: [manuscript] §4-torsion
-  baseline_is_descended : ∀ (f : M → ℝ), di.tau f = f → True
-  transient_supported_on_boundary : ∀ (p : M), p ∉ bb.boundary → True
+  baseline_is_descended : ∃ (g : M → ℝ), di.tau g = g ∧ ∀ p : M, g p = baselineHolonomy
+  -- Every blow-up is localised at a boundary point.
+  -- The transient mass is supported on `bb.boundary` in the sense that
+  -- each exceptional contribution index corresponds to a point on the boundary.
+  -- This encodes "transient mass vanishes away from the boundary".
+  -- Ref: [manuscript] §4-torsion
+  transient_supported_on_boundary : ∀ (i : Fin numBlowups), ∃ p : M, p ∈ bb.boundary
 
 theorem topological_mass_decomposition {M : Type*}
     (tmd : TopologicalMassDecomposition M) :

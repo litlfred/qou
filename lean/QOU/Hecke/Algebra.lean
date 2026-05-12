@@ -76,8 +76,17 @@ theorem inv_formula (i : Generator n) :
     HA.embed i * (HA.embed i - (q - q⁻¹) • 1) = 1 ∧
     (HA.embed i - (q - q⁻¹) • 1) * HA.embed i = 1 := by
   -- Ref: [manuscript] Kassel (1995), §XII.1; Hecke quadratic ⇒ σ_i^{-1} = σ_i - (q-q⁻¹).
-  -- Substantive proof uses HA.quadratic at index i and ring manipulation.
-  refine ⟨?_, ?_⟩ <;> sorry
+  -- Proof: from HeckeQuadratic, σ_i² = (q-q⁻¹)·σ_i + 1.
+  -- LHS1: σ_i·(σ_i - (q-q⁻¹)·1) = σ_i² - (q-q⁻¹)·σ_i = 1. ✓
+  -- LHS2: (σ_i - (q-q⁻¹)·1)·σ_i = σ_i² - (q-q⁻¹)·σ_i = 1. ✓
+  have hq := HA.quadratic i
+  refine ⟨?_, ?_⟩
+  · -- embed i * (embed i - (q - q⁻¹) • 1) = 1
+    rw [mul_sub, mul_smul_comm, mul_one, hq]
+    abel
+  · -- (embed i - (q - q⁻¹) • 1) * embed i = 1
+    rw [sub_mul, smul_mul_assoc, one_mul, hq]
+    abel
 
 end HeckeAlgebra
 

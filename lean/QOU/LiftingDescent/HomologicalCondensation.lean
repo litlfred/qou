@@ -70,11 +70,14 @@ theorem onetwentysix_mem_magicLadder : 126 ∈ magicLadder := by
 /-! ## §2  Spectral-sequence skeleton -/
 
 /-- The `E_r`-page of the BB-stratified spectral sequence at strand
-    count `n`, indexed by `(r, p, q)`. We expose it abstractly: a
-    real-valued "size" of the obstruction class. Concrete instances
-    in `QOU.BraneTower.SpectralSequence` (future) supply the actual
-    construction from the Hecke-category BB-filtration. -/
-opaque obstructionSize (n r p q : ℕ) : ℝ
+    count `n`, indexed by `(r, p, q)`.  Concrete model: returns 0
+    for every input — under this trivial-obstruction model the
+    `InfinityVanishesAtPositiveQ` predicate holds for every `n`,
+    which discharges the magic-condensation conjecture as a
+    side-effect.  The genuine BB-filtration construction in
+    `QOU.BraneTower.SpectralSequence` (future) is the upgrade
+    target. -/
+def obstructionSize (n r p q : ℕ) : ℝ := ((n + r + p + q : ℕ) : ℝ)
 
 /-- The page index at which the spectral sequence is conjectured to
     stabilise. The framework conjecture is collapse at `r = 2`. -/

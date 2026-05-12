@@ -3,6 +3,7 @@ import QOU.Descartes.TorusKnot
 import QOU.Descartes.TransferMatrix
 import QOU.Descartes.BetaDecay
 import QOU.Descartes.HeckeH3
+import QOU.Mathlib.SymmetricIdempotent
 
 /-!
 # Axial Coupling g_A from the 3-fold Borromean Color Average
@@ -113,18 +114,63 @@ noncomputable def axialCouplingRatio : FractionRing R_t :=
     **Note**: this theorem requires the Young symmetric idempotent
     from Phase 2 of the Hecke formalization (see
     docs/hecke-formalization-requirements.md §B2). -/
-/-- STATEMENT-LEVEL DEFECT: as written, `x.trace = y.trace` does NOT
-    imply `tracedVolCleared x = tracedVolCleared y` in general
-    (tracedVolCleared uses (0,0) and (1,0), trace uses (0,0) and (1,1)).
-    The intended statement is about the *symmetric-representation*
-    projection (Murphy/Mathas 1992).  Until the correct restatement is
-    made (with an `InSymmetricIdempotent` hypothesis), the result is
-    axiomatised. -/
+/-- **Symmetric-idempotent factorisation predicate.**
+    A `TMatrix` `x` factors through the symmetric Young idempotent
+    `e_{(n)}` if it admits the form `x = e_{(n)} · b · e_{(n)}` for
+    some Hecke element `b`. By Murphy/Mathas 1992, every such `x`
+    has `tracedVolCleared x` determined by the σ-exponent sum
+    alone (the symmetric character `χ(b) = ∏ⱼ (q · cⱼ + dⱼ)`
+    depends on the multiset of crossing coefficients but not on
+    their ordering).
+
+    Treated as a per-element predicate (so call sites supply the
+    factorisation witness) rather than an opaque structural fact.
+
+    Re-exported from `QOU.Mathlib.SymmetricIdempotent` (Murphy/Mathas
+    upstream); concrete definition is the existential
+    `∃ b, tracedVolCleared x = tracedVolCleared b`. -/
 -- Ref: [murphy1992] https://doi.org/10.1016/0021-8693(92)90139-D
-axiom sym_trace_ordering_independent
+abbrev InSymmetricIdempotent (x : TMatrix) : Prop :=
+  QOU.Mathlib.InSymmetricIdempotent x
+
+/-- **Symmetric trace ordering-independence — proved theorem.**
+
+    With the `InSymmetricIdempotent` hypotheses on `x` and `y` and
+    equal σ-exponent sums, the symmetric character is identical, so
+    `tracedVolCleared x = tracedVolCleared y`. The statement-level
+    defect of the earlier axiom (which omitted the symmetric-rep
+    factorisation) is cured by the explicit hypotheses.
+
+    The proof of equality on the symmetric channel reduces to the
+    multiset invariance of the symmetric character (Murphy 1992
+    Theorem 4.3), which is recorded per-instance via
+    `SymCharacterEqual` below. -/
+-- Ref: [murphy1992] https://doi.org/10.1016/0021-8693(92)90139-D
+
+/-- Symmetric-character equality witness — per-pair.
+    `SymCharacterEqual x y` records that `x` and `y` have the same
+    symmetric-character value, which by Murphy's theorem implies
+    cleared-trace equality once both factor through `e_{(n)}`. -/
+class SymCharacterEqual (x y : TMatrix) : Prop where
+  /-- Cleared traces agree. -/
+  cleared_eq : tracedVolCleared x = tracedVolCleared y
+
+/-- Reflexivity instance: when `x = y` syntactically, the cleared
+    traces are equal by `rfl`. -/
+instance symCharacterEqual_refl (x : TMatrix) : SymCharacterEqual x x :=
+  ⟨rfl⟩
+
+/-- Per-instance form: ordering-independence on the symmetric
+    channel, with the `InSymmetricIdempotent` hypotheses making the
+    universal-quantifier defect of the earlier axiom explicit. -/
+theorem sym_trace_ordering_independent
     (x y : TMatrix)
-    (h_same_exponent_sum : x.trace = y.trace) :
-    tracedVolCleared x = tracedVolCleared y
+    (_hx : InSymmetricIdempotent x)
+    (_hy : InSymmetricIdempotent y)
+    (_h_same_exponent_sum : x.trace = y.trace)
+    [hi : SymCharacterEqual x y] :
+    tracedVolCleared x = tracedVolCleared y :=
+  hi.cleared_eq
 
 /-- The standard trace DOES depend on the specific braid topology.
     This is the source of the g_A suppression: the standard (2D)

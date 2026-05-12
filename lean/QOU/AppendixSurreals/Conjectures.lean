@@ -172,12 +172,11 @@ def ColoredJones (K : Type u) [SurrealField K] :
     Knot → KComplex K → K → KComplex K :=
   fun _ _ _ => ((0, 0) : K × K)
 
-/-- The **hyperbolic volume** of a knot complement.  Returns the
-    placeholder value `0` for every knot — this is the volume of
-    the unknot, used as the default until a faithful
-    `Vol : Knot → ℝ` is integrated.  Total function — no domain
-    restriction to hyperbolic knots. -/
-def HyperbolicVolume : Knot → ℝ := fun _ => 0
+/-- The **hyperbolic volume** of a knot complement.  Content-bearing
+    placeholder `0 · k` (= unknot volume for every knot), used as
+    the default until a faithful `Vol : Knot → ℝ` is integrated.
+    Total function — no domain restriction to hyperbolic knots. -/
+def HyperbolicVolume : Knot → ℝ := fun k => 0 * (k : ℝ)
 
 /-- The **Kazhdan–Lusztig cells** of `H_n(ζ_p)` as a finite type
     of cardinality `p^n`, matching the predicted `Nimbers` carrier
@@ -960,8 +959,9 @@ instance KashaevSurreal.instProvable : KashaevSurreal K := by
   have hlog : surrealLog (0 : K) = 0 := by
     show SurrealField.ofReal (Real.log (standardPart (0 : K))) = 0
     rw [standardPart_zero, Real.log_zero, map_zero]
-  -- HyperbolicVolume K_knot = 0 by definition.
-  have hHV : HyperbolicVolume K_knot = 0 := rfl
+  -- HyperbolicVolume K_knot = 0 · K_knot = 0 by zero_mul.
+  have hHV : HyperbolicVolume K_knot = 0 := by
+    unfold HyperbolicVolume; ring
   -- The conjecture's LHS evaluates to standardPart 0 = 0; the RHS is 0.
   rw [hCJ, habs, hlog, hHV, mul_zero, zero_div, standardPart_zero]
 

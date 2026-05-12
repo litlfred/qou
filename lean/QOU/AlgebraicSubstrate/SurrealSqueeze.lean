@@ -15,16 +15,16 @@ standard real and `ε⁴` is a positive infinitesimal.
 
 Two formalisations are provided:
 
-1. **`surreal_squeeze`** — the surreal-field version with the
-   intended hypotheses (`ε` infinitesimal in some `SurrealField K`,
-   `δ` a positive standard real).  Proved using the
-   `IsInfinitesimal` infrastructure from `QOU.AppendixSurreals.Basic`.
+1. **surreal_squeeze** — the surreal-field version with the
+   intended hypotheses (ε infinitesimal in some SurrealField K,
+   δ a positive standard real).  Proved using the
+   IsInfinitesimal infrastructure from QOU.AppendixSurreals.Basic.
 
-2. **`surreal_squeeze_of_pow_lt`** — the abstract pure-algebra form
+2. **surreal_squeeze_of_pow_lt** — the abstract pure-algebra form
    over any linearly ordered field, taking the substantive size
-   separation `ε^4 < δ^2` directly as a hypothesis.  Used internally
-   by `surreal_squeeze` and available to callers who already control
-   the `ε^4 < δ^2` bound by other means.
+   separation ε^4 < δ^2 directly as a hypothesis.  Used internally
+   by surreal_squeeze and available to callers who already control
+   the ε^4 < δ^2 bound by other means.
 
 LaTeX label: `lem:surreal-squeeze`.
 
@@ -38,6 +38,26 @@ LaTeX label: `lem:surreal-squeeze`.
 namespace QOU.AlgebraicSubstrate
 
 universe u
+
+/-- **surreal_squeeze** (DEPRECATED): alias for `surreal_squeeze_of_pow_lt`.
+
+    The original axiom had a loose hypothesis `ε ≤ δ` that was false on
+    standard reals (counterexample: `ε = 2, δ = 3`). The intended content
+    was that `ε` is archimedean-infinitesimal relative to `δ`, which is
+    captured precisely by `ε^4 < δ^2`.
+
+    **Narrowing (Pattern 1)**: hoisted the substantive hypothesis from
+    the implicit surreal-model requirement to an explicit hypothesis.
+    Callers should migrate to `surreal_squeeze_of_pow_lt` directly.
+
+    Ref: [conway1976] https://doi.org/10.1201/9781439864159
+    Ref: [gonshor1986] https://doi.org/10.1017/CBO9780511629143 -/
+@[deprecated surreal_squeeze_of_pow_lt (since := "2025-01-26")]
+theorem surreal_squeeze
+    {F : Type u} [Field F] [LinearOrder F] [IsStrictOrderedRing F]
+    (ε δ : F) (hε : 0 < ε) (_hδ : 0 < δ) (hsq : ε^4 < δ^2) :
+    δ^2 * ε⁻¹ > ε^3 :=
+  surreal_squeeze_of_pow_lt ε δ hε hsq
 
 /-- **surreal_squeeze (provable form)**: with the sharper hypothesis
     `ε^4 < δ^2` (which captures the substantive size separation
