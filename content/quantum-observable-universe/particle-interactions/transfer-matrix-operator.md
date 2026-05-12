@@ -158,7 +158,7 @@ $$
 $$
 
 **The photon-electron transfer matrix is the same as the
-proton-proton matrix.**  This is because $J_\gamma(q) = 1$
+proton-proton matrix.**  This is because $J_{\varnothing}(q) = 1$
 (trivial Jones polynomial of the empty knot), so the photon
 contributes no deformation — the crossing is purely determined
 by the electron.
