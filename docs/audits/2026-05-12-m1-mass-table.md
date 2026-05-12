@@ -79,11 +79,12 @@ under-predicts their mass by ~99%.
 **Recommendation in the production scripts:** combined mode must be
 run only with `e0_mode="substrate"`. The script already auto-promotes
 `per-partition-k` to substrate (line 757–761 of `paper_six_term_isotope_sweep.py`)
-when proton-fit is requested but the sub-mode lacks proton coverage —
-combined should arguably do the same. **Action item:** either guard
-the combined branch the same way, or document that proton-fit ×
-combined is a known-invalid configuration. (Filed as TODO; no code
-change in this session.)
+when proton-fit is requested but the sub-mode lacks proton coverage.
+**Implemented in this session:** combined now does the same — when
+called with `e0_mode="proton-fit"` it issues a `UserWarning` and
+auto-promotes to `e0_mode="substrate"`, restoring coherent numbers
+(combined under proton-fit no longer differs from combined under
+substrate).
 
 ## 4  Audit-trail fix (this session)
 
@@ -133,4 +134,4 @@ Spot-check from the regenerated witness:
 3. **P1.B production wiring** of V1–V4 winner needs owner input on
    which mirror convention is canonical.
 4. **P1.E ⁴He Model B knot** still needs owner input.
-5. **Combined × proton-fit guard** — minor follow-up, see §3 above.
+5. **Combined × proton-fit guard** — ✅ implemented this session (auto-promote with `UserWarning`).

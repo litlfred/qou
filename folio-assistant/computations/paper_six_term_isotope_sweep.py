@@ -759,6 +759,28 @@ def run_sweep_for_mode(tower_mode: str, isotopes: list, *, verbose: bool = True,
             # promote to substrate so the sweep is still meaningful.
             from derived_masses import e_0_full_mev
             E_0 = e_0_full_mev()
+        elif tower_mode == "combined":
+            # `combined` (P2.B) routes different atoms to different
+            # sub-modes (proton→habiro, T/³He→per-partition-k, ⁴He+
+            # →li2q). A single proton-fit E_0 can only calibrate ONE
+            # sub-mode at a time; multiplying it through the other
+            # sub-modes' (different-scale) `total_hecke` produces
+            # incoherent garbage — empirically it gives a ~−1039 MeV
+            # T−³He isospin asymmetry vs li2q's −283 MeV at the same
+            # branch (see docs/audits/2026-05-12-m1-mass-table.md §3).
+            # Auto-promote to substrate so combined remains usable
+            # under any e0_mode setting.
+            import warnings
+            warnings.warn(
+                "tower_mode='combined' is incompatible with "
+                "e0_mode='proton-fit' (E_0 can only fit one sub-mode "
+                "at a time). Auto-promoting to e0_mode='substrate'. "
+                "See docs/audits/2026-05-12-m1-mass-table.md §3.",
+                stacklevel=2,
+            )
+            from derived_masses import e_0_full_mev
+            E_0 = e_0_full_mev()
+            e0_mode = "substrate"  # keep label honest in print/witness
         else:
             # Legacy: fit E_0 to make proton residual exactly zero.
             E_0 = (M_P_CODATA - p_t6_MeV) / m_p_hecke
