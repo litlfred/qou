@@ -253,17 +253,37 @@ def aK_closed_form(Z: int, N: int) -> float:
 
 
 def main() -> int:
+    import argparse
+    ap = argparse.ArgumentParser(description="Term 5 a_K audit (slow).")
+    ap.add_argument(
+        "--atoms",
+        default="proton,neutron,deuteron,tritium,helium-3",
+        help=(
+            "Comma-separated subset of atoms to audit. Default = full "
+            "spectrum. Use a smaller subset (e.g. 'proton') for "
+            "incremental runs in time-bounded environments; the "
+            "emitted witness flags partial coverage in `audited_atoms`."
+        ),
+    )
+    args = ap.parse_args()
+    requested = {a.strip() for a in args.atoms.split(",") if a.strip()}
+
     print("Term 5 a_K — closed-form vs Gram-matrix audit", flush=True)
     print("=" * 64, flush=True)
 
     rows = []
-    for label, Z, N in [
+    full_spectrum = [
         ("proton",   1, 0),
         ("neutron",  0, 1),
         ("deuteron", 1, 1),
         ("tritium",  1, 2),
         ("helium-3", 2, 1),
-    ]:
+    ]
+    audited_labels = [lbl for lbl, _, _ in full_spectrum if lbl in requested]
+    skipped_labels = [lbl for lbl, _, _ in full_spectrum if lbl not in requested]
+    for label, Z, N in full_spectrum:
+        if label not in requested:
+            continue
         print(f"\n  === {label} (Z={Z}, N={N}, A={Z + N}) ===", flush=True)
         closed = aK_closed_form(Z, N)
         print(f"    closed-form a_K = {closed:.10f}", flush=True)
@@ -334,6 +354,18 @@ def main() -> int:
     w.set_content_block("conj:knot-factor-frobenius-pairing")
     w.add_parameter("q0", str(Q0))
     w.add_data("results", rows)
+    w.add_data("audited_atoms", audited_labels)
+    w.add_data("skipped_atoms", skipped_labels)
+    if skipped_labels:
+        w.add_data(
+            "coverage_note",
+            (
+                f"Partial run: {len(audited_labels)}/{len(full_spectrum)} "
+                f"atoms audited. Skipped: {skipped_labels}. Re-run with "
+                "`--atoms p,n,...` (or default = full spectrum) in a "
+                "higher time budget to backfill."
+            ),
+        )
     out_path = w.save()
     print(f"\n  → wrote {out_path}", flush=True)
     return 0

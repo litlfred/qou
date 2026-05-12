@@ -380,6 +380,12 @@ def paper_six_term_mass(Z, N, include_inter=True,
                             (per-partition $k_\\lambda$ truncation per
                             `per-partition-k-lambda-rule.md`); T3 = 0.
                             Coverage: {D, T, ³He}; raises on missing atoms.
+        "combined" (P2.B):
+                            Per-atom router producing the M1 mass table:
+                            {p, n, D} → "habiro", {T, ³He} → "per-partition-k",
+                            else → "li2q". No new physics; routes each
+                            isotope to the canonical mode with the
+                            strongest backing for it.
     """
     """Six-term mass formula in Hecke units.
 
@@ -582,6 +588,41 @@ def paper_six_term_mass(Z, N, include_inter=True,
         # multiplied by E_0 at the calibration site.
         t2 = mp.mpf(str(rec["total_tower"]))
         t3 = mp.mpf(0)
+    elif tower_mode == "combined":
+        # P2.B (2026-05-12): "best canonical available" per-atom router.
+        # Produces the M1 mass table by dispatching each isotope to the
+        # canonical mode with the strongest theoretical backing for it:
+        #
+        #   {p, n}                  → "habiro"          (Path 3 collapse)
+        #   {D}                     → "habiro"          (Path 3 collapse)
+        #   {T, ³He}                → "per-partition-k" (P1.D refinement)
+        #   anything else (⁴He+)    → "li2q"            (canonical fallback,
+        #                                                no Path 3 / per-λ
+        #                                                witness yet)
+        #
+        # No new physics: this is a routing layer over modes already
+        # implemented above. Each branch raises loudly on its own
+        # coverage gaps (per "break loudly" directive); `combined`
+        # itself never silently substitutes.
+        habiro_atoms = {"p", "n", "D"}
+        ppk_atoms = {"T", "3He"}
+        if isotope_label in habiro_atoms:
+            sub_mode = "habiro"
+        elif isotope_label in ppk_atoms:
+            sub_mode = "per-partition-k"
+        else:
+            sub_mode = "li2q"
+        # Recursive call: every other arg pass-through. Avoids
+        # duplicating the per-mode wiring above.
+        return paper_six_term_mass(
+            Z, N,
+            include_inter=include_inter,
+            chirality_signs=chirality_signs,
+            m_e_hecke=m_e_hecke,
+            term5_mode=term5_mode,
+            isotope_label=isotope_label,
+            tower_mode=sub_mode,
+        )
     else:
         raise ValueError(f"unknown tower_mode {tower_mode!r}")
     t4_raw = (term4_frobenius_codim(Z + N) if Z + N >= 1 else mp.mpf(0))
@@ -686,7 +727,9 @@ def run_sweep_for_mode(tower_mode: str, isotopes: list, *, verbose: bool = True,
     # entry exists in the probe witness. Fall back to "li2q" for the
     # proton row purely so that E_0 reporting works; p mass under
     # per-partition-k is structurally undefined here and reported as
-    # an error in the per-isotope loop below.
+    # an error in the per-isotope loop below. (`combined` is safe —
+    # it routes the proton to "habiro" internally, which IS in
+    # coverage.)
     p_tower_mode = "li2q" if tower_mode == "per-partition-k" else tower_mode
     p_terms = paper_six_term_mass(
         1, 0, include_inter=False,
@@ -926,7 +969,7 @@ if __name__ == "__main__":
         ("9Be", 4, 5, True,  8392.749),
     ]
 
-    modes = ["brane-legacy", "drop", "q1-base", "r-side-bare", "li2q", "habiro", "per-partition-k"]
+    modes = ["brane-legacy", "drop", "q1-base", "r-side-bare", "li2q", "habiro", "per-partition-k", "combined"]
     sweep_results = {}
     for mode in modes:
         E_0, rows = run_sweep_for_mode(mode, ISOTOPES)
@@ -936,7 +979,7 @@ if __name__ == "__main__":
     print("\n" + "=" * 80)
     print("Side-by-side comparison (% error vs CODATA)")
     print("=" * 80)
-    print(f"  {'iso':>5} {'A':>3} | {'brane':>10} {'drop':>10} {'q1-base':>10} {'r-side':>10} {'li2q':>10} {'habiro':>10} {'pp-k':>10}")
+    print(f"  {'iso':>5} {'A':>3} | {'brane':>10} {'drop':>10} {'q1-base':>10} {'r-side':>10} {'li2q':>10} {'habiro':>10} {'pp-k':>10} {'combined':>10}")
     print("  " + "-" * 50)
     for iso, Z, N, _, M_cod in ISOTOPES:
         line = f"  {iso:>5} {Z+N:>3} |"
