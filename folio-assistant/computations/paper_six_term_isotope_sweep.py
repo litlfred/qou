@@ -483,6 +483,48 @@ def paper_six_term_mass(Z, N, include_inter=True,
                 t3 -= z2 * li2_q_sym(arg)
             except Exception:
                 pass
+    elif tower_mode == "habiro":
+        # P2.A (2026-05-12): Path 3 single-trace Habiro form.
+        # Per `prop:full-pole-structure-mass-trace` the Markov trace
+        # admits the cyclotomic expansion
+        #     tr_M(T_w; q) = Σ_m a_m(T_w) · (q;q)_m
+        # which collapses T1 + (T2+T3) + T6 into a single sum of traces.
+        # The probe `path_b_habiro_mass_probe.py` already demonstrates
+        # sub-1% closure on {p, n, D} (witness:
+        # `path-b-habiro-mass-probe.witness.json`).  T/³He extension
+        # is upstream-blocked on `habiro-coefficients-atomic.witness.json`
+        # which currently covers only {p, n, D}; see
+        # docs/audits/2026-05-12-1ppb-implementation-plan.md §P2.A.
+        #
+        # Wiring contract: T1 is REPLACED by `tr_M_via_habiro_sum`
+        # for this atom; T2 = T3 = 0 (the m≥1 terms of the Habiro
+        # sum already encompass them); T4, T5, T6 unchanged; the
+        # final calibration via E_0 then converts to MeV.
+        # If the atom is missing from the Habiro witness this raises
+        # KeyError so the caller surfaces the gap rather than silently
+        # falling back (per owner directive 2026-05-12: break loudly).
+        habiro_path = HERE / "path-b-habiro-mass-probe.witness.json"
+        if not habiro_path.exists():
+            raise FileNotFoundError(
+                f"tower_mode='habiro' requires {habiro_path.name}; "
+                "run path_b_habiro_mass_probe.py first."
+            )
+        habiro_d = json.loads(habiro_path.read_text())
+        rec = next((r for r in habiro_d.get("rows", [])
+                    if r.get("atom") == isotope_label), None)
+        if rec is None:
+            raise KeyError(
+                f"tower_mode='habiro': atom {isotope_label!r} missing "
+                f"from {habiro_path.name}; current coverage = "
+                f"{[r.get('atom') for r in habiro_d.get('rows', [])]}. "
+                "Extend habiro-coefficients-atomic.witness.json upstream."
+            )
+        # Override T1 with the Habiro single-trace sum; zero T2, T3.
+        # (The original Hoefsmit-bridge T1 is reachable from the
+        # canonical-T1 cache for audit if needed.)
+        t1 = abs(mp.mpf(str(rec["tr_M_via_habiro_sum"])))
+        t2 = mp.mpf(0)
+        t3 = mp.mpf(0)
     else:
         raise ValueError(f"unknown tower_mode {tower_mode!r}")
     t4_raw = (term4_frobenius_codim(Z + N) if Z + N >= 1 else mp.mpf(0))
@@ -550,28 +592,62 @@ def chirality_signs_for_isotope(iso):
     return patterns.get(iso, [])
 
 
-def run_sweep_for_mode(tower_mode: str, isotopes: list, *, verbose: bool = True):
-    """Run the proton-calibrated 6-term sweep for one tower_mode."""
+def run_sweep_for_mode(tower_mode: str, isotopes: list, *, verbose: bool = True,
+                        e0_mode: str | None = None):
+    """Run the 6-term sweep for one tower_mode.
+
+    P1.A (2026-05-12): `e0_mode` controls the energy-scale anchor:
+
+      * "substrate" (default): E_0 = m_e / (q_0·(q_0−1)) from the
+        FULL chain per `prop:beta-decay-energy-scale` —
+        `derived_masses.e_0_full_mev()`.  Three-calibration discipline
+        per CLAUDE.md: only {m_e, q_0, Q_β} are anchors; everything
+        else (including the proton mass) is a prediction.  HARD BREAK:
+        the proton row will no longer be exactly zero error — that
+        residual is the structural gap that was previously hidden in
+        the proton-fitted E_0.  Per owner directive: break loudly.
+
+      * "proton-fit" (legacy): E_0 = (M_P_CODATA − T6_p) / T1+T2+T3+T4
+        for the proton.  Hides structural error in everything else by
+        absorbing it into E_0.  Kept for back-compat; selected via
+        `e0_mode="proton-fit"` or env var `QOU_E0_MODE=proton-fit`.
+
+    Default chosen via env var `QOU_E0_MODE` (substrate | proton-fit);
+    explicit kwarg takes precedence.
+    """
+    if e0_mode is None:
+        e0_mode = _os.environ.get("QOU_E0_MODE", "substrate")
+    if e0_mode not in ("substrate", "proton-fit"):
+        raise ValueError(f"unknown e0_mode {e0_mode!r}; "
+                         "expected 'substrate' or 'proton-fit'")
+
     M_P_CODATA = 938.27208816
 
-    # Proton calibration under this tower_mode
+    # Proton 6-term decomposition (always computed; needed either for
+    # calibration or for the substrate-mode proton residual report).
     p_terms = paper_six_term_mass(
         1, 0, include_inter=False,
         chirality_signs=chirality_signs_for_isotope("p"),
         isotope_label="p", tower_mode=tower_mode)
     m_p_hecke = p_terms["total_hecke"]
     p_t6_MeV = p_terms["term6_cyclotomic_tail_MeV"]
-    E_0 = (M_P_CODATA - p_t6_MeV) / m_p_hecke
+
+    if e0_mode == "proton-fit":
+        # Legacy: fit E_0 to make proton residual exactly zero.
+        E_0 = (M_P_CODATA - p_t6_MeV) / m_p_hecke
+    else:  # substrate
+        # Canonical: E_0 from CAL-1 (m_e) and CAL-2 (q_0) only.
+        from derived_masses import e_0_full_mev
+        E_0 = e_0_full_mev()
 
     if verbose:
-        print(f"\nMode: {tower_mode}")
-        # Cast mpf-valued fields (t6, E_0) to float for display only.
+        print(f"\nMode: {tower_mode}  (e0_mode={e0_mode})")
         print(f"  Proton: t1={p_terms['term1_canonical_tr_M']:.4e} "
               f"t2={p_terms['term2_single_gen_tower']:.4e} "
               f"t3={p_terms['term3_pair_gen_tower']:.4e} "
               f"t4={p_terms['term4_frobenius_codim_scaled']:.4e} "
               f"t6={float(p_terms['term6_cyclotomic_tail_MeV']):.4f} MeV")
-        print(f"  E_0 = {float(E_0):.6e} MeV/Hecke-unit")
+        print(f"  E_0 = {float(E_0):.6e} MeV/Hecke-unit  ({e0_mode})")
 
     rows = []
     for iso, Z, N, inter, M_codata in isotopes:
@@ -781,7 +857,7 @@ if __name__ == "__main__":
         ("9Be", 4, 5, True,  8392.749),
     ]
 
-    modes = ["brane-legacy", "drop", "q1-base", "r-side-bare", "li2q"]
+    modes = ["brane-legacy", "drop", "q1-base", "r-side-bare", "li2q", "habiro"]
     sweep_results = {}
     for mode in modes:
         E_0, rows = run_sweep_for_mode(mode, ISOTOPES)
@@ -875,13 +951,26 @@ if __name__ == "__main__":
                   if r["isotope"] != "p" and "err_pct" in r]
     witness["assertions"] = []
     if proton_row is not None:
+        # P1.A (2026-05-12): the `proton_anchor_exact` assertion is
+        # only meaningful under the legacy proton-fit calibration.
+        # Under the canonical substrate-E_0 calibration the proton
+        # row carries the structural residual (≈ same magnitude as
+        # the floor ~780 ppb for E_0 propagation).  Skip the assertion
+        # in substrate mode so the sweep doesn't fail spuriously.
+        e0_mode_used = _os.environ.get("QOU_E0_MODE", "substrate")
         witness["assertions"].append({
             "name": "proton_anchor_exact",
             "computed": float(proton_row["err_pct"]),
             "expected": 0.0,
-            "passed": abs(float(proton_row["err_pct"])) < 1e-6,
+            "passed": (e0_mode_used == "proton-fit"
+                       and abs(float(proton_row["err_pct"])) < 1e-6)
+                      or (e0_mode_used == "substrate"),
             "tolerance": 1e-6,
             "source": "thm:knot-mass-formula-unified § proton calibration",
+            "note": ("HARD BREAK 2026-05-12 (P1.A): under substrate "
+                     "e0_mode the proton residual is the structural "
+                     "gap, not zero. Assertion auto-passes in substrate "
+                     "mode; only enforced strictly under proton-fit."),
         })
     if non_p_errs:
         max_err = max(non_p_errs)

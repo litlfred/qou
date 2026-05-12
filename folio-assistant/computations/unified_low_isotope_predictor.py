@@ -12,7 +12,11 @@ and lets the structural formula decide what contributes:
             + T6_habiro + k≥3_tail + Δm_shell
 
   T1: m_e · ρ · |tr_M_descended(T_w(atom))| — descended Markov trace
-  T4: m_e · A · (2 + 1/[2]_q)               — universal Frobenius co-Casimir
+  T4: m_e · Σ_{λ⊢3A} 1/dim_q(λ)             — universal Frobenius co-Casimir
+      (per-3A canonical form per `thm:frobenius-codim-universal`;
+      implemented in `term4_frobenius`, NOT the legacy A·m_e·(2+1/[2]_q)
+      heuristic that this docstring originally claimed.  See P1.C of
+      `docs/audits/2026-05-12-1ppb-implementation-plan.md`.)
   T5: a_K · B_bulk_BW + …                    — BW formula with chirality
       a_K = ∏_{pn}(1 + sign·h) per chirality-dual-space derivation
       𝟙[BW valid] = 1 for A ≥ 3 (volume dominates surface);

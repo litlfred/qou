@@ -1,0 +1,160 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-12T03:28:14.379610+00:00",
+  "commitSha": "01d2cf5f367acbaa897c0f088cf00478d85abbb2",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 13,
+  "computation": "delta-coupling-closed-form-probe",
+  "scriptFile": "delta_coupling_closed_form_probe.py",
+  "scriptHash": "f2222ab82360",
+  "scriptCommitSha": "unknown",
+  "description": "P3.A diagnostic probe: which closed form `f` reproduces the empirical magic-shell anchor Δ_coupling(2,2) = +13.20 MeV when evaluated at a natural substrate value t (q_0, q_0−1, or h(q_0))? Tests four candidates from the gap-narrowing plan: log(1/t), 1/t−1, log Φ_q^{(∞)}(t), KLR canonical-basis dim. Candidates whose multiplicative match-factor is a small rational identify structural targets for the derivation; no fitting performed.",
+  "contentBlock": "conj:magic-shell-stabilization",
+  "parameters": {
+    "q_0": "1.1099785955541805752815940796095093779932822799587",
+    "E_0_full_MeV": "4.1859808220625237732985519083214879046242353091078",
+    "delta_coupling_target_MeV": "13.2"
+  },
+  "data": {
+    "rows": [
+      {
+        "candidate": "C1_log_inv_t",
+        "candidate_human": "log(1/t)",
+        "t_name": "q_0",
+        "t_value": 1.1099785955541805,
+        "f_at_t": -0.10434073185379585,
+        "E0_times_f_MeV": -0.4367683024999577,
+        "factor_to_match_Delta": -30.221973353941543,
+        "factor_no_E0_prefactor": -126.50860086448391
+      },
+      {
+        "candidate": "C1_log_inv_t",
+        "candidate_human": "log(1/t)",
+        "t_name": "q_0_minus_1",
+        "t_value": 0.10997859555418057,
+        "f_at_t": 2.207469517995093,
+        "E0_times_f_MeV": 9.240425067615064,
+        "factor_to_match_Delta": 1.4285057130393348,
+        "factor_no_E0_prefactor": 5.979697518989406
+      },
+      {
+        "candidate": "C1_log_inv_t",
+        "candidate_human": "log(1/t)",
+        "t_name": "h(q_0)",
+        "t_value": 0.20906032198987945,
+        "f_at_t": 1.565132446699486,
+        "E0_times_f_MeV": 6.5516144058718435,
+        "factor_to_match_Delta": 2.0147705866464887,
+        "factor_no_E0_prefactor": 8.433791036557862
+      },
+      {
+        "candidate": "C2_inv_t_minus_1",
+        "candidate_human": "1/t - 1",
+        "t_name": "q_0",
+        "t_value": 1.1099785955541805,
+        "f_at_t": -0.09908172643569889,
+        "E0_times_f_MeV": -0.4147542066766809,
+        "factor_to_match_Delta": -31.826078644911682,
+        "factor_no_E0_prefactor": -133.22335484905392
+      },
+      {
+        "candidate": "C2_inv_t_minus_1",
+        "candidate_human": "1/t - 1",
+        "t_name": "q_0_minus_1",
+        "t_value": 0.10997859555418057,
+        "f_at_t": 8.0926783976556,
+        "E0_times_f_MeV": 33.87579657170602,
+        "factor_to_match_Delta": 0.3896587338414057,
+        "factor_no_E0_prefactor": 1.6311039870092896
+      },
+      {
+        "candidate": "C2_inv_t_minus_1",
+        "candidate_human": "1/t - 1",
+        "t_name": "h(q_0)",
+        "t_value": 0.20906032198987945,
+        "f_at_t": 3.7833084273562423,
+        "E0_times_f_MeV": 15.836856520860758,
+        "factor_to_match_Delta": 0.8334987427973843,
+        "factor_no_E0_prefactor": 3.489009752563075
+      },
+      {
+        "candidate": "C3_log_phi_q_full",
+        "candidate_human": "log Φ_q^{(∞)}(t)",
+        "t_name": "q_0",
+        "t_value": 1.1099785955541805,
+        "f_at_t": -110.3500487837206,
+        "E0_times_f_MeV": -461.9231879223184,
+        "factor_to_match_Delta": -0.028576179644438728,
+        "factor_no_E0_prefactor": -0.119619339959434
+      },
+      {
+        "candidate": "C3_log_phi_q_full",
+        "candidate_human": "log Φ_q^{(∞)}(t)",
+        "t_name": "q_0_minus_1",
+        "t_value": 0.10997859555418057,
+        "f_at_t": -1.0273436021720448,
+        "E0_times_f_MeV": -4.30044061636081,
+        "factor_to_match_Delta": -3.069452918331499,
+        "factor_no_E0_prefactor": -12.848671050359501
+      },
+      {
+        "candidate": "C3_log_phi_q_full",
+        "candidate_human": "log Φ_q^{(∞)}(t)",
+        "t_name": "h(q_0)",
+        "t_value": 0.20906032198987945,
+        "f_at_t": -2.0044353287792314,
+        "E0_times_f_MeV": -8.390527845334452,
+        "factor_to_match_Delta": -1.573202573583002,
+        "factor_no_E0_prefactor": -6.585395802237853
+      },
+      {
+        "candidate": "C4_klr_dim",
+        "candidate_human": "KLR canonical-basis dim count",
+        "t_name": "q_0",
+        "t_value": 1.1099785955541805,
+        "f_at_t": 2.0,
+        "E0_times_f_MeV": 8.371961644125047,
+        "factor_to_match_Delta": 1.5766914089080888,
+        "factor_no_E0_prefactor": 6.6
+      },
+      {
+        "candidate": "C4_klr_dim",
+        "candidate_human": "KLR canonical-basis dim count",
+        "t_name": "q_0_minus_1",
+        "t_value": 0.10997859555418057,
+        "f_at_t": 2.0,
+        "E0_times_f_MeV": 8.371961644125047,
+        "factor_to_match_Delta": 1.5766914089080888,
+        "factor_no_E0_prefactor": 6.6
+      },
+      {
+        "candidate": "C4_klr_dim",
+        "candidate_human": "KLR canonical-basis dim count",
+        "t_name": "h(q_0)",
+        "t_value": 0.20906032198987945,
+        "f_at_t": 2.0,
+        "E0_times_f_MeV": 8.371961644125047,
+        "factor_to_match_Delta": 1.5766914089080888,
+        "factor_no_E0_prefactor": 6.6
+      }
+    ],
+    "promising_matches": [
+      {
+        "row": {
+          "candidate": "C1_log_inv_t",
+          "candidate_human": "log(1/t)",
+          "t_name": "h(q_0)",
+          "t_value": 0.20906032198987945,
+          "f_at_t": 1.565132446699486,
+          "E0_times_f_MeV": 6.5516144058718435,
+          "factor_to_match_Delta": 2.0147705866464887,
+          "factor_no_E0_prefactor": 8.433791036557862
+        },
+        "near_value": 2.0,
+        "fractional_gap": 0.007385293323244335
+      }
+    ]
+  }
+}

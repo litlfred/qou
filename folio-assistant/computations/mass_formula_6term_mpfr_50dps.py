@@ -220,15 +220,25 @@ def term_23_brane_tower_mp(Z: int, N: int) -> tuple[mp.mpf, mp.mpf]:
     return single, pair
 
 
-def term_4_frobenius_mp(A: int) -> tuple[mp.mpf, mp.mpf]:
-    """Term 4: m_e · (2 + 1/[2]_q) per vortex, or A × that per-A.
+def term_4_frobenius_mp(A: int) -> mp.mpf:
+    """Term 4 (canonical, per-3A): m_e · Σ_{λ⊢3A} 1/dim_q(λ).
 
-    `[2]_q = q + q^{-1}`.  Both forms returned for comparison.
+    Per `thm:frobenius-codim-universal`. Delegates to the canonical
+    implementation in `paper_six_term_isotope_sweep.term4_frobenius_codim`.
+
+    HARD BREAK (P1.C of `docs/audits/2026-05-12-1ppb-implementation-plan.md`,
+    revision 2026-05-12): the legacy per-A form `A · m_e · (2 + 1/[2]_q)`
+    has been REMOVED. It was an H_3-character formula × A that overcounted
+    Term 4 by 1.56× at A=2, 2.95× at A=3, 4.44× at A=4. Any consumer that
+    relied on `term_4_frobenius_mp` returning a 2-tuple
+    `(per_vortex_legacy, per_A)` will now break — the function returns a
+    single mpf. **This is intentional.** Per owner directive 2026-05-12:
+    downstream witnesses should break so we know they were consuming the
+    wrong formula.
     """
+    from paper_six_term_isotope_sweep import term4_frobenius_codim
     m_e_mp = mp.mpf(repr(M_E_MEV))
-    bracket_2_q = Q0_MP + 1 / Q0_MP
-    frob = m_e_mp * (2 + 1 / bracket_2_q)
-    return frob, A * frob
+    return m_e_mp * term4_frobenius_codim(A)
 
 
 def term_5_chirality_bw_mp(Z: int, N: int, knot_type: str) -> mp.mpf:
@@ -327,7 +337,7 @@ def predict_atom_mp(label: str, Z: int, N: int, knot_type: str) -> dict:
     except (FileNotFoundError, KeyError) as exc:
         t23 = (mp.mpf(0), mp.mpf(0))
         t23_error = f"{type(exc).__name__}: {exc}"
-    t4_pv, t4_pa = term_4_frobenius_mp(A)
+    t4 = term_4_frobenius_mp(A)
     t5 = term_5_chirality_bw_mp(Z, N, knot_type)
     # Term 6 raises if witness/atom missing; surface in the per-atom
     # row instead of crashing the whole sweep so that other atoms
@@ -346,8 +356,12 @@ def predict_atom_mp(label: str, Z: int, N: int, knot_type: str) -> dict:
         "term2_single":         mp.nstr(t23[0], WORKING_DPS),
         "term3_pair":           mp.nstr(t23[1], WORKING_DPS),
         "term23_error":         t23_error,
-        "term4_frob_per_vortex": mp.nstr(t4_pv, WORKING_DPS),
-        "term4_frob_per_A":     mp.nstr(t4_pa, WORKING_DPS),
+        # P1.C HARD BREAK (2026-05-12): legacy `term4_frob_per_vortex` and
+        # `term4_frob_per_A` fields removed. Single canonical field
+        # `term4_frob_canonical_per_3A` per `thm:frobenius-codim-universal`.
+        # Witness consumers that read the old field names will break —
+        # intentionally, per owner directive.
+        "term4_frob_canonical_per_3A": mp.nstr(t4, WORKING_DPS),
         "term5_chirality_bw":   mp.nstr(t5, WORKING_DPS),
         "term6_habiro_residue": t6_str,
         "term6_error":          t6_error,

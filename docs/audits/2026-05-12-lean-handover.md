@@ -132,6 +132,22 @@ If unfolding doesn't fire, add explicit
 `unfold MagicShellStabilization.delta_shell` and then `ring` or
 `linarith`.
 
+> **§6 correction landed in [#645](https://github.com/litlfred/qou/pull/645)
+> (2026-05-12)** — the `[_M : MagicShellStabilization]` signature
+> above is **genuinely unprovable**: `MagicShellStabilization`
+> exposes only `magic_only_support` and `z_n_symmetry`; neither
+> implies `delta_shell Z N = delta_shell Z 0 + delta_shell 0 N`,
+> so the `simp`/`unfold + ring` path cannot close the obligation
+> for an arbitrary instance. #645's resolution: pin the instance
+> to `MagicShellCrossCoupling (M := canonical)` so the canonical
+> `Δ_shell ≡ 0` unfolds and `simp` reduces both sides to `0`.
+> Full design rationale + author-input asks in
+> [`2026-05-12-lean-p4b-discharge-and-escalation.md`](2026-05-12-lean-p4b-discharge-and-escalation.md).
+> #644 (this branch) endorses the pin as the right minimal fix;
+> the alternative "add `Additivity _M` premise" is strictly more
+> general but unnecessary while `canonical` is the only
+> production instance.
+
 ## 3  Audit findings from the Phase 1/2 work that touch Lean
 
 These are facts the Phase 1/2 narrative-side audit established that
