@@ -64,6 +64,29 @@ For each isotope, `paper_six_term_mass()` computes:
 
 ### Phase 1 — Restore canonical wiring (this PR scope)
 
+> **Status as of 2026-05-12 commit `abd1cd5` + this session:**
+>
+> | Task  | Status      | Notes |
+> |-------|-------------|-------|
+> | P1.A  | ✅ done     | `e0_mode={substrate, proton-fit}` on `run_sweep_for_mode`; default is `substrate`. |
+> | P1.B  | ⚠️ partial  | `term5_aK_audit.py` moved out of `_deprecated/`; `--atoms` CLI added; **proton-only** witness emitted (audit confirms historical 2.2% gap, V1=+1.022, V2=V4=+1.147, V3=+2.424). Backfill of {n, D, T, ³He} blocked by sandbox time budget (>12 min/atom). Production wiring of V1–V4 winner not yet done — owner input needed on which mirror convention is canonical. |
+> | P1.C  | ✅ done     | T4 straggler in `mass_formula_6term_mpfr_50dps.py` now delegates to per-3A canonical. |
+> | P1.D  | ✅ done     | `tower_mode="per-partition-k"` wired; covers {D, T, ³He}, raises on {p, n, ⁴He}. |
+> | P1.E  | ❌ reverted | Both candidate Model B knots for ⁴He moved error in the wrong direction; assignment remains genuinely upstream-blocked. |
+> | P2.A  | ✅ done     | `tower_mode="habiro"` wired; covers {p, n, D}, raises on {T, ³He, ⁴He}. |
+> | P2.B  | ✅ done     | `tower_mode="combined"` (M1 router) wired: per-atom routing {p, n, D}→habiro, {T, ³He}→per-partition-k, ⁴He+→li2q. Audit-trail fix in this session: combined rows now record `tower_mode="combined"` AND `sub_tower_mode=<actual>`, so the witness is unambiguous to a downstream auditor. |
+> | P3    | ⏸ deferred | Closed-form $\Delta_{\mathrm{coupling}}$ — new math; separate PR. |
+> | P4    | ⏸ deferred | Lean closure — see `2026-05-12-lean-handover.md`. |
+>
+> **M1 mass table (substrate $E_0$, no calibration leak):** see
+> [`2026-05-12-m1-mass-table.md`](2026-05-12-m1-mass-table.md). Headline:
+> the substrate-$E_0$ default makes every mode honestly report a ~98%
+> shortfall on absolute mass — confirming the closure gap is structural
+> ($\Delta_{\mathrm{coupling}}$ + ⁴He Model B), not plumbing. Combined
+> mode under `e0_mode="proton-fit"` is structurally invalid (E_0 can
+> only be fit to one sub-mode at a time); use `substrate` E_0 with
+> combined.
+
 Each task below is independently mergeable. Numbered tasks are the
 implementation units; bullets are the math/code sanity checks the
 agent must satisfy.

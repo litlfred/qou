@@ -614,7 +614,7 @@ def paper_six_term_mass(Z, N, include_inter=True,
             sub_mode = "li2q"
         # Recursive call: every other arg pass-through. Avoids
         # duplicating the per-mode wiring above.
-        return paper_six_term_mass(
+        result = paper_six_term_mass(
             Z, N,
             include_inter=include_inter,
             chirality_signs=chirality_signs,
@@ -623,6 +623,16 @@ def paper_six_term_mass(Z, N, include_inter=True,
             isotope_label=isotope_label,
             tower_mode=sub_mode,
         )
+        # Audit-trail fix (2026-05-12): the recursive call records
+        # `tower_mode = sub_mode` (e.g. "habiro"), which is misleading
+        # to a downstream auditor reading the witness — they asked
+        # for `combined` and the row should say so. Re-stamp the
+        # outer label as "combined" and surface the per-atom routing
+        # decision in `sub_tower_mode` so both pieces of information
+        # are preserved.
+        result["tower_mode"] = "combined"
+        result["sub_tower_mode"] = sub_mode
+        return result
     else:
         raise ValueError(f"unknown tower_mode {tower_mode!r}")
     t4_raw = (term4_frobenius_codim(Z + N) if Z + N >= 1 else mp.mpf(0))
@@ -669,6 +679,11 @@ def paper_six_term_mass(Z, N, include_inter=True,
         "term6_cyclotomic_tail_MeV": t6_MeV,  # mpf — calibration-critical
         "term5_mode": term5_mode,
         "tower_mode": tower_mode,
+        # `sub_tower_mode` is None on every non-`combined` direct call;
+        # `combined` overrides this above with the per-atom sub-mode
+        # actually used. Kept in the schema unconditionally so witness
+        # consumers don't need to special-case the field's presence.
+        "sub_tower_mode": None,
         "m_e_hecke": float(m_e_hecke),
         "total_hecke": total,  # mpf — calibration-critical
     }
