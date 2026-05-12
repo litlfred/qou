@@ -15,8 +15,8 @@ chains; identify the canonical substrate-only predictor.
 | **T2** | brane tower, single gen | [`prop:mass-endomorphism-tower`](../../content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.md) | **derived** (3 paths, see below) |
 | **T3** | brane tower, gen-pair | same | **derived** (3 paths) |
 | **T4** | $m_e \cdot \mathrm{tr}_M(C_{\dim_q}^{H_n(R, q)})$ | [`thm:frobenius-codim-universal`](../../content/quantum-observable-universe/braids-and-knots/frobenius-codim-universal.md) | derived (per-$3A$ form) |
-| **T5** | $a_K \cdot \mathcal{C}_K$ chirality | [`prop:figure-eight-bw-coefficients`](../../content/quantum-observable-universe/braids-and-knots/figure-eight-bw-coefficients.md) | derived (for D, T, ⁴He) |
-| **T6** | jet-prefix Habiro residue tail | (`pure_hecke_binding.py`) | **open R&D** |
+| **T5** | $a_K \cdot \mathcal{C}_K$ chirality | [`prop:figure-eight-bw-coefficients`](../../content/quantum-observable-universe/braids-and-knots/figure-eight-bw-coefficients.md), [`prop:chirality-dual-space-derivation`](../../content/quantum-observable-universe/braids-and-knots/chirality-dual-space-derivation.md) | derived |
+| **T6** | jet-prefix / cyclotomic residue tail | [`prop:gb-residue-spectral-sum`](../../content/quantum-observable-universe/braids-and-knots/gb-residue-spectral-sum.md), [`prop:full-pole-structure-mass-trace`](../../content/quantum-observable-universe/braids-and-knots/full-pole-structure-mass-trace.md), [`prop:six-term-mass-formula-complete`](../../content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.md) | derived (symbolic paper form) |
 
 ### T2 + T3 has three derivation paths in the paper
 
@@ -89,12 +89,14 @@ B variant, substitute Model B's SDP-canonical $\lvert\tau_M\rvert$ values:
 
 These don't bridge — the ratios $0.388/0.288 = 1.35$, $0.104/0.0129 = 8.07$, $0.207/0.998 = 0.21$ have no common factor (per [`2026-05-11-model-b-mass-table.md`](../audits/2026-05-11-model-b-mass-table.md)).
 
-## Migration plan (next session)
+## Compute-first migration plan (paper-parity first)
 
-1. **Add `--t1-source=model-b` option** to `paper_six_term_isotope_sweep.py`, reading SDP-canonical $\tau_M$ from `probe-sdp-canonical-paper-formula.witness.json`. Re-run; compare to Model A column.
-2. **Run `term6_residues_at_roots.py`** to generate the missing T6 witness; re-run sweep with non-zero T6.
-3. **Add `tower_mode="path-2"`** (Path 2 Wedderburn-Heine) per
+1. **Freeze target: compute must match paper terms exactly before framework changes.**
+2. **Keep `--t1-source=model-b` as default** in `paper_six_term_isotope_sweep.py`; preserve explicit Model A fallback reporting for parity diagnostics.
+3. **Run `term6_residues_at_roots.py` and wire non-zero T6 by default** in production sweeps (paper T6 is derived; missing witness is a pipeline gap, not a derivation gap).
+4. **Add `tower_mode="path-2"`** (Path 2 Wedderburn-Heine) per
    [`brane-tower-plancherel-scaffold.witness.json`](../../folio-assistant/computations/brane-tower-plancherel-scaffold.witness.json).
-4. **Add `tower_mode="habiro-single-trace"`** (Path 3) per [`path-b-habiro-mass-probe.witness.json`](../../folio-assistant/computations/path-b-habiro-mass-probe.witness.json) — claims sub-1% error.
-5. **Relabel `atomic_mass_via_rho_k.py`** with explicit "post-calibration only" docstring (currently misleadingly tagged "canonical going-forward").
-6. **Deprecate** `atomic_braid_mass_table_modes_sweep.py` (already-flagged downstream of broken script).
+5. **Add `tower_mode="habiro-single-trace"`** (Path 3) per [`path-b-habiro-mass-probe.witness.json`](../../folio-assistant/computations/path-b-habiro-mass-probe.witness.json), and make it a first-class production mode.
+6. **Relabel `atomic_mass_via_rho_k.py`** with explicit "post-calibration only" scope (not paper-canonical six-term compute).
+7. **Deprecate** `atomic_braid_mass_table_modes_sweep.py` and any witness pipelines that encode non-paper term substitutions.
+8. **Only after steps 1–7 are complete:** revisit mathematical framework updates or new derivation proposals.
