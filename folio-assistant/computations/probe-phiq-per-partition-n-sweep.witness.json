@@ -1,0 +1,587 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-05-11T23:58:58.574416+00:00",
+  "commitSha": "3f8b15e79474570bff4caa3c26b3a1794b4f9af3",
+  "assertions": [
+    {
+      "name": "PR_639_N2_rule_reproduces_under_selector_B",
+      "computed": 0,
+      "expected": 1,
+      "passed": false
+    },
+    {
+      "name": "stated_selector_A_max_mu_does_NOT_close_at_N2",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 87712,
+  "computation": "probe-phiq-per-partition-n-sweep",
+  "scriptFile": "probe_phiq_per_partition_n_sweep.py",
+  "scriptHash": "ccc741bd56bf",
+  "scriptCommitSha": "5030d3fe3cfacdf8e0d9bad767e139ed53663122",
+  "description": "Joint PR #638 + #639 operator-valued Φ_q probe under the per-partition k_λ rule, sweeping non-dominant depth N ∈ {1, 2, 3, 4, 5}. Tests whether pushing the non-dominant Wedderburn blocks to deeper truncation approaches PR #639's substrate c(K) ceiling (N=3 → 9.4 ppb, N=4 → 0.092 ppb). Implements TWO selectors for the dominant partition: (A) max-|μ| — the selector PR #639's `per-partition-k-lambda-rule.md` states; (B) max-|y·contrib_k=2| — the selector whose values match PR #639's table. Both are run for each N so the gap between the .md's stated rule, its table, and the binding-formula reality is on the record. Eigenvalues via numpy.linalg.eigvals on Hoefsmit seminormal ρ_λ(β); per-eigenvalue Φ_q via the global `phi_q_truncated_complex` (with pole guard); Wedderburn-summed with signed y_λ(q_0); |·| at binding-formula level. Note: this probe records `allPassed: false` — under both selectors the worst-case error at N=2 is ~50%, not the ~5% PR #639's .md claims; full reconciliation in `docs/audits/2026-05-11-per-partition-k-lambda-selector-investigation.md`. Cherry-picks (per /coordinate §10): #638's eigenvalue / operator-trace infrastructure + #639's per-partition k_λ rule and selector candidates + #639's c(K) ceiling for comparison.",
+  "contentBlock": "conj:brane-tower-z-habiro",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "hbar_q": 0.09908172643569886,
+    "m_e_MeV": 0.51099895,
+    "non_dominant_depth_sweep": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "k_dominant": 1,
+    "threshold_pct": 5.0
+  },
+  "data": {
+    "hbar_q_50dps_string": "0.099081726435698888599823419554013526067137718200684",
+    "ceiling": {
+      "1": {
+        "bound_rel": 9.733272400930723e-05,
+        "bound_ppb": 97332.72400930723
+      },
+      "2": {
+        "bound_rel": 9.555337001297602e-07,
+        "bound_ppb": 955.5337001297602
+      },
+      "3": {
+        "bound_rel": 9.38065446515565e-09,
+        "bound_ppb": 9.38065446515565
+      },
+      "4": {
+        "bound_rel": 9.209165326423841e-11,
+        "bound_ppb": 0.0920916532642384
+      },
+      "5": {
+        "bound_rel": 9.040811206129415e-13,
+        "bound_ppb": 0.0009040811206129414
+      }
+    },
+    "per_atom_dominant_summary": {
+      "deuteron": {
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "n": 6,
+        "dominant_shape_A_max_mu": [
+          3,
+          3
+        ],
+        "dominant_max_mu_abs": 4.687831824305465,
+        "dominant_shape_B_max_contrib_k2": [
+          2,
+          2,
+          1,
+          1
+        ],
+        "dominant_contrib_abs_k2": 6.220338160620419,
+        "tr_M": 0.3882864712890246
+      },
+      "tritium": {
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "n": 9,
+        "dominant_shape_A_max_mu": [
+          3,
+          3,
+          3
+        ],
+        "dominant_max_mu_abs": 8.771476397762267,
+        "dominant_shape_B_max_contrib_k2": [
+          6,
+          3
+        ],
+        "dominant_contrib_abs_k2": 3.0005541361944448,
+        "tr_M": 0.10405398879467263
+      },
+      "he3": {
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "n": 9,
+        "dominant_shape_A_max_mu": [
+          3,
+          3,
+          3
+        ],
+        "dominant_max_mu_abs": 11.11526079920143,
+        "dominant_shape_B_max_contrib_k2": [
+          5,
+          4
+        ],
+        "dominant_contrib_abs_k2": 11.692078028729048,
+        "tr_M": 0.2065441288958544
+      }
+    },
+    "results_selector_A_max_mu": {
+      "1": {
+        "deuteron": {
+          "tr_M_abs": 0.3882864712890246,
+          "tower_complex_real": -0.4638455495478569,
+          "tower_complex_imag": -4.626189116069951e-13,
+          "tower_abs": 0.4638455495478569,
+          "B_op_MeV": 2.0717256713917753,
+          "AME_MeV": 2.224566,
+          "err_rel": -0.06870568398879805,
+          "err_pct": -6.870568398879804,
+          "err_ppb": 68705683.98879805,
+          "ame_close_within_threshold": false,
+          "ceiling_ppb": 97332.72400930723,
+          "headroom_observed_over_ceiling": 705.8847339177338
+        },
+        "tritium": {
+          "tr_M_abs": 0.10405398879467263,
+          "tower_complex_real": 0.27732610398196966,
+          "tower_complex_imag": 6.684050973594588e-14,
+          "tower_abs": 0.27732610398196966,
+          "B_op_MeV": 2.9896135801120853,
+          "AME_MeV": 8.481798,
+          "err_rel": -0.6475259632318424,
+          "err_pct": -64.75259632318424,
+          "err_ppb": 647525963.2318424,
+          "ame_close_within_threshold": false,
+          "ceiling_ppb": 97332.72400930723,
+          "headroom_observed_over_ceiling": 6652.7056529305
+        },
+        "he3": {
+          "tr_M_abs": 0.2065441288958544,
+          "tower_complex_real": 0.5750612597791738,
+          "tower_complex_imag": -4.528255471433452e-14,
+          "tower_abs": 0.5750612597791738,
+          "B_op_MeV": 3.398642992047114,
+          "AME_MeV": 7.71806,
+          "err_rel": -0.5596506127126358,
+          "err_pct": -55.965061271263586,
+          "err_ppb": 559650612.7126359,
+          "ame_close_within_threshold": false,
+          "ceiling_ppb": 97332.72400930723,
+          "headroom_observed_over_ceiling": 5749.871057334432
+        }
+      },
+      "2": {
+        "deuteron": {
+          "tr_M_abs": 0.3882864712890246,
+          "tower_complex_real": -5.349577980969049,
+          "tower_complex_imag": -4.6688076536691535e-12,
+          "tower_abs": 5.349577980969049,
+          "B_op_MeV": 4.56832981382895,
+          "AME_MeV": 2.224566,
+          "err_rel": 1.0535825027573695,
+          "err_pct": 105.35825027573695,
+          "err_ppb": 1053582502.7573695,
+          "ame_close_within_threshold": false,
+          "ceiling_ppb": 955.5337001297602,
+          "headroom_observed_over_ceiling": 1102611.5589793373
+        },
+        "tritium": {
+          "tr_M_abs": 0.10405398879467263,
+          "tower_complex_real": -4.993044404926049,
+          "tower_complex_imag": 7.912960578983407e-13,
+          "tower_abs": 4.993044404926049,
+          "B_op_MeV": 7.809067780668502,
+          "AME_MeV": 8.481798,
+          "err_rel": -0.07931457685404646,
+          "err_pct": -7.931457685404646,
+          "err_ppb": 79314576.85404645,
+          "ame_close_within_threshold": false,
+          "ceiling_ppb": 955.5337001297602,
+          "headroom_observed_over_ceiling": 83005.52543910868
+        },
+        "he3": {
+          "tr_M_abs": 0.2065441288958544,
+          "tower_complex_real": -10.588038381067683,
+          "tower_complex_imag": 8.159406303006354e-13,
+          "tower_abs": 10.588038381067683,
+          "B_op_MeV": 13.631884582752015,
+          "AME_MeV": 7.71806,
+          "err_rel": 0.7662320042539206,
+          "err_pct": 76.62320042539206,
+          "err_ppb": 766232004.2539206,
+          "ame_close_within_threshold": false,
+          "ceiling_ppb": 955.5337001297602,
+          "headroom_observed_over_ceiling": 801889.0428980865
+        }
+      },
+      "3": {
+        "deuteron": {
+          "tr_M_abs": 0.3882864712890246,
+          "tower_complex_real": -38.35371126417768,
+          "tower_complex_imag": -2.4787813763048783e-11,
+          "tower_abs": 38.35371126417768,
+          "B_op_MeV": 21.433407267208615,
+          "AME_MeV": 2.224566,
+          "err_rel": 8.634871371408453,
+          "err_pct": 863.4871371408453,
+          "err_ppb": 8634871371.408453,
+          "ame_close_within_threshold": false,
+          "ceiling_ppb": 9.38065446515565,
+          "headroom_observed_over_ceiling": 920497754.552478
+        },
+        "tritium": {
+          "tr_M_abs": 0.10405398879467263,
+          "tower_complex_real": -45.63344228348553,
+          "tower_complex_imag": 4.559942052513534e-12,
+          "tower_abs": 45.63344228348553,
+          "B_op_MeV": 49.34346906772074,
+          "AME_MeV": 8.481798,
+          "err_rel": 4.817571824714611,
+          "err_pct": 481.75718247146114,
+          "err_ppb": 4817571824.714611,
+          "ame_close_within_threshold": false,
+          "ceiling_ppb": 9.38065446515565,
+          "headroom_observed_over_ceiling": 513564575.1167399
+        },
+        "he3": {
+          "tr_M_abs": 0.2065441288958544,
+          "tower_complex_real": -108.50549806263018,
+          "tower_complex_imag": 1.0375603578061383e-11,
+          "tower_abs": 108.50549806263018,
+          "B_op_MeV": 113.70332275064355,
+          "AME_MeV": 7.71806,
+          "err_rel": 13.732111793720644,
+          "err_pct": 1373.2111793720644,
+          "err_ppb": 13732111793.720644,
+          "ame_close_within_threshold": false,
+          "ceiling_ppb": 9.38065446515565,
+          "headroom_observed_over_ceiling": 1463875665.0432482
+        }
+      },
+      "4": {
+        "deuteron": {
+          "tr_M_abs": 0.3882864712890246,
+          "tower_complex_real": 14.442774766912692,
+          "tower_complex_imag": -9.222847625880163e-11,
+          "tower_abs": 14.442774766912692,
+          "B_op_MeV": 9.214943823589527,
+          "AME_MeV": 2.224566,
+          "err_rel": 3.142355777976256,
+          "err_pct": 314.23557779762564,
+          "err_ppb": 3142355777.976256,
+          "ame_close_within_threshold": false,
+          "ceiling_ppb": 0.0920916532642384,
+          "headroom_observed_over_ceiling": 34122047618.798855
+        },
+        "tritium": {
+          "tr_M_abs": 0.10405398879467263,
+          "tower_complex_real": -126.98402702560996,
+          "tower_complex_imag": -1.0263658857370324e-10,
+          "tower_abs": 126.98402702560996,
+          "B_op_MeV": 132.48359583794394,
+          "AME_MeV": 8.481798,
+          "err_rel": 14.619753717070832,
+          "err_pct": 1461.9753717070832,
+          "err_ppb": 14619753717.070833,
+          "ame_close_within_threshold": false,
+          "ceiling_ppb": 0.0920916532642384,
+          "headroom_observed_over_ceiling": 158752212593.27817
+        },
+        "he3": {
+          "tr_M_abs": 0.2065441288958544,
+          "tower_complex_real": -600.651287504447,
+          "tower_complex_imag": 5.398193526148524e-11,
+          "tower_abs": 600.651287504447,
+          "B_op_MeV": 616.6752860540225,
+          "AME_MeV": 7.71806,
+          "err_rel": 78.90029697281733,
+          "err_pct": 7890.029697281733,
+          "err_ppb": 78900296972.81734,
+          "ame_close_within_threshold": false,
+          "ceiling_ppb": 0.0920916532642384,
+          "headroom_observed_over_ceiling": 856758394231.7645
+        }
+      },
+      "5": {
+        "deuteron": {
+          "tr_M_abs": 0.3882864712890246,
+          "tower_complex_real": 1519.475537746314,
+          "tower_complex_imag": -2.7028348379815293e-10,
+          "tower_abs": 1519.475537746314,
+          "B_op_MeV": 778.2851054216625,
+          "AME_MeV": 2.224566,
+          "err_rel": 348.8593008351573,
+          "err_pct": 34885.93008351573,
+          "err_ppb": 348859300835.1573,
+          "ame_close_within_threshold": false,
+          "ceiling_ppb": 0.0009040811206129414,
+          "headroom_observed_over_ceiling": 385871679964559.56
+        },
+        "tritium": {
+          "tr_M_abs": 0.10405398879467263,
+          "tower_complex_real": 226.16174157471931,
+          "tower_complex_imag": -1.1630202239905163e-09,
+          "tower_abs": 226.16174157471931,
+          "B_op_MeV": 233.84301183393316,
+          "AME_MeV": 8.481798,
+          "err_rel": 26.56998125090142,
+          "err_pct": 2656.998125090142,
+          "err_ppb": 26569981250.90142,
+          "ame_close_within_threshold": false,
+          "ceiling_ppb": 0.0009040811206129414,
+          "headroom_observed_over_ceiling": 29388934958499.88
+        },
+        "he3": {
+          "tr_M_abs": 0.2065441288958544,
+          "tower_complex_real": -2392.3569086393513,
+          "tower_complex_imag": 1.8507631165134054e-10,
+          "tower_abs": 2392.3569086393513,
+          "B_op_MeV": 2447.7946682720903,
+          "AME_MeV": 7.71806,
+          "err_rel": 316.1515469265709,
+          "err_pct": 31615.15469265709,
+          "err_ppb": 316151546926.5709,
+          "ame_close_within_threshold": false,
+          "ceiling_ppb": 0.0009040811206129414,
+          "headroom_observed_over_ceiling": 349693782690904.0
+        }
+      }
+    },
+    "results_selector_B_max_contrib_k2": {
+      "1": {
+        "deuteron": {
+          "tr_M_abs": 0.3882864712890246,
+          "tower_complex_real": -0.4638455495478569,
+          "tower_complex_imag": -4.626189116069951e-13,
+          "tower_abs": 0.4638455495478569,
+          "B_op_MeV": 2.0717256713917753,
+          "AME_MeV": 2.224566,
+          "err_rel": -0.06870568398879805,
+          "err_pct": -6.870568398879804,
+          "err_ppb": 68705683.98879805,
+          "ame_close_within_threshold": false,
+          "ceiling_ppb": 97332.72400930723,
+          "headroom_observed_over_ceiling": 705.8847339177338
+        },
+        "tritium": {
+          "tr_M_abs": 0.10405398879467263,
+          "tower_complex_real": 0.27732610398196966,
+          "tower_complex_imag": 6.684050973594588e-14,
+          "tower_abs": 0.27732610398196966,
+          "B_op_MeV": 2.9896135801120853,
+          "AME_MeV": 8.481798,
+          "err_rel": -0.6475259632318424,
+          "err_pct": -64.75259632318424,
+          "err_ppb": 647525963.2318424,
+          "ame_close_within_threshold": false,
+          "ceiling_ppb": 97332.72400930723,
+          "headroom_observed_over_ceiling": 6652.7056529305
+        },
+        "he3": {
+          "tr_M_abs": 0.2065441288958544,
+          "tower_complex_real": 0.5750612597791738,
+          "tower_complex_imag": -4.528255471433452e-14,
+          "tower_abs": 0.5750612597791738,
+          "B_op_MeV": 3.398642992047114,
+          "AME_MeV": 7.71806,
+          "err_rel": -0.5596506127126358,
+          "err_pct": -55.965061271263586,
+          "err_ppb": 559650612.7126359,
+          "ame_close_within_threshold": false,
+          "ceiling_ppb": 97332.72400930723,
+          "headroom_observed_over_ceiling": 5749.871057334432
+        }
+      },
+      "2": {
+        "deuteron": {
+          "tr_M_abs": 0.3882864712890246,
+          "tower_complex_real": 0.25499066741741133,
+          "tower_complex_imag": -4.605986842322091e-13,
+          "tower_abs": 0.25499066741741133,
+          "B_op_MeV": 1.9650010459207436,
+          "AME_MeV": 2.224566,
+          "err_rel": -0.11668116571019074,
+          "err_pct": -11.668116571019075,
+          "err_ppb": 116681165.71019074,
+          "ame_close_within_threshold": false,
+          "ceiling_ppb": 955.5337001297602,
+          "headroom_observed_over_ceiling": 122110.98959078638
+        },
+        "tritium": {
+          "tr_M_abs": 0.10405398879467263,
+          "tower_complex_real": -1.9719982646220209,
+          "tower_complex_imag": 6.974435779357353e-13,
+          "tower_abs": 1.9719982646220209,
+          "B_op_MeV": 4.72156496947468,
+          "AME_MeV": 8.481798,
+          "err_rel": -0.44332970798471266,
+          "err_pct": -44.332970798471266,
+          "err_ppb": 443329707.98471266,
+          "ame_close_within_threshold": false,
+          "ceiling_ppb": 955.5337001297602,
+          "headroom_observed_over_ceiling": 463960.30608288234
+        },
+        "he3": {
+          "tr_M_abs": 0.2065441288958544,
+          "tower_complex_real": 1.0658215613461497,
+          "tower_complex_imag": -3.596045499773235e-13,
+          "tower_abs": 1.0658215613461497,
+          "B_op_MeV": 3.9001989896519302,
+          "AME_MeV": 7.71806,
+          "err_rel": -0.49466588888244845,
+          "err_pct": -49.46658888824484,
+          "err_ppb": 494665888.88244843,
+          "ame_close_within_threshold": false,
+          "ceiling_ppb": 955.5337001297602,
+          "headroom_observed_over_ceiling": 517685.44512378104
+        }
+      },
+      "3": {
+        "deuteron": {
+          "tr_M_abs": 0.3882864712890246,
+          "tower_complex_real": -6.030708606764647,
+          "tower_complex_imag": -4.5082442920111197e-13,
+          "tower_abs": 6.030708606764647,
+          "B_op_MeV": 4.916386848423345,
+          "AME_MeV": 2.224566,
+          "err_rel": 1.210043149280959,
+          "err_pct": 121.0043149280959,
+          "err_ppb": 1210043149.280959,
+          "ame_close_within_threshold": false,
+          "ceiling_ppb": 9.38065446515565,
+          "headroom_observed_over_ceiling": 128993467.75597079
+        },
+        "tritium": {
+          "tr_M_abs": 0.10405398879467263,
+          "tower_complex_real": -22.17025857154133,
+          "tower_complex_imag": 3.6433860177166234e-12,
+          "tower_abs": 22.17025857154133,
+          "B_op_MeV": 25.36414458679956,
+          "AME_MeV": 8.481798,
+          "err_rel": 1.9904207323493868,
+          "err_pct": 199.04207323493867,
+          "err_ppb": 1990420732.3493867,
+          "ame_close_within_threshold": false,
+          "ceiling_ppb": 9.38065446515565,
+          "headroom_observed_over_ceiling": 212183567.7609473
+        },
+        "he3": {
+          "tr_M_abs": 0.2065441288958544,
+          "tower_complex_real": 4.424553898546897,
+          "tower_complex_imag": -1.4535961617984335e-12,
+          "tower_abs": 4.424553898546897,
+          "B_op_MeV": 7.332816384933185,
+          "AME_MeV": 7.71806,
+          "err_rel": -0.04991456597471583,
+          "err_pct": -4.991456597471583,
+          "err_ppb": 49914565.97471583,
+          "ame_close_within_threshold": true,
+          "ceiling_ppb": 9.38065446515565,
+          "headroom_observed_over_ceiling": 5321011.040340842
+        }
+      },
+      "4": {
+        "deuteron": {
+          "tr_M_abs": 0.3882864712890246,
+          "tower_complex_real": 136.19824094391743,
+          "tower_complex_imag": -4.1973630200416055e-13,
+          "tower_abs": 136.19824094391743,
+          "B_op_MeV": 71.43185919679946,
+          "AME_MeV": 2.224566,
+          "err_rel": 31.110469726139605,
+          "err_pct": 3111.0469726139604,
+          "err_ppb": 31110469726.139606,
+          "ame_close_within_threshold": false,
+          "ceiling_ppb": 0.0920916532642384,
+          "headroom_observed_over_ceiling": 337820732101.2513
+        },
+        "tritium": {
+          "tr_M_abs": 0.10405398879467263,
+          "tower_complex_real": -20.196807898617177,
+          "tower_complex_imag": -1.0740031352553348e-10,
+          "tower_abs": 20.196807898617177,
+          "B_op_MeV": 23.347282143317493,
+          "AME_MeV": 8.481798,
+          "err_rel": 1.7526335976543528,
+          "err_pct": 175.26335976543527,
+          "err_ppb": 1752633597.6543527,
+          "ame_close_within_threshold": false,
+          "ceiling_ppb": 0.0920916532642384,
+          "headroom_observed_over_ceiling": 19031405513.217625
+        },
+        "he3": {
+          "tr_M_abs": 0.2065441288958544,
+          "tower_complex_real": -12.500357631288708,
+          "tower_complex_imag": -8.736086843483295e-12,
+          "tower_abs": 12.500357631288708,
+          "B_op_MeV": 15.586270840607478,
+          "AME_MeV": 7.71806,
+          "err_rel": 1.01945447957226,
+          "err_pct": 101.945447957226,
+          "err_ppb": 1019454479.57226,
+          "ame_close_within_threshold": false,
+          "ceiling_ppb": 0.0920916532642384,
+          "headroom_observed_over_ceiling": 11069998674.550247
+        }
+      },
+      "5": {
+        "deuteron": {
+          "tr_M_abs": 0.3882864712890246,
+          "tower_complex_real": 1877.1044317347166,
+          "tower_complex_imag": -3.3108959359584817e-13,
+          "tower_abs": 1877.1044317347166,
+          "B_op_MeV": 961.0330947393975,
+          "AME_MeV": 2.224566,
+          "err_rel": 431.00925247414443,
+          "err_pct": 43100.925247414445,
+          "err_ppb": 431009252474.1444,
+          "ame_close_within_threshold": false,
+          "ceiling_ppb": 0.0009040811206129414,
+          "headroom_observed_over_ceiling": 476737366423416.0
+        },
+        "tritium": {
+          "tr_M_abs": 0.10405398879467263,
+          "tower_complex_real": 583.6513317463125,
+          "tower_complex_imag": -1.1804535823955111e-09,
+          "tower_abs": 583.6513317463125,
+          "B_op_MeV": 599.196622261162,
+          "AME_MeV": 8.481798,
+          "err_rel": 69.64500030078081,
+          "err_pct": 6964.500030078081,
+          "err_ppb": 69645000300.7808,
+          "ame_close_within_threshold": false,
+          "ceiling_ppb": 0.0009040811206129414,
+          "headroom_observed_over_ceiling": 77034016874020.62
+        },
+        "he3": {
+          "tr_M_abs": 0.2065441288958544,
+          "tower_complex_real": -229.60370974964238,
+          "tower_complex_imag": -4.807567735485415e-11,
+          "tower_abs": 229.60370974964238,
+          "B_op_MeV": 237.46544078852546,
+          "AME_MeV": 7.71806,
+          "err_rel": 29.76750385310887,
+          "err_pct": 2976.750385310887,
+          "err_ppb": 29767503853.10887,
+          "ame_close_within_threshold": false,
+          "ceiling_ppb": 0.0009040811206129414,
+          "headroom_observed_over_ceiling": 32925700110768.098
+        }
+      }
+    },
+    "closure_by_N_selector_A": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": false,
+      "5": false
+    },
+    "closure_by_N_selector_B": {
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": false,
+      "5": false
+    }
+  },
+  "caveats": [
+    "Absolute-form binding B = m_e·ρ·(|tr_M|+|tower|+σ_{3A}); subtractive form would require recomputing all per-irrep eigenvalues at include_inter=False. Deferred (matches PR #638's scope).",
+    "Eigenvalues via numpy float64. The c(K) ceiling table is the STRUCTURAL upper bound from PR #639's c_k_beta_decay_witness.py. The observed binding-formula residual is NOT directly the truncation remainder |R_N| — it folds in σ_{3A} (Wedderburn jet correction) and the ρ pre-factor (atomic gauge). Headroom comparison is indicative, not definitive: a probe of |R_N| directly would require subtracting the tr_M and σ_{3A} terms.",
+    "Cherry-picks (per /coordinate §10): PR #638's probe_phiq_operator_valued.py (eigenvalue / operator-trace infrastructure) and PR #639's per-partition-k-lambda-rule.md (max-|μ| selector + k_λ rule), c_k_beta_decay_witness.py (ceiling). Neither PR has merged at the time of this probe; if either lands and changes the relevant infrastructure, this probe should be re-run."
+  ]
+}
