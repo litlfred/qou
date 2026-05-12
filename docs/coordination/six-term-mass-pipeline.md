@@ -16,7 +16,7 @@ chains; identify the canonical substrate-only predictor.
 | **T3** | brane tower, gen-pair | same | **derived** (3 paths) |
 | **T4** | $m_e \cdot \mathrm{tr}_M(C_{\dim_q}^{H_n(R, q)})$ | [`thm:frobenius-codim-universal`](../../content/quantum-observable-universe/braids-and-knots/frobenius-codim-universal.md) | derived (per-$3A$ form) |
 | **T5** | $a_K \cdot \mathcal{C}_K$ chirality | [`prop:figure-eight-bw-coefficients`](../../content/quantum-observable-universe/braids-and-knots/figure-eight-bw-coefficients.md), [`prop:chirality-dual-space-derivation`](../../content/quantum-observable-universe/braids-and-knots/chirality-dual-space-derivation.md) | derived |
-| **T6** | jet-prefix / cyclotomic residue tail | [`prop:gb-residue-spectral-sum`](../../content/quantum-observable-universe/braids-and-knots/gb-residue-spectral-sum.md), [`prop:full-pole-structure-mass-trace`](../../content/quantum-observable-universe/braids-and-knots/full-pole-structure-mass-trace.md), [`prop:six-term-mass-formula-complete`](../../content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.md) | derived (symbolic paper form) |
+| **T6** | jet-prefix / cyclotomic residue tail | [`prop:gb-residue-spectral-sum`](../../content/quantum-observable-universe/braids-and-knots/gb-residue-spectral-sum.md), [`prop:full-pole-structure-mass-trace`](../../content/quantum-observable-universe/braids-and-knots/full-pole-structure-mass-trace.md), [`prop:six-term-mass-formula-complete`](../../content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.md) | derived (symbolic paper form; compute fallback active) |
 
 ### T2 + T3 has three derivation paths in the paper
 
@@ -70,7 +70,7 @@ The T − ³He isospin defect under `brane-legacy` is −737 MeV vs CODATA +19 k
 
 ### Pieces wired but not yet plugged in
 
-- **T6 Habiro residue tail**: `term6_residues_at_roots.py` exists but `term6-habiro-residue-mpfr-50dps.witness.json` not on this branch — current sweep silently sets T6 = 0 MeV (warning emitted).
+- **T6 Habiro residue tail**: `paper_six_term_isotope_sweep.py` now loads non-zero T6 via a temporary fallback to `_deprecated/term6-habiro-residue-mpfr-50dps.witness.json`; canonical target is `term6-habiro-residue-mpfr-50dps.witness.json` in `computations/`.
 - **Path 2 Wedderburn-Heine**: `brane-tower-plancherel-scaffold.witness.json` exists but `paper_six_term_isotope_sweep.py` has no `tower_mode="path-2"` option.
 - **Path 3 Habiro single-trace**: `path-b-habiro-mass-probe.witness.json` claims sub-1% errors; no entry-point script for production use — buried in `_deprecated/` or older PR branches.
 
@@ -93,7 +93,7 @@ These don't bridge — the ratios $0.388/0.288 = 1.35$, $0.104/0.0129 = 8.07$, $
 
 1. **Freeze target: compute must match paper terms exactly before framework changes.**
 2. **Keep `--t1-source=model-b` as default** in `paper_six_term_isotope_sweep.py`; preserve explicit Model A fallback reporting for parity diagnostics.
-3. **Run `term6_residues_at_roots.py` and wire non-zero T6 by default** in production sweeps (paper T6 is derived; missing witness is a pipeline gap, not a derivation gap).
+3. **Regenerate canonical `term6-habiro-residue-mpfr-50dps.witness.json`** in `computations/` and remove the temporary legacy fallback path (paper T6 is derived; this is compute-wiring cleanup).
 4. **Add `tower_mode="path-2"`** (Path 2 Wedderburn-Heine) per
    [`brane-tower-plancherel-scaffold.witness.json`](../../folio-assistant/computations/brane-tower-plancherel-scaffold.witness.json).
 5. **Add `tower_mode="habiro-single-trace"`** (Path 3) per [`path-b-habiro-mass-probe.witness.json`](../../folio-assistant/computations/path-b-habiro-mass-probe.witness.json), and make it a first-class production mode.

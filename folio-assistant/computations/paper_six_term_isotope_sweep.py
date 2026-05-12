@@ -230,22 +230,29 @@ def _load_canonical_t6_MeV() -> dict[int, mp.mpf]:
         HERE / "_deprecated" / "term6-habiro-residue-mpfr-50dps.witness.json",
     ]
 
-    for path in candidate_paths:
+    for path_idx, path in enumerate(candidate_paths):
         if not path.exists():
             continue
         d = json.loads(path.read_text())
         out: dict[int, mp.mpf] = {}
         for r in d.get("results_by_atom", []):
             try:
-                A = int(str(r["atom"]).split("=")[1])
+                atom_key = r["atom"]
+                if not isinstance(atom_key, str):
+                    continue
+                parts = atom_key.split("=", 1)
+                if len(parts) != 2 or not parts[1]:
+                    continue
+                A = int(parts[1])
                 out[A] = mp.mpf(r["term6_b_pred_mev_50dps"])
             except (KeyError, IndexError, ValueError):
                 continue
         if out:
-            if path.parent.name == "_deprecated":
+            if path_idx > 0:
                 warnings.warn(
                     f"Using legacy T6 witness fallback: {path}. "
-                    "Regenerate canonical T6 witness in computations/ when available.",
+                    "Regenerate term6-habiro-residue-mpfr-50dps.witness.json "
+                    "in folio-assistant/computations/ to remove this fallback.",
                     stacklevel=2,
                 )
             _T6_CACHE = out
