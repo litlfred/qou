@@ -1,6 +1,6 @@
 import Mathlib.Combinatorics.Young.YoungDiagram
 import Mathlib.Combinatorics.Young.SemistandardTableau
-import Mathlib.Data.Nat.Partition
+import Mathlib.Combinatorics.Enumerative.Partition
 import Mathlib.Tactic
 import QOU.HeckeAlgebra.Common
 
