@@ -1,0 +1,11 @@
+-- Sibling docstub for `prop:cyclotomic-orbit-sum-all-depths`.
+--
+-- This file is documentation only.  The compiled formalisation
+-- lives in the Lake-built tree at:
+--
+--   lean/QOU/BraidKnot/CyclotomicOrbitSumAllDepths.lean
+--
+-- See `QOU.BraidKnot.CyclotomicOrbitSumAllDepths.orbit_sum_all_depths`.
+--
+-- See the chapter umbrella `lean/QOU/BraidKnot.lean`
+-- for the import wiring.

@@ -1,0 +1,11 @@
+-- Sibling docstub for `prop:two-filtration-bridge-general`.
+--
+-- This file is documentation only.  The compiled formalisation
+-- lives in the Lake-built tree at:
+--
+--   lean/QOU/AlgebraicSubstrate/TwoFiltrationBridgeGeneral.lean
+--
+-- See `QOU.AlgebraicSubstrate.TwoFiltrationBridgeGeneral.bridge_map_general`.
+--
+-- See the chapter umbrella `lean/QOU/AlgebraicSubstrate.lean`
+-- for the import wiring.

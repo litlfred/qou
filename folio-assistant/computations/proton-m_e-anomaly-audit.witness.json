@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-11T03:51:58.756075+00:00",
-  "commitSha": "af2f4f6f051c7799d060252eb73bd27422e0c7bb",
+  "computedAt": "2026-05-11T18:13:50.909341+00:00",
+  "commitSha": "c4c2d382d90224492a2d72ac6c95b38e6107ab4d",
   "assertions": [
     {
       "name": "predicted_matches_m_p_minus_m_e_within_1000_ppb",
@@ -19,11 +19,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "proton-m_e-anomaly-audit",
   "scriptFile": "proton_m_e_anomaly_audit.py",
   "scriptHash": "9b70aa04b632",
-  "scriptCommitSha": "dfaf1eab74cce8f1fb95ca0cb91bacf695727c30",
+  "scriptCommitSha": "5732dad052080159e3430d82e2817a9880b65028",
   "description": "Diagnostic-only audit of the proton 544k ppb defect.  Documents that the placeholder literals M_HECKE_PIPELINE_AT_Q0['p']=1.4283 and ['e']=0.0007783 in derivation_chain.py:73-76 give a Hecke ratio matching (m_p - m_e)/m_e to ~470 ppb, NOT m_p/m_e.  The 544,145 ppb error in proton-mass-50dps.derivation.json is structurally the missing electron-rest anchor.  This audit does NOT apply a fix: a `+1` patch on the Hecke ratio would hit CODATA by algebraic cancellation but would be fitting, not derivation.  Resolution options enumerated in docs/audits/2026-05-09-proton-m_e-anomaly.md (Options A-E).  Recommended: D (relabel-then-derive) or E (defer and focus 1ppb work on T1 / binding-energy chains that don't consume these placeholders).",
   "contentBlock": "prop:full-pole-structure-mass-trace",
   "auditOnly": "docs/audits/2026-05-09-proton-m_e-anomaly.md",

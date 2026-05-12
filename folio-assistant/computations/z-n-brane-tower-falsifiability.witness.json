@@ -1,0 +1,88 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-11T21:30:39.482024+00:00",
+  "commitSha": "d1d1893fbc07a9b4f1a7667bda88420333db5a4d",
+  "assertions": [
+    {
+      "name": "no_brane_tower_scheme_within_1MeV_of_z_n_prediction_refuted",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 7,
+  "computation": "z-n-brane-tower-falsifiability",
+  "scriptFile": "probe_z_n_brane_tower_falsifiability.py",
+  "scriptHash": "97ea5e0cc954",
+  "scriptCommitSha": "1d608afd588a4669dd6c671b65f20fab29c44ff5",
+  "description": "Empirical falsifiability test of the `he3_vs_tritium_shell_cancels` Lean theorem in conj-magic-shell-stabilization.lean.  Under the Z↔N symmetry of Δ_shell, the brane-tower difference B(³He) - B(³H) should equal AME(³He) - AME(³H) modulo the proton-proton Coulomb correction (~+0.7 MeV).  Pulls B values from each of the six probed brane-tower conventions in PR #638 and reports which (if any) is closest to the expected difference under the Z↔N hypothesis.",
+  "contentBlock": "conj:magic-shell-stabilization",
+  "parameters": {
+    "ame_he3_MeV": 7.71806,
+    "ame_h3_MeV": 8.481798,
+    "coulomb_correction_MeV": 0.7,
+    "expected_brane_diff_MeV": -1.463737999999999
+  },
+  "data": {
+    "per_scheme_diff": {
+      "scalar_uniform_k_2_abs": {
+        "B_tritium": 218.1682624180596,
+        "B_he3": 256.01620099202773,
+        "diff_he3_minus_h3": 37.84793857396812,
+        "discrepancy_from_expected": 39.31167657396812
+      },
+      "scalar_uniform_k_2_subtractive": {
+        "B_tritium": 5.178050725777412,
+        "B_he3": 18.05019379522631,
+        "diff_he3_minus_h3": 12.872143069448898,
+        "discrepancy_from_expected": 14.335881069448897
+      },
+      "ell_n0_k_rule_absolute": {
+        "B_tritium": 1323223.1498369267,
+        "B_he3": 943270.595515337,
+        "diff_he3_minus_h3": -379952.55432158976,
+        "discrepancy_from_expected": -379951.09058358974
+      },
+      "operator_valued_uniform_k_2": {
+        "B_tritium": 7.803497209157526,
+        "B_he3": 13.641984661282057,
+        "diff_he3_minus_h3": 5.838487452124531,
+        "discrepancy_from_expected": 7.302225452124531
+      },
+      "operator_valued_uniform_k_1": {
+        "B_tritium": 2.9896135801134816,
+        "B_he3": 3.3986429920472525,
+        "diff_he3_minus_h3": 0.40902941193377096,
+        "discrepancy_from_expected": 1.87276741193377
+      },
+      "multiplicity_R2_op_per_atom": {
+        "B_tritium": 7.803497209157526,
+        "B_he3": 3.3986429920472525,
+        "diff_he3_minus_h3": -4.404854217110273,
+        "discrepancy_from_expected": -2.941116217110274
+      },
+      "pair_knot_product_volume": {
+        "B_tritium": 98.12793477173919,
+        "B_he3": 24.599985653744742,
+        "diff_he3_minus_h3": -73.52794911799445,
+        "discrepancy_from_expected": -72.06421111799446
+      },
+      "pair_knot_markov_trace": {
+        "B_tritium": 93.01364969388696,
+        "B_he3": 19.636343180504067,
+        "diff_he3_minus_h3": -73.37730651338289,
+        "discrepancy_from_expected": -71.9135685133829
+      }
+    },
+    "closest_scheme": {
+      "name": "operator_valued_uniform_k_1",
+      "discrepancy_MeV": 1.87276741193377
+    }
+  },
+  "caveats": [
+    "Coulomb correction ~+0.7 MeV is a single-p-p-pair estimate at r ~ 2 fm; precise value depends on the ³He charge radius (1.96 fm RMS) and Coulomb-energy formula. The probe's verdict tolerance (|Δ| < 1.0 MeV) absorbs this uncertainty.",
+    "The brane-tower formulae overshoot AME by 50%–1000% on all atoms (per PR #638 closure).  The B(³He) - B(³H) DIFFERENCE may nonetheless reflect Z↔N symmetry even when the absolute B values are far from AME — that is the precise content of the he3_vs_tritium_shell_cancels theorem."
+  ]
+}

@@ -119,3 +119,24 @@ $Q_\beta$ itself) is used.
 
 **Witness**: symbolic derivation verified at
 $q_0 = 1.109978595554181$ from `q_parameter.py`.
+
+## Relation to the transfer-matrix eigenfunction form
+
+The closed form above (Form A, NF-counit basis) is equivalent to
+the transfer-matrix log-ratio form
+([prop:beta-decay-transfer-matrix](#prop:beta-decay-transfer-matrix))
+up to the Markov–Jones normalization
+$z = 1/(\sqrt q + 1/\sqrt q)$, with explicit bridge identity in
+[prop:q-beta-spectral-bridge](#prop:q-beta-spectral-bridge):
+
+$$
+  Q_\beta^{\mathrm{A}}
+  \;=\;
+  Q_\beta^{\mathrm{B}} \cdot \Bigl(1 + \tfrac{(z-1)\,h}{2} + O(h^2)\Bigr).
+$$
+
+The two forms are **not competing predictions** — they are the same
+observable in two bases. Form A is canonical here because the
+single-wrap NF-counit reduces to a closed symbolic expression in
+$q$; Form B is the natural eigenfunction basis for $N \geq 1$
+brane-tower truncation analysis.

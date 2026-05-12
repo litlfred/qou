@@ -1,0 +1,443 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-05-11T02:32:58.481283+00:00",
+  "commitSha": "a50e64794a0f8c90138bf0b46b12be735be34ef6",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 260,
+  "computation": "jonquiere-cyclotomic-general",
+  "scriptFile": "jonquiere_cyclotomic_general.py",
+  "scriptHash": "9cc891df3160",
+  "scriptCommitSha": "unknown",
+  "description": "Numerical verification at 50 dps of two general theorems subsuming PR #635 rounds A and B from `n = 3` to all depths n >= 2: (E) Tate-rationality of the 'wrong-parity' part of Li_n(zeta_K) via Jonquière inversion (Im for n odd, Re for n even); closed form involves Bernoulli polynomial B_n(1/K). (F) Orbit-sum sum_{k=1..N-1} Cl_n(2 pi k/N) reduces to (N^{1-n} - 1) zeta(n) for n odd, vanishes for n even. Verified at n in [2, 3, 4, 5], K in [3, 4, 5, 6, 7]; max residual below 1e-45 in both theorems.",
+  "timestamp": "2026-05-11T02:32:58.466083+00:00",
+  "precision_decimal_digits": 50,
+  "tested_depths": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "tested_indices": [
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "theorem_e_tate_rationality": {
+    "claim": "Li_n(zeta_K) - (-1)^{n-1} Li_n(zeta_K^{-1}) = -(2 pi i)^n / n! * B_n(1/K)",
+    "rows": [
+      {
+        "n": 2,
+        "K": 3,
+        "parity": "even",
+        "extracted_part": "Re",
+        "closed_form_str": "-0.5483113556160754788241383888820083964063166337356",
+        "direct_str": "-0.5483113556160754788241383888820083964063166337356",
+        "residual_str": "0.0",
+        "residual_below_1e_45": true
+      },
+      {
+        "n": 2,
+        "K": 4,
+        "parity": "even",
+        "extracted_part": "Re",
+        "closed_form_str": "-0.20561675835602830455905189583075314865236873765085",
+        "direct_str": "-0.20561675835602830455905189583075314865236873765085",
+        "residual_str": "3.3409558876152445576756705839393523485189961001313e-52",
+        "residual_below_1e_45": true
+      },
+      {
+        "n": 2,
+        "K": 5,
+        "parity": "even",
+        "extracted_part": "Re",
+        "closed_form_str": "0.065797362673929057458896606665841007568757996048271",
+        "direct_str": "0.065797362673929057458896606665841007568757996048272",
+        "residual_str": "6.6819117752304891153513411678787046970379922002626e-52",
+        "residual_below_1e_45": true
+      },
+      {
+        "n": 2,
+        "K": 6,
+        "parity": "even",
+        "extracted_part": "Re",
+        "closed_form_str": "0.2741556778080377394120691944410041982031583168678",
+        "direct_str": "0.2741556778080377394120691944410041982031583168678",
+        "residual_str": "1.3363823550460978230702682335757409394075984400525e-51",
+        "residual_below_1e_45": true
+      },
+      {
+        "n": 2,
+        "K": 7,
+        "parity": "even",
+        "extracted_part": "Re",
+        "closed_form_str": "0.43641107895973354437023259523261892775196630032017",
+        "direct_str": "0.43641107895973354437023259523261892775196630032017",
+        "residual_str": "0.0",
+        "residual_below_1e_45": true
+      },
+      {
+        "n": 3,
+        "K": 3,
+        "parity": "odd ",
+        "extracted_part": "Im",
+        "closed_form_str": "0.76558707852592148581423000165682457289445156952803",
+        "direct_str": "0.76558707852592148581423000165682457289445156952803",
+        "residual_str": "1.3363823550460978230702682335757409394075984400525e-51",
+        "residual_below_1e_45": true
+      },
+      {
+        "n": 3,
+        "K": 4,
+        "parity": "odd ",
+        "extracted_part": "Im",
+        "closed_form_str": "0.96894614625936938048363484584691860006954026768391",
+        "direct_str": "0.96894614625936938048363484584691860006954026768391",
+        "residual_str": "1.3363823550460978230702682335757409394075984400525e-51",
+        "residual_below_1e_45": true
+      },
+      {
+        "n": 3,
+        "K": 5,
+        "parity": "odd ",
+        "extracted_part": "Im",
+        "closed_form_str": "0.99220085376959424561524208214724464647120923410832",
+        "direct_str": "0.99220085376959424561524208214724464647120923410832",
+        "residual_str": "1.3363823550460978230702682335757409394075984400525e-51",
+        "residual_below_1e_45": true
+      },
+      {
+        "n": 3,
+        "K": 6,
+        "parity": "odd ",
+        "extracted_part": "Im",
+        "closed_form_str": "0.95698384815740185726778750207103071611806446191004",
+        "direct_str": "0.95698384815740185726778750207103071611806446191003",
+        "residual_str": "1.3363823550460978230702682335757409394075984400525e-51",
+        "residual_below_1e_45": true
+      },
+      {
+        "n": 3,
+        "K": 7,
+        "parity": "odd ",
+        "extracted_part": "Im",
+        "closed_form_str": "0.90397308105830379520339110982802901464213669288295",
+        "direct_str": "0.90397308105830379520339110982802901464213669288295",
+        "residual_str": "1.3363823550460978230702682335757409394075984400525e-51",
+        "residual_below_1e_45": true
+      },
+      {
+        "n": 4,
+        "K": 3,
+        "parity": "even",
+        "extracted_part": "Re",
+        "closed_form_str": "-0.52111859400906653665585363166796973096562082870161",
+        "direct_str": "-0.52111859400906653665585363166796973096562082870161",
+        "residual_str": "1.3363823550460978230702682335757409394075984400525e-51",
+        "residual_below_1e_45": true
+      },
+      {
+        "n": 4,
+        "K": 4,
+        "parity": "even",
+        "extracted_part": "Re",
+        "closed_form_str": "-0.059189551843577869848531452154595119682994192683055",
+        "direct_str": "-0.059189551843577869848531452154595119682994192683056",
+        "residual_str": "5.011433831422866836513505875909028522778494150197e-52",
+        "residual_below_1e_45": true
+      },
+      {
+        "n": 4,
+        "K": 5,
+        "parity": "even",
+        "extracted_part": "Re",
+        "closed_form_str": "0.25109899022098406043171285759755095344374222084514",
+        "direct_str": "0.25109899022098406043171285759755095344374222084514",
+        "residual_str": "0.0",
+        "residual_below_1e_45": true
+      },
+      {
+        "n": 4,
+        "K": 6,
+        "parity": "even",
+        "extracted_part": "Re",
+        "closed_form_str": "0.45597876975793321957387192770947351459491822511391",
+        "direct_str": "0.45597876975793321957387192770947351459491822511391",
+        "residual_str": "6.6819117752304891153513411678787046970379922002626e-52",
+        "residual_below_1e_45": true
+      },
+      {
+        "n": 4,
+        "K": 7,
+        "parity": "even",
+        "extracted_part": "Re",
+        "closed_form_str": "0.59548062962616141232513156315322065787815327258835",
+        "direct_str": "0.59548062962616141232513156315322065787815327258835",
+        "residual_str": "0.0",
+        "residual_below_1e_45": true
+      },
+      {
+        "n": 5,
+        "K": 3,
+        "parity": "odd ",
+        "extracted_part": "Im",
+        "closed_form_str": "0.8395601777373976769896880933976285500145424050153",
+        "direct_str": "0.8395601777373976769896880933976285500145424050153",
+        "residual_str": "4.0091470651382934692108047007272228182227953201576e-51",
+        "residual_below_1e_45": true
+      },
+      {
+        "n": 5,
+        "K": 4,
+        "parity": "odd ",
+        "extracted_part": "Im",
+        "closed_form_str": "0.99615782807708806400631936863097528151139552938827",
+        "direct_str": "0.99615782807708806400631936863097528151139552938826",
+        "residual_str": "2.672764710092195646140536467151481878815196880105e-51",
+        "residual_below_1e_45": true
+      },
+      {
+        "n": 5,
+        "K": 5,
+        "parity": "odd ",
+        "extracted_part": "Im",
+        "closed_form_str": "0.96620615142872864176822856291047402152713609772705",
+        "direct_str": "0.96620615142872864176822856291047402152713609772704",
+        "residual_str": "2.672764710092195646140536467151481878815196880105e-51",
+        "residual_below_1e_45": true
+      },
+      {
+        "n": 5,
+        "K": 6,
+        "parity": "odd ",
+        "extracted_part": "Im",
+        "closed_form_str": "0.89203268884598503180154359923498033439045130532875",
+        "direct_str": "0.89203268884598503180154359923498033439045130532875",
+        "residual_str": "1.3363823550460978230702682335757409394075984400525e-51",
+        "residual_below_1e_45": true
+      },
+      {
+        "n": 5,
+        "K": 7,
+        "parity": "odd ",
+        "extracted_part": "Im",
+        "closed_form_str": "0.81328489639689246022901837618889691335674212507015",
+        "direct_str": "0.81328489639689246022901837618889691335674212507015",
+        "residual_str": "2.672764710092195646140536467151481878815196880105e-51",
+        "residual_below_1e_45": true
+      }
+    ],
+    "max_residual_str": "4.0091470651382934692108047007272228182227953201576e-51",
+    "all_below_1e_45": true
+  },
+  "theorem_f_orbit_sum": {
+    "claim": "sum_{k=1..N-1} Cl_n(2 pi k / N) = (N^{1-n} - 1) zeta(n) (n odd) or 0 (n even)",
+    "rows": [
+      {
+        "n": 2,
+        "N": 3,
+        "parity": "even",
+        "predicted_form": "0 (trivial)",
+        "predicted_str": "0.0",
+        "direct_sum_str": "1.3363823550460978230702682335757409394075984400525e-51",
+        "residual_str": "1.3363823550460978230702682335757409394075984400525e-51",
+        "residual_below_1e_45": true
+      },
+      {
+        "n": 2,
+        "N": 4,
+        "parity": "even",
+        "predicted_form": "0 (trivial)",
+        "predicted_str": "0.0",
+        "direct_sum_str": "-4.0091470651382934692108047007272228182227953201576e-51",
+        "residual_str": "4.0091470651382934692108047007272228182227953201576e-51",
+        "residual_below_1e_45": true
+      },
+      {
+        "n": 2,
+        "N": 5,
+        "parity": "even",
+        "predicted_form": "0 (trivial)",
+        "predicted_str": "0.0",
+        "direct_sum_str": "0.0",
+        "residual_str": "0.0",
+        "residual_below_1e_45": true
+      },
+      {
+        "n": 2,
+        "N": 6,
+        "parity": "even",
+        "predicted_form": "0 (trivial)",
+        "predicted_str": "0.0",
+        "direct_sum_str": "0.0",
+        "residual_str": "0.0",
+        "residual_below_1e_45": true
+      },
+      {
+        "n": 2,
+        "N": 7,
+        "parity": "even",
+        "predicted_form": "0 (trivial)",
+        "predicted_str": "0.0",
+        "direct_sum_str": "-2.672764710092195646140536467151481878815196880105e-51",
+        "residual_str": "2.672764710092195646140536467151481878815196880105e-51",
+        "residual_below_1e_45": true
+      },
+      {
+        "n": 3,
+        "N": 3,
+        "parity": "odd ",
+        "predicted_form": "(N^(1-n) - 1) * zeta(n)",
+        "predicted_str": "-1.0684950250307504759108783657879555473466544820804",
+        "direct_sum_str": "-1.0684950250307504759108783657879555473466544820804",
+        "residual_str": "0.0",
+        "residual_below_1e_45": true
+      },
+      {
+        "n": 3,
+        "N": 4,
+        "parity": "odd ",
+        "predicted_form": "(N^(1-n) - 1) * zeta(n)",
+        "predicted_str": "-1.1269283467121196425622545264169843663421746490692",
+        "direct_sum_str": "-1.1269283467121196425622545264169843663421746490692",
+        "residual_str": "5.3455294201843912922810729343029637576303937602101e-51",
+        "residual_below_1e_45": true
+      },
+      {
+        "n": 3,
+        "N": 5,
+        "parity": "odd ",
+        "predicted_form": "(N^(1-n) - 1) * zeta(n)",
+        "predicted_str": "-1.1539746270332105139837486350509919911343868406469",
+        "direct_sum_str": "-1.1539746270332105139837486350509919911343868406469",
+        "residual_str": "5.3455294201843912922810729343029637576303937602101e-51",
+        "residual_below_1e_45": true
+      },
+      {
+        "n": 3,
+        "N": 6,
+        "parity": "odd ",
+        "predicted_form": "(N^(1-n) - 1) * zeta(n)",
+        "predicted_str": "-1.1686664336273833330275232125805763799104033397755",
+        "direct_sum_str": "-1.1686664336273833330275232125805763799104033397755",
+        "residual_str": "2.672764710092195646140536467151481878815196880105e-51",
+        "residual_below_1e_45": true
+      },
+      {
+        "n": 3,
+        "N": 7,
+        "parity": "odd ",
+        "predicted_form": "(N^(1-n) - 1) * zeta(n)",
+        "predicted_str": "-1.1775251296257250142691312602561142766677416741295",
+        "direct_sum_str": "-1.1775251296257250142691312602561142766677416741295",
+        "residual_str": "8.0182941302765869384216094014544456364455906403151e-51",
+        "residual_below_1e_45": true
+      },
+      {
+        "n": 4,
+        "N": 3,
+        "parity": "even",
+        "predicted_form": "0 (trivial)",
+        "predicted_str": "0.0",
+        "direct_sum_str": "1.3363823550460978230702682335757409394075984400525e-51",
+        "residual_str": "1.3363823550460978230702682335757409394075984400525e-51",
+        "residual_below_1e_45": true
+      },
+      {
+        "n": 4,
+        "N": 4,
+        "parity": "even",
+        "predicted_form": "0 (trivial)",
+        "predicted_str": "0.0",
+        "direct_sum_str": "-1.3363823550460978230702682335757409394075984400525e-51",
+        "residual_str": "1.3363823550460978230702682335757409394075984400525e-51",
+        "residual_below_1e_45": true
+      },
+      {
+        "n": 4,
+        "N": 5,
+        "parity": "even",
+        "predicted_form": "0 (trivial)",
+        "predicted_str": "0.0",
+        "direct_sum_str": "-2.672764710092195646140536467151481878815196880105e-51",
+        "residual_str": "2.672764710092195646140536467151481878815196880105e-51",
+        "residual_below_1e_45": true
+      },
+      {
+        "n": 4,
+        "N": 6,
+        "parity": "even",
+        "predicted_form": "0 (trivial)",
+        "predicted_str": "0.0",
+        "direct_sum_str": "1.3363823550460978230702682335757409394075984400525e-51",
+        "residual_str": "1.3363823550460978230702682335757409394075984400525e-51",
+        "residual_below_1e_45": true
+      },
+      {
+        "n": 4,
+        "N": 7,
+        "parity": "even",
+        "predicted_form": "0 (trivial)",
+        "predicted_str": "0.0",
+        "direct_sum_str": "-6.6819117752304891153513411678787046970379922002626e-51",
+        "residual_str": "6.6819117752304891153513411678787046970379922002626e-51",
+        "residual_below_1e_45": true
+      },
+      {
+        "n": 5,
+        "N": 3,
+        "parity": "odd ",
+        "predicted_form": "(N^(1-n) - 1) * zeta(n)",
+        "predicted_str": "-1.0241261779193777050186325792168238696860058464216",
+        "direct_sum_str": "-1.0241261779193777050186325792168238696860058464216",
+        "residual_str": "0.0",
+        "residual_below_1e_45": true
+      },
+      {
+        "n": 5,
+        "N": 4,
+        "parity": "odd ",
+        "predicted_form": "(N^(1-n) - 1) * zeta(n)",
+        "predicted_str": "-1.0328772560998411375566335900255613783381079471601",
+        "direct_sum_str": "-1.0328772560998411375566335900255613783381079471601",
+        "residual_str": "5.3455294201843912922810729343029637576303937602101e-51",
+        "residual_below_1e_45": true
+      },
+      {
+        "n": 5,
+        "N": 5,
+        "parity": "odd ",
+        "predicted_form": "(N^(1-n) - 1) * zeta(n)",
+        "predicted_str": "-1.0352686707351405344492353016787029133881895900307",
+        "direct_sum_str": "-1.0352686707351405344492353016787029133881895900307",
+        "residual_str": "5.3455294201843912922810729343029637576303937602101e-51",
+        "residual_below_1e_45": true
+      },
+      {
+        "n": 5,
+        "N": 6,
+        "parity": "odd ",
+        "predicted_form": "(N^(1-n) - 1) * zeta(n)",
+        "predicted_str": "-1.0361276565668704124993196797545210244088887274344",
+        "direct_sum_str": "-1.0361276565668704124993196797545210244088887274344",
+        "residual_str": "0.0",
+        "residual_below_1e_45": true
+      },
+      {
+        "n": 5,
+        "N": 7,
+        "parity": "odd ",
+        "predicted_form": "(N^(1-n) - 1) * zeta(n)",
+        "predicted_str": "-1.0364958818592619005394740389408088310441458587274",
+        "direct_sum_str": "-1.0364958818592619005394740389408088310441458587274",
+        "residual_str": "5.3455294201843912922810729343029637576303937602101e-51",
+        "residual_below_1e_45": true
+      }
+    ],
+    "max_residual_str": "8.0182941302765869384216094014544456364455906403151e-51",
+    "all_below_1e_45": true
+  }
+}

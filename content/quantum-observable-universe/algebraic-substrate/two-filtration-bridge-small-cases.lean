@@ -1,0 +1,11 @@
+-- Sibling docstub for `prop:two-filtration-bridge-small-cases`.
+--
+-- This file is documentation only.  The compiled formalisation
+-- lives in the Lake-built tree at:
+--
+--   lean/QOU/AlgebraicSubstrate/TwoFiltrationBridgeSmallCases.lean
+--
+-- See `QOU.AlgebraicSubstrate.TwoFiltrationBridgeSmallCases.bridge_small_cases`.
+--
+-- See the chapter umbrella `lean/QOU/AlgebraicSubstrate.lean`
+-- for the import wiring.

@@ -1,0 +1,11 @@
+-- Sibling docstub for `prop:b1-soft-sharpness-theorem`.
+--
+-- This file is documentation only.  The compiled formalisation
+-- lives in the Lake-built tree at:
+--
+--   lean/QOU/AppendixSurreals/B1SoftSharpnessTheorem.lean
+--
+-- See `QOU.AppendixSurreals.B1SoftSharpnessTheorem.b1_soft_sharpness`.
+--
+-- See the chapter umbrella `lean/QOU/AppendixSurreals.lean`
+-- for the import wiring.

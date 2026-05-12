@@ -4,6 +4,10 @@ export default proposition({
   label: "prop:two-filtration-bridge-small-cases",
   title:
     "Two-filtration bridge map verified at small partitions ($n \\leq 4$)",
+  lean: {
+    ref: "qou:QOU.AlgebraicSubstrate.TwoFiltrationBridgeSmallCases.bridge_small_cases",
+    validation: "not_checked",
+  },
   uses: [
     "conj:two-filtration-bridge",
     "rem:chirality-period-pairing",

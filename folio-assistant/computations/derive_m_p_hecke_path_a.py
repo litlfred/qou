@@ -83,6 +83,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 from codata_constants import M_E_MEV  # noqa: E402  (CAL-1)
+from witness_base import WitnessBuilder  # noqa: E402
 
 mp.mp.dps = 50
 
@@ -181,10 +182,7 @@ def main() -> int:
           f"\n  T6 (Habiro tail, {mp.nstr(mp.mpf(p['quarantined']['t6_habiro_residue']['value_50dps']), 6)})")
 
     out = {
-        "engine": "mpmath",
-        "engineVersion": "mpmath 1.3.0",
         "computation": "derive-m-p-hecke-path-a",
-        "scriptFile": "derive_m_p_hecke_path_a.py",
         "description": (
             "Workplan 2 Phase 2 — partial Path A derivation of "
             "m_p_Hecke at 50 dps from the trustable subset (T1 + T4) "
@@ -210,8 +208,13 @@ def main() -> int:
         "data": {"proton": p},
     }
 
-    OUT_WITNESS.write_text(json.dumps(out, indent=2))
-    print(f"\n  Wrote {OUT_WITNESS.name}")
+    # Migrated to WitnessBuilder.wrap_legacy (#637 deferred Tier-2,
+    # adopted in PR #639) — adds scriptHash + staleness metadata.
+    saved = WitnessBuilder.wrap_legacy(
+        "proton-m_e-derivation", out,
+        script_path=__file__, engine="mpmath",
+    ).save()
+    print(f"\n  Wrote {saved.name}")
     return 0
 
 

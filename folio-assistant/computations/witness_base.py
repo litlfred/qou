@@ -163,12 +163,20 @@ class WitnessBuilder:
         engine: str = "python",
         engine_version: Optional[str] = None,
         output_dir: Optional[Union[str, Path]] = None,
+        start_time: Optional[float] = None,
         _script_path: Optional[Union[str, Path]] = None,
     ):
         self.name = name
         self.engine = engine
         self.engine_version = engine_version or self._detect_version(engine)
-        self._start_time = time.monotonic()
+        # `start_time` lets callers pre-stamp the duration baseline at
+        # the *start* of an expensive computation, then construct the
+        # builder later (e.g. via `wrap_legacy`) without losing the
+        # measurement. Falls back to "now" for builders constructed
+        # before the work begins (the original pattern).
+        self._start_time = (
+            start_time if start_time is not None else time.monotonic()
+        )
 
         # Resolve caller frame ONLY when script path not explicitly
         # provided (factory classmethods like ``wrap_legacy`` pass it
@@ -320,6 +328,7 @@ class WitnessBuilder:
         engine: str = "python",
         engine_version: Optional[str] = None,
         output_dir: Optional[Union[str, Path]] = None,
+        start_time: Optional[float] = None,
     ) -> "WitnessBuilder":
         """Wrap a legacy hand-written witness payload.
 
@@ -369,12 +378,16 @@ class WitnessBuilder:
                 .save())
         """
         # Use the explicit script_path; engine_version is auto-detected
-        # if not supplied.
+        # if not supplied. `start_time` lets the caller pre-stamp the
+        # duration baseline (taken at the start of the heavy compute,
+        # before `wrap_legacy` is invoked) so `durationMs` reflects
+        # real runtime rather than just the save step.
         builder = cls(
             name=name,
             engine=engine,
             engine_version=engine_version,
             output_dir=output_dir,
+            start_time=start_time,
             _script_path=script_path,
         )
         for key, value in payload.items():

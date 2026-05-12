@@ -4,6 +4,10 @@ export default proposition({
   label: "prop:knot-indexed-convolution-grid",
   title:
     "Placement of paper's existing knot-indexed convolutions in the bi-filtration grid",
+  lean: {
+    ref: "qou:QOU.BraidKnot.KnotIndexedConvolutionGrid.grid_placement",
+    validation: "not_checked",
+  },
   uses: [
     "def:hq-bi-filtration",
     "conj:joint-galois-braid-action",

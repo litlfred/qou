@@ -1,3 +1,7 @@
+import QOU.AlgebraicSubstrate.TwoFiltrationBridgeGeneral
+import QOU.AlgebraicSubstrate.TwoFiltrationBridgeSmallCases
+import QOU.AlgebraicSubstrate.JointGaloisBraidFigure8
+import QOU.AlgebraicSubstrate.JointGaloisBraidDischarged
 import QOU.AlgebraicSubstrate.AdelicSubstrate
 import QOU.AlgebraicSubstrate.MotivicSubstrate
 -- `MotivicSubstrateTrivial` deliberately NOT aggregated here:

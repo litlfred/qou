@@ -1,17 +1,26 @@
 {
+  "engine": "scipy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-11T19:00:50.174121+00:00",
+  "commitSha": "575d1e2d7de758dadff2d5f062ac96f95c86b756",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
   "computation": "e-0-lp-dual-h3",
   "scriptFile": "derive_e_0_lp_dual_h3.py",
-  "description": "LP-dual derivation of E_0 at H_3 via the operator-selection LP per prop:operator-selection-lp. Solves min \u03a3 t_i x_i s.t. \u03a3x=n_target, Gx\u22650 on the real H_3 Gram + Markov-trace data from gram-matrix-dual.witness.json (no fitting). Reports y_0^* for four substrate-derived n_target choices: proton net, neutron net, \u03b2-decay transition \u0394(net), and unit target. Compares E_0_LP_dual = y_0^* \u00b7 m_e against convention A's single-tick m_e/(q(q-1)) \u2248 4.186 MeV.",
+  "scriptHash": "bcfd5098d206",
+  "scriptCommitSha": "c09f96356c211d251f3608dfef01240965da8a8b",
+  "description": "LP-dual derivation of E_0 at H_3 via the operator-selection LP per prop:operator-selection-lp. Solves min Σ t_i x_i s.t. Σx=n_target, Gx≥0 on the real H_3 Gram + Markov-trace data from gram-matrix-dual.witness.json (no fitting). Reports y_0^* for four substrate-derived n_target choices: proton net, neutron net, β-decay transition Δ(net), and unit target. Compares E_0_LP_dual = y_0^* · m_e against convention A's single-tick m_e/(q(q-1)) ≈ 4.186 MeV.",
   "auditOnly": "docs/audits/2026-05-10-hbar-q-scaling-audit.md",
   "no_fitting_assertion": "All inputs (t_i, G_ij, n_target choices) loaded from substrate witnesses; LP solved by scipy linprog with no parameter tuning; y_0^* read directly from the dual marginal of the equality constraint.",
   "parameters": {
     "basis": [
-      "\u03b3",
-      "\u03c3\u2080",
-      "\u03c3\u2081",
-      "L\u208a",
-      "L\u208b",
-      "e\u207b"
+      "γ",
+      "σ₀",
+      "σ₁",
+      "L₊",
+      "L₋",
+      "e⁻"
     ],
     "t_markov_traces": [
       1.0,
@@ -309,6 +318,6 @@
     "convention_A_E0_MeV": 4.185922070631897,
     "convention_A_Q_beta_MeV_single_wrap": 0.7836458,
     "codata_Q_beta_MeV": 0.78233341,
-    "negative_finding": "Signed-cone LP (per prop's x_i \u2265 -M): y_0^* = 0, primal slides to 0 \u2014 LP unbounded below in cost. Positive-cone LP (x_i \u2265 0): LP picks cheapest channel x^* = (0,\u2026,1) with y_0^* \u2248 0.124 \u2014 NOT the B_3 normal form. In either case, y_0^* \u00b7 m_e is far from convention A's 4.186 MeV. The LP-dual does NOT derive E_0 in MeV; it gives a dimensionless action shadow price. MeV scale comes from CAL-1 (m_e) + structural choice (convention A's single-tick m_e c_q^2 \u210f_q)."
+    "negative_finding": "Signed-cone LP (per prop's x_i ≥ -M): y_0^* = 0, primal slides to 0 — LP unbounded below in cost. Positive-cone LP (x_i ≥ 0): LP picks cheapest channel x^* = (0,…,1) with y_0^* ≈ 0.124 — NOT the B_3 normal form. In either case, y_0^* · m_e is far from convention A's 4.186 MeV. The LP-dual does NOT derive E_0 in MeV; it gives a dimensionless action shadow price. MeV scale comes from CAL-1 (m_e) + structural choice (convention A's single-tick m_e c_q^2 ℏ_q)."
   }
 }

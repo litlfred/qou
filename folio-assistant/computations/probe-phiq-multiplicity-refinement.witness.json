@@ -1,0 +1,129 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-11T18:35:46.216228+00:00",
+  "commitSha": "5e0446fab43b1a4765bff46e4a128f556df6e0d9",
+  "assertions": [
+    {
+      "name": "fold_depth_D_equals_1",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "fold_depth_T_He3_both_2",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "m_He3_strictly_greater_than_D_T",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "R1_predicts_D_1_T_2_He3_3",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "no_rule_closes_He3",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 12,
+  "computation": "probe-phiq-multiplicity-refinement",
+  "scriptFile": "probe_phiq_multiplicity_refinement.py",
+  "scriptHash": "371ed74356fd",
+  "scriptCommitSha": "unknown",
+  "description": "Four-rule sweep over simple 2-input combinations of (fold_depth, m_near_pole) for the brane-tower n_⋆ level-selection rule. Tests R1=fold+(m-1), R2=max, R3=fold+m, R4=fold·m against observed best-k closures from PR #638's per-eigenvalue probe. Negative finding: NO simple 2-input rule closes ³He's non-closure at uniform k. The multiplicity refinement must be either non-uniform-k (per-generator k_i) or carry structure beyond the (fold_depth, m_near_pole) pair. R1 fits the D and T data exactly, supporting the additive interpretation but not the ³He observation. Substrate-only (Class C).",
+  "contentBlock": "conj:brane-tower-z-habiro",
+  "parameters": {
+    "atoms": [
+      "D",
+      "T",
+      "He3"
+    ],
+    "fold_depth": {
+      "D": 1,
+      "T": 2,
+      "He3": 2
+    },
+    "m_near_pole": {
+      "D": 1,
+      "T": 1,
+      "He3": 2
+    },
+    "observed_best_k": {
+      "D": 1,
+      "T": 2,
+      "He3": null
+    }
+  },
+  "data": {
+    "rules": {
+      "R1": {
+        "rule_name": "R1",
+        "predictions": {
+          "D": 1,
+          "T": 2,
+          "He3": 3
+        },
+        "matches": {
+          "D": true,
+          "T": true,
+          "He3": false
+        },
+        "all_match": false
+      },
+      "R2": {
+        "rule_name": "R2",
+        "predictions": {
+          "D": 1,
+          "T": 2,
+          "He3": 2
+        },
+        "matches": {
+          "D": true,
+          "T": true,
+          "He3": false
+        },
+        "all_match": false
+      },
+      "R3": {
+        "rule_name": "R3",
+        "predictions": {
+          "D": 2,
+          "T": 3,
+          "He3": 4
+        },
+        "matches": {
+          "D": false,
+          "T": false,
+          "He3": false
+        },
+        "all_match": false
+      },
+      "R4": {
+        "rule_name": "R4",
+        "predictions": {
+          "D": 1,
+          "T": 2,
+          "He3": 4
+        },
+        "matches": {
+          "D": true,
+          "T": true,
+          "He3": false
+        },
+        "all_match": false
+      }
+    },
+    "conclusion": "No simple 2-input combination of (fold_depth, m_near_pole) closes ³He's non-closure under uniform k. R1 = fold + (m-1) fits D and T exactly but predicts ³He closes at k=3, which empirically gives +1375% (per #638). The refinement requires either per-generator k_i (non-uniform truncation) or additional substrate ingredients beyond (fold_depth, m)."
+  }
+}

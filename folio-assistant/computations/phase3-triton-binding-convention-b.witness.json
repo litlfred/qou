@@ -1,18 +1,25 @@
 {
   "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-11T19:09:01.336878+00:00",
+  "commitSha": "575d1e2d7de758dadff2d5f062ac96f95c86b756",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
   "computation": "phase3-triton-binding-convention-b",
   "scriptFile": "phase3_triton_binding_convention_b.py",
-  "computedAt": "2026-05-11T00:37:48+00:00",
-  "description": "Phase 3 of the 1ppb workplan: atom binding at H_{3A} via the canonical hecke_core._canon chain (convention B, E_0 = Q_\u03b2^CODATA). NO FITTING per owner directive 2026-05-10. The residuals vs AME 2020 are the honest exposure of the brane-tower closure problem \u2014 the \u210f_q\u00b2 scaling is structurally correct (via |tr_M| difference); the gap is in the T2/T3 brane-tower terms, not in E_0.",
+  "scriptHash": "7844859aa03f",
+  "scriptCommitSha": "5732dad052080159e3430d82e2817a9880b65028",
+  "description": "Phase 3 of the 1ppb workplan: atom binding at H_{3A} via the canonical hecke_core._canon chain (convention B, E_0 = Q_β^CODATA). NO FITTING per owner directive 2026-05-10. The residuals vs AME 2020 are the honest exposure of the brane-tower closure problem — the ℏ_q² scaling is structurally correct (via |tr_M| difference); the gap is in the T2/T3 brane-tower terms, not in E_0.",
   "auditOnly": "docs/audits/2026-05-10-1ppb-workplan-update.md (Phase 3); docs/audits/2026-05-10-hbar-q-scaling-audit.md (convention B)",
   "convention_used": "B_q_value_absorbed",
   "convention_metadata": {
-    "value_MeV": "Q_\u03b2^CODATA \u2248 0.7823 MeV",
-    "scaling": "\u210f_q^0 (|\u0394(net)| = 1 implicit; \u210f_q^2 absorbed into the calibration)",
-    "hecke_level": "H_{3A} (atom-level: H_6 D, H_9 T/\u00b3He, H_12 \u2074He)",
-    "strand_count": "3\u00b7A (whole atom braid)",
-    "derivation": "Calibration to CAL-3 Q_\u03b2(n) directly. Sets the operator \u0394_NF \u2261 1 in cat-units; canonical for `hecke_core._canon` style chains where the operator difference |tr_M(W_free)| - |tr_M(W_atom)| is dimensionless and carries its own \u210f_q powers.",
-    "operator_class": "Atom-level binding B(Z, N) = E_0 \u00b7 (|tr_M(W_free)| - |tr_M(W_atom)|) at H_{3A}. The trace-difference operator carries the \u210f_q^2 scaling; E_0 is the unit-action scale.",
+    "value_MeV": "Q_β^CODATA ≈ 0.7823 MeV",
+    "scaling": "ℏ_q^0 (|Δ(net)| = 1 implicit; ℏ_q^2 absorbed into the calibration)",
+    "hecke_level": "H_{3A} (atom-level: H_6 D, H_9 T/³He, H_12 ⁴He)",
+    "strand_count": "3·A (whole atom braid)",
+    "derivation": "Calibration to CAL-3 Q_β(n) directly. Sets the operator Δ_NF ≡ 1 in cat-units; canonical for `hecke_core._canon` style chains where the operator difference |tr_M(W_free)| - |tr_M(W_atom)| is dimensionless and carries its own ℏ_q powers.",
+    "operator_class": "Atom-level binding B(Z, N) = E_0 · (|tr_M(W_free)| - |tr_M(W_atom)|) at H_{3A}. The trace-difference operator carries the ℏ_q^2 scaling; E_0 is the unit-action scale.",
     "canonical_for": [
       "hecke_core.E_0_CALIBRATION_MEV (line 2922)",
       "canonical_tower.py (lines 446-528)",
@@ -20,12 +27,12 @@
       "mass_at_3A_proper.py (line 676)",
       "adjacent_vs_full_probe.py (line 46)"
     ],
-    "validity": "Phase 3+ Triton / \u00b3He / \u2074He binding MUST use this convention. Naively using convention A with a \u0394(net)-style operator difference would miss the 1/\u210f_q^2 factor (\u2248 102\u00d7 error)."
+    "validity": "Phase 3+ Triton / ³He / ⁴He binding MUST use this convention. Naively using convention A with a Δ(net)-style operator difference would miss the 1/ℏ_q^2 factor (≈ 102× error)."
   },
   "owner_directive_2026_05_10": "do workplans 2 phase 2 / Phase 3; no fitting/guessing; all should be derived",
   "data": {
     "E_0_MeV": 0.7823334100000222,
-    "E_0_source": "hecke_core.E_0_CALIBRATION_MEV = Q_\u03b2 CODATA",
+    "E_0_source": "hecke_core.E_0_CALIBRATION_MEV = Q_β CODATA",
     "rows": [
       {
         "atom": "D",
@@ -39,7 +46,7 @@
         "B_ame_MeV": 2.22456612,
         "residual_pct": -79.0666634632592,
         "residual_keV": -1758.8902076180827,
-        "compute_time_s": 1.6047325134277344
+        "compute_time_s": 1.7281572818756104
       },
       {
         "atom": "T",
@@ -53,7 +60,7 @@
         "B_ame_MeV": 8.481798,
         "residual_pct": -92.58442423206967,
         "residual_keV": -7852.823842827199,
-        "compute_time_s": 14.545109510421753
+        "compute_time_s": 14.252601861953735
       },
       {
         "atom": "3He",
@@ -67,7 +74,7 @@
         "B_ame_MeV": 7.7181,
         "residual_pct": -91.47314553863382,
         "residual_keV": -7059.988845817296,
-        "compute_time_s": 7.203949928283691
+        "compute_time_s": 7.443875312805176
       },
       {
         "atom": "4He",
@@ -81,7 +88,7 @@
         "B_ame_MeV": 28.29567,
         "residual_pct": -97.47852293955107,
         "residual_keV": -27582.201171849672,
-        "compute_time_s": 79.72103714942932
+        "compute_time_s": 80.31262254714966
       }
     ]
   }

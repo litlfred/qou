@@ -11,7 +11,15 @@ the cross-PR synthesis at
     PR #638 refuted uniform k ∈ {1, ..., 10}.
     PR #639 sharpened the surviving open form to a per-partition
     rule: k_λ = 1 for the max-|μ| partition, k_λ = 2 otherwise.
-    Empirical: closes {D, T, ³He} to ~5%.
+    PR #639's `per-partition-k-lambda-rule.md` *claims* closure to
+    ~5% on {D, T, ³He}, but this probe shows the actual closure
+    under both selectors is *substantially looser* (worst-case
+    error ~50% at N=2 under either selector).  See
+    `docs/audits/2026-05-11-per-partition-k-lambda-selector-investigation.md`
+    for the full reconciliation: the .md's stated selector
+    (max-|μ|) does not even reproduce the values in its own table,
+    and the empirical selector (max-|y·contrib_k=2|) still does
+    not reach 5% closure on this binding-formula evaluation.
 
     The substrate c(K) ceiling
     (`c-k-beta-decay-bound.witness.json`) reaches:
@@ -29,8 +37,12 @@ This probe answers the question empirically. It implements:
     tower^(N)(β)    = | Σ_λ y_λ(q_0) · Σ_a Φ_q^{[≤k_λ(N)]}(μ_a^(λ)) |
     B^(N)(𝔥)        = m_e · ρ · (|tr_M| + tower^(N) + σ_{3A})
 
-for N ∈ {1, 2, 3, 4, 5} and 𝔥 ∈ {D, T, ³He}. The N=2 row reproduces
-PR #639's empirically-closing rule; higher-N rows test the ceiling.
+for N ∈ {1, 2, 3, 4, 5} and 𝔥 ∈ {D, T, ³He}. The N=2 row is the
+one PR #639's empirical claim refers to; this probe records the
+*actual* numerical outcome under both selectors so future readers
+can see the gap between the .md's stated closure and the
+binding-formula reality. Higher-N rows test whether deeper
+truncation approaches the ceiling.
 
 Cherry-pick attribution (per /coordinate skill §10):
 - Eigenvalue / operator-trace infrastructure: PR #638's
@@ -49,16 +61,19 @@ import json
 import math
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).parent))
-
 import numpy as np
 
-from q_parameter import Q as Q0
-from experimental_constants import M_E_MEV
-from witness_base import WitnessBuilder
-from syt_prefix_cache import BlockCache, build_seminormal_matrices_cached
-from wedderburn_jones_markov import y_lambda_at
-from mass_at_3A_proper import atom_braid_word_3A
+sys.path.insert(0, str(Path(__file__).parent))
+
+from q_parameter import Q as Q0  # noqa: E402
+from experimental_constants import M_E_MEV  # noqa: E402
+from witness_base import WitnessBuilder  # noqa: E402
+from syt_prefix_cache import (  # noqa: E402
+    BlockCache,
+    build_seminormal_matrices_cached,
+)
+from wedderburn_jones_markov import y_lambda_at  # noqa: E402
+from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 
 
 AME = {"deuteron": 2.224566, "tritium": 8.481798, "he3": 7.71806}
@@ -145,18 +160,6 @@ def compute_per_atom_eigenvalue_data(q0_val, block_cache):
         dominant_shape_A, dominant_index_A, dominant_max_mu_abs,
         dominant_shape_B, dominant_index_B, dominant_contrib_abs_k2.
     """
-    qi = 1.0 / q0_val
-
-    def phi_q_trunc_local(mu, k):
-        if k <= 0:
-            return 1.0 + 0j
-        prod = 1.0 + 0j
-        qi_pow = qi
-        for j in range(1, k + 1):
-            prod = prod / (1.0 - qi_pow * mu)
-            qi_pow *= qi
-        return prod
-
     per_atom = {}
     for name, (Z, N) in Z_N.items():
         A = Z + N
@@ -177,9 +180,14 @@ def compute_per_atom_eigenvalue_data(q0_val, block_cache):
             chi_q = complex(np.trace(rho))
             tr_M += float(y) * chi_q.real
             max_mu_abs = float(max(abs(z) for z in eigenvalues))
-            # Selector B value: |y · sum_a Φ_q^{[≤2]}(μ_a)|
+            # Selector B value: |y · sum_a Φ_q^{[≤2]}(μ_a)|.
+            # Use the global `phi_q_truncated_complex` (with the
+            # Φ_q pole guard at lines 95–98) to keep all
+            # truncation logic in one place — passing the explicit
+            # q0_val so we never rely on the module-default q.
             tower_k2 = sum(
-                phi_q_trunc_local(complex(z), 2) for z in eigenvalues
+                phi_q_truncated_complex(complex(z), 2, q=q0_val)
+                for z in eigenvalues
             )
             contrib_k2_signed = float(y) * tower_k2
             rows.append({
@@ -222,21 +230,25 @@ def compute_per_atom_eigenvalue_data(q0_val, block_cache):
 
 
 def compute_tower_per_partition(rows, dominant_index, k_non_dom,
-                                  k_dom=1):
+                                  k_dom=1, q=float(Q0)):
     """Compute |tower^(per-partition)(β)| under the k_λ rule:
         k_λ = k_dom    if λ is the dominant partition
         k_λ = k_non_dom otherwise.
+
+    The substrate parameter ``q`` is passed explicitly to
+    `phi_q_truncated_complex` so callers control the value (no
+    reliance on the module-level default).
     """
     tower_complex = 0.0 + 0j
     for i, row in enumerate(rows):
         y = float(row["y_at_q0"])
-        evs = [complex(r, i) for r, i in zip(
+        evs = [complex(r, im) for r, im in zip(
             row["eigenvalues_real"],
             row["eigenvalues_imag"],
         )]
         k_lambda = k_dom if i == dominant_index else k_non_dom
         tower_lambda = sum(
-            phi_q_truncated_complex(mu, k_lambda) for mu in evs
+            phi_q_truncated_complex(mu, k_lambda, q=q) for mu in evs
         )
         tower_complex += y * tower_lambda
     return tower_complex
@@ -265,6 +277,18 @@ def main():
 
     q0_val = float(Q0)
     hbar_q = (q0_val - 1.0) / q0_val
+    # Compute hbar_q at 50-dps precision via the high-precision
+    # parallel API in q_parameter (q_at(50)) so the witness field
+    # is genuinely 50-dps, not just `repr(float)`.  Falls back to
+    # the float repr only if mpmath is unavailable.
+    try:
+        from q_parameter import q_at  # noqa: WPS433 (local fallback import)
+        import mpmath as _mp_local
+        _q_hp = q_at(50)
+        _hbar_hp = (_q_hp - _mp_local.mpf(1)) / _q_hp
+        hbar_q_50dps_string = _mp_local.nstr(_hbar_hp, 50)
+    except Exception:  # pragma: no cover — degraded-precision fallback
+        hbar_q_50dps_string = repr(hbar_q)
 
     w = (
         WitnessBuilder("probe-phiq-per-partition-n-sweep",
@@ -275,15 +299,26 @@ def main():
             "depth N ∈ {1, 2, 3, 4, 5}. Tests whether pushing the "
             "non-dominant Wedderburn blocks to deeper truncation "
             "approaches PR #639's substrate c(K) ceiling (N=3 → "
-            "9.4 ppb, N=4 → 0.092 ppb). N=2 row reproduces PR "
-            "#639's empirical closing rule (k_λ = 1 for dominant, "
-            "k_λ = 2 otherwise → ~5% closure on {D, T, ³He}). "
-            "Eigenvalues via numpy.linalg.eigvals on Hoefsmit "
-            "seminormal ρ_λ(β); per-eigenvalue Φ_q; Wedderburn-summed "
-            "with signed y_λ(q_0); |·| at binding-formula level. "
-            "Cherry-picks (per /coordinate §10): #638's eigenvalue / "
-            "operator-trace infrastructure + #639's max-|μ| selector "
-            "+ #639's c(K) ceiling for comparison."
+            "9.4 ppb, N=4 → 0.092 ppb). Implements TWO selectors "
+            "for the dominant partition: (A) max-|μ| — the "
+            "selector PR #639's `per-partition-k-lambda-rule.md` "
+            "states; (B) max-|y·contrib_k=2| — the selector whose "
+            "values match PR #639's table. Both are run for each "
+            "N so the gap between the .md's stated rule, its "
+            "table, and the binding-formula reality is on the "
+            "record. Eigenvalues via numpy.linalg.eigvals on "
+            "Hoefsmit seminormal ρ_λ(β); per-eigenvalue Φ_q via "
+            "the global `phi_q_truncated_complex` (with pole "
+            "guard); Wedderburn-summed with signed y_λ(q_0); |·| "
+            "at binding-formula level. Note: this probe records "
+            "`allPassed: false` — under both selectors the worst-"
+            "case error at N=2 is ~50%, not the ~5% PR #639's .md "
+            "claims; full reconciliation in `docs/audits/2026-05-"
+            "11-per-partition-k-lambda-selector-investigation.md`. "
+            "Cherry-picks (per /coordinate §10): #638's eigenvalue "
+            "/ operator-trace infrastructure + #639's per-partition "
+            "k_λ rule and selector candidates + #639's c(K) "
+            "ceiling for comparison."
         )
         .set_content_block("conj:brane-tower-z-habiro")
         .add_parameter("q_0", q0_val)
@@ -341,6 +376,7 @@ def main():
                         data[dom_key],
                         k_non_dom=N,
                         k_dom=1,
+                        q=q0_val,
                     )
                     tower_abs = abs(tower_complex)
                     if not math.isfinite(tower_abs):
@@ -436,7 +472,7 @@ def main():
 
     w = (
         w
-        .add_data("hbar_q_50dps_string", repr(hbar_q))
+        .add_data("hbar_q_50dps_string", hbar_q_50dps_string)
         .add_data("ceiling", ceiling)
         .add_data("per_atom_dominant_summary", {
             name: {

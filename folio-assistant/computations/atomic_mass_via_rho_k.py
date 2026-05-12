@@ -140,10 +140,24 @@ def load_atomic_tr_m() -> dict[str, mp.mpf]:
 
     Per-atom extension files are appended after the legacy file, so
     they can override or extend the 5-atom legacy table without the
-    legacy file being treated as mutable."""
+    legacy file being treated as mutable.
+
+    **Source selection (2026-05-11 migration)**: per the
+    `QOU_T1_SOURCE` env var (default `model-b`):
+
+      - `model-b`: prefer Model B SDP-canonical low-strand braid
+        values from `probe-sdp-canonical-paper-formula.witness.json`
+        (D, T, ³He covered); fall back to legacy for atoms not yet
+        in the Model B witness (p, n, ⁴He).
+      - `model-a`: use the legacy `atomic-tr-m-mpfr-50dps.witness.json`
+        + extensions (the pre-migration default).
+    """
+    import os as _os
+    src = _os.environ.get("QOU_T1_SOURCE", "model-b")
     out: dict[str, mp.mpf] = {}
 
-    # Legacy 5-atom witness (p, n, D, T, ³He).
+    # 1. Legacy 5-atom witness (p, n, D, T, ³He) — load first as
+    #    fallback layer (gets overwritten by Model B for D, T, ³He).
     legacy = HERE / "atomic-tr-m-mpfr-50dps.witness.json"
     if legacy.exists():
         d = json.loads(legacy.read_text())
@@ -153,6 +167,17 @@ def load_atomic_tr_m() -> dict[str, mp.mpf]:
             if atom is None or tr_str is None:
                 continue
             out[atom] = abs(mp.mpf(tr_str))
+
+    # 2. Model B (SDP-canonical low-strand) overlay, if enabled.
+    if src == "model-b":
+        model_b_witness = HERE / "probe-sdp-canonical-paper-formula.witness.json"
+        if model_b_witness.exists():
+            db = json.loads(model_b_witness.read_text())
+            for atom_name, atom_data in db.get("data", {}).get("results", {}).items():
+                tr_str = atom_data.get("tr_M_wenzl_schur")
+                if tr_str is None:
+                    continue
+                out[atom_name] = abs(mp.mpf(str(tr_str)))
 
     # Per-atom extension witnesses: any file matching
     # `atomic-tr-m-*.witness.json` whose name is NOT the legacy one.
