@@ -562,8 +562,11 @@ def paper_six_term_mass(Z, N, include_inter=True,
                 "run probe_phiq_per_partition_klambda.py first."
             )
         ppk_d = json.loads(ppk_path.read_text())
-        # Atom-name normalisation: probe witness uses {deuteron, tritium, he3};
-        # sweep uses {D, T, 3He}.
+        # Atom-name normalisation: probe witness keys mirror the upstream
+        # probe_phiq_per_partition_klambda.py source ({deuteron, tritium,
+        # he3}), while the sweep uses short isotope codes ({D, T, 3He}).
+        # The mapping below is the inverse of those upstream keys; do not
+        # rename without updating the probe witness in lockstep.
         _ALIASES = {"D": "deuteron", "T": "tritium", "3He": "he3"}
         probe_atom = _ALIASES.get(isotope_label, isotope_label)
         results = ppk_d.get("data", {}).get("per_partition_klambda_results", [])
