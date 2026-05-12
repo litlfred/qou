@@ -136,7 +136,13 @@ noncomputable def figureEightEntry : KnotEntry where
     Knot Atlas (closest entry, single-strand limit):
     <http://katlas.org/wiki/0_1> -/
 noncomputable def photonEntry : KnotEntry where
-  ab_index := "0_1"
+  -- Unique key (not "0_1") so `lookup` can distinguish the photon
+  -- (empty knot ∅, identity braid) from the neutrino (unknot 0_1).
+  -- Both have Jones polynomial 1 and zero volume; the entry below
+  -- reuses the `unknot` diagram as a single-component placeholder
+  -- because `PlanarDiagram` does not yet model a genuinely empty
+  -- braid closure.
+  ab_index := "empty"
   diagram := unknot
   volume := {
     value := 0

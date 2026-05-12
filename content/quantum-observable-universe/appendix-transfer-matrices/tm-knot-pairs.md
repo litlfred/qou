@@ -203,9 +203,9 @@ $$
 
 ### 3c. Photon--photon ($\gamma$-$\gamma$)
 
-Knots: $K_1 = T_{1,0}$, $K_2 = T_{1,0}$.
+Knots: $K_1 = \varnothing$, $K_2 = \varnothing$ (two empty knots / photons).
 
-Same as unknot--unknot:
+Same as unknot--unknot (both have $J = 1$):
 
 $$
   \boxed{
@@ -219,9 +219,9 @@ $$
 
 ### 3d. Photon--positron ($\gamma$-$e^+$)
 
-Knots: $K_1 = T_{1,0}$, $K_2 = T_{2,3}^{\sigma}$.
+Knots: $K_1 = \varnothing$, $K_2 = T_{2,3}^{\sigma}$.
 
-Since $J_{T_{1,0}}(q) = 1$: $c = 1$, $d = 0$.
+Since $J_{\varnothing}(q) = 1$: $c = 1$, $d = 0$.
 
 $$
   \boxed{
@@ -233,8 +233,9 @@ $$
   }
 $$
 
-The unknot is invisible to the transfer matrix regardless
-of the partner's chirality.
+The empty knot (photon) is invisible to the transfer matrix
+regardless of the partner's chirality — exactly as for the
+unknot (neutrino), since both satisfy $J = 1$.
 
 ### 3e. Electron--positron ($e^-$-$e^+$)
 
@@ -275,7 +276,10 @@ $$
   }
 $$
 
-**The unknot is universally invisible.**
+**The unknot is universally invisible.**  The same applies to
+the photon (empty knot $\varnothing$, $J_{\varnothing} = 1$),
+which acts as the identity on the Hecke chain for every
+partner $K$.
 
 ### 4b. Cinquefoil--cinquefoil ($\mathfrak{b}$-$\mathfrak{b}$)
 
