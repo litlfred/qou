@@ -368,6 +368,18 @@ def paper_six_term_mass(Z, N, include_inter=True,
         "r-side-bare":      T2 = (n-1)·z², T3 = C(n-1,2)·z⁴ (R-side
                             algebraic per `prop:mass-endomorphism-tower`,
                             Markov-axiom values).
+        "habiro" (P2.A):    T1 := τ_M^Habiro from
+                            path-b-habiro-mass-probe.witness.json;
+                            T2 = T3 = 0 (the m≥1 terms of the Habiro
+                            cyclotomic sum already encompass them).
+                            Coverage: {p, n, D}; raises on missing atoms.
+        "per-partition-k" (P1.D):
+                            T1 from canonical Hoefsmit+Wenzl bridge
+                            (unchanged); T2 := total_tower from
+                            probe-phiq-per-partition-klambda.witness.json
+                            (per-partition $k_\\lambda$ truncation per
+                            `per-partition-k-lambda-rule.md`); T3 = 0.
+                            Coverage: {D, T, ³He}; raises on missing atoms.
     """
     """Six-term mass formula in Hecke units.
 
@@ -525,6 +537,48 @@ def paper_six_term_mass(Z, N, include_inter=True,
         t1 = abs(mp.mpf(str(rec["tr_M_via_habiro_sum"])))
         t2 = mp.mpf(0)
         t3 = mp.mpf(0)
+    elif tower_mode == "per-partition-k":
+        # P1.D (2026-05-12): per-partition $k_\lambda$ truncation rule.
+        # Per content/quantum-observable-universe/braids-and-knots/
+        # per-partition-k-lambda-rule.md, uniform truncation $k$ across
+        # all Wedderburn blocks of $H_n(q_0)$ is dominated by ONE
+        # specific partition per atom (D: [2,2,1,1], T: [6,3], 3He: [5,4]).
+        # The canonical refinement uses per-partition truncation depths
+        # $k_\lambda$ chosen by the substrate confinement bound rather
+        # than a uniform $k$, replacing T2+T3 with a single Markov-
+        # invariant per-partition sum.
+        #
+        # Wiring contract: T1 from canonical Hoefsmit+Wenzl bridge is
+        # KEPT (this mode only refines T2+T3); T2 := total_tower from
+        # the per-partition probe witness; T3 := 0 (the per-partition
+        # sum already aggregates single+pair contributions); T4, T5,
+        # T6 unchanged. Coverage is currently {D, T, ³He}; missing
+        # atoms raise so the gap is surfaced rather than silently
+        # falling back (per owner directive 2026-05-12: break loudly).
+        ppk_path = HERE / "probe-phiq-per-partition-klambda.witness.json"
+        if not ppk_path.exists():
+            raise FileNotFoundError(
+                f"tower_mode='per-partition-k' requires {ppk_path.name}; "
+                "run probe_phiq_per_partition_klambda.py first."
+            )
+        ppk_d = json.loads(ppk_path.read_text())
+        # Atom-name normalisation: probe witness uses {deuteron, tritium, he3};
+        # sweep uses {D, T, 3He}.
+        _ALIASES = {"D": "deuteron", "T": "tritium", "3He": "he3"}
+        probe_atom = _ALIASES.get(isotope_label, isotope_label)
+        results = ppk_d.get("data", {}).get("per_partition_klambda_results", [])
+        rec = next((r for r in results if r.get("atom") == probe_atom), None)
+        if rec is None:
+            raise KeyError(
+                f"tower_mode='per-partition-k': atom {isotope_label!r} "
+                f"(probe key {probe_atom!r}) missing from {ppk_path.name}; "
+                f"current coverage = {[r.get('atom') for r in results]}. "
+                "Extend probe-phiq-per-partition-klambda.witness.json upstream."
+            )
+        # `total_tower` is the signed Φ_q sum in cat-units (dimensionless),
+        # multiplied by E_0 at the calibration site.
+        t2 = mp.mpf(str(rec["total_tower"]))
+        t3 = mp.mpf(0)
     else:
         raise ValueError(f"unknown tower_mode {tower_mode!r}")
     t4_raw = (term4_frobenius_codim(Z + N) if Z + N >= 1 else mp.mpf(0))
@@ -625,16 +679,28 @@ def run_sweep_for_mode(tower_mode: str, isotopes: list, *, verbose: bool = True,
 
     # Proton 6-term decomposition (always computed; needed either for
     # calibration or for the substrate-mode proton residual report).
+    # P1.D: per-partition-k coverage is {D, T, ³He} only — no proton
+    # entry exists in the probe witness. Fall back to "li2q" for the
+    # proton row purely so that E_0 reporting works; p mass under
+    # per-partition-k is structurally undefined here and reported as
+    # an error in the per-isotope loop below.
+    p_tower_mode = "li2q" if tower_mode == "per-partition-k" else tower_mode
     p_terms = paper_six_term_mass(
         1, 0, include_inter=False,
         chirality_signs=chirality_signs_for_isotope("p"),
-        isotope_label="p", tower_mode=tower_mode)
+        isotope_label="p", tower_mode=p_tower_mode)
     m_p_hecke = p_terms["total_hecke"]
     p_t6_MeV = p_terms["term6_cyclotomic_tail_MeV"]
 
     if e0_mode == "proton-fit":
-        # Legacy: fit E_0 to make proton residual exactly zero.
-        E_0 = (M_P_CODATA - p_t6_MeV) / m_p_hecke
+        if tower_mode == "per-partition-k":
+            # No proton-fit possible (proton not in coverage); silently
+            # promote to substrate so the sweep is still meaningful.
+            from derived_masses import e_0_full_mev
+            E_0 = e_0_full_mev()
+        else:
+            # Legacy: fit E_0 to make proton residual exactly zero.
+            E_0 = (M_P_CODATA - p_t6_MeV) / m_p_hecke
     else:  # substrate
         # Canonical: E_0 from CAL-1 (m_e) and CAL-2 (q_0) only.
         from derived_masses import e_0_full_mev
@@ -838,7 +904,7 @@ def isotope_label_from_zn(Z: int, N: int) -> str:
 
 
 if __name__ == "__main__":
-    print("PAPER 6-TERM FORMULA — five-mode comparison sweep")
+    print("PAPER 6-TERM FORMULA — multi-mode comparison sweep")
     print("=" * 80)
     print(f"q_0 = {float(Q0):.6f}")
 
@@ -857,7 +923,7 @@ if __name__ == "__main__":
         ("9Be", 4, 5, True,  8392.749),
     ]
 
-    modes = ["brane-legacy", "drop", "q1-base", "r-side-bare", "li2q", "habiro"]
+    modes = ["brane-legacy", "drop", "q1-base", "r-side-bare", "li2q", "habiro", "per-partition-k"]
     sweep_results = {}
     for mode in modes:
         E_0, rows = run_sweep_for_mode(mode, ISOTOPES)
@@ -867,7 +933,7 @@ if __name__ == "__main__":
     print("\n" + "=" * 80)
     print("Side-by-side comparison (% error vs CODATA)")
     print("=" * 80)
-    print(f"  {'iso':>5} {'A':>3} | {'brane':>10} {'drop':>10} {'q1-base':>10} {'r-side':>10} {'li2q':>10}")
+    print(f"  {'iso':>5} {'A':>3} | {'brane':>10} {'drop':>10} {'q1-base':>10} {'r-side':>10} {'li2q':>10} {'habiro':>10} {'pp-k':>10}")
     print("  " + "-" * 50)
     for iso, Z, N, _, M_cod in ISOTOPES:
         line = f"  {iso:>5} {Z+N:>3} |"

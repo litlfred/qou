@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-12T03:27:53.181472+00:00",
-  "commitSha": "01d2cf5f367acbaa897c0f088cf00478d85abbb2",
+  "computedAt": "2026-05-12T14:02:54.384948+00:00",
+  "commitSha": "d5f3d76ff8eec774626bc595e9d64df45b7cc211",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "paper-six-term-isotope-sweep",
   "scriptFile": "paper_six_term_isotope_sweep.py",
-  "scriptHash": "a64e985582fa",
-  "scriptCommitSha": "8968356234596aa34d7d00dec9a3927d2e8c2ee2",
+  "scriptHash": "418ee00aea42",
+  "scriptCommitSha": "a0b9ac339123a13b48f72b74381e11d5f587b0f5",
   "description": "Paper 6-term mass formula sweep across light isotopes, replacing the non-Markov-invariant all-subsets extension of combined_tower_isotope_sweep.py.  Each term is Markov-invariant by construction, so different nucleon orderings give the same mass.  Validates isospin symmetry (T vs ³He degeneracy modulo Coulomb + n-p mass diff).",
   "reference_blocks": [
     "thm:knot-mass-formula-unified",
@@ -1184,6 +1184,146 @@
           "A": 4,
           "M_codata": 3728.401,
           "error": "KeyError: \"tower_mode='habiro': atom '4He' missing from path-b-habiro-mass-probe.witness.json; current coverage = ['p', 'n', 'D']. Extend habiro-coefficients-atomic.witness.json upstream.\""
+        },
+        {
+          "isotope": "5Li",
+          "Z": 3,
+          "N": 2,
+          "A": 5,
+          "M_codata": 4669.151,
+          "error": "KeyError: \"no canonical T1 for '5Li'; add to atomic-tr-m-mpfr-50dps.witness.json or markov-peel-atomic-tr-m.witness.json\""
+        },
+        {
+          "isotope": "6Li",
+          "Z": 3,
+          "N": 3,
+          "A": 6,
+          "M_codata": 5603.052,
+          "error": "KeyError: \"no canonical T1 for '6Li'; add to atomic-tr-m-mpfr-50dps.witness.json or markov-peel-atomic-tr-m.witness.json\""
+        },
+        {
+          "isotope": "7Li",
+          "Z": 3,
+          "N": 4,
+          "A": 7,
+          "M_codata": 6535.366,
+          "error": "KeyError: \"no canonical T1 for '7Li'; add to atomic-tr-m-mpfr-50dps.witness.json or markov-peel-atomic-tr-m.witness.json\""
+        },
+        {
+          "isotope": "7Be",
+          "Z": 4,
+          "N": 3,
+          "A": 7,
+          "M_codata": 6536.227,
+          "error": "KeyError: \"no canonical T1 for '7Be'; add to atomic-tr-m-mpfr-50dps.witness.json or markov-peel-atomic-tr-m.witness.json\""
+        },
+        {
+          "isotope": "8Be",
+          "Z": 4,
+          "N": 4,
+          "A": 8,
+          "M_codata": 7456.894,
+          "error": "KeyError: \"no canonical T1 for '8Be'; add to atomic-tr-m-mpfr-50dps.witness.json or markov-peel-atomic-tr-m.witness.json\""
+        },
+        {
+          "isotope": "9Be",
+          "Z": 4,
+          "N": 5,
+          "A": 9,
+          "M_codata": 8392.749,
+          "error": "KeyError: \"no canonical T1 for '9Be'; add to atomic-tr-m-mpfr-50dps.witness.json or markov-peel-atomic-tr-m.witness.json\""
+        }
+      ]
+    },
+    "per-partition-k": {
+      "E_0": 4.1859808220625245,
+      "rows": [
+        {
+          "isotope": "p",
+          "Z": 1,
+          "N": 0,
+          "A": 1,
+          "M_codata": 938.272,
+          "error": "KeyError: \"tower_mode='per-partition-k': atom 'p' (probe key 'p') missing from probe-phiq-per-partition-klambda.witness.json; current coverage = ['deuteron', 'tritium', 'he3']. Extend probe-phiq-per-partition-klambda.witness.json upstream.\""
+        },
+        {
+          "isotope": "n",
+          "Z": 0,
+          "N": 1,
+          "A": 1,
+          "M_codata": 939.565,
+          "error": "KeyError: \"tower_mode='per-partition-k': atom 'n' (probe key 'n') missing from probe-phiq-per-partition-klambda.witness.json; current coverage = ['deuteron', 'tritium', 'he3']. Extend probe-phiq-per-partition-klambda.witness.json upstream.\""
+        },
+        {
+          "isotope": "D",
+          "Z": 1,
+          "N": 1,
+          "A": 2,
+          "M_codata": 1876.124,
+          "M_predicted": 18.531912365184183,
+          "err_pct": -99.0122234796216,
+          "term1_canonical_tr_M": 0.2883259310126921,
+          "term2_single_gen_tower": 0.8764000000000003,
+          "term3_pair_gen_tower": 0.0,
+          "term4_frobenius_codim_raw": 3.202133983803198,
+          "term4_frobenius_codim_scaled": 3.202133983803198,
+          "term5_chirality_factor_a_K": 1.2090603219898794,
+          "term5_additive_contribution": 0.060277511975545206,
+          "term6_cyclotomic_tail_MeV": 0.0,
+          "term5_mode": "multiplicative_on_t1",
+          "tower_mode": "per-partition-k",
+          "m_e_hecke": 1.0,
+          "total_hecke": 4.427137426791436
+        },
+        {
+          "isotope": "T",
+          "Z": 1,
+          "N": 2,
+          "A": 3,
+          "M_codata": 2809.432,
+          "M_predicted": 2.591998845625108,
+          "err_pct": -99.90773939908047,
+          "term1_canonical_tr_M": 0.012888943963108688,
+          "term2_single_gen_tower": -1.9369999999999996,
+          "term3_pair_gen_tower": 0.0,
+          "term4_frobenius_codim_raw": 2.5438838242158353,
+          "term4_frobenius_codim_scaled": 2.5438838242158353,
+          "term5_chirality_factor_a_K": 0.9562937817694879,
+          "term5_additive_contribution": -0.0005633269976124695,
+          "term6_cyclotomic_tail_MeV": 0.0,
+          "term5_mode": "multiplicative_on_t1",
+          "tower_mode": "per-partition-k",
+          "m_e_hecke": 1.0,
+          "total_hecke": 0.6192094411813318
+        },
+        {
+          "isotope": "3He",
+          "Z": 2,
+          "N": 1,
+          "A": 3,
+          "M_codata": 2809.413,
+          "M_predicted": 19.10697483311849,
+          "err_pct": -99.31989441092789,
+          "term1_canonical_tr_M": 0.998366621838506,
+          "term2_single_gen_tower": 1.0659000000000007,
+          "term3_pair_gen_tower": 0.0,
+          "term4_frobenius_codim_raw": 2.5438838242158353,
+          "term4_frobenius_codim_scaled": 2.5438838242158353,
+          "term5_chirality_factor_a_K": 0.9562937817694879,
+          "term5_additive_contribution": -0.043634829448132906,
+          "term6_cyclotomic_tail_MeV": 0.0,
+          "term5_mode": "multiplicative_on_t1",
+          "tower_mode": "per-partition-k",
+          "m_e_hecke": 1.0,
+          "total_hecke": 4.564515616606209
+        },
+        {
+          "isotope": "4He",
+          "Z": 2,
+          "N": 2,
+          "A": 4,
+          "M_codata": 3728.401,
+          "error": "KeyError: \"tower_mode='per-partition-k': atom '4He' (probe key '4He') missing from probe-phiq-per-partition-klambda.witness.json; current coverage = ['deuteron', 'tritium', 'he3']. Extend probe-phiq-per-partition-klambda.witness.json upstream.\""
         },
         {
           "isotope": "5Li",
