@@ -188,7 +188,7 @@ trivial reductions of partitions of 3.
 |------|:------:|--------|
 | `paper_six_term_isotope_sweep.py:285` | ✅ correct (per-3A) | none |
 | `unified_low_isotope_predictor.py:99` | ✅ correct (per-3A from witness; line-15 docstring stale) | update docstring only |
-| `mass_formula_6term_mpfr_50dps.py:223` | ❌ **REAL STRAGGLER** — uses $A \cdot m_e \cdot (2 + 1/[2]_q)$ | migrate to call `paper_six_term_isotope_sweep.term4_frobenius_codim(A)` |
+| `mass_formula_6term_mpfr_50dps.py:223` | ✅ **migrated 2026-05-12** — `term_4_frobenius_mp(A)` now delegates to `paper_six_term_isotope_sweep.term4_frobenius_codim(A)` with explicit "HARD BREAK" docstring (lines 229-237). Returns single mpf; legacy 2-tuple shape removed by design. | none |
 | `d_from_scratch.py:31, 149, 156` | ✅ **migrated 2026-05-12** — uses `term4_frobenius_codim(A)` with explicit "P1.C HARD BREAK" comment (lines 157-162) | none |
 | `path_b_habiro_mass_probe.py:145` | ✅ correct (per-3A) | none |
 | `compound_binding_via_differences.py:123, 127, 131` | ✅ reads `term4_frobenius_codim` from upstream witness | none |
@@ -215,10 +215,16 @@ substrate confinement bound rather than a uniform $k$.
 from PR #639 once it merges. Integrate into
 `paper_six_term_mass()` as a new `tower_mode="per-partition-k"`.
 
-**Status:** **DEFERRED — depends on PR #639 merge state.** This PR
-should rebase onto post-#639-merge `main` to inherit the
-per-partition machinery. The next agent should check `gh pr view
-639` first.
+**Status:** ✅ **LANDED on this branch.** Content blocks
+`per-partition-k-lambda-rule.{md,ts}` are present under
+`content/quantum-observable-universe/braids-and-knots/`. The
+`paper_six_term_isotope_sweep.py:546` branch implements
+`tower_mode="per-partition-k"` and is wired into `tower_mode="combined"`
+for {T, ³He}. Witness:
+`folio-assistant/computations/probe-phiq-per-partition-klambda.witness.json`.
+(Note: PR #639 itself shipped the Q_β spectral bridge content, not the
+per-partition-k machinery; the per-partition-k pieces landed via a
+separate path. Cross-reference label retained for historical traceability.)
 
 #### P1.E — ⁴He Model B canonical hyperbolic knot assignment
 
