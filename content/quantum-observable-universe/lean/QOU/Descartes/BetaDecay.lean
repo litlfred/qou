@@ -197,7 +197,7 @@ noncomputable def knotOperator (τ : TorusKnotLabel) (N : ℕ) (g : ℕ) : R_t :
 
 /-! ## §4  Spectral decomposition theorem -/
 
-/-- **Theorem (spectral decomposition of the Q_q-value).**
+/-- **Spectral decomposition Q-value — typeclass.**
 
     For β⁻ decay on Σ_g, the Q_q-value decomposes as:
 
@@ -214,8 +214,8 @@ noncomputable def knotOperator (τ : TorusKnotLabel) (N : ℕ) (g : ℕ) : R_t :
     2. Inductive chain: zero Hecke steps, Gröbner normal form
     3. Shell cancellation: parent/daughter share inner chains
     4. Pauli projection: full shell → alternating irrep
-    5. Tower termination: degree ≥ 3 needs genus > 4 -/
-/-- **Spectral decomposition Q-value — typeclass.**
+    5. Tower termination: degree ≥ 3 needs genus > 4
+
     Per-`op` witness that the Q-value of a β-decay operator
     equals `Q_bare · ∏ (knot-operator product)`. Full proof requires:
     (1) Rosso–Jones completeness (external),
@@ -270,11 +270,12 @@ theorem interaction_completeness :
   refine ⟨by simp [sigma4_knots], ?_⟩
   intro τ hτ
   -- Ref: [rosso-jones1993] https://doi.org/10.1016/0393-0440(93)90033-B
-  -- Unfold embeddability to get (r-1)(s-1)/2 ≤ 4
-  simp only [TorusKnotLabel.embeddableOn, TorusKnotLabel.seifertRank] at hτ
-  -- Extract r, s, and the three structural hypotheses
+  -- Extract r, s, and the three structural hypotheses first so that
+  -- `τ.r`/`τ.s` projections reduce to bare `r`/`s` in the hypothesis
   obtain ⟨r, s, hr2, hrs, hcop⟩ := τ
-  -- Bound (r-1)(s-1) ≤ 9 from (r-1)(s-1)/2 ≤ 4
+  -- Unfold embeddability to get (r-1)(s-1)/2 ≤ 4 (projections iota-reduce)
+  simp only [TorusKnotLabel.embeddableOn, TorusKnotLabel.seifertRank] at hτ
+  -- Bound (r - 1) * (s - 1) ≤ 9 from (r - 1) * (s - 1) / 2 ≤ 4
   have h9 : (r - 1) * (s - 1) ≤ 9 := by
     have hdiv := Nat.div_add_mod ((r - 1) * (s - 1)) 2
     have hmod := Nat.mod_lt ((r - 1) * (s - 1)) (by omega : 0 < 2)
@@ -293,7 +294,7 @@ theorem interaction_completeness :
       r = lbl.r → s = lbl.s →
       (⟨r, s, hr2, hrs, hcop⟩ : TorusKnotLabel) ∈ sigma4_knots :=
     fun lbl hlbl hrr hss =>
-      (tklabel_ext hrr hss).symm ▸ hlbl
+      (tklabel_ext (τ₁ := ⟨r, s, hr2, hrs, hcop⟩) (τ₂ := lbl) hrr hss).symm ▸ hlbl
   -- Exhaustive case bash on r ∈ {2, 3, 4}
   interval_cases r
   · -- r = 2: s ∈ {3, ..., 10}; odd s coprime to 2, even s not
