@@ -1,5 +1,5 @@
 import Mathlib.Data.Matrix.Basic
-import Mathlib.Data.Nat.Partition
+import Mathlib.Combinatorics.Enumerative.Partition
 import Mathlib.Tactic
 import QOU.HeckeAlgebra.Common
 import QOU.HeckeAlgebra.Hoefsmit
