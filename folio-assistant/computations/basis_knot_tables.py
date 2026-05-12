@@ -94,7 +94,7 @@ def basis_elem(i):
 # ── Basis knots as operators ─────────────────────────────────────
 
 BASIS_KNOTS = [
-    ("γ",  (),       "vacuum / photon (unknot)"),
+    ("γ",  (),       "vacuum / photon (empty knot)"),
     ("σ₀", (0,),     "single crossing (up quark channel)"),
     ("σ₁", (1,),     "single crossing (color channel)"),
     ("L₊", (0, 1),   "Hopf link (gluon +)"),

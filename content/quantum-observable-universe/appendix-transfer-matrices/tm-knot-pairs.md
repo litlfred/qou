@@ -168,9 +168,9 @@ equals the step from $T_{\mathrm{mix}}$ to $T_{pp}$).
 
 ### 3a. Photon--electron ($\gamma$-$e$)
 
-Knots: $K_1 = T_{1,0}$ (unknot / photon), $K_2 = T_{2,3}$ (trefoil / electron).
+Knots: $K_1 = \varnothing$ (empty knot / photon), $K_2 = T_{2,3}$ (trefoil / electron).
 
-Since $J_{T_{1,0}}(q) = 1$: $c = 1$, $d = 0$.
+Since $J_{\varnothing}(q) = 1$: $c = 1$, $d = 0$.
 
 $$
   \boxed{
@@ -182,7 +182,7 @@ $$
   }
 $$
 
-The photon (unknot, $J = 1$) contributes no deformation.
+The photon (empty knot, $J = 1$) contributes no deformation.
 The crossing is entirely determined by the electron.
 
 ### 3b. Electron--electron ($e$-$e$)

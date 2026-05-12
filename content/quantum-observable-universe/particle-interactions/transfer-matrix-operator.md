@@ -131,20 +131,20 @@ the two strands at the crossing:
 |-------------|-------|-------|----------|
 | $e$-$\mathfrak{p}$ | $T_{2,3}$ | $\mathcal{B}_3$ | Electron-nucleus Coulomb |
 | $e$-$e$ | $T_{2,3}$ | $T_{2,3}$ | Electron-electron repulsion |
-| $\gamma$-$e$ | $T_{1,0}$ | $T_{2,3}$ | Photon absorption/emission |
+| $\gamma$-$e$ | $\varnothing$ | $T_{2,3}$ | Photon absorption/emission |
 
 ### Photon-electron transfer matrix
 
-The photon ($T_{1,0}$, unknot) crossing with the electron
+The photon ($\varnothing$, empty knot) crossing with the electron
 ($T_{2,3}$, trefoil) gives:
 
 $$
   T_{\gamma e}(q)
   = 
-  T_{T_{1,0}, T_{2,3}}(q)
+  T_{\varnothing, T_{2,3}}(q)
 $$
 
-Since the unknot has $J_{T_{1,0}}(q) = 1$:
+Since the empty knot has $J_{\varnothing}(q) = 1$:
 $c_{\gamma e} = J_{T_{2,3}}(q) / J_{T_{2,3}}(q) = 1$ and
 $d_{\gamma e} = 0$.  Therefore:
 
@@ -158,10 +158,10 @@ $$
 $$
 
 **The photon-electron transfer matrix is the same as the
-proton-proton matrix.**  This is because $J_\nu(q) = 1$
-(trivial Jones polynomial), so the unknot contributes no
-deformation — the crossing is purely determined by the
-electron.
+proton-proton matrix.**  This is because $J_\gamma(q) = 1$
+(trivial Jones polynomial of the empty knot), so the photon
+contributes no deformation — the crossing is purely determined
+by the electron.
 
 ### Shell transitions as R-I moves
 

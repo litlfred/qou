@@ -107,7 +107,7 @@ $$
   }
 $$
 
-Pair creation consumes a **two-photon crossing** (unknot–unknot)
+Pair creation consumes a **two-photon crossing** (empty–empty)
 and produces a **particle–antiparticle crossing** (trefoil–mirror
 trefoil).  A single photon cannot pair-produce in vacuum
 (momentum conservation requires either a second photon or a

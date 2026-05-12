@@ -57,7 +57,7 @@ noncomputable def mixCoeffs (q : ℝ) : CrossingCoeffs :=
   ⟨(1 + q^2) / 2, -q * (q ^ (1/2 : ℝ) - q ^ (-(1/2 : ℝ))) / 2⟩
 
 /-- The photon-electron crossing has the same coefficients as pp.
-    This is because the unknot (photon/neutrino) has J(q) = 1,
+    This is because the photon (empty knot) has J(q) = 1,
     contributing no deformation. -/
 -- Ref: [manuscript] §6/transfer-matrix-operator
 noncomputable def photonElectronCoeffs : CrossingCoeffs := ppCoeffs

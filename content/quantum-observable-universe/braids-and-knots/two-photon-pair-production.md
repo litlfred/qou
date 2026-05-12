@@ -1,6 +1,8 @@
 **Remark (concrete example: $\gamma\gamma \to e^- e^+$ in the symmetric crystal).**
-*In the QOU topological ansatz the photon $\gamma$ is the unknot — a
-trivial, unbraided strand carrying no crossings.  The two-photon
+*In the QOU topological ansatz the photon $\gamma$ is the empty
+knot $\varnothing$ — the identity element on $n$ strands carrying
+no crossings (distinct from the unknot $0_1$, which is the
+neutrino).  The two-photon
 state $\gamma\gamma$ therefore corresponds to the identity element
 $T_e \in H_n(R, q)$ on $n = 2$ strands, with zero crossings, zero
 graded Hecke energy, and strict bar-invariance: applying

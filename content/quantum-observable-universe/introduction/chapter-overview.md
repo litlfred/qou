@@ -85,9 +85,11 @@ acts on the fibre degrees of freedom; particle exchange becomes a
 representation of $B_n$ inside the Iwahori–Hecke algebra $H_n(q)$,
 with the substrate parameter $q$ tracking the energy cost of each
 crossing.  Specific knot types map to particle identities — the
-unknot to the photon (and, with framing, the neutrino); the
-trefoil $3_1$ to the electron; higher torus knots $T_{2,2k+1}$
-to the muon and tau through the brane tower.
+empty knot $\varnothing$ (the identity braid $\mathbf{1}$, zero
+crossings) to the photon, and the unknot $0_1$ (a single closed
+loop, also zero crossings but topologically distinct) to the
+neutrino; the trefoil $3_1$ to the electron; higher torus knots
+$T_{2,2k+1}$ to the muon and tau through the brane tower.
 
 [Chapter 5](#chap\:models-qou) examines concrete realisations of
 the QOU axioms: archimedean, $p$-adic, and finite-field models.
