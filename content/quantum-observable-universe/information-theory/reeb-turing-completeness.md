@@ -5,7 +5,7 @@ and the
 [Skein–Turing correspondence](#rem:skein-turing-machine) —
 admits a sharp classical/geometric analogue in the work of
 Cardona, Miranda, Peralta-Salas, and Presas
-\cite{cardonamirandaperaltasalaspresas2021} on steady Euler flows.
+\cite{cardona2021} on steady Euler flows.
 
 **The classical result.**
 Let $(M^3, g)$ be a closed Riemannian 3-manifold and let
@@ -55,7 +55,7 @@ classical setting. Three structural identifications follow.
    Reeb period implements one Toffoli gate.
 
 3. **Undecidability = observational horizon.** The undecidable
-   trajectory problem of \cite{cardonamirandaperaltasalaspresas2021}
+   trajectory problem of \cite{cardona2021}
    is the geometric face of the
    [computational horizon](#def:computational-horizon): no
    finite observer can predict whether a given Reeb orbit

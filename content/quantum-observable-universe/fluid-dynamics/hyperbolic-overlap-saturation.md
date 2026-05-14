@@ -111,7 +111,7 @@ seemed to provide. This is the
 
 | Regime | Strain $\alpha$ | $V_1$ behaviour | $V_2$ behaviour | $\kappa^2$ at $T^\ast$ | Levi form | NS conclusion |
 |---|---|---|---|---|---|---|
-| Biot–Savart ([rem](#rem:townsend-biot-savart-strain)) | $1/(2\tau)$ | $\sim C_1/\tau \to \infty$ | $\sim -2\nu\tau\ln\tau \to 0$ | $0$ | Degenerate | Regular (branch B) |
+| Biot–Savart ([`rem:townsend-biot-savart-strain`](#rem:townsend-biot-savart-strain)) | $1/(2\tau)$ | $\sim C_1/\tau \to \infty$ | $\sim -2\nu\tau\ln\tau \to 0$ | $0$ | Degenerate | Regular (branch B) |
 | Hyperbolic overlap (this remark) | $\Gamma/(\pi V_1)$ | Linear in $t$, finite at $T^\ast$ | $\pi\nu V_1/\Gamma > 0$ | $\pi\nu/\Gamma$ | Non-degenerate | Blowup (branch A) |
 
 **Reading.**

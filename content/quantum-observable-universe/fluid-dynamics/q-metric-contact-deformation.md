@@ -1,5 +1,5 @@
 The Cardona–Miranda–Peralta-Salas–Presas
-\cite{cardonamirandaperaltasalaspresas2021} route from steady
+\cite{cardona2021} route from steady
 Euler flow to contact-Reeb flow proceeds by a **conformal change
 of metric**: a divergence-free, non-vanishing Euler field $X$ on
 $(M^3, g)$ becomes, after rescaling $X \mapsto X / |X|_g^2$ and

@@ -9,7 +9,7 @@ $\varTheta$ — a genuine contact-3-geometric object on each
 fibre $\mathcal{S}_p$.
 
 Cardona–Miranda–Peralta-Salas–Presas
-\cite{cardonamirandaperaltasalaspresas2021}
+\cite{cardona2021}
 prove that on any closed 3-manifold equipped with a contact
 form one can construct a Reeb vector field whose first-return
 map encodes a universal Turing machine. The trajectory-

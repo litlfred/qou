@@ -3345,12 +3345,14 @@ export const references: CSLData[] = [
   }),
 
   // ── Miranda et al.: Turing-complete Euler/Reeb flows ─────────────
+  // (Cardona, Miranda, Peralta-Salas, Presas; first-author key per
+  // references.ts §"Adding entries" convention.)
   // Used by:
   //   information-theory/reeb-turing-completeness.md (Ch 10)
   //   algebraic-substrate/reeb-contact-universal-computer.md (Ch 8)
   //   fluid-dynamics/q-metric-contact-deformation.md (Ch 9)
   ref({
-    id: "cardonamirandaperaltasalaspresas2021",
+    id: "cardona2021",
     type: "article-journal",
     title:
       "Constructing Turing complete Euler flows in dimension 3",
@@ -3371,7 +3373,7 @@ export const references: CSLData[] = [
   }),
 
   ref({
-    id: "cardonamirandaperaltasalas2023",
+    id: "cardona2023",
     type: "article-journal",
     title:
       "Computability and beltrami fields in Euclidean space",

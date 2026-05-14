@@ -9,8 +9,10 @@ export default remark({
     "def:categorical-reeb-derivation",
     "def:frobenius-hopf-substrate",
     "rem:reeb-flow-bridge",
+    "rem:reeb-turing-completeness",
+    "rem:skein-turing-machine",
   ],
-  cites: ["cardonamirandaperaltasalaspresas2021"],
+  cites: ["cardona2021"],
   tags: [
     "reeb",
     "contact-geometry",

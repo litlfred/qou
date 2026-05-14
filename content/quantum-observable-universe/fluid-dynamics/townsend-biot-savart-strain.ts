@@ -8,7 +8,7 @@ export default remark({
   uses: [
     "conj:levi-degeneracy",
     "prop:core-levi-form",
-    "rem:vortex-reconnection",
+    "rem:hyperbolic-overlap-saturation",
   ],
   cites: ["townsend1951", "saffman1992", "moffatt1994"],
   tags: [

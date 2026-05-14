@@ -7,6 +7,8 @@ export default remark({
     "Hyperbolic-overlap strain saturation: $\\kappa^2 = \\pi\\nu/\\Gamma$ preserves Levi non-degeneracy",
   uses: [
     "conj:levi-degeneracy",
+    "conj:ns-counterexample",
+    "def:ns-obstruction",
     "prop:core-levi-form",
     "rem:townsend-biot-savart-strain",
     "rem:vortex-reconnection",
