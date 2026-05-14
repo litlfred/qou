@@ -3344,6 +3344,112 @@ export const references: CSLData[] = [
     URL: "https://doi.org/10.1038/s41467-021-26171-5",
   }),
 
+  // ── Miranda et al.: Turing-complete Euler/Reeb flows ─────────────
+  // Used by:
+  //   information-theory/reeb-turing-completeness.md (Ch 10)
+  //   algebraic-substrate/reeb-contact-universal-computer.md (Ch 8)
+  //   fluid-dynamics/q-metric-contact-deformation.md (Ch 9)
+  ref({
+    id: "cardonamirandaperaltasalaspresas2021",
+    type: "article-journal",
+    title:
+      "Constructing Turing complete Euler flows in dimension 3",
+    author: [
+      { family: "Cardona", given: "Robert" },
+      { family: "Miranda", given: "Eva" },
+      { family: "Peralta-Salas", given: "Daniel" },
+      { family: "Presas", given: "Francisco" },
+    ],
+    "container-title":
+      "Proceedings of the National Academy of Sciences",
+    issued: { "date-parts": [[2021]] },
+    volume: "118",
+    issue: "19",
+    page: "e2026818118",
+    DOI: "10.1073/pnas.2026818118",
+    URL: "https://doi.org/10.1073/pnas.2026818118",
+  }),
+
+  ref({
+    id: "cardonamirandaperaltasalas2023",
+    type: "article-journal",
+    title:
+      "Computability and beltrami fields in Euclidean space",
+    author: [
+      { family: "Cardona", given: "Robert" },
+      { family: "Miranda", given: "Eva" },
+      { family: "Peralta-Salas", given: "Daniel" },
+    ],
+    "container-title": "Journal de Mathématiques Pures et Appliquées",
+    issued: { "date-parts": [[2023]] },
+    volume: "169",
+    page: "50-81",
+    DOI: "10.1016/j.matpur.2022.11.005",
+    URL: "https://doi.org/10.1016/j.matpur.2022.11.005",
+  }),
+
+  ref({
+    id: "tao2019",
+    type: "article-journal",
+    title:
+      "On the universality of the incompressible Euler equation on compact manifolds",
+    author: [{ family: "Tao", given: "Terence" }],
+    "container-title": "Discrete and Continuous Dynamical Systems",
+    issued: { "date-parts": [[2019]] },
+    volume: "39",
+    issue: "8",
+    page: "4553-4565",
+    DOI: "10.3934/dcds.2019187",
+    URL: "https://doi.org/10.3934/dcds.2019187",
+  }),
+
+  // ── Townsend: viscous vortex-core strain dynamics ───────────────
+  // Used by fluid-dynamics/townsend-biot-savart-strain.md and
+  //          fluid-dynamics/hyperbolic-overlap-saturation.md
+  ref({
+    id: "townsend1951",
+    type: "article-journal",
+    title:
+      "On the fine-scale structure of turbulence",
+    author: [{ family: "Townsend", given: "A. A." }],
+    "container-title":
+      "Proceedings of the Royal Society A",
+    issued: { "date-parts": [[1951]] },
+    volume: "208",
+    issue: "1095",
+    page: "534-542",
+    DOI: "10.1098/rspa.1951.0179",
+    URL: "https://doi.org/10.1098/rspa.1951.0179",
+  }),
+
+  ref({
+    id: "saffman1992",
+    type: "book",
+    title: "Vortex Dynamics",
+    author: [{ family: "Saffman", given: "P. G." }],
+    publisher: "Cambridge University Press",
+    issued: { "date-parts": [[1992]] },
+    ISBN: "9780521477390",
+  }),
+
+  ref({
+    id: "moffatt1994",
+    type: "article-journal",
+    title:
+      "Stretched vortices — the sinews of turbulence; large-Reynolds-number asymptotics",
+    author: [
+      { family: "Moffatt", given: "H. K." },
+      { family: "Kida", given: "S." },
+      { family: "Ohkitani", given: "K." },
+    ],
+    "container-title": "Journal of Fluid Mechanics",
+    issued: { "date-parts": [[1994]] },
+    volume: "259",
+    page: "241-264",
+    DOI: "10.1017/S002211209400011X",
+    URL: "https://doi.org/10.1017/S002211209400011X",
+  }),
+
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────

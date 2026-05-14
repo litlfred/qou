@@ -23,6 +23,7 @@ export default chapter({
         "substrate-parameter-planck",
         "categorical-reeb-derivation",
         "reeb-flow-bridge",
+        "reeb-contact-universal-computer",
         "brings-coordinate-ring",
         "magic-numbers-bring",
         "rigid-dualizing-complex",
