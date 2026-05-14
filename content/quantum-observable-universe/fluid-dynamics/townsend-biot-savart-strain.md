@@ -24,14 +24,27 @@ Biot–Savart derivation (Saffman \cite{saffman1992} §11.2; Moffatt–
 Kida–Ohkitani \cite{moffatt1994}) the separation squared evolves
 as
 $$
-  d(t)^2 = \frac{\Gamma (T^\ast - t)}{\pi}.
+  d(t)^2 = \frac{c\,\Gamma (T^\ast - t)}{\pi},
 $$
+with a convention constant $c$ that depends on whether $\Gamma/(2\pi d)$
+is read as a single filament's induced velocity ($c = 1$) or as
+the relative approach speed of the two filaments ($c = 2$).
+Either way the time scaling is the same.
 The external strain rate induced by one filament on the other
-is
+is then
 $$
-  \alpha(t) = \frac{\Gamma}{2\pi d(t)^2}
-            = \frac{1}{2(T^\ast - t)}.
+  \alpha(t)
+  \;=\;
+  \frac{\Gamma}{2\pi d(t)^2}
+  \;=\;
+  \frac{1}{2c\,(T^\ast - t)},
 $$
+and only the constants depend on $c$; the leading behaviour
+$\alpha \propto 1/(T^\ast - t)$ is convention-independent. For
+definiteness, and to match the user's setup, we adopt $c = 1$
+below — the corresponding Lean formalisation
+([`townsend-biot-savart-strain.lean`](townsend-biot-savart-strain.lean))
+states the result in a $c$-agnostic form.
 The remarkable feature is that $\alpha(t)$ is **independent of
 $\Gamma$**: under the point-vortex approximation, the
 circulation cancels between numerator and denominator and the

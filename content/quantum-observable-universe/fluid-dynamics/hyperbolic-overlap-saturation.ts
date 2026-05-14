@@ -3,8 +3,9 @@ import { remark } from "../../schema/builders";
 export default remark({
   interprets: "conj:levi-degeneracy",
   label: "rem:hyperbolic-overlap-saturation",
+  lean: { ref: "qou:QOU.FluidDynamics.HyperbolicOverlapSaturation", validation: "not_checked" },
   title:
-    "Hyperbolic-overlap strain saturation: $\\kappa^2 = \\pi\\nu/\\Gamma$ preserves Levi non-degeneracy",
+    "Hyperbolic-overlap strain saturation: $\\kappa^2 = \\pi\\nu/(2\\Gamma+\\pi\\nu)$ preserves Levi non-degeneracy",
   uses: [
     "conj:levi-degeneracy",
     "conj:ns-counterexample",
