@@ -3556,6 +3556,43 @@ export const references: CSLData[] = [
     DOI: "10.1006/aima.1998.1745",
   }),
 
+  // ── q-CLT references (issue #649) ─────────────────────────────
+  ref({
+    id: "blitvic2012",
+    type: "article-journal",
+    title:
+      "The (q,t)-Gaussian process",
+    author: [
+      { family: "Blitvić", given: "Natasha" },
+    ],
+    "container-title": "Journal of Functional Analysis",
+    issued: { "date-parts": [[2012]] },
+    volume: "263",
+    issue: "10",
+    page: "3270-3305",
+    DOI: "10.1016/j.jfa.2012.08.006",
+    URL: "https://arxiv.org/abs/1205.4003",
+  }),
+
+  ref({
+    id: "marsh2006",
+    type: "article-journal",
+    title:
+      "Influence of global correlations on central limit theorems and entropic extensivity",
+    author: [
+      { family: "Marsh", given: "J. A." },
+      { family: "Fuentes", given: "M. A." },
+      { family: "Moyano", given: "L. G." },
+      { family: "Tsallis", given: "C." },
+    ],
+    "container-title": "Physica A: Statistical Mechanics and its Applications",
+    issued: { "date-parts": [[2006]] },
+    volume: "372",
+    issue: "2",
+    page: "183-202",
+    DOI: "10.1016/j.physa.2006.08.009",
+  }),
+
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────

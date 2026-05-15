@@ -275,6 +275,24 @@ export default chapter({
       ],
     }),
 
+    // ── Non-comm probability + q-CLT (resolves issue #649) ────────────
+    section({
+      title:
+        "Non-Commutative Probability, the q-CLT, and the Archimedean Macroscopic Limit",
+      label: "sec:non-comm-probability-q-clt",
+      blocks: [
+        "non-comm-probability-intro",
+        "non-commutative-probability-dictionary",
+        "q-clt-non-commutative",
+        "archimedean-macroscopic-washout",
+        "trace-locality-meets-gs-nonlocality",
+        "trace-locality-meets-gs-nonlocality-proof",
+        "brane-tower-q-laplacian-decay",
+        "brane-tower-q-laplacian-decay-proof",
+        "qou-useful-properties-independent",
+      ],
+    }),
+
     // ── Transcendence falsifiability signatures ──────────────────────
     section({
       title: "Transcendence Falsifiability Signatures",

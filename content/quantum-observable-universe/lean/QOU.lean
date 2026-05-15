@@ -80,3 +80,5 @@ import QOU.Observations.AlgebraicCausalActionStructure
 import QOU.Observations.AlgebraicGnsEmbedding
 import QOU.Observations.CfsAsTracefulProjection
 import QOU.Observations.MuArchContinuumLimit
+import QOU.Observations.QCltNonCommutative
+import QOU.Observations.TraceLocalityMeetsGsNonLocality

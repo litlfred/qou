@@ -1,0 +1,22 @@
+import { proposition } from "../../schema/builders";
+
+export default proposition({
+  label: "prop:brane-tower-q-laplacian-decay",
+  title:
+    "Brane-tower convergence: q-Laplacian exponential decay drives the $\\hbar_q^{2n}$ tail bound",
+  uses: [
+    "rem:non-commutative-probability-dictionary",
+    "thm:jones-markov-trace",
+  ],
+  cites: ["wenzl1988"],
+  tags: [
+    "brane-tower",
+    "q-laplacian",
+    "exponential-decay",
+    "geometric-series",
+    "non-local-integration",
+    "issue-649",
+    "established",
+  ],
+  proofs: ["prf:brane-tower-q-laplacian-decay"],
+});
