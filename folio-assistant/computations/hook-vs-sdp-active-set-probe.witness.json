@@ -1,0 +1,114 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-15T22:18:54.339725+00:00",
+  "commitSha": "30f92a5073467b744b12e1cdebc296c460d7ad10",
+  "assertions": [
+    {
+      "name": "lump_column_matches_pr_639_for_A_eq_3_atoms",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 8,
+  "computation": "hook-vs-sdp-active-set-probe",
+  "scriptFile": "probe_hook_vs_sdp_active_set.py",
+  "scriptHash": "a17018da7122",
+  "scriptCommitSha": "unknown",
+  "description": "Cross-references three distinct 'dominant partition' notions across the codebase: (1) Path A u-pole hook λ_⋆(Z, N) = (Z+2N+1, 1^{2Z+N-1}); (2) PR #639 operator-valued Φ_q failure-dominant (per per-partition-k-lambda-rule.md); (3) SDP shadow-price argmax (per probe-sdp-active-set-dominant-partition).  Tests the hypothesis: PR #639 dominant = lump_column(Path-A hook), i.e., the operator-binding partition is a structural function of the Markov-trace pole-maximizer hook.",
+  "auditOnly": "docs/audits/2026-05-15-a-minus-2-q-substrate-derivation.md",
+  "data": {
+    "results": [
+      {
+        "atom": "deuteron",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "path_a_hook": [
+          4,
+          1,
+          1
+        ],
+        "hook_lumped_column": [
+          4,
+          2
+        ],
+        "pr_639_operator_phi_q_dominant": [
+          2,
+          2,
+          1,
+          1
+        ],
+        "sdp_shadow_price_argmax": [
+          6
+        ],
+        "lumped_eq_pr_639": false,
+        "lumped_eq_sdp": false,
+        "pr_639_eq_sdp": false
+      },
+      {
+        "atom": "tritium",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "path_a_hook": [
+          6,
+          1,
+          1,
+          1
+        ],
+        "hook_lumped_column": [
+          6,
+          3
+        ],
+        "pr_639_operator_phi_q_dominant": [
+          6,
+          3
+        ],
+        "sdp_shadow_price_argmax": [
+          6,
+          3
+        ],
+        "lumped_eq_pr_639": true,
+        "lumped_eq_sdp": true,
+        "pr_639_eq_sdp": true
+      },
+      {
+        "atom": "helium-3",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "path_a_hook": [
+          5,
+          1,
+          1,
+          1,
+          1
+        ],
+        "hook_lumped_column": [
+          5,
+          4
+        ],
+        "pr_639_operator_phi_q_dominant": [
+          5,
+          4
+        ],
+        "sdp_shadow_price_argmax": [
+          6,
+          3
+        ],
+        "lumped_eq_pr_639": true,
+        "lumped_eq_sdp": false,
+        "pr_639_eq_sdp": false
+      }
+    ],
+    "verdict": {
+      "atoms_total": 3,
+      "lump_column_hypothesis_matches_pr_639": 2,
+      "pr_639_matches_sdp_shadow_argmax": 1,
+      "interpretation": "The Path A hook λ_⋆(Z,N) is the u-pole maximizer of tr_M — a property of the Markov trace's leading singularity at q → 0.  Empirically the lump_column(hook) operation reproduces PR #639's operator-Φ_q failure-dominant partition at T and ³He but NOT D, suggesting the relationship is structural for A = 3 atoms (n = 9 strands) but fails for the A = 2 deuteron.  The SDP shadow-price argmax is a separate optimisation (LP duality on the operator-selection problem) and does not in general match either."
+    }
+  }
+}

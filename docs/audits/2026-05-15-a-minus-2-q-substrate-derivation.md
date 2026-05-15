@@ -313,6 +313,57 @@ This is no longer a "derive `[A − 2]_q`" question — it's a
 "diagnose the ³He proton-heavy anomaly" question, which is a
 sharper and more tractable substrate problem.
 
+### v4 — Hook vs SDP active-set: three distinct "dominant" partitions
+
+[`probe_hook_vs_sdp_active_set.py`](../../folio-assistant/computations/probe_hook_vs_sdp_active_set.py)
++ witness
+[`hook-vs-sdp-active-set-probe.witness.json`](../../folio-assistant/computations/hook-vs-sdp-active-set-probe.witness.json)
+cross-references the Path A hook with two other notions of
+"dominant partition" in the codebase:
+
+| atom | (Z, N) | **Path A hook** | lump_column(hook) | PR #639 Φ_q dominant | SDP argmax |
+|---|---|---|---|---|---|
+| D | (1, 1) | $(4, 1, 1)$ | $[4, 2]$ | $[2, 2, 1, 1]$ | $[6]$ |
+| T | (1, 2) | $(6, 1, 1, 1)$ | $[6, 3]$ | $[6, 3]$ | $[6, 3]$ |
+| ³He | (2, 1) | $(5, 1, 1, 1, 1)$ | $[5, 4]$ | $[5, 4]$ | $[6, 3]$ |
+
+**Sub-finding:** for $A = 3$ atoms (T and ³He), the operator-Φ_q
+failure-dominant partition (PR #639) equals **`lump_column`** of
+the Path A hook:
+
+$$
+\lambda_\star^{\mathrm{op}}(Z, N) \;=\; \mathrm{lump\_column}(\lambda_\star^{\mathrm{pole}}(Z, N))
+\;=\; [w, d - 1]
+\;=\; [Z + 2N + 1, \, 2Z + N - 1]
+$$
+
+The hook's *column of 1s* collapses to a single bottom row. This
+relationship holds at T and ³He (n = 9) but NOT at D (n = 6). It
+does NOT hold for the SDP shadow-price argmax — that's a separate
+LP-duality optimum.
+
+### Three distinct objects — clarified
+
+| Notion | Source | What it identifies |
+|---|---|---|
+| Path A hook $\lambda_\star^{\mathrm{pole}}$ | `per-irrep-pole-atom-crystal.witness.json` | u-pole maximizer of $\mathrm{tr}_M$ at $q \to 0$ — Markov-trace leading singularity |
+| Operator-Φ_q failure dominant | PR #639's per-partition-$k_\lambda$ rule | partition where the brane-tower truncation fails most at uniform $k$ — knot convolution "binding" |
+| SDP shadow-price argmax | `probe-sdp-active-set-dominant-partition.witness.json` | LP-dual maximizer in operator-selection LP |
+
+These are **different empirical observations** about different
+optimisation/structural problems. The user's question — "is the
+hook where the knot convolution operator is happening?" — has the
+answer:
+
+**No, the hook is where the Markov-trace u-pole is maximal.** The
+knot convolution operator's binding partition (PR #639) is
+typically a *2-row* partition, related to the hook by lumping its
+column. The SDP active-set is a third optimum that doesn't match
+either at single-magic. This three-way separation may itself be a
+structural feature worth formalising — three different stratification
+principles (pole, operator-truncation, LP-duality) on the same
+partition lattice.
+
 [`probe_a_minus_2_q_substrate_v2.py`](../../folio-assistant/computations/probe_a_minus_2_q_substrate_v2.py)
 (witness:
 [`a-minus-2-q-substrate-probe-v2.witness.json`](../../folio-assistant/computations/a-minus-2-q-substrate-probe-v2.witness.json))
