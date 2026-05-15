@@ -22,7 +22,7 @@ try:
     from q_parameter import Q as q0, Q_INV as qi0, HA
 except ImportError:
     import math
-    _V = 2.029883212819307; _R = 206.768283
+    _V = 2.029883212819307; _R = 206.768283  # noqa: P31 — display-only q_0 reconstruction in __main__ block; live value from q_parameter.Q
     _h = math.sqrt(_V / _R); q0 = 1.0 / (1.0 - _h)
     qi0 = 1.0 / q0; HA = q0 - qi0
 # z, NF_BASIS, NF_NAMES, TR_M moved to pyhecke.gram via M2b inversion.

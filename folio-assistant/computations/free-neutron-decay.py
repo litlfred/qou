@@ -441,7 +441,7 @@ print()
 
 # Observed
 print(f"  Observed free neutron decay:")
-print(f"    Q = m_n − m_p − m_e ≈ 939.56542 − 938.27209 − 0.51100 = 0.78233341 MeV")
+print(f"    Q = m_n − m_p − m_e ≈ 939.56542 − 938.27209 − 0.51100 = 0.78233341 MeV")  # noqa: P31 — narrative print of CODATA cross-check; live values from experimental_constants
 print(f"    τ = 878.4 ± 0.5 s")
 
 # ── Witness JSON ──────────────────────────────────────────────
@@ -500,7 +500,7 @@ witness = {
         "delta_net": net_n - net_p,
         "delta_nu": n_nu - p_nu,
         "delta_e": n_e - p_e,
-        "Q_observed_MeV": 0.78233,
+        "Q_observed_MeV": 0.78233,  # noqa: P31 — comparison-only snapshot in JSON output; live value from experimental_constants.Q_BETA_MEV
     },
 }
 

@@ -27,7 +27,7 @@ This script:
 
   (a) Computes Vol(K)/ℏ_q² at 50 dps for the cross-check K = 4_1
       (figure-8, the muon Higgs-coupling knot) — should reproduce
-      m_μ/m_e ≈ 206.7682830 (CODATA, CAL-2 anchor) to all digits.
+      m_μ/m_e ≈ 206.7682830 (CODATA, CAL-2 anchor) to all digits.  # noqa: P31 — docstring narrative; CAL-2 anchor lives in q_parameter.MASS_RATIO_MU_E_STR
 
   (b) Computes Vol(ℬ_3)/ℏ_q² at 50 dps — the "common Borromean factor"
       ≈ 746.42 (dimensionless).
@@ -104,7 +104,10 @@ def derive_m_baryon_volume_form() -> dict:
 
     # (a) muon cross-check via Vol(4_1)/ℏ_q²
     m_mu_over_m_e_via_volume = VOL_4_1 / hbar_q2
-    m_mu_codata_over_m_e = mp.mpf("206.7682830")  # CODATA, validation only
+    # CAL-2: m_μ/m_e from q_parameter registry (P31-triage Phase B,
+    # validation only — this is the CODATA anchor we cross-check against).
+    from q_parameter import MASS_RATIO_MU_E_STR  # noqa: E402
+    m_mu_codata_over_m_e = mp.mpf(MASS_RATIO_MU_E_STR)
 
     # (b) Borromean common factor
     vol_borromean_over_hbar2 = VOL_BORROMEAN / hbar_q2

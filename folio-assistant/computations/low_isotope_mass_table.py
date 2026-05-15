@@ -59,8 +59,14 @@ HERE = Path(__file__).parent
 # These are NOT consumed as predictions. Kept so the witness can
 # report observed mass excesses next to derived predictions.
 U_MEV         = 931.49410372      # atomic mass unit, CODATA
-M_P_REF_MEV   = 938.27208816      # CODATA, comparison reference
-M_N_REF_MEV   = 939.56542052      # CODATA, comparison reference
+# Comparison references (P31-triage Phase B): sourced from codata_constants
+# `_VALIDATION` aliases — runtime values identical to the literal CODATA
+# digits, but the import name announces validation-only semantics
+# (never a prediction input).
+from codata_constants import (
+    M_P_MEV_VALIDATION as M_P_REF_MEV,
+    M_N_MEV_VALIDATION as M_N_REF_MEV,
+)
 
 # ── Derived inputs ─────────────────────────────────────────────
 # m_p comes from the categorical derivation chain (build_proton_mass_50dps_chain.py).

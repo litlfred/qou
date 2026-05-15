@@ -2,7 +2,7 @@
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "computation": "e0-calibration-audit",
   "description": "Audit of E_0 / Q_β(n) calibration constants across folio-assistant/computations. Reports value-precision drift, anchor-of-pinning violations vs CAL-3, and the PDG-derived uncertainty floor on every E_0-dependent quantity.",
-  "computedAt": "2026-05-11T22:48:02.392263+00:00",
+  "computedAt": "2026-05-16T00:59:00.942001+00:00",
   "reference_blocks": [
     "prop:three-calibration-inputs",
     "rem:calibration-inputs"
@@ -123,6 +123,14 @@
         "kind": "doc"
       },
       {
+        "file": "folio-assistant/computations/compute_audit_scan.py",
+        "line": 59,
+        "pattern": "literal_0_78233341",
+        "match": "0.78233341",
+        "context": "\"0.78233\",        # Q_β (MeV) — covers 0.78233, 0.7823, 0.78233341",
+        "kind": "doc"
+      },
+      {
         "file": "folio-assistant/computations/crt_markov.py",
         "line": 578,
         "pattern": "literal_0_78233341",
@@ -175,7 +183,7 @@
         "line": 444,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
-        "context": "print(f\"    Q = m_n − m_p − m_e ≈ 939.56542 − 938.27209 − 0.51100 = 0.78233341 MeV\")",
+        "context": "print(f\"    Q = m_n − m_p − m_e ≈ 939.56542 − 938.27209 − 0.51100 = 0.78233341 MeV\")  # noqa: P31 — narrative print of CODATA cross-check; live values from expe",
         "kind": "doc"
       },
       {
@@ -292,7 +300,7 @@
       },
       {
         "file": "folio-assistant/computations/paper_six_term_isotope_sweep.py",
-        "line": 618,
+        "line": 846,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
         "context": "#   T1 (descended Markov):  E_0_β = 0.78233341 MeV per cat unit",
@@ -313,7 +321,23 @@
         "line": 10,
         "pattern": "literal_0_78233",
         "match": "0.78233",
-        "context": "energy Q = m_n − m_p − m_e = 0.78233 MeV:",
+        "context": "energy Q = m_n − m_p − m_e = 0.78233 MeV:  # noqa: P31 — docstring narrative; live value from experimental_constants.Q_BETA_MEV",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/compute_audit_scan.py",
+        "line": 59,
+        "pattern": "literal_0_78233",
+        "match": "0.78233",
+        "context": "\"0.78233\",        # Q_β (MeV) — covers 0.78233, 0.7823, 0.78233341",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/compute_audit_scan.py",
+        "line": 59,
+        "pattern": "literal_0_78233",
+        "match": "0.78233",
+        "context": "\"0.78233\",        # Q_β (MeV) — covers 0.78233, 0.7823, 0.78233341",
         "kind": "doc"
       },
       {
@@ -321,7 +345,7 @@
         "line": 503,
         "pattern": "literal_0_78233",
         "match": "0.78233",
-        "context": "\"Q_observed_MeV\": 0.78233,",
+        "context": "\"Q_observed_MeV\": 0.78233,  # noqa: P31 — comparison-only snapshot in JSON output; live value from experimental_constants.Q_BETA_MEV",
         "kind": "doc"
       }
     ],
@@ -513,6 +537,14 @@
     ],
     "Q_BETA_MEV": [
       {
+        "file": "folio-assistant/computations/beta-decay-energy-scale.py",
+        "line": 10,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "energy Q = m_n − m_p − m_e = 0.78233 MeV:  # noqa: P31 — docstring narrative; live value from experimental_constants.Q_BETA_MEV",
+        "kind": "doc"
+      },
+      {
         "file": "folio-assistant/computations/binding_canonical.py",
         "line": 42,
         "pattern": "Q_BETA_MEV",
@@ -630,6 +662,14 @@
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "\"CAL-3_Q_beta_MeV\": str(Q_BETA_MEV) + \" (cross-check only; predicted by framework below)\",",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/free-neutron-decay.py",
+        "line": 503,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "\"Q_observed_MeV\": 0.78233,  # noqa: P31 — comparison-only snapshot in JSON output; live value from experimental_constants.Q_BETA_MEV",
         "kind": "doc"
       },
       {

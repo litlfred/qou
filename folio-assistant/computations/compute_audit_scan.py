@@ -3,7 +3,7 @@
 Static scanner for the 30-pattern compute-audit catalogue.
 
 Scans every .py file under folio-assistant/computations/ for the
-performance antipatterns P15-P30 from .claude/skills/local/compute-audit.md
+performance antipatterns P15-P31 from .claude/skills/local/compute-audit.md
 (extracted from the 50-commit review 2026-04 → 2026-05). Emits
 ``compute-audit-scan.witness.json`` next to this script and prints a
 human-readable summary.
@@ -42,6 +42,44 @@ PATTERN_OWNER_FILES = {
     "compute_audit_scan.py",              # this scanner
     "run_pipeline.py",                    # orchestrator
     "bound_state_observable_validator.py",
+    "codata_constants.py",                # P31 reference impl (registry)
+    "experimental_constants.py",          # P31 reference impl (registry)
+}
+
+# P31. Canonical CODATA literals — strings that are unambiguously
+# CODATA-2022 mass / Q-value anchors. Free-floating occurrences in
+# production scripts inflate the three-calibration count past the
+# pre-approved CAL-1/2/3.
+P31_CODATA_LITERALS = (
+    "0.51099895",     # m_e (MeV)
+    "938.272088",     # m_p (MeV) — first 9 digits cover most variants
+    "938.27208816",   # m_p (MeV) — 10-digit variant in older scripts
+    "939.565421",     # m_n (MeV)
+    "939.56542",      # m_n (MeV) — short variant
+    "0.78233",        # Q_β (MeV) — covers 0.78233, 0.7823, 0.78233341
+    "206.7682830",    # m_μ / m_e
+    "206.768283",     # m_μ / m_e — short variant
+)
+# Files where CODATA literals are legitimate (audit doc generators,
+# back-fit Conv-C diagnostic, older calibration audit scripts).  Each
+# entry is justified by an audit doc or in-source banner.
+P31_ALLOWLIST = {
+    # Audit-only Conv-C consumer per
+    # docs/audits/2026-05-12-canonical-derivation-compute-review.md §6.
+    "deuteron_delta_i_audit.py",
+    # E_0 calibration audit explicitly compares CAL-3 paths.
+    "e0_calibration_audit.py",
+    # Three-calibration discipline self-test runs the full allowlist.
+    "three_calibration_discipline_audit.py",
+    # CODATA reconciliation explicitly cross-checks raw literals.
+    "codata_reconciliation.py",
+    # Validation-mass witness builder (registers the literals).
+    "build_codata_2022_validation_masses_witness.py",
+    "build_cal_3_q_beta_witness.py",
+    # Other registry / re-export sources of truth.
+    "codata_masses.py",                  # re-exports CODATA → witness
+    "q_parameter.py",                    # CAL-2 substrate-parameter source
+    "q_pinning_50_digit.py",             # CAL-2 50-dps substrate source
 }
 
 
@@ -180,6 +218,43 @@ def scan_file(path: Path) -> list[dict]:
                     "Ref: ocneanu_weights.py wiring.",
         })
 
+    # P31. Hardcoded CODATA literal outside the registry.  Skip
+    # explicitly allowlisted audit-only consumers.
+    if name not in P31_ALLOWLIST:
+        for literal in P31_CODATA_LITERALS:
+            # Match the literal inside a string (single or double
+            # quoted); avoid matching it as a substring of a longer
+            # number by requiring a non-digit / non-dot boundary on
+            # the right.
+            pattern = re.escape(literal) + r"(?![0-9])"
+            for m in re.finditer(pattern, src):
+                # Skip if line carries explicit `# noqa: P31` justification.
+                line_no = _line_of(src, m.start())
+                line_start = src.rfind("\n", 0, m.start()) + 1
+                line_end = src.find("\n", m.start())
+                line_text = src[line_start:line_end if line_end != -1 else None]
+                if "noqa: P31" in line_text:
+                    continue
+                findings.append({
+                    "pattern": "P31",
+                    "file": name,
+                    "line": line_no,
+                    "snippet": f'CODATA literal "{literal}"',
+                    "note": "Hardcoded CODATA literal outside the "
+                            "registry inflates the three-calibration "
+                            "count past CAL-1/2/3. Import from "
+                            "codata_constants (validation aliases) or "
+                            "experimental_constants instead. Audit-only "
+                            "scripts may add `# noqa: P31` with a "
+                            "justifying comment. Ref: "
+                            "codata_constants.py:90-145; "
+                            "docs/audits/2026-05-12-canonical-"
+                            "derivation-compute-review.md §3.",
+                })
+                # One finding per literal per file is enough; break
+                # the inner loop to avoid spamming for repeated uses.
+                break
+
     return findings
 
 
@@ -228,7 +303,7 @@ def main() -> int:
         WitnessBuilder("compute-audit-scan", engine="python")
         .set_description(
             "Static scan of folio-assistant/computations/ for the "
-            "performance patterns P11/P14/P15/P16/P21/P30 from "
+            "performance patterns P11/P14/P15/P16/P21/P30/P31 from "
             ".claude/skills/local/compute-audit.md."
         )
         .set_audit_only(

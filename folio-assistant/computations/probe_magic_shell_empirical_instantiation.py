@@ -46,13 +46,36 @@ from wedderburn_jones_markov import global_wedderburn_sum_q_hecke_seminormal
 mp.dps = 50
 
 AME = {
+    # Free nucleons: AME binding energy = 0 by definition (no internal
+    # bound state).  Δ_cat(p) = 0 − m_e·ρ·|τ(β_p)| is then a pure
+    # categorical residual on top of vacuum — used downstream as the
+    # canonical "free-nucleon Δ_cat" anchor in the cross-coupling
+    # decompositions Δ_coupling(2,1) := Δ_cat(³He) − Δ_cat(D) − Δ_cat(p)
+    # and Δ_coupling(1,2) := Δ_cat(T) − Δ_cat(D) − Δ_cat(n)
+    # (the ordered pair (Z, N) below denotes proton and neutron counts).
+    "proton":   0.0,
+    "neutron":  0.0,
     "deuteron": 2.224566,
-    "tritium": 8.481798,
-    "he3": 7.71806,
-    "he4": 28.295674,
+    "tritium":  8.481798,
+    "he3":      7.71806,
+    "he4":      28.295674,
 }
-Z_N = {"deuteron": (1, 1), "tritium": (1, 2), "he3": (2, 1), "he4": (2, 2)}
-RHO_MAP = {"deuteron": 1, "tritium": 2, "he3": 2, "he4": 3}
+Z_N = {
+    "proton":   (1, 0),
+    "neutron":  (0, 1),
+    "deuteron": (1, 1),
+    "tritium":  (1, 2),
+    "he3":      (2, 1),
+    "he4":      (2, 2),
+}
+RHO_MAP = {
+    "proton":   1,
+    "neutron":  1,
+    "deuteron": 1,
+    "tritium":  2,
+    "he3":      2,
+    "he4":      3,
+}
 
 
 def main():
@@ -70,13 +93,14 @@ def main():
             "magic-shell-empirical-instantiation", engine="python"
         )
         .set_description(
-            "Unified empirical instantiation of the three load-bearing "
-            "findings from PR #638 closure (items 1+2+3): (1) "
-            "he4_eq_twice_he3_shell falsifiability test, (2) "
-            "convention-independence of |τ(β_³He)| via Hoefsmit vs "
-            "markov_peel at 50dps, (3) per-atom Δ_cat calibration "
-            "table for {D, T, ³He, ⁴He} producing concrete numerical "
-            "predictions for the magic-shell stabilization term."
+            "Unified empirical instantiation of the load-bearing findings "
+            "from PR #638 closure: (1) he4_eq_twice_he3_shell falsifiability "
+            "test, (2) convention-independence of |τ(β_³He)| via Hoefsmit vs "
+            "markov_peel at 50dps, (3) per-atom Δ_cat calibration table for "
+            "{p, n, D, T, ³He, ⁴He} producing concrete numerical predictions "
+            "for the magic-shell stabilization term and the cross-coupling "
+            "anchors Δ_coupling(Z,N) consumed by P3.A "
+            "(delta_coupling_closed_form_probe.py)."
         )
         .set_content_block("conj:magic-shell-stabilization")
         .add_parameter("q_0", float(Q0))

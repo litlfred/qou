@@ -109,6 +109,15 @@ def main() -> int:
     p_t6 = mp.mpf(rows["p"]["term6_cyclotomic_tail_MeV"])
     p_total = mp.mpf(rows["p"]["total_hecke"])
     M_p_codata = mp.mpf("938.27208816")
+    # Audit-only consumer of the deprecated Conv-C "proton back-fit"
+    # E_0 pattern (≈ 200 MeV; flagged as DISCIPLINE VIOLATION in
+    # derivation_chain.E_0_CONVENTIONS["C_proton_back_fit"]). This
+    # script is a Class-C diagnostic probe per
+    # docs/audits/2026-05-11-three-calibration-discipline-violations.md
+    # — it back-fits E_0 only to expose the Δ_I anomaly at A=2, NOT
+    # to predict any new quantity. New production chains MUST use
+    # Conv A or Conv B instead. See also
+    # docs/audits/2026-05-12-canonical-derivation-compute-review.md §3.
     E_0 = (M_p_codata - p_t6) / p_total
 
     d = rows["D"]
