@@ -1,92 +1,88 @@
-**Conjecture ($\mu_{\mathrm{arch}}$ continuum limit).**
-*There exists a measure-valued Archimedean realisation functor*
+**Conjecture ($\mu_{\mathrm{arch}}$ Lagrangian-universality match).**
+*Under the joint Faddeev / Kerov–Vershik scaling $n \to \infty$,
+$q \to 1$, $n\lvert 1 - q\rvert \to \infty$, on the shared free-
+probability spectral limit
+$\Omega_q^{\infty}$ ([q-Plancherel asymptotic skeleton](#prop:q-plancherel-asymptotic-skeleton)),
+the Finster causal Lagrangian
+$\mathcal{L}_{\mathrm{CFS}}(x, y)$ — a max-of-pair-products
+symmetric functional of $\mathrm{spec}(x \cdot y)$
+[`finster2024`, §2] — agrees with the Plancherel-weighted character
+generating function*
 $$
-  \mu_{\mathrm{arch}}
-  \colon
-  \bigl\{(A_q, \mathrm{tr}_M, \tilde w_\lambda)\bigr\}_{n, q}
-  \;\longrightarrow\;
-  \bigl\{(\mathcal{F}, \rho, \mathcal{S}_{\mathrm{CFS}})\bigr\}
+  Z_{\mathrm{Pl}}(x \cdot y)
+  \;:=\;
+  \sum_{\lambda} \tilde w_\lambda \, \chi_\lambda(x \cdot y),
 $$
-*sending the pre-Archimedean algebraic causal-action structure of
-[`prop:algebraic-causal-action-structure`](#prop:algebraic-causal-action-structure)
-to a Finster causal fermion system [`finster2021`], under the joint
-Faddeev scaling $n \to \infty$, $q \to 1$, $n\lvert 1 - q\rvert \to
-\infty$ used in
-[dilogarithm archimedean limit](#conj:dilogarithm-archimedean-limit).
-Specifically:*
+*after the traceful projection
+$\Pi_{\mathrm{tr}}$ ([CFS as traceful projection of QOU](#prop:cfs-as-traceful-projection-of-qou))
+identifies CFS data with QOU's commutative spectral shadow.*
 
-1. *(Operator algebra limit.) The Hecke algebra $A_q = H_n(R, q)$
-   embeds into a limiting bounded-operator algebra
-   $\mathcal{F} \subset L(H)$ on a separable Hilbert space $H$, with
-   the bar-involution converging to the adjoint and the regular
-   representation converging to a faithful representation.*
+**What this narrowed conjecture buys.** Everything except the
+Lagrangian form is now established or near-established:
 
-2. *(Measure convergence.) The q-Plancherel weight $\tilde w_\lambda$,
-   pushed forward along the embedding of (1), converges weakly to a
-   Borel measure $\rho$ on $\mathcal{F}$. The limit measure $\rho$ has
-   finite total mass on every compact subset of $\mathcal{F}$.*
+| Clause of $\mu_{\mathrm{arch}}$ | Status |
+|---|---|
+| Operator-algebra embedding $H_\infty(q) \hookrightarrow L(\mathcal{H})$ | *Established* — [`prop:algebraic-gns-embedding`](#prop:algebraic-gns-embedding), Jones–Wenzl 1985–88 |
+| Measure convergence $\tilde w_\lambda \to \mu_\infty^{(q)}$ | *Near-established* — [`prop:q-plancherel-asymptotic-skeleton`](#prop:q-plancherel-asymptotic-skeleton); q-deformed Kerov–Vershik conjectural piece only |
+| Type II$_1$ / free-probability universality class | *Established* — Voiculescu–Biane; same class for both QOU and CFS carriers |
+| Trace = Plancherel integral of central characters | *Provable* — [`prop:algebraic-causal-action-structure`](#prop:algebraic-causal-action-structure) part (1) |
+| Active set $\widehat{A}_q^{\,\mathrm{active}} \to \mathrm{supp}(\rho)$ | *Conditional* on measure convergence; otherwise structurally automatic |
+| **Lagrangian form: $\mathcal{L}_{\mathrm{CFS}} \stackrel{?}{=} Z_{\mathrm{Pl}}$** | **Genuinely conjectural** |
 
-3. *(Trace as causal action.) Under (1)–(2), the Markov trace
-   evaluated at fixed-degree elements satisfies*
-   $$
-     \lim \mathrm{tr}_M(x \cdot y)
-     \;=\;
-     \iint_{\mathcal{F}\times\mathcal{F}}
-       \mathcal{L}(\xi, \eta)\,d\rho(\xi)\,d\rho(\eta),
-   $$
-   *where $\mathcal{L}$ is the Finster causal Lagrangian
-   [`finster2024`, §2] for the pair $(\xi, \eta)$. Equivalently, the
-   discrete categorical action of QOU converges to the continuous
-   causal action of CFS.*
+**The two outcomes.** The conjecture bifurcates into two possibilities,
+each scientifically informative:
 
-4. *(Active set as $\mathrm{supp}(\rho)$.) The LP active sets
-   $\widehat{A}_q^{\,\mathrm{active}}$ converge, after pushforward, to
-   the support of $\rho$. Under (3), $\mathrm{supp}(\rho)$ is the
-   emergent CFS spacetime; on the QOU side it is the LP analogue of
-   the same locus.*
+*(i) The Lagrangians agree.* Finster's max-of-pair-products extremal
+functional reduces, on the free-probability spectral limit, to the
+Plancherel-weighted character generating function. In this case
+$\mu_{\mathrm{arch}}$ is a theorem (modulo the q-deformed Kerov–Vershik
+input): CFS is the post-wall continuum realisation of QOU's
+trace-projection $\Pi_{\mathrm{tr}}$, and the two frameworks describe
+the same effective continuum physics.
 
-**Why this is conjectural.** Each of (1)–(4) packages a non-trivial
-analytic result:
+*(ii) The Lagrangians disagree.* The two frameworks share carrier
+algebra, universality class, and measure-theoretic data, but extract
+different real-valued functionals from the same spectral input. The
+emergent continuum dynamics are *different* even though the
+underlying operator algebra and spectral measure are the same — a
+genuine theory-bifurcation. QOU's Plancherel-weighted dynamics would
+describe one continuum theory; Finster's causal-action dynamics
+another. The substrate parameter $q_0 \approx 1.11$ would then
+select between them based on which Lagrangian gives the observed
+particle masses.
 
-- (1) is an asymptotic embedding theorem for Hecke algebras into
-  bounded operators on a Hilbert space. The free-probability framework
-  of Biane [`biane1998`] gives an embedding for $S_n$
-  (the $q = 1$ specialisation) into the free group factor; the
-  q-deformed version is not in the literature in the form needed.
+**Either outcome is interesting.** Case (i) is a substantial
+unification — QOU and CFS would be two presentations of the same
+post-wall theory. Case (ii) is a sharp falsifiability: the
+QOU trace-projection dynamics could be tested against Finster's
+predictions for collapse rates, baryogenesis asymmetry, or
+holographic-mixing Fock-space corrections [`finster2024`,
+`finster2022`, `dappiaggi2024`]. Disagreement would not refute
+either framework but would localise the empirical difference to a
+single functional-form question on the free-probability limit.
 
-- (2) is an asymptotic Plancherel theorem in the spirit of
-  Kerov–Vershik [`kerov1981`] and Féray–Méliot [`feray2010`]. At
-  $q = 1$ the limit measure on the Thoma simplex is known
-  (Vershik–Kerov 1981); at $q \neq 1$ the corresponding limit is
-  conjectured to exist with the same Kerov-bound regularity, but a
-  full proof is open.
+**What is no longer in the conjecture.**
 
-- (3) is the action-matching statement and is the *content* of the
-  $\mu_{\mathrm{arch}}$ functor. It requires (1)–(2) plus a
-  uniform-convergence control on $\mathrm{tr}_M$ comparable to the
-  control needed for
-  [dilogarithm archimedean limit](#conj:dilogarithm-archimedean-limit).
+- The operator-algebra embedding (clause 1 of the previous version):
+  promoted to [`prop:algebraic-gns-embedding`](#prop:algebraic-gns-embedding).
+- The measure convergence (clause 2): promoted to
+  [`prop:q-plancherel-asymptotic-skeleton`](#prop:q-plancherel-asymptotic-skeleton),
+  modulo the q-deformed Kerov–Vershik input which is independently
+  cited.
+- The active-set convergence (clause 4): structurally automatic once
+  measure convergence holds, since LP active sets are continuous
+  functions of the weight vector under non-degeneracy.
 
-- (4) requires LP stability under the limit, i.e. that the discrete
-  active set does not collapse or explode in the joint scaling.
+**Lean encoding.** Stated as a class with a single content field —
+the Lagrangian-match equation — together with the structural
+preconditions on the free-probability spectral limit. Per CLAUDE.md
+§3b-cond, downstream Lean theorems requiring the match carry the
+class as an explicit hypothesis; the only `sorry` in any downstream
+chain lives in the conjectural instance.
 
-**Distinction from $\tau_{\mathrm{arch}}$.** The conjectural functor
-$\mu_{\mathrm{arch}}$ is *measure-valued* (target =
-$\mathrm{Meas}(\mathcal{F})$); the established functor
-$\tau_{\mathrm{arch}} = \pi_\infty \circ \tau$
-([archimedean realization functor](#def:archimedean-realization-functor))
-is *scalar-valued* (target = $\mathbb{R}$). The two functors share the
-factorisation through $A_q$ but project differently: $\tau_{\mathrm{arch}}$
-integrates the Markov trace down to a single real period (e.g. the
-Kashaev volume); $\mu_{\mathrm{arch}}$ would retain the measure data
-on operators before any single-number contraction. Both are
-asymptotic projections, but only one of them (the scalar one) is
-established in QOU.
-
-**Lean encoding.** Stated as a `class` carrying the four limit
-fields above; instances of the class are the conjectural input. The
-class allows downstream Lean theorems to be stated *conditionally* on
-$\mu_{\mathrm{arch}}$ — for example, "if $\mu_{\mathrm{arch}}$ holds,
-the CFS effective collapse equation [`finster2024`] is the small-slack
-limit of the LP shadow-price update" — without sorry-ing the
-upstream conjecture.
+**Distinction from $\tau_{\mathrm{arch}}$.** As before, $\tau_{\mathrm{arch}}$
+is scalar-valued (Kashaev volumes, dilogarithm periods). The
+measure-valued $\mu_{\mathrm{arch}}$, after this revision, is *almost
+entirely provable* — it factors as
+$\Pi_{\mathrm{tr}}$ (provable) followed by the Lagrangian match
+(the residual conjecture).

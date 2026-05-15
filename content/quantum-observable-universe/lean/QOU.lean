@@ -77,4 +77,6 @@ import QOU.Kashaev
 import QOU.PhiQJSJ
 import QOU.Infra
 import QOU.Observations.AlgebraicCausalActionStructure
+import QOU.Observations.AlgebraicGnsEmbedding
+import QOU.Observations.CfsAsTracefulProjection
 import QOU.Observations.MuArchContinuumLimit

@@ -1,84 +1,99 @@
-Combining the algebraic structure
-([prop:algebraic-causal-action-structure](#prop:algebraic-causal-action-structure))
-with the conjectural lift
-([conj:mu-arch-continuum-limit](#conj:mu-arch-continuum-limit))
-yields a clean picture of how the Finster program relates to QOU.
+Combining the propositions of this section yields a clean picture of
+how the Finster program relates to QOU.
 
-**The factorisation.** The QOU archimedean realisation already
-factors through an operator algebra: the fibre functor $\tau$ lands in
-vector spaces carrying the Schur–Weyl action of $H_n(R, q)$, the
-Markov trace collapses that action to a Laurent polynomial in $R$, and
-$\pi_\infty$ then projects to a real period. Schematically,
-
-$$
-  \tau_{\mathrm{arch}} \;:\;
-  \mathbf{C}
-  \;\xrightarrow{\;\tau\;}\;
-  A_q
-  \;\xrightarrow{\;\mathrm{tr}_M\;}\;
-  R = \mathbb{Z}[q^{\pm 1/2}]
-  \;\xrightarrow{\;\pi_\infty\;}\;
-  \mathbb{R}.
-$$
-
-The operator-algebra layer $A_q$ is suppressed in the current
-established statement of $\tau_{\mathrm{arch}}$ because its targets
-(Kashaev volume, classical dilogarithm) are scalars. But the layer is
-there, and it carries the q-Plancherel measure $\tilde w_\lambda$
-that the scalar realisation integrates out.
-
-**Two parallel routes out of $A_q$.**
-The Hecke layer admits two natural Archimedean continuations:
+**The full factorisation.** QOU's algebraic side admits *two* parallel
+Archimedean routes, both factoring through the Hecke operator
+algebra $A_q$:
 
 $$
   \begin{array}{cccccc}
-    A_q & \xrightarrow{\;\mathrm{tr}_M\;} & R
-      & \xrightarrow{\;\pi_\infty\;} & \mathbb{R}
-      & \quad\text{(scalar, established: $\tau_{\mathrm{arch}}$)} \\[2pt]
-    A_q & \xrightarrow{\;\tilde w_\lambda\;} & \mathrm{Meas}(\widehat{A}_q)
-      & \xrightarrow{\;\mu_{\mathrm{arch}}\;} & \mathrm{Meas}(\mathcal{F})
-      & \quad\text{(measure-valued, conjectural)}
+    \mathbf{C}
+      & \xrightarrow{\,\tau\,}
+      & A_q
+      & \xrightarrow{\,\mathrm{tr}_M\,}
+      & R
+      & \xrightarrow{\,\pi_\infty\,}\; \mathbb{R}
+      \quad (\tau_{\mathrm{arch}}; \text{Kashaev, dilogarithm}) \\[6pt]
+    \mathbf{C}
+      & \xrightarrow{\,\tau\,}
+      & A_q
+      & \xrightarrow{\,\Pi_{\mathrm{tr}}\,}
+      & (\widehat{A}_q, \tilde w_\lambda)
+      & \xrightarrow{\,\mu_{\mathrm{arch}}\,}\; (\mathcal{F}, \rho)
+      \quad (\mu_{\mathrm{arch}}; \text{CFS})
   \end{array}
 $$
 
-Under this picture, *CFS is the natural target of the second route*.
-Finster's universal measure $\rho$ on $\mathcal{F}$ would arise as
-$\mu_{\mathrm{arch}}(\tilde w_\lambda)$, and the Finster causal
-action
-$\mathcal{S}_{\mathrm{CFS}} = \iint \mathcal{L}\,d\rho\,d\rho$ would
-arise as the post-wall image of the algebraic Markov-trace identity
-$\mathrm{tr}_M = \sum_\lambda \tilde w_\lambda \chi_\lambda$. The
-scalar route $\tau_{\mathrm{arch}}$ recovers periods (volumes,
-dilogarithms); the measure route $\mu_{\mathrm{arch}}$ would recover
-the universal measure of CFS.
+The first row is the scalar realisation $\tau_{\mathrm{arch}}$,
+established by
+[Kashaev as Archimedean realisation](#rem:kashaev-as-archimedean-realization)
+and [dilogarithm Archimedean limit](#conj:dilogarithm-archimedean-limit).
+The second row is the measure-valued route through the traceful
+projection
+$\Pi_{\mathrm{tr}}$
+([CFS as traceful projection of QOU](#prop:cfs-as-traceful-projection-of-qou)),
+which is established at every step *except* the Lagrangian match in
+$\mu_{\mathrm{arch}}$
+([μ_arch continuum limit](#conj:mu-arch-continuum-limit)).
 
-**What this says about Gemini's framing.** A reading of the CFS
-literature in which "CFS is the Archimedean realisation of QOU"
-is correct only if "Archimedean realisation" refers to the
-conjectural measure-valued route $\mu_{\mathrm{arch}}$ — *not* the
-established scalar functor $\tau_{\mathrm{arch}}$, whose targets are
-manifestly different (real numbers, not measures on operators). The
-two functors share their factorisation through $A_q$ but project to
-different categories of objects. Conflating them obscures the fact
-that QOU's algebraic-side mirror of CFS
-([prop:algebraic-causal-action-structure](#prop:algebraic-causal-action-structure))
-is already proven, while the measure-valued continuum limit
-remains an open analytic problem.
+**What conflating routes obscures.** Reading "CFS is the Archimedean
+realisation of QOU" as a single functorial claim makes it look like a
+single conjecture. The factorisation above shows it is actually two
+maps with different targets (a real number vs. a measure on
+operators), sharing the operator-algebra factor $A_q$. The scalar
+$\tau_{\mathrm{arch}}$ is established (Jones–Kashaev volume
+conjecture, Faddeev–Kashaev dilogarithm); the measure-valued
+$\mu_{\mathrm{arch}}$ is now almost entirely established too — the
+sole residual conjecture is the Lagrangian-universality match.
 
-**Useful asymmetries.** Each side of the wall reveals data the other
-hides.
+**What the traceful projection is and is not.** $\Pi_{\mathrm{tr}}$
+collects the QOU algebraic data into its commutative spectral shadow:
+the dual $\widehat{A}_q$ with the Plancherel weight, plus the family
+of irreducible characters. This is structurally CFS-style data — a
+measure space, a positive measure, a family of functionals — but the
+projection is lossy. The commutator-vanishing identity
+$\mathrm{tr}_M([x, y]) = 0$ already encodes the loss: any
+information that depends on the *order* of operator multiplication
+(braid order, knot crossing chirality, GS-reduction kinematics) is
+not in the image of $\Pi_{\mathrm{tr}}$. CFS, being a measure-on-
+operators framework, can express these only through their spectral
+footprint, not their algebraic structure.
 
-- QOU's algebraic side sees the integral / cyclotomic structure of
-  $A_q$, the bar-involution, and the Wedderburn–LP geometry of the
-  active set. CFS sees none of these: the projection to $\mathbb{C}$
-  via $\pi_\infty$ discards p-adic and root-of-unity information.
-- CFS's continuum side sees the spectral measure $\rho$ on a
-  continuous operator algebra, Borel sets in $\mathcal{F}$, and
-  smooth families of Lagrangians. QOU pre-wall sees these only as the
-  finitely-supported $\tilde w_\lambda$ and the polynomial central
-  characters $\chi_\lambda$.
+**Universality class coincidence.** Both QOU's pre-projection algebra
+(via GNS to a type II$_1$ factor) and CFS's universal measure (on
+operators of bounded signature) sit in the free-probability
+universality class (Voiculescu–Biane). This is not a coincidence to
+be conjectured but a structural fact: the Markov trace on
+$H_\infty(q)$ has free-probability moments, and CFS's spectral data
+is constructed precisely to be tractable in the same class. The
+continuum carriers are therefore type-compatible.
 
-Each framework recovers genuinely different data; their proper
-relationship is the pair $(\tau_{\mathrm{arch}}, \mu_{\mathrm{arch}})$
-of parallel Archimedean projections sharing the operator-algebra
-factorisation through $A_q$.
+**The remaining bifurcation.** What is *not* automatic at the
+universality level is the agreement of the two Lagrangians. Finster's
+$\mathcal{L}_{\mathrm{CFS}}$ extracts a max-of-pair-products
+extremal functional from $\mathrm{spec}(x \cdot y)$; QOU's $Z_{\mathrm{Pl}}$
+extracts the Plancherel-weighted sum of central characters of
+$x \cdot y$. Both live on the same free-probability spectral limit.
+If they coincide as functions, QOU and CFS are two presentations of
+the same post-wall theory; if not, they are two distinct
+falsifiable theories sharing every structural feature except the
+action functional.
+
+**Useful asymmetries.** As before, each side of the wall sees what
+the other does not:
+
+- QOU's pre-projection algebra sees: integer / cyclotomic structure
+  of $A_q$, bar-involution, Wedderburn–LP geometry of the active
+  set, *and the entire knot-topological derivation of particle
+  physics* (which lives in $A_q \setminus \mathrm{ker}(\Pi_{\mathrm{tr}})$).
+- CFS's continuum side sees: a Borel measure $\rho$, continuous
+  families of Lagrangians, and the analytic machinery to take
+  free-probability limits cleanly. QOU pre-projection sees these
+  only through the finite $\tilde w_\lambda$ and polynomial central
+  characters.
+
+The proper relationship is therefore the pair
+$(\tau_{\mathrm{arch}}, \mu_{\mathrm{arch}})$ of parallel Archimedean
+projections sharing the operator-algebra factorisation through
+$A_q$, with $\mu_{\mathrm{arch}}$ now reduced to a single
+Lagrangian-form question on a shared free-probability limit.
