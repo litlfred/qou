@@ -71,9 +71,7 @@ def _direct_tau_M_at_q0(Z: int, N: int) -> mp.mpf:
     from wedderburn_markov import wenzl_y_lambda
 
     q = sp.Symbol("q", positive=True, real=True)
-    # Carry the 50-dp value of q_0 into sympy via mp.nstr (full precision)
-    # rather than float() which truncates to ~17 digits.
-    q0 = sp.Rational(mp.nstr(_q_0_50dps(), 50))
+    q0 = sp.Rational(str(float(_q_0_50dps())))
 
     crossings = atomic_braid_to_crossings(Z, N, include_inter=False)
     total = sp.Integer(0)
@@ -81,17 +79,16 @@ def _direct_tau_M_at_q0(Z: int, N: int) -> mp.mpf:
     for lam in partitions_of(3):
         chi = q_character_on_braid_word(lam, crossings, q)
         y = wenzl_y_lambda(lam)
-        chi_at_q0_50 = sp.cancel(chi).subs(q, q0).evalf(50)
-        y_at_q0_50   = y.subs(q, q0).evalf(50)
+        chi_at_q0 = float(sp.cancel(chi).subs(q, q0).evalf(20))
+        y_at_q0 = float(y.subs(q, q0).evalf(20))
         total = total + y * chi
         per_lam.append({
             "partition": list(lam),
-            "chi_at_q0":         str(chi_at_q0_50),
-            "y_lambda_at_q0":    str(y_at_q0_50),
-            "contrib_at_q0":     str(chi_at_q0_50 * y_at_q0_50),
+            "chi_at_q0": chi_at_q0,
+            "y_lambda_at_q0": y_at_q0,
+            "contrib_at_q0": chi_at_q0 * y_at_q0,
         })
-    total_at_q0_50 = sp.cancel(total).subs(q, q0).evalf(50)
-    return mp.mpf(mp.nstr(total_at_q0_50, 50)), per_lam
+    return mp.mpf(str(float(sp.cancel(total).subs(q, q0).evalf(30)))), per_lam
 
 
 def main() -> int:
@@ -121,9 +118,9 @@ def main() -> int:
     print(f"  Per-partition χ × y_λ breakdown:")
     print(f"    {'λ':<12} {'χ(β_p)':>12} {'χ(β_n)':>12} {'y_λ':>14} {'contrib_p':>12} {'contrib_n':>12}")
     for bp, bn in zip(p_breakdown, n_breakdown):
-        print(f"    {str(bp['partition']):<12} {float(bp['chi_at_q0']):>+12.6f} "
-              f"{float(bn['chi_at_q0']):>+12.6f} {float(bp['y_lambda_at_q0']):>+14.10f} "
-              f"{float(bp['contrib_at_q0']):>+12.6f} {float(bn['contrib_at_q0']):>+12.6f}")
+        print(f"    {str(bp['partition']):<12} {bp['chi_at_q0']:>+12.6f} "
+              f"{bn['chi_at_q0']:>+12.6f} {bp['y_lambda_at_q0']:>+14.10f} "
+              f"{bp['contrib_at_q0']:>+12.6f} {bn['contrib_at_q0']:>+12.6f}")
     print()
 
     delta_tau_M = tau_M_n - tau_M_p
