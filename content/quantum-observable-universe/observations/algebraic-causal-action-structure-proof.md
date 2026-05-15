@@ -42,19 +42,30 @@ $x$ to the central-character integral against $\tilde w_\lambda$.
 **Part (2): LP existence, duality, active set.** This is the content
 of [`prop:operator-selection-lp`](#prop:operator-selection-lp) and the
 LP/SDP infrastructure documented in CLAUDE.md §"LP/SDP duals — first-class
-infra". Feasibility of the primal is hypothesised; under feasibility,
-both primal and dual are bounded (the primal by non-negativity of
-$t$, the dual by the right-hand side $\mathbf{1}$), so the
-fundamental theorem of linear programming yields optimal
-$(x^\star, y^\star)$ with $\sum_\lambda t_\lambda x^\star_\lambda
-= n_{\text{target}}\,y^\star_0$ (strong duality, zero gap). The
-canonical entry point
+infra". The primal program has an equality constraint
+$\sum_\lambda x_\lambda = n_{\mathrm{target}}$ (its dual variable
+$y_0$ is free in sign) and a vector of inequality constraints
+$G\,x \geq 0$ (dual variables $y_\lambda \geq 0$). The boundedness
+parameter $M$ keeps the primal feasible region a polytope. Under
+feasibility of the primal, the dual is bounded: the dual constraint
+$y_0 \cdot \mathbf{1} + G^{\!\top} y \leq t$ couples $y_0$ to the
+primal weight vector $t$, ruling out unboundedness in the $y_0$
+direction. The fundamental theorem of linear programming yields an
+optimal pair $(x^\star,\,y_0^\star,\,y^\star)$ with strong duality
+$$
+  \sum_\lambda t_\lambda\, x^\star_\lambda
+  \;=\;
+  n_{\mathrm{target}}\,y_0^\star
+$$
+and zero duality gap. The canonical entry point
 [`lp_dual_solver.solve_operator_selection_lp`](folio-assistant/computations/lp_dual_solver.py)
-produces both $x^\star$ and $y^\star = (y^\star_0, y^\star)$ and
-records the active set $\widehat{A}_q^{\,\mathrm{active}}
+produces both $x^\star$ and $(y_0^\star, y^\star)$ and records the
+active set $\widehat{A}_q^{\,\mathrm{active}}
 = \{\lambda : y^\star_\lambda > 0\}$ in the witness JSON.
-Complementary slackness gives
-$\mathrm{supp}(x^\star) \subseteq \widehat{A}_q^{\,\mathrm{active}}$.
+Complementary slackness for the Frobenius constraints gives
+$(G\,x^\star)_\lambda = 0$ for every
+$\lambda \in \widehat{A}_q^{\,\mathrm{active}}$, i.e. the active
+shadow prices identify exactly the saturated Frobenius channels.
 
 **Part (3): dictionary.** The dictionary is asserted, not derived.
 Each row is an identification of QOU algebraic-side data with the

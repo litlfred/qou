@@ -27,29 +27,51 @@ following hold simultaneously, purely in $R\otimes\mathbb{Q}$:*
    character against the discrete measure $\tilde w_\lambda$ on
    $\widehat{A}_q$.*
 
-2. *(Variational principle as LP.) For positive weights
-   $t \in R_{\geq 0}^{\widehat{A}_q}$, the operator-selection
-   primal–dual program
+2. *(Variational principle as LP.) Let
+   $t \in R^{\widehat{A}_q}$ be a weight vector (Markov traces of
+   basis elements),
+   $G \in R^{\widehat{A}_q \times \widehat{A}_q}$ the Frobenius Gram
+   matrix
+   ([Frobenius Gram matrix](#prop:frobenius-gram-matrix)), and
+   $n_{\mathrm{target}} \in R_{>0}$ a target net value. The
+   operator-selection primal–dual program
    ([operator-selection LP](#prop:operator-selection-lp))*
    $$
      \begin{aligned}
-       \text{(P)}\quad &\min_{x \in R_{\geq 0}^{\widehat{A}_q}}
+       \text{(P)}\quad &\min_{x \in R^{\widehat{A}_q}}
          \;\sum_\lambda t_\lambda \, x_\lambda
-         \quad \text{s.t. } G\,x \geq \mathbf{1},\; x \geq 0, \\
-       \text{(D)}\quad &\max_{y_0, y \geq 0}
-         \;n_{\text{target}} \, y_0
-         \quad \text{s.t. } G^{\!\top} y \leq t,\; y_0 \in \mathbb{R}
+         &\text{s.t. } &
+           \sum_\lambda x_\lambda = n_{\mathrm{target}},\;
+           G\,x \geq 0,\; x \geq -M, \\
+       \text{(D)}\quad &\max_{(y_0, y)}\;
+         n_{\mathrm{target}} \, y_0
+         &\text{s.t. } &
+           y_0 \cdot \mathbf{1} + G^{\!\top} y \leq t,\;
+           y_0 \in R,\; y \geq 0,
      \end{aligned}
    $$
-   *admits an optimal pair $(x^\star, y^\star)$ with zero duality gap.
-   The active set*
+   *admits an optimal pair
+   $(x^\star, y^\star) = (x^\star,\, y_0^\star,\, y_\lambda^\star)$
+   with zero duality gap*
+   $$
+     \sum_\lambda t_\lambda\, x^\star_\lambda
+     \;=\;
+     n_{\mathrm{target}}\,y_0^\star.
+   $$
+   *Here $y_0$ is the dual variable for the net (equality) constraint
+   and is free in sign; $y_\lambda \geq 0$ are the dual shadow prices
+   for the Frobenius positivity inequalities, coupled to the primal
+   weights $t$ via the dual constraint
+   $y_0 \cdot \mathbf{1} + G^{\!\top} y \leq t$. The active set*
    $$
      \widehat{A}_q^{\,\mathrm{active}}
      \;:=\;
      \bigl\{\lambda \vdash n \;:\; y^\star_\lambda > 0 \bigr\}
    $$
-   *is non-empty whenever the primal is feasible, and the support of
-   $x^\star$ is contained in $\widehat{A}_q^{\,\mathrm{active}}$.*
+   *is non-empty whenever the primal is non-trivially feasible (some
+   Frobenius constraint binds at $x^\star$), and by complementary
+   slackness $G\,x^\star$ vanishes on
+   $\widehat{A}_q^{\,\mathrm{active}}$.*
 
 3. *(Mirror dictionary.) The triple
    $\bigl(A_q, \mathrm{tr}_M, \tilde w_\lambda\bigr)$ together with
