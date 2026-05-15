@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-11T22:48:01.762235+00:00",
-  "commitSha": "1601700a41a2f11327772a110186f00215bc5ce7",
+  "computedAt": "2026-05-14T16:09:36.644485+00:00",
+  "commitSha": "4bb1138c0265a4a53e0328adc4797e5eb5836f53",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -572,11 +572,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "d2ef5a283d0202c90a48fc16a5e1116927bafe08",
+  "scriptCommitSha": "c0234c3b4dd76784cbf72cf41e1db3157c615d0c",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
   "data": {
@@ -2314,6 +2314,7 @@
         "probe-phiq-pair-knot-magic-shell.witness.json",
         "probe-phiq-pair-knot-markov-trace.witness.json",
         "probe-phiq-per-partition-klambda.witness.json",
+        "probe-phiq-per-partition-n-sweep.witness.json",
         "probe-phiq-type-b-fold-depth.witness.json",
         "probe-phiq-uniform-k.witness.json",
         "probe-phiq-yekutieli-truncation.witness.json",

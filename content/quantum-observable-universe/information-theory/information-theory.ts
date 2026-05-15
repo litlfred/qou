@@ -70,6 +70,7 @@ section({
         "substrate-computation",
         "quantum-computational-universality",
         "skein-turing-machine",
+        "reeb-turing-completeness",
       ],
     }),
     section({

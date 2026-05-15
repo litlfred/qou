@@ -1,11 +1,11 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-11T22:19:21.870306+00:00",
-  "commitSha": "605c954cbc157b236f46b622b2a466b181cba21d",
+  "computedAt": "2026-05-15T19:00:10.324096+00:00",
+  "commitSha": "4e9a8fe017388fa63ab3fb668a77846d2f3957f9",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 24,
   "computation": "atomic-braid-mass-table",
   "scriptFile": "atomic_braid_mass_table.py",
   "scriptHash": "25ea92918f88",
@@ -177,7 +177,7 @@
     ],
     "summary": {
       "mean_abs_err_pct_strategy3": "35.36685409023961",
-      "mean_abs_err_pct_legacy_GS_NF": "21.941161432456678"
+      "mean_abs_err_pct_legacy_GS_NF": "21.333885221311753"
     }
   }
 }
