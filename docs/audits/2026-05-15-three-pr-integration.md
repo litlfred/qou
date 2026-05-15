@@ -94,6 +94,48 @@ inverse), not equality.
    stays in production until V2 is computed for {p, n, D, T, ³He}.
 3. Plan-doc P1.B is overridden by the integration banner at top.
 
+### V2 result (2026-05-15 follow-up)
+
+[`probe_term5_aK_v2_mirror_chirality.py`](../../folio-assistant/computations/probe_term5_aK_v2_mirror_chirality.py)
+wires V2 via the per-irrep numeric Hoefsmit path
+(`global_wedderburn_sum_q_hecke_seminormal` machinery) — fast: <1 s
+total across {p, n, D, T, ³He}. The probe computes the canonical
+chirality per the Gram-matrix conjecture
+`a_K = τ(β · β_mirror⁻¹)` where `β_mirror⁻¹` = reverse-word(β)
+under V2's algebra (a derivation in the probe docstring).
+
+| atom | V1 (slow audit) | V2 (this probe) | Δ |
+|------|---:|---:|---:|
+| proton | 1.022 | 2.424 | +137 % |
+| neutron | 1.022 | 2.134 | +109 % |
+| D | 1.056 | 5.228 | +395 % |
+| T | 1.079 | **10.477** | +871 % |
+| ³He | 1.079 | **13.994** | +1197 % |
+
+**Slow-audit V1 is provably informationless on chirality.** V1 is
+defined as `τ(β · β⁻¹)` where β⁻¹ is the Hecke multiplicative
+inverse; `β · β⁻¹ = 1_n` in the Hecke algebra, so V1 reduces to
+`τ(1_n)` which depends only on $n = 3A$ — not on the braid. The
+identical V1(proton) = V1(neutron) and V1(T) = V1(³He) values
+seen in the audit are not "emergent symmetries"; they are exact
+identities, dictated by the Markov-trace normalisation $z^{n-1}$.
+The slow audit's framing of V1 as a chirality measure is wrong on
+construction.
+
+**V2 distinguishes T from ³He at −25.13 %.** Computed asymmetry
+$(V_2(T) - V_2({}^3\mathrm{He})) / V_2({}^3\mathrm{He}) = -25.1275\,\%$.
+This is the structural T ↔ ³He spin-involution chirality that V1
+cannot detect. Witness:
+[`term5-aK-v2-mirror-chirality-probe.witness.json`](../../folio-assistant/computations/term5-aK-v2-mirror-chirality-probe.witness.json).
+
+**Compute cost.** Per-atom timings on the integration branch:
+proton 0.18 s, neutron 0.00 s (cache hit), deuteron 0.00 s
+(cache hit), T 0.33 s, ³He 0.39 s — total 0.90 s. The
+"unbounded for A ≥ 3" warning in the plan-doc applied only to
+the fully-symbolic `sp.cancel` path; the numeric per-irrep path
+trivialises the compute. V2 production-wiring of `term5_chirality`
+is now unblocked.
+
 ## §⁴He compositionality — the methodology correction
 
 PR #644's P1.E proposes picking ⁴He's canonical Model B knot from
