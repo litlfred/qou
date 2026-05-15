@@ -122,22 +122,53 @@ theorem oneDim_character_closed_form (lam_sig q : ℝ) (hq : q ≠ 0)
       oneDimCharacter lam_sig q β
         = lam_sig ^ (writhe β) * (lam_sig - heckeH q / 2) ^ (averagedCount β)
   | [] => by
+    -- Base case: empty braid has writhe 0 and averagedCount 0; both
+    -- factors collapse to 1, and oneDimCharacter [] = 1 by definition.
     simp [oneDimCharacter, writhe, averagedCount]
   | .Plus :: rest => by
-    -- Ref: [manuscript] prop:hecke-1d-irrep-closed-form-character
-    -- The Plus case adds a `λ_σ` factor and increments the writhe.
-    -- Strategy: unfold one step of oneDimCharacter, apply the IH,
-    -- then use zpow_add_one (or similar) to absorb the +1 into
-    -- the writhe exponent. The averagedCount is unchanged.
-    sorry
+    -- writhe (.Plus :: rest) = 1 + writhe rest
+    -- averagedCount (.Plus :: rest) = averagedCount rest
+    -- LHS = lam_sig * oneDimCharacter lam_sig q rest
+    --     = lam_sig * (lam_sig^(writhe rest) * (lam_sig - h/2)^(averagedCount rest))   (IH)
+    --     = lam_sig^(writhe rest + 1) * (lam_sig - h/2)^(averagedCount rest)
+    -- = lam_sig^(1 + writhe rest) * ...
+    have ih := oneDim_character_closed_form lam_sig q hq hlam rest
+    show oneDimAction lam_sig q .Plus * oneDimCharacter lam_sig q rest
+        = lam_sig ^ (writhe (.Plus :: rest))
+          * (lam_sig - heckeH q / 2) ^ (averagedCount (.Plus :: rest))
+    simp only [writhe, averagedCount, oneDimAction]
+    rw [ih, show (1 + writhe rest : ℤ) = writhe rest + 1 from by ring,
+        zpow_add_one hlam]
+    ring
   | .Minus :: rest => by
-    -- Ref: [manuscript] prop:hecke-1d-irrep-closed-form-character
-    sorry
+    -- writhe (.Minus :: rest) = -1 + writhe rest = writhe rest - 1
+    -- LHS = lam_sig⁻¹ * (lam_sig^(writhe rest) * (lam_sig - h/2)^(averagedCount rest))
+    --     = lam_sig^(writhe rest - 1) * (lam_sig - h/2)^(averagedCount rest)
+    have ih := oneDim_character_closed_form lam_sig q hq hlam rest
+    show oneDimAction lam_sig q .Minus * oneDimCharacter lam_sig q rest
+        = lam_sig ^ (writhe (.Minus :: rest))
+          * (lam_sig - heckeH q / 2) ^ (averagedCount (.Minus :: rest))
+    simp only [writhe, averagedCount, oneDimAction]
+    rw [ih, show (-1 + writhe rest : ℤ) = writhe rest - 1 from by ring,
+        zpow_sub_one hlam]
+    ring
   | .Averaged :: rest => by
-    -- Ref: [manuscript] prop:hecke-1d-irrep-closed-form-character
-    -- The Averaged case adds a `λ_σ − h/2` factor and increments
-    -- the averaged count (zpow unchanged on writhe).
-    sorry
+    -- writhe (.Averaged :: rest) = writhe rest (unchanged)
+    -- averagedCount (.Averaged :: rest) = 1 + averagedCount rest
+    -- = averagedCount rest + 1 (commutative)
+    have ih := oneDim_character_closed_form lam_sig q hq hlam rest
+    show oneDimAction lam_sig q .Averaged * oneDimCharacter lam_sig q rest
+        = lam_sig ^ (writhe (.Averaged :: rest))
+          * (lam_sig - heckeH q / 2) ^ (averagedCount (.Averaged :: rest))
+    simp only [writhe, averagedCount, oneDimAction]
+    rw [ih]
+    -- Now: (lam_sig - h/2) * (lam_sig^w * (lam_sig - h/2)^m) =
+    --      lam_sig^w * (lam_sig - h/2)^(m + 1)
+    -- where m = averagedCount rest, and the LHS averagedCount is 1 + m
+    -- which equals m + 1 by add_comm.
+    rw [show (1 + averagedCount rest) = averagedCount rest + 1 from
+        Nat.add_comm 1 _, pow_succ]
+    ring
 
 /-! ## Specialisations: trivial-irrep formula -/
 
