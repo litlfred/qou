@@ -52,10 +52,10 @@ is conjectural in QOU.
   $\pi_{\mathrm{GNS}}(H_\infty(q)) \subset L(\mathcal{H})$, via a
   continuous map $\Omega_q \to L(\mathcal{H})$. This is where the
   measure-valued route to CFS picks up
-  ([μ_arch continuum limit](#conj:mu-arch-continuum-limit)).
+  ([CFS comparison summary](#rem:cfs-comparison-summary)).
 
 **Status summary.** The bulk of clause 2 of
-[μ_arch continuum limit](#conj:mu-arch-continuum-limit) leaves the
+[CFS comparison summary](#rem:cfs-comparison-summary) leaves the
 conjecture upon promotion of this proposition: the *convergence
 itself* is established or near-established; only the
 *operator-algebra realisation* of the limit measure is conjectural.

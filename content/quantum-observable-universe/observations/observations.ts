@@ -277,27 +277,7 @@ export default chapter({
         "trace-locality-meets-gs-nonlocality-proof",
         "brane-tower-q-laplacian-decay",
         "brane-tower-q-laplacian-decay-proof",
-      ],
-    }),
-
-    // ── Causal Fermion Systems comparison ──────────────────────────────
-    section({
-      title:
-        "Causal Fermion Systems: A Distinct Continuum Theory of the Same Substrate",
-      label: "sec:causal-fermion-systems",
-      blocks: [
-        "causal-fermion-systems-intro",
-        "algebraic-causal-action-structure",
-        "algebraic-causal-action-structure-proof",
-        "cfs-as-traceful-projection-of-qou",
-        "qou-continuum-kernel-is-frobenius-gram",
-        "qou-continuum-kernel-is-frobenius-gram-proof",
-        "mu-arch-strict-match-fails-at-n2",
-        "mu-arch-strict-match-fails-at-n2-proof",
-        "mu-arch-integral-match-symmetry-obstruction",
-        "mu-arch-integral-match-symmetry-obstruction-proof",
-        "even-kernel-modification-g2",
-        "mu-arch-continuum-limit",
+        "cfs-comparison-summary",
       ],
     }),
 

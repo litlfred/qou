@@ -65,5 +65,5 @@ $M := \pi_{\mathrm{GNS}}(H_\infty(q))'' \subset L(\mathcal{H})$
 trace $\mathrm{tr}_M$. This is the Jones–Wenzl subfactor planar
 algebra at modular parameter $z$. The full machinery of subfactor
 theory therefore applies on the QOU algebraic side; this is what
-makes clause 1 of [μ_arch continuum limit](#conj:mu-arch-continuum-limit)
+makes clause 1 of [CFS comparison summary](#rem:cfs-comparison-summary)
 established rather than conjectural.
