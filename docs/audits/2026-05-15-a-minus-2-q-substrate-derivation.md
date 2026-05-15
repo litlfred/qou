@@ -396,9 +396,77 @@ foundation: assume `HasHookMaximizer`, derive the form, discharge
 the assumption when (and only when) a substrate-level proof of the
 hook formula lands.
 
-The ³He 16% proton-heavy anomaly remains the open question and is
-**unaffected** by this promotion — it would persist as a `residual`
-term in any Δ_coupling derivation built on the hook formula.
+### v6 — Interface-type decomposition + ³He proton-heavy anomaly localized
+
+[`probe_interface_type_resolved_coupling.py`](../../folio-assistant/computations/probe_interface_type_resolved_coupling.py)
++ witness
+[`interface-type-resolved-coupling-probe.witness.json`](../../folio-assistant/computations/interface-type-resolved-coupling-probe.witness.json)
+decomposes the inter-nucleon interfaces of the canonical braid
+$\beta(Z, N)$ at H_{3A} by pair type:
+
+| atom | (Z, N) | $n_{pp}$ | $n_{pn}$ | $n_{nn}$ | H7a residual |
+|---|---|---:|---:|---:|---:|
+| ³He | (2, 1) | **1** | 1 | 0 | $-1.071$ MeV |
+| T   | (1, 2) | 0 | 1 | **1** | $-0.202$ MeV |
+| ⁴He | (2, 2) | 1 | 2 | 1 | $+0.022$ MeV |
+
+The canonical-braid word breakdown:
+
+- **pp interface** between two protons: $\sigma$ (positive crossing)
+- **pn interface** (heterogeneous): $\Delta_I = \sigma - h/2$ (averaged)
+- **nn interface** between two neutrons: $\sigma^{-1}$ (negative crossing)
+
+#### Sub-finding: pp and nn contribute asymmetrically
+
+A linear residual fit `residual = α·n_pp + β·n_nn + γ` closes the
+three single-magic + doubly-magic anchors trivially (3 unknowns,
+3 equations) with:
+
+$$
+\alpha \approx +0.224 \text{ MeV}, \quad
+\beta \approx +1.093 \text{ MeV}, \quad
+\gamma \approx -1.295 \text{ MeV}
+$$
+
+So per-pp and per-nn contribute **DIFFERENT magnitudes**, with
+$|\beta| \approx 5|\alpha|$. The fit is not predictive (it's
+overfit at 3 points) but it **localises** the structural source
+of the anomaly: the canonical-braid word's pp interface ($\sigma$
+at a single $\sigma_{3k+2}$) and nn interface ($\sigma^{-1}$)
+contribute non-equivalent corrections to $\mathrm{tr}_M$'s u-pole
+structure, in particular through the hook's dominant antisymmetric
+column where:
+
+- $\sigma$ on antisymmetric eigenline: $-q^{-1}$ (large negative at
+  $q \to 0$, $u$-power $-2$)
+- $\sigma^{-1}$ on antisymmetric eigenline: $-q$ (small positive,
+  $u$-power $+2$)
+
+The opposite-sign $u$-powers are a structural fact, but their
+**leading-coefficient magnitudes** through the full chi product
+involve products of $\pm$ signs across SYTs that don't cancel
+symmetrically.
+
+#### Reformulated open question
+
+> **Can the per-pp coefficient $\alpha \approx +0.224$ MeV and the
+> per-nn coefficient $\beta \approx +1.093$ MeV be derived as
+> q-integer (or rational-in-q) prefactors of $h \cdot E_0$ from the
+> canonical-braid structure?**
+
+This is the natural next probe: emit the H7a-residual fit for atoms
+with **distinct interface compositions** (need atoms beyond $\{D, T,
+{}^3\mathrm{He}, {}^4\mathrm{He}\}$ — likely $\{{}^5\mathrm{Li}, {}^6\mathrm{Li}, {}^6\mathrm{He}, {}^6\mathrm{Be}\}$
+where $n_{pp}, n_{nn} \in \{0, 1, 2, 3, ...\}$ independently) and
+fit $\alpha, \beta, \gamma$. At ≥ 4 distinct $(n_{pp}, n_{nn})$ data
+points the fit is no longer trivial and can be tested for clean
+q-rational coefficients.
+
+Compute prerequisite: an extended Δ_cat empirical table for atoms
+beyond the existing 4. The structural pipeline (canonical-knot
+crossings + crystal-bases Path A pole order) already handles
+$A \in \{5, 6\}$; only the AME calibration anchor extension is
+new compute.
 
 [`probe_a_minus_2_q_substrate_v2.py`](../../folio-assistant/computations/probe_a_minus_2_q_substrate_v2.py)
 (witness:
