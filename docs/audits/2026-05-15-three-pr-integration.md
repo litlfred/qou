@@ -200,18 +200,59 @@ JSJ decomposition of the closure. Compare:
    confirmation; if they disagree, the Model B mapping is itself
    ambiguous and needs structural narrowing.
 
-**F2. H7a cross-anchor at (2,1) and (1,2).** Now that #644's
-`magic-shell-empirical-instantiation.witness.json` is on the same
-branch as #645's `probe_delta_coupling_residual_closure.py`, extract
-$\Delta_{\mathrm{coupling}}$ at (Z, N) ∈ {(2, 1), (1, 2)} and test
-the H7a form $[A-2]_q \cdot E_0 \cdot \log(1/h)$ at $A = 3$.
-$[A-2]_q$ at $A = 3$ gives $[1]_q = 1$ exactly, so the prediction is
-$E_0 \cdot \log(1/h(q_0)) \approx 6.55$ MeV — match this against
-extracted $\Delta_{\mathrm{coupling}}(2,1)$ and $\Delta_{
-\mathrm{coupling}}(1,2)$.
+**F2. H7a cross-anchor at (2,1) and (1,2).** ✅ **Landed — H7a
+REFUTED at A = 3.** [`probe_h7a_cross_anchor_a3.py`](../../folio-assistant/computations/probe_h7a_cross_anchor_a3.py)
++ [`h7a-cross-anchor-a3-probe.witness.json`](../../folio-assistant/computations/h7a-cross-anchor-a3-probe.witness.json)
+at 50 dps:
 
-F2 is mechanical and small; F1 is substantive new compute. Both
-should land as separate commits on this branch.
+| anchor | decomposition | value (MeV) | H7a prediction (MeV) | gap |
+|---|---|---:|---:|---:|
+| (2,2) | $\Delta_\mathrm{cat}({}^4\mathrm{He}) - 2\Delta_\mathrm{cat}({}^3\mathrm{He})$ | 13.197 | 13.175 (= $[2]_q E_0 \log(1/h)$) | **−0.169 %** ✓ |
+| (2,1) | $\Delta_\mathrm{cat}({}^3\mathrm{He}) - \Delta_\mathrm{cat}(D) - \Delta_\mathrm{cat}(p)$ | 6.025 | 6.552 (= $[1]_q E_0 \log(1/h)$) | **+8.74 %** ✗ |
+| (1,2) | $\Delta_\mathrm{cat}(T) - \Delta_\mathrm{cat}(D) - \Delta_\mathrm{cat}(n)$ | 6.821 | 6.552 (= $[1]_q E_0 \log(1/h)$) | **−3.95 %** ✗ |
+
+H7a's quantum-integer prefactor $[A-2]_q$ depends only on $A$, so
+under universality the (2,1) and (1,2) anchors must agree. Empirical
+asymmetry: $-11.67\,\%$. **The T ↔ ³He spin-involution asymmetry of
+the magic-shell coupling at $A = 3$ is real and structural** — H7a
+in the form $[A-2]_q \cdot E_0 \cdot \log(1/h)$ is a special-case
+anchor relation, not a universal closure law.
+
+Implications:
+
+1. PR #645's H7a is correct at (2,2) by construction — the empirical
+   ratio of $\Delta_\mathrm{coupling}(2,2) / (E_0 \log(1/h))$ is
+   close to $[2]_q$ to 4 sig figs, but extrapolation to $A = 3$
+   shows the rule is single-anchor-tied.
+2. Any closed form must carry a $Z, N$-dependent piece beyond
+   $[A-2]_q$ — a candidate structure is $[Z-1]_q \cdot [N-1]_q$ or
+   a Murphy-central element product depending on the partition
+   spectrum (per CLAUDE.md §7b crystal-bases hint).
+3. The "magic-shell" framing of $\Delta_\mathrm{coupling}$ is
+   physically asymmetric at $A = 3$ because ³He and T are
+   isospin mirrors — one has the magic Z-shell partially-filled
+   (Z=2, N=1), the other the magic N-shell partially-filled
+   (Z=1, N=2). The decomposition rule itself encodes the choice of
+   which sub-shell to subtract.
+
+**F1. ⁴He compositional probe.** Build $\beta_{^4\mathrm{He}}$ as a
+braid composition (D ⊕ D, T ⊕ p, or ³He ⊕ n) at the Model A
+12-strand level. Compute $\tau_M(\beta_{^4\mathrm{He}})$ at $q_0$
+via Hoefsmit seminormal × Wenzl-bridge $y_\lambda$ + recurse the
+JSJ decomposition of the closure. Compare:
+
+1. $T_1 = m_e \cdot \lvert \tau_M \rvert$ vs the survey's three
+   in-window candidates ($8_{17}, 10_{123}, 8_{18}$).
+2. Whether the compositional knot equals any of the surveyed
+   candidates after JSJ reduction.
+3. Whether all three composition paths (D⊕D, T⊕p, ³He⊕n) produce
+   the same canonical knot — that would be a substrate-derived
+   confirmation; if they disagree, the Model B mapping is itself
+   ambiguous and needs structural narrowing.
+
+F1 remains queued; F2's negative finding makes it more urgent —
+the magic-shell coupling needs a substrate-derived structural
+account, and ⁴He compositionality is the natural place to start.
 
 ## PR closure rationale
 
