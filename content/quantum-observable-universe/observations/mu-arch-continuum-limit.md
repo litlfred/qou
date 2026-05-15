@@ -1,88 +1,116 @@
-**Conjecture ($\mu_{\mathrm{arch}}$ Lagrangian-universality match).**
-*Under the joint Faddeev / Kerov–Vershik scaling $n \to \infty$,
-$q \to 1$, $n\lvert 1 - q\rvert \to \infty$, on the shared free-
-probability spectral limit
-$\Omega_q^{\infty}$ ([q-Plancherel asymptotic skeleton](#prop:q-plancherel-asymptotic-skeleton)),
-the Finster causal Lagrangian
-$\mathcal{L}_{\mathrm{CFS}}(x, y)$ — a max-of-pair-products
-symmetric functional of $\mathrm{spec}(x \cdot y)$
-[`finster2024`, §2] — agrees with the Plancherel-weighted character
-generating function*
+**Conjecture ($\mu_{\mathrm{arch}}$ kernel-match — Frobenius Gram vs. Finster causal Lagrangian).**
+*On the shared free-probability spectral limit
+$(\mathcal{F}_\infty, \rho_\infty)$, the QOU continuum kernel
+$G(x, y) = \mathrm{tr}_M(x \cdot y)$
+([prop:qou-continuum-kernel-is-frobenius-gram](#prop:qou-continuum-kernel-is-frobenius-gram))
+and the Finster causal Lagrangian
+$\mathcal{L}_{\mathrm{CFS}}(x, y) = f(\mathrm{spec}(x \cdot y))$
+([`finster2024`, §2]) integrate to the same value against
+$\rho_\infty \otimes \rho_\infty$:*
 $$
-  Z_{\mathrm{Pl}}(x \cdot y)
-  \;:=\;
-  \sum_{\lambda} \tilde w_\lambda \, \chi_\lambda(x \cdot y),
+  \iint_{\mathcal{F}_\infty\times\mathcal{F}_\infty}
+    G(x, y) \,d\rho_\infty(x)\,d\rho_\infty(y)
+  \;\stackrel{?}{=}\;
+  \iint_{\mathcal{F}_\infty\times\mathcal{F}_\infty}
+    \mathcal{L}_{\mathrm{CFS}}(x, y) \,d\rho_\infty(x)\,d\rho_\infty(y).
 $$
-*after the traceful projection
-$\Pi_{\mathrm{tr}}$ ([CFS as traceful projection of QOU](#prop:cfs-as-traceful-projection-of-qou))
-identifies CFS data with QOU's commutative spectral shadow.*
 
-**What this narrowed conjecture buys.** Everything except the
-Lagrangian form is now established or near-established:
+**What this version makes precise.** The previous statement of
+$\mu_{\mathrm{arch}}$ asked vaguely whether the Finster Lagrangian
+matched QOU's Plancherel-weighted character functional. The latter
+is actually identical to $\mathrm{tr}_M$ by the Plancherel identity,
+so the right comparison object on the QOU side is *not* the trace
+itself but the *quadratic kernel* of the LP-duality action — which
+is the Frobenius Gram matrix $G$ promoted to continuum
+([prop:qou-continuum-kernel-is-frobenius-gram](#prop:qou-continuum-kernel-is-frobenius-gram)).
+The conjecture is now between two named quadratic kernels integrated
+against the same measure.
 
-| Clause of $\mu_{\mathrm{arch}}$ | Status |
-|---|---|
-| Operator-algebra embedding $H_\infty(q) \hookrightarrow L(\mathcal{H})$ | *Established* — [`prop:algebraic-gns-embedding`](#prop:algebraic-gns-embedding), Jones–Wenzl 1985–88 |
-| Measure convergence $\tilde w_\lambda \to \mu_\infty^{(q)}$ | *Near-established* — [`prop:q-plancherel-asymptotic-skeleton`](#prop:q-plancherel-asymptotic-skeleton); q-deformed Kerov–Vershik conjectural piece only |
-| Type II$_1$ / free-probability universality class | *Established* — Voiculescu–Biane; same class for both QOU and CFS carriers |
-| Trace = Plancherel integral of central characters | *Provable* — [`prop:algebraic-causal-action-structure`](#prop:algebraic-causal-action-structure) part (1) |
-| Active set $\widehat{A}_q^{\,\mathrm{active}} \to \mathrm{supp}(\rho)$ | *Conditional* on measure convergence; otherwise structurally automatic |
-| **Lagrangian form: $\mathcal{L}_{\mathrm{CFS}} \stackrel{?}{=} Z_{\mathrm{Pl}}$** | **Genuinely conjectural** |
+**The two kernels, side by side.**
 
-**The two outcomes.** The conjecture bifurcates into two possibilities,
-each scientifically informative:
+| | QOU kernel $G$ | CFS kernel $\mathcal{L}_{\mathrm{CFS}}$ |
+|---|---|---|
+| Form | Bilinear in $(x, y)$ | Non-linear, extremal in $\mathrm{spec}(x\cdot y)$ |
+| Definition | $G(x, y) = \mathrm{tr}_M(x \cdot y)$ | $\mathcal{L}_{\mathrm{CFS}} = \max(0, \ldots)$-style functional of eigenvalues of $x \cdot y$ |
+| Source | LP-duality + Frobenius positivity ([`prop:operator-selection-lp`](#prop:operator-selection-lp)) | Causal-action variational principle [`finster2024`] |
+| Behaviour under free-probability scaling | Bilinearity preserved | Extremal structure generically not preserved |
 
-*(i) The Lagrangians agree.* Finster's max-of-pair-products extremal
-functional reduces, on the free-probability spectral limit, to the
-Plancherel-weighted character generating function. In this case
-$\mu_{\mathrm{arch}}$ is a theorem (modulo the q-deformed Kerov–Vershik
-input): CFS is the post-wall continuum realisation of QOU's
-trace-projection $\Pi_{\mathrm{tr}}$, and the two frameworks describe
-the same effective continuum physics.
+The structural asymmetry — bilinear vs extremal — is the source of
+the bifurcation. Bilinearity passes through free-probability limits
+cleanly (Voiculescu); extremal functionals generally pick up
+non-trivial dependence on the limit measure's specific shape.
 
-*(ii) The Lagrangians disagree.* The two frameworks share carrier
-algebra, universality class, and measure-theoretic data, but extract
-different real-valued functionals from the same spectral input. The
-emergent continuum dynamics are *different* even though the
-underlying operator algebra and spectral measure are the same — a
-genuine theory-bifurcation. QOU's Plancherel-weighted dynamics would
-describe one continuum theory; Finster's causal-action dynamics
-another. The substrate parameter $q_0 \approx 1.11$ would then
-select between them based on which Lagrangian gives the observed
-particle masses.
+**Bifurcation, sharpened.**
 
-**Either outcome is interesting.** Case (i) is a substantial
-unification — QOU and CFS would be two presentations of the same
-post-wall theory. Case (ii) is a sharp falsifiability: the
-QOU trace-projection dynamics could be tested against Finster's
-predictions for collapse rates, baryogenesis asymmetry, or
-holographic-mixing Fock-space corrections [`finster2024`,
-`finster2022`, `dappiaggi2024`]. Disagreement would not refute
-either framework but would localise the empirical difference to a
-single functional-form question on the free-probability limit.
+- *Match outcome (kernel-equality).* If $G(x, y) =
+  \mathcal{L}_{\mathrm{CFS}}(x, y)$ as functions of $(x, y) \in
+  \mathcal{F}_\infty^2$ — equivalently, if the Finster max-of-pair-
+  products functional reduces to the bilinear trace
+  $\mathrm{tr}_M(x \cdot y)$ on the free-probability limit — then
+  $\mu_{\mathrm{arch}}$ is a theorem and CFS is exactly the continuum
+  realisation of QOU's traceful projection
+  ([prop:cfs-as-traceful-projection-of-qou](#prop:cfs-as-traceful-projection-of-qou)).
 
-**What is no longer in the conjecture.**
+- *Weaker-match outcome (integral-equality only).* If the kernels
+  differ as functions but the integrals against $\rho_\infty$ happen
+  to coincide — i.e., the kernel difference $\mathcal{L}_{\mathrm{CFS}} -
+  G$ is in the null space of $\rho_\infty \otimes \rho_\infty$ — then
+  the *action values* of QOU and CFS coincide at the optimum even
+  though the local dynamics differ. The two theories would predict
+  the same total energies but different field configurations.
 
-- The operator-algebra embedding (clause 1 of the previous version):
-  promoted to [`prop:algebraic-gns-embedding`](#prop:algebraic-gns-embedding).
-- The measure convergence (clause 2): promoted to
-  [`prop:q-plancherel-asymptotic-skeleton`](#prop:q-plancherel-asymptotic-skeleton),
-  modulo the q-deformed Kerov–Vershik input which is independently
-  cited.
-- The active-set convergence (clause 4): structurally automatic once
-  measure convergence holds, since LP active sets are continuous
-  functions of the weight vector under non-degeneracy.
+- *Mismatch outcome (no coincidence).* If even the integrals
+  disagree, QOU and CFS predict different continuum actions and
+  therefore different physics on the same operator algebra. This is
+  the most informative outcome: QOU's natural continuum theory
+  *differs* from Finster's CFS even though both are well-defined on
+  the same carrier.
 
-**Lean encoding.** Stated as a class with a single content field —
-the Lagrangian-match equation — together with the structural
-preconditions on the free-probability spectral limit. Per CLAUDE.md
-§3b-cond, downstream Lean theorems requiring the match carry the
-class as an explicit hypothesis; the only `sorry` in any downstream
-chain lives in the conjectural instance.
+**Generic prior: mismatch.** A bilinear functional and a max-of-pair-
+products functional are different objects; coincidence would require
+either (a) a specific choice of $\rho_\infty$ that intertwines them,
+or (b) a hidden algebraic identity reducing the extremal structure
+to a bilinear sum. Neither is automatic. The strict-match outcome
+(first bullet) is the strongest version of the conjecture; the
+integral-match outcome (second bullet) is a fallback that would
+still rescue $\mu_{\mathrm{arch}}$ as a "weak" theorem about action
+values; the mismatch outcome (third bullet) is the most likely
+*a priori*.
 
-**Distinction from $\tau_{\mathrm{arch}}$.** As before, $\tau_{\mathrm{arch}}$
-is scalar-valued (Kashaev volumes, dilogarithm periods). The
-measure-valued $\mu_{\mathrm{arch}}$, after this revision, is *almost
-entirely provable* — it factors as
-$\Pi_{\mathrm{tr}}$ (provable) followed by the Lagrangian match
+**Which outcome holds determines the QOU-CFS relationship.** Either
+way the conjecture resolves, the result is informative:
+- *Strict match* (least likely *a priori*) — QOU and CFS coalesce as
+  the same continuum theory; the substrate parameter $q_0$ is the
+  CFS parameter.
+- *Integral match* (intermediate likelihood) — QOU and CFS have the
+  same total action at equilibrium but different local dynamics;
+  experimentally distinguishable through correlator measurements.
+- *Generic mismatch* — QOU has its own continuum theory, with the
+  Frobenius-Gram kernel $G$ as its quadratic action kernel; CFS is a
+  different continuum theory of the same operator-algebra substrate.
+  QOU's specific predictions (q-Gaussian wash-out, knot-mass formulas,
+  LP active-set dynamics) are the QOU continuum theory's outputs;
+  CFS's specific predictions (Dirac dynamics, baryogenesis,
+  holographic mixing) are CFS's outputs. Both can be tested
+  empirically.
+
+**Concrete falsifiability check.** At the free-probability level, the
+free moments of $G(x, y)$ against the limit measure are computable
+from the spectral cumulants of the q-Gaussian / semicircle. Finster's
+Lagrangian moments are computable from the cited literature.
+Numerical comparison at $q_0 \approx 1.110$ is a witness-level check
+that the QOU compute infrastructure can carry out, distinguishing the
+three outcomes above.
+
+**Lean encoding.** Stated as a class with a single
+`kernelMatchOnSupport` field — the integral-equality identity — plus
+provable structural conditions on the carrier algebra and the limit
+measure. Downstream Lean theorems requiring the match carry the
+class as an explicit hypothesis, per CLAUDE.md §3b-cond.
+
+**Distinction from $\tau_{\mathrm{arch}}$.** As before,
+$\tau_{\mathrm{arch}}$ is scalar-valued (Kashaev volumes, dilogarithm
+periods). The measure-valued $\mu_{\mathrm{arch}}$, after this
+revision, is *almost entirely provable* — it factors as
+$\Pi_{\mathrm{tr}}$ (provable) followed by the kernel-match
 (the residual conjecture).

@@ -1,65 +1,103 @@
-**Conjecture (q-CLT for Hecke transfer matrices).**
+**Conjecture (q-CLT for Hecke transfer matrices — q-parameter coincidence).**
 *Let $(H_\infty(q), \mathrm{tr}_M)$ be the QOU non-commutative
 probability space in the Wenzl positivity regime
 ([algebraic GNS embedding](#prop:algebraic-gns-embedding)). Let
 $\{\sigma_1, \sigma_2, \ldots\}$ be the braid transfer matrices.
-Define the rescaled sum*
+Define the rescaled centred sum*
 $$
   S_n \;:=\; \frac{1}{\sqrt{n}}
-    \sum_{i=1}^{n} \bigl(\sigma_i - \mathrm{tr}_M(\sigma_i) \cdot 1\bigr).
+    \sum_{i=1}^{n} \bigl(\sigma_i - z \cdot 1\bigr),
+  \qquad z = 1/(q^{1/2}+q^{-1/2}).
 $$
-*Then under the joint Faddeev scaling $n \to \infty$ with
-$n \lvert 1 - q \rvert \to \infty$, the joint moments of $S_n$
-converge to those of a non-commutative q-Gaussian process:*
-$$
-  \mathrm{tr}_M\bigl(S_n^{\,k_1} S_n^{\,k_2} \cdots S_n^{\,k_m}\bigr)
-  \;\xrightarrow{n \to \infty}\;
-  \mathbb{E}_{q}\bigl[X^{k_1} X^{k_2} \cdots X^{k_m}\bigr],
-$$
-*where $X$ is a Blitvić $(q, t)$-Gaussian random variable at
-parameter $q$ [`blitvic2012`] and $\mathbb{E}_q$ is the expectation
-against the q-Gaussian measure $G_q(t, x)$ — the q-deformed bell
-curve of non-extensive Tsallis statistics [`marsh2006`]. The
-characteristic function of $S_n$ converges, in the sense of
-non-commutative moment generating functions, to*
-$$
-  \mathrm{tr}_M(\exp_q(i \xi \cdot S_n))
-  \;\xrightarrow{n \to \infty}\;
-  \exp_q\!\bigl(-\tfrac{1}{2}\, \xi^2 \,\kappa_2^{(q)}\bigr),
-$$
-*where $\exp_q$ is the q-exponential and $\kappa_2^{(q)}$ is the
-second free q-cumulant of $\sigma_i$ under $\mathrm{tr}_M$.*
+*Then under the joint Faddeev scaling $n \to \infty$,
+$q \to 1^+$, $n\lvert 1 - q\rvert \to \infty$:*
 
-**Why this is conditional.** Three inputs feed the conjecture, each
-either an existing theorem or a class-encoded hypothesis:
+1. *(Blitvić $(q,t)$-Gaussian limit, **provable input**.) The joint
+   moments of $S_n$ converge to those of a Blitvić $(q, t)$-Gaussian
+   random variable [`blitvic2012`] at parameter
+   $(q_{\mathrm{Blitvić}}, t = 1)$:*
+   $$
+     \mathrm{tr}_M\bigl(S_n^{\,k_1} \cdots S_n^{\,k_m}\bigr)
+     \;\xrightarrow{n \to \infty}\;
+     \mathbb{E}_{q_{\mathrm{Blitvić}}}\!\bigl[X^{k_1} \cdots X^{k_m}\bigr].
+   $$
+   *Provable from
+   [the Hecke pair-partition hypothesis](#prop:hecke-satisfies-blitvic-hypothesis)
+   plus
+   [centred Hecke variance positivity](#prop:centered-hecke-variance-positive)
+   — together they verify Blitvić's hypotheses for our specific
+   sequence.*
 
-1. **Non-commutative moment conditions on $\sigma_i$**
-   ([rem:non-commutative-probability-dictionary](#rem:non-commutative-probability-dictionary)).
-   Provable — the Hecke transfer matrices satisfy the trace and
-   Markov properties needed for a Voiculescu non-commutative
-   probability space.
+2. *(Marsh–Tsallis q-Gaussian attractor, **provable input**.) The
+   global correlations introduced by the braid relations place QOU
+   in the non-extensive regime of Marsh–Tsallis [`marsh2006`]; the
+   resulting limit distribution is the q-Gaussian $G_{q_{\mathrm{Tsallis}}}$.
+   The mapping from braid-relation correlation strength to Tsallis
+   non-extensivity parameter $q_{\mathrm{Tsallis}}$ is given by
+   Marsh–Tsallis 2006 §3.*
 
-2. **Two-parameter non-commutative CLT** [`blitvic2012`]. Established
-   theorem — Blitvić shows that any sequence of non-commuting random
-   variables with pair-partition combinatorial structure (which
-   Hecke generators have, via the q-shuffle Hopf algebra
-   $\mathcal{H}_q$ machinery) converges to the $(q, t)$-Gaussian
-   under appropriate scaling. The conjecture invokes Blitvić's
-   theorem at parameter values consistent with the QOU substrate.
+3. *(**Residual conjecture: the three q's coincide at $q_0$.**)
+   The Blitvić parameter $q_{\mathrm{Blitvić}}$, the Tsallis parameter
+   $q_{\mathrm{Tsallis}}$, and the QOU substrate parameter
+   $q_{\mathrm{QOU}} = q_0 \approx 1.110$ coincide:*
+   $$
+     q_{\mathrm{Blitvić}} \;=\; q_{\mathrm{Tsallis}} \;=\; q_{\mathrm{QOU}}.
+   $$
+   *Under this identification, the q-CLT for Hecke transfer matrices
+   has the q-Gaussian $G_{q_0}(t, x)$ as its limit distribution,
+   and the q-CLT becomes a theorem rather than a conjecture.*
 
-3. **q-Gaussian attractor for systems with global correlations**
-   [`marsh2006`]. Established theorem — Marsh–Fuentes–Moyano–Tsallis
-   prove that under Tsallis non-extensive statistics, systems with
-   global (long-range) correlations converge to a q-Gaussian rather
-   than a classical Gaussian. The braid relations $\sigma_i
-   \sigma_{i+1} \sigma_i = \sigma_{i+1} \sigma_i \sigma_{i+1}$ are
-   precisely such global correlations.
+**What this version makes precise.** The previous statement bundled
+three claims together; the verification by Blitvić's and
+Marsh–Tsallis's CLTs is now split off as cited and provable inputs,
+and the residual conjecture is *one specific question*: the
+coincidence of three q-parameters defined in different settings
+(combinatorial, statistical-mechanical, substrate-algebraic).
 
-**Specialisation to scalar invariants.** At $q = 1$, the conjecture
-reduces to Biane's free CLT [`biane1998`]: the Jucys–Murphy elements
-$J_k$ converge to free semicircular random variables, and the
-limiting partition function is the semicircle distribution. The
-q-deformation extends this to the QOU substrate.
+**Why the coincidence is plausible.**
+
+- *Blitvić $q$* is the combinatorial weight $q^{\mathrm{cr}(\pi)}$ on
+  crossings in pair-partitions; by construction
+  ([`prop:hecke-satisfies-blitvic-hypothesis`](#prop:hecke-satisfies-blitvic-hypothesis)),
+  the crossing-weight that appears in the Hecke joint-moment
+  decomposition is *the same* $q$ as the Hecke deformation parameter.
+  This identification $q_{\mathrm{Blitvić}} = q_{\mathrm{QOU}}$ is
+  *essentially definitional* once one verifies that the crossing
+  count in Blitvić's framework corresponds to braid crossings in QOU.
+
+- *Tsallis $q$* is the non-extensivity parameter of the entropy
+  $S_q = (1 - \sum p_i^q)/(q - 1)$. In QOU, the operational entropy
+  is $\eta_q = (2q - 1)/q^3$ (notation register), which matches
+  Tsallis's $S_q$ form at the same $q$. The identification
+  $q_{\mathrm{Tsallis}} = q_{\mathrm{QOU}}$ is therefore also
+  essentially definitional, with the matching going through the
+  Tsallis entropy formula.
+
+- The hard remaining piece is that *Blitvić's combinatorial $q$* and
+  *Tsallis's entropy $q$* refer to the same parameter at $q_0$. This
+  would follow from a generating-function identity between Blitvić's
+  $(q,t)$-Gaussian moments and Tsallis's q-Gaussian moments at the
+  same value of $q$. Such an identity is plausible (both reduce to
+  the standard Gaussian at $q = 1$ and deform consistently) but
+  requires explicit verification.
+
+**Concrete check programme.** At $q_0 \approx 1.110$:
+- The Blitvić $(q,t)$-Gaussian moment $\mathbb{E}[X^4]$ has an
+  explicit formula (Blitvić 2012, Theorem 4.2) in terms of crossing-
+  counted pair-partitions.
+- The Tsallis q-Gaussian fourth moment has a different explicit
+  formula
+  $\mathbb{E}_q[X^4] = 3\sigma^4 / [(5 - 3q)(3 - q)]$ (Marsh et al.
+  2006, eq. 9).
+- These two fourth moments coincide at $q = q_0$ iff a specific
+  numerical identity holds. The agreement (or disagreement) at
+  $q = q_0$ is a witness-level check that can be carried out by
+  the QOU compute infrastructure.
+
+If the fourth moments agree, this is strong evidence for the three-q
+coincidence and pushes the conjecture toward a theorem; if they
+disagree, the conjecture is falsified and QOU's q-CLT limit
+distribution is one of (Blitvić, Tsallis), not both.
 
 **Mathematical bridge to the classical case.** The classical CLT
 asymptotic $\lim_n (1 - t^2/2n)^n = e^{-t^2/2}$ generalises to
@@ -69,29 +107,21 @@ $$
   \;=\;
   \exp_q\!\bigl(-\tfrac{t^2}{2}\bigr),
 $$
-where $\ominus_q$ is the q-subtraction, $\boxtimes_q$ is the
-categorical q-convolution on the Hecke algebra
-($n$-fold convolution of stochastic transition operators), and
-$\exp_q$ is the q-exponential generating the q-Gaussian. The
-characteristic-function statement above is the moment-generating-
-function form of this categorical convolution limit.
+where $\ominus_q$, $\boxtimes_q$, $\exp_q$ are the q-deformed
+subtraction, categorical convolution on the Hecke algebra, and
+q-exponential. This identity is itself $q$-parameter-dependent;
+its consistency for the *same* $q$ across Blitvić and Tsallis
+operations is what the residual conjecture asks.
 
-**Lean class.** Encoded as `MuArchContinuumLimit`-style class with
-fields:
-- `secondCumulant : R` (the limit variance),
-- `qGaussianMeasure : Λ → R` (the limit measure),
-- `momentConvergence` (the moment-convergence statement at each
-  fixed multi-index $(k_1, \ldots, k_m)$),
-- `characteristicFunctionLimit` (the q-exponential limit identity).
+**Lean class.** Encoded in
+[`QOU.Observations.QCltNonCommutative`](/content/quantum-observable-universe/lean/QOU/Observations/QCltNonCommutative.lean)
+with a single residual field `qParameterCoincidence` asserting the
+three-way q-identification; the moment-convergence and
+characteristic-function-limit fields can then be discharged from
+the cited theorems.
 
-Per CLAUDE.md §3b-cond, downstream Lean theorems requiring the
-q-CLT carry `[QCltNonCommutative ...]` as an explicit hypothesis.
-The class is non-vacuous: each field carries actual mathematical
-content (a real number, a function, a quantitative convergence
-statement).
-
-**Resolution of issue #649 §1.** This block is the formal statement
-the author-agent requirements document requested, with the proof
-split into the three citable inputs above plus the QOU-internal
-input from
-[the non-commutative probability dictionary](#rem:non-commutative-probability-dictionary).
+**Resolution of issue #649 §1.** The block now states the q-CLT
+*as a conjecture about a specific numerical coincidence* (three q's
+agree), backed by *provable* inputs (Hecke pair-partition structure,
+positive variance). The original "q-CLT proof gap" is reduced to a
+falsifiable moment-equality check at $q_0$.
