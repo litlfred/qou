@@ -276,6 +276,7 @@ export default chapter({
         "mu-arch-strict-match-fails-at-n2-proof",
         "mu-arch-integral-match-symmetry-obstruction",
         "mu-arch-integral-match-symmetry-obstruction-proof",
+        "even-kernel-modification-g2",
         "mu-arch-continuum-limit",
         "cfs-as-archimedean-shadow",
       ],
