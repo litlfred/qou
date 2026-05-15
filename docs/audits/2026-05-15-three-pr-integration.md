@@ -159,6 +159,55 @@ the fully-symbolic `sp.cancel` path; the numeric per-irrep path
 trivialises the compute. V2 production-wiring of `term5_chirality`
 is now unblocked.
 
+### F1 ⁴He compositional probe — SDP/LP active-set fingerprint
+
+[`probe_he4_sdp_compositional.py`](../../folio-assistant/computations/probe_he4_sdp_compositional.py)
++ witness
+[`he4-sdp-compositional-probe.witness.json`](../../folio-assistant/computations/he4-sdp-compositional-probe.witness.json).
+Uses `lp_dual_solver.solve_psd_operator_selection_sdp` with LP
+fallback (equivalent for diagonal $G$, no cvxpy dep needed).
+
+**Channel decomposition for ⁴He = (Z=2, N=2)** with $\Delta_\mathrm{cat}(^4\mathrm{He}) = 28.21$ MeV:
+
+| channel | parts | parts sum (MeV) | binding residual |
+|---|---|---:|---:|
+| D ⊕ D    | (1,1)+(1,1) | 4.05  | **24.16** |
+| T ⊕ p    | (1,2)+(1,0) | 7.83  | **20.38** |
+| ³He ⊕ n | (2,1)+(0,1) | 7.04  | **21.18** |
+
+`n_target = Δ_coupling(2,2) = Δ_cat(⁴He) − 2·Δ_cat(³He) = 13.197` MeV.
+
+**LP solution** (strong duality holds; gap = 0):
+
+| field | value |
+|---|---:|
+| primal_obj | 268.949 |
+| dual_obj   | 268.949 |
+| duality_gap | 0.00 |
+| y0_star | 20.380 |
+| y_star (DD, Tp, ³He+n) | (3.778, 0.000, 0.796) |
+| x_star (DD, Tp, ³He+n) | (0, 13.197, 0) |
+| active_set | {DD, ³He+n} |
+
+**Interpretation.**
+1. **T⊕p is the primal-saturating channel**: the LP "uses" the T+p
+   decomposition to satisfy the binding-residual constraint
+   (the channel with the smallest per-unit cost).
+2. **D⊕D has the highest shadow price** $y_\star = 3.778$: it is
+   the most binding-receptive sub-braid (matches the
+   doubly-magic structural intuition — ⁴He's pole-saturation at
+   D-shell-pairing).
+3. **³He⊕n is the secondary active channel** $y_\star = 0.796$.
+
+The fingerprint identifies a **two-tier structure**: T⊕p carries
+the primal weight, but the DD active-set constraint shows
+deuteron-pairing is the most receptive sub-braid (consistent with
+the H7a + LR-coupling-saturation framing of PR #645 that #654's F2
+refuted at A=3 but not at A=4 doubly-magic). The companion
+braid-composition probe
+([`probe_he4_canonical_tr_m_fingerprint.py`](../../folio-assistant/computations/probe_he4_canonical_tr_m_fingerprint.py))
+cross-checks this at the Wedderburn-block level.
+
 ## §⁴He compositionality — the methodology correction
 
 PR #644's P1.E proposes picking ⁴He's canonical Model B knot from
