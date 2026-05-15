@@ -64,6 +64,43 @@ def _schur_principal_at_q(args):
     ).evalf(30)
 
 
+_Y_LAMBDA_AT_Q0_WITNESS_CACHE: dict[int, dict[tuple, sp.Expr]] | None = None
+
+
+def _load_y_lambda_at_q0_witness() -> dict[int, dict[tuple, sp.Expr]]:
+    """Load precomputed 50-dps y_λ(q_0) values from witness.
+
+    `y-lambda-at-q0.witness.json` carries numeric y_λ at q_0 for
+    n = 2..12 — built once by `y_lambda_at_q0_cache.py`.  Loading
+    is O(KB) and replaces the per-call 150-300s recompute path
+    that bottlenecked V2 chirality and ⁴He compositional probes.
+
+    Returns `{n: {partition: mpf-or-sympy y_lambda}}` keyed by n,
+    or empty dict if witness file missing (caller falls back to
+    the slow recompute path).
+    """
+    global _Y_LAMBDA_AT_Q0_WITNESS_CACHE
+    if _Y_LAMBDA_AT_Q0_WITNESS_CACHE is not None:
+        return _Y_LAMBDA_AT_Q0_WITNESS_CACHE
+    import json
+    from pathlib import Path
+    path = Path(__file__).parent / "y-lambda-at-q0.witness.json"
+    if not path.exists():
+        _Y_LAMBDA_AT_Q0_WITNESS_CACHE = {}
+        return {}
+    w = json.loads(path.read_text())
+    by_n: dict[int, dict[tuple, sp.Expr]] = {}
+    for n_str, rows in w.get("data", {}).get("by_n", {}).items():
+        n_key = int(n_str)
+        d: dict[tuple, sp.Expr] = {}
+        for r in rows:
+            shape = tuple(r["partition"])
+            d[shape] = sp.Float(r["y_at_q0_50dps"], 50)
+        by_n[n_key] = d
+    _Y_LAMBDA_AT_Q0_WITNESS_CACHE = by_n
+    return by_n
+
+
 def y_lambda_at(
     n: int,
     q_val: sp.Expr | float | None = None,
@@ -75,9 +112,17 @@ def y_lambda_at(
     `markov_weights_symbolic.solve_y_lambda(n)` — fast for n ≤ 3,
     slow for n ≥ 6 (sp.cancel on rational expressions).
 
-    If `q_val` is a number (e.g. q_0): uses **numerical-q-from-start**
-    by substituting in the Schur principal specialization BEFORE the
-    Wenzl normalization, avoiding sp.cancel.  Much faster for n ≥ 6:
+    If `q_val` is a number AND matches q_0 (the substrate parameter,
+    within 1e-12 tolerance): loads precomputed 50-dps values from
+    `y-lambda-at-q0.witness.json` (sub-millisecond hot path,
+    ~10 ms cold path including JSON parse).  This is the primary
+    accelerator for V2 chirality, ⁴He compositional probes, and
+    every other consumer that pins q to the substrate value.
+
+    Else (numeric q_val that's not q_0): falls back to the
+    **numerical-q-from-start** path by substituting in the Schur
+    principal specialization BEFORE the Wenzl normalization,
+    avoiding sp.cancel.
 
         n=3:  ~0.05s    (any path)
         n=6:  ~3.8s     (numerical-q-from-start)  vs  >60s (symbolic)
@@ -93,6 +138,17 @@ def y_lambda_at(
     shapes = [tuple(s) for s in m.partitions_of(n)]
     if q_val is None:
         return m.solve_y_lambda(n)
+
+    # Fast path: numeric q matches q_0 — load from witness.
+    try:
+        from q_parameter import Q as Q_0_FLOAT
+        if abs(float(q_val) - float(Q_0_FLOAT)) < 1e-12:
+            witness_by_n = _load_y_lambda_at_q0_witness()
+            cached = witness_by_n.get(n)
+            if cached is not None and len(cached) == len(shapes):
+                return dict(cached)
+    except (ImportError, TypeError, ValueError):
+        pass
 
     # numerical-q-from-start path
     q_eval = sp.sympify(q_val)

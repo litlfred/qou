@@ -75,17 +75,21 @@ def main() -> int:
     A = Z + N
     n = 3 * A  # = 12
 
-    print(f"=== F1-braid: ⁴He canonical Markov trace at q_0 = {q0:.6f} ===")
+    print(f"=== F1-braid: ⁴He canonical Markov trace at q_0 = {q0:.6f} ===", flush=True)
     word = atom_braid_word_3A(Z, N, include_inter=True)
     n_gens = n - 1
     bad = [g for *_, g in word if not (0 <= g < n_gens)]
     if bad:
         raise ValueError(f"out-of-range generators: {sorted(set(bad))}")
-    print(f"β_{{⁴He}} word: {len(word)} crossings on {n} strands")
+    print(f"β_{{⁴He}} word: {len(word)} crossings on {n} strands", flush=True)
 
     t0 = time.perf_counter()
     y_vals = y_lambda_at(n, q_val=q0)
-    print(f"y_λ load: {len(y_vals)} partitions in {time.perf_counter()-t0:.3f}s")
+    print(
+        f"y_λ load: {len(y_vals)} partitions in "
+        f"{time.perf_counter()-t0:.3f}s",
+        flush=True,
+    )
 
     sorted_partitions = sorted(
         y_vals.items(),
@@ -121,9 +125,10 @@ def main() -> int:
             "elapsed_s": elapsed,
         })
         print(
-            f"  [{idx+1:2}/77] λ={list(shape):>30}  dim={dim:>5}  "
+            f"  [{idx+1:2}/77] λ={str(list(shape)):>30}  dim={dim:>5}  "
             f"y={y_f:>+11.4e}  χ={float(chi):>+11.4e}  "
-            f"c={contrib:>+11.4e}  t={elapsed:.2f}s"
+            f"c={contrib:>+11.4e}  t={elapsed:.2f}s",
+            flush=True,
         )
     t_compute = time.perf_counter() - t_compute_start
     print(f"\n  total tr_M(β_{{⁴He}}) = {total:.10f}")

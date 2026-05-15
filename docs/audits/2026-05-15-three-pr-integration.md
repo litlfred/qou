@@ -159,6 +159,30 @@ the fully-symbolic `sp.cancel` path; the numeric per-irrep path
 trivialises the compute. V2 production-wiring of `term5_chirality`
 is now unblocked.
 
+### Compute-infra optimization — `y_lambda_at(q_0)` witness loader
+
+While building the F1-braid probe (canonical ⁴He τ_M at n=12), the
+y_λ load was bottlenecking at 974 s. Root cause:
+`wedderburn_jones_markov.y_lambda_at(n, q_val=q_0)` was recomputing
+y_λ from scratch on every call despite an existing 50-dps witness
+[`y-lambda-at-q0.witness.json`](../../folio-assistant/computations/y-lambda-at-q0.witness.json)
+covering n=2..12.
+
+Fix: extend `y_lambda_at` with a fast-path check — when the
+numeric `q_val` matches q_0 (within 1e-12), load values directly
+from the witness via `_load_y_lambda_at_q0_witness()`. Module-
+level memoization for repeated calls.
+
+**Speedup**: n=12 load **974 s → 0.004 s** (~240,000×). Propagates
+to every consumer of `y_lambda_at(n, q_val=q_0)`, including:
+- V2 mirror chirality (`term5_v2_chirality.aK_v2`) — was 109 s cold
+  for 5 atoms, now sub-second.
+- `global_wedderburn_sum_q_hecke_seminormal` (all isotope sweeps).
+- F1-braid ⁴He canonical Markov-trace probe.
+
+The patch is non-invasive — original recompute path remains the
+fallback for non-q_0 numeric values or missing witness file.
+
 ### F1 ⁴He compositional probe — SDP/LP active-set fingerprint
 
 [`probe_he4_sdp_compositional.py`](../../folio-assistant/computations/probe_he4_sdp_compositional.py)
