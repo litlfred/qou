@@ -1,5 +1,12 @@
-**Conjecture ($\mu_{\mathrm{arch}}$ kernel-match — Frobenius Gram vs. Finster causal Lagrangian).**
-*On the shared free-probability spectral limit
+**Conjecture ($\mu_{\mathrm{arch}}$ integral-match, post-resolution
+of strict match).**
+*The strict-match version of this conjecture (kernel equality
+$G \equiv \mathcal{L}_{\mathrm{CFS}}$ as functions) has been **refuted**
+by [prop:mu-arch-strict-match-fails-at-n2](#prop:mu-arch-strict-match-fails-at-n2):
+the QOU Frobenius Gram kernel and the Finster causal Lagrangian
+differ at the unit pair $(1, 1) \in H_2(R, q) \times H_2(R, q)$
+already at $n = 2$. The residual conjecture is the **integral-match**
+version: on the shared free-probability spectral limit
 $(\mathcal{F}_\infty, \rho_\infty)$, the QOU continuum kernel
 $G(x, y) = \mathrm{tr}_M(x \cdot y)$
 ([prop:qou-continuum-kernel-is-frobenius-gram](#prop:qou-continuum-kernel-is-frobenius-gram))
@@ -40,42 +47,47 @@ the bifurcation. Bilinearity passes through free-probability limits
 cleanly (Voiculescu); extremal functionals generally pick up
 non-trivial dependence on the limit measure's specific shape.
 
-**Bifurcation, sharpened.**
+**Bifurcation, post strict-match refutation.**
 
-- *Match outcome (kernel-equality).* If $G(x, y) =
-  \mathcal{L}_{\mathrm{CFS}}(x, y)$ as functions of $(x, y) \in
-  \mathcal{F}_\infty^2$ — equivalently, if the Finster max-of-pair-
-  products functional reduces to the bilinear trace
-  $\mathrm{tr}_M(x \cdot y)$ on the free-probability limit — then
-  $\mu_{\mathrm{arch}}$ is a theorem and CFS is exactly the continuum
-  realisation of QOU's traceful projection
-  ([prop:cfs-as-traceful-projection-of-qou](#prop:cfs-as-traceful-projection-of-qou)).
+- ~~*Strict match outcome.*~~ — **Refuted** by
+  [prop:mu-arch-strict-match-fails-at-n2](#prop:mu-arch-strict-match-fails-at-n2).
+  The kernels are *not* equal as functions: $G(1, 1) = 1$ while
+  $\mathcal{L}_{\mathrm{CFS}}(1, 1) = 0$ in any Finster variant in
+  the difference-of-eigenvalues class.
 
-- *Weaker-match outcome (integral-equality only).* If the kernels
-  differ as functions but the integrals against $\rho_\infty$ happen
-  to coincide — i.e., the kernel difference $\mathcal{L}_{\mathrm{CFS}} -
-  G$ is in the null space of $\rho_\infty \otimes \rho_\infty$ — then
-  the *action values* of QOU and CFS coincide at the optimum even
-  though the local dynamics differ. The two theories would predict
-  the same total energies but different field configurations.
+- *Integral-match outcome (residual conjecture).* The kernels differ
+  as functions, but the integrals
+  $\iint G(x, y)\,d\rho_\infty(x)\,d\rho_\infty(y)$ and
+  $\iint \mathcal{L}_{\mathrm{CFS}}(x, y)\,d\rho_\infty(x)\,d\rho_\infty(y)$
+  could *still* coincide by cancellation — if the pointwise
+  difference $G - \mathcal{L}_{\mathrm{CFS}}$ lies in the null space
+  of $\rho_\infty \otimes \rho_\infty$. This would require positive
+  and negative contributions to balance exactly. The unit pair
+  $(1, 1)$ contributes $+1$; the integral-match outcome therefore
+  requires sufficient compensating negative contributions elsewhere
+  in $\mathcal{F}_\infty^2$. Whether this cancellation holds is the
+  open piece of the conjecture.
 
 - *Mismatch outcome (no coincidence).* If even the integrals
   disagree, QOU and CFS predict different continuum actions and
-  therefore different physics on the same operator algebra. This is
-  the most informative outcome: QOU's natural continuum theory
-  *differs* from Finster's CFS even though both are well-defined on
-  the same carrier.
+  therefore different physics on the same operator algebra. Given
+  the established functional-class mismatch (bilinear vs
+  extremal-difference) and the explicit pointwise disagreement at
+  $(1, 1)$, this is the **most likely a priori outcome**: there is
+  no algebraic reason for the kernel difference to integrate to
+  zero against a generic free-probability measure.
 
-**Generic prior: mismatch.** A bilinear functional and a max-of-pair-
-products functional are different objects; coincidence would require
-either (a) a specific choice of $\rho_\infty$ that intertwines them,
-or (b) a hidden algebraic identity reducing the extremal structure
-to a bilinear sum. Neither is automatic. The strict-match outcome
-(first bullet) is the strongest version of the conjecture; the
-integral-match outcome (second bullet) is a fallback that would
-still rescue $\mu_{\mathrm{arch}}$ as a "weak" theorem about action
-values; the mismatch outcome (third bullet) is the most likely
-*a priori*.
+**Generic prior: mismatch.** With the strict-match outcome refuted,
+the conjecture is reduced to asking whether the (now-established)
+kernel-difference $G - \mathcal{L}_{\mathrm{CFS}}$ has zero integral
+against $\rho_\infty \otimes \rho_\infty$. Given the bilinear-vs-
+extremal asymmetry and the explicit non-zero pointwise difference at
+$(1, 1)$, generic cancellation would require a special algebraic
+relationship between the QOU substrate's spectrum and Finster's
+Lagrangian normalisation. There is no known mechanism for such
+cancellation — the most likely a priori outcome is the *mismatch*
+case, in which case QOU and CFS describe distinct continuum theories
+of the same operator-algebra substrate.
 
 **Which outcome holds determines the QOU-CFS relationship.** Either
 way the conjecture resolves, the result is informative:

@@ -272,6 +272,8 @@ export default chapter({
         "cfs-as-traceful-projection-of-qou",
         "qou-continuum-kernel-is-frobenius-gram",
         "qou-continuum-kernel-is-frobenius-gram-proof",
+        "mu-arch-strict-match-fails-at-n2",
+        "mu-arch-strict-match-fails-at-n2-proof",
         "mu-arch-continuum-limit",
         "cfs-as-archimedean-shadow",
       ],
