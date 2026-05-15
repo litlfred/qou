@@ -256,6 +256,21 @@ export default chapter({
       ],
     }),
 
+    // ── Causal Fermion Systems comparison ──────────────────────────────
+    section({
+      title:
+        "Causal Fermion Systems and the Algebraic Causal-Action Structure",
+      label: "sec:causal-fermion-systems",
+      blocks: [
+        "causal-fermion-systems-intro",
+        "algebraic-causal-action-structure",
+        "algebraic-causal-action-structure-proof",
+        "cfs-algebraic-mirror",
+        "mu-arch-continuum-limit",
+        "cfs-as-archimedean-shadow",
+      ],
+    }),
+
     // ── Transcendence falsifiability signatures ──────────────────────
     section({
       title: "Transcendence Falsifiability Signatures",

@@ -3452,6 +3452,110 @@ export const references: CSLData[] = [
     URL: "https://doi.org/10.1017/S002211209400011X",
   }),
 
+  // ── Causal Fermion Systems (Finster et al.) ───────────────────
+  ref({
+    id: "finster2021",
+    type: "article-journal",
+    title: "The linear dynamics of wave functions in causal fermion systems",
+    author: [
+      { family: "Finster", given: "Felix" },
+      { family: "Kamran", given: "Niky" },
+      { family: "Oppio", given: "Marco" },
+    ],
+    "container-title": "Journal of Differential Equations",
+    issued: { "date-parts": [[2021]] },
+    volume: "293",
+    page: "115-187",
+    DOI: "10.1016/j.jde.2021.05.025",
+    URL: "https://arxiv.org/abs/2101.08673",
+  }),
+
+  ref({
+    id: "finster2022",
+    type: "article-journal",
+    title: "A mechanism of baryogenesis for causal fermion systems",
+    author: [
+      { family: "Finster", given: "Felix" },
+      { family: "Jokel", given: "Maximilian" },
+      { family: "Paganini", given: "Claudio F." },
+    ],
+    "container-title": "Classical and Quantum Gravity",
+    issued: { "date-parts": [[2022]] },
+    volume: "39",
+    issue: "16",
+    page: "165005",
+    DOI: "10.1088/1361-6382/ac7a86",
+    URL: "https://arxiv.org/abs/2111.05556",
+  }),
+
+  ref({
+    id: "finster2024",
+    type: "article-journal",
+    title: "Causal fermion systems as an effective collapse theory",
+    author: [
+      { family: "Finster", given: "Felix" },
+      { family: "Kleiner", given: "Johannes" },
+      { family: "Paganini", given: "Claudio F." },
+    ],
+    "container-title": "Journal of Physics A: Mathematical and Theoretical",
+    issued: { "date-parts": [[2024]] },
+    volume: "57",
+    issue: "39",
+    page: "395303",
+    DOI: "10.1088/1751-8121/ad7655",
+    URL: "https://arxiv.org/abs/2405.19254",
+  }),
+
+  ref({
+    id: "dappiaggi2024",
+    type: "article-journal",
+    title:
+      "Holographic mixing and Fock space dynamics of causal fermion systems",
+    author: [
+      { family: "Dappiaggi", given: "Claudio" },
+      { family: "Finster", given: "Felix" },
+      { family: "Kamran", given: "Niky" },
+      { family: "Reintjes", given: "Moritz" },
+    ],
+    "container-title": "arXiv preprint",
+    issued: { "date-parts": [[2024]] },
+    URL: "https://arxiv.org/abs/2410.18045",
+  }),
+
+  // ── Asymptotic Plancherel measure (Kerov-Vershik, Biane) ──────
+  ref({
+    id: "kerov1981",
+    type: "article-journal",
+    title:
+      "Asymptotic theory of the characters of a symmetric group",
+    author: [
+      { family: "Kerov", given: "Sergei V." },
+      { family: "Vershik", given: "Anatoly M." },
+    ],
+    "container-title": "Functional Analysis and Its Applications",
+    issued: { "date-parts": [[1981]] },
+    volume: "15",
+    issue: "4",
+    page: "246-255",
+    DOI: "10.1007/BF01106153",
+  }),
+
+  ref({
+    id: "biane1998",
+    type: "article-journal",
+    title:
+      "Representations of symmetric groups and free probability",
+    author: [
+      { family: "Biane", given: "Philippe" },
+    ],
+    "container-title": "Advances in Mathematics",
+    issued: { "date-parts": [[1998]] },
+    volume: "138",
+    issue: "1",
+    page: "126-181",
+    DOI: "10.1006/aima.1998.1745",
+  }),
+
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────
