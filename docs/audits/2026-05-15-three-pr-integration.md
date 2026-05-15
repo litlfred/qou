@@ -269,13 +269,46 @@ Implications:
 2. Any closed form must carry a $Z, N$-dependent piece beyond
    $[A-2]_q$ — a candidate structure is $[Z-1]_q \cdot [N-1]_q$ or
    a Murphy-central element product depending on the partition
-   spectrum (per CLAUDE.md §7b crystal-bases hint).
+   spectrum (per CLAUDE.md §7b crystal-bases hint). **PR #656**
+   proposes a sharper substrate-derivation candidate **D-2**:
+   $\mathrm{Cat}_q(A-1, 1) = [A-1]_q [A-2]_q / ([2]_q [A]_q)$ with
+   Z/N-dependent SYT-shape corrections; survives the same cross-
+   anchor refutation.
 3. The "magic-shell" framing of $\Delta_\mathrm{coupling}$ is
    physically asymmetric at $A = 3$ because ³He and T are
    isospin mirrors — one has the magic Z-shell partially-filled
    (Z=2, N=1), the other the magic N-shell partially-filled
    (Z=1, N=2). The decomposition rule itself encodes the choice of
    which sub-shell to subtract.
+
+### §6 cross-coordination with PR #656
+
+[PR #656](https://github.com/litlfred/qou/pull/656) (sibling Claude
+session) independently arrived at the same H7a-NOT-universal headline
+with a different decomposition convention:
+
+| anchor | F2 (this branch) | #656 | difference |
+|---|---:|---:|---:|
+| (2,1) | 6.025 MeV | 5.481 MeV | $\Delta_\mathrm{cat}(p) = -0.544$ |
+| (1,2) | 6.821 MeV | 6.349 MeV | $\Delta_\mathrm{cat}(n) = -0.472$ |
+| (2,2) | 13.197 MeV | 13.197 MeV | 0 ✓ |
+
+- **F2 (here)** uses the *fully-decomposed* baseline:
+  `Δ_coupling(2,1) = Δ_cat(³He) − Δ_cat(D) − Δ_cat(p)`. Treats
+  the single-nucleon Δ_cat as part of the structural budget.
+- **PR #656** uses the *previous-magic-shell* baseline:
+  `Δ_coupling(2,1) = Δ_cat(³He) − Δ_cat(D)`. Treats the third
+  nucleon as not-yet-categorically-realized; consistent extension
+  of PR #645's `⁴He − 2·³He` convention.
+
+Per §6 (do not silently rewrite framing), both readings are
+retained: F2 is the conservative "fully decomposed" probe;
+#656 is the consistent "previous-magic-shell" probe. Both
+**agree the universality claim is refuted** — the Z↔N asymmetry
+is robust under either convention. Going forward, #656's convention
+should be canonical because it matches #645's original (2,2)
+anchor choice; F2's reading is a useful sanity check that the
+single-nucleon residuals are not where the closure lives.
 
 **F1. ⁴He compositional probe.** Build $\beta_{^4\mathrm{He}}$ as a
 braid composition (D ⊕ D, T ⊕ p, or ³He ⊕ n) at the Model A
