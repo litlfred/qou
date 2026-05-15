@@ -59,19 +59,11 @@ q-CLT below
 makes this explicit by stating the central limit theorem in the
 QOU setting.
 
-**Why this is useful regardless of CFS.** Even if the
-$\mu_{\mathrm{arch}}$ Lagrangian-match conjecture fails, the non-comm
-probability framework supplies QOU with:
-- A rigorous bridge from discrete algebra to macroscopic continuity
-  via the q-CLT (the substrate explains why measurements register
-  smooth distributions).
-- A justified locality / non-locality reconciliation
-  ([trace locality vs GS non-locality](#prop:trace-locality-meets-gs-non-locality)).
-- A finite, convergent integration over the brane tower
-  ([brane-tower q-Laplacian decay](#prop:brane-tower-q-laplacian-decay)).
-- A direct knot-invariant ↔ free-probability dictionary unlocking
-  results from random matrix theory, free probability, and
-  asymptotic representation theory.
-
-These are positive QOU results that do not depend on whether any
-Finster-style continuum lift exists.
+**Imported tools.** Through this dictionary, QOU inherits the
+analytic machinery of free probability and asymptotic representation
+theory: Voiculescu's R-/S-transforms, Speicher's free cumulants
+(non-crossing partitions), free entropy, Biane's asymptotic
+representation theory of $S_\infty$, Jones–Wenzl subfactor planar
+algebra. Random matrix theory's large-$N$ universality results apply
+to QOU expectations under the q-Plancherel limit; Kashaev's volume
+conjecture reads as a free-entropy / log-moment-asymptotic identity.

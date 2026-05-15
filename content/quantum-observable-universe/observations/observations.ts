@@ -256,33 +256,7 @@ export default chapter({
       ],
     }),
 
-    // ── Causal Fermion Systems comparison ──────────────────────────────
-    section({
-      title:
-        "Causal Fermion Systems and the Algebraic Causal-Action Structure",
-      label: "sec:causal-fermion-systems",
-      blocks: [
-        "causal-fermion-systems-intro",
-        "algebraic-causal-action-structure",
-        "algebraic-causal-action-structure-proof",
-        "cfs-algebraic-mirror",
-        "algebraic-gns-embedding",
-        "algebraic-gns-embedding-proof",
-        "q-plancherel-asymptotic-skeleton",
-        "cfs-as-traceful-projection-of-qou",
-        "qou-continuum-kernel-is-frobenius-gram",
-        "qou-continuum-kernel-is-frobenius-gram-proof",
-        "mu-arch-strict-match-fails-at-n2",
-        "mu-arch-strict-match-fails-at-n2-proof",
-        "mu-arch-integral-match-symmetry-obstruction",
-        "mu-arch-integral-match-symmetry-obstruction-proof",
-        "even-kernel-modification-g2",
-        "mu-arch-continuum-limit",
-        "cfs-as-archimedean-shadow",
-      ],
-    }),
-
-    // ── Non-comm probability + q-CLT (resolves issue #649) ────────────
+    // ── Non-comm probability framework (broadly useful, resolves #649) ─
     section({
       title:
         "Non-Commutative Probability, the q-CLT, and the Archimedean Macroscopic Limit",
@@ -290,6 +264,9 @@ export default chapter({
       blocks: [
         "non-comm-probability-intro",
         "non-commutative-probability-dictionary",
+        "algebraic-gns-embedding",
+        "algebraic-gns-embedding-proof",
+        "q-plancherel-asymptotic-skeleton",
         "hecke-satisfies-blitvic-hypothesis",
         "hecke-satisfies-blitvic-hypothesis-proof",
         "centered-hecke-variance-positive",
@@ -300,7 +277,27 @@ export default chapter({
         "trace-locality-meets-gs-nonlocality-proof",
         "brane-tower-q-laplacian-decay",
         "brane-tower-q-laplacian-decay-proof",
-        "qou-useful-properties-independent",
+      ],
+    }),
+
+    // ── Causal Fermion Systems comparison ──────────────────────────────
+    section({
+      title:
+        "Causal Fermion Systems: A Distinct Continuum Theory of the Same Substrate",
+      label: "sec:causal-fermion-systems",
+      blocks: [
+        "causal-fermion-systems-intro",
+        "algebraic-causal-action-structure",
+        "algebraic-causal-action-structure-proof",
+        "cfs-as-traceful-projection-of-qou",
+        "qou-continuum-kernel-is-frobenius-gram",
+        "qou-continuum-kernel-is-frobenius-gram-proof",
+        "mu-arch-strict-match-fails-at-n2",
+        "mu-arch-strict-match-fails-at-n2-proof",
+        "mu-arch-integral-match-symmetry-obstruction",
+        "mu-arch-integral-match-symmetry-obstruction-proof",
+        "even-kernel-modification-g2",
+        "mu-arch-continuum-limit",
       ],
     }),
 
