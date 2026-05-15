@@ -314,9 +314,17 @@ def term4_frobenius_codim(A):
 
 
 def term5_chirality(Z, N, chirality_signs):
-    """Term 5: a_K = Π_{c ∈ pn-crossings} (1 + sign(c)·h).
+    """Term 5 (legacy closed form): a_K = Π_{c ∈ pn-crossings} (1 + sign(c)·h).
 
-    `chirality_signs` is a list of +1/-1 for each pn crossing.
+    Heuristic Π-of-signs over a hand-coded `chirality_signs_for_isotope`
+    pattern.  Superseded by `term5_v2_chirality.aK_v2` (canonical
+    Gram-matrix chirality `τ(β · β_mirror⁻¹)` per
+    `conj:knot-factor-frobenius-pairing`).  Retained for legacy
+    compatibility and as a quick fall-back when (Z, N) is outside the
+    V2 compute window.
+
+    Callers should prefer `paper_six_term_mass(..., chirality_source="v2")`
+    (the default since 2026-05-15).
     """
     a_K = mp.mpf(1)
     for s in chirality_signs:
@@ -342,7 +350,8 @@ def paper_six_term_mass(Z, N, include_inter=True,
                           m_e_hecke: float = 1.0,
                           term5_mode: str = "multiplicative_on_t1",
                           isotope_label: str | None = None,
-                          tower_mode: str = "li2q"):
+                          tower_mode: str = "li2q",
+                          chirality_source: str = "v2"):
     """6-term mass formula.
 
     `tower_mode` controls T2 + T3 evaluation:
@@ -639,7 +648,28 @@ def paper_six_term_mass(Z, N, include_inter=True,
     t4 = mp.mpf(str(m_e_hecke)) * t4_raw
     if chirality_signs is None:
         chirality_signs = []
-    t5_factor = term5_chirality(Z, N, chirality_signs)
+    if chirality_source == "v2":
+        try:
+            from term5_v2_chirality import aK_v2
+            t5_factor = aK_v2(Z, N)
+        except Exception as exc:
+            # V2 cache miss for an out-of-window (Z, N) — surface the
+            # routing decision and fall back to closed form.  Callers
+            # that demand V2 strictness should pre-warm the cache or
+            # set chirality_source="closed_form" explicitly.
+            print(
+                f"[paper_six_term_mass] V2 a_K unavailable for "
+                f"(Z={Z}, N={N}): {exc!r}; falling back to closed form",
+                flush=True,
+            )
+            t5_factor = term5_chirality(Z, N, chirality_signs)
+    elif chirality_source == "closed_form":
+        t5_factor = term5_chirality(Z, N, chirality_signs)
+    else:
+        raise ValueError(
+            f"unknown chirality_source {chirality_source!r}; "
+            f"expected 'v2' or 'closed_form'"
+        )
     # T6: canonical cyclotomic residue tail in MeV (per-A from Habiro
     # residue witness).  Returned in MeV directly; not in Hecke units.
     # Caller adds it to M_pred post-calibration (after × E_0).
@@ -675,6 +705,7 @@ def paper_six_term_mass(Z, N, include_inter=True,
         "term4_frobenius_codim_raw": float(t4_raw),
         "term4_frobenius_codim_scaled": float(t4),
         "term5_chirality_factor_a_K": float(t5_factor),
+        "term5_chirality_source": chirality_source,
         "term5_additive_contribution": float(t5),
         "term6_cyclotomic_tail_MeV": t6_MeV,  # mpf — calibration-critical
         "term5_mode": term5_mode,

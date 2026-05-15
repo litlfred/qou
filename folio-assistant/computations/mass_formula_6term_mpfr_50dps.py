@@ -241,21 +241,55 @@ def term_4_frobenius_mp(A: int) -> mp.mpf:
     return m_e_mp * term4_frobenius_codim(A)
 
 
-def term_5_chirality_bw_mp(Z: int, N: int, knot_type: str) -> mp.mpf:
+def term_5_chirality_bw_mp(
+    Z: int, N: int, knot_type: str,
+    *,
+    chirality_source: str = "v2",
+) -> mp.mpf:
     """Term 5: a_K · B_bulk + B_Zdep + B_shell.
 
     `B_bulk`, `B_Zdep`, `B_shell` are mp.mpf-native in the upstream
     module; the only f64 leak in `mass_formula_6term.py` was the
     `float()` cast at return time, dropped here.
+
+    ``chirality_source`` selects the a_K factor:
+      - "v2" (default since 2026-05-15): canonical Gram-matrix
+        chirality `τ(β · β_mirror⁻¹)` via
+        ``term5_v2_chirality.aK_v2``.  Substrate-derived; no
+        per-knot-type hand-tuning.
+      - "bw_legacy": legacy categorical map keyed on ``knot_type``
+        with ``f_chiral_plus`` / ``f_chiral_minus`` / ``f_amphi``
+        / ``f_borromean`` BW-style constants.  Retained for
+        regression comparison.
     """
-    chirality_map = {
-        "chiral+": f_chiral_plus,
-        "chiral-": f_chiral_minus,
-        "amphichiral": f_amphi,
-        "borromean": f_borromean,
-        "none": mp.mpf(1),
-    }
-    a_K = chirality_map.get(knot_type, mp.mpf(1))
+    if chirality_source == "v2":
+        try:
+            from term5_v2_chirality import aK_v2
+            a_K = aK_v2(Z, N)
+        except Exception as exc:
+            # V2 cache miss for an out-of-window (Z, N) — surface
+            # the routing decision and fall back to the BW table so
+            # the 50 dps sweep completes.
+            print(
+                f"[term_5_chirality_bw_mp] V2 a_K unavailable for "
+                f"(Z={Z}, N={N}): {exc!r}; falling back to bw_legacy",
+                flush=True,
+            )
+            chirality_source = "bw_legacy"
+    if chirality_source == "bw_legacy":
+        chirality_map = {
+            "chiral+": f_chiral_plus,
+            "chiral-": f_chiral_minus,
+            "amphichiral": f_amphi,
+            "borromean": f_borromean,
+            "none": mp.mpf(1),
+        }
+        a_K = chirality_map.get(knot_type, mp.mpf(1))
+    elif chirality_source != "v2":
+        raise ValueError(
+            f"unknown chirality_source {chirality_source!r}; "
+            f"expected 'v2' or 'bw_legacy'"
+        )
     A = Z + N
     sign = pairing_sign(Z, N)
     bulk = B_bulk(A, Z, N, sign)

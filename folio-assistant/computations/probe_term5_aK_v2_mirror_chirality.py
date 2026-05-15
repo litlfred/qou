@@ -45,7 +45,6 @@ from __future__ import annotations
 
 import json
 import sys
-import time
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -53,68 +52,21 @@ sys.path.insert(0, str(HERE))
 
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q as Q_0  # noqa: E402
-from mass_at_3A_proper import (  # noqa: E402
-    atom_braid_word_3A,
-    chi_lambda_of_word,
+from term5_v2_chirality import (  # noqa: E402  (canonical library)
+    aK_v2_full as _aK_v2_full,
+    v2_composite_word,
 )
-from hecke_characters import build_seminormal_matrices  # noqa: E402
-from wedderburn_jones_markov import y_lambda_at  # noqa: E402
-
-
-def v2_composite_word(beta_word: list[tuple]) -> list[tuple]:
-    """Build the word for β · β_mirror⁻¹ under V2.
-
-    For pure-crossing atom braids (only (1, 0) = σ_i and
-    (1, -h) = σ_i⁻¹ tuples), β_mirror⁻¹ is the reverse of β with
-    each crossing's (c, d) unchanged — see module docstring proof.
-    """
-    return list(beta_word) + list(reversed(beta_word))
 
 
 def aK_v2(Z: int, N: int, q_val: float) -> dict:
     """Compute a_K = τ(β · β_mirror⁻¹) for atom (Z, N) under V2.
 
-    Returns dict with: aK_value (float), per-partition breakdown,
-    timing.
+    Delegates to the canonical library `term5_v2_chirality.aK_v2_full`
+    (single source of truth used by `paper_six_term_mass` in
+    production).  This wrapper keeps the probe's witness-emission
+    code stable while the compute lives in the library.
     """
-    A = Z + N
-    n = 3 * A
-    beta_word = atom_braid_word_3A(Z, N, include_inter=True)
-    composite = v2_composite_word(beta_word)
-    n_gens = n - 1
-
-    bad = [g for *_, g in composite if not (0 <= g < n_gens)]
-    if bad:
-        raise ValueError(
-            f"V2 composite word has out-of-range generators "
-            f"{sorted(set(bad))} for n_gens = {n_gens}"
-        )
-
-    y_vals = y_lambda_at(n, q_val=q_val)
-    t0 = time.perf_counter()
-    total = 0.0
-    rows = []
-    for shape, y in y_vals.items():
-        sigmas, dim, _syts = build_seminormal_matrices(shape, q=q_val)
-        if dim == 0:
-            continue
-        chi = chi_lambda_of_word(sigmas, dim, composite, n_gens)
-        contrib = float(y) * float(chi)
-        total += contrib
-        rows.append({
-            "partition": list(shape),
-            "dim": int(dim),
-            "y_at_q0": float(y),
-            "chi_v2_at_q0": float(chi),
-            "contribution": float(contrib),
-        })
-    elapsed_s = time.perf_counter() - t0
-    return {
-        "aK_value": float(total),
-        "n_partitions": len(rows),
-        "elapsed_s": elapsed_s,
-        "rows": rows,
-    }
+    return _aK_v2_full(Z, N, q_val=q_val)
 
 
 def main() -> int:

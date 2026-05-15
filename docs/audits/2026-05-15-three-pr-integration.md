@@ -94,7 +94,30 @@ inverse), not equality.
    stays in production until V2 is computed for {p, n, D, T, ³He}.
 3. Plan-doc P1.B is overridden by the integration banner at top.
 
-### V2 result (2026-05-15 follow-up)
+### V2 production-wired into `paper_six_term_mass` (2026-05-15 follow-up)
+
+Canonical V2 library
+[`term5_v2_chirality.py`](../../folio-assistant/computations/term5_v2_chirality.py)
+exposes `aK_v2(Z, N, q_val=Q_0)` (mp.mpf return for 50-dps callers) and
+`term5_v2_factor(...)` (drop-in for `term5_chirality`). Both wired
+into:
+
+| Caller | Mode flag | Default |
+|---|---|---|
+| [`paper_six_term_isotope_sweep.paper_six_term_mass`](../../folio-assistant/computations/paper_six_term_isotope_sweep.py) | `chirality_source: "v2" | "closed_form"` | `"v2"` |
+| [`mass_formula_6term_mpfr_50dps.term_5_chirality_bw_mp`](../../folio-assistant/computations/mass_formula_6term_mpfr_50dps.py) | `chirality_source: "v2" | "bw_legacy"` | `"v2"` |
+
+V2-cache-miss fallback in both callers: surface the routing
+decision (`print` flush) and fall back to the legacy path so the
+sweep completes for out-of-window (Z, N). The probe script
+[`probe_term5_aK_v2_mirror_chirality.py`](../../folio-assistant/computations/probe_term5_aK_v2_mirror_chirality.py)
+was de-duplicated to import the library's `aK_v2_full` — single
+source of truth, no copy/paste compute.
+
+Witness records the routing decision under
+`term5_chirality_source` in every per-atom row.
+
+### V2 numerical result (initial witness)
 
 [`probe_term5_aK_v2_mirror_chirality.py`](../../folio-assistant/computations/probe_term5_aK_v2_mirror_chirality.py)
 wires V2 via the per-irrep numeric Hoefsmit path
