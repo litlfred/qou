@@ -1,0 +1,151 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-15T21:32:21.341402+00:00",
+  "commitSha": "d29335cc02d398f4fff31fff96bc1986d9574b78",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "a-minus-2-q-substrate-probe-v2",
+  "scriptFile": "probe_a_minus_2_q_substrate_v2.py",
+  "scriptHash": "dc6f49f7c50b",
+  "scriptCommitSha": "unknown",
+  "description": "Follow-up to v1 (which falsified universal [A−2]_q).  Tests four Z/N-dependent structural candidates (D-2 q-Catalan, D-4 shift_NF q-integer, D-5 [Z]_q·[N]_q, D-6 q-Gaussian binomial) at the three non-trivial anchors (2,1), (1,2), (2,2).  Diagnostic only — does NOT fit Δ_coupling to AME (three-cal discipline).",
+  "auditOnly": "docs/audits/2026-05-15-a-minus-2-q-substrate-derivation.md",
+  "parameters": {
+    "mp_dps": 50,
+    "q_0_50dps": "1.1099785955541805752815940796095093779932822799587",
+    "E_0_MeV_50dps": "4.1859808220625233786272433144399559497946537802037",
+    "log_inv_h_50dps": "1.5651324466994859398915653989189167213574491719623"
+  },
+  "data": {
+    "cross_anchor_predictions": [
+      {
+        "label": "D",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "anchor_MeV": 2.026152020739914,
+        "note": "A = 2 baseline; all candidate predictions vanish."
+      },
+      {
+        "label": "³He",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "anchor_MeV": 5.480823655545257,
+        "H7a_v1": {
+          "pred_MeV": 6.551614405871843,
+          "gap_pct": 19.537040737357177
+        },
+        "D2_qCat": {
+          "pred_MeV": 2.15251208103806,
+          "gap_pct": -60.72648535480169
+        },
+        "D4_shift_NF_q_int": {
+          "pred_MeV": 48.714809919032284,
+          "gap_pct": 788.8227934453753,
+          "shift_diff": 18
+        },
+        "D5_ZqNq": {
+          "pred_MeV": 13.17462089643923,
+          "gap_pct": 140.37666096243996
+        },
+        "D6_qGauss": {
+          "pred_MeV": 6.551614405871843,
+          "gap_pct": 19.537040737357177
+        }
+      },
+      {
+        "label": "T",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "anchor_MeV": 6.3493049324831485,
+        "H7a_v1": {
+          "pred_MeV": 6.551614405871843,
+          "gap_pct": 3.186324732234482
+        },
+        "D2_qCat": {
+          "pred_MeV": 2.15251208103806,
+          "gap_pct": -66.09846110830537
+        },
+        "D4_shift_NF_q_int": {
+          "pred_MeV": 67.36181830100213,
+          "gap_pct": 960.9321652891164,
+          "shift_diff": 21
+        },
+        "D5_ZqNq": {
+          "pred_MeV": 13.17462089643923,
+          "gap_pct": 107.49705733989327
+        },
+        "D6_qGauss": {
+          "pred_MeV": 6.551614405871843,
+          "gap_pct": 3.186324732234482
+        }
+      },
+      {
+        "label": "⁴He",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "anchor_MeV": 13.19687380754797,
+        "H7a_v1": {
+          "pred_MeV": 13.17462089643923,
+          "gap_pct": -0.16862259526958706
+        },
+        "D2_qCat": {
+          "pred_MeV": 4.852245841108744,
+          "gap_pct": -63.23185390820744
+        },
+        "D4_shift_NF_q_int": {
+          "pred_MeV": 446.07835840304267,
+          "gap_pct": 3280.182040900532,
+          "shift_diff": 39
+        },
+        "D5_ZqNq": {
+          "pred_MeV": 26.49280391247257,
+          "gap_pct": 100.75060426295792
+        },
+        "D6_qGauss": {
+          "pred_MeV": 9.916564997857082,
+          "gap_pct": -24.85671119939565
+        }
+      }
+    ],
+    "candidate_verdicts": {
+      "H7a_v1": {
+        "max_gap_pct": 19.537040737357177,
+        "all_within_5pct": false,
+        "doubly_magic_gap_pct": -0.16862259526958706,
+        "z_n_asymmetry_3He_vs_T": 16.350716005122695
+      },
+      "D2_qCat": {
+        "max_gap_pct": 66.09846110830537,
+        "all_within_5pct": false,
+        "doubly_magic_gap_pct": -63.23185390820744,
+        "z_n_asymmetry_3He_vs_T": 5.371975753503683
+      },
+      "D4_shift_NF_q_int": {
+        "max_gap_pct": 3280.182040900532,
+        "all_within_5pct": false,
+        "doubly_magic_gap_pct": 3280.182040900532,
+        "z_n_asymmetry_3He_vs_T": -172.1093718437411
+      },
+      "D5_ZqNq": {
+        "max_gap_pct": 140.37666096243996,
+        "all_within_5pct": false,
+        "doubly_magic_gap_pct": 100.75060426295792,
+        "z_n_asymmetry_3He_vs_T": 32.87960362254668
+      },
+      "D6_qGauss": {
+        "max_gap_pct": 24.85671119939565,
+        "all_within_5pct": false,
+        "doubly_magic_gap_pct": -24.85671119939565,
+        "z_n_asymmetry_3He_vs_T": 16.350716005122695
+      }
+    },
+    "survivors": [],
+    "interpretation": "If 1+ candidate survives across all three non-trivial anchors, that's the substrate-derivation route to explore.  If NONE survive, the Z/N-dependent correction is more complex (likely a product of two q-integers from the bridge fusion + the boundary-saturation factor)."
+  }
+}

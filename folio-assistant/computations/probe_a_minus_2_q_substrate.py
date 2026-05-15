@@ -42,6 +42,8 @@ if str(HERE) not in sys.path:
 
 from mpmath import mp, mpf  # noqa: E402
 
+from codata_constants import M_E_MEV  # noqa: E402
+from q_parameter import HA_MP, Q_MP  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 mp.dps = 50
@@ -68,16 +70,16 @@ def main() -> int:
         for atom_key in ("deuteron", "tritium", "he3", "he4")
     }
 
-    # ── Substrate parameters (50 dps) ──────────────────────────────
-    # ℏ_q = √(Vol(4_1) / (m_μ/m_e))  per q_parameter.py
-    vol_4_1 = mpf("2.029883212819307")
-    mass_ratio_mu_e = mpf("206.7682830")
-    hbar_q = mp.sqrt(vol_4_1 / mass_ratio_mu_e)
-    q0 = 1 / (1 - hbar_q)
-    m_e = mpf("0.51099895069")  # CODATA 2022
+    # ── Substrate parameters — imported from q_parameter / codata_constants ──
+    # Avoid duplicating constants per gemini review on PR #656.  Q_MP,
+    # HA_MP, LN_Q_MP are computed at full 50-dps precision in
+    # q_parameter.py (Clausen-function path); using them keeps the
+    # probe's precision claim honest.
+    q0 = Q_MP
+    h_q = HA_MP  # = q - q^{-1}
+    log_inv_h = mp.log(1 / h_q)  # log(1/h) — distinct from LN_Q_MP which is log(q)
+    m_e = M_E_MEV
     E0 = m_e / (q0 * (q0 - 1))
-    h_q = q0 - 1 / q0  # Hecke deformation parameter
-    log_inv_h = mp.log(1 / h_q)
 
     builder = (
         WitnessBuilder(
@@ -140,14 +142,12 @@ def main() -> int:
         # H1 classical-integer baseline for comparison
         h1_pred = (A - 2) * E0 * log_inv_h
 
-        # Skip ratio at A=2 ([A−2]_q = 0 by definition).
-        h7a_ratio = (anchor / h7a_pred) if h7a_pred != 0 else None
+        # Gap % computed only when prediction non-zero (A > 2).
         h7a_gap_pct = (
-            100 * (h7a_pred - anchor) / anchor if anchor != 0 else None
+            100 * (h7a_pred - anchor) / anchor if h7a_pred != 0 else None
         )
-        h1_ratio = (anchor / h1_pred) if h1_pred != 0 else None
         h1_gap_pct = (
-            100 * (h1_pred - anchor) / anchor if anchor != 0 else None
+            100 * (h1_pred - anchor) / anchor if h1_pred != 0 else None
         )
 
         row = {
@@ -165,16 +165,19 @@ def main() -> int:
             "q_integer_A_minus_2_50dps": mp.nstr(qint_A_minus_2, 50),
             "H7a_prediction_MeV_50dps": mp.nstr(h7a_pred, 50),
             "H7a_prediction_MeV_float": float(h7a_pred),
-            "H7a_gap_pct": (
+            "H7a_gap_pct_50dps": (
                 mp.nstr(h7a_gap_pct, 12) if h7a_gap_pct is not None
-                else "undefined"
+                else None
             ),
+            # Numeric float form for verdict logic (gemini review):
+            "H7a_gap_pct": float(h7a_gap_pct) if h7a_gap_pct is not None else None,
             "H1_prediction_MeV_50dps": mp.nstr(h1_pred, 50),
             "H1_prediction_MeV_float": float(h1_pred),
-            "H1_gap_pct": (
+            "H1_gap_pct_50dps": (
                 mp.nstr(h1_gap_pct, 12) if h1_gap_pct is not None
-                else "undefined"
+                else None
             ),
+            "H1_gap_pct": float(h1_gap_pct) if h1_gap_pct is not None else None,
         }
         anchors.append(row)
 
@@ -192,22 +195,27 @@ def main() -> int:
     print("  " + "-" * 86)
     for r in anchors:
         zn = f"({r['Z']},{r['N']})"
+        h7a_str = f"{r['H7a_gap_pct']:+8.3f}" if r['H7a_gap_pct'] is not None else "    n/a"
+        h1_str = f"{r['H1_gap_pct']:+8.3f}" if r['H1_gap_pct'] is not None else "    n/a"
         print(f"  {r['label']:<6}{zn:<10}{r['A_minus_2']:<6}"
               f"{r['q_integer_A_minus_2_50dps'][:12]:<14}"
               f"{r['anchor_MeV_float']:<16.4f}"
               f"{r['H7a_prediction_MeV_float']:<14.4f}"
-              f"{r['H7a_gap_pct'][:8] if isinstance(r['H7a_gap_pct'], str) else '':<10}"
-              f"{r['H1_gap_pct'][:8] if isinstance(r['H1_gap_pct'], str) else '':<10}")
+              f"{h7a_str:<10}{h1_str:<10}")
     print()
 
     # ── Cross-anchor verdict ───────────────────────────────────────
     # H7a is UNIVERSAL iff all non-trivial anchors close to within
     # a few % (we'll use 5% as the loose-pass threshold; PR #645's
-    # 0.169% at (2, 2) is the tight reference).
+    # 0.169% at (2, 2) is the tight reference).  Guard against None
+    # (A−2 = 0 base) per gemini review on PR #656.
     universal_threshold_pct = 5.0
-    nontrivial_anchors = [r for r in anchors if r["A_minus_2"] > 0]
+    nontrivial_anchors = [
+        r for r in anchors
+        if r["A_minus_2"] > 0 and r["H7a_gap_pct"] is not None
+    ]
     all_close = all(
-        abs(float(r["H7a_gap_pct"])) <= universal_threshold_pct
+        abs(r["H7a_gap_pct"]) <= universal_threshold_pct
         for r in nontrivial_anchors
     )
     builder.add_data(
@@ -238,14 +246,17 @@ def main() -> int:
         },
     )
 
+    # Numeric form for WitnessBuilder's tolerance-based comparison
+    # (gemini review on PR #656: passing a string here caused the
+    # internal assertion logic to mark the row "passed: false" even
+    # though 0.169 < 1.0 holds).
+    doubly_magic_gap = abs(next(
+        r["H7a_gap_pct"] for r in anchors if (r["Z"], r["N"]) == (2, 2)
+    ))
     builder.add_assertion(
         name="doubly_magic_2_2_within_1pct",
-        computed=mp.nstr(
-            abs(float(next(
-                r["H7a_gap_pct"] for r in anchors if (r["Z"], r["N"]) == (2, 2)
-            ))), 6,
-        ),
-        expected="< 1.0 (PR #645 reports 0.169)",
+        computed=float(doubly_magic_gap),
+        expected=0.0,
         tolerance=1.0,
     )
 

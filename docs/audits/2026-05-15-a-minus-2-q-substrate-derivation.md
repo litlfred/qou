@@ -219,10 +219,50 @@ Two substantive findings:
    +19.5 %, T has +3.2 % — a $6.1\times$ ratio with the same
    $A − 2 = 1$ classical depth. This is the new puzzle.
 
-#### Surviving substrate-derivation candidate
+#### v2 follow-up: NO simple multiplicative candidate closes single-magic
 
-**Candidate D-2 (q-Catalan multiplicity in bridge fusion)** is the
-only survivor. The q-CG multiplicities
+[`probe_a_minus_2_q_substrate_v2.py`](../../folio-assistant/computations/probe_a_minus_2_q_substrate_v2.py)
+(witness:
+[`a-minus-2-q-substrate-probe-v2.witness.json`](../../folio-assistant/computations/a-minus-2-q-substrate-probe-v2.witness.json))
+tests four additional Z/N-dependent structural candidates at the
+three non-trivial anchors:
+
+| Candidate | ³He gap | T gap | ⁴He gap | Survives? |
+|---|---:|---:|---:|---|
+| **H7a v1** ($[A−2]_q$, universal) | +19.5 % | +3.2 % | −0.169 % | only (2,2) |
+| **D-2** $\mathrm{Cat}_q(A-1, 1)$ | −60.7 % | −66.1 % | −63.2 % | no |
+| **D-4** $[\mathrm{shift}_{\mathrm{NF}}(Z,N) - 40]_q / [4]_q$ | +788 % | +961 % | +3280 % | no (wrong scale) |
+| **D-5** $[Z]_q \cdot [N]_q$ | +140 % | +107 % | +101 % | no |
+| **D-6** ${A \choose 2}_q / [A]_q$ | +19.5 % | +3.2 % | −24.9 % | no |
+
+**No survivor across all three anchors.** D-6 is interesting — it
+matches H7a *exactly* at $A = 3$ (numerical coincidence:
+${3 \choose 2}_q / [3]_q = [2]_q [3]_q / ([2]_q [3]_q) = 1 = [A − 2]_q$
+at $A = 3$) but diverges at $A = 4$.
+
+#### Updated reading
+
+The cleanest reading of the empirical data:
+
+1. **The doubly-magic (2,2) match with H7a is a genuine
+   anomaly**, not a slice of a continuous Z/N-dependent family.
+2. The (2,2) saturation likely reflects a **categorical degeneracy**
+   specific to *both shells closed* — e.g., the LR-coupling chain
+   collapses to a single block and the correction terms in the
+   q-Catalan multiplicity exactly cancel.
+3. **No multiplicative substrate derivation of $[A − 2]_q$ as a
+   universal prefactor exists.** The H7a empirical form is specific
+   to its doubly-magic anchor.
+
+This is a substantive negative result. It does NOT mean H7a is
+wrong at (2,2) — only that the multiplicative form is anchor-
+specific, not a universal substrate primitive.
+
+#### Original D-2 candidate analysis (preserved for reference)
+
+**Candidate D-2 (q-Catalan multiplicity in bridge fusion)** was the
+surviving theoretical candidate before v2 falsified it numerically.
+The q-CG multiplicities
 
 $$
 \mathrm{Cat}_q(A - 1, k) \;=\; \prod_{\text{shape-dependent}} [\cdot]_q
