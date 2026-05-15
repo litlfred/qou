@@ -364,6 +364,42 @@ structural feature worth formalising — three different stratification
 principles (pole, operator-truncation, LP-duality) on the same
 partition lattice.
 
+### v5 — Promotion to conditional theorem (this PR)
+
+The hook-shape formula `λ_⋆(Z, N) = (Z + 2N + 1, 1^{2Z + N − 1})`
+is now promoted from a remark to a **conditional proposition**
+[`prop:dominant-pole-partition-hook`](../../content/quantum-observable-universe/braids-and-knots/dominant-pole-partition-hook.md)
+via a §3b-cond hypothesis class
+[`def:has-hook-maximizer`](../../content/quantum-observable-universe/braids-and-knots/has-hook-maximizer.md):
+
+```
+class HasHookMaximizer (Z N : ℕ) : Prop where
+  hookWidth, hookDepth : ℕ
+  hookWidth_eq : hookWidth = Z + 2 * N + 1
+  hookDepth_eq : hookDepth = 2 * Z + N
+  hookCells_eq_3A : hookWidth + hookDepth = 3 * (Z + N) + 1
+```
+
+Five trivial-model instances are provided for the empirically
+verified atoms `{p, D, T, ³He, ⁴He}` per
+[`per-irrep-pole-atom-crystal.witness.json`](../../folio-assistant/computations/per-irrep-pole-atom-crystal.witness.json).
+The Lean theorem `width_minus_depth_substrate` discharges to the
+class fields directly: `w − d = N − Z + 1`. No new `sorry` is
+introduced.
+
+**Significance for the substrate-derivation chain.** With the hook
+formula promoted from remark to conditional-theorem, every
+downstream Z/N-dependent derivation (including the
+`[A − 2]_q · E_0 · log(1/h)` form at doubly-magic and the
+`h · E_0` Z↔N asymmetry at single-magic) now sits on a categorical
+foundation: assume `HasHookMaximizer`, derive the form, discharge
+the assumption when (and only when) a substrate-level proof of the
+hook formula lands.
+
+The ³He 16% proton-heavy anomaly remains the open question and is
+**unaffected** by this promotion — it would persist as a `residual`
+term in any Δ_coupling derivation built on the hook formula.
+
 [`probe_a_minus_2_q_substrate_v2.py`](../../folio-assistant/computations/probe_a_minus_2_q_substrate_v2.py)
 (witness:
 [`a-minus-2-q-substrate-probe-v2.witness.json`](../../folio-assistant/computations/a-minus-2-q-substrate-probe-v2.witness.json))

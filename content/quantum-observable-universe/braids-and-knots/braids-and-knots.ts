@@ -616,6 +616,8 @@ export default chapter({
         "isospin-mass-split-em-localisation",
         "option-e-isospin-test",
         "crystal-bases-path-a",
+        "has-hook-maximizer",
+        "dominant-pole-partition-hook",
         "chirality-dual-space-derivation",
         "frobenius-antipode-unifies-chirality-and-tower",
         "deuteron-first-principles",
