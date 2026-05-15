@@ -227,10 +227,60 @@ The fingerprint identifies a **two-tier structure**: T⊕p carries
 the primal weight, but the DD active-set constraint shows
 deuteron-pairing is the most receptive sub-braid (consistent with
 the H7a + LR-coupling-saturation framing of PR #645 that #654's F2
-refuted at A=3 but not at A=4 doubly-magic). The companion
-braid-composition probe
-([`probe_he4_canonical_tr_m_fingerprint.py`](../../folio-assistant/computations/probe_he4_canonical_tr_m_fingerprint.py))
-cross-checks this at the Wedderburn-block level.
+refuted at A=3 but not at A=4 doubly-magic).
+
+### F1 ⁴He canonical Markov-trace fingerprint (braid-comp)
+
+[`probe_he4_canonical_tr_m_fingerprint.py`](../../folio-assistant/computations/probe_he4_canonical_tr_m_fingerprint.py)
++ witness
+[`he4-canonical-tr-m-block-fingerprint.witness.json`](../../folio-assistant/computations/he4-canonical-tr-m-block-fingerprint.witness.json).
+
+Computes the full canonical Markov trace `tr_M(β_⁴He) =
+Σ_{λ ⊢ 12} y_λ(q_0) · χ^λ_q(β_⁴He)` on the 47-crossing
+12-strand atom braid word. Uses Hoefsmit per-irrep at q_0 with
+on-disk caching; total compute time 232.8 s with the
+y_λ cache fast-path (was previously bottlenecked on y_λ recompute
+alone).
+
+**Result**: `tr_M(β_⁴He) = 0.05534835` (dimensionless raw trace).
+
+**Per-partition Wedderburn-block fingerprint** (top 5 by
+|contribution|):
+
+| rank | λ ⊢ 12 | dim_λ | y_λ(q_0) | χ^λ_q(β_⁴He) | contribution | % of \|total\| |
+|---:|---|---:|---:|---:|---:|---:|
+| 1 | [9, 3]   | 154 | +5.87e−4 | +27.33 | +1.604e−2 | **29.0** |
+| 2 | [8, 4]   | 275 | +4.31e−4 | +30.26 | +1.304e−2 | **23.6** |
+| 3 | [10, 2]  | 54  | +7.12e−4 | +10.46 | +7.45e−3  | **13.5** |
+| 4 | [7, 5]   | 297 | +2.62e−4 | +21.77 | +5.70e−3  | **10.3** |
+| 5 | [11, 1]  | 11  | +7.67e−4 | +7.39  | +5.67e−3  | **10.2** |
+| | | | | top-5 cum | | **86.5** |
+
+**All five top blocks are two-row partitions.** The cumulative
+two-row stratum carries 86.5 % of the trace. The trivial rep
+[12] contributes only 2.9 %; the sign rep [1¹²] is sub-1e−9.
+
+**Structural agreement with SDP fingerprint.**
+
+| level | dominant structure | binding source |
+|---|---|---|
+| Channel (SDP/LP)            | T⊕p (primal), D⊕D (highest dual) | deuteron-pairing receptivity |
+| Wedderburn block (braid)    | [9,3], [8,4], [10,2] (two-row stratum) | q-symmetric magic shell |
+
+The two probes are independent at the computational level — SDP
+operates on the channel-level coupling residual; braid operates
+at the per-irrep matrix-trace level — but they identify the
+same structural fingerprint: **⁴He binding lives in the
+q-symmetric pairing stratum**, with the deuteron-pairing channel
+as the geometrically-receptive surface and the two-row Young-
+tableau partitions as the algebraic dual.
+
+This is the substrate-derived account of "doubly-magic" that
+PR #645's H7a empirically pinned at the (2,2) anchor. F2 refuted
+H7a as a universal closure law, but the agreement here shows the
+**structural identity** of the doubly-magic case is robust — both
+geometric (SDP) and algebraic (braid) approaches recover the
+same fingerprint.
 
 ## §⁴He compositionality — the methodology correction
 

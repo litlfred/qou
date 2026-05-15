@@ -61,9 +61,15 @@ import mpmath as mp
 
 from witness_base import WitnessBuilder
 from q_parameter import Q as Q_0_FLOAT
-from mass_at_3A_proper import atom_braid_word_3A, chi_lambda_of_word
+from mass_at_3A_proper import (
+    _SEMINORMAL_DISK,
+    atom_braid_word_3A,
+    chi_lambda_of_word,
+)
 from hecke_characters import build_seminormal_matrices
 from wedderburn_jones_markov import y_lambda_at
+
+_SEMINORMAL_DISK.mkdir(parents=True, exist_ok=True)
 
 
 Y_THRESHOLD = 1e-12
@@ -145,7 +151,7 @@ def main() -> int:
         pct = 100 * abs(r["contribution"]) / abs(total) if abs(total) > 0 else 0
         cum_pct = 100 * cumulative / total if abs(total) > 0 else 0
         print(
-            f"  #{i+1}  λ={r['partition']:>30}  dim={r['dim']:>5}  "
+            f"  #{i+1}  λ={str(r['partition']):>30}  dim={r['dim']:>5}  "
             f"|c|={r['abs_contribution']:>.4e} ({pct:>5.1f}%)  "
             f"cum={cum_pct:>5.1f}%"
         )
