@@ -491,6 +491,32 @@ def paper_six_term_mass(Z, N, include_inter=True,
         z4 = Z_MARK ** 4
         t2 = n_gens_total * z2
         t3 = mp.mpf(n_gens_total * (n_gens_total - 1) // 2) * z4
+    elif tower_mode == "canonical_markov":
+        # CANONICAL R-side per prop:mass-endomorphism-tower §Algebraic
+        # form: T_2 = Σ_i z · Vol_q^({i})(β), T_3 = z² · Σ_{i<j}
+        # Vol_q^({i, j})(β), with each Vol_q^(S)(β) a Markov trace
+        # over the transfer-matrix chain supported on S.  Markov-
+        # invariant by construction; replaces the PATHOLOGICAL Φ_q
+        # specialisation (per docs/audits/2026-05-16-compute-pipeline-
+        # canonicality-audit.md §3·a).
+        #
+        # For include_inter=False (free configuration) there is no
+        # well-defined per-subset sub-word — treat T_2 = T_3 = 0
+        # (the free configuration carries only the constituent piece
+        # via ρ_K^LO).
+        if not include_inter:
+            t2 = mp.mpf(0)
+            t3 = mp.mpf(0)
+        else:
+            from canonical_brane_tower import (
+                term2_canonical, term3_canonical,
+            )
+            from mass_at_3A_proper import atom_braid_word_3A
+            word = atom_braid_word_3A(Z, N, include_inter=True)
+            n_strands_canonical = 3 * (Z + N)
+            n_gens_canonical = n_strands_canonical - 1
+            t2 = term2_canonical(word, n_gens_canonical, float(Q0_FLOAT))
+            t3 = term3_canonical(word, n_gens_canonical, float(Q0_FLOAT))
     elif tower_mode == "li2q":
         # CORRECTED Kashaev limit per `prop:mass-endomorphism-tower`
         # (proof: a43d7f1fa).  T2 = -Σ Li_2^q(-|V_i|),
