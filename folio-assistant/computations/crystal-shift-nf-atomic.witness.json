@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-16T05:39:08.810487+00:00",
-  "commitSha": "8f3f4734f91b8694959adf1ce8abc27278ee40cb",
+  "computedAt": "2026-05-16T05:44:41.976067+00:00",
+  "commitSha": "5b3839e9ed2be8b2f969400986ccc4d93f55ac97",
   "assertions": [
     {
       "name": "crystal_pole_counter_well_defined",
@@ -23,8 +23,8 @@
   "durationMs": 8,
   "computation": "crystal-shift-nf-atomic",
   "scriptFile": "crystal_shift_nf_atomic.py",
-  "scriptHash": "02a5380bfe1c",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "10c8e9fbeeef",
+  "scriptCommitSha": "5b3839e9ed2be8b2f969400986ccc4d93f55ac97",
   "description": "Crystal-bases shift_NF for canonical atomic braids β(Z, N) at H_{3A}, computed via combinatorial pole counting on SYT(λ) per docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md Step 2.  Replaces the abandoned symbolic-q path (build_atom_nf_sym, which timed out for A=2 due to exponential monomial fan-out).  Compares against the closed form 18Z + 21N + 1 (per prop:per-nucleon-shift-additive-linearity).",
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "data": {
@@ -44,7 +44,7 @@
           4,
           2
         ],
-        "compute_time_seconds": 0.0010905290000664536,
+        "compute_time_seconds": 0.0010219080013484927,
         "syt_enumeration_method": "full"
       },
       {
@@ -62,7 +62,7 @@
           6,
           3
         ],
-        "compute_time_seconds": 0.04479271200034418,
+        "compute_time_seconds": 0.04164228700028616,
         "syt_enumeration_method": "full"
       },
       {
@@ -80,7 +80,7 @@
           6,
           3
         ],
-        "compute_time_seconds": 0.04345512500003679,
+        "compute_time_seconds": 0.04126159400038887,
         "syt_enumeration_method": "full"
       },
       {
@@ -98,7 +98,7 @@
           8,
           4
         ],
-        "compute_time_seconds": 2.8752843940001185,
+        "compute_time_seconds": 2.803062305001731,
         "syt_enumeration_method": "full"
       },
       {
