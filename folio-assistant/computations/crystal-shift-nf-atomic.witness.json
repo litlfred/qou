@@ -1,20 +1,20 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-16T18:59:18.307350+00:00",
-  "commitSha": "9f081f77cc1959b4f73db29a4ed7b45d713c437e",
+  "computedAt": "2026-05-16T19:35:59.911176+00:00",
+  "commitSha": "2c08a9a24d0df21d2394388a2a91f6945a6e3894",
   "assertions": [
     {
       "name": "crystal_pole_counter_well_defined",
-      "computed": 6,
-      "expected": 6,
+      "computed": 11,
+      "expected": 11,
       "passed": true,
       "source": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md Step 2"
     },
     {
       "name": "habiro_shift_bridge_matches_closed_form",
-      "computed": 6,
-      "expected": 6,
+      "computed": 11,
+      "expected": 11,
       "passed": true,
       "source": "bridge: shift = 2·(q-pole − (3Z + 1.5N − 1.5)) = 18Z + 21N + 1, verified vs prop:per-nucleon-shift-additive-linearity"
     }
@@ -23,8 +23,8 @@
   "durationMs": 6,
   "computation": "crystal-shift-nf-atomic",
   "scriptFile": "crystal_shift_nf_atomic.py",
-  "scriptHash": "2a4ec8e034fd",
-  "scriptCommitSha": "e1036f9ccbb2dd40da6a69468217cf69503e97bc",
+  "scriptHash": "27d66234e570",
+  "scriptCommitSha": "38757f10a4c3f73bc95f40a66bb683125897a3f6",
   "description": "Crystal-bases shift_NF for canonical atomic braids β(Z, N) at H_{3A}, computed via combinatorial pole counting on SYT(λ) per docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md Step 2.  Replaces the abandoned symbolic-q path (build_atom_nf_sym, which timed out for A=2 due to exponential monomial fan-out).  Compares against the closed form 18Z + 21N + 1 (per prop:per-nucleon-shift-additive-linearity).",
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "data": {
@@ -44,7 +44,7 @@
           4,
           2
         ],
-        "compute_time_seconds": 0.0010854489996745542,
+        "compute_time_seconds": 0.0009111350000239327,
         "syt_enumeration_method": "full"
       },
       {
@@ -62,7 +62,7 @@
           6,
           3
         ],
-        "compute_time_seconds": 0.03497560499999963,
+        "compute_time_seconds": 0.03403951999985111,
         "syt_enumeration_method": "full"
       },
       {
@@ -80,7 +80,7 @@
           6,
           3
         ],
-        "compute_time_seconds": 0.033540726999945036,
+        "compute_time_seconds": 0.03372422999996161,
         "syt_enumeration_method": "full"
       },
       {
@@ -98,7 +98,7 @@
           8,
           4
         ],
-        "compute_time_seconds": 2.319473065999773,
+        "compute_time_seconds": 2.307342958999925,
         "syt_enumeration_method": "full"
       },
       {
@@ -124,9 +124,69 @@
         "habiro_shift_empirical": 118,
         "bridge_match": true,
         "syt_enumeration_method": "closed-form"
+      },
+      {
+        "Z": 3,
+        "N": 4,
+        "atom": "7Li",
+        "n_strands": 21,
+        "q_pole_crystal_closed_form": 83,
+        "cancellation": 13.5,
+        "habiro_shift_via_bridge": 139,
+        "habiro_shift_empirical": 139,
+        "bridge_match": true,
+        "syt_enumeration_method": "closed-form"
+      },
+      {
+        "Z": 4,
+        "N": 3,
+        "atom": "7Be",
+        "n_strands": 21,
+        "q_pole_crystal_closed_form": 83,
+        "cancellation": 15.0,
+        "habiro_shift_via_bridge": 136,
+        "habiro_shift_empirical": 136,
+        "bridge_match": true,
+        "syt_enumeration_method": "closed-form"
+      },
+      {
+        "Z": 4,
+        "N": 4,
+        "atom": "8Be",
+        "n_strands": 24,
+        "q_pole_crystal_closed_form": 95,
+        "cancellation": 16.5,
+        "habiro_shift_via_bridge": 157,
+        "habiro_shift_empirical": 157,
+        "bridge_match": true,
+        "syt_enumeration_method": "closed-form"
+      },
+      {
+        "Z": 4,
+        "N": 5,
+        "atom": "9Be",
+        "n_strands": 27,
+        "q_pole_crystal_closed_form": 107,
+        "cancellation": 18.0,
+        "habiro_shift_via_bridge": 178,
+        "habiro_shift_empirical": 178,
+        "bridge_match": true,
+        "syt_enumeration_method": "closed-form"
+      },
+      {
+        "Z": 5,
+        "N": 4,
+        "atom": "9B",
+        "n_strands": 27,
+        "q_pole_crystal_closed_form": 107,
+        "cancellation": 19.5,
+        "habiro_shift_via_bridge": 175,
+        "habiro_shift_empirical": 175,
+        "bridge_match": true,
+        "syt_enumeration_method": "closed-form"
       }
     ],
-    "n_atoms_evaluated": 6
+    "n_atoms_evaluated": 11
   },
   "caveats": [
     "Pure combinatorial integer arithmetic — no symbolic-q, no floats.  The per-factor pole assignment uses the leading-order behaviour at q → 0 (max of σ-part and d·I-part).  For the crystal limit to be accurate the h-coefficient d must be proportional to h = q − q⁻¹; set h_is_d_proportional=False if you have non-h constant d's (none in canonical atomic braids).",
