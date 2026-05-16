@@ -631,6 +631,7 @@ def paper_six_term_mass(Z, N, include_inter=True,
             term5_mode=term5_mode,
             isotope_label=isotope_label,
             tower_mode=sub_mode,
+            chirality_source=chirality_source,
         )
         # Audit-trail fix (2026-05-12): the recursive call records
         # `tower_mode = sub_mode` (e.g. "habiro"), which is misleading
@@ -737,7 +738,8 @@ def chirality_signs_for_isotope(iso):
 
 
 def run_sweep_for_mode(tower_mode: str, isotopes: list, *, verbose: bool = True,
-                        e0_mode: str | None = None):
+                        e0_mode: str | None = None,
+                        chirality_source: str = "v2"):
     """Run the 6-term sweep for one tower_mode.
 
     P1.A (2026-05-12): `e0_mode` controls the energy-scale anchor:
@@ -783,7 +785,8 @@ def run_sweep_for_mode(tower_mode: str, isotopes: list, *, verbose: bool = True,
     p_terms = paper_six_term_mass(
         1, 0, include_inter=False,
         chirality_signs=chirality_signs_for_isotope("p"),
-        isotope_label="p", tower_mode=p_tower_mode)
+        isotope_label="p", tower_mode=p_tower_mode,
+        chirality_source=chirality_source)
     m_p_hecke = p_terms["total_hecke"]
     p_t6_MeV = p_terms["term6_cyclotomic_tail_MeV"]
 
@@ -838,7 +841,8 @@ def run_sweep_for_mode(tower_mode: str, isotopes: list, *, verbose: bool = True,
             terms = paper_six_term_mass(
                 Z, N, include_inter=inter,
                 chirality_signs=chirality_signs_for_isotope(iso),
-                isotope_label=iso, tower_mode=tower_mode)
+                isotope_label=iso, tower_mode=tower_mode,
+                chirality_source=chirality_source)
         except Exception as exc:
             rows.append({"isotope": iso, "Z": Z, "N": N, "A": Z + N,
                          "M_codata": M_codata,
