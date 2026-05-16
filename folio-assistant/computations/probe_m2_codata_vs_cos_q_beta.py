@@ -35,20 +35,24 @@ from paper_six_term_isotope_sweep import (  # noqa: E402
     q_beta_for_source,
 )
 from codata_constants import (  # noqa: E402
-    M_E_MEV, M_P_MEV_VALIDATION, M_N_MEV_VALIDATION,
+    M_E_MEV,
+    M_P_MEV_VALIDATION, M_N_MEV_VALIDATION,
+    M_D_MEV_VALIDATION, M_T_MEV_VALIDATION,
+    M_HE3_MEV_VALIDATION, M_HE4_MEV_VALIDATION,
 )
 
 
 # CODATA atomic masses (MeV) for {p, n, D, T, ³He, ⁴He}.
 # Use validation aliases — these are NOT used as anchors in the
-# prediction chain, only for residual reporting.
+# prediction chain, only for residual reporting (per CLAUDE.md
+# three-calibration discipline; only {m_e, q_0, Q_β} are anchors).
 M_CODATA_MEV = {
     "p":   float(M_P_MEV_VALIDATION),
     "n":   float(M_N_MEV_VALIDATION),
-    "D":   1876.123956,    # AME2020 deuteron
-    "T":   2809.432098,    # AME2020 tritium
-    "3He": 2809.413524,    # AME2020 helium-3
-    "4He": 3728.401311,    # AME2020 helium-4
+    "D":   float(M_D_MEV_VALIDATION),
+    "T":   float(M_T_MEV_VALIDATION),
+    "3He": float(M_HE3_MEV_VALIDATION),
+    "4He": float(M_HE4_MEV_VALIDATION),
 }
 
 
@@ -112,7 +116,7 @@ def main() -> int:
                 "raw_codata": r_codata,
                 "raw_cos": r_cos,
             })
-            print(f"  {label:>5} (no M_pred field; binding Δ = {B_cos - B_c:+.4e} MeV)")
+            print(f"  {label:>5} (no CODATA reference; binding Δ = {B_cos - B_c:+.4e} MeV)")
             continue
 
         err_c = (M_pred_c - M_codata) / M_codata * 100 if M_codata else 0
