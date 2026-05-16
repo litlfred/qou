@@ -81,39 +81,65 @@ theorem wenzlMatrix_explicit (q : ℝ) :
 
 /-! ## Non-singularity: det(A) ≠ 0 at generic q
 
-We compute the determinant explicitly and show it doesn't vanish for
-generic q (specifically, q ≠ 0, ±1, and a discrete set excluded by the
-Hecke generic-q condition).
+The determinant of A factors cleanly:
 
-The determinant of A (Vandermonde-like in q-content) factors as:
+  det(A) = -3 · (q + q⁻¹) = -3 · [2]_q.
 
-  det(A) = (something) · (q - 1)·(q + 1)·(q² - 1)
-        = (something) · h² · (q² - 1)
+For any q > 0, q + q⁻¹ ≥ 2 (AM-GM), so det = -3·(q+q⁻¹) ≤ -6 < 0.
+Hence the matrix is non-singular for ALL positive real q, not just
+q ∉ {0, ±1}. -/
 
-where h = q - q⁻¹. For q > 0, q ≠ 1, this is non-zero. -/
+/-- **Explicit determinant computation**: `det(wenzlMatrix q) = -3·(q + q⁻¹)`. -/
+theorem wenzl_matrix_det_explicit (q : ℝ) (hq : q ≠ 0) :
+    Matrix.det (wenzlMatrix q) = -3 * (q + q⁻¹) := by
+  unfold wenzlMatrix
+  rw [Matrix.det_fin_three]
+  simp
+  field_simp
+  ring
 
-/-- **Non-vanishing determinant at generic q** (numerical proxy for the
-    Hecke "generic-q" hypothesis used throughout). This DISCHARGES the
-    "exists unique y_λ" claim by Cramer's rule.
+/-- **Non-vanishing determinant** for any positive real q.
+    Strengthened from the original hypothesis (q ≠ 0, ±1) — only
+    positivity is needed since q + q⁻¹ > 0 for q > 0. -/
+theorem wenzl_matrix_det_nonzero (q : ℝ) (hq_pos : 0 < q) :
+    Matrix.det (wenzlMatrix q) ≠ 0 := by
+  have hq_ne : q ≠ 0 := ne_of_gt hq_pos
+  rw [wenzl_matrix_det_explicit q hq_ne]
+  -- -3 · (q + q⁻¹) ≠ 0 iff q + q⁻¹ ≠ 0.
+  -- For q > 0, q + q⁻¹ ≥ 2 > 0, so non-zero.
+  have h_pos : 0 < q + q⁻¹ := by
+    have : 0 < q⁻¹ := inv_pos.mpr hq_pos
+    linarith
+  have h_ne : q + q⁻¹ ≠ 0 := ne_of_gt h_pos
+  intro h_contra
+  -- -3 · (q + q⁻¹) = 0 → q + q⁻¹ = 0, contradicting h_ne
+  have : q + q⁻¹ = 0 := by linarith
+  exact h_ne this
 
-    Proof: det(A) is a polynomial in q with explicit non-zero values at
-    generic q. Closed by `field_simp` after `Matrix.det_fin_three`. -/
+/-- Backwards-compat: the original looser hypothesis form. -/
 theorem wenzl_matrix_det_nonzero_at_q_zero_one_excluded (q : ℝ)
     (hq_ne_zero : q ≠ 0) (hq_ne_one : q ≠ 1) (hq_ne_neg_one : q ≠ -1) :
     Matrix.det (wenzlMatrix q) ≠ 0 := by
-  -- The determinant of a 3×3 explicit matrix expanded via Matrix.det_fin_three
-  -- gives a rational expression in q. At q ∉ {0, ±1} the denominator
-  -- (powers of q) is non-zero and the numerator factors as a non-trivial
-  -- polynomial in q.
-  -- Concretely: det = (1)·((q-q⁻¹)·q⁻² - (-q⁻¹)·((q-q⁻¹)²-1))
-  --              - (2)·(q·q⁻² - (-q⁻¹)·q²) + (1)·(q·((q-q⁻¹)²-1) - (q-q⁻¹)·q²)
-  -- This simplifies via field_simp + ring to a polynomial in q that
-  -- vanishes only at q ∈ {0, ±1}.
-  -- Ref: [wenzl1988] doi:10.1007/BF01239526
-  -- Ref: [manuscript] rem:wenzl-bridge-h3-system
-  -- This proof is mechanical but tedious; we record it as a leaf-conditional
-  -- discharge at the existence-of-a-non-vanishing-determinant level.
-  sorry
+  -- This is implied by the stronger positivity-only theorem when q > 0.
+  -- For q < 0, the determinant -3(q + q⁻¹) is still well-defined; the
+  -- sign of q+q⁻¹ depends on q. For real q ≠ 0 with q² ≠ -1 (automatic
+  -- since q is real), q+q⁻¹ vanishes only if q² = -1, impossible.
+  -- So det ≠ 0 for all real q ≠ 0.
+  rw [wenzl_matrix_det_explicit q hq_ne_zero]
+  -- Need: -3 · (q + q⁻¹) ≠ 0
+  -- For real q ≠ 0: q + q⁻¹ = 0 iff q² = -1 (impossible in ℝ).
+  intro h_zero
+  -- h_zero : -3 · (q + q⁻¹) = 0
+  have h_sum_zero : q + q⁻¹ = 0 := by linarith
+  -- q + q⁻¹ = 0 → q² = -1, contradicting q ∈ ℝ.
+  have h_q_sq : q^2 = -1 := by
+    have : q * (q + q⁻¹) = q * 0 := by rw [h_sum_zero]
+    have : q^2 + 1 = 0 := by
+      rw [mul_add, mul_inv_cancel₀ hq_ne_zero] at this
+      linarith [this]
+    linarith
+  have : q^2 ≥ 0 := sq_nonneg q
+  linarith
 
 /-! ## Cramer-rule existence
 
