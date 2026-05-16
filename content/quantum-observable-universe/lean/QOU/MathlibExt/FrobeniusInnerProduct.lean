@@ -55,9 +55,15 @@ def Matrix.frobeniusInner (A B : Matrix (Fin n) (Fin n) ℝ) : ℝ :=
 theorem Matrix.frobeniusInner_symm (A B : Matrix (Fin n) (Fin n) ℝ) :
     Matrix.frobeniusInner A B = Matrix.frobeniusInner B A := by
   unfold Matrix.frobeniusInner
-  -- tr(Aᵀ * B) = tr((Aᵀ * B)ᵀ) = tr(Bᵀ * Aᵀᵀ) = tr(Bᵀ * A)
-  rw [← Matrix.trace_transpose (A.transpose * B), Matrix.transpose_mul,
-      Matrix.transpose_transpose]
+  -- `tr M = tr Mᵀ`; apply to LHS, then expand the transpose of a
+  -- product and collapse `Aᵀᵀ = A`.
+  calc (A.transpose * B).trace
+      = ((A.transpose * B).transpose).trace :=
+        (Matrix.trace_transpose _).symm
+    _ = (B.transpose * A.transpose.transpose).trace := by
+        rw [Matrix.transpose_mul]
+    _ = (B.transpose * A).trace := by
+        rw [Matrix.transpose_transpose]
 
 /-- **Non-negativity on the diagonal**: `⟨A, A⟩_F = Σ A_ij² ≥ 0`. -/
 theorem Matrix.frobeniusInner_self_nonneg (A : Matrix (Fin n) (Fin n) ℝ) :
