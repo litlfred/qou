@@ -1,15 +1,15 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-16T03:34:21.083880+00:00",
-  "commitSha": "fdb033e825a6b9973d7d811f22500e2979168836",
+  "computedAt": "2026-05-16T03:41:08.463993+00:00",
+  "commitSha": "f4f2076185f84e8d11ba439335a2a9f08c40fad5",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 27,
+  "durationMs": 25,
   "computation": "m2-codata-vs-cos-q-beta",
   "scriptFile": "probe_m2_codata_vs_cos_q_beta.py",
-  "scriptHash": "4a0c124413ad",
-  "scriptCommitSha": "fdb033e825a6b9973d7d811f22500e2979168836",
+  "scriptHash": "d61bde655564",
+  "scriptCommitSha": "f4f2076185f84e8d11ba439335a2a9f08c40fad5",
   "description": "M2 mass-table comparison: per-derivation assembly under codata Q_β vs cos((z−1)·h/2) substrate Q_β. Verifies the q_beta_source flag from this commit, and surfaces the per-atom mass-prediction shift under the cos tightening. Closes the wiring half of M1 §7 item 3.",
   "contentBlock": "prop:q-beta-categorical-precision-ladder",
   "parameters": {
@@ -23,301 +23,67 @@
         "atom": "p",
         "Z": 1,
         "N": 0,
-        "total_binding_codata_MeV": 0.0,
-        "total_binding_cos_MeV": 0.0,
-        "delta_binding_MeV": 0.0,
-        "raw_codata": {
-          "Z": 1,
-          "N": 0,
-          "A": 1,
-          "constituent_MeV": 938.78308711,
-          "binding_T1_MeV": 0.0,
-          "binding_T2T3_MeV": 0.0,
-          "binding_T4_MeV": 0.0,
-          "binding_T5_MeV": 1.1865827179371518,
-          "binding_T6_MeV": "0.0",
-          "B_pred_MeV": "1.18658271793715",
-          "M_predicted_MeV": "937.596504392063",
-          "tower_mode": "li2q",
-          "term5_mode": "multiplicative_on_t1",
-          "weights_used": {
-            "E_0_beta_MeV": 0.7823334100000222,
-            "q_beta_source": "codata",
-            "alpha_borromean_MeV": 3.74446989,
-            "m_e_MeV": 0.51099895
-          }
-        },
-        "raw_cos": {
-          "Z": 1,
-          "N": 0,
-          "A": 1,
-          "constituent_MeV": 938.78308711,
-          "binding_T1_MeV": 0.0,
-          "binding_T2T3_MeV": 0.0,
-          "binding_T4_MeV": 0.0,
-          "binding_T5_MeV": 1.1869458325406472,
-          "binding_T6_MeV": "0.0",
-          "B_pred_MeV": "1.18694583254065",
-          "M_predicted_MeV": "937.596141277459",
-          "tower_mode": "li2q",
-          "term5_mode": "multiplicative_on_t1",
-          "weights_used": {
-            "E_0_beta_MeV": 0.7825728174022026,
-            "q_beta_source": "form_a_cos",
-            "alpha_borromean_MeV": 3.74446989,
-            "m_e_MeV": 0.51099895
-          }
-        }
+        "M_codata_MeV": 938.27208816,
+        "M_pred_codata_MeV": 937.5965043920628,
+        "M_pred_cos_MeV": 937.5961412774593,
+        "err_pct_codata": -0.07200296976349471,
+        "err_pct_cos": -0.07204167011577736,
+        "delta_M_pred_MeV": -0.00036311460348770197
       },
       {
         "atom": "n",
         "Z": 0,
         "N": 1,
-        "total_binding_codata_MeV": 0.0,
-        "total_binding_cos_MeV": 0.0,
-        "delta_binding_MeV": 0.0,
-        "raw_codata": {
-          "Z": 0,
-          "N": 1,
-          "A": 1,
-          "constituent_MeV": 939.56542052,
-          "binding_T1_MeV": 0.0,
-          "binding_T2T3_MeV": 0.0,
-          "binding_T4_MeV": 0.0,
-          "binding_T5_MeV": 0.8187930013417619,
-          "binding_T6_MeV": "0.0",
-          "B_pred_MeV": "0.818793001341762",
-          "M_predicted_MeV": "938.746627518658",
-          "tower_mode": "li2q",
-          "term5_mode": "multiplicative_on_t1",
-          "weights_used": {
-            "E_0_beta_MeV": 0.7823334100000222,
-            "q_beta_source": "codata",
-            "alpha_borromean_MeV": 3.74446989,
-            "m_e_MeV": 0.51099895
-          }
-        },
-        "raw_cos": {
-          "Z": 0,
-          "N": 1,
-          "A": 1,
-          "constituent_MeV": 939.56542052,
-          "binding_T1_MeV": 0.0,
-          "binding_T2T3_MeV": 0.0,
-          "binding_T4_MeV": 0.0,
-          "binding_T5_MeV": 0.8190435660023901,
-          "binding_T6_MeV": "0.0",
-          "B_pred_MeV": "0.81904356600239",
-          "M_predicted_MeV": "938.746376953998",
-          "tower_mode": "li2q",
-          "term5_mode": "multiplicative_on_t1",
-          "weights_used": {
-            "E_0_beta_MeV": 0.7825728174022026,
-            "q_beta_source": "form_a_cos",
-            "alpha_borromean_MeV": 3.74446989,
-            "m_e_MeV": 0.51099895
-          }
-        }
+        "M_codata_MeV": 939.56542052,
+        "M_pred_codata_MeV": 938.7466275186582,
+        "M_pred_cos_MeV": 938.7463769539976,
+        "err_pct_codata": -0.08714592762349652,
+        "err_pct_cos": -0.08717259576763636,
+        "delta_M_pred_MeV": -0.0002505646606323353
       },
       {
         "atom": "D",
         "Z": 1,
         "N": 1,
-        "total_binding_codata_MeV": 0.0,
-        "total_binding_cos_MeV": 0.0,
-        "delta_binding_MeV": 0.0,
-        "raw_codata": {
-          "Z": 1,
-          "N": 1,
-          "A": 2,
-          "constituent_MeV": 1878.3485076299999,
-          "binding_T1_MeV": 0.0,
-          "binding_T2T3_MeV": 1.812630135477965,
-          "binding_T4_MeV": 0.0,
-          "binding_T5_MeV": 0.9536686825126596,
-          "binding_T6_MeV": "0.0",
-          "B_pred_MeV": "2.76629881799062",
-          "M_predicted_MeV": "1875.58220881201",
-          "tower_mode": "li2q",
-          "term5_mode": "multiplicative_on_t1",
-          "weights_used": {
-            "E_0_beta_MeV": 0.7823334100000222,
-            "q_beta_source": "codata",
-            "alpha_borromean_MeV": 3.74446989,
-            "m_e_MeV": 0.51099895
-          }
-        },
-        "raw_cos": {
-          "Z": 1,
-          "N": 1,
-          "A": 2,
-          "constituent_MeV": 1878.3485076299999,
-          "binding_T1_MeV": 0.0,
-          "binding_T2T3_MeV": 1.812630135477965,
-          "binding_T4_MeV": 0.0,
-          "binding_T5_MeV": 0.9539605214382414,
-          "binding_T6_MeV": "0.0",
-          "B_pred_MeV": "2.76659065691621",
-          "M_predicted_MeV": "1875.58191697308",
-          "tower_mode": "li2q",
-          "term5_mode": "multiplicative_on_t1",
-          "weights_used": {
-            "E_0_beta_MeV": 0.7825728174022026,
-            "q_beta_source": "form_a_cos",
-            "alpha_borromean_MeV": 3.74446989,
-            "m_e_MeV": 0.51099895
-          }
-        }
+        "M_codata_MeV": 1876.123956,
+        "M_pred_codata_MeV": 1875.5822088120092,
+        "M_pred_cos_MeV": 1875.5819169730837,
+        "err_pct_codata": -0.028875873913243855,
+        "err_pct_cos": -0.02889142933134637,
+        "delta_M_pred_MeV": -0.00029183892547735013
       },
       {
         "atom": "T",
         "Z": 1,
         "N": 2,
-        "total_binding_codata_MeV": 0.0,
-        "total_binding_cos_MeV": 0.0,
-        "delta_binding_MeV": 0.0,
-        "raw_codata": {
-          "Z": 1,
-          "N": 2,
-          "A": 3,
-          "constituent_MeV": 2817.91392815,
-          "binding_T1_MeV": 0.0,
-          "binding_T2T3_MeV": 3.661672162735871,
-          "binding_T4_MeV": 0.0,
-          "binding_T5_MeV": 0.09556564335703287,
-          "binding_T6_MeV": "0.0",
-          "B_pred_MeV": "3.7572378060929",
-          "M_predicted_MeV": "2814.15669034391",
-          "tower_mode": "li2q",
-          "term5_mode": "multiplicative_on_t1",
-          "weights_used": {
-            "E_0_beta_MeV": 0.7823334100000222,
-            "q_beta_source": "codata",
-            "alpha_borromean_MeV": 3.74446989,
-            "m_e_MeV": 0.51099895
-          }
-        },
-        "raw_cos": {
-          "Z": 1,
-          "N": 2,
-          "A": 3,
-          "constituent_MeV": 2817.91392815,
-          "binding_T1_MeV": 0.0,
-          "binding_T2T3_MeV": 3.661672162735871,
-          "binding_T4_MeV": 0.0,
-          "binding_T5_MeV": 0.09559488807817267,
-          "binding_T6_MeV": "0.0",
-          "B_pred_MeV": "3.75726705081404",
-          "M_predicted_MeV": "2814.15666109919",
-          "tower_mode": "li2q",
-          "term5_mode": "multiplicative_on_t1",
-          "weights_used": {
-            "E_0_beta_MeV": 0.7825728174022026,
-            "q_beta_source": "form_a_cos",
-            "alpha_borromean_MeV": 3.74446989,
-            "m_e_MeV": 0.51099895
-          }
-        }
+        "M_codata_MeV": 2809.432098,
+        "M_pred_codata_MeV": 2814.1566903439075,
+        "M_pred_cos_MeV": 2814.1566610991863,
+        "err_pct_codata": 0.16816894586171488,
+        "err_pct_cos": 0.16816790491393008,
+        "delta_M_pred_MeV": -2.924472119048005e-05
       },
       {
         "atom": "3He",
         "Z": 2,
         "N": 1,
-        "total_binding_codata_MeV": 0.0,
-        "total_binding_cos_MeV": 0.0,
-        "delta_binding_MeV": 0.0,
-        "raw_codata": {
-          "Z": 2,
-          "N": 1,
-          "A": 3,
-          "constituent_MeV": 2817.13159474,
-          "binding_T1_MeV": 0.0,
-          "binding_T2T3_MeV": 5.455436138735271,
-          "binding_T4_MeV": 0.0,
-          "binding_T5_MeV": 10.148821633826708,
-          "binding_T6_MeV": "0.0",
-          "B_pred_MeV": "15.604257772562",
-          "M_predicted_MeV": "2801.52733696744",
-          "tower_mode": "li2q",
-          "term5_mode": "multiplicative_on_t1",
-          "weights_used": {
-            "E_0_beta_MeV": 0.7823334100000222,
-            "q_beta_source": "codata",
-            "alpha_borromean_MeV": 3.74446989,
-            "m_e_MeV": 0.51099895
-          }
-        },
-        "raw_cos": {
-          "Z": 2,
-          "N": 1,
-          "A": 3,
-          "constituent_MeV": 2817.13159474,
-          "binding_T1_MeV": 0.0,
-          "binding_T2T3_MeV": 5.455436138735271,
-          "binding_T4_MeV": 0.0,
-          "binding_T5_MeV": 10.151927346802136,
-          "binding_T6_MeV": "0.0",
-          "B_pred_MeV": "15.6073634855374",
-          "M_predicted_MeV": "2801.52423125446",
-          "tower_mode": "li2q",
-          "term5_mode": "multiplicative_on_t1",
-          "weights_used": {
-            "E_0_beta_MeV": 0.7825728174022026,
-            "q_beta_source": "form_a_cos",
-            "alpha_borromean_MeV": 3.74446989,
-            "m_e_MeV": 0.51099895
-          }
-        }
+        "M_codata_MeV": 2809.413524,
+        "M_pred_codata_MeV": 2801.527336967438,
+        "M_pred_cos_MeV": 2801.5242312544624,
+        "err_pct_codata": -0.2807058115579231,
+        "err_pct_cos": -0.28081635822358414,
+        "delta_M_pred_MeV": -0.003105712975411734
       },
       {
         "atom": "4He",
         "Z": 2,
         "N": 2,
-        "total_binding_codata_MeV": 0.0,
-        "total_binding_cos_MeV": 0.0,
-        "delta_binding_MeV": 0.0,
-        "raw_codata": {
-          "Z": 2,
-          "N": 2,
-          "A": 4,
-          "constituent_MeV": 3756.6970152599997,
-          "binding_T1_MeV": 0.0,
-          "binding_T2T3_MeV": 8.223488993113543,
-          "binding_T4_MeV": 0.0,
-          "binding_T5_MeV": 1.1710981611610656,
-          "binding_T6_MeV": "0.0",
-          "B_pred_MeV": "9.39458715427461",
-          "M_predicted_MeV": "3747.30242810573",
-          "tower_mode": "li2q",
-          "term5_mode": "multiplicative_on_t1",
-          "weights_used": {
-            "E_0_beta_MeV": 0.7823334100000222,
-            "q_beta_source": "codata",
-            "alpha_borromean_MeV": 3.74446989,
-            "m_e_MeV": 0.51099895
-          }
-        },
-        "raw_cos": {
-          "Z": 2,
-          "N": 2,
-          "A": 4,
-          "constituent_MeV": 3756.6970152599997,
-          "binding_T1_MeV": 0.0,
-          "binding_T2T3_MeV": 8.223488993113543,
-          "binding_T4_MeV": 0.0,
-          "binding_T5_MeV": 1.1714565372253858,
-          "binding_T6_MeV": "0.0",
-          "B_pred_MeV": "9.39494553033893",
-          "M_predicted_MeV": "3747.30206972966",
-          "tower_mode": "li2q",
-          "term5_mode": "multiplicative_on_t1",
-          "weights_used": {
-            "E_0_beta_MeV": 0.7825728174022026,
-            "q_beta_source": "form_a_cos",
-            "alpha_borromean_MeV": 3.74446989,
-            "m_e_MeV": 0.51099895
-          }
-        }
+        "M_codata_MeV": 3728.401311,
+        "M_pred_codata_MeV": 3747.302428105725,
+        "M_pred_cos_MeV": 3747.3020697296606,
+        "err_pct_codata": 0.506949642195451,
+        "err_pct_cos": 0.5069400301383098,
+        "delta_M_pred_MeV": -0.00035837606446875725
       }
     ]
   }
