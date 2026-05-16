@@ -40,12 +40,18 @@ torus T(2, k). This is sufficient for the 2-strand closure analysis. -/
 
 /-- A small concrete inductive type for the links we need:
     `unknot` (single-component, trivial), `hopfLink` (2 components,
-    pairwise linking number 1), and `torusLink2 k` (closure of σ_1^k
-    in B_2). -/
+    pairwise linking number 1), `torusLink2 k` (closure of σ_1^k in
+    B_2), and three multi-link constructors used for the c_5/c_6
+    candidates: `trefoil` (= torusLink2 3, kept separate for
+    Jones-value clarity), `borromean` (3-component Brunnian link),
+    `doubleHopf` (Hopf ⊔ Hopf, disjoint union). -/
 inductive Link : Type
   | unknot : Link
   | hopfLink : Link
   | torusLink2 : ℕ → Link
+  | trefoil : Link
+  | borromean : Link
+  | doubleHopf : Link
   deriving Repr, DecidableEq
 
 /-! ## The 2-strand braid group
@@ -113,7 +119,11 @@ theorem closure2_at_high_k (k : ℤ) (hk : k.natAbs ≥ 3) :
 For each Link constructor, the classical-limit Jones value at q = 1:
   unknot: 1
   Hopf: -2
-  T(2, k): explicit formula in k -/
+  T(2, k): 1 placeholder (full formula in colored Jones is k-dependent)
+  trefoil: 1  (= T(2,3); 1-component knot, unnormalised Jones at q=1)
+  borromean: -8 (3-component Brunnian; via Habiro 1997 or direct
+            HOMFLYPT specialisation V(L; -1, 0) = -8 at q=1)
+  doubleHopf: 4 (= (-2)^2; disjoint-union multiplicativity of Jones) -/
 
 /-- Jones polynomial value at q = 1 for each link. -/
 def jonesAtOne : Link → ℝ
@@ -121,6 +131,9 @@ def jonesAtOne : Link → ℝ
   | Link.hopfLink => -2
   | Link.torusLink2 _ => 1  -- placeholder; full formula for T(2,k)
                               -- depends on k via the colored Jones
+  | Link.trefoil => 1        -- T(2,3) 1-component knot at q=1
+  | Link.borromean => -8     -- 3-component Brunnian link at q=1
+  | Link.doubleHopf => 4     -- (Hopf ⊔ Hopf), disjoint-union
 
 -- Ref: [jones1985] doi:10.2307/1971403
 /-- **The classical Hopf-Jones value**: `jonesAtOne hopfLink = -2`.
@@ -131,6 +144,33 @@ theorem jonesAtOne_hopf_eq_neg_two :
 /-- Unknot Jones value at q=1: 1. -/
 theorem jonesAtOne_unknot_eq_one :
     jonesAtOne Link.unknot = 1 := rfl
+
+/-! ## Multi-link Jones values at q = 1 (c_5/c_6 candidates)
+
+Each value below is a candidate scalar to plug into the precision-
+ladder extension for the c_5/c_6 coefficients (which the simple
+alternating Kashiwara × Jones pattern of `c_3 = -2` does not capture
+empirically — see [`rem:multi-link-jones-q1-extension`](#rem:multi-link-jones-q1-extension)
+for the full open R&D discussion). -/
+
+-- Ref: [jones1985] doi:10.2307/1971403
+/-- Trefoil knot `T(2,3)` Jones value at `q = 1`: `+1`
+    (1-component, unnormalised). -/
+theorem jonesAtOne_trefoil_eq_one :
+    jonesAtOne Link.trefoil = 1 := rfl
+
+-- Ref: [jones1985] doi:10.2307/1971403
+-- Ref: [habiro2002] doi:10.4153/CMB-2002-038-4
+/-- Borromean rings Jones value at `q = 1`: `−8`
+    (3-component Brunnian link). -/
+theorem jonesAtOne_borromean_eq_neg_eight :
+    jonesAtOne Link.borromean = -8 := rfl
+
+-- Ref: [jones1985] doi:10.2307/1971403
+/-- Double-Hopf (Hopf ⊔ Hopf) Jones value at `q = 1`: `(−2)² = 4`
+    (disjoint-union multiplicativity). -/
+theorem jonesAtOne_doubleHopf_eq_four :
+    jonesAtOne Link.doubleHopf = 4 := rfl
 
 /-! ## Composing the chain: σ² → Hopf → -2 -/
 
