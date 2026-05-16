@@ -1,0 +1,45 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-16T14:45:10.253658+00:00",
+  "commitSha": "8a7609c3bd4b230e09f7438034928d04e17b1717",
+  "assertions": [
+    {
+      "name": "tau_M_compositions_differ_from_canonical",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "F1 hypothesis 3: if compositions disagree, Model B mapping has structural ambiguity (per 2026-05-15-three-pr-integration.md)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 25,
+  "computation": "he4-compositional-consistency",
+  "scriptFile": "probe_he4_compositional_consistency.py",
+  "scriptHash": "7f38f366c589",
+  "scriptCommitSha": "unknown",
+  "description": "⁴He compositional consistency probe per F1 question 3 (integration audit 2026-05-15-three-pr-integration.md). Compares τ_M(⁴He canonical) against three disjoint Markov compositions (D⊕D, T⊕p, ³He⊕n).  Result: all four DIFFER by 50-300% — Markov disjoint product is not the right compositional notion for ⁴He, which requires INTER-COMPONENT INTERFACE generators (the canonical pppnnn ordering).",
+  "auditOnly": "docs/audits/2026-05-15-three-pr-integration.md",
+  "data": {
+    "q0_50dps": "1.1099785955541805752815940796095093779932822799587",
+    "tau_M_sub_atoms": {
+      "p": "1.06530622859238910393742116867",
+      "n": "0.923233297169583466690312434366",
+      "D": "0.388286471547712952467890090702",
+      "T": "0.104052118675526036883915992348",
+      "3He": "0.206540858562262452657876110607",
+      "4He_canonical": "0.05534834587669799216280708265"
+    },
+    "tau_M_compositions": {
+      "D⊕D": "0.15076638398697290016948504657019221508280148158513",
+      "T⊕p": "0.11084737012327233961357849541133380320112063851696",
+      "³He⊕n": "0.19068539785067415875481934100677991278919070871835"
+    },
+    "max_relative_difference_canonical_vs_composition": "2.44519",
+    "consistent_at_1e_minus_3": false
+  },
+  "caveats": [
+    "This probe tests at the Markov-trace level only.  A full JSJ closure reduction (per F1 questions 1-2) would compute the actual hyperbolic / Seifert decomposition pieces of each composition's link closure and compare topologically.  That requires SnapPy / Regina topology tools; deferred.",
+    "Markov disjoint product τ_M(β_1 ⊕ β_2) = τ_M(β_1) · τ_M(β_2) only when the strands are truly disjoint (no shared bridge generator).  For ⁴He compositional purposes, the right construction is INTERFACE-based concatenation: β_⁴He = β_X · I · β_Y where I is one of {I_pp, I_pn, I_nn} at the X|Y boundary.  Each compositional choice gives a DIFFERENT braid word in H_12 with its own τ_M and topology."
+  ]
+}
