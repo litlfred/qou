@@ -7,16 +7,19 @@ under strict three-calibration discipline (CAL-1 m_e, CAL-2 q₀, CAL-3
 Q_β; m_p and m_n are predictions, never inputs) + anti-staleness
 infra to prevent the failure mode that produced the ¹H tautology.
 
-## Scope map (2026-05-16 04:30 UTC)
+## Scope map (2026-05-16 05:30 UTC — second cycle)
 
 | PR | Status | Relationship | Action |
 |---|---|---|---|
-| **#663 (this)** | open | — | rebased onto current main; 3 commits net |
-| #657 (c_5/c_6 multi-link Jones + CODATA-Q_β-floor) | **MERGED** | informational dep (same Q_β closure story; #657's "underdetermined at CODATA Q_β floor" finding lands on main and is consistent with my pending-m_p framing) | no cross-PR ask needed |
-| #660 (Lean build fix) | **MERGED** | unrelated | out of scope |
-| #661 (c_2 = b² categorical proof) | **MERGED** | upstream dep (cherry-picked into my branch; now on main via merge — duplicate commits dropped by rebase) | out of scope |
-| #662 (cos Q_β source wire + 9 content blocks) | **MERGED** | upstream dep (cherry-picked into my branch; now on main via merge — duplicate commits dropped by rebase) | out of scope |
-| (new main commit) `772bd656` — M2 mass table 0.19 % MAE | landed on main | parallel framing (calibrated form using CODATA m_p / m_n) | not an inconsistent finding — explicit different framing; cross-referenced in PR body |
+| **#663 (this)** | open | — | 6 commits on main; anti-staleness adoption extended to 3 scripts |
+| #664 (`prop:hopf-jones-c3-categorical`) | **OPEN, today** | **cherry-picks from #663** (4 files: audit doc, drift validator, low_isotope_mass_table.py m_p guard, no-cal witness) — duplicate content | intent comment posted; merge-order suggestion (#663 first, #664 rebases to drop dupes) — no escalation, #664 attributed the cherry-pick explicitly |
+| #665 (Lean `c_4 = b² + 1/2` N=4 rung) | **OPEN, today** | unrelated (Lean-only formalisation) | out of scope |
+| #666 (Sub-lemma 2.1 H_9 tritium 30/30) | **OPEN, today** | **chain unblock**: closes Δ_λ for tritium → unblocks `binding_K_direct.py` (which I just adopted for upstream-witness-hash tracking) | intent comment posted; tritium row in `binding-K-direct.witness.json` will lift from `delta_lambda_unavailable` once a `delta-lambda-witness.json` catalog is wired |
+| #657 (c_5/c_6 multi-link Jones) | **MERGED** | informational dep | none |
+| #660 (Lean build fix) | **MERGED** | unrelated | none |
+| #661 (c_2 = b² categorical) | **MERGED** | upstream dep (cherry-pick deduped by rebase) | none |
+| #662 (cos Q_β source) | **MERGED** | upstream dep (cherry-pick deduped by rebase) | none |
+| main `772bd656` (M2 mass table) | landed | parallel calibrated framing | not contradictory; cross-referenced |
 
 **Scope collapsed.** All today's sibling PRs merged within the
 session window. PR #663 stands alone against current main; the
@@ -118,17 +121,38 @@ Adoption is a cross-PR effort — out of scope for #663.
 
 ## Next concrete task
 
-CI should now go green with `dda97390`'s drift refresh. Once that
-lands, the next step on this branch is:
+**None blocking.** PR #663 has delivered both deliverables in the
+"2 then 1" priority chain:
 
-- **None blocking.** PR #663 is ready for review. The remaining
-  open questions (close T1+T4 in `build_proton_mass_50dps_chain.py`
-  → lift ¹H from pending to derived) are out of scope and belong
-  to a separate mass-endomorphism PR.
+- **Task 2 (anti-staleness adoption)** — shared helper in
+  `witness_base.py` + 3 adopter scripts + drift validator now
+  checks both `derivation_inputs.*` and `data.*` hash locations.
+  3 witnesses / 11 upstream hash records, 0 drift.
+- **Task 1 (T1+T4 tower closure audit)** — finding documented in
+  [`docs/audits/2026-05-16-t1-t4-tower-closure-plan.md`](../audits/2026-05-16-t1-t4-tower-closure-plan.md):
+  the proton/neutron rows in `mass-formula-6term-mpfr-50dps.witness.json`
+  carry `term2_single = 0.0` and `term3_pair = 0.0` with explicit
+  error "No MPFR-native per-generator volumes found for Z=1, N=0".
+  `derive_m_p_hecke_path_a` only sums T1+T4, giving m_p_hecke = 2.34
+  and m_p/m_e = 1.169 vs CODATA 1836 — the 9-order-of-magnitude gap
+  is **structural** (T2+T3 brane-tower contributions missing for
+  single-strand atoms), not numerical. Closure is multi-PR
+  research-level work.
 
-Watch list (next sibling-PR cycle):
-- Workplan 2 Phase 2 50-dps `m_e^Hecke` lift — when it lands, this
-  branch's `M_P_DERIVED_MAX_REL_DIFF` threshold tightens from 1 %
-  to 1 ppm and ¹H becomes the first genuinely-derived row.
-- CODATA-2027 Q_β tightening (per PR #657's deferred R&D) — would
-  break the "Story A vs Story B" tie at the c_2 fit level.
+Watch list (post-#663):
+
+- **PR #664 lands** → cherry-pick duplicate (audit + drift validator +
+  m_p guard + no-cal witness) deduplicates with main; #663 narrows
+  to anti-staleness extensions + ledger.
+- **PR #666 lands** → `delta-lambda-witness.json` wires in →
+  tritium row in `binding-K-direct.witness.json` lifts from
+  `delta_lambda_unavailable` to a derived B(T) value. Same for ³He
+  (via #666 follow-up `I_pp` interface) and ⁴He (H_12, 3-interface).
+- **MPFR-native per-generator volumes for {p, n}** (per
+  `mass-formula-6term-mpfr-50dps.witness.json:term23_error`) →
+  unblocks T2+T3 for proton and neutron → `m_p_hecke` grows from
+  2.34 to a value giving m_p/m_e ≈ 1836 → ¹H row's
+  `M_P_DERIVED_MAX_REL_DIFF` tightens from 1 % to ≤ 1 ppm.
+- **CODATA-2027 Q_β tightening** — with PR #664's categorical c_3
+  derivation, Story B is now favoured structurally even without
+  experimental tightening.
