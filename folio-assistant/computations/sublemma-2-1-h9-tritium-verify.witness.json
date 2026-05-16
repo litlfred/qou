@@ -1,0 +1,282 @@
+{
+  "engine": "numpy",
+  "engineVersion": "numpy 2.4.4",
+  "computedAt": "2026-05-16T04:04:33.973716+00:00",
+  "commitSha": "0f9749eb9c730ef69fe14f433d3bff4139d8252c",
+  "assertions": [
+    {
+      "name": "overdetermined_path_a_eq_path_b_machine_eps",
+      "computed": 2,
+      "expected": 2,
+      "passed": true,
+      "source": "iterated Sub-lemma 2.1 at H_9 ↓ H_6 × H_3"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 34,
+  "computation": "sublemma-2-1-h9-tritium-verify",
+  "scriptFile": "sublemma_2_1_h9_tritium_verify.py",
+  "scriptHash": "7ffec29d713a",
+  "scriptCommitSha": "unknown",
+  "description": "Sub-lemma 2.1 multi-interface verification at H_9 for tritium: compares Path A (direct χ^λ via Hoefsmit) against Path B (iterated 2-interface formula with A^λ_{ξν}(I_2) extracted from sublemma-2-1-A-operator-extract-h9-nn.witness.json). Phase 1 (K_6 = K_3 = 12 test words) closes the iterated formula at machine ε for the 2 fully-determined λ ⊢ 9 (the 1-dim partitions (9) and (1^9) plus any over-determined λ at this K). The remaining 28 under-determined λ require K ≥ 60 test words on the H_6 side (Phase 2).",
+  "auditOnly": "docs/audits/2026-05-15-sublemma-2-1-h9-multi-interface-extension.md",
+  "data": {
+    "atom": "tritium",
+    "interface_outer": "nn",
+    "interface_inner": "pn",
+    "n_generators_h9_braid": 35,
+    "chi_path_a": {
+      "(9,)": [
+        1.5768015283810257,
+        0.0
+      ],
+      "(8, 1)": [
+        -1.0523570149058195,
+        0.0
+      ],
+      "(7, 2)": [
+        0.2650112613158258,
+        0.0
+      ],
+      "(7, 1, 1)": [
+        -0.7776542809261378,
+        0.0
+      ],
+      "(6, 3)": [
+        1.8167572536180694,
+        0.0
+      ],
+      "(6, 2, 1)": [
+        -0.7580589795674582,
+        0.0
+      ],
+      "(6, 1, 1, 1)": [
+        2.811582585672884,
+        0.0
+      ],
+      "(5, 4)": [
+        -1.4086634812682906,
+        0.0
+      ],
+      "(5, 3, 1)": [
+        0.08555966600297771,
+        0.0
+      ],
+      "(5, 2, 2)": [
+        -1.0612967259379227,
+        0.0
+      ],
+      "(5, 2, 1, 1)": [
+        -0.464151571330112,
+        0.0
+      ],
+      "(5, 1, 1, 1, 1)": [
+        -1.4995801564693356,
+        0.0
+      ],
+      "(4, 4, 1)": [
+        -1.2024700026240054,
+        0.0
+      ],
+      "(4, 3, 2)": [
+        2.384374874766392,
+        0.0
+      ],
+      "(4, 3, 1, 1)": [
+        0.35658337493493586,
+        0.0
+      ],
+      "(4, 2, 2, 1)": [
+        -0.07737323252478567,
+        0.0
+      ],
+      "(4, 2, 1, 1, 1)": [
+        0.27185701204623647,
+        0.0
+      ],
+      "(4, 1, 1, 1, 1, 1)": [
+        -1.6824046881184198,
+        0.0
+      ],
+      "(3, 3, 3)": [
+        -1.1608058842622835,
+        0.0
+      ],
+      "(3, 3, 2, 1)": [
+        -2.1559078553840454,
+        0.0
+      ],
+      "(3, 3, 1, 1, 1)": [
+        1.0263622872767155,
+        0.0
+      ],
+      "(3, 2, 2, 2)": [
+        1.285141023232155,
+        0.0
+      ],
+      "(3, 2, 2, 1, 1)": [
+        0.0693095552392684,
+        0.0
+      ],
+      "(3, 2, 1, 1, 1, 1)": [
+        1.3976915926025457,
+        0.0
+      ],
+      "(3, 1, 1, 1, 1, 1, 1)": [
+        1.1201398341012303,
+        0.0
+      ],
+      "(2, 2, 2, 2, 1)": [
+        0.44396999673556253,
+        0.0
+      ],
+      "(2, 2, 2, 1, 1, 1)": [
+        -2.309033520385103,
+        0.0
+      ],
+      "(2, 2, 1, 1, 1, 1, 1)": [
+        -0.2810198790005096,
+        0.0
+      ],
+      "(2, 1, 1, 1, 1, 1, 1, 1)": [
+        -0.4569649113074144,
+        0.0
+      ],
+      "(1, 1, 1, 1, 1, 1, 1, 1, 1)": [
+        -0.6843215231761892,
+        0.0
+      ]
+    },
+    "chi_path_b": {
+      "(9,)": [
+        1.5768015283810255,
+        0.0
+      ],
+      "(8, 1)": [
+        -0.7481368368581629,
+        0.0
+      ],
+      "(7, 2)": [
+        0.7981370170000361,
+        0.0
+      ],
+      "(7, 1, 1)": [
+        -1.0581980239719684,
+        0.0
+      ],
+      "(6, 3)": [
+        0.7656922806425248,
+        0.0
+      ],
+      "(6, 2, 1)": [
+        0.4709583109715054,
+        0.0
+      ],
+      "(6, 1, 1, 1)": [
+        2.1681877292124154,
+        0.0
+      ],
+      "(5, 4)": [
+        -1.406118440323739,
+        0.0
+      ],
+      "(5, 3, 1)": [
+        -0.07624945892850346,
+        0.0
+      ],
+      "(5, 2, 2)": [
+        -0.3797839033460578,
+        0.0
+      ],
+      "(5, 2, 1, 1)": [
+        -0.028844347510083523,
+        0.0
+      ],
+      "(5, 1, 1, 1, 1)": [
+        -1.0133614408249252,
+        0.0
+      ],
+      "(4, 4, 1)": [
+        -1.8101282083644064,
+        0.0
+      ],
+      "(4, 3, 2)": [
+        -0.45378315260191965,
+        0.0
+      ],
+      "(4, 3, 1, 1)": [
+        0.0153279560369812,
+        0.0
+      ],
+      "(4, 2, 2, 1)": [
+        -0.14718214128171636,
+        0.0
+      ],
+      "(4, 2, 1, 1, 1)": [
+        -0.49375489502971215,
+        0.0
+      ],
+      "(4, 1, 1, 1, 1, 1)": [
+        -1.2174024570791768,
+        0.0
+      ],
+      "(3, 3, 3)": [
+        -0.01806236004727807,
+        0.0
+      ],
+      "(3, 3, 2, 1)": [
+        -0.23968199539805565,
+        0.0
+      ],
+      "(3, 3, 1, 1, 1)": [
+        -0.6294558144698406,
+        0.0
+      ],
+      "(3, 2, 2, 2)": [
+        1.5705097382088158,
+        0.0
+      ],
+      "(3, 2, 2, 1, 1)": [
+        0.13158774917969218,
+        0.0
+      ],
+      "(3, 2, 1, 1, 1, 1)": [
+        0.44377535177892274,
+        0.0
+      ],
+      "(3, 1, 1, 1, 1, 1, 1)": [
+        0.914347409557434,
+        0.0
+      ],
+      "(2, 2, 2, 2, 1)": [
+        -0.18196118545087553,
+        0.0
+      ],
+      "(2, 2, 2, 1, 1, 1)": [
+        -1.2876301503686018,
+        0.0
+      ],
+      "(2, 2, 1, 1, 1, 1, 1)": [
+        -0.6425576741519048,
+        0.0
+      ],
+      "(2, 1, 1, 1, 1, 1, 1, 1)": [
+        -0.5848569298004278,
+        0.0
+      ],
+      "(1, 1, 1, 1, 1, 1, 1, 1, 1)": [
+        -0.684321523176189,
+        0.0
+      ]
+    },
+    "n_overdetermined_verified": 2,
+    "n_overdetermined_total": 2,
+    "n_underdetermined": 28,
+    "max_relative_residual_overdetermined": 3.244740920823887e-16,
+    "max_relative_residual_all": 2.8162301252164728
+  },
+  "caveats": [
+    "Phase 1 verification: only the FULLY-DETERMINED subset of λ ⊢ 9 (where K_6·K_3 ≥ Σ d_ξ²·d_ν² over LR support) is verified at machine ε. At K_6 = K_3 = 12 → 144 equations, only the 1-dim partitions (9) and (1^9) are fully determined. The remaining 28 partitions have least-squares A's that satisfy the test grid but do not generalize to the full tritium braid β_T outside that grid. Phase 2 needs K ≥ 60+ for full coverage.",
+    "Empirical observation: the rank of the bilinear system saturates at 1, 14, or 50-66 for K_6=K_3=12, far below the n_unknowns 30..3390 for high-dim λ. This suggests the test-word grid spans a sub-space of End(V_ξ ⊗ V_ν) with effective dim ~50 — increasing K naively may not linearly improve rank. Phase 2 needs more DIVERSE test words, e.g. random Hecke words or branching-coset enumeration, not just more words."
+  ]
+}
