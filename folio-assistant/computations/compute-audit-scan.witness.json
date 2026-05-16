@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-16T03:12:40.501210+00:00",
-  "commitSha": "e64de31e25bef99ca4cebc5de6abb3867123094f",
+  "computedAt": "2026-05-16T03:12:42.198894+00:00",
+  "commitSha": "62a32e93cd574b8adf5fef2209d6430944ddadee",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 7,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "d9aa432d54f9",
@@ -28,7 +28,7 @@
       "P16": 89,
       "P21": 24,
       "P30": 96,
-      "P31": 20
+      "P31": 21
     },
     "top_files": [
       {
@@ -1947,6 +1947,13 @@
         "line": 145,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P31",
+        "file": "probe_q_beta_c5_c6_multilink.py",
+        "line": 57,
+        "snippet": "CODATA literal \"938.27208816\"",
+        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
       {
         "pattern": "P15",
