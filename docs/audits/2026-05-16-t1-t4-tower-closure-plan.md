@@ -376,13 +376,37 @@ non-trivial grade-1 element in S_2's Coxeter image.
 > is a **categorical functional of β alone**: no nucleon ledger
 > dependency, no fitting.
 
-**Status**: verified for A=1 atoms (electron, proton, neutron) at
-50 dps.  m_p_pred under the derived-A convention sits at −1.50 %
-vs CODATA — a (small) tightening from the legacy +1.63 %.
-Promotion of A=max_grade to the production
-[`derive_m_p_hecke_full_tower_50dps`](../../folio-assistant/computations/derive_m_p_hecke_full_tower_50dps.py)
-chain pending owner sign-off (the probe records the result; the
-production chain still uses A=nucleon for backward compatibility).
+**Status**: **PROMOTED to production 2026-05-16** per owner
+directive: *"promoted to production. all observables are positive
+so and under prediction is okay because that hopefully will be
+picked up in the higher order Mass Tower."*
+
+Both
+[`derive_m_p_hecke_full_tower_50dps.py`](../../folio-assistant/computations/derive_m_p_hecke_full_tower_50dps.py)
+and
+[`derive_m_n_hecke_full_tower_50dps.py`](../../folio-assistant/computations/derive_m_n_hecke_full_tower_50dps.py)
+now derive A categorically from the GS normal form via
+`gb_filtration_jet_tracker.reduce_braid` of each particle's
+canonical braid word.  T5 uses the V2 Gram-matrix `a_K` factor +
+q-integer BW coefficients evaluated at that derived A.  No
+nucleon ledger, no fitting.
+
+Post-promotion state:
+- m_p_pred = **924.17 MeV** vs CODATA 938.27 (residual **−1.50 %**
+  / under-prediction).  m_p > 0 ✓ (observable positivity preserved).
+  Under-prediction is acceptable per owner: higher-order Mass
+  Tower terms (T5 higher orders, T6 Habiro residue at H_2 for
+  the electron, brane-tower-z extension, etc.) are expected to
+  tighten upward.
+- m_n_pred = **337.23 MeV** vs CODATA 939.57 (residual **−64.11 %**).
+  The neutron-brane-tower structural gap is unchanged by the A
+  promotion (it's a σ⁻¹-branch issue, not an A-choice issue).
+- ¹H still `derivation_pending` under the 1 ppb threshold —
+  1.50 % ≫ 1 ppb, but the m_p_pred value is recorded in the
+  witness's `m_p_derivation_status` field.
+
+Source-kind tag on the mass-table witness:
+`full_tower_T1_T2_T3_T4_T5_at_A_categorical_max_GS_grade`.
 
 ## T6 closure for the electron — Habiro shift not derived
 

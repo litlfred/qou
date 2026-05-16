@@ -136,7 +136,7 @@ if _FULL_TOWER_WITNESS.exists():
     _m_p_rel_diff = float(
         _proton_w["data"]["comparisons"]["rel_diff_p"]
     )
-    _m_p_source_kind = "full_tower_T1_T2_T3_T4"
+    _m_p_source_kind = "full_tower_T1_T2_T3_T4_T5_at_A_categorical_max_GS_grade"
 else:
     _PROTON_WITNESS = _PATH_A_WITNESS
     _proton_w, _proton_hash = load_and_hash_upstream(_PROTON_WITNESS)

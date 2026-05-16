@@ -58,30 +58,54 @@ from witness_base import (  # noqa: E402
     WitnessBuilder, load_and_hash_upstream,
 )
 from mass_formula_6term_mpfr_50dps import (  # noqa: E402
-    term_4_frobenius_mp, term_5_chirality_bw_mp,
+    term_4_frobenius_mp, f_Zdep_scale,
 )
+from bw_chirality_isotopes import (  # noqa: E402
+    B_bulk, B_Zdep, B_shell, pairing_sign,
+)
+from term5_v2_chirality import aK_v2  # noqa: E402
+from gb_filtration_jet_tracker import reduce_braid  # noqa: E402
 
 M_E_MEV = mp.mpf(str(_M_E_MEV_RAW))
 
 
-def _t5_cat_units_for(Z: int, N: int, knot_type: str) -> mp.mpf:
-    """T5 in cat-units (m_e-normalised).  T5(electron) = 0 by physics.
+_CANONICAL_BRAID = {
+    "neutron":  {"n": 3, "word": [1, -2, 1, -2, 1, -2]},
+    "electron": {"n": 2, "word": [1, 1, 1]},
+}
 
-    See :py:mod:`derive_m_p_hecke_full_tower_50dps._t5_cat_units_for`
-    for the full rationale (categorical for nucleons via q-integer
-    BW coefficients; A^(1/3), √A denominators encode "no nucleon
-    structure to act on" for non-nucleon particles).
-    """
-    if Z == 0 and N == 0:
+
+def _A_categorical(atom: str) -> int:
+    """Max filtration grade of GS normal form (see
+    derive_m_p_hecke_full_tower_50dps for the full rationale)."""
+    spec = _CANONICAL_BRAID[atom]
+    import io, contextlib
+    buf = io.StringIO()
+    with contextlib.redirect_stdout(buf):
+        r = reduce_braid(atom, spec["n"], spec["word"])
+    shape = r["filtration_shape"]
+    return max(shape.keys()) if shape else 0
+
+
+def _t5_cat_units_for(A: int, Z: int, N: int) -> mp.mpf:
+    """T5 in cat-units at categorical A.  See proton producer."""
+    if A == 0:
         return mp.mpf(0)
-    return term_5_chirality_bw_mp(Z, N, knot_type) / M_E_MEV
+    a_K = aK_v2(Z, N)
+    sign = pairing_sign(Z, N)
+    bulk = B_bulk(A, Z, N, sign)
+    zdep = B_Zdep(A, Z, N)
+    shell = B_shell(A, Z, N) if A >= 4 else mp.mpf(0)
+    return (a_K * bulk + f_Zdep_scale * zdep + shell) / M_E_MEV
 
 
 PER_GEN_WITNESS = HERE / "terms-2-3-atom-per-gen-mpfr-50dps.witness.json"
 OUT_PATH = HERE / "neutron-mass-full-tower-50dps.witness.json"
 
 
-def _sum_full_tower(per_gen_witness: dict, atom: str, A: int) -> dict:
+def _sum_full_tower(per_gen_witness: dict, atom: str, Z: int, N: int) -> dict:
+    """Sum T1+T2+T3+T4+T5 with categorical A (max GS filtration grade)."""
+    A = _A_categorical(atom)
     for r in per_gen_witness["data"]["results"]:
         if r.get("atom") != atom:
             continue
@@ -93,14 +117,19 @@ def _sum_full_tower(per_gen_witness: dict, atom: str, A: int) -> dict:
         t2 = mp.mpf(r["term2_single_50dps"])
         t3 = mp.mpf(r["term3_pair_50dps"])
         t4 = term_4_frobenius_mp(A)
+        t5_cat = _t5_cat_units_for(A, Z, N)
         return {
             "atom": atom,
-            "A": A,
+            "A_categorical_max_grade": A,
+            "A_derivation": "max filtration grade of GS normal form",
+            "Z": Z,
+            "N": N,
             "T1_descended_50dps": str(t1),
             "T2_single_50dps":    str(t2),
             "T3_pair_50dps":      str(t3),
             "T4_Frobenius_50dps": str(t4),
-            "m_hecke_50dps":      str(t1 + t2 + t3 + t4),
+            "T5_chirality_BW_50dps_cat_units": str(t5_cat),
+            "m_hecke_50dps":      str(t1 + t2 + t3 + t4 + t5_cat),
             "wedderburn_vols_full_50dps": [str(v) for v in vols],
         }
     raise KeyError(f"atom {atom!r} not found in per-gen witness")
@@ -108,10 +137,10 @@ def _sum_full_tower(per_gen_witness: dict, atom: str, A: int) -> dict:
 
 def main() -> int:
     per_gen_w, _ = load_and_hash_upstream(PER_GEN_WITNESS)
-    print(f"\n  MPFR @ {mp.mp.dps} dps  —  m_n_pred from full tower\n")
+    print(f"\n  MPFR @ {mp.mp.dps} dps  —  m_n_pred from full tower (A_categorical)\n")
 
-    n_data = _sum_full_tower(per_gen_w, "neutron",  A=1)
-    e_data = _sum_full_tower(per_gen_w, "electron", A=1)
+    n_data = _sum_full_tower(per_gen_w, "neutron",  Z=0, N=1)
+    e_data = _sum_full_tower(per_gen_w, "electron", Z=0, N=0)
 
     m_n_hecke = mp.mpf(n_data["m_hecke_50dps"])
     m_e_hecke = mp.mpf(e_data["m_hecke_50dps"])

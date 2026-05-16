@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-16T18:34:52.493261+00:00",
-  "commitSha": "8639d433de3ad564d0eb503fbdb7d5574500ce68",
+  "computedAt": "2026-05-16T22:09:15.169077+00:00",
+  "commitSha": "de51bfc1c9372780156e92561ccbc5aa0a2527d8",
   "assertions": [
     {
       "name": "m_n_within_2_percent",
-      "computed": "0.6296638680755250774019006821402080743021754797616",
+      "computed": "0.64107736271245867489684095005891133108598452070895",
       "expected": "0",
       "passed": false,
       "tolerance": 0.02
@@ -19,11 +19,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 19,
+  "durationMs": 23,
   "computation": "neutron-mass-full-tower-50dps",
   "scriptFile": "derive_m_n_hecke_full_tower_50dps.py",
-  "scriptHash": "6da40238d380",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "0f79615439f3",
+  "scriptCommitSha": "de51bfc1c9372780156e92561ccbc5aa0a2527d8",
   "description": "Full mass-endomorphism tower derivation of m_n at MPFR @ 50 dps. Sums T1 + T2 + T3 + T4 for the neutron and electron via the MPFR-native per-generator volumes from terms-2-3-atom-per-gen-mpfr-50dps.witness.json. m_n prediction in MeV computed as (m_n_hecke / m_e_hecke) × M_E_MEV. Three-cal discipline respected: only CAL-1 (M_E_MEV) and CAL-2 (q_0) consumed; no CODATA m_n injection. The residual (~-62.9 %) is the framework's actual prediction at this truncation — a real structural gap in the neutron-brane-tower formula (the udd quark content with σ⁻¹ pair under-counts the neutron's Wedderburn-weighted single-generator volume vs the proton's uud). Documented; not patched.",
   "contentBlock": "prop:mass-endomorphism-tower",
   "parameters": {
@@ -34,12 +34,16 @@
     "particles": {
       "neutron": {
         "atom": "neutron",
-        "A": 1,
+        "A_categorical_max_grade": 2,
+        "A_derivation": "max filtration grade of GS normal form",
+        "Z": 0,
+        "N": 1,
         "T1_descended_50dps": "0.69860079680904402981227683415118999032035194675018",
         "T2_single_50dps": "429527.01785857024837755284773663177171004125370635",
         "T3_pair_50dps": "686.87419121945869252678978992820094001413341019041",
-        "T4_Frobenius_50dps": "1.2761128463443181177567435067352497395009951716945",
-        "m_hecke_50dps": "430215.86676343286043222720654690085908978520846366",
+        "T4_Frobenius_50dps": "1.6362871034827517326799193655339867440321053551337",
+        "T5_chirality_BW_50dps_cat_units": "4.1907731474505720271944113268389195959283535915388",
+        "m_hecke_50dps": "430220.41771083744943786932413408649674638566792743",
         "wedderburn_vols_full_50dps": [
           "0.7194133097224181476211795122397627076378432411659",
           "0.97107015865274369644467729606208246103317407697938"
@@ -47,27 +51,31 @@
       },
       "electron": {
         "atom": "electron",
-        "A": 1,
+        "A_categorical_max_grade": 1,
+        "A_derivation": "max filtration grade of GS normal form",
+        "Z": 0,
+        "N": 0,
         "T1_descended_50dps": "0.59384900067050962477184280318482122091510198537029",
         "T2_single_50dps": "629.93541909592051016478259776448467353040033836442",
         "T3_pair_50dps": "0.0",
         "T4_Frobenius_50dps": "1.2761128463443181177567435067352497395009951716945",
-        "m_hecke_50dps": "631.80538094293533790731118407440474449081643552148",
+        "T5_chirality_BW_50dps_cat_units": "20.097875389447032754312442527739237585472881589362",
+        "m_hecke_50dps": "651.90325633238237066162362660214398207628931711085",
         "wedderburn_vols_full_50dps": [
           "0.59384900067050962477184280318482122091510198537029"
         ]
       }
     },
     "ratios": {
-      "m_n_over_m_e_50dps": "680.93099511333531611185822698395084191068707637649"
+      "m_n_over_m_e_50dps": "659.94518900130068227621145823947907610143622706443"
     },
     "predictions_MeV": {
-      "m_n_pred_50dps": "347.95502352536947753107763653766054706797708980696"
+      "m_n_pred_50dps": "337.23129863721619727742766513834265643480400552189"
     },
     "comparisons": {
       "m_n_codata_MeV": "939.56542052",
-      "rel_diff_n": "-0.6296638680755250774019006821402080743021754797616",
-      "rel_diff_n_ppm": "-629663.8680755250774019006821402080743021754797616"
+      "rel_diff_n": "-0.64107736271245867489684095005891133108598452070895",
+      "rel_diff_n_ppm": "-641077.36271245867489684095005891133108598452070895"
     },
     "upstream_witness_hashes": [
       {
