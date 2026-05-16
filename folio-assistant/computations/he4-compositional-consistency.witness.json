@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-16T14:45:10.253658+00:00",
-  "commitSha": "8a7609c3bd4b230e09f7438034928d04e17b1717",
+  "computedAt": "2026-05-16T14:49:24.467096+00:00",
+  "commitSha": "37325db8969d3c00e686e1c8d43052e35b1b8b68",
   "assertions": [
     {
       "name": "tau_M_compositions_differ_from_canonical",
@@ -13,27 +13,27 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 25,
+  "durationMs": 23,
   "computation": "he4-compositional-consistency",
   "scriptFile": "probe_he4_compositional_consistency.py",
-  "scriptHash": "7f38f366c589",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "e9adf7cc5dd3",
+  "scriptCommitSha": "37325db8969d3c00e686e1c8d43052e35b1b8b68",
   "description": "⁴He compositional consistency probe per F1 question 3 (integration audit 2026-05-15-three-pr-integration.md). Compares τ_M(⁴He canonical) against three disjoint Markov compositions (D⊕D, T⊕p, ³He⊕n).  Result: all four DIFFER by 50-300% — Markov disjoint product is not the right compositional notion for ⁴He, which requires INTER-COMPONENT INTERFACE generators (the canonical pppnnn ordering).",
   "auditOnly": "docs/audits/2026-05-15-three-pr-integration.md",
   "data": {
     "q0_50dps": "1.1099785955541805752815940796095093779932822799587",
     "tau_M_sub_atoms": {
-      "p": "1.06530622859238910393742116867",
-      "n": "0.923233297169583466690312434366",
-      "D": "0.388286471547712952467890090702",
-      "T": "0.104052118675526036883915992348",
-      "3He": "0.206540858562262452657876110607",
-      "4He_canonical": "0.05534834587669799216280708265"
+      "p": "1.0653062285923892551532775699680661193337632009792",
+      "n": "0.92323329716958364246376988091871375932688744507317",
+      "D": "0.38828647154771327851106592231656879987131358767193",
+      "T": "0.10405211867552565489795832743212275483532305732495",
+      "3He": "0.20654085856226262948910490901292677841811332568245",
+      "4He_canonical": "0.055348345876698048111387699964139541520594886816942"
     },
     "tau_M_compositions": {
-      "D⊕D": "0.15076638398697290016948504657019221508280148158513",
-      "T⊕p": "0.11084737012327233961357849541133380320112063851696",
-      "³He⊕n": "0.19068539785067415875481934100677991278919070871835"
+      "D⊕D": "0.15076638398697315336579367830666175569486609331634",
+      "T⊕p": "0.11084737012327194841588879603690565550971233387763",
+      "³He⊕n": "0.19068539785067435831569856057641785588001985275505"
     },
     "max_relative_difference_canonical_vs_composition": "2.44519",
     "consistent_at_1e_minus_3": false

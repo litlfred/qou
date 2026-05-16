@@ -72,10 +72,18 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 
 def eval_tau(Z: int, N: int, q0: mp.mpf) -> mp.mpf:
-    """tr_M(β_atom) at q_0 via existing symbolic Markov-peel path."""
+    """tr_M(β_atom) at q_0 via existing symbolic Markov-peel path.
+
+    Preserves precision throughout: q_0 is passed in as mpmath.mpf at
+    the global mp.mp.dps precision, substituted into sympy via a
+    sympy.Float at the same precision (no float-cast), and evaluated
+    at mp.mp.dps digits.  No precision is lost.
+    """
     qsym = sp.Symbol("q", positive=True)
     tau_sym = tr_M_atomic(Z, N)
-    val = mp.mpf(str(sp.N(tau_sym.subs(qsym, float(q0)), 30)))
+    # Convert mpmath q0 → sympy Float at current global precision
+    q0_sp = sp.Float(mp.nstr(q0, mp.mp.dps), mp.mp.dps)
+    val = mp.mpf(str(sp.N(tau_sym.subs(qsym, q0_sp), mp.mp.dps)))
     return val
 
 
