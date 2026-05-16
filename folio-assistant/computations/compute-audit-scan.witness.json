@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-16T02:28:10.094190+00:00",
-  "commitSha": "517372562fdab549ae0a267c7409464bcbdd1a1d",
+  "computedAt": "2026-05-16T02:33:55.547323+00:00",
+  "commitSha": "75ad916025cc1b103de2151e13873c5ac10d6403",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 6,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "d9aa432d54f9",
@@ -28,7 +28,7 @@
       "P16": 89,
       "P21": 24,
       "P30": 96,
-      "P31": 16
+      "P31": 13
     },
     "top_files": [
       {
@@ -1935,20 +1935,6 @@
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
-        "pattern": "P31",
-        "file": "probe_q_beta_operator_valued_N2.py",
-        "line": 59,
-        "snippet": "CODATA literal \"938.27208816\"",
-        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
-      },
-      {
-        "pattern": "P31",
-        "file": "probe_q_beta_operator_valued_N3.py",
-        "line": 46,
-        "snippet": "CODATA literal \"938.27208816\"",
-        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
-      },
-      {
         "pattern": "P15",
         "file": "probe_q_beta_residue_per_nucleon.py",
         "line": 58,
@@ -1975,13 +1961,6 @@
         "line": 147,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
-      },
-      {
-        "pattern": "P31",
-        "file": "probe_tau_M_four_anchors.py",
-        "line": 53,
-        "snippet": "CODATA literal \"938.27208816\"",
-        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
       {
         "pattern": "P16",

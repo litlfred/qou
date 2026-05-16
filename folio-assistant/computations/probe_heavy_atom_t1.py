@@ -53,15 +53,22 @@ import mpmath as mp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
-from q_parameter import Q as Q_0_FLOAT
-from mass_at_3A_proper import (
+from q_parameter import Q as Q_0_FLOAT  # noqa: E402
+from mass_at_3A_proper import (  # noqa: E402
     _SEMINORMAL_DISK,
     atom_braid_word_3A,
     chi_lambda_of_word,
 )
-from hecke_characters import build_seminormal_matrices
-from wedderburn_jones_markov import y_lambda_at
-from witness_base import WitnessBuilder
+from hecke_characters import build_seminormal_matrices  # noqa: E402
+from wedderburn_jones_markov import y_lambda_at  # noqa: E402
+from witness_base import WitnessBuilder  # noqa: E402
+
+# Standalone scientific script — set 50 dps globally per repo
+# convention for documented one-shot compute. The numerical contraction
+# loop below uses float64 for matrix arithmetic (Hoefsmit matrices are
+# numpy arrays); the witness records the float64-precision result
+# rounded to 17 sig figs (NOT 50 dps).
+mp.mp.dps = 50
 
 _SEMINORMAL_DISK.mkdir(parents=True, exist_ok=True)
 
@@ -150,7 +157,7 @@ def compute_t1(label: str, Z: int, N: int, q0: float) -> dict:
         "n_strands_3A": n,
         "word_length": len(word),
         "tr_M_at_q0": total,
-        "tr_M_at_q0_50dps": mp.nstr(mp.mpf(repr(total)), 50),
+        "tr_M_at_q0_float64_17sf": mp.nstr(mp.mpf(repr(total)), 17),
         "n_partitions_total": len(sorted_parts),
         "n_partitions_used": len(rows),
         "y_threshold": Y_THRESHOLD,

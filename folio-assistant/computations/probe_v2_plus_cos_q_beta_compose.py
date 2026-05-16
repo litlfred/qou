@@ -54,14 +54,17 @@ import mpmath as mp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
-from witness_base import WitnessBuilder
-from codata_constants import M_E_MEV, M_N_MEV_VALIDATION, M_P_MEV_VALIDATION
+from witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import (  # noqa: E402
+    M_E_MEV, M_N_MEV_VALIDATION, M_P_MEV_VALIDATION,
+)
+from qbeta_physics import q_0_at_50dps  # noqa: E402
+
+mp.mp.dps = 50
 
 
 def main() -> int:
-    mp.mp.dps = 50
-
-    q = mp.mpf("1.1099785955541805752815940796095093779932822799587")
+    q = q_0_at_50dps()
     h = q - 1 / q
     hbar_q = (q - 1) / q
     z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
