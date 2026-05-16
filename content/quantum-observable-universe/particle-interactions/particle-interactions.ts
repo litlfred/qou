@@ -52,6 +52,7 @@ export default chapter({
         "lp-dual-stability",
         "n-equals-1-vacuous-magic",
         "operator-selection-lp",
+        "q-beta-cos-resummation",
       ],
     }),
 

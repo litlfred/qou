@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-16T03:09:30.575522+00:00",
-  "commitSha": "865a56fcdccc0c9d12f8013584ece29384068640",
+  "computedAt": "2026-05-16T04:02:59.739034+00:00",
+  "commitSha": "50024712c50a92df3c6b06b5bf0fa164662d0851",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -572,11 +572,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 2,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "875916a587c227572f421c22053ad81371976ccc",
+  "scriptCommitSha": "c0234c3b4dd76784cbf72cf41e1db3157c615d0c",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
   "data": {
@@ -2240,6 +2240,7 @@
         "lr-fusion-self-conj-test.witness.json",
         "m-baryon-volume-form.witness.json",
         "m-n-difference-formula.witness.json",
+        "m2-codata-vs-cos-q-beta.witness.json",
         "magic-shell-empirical-instantiation.witness.json",
         "markov-free-energy-qvalues.witness.json",
         "markov-peel-atomic-tr-m.witness.json",

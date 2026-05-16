@@ -910,9 +910,52 @@ M_E_MEV_DERIV            = M_E_MEV                   # CODATA electron rest mass
 ALPHA_BORROMEAN_MEV      = 3.74446989    # m_e · 8G  (`prop:binding-scale-catalan`)
 
 
+def q_beta_substrate_cos_tightened_MeV() -> float:
+    """Substrate-derived Q_β closed form with cos((z−1)·h/2) c_2 tightening.
+
+    Form A baseline: Q_A = m_e · |q²−2q−1| · (q+1) / (2q³)
+    Plus c_2 Kashiwara correction: Q_A · cos((z−1)·h/2)
+    where z = 1/(q½+q⁻½), h = q − q⁻¹.
+
+    Residual against CODATA Q_β: ~306 ppm (5.49× tighter than bare
+    Form A's 1677.5 ppm; PR #655, verified by
+    `probe_v2_plus_cos_q_beta_compose.py` at 50 dps).
+
+    Per PR #657's high-precision finding: higher c_k corrections are
+    at CODATA's ~400 ppb noise floor — empirically underdetermined.
+    Closing the remaining 300× to 1 ppb requires CODATA-2027 or
+    independent route (lattice QCD, EW Fermi). The c_2 tightening
+    here is the empirically-solid substrate-derived Q_β.
+    """
+    q = mp.mpf(repr(Q0_FLOAT))
+    z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+    h = q - 1 / q
+    Q_A = mp.mpf(repr(M_E_MEV)) * mp.fabs(q ** 2 - 2 * q - 1) * (q + 1) / (2 * q ** 3)
+    return float(Q_A * mp.cos((z - 1) * h / 2))
+
+
+def q_beta_for_source(source: str) -> float:
+    """Q_β selector: 'codata' (default) or 'form_a_cos' (substrate-derived).
+
+    Choose `'form_a_cos'` to feed the substrate-derived Q_β
+    (cos-tightened c_2 only) into the calibration as
+    `E_0_beta_MeV`; useful for assessing the substrate-only mass
+    chain free of CODATA Q_β input. The mass-table residuals
+    inherit the 306 ppm Q_β residual.
+    """
+    if source == "codata":
+        return E_0_BETA_DECAY_MEV_DERIV
+    if source == "form_a_cos":
+        return q_beta_substrate_cos_tightened_MeV()
+    raise ValueError(
+        f"unknown q_beta_source {source!r}; expected 'codata' or 'form_a_cos'"
+    )
+
+
 def assemble_per_derivation_weights(Z: int, N: int,
                                       tower_mode: str = "li2q",
-                                      term5_mode: str = "multiplicative_on_t1") -> dict:
+                                      term5_mode: str = "multiplicative_on_t1",
+                                      q_beta_source: str = "codata") -> dict:
     """Build atomic mass per the derivation-fixed weights (no proton fit).
 
     For each isotope, evaluates both the bound (`include_inter=True`)
@@ -976,10 +1019,11 @@ def assemble_per_derivation_weights(Z: int, N: int,
     t6_f = free_terms["term6_cyclotomic_tail_MeV"]
 
     # Per-term binding contributions (each in MeV).
-    binding_T1  = E_0_BETA_DECAY_MEV_DERIV * (t1_f - t1_a)
+    E_0_beta_local = q_beta_for_source(q_beta_source)
+    binding_T1  = E_0_beta_local * (t1_f - t1_a)
     binding_T23 = ALPHA_BORROMEAN_MEV * ((t2_a + t3_a) - (t2_f + t3_f))
     binding_T4  = M_E_MEV_DERIV * (t4_a - t4_f)
-    binding_T5  = E_0_BETA_DECAY_MEV_DERIV * (aK_a - 1.0) * t1_a
+    binding_T5  = E_0_beta_local * (aK_a - 1.0) * t1_a
     binding_T6  = t6_a - t6_f
 
     B_pred = (binding_T1 + binding_T23 + binding_T4
@@ -999,7 +1043,8 @@ def assemble_per_derivation_weights(Z: int, N: int,
         "tower_mode":      tower_mode,
         "term5_mode":      term5_mode,
         "weights_used": {
-            "E_0_beta_MeV": E_0_BETA_DECAY_MEV_DERIV,
+            "E_0_beta_MeV": E_0_beta_local,
+            "q_beta_source": q_beta_source,
             "alpha_borromean_MeV": ALPHA_BORROMEAN_MEV,
             "m_e_MeV": M_E_MEV_DERIV,
         },

@@ -30,9 +30,11 @@ export default proposition({
     "1ppb-roadmap",
   ],
   computation: {
+    engine: "python+mpmath",
+    script: "folio-assistant/computations/probe_q_beta_operator_valued_N2.py",
     witness: [
-      "../../folio-assistant/computations/q-beta-per-irrep-cos.witness.json",
-      "../../folio-assistant/computations/q-beta-three-irrep-closed-form.witness.json",
+      "folio-assistant/computations/q-beta-operator-valued-N2.witness.json",
     ],
+    status: "experimental",
   },
 });
