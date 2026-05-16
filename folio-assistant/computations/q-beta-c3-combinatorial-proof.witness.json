@@ -1,0 +1,40 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-16T02:31:39.112117+00:00",
+  "commitSha": "9c152bfa64959c1d31cecaaba45a40664b9514aa",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "q-beta-c3-combinatorial-proof",
+  "scriptFile": "probe_q_beta_c3_combinatorial_proof.py",
+  "scriptHash": "b8e41b8b8002",
+  "scriptCommitSha": "unknown",
+  "description": "Combinatorial-proof attempt: symbolic expansion of Δτ_M(q) = τ_M(β_n) - τ_M(β_p) around q=1, extracting the order-(q-1)^6 coefficient and comparing to the Story B structural prediction c_6 = -2 · b³ · (substrate factor). Discharges the open combinatorial step axiomatised by ThreeFoldMarkovHopfExtraction in prop:q-beta-c3-hopf-three-fold-markov.lean.",
+  "auditOnly": "PR #657 Track C follow-up. Tests the Hopf-link identification at the symbolic-expansion level.",
+  "data": {
+    "delta_tau_M_symbolic_complexity_chars": 3179,
+    "expansion_order": 6,
+    "epsilon_coefficients": {
+      "0": "0",
+      "1": "1/4",
+      "2": "7/8",
+      "3": "77/16",
+      "4": "15/32",
+      "5": "141/64",
+      "6": "137/64"
+    },
+    "epsilon_coefficients_floats": {
+      "0": 0.0,
+      "1": 0.25,
+      "2": 0.875,
+      "3": 4.8125,
+      "4": 0.46875,
+      "5": 2.203125,
+      "6": 2.140625
+    },
+    "b_at_q_eq_1_squared": "3/4",
+    "b_cubed_at_q_eq_1": "3*sqrt(3)/8",
+    "story_B_prediction": "c_6 = -2 · b³(q=1) · normalisation"
+  }
+}
