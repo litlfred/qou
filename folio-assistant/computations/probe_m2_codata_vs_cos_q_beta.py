@@ -34,6 +34,22 @@ from paper_six_term_isotope_sweep import (  # noqa: E402
     assemble_per_derivation_weights,
     q_beta_for_source,
 )
+from codata_constants import (  # noqa: E402
+    M_E_MEV, M_P_MEV_VALIDATION, M_N_MEV_VALIDATION,
+)
+
+
+# CODATA atomic masses (MeV) for {p, n, D, T, ³He, ⁴He}.
+# Use validation aliases — these are NOT used as anchors in the
+# prediction chain, only for residual reporting.
+M_CODATA_MEV = {
+    "p":   float(M_P_MEV_VALIDATION),
+    "n":   float(M_N_MEV_VALIDATION),
+    "D":   1876.123956,    # AME2020 deuteron
+    "T":   2809.432098,    # AME2020 tritium
+    "3He": 2809.413524,    # AME2020 helium-3
+    "4He": 3728.401311,    # AME2020 helium-4
+}
 
 
 def main() -> int:
@@ -81,10 +97,10 @@ def main() -> int:
             })
             continue
 
-        M_codata = r_codata.get("M_codata_MeV") or r_codata.get("M_codata")
-        M_pred_c = r_codata.get("M_predicted_MeV") or r_codata.get("M_pred_MeV")
-        M_pred_cos = r_cos.get("M_predicted_MeV") or r_cos.get("M_pred_MeV")
-        if M_codata is None or M_pred_c is None or M_pred_cos is None:
+        M_codata = M_CODATA_MEV.get(label)
+        M_pred_c = float(r_codata.get("M_predicted_MeV", 0.0))
+        M_pred_cos = float(r_cos.get("M_predicted_MeV", 0.0))
+        if M_codata is None:
             # Some fields not present; fall back to total_binding_MeV
             B_c = r_codata.get("total_binding_MeV", 0.0)
             B_cos = r_cos.get("total_binding_MeV", 0.0)
