@@ -72,22 +72,22 @@ class HasPartitionFunction (Λ : Type u) (R : Type v) [Field R] [LT R] where
 variable [Field R] [LinearOrder R] [IsStrictOrderedRing R]
 variable [QDimension Λ R] [HasPartitionFunction Λ R]
 
-/-- **q-Plancherel measure**: `P_q(λ) = d_q(λ)² / Z_q(|λ|)`.
+/-- **q-Plancherel measure**: `P_q(lam) = d_q(lam)² / Z_q(|lam|)`.
 
     Stated as a function `Λ → ℕ → R` where the second argument is
-    the level `k = |λ|`. The actual constraint that the input
+    the level `k = |lam|`. The actual constraint that the input
     partition has size `k` is left to the caller. -/
 def measure (lam : Λ) (k : ℕ) : R :=
   (QDimension.dq lam : R)^2 / HasPartitionFunction.Z (Λ := Λ) k
 
 /-- **Positivity of the q-Plancherel measure**: every partition has
-    non-negative weight (zero only when `d_q(λ) = 0`). -/
+    non-negative weight (zero only when `d_q(lam) = 0`). -/
 theorem measure_nonneg (lam : Λ) (k : ℕ) :
     0 ≤ measure (R := R) (Λ := Λ) lam k := by
   unfold measure
   exact div_nonneg (sq_nonneg _) (le_of_lt (HasPartitionFunction.Z_pos k))
 
-/-- **Vanishing on null partitions**: if `d_q(λ) = 0`, then
+/-- **Vanishing on null partitions**: if `d_q(lam) = 0`, then
     `measure lam k = 0`. -/
 theorem measure_eq_zero_of_dq_zero (lam : Λ) (k : ℕ)
     (hdq : (QDimension.dq lam : R) = 0) :
@@ -97,8 +97,8 @@ theorem measure_eq_zero_of_dq_zero (lam : Λ) (k : ℕ)
   simp
 
 /-- **Measure scales as `d_q²`**: the q-Plancherel measure is
-    `d_q(λ)²` divided by the partition function. Specifically,
-    `Z_q(k) · measure lam k = d_q(λ)²`. -/
+    `d_q(lam)²` divided by the partition function. Specifically,
+    `Z_q(k) · measure lam k = d_q(lam)²`. -/
 theorem measure_mul_partitionFunction (lam : Λ) (k : ℕ) :
     HasPartitionFunction.Z (Λ := Λ) k * measure (R := R) (Λ := Λ) lam k
       = (QDimension.dq lam : R) ^ 2 := by

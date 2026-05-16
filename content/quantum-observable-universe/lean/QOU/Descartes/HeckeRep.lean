@@ -116,11 +116,13 @@ theorem HeckeRep.genInv_mul_gen (ρ : HeckeRep n d) (i : Fin (n - 1)) :
 -- Ref: [iwahori1964] https://doi.org/10.2969/jmsj/01030215
 theorem HeckeRep.genInv_hecke (ρ : HeckeRep n d) (i : Fin (n - 1)) :
     ρ.genInv i * ρ.genInv i = (- HA_t) • ρ.genInv i + 1 := by
-  -- The Hecke quadratic relation for σ⁻¹: `(σ⁻¹)² = −HA · σ⁻¹ + 1`,
-  -- equivalent to `(σ⁻¹ − (−q⁻¹))(σ⁻¹ − q) = 0`.  Mechanical proof
-  -- needs `H := HA_t • 1` as a set, precomputing `H * σ = σ * H`
-  -- and `H * H = (HA_t * HA_t) • 1`, and a `linear_combination`
-  -- against `hecke_rel`.  See the diagnostic notes above.
+  -- The Hecke quadratic relation for σ⁻¹: `(σ⁻¹)² = −(q − q⁻¹) · σ⁻¹ + 1`,
+  -- equivalent to `(σ⁻¹ + q)(σ⁻¹ − q⁻¹) = 0` — obtained from
+  -- `σ² = (q − q⁻¹)σ + 1` by multiplying both sides by `σ⁻²`.
+  -- Mechanical proof needs `H := HA_t • 1` as a set, precomputing
+  -- `H * σ = σ * H` and `H * H = (HA_t * HA_t) • 1`, and a
+  -- `linear_combination` against `hecke_rel`.  See the diagnostic
+  -- notes above.
   -- Ref: [iwahori1964] https://doi.org/10.2969/jmsj/01030215
   sorry
 
