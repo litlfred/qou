@@ -58,6 +58,8 @@ if str(HERE) not in sys.path:
 
 from q_parameter import q_at  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from hecke_core_symbolic import _ground_state_ordering  # noqa: E402
+from alpha_em_shift_chain import q_integer as q_int_mp  # noqa: E402
 
 
 # ──────────────────────────────────────────────────────────────────────
@@ -150,21 +152,6 @@ def hm_mp(nf: list, c, d, gen: int, h):
     return r
 
 
-def _ground_state_ordering(Z: int, N: int) -> list:
-    """Match hecke_core.build_atom_nf — interleaved p/n ordering."""
-    A = Z + N
-    ordering = []
-    pc, nc = 0, 0
-    for k in range(A):
-        if (k % 2 == 0 and pc < Z) or nc >= N:
-            ordering.append('p')
-            pc += 1
-        else:
-            ordering.append('n')
-            nc += 1
-    return ordering
-
-
 def build_atom_nf_mp(Z: int, N: int, dps: int = 50) -> list:
     """Build atom NF in mpmath at requested precision.
 
@@ -218,8 +205,11 @@ def build_atom_nf_mp(Z: int, N: int, dps: int = 50) -> list:
         for _ in range(Z):
             nf = hm_mp(nf, one, -h, 1, h)
 
-    # Round to requested dps for emission
-    return [+c for c in nf]
+        # Round to requested dps inside the workdps block — outside,
+        # unary `+` would round to the GLOBAL mp.dps (default 15) and
+        # silently truncate the 50-dps result. Per Gemini review on PR #658.
+        with mp.workdps(dps):
+            return [+c for c in nf]
 
 
 # ──────────────────────────────────────────────────────────────────────
@@ -233,7 +223,9 @@ def tr_m_weights_mp(dps: int = 50) -> list:
         sq = mp.sqrt(q0)
         z = mp.mpf(1) / (sq + mp.mpf(1) / sq)
         out = [mp.mpf(1), z, z, z ** 2, z ** 2, z ** 3]
-    return [+v for v in out]
+        # Round inside the workdps block (Gemini review on PR #658).
+        with mp.workdps(dps):
+            return [+v for v in out]
 
 
 def gram_mp(dps: int = 50) -> mp.matrix:
@@ -274,7 +266,9 @@ def primal_to_dual(coeffs_primal: Sequence, dps: int = 50) -> list:
         G = gram_mp(dps + 5)
         c_vec = mp.matrix([mp.mpf(c) for c in coeffs_primal])
         dual = G ** -1 * c_vec
-    return [+dual[i] for i in range(6)]
+        # Round inside the workdps block (Gemini review on PR #658).
+        with mp.workdps(dps):
+            return [+dual[i] for i in range(6)]
 
 
 # ──────────────────────────────────────────────────────────────────────
@@ -325,8 +319,8 @@ def _scipy_discover_active_set(t_mp, G_mp, n_target_mp,
     return sorted(i for i, y in enumerate(y_star_f) if y > dual_tol)
 
 
-def solve_operator_selection_lp_mp(coeffs_primal_mp, *, dps: int = 50,
-                                   M_bound_mp=None) -> LpMpResult:
+def solve_operator_selection_lp_mp(coeffs_primal_mp, *,
+                                   dps: int = 50) -> LpMpResult:
     """Solve the operator-selection LP for these primal NF coefficients.
 
     Per prop:operator-selection-lp:
@@ -389,9 +383,21 @@ def solve_operator_selection_lp_mp(coeffs_primal_mp, *, dps: int = 50,
         # equations for the over-determined case: A^T A · sol = A^T b.
         AtA = A.T * A
         Atb = A.T * b
-        sol = mp.lu_solve(AtA, Atb)
-        y0 = sol[0, 0]
-        y_active = [sol[1 + k, 0] for k in range(d)]
+        try:
+            sol = mp.lu_solve(AtA, Atb)
+            y0 = sol[0, 0]
+            y_active = [sol[1 + k, 0] for k in range(d)]
+        except Exception:
+            return LpMpResult(
+                x_star=[mp.mpf('nan')] * 6,
+                y0_star=mp.mpf('nan'),
+                y_star=[mp.mpf('nan')] * 6,
+                active_set=active,
+                primal_obj=mp.mpf('nan'),
+                dual_obj=mp.mpf('nan'),
+                duality_gap=mp.mpf('nan'),
+                feasible=False,
+            )
 
         y_star = [mp.mpf(0)] * 6
         for k, i in enumerate(active):
@@ -552,23 +558,20 @@ def verify_alpha_em_chain(dps: int = 50) -> dict:
     """
     with mp.workdps(dps + 5):
         q0 = q_at(dps + 5)
-
-        def q_int_mp(n: int):
-            return (q0 ** n - q0 ** (-n)) / (q0 - 1 / q0)
-
-        inv_alpha = q0 * q_int_mp(9) * q_int_mp(10)
+        inv_alpha = q0 * q_int_mp(q0, 9) * q_int_mp(q0, 10)
         alpha = 1 / inv_alpha
         codata_inv = mp.mpf("137.035999084")
         rel_err = abs(inv_alpha - codata_inv) / codata_inv
 
-    return {
-        "q0_50dps": mp.nstr(q0, 50, strip_zeros=False),
-        "alpha_em_inv_chain_50dps": mp.nstr(inv_alpha, 50, strip_zeros=False),
-        "alpha_em_chain_50dps": mp.nstr(alpha, 50, strip_zeros=False),
-        "alpha_em_inv_codata": mp.nstr(codata_inv, 20),
-        "relative_error": mp.nstr(rel_err, 6),
-        "agrees_within_1e_minus_2": bool(rel_err < mp.mpf("1e-2")),
-    }
+        # Format inside the workdps block so nstr sees full precision.
+        return {
+            "q0_50dps": mp.nstr(q0, 50, strip_zeros=False),
+            "alpha_em_inv_chain_50dps": mp.nstr(inv_alpha, 50, strip_zeros=False),
+            "alpha_em_chain_50dps": mp.nstr(alpha, 50, strip_zeros=False),
+            "alpha_em_inv_codata": mp.nstr(codata_inv, 20),
+            "relative_error": mp.nstr(rel_err, 6),
+            "agrees_within_1e_minus_2": bool(rel_err < mp.mpf("1e-2")),
+        }
 
 
 # ──────────────────────────────────────────────────────────────────────
