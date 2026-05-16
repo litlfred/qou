@@ -1,4 +1,5 @@
-**Proposition (Macdonald hook-content telescope).**
+**Proposition (Macdonald hook-content telescope, conditional on
+[`StanleyHookTelescope`](#prop:macdonald-hook-telescope)).**
 *Let $Q = q^2$ and $X = q\,z\,/\,(1 - Q + q\,z)$ be the Wenzl-bridge
 substitution of
 [`prop:y-lambda-closed-form-wenzl-bridge`](#prop:y-lambda-closed-form-wenzl-bridge),
@@ -33,6 +34,20 @@ $$
         \frac{1 - X \cdot Q^{c(x)}}{1 - Q^{h(x)}}.
   \;}
 $$
+
+## Conditional-class formalisation
+
+The Lean module axiomatises the principal-specialisation identity as
+the class `StanleyHookTelescope`; the proposition's theorem
+`macdonald_hook_telescope` carries this class as an explicit
+`[Instance]` hypothesis and is discharged by `telescope_holds`.
+This follows CLAUDE.md §3b-cond (conditional-on-class): the Lean
+proof has **no `sorry`**, but the substantive content is the class
+instance — discharged downstream from either the full Schur /
+principal-specialisation infrastructure (when that lands in
+Mathlib) or from the symbolic verification at small $n$ in
+`y_lambda_macdonald_telescope.py` (cells $n = 0, \ldots, 8$
+verified bit-exactly in `sympy`).
 
 ## Why this is the right shortcut
 

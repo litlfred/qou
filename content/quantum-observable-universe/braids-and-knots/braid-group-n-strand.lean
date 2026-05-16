@@ -151,27 +151,38 @@ def Braid2.toBraidWord : Braid2 → BraidWord 2
   | (Int.ofNat 0) => []
   | (Int.ofNat (k+1)) =>
       ⟨(0 : Fin 1), true⟩ :: Braid2.toBraidWord (Int.ofNat k)
-  | (Int.negSucc k) =>
-      ⟨(0 : Fin 1), false⟩ :: Braid2.toBraidWord (Int.negSucc (k - 1))
-  decreasing_by all_goals { simp_wf; omega }
+  | (Int.negSucc 0) => [⟨(0 : Fin 1), false⟩]
+  | (Int.negSucc (k+1)) =>
+      ⟨(0 : Fin 1), false⟩ :: Braid2.toBraidWord (Int.negSucc k)
 
 -- Ref: [manuscript] rem:braid-group-n-strand §"specialisations"
 -- Ref: [jones1985] doi:10.2307/1971403 §"Markov braid closure"
 /-- Writhe of `Braid2.toBraidWord n` equals `n` itself.
 
-    Tractable structural induction on `n.natAbs`; deferred to the
-    per-instance follow-up listed in the module's "Open R&D" section. -/
+    Proof by structural recursion on `n : ℤ`, mirroring the recursion
+    in `toBraidWord`. Each positive crossing contributes `+1` and
+    each negative contributes `−1` to the writhe sum. -/
 theorem Braid2_writhe_eq (n : Braid2) :
     (Braid2.toBraidWord n).writhe = n := by
-  -- Each cons of a positive crossing adds +1; each cons of an
-  -- inverse adds −1.  Induction on `n.natAbs` gives the result.
-  sorry
+  induction n with
+  | ofNat k =>
+    induction k with
+    | zero => simp [Braid2.toBraidWord]
+    | succ k ih =>
+      simp [Braid2.toBraidWord, BraidWord.writhe_cons, ih]
+      ring
+  | negSucc k =>
+    induction k with
+    | zero =>
+      simp [Braid2.toBraidWord, BraidWord.writhe_cons, BraidWord.writhe_nil]
+    | succ k ih =>
+      simp [Braid2.toBraidWord, BraidWord.writhe_cons, ih]
+      ring
 
 /-! ## Open R&D
 
 This file is the **n-strand scaffolding**. Concrete content to add:
 
-  • Discharge `Braid2_writhe_eq` (structural induction on |n|)
   • Define `BraidWord.toBraid3 : ...` mapping into the typed
     `TypedBraidWord3` from `rem:typed-b3-sub-braid-extraction`
   • Define `closureN_eq_closure2` linking `closureN @ n=2` to

@@ -46,7 +46,6 @@ auto-specialise.
 
 ## Open R&D
 
-- Discharge `Braid2_writhe_eq` (structural induction on $|n|$, currently `sorry`).
 - Define `BraidWord.toBraid3 : BraidWord 3 → TypedBraidWord3`.
 - Define `closureN_eq_closure2` linking the opaque `closureN` at $n=2$
   to the concrete `closure2` (1-line `rfl`-style identification once
@@ -60,5 +59,5 @@ auto-specialise.
 classes; substantive theorems (specific closures, sub-braid
 extractions at higher $n$) plug in as separate per-$n$ blocks.
 
-The single `sorry` in `Braid2_writhe_eq` is tractable structural
-induction and is queued for the immediate follow-up.
+`Braid2_writhe_eq` is **closed** by structural recursion mirroring
+the `toBraidWord` construction — no `sorry`s remain in this module.
