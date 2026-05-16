@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-16T03:09:30.426492+00:00",
-  "commitSha": "865a56fcdccc0c9d12f8013584ece29384068640",
+  "computedAt": "2026-05-16T03:53:51.377185+00:00",
+  "commitSha": "6f9f1cb57f14289c94ad323803a636a08b6448ae",
   "assertions": [],
   "allPassed": true,
   "durationMs": 7,
@@ -13,7 +13,7 @@
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 438,
+    "files_scanned": 439,
     "patterns": [
       "P15",
       "P16",
@@ -28,7 +28,7 @@
       "P16": 89,
       "P21": 24,
       "P30": 96,
-      "P31": 21
+      "P31": 20
     },
     "top_files": [
       {
@@ -1923,14 +1923,14 @@
       {
         "pattern": "P15",
         "file": "probe_per_orientation_skein.py",
-        "line": 84,
+        "line": 86,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",
         "file": "probe_per_orientation_skein.py",
-        "line": 93,
+        "line": 95,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
@@ -1951,23 +1951,16 @@
       {
         "pattern": "P15",
         "file": "probe_q_beta_cos_sweep_and_three_irrep.py",
-        "line": 137,
+        "line": 141,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",
         "file": "probe_q_beta_cos_sweep_and_three_irrep.py",
-        "line": 139,
+        "line": 143,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P31",
-        "file": "probe_q_beta_cos_sweep_and_three_irrep.py",
-        "line": 80,
-        "snippet": "CODATA literal \"938.27208816\"",
-        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
       {
         "pattern": "P31",
