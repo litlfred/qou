@@ -60,6 +60,7 @@ from q_parameter import Q as Q0
 from hecke_characters import partitions_of, standard_young_tableaux
 from mass_at_3A_proper import atom_braid_word_3A
 from canonical_tower import eigen_multiplicities
+from partition_utils import hook_lengths_cached  # noqa: E402
 
 
 # Symbolic q
@@ -81,18 +82,6 @@ def q_fact_sym(n: int):
     if n == 0:
         return sp.Integer(1)
     return q_fact_sym(n - 1) * q_int_sym(n)
-
-
-@lru_cache(maxsize=None)
-def hook_lengths_cached(shape: tuple[int, ...]) -> tuple[int, ...]:
-    hooks: list[int] = []
-    for i, rl in enumerate(shape):
-        for j in range(rl):
-            arm = rl - j - 1
-            leg = sum(1 for r2 in range(i + 1, len(shape))
-                      if shape[r2] > j)
-            hooks.append(arm + leg + 1)
-    return tuple(hooks)
 
 
 @lru_cache(maxsize=None)

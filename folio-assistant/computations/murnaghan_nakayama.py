@@ -26,7 +26,12 @@ References:
   [macdonald1979] Symmetric Functions and Hall Polynomials, Ch I §7.
 """
 import math
+import sys
 from functools import lru_cache
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent))
+from partition_utils import hook_lengths  # noqa: E402
 
 
 def partitions_of(n):
@@ -39,24 +44,6 @@ def partitions_of(n):
             for tail in _gen(n - k, k):
                 yield (k,) + tail
     return list(_gen(n, n))
-
-
-def hook_lengths(partition):
-    """Hook lengths h_{(i,j)} = arm + leg + 1 for each cell."""
-    if not partition:
-        return []
-    k = len(partition)
-    conj = [0] * max(partition)
-    for part in partition:
-        for j in range(part):
-            conj[j] += 1
-    hooks = []
-    for i, row_len in enumerate(partition):
-        for j in range(row_len):
-            arm = row_len - 1 - j
-            leg = conj[j] - 1 - i
-            hooks.append(arm + leg + 1)
-    return hooks
 
 
 def dim_specht(partition):

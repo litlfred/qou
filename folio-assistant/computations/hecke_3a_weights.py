@@ -39,6 +39,7 @@ from typing import Iterable
 
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as Q0, Q_INV as QI, HA as HA_VAL  # noqa: F401
+from partition_utils import hook_lengths  # noqa: E402
 
 
 # ── Partition generation ──────────────────────────────────────────────
@@ -103,17 +104,6 @@ def q_fact(n: int) -> float:
     r = q_fact(n - 1) * q_int(n)
     _QFAC_CACHE[n] = r
     return r
-
-
-def hook_lengths(shape: tuple[int, ...]) -> list[int]:
-    """All hook lengths of a partition."""
-    hooks: list[int] = []
-    for i, rl in enumerate(shape):
-        for j in range(rl):
-            arm = rl - j - 1
-            leg = sum(1 for r2 in range(i + 1, len(shape)) if shape[r2] > j)
-            hooks.append(arm + leg + 1)
-    return hooks
 
 
 def classical_dim(shape: tuple[int, ...]) -> int:

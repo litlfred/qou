@@ -45,6 +45,7 @@ import mpmath as mp
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from partition_utils import hook_lengths  # noqa: E402
 
 mp.mp.dps = 50  # 50-digit precision throughout
 
@@ -72,21 +73,6 @@ def cell_contents(shape):
     for r, length in enumerate(shape):
         for c in range(length):
             out.append(c - r)
-    return out
-
-
-def hook_lengths(shape):
-    rows = list(shape)
-    cols_count = [0] * (rows[0] if rows else 0)
-    for length in rows:
-        for c in range(length):
-            cols_count[c] += 1
-    out = []
-    for r, length in enumerate(rows):
-        for c in range(length):
-            arm = length - c - 1
-            leg = cols_count[c] - r - 1
-            out.append(arm + leg + 1)
     return out
 
 

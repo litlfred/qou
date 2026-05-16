@@ -26,6 +26,9 @@ from pathlib import Path
 
 import sympy as sp
 
+sys.path.insert(0, str(Path(__file__).parent))
+from partition_utils import hook_lengths  # noqa: E402
+
 
 def partitions_of(n: int) -> list[tuple[int, ...]]:
     if n == 0:
@@ -41,21 +44,6 @@ def partitions_of(n: int) -> list[tuple[int, ...]]:
 
     rec(n, n, [])
     return result
-
-
-def hook_lengths(partition: tuple[int, ...]) -> list[int]:
-    """Hook-length sequence for cells of λ in row-major order."""
-    rows = len(partition)
-    cols = max(partition) if rows else 0
-    transpose = [
-        sum(1 for r in range(rows) if partition[r] > c)
-        for c in range(cols)
-    ]
-    return [
-        (partition[i] - j - 1) + (transpose[j] - i - 1) + 1
-        for i in range(rows)
-        for j in range(partition[i])
-    ]
 
 
 def conjugate(partition: tuple[int, ...]) -> tuple[int, ...]:

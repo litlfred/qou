@@ -39,6 +39,7 @@ from itertools import combinations
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as q0, Q_INV as qi0, HA as h_val, LN_Q
 from experimental_constants import M_E_MEV, Q_TRITIUM_MEV, Q_NEUTRON_MEV
+from partition_utils import hook_lengths  # noqa: E402
 
 z = 1.0 / (q0**0.5 + q0**(-0.5))
 
@@ -231,16 +232,8 @@ def two_row_partitions(n):
 def hook_length_dim(partition):
     """Dimension of irrep via hook-length formula."""
     n = sum(partition)
-    # Build the Young diagram and compute hooks
-    hooks = []
-    for r in range(len(partition)):
-        for c in range(partition[r]):
-            # Hook length = arm + leg + 1
-            arm = partition[r] - c - 1
-            leg = sum(1 for rr in range(r+1, len(partition)) if partition[rr] > c)
-            hooks.append(arm + leg + 1)
     dim = math.factorial(n)
-    for h in hooks:
+    for h in hook_lengths(partition):
         dim //= h
     return dim
 

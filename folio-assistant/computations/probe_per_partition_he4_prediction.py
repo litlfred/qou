@@ -50,6 +50,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 from witness_base import WitnessBuilder  # noqa: E402
+from partition_utils import hook_length  # noqa: E402
 
 
 def partitions(n: int, max_part: int | None = None) -> Iterator[tuple[int, ...]]:
@@ -81,14 +82,6 @@ def conjugate(lam: tuple[int, ...]) -> tuple[int, ...]:
 def content_spread(lam: tuple[int, ...]) -> int:
     contents = [j - i for (i, j) in cells(lam)]
     return max(contents) - min(contents)
-
-
-def hook_length(lam: tuple[int, ...], i: int, j: int) -> int:
-    """Hook length of cell (i, j) in partition lam."""
-    arm = lam[i] - j - 1
-    # leg = number of rows below i where row length ≥ j+1
-    leg = sum(1 for k in range(i + 1, len(lam)) if lam[k] >= j + 1)
-    return arm + leg + 1
 
 
 def dim_partition(lam: tuple[int, ...]) -> int:

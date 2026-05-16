@@ -53,6 +53,7 @@ from sympy import Rational, Symbol, Integer, latex
 
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as _Q_CANONICAL
+from partition_utils import hook_lengths  # noqa: E402
 
 
 # ─── Partition utilities ───────────────────────────────────────────────
@@ -70,28 +71,6 @@ def partitions_of(n):
             for tail in _gen(n - k, k):
                 yield (k,) + tail
     return list(_gen(n, n))
-
-
-def hook_lengths(partition):
-    """Return a list of hook lengths h_x(λ) for each cell of a Young diagram.
-
-    For partition λ = (λ_1, …, λ_k) (rows), the hook at cell (i, j) is:
-        h_{(i,j)} = (λ_i - j) + (λ'_j - i) + 1
-    where λ' is the conjugate partition.
-    """
-    # λ'_j = number of rows with part ≥ j (standard).
-    k = len(partition)
-    conj = [0] * max(partition)
-    for part in partition:
-        for j in range(part):
-            conj[j] += 1
-    hooks = []
-    for i, row_len in enumerate(partition):
-        for j in range(row_len):
-            arm = row_len - 1 - j          # cells to the right in row i
-            leg = conj[j] - 1 - i          # cells below in column j
-            hooks.append(arm + leg + 1)
-    return hooks
 
 
 # ─── Symbolic q-integers and q-hook product ───────────────────────────

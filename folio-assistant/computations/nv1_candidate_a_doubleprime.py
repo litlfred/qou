@@ -42,6 +42,7 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
 from q_parameter import q_at  # high-precision substrate parameter
+from partition_utils import hook_lengths  # noqa: E402
 
 # -----------------------------------------------------------------
 # Precision
@@ -72,25 +73,6 @@ def partitions(n: int):
             for tail in _rec(rem - p, p):
                 yield (p,) + tail
     yield from _rec(n, n)
-
-
-# -----------------------------------------------------------------
-# Hook lengths of a partition (Young diagram).
-# -----------------------------------------------------------------
-def hook_lengths(lam):
-    """Return the multiset of hook lengths of partition lam."""
-    rows = list(lam)
-    if not rows:
-        return []
-    max_col = rows[0]
-    cols = [sum(1 for r in rows if r > j) for j in range(max_col)]
-    hooks = []
-    for r, row_len in enumerate(rows):
-        for c in range(row_len):
-            arm = row_len - c - 1          # cells to the right
-            leg = cols[c] - r - 1          # cells below
-            hooks.append(arm + leg + 1)
-    return hooks
 
 
 # -----------------------------------------------------------------

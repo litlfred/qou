@@ -60,6 +60,7 @@ import sympy as sp
 
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as Q0
+from partition_utils import hook_lengths_with_cells as hook_lengths  # noqa: E402
 
 
 # Symbolic q and z for derivation
@@ -67,19 +68,6 @@ q = sp.Symbol('q', positive=True)
 z = sp.Symbol('z', positive=True)
 z_num = 1.0 / (Q0 ** 0.5 + Q0 ** (-0.5))
 z_sym = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))
-
-
-def hook_lengths(shape: tuple[int, ...]) -> list[tuple[int, int, int]]:
-    """Return list of (i, j, hook) for each cell of shape."""
-    out = []
-    for i, rl in enumerate(shape):
-        for j in range(rl):
-            arm = rl - j - 1
-            leg = sum(1 for r2 in range(i + 1, len(shape))
-                      if shape[r2] > j)
-            hook = arm + leg + 1
-            out.append((i, j, hook))
-    return out
 
 
 def omega_lambda_formula_guess(shape: tuple[int, ...], *,

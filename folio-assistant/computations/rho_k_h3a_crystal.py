@@ -97,6 +97,7 @@ from rho_k_h3a_refinement import (  # noqa: E402
 from codata_constants import M_E_MEV, M_P_MEV, M_N_MEV, M_D_MEV  # noqa: E402
 from crystal_basis import crystal_B  # noqa: E402
 from q_parameter import Q_MP  # noqa: E402
+from partition_utils import hook_lengths_with_cells as hook_lengths  # noqa: E402
 
 mp.mp.dps = 50
 
@@ -104,23 +105,6 @@ mp.mp.dps = 50
 # ---------------------------------------------------------------------
 #  c_lambda(q) — principal q-specialisation of the Schur polynomial
 # ---------------------------------------------------------------------
-
-
-def hook_lengths(shape: tuple[int, ...]) -> list[tuple[int, int, int]]:
-    """List of (row_index, col_index, hook_length) for each cell of
-    ``shape``. Mirrors ``demazure_markov_trace.hook_lengths``.
-    """
-    rows = len(shape)
-    cols = max(shape) if rows else 0
-    transpose = [
-        sum(1 for r in range(rows) if shape[r] > c)
-        for c in range(cols)
-    ]
-    return [
-        (i, j, (shape[i] - j - 1) + (transpose[j] - i - 1) + 1)
-        for i in range(rows)
-        for j in range(shape[i])
-    ]
 
 
 def n_lambda(shape: tuple[int, ...]) -> int:

@@ -51,20 +51,7 @@ from witness_polynomial import expose_polynomial  # noqa: F401
 
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as Q0_FLOAT
-
-
-def hook_lengths(partition):
-    rows = len(partition)
-    cols = max(partition) if rows else 0
-    transpose = [
-        sum(1 for r in range(rows) if partition[r] > c)
-        for c in range(cols)
-    ]
-    return [
-        (i, j, (partition[i] - j - 1) + (transpose[j] - i - 1) + 1)
-        for i in range(rows)
-        for j in range(partition[i])
-    ]
+from partition_utils import hook_lengths_with_cells as hook_lengths  # noqa: E402
 
 
 def n_lambda(partition):

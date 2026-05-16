@@ -32,6 +32,7 @@ from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from wedderburn_pair_volumes import wedderburn_pair_volumes  # noqa: E402
 from hecke_character_symbolic import _hoefsmit_build  # noqa: E402
 from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
+from partition_utils import hook_lengths  # noqa: E402
 
 
 def _hoefsmit_f64_matrices(n: int, q0_value: float) -> dict:
@@ -60,16 +61,6 @@ def _hoefsmit_f64_matrices(n: int, q0_value: float) -> dict:
         if k == 0:
             return 0.0
         return (q ** k - qi ** k) / (q - qi)
-
-    def hook_lengths(shape: tuple[int, ...]) -> list[int]:
-        out = []
-        for i, row in enumerate(shape):
-            for j in range(row):
-                arm = row - j - 1
-                leg = sum(1 for k in range(i + 1, len(shape))
-                          if shape[k] > j)
-                out.append(arm + leg + 1)
-        return out
 
     # Enumerate partitions of n.
     from hecke_character_symbolic import partitions_of  # noqa: E402

@@ -60,6 +60,7 @@ import mpmath as mp
 sys.path.insert(0, str(Path(__file__).parent))
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_MP  # noqa: E402
+from partition_utils import hook_lengths_with_cells as hook_lengths  # noqa: E402
 
 
 # ──────────────────────────────────────────────────────────────────
@@ -81,17 +82,6 @@ def partitions_of(n):
 
     rec(n, n, [])
     return out
-
-
-def hook_lengths(p):
-    rows = len(p)
-    cols = max(p) if rows else 0
-    transpose = [sum(1 for r in range(rows) if p[r] > c) for c in range(cols)]
-    return [
-        (i, j, (p[i] - j - 1) + (transpose[j] - i - 1) + 1)
-        for i in range(rows)
-        for j in range(p[i])
-    ]
 
 
 def cells(p):
