@@ -103,10 +103,10 @@ def main() -> int:
     tau: dict[str, mp.mpf] = {}
     for Z, N, name in [(1, 0, "p"), (0, 1, "n"), (1, 1, "D"),
                         (1, 2, "T"), (2, 1, "3He"), (2, 2, "4He_canonical")]:
-        t0 = time.time()
+        t0 = time.monotonic()
         v = eval_tau(Z, N, q0)
         tau[name] = v
-        print(f"    τ_M({name:<14}) = {mp.nstr(v, 20)}   ({time.time()-t0:.1f}s)")
+        print(f"    τ_M({name:<14}) = {mp.nstr(v, 20)}   ({time.monotonic()-t0:.1f}s)")
     print()
 
     # Disjoint Markov compositions for ⁴He

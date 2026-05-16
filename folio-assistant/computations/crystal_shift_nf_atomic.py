@@ -52,8 +52,15 @@ if str(HERE) not in sys.path:
 from crystal_pole_order import (  # noqa: E402
     enumerate_syts, partitions_of, syt_axial_distances,
 )
+from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from q_parameter import HA as HA_VAL  # noqa: E402   canonical h = q − q⁻¹
 from witness_base import WitnessBuilder  # noqa: E402
+
+
+# Module-level constants
+# f64 tolerance for discriminating d/h ∈ {-1, -1/2} (canonical
+# atomic-braid d's are exact rationals — round-off is ~1e-15)
+_D_RATIO_TOL = 1e-12
 
 
 # ──────────────────────────────────────────────────────────────────────
@@ -131,7 +138,10 @@ def pole_of_factor_on_syt(
         # from q_parameter.  In canonical atomic braids d ∈ {0, -h/2, -h};
         # cancellation iff d = -h (ratio = -1).
         d_over_h = d / HA_VAL
-        if abs(d_over_h + 1.0) < 0.01:  # d = -h
+        # d ∈ {-h/2, -h} so |ratio| ∈ {0.5, 1.0} — discriminate with
+        # a tight f64 tolerance (the (c, d) inputs are exact rationals
+        # at module level; f64 round-off is ~1e-15 here).
+        if abs(d_over_h + 1.0) < _D_RATIO_TOL:  # d = -h
             return 0  # CANCELS
         return 1   # d = -h/2 or other; no cancellation
 
@@ -200,7 +210,6 @@ def atomic_braid_word(Z: int, N: int) -> List[Tuple]:
     Reuses mass_at_3A_proper.atom_braid_word_3A so we get the EXACT
     same braid word the rest of the pipeline uses.
     """
-    from mass_at_3A_proper import atom_braid_word_3A
     return atom_braid_word_3A(Z, N, include_inter=True)
 
 
@@ -246,11 +255,33 @@ def habiro_shift_via_crystal(Z: int, N: int, crystal_q_pole: int = None) -> int:
     cost).  Closed form 18Z + 21N + 1 itself proven empirically for
     A = 2..6 in prop:per-nucleon-shift-additive-linearity.
     """
-    A = Z + N
     if crystal_q_pole is None:
-        crystal_q_pole = 12 * A - 1  # closed-form crystal pole
-    cancellation = 3.0 * Z + 1.5 * N - 1.5
+        crystal_q_pole = closed_form_crystal_q_pole(Z, N)
+    cancellation = closed_form_cancellation(Z, N)
     return int(round(2 * (crystal_q_pole - cancellation)))
+
+
+def closed_form_crystal_q_pole(Z: int, N: int) -> int:
+    """Closed-form crystal q-pole of tr_M(β_atom) at q=0.
+
+    Equals the canonical atomic braid generator count 12·A − 1
+    (one per generator in pppnnn ordering).  Empirically verified
+    at A = 2..4 by SYT enumeration in `crystal_shift_nf`;
+    closed-form extrapolation for A ≥ 5.
+    """
+    return 12 * (Z + N) - 1
+
+
+def closed_form_cancellation(Z: int, N: int) -> float:
+    """Closed-form cancellation: 3Z + 1.5N − 1.5.
+
+    Per per_nucleon_shift_derivation.py:
+      3 per proton:    σ_0 σ_1⁻¹ braid reductions
+      1.5 per neutron: half-integer Ocneanu weight contribution
+      −1.5 base:       first nucleon has no incoming inter-nucleon
+                       crossing
+    """
+    return 3.0 * Z + 1.5 * N - 1.5
 
 
 # ──────────────────────────────────────────────────────────────────────
@@ -329,35 +360,34 @@ def main() -> int:
     results = []
     n_bridge_pass = 0
     for Z, N, name, cf in CLOSED_FORM_ATOMS:
+        n_strands = 3 * (Z + N)
+        cancellation = closed_form_cancellation(Z, N)
         if 3 * (Z + N) > 12:
-            # Skip SYT enumeration; use closed-form crystal pole = 12A-1
-            n_strands = 3 * (Z + N)
-            qpole = 12 * (Z + N) - 1
+            # Skip SYT enumeration; use closed-form crystal pole
+            qpole = closed_form_crystal_q_pole(Z, N)
             bridge_shift = habiro_shift_via_crystal(Z, N, qpole)
             ok = "✓ (CF)" if bridge_shift == cf else "✗ (CF)"
-            print(f"  {name:<6} {f'({Z},{N})':>8} {n_strands:>5} {12*(Z+N)-1:>5} "
-                  f"{qpole:>8} {3*Z + 1.5*N - 1.5:>8.1f} {bridge_shift:>8} "
+            print(f"  {name:<6} {f'({Z},{N})':>8} {n_strands:>5} {qpole:>5} "
+                  f"{qpole:>8} {cancellation:>8.1f} {bridge_shift:>8} "
                   f"{cf:>8}  {ok}")
             n_bridge_pass += 1 if bridge_shift == cf else 0
             results.append({
                 "Z": Z, "N": N, "atom": name,
                 "n_strands": n_strands,
                 "q_pole_crystal_closed_form": qpole,
-                "cancellation": 3.0*Z + 1.5*N - 1.5,
+                "cancellation": cancellation,
                 "habiro_shift_via_bridge": bridge_shift,
                 "habiro_shift_empirical": cf,
                 "bridge_match": bool(bridge_shift == cf),
                 "syt_enumeration_method": "closed-form",
             })
             continue
-        n_strands = 3 * (Z + N)
         word = atomic_braid_word(Z, N)
         t0 = time.monotonic()
         res = crystal_shift_nf(word, n_strands)
         elapsed = time.monotonic() - t0
         qpole = res["shift_nf"]
         bridge_shift = habiro_shift_via_crystal(Z, N, qpole)
-        cancellation = 3.0 * Z + 1.5 * N - 1.5
         ok = "✓" if bridge_shift == cf else "✗"
         if bridge_shift == cf:
             n_bridge_pass += 1
