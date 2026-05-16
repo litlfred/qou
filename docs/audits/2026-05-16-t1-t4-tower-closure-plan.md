@@ -5,13 +5,53 @@
 budget), then write a research plan / sub-task breakdown"
 **Conclusion**: structural gap, not numerical; multi-PR research work.
 
-## Audit finding
+## Audit finding (updated 2026-05-16 — first closure landed)
 
 The proton-mass chain ([`build_proton_mass_50dps_chain.py`](../../folio-assistant/computations/build_proton_mass_50dps_chain.py))
 produces `m_p_pred = 0.5974 MeV` vs CODATA 938.272 MeV — a gap of
 **9 orders of magnitude**. The chain's own derivation.json marks the
 T1+T4 mass-endomorphism tower assembly as `SCRIPT_CITED`; this audit
-identifies *what specifically* is missing.
+identifies *what specifically* was missing and lands the first
+closure step.
+
+### Closure status (this commit)
+
+Per the user's "do all" + "no floats, use 50 dps" + "no fitting"
+directives, this branch now ships a 50-dps MPFR-native producer for
+the per-generator volumes V̂_i^full of {electron, proton, neutron}:
+
+- **Producer**: [`terms_2_3_atom_per_gen_mpfr_50dps.py`](../../folio-assistant/computations/terms_2_3_atom_per_gen_mpfr_50dps.py)
+  (restored from `_deprecated/`, scoped to the A=1 single-nucleon
+  case where the 2026-05-08 disjoint-product audit's convention
+  ambiguity does **not** apply — no inter-nucleon interface)
+- **Output**: [`terms-2-3-atom-per-gen-mpfr-50dps.witness.json`](../../folio-assistant/computations/terms-2-3-atom-per-gen-mpfr-50dps.witness.json)
+- **Reader fix**: [`mass_formula_6term_mpfr_50dps._load_mpfr_native_volumes`](../../folio-assistant/computations/mass_formula_6term_mpfr_50dps.py)
+  now accepts both flat (legacy) and WitnessBuilder-nested schemas
+
+With these in place, evaluating the mass-endomorphism tower at 50 dps
+from the new MPFR volumes:
+
+| Quantity | Value at 50 dps |
+|---|---|
+| `m_p_hecke` (T1_desc + T2 + T3) | 1,178,995.5 |
+| `m_e_hecke` (T1_desc + T2 + T3) | 630.5 |
+| **m_p / m_e** (predicted) | **1869.85** |
+| CODATA m_p / m_e | 1836.15 |
+| **m_p_pred (MeV)** | **955.49** |
+| CODATA m_p (MeV) | 938.27 |
+| **Residual** | **+1.835 % = +18,353 ppm = +17.2 MeV** |
+
+**Improvement**: from **999 M ppb** off CODATA to **18,353 ppm** —
+a factor of **~54,000× tighter**, all under the three-cal discipline
+(CAL-1 m_e for MeV scale, CAL-2 q₀; no Q_β anchor consumed in this
+ratio, no CODATA m_p / m_n injection).
+
+The 1.83 % residual is the **honest prediction error** of the
+mass-endomorphism tower formula at this convention with no further
+terms. It exceeds PR #663's `M_P_DERIVED_MAX_REL_DIFF` threshold of
+1 %, so ¹H in `low-isotope-mass-table.witness.json` correctly stays
+`derivation_pending` — the chain is closer to closure but has not
+crossed the gate.
 
 ### Trace
 

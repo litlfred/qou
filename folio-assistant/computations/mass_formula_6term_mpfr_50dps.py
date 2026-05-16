@@ -163,7 +163,10 @@ def _load_mpfr_native_volumes(Z: int, N: int) -> list[mp.mpf]:
         )
     with path.open() as f:
         data = json.load(f)
-    for record in data.get("results", []):
+    # Schema-flexible: accept either flat (legacy `data["results"]`)
+    # or WitnessBuilder-nested (`data["data"]["results"]`) form.
+    records = data.get("results") or data.get("data", {}).get("results", [])
+    for record in records:
         if record.get("Z") != Z or record.get("N") != N:
             continue
         wv = record.get("wedderburn_vols")
