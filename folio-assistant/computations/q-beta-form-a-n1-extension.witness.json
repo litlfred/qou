@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-11T21:03:32.673710+00:00",
-  "commitSha": "9b13047f672c45fed1cb58aa347daad5d71e335e",
+  "computedAt": "2026-05-15T22:02:53.853033+00:00",
+  "commitSha": "cf06b736dc4f6f948bb05a8ad65861523cc3a7b7",
   "assertions": [
     {
       "name": "geometric_N1_lift_overshoots_per_braid_ceiling",
@@ -25,7 +25,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 390,
+  "durationMs": 400,
   "computation": "q-beta-form-a-n1-extension",
   "scriptFile": "q_beta_form_a_n1_extension.py",
   "scriptHash": "4b2104dd3006",
