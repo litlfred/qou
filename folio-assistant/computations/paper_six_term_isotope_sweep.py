@@ -500,23 +500,24 @@ def paper_six_term_mass(Z, N, include_inter=True,
         # specialisation (per docs/audits/2026-05-16-compute-pipeline-
         # canonicality-audit.md §3·a).
         #
-        # For include_inter=False (free configuration) there is no
-        # well-defined per-subset sub-word — treat T_2 = T_3 = 0
-        # (the free configuration carries only the constituent piece
-        # via ρ_K^LO).
-        if not include_inter:
-            t2 = mp.mpf(0)
-            t3 = mp.mpf(0)
-        else:
-            from canonical_brane_tower import (
-                term2_canonical, term3_canonical,
-            )
-            from mass_at_3A_proper import atom_braid_word_3A
-            word = atom_braid_word_3A(Z, N, include_inter=True)
-            n_strands_canonical = 3 * (Z + N)
-            n_gens_canonical = n_strands_canonical - 1
-            t2 = term2_canonical(word, n_gens_canonical, float(Q0_FLOAT))
-            t3 = term3_canonical(word, n_gens_canonical, float(Q0_FLOAT))
+        # CRITICAL: free config (include_inter=False) ALSO has a
+        # canonical T_2/T_3 — over its own disjoint-product braid
+        # word (which omits the interface generators).  Setting
+        # T_2_free = 0 double-counts the per-nucleon contribution.
+        #
+        # The Δ(T_2 + T_3) = bound - free thus captures exactly the
+        # inter-nucleon coupling — the non-interface generator
+        # contributions cancel by construction (same crossings at
+        # those generators in both bound and free braid words).
+        from canonical_brane_tower import (
+            term2_canonical, term3_canonical,
+        )
+        from mass_at_3A_proper import atom_braid_word_3A
+        word = atom_braid_word_3A(Z, N, include_inter=include_inter)
+        n_strands_canonical = 3 * (Z + N)
+        n_gens_canonical = n_strands_canonical - 1
+        t2 = term2_canonical(word, n_gens_canonical, float(Q0_FLOAT))
+        t3 = term3_canonical(word, n_gens_canonical, float(Q0_FLOAT))
     elif tower_mode == "li2q":
         # CORRECTED Kashaev limit per `prop:mass-endomorphism-tower`
         # (proof: a43d7f1fa).  T2 = -Σ Li_2^q(-|V_i|),
