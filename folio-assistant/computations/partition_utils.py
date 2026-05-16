@@ -25,8 +25,11 @@ def conjugate_partition(shape: Sequence[int]) -> tuple[int, ...]:
     """
     if not shape:
         return ()
-    cols = max(shape)
-    return tuple(sum(1 for r in shape if r > c) for c in range(cols))
+    conj = [0] * max(shape)
+    for row in shape:
+        for j in range(row):
+            conj[j] += 1
+    return tuple(conj)
 
 
 def hook_length(shape: Sequence[int], i: int, j: int) -> int:
