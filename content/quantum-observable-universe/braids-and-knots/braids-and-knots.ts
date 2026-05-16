@@ -392,6 +392,7 @@ export default chapter({
         "q-beta-categorical-precision-ladder",
         "markov-axioms-primitive",
         "braid-link-types",
+        "braid-group-n-strand",
         "markov-closure-map-axiomatic",
         "F3-eps6-leading-eq-neg-2b-cubed",
         "q-beta-c3-hopf-three-fold-markov",
