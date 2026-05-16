@@ -57,17 +57,27 @@ theorem eigenphase_bar_involution (q : ℝ) (hq : 0 < q) :
     eigenphase q⁻¹ = - eigenphase q := by
   -- Ref: [manuscript] prop:q-beta-cos-resummation §"Markov cyclicity"
   -- Ref: [jones1985] doi:10.2307/1971403
-  -- Proof outline:
-  --   markovZ q⁻¹ = 1 / (√(q⁻¹) + (√(q⁻¹))⁻¹)
-  --              = 1 / (1/√q + √q)         (since √(q⁻¹) = 1/√q)
-  --              = markovZ q              (palindromic)
-  --   heckeH q⁻¹ = q⁻¹ - (q⁻¹)⁻¹ = q⁻¹ - q = -(q - q⁻¹) = -heckeH q
-  --   eigenphase q⁻¹
-  --     = (markovZ q⁻¹ - 1) · heckeH q⁻¹ / 2
-  --     = (markovZ q - 1) · (-heckeH q) / 2
-  --     = -((markovZ q - 1) · heckeH q / 2)
-  --     = -eigenphase q
-  sorry
+  -- Reduce to algebraic identity:
+  --   eigenphase(q⁻¹) + eigenphase(q) = 0
+  -- by unfolding both sides and using:
+  --   √(q⁻¹) = 1/√q                            (Real.sqrt_inv)
+  --   (q⁻¹)⁻¹ = q                              (inv_inv)
+  -- which makes markovZ(q⁻¹) syntactically equal to markovZ(q),
+  -- and heckeH(q⁻¹) = q⁻¹ - q = -(q - q⁻¹) = -heckeH(q).
+  have hq_ne : q ≠ 0 := ne_of_gt hq
+  have hsq_ne : Real.sqrt q ≠ 0 := by
+    rw [ne_eq, Real.sqrt_eq_zero (le_of_lt hq)]; exact hq_ne
+  unfold eigenphase markovZ heckeH
+  rw [Real.sqrt_inv]
+  -- markovZ(q⁻¹) factor: 1/(1/√q + (1/√q)⁻¹) = 1/(1/√q + √q) = same as markovZ(q)
+  -- heckeH(q⁻¹) factor: q⁻¹ - (q⁻¹)⁻¹ = q⁻¹ - q
+  have h_sqrt_inv_inv : (Real.sqrt q)⁻¹⁻¹ = Real.sqrt q := inv_inv _
+  have h_q_inv_inv : q⁻¹⁻¹ = q := inv_inv _
+  rw [h_sqrt_inv_inv, h_q_inv_inv]
+  -- Now: ((1 / ((√q)⁻¹ + √q) - 1) · (q⁻¹ - q)) / 2
+  --   = -((1 / (√q + (√q)⁻¹) - 1) · (q - q⁻¹)) / 2
+  -- LHS denominator (√q)⁻¹ + √q = √q + (√q)⁻¹  (commutativity of +)
+  ring
 
 /-! ## Spectral-identification class
 
