@@ -1,3 +1,8 @@
+import Mathlib.Data.Int.Basic
+import Mathlib.Tactic
+import QOU.HeckeAlgebra.Common
+import QOU.HeckeAlgebra.Wedderburn
+
 /-!
 # QOU.BraidKnot.PSDFeasibilityProxy
 
@@ -42,11 +47,6 @@ machinery: PSD eigenvalue check per Wedderburn block via
 - `binding-k-solver.witness.json` — empirical PSD-feasibility
   verification per Wedderburn block.
 -/
-
-import Mathlib.Data.Int.Basic
-import Mathlib.Tactic
-import QOU.HeckeAlgebra.Common
-import QOU.HeckeAlgebra.Wedderburn
 
 namespace QOU.BraidKnot.PSDFeasibilityProxy
 

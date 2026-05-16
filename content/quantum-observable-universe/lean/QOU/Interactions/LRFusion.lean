@@ -1,3 +1,7 @@
+import QOU.BraidKnot.ShellNeutrality
+import QOU.LiftingDescent.HomologicalCondensation
+import Mathlib.Data.Real.Basic
+
 /-!
 # QOU.Interactions.LRFusion — double-magic LR-fusion rigidity
 
@@ -23,10 +27,6 @@ LaTeX label: `conj:diagrammatic-double-magic-lr-fusion`
 - [murphy1992] https://doi.org/10.1016/0021-8693(92)90105-T
 - [manuscript] observations / diagrammatic-double-magic-lr-fusion
 -/
-
-import QOU.BraidKnot.ShellNeutrality
-import QOU.LiftingDescent.HomologicalCondensation
-import Mathlib.Data.Real.Basic
 
 namespace QOU.Interactions.LRFusion
 

@@ -1,3 +1,5 @@
+import Mathlib.Algebra.Group.Basic
+
 /-!
 # QOU.Mathlib.SpectralSequence — abstract spectral-sequence API
 
@@ -29,8 +31,6 @@ keep the same shape with `R`-modules replaced by
 LaTeX label: substrate axiom `S-spectral-sequence-collapse`
 (CLAUDE.md §3b — class axiomatisation).
 -/
-
-import Mathlib.Algebra.Group.Basic
 
 namespace QOU.Mathlib.SpectralSequence
 

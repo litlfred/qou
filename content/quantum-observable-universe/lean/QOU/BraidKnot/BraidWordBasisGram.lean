@@ -1,3 +1,6 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
+
 /-!
 # QOU.BraidKnot.BraidWordBasisGram — non-diagonal Gram in σ-basis
 
@@ -42,9 +45,6 @@ OPEN (deferred):
 LaTeX label: `rem:per-partition-k-lambda-rule` (the appended
 "Paper-canonical σ_w basis" section).
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Tactic
 
 namespace QOU.BraidKnot.BraidWordBasisGram
 

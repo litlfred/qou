@@ -1,3 +1,7 @@
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.Tactic
+import QOU.HeckeAlgebra.Common
+
 /-!
 # QOU.HeckeAlgebra.QSubstrate — q_0 specialisation
 
@@ -36,10 +40,6 @@ number existence claim.
   Python derivation
 - `Q_50_DIGIT_STR` — the 50-decimal-digit literal
 -/
-
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import Mathlib.Tactic
-import QOU.HeckeAlgebra.Common
 
 namespace QOU.HeckeAlgebra.QSubstrate
 

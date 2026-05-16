@@ -1,3 +1,8 @@
+import Mathlib.Algebra.Star.Basic
+import Mathlib.Algebra.Module.Basic
+import Mathlib.GroupTheory.GroupAction.Basic
+import Mathlib.RingTheory.Idempotents
+
 /-!
 # Iwahori--Hecke algebra API (scaffolding for QOU's graded-Mikusiński framework)
 
@@ -21,11 +26,6 @@ API rather than `True` placeholders. When Mathlib upstreams an
 `IwahoriHeckeAlgebra`, these files migrate by re-binding the
 opaque definitions to Mathlib's official ones.
 -/
-
-import Mathlib.Algebra.Star.Basic
-import Mathlib.Algebra.Module.Basic
-import Mathlib.GroupTheory.GroupAction.Basic
-import Mathlib.RingTheory.Idempotents
 
 namespace QOU.BraidKnot.IwahoriHeckeAPI
 

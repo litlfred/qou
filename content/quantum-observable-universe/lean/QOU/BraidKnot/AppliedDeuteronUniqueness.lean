@@ -1,3 +1,12 @@
+import Mathlib.Tactic
+import QOU.MathlibExt.SDP
+import QOU.MathlibExt.SDPEmptyConstraints
+import QOU.HeckeAlgebra.Common
+import QOU.BraidKnot.LightNucleus
+import QOU.BraidKnot.WitnessR5Full
+import QOU.BraidKnot.DeuteronWitness
+import QOU.BraidKnot.CanonicalKnotIdSDPUniqueness
+
 /-!
 # QOU.BraidKnot.AppliedDeuteronUniqueness
 
@@ -31,15 +40,6 @@ multi-term cost function.
 - `QOU.BraidKnot.CanonicalKnotIdSDPUniqueness` (abstract bridge)
 - PR #608 followup #1 (multi-term cost wiring)
 -/
-
-import Mathlib.Tactic
-import QOU.MathlibExt.SDP
-import QOU.MathlibExt.SDPEmptyConstraints
-import QOU.HeckeAlgebra.Common
-import QOU.BraidKnot.LightNucleus
-import QOU.BraidKnot.WitnessR5Full
-import QOU.BraidKnot.DeuteronWitness
-import QOU.BraidKnot.CanonicalKnotIdSDPUniqueness
 
 namespace QOU.BraidKnot
 

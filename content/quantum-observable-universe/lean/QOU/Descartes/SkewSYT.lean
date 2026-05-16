@@ -230,9 +230,10 @@ theorem removeCorner_sum (λ : Partition) (row : ℕ)
     `QOU.MathlibExt.List.sum_insertionSort_eq` (a candidate Mathlib
     upstream lemma); this alias preserves the local name used by
     `removeCorner_size`. -/
-theorem sum_insertionSort_eq (xs : List ℕ) (r : ℕ → ℕ → Bool) :
+theorem sum_insertionSort_eq (xs : List ℕ) (r : ℕ → ℕ → Prop)
+    [DecidableRel r] :
     (xs.insertionSort r).sum = xs.sum :=
-  QOU.MathlibExt.List.sum_insertionSort_eq xs r
+  QOU.MathlibExt.List.sum_insertionSort_eq r xs
 
 /-- Removing a corner decreases the partition size by exactly 1. -/
 theorem removeCorner_size (λ : Partition) (row : ℕ)

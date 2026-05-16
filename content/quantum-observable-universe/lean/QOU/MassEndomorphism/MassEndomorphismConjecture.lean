@@ -1,3 +1,5 @@
+import Mathlib.Algebra.Ring.Basic
+
 /-!
 # QOU.MassEndomorphism.MassEndomorphismConjecture — closed-form NF decomposition
 
@@ -25,8 +27,6 @@ reasons.
 -- Ref: [manuscript] prop:quantum-dilogarithm-stratified
 LaTeX label: `conj:mass-endomorphism`
 -/
-
-import Mathlib.Algebra.Ring.Basic
 
 namespace QOU.MassEndomorphism
 

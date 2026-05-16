@@ -759,7 +759,7 @@ table with usage notes, open the content block above.
 | Concept | Font | Symbols |
 |---------|------|---------|
 | $q$-shuffle Hopf algebra | calligraphic | `$\mathcal{H}_q$` — convolution algebra of $\mathrm{End}_{\mathbf{C}}(A)$ under $\ast_q$; carries the grouplikes $\exp_q, \log_q, \mathrm{Li}_2^q$. **Never** plain `$H_q$` (collides with Hecke and Hamiltonian). |
-| Vortex morphism | Greek | `$\varrho \colon \mathbf{1} \to A$` (generic closed vortex). **Never** `$\gamma$` for vortex; `$\gamma$` is reserved for Euler–Mascheroni or Dirac matrices. |
+| Vortex morphism | Greek | `$\varrho \colon \mathbf{1} \to A$` (generic closed vortex). **Never** `$\gamma$` for vortex; `$\gamma$` is reserved for the photon, Euler–Mascheroni constant, and Dirac matrices. |
 
 #### braids-and-knots
 
@@ -811,6 +811,7 @@ table with usage notes, open the content block above.
 | Color | plain italic | `$c$` (color vector), `$c_r, c_g, c_b$` (tube coords), `$\hat{c}, \hat{c}_r$` (chromaticity) |
 | Energy | bold | `$\mathbf{E}_q$` ($q$-energy), `$\mathbf{E}_\times$` (crossing energy), `$\mathbf{E}_{\mathrm{bind}}$` (binding). **Never** `$\mathfrak{E}$`. |
 | Mass (categorical) | fraktur | `$\mathfrak{m}$` (categorical mass), `$\mathfrak{m}_{\mathfrak{H}}$` (hadron mass). **Never** plain `$m$` for categorical mass. |
+| Photon | Greek | `$\gamma$` — photon (standard physics convention). Used in pair production / Breit–Wheeler vertices (`$\gamma\gamma \to e^+ e^-$`) and photonic channels. Disambiguated from Euler–Mascheroni `$\gamma$` (only inside zeta-value identities) and Dirac matrices `$\gamma^\mu$` (always with Lorentz index) by context. **Never** for a vortex morphism — vortex is `$\varrho$`. |
 | $q$-Hamiltonian | hat | `$\hat{H}_q$` (operator hat, Dirac convention). **Never** plain `$H_q$`. Distinct from `$\mathcal{H}_q$` (shuffle algebra) and `$H_n(q)$` (Hecke). |
 
 #### quantum-observable-universes
@@ -834,8 +835,13 @@ table with usage notes, open the content block above.
 - `$E$` alone = **not used** for exceptional divisor, energy, or elliptic curve.
   Use `$\mathcal{S}_p$`, `$\mathbf{E}$`, or `$\mathcal{E}_q$` respectively.
   `$E_{\mathfrak{H}}$` (with hadron subscript) is allowed for crossing energy.
-- `$\gamma$` = Euler–Mascheroni constant or Dirac matrices only.
-  **Never** use `$\gamma$` for a vortex or closed cycle; use `$\varrho$`.
+- `$\gamma$` = three reserved meanings, all standard, disambiguated by
+  context: (i) the **photon** (default in particle / QED contexts:
+  `$\gamma\gamma \to e^+ e^-$`, photonic channels, Breit–Wheeler);
+  (ii) the **Euler–Mascheroni constant** (only inside zeta-value
+  identities); (iii) **Dirac matrices** `$\gamma^\mu$` (always with
+  Lorentz index). **Never** use `$\gamma$` for a vortex or closed
+  cycle; the vortex morphism is `$\varrho$`.
 - `$\chi_q$` = Lyapunov exponent (distinct from `$\chi_\zeta(c)$` = character)
 - `$H_q$` alone = **not used**. Three distinct concepts share the letter $H$: `$\mathcal{H}_q$` (shuffle Hopf algebra), `$\hat{H}_q$` (Hamiltonian operator), `$H_n(q)$` or `$H_q(\lambda)$` (Hecke/hook-length, always with argument).
 - **Three partition-weight families** — Markov `$y_\lambda$`,

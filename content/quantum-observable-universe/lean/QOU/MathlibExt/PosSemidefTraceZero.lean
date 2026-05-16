@@ -1,3 +1,9 @@
+import Mathlib.LinearAlgebra.Matrix.PosDef
+import Mathlib.LinearAlgebra.Matrix.Spectrum
+import Mathlib.Tactic
+import QOU.MathlibExt.PosSemidefDiagZero
+import QOU.MathlibExt.FrobeniusInnerProduct
+
 /-!
 # QOU.MathlibExt.PosSemidefTraceZero
 
@@ -34,12 +40,6 @@ This is the "self-polarity" of the PSD cone in matrix space
 - [boyd-vandenberghe-2004] §2.6.1 ("Polar cones, self-polar cones")
 - [horn-johnson-2013] *Matrix Analysis*, Theorem 7.7.4
 -/
-
-import Mathlib.LinearAlgebra.Matrix.PosDef
-import Mathlib.LinearAlgebra.Matrix.Spectrum
-import Mathlib.Tactic
-import QOU.MathlibExt.PosSemidefDiagZero
-import QOU.MathlibExt.FrobeniusInnerProduct
 
 namespace QOU.MathlibExt.PosSemidefTraceZero
 
@@ -136,9 +136,9 @@ theorem Matrix.PosSemidef.diag_nonneg
     0 ≤ C i i := by
   -- C_ii = e_iᵀ · C · e_i ≥ 0 by PSD applied to canonical basis vector.
   have h_psd_ei := hC.2 (Pi.single i (1 : ℝ))
-  have h_compute : Matrix.dotProduct (star (Pi.single i (1 : ℝ)))
+  have h_compute : dotProduct (star (Pi.single i (1 : ℝ)))
       (C.mulVec (Pi.single i (1 : ℝ))) = C i i := by
-    simp [Matrix.dotProduct, Matrix.mulVec, Pi.single_apply,
+    simp [dotProduct, Matrix.mulVec, Pi.single_apply,
           Finset.sum_ite_eq', star_trivial, mul_ite, mul_one,
           mul_zero, Finset.mem_univ]
   rwa [h_compute] at h_psd_ei
@@ -203,6 +203,6 @@ theorem Matrix.PosSemidef.kernel_containment_of_product_zero
   -- (S * Φ) i j = 0 means Σ_k S i k * Φ k j = 0, which is exactly
   -- the i-th component of S applied to the j-th column of Φ.
   have : (S * Φ) i j = 0 := by rw [h_prod]; rfl
-  simpa [Matrix.mul_apply, Matrix.mulVec, Matrix.dotProduct] using this
+  simpa [Matrix.mul_apply, Matrix.mulVec, dotProduct] using this
 
 end QOU.MathlibExt.PosSemidefTraceZero

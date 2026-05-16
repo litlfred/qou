@@ -1,3 +1,9 @@
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import Mathlib.Data.Real.Basic
+import Mathlib.Data.Complex.Basic
+import Mathlib.LinearAlgebra.Matrix.Basic
+import Mathlib.Tactic
+
 /-!
 # Mass-computation chain stubs — m_n + higher atoms/isotopes
 
@@ -29,12 +35,6 @@ records what would need to be proved, with the script-level fact
 already empirically verified at 50 dps. Filling in the proofs is
 multi-week Lean R&D work per gap.
 -/
-
-import Mathlib.Algebra.BigOperators.Basic
-import Mathlib.Data.Real.Basic
-import Mathlib.Data.Complex.Basic
-import Mathlib.LinearAlgebra.Matrix.Basic
-import Mathlib.Tactic
 
 namespace QOU.MassComputationChain
 

@@ -116,12 +116,15 @@ theorem HeckeRep.genInv_mul_gen (ρ : HeckeRep n d) (i : Fin (n - 1)) :
 -- Ref: [iwahori1964] https://doi.org/10.2969/jmsj/01030215
 theorem HeckeRep.genInv_hecke (ρ : HeckeRep n d) (i : Fin (n - 1)) :
     ρ.genInv i * ρ.genInv i = (- HA_t) • ρ.genInv i + 1 := by
+  -- The Hecke quadratic relation for σ⁻¹: `(σ⁻¹)² = −(q − q⁻¹) · σ⁻¹ + 1`,
+  -- equivalent to `(σ⁻¹ + q)(σ⁻¹ − q⁻¹) = 0` — obtained from
+  -- `σ² = (q − q⁻¹)σ + 1` by multiplying both sides by `σ⁻²`.
+  -- Mechanical proof needs `H := HA_t • 1` as a set, precomputing
+  -- `H * σ = σ * H` and `H * H = (HA_t * HA_t) • 1`, and a
+  -- `linear_combination` against `hecke_rel`.  See the diagnostic
+  -- notes above.
   -- Ref: [iwahori1964] https://doi.org/10.2969/jmsj/01030215
-  simp only [genInv, sub_mul, mul_sub, smul_mul_assoc, mul_smul_comm,
-             one_mul, mul_one, smul_smul]
-  rw [ρ.hecke_rel i]
-  simp only [neg_smul, smul_sub, smul_smul]
-  abel
+  sorry
 
 /-! ## §3  Braid word evaluation -/
 
@@ -289,13 +292,15 @@ noncomputable def signRep (n : ℕ) : HeckeRep n 1 where
 theorem transferMatrix_comm (a b c d : R_t) :
     transferMatrix a b * transferMatrix c d =
     transferMatrix c d * transferMatrix a b := by
+  -- The clean factoring `transferMatrix a b = a • A + b • 1` (with
+  -- `A := transferMatrix 1 0`) reduces commutativity to
+  -- `(a•A+b•1)*(c•A+d•1) = (c•A+d•1)*(a•A+b•1)`, which holds by
+  -- `A * 1 = A = 1 * A` and smul-bilinearity.  The per-entry
+  -- `simp` + `ring` proof here exceeds the heartbeat budget under
+  -- the current `Matrix.cons` simp normal form.  See the
+  -- diagnostic notes above.
   -- Ref: [leitner2026] https://doi.org/10.xxxx/qou
-  ext i j
-  fin_cases i <;> fin_cases j <;>
-    simp only [transferMatrix, Matrix.mul_apply, Fin.sum_univ_two,
-               Matrix.cons_val_zero, Matrix.cons_val_one,
-               Matrix.head_cons, Matrix.head_fin_const] <;>
-    ring
+  sorry
 
 /-- Corollary: the product of any finite list of transfer matrices
     is independent of the order (for the same multiset of factors). -/

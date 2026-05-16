@@ -77,22 +77,26 @@ structure CategoricalInstanton {C : Type u} [CategoryTheory.Category.{v} C]
   /-- **Self-duality**: `⋆_q(F_∇) = F_∇`. -/
   self_dual : hodge.IsSelfDual curvature
 
-/-- **Lemma (Irreducibility from observability).**
-    LaTeX: `\label{lem:categorical-irreducible}`
+/-!
+**Lemma (Irreducibility from observability).**
+LaTeX: `\label{lem:categorical-irreducible}`
 
-    A categorical instanton forces the adjoint hom-space `Hom(𝟙, Ad(A)) = 0`:
-    any anti-self-dual connection must be the zero connection, so there are no
-    non-trivial adjoint-valued observables.
+A categorical instanton forces the adjoint hom-space `Hom(𝟙, Ad(A)) = 0`:
+any anti-self-dual connection must be the zero connection, so there are no
+non-trivial adjoint-valued observables.
 
-    **Axiom justification**: requires encoding the adjoint representation
-    `Ad(A) = A ⊗ A^∨` as a categorical construction and deriving
-    `Hom(𝟙, Ad(A)) = 0` from self-duality of the curvature. The adjoint-rep
-    functor (internal End) is not yet in Mathlib for general monoidal categories.
+**Axiom justification**: requires encoding the adjoint representation
+`Ad(A) = A ⊗ A^∨` as a categorical construction and deriving
+`Hom(𝟙, Ad(A)) = 0` from self-duality of the curvature. The adjoint-rep
+functor (internal End) is not yet in Mathlib for general monoidal categories.
 
-    Classical counterpart: Donaldson–Kronheimer, *The Geometry of Four-Manifolds*,
-    §4.2 (irreducibility of anti-self-dual connections). -/
--- Ref: [manuscript] §1-quantum-observable-universe
--- Ref: [donaldson1990] https://doi.org/10.1093/oso/9780198535539.001.0001
+Classical counterpart: Donaldson–Kronheimer, *The Geometry of Four-Manifolds*,
+§4.2 (irreducibility of anti-self-dual connections).
+
+References:
+- [manuscript] §1-quantum-observable-universe
+- [donaldson1990] https://doi.org/10.1093/oso/9780198535539.001.0001
+-/
 
 /-- **Categorical irreducibility — typeclass.**
     Witnesses adjoint-rep vanishing for a specific
@@ -168,24 +172,28 @@ theorem categorical_dq_squared_classical_limit {C : Type u}
   rw [cqd.dq_classical hq]
   exact hd_sq
 
-/-- **Non-vanishing of d_q²** (the quantum correction).
-    LaTeX: `\label{prop:categorical-dq-squared-nonvanishing}`
+/-!
+**Non-vanishing of d_q²** (the quantum correction).
+LaTeX: `\label{prop:categorical-dq-squared-nonvanishing}`
 
-    When `q ≠ 1` and the classical `d² = 0`, the q-deformed `d_q²` is
-    non-zero: the deformation introduces a genuine curvature term.
+When `q ≠ 1` and the classical `d² = 0`, the q-deformed `d_q²` is
+non-zero: the deformation introduces a genuine curvature term.
 
-    **Axiom justification**: requires analysis of the scalar coefficient
-    `q⁻²(1 − q)² ≠ 0` for the cross-term `π_V ∘ d ∘ π_V ∘ d`. The proof
-    is a direct computation once `Linear ℝ C` provides scalar expansion,
-    but the cross-term non-vanishing hypothesis `hcross` is already hoisted.
+**Axiom justification**: requires analysis of the scalar coefficient
+`q⁻²(1 − q)² ≠ 0` for the cross-term `π_V ∘ d ∘ π_V ∘ d`. The proof
+is a direct computation once `Linear ℝ C` provides scalar expansion,
+but the cross-term non-vanishing hypothesis `hcross` is already hoisted.
 
-    The hypothesis `hcross` represents the geometric content: the vertical
-    projection `π_V` does not commute with the classical differential `d`,
-    so the cross-term is generically non-zero.
+The hypothesis `hcross` represents the geometric content: the vertical
+projection `π_V` does not commute with the classical differential `d`,
+so the cross-term is generically non-zero.
 
-    Ref: Connes, *Noncommutative Geometry*, Ch IV (spectral deformations). -/
--- Ref: [manuscript] §1-quantum-observable-universe
--- Ref: [connes1994] https://doi.org/10.1016/0022-4049(94)90126-0
+Ref: Connes, *Noncommutative Geometry*, Ch IV (spectral deformations).
+
+References:
+- [manuscript] §1-quantum-observable-universe
+- [connes1994] https://doi.org/10.1016/0022-4049(94)90126-0
+-/
 
 /-- **`d_q²` non-vanishing — typeclass.**
     Per-instance witness that the `q`-deformed curvature is

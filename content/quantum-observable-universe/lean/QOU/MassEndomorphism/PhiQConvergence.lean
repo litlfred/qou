@@ -1,3 +1,11 @@
+import Mathlib.Analysis.SpecificLimits.Basic
+import Mathlib.Analysis.SpecificLimits.Normed
+import Mathlib.Topology.Algebra.InfiniteSum.Basic
+import Mathlib.Topology.Algebra.InfiniteSum.Ring
+import Mathlib.Algebra.Order.AbsoluteValue
+import Mathlib.Analysis.Normed.Group.Basic
+import Mathlib.Tactic
+
 /-!
 # Gap 4 closure: Φ_q convergence at single-tick
 
@@ -41,14 +49,6 @@ formula is a separate structural problem.
   (gives |R_N| ≤ ℏ_q^{2(N+1)}/(1-ℏ_q²) — the per-N bound this
    convergence theorem implicitly underpins)
 -/
-
-import Mathlib.Analysis.SpecificLimits.Basic
-import Mathlib.Analysis.SpecificLimits.Normed
-import Mathlib.Topology.Algebra.InfiniteSum.Basic
-import Mathlib.Topology.Algebra.InfiniteSum.Ring
-import Mathlib.Algebra.Order.AbsoluteValue
-import Mathlib.Analysis.Normed.Group.Basic
-import Mathlib.Tactic
 
 namespace QOU.MassEndomorphism.PhiQConvergence
 

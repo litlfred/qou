@@ -1,3 +1,6 @@
+import Mathlib.Algebra.Polynomial.Eval.Defs
+import Mathlib.Data.Real.Basic
+
 /-!
 # QOU.Mathlib.ArchimedeanRealization — scalar evaluation `q ↦ q₀`
 
@@ -23,9 +26,6 @@ functor requires `Mathlib.Algebra.IwahoriHecke` (deferred).
 - Mathlib `Polynomial.eval` — the underlying primitive.
 - [manuscript] `prop:archimedean-realization-functor`.
 -/
-
-import Mathlib.Algebra.Polynomial.Eval.Defs
-import Mathlib.Data.Real.Basic
 
 namespace QOU.Mathlib.ArchimedeanRealization
 

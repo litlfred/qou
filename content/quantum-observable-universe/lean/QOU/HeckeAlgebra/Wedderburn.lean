@@ -1,3 +1,9 @@
+import Mathlib.Data.Matrix.Basic
+import Mathlib.Combinatorics.Enumerative.Partition
+import Mathlib.Tactic
+import QOU.HeckeAlgebra.Common
+import QOU.HeckeAlgebra.Hoefsmit
+
 /-!
 # QOU.HeckeAlgebra.Wedderburn — block decomposition
 
@@ -44,12 +50,6 @@ deferred — this module captures the type-level interface.
 - [james-kerber-1981] James-Kerber, *The Representation Theory
   of the Symmetric Group*, §1.1 (RSK correspondence).
 -/
-
-import Mathlib.Data.Matrix.Basic
-import Mathlib.Data.Nat.Partition
-import Mathlib.Tactic
-import QOU.HeckeAlgebra.Common
-import QOU.HeckeAlgebra.Hoefsmit
 
 namespace QOU.HeckeAlgebra.Wedderburn
 
