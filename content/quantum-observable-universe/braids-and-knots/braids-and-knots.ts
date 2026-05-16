@@ -618,6 +618,7 @@ export default chapter({
         "crystal-bases-path-a",
         "has-hook-maximizer",
         "dominant-pole-partition-hook",
+        "canonical-braid-interface-composition",
         "chirality-dual-space-derivation",
         "frobenius-antipode-unifies-chirality-and-tower",
         "deuteron-first-principles",
