@@ -69,7 +69,7 @@ abbrev HeckeElement (n : ℕ) : Type :=
 /-- **Frobenius inner product** on `H_n(q_0)`.  Standard inner
     product on the underlying Euclidean space, exposed under the
     QOU naming convention.  Symmetric, bilinear, positive-definite. -/
-def frobeniusInner {n : ℕ} (x y : HeckeElement n) : ℝ :=
+noncomputable def frobeniusInner {n : ℕ} (x y : HeckeElement n) : ℝ :=
   inner ℝ x y
 
 /-- The Frobenius inner product is positive on non-zero elements:
@@ -78,13 +78,13 @@ def frobeniusInner {n : ℕ} (x y : HeckeElement n) : ℝ :=
 theorem frobeniusInner_self_pos {n : ℕ} {x : HeckeElement n} (hx : x ≠ 0) :
     0 < frobeniusInner x x := by
   unfold frobeniusInner
-  exact inner_self_pos.mpr hx
+  exact real_inner_self_pos.mpr hx
 
 /-- The Frobenius inner product is bilinear-symmetric: `⟨x, y⟩ = ⟨y, x⟩`. -/
 theorem frobeniusInner_symm {n : ℕ} (x y : HeckeElement n) :
     frobeniusInner x y = frobeniusInner y x := by
   unfold frobeniusInner
-  exact real_inner_comm x y
+  exact real_inner_comm y x
 
 /-- **Markov trace** on `H_n(q_0)`, axiomatised at the linear-
     functional level.  The full categorical definition (Jones-
@@ -112,7 +112,7 @@ axiom markovTrace_linear (n : ℕ) :
 /-- **Absolute Markov trace** — the modulus of the Markov trace
     used in the QOU mass formula `M = ρ · m_e · |tr_M(T_w)|`.
     Always non-negative. -/
-def absMarkovTrace (n : ℕ) (x : HeckeElement n) : ℝ :=
+noncomputable def absMarkovTrace (n : ℕ) (x : HeckeElement n) : ℝ :=
   |markovTrace n x|
 
 theorem absMarkovTrace_nonneg (n : ℕ) (x : HeckeElement n) :

@@ -55,10 +55,8 @@ def Matrix.frobeniusInner (A B : Matrix (Fin n) (Fin n) ℝ) : ℝ :=
 theorem Matrix.frobeniusInner_symm (A B : Matrix (Fin n) (Fin n) ℝ) :
     Matrix.frobeniusInner A B = Matrix.frobeniusInner B A := by
   unfold Matrix.frobeniusInner
-  rw [Matrix.trace_mul_comm, ← Matrix.transpose_transpose B,
-      ← Matrix.transpose_mul]
-  congr 1
-  rw [Matrix.transpose_transpose, Matrix.transpose_mul,
+  -- tr(Aᵀ * B) = tr((Aᵀ * B)ᵀ) = tr(Bᵀ * Aᵀᵀ) = tr(Bᵀ * A)
+  rw [← Matrix.trace_transpose (A.transpose * B), Matrix.transpose_mul,
       Matrix.transpose_transpose]
 
 /-- **Non-negativity on the diagonal**: `⟨A, A⟩_F = Σ A_ij² ≥ 0`. -/
@@ -106,7 +104,7 @@ theorem Matrix.frobeniusInner_self_eq_zero_iff
     simp
 
 /-- **Frobenius norm** on matrices, `‖A‖_F := √(tr A^T · A)`. -/
-def Matrix.frobeniusNorm (A : Matrix (Fin n) (Fin n) ℝ) : ℝ :=
+noncomputable def Matrix.frobeniusNorm (A : Matrix (Fin n) (Fin n) ℝ) : ℝ :=
   Real.sqrt (Matrix.frobeniusInner A A)
 
 /-- **Frobenius norm is non-negative.** -/

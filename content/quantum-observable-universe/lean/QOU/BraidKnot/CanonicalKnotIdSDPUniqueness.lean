@@ -78,11 +78,11 @@ theorem heckeAsMatrix_posSemidef {n : ℕ} (x : HeckeElement n) :
     --         = Σ_i v_i x_i · Σ_j x_j v_j
     --         = (Σ_i v_i x_i)² ≥ 0
     intro v
-    show 0 ≤ Matrix.dotProduct (star v) ((heckeAsMatrix x).mulVec v)
-    have h_unfold : Matrix.dotProduct (star v) ((heckeAsMatrix x).mulVec v) =
+    show 0 ≤ dotProduct (star v) ((heckeAsMatrix x).mulVec v)
+    have h_unfold : dotProduct (star v) ((heckeAsMatrix x).mulVec v) =
         (∑ i, v i * x i) * (∑ j, x j * v j) := by
-      simp only [Matrix.dotProduct, Matrix.mulVec, heckeAsMatrix,
-                 star_trivial, Matrix.dotProduct]
+      simp only [dotProduct, Matrix.mulVec, heckeAsMatrix,
+                 star_trivial, dotProduct]
       rw [← Finset.sum_mul_sum]
       apply Finset.sum_congr rfl
       intro i _

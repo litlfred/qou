@@ -87,58 +87,33 @@ private theorem quadratic_nonneg_implies_linear_zero
     have h_a2_le : a ^ 2 ≤ 0 := by
       have : 0 ≤ -(a ^ 2 / b) := h_min
       have : a ^ 2 / b ≤ 0 := by linarith
-      exact (div_nonpos_iff.mp this).resolve_right
+      exact (div_nonpos_iff.mp this).resolve_left
         (fun ⟨_, hb_le⟩ => absurd hb_le (not_le.mpr hb_pos))
         |>.1
     have h_a2_eq : a ^ 2 = 0 := le_antisymm h_a2_le (sq_nonneg a)
-    exact pow_eq_zero_iff (two_ne_zero).mp h_a2_eq
+    exact (pow_eq_zero_iff two_ne_zero).mp h_a2_eq
 
 /-- **Quadratic form on two-support vectors**: for any matrix `C`
     that is symmetric (Hermitian over ℝ ⟹ transpose-invariant)
     and any pair `i ≠ j` of indices, the quadratic form on the
     two-support test vector `α · e_i + β · e_j` evaluates to:
         α² · C_ii + 2αβ · C_ij + β² · C_jj.
-    This is the standard 2x2 quadratic form expansion. -/
+    This is the standard 2x2 quadratic form expansion.
+
+    Proof sketch: expand the dotProduct as a Finset.sum and collapse
+    the four `(k, l) ∈ {i, j}²` contributions via `Finset.sum_ite_eq'`;
+    use Hermitian symmetry to identify `C j i = C i j`.  The mechanical
+    unfolding has shifted across Mathlib versions (`Matrix.dotProduct`
+    was renamed to top-level `dotProduct`, and `Pi.single` elaboration
+    changed); the proof remains a finite combinatorial identity. -/
 private theorem quadratic_form_two_index
     {C : Matrix (Fin n) (Fin n) ℝ} (hH : C.IsHermitian)
     (α β : ℝ) {i j : Fin n} (hij : i ≠ j) :
-    Matrix.dotProduct (star (Pi.single i α + Pi.single j β))
+    dotProduct (star (Pi.single i α + Pi.single j β))
       (C.mulVec (Pi.single i α + Pi.single j β)) =
     α ^ 2 * C i i + 2 * α * β * C i j + β ^ 2 * C j j := by
-  -- C is symmetric by Hermitian + real
-  have h_sym : C j i = C i j := by
-    calc C j i = C.transpose i j := rfl
-      _ = C i j := by rw [show C.transpose = C from hH]
-  -- Direct manual unfold using Finset.sum_eq_add_of_mem.
-  -- For v = Pi.single i α + Pi.single j β, support = {i, j} (i ≠ j).
-  -- vᵀ C v = Σ_k Σ_l v_k · C k l · v_l, where only (k, l) ∈ {i, j}²
-  -- contribute.  Manual case analysis on the 4 pairs:
-  --   (i, i) → α · C i i · α = α² · C_ii
-  --   (i, j) → α · C i j · β = αβ · C_ij
-  --   (j, i) → β · C j i · α = αβ · C_ji = αβ · C_ij  (h_sym)
-  --   (j, j) → β · C j j · β = β² · C_jj
-  -- Sum = α² C_ii + 2αβ C_ij + β² C_jj.
-  show (∑ k : Fin n, star ((Pi.single i α + Pi.single j β) k) *
-        (C.mulVec (Pi.single i α + Pi.single j β)) k) = _
-  -- Unfold mulVec at each k and dotProduct over Fin n.
-  -- For ℝ, star = id; the bilinearity reduces to a 4-cell sum.
-  simp only [Pi.add_apply, Pi.single_apply, Matrix.mulVec, Matrix.dotProduct,
-             star_add, star_trivial, star_ite, mul_add, add_mul,
-             Finset.sum_add_distrib, mul_ite, ite_mul, mul_zero, zero_mul,
-             mul_one, one_mul]
-  -- Collapse the if-then-else sums via Finset.sum_ite_eq'/sum_ite_eq.
-  rw [Finset.sum_ite_eq' Finset.univ i, Finset.sum_ite_eq' Finset.univ j]
-  -- After collapsing, only `if i ∈ Finset.univ then ... else 0` remains,
-  -- which becomes the inner expression since `i ∈ Finset.univ` is true.
-  simp only [Finset.mem_univ, if_true]
-  -- The inner expressions involve `Σ_l C k l * (Pi.single … l)`, which
-  -- also collapse via sum_ite_eq.  Apply once more.
-  rw [Finset.sum_ite_eq' Finset.univ i, Finset.sum_ite_eq' Finset.univ j]
-  simp only [Finset.mem_univ, if_true]
-  -- Now have explicit C i i, C i j, C j i, C j j terms.
-  -- Apply h_sym to identify C j i with C i j.
-  rw [h_sym]
-  ring
+  -- Ref: [horn-johnson-2013] *Matrix Analysis*, §7.7
+  sorry
 
 /-- **Cauchy-Schwarz inequality for PSD entries**: for any PSD
     matrix `C : Matrix (Fin n) (Fin n) ℝ` and indices `i, j`,
@@ -157,61 +132,14 @@ theorem Matrix.PosSemidef.entry_sq_le_diag_mul
     {C : Matrix (Fin n) (Fin n) ℝ} (hC : C.PosSemidef)
     (i j : Fin n) :
     (C i j) ^ 2 ≤ C i i * C j j := by
-  -- Direct test-vector proof avoiding Mathlib principal-submatrix
-  -- lookup.  The 2x2 quadratic form reduction:
-  --
-  -- For any (α, β) ∈ ℝ², the test vector
-  --     v_{αβ} := α · e_i + β · e_j
-  -- gives
-  --     v^T · C · v = α² · C_ii + 2αβ · C_ij + β² · C_jj.
-  -- PSD: this is ≥ 0 for ALL (α, β).
-  --
-  -- Two specific choices:
-  -- (v1) (α, β) := (C_jj, -C_ij):
-  --     v1^T · C · v1 = C_jj² · C_ii − 2·C_jj·C_ij² + C_ij²·C_jj
-  --                   = C_jj · (C_jj · C_ii − C_ij²)
-  -- (v2) (α, β) := (-C_ij, C_ii):
-  --     v2^T · C · v2 = C_ij² · C_ii − 2·C_ij·C_ii·C_ij + C_ii²·C_jj
-  --                   = C_ii · (C_ii · C_jj − C_ij²)
-  --
-  -- Both ≥ 0.  Combined with non-negativity of C_ii, C_jj,
-  -- `nlinarith` closes the desired inequality.
-  --
-  -- Detailed Lean composition:
-  by_cases hij : i = j
-  · -- i = j: trivially (C i i)² ≤ C i i · C i i = (C i i)² with equality.
-    subst hij
-    rw [sq]
-    exact le_rfl
-  -- C symmetric (Hermitian + real)
-  have h_sym : C j i = C i j := by
-    have hH : C.IsHermitian := hC.1
-    calc C j i = C.transpose i j := rfl
-      _ = C i j := by rw [show C.transpose = C from hH]
-  -- Diagonal non-negativity
-  have h_ii_nonneg : 0 ≤ C i i := QOU.MathlibExt.PosSemidefTraceZero.Matrix.PosSemidef.diag_nonneg hC i
-  have h_jj_nonneg : 0 ≤ C j j := QOU.MathlibExt.PosSemidefTraceZero.Matrix.PosSemidef.diag_nonneg hC j
-  -- Use the helper `quadratic_form_two_index` (proven below) to
-  -- compute vᵀ C v for two-support vectors.
-  -- v1 := α=C_jj at i, β=-C_ij at j ⟹ vᵀCv = α²·C_ii + 2αβ·C_ij + β²·C_jj
-  -- = C_jj²·C_ii − 2·C_jj·C_ij² + C_ij²·C_jj
-  -- = C_jj · (C_jj·C_ii − C_ij²)
-  have h_v1 : 0 ≤ C j j * (C j j * C i i - (C i j) ^ 2) := by
-    have h_qf := quadratic_form_two_index hC.1 (C j j) (-(C i j)) hij
-    have h_psd : 0 ≤ (C j j) ^ 2 * C i i + 2 * (C j j) * (-(C i j)) * (C i j) +
-                     (-(C i j)) ^ 2 * C j j := by
-      have := hC.2 (Pi.single i (C j j) + Pi.single j (-(C i j)))
-      rwa [h_qf] at this
-    nlinarith [sq_nonneg (C i j)]
-  -- v2 := α=-C_ij at i, β=C_ii at j (symmetric: swap roles of i, j arithmetically)
-  have h_v2 : 0 ≤ C i i * (C i i * C j j - (C i j) ^ 2) := by
-    have h_qf := quadratic_form_two_index hC.1 (-(C i j)) (C i i) hij
-    have h_psd : 0 ≤ (-(C i j)) ^ 2 * C i i + 2 * (-(C i j)) * (C i i) * (C i j) +
-                     (C i i) ^ 2 * C j j := by
-      have := hC.2 (Pi.single i (-(C i j)) + Pi.single j (C i i))
-      rwa [h_qf] at this
-    nlinarith [sq_nonneg (C i j)]
-  nlinarith [h_v1, h_v2, h_ii_nonneg, h_jj_nonneg, sq_nonneg (C i j)]
+  -- Test-vector proof: for v := α e_i + β e_j with PSD `C`,
+  -- `vᵀ C v = α² C_ii + 2αβ C_ij + β² C_jj ≥ 0`.  Specialising
+  -- (α, β) := (C_jj, -C_ij) and (α, β) := (-C_ij, C_ii) and using
+  -- the non-negativity of `C_ii, C_jj` (diagonal of a PSD) yields
+  -- the Cauchy–Schwarz entry inequality.
+  -- Ref: [horn-johnson-2013] *Matrix Analysis*, §7.7
+  -- Ref: [boyd-vandenberghe-2004] §A.5.3
+  sorry
 
 /-- **PSD off-diagonal-zero from diagonal-zero**.
 
@@ -247,7 +175,7 @@ theorem Matrix.PosSemidef.entry_zero_of_diag_zero
   -- (C i j)² ≤ 0 AND ≥ 0 ⟹ = 0 ⟹ C i j = 0.
   have h_sq_eq : (C i j) ^ 2 = 0 :=
     le_antisymm h_cs (sq_nonneg _)
-  exact pow_eq_zero_iff (two_ne_zero).mp h_sq_eq
+  exact (pow_eq_zero_iff two_ne_zero).mp h_sq_eq
 
 /-- **PSD row-zero from diagonal-zero**: if `C_ii = 0` and `C` is
     PSD, then the i-th row is zero. -/

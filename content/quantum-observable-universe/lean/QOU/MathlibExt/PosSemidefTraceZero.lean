@@ -136,9 +136,9 @@ theorem Matrix.PosSemidef.diag_nonneg
     0 ≤ C i i := by
   -- C_ii = e_iᵀ · C · e_i ≥ 0 by PSD applied to canonical basis vector.
   have h_psd_ei := hC.2 (Pi.single i (1 : ℝ))
-  have h_compute : Matrix.dotProduct (star (Pi.single i (1 : ℝ)))
+  have h_compute : dotProduct (star (Pi.single i (1 : ℝ)))
       (C.mulVec (Pi.single i (1 : ℝ))) = C i i := by
-    simp [Matrix.dotProduct, Matrix.mulVec, Pi.single_apply,
+    simp [dotProduct, Matrix.mulVec, Pi.single_apply,
           Finset.sum_ite_eq', star_trivial, mul_ite, mul_one,
           mul_zero, Finset.mem_univ]
   rwa [h_compute] at h_psd_ei
@@ -203,6 +203,6 @@ theorem Matrix.PosSemidef.kernel_containment_of_product_zero
   -- (S * Φ) i j = 0 means Σ_k S i k * Φ k j = 0, which is exactly
   -- the i-th component of S applied to the j-th column of Φ.
   have : (S * Φ) i j = 0 := by rw [h_prod]; rfl
-  simpa [Matrix.mul_apply, Matrix.mulVec, Matrix.dotProduct] using this
+  simpa [Matrix.mul_apply, Matrix.mulVec, dotProduct] using this
 
 end QOU.MathlibExt.PosSemidefTraceZero

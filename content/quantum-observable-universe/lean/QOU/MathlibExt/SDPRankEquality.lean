@@ -236,11 +236,11 @@ theorem kernel_disjoint_of_dualSlack_posDef
   -- S.PosDef ⟹ S.mulVec v = 0 ⟹ v = 0
   by_contra hv_ne
   -- For non-zero v, vᵀ S v > 0 by PosDef.
-  have h_pos : 0 < Matrix.dotProduct v ((sdp.dualSlack sc.ystar).mulVec v) :=
+  have h_pos : 0 < dotProduct v ((sdp.dualSlack sc.ystar).mulVec v) :=
     h_S_posDef.2 v hv_ne
   -- But S v = 0 ⟹ vᵀ S v = vᵀ 0 = 0.
-  have h_zero : Matrix.dotProduct v ((sdp.dualSlack sc.ystar).mulVec v) = 0 := by
-    rw [h_S_v, Matrix.dotProduct_zero]
+  have h_zero : dotProduct v ((sdp.dualSlack sc.ystar).mulVec v) = 0 := by
+    rw [h_S_v, dotProduct_zero]
   -- Contradiction.
   linarith
 
@@ -345,10 +345,10 @@ theorem range_spans_of_active_empty_and_cost_posDef
     skeleton via Hermitian inner-product manipulation.
 
     PER COPILOT REVIEW: the proof body still contains 2 small
-    `Matrix.dotProduct_mulVec` adjoint-identity sub-sorries.
+    `dotProduct_mulVec` adjoint-identity sub-sorries.
     The structural argument (sum-of-squares zero ⟹ vector is
     zero) is correct; the sub-sorries are mechanical Mathlib
-    API verifications (likely `Matrix.dotProduct_mulVec` or
+    API verifications (likely `dotProduct_mulVec` or
     `Matrix.mulVec_transpose`).  Treated as TODO until Lean
     build verifies the exact lemma names.
 
@@ -365,7 +365,7 @@ theorem range_spans_of_active_empty_and_cost_posDef
     * `= ⟨0, a⟩ + ⟨0, b⟩ = 0`
     * `‖v‖² = 0 ⟹ v = 0`
 
-    Proof body has 2 small `Matrix.dotProduct_mulVec` adjoint
+    Proof body has 2 small `dotProduct_mulVec` adjoint
     sub-sorries pending Mathlib API name verification.  The
     structural argument is sound; closure is mechanical once
     the exact lemma names are confirmed.  This shifts the
@@ -395,26 +395,26 @@ theorem kernel_disjoint_of_range_spans
   --         = ⟨Φ·v, a⟩ + ⟨S·v, b⟩      (Hermitian: Φᵀ = Φ, Sᵀ = S)
   --         = ⟨0, a⟩ + ⟨0, b⟩          (kernel hypotheses)
   --         = 0
-  have h_inner_zero : Matrix.dotProduct v v = 0 := by
+  have h_inner_zero : dotProduct v v = 0 := by
     -- Substitute the decomposition.
     nth_rewrite 2 [hv_decomp]
-    rw [Matrix.dotProduct_add]
-    -- For each term: ⟨v, M·w⟩ = ⟨Mᵀ·v, w⟩ via `Matrix.dotProduct_mulVec`.
-    rw [Matrix.dotProduct_mulVec v sc.Φstar a,
-        Matrix.dotProduct_mulVec v (sdp.dualSlack sc.ystar) b]
+    rw [dotProduct_add]
+    -- For each term: ⟨v, M·w⟩ = ⟨Mᵀ·v, w⟩ via `dotProduct_mulVec`.
+    rw [dotProduct_mulVec v sc.Φstar a,
+        dotProduct_mulVec v (sdp.dualSlack sc.ystar) b]
     -- Now goal: `(Φᵀ.mulVec v) ⬝ᵥ a + (Sᵀ.mulVec v) ⬝ᵥ b = 0`.
     -- Hermitian: Φᵀ = Φ, Sᵀ = S — combined with `Φ·v = 0`, `S·v = 0`,
     -- both terms collapse to `0 ⬝ᵥ _ = 0`.
     rw [show sc.Φstar.transpose = sc.Φstar from h_Φ_herm,
         show (sdp.dualSlack sc.ystar).transpose = sdp.dualSlack sc.ystar from h_S_herm,
-        h_Φv, h_Sv, Matrix.zero_dotProduct, Matrix.zero_dotProduct, add_zero]
+        h_Φv, h_Sv, zero_dotProduct, zero_dotProduct, add_zero]
   -- ⟨v, v⟩ = 0 ⟹ v = 0 (sum of squares zero ⟹ each entry zero).
-  -- Mathlib: `Matrix.dotProduct_self_eq_zero_iff` or similar.
+  -- Mathlib: `dotProduct_self_eq_zero_iff` or similar.
   -- Or via Pi.norm: `‖v‖² = 0 ⟹ v = 0`.
   funext i
   -- (v i)² is one of the summands; sum-of-squares zero ⟹ each zero
   have h_sum : ∑ k, v k * v k = 0 := by
-    simpa [Matrix.dotProduct] using h_inner_zero
+    simpa [dotProduct] using h_inner_zero
   have h_sq_zero : v i * v i = 0 :=
     (Finset.sum_eq_zero_iff_of_nonneg
       (fun k _ => mul_self_nonneg (v k))).mp h_sum i (Finset.mem_univ _)

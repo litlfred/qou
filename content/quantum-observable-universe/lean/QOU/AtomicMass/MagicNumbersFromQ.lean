@@ -55,7 +55,7 @@ open scoped BigOperators
     lives in `q-pinning` and tightens this without changing the
     `Phi_signal` tabulation, which branches only on `K` and `Z`. -/
 -- Ref: [manuscript] algebraic-substrate/q-pinning
-def q_zero : ℝ := (11097 : ℝ) / 10000
+noncomputable def q_zero : ℝ := (11097 : ℝ) / 10000
 
 /-! ## Hoefsmit character signal — concrete tabulation
 

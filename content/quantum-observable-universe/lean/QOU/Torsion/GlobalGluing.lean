@@ -1,5 +1,7 @@
 import Mathlib.Algebra.Group.Basic
 import Mathlib.Algebra.Ring.Basic
+import Mathlib.Algebra.Module.Defs
+import Mathlib.Algebra.Ring.Hom.Defs
 
 /-!
 # QOU.Torsion.GlobalGluing — Global gluing of twisted deformations
