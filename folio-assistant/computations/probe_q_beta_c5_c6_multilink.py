@@ -40,30 +40,20 @@ import mpmath as mp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
-from codata_constants import M_E_MEV  # noqa: E402
-
 mp.mp.dps = 80  # extra precision for higher orders
 
-
-def _q_0_50dps() -> mp.mpf:
-    with (HERE / "q-pinning-50-digit.witness.json").open() as fh:
-        d = json.load(fh)
-    return mp.mpf(d["derived_50_digit"]["q"])
+from qbeta_physics import compute_substrate_quantities  # noqa: E402
 
 
 def main() -> int:
-    q = _q_0_50dps()
-    m_e = mp.mpf(str(M_E_MEV))
-    Q_AME = mp.mpf("939.5654205240") - mp.mpf("938.27208816") - m_e
-    Q_A = m_e * mp.fabs(q ** 2 - 2 * q - 1) * (q + 1) / (2 * q ** 3)
-    h = q - 1 / q
-    z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
-    hbar_q = (q - 1) / q
-    alpha = (z - 1) * h / 2
-    d1 = q ** 3 / (q ** 2 + 1)
-    d2 = -1 / (q * (q ** 2 + 1))
-    b = mp.sqrt(d1 * d2 + 1)
-    alpha_N1 = alpha - b * hbar_q ** 2 / 2
+    # Substrate quantities (q, h, z, ℏ_q, α, b, Q_A, Q_AME, etc.) come
+    # from the shared `qbeta_physics` module to avoid duplication across
+    # probes (per Gemini centralization review).
+    Q = compute_substrate_quantities()
+    q, h, z, hbar_q, alpha = Q["q"], Q["h"], Q["z"], Q["hbar_q"], Q["alpha"]
+    b, alpha_N1 = Q["hoefsmit_b"], Q["alpha_N1"]
+    Q_A, Q_AME = Q["Q_A"], Q["Q_AME"]
+    m_e = Q["m_e"]
 
     print("=" * 96)
     print("  Q_β c_5 and c_6 — multi-link Jones investigation")
