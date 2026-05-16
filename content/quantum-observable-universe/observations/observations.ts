@@ -256,6 +256,31 @@ export default chapter({
       ],
     }),
 
+    // ── Non-comm probability framework (broadly useful, resolves #649) ─
+    section({
+      title:
+        "Non-Commutative Probability, the q-CLT, and the Archimedean Macroscopic Limit",
+      label: "sec:non-comm-probability-q-clt",
+      blocks: [
+        "non-comm-probability-intro",
+        "non-commutative-probability-dictionary",
+        "algebraic-gns-embedding",
+        "algebraic-gns-embedding-proof",
+        "q-plancherel-asymptotic-skeleton",
+        "hecke-satisfies-blitvic-hypothesis",
+        "hecke-satisfies-blitvic-hypothesis-proof",
+        "centered-hecke-variance-positive",
+        "centered-hecke-variance-positive-proof",
+        "q-clt-non-commutative",
+        "archimedean-macroscopic-washout",
+        "trace-locality-meets-gs-nonlocality",
+        "trace-locality-meets-gs-nonlocality-proof",
+        "brane-tower-q-laplacian-decay",
+        "brane-tower-q-laplacian-decay-proof",
+        "cfs-comparison-summary",
+      ],
+    }),
+
     // ── Transcendence falsifiability signatures ──────────────────────
     section({
       title: "Transcendence Falsifiability Signatures",
