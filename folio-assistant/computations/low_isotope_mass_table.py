@@ -95,25 +95,26 @@ from codata_constants import (
 M_P_REF_MEV = float(_M_P_REF_MEV_raw)
 M_N_REF_MEV = float(_M_N_REF_MEV_raw)
 
-# ── m_p sanity-check threshold (anti-tautology) ────────────────
+# ── m_p sanity-check threshold (anti-tautology + framework-precision gate) ──
 # Per the three-calibration discipline, m_p is a PREDICTION, not an
-# input. If the upstream chain's prediction is wildly off CODATA,
-# we refuse to consume it (a "successful" 543 ppm match in an OLD
-# witness is a sign that calibration leaked in, NOT that the chain
-# closed). The threshold below admits the framework's current best
-# derivation; tighten as upstream closure milestones land.
+# input. The threshold below is the framework's **real target**:
+# CAL-1/2/3 closure to 1 ppb (1e-9), within CODATA experimental
+# measurement error.  Reasoning (owner directive 2026-05-16):
+#   "tighten to 1 ppb compute infra and within measurement error.
+#    this is our real goal."
+# CODATA m_p uncertainty is ~50 eV / 938 MeV ≈ 5e-11 (sub-ppb), so
+# 1 ppb sits comfortably above the experimental floor.
 #
 # Threshold history:
-#   - 0.01 (1 %)  — initial guard for PR #663; rejected the Path A
-#                   T1+T4 truncation (which had m_p_pred = 0.597 MeV,
-#                   off by 9 orders of magnitude from CODATA).
-#   - 0.02 (2 %)  — current; admits the full mass-endomorphism tower
-#                   T1+T2+T3+T4 closure at 1.630 % residual
-#                   (see proton-mass-full-tower-50dps.witness.json,
-#                   produced by derive_m_p_hecke_full_tower_50dps.py).
-#                   Drop to 0.001 (1 ppm) once T5/T6 are wired in for
-#                   the electron at MPFR.
-M_P_DERIVED_MAX_REL_DIFF = 0.02
+#   - 0.01  (1 %)    PR #663 initial guard. Rejected Path A T1+T4
+#                    truncation (m_p_pred = 0.597 MeV, 9 orders off).
+#   - 0.02  (2 %)    Lifted briefly to admit the 1.63 % full-tower
+#                    closure as "derived" on 2026-05-16; reverted on
+#                    same date per owner: "tighten to 1 ppb".
+#   - 1e-9  (1 ppb)  Current.  The framework's actual closure target.
+#                    Every row currently >> threshold → all rows
+#                    correctly classified `derivation_pending`.
+M_P_DERIVED_MAX_REL_DIFF = 1e-9
 
 # ── Derived inputs ─────────────────────────────────────────────
 # m_p comes from the categorical derivation chain at 50 dps.  We

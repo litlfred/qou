@@ -370,19 +370,63 @@ n=11 per a comment in [`mass_formula_6term_mpfr_50dps.py:349`](../../folio-assis
 following PR #666's branching-basis pattern with H_12 cache
 warming. Not in scope for this branch.
 
-## Status summary (this commit)
+## Owner decisions 2026-05-16 (post-#669-close)
 
-| Closure | Branch state | Honest residual |
-|---|---|---|
-| m_p full-tower | ✓ landed (`proton-mass-full-tower-50dps.witness.json`) | +1.63 % |
-| ¹H atomic | ✓ derived (`row_derivation_status = "derived"`) | +16,288 ppm |
-| m_n full-tower | ✓ landed this commit | −62.97 % (recorded, not propagated) |
-| T5 electron | ✗ convention question; documented | — |
-| T6 electron | ✗ research work; documented | — |
-| B(⁴He+) at H_12 | ✗ separate compute-heavy PR; documented | — |
+After reviewing sibling-PR state and the user's "what decisions?"
+checkpoint, six items were resolved:
 
-The branch's user-facing deliverable — **¹H lifted from a
-tautology to a genuinely-derived 1.63 % framework prediction with
-full anti-staleness infra** — is preserved. Other rows in
-`low-isotope-mass-table.witness.json` remain `derivation_pending`
-with explicit pointers to the upstream gates.
+1. **PR #664 merge order** — accept recommendation: #663 first,
+   #664 rebases to dedup.
+2. **Δ_λ catalog on this PR** — *target was this PR; verdict on
+   inspection: **blocked**.* PR #666 closed χ^λ at H_9 for tritium
+   (necessary input) but not Δ_λ.  The `binding_K_direct.py` model
+   `B(K) = m_e · Σ_λ y_λ(q) χ^λ(β_K) Δ_λ(K)` needs Δ_λ derived
+   from QOU axioms; back-solving from B_AME = experimental binding
+   energy is **fitting** by definition (the central open compute
+   per PRs #602 / #603 / #613). On this PR's no-fit discipline,
+   the catalog cannot be assembled without violating CAL-1/2/3.
+   Pushed back to a separate PR after the Δ_λ derivation closes.
+3. **m_n structural gap** — document only; no investigation on
+   this PR.  Done (this audit).
+4. **T5 electron via V2 Gram-matrix** — *probed and refuted*.
+   `term5_v2_chirality.aK_v2(0, 0) = 1.0` evaluates cleanly (the
+   V2 factor extends to the electron's H_2 trefoil), **but**
+   `term_5_chirality_bw_mp(0, 0, 'none')` raises
+   `ZeroDivisionError` from `B_bulk(A=0, …)` — the nucleon-ledger
+   functions are structurally undefined for the electron. Result:
+   the chirality factor IS derived (= 1), but the rest of T5
+   (bulk + Z-dep + shell) is not, so a derived T5 closure for the
+   electron is not yet possible.  Convention (c) "exclude T5 from
+   both sides of the ratio" stands.  Per owner directive "try b if
+   derived": (b) attempted, not derived → falling back to (c).
+5. **Threshold tightened to 1 ppb (1e-9)** — owner directive:
+   "tighten to 1 ppb compute infra and within measurement error.
+   this is our real goal."  CODATA m_p uncertainty ~50 eV / 938
+   MeV ≈ 5e-11 (sub-ppb), so 1 ppb sits above the experimental
+   floor.  Mass table regenerated; **all 23 rows now
+   `derivation_pending`** (the 1.63 % m_p closure is too coarse).
+   Honest reporting: the m_p_pred value is recorded in the
+   witness; the row classification reflects the 1 ppb closure
+   gate, not the partial residual.
+6. **B(⁴He+) at H_12** — wait; cherry-pick if needed.  PR #669
+   (which identified the H_12 next step) closed without merging
+   on 2026-05-16; no active sibling owns this work.  Backlog.
+
+## Status summary (this commit, post-decisions)
+
+| Closure | Branch state | Honest residual | passes 1 ppb? |
+|---|---|---|---|
+| m_p full-tower | ✓ landed (`proton-mass-full-tower-50dps.witness.json`) | +1.63 % = 1.63e7 ppb | ✗ no |
+| ¹H atomic | now `derivation_pending` (was briefly `derived` at 2 % gate) | recorded only | ✗ no |
+| m_n full-tower | ✓ landed (`neutron-mass-full-tower-50dps.witness.json`) | −62.97 % | ✗ no |
+| T5 electron | ✗ V2 factor probed; not derived | — | — |
+| T6 electron | ✗ research work; documented | — | — |
+| Δ_λ catalog (²H/³H/³He) | ✗ blocked on Δ_λ derivation (PRs #602/#603/#613) | — | — |
+| B(⁴He+) at H_12 | ✗ backlog; no active sibling after #669 close | — | — |
+
+The branch's deliverable is the **infrastructure + audit chain**:
+a 54,000× tighter m_p prediction wired through transparent 50-dps
+witnesses, anti-staleness on every consumer, and the 1 ppb gate
+applied honestly so that no row is mis-labelled derived.  The
+remaining residuals are the deliverables — research items, not
+patches.

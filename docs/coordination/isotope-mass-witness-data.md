@@ -7,6 +7,30 @@ under strict three-calibration discipline (CAL-1 m_e, CAL-2 q₀, CAL-3
 Q_β; m_p and m_n are predictions, never inputs) + anti-staleness
 infra to prevent the failure mode that produced the ¹H tautology.
 
+## Scope map (2026-05-16 — fourth cycle, post-decisions checkpoint)
+
+Owner closed PR #669 without merging on 2026-05-16; resolved six
+decisions on this PR ("what decisions?" checkpoint). Cycle state:
+
+| PR | Status | Bearing | Action this cycle |
+|---|---|---|---|
+| **#663 (this)** | open | — | threshold tightened to **1 ppb (1e-9)**; ¹H reverted from `derived` to `derivation_pending` (honest framework state); T5_e via V2 probed (not derived); Δ_λ catalog assembly **blocked** on upstream derivation; m_n + ⁴He documented as research items |
+| **#666** | **MERGED** | χ^λ at H_9 for tritium (machine ε) — necessary but not sufficient for the Δ_λ catalog (Δ_λ derivation is the unsolved piece) | watch for follow-on PRs that close Δ_λ |
+| **#668** | open | T6 closure infra (nucleon-only); doesn't extend to electron | cross-referenced; no action |
+| **#669** | **CLOSED w/o merge** | (was) ⁴He anchor identification | backlog item: no active sibling owns ⁴He@H_12 |
+| **#665** | open | n-strand BraidGroup Lean | tangential |
+
+### Decisions executed (2026-05-16)
+
+| # | Topic | Owner verdict | Branch action |
+|---|---|---|---|
+| 1 | PR #664 merge order | #663 first | none required; awaits merge |
+| 2 | Δ_λ catalog on this PR | this PR | **blocked**: assembly requires Δ_λ derivation (still in flight); back-solving is fitting. Documented in audit + ledger. Pushed back to a follow-up PR after the derivation closes |
+| 3 | m_n structural gap | document only | done (audit + witness) |
+| 4 | T5 electron (option b) | try b if derived | probed: `aK_v2(0,0) = 1.0` works but `B_bulk(0,…)` ZeroDivisionError; **not derived** → falls back to (c) "exclude T5" |
+| 5 | Threshold | **1 ppb** + within measurement error | landed; all 23 rows pending; honest framework precision floor |
+| 6 | B(⁴He+) at H_12 | wait; cherry-pick if needed | backlog; no active sibling after #669 closed |
+
 ## Scope map (2026-05-16 14:55 UTC — third cycle, post-#666 merge)
 
 | PR | Status | Bearing | Action this cycle |
