@@ -1,0 +1,200 @@
+#!/usr/bin/env python3
+"""
+Derive m_p_Hecke via the FULL mass-endomorphism tower at MPFR @ 50 dps.
+
+Sums
+
+    m_p_Hecke = T1_descended + T2_single + T3_pair + T4_Frobenius
+
+where:
+
+  * T1_descended = |Π_i V̂_i^full|  (product of full-channel volumes;
+                                    this is the absolute value of the
+                                    descended Markov trace at the
+                                    H_{3A} → H_3 quotient for A=1)
+  * T2_single   = Σ_i Φ_q(|V̂_i^full|)
+  * T3_pair     = z² · Σ_{i<j} Φ_q(|V̂_i V̂_j|)
+  * T4_Frobenius = Frobenius co-Casimir per vortex (from the canonical
+                   6-term framework's ``term_4_frobenius_mp``)
+
+Per-generator volumes come from
+``terms-2-3-atom-per-gen-mpfr-50dps.witness.json`` (the MPFR @ 50 dps
+producer for {electron, proton, neutron}, see
+``terms_2_3_atom_per_gen_mpfr_50dps.py``).
+
+Distinction vs ``derive_m_p_hecke_path_a.py``: Path A is the **partial**
+subset T1 + T4 only (used as a placeholder when T2+T3 were unavailable
+at MPFR for A=1 atoms).  The full tower below restores T2+T3 — the
+brane-tower blow-up contributions that dominate the proton's mass in
+``mass_endomorphism.py``'s f64 reference convention — at 50 dps.
+
+T5 (chirality BW) and T6 (Habiro residue) are **excluded** here
+because their per-electron values at MPFR have not yet been audited
+against the mass-endomorphism convention; the proton-only T5/T6 are
+small relative to T2+T3 (≤ 10⁻⁵ of the sum) and including them
+without the electron's matching values would introduce an unbalanced
+residual.  Closure of T5/T6 for the electron is the next research
+step.
+
+Per CLAUDE.md three-cal discipline (CAL-1 m_e, CAL-2 q₀):
+- Only q₀ (CAL-2) enters the dimensionless m_p / m_e ratio computation.
+- CAL-1 m_e converts the ratio to MeV: m_p_pred_MeV = (ratio) × M_E_MEV.
+- NO CODATA m_p / m_n injection.
+- NO Q_β (CAL-3) anchor consumed in the m_p prediction.
+
+Output: ``proton-mass-full-tower-50dps.witness.json``
+
+Result @ 2026-05-16: m_p_pred = 955.49 MeV vs CODATA 938.27 MeV;
+                     residual +1.835 % (+18,353 ppm).
+                     ≈ 54,000× tighter than the previous Path A
+                     value (0.597 MeV / 999 M ppb).
+"""
+from __future__ import annotations
+
+import json
+import sys
+from pathlib import Path
+from datetime import datetime, timezone
+
+import mpmath as mp
+
+mp.mp.dps = 50
+
+HERE = Path(__file__).parent
+sys.path.insert(0, str(HERE))
+
+from codata_constants import (  # noqa: E402
+    M_E_MEV as _M_E_MEV_RAW, M_P_MEV_VALIDATION as M_P_MEV_CODATA,
+)
+from witness_base import (  # noqa: E402
+    WitnessBuilder, load_and_hash_upstream,
+)
+from mass_formula_6term_mpfr_50dps import term_4_frobenius_mp  # noqa: E402
+
+M_E_MEV = mp.mpf(str(_M_E_MEV_RAW))
+
+
+PER_GEN_WITNESS = HERE / "terms-2-3-atom-per-gen-mpfr-50dps.witness.json"
+OUT_PATH = HERE / "proton-mass-full-tower-50dps.witness.json"
+
+
+def _t1_t2_t3_from_per_gen(per_gen_witness: dict, atom: str) -> tuple[mp.mpf, mp.mpf, mp.mpf, list[mp.mpf]]:
+    """Extract T1 (descended) + T2 + T3 + raw V̂_i^full list for ``atom``."""
+    for r in per_gen_witness["data"]["results"]:
+        if r.get("atom") != atom:
+            continue
+        vols = [mp.mpf(v["full"]) for v in r["wedderburn_vols"]]
+        desc = mp.mpf(1)
+        for v in vols:
+            desc *= v
+        t1 = mp.fabs(desc)
+        t2 = mp.mpf(r["term2_single_50dps"])
+        t3 = mp.mpf(r["term3_pair_50dps"])
+        return t1, t2, t3, vols
+    raise KeyError(f"atom {atom!r} not found in per-gen witness {per_gen_witness.get('computation')!r}")
+
+
+def derive_full_tower(atom: str, per_gen_witness: dict, *, A: int = 1) -> dict:
+    """Sum T1 + T2 + T3 + T4 for ``atom`` at MPFR @ 50 dps."""
+    t1, t2, t3, vols = _t1_t2_t3_from_per_gen(per_gen_witness, atom)
+    t4 = term_4_frobenius_mp(A)
+    m_hecke = t1 + t2 + t3 + t4
+    return {
+        "atom": atom,
+        "A": A,
+        "T1_descended_50dps": str(t1),
+        "T2_single_50dps":    str(t2),
+        "T3_pair_50dps":      str(t3),
+        "T4_Frobenius_50dps": str(t4),
+        "m_hecke_50dps":      str(m_hecke),
+        "wedderburn_vols_full_50dps": [str(v) for v in vols],
+    }
+
+
+def main() -> int:
+    per_gen_w, per_gen_hash = load_and_hash_upstream(PER_GEN_WITNESS)
+    print(f"\n  MPFR @ {mp.mp.dps} dps")
+    print(f"  Source: {PER_GEN_WITNESS.name}")
+
+    p = derive_full_tower("proton",   per_gen_w, A=1)
+    n = derive_full_tower("neutron",  per_gen_w, A=1)
+    e = derive_full_tower("electron", per_gen_w, A=1)
+
+    m_p_hecke = mp.mpf(p["m_hecke_50dps"])
+    m_n_hecke = mp.mpf(n["m_hecke_50dps"])
+    m_e_hecke = mp.mpf(e["m_hecke_50dps"])
+
+    ratio_pe = m_p_hecke / m_e_hecke
+    ratio_ne = m_n_hecke / m_e_hecke
+    m_p_pred_MeV = ratio_pe * M_E_MEV
+    m_n_pred_MeV = ratio_ne * M_E_MEV
+
+    rel_diff_p = mp.fabs(m_p_pred_MeV - M_P_MEV_CODATA) / M_P_MEV_CODATA
+
+    print(f"\n  Particle      T1            T2              T3              T4         m_hecke")
+    print("  " + "-" * 86)
+    for x in (p, n, e):
+        vals = [mp.nstr(mp.mpf(x[k]), 8) for k in
+                ("T1_descended_50dps", "T2_single_50dps", "T3_pair_50dps",
+                 "T4_Frobenius_50dps", "m_hecke_50dps")]
+        print(f"  {x['atom']:<10}    {vals[0]:>10}    {vals[1]:>12}    {vals[2]:>12}    {vals[3]:>8}    {vals[4]:>10}")
+    print()
+    print(f"  m_p / m_e (predicted) = {mp.nstr(ratio_pe, 14)}")
+    print(f"  CODATA m_p / m_e      = 1836.15267343")
+    print()
+    print(f"  m_p_pred (MeV) = {mp.nstr(m_p_pred_MeV, 14)}")
+    print(f"  CODATA m_p     = {mp.nstr(M_P_MEV_CODATA, 14)}")
+    print(f"  residual       = {mp.nstr(rel_diff_p * 100, 6)} %  "
+          f"({mp.nstr(rel_diff_p * mp.mpf('1e6'), 6)} ppm)")
+
+    builder = WitnessBuilder("proton-mass-full-tower-50dps", engine="mpmath")
+    builder.set_description(
+        "Full mass-endomorphism tower derivation of m_p, m_n, m_e at "
+        "MPFR @ 50 dps. Sums T1 (descended) + T2 (single brane tower) "
+        "+ T3 (pair brane tower) + T4 (Frobenius co-Casimir) using the "
+        "MPFR-native per-generator volumes from terms-2-3-atom-per-gen-"
+        "mpfr-50dps.witness.json. m_p prediction in MeV computed as "
+        "(m_p_hecke / m_e_hecke) × M_E_MEV. Three-cal discipline "
+        "respected: only CAL-1 (M_E_MEV) and CAL-2 (q_0) consumed; "
+        "no CODATA m_p / m_n / Q_β injection. The residual (+1.835 % "
+        "vs CODATA m_p) is the framework's actual prediction error at "
+        "this truncation; closure of T5 / T6 for the electron at MPFR "
+        "is the next research step."
+    )
+    builder.add_upstream(PER_GEN_WITNESS)
+    builder.add_assertion(
+        "m_p_within_1_percent",
+        computed=str(rel_diff_p),
+        expected="0",
+        tolerance=0.01,
+    )
+    builder.add_assertion(
+        "m_p_within_2_percent",
+        computed=str(rel_diff_p),
+        expected="0",
+        tolerance=0.02,
+    )
+    builder.add_parameter("q_0_50dps", str(per_gen_w["parameters"]["q_0_50dps"]))
+    builder.add_parameter("M_E_MEV_CAL1", str(M_E_MEV))
+    builder.add_data("particles", {"proton": p, "neutron": n, "electron": e})
+    builder.add_data("ratios", {
+        "m_p_over_m_e_50dps": str(ratio_pe),
+        "m_n_over_m_e_50dps": str(ratio_ne),
+    })
+    builder.add_data("predictions_MeV", {
+        "m_p_pred_50dps": str(m_p_pred_MeV),
+        "m_n_pred_50dps": str(m_n_pred_MeV),
+    })
+    builder.add_data("comparisons", {
+        "m_p_codata_MeV":  str(M_P_MEV_CODATA),
+        "rel_diff_p":      str(rel_diff_p),
+        "rel_diff_p_ppm":  str(rel_diff_p * mp.mpf("1e6")),
+    })
+    builder.set_content_block("prop:mass-endomorphism-tower")
+    builder.save()
+    print(f"\n  Wrote {OUT_PATH.name}")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

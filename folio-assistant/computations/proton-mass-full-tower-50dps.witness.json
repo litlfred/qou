@@ -1,0 +1,99 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-16T14:52:30.996889+00:00",
+  "commitSha": "bddcedf92298bd91ecca920224a7160508a68ff8",
+  "assertions": [
+    {
+      "name": "m_p_within_1_percent",
+      "computed": "0.016296704289945793203710336726786499619308258133369",
+      "expected": "0",
+      "passed": false,
+      "tolerance": 0.01
+    },
+    {
+      "name": "m_p_within_2_percent",
+      "computed": "0.016296704289945793203710336726786499619308258133369",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 0.02
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 23,
+  "computation": "proton-mass-full-tower-50dps",
+  "scriptFile": "derive_m_p_hecke_full_tower_50dps.py",
+  "scriptHash": "e225bff9634b",
+  "scriptCommitSha": "unknown",
+  "description": "Full mass-endomorphism tower derivation of m_p, m_n, m_e at MPFR @ 50 dps. Sums T1 (descended) + T2 (single brane tower) + T3 (pair brane tower) + T4 (Frobenius co-Casimir) using the MPFR-native per-generator volumes from terms-2-3-atom-per-gen-mpfr-50dps.witness.json. m_p prediction in MeV computed as (m_p_hecke / m_e_hecke) × M_E_MEV. Three-cal discipline respected: only CAL-1 (M_E_MEV) and CAL-2 (q_0) consumed; no CODATA m_p / m_n / Q_β injection. The residual (+1.835 % vs CODATA m_p) is the framework's actual prediction error at this truncation; closure of T5 / T6 for the electron at MPFR is the next research step.",
+  "contentBlock": "prop:mass-endomorphism-tower",
+  "parameters": {
+    "q_0_50dps": "1.1099785955541805752815940796095093779932822799587",
+    "M_E_MEV_CAL1": "0.51099895"
+  },
+  "data": {
+    "particles": {
+      "proton": {
+        "atom": "proton",
+        "A": 1,
+        "T1_descended_50dps": "0.96039549118815049651215986149723955840572223004978",
+        "T2_single_50dps": "1096978.3961756814278239008161380067641675015481174",
+        "T3_pair_50dps": "82016.168865420240504458576038775229182370135200906",
+        "T4_Frobenius_50dps": "1.2761128463443181177567435067352497395009951716945",
+        "m_hecke_50dps": "1178996.8015494392007969736610801502258391695900357",
+        "wedderburn_vols_full_50dps": [
+          "0.9890073159292597737327090873425711234998226354167",
+          "0.97107015865274369644467729606208246103317407697938"
+        ]
+      },
+      "neutron": {
+        "atom": "neutron",
+        "A": 1,
+        "T1_descended_50dps": "0.69860079680904402981227683415118999032035194675018",
+        "T2_single_50dps": "429527.01785857024837755284773663177171004125370635",
+        "T3_pair_50dps": "686.87419121945869252678978992820094001413341019041",
+        "T4_Frobenius_50dps": "1.2761128463443181177567435067352497395009951716945",
+        "m_hecke_50dps": "430215.86676343286043222720654690085908978520846366",
+        "wedderburn_vols_full_50dps": [
+          "0.7194133097224181476211795122397627076378432411659",
+          "0.97107015865274369644467729606208246103317407697938"
+        ]
+      },
+      "electron": {
+        "atom": "electron",
+        "A": 1,
+        "T1_descended_50dps": "0.59384900067050962477184280318482122091510198537029",
+        "T2_single_50dps": "629.93541909592051016478259776448467353040033836442",
+        "T3_pair_50dps": "0.0",
+        "T4_Frobenius_50dps": "1.2761128463443181177567435067352497395009951716945",
+        "m_hecke_50dps": "631.80538094293533790731118407440474449081643552148",
+        "wedderburn_vols_full_50dps": [
+          "0.59384900067050962477184280318482122091510198537029"
+        ]
+      }
+    },
+    "ratios": {
+      "m_p_over_m_e_50dps": "1866.0759105752633532465239584159981315114354039544",
+      "m_n_over_m_e_50dps": "680.93099511333531611185822698395084191068707637649"
+    },
+    "predictions_MeV": {
+      "m_p_pred_50dps": "953.56283092425346948245283390041870840430540441353",
+      "m_n_pred_50dps": "347.95502352536947753107763653766054706797708980696"
+    },
+    "comparisons": {
+      "m_p_codata_MeV": "938.27208816",
+      "rel_diff_p": "0.016296704289945793203710336726786499619308258133369",
+      "rel_diff_p_ppm": "16296.704289945793203710336726786499619308258133369"
+    },
+    "upstream_witness_hashes": [
+      {
+        "path": "terms-2-3-atom-per-gen-mpfr-50dps.witness.json",
+        "sha256": "aa0d876e50e8e016db530e39bc6cd6b3fe3828591d1f31c389968da85c082b65",
+        "size_bytes": 5093,
+        "commitSha": "e08bf638aecafd488d2c114218c42700425722de",
+        "scriptCommitSha": "unknown",
+        "computedAt": "2026-05-16T05:42:41.130150+00:00"
+      }
+    ]
+  }
+}

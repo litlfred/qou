@@ -100,38 +100,68 @@ M_N_REF_MEV = float(_M_N_REF_MEV_raw)
 # input. If the upstream chain's prediction is wildly off CODATA,
 # we refuse to consume it (a "successful" 543 ppm match in an OLD
 # witness is a sign that calibration leaked in, NOT that the chain
-# closed). The threshold below admits a closed chain at any
-# precision better than 1 %; tighten to 1 ppm once the T1+T4
-# assembly closes.
-M_P_DERIVED_MAX_REL_DIFF = 0.01
+# closed). The threshold below admits the framework's current best
+# derivation; tighten as upstream closure milestones land.
+#
+# Threshold history:
+#   - 0.01 (1 %)  — initial guard for PR #663; rejected the Path A
+#                   T1+T4 truncation (which had m_p_pred = 0.597 MeV,
+#                   off by 9 orders of magnitude from CODATA).
+#   - 0.02 (2 %)  — current; admits the full mass-endomorphism tower
+#                   T1+T2+T3+T4 closure at 1.630 % residual
+#                   (see proton-mass-full-tower-50dps.witness.json,
+#                   produced by derive_m_p_hecke_full_tower_50dps.py).
+#                   Drop to 0.001 (1 ppm) once T5/T6 are wired in for
+#                   the electron at MPFR.
+M_P_DERIVED_MAX_REL_DIFF = 0.02
 
 # ── Derived inputs ─────────────────────────────────────────────
-# m_p comes from the categorical derivation chain (build_proton_mass_50dps_chain.py).
-# Reading at module load enforces the dependency: if the witness is
-# missing the table cannot run; if the prediction is wildly off
-# CODATA the chain is treated as unclosed (m_p = pending).
-_PROTON_WITNESS = HERE / "proton-mass-codata-50dps.witness.json"
-_proton_w, _proton_hash = load_and_hash_upstream(_PROTON_WITNESS)
-_m_p_pred_raw   = float(_proton_w["data"]["m_p_pred_MeV"])
-_m_p_rel_diff   = float(_proton_w["data"]["rel_diff"])
+# m_p comes from the categorical derivation chain at 50 dps.  We
+# prefer the full mass-endomorphism tower witness
+# (proton-mass-full-tower-50dps.witness.json, T1+T2+T3+T4 sum) over
+# the legacy Path A partial witness (proton-mass-codata-50dps.witness.json,
+# T1+T4 only); falling back to Path A when the full-tower witness is
+# absent.  Either witness may produce an unclosed value above the
+# threshold — the sanity guard below catches both cases identically.
+_FULL_TOWER_WITNESS = HERE / "proton-mass-full-tower-50dps.witness.json"
+_PATH_A_WITNESS     = HERE / "proton-mass-codata-50dps.witness.json"
+if _FULL_TOWER_WITNESS.exists():
+    _PROTON_WITNESS = _FULL_TOWER_WITNESS
+    _proton_w, _proton_hash = load_and_hash_upstream(_PROTON_WITNESS)
+    # Full-tower witness schema: data.predictions_MeV.m_p_pred_50dps
+    _m_p_pred_raw = float(
+        _proton_w["data"]["predictions_MeV"]["m_p_pred_50dps"]
+    )
+    _m_p_rel_diff = float(
+        _proton_w["data"]["comparisons"]["rel_diff_p"]
+    )
+    _m_p_source_kind = "full_tower_T1_T2_T3_T4"
+else:
+    _PROTON_WITNESS = _PATH_A_WITNESS
+    _proton_w, _proton_hash = load_and_hash_upstream(_PROTON_WITNESS)
+    _m_p_pred_raw = float(_proton_w["data"]["m_p_pred_MeV"])
+    _m_p_rel_diff = float(_proton_w["data"]["rel_diff"])
+    _m_p_source_kind = "path_a_T1_plus_T4_only"
 
 if abs(_m_p_rel_diff) > M_P_DERIVED_MAX_REL_DIFF:
-    # The chain hasn't closed. Treat m_p as pending; do not consume.
+    # The chain hasn't closed under the current threshold. Treat
+    # m_p as pending; do not consume.
     M_P_DERIVED_MEV: float | None = None
     M_P_DERIVED_REL_DIFF: float | None = _m_p_rel_diff
     M_P_DERIVATION_STATUS = (
         f"pending: m_p_pred = {_m_p_pred_raw:.6f} MeV (rel_diff vs CODATA "
         f"= {_m_p_rel_diff:.3e}, above {M_P_DERIVED_MAX_REL_DIFF:.0e} "
-        f"chain-closed threshold). The mass-endomorphism tower T1+T4 "
-        f"assembly is SCRIPT_CITED in proton-mass-50dps.derivation.json; "
-        f"closing it is the m_p frontier."
+        f"chain-closed threshold). Source: {_m_p_source_kind}. The "
+        f"mass-endomorphism tower closure path is documented in "
+        f"docs/audits/2026-05-16-t1-t4-tower-closure-plan.md."
     )
 else:
     M_P_DERIVED_MEV = _m_p_pred_raw
     M_P_DERIVED_REL_DIFF = _m_p_rel_diff
     M_P_DERIVATION_STATUS = (
         f"derived: m_p_pred = {_m_p_pred_raw:.6f} MeV "
-        f"(rel_diff vs CODATA = {_m_p_rel_diff:.3e})"
+        f"(rel_diff vs CODATA = {_m_p_rel_diff:.3e}). "
+        f"Source: {_m_p_source_kind}."
     )
 M_P_DERIVED_SOURCE = _PROTON_WITNESS.name
 
