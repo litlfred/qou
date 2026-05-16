@@ -42,7 +42,7 @@ The carrier `A` represents `H_∞(q)`, the carrier `H` represents the
 GNS Hilbert space, and `repr` is the faithful representation. -/
 class HasMarkovGnsEmbedding (A : Type u) (H : Type v)
     [NonUnitalNonAssocRing A] [Star A]
-    [NormedAddCommGroup H] [InnerProductSpace ℝ H] where
+    [NormedAddCommGroup H] [InnerProductSpace ℝ H] [CompleteSpace H] where
   /-- The (real-valued) Markov trace. -/
   trM : A → ℝ
   /-- **Linearity** of `trM`. -/

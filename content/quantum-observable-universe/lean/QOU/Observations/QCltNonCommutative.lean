@@ -54,7 +54,7 @@ actual mathematical witnesses, not by any pair of propositions.
   the convergence: `tr_M(exp_q(i ξ S_n))` converges to
   `exp_q(-ξ²/2 · κ₂)`. -/
 class QCltNonCommutative
-    (R : Type u) [LinearOrderedField R] where
+    (R : Type u) [LinearOrderedField R] [TopologicalSpace R] where
   /-- Limit variance (second free q-cumulant). -/
   secondCumulant : R
   /-- Positivity of the limit variance. -/
@@ -63,20 +63,34 @@ class QCltNonCommutative
   qGaussianMeasure : ℕ → R
   /-- The q-Gaussian measure is non-negative at every level. -/
   qGaussianMeasure_nonneg : ∀ n, 0 ≤ qGaussianMeasure n
-  /-- **Moment convergence** at each fixed degree `k`. We package
-      this as a real-sequence convergence: for any moment-sequence
-      `m : ℕ → R` produced by `tr_M(S_n^k)`, there is a limit. -/
+  /-- **Concrete moment sequence**: for each fixed degree `k`, the
+      $k$-th joint moment of the rescaled centred sum `S_n` under
+      `tr_M` as a function of `n`. Carrying this as a class field
+      forces an instance to supply the actual moment data. -/
+  momentSequence : ℕ → ℕ → R
+  /-- **Limit moments**: the limiting value of the $k$-th moment.
+      Also a class field, so the instance supplies the actual
+      limit. -/
+  limitMoment : ℕ → R
+  /-- **Moment convergence**: for every fixed degree `k`, the
+      sequence `n ↦ momentSequence n k` converges to `limitMoment k`.
+      Encoded via `Filter.Tendsto`, the standard Mathlib convergence
+      predicate. -/
   momentConvergence :
-    ∀ (k : ℕ), ∃ (μ_k : R), ∀ (ε : R), 0 < ε →
-      ∃ (N : ℕ), ∀ (n : ℕ), N ≤ n →
-        ∃ (s_n : R), |s_n - μ_k| < ε
-  /-- **Characteristic-function limit** (qualitative form): for
-      each `ξ ∈ R`, the moment-generating-function values converge
-      to a limit determined by `secondCumulant`. -/
-  characteristicLimit :
-    ∀ (ξ : R), ∃ (L : R),
-      ∀ (ε : R), 0 < ε →
-        ∃ (N : ℕ), ∀ (n : ℕ), N ≤ n →
-          ∃ (c_n : R), |c_n - L| < ε
+    ∀ (k : ℕ),
+      Filter.Tendsto (fun n => momentSequence n k) Filter.atTop
+        (nhds (limitMoment k))
+  /-- **Concrete characteristic-function sequence**: for each ξ,
+      the moment-generating-function value `tr_M(exp_q(i ξ · S_n))`
+      as a function of `n`. -/
+  characteristicSequence : ℕ → R → R
+  /-- **Characteristic-function limit**: at each ξ, the limit of
+      the characteristic-function sequence. -/
+  characteristicLimitValue : R → R
+  /-- **Characteristic-function convergence**: pointwise in ξ. -/
+  characteristicConvergence :
+    ∀ (ξ : R),
+      Filter.Tendsto (fun n => characteristicSequence n ξ)
+        Filter.atTop (nhds (characteristicLimitValue ξ))
 
 end QOU.Observations.QCltNonCommutative

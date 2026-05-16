@@ -71,18 +71,24 @@ This functional mismatch is exhibited concretely:
 - **Explicit algebraic decomposition.** Even taking the squared
   QOU kernel $G_2(x, y) := \mathrm{tr}_M((x\cdot y)^2)$ (an *even*
   modification of $G$) does not produce equality. For self-adjoint
-  $x, y$ with real-spectrum product, the Finster pair-difference
-  Lagrangian admits the identity
+  $x, y$ with real-spectrum product on a block of dimension $n$
+  with normalised Markov trace ($\mathrm{tr}_M(1) = 1$), the Finster
+  pair-difference Lagrangian admits the identity
   $$
     \mathcal{L}_{\mathrm{CFS}}(x, y)
-    \;=\; n \cdot G_2(x, y) \;-\; \lVert x \cdot y\rVert_1^{\,2},
+    \;=\; n^{2}\,\bigl(G_2(x, y) \;-\; \lVert x \cdot y\rVert_1^{\,2}\bigr),
   $$
   where $\lVert x \cdot y\rVert_1 = \mathrm{tr}_M\lvert x \cdot y\rvert$
-  is the trace-class norm and $n$ is the block dimension. So the
-  Finster action equals QOU's energy-quadratic *minus* an explicit
-  trace-class correction. The correction term is the "concentration
-  penalty" that distinguishes CFS dynamics from QOU's natural
-  quadratic dynamics.
+  is the (normalised) trace-class norm. Equivalently, after
+  normalising $\mathcal{L}_{\mathrm{CFS}}$ by $n^{2}$:
+  $\mathcal{L}_{\mathrm{CFS}}^{(\mathrm{norm})}(x, y) = G_2(x, y) -
+  \lVert x \cdot y\rVert_1^{\,2}$. So the Finster action equals
+  QOU's energy-quadratic *minus* an explicit trace-class
+  correction. The correction term $\lVert x \cdot y\rVert_1^{\,2}$
+  is the "concentration penalty" that distinguishes CFS dynamics
+  from QOU's natural quadratic dynamics; on the unit pair
+  $(1, 1)$ it equals $G_2$, giving $\mathcal{L}_{\mathrm{CFS}}(1,1) = 0$
+  exactly.
 
 **Open numerical question.** Whether the correction moment
 $\langle \lVert x \cdot y\rVert_1^{\,2}\rangle_{\rho_\infty}$ might

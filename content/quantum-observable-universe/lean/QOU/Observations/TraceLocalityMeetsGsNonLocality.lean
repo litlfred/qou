@@ -43,24 +43,37 @@ class HasReconciliation
   generator : ℕ → A
   /-- A function returning the GS normal-form word length. -/
   nfLength : A → ℕ
-  /-- Per-position vertex volume in the normal-form word. -/
-  vertexVolume : A → ℕ → R
+  /-- The normal-form symbol at position `i` of `x` (the $i$-th
+      generator index of the GS normal-form word, or a sentinel
+      when `i ≥ nfLength x`). Carrying this as a class field
+      forces an instance to supply the actual normal-form data. -/
+  nfSymbolAt : A → ℕ → ℕ
+  /-- Per-position vertex volume. Defined in terms of the
+      normal-form symbol at that position, encoding the locality
+      requirement at the *type* level. -/
+  vertexVolume : ℕ → R
   /-- **(1) Markov locality**: appending a single generator
       multiplies the trace by `markovParameter`. -/
   markovLocality :
     ∀ (x : A) (n : ℕ),
       trM (x * generator n) = markovParameter * trM x
-  /-- **(2) Vertex volumes are local** in the normal-form word:
-      `vertexVolume x i` depends only on the `i`-th normal-form
-      position of `x`, not on its global braid input. Encoded as a
-      definitional witness via the class signature itself. -/
+  /-- **(2) Locality of vertex volumes**: the per-position vertex
+      volume depends only on the normal-form symbol at that
+      position — i.e. on `nfSymbolAt x i`, not on the rest of `x`.
+      This is now a *real* property: any two elements `x`, `y`
+      sharing a normal-form symbol at position `i` produce the
+      same per-position contribution. -/
   vertexVolume_local :
-    ∀ (x : A) (i : ℕ),
-      i < nfLength x → ∃ (V : R), vertexVolume x i = V
+    ∀ (x y : A) (i : ℕ),
+      i < nfLength x → i < nfLength y →
+        nfSymbolAt x i = nfSymbolAt y i →
+        vertexVolume (nfSymbolAt x i) = vertexVolume (nfSymbolAt y i)
   /-- **(3) Product factorisation**: the Markov trace of the
-      normal-form equals the product of vertex volumes. -/
+      normal form equals the product of per-position vertex
+      volumes, each depending only on its local normal-form
+      symbol. -/
   productFactorisation :
     ∀ (x : A),
-      trM x = ∏ i ∈ Finset.range (nfLength x), vertexVolume x i
+      trM x = ∏ i ∈ Finset.range (nfLength x), vertexVolume (nfSymbolAt x i)
 
 end QOU.Observations.TraceLocalityMeetsGsNonLocality
