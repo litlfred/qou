@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-16T04:02:59.599620+00:00",
-  "commitSha": "50024712c50a92df3c6b06b5bf0fa164662d0851",
+  "computedAt": "2026-05-16T05:05:55.063084+00:00",
+  "commitSha": "41499935c60f350ddd6ee5e2b6e790f70167f079",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 10,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "d9aa432d54f9",
@@ -13,7 +13,7 @@
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 439,
+    "files_scanned": 443,
     "patterns": [
       "P15",
       "P16",
@@ -24,7 +24,7 @@
   },
   "data": {
     "by_pattern_count": {
-      "P15": 125,
+      "P15": 128,
       "P16": 89,
       "P21": 24,
       "P30": 96,
@@ -1945,6 +1945,27 @@
         "pattern": "P15",
         "file": "probe_q_beta_1d_irrep_universal.py",
         "line": 145,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "probe_q_beta_c2_categorical_proof.py",
+        "line": 64,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "probe_q_beta_c2_categorical_proof.py",
+        "line": 87,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "probe_q_beta_c2_categorical_proof.py",
+        "line": 94,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },

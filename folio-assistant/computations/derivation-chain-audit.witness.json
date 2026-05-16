@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-16T04:02:59.739034+00:00",
-  "commitSha": "50024712c50a92df3c6b06b5bf0fa164662d0851",
+  "computedAt": "2026-05-16T05:05:55.865784+00:00",
+  "commitSha": "41499935c60f350ddd6ee5e2b6e790f70167f079",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -572,11 +572,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "c0234c3b4dd76784cbf72cf41e1db3157c615d0c",
+  "scriptCommitSha": "875916a587c227572f421c22053ad81371976ccc",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
   "data": {
@@ -2344,6 +2344,7 @@
         "proton-mass-codata-50dps.witness.json",
         "proton-residual-rootcause.witness.json",
         "q-beta-1d-irrep-universal-closed-form.witness.json",
+        "q-beta-c2-categorical-proof.witness.json",
         "q-beta-c5-c6-multilink.witness.json",
         "q-beta-cos-sweep-three-irrep.witness.json",
         "q-beta-form-a-n1-extension.witness.json",
@@ -2390,9 +2391,12 @@
         "staircase-ew-disjoint-spectrum.witness.json",
         "staircase-ew-predictions.witness.json",
         "staircase-ew-residual-conjecture.witness.json",
+        "sublemma-2-1-A-operator-extract-h9-nn.witness.json",
         "sublemma-2-1-A-operator-extract.witness.json",
         "sublemma-2-1-alpha-shift-extract.witness.json",
         "sublemma-2-1-deuteron-branching.witness.json",
+        "sublemma-2-1-h9-tritium-branching-verify.witness.json",
+        "sublemma-2-1-h9-tritium-verify.witness.json",
         "sw-period-thimble-equivalence.witness.json",
         "t35-weak-vertex.witness.json",
         "tau-M-four-anchors.witness.json",
