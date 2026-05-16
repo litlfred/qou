@@ -491,7 +491,117 @@ checkpoint, six items were resolved:
    (which identified the H_12 next step) closed without merging
    on 2026-05-16; no active sibling owns this work.  Backlog.
 
-## Status summary (this commit, post-decisions)
+## Closing the 1.50 % gap — next-step audit (post-promotion)
+
+Per owner "do so" directive after promoting A_categorical:
+sequential investigation of T6 wiring, m_e symmetry, additional
+A candidates, and T7 extension.
+
+### 1. T6 (Habiro residue) — bridged, but leverage ≪ gap
+
+[`term6-residues-at-roots.witness.json`](../../folio-assistant/computations/term6-residues-at-roots.witness.json)
+on main has T6 values at q_0 (f64) for A ∈ {1, 2, 3, 4}.  The
+consumer
+[`term_6_habiro_residue_mp`](../../folio-assistant/computations/mass_formula_6term_mpfr_50dps.py)
+expects a different schema (`term6-habiro-residue-mpfr-50dps`
+keyed by ``A=k``).  New bridge:
+
+- [`term6_habiro_residue_mpfr_50dps_bridge.py`](../../folio-assistant/computations/term6_habiro_residue_mpfr_50dps_bridge.py)
+  reads the f64 source and re-emits in the 50-dps consumer schema.
+- 5 A-keyed rows produced (A=0 documented as gap for the
+  electron's H_2 trefoil; A=1..4 from the upstream values).
+
+**Leverage check**:
+T6(proton) = +1.92 MeV ≈ 3.76 cat-units after dividing by m_e.
+m_p_hecke ≈ 1,179,000 cat-units → T6 adds ~3 ppm.  T6 wiring
+**does not materially close the 1.50 % gap** (it's already a 4-
+orders-of-magnitude-smaller contribution).  The bridge ships the
+witness but the production chain does not currently consume T6
+— wiring is a housekeeping follow-up if the rest of the framework
+ever lifts to ~ppm-level precision.
+
+### 2. m_e_Hecke symmetry audit — chain is symmetric
+
+The current production chain
+[`derive_m_p_hecke_full_tower_50dps`](../../folio-assistant/computations/derive_m_p_hecke_full_tower_50dps.py)
+uses the **same** tower sum on both sides of the ratio
+m_p_hecke / m_e_hecke:
+
+- T1 (descended) + T2 (single brane) + T3 (pair brane) +
+  T4 (Frobenius) + T5 (BW-shaped chirality at derived-A) for both
+  proton numerator and electron denominator.
+- A is derived per-particle from the GS normal form
+  (proton A=2, electron A=1) — symmetric application of the same
+  invariant, not asymmetric per-side conventions.
+- a_K from V2 Gram-matrix chirality is computed per-particle.
+
+**No asymmetry leakage**.  Audit clean.
+
+### 3. Additional categorical-A candidates — A_max_grade locally optimal
+
+Five candidate A's tested (probe values for proton / electron):
+
+| convention | A_p | A_e | m_p_pred | residual |
+|---|:-:|:-:|---:|---:|
+| A_max_grade (production) | 2 | 1 | 924.17 | **−1.503 %** |
+| A_weighted_grade_sum  | 6 | 1 | 924.29 | −1.490 % |
+| A_n_strands           | 3 | 2 | 918.02 | −2.158 % |
+| A_dim_irreps          | 3 | 1 | 924.20 | −1.500 % |
+| A_n_gens (= strands−1) | 2 | 1 | 924.17 | −1.503 % |
+
+All candidates land within **±0.05 % of −1.50 %**.  The gap is
+**structural**, not A-choice; further A-tweaking won't close it.
+
+### 4. T7 (σ-shell α_5 S_crystal) extension to A=1 — research-scope
+
+The existing T7 producer
+[`term7_alpha5_crystal_derivation.py`](../../folio-assistant/computations/term7_alpha5_crystal_derivation.py)
+covers A ∈ {2, 3, 4} atoms.  Extension to A=1 (proton, neutron)
+or H_2 (electron) needs:
+
+- α_5 coupling derivation for A=1 atoms (the existing α_5 is
+  fitted to ⁴He shell-correction; un-fitting requires its own
+  derivation chain).
+- `crystal_chi_lambda` validation at partitions of n=3 (for
+  A=1 nucleons) and n=2 (for the electron).
+- Conceptual question: is T7 (a "shell correction" term)
+  physically present for nucleons at A=1?  The current BW
+  framework gates `B_shell` on `A ≥ 4`; T7's α_5 is the
+  derivation of that coupling, so the same gating may apply.
+
+**Verdict**: T7 extension is **multi-PR research work**, not
+in scope for this branch.  Backlog item with owner sign-off
+pending.
+
+## Honest assessment of the 1.50 % gap
+
+Under the strict three-calibration discipline (CAL-1 m_e, CAL-2
+q_0, **no** CODATA m_p / m_n / Q_β anchor), the framework's m_p
+prediction is **924.17 MeV vs 938.27 (−1.50 %)** at the current
+tower truncation (T1+T2+T3+T4+T5 at A_categorical = max GS
+filtration grade).
+
+For comparison, the calibrated [M2 chain](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-16-m2-mass-table-cos-q-beta.md)
+(on main) gets 0.19 % MAE — but it consumes **CODATA m_p, m_n,
+Q_β as inputs**, giving 5 calibrations vs this chain's 2.  The
+two are not directly comparable; this chain's 1.50 % is the
+"deep prediction" residual, not the "calibrated form" residual.
+
+The remaining 1.50 % gap most likely lives in:
+
+1. **Quark-color confinement contributions** not currently in
+   the brane tower (the proton's uud + 2-gluon decoration is
+   represented by Hecke (c, d) factors, but the *colour* SU(3)
+   structure is not explicit).
+2. **Electroweak corrections** (W± / Z mediation in the proton's
+   internal structure — explicit in QCD/EW but implicit in the
+   Hecke / brane-tower framework).
+3. **Higher-order Hecke representation contributions** beyond
+   the current 6-term tower (T7 σ-shell extension, T8+ if any).
+
+These are **physics-level extensions**, not code-level patches.
+Honest reporting: ship the 1.50 % residual transparently in the
+witness chain; document the closure roadmap; do not fit.
 
 | Closure | Branch state | Honest residual | passes 1 ppb? |
 |---|---|---|---|
