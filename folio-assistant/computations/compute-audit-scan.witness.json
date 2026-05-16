@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-16T02:01:22.671201+00:00",
-  "commitSha": "f25a90e39b79f432a895ffabe5e268da8af040b2",
+  "computedAt": "2026-05-16T02:28:10.094190+00:00",
+  "commitSha": "517372562fdab549ae0a267c7409464bcbdd1a1d",
   "assertions": [],
   "allPassed": true,
   "durationMs": 7,
@@ -13,7 +13,7 @@
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 421,
+    "files_scanned": 431,
     "patterns": [
       "P15",
       "P16",
@@ -26,9 +26,9 @@
     "by_pattern_count": {
       "P15": 114,
       "P16": 89,
-      "P21": 23,
+      "P21": 24,
       "P30": 96,
-      "P31": 13
+      "P31": 16
     },
     "top_files": [
       {
@@ -1901,6 +1901,13 @@
       },
       {
         "pattern": "P21",
+        "file": "probe_heavy_atom_t1.py",
+        "line": 1,
+        "snippet": "Hoefsmit construction without BlockCache",
+        "note": "syt_prefix_cache.BlockCache caches block values by content distance ρ; precomputed SYT→index dict eliminates O(d_λ²) swap-partner search. Numerical-q callers can wire it directly. Ref: ocneanu_weights.py wiring."
+      },
+      {
+        "pattern": "P21",
         "file": "probe_murphy_per_cell_weights.py",
         "line": 1,
         "snippet": "Hoefsmit construction without BlockCache",
@@ -1926,6 +1933,20 @@
         "line": 93,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P31",
+        "file": "probe_q_beta_operator_valued_N2.py",
+        "line": 59,
+        "snippet": "CODATA literal \"938.27208816\"",
+        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
+      },
+      {
+        "pattern": "P31",
+        "file": "probe_q_beta_operator_valued_N3.py",
+        "line": 46,
+        "snippet": "CODATA literal \"938.27208816\"",
+        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
       {
         "pattern": "P15",
@@ -1954,6 +1975,13 @@
         "line": 147,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P31",
+        "file": "probe_tau_M_four_anchors.py",
+        "line": 53,
+        "snippet": "CODATA literal \"938.27208816\"",
+        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
       {
         "pattern": "P16",
