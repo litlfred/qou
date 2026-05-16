@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-16T00:59:00.511453+00:00",
-  "commitSha": "7efb4ab54ed5377a4949f111c51e0f870e030b00",
+  "computedAt": "2026-05-16T00:59:33.127032+00:00",
+  "commitSha": "f2eb21dfd2a5e12735cf6bf6e4486b87d9faeec7",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2190,6 +2190,7 @@
         "h-3a-vs-h-3-divergence.witness.json",
         "h2-integer-lp.witness.json",
         "h2-molecular-binding.witness.json",
+        "h7a-cross-anchor-a3-probe.witness.json",
         "habiro-coefficients-atomic.witness.json",
         "habiro-coefficients-extended.witness.json",
         "habiro-coefficients-interpolate.witness.json",
@@ -2199,6 +2200,8 @@
         "habiro-motivic-orbit-relations.witness.json",
         "habiro-tail-in-ideal-validation.witness.json",
         "hadron-knot-table.witness.json",
+        "he4-canonical-tr-m-block-fingerprint.witness.json",
+        "he4-sdp-compositional-probe.witness.json",
         "hecke-core-symbolic-migration.witness.json",
         "hh-trefoil-corrected.witness.json",
         "hh-vertex-volume.witness.json",
@@ -2378,6 +2381,7 @@
         "tau-lepton-nf.witness.json",
         "tau-three-path-convention-independence.witness.json",
         "term5-aK-audit.witness.json",
+        "term5-aK-v2-mirror-chirality-probe.witness.json",
         "term6-full-pole-sum.witness.json",
         "term6-residues-at-roots.witness.json",
         "term7-chi5-basis.witness.json",

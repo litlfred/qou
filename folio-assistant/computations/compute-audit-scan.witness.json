@@ -1,19 +1,19 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-16T00:59:00.265719+00:00",
-  "commitSha": "7efb4ab54ed5377a4949f111c51e0f870e030b00",
+  "computedAt": "2026-05-16T00:59:32.984296+00:00",
+  "commitSha": "f2eb21dfd2a5e12735cf6bf6e4486b87d9faeec7",
   "assertions": [],
   "allPassed": true,
   "durationMs": 8,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "d9aa432d54f9",
-  "scriptCommitSha": "1f8c93034a3e556746a4c098ae7e7b70932af450",
+  "scriptCommitSha": "b6f56096e2895d7b0396f2196b37544db5fc08a3",
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 411,
+    "files_scanned": 416,
     "patterns": [
       "P15",
       "P16",
@@ -26,9 +26,9 @@
     "by_pattern_count": {
       "P15": 112,
       "P16": 89,
-      "P21": 21,
+      "P21": 23,
       "P30": 96,
-      "P31": 12
+      "P31": 13
     },
     "top_files": [
       {
@@ -1510,7 +1510,7 @@
       {
         "pattern": "P31",
         "file": "mass_formula_6term_mpfr_50dps.py",
-        "line": 318,
+        "line": 352,
         "snippet": "CODATA literal \"938.27208816\"",
         "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
@@ -1884,6 +1884,20 @@
         "line": 132,
         "snippet": "CODATA literal \"206.7682830\"",
         "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
+      },
+      {
+        "pattern": "P31",
+        "file": "probe_h7a_cross_anchor_a3.py",
+        "line": 87,
+        "snippet": "CODATA literal \"206.7682830\"",
+        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
+      },
+      {
+        "pattern": "P21",
+        "file": "probe_he4_canonical_tr_m_fingerprint.py",
+        "line": 1,
+        "snippet": "Hoefsmit construction without BlockCache",
+        "note": "syt_prefix_cache.BlockCache caches block values by content distance ρ; precomputed SYT→index dict eliminates O(d_λ²) swap-partner search. Numerical-q callers can wire it directly. Ref: ocneanu_weights.py wiring."
       },
       {
         "pattern": "P21",
@@ -2297,6 +2311,13 @@
         "line": 199,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P21",
+        "file": "term5_v2_chirality.py",
+        "line": 1,
+        "snippet": "Hoefsmit construction without BlockCache",
+        "note": "syt_prefix_cache.BlockCache caches block values by content distance ρ; precomputed SYT→index dict eliminates O(d_λ²) swap-partner search. Numerical-q callers can wire it directly. Ref: ocneanu_weights.py wiring."
       },
       {
         "pattern": "P30",
