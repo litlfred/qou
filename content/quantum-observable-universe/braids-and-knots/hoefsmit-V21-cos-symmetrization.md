@@ -24,6 +24,20 @@ $$
 (The off-diagonal $b^2 = d_1 d_2 + 1$ identity is the Hecke-quadratic
 constraint on $\sigma_1$; the choice $c = b$ is a gauge convention.)
 
+Both Hoefsmit matrices satisfy the **matrix-level Hecke quadratic**
+$M^2 = (q - q^{-1}) \cdot M + I$:
+
+| quantity | $\sigma_0$ (diagonal) | $\sigma_1$ (off-diagonal) |
+|---|---|---|
+| trace | $q - q^{-1}$ | $d_1 + d_2 = q - q^{-1}$ |
+| determinant | $-1$ | $d_1 d_2 - b^2 = -1$ |
+| $M^2$ | $(q-q^{-1}) M + I$ | $(q-q^{-1}) M + I$ |
+
+The trace/determinant equalities reduce the off-diagonal matrix
+identity to Cayley-Hamilton on $\mathbb{R}^{2 \times 2}$ — formalized
+in `hoefsmit_sigma1_trace_eq`, `hoefsmit_sigma1_det_eq`, and
+`hoefsmit_sigma1_hecke_quadratic`.
+
 ## Markov symmetrization at single wrap
 
 For a typed braid $\beta = c_1 c_2 \cdots c_L$ on $V_{(2,1)}$, the
