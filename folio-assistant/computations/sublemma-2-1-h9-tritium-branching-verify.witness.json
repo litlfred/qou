@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.4",
-  "computedAt": "2026-05-16T04:59:46.224067+00:00",
-  "commitSha": "eb0bc63e8acbcb952916432b977eb1bad76ba8ec",
+  "computedAt": "2026-05-16T05:13:51.697236+00:00",
+  "commitSha": "e1ce05cac027a1136e3b88a18db4aa6e3126248f",
   "assertions": [
     {
       "name": "all_lambda_path_a_eq_path_b_machine_eps",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 35,
+  "durationMs": 29,
   "computation": "sublemma-2-1-h9-tritium-branching-verify",
   "scriptFile": "sublemma_2_1_h9_branching_basis.py",
-  "scriptHash": "ec3dc1e16c67",
-  "scriptCommitSha": "eb0bc63e8acbcb952916432b977eb1bad76ba8ec",
+  "scriptHash": "7fb053b2f1da",
+  "scriptCommitSha": "41499935c60f350ddd6ee5e2b6e790f70167f079",
   "description": "Sub-lemma 2.1 H_9 verification for tritium via the BRANCHING BASIS approach (no test words). Uses SYT restriction-by-ξ to identify the H_6 isotype blocks of V_λ, then Wedderburn projection in H_3 (6 group elements) to identify V_ν blocks within each ξ-class. Path B = Σ_(ξ,ν) Tr(P_(ξν) · ρ_λ(β_full)) compared to Path A (direct Hoefsmit). At q_0 numerically (f64); machine ε target.",
   "auditOnly": "docs/audits/2026-05-16-sublemma-2-1-h9-phase-1.md",
   "data": {

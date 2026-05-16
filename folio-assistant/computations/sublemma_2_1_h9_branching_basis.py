@@ -55,6 +55,18 @@ from sublemma_2_1_h9_tritium_verify import (  # noqa: E402
 )
 
 
+# Module-level caches: lookup tables that don't depend on call args.
+_LR_TABLE_6_3 = get_lr_table(6, 3)
+_DIM_CACHE: dict[tuple, int] = {}
+
+
+def _dim_of(shape: tuple) -> int:
+    """Cached dim of V_shape via Hoefsmit."""
+    if shape not in _DIM_CACHE:
+        _, _DIM_CACHE[shape] = _compiled_sigmas(shape, "double")
+    return _DIM_CACHE[shape]
+
+
 # ──────────────────────────────────────────────────────────────────────
 # §1 — SYT restriction-by-ξ
 # ──────────────────────────────────────────────────────────────────────
@@ -105,7 +117,12 @@ def q_int(n: int, q_val: float) -> float:
 
 
 def hook_lengths(nu: tuple) -> list[int]:
-    """Hook lengths h(x) for each cell x in partition nu."""
+    """Hook lengths h(x) for each cell x in partition nu.
+
+    NOTE: duplicates similar utility in alpha_k_macdonald_closed_form,
+    brundan_kleshchev_audit, alpha_5_jucys_murphy_central, etc.  A
+    follow-up cleanup PR should centralise these in a shared module.
+    """
     nu_list = list(nu)
     # transpose: column heights
     if not nu_list:
@@ -156,11 +173,6 @@ def _invert_hecke_word(word: list, h: float) -> list:
             )
         inv.append((1.0, -h, g))
     return inv
-
-
-# Pre-compute inverse Hecke words for S_3 elements
-def _h3_inverse_group_elements(h: float) -> list[list]:
-    return [_invert_hecke_word(w, h) for w in H3_GROUP_ELEMENTS]
 
 
 def chi_nu_h3_inverse(nu: tuple, w_idx: int, q_val: float, h: float) -> complex:
@@ -234,10 +246,11 @@ def wedderburn_projector_nu(rho_lambda_h3: list[np.ndarray],
 
 
 # ──────────────────────────────────────────────────────────────────────
-# §3 — Per-λ branching extraction
+# §3 — Per-λ branching extraction (kept for reference; verify uses §4)
 # ──────────────────────────────────────────────────────────────────────
 
-def extract_blocks_via_branching(lam: tuple, q_val: float = None) -> dict:
+def extract_blocks_via_branching(lam: tuple, q_val: float = None,
+                                  interface: str = "nn") -> dict:
     """Extract A^λ_{ξν}(σ_5) blocks via the branching-basis algorithm.
 
     Returns:
@@ -266,10 +279,13 @@ def extract_blocks_via_branching(lam: tuple, q_val: float = None) -> dict:
     sigmas, _ = _compiled_sigmas(lam, "double")
     sigma_mats = [np.asarray(fn(q_val), dtype=complex) for fn in sigmas]
 
-    # ρ_λ(I_2) where I_2 = σ_5 - h (for I_nn convention)
-    h = q_val - 1.0 / q_val
+    # ρ_λ(I_2) via the interface coefficients in INTERFACE_COEFS
+    # (from sublemma_2_1_A_operator_extract_h9; parameterised so
+    # this extract function isn't locked to I_nn).
+    from sublemma_2_1_A_operator_extract_h9 import INTERFACE_COEFS as _IC
+    int_c, int_d = _IC[interface]
     I = np.eye(dim, dtype=complex)
-    rho_I2 = sigma_mats[5] - h * I
+    rho_I2 = complex(int_c) * sigma_mats[5] + complex(int_d) * I
 
     # Build ρ_λ(T_w) for each w ∈ S_3 (H_3 generators σ_6, σ_7)
     rho_h3_full: list[np.ndarray] = []
@@ -372,27 +388,21 @@ def path_b_chi(lam: tuple, beta_full: list, w_inner_h6: list,
     # multiplicity in the H_3 sub-rep of ξ-class).
     # KEY: not c·d_ν alone — the d_ξ factor accounts for the V_ξ
     # tensor copy in (V_ξ ⊗ V_ν).
-    lr_69 = get_lr_table(6, 3)
-    d_nu_lookup = {(3,): 1, (2, 1): 2, (1, 1, 1): 1}
-    d_xi_cache = {}
     total = 0 + 0j
     for xi, idx_list in syt_groups.items():
         if not idx_list:
             continue
         idx_arr = np.array(idx_list)
-        if xi not in d_xi_cache:
-            from char_fast import _compiled_sigmas as _cs
-            _, d_xi_cache[xi] = _cs(xi, "double")
-        d_xi = d_xi_cache[xi]
+        d_xi = _dim_of(xi)
         # H_3 sub-action on ξ-class
         rho_h3_xi = [N[idx_arr][:, idx_arr] for N in rho_h3_full]
         # ρ_λ(β_full) on ξ-class
         M_xi = M[idx_arr][:, idx_arr]
         for nu in partitions_of(3):
-            c = lr_69.get((xi, nu, lam), 0)
+            c = _LR_TABLE_6_3.get((xi, nu, lam), 0)
             if c == 0:
                 continue
-            expected_rank = d_xi * c * d_nu_lookup[nu]
+            expected_rank = d_xi * c * _dim_of(nu)
             P_nu = wedderburn_projector_nu(rho_h3_xi, nu, q_val)
             # Top expected_rank eigenvectors of P_nu via SVD
             U, S, _ = np.linalg.svd(P_nu)

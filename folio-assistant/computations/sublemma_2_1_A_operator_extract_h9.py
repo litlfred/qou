@@ -262,8 +262,10 @@ def main() -> int:
                 M[k_idx, offsets[p_idx]:offsets[p_idx] + p["n_entries"]] = coef
             rhs[k_idx] = chi_lam[(i, j, lam)]
 
-        # Least-squares solve
-        sol, residuals, rank, sv = np.linalg.lstsq(M, rhs, rcond=None)
+        # Least-squares solve; rcond=args.rank_tol thresholds the
+        # singular-value cutoff for rank determination, so the reported
+        # `rank` is consistent with --rank-tol.
+        sol, residuals, rank, sv = np.linalg.lstsq(M, rhs, rcond=args.rank_tol)
         pred = M @ sol
         rhs_scale = max(float(np.mean(np.abs(rhs))), 1e-12)
         max_abs_res = float(np.max(np.abs(pred - rhs)))
