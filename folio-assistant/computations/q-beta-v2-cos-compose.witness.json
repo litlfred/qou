@@ -1,0 +1,39 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-16T02:40:28.849443+00:00",
+  "commitSha": "56dd208a822b82b483cf698592aab84a5dc6c7f9",
+  "assertions": [
+    {
+      "name": "cos_tightening_reproduces",
+      "computed": 5.481839044558303,
+      "expected": 5.49,
+      "passed": true,
+      "tolerance": 0.1,
+      "unit": "dimensionless",
+      "source": "PR #655 finding: cos((z−1)·h/2) gives 5.49× tightening"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 9,
+  "computation": "q-beta-v2-cos-compose",
+  "scriptFile": "probe_v2_plus_cos_q_beta_compose.py",
+  "scriptHash": "8d75ffbf767f",
+  "scriptCommitSha": "56dd208a822b82b483cf698592aab84a5dc6c7f9",
+  "description": "V2 chirality + cos((z−1)·h/2) Q_β tightening: composition probe verifying the 5.49× tightening from PR #655 against CODATA Q_β. Closes item 3 of the M1 mass-table §7 recommendations. V2 chirality wire is independent (term5 path); this probe only verifies the Q_β-side improvement.",
+  "contentBlock": "prop:q-beta-categorical-precision-ladder",
+  "parameters": {
+    "q_0": "1.1099785955541805752815940796095093779932822799587",
+    "m_e_MeV": "0.51099895"
+  },
+  "data": {
+    "Q_beta_codata_MeV": "0.78233341000000004817906074094935320317745208740238",
+    "Q_A_MeV": "0.78364580284494996334757268660565115526909401233058",
+    "Q_A_cos_MeV": "0.7825728174022025440388884486327067000155984869695",
+    "residual_ppm_Q_A": 1677.5364929767159,
+    "residual_ppm_Q_A_cos": 306.0171010752255,
+    "tightening_factor": 5.481839044558303,
+    "gap_to_1ppb_before": 1677536.4929767158,
+    "gap_to_1ppb_after": 306017.1010752255
+  }
+}

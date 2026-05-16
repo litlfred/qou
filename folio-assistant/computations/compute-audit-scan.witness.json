@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-16T02:01:22.671201+00:00",
-  "commitSha": "f25a90e39b79f432a895ffabe5e268da8af040b2",
+  "computedAt": "2026-05-16T02:35:51.236815+00:00",
+  "commitSha": "56dd208a822b82b483cf698592aab84a5dc6c7f9",
   "assertions": [],
   "allPassed": true,
   "durationMs": 7,
@@ -13,7 +13,7 @@
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 421,
+    "files_scanned": 431,
     "patterns": [
       "P15",
       "P16",
@@ -26,7 +26,7 @@
     "by_pattern_count": {
       "P15": 114,
       "P16": 89,
-      "P21": 23,
+      "P21": 24,
       "P30": 96,
       "P31": 13
     },
@@ -1895,6 +1895,13 @@
       {
         "pattern": "P21",
         "file": "probe_he4_canonical_tr_m_fingerprint.py",
+        "line": 1,
+        "snippet": "Hoefsmit construction without BlockCache",
+        "note": "syt_prefix_cache.BlockCache caches block values by content distance ρ; precomputed SYT→index dict eliminates O(d_λ²) swap-partner search. Numerical-q callers can wire it directly. Ref: ocneanu_weights.py wiring."
+      },
+      {
+        "pattern": "P21",
+        "file": "probe_heavy_atom_t1.py",
         "line": 1,
         "snippet": "Hoefsmit construction without BlockCache",
         "note": "syt_prefix_cache.BlockCache caches block values by content distance ρ; precomputed SYT→index dict eliminates O(d_λ²) swap-partner search. Numerical-q callers can wire it directly. Ref: ocneanu_weights.py wiring."
