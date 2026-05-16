@@ -29,6 +29,8 @@ export default proposition({
   computation: {
     witness: [
       "../../folio-assistant/computations/c-k-beta-decay-bound.witness.json",
+      "../../folio-assistant/computations/inter-knot-decoupling.witness.json",
+      "../../folio-assistant/computations/q-beta-cat-per-factor-decomposition.witness.json",
     ],
   },
 });
