@@ -41,11 +41,18 @@ import Mathlib.Tactic
 
 namespace QOU.BraidKnot
 
-/-! ## Typed crossings -/
+/-! ## Typed crossings
+
+NOTE: `BraidCrossing n` is the n-strand sign-and-generator structure
+used by `BraidWord n` (this module). The sibling file
+`typed-b3-sub-braid-extraction.lean` defines its own (unparameterised)
+`TypedCrossing` for the 3-strand case carrying the `averaged` Hecke-
+specific crossing type; the two coexist in `QOU.BraidKnot` without
+clash. The conversion `BraidWord.toBraid3` below bridges them. -/
 
 /-- A typed crossing in `B_n`: which generator (index `i : Fin (n − 1)`)
     and which sign (`positive` for σ_i, `negative` for σ_i⁻¹). -/
-structure TypedCrossing (n : ℕ) where
+structure BraidCrossing (n : ℕ) where
   /-- Generator index `i` in `σ_i`, valued in `Fin (n − 1)`. -/
   gen : Fin (n - 1)
   /-- Sign of the crossing: `true` = positive (`σ_i`), `false` = inverse. -/
@@ -56,7 +63,7 @@ structure TypedCrossing (n : ℕ) where
 
 /-- An n-strand braid word — list of typed crossings. The empty list
     is the identity braid. -/
-abbrev BraidWord (n : ℕ) : Type := List (TypedCrossing n)
+abbrev BraidWord (n : ℕ) : Type := List (BraidCrossing n)
 
 namespace BraidWord
 
@@ -66,7 +73,7 @@ def writhe {n : ℕ} (w : BraidWord n) : ℤ :=
 
 @[simp] theorem writhe_nil (n : ℕ) : writhe ([] : BraidWord n) = 0 := rfl
 
-@[simp] theorem writhe_cons {n : ℕ} (c : TypedCrossing n) (w : BraidWord n) :
+@[simp] theorem writhe_cons {n : ℕ} (c : BraidCrossing n) (w : BraidWord n) :
     writhe (c :: w) = (if c.positive then 1 else -1) + writhe w := by
   unfold writhe
   simp [List.foldr]
@@ -74,22 +81,23 @@ def writhe {n : ℕ} (w : BraidWord n) : ℤ :=
 
 end BraidWord
 
-/-! ## Markov closure (axiomatised at general n)
+/-! ## Markov closure
 
-For `n = 2` the closure is `closure2` from `rem:braid-link-types`,
-which is concrete (pattern match on `Braid2 := ℤ`).
-
-For `n ≥ 3` the closure is axiomatised as an opaque function into
-`Link`; per-irrep specialisations discharge concrete equalities
-(e.g. `typed-b3-sub-braid-extraction` for n = 3 at ε^6 order). -/
+For `n = 2` the closure is concrete: it composes the writhe (which
+recovers `Braid2 := ℤ`) with `closure2` from `rem:braid-link-types`.
+For `n ≥ 3` we currently return `Link.unknot` as a placeholder; per-n
+specialisations (Borromean at n=3, etc.) discharge concrete
+equalities in companion files. -/
 
 /-- **Markov closure** of an n-strand braid word to a link.
 
-    Axiomatised at the general-n level; concrete for `n = 2` via
-    `closure2` (`rem:braid-link-types`). Per-irrep, per-n proofs of
-    specific closure equalities (Hopf at n=2 σ², Borromean at n=3,
-    etc.) plug into this signature. -/
-opaque closureN : ∀ {n : ℕ}, BraidWord n → Link
+    Concrete at `n = 2` via writhe + `closure2`
+    (`rem:braid-link-types`). Placeholder `Link.unknot` at `n ≥ 3`;
+    per-n discharges plug in via dedicated theorems
+    (e.g. `typed-b3-sub-braid-extraction` for n = 3 at ε^6 order). -/
+noncomputable def closureN : ∀ {n : ℕ}, BraidWord n → Link
+  | 2, w => closure2 w.writhe
+  | _, _ => Link.unknot
 
 /-! ## Hecke quadratic quotient
 
@@ -179,15 +187,61 @@ theorem Braid2_writhe_eq (n : Braid2) :
       simp [Braid2.toBraidWord, BraidWord.writhe_cons, ih]
       ring
 
+/-! ## n=2 ↔ closure2 identification (Markov closure)
+
+The closure at `n = 2` is by construction the writhe composed with
+`closure2` from `rem:braid-link-types`. We record this as a
+theorem closed by `rfl`. -/
+
+-- Ref: [manuscript] rem:braid-group-n-strand §"specialisations"
+-- Ref: [manuscript] rem:braid-link-types
+/-- **`closureN` at `n = 2` factors through `closure2`** via the
+    writhe. Closed by `rfl` from the concrete definition of `closureN`
+    at `n = 2`. -/
+theorem closureN_eq_closure2 (w : BraidWord 2) :
+    closureN w = closure2 w.writhe := rfl
+
+/-! ## n=3 ↔ TypedBraidWord3 bridge
+
+Conversion from `BraidWord 3` (this module's generic n=3 type) into
+`TypedBraidWord3` (`typed-b3-sub-braid-extraction.lean`'s typed-B_3
+list). The conversion preserves generator index and maps the boolean
+sign onto the sibling file's `sigma`/`sigma_inv` constructors. The
+sibling's `averaged` crossing type has no counterpart in `BraidWord 3`
+(it is an extra Hecke-specific channel) so the conversion is into the
+sigma/sigma_inv subset. -/
+
+/-- A `BraidCrossing 3` (generator index in `Fin 2`, boolean sign)
+    maps into the typed-B_3 representation by:
+      `positive = true`  → `CrossingType3.sigma`
+      `positive = false` → `CrossingType3.sigma_inv`. -/
+def BraidCrossing.toTypedB3 (c : BraidCrossing 3) : TypedCrossing where
+  generator := c.gen
+  crossing_type := if c.positive then .sigma else .sigma_inv
+
+-- Ref: [manuscript] rem:braid-group-n-strand §"specialisations"
+-- Ref: [manuscript] rem:typed-b3-sub-braid-extraction
+/-- **`BraidWord 3 → TypedBraidWord3` conversion.** Maps each
+    `BraidCrossing 3` to its `TypedCrossing` counterpart via
+    `BraidCrossing.toTypedB3`. -/
+def BraidWord.toBraid3 (w : BraidWord 3) : TypedBraidWord3 :=
+  w.map BraidCrossing.toTypedB3
+
+/-- Length is preserved by the conversion. -/
+@[simp] theorem BraidWord.toBraid3_length (w : BraidWord 3) :
+    (BraidWord.toBraid3 w).length = w.length := by
+  unfold BraidWord.toBraid3
+  exact List.length_map _ _
+
 /-! ## Open R&D
 
 This file is the **n-strand scaffolding**. Concrete content to add:
 
-  • Define `BraidWord.toBraid3 : ...` mapping into the typed
-    `TypedBraidWord3` from `rem:typed-b3-sub-braid-extraction`
-  • Define `closureN_eq_closure2` linking `closureN @ n=2` to
-    `closure2` (1-line `rfl`-style identification once the
-    `opaque closureN` is replaced by a concrete construction at n=2)
+  • Per-`n` discharge of `MarkovTraceN n q` from a fixed Markov-trace
+    operator on the inductive limit `⋃_n B_n`
+  • Higher-`n` `closureN` discharges (Borromean at n=3, di-baryon
+    at n=6, etc.) — current `n ≥ 3` returns the placeholder
+    `Link.unknot`
   • Per-n discharge of `MarkovTraceN n q` from a fixed Markov-trace
     operator on the inductive limit `⋃_n B_n`
 

@@ -44,14 +44,29 @@ each new $n$ adds an `instance HeckeQuotient n q_0` and
 `instance MarkovTraceN n q_0`, and downstream theorems
 auto-specialise.
 
+## Specialisations landed
+
+| Bridge | Direction | Lean | Closure |
+|---|---|---|---|
+| `closureN @ n=2` ↔ `closure2 ∘ writhe` | n=2 specialisation | `closureN_eq_closure2` | `rfl` |
+| `BraidWord 3` → `TypedBraidWord3` | n=3 conversion | `BraidWord.toBraid3` (`def`) | mapped via `BraidCrossing.toTypedB3` (`sigma`/`sigma_inv` subset) |
+| `BraidWord.toBraid3_length` | length preservation | `@[simp]` lemma | `List.length_map` |
+
+Note: the parameterised `BraidCrossing n` in this block coexists with
+the unparameterised `TypedCrossing` from
+[`rem:typed-b3-sub-braid-extraction`](#rem:typed-b3-sub-braid-extraction);
+the latter additionally carries the `averaged` Hecke-specific crossing
+type, so the conversion `BraidWord 3 → TypedBraidWord3` is into the
+`sigma`/`sigma_inv` subset (the `averaged` channel has no counterpart
+in the generic n-strand types).
+
 ## Open R&D
 
-- Define `BraidWord.toBraid3 : BraidWord 3 → TypedBraidWord3`.
-- Define `closureN_eq_closure2` linking the opaque `closureN` at $n=2$
-  to the concrete `closure2` (1-line `rfl`-style identification once
-  the opaque function is replaced by a concrete construction at $n=2$).
 - Per-$n$ discharge of `MarkovTraceN n q` from a fixed Markov-trace
   operator on the inductive limit $\bigcup_n \mathbf{B}_n$.
+- Higher-$n$ `closureN` discharges: Borromean link at $n=3$,
+  di-baryon at $n=6$, etc. (current $n \geq 3$ returns `Link.unknot`
+  as a placeholder).
 
 ## Status
 
