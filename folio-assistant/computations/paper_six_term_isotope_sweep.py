@@ -927,9 +927,7 @@ def q_beta_substrate_cos_tightened_MeV() -> float:
     independent route (lattice QCD, EW Fermi). The c_2 tightening
     here is the empirically-solid substrate-derived Q_β.
     """
-    import mpmath as mp
-    from q_parameter import Q
-    q = mp.mpf(repr(Q))
+    q = mp.mpf(repr(Q0_FLOAT))
     z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
     h = q - 1 / q
     Q_A = mp.mpf(repr(M_E_MEV)) * mp.fabs(q ** 2 - 2 * q - 1) * (q + 1) / (2 * q ** 3)
