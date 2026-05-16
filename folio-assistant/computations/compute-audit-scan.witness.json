@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-16T03:09:26.940911+00:00",
-  "commitSha": "e66bff439d2262e79cb54c10f529245074e81e63",
+  "computedAt": "2026-05-16T03:09:28.597293+00:00",
+  "commitSha": "1b45537a946c778cb9a362fc6f01e0af28f4e4a3",
   "assertions": [],
   "allPassed": true,
   "durationMs": 7,
@@ -28,7 +28,7 @@
       "P16": 89,
       "P21": 24,
       "P30": 96,
-      "P31": 20
+      "P31": 21
     },
     "top_files": [
       {
@@ -1980,6 +1980,13 @@
         "pattern": "P31",
         "file": "probe_q_beta_operator_valued_N2.py",
         "line": 59,
+        "snippet": "CODATA literal \"938.27208816\"",
+        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
+      },
+      {
+        "pattern": "P31",
+        "file": "probe_q_beta_operator_valued_N3.py",
+        "line": 46,
         "snippet": "CODATA literal \"938.27208816\"",
         "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
