@@ -71,11 +71,6 @@ from q_parameter import q_at  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 
-# Module-level symbol — matches tr_M_atomic's internal convention; reused
-# across all eval_tau calls instead of recreating per call.
-_Q_SYM = sp.Symbol("q", positive=True)
-
-
 def eval_tau(Z: int, N: int, q0: mp.mpf) -> mp.mpf:
     """tr_M(β_atom) at q_0 via existing symbolic Markov-peel path.
 
@@ -84,10 +79,11 @@ def eval_tau(Z: int, N: int, q0: mp.mpf) -> mp.mpf:
     sympy.Float at the same precision (no float-cast), and evaluated
     at mp.mp.dps digits.  No precision is lost.
     """
+    qsym = sp.Symbol("q", positive=True)
     tau_sym = tr_M_atomic(Z, N)
     # Convert mpmath q0 → sympy Float at current global precision
     q0_sp = sp.Float(mp.nstr(q0, mp.mp.dps), mp.mp.dps)
-    val = mp.mpf(str(sp.N(tau_sym.subs(_Q_SYM, q0_sp), mp.mp.dps)))
+    val = mp.mpf(str(sp.N(tau_sym.subs(qsym, q0_sp), mp.mp.dps)))
     return val
 
 

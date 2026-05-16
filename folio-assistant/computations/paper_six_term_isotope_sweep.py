@@ -350,7 +350,7 @@ def paper_six_term_mass(Z, N, include_inter=True,
                           m_e_hecke: float = 1.0,
                           term5_mode: str = "multiplicative_on_t1",
                           isotope_label: str | None = None,
-                          tower_mode: str = "li2q",
+                          tower_mode: str = "canonical_markov",
                           chirality_source: str = "v2"):
     """6-term mass formula.
 
@@ -1022,7 +1022,7 @@ def q_beta_for_source(source: str) -> float:
 
 
 def assemble_per_derivation_weights(Z: int, N: int,
-                                      tower_mode: str = "li2q",
+                                      tower_mode: str = "canonical_markov",
                                       term5_mode: str = "multiplicative_on_t1",
                                       q_beta_source: str = "codata") -> dict:
     """Build atomic mass per the derivation-fixed weights (no proton fit).
