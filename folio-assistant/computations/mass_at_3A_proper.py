@@ -168,10 +168,14 @@ def _cached_seminormal(shape: tuple[int, ...]):
     if key in _SEMINORMAL_CACHE:
         return _SEMINORMAL_CACHE[key]
     _SEMINORMAL_DISK.mkdir(parents=True, exist_ok=True)
-    stem = (_SEMINORMAL_DISK /
-            f"n{n}_q{Q0:.10f}_shape{'-'.join(map(str, shape))}")
-    npz_path = stem.with_suffix(".npz")
-    json_path = stem.with_suffix(".json")
+    # Bug fix (2026-05-16): Path.with_suffix replaces everything after
+    # the FIRST dot in the filename, so `q{Q0:.10f}` (e.g. "1.1099785955")
+    # collided every shape at the same n into a single n{n}_q1.npz file
+    # that held only the LAST-written shape's data.  Construct the
+    # filename by direct string concat to avoid with_suffix.
+    stem_name = f"n{n}_q{Q0:.10f}_shape{'-'.join(map(str, shape))}"
+    npz_path = _SEMINORMAL_DISK / (stem_name + ".npz")
+    json_path = _SEMINORMAL_DISK / (stem_name + ".json")
     if npz_path.exists() and json_path.exists():
         try:
             meta = json.loads(json_path.read_text())
