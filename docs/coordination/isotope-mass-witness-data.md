@@ -7,6 +7,16 @@ under strict three-calibration discipline (CAL-1 m_e, CAL-2 q₀, CAL-3
 Q_β; m_p and m_n are predictions, never inputs) + anti-staleness
 infra to prevent the failure mode that produced the ¹H tautology.
 
+## Scope map (2026-05-16 14:55 UTC — third cycle, post-#666 merge)
+
+| PR | Status | Bearing | Action this cycle |
+|---|---|---|---|
+| **#663 (this)** | open | — | rebased onto post-#666 main; m_p + ¹H closure landed (1.63 %); m_n full-tower closure landed with honest 62.97 % residual; T5/T6 electron + ⁴He@H_12 documented as research items |
+| **#666** | **MERGED** | upstream dep — closes Δ_λ for tritium at H_9 (machine ε) | downstream catalog assembly (`delta-lambda-witness.json`) is a small bridge step; **not in scope** for this PR — would lift ²H/³H/³He B_pred from `delta_lambda_unavailable` |
+| **#668** | open | T6 closure infra — derives `shift(Z,N) = 18Z + 21N + 1` categorically | nucleon-only formula; cannot directly close T6 for the electron; cross-referenced in audit |
+| **#669** | open | ⁴He anchor identification — canonical pppnnn confirmed | explicit next step "apply #666's branching basis at H_12" — compute-heavy, separate PR |
+| #665 | open | n-strand BraidGroup Lean | tangential |
+
 ## Scope map (2026-05-16 05:30 UTC — second cycle)
 
 | PR | Status | Relationship | Action |

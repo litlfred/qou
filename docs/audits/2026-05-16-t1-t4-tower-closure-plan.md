@@ -255,3 +255,134 @@ emerges from CAL-1/2/3 alone.
 - The single-strand MPFR per-generator-volume gap (PR-X1) is the
   ONE THING that unblocks every downstream piece. It is the
   highest-leverage next step on the mass-prediction track.
+
+## Sibling-PR landscape (2026-05-16, last 48 hrs review)
+
+Per "review recent sibling PRs active last 48 hrs and main progress
+before continuing" — relevant landings:
+
+| PR | Status | Bearing on closure |
+|---|---|---|
+| **#666** | **merged to main** | Sub-lemma 2.1 H_9 multi-interface CLOSED 30/30 at machine ε via Halley-refined branching basis. Produces `sublemma-2-1-A-operator-extract-h9-nn.witness.json` + tritium χ^λ table. The downstream Δ_λ catalog (`delta-lambda-witness.json`) consumed by `binding_K_direct.py` is not yet assembled — assembly is a small bridge step. |
+| **#668** | open | Crystal-bases shift_NF + Habiro convention bridge: derives `shift(Z,N) = 18Z + 21N + 1` categorically. **Nucleon-only**; 3-strand B₃-based. Electron's 2-strand trefoil has its own shift structure not addressed by this PR. |
+| **#669** | open | ⁴He compositional consistency probe: canonical pppnnn ordering confirmed as Model B anchor (disjoint compositions 100–245 % off). **Explicit next step**: apply PR #666's branching-basis machinery at H_12 for canonical ⁴He, all λ ⊢ 12 at machine ε. |
+| #665 | open | n-strand BraidGroup Lean + σ_1 eigenstructure. Tangential to mass closure. |
+
+## m_n full-tower closure (this commit)
+
+Producer mirroring the proton version, wired through the same MPFR
+@ 50 dps tower:
+
+- **Script**: [`derive_m_n_hecke_full_tower_50dps.py`](../../folio-assistant/computations/derive_m_n_hecke_full_tower_50dps.py)
+- **Output**: [`neutron-mass-full-tower-50dps.witness.json`](../../folio-assistant/computations/neutron-mass-full-tower-50dps.witness.json)
+- **Result**: m_n_pred = **347.96 MeV** vs CODATA 939.57 MeV;
+  residual **−62.97 %**.
+
+The 62.97 % residual is the **framework's actual prediction**, not
+a numerical-precision issue. The proton's T1+T2+T3+T4 sum (uud
+quark chain with σ pair + 2 gluons) gives m_p/m_e ≈ 1866 (close to
+CODATA 1836). The neutron's analogous sum (udd, with σ⁻¹ pair
+instead of σ pair) produces m_n/m_e ≈ 681 — **less than** m_p/m_e,
+contradicting experiment. Structural framework gap (likely missing
+W± / Z mediation in the neutron's σ⁻¹ branch, or a sign convention
+issue with the σ⁻¹ contribution to the brane tower) that the
+current truncation does not capture.
+
+Honest reporting: m_n is correctly classified `derivation_pending`
+in `low_isotope_mass_table.py` (62.97 % ≫ 2 % threshold). The
+m_n_pred is **recorded** in the witness, not propagated as derived.
+No fitting, no calibration, no numerology.
+
+## T5 closure for the electron — convention question, not code patch
+
+[`term_5_chirality_bw_mp(Z, N, knot_type)`](../../folio-assistant/computations/mass_formula_6term_mpfr_50dps.py)
+sums
+
+    T5 = a_K · B_bulk(A, Z, N, sign) + f_Zdep_scale · B_Zdep(A, Z, N)
+                                       + B_shell(A, Z, N) [if A ≥ 4]
+
+where `B_bulk`, `B_Zdep`, `B_shell` are functions of the nucleon
+ledger (Z, N, A). The electron has **no nucleon ledger** —
+Z=N=A=0 is not a valid input under the current framework.
+
+Candidate conventions:
+
+1. **T5(electron) := 0** — electron has no chirality assignment
+   because it's a fundamental fermion, not a multi-quark composite.
+2. **T5(electron) := a_K(electron) · 0** where `a_K(electron) = 1`
+   by Gram-matrix V2 convention on the H_2 trefoil. Same numeric
+   value (0), different conceptual route.
+3. **Extend the framework** to include a lepton-chirality factor —
+   this is new mathematics, not closure of existing code.
+
+Under conventions 1 or 2, T5(electron) = 0. Empirically (from this
+branch's per-gen MPFR producer):
+
+| sum convention | m_p_pred (MeV) | residual |
+|---|---:|---:|
+| T1+T2+T3 (no T4, T5) | 955.49 | +1.835 % |
+| T1+T2+T3+T4 (current) | 953.56 | +1.630 % |
+| T1+T2+T3+T4+T5_p, T5_e=0 (naive asym) | 982.19 | +4.680 % (widens) |
+
+**Verdict**: T5 closure for the electron is **not a code patch**.
+It needs a framework decision on lepton chirality. This branch
+leaves T5_electron undefined and surfaces the question; the 1.63 %
+m_p closure stands.
+
+## T6 closure for the electron — Habiro shift not derived
+
+PR #668 closes `shift(Z, N) = 18Z + 21N + 1` for nucleons via
+combinatorial q-pole counter + algebraic correction. The
+correction `3Z + 1.5N − 1.5` decomposes from the 3-strand B₃
+braid relation + Ocneanu weights specific to nucleon sub-braids.
+The electron's H_2 trefoil has neither.
+
+[`term_6_habiro_residue_mp(A)`](../../folio-assistant/computations/mass_formula_6term_mpfr_50dps.py)
+reads `term6-habiro-residue-mpfr-50dps.witness.json` keyed by A
+(nucleon count). The electron isn't a nucleon and has no per-A
+entry.
+
+**Verdict**: T6 closure for the electron requires an analogous
+q-pole / u-shift derivation for the electron's H_2 trefoil. PR
+#668 provides the combinatorial primitive (the crystal q-pole
+counter) that could be extended to H_2, but the algebraic
+correction term would differ. **Research-level work**, not a code
+patch.
+
+## B(⁴He+) via H_12 canonical compute — scoped, deferred
+
+PR #669 establishes the right Model B anchor (canonical pppnnn
+ordering) and **explicitly identifies the next step**:
+
+> Apply branching-basis machinery from #666 to compute
+> χ^λ(β_⁴He canonical) at H_12 for all λ ⊢ 12 at machine ε.
+
+The branching-basis algorithm (PR #666 §"Phase 2: branching
+basis") scales as O(d² × halley_iterations) per partition; for
+tritium at H_9 it took 156 s (d up to 162 for V_(3,2,1)). At H_12
+with ~77 partitions and d up to ~2310 for the largest irrep, the
+expected runtime is **~30–60 minutes per atom** — well beyond a
+single interactive session's budget. The y_λ cache for n=12 also
+needs to be regenerated (the existing mpmath cache tops out at
+n=11 per a comment in [`mass_formula_6term_mpfr_50dps.py:349`](../../folio-assistant/computations/mass_formula_6term_mpfr_50dps.py)).
+
+**Verdict**: B(⁴He+) closure is a **separate compute-heavy PR**
+following PR #666's branching-basis pattern with H_12 cache
+warming. Not in scope for this branch.
+
+## Status summary (this commit)
+
+| Closure | Branch state | Honest residual |
+|---|---|---|
+| m_p full-tower | ✓ landed (`proton-mass-full-tower-50dps.witness.json`) | +1.63 % |
+| ¹H atomic | ✓ derived (`row_derivation_status = "derived"`) | +16,288 ppm |
+| m_n full-tower | ✓ landed this commit | −62.97 % (recorded, not propagated) |
+| T5 electron | ✗ convention question; documented | — |
+| T6 electron | ✗ research work; documented | — |
+| B(⁴He+) at H_12 | ✗ separate compute-heavy PR; documented | — |
+
+The branch's user-facing deliverable — **¹H lifted from a
+tautology to a genuinely-derived 1.63 % framework prediction with
+full anti-staleness infra** — is preserved. Other rows in
+`low-isotope-mass-table.witness.json` remain `derivation_pending`
+with explicit pointers to the upstream gates.
