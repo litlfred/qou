@@ -171,9 +171,12 @@ def main() -> int:
     print(f"    Empirical ε^6 of F_3 - 1: "
           f"{sp.nsimplify(f3_minus_one_eps6, rational=False)} ≈ "
           f"{float(f3_minus_one_eps6.evalf()):+.6f}")
-    diff = sp.simplify(f3_minus_one_eps6 - minus_2_b3)
+    # sp.cancel is sufficient and more performant than sp.simplify for
+    # rational expressions (P16 perf rule); .equals(0) returns a boolean
+    # vs `== 0` which returns an Equality object.
+    diff = sp.cancel(f3_minus_one_eps6 - minus_2_b3)
     print(f"    Difference: {sp.nsimplify(diff, rational=False)}")
-    print(f"    → {'EXACT MATCH' if diff == 0 else 'OFF by ' + str(diff)}")
+    print(f"    → {'EXACT MATCH' if diff.equals(0) else 'OFF by ' + str(diff)}")
     print()
 
     # Step 6: What happens at higher order ε?

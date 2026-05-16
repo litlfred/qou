@@ -49,7 +49,9 @@ from codata_constants import M_E_MEV, M_P_MEV_VALIDATION, M_N_MEV_VALIDATION  # 
 
 mp.mp.dps = 50
 
-VOL_BORROMEAN = mp.mpf("7.32772475587766148235147121870981010907842498879866")
+from experimental_constants import VOL_BORROMEAN_50DPS_STR  # noqa: E402
+
+VOL_BORROMEAN = mp.mpf(VOL_BORROMEAN_50DPS_STR)
 
 
 def _q_0_50dps() -> mp.mpf:
@@ -111,9 +113,12 @@ def main() -> int:
     print()
 
     chain_match = mp.fabs(eps_delta_S - eps_delta_S_predicted) / mp.fabs(eps_delta_S)
+    # Threshold scales with the global mpmath dps (10-digit headroom).
+    chain_threshold = mp.mpf(10) ** (-mp.mp.dps + 10)
     print(f"  Chain match: |ε_ΔS − damping · ε_Q| / |ε_ΔS| = {mp.nstr(chain_match, 6)}")
+    print(f"  Threshold (10^(-dps+10) at dps={mp.mp.dps})       = {mp.nstr(chain_threshold, 6)}")
     print()
-    if chain_match < mp.mpf("1e-9"):
+    if chain_match < chain_threshold:
         verdict = ("CHAIN VERIFIED EXACTLY: ε_ΔS = (Q_β/(Q_β+m_e)) · ε_Q. The "
                    "1015 ppm ΔS residual is the Q_β closed-form residual "
                    "damped by Q_β/(Q_β+m_e) ≈ 0.605. NOT a coincidence.")
