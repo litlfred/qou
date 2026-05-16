@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-17T19:54:22.194852+00:00",
-  "commitSha": "ce54e2a8e8147d40005e58839bc7d8dcb819144b",
+  "computedAt": "2026-05-17T21:55:10.147321+00:00",
+  "commitSha": "964f7a374505931e549ddd69d12b119d8ded690a",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -572,11 +572,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1,
+  "durationMs": 2,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "c0234c3b4dd76784cbf72cf41e1db3157c615d0c",
+  "scriptCommitSha": "67f1df24c9d76e62b2bb25a331814e511ba6dc3f",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
   "data": {
@@ -2356,6 +2356,7 @@
         "probe-phiq-uniform-k.witness.json",
         "probe-phiq-yekutieli-truncation.witness.json",
         "probe-proton-mass-scale.witness.json",
+        "probe-proton-t2-t3-li2q-comparison.witness.json",
         "probe-proton-with-wenzl-weights.witness.json",
         "probe-sdp-active-set-dominant-partition.witness.json",
         "probe-sdp-canonical-paper-formula.witness.json",
@@ -2365,6 +2366,7 @@
         "proton-m_e-anomaly-audit.witness.json",
         "proton-m_e-derivation.witness.json",
         "proton-mass-codata-50dps.witness.json",
+        "proton-mass-full-tower-50dps.witness.json",
         "proton-residual-rootcause.witness.json",
         "q-beta-1d-irrep-universal-closed-form.witness.json",
         "q-beta-c2-categorical-proof.witness.json",
@@ -2438,6 +2440,7 @@
         "term6-residues-at-roots.witness.json",
         "term7-chi5-basis.witness.json",
         "term7-height6-partition-enum.witness.json",
+        "terms-2-3-atom-per-gen-mpfr-50dps.witness.json",
         "tier-0-atlas-pslq-check.witness.json",
         "tier-1-hyperbolic-3braid-pslq.witness.json",
         "tier-2-higher-bridge-pslq.witness.json",
