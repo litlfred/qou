@@ -379,12 +379,12 @@ def solve_operator_selection_lp_mp(coeffs_primal_mp, *,
                 A[j, 1 + k] = G[i, j]
             b[j, 0] = t[j]
 
-        # Mpmath has lu_solve only for square systems; use normal
-        # equations for the over-determined case: A^T A · sol = A^T b.
-        AtA = A.T * A
-        Atb = A.T * b
+        # Solve A · [y0, y_active] = t directly with QR (least-squares
+        # for the over-determined case). qr_solve avoids squaring the
+        # condition number of the matrix the way normal-equations would,
+        # preserving 50-dps precision on poorly-conditioned A.
         try:
-            sol = mp.lu_solve(AtA, Atb)
+            sol, _ = mp.qr_solve(A, b)
             y0 = sol[0, 0]
             y_active = [sol[1 + k, 0] for k in range(d)]
         except Exception:
@@ -422,12 +422,12 @@ def solve_operator_selection_lp_mp(coeffs_primal_mp, *,
                 A2[1 + k, j] = G[i, j]
             b2[1 + k, 0] = mp.mpf(0)
 
-        # Over- or under-determined depending on |active|; use
-        # normal equations as before.
-        A2tA2 = A2.T * A2
-        A2tb2 = A2.T * b2
+        # Solve A2 · x = b2 directly with QR (least-squares for the
+        # over-determined case, minimum-norm for under-determined when
+        # |active| < 5). Avoids squaring the condition number — same
+        # precision argument as the dual solve above.
         try:
-            x_sol = mp.lu_solve(A2tA2, A2tb2)
+            x_sol, _ = mp.qr_solve(A2, b2)
             x_star = [x_sol[i, 0] for i in range(6)]
         except Exception:
             x_star = [mp.mpf('nan')] * 6

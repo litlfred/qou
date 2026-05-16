@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-16T02:17:45.392152+00:00",
-  "commitSha": "4dec484cf7253e6f79c618730054b36508367bc2",
+  "computedAt": "2026-05-16T02:44:13.479211+00:00",
+  "commitSha": "0fb976fd71a0b79dba957b4ddb90f488f3c3ea4d",
   "assertions": [
     {
       "name": "closed_form_shift_consistent_D",
@@ -139,11 +139,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 39,
+  "durationMs": 42,
   "computation": "compound-shift-nf",
   "scriptFile": "compound_shift_nf.py",
-  "scriptHash": "a08925702715",
-  "scriptCommitSha": "4dec484cf7253e6f79c618730054b36508367bc2",
+  "scriptHash": "e4e2d68a67bd",
+  "scriptCommitSha": "320d17c38b0f52a5d01f39c6567584c3a07a55a0",
   "description": "Compound-shift NF decomposition for atoms A=2..6 at 50-dps mpmath precision (no floats in emitted values). Composes the closed-form atomic shift (shift(Z,N) = 18Z + 21N + 1, prop:per-nucleon-shift-additive-linearity, PR #539 / w3-w4) with the interface α(I) contributions per canonical pppnnn ordering. NF coefficients at q_0 are computed in mpmath (port of hecke_core.build_atom_nf with mp.mpf arithmetic). LP active-set discovery uses scipy linprog as a discrete oracle, but every numerical field (y_0, y_*, x_*, primal_obj, dual_obj, duality_gap) is recomputed in mpmath via a high-precision linear-system solve restricted to the active basis. Also verifies the α_EM⁻¹ = q · [9]_q · [10]_q chain at 50 dps.",
   "auditOnly": "docs/audits/2026-05-16-compound-shift-nf-impl.md",
   "data": {
@@ -210,7 +210,7 @@
         "active_card": 5,
         "primal_obj": "-0.23177895122713877190136823608405077695592036104836",
         "dual_obj": "-0.23177895122713877190136823608405077695592036104836",
-        "duality_gap": "4.7920204686864164493028722364852771112180425020194e-55",
+        "duality_gap": "0.0",
         "delta_cross_lp_bound": 4
       },
       {
@@ -261,7 +261,7 @@
         "active_card": 5,
         "primal_obj": "-0.66779582383501224147514310672258539850713639523466",
         "dual_obj": "-0.66779582383501224147514310672258539850713639523466",
-        "duality_gap": "5.0978941156238472864924172728566777778915345766164e-56",
+        "duality_gap": "0.0",
         "delta_cross_lp_bound": 4
       },
       {
@@ -312,7 +312,7 @@
         "active_card": 5,
         "primal_obj": "-0.21652277143236309460478346189267018295714256858574",
         "dual_obj": "-0.21652277143236309460478346189267018295714256858574",
-        "duality_gap": "5.1233835862019665229248793592209611667809922494995e-55",
+        "duality_gap": "0.0",
         "delta_cross_lp_bound": 4
       },
       {
@@ -363,7 +363,7 @@
         "active_card": 5,
         "primal_obj": "-2.8657069751523012937912793713493851069307596952215",
         "dual_obj": "-2.8657069751523012937912793713493851069307596952215",
-        "duality_gap": "4.8939783509988933950327205819424106667758731935517e-55",
+        "duality_gap": "4.0783152924990778291939338182853422223132276612931e-56",
         "delta_cross_lp_bound": 4
       },
       {
@@ -414,7 +414,7 @@
         "active_card": 5,
         "primal_obj": "-4.2668265041461703972323994670763413231611120816803",
         "dual_obj": "-4.2668265041461703972323994670763413231611120816803",
-        "duality_gap": "5.7096414094987089608715073455994791112385187258103e-55",
+        "duality_gap": "0.0",
         "delta_cross_lp_bound": 4
       },
       {
@@ -465,7 +465,7 @@
         "active_card": 5,
         "primal_obj": "-0.58323978618081418838354160575046165145925153693631",
         "dual_obj": "-0.58323978618081418838354160575046165145925153693631",
-        "duality_gap": "1.2948651053684572107690739873055961555844497824606e-54",
+        "duality_gap": "1.0195788231247694572984834545713355555783069153233e-56",
         "delta_cross_lp_bound": 4
       }
     ],
