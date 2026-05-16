@@ -10,7 +10,7 @@ export default remark({
     "prop:markov-trace-frobenius-selection",
     "prop:hoefsmit-V21-cos-symmetrization",
     "prop:tau-M-asymptotic-rep-theory",
-    "prop:borromean-baryon-interpretation",
+    "rem:borromean-baryon-interpretation",
   ],
   cites: [
     "kashiwara1990",

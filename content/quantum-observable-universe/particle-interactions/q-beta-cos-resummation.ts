@@ -27,9 +27,12 @@ export default proposition({
     "prediction",
   ],
   computation: {
+    engine: "python+mpmath",
+    script: "folio-assistant/computations/probe_q_beta_tightening_landscape.py",
     witness: [
-      "../../folio-assistant/computations/q-beta-tightening-landscape.witness.json",
-      "../../folio-assistant/computations/delta-S-chain-audit.witness.json",
+      "folio-assistant/computations/q-beta-tightening-landscape.witness.json",
+      "folio-assistant/computations/delta-S-chain-audit.witness.json",
     ],
+    status: "experimental",
   },
 });

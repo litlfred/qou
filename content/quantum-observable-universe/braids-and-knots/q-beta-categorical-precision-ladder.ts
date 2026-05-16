@@ -35,13 +35,15 @@ export default proposition({
     "n-p-mass-split",
   ],
   computation: {
+    engine: "python+mpmath",
+    script: "folio-assistant/computations/probe_q_beta_operator_valued_N3.py",
     witness: [
-      "../../folio-assistant/computations/q-beta-tightening-landscape.witness.json",
-      "../../folio-assistant/computations/q-beta-operator-valued-N1.witness.json",
-      "../../folio-assistant/computations/q-beta-operator-valued-N2.witness.json",
-      "../../folio-assistant/computations/q-beta-operator-valued-N3.witness.json",
-      "../../folio-assistant/computations/tau-M-four-anchors.witness.json",
-      "../../folio-assistant/computations/delta-S-chain-audit.witness.json",
+      "folio-assistant/computations/q-beta-tightening-landscape.witness.json",
+      "folio-assistant/computations/q-beta-operator-valued-N2.witness.json",
+      "folio-assistant/computations/q-beta-operator-valued-N3.witness.json",
+      "folio-assistant/computations/tau-M-four-anchors.witness.json",
+      "folio-assistant/computations/delta-S-chain-audit.witness.json",
     ],
+    status: "experimental",
   },
 });

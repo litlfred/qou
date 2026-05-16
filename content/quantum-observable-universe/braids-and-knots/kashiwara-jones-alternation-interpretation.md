@@ -110,7 +110,7 @@ The user's intuition extends to operator-type dependence:
 
 The QOU β-decay braid has $11$ typed crossings with the closure being a
 **3-strand braid → 3-component link** (Borromean structure per
-[`prop:borromean-baryon-interpretation`](#prop:borromean-baryon-interpretation)).
+[`rem:borromean-baryon-interpretation`](#rem:borromean-baryon-interpretation)).
 The closure is **hyperbolic** ($\mathrm{Vol}(\mathcal{B}_3) \approx 7.328$);
 its sub-link structure (Hopf at 3-fold closure, full Borromean at higher
 orders) drives the Jones contributions in the precision ladder.

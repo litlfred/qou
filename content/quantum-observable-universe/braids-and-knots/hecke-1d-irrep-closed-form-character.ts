@@ -11,7 +11,6 @@ export default proposition({
   uses: [
     "prop:hecke-branching-trace-decomposition",
     "prop:q-beta-cos-resummation",
-    "rem:operator-valued-interface",
   ],
   cites: [
     "wenzl1988",
@@ -29,9 +28,9 @@ export default proposition({
     "1ppb-roadmap",
   ],
   computation: {
-    witness: [
-      "../../folio-assistant/computations/q-beta-1d-irrep-universal-closed-form.witness.json",
-      "../../folio-assistant/computations/q-beta-three-irrep-closed-form.witness.json",
-    ],
+    engine: "python+mpmath",
+    script: "folio-assistant/computations/probe_q_beta_operator_valued_N2.py",
+    witness: "folio-assistant/computations/q-beta-operator-valued-N2.witness.json",
+    status: "experimental",
   },
 });
