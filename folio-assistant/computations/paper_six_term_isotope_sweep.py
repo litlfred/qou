@@ -934,21 +934,64 @@ def q_beta_substrate_cos_tightened_MeV() -> float:
     return float(Q_A * mp.cos((z - 1) * h / 2))
 
 
-def q_beta_for_source(source: str) -> float:
-    """Q_β selector: 'codata' (default) or 'form_a_cos' (substrate-derived).
+def q_beta_full_chain_n4_MeV() -> float:
+    """Substrate-derived Q_β with the full N=4 categorical chain.
 
-    Choose `'form_a_cos'` to feed the substrate-derived Q_β
-    (cos-tightened c_2 only) into the calibration as
-    `E_0_beta_MeV`; useful for assessing the substrate-only mass
-    chain free of CODATA Q_β input. The mass-table residuals
-    inherit the 306 ppm Q_β residual.
+    Per `prop:q-beta-categorical-precision-ladder` + PRs #661, #664,
+    and `prop:kashiwara-jones-c4-categorical`:
+
+        Q_β = Q_A · cos(α_N1)
+                  · (1 − b² · ℏ_q⁴)         (c_2 = −b², N=2 Kashiwara)
+                  · (1 − 2 · ℏ_q⁶)          (c_3 = −2 = J_Hopf(q=1), N=3 Hopf)
+                  · (1 + (b²+1/2) · ℏ_q⁸)   (c_4 = b²+1/2, N=4 mixed)
+
+    where α_N1 = α − b·ℏ_q²/2 and (q, α, b, ℏ_q) come from the
+    V_(2,1) Hoefsmit substrate via `qbeta_physics.compute_substrate_quantities`.
+
+    All three of c_2, c_3, c_4 are now categorically derived (no
+    empirical fit) per:
+      - c_2 = b²     : PR #661 (V_(2,1) Hoefsmit alone)
+      - c_3 = −2     : `prop:hopf-jones-c3-categorical` (V_(2,1) self-fusion)
+      - c_4 = b²+1/2 : `prop:kashiwara-jones-c4-categorical` (cos-tower + half-shift)
+
+    Story A is falsified at three levels by these proofs; Story B
+    (the categorical alternation chain) is the structural account
+    of the precision ladder.
+    """
+    from qbeta_physics import compute_substrate_quantities  # noqa: E402
+    sq = compute_substrate_quantities()
+    q = sq["q"]
+    alpha_N1 = sq["alpha_N1"]
+    hbar_q = sq["hbar_q"]
+    b = sq["hoefsmit_b"]
+    Q_A = sq["Q_A"]
+
+    factor_n1 = mp.cos(alpha_N1)
+    factor_n2 = 1 - b ** 2 * hbar_q ** 4
+    factor_n3 = 1 - 2 * b ** 3 * hbar_q ** 6
+    factor_n4 = 1 + (b ** 2 + mp.mpf("1/2")) * b ** 4 * hbar_q ** 8
+
+    return float(Q_A * factor_n1 * factor_n2 * factor_n3 * factor_n4)
+
+
+def q_beta_for_source(source: str) -> float:
+    """Q_β selector across substrate-derived candidates.
+
+    Available sources:
+      - "codata"          : CODATA Q_NEUTRON_MEV (anchor; default)
+      - "form_a_cos"      : Q_A · cos(α_N1) — c_2 only (PR #655 + #661)
+      - "full_chain_n4"   : full N=4 categorical chain (PRs #661, #664,
+                            and prop:kashiwara-jones-c4-categorical)
     """
     if source == "codata":
         return E_0_BETA_DECAY_MEV_DERIV
     if source == "form_a_cos":
         return q_beta_substrate_cos_tightened_MeV()
+    if source == "full_chain_n4":
+        return q_beta_full_chain_n4_MeV()
     raise ValueError(
-        f"unknown q_beta_source {source!r}; expected 'codata' or 'form_a_cos'"
+        f"unknown q_beta_source {source!r}; expected "
+        f"'codata' | 'form_a_cos' | 'full_chain_n4'"
     )
 
 
