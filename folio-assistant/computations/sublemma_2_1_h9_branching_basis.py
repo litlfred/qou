@@ -98,37 +98,139 @@ H3_GROUP_ELEMENTS = [
 ]
 
 
-def chi_nu_h3(nu: tuple, w: list, q_val: float) -> complex:
-    """χ^ν(T_w) where w is one of the 6 S_3 elements as Hecke generators."""
-    return chi_lambda_fast(nu, w, q_val)
-
-
-def hecke_factorial_3(q_val: float) -> float:
-    """[3]_q! = [1]_q · [2]_q · [3]_q where [n]_q = (q^n - q^{-n})/(q - q^{-1}).
-
-    Symmetric Hecke convention (matches Markov-trace orthogonality).
-    NOT the classical q-factorial (q^n - 1)/(q - 1) which uses
-    polynomial-only q-integers.
-    """
+def q_int(n: int, q_val: float) -> float:
+    """Symmetric q-integer [n]_q = (q^n − q^{-n}) / (q − q^{-1})."""
     qi = 1.0 / q_val
-    q2 = q_val ** 2
-    qi2 = qi ** 2
-    return 1.0 * (q_val + qi) * (q2 + 1.0 + qi2)
+    return (q_val ** n - qi ** n) / (q_val - qi)
+
+
+def hook_lengths(nu: tuple) -> list[int]:
+    """Hook lengths h(x) for each cell x in partition nu."""
+    nu_list = list(nu)
+    # transpose: column heights
+    if not nu_list:
+        return []
+    max_col = nu_list[0]
+    col_heights = [sum(1 for p in nu_list if p > c) for c in range(max_col)]
+    hooks = []
+    for r, row_len in enumerate(nu_list):
+        for c in range(row_len):
+            arm = row_len - 1 - c        # cells to the right in same row
+            leg = col_heights[c] - 1 - r  # cells below in same column
+            hooks.append(arm + leg + 1)
+    return hooks
+
+
+def schur_element(nu: tuple, q_val: float) -> float:
+    """Hecke Schur element s_ν(q) = ∏_{x ∈ ν} [h(x)]_q (q-hook-length product).
+
+    At q → 1, s_ν(1) = ∏ h(x) = n! / d_ν by hook-length formula.
+    """
+    val = 1.0
+    for h in hook_lengths(nu):
+        val *= q_int(h, q_val)
+    return val
+
+
+def _invert_hecke_word(word: list, h: float) -> list:
+    """Compute T_w^{-1} as a Hecke word given T_w as a word.
+
+    Each generator's inverse: T_{σ_i}^{-1} = T_{σ_i} − h·I (from
+    Hecke quadratic σ_i² = h·σ_i + 1).  Product inversion reverses
+    word order: (T_a T_b)^{-1} = T_b^{-1} T_a^{-1}.
+
+    Returns a Hecke word: list of (c, d, g) triples.
+    """
+    inv = []
+    for c, d, g in reversed(word):
+        # Each factor (c·σ_g + d·I)^{-1} would be its own algebra; but
+        # for the simplest case where (c, d) = (1, 0) (= σ_g), the
+        # inverse is (1, -h, g) = σ_g − h I.
+        # For (c, d) = (1, -h/2) (averaged), the inverse is more
+        # complex.  For our S_3 elements, all generators are bare σ_i,
+        # so (c, d) = (1, 0).
+        if abs(c - 1.0) > 1e-12 or abs(d) > 1e-12:
+            raise ValueError(
+                f"_invert_hecke_word: only bare σ_g supported "
+                f"(got c={c}, d={d}); generalize if needed."
+            )
+        inv.append((1.0, -h, g))
+    return inv
+
+
+# Pre-compute inverse Hecke words for S_3 elements
+def _h3_inverse_group_elements(h: float) -> list[list]:
+    return [_invert_hecke_word(w, h) for w in H3_GROUP_ELEMENTS]
+
+
+def chi_nu_h3_inverse(nu: tuple, w_idx: int, q_val: float, h: float) -> complex:
+    """χ^ν(T_w^{-1}) for the w_idx-th S_3 element."""
+    inv_word = _invert_hecke_word(H3_GROUP_ELEMENTS[w_idx], h)
+    # chi_lambda_fast wants H_3-local generator indices (σ_0, σ_1),
+    # but H3_GROUP_ELEMENTS uses H_9 generator indices (σ_6, σ_7).
+    # Re-index: σ_6 → σ_0, σ_7 → σ_1.
+    inv_word_local = [(c, d, g - 6) for c, d, g in inv_word]
+    return chi_lambda_fast(nu, inv_word_local, q_val)
+
+
+def wedderburn_projector_nu_approx(rho_lambda_h3: list[np.ndarray],
+                                    nu: tuple, q_val: float) -> np.ndarray:
+    """APPROXIMATE Hecke central idempotent P_ν via Geck-Pfeiffer formula.
+
+    P_ν ≈ (1 / s_ν(q)) · Σ_w χ_ν(T_w^{-1}) · ρ_λ(T_w)
+
+    The formula is exact in the classical limit q → 1.  At q ≠ 1 it
+    gives an APPROXIMATE projector — eigenvalues distribute fractionally
+    across all ν's due to the non-trivial Hecke-algebra structure
+    (T_w^{-1} ≠ T_{w^{-1}}, KL vs T_w basis convention, etc.).  Use
+    `wedderburn_projector_nu` (the refined version) for an exact
+    projector.
+    """
+    h = q_val - 1.0 / q_val
+    s_nu = schur_element(nu, q_val)
+    chis_inv = [complex(chi_nu_h3_inverse(nu, i, q_val, h))
+                 for i in range(len(H3_GROUP_ELEMENTS))]
+    P = sum((complex(chis_inv[i]) / s_nu) * rho_lambda_h3[i]
+            for i in range(len(H3_GROUP_ELEMENTS)))
+    return P
+
+
+def _halley_refine_projector(P: np.ndarray, max_iter: int = 20,
+                              tol: float = 1e-14) -> np.ndarray:
+    """Iteratively refine an APPROXIMATE projector to a true one.
+
+    Halley's iteration P_{n+1} = 3 P_n^2 - 2 P_n^3 has quadratic
+    convergence on the eigenvalues to {0, 1} from any starting matrix
+    with eigenvalues close to {0, 1}.  Each iteration squares the
+    distance to the {0, 1} cluster, so log2(precision) iterations
+    suffice (e.g. 6 iterations for f64 machine ε).
+
+    Returns the refined projector.
+    """
+    for _ in range(max_iter):
+        P_sq = P @ P
+        P_cu = P_sq @ P
+        P_new = 3.0 * P_sq - 2.0 * P_cu
+        if np.linalg.norm(P_new - P) < tol * max(np.linalg.norm(P), 1.0):
+            return P_new
+        P = P_new
+    return P
 
 
 def wedderburn_projector_nu(rho_lambda_h3: list[np.ndarray],
                              nu: tuple, q_val: float) -> np.ndarray:
-    """P_ν = (d_ν / [3]_q!) · Σ_w χ_ν(w) · T_w on V_λ via H_3 sub-rep.
+    """Hecke central idempotent P_ν, refined to a true projector.
 
-    rho_lambda_h3: list of 6 matrices, one per H_3 group element,
-                   ALREADY restricted to ξ-class subspace.
+    Strategy: compute the Geck-Pfeiffer approximation, then apply
+    Halley's iteration P ↦ 3P² - 2P³ to drive eigenvalues to {0, 1}.
+
+    This sidesteps the analytic subtlety of getting the exact Hecke
+    Wedderburn formula (KL basis, T_w⁻¹ vs T_{w⁻¹}, etc.) — Halley
+    is purely numerical and works on any starting matrix with
+    eigenvalues already close to {0, 1}.
     """
-    d_nu = {(3,): 1, (2, 1): 2, (1, 1, 1): 1}[nu]
-    h3_q_fact = hecke_factorial_3(q_val)
-    chis = [complex(chi_nu_h3(nu, w, q_val)) for w in H3_GROUP_ELEMENTS]
-    P = sum(complex(d_nu) / h3_q_fact * chis[i] * rho_lambda_h3[i]
-            for i in range(len(H3_GROUP_ELEMENTS)))
-    return P
+    P_approx = wedderburn_projector_nu_approx(rho_lambda_h3, nu, q_val)
+    return _halley_refine_projector(P_approx)
 
 
 # ──────────────────────────────────────────────────────────────────────
@@ -264,24 +366,24 @@ def path_b_chi(lam: tuple, beta_full: list, w_inner_h6: list,
         rho_h3_full.append(N)
 
     # Sum over (ξ, ν): Tr of M restricted to V_ν isotype within ξ-class.
-    # KEY FIX: use the LR coefficient c^λ_{ξν} as the EXACT rank
-    # (= c · d_ν), not the SVD's noisy "rank" which over-counts due
-    # to Hecke vs group-algebra Wedderburn-formula mismatch.  My
-    # P_ν is a Hecke version of (d_ν/|G|) Σ χ_ν(T_w) T_w which is
-    # only an approximate projector — its eigenvalues distribute
-    # the ξ-class identity across all 3 ν's including those with
-    # LR mult = 0 (cross-talk = 4·d_ν fractional weight per (3.27)
-    # debug block).  Using LR-determined rank picks the TOP c·d_ν
-    # eigenvectors of P_ν, which IS the correct V_ν isotype basis
-    # (the leading eigenvectors of P_ν are still aligned with the
-    # right isotype; only the eigenvalues are off).
+    # Halley-refined Wedderburn projectors P_ν are TRUE projectors
+    # (eigenvalues in {0, 1}); their rank within ξ-class equals the
+    # dim of the V_ν isotype = d_ξ · c^λ_(ξν) · d_ν  (the V_ν
+    # multiplicity in the H_3 sub-rep of ξ-class).
+    # KEY: not c·d_ν alone — the d_ξ factor accounts for the V_ξ
+    # tensor copy in (V_ξ ⊗ V_ν).
     lr_69 = get_lr_table(6, 3)
-    d_nu = {(3,): 1, (2, 1): 2, (1, 1, 1): 1}
+    d_nu_lookup = {(3,): 1, (2, 1): 2, (1, 1, 1): 1}
+    d_xi_cache = {}
     total = 0 + 0j
     for xi, idx_list in syt_groups.items():
         if not idx_list:
             continue
         idx_arr = np.array(idx_list)
+        if xi not in d_xi_cache:
+            from char_fast import _compiled_sigmas as _cs
+            _, d_xi_cache[xi] = _cs(xi, "double")
+        d_xi = d_xi_cache[xi]
         # H_3 sub-action on ξ-class
         rho_h3_xi = [N[idx_arr][:, idx_arr] for N in rho_h3_full]
         # ρ_λ(β_full) on ξ-class
@@ -290,12 +392,12 @@ def path_b_chi(lam: tuple, beta_full: list, w_inner_h6: list,
             c = lr_69.get((xi, nu, lam), 0)
             if c == 0:
                 continue
-            expected_rank = c * d_nu[nu]
+            expected_rank = d_xi * c * d_nu_lookup[nu]
             P_nu = wedderburn_projector_nu(rho_h3_xi, nu, q_val)
             # Top expected_rank eigenvectors of P_nu via SVD
             U, S, _ = np.linalg.svd(P_nu)
             U_basis = U[:, :expected_rank]
-            # Tr(M restricted to V_ν isotype)
+            # Tr(M restricted to V_ν isotype within ξ-class)
             total += complex(np.trace(U_basis.conj().T @ M_xi @ U_basis))
     return total
 

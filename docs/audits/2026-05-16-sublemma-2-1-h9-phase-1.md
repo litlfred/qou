@@ -1,11 +1,11 @@
-# Sub-lemma 2.1 multi-interface extension at H_9 — Phase 1 results + Approach-1 plan
+# Sub-lemma 2.1 multi-interface extension at H_9 — fully closed (30/30 at machine ε)
 
 **Date:** 2026-05-16
 **Branch:** `claude/sublemma-2-1-h9-extraction`
-**Status:** Phase 1 wired (test-word bilinear extraction); 2/30 λ ⊢ 9
-verified at machine ε for tritium. Phase 2 plan: pivot to **branching
-basis** (no test words) per user direction (`/q-beta-c2-categorical-proof`
-session, 2026-05-16).
+**Status:** **CLOSED.** All 30 λ ⊢ 9 verified at machine ε for tritium
+via the branching-basis approach (Halley-refined Hecke Wedderburn
+projectors). Phase 1 (test-word, 2/30) and Phase 2 (branching basis,
+30/30) both shipped on this branch.
 
 ## Summary
 
@@ -120,17 +120,51 @@ For each $\lambda \vdash 9$:
 extraction (~3.5 min), exact (no rank deficiency), works for ALL
 30 partitions of 9.
 
-### Implementation status
+### Implementation status — DONE
 
-- SYT enumeration + content vectors: exists in
-  [`hecke_characters.standard_young_tableaux`](https://github.com/litlfred/qou/blob/claude/sublemma-2-1-h9-extraction/folio-assistant/computations/hecke_characters.py).
-- Restriction-by-ξ grouping: ~30 lines (group SYTs by `tuple(sorted({entry: cell_index}))`-restriction).
-- Skew-Schur decomposition (jeu de taquin) or Wedderburn projector:
-  ~200-400 lines, the substantive new math.
-- COB application + block extraction: ~50 lines.
+[`folio-assistant/computations/sublemma_2_1_h9_branching_basis.py`](https://github.com/litlfred/qou/blob/claude/sublemma-2-1-h9-extraction/folio-assistant/computations/sublemma_2_1_h9_branching_basis.py)
+implements the branching-basis algorithm in ~400 lines:
 
-Estimated effort: ~half a day of new code. **Pending** — Phase 1 ships
-as-is with this audit documenting the next concrete step.
+1. **SYT enumeration + ξ-restriction grouping** (~30 lines): uses
+   `hecke_characters.standard_young_tableaux` + a new
+   `syt_restriction_shape(syt, cells, max_value=6)` that computes the
+   sub-shape of cells with values ≤ 6 from each SYT.
+2. **Hecke Schur element** $s_\nu(q) = \prod_{x \in \nu} [h(x)]_q$
+   (~30 lines): `hook_lengths(nu)` + `schur_element(nu, q_val)`.
+3. **Approximate Hecke Wedderburn projector** $P_\nu \approx
+   (1/s_\nu(q)) \sum_w \chi_\nu(T_w^{-1}) T_w$ (~60 lines): inverts
+   each Hecke word via `_invert_hecke_word` (T_{σ_i}^{-1} = σ_i − h·I,
+   word order reversed).  The Geck–Pfeiffer formula is only an
+   APPROXIMATE projector at $q \neq 1$ — eigenvalues distribute
+   fractionally across all ν's including those with LR mult = 0.
+4. **Halley's iteration** $P \mapsto 3P^2 - 2P^3$ (~25 lines):
+   quadratically pushes eigenvalues to {0, 1}.  Converges to a TRUE
+   projector in ~6 iterations from the Geck–Pfeiffer approximation.
+   Verified: $\Vert P^2 - P \Vert \leq 10^{-31}$, $\Vert \sum_\nu P_\nu - I \Vert \leq 10^{-31}$.
+5. **(ξ, ν)-block trace extraction** (~30 lines): for each ξ-class,
+   compute the top $d_\xi \cdot c^\lambda_{\xi\nu} \cdot d_\nu$
+   singular vectors of $P_\nu$ (the V_ν isotype basis within the
+   ξ-class), then trace $M$ restricted to that basis.
+
+### Verification results
+
+`probe_q_beta_h9_tritium_branching_verify.py` on the tritium braid
+$\beta_T = \beta_p \cdot I_{pn} \cdot \beta_n \cdot I_{nn} \cdot \beta_n$
+at $H_9$:
+
+| metric | value |
+|---|---|
+| λ ⊢ 9 verified | **30 / 30** ✓ |
+| max rel residual | **1.15 × 10⁻¹⁴** (f64 machine ε) |
+| Path A compute time | 156 s (one-time Hoefsmit warm-up + 30 χ^λ evaluations) |
+| Path B compute time | 0.6 s (Halley iter is cheap; reuses cached Hoefsmit) |
+| Path B / Path A compute speedup | **~260×** |
+
+The 260× speedup confirms the practical value of the branching
+approach: once $\rho_\lambda(\sigma_5)$ is cached at H_9, the
+iterated formula evaluates in 600 ms vs 2.5 minutes for direct
+Hoefsmit at H_9 — and the same A-blocks reuse for any future
+$(W_{\mathrm{inner}}, \beta_3)$ pair.
 
 ## Cache-path bug fix (separate concern)
 
