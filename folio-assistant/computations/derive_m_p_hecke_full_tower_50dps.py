@@ -69,13 +69,38 @@ from codata_constants import (  # noqa: E402
 from witness_base import (  # noqa: E402
     WitnessBuilder, load_and_hash_upstream,
 )
-from mass_formula_6term_mpfr_50dps import term_4_frobenius_mp  # noqa: E402
+from mass_formula_6term_mpfr_50dps import (  # noqa: E402
+    term_4_frobenius_mp, term_5_chirality_bw_mp,
+)
 
 M_E_MEV = mp.mpf(str(_M_E_MEV_RAW))
 
 
 PER_GEN_WITNESS = HERE / "terms-2-3-atom-per-gen-mpfr-50dps.witness.json"
 OUT_PATH = HERE / "proton-mass-full-tower-50dps.witness.json"
+
+
+def _t5_cat_units_for(Z: int, N: int, knot_type: str) -> mp.mpf:
+    """Return T5 in cat-units (m_e-normalised) for the given particle.
+
+    The Bethe–Weizsäcker-shaped T5 from
+    :py:func:`term_5_chirality_bw_mp` returns MeV (its λ coefficients
+    are q-integers times m_e — see ``bw_chirality_isotopes.py``); to
+    add T5 to the dimensionless ``m_hecke`` sum we divide by
+    ``M_E_MEV``.
+
+    T5 is **physically zero** for non-nucleon particles (the
+    electron has no nucleon volume / surface / Coulomb / shell to
+    apply liquid-drop terms to).  The BW formulas use
+    ``A^(1/3), A^(2/3), √A`` in denominators — undefined at ``A=0``
+    by design (this encodes the physical fact, not a code bug).
+    We surface ``mp.mpf(0)`` for the electron explicitly rather
+    than catching the ZeroDivisionError.
+    """
+    if Z == 0 and N == 0:
+        return mp.mpf(0)
+    t5_MeV = term_5_chirality_bw_mp(Z, N, knot_type)
+    return t5_MeV / M_E_MEV
 
 
 def _t1_t2_t3_from_per_gen(per_gen_witness: dict, atom: str) -> tuple[mp.mpf, mp.mpf, mp.mpf, list[mp.mpf]]:
@@ -94,18 +119,39 @@ def _t1_t2_t3_from_per_gen(per_gen_witness: dict, atom: str) -> tuple[mp.mpf, mp
     raise KeyError(f"atom {atom!r} not found in per-gen witness {per_gen_witness.get('computation')!r}")
 
 
-def derive_full_tower(atom: str, per_gen_witness: dict, *, A: int = 1) -> dict:
-    """Sum T1 + T2 + T3 + T4 for ``atom`` at MPFR @ 50 dps."""
+def derive_full_tower(
+    atom: str, per_gen_witness: dict, *,
+    A: int = 1, Z: int = 0, N: int = 0, knot_type: str = "none",
+) -> dict:
+    """Sum T1 + T2 + T3 + T4 + T5 for ``atom`` at MPFR @ 50 dps.
+
+    T5 uses the asymmetric convention: T5(proton, A=1, none) is the
+    q-integer-derived Bethe–Weizsäcker chirality term from
+    :py:func:`term_5_chirality_bw_mp`; T5(electron) = 0 by physics
+    (no nucleon ledger).  See :py:func:`_t5_cat_units_for` for the
+    rationale.
+    """
     t1, t2, t3, vols = _t1_t2_t3_from_per_gen(per_gen_witness, atom)
     t4 = term_4_frobenius_mp(A)
-    m_hecke = t1 + t2 + t3 + t4
+    t5_cat = _t5_cat_units_for(Z, N, knot_type)
+    m_hecke = t1 + t2 + t3 + t4 + t5_cat
     return {
         "atom": atom,
         "A": A,
+        "Z": Z,
+        "N": N,
+        "knot_type": knot_type,
         "T1_descended_50dps": str(t1),
         "T2_single_50dps":    str(t2),
         "T3_pair_50dps":      str(t3),
         "T4_Frobenius_50dps": str(t4),
+        "T5_chirality_BW_50dps_cat_units": str(t5_cat),
+        "T5_physical_note": (
+            "T5 = 0 for the electron by physics (no nucleon ledger); "
+            "categorical for nucleons (q-integer BW coefficients)"
+            if Z == 0 and N == 0 else
+            "T5 categorical: q-integer BW coefficients (no fitting)"
+        ),
         "m_hecke_50dps":      str(m_hecke),
         "wedderburn_vols_full_50dps": [str(v) for v in vols],
     }
@@ -116,9 +162,11 @@ def main() -> int:
     print(f"\n  MPFR @ {mp.mp.dps} dps")
     print(f"  Source: {PER_GEN_WITNESS.name}")
 
-    p = derive_full_tower("proton",   per_gen_w, A=1)
-    n = derive_full_tower("neutron",  per_gen_w, A=1)
-    e = derive_full_tower("electron", per_gen_w, A=1)
+    # T5 needs (Z, N, knot_type); for A=1 atoms knot_type='none'.
+    # Electron uses Z=N=0 → T5_e = 0 by physics (see _t5_cat_units_for).
+    p = derive_full_tower("proton",   per_gen_w, A=1, Z=1, N=0, knot_type="none")
+    n = derive_full_tower("neutron",  per_gen_w, A=1, Z=0, N=1, knot_type="none")
+    e = derive_full_tower("electron", per_gen_w, A=1, Z=0, N=0, knot_type="none")
 
     m_p_hecke = mp.mpf(p["m_hecke_50dps"])
     m_n_hecke = mp.mpf(n["m_hecke_50dps"])

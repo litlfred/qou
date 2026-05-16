@@ -57,9 +57,24 @@ from codata_constants import (  # noqa: E402
 from witness_base import (  # noqa: E402
     WitnessBuilder, load_and_hash_upstream,
 )
-from mass_formula_6term_mpfr_50dps import term_4_frobenius_mp  # noqa: E402
+from mass_formula_6term_mpfr_50dps import (  # noqa: E402
+    term_4_frobenius_mp, term_5_chirality_bw_mp,
+)
 
 M_E_MEV = mp.mpf(str(_M_E_MEV_RAW))
+
+
+def _t5_cat_units_for(Z: int, N: int, knot_type: str) -> mp.mpf:
+    """T5 in cat-units (m_e-normalised).  T5(electron) = 0 by physics.
+
+    See :py:mod:`derive_m_p_hecke_full_tower_50dps._t5_cat_units_for`
+    for the full rationale (categorical for nucleons via q-integer
+    BW coefficients; A^(1/3), √A denominators encode "no nucleon
+    structure to act on" for non-nucleon particles).
+    """
+    if Z == 0 and N == 0:
+        return mp.mpf(0)
+    return term_5_chirality_bw_mp(Z, N, knot_type) / M_E_MEV
 
 
 PER_GEN_WITNESS = HERE / "terms-2-3-atom-per-gen-mpfr-50dps.witness.json"
