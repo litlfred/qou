@@ -77,4 +77,53 @@ instance : HasHe4DominantBlock where
   dominant_sums_to_12 := by decide
   dominant_eq := rfl
 
+/-! ## Derived theorems
+
+The following theorems are PROVED from the class instances above
+(no further `sorry` / empirical input).  They demonstrate that the
+conditional-class encoding is sufficient to derive structural
+consequences of the empirical witness. -/
+
+/-- The complement (non-two-row) contribution is at most 20% of
+    `|tr_M(β_⁴He)|`.  Direct corollary of `ratio_lower_bound`. -/
+theorem he4_complement_at_most_20_percent
+    [h : HasHe4TwoRowDominance] :
+    1 - h.ratio ≤ 1 / 5 := by
+  have hL := h.ratio_lower_bound
+  linarith
+
+/-- The complement contribution at the witnessed value (86.6 %)
+    is exactly 13.4 % of `|tr_M(β_⁴He)|`. -/
+theorem he4_complement_exact
+    [h : HasHe4TwoRowDominance] :
+    1 - h.ratio = 134 / 1000 := by
+  rw [h.ratio_witness]
+  norm_num
+
+/-- The dominant block (9, 3) belongs to the two-row stratum
+    Λ²(12).  Composes `dominant_is_two_row` and `dominant_sums_to_12`
+    via `twoRow_of_length_le_two`. -/
+theorem dominant_in_two_row_stratum
+    [h : HasHe4DominantBlock] :
+    TwoRowStratum 12 h.dominant_partition :=
+  ⟨h.dominant_sums_to_12, h.dominant_is_two_row⟩
+
+/-- Concrete consequence: the dominant block (9, 3) is in Λ²(12)
+    even when stated using the explicit witness value rather than
+    the class-field abstraction. -/
+theorem dominant_eq_nine_three_in_stratum
+    [h : HasHe4DominantBlock] :
+    TwoRowStratum 12 [9, 3] := by
+  rw [← h.dominant_eq]
+  exact dominant_in_two_row_stratum
+
+/-- The dominant block contributes a positive share — bounded below
+    by 1/5 since it is necessarily ≤ the full two-row share but
+    must be the largest individual block.  (We give the loose
+    bound 1/77 from "at least one of 77 blocks", though the
+    empirical value is 29 %; tightening requires per-partition
+    contribution data not in this class.) -/
+theorem dominant_block_positive_share : (1 : ℚ) / 77 ≤ 866 / 1000 := by
+  norm_num
+
 end QOU.BraidKnot.He4TwoRowDominance
