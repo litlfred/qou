@@ -398,6 +398,7 @@ export default chapter({
         "q-beta-c3-hopf-three-fold-markov",
         "q-beta-gamma-gamma-canonical-derivation",
         "typed-b3-sub-braid-extraction",
+        "ck-extraction-from-algebraic-rules",
         "categorical-chain-convergence-mechanisms",
         "tau-M-asymptotic-rep-theory",
         "kashiwara-jones-alternation-interpretation",
