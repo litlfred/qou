@@ -63,7 +63,6 @@ Outputs:
 """
 from __future__ import annotations
 
-import hashlib
 import json
 import sys
 from pathlib import Path
@@ -76,6 +75,7 @@ from low_isotope_binding_sweep import (  # noqa: E402
 from paper_six_term_isotope_sweep import (  # noqa: E402
     q_beta_for_source, q_beta_substrate_cos_tightened_MeV,
 )
+from witness_base import load_and_hash_upstream  # noqa: E402
 
 HERE = Path(__file__).parent
 
@@ -95,31 +95,6 @@ from codata_constants import (
 M_P_REF_MEV = float(_M_P_REF_MEV_raw)
 M_N_REF_MEV = float(_M_N_REF_MEV_raw)
 
-# ── Upstream witness helper (anti-staleness) ───────────────────
-def _load_upstream_witness(path: Path) -> tuple[dict, dict]:
-    """Read `path`; return (witness_dict, hash_record).
-
-    The hash_record carries everything a downstream consumer needs
-    to verify it has the same upstream as when this witness was
-    last regenerated: file sha256, commitSha, scriptCommitSha,
-    computedAt.
-    """
-    if not path.exists():
-        raise FileNotFoundError(
-            f"Required upstream witness not found: {path}\n"
-            f"Run its producer first."
-        )
-    raw = path.read_bytes()
-    w = json.loads(raw.decode("utf-8"))
-    return w, {
-        "path":              path.name,
-        "sha256":            hashlib.sha256(raw).hexdigest(),
-        "size_bytes":        len(raw),
-        "commitSha":         w.get("commitSha"),
-        "scriptCommitSha":   w.get("scriptCommitSha"),
-        "computedAt":        w.get("computedAt"),
-    }
-
 # ── m_p sanity-check threshold (anti-tautology) ────────────────
 # Per the three-calibration discipline, m_p is a PREDICTION, not an
 # input. If the upstream chain's prediction is wildly off CODATA,
@@ -136,7 +111,7 @@ M_P_DERIVED_MAX_REL_DIFF = 0.01
 # missing the table cannot run; if the prediction is wildly off
 # CODATA the chain is treated as unclosed (m_p = pending).
 _PROTON_WITNESS = HERE / "proton-mass-codata-50dps.witness.json"
-_proton_w, _proton_hash = _load_upstream_witness(_PROTON_WITNESS)
+_proton_w, _proton_hash = load_and_hash_upstream(_PROTON_WITNESS)
 _m_p_pred_raw   = float(_proton_w["data"]["m_p_pred_MeV"])
 _m_p_rel_diff   = float(_proton_w["data"]["rel_diff"])
 

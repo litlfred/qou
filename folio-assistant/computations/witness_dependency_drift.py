@@ -84,8 +84,16 @@ def check_witness(witness_path: Path) -> tuple[list[dict], bool]:
             "kind":        "unreadable",
             "detail":      str(e),
         }], False
-    di = w.get("derivation_inputs", {})
-    upstream_hashes = di.get("upstream_witness_hashes")
+    # Two canonical locations for the hash array:
+    #   1. derivation_inputs.upstream_witness_hashes — hand-rolled
+    #      witnesses that embed a derivation_inputs block (e.g.
+    #      low-isotope-mass-table)
+    #   2. data.upstream_witness_hashes — WitnessBuilder-backed
+    #      witnesses (the standard slot for builder.add_upstream)
+    upstream_hashes = (
+        w.get("derivation_inputs", {}).get("upstream_witness_hashes")
+        or w.get("data", {}).get("upstream_witness_hashes")
+    )
     if not upstream_hashes:
         return [], False  # no declared dependencies, nothing to check
     drifts: list[dict] = []

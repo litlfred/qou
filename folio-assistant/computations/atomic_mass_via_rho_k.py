@@ -77,6 +77,21 @@ import sys as _sys
 _sys.path.insert(0, str(HERE))
 from codata_constants import M_E_MEV, M_P_MEV, M_N_MEV  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from witness_base import load_and_hash_upstream  # noqa: E402
+
+# Module-level accumulator for upstream-witness hash records.
+# Each call to ``_load_upstream(path)`` appends one entry; the
+# accumulated list is emitted under ``data.upstream_witness_hashes``
+# in the script's witness output (anti-staleness; see
+# docs/audits/2026-05-16-stale-witness-infra-gap.md).
+_UPSTREAM_HASHES: list[dict] = []
+
+
+def _load_upstream(path: Path) -> dict:
+    """Read an upstream witness file, record its hash, return the body."""
+    body, hr = load_and_hash_upstream(path)
+    _UPSTREAM_HASHES.append(hr)
+    return body
 
 # ── CODATA reference data (kept identical to legacy table) ─────
 ATOMS_CODATA = {
@@ -121,7 +136,7 @@ def load_atomic_tr_m_status() -> dict[str, str]:
         if ext.name == "atomic-tr-m-mpfr-50dps.witness.json":
             continue
         try:
-            d = json.loads(ext.read_text())
+            d = _load_upstream(ext)
         except json.JSONDecodeError:
             continue
         status = str(d.get("convention_status", ""))
@@ -160,7 +175,7 @@ def load_atomic_tr_m() -> dict[str, mp.mpf]:
     #    fallback layer (gets overwritten by Model B for D, T, ³He).
     legacy = HERE / "atomic-tr-m-mpfr-50dps.witness.json"
     if legacy.exists():
-        d = json.loads(legacy.read_text())
+        d = _load_upstream(legacy)
         for r in d.get("results", []):
             atom = r.get("atom")
             tr_str = r.get("tr_M_at_q0_50dps")
@@ -172,7 +187,7 @@ def load_atomic_tr_m() -> dict[str, mp.mpf]:
     if src == "model-b":
         model_b_witness = HERE / "probe-sdp-canonical-paper-formula.witness.json"
         if model_b_witness.exists():
-            db = json.loads(model_b_witness.read_text())
+            db = _load_upstream(model_b_witness)
             for atom_name, atom_data in db.get("data", {}).get("results", {}).items():
                 tr_str = atom_data.get("tr_M_wenzl_schur")
                 if tr_str is None:
@@ -196,7 +211,7 @@ def load_atomic_tr_m() -> dict[str, mp.mpf]:
         if ext.name == "atomic-tr-m-mpfr-50dps.witness.json":
             continue
         try:
-            d = json.loads(ext.read_text())
+            d = _load_upstream(ext)
         except json.JSONDecodeError:
             continue
         for r in d.get("results", []):
@@ -294,7 +309,7 @@ def main() -> int:
     legacy_path = HERE / "atomic-braid-mass-table.witness.json"
     legacy_compare = []
     if legacy_path.exists():
-        legacy = json.loads(legacy_path.read_text())
+        legacy = _load_upstream(legacy_path)
         # Legacy witness has either `data.rows` or `rows` at top level.
         legacy_rows = legacy.get("data", {}).get("rows") or legacy.get("rows") or []
         legacy_by_atom = {r.get("atom"): r for r in legacy_rows if r.get("atom")}
@@ -353,6 +368,9 @@ def main() -> int:
         "data": {
             "rows": rows,
             "legacy_compare": legacy_compare,
+            # Anti-staleness: hashes of every upstream witness this
+            # script consumed (drift validator walks this field).
+            "upstream_witness_hashes": _UPSTREAM_HASHES,
         },
         "audit_reference": "AUDIT-DEEP-2026-05.md §3.3a (P4″)",
         "pr": "#564",

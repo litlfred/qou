@@ -84,14 +84,21 @@ ATOM_TO_TR_M_KEY = {
 }
 
 
-def load_abs_tr_M() -> dict[str, mp.mpf]:
+def load_abs_tr_M(w: "WitnessBuilder | None" = None) -> dict[str, mp.mpf]:
     """Load |tr_M(K)| values from `atomic-tr-m-mpfr-50dps.witness.json`
-    and any per-atom extension witnesses."""
+    and any per-atom extension witnesses.
+
+    Optional ``w``: when a ``WitnessBuilder`` is supplied, every
+    consumed upstream witness is hash-recorded via
+    ``w.add_upstream(...)`` for the drift validator
+    (``witness_dependency_drift.py``) to walk.
+    """
     out: dict[str, mp.mpf] = {}
     for legacy_name in ["atomic-tr-m-mpfr-50dps.witness.json"]:
         f = HERE / legacy_name
         if f.exists():
-            d = json.loads(f.read_text())
+            d = w.add_upstream(f) if w is not None else \
+                json.loads(f.read_text())
             for r in d.get("results", []):
                 atom = r.get("atom")
                 tr_str = r.get("tr_M_at_q0_50dps")
@@ -101,7 +108,8 @@ def load_abs_tr_M() -> dict[str, mp.mpf]:
         if ext.name == "atomic-tr-m-mpfr-50dps.witness.json":
             continue
         try:
-            d = json.loads(ext.read_text())
+            d = w.add_upstream(ext) if w is not None else \
+                json.loads(ext.read_text())
         except json.JSONDecodeError:
             continue
         for r in d.get("results", []):
@@ -112,19 +120,26 @@ def load_abs_tr_M() -> dict[str, mp.mpf]:
     return out
 
 
-def load_delta_lambda() -> dict[str, dict[tuple, mp.mpf]] | None:
+def load_delta_lambda(
+    w: "WitnessBuilder | None" = None,
+) -> dict[str, dict[tuple, mp.mpf]] | None:
     """Load per-atom per-partition Δ_λ values from
     `delta-lambda-witness.json` if it exists.  Structure:
         { "proton": { (3,): mpf("..."), (2,1): mpf("..."), (1,1,1): mpf("...") },
           "neutron": { ... },
           ... }
     Returns None if the witness is missing — the script then
-    flags every atom as `delta_lambda_unavailable`."""
+    flags every atom as `delta_lambda_unavailable`.
+
+    Optional ``w``: hash-records the consumed witness via
+    ``w.add_upstream(...)`` (anti-staleness).
+    """
     f = HERE / "delta-lambda-witness.json"
     if not f.exists():
         return None
     try:
-        d = json.loads(f.read_text())
+        d = w.add_upstream(f) if w is not None else \
+            json.loads(f.read_text())
     except json.JSONDecodeError:
         return None
     out: dict[str, dict[tuple, mp.mpf]] = {}
@@ -153,16 +168,19 @@ def main() -> int:
     print("=" * 92)
     print()
 
-    abs_tr_M = load_abs_tr_M()
-    delta_lambda = load_delta_lambda()
+    # Construct the witness builder first so loaders can hash-record
+    # every upstream they consume (anti-staleness; see
+    # docs/audits/2026-05-16-stale-witness-infra-gap.md).
+    w = WitnessBuilder("binding-K-direct", engine="mpmath")
+
+    abs_tr_M = load_abs_tr_M(w)
+    delta_lambda = load_delta_lambda(w)
 
     if delta_lambda is None:
         print("  ⚠ delta-lambda-witness.json not present — Δ_λ values")
         print("    are the central open compute (PRs #602, #603, #613).")
         print("    This script reports STATUS only; binding values blocked.")
         print()
-
-    w = WitnessBuilder("binding-K-direct", engine="mpmath")
     w.set_description(
         "Direct binding-energy computation for atomic mass.  "
         "Surfaces the physical content of the ρ_K formula by removing "
