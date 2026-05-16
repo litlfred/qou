@@ -72,13 +72,13 @@ ATOMS = {
         "Z": 1, "N": 0, "n": 3,
         "word": [1] * 7 + [2] * 4,
         "word_str": "σ₁⁷ σ₂⁴",
-        "m_MeV": 938.27208816,
+        "m_MeV": 938.27208816,  # noqa: P31 — audit-only target ratio; live value via codata_constants.M_P_MEV_VALIDATION
     },
     "neutron": {
         "Z": 0, "N": 1, "n": 3,
         "word": [1] * 6 + [2] * 4 + [-1],
         "word_str": "σ₁⁶ σ₂⁴ σ₁⁻¹",
-        "m_MeV": 939.56542052,
+        "m_MeV": 939.56542052,  # noqa: P31 — audit-only target ratio; live value via codata_constants.M_N_MEV_VALIDATION
     },
     # ── deuteron REMOVED (PR #564, 2026-05-08) ──────────────────
     # The disjoint H_3 ⊗ H_3 word σ₁⁷σ₂⁴σ₄⁶σ₅⁴σ₄⁻¹ (22 crossings)

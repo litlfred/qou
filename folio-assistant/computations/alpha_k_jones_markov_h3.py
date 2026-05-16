@@ -33,9 +33,10 @@ from hecke_characters import build_seminormal_matrices, dim_q, qfac, q_int
 # BlockCache. Effect on H_3 partitions is modest (dim ≤ 2) but the
 # pattern is correct; carries forward for later-extended H_n callers.
 from syt_prefix_cache import BlockCache, build_seminormal_matrices_cached
+# CAL-1: m_e from codata_constants registry (P31-triage Phase A).
+from codata_constants import M_E_MEV as m_e
 
 Q0 = Q_MP; QI = Q_INV_MP  # was f64 roundtrip
-m_e = mp.mpf("0.51099895")
 h_amp = Q0 - QI
 z_mark = 1/(mp.sqrt(Q0) + 1/mp.sqrt(Q0))
 

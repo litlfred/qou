@@ -26,10 +26,13 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 
 from witness_base import WitnessBuilder
+# CAL-1: m_e sourced from codata_constants registry (P31-triage Phase A);
+# coerced to float for json-serialisable arithmetic in this script.
+from codata_constants import M_E_MEV as _M_E_MEV_MP
 
 # ── Constants ──────────────────────────────────────────────────
 CATALAN_G = 0.915965594177219015054603514932
-M_E_MEV = 0.51099895
+M_E_MEV = float(_M_E_MEV_MP)
 ALPHA_MEV = M_E_MEV * 8.0 * CATALAN_G  # 3.74445965488548 MeV
 
 # Coulomb energy of 3He ground state (well-known empirical value)

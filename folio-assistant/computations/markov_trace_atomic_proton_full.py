@@ -144,7 +144,7 @@ def main() -> int:
     print(f"    denominator = {den}")
 
     # Categorical mass anchor
-    mp_me = 938.272 / 0.51099895
+    mp_me = 938.272 / 0.51099895  # noqa: P31 — audit ratio display; live values via codata_constants/experimental_constants registry
     rho_p = mp_me / val_at_q0
     print(f"\n  Categorical mass dimensional bridge:")
     print(f"    m_p / m_e (CODATA) = {mp_me:.6f}")

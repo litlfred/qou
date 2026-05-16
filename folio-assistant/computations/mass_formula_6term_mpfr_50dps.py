@@ -220,32 +220,76 @@ def term_23_brane_tower_mp(Z: int, N: int) -> tuple[mp.mpf, mp.mpf]:
     return single, pair
 
 
-def term_4_frobenius_mp(A: int) -> tuple[mp.mpf, mp.mpf]:
-    """Term 4: m_e · (2 + 1/[2]_q) per vortex, or A × that per-A.
+def term_4_frobenius_mp(A: int) -> mp.mpf:
+    """Term 4 (canonical, per-3A): m_e · Σ_{λ⊢3A} 1/dim_q(λ).
 
-    `[2]_q = q + q^{-1}`.  Both forms returned for comparison.
+    Per `thm:frobenius-codim-universal`. Delegates to the canonical
+    implementation in `paper_six_term_isotope_sweep.term4_frobenius_codim`.
+
+    HARD BREAK (P1.C of `docs/audits/2026-05-12-1ppb-implementation-plan.md`,
+    revision 2026-05-12): the legacy per-A form `A · m_e · (2 + 1/[2]_q)`
+    has been REMOVED. It was an H_3-character formula × A that overcounted
+    Term 4 by 1.56× at A=2, 2.95× at A=3, 4.44× at A=4. Any consumer that
+    relied on `term_4_frobenius_mp` returning a 2-tuple
+    `(per_vortex_legacy, per_A)` will now break — the function returns a
+    single mpf. **This is intentional.** Per owner directive 2026-05-12:
+    downstream witnesses should break so we know they were consuming the
+    wrong formula.
     """
+    from paper_six_term_isotope_sweep import term4_frobenius_codim
     m_e_mp = mp.mpf(repr(M_E_MEV))
-    bracket_2_q = Q0_MP + 1 / Q0_MP
-    frob = m_e_mp * (2 + 1 / bracket_2_q)
-    return frob, A * frob
+    return m_e_mp * term4_frobenius_codim(A)
 
 
-def term_5_chirality_bw_mp(Z: int, N: int, knot_type: str) -> mp.mpf:
+def term_5_chirality_bw_mp(
+    Z: int, N: int, knot_type: str,
+    *,
+    chirality_source: str = "v2",
+) -> mp.mpf:
     """Term 5: a_K · B_bulk + B_Zdep + B_shell.
 
     `B_bulk`, `B_Zdep`, `B_shell` are mp.mpf-native in the upstream
     module; the only f64 leak in `mass_formula_6term.py` was the
     `float()` cast at return time, dropped here.
+
+    ``chirality_source`` selects the a_K factor:
+      - "v2" (default since 2026-05-15): canonical Gram-matrix
+        chirality `τ(β · β_mirror⁻¹)` via
+        ``term5_v2_chirality.aK_v2``.  Substrate-derived; no
+        per-knot-type hand-tuning.
+      - "bw_legacy": legacy categorical map keyed on ``knot_type``
+        with ``f_chiral_plus`` / ``f_chiral_minus`` / ``f_amphi``
+        / ``f_borromean`` BW-style constants.  Retained for
+        regression comparison.
     """
-    chirality_map = {
-        "chiral+": f_chiral_plus,
-        "chiral-": f_chiral_minus,
-        "amphichiral": f_amphi,
-        "borromean": f_borromean,
-        "none": mp.mpf(1),
-    }
-    a_K = chirality_map.get(knot_type, mp.mpf(1))
+    if chirality_source == "v2":
+        try:
+            from term5_v2_chirality import aK_v2
+            a_K = aK_v2(Z, N)
+        except Exception as exc:
+            # V2 cache miss for an out-of-window (Z, N) — surface
+            # the routing decision and fall back to the BW table so
+            # the 50 dps sweep completes.
+            print(
+                f"[term_5_chirality_bw_mp] V2 a_K unavailable for "
+                f"(Z={Z}, N={N}): {exc!r}; falling back to bw_legacy",
+                flush=True,
+            )
+            chirality_source = "bw_legacy"
+    if chirality_source == "bw_legacy":
+        chirality_map = {
+            "chiral+": f_chiral_plus,
+            "chiral-": f_chiral_minus,
+            "amphichiral": f_amphi,
+            "borromean": f_borromean,
+            "none": mp.mpf(1),
+        }
+        a_K = chirality_map.get(knot_type, mp.mpf(1))
+    elif chirality_source != "v2":
+        raise ValueError(
+            f"unknown chirality_source {chirality_source!r}; "
+            f"expected 'v2' or 'bw_legacy'"
+        )
     A = Z + N
     sign = pairing_sign(Z, N)
     bulk = B_bulk(A, Z, N, sign)
@@ -327,7 +371,7 @@ def predict_atom_mp(label: str, Z: int, N: int, knot_type: str) -> dict:
     except (FileNotFoundError, KeyError) as exc:
         t23 = (mp.mpf(0), mp.mpf(0))
         t23_error = f"{type(exc).__name__}: {exc}"
-    t4_pv, t4_pa = term_4_frobenius_mp(A)
+    t4 = term_4_frobenius_mp(A)
     t5 = term_5_chirality_bw_mp(Z, N, knot_type)
     # Term 6 raises if witness/atom missing; surface in the per-atom
     # row instead of crashing the whole sweep so that other atoms
@@ -346,8 +390,12 @@ def predict_atom_mp(label: str, Z: int, N: int, knot_type: str) -> dict:
         "term2_single":         mp.nstr(t23[0], WORKING_DPS),
         "term3_pair":           mp.nstr(t23[1], WORKING_DPS),
         "term23_error":         t23_error,
-        "term4_frob_per_vortex": mp.nstr(t4_pv, WORKING_DPS),
-        "term4_frob_per_A":     mp.nstr(t4_pa, WORKING_DPS),
+        # P1.C HARD BREAK (2026-05-12): legacy `term4_frob_per_vortex` and
+        # `term4_frob_per_A` fields removed. Single canonical field
+        # `term4_frob_canonical_per_3A` per `thm:frobenius-codim-universal`.
+        # Witness consumers that read the old field names will break —
+        # intentionally, per owner directive.
+        "term4_frob_canonical_per_3A": mp.nstr(t4, WORKING_DPS),
         "term5_chirality_bw":   mp.nstr(t5, WORKING_DPS),
         "term6_habiro_residue": t6_str,
         "term6_error":          t6_error,

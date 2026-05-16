@@ -28,8 +28,11 @@ binding energy from the canonical chain end-to-end at 50 dps:
     where tr_M(D_atom) is the Habiro polynomial value (50 dps).
 
   Step 4: Term 4 (universal Frobenius co-Casimir, Lean-proved)
-    Term 4 = A · m_e · (2 + 1/[2]_q)
-    For D: A = 2.
+    Term 4 = m_e · Σ_{λ⊢3A} 1/dim_q(λ)  (canonical per-3A)
+    For D: A = 2, so sum is over partitions of 6.
+
+    P1.C HARD BREAK 2026-05-12: legacy `A · m_e · (2 + 1/[2]_q)` REMOVED.
+    See P1.C of `docs/audits/2026-05-12-1ppb-implementation-plan.md`.
 
   Step 5: Δm_shell (per σ_shell ILP, A_magic = 2 only contributes)
     Δm_shell = E_0 · 5.889e-3 ≈ 0.018 MeV
@@ -57,7 +60,9 @@ mp.mp.dps = 50
 
 # Substrate parameter at 50 dps
 VOL_FIGURE_EIGHT = mp.mpf("2.029883212819307")
-MASS_RATIO_MU_E  = mp.mpf("206.7682830")
+# CAL-2: m_μ/m_e from q_parameter registry (P31-triage Phase A).
+from q_parameter import MASS_RATIO_MU_E_STR as _MU_E_STR  # noqa: E402
+MASS_RATIO_MU_E  = mp.mpf(_MU_E_STR)
 HBAR_Q_SQ        = VOL_FIGURE_EIGHT / MASS_RATIO_MU_E
 HBAR_Q           = mp.sqrt(HBAR_Q_SQ)
 Q0               = mp.mpf(1) / (mp.mpf(1) - HBAR_Q)
@@ -146,15 +151,20 @@ def main():
     print()
 
     # ────────────────────────────────────────────────────────────
-    # Step 4: Term 4 = A · m_e · (2 + 1/[2]_q)
+    # Step 4: Term 4 = m_e · Σ_{λ⊢3A} 1/dim_q(λ)  (canonical per-3A)
     # ────────────────────────────────────────────────────────────
     print("Step 4: Term 4 (universal Frobenius co-Casimir, Lean-proved)")
     print("─" * 78)
     A = 2
-    Frob_per_vortex = mp.mpf(str(M_E_MEV)) * (mp.mpf(2) + mp.mpf(1) / TWO_Q)
-    T4 = mp.mpf(A) * Frob_per_vortex
-    print(f"  Frob/vortex = m_e · (2 + 1/[2]_q) = {mp.nstr(Frob_per_vortex, 15)} MeV")
-    print(f"  Term 4 = A · Frob/vortex          = {mp.nstr(T4, 15)} MeV")
+    # P1.C HARD BREAK (2026-05-12): the legacy
+    # `Frob_per_vortex = m_e · (2 + 1/[2]_q); T4 = A · Frob_per_vortex`
+    # has been REMOVED. It was an H_3-character formula × A that
+    # overcounts T4 by 1.56× at A=2, 4.44× at A=4. The canonical form
+    # per `thm:frobenius-codim-universal` is m_e · Σ_{λ⊢3A} 1/dim_q(λ).
+    # See P1.C of `docs/audits/2026-05-12-1ppb-implementation-plan.md`.
+    from paper_six_term_isotope_sweep import term4_frobenius_codim
+    T4 = mp.mpf(str(M_E_MEV)) * term4_frobenius_codim(A)
+    print(f"  Term 4 = m_e · τ(C_dim_q) at A={A}  = {mp.nstr(T4, 15)} MeV")
     print()
 
     # ────────────────────────────────────────────────────────────

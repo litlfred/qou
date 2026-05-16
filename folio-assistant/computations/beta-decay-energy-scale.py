@@ -7,7 +7,7 @@ pattern may differ between neutron and proton.
 
 This script derives the energy scale E₀ (in MeV) that converts the
 dimensionless coefficient difference |Δ(net)| to the observed decay
-energy Q = m_n − m_p − m_e = 0.78233 MeV:
+energy Q = m_n − m_p − m_e = 0.78233 MeV:  # noqa: P31 — docstring narrative; live value from experimental_constants.Q_BETA_MEV
 
     E₀ = Q / |Δ(net)|
 

@@ -50,7 +50,9 @@ mp.mp.dps = 50
 
 # q_0 at 50 dps
 VOL_FIGURE_EIGHT = mp.mpf("2.029883212819307")
-MASS_RATIO_MU_E  = mp.mpf("206.7682830")
+# CAL-2: m_μ/m_e from q_parameter registry (P31-triage Phase A).
+from q_parameter import MASS_RATIO_MU_E_STR as _MU_E_STR
+MASS_RATIO_MU_E  = mp.mpf(_MU_E_STR)
 HBAR_Q_SQ        = VOL_FIGURE_EIGHT / MASS_RATIO_MU_E
 HBAR_Q           = mp.sqrt(HBAR_Q_SQ)
 Q0               = mp.mpf(1) / (mp.mpf(1) - HBAR_Q)

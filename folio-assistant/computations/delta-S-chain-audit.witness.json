@@ -1,0 +1,32 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-15T21:34:26.931480+00:00",
+  "commitSha": "55a391a34d5304660de7b999bccc4e35c831b8d9",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "delta-S-chain-audit",
+  "scriptFile": "audit_delta_S_chain.py",
+  "scriptHash": "59e7f7298682",
+  "scriptCommitSha": "55a391a34d5304660de7b999bccc4e35c831b8d9",
+  "description": "Audit of the ΔS = (Q_β + m_e)/m_e / (Vol(ℬ_3)/ℏ_q²) derivation chain. Verifies algebraically that the 1015 ppm ΔS residual in `derive_m_baryon_volume_form.py` is NOT coincidental — it equals the Q_β closed-form residual damped by the algebraic factor Q_β/(Q_β + m_e) ≈ 0.605. Implication: tightening Q_β's closed form propagates directly to ΔS precision.",
+  "data": {
+    "q_0_50dps": "1.1099785955541805752815940796095093779932822799587",
+    "Vol_Borromean_over_hbar_q_squared": "746.41785128368885965408362959114677037639351703069",
+    "Q_beta_AME_MeV": "0.78233341000000004817906074094935320317745208740237",
+    "Q_beta_predicted_closed_form_MeV": "0.78364580284494996334757268660565115526909401233058",
+    "eps_Q_pct": 0.1677536492976716,
+    "eps_Q_ppm": 1677.5364929767159,
+    "delta_S_target_dimensionless": "0.0033908464116775883528594204163910728311241325369058",
+    "delta_S_derived_dimensionless": "0.0033942872306864081441078333865004206577917242427896",
+    "eps_delta_S_pct": 0.10147374994544443,
+    "eps_delta_S_ppm": 1014.7374994544443,
+    "damping_factor_Q_beta_over_Q_beta_plus_m_e": "0.6048974217269256667938477476503821517134637282271",
+    "predicted_eps_delta_S_from_damping_x_eps_Q": "0.001014737499454444307348766604972253297398299790636",
+    "predicted_eps_delta_S_ppm": 1014.7374994544443,
+    "chain_match_relative_error": "2.6185136360857307507881420539949796034478617811785e-48",
+    "verdict": "CHAIN VERIFIED EXACTLY: ε_ΔS = (Q_β/(Q_β+m_e)) · ε_Q. The 1015 ppm ΔS residual is the Q_β closed-form residual damped by Q_β/(Q_β+m_e) ≈ 0.605. NOT a coincidence.",
+    "Q_beta_precision_for_1_ppb_on_delta_S": 0.0016531728588710022
+  }
+}

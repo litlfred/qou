@@ -120,7 +120,7 @@ def main() -> int:
     # Now compute m_p / m_e via Markov trace anchor
     # m_p = m_e · ρ_p · |tr_M(β_p)|, so ρ_p = m_p / (m_e · |tr_M|)
     # Using CODATA m_p / m_e = 1836.15 and tr_M ≈ 0.55:
-    mp_me = 938.272 / 0.51099895
+    mp_me = 938.272 / 0.51099895  # noqa: P31 — audit ratio display; live values via codata_constants/experimental_constants registry
     rho_p_codata = mp_me / val_at_q0
     print(f"\n  Dimensional bridge (categorical mass anchor):")
     print(f"    m_p / m_e (CODATA) = {mp_me:.6f}")
