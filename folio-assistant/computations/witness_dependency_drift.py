@@ -68,8 +68,14 @@ def _sha256_of(path: Path) -> str | None:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def check_witness(witness_path: Path) -> list[dict]:
-    """Return list of drift records for this witness (empty = clean)."""
+def check_witness(witness_path: Path) -> tuple[list[dict], bool]:
+    """Return (drift_records, has_deps).
+
+    drift_records is empty when the witness is clean.  has_deps is
+    True iff the witness declared `upstream_witness_hashes` (used by
+    the caller to count covered witnesses without re-reading the
+    file).
+    """
     try:
         w = json.loads(witness_path.read_text())
     except (json.JSONDecodeError, UnicodeDecodeError) as e:
@@ -77,11 +83,11 @@ def check_witness(witness_path: Path) -> list[dict]:
             "downstream":  witness_path.name,
             "kind":        "unreadable",
             "detail":      str(e),
-        }]
+        }], False
     di = w.get("derivation_inputs", {})
     upstream_hashes = di.get("upstream_witness_hashes")
     if not upstream_hashes:
-        return []  # no declared dependencies, nothing to check
+        return [], False  # no declared dependencies, nothing to check
     drifts: list[dict] = []
     for entry in upstream_hashes:
         ups_name = entry.get("path")
@@ -107,7 +113,7 @@ def check_witness(witness_path: Path) -> list[dict]:
                 "current_sha256":  current_sha,
                 "recorded_at":     entry.get("computedAt"),
             })
-    return drifts
+    return drifts, True
 
 
 def main() -> int:
@@ -122,16 +128,11 @@ def main() -> int:
     all_drifts: list[dict] = []
     for w in witnesses:
         n_checked += 1
-        drifts = check_witness(w)
+        drifts, has_deps = check_witness(w)
         if drifts:
             all_drifts.extend(drifts)
-        # Cheap heuristic: count witnesses that declare deps.
-        try:
-            body = json.loads(w.read_text())
-            if body.get("derivation_inputs", {}).get("upstream_witness_hashes"):
-                n_with_deps += 1
-        except Exception:
-            pass
+        if has_deps:
+            n_with_deps += 1
 
     print(f"Checked {n_checked} witnesses; "
           f"{n_with_deps} declare upstream_witness_hashes; "
