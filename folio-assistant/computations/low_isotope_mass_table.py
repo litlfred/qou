@@ -101,7 +101,8 @@ def _load_upstream_witness(path: Path) -> tuple[dict, dict]:
 
     The hash_record carries everything a downstream consumer needs
     to verify it has the same upstream as when this witness was
-    last regenerated: file sha256, commitSha, scriptCommitSha, mtime.
+    last regenerated: file sha256, commitSha, scriptCommitSha,
+    computedAt.
     """
     if not path.exists():
         raise FileNotFoundError(

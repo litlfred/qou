@@ -416,6 +416,7 @@ export default chapter({
         "tau-M-asymptotic-rep-theory",
         "kashiwara-jones-alternation-interpretation",
         "hopf-jones-c3-categorical",
+        "kashiwara-jones-c4-categorical",
         "borromean-baryon-interpretation",
         "canonical-braid-interface-composition",
         "prop-rigid-monoidal-structural-gap-invariance",

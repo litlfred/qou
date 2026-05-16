@@ -14,7 +14,7 @@ import { proposition } from "../../schema/builders";
  * **Statement.** The third coefficient `c_3` in the Q_β
  * precision-ladder expansion
  *
- *   Q_β = Q_A · cos(α − bℏ²/2) · (1 − b²ℏ⁴) · (1 − 2b³ℏ⁶) · …
+ *   Q_β = Q_A · cos(α − bℏ²/2) · (1 − b²ℏ⁴) · (1 + c_3 ℏ_q^6) · …
  *
  * (per [`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder))
  * equals `J_Hopf(q=1) = −2`, derived from
@@ -50,7 +50,7 @@ import { proposition } from "../../schema/builders";
  *
  *    so `J_Hopf(q=1) = −2` (q-classical limit).  This is the
  *    canonical Markov-closure value for the σ_1² braid
- *    (`(`thm:jones-markov-trace`)).
+ *    (`thm:jones-markov-trace`).
  *
  * 4. **Coefficient identification.** Expanding Q_β = Q_A · ∏(1 + c_k h^(2k))
  *    in h = q − q⁻¹ and matching the order-h^6 term against the

@@ -111,8 +111,9 @@ computes:
 4. **Match check**: categorical $c_3 = -2$ vs empirical $c_3$
    from the residual chain.
 
-If the categorical value (Step 3) matches the empirical
-extraction (Step 4) within CODATA's measurement floor
+If the categorical value (from Steps 1–3 above, $-2$) matches
+the empirical extraction (Step 4, from PR #655's residual chain)
+within CODATA's measurement floor
 (~400 ppb), this confirms Story B's $c_3 = -2$ is the genuine
 structural coefficient — not a curve-fit artifact (Story A's
 position).

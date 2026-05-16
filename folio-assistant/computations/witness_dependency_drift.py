@@ -150,7 +150,7 @@ def main() -> int:
 
     if args.strict:
         return 1 if all_drifts else 0
-    return 0
+    return len(all_drifts)
 
 
 if __name__ == "__main__":
