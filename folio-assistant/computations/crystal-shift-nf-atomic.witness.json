@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-16T19:35:59.911176+00:00",
-  "commitSha": "2c08a9a24d0df21d2394388a2a91f6945a6e3894",
+  "computedAt": "2026-05-16T22:18:05.517809+00:00",
+  "commitSha": "a149666149610ae6084463a6b0694af939d6e1a6",
   "assertions": [
     {
       "name": "crystal_pole_counter_well_defined",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 19,
   "computation": "crystal-shift-nf-atomic",
   "scriptFile": "crystal_shift_nf_atomic.py",
-  "scriptHash": "27d66234e570",
-  "scriptCommitSha": "38757f10a4c3f73bc95f40a66bb683125897a3f6",
+  "scriptHash": "1783e474d2f9",
+  "scriptCommitSha": "12347a6a6be58cae35edb8e2c598e64ee2da7bf9",
   "description": "Crystal-bases shift_NF for canonical atomic braids β(Z, N) at H_{3A}, computed via combinatorial pole counting on SYT(λ) per docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md Step 2.  Replaces the abandoned symbolic-q path (build_atom_nf_sym, which timed out for A=2 due to exponential monomial fan-out).  Compares against the closed form 18Z + 21N + 1 (per prop:per-nucleon-shift-additive-linearity).",
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "data": {
@@ -44,7 +44,7 @@
           4,
           2
         ],
-        "compute_time_seconds": 0.0009111350000239327,
+        "compute_time_seconds": 0.0008415249994868645,
         "syt_enumeration_method": "full"
       },
       {
@@ -62,7 +62,7 @@
           6,
           3
         ],
-        "compute_time_seconds": 0.03403951999985111,
+        "compute_time_seconds": 0.028366759999698843,
         "syt_enumeration_method": "full"
       },
       {
@@ -80,7 +80,7 @@
           6,
           3
         ],
-        "compute_time_seconds": 0.03372422999996161,
+        "compute_time_seconds": 0.028388876000462915,
         "syt_enumeration_method": "full"
       },
       {
@@ -98,7 +98,7 @@
           8,
           4
         ],
-        "compute_time_seconds": 2.307342958999925,
+        "compute_time_seconds": 1.9466687240001193,
         "syt_enumeration_method": "full"
       },
       {

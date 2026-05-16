@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-16T14:49:24.467096+00:00",
-  "commitSha": "37325db8969d3c00e686e1c8d43052e35b1b8b68",
+  "computedAt": "2026-05-16T22:18:33.869685+00:00",
+  "commitSha": "a149666149610ae6084463a6b0694af939d6e1a6",
   "assertions": [
     {
       "name": "tau_M_compositions_differ_from_canonical",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 23,
+  "durationMs": 19,
   "computation": "he4-compositional-consistency",
   "scriptFile": "probe_he4_compositional_consistency.py",
-  "scriptHash": "e9adf7cc5dd3",
-  "scriptCommitSha": "37325db8969d3c00e686e1c8d43052e35b1b8b68",
+  "scriptHash": "5ad46cdcac78",
+  "scriptCommitSha": "38757f10a4c3f73bc95f40a66bb683125897a3f6",
   "description": "⁴He compositional consistency probe per F1 question 3 (integration audit 2026-05-15-three-pr-integration.md). Compares τ_M(⁴He canonical) against three disjoint Markov compositions (D⊕D, T⊕p, ³He⊕n).  Result: all four DIFFER by 50-300% — Markov disjoint product is not the right compositional notion for ⁴He, which requires INTER-COMPONENT INTERFACE generators (the canonical pppnnn ordering).",
   "auditOnly": "docs/audits/2026-05-15-three-pr-integration.md",
   "data": {
