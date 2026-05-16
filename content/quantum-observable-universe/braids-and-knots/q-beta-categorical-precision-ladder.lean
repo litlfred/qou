@@ -14,12 +14,17 @@ with α = (z-1)h/2, b = √(q⁴+q²+1)/(q²+1), and ℏ_q = (q-1)/q.
 Each rung's coefficient is derived from substrate-only data:
   - b: Hoefsmit off-diagonal coupling on V_(2,1) (Hecke seminormal form)
   - 2 = -J_Hopf(q=1): classical-limit Jones polynomial of the Hopf link
-  - b² + 1/2: mixed intra/inter combination of Kashiwara b² and the
-    Hopf-half integer offset from 2-fold linking at fourth order
+  - b² + 1/2: mixed intra/inter combination of the Kashiwara b² intra-
+    block coefficient and the 1/2 Hopf-half rational offset from
+    2-fold linking at fourth order
 
 The **alternating Kashiwara × Jones pattern** through N=4:
-  - Even orders (c_2, c_4): intra-block Kashiwara `b^k` + integer offset
+  - Even orders (c_2, c_4): intra-block Kashiwara `b^k` + rational offset
   - Odd orders (c_3):       inter-block Jones invariant at q=1
+
+This file holds the **algebraic statements only**; per-rung numerical
+verification at `q_0` lives in the `.md` and in the `probe_q_beta_*`
+witnesses listed there.
 
 LaTeX label: `prop:q-beta-categorical-precision-ladder`
 -/
@@ -77,16 +82,18 @@ noncomputable def N3_factor (q : ℝ) : ℝ :=
 
 /-! ## N=4 mixed Kashiwara-b² + Hopf-half correction
 
-At fourth order the structural coefficient is `c_4 = b² + 1/2`,
-combining the intra-block Kashiwara `b²` return amplitude with the
-Hopf-half integer offset from 2-fold linking. Verified empirically at
-`q_0` (50 dps) to within `≈ 7 × 10⁻⁶` ppm against CODATA `Q_β`. -/
+At fourth order the structural coefficient `c_4 = b² + 1/2` combines
+the intra-block Kashiwara `b²` factor with the `1/2` Hopf-half
+rational offset from 2-fold linking. Empirical verification at `q_0`
+lives in the `.md` and the `probe_q_beta_*` witnesses cited there. -/
 
-/-- N=4 factor: `1 + (b² + 1/2) · b⁴ · ℏ_q^8`. The `b² + 1/2`
-    coefficient mixes the intra-block Kashiwara `b²` (return amplitude
-    at fourth order) with the `1/2` Hopf-half integer offset from
-    2-fold linking, consistent with the alternating
-    Kashiwara × Jones pattern. -/
+/-- N=4 factor: `1 + c_4 · b⁴ · ℏ_q^8` with `c_4 = b² + 1/2`.
+    The factor splits into:
+      - the natural Hoefsmit scale `b⁴ · ℏ_q^8` at fourth order, and
+      - the structural coefficient `c_4 = b² + 1/2`, mixing the
+        intra-block Kashiwara `b²` contribution with the `1/2`
+        Hopf-half rational offset from 2-fold linking.
+    Consistent with the alternating Kashiwara × Jones pattern. -/
 noncomputable def N4_factor (q : ℝ) : ℝ :=
   1 + ((hoefsmitB q)^2 + 1/2) * (hoefsmitB q)^4 * (hbarQ' q)^8
 
@@ -152,10 +159,9 @@ theorem hoefsmitB_bar_invariant (q : ℝ) (hq : 0 < q) :
 
 /-- **Q_β categorical-derivation precision ladder export.** Bundles the
     Form A baseline + N=1, N=2, N=3, N=4 factors into the canonical
-    export. Empirical verification at $q_0$ gives residual $-0.0066$ ppm
-    against CODATA $Q_\beta$ at N=3 (within the c(K) N=3 ceiling of
-    $0.0094$ ppm) and $\approx -7 \times 10^{-6}$ ppm at N=4 (well
-    below the c(K) N=4 ceiling of $9.2 \times 10^{-5}$ ppm). -/
+    algebraic export. Per-rung numerical residuals at `q_0` (Archimedean
+    evaluation tier) live in the `.md` and in the `probe_q_beta_*`
+    witnesses cited there. -/
 -- Ref: [manuscript] prop:q-beta-categorical-precision-ladder
 -- Ref: [jones1985] doi:10.2307/1971403 (Hopf Jones polynomial)
 theorem q_beta_categorical_precision_ladder (q m_e : ℝ) (hq : 0 < q) :
