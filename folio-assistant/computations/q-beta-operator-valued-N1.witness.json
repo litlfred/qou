@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-15T23:17:46.553140+00:00",
-  "commitSha": "f17690b599e9ff57919f94f9a25ce102dddd9315",
+  "computedAt": "2026-05-16T01:52:57.975042+00:00",
+  "commitSha": "c8a8e81c03e29a6da84a2e5eba429b7552188785",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "q-beta-operator-valued-N1",
   "scriptFile": "probe_q_beta_operator_valued_N1.py",
-  "scriptHash": "e7516180b2b0",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "ff79609627d9",
+  "scriptCommitSha": "91cbae69e946c734cd68b2e86c80af22b7ddf8cf",
   "description": "Operator-valued N=1 brane-tower truncation probe for Q_β. Tests candidate refinements of the cos((z-1)h/2) resummation incorporating the Hoefsmit V_(2,1) matrix structure (d_1, d_2, b) and the ℏ_q² geometric tail. None of the simple ansätze tested here improves over cos((z-1)h/2)'s 306 ppm residual; the true N=1 correction has structure beyond simple cos extensions. The 97 ppm c(K) bound at N=1 is not yet reachable without operator-valued matrix-exponential machinery.",
   "auditOnly": "PR #655 follow-up. The 305 ppm cos floor must close to ≤97 ppm at N=1 per c(K) bound, but the simple operator ansätze tested here all stay at ~306 ppm. Confirms that the matrix-exponential / Hoefsmit-quadratic Lie-algebraic structure is the necessary next layer.",
   "data": {
@@ -91,7 +91,7 @@
         "eps_ppm": 307.8873625046186
       },
       {
-        "name": "cos²(α/2) - sin²(α/2):",
+        "name": "cos²(α/2) - sin²(α/2)",
         "value": "0.99863077752876101691693081216830386746709501895882",
         "Q_pred_MeV": "0.78257281740220254403888844863270670001559848696951",
         "eps_ppm": 306.01198660101693

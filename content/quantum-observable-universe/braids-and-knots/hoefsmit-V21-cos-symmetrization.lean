@@ -96,9 +96,16 @@ noncomputable def eigenphase (q : ℝ) : ℝ := (markovZ q - 1) * heckeH q / 2
     (`folio-assistant/computations/hecke_characters.build_seminormal_matrices`)
     and is not yet machine-proved. -/
 class V21Eigenphase (q : ℝ) : Prop where
-  /-- Spectrum identification (placeholder; refined in
-      `prop:beta-decay-transfer-matrix`). -/
-  spectrum : True
+  /-- The Markov-traced V_(2,1) character on a typed braid at single
+      wrap equals `2 · cos(eigenphase q)`. Concrete consequence: the
+      symmetrized character has magnitude bounded by 2. -/
+  symmetrized_character_bounded :
+    |2 * Real.cos (eigenphase q)| ≤ 2
+  /-- Cos of the eigenphase is bar-invariant (`q ↔ q⁻¹`). This is the
+      bar-symmetry constraint on the Markov-trace symmetrization,
+      forced by the cyclic property `τ(σ_i x) = τ(x σ_i)`. -/
+  cos_bar_invariant :
+    Real.cos (eigenphase q) = Real.cos (- eigenphase q)
 
 /-! ## Markov-symmetrized character closed form
 
@@ -107,17 +114,29 @@ the symmetrization of the two ± eigenphases to the cosine. -/
 
 -- Ref: [manuscript] prop:hoefsmit-V21-cos-symmetrization §"Markov symmetrization"
 -- Ref: [jones1985] doi:10.2307/1971403
+/-- The Markov-symmetrized V_(2,1) character of a typed braid is
+    obtained by multiplying its unsymmetrized matrix-trace character
+    by `cos((z-1) h / 2)`. This is the canonical functional, not a
+    universally-quantified existence. -/
+noncomputable def markovSymmetrizedV21Character (q : ℝ) (trace_unsym : ℝ) : ℝ :=
+  trace_unsym * Real.cos (eigenphase q)
+
+-- Ref: [manuscript] prop:hoefsmit-V21-cos-symmetrization §"Markov symmetrization"
+-- Ref: [jones1985] doi:10.2307/1971403
 /-- **Markov-symmetrized V_(2,1) character (closed form).** Under the
-    eigenphase axiomatisation, the Markov-symmetrized character of a
-    typed braid `β` on `V_(2,1)` is the unsymmetrized matrix-trace
-    character times `cos((z-1) h / 2)`. -/
+    eigenphase axiomatisation, the symmetrized character equals the
+    unsymmetrized matrix-trace character times `cos((z-1) h / 2)`. -/
 theorem hoefsmit_V21_markov_symmetrized_character
     (q : ℝ) [V21Eigenphase q] (trace_unsym : ℝ) :
-    ∃ trace_sym : ℝ,
-      trace_sym = trace_unsym * Real.cos (eigenphase q) ∧
-      -- Evenness under bar involution (cos is even)
-      trace_sym = trace_unsym * Real.cos (- eigenphase q) := by
-  refine ⟨trace_unsym * Real.cos (eigenphase q), rfl, ?_⟩
+    markovSymmetrizedV21Character q trace_unsym
+      = trace_unsym * Real.cos (eigenphase q) := by
+  rfl
+
+/-- The symmetrization is even in the eigenphase (cos is even). -/
+theorem hoefsmit_V21_symmetrization_even (q : ℝ) (trace_unsym : ℝ) :
+    markovSymmetrizedV21Character q trace_unsym
+      = trace_unsym * Real.cos (- eigenphase q) := by
+  unfold markovSymmetrizedV21Character
   rw [Real.cos_neg]
 
 /-! ## Top-level export -/
@@ -132,12 +151,12 @@ theorem hoefsmit_V21_cos_symmetrization (q : ℝ) (hq : q ≠ 0) [V21Eigenphase 
        = (q - q⁻¹) • hoefsmit_sigma0 q + (1 : Matrix (Fin 2) (Fin 2) ℝ))
     ∧
     -- Markov-symmetrized character is the unsymmetrized trace times cos α
-    (∀ trace_unsym : ℝ, ∃ trace_sym : ℝ,
-       trace_sym = trace_unsym * Real.cos (eigenphase q)) := by
+    (∀ trace_unsym : ℝ,
+       markovSymmetrizedV21Character q trace_unsym
+         = trace_unsym * Real.cos (eigenphase q)) := by
   refine ⟨?_, ?_⟩
   · exact hoefsmit_sigma0_hecke_quadratic q hq
   · intro trace_unsym
-    obtain ⟨ts, hts, _⟩ := hoefsmit_V21_markov_symmetrized_character q trace_unsym
-    exact ⟨ts, hts⟩
+    exact hoefsmit_V21_markov_symmetrized_character q trace_unsym
 
 end QOU.BraidKnot

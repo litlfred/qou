@@ -49,7 +49,9 @@ from codata_constants import M_E_MEV, M_P_MEV_VALIDATION, M_N_MEV_VALIDATION  # 
 
 mp.mp.dps = 50
 
-VOL_BORROMEAN = mp.mpf("7.32772475587766148235147121870981010907842498879866")
+from experimental_constants import VOL_BORROMEAN_50DPS_STR  # noqa: E402
+
+VOL_BORROMEAN = mp.mpf(VOL_BORROMEAN_50DPS_STR)
 
 
 def _q_0_50dps() -> mp.mpf:

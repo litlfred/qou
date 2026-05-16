@@ -35,7 +35,11 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE / "from_scratch"))
 
-from codata_constants import M_E_MEV  # noqa: E402
+from codata_constants import (  # noqa: E402
+    M_E_MEV,
+    M_P_MEV_VALIDATION,
+    M_N_MEV_VALIDATION,
+)
 
 mp.mp.dps = 50
 
@@ -77,7 +81,7 @@ def form_A(q: mp.mpf, m_e: mp.mpf) -> mp.mpf:
 def main() -> int:
     q0_mp = _q_0_50dps()
     m_e = mp.mpf(str(M_E_MEV))
-    Q_AME = mp.mpf("939.5654205240") - mp.mpf("938.27208816") - m_e
+    Q_AME = mp.mpf(str(M_N_MEV_VALIDATION)) - mp.mpf(str(M_P_MEV_VALIDATION)) - m_e
 
     # ────────────────────────────────────────────────────────────────────
     # Part A: q-sweep

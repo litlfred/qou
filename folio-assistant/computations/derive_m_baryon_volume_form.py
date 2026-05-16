@@ -92,8 +92,13 @@ def _q_beta_closed_form(q: mp.mpf) -> mp.mpf:
 #               (Borromean rings complement, 8 ideal octahedra).
 # Both are standard hyperbolic-volume identities; the closed forms
 # match the SnapPy numerical values to 50 dps.
-VOL_4_1 = mp.mpf("2.02988321281930725004240510854904057483004159909893")
-VOL_BORROMEAN = mp.mpf("7.32772475587766148235147121870981010907842498879866")
+from experimental_constants import (  # noqa: E402
+    VOL_BORROMEAN_50DPS_STR,
+    VOL_4_1_50DPS_STR,
+)
+
+VOL_4_1 = mp.mpf(VOL_4_1_50DPS_STR)
+VOL_BORROMEAN = mp.mpf(VOL_BORROMEAN_50DPS_STR)
 
 
 def derive_m_baryon_volume_form() -> dict:

@@ -146,7 +146,7 @@ def main() -> int:
         "1 / (1 + α²/2 - α⁴/24)":
             1 / (1 + alpha ** 2 / 2 - alpha ** 4 / 24),
         # Square-cos:
-        "cos²(α/2) - sin²(α/2):":
+        "cos²(α/2) - sin²(α/2)":
             mp.cos(alpha / 2) ** 2 - mp.sin(alpha / 2) ** 2,
         # Hoefsmit eigenvalue ratio
         "(d_1 + d_2) / 2":

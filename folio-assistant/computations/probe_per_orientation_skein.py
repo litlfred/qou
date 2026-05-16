@@ -49,7 +49,9 @@ from codata_constants import M_E_MEV, M_P_MEV_VALIDATION, M_N_MEV_VALIDATION  # 
 
 mp.mp.dps = 50
 
-VOL_BORROMEAN = mp.mpf("7.32772475587766148235147121870981010907842498879866")
+from experimental_constants import VOL_BORROMEAN_50DPS_STR  # noqa: E402
+
+VOL_BORROMEAN = mp.mpf(VOL_BORROMEAN_50DPS_STR)
 
 
 def _q_0_50dps() -> mp.mpf:
@@ -58,7 +60,7 @@ def _q_0_50dps() -> mp.mpf:
     return mp.mpf(d["derived_50_digit"]["q"])
 
 
-def _direct_tau_M_at_q0(Z: int, N: int) -> mp.mpf:
+def _direct_tau_M_at_q0(Z: int, N: int) -> tuple[mp.mpf, list[dict]]:
     """τ_M(T_w(Z,N)) at q_0 via canonical_braid_to_crossings + Wenzl y_λ.
 
     Uses the typed atomic braid recipe with include_inter=False (free

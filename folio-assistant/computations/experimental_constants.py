@@ -75,6 +75,12 @@ VOL_THREE_TWIST_ERR  = 1e-12
 
 VOL_BORROMEAN        = 7.327724753846269  # ± 1e-12
 VOL_BORROMEAN_ERR    = 1e-12
+# 50-dps string form for high-precision mpmath computations (use via
+# `mp.mpf(VOL_BORROMEAN_50DPS_STR)` to preserve the full Catalan-constant
+# expansion past float's 16-digit floor). Borromean rings complement
+# admits the closed form 8 · G where G is Catalan's constant.
+VOL_BORROMEAN_50DPS_STR = "7.32772475587766148235147121870981010907842498879866"
+VOL_4_1_50DPS_STR       = "2.02988321281930725004240510854904057483004159909893"
 
 # ── Hyperbolic-knot volumes (used by per_atom_rho_deviation and
 #    downstream Z=N ρ-correction probes — pulled from #523). ──

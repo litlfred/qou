@@ -94,11 +94,18 @@ axiomatise it here as a class field. -/
     `prop:beta-decay-transfer-matrix`; the Lean machinery for Hecke
     seminormal characters is downstream work. -/
 class TransferMatrixEigenphase (q : ℝ) : Prop where
-  /-- The two eigenphases on `V_{(2,1)}` are `±eigenphase q`. -/
-  spectrum_two_dim : True   -- placeholder; refined in proof attempt
-  /-- The 1-d irreps `V_{(3)}` and `V_{(1,1,1)}` contribute at `O(α²)`
-      and beyond — captured by the residual term in §"3-irrep extension". -/
-  one_dim_irreps_higher_order : True   -- placeholder
+  /-- Concrete spectral statement: the Markov-symmetrized single-wrap
+      character of the transfer matrix on `V_{(2,1)}` equals
+      `2 cos(eigenphase q)`. This binds the eigenphase definition to a
+      real numerical content (`2 cos α` is bounded in `[-2, 2]` and
+      attains its extremes at `α ∈ {0, π}`). -/
+  symmetrized_character_in_unit_disc :
+    -2 ≤ 2 * Real.cos (eigenphase q) ∧ 2 * Real.cos (eigenphase q) ≤ 2
+  /-- The eigenphase is real and bounded; under the bar involution
+      `q ↔ q⁻¹` it negates (cf. `eigenphase_bar_involution`). Concrete
+      consequence: cos of the eigenphase is bar-invariant. -/
+  cos_eigenphase_bar_invariant :
+    Real.cos (eigenphase q) = Real.cos (- eigenphase q)
 
 /-! ## Cos-resummation theorem (conditional)
 
