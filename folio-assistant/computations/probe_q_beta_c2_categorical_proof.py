@@ -63,7 +63,7 @@ def main() -> int:
     for k in range(9):
         ck = sp.cancel(series_F2.coeff(eps, k))
         coeffs_F2[k] = ck
-        if ck != 0:
+        if not ck.equals(0):
             ck_simple = sp.nsimplify(ck, rational=False)
             ck_float = float(ck.evalf())
             print(f"    ε^{k}: {ck_simple} ≈ {ck_float:+.10f}")
@@ -91,8 +91,8 @@ def main() -> int:
     print(f"              = {float(empirical_eps4.evalf()):+.10f}")
     print()
 
-    diff = sp.simplify(empirical_eps4 - predicted_eps4)
-    is_exact = (diff == 0)
+    diff = sp.cancel(empirical_eps4 - predicted_eps4)
+    is_exact = diff.equals(0)
     print(f"  Step 4: comparison")
     print()
     print(f"    Predicted − Empirical = {sp.nsimplify(diff, rational=False)}")
