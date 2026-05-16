@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-16T03:09:25.262089+00:00",
-  "commitSha": "1303712705597e1c11c91db44d77463baa110818",
+  "computedAt": "2026-05-16T03:09:26.940911+00:00",
+  "commitSha": "e66bff439d2262e79cb54c10f529245074e81e63",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 7,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "d9aa432d54f9",
@@ -28,7 +28,7 @@
       "P16": 89,
       "P21": 24,
       "P30": 96,
-      "P31": 19
+      "P31": 20
     },
     "top_files": [
       {
@@ -2078,6 +2078,13 @@
         "pattern": "P31",
         "file": "probe_q_beta_two_wrap_nf.py",
         "line": 51,
+        "snippet": "CODATA literal \"938.27208816\"",
+        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
+      },
+      {
+        "pattern": "P31",
+        "file": "probe_tau_M_four_anchors.py",
+        "line": 53,
         "snippet": "CODATA literal \"938.27208816\"",
         "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },

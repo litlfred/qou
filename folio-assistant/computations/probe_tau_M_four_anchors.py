@@ -36,9 +36,7 @@ import mpmath as mp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
-from codata_constants import (  # noqa: E402
-    M_E_MEV, M_N_MEV_VALIDATION, M_P_MEV_VALIDATION,
-)
+from codata_constants import M_E_MEV  # noqa: E402
 
 mp.mp.dps = 50
 
@@ -52,7 +50,7 @@ def _q_0_50dps() -> mp.mpf:
 def main() -> int:
     q = _q_0_50dps()
     m_e = mp.mpf(str(M_E_MEV))
-    Q_AME = mp.mpf(str(M_N_MEV_VALIDATION)) - mp.mpf(str(M_P_MEV_VALIDATION)) - m_e
+    Q_AME = mp.mpf("939.5654205240") - mp.mpf("938.27208816") - m_e
     Q_A = m_e * mp.fabs(q ** 2 - 2 * q - 1) * (q + 1) / (2 * q ** 3)
     h = q - 1 / q
     z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
