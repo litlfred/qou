@@ -52,6 +52,7 @@ if str(HERE) not in sys.path:
 from crystal_pole_order import (  # noqa: E402
     enumerate_syts, partitions_of, syt_axial_distances,
 )
+from q_parameter import HA as HA_VAL  # noqa: E402   canonical h = q − q⁻¹
 from witness_base import WitnessBuilder  # noqa: E402
 
 
@@ -126,18 +127,10 @@ def pole_of_factor_on_syt(
         #         if c == 1, cancels to -q (pole 0).
         if not h_is_d_proportional or abs(d) < 1e-15:
             return 1
-        # d ∝ h; check coefficient relative to -h:
-        # if d == -h (c == 1), exact cancel
-        h_coef_match = abs(c * 1.0 - 1.0) < 1e-12 and abs(d - (-(1.0 - 1.0))) > 0  # placeholder
-        # The sentinel for "is d exactly -h?":
-        #   compute (c·(-q⁻¹) + d) leading q-power numerically at a probe q.
-        # Simpler: classify by (c, d/h) ratio.
-        # At our use: d ∈ {0, -h/2, -h}. We have d != 0 here, so d is
-        # either -h/2 or -h (always with c = 1 in canonical atom braids).
-        # The cancellation happens iff d = -h (i.e., d/h-ratio = -1).
-        # h itself = q - q⁻¹ ≈ 0.209 at q_0. So d ≈ -0.209 → d = -h.
-        # d ≈ -0.105 → d = -h/2.
-        d_over_h = d / (1.10998 - 1.0 / 1.10998)  # approx ratio at q_0
+        # d ∝ h; classify by d/h ratio against canonical h = q − q⁻¹
+        # from q_parameter.  In canonical atomic braids d ∈ {0, -h/2, -h};
+        # cancellation iff d = -h (ratio = -1).
+        d_over_h = d / HA_VAL
         if abs(d_over_h + 1.0) < 0.01:  # d = -h
             return 0  # CANCELS
         return 1   # d = -h/2 or other; no cancellation
