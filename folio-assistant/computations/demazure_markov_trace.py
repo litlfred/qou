@@ -58,6 +58,7 @@ import sympy as sp
 
 sys.path.insert(0, str(Path(__file__).parent))
 from witness_base import WitnessBuilder  # noqa: E402
+from partition_utils import hook_lengths_with_cells as hook_lengths  # noqa: E402
 
 
 # ──────────────────────────────────────────────────────────────────
@@ -126,17 +127,6 @@ def w0_word(n):
 # ──────────────────────────────────────────────────────────────────
 #  Partition / Schur principal specialisation (Macdonald hook)
 # ──────────────────────────────────────────────────────────────────
-
-
-def hook_lengths(p):
-    rows = len(p)
-    cols = max(p) if rows else 0
-    transpose = [sum(1 for r in range(rows) if p[r] > c) for c in range(cols)]
-    return [
-        (i, j, (p[i] - j - 1) + (transpose[j] - i - 1) + 1)
-        for i in range(rows)
-        for j in range(p[i])
-    ]
 
 
 def n_lambda(p):

@@ -42,6 +42,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 import pyhecke
 from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP
+from partition_utils import hook_lengths  # noqa: E402
 
 
 Q0 = Q_MP  # was f64 roundtrip
@@ -72,18 +73,6 @@ def is_self_conjugate(shape):
         col = sum(1 for r in shape if r > j)
         transpose.append(col)
     return list(shape) == transpose
-
-
-def hook_lengths(shape):
-    """Hook lengths of all cells in the Young diagram."""
-    hooks = []
-    rows = len(shape)
-    for i in range(rows):
-        for j in range(shape[i]):
-            arm = shape[i] - j - 1
-            leg = sum(1 for r in range(i + 1, rows) if shape[r] > j)
-            hooks.append(arm + leg + 1)
-    return hooks
 
 
 def dim_q_via_hooks(shape, q, n):

@@ -36,6 +36,7 @@ import mpmath
 from mpmath import mp, mpf
 
 from witness_base import WitnessBuilder  # noqa: E402
+from partition_utils import hook_length_1based as hook_length  # noqa: E402
 
 
 def partitions_of_height(n: int, height: int) -> list[tuple[int, ...]]:
@@ -54,12 +55,6 @@ def partitions_of_height(n: int, height: int) -> list[tuple[int, ...]]:
 
     rec(n, n, [])
     return out
-
-
-def hook_length(lam: tuple[int, ...], i: int, j: int) -> int:
-    arm = lam[i - 1] - j
-    leg = sum(1 for r in range(i, len(lam)) if lam[r] >= j)
-    return arm + leg + 1
 
 
 def q_int(k: int, q_val: mpf) -> mpf:

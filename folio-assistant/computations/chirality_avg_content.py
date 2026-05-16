@@ -51,13 +51,7 @@ from hecke_characters import (  # noqa: E402
     young_diagram_cells,
 )
 from witness_base import WitnessBuilder  # noqa: E402
-
-
-def hook_length(shape: tuple[int, ...], i: int, j: int) -> int:
-    """Hook length at cell (i, j) (1-indexed) of partition shape."""
-    arm = shape[i - 1] - j
-    leg = sum(1 for r in range(i, len(shape)) if shape[r] >= j)
-    return arm + leg + 1
+from partition_utils import hook_length_1based as hook_length  # noqa: E402
 
 
 def q_int(k: int, q_val: mpf) -> mpf:

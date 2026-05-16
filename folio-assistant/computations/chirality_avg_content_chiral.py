@@ -51,6 +51,7 @@ from hecke_characters import (  # noqa: E402
 )
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from partition_utils import hook_length_1based as hook_length  # noqa: E402
 
 mp.dps = 50
 # Authoritative q_0 from q_parameter.Q_50_DIGIT_STR (m_μ/m_e CODATA fix).
@@ -66,12 +67,6 @@ def q_factorial(k: int, q):
     for i in range(1, k + 1):
         out *= q_int(i, q)
     return out
-
-
-def hook_length(shape, i, j):
-    arm = shape[i - 1] - j
-    leg = sum(1 for r in range(i, len(shape)) if shape[r] >= j)
-    return arm + leg + 1
 
 
 def dim_q(shape, q, n_fac_q):
