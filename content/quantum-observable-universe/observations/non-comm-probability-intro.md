@@ -12,15 +12,15 @@ This section develops three QOU-internal results that follow from
 the non-commutative probability framing, all useful independently of
 any external comparison:
 
-- The **q-deformed Central Limit Theorem** (issue #649 §1) explaining
-  why macroscopic observations register continuous q-Gaussian
+- The **q-deformed Central Limit Theorem** explaining why
+  macroscopic observations register continuous q-Gaussian
   distributions on a deterministic discrete substrate.
-- A **locality / non-locality reconciliation** (issue #649 §3) of
-  the apparent tension between Markov-property single-generator
-  locality and Gröbner–Shirshov composite non-locality.
-- An explicit **brane-tower convergence bound** (issue #649 §4)
-  controlling the $\hbar_q^{2n}$ Yekutieli tower sum via q-Laplacian
-  exponential decay.
+- A **locality / non-locality reconciliation** of the apparent
+  tension between Markov-property single-generator locality and
+  Gröbner–Shirshov composite non-locality.
+- An explicit **brane-tower convergence bound** controlling the
+  $\hbar_q^{2n}$ Yekutieli tower sum via q-Laplacian exponential
+  decay.
 
 Each rests on Hecke-algebra inputs (Hecke quadratic relation, Markov
 property, Wenzl bridge) and well-established literature

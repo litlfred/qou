@@ -78,8 +78,8 @@ spectrum of the q-Laplacian. The proof in
 assembles the q-integer asymptotic and the iterated Laplacian
 estimate.
 
-**Resolution of issue #649 §4.** This proposition provides the
-"tighter logical linkage between exponential decay of q-Laplacian
-eigenfunctions and physical justification for non-local integration"
-that the requirements document requested, in the form of an
-explicit absolute-convergence bound.
+**Summary.** The proposition provides an explicit absolute-
+convergence bound for the Yekutieli brane-tower integration,
+tightening the logical linkage between exponential decay of the
+q-Laplacian eigenfunctions and the physical justification for
+non-local integration.

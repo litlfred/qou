@@ -92,6 +92,7 @@ the Gröbner–Shirshov reduction algorithm
 Wenzl's 1988 vertex-volume factorisation
 [`wenzl1988`]. No new mathematics is introduced.
 
-**Resolution of issue #649 §3.** This proposition gives the
-"dedicated explanation" the requirements doc requested, with the
-proof a straightforward assembly of cited existing components.
+**Summary.** The proposition resolves the apparent tension between
+Markov locality and Gröbner–Shirshov non-locality as sequential
+operations bridged by Wenzl's product factorisation, with the proof
+a straightforward assembly of cited existing components.

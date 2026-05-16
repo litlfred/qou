@@ -120,8 +120,8 @@ three-way q-identification; the moment-convergence and
 characteristic-function-limit fields can then be discharged from
 the cited theorems.
 
-**Resolution of issue #649 §1.** The block now states the q-CLT
-*as a conjecture about a specific numerical coincidence* (three q's
-agree), backed by *provable* inputs (Hecke pair-partition structure,
-positive variance). The original "q-CLT proof gap" is reduced to a
-falsifiable moment-equality check at $q_0$.
+**Summary.** The block states the q-CLT as a conjecture about a
+specific numerical coincidence (three q's agree at $q_0$), backed
+by *provable* inputs (Hecke pair-partition structure, positive
+variance). What was formerly an open "q-CLT proof gap" is reduced
+to a falsifiable moment-equality check at $q_0$.
