@@ -1,0 +1,119 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-15T21:31:55.083072+00:00",
+  "commitSha": "d29335cc02d398f4fff31fff96bc1986d9574b78",
+  "assertions": [
+    {
+      "name": "doubly_magic_2_2_within_1pct",
+      "computed": 0.16862259526958706,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1.0
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 9,
+  "computation": "a-minus-2-q-substrate-probe",
+  "scriptFile": "probe_a_minus_2_q_substrate.py",
+  "scriptHash": "31c35188ebe2",
+  "scriptCommitSha": "d29335cc02d398f4fff31fff96bc1986d9574b78",
+  "description": "Cross-anchor probe of the H7a multiplicative form Δ_coupling(Z, N) ≈ [A−2]_q · E_0 · log(1/h) across (1, 1), (2, 1), (1, 2), (2, 2) — tests whether the [A−2]_q substrate prefactor is universal or specific to the doubly-magic anchor (2, 2).  Diagnostic only — does NOT fit Δ_coupling to AME (three-cal discipline).",
+  "auditOnly": "docs/audits/2026-05-15-a-minus-2-q-substrate-derivation.md",
+  "parameters": {
+    "mp_dps": 50,
+    "q_0_50dps": "1.1099785955541805752815940796095093779932822799587",
+    "m_e_MeV_CODATA": "0.51099895",
+    "E_0_MeV_50dps": "4.1859808220625233786272433144399559497946537802037",
+    "h_q_50dps": "0.20906032198987946110160842229792190646175630391646",
+    "log_inv_h_50dps": "1.5651324466994859398915653989189167213574491719623"
+  },
+  "data": {
+    "cross_anchor_table": [
+      {
+        "label": "D",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "A_minus_2": 0,
+        "anchor_definition": "Δ_cat(D)",
+        "anchor_MeV_50dps": "2.0261520207399138011298712368453333598767483337084",
+        "anchor_MeV_float": 2.026152020739914,
+        "q_integer_A_minus_2_50dps": "0.0",
+        "H7a_prediction_MeV_50dps": "0.0",
+        "H7a_prediction_MeV_float": 0.0,
+        "H7a_gap_pct_50dps": null,
+        "H7a_gap_pct": null,
+        "H1_prediction_MeV_50dps": "0.0",
+        "H1_prediction_MeV_float": 0.0,
+        "H1_gap_pct_50dps": null,
+        "H1_gap_pct": null
+      },
+      {
+        "label": "3He",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "A_minus_2": 1,
+        "anchor_definition": "Δ_cat(³He) − Δ_cat(D)",
+        "anchor_MeV_50dps": "5.4808236555452570418269049744648530765507989514598",
+        "anchor_MeV_float": 5.480823655545257,
+        "q_integer_A_minus_2_50dps": "1.0",
+        "H7a_prediction_MeV_50dps": "6.5516144058718427102115131946641938062418212134459",
+        "H7a_prediction_MeV_float": 6.551614405871843,
+        "H7a_gap_pct_50dps": "19.5370407374",
+        "H7a_gap_pct": 19.537040737357177,
+        "H1_prediction_MeV_50dps": "6.5516144058718427102115131946641938062418212134459",
+        "H1_prediction_MeV_float": 6.551614405871843,
+        "H1_gap_pct_50dps": "19.5370407374",
+        "H1_gap_pct": 19.537040737357177
+      },
+      {
+        "label": "T",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "A_minus_2": 1,
+        "anchor_definition": "Δ_cat(T) − Δ_cat(D)",
+        "anchor_MeV_50dps": "6.3493049324831482799080309571163217974427690134583",
+        "anchor_MeV_float": 6.3493049324831485,
+        "q_integer_A_minus_2_50dps": "1.0",
+        "H7a_prediction_MeV_50dps": "6.5516144058718427102115131946641938062418212134459",
+        "H7a_prediction_MeV_float": 6.551614405871843,
+        "H7a_gap_pct_50dps": "3.18632473223",
+        "H7a_gap_pct": 3.186324732234482,
+        "H1_prediction_MeV_50dps": "6.5516144058718427102115131946641938062418212134459",
+        "H1_prediction_MeV_float": 6.551614405871843,
+        "H1_gap_pct_50dps": "3.18632473223",
+        "H1_gap_pct": 3.186324732234482
+      },
+      {
+        "label": "4He",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "A_minus_2": 2,
+        "anchor_definition": "Δ_cat(⁴He) − 2·Δ_cat(³He)",
+        "anchor_MeV_50dps": "13.196873807547969822498471637550955216272050171236",
+        "anchor_MeV_float": 13.19687380754797,
+        "q_integer_A_minus_2_50dps": "2.0108968691184816894615797369210968495248082560009",
+        "H7a_prediction_MeV_50dps": "13.174620896439230064733326106621405858493327918052",
+        "H7a_prediction_MeV_float": 13.17462089643923,
+        "H7a_gap_pct_50dps": "-0.16862259527",
+        "H7a_gap_pct": -0.16862259526958706,
+        "H1_prediction_MeV_50dps": "13.103228811743685420423026389328387612483642426892",
+        "H1_prediction_MeV_float": 13.103228811743685,
+        "H1_gap_pct_50dps": "-0.709599842886",
+        "H1_gap_pct": -0.709599842886457
+      }
+    ],
+    "universality_verdict": {
+      "threshold_pct": 5.0,
+      "all_anchors_within_threshold": false,
+      "doubly_magic_2_2_gap_pct": -0.16862259526958706,
+      "single_magic_2_1_gap_pct": 19.537040737357177,
+      "single_magic_1_2_gap_pct": 3.186324732234482,
+      "interpretation": "If all single-magic + doubly-magic gaps are within 5%, the [A−2]_q multiplicative form is empirically universal across the four-atom probe set, supporting the substrate-derivation candidates D-1 / D-2 / D-3 in the audit doc.  If single-magic gaps are large but doubly-magic is tight, H7a is specific to the (2, 2) anchor and the substrate derivation must be reformulated (D-3 would be falsified; D-1 or D-2 may still apply with additional Z/N-dependent factors)."
+    }
+  }
+}

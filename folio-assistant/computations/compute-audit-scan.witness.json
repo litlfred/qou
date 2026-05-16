@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-16T01:45:34.173821+00:00",
-  "commitSha": "814d519e4503ccb0bcb695ae90233a6df9b47466",
+  "computedAt": "2026-05-16T02:01:22.671201+00:00",
+  "commitSha": "f25a90e39b79f432a895ffabe5e268da8af040b2",
   "assertions": [],
   "allPassed": true,
   "durationMs": 7,
@@ -13,7 +13,7 @@
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 416,
+    "files_scanned": 421,
     "patterns": [
       "P15",
       "P16",
@@ -24,7 +24,7 @@
   },
   "data": {
     "by_pattern_count": {
-      "P15": 112,
+      "P15": 114,
       "P16": 89,
       "P21": 23,
       "P30": 96,
@@ -1912,6 +1912,20 @@
         "line": 1,
         "snippet": "Hoefsmit construction without BlockCache",
         "note": "syt_prefix_cache.BlockCache caches block values by content distance ρ; precomputed SYT→index dict eliminates O(d_λ²) swap-partner search. Numerical-q callers can wire it directly. Ref: ocneanu_weights.py wiring."
+      },
+      {
+        "pattern": "P15",
+        "file": "probe_per_orientation_skein.py",
+        "line": 84,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "probe_per_orientation_skein.py",
+        "line": 93,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",

@@ -844,9 +844,22 @@ def run_sweep_for_mode(tower_mode: str, isotopes: list, *, verbose: bool = True,
                 isotope_label=iso, tower_mode=tower_mode,
                 chirality_source=chirality_source)
         except Exception as exc:
+            # Surface a structured `error_kind` so downstream consumers
+            # can distinguish T1-witness gaps (A ≥ 5 atoms not yet
+            # computed) from genuine compute regressions.
+            err_msg = f"{type(exc).__name__}: {exc}"
+            error_kind = "unknown"
+            if isinstance(exc, KeyError) and "no canonical T1" in str(exc):
+                error_kind = "T1_witness_missing"
+            elif isinstance(exc, (ValueError, IndexError)):
+                error_kind = "compute_failure"
             rows.append({"isotope": iso, "Z": Z, "N": N, "A": Z + N,
                          "M_codata": M_codata,
-                         "error": f"{type(exc).__name__}: {exc}"})
+                         "error": err_msg,
+                         "error_kind": error_kind})
+            if verbose:
+                print(f"  {iso:<6} [{error_kind}] {err_msg[:80]}",
+                      flush=True)
             continue
         # Calibration arithmetic stays in mpf (per Gemini #5).
         # Unit reminder (per Gemini review on PR #542):
