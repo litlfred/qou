@@ -62,10 +62,10 @@ After this file:
 
 | step | content | Lean status |
 |---|---|---|
-| **Step C (numerical-equivalence axiom)** | exact arithmetic match | ✅ closed (item 2) |
-| **Step B (axiomatic closure map)** | two atomic axioms | ✅ closed |
-| **Step A 2-strand (concrete types)** | $\sigma^2 \to$ Hopf $\to -2$ | ✅ closed |
-| **Step A n-strand (sub-braid extraction)** | composed under 1 axiom | ✅ closed conditionally |
+| **Step C (numerical-equivalence axiom)** | exact arithmetic match | closed (item 2) |
+| **Step B (axiomatic closure map)** | two atomic axioms | closed |
+| **Step A 2-strand (concrete types)** | $\sigma^2 \to$ Hopf $\to -2$ | closed |
+| **Step A n-strand (sub-braid extraction)** | composed under 1 axiom | closed conditionally |
 | **Remaining**: dominant-sub-braid combinatorial fact | empirically verified | open Lean-engineering |
 
 The single remaining axiomatic content is a **specific combinatorial

@@ -153,6 +153,7 @@ theorem hoefsmitB_bar_invariant (q : ℝ) (hq : 0 < q) :
   rw [Real.sqrt_div_self' ]
   -- placeholder — exact rewriting beyond the current scope; record
   -- as a future fill via field_simp + Real.sqrt_div + Real.sqrt_sq.
+  -- Ref: [manuscript] prop:q-beta-categorical-precision-ladder §"bar invariance"
   sorry
 
 /-! ## Q_β categorical-derivation expansion -/
