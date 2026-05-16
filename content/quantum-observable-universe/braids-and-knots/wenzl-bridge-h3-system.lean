@@ -146,18 +146,35 @@ theorem wenzl_matrix_det_nonzero_at_q_zero_one_excluded (q : ℝ)
 Given det(A) ≠ 0 at generic q, the system A · y = b has a unique
 solution by Cramer's rule. -/
 
-/-- **Wenzl-bridge solution existence** (Cramer's rule). For generic q,
-    the linear system A · y = b has a unique solution `(y_(3), y_(2,1), y_(1,1,1))`. -/
+/-- **Wenzl-bridge solution existence** (Cramer's rule). For any positive
+    real q, the linear system A · y = b has a UNIQUE solution
+    `(y_(3), y_(2,1), y_(1,1,1))`.
+
+    Proof: det(A) = -3·(q+q⁻¹) ≠ 0 for q > 0, so A is invertible. The
+    unique solution is y := A⁻¹ · b; existence via A·y = b reduces to
+    A·A⁻¹·b = b (matrix-inverse identity); uniqueness via injectivity
+    of A.mulVec. -/
 -- Ref: [manuscript] rem:wenzl-bridge-h3-system
 -- Ref: [wenzl1988] doi:10.1007/BF01239526
-theorem wenzl_bridge_solution_exists (q : ℝ)
-    (hq_ne_zero : q ≠ 0) (hq_ne_one : q ≠ 1) (hq_ne_neg_one : q ≠ -1) :
+theorem wenzl_bridge_solution_exists (q : ℝ) (hq_pos : 0 < q) :
     ∃! y : Fin 3 → ℝ,
       (wenzlMatrix q).mulVec y = wenzlRHS q := by
-  -- Use Mathlib's `Matrix.mul_vec_eq_iff_unique` (or similar) under the
-  -- non-singularity hypothesis.
-  -- Closed by Matrix.exists_unique_of_det_ne_zero + the lemma above.
-  -- Ref: [manuscript] rem:wenzl-bridge-h3-system
-  sorry
+  -- A := wenzlMatrix q has non-zero determinant for q > 0.
+  have h_det_ne : Matrix.det (wenzlMatrix q) ≠ 0 :=
+    wenzl_matrix_det_nonzero q hq_pos
+  -- The unique solution is y := A⁻¹.mulVec b.
+  refine ⟨(wenzlMatrix q)⁻¹.mulVec (wenzlRHS q), ?_, ?_⟩
+  · -- Existence: A · (A⁻¹ · b) = b
+    rw [← Matrix.mulVec_mulVec]
+    rw [Matrix.mul_nonsing_inv _ (Matrix.isUnit_iff_isUnit_det.mpr (isUnit_iff_ne_zero.mpr h_det_ne))]
+    simp
+  · -- Uniqueness: any other y' with A·y' = b satisfies y' = A⁻¹ · b
+    intro y' h_y'
+    have h_mul : (wenzlMatrix q)⁻¹.mulVec ((wenzlMatrix q).mulVec y')
+              = (wenzlMatrix q)⁻¹.mulVec (wenzlRHS q) := by
+      rw [h_y']
+    rw [← Matrix.mulVec_mulVec, Matrix.nonsing_inv_mul _
+        (Matrix.isUnit_iff_isUnit_det.mpr (isUnit_iff_ne_zero.mpr h_det_ne))] at h_mul
+    simpa using h_mul.symm
 
 end QOU.BraidKnot
