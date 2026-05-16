@@ -1,3 +1,12 @@
+import Mathlib.Tactic
+import QOU.MathlibExt.SDP
+import QOU.MathlibExt.SDPEmptyConstraints
+import QOU.HeckeAlgebra.Common
+import QOU.BraidKnot.LightNucleus
+import QOU.BraidKnot.WitnessR5Full
+import QOU.BraidKnot.TritiumWitness
+import QOU.BraidKnot.CanonicalKnotIdSDPUniqueness
+
 /-!
 # QOU.BraidKnot.AppliedTritiumUniqueness
 
@@ -24,15 +33,6 @@ certificate gets concrete numerical Wedderburn-block min-eigs.
 - `QOU.BraidKnot.CanonicalKnotIdSDPUniqueness` (abstract bridge)
 - PR #608 deferred-Hoefsmit-H5
 -/
-
-import Mathlib.Tactic
-import QOU.MathlibExt.SDP
-import QOU.MathlibExt.SDPEmptyConstraints
-import QOU.HeckeAlgebra.Common
-import QOU.BraidKnot.LightNucleus
-import QOU.BraidKnot.WitnessR5Full
-import QOU.BraidKnot.TritiumWitness
-import QOU.BraidKnot.CanonicalKnotIdSDPUniqueness
 
 namespace QOU.BraidKnot
 

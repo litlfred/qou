@@ -97,34 +97,36 @@ classical-limit decategorification principle. -/
 theorem hoefsmitB_bar_invariant (q : ℝ) (hq : 0 < q) :
     hoefsmitB q⁻¹ = hoefsmitB q := by
   -- Ref: [manuscript] prop:q-beta-categorical-precision-ladder
-  unfold hoefsmitB
-  -- Need: √((q⁻¹)⁴ + (q⁻¹)² + 1) / ((q⁻¹)² + 1) = √(q⁴ + q² + 1) / (q² + 1)
-  -- Multiply numerator and denominator by q² on the right side.
-  -- (q⁻¹)⁴ + (q⁻¹)² + 1 = (1 + q² + q⁴) / q⁴
-  -- √((1 + q² + q⁴) / q⁴) = √(1 + q² + q⁴) / q²    (q > 0)
-  -- (q⁻¹)² + 1 = (1 + q²) / q²
-  -- ratio = (√(1 + q² + q⁴) / q²) / ((1 + q²) / q²) = √(1 + q² + q⁴) / (1 + q²)
-  -- which equals hoefsmitB q.
+  -- Strategy: show both sides square to (q⁴+q²+1)/(q²+1)² (which is
+  -- manifestly bar-invariant), and both are non-negative.
   have hq_ne : q ≠ 0 := ne_of_gt hq
-  have hq2 : (q^2 : ℝ) > 0 := by positivity
-  have hq2_ne : (q^2 : ℝ) ≠ 0 := ne_of_gt hq2
-  have h_num_pos : (q^4 + q^2 + 1 : ℝ) > 0 := by positivity
-  -- (q⁻¹)^4 + (q⁻¹)^2 + 1 = (1 + q² + q⁴) / q⁴
-  have h_num : (q⁻¹)^4 + (q⁻¹)^2 + 1 = (1 + q^2 + q^4) / q^4 := by
-    field_simp
-    ring
-  -- (q⁻¹)^2 + 1 = (1 + q²) / q²
-  have h_den : ((q⁻¹)^2 + 1 : ℝ) = (1 + q^2) / q^2 := by
-    field_simp
-  rw [h_num, h_den]
-  -- √((1 + q² + q⁴) / q⁴) / ((1 + q²) / q²)
-  --   = (√(1 + q² + q⁴) / q²) / ((1 + q²) / q²)
-  --   = √(1 + q² + q⁴) / (1 + q²)
-  --   = √(q⁴ + q² + 1) / (q² + 1)
-  rw [Real.sqrt_div_self' ]
-  -- placeholder — exact rewriting beyond the current scope; record
-  -- as a future fill via field_simp + Real.sqrt_div + Real.sqrt_sq.
-  sorry
+  have hq_pos : (0 : ℝ) < q := hq
+  have hq2_pos : (0 : ℝ) < q^2 := by positivity
+  have hq2_ne : q^2 ≠ 0 := ne_of_gt hq2_pos
+  have h_num_pos : (0 : ℝ) ≤ q^4 + q^2 + 1 := by positivity
+  have h_den_pos : (0 : ℝ) < q^2 + 1 := by positivity
+  have h_den_ne : q^2 + 1 ≠ 0 := ne_of_gt h_den_pos
+  -- LHS: √((q⁻¹)^4 + (q⁻¹)^2 + 1) / ((q⁻¹)^2 + 1)
+  -- RHS: √(q^4 + q^2 + 1) / (q^2 + 1)
+  -- Both are non-negative (sqrt + positive denominator), so it suffices
+  -- to show their squares are equal.
+  unfold hoefsmitB
+  have hL_pos : (0 : ℝ) ≤ Real.sqrt ((q⁻¹)^4 + (q⁻¹)^2 + 1) / ((q⁻¹)^2 + 1) := by
+    apply div_nonneg (Real.sqrt_nonneg _)
+    positivity
+  have hR_pos : (0 : ℝ) ≤ Real.sqrt (q^4 + q^2 + 1) / (q^2 + 1) := by
+    apply div_nonneg (Real.sqrt_nonneg _)
+    linarith
+  apply (sq_eq_sq' (by linarith [hL_pos]) hR_pos).mp
+  -- Squares match:
+  -- LHS² = ((q⁻¹)^4 + (q⁻¹)^2 + 1) / ((q⁻¹)^2 + 1)²
+  -- RHS² = (q^4 + q^2 + 1) / (q^2 + 1)²
+  -- We show LHS² = RHS² via field_simp + ring.
+  rw [div_pow, div_pow, Real.sq_sqrt h_num_pos]
+  have h_lnum_pos : (0 : ℝ) ≤ (q⁻¹)^4 + (q⁻¹)^2 + 1 := by positivity
+  rw [Real.sq_sqrt h_lnum_pos]
+  field_simp
+  ring
 
 /-! ## Q_β categorical-derivation expansion -/
 

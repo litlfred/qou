@@ -1,3 +1,7 @@
+import QOU.Basic
+import QOU.BraidKnot.HeckeAnyonicSubstrate
+import QOU.BraidKnot.CrystalGraphRealization
+
 /-!
 # QOU.BraidKnot.RootOfUnityMTCTruncation — root-of-unity MTC (conjecture)
 
@@ -22,10 +26,6 @@ References:
 - Khovanov, M. & Lauda, A. D. (2009).
 - Kashiwara, M. (1991).
 -/
-
-import QOU.Basic
-import QOU.BraidKnot.HeckeAnyonicSubstrate
-import QOU.BraidKnot.CrystalGraphRealization
 
 namespace QOU.BraidKnot
 

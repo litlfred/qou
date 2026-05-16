@@ -1,3 +1,6 @@
+import QOU.Basic
+import QOU.BraidKnot.CrystalGraphRealization
+
 /-!
 # QOU.BraidKnot.ConfinementGradingCorrespondence — confinement = KLR grading shift (conjecture)
 
@@ -16,9 +19,6 @@ References:
 - Brundan, J. & Kleshchev, A. (2009).
 - Khovanov, M. & Lauda, A. D. (2009).
 -/
-
-import QOU.Basic
-import QOU.BraidKnot.CrystalGraphRealization
 
 namespace QOU.BraidKnot
 

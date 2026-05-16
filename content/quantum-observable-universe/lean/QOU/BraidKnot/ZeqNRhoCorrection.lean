@@ -1,3 +1,6 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.GroupPower.Basic
+
 /-!
 # QOU.BraidKnot.ZeqNRhoCorrection
 ## Z=N substrate-q correction to the Kashaev law (axiomatised as a typeclass)
@@ -30,9 +33,6 @@ LaTeX label: `conj:z-eq-n-rho-correction`
 - L-1 (`[A]_q` as Markov-trace evaluation) — write-up open.
 - L-2 (selective q-deformation; ρ_struct q-independent on generic locus) — proof sketch open.
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Algebra.GroupPower.Basic
 
 namespace QOU.BraidKnot
 

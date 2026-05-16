@@ -46,9 +46,9 @@ class KashiwaraCrystal (λ : Type*) [Fintype λ] where
   b_lambda : ℝ
   /-- Crystal-graph matrix-element polynomial at level k. -/
   c_k : ℕ → ℝ
-  /-- Concrete pinning: `c_0 = 0` (baseline form) and `c_1 = b_lambda`
-      (Kashiwara `f̃_1` matrix element). -/
+  /-- Concrete pinning: `c_0 = 0` (baseline form). -/
   c_0_zero : c_k 0 = 0
+  /-- Concrete pinning: `c_1 = b_lambda` (Kashiwara `f̃_1` matrix element). -/
   c_1_eq_b : c_k 1 = b_lambda
 
 /-! ## Anchor 2: Jucys-Murphy spectral decomposition
@@ -63,7 +63,7 @@ class JucysMurphySpectrum (λ : Type*) [Fintype λ] where
   /-- Power-sum symmetric function p_k(J_2, ..., J_n) on V_λ. -/
   power_sum : ℕ → ℝ → ℝ
   /-- Concrete pinning: `p_1 = 0` on V_(2,1) (antisymmetric eigenvalues
-      ±h sum to zero) — the diagonal JM trace vanishes at first order. -/
+      ±h sum to zero). -/
   p_1_vanish : ∀ q : ℝ, power_sum 1 q = 0
 
 /-! ## Anchor 3: Macdonald (q,t) specialisation -/
@@ -91,8 +91,13 @@ the per-anchor data via explicit polynomial identities. -/
 -- Ref: [kashiwara1990] doi:10.1215/S0012-7094-90-06120-X
 -- Ref: [macdonald1995] (Macdonald: Symmetric Functions and Hall Polynomials)
 -- Ref: [habiro2002] doi:10.4153/CMB-2002-038-4
+/-- **Asymptotic-expansion synthesis theorem.** All four anchors
+    (Kashiwara crystal, Jucys-Murphy, Macdonald, Habiro) predict the
+    same `c_k^{(λ)}(b_λ)` coefficients in the τ_M asymptotic
+    expansion. This statement is axiomatic at the class level; per-irrep
+    instances refine it. -/
 /-- **Asymptotic-expansion synthesis theorem.** The Kashiwara crystal
-    provides the canonical c_k generator with two concrete pinned
+    provides the canonical `c_k` generator with two concrete pinned
     values: `c_0 = 0` and `c_1 = b_λ`. The other three anchors
     (Jucys-Murphy, Macdonald, Habiro) provide their own coefficient
     functions; the synthesis at the class level extracts the Kashiwara

@@ -1,3 +1,10 @@
+import Mathlib.CategoryTheory.Filtered.Basic
+import Mathlib.Algebra.Homology.HomologicalComplex
+import Mathlib.Data.Set.Basic
+import Mathlib.Order.Bounds.Basic
+import Mathlib.Tactic
+import QOU.LiftingDescent.HomologicalCondensation
+
 /-!
 # QOU.LiftingDescent.BBStratification — abstract BB-stratification + spectral sequence
 
@@ -40,13 +47,6 @@ infrastructure).
   — the underlying generic infrastructure.
 - [manuscript] lifting-and-descent / homological-shell-condensation
 -/
-
-import Mathlib.CategoryTheory.Filtered.Basic
-import Mathlib.Algebra.Homology.HomologicalComplex
-import Mathlib.Data.Set.Basic
-import Mathlib.Order.Bounds.Basic
-import Mathlib.Tactic
-import QOU.LiftingDescent.HomologicalCondensation
 
 namespace QOU.LiftingDescent.BBStratification
 

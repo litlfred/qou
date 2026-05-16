@@ -49,9 +49,7 @@ from codata_constants import M_E_MEV, M_P_MEV_VALIDATION, M_N_MEV_VALIDATION  # 
 
 mp.mp.dps = 50
 
-from experimental_constants import VOL_BORROMEAN_50DPS_STR  # noqa: E402
-
-VOL_BORROMEAN = mp.mpf(VOL_BORROMEAN_50DPS_STR)
+VOL_BORROMEAN = mp.mpf("7.32772475587766148235147121870981010907842498879866")
 
 
 def _q_0_50dps() -> mp.mpf:
@@ -88,9 +86,9 @@ def _direct_tau_M_at_q0(Z: int, N: int) -> tuple[mp.mpf, list[dict]]:
         total = total + y * chi
         per_lam.append({
             "partition": list(lam),
-            "chi_at_q0":         str(chi_at_q0_50),
-            "y_lambda_at_q0":    str(y_at_q0_50),
-            "contrib_at_q0":     str(chi_at_q0_50 * y_at_q0_50),
+            "chi_at_q0":      str(chi_at_q0_50),
+            "y_lambda_at_q0": str(y_at_q0_50),
+            "contrib_at_q0":  str(chi_at_q0_50 * y_at_q0_50),
         })
     total_at_q0_50 = sp.cancel(total).subs(q, q0).evalf(50)
     return mp.mpf(mp.nstr(total_at_q0_50, 50)), per_lam

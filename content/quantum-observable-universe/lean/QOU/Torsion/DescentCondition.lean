@@ -1,3 +1,5 @@
+import Mathlib.Algebra.Group.Basic
+
 /-!
 # QOU.Torsion.DescentCondition — Twisted 2-cocycle condition
 
@@ -15,8 +17,6 @@ LaTeX label: `prop:descent-condition`
 - [yekutieli2010] https://doi.org/10.1016/j.aim.2009.12.006
 - [manuscript] §3-lifting-of-quantum-torsion/descent-condition
 -/
-
-import Mathlib.Algebra.Group.Basic
 
 namespace QOU.Torsion
 

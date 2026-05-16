@@ -1,3 +1,5 @@
+import Mathlib.Data.Finset.Basic
+
 /-!
 # QOU.Common.MagicNumbers — shared canonical declaration
 
@@ -20,8 +22,6 @@ Each of those files now imports this module and references
 Ref: PR #501 review — gemini-code-assist[bot] flagged the
 cross-file duplication on commit 0e86a151 / 57eae509.
 -/
-
-import Mathlib.Data.Finset.Basic
 
 namespace QOU.Common
 

@@ -1,3 +1,9 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
+import Mathlib.Combinatorics.Enumerative.Partition
+import QOU.GaugeFieldFluidDynamics
+import QOU.Mathlib.RSKBridge
+
 /-!
 # QOU.Mathlib.WenzlBridgeConcrete — concrete Wenzl-bridge values
 
@@ -32,12 +38,6 @@ axiomatises the abstract bridge identity).  This file gives the
 concrete *scalar values* for the small-`n` Wedderburn blocks
 without needing the abstract `H_n(q)` carrier.
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Tactic
-import Mathlib.Combinatorics.Enumerative.Partition
-import QOU.GaugeFieldFluidDynamics
-import QOU.Mathlib.RSKBridge
 
 namespace QOU.Mathlib.WenzlBridgeConcrete
 

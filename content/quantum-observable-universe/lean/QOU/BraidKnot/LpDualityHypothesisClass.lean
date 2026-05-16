@@ -1,3 +1,5 @@
+import QOU.Basic
+
 /-!
 # QOU.BraidKnot.LpDualityHypothesisClass — finite LP strong-duality + complementary slackness as a §3b-cond class
 
@@ -40,8 +42,6 @@ References:
 - Schrijver, A. (1986). Theory of Linear and Integer Programming,
   Wiley. §7.2 (strong duality), §7.4 (complementary slackness).
 -/
-
-import QOU.Basic
 
 namespace QOU.BraidKnot
 

@@ -113,9 +113,7 @@ def main() -> int:
     print()
 
     chain_match = mp.fabs(eps_delta_S - eps_delta_S_predicted) / mp.fabs(eps_delta_S)
-    # Threshold scales with the global mpmath precision floor (dps).
-    # 10 digits of headroom below the dps floor catches genuine algebraic
-    # mismatch while ignoring numerical noise in the last few mp digits.
+    # Threshold scales with the global mpmath dps (10-digit headroom).
     chain_threshold = mp.mpf(10) ** (-mp.mp.dps + 10)
     print(f"  Chain match: |ε_ΔS − damping · ε_Q| / |ε_ΔS| = {mp.nstr(chain_match, 6)}")
     print(f"  Threshold (10^(-dps+10) at dps={mp.mp.dps})       = {mp.nstr(chain_threshold, 6)}")

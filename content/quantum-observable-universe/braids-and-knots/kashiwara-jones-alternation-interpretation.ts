@@ -26,4 +26,11 @@ export default remark({
     "hyperbolic-torus",
     "1ppb-roadmap",
   ],
+  computation: {
+    witness: [
+      "../../folio-assistant/computations/q-beta-per-irrep-cos.witness.json",
+      "../../folio-assistant/computations/q-beta-three-irrep-closed-form.witness.json",
+      "../../folio-assistant/computations/tau-M-four-anchors.witness.json",
+    ],
+  },
 });

@@ -1,3 +1,7 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Data.Set.Basic
+import QOU.Common.MagicNumbers
+
 /-!
 # QOU.LiftingDescent.HomologicalCondensation — magic-number condensation
 
@@ -27,10 +31,6 @@ LaTeX label: `conj:homological-shell-condensation`
 - [mathas1999] https://doi.org/10.1090/ulect/015
 - [manuscript] lifting-and-descent / homological-shell-condensation
 -/
-
-import Mathlib.Data.Real.Basic
-import Mathlib.Data.Set.Basic
-import QOU.Common.MagicNumbers
 
 namespace QOU.LiftingDescent.HomologicalCondensation
 

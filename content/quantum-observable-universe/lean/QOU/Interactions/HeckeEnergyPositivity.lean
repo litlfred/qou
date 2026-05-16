@@ -1,3 +1,7 @@
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
+
 /-!
 # QOU.Interactions.HeckeEnergyPositivity — q-integer positivity and Hecke-energy positivity
 
@@ -20,10 +24,6 @@ LaTeX label: `def:algebraic-primality` (used by Part I.1 of
 - [mathas1999] https://doi.org/10.1090/ulect/015 — Iwahori–Hecke
   algebras and Schur algebras
 -/
-
-import Mathlib.Algebra.BigOperators.Basic
-import Mathlib.Data.Real.Basic
-import Mathlib.Tactic
 
 namespace QOU.Interactions.HeckeEnergyPositivity
 

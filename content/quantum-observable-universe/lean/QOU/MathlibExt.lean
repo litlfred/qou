@@ -32,18 +32,18 @@ namespace QOU.MathlibExt
     TODO upstream: `Mathlib.Data.List.Sort` or
     `Mathlib.Algebra.BigOperators.Group.List`. -/
 theorem List.sum_insertionSort_eq {α : Type*} [AddCommMonoid α]
-    (xs : List α) (r : α → α → Bool) :
+    (r : α → α → Prop) [DecidableRel r] (xs : List α) :
     (xs.insertionSort r).sum = xs.sum :=
-  (xs.perm_insertionSort r).symm.sum_eq
+  (xs.perm_insertionSort r).sum_eq
 
 /-- Sorting (by any relation) preserves the list's product
     (for commutative monoids).
 
     TODO upstream: `Mathlib.Data.List.Sort`. -/
 theorem List.prod_insertionSort_eq {α : Type*} [CommMonoid α]
-    (xs : List α) (r : α → α → Bool) :
+    (r : α → α → Prop) [DecidableRel r] (xs : List α) :
     (xs.insertionSort r).prod = xs.prod :=
-  (xs.perm_insertionSort r).symm.prod_eq
+  (xs.perm_insertionSort r).prod_eq
 
 /-! ## §2  Foldl as initial · product (commutative monoids) -/
 
@@ -105,7 +105,7 @@ theorem List.commute_init_prod {α : Type*} [Monoid α]
   | nil => simp [List.prod_nil, Commute.one_right]
   | cons hd tl ih =>
     rw [List.prod_cons]
-    refine Commute.mul_right (h hd (List.mem_cons_self hd tl)) ?_
+    refine Commute.mul_right (h hd List.mem_cons_self) ?_
     exact ih (fun x hx => h x (List.mem_cons_of_mem _ hx))
 
 /-- **Foldl/foldr equality from a Commute hypothesis on the
@@ -136,7 +136,7 @@ theorem List.prod_eq_of_perm {α : Type*} [CommMonoid α]
     xs.prod = ys.prod :=
   h.prod_eq
 
-/-- For a `CommMonoid`, the underlying Mathlib lemma
+/-! For a `CommMonoid`, the underlying Mathlib lemma
     `List.Perm.prod_eq` already gives us order-invariance of
     products — folding from any direction over any permutation of
     the list produces the same answer. The two corollaries below

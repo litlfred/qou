@@ -63,7 +63,7 @@ class QDimension (Λ : Type u) (R : Type v) where
     Stated as a class field rather than constructed (the
     summation requires a finite-decidable universe of partitions
     of `k`). -/
-class HasPartitionFunction (Λ : Type u) (R : Type v) [Field R] where
+class HasPartitionFunction (Λ : Type u) (R : Type v) [Field R] [LT R] where
   /-- The partition function at level `k`. -/
   Z : ℕ → R
   /-- `Z(k) > 0` for all `k ≥ 0`. -/
@@ -72,36 +72,36 @@ class HasPartitionFunction (Λ : Type u) (R : Type v) [Field R] where
 variable [Field R] [LinearOrder R] [IsStrictOrderedRing R]
 variable [QDimension Λ R] [HasPartitionFunction Λ R]
 
-/-- **q-Plancherel measure**: `P_q(λ) = d_q(λ)² / Z_q(|λ|)`.
+/-- **q-Plancherel measure**: `P_q(lam) = d_q(lam)² / Z_q(|lam|)`.
 
     Stated as a function `Λ → ℕ → R` where the second argument is
-    the level `k = |λ|`. The actual constraint that the input
+    the level `k = |lam|`. The actual constraint that the input
     partition has size `k` is left to the caller. -/
-def measure (λ : Λ) (k : ℕ) : R :=
-  (QDimension.dq λ : R)^2 / HasPartitionFunction.Z (Λ := Λ) k
+def measure (lam : Λ) (k : ℕ) : R :=
+  (QDimension.dq lam : R)^2 / HasPartitionFunction.Z (Λ := Λ) k
 
 /-- **Positivity of the q-Plancherel measure**: every partition has
-    non-negative weight (zero only when `d_q(λ) = 0`). -/
-theorem measure_nonneg (λ : Λ) (k : ℕ) :
-    0 ≤ measure (R := R) (Λ := Λ) λ k := by
+    non-negative weight (zero only when `d_q(lam) = 0`). -/
+theorem measure_nonneg (lam : Λ) (k : ℕ) :
+    0 ≤ measure (R := R) (Λ := Λ) lam k := by
   unfold measure
   exact div_nonneg (sq_nonneg _) (le_of_lt (HasPartitionFunction.Z_pos k))
 
-/-- **Vanishing on null partitions**: if `d_q(λ) = 0`, then
-    `measure λ k = 0`. -/
-theorem measure_eq_zero_of_dq_zero (λ : Λ) (k : ℕ)
-    (hdq : (QDimension.dq λ : R) = 0) :
-    measure (R := R) (Λ := Λ) λ k = 0 := by
+/-- **Vanishing on null partitions**: if `d_q(lam) = 0`, then
+    `measure lam k = 0`. -/
+theorem measure_eq_zero_of_dq_zero (lam : Λ) (k : ℕ)
+    (hdq : (QDimension.dq lam : R) = 0) :
+    measure (R := R) (Λ := Λ) lam k = 0 := by
   unfold measure
   rw [hdq]
   simp
 
 /-- **Measure scales as `d_q²`**: the q-Plancherel measure is
-    `d_q(λ)²` divided by the partition function. Specifically,
-    `Z_q(k) · measure λ k = d_q(λ)²`. -/
-theorem measure_mul_partitionFunction (λ : Λ) (k : ℕ) :
-    HasPartitionFunction.Z (Λ := Λ) k * measure (R := R) (Λ := Λ) λ k
-      = (QDimension.dq λ : R) ^ 2 := by
+    `d_q(lam)²` divided by the partition function. Specifically,
+    `Z_q(k) · measure lam k = d_q(lam)²`. -/
+theorem measure_mul_partitionFunction (lam : Λ) (k : ℕ) :
+    HasPartitionFunction.Z (Λ := Λ) k * measure (R := R) (Λ := Λ) lam k
+      = (QDimension.dq lam : R) ^ 2 := by
   unfold measure
   rw [mul_div_cancel₀]
   exact ne_of_gt (HasPartitionFunction.Z_pos k)
@@ -122,7 +122,7 @@ provides a uniform `C` such that
 -- Ref: [feray2010] Theorem 1.1
 class HasQPlancherelCLT (Λ : Type u) (R : Type v)
     [Field R] [LinearOrder R] [IsStrictOrderedRing R]
-    [QDimension Λ R] [HasPartitionFunction Λ R] : Prop where
+    [QDimension Λ R] [HasPartitionFunction Λ R] where
   /-- The Féray-Méliot constant. -/
   Cq : ℝ
   /-- The constant is positive. -/

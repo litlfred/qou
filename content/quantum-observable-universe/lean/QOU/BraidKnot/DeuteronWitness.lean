@@ -1,3 +1,7 @@
+import Mathlib.Tactic
+import QOU.BraidKnot.LightNucleus
+import QOU.BraidKnot.WitnessR5Full
+
 /-!
 # QOU.BraidKnot.DeuteronWitness — placeholder R5-full witness for ²H
 
@@ -32,10 +36,6 @@ cost re-run.
 - PR #608 followup #1 (multi-term cost wiring)
 - `thm:knot-mass-formula-unified` (the full T2-T6 formula)
 -/
-
-import Mathlib.Tactic
-import QOU.BraidKnot.LightNucleus
-import QOU.BraidKnot.WitnessR5Full
 
 namespace QOU.BraidKnot
 

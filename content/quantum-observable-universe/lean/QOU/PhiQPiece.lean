@@ -1,3 +1,6 @@
+import Mathlib.Data.Finset.Basic
+import Mathlib.Data.Real.Basic
+
 /-!
 # QOU.PhiQPiece — Φ_q-piece sub-link of a braid closure
 
@@ -19,9 +22,6 @@ LaTeX label: `def:phi-q-piece`
 - [manuscript] Ch 3 §sec:calibration-algebraic-mass / phi-q-piece
 - [kauffman1991] Knots and Physics, World Scientific, ISBN 978-981-02-0343-7
 -/
-
-import Mathlib.Data.Finset.Basic
-import Mathlib.Data.Real.Basic
 
 namespace QOU.PhiQPiece
 
