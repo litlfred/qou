@@ -241,9 +241,8 @@ def compute_tr_m_for_atom(Z: int, N: int, label: str,
 
 
 def main() -> int:
-    from q_parameter import Q as _Q_FLOAT_DOC  # noqa: E402
-    global Q_FLOAT_FOR_DOC  # captured by the witness's calibration_anchors
-    Q_FLOAT_FOR_DOC = _Q_FLOAT_DOC
+    from q_parameter import Q as Q_FLOAT_FOR_DOC  # noqa: E402
+    # captured by the witness's calibration_anchors
     rows = []
     for (Z, N, label, specs) in ATOMS:
         print(f"\n→ Computing |tr_M({label})| via Wenzl LR "

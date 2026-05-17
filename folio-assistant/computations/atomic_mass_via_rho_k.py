@@ -217,14 +217,10 @@ def load_atomic_tr_m() -> dict[str, mp.mpf]:
     #    fall back to whichever layer above supplies them.
     lr_witness = HERE / "rho-k-full-via-wenzl-lr.witness.json"
     # The LR consumer uses the short atom labels (D, T, 3He, 4He,
-    # 6Li, 7Li); main()'s tr_M lookup uses the long form via
-    # ATOM_LABEL_TO_TR_M_KEY (deuteron, tritium, ...). Write both
-    # so the LR overlay is visible to either consumer path.
-    _LR_LABEL_TO_LONG = {
-        "D": "deuteron", "T": "tritium",
-        "3He": "helium-3", "4He": "helium-4",
-        "5Li": "lithium-5", "6Li": "lithium-6", "7Li": "lithium-7",
-    }
+    # 6Li, 7Li); main()'s tr_M lookup uses the long form via the
+    # module-level `ATOM_LABEL_TO_TR_M_KEY` (deuteron, tritium, ...).
+    # Reuse that mapping so the LR overlay is visible to either
+    # consumer path.
     if lr_witness.exists():
         try:
             dlr = json.loads(lr_witness.read_text())
@@ -239,7 +235,7 @@ def load_atomic_tr_m() -> dict[str, mp.mpf]:
                 continue
             v = abs(mp.mpf(str(tr_str)))
             out[atom] = v
-            long_key = _LR_LABEL_TO_LONG.get(atom)
+            long_key = ATOM_LABEL_TO_TR_M_KEY.get(atom)
             if long_key is not None:
                 out[long_key] = v
     return out
