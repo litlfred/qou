@@ -206,12 +206,23 @@ structural fact that an instance exists at this `(n, q, k)`; their
 substantive per-(n, q) discharges are the open R&D listed in the
 content block's `.md`. -/
 
-/-- **Yang-Baxter at H_3** — instance witness for `n = 3` at any `q`.
+/-! **Yang-Baxter at H_3** — instance NOT provided here.
 
-    Substantive discharge: `hoefsmit_sigma0 q * hoefsmit_sigma1 q
-    * hoefsmit_sigma0 q = hoefsmit_sigma1 q * hoefsmit_sigma0 q
-    * hoefsmit_sigma1 q` in `hoefsmit-V21-cos-symmetrization.lean`. -/
-instance yangBaxter_H3 (q : ℝ) : YangBaxterRule 3 q := ⟨0, rfl⟩
+A symbolic computation (see follow-up R&D PR #672,
+`rem:post-pr665-open-rd-inventory`) shows the chapter
+`hoefsmit_sigma1` conventions FAIL the YB cubic with
+`σ_0 = diag(q, -q⁻¹)` — the (0,0)-entry constraint gives
+`b² = -q⁶/(q²+1)²` (impossible since `b² > 0`).
+
+The fix is a `d_1 ↔ d_2` swap in
+`hoefsmit-V21-cos-symmetrization.lean` (zero downstream regressions
+per the basis-permutation analysis in PR #672). Until that swap
+lands, providing a `⟨0, rfl⟩` instance of `YangBaxterRule 3 q`
+would falsely assert YB holds for the current conventions.
+
+The instance is therefore **deliberately omitted** here; downstream
+consumers of `YangBaxterRule 3 q` must provide their own discharge
+(or wait for the swap-fix PR following #672). -/
 
 /-- **q-Young symmetrizers at H_3** — instance witness.
 
@@ -304,11 +315,13 @@ theorem ckFromReduction_matches_ladder
   refine ⟨?_, ?_, ?_, ?_⟩
   all_goals rfl
 
-/-- **Unconditional corollary at H_3.** All four class instances are
-    discharged automatically (by `yangBaxter_H3`, `qYoungSymmetrizers_H3`,
-    `heckeQuadratic_H3`, `gbJet_k{1,2,3,4}`), so the synthesis theorem
-    applies without explicit class-hypothesis assumptions. -/
-theorem ckFromReduction_matches_ladder_H3 (q : ℝ) :
+/-- **Conditional corollary at H_3.** Q-YST + Hecke-quadratic + GB/jet
+    instances elaborate automatically; the `YangBaxterRule 3 q` slot
+    is left explicit until the d_1↔d_2 swap fix lands (see follow-up
+    R&D PR #672, `rem:post-pr665-open-rd-inventory`). Downstream
+    consumers supply their own `[YangBaxterRule 3 q]` instance. -/
+theorem ckFromReduction_matches_ladder_H3 (q : ℝ)
+    [YangBaxterRule 3 q] :
     ckFromReduction q 1 = hoefsmitB_local q
     ∧ ckFromReduction q 2 = (hoefsmitB_local q)^2
     ∧ ckFromReduction q 3 = jonesHopfLocal

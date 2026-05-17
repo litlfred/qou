@@ -34,9 +34,15 @@ namespace QOU.BraidKnot
 
 /-! ## q-integers (local) -/
 
-/-- q-integer `[k]_q = (q^k − q^{-k}) / (q − q^{-1})`. -/
+/-- q-integer `[k]_q = (q^k − q^{-k}) / (q − q^{-1})`.
+
+    The classical limit `q = 1` is handled explicitly because the
+    rational formula is `0/0` at `q = 1` (Lean division-by-zero
+    convention returns 0, but the correct limit is `k`). The
+    `q = 1` guard yields `[k]_1 = k` as expected. -/
 noncomputable def qInt (q : ℝ) (k : ℕ) : ℝ :=
-  (q ^ k - q⁻¹ ^ k) / (q - q⁻¹)
+  if q = 1 then (k : ℝ)
+  else (q ^ k - q⁻¹ ^ k) / (q - q⁻¹)
 
 /-- q-factorial `[k]_q! = [1]_q · [2]_q · ⋯ · [k]_q`. -/
 noncomputable def qFact (q : ℝ) : ℕ → ℝ
