@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-17T02:28:32.095235+00:00",
-  "commitSha": "b9b0cd86503cff7844daffadfe35a369404dac65",
+  "computedAt": "2026-05-17T03:49:01.865482+00:00",
+  "commitSha": "0003dcaffd9fed6eb431be1634593d41b84a6840",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2305,6 +2305,7 @@
         "per-irrep-pole-proton-h3.witness.json",
         "per-nucleon-shift-derivation.witness.json",
         "per-orientation-skein.witness.json",
+        "per-wedderburn-block-ck.witness.json",
         "phase2-m-e-hecke-diagnostic.witness.json",
         "phase3-triton-binding-convention-b.witness.json",
         "photon-operator-table.witness.json",

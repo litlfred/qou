@@ -405,6 +405,8 @@ export default chapter({
         "multi-link-jones-q1-extension",
         "per-wedderburn-block-c5-c6",
         "post-pr665-open-rd-inventory",
+        "hecke-algebra-type-scaffold",
+        "markov-trace-operator-construction",
         "categorical-chain-convergence-mechanisms",
         "tau-M-asymptotic-rep-theory",
         "kashiwara-jones-alternation-interpretation",
