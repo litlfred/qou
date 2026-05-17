@@ -182,8 +182,7 @@ def e_0_n_mev(n: int) -> mp.mpf:
     return e_0_n0_mev() * geometric
 
 
-@lru_cache(maxsize=None)
-def li2q_symmetric(z, q, terms: int = 200):
+def li2q_symmetric(z, q, terms: int | None = None):
     """Symmetric q-dilogarithm Li_2^q(z) = Σ_{n≥1} z^n / (n · [n]_q).
 
     With symmetric q-integer [n]_q = (q^n − q^{-n})/(q − q^{-1}).
@@ -191,9 +190,31 @@ def li2q_symmetric(z, q, terms: int = 200):
     lines 162–183 (the bounded Kashaev specialisation, distinct from
     the divergent Faddeev Φ_q). Series converges for |z| < 1.
 
+    When `terms` is None (default), the count is **dynamically scaled
+    to `mp.mp.dps`** so the truncation error stays below the current
+    precision floor: terms ≈ dps · ln(10) / (-ln|z|) + 20-term margin.
+    For |z| near 1 (e.g. per-atom Wedderburn volumes |V_i| ≈ 0.989),
+    this picks ~1100 terms at 50 dps; for small |z| (substrate
+    ℏ_q² ≈ 0.0098), ~30 terms suffice.
+
+    No `lru_cache` — `mp.mp.dps` is global state and a stale cached
+    result at lower precision would silently leak under a precision
+    bump. The series is cheap enough to recompute.
+
     Uses incremental powers (q_pow *= q, q_inv_pow /= q) to avoid
     repeated O(n) exponentiation in the tight loop.
     """
+    if terms is None:
+        abs_z = abs(z)
+        if abs_z >= 1:
+            raise ValueError(
+                f"li2q_symmetric: series diverges for |z| >= 1 (got {abs_z})"
+            )
+        if abs_z < mp.mpf("1e-12"):
+            terms = 50
+        else:
+            terms = int(mp.ceil(mp.mp.dps * mp.ln(10) / (-mp.ln(abs_z)))) + 20
+            terms = max(50, terms)
     q_minus_qinv = q - 1 / q
     total = mp.mpf(0)
     z_pow = mp.mpf(1)

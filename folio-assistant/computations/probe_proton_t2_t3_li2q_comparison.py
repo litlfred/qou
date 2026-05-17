@@ -113,7 +113,10 @@ def main() -> int:
         try:
             t2_p, t3_p = t23_phi_q(Z, N)
             sum_p = t2_p + t3_p
-        except (KeyError, FileNotFoundError) as e:
+        except (KeyError, FileNotFoundError, ImportError, ModuleNotFoundError) as e:
+            # `t23_phi_q` lazily imports `mass_formula_6term_mpfr_50dps`,
+            # so ImportError / ModuleNotFoundError need to land in the
+            # script-error bucket too — not crash the whole probe.
             phi_q_error = f"{type(e).__name__}: {str(e)[:160]}"
         if phi_q_error is not None:
             sum_p_str = f"script_error:{phi_q_error.split(':',1)[0]}"
