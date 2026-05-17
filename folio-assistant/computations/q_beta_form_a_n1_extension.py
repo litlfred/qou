@@ -218,12 +218,27 @@ def main() -> int:
     # CODATA-calibrated cross-check: E_0^(cal) = Q_β / |Δ(net)|
     delta_net_num = eval_at_q0(delta_net)
     E0_cal_num = q_codata / abs(delta_net_num)
+    # Bounded symmetric q-dilogarithm closure candidate
+    # (conj:alpha-k-categorical-closure):
+    #   E_0^{full,Li_2^q} = E_0^{(N=0)} · (1 + (-Li_2^q(-ℏ_q²)))
+    # with [n]_q = (q^n - q^{-n})/(q - q^{-1}) the symmetric q-integer.
+    x = hbar_q_num ** 2
+    li2q_minus_x = mp.mpf(0)
+    z_pow = mp.mpf(1)
+    q_minus_qinv = q_0 - 1 / q_0
+    for n in range(1, 201):
+        z_pow *= -x
+        n_q = (q_0 ** n - q_0 ** (-n)) / q_minus_qinv
+        li2q_minus_x += z_pow / (n * n_q)
+    E0_full_li2q_num = E0_N0_num * (1 + (-li2q_minus_x))
 
     w.add_data("E0_N0_MeV_50dps", str(E0_N0_num))
     w.add_data("E0_N1_MeV_50dps", str(E0_N1_num))
     w.add_data("E0_full_MeV_50dps", str(E0_full_num))
+    w.add_data("E0_full_li2q_MeV_50dps", str(E0_full_li2q_num))
     w.add_data("E0_calibrated_MeV_50dps", str(E0_cal_num))
     w.add_data("E0_full_vs_calibrated_pct", float((E0_full_num - E0_cal_num) / E0_cal_num * 100))
+    w.add_data("E0_full_li2q_vs_calibrated_pct", float((E0_full_li2q_num - E0_cal_num) / E0_cal_num * 100))
     w.add_data("E0_N0_vs_calibrated_pct", float((E0_N0_num - E0_cal_num) / E0_cal_num * 100))
     w.add_data("Q_beta_N0_MeV", str(Q_N0))
     w.add_data("Q_beta_N1_MeV", str(Q_N1))
