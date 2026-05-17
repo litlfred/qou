@@ -532,6 +532,7 @@ export default chapter({
         "ilp-solution-count-unwrap",
         "shell-schur-weyl-self-duality",
         "compound-beta-shell-calibration",
+        "magic-shell-coupling-kappa",
       ],
     }),
 
