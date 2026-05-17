@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-17T05:36:18.276896+00:00",
-  "commitSha": "e18db18063612a01b9a600c8f73f8d7d1bc495bc",
+  "computedAt": "2026-05-17T06:58:58.621244+00:00",
+  "commitSha": "b1b95a3a3a0dfb9abb6f10cf84d3f53baffdde0d",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -576,7 +576,7 @@
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "d2ef5a283d0202c90a48fc16a5e1116927bafe08",
+  "scriptCommitSha": "875916a587c227572f421c22053ad81371976ccc",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
   "data": {
@@ -2256,6 +2256,7 @@
         "markov-trace-axiomatic-multi-atom.witness.json",
         "markov-trace-axiomatic-proton.witness.json",
         "markov-trace-recursive.witness.json",
+        "markov-trace-via-wenzl-lr.witness.json",
         "markov_weights_symbolic.witness.json",
         "mass-formula-6term.witness.json",
         "mass-from-q-symbolic.witness.json",

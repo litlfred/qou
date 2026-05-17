@@ -79,6 +79,14 @@ path = "src/bin/v8.rs"
 name = "hecke-gram"
 path = "src/bin/hecke_gram.rs"
 
+# Wenzl LR bridge: tensor-product character via LR decomposition.
+# Used by P4ⁱᵛ to compute |tr_M(⁴He)| at H_12 without the full
+# Hoefsmit evaluation. See `src/wenzl_lr.rs` and
+# `docs/audits/2026-05-17-p4tt-migration-triage.md` §"Items 2-4".
+[[bin]]
+name = "hecke-tr-m-wenzl-lr"
+path = "src/bin/hecke_tr_m_wenzl_lr.rs"
+
 # Unified CLI — M2e — dispatches to subcommands (native Gram, exec for legacy).
 [[bin]]
 name = "hecke"
