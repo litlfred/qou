@@ -32,11 +32,13 @@ closed form in $q$, and that closed form lies in one of the two
 families below (or is uniquely determined as a third closed
 form that interpolates them):*
 
-| Candidate | Closed form | Substrate value at $q_0$ | CAL-3 residual |
+| Candidate | Closed form $\mathcal{F}(x)$ | Substrate $E_0^{\text{full}}$ | CAL-3 residual |
 |-----------|-------------|--------------------------:|---------------:|
-| **(a) Geometric** | $\mathcal{F}_{\mathrm{geom}}(x) = 1/(1-x) = \sum_{k\geq 0} x^k$ | $\approx 1.00992$ | overshoots by $+1.75\%$ |
-| **(b) Symmetric q-dilogarithm** | $\mathcal{F}_{\mathrm{Li}_2^q}(x) = 1 + (-\mathrm{Li}_2^q(-x)) = 1 + \sum_{n\geq 1} (-1)^{n+1} x^n/(n \cdot [n]_q)$ | $\approx 1.00980$ | overshoots by $+1.74\%$ |
+| **(a) Geometric** | $1/(1-x) = \sum_{k\geq 0} x^k$ | $:val[E_0_full_MeV]{precision=4}$ MeV | overshoots by $\approx +1.75\%$ |
+| **(b) Symmetric q-dilogarithm** | $1 + (-\mathrm{Li}_2^q(-x)) = 1 + \sum_{n\geq 1} (-1)^{n+1} x^n/(n \cdot [n]_q)$ | $:val[E_0_full_li2q_MeV]{precision=4}$ MeV | overshoots by $\approx +1.74\%$ |
 | **(c) Unknown / interpolating** | open | open | open |
+
+(The dimensionless factor $\mathcal{F}(\hbar_q^2)$ at $q_0 \approx 1.110$ is the ratio of either column to $:val[E_0_N0_MeV]{precision=4}$ MeV — computed live from the witness.)
 
 *The conjecture has three substantive sub-claims:*
 

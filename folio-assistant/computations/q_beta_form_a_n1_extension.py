@@ -221,15 +221,10 @@ def main() -> int:
     # Bounded symmetric q-dilogarithm closure candidate
     # (conj:alpha-k-categorical-closure):
     #   E_0^{full,Li_2^q} = E_0^{(N=0)} · (1 + (-Li_2^q(-ℏ_q²)))
-    # with [n]_q = (q^n - q^{-n})/(q - q^{-1}) the symmetric q-integer.
+    # Centralized helper from derived_masses (avoids duplication).
+    from derived_masses import li2q_symmetric  # noqa: E402
     x = hbar_q_num ** 2
-    li2q_minus_x = mp.mpf(0)
-    z_pow = mp.mpf(1)
-    q_minus_qinv = q_0 - 1 / q_0
-    for n in range(1, 201):
-        z_pow *= -x
-        n_q = (q_0 ** n - q_0 ** (-n)) / q_minus_qinv
-        li2q_minus_x += z_pow / (n * n_q)
+    li2q_minus_x = li2q_symmetric(-x, q_0)
     E0_full_li2q_num = E0_N0_num * (1 + (-li2q_minus_x))
 
     w.add_data("E0_N0_MeV_50dps", str(E0_N0_num))

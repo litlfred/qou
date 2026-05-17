@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-17T06:18:33.379533+00:00",
-  "commitSha": "19d029a42997dabfbc9cf0a23b3a73a07c4e2d2a",
+  "computedAt": "2026-05-17T06:30:19.150510+00:00",
+  "commitSha": "28dc05f11ef528eedd9fe05739121b14b9d8c2f2",
   "assertions": [
     {
       "name": "geometric_N1_lift_overshoots_per_braid_ceiling",
@@ -25,11 +25,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 325,
+  "durationMs": 329,
   "computation": "q-beta-form-a-n1-extension",
   "scriptFile": "q_beta_form_a_n1_extension.py",
-  "scriptHash": "995d48e2860f",
-  "scriptCommitSha": "9ea06353abaeee5fdd5900809353884c2d2aae1d",
+  "scriptHash": "7b00a9fe772b",
+  "scriptCommitSha": "28dc05f11ef528eedd9fe05739121b14b9d8c2f2",
   "description": "Symbolic extension of Form A Q_β to N=1 brane-tower depth. Derives the N=1 correction factor (1 + ℏ_q²) = (2q²-2q+1)/q² from the geometric series of E_0_full = E_0_N=0/(1-ℏ_q²). Closed form: Q_β^A,N=1 = m_e · (q+1) · |q²-2q-1| · (2q²-2q+1) / (2 q⁵). Substrate-only (CAL-1 m_e + CAL-2 q_0); no CAL-3 input. Comparator-only against CODATA Q_β. Class C (diagnostic / prediction).",
   "contentBlock": "prop:neutron-qvalue-symbolic",
   "parameters": {

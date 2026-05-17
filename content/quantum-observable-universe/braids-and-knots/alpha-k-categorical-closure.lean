@@ -52,6 +52,29 @@ class AlphaKCategoricalClosure (q : ℝ) : Type where
   /-- The CAL-3 direction residual vanishes. -/
   cal3_direction_residual_eq_zero : cal3_direction_residual = 0
 
+/-- **Conjectural instance** of `AlphaKCategoricalClosure`.
+
+    The `sorry` here represents the conjecture itself — that there
+    exists a closed-form resummation of the categorical $\alpha_k$
+    stratum prefactors that (a) exists, (b) selects uniquely between
+    the geometric and symmetric q-dilogarithm candidates, and (c)
+    closes CAL-3 in the correct direction. Per CLAUDE.md §3b-cond
+    this is the **only** `sorry` permitted in the dependency chain;
+    downstream conditional theorems take this class as an explicit
+    `[Instance]` hypothesis.
+
+    Path to a stronger proof: per-irrep $\chi_\lambda$ closed forms
+    (shipped in PR #672) enable analytic resummation of the
+    Markov-paired $\alpha_k$ at $H_n$ for $n \geq 4$. The empirical
+    $H_3$ data ($\alpha_0=1, \alpha_1=0, \alpha_2=z^2, \alpha_3=z(1+q^{1/2}-q^{-1/2})$)
+    is insufficient to select between (a) and (b); $H_4$ or
+    higher analysis is required. -/
+-- Ref: [manuscript] conj:alpha-k-categorical-closure
+-- Ref: [manuscript] prop:alpha-k-derivation-procedure
+-- Ref: [wenzl1988] https://doi.org/10.1007/BF01239013
+noncomputable instance (q : ℝ) : AlphaKCategoricalClosure q := by
+  sorry
+
 /-! ## Status
 
 This is an **axiomatized conjecture** (§3b): the `class` is

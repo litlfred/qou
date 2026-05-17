@@ -183,22 +183,33 @@ def e_0_n_mev(n: int) -> mp.mpf:
 
 
 @lru_cache(maxsize=None)
-def _li2q_symmetric(z, q, terms: int = 200):
+def li2q_symmetric(z, q, terms: int = 200):
     """Symmetric q-dilogarithm Li_2^q(z) = Σ_{n≥1} z^n / (n · [n]_q).
 
     With symmetric q-integer [n]_q = (q^n − q^{-n})/(q − q^{-1}).
     Per [`prop:mass-endomorphism-tower`](../../content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.md)
     lines 162–183 (the bounded Kashaev specialisation, distinct from
     the divergent Faddeev Φ_q). Series converges for |z| < 1.
+
+    Uses incremental powers (q_pow *= q, q_inv_pow /= q) to avoid
+    repeated O(n) exponentiation in the tight loop.
     """
     q_minus_qinv = q - 1 / q
     total = mp.mpf(0)
     z_pow = mp.mpf(1)
+    q_pow = q
+    q_inv_pow = 1 / q
     for n in range(1, terms + 1):
         z_pow *= z
-        n_q = (q ** n - q ** (-n)) / q_minus_qinv
+        n_q = (q_pow - q_inv_pow) / q_minus_qinv
         total += z_pow / (n * n_q)
+        q_pow *= q
+        q_inv_pow /= q
     return total
+
+
+# Back-compat alias for any callers using the private name.
+_li2q_symmetric = li2q_symmetric
 
 
 @lru_cache(maxsize=None)
@@ -247,7 +258,7 @@ def e_0_full_mev() -> mp.mpf:
 def e_0_full_li2q_mev() -> mp.mpf:
     """Bounded Li_2^q tower form (substrate level, candidate).
 
-    E_0^{full,Li2q} := E_0^{(N=0)} · (1 + (−Li_2^q(−ℏ_q²))/ℏ_q²)
+    E_0^{full,Li2q} := E_0^{(N=0)} · (1 + (−Li_2^q(−ℏ_q²)))
 
     Per [`prop:mass-endomorphism-tower`](../../content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.md)
     lines 162–183, the **bounded** Kashaev specialisation of the
@@ -284,7 +295,7 @@ def e_0_full_li2q_mev() -> mp.mpf:
     # -Li_2^q(-x) = x/[1]_q + x²/(2[2]_q) - x³/(3[3]_q) + … which at
     # leading order in x matches the geometric correction x = ℏ_q²;
     # higher-order terms are *bounded* (no divergence as x → 1).
-    li2q_val = _li2q_symmetric(-hbar_q_sq, q0)
+    li2q_val = li2q_symmetric(-hbar_q_sq, q0)
     correction = 1 + (-li2q_val)
     return e_0_n0_mev() * correction
 
