@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-17T06:45:29.439716+00:00",
-  "commitSha": "c2e2fdb7dba78acebcbad01ff5b5d08b25ccf11d",
+  "computedAt": "2026-05-17T06:45:31.247446+00:00",
+  "commitSha": "d835f51e8dc4fb2800c2b502ce482f67241f1355",
   "assertions": [],
   "allPassed": true,
   "durationMs": 7,
@@ -24,7 +24,7 @@
   },
   "data": {
     "by_pattern_count": {
-      "P15": 143,
+      "P15": 144,
       "P16": 89,
       "P21": 24,
       "P30": 96,
@@ -116,6 +116,14 @@
         ]
       },
       {
+        "file": "hoefsmit_symbolic.py",
+        "count": 7,
+        "patterns": [
+          "P15",
+          "P21"
+        ]
+      },
+      {
         "file": "kazhdan_lusztig.py",
         "count": 7,
         "patterns": [
@@ -129,14 +137,6 @@
         "patterns": [
           "P15",
           "P16"
-        ]
-      },
-      {
-        "file": "hoefsmit_symbolic.py",
-        "count": 6,
-        "patterns": [
-          "P15",
-          "P21"
         ]
       },
       {
@@ -1026,28 +1026,35 @@
       {
         "pattern": "P15",
         "file": "hoefsmit_symbolic.py",
-        "line": 135,
+        "line": 168,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",
         "file": "hoefsmit_symbolic.py",
-        "line": 136,
+        "line": 169,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",
         "file": "hoefsmit_symbolic.py",
-        "line": 146,
+        "line": 202,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",
         "file": "hoefsmit_symbolic.py",
-        "line": 156,
+        "line": 212,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "hoefsmit_symbolic.py",
+        "line": 222,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },

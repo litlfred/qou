@@ -116,9 +116,42 @@ def chi_lambda_symbolic(shape, crossings) -> sp.Expr:
     return q_character_on_braid_word(tuple(shape), crossings, Q)
 
 
-def tr_M_symbolic(crossings, n: int) -> sp.Expr:
-    """Symbolic Markov trace tr_M(β) = Σ_λ w_λ · χ^λ(β) / f^λ
-    where w_λ = dim_q(λ)² / [n]_q! and f^λ = #SYT(λ).
+def tr_q_plancherel_symbolic(crossings, n: int) -> sp.Expr:
+    """**q-Plancherel trace** (NOT the Markov trace — see warning).
+
+    Computes the q-Plancherel expectation of the normalized character:
+        tr_qP(β) = Σ_λ (dim_q²(λ) / [n]_q!) · (χ^λ(β) / f^λ)
+
+    where dim_q(λ) is the q-deformed hook-content dimension,
+    [n]_q! is the q-factorial, and f^λ = #SYT(λ).
+
+    This is the **regular Hopf-algebra integral** (a.k.a. Plancherel /
+    regular trace) on the Hecke algebra H_n(q), the q-deformed
+    analogue of the classical Plancherel measure on partitions. It
+    is *not* the canonical Markov trace:
+
+      - Markov trace: tr_M(1) = 1 for all q (axiomatic)
+      - q-Plancherel trace: tr_qP(1) ≠ 1 in general (e.g. on H_3 at q_0,
+        tr_qP(1) ≈ 0.987, not 1)
+
+      - Markov trace: tr_M(α·σ_n) = z · tr_M(α) with z = 1/[2]_{q^{1/2}}
+        (the Wenzl Markov parameter)
+      - q-Plancherel trace: does NOT satisfy this Markov property
+
+    At q = 1 the two coincide (both reduce to the classical Plancherel
+    trace), which is why they look equivalent at the classical limit.
+
+    See `docs/audits/2026-05-17-dual-tr-m-discrepancy.md` for the full
+    audit, the H_3 numerical comparison (57–99% relative differences
+    on proton-like braids), and provenance (the original commit
+    58e78090e flagged this distinction at creation but the production
+    chain has used this Plancherel trace as if it were the Markov
+    trace).
+
+    For the canonical Markov trace, use
+    `markov_weights_symbolic.tr_M_canonical` (a.k.a. `tr_Markov_symbolic`
+    below) which implements the Wenzl-Ocneanu Σ_λ y_λ(q) · χ^λ(β)
+    formula.
     """
     qfac_n = q_fac(n)
     total = sp.Integer(0)
@@ -134,6 +167,39 @@ def tr_M_symbolic(crossings, n: int) -> sp.Expr:
         w_lam = d_q * d_q / qfac_n
         total = total + sp.cancel(w_lam * chi / f_lam)
     return sp.cancel(total)
+
+
+def tr_M_symbolic(crossings, n: int) -> sp.Expr:
+    """**Deprecated alias** — historical name. The function this points
+    at is the **q-Plancherel trace**, NOT the Markov trace. Use
+    `tr_q_plancherel_symbolic` to make the convention explicit, or
+    `tr_Markov_symbolic` for the canonical Markov trace via Wenzl y_λ.
+
+    See `docs/audits/2026-05-17-dual-tr-m-discrepancy.md` for why this
+    function was misnamed and the per-consumer migration plan.
+    """
+    return tr_q_plancherel_symbolic(crossings, n)
+
+
+def tr_Markov_symbolic(crossings, n: int) -> sp.Expr:
+    """**Canonical Markov trace** — Σ_λ y_λ(q) · χ^λ(β) (Wenzl-Ocneanu).
+
+    Thin wrapper around `markov_weights_symbolic.tr_M_canonical` for a
+    consistent naming convention with `tr_q_plancherel_symbolic`. The
+    y_λ are the Jones-Markov weights from Wenzl's Schur principal
+    specialisation, normalised so that tr_M(1_{H_1}) = 1 and the
+    Markov property tr_M(α · σ_n) = z · tr_M(α) holds.
+
+    Computes the Jones polynomial of the braid closure (up to the
+    framework's writhe/framing convention; see
+    `docs/audits/2026-05-17-pr-664-c3-c4-critical-review.md` for the
+    open writhe-correction question).
+    """
+    # Late import to avoid module-load cycle if markov_weights_symbolic
+    # ever calls anything from hoefsmit_symbolic.
+    from markov_weights_symbolic import tr_M_canonical  # noqa: E402
+    value, _y_lam = tr_M_canonical(crossings, n)
+    return sp.cancel(value)
 
 
 def pole_order_at_zero(expr: sp.Expr) -> tuple[int, sp.Expr]:
@@ -165,7 +231,9 @@ __all__ = [
     "dim_q",
     "build_seminormal_matrices_symbolic",
     "chi_lambda_symbolic",
-    "tr_M_symbolic",
+    "tr_M_symbolic",            # deprecated alias for tr_q_plancherel_symbolic
+    "tr_q_plancherel_symbolic", # q-Plancherel / regular Hopf integral
+    "tr_Markov_symbolic",       # canonical Wenzl-Ocneanu Markov trace
     "pole_order_at_zero",
 ]
 
