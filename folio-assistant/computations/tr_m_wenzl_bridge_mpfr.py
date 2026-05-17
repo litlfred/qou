@@ -258,7 +258,7 @@ def _load_y_lambda(n: int, path: Path | None = None) -> dict:
     Returns dict: tuple(partition) -> mpf(y_lambda).
     """
     p = Path(path) if path else _Y_LAMBDA_DEFAULT
-    key = (str(p), n, mp.dps)
+    key = (str(p), n, mp.mp.dps)
     cached = _Y_LAMBDA_CACHE.get(key)
     if cached is not None:
         return cached

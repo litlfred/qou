@@ -475,8 +475,10 @@ def main() -> int:
     w.add_data("codata_reference", {k: mp.nstr(v, 12) for k, v in CODATA_MASS.items()})
 
     # Per-atom assertions: each term is non-trivial / finite at 50 dps.
+    # P1.C HARD BREAK (2026-05-12) renamed `term4_frob_per_vortex` →
+    # `term4_frob_canonical_per_3A`; the assertion loop must follow.
     for r in results:
-        for term_key in ("term1_descended", "term4_frob_per_vortex"):
+        for term_key in ("term1_descended", "term4_frob_canonical_per_3A"):
             val = r[term_key]
             try:
                 v = mp.mpf(val)
