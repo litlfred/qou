@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-17T20:42:46.486591+00:00",
-  "commitSha": "e3a1b22ac9476f652a9528f12c713915f65bda74",
+  "computedAt": "2026-05-17T21:39:09.021351+00:00",
+  "commitSha": "94aca24a0726d181096a4340da49eb4f48b2e58d",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 10,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "d9aa432d54f9",
@@ -13,7 +13,7 @@
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 468,
+    "files_scanned": 469,
     "patterns": [
       "P15",
       "P16",
@@ -24,7 +24,7 @@
   },
   "data": {
     "by_pattern_count": {
-      "P15": 157,
+      "P15": 159,
       "P16": 89,
       "P21": 24,
       "P30": 96,
@@ -1825,6 +1825,20 @@
         "pattern": "P15",
         "file": "probe_F_n_categorical_derivation.py",
         "line": 233,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "probe_V_222_projection_symbolic.py",
+        "line": 55,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "probe_V_222_projection_symbolic.py",
+        "line": 89,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },

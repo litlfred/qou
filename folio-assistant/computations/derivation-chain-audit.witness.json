@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-17T20:42:46.685822+00:00",
-  "commitSha": "e3a1b22ac9476f652a9528f12c713915f65bda74",
+  "computedAt": "2026-05-17T21:39:09.507692+00:00",
+  "commitSha": "94aca24a0726d181096a4340da49eb4f48b2e58d",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2065,6 +2065,7 @@
         "F-n-categorical-derivation-probe.witness.json",
         "T5-categorical-attribution-candidates.witness.json",
         "V-222-projection-probe.witness.json",
+        "V-222-projection-symbolic.witness.json",
         "a-minus-2-q-substrate-probe.witness.json",
         "adjacent-vs-full-probe.witness.json",
         "alpha-5-jucys-murphy-central.witness.json",
