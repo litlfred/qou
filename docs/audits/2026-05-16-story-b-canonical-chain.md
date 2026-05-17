@@ -2,11 +2,13 @@
 
 **Date:** 2026-05-16
 **Branch:** `claude/crystal-and-he4-combined`
-**Status:** Documents the selection of **Story B** (the categorical
-chain) as the canonical interpretation of the Q_β precision ladder,
-superseding Story A (CODATA-noise interpretation) per the user's
-direction and the categorical-derivation evidence from PRs
-#661, #664, #665.
+**Status:** Documents the canonical status of **Story B** (the categorical
+chain) for the Q_β precision ladder. Originally framed as user-preference
+selection (2026-05-16), now upgraded to **structurally forced** by the
+categorical c_3 proof on [PR #664](https://github.com/litlfred/qou/pull/664):
+Story A's "c_k = 0 beyond c_2" is **falsified**, not deprioritised. Story B
+is the unique consistent reading. Evidence: PRs #661 (c_2), #664 (c_3),
+#665 (c_4).
 
 ## Background — Story A vs Story B
 
@@ -22,7 +24,15 @@ can be interpreted either as:
 Both stories reproduce CODATA Q_β to within its measurement floor
 (~400 ppb).  PR #657 left the choice open.
 
-## Story B confirmed canonical
+## Story B forced — Story A falsified
+
+PR #664 derives c_3 = J_Hopf(q=1) = -2 from V_(2,1) self-fusion +
+Frobenius selection (V_(2,2,2) channel) + Hopf evaluation at q = 1.
+The categorical value c_3 = -2 matches the empirical PR #655 value
+*exactly*. This **falsifies Story A**: c_3 = 0 is no longer admissible
+as a candidate, since the categorical chain produces c_3 = -2 with no
+free parameter. Story B is now the only consistent reading, not merely
+the preferred one.
 
 Three independently-derived categorical proofs land Story B:
 
@@ -43,9 +53,9 @@ b² categorical derivation — the 1.7% deviation is structurally
 attributable to higher c_k (c_3 = -2 + c_4 = b² + 1/2 + … per Story B),
 NOT a fit parameter.
 
-## Consequences for this branch's work
+## Consequences for PR #670 (merged 2026-05-17)
 
-PR #670 (this branch) carries:
+PR #670 (merged) carries:
 - **Crystal-pole counter + Habiro bridge** (PRs #668 + #669 + this PR):
   derives `shift(Z, N) = 18Z + 21N + 1` categorically.  Independent
   of Story A/B selection (shift is structural, not a precision-ladder
