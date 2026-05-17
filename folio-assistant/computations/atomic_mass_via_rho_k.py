@@ -234,6 +234,43 @@ def load_atomic_tr_m() -> dict[str, mp.mpf]:
             if atom is None or tr_str is None:
                 continue
             out[atom] = abs(mp.mpf(tr_str))
+
+    # 4. Wenzl LR canonical overlay (rho-k-full-via-wenzl-lr).
+    #    Final overlay: supplies the FIRST canonical |tr_M| for ⁴He,
+    #    ⁶Li, ⁷Li (and refreshes D/T/³He with LR-derived values) —
+    #    direct categorical evaluation via the Rust+rayon
+    #    `hecke-tr-m-wenzl-lr` binary at the substrate parameter
+    #    q_0, combined with y_λ(q_0) from `wedderburn_jones_markov`.
+    #    Takes ultimate precedence over legacy / Model B / per-atom
+    #    extensions where present.  Atoms not in this witness still
+    #    fall back to whichever layer above supplies them.
+    lr_witness = HERE / "rho-k-full-via-wenzl-lr.witness.json"
+    # The LR consumer uses the short atom labels (D, T, 3He, 4He,
+    # 6Li, 7Li); main()'s tr_M lookup uses the long form via
+    # ATOM_LABEL_TO_TR_M_KEY (deuteron, tritium, ...). Write both
+    # so the LR overlay is visible to either consumer path.
+    _LR_LABEL_TO_LONG = {
+        "D": "deuteron", "T": "tritium",
+        "3He": "helium-3", "4He": "helium-4",
+        "5Li": "lithium-5", "6Li": "lithium-6", "7Li": "lithium-7",
+    }
+    if lr_witness.exists():
+        try:
+            dlr = json.loads(lr_witness.read_text())
+        except json.JSONDecodeError:
+            dlr = {}
+        for r in dlr.get("rows", []):
+            if "tr_M_q0_unavail_reason" in r:
+                continue
+            atom = r.get("atom")
+            tr_str = r.get("abs_tr_M_q0_mp30dps") or r.get("tr_M_q0_mp30dps")
+            if atom is None or tr_str is None:
+                continue
+            v = abs(mp.mpf(str(tr_str)))
+            out[atom] = v
+            long_key = _LR_LABEL_TO_LONG.get(atom)
+            if long_key is not None:
+                out[long_key] = v
     return out
 
 
