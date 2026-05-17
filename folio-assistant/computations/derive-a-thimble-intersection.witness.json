@@ -1,8 +1,8 @@
 {
   "engine": "scipy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-17T04:48:49.556321+00:00",
-  "commitSha": "9196e06b233a36e5444dc23f7949ad7218ba9b66",
+  "computedAt": "2026-05-17T04:54:37.817354+00:00",
+  "commitSha": "202e9fb8d5e1de023eba47af7308995a65a2124c",
   "assertions": [
     {
       "name": "discriminant_roots_count",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 63,
+  "durationMs": 65,
   "computation": "derive-a-thimble-intersection",
   "scriptFile": "derive_a_thimble_intersection.py",
-  "scriptHash": "04bd1e879f90",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "2753bb1667d6",
+  "scriptCommitSha": "202e9fb8d5e1de023eba47af7308995a65a2124c",
   "description": "Substrate-derive PL integration limit from thimble geometry",
   "data": {
     "q_0": 1.1099785955541805,
@@ -85,16 +85,28 @@
     },
     "real_axis_crossings": [
       {
-        "label": "J⁺",
+        "label": "J⁺ (descent)",
         "z_c_re": 0.1058295861882663,
         "z_c_im": -0.9371389378389038,
         "x_crossing": 3.8640577159498526
       },
       {
-        "label": "J⁻",
+        "label": "J⁻ (descent)",
         "z_c_re": 0.1058295861882663,
         "z_c_im": 0.9371389378389038,
         "x_crossing": 3.8640577159498526
+      },
+      {
+        "label": "K⁺ (ascent)",
+        "z_c_re": 0.1058295861882663,
+        "z_c_im": -0.9371389378389038,
+        "x_crossing": null
+      },
+      {
+        "label": "K⁻ (ascent)",
+        "z_c_re": 0.1058295861882663,
+        "z_c_im": 0.9371389378389038,
+        "x_crossing": null
       }
     ],
     "candidate_limits_with_predictions": [
@@ -141,14 +153,14 @@
         "err_pct": 0.23811346549594062
       },
       {
-        "limit_label": "DERIVED J⁺ (thimble crossing)",
+        "limit_label": "DERIVED J⁺ (descent) (thimble crossing)",
         "a": 3.8640577159498526,
         "A_q0": 4.954547217825716,
         "m_p_pred_MeV": 1889.7571479845776,
         "err_pct": 101.40822388636637
       },
       {
-        "limit_label": "DERIVED J⁻ (thimble crossing)",
+        "limit_label": "DERIVED J⁻ (descent) (thimble crossing)",
         "a": 3.8640577159498526,
         "A_q0": 4.954547217825716,
         "m_p_pred_MeV": 1889.7571479845776,

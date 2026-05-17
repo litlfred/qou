@@ -69,35 +69,44 @@ def grad_S_squared(z):
     return lambda_SW(z)
 
 
-def steepest_descent_from(z_c, t_max=10.0, n_steps=10000):
-    """Integrate dz/dt = -conjugate(λ_SW(z)) from z_c.
+def gradient_flow_from(z_c, direction="descent", t_max=10.0, n_steps=20000):
+    """Integrate gradient-flow ODE from z_c.
 
-    Returns array of (t, z) along the contour.  Stops when:
-      - real axis crossed (|Im(z)| < tol)
-      - |Re(z)| > 2 (gone too far)
-      - |dz/dt| < tol (stationary)
+    direction="descent":  dz/dt = -conjugate(λ_SW(z))  (steepest-DESCENT, thimble)
+    direction="ascent":   dz/dt = +conjugate(λ_SW(z))  (steepest-ASCENT, anti-thimble)
+
+    Per the lit finding (MNRAS 2024 / Picard-Lefschetz reviews): the
+    real-axis integration limit for a finite-interval PL prescription
+    is where the **steepest-ASCENDING** (anti-thimble) contour crosses
+    the real axis.
+
+    Returns (trajectory, real_axis_crossing).
     """
     z = complex(z_c)
     dt = t_max / n_steps
+    sign = -1.0 if direction == "descent" else +1.0
     traj = [(0.0, z)]
     prev_im = z.imag
     for i in range(n_steps):
-        flow = -np.conj(lambda_SW(z))
+        flow = sign * np.conj(lambda_SW(z))
         if not np.isfinite(flow.real) or abs(flow) < 1e-12:
             break
         z = z + flow * dt
         traj.append((i * dt + dt, z))
-        # Real-axis crossing detection
         if prev_im * z.imag < 0:
-            # Linear interpolate to find crossing
             alpha = abs(prev_im) / (abs(prev_im) + abs(z.imag))
             z_prev = traj[-2][1]
             z_cross = z_prev * (1 - alpha) + z * alpha
             return traj, z_cross
-        if abs(z.real) > 2.0:
+        if abs(z.real) > 4.0:
             break
         prev_im = z.imag
     return traj, None
+
+
+def steepest_descent_from(z_c, t_max=10.0, n_steps=10000):
+    """Steepest-descent thimble (legacy alias)."""
+    return gradient_flow_from(z_c, direction="descent", t_max=t_max, n_steps=n_steps)
 
 
 def main() -> int:
@@ -138,19 +147,23 @@ def main() -> int:
     print(f"    Re(z_c) = {z_c_plus.real:.6f}")
     print()
 
-    # Step 3: integrate steepest-descent from each
-    print("  Step 3: Steepest-descent thimble from each z_c")
+    # Step 3: integrate BOTH directions from each
+    # Per lit finding: standard PL integration limit comes from
+    # ANTI-thimble (steepest-ascent) crossing the real axis.
+    print("  Step 3: Gradient flow from each z_c, both directions")
     print("  " + "-" * 60)
     crossings = []
-    for label, zc in [("J⁺", z_c_plus), ("J⁻", z_c_minus)]:
-        traj, z_cross = steepest_descent_from(zc)
-        if z_cross is not None:
-            print(f"    {label} thimble from z_c = {zc.real:+.4f}{zc.imag:+.4f}i")
-            print(f"      real-axis crossing at z = {z_cross.real:+.6f} (Im = {z_cross.imag:+.2e})")
-            crossings.append((label, zc, z_cross.real))
-        else:
-            print(f"    {label} thimble did NOT cross real axis within bounds")
-            crossings.append((label, zc, None))
+    for direction, sym in [("descent", "J"), ("ascent", "K")]:
+        for label_suffix, zc in [("⁺", z_c_plus), ("⁻", z_c_minus)]:
+            label = f"{sym}{label_suffix} ({direction})"
+            traj, z_cross = gradient_flow_from(zc, direction=direction)
+            if z_cross is not None:
+                print(f"    {label:18s} from z_c = {zc.real:+.4f}{zc.imag:+.4f}i")
+                print(f"      real-axis crossing at z = {z_cross.real:+.6f} (Im = {z_cross.imag:+.2e})")
+                crossings.append((label, zc, z_cross.real))
+            else:
+                print(f"    {label:18s} did NOT cross real axis within bounds")
+                crossings.append((label, zc, None))
     print()
 
     # Step 4: candidate integration limit comparison
