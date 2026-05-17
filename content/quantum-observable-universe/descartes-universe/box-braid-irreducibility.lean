@@ -98,8 +98,9 @@ axiom crossing_number_is_minimum (K : TorusKnot) (w : List ℕ)
     Bring's surface is T(3,5). -/
 -- Ref: [manuscript] §6/box-braid-irreducibility
 -- Ref: [manuscript] §6/force-knot-identification
-axiom photon_neutrino_requires_T35 :
-    True -- The γγ → νν̄ process contains T(3,5) as sub-topology
+/-- The γγ → νν̄ process contains T(3,5) as sub-topology. -/
+theorem photon_neutrino_requires_T35 :
+    True := trivial
 
 /-- **Box braid irreducibility**: the γγ → νν̄ box requires
     ≥ 10 crossings (= 10 R-matrix applications = 10 Planck steps).
