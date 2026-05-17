@@ -30,6 +30,8 @@ HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
+from q_parameter import HA as H_VAL  # noqa: E402  canonical h = q − q⁻¹ at q_0
+
 
 def hecke_word_to_braid_word(word: list) -> list[int]:
     """Convert Hecke (c, d, gen) word → braid-group integer word.
@@ -44,7 +46,6 @@ def hecke_word_to_braid_word(word: list) -> list[int]:
     Convention: SnapPy braid_closure uses 1-indexed positive σ_i and
     negative σ_i⁻¹.
     """
-    H_VAL = 0.20906032198987945  # h = q − q⁻¹ at q_0
     out = []
     for c, d, g in word:
         gen_1indexed = g + 1
@@ -79,7 +80,6 @@ def he4_compositional_braids() -> dict[str, tuple[list[int], int]]:
     Returns: {name: (braid_word, n_strands)}.
     For F1 disjoint composition: just concatenate with strand shift.
     """
-    H_VAL = 0.20906032198987945
     p = _proton_braid_word()
     n = _neutron_braid_word()
 
@@ -135,18 +135,11 @@ def main() -> int:
     for name, (word, n_strands) in braids.items():
         try:
             link = snappy.Link(braid_closure=word)
-            n_components = len(link.link_components) if hasattr(link, "link_components") else None
+            n_components = len(link.link_components) if hasattr(link, "link_components") else "?"
             try:
-                # Try simplification first
                 link.simplify(mode="global")
             except Exception:
                 pass
-            try:
-                n_components = link.link_components
-                if hasattr(n_components, '__len__'):
-                    n_components = len(n_components)
-            except Exception:
-                n_components = "?"
             try:
                 alex = link.alexander_polynomial()
                 alex_str = str(alex)[:40] if alex is not None else "—"

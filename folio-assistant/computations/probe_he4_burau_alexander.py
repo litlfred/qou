@@ -49,13 +49,14 @@ def burau_generator(i: int, n: int, t: sp.Symbol) -> sp.Matrix:
     # Convert i to 0-indexed for matrix indexing
     j = i - 1
     if j == 0:
-        # σ_1: blocks rows 0 and 1
+        # σ_1: top boundary. M[0,1] only exists when dim > 1 (i.e. n ≥ 3)
         M[0, 0] = -t
-        M[0, 1] = 1
-    elif j == dim:
-        # σ_{n-1}: blocks rows n-2 and n-3
-        M[dim - 1, dim - 2] = t
-        M[dim - 1, dim - 1] = -t
+        if dim > 1:
+            M[0, 1] = 1
+    elif j == dim - 1:
+        # σ_{n-1}: bottom boundary
+        M[j, j - 1] = t
+        M[j, j] = -t
     else:
         # Internal σ_i: blocks rows j-1, j, j+1
         M[j, j - 1] = t

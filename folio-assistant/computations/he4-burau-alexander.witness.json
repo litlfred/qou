@@ -1,15 +1,15 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-16T20:28:45.832019+00:00",
-  "commitSha": "5437994fb5122f41e192fd8cd2bb2035a87b01d2",
+  "computedAt": "2026-05-17T02:13:43.441275+00:00",
+  "commitSha": "aa3dc917f354fe682843ec3ac84e230d5dca7da6",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 17,
+  "durationMs": 27,
   "computation": "he4-burau-alexander",
   "scriptFile": "probe_he4_burau_alexander.py",
-  "scriptHash": "62748ec4eb9a",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "b23e2ee86241",
+  "scriptCommitSha": "a149666149610ae6084463a6b0694af939d6e1a6",
   "description": "Burau-representation Alexander polynomial of ⁴He compositional braid closures.  Strengthens F1 question 2 (Model B knot identification) beyond component counts by computing the Alexander polynomial directly via the reduced Burau matrix representation B_n → GL_{n-1}(Z[t,t⁻¹]).  Pure numpy/sympy — no Sage / SnapPy / Regina dependency.",
   "auditOnly": "docs/audits/2026-05-15-three-pr-integration.md",
   "data": {
@@ -29,7 +29,11 @@
         "alexander_at_t_1": 0
       },
       "T_oplus_p": {
-        "error": "IndexError: Index out of range: a[11]"
+        "word_length": 46,
+        "n_strands": 12,
+        "alexander_polynomial": "0",
+        "determinant": 0,
+        "alexander_at_t_1": 0
       },
       "He3_oplus_n": {
         "word_length": 46,
