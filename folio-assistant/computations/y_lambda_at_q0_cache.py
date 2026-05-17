@@ -140,7 +140,7 @@ def main() -> int:
         "deuteron": ("chi-deuteron-h6.witness.json", 6),
         "tritium": ("chi-tritium-h9.witness.json", 9),
         "helium-3": ("chi-helium-3-h9.witness.json", 9),
-        "helium-4": ("chi-helium-4-h12.witness.json", 12),
+        "helium-4": ("chi-helium-4-h12-numeric.witness.json", 12),
     }
     for atom, (fname, n) in spot_files.items():
         path = HERE / fname

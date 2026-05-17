@@ -94,7 +94,7 @@ ATOMS_CODATA = {
     "3He": {"Z": 2, "N": 1, "n": 9,  "M_MeV": "2808.39160743",
             "chi_witness": "chi-helium-3-h9.witness.json"},
     "4He": {"Z": 2, "N": 2, "n": 12, "M_MeV": "3727.379378",
-            "chi_witness": "chi-helium-4-h12.witness.json"},
+            "chi_witness": "chi-helium-4-h12-numeric.witness.json"},
 }
 
 
@@ -366,7 +366,7 @@ def load_chi_via_numerical_path(Z: int, N: int) -> tuple[list[dict], mp.mpf]:
 def assemble_per_atom(atom_label: str, info: dict) -> dict:
     Z = info["Z"]; N = info["N"]; n = info["n"]
     # Tier 1: per-atom witness with full numeric per_partition (e.g.
-    # 4He's chi-helium-4-h12.witness.json).  Instant.
+    # 4He's chi-helium-4-h12-numeric.witness.json).  Instant.
     chi_data = load_chi_per_lambda(info["chi_witness"])
     if chi_data is not None:
         # `chi_data` from load_chi_per_lambda has per-partition numeric

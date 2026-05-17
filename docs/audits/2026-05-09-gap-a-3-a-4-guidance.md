@@ -18,7 +18,7 @@ targets are **GAP-A-3** (brane-tower level selection) and **GAP-A-4**
   K ∈ {p, n, D, T, ³He} (3 independent paths agree on PR #572 +
   this branch).
 - ⁴He per-λ chi cache as of 2026-05-09 (this session): saved at
-  [`folio-assistant/computations/chi-helium-4-h12.witness.json`](../../folio-assistant/computations/chi-helium-4-h12.witness.json).
+  [`folio-assistant/computations/chi-helium-4-h12-numeric.witness.json`](../../folio-assistant/computations/chi-helium-4-h12-numeric.witness.json).
   77 partitions of 12, |tr_M(⁴He)| = 0.0553483.
 - The Δ_λ derivation race PR (#613) compared 5 closure principles
   (Occam / co-Casimir / LP-shadow / Wenzl-bridge / Frobenius-pairing
