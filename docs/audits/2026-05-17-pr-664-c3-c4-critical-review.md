@@ -79,10 +79,10 @@ The `.md` body of `prop:hopf-jones-c3-categorical` has a 4-step sketch:
 
 | Step | Content | Rigour |
 |---|---|---|
-| 1. Self-fusion decomposition | $V_{(2,1)} \otimes V_{(2,1)}$ Littlewood-Richardson decomposition | ✓ standard L-R, correct |
-| 2. Frobenius selection picks Hopf channel | Claims $V_{(2,2,2)}$ is the "Hopf-mediated" self-conjugate channel that "admits a 2-strand Hopf reduction via Markov stabilisation" | ✗ asserted, not derived |
-| 3. Hopf trace at $q = 1$ | $J_\mathrm{Hopf}(q) = -[2]_q \Rightarrow J(1) = -2$ | ✓ textbook Jones polynomial, but cited as fact rather than derived from V_(2,1) trace |
-| 4. Coefficient identification | $c_3 = J_\mathrm{Hopf}(1) = -2$ at order $h^6$ | ✗ asserted, no order-$h^6$ expansion of $Q_\beta$ shown |
+| 1. Self-fusion decomposition | $V_{(2,1)} \otimes V_{(2,1)}$ Littlewood-Richardson decomposition | OK — standard L-R, correct |
+| 2. Frobenius selection picks Hopf channel | Claims $V_{(2,2,2)}$ is the "Hopf-mediated" self-conjugate channel that "admits a 2-strand Hopf reduction via Markov stabilisation" | gap — asserted, not derived |
+| 3. Hopf trace at $q = 1$ | $J_\mathrm{Hopf}(q) = -[2]_q \Rightarrow J(1) = -2$ | OK — textbook Jones polynomial, but cited as fact rather than derived from V_(2,1) trace |
+| 4. Coefficient identification | $c_3 = J_\mathrm{Hopf}(1) = -2$ at order $h^6$ | gap — asserted, no order-$h^6$ expansion of $Q_\beta$ shown |
 
 **Step 2 is where the work has to be done.** The claim is that the
 order-$h^6$ contribution to $Q_\beta$ in the Story B expansion comes
