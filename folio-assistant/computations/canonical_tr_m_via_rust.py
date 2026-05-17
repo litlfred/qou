@@ -101,16 +101,22 @@ def compute_tr_m(Z: int, N: int, label: str,
                 "--bin hecke-canonical-chi"
             ),
         }
-    from q_parameter import Q as Q_FLOAT
+    from q_parameter import Q as Q_FLOAT, Q_50_DIGIT_STR
     if q_val is None:
         q_val = Q_FLOAT
     n_strands, word = canonical_word_for(Z, N)
     spec = {
-        "n_strands": n_strands, "q": q_val,
-        "label": label, "word": word,
+        "n_strands": n_strands,
+        "q": q_val,
+        "q_str": Q_50_DIGIT_STR,
+        "label": label,
+        "word": word,
     }
+    # Default Rust path: MPFR at 50 dps (per user direction
+    # "only do arbitrary precision w/ >= 50 dps").  Pass --dps 0
+    # to fall back to f64 for fast prototyping.
     result = subprocess.run(
-        [str(bin_path)],
+        [str(bin_path), "--dps", "50"],
         input=json.dumps(spec),
         capture_output=True, text=True, timeout=timeout_sec,
     )
@@ -129,11 +135,22 @@ def compute_tr_m(Z: int, N: int, label: str,
     from wedderburn_jones_markov import y_lambda_at
     y_table = y_lambda_at(n_strands, q_val)
 
+    # Match Rust output precision; default ≥50 dps per user
+    # direction "only do arbitrary precision w/ >= 50 dps".
+    rust_dps = int(rust_out["chi_lambda_terms"][0]["precision_dps"]) \
+        if rust_out["chi_lambda_terms"] else 50
+    if rust_dps > mp.mp.dps:
+        mp.mp.dps = rust_dps
     tr_m_sum = mp.mpf(0)
     contributions = []
     for term in rust_out["chi_lambda_terms"]:
         lam = tuple(term["lambda"])
-        chi_f64 = term["chi_q_f64_normalised"]
+        # Rust now returns chi as a decimal string at `precision_dps`
+        # precision (MPFR path).  Parse directly into mpmath at
+        # mp.mp.dps for end-to-end ≥50 dps precision.
+        chi_str = term.get("chi_q_normalised") \
+            or term.get("chi_q_f64_normalised")  # legacy field
+        chi_at_q0 = mp.mpf(str(chi_str))
         y_lam = y_table.get(lam)
         if y_lam is None:
             return {
@@ -142,15 +159,14 @@ def compute_tr_m(Z: int, N: int, label: str,
                     f"y_λ table at H_{n_strands} missing λ={lam}"
                 ),
             }
-        y_at_q0 = mp.mpf(repr(float(y_lam)))
-        chi_at_q0 = mp.mpf(repr(chi_f64))
+        y_at_q0 = mp.mpf(str(y_lam))
         c = y_at_q0 * chi_at_q0
         tr_m_sum += c
         contributions.append({
             "lambda": list(lam),
-            "chi_normalised": float(chi_f64),
-            "y_q0": float(y_lam),
-            "contribution": float(c),
+            "chi_normalised": mp.nstr(chi_at_q0, 30),
+            "y_q0": mp.nstr(y_at_q0, 30),
+            "contribution": mp.nstr(c, 30),
         })
     return {
         "atom": label, "Z": Z, "N": N,
@@ -163,7 +179,7 @@ def compute_tr_m(Z: int, N: int, label: str,
         "abs_tr_M_q0_mp30dps": mp.nstr(abs(tr_m_sum), 30),
         "top5_contributions": sorted(
             contributions,
-            key=lambda d: abs(d["contribution"]),
+            key=lambda d: abs(mp.mpf(d["contribution"])),
             reverse=True,
         )[:5],
     }

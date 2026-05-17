@@ -42,6 +42,7 @@
 use clap::Parser;
 use hecke_engine::wenzl_lr::{
     averaging_denominator, chi_lambda_canonical_all_partitions_f64,
+    chi_lambda_canonical_all_partitions_mpfr,
     Crossing, CrossingPair, WenzlFactor,
 };
 use serde::{Deserialize, Serialize};
@@ -59,12 +60,24 @@ struct Args {
     /// Path to the output JSON; if absent, writes to stdout.
     #[arg(long)]
     out: Option<PathBuf>,
+    /// MPFR precision in decimal digits.  Default 50 (matches the
+    /// canonical QOU mpfr-50dps convention; per user direction
+    /// "only do arbitrary precision w/ ≥ 50 dps").  Set to 0 to
+    /// fall back to the f64 path (legacy / fast prototyping only).
+    #[arg(long, default_value_t = 50)]
+    dps: u32,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
 struct InputSpec {
     n_strands: usize,
+    /// f64 q value (used only on the legacy `--dps 0` fallback path).
+    #[serde(default)]
     q: f64,
+    /// 50+-dps decimal-string q value (used on the default MPFR path).
+    /// Required when `--dps > 0` (default 50).
+    #[serde(default)]
+    q_str: String,
     label: String,
     /// `[(sign, gen_1based), ...]` with sign ∈ {-1, 0, +1}
     /// (0 = averaged half-sum).
@@ -74,8 +87,11 @@ struct InputSpec {
 #[derive(Serialize)]
 struct ChiTerm {
     lambda: Vec<usize>,
-    chi_q_f64_unnormalised: f64,
-    chi_q_f64_normalised: f64,
+    /// Decimal string at `dps` precision (MPFR path) or
+    /// `format!("{}", f64)` (legacy f64 path).
+    chi_q_normalised: String,
+    chi_q_unnormalised: String,
+    precision_dps: u32,
 }
 
 #[derive(Serialize)]
@@ -125,26 +141,70 @@ fn run(args: Args) -> io::Result<()> {
     let avg_denom = averaging_denominator(&[factor]);
     let n_avg = word.iter().filter(|(c, _)| *c == Crossing::Averaged).count();
     let t0 = Instant::now();
-    let chi_results =
-        chi_lambda_canonical_all_partitions_f64(spec.n_strands, &word, spec.q);
+    // Branch: MPFR path (default, dps >= 50) vs f64 fallback (--dps 0).
+    let dps = args.dps;
+    let chi_terms: Vec<ChiTerm> = if dps == 0 {
+        let chi_results = chi_lambda_canonical_all_partitions_f64(
+            spec.n_strands, &word, spec.q,
+        );
+        let denom_f = avg_denom as f64;
+        chi_results
+            .iter()
+            .map(|(lam, chi)| ChiTerm {
+                lambda: lam.clone(),
+                chi_q_unnormalised: chi.to_string(),
+                chi_q_normalised: (chi / denom_f).to_string(),
+                precision_dps: 17,  // f64 ~15-17 sig figs
+            })
+            .collect()
+    } else {
+        // MPFR path: q passed as decimal string; preserves the
+        // canonical 50-dps q_0 precision through the FFI.
+        let q_str = if spec.q_str.is_empty() {
+            // Fallback: derive from f64 (legacy callers that only
+            // sent `q`). Loses precision; warn-via-comment.
+            format!("{}", spec.q)
+        } else {
+            spec.q_str.clone()
+        };
+        let chi_results = chi_lambda_canonical_all_partitions_mpfr(
+            spec.n_strands, &word, &q_str, dps,
+        );
+        // Normalise by averaging_denominator at MPFR precision.
+        let denom_str = avg_denom.to_string();
+        let prec = (dps as f64 * 3.322 + 16.0) as u32;
+        chi_results
+            .iter()
+            .map(|(lam, chi_str)| {
+                use rug::Float;
+                let chi = Float::parse(chi_str)
+                    .map(|p| Float::with_val(prec, p))
+                    .unwrap_or_else(|_| Float::with_val(prec, 0));
+                let denom = Float::parse(&denom_str)
+                    .map(|p| Float::with_val(prec, p))
+                    .unwrap_or_else(|_| Float::with_val(prec, 1));
+                let normalised = Float::with_val(prec, &chi / &denom);
+                ChiTerm {
+                    lambda: lam.clone(),
+                    chi_q_unnormalised: chi_str.clone(),
+                    chi_q_normalised: normalised
+                        .to_string_radix(10, Some(dps as usize)),
+                    precision_dps: dps,
+                }
+            })
+            .collect()
+    };
     let dt = t0.elapsed().as_millis();
-    let denom_f = avg_denom as f64;
-    let chi_terms: Vec<ChiTerm> = chi_results
-        .iter()
-        .map(|(lam, chi)| ChiTerm {
-            lambda: lam.clone(),
-            chi_q_f64_unnormalised: *chi,
-            chi_q_f64_normalised: chi / denom_f,
-        })
-        .collect();
     let out = Output {
         computation: "hecke-canonical-chi",
         description:
             "Canonical χ^λ at H_n for an atomic braid via direct \
-             Hoefsmit seminormal evaluation (f64) with averaged- \
-             crossing expansion.  Avoids the broken tensor-product \
-             LR composition of `hecke-tr-m-wenzl-lr`; this is the \
-             primitive used by the canonical |tr_M| consumer.  \
+             Hoefsmit seminormal evaluation with averaged-crossing \
+             expansion.  Default path is MPFR at `--dps` (>=50 per \
+             the QOU mpfr-50dps convention); legacy f64 fallback \
+             available via `--dps 0`.  Avoids the broken tensor- \
+             product LR composition of `hecke-tr-m-wenzl-lr`; this \
+             is the primitive used by the canonical |tr_M| consumer. \
              Reference: docs/audits/2026-05-17-knot-fusion-step1-audit.md.",
         schema_version: 1,
         label: spec.label,
