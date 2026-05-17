@@ -96,4 +96,19 @@ theorem trm_hopf_sigma1_sq_markov_invariant
   -- Direct application of the stabilisation axiom in MarkovTraceTower.
   exact MarkovTraceTower.trM_sigma1_sq_stabilises (q := q) m n hm hn
 
+/-- Canonical concrete instance of `TrMHopfSigma1SqClosedForm q` for `q > 1`.
+
+The instance uses the same closed-form expression as the canonical
+`MarkovTraceTower` instance (HnMarkovTrace.lean): the value at every
+`n ≥ 2` is `(q^{5/2} - q^{1/2} + q² + q) / (q² + q)`. The `closed_form`
+field is satisfied by `rfl`. This discharges the class abstraction with
+a concrete witness whose Markov-invariance is proved via
+`trm_hopf_sigma1_sq_markov_invariant`. -/
+noncomputable instance trMHopfSigma1SqClosedForm_canonical
+    (q : ℝ) (hq : 1 < q) : TrMHopfSigma1SqClosedForm q where
+  q_gt_one := hq
+  trM_sigma1_sq :=
+    (q ^ ((5 : ℝ) / 2) - q ^ ((1 : ℝ) / 2) + q ^ 2 + q) / (q ^ 2 + q)
+  closed_form := rfl
+
 end QOU.Braiding

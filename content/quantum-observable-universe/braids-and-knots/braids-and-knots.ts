@@ -342,6 +342,7 @@ export default chapter({
         "atomic-mass-gb-nf",
         "rho-k-graded-expansion",
         "hecke-branching-trace-decomposition",
+        "operator-valued-magnitude-budget",
         "q-hecke-seminormal-character-closure",
         "recomputed-low-isotope-mass-table",
         "markov-trace-antipode-polynomial-symmetry",
