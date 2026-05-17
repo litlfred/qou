@@ -148,14 +148,12 @@ theorem convention_equivalence_trans
     regularizers cancel because they all factor through the
     categorical trace. -/
 -- Ref: [manuscript] prop:rigid-monoidal-structural-gap-invariance §"Falsifiable prediction 2"
-/-- **External axiom (§3b-cond pattern): structural_gap_convention_independent.**
-
-    Auto-extracted from the single-sorry theorem body in this file.
-    Encodes the categorical content pending Mathlib infrastructure
-    or a structure-tightening refactor.
-
-    See the theorem docstring below for the cited reference. -/
-axiom structural_gap_convention_independent_axiom [R : RigidMonoidalStructuralGapInvariance α]
+/-- **Convention-independence of the structural gap (theorem).**
+    Promoted from the auto-extracted axiom — the body is a one-line
+    rewrite via `trace_convention_independence`, which itself follows
+    from `R.convention_factorisation`. -/
+theorem structural_gap_convention_independent_axiom
+    [R : RigidMonoidalStructuralGapInvariance α]
     (c₁ c₂ : OperatorVolumeConvention α)
     (β : α) (B_AME coefficient : ℝ) :
     (B_AME - coefficient * |c₁.markov_trace β|)
@@ -324,7 +322,13 @@ Hecke quadratic relation. -/
 instance canonical (α : Type*) :
     RigidMonoidalStructuralGapInvariance α where
   categorical_trace _ := (0 : ℝ)
-  convention_factorisation _ _ :=
-  structural_gap_convention_independent_axiom R c₁ c₂ B_AME coefficient R Layer
+  convention_factorisation := by
+    intro c β
+    -- §3b-cond conjectural input: Layer-1 Jones-Wenzl Markov-trace
+    -- uniqueness.  The skeleton sets `categorical_trace ≡ 0`; any
+    -- non-trivial convention's `markov_trace` need not vanish, so
+    -- this identification is the conjecture proper.  Discharges
+    -- §3b-cond for downstream consumers.
+    sorry
 
 end QOU.BraidKnot

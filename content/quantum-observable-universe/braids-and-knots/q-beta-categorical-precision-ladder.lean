@@ -94,36 +94,6 @@ classical-limit decategorification principle. -/
 /-- **b is bar-symmetric**: `hoefsmitB q⁻¹ = hoefsmitB q`.
     Reason: `b² = (q⁴ + q² + 1) / (q² + 1)² = (q² + 1 + q⁻²) / (q + q⁻¹)²`
     after dividing by q², which is manifestly invariant under q ↔ q⁻¹. -/
-/-- **External axiom (§3b-cond pattern): hoefsmitB_bar_invariant.**
-
-    Auto-extracted from the single-sorry theorem body in this file.
-    Encodes the categorical content pending Mathlib infrastructure
-    or a structure-tightening refactor.
-
-    See the theorem docstring below for the cited reference. -/
-axiom hoefsmitB_bar_invariant_axiom (q : ℝ) (hq : 0 < q) :
-    hoefsmitB q⁻¹ = hoefsmitB q := by
-  -- Ref: [manuscript] prop:q-beta-categorical-precision-ladder
-  unfold hoefsmitB
-  -- Need: √((q⁻¹)⁴ + (q⁻¹)² + 1) / ((q⁻¹)² + 1) = √(q⁴ + q² + 1) / (q² + 1)
-  -- Multiply numerator and denominator by q² on the right side.
-  -- (q⁻¹)⁴ + (q⁻¹)² + 1 = (1 + q² + q⁴) / q⁴
-  -- √((1 + q² + q⁴) / q⁴) = √(1 + q² + q⁴) / q²    (q > 0)
-  -- (q⁻¹)² + 1 = (1 + q²) / q²
-  -- ratio = (√(1 + q² + q⁴) / q²) / ((1 + q²) / q²) = √(1 + q² + q⁴) / (1 + q²)
-  -- which equals hoefsmitB q.
-  have hq_ne : q ≠ 0 := ne_of_gt hq
-  have hq2 : (q^2 : ℝ) > 0 := by positivity
-  have hq2_ne : (q^2 : ℝ) ≠ 0 := ne_of_gt hq2
-  have h_num_pos : (q^4 + q^2 + 1 : ℝ) > 0 := by positivity
-  -- (q⁻¹)^4 + (q⁻¹)^2 + 1 = (1 + q² + q⁴) / q⁴
-  have h_num : (q⁻¹)^4 + (q⁻¹)^2 + 1 = (1 + q^2 + q^4) / q^4 := by
-    field_simp
-    ring
-  -- (q⁻¹)^2 + 1 = (1 + q²) / q²
-  have h_den :
-    ((q⁻¹)^2 + 1 : ℝ) = (1 + q^2) / q^2
-
 theorem hoefsmitB_bar_invariant (q : ℝ) (hq : 0 < q) :
     hoefsmitB q⁻¹ = hoefsmitB q := by
   -- Ref: [manuscript] prop:q-beta-categorical-precision-ladder

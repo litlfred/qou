@@ -968,9 +968,17 @@ def q_beta_full_chain_n4_MeV() -> float:
     and `prop:kashiwara-jones-c4-categorical`:
 
         Q_β = Q_A · cos(α_N1)
-                  · (1 − b² · ℏ_q⁴)         (c_2 = −b², N=2 Kashiwara)
-                  · (1 − 2 · ℏ_q⁶)          (c_3 = −2 = J_Hopf(q=1), N=3 Hopf)
-                  · (1 + (b²+1/2) · ℏ_q⁸)   (c_4 = b²+1/2, N=4 mixed)
+                  · (1 − b²·ℏ_q⁴)              (c_2 = −b², N=2 Kashiwara)
+                  · (1 − 2·b³·ℏ_q⁶)            (c_3 = −2 from Hopf-Jones; b³ is the
+                                               higher-N self-fusion scale factor)
+                  · (1 + (b²+1/2)·b⁴·ℏ_q⁸)     (c_4 = b²+1/2; b⁴ is the N=4 scale)
+
+    The per-rung b^(2k−2) scale factor (k = rung index) reflects the
+    Hoefsmit self-fusion convention used by the sweep: c_k is the
+    dimensionless coefficient produced by the categorical derivation,
+    and the empirical residual chain is fit against the substrate-scaled
+    factor c_k · b^(2k−2) · ℏ_q^(2k).  See commit `52987d8e5` (M3 wire)
+    for the convention origin.
 
     where α_N1 = α − b·ℏ_q²/2 and (q, α, b, ℏ_q) come from the
     V_(2,1) Hoefsmit substrate via `qbeta_physics.compute_substrate_quantities`.

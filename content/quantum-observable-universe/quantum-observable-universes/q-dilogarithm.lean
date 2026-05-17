@@ -76,6 +76,6 @@ theorem QDilogarithm.unique_up_to_shift
     (h_compl : L₁.compl = L₂.compl)
     (h_div : L₁.div = L₂.div) :
     L₁.Li2.1 = L₂.Li2.1 :=
-  QDilogarithm.unique_up_to_shift_axiom H L₁ L₂ h_log h_mul h_compl h_div
+  QDilogarithm.unique_up_to_shift_axiom L₁ L₂ h_log h_mul h_compl h_div
 
 end QOU

@@ -74,7 +74,12 @@ def vol_q_S(word: list, S: set[int], n_total_gens: int,
         if dim == 0:
             continue
         chi = chi_lambda_of_word(sigmas, dim, sub_remapped, n_sub_gens)
-        total += mp.mpf(y) * mp.mpf(repr(float(chi)))
+        # NOTE: chi is float64 (chi_lambda_of_word uses numpy/scipy matrix
+        # arithmetic at native float precision).  The float→mpf conversion
+        # is direct (no repr round-trip needed); the upstream float64 floor
+        # is the real precision limit — promoting matrix ops to mpmath is
+        # a separate refactor tracked for future precision tightening.
+        total += mp.mpf(y) * mp.mpf(chi)
     return total
 
 

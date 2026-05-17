@@ -41,6 +41,6 @@ theorem gauge_coupling_uniqueness (S : SpectralRing) :
       (∃ p_minus : S.R, ∀ r : S.R, φ r = p_minus * r) →
       (∃ p_minus' : S.R, ∀ r : S.R, ψ r = p_minus' * r) →
       ∃ λ : S.R, ∀ r : S.R, φ r = λ * ψ r :=
-  gauge_coupling_uniqueness_axiom S p_minus p_minus'
+  gauge_coupling_uniqueness_axiom S
 
 end QOU.Descartes
