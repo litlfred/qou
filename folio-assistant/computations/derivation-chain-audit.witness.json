@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-17T07:15:53.050614+00:00",
-  "commitSha": "672854322585fb3e15bdd779b8dbdfa1782748dc",
+  "computedAt": "2026-05-17T20:35:55.143078+00:00",
+  "commitSha": "5659487d0a421963140573db7c66463f81b0e8fa",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2127,6 +2127,7 @@
         "canonical-script-input-audit.witness.json",
         "canonical-tr-m-helium4.witness.json",
         "canonical-tr-m-three-path-comparison.witness.json",
+        "canonical-tr-m-via-chi-cache.witness.json",
         "categorical-bypass-volmatch-demo.witness.json",
         "categorical-q-decay-ba-low-isotopes.witness.json",
         "ch-bond-writhe-lp.witness.json",
@@ -2168,6 +2169,7 @@
         "d-u-closed-form-proof.witness.json",
         "delta-S-chain-audit.witness.json",
         "delta-coupling-closed-form-probe.witness.json",
+        "delta-coupling-cross-anchor-falsification.witness.json",
         "delta-coupling-leading-form-probe.witness.json",
         "delta-coupling-pp-nn-correlation-probe.witness.json",
         "delta-coupling-residual-closure-probe.witness.json",
@@ -2209,6 +2211,7 @@
         "habiro-frobenius-probe.witness.json",
         "habiro-interpolate-cross-validation.witness.json",
         "habiro-motivic-orbit-relations.witness.json",
+        "habiro-residue-a1.witness.json",
         "habiro-tail-in-ideal-validation.witness.json",
         "hadron-knot-table.witness.json",
         "he4-burau-alexander.witness.json",
