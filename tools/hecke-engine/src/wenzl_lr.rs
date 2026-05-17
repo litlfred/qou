@@ -52,17 +52,160 @@ use crate::seminormal::partitions_of;
 use crate::seminormal_mn::chi_lambda_braid_qdef;
 use rayon::prelude::*;
 
-/// Tensor factor for a Wenzl decomposition: a braid word together
-/// with its strand count.
+/// Crossing type for a Hecke-algebra factor word.
+///
+/// The canonical atomic-braid decomposition
+/// (`canonical_braid_crossings.atom_canonical_crossings`) produces
+/// three crossing types: `Sigma` (positive), `SigmaInv` (negative),
+/// and `Averaged` (half-sum `0.5·(σ + σ⁻¹)`, used on inter-nucleon
+/// arcs in the canonical Z+N convention).
+///
+/// Wire encoding (binary CLI):
+/// - `(+1, gen)` = `Sigma`
+/// - `(-1, gen)` = `SigmaInv`
+/// - `( 0, gen)` = `Averaged`
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Crossing {
+    Sigma,
+    SigmaInv,
+    Averaged,
+}
+
+impl Crossing {
+    /// Decode a wire-format `(sign, _)` into a `Crossing`.
+    pub fn from_sign(sign: i32) -> Self {
+        match sign {
+            s if s > 0 => Crossing::Sigma,
+            s if s < 0 => Crossing::SigmaInv,
+            _ => Crossing::Averaged,
+        }
+    }
+}
+
+/// A single crossing in a factor word: `(crossing-type, gen_1based)`.
+pub type CrossingPair = (Crossing, u32);
+
+/// Tensor factor for a Wenzl decomposition: a braid word (with
+/// `Crossing` types per generator) together with its strand count.
 #[derive(Clone, Debug)]
 pub struct WenzlFactor {
     /// Number of strands this factor lives on.
     pub n_strands: usize,
-    /// Braid word `[(sign, generator_1based), ...]`.
-    pub word: Vec<(i32, u32)>,
+    /// Braid word `[(Crossing, generator_1based), ...]`.
+    pub word: Vec<CrossingPair>,
     /// Optional human-readable label for diagnostics
     /// (e.g. `"proton"`, `"neutron"`).
     pub label: String,
+}
+
+/// Convert a factor word to a plain Hecke `[(sign, gen)]` word
+/// assuming no `Averaged` crossings (panics otherwise).  Used for
+/// the base case of `chi_factor` after averaging expansion.
+fn to_plain_word(word: &[CrossingPair]) -> Vec<(i32, u32)> {
+    word.iter()
+        .map(|(c, g)| match c {
+            Crossing::Sigma => (1i32, *g),
+            Crossing::SigmaInv => (-1i32, *g),
+            Crossing::Averaged => panic!(
+                "to_plain_word: averaged crossing must be expanded \
+                 by chi_factor before reaching the plain-word path"
+            ),
+        })
+        .collect()
+}
+
+/// Evaluate `χ^λ(β)` for a factor whose word may include `Averaged`
+/// crossings.  Expands each averaged crossing into the half-sum
+/// `0.5·(σ + σ⁻¹)`, producing `2^k` sub-words (where `k` = number
+/// of averaged crossings), evaluates `chi_lambda_braid_qdef` on each
+/// sub-word, and averages with weight `1/2^k`.
+///
+/// At `k = 0` this is exactly `chi_lambda_braid_qdef`.
+///
+/// **Cost**: `O(2^k)` sub-evaluations.  In the QOU pipeline, per-
+/// nucleon factors at H_3 have `k ∈ {2, 5, ...}`; for ⁴He at H_12
+/// the per-factor `k = 2` (proton or neutron at H_3), so 4 sub-
+/// evals per factor.  The full ⁴He LR factorisation involves
+/// 4 nucleons × 4 sub-evals × 3 partitions of 3 + LR combine —
+/// negligible vs the >30-min Hoefsmit at H_12.
+pub fn chi_factor(lambda: &[usize], factor: &WenzlFactor) -> LaurentPolyQ {
+    // Locate averaged-crossing positions.
+    let avg_positions: Vec<usize> = factor
+        .word
+        .iter()
+        .enumerate()
+        .filter(|(_, (c, _))| *c == Crossing::Averaged)
+        .map(|(i, _)| i)
+        .collect();
+    let k = avg_positions.len();
+    if k == 0 {
+        let plain = to_plain_word(&factor.word);
+        return chi_lambda_braid_qdef(lambda, factor.n_strands, &plain);
+    }
+    if k > 20 {
+        // 2^20 ≈ 10^6 sub-evaluations cap (same as
+        // chi_lambda_braid_qdef's n_neg cap).  Avoid silent
+        // intractability.
+        panic!(
+            "chi_factor: {} averaged crossings (> 20 cap = 2^20 ≈ \
+             10^6 sub-words); factor `{}` exceeds the practical \
+             expansion limit",
+            k, factor.label
+        );
+    }
+    // Enumerate the 2^k sub-words and sum their χ values.
+    let total = 1usize << k;
+    let chi_sum: LaurentPolyQ = (0..total)
+        .into_par_iter()
+        .map(|mask| {
+            let mut sub_word = factor.word.clone();
+            for (bit, &pos) in avg_positions.iter().enumerate() {
+                let take_positive = (mask >> bit) & 1 == 0;
+                sub_word[pos].0 = if take_positive {
+                    Crossing::Sigma
+                } else {
+                    Crossing::SigmaInv
+                };
+            }
+            let plain = to_plain_word(&sub_word);
+            chi_lambda_braid_qdef(lambda, factor.n_strands, &plain)
+        })
+        .reduce(LaurentPolyQ::zero, |a, b| a + b);
+    // Divide by 2^k.  Since LaurentPolyQ has integer coefficients
+    // (BigInt), we represent the average as a polynomial scaled
+    // by 2^k (i.e. omit the division): the LR composer sees the
+    // unnormalised `Σ_{sub-words} χ^λ`.  To recover the genuine
+    // averaged value, the caller must divide the final
+    // `tr_M = Σ_λ y_λ · ∏ χ^{μ_i}(factor_i)` by `∏ 2^{k_i}`.
+    //
+    // Returning the unnormalised sum here keeps integer arithmetic
+    // exact end-to-end; the normalisation factor is reported by
+    // [`averaging_denominator`] for the caller to divide out at
+    // the witness layer (where rational arithmetic is acceptable).
+    chi_sum
+}
+
+/// Total averaging denominator for a list of factors: the product
+/// of `2^{k_i}` where `k_i` is the number of `Averaged` crossings
+/// in factor `i`.  The unnormalised `tr_M` returned by
+/// [`tr_m_via_lr`] should be divided by this denominator to obtain
+/// the genuine averaged Markov trace.
+pub fn averaging_denominator(factors: &[WenzlFactor]) -> u128 {
+    let mut d: u128 = 1;
+    for f in factors {
+        let k = f
+            .word
+            .iter()
+            .filter(|(c, _)| *c == Crossing::Averaged)
+            .count();
+        d = d.checked_shl(k as u32).unwrap_or_else(|| {
+            panic!(
+                "averaging_denominator: total averaged-crossing \
+                 count exceeds 127 (denominator would overflow u128)"
+            )
+        });
+    }
+    d
 }
 
 /// Two-way Wenzl LR character factorization (sorry-free,
@@ -100,8 +243,11 @@ pub fn chi_via_lr_2way(
             if c == 0 {
                 return LaurentPolyQ::zero();
             }
-            let chi_mu = chi_lambda_braid_qdef(mu, n_1, &factor1.word);
-            let chi_nu = chi_lambda_braid_qdef(nu, n_2, &factor2.word);
+            // chi_factor handles averaged-crossing expansion internally
+            // (returning the unnormalised 2^k sum; caller divides by
+            // averaging_denominator at the end).
+            let chi_mu = chi_factor(mu, factor1);
+            let chi_nu = chi_factor(nu, factor2);
             let mut term = chi_mu * chi_nu;
             term.scalar_mul_assign(c);
             term
@@ -130,7 +276,7 @@ pub fn chi_via_lr_kway(lambda: &[usize], factors: &[WenzlFactor]) -> LaurentPoly
                 LaurentPolyQ::zero()
             }
         }
-        1 => chi_lambda_braid_qdef(lambda, factors[0].n_strands, &factors[0].word),
+        1 => chi_factor(lambda, &factors[0]),
         2 => chi_via_lr_2way(lambda, &factors[0], &factors[1]),
         _ => {
             // Recursive: split (factor_0 ⊗ factor_1) | rest.
@@ -239,11 +385,6 @@ mod tests {
 
     #[test]
     fn factor_2way_sign_rep_at_h_2() {
-        // λ = (1,1) sign rep: χ^(1,1)(id ⊗ id) =
-        //   c^(1,1)_{(1),(1)} · 1 · 1 = 1 · 1 = 1.
-        // (Note: c^(1,1)_{(1),(1)} = 1 since SSYT of shape (1,1)/(1)
-        //  with content (1) = {[[1],[1]]} but lattice prop fails; or
-        //  c^(1,1)_{(1),(1)} = 1 via Frobenius reciprocity sym ↔ alt.)
         let f1 = WenzlFactor { n_strands: 1, word: vec![], label: "id1".into() };
         let f2 = WenzlFactor { n_strands: 1, word: vec![], label: "id1".into() };
         let chi = chi_via_lr_2way(&[1, 1], &f1, &f2);
@@ -251,5 +392,47 @@ mod tests {
         assert_eq!(chi.pretty(), direct.pretty(),
                    "2-way LR sign-rep mismatch: chi_LR={}, chi_direct={}",
                    chi.pretty(), direct.pretty());
+    }
+
+    #[test]
+    fn averaged_denominator_counts_correctly() {
+        let f = WenzlFactor {
+            n_strands: 3,
+            word: vec![
+                (Crossing::Sigma, 1),
+                (Crossing::Averaged, 2),
+                (Crossing::Averaged, 1),
+                (Crossing::SigmaInv, 2),
+            ],
+            label: "test".into(),
+        };
+        // 2 averaged crossings → denominator = 4
+        assert_eq!(averaging_denominator(&[f.clone()]), 4);
+        // Two such factors → 16
+        assert_eq!(averaging_denominator(&[f.clone(), f]), 16);
+    }
+
+    #[test]
+    fn averaged_chi_expansion_matches_sum_of_pure_words() {
+        // Single averaged crossing on H_2: word = [averaged σ_1].
+        // chi_factor returns the unnormalised sum
+        //   chi_lambda([σ_1]) + chi_lambda([σ_1^{-1}])
+        // which we verify by direct call.
+        let f = WenzlFactor {
+            n_strands: 2,
+            word: vec![(Crossing::Averaged, 1)],
+            label: "h2_avg".into(),
+        };
+        // χ^(2) (trivial rep) at q-deformed σ_1 = q, σ_1^{-1} = q^{-1}
+        // Sum = q + q^{-1}.
+        let chi_via_factor = chi_factor(&[2], &f);
+        let chi_sigma = chi_lambda_braid_qdef(&[2], 2, &[(1, 1)]);
+        let chi_sigma_inv = chi_lambda_braid_qdef(&[2], 2, &[(-1, 1)]);
+        let expected = chi_sigma + chi_sigma_inv;
+        assert_eq!(
+            chi_via_factor.pretty(), expected.pretty(),
+            "averaged expansion mismatch: factor={}, direct sum={}",
+            chi_via_factor.pretty(), expected.pretty()
+        );
     }
 }

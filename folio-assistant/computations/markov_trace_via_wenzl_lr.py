@@ -104,23 +104,43 @@ def run_lr_compute(
     return json.loads(result.stdout)
 
 
+CTYPE_TO_SIGN = {"sigma": 1, "sigma_inv": -1, "averaged": 0}
+
+
+def canonical_factor_spec(Z: int, N: int, label: str) -> dict:
+    """Build a `FactorSpec` for a (Z, N) nucleus at its native
+    `3*(Z+N)`-strand braid via `atom_canonical_crossings`.
+
+    Maps the `(gen_idx, ctype)` pairs to the binary's wire format
+    `(sign, gen_1based)` with `sign ∈ {-1, 0, +1}` per
+    `CTYPE_TO_SIGN`.
+    """
+    from canonical_braid_crossings import atom_canonical_crossings  # noqa: E402
+    pairs = atom_canonical_crossings(Z, N)
+    # `atom_canonical_crossings` returns 0-based generator indices;
+    # the Rust binary's wire format expects 1-based per `WenzlFactor`
+    # docstring. Shift by +1.
+    word = [[CTYPE_TO_SIGN[ctype], int(gen) + 1] for gen, ctype in pairs]
+    return {
+        "label": label,
+        "n_strands": 3 * (Z + N),
+        "word": word,
+    }
+
+
 def main() -> int:
-    # Smoke factor list: 4-way decomposition shaped like ⁴He
-    # (p ⊗ p ⊗ n ⊗ n at H_12). Per-nucleon braid words are the
-    # 3-strand stubs `[(1, 1), (-1, 2)]` (proton) and
-    # `[(-1, 1), (1, 2)]` (neutron); these are placeholders
-    # awaiting the canonical-braid-crossings integration.
-    proton_stub = {
-        "label": "proton-stub",
-        "n_strands": 3,
-        "word": [[1, 1], [-1, 2]],
-    }
-    neutron_stub = {
-        "label": "neutron-stub",
-        "n_strands": 3,
-        "word": [[-1, 1], [1, 2]],
-    }
-    factor_specs = [proton_stub, proton_stub, neutron_stub, neutron_stub]
+    # Canonical 4-way decomposition for ⁴He = p ⊗ p ⊗ n ⊗ n.
+    # Each nucleon factor lives at its native H_3 strand count
+    # (atom_canonical_crossings(1, 0) for proton,
+    #  atom_canonical_crossings(0, 1) for neutron) — 11 crossings
+    # per nucleon including 2 averaged crossings on inter-nucleon
+    # arcs. The total braid β(⁴He) lives at H_12.
+    proton_canonical = canonical_factor_spec(1, 0, "proton")
+    neutron_canonical = canonical_factor_spec(0, 1, "neutron")
+    factor_specs = [
+        proton_canonical, proton_canonical,
+        neutron_canonical, neutron_canonical,
+    ]
 
     bin_path = find_binary()
     if bin_path is None:

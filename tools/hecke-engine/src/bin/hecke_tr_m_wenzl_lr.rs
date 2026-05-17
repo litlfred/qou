@@ -35,7 +35,9 @@
 use clap::Parser;
 use hecke_engine::laurent_poly_q::LaurentPolyQ;
 use hecke_engine::seminormal::partitions_of;
-use hecke_engine::wenzl_lr::{chi_via_lr_kway, WenzlFactor};
+use hecke_engine::wenzl_lr::{
+    averaging_denominator, chi_via_lr_kway, Crossing, WenzlFactor,
+};
 use serde::{Deserialize, Serialize};
 use std::fs;
 use std::io::{self, Read};
@@ -63,7 +65,10 @@ struct Args {
 struct FactorSpec {
     label: String,
     n_strands: usize,
-    /// `[(sign, generator_1based), ...]`
+    /// `[(sign, generator_1based), ...]` where sign ∈ {-1, 0, +1}:
+    /// +1 = σ (positive), -1 = σ⁻¹, 0 = averaged half-sum
+    /// `0.5·(σ + σ⁻¹)`.  Averaged crossings appear in the canonical
+    /// atomic-braid decomposition on inter-nucleon arcs.
     word: Vec<(i32, u32)>,
 }
 
@@ -92,6 +97,11 @@ struct Output {
     n_factors: usize,
     factor_labels: Vec<String>,
     all_partitions: bool,
+    /// `2^Σ k_i` where `k_i` is the count of averaged crossings in
+    /// factor `i`.  The `chi_polynomial` values below are the
+    /// **unnormalised** 2^k sum; the genuine averaged Markov trace
+    /// is `Σ_λ y_λ · chi_polynomial(λ) / averaging_denominator`.
+    averaging_denominator: String,
     chi_lambda_terms: Vec<ChiTerm>,
 }
 
@@ -117,11 +127,16 @@ fn run(args: Args) -> io::Result<()> {
         .map(|f| WenzlFactor {
             label: f.label.clone(),
             n_strands: f.n_strands,
-            word: f.word.clone(),
+            word: f
+                .word
+                .iter()
+                .map(|(s, g)| (Crossing::from_sign(*s), *g))
+                .collect(),
         })
         .collect();
     let total: usize = factors.iter().map(|f| f.n_strands).sum();
     let labels: Vec<String> = factors.iter().map(|f| f.label.clone()).collect();
+    let avg_denom = averaging_denominator(&factors);
 
     let lambdas: Vec<Vec<usize>> = if args.all_partitions {
         partitions_of(total)
@@ -157,6 +172,7 @@ fn run(args: Args) -> io::Result<()> {
         n_factors: factors.len(),
         factor_labels: labels,
         all_partitions: args.all_partitions,
+        averaging_denominator: avg_denom.to_string(),
         chi_lambda_terms: chi_terms,
     };
     let json = serde_json::to_string_pretty(&out).map_err(|e| {
