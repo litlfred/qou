@@ -204,7 +204,7 @@ if __name__ == "__main__":
     print("=" * 100)
     print("BINDING via CANONICAL Jones-Markov trace "
           "(prop:categorical-mass-markov)")
-    print(f"q₀ = {Q0_NUM}, Q_β(n) = 0.78233341 MeV (β-decay Q-value, CAL-3)")
+    print(f"q₀ = {Q0_NUM}, Q_β(n) = {float(_Q_BETA_N)} MeV (β-decay Q-value, CAL-3)")
     print("=" * 100)
     results = []
     print(f"  {'Atom':>6} {'A':>3} {'3A':>3} {'B_AME':>8} "
@@ -245,7 +245,7 @@ if __name__ == "__main__":
             "NOT the canonical E_0 = m_e/(q_0(q_0-1)) ≈ 4.186 MeV)."
         ),
         "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
-        "parameters": {"q0": Q0_NUM, "Q_beta_n_MeV": 0.78233341},
+        "parameters": {"q0": Q0_NUM, "Q_beta_n_MeV": float(_Q_BETA_N)},
         "results": results,
     }
     out = Path(__file__).parent / "binding-canonical.witness.json"

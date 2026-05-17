@@ -146,8 +146,14 @@ def _beta_witness() -> dict:
 def e_0_n0_mev() -> mp.mpf:
     """Single-tick (Planck-tick, N=0) energy scale.
 
-    E_0^{(N=0)} = m_e / (q_0 · (q_0 - 1)) = m_e · c_q² · ℏ_q
-                ≈ 4.186 MeV at q_0 ≈ 1.110.
+    E_0^{(N=0)} = m_e / (q_0 · (q_0 - 1))   ≈ 4.186 MeV at q_0 ≈ 1.110.
+
+    Equivalent form `m_e · c_q² · ℏ_q` (with `c_q = 1/(q-1)` per the
+    notation register Ch 11 and `ℏ_q = (q-1)/q`) — derivation given
+    in
+    [`beta-decay-energy-scale.md`](../../content/quantum-observable-universe/particle-interactions/beta-decay-energy-scale.md).
+    Stick to the explicit `m_e / (q_0 (q_0-1))` form here to avoid
+    ambiguity over which `c_q` convention is in scope.
 
     This is the **leading term** of the brane-tower geometric series;
     use `e_0_full_mev()` for the full tower (N → ∞) value or

@@ -2,7 +2,7 @@
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "computation": "e0-calibration-audit",
   "description": "Audit of E_0 / Q_β(n) calibration constants across folio-assistant/computations. Reports value-precision drift, anchor-of-pinning violations vs CAL-3, and the PDG-derived uncertainty floor on every E_0-dependent quantity.",
-  "computedAt": "2026-05-17T05:35:45.621308+00:00",
+  "computedAt": "2026-05-17T05:35:47.760684+00:00",
   "reference_blocks": [
     "prop:three-calibration-inputs",
     "rem:calibration-inputs"
@@ -34,7 +34,7 @@
       },
       {
         "file": "folio-assistant/computations/derived_masses.py",
-        "line": 335,
+        "line": 341,
         "pattern": "literal_0_782",
         "match": "0.782",
         "context": "\"0.788 MeV vs CODATA 0.782 MeV at 0.75%).\",",
@@ -52,26 +52,10 @@
       },
       {
         "file": "folio-assistant/computations/binding_canonical.py",
-        "line": 207,
-        "pattern": "literal_0_78233341",
-        "match": "0.78233341",
-        "context": "print(f\"q₀ = {Q0_NUM}, Q_β(n) = 0.78233341 MeV (β-decay Q-value, CAL-3)\")",
-        "kind": "doc"
-      },
-      {
-        "file": "folio-assistant/computations/binding_canonical.py",
         "line": 243,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
         "context": "\"|tr_M_atom|) with Q_β(n) = 0.78233341 MeV (free-\"",
-        "kind": "doc"
-      },
-      {
-        "file": "folio-assistant/computations/binding_canonical.py",
-        "line": 248,
-        "pattern": "literal_0_78233341",
-        "match": "0.78233341",
-        "context": "\"parameters\": {\"q0\": Q0_NUM, \"Q_beta_n_MeV\": 0.78233341},",
         "kind": "doc"
       },
       {
@@ -561,6 +545,22 @@
         "kind": "active"
       },
       {
+        "file": "folio-assistant/computations/binding_canonical.py",
+        "line": 207,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_N",
+        "context": "print(f\"q₀ = {Q0_NUM}, Q_β(n) = {float(_Q_BETA_N)} MeV (β-decay Q-value, CAL-3)\")",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/binding_canonical.py",
+        "line": 248,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_N",
+        "context": "\"parameters\": {\"q0\": Q0_NUM, \"Q_beta_n_MeV\": float(_Q_BETA_N)},",
+        "kind": "doc"
+      },
+      {
         "file": "folio-assistant/computations/c_k_beta_decay_witness.py",
         "line": 45,
         "pattern": "Q_BETA_MEV",
@@ -658,7 +658,7 @@
       },
       {
         "file": "folio-assistant/computations/derived_masses.py",
-        "line": 375,
+        "line": 381,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "\"CAL-3_Q_beta_MeV\": str(Q_BETA_MEV) + \" (cross-check only; predicted by framework below)\",",
