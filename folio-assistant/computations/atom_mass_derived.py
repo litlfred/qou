@@ -156,14 +156,22 @@ def expand_inverse(word):
 
 
 def markov_trace_general(terms):
-    """Markov trace for general H_n(q) element.
+    """**Approximation** of the Markov trace for general H_3(q) elements.
 
-    For word w of length ℓ: tr_M(w) = z^ℓ for reduced words,
-    with correction for non-standard basis elements.
+    Uses the canonical TR_M_3 lookup table for the 6 NF basis elements
+    of H_3 (these are exact), and a `z^len(word)` heuristic fallback
+    for words outside NF_BASIS_3. The fallback is **NOT** the canonical
+    Markov trace — it over-counts when adjacent generators don't
+    commute. For the H_3 atomic mass computation this script targets,
+    the input `terms` should already be in NF basis after Hecke
+    reduction (lines ~95-125 above), so the fallback branch typically
+    doesn't fire in practice.
 
-    For H₃ basis: use exact values.
-    For general words: tr_M(σ_{i₁}···σ_{iₖ}) = z^k
-    (this is the Ocneanu trace on reduced words).
+    See docs/audits/2026-05-17-dual-tr-m-discrepancy.md for the
+    broader Plancherel/Markov-trace audit. For the canonical Markov
+    trace of an arbitrary H_n braid word, use
+    `markov_trace_recursive.markov_trace_of_word(n, signed_word)`
+    directly.
     """
     total = 0.0
     for word, coeff in terms.items():
@@ -171,7 +179,9 @@ def markov_trace_general(terms):
             idx = NF_BASIS_3.index(word)
             total += coeff * TR_M_3[idx]
         else:
-            # General: z^{word length} for reduced words
+            # Fallback heuristic (NOT canonical Markov; flagged above).
+            # In practice this branch is rare because Hecke reduction
+            # in this script normalises into NF_BASIS_3 first.
             total += coeff * z ** len(word)
     return total
 
