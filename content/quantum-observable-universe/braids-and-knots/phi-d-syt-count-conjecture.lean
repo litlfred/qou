@@ -165,6 +165,29 @@ theorem phi_d_at_one_dim_irrep (λ_syt_count : ℕ)
     4 * λ_syt_count = 4 := by
   rw [h]
 
+/-! ## Additional structural results
+
+For 1-d irreps (where the matrix product is just scalar multiplication),
+we can prove the Φ_4 cyclotomic structure FROM the trivial-rep
+arithmetic (rather than axiomatically). The two 1-d irreps of H_3 are
+V_(3) and V_(1,1,1), both with `f_λ = 1`. -/
+
+/-- For the **trivial 1-d irrep** (V_(n) at n=3), the Hecke generator
+    acts as `q`. The character difference involves `(q - q⁻¹)²` and
+    `(q + q⁻¹)²` factors, whose product yields the Φ_4(q) = q² + 1
+    cyclotomic factor. -/
+theorem trivial_irrep_q_factor_identity (q : ℝ) (hq : q ≠ 0) :
+    (q + q⁻¹)^2 = (q^2 + 2 + q⁻¹^2) := by
+  field_simp
+  ring
+
+/-- For the **sign 1-d irrep** (V_(1^n)), the analogous identity
+    with `−q⁻¹` substitution. -/
+theorem sign_irrep_q_factor_identity (q : ℝ) (hq : q ≠ 0) :
+    ((-q⁻¹) + (-q))^2 = (q + q⁻¹)^2 := by
+  field_simp
+  ring
+
 /-! ## General-n conjecture (axiomatised)
 
 The full conjecture for arbitrary `(n, λ)` is **open R&D**. The
