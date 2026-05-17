@@ -399,3 +399,50 @@ Awaiting response from PR #664 author. Posted at:
   Genuine V_(2,2,2) projection probe for c_3 (Phase 2'). Closes PR
   #664's c_3 gap independently of mass-formula reformulation.
 
+
+## 2026-05-17 round 8 — PR #681 review + combiner cross-link
+
+User direction: "look at PR 681 - cherry pick if needed."
+
+### Inspection result
+
+PR #681 has 2 commits, both audit-doc only:
+  413ae2835  Knot-fusion Step 1 audit: math + pipeline already on main
+  a6a4af0e9  Address gemini on PR #681: fix block-count discrepancy
+
+The corrected block count: 19/35 non-scalar (μ,ν) blocks in
+sublemma-2-1-A-operator-extract.witness.json for H_6 deuteron
+interface — NOT the 18/30 originally cited (Gemini caught the
+conflation with H_9 partitions).
+
+### Nothing to cherry-pick
+
+Both commits are on the audit doc itself; cherry-picking would
+conflict with PR #681's merge. My PR #671 ledger references the
+operator-valued framework conceptually (no specific block-count
+claims to correct).
+
+### Coordination comment posted on PR #681
+
+https://github.com/litlfred/qou/pull/681#issuecomment-4472570688
+
+Cites my Step 2 combiner (canonical_tr_m_via_chi_cache.py, commit
+e3a1b22ac) — verified to 1e-15 vs Habiro witness for the 3 complete-
+coverage atoms. Notes the MarkovTrace abstraction divergence question
+on PR #664 is independent (still awaiting response). Confirms PR
+#671's empirical findings (cross-anchor falsification + T5 candidate
+enumeration) align with PR #681's "operator-valued, not scalar"
+diagnosis.
+
+### Cross-PR scope map (current)
+
+| PR | Author | State | Coord status |
+|---|---|---|---|
+| #671 (mine) | claude | open | Round 8 — Phase 2/3 work shipped |
+| #664 (c_3/c_4/κ) | claude (other) | open | Awaits MarkovTrace abstraction answer |
+| #681 (knot-fusion audit) | claude (other) | open | Round 8 cross-link posted |
+| #663 (anti-staleness) | claude (other) | open | No conflict |
+
+Next concrete actionable on PR #671: Phase 2' V_(2,2,2) projection
+probe for c_3 (closes my own PR #664 critical-review gap).
+
