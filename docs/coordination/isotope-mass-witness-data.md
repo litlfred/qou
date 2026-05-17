@@ -337,3 +337,63 @@ Watch list (post-#663):
 - **CODATA-2027 Q_β tightening** — with PR #664's categorical c_3
   derivation, Story B is now favoured structurally even without
   experimental tightening.
+
+## 2026-05-17 update — substrate flavor split derivation
+
+User request: derive the (μ_d − μ_u)/μ_avg ≈ 0.00414 ratio that is
+currently hardcoded in `HadronicMass.lean` (`dressed_mass_up := 311.10`,
+`dressed_mass_down := 312.39`, theorem `dressed_quark_mass_difference`
+explicitly fits `μ_d − μ_u = 1.29` to reproduce CODATA Δm = 1.293).
+
+### Findings
+
+1. **Substrate closed form (probe_flavor_split_substrate.py):**
+   - `(μ_d − μ_u)/μ_avg = h_q² · ℏ_q / √q` ≈ 0.00411 (-0.67%)
+   - Algebraic identity: `h_q · z_mkv = z_0 = ℏ_q · √q` (verified 50 dps)
+   - 4 equivalent forms emerge
+
+2. **Categorically clean closed form for Δm/M_N:**
+   - `Δm / M_N = (q-1)² · (1 - q⁻⁴) / 3` ≈ 0.001376 (-0.10%) ← **best**
+   - Factored: `Δm/μ_avg = ℏ_q² · h_q · [2]_q`
+   - Reading: two action quanta (ℏ_q²) · one Hecke crossing (h_q) ·
+     doublet (the σ-eigenspace symm⊕antisymm)
+
+3. **Per-sheet Bring integration (probe_per_sheet_flavor_nonin.py):**
+   - At a_C2: A_1 = -0.626 (real), A_{2,3} = -0.500 ± 0.156i (complex
+     conjugate pair) — flavor non-invariance pops out structurally
+   - Vieta: ΣA_k = -4·a_C2 ✓ (residual 6e-16)
+   - SW-style sum-weighted prescription (Scheme 4) DERIVED from
+     averaging over 3! quark-sheet placements; matches CODATA Δm
+   - PRODUCT-weighted (Scheme 2) overcounts by ~3× = n_quarks
+
+### Bearing on sibling PRs
+
+- **#671 (m_p chain closure)** — my C2 inflection at A_C2 = 2.4617
+  gives m_p_pred = 938.92 MeV (-0.07%); combined with the substrate
+  flavor split closes the gap from "T1+T4 alone gives 0.5974 MeV
+  (1e9 ppb)" to a research-grade prediction at 700 ppm.
+- **#681 / #682 (knot-fusion + chi-cache combiner)** — orthogonal
+  path. My per-sheet Bring integrals (A_1 real + A_{2,3} conjugate
+  pair) provide a structural lower bound on what the
+  σ_λ y_λ · χ^λ combiner must reproduce in the n=3 limit. Both
+  paths target the same canonical |tr_M|.
+- **#679 (ρ_K consumer wired to LR)** — my closed-form
+  `Δm/μ_avg = ℏ_q² · h_q · [2]_q` is a substrate predictor for the
+  flavor splitting that the ρ_K consumer could use as a sanity
+  guard alongside the LR witness.
+
+### Next pending tasks
+
+Per user direction "write up and prove in paper. do lean. wire into
+compute":
+
+1. **Paper**: new prop block under `braids-and-knots/` (or
+   `observations/`) stating the derivation. Title TBD.
+2. **Lean**: companion theorem in `HadronicMass.lean` or new
+   `flavor_split_substrate.lean` — likely a theorem of form
+   `Δm_substrate = M_N · (q-1)² · (1 - q⁻⁴) / 3` proven via `ring`
+   after defining the substrate atoms.
+3. **Compute**: wire the substrate predictor as an additional
+   sanity guard in `cross_check_trM_1ppb.py` or `atomic_mass_via_rho_k.py`.
+
+
