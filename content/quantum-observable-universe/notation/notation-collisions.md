@@ -118,3 +118,22 @@ parse a calligraphic $\mathcal{C}$ in context as a discrete
 symmetry operator. The $\mathcal{P}$ / $\mathcal{T}$ / $\mathcal{CP}$
 companions are likewise CPT operators; they do not collide with any
 categorical or geometric reservation.
+
+**Base ring convention (Lean).** In Lean source the generic ground
+ring is **$R$** with the weakest typeclass that admits the
+construction (`[CommRing R]`, `[Field R]`, `[GroupWithZero R]`,
+etc.); the **real numbers $\mathbb{R}$** are used **only past the
+archimedean wall** — specifically, when the declaration genuinely
+needs `Real.sqrt`, `Real.rpow`, `Real.cos`, `Real.exp`, `Real.log`,
+an ordering predicate (`0 < q`), `linarith`, or a CODATA /
+experimental numerical value. Categorical content, algebraic
+identities, q-deformation combinatorics, and Wenzl / Hecke /
+Hoefsmit structural data all live over generic $R$. The narrative
+side mirrors this in symbol use: $q \in R$ for the substrate
+parameter when only the algebraic structure matters, $q \in \mathbb{R}$
+only when an archimedean evaluation (numerical
+$q_0 \approx 1.1097$, the substrate's archimedean realisation) is
+under discussion. See
+[`CLAUDE.md` §7c](https://github.com/litlfred/qou/blob/main/CLAUDE.md#7c-base-ring-convention-generic-r-vs-archimedean-r-strict)
+for the typeclass cheat-sheet and the archimedean-wall membership
+list.

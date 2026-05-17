@@ -252,6 +252,36 @@ replace with a different approach.
 **Fix**: A previous tactic closed the goal completely. Remove the
 subsequent tactic(s) that have nothing left to prove.
 
+### Spurious ℝ-specialisation (CLAUDE.md §7c)
+
+**Pattern**: A categorical / algebraic identity is declared over `ℝ`
+without needing any archimedean operation (no `Real.sqrt`, `Real.rpow`,
+`Real.cos`, `Real.exp`, `Real.log`, no ordering predicate, no
+`linarith` / `positivity`). Build errors then cascade when a downstream
+consumer wants to instantiate the same identity over `ℚ`, `ℂ`, or a
+formal power series ring.
+
+**Fix**: Refactor the declaration to use a generic type variable
+`{R : Type*}` with the weakest typeclass that admits the construction
+(`[CommRing R]`, `[Field R]`, `[GroupWithZero R]`, etc.). Concrete
+`ℝ`-evaluations live in a separate file under `descartes-universe/`
+or `observations/` that consumes the generic result via a `(R := ℝ)`
+instantiation.
+
+```lean
+-- Before — ℝ-specialised by accident
+noncomputable def qBracket (q : ℝ) (n : ℕ) : ℝ :=
+  (q ^ n - q ^ (-(n : ℤ))) / (q - q⁻¹)
+
+-- After — generic
+def qBracket {R : Type*} [Field R] (q : R) (n : ℕ) : R :=
+  (q ^ n - q ^ (-(n : ℤ))) / (q - q⁻¹)
+```
+
+If the declaration **does** cross the archimedean wall, keep `ℝ` but
+document the specific archimedean construct in the docstring (e.g.
+`/-- … uses `Real.sqrt` so this is ℝ-specific. -/`).
+
 ## Linter Warning Fixes
 
 ### dupNamespace

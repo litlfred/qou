@@ -517,3 +517,19 @@ clean.  **Never add `decl` back to the schema to unblock a merge.**
 `content/quantum-observable-universe/lean/QOU/<Module>.lean`).
 Every paper's `lakefile.toml` pins `mathlib4` on the same commit.
 Stubs use `sorry` for incomplete proofs.
+
+### Base ring convention (CLAUDE.md §7c):
+Every Lean declaration that holds in a generic commutative ring must
+be stated over a **type variable**, never silently specialised to `ℝ`.
+Use a generic `{R : Type*}` parameter with the weakest typeclass that
+admits the construction (`[CommRing R]`, `[Field R]`,
+`[GroupWithZero R]`). Specialise to `ℝ` **only** when the declaration
+genuinely needs `Real.sqrt`, `Real.rpow`, `Real.cos`, `Real.exp`,
+`Real.log`, an ordering predicate (`0 < q`, `q < 1`), `linarith` /
+`positivity` / `nlinarith`, or a CODATA / experimental numerical
+literal. See `CLAUDE.md` §7c for the typeclass cheat-sheet and the
+archimedean-wall membership list.
+
+When in doubt, **start generic**: generic → `ℝ` specialisation is
+cheap (drop the parameter); `ℝ` → generic refactor is much harder
+once downstream code accretes archimedean assumptions silently.
