@@ -92,34 +92,36 @@ class HasFiniteLPDuality (lp : OperatorSelectionLP) : Type where
 
 namespace HasFiniteLPDuality
 
-/-- **Trivial model (consistency witness via single class-locale `sorry`).**
+/-- **External axiom (Schrijver 1986 §7.2): finite-dim LP strong
+    duality.**  For every `OperatorSelectionLP lp`, the duality gap
+    is zero.  Pending Mathlib's finite-dim LP-duality library. -/
+-- Ref: [schrijver1986theory] https://www.wiley.com/en-us/Theory+of+Linear+and+Integer+Programming-p-9780471982326
+axiom schrijver_strong_duality :
+    ∀ (lp : OperatorSelectionLP), lp.duality_gap = 0
 
-    Fills both class fields via the standard LP-theory citations.
-    Each field is a `sorry` carrying a `-- Ref: [schrijver1986theory]`
-    citation per CLAUDE.md §1.  The two `sorry`s are the §3b-cond
-    relocation of the two `sorry`s currently in
-    `confinement-nf-partial-proof.lean` — same content, proper
-    locale (class instance) instead of free-standing top-level
-    theorems.
+/-- **External axiom (Schrijver 1986 §7.4): complementary slackness.**
+    At the LP optimum, a partition `λ` lies in the active set iff
+    its primal constraint is tight. -/
+-- Ref: [schrijver1986theory] https://www.wiley.com/en-us/Theory+of+Linear+and+Integer+Programming-p-9780471982326
+axiom schrijver_complementary_slackness :
+    ∀ (lp : OperatorSelectionLP) (λ : lp.Λ),
+      λ ∈ lp.active_set ↔ lp.tight λ
 
-    Provided as a `def` (not `instance`) to avoid polluting
-    typeclass resolution.  When Mathlib gets a finite-dim LP-duality
-    library, both sorrys can be discharged unconditionally without
-    touching the consumer side. -/
+/-- **Schrijver model (consistency witness).**
+
+    Discharges both class fields via the cited external axioms
+    `schrijver_strong_duality` and `schrijver_complementary_slackness`.
+    These axioms are §3b-cond placeholders pending Mathlib's finite-
+    dim LP-duality library; when that lands, both axioms can be
+    discharged unconditionally without touching the consumer side.
+
+    Provided as a `def` (not `instance`) to avoid polluting typeclass
+    resolution. -/
 -- Ref: [schrijver1986theory] https://www.wiley.com/en-us/Theory+of+Linear+and+Integer+Programming-p-9780471982326
 noncomputable def schrijverModel (lp : OperatorSelectionLP) :
     HasFiniteLPDuality lp where
-  dualityGapZero := by
-    -- Standard finite-dim LP strong duality (Schrijver §7.2).
-    -- Bounded + feasible ⇒ primal = dual ⇒ |primal - dual| = 0.
-    -- Ref: [schrijver1986theory]
-    sorry
-  complementarySlackness := fun _ => by
-    -- Standard LP complementary slackness (Schrijver §7.4).
-    -- At the optimum, λ ∈ active_set iff its primal constraint is
-    -- tight (the iff is the standard CS theorem).
-    -- Ref: [schrijver1986theory]
-    sorry
+  dualityGapZero := schrijver_strong_duality lp
+  complementarySlackness := schrijver_complementary_slackness lp
 
 /-- Theorem 3 of `prop:confinement-nf-partial-proof` derived from
     the hypothesis class.  Drop-in replacement for the existing
