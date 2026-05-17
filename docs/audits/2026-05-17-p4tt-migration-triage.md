@@ -67,10 +67,25 @@ consumers of the legacy witness, by design.
 
 - **P3** (real `H_{3A}` Wedderburn weights → ρ_K refinement toward
   780 ppb floor) is the substantive math lever that follows P4‴.
-  The building blocks (V_(2,1) closed form from PR #672,
-  height-6 partition enum) are in place; what's needed is
-  computing the **Markov-trace y_λ** (not Plancherel weights —
-  these diverge at H_n ≥ 4) per atomic braid.
+  **Status update 2026-05-17:** the Markov-trace `y_λ` computation
+  at H_6 is **already done** via `wedderburn_jones_markov.py` (PR
+  #572, on main); the module is widely consumed by `crt_markov.py`,
+  `delta_lambda_*`, `alpha_*`. The remaining lever is wiring this
+  into per-atom ρ_K refinement.
+
+## Items 2–4 audit findings (2026-05-17 post-coordinate sweep)
+
+| Item | Status |
+|------|--------|
+| **2 (P4ⁱᵛ)** — extend `|tr_M|` to ⁴He/⁶Li/⁷Li | **infrastructure-blocked**: `atomic_tr_m_mpfr_50dps.py:79–91` documents that ⁴He at H_12 requires ~2×10¹³ mp.mpf ops × 47 crossings; bu64reus1 hit the 30-min timeout. Reachable only via (a) Rust `hecke-engine` + rayon, or (b) Wenzl LR categorical reduction (`hecke-branching-trace-decomposition.md`). |
+| **3 (P3 Markov y_λ at H_6)** | **already done**: `wedderburn_jones_markov.py` is on main (PR #572); per-atom y_λ at the substrate parameter is callable as `y_lambda_at(...)`. |
+| **4 (SDP H_5 extension)** | **infrastructure-blocked** (same as Item 2): `joint_tower_sdp_solver_v2.py:21` documents H_5 deferred to `tools/hecke-engine` for Python-mpmath intractability of Hoefsmit seminormal at n=5+. |
+
+**Net implication:** the highest-leverage remaining 1ppb lever is
+**Rust hecke-engine completion** (or Wenzl LR categorical
+reduction), not further Python-side compute. The categorical-chain
+work tracked in #663/#664/#671 addresses the *precision-ladder*
+side; the *consumer/SDP* side is bottlenecked on the kernel.
 
 ## Net delta
 
