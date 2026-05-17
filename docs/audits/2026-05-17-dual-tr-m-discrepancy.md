@@ -213,6 +213,113 @@ the framing "we compute the Jones polynomial of the atomic braid"
 would need to be amended to "we compute the q-Plancherel expectation
 of the atomic-braid character." These are different invariants.
 
+## Provenance — where did `tr_M_symbolic` come from?
+
+Traced via `git log -p -S "def tr_M_symbolic"`:
+
+- **Introducing commit:** `58e78090e` (2026-05-05) on branch
+  `claude/categorical-mass-divergence-audit`.
+- **Commit title:** *"Resolve factor-of-2 mismatch: PR #546 uses
+  Plancherel trace, not Markov"*.
+
+The commit message **explicitly documents** the dual-trace issue:
+
+> KEY FINDING: the conventions differ at the per-irrep weight level,
+> NOT just by a uniform constant.
+>
+>   λ ⊢ 3       PR #546 w_λ/f^λ    char_fast y_λ      ratio
+>   (3)              0.1634            0.4154         2.54
+>   (2,1)            0.3303            0.2809         0.85
+>   (1,1,1)          0.1634            0.0227         0.14
+>
+> Trace ratios across braids: {1.01, 4.84, 1.09, 2.32} — NOT uniform.
+>
+> CATEGORICAL INTERPRETATION:
+>
+>   PR #546's tr_M = Σ (dim_q²/[n]_q!) · χ^λ / f^λ
+>     → PLANCHEREL/REGULAR TRACE (Hopf-algebra integral)
+>     → does NOT satisfy Markov axiom tr_M(1) = 1 except at q=1
+>     → PR #546's tr_M(1) = (2 + [2]_q²)/[3]_q! ≈ 0.987 at q_0
+>
+>   char_fast tr_M = Σ y_λ · χ^λ with y_λ from Markov axioms
+>     → CANONICAL HOEFSMIT-WENZL MARKOV TRACE
+>     → satisfies tr_M(1)=1, tr_M(σ_1)=z, tr_M(σ_1σ_2)=z²
+>
+> These are DIFFERENT categorical objects, not different normalizations
+> of the same trace.
+
+And further:
+
+> Implication for prop:atomic-mass-gb-nf:
+>   prop:categorical-mass-markov requires the Markov trace (the
+>   descended Frobenius integral). PR #546's closed-form polynomial
+>   is the Plancherel trace. To use it as the dimensional anchor,
+>   it needs to be CONVERTED to the Markov trace via re-weighting
+>   with the Markov-axiom-determined y_lambda(q).
+
+**The original author already knew.** The function was created
+deliberately to compute the Plancherel trace and clearly flagged
+that downstream usage as a Markov trace required conversion. But:
+
+1. The function is **named `tr_M_symbolic`** — the `M` for "Markov".
+   Naming overload caused subsequent agents (and the production
+   chain) to treat it as the Markov trace.
+2. The **conversion to Markov via `y_lambda(q)`** that the commit
+   message mandates was **never implemented at the consumer sites**.
+   ~15 production scripts call `tr_M_symbolic` directly without
+   applying the Plancherel-to-Markov conversion.
+
+## Validation — is `tr_M_symbolic` correct?
+
+**As the Plancherel/regular trace: YES.**
+
+The formula $\sum_\lambda \frac{\dim_q^2(\lambda)}{[n]_q!} \cdot \frac{\chi^\lambda(\beta)}{f^\lambda}$
+correctly computes:
+- The q-Plancherel expectation of the normalized character $\chi^\lambda/f^\lambda$
+- Equivalently, the Hopf-algebra integral against the regular representation
+- This **is** a well-defined invariant of the Hecke algebra element
+
+At $q = 1$, the q-Plancherel measure reduces to the classical Plancherel
+$f^\lambda \cdot f^\lambda / n!$ (since $\dim_q \to f^\lambda$), and the
+normalized character $\chi^\lambda/f^\lambda$ is the canonical character
+table entry. So at $q=1$ the formula computes the standard classical
+trace of the group algebra — correct.
+
+**As "the Markov trace": NO.**
+
+It violates the Markov axiom `tr_M(1) = 1` for $q \neq 1$ (gives
+$2 + [2]_q^2)/[3]_q! \approx 0.987$ on $H_3$, computed
+in the original commit message). The Markov trace must give 1 on
+the identity for all $q$; `tr_M_symbolic` does not.
+
+It also fails the Markov property: $\text{tr}_M(\alpha \cdot \sigma_n) = z \cdot \text{tr}_M(\alpha)$
+does not hold with any single constant $z$ depending only on $q$.
+
+**Verdict:** `tr_M_symbolic` is mathematically correct as the
+**Plancherel trace**, but it is **NOT a Markov trace** despite the
+name. The bug is naming + missing downstream conversion, not the
+formula itself.
+
+## The actual fix
+
+1. **Rename `tr_M_symbolic` to `tr_Plancherel_symbolic`** (or
+   `tr_q_plancherel_symbolic`) at the source. The misleading name
+   is the root cause; the math is fine.
+2. **Add `tr_Markov_symbolic`** that applies the canonical
+   `y_lambda`-weighted formula (calling `tr_M_canonical` or
+   equivalent), with `tr_Markov_symbolic = tr_M_canonical` as the
+   one-line definition.
+3. **Audit downstream consumers** for which trace they actually want:
+   - **mass-prediction chains** that derive m/m_e from "atomic
+     Markov trace" want the Markov trace (per CLAUDE.md
+     `thm:jones-markov-trace`) → switch to `tr_Markov_symbolic`.
+   - **q-Plancherel measure probes** (Wedderburn-block weight
+     verifications) want the Plancherel trace → already correct,
+     just rename their import.
+   - The `y_lambda_equivalence_proof.py` claim of equivalence needs
+     amendment — the equivalence is the Plancherel↔Markov conversion
+     formula, not direct equality.
+
 ## Open questions
 
 1. Was the production-script choice of `tr_M_symbolic` deliberate
