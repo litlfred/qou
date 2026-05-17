@@ -13,9 +13,15 @@ The 12 files that reference `atomic_braid_mass_table` split as:
 | **Docstring/comment mentions only** | `brane_tower_isospin_diagnosis`, `derived_masses`, `atomic_braid_mass_terms`, `probe_shift_derivation_provenance`, `atom_mass_derived`, `derivation_chain`, `m_n_difference_formula`, `braid_encoding_audit`, `atomic_mass_via_rho_k` | No-op (mentions, not consumers) |
 | **Audit-only consumers of legacy six-term decomposition** | `compound_binding_via_differences`, `delta_n2_placeholder_audit`, `neutron_error_diagnostic`, `deuteron_delta_i_audit` | Add P4‴ banner; **retain on legacy witness by design** |
 
-The four audit consumers extract legacy-only fields:
-`term1_atomic_total`, `term2_markov_z2`, `term3_markov_z4`,
-`term4_frobenius_codim`, `term6_cyclotomic_tail_MeV`, `total_hecke`.
+The four audit consumers extract legacy-only fields. Specific
+usage per script (verified against current `main`):
+
+| Consumer | term1 | term2 | term3 | term4 | term6 | total_hecke |
+|----------|:-----:|:-----:|:-----:|:-----:|:-----:|:-----------:|
+| `compound_binding_via_differences` | ✓ | ✓ | ✓ | ✓ | ✓ | — |
+| `delta_n2_placeholder_audit` | ✓ | ✓ | ✓ | ✓ | ✓ | — |
+| `neutron_error_diagnostic` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| `deuteron_delta_i_audit` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 
 These per-term fields **do not exist** in the canonical
 [`atomic-mass-via-rho-k.witness.json`](../../folio-assistant/computations/atomic-mass-via-rho-k.witness.json),

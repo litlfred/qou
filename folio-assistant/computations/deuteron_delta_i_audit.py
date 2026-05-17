@@ -101,11 +101,14 @@ def main() -> int:
 
     # Load legacy Strategy-3 components for the Class-C diagnostic.
     # P4‴ note: this script back-fits E_0 via the proton anchor only
-    # to expose the Δ_I anomaly at A=2 (see banner below); it relies on
-    # legacy-only fields (`term1_atomic_total`, `term6_cyclotomic_tail_MeV`,
-    # `total_hecke`) which are not in the canonical ρ_K witness.
-    # Canonical mass predictions live in `atomic-mass-via-rho-k.witness.json`;
-    # this script remains a legacy-witness consumer by design.
+    # to expose the Δ_I anomaly at A=2 (see banner below); it relies
+    # on legacy-only fields `term1_atomic_total`, `term2_markov_z2`,
+    # `term3_markov_z4`, `term4_frobenius_codim`,
+    # `term6_cyclotomic_tail_MeV`, and `total_hecke` (used at
+    # line 121 to back-fit E_0 = (M_p_codata − p_t6) / p_total).
+    # None of these are in the canonical ρ_K witness; canonical mass
+    # predictions live in `atomic-mass-via-rho-k.witness.json`.
+    # This script remains a legacy-witness consumer by design.
     here = Path(__file__).parent
     s3_path = here / "atomic-braid-mass-table.witness.json"
     s3 = json.loads(s3_path.read_text())

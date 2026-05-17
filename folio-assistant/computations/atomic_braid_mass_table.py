@@ -29,14 +29,17 @@ Atomic-braid mass-table compute (Strategy 3 — knot operator + Δ_n full-twist)
   Audit-only consumers RETAINED on the legacy witness by design
   (P4‴ triage, this PR):
     - `compound_binding_via_differences.py`  (six-term LP-dual
-      differences diagnostic; reads term1–term6 + total_hecke)
-    - `delta_n2_placeholder_audit.py`  (audits the `full_twist_scalar(A)
-      = 1.0` placeholder in the legacy path)
-    - `neutron_error_diagnostic.py`  (probes the legacy E_0
-      single-anchor calibration and its `total_hecke` /
-      `term6_cyclotomic_tail_MeV` fields)
+      differences diagnostic; reads term1_atomic_total,
+      term2_markov_z2, term3_markov_z4, term4_frobenius_codim,
+      term6_cyclotomic_tail_MeV)
+    - `delta_n2_placeholder_audit.py`  (audits the
+      `full_twist_scalar(A) = 1.0` placeholder; reads term1–term6)
+    - `neutron_error_diagnostic.py`  (probes the legacy E_0 single-
+      anchor calibration; reads term1_atomic_total, term2–term4,
+      term6_cyclotomic_tail_MeV, total_hecke)
     - `deuteron_delta_i_audit.py`  (Class-C diagnostic back-fitting
-      E_0 to expose Δ_I anomaly at A=2; reads legacy term1/term6)
+      E_0 to expose Δ_I anomaly at A=2; reads term1_atomic_total,
+      term2–term4, term6_cyclotomic_tail_MeV, total_hecke)
 
   Each carries an in-file P4‴ banner pointing at the canonical
   ρ_K witness for mass predictions.
