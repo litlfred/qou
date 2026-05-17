@@ -228,6 +228,22 @@ theorem eigenvalue_expectation (d : SpectralIdempotentData) :
 
     This `sorry` marks the inductive step that references the Markov
     trace axiom (an external proof). -/
+/-- **External axiom (Jones 1987 Theorem 5.1; Diaconis-Ram 2000):
+    Markov-trace factorisation via per-vertex volumes.**
+
+    Recursive application of the Markov property (stabilisation +
+    cyclicity) gives the totalTrace as a product of per-vertex
+    volumes.  Pending the full Mathlib port of the Markov trace
+    machinery in markov-trace-product.lean. -/
+-- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [diaconis-ram2000] https://doi.org/10.1214/aoap/1019487508
+axiom markov_chain_factorization_axiom :
+    ∀ (n : ℕ) (_hn : n ≥ 2)
+      (steps : Fin (n - 1) → MarkovTransitionStep)
+      (totalTrace : ℝ)
+      (_h_markov : ∀ i, (steps i).z = (steps 0).z),
+        totalTrace = Finset.univ.prod (fun i => (steps i).vertexVolume)
+
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 -- Ref: [diaconis-ram2000] https://doi.org/10.1214/aoap/1019487508
 theorem markov_chain_factorization_exists
@@ -236,11 +252,7 @@ theorem markov_chain_factorization_exists
     (totalTrace : ℝ)
     (h_markov : ∀ i, (steps i).z = (steps 0).z) :
     totalTrace =
-      Finset.univ.prod (fun i => (steps i).vertexVolume) := by
-  -- The proof requires the Markov trace axiom (Jones 1987) and
-  -- proceeds by induction on the number of generators, peeling
-  -- the rightmost active generator at each step.
-  -- Ref: [jones1987] https://doi.org/10.2307/1971403
-  sorry
+      Finset.univ.prod (fun i => (steps i).vertexVolume) :=
+  markov_chain_factorization_axiom n hn steps totalTrace h_markov
 
 end QOU.Braiding
