@@ -1,6 +1,6 @@
 {
   "audit": "trivial-skeleton-audit",
-  "generated": "2026-05-16T14:58:34.084Z",
+  "generated": "2026-05-17T02:58:47.582Z",
   "total_flagged": 3,
   "files_flagged": 3,
   "patterns": {
@@ -11,7 +11,7 @@
   "flagged": {
     "braids-and-knots/braid-link-types.lean": [
       {
-        "line": 60,
+        "line": 66,
         "pattern": "one_def",
         "snippet": "def Braid2.σ : Braid2 := 1"
       }

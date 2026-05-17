@@ -46,13 +46,13 @@ def c5_from_V21 (_q : ℝ) : ℝ := 0  -- placeholder
 def c5_from_V111 (_q : ℝ) : ℝ := 0  -- placeholder
 
 /-- The c_6 contribution from V_(3). -/
-def c6_from_V3 (_q : ℝ) : ℝ := 0
+def c6_from_V3 (_q : ℝ) : ℝ := (0 : ℝ)  -- placeholder
 
 /-- The c_6 contribution from V_(2,1). -/
-def c6_from_V21 (_q : ℝ) : ℝ := 0
+def c6_from_V21 (_q : ℝ) : ℝ := (0 : ℝ)  -- placeholder
 
 /-- The c_6 contribution from V_(1,1,1). -/
-def c6_from_V111 (_q : ℝ) : ℝ := 0
+def c6_from_V111 (_q : ℝ) : ℝ := (0 : ℝ)  -- placeholder
 
 /-! ## Per-block weighting and total
 

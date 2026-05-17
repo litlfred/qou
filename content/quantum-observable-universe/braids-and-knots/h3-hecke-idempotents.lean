@@ -54,13 +54,13 @@ For n=3 with hook-lengths h(x):
 -/
 
 /-- q-dimension of `V_(3)` in H_3(q): `1`. -/
-def dimQ_V3 (_q : ℝ) : ℝ := 1
+def dimQ_V3 (_q : ℝ) : ℝ := (1 : ℝ)
 
 /-- q-dimension of `V_(2,1)` in H_3(q): `[2]_q = q + q⁻¹`. -/
 noncomputable def dimQ_V21 (q : ℝ) : ℝ := q + q⁻¹
 
 /-- q-dimension of `V_(1,1,1)` in H_3(q): `1`. -/
-def dimQ_V111 (_q : ℝ) : ℝ := 1
+def dimQ_V111 (_q : ℝ) : ℝ := (1 : ℝ)
 
 /-! ## Sum-of-dim_q identity (Wedderburn completeness)
 
