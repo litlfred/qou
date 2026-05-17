@@ -49,7 +49,7 @@ diverged.
 - [`prop:alpha-shift-torus-knot`](../../content/quantum-observable-universe/braids-and-knots/alpha-shift-torus-knot.md) — proved scalar case for torus knots
 
 ### Numerical witness (machine-precision verified)
-- [`sublemma-2-1-A-operator-extract.witness.json`](../../folio-assistant/computations/sublemma-2-1-A-operator-extract.witness.json) — extracts `A^λ_{μ,ν}(I)` matrix entries via 144 `(β_1, β_2)` test pairs in `H_3(q_0) × H_3(q_0)` for the deuteron interface `I = σ_2 − ½(q − q⁻¹)·𝟙`. **All 11 partitions verify to ~10⁻¹⁵** (machine FP limit). Of the 30 `(μ, ν)` blocks, 12 are scalar and **18 are non-scalar operators**.
+- [`sublemma-2-1-A-operator-extract.witness.json`](../../folio-assistant/computations/sublemma-2-1-A-operator-extract.witness.json) — extracts `A^λ_{μ,ν}(I)` matrix entries via 144 `(β_1, β_2)` test pairs in `H_3(q_0) × H_3(q_0)` for the deuteron interface `I = σ_2 − ½(q − q⁻¹)·𝟙`. **All 11 partitions verify to ~10⁻¹⁵** (machine FP limit). Of the **35 `(μ, ν)` blocks** across these partitions, **16 are scalar (multiples of identity)** and **19 are non-scalar operators** (verified via `is_scalar_multiple_of_id` flag in the witness).
 
 ### Compute pipeline (parameterised by atom)
 [`per_irrep_pole_atom.py`](../../folio-assistant/computations/per_irrep_pole_atom.py) — generalised pipeline keyed on `(Z, N)`. Recipe:
