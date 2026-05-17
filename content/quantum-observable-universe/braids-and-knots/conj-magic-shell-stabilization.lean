@@ -505,37 +505,26 @@ theorem cross_coupling_mirror_symmetry
 -- (recovers the empirically-refuted additivity prediction).
 -- ────────────────────────────────────────────────────────────────────────────
 
-/-- **§3b-cond canonical cross-coupling instance.**  Sets
-    `delta_coupling ≡ 0`, so the cross-decomposition obligation
-    becomes the **conjectural additivity claim**
+/-- **REMOVED 2026-05-17**: the `canonicalCrossCoupling` instance
+    asserted additivity `Δ_shell(Z,N) = Δ_shell(Z,0) + Δ_shell(0,N)`,
+    which is **empirically REFUTED** at doubly-magic ⁴He (88 %
+    overshoot per AME data; see
+    `probe_magic_shell_empirical_instantiation.py`).  Keeping a
+    `sorry`-stub for a known-false statement contaminates the §3b-cond
+    discipline: downstream theorems would carry
+    `[Cross : MagicShellCrossCoupling]` as a hypothesis that cannot
+    be satisfied by any substrate-derived `MagicShellStabilization`.
 
-      `_M.delta_shell Z N = _M.delta_shell Z 0 + _M.delta_shell 0 N`
+    Real instances of `MagicShellCrossCoupling` must EITHER supply a
+    non-trivial `delta_coupling` (Pattern A upgrade — track the
+    AME-measured +13.20 MeV residual at Z=N=2) OR override
+    `cross_decomposition` with a stabilization function whose
+    additivity is substrate-verified for the specific (Z, N) cone.
 
-    for the substrate-derived `MagicShellStabilization`.  The
-    `sorry` faithfully records this conjectural input per CLAUDE.md
-    §3b-cond — it is not a tautological placeholder.  Empirical
-    refutation of additivity at doubly-magic ⁴He (88 % overshoot,
-    docstring above) means real instances must EITHER supply a
-    non-trivial `delta_coupling` (Pattern A upgrade) OR override
-    `cross_decomposition` with a `MagicShellStabilization` whose
-    additivity has been substrate-verified.
-
-    Companion: `docs/audits/2026-05-12-lean-p4-canonical-instance-review.md`. -/
--- Ref: [manuscript] conj:magic-shell-stabilization §"Refined proof obligations (3)"
-instance canonicalCrossCoupling [_M : MagicShellStabilization] :
-    MagicShellCrossCoupling where
-  delta_coupling _ _ := (0 : ℝ)
-  cross_decomposition Z N := by
-    -- §3b-cond conjectural input: substrate-derived additivity of
-    -- `_M.delta_shell` across (Z, 0) + (0, N).  Empirically refuted
-    -- at doubly-magic ⁴He; real instances must override.
-    show _M.delta_shell Z N
-            = _M.delta_shell Z 0 + _M.delta_shell 0 N + 0
-    -- Ref: [manuscript] conj:magic-shell-stabilization §"Refined proof obligations (3)"
-    sorry
-  coupling_non_magic_z _ _ _ := rfl
-  coupling_non_magic_n _ _ _ := rfl
-  coupling_z_n_symmetry _ _ := rfl
+    Companion audits:
+    - `docs/audits/2026-05-12-lean-p4-canonical-instance-review.md`
+    - `docs/audits/2026-05-17-derivable-axioms-audit.md` (Tier D
+      "empirically refuted" classification) -/
 
 -- ────────────────────────────────────────────────────────────────────────────
 -- Bound theorems on Δ_shell magnitude (item 4)
