@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-17T06:45:50.258152+00:00",
-  "commitSha": "5afc36bdefb6ce3ff3cfffb0c2751bf5787a28fd",
+  "computedAt": "2026-05-17T06:45:52.090495+00:00",
+  "commitSha": "bb02c493b22457737470b66344acc9e659c8d4fb",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2062,6 +2062,7 @@
         "A-operator-extract-reduced.witness.json",
         "A-operator-per-interface.witness.json",
         "A-operator-rank-probe.witness.json",
+        "F-n-categorical-derivation-probe.witness.json",
         "a-minus-2-q-substrate-probe.witness.json",
         "adjacent-vs-full-probe.witness.json",
         "alpha-5-jucys-murphy-central.witness.json",
