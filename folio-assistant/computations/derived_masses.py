@@ -143,19 +143,68 @@ def _beta_witness() -> dict:
 # ── Energy scale (FULL chain, derived from CAL-1 + CAL-2) ───────
 
 @lru_cache(maxsize=None)
-def e_0_full_mev() -> mp.mpf:
-    """E_0 from the FULL chain: m_e / (q_0 · (q_0 - 1)).
+def e_0_n0_mev() -> mp.mpf:
+    """Single-tick (Planck-tick, N=0) energy scale.
 
-    Per [`prop:beta-decay-energy-scale`](../../content/quantum-observable-universe/particle-interactions/beta-decay-energy-scale.md):
-    derived from CAL-1 m_e and CAL-2 q_0 only — no CAL-3 (Q_β)
-    needed here. CAL-3 becomes the *prediction*, not an input.
+    E_0^{(N=0)} = m_e / (q_0 · (q_0 - 1)) = m_e · c_q² · ℏ_q
+                ≈ 4.186 MeV at q_0 ≈ 1.110.
 
-    Returns ≈ 4.186 MeV at q_0 ≈ 1.110. Calibrated cross-check
-    via Q_β / |Δ(net)| gives 4.155 MeV (0.75% agreement; the
-    0.75% residual is the brane-tower correction).
+    This is the **leading term** of the brane-tower geometric series;
+    use `e_0_full_mev()` for the full tower (N → ∞) value or
+    `e_0_n_mev(n)` for an explicit truncation depth.
     """
     q0 = _q_0()
     return M_E_MEV / (q0 * (q0 - 1))
+
+
+@lru_cache(maxsize=None)
+def e_0_n_mev(n: int) -> mp.mpf:
+    """Tower truncation at depth N.
+
+    E_0^{(N)} = E_0^{(N=0)} · Σ_{k=0}^{N} ℏ_q^{2k}
+              = E_0^{(N=0)} · (1 − ℏ_q^{2(N+1)}) / (1 − ℏ_q²)
+
+    Per [`q_beta_form_a_n1_extension.py`](./q_beta_form_a_n1_extension.py)
+    lines 32–38. For N=0 this returns the single-tick value;
+    for N → ∞ it converges to `e_0_full_mev()`.
+    """
+    if n < 0:
+        raise ValueError(f"e_0_n_mev: depth n must be ≥ 0, got {n}")
+    q0 = _q_0()
+    hbar_q = (q0 - 1) / q0
+    geometric = (1 - hbar_q ** (2 * (n + 1))) / (1 - hbar_q ** 2)
+    return e_0_n0_mev() * geometric
+
+
+@lru_cache(maxsize=None)
+def e_0_full_mev() -> mp.mpf:
+    """E_0 from the FULL chain, tower-summed (N → ∞).
+
+    E_0^{full} = E_0^{(N=0)} / (1 − ℏ_q²)
+               = m_e / (q_0 · (q_0 - 1)) · 1/(1 − ℏ_q²)
+
+    Per the geometric brane-tower series derived symbolically in
+    [`q_beta_form_a_n1_extension.py`](./q_beta_form_a_n1_extension.py)
+    lines 32–38. Returns ≈ 4.228 MeV at q_0 ≈ 1.110 (≈ +0.99% over
+    the N=0 single-tick 4.186 MeV).
+
+    Derived from CAL-1 m_e and CAL-2 q_0 only — no CAL-3 (Q_β) input.
+    CAL-3 becomes the *prediction*, not an input.
+
+    **Important — direction of the residual.** Wiring the geometric
+    tower form makes the framework-derived E_0 *larger* than the
+    CODATA-calibrated value (`e_0_calibrated_mev()` ≈ 4.155 MeV),
+    not smaller. The N=0 derived overshoots by +0.75%; the
+    tower-summed form overshoots by ≈ +1.75%. The geometric series
+    direction may be a placeholder pending the categorical / Li_2^q
+    derivation review (see
+    [`docs/audits/2026-05-03-tower-mev-calibration-finding.md`](../../docs/audits/2026-05-03-tower-mev-calibration-finding.md)
+    for the open finding that Φ_q is the wrong analytic function
+    and Li_2^q is bounded). Track via Workplan 2 Phase 2.
+    """
+    q0 = _q_0()
+    hbar_q = (q0 - 1) / q0
+    return e_0_n0_mev() / (1 - hbar_q ** 2)
 
 
 @lru_cache(maxsize=None)
@@ -326,9 +375,13 @@ def derivation_summary() -> dict:
             "CAL-3_Q_beta_MeV": str(Q_BETA_MEV) + " (cross-check only; predicted by framework below)",
         },
         "wired_predictions": {
+            "E_0_N0_MeV": str(e_0_n0_mev()),
             "E_0_full_MeV": str(e_0_full_mev()),
             "E_0_calibrated_MeV": str(e_0_calibrated_mev()),
-            "E_0_derived_vs_calibrated_pct": float(
+            "E_0_N0_vs_calibrated_pct": float(
+                (e_0_n0_mev() - e_0_calibrated_mev()) / e_0_calibrated_mev() * 100
+            ),
+            "E_0_full_vs_calibrated_pct": float(
                 (e_0_full_mev() - e_0_calibrated_mev()) / e_0_calibrated_mev() * 100
             ),
             "Q_beta_predicted_MeV": str(q_beta_predicted_mev()),
@@ -365,7 +418,7 @@ def derivation_summary() -> dict:
 
 
 __all__ = [
-    "e_0_full_mev", "e_0_calibrated_mev",
+    "e_0_n0_mev", "e_0_n_mev", "e_0_full_mev", "e_0_calibrated_mev",
     "q_beta_predicted_mev", "q_beta_observable_mev", "q_beta_virtual_mev",
     "proton_mass_mev", "neutron_mass_mev",
     "deuteron_mass_mev", "triton_mass_mev",

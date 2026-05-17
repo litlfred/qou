@@ -212,10 +212,22 @@ def main() -> int:
     w.add_parameter("Q_beta_codata_MeV", str(q_codata))
     w.add_data("Q_beta_N0_symbolic", str(Q_beta_N0_simp))
     w.add_data("Q_beta_N1_symbolic", str(Q_beta_N1_simp))
+    # Tower-summed full form (N → ∞): E_0^full = E_0_N=0 / (1 - ℏ_q²)
+    E0_full_num = E0_N0_num / (1 - hbar_q_num ** 2)
+    Q_full_num = abs(eval_at_q0(delta_net)) * E0_full_num
+    # CODATA-calibrated cross-check: E_0^(cal) = Q_β / |Δ(net)|
+    delta_net_num = eval_at_q0(delta_net)
+    E0_cal_num = q_codata / abs(delta_net_num)
+
     w.add_data("E0_N0_MeV_50dps", str(E0_N0_num))
     w.add_data("E0_N1_MeV_50dps", str(E0_N1_num))
+    w.add_data("E0_full_MeV_50dps", str(E0_full_num))
+    w.add_data("E0_calibrated_MeV_50dps", str(E0_cal_num))
+    w.add_data("E0_full_vs_calibrated_pct", float((E0_full_num - E0_cal_num) / E0_cal_num * 100))
+    w.add_data("E0_N0_vs_calibrated_pct", float((E0_N0_num - E0_cal_num) / E0_cal_num * 100))
     w.add_data("Q_beta_N0_MeV", str(Q_N0))
     w.add_data("Q_beta_N1_MeV", str(Q_N1))
+    w.add_data("Q_beta_full_MeV", str(Q_full_num))
     w.add_data("N0_residual_keV", float(delta_N0_kev))
     w.add_data("N0_residual_pct", float(delta_N0_pct))
     w.add_data("N1_residual_keV", float(delta_N1_kev))

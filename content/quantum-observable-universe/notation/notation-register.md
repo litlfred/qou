@@ -67,7 +67,7 @@ refers to it.
 |---------|------|---------|
 | $C_5$ invariants | functional | $p_1(c)$ (power sum), $h_2(c)$, $h_3(c)$ (Hermitian), $\chi_\zeta(c)$ (character) |
 | Color | plain italic | $c$ (color vector), $c_r$, $c_g$, $c_b$ (tube coords), $\hat{c}$, $\hat{c}_r$ (chromaticity) |
-| Energy | bold | $\mathbf{E}_q$ ($q$-energy), $\mathbf{E}_\times$ (crossing), $\mathbf{E}_{\mathrm{bind}}$ (binding). Never $\mathfrak{E}$. |
+| Energy | bold | $\mathbf{E}_q$ ($q$-energy), $\mathbf{E}_\times$ (crossing), $\mathbf{E}_{\mathrm{bind}}$ (binding), $\mathbf{E}_0$ (hadronic energy scale, single-Planck-tick form $\mathbf{E}_0^{(N=0)} = m_e/(q_0(q_0-1)) \approx 4.186$ MeV; tower-summed form $\mathbf{E}_0^{\text{full}} = \mathbf{E}_0^{(N=0)}/(1-\hbar_q^2)$; truncations $\mathbf{E}_0^{(N)}$ for depth $N$). Never $\mathfrak{E}$. **Never confuse $\mathbf{E}_0$ with $Q_\beta(n)$** — see [collisions](./notation-collisions.md). |
 | Mass (categorical) | fraktur | $\mathfrak{m}$, $\mathfrak{m}_{\mathfrak{H}}$ (hadron). Never plain $m$ for categorical mass. |
 | Photon | Greek | $\gamma$ — photon (standard physics convention). Used in pair-production / Breit–Wheeler vertices ($\gamma\gamma \to e^+ e^-$) and photonic channels. Distinct from the Euler–Mascheroni constant $\gamma$ (only ever appears inside zeta-value identities) and from Dirac matrices $\gamma^\mu$ (always with a Lorentz index). **Never** use $\gamma$ for a vortex morphism — the vortex is $\varrho$ (see [Algebraic substrate](#algebraic-substrate-chapter-6)). |
 | $q$-Hamiltonian | hat | $\hat{H}_q$ — operator hat, Dirac convention. Distinct from $\mathcal{H}_q$ and $H_n(q)$. |

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-15T22:02:53.853033+00:00",
-  "commitSha": "cf06b736dc4f6f948bb05a8ad65861523cc3a7b7",
+  "computedAt": "2026-05-17T04:23:08.576830+00:00",
+  "commitSha": "216ed28fabcc2fdb81767de5805ebb13b520e5dc",
   "assertions": [
     {
       "name": "geometric_N1_lift_overshoots_per_braid_ceiling",
@@ -25,10 +25,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 400,
+  "durationMs": 332,
   "computation": "q-beta-form-a-n1-extension",
   "scriptFile": "q_beta_form_a_n1_extension.py",
-  "scriptHash": "4b2104dd3006",
+  "scriptHash": "423e962a1b6b",
   "scriptCommitSha": "e63591fbc142798199ae93f1cafc33ec921c04a5",
   "description": "Symbolic extension of Form A Q_β to N=1 brane-tower depth. Derives the N=1 correction factor (1 + ℏ_q²) = (2q²-2q+1)/q² from the geometric series of E_0_full = E_0_N=0/(1-ℏ_q²). Closed form: Q_β^A,N=1 = m_e · (q+1) · |q²-2q-1| · (2q²-2q+1) / (2 q⁵). Substrate-only (CAL-1 m_e + CAL-2 q_0); no CAL-3 input. Comparator-only against CODATA Q_β. Class C (diagnostic / prediction).",
   "contentBlock": "prop:neutron-qvalue-symbolic",
@@ -42,8 +42,13 @@
     "Q_beta_N1_symbolic": "m_e*(q**2 + (q - 1)**2)*Abs((q**2 - 1)*(q*(q - 2) - 1))/(2*q**5*(q - 1))",
     "E0_N0_MeV_50dps": "4.1859808220625237732985519083214879046242353091078",
     "E0_N1_MeV_50dps": "4.2270753849065179881067481781261608717893409882739",
+    "E0_full_MeV_50dps": "4.2274828178225800531413820350994417631367435138451",
+    "E0_calibrated_MeV_50dps": "4.1789704466352213321639827486680305416453852468612",
+    "E0_full_vs_calibrated_pct": 1.1608689701651131,
+    "E0_N0_vs_calibrated_pct": 0.16775364929768719,
     "Q_beta_N0_MeV": "0.78364580284495003723288837004662358622224904295601",
     "Q_beta_N1_MeV": "0.79133900141927525232061042562588281143091958535636",
+    "Q_beta_full_MeV": "0.7914152757999246119060791964964243650319857890541",
     "N0_residual_keV": 1.3123928449500373,
     "N0_residual_pct": 0.16775364929768719,
     "N1_residual_keV": 9.005591419275252,

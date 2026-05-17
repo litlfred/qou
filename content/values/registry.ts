@@ -355,6 +355,56 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       units: "MeV",
     }),
 
+    E_0_N0_MeV: Object.freeze({
+      name: "E_0_N0_MeV",
+      description:
+        "Single Planck-tick (N=0) hadronic energy scale " +
+        "E_0^(N=0) = m_e / (q_0 (q_0 - 1)) ≈ 4.186 MeV.  Framework-" +
+        "derived from CAL-1 (m_e) and CAL-2 (q_0) alone; no CAL-3 input.",
+      symbol: "\\mathbf{E}_0^{(N=0)}",
+      witnessFile:
+        "folio-assistant/computations/q-beta-form-a-n1-extension.witness.json",
+      witnessPath: "data.E0_N0_MeV_50dps",
+      defaultPrecision: 6,
+      units: "MeV",
+    }),
+
+    E_0_full_MeV: Object.freeze({
+      name: "E_0_full_MeV",
+      description:
+        "Tower-summed (N → ∞) hadronic energy scale " +
+        "E_0^full = E_0^(N=0) / (1 - ℏ_q²) ≈ 4.228 MeV.  Geometric " +
+        "brane-tower closed form; framework-derived from CAL-1 + CAL-2.  " +
+        "Note: currently overshoots E_0^(cal) by +1.75% — the geometric-" +
+        "series direction is an open finding pending categorical Li_2^q " +
+        "derivation review (Workplan 2 Phase 2).",
+      symbol: "\\mathbf{E}_0^{\\text{full}}",
+      witnessFile:
+        "folio-assistant/computations/q-beta-form-a-n1-extension.witness.json",
+      witnessPath: "data.E0_full_MeV_50dps",
+      defaultPrecision: 6,
+      units: "MeV",
+    }),
+
+    E_0_calibrated_MeV: Object.freeze({
+      name: "E_0_calibrated_MeV",
+      description:
+        "Symbolic CODATA-calibrated hadronic energy scale " +
+        "E_0^(cal) = Q_β(n) / |h(h-2)/2| ≈ 4.179 MeV using the symbolic " +
+        "single-wrap Δ(net) = h(h-2)/2 (closed-form, no typed-crossings " +
+        "noise).  Distinct from the typed-crossings value 4.155 MeV " +
+        "computed by `derived_masses.e_0_calibrated_mev()` (which loads " +
+        "Δ(net) = -0.18829 from beta-decay-energy-scale.witness.json — " +
+        "a 6-term decomposition that picks up finite-size noise).  The " +
+        "0.6% typed-vs-symbolic gap is itself a recorded finding.",
+      symbol: "\\mathbf{E}_0^{(\\text{cal})}",
+      witnessFile:
+        "folio-assistant/computations/q-beta-form-a-n1-extension.witness.json",
+      witnessPath: "data.E0_calibrated_MeV_50dps",
+      defaultPrecision: 6,
+      units: "MeV",
+    }),
+
     inv_alpha: Object.freeze({
       name: "inv_alpha",
       description:

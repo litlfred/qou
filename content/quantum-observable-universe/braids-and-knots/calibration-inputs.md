@@ -40,20 +40,22 @@ converges in $\sim 20$ terms.  The conversion factor is then
 $m_e(\text{MeV}) / m_e(\text{natural}) \approx 4.57 \times 10^{-3}$ MeV.
 
 The third input sets the **hadronic energy scale**.
-The leptonic inputs ($m_e$, $q_0$) give an approximate
-hadronic scale $E_0 \approx m_e/(q(q-1))$
-([energy scale](#rem:energy-scale-planck)), but this
-single-level expression misses the brane tower correction
-($0.17\%$, or $1.3$ keV on $Q_\beta$).  The free neutron
-$\beta$-decay Q-value calibrates $E_0$ exactly:
+The leptonic inputs ($m_e$, $q_0$) give a framework-derived
+hadronic scale in two forms — the single-Planck-tick value
+$\mathbf{E}_0^{(N=0)} = m_e/(q_0(q_0-1)) \approx 4.186$ MeV
+([energy scale](#rem:energy-scale-planck)) and the tower-summed
+$\mathbf{E}_0^{\text{full}} = \mathbf{E}_0^{(N=0)}/(1-\hbar_q^2)
+\approx 4.228$ MeV ([beta-decay energy scale](../particle-interactions/beta-decay-energy-scale.md)
+§"tower-summed form"). The free neutron $\beta$-decay Q-value
+calibrates $\mathbf{E}_0$:
 
 $$
-  E_0
+  \mathbf{E}_0^{(\text{cal})}
   =
   \frac{Q_\beta(n)}{|\Delta(\mathrm{net})|}
   =
   \frac{0.78233}{|h(h-2)/2|}
-  \approx  4.179 \text{ MeV}
+  \approx  4.155 \text{ MeV}
 $$
 
 where $\Delta(\mathrm{net}) = h(h-2)/2$ is the symbolic NF
@@ -61,8 +63,22 @@ difference between neutron and proton
 ([symbolic Q-value](#prop:neutron-qvalue-symbolic)).
 The free neutron is the simplest hadronic decay — one
 crossing change ($\mathfrak{d} \to \mathfrak{u}$) inside
-one nucleon, no nuclear environment.  Once $E_0$ is fixed,
+one nucleon, no nuclear environment. Once $\mathbf{E}_0$ is fixed,
 **all other Q-values are predictions**.
+
+**CAL-3 gap — explicit tower-correction direction.**
+With the tower form $\mathbf{E}_0^{\text{full}}$ now wired into
+production compute ([`derived_masses.py:e_0_full_mev`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/derived_masses.py#L145)),
+the framework-derived value overshoots the calibrated value by
+**$+1.75\%$** (was $+0.75\%$ with the single-tick form). The
+geometric series direction therefore does *not* close the
+CAL-3 residual — it widens it. This is recorded as an open
+finding in the [tower-MeV calibration audit](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-03-tower-mev-calibration-finding.md)
+(which independently flags $\Phi_q$ → $\mathrm{Li}_2^q$ as the
+likely correct tower function). CAL-3 thereby ceases to be a
+silent absorber of the tower correction; the residual is
+explicit and the direction puzzle is on the books for the
+categorical-derivation review (Workplan 2 Phase 2).
 
 ## Why exactly three
 
