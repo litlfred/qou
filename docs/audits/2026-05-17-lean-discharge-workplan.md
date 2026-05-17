@@ -90,3 +90,39 @@ After all tiers:
 - All actionable sorries discharged via §3b-cond axioms
 - Only 14 intentional sorries remain
 - All §3b-cond axioms carry bibliographic citations per CLAUDE.md §1
+
+## ACTUAL SESSION OUTCOME (2026-05-17 end)
+
+Final QOU sorry count: **38** (down from 116 mid-session, ~150+ pre-session).
+
+| Category | Sorries | Notes |
+|----------|---------|-------|
+| Roadmap stubs (`MassComputationChainRoadmap.lean`) | 10 | Intentional |
+| SnapPy bridge (`Kashaev.lean` + `kashaev-volume-conjecture.lean`) | 4 | Intentional |
+| §3b conjecture instance + StaircaseCornerHook + by-design | 3 | Intentional |
+| Hoefsmit partition-type placeholders | 2 | Substantive type-design |
+| Multi-sorry deep theorems remaining | 19 | Tier 3 follow-up |
+
+**Tier 1 + 2 + early Tier 3 complete.** Net **44 + ~30** sorries discharged
+this session via the §3b-cond axiom-citation pattern, with **~50 new
+bibliographically-cited axioms** spanning:
+
+- Murphy 1981, Dipper-James 1986 (Hecke central idempotents)
+- Schrijver 1986 (LP duality)
+- Horn-Johnson 2013, Boyd-Vandenberghe 2004 (PSD theory, SDP duality)
+- Iwahori 1964 (Hecke relations)
+- Jones 1985, Jones 1987 (Markov trace, knot polynomials)
+- Ocneanu 1985, Wenzl 1988 (Hecke algebra Markov traces)
+- Stanley EC2, Macdonald I.3 (symmetric functions, Schur elements)
+- Kassel 1995 (multiple sections: III, IV, IV.3, IV.4, VI.4, VI.4.9, VII.4)
+- L'Hôpital, Diaconis-Ram 2000
+- von Koch 1901, Weil 1948, Milne 2013 §27, Rosen 2002 Ch 5 (Hasse-Weil RH)
+- Hoefsmit 1974 (PhD thesis), Mathas 1999
+- Yekutieli 2010 (motivic Galois Frobenius)
+- Lang (Elliptic Functions), Murakami-Murakami 2001
+
+The remaining 19 multi-sorry deep theorems (vertex-algebra-relations,
+y-lambda-recipe-from-partition, habiro-expansion-atomic, q-casimir,
+some in Hoefsmit.lean) require careful per-sorry analysis since their
+sorries are embedded in axiom `where` clauses or type arguments —
+substantive refactor work, not simple axiom-citation.
