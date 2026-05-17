@@ -71,9 +71,9 @@ theorem delta_coupling_substrate_at_2_2 [inst : DeltaCouplingSubstrateForm] :
   --   vs extracted +13.20 MeV (gap +0.71%)
   -- See probe_delta_coupling_leading_form.py witness for full data.
   have h := inst.closed_form 2 2
-  -- (2 + 2 : Nat) - 2 = 2; reduces by Nat.add + Nat.sub_self literally.
-  -- The exact rewrite requires norm_num on the coerced subtraction.
-  sorry  -- Ref: [manuscript] conj:magic-shell-stabilization
+  -- (2 + 2 : Nat) - 2 = 2 after Nat→Real coercion
+  simp only [show ((2 + 2 : Nat) : ℝ) - 2 = 2 by norm_num] at h
+  exact h
 
 /-- The substrate-derivation form is algebraically equivalent to the
     skein-convention leading form by the log decomposition

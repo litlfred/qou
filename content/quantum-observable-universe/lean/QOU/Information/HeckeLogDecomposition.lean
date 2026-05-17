@@ -36,17 +36,22 @@ theorem hecke_log_decomposition (q : ℝ) (hq : 1 < q) :
     Real.log (1 / (q - q⁻¹)) =
       Real.log (1 / ((q - 1) / q)) - Real.log (1 + q) := by
   -- Ref: [manuscript] prop:boltzmann-constant
-  -- Proof outline:
-  --   By hecke_skein_factorization, q - q⁻¹ = ((q-1)/q) · (q+1).
-  --   Then 1/(q - q⁻¹) = (1/((q-1)/q)) · (1/(q+1)).
-  --   Real.log of product = sum of logs (Real.log_mul, applied
-  --   under positivity hypotheses q > 1 ⇒ q-1, q+1, q > 0).
-  --   log(1/(q+1)) = -log(q+1) (Real.log_one_div), gives the
-  --   subtractive form on the RHS.
-  -- Full Lean proof requires explicit Mathlib lemma chain
-  -- (Real.log_div, Real.log_one_div, Real.log_mul) under the
-  -- positivity hypotheses; deferred to a Lean-agent pass.
-  sorry  -- Ref: [manuscript] prop:boltzmann-constant
+  -- Strategy: use hecke_skein_factorization to rewrite the LHS, then
+  -- 1/(a·b) = (1/a)·(1/b), then Real.log_mul + Real.log_one_div.
+  have hq_pos : 0 < q := lt_trans zero_lt_one hq
+  have hq_minus_1_pos : 0 < q - 1 := by linarith
+  have hq_plus_1_pos : 0 < q + 1 := by linarith
+  have hhbar_pos : 0 < (q - 1) / q := div_pos hq_minus_1_pos hq_pos
+  have hhbar_ne : ((q - 1) / q : ℝ) ≠ 0 := ne_of_gt hhbar_pos
+  have hqp1_ne : (q + 1 : ℝ) ≠ 0 := ne_of_gt hq_plus_1_pos
+  have h1p_q_eq : (1 + q : ℝ) = q + 1 := by ring
+  -- Rewrite via the factorisation
+  have heq : (1 / (q - q⁻¹) : ℝ) = (1 / ((q - 1) / q)) * (1 / (q + 1)) := by
+    rw [hecke_skein_factorization q hq_pos]
+    field_simp
+  rw [heq, Real.log_mul (one_div_ne_zero hhbar_ne) (one_div_ne_zero hqp1_ne)]
+  rw [Real.log_one_div, h1p_q_eq]
+  ring
 
 /-- Numerical equality at the QOU substrate parameter q_0:
     log(1/h(q_0)) = log(1/ℏ_q(q_0)) - log(1 + q_0) ≈ 1.56513...
