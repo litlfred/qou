@@ -401,6 +401,7 @@ export default chapter({
         "typed-b3-sub-braid-extraction",
         "ck-extraction-from-algebraic-rules",
         "h3-hecke-idempotents",
+        "u-coordinate-discharges",
         "multi-link-jones-q1-extension",
         "per-wedderburn-block-c5-c6",
         "categorical-chain-convergence-mechanisms",
