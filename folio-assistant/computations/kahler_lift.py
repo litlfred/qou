@@ -340,7 +340,7 @@ if __name__ == "__main__":
     print("\n--- Full binding via canonical + Kähler-tower ---")
     print("Computing canonical Jones-Markov trace on D (first run ~130s)...")
     t0 = time.time()
-    r_canon = binding_canonical(1, 1, E_0=E_0_BETA_DECAY_MEV)
+    r_canon = binding_canonical(1, 1, Q_beta_n_mev=E_0_BETA_DECAY_MEV)
     canon_MeV = r_canon.get("B_MeV", 0)
     print(f"  canonical B = {canon_MeV:+.6f} MeV  ({time.time()-t0:.1f}s)")
 

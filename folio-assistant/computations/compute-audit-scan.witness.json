@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-17T03:49:01.702095+00:00",
-  "commitSha": "0003dcaffd9fed6eb431be1634593d41b84a6840",
+  "computedAt": "2026-05-17T05:35:43.184675+00:00",
+  "commitSha": "9ea06353abaeee5fdd5900809353884c2d2aae1d",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 8,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "d9aa432d54f9",
@@ -24,7 +24,7 @@
   },
   "data": {
     "by_pattern_count": {
-      "P15": 131,
+      "P15": 132,
       "P16": 89,
       "P21": 24,
       "P30": 96,
@@ -1938,6 +1938,13 @@
         "pattern": "P15",
         "file": "probe_per_orientation_skein.py",
         "line": 95,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "probe_per_wedderburn_block_ck.py",
+        "line": 73,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },

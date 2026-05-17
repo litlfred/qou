@@ -9,7 +9,7 @@ is a prediction.*
 |----|----------|--------------|--------|
 | **CAL-1** | $m_e = 0.51099895\ldots\;\mathrm{MeV}$ | leptonic mass scale (MeV ↔ natural units) | leptonic size |
 | **CAL-2** | $m_\mu / m_e = 206.7682830\ldots$ | substrate parameter $q_0$ via $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$ | dimensionless ratio (shape) |
-| **CAL-3** | $Q_\beta(n) = 0.78233341\ldots\;\mathrm{MeV}$ | hadronic energy scale $\mathbf{E}_0$ via $\mathbf{E}_0^{(\text{cal})} = Q_\beta(n)/\lvert\Delta(\mathrm{net})\rvert \approx 4.155\;\mathrm{MeV}$ — cross-checks the framework-derived $\mathbf{E}_0^{(N=0)} \approx 4.186\;\mathrm{MeV}$ (CAL-1 + CAL-2) and the tower-summed $\mathbf{E}_0^{\text{full}} \approx 4.228\;\mathrm{MeV}$ | hadronic interaction strength |
+| **CAL-3** | $Q_\beta(n) = 0.78233341\ldots\;\mathrm{MeV}$ | hadronic energy scale $\mathbf{E}_0$ via $\mathbf{E}_0^{(\text{cal})} = Q_\beta(n)/\lvert\Delta(\mathrm{net})\rvert \approx 4.179\;\mathrm{MeV}$ using the symbolic $\Delta(\text{net}) = h(h-2)/2$; cross-checks the framework-derived $\mathbf{E}_0^{(N=0)} \approx 4.186\;\mathrm{MeV}$ (CAL-1 + CAL-2) and the tower-summed $\mathbf{E}_0^{\text{full}} \approx 4.228\;\mathrm{MeV}$ | hadronic interaction strength |
 
 *The three inputs are independent: one dimensionless ratio plus two
 dimensional scales. They align to the three (co)homological degrees

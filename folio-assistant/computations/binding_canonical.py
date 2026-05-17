@@ -128,10 +128,18 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
     (the formula in [`prop:categorical-mass-markov`](../../content/quantum-observable-universe/braids-and-knots/categorical-mass-markov.md)
     requires $Q_\\beta$-scaled dimensionless trace differences),
     only the name was wrong. The function now exposes the parameter
-    with its correct identifier.
+    with its correct identifier. **Dimensional note.** `Q_beta_n_mev`
+    enters the formula `B = Q_β(n) · (|tr_M(W_free)| - |tr_M(W_atom)|)`
+    as the **MeV-dimensioned multiplier** of a dimensionless trace
+    difference; no further $E_0$ scaling is applied (in particular,
+    do *not* multiply the result by `e_0_full_mev()` — that would
+    double-scale).
+
+    Callers that previously passed `E_0=...` must update to
+    `Q_beta_n_mev=...`; the old keyword raises `TypeError`. The
+    single internal caller `kahler_lift.py:343` is updated in the
+    same commit.
     """
-    # Back-compat alias for callers that still pass `E_0=...`
-    E_0 = Q_beta_n_mev  # noqa: N806 — used in formula below
     A = Z + N
     n_strands = 3 * A
     div = SymbolicHeckeDivision() if reduce_before_trace else None

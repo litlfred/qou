@@ -55,8 +55,11 @@ $$
   \frac{Q_\beta(n)}{|\Delta(\mathrm{net})|}
   =
   \frac{0.78233}{|h(h-2)/2|}
-  \approx  4.155 \text{ MeV}
+  \approx  4.179 \text{ MeV}
 $$
+
+(The typed-crossings 6-term decomposition yields $\lvert\Delta(\text{net,typed})\rvert \approx 0.18829$ and a slightly smaller $\mathbf{E}_0 \approx 4.155$ MeV; the 0.6% gap is finite-size noise in the typed decomposition — see
+[`beta-decay-energy-scale`](../particle-interactions/beta-decay-energy-scale.md) §"three values".)
 
 where $\Delta(\mathrm{net}) = h(h-2)/2$ is the symbolic NF
 difference between neutron and proton
