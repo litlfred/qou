@@ -67,7 +67,7 @@ At the abstract level we record the rule as a class field. -/
     carries the **scalar residual** between the two sides of the
     cubic identity (`σ_i σ_{i+1} σ_i − σ_{i+1} σ_i σ_{i+1}`) and
     asserts it vanishes. -/
-class YangBaxterRule (n : ℕ) (q : ℝ) : Prop where
+class YangBaxterRule (n : ℕ) (q : ℝ) : Type where
   /-- Scalar residual of the YB cubic relation (some chosen scalar
       invariant: a matrix entry, trace, etc.). -/
   yb_residual : ℝ
@@ -91,7 +91,7 @@ element calculation on `H_3(q)`. -/
     explicit-residual pattern: the class carries the residual of the
     completeness relation `Σ_λ e_λ − 1` projected to a scalar
     invariant, and asserts it vanishes. -/
-class QYoungSymmetrizers (n : ℕ) (q : ℝ) : Prop where
+class QYoungSymmetrizers (n : ℕ) (q : ℝ) : Type where
   /-- Scalar residual of the Hecke-idempotent completeness relation
       `Σ_{λ ⊢ n} e_λ = 1` (per the Wedderburn block decomposition). -/
   qyst_residual : ℝ
@@ -108,7 +108,7 @@ by `hoefsmit_sigma0_hecke_quadratic` and
 
 /-- **Hecke quadratic** at every generator of `H_n(q)` axiomatised
     via the explicit-residual pattern. -/
-class HeckeQuadraticAllGenerators (n : ℕ) (q : ℝ) : Prop where
+class HeckeQuadraticAllGenerators (n : ℕ) (q : ℝ) : Type where
   /-- Scalar residual of `σ_i² − (q-q⁻¹)σ_i − 1` for every
       generator `i`. -/
   hecke_quad_residual : ℝ
@@ -128,7 +128,7 @@ phenomenological choice once Rules 1–3 are in place. -/
 
 /-- **Gröbner-Shirshov / jet reduction** at extraction order `k`,
     via the explicit-residual pattern. -/
-class GBJetReduction (k : ℕ) : Prop where
+class GBJetReduction (k : ℕ) : Type where
   /-- Scalar residual of `(normal-form output) − (canonical c_k)`
       after the GB/jet reduction at order `(q-1)^(2k)`. -/
   gb_residual : ℝ

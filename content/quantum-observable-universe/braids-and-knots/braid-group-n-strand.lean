@@ -90,22 +90,65 @@ def writhe {n : ℕ} (w : BraidWord n) : ℤ :=
 
 end BraidWord
 
+/-! ## n=3: Borromean rings closure
+
+The canonical Borromean braid word in `B_3` is the 6-crossing
+alternating word `σ_0 σ_1⁻¹ σ_0 σ_1⁻¹ σ_0 σ_1⁻¹`. Its Markov closure
+is the Borromean link (Brunnian, 3-component). Defined here BEFORE
+`closureN` so the n=3 dispatch case can reference it. -/
+
+/-- The canonical Borromean braid word in `B_3` (6 alternating
+    crossings, writhe 0). -/
+def borromeanBraidWord3 : BraidWord 3 :=
+  [⟨0, true⟩, ⟨1, false⟩, ⟨0, true⟩,
+   ⟨1, false⟩, ⟨0, true⟩, ⟨1, false⟩]
+
+/-- The canonical Borromean braid word has length `6`. -/
+@[simp] theorem borromeanBraidWord3_length :
+    borromeanBraidWord3.length = 6 := rfl
+
+/-- The canonical Borromean braid word has writhe `0` (3 positive,
+    3 negative crossings). -/
+@[simp] theorem borromeanBraidWord3_writhe :
+    borromeanBraidWord3.writhe = 0 := by
+  simp [borromeanBraidWord3, BraidWord.writhe_cons,
+        BraidWord.writhe_nil]
+  ring
+
+/-- **3-strand Markov closure** for the canonical Borromean word.
+    Defined by direct equality check against the canonical word;
+    other 3-strand words fall through to `Link.unknot` (placeholder
+    pending the general 3-strand closure algorithm). -/
+noncomputable def closure3 (w : BraidWord 3) : Link :=
+  if w = borromeanBraidWord3 then Link.borromean else Link.unknot
+
+-- Ref: [manuscript] rem:braid-group-n-strand §"n=3 Borromean"
+-- Ref: [jones1985] doi:10.2307/1971403
+/-- **The canonical Borromean braid word Markov-closes to the
+    Borromean link.** Closed by `if_pos rfl` on the definition of
+    `closure3`. -/
+theorem closure3_borromean :
+    closure3 borromeanBraidWord3 = Link.borromean := by
+  unfold closure3
+  exact if_pos rfl
+
 /-! ## Markov closure
 
 For `n = 2` the closure is concrete: it composes the writhe (which
 recovers `Braid2 := ℤ`) with `closure2` from `rem:braid-link-types`.
-For `n ≥ 3` we currently return `Link.unknot` as a placeholder; per-n
-specialisations (Borromean at n=3, etc.) discharge concrete
-equalities in companion files. -/
+For `n = 3` the closure dispatches to `closure3` above (Borromean
+at the canonical word; placeholder elsewhere). For `n ≥ 4` we
+return `Link.unknot` as a placeholder. -/
 
 /-- **Markov closure** of an n-strand braid word to a link.
 
-    Concrete at `n = 2` via writhe + `closure2`
-    (`rem:braid-link-types`). Placeholder `Link.unknot` at `n ≥ 3`;
-    per-n discharges plug in via dedicated theorems
-    (e.g. `typed-b3-sub-braid-extraction` for n = 3 at ε^6 order). -/
+    Dispatches:
+      n = 2 → `closure2 w.writhe`  (`rem:braid-link-types`)
+      n = 3 → `closure3 w`         (Borromean at the canonical word)
+      n ≥ 4 → `Link.unknot`        (placeholder for higher-n) -/
 noncomputable def closureN : ∀ {n : ℕ}, BraidWord n → Link
   | 2, w => closure2 w.writhe
+  | 3, w => closure3 w
   | _, _ => Link.unknot
 
 /-! ## Hecke quadratic quotient
@@ -124,7 +167,7 @@ encode this as a class to be instantiated per (n, q). -/
     `n = 3` on `V_(2,1)` these are discharged by
     `hoefsmit_sigma{0,1}_hecke_quadratic` matrix-level proofs in
     `hoefsmit-V21-cos-symmetrization.lean`. -/
-class HeckeQuotient (n : ℕ) (q : ℝ) : Prop where
+class HeckeQuotient (n : ℕ) (q : ℝ) : Type where
   /-- Trace of every Hecke generator (scalar invariant). -/
   generator_trace : ℝ
   /-- Hecke quadratic root sum: `tr(σ_i) = q − q⁻¹` for every `i`. -/
@@ -147,8 +190,10 @@ Generalises `MarkovTraceAxioms` (`rem:markov-axioms-primitive`,
 Discharged at n = 2 by `MarkovTraceAxioms`; the n-strand class is
 the canonical extension. -/
 
-/-- The Markov-Jones parameter `z = 1 / (√q + 1/√q)` (local copy). -/
-private noncomputable def markovZN (q : ℝ) : ℝ :=
+/-- The Markov-Jones parameter `z = 1 / (√q + 1/√q)` (local copy,
+    matches `markovZax` from `markov-axioms-primitive.lean` so the
+    `MarkovTraceInductiveLimit` bridge instance can interoperate). -/
+noncomputable def markovZN (q : ℝ) : ℝ :=
   1 / (Real.sqrt q + (Real.sqrt q)⁻¹)
 
 /-- **Markov-trace axioms** for n-strand braids: the four Jones
@@ -158,7 +203,7 @@ private noncomputable def markovZN (q : ℝ) : ℝ :=
     constant. Per-n specialisations either inherit from a global
     Markov-trace operator on the full inductive limit or discharge
     each equation from the underlying Hecke-algebra trace. -/
-class MarkovTraceN (n : ℕ) (q : ℝ) : Prop where
+class MarkovTraceN (n : ℕ) (q : ℝ) : Type where
   /-- M1: scalar value of `τ` on the identity braid word
       (substantive content: it equals `1`). -/
   tau_identity : ℝ
@@ -217,51 +262,6 @@ theorem Braid2_writhe_eq (n : Braid2) :
       simp [Braid2.toBraidWord, BraidWord.writhe_cons, ih]
       ring
 
-/-! ## n=3: Borromean rings closure
-
-The canonical Borromean braid word in `B_3` is the 6-crossing
-alternating word `σ_0 σ_1⁻¹ σ_0 σ_1⁻¹ σ_0 σ_1⁻¹`. Its Markov closure
-is the Borromean link (Brunnian, 3-component). -/
-
-/-- The canonical Borromean braid word in `B_3` (6 alternating
-    crossings, writhe 0). -/
-def borromeanBraidWord3 : BraidWord 3 :=
-  [⟨0, true⟩, ⟨1, false⟩, ⟨0, true⟩,
-   ⟨1, false⟩, ⟨0, true⟩, ⟨1, false⟩]
-
-/-- The canonical Borromean braid word has length `6`. -/
-@[simp] theorem borromeanBraidWord3_length :
-    borromeanBraidWord3.length = 6 := rfl
-
-/-- The canonical Borromean braid word has writhe `0` (3 positive,
-    3 negative crossings). -/
-@[simp] theorem borromeanBraidWord3_writhe :
-    borromeanBraidWord3.writhe = 0 := by
-  simp [borromeanBraidWord3, BraidWord.writhe_cons,
-        BraidWord.writhe_nil]
-  ring
-
-/-- DecidableEq for `BraidCrossing 3` (needed for `closure3` pattern
-    matching below). Derived automatically. -/
-example : DecidableEq (BraidCrossing 3) := inferInstance
-
-/-- **3-strand Markov closure** for the canonical Borromean word.
-    Defined by direct equality check against the canonical word;
-    other 3-strand words fall through to `Link.unknot` (placeholder
-    pending the general 3-strand closure algorithm). -/
-noncomputable def closure3 (w : BraidWord 3) : Link :=
-  if w = borromeanBraidWord3 then Link.borromean else Link.unknot
-
--- Ref: [manuscript] rem:braid-group-n-strand §"n=3 Borromean"
--- Ref: [jones1985] doi:10.2307/1971403
-/-- **The canonical Borromean braid word Markov-closes to the
-    Borromean link.** Closed by `if_pos rfl` on the definition of
-    `closure3`. -/
-theorem closure3_borromean :
-    closure3 borromeanBraidWord3 = Link.borromean := by
-  unfold closure3
-  exact if_pos rfl
-
 /-! ## n=2 ↔ closure2 identification (Markov closure)
 
 The closure at `n = 2` is by construction the writhe composed with
@@ -275,6 +275,14 @@ theorem closed by `rfl`. -/
     at `n = 2`. -/
 theorem closureN_eq_closure2 (w : BraidWord 2) :
     closureN w = closure2 w.writhe := rfl
+
+-- Ref: [manuscript] rem:braid-group-n-strand §"specialisations"
+-- Ref: [manuscript] rem:braid-link-types
+/-- **`closureN` at `n = 3` dispatches to `closure3`** by direct
+    pattern match. Closed by `rfl` from the concrete definition of
+    `closureN` at `n = 3`. -/
+theorem closureN_eq_closure3 (w : BraidWord 3) :
+    closureN w = closure3 w := rfl
 
 /-! ## n=3 ↔ TypedBraidWord3 bridge
 

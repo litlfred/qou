@@ -61,7 +61,7 @@ as a class field. -/
 
     `inclusion_residual` is the scalar deviation; the class asserts
     it vanishes. -/
-class MarkovTraceInductiveLimit (q : ℝ) : Prop where
+class MarkovTraceInductiveLimit (q : ℝ) : Type where
   /-- Stabilisation residual: should be zero for the canonical
       Jones-Wenzl trace. -/
   inclusion_residual : ℝ
@@ -87,14 +87,19 @@ of the inductive-limit axioms. -/
 
 -- Ref: [manuscript] rem:markov-trace-inductive-limit §"bridge"
 /-- **Inductive-limit ⇒ per-n** Markov-trace class. Under the
-    inductive-limit class, every `MarkovTraceN n q` follows. -/
+    inductive-limit class, every `MarkovTraceN n q` follows. Both
+    `markovZax` (here) and `markovZN` (in `braid-group-n-strand`)
+    are local copies of the Markov-Jones parameter
+    `1/(√q + 1/√q)`; they are definitionally equal so the
+    `tau_stab_factor_eq_z : tau_stab_factor = markovZN q` field is
+    discharged by `rfl`. -/
 instance markovTraceN_from_inductive_limit (q : ℝ) (n : ℕ)
     [MarkovTraceInductiveLimit q] : MarkovTraceN n q where
   tau_identity := 1
   tau_identity_eq_one := rfl
   tau_cyclic_residual := 0
   tau_cyclic_residual_eq_zero := rfl
-  tau_stab_factor := markovZax q
+  tau_stab_factor := markovZN q
   tau_stab_factor_eq_z := rfl
 
 /-! ## Status

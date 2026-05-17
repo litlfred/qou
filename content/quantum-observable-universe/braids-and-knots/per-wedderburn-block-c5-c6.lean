@@ -88,7 +88,7 @@ substrate q_0 under the correct per-block formulae. -/
 
 /-- **Per-Wedderburn-block c_5/c_6 class** axiomatising the residual
     of the weighted-sum prediction against empirical at substrate q. -/
-class PerWedderburnBlockC5C6 (q : ℝ) : Prop where
+class PerWedderburnBlockC5C6 (q : ℝ) : Type where
   /-- Scalar residual of `c5_total_weighted q − empirical_c_5(q)`
       at substrate `q`. -/
   c5_residual : ℝ

@@ -43,7 +43,7 @@ noncomputable def markovZax (q : ℝ) : ℝ := 1 / (Real.sqrt q + (Real.sqrt q)�
 
     Each axiom is encoded as a scalar invariant (residual / stab
     factor) plus an equation pinning it to the required value. -/
-class MarkovTraceAxioms (q : ℝ) : Prop where
+class MarkovTraceAxioms (q : ℝ) : Type where
   /-- M1: scalar value of `τ` on the identity element. -/
   tau_identity : ℝ
   /-- M1: τ(1) = 1 (normalisation). -/

@@ -69,7 +69,7 @@ downstream theorems use the class as a hypothesis. -/
     third-order coefficient in the perturbative τ_M expansion
     factors through 2-strand sub-braid Markov closures (each a
     Hopf link). -/
-class ThreeFoldMarkovHopfExtraction (q : ℝ) : Prop where
+class ThreeFoldMarkovHopfExtraction (q : ℝ) : Type where
   /-- The `c_3` coefficient produced by the 3-fold Markov closure
       → 2-strand sub-braid → Hopf substructure chain. -/
   c_3 : ℝ

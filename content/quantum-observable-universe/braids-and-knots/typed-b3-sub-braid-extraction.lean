@@ -142,7 +142,7 @@ this SINGLE focused combinatorial result. -/
     dominance-analysis infrastructure on typed-`B_3` words, which is
     out of scope for the current chapter. Empirical zero-residual is
     backed by `probe_q_beta_cat_per_factor_decomposition.py`. -/
-class DominantSubBraidAtEps6 : Prop where
+class DominantSubBraidAtEps6 : Type where
   /-- Scalar residual of the dominance hypothesis at order ε^6 —
       `0` iff the dominant 3-element subset of crossings closes to
       the 2-strand `Braid2.σ_sq` case (Hopf). -/
