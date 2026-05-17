@@ -427,7 +427,10 @@ def main() -> int:
 
     # Per-atom assertions: each term is non-trivial / finite at 50 dps.
     for r in results:
-        for term_key in ("term1_descended", "term4_frob_per_vortex"):
+        # P1.C HARD BREAK (2026-05-12): term4 canonical field is now
+        # `term4_frob_canonical_per_3A` (per `thm:frobenius-codim-
+        # universal`).  Update assertion key accordingly.
+        for term_key in ("term1_descended", "term4_frob_canonical_per_3A"):
             val = r[term_key]
             try:
                 v = mp.mpf(val)

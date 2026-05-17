@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-04-29T10:26:29.418283+00:00",
-  "commitSha": "98793a0c280565098bf85fbc06354ae1adaea461",
+  "computedAt": "2026-05-17T23:05:44.615723+00:00",
+  "commitSha": "83b19a2f85c270e19890905437a29b4540fd7834",
   "assertions": [
     {
       "name": "term1_descended[p (proton)]_finite",
@@ -11,7 +11,7 @@
       "passed": true
     },
     {
-      "name": "term4_frob_per_vortex[p (proton)]_finite",
+      "name": "term4_frob_canonical_per_3A[p (proton)]_finite",
       "computed": true,
       "expected": true,
       "passed": true
@@ -23,7 +23,7 @@
       "passed": true
     },
     {
-      "name": "term4_frob_per_vortex[n (neutron)]_finite",
+      "name": "term4_frob_canonical_per_3A[n (neutron)]_finite",
       "computed": true,
       "expected": true,
       "passed": true
@@ -35,7 +35,7 @@
       "passed": true
     },
     {
-      "name": "term4_frob_per_vortex[D (deuteron)]_finite",
+      "name": "term4_frob_canonical_per_3A[D (deuteron)]_finite",
       "computed": true,
       "expected": true,
       "passed": true
@@ -47,7 +47,7 @@
       "passed": true
     },
     {
-      "name": "term4_frob_per_vortex[T (triton)]_finite",
+      "name": "term4_frob_canonical_per_3A[T (triton)]_finite",
       "computed": true,
       "expected": true,
       "passed": true
@@ -59,18 +59,18 @@
       "passed": true
     },
     {
-      "name": "term4_frob_per_vortex[3He]_finite",
+      "name": "term4_frob_canonical_per_3A[3He]_finite",
       "computed": true,
       "expected": true,
       "passed": true
     }
   ],
   "allPassed": true,
-  "durationMs": 20,
+  "durationMs": 32,
   "computation": "mass-formula-6term-mpfr-50dps",
   "scriptFile": "mass_formula_6term_mpfr_50dps.py",
-  "scriptHash": "75e804a3ac2b",
-  "scriptCommitSha": "98793a0c280565098bf85fbc06354ae1adaea461",
+  "scriptHash": "765479018561",
+  "scriptCommitSha": "1c4bdcd2f287a80a3fc0a0b3a7c3fda27607685e",
   "description": "Six-term unified mass formula evaluated at 50 dps mpmath throughout (Phase A precision lift).  Replaces the f64 chokepoints in mass_formula_6term.py: native mp_Phi_q for Term 2/3 brane-tower contributions; Term 6 via the Habiro residue path (cyclotomic completion handles higher-order poles intrinsically).",
   "contentBlock": "thm:knot-mass-formula-unified",
   "parameters": {
@@ -86,15 +86,14 @@
         "Z": 1,
         "N": 0,
         "knot_type": "none",
-        "term1_descended": "1.06530622859238859182676219325838697726462592668",
-        "term2_single": "0.0",
-        "term3_pair": "0.0",
-        "term23_error": "KeyError: 'No MPFR-native per-generator volumes found for Z=1, N=0 in terms-2-3-atom-per-gen-mpfr-50dps.witness.json; the witness covers A≥2 only (extend `terms_2_3_atom_per_gen_mpfr_50dps.py` to add A=1).'",
-        "term4_frob_per_vortex": "1.2761128463443179867235568943300722795286695834518",
-        "term4_frob_per_A": "1.2761128463443179867235568943300722795286695834518",
-        "term5_chirality_bw": "-7.7917512106781104474134374198119571918141663204661",
-        "term6_habiro_residue": "0.68071547375114662431009155263695522669682305422661",
-        "term6_error": null
+        "term1_descended": "1.0653062285923887036108498526519307688964161791863",
+        "term2_single": "1096978.3961756918763451545425331467139400777901298",
+        "term3_pair": "82016.168865420969044289474029381394711672021690575",
+        "term23_error": null,
+        "term4_frob_canonical_per_3A": "1.2761128463443181177567435067352497395009951716945",
+        "term5_chirality_bw": "-18.42226291573287653470777494998015026578105151667",
+        "term6_habiro_residue": null,
+        "term6_error": "FileNotFoundError: Term 6 Habiro residue witness missing at /home/user/qou/folio-assistant/computations/term6-habiro-residue-mpfr-50dps.witness.json; run the residue pipeline (see term6_habiro_residue_mpfr_50dps.py or equivalent) to regenerate before invoking the 6-term sum."
       },
       {
         "atom": "n (neutron)",
@@ -102,15 +101,14 @@
         "Z": 0,
         "N": 1,
         "knot_type": "none",
-        "term1_descended": "0.92323329716958305546835587742253549151548430075493",
-        "term2_single": "0.0",
-        "term3_pair": "0.0",
-        "term23_error": "KeyError: 'No MPFR-native per-generator volumes found for Z=0, N=1 in terms-2-3-atom-per-gen-mpfr-50dps.witness.json; the witness covers A≥2 only (extend `terms_2_3_atom_per_gen_mpfr_50dps.py` to add A=1).'",
-        "term4_frob_per_vortex": "1.2761128463443179867235568943300722795286695834518",
-        "term4_frob_per_A": "1.2761128463443179867235568943300722795286695834518",
-        "term5_chirality_bw": "-7.4665932775770034246057302153132771591505828519249",
-        "term6_habiro_residue": "0.68071547375114662431009155263695522669682305422661",
-        "term6_error": null
+        "term1_descended": "0.9232332971695832001654497287354692544525405733798",
+        "term2_single": "511298.27335124255242191548862751372624952915118699",
+        "term3_pair": "6137.397714011627281867827852803664125100615191491",
+        "term23_error": null,
+        "term4_frob_canonical_per_3A": "1.2761128463443181177567435067352497395009951716945",
+        "term5_chirality_bw": "-15.930936787517686294650614209914933489255144056396",
+        "term6_habiro_residue": null,
+        "term6_error": "FileNotFoundError: Term 6 Habiro residue witness missing at /home/user/qou/folio-assistant/computations/term6-habiro-residue-mpfr-50dps.witness.json; run the residue pipeline (see term6_habiro_residue_mpfr_50dps.py or equivalent) to regenerate before invoking the 6-term sum."
       },
       {
         "atom": "D (deuteron)",
@@ -118,15 +116,14 @@
         "Z": 1,
         "N": 1,
         "knot_type": "chiral+",
-        "term1_descended": "0.38828647154771280111048415948352281403501440696993",
-        "term2_single": "905477.64098660795708009967931564789794770093119165",
-        "term3_pair": "62149.575845604390576822749363153649537278267317369",
+        "term1_descended": "0.38828647154771288982229091167294456771964680626326",
+        "term2_single": "1608289.7568490576917364631959564768142991980272062",
+        "term3_pair": "252995.2064545308771428820031357300523293000664836",
         "term23_error": null,
-        "term4_frob_per_vortex": "1.2761128463443179867235568943300722795286695834518",
-        "term4_frob_per_A": "2.5522256926886359734471137886601445590573391669036",
-        "term5_chirality_bw": "-5.6314164094804956024942150954822083990603546433594",
-        "term6_habiro_residue": "0.042493951646489105186764360834903114469966849815457",
-        "term6_error": null
+        "term4_frob_canonical_per_3A": "1.6362871034827517326799193655339867440321053551337",
+        "term5_chirality_bw": "-23.491932074897813976435046451012667406463269710576",
+        "term6_habiro_residue": null,
+        "term6_error": "FileNotFoundError: Term 6 Habiro residue witness missing at /home/user/qou/folio-assistant/computations/term6-habiro-residue-mpfr-50dps.witness.json; run the residue pipeline (see term6_habiro_residue_mpfr_50dps.py or equivalent) to regenerate before invoking the 6-term sum."
       },
       {
         "atom": "T (triton)",
@@ -134,15 +131,14 @@
         "Z": 1,
         "N": 2,
         "knot_type": "amphichiral",
-        "term1_descended": "0.10405211867552546510457194001934298512275357042091",
-        "term2_single": "1381419.7046878976395421844670801522672951285951023",
-        "term3_pair": "190668.16961736861966129260834048685045486594344161",
+        "term1_descended": "0.10405211867552552405515439885324760717341924406678",
+        "term2_single": "2119592.5580956794590052083027643889053744083666877",
+        "term3_pair": "504113.80670354704265877190785570654715183231355334",
         "term23_error": null,
-        "term4_frob_per_vortex": "1.2761128463443179867235568943300722795286695834518",
-        "term4_frob_per_A": "3.8283385390329539601706706829902168385860087503553",
-        "term5_chirality_bw": "8.5246381747810582643805955349195860629900198803255",
-        "term6_habiro_residue": "0.00057881253231478019336518939447540058014430036837556",
-        "term6_error": null
+        "term4_frob_canonical_per_3A": "1.2999219630962774240197086837130842960387536542833",
+        "term5_chirality_bw": "95.643451641267965478010312568280118703348607106522",
+        "term6_habiro_residue": null,
+        "term6_error": "FileNotFoundError: Term 6 Habiro residue witness missing at /home/user/qou/folio-assistant/computations/term6-habiro-residue-mpfr-50dps.witness.json; run the residue pipeline (see term6_habiro_residue_mpfr_50dps.py or equivalent) to regenerate before invoking the 6-term sum."
       },
       {
         "atom": "3He",
@@ -150,15 +146,14 @@
         "Z": 2,
         "N": 1,
         "knot_type": "amphichiral",
-        "term1_descended": "0.20654085856226224730563397357738824313933014133432",
-        "term2_single": "1335045.1917651396621603664690725676303589600253778",
-        "term3_pair": "180421.69332683823004987398420004042996227119987968",
+        "term1_descended": "0.20654085856226228662152133426706913156554601321651",
+        "term2_single": "2705308.6859447070466664331833108177413341756395584",
+        "term3_pair": "845286.54118699474774691450456709481600240992320296",
         "term23_error": null,
-        "term4_frob_per_vortex": "1.2761128463443179867235568943300722795286695834518",
-        "term4_frob_per_A": "3.8283385390329539601706706829902168385860087503553",
-        "term5_chirality_bw": "7.7841423067320500260141117707091347973659733865335",
-        "term6_habiro_residue": "0.00057881253231478019336518939447540058014430036837556",
-        "term6_error": null
+        "term4_frob_canonical_per_3A": "1.2999219630962774240197086837130842960387536542833",
+        "term5_chirality_bw": "127.07667012123427565077871034808767559477486588447",
+        "term6_habiro_residue": null,
+        "term6_error": "FileNotFoundError: Term 6 Habiro residue witness missing at /home/user/qou/folio-assistant/computations/term6-habiro-residue-mpfr-50dps.witness.json; run the residue pipeline (see term6_habiro_residue_mpfr_50dps.py or equivalent) to regenerate before invoking the 6-term sum."
       }
     ],
     "codata_reference": {
