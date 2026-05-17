@@ -119,12 +119,20 @@ ATOMS = [
     (2, 1, "3He", [(1, 0, "p"), (1, 0, "p"), (0, 1, "n")]),
     # Helium-4: p ⊗ p ⊗ n ⊗ n at H_12 (y_λ cached n=12)
     (2, 2, "4He", [(1, 0, "p"), (1, 0, "p"), (0, 1, "n"), (0, 1, "n")]),
-    # Lithium-6: 3p + 3n at H_18 — y_λ live compute via numerical-q
-    # path (`y_lambda_at(18, q_0)` ~minutes).
+]
+# ⁶Li (H_18) and ⁷Li (H_21) deferred: the Rust `hecke-tr-m-wenzl-lr`
+# binary timed out at 600 s on ⁶Li under the *debug* build
+# (p(18) = 385 partitions × 71 crossings × averaged-expansion).
+# Two unblocks (either suffices):
+#   - Build release: `cd tools/hecke-engine && cargo build --release
+#     --bin hecke-tr-m-wenzl-lr` — typically 5–10× faster.
+#   - Use the y_λ-parallel path (`y_lambda_at(n, q_0, workers=…)`)
+#     and increase `compute_tr_m_for_atom(..., timeout_sec=…)`
+#     to ~3600 s.
+# Re-enable by appending to ATOMS:
+ATOMS_DEFERRED_NEEDS_RELEASE_BUILD = [
     (3, 3, "6Li", [(1, 0, "p"), (1, 0, "p"), (1, 0, "p"),
                    (0, 1, "n"), (0, 1, "n"), (0, 1, "n")]),
-    # Lithium-7: 3p + 4n at H_21 — slowest in scope; y_λ at H_21
-    # may take longer minutes.
     (3, 4, "7Li", [(1, 0, "p"), (1, 0, "p"), (1, 0, "p"),
                    (0, 1, "n"), (0, 1, "n"), (0, 1, "n"), (0, 1, "n")]),
 ]

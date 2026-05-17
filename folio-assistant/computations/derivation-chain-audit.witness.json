@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-17T06:58:58.621244+00:00",
-  "commitSha": "b1b95a3a3a0dfb9abb6f10cf84d3f53baffdde0d",
+  "computedAt": "2026-05-17T07:48:39.451843+00:00",
+  "commitSha": "19cca722b4b07748c78618933a18ee6fec963eb9",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2376,6 +2376,7 @@
         "r5-full-canonical-knot-solver.witness.json",
         "rho-f-categorical-probe.witness.json",
         "rho-f-volume-binding-gap.witness.json",
+        "rho-k-full-via-wenzl-lr.witness.json",
         "rho-k-h3a-co-casimir.witness.json",
         "rho-k-h3a-crystal.witness.json",
         "rho-k-h3a-demazure.witness.json",
