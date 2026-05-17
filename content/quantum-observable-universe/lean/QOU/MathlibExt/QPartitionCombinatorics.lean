@@ -63,29 +63,55 @@ theorem qFactorial_succ (q : ℝ) (n : ℕ) :
 
 /-- The Hecke deformation `q − q⁻¹` is positive when `q > 1`.
 
-    Axiomatised here pending verification that the specific Mathlib
-    lemma names (`inv_lt_one_iff_of_pos`, etc.) used in the natural
-    proof are stable across Mathlib versions.  The proof is
-    elementary:
-      `0 < q ⇒ 0 < q⁻¹ < 1` (when `q > 1`)
-      `q⁻¹ < 1 ≤ q ⇒ q - q⁻¹ > 0`.
-
-    A `lake build` pass will substitute the verified proof; until
-    then the axiomatisation pins the conclusion. -/
+    **Proof**: For `q > 1`, we have `0 < q`, and since `q⁻¹ · q = 1`
+    with `q⁻¹ > 0`, we get `q⁻¹ < 1 < q`, hence `q − q⁻¹ > 0`. -/
 -- Ref: [manuscript] def:q-bracket
-axiom q_sub_q_inv_pos_at_q_gt_one :
-    ∀ {q : ℝ}, 1 < q → 0 < q - q⁻¹
+theorem q_sub_q_inv_pos_at_q_gt_one {q : ℝ} (hq : 1 < q) :
+    0 < q - q⁻¹ := by
+  have hq_pos : 0 < q := lt_trans zero_lt_one hq
+  have hq_inv_pos : 0 < q⁻¹ := inv_pos.mpr hq_pos
+  have hq_ne : q ≠ 0 := ne_of_gt hq_pos
+  have h_inv_mul : q⁻¹ * q = 1 := inv_mul_cancel₀ hq_ne
+  -- From q⁻¹ · q = 1 and q > 1, derive q⁻¹ < 1
+  have hq_inv_lt_one : q⁻¹ < 1 := by
+    by_contra h
+    push_neg at h
+    -- h : 1 ≤ q⁻¹; combined with 1 < q gives 1 · 1 < q⁻¹ · q
+    have : (1 : ℝ) * 1 < q⁻¹ * q := mul_lt_mul' h hq zero_le_one hq_inv_pos
+    rw [one_mul, h_inv_mul] at this
+    exact lt_irrefl 1 this
+  linarith
 
 /-- The Hecke deformation is nonzero for `q > 1`. -/
 theorem q_sub_q_inv_ne_zero {q : ℝ} (hq : 1 < q) : q - q⁻¹ ≠ 0 :=
   ne_of_gt (q_sub_q_inv_pos_at_q_gt_one hq)
 
-/-- For `q > 1`, `q^n > q^(-n)` whenever `n ≥ 1`.  Axiomatised
-    structurally (the natural proof uses `pow_lt_pow_right`,
-    `zpow_neg`, etc. whose Mathlib names are version-fragile). -/
-axiom q_pow_dom_inv_at_q_gt_one :
-    ∀ {q : ℝ} (n : ℕ), 1 < q → 1 ≤ n →
-      q ^ (-(n : ℤ)) < q ^ n
+/-- For `q > 1`, `q^n > q^(-n)` whenever `n ≥ 1`.
+
+    **Proof**: For `q > 1` and `n ≥ 1`, `q^n > 1` (one_lt_pow₀), so
+    `(q^n)⁻¹ < 1 < q^n`; rewrite `q^(-n) = (q^n)⁻¹`. -/
+theorem q_pow_dom_inv_at_q_gt_one {q : ℝ} (n : ℕ) (hq : 1 < q) (hn : 1 ≤ n) :
+    q ^ (-(n : ℤ)) < q ^ n := by
+  have hq_pos : 0 < q := lt_trans zero_lt_one hq
+  have hqn_pos : 0 < q ^ n := pow_pos hq_pos n
+  have h_one_lt_qn : 1 < q ^ n :=
+    one_lt_pow₀ hq (Nat.one_le_iff_ne_zero.mp hn)
+  -- q^(-n) = (q^n)⁻¹ < 1 < q^n
+  have h_qn_inv : q ^ (-(n : ℤ)) = (q ^ n)⁻¹ := by
+    rw [zpow_neg, zpow_natCast]
+  rw [h_qn_inv]
+  -- (q^n)⁻¹ · q^n = 1 and q^n > 1 ⟹ (q^n)⁻¹ < 1
+  have hqn_ne : q ^ n ≠ 0 := ne_of_gt hqn_pos
+  have h_inv_mul : (q ^ n)⁻¹ * q ^ n = 1 := inv_mul_cancel₀ hqn_ne
+  have hqn_inv_pos : 0 < (q ^ n)⁻¹ := inv_pos.mpr hqn_pos
+  have h_inv_lt_one : (q ^ n)⁻¹ < 1 := by
+    by_contra h
+    push_neg at h
+    have : (1 : ℝ) * 1 < (q ^ n)⁻¹ * q ^ n :=
+      mul_lt_mul' h h_one_lt_qn zero_le_one hqn_inv_pos
+    rw [one_mul, h_inv_mul] at this
+    exact lt_irrefl 1 this
+  linarith
 
 /-- For `q > 1` and `n ≥ 1`, the q-bracket `[n]_q > 0`. -/
 theorem qBracket_pos {q : ℝ} (hq : 1 < q) {n : ℕ} (hn : 1 ≤ n) :
