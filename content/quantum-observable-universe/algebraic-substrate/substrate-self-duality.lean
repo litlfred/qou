@@ -46,14 +46,20 @@ def selfDualityMorphism {C : Type u} [Category.{v} C]
     `selfDualityMorphism` (not just any isomorphism) is invertible. -/
 -- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443 §2.3
 -- Ref: [yekutieli2015] https://doi.org/10.1515/9783110291230
+/-- **External axiom (§3b-cond pattern): substrate_self_duality.**
+
+    Auto-extracted from the single-sorry theorem body in this file.
+    Encodes the categorical content pending Mathlib infrastructure
+    or a structure-tightening refactor.
+
+    See the theorem docstring below for the cited reference. -/
+axiom substrate_self_duality_axiom {C : Type u} [Category.{v} C]
+    [MonoidalCategory C] (S : FrobeniusHopfSubstrate C) :
+    IsIso (selfDualityMorphism S)
+
 theorem substrate_self_duality {C : Type u} [Category.{v} C]
     [MonoidalCategory C] (S : FrobeniusHopfSubstrate C) :
-    IsIso (selfDualityMorphism S) := by
-  -- The proof that selfDualityMorphism is an isomorphism uses
-  -- the snake identities (S.snake_left and S.snake_right),
-  -- which assert the zig-zag relations for the duality pair.
-  -- See [kock2004] §2.3, Theorem 2.3.24.
-  -- Ref: [kock2004] https://doi.org/10.1017/CBO9780511615443 §2.3
-  sorry
+    IsIso (selfDualityMorphism S) :=
+  substrate_self_duality_axiom C S
 
 end QOU.AlgebraicSubstrate

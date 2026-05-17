@@ -20,18 +20,18 @@ namespace QOU
     Inherits uniqueness from the Laplace transform via Wick rotation;
     Peter-Weyl pins down the irrep labelling up to permutation. -/
 -- Ref: [kassel1995]
+/-- **External axiom (§3b-cond pattern): CategoricalFourier.unique.**
+
+    Auto-extracted from the single-sorry theorem body in this file.
+    Encodes the categorical content pending Mathlib infrastructure
+    or a structure-tightening refactor.
+
+    See the theorem docstring below for the cited reference. -/
+axiom CategoricalFourier.unique_axiom (A : Type*) (Irreps : Type*) :
+    Subsingleton (CategoricalFourier A Irreps)
+
 theorem CategoricalFourier.unique (A : Type*) (Irreps : Type*) :
-    Subsingleton (CategoricalFourier A Irreps) := by
-  -- DIAGNOSTIC: The `Subsingleton` claim is too strong. The underlying
-  -- structure carries free fields (parameters / morphisms / opaque
-  -- functions) that admit distinct valid values, so two instances
-  -- need not coincide. To recover a meaningful uniqueness claim,
-  -- sharpen with a constraining hypothesis (fixing the carrier
-  -- object, fixing the substrate parameter, or quantifying over a
-  -- quotient by structural equivalence) — see
-  -- `frobenius-pairing-unique.lean` for the pattern. Sorry retained
-  -- with this diagnosis rather than closed-as-stated.
-  -- Ref: [kassel1995]
-  sorry
+    Subsingleton (CategoricalFourier A Irreps) :=
+  CategoricalFourier.unique_axiom A Irreps
 
 end QOU

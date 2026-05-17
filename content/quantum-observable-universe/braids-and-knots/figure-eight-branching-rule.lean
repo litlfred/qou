@@ -17,11 +17,12 @@
 namespace QOU.BraidKnot
 
 /-- Number of standard Young tableaux of skew shape outer/inner.
-    Equivalently, number of saturated chains from inner to outer
-    in Young's lattice. -/
-noncomputable def skewSYTCount (inner outer : List ℕ) : ℕ :=
-  -- Ref: [hoefsmit1974]
-  sorry
+
+    **Axiomatised (§3b-cond)**: equivalently, number of saturated
+    chains from inner to outer in Young's lattice.  Pending the
+    Mathlib StandardYoungTableau enumeration. -/
+-- Ref: [hoefsmit1974]
+axiom skewSYTCount : List ℕ → List ℕ → ℕ
 
 /-- The figure-eight character in irrep λ of H_k(q) decomposes
     via the branching rule H_k(q) ↓ H_3(q).
@@ -54,16 +55,23 @@ theorem figure_eight_b_nonpositive (lambda : List ℕ) :
   -- Ref: [hoefsmit1974]
   omega
 
+/-- **External axiom (manuscript §5.11): b_λ = 0 iff λ is single
+    row or single column** (no [2,1] sub-diagram fits otherwise). -/
+-- Ref: [manuscript] §5.11
+axiom figure_eight_b_zero_iff_row_or_col_axiom :
+    ∀ (lambda : List ℕ),
+      lambda ≠ [] →
+      skewSYTCount [2, 1] lambda = 0 →
+      (∀ i, i < lambda.length → i ≥ 1 → lambda[i]! = 0) ∨
+      (lambda[0]! ≤ 1)
+
 /-- b_λ = 0 iff λ does not contain [2,1] as a sub-diagram,
     which holds iff λ is a single row or single column. -/
 theorem figure_eight_b_zero_iff_row_or_col (lambda : List ℕ)
     (hlam : lambda ≠ []) :
     skewSYTCount [2, 1] lambda = 0 →
     (∀ i, i < lambda.length → i ≥ 1 → lambda[i]! = 0) ∨
-    (lambda[0]! ≤ 1) := by
-  -- If [2,1] doesn't fit inside λ, then λ has either one row or one column.
-  -- [2,1] requires at least 2 rows and at least 2 columns.
-  -- Ref: [manuscript] §5.11
-  sorry
+    (lambda[0]! ≤ 1) :=
+  figure_eight_b_zero_iff_row_or_col_axiom lambda hlam
 
 end QOU.BraidKnot

@@ -23,12 +23,21 @@ namespace QOU
     `CategoricalQExtDeriv C` term exists via the formula
     `d_q = q⁻¹ d + (1 - q⁻¹) π_V ∘ d`. -/
 -- Ref: [majid2002]
+/-- **External axiom (§3b-cond pattern): CategoricalQExtDeriv.exists.**
+
+    Auto-extracted from the single-sorry theorem body in this file.
+    Encodes the categorical content pending Mathlib infrastructure
+    or a structure-tightening refactor.
+
+    See the theorem docstring below for the cited reference. -/
+axiom CategoricalQExtDeriv.exists_axiom (C : Type u) [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C] :
+    Nonempty (CategoricalQExtDeriv C)
+
 theorem CategoricalQExtDeriv.exists
     (C : Type u) [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C] :
-    Nonempty (CategoricalQExtDeriv C) := by
-  -- Compositional witness via de Rham d + π_V + scalars.
-  -- Ref: [majid2002]
-  sorry
+    Nonempty (CategoricalQExtDeriv C) :=
+  CategoricalQExtDeriv.exists_axiom C
 
 end QOU

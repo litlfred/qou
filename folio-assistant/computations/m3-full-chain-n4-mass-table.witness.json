@@ -1,0 +1,33 @@
+{
+  "computation": "m3-full-chain-n4-mass-table",
+  "description": "Per-derivation mass table with full N=4 categorical Q_\u03b2 chain (c_2 = b\u00b2, c_3 = -2, c_4 = b\u00b2+1/2).",
+  "Q_beta_n4_MeV": 0.7823334238654475,
+  "Q_beta_codata_MeV": 0.7823334100000222,
+  "rows": [
+    {
+      "iso": "p",
+      "err_n4_ppm": -720.0297200483868
+    },
+    {
+      "iso": "n",
+      "err_n4_ppm": -871.4592916799318
+    },
+    {
+      "iso": "D",
+      "err_n4_ppm": -16.385989985140146
+    },
+    {
+      "iso": "T",
+      "err_n4_ppm": 1863.9032975123373
+    },
+    {
+      "iso": "3He",
+      "err_n4_ppm": -2444.199955686812
+    },
+    {
+      "iso": "4He",
+      "err_n4_ppm": 5345.0479040830005
+    }
+  ],
+  "mae_pct": 0.1876837693165935
+}

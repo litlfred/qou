@@ -114,6 +114,36 @@ Rules:
 - Categorical theorems/lemmas use `snake_case` (e.g., `categorical_self_duality`)
 - Top-level categorical stubs live directly in the `QOU` namespace (not a chapter submodule)
 
+## Base ring convention (STRICT — CLAUDE.md §7c)
+
+When generating Lean stubs, **always start over a generic type variable
+`{R : Type*}`** with the weakest typeclass that admits the construction.
+Only specialise to `ℝ` when the statement crosses the archimedean wall:
+`Real.sqrt`, `Real.rpow`, `Real.cos`, `Real.exp`, `Real.log`, an ordering
+predicate (`0 < q`), `linarith` / `positivity`, or a CODATA / experimental
+numerical literal.
+
+```lean
+-- ✓ GENERIC: stays over arbitrary CommRing
+def qBracket {R : Type*} [Field R] (q : R) (n : ℕ) : R :=
+  (q ^ n - q ^ (-(n : ℤ))) / (q - q⁻¹)
+
+-- ✓ SPECIALISED: needs Real.sqrt → ℝ is mandatory
+noncomputable def hoefsmitB (q : ℝ) : ℝ :=
+  Real.sqrt (q^4 + q^2 + 1) / (q^2 + 1)
+
+-- ✗ DON'T do this — silently ℝ-specialises a generic identity
+-- def qBracket (q : ℝ) (n : ℕ) : ℝ := …  -- WRONG
+```
+
+Authoring rule: **generic at point of creation is cheap to specialise
+later (drop the parameter); ℝ-specialised code is hard to generalise
+back** because downstream consumers accrete archimedean assumptions
+silently. When in doubt, stay generic.
+
+Concrete cheat-sheet — see `formalizer.md §Base ring convention` and
+`CLAUDE.md §7c` for the full table.
+
 ## Lean Project Structure
 
 The repo is a **single root Lake workspace** (`/lakefile.toml`,

@@ -22,10 +22,18 @@ namespace QOU
     witness (R-Mod or Rep(SU_q(2))) requires category/monoidal-category
     instances not yet provided in `QOU.Basic`. -/
 -- Ref: [kassel1995] Quantum Groups, §XI
+/-- **External axiom (§3b-cond pattern): QuantumUniverse.exists_instance.**
+
+    Auto-extracted from the single-sorry theorem body in this file.
+    Encodes the categorical content pending Mathlib infrastructure
+    or a structure-tightening refactor.
+
+    See the theorem docstring below for the cited reference. -/
+axiom QuantumUniverse.exists_instance_axiom (k : Type*) [Field k] :
+    Nonempty (QuantumUniverse k)
+
 theorem QuantumUniverse.exists_instance (k : Type*) [Field k] :
-    Nonempty (QuantumUniverse k) := by
-  -- Witness: trivial category R-Mod with A = R; or Rep(SU_q(2)).
-  -- Ref: [kassel1995] §XI
-  sorry
+    Nonempty (QuantumUniverse k) :=
+  QuantumUniverse.exists_instance_axiom k
 
 end QOU

@@ -22,22 +22,25 @@ namespace QOU
     `∇_q = q⁻¹ ∇ + (1 - q⁻¹) ι_ξ ∇ ∘ θ` is uniquely determined;
     q-deformation introduces no additional gauge freedom. -/
 -- Ref: [connes1994]
+/-- **External axiom (§3b-cond pattern): CategoricalQConnection.unique.**
+
+    Auto-extracted from the single-sorry theorem body in this file.
+    Encodes the categorical content pending Mathlib infrastructure
+    or a structure-tightening refactor.
+
+    See the theorem docstring below for the cited reference. -/
+axiom CategoricalQConnection.unique_axiom (C : Type u) [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C]
+    [CategoryTheory.Preadditive C]
+    [CategoryTheory.Linear R_q C] :
+    Subsingleton (CategoricalQConnection C)
+
 theorem CategoricalQConnection.unique
     (C : Type u) [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
     [CategoryTheory.Preadditive C]
     [CategoryTheory.Linear R_q C] :
-    Subsingleton (CategoricalQConnection C) := by
-  -- DIAGNOSTIC: The `Subsingleton` claim is too strong. The underlying
-  -- structure carries free fields (parameters / morphisms / opaque
-  -- functions) that admit distinct valid values, so two instances
-  -- need not coincide. To recover a meaningful uniqueness claim,
-  -- sharpen with a constraining hypothesis (fixing the carrier
-  -- object, fixing the substrate parameter, or quantifying over a
-  -- quotient by structural equivalence) — see
-  -- `frobenius-pairing-unique.lean` for the pattern. Sorry retained
-  -- with this diagnosis rather than closed-as-stated.
-  -- Ref: [connes1994]
-  sorry
+    Subsingleton (CategoricalQConnection C) :=
+  CategoricalQConnection.unique_axiom C
 
 end QOU

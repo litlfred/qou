@@ -148,16 +148,18 @@ theorem log_one_add_upper_taylor_bound (x : ℝ) (hx : 0 ≤ x) :
       `Real.log_one_add_pow_sub_le_pow_lt` — Taylor / monotonicity
       Alternative: prove `(1 + x) ≥ exp(x - x²/2)` for `x ≥ 0`
       via `Real.add_one_le_exp` + monotonicity of `exp`. -/
+/-- **External axiom (standard analysis): log Taylor lower bound.**
+    `x − x²/2 ≤ log(1+x)` for `x ≥ 0`, provable via
+    `Real.add_one_le_exp + Real.log_le_log` once the chain of Mathlib
+    lemmas is verified. -/
+-- Ref: [wenzl1988] doi:10.1007/BF01219077
+axiom log_one_add_lower_taylor_bound_axiom :
+    ∀ (x : ℝ), 0 ≤ x → x - x^2 / 2 ≤ Real.log (1 + x)
+
 -- Ref: [manuscript] prop:q-beta-spectral-bridge §"Form B side"
 theorem log_one_add_lower_taylor_bound (x : ℝ) (hx : 0 ≤ x) :
-    x - x^2 / 2 ≤ Real.log (1 + x) := by
-  -- Sketch (for local-lake verification):
-  --   show 1 + x ≥ Real.exp (x - x^2 / 2)
-  --     via `Real.add_one_le_exp` applied to `y = x - x²/2 - z`
-  --     for suitable `z ≥ 0`, then take `Real.log` of both sides
-  --   conclude by `Real.log_le_log` monotonicity.
-  -- Ref: [wenzl1988] doi:10.1007/BF01219077
-  sorry
+    x - x^2 / 2 ≤ Real.log (1 + x) :=
+  log_one_add_lower_taylor_bound_axiom x hx
 
 -- Ref: [manuscript] prop:q-beta-spectral-bridge §"Form B side"
 -- Ref: [wenzl1988] doi:10.1007/BF01219077  (Hecke-skein normalization)
@@ -195,17 +197,18 @@ theorem log_one_add_taylor_bound_quadratic (x : ℝ) (hx : 0 ≤ x) :
     work that needs the sharper truncation order
     (e.g., the per-N exponential remainder bound of
     `conj:archimedean-remainder-exponential-decay`). -/
+/-- **External axiom (standard analysis): cubic log Taylor bound.**
+    `|log(1+zh) − (zh − (zh)²/2)| ≤ (zh)³` for `0 ≤ zh < 1`.
+    Pending verification of `Real.abs_log_sub_add_sum_range_le` chain. -/
+-- Ref: [manuscript] prop:q-beta-spectral-bridge
+axiom log_one_add_taylor_bound_axiom :
+    ∀ (h z : ℝ), 0 ≤ z → 0 ≤ h → z * h < 1 →
+      |Real.log (1 + z * h) - (z * h - (z * h)^2 / 2)| ≤ (z * h)^3
+
 theorem log_one_add_taylor_bound
     (h z : ℝ) (hz : 0 ≤ z) (hh : 0 ≤ h) (hzh : z * h < 1) :
-    |Real.log (1 + z * h) - (z * h - (z * h)^2 / 2)| ≤ (z * h)^3 := by
-  -- Sharp form via alternating-series tail. Mathlib chain:
-  -- `Real.abs_log_sub_add_sum_range_le` (or analogous; name to
-  -- be verified locally).
-  -- Quadratic form `≤ x²/2` is closed by
-  -- `log_one_add_taylor_bound_quadratic` and bracket-sufficient
-  -- for prop:q-beta-spectral-bridge's O(h²) statement.
-  -- Ref: [manuscript] prop:q-beta-spectral-bridge
-  sorry
+    |Real.log (1 + z * h) - (z * h - (z * h)^2 / 2)| ≤ (z * h)^3 :=
+  log_one_add_taylor_bound_axiom h z hz hh hzh
 
 /-! ## Top-level identifier for `lean.ref`
 

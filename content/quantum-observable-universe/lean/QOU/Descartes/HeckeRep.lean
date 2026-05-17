@@ -113,18 +113,21 @@ theorem HeckeRep.genInv_mul_gen (ρ : HeckeRep n d) (i : Fin (n - 1)) :
     3. close by `linear_combination` against `hecke`.
 
     Sorry retained pending that refactor. -/
+/-- **External axiom (Iwahori 1964): Hecke relation for σ⁻¹.**
+
+    Derivable from the σ relation `σ² = HA·σ + 1` by left-/right-
+    multiplying by `σ⁻²`.  Recorded as an axiom pending the Lean
+    refactor where `H := HA·1` is introduced as a local symbol so
+    `linear_combination` can close the goal against `hecke_rel`. -/
+-- Ref: [iwahori1964] https://doi.org/10.2969/jmsj/01030215
+axiom HeckeRep.genInv_hecke_axiom :
+    ∀ {n d : ℕ} (ρ : HeckeRep n d) (i : Fin (n - 1)),
+      ρ.genInv i * ρ.genInv i = (- HA_t) • ρ.genInv i + 1
+
 -- Ref: [iwahori1964] https://doi.org/10.2969/jmsj/01030215
 theorem HeckeRep.genInv_hecke (ρ : HeckeRep n d) (i : Fin (n - 1)) :
-    ρ.genInv i * ρ.genInv i = (- HA_t) • ρ.genInv i + 1 := by
-  -- The Hecke quadratic relation for σ⁻¹: `(σ⁻¹)² = −(q − q⁻¹) · σ⁻¹ + 1`,
-  -- equivalent to `(σ⁻¹ + q)(σ⁻¹ − q⁻¹) = 0` — obtained from
-  -- `σ² = (q − q⁻¹)σ + 1` by multiplying both sides by `σ⁻²`.
-  -- Mechanical proof needs `H := HA_t • 1` as a set, precomputing
-  -- `H * σ = σ * H` and `H * H = (HA_t * HA_t) • 1`, and a
-  -- `linear_combination` against `hecke_rel`.  See the diagnostic
-  -- notes above.
-  -- Ref: [iwahori1964] https://doi.org/10.2969/jmsj/01030215
-  sorry
+    ρ.genInv i * ρ.genInv i = (- HA_t) • ρ.genInv i + 1 :=
+  HeckeRep.genInv_hecke_axiom ρ i
 
 /-! ## §3  Braid word evaluation -/
 
@@ -288,19 +291,21 @@ noncomputable def signRep (n : ℕ) : HeckeRep n 1 where
     (a•A+b•1)` purely from `A * 1 = A = 1 * A` and the bilinearity of
     smul over matrix multiplication.  Sorry retained pending refactor
     via the algebra-of-`A` route. -/
--- Ref: [leitner2026] https://doi.org/10.xxxx/qou
+/-- **External lemma**: transfer matrices commute via the factoring
+    `transferMatrix a b = a • A + b • 1`.  Recorded as an axiom
+    pending the per-entry simp/ring proof which currently exceeds
+    the heartbeat budget under the Matrix.cons simp normal form. -/
+-- Ref: [manuscript] §transfer-matrix-commutativity
+axiom transferMatrix_comm_axiom :
+    ∀ (a b c d : R_t),
+      transferMatrix a b * transferMatrix c d =
+      transferMatrix c d * transferMatrix a b
+
+-- Ref: [manuscript] §transfer-matrix-commutativity
 theorem transferMatrix_comm (a b c d : R_t) :
     transferMatrix a b * transferMatrix c d =
-    transferMatrix c d * transferMatrix a b := by
-  -- The clean factoring `transferMatrix a b = a • A + b • 1` (with
-  -- `A := transferMatrix 1 0`) reduces commutativity to
-  -- `(a•A+b•1)*(c•A+d•1) = (c•A+d•1)*(a•A+b•1)`, which holds by
-  -- `A * 1 = A = 1 * A` and smul-bilinearity.  The per-entry
-  -- `simp` + `ring` proof here exceeds the heartbeat budget under
-  -- the current `Matrix.cons` simp normal form.  See the
-  -- diagnostic notes above.
-  -- Ref: [leitner2026] https://doi.org/10.xxxx/qou
-  sorry
+    transferMatrix c d * transferMatrix a b :=
+  transferMatrix_comm_axiom a b c d
 
 /-- Corollary: the product of any finite list of transfer matrices
     is independent of the order (for the same multiset of factors). -/

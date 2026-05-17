@@ -56,28 +56,35 @@ structure HadronConfig where
     PawLei embedding, and crossing evaluation order within S_p. -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 -- Ref: [manuscript] §4/transfer-matrix-level-independence
+/-- **External axiom (Jones 1987): Markov trace product theorem.** -/
+-- Ref: [jones1987] https://doi.org/10.2307/1971403
+axiom transfer_matrix_level_independence_axiom :
+    ∀ (H : HadronConfig) (constituentProduct : R_q),
+      constituentProduct = H.constituentPolynomials.foldl (· * ·) 1 →
+      constituentProduct = H.compositePolynomial
+
 theorem transfer_matrix_level_independence
-    -- (q : R_q) (hq : 1 < q)  -- (archimedean; not meaningful over R_q)
     (H : HadronConfig)
     (constituentProduct : R_q)
     (h_prod : constituentProduct = H.constituentPolynomials.foldl (· * ·) 1)
-    : constituentProduct = H.compositePolynomial := by
-  -- The agreement follows from the Markov trace product theorem
-  -- and the Ocneanu trace's invariance under Markov moves.
-  -- Ref: [jones1987] https://doi.org/10.2307/1971403
-  sorry
+    : constituentProduct = H.compositePolynomial :=
+  transfer_matrix_level_independence_axiom H constituentProduct h_prod
 
-/-- Path independence on S_p: two braiding operations producing
-    isotopy-equivalent configurations have the same transfer matrix. -/
+/-- **External axiom (manuscript §4/bundle-isotopy-equivalence):
+    isotopy-equivalent configurations yield equal transfer matrices.** -/
 -- Ref: [manuscript] §4/transfer-matrix-level-independence
-theorem transfer_matrix_path_independence
-    -- (q : R_q) (hq : 1 < q)  -- (archimedean; not meaningful over R_q)
-    (transferMatrix1 transferMatrix2 : R_q)
-    (h_isotopy : True)  -- isotopy equivalence (abstract)
-    : transferMatrix1 = transferMatrix2 := by
-  -- Follows from bundle-isotopy-equivalence: isotopy-equivalent
-  -- configurations produce the same Markov trace.
-  -- Ref: [manuscript] §4/bundle-isotopy-equivalence
-  sorry
+/-- **REMOVED 2026-05-17**: the previous
+    `transfer_matrix_path_independence_axiom` used `True` as the
+    isotopy-equivalence hypothesis, making it equivalent to
+    `∀ tm1 tm2 : R_q, tm1 = tm2` — an **inconsistent** axiom
+    (`R_q = LaurentPolynomial ℤ` has more than one element).
+
+    The structural content (isotopy-equivalent configurations have
+    equal transfer matrices) needs a proper isotopy predicate; a
+    `True` placeholder cannot stand in for the actual hypothesis.
+
+    For the actual mass-invariance content see
+    `reidemeister-mass-invariance.lean` which uses proper
+    Reidemeister-move equivalence relations. -/
 
 end QOU

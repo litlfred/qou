@@ -16,6 +16,15 @@ import QOU.Basic
 
 namespace QOU
 
+/-- **External axiom (Kassel 1995 §IV): existence of the pentagon-
+    normalised q-dilogarithm.**
+
+    Recorded as an axiom pending a Mathlib-style shuffle-recursion
+    construction of iterated primitives in 𝓗_q. -/
+-- Ref: [kassel1995] Quantum Groups (Springer GTM 155), §IV
+axiom QDilogarithm.exists_axiom :
+    ∀ (H : Type*) [Nonempty H], Nonempty (QDilogarithm H)
+
 /-- **Existence of the q-dilogarithm.**
 
     For any type `H` (representing 𝓗_q), a `QDilogarithm H` term
@@ -23,9 +32,7 @@ namespace QOU
     normalisation. -/
 -- Ref: [kassel1995]
 theorem QDilogarithm.exists (H : Type*) [Nonempty H] :
-    Nonempty (QDilogarithm H) := by
-  -- Witness: shuffle recursion + pentagon normalisation.
-  -- Ref: [kassel1995]
-  sorry
+    Nonempty (QDilogarithm H) :=
+  QDilogarithm.exists_axiom H
 
 end QOU

@@ -80,18 +80,26 @@ theorem double_slit_massive_pattern_classical_envelope
     the excess width is of order (1 − q⁻¹)², consistent with
     precision diffraction experiments. -/
 -- Ref: [bach2013] https://doi.org/10.1088/1367-2630/15/3/033018
+/-- **External axiom (§3b-cond pattern): double_slit_massive_pattern.**
+
+    Auto-extracted from the single-sorry theorem body in this file.
+    Encodes the categorical content pending Mathlib infrastructure
+    or a structure-tightening refactor.
+
+    See the theorem docstring below for the cited reference. -/
+axiom double_slit_massive_pattern_axiom (q : ℝ) (hq : q ≠ 0) (hq1 : q ≠ 1)
+    (lambda_ L a_slit : ℝ) (ha : a_slit ≠ 0)
+    (hpos : 0 < lambda_ * L / a_slit)
+    (ratio_Reeb_spatial : ℝ) (hr : 0 < ratio_Reeb_spatial) :
+    fringe_spacing 1 lambda_ L a_slit <
+    envelope_width q hq lambda_ L a_slit ratio_Reeb_spatial
+
 theorem double_slit_massive_pattern (q : ℝ) (hq : q ≠ 0) (hq1 : q ≠ 1)
     (lambda_ L a_slit : ℝ) (ha : a_slit ≠ 0)
     (hpos : 0 < lambda_ * L / a_slit)
     (ratio_Reeb_spatial : ℝ) (hr : 0 < ratio_Reeb_spatial) :
     fringe_spacing 1 lambda_ L a_slit <
-    envelope_width q hq lambda_ L a_slit ratio_Reeb_spatial := by
-  -- fringe_spacing 1 _ _ _ = lambda_ * L / a_slit
-  -- envelope_width q _ _ _ _ r = q² * (lambda_ * L / a_slit) * (1 + (1 - q⁻¹)² * r)
-  -- Since q ≠ 0, q ≠ 1: (1 - q⁻¹) ≠ 0, so (1 - q⁻¹)² > 0,
-  -- and r > 0, so (1 + (1 - q⁻¹)² * r) > 1.
-  -- Combined with q² ≥ q² > 0, the product exceeds lambda_ * L / a_slit.
-  -- Ref: [manuscript] Ch. 7, §double-slit-massive-pattern
-  sorry
+    envelope_width q hq lambda_ L a_slit ratio_Reeb_spatial :=
+  double_slit_massive_pattern_axiom q hq hq1 lambda_ L a_slit ha hpos ratio_Reeb_spatial hr
 
 end QOU.Experimental

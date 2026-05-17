@@ -156,6 +156,43 @@ must match a citation key in `content/schema/references.ts` exactly (case-sensit
 published reference exists, use `[manuscript]` and cite the chapter/section.
 This is enforced by the axiom report's Theoretical Gap Report (§8).
 
+## Base ring convention — generic `R` vs archimedean `ℝ` (STRICT)
+
+Per **CLAUDE.md §7c**: every Lean declaration that holds in a generic
+commutative ring must be stated over a **type variable**, never silently
+specialised to `ℝ`. The archimedean wall is the structural cut:
+
+* **Stay generic** (`{R : Type*} [CommRing R]` / `[Field R]` /
+  `[GroupWithZero R]`): categorical content, algebraic identities,
+  q-deformation combinatorics (qBracket, qFactorial, qDim), Wenzl /
+  Hecke / Hoefsmit structural data, content/hook arithmetic over `ℤ`
+  exponents (`Q ^ (contentSum λ)`), Schur elements, anything whose
+  *statement* only uses ring / field operations.
+* **Specialise to `ℝ`** only when the declaration genuinely needs
+  `Real.sqrt`, `Real.rpow`, `Real.cos`, `Real.exp`, `Real.log`, an
+  ordering predicate (`0 < q`, `q < 1`), `linarith` / `positivity` /
+  `nlinarith`, or a CODATA / experimental numerical literal.
+
+**Default to generic at point of authoring.** Generic → `ℝ`
+specialisation is cheap (drop the parameter); `ℝ` → generic refactor
+is much harder once downstream code accretes archimedean assumptions
+silently. When in doubt, start generic.
+
+Concrete cheat-sheet:
+
+| Construction | Typeclass | Example |
+|--------------|-----------|---------|
+| Polynomial identity | `[CommRing R]` | `theorem foo (x : R) : (x + 1)^2 = x^2 + 2*x + 1` |
+| Inverse / `x⁻¹` | `[Field R]` / `[GroupWithZero R]` | `def bar (Q : R) := 1 / (1 - Q)` |
+| Negative `ℤ` powers | `[GroupWithZero R]` | `Q ^ (contentSum λ)` where `contentSum λ : ℤ` |
+| Square root / radical | `ℝ` | `noncomputable def hoefsmitB (q : ℝ) := …` |
+| Ordering / `linarith` | `ℝ` (or `[LinearOrderedField R]`) | `theorem bar_inv (q : ℝ) (hq : 0 < q)` |
+| `Real.cos`, `Real.exp` | `ℝ` | `Real.cos (α - b * ℏ_q^2 / 2)` |
+| CODATA / experimental | `ℝ` | `noncomputable def codata_proton_MeV : ℝ := 938.272` |
+
+The narrative `.md` side mirrors this: `q ∈ R` in the algebraic
+discussion, `q ∈ ℝ` only when the archimedean evaluation is needed.
+
 ## Library Synthesis Rules
 
 Based on the glossary types, import the correct Mathlib modules:

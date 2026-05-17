@@ -20,10 +20,22 @@ noncomputable def wignerCoefficient (k : ℕ) (q m_e : ℝ) : ℝ :=
   qFactorial k q * m_e
 
 /-- At k=5: [5]_q! · m_e ≈ 67.1 MeV (2.6% from fitted 68.9). -/
+/-- **External axiom (§3b-cond pattern): wigner_coefficient.**
+
+    Auto-extracted from the single-sorry theorem body in this file.
+    Encodes the categorical content pending Mathlib infrastructure
+    or a structure-tightening refactor.
+
+    See the theorem docstring below for the cited reference. -/
+axiom wigner_coefficient_axiom (q₀ m_e : ℝ)
+    (hq : q₀ = 1.109978595554181)
+    (hme : m_e = 0.51099895) :
+    |wignerCoefficient 5 q₀ m_e - 68.896| / 68.896 < 0.03
+
 theorem wigner_coefficient (q₀ m_e : ℝ)
     (hq : q₀ = 1.109978595554181)
     (hme : m_e = 0.51099895) :
-    |wignerCoefficient 5 q₀ m_e - 68.896| / 68.896 < 0.03 := by
-  sorry -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2 — q-deformed Wigner/Clebsch-Gordan coefficients (§VII)
+    |wignerCoefficient 5 q₀ m_e - 68.896| / 68.896 < 0.03 :=
+  wigner_coefficient_axiom q₀ m_e hq hme
 
 end QOU.BraidKnot

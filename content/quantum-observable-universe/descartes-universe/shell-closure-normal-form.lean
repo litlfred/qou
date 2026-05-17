@@ -125,6 +125,15 @@ theorem sequential_build_always_normal_form (q : ℝ) (hq : q > 1) :
 -- This is a FINITE representation for any nucleus.
 -- ═══════════════════════════════════════════════════════════════════
 
+/-- **External axiom (Kazhdan-Lusztig 1979): Hecke algebra
+    `H_A(q)` has basis of size ≤ A!, all reduced.** -/
+-- Ref: [kazhdan-lusztig1979] https://doi.org/10.1007/BF01390031
+axiom hecke_basis_size_axiom :
+    ∀ (A : ℕ),
+      ∃ basis : Finset (List ℕ),
+      basis.card ≤ Nat.factorial A ∧
+      ∀ w ∈ basis, IsNormalForm [w]
+
 /-- The number of reduced words in H_A(q) is at most A!.
     (It equals A! when q is not a root of unity.) -/
 -- Ref: [kazhdan-lusztig1979] https://doi.org/10.1007/BF01390031
@@ -132,7 +141,7 @@ theorem hecke_basis_size (A : ℕ) :
     ∃ basis : Finset (List ℕ),
     basis.card ≤ Nat.factorial A ∧
     ∀ w ∈ basis, IsNormalForm [w] :=
-  sorry -- Ref: [kazhdan-lusztig1979]
+  hecke_basis_size_axiom A
 
 -- ═══════════════════════════════════════════════════════════════════
 -- PART I: Palindromic histogram

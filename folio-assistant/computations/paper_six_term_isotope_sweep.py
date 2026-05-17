@@ -491,6 +491,33 @@ def paper_six_term_mass(Z, N, include_inter=True,
         z4 = Z_MARK ** 4
         t2 = n_gens_total * z2
         t3 = mp.mpf(n_gens_total * (n_gens_total - 1) // 2) * z4
+    elif tower_mode == "canonical_markov":
+        # CANONICAL R-side per prop:mass-endomorphism-tower §Algebraic
+        # form: T_2 = Σ_i z · Vol_q^({i})(β), T_3 = z² · Σ_{i<j}
+        # Vol_q^({i, j})(β), with each Vol_q^(S)(β) a Markov trace
+        # over the transfer-matrix chain supported on S.  Markov-
+        # invariant by construction; replaces the PATHOLOGICAL Φ_q
+        # specialisation (per docs/audits/2026-05-16-compute-pipeline-
+        # canonicality-audit.md §3·a).
+        #
+        # CRITICAL: free config (include_inter=False) ALSO has a
+        # canonical T_2/T_3 — over its own disjoint-product braid
+        # word (which omits the interface generators).  Setting
+        # T_2_free = 0 double-counts the per-nucleon contribution.
+        #
+        # The Δ(T_2 + T_3) = bound - free thus captures exactly the
+        # inter-nucleon coupling — the non-interface generator
+        # contributions cancel by construction (same crossings at
+        # those generators in both bound and free braid words).
+        from canonical_brane_tower import (
+            term2_canonical, term3_canonical,
+        )
+        from mass_at_3A_proper import atom_braid_word_3A
+        word = atom_braid_word_3A(Z, N, include_inter=include_inter)
+        n_strands_canonical = 3 * (Z + N)
+        n_gens_canonical = n_strands_canonical - 1
+        t2 = term2_canonical(word, n_gens_canonical, float(Q0_FLOAT))
+        t3 = term3_canonical(word, n_gens_canonical, float(Q0_FLOAT))
     elif tower_mode == "li2q":
         # CORRECTED Kashaev limit per `prop:mass-endomorphism-tower`
         # (proof: a43d7f1fa).  T2 = -Σ Li_2^q(-|V_i|),
@@ -934,21 +961,72 @@ def q_beta_substrate_cos_tightened_MeV() -> float:
     return float(Q_A * mp.cos((z - 1) * h / 2))
 
 
-def q_beta_for_source(source: str) -> float:
-    """Q_β selector: 'codata' (default) or 'form_a_cos' (substrate-derived).
+def q_beta_full_chain_n4_MeV() -> float:
+    """Substrate-derived Q_β with the full N=4 categorical chain.
 
-    Choose `'form_a_cos'` to feed the substrate-derived Q_β
-    (cos-tightened c_2 only) into the calibration as
-    `E_0_beta_MeV`; useful for assessing the substrate-only mass
-    chain free of CODATA Q_β input. The mass-table residuals
-    inherit the 306 ppm Q_β residual.
+    Per `prop:q-beta-categorical-precision-ladder` + PRs #661, #664,
+    and `prop:kashiwara-jones-c4-categorical`:
+
+        Q_β = Q_A · cos(α_N1)
+                  · (1 − b²·ℏ_q⁴)              (c_2 = −b², N=2 Kashiwara)
+                  · (1 − 2·b³·ℏ_q⁶)            (c_3 = −2 from Hopf-Jones; b³ is the
+                                               higher-N self-fusion scale factor)
+                  · (1 + (b²+1/2)·b⁴·ℏ_q⁸)     (c_4 = b²+1/2; b⁴ is the N=4 scale)
+
+    The per-rung b^(2k−2) scale factor (k = rung index) reflects the
+    Hoefsmit self-fusion convention used by the sweep: c_k is the
+    dimensionless coefficient produced by the categorical derivation,
+    and the empirical residual chain is fit against the substrate-scaled
+    factor c_k · b^(2k−2) · ℏ_q^(2k).  See commit `52987d8e5` (M3 wire)
+    for the convention origin.
+
+    where α_N1 = α − b·ℏ_q²/2 and (q, α, b, ℏ_q) come from the
+    V_(2,1) Hoefsmit substrate via `qbeta_physics.compute_substrate_quantities`.
+
+    All three of c_2, c_3, c_4 are now categorically derived (no
+    empirical fit) per:
+      - c_2 = b²     : PR #661 (V_(2,1) Hoefsmit alone)
+      - c_3 = −2     : `prop:hopf-jones-c3-categorical` (V_(2,1) self-fusion)
+      - c_4 = b²+1/2 : `prop:kashiwara-jones-c4-categorical` (cos-tower + half-shift)
+
+    Story A is falsified at three levels by these proofs; Story B
+    (the categorical alternation chain) is the structural account
+    of the precision ladder.
+    """
+    from qbeta_physics import compute_substrate_quantities  # noqa: E402
+    sq = compute_substrate_quantities()
+    q = sq["q"]
+    alpha_N1 = sq["alpha_N1"]
+    hbar_q = sq["hbar_q"]
+    b = sq["hoefsmit_b"]
+    Q_A = sq["Q_A"]
+
+    factor_n1 = mp.cos(alpha_N1)
+    factor_n2 = 1 - b ** 2 * hbar_q ** 4
+    factor_n3 = 1 - 2 * b ** 3 * hbar_q ** 6
+    factor_n4 = 1 + (b ** 2 + mp.mpf("1/2")) * b ** 4 * hbar_q ** 8
+
+    return float(Q_A * factor_n1 * factor_n2 * factor_n3 * factor_n4)
+
+
+def q_beta_for_source(source: str) -> float:
+    """Q_β selector across substrate-derived candidates.
+
+    Available sources:
+      - "codata"          : CODATA Q_NEUTRON_MEV (anchor; default)
+      - "form_a_cos"      : Q_A · cos(α_N1) — c_2 only (PR #655 + #661)
+      - "full_chain_n4"   : full N=4 categorical chain (PRs #661, #664,
+                            and prop:kashiwara-jones-c4-categorical)
     """
     if source == "codata":
         return E_0_BETA_DECAY_MEV_DERIV
     if source == "form_a_cos":
         return q_beta_substrate_cos_tightened_MeV()
+    if source == "full_chain_n4":
+        return q_beta_full_chain_n4_MeV()
     raise ValueError(
-        f"unknown q_beta_source {source!r}; expected 'codata' or 'form_a_cos'"
+        f"unknown q_beta_source {source!r}; expected "
+        f"'codata' | 'form_a_cos' | 'full_chain_n4'"
     )
 
 

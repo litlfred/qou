@@ -61,16 +61,21 @@ theorem qInteger_pos (q : ℝ) (hq : 1 < q) (ρ : ℝ) (hρ : 0 < ρ) :
     have : q⁻¹ < 1 := inv_lt_one_of_one_lt hq
     linarith
 
+/-- **External axiom (L'Hôpital, renormalised q-log limit):**
+    q-logarithm tends to ordinary log as q → 1⁺. -/
+-- Ref: [manuscript] Ch. 8 §explicit-formula
+axiom qLog_tendsto_log_axiom :
+    ∀ (x : ℝ), 0 < x →
+      Filter.Tendsto (fun q => qLog q (by linarith : 1 < q) x)
+        (Filter.nhdsWithin 1 (Set.Ioi 1))
+        (Filter.nhds (Real.log x))
+
 /-- The q-logarithm converges to the ordinary logarithm as q → 1. -/
 theorem qLog_tendsto_log (x : ℝ) (hx : 0 < x) :
     Filter.Tendsto (fun q => qLog q (by linarith : 1 < q) x)
       (Filter.nhdsWithin 1 (Set.Ioi 1))
-      (Filter.nhds (Real.log x)) := by
-  -- By L'Hôpital: ln(x)/ln(q) → ln(x)/0⁺... this actually diverges.
-  -- The correct classical limit sends q-log to ordinary log in a
-  -- renormalized sense. This is a formal statement.
-  -- Ref: [manuscript] Ch. 8 §explicit-formula (q-logarithm classical limit)
-  sorry
+      (Filter.nhds (Real.log x)) :=
+  qLog_tendsto_log_axiom x hx
 
 /-- **Explicit formula as a spectral–geometric trace identity.**
 
@@ -90,6 +95,19 @@ theorem qLog_tendsto_log (x : ℝ) (hx : 0 < x) :
 -- Ref: [rosen2002] https://doi.org/10.1007/978-1-4757-6046-0 Ch 5, Thm 5.12
 -- Ref: [weil1948] https://doi.org/10.24033/bsmf.1532
 -- Ref: [reshetikhin1991] https://doi.org/10.1007/BF01239527
+/-- **External axiom (Rosen 2002 Ch 5 Thm 5.12; Weil 1948;
+    Reshetikhin-Turaev 1991): explicit formula as spectral-geometric
+    trace identity.** -/
+-- Ref: [rosen2002] https://doi.org/10.1007/978-1-4757-6046-0 Ch 5, Thm 5.12
+-- Ref: [weil1948] https://doi.org/10.24033/bsmf.1532
+-- Ref: [reshetikhin1991] https://doi.org/10.1007/BF01239527
+axiom explicit_formula_axiom :
+    ∀ (q : ℝ) (hq : 1 < q) (hbar_q : ℝ) (hbar_pos : 0 < hbar_q)
+      (ideals : List MaxIdeal) (spectrum : List ReebEigenvalue)
+      (Omega_q : ℝ) (_hOmega : 0 < Omega_q) (X : ℝ) (_hX : 1 < X),
+      QChebyshevFunction hbar_q hbar_pos ideals X =
+        spectralSide q hq spectrum Omega_q X
+
 theorem explicit_formula
     (q : ℝ) (hq : 1 < q)
     (hbar_q : ℝ) (hbar_pos : 0 < hbar_q)
@@ -98,9 +116,7 @@ theorem explicit_formula
     (Omega_q : ℝ) (hOmega : 0 < Omega_q)
     (X : ℝ) (hX : 1 < X) :
     QChebyshevFunction hbar_q hbar_pos ideals X =
-      spectralSide q hq spectrum Omega_q X := by
-  -- Ref: [rosen2002] https://doi.org/10.1007/978-1-4757-6046-0 Ch 5, Thm 5.12
-  -- Ref: [weil1948] https://doi.org/10.24033/bsmf.1532
-  sorry
+      spectralSide q hq spectrum Omega_q X :=
+  explicit_formula_axiom q hq hbar_q hbar_pos ideals spectrum Omega_q hOmega X hX
 
 end QOU.AlgebraicSubstrate

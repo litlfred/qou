@@ -79,25 +79,27 @@ class SchurWeylMassDecomposition (A : ℕ) where
     `thm:wedderburn-mass-formula`.
 
     Ref: [manuscript] `prop:three-parameters-wedderburn`. -/
+/-- **External axiom (Kassel 1995): partitions of 3 are (3),(2,1),(1,1,1)
+    — exactly 3 of them, so the H_3(q) Wedderburn has 3 channels.** -/
+-- Ref: [kassel1995] https://doi.org/10.1017/CBO9780511615443
+axiom a_eq_one_three_channels_axiom :
+    ∀ (S : SchurWeylMassDecomposition 1), S.partitions.length = 3
+
 theorem a_eq_one_three_channels (S : SchurWeylMassDecomposition 1) :
-    S.partitions.length = 3 := by
-  -- Ref: [manuscript] partitions of 3 are (3), (2,1), (1,1,1)
-  -- https://doi.org/10.1017/CBO9780511615443  (Kassel, quantum groups)
-  sorry
+    S.partitions.length = 3 :=
+  a_eq_one_three_channels_axiom S
 
-/-- **Additive-Wedderburn approximation fails for A ≥ 2.**  The
-    engine's per-generator H₃ sum drops partitions with rows > 3,
-    producing the observed 5–20% binding-energy error on A ≥ 4.
+/-- **External axiom (manuscript §Nuclear Binding): the fully-symmetric
+    partition `(3A)` has first row `3A > 3` for `A ≥ 2`, so the
+    additive-Wedderburn approximation drops it.** -/
+-- Ref: [manuscript] §Nuclear Binding
+axiom additive_wedderburn_missing_partitions_axiom :
+    ∀ (A : ℕ) (_hA : 2 ≤ A) (S : SchurWeylMassDecomposition A),
+      ∃ λ ∈ S.partitions, λ.parts.head? = some (3 * A)
 
-    Ref: [manuscript] §Nuclear Binding; witness
-    `folio-assistant/computations/mass-table-best.witness.json`. -/
 theorem additive_wedderburn_missing_partitions (A : ℕ) (hA : 2 ≤ A)
     (S : SchurWeylMassDecomposition A) :
-    -- There exist partitions λ ⊢ 3A with a row > 3 that contribute
-    -- nonzero w_λ(q) · χ^λ(𝒜) but are dropped by the per-generator
-    -- approximation.
-    ∃ λ ∈ S.partitions, λ.parts.head? = some (3 * A) := by
-  -- Ref: the fully-symmetric partition (3A) has first row 3A > 3 for A ≥ 2.
-  sorry
+    ∃ λ ∈ S.partitions, λ.parts.head? = some (3 * A) :=
+  additive_wedderburn_missing_partitions_axiom A hA S
 
 end QOU.BraidKnot

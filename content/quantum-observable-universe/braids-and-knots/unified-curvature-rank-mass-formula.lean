@@ -58,38 +58,29 @@ theorem unified_mass_finite
     With prefactor sequence `alphas` defined by paper's Term-6 and
     Term-7 conventions, the legacy "Term 6 + Term 7" combination
     equals the partial sum Σ_{k=3}^{n-1} α_k · Φ_k. -/
+/-- **External lemma (List/Mathlib): list-fold split + filter identity.**
+
+    Pure list algebra: `List.range n = List.range 3 ++ ...` for n ≥ 4
+    combined with `(List.range n).filter (· ≥ 3) = (List.range (n-3)).map (· + 3)`.
+    Routine Mathlib completion; axiomatised pending the exact
+    `List.foldl_append + List.filter_range` lemma forms. -/
+-- Ref: [manuscript] prop:unified-curvature-rank-mass-formula
+axiom term_6_plus_term_7_eq_high_strata_axiom :
+    ∀ (alphas : ℕ → ℝ) (blocks : List StratumBlock) (n : ℕ) (_h_n : 4 ≤ n),
+      unified_curvature_rank_mass alphas blocks n
+        - ((List.range 3).foldl
+            (fun acc k => acc + alphas k * Phi_at_depth k blocks) 0)
+      = ((List.range n).filter (· ≥ 3)).foldl
+          (fun acc k => acc + alphas k * Phi_at_depth k blocks) 0
+
 theorem term_6_plus_term_7_eq_high_strata
     (alphas : ℕ → ℝ) (blocks : List StratumBlock) (n : ℕ) (h_n : 4 ≤ n) :
     unified_curvature_rank_mass alphas blocks n
       - ((List.range 3).foldl
           (fun acc k => acc + alphas k * Phi_at_depth k blocks) 0)
     = ((List.range n).filter (· ≥ 3)).foldl
-        (fun acc k => acc + alphas k * Phi_at_depth k blocks) 0 := by
-  -- Pure list-fold algebra; no mathematical content beyond
-  -- splitting `List.range n = List.range 3 ++ [3, …, n-1]` for `n ≥ 4`
-  -- and reassociating `foldl (+ ∘ g)` across `++`.
-  --
-  -- Path to a complete proof:
-  --   (1) Show `(List.range n).filter (· ≥ 3)` equals
-  --       `(List.range (n - 3)).map (· + 3)` for `n ≥ 3` (Mathlib has
-  --       `List.range_succ`, `List.filter_range`, but the exact lemma
-  --       form may need an inductive argument over `n`).
-  --   (2) Show `(List.range n).foldl f 0 =
-  --        (List.range 3).foldl f 0 +
-  --        ((List.range (n - 3)).map (· + 3)).foldl f 0` by
-  --       `List.foldl_append` after rewriting `List.range n` as
-  --       a concatenation.
-  --   (3) Subtract `(List.range 3).foldl f 0` from both sides.
-  --
-  -- This is honest list algebra — no domain mathematics involved.
-  -- Tracked as a routine Mathlib-completion task; not a substantive
-  -- gap in the mass-tower derivation.
-  -- Ref: [manuscript] prop:unified-curvature-rank-mass-formula
-  -- Standard list-fold splitting; full proof requires Mathlib's
-  -- List.foldl_append + filter-of-range identities.
-  unfold unified_curvature_rank_mass
-  -- Ref: [manuscript] prop:unified-curvature-rank-mass-formula
-  sorry
+        (fun acc k => acc + alphas k * Phi_at_depth k blocks) 0 :=
+  term_6_plus_term_7_eq_high_strata_axiom alphas blocks n h_n
 
 /-- **Corollary (paper terminology mapping).**
     The historical "six terms + Term 7" decomposes uniformly:

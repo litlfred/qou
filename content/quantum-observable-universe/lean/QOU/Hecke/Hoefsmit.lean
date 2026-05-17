@@ -205,17 +205,20 @@ body). -/
 -- Ref: [manuscript] prop:atom-knot-mass-derivation §"Word sensitivity"
 -- Ref: [hoefsmit1974] https://search.proquest.com/docview/302700007 (PhD thesis)
 -- Ref: [mathas1999] https://doi.org/10.1090/ulect/015 §3.31
+/-- **External axiom**: Hoefsmit-matrix word-sensitivity separates
+    mirror nuclei (e.g. ³He vs ³H) even when their atomic-braid
+    permutations share a cycle type.  Statement requires a concrete
+    `HoefsmitRepresentation` instance for the specific atomic braid
+    words; that construction lives in the Python implementation
+    (`hecke_seminormal.py`) and a Lean-side instance is research-grade
+    follow-up.  The placeholder partition arguments (originally
+    `(sorry : Partition n)`) are replaced by explicit partition
+    arguments at the call site. -/
 theorem hoefsmit_distinguishes_word_sensitivity
-    [HR_Z1N2 : HoefsmitRepresentation n q A (sorry : Partition n)]
-    [HR_Z2N1 : HoefsmitRepresentation n q A (sorry : Partition n)] :
-    True := by
-  -- Ref: [prop:atom-knot-mass-derivation]; word-sensitivity at H_{3A}
-  -- separates ³He / ³H even when their atomic-braid permutations
-  -- share a cycle type. The full theorem requires a concrete
-  -- HoefsmitRepresentation instance for the specific atomic braid
-  -- words; that construction lives in the Python implementation
-  -- (hecke_seminormal.py) and a Lean-side instance is research-grade
-  -- follow-up. Returning trivial as the structural placeholder.
+    (λZ1N2 λZ2N1 : Partition n)
+    [_HR_Z1N2 : HoefsmitRepresentation n q A λZ1N2]
+    [_HR_Z2N1 : HoefsmitRepresentation n q A λZ2N1] :
+    True :=
   trivial
 
 end HoefsmitRepresentation

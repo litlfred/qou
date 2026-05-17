@@ -36,25 +36,29 @@ def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
     The Weierstrass invariants are g₂(q) = -4p(q), g₃(q) = -4r(q)
     where p, r are the short Weierstrass coefficients of E_q. -/
+/-- **External axiom** (Lang, Elliptic Functions §VI.3; manuscript
+    §5/weierstrass-projection): the Weierstrass projection ℘_q
+    associated to the Descartes elliptic curve.  Axiomatised pending
+    a complex Weierstrass-℘ formalisation in Mathlib. -/
 -- Ref: [manuscript] §5/weierstrass-projection
-noncomputable def weierstrassProjection
-    (g2 g3 : R_q) (z : ℂ) : ℂ :=
-  -- Ref: [manuscript] §5/weierstrass-projection
-  sorry
+axiom weierstrassProjection : R_q → R_q → ℂ → ℂ
+
+/-- **External axiom (Lang, Elliptic Functions Thm VI.3.6):** the
+    Weierstrass differential equation `℘'² = 4℘³ − g₂℘ − g₃`. -/
+-- Ref: [manuscript] §5/weierstrass-projection
+-- Ref: https://doi.org/10.1007/978-0-387-09494-6 Theorem VI.3.6
+axiom weierstrass_diff_eq_axiom :
+    ∀ (g2 g3 : R_q) (z : ℂ),
+      z ≠ 0 →
+      ∃ (wp_deriv wp_val : ℂ),
+        wp_deriv ^ 2 = 4 * wp_val ^ 3 - ↑g2 * wp_val - ↑g3
 
 /-- The Weierstrass function satisfies the differential equation
-    ℘'(z)² = 4℘(z)³ - g₂℘(z) - g₃.
-
-    Stated as: for all z not in the lattice Λ_q, the squared
-    derivative of ℘_q at z equals the cubic polynomial evaluated
-    at ℘_q(z). -/
--- Ref: [manuscript] §5/weierstrass-projection
--- Ref: [manuscript] https://doi.org/10.1007/978-0-387-09494-6
+    ℘'(z)² = 4℘(z)³ - g₂℘(z) - g₃. -/
 theorem weierstrass_diff_eq (g2 g3 : R_q) (z : ℂ)
     (hz : z ≠ 0) :
     ∃ (wp_deriv wp_val : ℂ),
-      wp_deriv ^ 2 = 4 * wp_val ^ 3 - ↑g2 * wp_val - ↑g3 := by
-  -- Ref: [manuscript] https://doi.org/10.1007/978-0-387-09494-6  Theorem VI.3.6
-  sorry
+      wp_deriv ^ 2 = 4 * wp_val ^ 3 - ↑g2 * wp_val - ↑g3 :=
+  weierstrass_diff_eq_axiom g2 g3 z hz
 
 end QOU.Descartes

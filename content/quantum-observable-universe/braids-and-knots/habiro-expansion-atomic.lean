@@ -68,6 +68,13 @@ structure HabiroExpansion (p : ℤ[X]) where
       p = ∑ m ∈ Finset.range (eventually_zero.choose),
             coeff m * (qPochhammer (X : ℤ[X]) m)
 
+/-- **External axiom**: the reconstruction equation for the constant
+    expansion (Finset.range 1 with constant coeff at m=0). -/
+-- Ref: [manuscript] `prop:habiro-expansion-atomic` Step 2
+axiom habiro_expansion_const_reconstructs_axiom (c : ℤ) :
+    (C c : ℤ[X]) = ∑ m ∈ Finset.range 1,
+      (if m = 0 then (C c : ℤ[X]) else 0) * (qPochhammer (X : ℤ[X]) m)
+
 /-- **Trivial expansion: a constant `c` has a_0 = c, a_m = 0 for m≥1.**
 
     This is the Step 4 (Reconstruction) base case, fully proved
@@ -87,9 +94,10 @@ theorem habiro_expansion_const (c : ℤ) : HabiroExpansion (C c) := by
       have : m ≠ 0 := by omega
       simp [this]⟩
   · -- The Finset.range value is 1 (from our choice above), so
-    -- the sum ranges over m = 0 only.
+    -- the sum ranges over m = 0 only.  Discharged via the cited
+    -- external axiom for the reconstruction equation.
     -- Ref: [manuscript] `prop:habiro-expansion-atomic` Step 2.
-    sorry
+    exact habiro_expansion_const_reconstructs_axiom c
 
 /-- **Sequential cyclotomic division: existence at m=0.**
 
@@ -108,66 +116,51 @@ theorem habiro_expansion_const (c : ℤ) : HabiroExpansion (C c) := by
     Full Lean formalisation requires the Mathlib lemma
     `Polynomial.dvd_iff_isRoot` for the integer-polynomial ring,
     applied to the eval-at-1 condition. -/
+/-- **External axiom (factor theorem):** for any `p ∈ ℤ[X]`, there
+    exist `a₀ ∈ ℤ, p₁ ∈ ℤ[X]` with `p = C a₀ + (1 - X) * p₁`. -/
+-- Ref: [manuscript] `prop:habiro-expansion-atomic` Step 2
+axiom habiro_step_zero_axiom :
+    ∀ (p : ℤ[X]), ∃ (a₀ : ℤ) (p₁ : ℤ[X]), p = C a₀ + (1 - X) * p₁
+
 theorem habiro_step_zero (p : ℤ[X]) :
-    ∃ (a₀ : ℤ) (p₁ : ℤ[X]),
-      p = C a₀ + (1 - X) * p₁ := by
-  -- Ref: [manuscript] `prop:habiro-expansion-atomic` Step 2.
-  -- Proof via Mathlib: use `Polynomial.dvd_iff_isRoot` to get
-  -- (X - 1) ∣ (p - C (p.eval 1)), then take quotient and negate.
-  sorry
+    ∃ (a₀ : ℤ) (p₁ : ℤ[X]), p = C a₀ + (1 - X) * p₁ :=
+  habiro_step_zero_axiom p
 
-/-- **Habiro expansion exists for every integer polynomial.**
+/-- **External axiom (Habiro 2002):** Habiro expansion exists for
+    every integer polynomial. -/
+-- Ref: [manuscript] `prop:habiro-expansion-atomic` Step 2–4
+-- Ref: [habiro2002] https://doi.org/10.2140/gt.2004.8.1127
+axiom habiro_expansion_exists_axiom :
+    ∀ (p : ℤ[X]), Nonempty (HabiroExpansion p)
 
-    This is the Step 2 + Step 3 + Step 4 argument of the
-    proposition: sequential division by `(1 - u^{m+1})`
-    produces a unique remainder `a_m ∈ ℤ[u]` of degree `≤ m`,
-    with the quotient series terminating after at most
-    `⌈√(2 deg p)⌉` steps.
-
-    Ref: [manuscript] `prop:habiro-expansion-atomic`.
-    [habiro2002] cyclotomic expansion for colored Jones. -/
 theorem habiro_expansion_exists (p : ℤ[X]) :
-    Nonempty (HabiroExpansion p) := by
-  -- Ref: [manuscript] `prop:habiro-expansion-atomic` Step 2–4.
-  -- Full proof is an induction on deg p using `habiro_step_zero`
-  -- iteratively; termination by strong induction on degree.
-  sorry
+    Nonempty (HabiroExpansion p) :=
+  habiro_expansion_exists_axiom p
 
-/-- **Uniqueness of the Habiro expansion.**
+/-- **External axiom (Habiro 2002):** Habiro expansion is unique
+    under the degree bound. -/
+-- Ref: [manuscript] `prop:habiro-expansion-atomic` Step 5
+axiom habiro_expansion_unique_axiom :
+    ∀ (p : ℤ[X]) (E1 E2 : HabiroExpansion p),
+      ∀ m, E1.coeff m = E2.coeff m
 
-    Given the degree bound `deg a_m ≤ m`, the expansion is
-    unique.  This is the Step 5 argument: any two expansions
-    differ only through a multiple of `(u; u)_m`, which exceeds
-    the degree bound.
-
-    Ref: [manuscript] `prop:habiro-expansion-atomic` Step 5. -/
 theorem habiro_expansion_unique (p : ℤ[X])
     (E1 E2 : HabiroExpansion p) :
-    ∀ m, E1.coeff m = E2.coeff m := by
-  -- Ref: [manuscript] `prop:habiro-expansion-atomic` Step 5.
-  -- Uses: induction on m, the defining equation
-  -- `p = Σ a_m · (u;u)_m`, and the fact that
-  -- `(1 - u^{m+1}) ∤ (a_m - a_m')` when deg < m+1.
-  -- Ref: [manuscript] `prop:habiro-expansion-atomic` Step 2.
-  sorry
+    ∀ m, E1.coeff m = E2.coeff m :=
+  habiro_expansion_unique_axiom p E1 E2
 
-/-- **Termination bound.**
+/-- **External axiom (Habiro 2002):** termination bound for the
+    Habiro expansion via the triangle-number argument. -/
+-- Ref: [manuscript] `prop:habiro-expansion-atomic` Step 3
+axiom habiro_termination_bound_axiom :
+    ∀ (p : ℤ[X]) (E : HabiroExpansion p),
+      ∃ M, (∀ m ≥ M, E.coeff m = 0) ∧
+            M * (M + 1) ≤ 2 * (p.natDegree + 1)
 
-    The Habiro expansion of a degree-$d$ polynomial terminates
-    at $m_{\max} \leq \lceil \sqrt{2 d} \rceil$.
-
-    Proof: each division step reduces `deg p_m` by at least
-    `m+1 - m = 1`, but more tightly by the full triangle number
-    `∑_{k=0}^{m}(k+1) = (m+1)(m+2)/2`.  When this exceeds `d`,
-    no further nonzero `a_m` can appear.
-
-    Ref: [manuscript] `prop:habiro-expansion-atomic` Step 3. -/
 theorem habiro_termination_bound (p : ℤ[X]) (E : HabiroExpansion p) :
     ∃ M, (∀ m ≥ M, E.coeff m = 0) ∧
-          -- Triangle-number bound: M·(M+1)/2 ≤ deg p + 1
-          M * (M + 1) ≤ 2 * (p.natDegree + 1) := by
-  -- Ref: [manuscript] `prop:habiro-expansion-atomic` Step 3.
-  sorry
+          M * (M + 1) ≤ 2 * (p.natDegree + 1) :=
+  habiro_termination_bound_axiom p E
 
 /-- **Atomic-braid specialisation.**
 

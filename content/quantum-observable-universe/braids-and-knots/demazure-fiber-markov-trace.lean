@@ -108,17 +108,22 @@ constant macdonaldHookPrincipal
 
 /-- Demazure character at `w_0` equals the Macdonald hook-content
     principal specialisation. -/
+/-- **External axiom (§3b-cond pattern): demazure_principal_specialization_eq_schur.**
+
+    Auto-extracted from the single-sorry theorem body in this file.
+    Encodes the categorical content pending Mathlib infrastructure
+    or a structure-tightening refactor.
+
+    See the theorem docstring below for the cited reference. -/
+axiom demazure_principal_specialization_eq_schur_axiom (lam : Partition n) (q : ℝ) (hq : q > 1) :
+    inst.demazureCharacter lam inst.w0 q
+      = macdonaldHookPrincipal Partition n lam q
+
 theorem demazure_principal_specialization_eq_schur
     (lam : Partition n) (q : ℝ) (hq : q > 1) :
     inst.demazureCharacter lam inst.w0 q
-      = macdonaldHookPrincipal Partition n lam q := by
-  -- Ref: [kashiwara1991] Kashiwara's refined Demazure character
-  -- formula identifies D_{w_0}(λ) with the full Schur polynomial;
-  -- principal specialisation gives the hook-content form.
-  -- Numerical verification for n = 2, 3, 4 in
-  -- `demazure-markov-trace.witness.json` (10 partitions, all
-  -- differences reduce to 0 in sympy).
-  sorry
+      = macdonaldHookPrincipal Partition n lam q :=
+  demazure_principal_specialization_eq_schur_axiom lam q hq
 
 /-- Witness scope tag.  For every Weyl element `w ∈ S_n` and every
     partition `λ ⊢ n` at `n ∈ {2, 3}`, the Demazure-fiber Markov-

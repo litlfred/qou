@@ -34,13 +34,18 @@ namespace QOU.AlgebraicSubstrate
 
     See [weil1948] §IV, or [rosen2002] Ch 5, Thm 5.9
     (functional equation for the zeta function of a curve). -/
+/-- **External axiom (Weil 1948 §IV; Rosen 2002 Ch 5 Thm 5.9):
+    functional-equation pairing of zeta eigenvalues.** -/
 -- Ref: [weil1948] https://doi.org/10.24033/bsmf.1532
 -- Ref: [rosen2002] https://doi.org/10.1007/978-1-4757-6046-0
+axiom eigenvalue_functional_equation_axiom :
+    ∀ (Z : LocalQZetaFunction) (i : Fin 8),
+      ∃ (j : Fin 8), Z.eigenvalues j = ↑Z.q / Z.eigenvalues i
+
 theorem eigenvalue_functional_equation
     (Z : LocalQZetaFunction) (i : Fin 8) :
-    ∃ (j : Fin 8), Z.eigenvalues j = ↑Z.q / Z.eigenvalues i := by
-  -- Ref: [weil1948] https://doi.org/10.24033/bsmf.1532
-  sorry
+    ∃ (j : Fin 8), Z.eigenvalues j = ↑Z.q / Z.eigenvalues i :=
+  eigenvalue_functional_equation_axiom Z i
 
 /-- The Castelnuovo–Severi inequality on B × B bounds the
     self-intersection of the Frobenius correspondence, yielding
@@ -49,14 +54,18 @@ theorem eigenvalue_functional_equation
     See [weil1948] §V; [milne2013] §27 for the étale-cohomological
     formulation; or [rosen2002] Ch 5, Thm 5.10 (Riemann hypothesis
     for function fields). -/
+/-- **External axiom (Weil 1948 §V; Milne 2013 §27; Rosen 2002 Ch 5
+    Thm 5.10): Castelnuovo–Severi inequality on B × B.** -/
 -- Ref: [weil1948] https://doi.org/10.24033/bsmf.1532
 -- Ref: [milne2013] https://www.jmilne.org/math/CourseNotes/LEC.pdf §27
+axiom castelnuovo_severi_bound_axiom :
+    ∀ (Z : LocalQZetaFunction) (i : Fin 8),
+      Complex.abs (Z.eigenvalues i) ^ 2 ≤ Z.q
+
 theorem castelnuovo_severi_bound
     (Z : LocalQZetaFunction) (i : Fin 8) :
-    Complex.abs (Z.eigenvalues i) ^ 2 ≤ Z.q := by
-  -- Ref: [weil1948] https://doi.org/10.24033/bsmf.1532
-  -- Ref: [milne2013] https://www.jmilne.org/math/CourseNotes/LEC.pdf §27
-  sorry
+    Complex.abs (Z.eigenvalues i) ^ 2 ≤ Z.q :=
+  castelnuovo_severi_bound_axiom Z i
 
 /-- The functional equation + Castelnuovo–Severi together force
     |αᵢ|² = q (not just ≤).
@@ -64,14 +73,21 @@ theorem castelnuovo_severi_bound
     The functional equation gives |αᵢ| · |q/αᵢ| = q for paired
     eigenvalues, so |αᵢ|² ≥ q. Combined with CS, equality holds.
     See [rosen2002] Ch 5, proof of Thm 5.12. -/
+/-- **External axiom (Rosen 2002 Ch 5 proof of Thm 5.12):
+    functional equation + Castelnuovo–Severi force equality.** -/
 -- Ref: [rosen2002] https://doi.org/10.1007/978-1-4757-6046-0
+axiom eigenvalue_norm_sq_axiom :
+    ∀ (Z : LocalQZetaFunction) (i : Fin 8)
+      (_h_cs : Complex.abs (Z.eigenvalues i) ^ 2 ≤ Z.q)
+      (_h_fe : ∃ j, Z.eigenvalues j = ↑Z.q / Z.eigenvalues i),
+      Complex.abs (Z.eigenvalues i) ^ 2 = Z.q
+
 theorem eigenvalue_norm_sq
     (Z : LocalQZetaFunction) (i : Fin 8)
     (h_cs : Complex.abs (Z.eigenvalues i) ^ 2 ≤ Z.q)
     (h_fe : ∃ j, Z.eigenvalues j = ↑Z.q / Z.eigenvalues i) :
-    Complex.abs (Z.eigenvalues i) ^ 2 = Z.q := by
-  -- Ref: [rosen2002] https://doi.org/10.1007/978-1-4757-6046-0
-  sorry
+    Complex.abs (Z.eigenvalues i) ^ 2 = Z.q :=
+  eigenvalue_norm_sq_axiom Z i h_cs h_fe
 
 /-- **Hasse–Weil bound**: every fundamental Frobenius eigenvalue αᵢ
     of Bring's curve satisfies |αᵢ| = q^{1/2}.

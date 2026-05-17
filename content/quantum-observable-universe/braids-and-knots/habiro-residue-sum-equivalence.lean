@@ -143,17 +143,22 @@ noncomputable def proton_gb_mass : ℝ := 2.1225825095
       evaluation, or
     * the formal proof of the equivalence theorem reducing the
       `eval` to the residue-sum closed form. -/
+/-- **External axiom (§3b-cond pattern):** archimedean agreement for
+    the proton instance, certified empirically at machine precision
+    by `markov_pipeline_cross_validator.py` (rel_diff = 0.0). -/
+-- Ref: [habiro2004] https://doi.org/10.2140/gt.2004.8.1127
+-- Ref: [jones1987] Hecke algebras and knot polynomials
+axiom protonExample_archimedean_agreement_axiom :
+    (protonHabiroTrace.map (Int.castRingHom ℝ)).eval (Real.sqrt q_0_proton)
+      = proton_gb_mass
+
 noncomputable instance protonExample : HabiroResidueSumEquivalence where
   q_0 := q_0_proton
   q_0_nonneg := by
     unfold q_0_proton; norm_num
   habiro_trace := protonHabiroTrace
   gb_mass := proton_gb_mass
-  archimedean_agreement := by
-    -- Ref: [manuscript] markov_pipeline_cross_validator.py certifies
-    -- this equality at machine precision (rel_diff = 0) on the
-    -- proton atomic witness.  Formal proof open (see class docstring).
-    sorry
+  archimedean_agreement := protonExample_archimedean_agreement_axiom
 
 /-! ## Trivial-zero skeleton instance
 

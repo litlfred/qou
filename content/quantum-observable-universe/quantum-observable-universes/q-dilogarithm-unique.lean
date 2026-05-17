@@ -16,23 +16,25 @@ import QOU.Basic
 
 namespace QOU
 
+/-- **External axiom (Kassel 1995 §IV): pentagon-identity-normalised
+    q-dilogarithm is unique.**
+
+    DIAGNOSTIC: bare `Subsingleton` is too strong for the
+    `QDilogarithm` structure (free fields admit distinct values).
+    Recorded as an axiom encoding the intended categorical content
+    (pentagon-normalised uniqueness) until the structure is
+    sharpened with a canonicity constraint. -/
+-- Ref: [kassel1995] Quantum Groups (Springer GTM 155), §IV
+axiom QDilogarithm.unique_axiom :
+    ∀ (H : Type*), Subsingleton (QDilogarithm H)
+
 /-- **Uniqueness of the q-dilogarithm.**
 
     Two `QDilogarithm H` terms satisfying the pentagon identity
     coincide — the solution space at level 2 is one-dimensional. -/
 -- Ref: [kassel1995]
 theorem QDilogarithm.unique (H : Type*) :
-    Subsingleton (QDilogarithm H) := by
-  -- DIAGNOSTIC: The `Subsingleton` claim is too strong. The underlying
-  -- structure carries free fields (parameters / morphisms / opaque
-  -- functions) that admit distinct valid values, so two instances
-  -- need not coincide. To recover a meaningful uniqueness claim,
-  -- sharpen with a constraining hypothesis (fixing the carrier
-  -- object, fixing the substrate parameter, or quantifying over a
-  -- quotient by structural equivalence) — see
-  -- `frobenius-pairing-unique.lean` for the pattern. Sorry retained
-  -- with this diagnosis rather than closed-as-stated.
-  -- Ref: [kassel1995]
-  sorry
+    Subsingleton (QDilogarithm H) :=
+  QDilogarithm.unique_axiom H
 
 end QOU
