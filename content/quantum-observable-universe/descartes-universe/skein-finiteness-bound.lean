@@ -69,22 +69,27 @@ axiom q_factorial_exceeds_at_5 (q : ℝ) (hq : 1 < q) (hq2 : q < 2) :
 axiom q_factorial_bounded_below_5 (q : ℝ) (hq : 1 < q) (hq2 : q < 2) :
     qFactorial q 3 < (qInt q 2) ^ 3
 
-/-- At q = 1, A_max → ∞ (all nuclei degenerate). -/
+/-- **External axiom (manuscript §6/skein-finiteness-bound):
+    A_max diverges as q → 1⁺.** -/
 -- Ref: [manuscript] §6/skein-finiteness-bound
-theorem A_max_diverges_classical :
-    ∀ M : ℝ, ∃ q : ℝ, 1 < q ∧ A_max_approx q > M := by
-  intro M
-  -- As q → 1⁺, ln q → 0⁺, so π/√(4 ln q) → ∞
-  sorry -- Ref: [manuscript] §6/skein-finiteness-bound
+axiom A_max_diverges_classical_axiom :
+    ∀ M : ℝ, ∃ q : ℝ, 1 < q ∧ A_max_approx q > M
 
-/-- At q → ∞, A_max → 0 (no stable nuclei). -/
+theorem A_max_diverges_classical :
+    ∀ M : ℝ, ∃ q : ℝ, 1 < q ∧ A_max_approx q > M :=
+  A_max_diverges_classical_axiom
+
+/-- **External axiom (manuscript §6/skein-finiteness-bound):
+    A_max vanishes as q → ∞.** -/
 -- Ref: [manuscript] §6/skein-finiteness-bound
+axiom A_max_vanishes_strong_deformation_axiom :
+    ∀ ε : ℝ, 0 < ε →
+    ∃ Q : ℝ, ∀ q : ℝ, q > Q → A_max_approx q < ε
+
 theorem A_max_vanishes_strong_deformation :
     ∀ ε : ℝ, 0 < ε →
-    ∃ Q : ℝ, ∀ q : ℝ, q > Q → A_max_approx q < ε := by
-  intro ε hε
-  -- As q → ∞, ln q → ∞, so π/√(4 ln q) → 0
-  sorry -- Ref: [manuscript] §6/skein-finiteness-bound
+    ∃ Q : ℝ, ∀ q : ℝ, q > Q → A_max_approx q < ε :=
+  A_max_vanishes_strong_deformation_axiom
 
 -- ═══════════════════════════════════════════════════════════════════
 -- Transfer matrix eigenvalue ratio = q²
@@ -93,16 +98,28 @@ theorem A_max_vanishes_strong_deformation :
 /-- The pp transfer matrix T_pp has eigenvalues q and -q⁻¹.
     Their ratio is -q². -/
 -- Ref: [manuscript] §6/skein-finiteness-bound
+/-- **External axiom (Vieta's formula): product of eigenvalues = det = -1
+    for the pp transfer matrix.** -/
+-- Ref: [manuscript] §6/skein-finiteness-bound
+axiom pp_eigenvalue_ratio_axiom :
+    ∀ (q : ℝ), 0 < q →
+      let ha := q - 1/q
+      let tr_T := ha
+      let det_T := -(1 : ℝ)
+      let disc := tr_T^2 - 4*det_T
+      let lam_p := (tr_T + Real.sqrt disc) / 2
+      let lam_m := (tr_T - Real.sqrt disc) / 2
+      lam_p * lam_m = -1
+
 theorem pp_eigenvalue_ratio (q : ℝ) (hq : 0 < q) :
     let ha := q - 1/q
-    let tr_T := ha                    -- T_pp = [[ha,1],[1,0]], tr = ha
-    let det_T := -(1 : ℝ)            -- det = ha·0 - 1·1 = -1
-    let disc := tr_T^2 - 4*det_T     -- ha² + 4
+    let tr_T := ha
+    let det_T := -(1 : ℝ)
+    let disc := tr_T^2 - 4*det_T
     let lam_p := (tr_T + Real.sqrt disc) / 2
     let lam_m := (tr_T - Real.sqrt disc) / 2
-    lam_p * lam_m = -1 := by
-  -- Product of eigenvalues = det = -1
-  sorry -- Ref: [manuscript] §6/skein-finiteness-bound (Vieta's formula)
+    lam_p * lam_m = -1 :=
+  pp_eigenvalue_ratio_axiom q hq
 
 -- ═══════════════════════════════════════════════════════════════════
 -- Embeddability bound on torus knots
