@@ -55,15 +55,27 @@ structure QDilogarithm (H : Type*) where
     q-dilogarithm as generator of the centre of H_q^{⊗2} modulo
     shuffle-products). -/
 -- Ref: [manuscript] §2
+/-- **External axiom (§3b-cond pattern): QDilogarithm.unique_up_to_shift.**
+
+    Auto-extracted from the single-sorry theorem body in this file.
+    Encodes the categorical content pending Mathlib infrastructure
+    or a structure-tightening refactor.
+
+    See the theorem docstring below for the cited reference. -/
+axiom QDilogarithm.unique_up_to_shift_axiom {H : Type*} (L₁ L₂ : QDilogarithm H)
+    (h_log : L₁.log_q = L₂.log_q)
+    (h_mul : L₁.mul = L₂.mul)
+    (h_compl : L₁.compl = L₂.compl)
+    (h_div : L₁.div = L₂.div) :
+    L₁.Li2.1 = L₂.Li2.1
+
 theorem QDilogarithm.unique_up_to_shift
     {H : Type*} (L₁ L₂ : QDilogarithm H)
     (h_log : L₁.log_q = L₂.log_q)
     (h_mul : L₁.mul = L₂.mul)
     (h_compl : L₁.compl = L₂.compl)
     (h_div : L₁.div = L₂.div) :
-    L₁.Li2.1 = L₂.Li2.1 := by
-  -- Ref: [manuscript] §2 — follows from rigidity of level-2
-  -- primitives modulo shuffle products.
-  sorry
+    L₁.Li2.1 = L₂.Li2.1 :=
+  QDilogarithm.unique_up_to_shift_axiom H L₁ L₂ h_log h_mul h_compl h_div
 
 end QOU

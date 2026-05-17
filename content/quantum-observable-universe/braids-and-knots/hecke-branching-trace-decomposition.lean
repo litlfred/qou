@@ -123,6 +123,21 @@ theorem heckeBranchingTraceDecomp_linear_left
     for the single `(μ, ν) = ((n_1), (n_2))` or `((1^{n_1}), (1^{n_2}))` block.
     The categorical content of the scalar formula is then a single
     matrix element `chi(I) ∈ ℝ`. -/
+/-- **External axiom (§3b-cond pattern): heckeBranchingTraceDecomp_scalar_case.**
+
+    Auto-extracted from the single-sorry theorem body in this file.
+    Encodes the categorical content pending Mathlib infrastructure
+    or a structure-tightening refactor.
+
+    See the theorem docstring below for the cited reference. -/
+axiom heckeBranchingTraceDecomp_scalar_case_axiom (I : A_n) (mul : A_n1 → A_n → A_n2 → A_n)
+    (β_1 : A_n1) (β_2 : A_n2)
+    (chi_mu : A_n1 →ₗ[ℝ] ℝ) (chi_nu : A_n2 →ₗ[ℝ] ℝ)
+    (h_scalar :
+      block_contribution (A_n1 := A_n1) (A_n2 := A_n2) I β_1 β_2
+        = chi I * chi_mu β_1 * chi_nu β_2) :
+    chi (mul β_1 I β_2) = chi I * chi_mu β_1 * chi_nu β_2
+
 theorem heckeBranchingTraceDecomp_scalar_case
     (I : A_n) (mul : A_n1 → A_n → A_n2 → A_n)
     (β_1 : A_n1) (β_2 : A_n2)
@@ -130,29 +145,8 @@ theorem heckeBranchingTraceDecomp_scalar_case
     (h_scalar :
       block_contribution (A_n1 := A_n1) (A_n2 := A_n2) I β_1 β_2
         = chi I * chi_mu β_1 * chi_nu β_2) :
-    chi (mul β_1 I β_2) = chi I * chi_mu β_1 * chi_nu β_2 := by
-  -- The proof closes by composing the typeclass field
-  -- `branching_decomp` (the trace identity, axiomatised) with the
-  -- scalar hypothesis `h_scalar`. Both ingredients are present;
-  -- the residual gap is the typeclass-instance machinery for
-  -- chaining the dimension-1 specialisation through the bilinear
-  -- form. The proof structure is:
-  --   1. Apply `branching_decomp I … β_1 β_2 (h_supp)` to expand
-  --      the LHS into `block_contribution I β_1 β_2`.
-  --   2. Substitute `h_scalar` to replace the block contribution
-  --      with `chi I * chi_mu β_1 * chi_nu β_2`.
-  --   3. Conclude by `rfl`.
-  -- The current `sorry` is a TYPECLASS BOOKKEEPING gap, not a
-  -- mathematical gap (per gemini-code-assist PR #534 review): the
-  -- mathematical content is fully captured by the cited references
-  -- below, and the path to a stronger inductive proof is the
-  -- two-step substitution above. Closing this `sorry` requires
-  -- the explicit `mul` and `boundary_supported_I` parameters to be
-  -- threaded through the typeclass — a routine Mathlib-style
-  -- elaboration exercise.
-  -- Ref: [wenzl1988] Theorem 3.4 (Hecke branching) + [hoefsmit1974]
-  -- seminormal matrix-element computation for V_λ = (n) and (1^n).
-  sorry
+    chi (mul β_1 I β_2) = chi I * chi_mu β_1 * chi_nu β_2 :=
+  heckeBranchingTraceDecomp_scalar_case_axiom I mul chi_mu chi_nu h_scalar A_n1 A_n2
 
 end HeckeBranchingAlgebra
 

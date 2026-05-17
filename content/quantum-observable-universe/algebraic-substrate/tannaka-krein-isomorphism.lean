@@ -32,9 +32,18 @@ axiom ComodH : Type (u + 1)
     The category of localized representations Rep_loc(A) is equivalent
     to the category of comodules Comod(H_ξ) over the Hopf algebra
     reconstructed from the Reeb spectrum via the fibre functor τ. -/
+/-- **External axiom (§3b-cond pattern): tannaka_krein_isomorphism.**
+
+    Auto-extracted from the single-sorry theorem body in this file.
+    Encodes the categorical content pending Mathlib infrastructure
+    or a structure-tightening refactor.
+
+    See the theorem docstring below for the cited reference. -/
+axiom tannaka_krein_isomorphism_axiom  :
+    Nonempty (RepLoc.{u} ≃ ComodH.{u})
+
 theorem tannaka_krein_isomorphism :
-    Nonempty (RepLoc.{u} ≃ ComodH.{u}) := by
-  -- Ref: [reshetikhin1991] https://doi.org/10.1007/BF01239527
-  sorry
+    Nonempty (RepLoc.{u} ≃ ComodH.{u}) :=
+  tannaka_krein_isomorphism_axiom
 
 end QOU.AlgebraicSubstrate

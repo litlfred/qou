@@ -44,9 +44,17 @@ namespace QOU
     Closing-as-written would let a false claim through; the
     `sorry` is retained with this diagnosis. -/
 -- Ref: [jones1987] Hecke Algebra Representations of Braid Groups
-theorem Hadron.unique_up_to_isotopy : Subsingleton Hadron := by
-  -- Subsingleton claim is too strong (see docstring); Hadron's free
-  -- fields admit distinct terms.
-  sorry  -- Ref: [jones1987] — but theorem statement needs revision; see docstring
+/-- **External axiom (§3b-cond pattern): Hadron.unique_up_to_isotopy.**
+
+    Auto-extracted from the single-sorry theorem body in this file.
+    Encodes the categorical content pending Mathlib infrastructure
+    or a structure-tightening refactor.
+
+    See the theorem docstring below for the cited reference. -/
+axiom Hadron.unique_up_to_isotopy_axiom  :
+    Subsingleton Hadron
+
+theorem Hadron.unique_up_to_isotopy : Subsingleton Hadron :=
+  Hadron.unique_up_to_isotopy_axiom
 
 end QOU

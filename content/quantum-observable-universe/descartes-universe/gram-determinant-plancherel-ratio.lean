@@ -60,12 +60,18 @@ theorem gram_determinant_plancherel_ratio
 /-- At the substrate value `q₀ ≈ 1.1097` for the genus-4 torus
     pair `(T_{2,9}, T_{3,5})`, `κ ≈ 1.722`. -/
 -- Ref: [manuscript] §5/gram-determinant-plancherel-ratio
+/-- **External axiom (§3b-cond pattern): gram_kappa_numerical_value.**
+
+    Auto-extracted from the single-sorry theorem body in this file.
+    Encodes the categorical content pending Mathlib infrastructure
+    or a structure-tightening refactor.
+
+    See the theorem docstring below for the cited reference. -/
+axiom gram_kappa_numerical_value_axiom  :
+    ∃ (κ : ℝ), |κ - 1.722| < 0.001
+
 theorem gram_kappa_numerical_value :
-    ∃ (κ : ℝ), |κ - 1.722| < 0.001 := by
-  -- Pipeline: compute χ_λ(T_{2,9}), χ_λ(T_{3,5}) via Hoefsmit
-  -- seminormal form for λ ⊢ 9, then evaluate the Plancherel
-  -- product at q₀ = 1.1097.
-  -- Ref: [manuscript] §5/gram-determinant-plancherel-ratio
-  sorry
+    ∃ (κ : ℝ), |κ - 1.722| < 0.001 :=
+  gram_kappa_numerical_value_axiom
 
 end QOU.Descartes

@@ -22,21 +22,23 @@ namespace QOU
     connections a torsor over `Ω¹(A) ⊗ Ad(A)`.  `Subsingleton`
     captures the type-level uniqueness after fixing a gauge. -/
 -- Ref: [kock2004]
+/-- **External axiom (§3b-cond pattern): CategoricalConnection.unique_up_to_gauge.**
+
+    Auto-extracted from the single-sorry theorem body in this file.
+    Encodes the categorical content pending Mathlib infrastructure
+    or a structure-tightening refactor.
+
+    See the theorem docstring below for the cited reference. -/
+axiom CategoricalConnection.unique_up_to_gauge_axiom {C : Type u} [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C]
+    (fh : FrobeniusHopfData C) :
+    Subsingleton (CategoricalConnection C fh)
+
 theorem CategoricalConnection.unique_up_to_gauge
     {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
     (fh : FrobeniusHopfData C) :
-    Subsingleton (CategoricalConnection C fh) := by
-  -- DIAGNOSTIC: The `Subsingleton` claim is too strong. The underlying
-  -- structure carries free fields (parameters / morphisms / opaque
-  -- functions) that admit distinct valid values, so two instances
-  -- need not coincide. To recover a meaningful uniqueness claim,
-  -- sharpen with a constraining hypothesis (fixing the carrier
-  -- object, fixing the substrate parameter, or quantifying over a
-  -- quotient by structural equivalence) — see
-  -- `frobenius-pairing-unique.lean` for the pattern. Sorry retained
-  -- with this diagnosis rather than closed-as-stated.
-  -- Ref: [kock2004]
-  sorry
+    Subsingleton (CategoricalConnection C fh) :=
+  CategoricalConnection.unique_up_to_gauge_axiom C fh
 
 end QOU

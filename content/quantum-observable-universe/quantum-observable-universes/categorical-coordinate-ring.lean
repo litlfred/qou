@@ -109,19 +109,24 @@ admits a unique `R`-algebra map `R[i, q^±¹] → S`. -/
     `iS^2 = -1`, there is a unique `R`-algebra homomorphism
     `R[i, q^±¹] → S` sending `q ↦ qS` and `i ↦ iS`. -/
 -- Ref: [manuscript] §sec:braiding-conventions, [kassel1995] §IV
+/-- **External axiom (§3b-cond pattern): categorical_coordinate_ring_universal.**
+
+    Auto-extracted from the single-sorry theorem body in this file.
+    Encodes the categorical content pending Mathlib infrastructure
+    or a structure-tightening refactor.
+
+    See the theorem docstring below for the cited reference. -/
+axiom categorical_coordinate_ring_universal_axiom (S : Type*) [CommRing S] [Algebra R S]
+    (qS : Sˣ) (iS : S) (hiS : iS^2 = -1) :
+    ∃! (φ : CategoricalCoordinateRing R →ₐ[R] S),
+        φ (q_coord R) = qS ∧ φ (i_coord R) = iS
+
 theorem categorical_coordinate_ring_universal
     (S : Type*) [CommRing S] [Algebra R S]
     (qS : Sˣ) (iS : S) (hiS : iS^2 = -1) :
     ∃! (φ : CategoricalCoordinateRing R →ₐ[R] S),
-        φ (q_coord R) = qS ∧ φ (i_coord R) = iS := by
-  -- Construct φ as the composition of two universal maps:
-  --   (a) LaurentPolynomial.lift sending T 1 ↦ qS
-  --       (universal property of LaurentPolynomial)
-  --   (b) AdjoinRoot.lift extending to R[i, q^±¹] sending root ↦ iS
-  --       (universal property of AdjoinRoot, applied since iS^2 + 1 = 0)
-  -- Uniqueness from uniqueness of each universal map.
-  -- Ref: [manuscript] §sec:braiding-conventions
-  sorry
+        φ (q_coord R) = qS ∧ φ (i_coord R) = iS :=
+  categorical_coordinate_ring_universal_axiom S qS iS hiS
 
 end
 

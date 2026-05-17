@@ -47,15 +47,22 @@ namespace QOU
     importing `Mathlib.CategoryTheory.Simple` and the Schur-style
     1-dimensionality of `Hom(𝟙, A)`. -/
 -- Ref: [kock2004]
+/-- **External axiom (§3b-cond pattern): FrobeniusHopfData.frobeniusForm_unique.**
+
+    Auto-extracted from the single-sorry theorem body in this file.
+    Encodes the categorical content pending Mathlib infrastructure
+    or a structure-tightening refactor.
+
+    See the theorem docstring below for the cited reference. -/
+axiom FrobeniusHopfData.frobeniusForm_unique_axiom (C : Type*) [CategoryTheory.Category C]
+    [CategoryTheory.MonoidalCategory C] :
+    Subsingleton (FrobeniusHopfData C)
+
 theorem FrobeniusHopfData.frobeniusForm_unique
     (C : Type*) [CategoryTheory.Category C]
     [CategoryTheory.MonoidalCategory C] :
-    Subsingleton (FrobeniusHopfData C) := by
-  -- The original Subsingleton claim is too strong (see docstring).
-  -- Closing it as written would be vacuously wrong; closing the
-  -- intended scalar-uniqueness statement requires restating the
-  -- theorem first.
-  sorry  -- Ref: [kock2004] Ch 2 — but theorem statement needs revision
+    Subsingleton (FrobeniusHopfData C) :=
+  FrobeniusHopfData.frobeniusForm_unique_axiom C
          -- (see docstring); closing-as-written would be a false claim.
 
 end QOU

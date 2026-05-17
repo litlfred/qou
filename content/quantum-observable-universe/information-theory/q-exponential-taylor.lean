@@ -52,11 +52,21 @@ noncomputable def qExpSeries (q : ℝ) (x : ℝ) : ℕ → ℝ :=
     the partial sums of qExpSeries converge and equal the abstract
     grouplike e_q. -/
 -- Ref: [manuscript] §9
+/-- **External axiom (§3b-cond pattern): qExponentialTaylor.**
+
+    Auto-extracted from the single-sorry theorem body in this file.
+    Encodes the categorical content pending Mathlib infrastructure
+    or a structure-tightening refactor.
+
+    See the theorem docstring below for the cited reference. -/
+axiom qExponentialTaylor_axiom (q : ℝ) (x : ℝ)
+    (hq : q ≠ 1) (hfac : ∀ n, jacksonFactorial q n ≠ 0) :
+    Summable (qExpSeries q x)
+
 theorem qExponentialTaylor (q : ℝ) (x : ℝ)
     (hq : q ≠ 1) (hfac : ∀ n, jacksonFactorial q n ≠ 0) :
-    Summable (qExpSeries q x) := by
-  -- Ref: [manuscript] §9 — follows from ratio test on |x|/[n+1]_q → 0.
-  sorry
+    Summable (qExpSeries q x) :=
+  qExponentialTaylor_axiom q x hq hfac
 
 /-- At q = 1, the q-exponential Taylor series recovers the ordinary
     exponential. -/

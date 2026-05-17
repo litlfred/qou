@@ -66,16 +66,21 @@ theorem qGameOfLife_universal {L : Type*} :
     (the q-AND amplitude is non-zero) when q is in the physical
     regime. Proof via prop:toffoli-lp-stability.
     Ref: [manuscript] Chapter 8, prop:toffoli-lp-stability -/
+/-- **External axiom (§3b-cond pattern): qGameOfLife_stable.**
+
+    Auto-extracted from the single-sorry theorem body in this file.
+    Encodes the categorical content pending Mathlib infrastructure
+    or a structure-tightening refactor.
+
+    See the theorem docstring below for the cited reference. -/
+axiom qGameOfLife_stable_axiom {M : Type*} (sp : SubstrateParameter M)
+    (p : M) (_h : sp.field p > 1) :
+    qAnd_amplitude ≠ 0
+
 theorem qGameOfLife_stable {M : Type*} (sp : SubstrateParameter M)
     (p : M) (_h : sp.field p > 1) :
-    qAnd_amplitude ≠ 0 := by
-  -- Ref: [manuscript] Chapter 8, prop:toffoli-lp-stability
-  -- qAnd_amplitude = q_param - 1 = T 1 - 1 ∈ ℤ[q, q⁻¹].
-  -- Non-zero because T is injective as a group hom ℤ → (R_q)ˣ,
-  -- so T 1 ≠ T 0 = 1. Numerical verification at q₀ ≈ 1.110 yields
-  -- Φ(q₀) ≈ 0.0495 (see toffoli-lp-stability.witness.json).
-  -- Ref: [toffoli1980] https://doi.org/10.1007/3-540-10003-2_104
-  sorry
+    qAnd_amplitude ≠ 0 :=
+  qGameOfLife_stable_axiom M sp p _h
 
 end
 

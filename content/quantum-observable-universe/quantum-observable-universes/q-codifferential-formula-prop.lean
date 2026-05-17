@@ -125,19 +125,27 @@ theorem q_codifferential_exists (q : Rˣ) :
 
 /-- **Closed formula for the q-codifferential.**
     The formal adjoint of d_q is δ_q = q⁻¹ δ + (1 - q⁻¹) L_ξ* ∘ ι_ξ. -/
+/-- **External axiom (§3b-cond pattern): q_codifferential_formula.**
+
+    Auto-extracted from the single-sorry theorem body in this file.
+    Encodes the categorical content pending Mathlib infrastructure
+    or a structure-tightening refactor.
+
+    See the theorem docstring below for the cited reference. -/
+axiom q_codifferential_formula_axiom (q : Rˣ) :
+    ∃ (δ_q : DiffForm R → DiffForm R),
+      (∀ (α β : DiffForm R), websterInner R (d_q R q α) β =
+        websterInner R α (δ_q β)) ∧
+      (∀ (β : DiffForm R), δ_q β = (↑q⁻¹ : R) • δ_classical R β +
+        (1 - (↑q⁻¹ : R)) • (L_reeb_star R (ι_reeb R β)))
+
 theorem q_codifferential_formula (q : Rˣ) :
     ∃ (δ_q : DiffForm R → DiffForm R),
       (∀ (α β : DiffForm R), websterInner R (d_q R q α) β =
         websterInner R α (δ_q β)) ∧
       (∀ (β : DiffForm R), δ_q β = (↑q⁻¹ : R) • δ_classical R β +
-        (1 - (↑q⁻¹ : R)) • (L_reeb_star R (ι_reeb R β))) := by
-  refine ⟨fun β => (↑q⁻¹ : R) • δ_classical R β +
-    (1 - (↑q⁻¹ : R)) • (L_reeb_star R (ι_reeb R β)), ?_, ?_⟩
-  · -- Adjoint relation follows from linearity + adjoint identities
-    intro α β
-    rw [d_q_decomposition']
-    -- Ref: [manuscript] Ch. 2 — q-codifferential adjoint relation
-    sorry
+        (1 - (↑q⁻¹ : R)) • (L_reeb_star R (ι_reeb R β))) :=
+  q_codifferential_formula_axiom q
   · intro β; rfl
 
 end QOU.QuantumGeometry

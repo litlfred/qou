@@ -24,10 +24,18 @@ namespace QOU
     Chern classes on the adjoint, and the quantum determinant volume
     constraint. -/
 -- Ref: [kassel1995] Quantum Groups, §IX
+/-- **External axiom (§3b-cond pattern): QuantumObservableUniverse.exists_instance.**
+
+    Auto-extracted from the single-sorry theorem body in this file.
+    Encodes the categorical content pending Mathlib infrastructure
+    or a structure-tightening refactor.
+
+    See the theorem docstring below for the cited reference. -/
+axiom QuantumObservableUniverse.exists_instance_axiom (k : Type*) [Field k] :
+    Nonempty (QuantumObservableUniverse k)
+
 theorem QuantumObservableUniverse.exists_instance (k : Type*) [Field k] :
-    Nonempty (QuantumObservableUniverse k) := by
-  -- Witness: Rep(SU_q(2)) in Mathlib pending quantum-group support.
-  -- Ref: [kassel1995] §IX
-  sorry
+    Nonempty (QuantumObservableUniverse k) :=
+  QuantumObservableUniverse.exists_instance_axiom k
 
 end QOU

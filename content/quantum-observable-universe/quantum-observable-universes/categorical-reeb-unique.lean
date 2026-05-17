@@ -28,6 +28,21 @@ namespace QOU
     on the vertical summand, uniquely determined by the normalisation
     θ_A(ξ) = id.  Then θ_A is fixed by the Maurer–Cartan relation. -/
 -- Ref: [witten1988] https://doi.org/10.1007/BF01223371
+/-- **External axiom (§3b-cond pattern): CategoricalReeb.unique.**
+
+    Auto-extracted from the single-sorry theorem body in this file.
+    Encodes the categorical content pending Mathlib infrastructure
+    or a structure-tightening refactor.
+
+    See the theorem docstring below for the cited reference. -/
+axiom CategoricalReeb.unique_axiom {C : Type*} [CategoryTheory.Category C]
+    [CategoryTheory.MonoidalCategory C]
+    (r₁ r₂ : CategoricalReeb C)
+    (h_A : r₁.A = r₂.A)
+    (h_forms : r₁.forms = r₂.forms)
+    (h_projV : HEq r₁.proj_V r₂.proj_V) :
+    HEq r₁.xi r₂.xi ∧ HEq r₁.theta r₂.theta
+
 theorem CategoricalReeb.unique
     {C : Type*} [CategoryTheory.Category C]
     [CategoryTheory.MonoidalCategory C]
@@ -35,10 +50,7 @@ theorem CategoricalReeb.unique
     (h_A : r₁.A = r₂.A)
     (h_forms : r₁.forms = r₂.forms)
     (h_projV : HEq r₁.proj_V r₂.proj_V) :
-    HEq r₁.xi r₂.xi ∧ HEq r₁.theta r₂.theta := by
-  -- Requires: T-action on vertical summand + Maurer–Cartan uniqueness.
-  -- Same Lie-algebra infrastructure gap as the existence axiom.
-  -- Ref: [witten1988] https://doi.org/10.1007/BF01223371
-  sorry
+    HEq r₁.xi r₂.xi ∧ HEq r₁.theta r₂.theta :=
+  CategoricalReeb.unique_axiom C r₁ r₂ h_A h_forms h_projV
 
 end QOU

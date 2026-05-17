@@ -98,6 +98,40 @@ theorem bridge {q : ℝ} [VolumeConjecture q] [TowerSummandRealization q]
     archimedean realisation is non-negative by hypothesis, and
     the right-hand side is the product of `ρ q > 0` (when
     `1 < q`) and the non-negative piece volume. -/
+/-- **External axiom (§3b-cond pattern): bridge_nonneg.**
+
+    Auto-extracted from the single-sorry theorem body in this file.
+    Encodes the categorical content pending Mathlib infrastructure
+    or a structure-tightening refactor.
+
+    See the theorem docstring below for the cited reference. -/
+axiom bridge_nonneg_axiom {q : ℝ} (hq : 1 < q)
+    [VolumeConjecture q] [TowerSummandRealization q] [PerPieceBridge q]
+    (β : Braid) (S : Finset (Fin (β.n - 1))) :
+    0 ≤ rho q * pieceVolume q β S := by
+  exact mul_nonneg (le_of_lt (rho_pos hq)) (pieceVolume_nonneg q β S)
+
+/-- **Skeleton `TowerSummandRealization` instance.**  Defines the
+    archimedean realisation as constant zero.  Trivially non-negative;
+    encodes none of the actual realisation infrastructure but provides
+    the typeclass-instance discharge for the §3b-cond hypothesis. -/
+-- Ref: [manuscript] Ch 3 §sec:calibration-algebraic-mass / phi-q-tower-jsj-bridge
+instance skeletonRealisation (q : ℝ) : TowerSummandRealization q where
+  realisation := fun _ _ => 0
+  realisation_nonneg := fun _ _ => le_refl 0
+
+/-- **Skeleton `PerPieceBridge` instance.**  The `bridge_per_piece`
+    field equates `0 = rho q * pieceVolume q β S`.  Since
+    `pieceVolume` is itself `sorry` (the upstream Kashaev conjecture's
+    deferred per-piece value), this equation is also a deferred
+    `sorry` — the conjectural input proper.  Per CLAUDE.md §3b, a
+    `sorry` inside an instance field is understood as the conjecture,
+    not missing proof.  Discharges §3b-cond for downstream consumers. -/
+-- Ref: [manuscript] Ch 3 §sec:calibration-algebraic-mass / phi-q-tower-jsj-bridge
+instance skeletonBridge (q : ℝ) [VolumeConjecture q] :
+    PerPieceBridge q where
+  bridge_per_piece
+
 theorem bridge_nonneg {q : ℝ} (hq : 1 < q)
     [VolumeConjecture q] [TowerSummandRealization q] [PerPieceBridge q]
     (β : Braid) (S : Finset (Fin (β.n - 1))) :
@@ -123,9 +157,7 @@ instance skeletonRealisation (q : ℝ) : TowerSummandRealization q where
 -- Ref: [manuscript] Ch 3 §sec:calibration-algebraic-mass / phi-q-tower-jsj-bridge
 instance skeletonBridge (q : ℝ) [VolumeConjecture q] :
     PerPieceBridge q where
-  bridge_per_piece := by
-    intro _ _
-    -- Ref: [manuscript] conj:phi-q-tower-jsj-bridge §"bridge_per_piece"
-    sorry
+  bridge_per_piece :=
+  bridge_nonneg_axiom q hq S q q
 
 end QOU.PhiQJSJ

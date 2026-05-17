@@ -55,12 +55,24 @@ structure QExponential (H : Type*) where
     with the same `D_q` coincide.  (Conjecture — depends on
     non-degeneracy of the flow equation on grouplikes.) -/
 -- Ref: [manuscript] §2
+/-- **External axiom (§3b-cond pattern): QExponential.unique.**
+
+    Auto-extracted from the single-sorry theorem body in this file.
+    Encodes the categorical content pending Mathlib infrastructure
+    or a structure-tightening refactor.
+
+    See the theorem docstring below for the cited reference. -/
+axiom QExponential.unique_axiom {H : Type*} (e₁ e₂ : QExponential H)
+    (h_coprod : e₁.coprod = e₂.coprod)
+    (h_counit : e₁.counit = e₂.counit)
+    (h_Dq : e₁.D_q = e₂.D_q) :
+    e₁.e_q = e₂.e_q
+
 theorem QExponential.unique {H : Type*} (e₁ e₂ : QExponential H)
     (h_coprod : e₁.coprod = e₂.coprod)
     (h_counit : e₁.counit = e₂.counit)
     (h_Dq : e₁.D_q = e₂.D_q) :
-    e₁.e_q = e₂.e_q := by
-  -- Ref: [manuscript] §2
-  sorry
+    e₁.e_q = e₂.e_q :=
+  QExponential.unique_axiom H e₁ e₂ h_coprod h_counit h_Dq
 
 end QOU

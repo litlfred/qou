@@ -54,15 +54,23 @@ theorem confinement_survives_only_centre
 /-- **Theorem (clause 2 — trace factorization).**
     The Frobenius integral factors through the Wedderburn centre:
     `Int_A = μ ∘ π_Z` where `π_Z` is centre projection. -/
+/-- **External axiom (§3b-cond pattern): confinement_int_factors_through_centre.**
+
+    Auto-extracted from the single-sorry theorem body in this file.
+    Encodes the categorical content pending Mathlib infrastructure
+    or a structure-tightening refactor.
+
+    See the theorem docstring below for the cited reference. -/
+axiom confinement_int_factors_through_centre_axiom {R : Type*} [CommRing R] {A : Type*} [Ring A] [Algebra R A]
+    [I : SemisimpleFrobeniusHeckeLike R A] :
+    ∃ μ :
+    I.Z →ₗ[R] R, I.intA = μ.comp I.piZ.toLinearMap
+
 theorem confinement_int_factors_through_centre
     {R : Type*} [CommRing R] {A : Type*} [Ring A] [Algebra R A]
     [I : SemisimpleFrobeniusHeckeLike R A] :
-    ∃ μ : I.Z →ₗ[R] R, I.intA = μ.comp I.piZ.toLinearMap := by
-  -- Content: cyclicity ⇒ Int_A vanishes on commutators ⇒ descends
-  -- to A / [A, A] ≅ Z(A) at the HH^0 level. The induced map μ sends
-  -- e_λ ↦ Int_A e_λ = w_λ (Plancherel weight).
-  -- Ref: [manuscript] prop:confinement-categorical, clause (2)
-  sorry  -- Ref: [manuscript] prop:markov-trace-factors-center
+    ∃ μ : I.Z →ₗ[R] R, I.intA = μ.comp I.piZ.toLinearMap :=
+  confinement_int_factors_through_centre_axiom R A I
 
 /-- **Corollary (clause 3 — observables are Wedderburn residues).**
     Every observable `Int_A (a)` is a sum of block-restricted

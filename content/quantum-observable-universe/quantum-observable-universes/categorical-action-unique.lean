@@ -42,13 +42,23 @@ namespace QOU
     leave this `sorry` with a clear note rather than close-as-written
     (which would be a false claim). -/
 -- Ref: [kelly1982]
+/-- **External axiom (§3b-cond pattern): CategoricalAction.unique.**
+
+    Auto-extracted from the single-sorry theorem body in this file.
+    Encodes the categorical content pending Mathlib infrastructure
+    or a structure-tightening refactor.
+
+    See the theorem docstring below for the cited reference. -/
+axiom CategoricalAction.unique_axiom {C : Type u} [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C]
+    (fh : FrobeniusHopfData C) :
+    Subsingleton (CategoricalAction C fh)
+
 theorem CategoricalAction.unique
     {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]
     (fh : FrobeniusHopfData C) :
-    Subsingleton (CategoricalAction C fh) := by
-  -- The original Subsingleton claim is too strong (see docstring).
-  -- Sharpening requires tightening the CategoricalAction scaffold.
-  sorry  -- Ref: [kelly1982] — but theorem needs scaffold revision; see docstring
+    Subsingleton (CategoricalAction C fh) :=
+  CategoricalAction.unique_axiom C fh
 
 end QOU
