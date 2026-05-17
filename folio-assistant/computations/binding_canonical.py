@@ -113,7 +113,8 @@ def build_atom_symbolic(Z: int, N: int, *, include_inter: bool = True,
 def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
                         Q_beta_n_mev: float = float(_Q_BETA_N),
                         reduce_before_trace: bool = True,
-                        verbose: bool = False) -> dict:
+                        verbose: bool = False,
+                        **kwargs) -> dict:
     """Binding via canonical Markov trace.
 
     B = Q_β(n) · (|tr_M(W_free)| − |tr_M(W_atom)|),
@@ -136,10 +137,23 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
     double-scale).
 
     Callers that previously passed `E_0=...` must update to
-    `Q_beta_n_mev=...`; the old keyword raises `TypeError`. The
+    `Q_beta_n_mev=...`. The old keyword is captured by `**kwargs`
+    and raises an explicit `AssertionError` with the migration
+    message; any other unexpected keyword raises `TypeError`. The
     single internal caller `kahler_lift.py:343` is updated in the
     same commit.
     """
+    assert "E_0" not in kwargs, (
+        "binding_canonical: the `E_0` keyword is deprecated; the "
+        "parameter was misnamed and is now `Q_beta_n_mev` (the "
+        "free-neutron β-decay Q-value, NOT the canonical energy "
+        "scale E_0 ≈ 4.186 MeV). Pass `Q_beta_n_mev=...` instead."
+    )
+    if kwargs:
+        raise TypeError(
+            f"binding_canonical: unexpected keyword arguments "
+            f"{sorted(kwargs)}"
+        )
     A = Z + N
     n_strands = 3 * A
     div = SymbolicHeckeDivision() if reduce_before_trace else None
