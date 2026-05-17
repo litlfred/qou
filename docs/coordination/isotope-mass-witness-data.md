@@ -7,6 +7,97 @@ under strict three-calibration discipline (CAL-1 m_e, CAL-2 q₀, CAL-3
 Q_β; m_p and m_n are predictions, never inputs) + anti-staleness
 infra to prevent the failure mode that produced the ¹H tautology.
 
+## Scope map (2026-05-17 — /coordinate run after main rebase + Phase 5)
+
+Owner invoked `/coordinate` after 31 commits landed on main. Walked
+scope across siblings + posted intent on PR #671. Branch state:
+
+- **31 commits ahead** of last push state (this branch, not yet
+  reflected in PR view)
+- **31 commits behind origin/main** (including #665 merge,
+  cross-PR Lean fixes, new coordination ledger on main)
+- **3 OUTDATED Gemini review comments** on PR #663 (already triaged
+  in earlier coordination comment 4465620873)
+
+### Sibling-PR state
+
+| PR | Status | Bearing on #663 |
+|---|---|---|
+| **#665** | **MERGED** 2026-05-16 | N=4 ladder + n-strand BraidGroup foundation now on main; unlocks the Q_β substrate swap from form_a_cos (+306 ppm) → N=4 ladder (~7×10⁻⁶ ppm) per existing comment 4468003754 |
+| **#672** | open | R&D inventory + YB d_1↔d_2 swap finding; orthogonal to #663 per comment 4469129860 |
+| **#664** | open | Cherry-picked anti-staleness infra FROM #663; mergeable if #663 lands first |
+| **#671** | open | Audits #663's "T1+T4 closure path"; Items A/B/C are R&D plan. **Coordination posted today** (comment 4469216060) — my Phase 4 work addresses Items A + C; Item B = audit GAP #17 |
+
+### Main ledger from sibling session
+
+Carl's coordination ledger landed on main as
+`docs/coordination/1ppb-categorical-chain.md` (commit `4cc7561f`)
+mentioning #663 directly. Open question for #663 author there:
+
+> "Q_β substrate swap on #663: ship #663 as-is with form_a_cos
+>  (residual +306 ppm), or wait for #665 to land then swap to the
+>  N=4 ladder (residual ~7e-6 ppm)?"
+
+**Answer (now actionable)**: #665 has merged. The N=4 ladder is on
+main. Swapping `q_beta_substrate_cos_tightened_MeV()` →
+`q_beta_full_chain_n4_MeV()` would tighten Q_β residual by ~4×10⁷.
+This is a small follow-up; recommend deferring to a separate PR so
+#663 ships the audit + Li_2^q + ν_SDP fix without entangling
+substrate-helper migration.
+
+### Gemini review triage (skill §5)
+
+All 3 review threads are `is_outdated: true` — covered by earlier
+coordination comment 4465620873:
+
+| File:line | Verdict | Action |
+|---|---|---|
+| `low_isotope_mass_table.py` mtime docstring | accept | landed in 234282a3 |
+| `probe_m2_codata_vs_cos_q_beta.py:120` | defer-to-source-PR | PR #662 (since merged) |
+| `witness_dependency_drift.py` refactor | accept | landed in 234282a3 |
+
+No new review comments since the original triage.
+
+### Cross-PR findings this cycle (Phase 4 + Phase 5)
+
+1. **ν_SDP notation fix** — disambiguates SDP-multiplicity ρ from
+   categorical-density ρ_K (paper had both written "ρ" causing
+   1700× value confusion). Edits landed in
+   `atom-knot-mass-derivation.{md,ts,lean}`, proof sibling, and
+   `rho_prefactor_structural_verifier.py` (with backward-compat
+   alias key in witness).
+
+2. **Symmetric Li_2^q replaces Faddeev Φ_q** per paper canon
+   (2026-05-03 revision). Removes the pole artifact at
+   |V̂_proton|=0.989 > q⁻¹=0.901 that gave spurious 1.50% closure.
+
+3. **q-shuffle compound `*_q` on disjoint braids = concatenation**
+   per `def:hq-bi-filtration` line 50. Full-order m(¹H) prediction
+   landed (`hydrogen_qshuffle_compound.py`).
+
+4. **173× ρ_K gap = paper open problem**, ruled out:
+   - T7 = 0 for nucleons (Hecke-coefficient chain divergence at q=0)
+   - Compound vs additive (≤0.4 MeV)
+   - Plancherel vs Wenzl-tilde normalisation (1.3% shift)
+   - Simple max dim_q at H_{3A} (90×-990× off)
+   - 0.18% single-gen claim is circular per paper's own line 191-197
+
+5. **Confinement-level multiplicative structure found** in
+   `confined-knot-binding.md` line 108-120:
+   `a(Z, N) = ∏_ℓ a_ℓ` where a_ℓ = V̂_confined / V̂_free at each
+   level. This is the most-likely remaining candidate for the 173×
+   factor; deferred to follow-up (research-level work).
+
+### Next concrete task on queue
+
+1. **Defer Q_β substrate-helper swap** to a separate PR (per
+   recommendation above; #665 just merged, swap is now possible).
+2. **Investigate `a_ℓ = V̂_confined/V̂_free` multiplicative
+   structure** (confinement-level closure path) — owner-asked,
+   research-level.
+3. **PR #663 ready to merge** modulo CI green check. 31 commits
+   ahead of last push reflected on remote.
+
 ## Scope map (2026-05-17 — Phase 4 audit + canonical-form + q-shuffle)
 
 Owner directives this cycle:
