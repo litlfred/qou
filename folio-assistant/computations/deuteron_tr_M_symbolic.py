@@ -182,19 +182,12 @@ def main() -> int:
     val_q0 = float(sp.N(trM.subs(q_used, Q0_CANONICAL), 30))
     # Substitute r = q^(1/2) to recover a polynomial-in-r form for the
     # downstream pole-order analysis. r=q^(1/2) gives q=r².
-    r = sp.Symbol('r', positive=True)
-    trM_in_r = sp.cancel(trM.subs(q_used, r**2))
-    try:
-        pole_r, leading_r = pole_order_at_zero(trM_in_r)  # pole in r → 2× the q pole
-        # but pole_order_at_zero uses Q from hoefsmit_symbolic, so substitute back
-        pole = pole_r  # in r-coords; the q-coord pole is pole_r/2 (half-integer)
-        leading = leading_r
-        print(f"  canonical Markov pole order at r=q^(1/2)=0 : {pole}")
-        print(f"  canonical Markov leading coefficient (r)   : {leading}")
-    except Exception as e:
-        pole = None
-        leading = None
-        print(f"  pole-order analysis in r-coords skipped: {type(e).__name__}")
+    # Use the hoefsmit Q symbol for pole_order_at_zero (it Poly's on Q internally);
+    # substitute the markov_peel q → Q^2 so the r-coords pole = lowest power in Q.
+    trM_in_r = sp.cancel(trM.subs(q_used, Q ** 2))
+    pole, leading = pole_order_at_zero(trM_in_r)
+    print(f"  canonical Markov pole order at r=q^(1/2)=0 : {pole}")
+    print(f"  canonical Markov leading coefficient (r)   : {leading}")
     print(f"  canonical Markov value at q_0              : {val_q0}")
 
     # Write witness JSON.

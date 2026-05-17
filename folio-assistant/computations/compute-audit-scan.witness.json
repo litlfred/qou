@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-17T06:58:57.449450+00:00",
-  "commitSha": "51d41857d3e203c7ce8004d65500e480137896cb",
+  "computedAt": "2026-05-17T07:04:34.791847+00:00",
+  "commitSha": "057b619802141257e7b6aa44dcba6bd8304c3867",
   "assertions": [],
   "allPassed": true,
   "durationMs": 7,
@@ -24,8 +24,8 @@
   },
   "data": {
     "by_pattern_count": {
-      "P15": 155,
-      "P16": 91,
+      "P15": 157,
+      "P16": 89,
       "P21": 24,
       "P30": 96,
       "P31": 20
@@ -143,8 +143,7 @@
         "file": "probe_F_n_categorical_derivation.py",
         "count": 6,
         "patterns": [
-          "P15",
-          "P16"
+          "P15"
         ]
       },
       {
@@ -642,7 +641,7 @@
       {
         "pattern": "P15",
         "file": "deuteron_tr_M_symbolic.py",
-        "line": 186,
+        "line": 187,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
@@ -1797,6 +1796,20 @@
       {
         "pattern": "P15",
         "file": "probe_F_n_categorical_derivation.py",
+        "line": 129,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "probe_F_n_categorical_derivation.py",
+        "line": 132,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "probe_F_n_categorical_derivation.py",
         "line": 152,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
@@ -1814,20 +1827,6 @@
         "line": 233,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P16",
-        "file": "probe_F_n_categorical_derivation.py",
-        "line": 129,
-        "snippet": "sp.simplify(...)",
-        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
-      },
-      {
-        "pattern": "P16",
-        "file": "probe_F_n_categorical_derivation.py",
-        "line": 132,
-        "snippet": "sp.simplify(...)",
-        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P21",

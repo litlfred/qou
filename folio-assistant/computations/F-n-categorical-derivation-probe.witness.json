@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-17T05:53:13.226165+00:00",
-  "commitSha": "9a50c1d905010cea67a820808af819fc3661dc13",
+  "computedAt": "2026-05-17T07:04:39.573482+00:00",
+  "commitSha": "057b619802141257e7b6aa44dcba6bd8304c3867",
   "assertions": [
     {
       "name": "trM_sigma1_sq_closed_form_holds",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 97,
+  "durationMs": 182,
   "computation": "F-n-categorical-derivation-probe",
   "scriptFile": "probe_F_n_categorical_derivation.py",
-  "scriptHash": "11814b801cae",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "019bc5cfd269",
+  "scriptCommitSha": "64e447349614d19b6139a288f7afcea15c22186f",
   "description": "F_n categorical derivation probe via canonical Markov trace of σ_1² (Hopf+ braid). Confirms Markov-invariance across H_n for n=3-6; verifies the closed form tr_M(σ_1²) = 1 + (q-1)·q^(-1/2); verifies the C(-1/2, k-1) binomial pattern in the ε^k Taylor coefficients; SHOWS the bare-Markov coefficients DO NOT equal the framework's claimed F_n values, surfacing the open work on which categorical object actually produces each F_n.",
   "auditOnly": "docs/audits/2026-05-17-F-n-derivation-analysis.md",
   "data": {

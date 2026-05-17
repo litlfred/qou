@@ -126,10 +126,10 @@ def main() -> int:
     print("Step 2: simplify the closed form.")
     trM_canonical = forms[3]
     q_pos = sp.Symbol("q", positive=True, real=True)
-    trM_in_pos_q = sp.simplify(trM_canonical.subs(sp.Symbol("q"), q_pos))
+    trM_in_pos_q = sp.cancel(trM_canonical.subs(sp.Symbol("q"), q_pos))
     # Conjectured form: 1 + (q-1)/q^{1/2}
     conjectured = 1 + (q_pos - 1) / sp.sqrt(q_pos)
-    delta = sp.simplify(trM_in_pos_q - conjectured)
+    delta = sp.cancel(trM_in_pos_q - conjectured)
     print(f"  symbolic       : {trM_in_pos_q}")
     print(f"  conjectured    : 1 + (q-1)/q^(1/2)")
     print(f"  difference     : {delta}")
