@@ -32,26 +32,45 @@ exhibit additional over-binding.*
 
 ## Status
 
-**Conjecture, single-anchor verified.** At the doubly-magic anchor
-$(Z, N) = (2, 2)$ for ${}^4$He:
+**Conjecture, single-anchor verified at (2,2) ONLY; single-magic
+anchors REFUTE the symmetric (A-2) form.** Cross-anchor test results
+from [`probe_delta_coupling_cross_anchor.py`](folio-assistant/computations/probe_delta_coupling_cross_anchor.py)
+using Δ_cat data on main:
 
-| Quantity | Value |
-|---|---|
-| $E_0(q_0)$ | $4.18598$ MeV |
-| $\log(1/h(q_0))$ | $1.56513$ |
-| $z(q_0) = 1/(q^{1/2}+q^{-1/2})$ | $0.49932$ |
-| $h(q_0)^2$ | $0.04371$ |
-| **Leading** $(A-2) \cdot E_0 \cdot \log(1/h)$ | $13.1032$ MeV |
-| **Correlation** $2 \cdot z^2 \cdot E_0 \cdot h^2$ | $+0.0912$ MeV |
-| **Total predicted** $\Delta_{\mathrm{coupling}}(2, 2)$ | $13.1945$ MeV |
-| **Extracted** $\Delta_{\mathrm{coupling}}(2, 2)$ (AME) | $+13.20$ MeV |
-| **Refined relative gap** | $+0.042\%$ (vs $0.71\%$ leading-form only — $17 \times$ improvement) |
+| Anchor | Predicted (refined) | Extracted | Gap | Status |
+|---|---:|---:|---:|---|
+| $(2, 2)$ doubly-magic | 13.1945 | 13.1969 | $-0.018\%$ | within 1‰ |
+| $(2, 1)$ single-magic | 6.5516 | 6.0252 | $+8.74\%$ | REFUTED |
+| $(1, 2)$ single-magic | 6.5516 | 6.8211 | $-3.95\%$ | REFUTED |
 
-Verified numerically by
+The doubly-magic (2,2) match (0.018%) is excellent. The single-magic
+anchors deviate by 4-9% in **opposite directions** — the symmetric
+$(A-2) \cdot E_0 \cdot \log(1/h)$ leading form predicts zero
+asymmetry at $A=3$, but empirically the asymmetry is $+0.796$ MeV
+between $(1, 2)$ T and $(2, 1)$ ${}^3$He.
+
+**The (2,2) match was largely coincidence.** Forcing the 3-anchor
+data to the system
+$\Delta_{\mathrm{coupling}} = \text{leading} + \text{pp} \cdot (Z-1) + \text{nn} \cdot (N-1) + \text{corr} \cdot (Z-1)(N-1)$
+gives:
+
+- $\text{pp\_term} \approx -0.526$ MeV  (single-magic σ_pp channel)
+- $\text{nn\_term} \approx +0.270$ MeV  (single-magic σ_nn channel; +0.8 MeV asymmetric vs pp)
+- $\text{corr} \approx +0.351$ MeV  (doubly-magic σ_pp·σ_nn correlation; ~4× the original $2 z^2 E_0 h^2$ value)
+
+These have natural substrate-asymmetric interpretations
+(proton-vs-neutron Hecke operator weights, σ_pp vs σ_nn channel
+multiplicities) but the **specific structural form is not yet
+identified**. The conjecture remains open at the substrate-derivation
+level until this richer 3-term decomposition is closed.
+
+Verification probes (in order of finding):
 [`probe_delta_coupling_leading_form.py`](folio-assistant/computations/probe_delta_coupling_leading_form.py)
-(leading-form witness) and
+(leading-form, 0.7% gap at (2,2)),
 [`probe_delta_coupling_pp_nn_correlation.py`](folio-assistant/computations/probe_delta_coupling_pp_nn_correlation.py)
-(refined-form witness with pp-nn correlation).
+(refined-form, 0.04% at (2,2) — apparently confirmed before cross-anchor test),
+[`probe_delta_coupling_cross_anchor.py`](folio-assistant/computations/probe_delta_coupling_cross_anchor.py)
+(REFUTES refined-form at single-magic anchors via direct cross-anchor extraction).
 
 Cross-anchor verification at $(2, 1)$ ${}^3$He$=$D$+$p and $(1, 2)$
 T$=$D$+$n is pending PR #644's $\Delta_{\mathrm{cat}}$ data for
