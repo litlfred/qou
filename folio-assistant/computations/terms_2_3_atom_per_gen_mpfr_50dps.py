@@ -43,6 +43,7 @@ from __future__ import annotations
 
 import json
 import sys
+import time
 from pathlib import Path
 from typing import Iterable
 
@@ -223,10 +224,7 @@ def atom_per_generator_volumes_mpfr(
 
     # Per-generator V̂_full from accumulators (same H_3 Wedderburn
     # weights as `hecke_core.atom_per_generator_volumes`).
-    # Quantum dimensions: dim_sym = dim_alt = 1, dim_std = [2]_q.
-    dim_std = (q0 ** 2 - qi ** 2) / (q0 - qi)  # = q + q^{-1} = [2]_q
-    nf3 = one * (q0 - qi**(-1)) / (q0 - qi)    # placeholder; recomputed below
-    # Use the same normalization recipe as the f64 sibling:
+    # Normalization recipe (mirrors the f64 sibling):
     #   nf3 = [1]_q · [2]_q · [3]_q with [n]_q = (q^n − q^{-n})/(q − q^{-1})
     #   w_sym = 1/nf3, w_std = [2]_q²/nf3, w_alt = 1/nf3
     #   then normalize so w_sym + w_std + w_alt = 1
@@ -264,6 +262,7 @@ def _stringify(vols: Iterable[dict[str, mp.mpf]]) -> list[dict[str, str]]:
 
 
 def main() -> int:
+    start_time = time.monotonic()
     q0, qi, h, z_mark = _load_q0_50dps()
     print("=" * 78)
     print("MPFR-NATIVE PER-GENERATOR WEDDERBURN VOLUMES (50 dps)")
@@ -322,6 +321,7 @@ def main() -> int:
         },
         script_path=__file__,
         engine="mpmath",
+        start_time=start_time,
     )
     out = builder.save()
     print(f"  Witness: {Path(out).name}")
