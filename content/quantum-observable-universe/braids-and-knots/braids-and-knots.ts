@@ -391,6 +391,7 @@ export default chapter({
         "hoefsmit-V21-cos-symmetrization",
         "q-beta-categorical-precision-ladder",
         "markov-axioms-primitive",
+        "markov-trace-inductive-limit",
         "braid-link-types",
         "braid-group-n-strand",
         "markov-closure-map-axiomatic",

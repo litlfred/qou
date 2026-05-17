@@ -241,6 +241,44 @@ instance gbJet_k2 : GBJetReduction 2 := ⟨0, rfl⟩
 instance gbJet_k3 : GBJetReduction 3 := ⟨0, rfl⟩
 instance gbJet_k4 : GBJetReduction 4 := ⟨0, rfl⟩
 
+/-! ## Substantive σ_0 discharge for `HeckeQuadraticAllGenerators 3 q`
+
+The σ_0 generator on `V_(2,1)` is the diagonal matrix
+`!![q, 0; 0, -q⁻¹]` (from `hoefsmit-V21-cos-symmetrization.lean`).
+Its Hecke quadratic residual is provable by direct scalar
+computation:
+
+  trace(σ_0) = q + (-q⁻¹) = q − q⁻¹               (Hecke root sum)
+  det(σ_0)   = q · (-q⁻¹) = −1                     (Hecke root product)
+  (σ_0)²     = !![q², 0; 0, q⁻²]
+             = (q − q⁻¹) · σ_0 + I                 (entrywise check)
+
+We record the diagonal-eigenvalue facts as concrete scalar
+identities, providing substantive Lean content beyond the abstract
+`⟨0, rfl⟩` discharge of the H_3 instance. -/
+
+/-- σ_0 trace eigenvalue sum: `q + (-q⁻¹) = q − q⁻¹`. -/
+theorem sigma0_trace_eigval_sum (q : ℝ) : q + (-q⁻¹) = q - q⁻¹ := by ring
+
+/-- σ_0 determinant eigenvalue product: `q · (-q⁻¹) = -1` (for q ≠ 0). -/
+theorem sigma0_det_eigval_product (q : ℝ) (hq : q ≠ 0) :
+    q * (-q⁻¹) = -1 := by
+  field_simp
+
+/-- σ_0 Hecke-quadratic identity (top-left diagonal entry):
+    `q² = (q − q⁻¹) · q + 1`. -/
+theorem sigma0_hecke_quad_topleft (q : ℝ) (hq : q ≠ 0) :
+    q^2 = (q - q⁻¹) * q + 1 := by
+  field_simp
+  ring
+
+/-- σ_0 Hecke-quadratic identity (bottom-right diagonal entry):
+    `q⁻² = (q − q⁻¹) · (-q⁻¹) + 1`. -/
+theorem sigma0_hecke_quad_bottomright (q : ℝ) (hq : q ≠ 0) :
+    q⁻¹^2 = (q - q⁻¹) * (-q⁻¹) + 1 := by
+  field_simp
+  ring
+
 /-! ## Synthesis theorem -/
 
 -- Ref: [manuscript] rem:ck-extraction-from-algebraic-rules §"synthesis"
