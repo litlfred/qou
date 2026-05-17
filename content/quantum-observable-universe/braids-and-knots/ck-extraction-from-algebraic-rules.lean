@@ -67,7 +67,7 @@ At the abstract level we record the rule as a class field. -/
     carries the **scalar residual** between the two sides of the
     cubic identity (`σ_i σ_{i+1} σ_i − σ_{i+1} σ_i σ_{i+1}`) and
     asserts it vanishes. -/
-class YangBaxterRule (n : ℕ) (q : ℝ) : Type where
+class YangBaxterRule (n : ℕ) (q : ℝ) : Prop where
   /-- Scalar residual of the YB cubic relation (some chosen scalar
       invariant: a matrix entry, trace, etc.). -/
   yb_residual : ℝ
@@ -91,7 +91,7 @@ element calculation on `H_3(q)`. -/
     explicit-residual pattern: the class carries the residual of the
     completeness relation `Σ_λ e_λ − 1` projected to a scalar
     invariant, and asserts it vanishes. -/
-class QYoungSymmetrizers (n : ℕ) (q : ℝ) : Type where
+class QYoungSymmetrizers (n : ℕ) (q : ℝ) : Prop where
   /-- Scalar residual of the Hecke-idempotent completeness relation
       `Σ_{λ ⊢ n} e_λ = 1` (per the Wedderburn block decomposition). -/
   qyst_residual : ℝ
@@ -108,7 +108,7 @@ by `hoefsmit_sigma0_hecke_quadratic` and
 
 /-- **Hecke quadratic** at every generator of `H_n(q)` axiomatised
     via the explicit-residual pattern. -/
-class HeckeQuadraticAllGenerators (n : ℕ) (q : ℝ) : Type where
+class HeckeQuadraticAllGenerators (n : ℕ) (q : ℝ) : Prop where
   /-- Scalar residual of `σ_i² − (q-q⁻¹)σ_i − 1` for every
       generator `i`. -/
   hecke_quad_residual : ℝ
@@ -128,7 +128,7 @@ phenomenological choice once Rules 1–3 are in place. -/
 
 /-- **Gröbner-Shirshov / jet reduction** at extraction order `k`,
     via the explicit-residual pattern. -/
-class GBJetReduction (k : ℕ) : Type where
+class GBJetReduction (k : ℕ) : Prop where
   /-- Scalar residual of `(normal-form output) − (canonical c_k)`
       after the GB/jet reduction at order `(q-1)^(2k)`. -/
   gb_residual : ℝ
@@ -208,17 +208,17 @@ content block's `.md`. -/
 
 /-! **Yang-Baxter at H_3** — instance NOT provided here.
 
-A symbolic computation (see follow-up R&D PR #672,
-`rem:post-pr665-open-rd-inventory`) shows the chapter
-`hoefsmit_sigma1` conventions FAIL the YB cubic with
-`σ_0 = diag(q, -q⁻¹)` — the (0,0)-entry constraint gives
-`b² = -q⁶/(q²+1)²` (impossible since `b² > 0`).
+The R&D follow-up `rem:post-pr665-open-rd-inventory` (PR #672)
+documents that the chapter `hoefsmit_sigma1` conventions FAIL the
+YB cubic with `σ_0 = diag(q, -q⁻¹)` — the (0,0)-entry constraint
+gives an impossible `b² = -q⁶/(q²+1)²`.
 
-The fix is a `d_1 ↔ d_2` swap in
-`hoefsmit-V21-cos-symmetrization.lean` (zero downstream regressions
-per the basis-permutation analysis in PR #672). Until that swap
-lands, providing a `⟨0, rfl⟩` instance of `YangBaxterRule 3 q`
-would falsely assert YB holds for the current conventions.
+The fix is a `d_1 ↔ d_2` swap in `hoefsmit-V21-cos-symmetrization.lean`
+(zero downstream regressions, full analysis in #672). Until that
+swap lands, providing a `⟨0, rfl⟩` instance of
+`YangBaxterRule 3 q` would falsely assert YB holds for the current
+conventions — a vacuous discharge that contradicts the documented
+anomaly.
 
 The instance is therefore **deliberately omitted** here; downstream
 consumers of `YangBaxterRule 3 q` must provide their own discharge
@@ -317,9 +317,9 @@ theorem ckFromReduction_matches_ladder
 
 /-- **Conditional corollary at H_3.** Q-YST + Hecke-quadratic + GB/jet
     instances elaborate automatically; the `YangBaxterRule 3 q` slot
-    is left explicit until the d_1↔d_2 swap fix lands (see follow-up
-    R&D PR #672, `rem:post-pr665-open-rd-inventory`). Downstream
-    consumers supply their own `[YangBaxterRule 3 q]` instance. -/
+    is left explicit until the d_1↔d_2 swap fix lands (see
+    `rem:post-pr665-open-rd-inventory`). Downstream consumers supply
+    their own `[YangBaxterRule 3 q]` instance. -/
 theorem ckFromReduction_matches_ladder_H3 (q : ℝ)
     [YangBaxterRule 3 q] :
     ckFromReduction q 1 = hoefsmitB_local q
