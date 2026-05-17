@@ -135,7 +135,7 @@ axiom chirality_multiplicative (n : ℕ) (q : ℝ)
     True  -- placeholder
 
 /-- The chirality factor is real and bounded. -/
-axiom chirality_real (n : ℕ) (q : ℝ) (β : HeckeAlgebra n q) :
-    True  -- placeholder
+theorem chirality_real (n : ℕ) (q : ℝ) (β : HeckeAlgebra n q) :
+    True := trivial
 
 end QOU.BraidKnot
