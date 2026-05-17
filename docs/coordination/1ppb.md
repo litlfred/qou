@@ -114,8 +114,27 @@ CAL-2 uncertainty (`Q_β` = m_n − m_p − m_e, CODATA ±6.1 × 10⁻⁷ MeV) s
 | 1 | #600 vs #617 rebase direction (same files: `low_isotope_mass_table.py`, witness JSON, workflow). Either #600 takes #617's `low_isotope_mass_table.py` refactor and reruns the witness against it, or #617 absorbs #600's witness regen + cross-refs `mass-table-fitting-audit.md`. | [#600 comment](https://github.com/litlfred/qou/pull/600#issuecomment-4413477006) |
 | 2 | Has `mass_endomorphism.py`'s neutron mass-tower already been computed and rounded into a 4-sig-fig `m_n_Hecke` value for the `M_HECKE_PIPELINE_AT_Q0` registry? If yes, share it; if no, I'll run `mass_endomorphism.py` and PR the registry entry as a follow-up after #612 lands. Unblocks `build_neutron_mass_50dps_chain.py`. | [#612 comment](https://github.com/litlfred/qou/pull/612#issuecomment-4413477599) |
 
+### Opened by #674 (2026-05-17)
+
+| # | Question | Tagged on |
+|---|----------|-----------|
+| 3 | When PR #663's `witness_dependency_drift.py` + `upstream_witness_hashes` mechanism lands on main, should the four retained legacy audit consumers (`compound_binding_via_differences`, `delta_n2_placeholder_audit`, `neutron_error_diagnostic`, `deuteron_delta_i_audit`) adopt it via a follow-up PR so they detect drift against the legacy `atomic-braid-mass-table.witness.json` they consume? | [#663 intent comment](https://github.com/litlfred/qou/pull/663#issuecomment-4469576907) |
+| 4 | When #671's Item A/B/C probes close the m_p chain gap, the four retained legacy audit consumers in #674 should get a forward-reference banner update to point at the closure status. Flag #674 once Item A lands. | [#671 intent comment](https://github.com/litlfred/qou/pull/671#issuecomment-4469578133) |
+
 ## Cherry-pick log
 
 Format: `cherry-pick of <source PR>:<sha> into <target PR>:<sha>` plus 1-line reason.
 
-(none yet — first cherry-pick will be when #565 lands `WitnessBuilder.wrap_legacy` and #564's `atomic-mass-via-rho-k.witness.json` is migrated to use it.)
+- **Pending:** #663's `witness_dependency_drift.py` mechanism → eventual follow-up wiring the four retained legacy audit consumers in #674. Will execute after #663 lands.
+
+## 2026-05-17 — /coordinate sweep (PR #674 author)
+
+Open siblings classified against #674 (P4‴ atomic_braid_mass_table downstream triage):
+
+| Sibling | Title | Overlap | Classification | Cherry-pick |
+|---------|-------|---------|----------------|-------------|
+| [#663](https://github.com/litlfred/qou/pull/663) | isotope-mass-table honest no-cal regen + anti-staleness infra | adjacent (different consumer) | **dependency** — `witness_dependency_drift.py` valuable to adopt on #674's retained legacy consumers | pending, after #663 lands |
+| [#664](https://github.com/litlfred/qou/pull/664) | c_3 = J_Hopf(q=1) = -2 from V_(2,1) self-fusion | precision-ladder layer, not consumer layer | **adjacent** — no overlap | none |
+| [#671](https://github.com/litlfred/qou/pull/671) | Story B forced + m_p chain closure gap (docs only) | upstream gap analysis | **dependency** — closure status will inform #674's banner phrasing | none (docs PR) |
+
+Intent comments posted (links above in questions table).
