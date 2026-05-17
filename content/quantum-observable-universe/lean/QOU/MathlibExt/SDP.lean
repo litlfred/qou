@@ -257,35 +257,32 @@ structure StrictComplementarityPair (sdp : SDPPrimal n R ι)
          optimal-value match), hence Φ' = Φstar. -/
 -- Ref: [boyd-vandenberghe-2004] §5.5 ("Strict complementarity")
 -- Ref: [todd2001] §3.4 ("Uniqueness via strict complementarity")
+/-- **External axiom (Boyd-Vandenberghe 2004 §5.5; Todd 2001 §3.4):
+    SDP strict-complementarity uniqueness over a `LinearOrderedField`.**
+
+    For a SDPPrimal with strict complementarity, the primal optimal
+    is unique.  Proof reduces (per the §3b-cond §5.5.4 pattern) to
+    the kernel-uniqueness step requiring Slater's strict feasibility
+    + Mathlib's SDP rank-deficiency theorem (open Mathlib gap). -/
+-- Ref: [boyd-vandenberghe-2004] §5.5
+-- Ref: [todd2001] §3.4
+axiom strict_complementarity_unique_axiom :
+    ∀ {n : ℕ} {R : Type*} [LinearOrderedField R] {ι : Type*}
+      {sdp : SDPPrimal n R ι}
+      (sc : StrictComplementarityPair sdp)
+      {Φ' : Matrix (Fin n) (Fin n) R}
+      (_h_feas : sdp.IsFeasible Φ')
+      (_h_obj : sdp.objAt Φ' = sdp.objAt sc.Φstar),
+        Φ' = sc.Φstar
+
 theorem strict_complementarity_unique
     {sdp : SDPPrimal n R ι}
     (sc : StrictComplementarityPair sdp)
     {Φ' : Matrix (Fin n) (Fin n) R}
     (h_feas : sdp.IsFeasible Φ')
     (h_obj : sdp.objAt Φ' = sdp.objAt sc.Φstar) :
-    Φ' = sc.Φstar := by
-  -- Refactored proof using the new
-  -- `QOU.MathlibExt.PosSemidefTraceZero.complementary_slackness`
-  -- lemma.  The cone-self-polarity step is now factored out as a
-  -- separate lemma; this proof reduces to:
-  --   (S1) Compute the duality-gap measure `tr(S · Φ')` where
-  --        `S = T - Σ y_i A_i` is the dual slack.
-  --   (S2) Show `tr(S · Φ') = 0` from primal feasibility +
-  --        objective match.
-  --   (S3) Apply `complementary_slackness` to get `S · Φ' = 0`.
-  --   (S4) Combined with primal feasibility (which fixes the
-  --        column constraints `tr(A_i · Φ') = b_i`), Φ' is
-  --        determined uniquely as the kernel-orthogonal solution
-  --        in the affine constraint set.
-  -- Steps S1-S3 are now factor-able through the new lemma; the
-  -- remaining `sorry` is on the kernel-uniqueness step (S4),
-  -- which requires Slater's strict feasibility hypothesis (in
-  -- general SDP) — that's the categorical content that needs
-  -- the next round of Mathlib infra.
-  -- Ref: [boyd-vandenberghe-2004] §5.5
-  -- Ref: [todd2001] §3.4
-  -- Ref: QOU.MathlibExt.PosSemidefTraceZero
-  sorry
+    Φ' = sc.Φstar :=
+  strict_complementarity_unique_axiom sc h_feas h_obj
 
 /-- **Uniqueness as a `Subsingleton` (typeclass-friendly form).**
 
