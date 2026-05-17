@@ -27,7 +27,7 @@ structural ansätze, or a different tower assembly entirely.**
 This audit identifies the three open R&D items that would actually
 close the chain.
 
-## Current decomposition (from `derive_m_p_hecke_path_a.derive_m_p_hecke()`)
+## Tower decomposition (from `mass_endomorphism.mass_from_tower()`)
 
 For each particle, `mass_endomorphism.mass_from_tower(vols)` returns
 
