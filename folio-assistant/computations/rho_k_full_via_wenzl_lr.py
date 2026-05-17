@@ -4,6 +4,29 @@
 # y-lambda-at-q0.witness.json).
 """ρ_K^full consumer wiring the Wenzl LR producer (PR #674).
 
+⚠ **CONSUMER-SCOPE BUG (2026-05-17, found by
+`cross_check_trM_wenzl_lr_1ppb.py`):** the Wenzl LR identity
+
+    χ^λ(β_1 ⊗ β_2) = Σ_{μν} c^λ_{μν} · χ^μ(β_1) · χ^ν(β_2)
+
+applies to **tensor-product (disjoint) braids** only. The
+canonical atomic braid `atom_canonical_crossings(Z, N)` is **not**
+a tensor product — it includes inter-nucleon arc crossings (the
+"averaged" ctype). This script therefore computes
+`|tr_M(β_p ⊗ β_n ⊗ ...)|` (disjoint product), **not**
+`|tr_M(β_canonical(Z, N))|`. The two diverge by ~80 % relative
+on D, T, ³He (cross-check vs Hoefsmit/markov_peel).
+
+The script is retained as the **producer-side primitive** for
+tensor-product χ^λ — a building block for a future canonical
+consumer that handles non-tensor inter-nucleon braiding per
+`hecke-branching-trace-decomposition.md`. The
+`atomic_mass_via_rho_k.py` overlay layer 4 was disabled after
+this finding; |tr_M| values continue to flow from the Hoefsmit /
+markov_peel paths.
+
+Original framing (pre-bug-discovery):
+
 Removes the LO tautology in `atomic_mass_via_rho_k.py` for atoms
 A ≥ 2 by computing `|tr_M(canonical β)|` directly via the LR
 bridge:

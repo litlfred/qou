@@ -206,38 +206,24 @@ def load_atomic_tr_m() -> dict[str, mp.mpf]:
                 continue
             out[atom] = abs(mp.mpf(tr_str))
 
-    # 4. Wenzl LR canonical overlay (rho-k-full-via-wenzl-lr).
-    #    Final overlay: supplies the FIRST canonical |tr_M| for ⁴He,
-    #    ⁶Li, ⁷Li (and refreshes D/T/³He with LR-derived values) —
-    #    direct categorical evaluation via the Rust+rayon
-    #    `hecke-tr-m-wenzl-lr` binary at the substrate parameter
-    #    q_0, combined with y_λ(q_0) from `wedderburn_jones_markov`.
-    #    Takes ultimate precedence over legacy / Model B / per-atom
-    #    extensions where present.  Atoms not in this witness still
-    #    fall back to whichever layer above supplies them.
-    lr_witness = HERE / "rho-k-full-via-wenzl-lr.witness.json"
-    # The LR consumer uses the short atom labels (D, T, 3He, 4He,
-    # 6Li, 7Li); main()'s tr_M lookup uses the long form via the
-    # module-level `ATOM_LABEL_TO_TR_M_KEY` (deuteron, tritium, ...).
-    # Reuse that mapping so the LR overlay is visible to either
-    # consumer path.
-    if lr_witness.exists():
-        try:
-            dlr = json.loads(lr_witness.read_text())
-        except json.JSONDecodeError:
-            dlr = {}
-        for r in dlr.get("rows", []):
-            if "tr_M_q0_unavail_reason" in r:
-                continue
-            atom = r.get("atom")
-            tr_str = r.get("abs_tr_M_q0_mp30dps") or r.get("tr_M_q0_mp30dps")
-            if atom is None or tr_str is None:
-                continue
-            v = abs(mp.mpf(str(tr_str)))
-            out[atom] = v
-            long_key = ATOM_LABEL_TO_TR_M_KEY.get(atom)
-            if long_key is not None:
-                out[long_key] = v
+    # 4. Wenzl LR overlay — DISABLED 2026-05-17 after
+    #    `cross_check_trM_wenzl_lr_1ppb.py` revealed ~80 % relative
+    #    divergence vs Hoefsmit / markov_peel for D, T, ³He.
+    #
+    #    Root cause: the LR identity
+    #      χ^λ(β_1 ⊗ β_2) = Σ_{μν} c^λ_{μν} · χ^μ(β_1) · χ^ν(β_2)
+    #    applies to *tensor-product* (disjoint) braids only. The
+    #    canonical atomic braid `atom_canonical_crossings(Z, N)` is
+    #    NOT a tensor product — it includes inter-nucleon arc
+    #    crossings (the "averaged" ctype). The LR consumer was
+    #    computing |tr_M(β_p ⊗ β_n)| (disjoint product), not
+    #    |tr_M(β_D)| (canonical deuteron with inter-nucleon arcs).
+    #
+    #    Re-enable only after the consumer is extended to handle
+    #    non-tensor inter-nucleon braiding (the categorical Wenzl
+    #    bridge per `hecke-branching-trace-decomposition.md`).
+    #    Tracker: docs/audits/2026-05-17-1ppb-workplan-v4.md
+    #    §"Wenzl LR consumer bug".
     return out
 
 
