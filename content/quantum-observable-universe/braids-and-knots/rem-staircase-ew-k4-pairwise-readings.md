@@ -8,7 +8,7 @@ The existing
 [`staircase_ew_residual_conjecture.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/staircase_ew_residual_conjecture.py)
 cites a $0.14\%$ pairwise match at $k=4$ as evidence for the literal
 conjecture.
-[`probe_staircase_ew_k4_pairwise_readings.py`](https://github.com/litlfred/qou/blob/claude/review-1ppb-prs-EC0ay/folio-assistant/computations/probe_staircase_ew_k4_pairwise_readings.py)
+[`probe_staircase_ew_k4_pairwise_readings.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/probe_staircase_ew_k4_pairwise_readings.py)
 adds a **coincidence-by-chance** test: among $\sim 147\,072$ ordered
 pairs of positive-real eigenvalues (eigenvalue magnitudes spanning
 $[0.018,\ 56]$), the expected best ratio match by *random search* is
@@ -61,7 +61,7 @@ the matrix product). But the coincidence-by-chance analysis gives
 the same conclusion without needing high precision — at this
 spectrum size, the random-coincidence floor is already comparable
 to the empirical match. See
-[`docs/audits/2026-05-17-staircase-ew-k4-pairwise-readings.md`](https://github.com/litlfred/qou/blob/claude/review-1ppb-prs-EC0ay/docs/audits/2026-05-17-staircase-ew-k4-pairwise-readings.md)
+[`docs/audits/2026-05-17-staircase-ew-k4-pairwise-readings.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-17-staircase-ew-k4-pairwise-readings.md)
 for the sparse-aware mpmath / Schur-Weyl block-decomposition
 infrastructure that would be needed for a direct high-precision
 verification.
