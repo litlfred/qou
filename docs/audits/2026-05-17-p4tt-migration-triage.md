@@ -52,12 +52,18 @@ consumers of the legacy witness, by design.
 
 ## What this PR does NOT close
 
-- **Mass-prediction consumers** flagged in the original deprecation
+- **Mass-prediction migration follow-up finding:** the three
+  scripts originally flagged for migration in the deprecation
   notice (`atomic_braid_mass_table_modes_sweep.py`,
   `mass_formula_6term_mpfr_50dps.py`,
-  `paper_six_term_isotope_sweep.py`) remain open — they emit
-  predicted masses, not diagnostic decompositions, and a real
-  migration is possible. Not in scope for this PR.
+  `paper_six_term_isotope_sweep.py`) do **not** actually read
+  `atomic-braid-mass-table.witness.json`. Only `..._modes_sweep`
+  carries a code-comment reference (consolidated `term_*` helpers
+  shared with the legacy script); the other two have no reference
+  at all. The "mass-prediction migration" originally listed in
+  the deprecation notice therefore has **zero active scope** — no
+  consumer needs to be moved. The notice has been updated to
+  reflect this.
 
 - **P3** (real `H_{3A}` Wedderburn weights → ρ_K refinement toward
   780 ppb floor) is the substantive math lever that follows P4‴.

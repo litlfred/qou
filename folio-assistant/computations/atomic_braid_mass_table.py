@@ -22,9 +22,17 @@ Atomic-braid mass-table compute (Strategy 3 — knot operator + Δ_n full-twist)
   witness; the canonical ρ_K path emits per-atom `M_pred_MeV` /
   `err_pct` only.
 
-  Mass-prediction consumers (`atomic_braid_mass_table_modes_sweep.py`,
+  Mass-prediction consumers — re-audit (2026-05-17, P4‴): the three
+  scripts originally flagged for migration
+  (`atomic_braid_mass_table_modes_sweep.py`,
   `mass_formula_6term_mpfr_50dps.py`, `paper_six_term_isotope_sweep.py`)
-  should migrate to `atomic-mass-via-rho-k.witness.json`.
+  do **not** in fact read `atomic-braid-mass-table.witness.json`.
+  Only `..._modes_sweep.py` has a code-comment reference to the
+  legacy script (consolidated `term_*` helpers); the other two have
+  no reference. The "mass-prediction migration" thus has **zero
+  scope** — there are no active mass-prediction consumers of this
+  witness to migrate. Canonical mass predictions are emitted by
+  `atomic_mass_via_rho_k.py` independently.
 
   Audit-only consumers RETAINED on the legacy witness by design
   (P4‴ triage, this PR):
