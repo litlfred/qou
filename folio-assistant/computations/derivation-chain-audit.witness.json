@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-17T21:55:10.147321+00:00",
-  "commitSha": "964f7a374505931e549ddd69d12b119d8ded690a",
+  "computedAt": "2026-05-17T21:55:51.424815+00:00",
+  "commitSha": "2bbe424e66c2356e08fdcef95cea355ce95a1cea",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2293,6 +2293,7 @@
         "neutron-gap-probes-round7.witness.json",
         "neutron-gap-probes.witness.json",
         "neutron-mass-codata-50dps.witness.json",
+        "neutron-mass-full-tower-50dps.witness.json",
         "nf-qvalues.witness.json",
         "nf-transition-lifting.witness.json",
         "nh-basis-shift.witness.json",
@@ -2335,6 +2336,7 @@
         "probe-braid-word-basis-gram.witness.json",
         "probe-d-height-stratification.witness.json",
         "probe-d-term23-binding.witness.json",
+        "probe-derived-A-from-gs-normal-form.witness.json",
         "probe-gamma-gamma-h3-psd-scan.witness.json",
         "probe-gamma-gamma-lr-embed-h6.witness.json",
         "probe-hoefsmit-content-selector.witness.json",
@@ -2437,6 +2439,7 @@
         "term5-aK-audit.witness.json",
         "term5-aK-v2-mirror-chirality-probe.witness.json",
         "term6-full-pole-sum.witness.json",
+        "term6-habiro-residue-mpfr-50dps.witness.json",
         "term6-residues-at-roots.witness.json",
         "term7-chi5-basis.witness.json",
         "term7-height6-partition-enum.witness.json",

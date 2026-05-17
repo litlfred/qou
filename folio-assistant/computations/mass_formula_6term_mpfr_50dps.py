@@ -329,9 +329,16 @@ def term_6_habiro_residue_mp(A: int) -> mp.mpf:
         )
     with path.open() as f:
         data = json.load(f)
-    for r in data.get("results_by_atom", []):
+    # Schema-flexible: accept either flat (legacy) or
+    # WitnessBuilder-nested (data.data.results_by_atom) form.
+    records = (data.get("results_by_atom")
+               or data.get("data", {}).get("results_by_atom", []))
+    for r in records:
         if r.get("atom") == f"A={A}":
-            return mp.mpf(r["term6_b_pred_mev_50dps"])
+            t6 = r.get("term6_b_pred_mev_50dps")
+            if t6 is None:  # documented null gap (e.g. A=0 electron)
+                continue
+            return mp.mpf(t6)
     raise KeyError(
         f"No Term 6 entry for A={A} in {path.name}; "
         f"add the atom to the residue pipeline before running."

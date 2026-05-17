@@ -70,7 +70,7 @@ from witness_base import (  # noqa: E402
     WitnessBuilder, load_and_hash_upstream,
 )
 from mass_formula_6term_mpfr_50dps import (  # noqa: E402
-    term_4_frobenius_mp, f_Zdep_scale,
+    term_4_frobenius_mp, term_6_habiro_residue_mp, f_Zdep_scale,
 )
 from bw_chirality_isotopes import (  # noqa: E402
     B_bulk, B_Zdep, B_shell, pairing_sign,
@@ -172,7 +172,25 @@ def derive_full_tower(
     t1, t2, t3, vols = _t1_t2_t3_from_per_gen(per_gen_witness, atom)
     t4 = term_4_frobenius_mp(A)
     t5_cat = _t5_cat_units_for(A, Z, N)
-    m_hecke = t1 + t2 + t3 + t4 + t5_cat
+    # T6 (Habiro residue at non-zero roots-of-unity) — KEY CONVENTION
+    # CAVEAT (2026-05-17): the bridge witness
+    # `term6-habiro-residue-mpfr-50dps.witness.json` is keyed by
+    # **nucleon-A**: A=1 → proton's T6, A=2 → deuteron's T6, A=3 →
+    # tritium's, A=4 → ⁴He's.  This branch's `_A_categorical` returns
+    # **max GS filtration grade** (proton/neutron → A_cat=2,
+    # electron → A_cat=1).  Looking up T6 by A_cat = 2 returns
+    # the DEUTERON's T6 (~109 MeV) for proton/neutron, which is
+    # semantically wrong.  To preserve honest reporting under the
+    # paper canonical convention, T6 is keyed by **A_nucleon**
+    # (Z+N), not A_categorical, until the framework reconciles
+    # the two A interpretations (see GAP #19 in the audit index).
+    A_nucleon = Z + N if (Z + N) >= 1 else 0
+    try:
+        t6_MeV = term_6_habiro_residue_mp(A_nucleon) if A_nucleon >= 1 else mp.mpf(0)
+        t6_cat = t6_MeV / M_E_MEV
+    except (FileNotFoundError, KeyError):
+        t6_cat = mp.mpf(0)
+    m_hecke = t1 + t2 + t3 + t4 + t5_cat + t6_cat
     return {
         "atom": atom,
         "A_categorical_max_grade": A,
@@ -181,14 +199,18 @@ def derive_full_tower(
         "N": N,
         "knot_type": knot_type,
         "T1_descended_50dps": str(t1),
-        "T2_single_50dps":    str(t2),
-        "T3_pair_50dps":      str(t3),
+        "T2_single_Li2q_50dps":    str(t2),
+        "T3_pair_Li2q_50dps":      str(t3),
         "T4_Frobenius_50dps": str(t4),
         "T5_chirality_BW_50dps_cat_units": str(t5_cat),
-        "T5_physical_note": (
-            "T5 categorical: A from GS normal form, a_K from V2 "
-            "Gram-matrix chirality, BW coefficients q-integer-derived. "
-            "No nucleon ledger, no fitting."
+        "T6_Habiro_residue_50dps_cat_units": str(t6_cat),
+        "tower_convention": (
+            "Paper canon: m(β) = |Π V̂_i| − Σ Li_2^q(−|V̂_i|) "
+            "− Σ_{i<j} z² Li_2^q(−|V̂_i V̂_j|) + T4 + T5 + T6 + …. "
+            "T2/T3 via symmetric q-dilogarithm (NOT Faddeev Φ_q). "
+            "T5 categorical via A_max_grade. T6 from Habiro "
+            "residue bridge.  T7+ pending (σ-shell α_5 for A=1 atoms "
+            "is research-scope)."
         ),
         "m_hecke_50dps":      str(m_hecke),
         "wedderburn_vols_full_50dps": [str(v) for v in vols],
@@ -220,7 +242,7 @@ def main() -> int:
     print("  " + "-" * 86)
     for x in (p, n, e):
         vals = [mp.nstr(mp.mpf(x[k]), 8) for k in
-                ("T1_descended_50dps", "T2_single_50dps", "T3_pair_50dps",
+                ("T1_descended_50dps", "T2_single_Li2q_50dps", "T3_pair_Li2q_50dps",
                  "T4_Frobenius_50dps", "m_hecke_50dps")]
         print(f"  {x['atom']:<10}    {vals[0]:>10}    {vals[1]:>12}    {vals[2]:>12}    {vals[3]:>8}    {vals[4]:>10}")
     print()
