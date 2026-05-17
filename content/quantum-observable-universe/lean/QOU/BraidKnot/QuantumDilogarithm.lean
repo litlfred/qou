@@ -38,14 +38,22 @@ universe u
 
       Φ_q(z) = ∏_{k=1}^∞ (1 - q^{-k} z)^{-1}.
 
+    At z = 0 the product is empty, giving Φ_q(q, 0) = 1.
     Unbounded near |z| = 1 (concretely, Φ_q(0.989) ≈ 6.7 × 10^5 at
     q_0 ≈ 1.110). Used in `mass_endomorphism.py` and
     `brane_tower_isospin_diagnosis.py` (the latter as a *diagnostic*
     that exposes the −737 MeV mirror-nucleus pathology when the
     archimedean specialisation is taken to be Φ_q instead of
-    the corrected −Li_2^q(−z)). -/
-noncomputable def phi_q (q z : ℝ) : ℝ := sorry
+    the corrected −Li_2^q(−z)).
+
+    Axiomatised here pending a Lean infinite-product implementation;
+    the value at z = 0 is fixed by the empty-product convention. -/
 -- Ref: [manuscript] prop:mass-endomorphism-tower §Quantum-dilogarithm form
+axiom phi_q : ℝ → ℝ → ℝ
+
+/-- Empty-product convention: Φ_q(q, 0) = 1 for every q. -/
+-- Ref: [manuscript] prop:mass-endomorphism-tower
+axiom phi_q_at_zero : ∀ q : ℝ, phi_q q 0 = 1
 
 /-- The **symmetric q-dilogarithm** evaluated at `z`. Defined as
 
@@ -59,15 +67,27 @@ noncomputable def phi_q (q z : ℝ) : ℝ := sorry
 
     Bounded in [0.1, 0.82] for z ∈ (0, 1) at q_0 — this is the
     correct archimedean specialisation of `Vol_q^(S)` in the
-    mass-endomorphism tower. -/
-noncomputable def li2_q (q z : ℝ) : ℝ := sorry
+    mass-endomorphism tower. The series has empty first term at
+    z = 0, giving Li_2^q(q, 0) = 0. -/
 -- Ref: [manuscript] prop:mass-endomorphism-tower §Trace-vs-evaluation note
+axiom li2_q : ℝ → ℝ → ℝ
 
-/-- The two functions are **NOT** equal. -/
+/-- Empty-sum convention: Li_2^q(q, 0) = 0 for every q. -/
 -- Ref: [manuscript] prop:mass-endomorphism-tower
-theorem phi_q_ne_li2_q : ¬ (phi_q = fun q z => -li2_q q (-z)) := by
-  sorry
+axiom li2_q_at_zero : ∀ q : ℝ, li2_q q 0 = 0
+
+/-- The two functions are **NOT** equal under the historical
+    identity claim `Φ_q(z) = -Li_2^q(-z)`. The proof exhibits a
+    counter-example at `z = 0`, where Φ_q is the empty product
+    `1` and -Li_2^q(-0) is the empty sum `0`. -/
 -- Ref: [manuscript] prop:mass-endomorphism-tower §Kashaev-integration-identity audit
+theorem phi_q_ne_li2_q :
+    ¬ (∀ q z : ℝ, phi_q q z = - li2_q q (-z)) := by
+  intro h
+  have h0 := h 1 0
+  rw [phi_q_at_zero, neg_zero, li2_q_at_zero, neg_zero] at h0
+  -- h0 : (1 : ℝ) = 0
+  exact one_ne_zero h0
 
 /-- **Canonical tower form (corrected).** The mass-endomorphism
     tower uses `-Li_2^q(-|V|)` on per-generator amplitudes, NOT
@@ -80,6 +100,19 @@ theorem phi_q_ne_li2_q : ¬ (phi_q = fun q z => -li2_q q (-z)) := by
     `brane_tower_plancherel_scaffold.py`). -/
 noncomputable def towerTerm (q V : ℝ) : ℝ := - li2_q q (-|V|)
 
+/-- At zero amplitude the corrected tower term vanishes:
+    `towerTerm q 0 = 0`. -/
+theorem towerTerm_at_zero (q : ℝ) : towerTerm q 0 = 0 := by
+  unfold towerTerm
+  rw [abs_zero, neg_zero, li2_q_at_zero, neg_zero]
+
+/-- At zero amplitude the historical Φ_q form is 1, NOT 0. This
+    is the elementary witness that the historical identity fails. -/
+theorem phi_q_at_zero_ne_towerTerm_at_zero (q : ℝ) :
+    phi_q q 0 ≠ towerTerm q 0 := by
+  rw [phi_q_at_zero, towerTerm_at_zero]
+  norm_num
+
 /-- **Anti-regression discipline.** Any consumer of the mass-
     endomorphism tower that takes `f` as the archimedean
     specialisation function should assert
@@ -90,5 +123,20 @@ class HasCorrectedMassEndomorphismTower where
   archimedeanSpec : ℝ → ℝ → ℝ
   /-- The instance uses the corrected `-Li_2^q(-|V|)` form. -/
   uses_li2q : archimedeanSpec = towerTerm
+
+/-- Any class instance using the corrected form vanishes at zero. -/
+theorem HasCorrectedMassEndomorphismTower.archimedeanSpec_at_zero
+    [c : HasCorrectedMassEndomorphismTower] (q : ℝ) :
+    c.archimedeanSpec q 0 = 0 := by
+  rw [c.uses_li2q]
+  exact towerTerm_at_zero q
+
+/-- Any class instance using the corrected form **disagrees** with
+    `phi_q` at z = 0 (since Φ_q(q, 0) = 1 ≠ 0 = towerTerm(q, 0)). -/
+theorem HasCorrectedMassEndomorphismTower.ne_phi_q_at_zero
+    [c : HasCorrectedMassEndomorphismTower] (q : ℝ) :
+    c.archimedeanSpec q 0 ≠ phi_q q 0 := by
+  rw [c.uses_li2q, phi_q_at_zero, towerTerm_at_zero]
+  norm_num
 
 end QOU.BraidKnot
