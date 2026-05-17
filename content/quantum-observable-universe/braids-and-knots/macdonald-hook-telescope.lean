@@ -54,67 +54,52 @@ noncomputable def telescopeRHS (n : ℕ) (Q X : ℝ) : ℝ :=
   ((1 - X) / (1 - Q)) ^ n
 
 /-- The Wenzl-bridge normalisation `Z_n = Σ_{λ ⊢ n} f_λ · s_{λ,X}(Q)`,
-    encoded by its closed-form value.
+    kept **opaque** so the class field below carries substantive
+    content (per Gemini-flagged review: a `def` returning the
+    telescope RHS would make the class tautological).
 
-    The substantive content — that the abstract sum
-    `Σ_{λ ⊢ n} f_λ · s_{λ,X}(Q)` equals the telescope RHS — is
-    Stanley's principal-specialisation identity
-    ([stanley1999] Cor. 7.12.5; [macdonald1995] I.3 ex. 1), which is
-    a non-trivial result in symmetric-function theory. Rather than
-    rebuild the full Schur / principal-specialisation infrastructure
-    in Lean, we encode the normalisation **by its closed-form
-    identification**: the function returns the telescope RHS directly,
-    making the Macdonald telescope theorem `rfl`-closable.
+    The substantive identity is Stanley's principal-specialisation
+    ([stanley1999] Cor. 7.12.5; [macdonald1995] I.3 ex. 1); see the
+    `StanleyHookTelescope` class for the conditional axiomatisation. -/
+opaque wenzlNormalizationOfShape (n : ℕ) (Q X : ℝ) : ℝ
 
-    Symbolic verification of the identity at `n = 0, …, 8` in
-    `y_lambda_macdonald_telescope.py` (every partition closes via
-    `sympy.cancel` to 0) plus 191-sample numerical cross-check to
-    ≈ 10⁻⁵¹ against the MPFR Hoefsmit-matrix witness back this
-    definitional identification empirically. -/
-noncomputable def wenzlNormalizationOfShape (n : ℕ) (Q X : ℝ) : ℝ :=
-  telescopeRHS n Q X
+/-! ## Conditional-class axiomatisation of Stanley's identity
 
-/-! ## Stanley-hook-telescope class (canonical instance via definitional
-    identification)
+The principal-specialisation identity is a substantive result in
+symmetric-function theory; rather than rebuild the full Schur /
+principal-specialisation machinery in Lean we axiomatise it as a
+class, per CLAUDE.md §3b-cond. Symbolic verification at `n = 0..8`
+in `y_lambda_macdonald_telescope.py` (every partition closes via
+`sympy.cancel` to 0; 191-sample numerical cross-check to ≈ 10⁻⁵¹
+against the MPFR Hoefsmit-matrix witness) backs the empirical
+correctness of the axiom. -/
 
-For downstream consumers that prefer the abstract identity over the
-definitional one, we expose the equality as a class with a canonical
-instance discharged by `rfl`. -/
-
-/-- **Stanley's principal-specialisation identity** as a class:
-    the abstract Wenzl normalisation equals the telescope RHS at
-    every parameter triple `(n, Q, X)`. -/
+/-- **Stanley's principal-specialisation identity** axiomatised as a
+    class: the opaque Wenzl normalisation equals the telescope RHS
+    at every parameter triple `(n, Q, X)`. Downstream per-instance
+    discharge requires either Mathlib Schur infra or the symbolic
+    n ≤ 8 plug-in. -/
 class StanleyHookTelescope : Prop where
-  /-- The substantive equality, parametrised. -/
+  /-- The substantive equality, parametrised over `(n, Q, X)`. -/
   telescope_holds : ∀ (n : ℕ) (Q X : ℝ),
     wenzlNormalizationOfShape n Q X = telescopeRHS n Q X
 
 -- Ref: [stanley1999] Cor. 7.12.5
 -- Ref: [macdonald1995] I.3 ex. 1
-/-- **Canonical `StanleyHookTelescope` instance.** Discharged by the
-    definitional identification of `wenzlNormalizationOfShape` with
-    `telescopeRHS`. Substantive content of the identity is documented
-    in the docstring of `wenzlNormalizationOfShape`. -/
-instance : StanleyHookTelescope :=
-  ⟨fun _ _ _ => rfl⟩
-
--- Ref: [stanley1999] Cor. 7.12.5
--- Ref: [macdonald1995] I.3 ex. 1
-/-- **Macdonald hook-content telescope**:
+/-- **Macdonald hook-content telescope (conditional)**:
 
       Z_n  =  ((1 - X) / (1 - Q))^n.
 
-    Closed by `rfl` via the definitional identification of
-    `wenzlNormalizationOfShape` with `telescopeRHS`. The substantive
-    content of the identity (principal-specialisation of the regular-
-    representation Frobenius identity `Σ_{λ ⊢ n} f_λ · s_λ = p_1^n`,
-    [stanley1999] Cor. 7.12.5; [macdonald1995] I.3 ex. 1) is encoded
-    by the choice of definition for the normalisation; symbolic
+    Discharged from the `StanleyHookTelescope` class instance, which
+    axiomatises the principal-specialisation of the regular-
+    representation Frobenius identity `Σ_{λ ⊢ n} f_λ · s_λ = p_1^n`
+    ([stanley1999] Cor. 7.12.5; [macdonald1995] I.3 ex. 1). Symbolic
     verification at `n = 0, …, 8` in `y_lambda_macdonald_telescope.py`
-    backs the definitional identification empirically. -/
+    backs the empirical correctness. -/
 theorem macdonald_hook_telescope
-    (n : ℕ) (Q X : ℝ) (_hQ : Q ≠ 1) :
-    wenzlNormalizationOfShape n Q X = telescopeRHS n Q X := rfl
+    (n : ℕ) (Q X : ℝ) (_hQ : Q ≠ 1) [StanleyHookTelescope] :
+    wenzlNormalizationOfShape n Q X = telescopeRHS n Q X :=
+  StanleyHookTelescope.telescope_holds n Q X
 
 /-! ## Closed form for y_λ derived from the telescope
 
@@ -144,11 +129,11 @@ noncomputable def yLambdaClosedForm (n : ℕ) (Q X : ℝ)
     This is `O(n)` per partition (one cell scan for contents and
     hook lengths) — no `sympy.simplify`, no manual algebra.
 
-    Closes via the definitional identification of
-    `wenzlNormalizationOfShape` with `telescopeRHS`. -/
+    Inherits the `[StanleyHookTelescope]` class hypothesis from
+    `macdonald_hook_telescope`. -/
 theorem y_lambda_closed_form_via_telescope
     (n : ℕ) (Q X : ℝ) (hQ : Q ≠ 1)
-    (lamHookContent : ℝ → ℝ → ℝ) :
+    (lamHookContent : ℝ → ℝ → ℝ) [StanleyHookTelescope] :
     wenzlSchurElementValue Q X lamHookContent
         / wenzlNormalizationOfShape n Q X
       = yLambdaClosedForm n Q X lamHookContent := by

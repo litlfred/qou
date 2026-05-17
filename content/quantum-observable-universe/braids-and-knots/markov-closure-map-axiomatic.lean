@@ -19,6 +19,10 @@ LaTeX label: `rem:markov-closure-map-axiomatic` (Track C Step B).
 -/
 
 import Mathlib.Tactic
+-- Sibling-chapter dependency: `Link` inductive (with `hopfLink`
+-- constructor) defined in `braid-link-types.lean`.
+-- Ref: [manuscript] rem:braid-link-types
+import QOU.BraidKnot.braid_link_types
 
 namespace QOU.BraidKnot
 
@@ -37,12 +41,17 @@ chain at order ε^6 needs from "Markov closure". -/
     `Markov-closure(σ_1^k in B_2) = T(2, k) (torus link)`.
 
     The specific case `k = 2 ⇒ Hopf link` is the axiomatic input
-    used for the c_3 = -2 derivation. -/
+    used for the c_3 = -2 derivation.
+
+    Uses **value-level equalities** on `Link` (the inductive type
+    from `braid-link-types.lean`) rather than type-level equalities,
+    avoiding transport issues that arise with `... = Unit`-style
+    type identifications. -/
 class MarkovClosureMap2Strand : Type where
-  /-- The torus-link valued closure of σ_1^k in B_2. -/
-  closure : ℕ → Type
-  /-- The Hopf link is the specific case k = 2. -/
-  is_hopf_at_two : closure 2 = Unit
+  /-- The link-valued closure of σ_1^k in B_2. -/
+  closure : ℕ → Link
+  /-- The Hopf link is the specific case k = 2 (value equality). -/
+  is_hopf_at_two : closure 2 = Link.hopfLink
   /-- Jones polynomial of the closure at q=1, for any k. For k=2 this
       gives J_Hopf(1) = -2. -/
   jones_at_one : ℕ → ℝ

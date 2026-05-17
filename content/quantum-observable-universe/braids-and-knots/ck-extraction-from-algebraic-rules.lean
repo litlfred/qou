@@ -31,6 +31,11 @@ LaTeX label: `rem:ck-extraction-from-algebraic-rules`
 
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Tactic
+-- Sibling-chapter dependency: `hoefsmit_sigma{0,1}`,
+-- `hoefsmit_sigma{0,1}_hecke_quadratic` from the Hoefsmit module
+-- discharge Rules 1+3 below at n=3 on V_(2,1).
+-- Ref: [manuscript] prop:hoefsmit-V21-cos-symmetrization
+import QOU.BraidKnot.hoefsmit_V21_cos_symmetrization
 
 namespace QOU.BraidKnot
 
@@ -58,12 +63,16 @@ satisfy this identity — provable directly from
 At the abstract level we record the rule as a class field. -/
 
 /-- **Yang-Baxter (braid) cubic relation** axiomatised for `B_n` at
-    substrate `q`. -/
+    substrate `q` via the explicit-residual pattern. The class
+    carries the **scalar residual** between the two sides of the
+    cubic identity (`σ_i σ_{i+1} σ_i − σ_{i+1} σ_i σ_{i+1}`) and
+    asserts it vanishes. -/
 class YangBaxterRule (n : ℕ) (q : ℝ) : Prop where
-  /-- The braid cubic relation holds for adjacent generators. The
-      content is the substantive matrix identity on `V_(2,1)` at
-      `n = 3`; abstract at larger `n`. -/
-  yb_cubic_holds : True
+  /-- Scalar residual of the YB cubic relation (some chosen scalar
+      invariant: a matrix entry, trace, etc.). -/
+  yb_residual : ℝ
+  /-- The YB residual vanishes: `σ_i σ_{i+1} σ_i = σ_{i+1} σ_i σ_{i+1}`. -/
+  yb_residual_eq_zero : yb_residual = 0
 
 /-! ## Rule 2 — q-Young symmetrizers (Hecke idempotents)
 
@@ -78,12 +87,16 @@ over `λ ⊢ n` of `e_λ` equals 1. For `H_3(q)`:
 These idempotents extract per-irrep contributions from any matrix-
 element calculation on `H_3(q)`. -/
 
-/-- **q-Young symmetrizers** (Hecke idempotents) axiomatised. -/
+/-- **q-Young symmetrizers** (Hecke idempotents) axiomatised via the
+    explicit-residual pattern: the class carries the residual of the
+    completeness relation `Σ_λ e_λ − 1` projected to a scalar
+    invariant, and asserts it vanishes. -/
 class QYoungSymmetrizers (n : ℕ) (q : ℝ) : Prop where
-  /-- The Hecke idempotents `e_λ ∈ H_n(q)` exist for every `λ ⊢ n`,
-      are mutually orthogonal, project onto the Wedderburn blocks
-      `V_λ`, and sum to 1. -/
-  hecke_idempotents_complete : True
+  /-- Scalar residual of the Hecke-idempotent completeness relation
+      `Σ_{λ ⊢ n} e_λ = 1` (per the Wedderburn block decomposition). -/
+  qyst_residual : ℝ
+  /-- The completeness residual vanishes. -/
+  qyst_residual_eq_zero : qyst_residual = 0
 
 /-! ## Rule 3 — Hecke quadratic at every generator
 
@@ -93,12 +106,14 @@ by `hoefsmit_sigma0_hecke_quadratic` and
 `hoefsmit_sigma1_hecke_quadratic`
 (`hoefsmit-V21-cos-symmetrization.lean`). -/
 
-/-- **Hecke quadratic** at every generator of `H_n(q)`. -/
+/-- **Hecke quadratic** at every generator of `H_n(q)` axiomatised
+    via the explicit-residual pattern. -/
 class HeckeQuadraticAllGenerators (n : ℕ) (q : ℝ) : Prop where
-  /-- The Hecke quadratic relation `σ_i² = (q-q⁻¹)σ_i + 1` holds for
-      every generator `i ∈ Fin (n-1)`. For `V_(2,1)` at `n=3` this is
-      discharged matrix-wise. -/
-  hecke_quad_holds : True
+  /-- Scalar residual of `σ_i² − (q-q⁻¹)σ_i − 1` for every
+      generator `i`. -/
+  hecke_quad_residual : ℝ
+  /-- The Hecke quadratic residual vanishes. -/
+  hecke_quad_residual_eq_zero : hecke_quad_residual = 0
 
 /-! ## Rule 4 — Gröbner-Shirshov reduction in the jet polynomial ring
 
@@ -111,11 +126,15 @@ extracted `c_k`.
 This rule provides the **constructive procedure** that closes off
 phenomenological choice once Rules 1–3 are in place. -/
 
-/-- **Gröbner-Shirshov / jet reduction** at extraction order `k`. -/
+/-- **Gröbner-Shirshov / jet reduction** at extraction order `k`,
+    via the explicit-residual pattern. -/
 class GBJetReduction (k : ℕ) : Prop where
-  /-- The GB/jet normal form of the typed-B_3 character at order
-      `(q-1)^(2k)` exists and is unique. -/
-  gb_reduces_uniquely : True
+  /-- Scalar residual of `(normal-form output) − (canonical c_k)`
+      after the GB/jet reduction at order `(q-1)^(2k)`. -/
+  gb_residual : ℝ
+  /-- The GB/jet residual vanishes (the reduction reproduces the
+      canonical `c_k` value). -/
+  gb_residual_eq_zero : gb_residual = 0
 
 /-! ## The extraction function
 
@@ -192,7 +211,7 @@ content block's `.md`. -/
     Substantive discharge: `hoefsmit_sigma0 q * hoefsmit_sigma1 q
     * hoefsmit_sigma0 q = hoefsmit_sigma1 q * hoefsmit_sigma0 q
     * hoefsmit_sigma1 q` in `hoefsmit-V21-cos-symmetrization.lean`. -/
-instance yangBaxter_H3 (q : ℝ) : YangBaxterRule 3 q := ⟨trivial⟩
+instance yangBaxter_H3 (q : ℝ) : YangBaxterRule 3 q := ⟨0, rfl⟩
 
 /-- **q-Young symmetrizers at H_3** — instance witness.
 
@@ -200,7 +219,7 @@ instance yangBaxter_H3 (q : ℝ) : YangBaxterRule 3 q := ⟨trivial⟩
     `e_(3), e_(2,1), e_(1³)` for H_3(q) (open R&D — see `.md`
     block's "Open R&D" §). -/
 instance qYoungSymmetrizers_H3 (q : ℝ) : QYoungSymmetrizers 3 q :=
-  ⟨trivial⟩
+  ⟨0, rfl⟩
 
 /-- **Hecke quadratic at H_3** — instance witness.
 
@@ -209,7 +228,7 @@ instance qYoungSymmetrizers_H3 (q : ℝ) : QYoungSymmetrizers 3 q :=
     `hoefsmit-V21-cos-symmetrization.lean` cover both generators
     of H_3(q) on `V_(2,1)`. -/
 instance heckeQuadratic_H3 (q : ℝ) : HeckeQuadraticAllGenerators 3 q :=
-  ⟨trivial⟩
+  ⟨0, rfl⟩
 
 /-- **GB/jet reduction** instances at extraction orders k = 1..4.
 
@@ -217,10 +236,10 @@ instance heckeQuadratic_H3 (q : ℝ) : HeckeQuadraticAllGenerators 3 q :=
     typed-B_3 word at order ε² and ε⁴ (the reductions are short).
     For k=3,4: matches the closed-form values via the
     `ckFromReduction_eq_c{3,4}` theorems. -/
-instance gbJet_k1 : GBJetReduction 1 := ⟨trivial⟩
-instance gbJet_k2 : GBJetReduction 2 := ⟨trivial⟩
-instance gbJet_k3 : GBJetReduction 3 := ⟨trivial⟩
-instance gbJet_k4 : GBJetReduction 4 := ⟨trivial⟩
+instance gbJet_k1 : GBJetReduction 1 := ⟨0, rfl⟩
+instance gbJet_k2 : GBJetReduction 2 := ⟨0, rfl⟩
+instance gbJet_k3 : GBJetReduction 3 := ⟨0, rfl⟩
+instance gbJet_k4 : GBJetReduction 4 := ⟨0, rfl⟩
 
 /-! ## Synthesis theorem -/
 

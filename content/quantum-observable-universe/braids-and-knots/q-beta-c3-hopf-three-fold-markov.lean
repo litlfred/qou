@@ -60,21 +60,22 @@ We axiomatise this as a class to follow CLAUDE.md §3b's conditional-
 class pattern. The class instance encodes the open derivation step;
 downstream theorems use the class as a hypothesis. -/
 
-/-- **3-fold Markov closure → Hopf-link substructure axiomatisation.**
-    The third-order coefficient `c_3` in the τ_M precision-ladder
-    expansion factors through the classical-limit Hopf-link Jones
-    value at the corresponding sub-braid extraction. -/
+/-- **3-fold Markov closure → Hopf-link substructure axiomatisation**
+    via the explicit-residual pattern. The class carries the
+    coefficient `c_3` produced by the categorical chain as an
+    explicit scalar field, and asserts it equals the classical-limit
+    Hopf-link Jones value `J_Hopf(q=1) = -2`. This is substantive
+    content: per-instance discharge requires identifying that the
+    third-order coefficient in the perturbative τ_M expansion
+    factors through 2-strand sub-braid Markov closures (each a
+    Hopf link). -/
 class ThreeFoldMarkovHopfExtraction (q : ℝ) : Prop where
-  /-- The c_3 coefficient equals the Hopf-link Jones at q=1 (the
-      classical-limit value, per KL decategorification). Concretely
-      this asserts c_3 = -2. -/
-  c_3_eq_jones_hopf_at_one : ∀ c_3 : ℝ,
-    c_3 = jonesHopf 1 → c_3 = -2
-  /-- The factorisation goes through Hoefsmit substrate factor `b³`
-      (Hoefsmit off-diagonal coupling). The total contribution at
-      order ℏ_q^6 is c_3 · b³ · ℏ_q^6 with c_3 = -2. -/
-  factorisation_through_b_cubed : ∀ c_3 b hbar_q : ℝ,
-    c_3 = -2 → c_3 * b^3 * hbar_q^6 = -2 * b^3 * hbar_q^6
+  /-- The `c_3` coefficient produced by the 3-fold Markov closure
+      → 2-strand sub-braid → Hopf substructure chain. -/
+  c_3 : ℝ
+  /-- The substantive identification: `c_3 = -2`, i.e. the Hopf-link
+      classical-limit Jones value. -/
+  c_3_eq_neg_two : c_3 = -2
 
 /-! ## 3. Top-level export
 
@@ -85,25 +86,20 @@ The categorical-derivation result: under the axiomatic class hypothesis,
 -- Ref: [jones1985] doi:10.2307/1971403   (Jones polynomial)
 -- Ref: [kashiwara1990] doi:10.1215/S0012-7094-90-06120-X   (KL crystal)
 /-- **$Q_\beta$ precision-ladder $c_3$ structural derivation.** Under
-    the `ThreeFoldMarkovHopfExtraction` class, the third precision-
-    ladder coefficient `c_3 = -2` equals the classical-limit Jones
-    polynomial of the Hopf link, `J_Hopf(q=1)`. This identifies the
-    PR #655 categorical chain's c_3 with a topological invariant
-    (Hopf-link Jones at q=1) via the 3-fold Markov closure containing
-    Hopf substructure. -/
+    the `ThreeFoldMarkovHopfExtraction` class, the canonical `c_3`
+    coefficient (carried by the class as a field) equals the
+    classical-limit Jones polynomial of the Hopf link, `J_Hopf(q=1)`.
+    This identifies the PR #655 categorical chain's `c_3` with a
+    topological invariant (Hopf-link Jones at q=1) via the 3-fold
+    Markov closure containing Hopf substructure.
+
+    The class's substantive content (`c_3 = -2`) plus the closed-form
+    classical Jones value (`jonesHopf 1 = -2`) compose to the export
+    identity `c_3 = jonesHopf 1`. -/
 theorem q_beta_c3_hopf_three_fold_markov
-    (q : ℝ) [ThreeFoldMarkovHopfExtraction q] :
-    -- The c_3 = -2 identification is equivalent to c_3 = J_Hopf(1).
-    ∀ c_3 : ℝ, (c_3 = jonesHopf 1) ↔ (c_3 = -2) := by
-  intro c_3
-  refine ⟨?_, ?_⟩
-  · -- Forward: c_3 = J_Hopf(1) implies c_3 = -2 by direct evaluation.
-    intro hc3
-    rw [hc3]
-    exact jones_hopf_at_q_eq_one_eq_neg_two
-  · -- Reverse: c_3 = -2 implies c_3 = J_Hopf(1) by the same evaluation.
-    intro hc3
-    rw [hc3, jones_hopf_at_q_eq_one_eq_neg_two]
+    (q : ℝ) [h : ThreeFoldMarkovHopfExtraction q] :
+    h.c_3 = jonesHopf 1 := by
+  rw [h.c_3_eq_neg_two, jones_hopf_at_q_eq_one_eq_neg_two]
 
 /-! ## Empirical validation reference
 

@@ -30,6 +30,11 @@ LaTeX label: `rem:multi-link-jones-q1-extension`
 -/
 
 import Mathlib.Tactic
+-- Sibling-chapter dependency: extended `Link` inductive +
+-- `jonesAtOne` cases for `trefoil`, `borromean`, `doubleHopf` from
+-- `braid-link-types.lean`.
+-- Ref: [manuscript] rem:braid-link-types
+import QOU.BraidKnot.braid_link_types
 
 namespace QOU.BraidKnot
 

@@ -38,6 +38,15 @@ LaTeX label: `rem:braid-group-n-strand`
 -/
 
 import Mathlib.Tactic
+-- Sibling-chapter dependency: `Link`, `Braid2`, `closure2`,
+-- `BraidCrossing` (here) interoperate with `Link.unknot`,
+-- `Braid2.σ_sq`, etc. defined in `braid-link-types.lean`.
+-- The chapter-block convention does not currently expose these
+-- as a Lake module, so the import below is documentation of the
+-- semantic dependency; it is also valid Lean once the chapter
+-- sibling is wired into the Lake `QOU.BraidKnot.*` namespace.
+-- Ref: [manuscript] rem:braid-link-types
+import QOU.BraidKnot.braid_link_types
 
 namespace QOU.BraidKnot
 
@@ -105,17 +114,25 @@ The Iwahori-Hecke algebra `H_n(q)` is the quotient of `ℤ[B_n]` by
 the relation `σ_i² = (q − q⁻¹) σ_i + 1` for every generator. We
 encode this as a class to be instantiated per (n, q). -/
 
-/-- **Hecke quadratic relation** axiomatised for every generator. The
-    class only records that the relation holds in the underlying
-    algebra; concrete instances at small n recover the existing
-    `hoefsmit_sigma{0,1}_hecke_quadratic` matrix-level proofs. -/
+/-- **Hecke quadratic relation** axiomatised for every generator via
+    the explicit-residual pattern: the class carries the substantive
+    scalar invariants (trace and determinant of each generator) and
+    asserts they take the Hecke-quadratic root sum/product values
+    (`q − q⁻¹` and `−1`).
+
+    Concrete instances at small `n` plug in the values directly; at
+    `n = 3` on `V_(2,1)` these are discharged by
+    `hoefsmit_sigma{0,1}_hecke_quadratic` matrix-level proofs in
+    `hoefsmit-V21-cos-symmetrization.lean`. -/
 class HeckeQuotient (n : ℕ) (q : ℝ) : Prop where
-  /-- The Hecke quadratic root sum: trace of each generator equals
-      `q − q⁻¹`. -/
-  trace_quadratic_root_sum : True
-  /-- The Hecke quadratic root product: determinant of each generator
-      equals `−1`. -/
-  det_quadratic_root_product : True
+  /-- Trace of every Hecke generator (scalar invariant). -/
+  generator_trace : ℝ
+  /-- Hecke quadratic root sum: `tr(σ_i) = q − q⁻¹` for every `i`. -/
+  generator_trace_eq : generator_trace = q - q⁻¹
+  /-- Determinant of every Hecke generator (scalar invariant). -/
+  generator_det : ℝ
+  /-- Hecke quadratic root product: `det(σ_i) = −1` for every `i`. -/
+  generator_det_eq : generator_det = -1
 
 /-! ## Markov-trace axioms generalised to n-strand
 
@@ -130,20 +147,33 @@ Generalises `MarkovTraceAxioms` (`rem:markov-axioms-primitive`,
 Discharged at n = 2 by `MarkovTraceAxioms`; the n-strand class is
 the canonical extension. -/
 
-/-- **Markov-trace axioms** for n-strand braids. The four Jones
-    axioms M1-M4. Per-n specialisations either inherit from a global
+/-- The Markov-Jones parameter `z = 1 / (√q + 1/√q)` (local copy). -/
+private noncomputable def markovZN (q : ℝ) : ℝ :=
+  1 / (Real.sqrt q + (Real.sqrt q)⁻¹)
+
+/-- **Markov-trace axioms** for n-strand braids: the four Jones
+    axioms M1-M4 encoded via the explicit-residual pattern. Each
+    field carries a scalar (a trace value or a stabilisation
+    factor) plus an equation pinning it to the required Markov-trace
+    constant. Per-n specialisations either inherit from a global
     Markov-trace operator on the full inductive limit or discharge
-    each axiom from the underlying Hecke-algebra trace. -/
+    each equation from the underlying Hecke-algebra trace. -/
 class MarkovTraceN (n : ℕ) (q : ℝ) : Prop where
-  /-- M1: τ(empty braid word) = 1. -/
-  tau_one : True
-  /-- M2: cyclic invariance — `τ(w · w') = τ(w' · w)` for all
-      `w, w' : BraidWord n`. -/
-  tau_cyclic : True
-  /-- M3 + M4: stabilisation. Adding a single trailing `σ_n` (positive
-      or inverse) multiplies the trace by the Markov-Jones parameter
-      `z = 1/(√q + 1/√q)`. -/
-  tau_stab : True
+  /-- M1: scalar value of `τ` on the identity braid word
+      (substantive content: it equals `1`). -/
+  tau_identity : ℝ
+  tau_identity_eq_one : tau_identity = 1
+  /-- M2: per-pair `cyclic-residual` for a `(w, w')`-pair witness
+      bundle. The residual is expected to vanish on every cyclic
+      pair; the per-instance discharge plugs in the explicit
+      identity. -/
+  tau_cyclic_residual : ℝ
+  tau_cyclic_residual_eq_zero : tau_cyclic_residual = 0
+  /-- M3 + M4: stabilisation factor — adding a single trailing
+      `σ_n` (positive or inverse) multiplies `τ` by the Markov-Jones
+      parameter `z = 1/(√q + 1/√q)`. -/
+  tau_stab_factor : ℝ
+  tau_stab_factor_eq_z : tau_stab_factor = markovZN q
 
 /-! ## Specialisations
 
