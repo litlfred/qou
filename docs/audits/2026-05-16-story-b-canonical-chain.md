@@ -56,7 +56,7 @@ PR #670 (this branch) carries:
 - **H_12 ⁴He scaffold**: extends Sub-lemma 2.1 to ⁴He via three-fold
   iterated branching basis.  Independent of Story A/B.
 
-**No work on this branch contradicts Story B.**  My PR #661's c_2 = b²
+**No work on this branch contradicts Story B.**  PR #661's c_2 = b²
 proof IS Story B's c_2 step.
 
 ## What remains open under Story B

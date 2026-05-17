@@ -110,7 +110,7 @@ qpole and the cancellation are functions of $(Z, N)$ alone). ∎
    interface composition $(n_{pp}, n_{pn}, n_{nn})$.
 
 2. **Compositional ambiguity is finer than shift.** F1's compositional
-   probe (PR #654 + my PR #670 ⁴He compositional) showed that
+   probe (PR #654 + PR #670 ⁴He compositional) showed that
    different compositional decompositions of ⁴He give DIFFERENT
    topological closures (component counts 2, 4, 5) and DIFFERENT
    Markov-trace values. But they all have the same SHIFT — shift is
