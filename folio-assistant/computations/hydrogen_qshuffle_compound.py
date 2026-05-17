@@ -55,10 +55,13 @@ sys.path.insert(0, str(HERE))
 
 from _li_2_q_util import li_2_q as Li_2_q  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import M_E_MEV as _M_E_MEV  # noqa: E402
 
 mp.dps = 50
 
-M_E_MEV = mpf("0.51099895069")
+# P31 compliance: M_E_MEV from codata_constants (single source of truth).
+# M_H is the ¹H atomic mass — not in the canonical validation set.
+M_E_MEV = mpf(str(_M_E_MEV))
 M_H_CODATA_MEV = mpf("938.7830731")
 
 Q_WITNESS_PATH = HERE / "q-pinning-50-digit.witness.json"
@@ -78,7 +81,9 @@ def main() -> int:
     z_mark = mpf(1) / (mp.sqrt(q) + mp.sqrt(q_inv))
 
     per_gen = _load(PER_GEN_PATH)
-    results = per_gen["data"]["results"]
+    # Tolerate both data.results (modern) and top-level results (legacy)
+    # schemas — gemini #663 review guidance.
+    results = per_gen.get("data", {}).get("results") or per_gen.get("results", [])
     by_atom = {r["atom"]: r for r in results}
     proton_vols = [mpf(v["full"]) for v in by_atom["proton"]["wedderburn_vols"]]
     electron_vols = [mpf(v["full"]) for v in by_atom["electron"]["wedderburn_vols"]]

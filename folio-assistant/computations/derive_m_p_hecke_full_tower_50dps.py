@@ -139,9 +139,16 @@ def _t5_cat_units_for(A: int, Z: int, N: int) -> mp.mpf:
     return t5_MeV / M_E_MEV
 
 
+def _per_gen_results(w: dict) -> list:
+    """Extract the per-generator results list, tolerating both
+    ``data.results`` (modern) and top-level ``results`` (legacy)
+    witness schemas — gemini #663 review guidance."""
+    return w.get("data", {}).get("results") or w.get("results", [])
+
+
 def _t1_t2_t3_from_per_gen(per_gen_witness: dict, atom: str) -> tuple[mp.mpf, mp.mpf, mp.mpf, list[mp.mpf]]:
     """Extract T1 (descended) + T2 + T3 + raw V̂_i^full list for ``atom``."""
-    for r in per_gen_witness["data"]["results"]:
+    for r in _per_gen_results(per_gen_witness):
         if r.get("atom") != atom:
             continue
         vols = [mp.mpf(v["full"]) for v in r["wedderburn_vols"]]
@@ -218,6 +225,9 @@ def derive_full_tower(
 
 
 def main() -> int:
+    # P31 / centralization: per_gen_w is loaded here and the upstream
+    # hash is recorded via builder.add_upstream below — no duplicate
+    # filesystem read.
     per_gen_w, per_gen_hash = load_and_hash_upstream(PER_GEN_WITNESS)
     print(f"\n  MPFR @ {mp.mp.dps} dps")
     print(f"  Source: {PER_GEN_WITNESS.name}")
@@ -268,7 +278,9 @@ def main() -> int:
         "this truncation; closure of T5 / T6 for the electron at MPFR "
         "is the next research step."
     )
-    builder.add_upstream(PER_GEN_WITNESS)
+    # P31 / centralization (gemini #663): reuse the per_gen_hash
+    # already computed at top of main(), no duplicate filesystem read.
+    builder._upstream_hashes.append(per_gen_hash)
     builder.add_assertion(
         "m_p_within_1_percent",
         computed=str(rel_diff_p),

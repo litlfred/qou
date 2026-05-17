@@ -42,6 +42,11 @@ mp.mp.dps = 50
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 
+# P31 compliance: m_e from codata_constants module-level (single source).
+from codata_constants import M_E_MEV as _M_E_MEV_CONST  # noqa: E402
+M_E_MEV_MP = mp.mpf(str(_M_E_MEV_CONST))
+sys.path.insert(0, str(HERE))
+
 from witness_base import WitnessBuilder, load_and_hash_upstream  # noqa: E402
 
 SRC_PATH = HERE / "term6-residues-at-roots.witness.json"
@@ -76,11 +81,10 @@ def main() -> int:
         r = canonical[A]
         # The upstream value 'term6_at_q0_real' is in mass-formula
         # cat-units (dimensionless multiplier of m_e).  Convert to
-        # MeV by multiplying by m_e_MeV = 0.51099895.
+        # MeV by multiplying by the module-level M_E_MEV_MP (P31 compliant).
         cat_units = float(r["term6_at_q0_real"])
         # Use mpmath 50-dps str roundtrip to preserve precision.
-        m_e_MeV = mp.mpf("0.51099895")
-        t6_b_pred_MeV = m_e_MeV * mp.mpf(repr(cat_units))
+        t6_b_pred_MeV = M_E_MEV_MP * mp.mpf(repr(cat_units))
         out_rows.append({
             "atom":                  f"A={A}",
             "A":                     A,
@@ -122,7 +126,7 @@ def main() -> int:
     )
     w.set_audit_only("docs/audits/2026-05-16-t1-t4-tower-closure-plan.md")
     w.add_upstream(SRC_PATH)
-    w.add_parameter("m_e_MeV", "0.51099895")
+    w.add_parameter("m_e_MeV", str(M_E_MEV_MP))
     w.add_parameter("dps", mp.mp.dps)
     w.add_data("results_by_atom", out_rows)
     w.set_content_block("rem:term6-binding-density")

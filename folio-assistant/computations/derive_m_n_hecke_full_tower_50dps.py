@@ -106,7 +106,10 @@ OUT_PATH = HERE / "neutron-mass-full-tower-50dps.witness.json"
 def _sum_full_tower(per_gen_witness: dict, atom: str, Z: int, N: int) -> dict:
     """Sum T1+T2+T3+T4+T5 with categorical A (max GS filtration grade)."""
     A = _A_categorical(atom)
-    for r in per_gen_witness["data"]["results"]:
+    # Tolerate both data.results (modern) and top-level results (legacy)
+    # schemas — gemini #663 review guidance.
+    rows = per_gen_witness.get("data", {}).get("results") or per_gen_witness.get("results", [])
+    for r in rows:
         if r.get("atom") != atom:
             continue
         vols = [mp.mpf(v["full"]) for v in r["wedderburn_vols"]]
@@ -136,7 +139,9 @@ def _sum_full_tower(per_gen_witness: dict, atom: str, Z: int, N: int) -> dict:
 
 
 def main() -> int:
-    per_gen_w, _ = load_and_hash_upstream(PER_GEN_WITNESS)
+    # P31 / centralization: keep per_gen_hash for builder.add_upstream
+    # equivalent below — no duplicate filesystem read.
+    per_gen_w, per_gen_hash = load_and_hash_upstream(PER_GEN_WITNESS)
     print(f"\n  MPFR @ {mp.mp.dps} dps  —  m_n_pred from full tower (A_categorical)\n")
 
     n_data = _sum_full_tower(per_gen_w, "neutron",  Z=0, N=1)
@@ -180,7 +185,9 @@ def main() -> int:
         "Wedderburn-weighted single-generator volume vs the proton's "
         "uud). Documented; not patched."
     )
-    builder.add_upstream(PER_GEN_WITNESS)
+    # P31 / centralization (gemini #663): reuse per_gen_hash from
+    # main() entry, no duplicate filesystem read.
+    builder._upstream_hashes.append(per_gen_hash)
     builder.add_assertion(
         "m_n_within_2_percent",
         computed=str(mp.fabs(rel_diff_n)),

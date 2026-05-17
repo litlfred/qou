@@ -46,21 +46,21 @@ sys.path.insert(0, str(HERE))
 
 from _li_2_q_util import li_2_q as Li_2_q  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import M_E_MEV as _M_E_MEV, M_P_MEV_VALIDATION  # noqa: E402
 
 mp.dps = 50
 
-M_E_MEV = mpf("0.51099895069")  # CODATA 2018 electron rest mass
-M_P_CODATA_MEV = mpf("938.27208816")
+# P31 compliance: M_E_MEV and M_P imported from codata_constants (single
+# source of truth).  M_H is the ¹H atomic mass and is not in the canonical
+# CODATA validation set — kept as a local mpf literal.
+M_E_MEV = mpf(str(_M_E_MEV))
+M_P_CODATA_MEV = mpf(str(M_P_MEV_VALIDATION))
 M_H_CODATA_MEV = mpf("938.7830731")  # CODATA m(¹H_atomic), 2018
 BE_H_EV = mpf("13.605693")  # ¹H ionisation energy
 BE_H_MEV = BE_H_EV * mpf("1e-6")
 
 PROTON_TOWER = HERE / "proton-mass-full-tower-50dps.witness.json"
-
-
-def _load(path: Path) -> dict:
-    with path.open() as f:
-        return json.load(f)
+Q_WITNESS_PATH = HERE / "q-pinning-50-digit.witness.json"
 
 
 def main() -> int:
@@ -69,12 +69,16 @@ def main() -> int:
         print(f"  run derive_m_p_hecke_full_tower_50dps.py first")
         return 1
 
-    tower = _load(PROTON_TOWER)
+    # P31 / centralization (gemini #663): use WitnessBuilder.add_upstream
+    # to load each upstream witness and record its hash in a single call,
+    # replacing the previous private _load helper that bypassed the
+    # anti-staleness infrastructure.
+    w = (WitnessBuilder("hydrogen-step-by-step", engine="python+mpmath")
+         .set_description("Full ¹H mass step-by-step under canonical Li_2^q tower"))
+    tower = w.add_upstream(PROTON_TOWER)
+    q_wit = w.add_upstream(Q_WITNESS_PATH)
     p = tower["data"]["particles"]["proton"]
 
-    # q comes from upstream pinning; read from the canonical witness.
-    q_wit_path = HERE / "q-pinning-50-digit.witness.json"
-    q_wit = _load(q_wit_path)
     q_str = q_wit["derived_50_digit"]["q"]
     q = mpf(q_str)
     print("=" * 76)
@@ -164,8 +168,8 @@ def main() -> int:
     print()
 
     # === Witness emission ===
-    w = (WitnessBuilder("hydrogen-step-by-step", engine="python+mpmath")
-         .set_description("Full ¹H mass step-by-step under canonical Li_2^q tower"))
+    # WitnessBuilder w was created at top of main() so add_upstream could
+    # record the upstream hashes alongside the data load.
     w.add_data("convention", "paper canonical (Li_2^q, 2026-05-03 revision)")
     w.add_data("q_pinned", q_str)
     w.add_data("m_e_MeV_anchor", str(M_E_MEV))
