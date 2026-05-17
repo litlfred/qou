@@ -79,3 +79,6 @@ import QOU.Infra
 import QOU.Observations.AlgebraicGnsEmbedding
 import QOU.Observations.QCltNonCommutative
 import QOU.Observations.TraceLocalityMeetsGsNonLocality
+import QOU.Braiding.TrMHopfSigma1SqClosedForm
+import QOU.Information.HeckeLogDecomposition
+import QOU.MagicShell.DeltaCouplingSubstrateForm

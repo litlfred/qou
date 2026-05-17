@@ -57,7 +57,7 @@ $\log(1/\hbar_q(q_0)) \approx 2.312$.
 The numerical leading-form uses $\log(1/h(q_0)) \approx 1.565$
 instead. Relation: $h = q - q^{-1} = (q + 1)/q \cdot (q - 1) = (q + 1) \cdot \hbar_q$,
 so $\log(1/h) = \log(1/\hbar_q) - \log(q + 1)$. At $q_0$:
-$2.312 - 0.747 = 1.565$ ✓ exact.
+$2.312 - 0.747 = 1.565 (exact match).
 
 So:
 $$

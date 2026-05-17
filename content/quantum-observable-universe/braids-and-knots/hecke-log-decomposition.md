@@ -53,7 +53,7 @@ At the substrate parameter $q_0 \approx 1.10998$:
 | $\log(1/h(q_0))$ | $1.56513244670\ldots$ |
 | $\log(1/\hbar_q(q_0))$ | $2.31181024982\ldots$ |
 | $\log(1 + q_0)$ | $0.74667780313\ldots$ |
-| $\log(1/\hbar_q) - \log(1 + q_0)$ | $1.56513244670\ldots$ ✓ |
+| $\log(1/\hbar_q) - \log(1 + q_0)$ | $1.56513244670\ldots$ (matches) |
 
 The decomposition is verified to $10^{-50}$ via
 [`probe_delta_coupling_q_edgeworth.py`](folio-assistant/computations/probe_delta_coupling_q_edgeworth.py)
