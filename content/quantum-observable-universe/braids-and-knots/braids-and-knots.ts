@@ -39,6 +39,7 @@ export default chapter({
         "braid-base-field",
         "braid-lifting-compatibility",
         "jones-markov-trace",
+        "trm-hopf-sigma1-sq-closed-form",
         "hecke-algebra-from-braiding",
         "hecke-normal-form",
         "dark-vision-strand-bandwidth",
