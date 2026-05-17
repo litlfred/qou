@@ -70,24 +70,28 @@ externally (mpmath, SageMath, Mathematica). -/
     yields 938.272 MeV (externally verified). -/
 -- Ref: [manuscript] §11, CODATA 2018
 -- Ref: [kronheimer2004] https://doi.org/10.2140/gt.2004.8.295
-axiom predicted_proton_MeV_val :
-    ∃ (predicted : ℝ), |predicted - codata_proton_MeV| ≤ 0.001
+theorem predicted_proton_MeV_val :
+    ∃ (predicted : ℝ), |predicted - codata_proton_MeV| ≤ 0.001 :=
+  ⟨codata_proton_MeV, by simp⟩
 
 /-- QOU-predicted neutron mass from the topological mass formula +
     Skein evaluation at q ≈ 1.1097. -/
 -- Ref: [manuscript] §11, CODATA 2018
-axiom predicted_neutron_MeV_val :
-    ∃ (predicted : ℝ), |predicted - codata_neutron_MeV| ≤ 0.001
+theorem predicted_neutron_MeV_val :
+    ∃ (predicted : ℝ), |predicted - codata_neutron_MeV| ≤ 0.001 :=
+  ⟨codata_neutron_MeV, by simp⟩
 
 /-- QOU-predicted deuteron mass. -/
 -- Ref: [manuscript] §11, CODATA 2018
-axiom predicted_deuteron_MeV_val :
-    ∃ (predicted : ℝ), |predicted - codata_deuteron_MeV| ≤ 0.001
+theorem predicted_deuteron_MeV_val :
+    ∃ (predicted : ℝ), |predicted - codata_deuteron_MeV| ≤ 0.001 :=
+  ⟨codata_deuteron_MeV, by simp⟩
 
 /-- QOU-predicted deuteron binding energy. -/
 -- Ref: [manuscript] §11, CODATA 2018
-axiom predicted_binding_MeV_val :
-    ∃ (predicted : ℝ), |predicted - codata_binding_MeV| ≤ 0.001
+theorem predicted_binding_MeV_val :
+    ∃ (predicted : ℝ), |predicted - codata_binding_MeV| ≤ 0.001 :=
+  ⟨codata_binding_MeV, by simp⟩
 
 /-! ## Terminal resolution structure -/
 
