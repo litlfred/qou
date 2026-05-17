@@ -1,0 +1,94 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-17T04:14:47.780718+00:00",
+  "commitSha": "04121e1a2dfa009b988fc4666f45a376dd77a4de",
+  "assertions": [
+    {
+      "name": "identity_holds_per_atom",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true
+    },
+    {
+      "name": "p1_naive_prediction_fails",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "probe-rho-K-isotope-ratio-tautology",
+  "scriptFile": "probe_rho_K_isotope_ratio_tautology.py",
+  "scriptHash": "9255d82a47fc",
+  "scriptCommitSha": "unknown",
+  "description": "Test substantiveness of ρ_K isotope-ratio identity",
+  "data": {
+    "identity_check_per_atom": [
+      {
+        "atom": "p",
+        "paper_rho_K": "1723.6",
+        "computed_M_over_m_e_times_tr_M": "1723.6013314757272204062298819464428422612621228397",
+        "ratio": "1.0000007724969408333756265270053625216182769336503"
+      },
+      {
+        "atom": "n",
+        "paper_rho_K": "1991.6",
+        "computed_M_over_m_e_times_tr_M": "1991.6408538756688974976224644437340433081778128902",
+        "ratio": "1.0000205130928243108543997110081010460474883575468"
+      },
+      {
+        "atom": "D",
+        "paper_rho_K": "9453.0",
+        "computed_M_over_m_e_times_tr_M": "9452.6991380189311098984802376413216489405608791248",
+        "ratio": "0.99996817285718090657976094759772787992600876749442"
+      },
+      {
+        "atom": "T",
+        "paper_rho_K": "52828.5",
+        "computed_M_over_m_e_times_tr_M": "52804.238886184174471059693300661706035603815743249",
+        "ratio": "0.99954075709482901220098419036432429532551209561598"
+      },
+      {
+        "atom": "He3",
+        "paper_rho_K": "26609.2",
+        "computed_M_over_m_e_times_tr_M": "26614.460246378051418107419576410626999136013984774",
+        "ratio": "1.0001976852508926017357688159136925198478726900761"
+      }
+    ],
+    "pair_ratio_check_star_identity": [
+      {
+        "pair": "p/n",
+        "lhs": "0.86543482627033540871660976099618397268527816830689",
+        "rhs": "0.86541774242160909320583113615040348818297430480996",
+        "ratio_lhs_to_rhs": "1.0000197405806339393287804736203526641342332063098"
+      },
+      {
+        "pair": "T/He3",
+        "lhs": "1.9853471731581558258046089322489965876463779444703",
+        "rhs": "1.9840432004767136664903787785382933356192226931414",
+        "ratio_lhs_to_rhs": "1.0006572299842709316000281364506141157698528020434"
+      },
+      {
+        "pair": "D/p",
+        "lhs": "5.4844511487584126247389185425852866094221397075888",
+        "rhs": "5.4842723577647976794166865906725367980307806765229",
+        "ratio_lhs_to_rhs": "1.0000326006773463406970344340255415166931988692213"
+      },
+      {
+        "pair": "T/D",
+        "lhs": "5.5885433195810853697238971754998413202158045065059",
+        "rhs": "5.5861546120519743515599697633378223223454241421484",
+        "ratio_lhs_to_rhs": "1.0004276121401934431993522643780939442103988112253"
+      }
+    ],
+    "p1_substantive_attempt": {
+      "naive_prediction_m_n_from_tr_M_ratio": "1082.6918994800693240901213171577123050259965337955",
+      "codata_m_n": "939.565",
+      "residual_pct": "15.23331536190357496183034884842584653813163898139",
+      "verdict": "FAILS by 15.4% — ρ_K is not particle-universal"
+    },
+    "verdict": "TAUTOLOGY by definition of ρ_K (atomic-mass-gb-nf line 50-54). Earlier session statement 'ρ_K isotope ratios are naturally explained by |tr_M|' is NOT a substantive prediction — it follows trivially from algebra.  Walking back."
+  }
+}
