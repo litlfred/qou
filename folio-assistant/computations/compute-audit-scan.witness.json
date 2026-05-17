@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-17T06:45:32.944273+00:00",
-  "commitSha": "785e0b2d1a52a7e876be15657cc2c2fbe13dff42",
+  "computedAt": "2026-05-17T06:45:34.616472+00:00",
+  "commitSha": "a43e89520dcabef086205c0bedabaecceb15c0c8",
   "assertions": [],
   "allPassed": true,
   "durationMs": 7,
@@ -24,7 +24,7 @@
   },
   "data": {
     "by_pattern_count": {
-      "P15": 144,
+      "P15": 145,
       "P16": 89,
       "P21": 24,
       "P30": 96,
@@ -630,6 +630,13 @@
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P15",
+        "file": "deuteron_tr_M_symbolic.py",
+        "line": 127,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P30",
