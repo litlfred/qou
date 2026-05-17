@@ -1,13 +1,21 @@
 {
   "audit": "trivial-skeleton-audit",
-  "generated": "2026-05-16T02:36:39.938Z",
-  "total_flagged": 2,
-  "files_flagged": 2,
+  "generated": "2026-05-17T02:58:47.582Z",
+  "total_flagged": 3,
+  "files_flagged": 3,
   "patterns": {
+    "one_def": 1,
     "prop_true": 1,
     "const_zero": 1
   },
   "flagged": {
+    "braids-and-knots/braid-link-types.lean": [
+      {
+        "line": 66,
+        "pattern": "one_def",
+        "snippet": "def Braid2.σ : Braid2 := 1"
+      }
+    ],
     "braids-and-knots/brane-tower-z-habiro.lean": [
       {
         "line": 276,

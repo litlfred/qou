@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-17T00:33:04.589340+00:00",
-  "commitSha": "eea1d6591c7da5f92d48602e4165c632635b7022",
+  "computedAt": "2026-05-17T02:28:32.095235+00:00",
+  "commitSha": "b9b0cd86503cff7844daffadfe35a369404dac65",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2215,6 +2215,7 @@
         "hh-trefoil-corrected.witness.json",
         "hh-vertex-volume.witness.json",
         "hyperbolic-volumes.witness.json",
+        "inter-knot-decoupling.witness.json",
         "interface-type-resolved-coupling-probe.witness.json",
         "intermediate-knot-detection.witness.json",
         "inverse-markov-qvalues.witness.json",
@@ -2352,8 +2353,10 @@
         "q-beta-1d-irrep-universal-closed-form.witness.json",
         "q-beta-c2-categorical-proof.witness.json",
         "q-beta-c5-c6-multilink.witness.json",
+        "q-beta-cat-per-factor-decomposition.witness.json",
         "q-beta-cos-sweep-three-irrep.witness.json",
         "q-beta-form-a-n1-extension.witness.json",
+        "q-beta-gamma-gamma-derivation.witness.json",
         "q-beta-high-precision-ck.witness.json",
         "q-beta-operator-valued-N1.witness.json",
         "q-beta-operator-valued-N2.witness.json",

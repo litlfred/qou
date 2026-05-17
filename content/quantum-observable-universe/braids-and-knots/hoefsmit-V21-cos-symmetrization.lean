@@ -71,6 +71,84 @@ theorem hoefsmit_sigma0_hecke_quadratic (q : ℝ) (hq : q ≠ 0) :
           Fin.sum_univ_succ, Fin.sum_univ_zero] <;>
     field_simp
 
+/-! ## Hecke quadratic identity on σ_1 (off-diagonal Hoefsmit matrix)
+
+By Cayley-Hamilton on a 2×2 matrix `M = !![a, b; c, d]`,
+`M² = (a + d) · M + (b·c − a·d) · I = tr(M) · M − det(M) · I`.
+
+For `σ_1 = !![d_1, b; b, d_2]` with `b² = d_1·d_2 + 1`:
+  - `tr(σ_1) = d_1 + d_2 = q − q⁻¹`           (Hecke quadratic root sum)
+  - `det(σ_1) = d_1·d_2 − b² = −1`            (Hecke quadratic root product)
+  - hence `σ_1² = (q − q⁻¹) · σ_1 + I`        (matrix Hecke quadratic)
+-/
+
+/-- Auxiliary closed form: `b² = (q⁴ + q² + 1) / (q² + 1)²`. -/
+lemma hoefsmit_b_sq_closed_form (q : ℝ) (hq : q ≠ 0) :
+    hoefsmit_b_sq q = (q^4 + q^2 + 1) / (q^2 + 1)^2 := by
+  unfold hoefsmit_b_sq hoefsmit_d1 hoefsmit_d2
+  have hq2 : (q^2 + 1 : ℝ) ≠ 0 := by positivity
+  field_simp
+  ring
+
+/-- `b² ≥ 0` (so `sqrt(b²)² = b²` cleanly). -/
+lemma hoefsmit_b_sq_nonneg (q : ℝ) (hq : q ≠ 0) :
+    0 ≤ hoefsmit_b_sq q := by
+  rw [hoefsmit_b_sq_closed_form q hq]
+  have h_num : (0 : ℝ) ≤ q^4 + q^2 + 1 := by positivity
+  have h_den : (0 : ℝ) < (q^2 + 1)^2 := by positivity
+  exact div_nonneg h_num (le_of_lt h_den)
+
+/-- Trace of σ_1: `tr(σ_1) = d_1 + d_2 = q − q⁻¹`. -/
+-- Ref: [manuscript] prop:hoefsmit-V21-cos-symmetrization §"σ_1 trace"
+-- Ref: [hoefsmit1974] (Hoefsmit's PhD thesis, seminormal form)
+theorem hoefsmit_sigma1_trace_eq (q : ℝ) (hq : q ≠ 0) :
+    Matrix.trace (hoefsmit_sigma1 q) = q - q⁻¹ := by
+  unfold hoefsmit_sigma1 hoefsmit_d1 hoefsmit_d2
+  have hq2 : (q^2 + 1 : ℝ) ≠ 0 := by positivity
+  simp [Matrix.trace, Fin.sum_univ_succ, Fin.sum_univ_zero]
+  field_simp
+  ring
+
+/-- Determinant of σ_1: `det(σ_1) = d_1·d_2 − b² = −1`. -/
+-- Ref: [manuscript] prop:hoefsmit-V21-cos-symmetrization §"σ_1 determinant"
+-- Ref: [hoefsmit1974] (Hoefsmit's PhD thesis, seminormal form)
+theorem hoefsmit_sigma1_det_eq (q : ℝ) (hq : q ≠ 0) :
+    Matrix.det (hoefsmit_sigma1 q) = -1 := by
+  unfold hoefsmit_sigma1
+  -- det of 2x2: a·d − b·c.  For !![d_1, sqrt b²; sqrt b², d_2]:
+  --   det = d_1·d_2 − (sqrt b²)² = d_1·d_2 − b²   (b² ≥ 0)
+  -- Using b² = d_1·d_2 + 1:   det = d_1·d_2 − (d_1·d_2 + 1) = −1.
+  rw [Matrix.det_fin_two]
+  simp only [Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.head_cons,
+             Matrix.head_fin_const]
+  rw [Real.mul_self_sqrt (hoefsmit_b_sq_nonneg q hq)]
+  unfold hoefsmit_b_sq
+  ring
+
+/-- σ_1's off-diagonal action squares to the Hecke quadratic identity at the
+    matrix level: `M² = (q − q⁻¹) · M + I`. -/
+-- Ref: [manuscript] prop:hoefsmit-V21-cos-symmetrization §"σ_1 Hecke quadratic"
+-- Ref: [hoefsmit1974] (Hoefsmit's PhD thesis, seminormal form)
+theorem hoefsmit_sigma1_hecke_quadratic (q : ℝ) (hq : q ≠ 0) :
+    hoefsmit_sigma1 q * hoefsmit_sigma1 q
+      = (q - q⁻¹) • hoefsmit_sigma1 q + (1 : Matrix (Fin 2) (Fin 2) ℝ) := by
+  -- Compute both sides entry-wise. The off-diagonal `b = sqrt(b²)`
+  -- squared becomes `b²` via `Real.mul_self_sqrt` (using `b² ≥ 0`).
+  -- All four entry equalities then reduce to rational identities in `q`.
+  unfold hoefsmit_sigma1 hoefsmit_d1 hoefsmit_d2
+  have hq2 : (q^2 + 1 : ℝ) ≠ 0 := by positivity
+  have hb_sq_nn : 0 ≤ hoefsmit_b_sq q := hoefsmit_b_sq_nonneg q hq
+  have hb_sq_eq : hoefsmit_b_sq q = (q^4 + q^2 + 1) / (q^2 + 1)^2 :=
+    hoefsmit_b_sq_closed_form q hq
+  ext i j
+  fin_cases i <;> fin_cases j <;>
+    simp [Matrix.mul_apply, Matrix.smul_apply, Matrix.add_apply,
+          Matrix.one_apply, Fin.sum_univ_succ, Fin.sum_univ_zero,
+          Real.mul_self_sqrt hb_sq_nn, hb_sq_eq, hoefsmit_d1,
+          hoefsmit_d2, hoefsmit_b_sq] <;>
+    field_simp <;>
+    ring
+
 /-! ## Single-wrap eigenphase identification
 
 This corresponds to the spectral content of `prop:beta-decay-transfer-matrix`:
@@ -143,19 +221,34 @@ theorem hoefsmit_V21_symmetrization_even (q : ℝ) (trace_unsym : ℝ) :
 
 -- Ref: [manuscript] prop:hoefsmit-V21-cos-symmetrization
 /-- **Hoefsmit V_(2,1) cos symmetrization (canonical export).** Bundles the
-    Hoefsmit matrix definitions, the Hecke quadratic identity on σ_0,
-    and the Markov-symmetrized character closed form. -/
+    Hoefsmit matrix definitions, the Hecke quadratic identity on BOTH
+    σ_0 (diagonal) and σ_1 (off-diagonal), the trace + determinant
+    closed forms for σ_1, and the Markov-symmetrized character closed
+    form on V_(2,1). -/
 theorem hoefsmit_V21_cos_symmetrization (q : ℝ) (hq : q ≠ 0) [V21Eigenphase q] :
     -- σ_0 satisfies the Hecke quadratic
     (hoefsmit_sigma0 q * hoefsmit_sigma0 q
        = (q - q⁻¹) • hoefsmit_sigma0 q + (1 : Matrix (Fin 2) (Fin 2) ℝ))
     ∧
+    -- σ_1 satisfies the Hecke quadratic
+    (hoefsmit_sigma1 q * hoefsmit_sigma1 q
+       = (q - q⁻¹) • hoefsmit_sigma1 q + (1 : Matrix (Fin 2) (Fin 2) ℝ))
+    ∧
+    -- σ_1 trace = q − q⁻¹
+    (Matrix.trace (hoefsmit_sigma1 q) = q - q⁻¹)
+    ∧
+    -- σ_1 determinant = −1
+    (Matrix.det (hoefsmit_sigma1 q) = -1)
+    ∧
     -- Markov-symmetrized character is the unsymmetrized trace times cos α
     (∀ trace_unsym : ℝ,
        markovSymmetrizedV21Character q trace_unsym
          = trace_unsym * Real.cos (eigenphase q)) := by
-  refine ⟨?_, ?_⟩
+  refine ⟨?_, ?_, ?_, ?_, ?_⟩
   · exact hoefsmit_sigma0_hecke_quadratic q hq
+  · exact hoefsmit_sigma1_hecke_quadratic q hq
+  · exact hoefsmit_sigma1_trace_eq q hq
+  · exact hoefsmit_sigma1_det_eq q hq
   · intro trace_unsym
     exact hoefsmit_V21_markov_symmetrized_character q trace_unsym
 
