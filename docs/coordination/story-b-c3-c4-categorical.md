@@ -346,3 +346,56 @@ chi-deuteron-h6.witness.json cache.
 
 **Coordination posts:**
 - Round 6 on PR #664: https://github.com/litlfred/qou/pull/664#issuecomment-4469536436
+
+## 2026-05-17 round 7 — cross-anchor falsification + framework alignment
+
+### Δ_coupling cross-anchor falsification (probe_delta_coupling_cross_anchor.py)
+
+User direction: "do as recommended" (recompute Δ_cat for p, n from
+main's infra). Result: **falsifies the pp-nn correlation hypothesis**
+shipped earlier on PR #671.
+
+  Anchor     Predicted   Extracted    Gap        Verdict
+  (2,2) DM   13.1945     13.1969      -0.018%    ★ confirmed
+  (2,1) SM    6.5516      6.0252      +8.737%    ⚠ FALSIFIED
+  (1,2) SM    6.5516      6.8211      -3.950%    ⚠ FALSIFIED
+
+The doubly-magic 0.04% match was COINCIDENCE. 3-anchor system implies:
+  pp_term ≈ -0.526 MeV, nn_term ≈ +0.270 MeV, corr ≈ +0.351 MeV.
+The Z↔N asymmetry +0.796 MeV between (1,2) and (2,1) is real and
+needs to be explained by channel-specific substrate primitives, not
+the symmetric (A-2)·E_0·log(1/h) leading form.
+
+### Habiro residue at A=1 (probe_habiro_residue_a1.py)
+
+User direction: "3 y" (m_p chain Item C). Result: **CONFIRMS T6
+small** — the cached tr_M(β_atomic, q_0) IS the Habiro-resummed
+value; no separate "residue tail" to add. The T6 ~ 0.68·m_e quarantined
+in derive_m_p_hecke_path_a refers to a small-q expansion tail, bounded
+by ~0.3 MeV. Item C alone CANNOT close the 1571× m_p chain shortfall.
+
+This narrows the remaining m_p gap to Items A (T2+T3 reformulation
+at A=1) and B (T5 categorical attribution).
+
+### MarkovTrace abstraction divergence — coordination needed
+
+Posted on PR #664: my MarkovTraceTower class (HnMarkovTrace.lean)
+diverges from PR #664's hecke-mass-trace.lean structure. Three
+options laid out:
+  (1) PR #664 canonical, mine wraps
+  (2) PR #671 canonical, theirs instantiates
+  (3) Both, different purposes (mass formula vs stabilisation-invariance)
+
+Awaiting response from PR #664 author. Posted at:
+  https://github.com/litlfred/qou/pull/664#issuecomment-4472407349
+
+### Queued for after PR #671 merges
+
+  Reformulate Δ_coupling per knot-fusion-step1-audit's operator-
+  valued Wenzl branching framework (per user "1 see work on claude/
+  knot-fusion-step1-audit"). The non-scalar A^λ_{μ,ν}(I) operators
+  capture the Z↔N asymmetry my symmetric hypothesis missed.
+
+  Genuine V_(2,2,2) projection probe for c_3 (Phase 2'). Closes PR
+  #664's c_3 gap independently of mass-formula reformulation.
+
