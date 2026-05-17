@@ -99,7 +99,13 @@ def main() -> int:
     print("  Impact on Strategy-3 M_pred[D] if Δ_I = 0.1904 replaces fallback 1.0")
     print("─" * 100)
 
-    # Load Strategy-3 components
+    # Load legacy Strategy-3 components for the Class-C diagnostic.
+    # P4‴ note: this script back-fits E_0 via the proton anchor only
+    # to expose the Δ_I anomaly at A=2 (see banner below); it relies on
+    # legacy-only fields (`term1_atomic_total`, `term6_cyclotomic_tail_MeV`,
+    # `total_hecke`) which are not in the canonical ρ_K witness.
+    # Canonical mass predictions live in `atomic-mass-via-rho-k.witness.json`;
+    # this script remains a legacy-witness consumer by design.
     here = Path(__file__).parent
     s3_path = here / "atomic-braid-mass-table.witness.json"
     s3 = json.loads(s3_path.read_text())

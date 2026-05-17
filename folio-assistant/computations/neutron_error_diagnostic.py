@@ -105,7 +105,11 @@ def main() -> int:
     w = WitnessBuilder("neutron-error-diagnostic", engine="python")
     w.set_audit_only("docs/audits/2026-05-09-mass-table-1ppb-audit.md")
 
-    # Load the canonical mass-table witness.
+    # Load the legacy mass-table witness (six-term decomposition).
+    # P4‴ note: this diagnostic specifically probes the legacy E_0
+    # single-anchor calibration and its `total_hecke` /
+    # `term6_cyclotomic_tail_MeV` fields, which are legacy-only.
+    # Canonical mass predictions are in `atomic-mass-via-rho-k.witness.json`.
     here = Path(__file__).parent
     witness_path = here / "atomic-braid-mass-table.witness.json"
     with open(witness_path) as f:

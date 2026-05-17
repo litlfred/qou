@@ -88,7 +88,17 @@ def main() -> int:
     print("ITEM 3 — Compound binding energies via LP-dual differences")
     print("=" * 100)
 
-    # Load Strategy-3 atomic-braid mass-table witness
+    # Load legacy Strategy-3 atomic-braid mass-table witness.
+    # P4‴ note (`docs/coordination/1ppb.md`): this script is an
+    # **audit/diagnostic consumer** of the *legacy six-term decomposition*
+    # (term1_atomic_total, term2_markov_z2, term3_markov_z4,
+    # term4_frobenius_codim, term6_cyclotomic_tail_MeV). Those per-term
+    # fields exist only in the legacy witness; the canonical ρ_K path
+    # (`atomic-mass-via-rho-k.witness.json`) emits per-atom `M_pred_MeV`
+    # / `err_pct` only, since the resolved formula
+    # `M(K) = ρ_K · m_e · |tr_M(K)|` does not have an additive six-term
+    # structure. This script remains a legacy consumer by design;
+    # for **mass predictions** use the canonical witness instead.
     here = Path(__file__).parent
     s3_path = here / "atomic-braid-mass-table.witness.json"
     if not s3_path.exists():
