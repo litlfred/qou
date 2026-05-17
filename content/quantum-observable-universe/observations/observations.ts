@@ -82,6 +82,8 @@ export default chapter({
         "pair-skein-mass-formula-proof",
         "nucleon-mass-splitting",
         "nucleon-mass-splitting-proof",
+        "flavor-split-substrate",
+        "flavor-split-substrate-proof",
         "deuteron-binding-energy",
         "deuteron-binding-energy-proof",
         "terminal-resolution-proof",
