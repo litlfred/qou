@@ -111,8 +111,30 @@ def plancherel_weight(shape: tuple[int, ...]) -> float:
     return f * f / factorial(n)
 
 
-# Atomic braid words (mirror atomic_braid_gb_filtration_extension)
+# Atomic braid words (mirror atomic_braid_gb_filtration_extension).
+# A=1 entries added 2026-05-17: the proton/neutron Hecke-coefficient
+# chains in build_particle_crossings include a Wedderburn-MIDDLE
+# (c=1, d=-h/2) "ud-quark" coupling that diverges at q→0 (since
+# h = q − q⁻¹ → −∞), so T7's crystal-χ_λ cannot consume that
+# entry directly.  The pure-Artin SKELETON (dropping ud-middle
+# entries, mapping (1, 0) → +gen, (1, -h) → -gen) is computed
+# below; this is an UNDER-APPROXIMATION of the full T7, but the
+# best closed-form available without generalising crystal_chi_lambda
+# to weighted (c, d) chains.
 ATOMS = [
+    # A=1 atoms — pure-Artin skeleton of the per-gen chain in
+    # `build_particle_crossings` (terms_2_3_atom_per_gen_mpfr_50dps.py
+    # lines 195-218).  ud-middle entries (no q=0 limit) dropped.
+    #
+    # proton  gen 0: σ_1×3 (B₃) + σ_1 (uu) + [ud skip] + σ_1×2 (gluon)
+    #         gen 1: σ_2⁻¹×3 (B₃) + [ud skip]
+    ("proton",   1, 3, [1, 1, 1, 1, 1, 1, -2, -2, -2]),
+    # neutron gen 0: σ_1×3 (B₃) + σ_1⁻¹ (dd) + [ud skip] + σ_1×2
+    #         gen 1: σ_2⁻¹×3 (B₃) + [ud skip]
+    ("neutron",  1, 3, [1, 1, 1, -1, 1, 1, -2, -2, -2]),
+    # electron 2-strand trefoil σ_1³ — no ud-middle to skip
+    ("electron", 0, 2, [1, 1, 1]),
+    # A≥2 entries (unchanged) — pure-Artin atomic words
     ("D",   2, 6,  [1, 2, -1, 4, -5, 4]),
     ("³He", 3, 9,  [1, 2, -1, 4, 5, -4, 7, -8, 7]),
     ("T",   3, 9,  [1, 2, -1, 4, -5, 4, 7, -8, 7]),

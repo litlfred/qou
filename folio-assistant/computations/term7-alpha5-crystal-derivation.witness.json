@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-09T01:30:59.189455+00:00",
-  "commitSha": "bc3f32d254e5eb7152195f092ed4a487a1929fad",
+  "computedAt": "2026-05-17T02:23:07.688582+00:00",
+  "commitSha": "37b299b65e7c3cae50fc533325dd3b585de7b8d7",
   "assertions": [
     {
       "name": "S_crystal_4He_isobar_independent",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 17,
+  "durationMs": 18,
   "computation": "term7-alpha5-crystal-derivation",
   "scriptFile": "term7_alpha5_crystal_derivation.py",
-  "scriptHash": "ec2d1998f5e1",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "abe708d40ffc",
+  "scriptCommitSha": "cccb6415cf4232ccbbf3ebbf8b9af063b6ff793d",
   "description": "v3 #2 (DERIVE not fit, per user direction): structural crystal-side prediction for Term 7's shell-correction sum S(A) = Σ_λ w_λ(q=1) · χ_λ_crystal(β_atom). No free parameter — agreement / disagreement with AME-observed α_5 is a flat-transport check on the q→0 → q_0 connection.",
   "auditOnly": "docs/audits/2026-05-09-refocused-1ppb-workplan-v3.md",
   "data": {
@@ -31,6 +31,119 @@
       "atomic_braid_words": "atomic_braid_gb_filtration_extension"
     },
     "atoms": [
+      {
+        "atom": "proton",
+        "A": 1,
+        "n_strands": 3,
+        "word": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          -2,
+          -2,
+          -2
+        ],
+        "n_height_6_partitions": 3,
+        "S_crystal_at_q_zero": 0.0,
+        "nonzero_contributions": [
+          {
+            "lambda": [
+              3
+            ],
+            "f_lambda": 1,
+            "w_plancherel": 0.16666666666666666,
+            "chi_crystal": 1,
+            "contribution": 0.16666666666666666
+          },
+          {
+            "lambda": [
+              1,
+              1,
+              1
+            ],
+            "f_lambda": 1,
+            "w_plancherel": 0.16666666666666666,
+            "chi_crystal": -1,
+            "contribution": -0.16666666666666666
+          }
+        ]
+      },
+      {
+        "atom": "neutron",
+        "A": 1,
+        "n_strands": 3,
+        "word": [
+          1,
+          1,
+          1,
+          -1,
+          1,
+          1,
+          -2,
+          -2,
+          -2
+        ],
+        "n_height_6_partitions": 3,
+        "S_crystal_at_q_zero": 0.0,
+        "nonzero_contributions": [
+          {
+            "lambda": [
+              3
+            ],
+            "f_lambda": 1,
+            "w_plancherel": 0.16666666666666666,
+            "chi_crystal": 1,
+            "contribution": 0.16666666666666666
+          },
+          {
+            "lambda": [
+              1,
+              1,
+              1
+            ],
+            "f_lambda": 1,
+            "w_plancherel": 0.16666666666666666,
+            "chi_crystal": -1,
+            "contribution": -0.16666666666666666
+          }
+        ]
+      },
+      {
+        "atom": "electron",
+        "A": 0,
+        "n_strands": 2,
+        "word": [
+          1,
+          1,
+          1
+        ],
+        "n_height_6_partitions": 2,
+        "S_crystal_at_q_zero": 0.0,
+        "nonzero_contributions": [
+          {
+            "lambda": [
+              2
+            ],
+            "f_lambda": 1,
+            "w_plancherel": 0.5,
+            "chi_crystal": 1,
+            "contribution": 0.5
+          },
+          {
+            "lambda": [
+              1,
+              1
+            ],
+            "f_lambda": 1,
+            "w_plancherel": 0.5,
+            "chi_crystal": -1,
+            "contribution": -0.5
+          }
+        ]
+      },
       {
         "atom": "D",
         "A": 2,
