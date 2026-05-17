@@ -133,8 +133,14 @@ def derive_m_p_hecke() -> dict:
     t4 = mp.mpf(str(row.get("term4_frob_canonical_per_3A")
                     or row.get("term4_frob_per_vortex")))
     # Item A: T2+T3 now loaded; flagged near-pole pending #682 Li₂^q.
-    t2_single = mp.mpf(str(row.get("term2_single", 0)))
-    t3_pair = mp.mpf(str(row.get("term3_pair", 0)))
+    # Use `or "0"` coalesce (not the dict-default) — dict.get's
+    # default doesn't trigger when the key is PRESENT with value
+    # `None` (which the witness emits for atoms in "near-pole" status
+    # — same defensive pattern as t5/t6 below).  Per gemini PR #684:
+    # T2_single / T3_pair are SIGNED (not abs'd) per the Laurent-form
+    # Vol_q^tower convention; only the product term wraps in abs.
+    t2_single = mp.mpf(str(row.get("term2_single") or "0"))
+    t3_pair = mp.mpf(str(row.get("term3_pair") or "0"))
     t23_err = row.get("term23_error") or "(none — Item A closed 2026-05-17)"
 
     t5 = mp.mpf(str(row.get("term5_chirality_bw") or "0"))
