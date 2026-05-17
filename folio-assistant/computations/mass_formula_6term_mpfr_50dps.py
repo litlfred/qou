@@ -188,37 +188,76 @@ def _load_mpfr_native_volumes(Z: int, N: int) -> list[mp.mpf]:
     )
 
 
-def term_23_brane_tower_mp(Z: int, N: int) -> tuple[mp.mpf, mp.mpf]:
-    """Terms 2 + 3: Σ_i Φ_q(|V̂_i|) + z² · Σ_{i<j} Φ_q(|V̂_i V̂_j|).
+def term_23_brane_tower_mp(
+    Z: int, N: int, *, tower_form: str = "li2q",
+) -> tuple[mp.mpf, mp.mpf]:
+    """Terms 2 + 3 of the unified mass formula.
+
+    Two tower-function forms are supported, selected by `tower_form`:
+
+      - ``"li2q"`` (default, since #675/this PR): the **bounded
+        symmetric q-dilogarithm** form
+        ``Σ_i (−Li_2^q(−|V̂_i|)) + z² · Σ_{i<j} (−Li_2^q(−|V̂_i V̂_j|))``
+        per [`prop:mass-endomorphism-tower`](../../content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.md)
+        lines 162–183. Bounded for |V| < 1; matches the Kashaev
+        integration identity `∫_0^V (ln_q(1+t)/t) dt = -Li_2^q(-V)`.
+        Empirically validated in PR #675's probe: T2+T3 at tritium
+        within 1% of AME binding (vs Φ_q's megaelectronvolt-divergent
+        values).
+      - ``"phi_q"`` (legacy, retained for cross-check / regression
+        testing): the **divergent Faddeev** form
+        ``Σ_i Φ_q(|V̂_i|) + z² · Σ_{i<j} Φ_q(|V̂_i V̂_j|)``. Diverges
+        as |V| → 1; consumers using this form should check for
+        `mp.inf` results.
 
     Per-generator volumes are loaded from the MPFR-native witness
     `terms-2-3-atom-per-gen-mpfr-50dps.witness.json` (NOT from
     `hecke_core.atom_per_generator_volumes`, which is f64-based).
     Term 3 sums over **all pairs** i<j (not adjacent-only).
-    Divergent contributions (Φ_q = +∞) propagate to the result —
-    they signal real pole hits, not silent failures.
 
-    Returns (single, pair).  Either may be `mp.inf` if any
-    generator/pair magnitude reaches the Φ_q convergence boundary.
+    Returns (single, pair). With ``tower_form="li2q"`` both are
+    finite for all atom braids. With ``tower_form="phi_q"`` either
+    may be `mp.inf` if a generator/pair magnitude reaches the
+    Φ_q convergence boundary.
     """
+    if tower_form not in ("li2q", "phi_q"):
+        raise ValueError(
+            f"term_23_brane_tower_mp: unknown tower_form {tower_form!r}; "
+            "expected 'li2q' or 'phi_q'"
+        )
     vols_mp = _load_mpfr_native_volumes(Z, N)
     z_mp = mp.mpf(repr(z_mark))
 
+    if tower_form == "li2q":
+        # Lazy import keeps the legacy Φ_q path zero-dependency on
+        # the derived_masses module.
+        from derived_masses import li2q_symmetric
+        from q_parameter import Q as Q_0_FLOAT
+        q0 = mp.mpf(repr(Q_0_FLOAT))
+
+        def tower_fn(x: mp.mpf) -> mp.mpf:
+            # -Li_2^q(-|x|) — bounded analog of Φ_q(|x|) per the
+            # Kashaev specialisation (prop:mass-endomorphism-tower).
+            return -li2q_symmetric(-mp.fabs(x), q0)
+    else:  # tower_form == "phi_q"
+        def tower_fn(x: mp.mpf) -> mp.mpf:
+            return mp_Phi_q(mp.fabs(x))
+
     single = mp.mpf(0)
     for v in vols_mp:
-        phi = mp_Phi_q(mp.fabs(v))
-        if mp.isinf(phi):
+        val = tower_fn(v)
+        if mp.isinf(val):
             return mp.inf, mp.mpf(0)
-        single += phi
+        single += val
 
     pair = mp.mpf(0)
     n = len(vols_mp)
     for i in range(n):
         for j in range(i + 1, n):
-            phi = mp_Phi_q(mp.fabs(vols_mp[i] * vols_mp[j]))
-            if mp.isinf(phi):
+            val = tower_fn(vols_mp[i] * vols_mp[j])
+            if mp.isinf(val):
                 return single, mp.inf
-            pair += phi
+            pair += val
     pair *= z_mp ** 2
     return single, pair
 
