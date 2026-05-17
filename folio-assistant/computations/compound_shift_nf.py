@@ -85,8 +85,31 @@ def shift_nf_atomic_closed_form(Z: int, N: int) -> int:
     The +18 per proton and +21 per neutron are per-NEW-nucleon
     contributions in the embedded H_{3A} context; the +1 is the single
     mixed (p, n) interface from canonical pppnnn ordering.
+
+    Categorically derived in PR #668 via the crystal-bases q-pole
+    counter + Habiro convention bridge — see
+    `crystal_shift_nf_atomic.habiro_shift_via_crystal`.  This module
+    function returns the closed form directly for pipeline use; the
+    crystal-bases derivation is the categorical proof.
     """
     return 18 * Z + 21 * N + 1
+
+
+def shift_nf_atomic_via_crystal(Z: int, N: int) -> int:
+    """Categorical re-derivation of shift(Z, N) via crystal-bases.
+
+    Delegates to crystal_shift_nf_atomic.habiro_shift_via_crystal:
+      Habiro u-shift = 2 · (q-pole(tr_M) − (3Z + 1.5N − 1.5))
+                     = 18Z + 21N + 1
+
+    Identical numerical result to shift_nf_atomic_closed_form, but
+    via the categorical-derivation path (PR #668) rather than the
+    empirical-induction closed form (PR #539).  Useful as a
+    cross-check / for pipeline scripts that want explicit
+    categorical provenance.
+    """
+    from crystal_shift_nf_atomic import habiro_shift_via_crystal
+    return habiro_shift_via_crystal(Z, N)
 
 
 ATOMS_TO_VERIFY: list[tuple[int, int, str]] = [
