@@ -19,4 +19,12 @@ export default remark({
     "rem:nucleon-nf-observability",
     "prop:beta-decay-transfer-matrix",
   ],
+  computation: {
+    engine: "sympy",
+    script: "folio-assistant/computations/q_beta_form_a_n1_extension.py",
+    witness: [
+      "folio-assistant/computations/q-beta-form-a-n1-extension.witness.json",
+    ],
+    status: "experimental",
+  },
 });

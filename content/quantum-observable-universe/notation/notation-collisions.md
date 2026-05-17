@@ -9,6 +9,25 @@ paper to keep them disambiguated:
   elliptic curve. Use $\mathcal{S}_p$, $\mathbf{E}$, or $\mathcal{E}_q$
   respectively. $E_{\mathfrak{H}}$ (with hadron subscript) is allowed
   for crossing energy.
+- **$\mathbf{E}_0$ vs $Q_\beta(n)$** — two distinct hadronic-sector
+  scalars that have been historically conflated in Python compute
+  scripts (see [`folio-assistant/computations/binding_canonical.py`](../../../folio-assistant/computations/binding_canonical.py)
+  history). They are **not interchangeable**:
+    - $\mathbf{E}_0$ = **hadronic energy scale**, framework-derived as
+      $\mathbf{E}_0^{(N=0)} = m_e/(q_0(q_0-1)) \approx 4.186$ MeV (CAL-1
+      and CAL-2 only); the tower-summed form is
+      $\mathbf{E}_0^{\text{full}} = \mathbf{E}_0^{(N=0)}/(1-\hbar_q^2)
+      \approx 4.228$ MeV. Sets the MeV-per-dimensionless-trace-unit
+      conversion for hadronic predictions.
+    - $Q_\beta(n) = 0.78233341\,\text{MeV}$ — the **free-neutron
+      $\beta$-decay Q-value**, CAL-3 calibration input. Used as
+      the binding-energy-scale multiplier in
+      [`prop:categorical-mass-markov`](../braids-and-knots/categorical-mass-markov.md)'s
+      explicit binding formula $B = Q_\beta(n) \cdot (|\mathrm{tr}_M(W_{\text{free}})| - |\mathrm{tr}_M(W_{\text{atom}})|)$.
+  $\mathbf{E}_0/Q_\beta(n) = 1/|\Delta(\mathrm{net})| \approx 5.31$
+  (the dimensionless Hecke NF reduction). Code must name the
+  parameter for the actual quantity it carries; using `E_0` for a
+  $Q_\beta$-valued binding-scale variable is a registered audit flag.
 - **$\gamma$** = three reserved meanings, all standard, disambiguated
   by context: (i) the **photon** (default reading in particle / QED
   contexts: pair production $\gamma\gamma \to e^+ e^-$, photonic

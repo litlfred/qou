@@ -9,7 +9,7 @@ is a prediction.*
 |----|----------|--------------|--------|
 | **CAL-1** | $m_e = 0.51099895\ldots\;\mathrm{MeV}$ | leptonic mass scale (MeV ↔ natural units) | leptonic size |
 | **CAL-2** | $m_\mu / m_e = 206.7682830\ldots$ | substrate parameter $q_0$ via $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$ | dimensionless ratio (shape) |
-| **CAL-3** | $Q_\beta(n) = 0.78233341\ldots\;\mathrm{MeV}$ | hadronic energy scale $E_0$ via $E_0 = Q_\beta(n)/\lvert\Delta(\mathrm{net})\rvert$ | hadronic interaction strength |
+| **CAL-3** | $Q_\beta(n) = 0.78233341\ldots\;\mathrm{MeV}$ | hadronic energy scale $\mathbf{E}_0$ via $\mathbf{E}_0^{(\text{cal})} = Q_\beta(n)/\lvert\Delta(\mathrm{net})\rvert \approx 4.179\;\mathrm{MeV}$ using the symbolic $\Delta(\text{net}) = h(h-2)/2$; cross-checks the framework-derived $\mathbf{E}_0^{(N=0)} \approx 4.186\;\mathrm{MeV}$ (CAL-1 + CAL-2) and the tower-summed $\mathbf{E}_0^{\text{full}} \approx 4.228\;\mathrm{MeV}$ | hadronic interaction strength |
 
 *The three inputs are independent: one dimensionless ratio plus two
 dimensional scales. They align to the three (co)homological degrees
@@ -47,9 +47,18 @@ output) and $q_0$ fixed by CAL-2.
   must carry $q_0$ symbolically as long as possible and substitute
   the CAL-2 numerical value at the final reporting step
   ([symbolic-in-$q$ throughout](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-01-math-framework-workplan.md#p25)).
-- $E_0$ is a numerical constant *only* via CAL-3; the symbolic
-  hadronic-scale expression $E_0 = Q_\beta(n)/|\Delta(\mathrm{net})|$
-  is the bridge.
+- $\mathbf{E}_0$ has two framework-derived forms and one CODATA
+  cross-check, all related by the brane-tower correction $1/(1-\hbar_q^2)$:
+    - $\mathbf{E}_0^{(N=0)} = m_e/(q_0(q_0-1)) \approx 4.186$ MeV
+      (single Planck-tick, CAL-1 + CAL-2 only),
+    - $\mathbf{E}_0^{\text{full}} = \mathbf{E}_0^{(N=0)}/(1-\hbar_q^2) \approx 4.228$ MeV
+      (tower-summed, CAL-1 + CAL-2 only),
+    - $\mathbf{E}_0^{(\text{cal})} = Q_\beta(n)/|\Delta(\mathrm{net})| \approx 4.155$ MeV
+      (CAL-3 cross-check via CODATA).
+  See the [notation register](../notation/notation-register.md) energy
+  row and the [collisions note](../notation/notation-collisions.md)
+  for the convention $\mathbf{E}_0 \neq Q_\beta(n)$ (they differ by
+  the dimensionless factor $1/|\Delta(\mathrm{net})| \approx 5.31$).
 - $m_e$ enters as the unique dimensional bridge from $\mathbb{Q}(q_0)$
   to MeV.
 

@@ -111,15 +111,49 @@ def build_atom_symbolic(Z: int, N: int, *, include_inter: bool = True,
 
 
 def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
-                        E_0: float = float(_Q_BETA_N),
+                        Q_beta_n_mev: float = float(_Q_BETA_N),
                         reduce_before_trace: bool = True,
-                        verbose: bool = False) -> dict:
+                        verbose: bool = False,
+                        **kwargs) -> dict:
     """Binding via canonical Markov trace.
 
-    B = E_0 · (|tr_M(W_free)| − |tr_M(W_atom)|),
-    E_0 = 0.78233341 MeV (free-neutron β-decay Q, per
-    prop:categorical-mass-markov).
+    B = Q_β(n) · (|tr_M(W_free)| − |tr_M(W_atom)|),
+    Q_β(n) = 0.78233341 MeV (free-neutron β-decay Q-value, CAL-3
+    per [`prop:three-calibration-inputs`](../../content/quantum-observable-universe/braids-and-knots/three-calibration-inputs.md)).
+
+    **Naming note (2026-05-17, this branch).** This binding-scale
+    parameter is the **β-decay Q-value $Q_\\beta(n)$**, **NOT** the
+    canonical energy scale $E_0 = m_e/(q_0(q_0-1)) \\approx 4.186$
+    MeV (a different quantity, ~5× larger). Earlier revisions
+    misnamed this parameter `E_0`; the value used here is correct
+    (the formula in [`prop:categorical-mass-markov`](../../content/quantum-observable-universe/braids-and-knots/categorical-mass-markov.md)
+    requires $Q_\\beta$-scaled dimensionless trace differences),
+    only the name was wrong. The function now exposes the parameter
+    with its correct identifier. **Dimensional note.** `Q_beta_n_mev`
+    enters the formula `B = Q_β(n) · (|tr_M(W_free)| - |tr_M(W_atom)|)`
+    as the **MeV-dimensioned multiplier** of a dimensionless trace
+    difference; no further $E_0$ scaling is applied (in particular,
+    do *not* multiply the result by `e_0_full_mev()` — that would
+    double-scale).
+
+    Callers that previously passed `E_0=...` must update to
+    `Q_beta_n_mev=...`. The old keyword is captured by `**kwargs`
+    and raises an explicit `AssertionError` with the migration
+    message; any other unexpected keyword raises `TypeError`. The
+    single internal caller `kahler_lift.py:343` is updated in the
+    same commit.
     """
+    assert "E_0" not in kwargs, (
+        "binding_canonical: the `E_0` keyword is deprecated; the "
+        "parameter was misnamed and is now `Q_beta_n_mev` (the "
+        "free-neutron β-decay Q-value, NOT the canonical energy "
+        "scale E_0 ≈ 4.186 MeV). Pass `Q_beta_n_mev=...` instead."
+    )
+    if kwargs:
+        raise TypeError(
+            f"binding_canonical: unexpected keyword arguments "
+            f"{sorted(kwargs)}"
+        )
     A = Z + N
     n_strands = 3 * A
     div = SymbolicHeckeDivision() if reduce_before_trace else None
@@ -161,13 +195,13 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
 
     tr_atom_r = tr_atom.real if abs(tr_atom.imag) < 1e-6 else tr_atom
     tr_free_r = tr_free.real if abs(tr_free.imag) < 1e-6 else tr_free
-    B = E_0 * (abs(tr_free_r) - abs(tr_atom_r))
+    B = Q_beta_n_mev * (abs(tr_free_r) - abs(tr_atom_r))
     return {
         "status": "solved",
         "Z": Z, "N": N, "A": A,
         "tr_M_atom": str(tr_atom_r),
         "tr_M_free": str(tr_free_r),
-        "E_0_MeV": E_0,
+        "Q_beta_n_MeV": Q_beta_n_mev,
         "B_MeV": float(B),
         "n_atom_terms": atom_elem.n_terms(),
         "n_free_terms": free_elem.n_terms(),
@@ -184,7 +218,7 @@ if __name__ == "__main__":
     print("=" * 100)
     print("BINDING via CANONICAL Jones-Markov trace "
           "(prop:categorical-mass-markov)")
-    print(f"q₀ = {Q0_NUM}, E_0 = 0.78233341 MeV (β-decay Q)")
+    print(f"q₀ = {Q0_NUM}, Q_β(n) = {float(_Q_BETA_N)} MeV (β-decay Q-value, CAL-3)")
     print("=" * 100)
     results = []
     print(f"  {'Atom':>6} {'A':>3} {'3A':>3} {'B_AME':>8} "
@@ -219,11 +253,13 @@ if __name__ == "__main__":
             "explicit-values table tr_M(σ_0)=z, tr_M(σ_0σ_1)=z², "
             "tr_M(σ_0σ_1σ_0)=hz²+z.  Replaces the Plancherel-"
             "weighted trace used in binding_3A and "
-            "atom_markov_trace.  Binding = E_0·(|tr_M_free| − "
-            "|tr_M_atom|) with E_0 = 0.78233341 MeV (β-decay Q)."
+            "atom_markov_trace.  Binding = Q_β(n)·(|tr_M_free| − "
+            "|tr_M_atom|) with Q_β(n) = 0.78233341 MeV (free-"
+            "neutron β-decay Q-value, CAL-3 calibration input — "
+            "NOT the canonical E_0 = m_e/(q_0(q_0-1)) ≈ 4.186 MeV)."
         ),
         "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
-        "parameters": {"q0": Q0_NUM, "E_0_MeV": 0.78233341},
+        "parameters": {"q0": Q0_NUM, "Q_beta_n_MeV": float(_Q_BETA_N)},
         "results": results,
     }
     out = Path(__file__).parent / "binding-canonical.witness.json"

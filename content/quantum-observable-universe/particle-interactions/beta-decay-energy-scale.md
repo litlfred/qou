@@ -11,6 +11,16 @@ $$
    \approx  0.7823 \text{MeV}.
 $$
 
+The framework gives $\mathbf{E}_0$ in two forms — a **single-Planck-tick**
+($N=0$) value and a **tower-summed** ($N \to \infty$) geometric form —
+that differ by the brane-tower correction $1/(1-\hbar_q^2) \approx 1.0099$
+at $q_0 \approx 1.110$.  Both are derivable from CAL-1 ($m_e$) and CAL-2
+($q_0$) alone; CAL-3 ($Q_\beta(n)$) is the cross-check.  See the
+[notation register](../notation/notation-register.md) for the
+$\mathbf{E}_0^{(N=0)}$ / $\mathbf{E}_0^{\text{full}}$ symbol convention
+and the [collisions note](../notation/notation-collisions.md) for why
+$\mathbf{E}_0$ is **not** $Q_\beta(n)$.
+
 ## Linearity
 
 The transition $\Delta = \mathrm{NF}(\mathfrak{n}) -
@@ -32,14 +42,14 @@ From CODATA 2022:
 - $\mathfrak{m}_{e} \approx 0.51100\;\text{MeV}$
 - $Q_{\beta} \approx 0.78233\;\text{MeV}$
 
-**Derived energy scale.**
-The energy scale is derivable from the categorical three-calibration
-inputs $m_e$ ($H^0$) and $q_0$ ($H^1$) alone — $Q_\beta(n)$ ($H^2$) is
-the datum the framework predicts, not consumed here
-([three-calibration discipline](#prop:three-calibration-discipline)):
+**Derived energy scale — single-tick (Planck-tick) form, $\mathbf{E}_0^{(N=0)}$.**
+The leading-order energy scale is derivable from the categorical
+three-calibration inputs $m_e$ ($H^0$) and $q_0$ ($H^1$) alone —
+$Q_\beta(n)$ ($H^2$) is the datum the framework predicts, not consumed
+here ([three-calibration discipline](#prop:three-calibration-discipline)):
 
 $$
-  \mathbf{E}_0
+  \mathbf{E}_0^{(N=0)}
   :=
   \frac{m_e}{q_0(q_0 - 1)}
   =
@@ -50,7 +60,24 @@ $$
 This is the electron rest energy per Planck time
 ([energy scale and Planck time](#rem:energy-scale-planck)).
 
-**Calibration cross-check.**
+**Derived energy scale — tower-summed form, $\mathbf{E}_0^{\text{full}}$.**
+The full brane-tower geometric series ([symbolic derivation](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/q_beta_form_a_n1_extension.py#L32))
+is
+
+$$
+  \mathbf{E}_0^{\text{full}}
+  :=
+  \mathbf{E}_0^{(N=0)} \cdot \sum_{k=0}^{\infty} \hbar_q^{2k}
+  =
+  \frac{\mathbf{E}_0^{(N=0)}}{1 - \hbar_q^2}
+  \approx  4.228 \text{MeV}
+$$
+
+at $q_0 \approx 1.110$, ≈ +0.99% over the single-tick value. Truncations
+$\mathbf{E}_0^{(N)} = \mathbf{E}_0^{(N=0)} \cdot (1 - \hbar_q^{2(N+1)})/(1 - \hbar_q^2)$
+recover the tower at finite depth.
+
+**Calibration cross-check, $\mathbf{E}_0^{(\text{cal})}$.**
 The same scale can be extracted from CODATA by dividing the
 free neutron $Q$-value by the Hecke NF difference:
 
@@ -64,12 +91,31 @@ $$
    \approx  8.131 \times \mathfrak{m}_{e}.
 $$
 
-The derived and calibrated values agree to $0.75\%$
-($4.186$ vs $4.155$ MeV).  The residual reflects the
-brane tower correction: the derived expression uses
-the single-level conversion $c_q^2 \hbar_q$, while the
-calibrated value implicitly includes the full tower
-mass of the neutron and proton.
+The values, computed from the witness
+[`q-beta-form-a-n1-extension.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/q-beta-form-a-n1-extension.witness.json):
+
+| Quantity | Value (MeV) | vs $\mathbf{E}_0^{(\text{cal,symb})}$ |
+|----------|------------:|------------------------------:|
+| $\mathbf{E}_0^{(N=0)}$ (single-tick derived) | $:val[E_0_N0_MeV]{precision=4}$ | $+0.17\%$ |
+| $\mathbf{E}_0^{\text{full}}$ (geometric-tower derived) | $:val[E_0_full_MeV]{precision=4}$ | $+1.16\%$ |
+| $\mathbf{E}_0^{(\text{cal,symb})}$ (CODATA / $h(h-2)/2$) | $:val[E_0_calibrated_MeV]{precision=4}$ | reference (symbolic) |
+| $\mathbf{E}_0^{(\text{cal,typed})}$ (CODATA / $\lvert\Delta(\text{net,typed})\rvert$) | $4.155$ | typed-crossings value (finite-size noise, 0.6% below symbolic) |
+
+**Open finding (2026-05-17).** The geometric tower form
+$1/(1-\hbar_q^2)$ moves the framework prediction *further from*
+both calibrated values, not closer. This direction-of-residual
+puzzle is recorded in
+[`docs/audits/2026-05-03-tower-mev-calibration-finding.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-03-tower-mev-calibration-finding.md),
+which independently identifies that the tower formula uses $\Phi_q$
+(divergent as $|V| \to 1$) where it should use $\mathrm{Li}_2^q$
+(bounded). The categorical derivation of the correct closed form
+from the Frobenius pairing / mass endomorphism is queued for review
+([`prop:categorical-mass-markov`](../braids-and-knots/categorical-mass-markov.md)
+§"k-stratum decomposition" suggests the geometric series should
+fall out of $\alpha_k = \hbar_q^{2(k-1)} \alpha_{k-1}$, but this
+recursion is not yet derived in
+[`prop:alpha-k-derivation-procedure`](../braids-and-knots/alpha-k-derivation-procedure.md);
+its closure is the bridging proposition needed).
 
 Note: $\Delta(\mathrm{net}) < 0$ (net$(\mathfrak{n}) <$
 net$(\mathfrak{p})$ with typed crossings), so we use $|\Delta|$ to

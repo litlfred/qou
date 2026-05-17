@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-16T02:37:47.781079+00:00",
-  "commitSha": "56dd208a822b82b483cf698592aab84a5dc6c7f9",
+  "computedAt": "2026-05-17T05:07:29.708467+00:00",
+  "commitSha": "3c1eafd4810fb4979fbb4c2d367f6adc7da48262",
   "assertions": [
     {
       "name": "a(1) = 3/7",
@@ -35,11 +35,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 138,
+  "durationMs": 149,
   "computation": "mobius-limit-from-thimble",
   "scriptFile": "mobius_limit_from_thimble.py",
   "scriptHash": "57084e42ae29",
-  "scriptCommitSha": "446b71ce7f1840cc8386de895119b4b9aa9e4d55",
+  "scriptCommitSha": "3072aa73e46ef9cec1880308eaf654600eacde71",
   "description": "Closed-form integration limit a(q) = (4-q)/(4q+3) from steepest-descent re-entry point of the PL thimble. Algebraic identity verified by sympy; archimedean Hessian data lives in picard-lefschetz-thimble.witness.json.",
   "contentBlock": "prop:mobius-limit-from-thimble",
   "parameters": {
