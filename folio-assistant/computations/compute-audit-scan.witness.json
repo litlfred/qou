@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-17T21:58:52.555528+00:00",
-  "commitSha": "1f828ff43e6a127610d4a2809c95dae680c7b6f3",
+  "computedAt": "2026-05-17T22:15:34.909090+00:00",
+  "commitSha": "fe9b9ca5ac30acee75986c0979278d0fd526acf1",
   "assertions": [],
   "allPassed": true,
   "durationMs": 7,
@@ -13,7 +13,7 @@
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 511,
+    "files_scanned": 512,
     "patterns": [
       "P15",
       "P16",
@@ -26,7 +26,7 @@
     "by_pattern_count": {
       "P15": 132,
       "P16": 100,
-      "P21": 31,
+      "P21": 32,
       "P30": 97,
       "P31": 28
     },
@@ -2226,6 +2226,13 @@
         "line": 51,
         "snippet": "CODATA literal \"938.27208816\"",
         "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
+      },
+      {
+        "pattern": "P21",
+        "file": "probe_staircase_ew_k4_pairwise_readings.py",
+        "line": 1,
+        "snippet": "Hoefsmit construction without BlockCache",
+        "note": "syt_prefix_cache.BlockCache caches block values by content distance ρ; precomputed SYT→index dict eliminates O(d_λ²) swap-partner search. Numerical-q callers can wire it directly. Ref: ocneanu_weights.py wiring."
       },
       {
         "pattern": "P16",

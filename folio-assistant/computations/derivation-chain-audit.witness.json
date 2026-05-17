@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-17T21:58:52.760011+00:00",
-  "commitSha": "1f828ff43e6a127610d4a2809c95dae680c7b6f3",
+  "computedAt": "2026-05-17T22:14:53.460354+00:00",
+  "commitSha": "fe9b9ca5ac30acee75986c0979278d0fd526acf1",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2448,6 +2448,7 @@
         "snappy-cusp-seeding.witness.json",
         "staircase-ew-disjoint-spectrum.witness.json",
         "staircase-ew-k3-mpfr-spectral.witness.json",
+        "staircase-ew-k4-pairwise-readings.witness.json",
         "staircase-ew-predictions.witness.json",
         "staircase-ew-residual-conjecture.witness.json",
         "sublemma-2-1-A-operator-extract-h9-nn.witness.json",
