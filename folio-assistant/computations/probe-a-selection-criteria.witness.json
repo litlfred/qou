@@ -1,0 +1,51 @@
+{
+  "engine": "scipy+numpy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-17T07:13:06.650069+00:00",
+  "commitSha": "969e20fa337416e3e6b2a6cddea19183ee3db29c",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 18,
+  "computation": "probe-a-selection-criteria",
+  "scriptFile": "probe_a_selection_criteria.py",
+  "scriptHash": "00b60232c3b0",
+  "scriptCommitSha": "unknown",
+  "description": "Test categorical selection criteria for `a` in (0, z_markov)",
+  "data": {
+    "q_0": 1.1099785955541805,
+    "z_markov": 0.4993203340335982,
+    "a_post_hoc": 0.38844820732799046,
+    "criteria_tested": [
+      {
+        "criterion": "C1 min dA/da",
+        "a": 0.05,
+        "m_p_pred": 929.8753519284751,
+        "ratio_to_post_hoc": 0.12871728857737258
+      },
+      {
+        "criterion": "C2 d2A/da2=0 at idx 375",
+        "a": 0.4064276182880347,
+        "m_p_pred": 938.9182313400801,
+        "ratio_to_post_hoc": 1.0462852205799038
+      },
+      {
+        "criterion": "C3 d3A/da3=0 at idx 2",
+        "a": 0.051900947297536186,
+        "m_p_pred": 929.8882688658309,
+        "ratio_to_post_hoc": 0.1336109842147194
+      },
+      {
+        "criterion": "C3 d3A/da3=0 at idx 496",
+        "a": 0.521434929788974,
+        "m_p_pred": 942.910085341667,
+        "ratio_to_post_hoc": 1.3423538066393874
+      }
+    ],
+    "closest_to_post_hoc": {
+      "criterion": "C2 d2A/da2=0 at idx 375",
+      "a": 0.4064276182880347,
+      "m_p_pred": 938.9182313400801,
+      "ratio_to_post_hoc": 1.0462852205799038
+    }
+  }
+}
