@@ -72,10 +72,20 @@ def main() -> int:
         chi_n_eps = sp.series(chi_n.subs(q, 1 + eps), eps, 0, 13).removeO()
         # Difference χ_λ(β_n) − χ_λ(β_p): the n−p contribution.
         chi_diff_eps = sp.expand(chi_n_eps - chi_p_eps)
-        # Extract ε^10 and ε^12 coefficients.
+        # **All ε^k coefficients (k = 0..12) — per user direction.**
+        per_k_p = {}
+        per_k_n = {}
+        per_k_diff = {}
+        for k in range(13):
+            c_p = chi_p_eps.coeff(eps, k)
+            c_n = chi_n_eps.coeff(eps, k)
+            c_d = chi_diff_eps.coeff(eps, k)
+            per_k_p[k] = float(c_p) if c_p.is_number else None
+            per_k_n[k] = float(c_n) if c_n.is_number else None
+            per_k_diff[k] = float(c_d) if c_d.is_number else None
+        # Headline ε^10, ε^12
         c10_diff = chi_diff_eps.coeff(eps, 10)
         c12_diff = chi_diff_eps.coeff(eps, 12)
-        # Express as floats for readability.
         c10_float = float(c10_diff) if c10_diff.is_number else None
         c12_float = float(c12_diff) if c12_diff.is_number else None
         per_lambda[lam_str] = {
@@ -85,9 +95,18 @@ def main() -> int:
             "c12_diff_symbolic": str(sp.nsimplify(c12_diff)),
             "c10_diff_float": c10_float,
             "c12_diff_float": c12_float,
+            "all_eps_coeffs_p": per_k_p,
+            "all_eps_coeffs_n": per_k_n,
+            "all_eps_coeffs_diff": per_k_diff,
         }
-        print(f"    c10 (ε^10 coeff of χ_n − χ_p): {c10_float}")
-        print(f"    c12 (ε^12 coeff of χ_n − χ_p): {c12_float}")
+        print(f"    All ε^k coeffs of (χ_n − χ_p) for k = 0..12:")
+        for k in range(13):
+            v = per_k_diff[k]
+            if v is None or v == 0:
+                marker = "·"
+            else:
+                marker = ""
+            print(f"      k={k:>2}: {marker} {v}")
         print()
 
     # Empirical c_5, c_6 reference from
