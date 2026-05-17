@@ -159,7 +159,13 @@ def compute_tr_m(Z: int, N: int, label: str,
                     f"y_λ table at H_{n_strands} missing λ={lam}"
                 ),
             }
+        # y_lam is typically a sympy.Float at 30+ dps; `mp.mpf(str(y_lam))`
+        # preserves that precision.  The matching `chi_f64` is at the
+        # f64 floor (~15 sig figs) from the Rust binary, so the product
+        # carries the f64-side floor; widening `y_at_q0` to mp precision
+        # avoids stacking *two* downcasts (per gemini review on #683).
         y_at_q0 = mp.mpf(str(y_lam))
+        chi_at_q0 = mp.mpf(repr(chi_f64))
         c = y_at_q0 * chi_at_q0
         tr_m_sum += c
         contributions.append({
