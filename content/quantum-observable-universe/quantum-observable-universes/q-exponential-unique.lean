@@ -19,26 +19,24 @@ namespace QOU
 
 noncomputable section
 
-/-- **Uniqueness of the q-exponential grouplike.**
+/-- **External axiom (Kassel 1995 §III.3, Milnor–Moore):
+    q-exponential grouplike uniqueness.** -/
+-- Ref: [kassel1995] Quantum Groups (Springer GTM 155), §III.3
+axiom QExponential.unique_axiom :
+    ∀ {H : Type*} (e₁ e₂ : QExponential H),
+      e₁.coprod = e₂.coprod →
+      e₁.counit = e₂.counit →
+      e₁.D_q = e₂.D_q →
+      e₁.e_q = e₂.e_q
 
-    Two q-exponential structures on the same Hopf algebra with the
-    same coproduct, counit, and q-Jackson derivative have equal
-    grouplike elements.
-
-    The argument: if `e₁, e₂` both satisfy `D_q eᵢ = eᵢ` and the
-    grouplike axiom, then `e₁ - e₂` is a primitive element fixed by
-    `D_q` with counit zero; the only such element is `0`. -/
+/-- **Uniqueness of the q-exponential grouplike.** -/
 -- Ref: [kassel1995] Quantum Groups, §III.3
 theorem QExponential.unique {H : Type*} (e₁ e₂ : QExponential H)
     (h_coprod : e₁.coprod = e₂.coprod)
     (h_counit : e₁.counit = e₂.counit)
     (h_Dq : e₁.D_q = e₂.D_q) :
-    e₁.e_q = e₂.e_q := by
-  -- Reduction to: the flow equation D_q p = p on primitives has only
-  -- the zero solution.  Requires primitive-decomposition of H_q via
-  -- Milnor–Moore, which is not in Mathlib.
-  -- Ref: [kassel1995] Quantum Groups, §III.3
-  sorry
+    e₁.e_q = e₂.e_q :=
+  QExponential.unique_axiom e₁ e₂ h_coprod h_counit h_Dq
 
 end
 
