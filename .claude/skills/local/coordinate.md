@@ -316,6 +316,54 @@ Do not silently rebase or force-push to incorporate `main` — those
 are author-authorised actions, see [`.github/copilot-instructions.md`
 § Git Operations].
 
+#### 8c.  Pre-push stale-state check (MANDATORY)
+
+**Trigger:** before every `git push` (whether new commits or force-
+push). The watcher can lapse during long focused work — Monitor
+timeouts, hooks-busy windows, or background-agent waits all silently
+leave `origin/main` unfetched. Before any push, force a fresh fetch
+and compute the upstream delta:
+
+```bash
+git fetch origin main 2>/dev/null
+DELTA=$(git rev-list --count HEAD..origin/main)
+SIBS=$(git log --oneline ${MERGE_BASE:-$(git merge-base HEAD origin/main)}..origin/main 2>/dev/null | wc -l)
+echo "main is ${DELTA} commits ahead since branch base"
+```
+
+Decision matrix:
+
+| Delta | Action |
+|---|---|
+| `0..2` | push freely |
+| `3..10` | **fetch and triage**: list each new main commit; for any touching files in your branch's diff, classify per §2 (rebase-now, defer, escalate) BEFORE pushing |
+| `> 10` | **stop**: announce to the user. Long-discharge sessions risk substantial divergence; offer prepare-merge rebase OR continue + flag |
+
+Additionally, run `mcp__github__list_pull_requests` filtered to
+`state:open updated since <session_start>` and check for sibling PRs
+that opened mid-session. Each new sibling enters scope per §3.
+
+This check is the difference between a clean fast-forward push and a
+multi-conflict rebase storm. If you're discharging many small commits
+in a row (axiom sweep, witness regen, content cleanup), invoke this
+between every ~5 commits OR after every 30 min of foreground work.
+
+#### 8d.  Long-task drift recovery
+
+If you discover ≥ 5 new main commits AFTER a Monitor timeout or
+hooks-busy window, do NOT just "re-arm and continue":
+
+1. **Compare**: `git diff --name-only HEAD..origin/main` to find
+   overlapping files.
+2. **If overlap is empty**: re-arm watch (silent OK).
+3. **If overlap exists**: invoke `local/coordinate` §2 classification
+   on each overlap. Most common: another agent edited the same content
+   block (`*.lean`, `*.md`, `*.ts` trio). Resolve BEFORE committing
+   more work that will conflict.
+4. **Notify the user** if ≥ 2 substantive overlaps: this is the
+   signal that multiple agents are working in the same scope and the
+   user should coordinate goals.
+
 #### 8b.  Watch for newly-opened PRs / branches
 
 Each triage cycle, list open PRs and branches:
