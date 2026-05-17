@@ -1,0 +1,66 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-17T20:13:46.860715+00:00",
+  "commitSha": "693b5a257bc5c3ba197b7ecbcacf0304225f4160",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 3388,
+  "computation": "probe-proton-t2-t3-li2q-comparison",
+  "scriptFile": "probe_proton_t2_t3_li2q_comparison.py",
+  "scriptHash": "86826586f651",
+  "scriptCommitSha": "693b5a257bc5c3ba197b7ecbcacf0304225f4160",
+  "description": "Comparison of T2+T3 brane-tower values under the divergent Faddeev Φ_q form (current `mass_formula_6term_mpfr_50dps.term_23_brane_tower_mp`) vs the bounded symmetric Li_2^q closure candidate (per `prop:mass-endomorphism-tower` lines 162-183 + `conj:alpha-k-categorical-closure`). Computed at A=1, 2, 3 from the per-generator Wedderburn volumes in `terms-2-3-atom-per-gen-mpfr-50dps.witness.json` (PR-this-branch, m_p chain Item A). The Li_2^q form is bounded for all atoms; the Φ_q form diverges as |V| → 1 (proton |V_0| ≈ 0.989). Cross-cuts the m_p chain closure analysis from PR #671 and the closure conjecture from PR #675.",
+  "parameters": {
+    "q_0_50dps": "1.1099785955541805752815940796095093779932822799587",
+    "z_markov_50dps": "0.49932033403359825002066908467672150636931636263446",
+    "li2q_terms": 200
+  },
+  "results": [
+    {
+      "atom": "proton",
+      "Z": 1,
+      "N": 0,
+      "T2_li2q_MeV": "1.6183053302953433973652419756639181084511123587941",
+      "T3_li2q_MeV": "0.19831347943187460850945245079488370220301054487244",
+      "T2_plus_T3_li2q_MeV": "1.8166188097272180058746944264588018106541229036665",
+      "T2_plus_T3_phi_q_MeV": "1178994.5650411128453894440165625281086517498118204"
+    },
+    {
+      "atom": "neutron",
+      "Z": 0,
+      "N": 1,
+      "T2_li2q_MeV": "1.5257534880271247344942391582011888314910088719888",
+      "T3_li2q_MeV": "0.17566398286921813799228359352717125011029042498896",
+      "T2_plus_T3_li2q_MeV": "1.7014174708963428724865227517283600816012992969778",
+      "T2_plus_T3_phi_q_MeV": "517435.67106525417970378331648031739037462976637848"
+    },
+    {
+      "atom": "deuteron",
+      "Z": 1,
+      "N": 1,
+      "T2_li2q_MeV": "3.3926193447761450129454342730519242501394138451765",
+      "T3_li2q_MeV": "1.357324788303184137067052654231668395271663152148",
+      "T2_plus_T3_li2q_MeV": "4.7499441330793291500124869272835926454110769973245",
+      "T2_plus_T3_phi_q_MeV": "1861284.9633035885688793451990922068666284980936898"
+    },
+    {
+      "atom": "tritium",
+      "Z": 1,
+      "N": 2,
+      "T2_li2q_MeV": "5.0720625108472751578532209505437353340964586291449",
+      "T3_li2q_MeV": "3.3255886912111113227860551854321438311071727566357",
+      "T2_plus_T3_li2q_MeV": "8.3976512020583864806392761359758791652036313857806",
+      "T2_plus_T3_phi_q_MeV": "2623706.364799226501663980210620095452526240680241"
+    },
+    {
+      "atom": "helium3",
+      "Z": 2,
+      "N": 1,
+      "T2_li2q_MeV": "5.3503768467753559140256814148186377452939931133954",
+      "T3_li2q_MeV": "3.7301565391408385269684315823699574847622957559936",
+      "T2_plus_T3_li2q_MeV": "9.080533385916194440994112997188595230056288869389",
+      "T2_plus_T3_phi_q_MeV": "3550595.2271317017944133476878779125573365855627614"
+    }
+  ]
+}

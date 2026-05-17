@@ -98,24 +98,29 @@ The values, computed from the witness
 |----------|------------:|------------------------------:|
 | $\mathbf{E}_0^{(N=0)}$ (single-tick derived) | $:val[E_0_N0_MeV]{precision=4}$ | $+0.17\%$ |
 | $\mathbf{E}_0^{\text{full}}$ (geometric-tower derived) | $:val[E_0_full_MeV]{precision=4}$ | $+1.16\%$ |
+| $\mathbf{E}_0^{\text{full},\mathrm{Li}_2^q}$ (symmetric q-dilogarithm candidate) | $:val[E_0_full_li2q_MeV]{precision=4}$ | $+1.15\%$ |
 | $\mathbf{E}_0^{(\text{cal,symb})}$ (CODATA / $h(h-2)/2$) | $:val[E_0_calibrated_MeV]{precision=4}$ | reference (symbolic) |
 | $\mathbf{E}_0^{(\text{cal,typed})}$ (CODATA / $\lvert\Delta(\text{net,typed})\rvert$) | $4.155$ | typed-crossings value (finite-size noise, 0.6% below symbolic) |
 
-**Open finding (2026-05-17).** The geometric tower form
-$1/(1-\hbar_q^2)$ moves the framework prediction *further from*
-both calibrated values, not closer. This direction-of-residual
-puzzle is recorded in
-[`docs/audits/2026-05-03-tower-mev-calibration-finding.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-03-tower-mev-calibration-finding.md),
-which independently identifies that the tower formula uses $\Phi_q$
-(divergent as $|V| \to 1$) where it should use $\mathrm{Li}_2^q$
-(bounded). The categorical derivation of the correct closed form
-from the Frobenius pairing / mass endomorphism is queued for review
-([`prop:categorical-mass-markov`](../braids-and-knots/categorical-mass-markov.md)
-§"k-stratum decomposition" suggests the geometric series should
-fall out of $\alpha_k = \hbar_q^{2(k-1)} \alpha_{k-1}$, but this
-recursion is not yet derived in
-[`prop:alpha-k-derivation-procedure`](../braids-and-knots/alpha-k-derivation-procedure.md);
-its closure is the bridging proposition needed).
+**Open finding (2026-05-17).** Both the geometric tower form
+$1/(1-\hbar_q^2)$ and the bounded symmetric $\mathrm{Li}_2^q$
+candidate move the framework prediction *further from* the
+calibrated values at the substrate level (only ≈ 0.01% apart
+at $q_0$). The direction-of-residual puzzle is recorded in
+[`docs/audits/2026-05-03-tower-mev-calibration-finding.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-03-tower-mev-calibration-finding.md)
+(the audit independently confirms $-\mathrm{Li}_2^q(-V)$ is the
+correct Kashaev specialisation, while the asserted $\Phi_q(V)$
+form is off by 10⁶), and the open closure question is now formally
+posed as the conjecture
+[`conj:alpha-k-categorical-closure`](../braids-and-knots/alpha-k-categorical-closure.md)
+(existence, family selection, CAL-3 direction). The H_3 explicit
+$\alpha_k$ values from
+[`prop:alpha-k-derivation-procedure`](../braids-and-knots/alpha-k-derivation-procedure.md)
+do **not** satisfy the naive recursion $\alpha_k = \hbar_q^{2(k-1)}\alpha_{k-1}$
+($\alpha_1 = 0$, not $\hbar_q^0 \alpha_0 = 1$), so neither the
+geometric nor the Li_2^q closure is a trivial substitution — the
+correct closure is a non-obvious resummation identity that the
+conjecture seeks.
 
 Note: $\Delta(\mathrm{net}) < 0$ (net$(\mathfrak{n}) <$
 net$(\mathfrak{p})$ with typed crossings), so we use $|\Delta|$ to

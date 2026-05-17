@@ -628,6 +628,8 @@ export default chapter({
         "mass-formula-wedderburn-enumeration",
         "mass-tower-coefficient-stratification",
         "alpha-k-derivation-procedure",
+        "alpha-k-categorical-closure",
+        "chi-lambda-w0-sign-weighting",
         "atom-knot-mass-derivation",
         "atom-knot-mass-derivation-proof",
         "joint-tower-sdp-confinement",
