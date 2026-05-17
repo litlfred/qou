@@ -46,13 +46,16 @@ coefficient ([thm:jones-markov-trace](#thm:jones-markov-trace),
 and $\chi_\lambda$ is the $q$-Murnaghan–Nakayama character.
 
 **The categorical mass invariant.**  Setting
-$M(\mathfrak{H}) := \rho \cdot \mathrm{tr}_M(T_w) = \rho \cdot \sum_\lambda y_\lambda(q) \chi_\lambda(T_w)$
+$M(\mathfrak{H}) := \nu_{\mathrm{SDP}} \cdot \mathrm{tr}_M(T_w) = \nu_{\mathrm{SDP}} \cdot \sum_\lambda y_\lambda(q) \chi_\lambda(T_w)$
 gives an element of $\mathbb{Q}(q)$.  Every quantity is finite-sum and
 exact; the spectral-sequence collapse at $E_2$ guarantees no higher
 analytic content (asymptotic at roots of unity, volume conjecture,
-Reeb-density integral on the cover, etc.) is needed.  $\rho \in \mathbb{Z}_{>0}$
+Reeb-density integral on the cover, etc.) is needed.  $\nu_{\mathrm{SDP}} \in \mathbb{Z}_{>0}$
 is read off as the multiplicity of $T_w$'s SDP solution in the
-Wedderburn decomposition.
+Wedderburn decomposition (renamed from $\rho$ in 2026-05-17 to
+disambiguate from the categorical density $\rho_K$ of
+[`prop:atomic-mass-gb-nf`](atomic-mass-gb-nf.md) and the Hoefsmit
+irrep $\rho_\lambda$).
 
 ### Archimedean realization
 
@@ -63,7 +66,7 @@ the dimensional bridge so that $m_e \cdot M(\mathfrak{H})|_{q = q_0}$
 has units of MeV:
 
 $$
-B(\mathfrak{H}) \;:=\; m_e \cdot M(\mathfrak{H}) \big|_{q = q_0} \;=\; m_e \cdot \rho \cdot \mathrm{tr}_M(T_w) \big|_{q = q_0} \;\in\; \mathbb{R}.
+B(\mathfrak{H}) \;:=\; m_e \cdot M(\mathfrak{H}) \big|_{q = q_0} \;=\; m_e \cdot \nu_{\mathrm{SDP}} \cdot \mathrm{tr}_M(T_w) \big|_{q = q_0} \;\in\; \mathbb{R}.
 $$
 
 This is the binding-energy prediction.
@@ -89,11 +92,11 @@ Archimedean functor.
 Combining the categorical leg and the Archimedean functor,
 
 $$
-B(\mathfrak{H}) \;=\; m_e \cdot \rho \cdot \mathrm{tr}_M(T_w) \big|_{q = q_0}.
+B(\mathfrak{H}) \;=\; m_e \cdot \nu_{\mathrm{SDP}} \cdot \mathrm{tr}_M(T_w) \big|_{q = q_0}.
 $$
 
 For hyperbolic $K = \widehat{T_w}$ this number coincides with
-$\rho \cdot m_e \cdot \mathrm{Vol}_{\mathrm{hyp}}(K)$ via the volume
+$\nu_{\mathrm{SDP}} \cdot m_e \cdot \mathrm{Vol}_{\mathrm{hyp}}(K)$ via the volume
 conjecture, which is the conventional way of writing the same
 identity.  $\square$
 
@@ -105,7 +108,7 @@ place (step 1 of the algorithm).  In the current implementation:
 - For `principled-derivation` entries (electron, proton, neutron)
   the explicit $\sigma$-words are direct (electron $\sigma_1^3$ in
   $H_2$, proton/neutron $(\sigma_1 \sigma_2^{-1})^3$ in $B_3$); steps
-  2–6 of the algorithm run end-to-end.  $\rho = 1$ trivially.
+  2–6 of the algorithm run end-to-end.  $\nu_{\mathrm{SDP}} = 1$ trivially.
 - For `manual-historical` entries (²H, ³H, ³He) step 1 is pending;
   the post-Archimedean naming (volume from SnapPy) is substituted
   for the categorical Markov trace, justified by the volume

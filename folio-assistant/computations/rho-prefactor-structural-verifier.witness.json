@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T15:15:46.271258+00:00",
-  "commitSha": "7ebeae4c7807e5be6d97d10e2e5f8681abc183fa",
+  "computedAt": "2026-05-17T03:41:13.725875+00:00",
+  "commitSha": "f2aa8416a0e1a3c94280901233f56f82b8b783a2",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 397,
+  "durationMs": 3747,
   "computation": "rho-prefactor-structural-verifier",
   "scriptFile": "rho_prefactor_structural_verifier.py",
-  "scriptHash": "f5eb7236334d",
-  "scriptCommitSha": "0cfd02a5d587a21cff1a53515385ced8dfc5b5ef",
+  "scriptHash": "964395f408a8",
+  "scriptCommitSha": "b5f5bd8094e354c39d4166cec679e4d641209ac7",
   "description": "Structural ρ(Z, N) rule verifier — operator-selection LP / shadow-price / primal-dual / lp-duality evaluation of the rule ρ(𝔥) = dim_q(λ*(T_w)) per conj:rho-prefactor-structural (issue #604 deliverable 4 / closes-or-narrows GAP-A-4). For each canonical T_w ∈ H_3(q_0) of {proton, neutron, ²H/6_2, ³He/L₆ₐ₄}, decomposes into Wedderburn blocks via Hoefsmit seminormal form, evaluates |y_λ · χ_λ(T_w)| per partition λ ⊢ 3, identifies the dominant λ*, and tests five candidate rules (exact dim_q / round / floor / hook-special-case / classical d_λ) against the observed ρ ∈ {1, 1, 1, 2}.  The rule that matches all four observations is reported as the structural form of ρ(Z, N) at B_3.  Tritium (B_5 / 8_11) deferred — needs Hoefsmit at H_5 (consistent with the joint_tower_sdp_solver_v2.py / R5-full prototype posture).",
   "contentBlock": "conj:rho-prefactor-structural",
   "parameters": {
@@ -121,6 +121,7 @@
           -2
         ],
         "rho_observed": 1,
+        "nu_SDP_observed": 1,
         "per_lambda": [
           {
             "lambda": [
@@ -248,6 +249,7 @@
           -2
         ],
         "rho_observed": 1,
+        "nu_SDP_observed": 1,
         "per_lambda": [
           {
             "lambda": [
@@ -375,6 +377,7 @@
           -2
         ],
         "rho_observed": 1,
+        "nu_SDP_observed": 1,
         "per_lambda": [
           {
             "lambda": [
@@ -501,6 +504,7 @@
           2
         ],
         "rho_observed": 2,
+        "nu_SDP_observed": 2,
         "per_lambda": [
           {
             "lambda": [
