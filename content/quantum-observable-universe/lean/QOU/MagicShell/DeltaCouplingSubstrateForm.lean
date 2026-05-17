@@ -26,6 +26,7 @@ Ref: probe_delta_coupling_q_edgeworth.py (refutes q-Edgeworth κ_3 alternative)
 Ref: docs/audits/2026-05-17-delta-coupling-substrate-derivation.md
 -/
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
+import QOU.Information.HeckeLogDecomposition
 
 namespace QOU.MagicShell
 
@@ -77,15 +78,21 @@ theorem delta_coupling_substrate_at_2_2 [inst : DeltaCouplingSubstrateForm] :
 
 /-- The substrate-derivation form is algebraically equivalent to the
     skein-convention leading form by the log decomposition
-    (`prop:hecke-log-decomposition`). -/
-theorem delta_coupling_two_forms_equivalent [inst : DeltaCouplingSubstrateForm] :
-    -- For every (Z, N): Δ_coupling = (A-2)·E_0·[log(1/ℏ_q) - log(1+q_0)]
-    -- where the bracket equals log(1/h(q_0)) by the log decomposition.
-    True := by
-  -- Apply prop:hecke-log-decomposition (in QOU.Information.HeckeLogDecomposition):
-  --   log(1/h) = log(1/ℏ_q) - log(1+q)
-  -- Substitute into `closed_form` to convert the skein form to the
-  -- thermodynamic form. Both equal the same real number.
-  trivial
+    (`prop:hecke-log-decomposition`). For every (Z, N) at the magic-
+    shell anchor, the skein-form expression
+        (A - 2) · E_0 · log(1/(q_0 - q_0⁻¹))
+    equals the thermodynamic-form expression
+        (A - 2) · E_0 · [log(1/((q_0-1)/q_0)) - log(1 + q_0)]. -/
+theorem delta_coupling_two_forms_equivalent
+    [inst : DeltaCouplingSubstrateForm] (Z N : Nat) :
+    inst.delta_coupling Z N =
+      ((Z + N : Nat) - 2 : ℝ) * inst.E_0 *
+        (Real.log (1 / ((inst.q0 - 1) / inst.q0)) -
+         Real.log (1 + inst.q0)) := by
+  -- Apply prop:hecke-log-decomposition:
+  --   log(1/(q - q⁻¹)) = log(1/((q-1)/q)) - log(1 + q)
+  -- to convert the skein-form `closed_form` into the thermodynamic form.
+  rw [inst.closed_form Z N]
+  rw [QOU.Information.hecke_log_decomposition inst.q0 inst.q0_gt_one]
 
 end QOU.MagicShell
