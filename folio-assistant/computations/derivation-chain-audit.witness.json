@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-17T06:45:53.827796+00:00",
-  "commitSha": "64e447349614d19b6139a288f7afcea15c22186f",
+  "computedAt": "2026-05-17T06:45:55.594156+00:00",
+  "commitSha": "9fd100eeade30da6ed3854e0400137c0447c17f8",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2063,6 +2063,7 @@
         "A-operator-per-interface.witness.json",
         "A-operator-rank-probe.witness.json",
         "F-n-categorical-derivation-probe.witness.json",
+        "V-222-projection-probe.witness.json",
         "a-minus-2-q-substrate-probe.witness.json",
         "adjacent-vs-full-probe.witness.json",
         "alpha-5-jucys-murphy-central.witness.json",
@@ -2374,6 +2375,7 @@
         "q-beta-tightening-landscape.witness.json",
         "q-beta-two-wrap-nf.witness.json",
         "q-beta-v2-cos-compose.witness.json",
+        "q-edgeworth-delta-coupling-probe.witness.json",
         "q-pinning-50-digit.witness.json",
         "q-pochhammer-seed.witness.json",
         "r5-full-canonical-knot-solver.witness.json",
