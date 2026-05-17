@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-17T05:10:22.992233+00:00",
-  "commitSha": "3c1eafd4810fb4979fbb4c2d367f6adc7da48262",
+  "computedAt": "2026-05-17T22:26:10.762934+00:00",
+  "commitSha": "871e899a86eb910b74523f1575f355ebea9f8fad",
   "assertions": [],
   "allPassed": true,
   "durationMs": 14,
   "computation": "full-twist-delta-n2-verification",
   "scriptFile": "full_twist_delta_n2_verification.py",
   "scriptHash": "ba05d5141c59",
-  "scriptCommitSha": "3072aa73e46ef9cec1880308eaf654600eacde71",
+  "scriptCommitSha": "0093f06021ac3d14750159144fa9da757890d69a",
   "description": "Empirical verification of the full-twist Δ_n² scalar action q^{c(λ)} per Wedderburn block V_λ ↪ H_n(q). Tabulates c(λ) for every partition λ ⊢ n at n ∈ {1,...,12}; identifies the Δ_n²-invariant subspace (c(λ) = 0); records magic-n empirical realisability of the categorical-neutrality predicate (conj:categorical-neutrality-saturated-shells). Structural finding: at magic n = 2 the invariant subspace is empty under pure-scalar q^c(λ) action, indicating the conjecture must hold via a refined mechanism (root-of-unity specialisation, sum cancellation, or a non-scalar action component captured in T2/T3).",
   "contentBlock": "conj:categorical-neutrality-saturated-shells",
   "parameters": {
