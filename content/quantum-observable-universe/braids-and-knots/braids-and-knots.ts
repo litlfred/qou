@@ -401,6 +401,7 @@ export default chapter({
         "ck-extraction-from-algebraic-rules",
         "h3-hecke-idempotents",
         "multi-link-jones-q1-extension",
+        "per-wedderburn-block-c5-c6",
         "categorical-chain-convergence-mechanisms",
         "tau-M-asymptotic-rep-theory",
         "kashiwara-jones-alternation-interpretation",
