@@ -89,10 +89,20 @@ theorem eleven_not_dvd_factorial_5 : ¬ (11 ∣ Nat.factorial 5) := by
   norm_num [Nat.factorial]
 
 /-- The order of any element of a finite group divides the group order.
-    For S_n, |S_n| = n!, so orderOf σ ∣ n!. -/
+    For S_n, |S_n| = n!, so orderOf σ ∣ n!.
+
+    **Proof**: from Mathlib's `orderOf_dvd_card` (Lagrange) combined
+    with `Fintype.card_perm` (which gives `|Perm (Fin n)| = n!`). -/
+-- Ref: [mathlib] Mathlib.GroupTheory.OrderOfElement
 -- Ref: [manuscript] §4/t211-ideal-annihilation
-axiom orderOf_perm_dvd_factorial (n : ℕ) (σ : Equiv.Perm (Fin n)) :
-    (orderOf σ : ℕ) ∣ Nat.factorial n
+theorem orderOf_perm_dvd_factorial (n : ℕ) (σ : Equiv.Perm (Fin n)) :
+    (orderOf σ : ℕ) ∣ Nat.factorial n := by
+  have h_card : Fintype.card (Equiv.Perm (Fin n)) = Nat.factorial n := by
+    rw [Fintype.card_perm, Fintype.card_fin]
+  have h_dvd : orderOf σ ∣ Fintype.card (Equiv.Perm (Fin n)) :=
+    orderOf_dvd_card
+  rw [h_card] at h_dvd
+  exact h_dvd
 
 /-- Z₁₁ cannot embed in S₅: no element of S₅ has order 11,
     because 11 ∤ 120. -/
