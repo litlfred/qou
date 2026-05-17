@@ -244,6 +244,72 @@ honest — it explicitly acknowledges "κ is empirical from the v6 probe
 (not yet categorically derived)" and "The H7a piece $[A-2]_q \cdot E_0 \cdot
 \log(1/h)$ was refuted as a UNIVERSAL closure by PR #654's F2 probe."
 
+## Finding 7 — the codebase has TWO disagreeing tr_M implementations
+
+Running `probe_hopf_markov_trace_genuine.py` (companion replacement
+for PR #664's tautological probe) on σ_1² in H_2 surfaced a deeper
+infrastructure issue:
+
+| Implementation | Formula | Result on σ_1² (H_2) | Value at q=1 |
+|---|---|---|---|
+| `hoefsmit_symbolic.tr_M_symbolic` | $\sum_\lambda w_\lambda \chi^\lambda(\beta) / f^\lambda$ | $(q^4+1)/(q^3+q)$ | +1 |
+| `markov_weights_symbolic.tr_M_canonical` | $\sum_\lambda y_\lambda \chi^\lambda(\beta)$ (Wenzl y_λ) | (huge half-power expression) | +1 |
+| Textbook Jones $-(q+q^{-1})$ | (Kauffman/skein) | $-(q+q^{-1})$ | −2 |
+
+The first two are symbolically different rational functions even
+though they agree at $q=1$. **Neither equals the textbook Jones
+polynomial** at any $q$. An equivalence script
+[`y_lambda_equivalence_proof.py`](../../folio-assistant/computations/y_lambda_equivalence_proof.py)
+exists on main but its claimed equivalence does **not** hold
+symbolically on H_2.
+
+Most production mass-derivation scripts (proton, neutron, deuteron,
+axiomatic Markov, recursive Markov) call `tr_M_symbolic` (the
+hoefsmit_symbolic variant); the Q_β precision-ladder framework
+cites the Jones-Markov weight $y_\lambda$ via
+`thm:jones-markov-trace`, which corresponds to `tr_M_canonical`.
+**These are not interchangeable.**
+
+Implication for PR #664's c_3 claim:
+
+- Neither tr_M implementation gives $-2$ at $q=1$ for σ_1² (both give +1).
+- The textbook Jones polynomial value $-2$ that PR #664 hardcodes
+  arises from a *third* convention (Kauffman bracket with writhe
+  correction, not from a Markov trace at all).
+- Going from any of these to a Q_β precision-ladder coefficient $c_3$
+  requires both an identified convention AND an order-$h^6$ expansion
+  around $q=1$.
+
+Resolution: ratify one tr_M implementation as canonical (likely
+`tr_M_canonical` since CLAUDE.md's `thm:jones-markov-trace` and the
+$y_\lambda$ weight is the literature-standard Jones-Markov form) and
+audit downstream consumers. Until that happens, claims of the form
+"c_k = some-textbook-value" are not derivable from the framework
+without specifying which tr_M is meant.
+
+## Finding 8 — writhe correction (or equivalent) IS needed
+
+Empirical check on σ_1^k braids in H_2:
+
+| Braid | Closure | Writhe | tr_M_QOU at q=1 | Textbook J at q=1 |
+|---|---|---:|---:|---:|
+| σ_1 | unknot | 1 | 0 | 1 |
+| σ_1² | Hopf+ (2-comp) | 2 | +1 | −2 |
+| σ_1³ | trefoil (1-comp) | 3 | 0 | 1 |
+| σ_1⁴ | Solomon's seal (2-comp) | 4 | +1 | … |
+
+Pattern: $\text{tr}_M^{\text{QOU}}(\sigma_1^k)|_{q=1}$ depends only on
+parity of $k$ (even → +1, odd → 0, because of a Markov-parameter
+factor $z = (q^2-1)/(q^2+1)$ that vanishes at $q=1$). The textbook
+Jones values $(-2)^{c-1}$ depend on component count $c$, not parity.
+
+There is **no single multiplicative factor** $N(q)$ depending only
+on $n$ that satisfies $J = N \cdot \text{tr}_M$ across all braids:
+the relationship between Markov trace and Jones polynomial requires
+a writhe-and-stabilization-dependent correction. PR #664's claim
+"$c_3 = J_\text{Hopf}(q=1) = -2$ from V_(2,1) Hoefsmit Markov trace"
+elides this; the seminormal trace gives +1 at $q=1$, not −2.
+
 ## Summary of what is NOT canonically derived in PR #664
 
 | Object | Status in PR #664 | Truly categorical? |

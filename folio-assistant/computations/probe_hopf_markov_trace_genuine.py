@@ -45,6 +45,7 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
 from hoefsmit_symbolic import tr_M_symbolic, Q  # noqa: E402
+from markov_weights_symbolic import tr_M_canonical  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 
@@ -53,9 +54,18 @@ def main() -> int:
 
     # σ_1² in H_2: braid word of length 2, generator 0, positive crossings.
     crossings = [(0, "sigma"), (0, "sigma")]
+
+    # Two Markov-trace implementations live in the codebase:
+    #   (i) hoefsmit_symbolic.tr_M_symbolic  → uses w_λ · χ^λ / f^λ
+    #  (ii) markov_weights_symbolic.tr_M_canonical → uses y_λ · χ^λ
+    # They produce DIFFERENT symbolic answers (see audit doc).
     trM = tr_M_symbolic(crossings, 2)
     trM_simple = sp.cancel(trM)
     trM_at_1 = sp.cancel(trM_simple.subs(Q, 1))
+
+    trM_can, _y_lam = tr_M_canonical(crossings, 2)
+    trM_can_simple = sp.cancel(trM_can)
+    trM_can_at_1 = sp.cancel(trM_can_simple.subs(Q, 1))
 
     # Textbook Jones polynomial of the positive Hopf link (Kauffman/Jones,
     # standard normalisation, the value PR #664 claims comes "from V_(2,1)
@@ -77,11 +87,16 @@ def main() -> int:
     print("  Genuine Markov-trace computation: tr_M(σ_1²) in H_2(q)")
     print("=" * 90)
     print()
-    print("  Symbolic tr_M(σ_1²) from hoefsmit_symbolic.tr_M_symbolic:")
+    print("  (i) hoefsmit_symbolic.tr_M_symbolic — uses w_λ·χ^λ/f^λ:")
     print(f"    tr_M(σ_1²) = {trM_simple}")
-    print()
     print(f"    at q = 1:   tr_M = {trM_at_1}")
     print(f"    at q = q_0: tr_M = {mp.nstr(trM_at_q0, 20)}")
+    print()
+    print("  (ii) markov_weights_symbolic.tr_M_canonical — uses y_λ·χ^λ:")
+    print(f"    tr_M(σ_1²) = {trM_can_simple}")
+    print(f"    at q = 1:   tr_M = {trM_can_at_1}")
+    print()
+    print("  These TWO implementations DISAGREE.  Both live on main.")
     print()
     print("  PR #664's claimed J_Hopf(q) (hardcoded in its probe):")
     print(f"    J_Hopf(q) = -(q + q⁻¹) = {sp.expand(J_hopf_textbook)}")
@@ -132,6 +147,12 @@ def main() -> int:
         .add_data("tr_M_sigma1_sq_symbolic", str(trM_simple))
         .add_data("tr_M_sigma1_sq_at_q_eq_1", str(trM_at_1))
         .add_data("tr_M_sigma1_sq_at_q0_50dps", mp.nstr(trM_at_q0, 50))
+        .add_data("tr_M_canonical_sigma1_sq_symbolic", str(trM_can_simple))
+        .add_data("tr_M_canonical_sigma1_sq_at_q_eq_1", str(trM_can_at_1))
+        .add_data(
+            "two_implementations_disagree",
+            str(sp.cancel(trM_simple - trM_can_simple)) != "0",
+        )
         .add_data("J_Hopf_textbook_symbolic", str(J_hopf_textbook))
         .add_data("J_Hopf_textbook_at_q_eq_1", J_at_1)
         .add_data("J_Hopf_textbook_at_q0_50dps", mp.nstr(J_at_q0, 50))
@@ -173,6 +194,21 @@ def main() -> int:
             "closure; "
             "(4) verify no other order-h^6 contribution survives the "
             "Frobenius selection.  All four steps are open work."
+        )
+        .add_caveat(
+            "Infrastructure issue: the codebase has TWO different "
+            "tr_M implementations that produce different symbolic answers "
+            "for the same braid: hoefsmit_symbolic.tr_M_symbolic uses "
+            "Σ_λ w_λ·χ^λ/f^λ while markov_weights_symbolic.tr_M_canonical "
+            "uses Σ_λ y_λ·χ^λ (Wenzl's principal-specialization Jones-"
+            "Markov weights).  Neither matches the textbook Jones "
+            "polynomial -(q+q⁻¹) directly.  An equivalence script "
+            "y_lambda_equivalence_proof.py exists but the symbolic "
+            "outputs of the two routines do NOT agree on σ_1² in H_2. "
+            "Resolution: ratify one as canonical and audit downstream "
+            "consumers (proton, neutron, deuteron mass chains all use "
+            "hoefsmit_symbolic.tr_M_symbolic; the precision-ladder "
+            "Q_β framework cites tr_M_canonical via thm:jones-markov-trace)."
         )
     )
     out = builder.save()
