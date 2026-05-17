@@ -69,6 +69,36 @@ from witness_base import WitnessBuilder  # noqa: E402
 mp.mp.dps = 30
 
 
+def _hash_upstream(path: Path) -> dict:
+    """Compute (sha256, commitSha, scriptCommitSha, computedAt) for
+    a witness file, for inclusion in
+    `derivation_inputs.upstream_witness_hashes` per the anti-staleness
+    convention from PR #663.
+
+    Returns an empty record if the path does not exist; emits the
+    sha256 unconditionally otherwise (so even legacy witnesses
+    without their own metadata get a stable hash entry).
+    """
+    import hashlib
+    import json as _json
+    rec: dict = {"path": str(path)}
+    if not path.exists():
+        rec["status"] = "missing"
+        return rec
+    raw = path.read_bytes()
+    rec["sha256"] = hashlib.sha256(raw).hexdigest()
+    rec["bytes"] = len(raw)
+    try:
+        body = _json.loads(raw)
+    except (_json.JSONDecodeError, ValueError):
+        rec["status"] = "non-json"
+        return rec
+    for k in ("commitSha", "scriptCommitSha", "computedAt"):
+        if k in body:
+            rec[k] = body[k]
+    return rec
+
+
 # Atoms in scope for the LR-bridge consumer. Each entry:
 #   (Z, N, label, [per-nucleon-spec])
 # where per-nucleon-spec is a list of (sub_Z, sub_N, sub_label) tuples,
@@ -87,14 +117,14 @@ ATOMS = [
     (1, 2, "T",  [(1, 0, "p"), (0, 1, "n"), (0, 1, "n")]),
     # Helion: p ⊗ p ⊗ n at H_9
     (2, 1, "3He", [(1, 0, "p"), (1, 0, "p"), (0, 1, "n")]),
-    # Helium-4: p ⊗ p ⊗ n ⊗ n at H_12
+    # Helium-4: p ⊗ p ⊗ n ⊗ n at H_12 (y_λ cached n=12)
     (2, 2, "4He", [(1, 0, "p"), (1, 0, "p"), (0, 1, "n"), (0, 1, "n")]),
-]
-ATOMS_DEFERRED_BEYOND_H12 = [
-    # Lithium-6: 3p + 3n at H_18 (y_λ live-compute required)
+    # Lithium-6: 3p + 3n at H_18 — y_λ live compute via numerical-q
+    # path (`y_lambda_at(18, q_0)` ~minutes).
     (3, 3, "6Li", [(1, 0, "p"), (1, 0, "p"), (1, 0, "p"),
                    (0, 1, "n"), (0, 1, "n"), (0, 1, "n")]),
-    # Lithium-7: 3p + 4n at H_21
+    # Lithium-7: 3p + 4n at H_21 — slowest in scope; y_λ at H_21
+    # may take longer minutes.
     (3, 4, "7Li", [(1, 0, "p"), (1, 0, "p"), (1, 0, "p"),
                    (0, 1, "n"), (0, 1, "n"), (0, 1, "n"), (0, 1, "n")]),
 ]
@@ -203,6 +233,9 @@ def compute_tr_m_for_atom(Z: int, N: int, label: str,
 
 
 def main() -> int:
+    from q_parameter import Q as _Q_FLOAT_DOC  # noqa: E402
+    global Q_FLOAT_FOR_DOC  # captured by the witness's calibration_anchors
+    Q_FLOAT_FOR_DOC = _Q_FLOAT_DOC
     rows = []
     for (Z, N, label, specs) in ATOMS:
         print(f"\n→ Computing |tr_M({label})| via Wenzl LR "
@@ -216,8 +249,26 @@ def main() -> int:
                   f"({row['n_partitions']} partitions, "
                   f"{row['duration_ms_total']} ms LR total)")
 
+    # Anti-staleness: hash every upstream witness this script reads
+    # so `witness_dependency_drift.py` can detect silent staleness
+    # when the upstream changes without this consumer regenerating.
+    upstream_paths = [
+        HERE / "y-lambda-at-q0.witness.json",
+    ]
+    upstream_hashes = [_hash_upstream(p) for p in upstream_paths]
+
     out = {
         "computation": "rho-k-full-via-wenzl-lr",
+        "derivation_inputs": {
+            "upstream_witness_hashes": upstream_hashes,
+            "calibration_anchors": {
+                "Q_0": str(Q_FLOAT_FOR_DOC),
+                "note": (
+                    "q_0 is the CAL-2 substrate parameter; no other "
+                    "calibration enters this consumer."
+                ),
+            },
+        },
         "description": (
             "ρ_K^full consumer: removes the LO tautology in "
             "`atomic_mass_via_rho_k.py` by computing |tr_M(canonical β)| "
