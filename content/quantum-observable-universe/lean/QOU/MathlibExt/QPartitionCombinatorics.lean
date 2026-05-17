@@ -55,6 +55,27 @@ theorem qBracket_one {q : ℝ} (h_denom_ne : q - q⁻¹ ≠ 0) :
   simp only [Nat.one_ne_zero, if_false, pow_one, zpow_neg, zpow_one]
   exact div_self h_denom_ne
 
+/-- **`[2]_q = q + q⁻¹`** when `q ≠ 0` and the denominator is nonzero.
+
+    Proved via difference of squares:
+      `(q² − q⁻²) = (q − q⁻¹)(q + q⁻¹)`,
+    then `mul_div_cancel_left₀`. -/
+theorem qBracket_two {q : ℝ} (hq_ne : q ≠ 0)
+    (h_denom_ne : q - q⁻¹ ≠ 0) :
+    qBracket q 2 = q + q⁻¹ := by
+  unfold qBracket
+  have hne : (2 : ℕ) ≠ 0 := by decide
+  simp only [if_neg hne]
+  -- q ^ (-(2 : ℤ)) = q⁻¹ ^ 2
+  have h1 : q ^ (-(2 : ℤ)) = q⁻¹ ^ 2 := by
+    rw [show (-(2 : ℤ)) = -((2 : ℕ) : ℤ) from rfl, zpow_neg, zpow_natCast,
+        ← inv_pow]
+  rw [h1]
+  -- Difference of squares factorisation
+  have h2 : q ^ 2 - q⁻¹ ^ 2 = (q - q⁻¹) * (q + q⁻¹) := by ring
+  rw [h2]
+  exact mul_div_cancel_left₀ (q + q⁻¹) h_denom_ne
+
 /-- The **q-factorial** `[n]_q! = ∏_{k=1}^n [k]_q`.
 
     Empty product convention: `[0]_q! = 1`. -/
