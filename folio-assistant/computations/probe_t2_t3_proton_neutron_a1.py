@@ -85,7 +85,6 @@ def compute_t2_t3(label: str, n_strands: int, crossings: dict) -> dict:
 
     # T3: pair brane tower (with z_mark² scaling per mass_endomorphism
     # convention: z_mark = 1/(q^{1/2}+q^{-1/2}))
-    import math
     z_mark = 1.0 / (Q_FLOAT ** 0.5 + (1.0 / Q_FLOAT) ** 0.5)
     t3_per_pair = []
     t3_raw = 0.0  # before z² scaling
@@ -144,12 +143,16 @@ def main() -> int:
     print("  Comparison to T1+T4 (currently shipping in proton-mass chain)")
     print("=" * 90)
     print()
+    # Load m_p_Hecke (T1+T4 partial) from the canonical Path A derivation
+    # — no magic numbers; this is the single source of truth.
+    from derive_m_p_hecke_path_a import m_p_hecke_path_a_at_q0
+    m_p_hecke_value = float(m_p_hecke_path_a_at_q0())
     print("  T1 + T4 (proton, from derive_m_p_hecke_path_a, m_p_Hecke):")
-    print("    m_p_Hecke ~ 0.5974 (in same units as T1 and T4)")
+    print(f"    m_p_Hecke = {m_p_hecke_value:.6f} (in same units as T1 and T4)")
     print()
     print(f"  T2+T3 (proton, this probe, raw): {proton_result['t2_plus_t3']:.3e}")
     print()
-    print("  RATIO T2+T3 / m_p_Hecke ≈ {:.2e}".format(proton_result['t2_plus_t3'] / 0.5974))
+    print("  RATIO T2+T3 / m_p_Hecke ≈ {:.2e}".format(proton_result['t2_plus_t3'] / m_p_hecke_value))
     print()
     print("  Direct interpretation: if T2+T3 at A=1 are added to T1+T4,")
     print("  the resulting m_p_Hecke is ~10^6× the current value, which")
@@ -184,7 +187,7 @@ def main() -> int:
             "interpretation_options",
             "1=structural_suppression, 2=witness_coverage_gap, 3=rederivation"
         )
-        .add_data("ratio_t2t3_over_m_p_hecke", float(proton_result['t2_plus_t3'] / 0.5974))
+        .add_data("ratio_t2t3_over_m_p_hecke", float(proton_result['t2_plus_t3'] / m_p_hecke_value))
         .add_data("ratio_t2t3_over_codata", float(proton_result['t2_plus_t3'] / 938.272))
         .add_assertion(
             name="proton_t2_t3_not_structurally_zero",

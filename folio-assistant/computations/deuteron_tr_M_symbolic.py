@@ -99,23 +99,10 @@ def main() -> int:
         return tuple(sum(1 for p in shape if p > j) for j in range(m))
 
     # Optimization: under the bar involution q → q⁻¹ the symbolic
-    # character satisfies χ^{λ'}(β) = χ^λ(β*)|_{q→q⁻¹} for β* the
-    # bar-conjugate braid (σ_i ↔ σ_i⁻¹). For the deuteron internal
-    # braid this gives a cheap derivation of half the partitions'
-    # characters from their conjugates' (saves ~30s on H_6: 11
-    # partitions → 6 unique conjugate-classes incl. one self-conjugate).
-    def bar_conjugate_word(word):
-        """Bar involution on a Hecke braid word: σ ↔ σ⁻¹ at each crossing."""
-        flipped = []
-        for gen, ctype in word:
-            if ctype == "sigma":
-                flipped.append((gen, "sigma_inv"))
-            elif ctype == "sigma_inv":
-                flipped.append((gen, "sigma"))
-            else:
-                # averaged / other: leave as-is (bar-invariant)
-                flipped.append((gen, ctype))
-        return flipped
+    # character satisfies χ^{λ'}(β) = χ^λ(β)|_{q→q⁻¹} when β is bar-
+    # invariant (writhe-balanced, palindromic in cross-type). For the
+    # deuteron internal braid this holds, so χ^{λ'} can be derived
+    # from already-computed χ^λ via symbolic subs(Q, 1/Q).
 
     # Fast path: read symbolic χ^λ from the cached witness
     # chi-deuteron-h6.witness.json (computed once, ~131s; reused in ms).

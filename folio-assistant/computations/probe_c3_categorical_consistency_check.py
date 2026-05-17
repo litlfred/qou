@@ -82,7 +82,7 @@ def main() -> int:
     series_F3 = sp.series(F3, eps, 0, 9).removeO()
     coeffs_F3 = {}
     for k in range(9):
-        ck = sp.simplify(series_F3.coeff(eps, k))
+        ck = sp.cancel(series_F3.coeff(eps, k))
         coeffs_F3[k] = ck
         if not ck.equals(0):
             ck_simple = sp.nsimplify(ck, rational=False)
@@ -107,19 +107,19 @@ def main() -> int:
     print()
 
     # The ε^6 coefficient from the series (already-computed above)
-    eps6_coeff = sp.simplify(coeffs_F3[6])
+    eps6_coeff = sp.cancel(coeffs_F3[6])
     print(f"  Step 3: ε^6 coefficient from F_3 series expansion:")
     print(f"    {sp.nsimplify(eps6_coeff)}")
     print(f"    ≈ {float(eps6_coeff.evalf())}")
     print()
 
     # Match check
-    delta = sp.simplify(eps6_coeff - predicted_eps6)
+    delta = sp.cancel(eps6_coeff - predicted_eps6)
     print(f"  Step 4: Match check")
     print(f"    extracted ε^6  : {sp.nsimplify(eps6_coeff)}")
     print(f"    predicted      : {sp.nsimplify(predicted_eps6)} = -2·b³(q=1)")
-    print(f"    Δ = {sp.simplify(delta)}")
-    if sp.simplify(delta) == 0:
+    print(f"    Δ = {sp.cancel(delta)}")
+    if sp.cancel(delta).equals(0):
         print("    ✓ MATCH: ε^6 of F_3 = -2·b³(q=1) = -3√3/4 EXACTLY.")
     print()
 

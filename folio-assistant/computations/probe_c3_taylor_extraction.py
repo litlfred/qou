@@ -96,8 +96,8 @@ def main() -> int:
     c3_claimed = sp.Integer(-2)
     c3_from_sym = coeffs_sym[6]
     c3_from_can = coeffs_can[6]
-    sym_matches = sp.cancel(c3_from_sym - c3_claimed) == 0
-    can_matches = sp.cancel(c3_from_can - c3_claimed) == 0
+    sym_matches = sp.cancel(c3_from_sym - c3_claimed).equals(0)
+    can_matches = sp.cancel(c3_from_can - c3_claimed).equals(0)
 
     print(f"  PR #664 claim: c_3 = -2")
     print(f"  ε^6 from tr_M_symbolic:  {c3_from_sym}   matches -2? {sym_matches}")
