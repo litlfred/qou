@@ -42,12 +42,28 @@ Per CLAUDE.md three-cal discipline (CAL-1 m_e, CAL-2 q₀):
 - NO CODATA m_p / m_n injection.
 - NO Q_β (CAL-3) anchor consumed in the m_p prediction.
 
-Output: ``proton-mass-full-tower-50dps.witness.json``
+Result history:
+  - 2026-05-16 (Faddeev Φ_q tower): m_p_pred = 955.49 MeV vs CODATA
+                                    938.27 MeV; residual +1.835 %
+                                    (+18,353 ppm).  ≈ 54,000× tighter
+                                    than the previous Path A value
+                                    (0.597 MeV / 999 M ppb).
+  - 2026-05-17 (symmetric Li_2^q tower, current canonical form):
+                m_p_pred = 0.2406 MeV vs CODATA 938.27 MeV; residual
+                -99.97 %.  The honest tower-only prediction is far
+                from CODATA — Faddeev's apparent closure was a pole
+                artefact at |V̂_p| > q⁻¹.  See
+                ``picard-lefschetz-thimble.witness.json`` for the
+                C2-inflection substrate route (-0.07 % m_p residual)
+                and ``probe-flavor-split-substrate.witness.json``
+                (Δm to -0.10 %).  The full closure of the tower at
+                A=1 requires per-generator T2/T3 fields that main's
+                ``terms_2_3_atom_per_gen_mpfr_50dps`` no longer emits
+                (post-rebase schema regression — separate follow-up).
 
-Result @ 2026-05-16: m_p_pred = 955.49 MeV vs CODATA 938.27 MeV;
-                     residual +1.835 % (+18,353 ppm).
-                     ≈ 54,000× tighter than the previous Path A
-                     value (0.597 MeV / 999 M ppb).
+Output: ``proton-mass-full-tower-50dps.witness.json`` — values stored
+in MeV at 50 dps (m_e calibration applied; no further E_0 scaling
+needed by downstream consumers).
 """
 from __future__ import annotations
 

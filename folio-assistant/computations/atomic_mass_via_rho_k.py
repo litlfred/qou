@@ -85,12 +85,26 @@ from witness_base import load_and_hash_upstream  # noqa: E402
 # in the script's witness output (anti-staleness; see
 # docs/audits/2026-05-16-stale-witness-infra-gap.md).
 _UPSTREAM_HASHES: list[dict] = []
+# Per-path memo so repeated reads of the same upstream witness only
+# perform one sha256 + parse — `load_atomic_tr_m_status` and
+# `load_atomic_tr_m` both iterate the same extension files (gemini
+# #663 review: avoid the hundreds-of-redundant-I/O regression).
+_UPSTREAM_CACHE: dict[str, dict] = {}
 
 
 def _load_upstream(path: Path) -> dict:
-    """Read an upstream witness file, record its hash, return the body."""
+    """Read an upstream witness file, record its hash, return the body.
+
+    Cached per-path: the second and subsequent reads of the same
+    file return the memoised body and append the same hash record
+    only once — see ``_UPSTREAM_CACHE``.
+    """
+    key = str(path.resolve())
+    if key in _UPSTREAM_CACHE:
+        return _UPSTREAM_CACHE[key]
     body, hr = load_and_hash_upstream(path)
     _UPSTREAM_HASHES.append(hr)
+    _UPSTREAM_CACHE[key] = body
     return body
 
 # ── CODATA reference data (kept identical to legacy table) ─────

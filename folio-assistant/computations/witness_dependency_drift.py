@@ -157,9 +157,10 @@ def main() -> int:
             if "recorded_at" in d and d["recorded_at"]:
                 print(f"      recorded_at: {d['recorded_at']}")
 
-    if args.strict:
-        return 1 if all_drifts else 0
-    return 0
+    # Signal failure by default when drifts are detected so CI catches
+    # inconsistencies; --strict is preserved for back-compat but yields
+    # the same exit code (gemini #663: avoid silent-success regression).
+    return 1 if all_drifts else 0
 
 
 if __name__ == "__main__":

@@ -74,7 +74,6 @@ from low_isotope_binding_sweep import (  # noqa: E402
 )
 from paper_six_term_isotope_sweep import (  # noqa: E402
     q_beta_for_source, q_beta_substrate_cos_tightened_MeV,
-    q_beta_full_chain_n4_MeV,
 )
 from witness_base import load_and_hash_upstream  # noqa: E402
 
