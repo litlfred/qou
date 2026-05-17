@@ -37,13 +37,15 @@ theorem hecke_log_decomposition (q : ℝ) (hq : 1 < q) :
       Real.log (1 / ((q - 1) / q)) - Real.log (1 + q) := by
   -- Ref: [manuscript] prop:boltzmann-constant
   -- Proof outline:
-  --   1/h = 1/(ℏ_q (q+1)) = (1/ℏ_q) · 1/(q+1)
-  --   log(1/h) = log(1/ℏ_q) + log(1/(q+1))
-  --           = log(1/ℏ_q) - log(1+q)
-  -- Full formal proof deferred until the Mathlib infrastructure
-  -- (Real.log_div, Real.log_one_div under positivity hypotheses)
-  -- is wired through the local Mathlib extension used by other
-  -- QOU.Information modules.
+  --   By hecke_skein_factorization, q - q⁻¹ = ((q-1)/q) · (q+1).
+  --   Then 1/(q - q⁻¹) = (1/((q-1)/q)) · (1/(q+1)).
+  --   Real.log of product = sum of logs (Real.log_mul, applied
+  --   under positivity hypotheses q > 1 ⇒ q-1, q+1, q > 0).
+  --   log(1/(q+1)) = -log(q+1) (Real.log_one_div), gives the
+  --   subtractive form on the RHS.
+  -- Full Lean proof requires explicit Mathlib lemma chain
+  -- (Real.log_div, Real.log_one_div, Real.log_mul) under the
+  -- positivity hypotheses; deferred to a Lean-agent pass.
   sorry  -- Ref: [manuscript] prop:boltzmann-constant
 
 /-- Numerical equality at the QOU substrate parameter q_0:

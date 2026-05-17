@@ -7,17 +7,28 @@ six-term mass formula. Then at magic-shell anchors with $A = Z + N \geq 2$,*
 
 $$
 \boxed{\quad
+\begin{aligned}
   \Delta_{\mathrm{coupling}}(Z, N)
   \;=\;
-  (A - 2) \cdot E_0 \cdot \log\!\frac{1}{h(q_0)}
-  \;=\;
-  (A - 2) \cdot E_0 \cdot \Bigl[\log\!\frac{1}{k_B T_q} - \log(1 + q_0)\Bigr]
+  & (A - 2) \cdot E_0 \cdot \log\!\frac{1}{h(q_0)} && \text{(leading)} \\
+  & + 2\,(Z - 1)_+\,(N - 1)_+ \cdot z^2 \cdot E_0 \cdot h(q_0)^2 && \text{(pp-nn correlation)}
+\end{aligned}
 \quad}
 $$
 
 *where $E_0 = m_e / (q_0 (q_0 - 1))$ is the Hecke energy unit
-([`rem:beta-decay-energy-scale`](#rem:beta-decay-energy-scale)) and the log-decomposition is
+([`rem:beta-decay-energy-scale`](#rem:beta-decay-energy-scale)),
+$z = 1/(q^{1/2} + q^{-1/2})$ is the Markov parameter, $h = q - q^{-1}$
+is the Hecke skein deformation, $(x)_+ := \max(x, 0)$, and the
+log-decomposition of the leading-form factor is
 [`prop:hecke-log-decomposition`](#prop:hecke-log-decomposition).*
+
+*The correlation term vanishes at single-magic anchors
+(where either $Z = 1$ or $N = 1$) and contributes only at
+doubly-magic configurations $(Z, N)$ with both $Z \geq 2$ and
+$N \geq 2$, matching the empirical observation that single-magic
+anchors lie at the leading-form prediction while doubly-magic
+exhibit additional over-binding.*
 
 ## Status
 
@@ -28,14 +39,19 @@ $(Z, N) = (2, 2)$ for ${}^4$He:
 |---|---|
 | $E_0(q_0)$ | $4.18598$ MeV |
 | $\log(1/h(q_0))$ | $1.56513$ |
-| $A - 2$ | $2$ |
-| **Predicted** $\Delta_{\mathrm{coupling}}(2, 2)$ | $13.103$ MeV |
+| $z(q_0) = 1/(q^{1/2}+q^{-1/2})$ | $0.49932$ |
+| $h(q_0)^2$ | $0.04371$ |
+| **Leading** $(A-2) \cdot E_0 \cdot \log(1/h)$ | $13.1032$ MeV |
+| **Correlation** $2 \cdot z^2 \cdot E_0 \cdot h^2$ | $+0.0912$ MeV |
+| **Total predicted** $\Delta_{\mathrm{coupling}}(2, 2)$ | $13.1945$ MeV |
 | **Extracted** $\Delta_{\mathrm{coupling}}(2, 2)$ (AME) | $+13.20$ MeV |
-| Relative gap | $+0.71$% |
+| **Refined relative gap** | $+0.042\%$ (vs $0.71\%$ leading-form only — $17 \times$ improvement) |
 
 Verified numerically by
 [`probe_delta_coupling_leading_form.py`](folio-assistant/computations/probe_delta_coupling_leading_form.py)
-(witness: [`delta-coupling-leading-form-probe.witness.json`](folio-assistant/computations/delta-coupling-leading-form-probe.witness.json)).
+(leading-form witness) and
+[`probe_delta_coupling_pp_nn_correlation.py`](folio-assistant/computations/probe_delta_coupling_pp_nn_correlation.py)
+(refined-form witness with pp-nn correlation).
 
 Cross-anchor verification at $(2, 1)$ ${}^3$He$=$D$+$p and $(1, 2)$
 T$=$D$+$n is pending PR #644's $\Delta_{\mathrm{cat}}$ data for

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-17T07:06:01.640361+00:00",
-  "commitSha": "a4d4c04239f1739d649a89fcce2f7c4e6db86aae",
+  "computedAt": "2026-05-17T07:12:47.615498+00:00",
+  "commitSha": "86fbd66b885ac50342f1003a1dac9dbfbdcd580d",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2169,6 +2169,7 @@
         "delta-S-chain-audit.witness.json",
         "delta-coupling-closed-form-probe.witness.json",
         "delta-coupling-leading-form-probe.witness.json",
+        "delta-coupling-pp-nn-correlation-probe.witness.json",
         "delta-coupling-residual-closure-probe.witness.json",
         "delta-lambda-2row-stratum.witness.json",
         "delta-lambda-empirical-tabulation.witness.json",
