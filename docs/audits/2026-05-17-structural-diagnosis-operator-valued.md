@@ -137,6 +137,35 @@ the PR #671 combiner shipped (`canonical_tr_m_via_chi_cache.py`)
 provides the |tr_M| at q_0 level needed for the reformulation, once
 chi caches for T/³He/⁴He complete.
 
+### Quantitative magnitude budget
+
+The probe [`probe_operator_valued_ansatze_from_mass_endo.py`](../../folio-assistant/computations/probe_operator_valued_ansatze_from_mass_endo.py)
+quantifies the operator-valued correction Frobenius norm
+
+$$
+\|\Delta_{\text{op}}^{\lambda,\mu,\nu}\|_F \;=\; \sqrt{\|A^\lambda_{\mu,\nu}\|_F^2 \;-\; \tfrac{|\operatorname{tr} A|^2}{d_\mu d_\nu}}
+$$
+
+(Pythagoras: scalar-approximation projection onto the 1-d subspace
+spanned by $\mathbf{1}$). Aggregated across all 35 (λ,μ,ν) blocks of
+the H_6 deuteron interface:
+
+| Quantity | Frobenius |
+|---|---|
+| Scalar-approximation $\sum \|A_{\text{scalar}}\|_F^2$ | 3.517 |
+| Operator-valued correction $\sum \|\Delta_{\text{op}}\|_F^2$ | **3.603** |
+| Ratio op / (scalar + op) | **0.72** |
+| Genuinely non-scalar blocks | 19 / 35 |
+
+**The operator-valued correction Frobenius (3.603) exceeds the scalar
+approximation (3.517).** Symmetric scalar substrate ansatze do not
+just incompletely cover the structure — they capture *less than half*
+the magnitude. This is the unambiguous quantitative case that the
+4 negatives converge on operator-valued, not scalar-substrate-with-
+better-coefficients.
+
+Witness: [`operator-valued-ansatze-from-mass-endo.witness.json`](../../folio-assistant/computations/operator-valued-ansatze-from-mass-endo.witness.json).
+
 ## Next-PR scope (concrete)
 
 **Phase 1' (next)** — Reformulated Δ_coupling via operator-valued
