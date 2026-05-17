@@ -57,6 +57,18 @@ from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 
+def _load_numerical_chi_cache(atom_name: str, n: int) -> dict | None:
+    """Load the numerical χ^λ@q_0 cache built by
+    `chi_at_q0_via_hoefsmit_mpfr.py`, if present. Returns None when
+    the numerical cache is absent (callers fall back to the symbolic
+    path).
+    """
+    path = HERE / f"chi-{atom_name}-h{n}-at-q0-50dps.witness.json"
+    if not path.exists():
+        return None
+    return json.loads(path.read_text())
+
+
 def _load_chi_cache(atom_name: str, n: int) -> tuple[dict[tuple, str], bool, int]:
     """Load symbolic χ^λ cache for `atom_name` at H_n.
 
@@ -79,12 +91,46 @@ def _load_chi_cache(atom_name: str, n: int) -> tuple[dict[tuple, str], bool, int
 def canonical_tr_m(atom_name: str, Z: int, N: int) -> dict[str, object]:
     """Compute |tr_M(β_atomic(Z, N))| at q_0 via Σ_λ y_λ · χ^λ.
 
-    Skips partitions missing from a partial chi cache. The caller
-    sees `partial` + `partitions_used` / `partitions_total` in the
-    result so a downstream consumer can decide whether to use a
-    truncated trace.
+    Prefers the numerical χ^λ@q_0 cache (built by
+    `chi_at_q0_via_hoefsmit_mpfr.py`) when present — it's
+    pre-computed end-to-end as |tr_M(q_0)| = Σ y_λ · χ^λ at 50 dps,
+    so the consumer just reads the value with the per-λ breakdown.
+    Falls back to the symbolic chi cache (slower, partial-aware)
+    when the numerical cache is missing.
     """
     n = 3 * (Z + N)
+
+    # Fast path: numerical chi cache is complete (one mpf per partition,
+    # tr_M already summed). All 5 production atoms ship at this tier.
+    numerical = _load_numerical_chi_cache(atom_name, n)
+    if numerical is not None:
+        q_0 = mp.mpf(repr(Q_0_FLOAT))
+        per_lambda = [{
+            "partition": entry["partition"],
+            "y_lambda_at_q0": entry["y_lambda"],
+            "chi_lambda_at_q0": entry["chi_lambda"],
+            "contribution": entry["contribution"],
+        } for entry in numerical["by_partition"]]
+        tr_m = mp.mpf(numerical["tr_M_at_q0"])
+        return {
+            "atom": atom_name,
+            "Z": Z,
+            "N": N,
+            "n_strands": n,
+            "partitions_total": len(per_lambda),
+            "partitions_used": numerical["n_partitions"],
+            "partial_cache": False,
+            "source": "numerical_chi_cache",
+            "q_0_50dps": str(q_0),
+            "tr_M_q0": str(tr_m),
+            "abs_tr_M_q0": str(abs(tr_m)),
+            "y_lambda_load_time_sec": 0.0,
+            "tr_m_sum_time_sec": 0.0,
+            "per_lambda": per_lambda,
+        }
+
+    # Slow path: symbolic chi cache (used when the numerical builder
+    # has not run for this atom yet).
     q = sp.Symbol("q", positive=True)
 
     chi_cache, partial, n_total = _load_chi_cache(atom_name, n)
@@ -129,6 +175,7 @@ def canonical_tr_m(atom_name: str, Z: int, N: int) -> dict[str, object]:
         "partitions_total": n_total,
         "partitions_used": n_used,
         "partial_cache": partial,
+        "source": "symbolic_chi_cache",
         "q_0_50dps": str(q_0),
         "tr_M_q0": str(tr_m),
         "abs_tr_M_q0": str(abs(tr_m)),

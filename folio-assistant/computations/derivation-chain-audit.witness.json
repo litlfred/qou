@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T02:10:00.003171+00:00",
-  "commitSha": "f7ec3ad4278a960ca3c3ca4750b75a474277a2c3",
+  "computedAt": "2026-05-18T02:10:02.024365+00:00",
+  "commitSha": "bfa0b828d771873a789dc61cef1a302f32ba6318",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2129,11 +2129,16 @@
         "categorical-q-decay-ba-low-isotopes.witness.json",
         "ch-bond-writhe-lp.witness.json",
         "channel-product-mass.witness.json",
+        "chi-deuteron-h6-at-q0-50dps.witness.json",
         "chi-deuteron-h6.witness.json",
+        "chi-helium-3-h9-at-q0-50dps.witness.json",
         "chi-helium-3-h9.witness.json",
         "chi-helium-4-h12.witness.json",
+        "chi-neutron-h3-at-q0-50dps.witness.json",
         "chi-neutron-h3.witness.json",
+        "chi-proton-h3-at-q0-50dps.witness.json",
         "chi-proton-h3.witness.json",
+        "chi-tritium-h9-at-q0-50dps.witness.json",
         "chi-tritium-h9.witness.json",
         "chirality-avg-content-atomic.witness.json",
         "chirality-avg-content-chiral.witness.json",
