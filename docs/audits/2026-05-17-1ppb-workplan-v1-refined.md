@@ -197,3 +197,58 @@ Phase 3' (m_p chain closure), ~3 sessions.
   genuine derivation?
 - Q4: Should the genuine c_3 / F_3 derivation be merged into the
   Phase 1' PR (one substantial PR) or split off as Phase 2'?
+
+---
+
+## v1.1 update (2026-05-17, post-4-negatives synthesis)
+
+PR #671 shipped **4 negative findings** that, taken together, change
+the v1 phase plan. The full synthesis is in
+[`2026-05-17-structural-diagnosis-operator-valued.md`](2026-05-17-structural-diagnosis-operator-valued.md);
+the summary for the workplan is:
+
+| Finding | Tested | Result | Structural lesson |
+|---|---|---|---|
+| 1 | Refined $\Delta_{\text{coupling}}$ at single-magic anchors | +8.74% (³He), -3.95% (T) — Z↔N asymmetry +0.796 MeV | Symmetric scalar substrate misses |
+| 2 | V_(2,2,2) per-block Taylor order | ε^1, not ε^6 — refutes PR #664 c_3 chain | Per-block aggregation is non-trivial |
+| 3 | T5 categorical attribution (20 substrate candidates) | None match both anchors AND Z↔N asymmetry (-0.325 MeV) | T5 needs operator-valued structure |
+| 4 | Habiro residue at A=1 | Cached `tr_M` IS Habiro-resummed; no separate tail | m_p gap is brane-tower, not residue |
+
+**All 4 ⇒ the next-PR scope is operator-valued per-Wedderburn-block,
+exactly the framework PR #681 audits.**
+
+### Re-prioritized phases (v1.1)
+
+| Phase | Was (v1.0) | Is (v1.1) | Rationale |
+|---|---|---|---|
+| **Phase 1'** | Cross-anchor verification of leading $(A-2)\cdot E_0 \cdot \log(1/h)$ | **Re-derive** $\Delta_{\text{coupling}}$ via operator-valued $A^\lambda_{\mu,\nu}(I)$ at the per-block level using the H_6 deuteron-interface witness | Finding 1 falsifies the symmetric refinement; the per-block route is the next concrete derivation |
+| **Phase 2'** | Genuine V_(2,2,2) projection for F_3 | **Per-channel** Wedderburn-block contributions to F_3 — V_(2,2,2) alone is structurally incomplete | Finding 2 refutes V_(2,2,2) as single-block channel |
+| **Phase 3'** | m_p chain Items B + C separately | **Combined** operator-valued T5 + brane-tower scaling for $\{m_p, m_n, m_{^4\text{He}}\}$ | Findings 3 + 4 share the operator-valued root cause |
+| **Phase 4'** | Wenzl LR bridge (PR #674) | unchanged | PR #674 provides the Rust kernel for per-block traces |
+| **Phase 5'** | Lean closure | unchanged — MarkovTraceTower class instance landed on PR #671 | discharges the abstraction; downstream conditional theorems remain |
+
+### Concrete next-session scope (single sibling PR)
+
+1. Cherry-pick / re-use [`canonical_tr_m_via_chi_cache.py`](../../folio-assistant/computations/canonical_tr_m_via_chi_cache.py) (PR #671 Step 2 combiner).
+2. Compute per-block $\chi^\lambda(\beta_{\text{atom}})$ for $\{T, {}^3\text{He}, {}^4\text{He}\}$ once those chi caches complete (tritium cache running on PR #671 branch; ETA minutes).
+3. Apply operator-valued $A^\lambda_{\mu,\nu}(I)$ from [`sublemma-2-1-A-operator-extract.witness.json`](../../folio-assistant/computations/sublemma-2-1-A-operator-extract.witness.json) (deuteron interface) to extract per-block corrections.
+4. Re-derive $\Delta_{\text{coupling}}$ at $(2,1), (1,2), (2,2)$ and check Z↔N asymmetry +0.796 MeV / T5 asymmetry -0.325 MeV reproduce.
+5. If reproduced: promote `conj:delta-coupling-substrate-form` to a conditional proposition (Lean class instance pending the operator-valued $A^\lambda_{\mu,\nu}$ class).
+
+### Coordination touch-points (post-v1.1)
+
+| Sibling | Status now | Need from us |
+|---|---|---|
+| PR #663 (isotope-mass) | $\Delta_{\text{cat}}$ data for {p, n, D, T, ³He} | Use combiner output to provide per-block $\chi^\lambda$ values |
+| PR #664 (c_3 categorical) | refuted at per-block level by Finding 2 | Coordinate on whether to close PR #664 or pivot it to per-channel F_3 |
+| PR #674 (Wenzl LR) | provides Rust kernel | Wire into combiner once it merges |
+| PR #681 (operator-valued Wenzl audit) | provides theoretical framework | Cite as the canonical reference; offer combiner + chi caches as Step 3 input |
+
+### What is NOT changed by v1.1
+
+- M0–M5 milestone target percentages stay the same
+- Three-anchor calibration discipline unchanged
+- Hard floor ~780 ppb unchanged
+- Anti-patterns list unchanged (and now strengthened: "scalar-substrate
+  refinements without Z↔N-asymmetric / operator-valued structure
+  are insufficient")
