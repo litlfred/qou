@@ -404,6 +404,7 @@ export default chapter({
         "u-coordinate-discharges",
         "multi-link-jones-q1-extension",
         "per-wedderburn-block-c5-c6",
+        "post-pr665-open-rd-inventory",
         "categorical-chain-convergence-mechanisms",
         "tau-M-asymptotic-rep-theory",
         "kashiwara-jones-alternation-interpretation",

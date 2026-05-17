@@ -55,11 +55,32 @@ The chapter $\sigma_1$ satisfies:
   - det $= -1$  ✓ (proved)
 
 but is **not** part of an $H_3$ representation with
-$\sigma_0 = \mathrm{diag}(q, -q^{-1})$. The $d_1, d_2$ entries need
-revision. The standard Ram-Hoefsmit form for $\sigma_{2,3}$ on
-$V_{(2,1)}$ at axial distance $-2$ gives a **diagonal entry of
-$1/(q+q^{-1}) = q/(q^2+1)$**, not $q^3/(q^2+1)$ — a **3-power
-discrepancy** in $q$.
+$\sigma_0 = \mathrm{diag}(q, -q^{-1})$.
+
+## The fix: swap $d_1$ and $d_2$
+
+Solving the YB cubic constraint analytically: with
+$\sigma_0 = \mathrm{diag}(q, -q^{-1})$ and the trace
+$d_1 + d_2 = q - q^{-1}$ plus the (0,1)-entry YB constraint
+$q d_1 - q^{-1} d_2 = -1$, we get **uniquely**
+$d_1 = -q^{-1}/(q^2 + 1)$, hence $d_2 = q^3/(q^2 + 1)$ — literally
+the chapter's $d_2$ and $d_1$ **swapped**. With the swap,
+$b^2 = (q^4 + q^2 + 1)/(q^2 + 1)^2$ holds (positive, matching the
+chapter's value).
+
+**The fix is a 1-line edit**: swap the definitions of
+`hoefsmit_d1` and `hoefsmit_d2`.
+
+### Zero downstream regressions from the swap
+
+The swap is a basis-permutation, so:
+
+  - `hoefsmit_b_sq = d_1 · d_2 + 1` is symmetric → unchanged
+  - Hecke quadratic still holds (constraints at (0,0) and (1,1) swap, both true)
+  - All scalar invariants (trace, det, eigenvalues, `hoefsmitB`, Markov trace $\tau_M$) are basis-permutation-invariant
+  - `N_k_factor` formulae in the precision ladder use only `hoefsmitB q` (= $b$) → unaffected
+  - `ckFromReduction q k` uses only `hoefsmitB_local q` → unaffected
+  - τ_M numerical predictions at $q_0$ are unchanged (all use traces / Wedderburn dimensions)
 
 ## What this means for the c_k chain
 
