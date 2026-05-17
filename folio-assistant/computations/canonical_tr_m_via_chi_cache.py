@@ -112,14 +112,22 @@ def canonical_tr_m(atom_name: str, Z: int, N: int) -> dict[str, object]:
             "contribution": entry["contribution"],
         } for entry in numerical["by_partition"]]
         tr_m = mp.mpf(numerical["tr_M_at_q0"])
+        # The witness may be a partial incremental build (see
+        # chi_at_q0_via_hoefsmit_mpfr.py per-partition saves):
+        # n_partitions_total > n_partitions when the cache is still
+        # filling. Surface that distinction to downstream consumers
+        # so the 1ppb gate can flag truncated traces.
+        n_total = numerical.get("n_partitions_total", len(per_lambda))
+        n_used = numerical.get("n_partitions", len(per_lambda))
+        is_partial = bool(numerical.get("partial", False)) or n_used < n_total
         return {
             "atom": atom_name,
             "Z": Z,
             "N": N,
             "n_strands": n,
-            "partitions_total": len(per_lambda),
-            "partitions_used": numerical["n_partitions"],
-            "partial_cache": False,
+            "partitions_total": n_total,
+            "partitions_used": n_used,
+            "partial_cache": is_partial,
             "source": "numerical_chi_cache",
             "q_0_50dps": str(q_0),
             "tr_M_q0": str(tr_m),

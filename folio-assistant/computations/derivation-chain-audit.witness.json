@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T02:10:02.024365+00:00",
-  "commitSha": "bfa0b828d771873a789dc61cef1a302f32ba6318",
+  "computedAt": "2026-05-18T02:10:04.521136+00:00",
+  "commitSha": "48c90362747bcd8c7855a9869692d4d717ab85eb",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2133,6 +2133,7 @@
         "chi-deuteron-h6.witness.json",
         "chi-helium-3-h9-at-q0-50dps.witness.json",
         "chi-helium-3-h9.witness.json",
+        "chi-helium-4-h12-at-q0-50dps.witness.json",
         "chi-helium-4-h12.witness.json",
         "chi-neutron-h3-at-q0-50dps.witness.json",
         "chi-neutron-h3.witness.json",
