@@ -244,7 +244,7 @@ honest — it explicitly acknowledges "κ is empirical from the v6 probe
 (not yet categorically derived)" and "The H7a piece $[A-2]_q \cdot E_0 \cdot
 \log(1/h)$ was refuted as a UNIVERSAL closure by PR #654's F2 probe."
 
-## Finding 7 — the codebase has TWO disagreeing tr_M implementations
+## Finding 7 — the codebase has TWO disagreeing tr_M implementations (q^{1/2} vs q coordinates)
 
 Running `probe_hopf_markov_trace_genuine.py` (companion replacement
 for PR #664's tautological probe) on σ_1² in H_2 surfaced a deeper
@@ -269,6 +269,78 @@ hoefsmit_symbolic variant); the Q_β precision-ladder framework
 cites the Jones-Markov weight $y_\lambda$ via
 `thm:jones-markov-trace`, which corresponds to `tr_M_canonical`.
 **These are not interchangeable.**
+
+### Where exactly they differ
+
+**Numerical check at q_0** (the substrate parameter, q_0 ≈ 1.10998):
+
+| Implementation | $\text{tr}_M(\sigma_1^2)$ at $q_0$ |
+|---|---:|
+| `tr_M_symbolic` (Hoefsmit) | 1.0163158... |
+| `tr_M_canonical` (Wenzl y_λ) | 1.1043881... |
+| **$\|\Delta\|$** | **0.0881 (~8% relative)** |
+
+They are genuinely different functions, **not** the same math in
+different coordinates. Both give +1 at q=1 (coincidence, because
+several rational functions interpolate +1 → +1 around q=1 with
+different slopes), but everywhere else they disagree.
+
+**Difference 1 (formula):**
+
+- `tr_M_symbolic`: $\text{tr}_M(\beta) = \sum_\lambda \frac{\dim_q^2(\lambda)}{[n]_q!} \cdot \frac{\chi^\lambda(\beta)}{f^\lambda}$ — divides by SYT count $f^\lambda$
+- `tr_M_canonical`: $\text{tr}_M(\beta) = \sum_\lambda y_\lambda(q) \cdot \chi^\lambda(\beta)$ — uses Wenzl's principal-specialisation $y_\lambda = s_\lambda(1, Q, Q^2, \ldots, Q^{r-1}) / Z$ with the normalisation $Z = \sum_\mu s_\mu \cdot f^\mu$ to enforce $\text{tr}_M(1_{H_1}) = 1$, no $f^\lambda$ division at the per-irrep step.
+
+These weights are NOT equal in general. For $n = 2$:
+
+- Hoefsmit: $w_{(2)} = w_{(1,1)} = \frac{1}{[2]_q}$ (since $\dim_q = 1$ for both partitions of 2). After the $/f^\lambda = /1$ division, the formula gives $(q^4+1)/(q^3+q)$ on $\sigma_1^2$.
+- Wenzl: $y_{(2)}$ and $y_{(1,1)}$ are Schur-principal-specialization values that absorb the $q^{1/2}$ coordinate (see Difference 2). They give the huge half-power rational function reported above.
+
+**Difference 2 (coordinate system, the bigger issue):**
+
+`markov_weights_symbolic` uses `SQ = sp.sqrt(Q)` to define the
+**Wenzl Markov parameter** $z_W = 1 / (q^{1/2} + q^{-1/2})$. The
+$q^{1/2}$ remains unevaluated symbolically because sympy treats
+`Q_W = Q**2` (and hence `SQ`) as algebraically independent
+symbols — sympy will not auto-simplify $\sqrt{Q^2}$ to $|Q|$ without
+explicit assumption that $Q > 0$. As a result the output is
+expressed in **$(q, q^{1/2})$ coordinates** with surviving
+half-integer powers.
+
+By contrast `hoefsmit_symbolic` uses `Q = q` directly and never
+introduces $q^{1/2}$, so its output is in **pure $q$ coordinates**.
+
+This **is** a coordinate-change issue. The two outputs may evaluate to
+the same numerical value at any specific $q$ (and indeed both give $+1$
+at $q = 1$ for $\sigma_1^2$), but the *symbolic representations* are
+in different coordinate systems and cannot be directly subtracted.
+
+The "Jones $q^{1/2}$ convention" (Jones 1985, Wenzl 1988) and the
+"straight-$q$ convention" used by the rest of the QOU framework are
+both standard; the literature is split. CLAUDE.md §7a does not
+specify which one is canonical for the framework.
+
+### Comparison to derivation documents
+
+CLAUDE.md §7a notation register says:
+
+> Jones polynomial: Always $J_K(q)$, never $V_K(t)$ or bracket with variable $A$.
+> ...
+> Markov parameter: plain italic, $z = 1/(q^{1/2} + q^{-1/2})$.
+
+So the canonical Markov parameter is in $q^{1/2}$ coordinates — that's the
+`tr_M_canonical` convention. But CLAUDE.md also says:
+
+> $H_n(q)$ — always with subscript $n$; standard knot-theory convention.
+
+— $q$, not $q^{1/2}$, is the Hecke deformation parameter. So Hecke
+relations use $q$ while the Markov parameter uses $q^{1/2}$. This is
+internally consistent in the *notation register* but it means
+`tr_M_symbolic` (pure $q$, no $q^{1/2}$) is using a different
+convention than CLAUDE.md prescribes.
+
+The `y_lambda_equivalence_proof.py` script on main may bridge the two
+conventions, but the *symbolic outputs* of the two `tr_M` engines do
+not agree directly — and that's what most production scripts call.
 
 Implication for PR #664's c_3 claim:
 

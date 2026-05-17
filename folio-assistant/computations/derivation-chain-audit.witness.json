@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-17T06:45:27.895770+00:00",
-  "commitSha": "aff9ae949691777f9ebe4ea42d4a4e5a1bc452b8",
+  "computedAt": "2026-05-17T06:45:29.605708+00:00",
+  "commitSha": "c2e2fdb7dba78acebcbad01ff5b5d08b25ccf11d",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2115,6 +2115,7 @@
         "bw-chirality-isotopes.witness.json",
         "c-alpha-from-Q-beta-trace.witness.json",
         "c-k-beta-decay-bound.witness.json",
+        "c3-taylor-extraction.witness.json",
         "cal-3-q-beta.witness.json",
         "canonical-a-k-magnitude-audit.witness.json",
         "canonical-braid-interface-composition.witness.json",
