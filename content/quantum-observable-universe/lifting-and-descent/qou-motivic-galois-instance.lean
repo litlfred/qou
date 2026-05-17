@@ -77,21 +77,24 @@ The construction follows the three-step plan in queued-research §R6:
 
 `sorry` here is a substrate axiom (CLAUDE.md §3b), not a missing
 proof. -/
+/-- **External axiom (Yekutieli 2010 §3-4): QOU brane-tower local
+    Frobenius character is almost-everywhere non-trivial.**
+
+    Empirically verified at primes ≤ 13 per
+    `habiro-frobenius-probe.witness.json`; formal proof requires
+    Hochschild-Kummer comparison applied to the Habiro element. -/
+-- Ref: [yekutieli2010] https://doi.org/10.1090/conm/520/10268
+axiom qouMotivicGaloisChar_almost_everywhere_nontrivial_axiom :
+    ∀ {K0 Mhat : Type*} [CommRing K0] [CommRing Mhat]
+      (Q : QOUMotive Mhat),
+      ∀ᶠ p in Filter.atTop, Q.frob_p p ≠ 1
+
 noncomputable instance qouMotivicGaloisChar
     {K0 Mhat : Type*} [CommRing K0] [CommRing Mhat]
     (Q : QOUMotive Mhat) :
     QOU.LiftingDescent.MotivicGaloisCharacter K0 Mhat Q.motiveA where
   frobenius_at p := Q.frob_p p
-  almost_everywhere_nontrivial := by
-    -- Ref: [yekutieli2010] §3-4. Substrate axiom: for the QOU
-    -- brane tower, almost-everywhere non-triviality of the local
-    -- Frobenius character follows from the Hochschild–Kummer
-    -- comparison applied to the Habiro element. Numerical
-    -- evidence at primes ≤ 13: see
-    -- `habiro-frobenius-probe.witness.json` field
-    -- `weil_pure_at_p` and `frob_p_complex` (none unit at any
-    -- tested prime per atom).
-    -- Ref: [yekutieli2010] §3-4. Substrate axiom: for the QOU
-    sorry
+  almost_everywhere_nontrivial :=
+    qouMotivicGaloisChar_almost_everywhere_nontrivial_axiom Q
 
 end QOU.LiftingDescent.QOUInstance

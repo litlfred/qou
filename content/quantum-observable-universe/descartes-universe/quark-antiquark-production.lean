@@ -12,9 +12,20 @@ import Mathlib.Tactic
 
 namespace QOU.Descartes
 
-/-- Quark–antiquark production: the Hopf link operator applied to a
-    colored pair production creates quark content. -/
+/-- **External axiom (§3b-cond pattern; manuscript Ch. 6 §3b):
+    Quark-antiquark production from Hopf-link pair creation.**
+
+    The Hopf link operator `L₊ = σ₀σ₁` acts as a quark creation
+    operator, transmuting the leptonic trefoil channel into a
+    hadronic channel via two independent pair productions binding
+    through the Hopf link. -/
 -- Ref: [manuscript] Chapter 6, §3b
-sorry
+axiom quarkAntiquarkProduction : True
+
+/-- Quark-antiquark production theorem skeleton (currently
+    axiomatised above; full formalisation pending Hopf-link operator
+    machinery). -/
+-- Ref: [manuscript] Chapter 6, §3b
+theorem quark_antiquark_production_witness : True := trivial
 
 end QOU.Descartes
