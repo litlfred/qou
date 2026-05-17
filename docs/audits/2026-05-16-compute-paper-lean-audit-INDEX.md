@@ -16,13 +16,107 @@ phase-planned in the section "Extension plan" at end.
 
 ## Phases completed (this PR)
 
-| phase | scope | doc | LoC | claims | GAPs |
-|---|---|---|---:|---:|---:|
-| 1 | m_p chain (my authored files) | [`2026-05-16-compute-paper-lean-audit-mp-chain.md`](2026-05-16-compute-paper-lean-audit-mp-chain.md) | 3,637 | 26 | 5 sites / 3 propositions |
-| 2 | m_n chain extras | [`2026-05-16-compute-paper-lean-audit-mn-chain.md`](2026-05-16-compute-paper-lean-audit-mn-chain.md) | 645 | 10 | 0 (inherited from Phase 1) |
-| 3a | upstream deps (agent) | [`2026-05-16-compute-paper-lean-audit-upstream.md`](2026-05-16-compute-paper-lean-audit-upstream.md) | 1,003 | 25 | 2 concrete fixable + 13 LEAN_MISSING |
-| 3b | mass-table downstream (agent) | [`2026-05-16-compute-paper-lean-audit-mass-table-downstream.md`](2026-05-16-compute-paper-lean-audit-mass-table-downstream.md) | ~1,700 | (in flight) | (in flight) |
-| **total scoped** | | | **~7,000** | **61+** | **7+ concrete** |
+| phase | scope | doc | files | LoC | claims | GAPs |
+|---|---|---|---:|---:|---:|---:|
+| 1 | m_p chain (my authored files) | [mp-chain.md](2026-05-16-compute-paper-lean-audit-mp-chain.md) | 9 | 3,637 | 26 | 5 sites / 3 props |
+| 2 | m_n chain extras | [mn-chain.md](2026-05-16-compute-paper-lean-audit-mn-chain.md) | 2 | 645 | 10 | 0 (inherited) |
+| 3a | upstream deps (agent) | [upstream.md](2026-05-16-compute-paper-lean-audit-upstream.md) | 3 | 1,003 | 25 | 2 fixable + 13 LEAN_MISSING |
+| 3b | mass-table downstream (agent, partial) | [mass-table-downstream.md](2026-05-16-compute-paper-lean-audit-mass-table-downstream.md) | 3 | ~1,716 | 13 | 1 fixable |
+| 4A | Hecke core (agent) | [hecke-core.md](2026-05-17-compute-paper-lean-audit-hecke-core.md) | 7 | ~2,500 | ~25 | **7 specific** |
+| 4B | Markov-trace + Wenzl bridge (agent, partial) | (transcript-only) | 9 | ~3,000 | — | 1 (markov-pair-z2 missing) |
+| 4C | per-term producers + y_λ (agent) | [per-term-producers.md](2026-05-17-compute-paper-lean-audit-per-term-producers.md) | 11 | ~3,000 | ~30 | **7 findings** |
+| 4D | atom braid + mass endomorphism (agent) | [atom-braid-mass-endo.md](2026-05-17-compute-paper-lean-audit-atom-braid-mass-endo.md) | 10 | ~3,500 | ~25 | **3 deep + 3 drifts** |
+| **total scoped** | | | **54** | **~19,000** | **~150** | **~24 actionable** |
+
+## Aggregated GAPs — Phase 4 additions
+
+### From Batch A (Hecke core)
+
+7. **Hecke quadratic σ² = (q − q⁻¹)σ + 1** — paper-stated in
+   [hecke-algebra-from-braiding.md](../../content/quantum-observable-universe/braids-and-knots/hecke-algebra-from-braiding.md)
+   but **no Lean algebra-level type carries it as a structure
+   field**. Only as a `RewriteRule.hecke` constructor.
+
+8. **Hoefsmit ρ_λ full homomorphism** — block-level lemmas
+   PROVEN; the full `ρ_λ : H_n(q) → M_{d_λ}` homomorphism property
+   NOT formalised.
+
+9. **Wenzl-bridge y_λ closed form** — Lean STUB:
+   `wenzlSchurElement := 0 · (…)`; main theorem holds trivially
+   on a placeholder model.
+
+10. **Three-invariant mass formula** (Φ_1, Φ_2, Φ_3 ↔
+    transfer-matrix invariants) — only the irrep dim count
+    (1, n−1, 1) is in Lean.
+
+11. **GS division Diamond / Bergman confluence** — `GBNFAlgebra`
+    is an abstract class; no concrete H_n(q) instance verifies
+    confluence of {Hecke, YB, far-comm} rewrite rules.
+
+12. **`force_carrier_q_dim(3, 10) = q^10 − q^{−10}`** — self-
+    acknowledged Rosso–Jones placeholder.
+
+13. **Far-commutativity** ([σ_i, σ_j] = 0 for |i−j| ≥ 2) — NOT
+    in `BraidGroupData` Lean structure (only adjacent braid
+    relation present).
+
+### From Batch C (per-term producers + y_λ)
+
+14. **T6 dual paths drift**: canonical
+    (`term6_residues_at_roots.py`, Markov-peel partial-fraction
+    split) vs legacy Schur-Weyl-weighted (`term6_full_pole_sum.py`,
+    explicit non-canonical caveat).  Deuteron split: 0.388
+    canonical vs 0.177 Schur-Weyl.
+
+15. **T7 height-6 reading split**: per-stratum `ht(λ)=6` vs
+    cumulative `ht(λ) ≤ 6`.  Cumulative refines per-stratum;
+    narrative documents both.
+
+16. **Crystal χ_λ at q=0 diagonal-only caveat** — sufficient for
+    QOU atomic braid words but not general.
+
+17. **T5 a_K 2.2 % proton gap** — closed-form 1.000 vs Gram-V1
+    cosh⁴(log q) ≈ 1.022; Lean side is §3b conjecture-class
+    skeleton only.
+
+18. **Notation drift**: T7 producers use bare `w_λ` for q-deformed
+    Wedderburn weight; per CLAUDE.md should be `tilde w_λ`
+    (distinct from Plancherel at q ≠ 1).  Math unaffected.
+
+### From Batch D (atom braid + mass endomorphism) — DEEP DRIFT
+
+19. **Narrative–compute–Lean drift on mass-endomorphism tower**:
+    - **Paper (.md)**: symmetric Li_2^q form, all-pairs z²
+    - **Compute (`mass_endomorphism.py`)**: Faddeev Φ_q, all-pairs z²
+    - **Lean (`mass-endomorphism-tower.lean`)**: adjacent-only,
+      Faddeev Φ_q
+
+    Three different conventions in three layers.  This is the
+    foundational drift underlying many subsequent gaps.
+
+20. **`atom_braid_word_3A` has no Lean** — treated as opaque T_w
+    in `MarkovAlgebra`.  The canonical operator-valued σ chain
+    that this PR's `_A_categorical` depends on.
+
+21. **`confined-knot-binding.lean` MISSING** despite `.ts`
+    declaration.  Broken sibling link.
+
+22. **`per_generator_V_hat_3A` uses `normalized_plancherel` as
+    empirical regulariser** — NOT the canonical Jones-Markov
+    weight.  Three alternates available
+    (`jones_wenzl`, `plancherel`, `normalized_plancherel`).
+    Empirical choice without paper backing.
+
+23. **−737 MeV T − ³He pathology** of Φ_q tower at q_0 (per
+    `brane_tower_isospin_diagnosis`) — localised to Φ_q's pole
+    near |V̂_i|=1 amplifying tiny p/n asymmetries by 10⁵×.
+    Documents WHY my m_n full-tower gives −62.97 % residual.
+
+### From Batch B (partial)
+
+24. **`markov-pair-z2` Lean missing** — interprets
+    `thm:markov-trace-factorization` (the pair-weight z² behind
+    Term 3); paper-stated, Lean stub absent.
 
 ## Aggregated findings — GAPs requiring promotion to formal propositions
 
