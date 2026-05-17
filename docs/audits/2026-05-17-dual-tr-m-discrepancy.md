@@ -339,6 +339,35 @@ formula itself.
 
 These need owner adjudication before automated fixes.
 
+## Mitigations + numerical/symbolic choice
+
+Per user direction "allow choice of numerical and symbolic depending
+on need", the following compute paths are available; each script
+should pick based on its output needs:
+
+| Need | Path | Cost | Output form |
+|---|---|---|---|
+| Symbolic closed-form tr_M (q as variable) | `markov_peel.tr_M_atomic` (atomic) or `markov_trace_canonical.tr_M_word` (generic) | 0.0s atomic, polynomial-in-q for generic | sympy rational in q (or q^{1/2}) |
+| Symbolic χ^λ from persistent cache | `chi-{atom}-h{n}.witness.json` | sub-ms | sympy expression string |
+| Symbolic χ^λ via Hoefsmit seminormal | `chi_lambda_symbolic` (with `@lru_cache`) | 0.1-22s per partition | sympy rational |
+| Numerical tr_M at q_0 (full precision 50 dps) | `atomic_tr_m_mpfr_50dps` | ~1s atomic | mpmath.mpf |
+| Numerical χ^λ at q_0 | `chi-lambda-at-q0.witness.json` (when present) | sub-ms | mpmath.mpf |
+| LaurentQ ring arithmetic | `hecke_laurent_fast.LaurentQ` | faster than sympy on Laurents | dict[degree, coeff] |
+| Pole order at q=0 (crystal-basis limit) | `crystal_pole_order.column_syt_pole_per_cycle` | O(1) per cycle | integer |
+
+**Recommendations per use case:**
+
+- *Mass-prediction at q_0 only* → numerical path. Atomic predictions
+  go through `atomic_tr_m_mpfr_50dps` + scalar conversion. No need to
+  carry rational functions of q.
+- *Closed-form derivation for the precision-ladder* → symbolic
+  path via `markov_peel.tr_M_atomic`. Use the q^{1/2} convention
+  output and substitute r = q^{1/2} for pole analysis.
+- *q→0 pole order / shift_NF derivation* → crystal-basis. Don't
+  build the full Markov trace; use `crystal_pole_order` directly.
+- *Per-partition character display* → cache-first read from
+  `chi-{atom}-h{n}.witness.json`. Only recompute on cache miss.
+
 ## Cross-references
 
 - [PR #664 critical review](2026-05-17-pr-664-c3-c4-critical-review.md)
