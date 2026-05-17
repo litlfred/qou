@@ -1,9 +1,9 @@
 {
-  "computedAt": "2026-05-17T00:29:54.352435+00:00",
+  "computedAt": "2026-05-17T04:09:03.502678+00:00",
   "name": "low-isotope-mass-table",
   "description": "Low-isotope mass + mass-excess table (Z ≤ 10) from the categorical derivation chain. Predicted columns are emitted ONLY for rows whose every input (m_p, m_n, B) traces to a fit-free derivation rooted in q₀. Rows lacking such a chain (m_n MeV scale; B(⁴He) and beyond) are emitted with row_derivation_status='derivation_pending' and predicted values set to null. The framework consumes a small set of scale/unit CODATA constants (m_e MeV scale, atomic mass unit u) — these live in derivation_inputs.scale_constants. CODATA / AME values used purely as comparison anchors (M_P_REF, M_N_REF, AME binding energies, AME mass excesses) live in comparison_only_constants and are never consumed in the predicted column.",
   "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
-  "timestamp": "2026-05-17T00:29:54.352489+00:00",
+  "timestamp": "2026-05-17T04:09:03.502755+00:00",
   "derivation_inputs": {
     "m_p_derived_MeV": null,
     "m_p_derived_source": "proton-mass-full-tower-50dps.witness.json",
@@ -15,9 +15,12 @@
     "delta_H_derived_MeV": null,
     "delta_N_derivation_status": "pending: requires derived m_n",
     "Q_beta_codata_MeV": 0.7823334100000222,
-    "Q_beta_substrate_MeV": 0.7825728174022026,
-    "Q_beta_substrate_source": "form_a_cos (PR #655+#661+#662): Q_A · cos((z-1)·h/2) with c_2 = b² Kashiwara correction on V_(2,1) Hoefsmit",
-    "Q_beta_substrate_residual_ppm_vs_codata": 306.01710104700516,
+    "Q_beta_substrate_MeV": 0.7823334238654475,
+    "Q_beta_substrate_source": "full_chain_n4 (PRs #661, #664, #665 + prop:kashiwara-jones-c4-categorical): Q_A · cos(α_N1) · (1−b²ℏ_q⁴) · (1−2b³ℏ_q⁶) · (1+(b²+½)b⁴ℏ_q⁸) — c_2, c_3, c_4 all categorical, cherry-picked from PR #664 (2026-05-17)",
+    "Q_beta_substrate_residual_ppm_vs_codata": 0.01772316645966872,
+    "Q_beta_form_a_cos_MeV": 0.7825728174022026,
+    "Q_beta_form_a_cos_residual_ppm_vs_codata": 306.01710104700516,
+    "Q_beta_substrate_tightening_vs_form_a_cos": 17266.50267283701,
     "scale_constants": {
       "M_E_MEV": 0.51099895,
       "U_MEV": 931.49410372,

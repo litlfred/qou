@@ -1,0 +1,58 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-17T03:52:41.673271+00:00",
+  "commitSha": "05ff242b4df0c198f08608f64db19550d1b212db",
+  "assertions": [
+    {
+      "name": "isotope_ratios_explained_by_tr_M",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true
+    },
+    {
+      "name": "simple_a_ell_closes_rho_K",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "probe-a-ell-confinement",
+  "scriptFile": "probe_a_ell_confinement.py",
+  "scriptHash": "8fbf34be398b",
+  "scriptCommitSha": "unknown",
+  "description": "Test ∏_ℓ a_ℓ confinement-level multiplicative structure as candidate ρ_K source",
+  "data": {
+    "q_pinned": "1.1099785955541805752815940796095093779932822799587",
+    "candidates_tested": [
+      {
+        "name": "V_free=1 (trivial)",
+        "ratio_to_rho_K": "1794.6773134417451534743141085490357674456815530937",
+        "verdict": "REFUTED — off by ~1800×"
+      },
+      {
+        "name": "V_free=Hecke eigenvalue (uud → -q)",
+        "ratio_to_rho_K": "1992.053403847018205809450607226490049820267525945",
+        "verdict": "REFUTED — similar magnitude as candidate 1"
+      },
+      {
+        "name": "V_free=bare quark mass / m_e",
+        "ratio_to_rho_K": "160.03274240543864545764146863970781641848730140278",
+        "verdict": "PARTIAL — factor 0.16, right ORDER but wrong normalisation"
+      },
+      {
+        "name": "QCD dynamical mass (m_p / bare quark sum)",
+        "ratio_to_rho_K": "16.716680699585407185564922676841420912956824794569",
+        "verdict": "PARTIAL — factor 16, accounts for ~100× but needs further ~17× amplification"
+      }
+    ],
+    "rho_K_isotope_ratios_match_tr_M_ratios": {
+      "rho_K_p_over_rho_K_n": "0.86543482627033540871660976099618397268527816830689",
+      "expected_from_tr_M_ratio": "0.86541589771614538628695642640496474461290468113089",
+      "note": "Per-isotope ρ_K ratios are naturally explained by |tr_M| differences; overall scale 1700 is the open piece."
+    },
+    "conclusion": "Simple confinement-level interpretations of a_ℓ do NOT close the 173× ρ_K gap.  The structural framework is correct (paper's a_ℓ telescoping) but per-level a_ℓ values require categorical content beyond (q_0, β_K, m_e).  Consistent with paper's acknowledged-open status at atomic-mass-gb-nf line 71."
+  }
+}

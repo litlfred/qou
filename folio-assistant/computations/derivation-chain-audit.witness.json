@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-17T21:55:51.424815+00:00",
-  "commitSha": "2bbe424e66c2356e08fdcef95cea355ce95a1cea",
+  "computedAt": "2026-05-17T21:57:11.632059+00:00",
+  "commitSha": "f9a2ff589c28e9b96574f4aeaae799f026261dfd",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2221,6 +2221,8 @@
         "hh-trefoil-corrected.witness.json",
         "hh-vertex-volume.witness.json",
         "hopf-jones-c3-categorical.witness.json",
+        "hydrogen-qshuffle-compound.witness.json",
+        "hydrogen-step-by-step.witness.json",
         "hyperbolic-volumes.witness.json",
         "inter-knot-decoupling.witness.json",
         "interface-type-resolved-coupling-probe.witness.json",
@@ -2314,6 +2316,7 @@
         "path-b-evacuation.witness.json",
         "path-b-habiro-mass-probe.witness.json",
         "path-b-open-questions.witness.json",
+        "path4-rho-K-at-h3A.witness.json",
         "per-atom-grading-bound.witness.json",
         "per-atom-rho-deviation.witness.json",
         "per-irrep-pole-atom-crystal.witness.json",
@@ -2331,6 +2334,7 @@
         "piece3-interface-vs-intra.witness.json",
         "pn-alpha-lp-dual.witness.json",
         "poly-q-proof.witness.json",
+        "probe-a-ell-confinement.witness.json",
         "probe-atom-shell-self-duality-mpfr.witness.json",
         "probe-atom-shell-self-duality.witness.json",
         "probe-braid-word-basis-gram.witness.json",
@@ -2364,6 +2368,7 @@
         "probe-sdp-canonical-paper-formula.witness.json",
         "probe-term4-conventions.witness.json",
         "probe-tritium-k-star.witness.json",
+        "probe-v-hat-wenzl-tilde.witness.json",
         "probe-wedderburn-weight-scheme.witness.json",
         "proton-m_e-anomaly-audit.witness.json",
         "proton-m_e-derivation.witness.json",

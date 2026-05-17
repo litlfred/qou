@@ -74,6 +74,7 @@ from low_isotope_binding_sweep import (  # noqa: E402
 )
 from paper_six_term_isotope_sweep import (  # noqa: E402
     q_beta_for_source, q_beta_substrate_cos_tightened_MeV,
+    q_beta_full_chain_n4_MeV,
 )
 from witness_base import load_and_hash_upstream  # noqa: E402
 
@@ -182,13 +183,22 @@ B_4HE_DERIVATION_STATUS = (
     "(canonical_tr_m_helium4_stub.py) is the open frontier"
 )
 
-# Substrate Q_β (CAL-2-only, from PR #655+#661+#662 cos resummation).
+# Substrate Q_β (CAL-2-only).  As of 2026-05-17, uses the full N=4
+# categorical chain (PRs #661, #664, #665 + prop:kashiwara-jones-c4-
+# categorical) cherry-picked from PR #664 — residual ~0.30 ppm vs
+# CODATA (≈ 1000× tighter than the form_a_cos baseline at +306 ppm).
 # Available as a CAL-3 alternative; not consumed in the predicted
 # column directly (the m_p / m_n chains have their own Q_β handling).
-Q_BETA_CODATA_MEV     = float(q_beta_for_source("codata"))
-Q_BETA_SUBSTRATE_MEV  = float(q_beta_substrate_cos_tightened_MeV())
-Q_BETA_SUBSTRATE_PPM  = float(
+Q_BETA_CODATA_MEV          = float(q_beta_for_source("codata"))
+Q_BETA_SUBSTRATE_MEV       = float(q_beta_for_source("full_chain_n4"))
+Q_BETA_SUBSTRATE_PPM       = float(
     1e6 * (Q_BETA_SUBSTRATE_MEV - Q_BETA_CODATA_MEV) / Q_BETA_CODATA_MEV
+)
+# Retain the form_a_cos value too for the witness — useful audit trail
+# showing the tightening between forms.
+Q_BETA_FORM_A_COS_MEV      = float(q_beta_substrate_cos_tightened_MeV())
+Q_BETA_FORM_A_COS_PPM      = float(
+    1e6 * (Q_BETA_FORM_A_COS_MEV - Q_BETA_CODATA_MEV) / Q_BETA_CODATA_MEV
 )
 
 # Mass excesses computed only from derived inputs. ¹H is no longer
@@ -452,10 +462,19 @@ def main() -> int:
             "Q_beta_codata_MeV": Q_BETA_CODATA_MEV,
             "Q_beta_substrate_MeV": Q_BETA_SUBSTRATE_MEV,
             "Q_beta_substrate_source":
-                "form_a_cos (PR #655+#661+#662): Q_A · cos((z-1)·h/2) "
-                "with c_2 = b² Kashiwara correction on V_(2,1) Hoefsmit",
+                "full_chain_n4 (PRs #661, #664, #665 + "
+                "prop:kashiwara-jones-c4-categorical): "
+                "Q_A · cos(α_N1) · (1−b²ℏ_q⁴) · (1−2b³ℏ_q⁶) · "
+                "(1+(b²+½)b⁴ℏ_q⁸) — c_2, c_3, c_4 all categorical, "
+                "cherry-picked from PR #664 (2026-05-17)",
             "Q_beta_substrate_residual_ppm_vs_codata":
                 Q_BETA_SUBSTRATE_PPM,
+            "Q_beta_form_a_cos_MeV":
+                Q_BETA_FORM_A_COS_MEV,
+            "Q_beta_form_a_cos_residual_ppm_vs_codata":
+                Q_BETA_FORM_A_COS_PPM,
+            "Q_beta_substrate_tightening_vs_form_a_cos":
+                abs(Q_BETA_FORM_A_COS_PPM) / max(abs(Q_BETA_SUBSTRATE_PPM), 1e-12),
             "scale_constants": {
                 # Scale / unit inputs consumed by the framework
                 # (the same single CODATA-bounded constant the proton
