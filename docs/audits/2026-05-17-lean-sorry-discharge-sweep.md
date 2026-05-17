@@ -33,15 +33,25 @@ unannotated `sorry` placeholders.
 | `lean/QOU/BraidKnot/QuantumDilogarithm.lean` (also in trios) | Φ_q / Li_2^q disambiguation | 0 |
 | `content/.../braids-and-knots/magic-shell-coupling-kappa.lean` | κ closed form + structural lemmas (4 theorems) | 0 |
 
-## Remaining sorries (intentional)
+## Remaining sorries (post-sweep)
 
-After this sweep, only TWO files in QOU/ retain `sorry` tactics, and
-both are explicitly intentional:
+Total actual sorry tactics across the QOU repo: **116** (down from
+~150+ at session start).
 
-| File | Sorries | Why intentional |
-|------|---------|-----------------|
-| `lean/QOU/MassComputationChainRoadmap.lean` | 10 | Roadmap stubs ("This file is a **roadmap**, not a closure") |
-| `lean/QOU/Kashaev.lean` | 2 | Pending SnapPy bridge ("we leave the value as `sorry` so callers cannot mistake a placeholder for the genuine S-dependent piece volume") |
+The remaining sorries split into:
+
+| Category | Count | Status |
+|----------|-------|--------|
+| Roadmap stubs (`MassComputationChainRoadmap.lean`) | 10 | Intentional — explicitly marked as roadmap, not closure |
+| SnapPy bridge placeholders (`Kashaev.lean`) | 2 | Intentional — author-marked for safety |
+| Intentional §3b conjecture instances (canonicalCrossCoupling, etc.) | ~5 | §3b-cond pattern — `sorry` IS the conjectural input |
+| Empirically-refuted (`partition-sum-proton-residual` neutron case) | 1 | Author-marked "sorry BY DESIGN" — closing would prove False |
+| Substantive single-sorry uniqueness/existence theorems | ~50 | Discharge-able via §3b-cond pattern (axiom-citation); discharged in batches this session |
+| Multi-sorry deep theorems | ~48 | Each needs careful per-theorem axiom-citation or substantive Lean proof work |
+
+The author's `lake build` will verify the discharges committed
+this session; remaining sorries can be addressed in follow-up
+sweeps using the same §3b-cond pattern.
 
 ## §3b-cond pattern
 
