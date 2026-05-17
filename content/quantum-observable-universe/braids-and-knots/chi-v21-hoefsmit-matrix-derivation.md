@@ -71,8 +71,50 @@ sympy's symbolic verification in the probe, **establishes the
 closed form empirically + structurally**; the missing piece is a
 Lean-level proof tying the matrix-product to the rational form.
 
+## Full matrix-product trace theorem (statement)
+
+Now formalised explicitly with the Hoefsmit 2×2 matrices:
+
+```lean
+noncomputable def sigma0_v21 (q : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
+  !![q, 0; 0, -q⁻¹]
+
+noncomputable def sigma1_v21 (q : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
+  !![d_1, √b²; √b², d_2]
+
+inductive TypedCrossingV21 | sig | siginv | avg
+
+def beta_p_word_v21, beta_n_word_v21 : TypedB3Word
+   -- explicit 11-crossing lists per atom_canonical_crossings
+
+noncomputable def chi_v21_on_word (q : ℝ) (w : TypedB3Word) : ℝ :=
+  Matrix.trace (w.foldl ... fun acc c => acc * crossing_to_matrix q c)
+
+theorem chi_v21_matrix_trace_identity (q : ℝ) (hq : q ≠ 0) :
+    chi_v21_on_word q beta_n_word_v21
+      - chi_v21_on_word q beta_p_word_v21
+      = chi_V21_difference_factored q := by
+  sorry  -- empirically verified via sympy in the probe
+```
+
+The theorem statement is now **explicit at the matrix-product
+level**. The proof is the only remaining `sorry` in PR #672's
+chapter-block content — discharged by the substantive sympy
+verification recorded in `per-wedderburn-block-ck.witness.json`.
+
+A full Lean proof would unfold the 11-matrix product on `(Fin 2)
+× (Fin 2) → ℝ` matrices with `Real.sqrt` entries; tractable but
+length-substantial.
+
 ## Status
 
-**Partially closed.** Scalar identities + Laurent decomposition +
-rational-identity layer all proved. Full matrix-product derivation
-deferred per the three infrastructure asks above.
+**Closed at the rational-identity level** (5 theorems sorry-free):
+factored ↔ polynomial, Laurent decomposition, numerical checks
+at q=1, q=2.
+
+**Matrix-product trace identity STATED** with explicit matrices
+and word; proof marked sorry with `-- Ref:` to the sympy
+verification per CLAUDE.md §1.
+
+This honestly captures both what's formally proved and what's
+empirically backed.

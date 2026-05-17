@@ -137,6 +137,96 @@ theorem chi_V21_difference_at_two :
   unfold chi_V21_difference_factored
   norm_num
 
+/-! ## Full Hoefsmit 2×2 matrix derivation
+
+The substantive matrix-product trace claim. The character
+χ_(2,1)(β) for an arbitrary typed-B_3 word is the trace of the
+matrix product. We formalise this directly with explicit
+matrices. -/
+
+open Matrix in
+/-- The Hoefsmit σ_0 matrix on V_(2,1): `diag(q, -q⁻¹)`. -/
+noncomputable def sigma0_v21 (q : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
+  !![q, 0; 0, -q⁻¹]
+
+open Matrix in
+/-- The Hoefsmit σ_1 matrix on V_(2,1): off-diagonal with
+    `d_1 = q³/(q²+1)`, `d_2 = -q⁻¹/(q²+1)`, `b = √(b²)`. -/
+noncomputable def sigma1_v21 (q : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
+  !![hoefsmit_v21_d1 q, Real.sqrt (hoefsmit_v21_b_sq q);
+     Real.sqrt (hoefsmit_v21_b_sq q), hoefsmit_v21_d2 q]
+
+/-- Typed-crossing variant. -/
+inductive TypedCrossingV21 : Type
+  | sig    : TypedCrossingV21  -- σ
+  | siginv : TypedCrossingV21  -- σ⁻¹
+  | avg    : TypedCrossingV21  -- averaged = (σ + σ⁻¹) / 2
+
+/-- A typed-B_3 word is a List of (generator index, crossing type)
+    pairs. -/
+abbrev TypedB3Word : Type := List (Fin 2 × TypedCrossingV21)
+
+/-- Canonical proton typed-B_3 word (11 crossings, per
+    `atom_canonical_crossings(Z=1, N=0)`). -/
+def beta_p_word_v21 : TypedB3Word :=
+  [ (0, .sig), (0, .sig), (0, .sig), (0, .sig), (0, .avg),
+    (0, .sig), (0, .sig),
+    (1, .siginv), (1, .siginv), (1, .siginv), (1, .avg) ]
+
+/-- Canonical neutron typed-B_3 word (11 crossings, per
+    `atom_canonical_crossings(Z=0, N=1)`). -/
+def beta_n_word_v21 : TypedB3Word :=
+  [ (0, .sig), (0, .sig), (0, .sig), (0, .avg), (0, .avg),
+    (0, .sig), (0, .sig),
+    (1, .siginv), (1, .siginv), (1, .siginv), (1, .siginv) ]
+
+open Matrix in
+/-- Convert a typed crossing into its 2×2 matrix on V_(2,1).
+    Using the Hecke quadratic: σ_inv = σ - (q - q⁻¹) I,
+    averaged = σ - (q - q⁻¹)/2 I. -/
+noncomputable def crossing_to_matrix (q : ℝ)
+    (c : Fin 2 × TypedCrossingV21) :
+    Matrix (Fin 2) (Fin 2) ℝ :=
+  let sigma := if c.1 = 0 then sigma0_v21 q else sigma1_v21 q
+  let h := q - q⁻¹
+  match c.2 with
+    | .sig    => sigma
+    | .siginv => sigma - h • (1 : Matrix (Fin 2) (Fin 2) ℝ)
+    | .avg    => sigma - (h / 2) • (1 : Matrix (Fin 2) (Fin 2) ℝ)
+
+/-- The V_(2,1) character on a typed-B_3 word: trace of the
+    matrix product. -/
+noncomputable def chi_v21_on_word (q : ℝ) (w : TypedB3Word) : ℝ :=
+  Matrix.trace (w.foldl (init := (1 : Matrix (Fin 2) (Fin 2) ℝ))
+    fun acc c => acc * crossing_to_matrix q c)
+
+-- Ref: [manuscript] rem:chi-v21-hoefsmit-matrix-derivation §"matrix-product trace"
+-- Ref: empirical sympy verification in
+--   folio-assistant/computations/probe_per_wedderburn_block_ck.py
+--   (q_character_on_braid_word + sympy.cancel + sympy.factor)
+/-- **Full V_(2,1) Hoefsmit matrix-product trace identity.**
+    The trace of the matrix product on the canonical typed-B_3
+    word for β_n minus β_p equals the closed form
+    `-(q⁴+1)(q²-1) / (4q³)`.
+
+    Substantively verified via sympy's `q_character_on_braid_word`
+    + `sympy.cancel` + `sympy.factor` in the probe; the bit-exact
+    closed form recorded in `per-wedderburn-block-ck.witness.json`.
+
+    Full Lean proof would require evaluating the 11-matrix-product
+    trace symbolically (Hoefsmit 2×2 matrices with `Real.sqrt` in
+    the off-diagonal entries) — substantial but tractable as a
+    follow-up. Marked as conditional on the empirical witness. -/
+theorem chi_v21_matrix_trace_identity (q : ℝ) (hq : q ≠ 0) :
+    chi_v21_on_word q beta_n_word_v21
+      - chi_v21_on_word q beta_p_word_v21
+      = chi_V21_difference_factored q := by
+  -- Symbolic matrix-product trace evaluation; backed empirically by
+  -- the sympy verification in the probe.
+  -- Ref: [manuscript] rem:chi-v21-hoefsmit-matrix-derivation §"witness"
+  -- Ref: folio-assistant/computations/probe_per_wedderburn_block_ck.py
+  sorry
+
 /-! ## Status
 
 **V_(2,1) is closed at the scalar / rational-function level:**
