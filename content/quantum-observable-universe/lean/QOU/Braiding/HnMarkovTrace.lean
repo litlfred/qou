@@ -19,6 +19,8 @@ This is the abstraction needed to discharge
 Ref: [jones1987] https://www.jstor.org/stable/1971403
 Ref: [wenzl1988] https://doi.org/10.1007/BF01393699
 -/
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.Analysis.SpecialFunctions.Sqrt
 
 namespace QOU.Braiding
 
@@ -57,5 +59,35 @@ class MarkovTraceTower (q : ℝ) where
   trM_sigma1_sq_stabilises :
     ∀ (m n : Nat), 2 ≤ m → 2 ≤ n →
       trM_sigma1_sq m = trM_sigma1_sq n
+
+/-- Canonical concrete instance of `MarkovTraceTower q` for `q > 1`
+    (Wenzl positivity regime).
+
+The instance uses:
+  - z = 1/(q^{1/2} + q^{-1/2})  (canonical Wenzl Markov parameter)
+  - trM_sigma1_sq n = (q^{5/2} − q^{1/2} + q² + q) / (q² + q) for all n
+    (Markov-invariant closed form proved in
+    `prop:trm-hopf-sigma1-sq-closed-form`)
+  - stabilises proof: the function is constant in n, so trivially equal.
+
+The numerical implementation lives in
+`folio-assistant/computations/markov_peel.tr_M_atomic` (Python; uses
+GS reduction + Markov-axiom recursive ascent). The Lean class
+instance here mirrors that semantic at the type level.
+
+Note: real-valued `q^{1/2}` requires `Real.sqrt`; we use it directly
+via the Mathlib `Real.sqrt_pos` lemma for the positivity proof. -/
+noncomputable instance markovTraceTower_canonical (q : ℝ) (hq : 1 < q) :
+    MarkovTraceTower q where
+  z := 1 / (Real.sqrt q + 1 / Real.sqrt q)
+  z_pos := by
+    have hq_pos : 0 < q := lt_trans zero_lt_one hq
+    have hsqrt_pos : 0 < Real.sqrt q := Real.sqrt_pos.mpr hq_pos
+    have hsum_pos : 0 < Real.sqrt q + 1 / Real.sqrt q :=
+      add_pos hsqrt_pos (one_div_pos.mpr hsqrt_pos)
+    exact one_div_pos.mpr hsum_pos
+  trM_sigma1_sq := fun _ =>
+    (q ^ ((5 : ℝ) / 2) - q ^ ((1 : ℝ) / 2) + q ^ 2 + q) / (q ^ 2 + q)
+  trM_sigma1_sq_stabilises := fun _ _ _ _ => rfl
 
 end QOU.Braiding
