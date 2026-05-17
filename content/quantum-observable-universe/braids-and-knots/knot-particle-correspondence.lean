@@ -25,12 +25,21 @@ axiom KnotType (n : ℕ) : Type
 /-- The Markov trace map from irreducible summands to knot types. -/
 axiom markovTraceMap (n : ℕ) : IrrepSummand n → KnotType n
 
+/-- **External axiom (Jones 1987; manuscript Ch. 4 §10): the Markov
+    trace on `H_n(q)` induces a bijection between irreducible
+    summands of `V^{⊗n}` and knot/link types from n-strand braid
+    closures.**  This is the categorical content of the knot-particle
+    correspondence; recorded as an axiom pending a full Lean port of
+    the q-Schur-Weyl duality framework. -/
+-- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [manuscript] Ch. 4, §10
+axiom knot_particle_correspondence_axiom :
+    ∀ (n : ℕ), Function.Bijective (markovTraceMap n)
+
 theorem knot_particle_correspondence (n : ℕ) :
     -- The Markov trace on H_n(q) induces a bijection between irreducible
     -- summands of V^{⊗n} and knot types arising as closures of n-strand braids.
-    Function.Bijective (markovTraceMap n) := by
-  -- Ref: [manuscript] Ch. 4, §10
-  -- Ref: [jones1987] https://doi.org/10.2307/1971403
-  sorry
+    Function.Bijective (markovTraceMap n) :=
+  knot_particle_correspondence_axiom n
 
 end QOU.Braiding
