@@ -89,60 +89,25 @@ from mpmath import mp, mpf, fabs  # noqa: E402
 
 from q_parameter import Q_MP  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+# Reuse the canonical SYT enumerator from hecke_character_symbolic to
+# avoid duplicating combinatorial utilities (per gemini #680 review).
+from hecke_character_symbolic import standard_young_tableaux  # noqa: E402
 
 mp.dps = 50
 
 
-# ─────────────────────────────────────────────────────────────────
-# §1 — Standard Young tableaux (combinatorial, no mpmath needed)
-# ─────────────────────────────────────────────────────────────────
+def _dps_tol(margin_digits: int) -> "mpf":
+    """Precision-aware tolerance: `10^(−mp.dps + margin_digits)`.
 
-
-def young_diagram_cells(shape: tuple[int, ...]) -> list[tuple[int, int]]:
-    return [(r, c) for r, row_len in enumerate(shape) for c in range(row_len)]
-
-
-def standard_young_tableaux(shape: tuple[int, ...]):
-    """Enumerate SYTs of `shape` as a list of dicts {entry: cell_index}.
-
-    Returns (syts, cells, contents).
+    Ties internal numerical thresholds to the active `mp.dps` so that
+    if a caller bumps the precision (or runs at a lower `mp.dps`), the
+    thresholds scale appropriately.  `margin_digits` controls how much
+    safety margin is reserved against the dps floor — e.g. at
+    `mp.dps = 50, margin = 10` gives `10^(-40)`, recovering the
+    previously-hardcoded `1e-40` floor for "nonzero eigenvalue" while
+    auto-rescaling under any other dps.
     """
-    n = sum(shape)
-    cells = young_diagram_cells(shape)
-    contents = [c - r for r, c in cells]
-
-    def _gen(filling: dict, used: set, nxt: int):
-        if nxt > n:
-            yield dict(filling)
-            return
-        for idx, cell in enumerate(cells):
-            if idx in used:
-                continue
-            r, c = cell
-            ok = True
-            if r > 0:
-                try:
-                    above = cells.index((r - 1, c))
-                    if above not in used:
-                        ok = False
-                except ValueError:
-                    pass
-            if c > 0 and ok:
-                try:
-                    left = cells.index((r, c - 1))
-                    if left not in used:
-                        ok = False
-                except ValueError:
-                    pass
-            if ok:
-                filling[nxt] = idx
-                used.add(idx)
-                yield from _gen(filling, used, nxt + 1)
-                del filling[nxt]
-                used.remove(idx)
-
-    syts = list(_gen({}, set(), 1))
-    return syts, cells, contents
+    return mpf(10) ** (-mp.dps + margin_digits)
 
 
 # ─────────────────────────────────────────────────────────────────
@@ -261,15 +226,21 @@ def main() -> int:
 
     # Sort by absolute value, descending.  Drop strictly-zero eigenvalues
     # (the conjecture cares about the two nonzero eigenvalues).
-    nonzero = [e for e in eigs if fabs(e) > mpf("1e-40")]
+    # Tolerance: 10^(−dps+10) ≈ 1e-40 at default dps=50; auto-scales.
+    nonzero_tol = _dps_tol(10)
+    nonzero = [e for e in eigs if fabs(e) > nonzero_tol]
     nonzero_sorted = sorted(nonzero, key=lambda e: -fabs(e))
+    # "real" predicate: |imag| < 10^(−dps+20) — wider safety margin (20
+    # vs nonzero_tol's 10) because round-off in mp.eig accumulates more
+    # in the imaginary part than in the magnitude.
+    imag_tol = _dps_tol(20)
 
     print()
     print(f"  Top 4 eigenvalues by |·| (50-dps):")
     for i, e in enumerate(nonzero_sorted[:4]):
         re_str = mp.nstr(e.real if hasattr(e, "real") else e, 20)
         im_str = (mp.nstr(e.imag, 8)
-                  if hasattr(e, "imag") and fabs(e.imag) > mpf("1e-30")
+                  if hasattr(e, "imag") and fabs(e.imag) > imag_tol
                   else "0")
         print(f"    e[{i}]  = {re_str}  + i·{im_str}    (|·| = "
               f"{mp.nstr(fabs(e), 20)})")
@@ -289,7 +260,7 @@ def main() -> int:
     # Pairwise search for the conjecture's literal content (e_i / e_j = q^(1/5))
     pos_real_eigs = [
         e for e in nonzero_sorted
-        if (not hasattr(e, "imag") or fabs(e.imag) < mpf("1e-30"))
+        if (not hasattr(e, "imag") or fabs(e.imag) < imag_tol)
         and (e.real if hasattr(e, "real") else e) > 0
     ]
     target_ratio = q0 ** (mpf(1) / 5)
@@ -315,7 +286,7 @@ def main() -> int:
 
     positive_real = [
         e for e in nonzero_sorted
-        if (not hasattr(e, "imag") or fabs(e.imag) < mpf("1e-30"))
+        if (not hasattr(e, "imag") or fabs(e.imag) < imag_tol)
         and (e.real if hasattr(e, "real") else e) > 0
     ]
     if len(positive_real) < 2:
