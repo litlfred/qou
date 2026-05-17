@@ -146,7 +146,20 @@ def main() -> int:
         "any_diverge": any_diverge,
         "deltas": deltas,
     }
-    OUT_PATH.write_text(json.dumps(out, indent=2, ensure_ascii=False))
+    # Content-diff-aware write: preserve on-disk file if the new witness
+    # differs only in ephemeral meta fields (commitSha, computedAt,
+    # durationMs, scriptCommitSha). See witness_base._witnesses_substantively_equal.
+    from witness_base import _witnesses_substantively_equal
+    new_bytes = json.dumps(out, indent=2, ensure_ascii=False)
+    if OUT_PATH.exists():
+        try:
+            existing = json.loads(OUT_PATH.read_text())
+            if not _witnesses_substantively_equal(existing, out):
+                OUT_PATH.write_text(new_bytes)
+        except (json.JSONDecodeError, OSError):
+            OUT_PATH.write_text(new_bytes)
+    else:
+        OUT_PATH.write_text(new_bytes)
     print()
     print(f"  Witness: {OUT_PATH.name}")
     print(f"  atoms compared: {len(deltas)}, divergent: "

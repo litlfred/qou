@@ -255,7 +255,25 @@ def main() -> int:
             Q_BETA_N_REL * mpf(1e9)
         ),
     }
-    OUT.write_text(json.dumps(out, indent=2, ensure_ascii=False))
+    # Content-diff-aware write: preserve on-disk file if the new witness
+    # differs only in ephemeral meta fields (commitSha, computedAt,
+    # durationMs, scriptCommitSha). See witness_base._witnesses_substantively_equal.
+    from witness_base import _witnesses_substantively_equal
+    new_bytes = json.dumps(out, indent=2, ensure_ascii=False)
+    if OUT.exists():
+        try:
+            existing = json.loads(OUT.read_text())
+            if _witnesses_substantively_equal(existing, out):
+                print("(witness unchanged — preserving on-disk commitSha for staleness)")
+                print()
+                # fall through to the existing post-write code path without
+                # actually rewriting the file
+            else:
+                OUT.write_text(new_bytes)
+        except (json.JSONDecodeError, OSError):
+            OUT.write_text(new_bytes)
+    else:
+        OUT.write_text(new_bytes)
     print()
     print(f"  Witness: {OUT.name}")
 
