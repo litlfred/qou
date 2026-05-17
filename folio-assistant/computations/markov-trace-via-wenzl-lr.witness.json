@@ -1,0 +1,1031 @@
+{
+  "engine": "rust",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-17T06:46:27.497493+00:00",
+  "commitSha": "9a3b420b88eba9bee6fe87a7a9c24d6ebef33ade",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "markov-trace-via-wenzl-lr",
+  "scriptFile": "markov_trace_via_wenzl_lr.py",
+  "scriptHash": "1c15da5296a0",
+  "scriptCommitSha": "unknown",
+  "description": "Wenzl LR Markov-trace via Rust `hecke-tr-m-wenzl-lr` binary. Smoke-test 4-way decomposition (p ⊗ p ⊗ n ⊗ n stubs at H_12); per-partition χ^λ values returned for all p(12)=77 partitions of 12. Placeholder factor words; canonical-braid integration is follow-on.",
+  "auditOnly": "docs/audits/2026-05-17-p4tt-migration-triage.md",
+  "binary_built": true,
+  "binary_path": "/home/user/qou/tools/hecke-engine/target/debug/hecke-tr-m-wenzl-lr",
+  "factor_specs": [
+    {
+      "label": "proton-stub",
+      "n_strands": 3,
+      "word": [
+        [
+          1,
+          1
+        ],
+        [
+          -1,
+          2
+        ]
+      ]
+    },
+    {
+      "label": "proton-stub",
+      "n_strands": 3,
+      "word": [
+        [
+          1,
+          1
+        ],
+        [
+          -1,
+          2
+        ]
+      ]
+    },
+    {
+      "label": "neutron-stub",
+      "n_strands": 3,
+      "word": [
+        [
+          -1,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ]
+    },
+    {
+      "label": "neutron-stub",
+      "n_strands": 3,
+      "word": [
+        [
+          -1,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ]
+    }
+  ],
+  "rust_output": {
+    "computation": "hecke-tr-m-wenzl-lr",
+    "description": "Wenzl LR bridge: χ^λ(β_1 ⊗ ... ⊗ β_k) computed via Σ c^λ_{...} · χ^μ(β_1) · χ^ν(β_2) · ... at each factor's native strand count.  Avoids the full Hoefsmit evaluation at H_{Σ n_i}.",
+    "schema_version": 1,
+    "total_strands": 12,
+    "n_factors": 4,
+    "factor_labels": [
+      "proton-stub",
+      "proton-stub",
+      "neutron-stub",
+      "neutron-stub"
+    ],
+    "all_partitions": true,
+    "chi_lambda_terms": [
+      {
+        "lambda": [
+          12
+        ],
+        "chi_polynomial": "1",
+        "chi_q_one": "1",
+        "duration_ms": 4
+      },
+      {
+        "lambda": [
+          11,
+          1
+        ],
+        "chi_polynomial": "-4*q^-2 + 7 + -4*q^2",
+        "chi_q_one": "-1",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          10,
+          2
+        ],
+        "chi_polynomial": "6*q^-4 + -24*q^-2 + 36 + -24*q^2 + 6*q^4",
+        "chi_q_one": "0",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          10,
+          1,
+          1
+        ],
+        "chi_polynomial": "6*q^-4 + -24*q^-2 + 37 + -24*q^2 + 6*q^4",
+        "chi_q_one": "1",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          9,
+          3
+        ],
+        "chi_polynomial": "-4*q^-6 + 30*q^-4 + -80*q^-2 + 112 + -80*q^2 + 30*q^4 + -4*q^6",
+        "chi_q_one": "4",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          9,
+          2,
+          1
+        ],
+        "chi_polynomial": "-8*q^-6 + 60*q^-4 + -168*q^-2 + 228 + -168*q^2 + 60*q^4 + -8*q^6",
+        "chi_q_one": "-4",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          9,
+          1,
+          1,
+          1
+        ],
+        "chi_polynomial": "-4*q^-6 + 30*q^-4 + -84*q^-2 + 119 + -84*q^2 + 30*q^4 + -4*q^6",
+        "chi_q_one": "3",
+        "duration_ms": 3
+      },
+      {
+        "lambda": [
+          8,
+          4
+        ],
+        "chi_polynomial": "q^-8 + -16*q^-6 + 70*q^-4 + -164*q^-2 + 214 + -164*q^2 + 70*q^4 + -16*q^6 + q^8",
+        "chi_q_one": "-4",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          8,
+          3,
+          1
+        ],
+        "chi_polynomial": "3*q^-8 + -48*q^-6 + 228*q^-4 + -528*q^-2 + 690 + -528*q^2 + 228*q^4 + -48*q^6 + 3*q^8",
+        "chi_q_one": "0",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          8,
+          2,
+          2
+        ],
+        "chi_polynomial": "2*q^-8 + -32*q^-6 + 158*q^-4 + -364*q^-2 + 476 + -364*q^2 + 158*q^4 + -32*q^6 + 2*q^8",
+        "chi_q_one": "4",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          8,
+          2,
+          1,
+          1
+        ],
+        "chi_polynomial": "3*q^-8 + -48*q^-6 + 234*q^-4 + -552*q^-2 + 726 + -552*q^2 + 234*q^4 + -48*q^6 + 3*q^8",
+        "chi_q_one": "0",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          8,
+          1,
+          1,
+          1,
+          1
+        ],
+        "chi_polynomial": "q^-8 + -16*q^-6 + 76*q^-4 + -188*q^-2 + 251 + -188*q^2 + 76*q^4 + -16*q^6 + q^8",
+        "chi_q_one": "-3",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          7,
+          5
+        ],
+        "chi_polynomial": "3*q^-8 + -24*q^-6 + 90*q^-4 + -192*q^-2 + 246 + -192*q^2 + 90*q^4 + -24*q^6 + 3*q^8",
+        "chi_q_one": "0",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          7,
+          4,
+          1
+        ],
+        "chi_polynomial": "12*q^-8 + -112*q^-6 + 432*q^-4 + -912*q^-2 + 1164 + -912*q^2 + 432*q^4 + -112*q^6 + 12*q^8",
+        "chi_q_one": "4",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          7,
+          3,
+          2
+        ],
+        "chi_polynomial": "15*q^-8 + -152*q^-6 + 594*q^-4 + -1252*q^-2 + 1586 + -1252*q^2 + 594*q^4 + -152*q^6 + 15*q^8",
+        "chi_q_one": "-4",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          7,
+          3,
+          1,
+          1
+        ],
+        "chi_polynomial": "18*q^-8 + -180*q^-6 + 714*q^-4 + -1524*q^-2 + 1944 + -1524*q^2 + 714*q^4 + -180*q^6 + 18*q^8",
+        "chi_q_one": "0",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          7,
+          2,
+          2,
+          1
+        ],
+        "chi_polynomial": "15*q^-8 + -156*q^-6 + 624*q^-4 + -1332*q^-2 + 1698 + -1332*q^2 + 624*q^4 + -156*q^6 + 15*q^8",
+        "chi_q_one": "0",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          7,
+          2,
+          1,
+          1,
+          1
+        ],
+        "chi_polynomial": "12*q^-8 + -120*q^-6 + 492*q^-4 + -1080*q^-2 + 1392 + -1080*q^2 + 492*q^4 + -120*q^6 + 12*q^8",
+        "chi_q_one": "0",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          7,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "chi_polynomial": "3*q^-8 + -28*q^-6 + 120*q^-4 + -276*q^-2 + 365 + -276*q^2 + 120*q^4 + -28*q^6 + 3*q^8",
+        "chi_q_one": "3",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          6,
+          6
+        ],
+        "chi_polynomial": "2*q^-8 + -12*q^-6 + 44*q^-4 + -88*q^-2 + 114 + -88*q^2 + 44*q^4 + -12*q^6 + 2*q^8",
+        "chi_q_one": "6",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          6,
+          5,
+          1
+        ],
+        "chi_polynomial": "15*q^-8 + -112*q^-6 + 390*q^-4 + -792*q^-2 + 992 + -792*q^2 + 390*q^4 + -112*q^6 + 15*q^8",
+        "chi_q_one": "-6",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          6,
+          4,
+          2
+        ],
+        "chi_polynomial": "33*q^-8 + -264*q^-6 + 924*q^-4 + -1848*q^-2 + 2310 + -1848*q^2 + 924*q^4 + -264*q^6 + 33*q^8",
+        "chi_q_one": "0",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          6,
+          4,
+          1,
+          1
+        ],
+        "chi_polynomial": "36*q^-8 + -292*q^-6 + 1038*q^-4 + -2100*q^-2 + 2638 + -2100*q^2 + 1038*q^4 + -292*q^6 + 36*q^8",
+        "chi_q_one": "2",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          6,
+          3,
+          3
+        ],
+        "chi_polynomial": "20*q^-8 + -164*q^-6 + 578*q^-4 + -1144*q^-2 + 1432 + -1144*q^2 + 578*q^4 + -164*q^6 + 20*q^8",
+        "chi_q_one": "12",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          6,
+          3,
+          2,
+          1
+        ],
+        "chi_polynomial": "64*q^-8 + -536*q^-6 + 1912*q^-4 + -3856*q^-2 + 4824 + -3856*q^2 + 1912*q^4 + -536*q^6 + 64*q^8",
+        "chi_q_one": "-8",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          6,
+          3,
+          1,
+          1,
+          1
+        ],
+        "chi_polynomial": "38*q^-8 + -324*q^-6 + 1196*q^-4 + -2464*q^-2 + 3114 + -2464*q^2 + 1196*q^4 + -324*q^6 + 38*q^8",
+        "chi_q_one": "6",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          6,
+          2,
+          2,
+          2
+        ],
+        "chi_polynomial": "21*q^-8 + -180*q^-6 + 648*q^-4 + -1308*q^-2 + 1646 + -1308*q^2 + 648*q^4 + -180*q^6 + 21*q^8",
+        "chi_q_one": "8",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          6,
+          2,
+          2,
+          1,
+          1
+        ],
+        "chi_polynomial": "36*q^-8 + -312*q^-6 + 1152*q^-4 + -2376*q^-2 + 3000 + -2376*q^2 + 1152*q^4 + -312*q^6 + 36*q^8",
+        "chi_q_one": "0",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          6,
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "chi_polynomial": "18*q^-8 + -160*q^-6 + 624*q^-4 + -1344*q^-2 + 1718 + -1344*q^2 + 624*q^4 + -160*q^6 + 18*q^8",
+        "chi_q_one": "-6",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          6,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "chi_polynomial": "3*q^-8 + -28*q^-6 + 120*q^-4 + -276*q^-2 + 365 + -276*q^2 + 120*q^4 + -28*q^6 + 3*q^8",
+        "chi_q_one": "3",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          5,
+          5,
+          2
+        ],
+        "chi_polynomial": "20*q^-8 + -144*q^-6 + 482*q^-4 + -940*q^-2 + 1170 + -940*q^2 + 482*q^4 + -144*q^6 + 20*q^8",
+        "chi_q_one": "6",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          5,
+          5,
+          1,
+          1
+        ],
+        "chi_polynomial": "21*q^-8 + -156*q^-6 + 528*q^-4 + -1044*q^-2 + 1302 + -1044*q^2 + 528*q^4 + -156*q^6 + 21*q^8",
+        "chi_q_one": "0",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          5,
+          4,
+          3
+        ],
+        "chi_polynomial": "32*q^-8 + -240*q^-6 + 788*q^-4 + -1528*q^-2 + 1884 + -1528*q^2 + 788*q^4 + -240*q^6 + 32*q^8",
+        "chi_q_one": "-12",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          5,
+          4,
+          2,
+          1
+        ],
+        "chi_polynomial": "83*q^-8 + -624*q^-6 + 2102*q^-4 + -4108*q^-2 + 5100 + -4108*q^2 + 2102*q^4 + -624*q^6 + 83*q^8",
+        "chi_q_one": "6",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          5,
+          4,
+          1,
+          1,
+          1
+        ],
+        "chi_polynomial": "44*q^-8 + -352*q^-6 + 1220*q^-4 + -2440*q^-2 + 3048 + -2440*q^2 + 1220*q^4 + -352*q^6 + 44*q^8",
+        "chi_q_one": "-8",
+        "duration_ms": 3
+      },
+      {
+        "lambda": [
+          5,
+          3,
+          3,
+          1
+        ],
+        "chi_polynomial": "60*q^-8 + -456*q^-6 + 1530*q^-4 + -2976*q^-2 + 3684 + -2976*q^2 + 1530*q^4 + -456*q^6 + 60*q^8",
+        "chi_q_one": "0",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          5,
+          3,
+          2,
+          2
+        ],
+        "chi_polynomial": "63*q^-8 + -480*q^-6 + 1620*q^-4 + -3168*q^-2 + 3930 + -3168*q^2 + 1620*q^4 + -480*q^6 + 63*q^8",
+        "chi_q_one": "0",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          5,
+          3,
+          2,
+          1,
+          1
+        ],
+        "chi_polynomial": "98*q^-8 + -776*q^-6 + 2696*q^-4 + -5360*q^-2 + 6686 + -5360*q^2 + 2696*q^4 + -776*q^6 + 98*q^8",
+        "chi_q_one": "2",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          5,
+          3,
+          1,
+          1,
+          1,
+          1
+        ],
+        "chi_polynomial": "36*q^-8 + -312*q^-6 + 1152*q^-4 + -2376*q^-2 + 3000 + -2376*q^2 + 1152*q^4 + -312*q^6 + 36*q^8",
+        "chi_q_one": "0",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          5,
+          2,
+          2,
+          2,
+          1
+        ],
+        "chi_polynomial": "44*q^-8 + -352*q^-6 + 1220*q^-4 + -2440*q^-2 + 3048 + -2440*q^2 + 1220*q^4 + -352*q^6 + 44*q^8",
+        "chi_q_one": "-8",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          5,
+          2,
+          2,
+          1,
+          1,
+          1
+        ],
+        "chi_polynomial": "38*q^-8 + -324*q^-6 + 1196*q^-4 + -2464*q^-2 + 3114 + -2464*q^2 + 1196*q^4 + -324*q^6 + 38*q^8",
+        "chi_q_one": "6",
+        "duration_ms": 3
+      },
+      {
+        "lambda": [
+          5,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "chi_polynomial": "12*q^-8 + -120*q^-6 + 492*q^-4 + -1080*q^-2 + 1392 + -1080*q^2 + 492*q^4 + -120*q^6 + 12*q^8",
+        "chi_q_one": "0",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          5,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "chi_polynomial": "q^-8 + -16*q^-6 + 76*q^-4 + -188*q^-2 + 251 + -188*q^2 + 76*q^4 + -16*q^6 + q^8",
+        "chi_q_one": "-3",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          4,
+          4,
+          4
+        ],
+        "chi_polynomial": "8*q^-8 + -56*q^-6 + 182*q^-4 + -340*q^-2 + 424 + -340*q^2 + 182*q^4 + -56*q^6 + 8*q^8",
+        "chi_q_one": "12",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          4,
+          4,
+          3,
+          1
+        ],
+        "chi_polynomial": "48*q^-8 + -348*q^-6 + 1134*q^-4 + -2172*q^-2 + 2676 + -2172*q^2 + 1134*q^4 + -348*q^6 + 48*q^8",
+        "chi_q_one": "0",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          4,
+          4,
+          2,
+          2
+        ],
+        "chi_polynomial": "42*q^-8 + -304*q^-6 + 996*q^-4 + -1920*q^-2 + 2366 + -1920*q^2 + 996*q^4 + -304*q^6 + 42*q^8",
+        "chi_q_one": "-6",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          4,
+          4,
+          2,
+          1,
+          1
+        ],
+        "chi_polynomial": "63*q^-8 + -480*q^-6 + 1620*q^-4 + -3168*q^-2 + 3930 + -3168*q^2 + 1620*q^4 + -480*q^6 + 63*q^8",
+        "chi_q_one": "0",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          4,
+          4,
+          1,
+          1,
+          1,
+          1
+        ],
+        "chi_polynomial": "21*q^-8 + -180*q^-6 + 648*q^-4 + -1308*q^-2 + 1646 + -1308*q^2 + 648*q^4 + -180*q^6 + 21*q^8",
+        "chi_q_one": "8",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          4,
+          3,
+          3,
+          2
+        ],
+        "chi_polynomial": "48*q^-8 + -348*q^-6 + 1134*q^-4 + -2172*q^-2 + 2676 + -2172*q^2 + 1134*q^4 + -348*q^6 + 48*q^8",
+        "chi_q_one": "0",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          4,
+          3,
+          3,
+          1,
+          1
+        ],
+        "chi_polynomial": "60*q^-8 + -456*q^-6 + 1530*q^-4 + -2976*q^-2 + 3684 + -2976*q^2 + 1530*q^4 + -456*q^6 + 60*q^8",
+        "chi_q_one": "0",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          4,
+          3,
+          2,
+          2,
+          1
+        ],
+        "chi_polynomial": "83*q^-8 + -624*q^-6 + 2102*q^-4 + -4108*q^-2 + 5100 + -4108*q^2 + 2102*q^4 + -624*q^6 + 83*q^8",
+        "chi_q_one": "6",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          4,
+          3,
+          2,
+          1,
+          1,
+          1
+        ],
+        "chi_polynomial": "64*q^-8 + -536*q^-6 + 1912*q^-4 + -3856*q^-2 + 4824 + -3856*q^2 + 1912*q^4 + -536*q^6 + 64*q^8",
+        "chi_q_one": "-8",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          4,
+          3,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "chi_polynomial": "15*q^-8 + -156*q^-6 + 624*q^-4 + -1332*q^-2 + 1698 + -1332*q^2 + 624*q^4 + -156*q^6 + 15*q^8",
+        "chi_q_one": "0",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          4,
+          2,
+          2,
+          2,
+          2
+        ],
+        "chi_polynomial": "21*q^-8 + -156*q^-6 + 528*q^-4 + -1044*q^-2 + 1302 + -1044*q^2 + 528*q^4 + -156*q^6 + 21*q^8",
+        "chi_q_one": "0",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          4,
+          2,
+          2,
+          2,
+          1,
+          1
+        ],
+        "chi_polynomial": "36*q^-8 + -292*q^-6 + 1038*q^-4 + -2100*q^-2 + 2638 + -2100*q^2 + 1038*q^4 + -292*q^6 + 36*q^8",
+        "chi_q_one": "2",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          4,
+          2,
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "chi_polynomial": "18*q^-8 + -180*q^-6 + 714*q^-4 + -1524*q^-2 + 1944 + -1524*q^2 + 714*q^4 + -180*q^6 + 18*q^8",
+        "chi_q_one": "0",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          4,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "chi_polynomial": "3*q^-8 + -48*q^-6 + 234*q^-4 + -552*q^-2 + 726 + -552*q^2 + 234*q^4 + -48*q^6 + 3*q^8",
+        "chi_q_one": "0",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          4,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "chi_polynomial": "-4*q^-6 + 30*q^-4 + -84*q^-2 + 119 + -84*q^2 + 30*q^4 + -4*q^6",
+        "chi_q_one": "3",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          3,
+          3,
+          3,
+          3
+        ],
+        "chi_polynomial": "8*q^-8 + -56*q^-6 + 182*q^-4 + -340*q^-2 + 424 + -340*q^2 + 182*q^4 + -56*q^6 + 8*q^8",
+        "chi_q_one": "12",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          3,
+          3,
+          3,
+          2,
+          1
+        ],
+        "chi_polynomial": "32*q^-8 + -240*q^-6 + 788*q^-4 + -1528*q^-2 + 1884 + -1528*q^2 + 788*q^4 + -240*q^6 + 32*q^8",
+        "chi_q_one": "-12",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          3,
+          3,
+          3,
+          1,
+          1,
+          1
+        ],
+        "chi_polynomial": "20*q^-8 + -164*q^-6 + 578*q^-4 + -1144*q^-2 + 1432 + -1144*q^2 + 578*q^4 + -164*q^6 + 20*q^8",
+        "chi_q_one": "12",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          3,
+          3,
+          2,
+          2,
+          2
+        ],
+        "chi_polynomial": "20*q^-8 + -144*q^-6 + 482*q^-4 + -940*q^-2 + 1170 + -940*q^2 + 482*q^4 + -144*q^6 + 20*q^8",
+        "chi_q_one": "6",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          3,
+          3,
+          2,
+          2,
+          1,
+          1
+        ],
+        "chi_polynomial": "33*q^-8 + -264*q^-6 + 924*q^-4 + -1848*q^-2 + 2310 + -1848*q^2 + 924*q^4 + -264*q^6 + 33*q^8",
+        "chi_q_one": "0",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          3,
+          3,
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "chi_polynomial": "15*q^-8 + -152*q^-6 + 594*q^-4 + -1252*q^-2 + 1586 + -1252*q^2 + 594*q^4 + -152*q^6 + 15*q^8",
+        "chi_q_one": "-4",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          3,
+          3,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "chi_polynomial": "2*q^-8 + -32*q^-6 + 158*q^-4 + -364*q^-2 + 476 + -364*q^2 + 158*q^4 + -32*q^6 + 2*q^8",
+        "chi_q_one": "4",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          3,
+          2,
+          2,
+          2,
+          2,
+          1
+        ],
+        "chi_polynomial": "15*q^-8 + -112*q^-6 + 390*q^-4 + -792*q^-2 + 992 + -792*q^2 + 390*q^4 + -112*q^6 + 15*q^8",
+        "chi_q_one": "-6",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          3,
+          2,
+          2,
+          2,
+          1,
+          1,
+          1
+        ],
+        "chi_polynomial": "12*q^-8 + -112*q^-6 + 432*q^-4 + -912*q^-2 + 1164 + -912*q^2 + 432*q^4 + -112*q^6 + 12*q^8",
+        "chi_q_one": "4",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          3,
+          2,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "chi_polynomial": "3*q^-8 + -48*q^-6 + 228*q^-4 + -528*q^-2 + 690 + -528*q^2 + 228*q^4 + -48*q^6 + 3*q^8",
+        "chi_q_one": "0",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          3,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "chi_polynomial": "-8*q^-6 + 60*q^-4 + -168*q^-2 + 228 + -168*q^2 + 60*q^4 + -8*q^6",
+        "chi_q_one": "-4",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          3,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "chi_polynomial": "6*q^-4 + -24*q^-2 + 37 + -24*q^2 + 6*q^4",
+        "chi_q_one": "1",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "chi_polynomial": "2*q^-8 + -12*q^-6 + 44*q^-4 + -88*q^-2 + 114 + -88*q^2 + 44*q^4 + -12*q^6 + 2*q^8",
+        "chi_q_one": "6",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          1,
+          1
+        ],
+        "chi_polynomial": "3*q^-8 + -24*q^-6 + 90*q^-4 + -192*q^-2 + 246 + -192*q^2 + 90*q^4 + -24*q^6 + 3*q^8",
+        "chi_q_one": "0",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          2,
+          2,
+          2,
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "chi_polynomial": "q^-8 + -16*q^-6 + 70*q^-4 + -164*q^-2 + 214 + -164*q^2 + 70*q^4 + -16*q^6 + q^8",
+        "chi_q_one": "-4",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          2,
+          2,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "chi_polynomial": "-4*q^-6 + 30*q^-4 + -80*q^-2 + 112 + -80*q^2 + 30*q^4 + -4*q^6",
+        "chi_q_one": "4",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          2,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "chi_polynomial": "6*q^-4 + -24*q^-2 + 36 + -24*q^2 + 6*q^4",
+        "chi_q_one": "0",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "chi_polynomial": "-4*q^-2 + 7 + -4*q^2",
+        "chi_q_one": "-1",
+        "duration_ms": 2
+      },
+      {
+        "lambda": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "chi_polynomial": "1",
+        "chi_q_one": "1",
+        "duration_ms": 2
+      }
+    ]
+  },
+  "n_partitions": 77,
+  "total_strands": 12
+}

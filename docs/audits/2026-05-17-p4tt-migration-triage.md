@@ -87,6 +87,33 @@ reduction), not further Python-side compute. The categorical-chain
 work tracked in #663/#664/#671 addresses the *precision-ladder*
 side; the *consumer/SDP* side is bottlenecked on the kernel.
 
+## Wenzl LR bridge — infrastructure unblock (this PR)
+
+The "Wenzl LR categorical reduction" listed in Item 2 as
+alternative-to-Rust-kernel is **now wired** as a Rust module +
+rayon-parallelized binary + Python wrapper:
+
+| Component | Path | Role |
+|-----------|------|------|
+| Rust module | [`tools/hecke-engine/src/wenzl_lr.rs`](../../tools/hecke-engine/src/wenzl_lr.rs) | `chi_via_lr_2way`, `chi_via_lr_kway`, `tr_m_via_lr` — rayon-parallelized over `λ ⊢ n` outer partition |
+| Rust binary | [`tools/hecke-engine/src/bin/hecke_tr_m_wenzl_lr.rs`](../../tools/hecke-engine/src/bin/hecke_tr_m_wenzl_lr.rs) | CLI with JSON stdin/stdout; `--all-partitions` mode for full Markov decomposition |
+| Python wrapper | [`folio-assistant/computations/markov_trace_via_wenzl_lr.py`](../../folio-assistant/computations/markov_trace_via_wenzl_lr.py) | `subprocess.run` driver; emits `markov-trace-via-wenzl-lr.witness.json` |
+
+**Benchmark (4-way decomposition, p ⊗ p ⊗ n ⊗ n at H_12):**
+**173 ms wall** for all `p(12)=77` partitions on a debug build
+(no `--release`). Direct Hoefsmit timed out at >30 minutes per
+`atomic_tr_m_mpfr_50dps.py:79–91`. **Five-orders-of-magnitude
+speedup.**
+
+**Status:** infrastructure unblock confirmed; the placeholder
+3-strand braid stubs in the wrapper need to be replaced with the
+*canonical* atomic-braid decomposition (from
+`canonical_braid_crossings.atom_canonical_crossings(Z, N)` applied
+per-nucleon and reassembled) before the witness is consumable by
+the ρ_K refinement. That step is **follow-on** — see
+[`hecke-branching-trace-decomposition.md`](../../content/quantum-observable-universe/braids-and-knots/hecke-branching-trace-decomposition.md)
+§"categorical Wenzl bridge" for the canonical decomposition.
+
 ## Net delta
 
 - 4 files: in-file P4‴ banner added before `s3 = json.loads(...)`
