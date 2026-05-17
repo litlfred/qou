@@ -117,36 +117,53 @@ def main() -> int:
                 flipped.append((gen, ctype))
         return flipped
 
+    # Fast path: read symbolic χ^λ from the cached witness
+    # chi-deuteron-h6.witness.json (computed once, ~131s; reused in ms).
+    # If absent, fall back to direct computation with conjugate-pairing.
+    chi_cache_path = HERE / "chi-deuteron-h6.witness.json"
+    cached_chi: dict[tuple, sp.Expr] = {}
+    if chi_cache_path.exists():
+        cache_doc = json.loads(chi_cache_path.read_text())
+        for entry in cache_doc.get("chi_lambda_symbolic", []):
+            shape_tup = tuple(entry["partition"])
+            cached_chi[shape_tup] = sp.sympify(entry["chi_q_symbolic"], locals={"q": Q})
+        print(f"  loaded {len(cached_chi)} symbolic χ^λ from chi-deuteron-h6 cache")
+
     chi_per_lam: dict = {}
     processed: set = set()
     print()
-    print("per-partition χ^λ timings (conjugate-pairing optimisation):")
+    print("per-partition χ^λ timings (cache + conjugate-pairing):")
     for f, shape in parts:
         if shape in processed:
             continue
         t0 = time.time()
-        chi = chi_lambda_symbolic(shape, deut)
+        if shape in cached_chi:
+            chi = cached_chi[shape]
+            source = "cached"
+        else:
+            chi = chi_lambda_symbolic(shape, deut)
+            source = "computed"
         dt = time.time() - t0
         chi_q0 = float(sp.N(chi.subs(Q, Q0_CANONICAL), 30))
         chi_per_lam[shape] = {
             "f_lambda": f,
             "chi_at_q0": chi_q0,
-            "compute_seconds": round(dt, 2),
+            "compute_seconds": round(dt, 3),
             "derived_from_conjugate": False,
+            "source": source,
         }
-        print(f"  {str(shape):<22} f={f:>2}  {dt:6.1f}s  χ(q0)={chi_q0:+.4f}  (computed)")
+        print(f"  {str(shape):<22} f={f:>2}  {dt:6.3f}s  χ(q0)={chi_q0:+.4f}  ({source})")
         processed.add(shape)
 
         conj = conjugate_partition(shape)
         if conj != shape and conj not in processed:
-            # Bar-conjugate identity: χ^{λ'}(β) at q⁻¹ is the
-            # automorphism-image of χ^λ at q. For the deuteron braid
-            # (writhe-balanced, palindromic in cross-type) χ ends up
-            # bar-invariant, so χ^{λ'}(β) = χ^λ(β)|_{q→q⁻¹} can be
-            # computed by symbolic q-inversion of the ALREADY-COMPUTED
-            # χ^λ expression — no second matrix multiplication needed.
             t1 = time.time()
-            chi_conj_expr = sp.cancel(chi.subs(Q, 1 / Q))
+            if conj in cached_chi:
+                chi_conj_expr = cached_chi[conj]
+                source_c = "cached"
+            else:
+                chi_conj_expr = sp.cancel(chi.subs(Q, 1 / Q))
+                source_c = "derived q→q⁻¹"
             dt_conj = time.time() - t1
             chi_conj_q0 = float(sp.N(chi_conj_expr.subs(Q, Q0_CANONICAL), 30))
             f_conj = next(ff for ff, sh in parts if sh == conj)
@@ -154,10 +171,11 @@ def main() -> int:
                 "f_lambda": f_conj,
                 "chi_at_q0": chi_conj_q0,
                 "compute_seconds": round(dt_conj, 3),
-                "derived_from_conjugate": True,
+                "derived_from_conjugate": (source_c == "derived q→q⁻¹"),
                 "conjugate_source": str(shape),
+                "source": source_c,
             }
-            print(f"  {str(conj):<22} f={f_conj:>2}  {dt_conj:6.3f}s  χ(q0)={chi_conj_q0:+.4f}  (derived from {shape} via q→q⁻¹)")
+            print(f"  {str(conj):<22} f={f_conj:>2}  {dt_conj:6.3f}s  χ(q0)={chi_conj_q0:+.4f}  ({source_c})")
             processed.add(conj)
 
     print()

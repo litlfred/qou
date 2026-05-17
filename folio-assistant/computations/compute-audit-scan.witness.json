@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-17T06:45:36.298979+00:00",
-  "commitSha": "a646ae91fa5974abc87e030bdc0d66cfc6ad7096",
+  "computedAt": "2026-05-17T06:45:38.007829+00:00",
+  "commitSha": "ed9225cd15fd4f892715facd71bd5c12033af4c7",
   "assertions": [],
   "allPassed": true,
   "durationMs": 7,
@@ -634,14 +634,14 @@
       {
         "pattern": "P15",
         "file": "deuteron_tr_M_symbolic.py",
-        "line": 149,
+        "line": 165,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",
         "file": "deuteron_tr_M_symbolic.py",
-        "line": 181,
+        "line": 199,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
