@@ -111,34 +111,68 @@ def _load_six_term_row(atom_label: str) -> dict:
 
 
 def derive_m_p_hecke() -> dict:
-    """Derive m_p_Hecke from T1+T4 at 50 dps (no fitting)."""
+    """Derive m_p_Hecke from T1+T4 at 50 dps (no fitting).
+
+    Item A closure (2026-05-17): T2+T3 at A=1 no longer throw
+    KeyError — `terms-2-3-atom-per-gen-mpfr-50dps.witness.json`
+    now covers proton (Z=1, N=0) and neutron (Z=0, N=1) per the
+    A=1 extension in `terms_2_3_atom_per_gen_mpfr_50dps.ATOMS`.
+    The values are loaded for documentation and incorporated into
+    a new `m_p_hecke_T1_T2_T3_T4` partial (extending the original
+    T1+T4 only).  However, the legacy Φ_q tower form produces
+    megaelectronvolt-divergent T2 (~1.097M for proton) — see
+    PR #682 for the Li₂^q replacement that converges to physical
+    values.  Until #682 lands, the T2+T3 contribution is reported
+    but flagged "near-pole" rather than treated as physical.
+    """
     row = _load_six_term_row("p (proton)")
 
     t1 = mp.mpf(str(row["term1_descended"]))
-    t4 = mp.mpf(str(row["term4_frob_per_vortex"]))
+    # P1.C: term4 canonical field is term4_frob_canonical_per_3A
+    # (per thm:frobenius-codim-universal; field rename 2026-05-12).
+    t4 = mp.mpf(str(row.get("term4_frob_canonical_per_3A")
+                    or row.get("term4_frob_per_vortex")))
+    # Item A: T2+T3 now loaded; flagged near-pole pending #682 Li₂^q.
+    t2_single = mp.mpf(str(row.get("term2_single", 0)))
+    t3_pair = mp.mpf(str(row.get("term3_pair", 0)))
+    t23_err = row.get("term23_error") or "(none — Item A closed 2026-05-17)"
 
-    # Quarantine reasons (loaded for documentation only)
-    t2_err = row.get("term23_error") or "(none)"
-    t5 = mp.mpf(str(row.get("term5_chirality_bw", 0)))
-    t6 = mp.mpf(str(row.get("term6_habiro_residue", 0)))
+    t5 = mp.mpf(str(row.get("term5_chirality_bw") or "0"))
+    # term6 emits None when the Habiro residue is unavailable for
+    # the atom (e.g. when terms-2-3 status is "near-pole").  Coalesce
+    # via `or "0"` rather than the dict-default which doesn't trigger
+    # when the key is present with value None.
+    t6 = mp.mpf(str(row.get("term6_habiro_residue") or "0"))
 
-    # Path A partial: T1 + T4 only
+    # Path A partial (T1+T4 only) — preserved for historical chain.
     m_p_hecke_partial = t1 + t4
+    # Item A extended partial: T1+T2+T3+T4 — flagged near-pole.
+    m_p_hecke_t1234 = t1 + t2_single + t3_pair + t4
 
     return {
         "atom": "proton",
         "t1_descended_50dps": str(t1),
+        "t2_single_50dps": str(t2_single),
+        "t3_pair_50dps": str(t3_pair),
         "t4_frobenius_co_casimir_50dps": str(t4),
         "m_p_hecke_T1_plus_T4": str(m_p_hecke_partial),
+        "m_p_hecke_T1_T2_T3_T4_50dps": str(m_p_hecke_t1234),
         "quarantined": {
             "t2_t3_brane_tower": {
-                "value": "0 (KeyError at A=1)",
+                "value_T2_single_50dps": str(t2_single),
+                "value_T3_pair_50dps": str(t3_pair),
                 "reason": (
-                    "A=1 not in terms-2-3-atom-per-gen-mpfr-50dps.witness.json. "
-                    "PR #533: A=1 brane tower structurally empty under current "
-                    "level-selection rule. Open R&D: brane-tower-z-habiro."
+                    "Item A closed 2026-05-17: A=1 entries now in "
+                    "terms-2-3-atom-per-gen-mpfr-50dps.witness.json. "
+                    "Loaded but flagged 'near-pole' — legacy Φ_q tower "
+                    "form gives megaelectronvolt-divergent values (T2 ~ "
+                    "1.097M for proton). PR #682 ships the Li₂^q "
+                    "production replacement (matches AME within 1% at "
+                    "tritium); until that merges, T2+T3 values are "
+                    "documentation only and m_p_hecke_T1_plus_T4 remains "
+                    "the trustable partial."
                 ),
-                "raw_error": t2_err,
+                "raw_error": t23_err,
             },
             "t5_chirality_bw": {
                 "value_50dps": str(t5),
@@ -178,7 +212,12 @@ def main() -> int:
     print(f"    T1 (50 dps) = {mp.nstr(mp.mpf(p['t1_descended_50dps']), 14)}")
     print(f"    T4 (50 dps) = {mp.nstr(mp.mpf(p['t4_frobenius_co_casimir_50dps']), 14)}")
     print(f"    m_p_Hecke (T1+T4 partial) = {mp.nstr(mp.mpf(p['m_p_hecke_T1_plus_T4']), 14)}")
-    print(f"\n  Quarantined: T2+T3 (A=1 KeyError), T5 (sign-indefinite, {mp.nstr(mp.mpf(p['quarantined']['t5_chirality_bw']['value_50dps']), 6)}),"
+    t2 = mp.mpf(p["t2_single_50dps"])
+    t3 = mp.mpf(p["t3_pair_50dps"])
+    print(f"\n  T2 (50 dps) = {mp.nstr(t2, 6)}  near-pole; Li₂^q pending #682")
+    print(f"  T3 (50 dps) = {mp.nstr(t3, 6)}  near-pole; Li₂^q pending #682")
+    print(f"  m_p_Hecke (T1+T2+T3+T4 partial) = {mp.nstr(mp.mpf(p['m_p_hecke_T1_T2_T3_T4_50dps']), 14)}")
+    print(f"\n  Quarantined: T5 (sign-indefinite, {mp.nstr(mp.mpf(p['quarantined']['t5_chirality_bw']['value_50dps']), 6)}),"
           f"\n  T6 (Habiro tail, {mp.nstr(mp.mpf(p['quarantined']['t6_habiro_residue']['value_50dps']), 6)})")
 
     out = {
