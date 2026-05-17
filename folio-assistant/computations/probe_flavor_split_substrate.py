@@ -110,14 +110,20 @@ def main() -> int:
           f"{mp.nstr(TGT_QUARK / TGT_NUCLEON, 8)}")
     print()
 
-    # The four equivalent forms of the substrate candidate
+    # Algebraic identity that makes all my equivalent forms work:
+    #    h_q · z_mkv = z_0 = ℏ_q · √q
+    # All to 50 dps:
+    id_check = mp.fabs(h_q * z_mkv - z_0) + mp.fabs(z_0 - hbar * sqq)
+    assert id_check < mpf("1e-40"), f"identity violated: {id_check}"
+
+    # The four equivalent forms for (μ_d−μ_u)/μ_avg
     forms = [
         ("h_q² · ℏ_q / √q (cleanest)",         h_q**2 * hbar / sqq),
         ("h_q² · z_0 / q",                       h_q**2 * z_0 / q),
         ("h_q³ · z_mkv / q",                     h_q**3 * z_mkv / q),
         ("h_q² · (q-1) / q^{3/2}",               h_q**2 * (q-1) / q**(mpf(3)/2)),
     ]
-    print("  Substrate candidates (all algebraically equivalent):")
+    print("  Substrate candidates for (μ_d−μ_u)/μ_avg (all equivalent):")
     print(f"  {'form':40s} {'value':>14s} {'%off quark':>14s}")
     print("  " + "-" * 72)
     delta_sub = None
