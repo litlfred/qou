@@ -7,6 +7,62 @@ under strict three-calibration discipline (CAL-1 m_e, CAL-2 q₀, CAL-3
 Q_β; m_p and m_n are predictions, never inputs) + anti-staleness
 infra to prevent the failure mode that produced the ¹H tautology.
 
+## Scope map (2026-05-17 — Phase 4 audit + canonical-form + q-shuffle)
+
+Owner directives this cycle:
+1. "do a full audit": Phases 1-4 landed (54 files, ~150 claims,
+   ~24 actionable gaps; INDEX in
+   `docs/audits/2026-05-16-compute-paper-lean-audit-INDEX.md`)
+2. "not adjacent only, full tail, canonical derived only" →
+   switched T2/T3 from Faddeev Φ_q to symmetric Li_2^q per
+   paper canon (2026-05-03 revision)
+3. "validate the V̂_i terms, full tail, hydrogen step-by-step" →
+   landed `hydrogen_step_by_step.py` (additive convention)
+4. "knot convolution operator on compound braids, full order
+   not LO" → landed `hydrogen_qshuffle_compound.py` with
+   q-shuffle *_q for ¹H = proton ⊔ electron on 5-strand compound
+5. "/coordinate PR 644" → ledger row added below (PR #644 CLOSED
+   unmerged 2026-05-15, T5 work continued here)
+
+### PR #644 cross-link
+
+| Item | PR #644 (CLOSED 2026-05-15) | PR #663 (this branch) |
+|---|---|---|
+| Topic | Plan: 1 ppb mass closure — phased plan + Lean Phase 4 handover | Isotope-mass-table no-cal regen + canonical Li_2^q + *_q compound |
+| T5 a_K convention | V1 backfill complete; 2.2 % gap on nucleons documented; V2/V3/V4 intractability flagged | Phase 4 audit confirms 2.2 % gap; recorded as audit GAP #17 |
+| ⁴He Model B knot | Survey landed: 8_17 (0.186) > 10_123 > 8_18 > L6a4 (out) | not actioned here |
+| Owner-decision items | Two left open at closure: (a) V1 vs V2/V3/V4 production wiring; (b) ⁴He final knot selection | Both items still open; logged as research-level in audit INDEX |
+| Lean Phase 4 handover | scheduled to "separate PR" — never opened | covered by Phase 4 batches A-D agent reports (~50 files) on this branch |
+
+**Action**: harvested nothing from #644 (commits never merged).
+The Phase 4 audit on this branch is the de-facto continuation;
+the same T5 V1 vs V2 owner-decision is now audit GAP #17.
+
+### Headline empirical finding (2026-05-17)
+
+m(¹H) prediction under the paper-canonical Li_2^q tower
+(symmetric q-dilog, replaces retired Faddeev Φ_q):
+
+| convention | m(¹H) pred | Δ vs CODATA 938.78 |
+|---|---:|---:|
+| LO additive (m_p + m_e − BE) | 5.92 MeV | −99.37 % |
+| Full-order compound (*_q on 5-strand) | 6.30 MeV | −99.33 % |
+
+The 932 MeV shortfall is **NOT** from additive-vs-compound
+choice (same order of magnitude). The previous 1.50 % closure
+was a Faddeev Φ_q artifact at |V̂_p|=0.989 > q⁻¹=0.901 (sitting
+near the pole of Π(1−q⁻ᵏz)⁻¹). Canonical Li_2^q is mathematically
+clean (no pole at q_0 inputs) but the truncated T1-T6 tower is
+structurally off by ~170×.
+
+Open hypotheses (per owner hint "hidden weighting/scaling factor"):
+- T7 ≡ 0 for nucleons (skeleton extension confirmed this; ruled out)
+- T8+ tail — not implemented
+- V̂_i re-derivation under Li_2^q (current was tuned to Faddeev)
+- Hidden q/h/z scaling factor lost in some derivation step
+- Structural multiplicative factor (quark colour, gluon binding)
+  outside brane-tower scope
+
 ## Scope map (2026-05-16 — fourth cycle, post-decisions checkpoint)
 
 Owner closed PR #669 without merging on 2026-05-16; resolved six

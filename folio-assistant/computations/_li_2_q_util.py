@@ -59,16 +59,19 @@ def li_2_q(
 ) -> mpf:
     """Symmetric q-dilogarithm Li_2^q(z) = Σ_{n≥1} z^n / (n · [n]_q).
 
-    Returns ``mp.mpf('inf')`` if |z| ≥ 1 (formal series diverges
-    on the unit circle and beyond).  For |z| < 1 the sum
-    converges absolutely; truncation cuts at the first term whose
-    magnitude < eps.  Default eps = 10^{-(mp.dps − 5)}.
+    Convergence: the radius of convergence is |z| < q (not |z| < 1):
+    by ratio test, |a_{n+1}/a_n| → |z|/q since [n+1]_q/[n]_q → q
+    as n → ∞.  At |z| = q the series fails the necessary condition
+    (terms ~ 1/n at the boundary).  We return ``mp.mpf('inf')`` only
+    when |z| ≥ q.  In particular Li_2^q(-1) IS FINITE at q_0 ≈ 1.11
+    (alternating series with super-exponentially-decaying terms).
+    Truncation cuts at the first term whose magnitude < eps.
     """
     if q_inv is None:
         q_inv = mpf(1) / q
     if eps is None:
         eps = mpf(10) ** (5 - mp.dps)
-    if mp.fabs(z_val) >= mpf(1):
+    if mp.fabs(z_val) >= q:
         return mpf("inf")
     total = mpf(0)
     z_pow = mpf(1)
