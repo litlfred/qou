@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-17T22:47:39.504125+00:00",
-  "commitSha": "d172877e5deb901accf97dce4c5f0cec52e6d1d4",
+  "computedAt": "2026-05-17T22:51:46.973857+00:00",
+  "commitSha": "d1823b9daa04a8c5ab2f2d43b34bbf2e26590958",
   "assertions": [
     {
       "name": "a(1) = 3/7",
@@ -35,7 +35,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 149,
+  "durationMs": 147,
   "computation": "mobius-limit-from-thimble",
   "scriptFile": "mobius_limit_from_thimble.py",
   "scriptHash": "57084e42ae29",
