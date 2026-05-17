@@ -306,3 +306,43 @@ are different observables in the framework, the dual-tr_M is
 deliberate, just under-documented. If (C) is wrong, (A) is the
 right path (paper is the source of truth).
 
+
+## 2026-05-17 round 6 — F_n derivation analysis + new paper block
+
+User direction: "do F_3, F_n categorical derivation" + "prove w/ lean
+and write up in paper".
+
+**Substantive new result on PR #671** (commits `f70ce8d6e`, `c11899aa4`):
+
+  tr_M(σ_1²) = (q^{5/2} − q^{1/2} + q² + q) / (q² + q) = 1 + (q-1)·q^{−1/2}
+  for all n ≥ 2, Markov-invariant.
+
+  Taylor: ε^k coefficient = C(−1/2, k−1) for k ≥ 1 (exact binomials,
+  verified through ε^10).
+
+**Files shipped:**
+- `content/quantum-observable-universe/braids-and-knots/trm-hopf-sigma1-sq-closed-form.{ts,md,lean}` — content block triple
+- `lean/QOU/Braiding/TrMHopfSigma1SqClosedForm.lean` — 3 typed theorems w/ proof sketches + [jones1987]/[wenzl1988] refs
+- `probe_F_n_categorical_derivation.py` + witness — verifies closed form + binomial pattern
+- `docs/audits/2026-05-17-F-n-derivation-analysis.md` — analysis doc
+
+**Critical implication for Story B:** The bare-Markov ε^{2n} coefficients
+of tr_M(σ_1²) are NOT the framework's claimed F_n values:
+
+  | n | framework F_n at q=1 | bare-Markov ε^{2n} |
+  |---|---:|---:|
+  | 2 | 0.7500 (b²)         | -0.3125 (-5/16)    |
+  | 3 | -1.2990 (-2b³)      | -0.2461 (-63/256)  |
+  | 4 | 1.2500 (b²+1/2)     | -0.2095 (-429/2048)|
+
+PROVES the Q_β precision-ladder F_n are NOT bare-Markov Taylor
+coefficients. Each F_n requires a SEPARATE Wedderburn-block projection.
+PR #664's c_3 claim implicitly relies on V_(2,2,2) projection; bare-Markov
+cannot recover -2·b³.
+
+**Next-PR scope** (genuine F_3 derivation via V_(2,2,2) projection):
+documented in audit doc §"Next-PR scope" — 6 steps, tractable on the
+chi-deuteron-h6.witness.json cache.
+
+**Coordination posts:**
+- Round 6 on PR #664: https://github.com/litlfred/qou/pull/664#issuecomment-4469536436
