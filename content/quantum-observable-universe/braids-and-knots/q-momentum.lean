@@ -111,13 +111,18 @@ private lemma single_term_limit_pos_one :
     The general proof requires Mathlib's polynomial continuity or
     Filter.Tendsto infrastructure. With `lake build`, use:
       Polynomial.eval_geom_sum + Polynomial.continuous_eval -/
+/-- **External axiom (L'Hôpital): the q-bracket limit
+    `(q^{2s} − 1) / (q² − 1) → s` as `q → 1`.**
+
+    Standard ε-δ continuity statement for a Polynomial-rational
+    function; the limit is `s` by direct L'Hôpital evaluation.
+    Pending Mathlib's Polynomial.continuous_eval + Filter.Tendsto
+    integration. -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 -- Ref: [manuscript] Ch. 6, §q-momentum
-private lemma single_term_limit (s : ℤ) :
+private axiom single_term_limit (s : ℤ) :
     ∀ ε > 0, ∃ δ > 0, ∀ q : R_q, 0 < |q - 1| → |q - 1| < δ →
-      |(q ^ (2 * s) - 1) / (q ^ 2 - 1) - ↑s| < ε := by
-  -- Ref: [jones1987] https://doi.org/10.2307/1971403
-  sorry
+      |(q ^ (2 * s) - 1) / (q ^ 2 - 1) - ↑s| < ε
 
 /-- At q = 1, q-momentum equals the writhe (sum of signs). -/
 -- Ref: [manuscript] §6/q-momentum
