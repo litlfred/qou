@@ -19,11 +19,8 @@ T2+T3 under two tower-function candidates:
                     (the Kashaev-correct symmetric q-dilogarithm,
                     distinct from the divergent Faddeev Φ_q).
 
-The Li_2^q helper is inlined here (single source of truth at
-`folio-assistant/computations/derived_masses.py:li2q_symmetric`
-on PR #675; duplicated here to avoid a cherry-pick dependency
-between branches before #675 merges — to be deduplicated once
-#675 lands).
+The Li_2^q helper is imported from `derived_masses.li2q_symmetric`
+(the centralized single source of truth in this same PR).
 
 Output: `probe-proton-t2-t3-li2q-comparison.witness.json`.
 """
@@ -42,29 +39,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 from witness_base import WitnessBuilder  # noqa: E402
-
-
-def li2q_symmetric(z: mp.mpf, q: mp.mpf, terms: int = 200) -> mp.mpf:
-    """Symmetric q-dilogarithm Li_2^q(z) = Σ z^n / (n · [n]_q).
-
-    With symmetric q-integer [n]_q = (q^n − q^{-n})/(q − q^{-1}).
-    Incremental powers (q_pow *= q) for performance.
-
-    Duplicate of `derived_masses.li2q_symmetric` on PR #675; will be
-    replaced with an import once #675 merges to main.
-    """
-    q_minus_qinv = q - 1 / q
-    total = mp.mpf(0)
-    z_pow = mp.mpf(1)
-    q_pow = q
-    q_inv_pow = 1 / q
-    for n in range(1, terms + 1):
-        z_pow *= z
-        n_q = (q_pow - q_inv_pow) / q_minus_qinv
-        total += z_pow / (n * n_q)
-        q_pow *= q
-        q_inv_pow /= q
-    return total
+from derived_masses import li2q_symmetric  # noqa: E402 — centralized helper
 
 
 def _load_q0_50dps() -> tuple[mp.mpf, mp.mpf]:
