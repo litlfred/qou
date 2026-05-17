@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-17T20:30:16.796996+00:00",
-  "commitSha": "ea6872d7e30f591575f7834101ed4294eb598ab7",
+  "computedAt": "2026-05-17T21:47:39.681419+00:00",
+  "commitSha": "d353027f3544606294a672bafd6058e8226c4670",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 109,
+  "durationMs": 130,
   "computation": "canonical-tr-m-via-chi-cache",
   "scriptFile": "canonical_tr_m_via_chi_cache.py",
   "scriptHash": "56615004018a",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "bf141d632fb264a94d040b39216e40cdfb671655",
   "description": "Canonical |tr_M(β_atomic(Z, N))| at q_0 computed as Σ_λ y_λ(q_0) · χ^λ(β; q_0), the ~50-line combiner called out by `docs/audits/2026-05-17-knot-fusion-step1-audit.md` (PR #681). Consumes the symbolic χ^λ chi-cache from `per_irrep_pole_atom.py` and the 50-dps `y_lambda_at(n, q_0)` table. Partial chi caches yield truncated traces (`partitions_used < partitions_total`); downstream consumers should check `partial_cache` before using the result for the 1ppb comparison.",
   "parameters": {
     "q_0_50dps": "1.1099785955541805",
@@ -35,7 +35,7 @@
       "tr_M_q0": "1.0653062285923887036108498526519307688964161791863",
       "abs_tr_M_q0": "1.0653062285923887036108498526519307688964161791863",
       "y_lambda_load_time_sec": 0.004,
-      "tr_m_sum_time_sec": 0.009,
+      "tr_m_sum_time_sec": 0.008,
       "per_lambda": [
         {
           "partition": [
@@ -121,7 +121,7 @@
       "tr_M_q0": "0.38828647154771288982229091167294456771964680626327",
       "abs_tr_M_q0": "0.38828647154771288982229091167294456771964680626327",
       "y_lambda_load_time_sec": 0.0,
-      "tr_m_sum_time_sec": 0.059,
+      "tr_m_sum_time_sec": 0.055,
       "per_lambda": [
         {
           "partition": [
@@ -243,13 +243,13 @@
       "N": 2,
       "n_strands": 9,
       "partitions_total": 30,
-      "partitions_used": 2,
+      "partitions_used": 5,
       "partial_cache": true,
       "q_0_50dps": "1.1099785955541805",
-      "tr_M_q0": "0.03766298799150122104418251105423374508296034001576",
-      "abs_tr_M_q0": "0.03766298799150122104418251105423374508296034001576",
+      "tr_M_q0": "0.10211837411772675840589781168756589489785007902945",
+      "abs_tr_M_q0": "0.10211837411772675840589781168756589489785007902945",
       "y_lambda_load_time_sec": 0.0,
-      "tr_m_sum_time_sec": 0.01,
+      "tr_m_sum_time_sec": 0.039,
       "per_lambda": [
         {
           "partition": [
@@ -267,6 +267,34 @@
           "y_lambda_at_q0": "0.0073063016406266886442579175846989870285900852923132",
           "chi_lambda_at_q0": "3.7402811795852237060695160109669661284709811547546",
           "contribution": "0.027327622518808646225000251399661261217099827845046"
+        },
+        {
+          "partition": [
+            7,
+            2
+          ],
+          "y_lambda_at_q0": "0.0062689450192913522873507328334748641889196036787076",
+          "chi_lambda_at_q0": "3.1900195401577735355236543195121871224828691862175",
+          "contribution": "0.019998057107714164369369532555546371620533575784382"
+        },
+        {
+          "partition": [
+            7,
+            1,
+            1
+          ],
+          "y_lambda_at_q0": "0.0014725458916080336472696176104862800012962709493543",
+          "chi_lambda_at_q0": "-0.5793963030209955083073749358255691467261572596101",
+          "contribution": "-0.00085318764562645026982786978997818794272906460611356"
+        },
+        {
+          "partition": [
+            6,
+            3
+          ],
+          "y_lambda_at_q0": "0.0044564421255197745016408276183348916295689707749408",
+          "chi_lambda_at_q0": "10.167419521655530946075488939442543295777241256255",
+          "contribution": "0.04531051666413782326217363786776396613708522783542"
         }
       ]
     },
@@ -282,7 +310,7 @@
       "tr_M_q0": "0.11111463251051499273763192407323281241630893601511",
       "abs_tr_M_q0": "0.11111463251051499273763192407323281241630893601511",
       "y_lambda_load_time_sec": 0.0,
-      "tr_m_sum_time_sec": 0.02,
+      "tr_m_sum_time_sec": 0.018,
       "per_lambda": [
         {
           "partition": [
