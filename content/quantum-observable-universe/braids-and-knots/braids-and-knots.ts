@@ -399,6 +399,7 @@ export default chapter({
         "q-beta-gamma-gamma-canonical-derivation",
         "typed-b3-sub-braid-extraction",
         "ck-extraction-from-algebraic-rules",
+        "h3-hecke-idempotents",
         "multi-link-jones-q1-extension",
         "categorical-chain-convergence-mechanisms",
         "tau-M-asymptotic-rep-theory",

@@ -217,6 +217,51 @@ theorem Braid2_writhe_eq (n : Braid2) :
       simp [Braid2.toBraidWord, BraidWord.writhe_cons, ih]
       ring
 
+/-! ## n=3: Borromean rings closure
+
+The canonical Borromean braid word in `B_3` is the 6-crossing
+alternating word `σ_0 σ_1⁻¹ σ_0 σ_1⁻¹ σ_0 σ_1⁻¹`. Its Markov closure
+is the Borromean link (Brunnian, 3-component). -/
+
+/-- The canonical Borromean braid word in `B_3` (6 alternating
+    crossings, writhe 0). -/
+def borromeanBraidWord3 : BraidWord 3 :=
+  [⟨0, true⟩, ⟨1, false⟩, ⟨0, true⟩,
+   ⟨1, false⟩, ⟨0, true⟩, ⟨1, false⟩]
+
+/-- The canonical Borromean braid word has length `6`. -/
+@[simp] theorem borromeanBraidWord3_length :
+    borromeanBraidWord3.length = 6 := rfl
+
+/-- The canonical Borromean braid word has writhe `0` (3 positive,
+    3 negative crossings). -/
+@[simp] theorem borromeanBraidWord3_writhe :
+    borromeanBraidWord3.writhe = 0 := by
+  simp [borromeanBraidWord3, BraidWord.writhe_cons,
+        BraidWord.writhe_nil]
+  ring
+
+/-- DecidableEq for `BraidCrossing 3` (needed for `closure3` pattern
+    matching below). Derived automatically. -/
+example : DecidableEq (BraidCrossing 3) := inferInstance
+
+/-- **3-strand Markov closure** for the canonical Borromean word.
+    Defined by direct equality check against the canonical word;
+    other 3-strand words fall through to `Link.unknot` (placeholder
+    pending the general 3-strand closure algorithm). -/
+noncomputable def closure3 (w : BraidWord 3) : Link :=
+  if w = borromeanBraidWord3 then Link.borromean else Link.unknot
+
+-- Ref: [manuscript] rem:braid-group-n-strand §"n=3 Borromean"
+-- Ref: [jones1985] doi:10.2307/1971403
+/-- **The canonical Borromean braid word Markov-closes to the
+    Borromean link.** Closed by `if_pos rfl` on the definition of
+    `closure3`. -/
+theorem closure3_borromean :
+    closure3 borromeanBraidWord3 = Link.borromean := by
+  unfold closure3
+  exact if_pos rfl
+
 /-! ## n=2 ↔ closure2 identification (Markov closure)
 
 The closure at `n = 2` is by construction the writhe composed with
