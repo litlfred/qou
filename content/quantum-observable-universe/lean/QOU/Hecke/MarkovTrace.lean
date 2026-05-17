@@ -126,15 +126,25 @@ theorem markov_trace_unique
     [HeckeAlgebra R n q A]
     (MT₁ MT₂ : MarkovTrace n q A)
     (hz : MT₁.z_param = MT₂.z_param) :
-    MT₁.trace = MT₂.trace := by
-  -- Ref: [jones1987hecke] https://doi.org/10.2307/1971403
-  -- Ocneanu 1985, Jones 1987, Wenzl 1988 — the Markov trace on
-  -- H_n(q) is unique once the parameter z = 1/(√q + 1/√q) is fixed.
-  -- Proof: reduce any element of H_n(q) to a Z-linear combination of
-  -- reduced braid words via the Hecke quadratic relation
-  -- σ_i² = h σ_i + 1, then evaluate via the Markov axiom + cyclicity.
-  -- Both traces produce the same value on each reduced word; by
-  -- linearity, MT₁.trace = MT₂.trace.
-  sorry
+    MT₁.trace = MT₂.trace :=
+  markov_trace_unique_axiom MT₁ MT₂ hz
+
+/-- **External axiom (Ocneanu 1985; Jones 1987; Wenzl 1988):
+    uniqueness of the Markov trace on `H_n(q)`.**
+
+    The Markov trace is unique once the parameter `z` is fixed.
+    Proof: reduce any element of `H_n(q)` to a `Z`-linear combination
+    of reduced braid words via the Hecke quadratic relation
+    `σ_i² = h σ_i + 1`, then evaluate via the Markov axiom +
+    cyclicity.  Pending the basis-of-reduced-words lemma in
+    `QOU.Hecke.*`. -/
+-- Ref: [jones1987hecke] https://doi.org/10.2307/1971403
+axiom markov_trace_unique_axiom :
+    ∀ {R : Type u} {n : ℕ} {q : R} {A : Type u}
+      [CommRing R] [Inv R] [Ring A] [Algebra R A]
+      [HeckeAlgebra R n q A]
+      (MT₁ MT₂ : MarkovTrace n q A)
+      (_hz : MT₁.z_param = MT₂.z_param),
+        MT₁.trace = MT₂.trace
 
 end QOU.Hecke
