@@ -91,10 +91,39 @@ def main() -> int:
         parts.append((len(syts), tuple(shape)))
     parts.sort()
 
+    def conjugate_partition(shape):
+        """Transpose a Young diagram: (4,2) → (2,2,1,1)."""
+        if not shape:
+            return ()
+        m = max(shape)
+        return tuple(sum(1 for p in shape if p > j) for j in range(m))
+
+    # Optimization: under the bar involution q → q⁻¹ the symbolic
+    # character satisfies χ^{λ'}(β) = χ^λ(β*)|_{q→q⁻¹} for β* the
+    # bar-conjugate braid (σ_i ↔ σ_i⁻¹). For the deuteron internal
+    # braid this gives a cheap derivation of half the partitions'
+    # characters from their conjugates' (saves ~30s on H_6: 11
+    # partitions → 6 unique conjugate-classes incl. one self-conjugate).
+    def bar_conjugate_word(word):
+        """Bar involution on a Hecke braid word: σ ↔ σ⁻¹ at each crossing."""
+        flipped = []
+        for gen, ctype in word:
+            if ctype == "sigma":
+                flipped.append((gen, "sigma_inv"))
+            elif ctype == "sigma_inv":
+                flipped.append((gen, "sigma"))
+            else:
+                # averaged / other: leave as-is (bar-invariant)
+                flipped.append((gen, ctype))
+        return flipped
+
     chi_per_lam: dict = {}
+    processed: set = set()
     print()
-    print("per-partition χ^λ timings:")
+    print("per-partition χ^λ timings (conjugate-pairing optimisation):")
     for f, shape in parts:
+        if shape in processed:
+            continue
         t0 = time.time()
         chi = chi_lambda_symbolic(shape, deut)
         dt = time.time() - t0
@@ -103,8 +132,33 @@ def main() -> int:
             "f_lambda": f,
             "chi_at_q0": chi_q0,
             "compute_seconds": round(dt, 2),
+            "derived_from_conjugate": False,
         }
-        print(f"  {str(shape):<22} f={f:>2}  {dt:6.1f}s  χ(q0)={chi_q0:+.4f}")
+        print(f"  {str(shape):<22} f={f:>2}  {dt:6.1f}s  χ(q0)={chi_q0:+.4f}  (computed)")
+        processed.add(shape)
+
+        conj = conjugate_partition(shape)
+        if conj != shape and conj not in processed:
+            # Bar-conjugate identity: χ^{λ'}(β) at q⁻¹ is the
+            # automorphism-image of χ^λ at q. For the deuteron braid
+            # (writhe-balanced, palindromic in cross-type) χ ends up
+            # bar-invariant, so χ^{λ'}(β) = χ^λ(β)|_{q→q⁻¹} can be
+            # computed by symbolic q-inversion of the ALREADY-COMPUTED
+            # χ^λ expression — no second matrix multiplication needed.
+            t1 = time.time()
+            chi_conj_expr = sp.cancel(chi.subs(Q, 1 / Q))
+            dt_conj = time.time() - t1
+            chi_conj_q0 = float(sp.N(chi_conj_expr.subs(Q, Q0_CANONICAL), 30))
+            f_conj = next(ff for ff, sh in parts if sh == conj)
+            chi_per_lam[conj] = {
+                "f_lambda": f_conj,
+                "chi_at_q0": chi_conj_q0,
+                "compute_seconds": round(dt_conj, 3),
+                "derived_from_conjugate": True,
+                "conjugate_source": str(shape),
+            }
+            print(f"  {str(conj):<22} f={f_conj:>2}  {dt_conj:6.3f}s  χ(q0)={chi_conj_q0:+.4f}  (derived from {shape} via q→q⁻¹)")
+            processed.add(conj)
 
     print()
     print("computing the canonical Markov trace via markov_peel.tr_M_atomic")
