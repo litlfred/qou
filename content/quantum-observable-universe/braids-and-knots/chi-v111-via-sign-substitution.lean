@@ -48,7 +48,12 @@ noncomputable def chi_V111_beta_n (q : ℝ) : ℝ :=
 
 /-! ## Closed form for the V_(1,1,1) difference -/
 
-/-- The closed-form (factored) expression. -/
+/-- The closed-form (factored) expression.
+
+    DUPLICATION TRACKING: also defined as `chi_V111_diff_closed` in
+    `rem:chi-per-irrep-cyclotomic-closed-forms`. Chapter-block
+    isolation prevents direct cross-file import; centralisation
+    deferred per CLAUDE.md convention. -/
 noncomputable def chi_V111_difference_factored (q : ℝ) : ℝ :=
   -(q^2 + 1)^2 * (q^2 - 1) / (4 * q^5)
 
@@ -70,7 +75,12 @@ The sign-rep substitution sends ρ_(3) ↦ ρ_(1,1,1) via the formula
 implements as a specific transformation of the V_(3) closed form. -/
 
 /-- The V_(3) closed-form expression (mirrored here for self-
-    containment of the substitution lemma). -/
+    containment of the substitution lemma).
+
+    DUPLICATION TRACKING: same as `chi_V3_difference_factored`
+    (`rem:chi-v3-closed-form-proof`) and `chi_V3_diff_closed`
+    (`rem:chi-per-irrep-cyclotomic-closed-forms`). Local copy
+    keeps the substitution lemma self-contained. -/
 noncomputable def chi_V3_closed_form_local (q : ℝ) : ℝ :=
   -(q^2 + 1)^2 * (q^2 - 1) / (4 * q)
 

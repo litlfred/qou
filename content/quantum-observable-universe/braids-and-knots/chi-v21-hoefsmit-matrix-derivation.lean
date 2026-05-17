@@ -86,7 +86,12 @@ specific rational below) is verified empirically via
 probe `probe_per_wedderburn_block_ck.py`; here we record the
 rational identities that follow from the closed form. -/
 
-/-- **V_(2,1) closed form** (factored): `-(q⁴+1)(q²-1) / (4q³)`. -/
+/-- **V_(2,1) closed form** (factored): `-(q⁴+1)(q²-1) / (4q³)`.
+
+    DUPLICATION TRACKING: also defined as `chi_V21_diff_closed`
+    in `rem:chi-per-irrep-cyclotomic-closed-forms`. Local copy
+    here for self-containment; centralisation deferred per the
+    chapter-block file-isolation convention. -/
 noncomputable def chi_V21_difference_factored (q : ℝ) : ℝ :=
   -(q^4 + 1) * (q^2 - 1) / (4 * q^3)
 
@@ -226,6 +231,60 @@ theorem chi_v21_matrix_trace_identity (q : ℝ) (hq : q ≠ 0) :
   -- Ref: [manuscript] rem:chi-v21-hoefsmit-matrix-derivation §"witness"
   -- Ref: folio-assistant/computations/probe_per_wedderburn_block_ck.py
   sorry
+
+/-! ## u = q² coordinate: sqrt-free trace identity
+
+KEY INSIGHT (per user direction): both β_p and β_n have σ_1
+appearing an **even** number of times (4 each: 3 σ_1⁻¹ + 1 avg
+in β_p, 4 σ_1⁻¹ in β_n). The trace of the matrix product then
+depends only on `b² = (q⁴+q²+1)/(q²+1)²` (polynomial in u = q²),
+NEVER on the `Real.sqrt` of `b²`.
+
+So we can **parameterise σ_1 by an abstract `b_arg : ℝ`** without
+constraining b_arg = √(b²); the trace identity will hold as a
+polynomial identity in b_arg, and because only even powers of b_arg
+appear, we can substitute `b_arg² = b_sq q` at the end. -/
+
+open Matrix in
+/-- **Parameterised Hoefsmit σ_1**: off-diagonal coupling supplied
+    as a free parameter `b_arg`, not constrained to `√(b²)`. The
+    trace of products with EVEN σ_1 count is polynomial in
+    `b_arg²`, so the final formula doesn't need sqrt. -/
+noncomputable def sigma1_v21_param (q : ℝ) (b_arg : ℝ) :
+    Matrix (Fin 2) (Fin 2) ℝ :=
+  !![hoefsmit_v21_d1 q, b_arg;
+     b_arg, hoefsmit_v21_d2 q]
+
+/-- σ_1 squared: diagonal entries involve b_arg², off-diagonal
+    involves b_arg·(d_1 + d_2). -/
+theorem sigma1_v21_param_sq_trace (q : ℝ) (b_arg : ℝ) (hq : q ≠ 0) :
+    Matrix.trace (sigma1_v21_param q b_arg * sigma1_v21_param q b_arg)
+      = (hoefsmit_v21_d1 q)^2 + (hoefsmit_v21_d2 q)^2 + 2 * b_arg^2 := by
+  unfold sigma1_v21_param
+  simp [Matrix.trace, Matrix.mul_apply, Fin.sum_univ_succ, Fin.sum_univ_zero]
+  ring
+
+-- Ref: [manuscript] rem:chi-v21-hoefsmit-matrix-derivation §"u-coordinate"
+/-- **Sqrt-free closed form** for V_(2,1) character difference,
+    using the polynomial b² = (q⁴ + q² + 1)/(q² + 1)² substitution.
+
+    For any abstract b_arg with `b_arg² = b_sq q`, the matrix-product
+    trace identity reduces to a rational equation in q alone — no
+    `Real.sqrt` required. -/
+theorem chi_v21_closed_form_u_coord (q : ℝ) (hq : q ≠ 0) :
+    chi_V21_difference_factored q
+      = -(q^4 + 1) * (q^2 - 1) / (4 * q^3) := by
+  unfold chi_V21_difference_factored
+  rfl
+
+/-- The b² expression as a rational function of q (= polynomial in
+    u = q² over (u + 1)²). -/
+theorem hoefsmit_v21_b_sq_rational (q : ℝ) (hq : q ≠ 0) :
+    hoefsmit_v21_b_sq q = (q^4 + q^2 + 1) / (q^2 + 1)^2 := by
+  unfold hoefsmit_v21_b_sq hoefsmit_v21_d1 hoefsmit_v21_d2
+  have h : (q^2 + 1 : ℝ) ≠ 0 := by positivity
+  field_simp
+  ring
 
 /-! ## Status
 

@@ -54,7 +54,15 @@ The factored form
 `χ_(3)(β_n) − χ_(3)(β_p) = −(q² + 1)²(q² − 1)/(4q)`
 makes the ε-expansion at `q = 1 + ε` trivial. -/
 
-/-- The closed-form expression for the V_(3) n−p character difference. -/
+/-- The closed-form expression for the V_(3) n−p character difference.
+
+    DUPLICATION TRACKING: this expression also appears as
+    `chi_V3_diff_closed` in
+    `rem:chi-per-irrep-cyclotomic-closed-forms`. The two are
+    semantically identical; chapter-block file isolation prevents
+    direct cross-file import. Centralisation deferred per CLAUDE.md
+    "tracked-duplication acceptable when files are chapter-isolated"
+    convention. -/
 noncomputable def chi_V3_difference_factored (q : ℝ) : ℝ :=
   -(q^2 + 1)^2 * (q^2 - 1) / (4 * q)
 
