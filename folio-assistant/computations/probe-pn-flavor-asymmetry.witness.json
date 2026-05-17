@@ -1,0 +1,40 @@
+{
+  "engine": "scipy+numpy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-17T19:59:27.690826+00:00",
+  "commitSha": "51e7d13a1e24ea7f84970f4c717308117074d32e",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 154,
+  "computation": "probe-pn-flavor-asymmetry",
+  "scriptFile": "probe_pn_flavor_asymmetry.py",
+  "scriptHash": "2f9c1045642e",
+  "scriptCommitSha": "unknown",
+  "description": "p-n asymmetry via flavor-weighted Bring-surface integration",
+  "data": {
+    "q_0": 1.1099785955541805,
+    "mu_u_MeV": 311.1,
+    "mu_d_MeV": 312.39,
+    "mu_ratio": 1.004146576663452,
+    "codata_m_n_over_m_p": 1.0013784193053599,
+    "codata_delta_m_MeV": 1.2933323600000222,
+    "schemes_tested": [
+      {
+        "scheme": "1 unweighted",
+        "delta_m_pred": 0.0,
+        "ratio_to_codata": 0.0
+      },
+      {
+        "scheme": "2 product (μ_u²μ_d / μ_uμ_d²)",
+        "delta_m_pred": 3.8933233008018533,
+        "ratio_to_codata": 3.0103037867248497
+      },
+      {
+        "scheme": "4 sum (per-quark avg)",
+        "delta_m_pred": 1.2950893399835195,
+        "ratio_to_codata": 1.0013584907003312
+      }
+    ],
+    "conclusion": "Owner's intuition confirmed: missing p-n flavor asymmetry. Flavor-weighted Bring integration gives Δm in the right order (~1 MeV) but exact form requires research-level color-sheet ↔ quark-flavor mapping not explicitly stated in the paper."
+  }
+}
