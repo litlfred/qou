@@ -13,7 +13,7 @@ A natural question was whether the residual $0.13\%$ is float-precision
 noise (which would imply the conjecture is a closed-form identity)
 or a genuine correction.
 
-[`probe_staircase_ew_k3_categorical.py`](https://github.com/litlfred/qou/blob/claude/review-1ppb-prs-EC0ay/folio-assistant/computations/probe_staircase_ew_k3_categorical.py)
+[`probe_staircase_ew_k3_categorical.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/probe_staircase_ew_k3_categorical.py)
 re-does the spectral computation at **mpmath 50 dps**, building the
 $16 \times 16$ Hoefsmit $V_{(3,2,1)}$ matrices and the
 27-generator word image at that precision, and diagonalising via
@@ -37,11 +37,11 @@ at 50 dps** in both natural interpretations. The empirical content
 stands as an approximate leading-order match good to $\sim 0.15\%$.
 
 Implications for the Lean formalisation
-([`StaircaseCornerHook.lean`](https://github.com/litlfred/qou/blob/claude/post-662-c3-chain-anti-staleness/content/quantum-observable-universe/lean/QOU/StaircaseCornerHook.lean)):
+([`StaircaseCornerHook.lean`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/lean/QOU/StaircaseCornerHook.lean)):
 the `StaircaseEWResidual` class instance's single `sorry` should be
 re-interpreted as encoding the conditional approximate match (with a
 controlled correction series), not an exact closed-form theorem. See
-[`docs/audits/2026-05-17-staircase-ew-k3-mpfr-spectral.md`](https://github.com/litlfred/qou/blob/claude/review-1ppb-prs-EC0ay/docs/audits/2026-05-17-staircase-ew-k3-mpfr-spectral.md)
+[`docs/audits/2026-05-17-staircase-ew-k3-mpfr-spectral.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-17-staircase-ew-k3-mpfr-spectral.md)
 for the full numerical comparison and recommended refinement of the
 conjecture statement.
 

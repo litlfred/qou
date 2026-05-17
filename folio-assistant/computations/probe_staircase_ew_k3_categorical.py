@@ -284,11 +284,8 @@ def main() -> int:
         print(f"    |Δ_rel|                        = {mp.nstr(best_rel, 8)}")
         print()
 
-    positive_real = [
-        e for e in nonzero_sorted
-        if (not hasattr(e, "imag") or fabs(e.imag) < imag_tol)
-        and (e.real if hasattr(e, "real") else e) > 0
-    ]
+    # Reuse pos_real_eigs from §B above — same filter (gemini #680 review).
+    positive_real = pos_real_eigs
     if len(positive_real) < 2:
         print("  ⚠ fewer than two positive real eigenvalues found.")
         # Fall back to absolute-value top-two.
