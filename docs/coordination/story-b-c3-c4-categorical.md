@@ -233,3 +233,76 @@ The main-merged ledger `docs/coordination/1ppb-categorical-chain.md`
 (commit `4cc7561fc`) tracks the same scope. This dual-tr_M finding
 should be appended there too — will do in a follow-up commit once
 merged or via cherry-pick coordination with the maintaining session.
+
+## 2026-05-17 final — paper analysis confirms dual-tr_M finding
+
+User questions answered after paper analysis:
+
+### Q1: Why T2+T3 excluded at A=1?
+
+Documented in scripts as "PR #533 finding: structurally empty under
+current level-selection rule" (derive_m_p_hecke_path_a:138). But PR
+#533 itself ("Phase A.3 unblocker: τ̂_0 proton-scale numerical
+realisation") only ADDED an H_3 brane tower scaffold; it did NOT
+derive an A=1 exclusion rule. The "structurally empty" framing is a
+**quarantine workaround**, not a derived theorem.
+
+Probe (probe_t2_t3_proton_neutron_a1.py) shows raw T2+T3 = 1.18e6
+at A=1 (overshoots m_p target by ~10^3×). Three interpretations
+remain open (see audit doc).
+
+### Q2/Q3: Canonical T_i factors?
+
+The PAPER's canonical mass formula is SINGLE-term:
+
+    M(𝔥) := ρ · tr_M(T_w) = ρ · Σ y_λ(q) χ_λ(T_w)
+
+(atom-knot-mass-derivation-proof.md:48-54). The 6-term formula
+(T1+T2+T3+T4+T5+T6) is a PRODUCTION-SIDE engineering decomposition
+in mass_formula_6term_mpfr_50dps.py — NOT canonical paper content.
+The T_i terms do NOT have individual paper-side derivations.
+
+### Q4: q-Plancherel as truncation of full mass tower?
+
+NO. The paper's spectral sequence COLLAPSES at E_2 (atom-knot-mass-
+derivation-proof.md:57-60): "Every quantity is finite-sum and exact;
+no higher analytic content needed." The canonical mass is the
+FULL Wenzl-Markov trace, NOT a series in jet-order/GB-filtration.
+
+The q-Plancherel trace is NOT a truncation — it's a DIFFERENT
+formula the production code uses by accident. The paper's
+atom-knot-mass-derivation.md:42-44 tests BOTH conventions
+empirically: single-term fails 87-100% under EITHER convention;
+adding the brane tower reduces to 36-63%. Neither convention closes
+the gap; the brane tower is the missing piece.
+
+### Q5: Did sibling PR migrate to tr_M_canonical?
+
+NO. git log --all --grep "tr_M_canonical|tr_Markov_symbolic" returns
+ONLY commits on PR #671 (this branch). The deuteron script is the
+only production script migrated. All other mass-prediction scripts
+still compute the Plancherel trace under the misleading name
+`tr_M_symbolic`.
+
+### Owner-level decision matrix
+
+The paper says the canonical mass = ρ · Σ y_λ(q) χ_λ(T_w) (Wenzl-
+Markov). The production code computes ρ · Σ (dim_q²/[n]_q!) χ_λ/f^λ
+(Plancherel). These differ by 57-99% on H_3 braids. Options:
+
+  (A) Production code is WRONG: rerun all mass-prediction scripts
+      with tr_Markov_symbolic; m_p / m_n / m_He predictions will
+      change. The paper's claim is preserved.
+  (B) Paper is WRONG: amend atom-knot-mass-derivation-proof.md to
+      cite the Plancherel formula. CLAUDE.md §7a notation register
+      also needs amendment (currently says y_λ is the canonical
+      Markov-Wenzl weight).
+  (C) BOTH are valid for DIFFERENT observables: mass = Plancherel,
+      Jones polynomial = Wenzl-Markov. Need a paper block clarifying
+      which observable is what.
+
+Recommendation: investigate (C) first — if mass and Jones polynomial
+are different observables in the framework, the dual-tr_M is
+deliberate, just under-documented. If (C) is wrong, (A) is the
+right path (paper is the source of truth).
+
