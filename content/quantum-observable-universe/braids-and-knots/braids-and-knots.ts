@@ -407,6 +407,7 @@ export default chapter({
         "post-pr665-open-rd-inventory",
         "hecke-algebra-type-scaffold",
         "markov-trace-operator-construction",
+        "chi-v3-closed-form-proof",
         "categorical-chain-convergence-mechanisms",
         "tau-M-asymptotic-rep-theory",
         "kashiwara-jones-alternation-interpretation",
