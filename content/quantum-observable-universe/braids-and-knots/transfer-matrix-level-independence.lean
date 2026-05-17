@@ -73,18 +73,18 @@ theorem transfer_matrix_level_independence
 /-- **External axiom (manuscript §4/bundle-isotopy-equivalence):
     isotopy-equivalent configurations yield equal transfer matrices.** -/
 -- Ref: [manuscript] §4/transfer-matrix-level-independence
-axiom transfer_matrix_path_independence_axiom :
-    ∀ (transferMatrix1 transferMatrix2 : R_q),
-      True →
-      transferMatrix1 = transferMatrix2
+/-- **REMOVED 2026-05-17**: the previous
+    `transfer_matrix_path_independence_axiom` used `True` as the
+    isotopy-equivalence hypothesis, making it equivalent to
+    `∀ tm1 tm2 : R_q, tm1 = tm2` — an **inconsistent** axiom
+    (`R_q = LaurentPolynomial ℤ` has more than one element).
 
-/-- Path independence on S_p: two braiding operations producing
-    isotopy-equivalent configurations have the same transfer matrix. -/
--- Ref: [manuscript] §4/transfer-matrix-level-independence
-theorem transfer_matrix_path_independence
-    (transferMatrix1 transferMatrix2 : R_q)
-    (h_isotopy : True) :
-    transferMatrix1 = transferMatrix2 :=
-  transfer_matrix_path_independence_axiom transferMatrix1 transferMatrix2 h_isotopy
+    The structural content (isotopy-equivalent configurations have
+    equal transfer matrices) needs a proper isotopy predicate; a
+    `True` placeholder cannot stand in for the actual hypothesis.
+
+    For the actual mass-invariance content see
+    `reidemeister-mass-invariance.lean` which uses proper
+    Reidemeister-move equivalence relations. -/
 
 end QOU

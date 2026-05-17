@@ -87,9 +87,14 @@ theorem T35_braid_word_length : torusBraidWordLength 3 5 = 10 := by
     topological invariant — the minimum over ALL diagrams. -/
 -- Ref: [manuscript] §6/box-braid-irreducibility
 -- Ref: [kawauchi1996] https://doi.org/10.1007/978-3-0348-9227-8
-axiom crossing_number_is_minimum (K : TorusKnot) (w : List ℕ)
-    (hw : True) -- w is a braid whose closure is K
-    : w.length ≥ K.crossingNumber
+/-- **REMOVED 2026-05-17**: previous `crossing_number_is_minimum`
+    axiom used `True` as the "w is a braid closing to K"
+    hypothesis, making it equivalent to `∀ K w, w.length ≥ K.crossingNumber`
+    — false for `w = []` and any K with `crossingNumber ≥ 1`.
+
+    Restoring requires a proper `IsBraidClosure w K` predicate;
+    see manuscript §6/box-braid-irreducibility for the structural
+    content. -/
 
 /-- The process γγ → νν̄ requires the T(3,5) mediator.
     Reason: photons (Q=0, no knot) cannot couple to neutrinos
