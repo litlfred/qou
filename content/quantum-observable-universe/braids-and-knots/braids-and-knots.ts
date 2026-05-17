@@ -408,6 +408,7 @@ export default chapter({
         "hecke-algebra-type-scaffold",
         "markov-trace-operator-construction",
         "chi-v3-closed-form-proof",
+        "chi-per-irrep-cyclotomic-closed-forms",
         "categorical-chain-convergence-mechanisms",
         "tau-M-asymptotic-rep-theory",
         "kashiwara-jones-alternation-interpretation",

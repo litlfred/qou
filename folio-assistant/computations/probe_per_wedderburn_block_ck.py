@@ -61,12 +61,22 @@ def main() -> int:
     print(f"  β_n length = {len(crossings_n)} crossings")
     print()
 
+    # Also dump unified factored closed forms (one row per λ).
+    closed_forms = {}
     per_lambda = {}
     for lam in partitions_of(3):
         lam_str = str(lam)
         print(f"  λ = {lam_str}:")
         chi_p = q_character_on_braid_word(lam, crossings_p, q)
         chi_n = q_character_on_braid_word(lam, crossings_n, q)
+        # Closed-form symbolic difference: factored + polynomial.
+        diff_raw = sp.cancel(chi_n - chi_p)
+        diff_factored = sp.factor(diff_raw)
+        closed_forms[lam_str] = {
+            "factored": str(diff_factored),
+            "polynomial_over_4": str(sp.together(diff_raw)),
+        }
+        print(f"    closed form (factored): {diff_factored}")
         # Substitute q = 1 + eps; expand to order ε^13 so ε^12 is exact.
         chi_p_eps = sp.series(chi_p.subs(q, 1 + eps), eps, 0, 13).removeO()
         chi_n_eps = sp.series(chi_n.subs(q, 1 + eps), eps, 0, 13).removeO()
@@ -168,6 +178,7 @@ def main() -> int:
             "data": {
                 "beta_p_length": len(crossings_p),
                 "beta_n_length": len(crossings_n),
+                "closed_forms_per_lambda": closed_forms,
                 "per_lambda": per_lambda,
                 "plancherel_weighted_c10_sum": c10_sum,
                 "plancherel_weighted_c12_sum": c12_sum,
