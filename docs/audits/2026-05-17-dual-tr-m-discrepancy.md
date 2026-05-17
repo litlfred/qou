@@ -376,3 +376,71 @@ should pick based on its output needs:
   partition-weight families)
 - [`probe_hopf_markov_trace_genuine.py`](../../folio-assistant/computations/probe_hopf_markov_trace_genuine.py) (reproduces the disagreement)
 - [`probe_c3_taylor_extraction.py`](../../folio-assistant/computations/probe_c3_taylor_extraction.py) (shows the 8% disagreement extends across Taylor coefficients)
+
+## 2026-05-17 update — Production scope CORRECTED (much smaller than initially claimed)
+
+After deeper investigation prompted by user's question on q-CLT framework
+relationship, the audit's earlier claim that "~15 production mass scripts
+use the Plancherel trace" was **wrong**.
+
+### Actual production trace flow
+
+`mass_formula_6term_mpfr_50dps.py` (the production 6-term mass chain)
+computes T1 = `|tr_M(T_w)|` via:
+
+```python
+def term_1_descended_mp(Z: int, N: int) -> mp.mpf:
+    from atomic_tr_m_mpfr_50dps import _bridge_tr_M
+    tr, _, _, _ = _bridge_tr_M(Z, N, q_str, dps=WORKING_DPS)
+    return mp.fabs(tr)
+```
+
+`_bridge_tr_M` evaluates `Σ_λ y_λ · χ_λ` via the **Wenzl bridge** — that
+IS the canonical Markov trace. Verified by direct cross-check:
+
+```
+markov_peel.tr_M_atomic(p) at q_0 = 1.0653062286... (canonical Markov)
+markov_weights_symbolic    at q_0 = 1.0653062286... (Wenzl, EXACT match)
+hoefsmit_symbolic Plancherel = 0.7022507726... (DIFFERENT by 50%)
+```
+
+### What ACTUALLY uses the Plancherel trace
+
+Direct callers of `hoefsmit_symbolic.tr_M_symbolic` (now alias of
+`tr_q_plancherel_symbolic`):
+
+1. `deuteron_tr_M_symbolic.py` — diagnostic / analysis script (NOT in
+   production mass chain). **MIGRATED** in commit `feb1c1d30` to
+   `markov_peel.tr_M_atomic` (canonical Markov), no fallback.
+2. `probe_c3_taylor_extraction.py` — PR #671 probe, INTENTIONAL
+   comparison between both implementations.
+3. `probe_hopf_markov_trace_genuine.py` — PR #671 probe, INTENTIONAL
+   comparison.
+
+Plus `probe_neutron_gap_round2.py` has an `eval_tr_M_symbolic` HELPER
+that parses witness-file rational functions; NOT a call to
+hoefsmit_symbolic.tr_M_symbolic.
+
+### Net implications
+
+- **Production mass predictions ARE correct** (using canonical Wenzl
+  Markov trace via `_bridge_tr_M`). No 50-99% drift in shipped m_p /
+  m_n / m_He predictions.
+- The "dual-tr_M discrepancy" was a NAMING bug in one library function
+  (`hoefsmit_symbolic.tr_M_symbolic`) that ONE diagnostic script
+  (`deuteron_tr_M_symbolic.py`) consumed under the wrong assumption.
+- The q-CLT framework on main (`prop:hecke-satisfies-blitvic-hypothesis`,
+  `conj:q-clt-non-commutative`, etc.) uses the canonical Markov trace
+  as it should — consistent with the production mass chain.
+
+### Updated decision matrix
+
+Of the original three options (A: production wrong, B: paper wrong,
+C: both valid for different observables), **the answer is essentially
+(A's complement)**: production is RIGHT (canonical Markov), the paper
+is RIGHT (canonical Markov), the ONLY issue was the misnamed function
+in `hoefsmit_symbolic.py` which is now fixed by the aliases.
+
+The "rewire all production code" task is therefore ALREADY DONE — the
+production chain was canonical from the start; only the diagnostic
+`deuteron_tr_M_symbolic.py` script needed migration (now complete).
