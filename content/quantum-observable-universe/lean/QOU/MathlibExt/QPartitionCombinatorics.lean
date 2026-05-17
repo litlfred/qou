@@ -46,6 +46,15 @@ noncomputable def qBracket (q : ℝ) (n : ℕ) : ℝ :=
 theorem qBracket_zero (q : ℝ) : qBracket q 0 = 0 := by
   unfold qBracket; simp
 
+/-- **`[1]_q = 1` whenever the denominator is well-defined.**
+
+    Proved directly: `(q^1 - q^(-1)) / (q - q⁻¹) = (q - q⁻¹)/(q - q⁻¹) = 1`. -/
+theorem qBracket_one {q : ℝ} (h_denom_ne : q - q⁻¹ ≠ 0) :
+    qBracket q 1 = 1 := by
+  unfold qBracket
+  simp only [Nat.one_ne_zero, if_false, pow_one, zpow_neg, zpow_one]
+  exact div_self h_denom_ne
+
 /-- The **q-factorial** `[n]_q! = ∏_{k=1}^n [k]_q`.
 
     Empty product convention: `[0]_q! = 1`. -/
