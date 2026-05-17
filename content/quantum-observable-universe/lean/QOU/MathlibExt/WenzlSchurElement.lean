@@ -70,12 +70,12 @@ suffices for the macdonald hook telescope identity. -/
 -- Ref: [wenzl1988] https://doi.org/10.1007/BF01393378
 -- Ref: [macdonald1995] §I.3 ex. 1
 noncomputable def schurElement (Q X : ℝ) (λ : Partition) : ℝ :=
-  Q ^ (Int.toNat (contentSum λ)) *
+  Q ^ (contentSum λ) *
     (List.range λ.length).foldl
       (fun acc i =>
         acc * (List.range ((λ.get? i).getD 0)).foldl
           (fun a j =>
-            a * (1 - X * Q ^ (Int.toNat (cellContent i j))) /
+            a * (1 - X * Q ^ (cellContent i j)) /
                 (1 - Q ^ (Partition.hookLength λ i j)))
           1)
       1

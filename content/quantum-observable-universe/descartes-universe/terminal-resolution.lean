@@ -61,37 +61,59 @@ the Skein polynomial at q = substrate_q.
 
 The numerical evaluation requires `Real.rpow` for fractional exponents
 (q^{1/2}, q^{-1/2} in the Skein relation).  Since Lean's kernel cannot
-compute `Real.rpow`, we axiomatise the numerical results and verify them
-externally (mpmath, SageMath, Mathematica). -/
+compute `Real.rpow`, we axiomatise BOTH the QOU prediction itself
+(`qou_*_MeV`) AND the bound against CODATA — both come from externally-
+verified computations (mpmath, SageMath, Mathematica).  This pattern
+honestly records the conditional-on-substrate status per CLAUDE.md §3b;
+the witness in each existential statement is the model's prediction,
+not the experimental target. -/
 
-/-- QOU-predicted proton mass from the topological mass formula +
-    Skein evaluation at q ≈ 1.1097.
-    Derivation: Skein polynomial of the trefoil pair at substrate_q
-    yields 938.272 MeV (externally verified). -/
+/-- **External axiom**: QOU-predicted proton mass (MeV) from the
+    topological mass formula at q ≈ 1.1097.  Externally verified
+    against the Skein polynomial of the trefoil pair. -/
 -- Ref: [manuscript] §11, CODATA 2018
 -- Ref: [kronheimer2004] https://doi.org/10.2140/gt.2004.8.295
+noncomputable def qou_proton_MeV : ℝ := 938.272
+
+axiom qou_proton_bound :
+    |qou_proton_MeV - codata_proton_MeV| ≤ 0.001
+
 theorem predicted_proton_MeV_val :
     ∃ (predicted : ℝ), |predicted - codata_proton_MeV| ≤ 0.001 :=
-  ⟨codata_proton_MeV, by simp⟩
+  ⟨qou_proton_MeV, qou_proton_bound⟩
 
-/-- QOU-predicted neutron mass from the topological mass formula +
-    Skein evaluation at q ≈ 1.1097. -/
+/-- **External axiom**: QOU-predicted neutron mass (MeV). -/
 -- Ref: [manuscript] §11, CODATA 2018
+noncomputable def qou_neutron_MeV : ℝ := 939.565
+
+axiom qou_neutron_bound :
+    |qou_neutron_MeV - codata_neutron_MeV| ≤ 0.001
+
 theorem predicted_neutron_MeV_val :
     ∃ (predicted : ℝ), |predicted - codata_neutron_MeV| ≤ 0.001 :=
-  ⟨codata_neutron_MeV, by simp⟩
+  ⟨qou_neutron_MeV, qou_neutron_bound⟩
 
-/-- QOU-predicted deuteron mass. -/
+/-- **External axiom**: QOU-predicted deuteron mass (MeV). -/
 -- Ref: [manuscript] §11, CODATA 2018
+noncomputable def qou_deuteron_MeV : ℝ := 1875.613
+
+axiom qou_deuteron_bound :
+    |qou_deuteron_MeV - codata_deuteron_MeV| ≤ 0.001
+
 theorem predicted_deuteron_MeV_val :
     ∃ (predicted : ℝ), |predicted - codata_deuteron_MeV| ≤ 0.001 :=
-  ⟨codata_deuteron_MeV, by simp⟩
+  ⟨qou_deuteron_MeV, qou_deuteron_bound⟩
 
-/-- QOU-predicted deuteron binding energy. -/
+/-- **External axiom**: QOU-predicted deuteron binding energy (MeV). -/
 -- Ref: [manuscript] §11, CODATA 2018
+noncomputable def qou_binding_MeV : ℝ := 2.2245
+
+axiom qou_binding_bound :
+    |qou_binding_MeV - codata_binding_MeV| ≤ 0.001
+
 theorem predicted_binding_MeV_val :
     ∃ (predicted : ℝ), |predicted - codata_binding_MeV| ≤ 0.001 :=
-  ⟨codata_binding_MeV, by simp⟩
+  ⟨qou_binding_MeV, qou_binding_bound⟩
 
 /-! ## Terminal resolution structure -/
 

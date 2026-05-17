@@ -146,6 +146,5 @@ theorem q_codifferential_formula (q : Rˣ) :
       (∀ (β : DiffForm R), δ_q β = (↑q⁻¹ : R) • δ_classical R β +
         (1 - (↑q⁻¹ : R)) • (L_reeb_star R (ι_reeb R β))) :=
   q_codifferential_formula_axiom q
-  · intro β; rfl
 
 end QOU.QuantumGeometry

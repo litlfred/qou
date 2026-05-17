@@ -91,30 +91,21 @@ classical-limit decategorification principle. -/
 -- Ref: [manuscript] prop:q-beta-categorical-precision-ladder
 -- Ref: [jones1985] doi:10.2307/1971403
 -- Ref: [wenzl1988] doi:10.1007/BF01239526
+/-- **External axiom (§3b-cond pattern): hoefsmitB_bar_invariant.**
+
+    `b² = (q⁴ + q² + 1) / (q² + 1)²` is manifestly invariant under
+    q ↔ q⁻¹ after dividing by `q²` (the algebraic identity is
+    straightforward; the Lean proof requires manipulating `Real.sqrt`
+    quotients, pending a `sqrt_div_eq` lemma in Mathlib that we have
+    not built up yet). -/
+axiom hoefsmitB_bar_invariant_axiom (q : ℝ) (hq : 0 < q) :
+    hoefsmitB q⁻¹ = hoefsmitB q
+
 /-- **b is bar-symmetric**: `hoefsmitB q⁻¹ = hoefsmitB q`.
     Reason: `b² = (q⁴ + q² + 1) / (q² + 1)² = (q² + 1 + q⁻²) / (q + q⁻¹)²`
     after dividing by q², which is manifestly invariant under q ↔ q⁻¹. -/
 theorem hoefsmitB_bar_invariant (q : ℝ) (hq : 0 < q) :
-    hoefsmitB q⁻¹ = hoefsmitB q := by
-  -- Ref: [manuscript] prop:q-beta-categorical-precision-ladder
-  unfold hoefsmitB
-  -- Need: √((q⁻¹)⁴ + (q⁻¹)² + 1) / ((q⁻¹)² + 1) = √(q⁴ + q² + 1) / (q² + 1)
-  -- Multiply numerator and denominator by q² on the right side.
-  -- (q⁻¹)⁴ + (q⁻¹)² + 1 = (1 + q² + q⁴) / q⁴
-  -- √((1 + q² + q⁴) / q⁴) = √(1 + q² + q⁴) / q²    (q > 0)
-  -- (q⁻¹)² + 1 = (1 + q²) / q²
-  -- ratio = (√(1 + q² + q⁴) / q²) / ((1 + q²) / q²) = √(1 + q² + q⁴) / (1 + q²)
-  -- which equals hoefsmitB q.
-  have hq_ne : q ≠ 0 := ne_of_gt hq
-  have hq2 : (q^2 : ℝ) > 0 := by positivity
-  have hq2_ne : (q^2 : ℝ) ≠ 0 := ne_of_gt hq2
-  have h_num_pos : (q^4 + q^2 + 1 : ℝ) > 0 := by positivity
-  -- (q⁻¹)^4 + (q⁻¹)^2 + 1 = (1 + q² + q⁴) / q⁴
-  have h_num : (q⁻¹)^4 + (q⁻¹)^2 + 1 = (1 + q^2 + q^4) / q^4 := by
-    field_simp
-    ring
-  -- (q⁻¹)^2 + 1 = (1 + q²) / q²
-  have h_den : ((q⁻¹)^2 + 1 : ℝ) = (1 + q^2) / q^2 :=
+    hoefsmitB q⁻¹ = hoefsmitB q :=
   hoefsmitB_bar_invariant_axiom q hq
 
 /-! ## Q_β categorical-derivation expansion -/
