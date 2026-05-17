@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-17T05:24:22.937991+00:00",
-  "commitSha": "da6d43098f10aa3af1854ebc38d9d028e1569b33",
+  "computedAt": "2026-05-17T20:19:20.288723+00:00",
+  "commitSha": "af4c6cc737ee025ad7ff9471ba276d9a382a0ee9",
   "assertions": [
     {
       "name": "any_non_circular_candidate_within_1pct",
@@ -16,7 +16,7 @@
   "computation": "probe-mu-q-ell-1-substrate",
   "scriptFile": "probe_mu_q_ell_1_substrate.py",
   "scriptHash": "d549ce30f305",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "845f719feb6755958bdcb78cfdc0191e4b2acbb4",
   "description": "Substrate candidates for ℓ=1 dressed quark mass μ_q ≈ 311 MeV",
   "data": {
     "q_pinned": "1.1099785955541805752815940796095093779932822799587",
