@@ -619,7 +619,7 @@ theorem terminal_resolution_hadronic_mass :
    row3_deuteron_matches_CODATA,
    row4_binding_CODATA_comparison⟩
 
-/-! ## Section 8: Substrate-pure Flavor Split
+/-! ## Section 10: Substrate-pure Flavor Split
 
 The proton-neutron mass splitting `Δm = m_n - m_p` admits a closed-form
 expression in substrate atoms (i.e. in `substrate_q` only, NOT in the
