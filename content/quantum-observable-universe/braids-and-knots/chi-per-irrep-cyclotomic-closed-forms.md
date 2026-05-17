@@ -53,7 +53,7 @@ $\Phi_8(q) = q^4+1$.
    - $c((2,1)) = 0+1-1 = 0$, denominator $q^3$
    - $c((1,1,1)) = 0-1-2 = -3$, denominator $q^5$
 
-   The denominator exponent is $2|c(\lambda)| - 5$ for $\lambda \in \{(3), (1,1,1)\}$, and $3$ for $V_{(2,1)}$.
+   The denominator exponent is $p = 3 - \frac{2}{3} c(\lambda)$, mapping $c \in \{3, 0, -3\}$ to $p \in \{1, 3, 5\}$ exactly.
 
 ## Where the V_(2,1) closed form comes from
 

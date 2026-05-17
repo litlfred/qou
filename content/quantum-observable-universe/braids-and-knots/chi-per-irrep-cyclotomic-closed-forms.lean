@@ -23,7 +23,7 @@ Notable structure:
     while V_(3) and V_(1,1,1) involve 4th roots (Φ_4 = q² + 1).
   - **Denominator powers 1, 3, 5** track the content sum:
     c((3)) = +3, c((2,1)) = 0, c((1,1,1)) = -3.
-    Exponent = 2|c(λ)| + 1 for λ ∈ {(3), (1,1,1)}; 3 for V_(2,1).
+    Exponent = 3 - (2/3) · c(λ), mapping content sums (3, 0, -3) → (1, 3, 5).
 
 This file proves all three closed forms as Lean theorems
 (`field_simp + ring` discharges), then establishes the **unified
