@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-17T05:36:18.276896+00:00",
-  "commitSha": "e18db18063612a01b9a600c8f73f8d7d1bc495bc",
+  "computedAt": "2026-05-17T06:45:24.505689+00:00",
+  "commitSha": "1c1f70cc558558358df9363731cfdc7e5e71c5e5",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -576,7 +576,7 @@
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "d2ef5a283d0202c90a48fc16a5e1116927bafe08",
+  "scriptCommitSha": "875916a587c227572f421c22053ad81371976ccc",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
   "data": {
@@ -2149,7 +2149,6 @@
         "compute-audit-scan.witness.json",
         "confined-knot-binding.witness.json",
         "confinement-operator-selection.witness.json",
-        "cross-check-trM-1ppb.witness.json",
         "crystal-alpha-shift-pole-orders.witness.json",
         "crystal-basis-primitives.witness.json",
         "crystal-limit-transport-probe.witness.json",
@@ -2176,7 +2175,6 @@
         "deuteron-delta-i-audit.witness.json",
         "deuteron_tr_M_symbolic.witness.json",
         "e-0-lp-dual-h3.witness.json",
-        "e0-calibration-audit.witness.json",
         "entanglement-orders.witness.json",
         "ew-higgs-sdp-probe.witness.json",
         "ew-interface-knot-probe.witness.json",
@@ -2214,6 +2212,7 @@
         "hecke-core-symbolic-migration.witness.json",
         "hh-trefoil-corrected.witness.json",
         "hh-vertex-volume.witness.json",
+        "hopf-markov-trace-genuine.witness.json",
         "hyperbolic-volumes.witness.json",
         "inter-knot-decoupling.witness.json",
         "interface-type-resolved-coupling-probe.witness.json",

@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-17T05:36:18.111613+00:00",
-  "commitSha": "e18db18063612a01b9a600c8f73f8d7d1bc495bc",
+  "computedAt": "2026-05-17T06:45:24.343393+00:00",
+  "commitSha": "1c1f70cc558558358df9363731cfdc7e5e71c5e5",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 7,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "d9aa432d54f9",
@@ -13,7 +13,7 @@
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 456,
+    "files_scanned": 457,
     "patterns": [
       "P15",
       "P16",
@@ -24,7 +24,7 @@
   },
   "data": {
     "by_pattern_count": {
-      "P15": 132,
+      "P15": 135,
       "P16": 89,
       "P21": 24,
       "P30": 96,
@@ -1905,6 +1905,27 @@
         "line": 1,
         "snippet": "Hoefsmit construction without BlockCache",
         "note": "syt_prefix_cache.BlockCache caches block values by content distance ρ; precomputed SYT→index dict eliminates O(d_λ²) swap-partner search. Numerical-q callers can wire it directly. Ref: ocneanu_weights.py wiring."
+      },
+      {
+        "pattern": "P15",
+        "file": "probe_hopf_markov_trace_genuine.py",
+        "line": 57,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "probe_hopf_markov_trace_genuine.py",
+        "line": 58,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "probe_hopf_markov_trace_genuine.py",
+        "line": 68,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",
