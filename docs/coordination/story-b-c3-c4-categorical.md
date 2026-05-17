@@ -96,3 +96,59 @@ Currently working PR #671. After this coordination cycle:
 - Decide with the user whether to merge PR #671 now (audit-only,
   walk-back + critical review) or expand it with the genuine c_3
   computation.
+
+## 2026-05-17 update — H_3 numerical comparison
+
+User asked: "can we compare tr_M_canonical in mass scripts vs symbolic/production?"
+
+Ran a side-by-side comparison on H_3 braids that production
+mass-derivation chains evaluate. **The two implementations differ by
+57–99% on the proton's intra-nucleon Hecke word.**
+
+| Braid in H_3 | `tr_M_symbolic` | `tr_M_canonical` | rel |Δ| |
+|---|---:|---:|---:|
+| σ_1 | 0.1032 | 0.4993 | **79%** |
+| σ_1·σ_2 | 0.00357 | 0.2493 | **99%** |
+| σ_1³ (proton intra) | 0.3142 | 0.7302 | **57%** |
+| σ_1³·σ_2³ (proton-like) | 0.09209 | 0.5332 | **83%** |
+
+The 8% discrepancy on σ_1² in H_2 was the lower bound. On the
+braids actually consumed by mass scripts, the discrepancy is 57-99%.
+
+User asked: "is either proved to be derived from Cat Action?"
+
+Answer (in dual-tr-m-discrepancy.md):
+- `tr_M_canonical` (Wenzl y_λ) **YES** — Ocneanu/Wenzl categorical
+  derivation, computes Jones polynomial of braid closure.
+- `tr_M_symbolic` (dim_q²/[n]_q!/f^λ) **NO** documented Markov-trace
+  derivation. Computes a different invariant (q-Plancherel expectation
+  of normalized character), not the Jones polynomial.
+
+So production scripts use a non-canonical tr_M whose categorical
+derivation is undocumented, while the framework's `thm:jones-markov-trace`
+cites the canonical one.
+
+## §6 escalation candidates
+
+This finding has cross-cutting implications beyond PR #664:
+
+- PR #663 (m_p chain) uses `tr_M_symbolic` for the proton-mass
+  derivation — the chain may be computing the wrong invariant for its
+  own claimed identification.
+- PR #661 (c_2 = b² categorical, merged) — needs cross-check: which
+  tr_M did its symbolic derivation use? If `tr_M_symbolic`, its claim
+  of "Markov trace of V_(2,1) Hoefsmit" is in the same non-canonical
+  category.
+- 1-ppb dashboard Layer 1/2 is internally consistent within
+  `tr_M_symbolic` (Hoefsmit ↔ markov_peel both use it), but its claim
+  of computing the Jones polynomial requires reframing.
+
+Recommended owner adjudication:
+
+1. Was the choice of `tr_M_symbolic` deliberate (e.g. a different
+   well-defined invariant the framework wants to compute) or
+   accidental (the name overloads with the literature-canonical
+   Jones-Markov)?
+2. If accidental: rename + audit + replace. ~15 scripts affected.
+3. If deliberate: document the choice; update `thm:jones-markov-trace`
+   in CLAUDE.md §7a to reflect the actual computed invariant.
