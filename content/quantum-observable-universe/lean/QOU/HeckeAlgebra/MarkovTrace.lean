@@ -140,9 +140,14 @@ axiom wenzlBridge :
     markovTraceOnWedderburn x =
       ∑ λ ∈ partitions_as_finset n, JonesMarkovCoefficient λ q * (x λ).trace
 
-/-- **Trace of the zero element is zero** — axiomatic property
-    of the Markov trace (consistent with linearity). -/
-axiom markovTrace_zero : ∀ (n : ℕ), markovTrace n (0 : HeckeElement n) = 0
+/-- **Trace of the zero element is zero** — derived from
+    homogeneity via `0 • x = 0` and `markovTrace_smul`. -/
+theorem markovTrace_zero : ∀ (n : ℕ),
+    markovTrace n (0 : HeckeElement n) = 0 := by
+  intro n
+  -- 0 = 0 • x for any x, and markovTrace_smul gives markovTrace (0 • x) = 0 * markovTrace x = 0
+  have := markovTrace_smul (n := n) (0 : ℝ) (0 : HeckeElement n)
+  simpa using this
 
 /-- **Trace of an additive sum** distributes — axiomatic
     additivity (part of `markovTrace_linear`). -/
