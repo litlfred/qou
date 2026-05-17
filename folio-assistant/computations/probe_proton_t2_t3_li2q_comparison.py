@@ -31,6 +31,7 @@ from __future__ import annotations
 
 import json
 import sys
+import time
 from pathlib import Path
 
 import mpmath as mp
@@ -114,6 +115,7 @@ ATOMS = [
 
 
 def main() -> int:
+    start_time = time.monotonic()
     q0, z = _load_q0_50dps()
     print("=" * 96)
     print(" T2 + T3 brane-tower comparison: Φ_q (divergent) vs Li_2^q (bounded)")
@@ -127,16 +129,30 @@ def main() -> int:
         vols = _load_vols(Z, N)
         t2_l, t3_l = t23_li2q(vols, q0, z)
         sum_l = t2_l + t3_l
+        # Narrow exception scope: distinguish script-side errors
+        # (missing witness, key lookup) from physical Φ_q divergence
+        # (mp.inf return), so the witness JSON records each kind
+        # explicitly rather than conflating them.
+        phi_q_error: str | None = None
+        sum_p: mp.mpf | None = None
         try:
             t2_p, t3_p = t23_phi_q(Z, N)
             sum_p = t2_p + t3_p
-            ratio = float(sum_l / sum_p) if sum_p != 0 else None
-            sum_p_str = mp.nstr(sum_p, 8)
-            ratio_str = f"{ratio:+.4e}" if ratio is not None else "n/a"
-        except Exception as e:
-            sum_p = mp.inf
-            sum_p_str = f"err:{type(e).__name__}"
+        except (KeyError, FileNotFoundError) as e:
+            phi_q_error = f"{type(e).__name__}: {str(e)[:160]}"
+        if phi_q_error is not None:
+            sum_p_str = f"script_error:{phi_q_error.split(':',1)[0]}"
             ratio_str = "n/a"
+            phi_q_field: object = {"error": phi_q_error}
+        elif sum_p is not None and mp.isinf(sum_p):
+            sum_p_str = "inf"
+            ratio_str = "n/a"
+            phi_q_field = "inf"
+        else:
+            sum_p_str = mp.nstr(sum_p, 8)
+            ratio = float(sum_l / sum_p) if sum_p != 0 else None
+            ratio_str = f"{ratio:+.4e}" if ratio is not None else "n/a"
+            phi_q_field = str(sum_p)
         print(f"  {label:>9}  {sum_p_str:>15}  {mp.nstr(sum_l, 8):>15}  {ratio_str:>10}")
         results.append({
             "atom": label,
@@ -145,7 +161,7 @@ def main() -> int:
             "T2_li2q_MeV": str(t2_l),
             "T3_li2q_MeV": str(t3_l),
             "T2_plus_T3_li2q_MeV": str(sum_l),
-            "T2_plus_T3_phi_q_MeV": str(sum_p) if not mp.isinf(sum_p) else "inf",
+            "T2_plus_T3_phi_q_MeV": phi_q_field,
         })
     print()
 
@@ -176,6 +192,7 @@ def main() -> int:
         },
         script_path=__file__,
         engine="mpmath",
+        start_time=start_time,
     )
     out = builder.save()
     print(f"  Witness: {Path(out).name}")
