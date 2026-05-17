@@ -152,3 +152,84 @@ Recommended owner adjudication:
 2. If accidental: rename + audit + replace. ~15 scripts affected.
 3. If deliberate: document the choice; update `thm:jones-markov-trace`
    in CLAUDE.md §7a to reflect the actual computed invariant.
+
+## 2026-05-17 update — Dual tr_M FIX shipped + provenance traced
+
+Followup investigation per user direction. Three new findings:
+
+### Provenance (commit 58e78090e, 2026-05-05)
+
+The dual-trace issue was **known at creation**. The introducing
+commit's title is *"Resolve factor-of-2 mismatch: PR #546 uses
+Plancherel trace, not Markov"* and its message documents:
+
+> PR #546's tr_M = Σ (dim_q²/[n]_q!) · χ^λ / f^λ
+>   → PLANCHEREL/REGULAR TRACE (Hopf-algebra integral)
+>   → does NOT satisfy Markov axiom tr_M(1) = 1 except at q=1
+>
+> char_fast tr_M = Σ y_λ · χ^λ with y_λ from Markov axioms
+>   → CANONICAL HOEFSMIT-WENZL MARKOV TRACE
+>
+> These are DIFFERENT categorical objects, not different normalizations.
+
+The commit mandated a downstream Plancherel→Markov conversion via
+y_λ re-weighting. **That conversion was never wired.** The function
+was named `tr_M_symbolic` (M = Markov) anyway, and ~15 production
+scripts call it as the Markov trace.
+
+### Math validation
+
+`tr_M_symbolic` is **correct as the q-Plancherel trace** (Hopf
+integral), formula `Σ dim_q²(λ)/[n]_q!·χ^λ(β)/f^λ`. Verified.
+
+It is **NOT the Markov trace** — violates tr_M(1) = 1 (gives ≈0.987
+on H_3), fails the Markov property tr_M(α·σ_n) = z·tr_M(α).
+
+`tr_M_canonical` (markov_weights_symbolic.py) IS the canonical
+Markov trace via Wenzl's Schur principal specialization. **It is
+the one cited by CLAUDE.md §7a `thm:jones-markov-trace`.**
+
+### Categorical-action derivation
+
+- `tr_M_canonical` (Wenzl y_λ): **YES** — Ocneanu 1985 + Wenzl 1988
+  literature derivation, computes Jones polynomial of braid closure.
+- `tr_M_symbolic` (dim_q²/[n]_q!/f^λ): **NO** documented Markov-trace
+  derivation. Computes a different (well-defined) invariant.
+
+### Fix shipped (commit 19ac57828 on this branch)
+
+Added to `folio-assistant/computations/hoefsmit_symbolic.py`:
+
+| Name | Status | Function |
+|---|---|---|
+| `tr_q_plancherel_symbolic` | NEW canonical name | Σ dim_q²/[n]_q!·χ^λ/f^λ (regular trace) |
+| `tr_Markov_symbolic` | NEW canonical name | thin wrapper of tr_M_canonical (Wenzl) |
+| `tr_M_symbolic` | DEPRECATED alias | delegates to tr_q_plancherel_symbolic |
+
+No consumer broken; every read-site now sees the disambiguating
+docstring linking back to the audit doc.
+
+### Implications for PR #664's c_3 = -2 claim
+
+- `tr_q_plancherel_symbolic(σ_1²)` at q=1: **+1** (not -2)
+- `tr_Markov_symbolic(σ_1²)` at q=1: **+1** (not -2)
+
+The -2 value comes ONLY from the textbook Jones polynomial
+$-(q+q^{-1})$ which is the **writhe-corrected** form (Kauffman/Jones
+convention with framing α^w(β)). PR #664 must specify which object
+the order-h⁶ coefficient of Q_β picks up; this is independent of
+the dual-trace issue but the dual-trace finding sharpens the
+question.
+
+### Coordination posts (this round)
+
+- Comment on [PR #664](https://github.com/litlfred/qou/pull/664#issuecomment-4469197220) — provenance + fix + implication
+- Acknowledged sibling coordination from PRs #663, #665, #672 on
+  [PR #671 comment thread](https://github.com/litlfred/qou/pull/671) (no separate post needed — they're already coordinating with us)
+
+### Cross-link to shared ledger on main
+
+The main-merged ledger `docs/coordination/1ppb-categorical-chain.md`
+(commit `4cc7561fc`) tracks the same scope. This dual-tr_M finding
+should be appended there too — will do in a follow-up commit once
+merged or via cherry-pick coordination with the maintaining session.
