@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-17T06:45:24.343393+00:00",
-  "commitSha": "1c1f70cc558558358df9363731cfdc7e5e71c5e5",
+  "computedAt": "2026-05-17T06:45:26.106473+00:00",
+  "commitSha": "3410d7b4cb9ef1681a5786fdd312d8970259b17c",
   "assertions": [],
   "allPassed": true,
   "durationMs": 7,
@@ -24,7 +24,7 @@
   },
   "data": {
     "by_pattern_count": {
-      "P15": 135,
+      "P15": 138,
       "P16": 89,
       "P21": 24,
       "P30": 96,
@@ -140,18 +140,17 @@
         ]
       },
       {
-        "file": "shift_from_nf_basis.py",
+        "file": "probe_hopf_markov_trace_genuine.py",
         "count": 6,
         "patterns": [
           "P15"
         ]
       },
       {
-        "file": "alpha_shift_torus.py",
-        "count": 5,
+        "file": "shift_from_nf_basis.py",
+        "count": 6,
         "patterns": [
-          "P15",
-          "P21"
+          "P15"
         ]
       }
     ],
@@ -1909,14 +1908,21 @@
       {
         "pattern": "P15",
         "file": "probe_hopf_markov_trace_genuine.py",
-        "line": 57,
+        "line": 63,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",
         "file": "probe_hopf_markov_trace_genuine.py",
-        "line": 58,
+        "line": 64,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "probe_hopf_markov_trace_genuine.py",
+        "line": 67,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
@@ -1924,6 +1930,20 @@
         "pattern": "P15",
         "file": "probe_hopf_markov_trace_genuine.py",
         "line": 68,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "probe_hopf_markov_trace_genuine.py",
+        "line": 78,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P15",
+        "file": "probe_hopf_markov_trace_genuine.py",
+        "line": 154,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
