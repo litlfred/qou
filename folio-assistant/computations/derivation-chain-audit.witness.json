@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T01:36:21.775855+00:00",
-  "commitSha": "0b3ecf45a699aeec7670cc6745e7aff56e75bc02",
+  "computedAt": "2026-05-18T02:09:58.007604+00:00",
+  "commitSha": "fc47dd00cf32f7cfe0240895578e4decc6981863",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -576,7 +576,7 @@
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "67f1df24c9d76e62b2bb25a331814e511ba6dc3f",
+  "scriptCommitSha": "d2ef5a283d0202c90a48fc16a5e1116927bafe08",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
   "data": {
@@ -2123,6 +2123,8 @@
         "canonical-script-input-audit.witness.json",
         "canonical-tr-m-helium4.witness.json",
         "canonical-tr-m-three-path-comparison.witness.json",
+        "canonical-tr-m-via-chi-cache.witness.json",
+        "canonical-tr-m-via-rust.witness.json",
         "categorical-bypass-volmatch-demo.witness.json",
         "categorical-q-decay-ba-low-isotopes.witness.json",
         "ch-bond-writhe-lp.witness.json",
@@ -2149,7 +2151,6 @@
         "compute-audit-scan.witness.json",
         "confined-knot-binding.witness.json",
         "confinement-operator-selection.witness.json",
-        "cross-check-trM-1ppb.witness.json",
         "crystal-alpha-shift-pole-orders.witness.json",
         "crystal-basis-primitives.witness.json",
         "crystal-limit-transport-probe.witness.json",
@@ -2183,7 +2184,6 @@
         "deuteron-delta-i-audit.witness.json",
         "deuteron_tr_M_symbolic.witness.json",
         "e-0-lp-dual-h3.witness.json",
-        "e0-calibration-audit.witness.json",
         "entanglement-orders.witness.json",
         "ew-higgs-sdp-probe.witness.json",
         "ew-interface-knot-probe.witness.json",

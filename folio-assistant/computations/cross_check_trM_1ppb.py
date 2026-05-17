@@ -33,6 +33,10 @@ from mpmath import mp, mpf, fabs, mpmathify
 HERE = Path(__file__).parent
 HOEF_PATH = HERE / "atomic-tr-m-mpfr-50dps.witness.json"
 PEEL_PATH = HERE / "markov-peel-atomic-tr-m.witness.json"
+# Third path landed via PR #681's Step 2 + this PR's combiner: the
+# canonical Σ_λ y_λ(q_0) · χ^λ(β; q_0) trace built from per-irrep
+# chi caches (`per_irrep_pole_atom.py` chi-{atom}-h{n} caches).
+CHICACHE_PATH = HERE / "canonical-tr-m-via-chi-cache.witness.json"
 OUT_PATH = HERE / "cross-check-trM-1ppb.witness.json"
 
 TOLERANCE = mpf("1e-9")  # 1 ppb relative
@@ -76,6 +80,23 @@ def main() -> int:
             continue
         peel_by_atom[atom] = r
 
+    # Third path: canonical chi-cache combiner (PR #681 Step 2).
+    # Only atoms with COMPLETE chi caches contribute to the 1ppb
+    # gate; partial caches yield truncated traces and are reported
+    # separately as `chi_cache_partial`.
+    chicache_by_atom: dict[str, dict] = {}
+    chicache_partials: dict[str, dict] = {}
+    if CHICACHE_PATH.exists():
+        chicache = json.loads(CHICACHE_PATH.read_text())
+        for r in chicache.get("data", {}).get("results", []) or chicache.get("results", []):
+            atom = r.get("atom")
+            if atom is None:
+                continue
+            if r.get("partial_cache"):
+                chicache_partials[atom] = r
+            else:
+                chicache_by_atom[atom] = r
+
     common_atoms = sorted(
         set(hoef_by_atom) & set(peel_by_atom)
     )
@@ -86,8 +107,8 @@ def main() -> int:
     print(f"  tolerance: {TOLERANCE} (1 ppb)  |  dps: {args.dps}")
     print()
     print(f"  {'atom':<14} {'Hoefsmit':>20}  {'markov_peel':>20}  "
-          f"{'|Δ_rel|':>13}  status")
-    print("  " + "─" * 74)
+          f"{'chi-cache':>20}  {'|Δ_rel|max':>11}  status")
+    print("  " + "─" * 95)
 
     deltas: list[dict] = []
     any_diverge = False
@@ -106,28 +127,57 @@ def main() -> int:
 
         h_val = mpmathify(h["tr_M_at_q0_50dps"])
         p_val = mpmathify(peel_str)
-        if h_val == 0 and p_val == 0:
-            rel = mpf(0)
-        elif h_val == 0:
-            rel = fabs(p_val)
-        else:
-            rel = fabs(p_val - h_val) / fabs(h_val)
 
-        ok = rel < TOLERANCE
+        # Third path (chi-cache combiner). Optional — only present
+        # for atoms with COMPLETE chi caches (proton, neutron,
+        # deuteron in the initial wave; T/³He/⁴He pending Step 2).
+        chi_entry = chicache_by_atom.get(atom)
+        if chi_entry is not None:
+            c_val = mpmathify(chi_entry["abs_tr_M_q0"])
+        else:
+            c_val = None
+
+        if h_val == 0 and p_val == 0:
+            rel_hp = mpf(0)
+        elif h_val == 0:
+            rel_hp = fabs(p_val)
+        else:
+            rel_hp = fabs(p_val - h_val) / fabs(h_val)
+
+        if c_val is not None and h_val != 0:
+            rel_hc = fabs(c_val - fabs(h_val)) / fabs(h_val)
+            rel_max = max(rel_hp, rel_hc)
+        else:
+            rel_hc = None
+            rel_max = rel_hp
+
+        ok = rel_max < TOLERANCE
         if not ok:
             any_diverge = True
         status = "OK" if ok else "DIVERGE"
+        c_str = f"{str(c_val)[:20]:>20}" if c_val is not None else f"{'(partial cache)':>20}"
         print(f"  {atom:<14} {str(h_val)[:20]:>20}  "
-              f"{str(p_val)[:20]:>20}  {mp.nstr(rel, 3):>13}  {status}")
+              f"{str(p_val)[:20]:>20}  {c_str}  "
+              f"{mp.nstr(rel_max, 3):>11}  {status}")
 
-        deltas.append({
+        d: dict = {
             "atom": atom,
             "hoefsmit_50dps": str(h_val),
             "markov_peel": str(p_val),
-            "abs_delta": str(fabs(p_val - h_val)),
-            "rel_delta": str(rel),
+            "abs_delta_hoef_peel": str(fabs(p_val - h_val)),
+            "rel_delta_hoef_peel": str(rel_hp),
             "within_1ppb": ok,
-        })
+        }
+        if c_val is not None:
+            d["chi_cache_canonical"] = str(c_val)
+            d["abs_delta_hoef_chi"] = str(fabs(c_val - fabs(h_val)))
+            d["rel_delta_hoef_chi"] = str(rel_hc)
+        elif atom in chicache_partials:
+            d["chi_cache_partial"] = {
+                "partitions_used": chicache_partials[atom]["partitions_used"],
+                "partitions_total": chicache_partials[atom]["partitions_total"],
+            }
+        deltas.append(d)
 
     out = {
         "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
