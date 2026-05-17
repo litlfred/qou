@@ -69,9 +69,22 @@ witnesses** and cannot tell which downstream witnesses are stale.
 
 ## Anti-staleness mechanism added on this branch
 
-`folio-assistant/computations/low_isotope_mass_table.py` now records,
-in every emitted witness, a `derivation_inputs.upstream_witness_hashes`
-array. Each entry is
+The pattern is now wired into three downstream scripts and exposed
+through a shared helper in `witness_base.py`:
+
+- **`low_isotope_mass_table.py`** (1 upstream witness) — uses the
+  free function `load_and_hash_upstream(path)` from `witness_base`;
+  emits the hash list under `derivation_inputs.upstream_witness_hashes`
+  (hand-rolled dict layout).
+- **`binding_K_direct.py`** (3 upstream witnesses) — uses
+  `WitnessBuilder.add_upstream(path)`; emits under
+  `data.upstream_witness_hashes`.
+- **`atomic_mass_via_rho_k.py`** (7 upstream witness hits, with
+  duplicates over the discovery loop) — uses a thin module-level
+  accumulator (`_load_upstream`) that wraps `load_and_hash_upstream`
+  for the `wrap_legacy` flow; emits under `data.upstream_witness_hashes`.
+
+Each entry has the shape
 
 ```json
 {
@@ -90,15 +103,29 @@ read from the upstream witness body and reproduce its provenance.
 
 A companion validator [`witness_dependency_drift.py`](../../folio-assistant/computations/witness_dependency_drift.py)
 walks every `*.witness.json` looking for `upstream_witness_hashes`
-and verifies each entry's sha256 against the current bytes of the
-named upstream file. Drift means: the upstream changed since this
-witness was last regenerated — the downstream is stale. Exit code 1
-on any drift; report path-by-path on stdout.
+(in either `derivation_inputs.*` or `data.*`) and verifies each
+entry's sha256 against the current bytes of the named upstream
+file. Drift means: the upstream changed since this witness was last
+regenerated — the downstream is stale. Exit code 1 on any drift in
+`--strict` mode; report path-by-path on stdout.
 
 This is a **single-file diagnostic**: the validator reads what's on
 disk, no producer scripts re-run, no CI environment needed.
 Operators can wire it into `witness-pipeline.yml` as a fail-on-drift
 gate at their discretion.
+
+### Adoption status (2026-05-16)
+
+| Script | Output witness | Upstream hashes recorded |
+|---|---|---|
+| `low_isotope_mass_table.py` | low-isotope-mass-table | 1 (proton-mass-codata-50dps) |
+| `binding_K_direct.py` | binding-K-direct | 3 (atomic-tr-m-mpfr-50dps, atomic-tr-m-helium4, atomic-tr-m-wenzl-bridge) |
+| `atomic_mass_via_rho_k.py` | atomic-mass-via-rho-k | 7 (atomic-tr-m + Model B + legacy mass-table; some duplicates over the discovery loop) |
+| (TODO) `derived_masses.py` | (library — no own witness; refactor pattern differs) | — |
+| (TODO) `paper_six_term_isotope_sweep.py` | paper-six-term-* | 4-5 candidates |
+
+Total coverage: **3 witnesses / 11 upstream hash records** out of
+~50 mass-chain consumers. Adoption can spread one script per PR.
 
 ## Sanity guard on `m_p_pred`
 

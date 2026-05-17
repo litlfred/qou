@@ -1,0 +1,117 @@
+{
+  "engine": "python+mpmath+numpy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-17T06:09:33.051587+00:00",
+  "commitSha": "3947756c9191ba24747570bf0c69e569480d0ee5",
+  "assertions": [
+    {
+      "name": "sdp_shadow_price_closes_post_hoc_a",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 134,
+  "computation": "probe-sdp-pl-v2-h3-proton",
+  "scriptFile": "probe_sdp_pl_v2_h3_proton.py",
+  "scriptHash": "04dc4e438bc0",
+  "scriptCommitSha": "unknown",
+  "description": "SDP → PL integration limit using actual H_3 Hoefsmit data",
+  "data": {
+    "q_pinned": "1.109978595554180575281594079609509377993",
+    "proton_braid_word": [
+      1,
+      -2,
+      1,
+      -2,
+      1,
+      -2
+    ],
+    "characters_at_q0": {
+      "chi_(3)": 1.0,
+      "chi_(2,1)": 1.994185810381214,
+      "chi_(1,1,1)": 1.0
+    },
+    "hoefsmit_standard_eigenvalues_symmetric_part": [
+      0.9731821797458836,
+      1.0210036306353303
+    ],
+    "wenzl_weights": {
+      "y_(3)": "0.1633832273397582119211250784191562244527",
+      "y_(2,1)": "0.6606737723483496873669562706401638384751",
+      "y_(1,1,1)": "0.1633832273397582119211250784191562244527",
+      "sum": "0.9874402270278661112092064274784762873804"
+    },
+    "markov_trace_check": {
+      "computed": 1.6442727167876237,
+      "normalized": 1.66518708857627,
+      "paper_value": 1.0653
+    },
+    "sdp_shadow_prices": {
+      "sp_(3)": 0.1633832273397582,
+      "sp_(2,1)": 1.3175062621081073,
+      "sp_(1,1,1)": 0.1633832273397582,
+      "dominant_block": "(2,1)",
+      "dominant_fraction_pct": 80.12699162716072
+    },
+    "candidates_tested": [
+      {
+        "name": "sp_(2,1) / sp_total (dominant fraction)",
+        "a": 0.8012699162716072,
+        "vs_post_hoc_pct": 106.27458208219925
+      },
+      {
+        "name": "(sp_(3) + sp_(1,1,1)) / sp_total",
+        "a": 0.19873008372839285,
+        "vs_post_hoc_pct": -48.84000492745409
+      },
+      {
+        "name": "sp_21 · |χ_(2,1)| / max(|eigs|)",
+        "a": 2.5733035751787505,
+        "vs_post_hoc_pct": 562.4573177669356
+      },
+      {
+        "name": "|min eig (2,1)| · sp_21",
+        "a": 1.2821736159872192,
+        "vs_post_hoc_pct": 230.07582267064035
+      },
+      {
+        "name": "|max eig (2,1)| / 4",
+        "a": 0.25525090765883257,
+        "vs_post_hoc_pct": -34.289590518483536
+      },
+      {
+        "name": "(max - min) eig (2,1) / 4",
+        "a": 0.011955362722361668,
+        "vs_post_hoc_pct": -96.92227625283722
+      },
+      {
+        "name": "sp_(2,1) / (1 + |max eig|)",
+        "a": 0.6519069249241929,
+        "vs_post_hoc_pct": 67.82338356210978
+      },
+      {
+        "name": "z_0 · sp_(2,1)",
+        "a": 0.1375319356629442,
+        "vs_post_hoc_pct": -64.59452429733633
+      },
+      {
+        "name": "χ_(2,1) · sp_(2,1)",
+        "a": 2.62735229298438,
+        "vs_post_hoc_pct": 576.3713265809839
+      },
+      {
+        "name": "|χ_(2,1)|^2 / 4",
+        "a": 0.9941942615814449,
+        "vs_post_hoc_pct": 155.93997933989334
+      }
+    ],
+    "post_hoc_a": 0.38844820732799046,
+    "best_candidate": {
+      "name": "|max eig (2,1)| / 4",
+      "a": 0.25525090765883257,
+      "residual_pct": -34.289590518483536
+    }
+  }
+}

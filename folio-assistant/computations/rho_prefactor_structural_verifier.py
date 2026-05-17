@@ -2,18 +2,29 @@
 # polynomial_q_not_applicable: numerical evaluation at q_0 of the
 # Wedderburn weights y_λ · χ_λ(T_w); symbolic-q derivation deferred.
 """
-Structural ρ(Z, N) rule — verifier for conj:rho-prefactor-structural.
+Structural ν_SDP(Z, N) rule — verifier for conj:rho-prefactor-structural.
+
+NOTATION (2026-05-17): the SDP multiplicity previously written ρ
+in the paper has been renamed to ν_SDP (Greek nu with SDP
+subscript) to disambiguate from ρ_K (categorical density, in
+atomic-mass-gb-nf.md) and ρ_λ (Hoefsmit irrep matrix).  This
+script's variable names (observed_rho, rho_pred, rho_obs, etc.)
+are retained for backward compatibility with downstream
+consumers (binding_k_solver.py, branch_phase_fit_to_mass_tower.py
+etc.) but mathematically refer to ν_SDP.  Witness JSON also
+exposes new alias keys observed_nu_SDP / nu_SDP_predicted.
 
 Issue #604 deliverable 4 (closes / narrows GAP-A-4).
 
-The conjecture asserts that the SDP multiplicity ρ(𝔥) of a confined
-particle 𝔥 with canonical Hecke element T_w ∈ H_{n_0}(q) satisfies
+The conjecture asserts that the SDP multiplicity ν_SDP(𝔥) of a
+confined particle 𝔥 with canonical Hecke element T_w ∈ H_{n_0}(q)
+satisfies
 
-    ρ(𝔥) = round(dim_q(λ*(T_w)))   where   λ*(T_w) = argmax_{λ ⊢ n_0} |y_λ(q_0) · χ_λ(T_w)|
+    ν_SDP(𝔥) = round(dim_q(λ*(T_w)))   where   λ*(T_w) = argmax_{λ ⊢ n_0} |y_λ(q_0) · χ_λ(T_w)|
 
 with `dim_q(λ) = [d_λ]_q` (q-deformed SYT count via hook-length).
 Round-to-nearest matches the Lean class field
-`rho_eq_qdim : |(rho : ℝ) - q_int d_lambda_star| ≤ 1/2`.
+`rho_eq_qdim : |(nu_SDP : ℝ) - q_int d_lambda_star| ≤ 1/2`.
 
 This script evaluates the conjecture numerically for every B_3 atomic
 identification (proton, neutron, ²H/6_2, ³He/L₆ₐ₄) and reports:
@@ -307,7 +318,8 @@ def analyze_atom(atom: dict, wenzl: dict) -> dict:
         "knot": atom["knot_name"],
         "n_braid": n,
         "braid_word": bw,
-        "rho_observed": rho_obs,
+        "rho_observed": rho_obs,       # legacy key (= ν_SDP semantically)
+        "nu_SDP_observed": rho_obs,    # new canonical key (renamed 2026-05-17)
         "per_lambda": per_lambda,
         "dominant_lambda": dominant["lambda"],
         "dominant_lambda_is_hook": dominant["is_hook"],

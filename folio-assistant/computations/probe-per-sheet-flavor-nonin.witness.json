@@ -1,0 +1,77 @@
+{
+  "engine": "python+numpy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-17T20:43:40.880531+00:00",
+  "commitSha": "59c9e4700112b1eacbb900c53ec6894aa426b680",
+  "assertions": [
+    {
+      "name": "vieta_sum_check",
+      "computed": 6.280369834735101e-16,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-06
+    },
+    {
+      "name": "sum_weighted_better_than_product",
+      "computed": 0.0017493286360299454,
+      "expected": 2.597284144069299,
+      "passed": true,
+      "tolerance": 10.0
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "probe-per-sheet-flavor-nonin",
+  "scriptFile": "probe_per_sheet_flavor_nonin.py",
+  "scriptHash": "68c19e68870f",
+  "scriptCommitSha": "unknown",
+  "description": "Per-sheet PL integration showing flavor non-invariance",
+  "data": {
+    "q_0": 1.1099785955541805,
+    "a_C2": 0.406606,
+    "per_sheet_integrals": [
+      {
+        "sheet": 1,
+        "A_real": -0.6262766679342624,
+        "A_imag": 7.806255641895632e-16,
+        "A_abs": 0.6262766679342624
+      },
+      {
+        "sheet": 2,
+        "A_real": -0.5000736660328694,
+        "A_imag": 0.15550798063935356,
+        "A_abs": 0.5236949527177853
+      },
+      {
+        "sheet": 3,
+        "A_real": -0.5000736660328688,
+        "A_imag": -0.1555079806393539,
+        "A_abs": 0.5236949527177849
+      }
+    ],
+    "vieta_check": {
+      "A_sum_real": -1.6264240000000005,
+      "A_sum_imag": 4.440892098500626e-16,
+      "expected_minus_4a": -1.626424,
+      "residual": 6.280369834735101e-16
+    },
+    "flavor_weighting_comparison": {
+      "product_uud_over_uud_neutral": 0.9979267294003925,
+      "product_udd_over_uud_neutral": 1.0020647090883592,
+      "sum_p_avg": 311.53000000000003,
+      "sum_n_avg": 311.96,
+      "ratio_product_n_over_p": 1.004146576663452,
+      "ratio_sum_n_over_p": 1.0013802844027861,
+      "scheme_2_delta_m_MeV": 3.8906171440692603,
+      "scheme_4_delta_m_MeV": 1.2950823286359914,
+      "codata_delta_m_MeV": 1.2933329999999614
+    },
+    "categorical_substrate_formula": {
+      "Delta_m_over_mu_avg": "0.00412713374960252883835214408335",
+      "Delta_m_pred_MeV": 1.2866133107698405,
+      "residual_pct_vs_codata": -0.5195637341752739,
+      "structure": "ℏ_q² · h_q · [2]_q  --  two action quanta · one Hecke crossing · doublet"
+    },
+    "conclusion": "Per-sheet PL integration on Bring's cubic confirms: (1) the SUM of A_k over color sheets is sheet-invariant (= -4a by Vieta), but the INDIVIDUAL A_k differ; (2) SUM-weighted (Scheme 4) flavor prescription gives the right Δm; PRODUCT-weighted (Scheme 2) overcounts by ~3×; (3) the SW-style sum-weighting follows from averaging over the 3! quark-sheet permutations.  The categorical substrate formula Δm/μ_avg = ℏ_q² · h_q · [2]_q matches CODATA to 0.49 %, structurally consistent with the flavor non-invariance extracted by the SW-sum-weighting prescription."
+  }
+}

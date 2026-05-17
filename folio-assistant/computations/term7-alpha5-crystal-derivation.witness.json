@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-09T01:30:59.189455+00:00",
-  "commitSha": "bc3f32d254e5eb7152195f092ed4a487a1929fad",
+  "computedAt": "2026-05-17T02:26:08.342746+00:00",
+  "commitSha": "435bb3d7e22f5c1a2f696a8c853ad799f1d7feb8",
   "assertions": [
     {
       "name": "S_crystal_4He_isobar_independent",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 17,
+  "durationMs": 18,
   "computation": "term7-alpha5-crystal-derivation",
   "scriptFile": "term7_alpha5_crystal_derivation.py",
-  "scriptHash": "ec2d1998f5e1",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "6f8ad34d54fa",
+  "scriptCommitSha": "435bb3d7e22f5c1a2f696a8c853ad799f1d7feb8",
   "description": "v3 #2 (DERIVE not fit, per user direction): structural crystal-side prediction for Term 7's shell-correction sum S(A) = Σ_λ w_λ(q=1) · χ_λ_crystal(β_atom). No free parameter — agreement / disagreement with AME-observed α_5 is a flat-transport check on the q→0 → q_0 connection.",
   "auditOnly": "docs/audits/2026-05-09-refocused-1ppb-workplan-v3.md",
   "data": {

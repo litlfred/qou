@@ -1,0 +1,69 @@
+{
+  "engine": "scipy+numpy+hecke_characters",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-17T07:37:55.082306+00:00",
+  "commitSha": "fe694a403df4aa1d8c503e52282a2c3b5cceba46",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 18,
+  "computation": "probe-atom-specific-cubic",
+  "scriptFile": "probe_atom_specific_cubic.py",
+  "scriptHash": "4520da956e47",
+  "scriptCommitSha": "unknown",
+  "description": "Atom-specific cubics via F^A; ρ_K discrepancies analysed",
+  "data": {
+    "q_0": 1.1099785955541805,
+    "a_C2_proton": 0.40660627874832944,
+    "per_atom_results": [
+      {
+        "atom": "proton",
+        "A": 1,
+        "a_K_inflection": 0.40660627874832944,
+        "A_K_at_inflection": 2.4616638312933765,
+        "m_K_pred_MeV": 938.9247123096847,
+        "m_K_CODATA_MeV": 938.27208816,
+        "residual_pct": 0.06955595907840843,
+        "ratio": 1.000695559590784,
+        "tr_M_H_3A": 1.6442727167876254,
+        "rho_K_substrate_C2": 1117.4726724269585,
+        "rho_K_CODATA": 1116.695943853222,
+        "rho_K_ratio": 1.0006955595907838
+      },
+      {
+        "atom": "neutron",
+        "A": 1,
+        "a_K_inflection": 0.40660627874832944,
+        "A_K_at_inflection": 2.4616638312933765,
+        "m_K_pred_MeV": 938.9247123096847,
+        "m_K_CODATA_MeV": 939.56542052,
+        "residual_pct": -0.06819197432369595,
+        "ratio": 0.999318080256763,
+        "tr_M_H_3A": 1.644272716787625,
+        "rho_K_substrate_C2": 1117.472672426959,
+        "rho_K_CODATA": 1118.2352191004463,
+        "rho_K_ratio": 0.9993180802567632
+      },
+      {
+        "atom": "deuteron",
+        "A": 2,
+        "a_K_inflection": 0.25326557888654777,
+        "A_K_at_inflection": 5.964643629156381,
+        "m_K_pred_MeV": 2275.026846615763,
+        "m_K_CODATA_MeV": 1875.613,
+        "residual_pct": 21.295109738296922,
+        "ratio": 1.2129510973829691,
+        "tr_M_H_3A": 0.31751143700456325,
+        "rho_K_substrate_C2": 5786.972098901106,
+        "rho_K_CODATA": 11560.160209902107,
+        "rho_K_ratio": 0.5005961849857538
+      }
+    ],
+    "tr_M_discrepancy": {
+      "substrate_H_3_proton": 1.6443,
+      "paper_NF_GS_proton": 1.0653,
+      "ratio": 1.5435,
+      "interpretation": "paper uses NF_GS-reduced form; substrate uses direct Hoefsmit on full braid word"
+    },
+    "F_to_the_A_finding": "Raising F(z,c) to the A-th power gives F^A whose integrand is (proton_integrand)^A.  Inflection of |∫ I^A| / |∫ J^A| is at the SAME a as inflection of |∫ I| / |∫ J|.  So naive F^A approach does NOT give atom-specific inflection / atom-specific mass.  Multi-nucleon atoms require atom-specific |tr_M(β_K)| at H_{3A} (which IS implemented in hecke_characters.chi_lambda_braid)."
+  }
+}

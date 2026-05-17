@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-11T21:11:03.999831+00:00",
-  "commitSha": "5f10eb5e1826f35389958a284ad287690b29ca8c",
+  "computedAt": "2026-05-17T23:08:11.113914+00:00",
+  "commitSha": "b62544f512da3575a8aea4ac96af48156d2ebd13",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "atomic-mass-via-rho-k",
   "scriptFile": "atomic_mass_via_rho_k.py",
-  "scriptHash": "11e86052210c",
-  "scriptCommitSha": "b72816b336ecaab14ada3347abb3383b05305427",
+  "scriptHash": "5857b26ce937",
+  "scriptCommitSha": "c9c2f8cebd49787668da7f618cdbd940aae9d951",
   "description": "Atomic mass-table predictions using the resolved ρ_K assembly M(K) = ρ_K · m_e · |tr_M(K)| from PR #564 §3.3a (Options A + C: no additive T6, Mittag-Leffler complementarity). Calibration anchors: m_e (CODATA), m_p (CODATA), m_n (CODATA via Q_β = m_n - m_p - m_e). Reads |tr_M(K)| from atomic-tr-m-mpfr-50dps.witness.json. Atoms not in that witness are flagged tr_M_unavailable rather than fabricating values. Direct successor to atomic_braid_mass_table.py — see the side-by-side improvement_factor field.",
   "auditOnly": "AUDIT-DEEP-2026-05.md",
   "parameters": {
@@ -155,6 +155,48 @@
         "rho_K_err_pct": "0.7591295784649266",
         "legacy_E0_err_pct": "-39.76421238458452",
         "improvement_factor": 52.381323969741366
+      }
+    ],
+    "upstream_witness_hashes": [
+      {
+        "path": "atomic-tr-m-mpfr-50dps.witness.json",
+        "sha256": "752f9bc6da76a3eb2c9df647b6edbddae8b27be072a998591e193edee885b111",
+        "size_bytes": 6376,
+        "commitSha": "8b97d536ebde00d797b393b9d9068b8723e80d98",
+        "scriptCommitSha": "ceb6104f7e57111dd38a2226030e5fba0cf82112",
+        "computedAt": "2026-05-09T03:07:22.082895+00:00"
+      },
+      {
+        "path": "probe-sdp-canonical-paper-formula.witness.json",
+        "sha256": "92b16a525a2fc25e8520ac94450132f211f5e64d76a8ea25156c8624715453e3",
+        "size_bytes": 8411,
+        "commitSha": "67804621bf38482c4e1f30e251fb5ed3ee5e2233",
+        "scriptCommitSha": "d2553e83c5b1e619b89f506ad0ad475a06954084",
+        "computedAt": "2026-05-11T20:42:46.061788+00:00"
+      },
+      {
+        "path": "atomic-tr-m-helium4.witness.json",
+        "sha256": "76844c025edc6cf6226b58c1b843c16333d91c43513a19fe23013cfa1a9246b5",
+        "size_bytes": 4174,
+        "commitSha": "ae0e395343871f30feb34eaa973a474d4e5fc695",
+        "scriptCommitSha": "ceb6104f7e57111dd38a2226030e5fba0cf82112",
+        "computedAt": "2026-05-09T01:15:59.857893+00:00"
+      },
+      {
+        "path": "atomic-tr-m-wenzl-bridge.witness.json",
+        "sha256": "e08a53894bb788178b3b9970fbdf2f76134e48ce3c5f5557334794b8825c3ca4",
+        "size_bytes": 10516,
+        "commitSha": null,
+        "scriptCommitSha": null,
+        "computedAt": "2026-04-27T21:27:46.973442+00:00"
+      },
+      {
+        "path": "atomic-braid-mass-table.witness.json",
+        "sha256": "2d6da1cbaec4e7ad0aabc3c14fa9b42265a325cfae9ad410f0c44d27e20e7d63",
+        "size_bytes": 8418,
+        "commitSha": "d1823b9daa04a8c5ab2f2d43b34bbf2e26590958",
+        "scriptCommitSha": "37a7570c7f2d585e8adebea73ce206043ef219bd",
+        "computedAt": "2026-05-17T22:52:01.769655+00:00"
       }
     ]
   },

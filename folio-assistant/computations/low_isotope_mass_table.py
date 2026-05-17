@@ -63,7 +63,6 @@ Outputs:
 """
 from __future__ import annotations
 
-import hashlib
 import json
 import sys
 from pathlib import Path
@@ -76,6 +75,7 @@ from low_isotope_binding_sweep import (  # noqa: E402
 from paper_six_term_isotope_sweep import (  # noqa: E402
     q_beta_for_source, q_beta_substrate_cos_tightened_MeV,
 )
+from witness_base import load_and_hash_upstream  # noqa: E402
 
 HERE = Path(__file__).parent
 
@@ -95,68 +95,74 @@ from codata_constants import (
 M_P_REF_MEV = float(_M_P_REF_MEV_raw)
 M_N_REF_MEV = float(_M_N_REF_MEV_raw)
 
-# ── Upstream witness helper (anti-staleness) ───────────────────
-def _load_upstream_witness(path: Path) -> tuple[dict, dict]:
-    """Read `path`; return (witness_dict, hash_record).
-
-    The hash_record carries everything a downstream consumer needs
-    to verify it has the same upstream as when this witness was
-    last regenerated: file sha256, commitSha, scriptCommitSha,
-    computedAt.
-    """
-    if not path.exists():
-        raise FileNotFoundError(
-            f"Required upstream witness not found: {path}\n"
-            f"Run its producer first."
-        )
-    raw = path.read_bytes()
-    w = json.loads(raw.decode("utf-8"))
-    return w, {
-        "path":              path.name,
-        "sha256":            hashlib.sha256(raw).hexdigest(),
-        "size_bytes":        len(raw),
-        "commitSha":         w.get("commitSha"),
-        "scriptCommitSha":   w.get("scriptCommitSha"),
-        "computedAt":        w.get("computedAt"),
-    }
-
-# ── m_p sanity-check threshold (anti-tautology) ────────────────
+# ── m_p sanity-check threshold (anti-tautology + framework-precision gate) ──
 # Per the three-calibration discipline, m_p is a PREDICTION, not an
-# input. If the upstream chain's prediction is wildly off CODATA,
-# we refuse to consume it (a "successful" 543 ppm match in an OLD
-# witness is a sign that calibration leaked in, NOT that the chain
-# closed). The threshold below admits a closed chain at any
-# precision better than 1 %; tighten to 1 ppm once the T1+T4
-# assembly closes.
-M_P_DERIVED_MAX_REL_DIFF = 0.01
+# input. The threshold below is the framework's **real target**:
+# CAL-1/2/3 closure to 1 ppb (1e-9), within CODATA experimental
+# measurement error.  Reasoning (owner directive 2026-05-16):
+#   "tighten to 1 ppb compute infra and within measurement error.
+#    this is our real goal."
+# CODATA m_p uncertainty is ~50 eV / 938 MeV ≈ 5e-11 (sub-ppb), so
+# 1 ppb sits comfortably above the experimental floor.
+#
+# Threshold history:
+#   - 0.01  (1 %)    PR #663 initial guard. Rejected Path A T1+T4
+#                    truncation (m_p_pred = 0.597 MeV, 9 orders off).
+#   - 0.02  (2 %)    Lifted briefly to admit the 1.63 % full-tower
+#                    closure as "derived" on 2026-05-16; reverted on
+#                    same date per owner: "tighten to 1 ppb".
+#   - 1e-9  (1 ppb)  Current.  The framework's actual closure target.
+#                    Every row currently >> threshold → all rows
+#                    correctly classified `derivation_pending`.
+M_P_DERIVED_MAX_REL_DIFF = 1e-9
 
 # ── Derived inputs ─────────────────────────────────────────────
-# m_p comes from the categorical derivation chain (build_proton_mass_50dps_chain.py).
-# Reading at module load enforces the dependency: if the witness is
-# missing the table cannot run; if the prediction is wildly off
-# CODATA the chain is treated as unclosed (m_p = pending).
-_PROTON_WITNESS = HERE / "proton-mass-codata-50dps.witness.json"
-_proton_w, _proton_hash = _load_upstream_witness(_PROTON_WITNESS)
-_m_p_pred_raw   = float(_proton_w["data"]["m_p_pred_MeV"])
-_m_p_rel_diff   = float(_proton_w["data"]["rel_diff"])
+# m_p comes from the categorical derivation chain at 50 dps.  We
+# prefer the full mass-endomorphism tower witness
+# (proton-mass-full-tower-50dps.witness.json, T1+T2+T3+T4 sum) over
+# the legacy Path A partial witness (proton-mass-codata-50dps.witness.json,
+# T1+T4 only); falling back to Path A when the full-tower witness is
+# absent.  Either witness may produce an unclosed value above the
+# threshold — the sanity guard below catches both cases identically.
+_FULL_TOWER_WITNESS = HERE / "proton-mass-full-tower-50dps.witness.json"
+_PATH_A_WITNESS     = HERE / "proton-mass-codata-50dps.witness.json"
+if _FULL_TOWER_WITNESS.exists():
+    _PROTON_WITNESS = _FULL_TOWER_WITNESS
+    _proton_w, _proton_hash = load_and_hash_upstream(_PROTON_WITNESS)
+    # Full-tower witness schema: data.predictions_MeV.m_p_pred_50dps
+    _m_p_pred_raw = float(
+        _proton_w["data"]["predictions_MeV"]["m_p_pred_50dps"]
+    )
+    _m_p_rel_diff = float(
+        _proton_w["data"]["comparisons"]["rel_diff_p"]
+    )
+    _m_p_source_kind = "full_tower_T1_T2_T3_T4_T5_at_A_categorical_max_GS_grade"
+else:
+    _PROTON_WITNESS = _PATH_A_WITNESS
+    _proton_w, _proton_hash = load_and_hash_upstream(_PROTON_WITNESS)
+    _m_p_pred_raw = float(_proton_w["data"]["m_p_pred_MeV"])
+    _m_p_rel_diff = float(_proton_w["data"]["rel_diff"])
+    _m_p_source_kind = "path_a_T1_plus_T4_only"
 
 if abs(_m_p_rel_diff) > M_P_DERIVED_MAX_REL_DIFF:
-    # The chain hasn't closed. Treat m_p as pending; do not consume.
+    # The chain hasn't closed under the current threshold. Treat
+    # m_p as pending; do not consume.
     M_P_DERIVED_MEV: float | None = None
     M_P_DERIVED_REL_DIFF: float | None = _m_p_rel_diff
     M_P_DERIVATION_STATUS = (
         f"pending: m_p_pred = {_m_p_pred_raw:.6f} MeV (rel_diff vs CODATA "
         f"= {_m_p_rel_diff:.3e}, above {M_P_DERIVED_MAX_REL_DIFF:.0e} "
-        f"chain-closed threshold). The mass-endomorphism tower T1+T4 "
-        f"assembly is SCRIPT_CITED in proton-mass-50dps.derivation.json; "
-        f"closing it is the m_p frontier."
+        f"chain-closed threshold). Source: {_m_p_source_kind}. The "
+        f"mass-endomorphism tower closure path is documented in "
+        f"docs/audits/2026-05-16-t1-t4-tower-closure-plan.md."
     )
 else:
     M_P_DERIVED_MEV = _m_p_pred_raw
     M_P_DERIVED_REL_DIFF = _m_p_rel_diff
     M_P_DERIVATION_STATUS = (
         f"derived: m_p_pred = {_m_p_pred_raw:.6f} MeV "
-        f"(rel_diff vs CODATA = {_m_p_rel_diff:.3e})"
+        f"(rel_diff vs CODATA = {_m_p_rel_diff:.3e}). "
+        f"Source: {_m_p_source_kind}."
     )
 M_P_DERIVED_SOURCE = _PROTON_WITNESS.name
 
@@ -176,13 +182,22 @@ B_4HE_DERIVATION_STATUS = (
     "(canonical_tr_m_helium4_stub.py) is the open frontier"
 )
 
-# Substrate Q_β (CAL-2-only, from PR #655+#661+#662 cos resummation).
+# Substrate Q_β (CAL-2-only).  As of 2026-05-17, uses the full N=4
+# categorical chain (PRs #661, #664, #665 + prop:kashiwara-jones-c4-
+# categorical) cherry-picked from PR #664 — residual ~0.30 ppm vs
+# CODATA (≈ 1000× tighter than the form_a_cos baseline at +306 ppm).
 # Available as a CAL-3 alternative; not consumed in the predicted
 # column directly (the m_p / m_n chains have their own Q_β handling).
-Q_BETA_CODATA_MEV     = float(q_beta_for_source("codata"))
-Q_BETA_SUBSTRATE_MEV  = float(q_beta_substrate_cos_tightened_MeV())
-Q_BETA_SUBSTRATE_PPM  = float(
+Q_BETA_CODATA_MEV          = float(q_beta_for_source("codata"))
+Q_BETA_SUBSTRATE_MEV       = float(q_beta_for_source("full_chain_n4"))
+Q_BETA_SUBSTRATE_PPM       = float(
     1e6 * (Q_BETA_SUBSTRATE_MEV - Q_BETA_CODATA_MEV) / Q_BETA_CODATA_MEV
+)
+# Retain the form_a_cos value too for the witness — useful audit trail
+# showing the tightening between forms.
+Q_BETA_FORM_A_COS_MEV      = float(q_beta_substrate_cos_tightened_MeV())
+Q_BETA_FORM_A_COS_PPM      = float(
+    1e6 * (Q_BETA_FORM_A_COS_MEV - Q_BETA_CODATA_MEV) / Q_BETA_CODATA_MEV
 )
 
 # Mass excesses computed only from derived inputs. ¹H is no longer
@@ -446,10 +461,19 @@ def main() -> int:
             "Q_beta_codata_MeV": Q_BETA_CODATA_MEV,
             "Q_beta_substrate_MeV": Q_BETA_SUBSTRATE_MEV,
             "Q_beta_substrate_source":
-                "form_a_cos (PR #655+#661+#662): Q_A · cos((z-1)·h/2) "
-                "with c_2 = b² Kashiwara correction on V_(2,1) Hoefsmit",
+                "full_chain_n4 (PRs #661, #664, #665 + "
+                "prop:kashiwara-jones-c4-categorical): "
+                "Q_A · cos(α_N1) · (1−b²ℏ_q⁴) · (1−2b³ℏ_q⁶) · "
+                "(1+(b²+½)b⁴ℏ_q⁸) — c_2, c_3, c_4 all categorical, "
+                "cherry-picked from PR #664 (2026-05-17)",
             "Q_beta_substrate_residual_ppm_vs_codata":
                 Q_BETA_SUBSTRATE_PPM,
+            "Q_beta_form_a_cos_MeV":
+                Q_BETA_FORM_A_COS_MEV,
+            "Q_beta_form_a_cos_residual_ppm_vs_codata":
+                Q_BETA_FORM_A_COS_PPM,
+            "Q_beta_substrate_tightening_vs_form_a_cos":
+                abs(Q_BETA_FORM_A_COS_PPM) / max(abs(Q_BETA_SUBSTRATE_PPM), 1e-12),
             "scale_constants": {
                 # Scale / unit inputs consumed by the framework
                 # (the same single CODATA-bounded constant the proton

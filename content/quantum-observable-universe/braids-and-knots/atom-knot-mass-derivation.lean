@@ -1,19 +1,31 @@
 /-
   End-to-end derivation of atomic binding energies (categorical form).
 
+  NOTATION (2026-05-17): the structural prefactor previously written
+  `ρ` in this block is the SDP-solution multiplicity, integer ∈ ℕ_{>0}.
+  Renamed to `ν_SDP` to disambiguate from `ρ_K ∈ ℝ_{>0}` (categorical
+  density) in prop:atomic-mass-gb-nf and from `ρ_λ` (Hoefsmit irrep
+  representation matrix).
+
   Statement: for a confined particle/atom 𝔥 with canonical Hecke
   element T_w ∈ H_{n_0}(q_0) (GB-NF), the categorical mass invariant
-       M(𝔥)  :=  ρ · tr_M(T_w)  =  ρ · Σ_λ y_λ(q) χ_λ(T_w)  ∈  ℚ(q)
+       M(𝔥)  :=  ν_SDP · m(𝔥)
+              =  ν_SDP · [|tr_M(T_w)| + tower(T_w) + tr_M(C_{dim_q})]
+              ∈  ℚ(q)
   is finite-sum and exact (Yekutieli at finite slice + GB spectral
   sequence collapse at E_2).  Applying the Archimedean realization
   functor:
        B(𝔥)  :=  m_e · M(𝔥) |_{q = q_0}  ∈  ℝ  (MeV)
   is the binding-energy prediction.
 
+  Caveat: at q_0 this structural form under-predicts m_p by ~173×;
+  closure requires the additional categorical density ρ_K from
+  prop:atomic-mass-gb-nf, whose substrate-only derivation is OPEN.
+
   No asymptotic content (no Reeb density, no Mostow + Gromov, no
   volume conjecture) enters the derivation.  These appear only as
   post-Archimedean naming convention: for hyperbolic K = ^T_w the
-  same number is conventionally written ρ · m_e · Vol_hyp(K).
+  same number is conventionally written ν_SDP · m_e · Vol_hyp(K).
 
   Refs: prop:atom-knot-mass-derivation, prf:atom-knot-mass-derivation,
         def:quantum-observable-universe, def:rigid-monoidal-category,
@@ -49,9 +61,9 @@ structure MassDerivationCertificate where
   n_0 : ℕ                            -- strand count
   T_w_braid_word : List ℤ            -- σ-generators (negative = inverse)
   closure_knot_name : String         -- e.g. "3_1", "B_3" (post-Archimedean naming only)
-  rho_factor : ℕ                     -- structural prefactor from Wedderburn multiplicity
+  nu_SDP_factor : ℕ                  -- structural prefactor: SDP-solution multiplicity in Wedderburn decomp (was rho_factor)
   markov_trace_at_q0_hp50 : String   -- ≥ 50-dps tr_M(T_w)|_{q=q_0}
-  B_pred_MeV : ℝ                     -- m_e · ρ · tr_M(T_w)|_{q=q_0}
+  B_pred_MeV : ℝ                     -- m_e · ν_SDP · m(𝔥)|_{q=q_0}
   B_AME_MeV : ℝ                      -- AME 2020 reference
   err_ppb : ℤ                        -- residual in ppb
   methodology : DerivationMethodology
@@ -100,7 +112,7 @@ def CategoricalMassInvariantFinite (T_w : Type*) : Prop := Nonempty T_w
 
 /-- **Substrate axiom (S1).** Yekutieli's non-abelian Stokes at finite
     slice depth + GB spectral sequence collapse at E_2 ⇒ the
-    categorical mass invariant `M(𝔥) = ρ · Σ_λ y_λ χ_λ(T_w)` is a
+    categorical mass invariant `M(𝔥) = ν_SDP · Σ_λ y_λ χ_λ(T_w)` is a
     **finite sum** in `ℚ(q^{1/2})`.
 
     The E_∞-page of the GB spectral sequence is the Wedderburn
@@ -175,14 +187,16 @@ def MassIdentity (cert : MassDerivationCertificate) : Prop :=
     realization ⇒ the mass identity `B(𝔥) := m_e · M(𝔥)|_{q=q_0}`
     holds.
 
-    The single-term form `M(𝔥) = ρ · tr_M(T_w)` is **shorthand**
-    for the multi-term decomposition (thm:knot-mass-formula-unified):
-    `M(𝔥) = ρ · (|tr_M(T_w)| + Σ Φ_q(|V̂_i|) + z²·Σ Φ_q(|V̂_iV̂_j|)
-              + Σ_{λ⊢n_0} 1/dim_q(λ))`.
+    The single-term form `M(𝔥) = ν_SDP · tr_M(T_w)` is **retired
+    shorthand** for the multi-term decomposition (thm:knot-mass-formula-unified):
+    `M(𝔥) = ν_SDP · (|tr_M(T_w)| + Σ Li_2^q(-|V̂_i|) + z²·Σ Li_2^q(-|V̂_iV̂_j|)
+              + Σ_{λ⊢n_0} 1/dim_q(λ))`
+    (symmetric Li_2^q per 2026-05-03 paper canon, replacing the
+    retired Faddeev Φ_q form).
 
     Ref: [manuscript] prop:atom-knot-mass-derivation §"Mass identity";
     prop:archimedean-realization-functor;
-    prop:wedderburn-trace-identity (ρ-multiplicity);
+    prop:wedderburn-trace-identity (ν_SDP-multiplicity);
     thm:knot-mass-formula-unified (multi-term M(𝔥)). -/
 axiom atom_knot_mass_derivation (cert : MassDerivationCertificate)
     (T_w : Type*) :
@@ -209,7 +223,7 @@ private def witnessCert (name : String) (Z A : ℕ) (B_pred B_AME : ℝ)
     n_0 := Z + A
     T_w_braid_word := []
     closure_knot_name := ""
-    rho_factor := 1
+    nu_SDP_factor := 1
     markov_trace_at_q0_hp50 := ""
     B_pred_MeV := B_pred
     B_AME_MeV := B_AME
@@ -437,8 +451,8 @@ inductive PipelineStage where
   | jointTowerSdp                    -- 1 — produces canonical T_w + filtration
   | gbFiltrationCertificate          -- 1b — slicing depth + jet-order log
   | symbolicMarkovTrace              -- 2 — tr_M via Wenzl bridge + q-MN (finite)
-  | rhoFromWedderburnMultiplicity    -- 3 — ρ from SDP-solution multiplicity
-  | categoricalMassInvariant         -- 4 — M(𝔥) = ρ · tr_M(T_w) ∈ ℚ(q)
+  | nuSDPFromWedderburnMultiplicity  -- 3 — ν_SDP from SDP-solution multiplicity (was rhoFromWedderburnMultiplicity)
+  | categoricalMassInvariant         -- 4 — M(𝔥) = ν_SDP · m(𝔥) ∈ ℚ(q)
   | archimedeanRealization           -- 5 — q ↦ q_0, multiply by m_e
   | ameCompare                       -- 6 — Δ to AME
   | methodologyTag                   -- 7 — record certificate
@@ -449,7 +463,7 @@ def pipelineStatus : PipelineStage → String
   | PipelineStage.jointTowerSdp => "GAP — design pending; certificate format locked"
   | PipelineStage.gbFiltrationCertificate => "OK PoC for H_2, H_3 (gb_filtration_jet_tracker.py)"
   | PipelineStage.symbolicMarkovTrace => "OK for n ≤ 12 (Wenzl + q-MN)"
-  | PipelineStage.rhoFromWedderburnMultiplicity => "GAP — depends on jointTowerSdp"
+  | PipelineStage.nuSDPFromWedderburnMultiplicity => "GAP — depends on jointTowerSdp"
   | PipelineStage.categoricalMassInvariant => "trivial once 1-3 are in"
   | PipelineStage.archimedeanRealization => "OK — MPFR via SymPy/mpmath at ≥ 50 dps"
   | PipelineStage.ameCompare => "OK — mass-table-ppb witness"

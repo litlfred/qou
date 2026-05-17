@@ -1,0 +1,74 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-17T02:40:06.521464+00:00",
+  "commitSha": "435bb3d7e22f5c1a2f696a8c853ad799f1d7feb8",
+  "assertions": [
+    {
+      "name": "T2_finite",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true
+    },
+    {
+      "name": "compound_T1_smaller_than_additive_T1",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "hydrogen-qshuffle-compound",
+  "scriptFile": "hydrogen_qshuffle_compound.py",
+  "scriptHash": "b7c51bc84489",
+  "scriptCommitSha": "unknown",
+  "description": "¹H mass via q-shuffle convolution (full-order, *_q)",
+  "data": {
+    "convention": "q-shuffle compound braid (*_q on disjoint strand sets ⇒ concatenation with boundary identity gen)",
+    "q_pinned": "1.1099785955541805752815940796095093779932822799587",
+    "compound_braid": {
+      "n_strands": 5,
+      "n_gens": 4,
+      "gens": [
+        {
+          "idx": 0,
+          "source": "proton_g0",
+          "V_hat_full": "0.9890073159292597737327090873425711234998226354167"
+        },
+        {
+          "idx": 1,
+          "source": "proton_g1",
+          "V_hat_full": "0.97107015865274369644467729606208246103317407697938"
+        },
+        {
+          "idx": 2,
+          "source": "BOUNDARY (identity)",
+          "V_hat_full": "1.0"
+        },
+        {
+          "idx": 3,
+          "source": "electron_g0",
+          "V_hat_full": "0.59384900067050962477184280318482122091510198537029"
+        }
+      ]
+    },
+    "compound_terms_cat": {
+      "T1": "0.57032990269054640463238607234678118153662615005543",
+      "T2": "2.964913362649013130160092712902443380131789195383",
+      "T3": "0.98873613873686238242362555983263294728681426782677",
+      "T4": "1.6362871034827517326799193655339867440321053551337",
+      "T5": "4.2555566663353856920207709358429786509171184735535",
+      "T6": "1.921135705204251",
+      "m_compound_sum": "12.336958879098810341916794646458822903904453441952"
+    },
+    "predictions_MeV": {
+      "m_H_pred_compound": "6.3041730419251706575468021876286680281877144128556",
+      "m_H_pred_additive": "5.92245",
+      "m_H_CODATA": "938.7830731",
+      "compound_residual_pct": "-99.328473933695048143327372251101928392003544059975",
+      "additive_residual_pct": "-99.37"
+    },
+    "comparison": "Compound vs additive: same gap pattern (~99 %); confirms the convention-choice (additive vs *_q) is not the source of the shortfall."
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-16T20:30:16.895396+00:00",
+  "commitSha": "d035f9afd752e6de145147e9979b49e2425dbb36",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 25,
+  "computation": "probe-derived-A-from-gs-normal-form",
+  "scriptFile": "probe_derived_A_from_gs_normal_form.py",
+  "scriptHash": "dec341eb532a",
+  "scriptCommitSha": "unknown",
+  "description": "Probe: derive the BW 'A' parameter from GS normal-form invariants of each particle's canonical braid word (electron σ_1^3 in H_2; proton/neutron B_3 = (σ_1 σ_2^{-1})^3 in H_3) and compare m_p prediction under each candidate A. Categorical, no fitting: A comes from gb_filtration_jet_tracker.reduce_braid; a_K from term5_v2_chirality.aK_v2; BW coefficients from bw_chirality_isotopes (q-integer-derived). T5 becomes a categorical functional of the braid alone — no nucleon ledger dependency — and T5(electron) is no longer '0 by convention' but the value at A(electron) = 1.",
+  "contentBlock": "prop:mass-endomorphism-tower",
+  "auditOnly": "docs/audits/2026-05-16-t1-t4-tower-closure-plan.md",
+  "parameters": {
+    "q_0_50dps": "1.1099785955541805752815940796095093779932822799587"
+  },
+  "data": {
+    "derived_braid_invariants": {
+      "electron": {
+        "A_max_grade": 1,
+        "A_jet_steps": 4,
+        "A_hecke_fires": 2,
+        "filtration_shape": {
+          "1": 1,
+          "0": 1
+        }
+      },
+      "proton": {
+        "A_max_grade": 2,
+        "A_jet_steps": 16,
+        "A_hecke_fires": 6,
+        "filtration_shape": {
+          "1": 2,
+          "0": 1,
+          "2": 2
+        }
+      },
+      "neutron": {
+        "A_max_grade": 2,
+        "A_jet_steps": 16,
+        "A_hecke_fires": 6,
+        "filtration_shape": {
+          "1": 2,
+          "0": 1,
+          "2": 2
+        }
+      }
+    },
+    "m_p_pred_per_convention": [
+      {
+        "convention": "A = nucleon count (legacy)",
+        "A_proton": 1,
+        "A_electron": 0,
+        "T5_proton_MeV": "-18.42226291573287653470777494998015026578105151667",
+        "T5_electron_MeV": "0.0",
+        "m_p_hecke_50dps": "1178960.7500802224188906024096813949443454096105846",
+        "m_e_hecke_50dps": "631.80538094293533790731118407440474449081643552148",
+        "ratio_p_over_e": "1866.0188495398492878587589023441474051677651086952",
+        "m_p_pred_MeV": "953.5336727950709692540735474010118626859525443899",
+        "residual": "0.016265627878795504352108859391620786638271198927292",
+        "residual_ppm": "16265.627878795504352108859391620786638271198927292"
+      },
+      {
+        "convention": "A = max GS filtration grade",
+        "A_proton": 2,
+        "A_electron": 1,
+        "T5_proton_MeV": "2.1745849881628824364676373264062794554910640770114",
+        "T5_electron_MeV": "10.269993221238274818069266103610096279977177745638",
+        "m_p_hecke_50dps": "1179001.4172803626746162806050269448675548250382644",
+        "m_e_hecke_50dps": "651.90325633238237066162362660214398207628931711085",
+        "ratio_p_over_e": "1808.5527351304280478192080879254001119920251342633",
+        "m_p_pred_MeV": "924.16854867127684548616512276138713555780725198214",
+        "residual": "-0.015031396187411823683972772564430394557238374215286",
+        "residual_ppm": "-15031.396187411823683972772564430394557238374215286"
+      },
+      {
+        "convention": "A = jet-order steps",
+        "A_proton": 16,
+        "A_electron": 4,
+        "T5_proton_MeV": "339.57795379036520233010478353966466698346014079678",
+        "T5_electron_MeV": "22.073337291356929687345330840095312718267887849217",
+        "m_p_hecke_50dps": "1179661.086508868127308759246436679895554161465002",
+        "m_e_hecke_50dps": "674.87644755889910448699486222214170899102241749798",
+        "ratio_p_over_e": "1747.9660029266534672817538453674336026438862383227",
+        "m_p_pred_MeV": "893.20879213121684879483556914122093514574309170237",
+        "residual": "-0.048027961821985561733609559300245895587397634494744",
+        "residual_ppm": "-48027.961821985561733609559300245895587397634494744"
+      },
+      {
+        "convention": "A = Hecke-relation firings",
+        "A_proton": 6,
+        "A_electron": 2,
+        "T5_proton_MeV": "84.35303127509272408650308107954796959906279576002",
+        "T5_electron_MeV": "12.328245060136580595807450550073542981993163175857",
+        "m_p_hecke_50dps": "1179161.6672131333133142231804468687383939879051496",
+        "m_e_hecke_50dps": "656.29132896171570952583975002270081408672207431375",
+        "ratio_p_over_e": "1796.7046267068978373464655620749887342005588963779",
+        "m_p_pred_MeV": "918.11417770736675264131468843147906443831468546226",
+        "residual": "-0.021484077707314037594513911995854564568853064087661",
+        "residual_ppm": "-21484.077707314037594513911995854564568853064087661"
+      }
+    ],
+    "generic_statement": {
+      "claim": "For any braid β ∈ H_n(q): T5(β) is a categorical functional of β alone, with A(β) derived from the GS normal form of β and BW coefficients as q-integer expressions in q_0.",
+      "ingredients": {
+        "A": "max filtration grade of GS normal form",
+        "a_K": "V2 Gram-matrix chirality τ(β · β_mirror^{-1})",
+        "Z, N": "flavour-decoration quark counts",
+        "BW_coefficients": "q-integer × m_e (categorical, from bw_chirality_isotopes)"
+      },
+      "no_fitting": true,
+      "no_codata_anchor_in_chain": true,
+      "scope": "A=1 atoms verified (electron, proton, neutron); A≥2 extension is a research follow-on"
+    },
+    "upstream_witness_hashes": [
+      {
+        "path": "terms-2-3-atom-per-gen-mpfr-50dps.witness.json",
+        "sha256": "aa0d876e50e8e016db530e39bc6cd6b3fe3828591d1f31c389968da85c082b65",
+        "size_bytes": 5093,
+        "commitSha": "e08bf638aecafd488d2c114218c42700425722de",
+        "scriptCommitSha": "unknown",
+        "computedAt": "2026-05-16T05:42:41.130150+00:00"
+      }
+    ]
+  }
+}

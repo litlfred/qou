@@ -68,8 +68,14 @@ def _sha256_of(path: Path) -> str | None:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def check_witness(witness_path: Path) -> list[dict]:
-    """Return list of drift records for this witness (empty = clean)."""
+def check_witness(witness_path: Path) -> tuple[list[dict], bool]:
+    """Return (drift_records, has_deps).
+
+    drift_records is empty when the witness is clean.  has_deps is
+    True iff the witness declared `upstream_witness_hashes` (used by
+    the caller to count covered witnesses without re-reading the
+    file).
+    """
     try:
         w = json.loads(witness_path.read_text())
     except (json.JSONDecodeError, UnicodeDecodeError) as e:
@@ -77,11 +83,19 @@ def check_witness(witness_path: Path) -> list[dict]:
             "downstream":  witness_path.name,
             "kind":        "unreadable",
             "detail":      str(e),
-        }]
-    di = w.get("derivation_inputs", {})
-    upstream_hashes = di.get("upstream_witness_hashes")
+        }], False
+    # Two canonical locations for the hash array:
+    #   1. derivation_inputs.upstream_witness_hashes — hand-rolled
+    #      witnesses that embed a derivation_inputs block (e.g.
+    #      low-isotope-mass-table)
+    #   2. data.upstream_witness_hashes — WitnessBuilder-backed
+    #      witnesses (the standard slot for builder.add_upstream)
+    upstream_hashes = (
+        w.get("derivation_inputs", {}).get("upstream_witness_hashes")
+        or w.get("data", {}).get("upstream_witness_hashes")
+    )
     if not upstream_hashes:
-        return []  # no declared dependencies, nothing to check
+        return [], False  # no declared dependencies, nothing to check
     drifts: list[dict] = []
     for entry in upstream_hashes:
         ups_name = entry.get("path")
@@ -107,7 +121,7 @@ def check_witness(witness_path: Path) -> list[dict]:
                 "current_sha256":  current_sha,
                 "recorded_at":     entry.get("computedAt"),
             })
-    return drifts
+    return drifts, True
 
 
 def main() -> int:
@@ -122,16 +136,11 @@ def main() -> int:
     all_drifts: list[dict] = []
     for w in witnesses:
         n_checked += 1
-        drifts = check_witness(w)
+        drifts, has_deps = check_witness(w)
         if drifts:
             all_drifts.extend(drifts)
-        # Cheap heuristic: count witnesses that declare deps.
-        try:
-            body = json.loads(w.read_text())
-            if body.get("derivation_inputs", {}).get("upstream_witness_hashes"):
-                n_with_deps += 1
-        except Exception:
-            pass
+        if has_deps:
+            n_with_deps += 1
 
     print(f"Checked {n_checked} witnesses; "
           f"{n_with_deps} declare upstream_witness_hashes; "
@@ -148,9 +157,10 @@ def main() -> int:
             if "recorded_at" in d and d["recorded_at"]:
                 print(f"      recorded_at: {d['recorded_at']}")
 
-    if args.strict:
-        return 1 if all_drifts else 0
-    return len(all_drifts)
+    # Signal failure by default when drifts are detected so CI catches
+    # inconsistencies; --strict is preserved for back-compat but yields
+    # the same exit code (gemini #663: avoid silent-success regression).
+    return 1 if all_drifts else 0
 
 
 if __name__ == "__main__":
