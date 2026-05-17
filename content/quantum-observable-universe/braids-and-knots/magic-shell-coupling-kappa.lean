@@ -89,13 +89,22 @@ theorem qBracket_zero (q : ℝ) : qBracket q 0 = 0 := by
   unfold qBracket
   simp
 
-/-- The Hecke deformation `h(q) = q − q⁻¹` is positive for `q > 1`. -/
+/-- The Hecke deformation `h(q) = q − q⁻¹` is positive for `q > 1`.
+
+    Uses the same `inv_mul_cancel₀ + mul_lt_mul'` contradiction
+    pattern as `QOU.MathlibExt.QPartitionCombinatorics.q_sub_q_inv_pos_at_q_gt_one`. -/
 theorem hParam_pos {q : ℝ} (hq : 1 < q) : 0 < hParam q := by
   unfold hParam
-  have h1 : 0 < q := lt_trans zero_lt_one hq
-  have h2 : q⁻¹ < 1 := by
-    rw [inv_lt_one_iff_of_pos h1]
-    exact hq
+  have hq_pos : 0 < q := lt_trans zero_lt_one hq
+  have hq_inv_pos : 0 < q⁻¹ := inv_pos.mpr hq_pos
+  have hq_ne : q ≠ 0 := ne_of_gt hq_pos
+  have h_inv_mul : q⁻¹ * q = 1 := inv_mul_cancel₀ hq_ne
+  have hq_inv_lt_one : q⁻¹ < 1 := by
+    by_contra h
+    push_neg at h
+    have : (1 : ℝ) * 1 < q⁻¹ * q := mul_lt_mul' h hq zero_le_one hq_inv_pos
+    rw [one_mul, h_inv_mul] at this
+    exact lt_irrefl 1 this
   linarith
 
 /-- The Hecke energy scale `E₀(q, m_e) > 0` when `m_e > 0` and `q > 1`. -/
