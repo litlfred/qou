@@ -1,0 +1,48 @@
+{
+  "engine": "scipy+numpy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-17T05:05:38.479699+00:00",
+  "commitSha": "9f2ef96f4370d3885aec4e4da2168d3cae50c82c",
+  "assertions": [
+    {
+      "name": "refactor_implemented",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 19,
+  "computation": "picard-lefschetz-standard-practice-refactor",
+  "scriptFile": "picard_lefschetz_standard_practice_refactor.py",
+  "scriptHash": "cc2732bdd329",
+  "scriptCommitSha": "unknown",
+  "description": "Research scaffold: standard PL along-thimble refactor",
+  "data": {
+    "q_0": 1.1099785955541805,
+    "z_c_principal": {
+      "re": 0.1058295861882663,
+      "im": -0.9371389378389038
+    },
+    "thimble_length": 50001,
+    "thimble_endpoint": {
+      "re": 25.12302555829467,
+      "im": -26.215248337612355
+    },
+    "I_baryon": {
+      "re": -104.19279296384124,
+      "im": 102.78488093676408
+    },
+    "I_electron": {
+      "re": -670.7269404358087,
+      "im": 26.5948853720577
+    },
+    "ratio_A_q0": 0.21803774024158165,
+    "m_p_pred_standard_PL_MeV": 83.16367975452556,
+    "residual_pct": 91.13650711728899,
+    "status": "scaffold"
+  },
+  "caveats": [
+    "Thimble parametrisation uses simple Euler integration; production refactor needs adaptive step size + intersection-number computation."
+  ]
+}

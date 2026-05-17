@@ -1,0 +1,35 @@
+{
+  "engine": "python+numpy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-17T05:05:38.716443+00:00",
+  "commitSha": "9f2ef96f4370d3885aec4e4da2168d3cae50c82c",
+  "assertions": [
+    {
+      "name": "flavor_extension_implemented",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "probe-pl-flavor-extended-cubic",
+  "scriptFile": "probe_pl_flavor_extended_cubic.py",
+  "scriptHash": "3d30d5404e85",
+  "scriptCommitSha": "unknown",
+  "description": "Research scaffold: PL flavor-extension for substrate m_n",
+  "data": {
+    "q_0": 1.1099785955541805,
+    "extensions_tested": [
+      "E1_two_cubics",
+      "E2_degree_6_polynomial",
+      "E3_mass_shifted_cubic"
+    ],
+    "status": "scaffold; all extensions hit the (μ_d - μ_u) substrate-derivation bottleneck — same open piece as the m_n difference formula",
+    "E3_results": {
+      "uud_root_product": "-2.4612762879999996",
+      "udd_root_product": "-2.461276288000001",
+      "relative_diff_pct": "5.431676086003341e-14"
+    }
+  }
+}

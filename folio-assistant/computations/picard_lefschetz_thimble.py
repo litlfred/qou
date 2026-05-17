@@ -1013,15 +1013,27 @@ def main():
             "m_p_predicted_MeV": best_limit_result["m_p_pred"],
             "m_p_CODATA_MeV": M_P_MEV,
             "error_percent": best_limit_result["err_pct"],
+            "derivation_status": "substrate_plus_best_fit_integration_limit",
+            "honest_substrate_only_residual_pct_using_z0": "0.836",
+            "honest_substrate_only_residual_pct_using_hbar_q": "0.843",
+            "audit_doc": (
+                "docs/audits/2026-05-17-substrate-m-p-m-n-compute-audit.md "
+                "+ docs/audits/2026-05-17-m-n-substrate-investigation-and-lit-search.md"
+            ),
         })
 
         w.add_assertion(
-            "m_p from ∏ dc_k/dz",
+            "m_p from ∏ dc_k/dz (best-fit limit; NOT pure substrate)",
             computed=round(best_limit_result["m_p_pred"], 3),
             expected=round(M_P_MEV, 3),
             tolerance=1.0,
             unit="MeV",
-            source="CODATA 2018 proton mass",
+            source=(
+                "CODATA 2018 proton mass.  AUDIT 2026-05-17: assertion "
+                "uses post-hoc best-fit integration limit "
+                "(4-q)/(4q+3) — NOT a substrate-only prediction.  "
+                "Substrate-only limits z_0 / ℏ_q give 0.84 % residual."
+            ),
         )
 
     w.add_caveat(
@@ -1037,6 +1049,19 @@ def main():
         "∏_k dc_k/dz yields 0.0006% agreement with CODATA m_p on the real axis. "
         "Theoretical justification for this prescription (why product, not sum) "
         "and for the integration limit a = (4-q)/(4q+3) remains to be established."
+    )
+    w.add_caveat(
+        "HONEST TAG (2026-05-17 audit, commit 8732de45): the 6 ppm m_p closure "
+        "is NOT a pure substrate prediction.  It is 'substrate + best-fit "
+        "integration limit'.  The integration limit a = (4-q)/(4q+3) was "
+        "SELECTED post-hoc from 6 candidates by minimising |m_p_pred - "
+        "M_P_MEV| (script lines 887-914).  Substrate-only PL m_p using "
+        "categorically-clean limits (z_0 or ℏ_q) closes at 0.84% residual "
+        "(~930 MeV), not 6 ppm.  See docs/audits/2026-05-17-substrate-m-p-m-n-"
+        "compute-audit.md and docs/audits/2026-05-17-m-n-substrate-"
+        "investigation-and-lit-search.md for the lit-search context "
+        "(standard PL practice integrates along thimbles to infinity, "
+        "not over finite real-axis intervals)."
     )
 
     w.save()
