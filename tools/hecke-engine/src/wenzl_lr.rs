@@ -48,7 +48,7 @@
 
 use crate::laurent_poly_q::LaurentPolyQ;
 use crate::littlewood_richardson::lr_coefficient;
-use crate::seminormal::partitions_of;
+use crate::seminormal::{chi_lambda_braid, partitions_of};
 use crate::seminormal_mn::chi_lambda_braid_qdef;
 use rayon::prelude::*;
 
@@ -183,6 +183,99 @@ pub fn chi_factor(lambda: &[usize], factor: &WenzlFactor) -> LaurentPolyQ {
     // [`averaging_denominator`] for the caller to divide out at
     // the witness layer (where rational arithmetic is acceptable).
     chi_sum
+}
+
+/// **Canonical χ^λ for a single braid at H_n** (numerical q, f64).
+///
+/// Unlike [`chi_factor`] / [`chi_via_lr_kway`] — which compute
+/// χ^λ for a *tensor-product* braid via LR decomposition — this
+/// function computes χ^λ(β) directly for an arbitrary single
+/// braid β ∈ H_n via the Hoefsmit seminormal evaluation
+/// ([`seminormal::chi_lambda_braid`]), at numerical q.  The
+/// `seminormal::chi_lambda_braid` path has no negative-generator
+/// bailout (it works in f64 throughout), so it scales to atomic
+/// braids at H_12 (⁴He) and beyond where the symbolic-q path
+/// [`chi_lambda_braid_qdef`] would panic.
+///
+/// `word_with_averaged` is the canonical-decomposition wire
+/// format: `[(Crossing, gen_1based), ...]`.  Averaged crossings
+/// are expanded into 2^k pure-σ/σ⁻¹ sub-words via [`chi_factor`]'s
+/// same recipe; per-sub-word f64 χ^λ values are summed (caller
+/// divides by [`averaging_denominator`] to recover the averaged
+/// value).
+///
+/// **Use case:** computing canonical |tr_M(β_atomic(Z, N))| at H_{3A}
+/// without the broken tensor-product LR factorisation.  Combined
+/// with `wedderburn_jones_markov.y_lambda_at(n, q_0)` in a
+/// downstream Σ_λ y_λ · χ^λ combiner, this yields the canonical
+/// Markov trace at the substrate parameter.
+///
+/// Reference: `docs/audits/2026-05-17-knot-fusion-step1-audit.md`
+/// §"Gap to canonical |tr_M| at 1 ppb".
+pub fn chi_lambda_canonical_h_n_f64(
+    lambda: &[usize],
+    n_strands: usize,
+    word_with_averaged: &[CrossingPair],
+    q: f64,
+) -> f64 {
+    let avg_positions: Vec<usize> = word_with_averaged
+        .iter()
+        .enumerate()
+        .filter(|(_, (c, _))| *c == Crossing::Averaged)
+        .map(|(i, _)| i)
+        .collect();
+    let k = avg_positions.len();
+    if k == 0 {
+        let plain = to_plain_word(word_with_averaged);
+        return chi_lambda_braid(lambda, &plain, q);
+    }
+    if k > 20 {
+        panic!(
+            "chi_lambda_canonical_h_n_f64: {} averaged crossings (> 20 cap \
+             = 2^20 ≈ 10^6 sub-words); refusing to expand",
+            k
+        );
+    }
+    let total = 1usize << k;
+    (0..total)
+        .into_par_iter()
+        .map(|mask| {
+            let mut sub_word = word_with_averaged.to_vec();
+            for (bit, &pos) in avg_positions.iter().enumerate() {
+                let take_positive = (mask >> bit) & 1 == 0;
+                sub_word[pos].0 = if take_positive {
+                    Crossing::Sigma
+                } else {
+                    Crossing::SigmaInv
+                };
+            }
+            let plain = to_plain_word(&sub_word);
+            chi_lambda_braid(lambda, &plain, q)
+        })
+        .reduce(|| 0.0_f64, |a, b| a + b)
+}
+
+/// All χ^λ values at H_n for λ ⊢ n, computed in parallel via
+/// [`chi_lambda_canonical_h_n_f64`].
+///
+/// Returns `Vec<(partition, chi_value_unnormalised)>` where the
+/// values are the UNNORMALISED 2^k sums (averaging_denominator
+/// applied by caller).
+pub fn chi_lambda_canonical_all_partitions_f64(
+    n_strands: usize,
+    word_with_averaged: &[CrossingPair],
+    q: f64,
+) -> Vec<(Vec<usize>, f64)> {
+    let parts = partitions_of(n_strands);
+    parts
+        .par_iter()
+        .map(|lambda| {
+            let chi = chi_lambda_canonical_h_n_f64(
+                lambda, n_strands, word_with_averaged, q,
+            );
+            (lambda.clone(), chi)
+        })
+        .collect()
 }
 
 /// Total averaging denominator for a list of factors: the product
@@ -410,6 +503,18 @@ mod tests {
         assert_eq!(averaging_denominator(&[f.clone()]), 4);
         // Two such factors → 16
         assert_eq!(averaging_denominator(&[f.clone(), f]), 16);
+    }
+
+    #[test]
+    fn canonical_chi_f64_matches_seminormal_on_empty_word() {
+        // χ^(2)(identity) should equal dim S^(2) = 1.
+        let chi = chi_lambda_canonical_h_n_f64(&[2], 2, &[], 1.5);
+        assert!((chi - 1.0).abs() < 1e-12,
+                "χ^(2)(id) at H_2 = {}, expected 1.0", chi);
+        // χ^(1,1)(identity) = 1.
+        let chi2 = chi_lambda_canonical_h_n_f64(&[1, 1], 2, &[], 1.5);
+        assert!((chi2 - 1.0).abs() < 1e-12,
+                "χ^(1,1)(id) at H_2 = {}, expected 1.0", chi2);
     }
 
     #[test]
