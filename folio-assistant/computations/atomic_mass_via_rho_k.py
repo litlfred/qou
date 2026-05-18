@@ -81,6 +81,33 @@ from codata_constants import M_E_MEV, M_P_MEV, M_N_MEV  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import load_and_hash_upstream  # noqa: E402
 
+# ── Substrate-pure nucleon anchors (break the CAL tautology) ────
+#
+# Per owner: "why proton tautology? should not be."
+# atomic_mass_via_rho_k previously used CODATA m_p / m_n as CAL
+# anchors via Q_β = m_n - m_p - m_e, which made M_pred(p) =
+# m_p_CODATA and M_pred(n) = m_n_CODATA tautological (0 % residual
+# = calibration, not derivation).
+#
+# As of PR #690 the substrate-pure predictions are the production
+# default:
+#
+#   m_p_substrate  ← C2 inflection at d²A/da² = 0
+#                     (probe_a_selection_criteria, merged)
+#   m_n_substrate  ← m_p_substrate · (1 + (q-1)²·(1-q⁻⁴)·(1+ℏ_q³)/3)
+#                     (prop:flavor-split-substrate, merged in #663;
+#                      sub-leading (1+ℏ_q³) correction via centralized
+#                      _li_2_q_util.flavor_split_subleading helper)
+#
+# Backwards compatibility: set the env var
+#   LEGACY_CODATA_NUCLEON_ANCHORS=1
+# to fall back to the CAL tautology (preserves the 0 % residual on
+# p/n for downstream calibration-check consumers).
+import os as _os  # noqa: E402
+
+from _li_2_q_util import flavor_split_subleading as _flavor_split  # noqa: E402
+
+
 # Module-level accumulator for upstream-witness hash records.
 # Each call to ``_load_upstream(path)`` appends one entry; the
 # accumulated list is emitted under ``data.upstream_witness_hashes``
@@ -108,6 +135,67 @@ def _load_upstream(path: Path) -> dict:
     _UPSTREAM_HASHES.append(hr)
     _UPSTREAM_CACHE[key] = body
     return body
+
+
+def _load_substrate_m_p_MeV() -> mp.mpf:
+    """Read C2-inflection m_p from the merged probe witness; fall back
+    to the published value (938.9182 MeV at q_0) if the witness is
+    absent or its schema is unexpected.
+
+    m_p_pred is in MeV; the value is absolute and does NOT require
+    E_0 scaling (gemini #690 documentation note).
+    """
+    c2_wit = HERE / "probe-a-selection-criteria.witness.json"
+    if not c2_wit.exists():
+        return mp.mpf("938.9182")
+    # Load + hash so witness_dependency_drift catches changes to the
+    # upstream C2 witness (Copilot review on PR #757).
+    c2_body = _load_upstream(c2_wit)
+    c2_data = c2_body.get("data", {})
+    # Pin to the explicit C2 inflection criterion (`d2A/da2=0`) rather
+    # than the moving `closest_to_post_hoc` summary — the latter could
+    # shift if a new criterion was added that happened to match
+    # `a_post_hoc` more closely (Copilot review on PR #757).
+    criteria = c2_data.get("criteria_tested", [])
+    c2_entry = next(
+        (c for c in criteria if c.get("criterion", "").startswith("C2 d2A/da2=0")),
+        None,
+    )
+    if c2_entry is None:
+        # Fallback to the legacy summary if no explicit C2 row exists
+        # (shouldn't happen on a normally-emitted witness).
+        c2_entry = c2_data.get("closest_to_post_hoc") or {}
+    return mp.mpf(str(c2_entry.get("m_p_pred") or "938.9182"))
+
+
+# Module-level constants — always defined regardless of mode
+# (gemini #690 Rule-2 fix: no scope-dependent NameError risk).
+# Tight truthy parse (gemini #690 HIGH: empty string / "0" / "false"
+# should NOT trigger legacy mode; only "1" / "true" / "yes" do).
+_USE_LEGACY = _os.environ.get(
+    "LEGACY_CODATA_NUCLEON_ANCHORS", ""
+).strip().lower() in ("1", "true", "yes", "on")
+if _USE_LEGACY:
+    # CODATA tautology mode (back-compat).  M_P_MEV / M_N_MEV remain
+    # the codata_constants values imported above.
+    _NUCLEON_ANCHOR_SOURCE = (
+        "CODATA (LEGACY CAL anchors via Q_β = m_n - m_p - m_e; "
+        "M_pred(p), M_pred(n) tautological)"
+    )
+else:
+    # Substrate-pure production mode (default).
+    _Q = mp.mpf(Q_50_DIGIT_STR)
+    _QI = 1 / _Q
+    _m_p_substrate = _load_substrate_m_p_MeV()
+    # Use the centralized flavor_split_subleading helper from
+    # _li_2_q_util — single source of truth (gemini #690 review).
+    _m_n_substrate = _m_p_substrate * (1 + _flavor_split(_Q, _QI))
+    M_P_MEV = _m_p_substrate
+    M_N_MEV = _m_n_substrate
+    _NUCLEON_ANCHOR_SOURCE = (
+        "substrate-pure (C2 inflection + prop:flavor-split-substrate "
+        "with (1+ℏ_q³) sub-leading correction; no CODATA m_p / m_n input)"
+    )
 
 # ── CODATA reference data (kept identical to legacy table) ─────
 ATOMS_CODATA = {
@@ -289,9 +377,10 @@ def main() -> int:
             print(f"    {atom}: {st[:80]}{'...' if len(st) > 80 else ''}")
 
     print(f"\n  Calibration anchors:")
-    print(f"    m_e = {mp.nstr(M_E_MEV, 8)} MeV (CODATA)")
-    print(f"    m_p = {mp.nstr(M_P_MEV, 8)} MeV (CODATA, anchor 1)")
-    print(f"    m_n = {mp.nstr(M_N_MEV, 8)} MeV (CODATA, anchor 2 via Q_β)")
+    print(f"    m_e = {mp.nstr(M_E_MEV, 8)} MeV (CODATA, CAL-1 always)")
+    print(f"    nucleon anchor source: {_NUCLEON_ANCHOR_SOURCE}")
+    print(f"    m_p = {mp.nstr(M_P_MEV, 8)} MeV")
+    print(f"    m_n = {mp.nstr(M_N_MEV, 8)} MeV")
 
     print(f"\n  {'atom':<5}{'Z':>2}{'N':>2}  "
           f"{'|tr_M|':>14}  {'ρ_K^LO':>14}  "
@@ -340,6 +429,13 @@ def main() -> int:
             row["tr_M_convention_status"] = flag
         rows.append(row)
 
+    # Fix #5 (S2) — record shadow-price upstream so the LP-dual a_K
+    # machinery shows in this script's dependency chain (sweep audit
+    # docs/audits/2026-05-18-compute-integration-sweep.md).
+    _shadow_price_path = HERE / "a-K-via-lp-dual-hecke-basis.witness.json"
+    if _shadow_price_path.exists():
+        _load_upstream(_shadow_price_path)
+
     # ── Compare to legacy E_0-anchored predictions ─────────────
     legacy_path = HERE / "atomic-braid-mass-table.witness.json"
     legacy_compare = []
@@ -383,8 +479,8 @@ def main() -> int:
             "Atomic mass-table predictions using the resolved ρ_K assembly "
             "M(K) = ρ_K · m_e · |tr_M(K)| from PR #564 §3.3a "
             "(Options A + C: no additive T6, Mittag-Leffler complementarity). "
-            "Calibration anchors: m_e (CODATA), m_p (CODATA), m_n (CODATA via "
-            "Q_β = m_n - m_p - m_e). Reads |tr_M(K)| from "
+            f"Calibration anchors: m_e (CODATA, CAL-1); nucleon "
+            f"anchors = {_NUCLEON_ANCHOR_SOURCE}. Reads |tr_M(K)| from "
             "atomic-tr-m-mpfr-50dps.witness.json. Atoms not in that witness "
             "are flagged tr_M_unavailable rather than fabricating values. "
             "Direct successor to atomic_braid_mass_table.py — see the "
@@ -409,6 +505,11 @@ def main() -> int:
         },
         "audit_reference": "AUDIT-DEEP-2026-05.md §3.3a (P4″)",
         "pr": "#564",
+        # Fix #5 (sweep audit 2026-05-18) — declare the shadow-price
+        # producer block in the dependency chain.
+        "reference_blocks": [
+            "prop:mass-coefficient-shadow-price",
+        ],
     }
     from witness_base import WitnessBuilder
     out_path = (

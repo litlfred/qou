@@ -2,7 +2,7 @@
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "computation": "e0-calibration-audit",
   "description": "Audit of E_0 / Q_β(n) calibration constants across folio-assistant/computations. Reports value-precision drift, anchor-of-pinning violations vs CAL-3, and the PDG-derived uncertainty floor on every E_0-dependent quantity.",
-  "computedAt": "2026-05-18T16:25:44.215956+00:00",
+  "computedAt": "2026-05-18T18:45:04.166201+00:00",
   "reference_blocks": [
     "prop:three-calibration-inputs",
     "rem:calibration-inputs"
@@ -26,7 +26,7 @@
     "literal_0_782": [
       {
         "file": "folio-assistant/computations/derived_masses.py",
-        "line": 38,
+        "line": 52,
         "pattern": "literal_0_782",
         "match": "0.782",
         "context": "(vs CODATA 0.782; 0.75% err)",
@@ -34,7 +34,7 @@
       },
       {
         "file": "folio-assistant/computations/derived_masses.py",
-        "line": 449,
+        "line": 463,
         "pattern": "literal_0_782",
         "match": "0.782",
         "context": "\"0.788 MeV vs CODATA 0.782 MeV at 0.75%).\",",
@@ -284,7 +284,7 @@
       },
       {
         "file": "folio-assistant/computations/paper_six_term_isotope_sweep.py",
-        "line": 921,
+        "line": 942,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
         "context": "#   T1 (descended Markov):  E_0_β = 0.78233341 MeV per cat unit",
@@ -618,7 +618,7 @@
       },
       {
         "file": "folio-assistant/computations/codata_constants.py",
-        "line": 130,
+        "line": 139,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "_q_beta_residual = abs(Q_BETA_MEV - _q_beta_from_codata_check)",
@@ -626,7 +626,7 @@
       },
       {
         "file": "folio-assistant/computations/codata_constants.py",
-        "line": 135,
+        "line": 144,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "+ Q_BETA_MEV_ERR ** 2",
@@ -634,7 +634,7 @@
       },
       {
         "file": "folio-assistant/computations/codata_constants.py",
-        "line": 189,
+        "line": 198,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "\"Q_BETA_MEV\", \"Q_BETA_MEV_ERR\",",
@@ -642,7 +642,7 @@
       },
       {
         "file": "folio-assistant/computations/codata_constants.py",
-        "line": 189,
+        "line": 198,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "\"Q_BETA_MEV\", \"Q_BETA_MEV_ERR\",",
@@ -650,7 +650,7 @@
       },
       {
         "file": "folio-assistant/computations/derived_masses.py",
-        "line": 110,
+        "line": 124,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "from codata_constants import M_E_MEV, Q_BETA_MEV  # noqa: F401  (re-export)",
@@ -658,7 +658,7 @@
       },
       {
         "file": "folio-assistant/computations/derived_masses.py",
-        "line": 489,
+        "line": 503,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "\"CAL-3_Q_beta_MeV\": str(Q_BETA_MEV) + \" (cross-check only; predicted by framework below)\",",

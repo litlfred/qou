@@ -11,7 +11,7 @@
   "scriptHash": "075ea593e43a",
   "scriptCommitSha": "2bcf340fec1ade81e0fccfa36480c42f55775118",
   "description": "M4 mass table: full N=4 categorical Q_β chain + interface-type-resolved magic-shell coupling correction (from PR #656 v6 probe). Tests whether adding the Δ_coupling(Z,N) = [A−2]_q·E_0·log(1/h) + (n_pp-n_nn)·κ correction closes the structural T/³He Z↔N asymmetry that the Q_β chain alone cannot reach (per M3 finding).",
-  "contentBlock": "prop:magic-shell-coupling-witness",
+  "contentBlock": "prop:magic-shell-coupling-kappa",
   "parameters": {
     "kappa_per_excess_MeV": -1.0707907503265857,
     "kappa_source": "empirical_from_pr656_v6"

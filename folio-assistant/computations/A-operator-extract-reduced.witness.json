@@ -26,7 +26,7 @@
   "scriptHash": "c40b3d1941b5",
   "scriptCommitSha": "bbc410b27c86ff7ff33b160f656b93b445756c11",
   "description": "Reduced-basis A^λ_{μν}(I) extraction.  Builds M once per λ, computes SVD, solves the reduced lstsq in the rank-r subspace (r << ambient n_unknowns).  Reuses the SAME SVD decomposition across the three interfaces (pp, nn, pn) since M is interface-independent — a 3× compute win over independent dense lstsq's.  Verifies the linearity identity at the reduced-coefficient level: coeffs_pn - (coeffs_pp + coeffs_nn) / 2 = 0 exactly (since linearity holds on the RHS chi vector before SVD).",
-  "contentBlock": "conj:operator-valued-sublemma-2-1",
+  "contentBlock": "prop:crystal-r-matrix-sub-lemma",
   "auditOnly": "docs/audits/2026-05-09-A-operator-rank-structure.md",
   "parameters": {
     "A": 3,

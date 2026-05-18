@@ -1,5 +1,5 @@
+#!/usr/bin/env python3
 """
-
 CLASS-A acknowledged-anchor banner (per Workplan-0b/M_N):
 This script imports M_*_MEV_VALIDATION constants from
 `codata_constants.py` as production inputs (not just as
@@ -11,10 +11,9 @@ audit (`canonical-script-input-audit`) classifies this script
 as "with-substrate-splitting" or "anchor-pending"; reviewers
 should treat the M_*_MEV_VALIDATION usage as CAL-3-ish anchor,
 NOT as an independent calibration input.
-"""
+═══════════════════════════════════════════════════════════════
 
-#!/usr/bin/env python3
-"""Audit: ΔS(n−p) = (Q_β + m_e)/m_e / (Vol(ℬ_3)/ℏ_q²) — derivation chain.
+Audit: ΔS(n−p) = (Q_β + m_e)/m_e / (Vol(ℬ_3)/ℏ_q²) — derivation chain.
 
 Verifies that the 1015 ppm residual in `derive_m_baryon_volume_form.py`'s
 ΔS_derived vs ΔS_empirical_target is NOT a coincidence: it is

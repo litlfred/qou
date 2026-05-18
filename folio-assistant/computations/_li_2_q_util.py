@@ -134,3 +134,23 @@ def compute_t2_t3_from_vols(
             t3 = t3 + li_2_q(mp.fabs(vi * vj), q, q_inv)
     t3 = t3 * z ** 2
     return t2, t3
+
+
+# ── prop:flavor-split-substrate helpers (from #690) ────────────
+
+
+def flavor_split_leading(q: mpf, q_inv: mpf | None = None) -> mpf:
+    """Δm / M_N leading-order substrate formula (prop:flavor-split-substrate).
+
+    Δm / M_N = (q − 1)² · (1 − q⁻⁴) / 3 = ℏ_q² · h_q · [2]_q / 3
+    """
+    qi = mpf(1) / q if q_inv is None else q_inv
+    return (q - 1) ** 2 * (1 - qi ** 4) / 3
+
+
+def flavor_split_subleading(q: mpf, q_inv: mpf | None = None) -> mpf:
+    """Δm / M_N with (1+ℏ_q³) 3-loop substrate-Planck correction."""
+    qi = mpf(1) / q if q_inv is None else q_inv
+    leading = flavor_split_leading(q, qi)
+    hbar = (q - 1) / q
+    return leading * (1 + hbar ** 3)

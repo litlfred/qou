@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-18T17:24:46.932243+00:00",
-  "commitSha": "8b4e583a712fc456718a4b047fa9a5fcdcd51627",
+  "computedAt": "2026-05-18T03:36:50.543774+00:00",
+  "commitSha": "5ca90e588ee486f567910c77c4899b679117c866",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 22,
+  "durationMs": 14,
   "computation": "atomic-braid-mass-table",
   "scriptFile": "atomic_braid_mass_table.py",
-  "scriptHash": "a3361ac923f3",
-  "scriptCommitSha": "bb68fc2a7785a02c3955014ff69fa223cf14b753",
+  "scriptHash": "7a24c0c6ac37",
+  "scriptCommitSha": "37a7570c7f2d585e8adebea73ce206043ef219bd",
   "description": "Six-term mass formula re-derived using the atomic-braid Markov-trace anchor (PR #534/#547) with inter-carrier coupling via the quotient-braid Jones-polynomial factor a(Z, N) = J_{bar β}(q) (Δ_I knot operator, per prop:jet-filtered-knot-factor) and the full-twist Δ_n² saturated-shell scalar (per conj:categorical-neutrality-saturated-shells). T1 = |tr_M(p)|^Z · |tr_M(n)|^N · |a(Z, N)| · Δ_n²-scalar. T2, T3 are Markov-axiom values for n_gens = 3A-1. T4 = Frobenius codim. T6 = cyclotomic tail. Calibration: proton-only.",
   "contentBlock": "prop:atomic-mass-gb-nf",
   "parameters": {
@@ -177,7 +177,7 @@
     ],
     "summary": {
       "mean_abs_err_pct_strategy3": "35.36685409023961",
-      "mean_abs_err_pct_legacy_GS_NF": "97.51752921566434"
+      "mean_abs_err_pct_legacy_GS_NF": "97.54190009933338"
     }
   }
 }

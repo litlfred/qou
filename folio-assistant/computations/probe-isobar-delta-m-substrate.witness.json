@@ -1,0 +1,58 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-18T18:40:04.315126+00:00",
+  "commitSha": "f9007c5034e57a11bac58640b0bf50cbe721c119",
+  "assertions": [
+    {
+      "name": "isobar_decomposition_consistent",
+      "computed": 0.0003504835941606922,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.01
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "probe-isobar-delta-m-substrate",
+  "scriptFile": "probe_isobar_delta_m_substrate.py",
+  "scriptHash": "e67ceca43f89",
+  "scriptCommitSha": "f9007c5034e57a11bac58640b0bf50cbe721c119",
+  "description": "Isobar mass difference test for prop:flavor-split-substrate",
+  "data": {
+    "q_pinned": "1.1099785955541805752815940796095093779932822799587",
+    "substrate_delta_m": {
+      "formula_dimensionless": "(q-1)² · (1 - q⁻⁴) / 3",
+      "value_dimensionless": "0.0013770494096847516036825835492099447373101085394177",
+      "codata_delta_m_over_M_N": "0.0013774699397810305325677301562633093883972785231479",
+      "residual_ppm": -305.29166853962596,
+      "display_scale_MeV": "938.91875434",
+      "scaled_value_MeV": "1.2929375164058393078219687027771774038954456321203",
+      "codata_delta_m_MeV": "1.29333236"
+    },
+    "test_case_A3": {
+      "atoms": [
+        "tritium",
+        "helium-3"
+      ],
+      "delta_Z": 1,
+      "M_observed_diff_MeV": "-0.5295249999999999999999999999999999999999999999977",
+      "quark_swap_contribution_MeV": "-1.2929375164058393078219687027771774038954456321203",
+      "implied_delta_BE_MeV": "0.76341251640583930782196870277717740389544563212259",
+      "codata_delta_BE_MeV": "0.763763",
+      "consistency_residual_MeV": "-0.00035048359416069217803129722282259610455436787741844"
+    },
+    "interpretation": "Substrate prop:flavor-split-substrate provides the quark-swap contribution -ΔZ · Δm to isobaric mass differences.  The remaining contribution is the binding-energy difference, which depends on Coulomb + nuclear-symmetry + pairing energies — a separate substrate-derivation problem (open R&D, PR #679 territory).  Consistency of the decomposition for ³H ↔ ³He verifies the methodology.",
+    "extension_to_lithium": "⁶Li, ⁷Li have no stable isobar pair in the framework's current low-A atom set.  Once tr_M for H_{18}/H_{21} is available (deferred per atomic_mass_via_rho_k.py), the ⁶He/⁶Li/⁶Be triplet becomes the next testbed.",
+    "upstream_witness_hashes": [
+      {
+        "path": "q-pinning-50-digit.witness.json",
+        "sha256": "1b3888e92f59381ee8f08868664422b509c5ebcb7d3ee8b3f784429be3f3e877",
+        "size_bytes": 3817,
+        "commitSha": null,
+        "scriptCommitSha": null,
+        "computedAt": "2026-04-27T20:27:23.154181+00:00"
+      }
+    ]
+  }
+}

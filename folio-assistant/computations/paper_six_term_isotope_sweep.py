@@ -64,7 +64,7 @@ import numpy as np  # noqa: F401  (kept for downstream consumers)
 import mpmath as mp
 
 sys.path.insert(0, str(Path(__file__).parent))
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, load_and_hash_upstream  # noqa: E402
 from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP  # noqa: E402
 from hecke_core import (  # noqa: E402
     atom_per_generator_volumes, h as h_val, z as z_mark,
@@ -1192,6 +1192,28 @@ if __name__ == "__main__":
     print("=" * 80)
     print(f"q_0 = {float(Q0):.6f}")
 
+    # Upstream-witness threading per
+    # docs/audits/2026-05-18-compute-integration-sweep.md fixes #3, #4, #6
+    # — record sha256 + commitSha for the witnesses this sweep's Term 1 /
+    # Term 4 / Term-6 closed forms transitively consume.  Drift in any
+    # of these will be flagged by witness_dependency_drift.py.
+    _upstream_hashes: list[dict] = []
+    for _name in (
+        # Fix #3 — y-lambda cache + Wedderburn weight scheme
+        "y-lambda-at-q0.witness.json",
+        "probe-wedderburn-weight-scheme.witness.json",
+        # Fix #4 — CAL-3 calibration inputs
+        "cal-3-q-beta.witness.json",
+        "codata-2022-validation-masses.witness.json",
+        # Fix #6 — per-nucleon shift additive linearity
+        "per-nucleon-shift-derivation.witness.json",
+    ):
+        try:
+            _, _hr = load_and_hash_upstream(HERE / _name)
+            _upstream_hashes.append(_hr)
+        except FileNotFoundError as _exc:
+            print(f"  ⚠ upstream missing: {_exc}")
+
     ISOTOPES = [
         ("p",   1, 0, False,  938.272),
         ("n",   0, 1, False,  939.565),
@@ -1272,7 +1294,27 @@ if __name__ == "__main__":
             "prop:e-infinity-page-identifications",
             "prop:chirality-dual-space-derivation",
             "thm:frobenius-codim-universal",
+            # Fix #3 (S1) — Term 1's tr_M transitively consumes y_λ(q_0)
+            # from the Wenzl bridge; both producer blocks now appear in
+            # the dep chain.
+            "prop:y-lambda-closed-form-wenzl-bridge",
+            "prop:y-lambda-recipe-from-partition",
+            # Fix #4 (S1) — CAL-3 calibration inputs (Q_β, CODATA masses).
+            "prop:three-calibration-inputs",
+            # Fix #6 (S2) — per-nucleon shift additive linearity threaded
+            # into the multi-isotope sweep's per-nucleon term assembly.
+            "prop:per-nucleon-shift-additive-linearity",
         ],
+        # Hash records of every transitively-consumed upstream witness.
+        # `witness_dependency_drift.py` walks this list and reports
+        # staleness when an upstream is rerun without this sweep being
+        # regenerated.  Placed under `derivation_inputs` so the
+        # validator's `derivation_inputs.upstream_witness_hashes` path
+        # picks it up (per Copilot review on PR #757 — top-level
+        # placement is invisible to the validator).
+        "derivation_inputs": {
+            "upstream_witness_hashes": _upstream_hashes,
+        },
         # The Phase-3 substrate-Δm benchmark (PR #696 D3 lift) lives
         # entirely in the sibling probe `probe_flavor_dressed_mass_split.py`
         # / `flavor-dressed-mass-from-substrate-split.witness.json`.

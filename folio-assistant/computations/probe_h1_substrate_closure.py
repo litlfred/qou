@@ -1,0 +1,208 @@
+"""
+probe_h1_substrate_closure.py — honest ¹H mass closure via the
+substrate m_p (C2 inflection) + CAL-1 m_e + Rydberg binding.
+
+Item 4 of the #663 follow-up queue.  Unblocked by PR #682 landing
+on main (Li_2^q tower as production default), but the full T1-T6
+Li_2^q tower gives m_p ~ 12 MeV at A = 1 (~99 % off CODATA — the
+honest framework prediction; structural closure of T5/T6/T8 is
+PR #671 Items A/B/C, all still open).
+
+A SUBSTRATE-PURE ¹H closure is available NOW via the C2 inflection
+result, which lives in ``probe-a-selection-criteria.witness.json``.
+The numerical values are loaded from canonical sources (no literal
+CODATA values in code or this docstring per P31 discipline):
+
+    m_p_substrate = (C2 inflection witness, +0.069 % vs CODATA)
+    m_e           = codata_constants.M_E_MEV  (CAL-1)
+    BE_H          = Rydberg ionization (~1.4×10⁻⁵ MeV — negligible)
+
+    m(¹H)_substrate = m_p_C2 + m_e − BE_H
+                    ≈ 939.429 MeV
+    CODATA m(¹H)   = 938.783 MeV
+    residual       ≈ +0.65 MeV  (+0.069 %)
+
+The 0.069 % is DOMINATED by the m_p substrate residual; the BE
+contribution is at 1e-5 MeV (negligible at this level).  Going
+below 0.069 % requires tightening m_p — either the next-order
+substrate correction to the C2 inflection itself or the full
+Li_2^q tower closure (T5/T6/T8) per PR #671 Items A/B/C.
+
+This probe is a CONCRETE DELIVERABLE on item 4: the framework's
+honest ¹H prediction (no calibration tautology, all values
+substrate-derived modulo m_e CAL-1).
+
+CONSUMING SCRIPT NOTE: ``low_isotope_mass_table.py`` currently
+reads m_p_pred from ``proton-mass-full-tower-50dps.witness.json``
+(the Li_2^q tower output = 12.15 MeV, classified `derivation_pending`).
+Rewiring it to consume this probe's substrate m_p (or the C2
+inflection witness directly) is a separate follow-up (similar to
+how PR #690 wires substrate m_p into atomic_mass_via_rho_k).
+"""
+from __future__ import annotations
+
+import json
+import sys
+from pathlib import Path
+from mpmath import mp, mpf
+
+HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE))
+
+from witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import (  # noqa: E402
+    M_E_MEV,
+    M_P_MEV_VALIDATION,
+    M_H1_MEV_VALIDATION,
+    RYDBERG_eV_VALIDATION,
+)
+
+mp.dps = 50
+
+A_C2_WIT = HERE / "probe-a-selection-criteria.witness.json"
+
+# CODATA reference values for the comparison only (not inputs).
+# Imported from the constants registry per Copilot review on PR #757.
+M_H1_CODATA_MEV = M_H1_MEV_VALIDATION
+BE_H1_eV = RYDBERG_eV_VALIDATION
+BE_H1_MeV = BE_H1_eV * mpf("1e-6")
+
+
+def _fmt(x, dps: int = 40) -> str:
+    try:
+        return mp.nstr(x, dps, strip_zeros=False)
+    except Exception:
+        return str(x)
+
+
+def _m_p_from_c2_body(body: dict) -> mpf:
+    """Pin to the explicit C2 inflection criterion in the upstream
+    witness (copilot #702 review: do not consume the moving
+    ``closest_to_post_hoc`` summary, which would silently drift if
+    probe_a_selection_criteria adds/reorders criteria).
+
+    Searches ``data.criteria_tested`` for the entry whose criterion
+    string starts with "C2", then returns its m_p_pred.
+
+    Upstream stores m_p_pred as a JSON number (float-precision), so
+    the resulting mpf is precise only to ~17 decimal digits — the
+    output dps=40 padding does NOT represent true precision; it is
+    formatting consistency only.
+    """
+    criteria = body.get("data", {}).get("criteria_tested") or []
+    c2_entry = None
+    for c in criteria:
+        if str(c.get("criterion", "")).strip().startswith("C2"):
+            c2_entry = c
+            break
+    if c2_entry is None:
+        # Fall back to closest_to_post_hoc only if the criterion list
+        # is missing entirely (older witness schemas).
+        closest = (body.get("data", {}).get("closest_to_post_hoc")) or {}
+        if "m_p_pred" not in closest:
+            raise KeyError(
+                "neither criteria_tested[C2*] nor closest_to_post_hoc.m_p_pred "
+                "found in probe-a-selection-criteria.witness.json"
+            )
+        return mpf(str(closest["m_p_pred"]))
+    if "m_p_pred" not in c2_entry:
+        raise KeyError("criteria_tested[C2*].m_p_pred missing")
+    return mpf(str(c2_entry["m_p_pred"]))
+
+
+def main() -> int:
+    print("=" * 78)
+    print("  ¹H substrate-closure (item 4 of #663 followup)")
+    print("=" * 78)
+
+    # Create the WitnessBuilder up-front so add_upstream() body returns
+    # are used directly (copilot #702: couple data + hash on a single read).
+    w = (WitnessBuilder("probe-h1-substrate-closure", engine="mpmath")
+         .set_description(
+             "Honest ¹H closure via substrate m_p (C2 inflection) + CAL-1 m_e "
+             "+ Rydberg BE(¹H).  Reports residual +0.069 % vs CODATA.  Item 4 "
+             "of the #663 follow-up queue."
+         ))
+    if not A_C2_WIT.exists():
+        raise FileNotFoundError(
+            f"{A_C2_WIT.name} missing — re-run probe_a_selection_criteria.py first"
+        )
+    c2_body = w.add_upstream(A_C2_WIT)
+    m_p_sub = _m_p_from_c2_body(c2_body)
+
+    m_e = mpf(str(M_E_MEV))
+    print(f"  Substrate inputs:")
+    print(f"    m_p (C2 inflection)   = {_fmt(m_p_sub)} MeV")
+    print(f"    m_e (CAL-1)           = {_fmt(m_e)} MeV")
+    print(f"    BE(¹H) (Rydberg)      = {_fmt(BE_H1_MeV)} MeV")
+    print()
+
+    # ¹H atomic mass = m_p + m_e − BE_H
+    m_h1_pred = m_p_sub + m_e - BE_H1_MeV
+    print(f"  ¹H prediction:")
+    print(f"    m(¹H)_pred = m_p + m_e − BE_H")
+    print(f"             = {_fmt(m_h1_pred)} MeV")
+    print(f"    CODATA    = {_fmt(M_H1_CODATA_MEV)} MeV")
+    resid_MeV = m_h1_pred - M_H1_CODATA_MEV
+    resid_pct = float(resid_MeV / M_H1_CODATA_MEV * 100)
+    print(f"    residual  = {_fmt(resid_MeV)} MeV  ({resid_pct:+.5f} %)")
+    print()
+
+    # Decompose the residual by source
+    # CODATA m_p from canonical validation alias (gemini #702: avoid
+    # hardcoded mpf; M_P_MEV_VALIDATION is in MeV, no E_0 scaling needed).
+    m_p_codata = mpf(str(M_P_MEV_VALIDATION))
+    m_p_resid = m_p_sub - m_p_codata
+    print(f"  Residual decomposition:")
+    print(f"    m_p_sub − m_p_CODATA = {_fmt(m_p_resid)} MeV  "
+          f"({float(m_p_resid / m_p_codata * 100):+.5f} %)")
+    print(f"    All other inputs (m_e, BE_H) are CAL-1 / standard data;")
+    print(f"    the ¹H residual = m_p substrate residual to ~5 decimal digits.")
+    print()
+
+    print("  Honest conclusion: ¹H closes to +0.069 % under substrate-pure")
+    print("  m_p (C2 inflection).  Same accuracy as m_p alone — BE(¹H) is")
+    print("  at 1e-5 MeV and m_e is CAL-1, so neither moves the residual.")
+    print()
+    print("  Wiring this into low_isotope_mass_table.py would lift ¹H from")
+    print("  derivation_pending → derived (substrate) with residual 0.069 %.")
+    print("  Currently low_isotope_mass_table reads m_p_pred from the")
+    print("  Li_2^q tower witness (12.15 MeV / 98.7 % residual), so ¹H is")
+    print("  pending.  A consumer-side switch (similar to PR #690) is the")
+    print("  follow-up.")
+
+    # Witness (builder already constructed at top of main; upstream
+    # already added via w.add_upstream(A_C2_WIT) earlier).
+    w.add_data("substrate_inputs", {
+        "m_p_MeV": _fmt(m_p_sub),
+        "m_e_MeV": _fmt(m_e),
+        "BE_H1_MeV": _fmt(BE_H1_MeV),
+        "BE_H1_eV": _fmt(BE_H1_eV),
+    })
+    w.add_data("h1_prediction", {
+        "m_h1_pred_MeV": _fmt(m_h1_pred),
+        "m_h1_codata_MeV": _fmt(M_H1_CODATA_MEV),
+        "residual_MeV": _fmt(resid_MeV),
+        "residual_pct": resid_pct,
+    })
+    w.add_data("residual_source", {
+        "m_p_substrate_residual_MeV": _fmt(m_p_resid),
+        "explanation": ("¹H residual ≡ m_p substrate residual at this "
+                        "precision; m_e (CAL-1) and BE_H (~1e-5 MeV) "
+                        "contribute negligibly."),
+    })
+    w.add_data("status",
+               "¹H closes to substrate accuracy (0.069 %) via the C2 "
+               "inflection route. Further tightening requires substrate "
+               "tightening of m_p (next-order C2 correction or full Li_2^q "
+               "tower closure per PR #671 Items A/B/C).")
+    w.add_assertion("h1_within_0.1pct",
+                    computed=abs(resid_pct),
+                    expected=0.0, tolerance=0.1)
+    out = w.save()
+    print(f"\n  Witness: {out.name}")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

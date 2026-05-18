@@ -120,6 +120,15 @@ M_T_MEV_VALIDATION = _load_mpf(_VALIDATION_WITNESS, "data.m_T_MeV")
 M_HE3_MEV_VALIDATION = _load_mpf(_VALIDATION_WITNESS, "data.m_3He_MeV")
 M_HE4_MEV_VALIDATION = _load_mpf(_VALIDATION_WITNESS, "data.m_4He_MeV")
 
+# ── Hydrogen-1 atomic mass + Rydberg energy ─────────────────────
+# Added per Copilot review on PR #757 — centralise the literals
+# previously hardcoded in `probe_h1_substrate_closure`,
+# `hydrogen_step_by_step`, and `hydrogen_qshuffle_compound`.
+# These are pure validation/comparison targets, never CAL inputs.
+# Source: CODATA 2018 / PDG 2022 atomic-mass tables.
+M_H1_MEV_VALIDATION = mp.mpf("938.7830731")
+RYDBERG_eV_VALIDATION = mp.mpf("13.605693")
+
 # ── Internal consistency check (CAL-3 vs CODATA m_n − m_p − m_e) ─
 # Q_β must agree with (m_n − m_p − m_e) within combined CODATA σ.
 # This is a *cross-check*, not the definition of Q_β: per CAL-3,

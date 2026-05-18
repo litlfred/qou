@@ -1,5 +1,6 @@
+#!/usr/bin/env python3
+# polynomial_q_not_applicable: aggregator only; no symbolic-q polynomial logic.
 """
-
 CLASS-A acknowledged-anchor banner (per Workplan-0b/M_N):
 This script imports M_*_MEV_VALIDATION constants from
 `codata_constants.py` as production inputs (not just as
@@ -11,11 +12,9 @@ audit (`canonical-script-input-audit`) classifies this script
 as "with-substrate-splitting" or "anchor-pending"; reviewers
 should treat the M_*_MEV_VALIDATION usage as CAL-3-ish anchor,
 NOT as an independent calibration input.
-"""
+═══════════════════════════════════════════════════════════════
 
-#!/usr/bin/env python3
-# polynomial_q_not_applicable: aggregator only; no symbolic-q polynomial logic.
-"""Canonical-derivation pipeline compliance aggregator.
+Canonical-derivation pipeline compliance aggregator.
 
 Single-shot dashboard of the **compute-infra discipline** for the
 canonical-derivation chain. Joins the four existing infra audits

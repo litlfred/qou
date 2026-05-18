@@ -1,5 +1,5 @@
+#!/usr/bin/env python3
 """
-
 CLASS-A acknowledged-anchor banner (per Workplan-0b/M_N):
 This script imports M_*_MEV_VALIDATION constants from
 `codata_constants.py` as production inputs (not just as
@@ -11,10 +11,8 @@ audit (`canonical-script-input-audit`) classifies this script
 as "with-substrate-splitting" or "anchor-pending"; reviewers
 should treat the M_*_MEV_VALIDATION usage as CAL-3-ish anchor,
 NOT as an independent calibration input.
-"""
+═══════════════════════════════════════════════════════════════
 
-#!/usr/bin/env python3
-"""
 Mass-formula assembly chain at 50 dps — neutron.
 
 Neutron-side counterpart of `build_proton_mass_50dps_chain.py`

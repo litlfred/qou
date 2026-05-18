@@ -1,0 +1,69 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-18T18:44:52.412582+00:00",
+  "commitSha": "f9007c5034e57a11bac58640b0bf50cbe721c119",
+  "assertions": [
+    {
+      "name": "t6_witness_loaded",
+      "computed": 4,
+      "expected": 4,
+      "passed": true,
+      "tolerance": 0
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "probe-t6-habiro-residue-at-a1",
+  "scriptFile": "probe_t6_habiro_residue_at_a1.py",
+  "scriptHash": "120063e7adfe",
+  "scriptCommitSha": "a7f900f89a6ebcd9ee88f518bb65cc772f2e318e",
+  "description": "m_p chain Item C from PR #671 audit: survey the existing T6 witness for the per-A convergence pattern.  Documents whether T6 at A=1 (≈0.98 MeV) is structurally small or truncated; full residue-depth sweep is deferred (compute-heavy).",
+  "data": {
+    "rows": [
+      {
+        "A": 1,
+        "source": "proton",
+        "T6_MeV": "0.981698328166881796536450000000",
+        "M_codata_MeV": "938.272088160000000000000000000",
+        "abs_T6_over_M": "0.00104628320564458321990850556434",
+        "interpretation": "small / convergent-looking"
+      },
+      {
+        "A": 2,
+        "source": "deuteron",
+        "T6_MeV": "55.8248562969693939956305000000",
+        "M_codata_MeV": "1875.61294257000000000000000000",
+        "abs_T6_over_M": "0.0297635269142881525576966577799",
+        "interpretation": "small / convergent-looking"
+      },
+      {
+        "A": 3,
+        "source": "tritium",
+        "T6_MeV": "-21375.4841073600982586970000000",
+        "M_codata_MeV": "2808.92113298000000000000000000",
+        "abs_T6_over_M": "7.60985556211851654360399243394",
+        "interpretation": "DIVERGENT — truncation suspect"
+      },
+      {
+        "A": 4,
+        "source": "helium-4",
+        "T6_MeV": "692957.917403990352331910000000",
+        "M_codata_MeV": null,
+        "abs_T6_over_M": null,
+        "interpretation": "no CODATA ref"
+      }
+    ],
+    "conclusion": "T6 at A=1 is consistent with either small-convergent or aggressive-truncation; T6 at A=3 (tritium) DIVERGENT under the current truncation depth.  Full per-A residue-depth sweep deferred (compute-heavy).  Item B (T5) takes priority.",
+    "upstream_witness_hashes": [
+      {
+        "path": "term6-habiro-residue-mpfr-50dps.witness.json",
+        "sha256": "47925724a1bb4c8666dca7c4fdb638da59dacd997b56b5a96eeea8d83a5b4d9b",
+        "size_bytes": 3555,
+        "commitSha": "78e889115cacec6f1f7e370b571171863f8a2558",
+        "scriptCommitSha": "136ea5c94c5f636cd95a605a1f4fa9a657ea0217",
+        "computedAt": "2026-05-18T17:33:58.772645+00:00"
+      }
+    ]
+  }
+}
