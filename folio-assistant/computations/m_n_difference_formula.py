@@ -48,7 +48,8 @@ set_compute_dps()
 
 from witness_base import WitnessBuilder
 from q_parameter import Q_MP, Q_INV_MP
-from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
+from experimental_constants import M_E_MEV
+from codata_constants import M_P_MEV_VALIDATION, M_N_MEV_VALIDATION  # noqa: E402
 
 
 def algebraic_prefactor(q: mp.mpf, q_inv: mp.mpf) -> mp.mpf:
@@ -71,14 +72,14 @@ def main() -> int:
     Q0 = Q_MP
     QI = Q_INV_MP
     prefactor = algebraic_prefactor(Q0, QI)
-    delta_m_codata = mp.mpf(M_N_MEV) - mp.mpf(M_P_MEV)
+    delta_m_codata = mp.mpf(M_N_MEV_VALIDATION) - mp.mpf(M_P_MEV_VALIDATION)
     mu_d_minus_mu_u = delta_m_codata / prefactor
 
     print(f"\n  Inputs (CODATA, mpf 50 dps):")
     print(f"    q_0           = {mp.nstr(Q0, 20)}")
     print(f"    q_0⁻¹         = {mp.nstr(QI, 20)}")
-    print(f"    M_p           = {M_P_MEV} MeV")
-    print(f"    M_n           = {M_N_MEV} MeV")
+    print(f"    M_p           = {M_P_MEV_VALIDATION} MeV")
+    print(f"    M_n           = {M_N_MEV_VALIDATION} MeV")
     print(f"    Δm = M_n − M_p = {mp.nstr(delta_m_codata, 12)} MeV")
     print()
     print(f"  Computed at q_0:")
@@ -87,21 +88,21 @@ def main() -> int:
 
     # Predict m_n via the difference formula
     delta_m_pred = prefactor * mu_d_minus_mu_u
-    m_n_pred = mp.mpf(M_P_MEV) + delta_m_pred
-    err_ppm = (m_n_pred - mp.mpf(M_N_MEV)) / mp.mpf(M_N_MEV) * mp.mpf(1e6)
+    m_n_pred = mp.mpf(M_P_MEV_VALIDATION) + delta_m_pred
+    err_ppm = (m_n_pred - mp.mpf(M_N_MEV_VALIDATION)) / mp.mpf(M_N_MEV_VALIDATION) * mp.mpf(1e6)
     err_ppb = err_ppm * mp.mpf(1000)
 
     print()
     print(f"  Difference-formula prediction:")
     print(f"    Δm_pred       = prefactor · (μ_d − μ_u) = {mp.nstr(delta_m_pred, 12)} MeV")
     print(f"    m_n_pred      = m_p + Δm_pred           = {mp.nstr(m_n_pred, 12)} MeV")
-    print(f"    m_n_codata                              = {M_N_MEV} MeV")
+    print(f"    m_n_codata                              = {M_N_MEV_VALIDATION} MeV")
     print(f"    err_ppm       = {mp.nstr(err_ppm, 6)} ppm")
     print(f"    err_ppb       = {mp.nstr(err_ppb, 6)} ppb")
 
     # Comparison to Strategy-3
     strategy_3_m_n = 861.3450120161809611302321540664741083884394557178
-    strategy_3_err_pct = (strategy_3_m_n - M_N_MEV) / M_N_MEV * 100
+    strategy_3_err_pct = (strategy_3_m_n - M_N_MEV_VALIDATION) / M_N_MEV_VALIDATION * 100
 
     print()
     print(f"  Comparison to Strategy-3 (atomic_braid_mass_table.py):")
@@ -149,8 +150,8 @@ def main() -> int:
     w.set_content_block("prop:atomic-mass-gb-nf")
     w.add_parameter("q_0", str(Q0))
     w.add_parameter("q_0_inv", str(QI))
-    w.add_parameter("M_p_codata", M_P_MEV)
-    w.add_parameter("M_n_codata", M_N_MEV)
+    w.add_parameter("M_p_codata", M_P_MEV_VALIDATION)
+    w.add_parameter("M_n_codata", M_N_MEV_VALIDATION)
     w.add_parameter("M_e_codata", M_E_MEV)
     w.add_data("delta_m_codata_MeV", str(delta_m_codata))
     w.add_data("algebraic_prefactor", str(prefactor))

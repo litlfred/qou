@@ -76,6 +76,7 @@ from _precision import set_compute_dps, fmt
 set_compute_dps()  # mp.mp.dps via QOU_COMPUTE_DPS (default 50)
 from codata_constants import M_E_MEV, M_P_MEV, M_N_MEV  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import M_P_MEV_VALIDATION, M_N_MEV_VALIDATION  # noqa: E402
 
 # Atom roster + CODATA total masses (MeV).  Binding = M_codata − (Z m_p + N m_n).
 ATOMS = {
@@ -207,8 +208,8 @@ def main() -> int:
     w.set_audit_only("docs/audits/2026-05-09-kite-tail-reconciliation.md")
     w.set_content_block("prop:rho-k-graded-expansion")
     w.add_parameter("m_e_MeV", str(M_E_MEV))
-    w.add_parameter("m_p_MeV", str(M_P_MEV))
-    w.add_parameter("m_n_MeV", str(M_N_MEV))
+    w.add_parameter("m_p_MeV", str(M_P_MEV_VALIDATION))
+    w.add_parameter("m_n_MeV", str(M_N_MEV_VALIDATION))
     w.add_parameter("delta_lambda_witness_present", delta_lambda is not None)
 
     print(f"  {'atom':<5}{'Z':>3}{'N':>3}  {'|tr_M|':>16}  "
@@ -218,7 +219,7 @@ def main() -> int:
     rows = []
     for atom, info in ATOMS.items():
         Z, N = info["Z"], info["N"]
-        constituent = mp.mpf(Z) * M_P_MEV + mp.mpf(N) * M_N_MEV
+        constituent = mp.mpf(Z) * M_P_MEV_VALIDATION + mp.mpf(N) * M_N_MEV_VALIDATION
         M_codata = mp.mpf(info["M_MeV"])
         binding_codata = M_codata - constituent
 

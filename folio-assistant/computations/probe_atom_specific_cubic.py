@@ -59,7 +59,8 @@ from picard_lefschetz_thimble import (
     cubic_roots, sw_3root_product_degree1,
 )
 from q_parameter import Q as q0, HBAR_Q
-from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV, VOL_BORROMEAN
+from experimental_constants import M_E_MEV, VOL_BORROMEAN
+from codata_constants import M_P_MEV_VALIDATION, M_N_MEV_VALIDATION  # noqa: E402
 
 z_mark = 1 / (np.sqrt(q0) + np.sqrt(1.0 / q0))
 borromean = VOL_BORROMEAN / (HBAR_Q ** 2)
@@ -107,8 +108,8 @@ def find_inflection_A_K(A_nuc, a_lo=0.05, a_hi=None):
 
 
 ATOMS = [
-    ("proton",   1, M_P_MEV),
-    ("neutron",  1, M_N_MEV),
+    ("proton",   1, M_P_MEV_VALIDATION),
+    ("neutron",  1, M_N_MEV_VALIDATION),
     ("deuteron", 2, 1875.613),
     ("tritium",  3, 2808.921),
     ("He3",      3, 2808.392),

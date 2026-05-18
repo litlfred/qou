@@ -44,10 +44,11 @@ from _precision import set_compute_dps, fmt
 set_compute_dps()  # mp.mp.dps via QOU_COMPUTE_DPS (default 50)
 from codata_constants import M_E_MEV as _M_E_MP, M_P_MEV as _M_P_MP, M_N_MEV as _M_N_MP
 from witness_base import WitnessBuilder
+from codata_constants import M_P_MEV_VALIDATION, M_N_MEV_VALIDATION  # noqa: E402
 
 M_E_MEV = _M_E_MP
-M_P_MEV = _M_P_MP
-M_N_MEV = _M_N_MP
+M_P_MEV_VALIDATION = _M_P_MP
+M_N_MEV_VALIDATION = _M_N_MP
 
 ASSEMBLY_DIR = Path(__file__).parent
 
@@ -113,7 +114,7 @@ B_AME_MEV = {
 # m(K) = Z·m_p + N·m_n - B(K) where Z, N count protons + neutrons.
 def ame_nucleus_mass_mev(Z: int, N: int, B_AME_MeV: mp.mpf) -> mp.mpf:
     """AME nucleus mass via mass-deficit identity."""
-    return Z * M_P_MEV + N * M_N_MEV - B_AME_MeV
+    return Z * M_P_MEV_VALIDATION + N * M_N_MEV_VALIDATION - B_AME_MeV
 
 
 def categorical_mass_via_ratio(
@@ -209,8 +210,8 @@ def main() -> int:
     print("=" * 80)
     print()
     print(f"  m_e (CODATA, 50 dps) = {mp.nstr(M_E_MEV, 12)} MeV")
-    print(f"  m_p (CODATA, 50 dps) = {mp.nstr(M_P_MEV, 12)} MeV")
-    print(f"  m_n (CODATA, 50 dps) = {mp.nstr(M_N_MEV, 12)} MeV")
+    print(f"  m_p (CODATA, 50 dps) = {mp.nstr(M_P_MEV_VALIDATION, 12)} MeV")
+    print(f"  m_n (CODATA, 50 dps) = {mp.nstr(M_N_MEV_VALIDATION, 12)} MeV")
     print()
 
     print(f"{'atom':>10} {'ρ':>3}  {'|tr_M(β_K, q_0)|':>22}  source")
@@ -228,10 +229,10 @@ def main() -> int:
     for atom in ("proton", "neutron", "deuteron"):
         m_pred = categorical_mass_via_ratio(atom, tr_M[atom])
         if atom == "proton":
-            m_ref = M_P_MEV
+            m_ref = M_P_MEV_VALIDATION
             ame_label = "CODATA m_p"
         elif atom == "neutron":
-            m_ref = M_N_MEV
+            m_ref = M_N_MEV_VALIDATION
             ame_label = "CODATA m_n"
         else:  # deuteron
             m_ref = ame_nucleus_mass_mev(1, 1, B_AME_MEV["deuteron"])
@@ -298,8 +299,8 @@ def main() -> int:
         })
 
     w.add_parameter("M_E_MEV_CODATA", str(M_E_MEV))
-    w.add_parameter("M_P_MEV_CODATA", str(M_P_MEV))
-    w.add_parameter("M_N_MEV_CODATA", str(M_N_MEV))
+    w.add_parameter("M_P_MEV_CODATA", str(M_P_MEV_VALIDATION))
+    w.add_parameter("M_N_MEV_CODATA", str(M_N_MEV_VALIDATION))
     w.add_parameter("rho_table", RHO)
     w.add_data("canonical_tr_M_q0_source", "derivation_chain.TR_M_AT_Q0")
     w.add_data("canonical_tr_M_q0_values",

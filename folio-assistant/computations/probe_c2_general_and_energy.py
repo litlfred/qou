@@ -58,7 +58,8 @@ from picard_lefschetz_thimble import (
     cubic_roots, sw_3root_product_degree1,
 )
 from q_parameter import Q as q0, HBAR_Q
-from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV, VOL_BORROMEAN
+from experimental_constants import M_E_MEV, VOL_BORROMEAN
+from codata_constants import M_P_MEV_VALIDATION, M_N_MEV_VALIDATION  # noqa: E402
 from hecke_characters import chi_lambda_braid, partitions_of, dim_q
 
 z_mark = 1 / (np.sqrt(q0) + np.sqrt(1.0 / q0))
@@ -110,9 +111,9 @@ def find_inflection(a_lo=0.05, a_hi=None):
 # Atom braid words in 1-indexed sign-pair format for chi_lambda_braid
 ATOMS = {
     "proton":   {"word": [(1, 1), (-1, 2), (1, 1), (-1, 2), (1, 1), (-1, 2)],
-                  "M_codata": M_P_MEV, "nu_SDP": 1, "A": 1, "n_strands": 3},
+                  "M_codata": M_P_MEV_VALIDATION, "nu_SDP": 1, "A": 1, "n_strands": 3},
     "neutron":  {"word": [(-1, 1), (1, 2), (-1, 1), (1, 2), (-1, 1), (1, 2)],
-                  "M_codata": M_N_MEV, "nu_SDP": 1, "A": 1, "n_strands": 3},
+                  "M_codata": M_N_MEV_VALIDATION, "nu_SDP": 1, "A": 1, "n_strands": 3},
     "deuteron": {"word": [(1, 1), (1, 2), (-1, 1), (1, 4), (-1, 5), (1, 4)],
                   "M_codata": 1875.613, "nu_SDP": 1, "A": 2, "n_strands": 6},
     "tritium":  {"word": [(1, 1), (1, 2), (-1, 1), (1, 4), (-1, 5), (1, 4),
