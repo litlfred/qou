@@ -1,3 +1,5 @@
+import Mathlib.Tactic
+
 /-!
 # Aeon boundary generates a chart (conjectural)
 

@@ -1,3 +1,6 @@
+import Mathlib.Data.Nat.Defs
+import Mathlib.Data.Real.Basic
+
 /-!
 # Quantum computational universality via descent to roots of unity (conjectural)
 
