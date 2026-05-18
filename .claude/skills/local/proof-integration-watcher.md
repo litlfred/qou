@@ -190,8 +190,16 @@ grep -rlE '^export default (theorem|lemma|proposition|corollary|conjecture|defin
 #        ref = extract lean.ref from manifest
 #        if ref is missing → naked
 #        decl_name = ref.split('.')[-1]
-#        candidates = grep -rEln "<DECL_RE><decl_name>\b"
-#                     content/<paper>/lean/
+#        candidates = grep -rEln --include='*.lean' "<DECL_RE><decl_name>\b"
+#                     content/<paper>/  (NOT just content/<paper>/lean/ —
+#                     sibling .lean files at chapter level also contain
+#                     declarations and were silently missed by the
+#                     lean/-only path; observed: ~16 wired blocks
+#                     misclassified naked on QOU paper, 2026-05-18 round 3)
+#                     The --include='*.lean' flag is essential: without
+#                     it the grep would match fenced Lean snippets inside
+#                     .md narratives (e.g. "class Foo" code blocks),
+#                     producing false-positive WIRED classifications.
 #        if no candidates → naked
 #        for each candidate file:
 #          read namespaces above the decl line
