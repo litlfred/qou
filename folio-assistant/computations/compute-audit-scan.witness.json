@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T04:32:39.359435+00:00",
-  "commitSha": "5d289221f811562a152881d6620b707fff1106f2",
+  "computedAt": "2026-05-18T04:34:31.531860+00:00",
+  "commitSha": "f7d019b491c4e7d121401e4297a784bede7f18f2",
   "assertions": [],
   "allPassed": true,
   "durationMs": 7,
@@ -28,7 +28,7 @@
       "P16": 100,
       "P21": 32,
       "P30": 97,
-      "P31": 33
+      "P31": 32
     },
     "top_files": [
       {
@@ -2141,13 +2141,6 @@
         "file": "probe_h1_substrate_closure.py",
         "line": 15,
         "snippet": "CODATA literal \"0.51099895\"",
-        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
-      },
-      {
-        "pattern": "P31",
-        "file": "probe_h1_substrate_closure.py",
-        "line": 114,
-        "snippet": "CODATA literal \"938.272088\"",
         "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
       {

@@ -50,7 +50,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 from witness_base import WitnessBuilder  # noqa: E402
-from codata_constants import M_E_MEV  # noqa: E402
+from codata_constants import M_E_MEV, M_P_MEV_VALIDATION  # noqa: E402
 
 mp.dps = 50
 
@@ -111,7 +111,9 @@ def main() -> int:
     print()
 
     # Decompose the residual by source
-    m_p_codata = mpf("938.272088")
+    # CODATA m_p from canonical validation alias (gemini #702: avoid
+    # hardcoded mpf; M_P_MEV_VALIDATION is in MeV, no E_0 scaling needed).
+    m_p_codata = mpf(str(M_P_MEV_VALIDATION))
     m_p_resid = m_p_sub - m_p_codata
     print(f"  Residual decomposition:")
     print(f"    m_p_sub − m_p_CODATA = {_fmt(m_p_resid)} MeV  "
