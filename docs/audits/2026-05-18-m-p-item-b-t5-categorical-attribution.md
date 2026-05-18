@@ -531,7 +531,69 @@ binding lives entirely in the chirality stratum at A ≥ 3.
 | **B.1a-rev.1** | Drop R as a candidate for $a_K$; promote C as canonical (matches conjecture Step 4 symbolic identities + production code's multiplicative role). |
 | **B.1a-rev.2** | Re-frame R as a separate quantity governing $\mathcal{B}_{\mathrm{bulk}}$'s mass-defect envelope, not $a_K$. Audit production code's `B_bulk` interpretation against R. |
 | **B.1a-rev.3** | Update `knot-factor-frobenius-pairing.md` Step 4 to disclaim the literal "$a(N) = \lvert\mathrm{tr}_M(W_{\text{atom}})\rvert/\lvert\mathrm{tr}_M(W_{\text{free}})\rvert$" equality; clarify that the BW values $(1+h, 1-h^2, ...)$ are derived via Skein eigenvalues, not the Markov-trace ratio. |
-| **B.1a-rev.4** | (Optional) Run the full operator-selection LP via `solve_operator_selection_lp` at MPFR-50dps to extract literal $u_\lambda^*$ values and compare against C. The narrative's §7b SDP-shadow-price attribution is still conjectural until verified. |
+| **B.1a-rev.4** | (Optional) Run the full operator-selection LP via `solve_operator_selection_lp` at MPFR-50dps to extract literal $u_\lambda^*$ values and compare against C. The narrative's §7b SDP-shadow-price attribution is still conjectural until verified. **Executed in this audit (f64 prototype)** — see §7d below; conclusion: Wedderburn-block-diagonal LP is degenerate, full Hecke-basis LP is required for meaningful duals. |
+
+## 7d. B.1a-rev.4 — full LP-dual extraction prototype: Wedderburn-block LP is degenerate
+
+The script
+[`aK_via_lp_dual_full.py`](../../folio-assistant/computations/aK_via_lp_dual_full.py)
+solves the operator-selection LP per
+[`prop:bw-coefficient-shadow-price`](../../content/quantum-observable-universe/braids-and-knots/bw-coefficient-shadow-price.md)
+using the Wedderburn-block projector basis $\{\pi_\lambda : \lambda \vdash n\}$
+with diagonal Gram $G_{\lambda\lambda'} = w_\lambda \cdot \delta_{\lambda\lambda'}$.
+Result (f64 prototype, scipy linprog highs method):
+
+| atom | A | $u_0^*$ | chirality dual sum | $a_K^{\mathrm{dual}}$ | $a_K^C$ |
+|------|---|---------|---------------------|------------------------|---------|
+| proton  | 1 | 0.0168 | 0.99 | 58.7 | 1.0 |
+| neutron | 1 | 0.0207 | 0.97 | 47.1 | 1.0 |
+| deuteron | 2 | **0.0** | 41.0 | 10⁶ | 1.21 |
+| tritium  | 3 | **0.0** | 46.9 | 4.5·10⁸ | 0.96 |
+| ³He      | 3 | **0.0** | 141.2 | 6.8·10⁸ | 0.96 |
+| ⁴He      | 4 | **0.0** | 153.8 | 2.9·10⁶ | 0.91 |
+
+**The LP is degenerate**: $u_0^* = 0$ for all atoms with A ≥ 2. The
+diagonal Gram makes the operator-selection LP a 1-constraint
+problem; the shadow price on the net constraint collapses to zero
+while the per-block shadow prices diverge.
+
+**Diagnostic conclusion:** The §7b SDP-shadow-price identification
+of $a_K$ requires the **full Hecke algebra basis** $\{b_i : i = 1, \ldots, [n]_q!\}$
+with **non-diagonal Frobenius Gram** $G_{ij} = \mathrm{tr}_M(b_i b_j)$,
+not the Wedderburn-block-diagonal projection. The block-diagonal
+LP discards inter-block coupling information that the proper LP
+needs to bind the dual variables.
+
+This is consistent with `prop:bw-coefficient-shadow-price`'s
+proof structure — the Wedderburn decomposition is a *consequence*
+of solving the full LP (the block-diagonalisation falls out of
+the Wedderburn structure of $H_n$), not an input simplification.
+
+**Status of §7b SDP-attribution claim**: open. The structural
+identification $a_K = $ chirality-active dual sum is still
+plausible but **not yet verified**. Verification requires:
+
+1. Computing the full Hecke algebra Gram matrix $G_{ij} = \mathrm{tr}_M(b_i b_j)$
+   for the active atom at $n = 3A$. For A=2 this is $[6]_q! = 720$
+   basis elements, $720 \times 720$ Gram. At A=3, $[9]_q!$ is
+   ~360,000 — intractable in this form.
+
+2. Or: using a smaller basis that nevertheless captures the
+   relevant non-diagonal coupling (e.g. the Murphy basis at the
+   atomic braid's centraliser).
+
+3. Or: deriving the dual variables analytically from the
+   $C_\lambda \cdot S_\lambda(Z,N,A)$ factorisation in
+   `prop:bw-coefficient-shadow-price` Step "Factorisation" —
+   bypassing the explicit LP solve. This is the path that the
+   block already proves in narrative form.
+
+**Practical recommendation**: pursue path (3) — the dual factorisation
+is already proved in `prop:bw-coefficient-shadow-price` and gives
+$u_\lambda^*(Z,N) = C_\lambda \cdot S_\lambda$ in closed form.
+Read off $a_K$ via the $C_\lambda$ values for the chirality-active
+partitions. This is **analytical**, not numerical — no LP solve
+needed.
 
 This finding is **non-blocking for the m_p chain** because the
 production code already uses C (`paper_six_term_isotope_sweep.term5_chirality`
