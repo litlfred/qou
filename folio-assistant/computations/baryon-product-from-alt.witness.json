@@ -1,8 +1,8 @@
 {
   "engine": "scipy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T02:35:59.912395+00:00",
-  "commitSha": "a7b9611ce6f8bde61934f8026061117e651b23fe",
+  "computedAt": "2026-05-18T03:07:44.276630+00:00",
+  "commitSha": "d1f7e841c4378955a43a9d6ff8a4535b98f9073e",
   "assertions": [
     {
       "name": "pointwise: ∏ dc_k/dz = sign · Δ_root · ∏ ∂F/∂z / ∏ ∂F/∂c",
@@ -39,7 +39,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 148,
+  "durationMs": 152,
   "computation": "baryon-product-from-alt",
   "scriptFile": "baryon_product_from_alt.py",
   "scriptHash": "a6060bc4cd59",
