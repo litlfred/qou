@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-05-18T04:19:32.986606+00:00",
-  "commitSha": "39ca6b72856b6f9f883d471a3b0b0efccfef3aba",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-18T04:21:39.406807+00:00",
+  "commitSha": "c82e9c42433d7733348c323d957e1ada8234fa53",
   "assertions": [
     {
       "name": "rho_K_flavor_asymmetry",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 10,
   "computation": "probe-substrate-vs-chi-cache-delta-m",
   "scriptFile": "probe_substrate_vs_chi_cache_delta_m.py",
   "scriptHash": "de513f1ae4d1",
-  "scriptCommitSha": "d24a01b2edf8048ac41548b8d7ca7aa82bc98763",
+  "scriptCommitSha": "c82e9c42433d7733348c323d957e1ada8234fa53",
   "description": "Cross-check the substrate prop:flavor-split-substrate Δm against the χ-cache combiner |tr_M| (PR #682).  Item 1 of the #663 follow-up queue, unblocked by #682 landing on main.",
   "data": {
     "q_pinned": "1.109978595554180575281594079609509377993",
