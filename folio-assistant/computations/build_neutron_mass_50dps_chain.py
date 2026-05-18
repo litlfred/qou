@@ -66,7 +66,8 @@ OUTPUT_CHAIN = HERE / "neutron-mass-50dps.derivation.json"
 # per Gemini PR #484 review — see that registry's docstring for the
 # precision-lift roadmap).
 import mpmath as mp  # 50-dps arithmetic per no-float64 directive
-mp.mp.dps = 50
+from _precision import set_compute_dps, fmt  # noqa: E402
+set_compute_dps()
 
 # Per `folio-assistant/computations/README.md` and the
 # three-calibration discipline (Copilot review PR #640:71):

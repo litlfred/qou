@@ -84,7 +84,9 @@ import sympy as sp
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 
-mp.mp.dps = 50
+from _precision import set_compute_dps, fmt  # noqa: E402
+
+set_compute_dps()
 
 from markov_trace_recursive import markov_trace_of_word, q as _q  # noqa: E402
 from q_parameter import Q_MP  # noqa: E402
@@ -258,7 +260,7 @@ def main() -> int:
         M_p = mp.mpf(p_info["M_MeV"])
         E_0 = ((M_p - p_terms["t6_MeV"]) / p_terms["total_hecke"]
                if p_terms["total_hecke"] != 0 else mp.mpf(0))
-        per_mode = {"E_0_MeV": str(E_0), "atoms": {}}
+        per_mode = {"E_0_MeV": fmt(E_0), "atoms": {}}
         per_atom_err = []
         print(f"  {mode:<22}", end="")
         for atom, info in ATOMS_CODATA.items():
@@ -268,9 +270,9 @@ def main() -> int:
             M_codata = mp.mpf(info["M_MeV"])
             err = (M_pred - M_codata) / M_codata * 100
             per_mode["atoms"][atom] = {
-                "t1": str(t1),
-                "M_pred_MeV": str(M_pred),
-                "err_pct": str(err),
+                "t1": fmt(t1),
+                "M_pred_MeV": fmt(M_pred),
+                "err_pct": fmt(err),
             }
             print(f"{float(err):>10.2f}", end="")
             if atom != "p":
@@ -320,9 +322,9 @@ def main() -> int:
          )
          .set_content_block("prop:atomic-mass-gb-nf"))
     w.parameters.update({
-        "q_0": str(Q0),
-        "abs_tr_M_atomic_p": str(tr_p),
-        "abs_tr_M_atomic_n": str(tr_n),
+        "q_0": fmt(Q0),
+        "abs_tr_M_atomic_p": fmt(tr_p),
+        "abs_tr_M_atomic_n": fmt(tr_n),
         "modes": modes,
     })
     w.add_data("reference_blocks", [

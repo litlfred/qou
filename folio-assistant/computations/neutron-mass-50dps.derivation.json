@@ -1,6 +1,6 @@
 {
   "target": "m_n (MeV)",
-  "target_value": "0.56116793319165354423051323536086665556768024056479",
+  "target_value": "0.56116793319165361458369163908659968538705878091474",
   "target_tolerance": 0.01,
   "content_block": "prop:full-pole-structure-mass-trace",
   "description": "Mass-formula assembly chain for the neutron at 50 dps.  Parallel to the proton chain (`build_proton_mass_50dps_chain.py`, PR #480 + PR #476).  Anchored in the fully-trusted Markov-trace assembly chain (PR #612) and the Phase A 50 dps Terms 2–6 (PR #476).  Trust profile {axiom: 0, derived: 2, script-cited: 3, computational: 1} — the SCRIPT_CITED frontier still covers the T1+T2+T3+T4 mass-endomorphism tower assembly.  Current neutron mass prediction: 0.561168 MeV vs CODATA 939.56542052 (rel_diff 0.9994, 9.994e+8 ppb).  Target: 1 ppb.",
@@ -42,7 +42,7 @@
         "terms_50dps"
       ],
       "output_name": "m_n_Hecke",
-      "output_value": "2.1993461435139010421919127717526077710441538842067",
+      "output_value": "2.1993461435139013179221932354707189939535357450743",
       "trust_basis": "script-cited",
       "jet_order": 0,
       "citation": "manuscript:§mass-endomorphism-tower",
@@ -67,7 +67,7 @@
         "m_e_Hecke"
       ],
       "output_name": "m_n_over_m_e",
-      "output_value": "1.0981782510348671836419883746549120219673254525568",
+      "output_value": "1.0981782510348673213197241189763691009287960002946",
       "trust_basis": "derived",
       "jet_order": 0,
       "citation": "manuscript:§dimensionless-mass-ratio",
@@ -80,7 +80,7 @@
         "m_n_over_m_e"
       ],
       "output_name": "m_n_pred_MeV",
-      "output_value": "0.56116793319165354423051323536086665556768024056479",
+      "output_value": "0.56116793319165361458369163908659968538705878091474",
       "trust_basis": "computational",
       "jet_order": 0,
       "spectral_stratum": "archimedean (q_0 ∈ ℝ_{>1})",
