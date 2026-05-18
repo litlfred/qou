@@ -98,7 +98,9 @@ import mpmath as mp
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 
-mp.mp.dps = 50
+from _precision import set_compute_dps, fmt  # noqa: E402
+
+set_compute_dps()
 
 from q_parameter import Q_MP  # noqa: E402
 
@@ -249,7 +251,7 @@ def main() -> int:
         "pr": "#564",
         "precision": "mpfr_50dps_disjoint_only",
         "method": method,
-        "q_0_50dps": str(Q0_MP),
+        "q_0_50dps": fmt(Q0_MP),
         "results": [
             {
                 "atom": "helium-4",
@@ -263,14 +265,14 @@ def main() -> int:
                 "braid_word_str": (
                     "σ₁⁷σ₂⁴ · σ₄⁷σ₅⁴ · σ₇⁶σ₈⁴σ₇⁻¹ · σ₁₀⁶σ₁₁⁴σ₁₀⁻¹"
                 ),
-                "tr_M_at_q0_50dps": str(abs_tr_he4),
-                "abs_tr_M_at_q0_50dps": str(abs_tr_he4),
+                "tr_M_at_q0_50dps": fmt(abs_tr_he4),
+                "abs_tr_M_at_q0_50dps": fmt(abs_tr_he4),
                 "method_used": method,
                 "disjoint_product": {
                     "formula": "|tr_M(p)|² · |tr_M(n)|²",
-                    "abs_tr_p_50dps": str(abs_tr_p),
-                    "abs_tr_n_50dps": str(abs_tr_n),
-                    "abs_tr_he4_50dps": str(abs_tr_disjoint),
+                    "abs_tr_p_50dps": fmt(abs_tr_p),
+                    "abs_tr_n_50dps": fmt(abs_tr_n),
+                    "abs_tr_he4_50dps": fmt(abs_tr_disjoint),
                     "source_witness": "atomic-tr-m-mpfr-50dps.witness.json",
                 },
                 "direct_recursion": {

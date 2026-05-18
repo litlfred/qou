@@ -45,8 +45,9 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 # ── Canonical q_0 at 50 dps ──────────────────────────────────────
 Q_PIN = HERE / "q-pinning-50-digit.witness.json"

@@ -53,11 +53,13 @@ from mpmath import mp, mpf
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
+
+from _precision import set_compute_dps, fmt  # noqa: E402
 from _li_2_q_util import li_2_q as Li_2_q  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from codata_constants import M_E_MEV as _M_E_MEV  # noqa: E402
 
-mp.dps = 50
+set_compute_dps()
 
 # P31 compliance: M_E_MEV from codata_constants (single source of truth).
 # M_H is the ¹H atomic mass — not in the canonical validation set.

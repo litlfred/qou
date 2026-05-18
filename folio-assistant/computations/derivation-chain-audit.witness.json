@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T16:18:09.428049+00:00",
-  "commitSha": "606ee48dcaddbf0c640e3bf242a3ba929fb57d19",
+  "computedAt": "2026-05-18T16:33:10.098523+00:00",
+  "commitSha": "d43c21fb09e5ee52067318ba2add63aabbcb81dd",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -576,7 +576,7 @@
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "875916a587c227572f421c22053ad81371976ccc",
+  "scriptCommitSha": "67f1df24c9d76e62b2bb25a331814e511ba6dc3f",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
   "data": {
@@ -2517,6 +2517,7 @@
         "term7-chi5-basis.witness.json",
         "term7-height6-partition-enum.witness.json",
         "terms-2-3-atom-per-gen-mpfr-50dps.witness.json",
+        "three-term-wedderburn.witness.json",
         "tier-0-atlas-pslq-check.witness.json",
         "tier-1-hyperbolic-3braid-pslq.witness.json",
         "tier-2-higher-bridge-pslq.witness.json",

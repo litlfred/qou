@@ -38,11 +38,13 @@ from pathlib import Path
 
 import mpmath as mp
 
-mp.mp.dps = 50
-
 HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
+
+from _precision import set_compute_dps, fmt  # noqa: E402
+
+set_compute_dps()
 
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from per_irrep_pole_atom import ATOMS, ATOM_ALIASES, parts_of  # noqa: E402

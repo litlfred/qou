@@ -43,8 +43,8 @@ _p25_sys.path.insert(0, str(_P25Path(__file__).parent))
 from witness_polynomial import expose_polynomial  # noqa: F401
 from mpmath import mp, mpf
 
-mp.dps = 50
-
+from _precision import set_compute_dps, fmt
+set_compute_dps()  # mp.mp.dps via QOU_COMPUTE_DPS (default 50)
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 
@@ -149,8 +149,8 @@ def main(also_symbolic: bool = False) -> int:
                 symbolic_check = {
                     "nf_terms": stats["n_terms_nf"],
                     "elapsed_sec": dt_sym,
-                    "tr_M_at_q0_50dps": str(tr_sym_mpf),
-                    "abs_diff_vs_bridge": str(diff),
+                    "tr_M_at_q0_50dps": fmt(tr_sym_mpf),
+                    "abs_diff_vs_bridge": fmt(diff),
                 }
             except Exception as exc:
                 print(f"    [sympy] FAILED ({type(exc).__name__}: {exc})")
@@ -180,8 +180,8 @@ def main(also_symbolic: bool = False) -> int:
             print(f"    |bridge - peel|    = {diff_peel}")
             peel_check = {
                 "elapsed_sec": dt_peel,
-                "tr_M_at_q0_50dps": str(tr_peel_mpf),
-                "abs_diff_vs_bridge": str(diff_peel),
+                "tr_M_at_q0_50dps": fmt(tr_peel_mpf),
+                "abs_diff_vs_bridge": fmt(diff_peel),
             }
         except Exception as exc:
             print(f"    [peel]  FAILED ({type(exc).__name__}: {exc})")
@@ -197,9 +197,9 @@ def main(also_symbolic: bool = False) -> int:
             ratio_q0 = tr_at_q0_mpf / J_at_q0_mpf if J_at_q0_mpf != 0 else None
             comparison = {
                 "historical_K": historical_K,
-                "J_K_published": str(J_sym),
-                "J_K_at_q0_50dps": str(J_at_q0_mpf),
-                "tr_M_over_J_K_at_q0_50dps": str(ratio_q0),
+                "J_K_published": fmt(J_sym),
+                "J_K_at_q0_50dps": fmt(J_at_q0_mpf),
+                "tr_M_over_J_K_at_q0_50dps": fmt(ratio_q0),
                 "note":
                     "If the ratio is a power of q_0, then tr_M = q_0^k · J_K, "
                     "i.e. they agree up to writhe normalisation. "
@@ -220,8 +220,8 @@ def main(also_symbolic: bool = False) -> int:
             "n_strands_3A": n_strands,
             "rho_factor": rho,
             "word_length_3A": word_len,
-            "tr_M_at_q0_50dps": str(tr_at_q0_mpf),
-            "term1_b_pred_mev_50dps": str(b_term1),
+            "tr_M_at_q0_50dps": fmt(tr_at_q0_mpf),
+            "term1_b_pred_mev_50dps": fmt(b_term1),
             "bridge_elapsed_sec": bridge_t,
             "symbolic_cross_check": symbolic_check,
             "peel_cross_check": peel_check,

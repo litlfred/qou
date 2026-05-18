@@ -53,6 +53,8 @@ import mpmath as mp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
+
+from _precision import set_compute_dps, fmt  # noqa: E402
 from q_parameter import Q as Q_0_FLOAT  # noqa: E402
 from mass_at_3A_proper import (  # noqa: E402
     _SEMINORMAL_DISK,
@@ -68,7 +70,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 # loop below uses float64 for matrix arithmetic (Hoefsmit matrices are
 # numpy arrays); the witness records the float64-precision result
 # rounded to 17 sig figs (NOT 50 dps).
-mp.mp.dps = 50
+set_compute_dps()
 
 _SEMINORMAL_DISK.mkdir(parents=True, exist_ok=True)
 

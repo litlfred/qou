@@ -39,7 +39,9 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE / "from_scratch"))
 
-mp.mp.dps = 50
+
+from _precision import set_compute_dps, fmt  # noqa: E402
+set_compute_dps()
 
 
 def _q_0_50dps() -> mp.mpf:

@@ -39,6 +39,8 @@ from pathlib import Path
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 
+
+from _precision import set_compute_dps, fmt  # noqa: E402
 import mpmath
 from mpmath import mp, mpf
 
@@ -53,7 +55,7 @@ from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from partition_utils import hook_length_1based as hook_length  # noqa: E402
 
-mp.dps = 50
+set_compute_dps()
 # Authoritative q_0 from q_parameter.Q_50_DIGIT_STR (m_μ/m_e CODATA fix).
 Q0 = mpf(Q_50_DIGIT_STR)
 

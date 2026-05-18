@@ -41,10 +41,10 @@ from pathlib import Path
 
 import mpmath as mp
 
-mp.mp.dps = 50
-
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
+from _precision import set_compute_dps, fmt  # noqa: E402
+set_compute_dps()
 
 from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP  # noqa: E402
 from hecke_core import (  # noqa: E402

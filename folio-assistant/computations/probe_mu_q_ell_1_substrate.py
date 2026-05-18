@@ -30,9 +30,11 @@ from mpmath import mp, mpf
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
+
+from _precision import set_compute_dps, fmt  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
-mp.dps = 50
+set_compute_dps()
 
 Q_WIT = HERE / "q-pinning-50-digit.witness.json"
 q = mpf(json.load(Q_WIT.open())["derived_50_digit"]["q"])

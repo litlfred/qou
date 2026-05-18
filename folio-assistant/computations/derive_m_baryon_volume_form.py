@@ -61,11 +61,13 @@ import mpmath as mp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
+
+from _precision import set_compute_dps, fmt  # noqa: E402
 # CAL-1 + CAL-2 only — no CODATA m_p / m_n injection (validation values
 # loaded separately and stored under data.validation).
 from codata_constants import M_E_MEV, M_P_MEV_VALIDATION, M_N_MEV_VALIDATION  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 
 def _q_0_50dps() -> mp.mpf:

@@ -37,12 +37,14 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
+
+from _precision import set_compute_dps, fmt  # noqa: E402
 import sympy as sp
 from mpmath import mp, mpf
 import numpy as np
 from witness_base import WitnessBuilder  # noqa: E402
 
-mp.dps = 50
+set_compute_dps()
 
 q_sym = sp.Symbol("q", positive=True)
 q_inv_sym = 1 / q_sym

@@ -50,9 +50,11 @@ HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
+
+from _precision import set_compute_dps, fmt  # noqa: E402
 from q_parameter import Q_MP  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 SOURCE = HERE / "y-lambda-wenzl-bridge-symbolic-witness.json"
 OUTPUT = HERE / "y-lambda-mpfr-witness.json"

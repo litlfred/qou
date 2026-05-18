@@ -56,7 +56,8 @@ from experimental_constants import M_E_MEV, Q_NEUTRON_MEV, M_P_MEV, M_N_MEV
 from light_isotope_sweep import tr_M_at_q0
 from witness_base import WitnessBuilder
 
-mp.mp.dps = 50
+from _precision import set_compute_dps, fmt  # noqa: E402
+set_compute_dps()
 
 # Substrate parameter at 50 dps
 VOL_FIGURE_EIGHT = mp.mpf("2.029883212819307")

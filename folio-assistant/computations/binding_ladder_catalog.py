@@ -28,7 +28,8 @@ warnings.filterwarnings("ignore")
 sys.path.insert(0, str(Path(__file__).parent))
 
 import mpmath as mp
-mp.mp.dps = 50
+from _precision import set_compute_dps, fmt  # noqa: E402
+set_compute_dps()
 
 from q_parameter import Q as Q0_FLOAT, vol_4_1_at, Q_MP, Q_INV_MP
 # CAL-1: m_e from codata_constants registry (P31-triage Phase A).

@@ -46,7 +46,8 @@ sys.path.insert(0, str(Path(__file__).parent))
 from experimental_constants import M_E_MEV
 from witness_base import WitnessBuilder
 
-mp.mp.dps = 50
+from _precision import set_compute_dps, fmt  # noqa: E402
+set_compute_dps()
 
 # q_0 at 50 dps
 VOL_FIGURE_EIGHT = mp.mpf("2.029883212819307")

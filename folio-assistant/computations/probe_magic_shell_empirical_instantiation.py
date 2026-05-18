@@ -43,7 +43,8 @@ from markov_peel import tr_M_atomic
 from hecke_symbolic import q as q_sym
 from wedderburn_jones_markov import global_wedderburn_sum_q_hecke_seminormal
 
-mp.dps = 50
+from _precision import set_compute_dps, fmt  # noqa: E402
+set_compute_dps()
 
 AME = {
     # Free nucleons: AME binding energy = 0 by definition (no internal

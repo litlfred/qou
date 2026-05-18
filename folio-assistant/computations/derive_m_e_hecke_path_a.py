@@ -81,8 +81,9 @@ sys.path.insert(0, str(HERE))
 
 from codata_constants import M_E_MEV  # noqa: E402  (CAL-1)
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 OUT_WITNESS = HERE / "electron-m_e-derivation.witness.json"
 
@@ -117,24 +118,24 @@ def derive_m_e_hecke() -> dict:
     return {
         "atom": "electron",
         "braid": "β_e = 1 (identity in H_2(q), zero crossings)",
-        "q_0_50dps": str(q),
+        "q_0_50dps": fmt(q),
         "t1_descended": {
-            "value_50dps": str(z),
+            "value_50dps": fmt(z),
             "formula": "z = 1 / (q^{1/2} + q^{-1/2})",
             "dimensionality": "cat-units (dimensionless)",
         },
         "t4_frobenius_co_casimir": {
-            "value_50dps_MeV": str(t4_MeV),
+            "value_50dps_MeV": fmt(t4_MeV),
             "formula": "M_E_MEV · z · ([2]_q + 1)",
             "irrep_decomposition": {
                 "lambda_2_sym": "σ_1 ↦ +q, dim_q = [2]_q",
                 "lambda_11_alt": "σ_1 ↦ -q^{-1}, dim_q = 1",
-                "co_casimir_h2_dimensionless": str(co_casimir_h2),
+                "co_casimir_h2_dimensionless": fmt(co_casimir_h2),
             },
         },
         "m_e_hecke_partial": {
-            "cat_units": str(m_e_hecke_cat_units),
-            "MeV": str(m_e_hecke_MeV),
+            "cat_units": fmt(m_e_hecke_cat_units),
+            "MeV": fmt(m_e_hecke_MeV),
             "construction": "T1(e) + T4(e); same trustable subset as proton",
         },
         "no_fitting_assertion": (

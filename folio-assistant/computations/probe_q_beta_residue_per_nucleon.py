@@ -32,7 +32,8 @@ import sympy as sp
 # constants are built at import time and otherwise inherit the
 # default 15 dps (per Copilot review on PR #639 q-beta-residue-per-
 # nucleon-probe.witness.json:20).
-mp.mp.dps = 50
+from _precision import set_compute_dps, fmt  # noqa: E402
+set_compute_dps()
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))

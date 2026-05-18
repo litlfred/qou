@@ -57,7 +57,9 @@ HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
-mp.mp.dps = 50
+
+from _precision import set_compute_dps, fmt  # noqa: E402
+set_compute_dps()
 
 from mass_endomorphism import (  # noqa: E402
     additive_wedderburn_volumes,

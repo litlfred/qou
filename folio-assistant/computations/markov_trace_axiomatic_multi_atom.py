@@ -54,8 +54,9 @@ HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 from markov_trace_recursive import markov_trace_of_word, q as _q  # noqa: E402
 from q_parameter import Q_MP  # noqa: E402
@@ -148,11 +149,11 @@ def main() -> int:
             "word": info["word"],
             "word_str": info["word_str"],
             "m_MeV_codata": info["m_MeV"],
-            "tr_M_symbolic": str(tr_sym),
-            "tr_M_at_q0_50dps": str(tr_num),
-            "abs_tr_M_at_q0_50dps": str(abs_tr),
-            "m_over_m_e_codata": str(m_over_me),
-            "rho_K_codata": str(rho_K),
+            "tr_M_symbolic": fmt(tr_sym),
+            "tr_M_at_q0_50dps": fmt(tr_num),
+            "abs_tr_M_at_q0_50dps": fmt(abs_tr),
+            "m_over_m_e_codata": fmt(m_over_me),
+            "rho_K_codata": fmt(rho_K),
         }
 
     # ── Disjoint-product check (REMOVED, PR #564) ───────────────
@@ -197,9 +198,9 @@ def main() -> int:
             print(f"    ⚠ discrepancy — recursive vs Hecke-power expansion diverged.")
             cross_check_ok = False
         checks["atomic_proton_full"] = {
-            "prior_tr_M": str(prior_tr),
-            "current_tr_M": str(cur_tr),
-            "relative_error": str(diff),
+            "prior_tr_M": fmt(prior_tr),
+            "current_tr_M": fmt(cur_tr),
+            "relative_error": fmt(diff),
             "matches_float64_precision": bool(diff < mp.mpf("1e-12")),
         }
     else:
@@ -240,8 +241,8 @@ def main() -> int:
             "folio-assistant/computations/markov_trace_axiomatic_proton.py",
         ],
         "computedAt": datetime.now(timezone.utc).isoformat(),
-        "q0": str(Q0_MP),
-        "m_e_MeV": str(M_E_MEV),
+        "q0": fmt(Q0_MP),
+        "m_e_MeV": fmt(M_E_MEV),
         "atoms": results,
         "checks": checks,
         "all_passed": disjoint_ok and cross_check_ok,

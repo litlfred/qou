@@ -49,11 +49,13 @@ HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
+
+from _precision import set_compute_dps, fmt  # noqa: E402
 from hecke_characters import standard_young_tableaux  # noqa: E402
 from hoefsmit_symbolic import chi_lambda_symbolic, Q as Q_SYM  # noqa: E402
 from q_parameter import Q_MP  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 
 # ── Numeric Hoefsmit builder (mirrors _hoefsmit_build but at concrete q) ──

@@ -44,7 +44,8 @@ from witness_base import WitnessBuilder
 from markov_peel import tr_M_atomic
 from hecke_symbolic import q as q_sym
 
-mp.dps = 50
+from _precision import set_compute_dps, fmt  # noqa: E402
+set_compute_dps()
 
 
 def main():

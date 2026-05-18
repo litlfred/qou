@@ -41,7 +41,8 @@ from experimental_constants import M_E_MEV
 from witness_base import WitnessBuilder
 
 # Set precision globally
-mp.mp.dps = 50
+from _precision import set_compute_dps, fmt  # noqa: E402
+set_compute_dps()
 
 # Compute q_0 and friends at 50 dps from m_μ/m_e and Vol(4_1).
 VOL_FIGURE_EIGHT = mp.mpf("2.029883212819307")

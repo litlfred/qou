@@ -44,7 +44,8 @@ from mpmath import polylog, im, arg
 from q_parameter import vol_4_1_at
 
 # ── Set precision: 50 decimal digits (~165 bits) ─────────────
-mp.dps = 50
+from _precision import set_compute_dps, fmt  # noqa: E402
+set_compute_dps()
 
 # ── Calibration inputs (high-precision values) ───────────────
 # Vol(4_1) computed at the working precision via the Clausen
