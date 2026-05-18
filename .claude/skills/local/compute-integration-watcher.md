@@ -37,6 +37,14 @@ It is the *cross-layer* counterpart to:
 - `local/compute-audit` — patterns INSIDE one script (P1–P32)
 - `local/watch` — event-stream router for upstream commits / PRs
 - `local/proof-gap-audit` — paper claims missing Lean proofs
+- `local/proof-integration-watcher` — proof-side analogue of this
+  skill (chases sorries / naked conjectures across main + sibling
+  PRs).  Same watch-and-act loop, different layer.  When both
+  skills are armed in the same session: `proof-integration-watcher`
+  owns proof-QA gaps; this skill owns compute-wiring gaps.  Gaps
+  that bridge both layers (e.g. a Lean theorem proved on main with
+  no compute consumer) are double-claimed: pick the one whose
+  delivery cycle reaches main first.
 
 Where those skills look at one layer in isolation, **this** skill
 looks at the boundary between layers: paper → compute, Lean → compute,
