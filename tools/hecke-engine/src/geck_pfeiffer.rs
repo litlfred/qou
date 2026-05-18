@@ -439,10 +439,12 @@ pub fn chi_lambda_via_gp_hoefsmit_mpfr(
         return Float::with_val(prec, 0).to_string_radix(10, Some(dps as usize));
     }
 
-    // Parse q at MPFR precision.
+    // Parse q at MPFR precision. A parse failure here is a caller
+    // bug (caller is responsible for supplying a valid decimal
+    // string) — panic loudly per Gemini review on #725.
     let q = Float::parse(q_str)
         .map(|p| Float::with_val(prec, p))
-        .unwrap_or_else(|_| Float::with_val(prec, 1));
+        .expect("chi_lambda_via_gp_hoefsmit_mpfr: q_str is not a valid decimal");
 
     let (basis_expansion, avg_count) = braid_to_hecke_with_avg(n, word);
     let mut total = Float::with_val(prec, 0);
@@ -455,9 +457,12 @@ pub fn chi_lambda_via_gp_hoefsmit_mpfr(
         let chi_w_str = crate::seminormal_mpfr::chi_lambda_braid_mpfr(
             lambda, &positive_word, q_str, dps,
         );
+        // chi_lambda_braid_mpfr produces valid decimal output; a
+        // parse failure here would indicate corruption, not a
+        // recoverable error.
         let chi_w = Float::parse(&chi_w_str)
             .map(|p| Float::with_val(prec, p))
-            .unwrap_or_else(|_| Float::with_val(prec, 0));
+            .expect("chi_lambda_braid_mpfr returned an invalid decimal string");
         // Basis coefficient c_w(q) evaluated at MPFR precision.
         let c_w_mpfr = c_w.evaluate_mpfr(&q);
         // total += c_w * chi_w (all MPFR).
@@ -465,14 +470,139 @@ pub fn chi_lambda_via_gp_hoefsmit_mpfr(
         total += &prod;
     }
 
-    // Deferred (1/2)^avg_count normalisation.  Cast f64::powi to MPFR
-    // to avoid the `1u64 << k` UB for large k (same fix as the f64
-    // variant; see Copilot/Gemini review on PR #720).
+    // Deferred (1/2)^avg_count normalisation.
+    // **Why exact right-shift instead of `f64::powi` cast** (per
+    // Gemini review on #725): `rug::Float` supports `ShrAssign<u32>`
+    // which divides by exactly 2^k via the binary exponent field —
+    // no precision loss, no f64-range cap (handles all u32 values),
+    // exact in MPFR.  The `f64::powi` cast pattern from #720's
+    // Copilot/Gemini review was for the f64 path; in MPFR we have
+    // a strictly-better option.
     if avg_count > 0 {
-        let divisor = Float::with_val(prec, 2.0_f64.powi(avg_count as i32));
-        total /= divisor;
+        total >>= avg_count;
     }
     total.to_string_radix(10, Some(dps as usize))
+}
+
+/// **All partitions, MPFR, with per-T_w memoisation** (C-full Step 3).
+///
+/// Compute χ^λ for every partition λ ⊢ n on the same braid word, at
+/// MPFR precision, sharing the GP basis-expansion + per-T_w
+/// characters across partitions where possible.
+///
+/// **Why this is faster than calling `chi_lambda_via_gp_hoefsmit_mpfr`
+/// per partition in a loop**:
+///
+/// - `braid_to_hecke_with_avg(n, word)` runs ONCE (basis expansion is
+///   λ-independent).
+/// - `reduced_word(w)` for each `w` in the expansion runs ONCE.
+/// - The per-T_w MPFR character `chi_lambda_braid_mpfr(λ, positive_word, ...)`
+///   is computed once per (λ, distinct positive_word) pair, not once
+///   per (λ, basis-element). Different basis elements `T_w` and `T_w'`
+///   often have the same reduced word (in their minimal-length
+///   conjugacy class representative), so the cache hit rate grows
+///   with basis size.
+/// - The deferred `2^avg_count` divisor is computed once and applied
+///   per partition.
+///
+/// Returns `Vec<(partition, chi_decimal_string)>` mirroring
+/// `chi_lambda_canonical_all_partitions_mpfr`'s shape. Inner
+/// computation is parallel across partitions via rayon.
+///
+/// **Memoisation thread-safety**: the per-T_w cache is built once
+/// (sequentially), then each partition reads from it in its own rayon
+/// task. Per-partition work writes only to its own accumulator, so
+/// no cross-thread mutation is required after the cache is built.
+pub fn chi_lambda_via_gp_hoefsmit_all_partitions_mpfr(
+    n: usize,
+    word: &[(i32, u32)],
+    q_str: &str,
+    dps: u32,
+) -> Vec<(Vec<usize>, String)> {
+    use rayon::prelude::*;
+    use rug::Float;
+    use std::collections::HashMap;
+
+    let prec = (dps as f64 * 3.322 + 16.0) as u32;
+
+    // 1. Basis expansion runs once for the whole sweep.
+    let (basis_expansion, avg_count) = braid_to_hecke_with_avg(n, word);
+
+    // 2. For each w in the expansion, pre-compute its reduced word
+    //    (a Vec<u32> of simple-transposition indices). The keying
+    //    by reduced word lets distinct `w`'s share their χ^λ
+    //    computation when they reduce to the same canonical form.
+    let basis_terms: Vec<(Vec<u32>, LaurentPolyQ)> = basis_expansion
+        .iter()
+        .map(|(w, c_w)| (reduced_word(w), c_w.clone()))
+        .collect();
+
+    // 3. Collect the distinct positive_word signatures across the
+    //    basis. The same reduced word can appear for multiple
+    //    basis elements; cache its char once per λ.
+    let mut distinct_words: Vec<Vec<u32>> = basis_terms
+        .iter()
+        .map(|(rw, _)| rw.clone())
+        .collect();
+    distinct_words.sort();
+    distinct_words.dedup();
+
+    // 4. Pre-compute the c_w(q) MPFR evaluations once (λ-independent).
+    let q = Float::parse(q_str)
+        .map(|p| Float::with_val(prec, p))
+        .unwrap_or_else(|_| Float::with_val(prec, 1));
+    let c_w_mpfr_per_term: Vec<Float> = basis_terms
+        .iter()
+        .map(|(_, c_w)| c_w.evaluate_mpfr(&q))
+        .collect();
+
+    // 5. Deferred 2^avg_count divisor (λ-independent).  See the
+    //    f64::powi rationale on `chi_lambda_via_gp_hoefsmit`.
+    let divisor: Option<Float> = if avg_count > 0 {
+        Some(Float::with_val(prec, 2.0_f64.powi(avg_count as i32)))
+    } else {
+        None
+    };
+
+    // 6. Per λ: build the per-distinct-word cache, then sum.
+    let partitions = crate::seminormal::partitions_of(n);
+    partitions
+        .par_iter()
+        .map(|lambda| {
+            // Per-T_w MPFR character cache for THIS λ.  Built sequentially
+            // inside the partition's rayon task (no cross-partition state).
+            let mut chi_cache: HashMap<Vec<u32>, Float> = HashMap::with_capacity(
+                distinct_words.len(),
+            );
+            for rw in &distinct_words {
+                let positive_word: Vec<(i32, u32)> =
+                    rw.iter().map(|&g| (1, g)).collect();
+                let chi_str = crate::seminormal_mpfr::chi_lambda_braid_mpfr(
+                    lambda, &positive_word, q_str, dps,
+                );
+                let chi_f = Float::parse(&chi_str)
+                    .map(|p| Float::with_val(prec, p))
+                    .unwrap_or_else(|_| Float::with_val(prec, 0));
+                chi_cache.insert(rw.clone(), chi_f);
+            }
+
+            // Sum c_w * χ^λ(T_w) over the basis.
+            let mut total = Float::with_val(prec, 0);
+            for ((rw, _c_w), c_w_mpfr) in basis_terms.iter().zip(c_w_mpfr_per_term.iter()) {
+                let chi = chi_cache
+                    .get(rw)
+                    .expect("chi_cache built from distinct_words, lookup must succeed");
+                let prod = Float::with_val(prec, c_w_mpfr * chi);
+                total += &prod;
+            }
+
+            // Apply the deferred 2^avg_count normalisation.
+            if let Some(d) = &divisor {
+                total /= d.clone();
+            }
+            (lambda.clone(), total.to_string_radix(10, Some(dps as usize)))
+        })
+        .collect()
 }
 
 /// **F3.2.ζ — partial Hecke-conjugation reduction (simple-reflection only).**
