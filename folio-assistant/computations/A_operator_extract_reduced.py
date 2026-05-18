@@ -226,7 +226,7 @@ def main() -> int:
         "(since linearity holds on the RHS chi vector before SVD)."
     )
     w.set_audit_only("docs/audits/2026-05-09-A-operator-rank-structure.md")
-    w.set_content_block("conj:operator-valued-sublemma-2-1")
+    w.set_content_block("operator-valued sub-lemma 2.1 (A-operator extraction probe; no formal block yet)")
     w.add_parameter("A", 3)
     w.add_parameter("split", f"{n1}+{n2}")
     w.add_data("results_per_lambda", results)

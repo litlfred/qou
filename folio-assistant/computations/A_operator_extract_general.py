@@ -362,7 +362,7 @@ def main() -> int:
         f"Tr(A^λ_{{μν}}(I) · (ρ_μ(β_1) ⊗ ρ_ν(β_2)))."
     )
     w.set_audit_only("docs/audits/2026-05-09-kite-tail-reconciliation.md")
-    w.set_content_block("conj:operator-valued-sublemma-2-1")
+    w.set_content_block("operator-valued sub-lemma 2.1 (A-operator extraction probe; no formal block yet)")
     w.add_parameter("A", A)
     w.add_parameter("n_total", n_total)
     w.add_parameter("splits", str(splits))

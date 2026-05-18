@@ -259,7 +259,7 @@ def main() -> int:
         "extending the factorization to those cases (item 4 + item 1)."
     )
     w.set_audit_only("docs/audits/2026-05-09-kite-tail-reconciliation.md")
-    w.set_content_block("conj:operator-valued-sublemma-2-1")
+    w.set_content_block("operator-valued sub-lemma 2.1 (A-operator extraction probe; no formal block yet)")
     w.add_parameter("A", A)
     w.add_parameter("n1", n1)
     w.add_parameter("n2", n2)

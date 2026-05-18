@@ -130,7 +130,7 @@ def main() -> int:
     w.add_parameter("m_e_MeV", str(M_E_MEV_MP))
     w.add_parameter("dps", mp.mp.dps)
     w.add_data("results_by_atom", out_rows)
-    w.set_content_block("rem:term6-binding-density")
+    w.set_content_block("prop:term6-binding-density")
     w.save()
     print(f"  Wrote {OUT_PATH.name} with {len(out_rows)} A-keyed rows")
     return 0

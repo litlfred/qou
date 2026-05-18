@@ -99,7 +99,7 @@ def main() -> int:
         "Coxeter length ℓ ≥ 2 (Hopf links + trefoil) vs ℓ < 2 (γ + σ_0 "
         "+ σ_1). Owner directive 2026-05-10: do not use LO; use FULL."
     )
-    builder.set_content_block("prop:beta-decay-energy-scale")
+    builder.set_content_block("rem:beta-decay-energy-scale")
     builder.set_audit_only(
         "docs/audits/2026-05-10-workplan-0b-script-rewire-handoff.md"
     )

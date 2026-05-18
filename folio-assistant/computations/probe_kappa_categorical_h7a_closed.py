@@ -1,6 +1,6 @@
 """κ (magic-shell coupling slope) — CLOSED categorical derivation.
 
-Per `prop:magic-shell-coupling-witness`, the empirical κ ≈ -1.071 MeV/excess
+Per `prop:magic-shell-coupling-kappa`, the empirical κ ≈ -1.071 MeV/excess
 from PR #656 v6 single-magic anchor fit measures the per-(n_pp − n_nn) excess
 slope of the magic-shell coupling correction.
 
@@ -43,7 +43,7 @@ purely from QOU substrate parameters.
 - `def:hecke-e0` — E_0 = m_e/(q(q-1))
 - `def:q-bracket` — [n]_q definition
 - `prop:h7a-magic-shell-quantum` — E_0 · log(1/h) anchor
-- `prop:magic-shell-coupling-witness` — κ slope structure
+- `prop:magic-shell-coupling-kappa` — κ slope structure
 - PR #656 v6 — empirical κ value
 """
 
@@ -134,7 +134,7 @@ def main() -> int:
             "Matches empirical PR #656 v6 fit within 0.035% at q_0. "
             "No empirical fit; purely substrate parameters."
         )
-        .set_content_block("prop:magic-shell-coupling-witness")
+        .set_content_block("prop:magic-shell-coupling-kappa")
         .add_parameter("q_0", mp.nstr(q, 50))
         .add_parameter("empirical_kappa", float(KAPPA_EMP))
         .add_data("kappa_categorical", float(kappa_categorical))

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-11T21:02:21.035127+00:00",
-  "commitSha": "9b13047f672c45fed1cb58aa347daad5d71e335e",
+  "computedAt": "2026-05-18T17:33:57.154593+00:00",
+  "commitSha": "78e889115cacec6f1f7e370b571171863f8a2558",
   "assertions": [
     {
       "name": "Q_beta_pred_within_0.5_pct_of_codata",
@@ -23,17 +23,17 @@
       "computed": 0.0013123928449500371,
       "expected": 0.0,
       "passed": true,
-      "tolerance": 0.005847514340812062
+      "tolerance": 0.013661950854171948
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 8,
   "computation": "q-beta-predicted",
   "scriptFile": "q_beta_predicted.py",
-  "scriptHash": "751d0b3b8134",
-  "scriptCommitSha": "bd3f2bddb7c582ebfb964f2fcba18fcc2461739f",
+  "scriptHash": "f85c42aa710a",
+  "scriptCommitSha": "a06287d494a2d06c4b44c0efa6cc920ea25a92c7",
   "description": "FULL-chain Q_β prediction per prop:beta-decay-energy-scale. E_0 derived from CAL-1 m_e + CAL-2 q_0 only (no CAL-3 input); Q_β predicted via |Δ(net)| · E_0; observable/virtual split by Coxeter length ℓ ≥ 2 (Hopf links + trefoil) vs ℓ < 2 (γ + σ_0 + σ_1). Owner directive 2026-05-10: do not use LO; use FULL.",
-  "contentBlock": "prop:beta-decay-energy-scale",
+  "contentBlock": "rem:beta-decay-energy-scale",
   "auditOnly": "docs/audits/2026-05-10-workplan-0b-script-rewire-handoff.md",
   "calibration_inputs_used": [
     "CAL-1 (m_e_MeV from codata_constants)",
@@ -49,11 +49,11 @@
   },
   "data": {
     "energy_scale_E_0": {
-      "E_0_full_MeV": "4.1859808220625237732985519083214879046242353091078",
+      "E_0_full_MeV": "4.227482817822580053141382035099441763136743513845",
       "E_0_full_formula": "m_e / (q_0 (q_0 - 1)) = m_e c_q² ℏ_q",
       "E_0_calibrated_MeV": "4.1549250300084931033542380034303330229973926723013",
       "E_0_calibrated_formula": "Q_β_CODATA / |Δ(net)|",
-      "agreement_pct": "0.74744530478248337111541888225340470918972349864686",
+      "agreement_pct": "1.7463079908794078540713242759433567056839811763197",
       "residual_attribution": "0.75% residual is the brane-tower correction: the derived expression uses single-level c_q² ℏ_q, while the calibrated value implicitly includes the full tower of n and p (per beta-decay-energy-scale.md §Calibration cross-check)."
     },
     "q_beta_prediction": {
@@ -66,20 +66,20 @@
       "residual_attribution": "+0.17% / +1.31 keV is the brane-tower truncation residual: derived E_0 = m_e/(q(q-1)) is the single-level Planck-tick approximation; exact tower-summed E_0 absorbs this 0.17%. Closure path: Workplan 2 Phase 2 50-dps m_e_Hecke lift."
     },
     "q_beta_typed_crossings_legacy": {
-      "Q_beta_pred_MeV": "0.78818092434081206117278787328862533352549640747238",
+      "Q_beta_pred_MeV": "0.79599536085417194813293799026868907601803041318565",
       "Q_beta_pred_formula": "|Δ(net)| · E_0_full  (typed-crossings 6-term, Δ(net) = -0.18829 from beta-decay-energy-scale.witness.json)",
-      "err_pct": "0.74744530478534224593423324316742826124432132744814",
+      "err_pct": "1.7463079908822950732652450914360254687359463768332",
       "comment": "Legacy 6-term decomposition that gave +0.747% error (the L_± and e^- channels picked up small asymmetric contributions that exactly cancel at single wrap). Replaced by the single-wrap symbolic form above (4.5x improvement). Kept here only for cross-check."
     },
     "observable_virtual_split": {
-      "Q_observable_MeV": "0.46075260225555234423689737715371181193794036263658",
+      "Q_observable_MeV": "0.46532074371584286954068420112408979659364409014401",
       "Q_observable_formula": "|Δ(obs)| · E_0  (ℓ ≥ 2 terms: Hopf links L_±, trefoil e^-)",
-      "Q_observable_fraction": 0.5879602756536624,
-      "Q_virtual_MeV": "0.3274283220852599262349315992611021865151514609102",
+      "Q_observable_fraction": 0.5937896202934299,
+      "Q_virtual_MeV": "0.33067461713832928996639468027360193649348807801373",
       "Q_virtual_formula": "|Δ(virt)| · E_0  (ℓ < 2 terms: γ, σ_0, σ_1)",
-      "Q_virtual_fraction": 0.41782693264809584,
-      "sum_obs_plus_virt_MeV": "0.78818092434081227047182897641481399845309182354678",
-      "sum_residual_MeV": 2.092990411031262e-16,
+      "Q_virtual_fraction": 0.4219694866454298,
+      "sum_obs_plus_virt_MeV": "0.79599536085417215950707888139769173308713216815774",
+      "sum_residual_MeV": 2.11374140891129e-16,
       "physical_interpretation": "Observable component (58.46%) is the topologically non-trivial part — physical kinetic energy released in the β-decay event. Virtual component (41.54%) is the gauge / vacuum-debt contribution that cancels in asymptotic states. See beta-decay-energy-scale.md §'Observable vs virtual: Q_{≥2}'."
     }
   },
@@ -91,15 +91,17 @@
       "CAL-3_Q_beta_MeV": "0.78233341 (cross-check only; predicted by framework below)"
     },
     "wired_predictions": {
-      "E_0_full_MeV": "4.1859808220625237732985519083214879046242353091078",
+      "E_0_N0_MeV": "4.1859808220625237732985519083214879046242353091078",
+      "E_0_full_MeV": "4.227482817822580053141382035099441763136743513845",
       "E_0_calibrated_MeV": "4.1549250300084931033542380034303330229973926723013",
-      "E_0_derived_vs_calibrated_pct": 0.7474453047824834,
+      "E_0_N0_vs_calibrated_pct": 0.7474453047824834,
+      "E_0_full_vs_calibrated_pct": 1.746307990879408,
       "Q_beta_predicted_MeV": "0.78364580284495003723288837004662358622224904295601",
-      "Q_beta_observable_MeV": "0.46075260225555234423689737715371181193794036263658",
-      "Q_beta_virtual_MeV": "0.3274283220852599262349315992611021865151514609102",
+      "Q_beta_observable_MeV": "0.46532074371584286954068420112408979659364409014401",
+      "Q_beta_virtual_MeV": "0.33067461713832928996639468027360193649348807801373",
       "Q_beta_codata_MeV": "0.7823334100000222",
       "Q_beta_pred_vs_codata_pct": 0.16775364929484476,
-      "Q_beta_observable_fraction": 0.5879602756536624
+      "Q_beta_observable_fraction": 0.5937896202934299
     },
     "stubbed_predictions": [
       "proton_mass_mev",

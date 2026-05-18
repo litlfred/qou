@@ -1,17 +1,17 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-16T19:18:58.392198+00:00",
-  "commitSha": "a80fefd2e8fe0152e27eca54fc2072b5254ab232",
+  "computedAt": "2026-05-18T17:32:56.006233+00:00",
+  "commitSha": "78e889115cacec6f1f7e370b571171863f8a2558",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 9,
   "computation": "kappa-d2-catalan-derivation",
   "scriptFile": "probe_kappa_d2_catalan.py",
-  "scriptHash": "49965d9a6358",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "cdd7e7c481dc",
+  "scriptCommitSha": "4e17b6b4b57073aeadc2195bc452a8c288b7711e",
   "description": "Categorical κ candidates via D-2 q-Catalan (PR #656). Tests four closed-form candidates against the empirical κ = -1.07 MeV/excess from #656 v6 single-magic anchor fit.",
-  "contentBlock": "prop:magic-shell-coupling-witness",
+  "contentBlock": "prop:magic-shell-coupling-kappa",
   "parameters": {
     "q_0": "1.1099785955541805752815940796095093779932822799587",
     "empirical_kappa": -1.0707907503265857

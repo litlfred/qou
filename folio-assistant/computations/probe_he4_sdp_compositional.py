@@ -143,7 +143,7 @@ def main() -> int:
             "Markov trace. Forward step on F1 from the three-PR "
             "integration audit."
         )
-        .set_content_block("prop:magic-shell-coupling-witness")
+        .set_content_block("prop:magic-shell-coupling-kappa")
         .add_parameter("channels", [name for name, _ in channels])
         .add_parameter("n_target", n_target)
         .add_data(
