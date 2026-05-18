@@ -302,18 +302,29 @@ historical pattern (58 of 58 LP/SDP witnesses on `main` lacked
 the dual at the time this rule was added). Do not repeat this
 pattern.
 
-**Current baseline (2026-05-08, post-LP_SDP_HINTS tightening,
-PR #565 F4):** the validator's hint list was deliberately narrowed
-to `lp-dual` / `operator-selection-lp` / `shadow-price` /
-`primal-dual` / `lp-duality` and now flags only **3** witnesses,
-**all 3** of which include the LP dual. **0 of 37 wired
-LP/SDP-flagged witnesses are missing duals.** The historical 58/58
-figure refers to the pre-tightening hint list (which incorrectly
-matched symbolic feasibility certificates and knot-particle probes
-that do not compute LP duals). Going forward, treat the 3-of-3
-set as authoritative; the 14 LP-solving scripts not on the hint
-list are presumed `feasibility-only` (opt-out) until reviewed
-per-file.
+**Current baseline (2026-05-18, re-measured against
+[`lp_dual_witness_validator.py`](folio-assistant/computations/lp_dual_witness_validator.py)):**
+the validator's narrowed hint list (`lp-dual` /
+`operator-selection-lp` / `shadow-price` / `primal-dual` /
+`lp-duality`) now flags **14** witnesses; **11** include the full
+LP dual; **3 are missing one or more dual fields**:
+
+| Witness | Script | Missing field(s) |
+|---------|--------|------------------|
+| `option-b-proton-mass-full-chain` | `option_b_proton_mass_full_chain.py` | `y_star` |
+| `probe-braid-word-basis-gram` | `probe_braid_word_basis_gram.py` | all 6 (does not call `lp_dual_solver`) |
+| `probe-sdp-active-set-dominant-partition` | `probe_sdp_active_set_dominant_partition.py` | `active_set` / `active_constraints` / `active_channels` |
+
+The historical 58/58 figure refers to the pre-tightening hint list
+(which incorrectly matched symbolic feasibility certificates and
+knot-particle probes that do not compute LP duals). The earlier
+"0 of 37 missing" baseline (2026-05-08) is **stale** — three new
+LP/SDP witnesses landed since then without routing through
+[`lp_dual_solver.py`](folio-assistant/computations/lp_dual_solver.py).
+Fix per offender: route the LP/SDP solve through
+`solve_operator_selection_lp()` or
+`solve_psd_operator_selection_sdp()`; the result's `.to_dict()`
+carries every required field.
 
 ## Writing `.lean` proofs — rules for agents
 
