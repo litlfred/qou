@@ -11,12 +11,21 @@ the canonical 3-input scheme is:
   m_n = m_p + Q_β        (Hecke engine)
   m_p: derived via Skein pair formula (Skein resolution of Borromean
        braid is OPEN; currently calibrated)
-  μ_u, μ_d: derived from Skein resolution tree (currently
-       back-solved from m_p, m_n)
+  μ_u, μ_d: derived from Skein resolution tree.
+
+Post-#696 (D3 wiring of `prop:flavor-dressed-mass-from-substrate-split`):
+the n − p splitting itself is now substrate-pure — μ_d − μ_u is
+derived from q_0 + M_N via the Skein lift, with CODATA m_n − m_p
+serving only as a validation target.  Scripts that import the
+substrate-splitting witness (`flavor-dressed-mass-from-substrate-split.witness.json`)
+are classified as `3-input-canonical-with-substrate-splitting`
+rather than as 4-input over-counts, even when they still reference
+CODATA `M_N_MEV` (since M_N remains a CLASS-A acknowledged-stub
+anchor pending Workplan-0b).
 
 Anything that uses BOTH m_p AND m_n from CODATA over-counts the
-hadronic input. Anything using μ_d − μ_u from CODATA splitting
-implicitly uses BOTH.
+hadronic input UNLESS it also imports the substrate-splitting witness
+(in which case the m_p + m_n usage is for the M_N anchor only).
 
 Audit each Python script under folio-assistant/computations/ and
 classify by which inputs it uses. Emits canonical-script-input-audit
@@ -47,7 +56,26 @@ MARKERS = {
     "experimental_constants": re.compile(r"from experimental_constants import|from\s+experimental_constants\s+import"),
     "MASS_RATIO_MU_E": re.compile(r"\bMASS_RATIO_MU_E\b|\bMU_OVER_E\b"),
     "calibration_skein_pair": re.compile(r"skein.pair|S_uu|S_ud|S_dd|μ_u|μ_d|mu_u|mu_d"),
+    # PR #696 D3: scripts that consume the substrate-splitting
+    # witness no longer need CODATA m_n − m_p as a hadronic input.
+    "substrate_splitting_witness": re.compile(
+        r"flavor-dressed-mass-from-substrate-split\.witness\.json"
+        r"|probe_flavor_dressed_mass_split"
+        r"|prop:flavor-dressed-mass-from-substrate-split"
+    ),
 }
+
+
+_COMMENT_RX = re.compile(r"(?m)^\s*#.*$")
+
+
+def _strip_comments(text: str) -> str:
+    """Remove Python `#` comment lines (per Copilot #733: comment-only
+    references to a marker name must not trigger the marker — e.g.
+    `paper_six_term_isotope_sweep.py` mentions
+    `flavor-dressed-mass-from-substrate-split.witness.json` in a
+    comment explaining it is NOT consumed)."""
+    return _COMMENT_RX.sub("", text)
 
 
 def classify_script(path: Path) -> dict:
@@ -58,7 +86,8 @@ def classify_script(path: Path) -> dict:
         return None
     if "import" not in text and "def " not in text:
         return None  # data file, skip
-    found = {key: bool(rx.search(text)) for key, rx in MARKERS.items()}
+    code = _strip_comments(text)
+    found = {key: bool(rx.search(code)) for key, rx in MARKERS.items()}
     # Determine alignment status
     uses_m_p = found["M_P_MEV"]
     uses_m_n = found["M_N_MEV"]
@@ -66,7 +95,32 @@ def classify_script(path: Path) -> dict:
     uses_vol_hyp = found["Vol_hyp"]
     uses_canonical_q0 = found["q_parameter"]
     uses_canonical_consts = found["experimental_constants"]
-    if uses_m_p and uses_m_n:
+    uses_substrate_split = found["substrate_splitting_witness"]
+    # PR #696 D3: substrate-splitting recognition trumps the
+    # 4-input over-count classification (m_p + m_n usage is for the
+    # M_N anchor, not as independent calibration inputs).
+    if uses_substrate_split and uses_m_p and uses_m_n:
+        scheme = (
+            "3-input-canonical-with-substrate-splitting "
+            "(m_n − m_p derived from prop:flavor-dressed-mass-from-substrate-split; "
+            "m_p + m_n used only for M_N anchor — CLASS-A pending Workplan-0b)"
+        )
+    elif uses_substrate_split and (uses_m_p or uses_m_n):
+        scheme = (
+            "3-input-canonical-with-substrate-splitting-partial "
+            "(consumes substrate-splitting witness; single nucleon-mass "
+            "anchor for M_N — CLASS-A pending Workplan-0b)"
+        )
+    elif uses_substrate_split:
+        # Per Gemini #733: a pure-substrate consumer (no CODATA
+        # nucleon mass) is the post-Workplan-0b target form; counted
+        # in the substrate-splitting summary statistic.
+        scheme = (
+            "3-input-canonical-with-substrate-splitting-pure "
+            "(consumes substrate-splitting witness; no CODATA nucleon "
+            "masses — post-Workplan-0b target form)"
+        )
+    elif uses_m_p and uses_m_n:
         # Two hadronic inputs — over-count if Q_β not also used
         scheme = "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)"
     elif uses_m_p and uses_q_beta:
@@ -128,6 +182,10 @@ def main():
         or "3-input-alt" in s
         or "Q_β-only-hadronic" in s
     )
+    substrate_splitting = sum(
+        n for s, n in by_scheme.items()
+        if "with-substrate-splitting" in s
+    )
     over_counts = sum(
         n for s, n in by_scheme.items() if "over-counts" in s
     )
@@ -137,6 +195,7 @@ def main():
 
     print(f"Summary:")
     print(f"  Aligned with calibration-inputs.md (3-input canonical): {canonical_3input} / {total} ({100*canonical_3input/total:.1f}%)")
+    print(f"    of which use substrate-splitting (PR #696 D3):        {substrate_splitting} / {total} ({100*substrate_splitting/total:.1f}%)")
     print(f"  Uses both m_p AND m_n (over-count hadronic):           {over_counts} / {total} ({100*over_counts/total:.1f}%)")
     print(f"  Uses Vol_hyp (fitted under option B):                  {fitted} / {total} ({100*fitted/total:.1f}%)")
     print(f"  Other (no-hadronic / substrate-only):                  {total - canonical_3input - over_counts - fitted} / {total}")
@@ -158,6 +217,7 @@ def main():
         .add_data("by_scheme", by_scheme)
         .add_data("rows", rows)
         .add_data("canonical_3input_count", canonical_3input)
+        .add_data("substrate_splitting_count", substrate_splitting)
         .add_data("over_count_count", over_counts)
         .add_data("vol_hyp_fitted_count", fitted)
         .add_caveat(
