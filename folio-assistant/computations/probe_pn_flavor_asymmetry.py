@@ -51,7 +51,11 @@ from picard_lefschetz_thimble import (
     cubic_roots, sw_3root_product_degree1,
 )
 from q_parameter import Q as q0, HBAR_Q
-from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV, VOL_BORROMEAN
+from experimental_constants import M_E_MEV, VOL_BORROMEAN
+from codata_constants import (
+    M_P_MEV_VALIDATION,
+    M_N_MEV_VALIDATION,
+)
 
 z_mark = 1 / (np.sqrt(q0) + np.sqrt(1.0 / q0))
 borromean = VOL_BORROMEAN / (HBAR_Q ** 2)
@@ -155,8 +159,8 @@ def main() -> int:
     print(f"  μ_u (dressed up-quark)   = {MU_U} MeV")
     print(f"  μ_d (dressed down-quark) = {MU_D} MeV")
     print(f"  μ_d / μ_u = {MU_D/MU_U:.10f}")
-    print(f"  CODATA m_n/m_p = {M_N_MEV/M_P_MEV:.10f}")
-    print(f"  CODATA Δm = m_n - m_p = {M_N_MEV - M_P_MEV:.6f} MeV")
+    print(f"  CODATA m_n/m_p = {M_N_MEV_VALIDATION/M_P_MEV_VALIDATION:.10f}")
+    print(f"  CODATA Δm = m_n - m_p = {M_N_MEV_VALIDATION - M_P_MEV_VALIDATION:.6f} MeV")
     print()
 
     # Scheme 1: unweighted (no flavor distinction) — baseline
@@ -198,7 +202,7 @@ def main() -> int:
     print(f"    m_p_pred (scheme 2) = {m_p_scheme2:.4f}")
     print(f"    m_n_pred (scheme 2) = {m_n_scheme2:.4f}")
     delta_pred = m_n_scheme2 - m_p_scheme2
-    delta_codata = M_N_MEV - M_P_MEV
+    delta_codata = M_N_MEV_VALIDATION - M_P_MEV_VALIDATION
     print(f"    Δm_pred = {delta_pred:.4f} MeV")
     print(f"    Δm_CODATA = {delta_codata:.4f} MeV")
     print(f"    Δm ratio = {delta_pred/delta_codata:.4f}")
@@ -294,7 +298,7 @@ def main() -> int:
     w.add_data("mu_u_MeV", MU_U)
     w.add_data("mu_d_MeV", MU_D)
     w.add_data("mu_ratio", MU_D/MU_U)
-    w.add_data("codata_m_n_over_m_p", M_N_MEV/M_P_MEV)
+    w.add_data("codata_m_n_over_m_p", M_N_MEV_VALIDATION/M_P_MEV_VALIDATION)
     w.add_data("codata_delta_m_MeV", delta_codata)
     w.add_data("schemes_tested", [
         {"scheme": "1 unweighted", "delta_m_pred": 0.0, "ratio_to_codata": 0.0},

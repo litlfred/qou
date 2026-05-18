@@ -44,7 +44,11 @@ from pathlib import Path
 import mpmath as mp
 
 sys.path.insert(0, str(Path(__file__).parent))
-from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
+from experimental_constants import M_E_MEV
+from codata_constants import (
+    M_P_MEV_VALIDATION,
+    M_N_MEV_VALIDATION,
+)
 from witness_base import WitnessBuilder
 
 from _precision import set_compute_dps, fmt  # noqa: E402
@@ -235,8 +239,8 @@ def main():
     print("=" * 78)
     print(f"{'scheme':<14} {'m_p/m_e':>14} {'err vs CODATA':>14} {'m_n/m_e':>12} {'err':>10}")
     print("-" * 78)
-    target_p = mp.mpf(M_P_MEV) / mp.mpf(M_E_MEV)
-    target_n = mp.mpf(M_N_MEV) / mp.mpf(M_E_MEV)
+    target_p = mp.mpf(M_P_MEV_VALIDATION) / mp.mpf(M_E_MEV)
+    target_n = mp.mpf(M_N_MEV_VALIDATION) / mp.mpf(M_E_MEV)
 
     for label, e_t, p_t, n_t in (
         ("Plancherel-A", e_total_A, p_total_A, n_total_A),
@@ -260,8 +264,8 @@ def main():
         .set_content_block("prop:y-lambda-recipe-from-partition")
         .add_parameter("q_0_mpf50", mp.nstr(Q0, 50))
         .add_parameter("m_e_MeV", M_E_MEV)
-        .add_parameter("m_p_AME_MeV", M_P_MEV)
-        .add_parameter("m_n_AME_MeV", M_N_MEV)
+        .add_parameter("m_p_AME_MeV", M_P_MEV_VALIDATION)
+        .add_parameter("m_n_AME_MeV", M_N_MEV_VALIDATION)
         .add_parameter("mpmath_dps", mp.mp.dps)
         .add_data("plancherel_results", {
             "e_total_50dps": mp.nstr(e_total_A, 30),
