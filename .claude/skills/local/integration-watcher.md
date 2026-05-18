@@ -85,7 +85,7 @@ keep this core):
       "source": "watch:main:<sha> | watch:pr:<N>:<event-ts> | backlog",
       "evidence": "<one paragraph: file:line + offending text>",
       "attempts": [ { "ts": "...", "tactic": "...", "outcome": "fail|partial|ok" } ],
-      "status": "queued | in-progress | resolved | needs-author | wontfix",
+      "status": "queued | in-progress | resolved | needs-author | wontfix | queued-for-removal",
       "asked_author_at": null
     }
   ],
@@ -203,24 +203,36 @@ SHA=<incoming commit>
 changed=$(git diff-tree --no-commit-id --name-only -r "$SHA")
 
 # Step 1 — look for canonical-form arrivals. Heuristic patterns
-# (children override in Slot B-derivation):
-#  - new file `prop:*.ts` or `thm:*.ts` with kind theorem/proposition/lemma
-#    appearing in `content/.../**`
-#  - existing file whose `kind:` field flipped from `conjecture` → provable
-#  - .lean file whose `sorry` count dropped to 0 (axiom audit clean)
+# (children override in Slot B-derivation). Content blocks use
+# builder calls (`export default theorem({ ... })`), not literal
+# `kind:` JSON-style fields. The .lean check fires when a sorry
+# count drops to zero in the new SHA.
 new_propositions=$(
-  echo "$changed" | grep -E 'content/.*\.ts$' | while read ts; do
-    [ -f "$ts" ] || continue
-    git show "$SHA:$ts" 2>/dev/null | grep -qE 'kind:\s*"(theorem|proposition|lemma|corollary)"' \
-      && ! git show "$SHA^:$ts" 2>/dev/null | grep -qE 'kind:\s*"(theorem|proposition|lemma|corollary)"' \
-      && echo "$ts"
+  echo "$changed" | while read f; do
+    if [[ "$f" =~ ^content/.*\.ts$ ]]; then
+      git show "$SHA:$f" 2>/dev/null \
+        | grep -qE "export default (theorem|proposition|lemma|corollary)\(" \
+        && ! git show "$SHA^:$f" 2>/dev/null \
+        | grep -qE "export default (theorem|proposition|lemma|corollary)\(" \
+        && echo "$f"
+    elif [[ "$f" =~ \.lean$ ]]; then
+      old_sorry=$(git show "$SHA^:$f" 2>/dev/null | grep -c '\bsorry\b')
+      new_sorry=$(git show "$SHA:$f"  2>/dev/null | grep -c '\bsorry\b')
+      [ "$new_sorry" = "0" ] && [ "$old_sorry" != "0" ] && echo "$f"
+    fi
   done
 )
 ```
 
-For each newly-arrived derivation, search the queue for items whose
-`status: queued | needs-author` references the now-derived label
-(directly or transitively via `uses[]`). For each hit:
+A more reliable alternative: load the affected `.ts` modules via
+the content pipeline's TypeScript loader and inspect the parsed
+`kind` field directly — heuristic grep is a session-local
+fast-path.
+
+For each newly-arrived derivation, search the queue for items
+whose `status` is in `{queued, needs-author}` and which reference
+the now-derived label (directly or transitively via `uses[]`).
+For each hit:
 
 1. **Audit downstream impact.** If the queued item was flagged
    "open" because it depended on this derivation, the dependency is
