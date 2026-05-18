@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T18:01:45.362154+00:00",
-  "commitSha": "71299ff700f2c5a03d016917d66027ab614e1939",
+  "computedAt": "2026-05-18T18:13:12.076207+00:00",
+  "commitSha": "e12648a9ebbf12b3b99b9d31a74e871258d26dc8",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2431,6 +2431,7 @@
         "probe-pl-flavor-extended-cubic.witness.json",
         "probe-pn-flavor-asymmetry.witness.json",
         "probe-proton-mass-scale.witness.json",
+        "probe-proton-t2-t3-at-a1.witness.json",
         "probe-proton-t2-t3-li2q-comparison.witness.json",
         "probe-proton-with-wenzl-weights.witness.json",
         "probe-rho-K-candidate-search.witness.json",
@@ -2443,6 +2444,8 @@
         "probe-sdpb-multilevel-crossing.witness.json",
         "probe-sdpb-pl-crossing-equations.witness.json",
         "probe-symbolic-sdp-derivation-breakout.witness.json",
+        "probe-t5-chirality-categorical-audit.witness.json",
+        "probe-t6-habiro-residue-at-a1.witness.json",
         "probe-term4-conventions.witness.json",
         "probe-tritium-k-star.witness.json",
         "probe-v-hat-wenzl-tilde.witness.json",
