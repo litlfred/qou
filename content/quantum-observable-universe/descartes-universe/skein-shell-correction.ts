@@ -4,6 +4,10 @@ export default conjecture({
   label: "conj:skein-shell-correction",
   title:
     "Shell corrections from Skein polynomial factorization of the multi-nucleon link",
+  lean: {
+    ref: "qou:QOU.SkeinShellCorrection.SkeinShellCorrection",
+    validation: "not_checked",
+  },
   tags: [
     "shell-correction",
     "skein-polynomial",

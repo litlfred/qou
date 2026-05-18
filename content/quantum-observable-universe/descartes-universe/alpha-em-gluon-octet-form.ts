@@ -4,6 +4,10 @@ export default conjecture({
   label: "conj:alpha-em-gluon-octet-form",
   title:
     "Conjectured closed form $1/\\alpha_{EM} = 45 \\cdot [3]_q \\cdot (1 + \\delta_{CS} + 8q \\cdot \\delta_{CS}^2)$ (PSLQ-empirical, derivation incomplete)",
+  lean: {
+    ref: "qou:QOU.DescartesUniverse.alpha_em_gluon_octet_form",
+    validation: "not_checked",
+  },
   uses: [
     "thm:em-spectral-completeness",
     "cor:gauge-coupling-uniqueness",
