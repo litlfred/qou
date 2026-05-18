@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T18:13:16.387862+00:00",
-  "commitSha": "d7e0cdb1f5f9cd476ce5d1f6ae696dfab783688d",
+  "computedAt": "2026-05-18T18:13:24.364134+00:00",
+  "commitSha": "91f158dceea834f3f1eb44103e0c316b1560bf4d",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2444,6 +2444,7 @@
         "probe-sdpb-h3a-deuteron.witness.json",
         "probe-sdpb-multilevel-crossing.witness.json",
         "probe-sdpb-pl-crossing-equations.witness.json",
+        "probe-substrate-vs-chi-cache-delta-m.witness.json",
         "probe-symbolic-sdp-derivation-breakout.witness.json",
         "probe-t5-chirality-categorical-audit.witness.json",
         "probe-t6-habiro-residue-at-a1.witness.json",
