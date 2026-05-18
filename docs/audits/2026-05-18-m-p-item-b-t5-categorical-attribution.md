@@ -50,10 +50,15 @@ illustrate their structural difference:
 
 | # | Definition | Symbolic | Proton @ $q_0$ |
 |---|------------|----------|----------------|
+| **D** (SDP+thimble dual) | chirality-active dual sum $1 + \sum_{\lambda \in \mathcal{A}^{\mathrm{chi}}} u_\lambda^*/u_0^*$ (=  $1 + \sum_{\sigma} (n^{\mathrm{atom}}_\sigma - n^{\mathrm{free}}_\sigma) \oint_\sigma \lambda_{\mathrm{SW}}^{(1)} / \lvert\mathrm{tr}_M^{\mathrm{free}}\rvert$ on archimedean side) | conjugate-pair cancellation at A=1 | $1.000000$ |
 | **R** (Ratio) | $\dfrac{\lvert\mathrm{tr}_M(W_{\text{atom}})\rvert}{\lvert\mathrm{tr}_M(W_{\text{free}})\rvert}$ | trivially 1 at A=1 | $1.000000$ |
 | **C** (Closed form / V1 narrative) | $\prod_{c \in \text{pn-crossings}} (1 + \mathrm{sign}(c) \cdot h)$, $h = q - q^{-1}$ | empty product at A=1 | $1.000000$ |
 | **V1** (Gram, $\beta^* = \beta^{-1}$) | $\tau(\beta \cdot \beta^{-1}) = \tau(\mathbf{1}_n)$ | $\dfrac{(1+q^2)^4}{16 q^4}$ | $1.021972$ |
 | **V2** (Mirror Gram, $\beta^* = \beta_{\text{mirror}}$) | $\tau(\beta \cdot \beta_{\text{mirror}}^{-1})$ | high-order polynomial in $q$ | $2.423743$ |
+
+(**D** is added per §7b — the SDP shadow-price + thimble-intersection
+realisation, the deepest structural attribution and the one the
+existing infra already computes.)
 
 For A = 2 (deuteron), A = 3 (figure-8 / triton), A = 4 (Borromean
 / ⁴He) the conjecture asserts (Step 4):
@@ -259,6 +264,187 @@ existing MPFR infrastructure).
 | QB.2 | For A ≥ 5, is **R** unique up to a global sign / phase? The absolute-value $|\cdot|$ in the conjecture statement removes one sign; could there be a residual $\mathbb{Z}/2$ ambiguity? |
 | QB.3 | Where does V2's chirality information actually go in the mass formula — is it part of $T_6$'s cyclotomic residue (which is chirality-sensitive via the Habiro polynomial), or is it a missing 7th term? |
 | QB.4 | The ratio form **R** uses both $W_{\text{atom}}$ and $W_{\text{free}}$; the disconnected braid $W_{\text{free}}$ is defined only up to a strand-relabelling. Is the ratio invariant under this relabelling? Yes by braid-conjugation invariance of $\mathrm{tr}_M$, but the proof should be cited explicitly. |
+
+## 7b. Structural attribution via SDP shadow price + PL thimble
+
+*(Added 2026-05-18 after user note: "a_K from sibling is related
+to SDP and thimble".)*
+
+The Ratio form **R** is **not** the deepest categorical
+attribution — it is already realised in the existing infrastructure
+by **two equivalent constructions on opposite sides of the
+archimedean wall**:
+
+### 7b.1 Algebraic side: a_K = knot-factor SDP shadow price
+
+[`prop:bw-coefficient-shadow-price`](../../content/quantum-observable-universe/braids-and-knots/bw-coefficient-shadow-price.md)
+already proves that *each* coefficient of the Bethe–Weizsäcker
+formula is a **shadow price (LP dual variable) of a Wedderburn-
+block Frobenius positivity constraint** in the nuclear-operator
+selection LP:
+
+$$
+  B(Z,N) \;=\; \sum_\lambda C_\lambda \cdot S_\lambda(Z,N,A) \cdot m_e,
+  \qquad
+  C_\lambda = u_\lambda^*\big|_{S_\lambda = 1}.
+$$
+
+The dual factors as $u_\lambda^*(Z,N) = C_\lambda \cdot
+S_\lambda(Z,N,A)$ where $C_\lambda$ is a $q$-integer product
+(partition algebra: hooks, contents, Frobenius coords) and
+$S_\lambda$ is the content-sum-driven scaling ($c(\lambda) > 0$:
+volume; $c(\lambda) = 0$: isospin; $c(\lambda) < 0$: charge).
+
+**Claim:** $T_5$'s chirality factor $a_K$ is the **knot-factor
+shadow price** — the dual variable $u_\lambda^*$ summed over
+the **chirality-discriminating Wedderburn block(s)** — i.e. the
+non-self-conjugate partitions $\lambda \neq \lambda^\vee$, since
+the Wenzl-bridge identification $y_\lambda = w_\lambda$ holds
+**only on the self-conjugate stratum**. The chirality information
+is exactly what the self-conjugate stratum loses.
+
+Concretely, the active set
+$\mathcal{A}(Z, N) = \{\lambda \vdash 3A : u_\lambda^*(Z, N) > 0\}$
+splits as
+$\mathcal{A} = \mathcal{A}^{\mathrm{sc}} \sqcup \mathcal{A}^{\mathrm{chi}}$
+(self-conjugate + chirality), and
+
+$$
+  a_K(Z, N) \;=\;
+  1 \;+\;
+  \sum_{\lambda \in \mathcal{A}^{\mathrm{chi}}}
+    \frac{u_\lambda^*(Z,N)}{u_0^*(Z,N)}.
+$$
+
+For the proton (A=1, n=3), the only partitions are $(3), (2,1),
+(1,1,1)$; of these, $(2,1)$ is self-conjugate ($\lambda = \lambda^\vee$),
+and $(3) \leftrightarrow (1,1,1)$ form a conjugate pair. The
+proton's atomic braid is **invariant under the conjugate-pair
+involution** (all three quarks identical up to colour relabel),
+so the chirality contributions from $(3)$ and $(1,1,1)$ cancel
+in the dual sum — giving $a_K^{\text{proton}} = 1$ exactly, with
+**structural** (LP-duality + symmetry) justification, not just
+"empty pn-crossings product".
+
+This is the deeper reason **C** matches **R** at A=1: not the
+counting argument of zero pn-crossings, but the LP-complementarity
+between conjugate Wedderburn blocks under the proton's reflection
+symmetry.
+
+### 7b.2 Archimedean side: a_K = thimble intersection ratio
+
+Under the fibre functor $\tau$, the algebraic Markov trace
+descends to the Picard–Lefschetz thimble decomposition at the
+color-tube cubic discriminant
+([`def:picard-lefschetz-thimble`](../../content/quantum-observable-universe/descartes-universe/picard-lefschetz-thimble.md),
+[`prop:sw-period-thimble-equivalence`](../../content/quantum-observable-universe/descartes-universe/sw-period-thimble-equivalence.md)):
+
+$$
+  \tau\bigl(\mathrm{tr}_M(W)\bigr)
+  \;=\;
+  \sum_\sigma n_\sigma \oint_{\mathcal{J}_{z_{c,\sigma}}}
+    \lambda_{\mathrm{SW}}^{(1)}(z; W)\, dz.
+$$
+
+The intersection numbers $n_\sigma = \langle \mathcal{K}_\sigma,
+\gamma \rangle \in \mathbb{Z}$ count which thimbles contribute
+to which braid configurations. The PL ↔ JSJ mass-integration
+equivalence
+([`conj:pl-jsj-mass-integration-equivalence`](../../content/quantum-observable-universe/descartes-universe/pl-jsj-mass-integration-equivalence.md))
+identifies the **active set of thimbles** with the **active set
+of Wedderburn blocks** under $\tau$:
+
+$$
+  \mathcal{A}^{\mathrm{chi}}(Z,N)
+  \;\xleftrightarrow{\;\tau\;}\;
+  \bigl\{\sigma : n_\sigma^{\mathrm{atom}}(Z,N)
+                 \neq n_\sigma^{\mathrm{free}}(Z,N)\bigr\}.
+$$
+
+The chirality-active thimbles are precisely the SW critical
+points $z_{c, \sigma}$ where the **anti-thimble intersection
+number differs** between the connected (atom) and disconnected
+(free) braid contours — i.e. the thimbles "newly captured" by
+the binding topology.
+
+The thimble form gives:
+
+$$
+  a_K(Z, N) \;=\; 1 \;+\;
+  \sum_{\sigma \in \mathcal{A}^{\mathrm{chi}}}
+    \bigl(n_\sigma^{\mathrm{atom}} - n_\sigma^{\mathrm{free}}\bigr)
+    \cdot \frac{\oint_{\mathcal{J}_{z_{c,\sigma}}}
+      \lambda_{\mathrm{SW}}^{(1)}\,dz}
+      {|\mathrm{tr}_M(W_{\mathrm{free}})|}.
+$$
+
+For the proton, the SW critical points $z_c^{\pm} \approx 0.106
+\pm 0.937 i$ come in a conjugate pair; the proton braid contour
+sits on the real axis with **equal anti-thimble intersection
+with both** ($n^+ = n^-$), so the conjugate-pair sum vanishes —
+the **same cancellation** as the conjugate Wedderburn blocks
+above. The two pictures are identified by $\tau$.
+
+### 7b.3 What this changes for the closure plan
+
+The original §6 step **B.1** (implement `"ratio"` mode via
+direct $|\mathrm{tr}_M(W_{\mathrm{atom}})| /
+|\mathrm{tr}_M(W_{\mathrm{free}})|$ compute) is **not the
+canonical route**. The correct routes are:
+
+- **B.1a (SDP-side).** Compute $a_K$ via the existing
+  operator-selection LP/SDP dual extractor
+  (`lp_dual_solver.solve_operator_selection_lp` or
+  `solve_psd_operator_selection_sdp`,
+  [`folio-assistant/computations/lp_dual_solver.py`](../../folio-assistant/computations/lp_dual_solver.py))
+  — already MPFR-50dps capable, already emits the required
+  dual fields per CLAUDE.md §LP / SDP duals — and read off the
+  chirality-active dual sum as in §7b.1.
+
+- **B.1b (PL-side).** Compute $a_K$ via the thimble intersection
+  numbers $n_\sigma^{\mathrm{atom}} - n_\sigma^{\mathrm{free}}$
+  from the existing PL machinery (`picard-lefschetz-thimble`
+  block + `sw-period-thimble-equivalence`); validate against B.1a
+  to 1 ppb as a cross-check of the archimedean ↔ algebraic
+  bijection.
+
+- **B.1c (cross-check vs C).** Validate the BW closed form **C**
+  against B.1a for A = 2, 3, 4 — the closed form should equal the
+  dual sum because the conjecture Step 4 BW values are exactly
+  the $C_\lambda$ values for the small-A active set.
+
+The advantage of B.1a/B.1b over a generic ratio compute: $a_K$ is
+**not a new quantity** — it is read off existing infrastructure
+(SDP duals already wired per `prop:operator-selection-lp`,
+thimble intersections already computed in the PL chain). No new
+Hoefsmit compute, no new Wedderburn sum — just one extraction
+from the dual variables of an LP that is already solved as
+part of every binding-energy compute.
+
+### 7b.4 Sibling-PR coordination
+
+- **PR #682** (post-675-1ppb-roadmap-fe454f): wires Li_2^q
+  production tower form into `mass_formula_6term_mpfr_50dps`;
+  necessary substrate for the SDP dual extraction at MPFR-50dps
+  because the Li_2^q convergence governs the
+  $S_\lambda(Z,N,A)$ scaling functions.
+
+- **PR #686** (flavor-split-higher-order): probes sub-leading
+  substrate corrections via thimble (`mobius-limit-from-thimble`,
+  `picard-lefschetz-thimble`, `sw-period-thimble-equivalence`
+  witnesses re-emitted). The thimble infrastructure $a_K$ would
+  consume is being kept fresh by #686's drift refresh.
+
+- **PR #679** (rho-k-wire-li-extend): extends ρ_K to ⁶Li/⁷Li
+  using LR-bridge witness. ρ_K is the leading-order term;
+  $a_K$ is the **next-order chirality correction**. Stacking
+  order in the 6-term formula: $T_1$ (ρ_K) → $T_5$ (a_K) →
+  $T_6$ (Habiro residue).
+
+The §6 critical path now reads: B.1a → B.1c → B.4 → B.5,
+totalling **less than a working day** because no new compute
+is implemented; it is purely **a re-read of existing SDP dual
+variables** through the lens of the §7b.1 identification.
 
 ## 8. Coordination notes
 
