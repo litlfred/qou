@@ -151,7 +151,7 @@ fn validate_mpfr(
     dps: u32,
 ) -> Vec<MpfrRow> {
     use rug::Float;
-    let prec = (dps as f64 * 3.322 + 16.0) as u32;
+    let prec = hecke_engine::seminormal_mpfr::dps_to_bits(dps);
     let mut rows = Vec::new();
     for lambda in partitions_of(n) {
         let chi_semi_str = chi_lambda_braid_mpfr(&lambda, word, q_str, dps);

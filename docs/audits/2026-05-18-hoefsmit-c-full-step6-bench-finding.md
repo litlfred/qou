@@ -46,7 +46,9 @@ The audit's [scaling argument](2026-05-18-hoefsmit-c-gate-gp-cross-validate.md) 
 
 This is true asymptotically as `dim → ∞` (per-partition Hoefsmit
 matrix product is O(dim² × |word|), while per-partition GP basis
-sum is O(|basis| × dim_per_T_w_char). At max dim 7,700 for n=12 the
+sum is O(|basis| × dim_per_T_w_char). At max dim 7,700 for n=12
+(verified via hook-length formula; the max-dim partition is
+λ=(5,3,2,1,1) — see PR #695 cross-check) the
 GP path wins by orders of magnitude **if `|basis|` stays small**.
 
 In practice at H_9 the basis expansion is **wide** because the

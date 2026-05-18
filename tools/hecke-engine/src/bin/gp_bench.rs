@@ -25,14 +25,15 @@
 //!
 //! For each atom + path:
 //!   - wall time (ms)
-//!   - bytes of returned all-partitions result
-//!   - byte-equality flag (GP vs seminormal output)
+//!   - partition count (must match between seminormal and GP)
+//!   - within-tolerance flag (GP vs seminormal output, abs_diff)
 //!
 //! Plus a summary: per-atom speedup ratio (seminormal / GP).
 //!
-//! Exit 0 if every atom's GP path produces byte-identical output to
-//! the seminormal path. Exit 1 if any mismatch (the benchmark loses
-//! correctness — speedup is meaningless without correctness).
+//! Exit 0 if every atom's GP output is within tolerance of seminormal
+//! (`abs_diff ≤ 10^(-DPS+5)`) AND the partition key sets match. Exit
+//! 1 on any tolerance violation or missing-partition mismatch — the
+//! benchmark loses correctness, speedup is meaningless without it.
 
 use std::time::Instant;
 
@@ -90,7 +91,7 @@ fn proton_word_h3() -> Vec<CrossingPair> {
     //        7 entries
     //   g1 = 3·σ⁻¹ + σ_avg = [(σ⁻¹,2), (σ⁻¹,2), (σ⁻¹,2), (avg,2)]
     //        4 entries
-    let mut w = vec![
+    let w = vec![
         (Crossing::Sigma, 1), (Crossing::Sigma, 1), (Crossing::Sigma, 1),
         (Crossing::Sigma, 1), (Crossing::Averaged, 1),
         (Crossing::Sigma, 1), (Crossing::Sigma, 1),
@@ -98,7 +99,6 @@ fn proton_word_h3() -> Vec<CrossingPair> {
         (Crossing::SigmaInv, 2), (Crossing::Averaged, 2),
     ];
     debug_assert_eq!(w.len(), 11);
-    let _ = &mut w;
     w
 }
 
@@ -127,13 +127,21 @@ struct BenchRow {
     n_strands: usize,
     word_len: usize,
     n_averaged: usize,
+    /// Higher-resolution wall time (seconds) for small atoms that
+    /// would round to 0 ms.
+    seminormal_wall_s: f64,
+    gp_wall_s: f64,
     seminormal_wall_ms: u128,
     gp_wall_ms: u128,
-    /// seminormal / gp wall ratio; >1 means GP is faster.
+    /// seminormal / gp wall ratio; >1 means GP is faster. `f64::INFINITY`
+    /// if `gp_wall_s == 0` (truly instantaneous GP for sub-µs cases).
     speedup_ratio: f64,
-    /// True iff every partition's χ^λ output is byte-equal between
-    /// seminormal and GP at this dps.
-    byte_equal: bool,
+    /// True iff every partition's χ^λ output is within `tolerance` of
+    /// seminormal at this dps (abs_diff metric).  Renamed from
+    /// `byte_equal` per Copilot review on PR #730 — the actual check
+    /// is tolerance-based, not byte-equality.
+    within_tolerance: bool,
+    worst_abs_diff: f64,
     n_partitions: usize,
     n_mismatches: usize,
 }
@@ -148,8 +156,10 @@ fn bench_atom(label: &str, n_strands: usize, word: &[CrossingPair]) -> BenchRow 
     let semi_rows = chi_lambda_canonical_all_partitions_mpfr(
         n_strands, word, Q_STR_50DPS, DPS,
     );
-    let semi_wall_ms = t_semi.elapsed().as_millis();
-    eprintln!("  seminormal: {} ms, {} partitions", semi_wall_ms, semi_rows.len());
+    let semi_elapsed = t_semi.elapsed();
+    let semi_wall_s = semi_elapsed.as_secs_f64();
+    let semi_wall_ms = semi_elapsed.as_millis();
+    eprintln!("  seminormal: {:.3} s, {} partitions", semi_wall_s, semi_rows.len());
 
     // GP path — same input as a signed word.
     let signed_word = to_signed_word(word);
@@ -157,18 +167,40 @@ fn bench_atom(label: &str, n_strands: usize, word: &[CrossingPair]) -> BenchRow 
     let gp_rows = chi_lambda_via_gp_hoefsmit_all_partitions_mpfr(
         n_strands, &signed_word, Q_STR_50DPS, DPS,
     );
-    let gp_wall_ms = t_gp.elapsed().as_millis();
-    eprintln!("  GP:         {} ms, {} partitions", gp_wall_ms, gp_rows.len());
+    let gp_elapsed = t_gp.elapsed();
+    let gp_wall_s = gp_elapsed.as_secs_f64();
+    let gp_wall_ms = gp_elapsed.as_millis();
+    eprintln!("  GP:         {:.3} s, {} partitions", gp_wall_s, gp_rows.len());
 
     // Numerical-agreement check at MPFR precision.  Byte-equality
     // is too strict: seminormal and GP arrive at each χ^λ via
     // different summation orders, and MPFR addition is non-
     // associative at the precision boundary — so last-digit
-    // disagreements at ~10⁻⁵⁰ (1 ULP at 50 dps) are expected.
-    // Tolerance 1e-45 absorbs that.
+    // disagreements at ~10⁻ᴰᴾˢ (1 ULP at the working precision)
+    // are expected.  Tolerance scales with `DPS` per Gemini
+    // review on PR #730: `10^(-DPS + 5)` keeps a 5-digit safety
+    // margin above the round-off floor.
     use rug::Float;
-    let prec = (DPS as f64 * 3.322 + 16.0) as u32;
-    let tolerance = 1.0e-45_f64;
+    let prec = hecke_engine::seminormal_mpfr::dps_to_bits(DPS);
+    let tolerance = 10.0_f64.powi(-(DPS as i32) + 5);
+
+    // Explicit key-set check (per Copilot review on PR #730): if the
+    // GP path ever returned a different partition set, the per-key
+    // loop below would silently miss it.
+    let semi_lambdas: std::collections::BTreeSet<_> =
+        semi_rows.iter().map(|(l, _)| l.clone()).collect();
+    let gp_lambdas: std::collections::BTreeSet<_> =
+        gp_rows.iter().map(|(l, _)| l.clone()).collect();
+    let key_set_equal = semi_lambdas == gp_lambdas;
+    if !key_set_equal {
+        eprintln!(
+            "  KEY-SET MISMATCH: |semi|={} |gp|={} symmetric_diff size {}",
+            semi_lambdas.len(),
+            gp_lambdas.len(),
+            semi_lambdas.symmetric_difference(&gp_lambdas).count(),
+        );
+    }
+
     let semi_map: std::collections::BTreeMap<_, _> =
         semi_rows.iter().cloned().collect();
     let gp_map: std::collections::BTreeMap<_, _> =
@@ -200,19 +232,21 @@ fn bench_atom(label: &str, n_strands: usize, word: &[CrossingPair]) -> BenchRow 
             }
         }
     }
-    let byte_equal = worst_abs_diff <= tolerance;
+    let within_tolerance = worst_abs_diff <= tolerance && key_set_equal;
     eprintln!(
         "  worst abs_diff: {:.3e}  (tolerance {:.0e})",
         worst_abs_diff, tolerance
     );
-    let speedup_ratio = if gp_wall_ms == 0 {
-        f64::NAN
+    // Speedup: prefer high-resolution seconds; report Infinity if GP
+    // is sub-resolution (per Copilot review on PR #730).
+    let speedup_ratio = if gp_wall_s <= 0.0 {
+        f64::INFINITY
     } else {
-        semi_wall_ms as f64 / gp_wall_ms as f64
+        semi_wall_s / gp_wall_s
     };
     eprintln!(
-        "  speedup: {:.2}× (byte_equal={}, {} mismatches)",
-        speedup_ratio, byte_equal, n_mismatches
+        "  speedup: {:.3}× (within_tolerance={}, {} mismatches)",
+        speedup_ratio, within_tolerance, n_mismatches
     );
 
     BenchRow {
@@ -220,10 +254,13 @@ fn bench_atom(label: &str, n_strands: usize, word: &[CrossingPair]) -> BenchRow 
         n_strands,
         word_len: word.len(),
         n_averaged,
+        seminormal_wall_s: semi_wall_s,
+        gp_wall_s,
         seminormal_wall_ms: semi_wall_ms,
         gp_wall_ms,
         speedup_ratio,
-        byte_equal,
+        within_tolerance,
+        worst_abs_diff,
         n_partitions: semi_rows.len(),
         n_mismatches,
     }
@@ -260,9 +297,13 @@ fn main() {
 
     // Synthetic tritium-shaped word at H_9 — 3 nucleons + 2 inter-
     // nucleon crossings = 35 entries.  At H_9 there are 30
-    // partitions with max dim 42 — enough to amortise the GP basis-
-    // expansion overhead, more representative of the
-    // canonical_chi_all_partitions scaling target.
+    // partitions with **max dim 216** (at λ=(4,3,1,1) or (4,2,2,1))
+    // — enough to amortise the GP basis-expansion overhead, more
+    // representative of the canonical_chi_all_partitions scaling
+    // target.  (Per Gemini review on PR #730: earlier comment said
+    // max dim 42 which is wrong — 42 is the dim of (5,4) and
+    // (3,3,3) specifically, not the max across all partitions of 9.
+    // Verified via the hook-length formula: max(dim λ) for λ⊢9 is 216.)
     let tritium_like = {
         let mut w = proton_word_h3();
         for (c, g) in neutron_word_h3() {
@@ -277,16 +318,23 @@ fn main() {
     };
     rows.push(bench_atom("tritium-like-h9", 9, &tritium_like));
 
-    if include_he4 {
+    if !include_he4 {
         eprintln!(
-            "→ ⁴He skipped (use --include-he4 to enable; ~10+ min seminormal baseline)"
+            "→ ⁴He skipped (pass --include-he4 to enable; ~10+ min seminormal baseline)"
         );
-        // Not implemented: would need a proper canonical word builder
-        // for higher A.  Deferred to a Python-driven harness in the
-        // computations dir.
+        // ⁴He benchmark not yet wired into this bin — would require a
+        // proper canonical word builder for higher A (the 4-nucleon
+        // word has a more complex inter-nucleon adjacency pattern
+        // than the 3-nucleon stub above). Deferred to a Python-driven
+        // harness in `folio-assistant/computations/`.
+    } else {
+        eprintln!(
+            "→ ⁴He requested via --include-he4 but the H_12 canonical-word \
+             builder is not yet implemented in this bin. Skipping."
+        );
     }
 
-    let n_failures: usize = rows.iter().filter(|r| !r.byte_equal).count();
+    let n_failures: usize = rows.iter().filter(|r| !r.within_tolerance).count();
     let summary = serde_json::json!({
         "binary": "gp-bench",
         "purpose": "C-full Step 6: GP-all-partitions-MPFR vs Hoefsmit-seminormal-MPFR",
@@ -299,11 +347,14 @@ fn main() {
 
     if n_failures > 0 {
         eprintln!(
-            "✗ {}/{} atoms have byte-mismatch between GP and seminormal",
+            "FAIL {}/{} atoms outside tolerance between GP and seminormal",
             n_failures,
             rows.len(),
         );
         std::process::exit(1);
     }
-    eprintln!("✓ all {} atoms: GP byte-equal to seminormal", rows.len());
+    eprintln!(
+        "OK all {} atoms: GP within tolerance of seminormal",
+        rows.len()
+    );
 }

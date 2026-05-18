@@ -434,7 +434,7 @@ pub fn chi_lambda_via_gp_hoefsmit_mpfr(
 ) -> String {
     use rug::Float;
     let n_lambda: usize = lambda.iter().sum();
-    let prec = (dps as f64 * 3.322 + 16.0) as u32;
+    let prec = crate::seminormal_mpfr::dps_to_bits(dps);
     if n_lambda != n {
         return Float::with_val(prec, 0).to_string_radix(10, Some(dps as usize));
     }
@@ -529,7 +529,7 @@ pub fn chi_lambda_via_gp_hoefsmit_all_partitions_mpfr(
     use rug::Float;
     use std::collections::HashMap;
 
-    let prec = (dps as f64 * 3.322 + 16.0) as u32;
+    let prec = crate::seminormal_mpfr::dps_to_bits(dps);
 
     // 1. Basis expansion runs once for the whole sweep.
     let (basis_expansion, avg_count) = braid_to_hecke_with_avg(n, word);
