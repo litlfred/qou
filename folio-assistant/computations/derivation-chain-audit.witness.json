@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T15:47:16.881745+00:00",
-  "commitSha": "d631a4fb890c4c469a4c9fa75b57f39bb20347b9",
+  "computedAt": "2026-05-18T16:09:21.598109+00:00",
+  "commitSha": "0b9b52fcff5ccdbcd2069b42f36ea7510a1811d9",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -572,11 +572,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 3,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "deeead4ec85e681e22a1567ac3ad828427b2f855",
+  "scriptCommitSha": "875916a587c227572f421c22053ad81371976ccc",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
   "data": {
@@ -2058,6 +2058,8 @@
       "computational-only": [
         "4he-binding-full-pipeline.witness.json",
         "A-operator-extract-general.witness.json",
+        "A-operator-extract-h9-pn.witness.json",
+        "A-operator-extract-h9-pp.witness.json",
         "A-operator-extract-kron.witness.json",
         "A-operator-extract-reduced.witness.json",
         "A-operator-per-interface.witness.json",
@@ -2129,6 +2131,7 @@
         "canonical-braid-interface-composition.witness.json",
         "canonical-chi-rust-vs-sympy.witness.json",
         "canonical-derivation-pipeline-compliance.witness.json",
+        "canonical-mass-table-extended.witness.json",
         "canonical-mass-table.witness.json",
         "canonical-script-input-audit.witness.json",
         "canonical-tr-m-helium4.witness.json",
