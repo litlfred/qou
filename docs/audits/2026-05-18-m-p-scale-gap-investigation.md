@@ -116,3 +116,62 @@ INDEPENDENT of the tower-formula gap documented here — y_λ is the
 Wedderburn-block weight at single level, while the tower sum is
 the multi-level extension. Both threads need to land for full
 m_p closure.
+
+## §11 RESOLUTION (added 2026-05-18 after numerical verification)
+
+**The scale gap is structurally explained by the Borromean baryon
+mass formula** — already in the paper as
+[`conj:borromean-baryon-mass-formula`](../../content/quantum-observable-universe/braids-and-knots/borromean-baryon-mass-formula.md).
+The naïve "9 × Vol(4_1)" hypothesis was WRONG. The correct
+identification uses Vol(B_3) (Borromean rings) with a multiplicative
+λ_scale, **not** a sum of figure-8 volumes.
+
+Verification at MPFR 50 dps via
+[`m_p_borromean_verification_50dps.py`](../../folio-assistant/computations/m_p_borromean_verification_50dps.py):
+
+| Particle | Formula | Pred MeV | CODATA MeV | Residual |
+|----------|---------|----------|------------|----------|
+| Muon | m_e · Vol(4_1) / ℏ_q² | 105.65837565 | 105.65837550 | +0.001 ppm |
+| Proton | m_e · [Vol(B_3)/ℏ_q² · λ_p_doc + S(p)≈0] | 938.27185264 | 938.27208816 | **−0.251 ppm** |
+| Neutron | m_e · [Vol(B_3)/ℏ_q² · λ_n_doc + S(n)≈0] | 939.56518467 | 939.56542052 | **−0.251 ppm** |
+
+The Borromean tower factor `Vol(B_3)/ℏ_q² · λ_scale ≈ 1836.15`
+IS the missing 1700× multiplier from the single-level chain.
+
+### Why this is NOT yet a closed prediction
+
+The λ_scale values (λ_p = 2.4599527869, λ_n = 2.4633436333) were
+SOLVED FROM CODATA per `borromean-baryon-mass-formula.md`
+§"Empirical closure targets at q_0". Using them to "predict" m_p
+is therefore circular at this stage.
+
+**The open conjecture (Status #2 of the Borromean baryon formula):**
+derive λ_scale from substrate via the Skein polynomial Q(q_0) of
+B_3, the graded-Hecke-energy weight, or the canonical 11-crossing
+Borromean braid. Closing that conjecture would make m_p a fully
+derived quantity.
+
+### Updated B.4 status
+
+B.4 (lift ¹H to `derived`) is **conditionally unlocked**. The
+Borromean tower formula gives 0.25 ppm under closure-target
+λ_scale. Wiring this into `build_proton_mass_50dps_chain.py`
+would drop `rel_diff` from 99.94% to 0.25 ppm — well below the
+1% threshold. But the witness fails the "no fit-free derivation
+chain" criterion: λ_scale was solved from CODATA. Until λ_scale
+derives from substrate, ¹H legitimately remains `derivation_pending`.
+
+### Concrete remaining R&D (for full m_p closure)
+
+1. **Compute the Skein polynomial Q(q_0) of B_3** via the canonical
+   11-crossing Borromean braid (per `prop:nuclear-knot-classification`
+   and the GS-confinement filtration cohomology).
+2. **Test whether Q(q_0) ≈ 2.46 = λ_scale** at the substrate point.
+3. **Compute the graded-Hecke-energy weight** of B_3 at the canonical
+   level — alternative candidate derivation for λ_scale.
+4. **Once any of (1)-(3) closes**, wire the substrate-derived λ_scale
+   into the m_p/m_n chains.
+
+Both proton AND neutron use the SAME λ_scale (common-scale
+hypothesis); their split comes from S(B) Skein differences,
+covered separately by `prop:flavor-split-substrate`.
