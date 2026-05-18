@@ -90,26 +90,56 @@ DEFAULT_ATOMS = [
 
 
 def compute_tr_m_canonical(
-    Z: int, N: int, label: str, dps: int = 0, timeout_sec: int = 1500
-) -> tuple[mp.mpf | None, float, str | None]:
-    """Compute |tr_M(β_atom, q_0)| via Rust χ + mpmath y_λ.
+    Z: int, N: int, label: str, dps: int = 0, timeout_sec: int = 1500,
+    method: str = "markov_peel",
+) -> tuple[mp.mpf | None, float, str | None, str | None]:
+    """Compute |tr_M(β_atom, q_0)| via the requested fast path.
 
-    Returns (|tr_M|, wall_seconds, error_str).
+    Methods (ranked by speed at H_n):
+      - "markov_peel"  — Symbolic-q Markov-axiom recursive ascent (markov_peel.tr_M_atomic).
+                          Fastest path through H_15+; symbolic output substituted at q_0.
+                          ⁴He: 13s; ⁵Li: 89s; ⁶Li: > 30 min.
+      - "rust_f64"     — Rust hecke-canonical-chi (direct Hoefsmit, f64).
+                          ⁴He: 12s; ⁵Li: > 1500s (infeasible at H_15+).
+      - "rust_mpfr"    — Rust hecke-canonical-chi (MPFR-50dps).
+                          ⁴He: ~15 min; H_15+ impractical.
+
+    Returns (|tr_M|, wall_seconds, error_str, method_used).
     """
+    if method == "markov_peel":
+        try:
+            import sympy as sp
+            from markov_peel import tr_M_atomic
+            t0 = time.time()
+            tr_sym = tr_M_atomic(Z, N)
+            wall = time.time() - t0
+            # Substitute q = q_0 at mpmath precision
+            q_sym = sp.Symbol("q", positive=True)
+            free = list(tr_sym.free_symbols) if hasattr(tr_sym, "free_symbols") else []
+            for f in free:
+                if f.name == "q":
+                    q_sym = f
+                    break
+            tr_at_q0 = tr_sym.subs(q_sym, sp.Float(str(Q_FLOAT), 50))
+            tr_mp = mp.mpf(str(sp.N(tr_at_q0, 50)))
+            return abs(tr_mp), wall, None, "markov_peel"
+        except Exception as e:  # noqa: BLE001
+            return None, 0.0, f"markov_peel: {type(e).__name__}: {e}", "markov_peel"
+
+    # Rust paths (f64 or MPFR)
     bin_path = find_binary()
     if bin_path is None:
-        return None, 0.0, "Rust binary missing — build via cargo"
-    n = 3 * (Z + N)
-
+        return None, 0.0, "Rust binary missing — build via cargo", method
+    rust_dps = 50 if method == "rust_mpfr" else 0
     n_strands, word = canonical_word_for(Z, N)
     spec: dict = {
         "n_strands": n_strands, "q": Q_FLOAT, "label": label, "word": word,
     }
-    if dps > 0:
+    if rust_dps > 0:
         spec["q_str"] = Q_50_DIGIT_STR
     t0 = time.time()
     result = subprocess.run(
-        [str(bin_path), "--dps", str(dps)],
+        [str(bin_path), "--dps", str(rust_dps)],
         input=json.dumps(spec), capture_output=True, text=True,
         timeout=timeout_sec,
     )
@@ -118,9 +148,9 @@ def compute_tr_m_canonical(
         return None, wall, (
             f"Rust exit {result.returncode}: "
             f"stderr={result.stderr[:300]}"
-        )
+        ), method
     r = json.loads(result.stdout)
-
+    n = 3 * (Z + N)
     y_table = y_lambda_at(n, Q_FLOAT)
     tr_m = mp.mpf(0)
     for term in r["chi_lambda_terms"]:
@@ -132,10 +162,10 @@ def compute_tr_m_canonical(
         chi = mp.mpf(str(chi_str))
         y = y_table.get(lam)
         if y is None:
-            return None, wall, f"y_λ table missing λ={lam}"
+            return None, wall, f"y_λ table missing λ={lam}", method
         y_mp = mp.mpf(str(y))
         tr_m += y_mp * chi
-    return abs(tr_m), wall, None
+    return abs(tr_m), wall, None, method
 
 
 def lookup_b_pred_existing(Z: int, N: int) -> tuple[float | None, str | None]:
@@ -171,8 +201,14 @@ def main() -> int:
     )
     parser.add_argument(
         "--precision", choices=["f64", "mpfr"], default="f64",
-        help="Rust precision: 'f64' (fast, ~15 sig figs) or "
-             "'mpfr' (slow, 50 dps).",
+        help="Rust precision when using --method rust_f64/rust_mpfr: 'f64' "
+             "(fast, ~15 sig figs) or 'mpfr' (slow, 50 dps).",
+    )
+    parser.add_argument(
+        "--method",
+        choices=["markov_peel", "rust_f64", "rust_mpfr"],
+        default="markov_peel",
+        help="Computation method (default markov_peel — fastest at H_n ≥ 12).",
     )
     parser.add_argument("--timeout", type=int, default=1500)
     args = parser.parse_args()
@@ -184,16 +220,17 @@ def main() -> int:
     requested = [s.strip() for s in args.atoms.split(",") if s.strip()]
 
     print("=" * 90)
-    print(f"  Canonical mass table — Rust χ ({args.precision}) + mpmath y_λ")
+    print(f"  Canonical mass table — method={args.method} "
+          f"(precision={args.precision} if Rust)")
     print("=" * 90)
     print()
     print(f"  q_0 = {Q_FLOAT}")
-    print(f"  Precision: {dps} dps")
+    print(f"  Method: {args.method} (Rust dps={dps}; markov_peel uses symbolic-q)")
     print()
     print(f"  {'atom':<6} {'A':>2} {'n':>3} {'|tr_M(q_0)|':<22} "
           f"{'B_pred(existing)':>16} {'B_AME':>10} {'origin':<22} "
-          f"{'wall(s)':>8}")
-    print("  " + "-" * 110)
+          f"{'method':<12} {'wall(s)':>8}")
+    print("  " + "-" * 122)
 
     records: list[dict] = []
     for atom_str in requested:
@@ -207,12 +244,13 @@ def main() -> int:
         # Build IsotopeRecord
         ops = build_knot_operator_catalogue(Z, N)
 
-        # Compute |tr_M| via the canonical pipeline
-        tr_m, wall, err = compute_tr_m_canonical(
+        # Compute |tr_M| via the canonical pipeline (default: markov_peel)
+        tr_m, wall, err, method_used = compute_tr_m_canonical(
             Z, N, atom_str, dps=dps, timeout_sec=args.timeout,
+            method=args.method,
         )
         if err:
-            print(f"  {atom_str:<6} {A:>2} {n:>3} ERROR: {err[:60]}")
+            print(f"  {atom_str:<6} {A:>2} {n:>3} ERROR ({method_used}): {err[:60]}")
             continue
         # Cross-reference existing mass-table-ppb prediction (Vol-based,
         # α-cluster, or volume-match) — this script computes |tr_M|; the
@@ -251,7 +289,7 @@ def main() -> int:
         origin_str = (origin or "—")[:20]
         print(f"  {atom_str:<6} {A:>2} {n:>3} {tr_m_str:<22} "
               f"{pred_str:>16} {ame_str:>10} {origin_str:<22} "
-              f"{wall:>8.1f}")
+              f"{method_used:<12} {wall:>8.1f}")
 
     atoms_actually_computed = [r["Z"] for r in records], [r["N"] for r in records]
     builder = (
@@ -267,6 +305,7 @@ def main() -> int:
             "interfaces, closure topology)."
         )
         .add_parameter("q_0", Q_50_DIGIT_STR)
+        .add_parameter("method", args.method)
         .add_parameter("precision", args.precision)
         .add_parameter("dps", dps)
         .add_parameter("atoms_requested", ",".join(requested))
