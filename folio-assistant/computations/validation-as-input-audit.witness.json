@@ -1,0 +1,633 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-18T16:39:18.092970+00:00",
+  "commitSha": "74aa18470524511148fc9b8146868f090fcae222",
+  "assertions": [
+    {
+      "name": "no_i11_violations",
+      "computed": 0.0,
+      "expected": 1.0,
+      "passed": false,
+      "tolerance": 0.0,
+      "unit": "boolean (1.0 = no script uses _VALIDATION as a prediction input)",
+      "source": "Closure gate: every script using a _VALIDATION constant either uses it only as comparison target or carries an explicit CLASS-A acknowledged-anchor banner."
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 7,
+  "computation": "validation-as-input-audit",
+  "scriptFile": "validation_as_input_audit.py",
+  "scriptHash": "1535a12e8aa7",
+  "scriptCommitSha": "unknown",
+  "description": "I11 audit per local/compute-integration-watcher: scripts that import M_*_MEV_VALIDATION constants from codata_constants.py are classified by usage. The validation constants are tagged 'DO NOT USE AS PREDICTION INPUTS' in the source; using them outside `pred - VAL` / `abs(...)` / `expected=VAL` style comparison contexts is an I11 violation unless the script's docstring carries a CLASS-A acknowledged-anchor banner (typical for the M_N anchor pending Workplan-0b). Per-script classification surfaces the violation queue for follow-up.",
+  "contentBlock": "I11 antipattern (compute-integration-watcher.md §antipatterns)",
+  "parameters": {
+    "total_scripts": 37,
+    "validation_constants_in_scope": [
+      "M_P_MEV_VALIDATION",
+      "M_N_MEV_VALIDATION",
+      "M_D_MEV_VALIDATION",
+      "M_T_MEV_VALIDATION",
+      "M_HE3_MEV_VALIDATION",
+      "M_HE4_MEV_VALIDATION",
+      "M_LI6_MEV_VALIDATION",
+      "M_LI7_MEV_VALIDATION",
+      "M_BE7_MEV_VALIDATION",
+      "M_BE8_MEV_VALIDATION",
+      "M_BE9_MEV_VALIDATION",
+      "M_P_MEV_VALIDATION_ERR",
+      "M_N_MEV_VALIDATION_ERR"
+    ]
+  },
+  "data": {
+    "by_result": {
+      "i11_violation": 30,
+      "imported_unused": 4,
+      "ok_comparison_only": 1,
+      "ok_acknowledged_anchor": 2
+    },
+    "rows": [
+      {
+        "path": "folio-assistant/computations/audit_delta_S_chain.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          75,
+          76
+        ],
+        "violation_count": 2,
+        "result": "i11_violation"
+      },
+      {
+        "path": "folio-assistant/computations/build_neutron_mass_50dps_chain.py",
+        "validation_constants_imported": [
+          "M_N_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          79
+        ],
+        "violation_count": 1,
+        "result": "i11_violation"
+      },
+      {
+        "path": "folio-assistant/computations/build_proton_mass_50dps_chain.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION"
+        ],
+        "result": "imported_unused"
+      },
+      {
+        "path": "folio-assistant/computations/canonical_derivation_pipeline_compliance.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          373
+        ],
+        "violation_count": 1,
+        "result": "i11_violation"
+      },
+      {
+        "path": "folio-assistant/computations/derive_m_baryon_volume_form.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          122,
+          123
+        ],
+        "violation_lines": [],
+        "violation_count": 0,
+        "result": "ok_comparison_only"
+      },
+      {
+        "path": "folio-assistant/computations/derive_m_n_hecke_full_tower_50dps.py",
+        "validation_constants_imported": [
+          "M_N_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          55
+        ],
+        "violation_count": 1,
+        "result": "i11_violation"
+      },
+      {
+        "path": "folio-assistant/computations/derive_m_p_hecke_full_tower_50dps.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          83
+        ],
+        "violation_count": 1,
+        "result": "i11_violation"
+      },
+      {
+        "path": "folio-assistant/computations/derived_masses.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          98
+        ],
+        "violation_count": 1,
+        "result": "i11_violation"
+      },
+      {
+        "path": "folio-assistant/computations/e0_calibration_audit.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION",
+          "M_P_MEV_VALIDATION_ERR",
+          "M_N_MEV_VALIDATION_ERR"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          51,
+          52,
+          55,
+          56
+        ],
+        "violation_count": 4,
+        "result": "i11_violation"
+      },
+      {
+        "path": "folio-assistant/computations/habiro_exact_mass_endomorphism.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          237,
+          238
+        ],
+        "violation_count": 2,
+        "result": "i11_violation"
+      },
+      {
+        "path": "folio-assistant/computations/hydrogen_step_by_step.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          57
+        ],
+        "violation_count": 1,
+        "result": "i11_violation"
+      },
+      {
+        "path": "folio-assistant/computations/low_isotope_mass_table.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          91,
+          92
+        ],
+        "violation_count": 2,
+        "result": "i11_violation"
+      },
+      {
+        "path": "folio-assistant/computations/markov_trace_axiomatic_multi_atom.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION"
+        ],
+        "result": "imported_unused"
+      },
+      {
+        "path": "folio-assistant/computations/neutron_error_diagnostic.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          94,
+          95
+        ],
+        "violation_count": 2,
+        "result": "i11_violation"
+      },
+      {
+        "path": "folio-assistant/computations/paper_six_term_isotope_sweep.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          1058,
+          1059
+        ],
+        "violation_count": 2,
+        "result": "i11_violation"
+      },
+      {
+        "path": "folio-assistant/computations/path_b_defect_binding_probe.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          52,
+          53
+        ],
+        "violation_count": 2,
+        "result": "i11_violation"
+      },
+      {
+        "path": "folio-assistant/computations/path_b_habiro_mass_probe.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          57,
+          58
+        ],
+        "violation_count": 2,
+        "result": "i11_violation"
+      },
+      {
+        "path": "folio-assistant/computations/phase2_proton_m_e_hecke_diagnostic.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION"
+        ],
+        "result": "imported_unused"
+      },
+      {
+        "path": "folio-assistant/computations/probe_delta_lambda_closure_v2_combined_pole.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION",
+          "M_D_MEV_VALIDATION",
+          "M_T_MEV_VALIDATION",
+          "M_HE3_MEV_VALIDATION",
+          "M_HE4_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          55,
+          56,
+          57,
+          67,
+          68,
+          69,
+          77,
+          78
+        ],
+        "violation_count": 8,
+        "result": "i11_violation"
+      },
+      {
+        "path": "folio-assistant/computations/probe_delta_lambda_closure_v3_full_vs_filtered.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION",
+          "M_D_MEV_VALIDATION",
+          "M_T_MEV_VALIDATION",
+          "M_HE3_MEV_VALIDATION",
+          "M_HE4_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          39,
+          40,
+          41,
+          51,
+          52,
+          60,
+          61
+        ],
+        "violation_count": 7,
+        "result": "i11_violation"
+      },
+      {
+        "path": "folio-assistant/computations/probe_delta_lambda_closure_v4_two_row.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION",
+          "M_D_MEV_VALIDATION",
+          "M_T_MEV_VALIDATION",
+          "M_HE3_MEV_VALIDATION",
+          "M_HE4_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          35,
+          36,
+          37,
+          46,
+          47,
+          64,
+          65
+        ],
+        "violation_count": 7,
+        "result": "i11_violation"
+      },
+      {
+        "path": "folio-assistant/computations/probe_delta_lambda_closure_v5_frobenius_chirality.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION",
+          "M_D_MEV_VALIDATION",
+          "M_T_MEV_VALIDATION",
+          "M_HE3_MEV_VALIDATION",
+          "M_HE4_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          48,
+          49,
+          50,
+          60,
+          61,
+          69,
+          70
+        ],
+        "violation_count": 7,
+        "result": "i11_violation"
+      },
+      {
+        "path": "folio-assistant/computations/probe_delta_lambda_per_partition_shift_nf_closure.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION",
+          "M_D_MEV_VALIDATION",
+          "M_T_MEV_VALIDATION",
+          "M_HE3_MEV_VALIDATION",
+          "M_HE4_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          48,
+          49,
+          50,
+          60,
+          61,
+          62,
+          70,
+          71
+        ],
+        "violation_count": 8,
+        "result": "i11_violation"
+      },
+      {
+        "path": "folio-assistant/computations/probe_delta_lambda_via_shift_nf_wenzl.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION",
+          "M_D_MEV_VALIDATION",
+          "M_T_MEV_VALIDATION",
+          "M_HE3_MEV_VALIDATION",
+          "M_HE4_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          61,
+          62,
+          63,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          93
+        ],
+        "violation_count": 11,
+        "result": "i11_violation"
+      },
+      {
+        "path": "folio-assistant/computations/probe_derived_A_from_gs_normal_form.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          53
+        ],
+        "violation_count": 1,
+        "result": "i11_violation"
+      },
+      {
+        "path": "folio-assistant/computations/probe_flavor_dressed_mass_split.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          56,
+          57
+        ],
+        "violation_count": 2,
+        "result": "ok_acknowledged_anchor"
+      },
+      {
+        "path": "folio-assistant/computations/probe_flavor_split_subleading.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          80,
+          81
+        ],
+        "violation_count": 2,
+        "result": "ok_acknowledged_anchor"
+      },
+      {
+        "path": "folio-assistant/computations/probe_m2_codata_vs_cos_q_beta.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION",
+          "M_D_MEV_VALIDATION",
+          "M_T_MEV_VALIDATION",
+          "M_HE3_MEV_VALIDATION",
+          "M_HE4_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          39,
+          40,
+          41,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55
+        ],
+        "violation_count": 9,
+        "result": "i11_violation"
+      },
+      {
+        "path": "folio-assistant/computations/probe_m3_full_chain_n4_mass_table.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION",
+          "M_D_MEV_VALIDATION",
+          "M_T_MEV_VALIDATION",
+          "M_HE3_MEV_VALIDATION",
+          "M_HE4_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          7,
+          8,
+          9
+        ],
+        "violation_count": 3,
+        "result": "i11_violation"
+      },
+      {
+        "path": "folio-assistant/computations/probe_m4_magic_shell_correction.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION",
+          "M_D_MEV_VALIDATION",
+          "M_T_MEV_VALIDATION",
+          "M_HE3_MEV_VALIDATION",
+          "M_HE4_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          58,
+          59,
+          60,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70
+        ],
+        "violation_count": 9,
+        "result": "i11_violation"
+      },
+      {
+        "path": "folio-assistant/computations/probe_m5_categorical_coulomb.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION",
+          "M_D_MEV_VALIDATION",
+          "M_T_MEV_VALIDATION",
+          "M_HE3_MEV_VALIDATION",
+          "M_HE4_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          51,
+          52,
+          53,
+          58,
+          59,
+          60
+        ],
+        "violation_count": 6,
+        "result": "i11_violation"
+      },
+      {
+        "path": "folio-assistant/computations/probe_per_orientation_skein.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          106,
+          107
+        ],
+        "violation_count": 2,
+        "result": "i11_violation"
+      },
+      {
+        "path": "folio-assistant/computations/probe_q_beta_cos_sweep_and_three_irrep.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION"
+        ],
+        "comparison_lines": [
+          84
+        ],
+        "violation_lines": [
+          40,
+          41
+        ],
+        "violation_count": 2,
+        "result": "i11_violation"
+      },
+      {
+        "path": "folio-assistant/computations/probe_q_beta_tightening_landscape.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          61,
+          62
+        ],
+        "violation_count": 2,
+        "result": "i11_violation"
+      },
+      {
+        "path": "folio-assistant/computations/probe_v2_plus_cos_q_beta_compose.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          59,
+          72,
+          73
+        ],
+        "violation_count": 3,
+        "result": "i11_violation"
+      },
+      {
+        "path": "folio-assistant/computations/proton_m_e_anomaly_audit.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION"
+        ],
+        "result": "imported_unused"
+      },
+      {
+        "path": "folio-assistant/computations/qbeta_physics.py",
+        "validation_constants_imported": [
+          "M_P_MEV_VALIDATION",
+          "M_N_MEV_VALIDATION"
+        ],
+        "comparison_lines": [],
+        "violation_lines": [
+          48,
+          49
+        ],
+        "violation_count": 2,
+        "result": "i11_violation"
+      }
+    ]
+  }
+}
