@@ -123,6 +123,31 @@ The watcher enforces two story requirements:
    (definitions → propositions → proofs → remarks / examples /
    simulators), not the order blocks were authored.
 
+   **Lead length scales with section size.** A section's prose
+   lead is not a single fixed length; it scales with how much
+   ground the section covers. Use these bands as the default:
+
+   | Section size (non-prose blocks) | Lead length | Paragraph roles |
+   |---|---|---|
+   | ≤ 5 | 1 paragraph | opener: where we are + the question this section settles |
+   | 6 – 12 | 2 paragraphs | + moves: how the section is structured / what its first formal block does |
+   | 13 – 20 | 3 paragraphs | + stakes: what the section's output is, what the next section consumes |
+   | > 20 | 4 paragraphs | + subtleties: cautions, notation, scope of the results |
+
+   Each paragraph plays a distinct role; do not pad with
+   restated content. **Lecturer-opening cadence** is the model:
+   "The previous section gave us X. The question this section
+   settles is Y. The first move is Z." Not "this section
+   develops X. The arc runs from A through B." A list of block
+   titles is not a story.
+
+   **Variety.** When a watcher / generator drafts leads at scale,
+   it should rotate among many opener patterns (≥ 30 patterns
+   across 5 categories — foundational / definitional /
+   consequences / examples / default — is the floor). Drafts
+   that all open with the same sentence are a story violation
+   even when individually well-formed.
+
 2. **Each chapter has its own story.** A chapter's first section
    (or first prose block in the first section) must:
    - Frame what the chapter establishes (one paragraph),
@@ -301,6 +326,8 @@ mv /tmp/_detangler_watcher_graph_current.json \
 | `isolated-block` | minor | H6 isolated block — no incoming or outgoing edges |
 | `archimedean-wall-violation` | minor | A post-wall block (in `descartes-universe` and later chapters) is referenced from a pre-wall block via `uses[]` without the target carrying `tags: ['archimedean-bridge']` or an explicit conditional banner — the pre-wall block has silently leaked an `ℝ`-specific dependency into generic-`R` content |
 | `missing-section-story` | major | Section has no opening `prose` block AND blocks don't follow a definitions→propositions→examples narrative ordering; the section is a *collection*, not a *story* |
+| `section-lead-too-short` | minor | Section has > 12 non-prose blocks but its opening `prose` lead is < 2 paragraphs; the lead does not scale to the section it leads (see §Story coherence length table) |
+| `section-lead-block-title-list` | minor | Section's opening `prose` body contains a sequential listing of block titles (e.g. "the arc runs from **A** through **B** to **C**") instead of a motivating opener; this is a story-shaped tell that the lead was generated mechanically and never refined |
 | `generic-section-name` | major | Section label matches a generic pattern (`sec:foo-part-N`, `sec:foo-extras`, `sec:misc-N`) — the section was split mechanically without a story-naming step |
 | `missing-chapter-intro` | major | Chapter has no opening narrative — i.e. neither (a) a dedicated `sec:introduction` (or similarly labelled) section at index 0, NOR (b) a `prose` block at index 0 of the first section, establishing framing, dependencies, and narrative outline |
 | `abrupt-chapter-ending` | minor | Chapter's last section ends without a closing prose block — no result statement, gesture-forward, or summary |
