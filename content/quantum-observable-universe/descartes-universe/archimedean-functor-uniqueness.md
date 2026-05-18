@@ -185,9 +185,9 @@ $R$-internal pentagon data.
 form for a QOU observable that includes a transcendental constant
 not derivable from $D$ (or its multivariate generalisations
 $D_n$) is excluded. This is a falsifiability constraint: the
-multiplicative gluon-octet form
-[`conj:alpha-em-gluon-octet-form`](#conj:alpha-em-gluon-octet-form),
-which requires arbitrary integer ratios $45 \cdot [3]_q \cdot
+multiplicative gluon-octet form (a legacy PSLQ-empirical conjecture,
+since superseded by [`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode))
+required arbitrary integer ratios $45 \cdot [3]_q \cdot
 (1+\delta_{CS}+8q\delta_{CS}^2)$ that would have to come from a
 non-pentagon source, is ruled out *structurally* in addition to
 the existing PSLQ ruling.
@@ -235,6 +235,7 @@ $\tau_{\text{arch}}$-image of a pentagon-coherent
 $R$-internal class, or equivalently, must factor through $D$ (or
 $D_n$) in its archimedean expansion. The
 [`em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode)
-candidate satisfies this; the
-[`alpha-em-gluon-octet-form`](#conj:alpha-em-gluon-octet-form)
-candidate does not.
+candidate satisfies this; the legacy gluon-octet PSLQ candidate
+(now removed; superseded by
+[`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode))
+did not.

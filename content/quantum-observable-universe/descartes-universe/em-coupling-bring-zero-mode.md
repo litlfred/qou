@@ -220,7 +220,6 @@ the structural derivation almost certainly exists, but it is
 |------|------|-------------------|-------------------|
 | Bare $q[9]_q[10]_q$ | multiplicative tree | $-1.55\times 10^{-3}$ | Derived |
 | [`conj:em-coupling-chern-simons`](#conj:em-coupling-chern-simons) | multiplicative + Gram-det $\kappa$ | $-4\times 10^{-7}$ | $\kappa$ unproved (Lean `sorry`) |
-| [`conj:alpha-em-gluon-octet-form`](#conj:alpha-em-gluon-octet-form) | $45[3]_q\,(1+\delta_B+8q\delta_B^2)$ | $+7\times 10^{-9}$ | PSLQ-empirical, 3 of 4 factors unjustified |
 | **This conjecture (additive Bring zero-mode)** | $q[9]_q[10]_q + 2g/(4\pi(g-1))$ | $-4.2\times 10^{-6}$ | **Geometrically clean; one Bring-genus-4 quantity in each term** |
 
 The additive form is **structurally cleanest** of the four candidates:

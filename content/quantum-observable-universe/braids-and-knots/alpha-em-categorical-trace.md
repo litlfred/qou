@@ -36,8 +36,10 @@ $$
 $$
 
 was claimed to be a **consequence** of the merged spectral-completeness
-program. Subsequent audit ([conj:alpha-em-gluon-octet-form](#conj\:alpha-em-gluon-octet-form))
-shows this claim is **not yet supported**: only the integer $45$ has a
+program. Subsequent audit (legacy gluon-octet conjecture, since removed
+along with the rest of the PSLQ-empirical family superseded by
+[`prop:alpha-em-categorical-trace-ratio`](../descartes-universe/alpha-em-categorical-trace-ratio.md))
+showed this claim is **not yet supported**: only the integer $45$ has a
 full structural derivation; the factors $[3]_q$, $\hbar_q^4 [5]_q$, and
 $8q$ are unproved or post-hoc identifications, and the formula
 disagrees with the alternative Chern-Simons form

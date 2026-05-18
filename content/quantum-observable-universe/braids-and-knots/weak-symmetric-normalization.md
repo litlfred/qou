@@ -128,7 +128,7 @@ structural input — not the Plancherel-weighted form below.
 
 ### Connection to the closed-form $N_v$ ansatz (legacy framing)
 
-Per the parallel pipeline with [`prop:alpha-em-categorical-trace`](#prop:alpha-em-categorical-trace),
+Per the parallel pipeline with [`rem:alpha-em-categorical-trace`](#rem:alpha-em-categorical-trace),
 an earlier-proposed closed form for $N_v$ was
 
 $$
