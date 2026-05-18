@@ -72,12 +72,49 @@ affected label.  Outputs:
 When the foreground task is blocked (long Rust build, CI wait, big
 agent), launch this skill in the background.  It walks every
 `prop:*` / `thm:*` / `lem:*` content block, checks the
-`local/compute-integration-watcher` patterns I1–I12 below, and emits
+`local/compute-integration-watcher` patterns I1–I13 below, and emits
 a ranked workplan to
 `docs/audits/<date>-compute-integration-sweep.md`.
 
 The idle-sweep MUST be safe to interrupt — checkpoint every 50 blocks
 to a `.wip.json` so a partial sweep is still useful.
+
+### C. AUTHOR-QUESTION QUEUE (idle-driven)
+
+Per the repo owner's accessibility directive, when the foreground
+task is blocked, this skill maintains a queue of *author questions*
+and pulls one off when idle to ask via the `AskUserQuestion` tool.
+
+The queue lives in `docs/audits/compute-integration-question-queue.md`
+(gitignored — survives branch switches per the `todos/` convention).
+Each entry carries:
+
+- **trigger context** (commit / PR / sweep that surfaced the question)
+- **question stem** (≤2 sentences)
+- **3–4 mutually exclusive options** with descriptions
+- **priority** (P0/P1/P2 — P0 blocks production wiring; P2 is design)
+- **session-touch** (does answering require touching content / Lean?)
+
+The queue is consumed in priority order.  When a foreground task
+goes idle (long Rust build, CI wait, sleeping on a background
+agent), pull the highest-priority pending question, ask it via
+`AskUserQuestion`, capture the answer in the queue entry under
+`answer:`, and act on it before pulling the next.
+
+Add to the queue (do not ask immediately) when:
+
+- An I-pattern fix has architectural sub-decisions (e.g. which
+  directory should the new block live in, which Lean namespace).
+- A sibling PR introduces a wiring choice that needs owner
+  sign-off (e.g. fate-of-predecessor when a new prop supersedes
+  a production lemma — pattern I2-a).
+- A pattern hit is ambiguous between two I-numbers (the new pattern
+  itself becomes a queue entry: "should we split I-N into I-N-a
+  and I-N-b?").
+
+Skill rule: **never block on the queue.**  If no pending P0/P1
+question and the foreground is busy, work the next compute
+integration improvement instead.
 
 ## The 12 integration antipatterns (I1–I12)
 
