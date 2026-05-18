@@ -220,9 +220,12 @@ def main() -> int:
                "either a stronger categorical formula or a numerical "
                "coincidence at q_0 (open research).")
     # Assertion: derivable form within 500 ppm of CODATA
+    # Upper-bound assertion: residual <= 500 ppm.  expected=0.0 so the
+    # base form |computed - expected| <= tolerance reads as a one-sided
+    # bound (gemini #686 logic-error fix).
     w.add_assertion("derivable_within_500ppm",
                     computed=abs(float(derive_ppm)),
-                    expected=500.0, tolerance=200.0)
+                    expected=0.0, tolerance=500.0)
     out = w.save()
     print(f"\n  Witness: {out.name}")
     return 0

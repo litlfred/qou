@@ -1,23 +1,23 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T00:11:58.956501+00:00",
-  "commitSha": "92962b97f871606fd306a82cc8546bda0c78f0e2",
+  "computedAt": "2026-05-18T00:13:03.816421+00:00",
+  "commitSha": "0c57c9b15fb63afad5288da4a2b20c825c984e1f",
   "assertions": [
     {
       "name": "derivable_within_500ppm",
       "computed": 305.29166853962596,
-      "expected": 500.0,
+      "expected": 0.0,
       "passed": true,
-      "tolerance": 200.0
+      "tolerance": 500.0
     }
   ],
   "allPassed": true,
   "durationMs": 9,
   "computation": "probe-flavor-split-subleading",
   "scriptFile": "probe_flavor_split_subleading.py",
-  "scriptHash": "787e3e1bc9a7",
-  "scriptCommitSha": "92962b97f871606fd306a82cc8546bda0c78f0e2",
+  "scriptHash": "e376c8bcb7fc",
+  "scriptCommitSha": "0c57c9b15fb63afad5288da4a2b20c825c984e1f",
   "description": "Sub-leading substrate corrections to prop:flavor-split-substrate. Derivable (1 + ℏ_q³) closes -306 ppm; empirical (1 + (q-1)³) closes +51 ppm.",
   "data": {
     "q_pinned": "1.1099785955541805752815940796095093779932822799587",
