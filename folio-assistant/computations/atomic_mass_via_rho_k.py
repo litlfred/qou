@@ -119,15 +119,21 @@ def _load_substrate_m_p_MeV() -> mp.mpf:
         return mp.mpf("938.9182")
     with c2_wit.open() as fh:
         c2_data = json.load(fh).get("data", {})
+    # Defensive: tolerate explicit JSON null at closest_to_post_hoc
+    # (gemini #690 medium: nested .get() failure on null vs missing).
     return mp.mpf(str(
-        c2_data.get("closest_to_post_hoc", {}).get("m_p_pred")
+        (c2_data.get("closest_to_post_hoc") or {}).get("m_p_pred")
         or "938.9182"
     ))
 
 
 # Module-level constants — always defined regardless of mode
 # (gemini #690 Rule-2 fix: no scope-dependent NameError risk).
-_USE_LEGACY = bool(_os.environ.get("LEGACY_CODATA_NUCLEON_ANCHORS"))
+# Tight truthy parse (gemini #690 HIGH: empty string / "0" / "false"
+# should NOT trigger legacy mode; only "1" / "true" / "yes" do).
+_USE_LEGACY = _os.environ.get(
+    "LEGACY_CODATA_NUCLEON_ANCHORS", ""
+).strip().lower() in ("1", "true", "yes", "on")
 if _USE_LEGACY:
     # CODATA tautology mode (back-compat).  M_P_MEV / M_N_MEV remain
     # the codata_constants values imported above.

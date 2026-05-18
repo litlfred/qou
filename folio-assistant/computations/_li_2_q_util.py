@@ -149,7 +149,17 @@ def flavor_split_leading(q: mpf, q_inv: mpf | None = None) -> mpf:
         Δm / M_N = (q − 1)² · (1 − q⁻⁴) / 3
                  = ℏ_q² · h_q · [2]_q / 3
 
-    Closes CODATA Δm/M_N to −0.10 % at q = q_0.  Dimensionless.
+    Algebraic verification (gemini #690 review questioned equivalence):
+
+        ℏ_q² · h_q · [2]_q
+          = ((q-1)/q)² · ((q²-1)/q) · ((q²+1)/q)
+          = (q-1)² · (q²-1) · (q²+1) / q⁴
+          = (q-1)² · (q⁴-1) / q⁴
+          = (q-1)² · (1 - q⁻⁴)
+
+    So the two forms are identically equal (numerically verified at
+    50 dps).  Closes CODATA Δm/M_N to −0.10 % at q = q_0.
+    Dimensionless.
     """
     qi = mpf(1) / q if q_inv is None else q_inv
     return (q - 1) ** 2 * (1 - qi ** 4) / 3
