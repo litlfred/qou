@@ -81,6 +81,53 @@ from codata_constants import M_E_MEV, M_P_MEV, M_N_MEV  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import load_and_hash_upstream  # noqa: E402
 
+# ── Substrate-pure nucleon anchors (break the CAL tautology) ────
+#
+# Per owner: "why proton tautology? should not be."
+# atomic_mass_via_rho_k uses CODATA m_p / m_n as CAL anchors via
+# Q_β = m_n - m_p - m_e, which makes M_pred(p) = m_p_CODATA and
+# M_pred(n) = m_n_CODATA tautological (0 % residual = calibration,
+# not derivation).
+#
+# To surface the framework's actual predictive accuracy, optionally
+# replace the CAL anchors with substrate-pure predictions:
+#
+#   m_p_substrate  ← C2 inflection at d²A/da² = 0
+#                     (probe_a_selection_criteria, merged)
+#   m_n_substrate  ← m_p_substrate · (1 + (q-1)²·(1-q⁻⁴)/3)
+#                     (prop:flavor-split-substrate, merged in #663)
+#
+# Toggle via the SUBSTRATE_NUCLEON_ANCHORS environment variable:
+#   SUBSTRATE_NUCLEON_ANCHORS=1  →  use substrate-pure m_p, m_n
+#   (default unset)              →  use CODATA m_p, m_n (legacy)
+import os as _os  # noqa: E402
+
+if _os.environ.get("SUBSTRATE_NUCLEON_ANCHORS"):
+    _q = mp.mpf(Q_50_DIGIT_STR)
+    _qi = 1 / _q
+    # Read C2-inflection m_p from the merged probe witness; fall back
+    # to the published value (938.9182 MeV at q_0) if the witness has
+    # not been regenerated.
+    _c2_wit = HERE / "probe-a-selection-criteria.witness.json"
+    if _c2_wit.exists():
+        _c2_data = json.load(_c2_wit.open()).get("data", {})
+        _m_p_substrate = mp.mpf(str(
+            _c2_data.get("c2_inflection", {}).get("m_p_MeV")
+            or "938.9182"
+        ))
+    else:
+        _m_p_substrate = mp.mpf("938.9182")
+    _delta_m_over_M_N = (_q - 1) ** 2 * (1 - _qi ** 4) / 3
+    _m_n_substrate = _m_p_substrate * (1 + _delta_m_over_M_N)
+    M_P_MEV = _m_p_substrate
+    M_N_MEV = _m_n_substrate
+    _NUCLEON_ANCHOR_SOURCE = (
+        "substrate-pure (C2 inflection + prop:flavor-split-substrate; "
+        "no CODATA m_p / m_n input)"
+    )
+else:
+    _NUCLEON_ANCHOR_SOURCE = "CODATA (legacy CAL anchors via Q_β = m_n - m_p - m_e)"
+
 # Module-level accumulator for upstream-witness hash records.
 # Each call to ``_load_upstream(path)`` appends one entry; the
 # accumulated list is emitted under ``data.upstream_witness_hashes``
@@ -289,9 +336,10 @@ def main() -> int:
             print(f"    {atom}: {st[:80]}{'...' if len(st) > 80 else ''}")
 
     print(f"\n  Calibration anchors:")
-    print(f"    m_e = {mp.nstr(M_E_MEV, 8)} MeV (CODATA)")
-    print(f"    m_p = {mp.nstr(M_P_MEV, 8)} MeV (CODATA, anchor 1)")
-    print(f"    m_n = {mp.nstr(M_N_MEV, 8)} MeV (CODATA, anchor 2 via Q_β)")
+    print(f"    m_e = {mp.nstr(M_E_MEV, 8)} MeV (CODATA, CAL-1 always)")
+    print(f"    nucleon anchor source: {_NUCLEON_ANCHOR_SOURCE}")
+    print(f"    m_p = {mp.nstr(M_P_MEV, 8)} MeV")
+    print(f"    m_n = {mp.nstr(M_N_MEV, 8)} MeV")
 
     print(f"\n  {'atom':<5}{'Z':>2}{'N':>2}  "
           f"{'|tr_M|':>14}  {'ρ_K^LO':>14}  "
@@ -390,8 +438,8 @@ def main() -> int:
             "Atomic mass-table predictions using the resolved ρ_K assembly "
             "M(K) = ρ_K · m_e · |tr_M(K)| from PR #564 §3.3a "
             "(Options A + C: no additive T6, Mittag-Leffler complementarity). "
-            "Calibration anchors: m_e (CODATA), m_p (CODATA), m_n (CODATA via "
-            "Q_β = m_n - m_p - m_e). Reads |tr_M(K)| from "
+            f"Calibration anchors: m_e (CODATA, CAL-1); nucleon "
+            f"anchors = {_NUCLEON_ANCHOR_SOURCE}. Reads |tr_M(K)| from "
             "atomic-tr-m-mpfr-50dps.witness.json. Atoms not in that witness "
             "are flagged tr_M_unavailable rather than fabricating values. "
             "Direct successor to atomic_braid_mass_table.py — see the "
