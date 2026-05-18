@@ -180,6 +180,17 @@ def main() -> int:
             rel_pairs["hoef_vs_habiro"] = fabs(hab_abs - fabs(h_val)) / fabs(h_val)
         if hab_abs is not None and c_val is not None:
             rel_pairs["chi_vs_habiro"] = fabs(hab_abs - c_val) / fabs(c_val) if c_val != 0 else mpf(0)
+        # Per Gemini #739 review: prior versions only computed pairs
+        # against the Hoefsmit or chi-cache anchors.  At atoms where
+        # both anchors are missing/partial (⁴He, ⁵Li, ⁶Li under the
+        # current witness coverage), the script defaulted to a 0.0
+        # rel_delta_max despite peel and Habiro values both being
+        # present and differing.  Add peel-vs-{Habiro, chi} pairs so
+        # every adjacent pair gets reported.
+        if p_val is not None and hab_abs is not None:
+            rel_pairs["peel_vs_habiro"] = fabs(p_val - hab_abs) / fabs(p_val) if p_val != 0 else mpf(0)
+        if p_val is not None and c_val is not None:
+            rel_pairs["peel_vs_chi"] = fabs(p_val - c_val) / fabs(p_val) if p_val != 0 else mpf(0)
         rel_max = max(rel_pairs.values()) if rel_pairs else mpf(0)
 
         ok = rel_max < TOLERANCE

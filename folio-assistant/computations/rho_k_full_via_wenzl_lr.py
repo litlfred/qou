@@ -199,12 +199,12 @@ def compute_tr_m_for_atom(Z: int, N: int, label: str,
 
     # Load y_λ at q_0 for n = n_strands.
     from wedderburn_jones_markov import y_lambda_at  # noqa: E402
-    from q_parameter import Q as Q_FLOAT  # noqa: E402
+    from q_parameter import Q as Q_FLOAT, Q_50_DIGIT_STR  # noqa: E402
 
     y_table = y_lambda_at(n_strands, Q_FLOAT)
     # Combine: tr_M = (1 / averaging_denominator) · Σ_λ y_λ · χ^λ
     # χ^λ_LR contains q in symbolic form; we evaluate at q_0.
-    Q_0 = mp.mpf(repr(Q_FLOAT))
+    Q_0 = mp.mpf(Q_50_DIGIT_STR)  # 50-dps q, not f64-quantised
     tr_m_sum = mp.mpf(0)
     chi_lambda_table = []
     for term in chi_terms:
