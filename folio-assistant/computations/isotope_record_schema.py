@@ -66,7 +66,7 @@ class CrossingType(str, Enum):
     """The 3 crossing conventions used in the canonical atomic braid."""
 
     SIGMA = "sigma"            # positive crossing (c=1, d=0)
-    SIGMA_INV = "sigma-inv"    # negative crossing (c=1, d=-h)
+    SIGMA_INV = "sigma_inv"    # negative crossing (c=1, d=-h)
     AVERAGED = "averaged"      # half-sum (c=1, d=-h/2)
 
 

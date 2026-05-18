@@ -307,7 +307,7 @@ operators used to build its canonical braid. The primitives are:
 | Channel | Formula | Wire-format `ctype` |
 |---|---|---|
 | `pp` | $\sigma$ (positive crossing) | `sigma` |
-| `nn` | $\sigma + (-h)\cdot\mathbf{1}$ | `sigma_inv` |
+| `nn` | $\sigma + (-h)\cdot\mathbf{1}$ | `sigma_inv` (underscore, matches `canonical_braid_crossings.atom_canonical_crossings`) |
 | `pn` | $\sigma + (-h/2)\cdot\mathbf{1}$ (averaged half-shift) | `averaged` |
 
 where $h = q_0 - q_0^{-1}$.

@@ -8,15 +8,19 @@ Uses:
   - IsotopeRecord schema for per-atom knot-operator catalogue
 
 For each atom in the user-provided list:
-  1. Build IsotopeRecord with knot-operator catalogue.
+  1. Build IsotopeRecord with knot-operator catalogue + braid word.
   2. Compute |tr_M(β_atom, q_0)| via Σ y_λ · χ^λ.
-  3. Map to binding-energy prediction via the canonical mass formula.
-  4. Compare to AME 2020 reference.
+  3. Cross-reference the existing `mass-table-ppb.witness.json`
+     prediction (Vol-based / α-cluster) — this script does NOT
+     compute B_pred from |tr_M|; the mass-formula step is a
+     separate downstream concern handled by the existing 6-term
+     or atlas-Vol scripts.
+  4. Compare to AME 2020 reference (via the cross-referenced B_pred).
   5. Aggregate into a witness JSON.
 
 This is the **Layer 1 canonical pipeline** of
 `docs/audits/2026-05-18-all-atoms-isotopes-plan.md`. Atoms beyond
-A ≈ 7 hit Rust Hoefsmit OOM/walltime limits in the current
+A ≈ 4 hit Rust Hoefsmit walltime limits in the current
 implementation; Layer 2..4 paths (α-cluster recursion, brane-tower)
 take over there.
 
@@ -24,8 +28,10 @@ take over there.
 
     python3 canonical_mass_table_extended.py \\
         --atoms p,n,D,T,3He,4He,5Li,6Li,7Li \\
-        --precision f64 \\
-        --emit canonical-mass-table-extended.witness.json
+        --precision f64
+
+The witness output filename is fixed by WitnessBuilder
+(`canonical-mass-table-extended.witness.json`).
 """
 from __future__ import annotations
 
@@ -95,9 +101,6 @@ def compute_tr_m_canonical(
         return None, 0.0, "Rust binary missing — build via cargo"
     n = 3 * (Z + N)
 
-    # Special case A=1 with N=0: single nucleon at H_3, Rust struggles
-    # because the braid has only 6 crossings; use the existing chi cache
-    # for instant result.
     n_strands, word = canonical_word_for(Z, N)
     spec: dict = {
         "n_strands": n_strands, "q": Q_FLOAT, "label": label, "word": word,
@@ -171,9 +174,6 @@ def main() -> int:
         help="Rust precision: 'f64' (fast, ~15 sig figs) or "
              "'mpfr' (slow, 50 dps).",
     )
-    parser.add_argument(
-        "--emit", default="canonical-mass-table-extended.witness.json",
-    )
     parser.add_argument("--timeout", type=int, default=1500)
     args = parser.parse_args()
 
@@ -220,8 +220,15 @@ def main() -> int:
         b_pred_existing, origin = lookup_b_pred_existing(Z, N)
         b_ame = B_AME_MEV.get((Z, N))
 
+        # Populate braid word + closure for provenance per the schema.
+        from isotope_record_schema import CANONICAL_CLOSURES
+        braid_word = [
+            (int(gen), ctype) for (gen, ctype) in atom_canonical_crossings(Z, N)
+        ]
         record = IsotopeRecord(
             Z=Z, N=N, A=A, n_strands=n,
+            braid_word_canonical=braid_word,
+            markov_closure=CANONICAL_CLOSURES.get((Z, N)),
             knot_operators=ops,
             tr_M_q0_canonical_50dps=mp.nstr(tr_m, 50, strip_zeros=False),
             prediction_method=PredictionMethod.CANONICAL_TRACE,
@@ -246,20 +253,26 @@ def main() -> int:
               f"{pred_str:>16} {ame_str:>10} {origin_str:<22} "
               f"{wall:>8.1f}")
 
+    atoms_actually_computed = [r["Z"] for r in records], [r["N"] for r in records]
     builder = (
         WitnessBuilder("canonical-mass-table-extended", engine="rust+mpmath")
         .set_description(
             "Extended canonical mass table via Rust hecke-canonical-chi "
-            f"({args.precision}) + mpmath y_λ. Covers atoms from p..7Li "
-            "(Layer 1 canonical pipeline per "
-            "docs/audits/2026-05-18-all-atoms-isotopes-plan.md). "
-            "Includes per-atom IsotopeRecord with explicit knot-operator "
-            "catalogue (intra-nucleon, inter-nucleon interfaces, closure)."
+            f"({args.precision}) + mpmath y_λ. Layer 1 canonical pipeline "
+            "per docs/audits/2026-05-18-all-atoms-isotopes-plan.md. "
+            "Coverage is determined by --atoms (see parameters.atoms_requested); "
+            "the actual rows reflect what completed within the per-atom "
+            "timeout. Each row carries the per-atom IsotopeRecord with "
+            "explicit knot-operator catalogue (intra-nucleon, inter-nucleon "
+            "interfaces, closure topology)."
         )
         .add_parameter("q_0", Q_50_DIGIT_STR)
         .add_parameter("precision", args.precision)
         .add_parameter("dps", dps)
+        .add_parameter("atoms_requested", ",".join(requested))
+        .add_parameter("timeout_per_atom_sec", args.timeout)
         .add_data("rows", records)
+        .add_data("n_atoms_computed", len(records))
     )
     out = builder.save()
     print()
