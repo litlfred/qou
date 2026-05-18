@@ -95,4 +95,36 @@ theorem delta_coupling_two_forms_equivalent
   rw [inst.closed_form Z N]
   rw [QOU.Information.hecke_log_decomposition inst.q0 inst.q0_gt_one]
 
+/-- Canonical concrete instance of `DeltaCouplingSubstrateForm` for any
+    Wenzl-regime `(q, m_e)`.
+
+The instance discharges the class abstraction by *defining*
+`delta_coupling Z N` to be the closed-form expression
+`(A - 2) · E_0 · log(1/(q - q⁻¹))`. The `closed_form` field is then
+satisfied by `rfl`. The empirical claim — that this closed form matches
+the AME-extracted magic-shell stabilisation — remains the conjectural
+content (verified at the (Z,N)=(2,2) anchor with 0.71% gap).
+
+Construction:
+  q0 := q                              (substrate parameter, q > 1)
+  m_e := m_e                           (any positive value)
+  E_0 := m_e / (q (q - 1))             (Hecke energy unit)
+  delta_coupling Z N := ((Z+N) - 2) · E_0 · log(1/(q - q⁻¹))
+  closed_form := rfl                   (definitional)
+
+Ref: probe_delta_coupling_leading_form.py (numerical witness at q_0, ⁴He).
+Ref: docs/audits/2026-05-17-delta-coupling-substrate-derivation.md
+-/
+noncomputable instance deltaCouplingSubstrateForm_canonical
+    (q : ℝ) (hq : 1 < q) (m_e : ℝ) : DeltaCouplingSubstrateForm where
+  q0 := q
+  q0_gt_one := hq
+  m_e := m_e
+  E_0 := m_e / (q * (q - 1))
+  E_0_def := rfl
+  delta_coupling := fun Z N =>
+    ((Z + N : Nat) - 2 : ℝ) * (m_e / (q * (q - 1))) *
+      Real.log (1 / (q - q⁻¹))
+  closed_form := fun _ _ => rfl
+
 end QOU.MagicShell
