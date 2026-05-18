@@ -84,8 +84,18 @@ Q_RAT_DEN = 10000000
 # is the canonical 50-digit pin used by witness scripts that need
 # arbitrary-precision evaluation. Imported by callers to avoid hardcoding
 # the literal in many places (per Gemini review on PR #515).
+#
+# 2026-05-18 (Q6 follow-up): synced with the derived 50-dps value from
+# `q-pinning-50-digit.witness.json::derived_50_digit::q` (computed
+# from Vol(4_1) + m_μ/m_e via `q_pinning_50_digit.py`). The prior
+# hardcoded literal diverged from the witness at digit 15
+# (1.10997859555418051695... vs the derived 1.10997859555418057528...),
+# producing a ~14-digit precision floor in every downstream mpfr
+# computation that imported this string (PR #683 surfaced this via
+# the canonical-chi-rust binary's disagreement with the
+# atomic-tr-m-mpfr-50dps witness at digit 15).
 Q_50_DIGIT_STR = (
-    "1.10997859555418051695830018898879867637876138498395"
+    "1.10997859555418057528159407960950937799328227995870"
 )
 
 # ── High-precision (mpmath) parallel API ─────────────────────────
