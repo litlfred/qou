@@ -1,24 +1,25 @@
 {
   "engine": "numpy+scipy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T17:13:34.291216+00:00",
-  "commitSha": "9836ace30bfcd8e676dace6f0dec857818e58354",
+  "computedAt": "2026-05-18T17:47:39.744417+00:00",
+  "commitSha": "aa24d52fd9261eea27c3c9e46c5e7ed904eaaf0d",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 23,
+  "durationMs": 20,
   "computation": "A-at-post-hoc-h-expansion",
   "scriptFile": "probe_A_at_post_hoc_h_expansion.py",
-  "scriptHash": "b4c409594441",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "e589436aa534",
+  "scriptCommitSha": "676378aca1323a399d2a0c2d81aa313a1a732d21",
   "description": "Proof attempt: numerical fit of A((4-q)/(4q+3)) as polynomial in h². Tests conjecture c_0 = 5/2, c_2 = -G (Catalan).",
   "contentBlock": "conj:flavor-dressed-mass-from-substrate-split",
   "data": {
     "n_samples": 1,
-    "c_0_fit": 0.0,
-    "c_2_fit": -0.0,
+    "fit_status": "insufficient_samples",
+    "c_0_fit": null,
+    "c_2_fit": null,
     "c_0_target_5_over_2": 2.5,
     "c_2_target_minus_G": -0.915965594177219,
-    "c_0_diff": -2.5,
-    "c_2_diff": 0.915965594177219
+    "c_0_diff": null,
+    "c_2_diff": null
   }
 }
