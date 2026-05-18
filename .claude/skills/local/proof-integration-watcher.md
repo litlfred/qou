@@ -191,7 +191,11 @@ grep -rlE '^export default (theorem|lemma|proposition|corollary|conjecture|defin
 #        if ref is missing → naked
 #        decl_name = ref.split('.')[-1]
 #        candidates = grep -rEln "<DECL_RE><decl_name>\b"
-#                     content/<paper>/lean/
+#                     content/<paper>/  (NOT just content/<paper>/lean/ —
+#                     sibling .lean files at chapter level also contain
+#                     declarations and were silently missed by the
+#                     lean/-only path; observed: ~16 wired blocks
+#                     misclassified naked on QOU paper, 2026-05-18 round 3)
 #        if no candidates → naked
 #        for each candidate file:
 #          read namespaces above the decl line

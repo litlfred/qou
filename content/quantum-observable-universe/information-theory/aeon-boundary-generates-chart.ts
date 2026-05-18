@@ -7,7 +7,7 @@ export default conjecture({
     "aeon", "recycling-functor", "cmb-functor",
     "integrability", "torsion-flow",
   ],
-  lean: { ref: "qou:QOU.aeon_boundary_generates_chart",
+  lean: { ref: "qou:QOU.AeonBoundary.AeonRecycling",
     validation: "not_checked",
   },
   uses: ["def:cmb-functor"],

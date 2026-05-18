@@ -14,6 +14,10 @@ export default conjecture({
     "hecke-algebra",
     "path-integral",
   ],
+  lean: {
+    ref: "qou:QOU.QuantumComputationalUniversality.QuantumComputationalUniversality",
+    validation: "not_checked",
+  },
   uses: [
     "rem:toffoli-q-and",
     "rem:jet-planck-steps",
