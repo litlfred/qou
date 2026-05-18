@@ -408,8 +408,18 @@ find content -name '*.lean' -type f 2>/dev/null \
       fi
       # "Stub-only" heuristic: .md body (excluding frontmatter) has
       # fewer than 5 non-blank lines OR no $...$ / $$ math at all
-      body_lines=$(awk '/^---$/{f++; next} f>=2 && NF' "$md" | wc -l)
-      has_math=$(grep -cE '\$' "$md")
+      # Count body lines: if frontmatter (`---` ... `---`) exists, skip
+      # to after the second `---`; otherwise count from the start. Many
+      # block .md files have no frontmatter — handle both cases.
+      if head -1 "$md" | grep -q '^---$'; then
+        body_lines=$(awk '/^---$/{f++; next} f>=2 && NF' "$md" | wc -l)
+      else
+        body_lines=$(grep -c . "$md")  # non-blank lines from the start
+      fi
+      # Detect math: $...$, $$...$$, OR LaTeX environments (begin{equation},
+      # begin{align}, begin{tikzcd}, etc.) — `\begin{equation}` is common
+      # for cross-referenced display math.
+      has_math=$(grep -cE '\$|\\begin\{(equation|align|tikzcd|gather|displaymath)' "$md")
       if [ "$body_lines" -lt 5 ] && [ "$has_math" -eq 0 ]; then
         echo "$lean" >> /tmp/_pw_narrative_stub.txt
       fi
@@ -490,6 +500,57 @@ manually re-open if needed.
 `resolved` based on inferred user assent (e.g. a thumbs-up reaction
 on a comment). Only an explicit author reply or commit closes the
 item.
+
+### 5g. Watch PRs you prepare
+
+When this watcher (or any skill it dispatches) **prepares a PR** —
+i.e., creates a branch + opens a PR to consolidate a discharge, a
+backlog fix, or a follow-up like #698 — the watcher **must** add
+the new PR to its subscription set immediately and follow up on
+review activity. Author oversight expectation: *"you should watch
+PRs you prepare for review comments and respond if you can. if not
+ask author. once done, ask author if they want to merge and provide
+link"*.
+
+The protocol per prepared PR:
+
+1. **Subscribe.** Right after `create_pull_request`, call
+   `mcp__github__subscribe_pr_activity` with the new PR number. Add
+   to the ledger under "watching".
+2. **Request a copilot review.** Call `mcp__github__request_copilot_review`
+   so gemini-code-assist / copilot-pull-request-reviewer surface
+   their feedback as actionable threads. Don't wait for human review
+   to start.
+3. **Triage every review event** per coordinate §5a:
+   - `accept` → fix the small thing, push (see §5g.4 below for the
+     stale-base risk on small fix-pushes)
+   - `accept-with-modification` → fix differently, reply with one
+     paragraph explaining why
+   - `reject-with-reason` → reply on the thread
+   - `escalate` → ask the author via §4e
+4. **Pre-push stale-base check.** Every fix-push on a prepared PR
+   triggers a fresh CI run. If `main` has moved since you branched,
+   the new validate run may hit drift. Before each fix-push, run
+   `git fetch origin main` and check the delta per coordinate §8c.
+   If main moved ≥ 3 commits and any of the new commits touch your
+   PR's diff scope, rebase first (per §5f recovery recipe).
+5. **Done check + merge prompt.** When (a) every open review thread
+   on the PR is resolved or replied to, (b) every CI check is green
+   OR documented as a stale-validate flake (§5f), and (c) the diff
+   still reflects the original intent, **ask the author**:
+
+   > PR #N is ready for merge — N comments addressed, CI green
+   > (or: CI flake documented as §5f drift, manual override OK).
+   > Link: <PR URL>. Merge to main?
+
+   Use `AskUserQuestion` (foreground) or post the merge-prompt on
+   the PR (PR-driven session). Do **not** auto-merge.
+6. **Stop on merge.** Once the author merges (or closes), call
+   `mcp__github__unsubscribe_pr_activity`. Record outcome in ledger.
+
+This protocol covers the lifecycle of every PR this watcher opens —
+including the cite-hygiene followup (#698), the future naked-
+conjecture batch PRs, and any other spin-outs from the queue.
 
 ## 5f. Witness-drift CI failure pattern (RECOVERY RECIPE)
 
