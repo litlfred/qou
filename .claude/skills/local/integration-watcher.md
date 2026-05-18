@@ -85,6 +85,34 @@ When the user invokes `/integration-watch` directly:
 
 Then the structured `AskUserQuestion` chip set.
 
+## 0a. Repo-owner preferences (binding for all watchers)
+
+Per CLAUDE.md §"User accessibility" the repo owner types with
+difficulty and prefers a small set of binding behavioural
+defaults. These override the historical watcher defaults — every
+child inherits them.
+
+1. **One branch / one PR for related things.** Group many
+   related fixes (especially backlog items) into a single
+   branch + single PR. Don't open small per-item PRs. See §5j
+   step 1 ("Cluster aggressively") for the cluster-on-finding-
+   kind rule and §5g step 5 for the merge-prompt sequencing.
+2. **Don't spawn more than one agent at a time without
+   explicit consent.** Sequential foreground work is the
+   default; parallel agent dispatch requires affirmative user
+   approval per batch. See §5m for the full rule and the narrow
+   exceptions (read-only tool calls in one response are still
+   fine; agent spawns are the constraint).
+3. **Group a lot — backlog batches are large by default.**
+   When the backlog has 4-20 related items in the same finding
+   bucket, do them all in one branch, stacked as multiple
+   commits if they need different commit messages. Don't split
+   into N small branches.
+
+These rules supersede any "default to parallel" / "one PR per
+item" framing earlier in this document. When in doubt: cluster
+more, dispatch fewer agents, ask before parallelising.
+
 ## 1. Baseline + setup (run once per session)
 
 ```bash
@@ -822,9 +850,18 @@ to resolve it, then follow §5g for that PR's lifecycle.
 
 Workflow:
 
-1. **Cluster.** Group nearby backlog items (same chapter, same
-   file, same finding kind) so one PR addresses a coherent
-   tranche, not a single one-line fix.
+1. **Cluster aggressively — one branch / one PR per related
+   tranche.** Repo-owner preference (2026-05-18): *"prefer one
+   branch/PR for related things; group a lot (e.g. backlog)."*
+   Group nearby backlog items (same chapter, same file, same
+   finding kind, OR same I-pattern bucket across the chapter
+   set) so one PR addresses a coherent tranche, not a single
+   one-line fix. **Default to "big batch"** — e.g. all 4-9 I12
+   `lake_root_no_decl` retargets in one PR, not one PR per item.
+   Sequencing within the PR: stack commits per sub-group
+   (e.g. `fix(I12): retarget module-as-URI lean.refs (4)` then
+   `fix(I12): rename gradedTrace → gradedMarkovTrace (1)`),
+   each commit on the same branch so reviewers read one diff.
 2. **Branch.** Create a new branch via
    `mcp__github__create_branch`, named using the **integration-watcher
    convention**:
@@ -1120,48 +1157,63 @@ makes the audit ledger fully replayable: a fresh session can
 reconstruct exactly what's been checked under what criteria
 against what SHA, and ONLY queue the gap.
 
-### 5m. Parallel work during idle windows (MANDATORY for foreground sessions)
+### 5m. Sequential-by-default; parallel agents require explicit consent
 
-When the watcher is idle (no incoming events, no in-flight discharge,
-no pending author ask), **default to parallel work**, not sequential
-single-item processing. Idle time is the watcher's highest-throughput
-window — use it.
+Repo-owner preference (2026-05-18): **don't spawn more than one
+agent at a time unless explicit consent.** This overrides the
+historical "parallel-by-default" model — the owner reviews each
+spawned agent's plan personally, and unbounded parallel dispatch
+turns into a context flood the owner cannot triage in real time.
 
-**Parallel-by-default decisions:**
+**Default rule:** while idle, the watcher does its own work
+**sequentially in the foreground** — one backlog item / one PR
+triage / one criterion sweep at a time. Foreground reads
+(`Read`, `Grep`, `Bash` for inspection) can still run in parallel
+within a single response; the constraint is on **agent
+dispatch** (`Agent(...)` calls), not on tool calls in general.
 
-| Idle activity | Sequential (anti-pattern) | Parallel (mandatory when ≥ 2 items, capped at 4 per round) |
-|---------------|---------------------------|-------------------------------------|
-| Backlog sweep (§5c) | One block at a time | **One read-only `Agent(Explore)` per block in a single tool-call batch.** Per-block agents must NOT write to `todos/${NAME}-queue.json` — they return findings; the foreground aggregator (Rule 4) does the single queue write. |
-| Sibling-PR triage (`coordinate §7`) | Walk PRs serially | **One agent per PR**, dispatched in one batch (read-only triage, aggregated by foreground) |
-| Prepare-merge sweep on multiple PRs | One PR at a time | **One agent per PR**, each running its own §3a/§3b/one-voice pass (read-only; foreground consolidates) |
-| Cross-criterion §3a derivation-completion sweep | One criterion's missed range serially | **One agent per criterion**, each scanning its slice of `reviewed_up_to[*]..origin/main` (read-only; foreground writes the per-criterion checkpoint) |
-| §4b dispatch to QA specialists | (already required parallel per §4b — keep it) | (same) |
-| §4d auto-discharge attempts on multiple queue items | One sorry / one violation at a time | **One agent per independent item** (4-agent cap; items sharing state must serialize) |
+**Explicit-consent escalation:** if the watcher believes a
+parallel batch is genuinely justified (e.g. 8 independent
+read-only triages that would otherwise serialize for 10+
+minutes), it must:
 
-**Anti-parallel cases** (must run sequentially):
+1. Surface an `AskUserQuestion` describing the proposed batch
+   (count, per-agent scope, expected total wall time).
+2. Wait for affirmative consent. "Continue" / "proceed" /
+   "go ahead" / explicit `yes` count; silence does not.
+3. Cap the granted batch at the explicitly-named size (default
+   4 if the user says "parallel ok"); subsequent rounds need
+   fresh consent.
 
-- Anything touching the same `todos/${NAME}-queue.json` write (race condition; use a single foreground agent to write, parallel subagents read-only).
+**Anti-parallel cases** (always sequential even with consent):
+
+- Anything touching the same `todos/${NAME}-queue.json` write (race condition).
 - Anything touching the same Lean build (`lake build` is exclusive).
 - Anything that depends on a prior step's output (rebase → validate, format → lint).
 - Tasks where the user is mid-asking — never dispatch in parallel until the author-ask is resolved.
 
-**Dispatcher rules:**
+**Acceptable parallel-without-consent exceptions** (narrow):
 
-1. **One response, many `Agent` blocks.** When idle-batching N agents, send them in ONE response with N concurrent `Agent` tool calls (not N sequential responses). The Claude Code harness runs concurrent tool calls in parallel regardless of the background flag (per harness contract: *"If you intend to call multiple tools and there are no dependencies between them, make all of the independent calls in the same response. Maximize use of parallel tool calls."*).
-2. **`run_in_background` — pick by aggregation need:**
-   - `false` (foreground waits, default) when you want **same-turn atomic aggregation**: prepare-merge multi-PR sweep, parallel triage that posts a single consolidated status comment. The foreground turn blocks until all parallel agents return, then writes one consolidated queue update.
-   - `true` (background, async) when the **watcher will continue running anyway** and same-turn aggregation isn't required: idle backlog sweeps, long-running audits. Results arrive as separate notifications; queue updates happen as each agent completes (with care to avoid same-file write races).
-3. **Cap parallelism at 4 agents per round** — beyond that, queue the rest for the next idle window. Avoids context-overflow on the dispatcher's side. With `run_in_background: true`, also re-check the cap on each subsequent idle TICK before launching more so the in-flight count stays ≤ 4.
-4. **Aggregate results** — after all parallel agents return, consolidate findings into a single queue update (single write). With `false` this happens in the same turn; with `true` it happens in a later turn after the last completion notification.
-5. **Don't dispatch parallel work while an author-ask is pending** — the user's reply may pivot the priorities.
+- Multiple `Read` / `Grep` / `Bash`-inspection tool calls in a
+  single response — these are not agent spawns.
+- The §4b QA-specialist dispatch when the watcher is reacting to
+  an incoming event and the specialists are read-only — but if
+  the dispatch would exceed 3 agents, ask first.
 
-**Failure modes this guards against:**
+**Failure modes this rule guards against:**
 
-- ❌ Idle watcher walking the backlog one item at a time, finishing 1 audit per 30 s when 4 could finish in the same 30 s.
-- ❌ Per-PR triage taking 5 minutes for 5 PRs when 4 parallel agents finish 4 in ~90 s and the 5th is queued for the next idle window (per the 4-agent cap above).
-- ❌ Dispatching one prepare-merge sweep per response, requiring N round-trips for N PRs.
+- ❌ Spawning 4 parallel agents during what the owner thought
+  was a one-task session, flooding the chat with 4 simultaneous
+  return reports the owner cannot triage typed-replies fast
+  enough to keep up with.
+- ❌ Treating "parallel-by-default" as license to fan out N
+  agents on every idle TICK; the cap and the per-batch consent
+  are both required.
 
-**Default invariant:** in an idle window with K ≥ 2 independent tasks, the watcher MUST dispatch them in parallel unless one of the anti-parallel cases above applies.
+**Default invariant:** in an idle window with K ≥ 2 independent
+tasks, the watcher **picks the highest-priority one, works it
+foreground-sequential, and ships before reaching for the next.**
+Batch consent is the escape hatch, not the default.
 
 ## 6. Goal-driven invariants
 

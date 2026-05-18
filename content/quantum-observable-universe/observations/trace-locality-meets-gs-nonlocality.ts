@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Reconciliation: Markov locality of single generators vs. Gröbner-Shirshov non-locality of composite braids",
   lean: {
-    ref: "qou:QOU.Observations.TraceLocalityMeetsGsNonLocality",
+    ref: "qou:QOU.Observations.TraceLocalityMeetsGsNonLocality.HasReconciliation",
     validation: "not_checked",
   },
   uses: [

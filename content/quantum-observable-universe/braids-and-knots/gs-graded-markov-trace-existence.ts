@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Existence of the graded Markov trace on the GS filtration",
   lean: {
-    ref: "qou:QOU.BraidKnot.GBResidueSpectralSum.gradedTrace",
+    ref: "qou:QOU.BraidKnot.GradedMarkovTraceFromGSFiltration",
     validation: "not_checked",
   },
   uses: [
