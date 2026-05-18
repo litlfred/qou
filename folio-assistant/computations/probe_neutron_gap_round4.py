@@ -41,9 +41,8 @@ sys.path.insert(0, str(HERE))
 import mpmath as mp
 
 from q_parameter import Q as Q0_FLOAT  # noqa: E402
-from experimental_constants import M_E_MEV  # noqa: E402
+from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from codata_constants import M_P_MEV_VALIDATION, M_N_MEV_VALIDATION  # noqa: E402
 
 _DPS = 50
 
@@ -79,8 +78,8 @@ def main() -> int:
     print("NEUTRON-GAP PROBES — ROUND 4 (canonical AME assembly via atomic tr_M)")
     print("=" * 100)
     print(f"  q_0 = {Q0_FLOAT}")
-    print(f"  m_p (CODATA) = {M_P_MEV_VALIDATION} MeV")
-    print(f"  m_n (CODATA) = {M_N_MEV_VALIDATION} MeV")
+    print(f"  m_p (CODATA) = {M_P_MEV} MeV")
+    print(f"  m_n (CODATA) = {M_N_MEV} MeV")
     print(f"  m_e (CODATA) = {M_E_MEV} MeV")
     print(f"  source: {ATOMIC_WITNESS_IN.name}")
     print()
@@ -97,8 +96,8 @@ def main() -> int:
 
     with mp.workdps(_DPS):
         tr_p = mp.mpf(tr_M_by_atom["proton"])
-        m_p_AME = mp.mpf(str(M_P_MEV_VALIDATION))
-        m_n_AME = mp.mpf(str(M_N_MEV_VALIDATION))
+        m_p_AME = mp.mpf(str(M_P_MEV))
+        m_n_AME = mp.mpf(str(M_N_MEV))
         m_e_AME = mp.mpf(str(M_E_MEV))
 
         # Step 1: calibrate energy scale on the proton (single point, no fit)
@@ -202,8 +201,8 @@ def main() -> int:
         )
         .set_content_block("prop:atom-knot-mass-derivation")
         .add_parameter("q_0", Q0_FLOAT)
-        .add_parameter("m_p_codata_MeV", M_P_MEV_VALIDATION)
-        .add_parameter("m_n_codata_MeV", M_N_MEV_VALIDATION)
+        .add_parameter("m_p_codata_MeV", M_P_MEV)
+        .add_parameter("m_n_codata_MeV", M_N_MEV)
         .add_parameter("m_e_codata_MeV", M_E_MEV)
         .add_parameter("precision_dps", _DPS)
         .add_parameter("source_witness", str(ATOMIC_WITNESS_IN.name))
@@ -227,7 +226,7 @@ def main() -> int:
         .add_assertion(
             "proton_calibration_recovers_m_p_AME",
             computed=float(mp.fabs(tr_p) * E0),
-            expected=M_P_MEV_VALIDATION,
+            expected=M_P_MEV,
             tolerance=1e-6,
             source="single-point E0 = m_p_AME / |tr_M(proton)|",
         )

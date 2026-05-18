@@ -45,9 +45,8 @@ import mpmath as mp
 
 import tower_isotope_absolute as tia  # noqa: E402
 from q_parameter import Q as Q0_FLOAT  # noqa: E402
-from experimental_constants import M_E_MEV  # noqa: E402
+from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from codata_constants import M_P_MEV_VALIDATION, M_N_MEV_VALIDATION  # noqa: E402
 
 _DPS = 50
 
@@ -90,8 +89,8 @@ def main() -> int:
     print("NEUTRON-GAP PROBES — ROUND 5 (brane-tower with proton calibration)")
     print("=" * 100)
     print(f"  q_0 = {Q0_FLOAT}")
-    print(f"  m_p (CODATA) = {M_P_MEV_VALIDATION} MeV")
-    print(f"  m_n (CODATA) = {M_N_MEV_VALIDATION} MeV")
+    print(f"  m_p (CODATA) = {M_P_MEV} MeV")
+    print(f"  m_n (CODATA) = {M_N_MEV} MeV")
     print(f"  m_e (CODATA) = {M_E_MEV} MeV")
     print()
 
@@ -102,8 +101,8 @@ def main() -> int:
         print()
 
         # Step 1: compute Hecke-unit M_H for every particle
-        m_p_AME = mp.mpf(str(M_P_MEV_VALIDATION))
-        m_n_AME = mp.mpf(str(M_N_MEV_VALIDATION))
+        m_p_AME = mp.mpf(str(M_P_MEV))
+        m_n_AME = mp.mpf(str(M_N_MEV))
         m_e_AME = mp.mpf(str(M_E_MEV))
 
         M_H_by_atom = {}
@@ -183,7 +182,7 @@ def main() -> int:
             err_ppb = r["B_err_ppb"]
             target_str = f"{target:>14.4f}"
         else:
-            target = M_P_MEV_VALIDATION if r["atom"] == "proton" else M_N_MEV_VALIDATION
+            target = M_P_MEV if r["atom"] == "proton" else M_N_MEV
             mode = "M (cal)" if r.get("calibration_anchor") else "M"
             err_pct = r["mass_err_pct"]
             err_ppb = r["mass_err_ppb"]
@@ -246,8 +245,8 @@ def main() -> int:
         )
         .set_content_block("prop:atom-knot-mass-derivation")
         .add_parameter("q_0", Q0_FLOAT)
-        .add_parameter("m_p_codata_MeV", M_P_MEV_VALIDATION)
-        .add_parameter("m_n_codata_MeV", M_N_MEV_VALIDATION)
+        .add_parameter("m_p_codata_MeV", M_P_MEV)
+        .add_parameter("m_n_codata_MeV", M_N_MEV)
         .add_parameter("m_e_codata_MeV", M_E_MEV)
         .add_parameter("precision_dps", _DPS)
         .add_data("results", results)
@@ -269,7 +268,7 @@ def main() -> int:
         .add_assertion(
             "proton_calibration_recovers_m_p_AME",
             computed=float(mp.mpf(M_H_by_atom["proton"]) * E0_brane),
-            expected=M_P_MEV_VALIDATION,
+            expected=M_P_MEV,
             tolerance=1e-6,
             source="single-point brane-tower proton calibration",
         )

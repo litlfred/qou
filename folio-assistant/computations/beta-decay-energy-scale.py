@@ -27,11 +27,10 @@ from datetime import datetime, timezone
 
 from q_parameter import Q, Q_INV, HA, E_CROSS, S_SKEIN, HBAR_Q, LN_Q
 from experimental_constants import (
-    M_E_MEV,
+    M_E_MEV, M_P_MEV, M_N_MEV,
     M_E_MEV_ERR, M_P_MEV_ERR, M_N_MEV_ERR,
     KAPPA, VOL_BORROMEAN,
 )
-from codata_constants import M_P_MEV_VALIDATION, M_N_MEV_VALIDATION  # noqa: E402
 
 # ── Load witness data ────────────────────────────────────────────
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -78,9 +77,9 @@ virt_p = sum(proton_nf[p] for p in PARTICLES if WORD_LENGTH[p] < 2)
 delta_virt = virt_n - virt_p  # Δ(ℓ<2)
 
 # ── Observed decay energy ────────────────────────────────────────
-Q_decay = M_N_MEV_VALIDATION - M_P_MEV_VALIDATION - M_E_MEV
+Q_decay = M_N_MEV - M_P_MEV - M_E_MEV
 Q_decay_err = math.sqrt(M_N_MEV_ERR**2 + M_P_MEV_ERR**2 + M_E_MEV_ERR**2)
-delta_m = M_N_MEV_VALIDATION - M_P_MEV_VALIDATION
+delta_m = M_N_MEV - M_P_MEV
 delta_m_err = math.sqrt(M_N_MEV_ERR**2 + M_P_MEV_ERR**2)
 
 # ── Energy scales (all positive by using |Δ|) ────────────────────
@@ -253,8 +252,8 @@ output = {
     "q0": Q,
     "crossing_type": "typed (u-u, d-d, u-d)",
     "observed": {
-        "m_n_MeV": M_N_MEV_VALIDATION,
-        "m_p_MeV": M_P_MEV_VALIDATION,
+        "m_n_MeV": M_N_MEV,
+        "m_p_MeV": M_P_MEV,
         "m_e_MeV": M_E_MEV,
         "delta_m_MeV": delta_m,
         "Q_decay_MeV": Q_decay,

@@ -58,8 +58,10 @@ from _precision import set_compute_dps, fmt  # noqa: E402
 set_compute_dps()
 
 from witness_base import WitnessBuilder
-from codata_constants import M_P_MEV_VALIDATION, M_N_MEV_VALIDATION  # noqa: E402
 from q_parameter import Q_MP, Q_INV_MP
+from experimental_constants import M_P_MEV, M_N_MEV
+
+
 HERE = Path(__file__).parent
 
 
@@ -163,14 +165,14 @@ def main() -> int:
     n_total_new = n_t1_new + p_t2 + p_t3 + p_t4
 
     # Re-calibrate E_0 against m_p_codata
-    e0_new = (mp.mpf(M_P_MEV_VALIDATION) - p_t6) / p_total_new
+    e0_new = (mp.mpf(M_P_MEV) - p_t6) / p_total_new
     n_pred_new = e0_new * n_total_new + n_t6
-    err_new = (n_pred_new - mp.mpf(M_N_MEV_VALIDATION)) / mp.mpf(M_N_MEV_VALIDATION) * 100
+    err_new = (n_pred_new - mp.mpf(M_N_MEV)) / mp.mpf(M_N_MEV) * 100
 
     # Strategy-3 baseline (placeholder = 1)
-    e0_old = (mp.mpf(M_P_MEV_VALIDATION) - p_t6) / (p_t1 + p_t2 + p_t3 + p_t4)
+    e0_old = (mp.mpf(M_P_MEV) - p_t6) / (p_t1 + p_t2 + p_t3 + p_t4)
     n_pred_old = e0_old * (n_t1 + p_t2 + p_t3 + p_t4) + n_t6
-    err_old = (n_pred_old - mp.mpf(M_N_MEV_VALIDATION)) / mp.mpf(M_N_MEV_VALIDATION) * 100
+    err_old = (n_pred_old - mp.mpf(M_N_MEV)) / mp.mpf(M_N_MEV) * 100
 
     print(f"\n  Strategy-3 baseline (placeholder = 1):")
     print(f"    E_0 = {float(e0_old):.6f} MeV/cat-unit")

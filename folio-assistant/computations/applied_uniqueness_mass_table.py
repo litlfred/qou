@@ -42,13 +42,8 @@ import mpmath as mp
 
 from _precision import set_compute_dps, fmt
 set_compute_dps()  # mp.mp.dps via QOU_COMPUTE_DPS (default 50)
-from codata_constants import M_E_MEV as _M_E_MP, M_P_MEV as _M_P_MP, M_N_MEV as _M_N_MP
+from codata_constants import M_E_MEV, M_P_MEV_VALIDATION, M_N_MEV_VALIDATION  # noqa: E402
 from witness_base import WitnessBuilder
-from codata_constants import M_P_MEV_VALIDATION, M_N_MEV_VALIDATION  # noqa: E402
-
-M_E_MEV = _M_E_MP
-M_P_MEV_VALIDATION = _M_P_MP
-M_N_MEV_VALIDATION = _M_N_MP
 
 ASSEMBLY_DIR = Path(__file__).parent
 

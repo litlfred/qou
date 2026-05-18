@@ -74,9 +74,8 @@ if str(HERE) not in sys.path:
 
 from _precision import set_compute_dps, fmt
 set_compute_dps()  # mp.mp.dps via QOU_COMPUTE_DPS (default 50)
-from codata_constants import M_E_MEV, M_P_MEV, M_N_MEV  # noqa: E402
+from codata_constants import M_E_MEV, M_P_MEV_VALIDATION, M_N_MEV_VALIDATION  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from codata_constants import M_P_MEV_VALIDATION, M_N_MEV_VALIDATION  # noqa: E402
 
 # Atom roster + CODATA total masses (MeV).  Binding = M_codata − (Z m_p + N m_n).
 ATOMS = {
