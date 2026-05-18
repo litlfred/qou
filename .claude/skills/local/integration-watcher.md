@@ -1096,10 +1096,12 @@ window — use it.
 
 **Dispatcher rules:**
 
-1. **One Bash response, many `Agent` blocks.** When idle-batching N agents, send them in ONE response with N concurrent `Agent` tool calls (not N sequential responses). The harness runs them in parallel.
-2. **`run_in_background: true`** on each agent so the foreground turn can complete and the watcher can keep monitoring.
-3. **Cap parallelism at 4 agents per round** — beyond that, queue the rest for the next idle window. Avoids context-context-overflow on the dispatcher's side.
-4. **Aggregate results** — after all parallel agents return, the foreground turn consolidates findings into a single queue update (single write).
+1. **One response, many `Agent` blocks.** When idle-batching N agents, send them in ONE response with N concurrent `Agent` tool calls (not N sequential responses). The Claude Code harness runs concurrent tool calls in parallel regardless of the background flag (per harness contract: *"If you intend to call multiple tools and there are no dependencies between them, make all of the independent calls in the same response. Maximize use of parallel tool calls."*).
+2. **`run_in_background` — pick by aggregation need:**
+   - `false` (foreground waits, default) when you want **same-turn atomic aggregation**: prepare-merge multi-PR sweep, parallel triage that posts a single consolidated status comment. The foreground turn blocks until all parallel agents return, then writes one consolidated queue update.
+   - `true` (background, async) when the **watcher will continue running anyway** and same-turn aggregation isn't required: idle backlog sweeps, long-running audits. Results arrive as separate notifications; queue updates happen as each agent completes (with care to avoid same-file write races).
+3. **Cap parallelism at 4 agents per round** — beyond that, queue the rest for the next idle window. With `run_in_background: true`, also re-check the cap on each subsequent idle TICK before launching more so the in-flight count stays ≤ 4.
+4. **Aggregate results** — after all parallel agents return, consolidate findings into a single queue update (single write). With `false` this happens in the same turn; with `true` it happens in a later turn after the last completion notification.
 5. **Don't dispatch parallel work while an author-ask is pending** — the user's reply may pivot the priorities.
 
 **Failure modes this guards against:**
