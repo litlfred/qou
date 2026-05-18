@@ -39,9 +39,15 @@ export default chapter({
       ],
     }),
 
-    // ── §3. Carbon chains and benzene ────────────────────────────────
+    // ── §3. Carbon chains, benzene, and organic chain taxonomy ───────
+    // P11 fold (2026-05-18): sec:organic-taxonomy (2 blocks: intro +
+    // remark) had a 1-block remark backed by a draft prose intro. Per
+    // detangler watcher proposal: fold the taxonomy as a coda of the
+    // carbon-chains-benzene section. Result: 3 sections of densities
+    // 2/5/7 (was 2/5/4/2), all within the 3-18 band, eliminates the
+    // 50% cross-section ratio finding on this chapter.
     section({
-      title: "Carbon chains and benzene",
+      title: "Carbon chains, benzene, and organic chain taxonomy",
       label: "sec:carbon-chains-benzene",
       blocks: [
         "carbon-chains-benzene-intro",
@@ -49,14 +55,6 @@ export default chapter({
         "benzene-ring",
         "chain-ring-energy",
         "chain-ring-comparison",
-      ],
-    }),
-
-    // ── §4. Organic chain taxonomy ───────────────────────────────────
-    section({
-      title: "Organic chain taxonomy",
-      label: "sec:organic-taxonomy",
-      blocks: [
         "organic-taxonomy-intro",
         "organic-chain-taxonomy",
       ],
