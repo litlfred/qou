@@ -51,14 +51,15 @@ REPO_ROOT = HERE.parent.parent
 
 # Pattern catalogue.  Each tuple: (label, regex).
 #
-# `explicit_skip_block` was dropped after triage (PR follow-up to
-# #750): the original regex `^\s*#\s*(?:skip|skipping|kept for
-# reference|kept for compat|moved to)` matched benign comments
-# mentioning "Skip" (e.g. "# Skip per-term sp.cancel: too slow",
-# "# SKIP_TRACE=1 to produce a witness ...").  These weren't real
-# guarded-off blocks; they were explanatory prose.  Real
-# wired-but-guarded-off blocks are now captured by the four
-# remaining patterns below.
+# Coverage rationale: the I3 antipattern requires an unambiguous
+# disablement signal — a literal-false guard, an explicit "this is
+# dead/disabled code" marker, or an env-var with off-by-default that
+# isn't a conventional feature toggle.  Generic `# Skip …` comments
+# were dropped from this catalogue in 2026-05-18 round 4: every
+# observed match was a loop control-flow skip ("skip this iteration"),
+# not a guarded canonical-witness consumer.  Reinstating that pattern
+# would require a positive signal that the skipped block consumes a
+# witness — out of scope for a static grep.
 GUARD_RX = (
     ("if_false_literal",
      re.compile(r'^\s*if\s+(?:False|0)\s*:')),
@@ -66,12 +67,53 @@ GUARD_RX = (
      re.compile(r'^\s*if\s+not\s+(?:True|1)\s*:')),
     ("env_var_off_default",
      re.compile(
-         r'os\.environ\.get\s*\(\s*[\'"][^\'"]+[\'"]\s*,\s*[\'"](?:|0|false|False|FALSE)[\'"]'
+         r'os\.environ\.get\s*\(\s*[\'"]([^\'"]+)[\'"]\s*,\s*[\'"](?:|0|false|False|FALSE)[\'"]'
      )),
     ("dead_disabled_marker",
-     re.compile(r'^\s*#\s*(?:DEAD|DISABLED|UNUSED|LEGACY|OBSOLETE|DEPRECATED):',
+     re.compile(r'^\s*#\s*(?:DEAD|DISABLED|UNUSED):',
                 re.IGNORECASE)),
 )
+
+# Rationale phrases in ±5-line context suppress the hit as intentional
+# scaffolding (not an I3 violation).  The audit's goal is wired-but-
+# canonically-guarded-off; performance toggles, exception-handling skips,
+# and documented fallbacks have rationale and are out of scope.
+RATIONALE_RX = re.compile(
+    r'(?:'
+    r'\bslow\b|\bslowness\b|\bexpensive\b|\bcomputationally\b|\bsympy\b|'
+    r'\bminutes\b|takes\s+(?:too\s+)?long|'
+    r'closed[-\s]?form|use\s+closed|not\s+available|\bn/a\b|'
+    r'kept\s+for|for\s+compat|moved\s+to|reorganized|reorganised|'
+    r'\bdeprecated\b|\bhistorical\b|reference\s+only|'
+    r'\bnoqa\b|\bencoding\b|\bpermissions\b|\bexception\b|surface\s+as\s+bugs|'
+    r'for\s+now|\btodo\b|placeholder|temporary|\bwip\b|'
+    r'\boptional\b|\bperformance\b|optimi[sz]ation|optimi[sz]e|'
+    r'\bdebug\b|\bverbose\b|\bdiagnostic\b|'
+    r'\bdegenerate\b|already\s+cached|just\s+created|auto-generated|'
+    r'handled\s+by|out\s+of\s+scope|recomputation|'
+    r'\bsnapshot\b|\brecompute\b|'
+    r'deferred|precomputation|session\s+budget|well-defined|'
+    r'\blegacy\b|fit\s+E_0|residual|fallback|'
+    r'\btiny\b|\bbounds\b|iteration|\bindices\b|'
+    r'schema|pipeline|generated|not\s+yet\s+generated|absence\s+of\s+file|'
+    r'single-term|subword|dual\s+pair'
+    r')',
+    re.IGNORECASE,
+)
+
+# Env-var names matching this prefix are conventional feature/performance
+# toggles, not canonical-witness guards.
+FEATURE_TOGGLE_PREFIX_RX = re.compile(
+    r'^(?:SKIP|INCLUDE|FAST|FORCE|ENABLE|DISABLE|DEBUG|VERBOSE|'
+    r'WITH|WITHOUT|USE|NO|RUN|EMIT|STRICT)_', re.IGNORECASE,
+)
+
+
+def _has_rationale(lines: list[str], i: int) -> bool:
+    """True iff ±5-line context around `lines[i-1]` carries rationale."""
+    start = max(0, i - 6)
+    end = min(len(lines), i + 5)
+    return bool(RATIONALE_RX.search("\n".join(lines[start:end])))
 
 
 def _classify_script(path: Path) -> dict[str, Any] | None:
@@ -86,20 +128,30 @@ def _classify_script(path: Path) -> dict[str, Any] | None:
     lines = text.splitlines()
     hits: list[dict[str, Any]] = []
     for i, line in enumerate(lines, start=1):
-        # Skip lines explicitly triaged with `# noqa: I3 — <reason>`.
-        if re.search(r'#\s*noqa:\s*I3\b', line, re.IGNORECASE):
-            continue
         for label, rx in GUARD_RX:
-            if rx.search(line):
-                # Capture ±2 lines for context.
-                start = max(0, i - 2)
-                end = min(len(lines), i + 2)
-                hits.append({
-                    "line_number": i,
-                    "pattern": label,
-                    "snippet": "\n".join(lines[start:end])[:300],
-                })
-                break  # one pattern match per line is enough
+            m = rx.search(line)
+            if not m:
+                continue
+            # Conventional feature-toggle env vars (SKIP_*, INCLUDE_*,
+            # FAST_*, …) are not canonical-witness guards.  Suppress.
+            if label == "env_var_off_default":
+                var = m.group(1) if m.groups() else ""
+                if FEATURE_TOGGLE_PREFIX_RX.match(var):
+                    break
+            # Rationale within ±5 lines suppresses every pattern —
+            # documented skips / performance trade-offs / fallbacks /
+            # known closed-form substitutions are out of I3 scope.
+            if _has_rationale(lines, i):
+                break
+            # Capture ±2 lines for the witness snippet.
+            start = max(0, i - 2)
+            end = min(len(lines), i + 2)
+            hits.append({
+                "line_number": i,
+                "pattern": label,
+                "snippet": "\n".join(lines[start:end])[:300],
+            })
+            break  # one pattern match per line is enough
 
     if not hits:
         return None
