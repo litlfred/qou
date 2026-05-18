@@ -311,6 +311,20 @@ echo "| $ts | <event> | <scope> | <N critical / N major / N minor> | <N auto / N
 Update `todos/${NAME}-queue.json` with new items + status changes
 via `Edit`.
 
+### 4g. Refresh spawned PRs against main
+
+If the event was a new commit on `origin/main` AND §3 / §4
+triage has completed (acted, deferred, or skipped — any
+outcome), invoke **§5g step 7 (rebase spawned PRs on main
+movement)**.  This keeps every PR the watcher has opened
+current with main even when the per-event work itself was a
+no-op.
+
+The rebase runs in a worktree (no disturbance to the current
+branch); witness-drift conflicts auto-resolve via §5f.
+Substantive conflicts halt the rebase and surface as an author
+ask per §4e.
+
 ## 5. Idle backlog sweep
 
 When the queue has been quiescent for ≥ 10 minutes (no main
@@ -478,6 +492,68 @@ Per prepared PR:
 6. **Stop on merge.** Once the author merges (or closes), call
    `mcp__github__unsubscribe_pr_activity`. Record outcome in
    ledger.
+
+7. **Rebase spawned PRs on main movement.** Every time a new
+   commit lands on `origin/main` and the §3 / §4 per-event triage
+   completes (whether the event was acted on, deferred, or
+   skipped), walk **every PR this watcher has opened that is
+   still open** and ensure each one is current with
+   `origin/main`.  The walk:
+
+   ```bash
+   # Iterate over PRs this watcher prepared (tracked in the
+   # ledger's "watching" section).  For each:
+   git fetch origin main 2>/dev/null
+   for pr_branch in $(awk '/^### Watching/,/^###/{print}' \
+       todos/${NAME}-ledger.md | grep -oE 'claude/iw-[a-z0-9-]+' | sort -u); do
+     # Skip closed PRs (ledger may have stale entries).
+     pr_state=$(mcp__github__pull_request_read method=get \
+                pullNumber=<n> owner=litlfred repo=qou \
+                | jq -r '.state')
+     [ "$pr_state" = "open" ] || continue
+
+     # Compute distance from main.
+     git fetch origin "$pr_branch" 2>/dev/null
+     behind=$(git rev-list --count "origin/$pr_branch..origin/main")
+     touches_diff=$(git diff --name-only \
+       "origin/main" "origin/$pr_branch" \
+       | xargs -I {} git log --oneline \
+           "origin/$pr_branch..origin/main" -- {} | wc -l)
+
+     # Rebase trigger: ≥ 3 commits behind, OR ≥ 1 main commit
+     # touched the PR's diff scope.
+     if [ "$behind" -ge 3 ] || [ "$touches_diff" -ge 1 ]; then
+       # Rebase in a worktree to avoid disturbing the current branch.
+       worktree=$(mktemp -d /tmp/iw-rebase.XXXXXX)
+       trap 'git worktree remove --force "$worktree" 2>/dev/null; \
+             rm -rf "$worktree"' EXIT
+       git worktree add "$worktree" "origin/$pr_branch" >/dev/null
+       ( cd "$worktree" && git rebase origin/main ) && \
+         ( cd "$worktree" && git push --force-with-lease \
+             origin "HEAD:$pr_branch" ) || \
+         echo "CONFLICT on $pr_branch — flag to author"
+       # trap fires on EXIT
+     fi
+     # Update ledger row with last-rebase-against-main SHA.
+   done
+   ```
+
+   Witness-drift conflicts on the four auto-regen audit witnesses
+   (compute-audit-scan, derivation-chain-audit, cross-check-trM-1ppb,
+   e0-calibration-audit) auto-resolve via the §5f recipe.
+   Substantive conflicts halt the rebase and surface as an author
+   ask per §4e.
+
+   This step keeps spawned PRs current **automatically** between
+   main-event triages, so reviewers don't see a `dirty` /
+   `behind by N commits` PR when they come back to review.  It
+   subsumes the pre-push check of step 4 above — that one still
+   runs before each fix-push, but step 7 also catches the case
+   where main moves while the PR is idle waiting for review.
+
+   Same rule applies to **newly-opened** PRs the watcher created
+   in this session: subscribe (step 1) + rebase-on-main-move
+   (step 7) are paired.
 
 ### 5j. Backlog-found issue — spin up your own PR
 
