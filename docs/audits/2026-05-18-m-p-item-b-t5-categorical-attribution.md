@@ -446,6 +446,98 @@ totalling **less than a working day** because no new compute
 is implemented; it is purely **a re-read of existing SDP dual
 variables** through the lens of the §7b.1 identification.
 
+## 7c. B.1a wiring result — R ≠ C numerically, conjecture Step 4 needs revision
+
+*(Added 2026-05-18 after running `aK_via_lp_dual.py`.)*
+
+The B.1a prototype script
+[`folio-assistant/computations/aK_via_lp_dual.py`](../../folio-assistant/computations/aK_via_lp_dual.py)
+emits the comparison witness
+[`a-K-via-lp-dual.witness.json`](../../folio-assistant/computations/a-K-via-lp-dual.witness.json)
+at q_0 50 dps for the six chi-cache atoms. The result surfaces a
+**structural inconsistency** between the narrative conjecture and
+the production code:
+
+| atom | A | $a_K^R$ (Ratio) | $a_K^C$ (Closed) | R − C residual |
+|------|---|------------------|------------------|----------------|
+| proton  | 1 | 1.000 | 1.000 | 0 (trivial) |
+| neutron | 1 | 1.000 | 1.000 | 0 (trivial) |
+| deuteron | 2 | **0.395** | 1.209 | −67% |
+| tritium  | 3 | 0.115 | 0.956 | −88% |
+| ³He      | 3 | 0.197 | 0.956 | −79% |
+| ⁴He      | 4 | 0.055 | 0.914 | −94% |
+
+The conjecture's Step 4 claim — that $a(N) = \lvert\mathrm{tr}_M(W_{\text{atom}})\rvert / \lvert\mathrm{tr}_M(W_{\text{free}})\rvert$
+reproduces $a_K^C = 1+h, 1-h^2, (1-h^2)^2$ at A=2,3,4 — **fails
+numerically by a factor of ~2-18×** when $W_{\text{free}}$ is taken
+to be the disconnected product of nucleon braids (which is the
+natural Markov-trace multiplicative definition).
+
+### Likely resolution
+
+The narrative `a(N) = R` and the production `T5 = a_K · 𝒞_K`
+**use the same symbol for different objects**. The production
+code's $\mathcal{B}_{\mathrm{bulk}}$ is the **subtractive mass
+defect**
+
+$$
+  \mathcal{B}_{\mathrm{bulk}}(Z,N) = E_0 \cdot
+    \bigl(\lvert\mathrm{tr}_M(W_{\mathrm{free}})\rvert -
+          \lvert\mathrm{tr}_M(W_{\mathrm{atom}})\rvert\bigr),
+$$
+
+and $a_K$ is a **separate multiplier** matching the closed
+form **C**. The narrative conjecture's "ratio form" identification
+is **not** equivalent to the closed form; one of them is
+incorrect, or they refer to different physical observables.
+
+This shifts the §6 closure plan substantially. The corrected
+framing:
+
+- **C is the canonical $a_K$ for T5** (matches conjecture Step 4
+  symbolic values; matches production code's multiplicative role).
+- **R is a *different* quantity** — the mass-defect ratio for
+  $\mathcal{B}_{\mathrm{bulk}}$ envelope, not the chirality
+  multiplier.
+- **D-sc / D-chi** (per-partition contribution sums) — exploratory;
+  do not reproduce C either.
+
+### Side-finding: chirality stratum dominates for A ≥ 3
+
+The per-atom dual breakdown shows the self-conjugate
+contribution to $\lvert\mathrm{tr}_M\rvert$ vanishes for A ≥ 3:
+
+| atom | A | sc contribution | chi contribution (signed) | $\lvert\mathrm{tr}_M\rvert$ |
+|------|---|----------------|---------------------------|------------------------------|
+| proton   | 1 | 0.508 | 0.557 | 1.065 |
+| neutron  | 1 | 0.478 | 0.445 | 0.923 |
+| deuteron | 2 | −0.014 | 0.403 | 0.388 |
+| tritium  | 3 | 0.0004 | 0.104 | 0.104 |
+| ³He      | 3 | 0.0005 | 0.207 | 0.207 |
+| ⁴He      | 4 | **0.000** | 0.054 | 0.054 |
+
+This means: **for A ≥ 3, essentially all of $\lvert\mathrm{tr}_M\rvert$
+comes from non-self-conjugate (chirality-active) Wedderburn
+blocks.** The self-conjugate stratum (where the Wenzl-bridge
+identification $y_\lambda = w_\lambda$ holds) carries the
+nucleon traces but **vanishes for composite nuclei**. This is
+consistent with the chirality interpretation — composite-nucleus
+binding lives entirely in the chirality stratum at A ≥ 3.
+
+### Revised closure plan
+
+| Step | Action |
+|------|--------|
+| **B.1a-rev.1** | Drop R as a candidate for $a_K$; promote C as canonical (matches conjecture Step 4 symbolic identities + production code's multiplicative role). |
+| **B.1a-rev.2** | Re-frame R as a separate quantity governing $\mathcal{B}_{\mathrm{bulk}}$'s mass-defect envelope, not $a_K$. Audit production code's `B_bulk` interpretation against R. |
+| **B.1a-rev.3** | Update `knot-factor-frobenius-pairing.md` Step 4 to disclaim the literal "$a(N) = \lvert\mathrm{tr}_M(W_{\text{atom}})\rvert/\lvert\mathrm{tr}_M(W_{\text{free}})\rvert$" equality; clarify that the BW values $(1+h, 1-h^2, ...)$ are derived via Skein eigenvalues, not the Markov-trace ratio. |
+| **B.1a-rev.4** | (Optional) Run the full operator-selection LP via `solve_operator_selection_lp` at MPFR-50dps to extract literal $u_\lambda^*$ values and compare against C. The narrative's §7b SDP-shadow-price attribution is still conjectural until verified. |
+
+This finding is **non-blocking for the m_p chain** because the
+production code already uses C (`paper_six_term_isotope_sweep.term5_chirality`
+default mode). The audit just needs to reflect that C is canonical
+and update the narrative.
+
 ## 8. Coordination notes
 
 This audit is **structural / R&D only** — no code changes in
