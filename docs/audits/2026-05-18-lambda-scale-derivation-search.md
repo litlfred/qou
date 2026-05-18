@@ -246,3 +246,54 @@ correction" from "PSLQ coincidence" requires either:
   baryons
 
 Both are concrete next R&D items.
+
+## §13 Honest distinction: derivation vs justification
+
+**The user asked: "derivation or justification?"** Critical question.
+Honest classification of each finding:
+
+### What we ACTUALLY derived
+
+| Result | Status | Why |
+|--------|--------|-----|
+| `Vol(B_3) = 8·G` | **DERIVATION** | Standard topology: B_3 complement = 2 ideal regular octahedra (Adams 1985); V(oct) = 8·Λ(π/4); Λ(π/4) = G/2. Composition gives `Vol(B_3) = 16·Λ(π/4) = 8G` exactly. The 0.25 ppm literature offset is numerical precision. |
+
+### What we numerically OBSERVED (justification, not derivation)
+
+| Result | Status | What's missing |
+|--------|--------|----------------|
+| `λ_p ≈ 5/2 − h²·G` (5.4 ppm) | **JUSTIFICATION** | No proof that λ_scale equals the H_4 partition half-symmetric count. WHY the proton's natural Hecke level is n=4 (proton is a 3-strand braid). WHY h²·G is the correct leading correction (not some other h²·X form). |
+| `5/2 = (2 conj pairs + 1 self-conj)/2 at H_4` | **NUMERICAL OBSERVATION** | The count is exact. But no categorical theorem yet links λ_scale to this count. |
+| `Σ/Λ ratio ≈ √2 (0.08%)` | **JUSTIFICATION** | √2 is suggestive of isospin Clebsch-Gordan, but no proof yet links the strange-baryon λ extension to the isospin-multiplet structure. |
+
+### What we TAUTOLOGICALLY confirmed
+
+| Result | Status | Why |
+|--------|--------|-----|
+| `Δm_pn = ΔS_pn · m_e ≈ 1.293 MeV` | **TAUTOLOGY** | This is just rearrangement of the conjecture's formula m = m_e·(Vol/ℏ²·λ + S). Computing ΔS = Δm/m_e then verifying ΔS·m_e = Δm is circular. Doesn't prove λ_p = λ_n (we ASSUMED that to extract ΔS). |
+
+### What this means for the m_p closure
+
+To go from **justification at 5.4 ppm** → **derivation**, we need:
+
+1. **A theorem linking λ_scale to H_4 partition data.** Currently we only have a numerical match. The categorical statement should be:
+
+   > **Conjecture (to prove):** For the canonical (u,d)-Borromean baryon at H_4, the substrate λ_scale equals the conjugate-pair half-symmetric partition count, minus the leading h² correction proportional to Vol(B_3)/8 = G.
+
+   This is not yet proved — it's a **bold structural hypothesis** with 5.4 ppm numerical support.
+
+2. **A categorical derivation of the h²·G correction term** from the q-deformation of the H_4 Markov trace. The h²·G should come from EXPANDING the q-trace around q=1, with the topological invariant Vol(B_3)/8 entering via the Borromean braid's hyperbolic structure.
+
+3. **A proof of the 5.4 ppm residual structure** — either as a calculable h^4 correction or as the S(p) Skein term that we currently assume is zero.
+
+4. **Independent verification at the neutron** under the SAME λ_common = 5/2 − h²·G (already shown to be self-consistent with the 1.293 MeV split via Skein).
+
+5. **An SU(3) extension** for strange baryons explaining why the Σ/Λ ratio approaches √2.
+
+### Summary
+
+**Currently:** 5/2 − h²·G is a substrate-form **PSLQ candidate** matching m_p to 5.4 ppm, with a plausible structural interpretation but no rigorous derivation.
+
+**Required to claim "derived":** items 1-5 above, particularly items 1 and 2 (theorem + h²-correction proof).
+
+**Status:** the m_p chain is now structurally **justified** to 5.4 ppm, but **not derived** in the strict QOU sense. The remaining gap to full derivation is well-defined: 5 concrete R&D items, each in principle tractable.
