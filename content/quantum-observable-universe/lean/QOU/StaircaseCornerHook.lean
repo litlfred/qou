@@ -199,7 +199,7 @@ instance staircase_ew_residual_conjecture
             (QOU.Hecke.staircaseStrands k) q A
             (QOU.Hecke.staircasePartition k)] :
     StaircaseEWResidual q (canonicalScale q) where
-  spectral_scale_present := fun _ _ => sorry
   -- Ref: [manuscript] docs/audits/2026-05-06-staircase-ew-residual-conjecture.md
+  spectral_scale_present := fun _ _ => sorry
 
 end QOU.StaircaseCornerHook

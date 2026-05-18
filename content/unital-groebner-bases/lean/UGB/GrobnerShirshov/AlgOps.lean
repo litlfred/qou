@@ -289,6 +289,7 @@ noncomputable def mkDegLexOrder {G : Type u} [DecidableEq G]
     -- post-rename API name (candidates: `List.Shortlex.wf`,
     -- `WellFoundedRelation.shortlex`, or hand-rolling via strong
     -- induction on length). Deferred.
+    -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
     sorry
   left_compat := by
     intro a b c h
