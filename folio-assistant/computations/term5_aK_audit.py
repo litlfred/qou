@@ -44,7 +44,17 @@ Variants tested for `β*`:
   V1  reverse + invert each crossing      (this is β⁻¹ in Hecke)
   V2  invert each, keep order             (mirror knot K* — flip over/under)
   V3  reverse only, no inversion          (antipode-style: word reversal)
-  V4  averaged crossings stay averaged    (V2-style but averaged is self-mirror)
+
+  V4  RETIRED 2026-05-18 — was nominally "V2-style but averaged is
+      self-mirror", but the implementation was byte-identical to V2
+      (both leave the averaged-crossing tuple unchanged), so V4 and
+      V2 produced the same Hecke element on every braid word.
+      Confirmed numerically in the existing witness: V4 = V2 at the
+      proton (1.1471203358935889) and the neutron (1.2267591396724156)
+      to all 30 displayed digits.  V4 entries are preserved in the
+      historical witness JSON for provenance but the `--variants`
+      list no longer accepts V4.  See:
+      docs/audits/2026-05-18-item-b-chirality-v234-audit.md §"Finding 1"
 
 All variants reduce to the same value when the braid contains only
 σ and σ⁻¹ (no averaged) — they differ only in how `½(σ + σ⁻¹)` maps
@@ -122,16 +132,14 @@ def mirror_word(word, *, variant: str, h_num: float):
         elif variant == "V3":
             # Reverse only, no inversion (antipode-style).
             out.append((c, d, gen))
-        elif variant == "V4":
-            # V2 but explicitly noting averaged is self-mirror.
-            if kind == "sigma":
-                out.append((c, -h_num, gen))
-            elif kind == "sigma_inv":
-                out.append((c, 0.0, gen))
-            else:
-                out.append((c, d, gen))
         else:
-            raise ValueError(f"unknown variant: {variant!r}")
+            # V4 was retired 2026-05-18 (byte-identical to V2 on every
+            # input).  See module docstring + audit
+            # docs/audits/2026-05-18-item-b-chirality-v234-audit.md.
+            raise ValueError(
+                f"unknown variant: {variant!r} "
+                f"(supported: V1, V2, V3; V4 retired — was identical to V2)"
+            )
     return out
 
 
@@ -268,15 +276,16 @@ def main() -> int:
     )
     ap.add_argument(
         "--variants",
-        default="V1,V2,V3,V4",
+        default="V1,V2,V3",
         help=(
-            "Comma-separated subset of mirror variants {V1,V2,V3,V4} to "
-            "audit. Default = all four. V1 (β⁻¹ in Hecke) is fast (~0.5s "
-            "even at A=2); V2-V4 explore alternative mirror conventions "
+            "Comma-separated subset of mirror variants {V1,V2,V3} to "
+            "audit. Default = all three. V1 (β⁻¹ in Hecke) is fast (~0.5s "
+            "even at A=2); V2/V3 explore alternative mirror conventions "
             "and exhibit symbolic blowup at A≥2 (V2 alone takes >34 min "
             "for deuteron in this implementation). Use `--variants V1` "
             "for fast incremental backfill of the canonical-Hecke variant "
-            "across the spectrum."
+            "across the spectrum. (V4 was retired 2026-05-18 — it was "
+            "byte-identical to V2; passing 'V4' raises ValueError.)"
         ),
     )
     ap.add_argument(
@@ -292,10 +301,16 @@ def main() -> int:
     )
     args = ap.parse_args()
     requested = {a.strip() for a in args.atoms.split(",") if a.strip()}
-    requested_variants = [
-        v.strip() for v in args.variants.split(",")
-        if v.strip() in {"V1", "V2", "V3", "V4"}
-    ]
+    raw_variants = [v.strip() for v in args.variants.split(",") if v.strip()]
+    if "V4" in raw_variants:
+        print(
+            "ERROR: V4 was retired 2026-05-18 (byte-identical to V2). "
+            "See module docstring + "
+            "docs/audits/2026-05-18-item-b-chirality-v234-audit.md.",
+            flush=True,
+        )
+        return 2
+    requested_variants = [v for v in raw_variants if v in {"V1", "V2", "V3"}]
     if not requested_variants:
         print("ERROR: no valid variants in --variants", flush=True)
         return 2
