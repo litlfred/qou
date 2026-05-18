@@ -509,17 +509,19 @@ Apply §4 — exactly the same pipeline as for incoming events. The
 ### 5d. Quiescence + heartbeat — AUTO-PULL FROM QUEUE WHEN IDLE
 
 A backlog item is preempted by any incoming event. Resume the
-backlog when the queue is quiescent again. Maintain at most one
-in-flight backlog item.
+backlog when the queue is quiescent again.  The number of in-flight
+backlog items is capped by §5m's parallelism cap (currently 4)
+when multiple items are independent; items sharing state serialise.
 
 **Auto-pull policy (MANDATORY).** On every Monitor TICK heartbeat
 (default 5-min cadence) where:
 
 1. No incoming event has arrived during this TICK window
-2. No queue item is currently in `status: in_progress`
+2. The count of items currently in `status: in-progress` is below
+   the parallelism cap (per §5m, default 4)
 3. `todos/${NAME}-queue.json` contains at least one item with
-   `status: queued` (or `status: needs-author-ack` whose author
-   ask has been outstanding ≥ 24 h — auto-time-out per §5e)
+   `status: queued` (or `status: needs-author` whose author ask
+   has been outstanding ≥ 7 days — the §5e re-ask cadence)
 
 → **Pull the highest-priority queued item per §5b and start §5c
 processing on it immediately.**  Do not wait for a user prompt.
@@ -537,7 +539,7 @@ Sub-agent dispatch.  For long-running items (full content scan,
 multi-file rewire, Lean build) the watcher should launch the
 work via `Agent(run_in_background=true)` so the foreground stays
 responsive to fresh `<github-webhook-activity>` events.  Update
-the item's status to `in_progress` immediately on dispatch and
+the item's status to `in-progress` immediately on dispatch and
 back to `resolved` / `needs-author` on the sub-agent's
 completion notification.
 
@@ -546,17 +548,22 @@ findings the watcher itself must consume to decide what to queue
 next (a feedback-loop item).  Use background for items whose
 deliverable is a standalone PR / commit / handover doc.
 
+When multiple independent items are eligible per the parallel-by-
+default policy in §5m, pull up to (parallelism-cap −
+currently-in-progress) items in a single TICK and dispatch them
+in one batch.
+
 **Empty-queue heartbeat.**  Only when the queue truly has no
-queued or needs-author-ack items eligible for auto-pull, emit a
-single one-liner per session-quiescence-period:
+queued or eligible needs-author items eligible for auto-pull,
+emit a single one-liner per session-quiescence-period:
 
 If the session has been entirely quiescent for ≥ 60 minutes
-AND the auto-pull policy above didn't find anything to dispatch,
-emit a one-liner:
+AND the auto-pull policy above didn't find anything to dispatch
+(0 queued + 0 eligible needs-author), emit a one-liner:
 
 > `<watcher-name>` idle — backlog at N items, queue at M items
-> (0 eligible for auto-pull), next refresh in
-> <next discovery time>.
+> (0 eligible for auto-pull), in-progress at K items, next
+> refresh in <next discovery time>.
 
 …and keep the Monitor armed.
 
