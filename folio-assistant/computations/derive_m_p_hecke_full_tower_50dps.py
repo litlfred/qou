@@ -95,7 +95,7 @@ from term5_v2_chirality import aK_v2  # noqa: E402
 from gb_filtration_jet_tracker import reduce_braid  # noqa: E402
 # Centralized helpers (gemini #687 review — avoid duplication with derive_m_n).
 from _li_2_q_util import (  # noqa: E402
-    li_2_q, load_q_50dps, compute_t2_t3_from_vols,
+    load_q_50dps, compute_t2_t3_from_vols,
 )
 
 M_E_MEV = mp.mpf(str(_M_E_MEV_RAW))

@@ -34,6 +34,9 @@ when the next-term magnitude falls below `eps`.
 """
 from __future__ import annotations
 
+import json as _json
+from pathlib import Path
+
 from mpmath import mp, mpf
 
 
@@ -88,9 +91,6 @@ def li_2_q(
 
 
 # ── Shared helpers (centralized per gemini #687 review) ─────────
-
-from pathlib import Path  # noqa: E402
-import json as _json  # noqa: E402
 
 _Q_WITNESS_DEFAULT = Path(__file__).parent / "q-pinning-50-digit.witness.json"
 
