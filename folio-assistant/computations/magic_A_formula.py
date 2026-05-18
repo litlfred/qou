@@ -1,5 +1,7 @@
+#!/usr/bin/env python3
+# DEPRECATION-CANDIDATE: witness was moved to folio-assistant/computations/_deprecated/ in PR #554 (dead-exploratory).
+# This .py script is kept in place because it is still imported by live code; revisit when the live importer is itself retired or rewired.
 """
-
 CLASS-A acknowledged-anchor banner (per Workplan-0b, applies to
 hardcoded CODATA-precision literals in this file as well — see
 `docs/audits/2026-05-18-workplan-0b-m-n-substrate-derivation.md`).
@@ -9,12 +11,8 @@ as CAL-3-ish acknowledged inputs, NOT independent calibrations.
 The compute-integration-watcher I9 audit therefore classifies this
 script as `ok_acknowledged_anchor` rather than as a registry-bypass
 violation.
-"""
 
-#!/usr/bin/env python3
-# DEPRECATION-CANDIDATE: witness was moved to folio-assistant/computations/_deprecated/ in PR #554 (dead-exploratory).
-# This .py script is kept in place because it is still imported by live code; revisit when the live importer is itself retired or rewired.
-"""Magic-A binding formula — callable wrapper for the doubly-magic light-nucleus rule.
+Magic-A binding formula — callable wrapper for the doubly-magic light-nucleus rule.
 
 Exposes the magic-A shell-closure formula
 

@@ -1,5 +1,5 @@
+#!/usr/bin/env python3
 """
-
 CLASS-A acknowledged-anchor banner (per Workplan-0b, applies to
 hardcoded CODATA-precision literals in this file as well — see
 `docs/audits/2026-05-18-workplan-0b-m-n-substrate-derivation.md`).
@@ -9,10 +9,8 @@ as CAL-3-ish acknowledged inputs, NOT independent calibrations.
 The compute-integration-watcher I9 audit therefore classifies this
 script as `ok_acknowledged_anchor` rather than as a registry-bypass
 violation.
-"""
 
-#!/usr/bin/env python3
-"""Three-irrep closed-form decomposition of τ_M at single wrap.
+Three-irrep closed-form decomposition of τ_M at single wrap.
 
 Following the question: can the non-V_(2,1) irreps (V_(3) and V_(1,1,1))
 also be given by an "appropriate functional" derivable in the same way
