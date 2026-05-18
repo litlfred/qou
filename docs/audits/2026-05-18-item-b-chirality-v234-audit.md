@@ -1,82 +1,87 @@
-# Item B chirality V2/V3/V4 audit — Gram-form variants vs closed-form
+# Item B chirality V2/V3/V4 audit — closed by upstream restatement of `conj:knot-factor-frobenius-pairing`
 
-> **Status (2026-05-18, this branch):** completes the V2/V3/V4 mirror-
-> convention audit deferred in `2026-05-17-post-pr-682-followup-plan.md`
-> §3 (Item B). The audit script is
-> `folio-assistant/computations/term5_aK_audit.py` and the witness is
-> `term5-aK-audit.witness.json`.
+> **Status (2026-05-18):** the central question of this audit was
+> **closed on main** by [PR #683](https://github.com/litlfred/qou/pull/683)
+> commit `46a893f7` (B.1a-rev.3) and the deeper audit
+> [`2026-05-18-m-p-item-b-t5-categorical-attribution.md §7c`](2026-05-18-m-p-item-b-t5-categorical-attribution.md).
+> Specifically: the conjectural identification
+> $a_K = |\mathrm{tr}_M(W_\text{atom})|/|\mathrm{tr}_M(W_\text{free})|$ (Ratio form)
+> was empirically refuted at 50 dps across 4 atoms (off by 2–18×) and
+> reidentified as the **mass-defect envelope** $\mathcal{B}_\text{bulk}$,
+> **not** the chirality factor. The canonical $a_K$ is the
+> **closed-form Skein-product** $\prod_c(1 + \mathrm{sign}(c)\cdot h)$,
+> now Step 4 of [`conj:knot-factor-frobenius-pairing`](../../content/quantum-observable-universe/braids-and-knots/knot-factor-frobenius-pairing.md).
 >
-> **Three findings, two immediate (code-level) and one compute-bound:**
+> What survives from this branch's audit:
 >
-> 1. **V4 ≡ V2 by construction.** The two variants share byte-identical
->    code paths; the four-variant taxonomy is effectively three
->    (V1, V2, V3). V4 should be retired from the witness schema or
->    re-defined to actually differ from V2 (proposal below).
-> 2. **Closed-form pn-counting discrepancy at T/³He.** The audit
->    script's adjacency count disagrees with `prop:chirality-dual-
->    space-derivation`'s tabulation at A=3 (`(1+h)^1 ≈ 1.209` vs
->    `(1-h²) ≈ 0.956`). Surfaced as a separate reconciliation item.
-> 3. **V2/V3 deuteron numerics**: filled in by this branch via
->    `--variants V2,V3 --atoms deuteron --merge-prior` (≥30 min/cell,
->    symbolic).
+> 1. **V4 retirement** in `term5_aK_audit.py` (V4 was byte-identical
+>    to V2 — a code-level finding independent of the framing) —
+>    landed in commit [`71234ce1`](https://github.com/litlfred/qou/commit/71234ce1).
+> 2. **pn-counting discrepancy at T/³He** between
+>    `term5_aK_audit.aK_closed_form` (adjacency count → 1.209) and
+>    `prop:chirality-dual-space-derivation`'s tabulation (amphichiral
+>    1+/1− → 0.956). Still actionable; logged for a separate audit.
+>
+> What was **dropped** from this branch's plan:
+>
+> - V2/V3 deuteron / tritium / ³He Gram-form numerics. The
+>   underlying question (which mirror β* makes Gram = closed-form?)
+>   is now moot — they're different categorical quantities by
+>   construction on main. The background V2-deuteron task was
+>   killed at ~1% complete.
 
-## Background
+## Why this audit closed without filling in V2/V3 numerics
 
-`prop:chirality-dual-space-derivation` **derives** the closed-form
-chirality factor from symmetric-channel trace duality:
+The original premise was: PR #520 surfaced a 2.2% gap at A=1 between
+the closed-form $a_K = \prod_c(1+\mathrm{sign}\cdot h) = 1$ and the
+Gram-form $\tau(\beta \cdot \beta^{-1}) = \cosh^4(\log q) \approx 1.022$
+(V1). Four candidate β* definitions (V1/V2/V3/V4) were proposed in
+`term5_aK_audit.py` to test whether a different mirror convention
+would close the gap.
 
-$$
-a_K \;=\; \prod_{c \in \text{pn-crossings}} \bigl(1 + \mathrm{sign}(c)\cdot h\bigr),
-\qquad h = q - q^{-1}.
-$$
+While this branch was running V2 deuteron, **upstream
+[PR #683](https://github.com/litlfred/qou/pull/683)** ran a
+parallel investigation in `aK_via_lp_dual.py`:
 
-For the production atomic spectrum:
+| atom | A | $a_K^R$ (Ratio/Gram) | $a_K^C$ (Closed/Skein) | R − C residual |
+|------|---|------------------|------------------|----------------|
+| proton   | 1 | 1.000 | 1.000 | 0 (trivial) |
+| neutron  | 1 | 1.000 | 1.000 | 0 (trivial) |
+| deuteron | 2 | **0.395** | 1.209 | −67% |
+| tritium  | 3 | 0.115 | 0.956 | −88% |
+| ³He      | 3 | 0.197 | 0.956 | −79% |
+| ⁴He      | 4 | 0.055 | 0.914 | −94% |
 
-| atom | pn-crossing pattern | closed-form $a_K$ | $a_K(q_0)$ |
-|---|---|---|---|
-| p | (none) | $1$ | 1.000 |
-| n | (none) | $1$ | 1.000 |
-| D | $1+$ | $1 + h$ | 1.2091 |
-| T | $1+, 1-$ | $1 - h^2$ | 0.956 (per prop) / 1.2091 (per audit script) |
-| ³He | $1+, 1-$ | $1 - h^2$ | 0.956 (per prop) / 1.2091 (per audit script) |
+(Source: `a-K-via-lp-dual.witness.json`, `2026-05-18-m-p-item-b-t5-categorical-attribution.md §7c`.)
 
-(The audit script counts pn-pairs via the `['p']*Z + ['n']*N` adjacency
-ordering, which **does not match** the prop's
-"amphichiral 1+/1−" pattern at T/³He. **This is an independent finding
-the audit surfaces** — see Finding 3 below.)
+The gap is **not** 2.2%; it's 67–94% at A ≥ 2. No mirror β* convention
+can close that gap by re-permuting σ ↔ σ⁻¹ in the mirror word — the
+two forms are different categorical objects. Step 4 of
+`conj:knot-factor-frobenius-pairing` on main now states this
+explicitly:
 
-`conj:knot-factor-frobenius-pairing` claims this closed-form equals the
-**Gram-form**:
+> *Historical note (2026-05-18):* an earlier formulation of this
+> step proposed
+> $a(N) = |\mathrm{tr}_M(W_\text{atom})|/|\mathrm{tr}_M(W_\text{free})|$
+> as the ratio form. Empirical verification at 50dps … finds this
+> ratio is 6–17× off the Skein values above for A=2,3,4. The ratio
+> form measures the **mass-defect envelope** $\mathcal{B}_\text{bulk}$,
+> not the chirality factor $a_K$; the closed-form Skein-product
+> **is** the canonical $a_K$ …
 
-$$
-a_K \;=\; \mathrm{tr}_M\bigl(\beta \cdot (\beta^\ast)^{-1}\bigr)
-\;=\; G_{\beta,\beta^\ast} / G_{1,1}.
-$$
+Running V2 / V3 deuteron + tritium would have produced *more* Gram-form
+data — interesting as Gram-matrix structure but **not** chirality data
+under the corrected framing. With the central question resolved, the
+~30 min × 6 cells (= ~3 hours) of symbolic compute is no longer the
+best use of CI time. The task was killed; the witness is left at its
+pre-branch state (V1 across the spectrum, V2/V3/V4 for {p, n} only).
 
-Empirically (PR #520), these forms **disagree by 2.2%** at A=1 under
-the V1 mirror convention: closed-form gives 1.000, V1 gives
-$(1 + q^2)^4 / (16 q^4) = \cosh^4(\log q) \approx 1.022$. Four candidate
-definitions of $\beta^\ast$ were proposed, and only V1 was audited
-beyond A=1 (compute-bound — V2 alone takes >34 min at A=2).
+## Finding 1: V4 ≡ V2 (retained — code-level cleanup)
 
-## Variant definitions (as implemented in `term5_aK_audit.py`)
-
-| variant | order | per-crossing rule | averaged-crossing rule |
-|---|---|---|---|
-| **V1** | reversed | invert (σ ↔ σ⁻¹) | unchanged |
-| **V2** | preserved | invert (σ ↔ σ⁻¹) | unchanged |
-| **V3** | reversed | unchanged (antipode-style) | unchanged |
-| **V4** | preserved | invert (σ ↔ σ⁻¹) | unchanged |
-
-The `else` branch (averaged crossings) is identical in all four
-variants. Comparing V2 to V4: same iteration order, same per-crossing
-rule, same averaged-crossing rule.
-
-## Finding 1: V4 ≡ V2 by construction
-
-The mirror-word generator (`term5_aK_audit.mirror_word`) walks the
-word once and emits a transformed word. The V2 and V4 branches are
-**byte-identical** beyond the docstring:
+The V4 retirement landed in commit
+[`71234ce1`](https://github.com/litlfred/qou/commit/71234ce1) and is
+independent of the framing change above. The two variants shared
+**byte-identical** `mirror_word` branches:
 
 ```python
 elif variant == "V2":
@@ -93,46 +98,34 @@ elif variant == "V4":
 
 The existing witness confirms this: V2 = V4 = 1.1471203358935889 at
 the proton, and V2 = V4 = 1.2267591396724156 at the neutron — to all
-30 displayed digits. The proton/neutron braid words contain averaged
-crossings (2 each), so this is **not** a degenerate case — V2 and V4
-genuinely produce the same Hecke element.
+30 displayed digits. Proton/neutron braid words contain averaged
+crossings (2 each), so this is not a degeneracy in the input — V2
+and V4 produce the same Hecke element on every braid word.
 
-**Recommendation.** Three options to resolve:
+The cleanup:
+- `mirror_word()` raises `ValueError` on `V4` with an explanatory
+  message pointing at this audit doc.
+- `--variants` default reduced to `V1,V2,V3` (was `V1,V2,V3,V4`).
+- Passing `--variants V4` exits non-zero with the same explanation.
+- V4 entries in the existing witness JSON are preserved for
+  provenance; the script just doesn't accept V4 as input any more.
 
-1. **Drop V4 from the audit.** Update `term5_aK_audit.py` to only emit
-   V1/V2/V3 and document that "V4 (averaged ↦ averaged self-mirror) is
-   algebraically identical to V2 and was retired as a separate variant."
-2. **Redefine V4** to actually differ from V2 — e.g. averaged ↦ σ
-   (drop the smoothed component) or averaged ↦ σ⁻¹ (flip to the dual
-   smoothing). Either would test a genuinely distinct mirror convention.
-3. **Keep V4 as documentation alias for V2.** Witness explicitly notes
-   the identity. (Least useful — wastes compute on subsequent re-runs.)
+This finding stands on its own — it's a code-cleanup independent of
+whether the Gram/closed-form question is resolved.
 
-The audit on this branch implements **option 1** in a follow-up commit
-(see "Plan (this branch)" below).
+## Finding 2: pn-counting discrepancy at T/³He (retained — still actionable)
 
-## Finding 2: V2/V3 numerics for deuteron
+`aK_closed_form()` in the audit script and the verification table in
+`prop:chirality-dual-space-derivation` disagree on the pn-crossing
+pattern at A=3:
 
-Background task `b6d5ypr5m` running
-`python3 term5_aK_audit.py --atoms deuteron --variants V2 --merge-prior`.
+- **Audit script**: counts pn-adjacencies in `['p']*Z + ['n']*N`.
+  For T (Z=1, N=2) → ordering `['p','n','n']` → 1 pn-adjacency →
+  `(1+h)^1 = 1.2091`.
+- **Prop's verification table** ([§"Verification"](../../content/quantum-observable-universe/braids-and-knots/chirality-dual-space-derivation.md)):
+  "T/³He: 1+, 1− (amphichiral) → `(1+h)(1-h)` = `1 - h^2` ≈ 0.956".
 
-> **`[V2 deuteron — TO BE FILLED]`** when the background compute lands.
-> Expected wall time ~30 min based on the docstring's estimate.
-
-(V3 deuteron deferred — see "Plan (this branch)" below.)
-
-## Finding 3: closed-form pn-counting discrepancy at T/³He
-
-`aK_closed_form()` in the audit script and the prop's V_T/³He table
-disagree on the pn-crossing pattern:
-
-- **Audit script**: counts pn-adjacencies in `['p']*Z + ['n']*N`. For
-  T (Z=1, N=2) → ordering `['p','n','n']` → 1 pn-adjacency → `(1+h)^1`
-  = 1.2091.
-- **Prop (`chirality-dual-space-derivation` §"Verification")**:
-  "T/³He: 1+, 1− (amphichiral) → `(1+h)(1−h)` = `1 − h²` ≈ 0.956."
-
-These give **different** closed-form values:
+Numerically:
 
 | atom | audit-script `aK_closed_form` at $q_0$ | prop's tabulated value |
 |---|---|---|
@@ -141,37 +134,46 @@ These give **different** closed-form values:
 | ⁴He | (not in audit) | 0.914 (= $(1-h^2)^2$) |
 
 The discrepancy is at the **adjacency-counting** step, not the per-
-crossing rule. The prop's pattern (amphichiral 1+/1−) treats the
-nucleon-internal crossing structure; the script's adjacency
-(p–n at strand boundaries) treats only inter-nucleon binding. These
-are **structurally different** counts.
+crossing rule. For deuteron (A=2) the two agree (1 pn-pair, both
+giving $(1+h)^1 = 1.2091$); the disagreement first surfaces at A=3.
 
-For deuteron (D, Z=1, N=1) the two agree: 1 pn-pair, both giving
-`(1+h)^1 = 1.2091`. The disagreement first surfaces at A=3.
+This is a real downstream-affecting bug surface: `aK_closed_form` is
+used as a reference value in the audit witness, and the wider
+`paper_six_term_isotope_sweep.term5_chirality` uses an explicit
+`chirality_signs` list whose origin should be checked against
+both the audit script and the prop. Resolving requires:
 
-**Action**: this is a separate audit item, not closed by this audit.
-Logged here for visibility.
+1. Inspect `paper_six_term_isotope_sweep.term5_chirality` and trace
+   where `chirality_signs` comes from (literal list vs. derived).
+2. Determine the canonical convention for "what counts as a pn
+   crossing" — paper text vs. canonical braid topology.
+3. Align `term5_aK_audit.aK_closed_form` to whichever is canonical.
+4. Re-run T/³He audit cells to confirm the corrected closed-form.
 
-## Plan (this branch)
+Deferred to a separate audit; this branch only flags it for
+visibility.
 
-1. ✅ Audit doc skeleton (this file)
-2. ⏳ V2 deuteron numerics (background task `b6d5ypr5m`, ~30 min)
-3. ⏳ V3 deuteron numerics (after V2 lands, another ~30 min)
-4. ⏳ V4 retirement: code change to `term5_aK_audit.py` removing V4
-   from the variant list, with deprecation note
-5. ⏳ Commit + push + PR
+## What this branch ships
 
-V2/V3 for tritium and ³He are deferred (would need ~30 min × 4 = 2 hr
-more compute). The deuteron sample is sufficient to decide whether
-any V2/V3 candidate matches closed-form `1 + h ≈ 1.209` at A=2;
-if not, the Gram-form ↔ closed-form identification needs a different
-formulation altogether, and running T/³He would just confirm the same
-non-equality.
+- Audit doc (this file): closes the V2/V3/V4 thread by deferring to
+  upstream PR #683's resolution.
+- Code change (`term5_aK_audit.py`): V4 retirement
+  ([`71234ce1`](https://github.com/litlfred/qou/commit/71234ce1)).
+- Witness: unchanged from main (the pre-existing
+  `term5-aK-audit.witness.json` covers V1 for the spectrum + V2/V3/V4
+  for {p, n}).
 
-## Related blocks
+## Related blocks / audits
 
-- [`prop:chirality-dual-space-derivation`](../../content/quantum-observable-universe/braids-and-knots/chirality-dual-space-derivation.md)
-- [`conj:knot-factor-frobenius-pairing`](../../content/quantum-observable-universe/braids-and-knots/knot-factor-frobenius-pairing.md)
-- [`prop:gram-matrix-spectral-connection`](../../content/quantum-observable-universe/braids-and-knots/gram-matrix-spectral-connection.md)
+- `conj:knot-factor-frobenius-pairing`
+  ([`.md`](../../content/quantum-observable-universe/braids-and-knots/knot-factor-frobenius-pairing.md))
+  — Step 4 restated on main by commit `46a893f7`
+- `prop:chirality-dual-space-derivation`
+  ([`.md`](../../content/quantum-observable-universe/braids-and-knots/chirality-dual-space-derivation.md))
+  — the derivation of the closed form, unchanged
+- Upstream T5 attribution audit:
+  [`2026-05-18-m-p-item-b-t5-categorical-attribution.md`](2026-05-18-m-p-item-b-t5-categorical-attribution.md)
+  §7c gives the empirical R-vs-C table that closed the question
+- Witness: `a-K-via-lp-dual.witness.json` (added by PR #683)
 - Prior follow-up plan:
-  [`docs/audits/2026-05-17-post-pr-682-followup-plan.md`](2026-05-17-post-pr-682-followup-plan.md) §3
+  [`2026-05-17-post-pr-682-followup-plan.md`](2026-05-17-post-pr-682-followup-plan.md) §3
