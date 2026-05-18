@@ -7,17 +7,20 @@
 //! verifying that the existing GP scaffold produces correct χ^λ
 //! values on test atomic braid words.
 //!
-//! **Known limitation**: GP's `braid_to_hecke` does NOT handle averaged
-//! crossings (sign == 0).  This binary tests only positive-only and
-//! mixed (σ / σ⁻¹) words.  Canonical atomic braids with averaged
-//! crossings require averaged-handling in `braid_to_hecke` first; that
-//! extension is a candidate C-full follow-up.  Per Copilot review on
-//! PR #718, `braid_to_hecke` now panics on sign == 0 to surface the
-//! mis-use loudly rather than silently treating it as σ.
+//! **Averaged-crossing handling (C-full Step 1, 2026-05-18)**: GP's
+//! `braid_to_hecke_with_avg` now handles averaged crossings (sign ==
+//! 0) via the doubled half-sum
+//! `(σ + σ⁻¹) · x = 2 σ x − h x` (computed as a single Hecke element,
+//! no 2^k basis branching) plus a deferred `2^k` divisor applied at
+//! the χ^λ output step.  This binary covers averaged-crossing test
+//! cases (n=3, 4) and confirms GP matches the Hoefsmit seminormal
+//! `chi_lambda_braid` (which uses direct `σ − h/2 · I` substitution).
 //!
 //! Test cases (covered by the `cases` vector in `main`):
 //!   - n=3: σ_1; σ_1 σ_2; σ_1 σ_2 σ_1; mixed σ_1 σ_2⁻¹
+//!   - n=3: averaged-only words (1 avg, 3 avgs)
 //!   - n=4: 5-crossing positive word
+//!   - n=4: mixed pos/neg/avg word (5 crossings, 2 avgs)
 //!   - n=6: 10-crossing alternating σ / σ⁻¹ word
 //!
 //! Output: JSON to stdout with per-(partition, atom-word) rows:
@@ -120,7 +123,8 @@ fn main() {
     // provenance and drift discipline.
     let q0: f64 = Q0_F64;
 
-    // Test cases — only positive / mixed σ-σ⁻¹ words; no averaged.
+    // Test cases — covers positive, mixed σ-σ⁻¹, and (after C-full
+    // Step 1) averaged crossings via `hecke_mul_ts_averaged_right`.
     let cases: Vec<(usize, Vec<(i32, u32)>, &str)> = vec![
         (3, vec![(1, 1)], "σ_1 at n=3"),
         (3, vec![(1, 1), (1, 2)], "σ_1 σ_2 at n=3"),
@@ -134,6 +138,24 @@ fn main() {
                 (-1, 1), (-1, 2), (-1, 3), (-1, 4), (-1, 5),
             ],
             "alt σ/σ⁻¹ at n=6 (10 crossings)",
+        ),
+        // ── C-full Step 1 averaged-crossing tests ──
+        // Single averaged crossing — basic sanity for the
+        // half-sum extension.
+        (3, vec![(0, 1)], "(σ_1+σ_1⁻¹)/2 at n=3 (1 avg)"),
+        // Averaged + positive interleave.
+        (3, vec![(1, 1), (0, 2)], "σ_1 · avg(σ_2) at n=3"),
+        // Multiple averages — tests the 2^k normalisation.
+        (
+            3,
+            vec![(0, 1), (0, 2), (0, 1)],
+            "avg(σ_1) avg(σ_2) avg(σ_1) at n=3 (3 avgs)",
+        ),
+        // Mixed positive / negative / averaged at n=4.
+        (
+            4,
+            vec![(1, 1), (0, 2), (-1, 3), (0, 1), (1, 2)],
+            "mixed-w-avg at n=4 (2 avgs in 5 crossings)",
         ),
     ];
 
