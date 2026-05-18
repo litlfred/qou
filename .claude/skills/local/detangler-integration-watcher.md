@@ -97,6 +97,68 @@ are a finding (`archimedean-wall-violation`, minor) unless the
 target block carries `tags: ['archimedean-bridge']` or an explicit
 banner. See Slot D.
 
+### Story coherence (STRICT)
+
+**Detanglement is not just edge counting.** Every section and every
+chapter must tell **a single coherent story** — a narrative arc
+that motivates the blocks inside and connects to the surrounding
+sections / chapters. Sections that are *collections of blocks
+sharing keywords* but not a narrative are tangle by another name.
+
+The watcher enforces two story requirements:
+
+1. **Each section has its own story.** A section's title must name
+   the story (not a generic `sec:foo-part-1` / `sec:foo-extras`);
+   the section's first block should be a `prose` lead that
+   establishes:
+   - what concept / question this section is about,
+   - what blocks the reader has just left behind (prior section
+     connection),
+   - what blocks the next section will pick up (forward
+     connection — *non-binding*, no `uses[]` forward refs
+     required; just a one-sentence preview).
+
+   The block ordering within the section should follow the story
+   (definitions → propositions → proofs → remarks / examples /
+   simulators), not the order blocks were authored.
+
+2. **Each chapter has its own story.** A chapter's first section
+   (or first prose block in the first section) must:
+   - Frame what the chapter establishes (one paragraph),
+   - State its dependencies on earlier chapters (named, not
+     just by `uses[]`),
+   - Outline the chapter's sections in narrative order
+     ("§N.1 develops X, §N.2 then asks Y, …").
+
+   The chapter's last section / last block should close the
+   loop — state the result, gesture at what comes next, or
+   summarise.
+
+**Story-missing is a finding, not a `wontfix`.** A section without
+an opening prose block, or a chapter without an intro section, is
+a `missing-section-story` / `missing-chapter-story` finding (see
+Slot D). When dispatching a split, the watcher **must** produce
+a draft story for each new section (Slot F template); the author
+approves the story along with the split.
+
+**Section-renaming rule.** Renaming a section is a story-changing
+operation; updates to `docs/reorganization-map.md` (PR7) must
+record both the old → new name AND the new story summary so the
+narrative thread is auditable.
+
+#### When a section / chapter lacks a story, ADD one — don't ignore
+
+If the backlog sweep (§5) finds a section or chapter without a
+story, the watcher's discharge band depends on the situation:
+
+| Situation | Band |
+|-----------|------|
+| Section has 0 prose blocks AND title is descriptive AND blocks are coherently ordered | **Auto-discharge** — generate a 1-paragraph `prose` block from the section title + first 3 blocks' titles, place it at index 0 |
+| Section title is generic (`sec:foo-extras`, `sec:misc-N`) | **Author-assist** — propose a story-naming question |
+| Chapter has no intro section AND has a `<chapter>-intro` prose block somewhere mid-chapter | **Auto-discharge** — promote that prose to a `sec:introduction` section at index 0 |
+| Chapter has no intro at all | **Author-assist** — propose a draft chapter introduction (3-paragraph: framing, dependencies, narrative outline) |
+| Chapter's last section ends abruptly (no closing prose) | **Author-assist** — propose a closing prose block draft |
+
 ## Slot B — §3 trigger filter
 
 For a `MAIN <sha> <msg>` line (or PR commit event):
@@ -233,6 +295,11 @@ mv /tmp/_detangler_watcher_graph_current.json \
 | `cross-section-coupling` | minor | New H3 cross-section edge crossing > 3 sections |
 | `isolated-block` | minor | H6 isolated block — no incoming or outgoing edges |
 | `archimedean-wall-violation` | minor | A post-wall block (in `descartes-universe` and later chapters) is referenced from a pre-wall block via `uses[]` without the target carrying `tags: ['archimedean-bridge']` or an explicit conditional banner — the pre-wall block has silently leaked an `ℝ`-specific dependency into generic-`R` content |
+| `missing-section-story` | major | Section has no opening `prose` block AND blocks don't follow a definitions→propositions→examples narrative ordering; the section is a *collection*, not a *story* |
+| `generic-section-name` | major | Section label matches a generic pattern (`sec:foo-part-N`, `sec:foo-extras`, `sec:misc-N`) — the section was split mechanically without a story-naming step |
+| `missing-chapter-intro` | major | Chapter has no introduction section at index 0 (no `<chapter>-intro` prose block establishing framing, dependencies, narrative outline) |
+| `abrupt-chapter-ending` | minor | Chapter's last section ends without a closing prose block — no result statement, gesture-forward, or summary |
+| `section-narrative-drift` | minor | Block ordering within a section is not narrative-coherent (e.g. `proof` block appears before its `proposition`; `example` appears before its target; the section's blocks reorder against the story implied by the section's intro prose) |
 | `remark-ratio` | info | H7 remark/example ratio drifted outside the 2:1 band |
 | `preview-source-fwd-ref` | info | H1 forward ref sourced from a preview chapter (`intro` / `notation`) — info-only, never escalated (see §Preview-chapter exclusion) |
 
@@ -279,7 +346,7 @@ filter location in the graph-analysis script.
 | Band | Examples |
 |------|----------|
 | **Auto-discharge** | `embedded-table` — extract via mechanical `kind: "table"` block creation per `block-density` R3; `intra-chapter-energy` where `chapter-complexity-review` reports an **intra-section** block swap that resolves a span-1 forward edge AND `block-density-audit` reports no R1 hit on either swapped block AND `bun run validate` exits clean post-swap |
-| **Author-assist** | Section split (H5 dense), section merge (H4 sparse — section labels disappear, surrounding `uses[]` may need touch-up, judgement call), cross-chapter block move (H2 / PR4 violation), new section creation, `topic-mixing` split (R1), `critical-path-break`, `reorg-map-stale` requiring author to choose canonical move description |
+| **Author-assist** | Section split (H5 dense — **always paired with a story-coherence ask per Slot F**; the split is invalid without per-new-section stories), section merge (H4 sparse — section labels disappear, surrounding `uses[]` may need touch-up, judgement call), cross-chapter block move (H2 / PR4 violation), new section creation, `topic-mixing` split (R1), `critical-path-break`, `reorg-map-stale` requiring author to choose canonical move description, `missing-section-story` / `generic-section-name` / `missing-chapter-intro` (always ask) |
 | **Defer** | Architectural backward edge across the Archimedean ↔ categorical wall (`wontfix: architectural`); single-occurrence span-1 forward edge between adjacent sections; `isolated-block` flagged for content-pass not structure-pass; `remark-ratio` within ±20% of the band edge |
 
 **Auto-discharge safety net (STRICT).** Every auto-discharge MUST:
@@ -300,14 +367,63 @@ semantic, not mechanical — always escalate via Slot F.
 
 ## Slot F — §4e author-ask templates
 
-For `dense-section` (H5):
+For `dense-section` (H5) — **the ask MUST carry a per-new-section
+story draft**; a split without stories is not actionable:
 
 > Section `<sec-label>` in chapter `<chap>` has grown to N blocks
-> (limit 18) after `<commit-sha-or-pr>`. `content-graph
-> --proposals` suggests splitting along `<natural-boundary>` into
-> `<S₁-label>` (N₁ blocks) + `<S₂-label>` (N₂ blocks). Question:
-> 1) accept the proposed split, 2) propose a different split,
-> 3) defer (mark section as deliberately dense, wontfix).
+> (limit 18) after `<commit-sha-or-pr>`. Proposed K-way split
+> (each new section in the 12-22 block range, with its story):
+>
+> 1. `<S₁-label>` — *story:* "[draft 1-sentence narrative arc:
+>    what this section establishes; what blocks N₁₁..N₁ₖ
+>    contribute to that arc; what it sets up for §S₂]".
+>    Block count: N₁.
+> 2. `<S₂-label>` — *story:* "[draft 1-sentence narrative arc]".
+>    Block count: N₂.
+> 3. … (K sections)
+>
+> Question: 1) accept all K sections as-drafted; 2) approve splits
+> but rewrite stories (provide new title + story per section);
+> 3) re-split differently (specify boundaries); 4) defer the
+> split (mark `<sec-label>` deliberately dense, wontfix).
+
+For `missing-section-story` / `generic-section-name`:
+
+> Section `<sec-label>` in chapter `<chap>` lacks a story:
+> [missing opening prose block | generic name `<label>` with no
+> narrative content | block ordering is not narrative-coherent].
+>
+> Draft story (1 paragraph) inferred from the first 3 blocks
+> and the surrounding sections:
+>
+> > "[draft 1-paragraph: what this section is about, how it
+> > connects to `<prev-sec>`, where it leads]"
+>
+> Question: 1) accept the draft story (I will add a `prose` block
+> at index 0); 2) rewrite the story (provide replacement);
+> 3) rename the section (the current name is wrong); 4) demote
+> the section by merging into `<prev-sec>` or `<next-sec>` — it
+> doesn't have its own story.
+
+For `missing-chapter-intro`:
+
+> Chapter `<chap>` has no introduction section. The first block is
+> `<first-block>` (`<kind>`), which jumps in without framing.
+>
+> Draft introduction (3-paragraph) inferred from the chapter title,
+> the first section's label, and the chapter's outgoing `uses[]`
+> dependencies:
+>
+> > "[paragraph 1 — framing: what this chapter establishes]"
+> > "[paragraph 2 — dependencies: 'building on §A from chapter X
+> > and §B from chapter Y, …']"
+> > "[paragraph 3 — outline: '§N.1 develops…, §N.2 then…, the
+> > chapter closes with…']"
+>
+> Question: 1) accept the draft intro; 2) rewrite (provide a
+> replacement); 3) the chapter is intentionally an
+> appendix / reference / index — no intro needed (mark `wontfix:
+> reference-chapter`).
 
 For `sparse-section` (H4):
 
@@ -407,6 +523,11 @@ the `findings[]` array.
 | No new R1 topic-mix | `python3 pipeline/block-density-audit.py <paper>` exit code 0 AND `grep -c 'R1' stdout` does not increase vs baseline (the script prints `R1`/`R2`/`R3` per-violation lines on stdout — there is no `--json` mode) |
 | `docs/reorganization-map.md` updated alongside every block move | `git diff --name-only HEAD~1 HEAD` includes both the chapter manifest AND `docs/reorganization-map.md` whenever a block changed sections |
 | Schema clean | `cd content && bun run validate` exits 0 |
+| **No new `missing-section-story`** | For every section newly created in this commit (e.g. a split product), the section's `blocks[]` first entry must be `kind: "prose"` AND the section's title is not `<source>-part-N` / `<source>-extras` / `<source>-misc-N`. Sections that *already exist* without a story are not regressed, but new ones must come with one. |
+| **No new `generic-section-name`** | For every new section, the section label must not match the regex `^sec:.*-(part-\d+\|extras\|misc-\d+)$`. |
+| **No new `missing-chapter-intro`** | For every chapter touched in this commit that did not previously have a leading `prose` block, the commit must either (a) add a leading `prose` block, (b) move an existing `<chapter>-intro` block to index 0, or (c) tag the chapter as reference-only (appendix / glossary / notation) in the paper manifest. |
+| **No new `section-narrative-drift`** | For every section touched, ordering must follow definitions → propositions / lemmas / theorems → proofs → examples / remarks / simulators. Each `proof` block immediately follows its target. Each `example` / `remark` with `interprets: X` follows `X` in document order. |
+| **`docs/reorganization-map.md` records new-section stories** | Whenever a new section is added (via split or otherwise), the entry in the reorg-map must include a 1-sentence story summary (not just `old-section → new-section-1, new-section-2`). |
 
 If any invariant fails on a proposed commit, **block the commit**,
 queue the violation as `critical`, revert the working tree changes,
@@ -432,6 +553,17 @@ and ask the author (per parent §6).
   `/coordinate` before fixing.
 - Treat architectural backward edges (Archimedean ↔ categorical)
   as fixable. They are `wontfix: architectural` by design.
+- Split a dense section without writing a story for each new
+  section. The split is **not actionable** without per-new-section
+  stories (Slot F template). A split that produces
+  `<source>-part-1` / `<source>-part-2` is a `generic-section-name`
+  finding (Slot D, major).
+- Pretend a section / chapter without a story is fine. The
+  audit's edge metrics may pass while the narrative is incoherent —
+  *detanglement is not edge counting* (see §Story coherence).
+- Auto-fix a `missing-chapter-story` without surfacing the draft
+  intro to the author. The chapter's narrative arc is editorial,
+  not mechanical — always ask via Slot F.
 
 ## Checklist (extends parent)
 
