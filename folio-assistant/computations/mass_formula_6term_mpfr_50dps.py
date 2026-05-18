@@ -188,37 +188,76 @@ def _load_mpfr_native_volumes(Z: int, N: int) -> list[mp.mpf]:
     )
 
 
-def term_23_brane_tower_mp(Z: int, N: int) -> tuple[mp.mpf, mp.mpf]:
-    """Terms 2 + 3: Σ_i Φ_q(|V̂_i|) + z² · Σ_{i<j} Φ_q(|V̂_i V̂_j|).
+def term_23_brane_tower_mp(
+    Z: int, N: int, *, tower_form: str = "li2q",
+) -> tuple[mp.mpf, mp.mpf]:
+    """Terms 2 + 3 of the unified mass formula.
+
+    Two tower-function forms are supported, selected by `tower_form`:
+
+      - ``"li2q"`` (default, since #675/this PR): the **bounded
+        symmetric q-dilogarithm** form
+        ``Σ_i (−Li_2^q(−|V̂_i|)) + z² · Σ_{i<j} (−Li_2^q(−|V̂_i V̂_j|))``
+        per [`prop:mass-endomorphism-tower`](../../content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.md)
+        lines 162–183. Bounded for |V| < 1; matches the Kashaev
+        integration identity `∫_0^V (ln_q(1+t)/t) dt = -Li_2^q(-V)`.
+        Empirically validated in PR #675's probe: T2+T3 at tritium
+        within 1% of AME binding (vs Φ_q's megaelectronvolt-divergent
+        values).
+      - ``"phi_q"`` (legacy, retained for cross-check / regression
+        testing): the **divergent Faddeev** form
+        ``Σ_i Φ_q(|V̂_i|) + z² · Σ_{i<j} Φ_q(|V̂_i V̂_j|)``. Diverges
+        as |V| → 1; consumers using this form should check for
+        `mp.inf` results.
 
     Per-generator volumes are loaded from the MPFR-native witness
     `terms-2-3-atom-per-gen-mpfr-50dps.witness.json` (NOT from
     `hecke_core.atom_per_generator_volumes`, which is f64-based).
     Term 3 sums over **all pairs** i<j (not adjacent-only).
-    Divergent contributions (Φ_q = +∞) propagate to the result —
-    they signal real pole hits, not silent failures.
 
-    Returns (single, pair).  Either may be `mp.inf` if any
-    generator/pair magnitude reaches the Φ_q convergence boundary.
+    Returns (single, pair). With ``tower_form="li2q"`` both are
+    finite for all atom braids. With ``tower_form="phi_q"`` either
+    may be `mp.inf` if a generator/pair magnitude reaches the
+    Φ_q convergence boundary.
     """
+    if tower_form not in ("li2q", "phi_q"):
+        raise ValueError(
+            f"term_23_brane_tower_mp: unknown tower_form {tower_form!r}; "
+            "expected 'li2q' or 'phi_q'"
+        )
     vols_mp = _load_mpfr_native_volumes(Z, N)
     z_mp = mp.mpf(repr(z_mark))
 
+    if tower_form == "li2q":
+        # Lazy import keeps the legacy Φ_q path zero-dependency on
+        # the derived_masses module.
+        from derived_masses import li2q_symmetric
+        from q_parameter import Q as Q_0_FLOAT
+        q0 = mp.mpf(repr(Q_0_FLOAT))
+
+        def tower_fn(x: mp.mpf) -> mp.mpf:
+            # -Li_2^q(-|x|) — bounded analog of Φ_q(|x|) per the
+            # Kashaev specialisation (prop:mass-endomorphism-tower).
+            return -li2q_symmetric(-mp.fabs(x), q0)
+    else:  # tower_form == "phi_q"
+        def tower_fn(x: mp.mpf) -> mp.mpf:
+            return mp_Phi_q(mp.fabs(x))
+
     single = mp.mpf(0)
     for v in vols_mp:
-        phi = mp_Phi_q(mp.fabs(v))
-        if mp.isinf(phi):
+        val = tower_fn(v)
+        if mp.isinf(val):
             return mp.inf, mp.mpf(0)
-        single += phi
+        single += val
 
     pair = mp.mpf(0)
     n = len(vols_mp)
     for i in range(n):
         for j in range(i + 1, n):
-            phi = mp_Phi_q(mp.fabs(vols_mp[i] * vols_mp[j]))
-            if mp.isinf(phi):
+            val = tower_fn(vols_mp[i] * vols_mp[j])
+            if mp.isinf(val):
                 return single, mp.inf
-            pair += phi
+            pair += val
     pair *= z_mp ** 2
     return single, pair
 
@@ -345,6 +384,117 @@ def term_6_habiro_residue_mp(A: int) -> mp.mpf:
     )
 
 
+# ── Atom → habiro-coefficients-extended label map ─────────────
+#
+# `habiro-coefficients-extended.witness.json` keys `results` by a
+# human label like "D (deuteron, A=2)"; the consumer here wants
+# look-up by (Z, N). Static map mirrors that script's hard-coded
+# `cases` list.
+_HABIRO_EXT_LABEL_BY_ZN = {
+    (1, 1): "D (deuteron, A=2)",
+    (1, 2): "T (triton, A=3)",
+    (2, 1): "³He (helion, A=3)",
+    (2, 2): "⁴He (alpha, A=4)",
+    (3, 2): "⁵Li (A=5)",
+    (3, 3): "⁶Li (A=6)",
+}
+
+
+def term_6_via_habiro_coeffs_mp(Z: int, N: int) -> mp.mpf:
+    """Term 6 — bounded alternative via direct Habiro series.
+
+    Evaluates the Habiro / cyclotomic expansion
+    ``tr_M(T_w, q) = Σ_m a_m(u) · (u; u)_m`` directly at
+    u_0 = q_0^{1/2} from the per-atom a_m(u) coefficients in
+    [`habiro-coefficients-extended.witness.json`](./habiro-coefficients-extended.witness.json).
+
+    The Habiro coefficients are **integral polynomials in u**
+    (verified `all_integral: True` for every atom A=2..6), so the
+    series converges term-by-term and the result is bounded — in
+    contrast to the Φ_q-residue path (`term_6_habiro_residue_mp`)
+    which diverges to megaelectronvolt scale at A ≥ 3.
+
+    Returns the full Habiro-summed Markov trace at q_0; downstream
+    consumers wanting the **T6 correction term** specifically (i.e.
+    the residue piece after the lower-order terms are subtracted)
+    can compute `tr_M_habiro − tr_M_chi_cache` to isolate the
+    higher-order contribution.
+
+    Coverage: A ∈ {2, 3, 4, 5, 6} via the extended witness on
+    main. A = 1 (proton, neutron) is not in the extended witness
+    (the original `habiro-coefficients-atomic.witness.json` covers
+    A = 1 separately).
+    """
+    label = _HABIRO_EXT_LABEL_BY_ZN.get((Z, N))
+    if label is None:
+        raise KeyError(
+            f"term_6_via_habiro_coeffs_mp: no extended-Habiro coverage "
+            f"for (Z={Z}, N={N}). Coverage: {list(_HABIRO_EXT_LABEL_BY_ZN.keys())}."
+        )
+    path = Path(__file__).parent / "habiro-coefficients-extended.witness.json"
+    if not path.exists():
+        raise FileNotFoundError(
+            f"habiro-coefficients-extended witness missing at {path}; "
+            f"run `habiro_coefficients_extended.py` to regenerate."
+        )
+    with path.open() as f:
+        data = json.load(f)
+    entry = data.get("results", {}).get(label)
+    if entry is None:
+        raise KeyError(
+            f"term_6_via_habiro_coeffs_mp: extended witness has no "
+            f"entry for {label!r}."
+        )
+    a_m_list = entry.get("habiro_coefficients", [])
+    if not a_m_list:
+        raise KeyError(
+            f"term_6_via_habiro_coeffs_mp: empty habiro_coefficients "
+            f"for {label!r}."
+        )
+    # Per `habiro_coefficients_atomic.to_u_polynomial`:
+    #   p_in_u(u)  =  u^shift · denom(u) · tr_M(q = u²)
+    # so the Markov trace at q_0 is recovered as
+    #   tr_M(q_0)  =  p_in_u(u_0) / (u_0^shift · denom(u_0))
+    # with  p_in_u(u_0)  =  Σ_m a_m(u_0) · (u_0; u_0)_m.
+    shift = int(entry.get("shift", 0))
+    denom_str = entry.get("denom_in_u", "1")
+
+    import sympy as sp
+    u_0 = mp.sqrt(Q0_MP)
+    u_0_sp = sp.Float(str(u_0), 50)
+
+    def _eval_sym(expr_str: str) -> mp.mpf:
+        """Evaluate a u-polynomial string at u = u_0 (50 dps)."""
+        expr = sp.sympify(expr_str)
+        # Single dict-mapped .subs() call (faster than iterative;
+        # per Gemini review on PR #682).
+        expr = expr.subs({sym: u_0_sp for sym in expr.free_symbols})
+        return mp.mpf(str(sp.N(expr, 50)))
+
+    poch = mp.mpf(1)          # (u; u)_0 = 1
+    p_at_u0 = mp.mpf(0)
+    last_m = -1
+    for entry_m in a_m_list:
+        m = int(entry_m["m"])
+        while last_m < m:
+            last_m += 1
+            if last_m == 0:
+                continue       # (u; u)_0 = 1 already
+            poch *= (1 - u_0 ** last_m)
+        a_m_val = _eval_sym(entry_m["a_m"])
+        p_at_u0 += a_m_val * poch
+
+    denom_at_u0 = _eval_sym(denom_str) if denom_str else mp.mpf(1)
+    if shift != 0:
+        denom_at_u0 *= u_0 ** shift
+    if denom_at_u0 == 0:
+        raise ValueError(
+            f"term_6_via_habiro_coeffs_mp: denom(u_0) vanished for "
+            f"{label!r} — probable pole at q = q_0."
+        )
+    return p_at_u0 / denom_at_u0
+
+
 # ── Entry point ───────────────────────────────────────────────
 
 ATOMS = [
@@ -436,8 +586,10 @@ def main() -> int:
     w.add_data("codata_reference", {k: mp.nstr(v, 12) for k, v in CODATA_MASS.items()})
 
     # Per-atom assertions: each term is non-trivial / finite at 50 dps.
+    # P1.C HARD BREAK (2026-05-12) renamed `term4_frob_per_vortex` →
+    # `term4_frob_canonical_per_3A`; the assertion loop must follow.
     for r in results:
-        for term_key in ("term1_descended", "term4_frob_per_vortex"):
+        for term_key in ("term1_descended", "term4_frob_canonical_per_3A"):
             val = r[term_key]
             try:
                 v = mp.mpf(val)

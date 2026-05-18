@@ -138,7 +138,21 @@ fn run(args: Args) -> io::Result<()> {
         n_strands: spec.n_strands,
         word: word.clone(),
     };
-    let avg_denom = averaging_denominator(&[factor]);
+    // **Direct-averaging path (2026-05-18, PR #682)**: the underlying
+    // `chi_lambda_canonical_h_n_{f64,mpfr}` now substitutes the averaged
+    // matrix `(σ + σ⁻¹)/2 = σ - h/2 · I` directly per crossing, so the
+    // χ value returned is ALREADY the half-sum-averaged χ^λ. The
+    // legacy 2^k sub-word enumeration would have returned the
+    // *unnormalised* sum and required a downstream divide by
+    // `averaging_denominator = 2^k`; with direct substitution that
+    // post-hoc division is no longer needed.
+    //
+    // We report `averaging_denominator = "1"` so downstream consumers
+    // (canonical_tr_m_via_rust.py: `tr_M = ... / averaging_denom`)
+    // divide by 1 (a no-op). `n_averaged_crossings` is kept as
+    // informational metadata.
+    let _legacy_avg_denom = averaging_denominator(&[factor]);
+    let avg_denom: u64 = 1;
     let n_avg = word.iter().filter(|(c, _)| *c == Crossing::Averaged).count();
     let t0 = Instant::now();
     // Branch: MPFR path (default, dps >= 50) vs f64 fallback (--dps 0).

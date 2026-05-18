@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T02:34:44.188987+00:00",
-  "commitSha": "c6335803b94d28f62c6f7b8c63675b176dfcfcfd",
+  "computedAt": "2026-05-18T02:12:36.101085+00:00",
+  "commitSha": "3b8d04ba233e4f9f922deac5593053aa30ed36a5",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 8,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "d9aa432d54f9",
@@ -13,7 +13,7 @@
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 530,
+    "files_scanned": 516,
     "patterns": [
       "P15",
       "P16",
@@ -24,11 +24,11 @@
   },
   "data": {
     "by_pattern_count": {
-      "P15": 159,
+      "P15": 132,
       "P16": 100,
       "P21": 32,
       "P30": 97,
-      "P31": 28
+      "P31": 26
     },
     "top_files": [
       {
@@ -123,14 +123,6 @@
         ]
       },
       {
-        "file": "hoefsmit_symbolic.py",
-        "count": 7,
-        "patterns": [
-          "P15",
-          "P21"
-        ]
-      },
-      {
         "file": "kazhdan_lusztig.py",
         "count": 7,
         "patterns": [
@@ -147,7 +139,15 @@
         ]
       },
       {
-        "file": "probe_F_n_categorical_derivation.py",
+        "file": "hoefsmit_symbolic.py",
+        "count": 6,
+        "patterns": [
+          "P15",
+          "P21"
+        ]
+      },
+      {
+        "file": "shift_from_nf_basis.py",
         "count": 6,
         "patterns": [
           "P15"
@@ -639,20 +639,6 @@
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
       },
       {
-        "pattern": "P15",
-        "file": "deuteron_tr_M_symbolic.py",
-        "line": 152,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "deuteron_tr_M_symbolic.py",
-        "line": 187,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
         "pattern": "P30",
         "file": "deuteron_tr_M_symbolic.py",
         "line": 1,
@@ -1047,35 +1033,28 @@
       {
         "pattern": "P15",
         "file": "hoefsmit_symbolic.py",
-        "line": 168,
+        "line": 135,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",
         "file": "hoefsmit_symbolic.py",
-        "line": 169,
+        "line": 136,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",
         "file": "hoefsmit_symbolic.py",
-        "line": 202,
+        "line": 146,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",
         "file": "hoefsmit_symbolic.py",
-        "line": 212,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "hoefsmit_symbolic.py",
-        "line": 222,
+        "line": 156,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
@@ -1537,7 +1516,7 @@
       {
         "pattern": "P31",
         "file": "mass_formula_6term_mpfr_50dps.py",
-        "line": 362,
+        "line": 511,
         "snippet": "CODATA literal \"938.27208816\"",
         "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
@@ -1794,62 +1773,6 @@
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
       },
       {
-        "pattern": "P15",
-        "file": "probe_F_n_categorical_derivation.py",
-        "line": 117,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "probe_F_n_categorical_derivation.py",
-        "line": 129,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "probe_F_n_categorical_derivation.py",
-        "line": 132,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "probe_F_n_categorical_derivation.py",
-        "line": 152,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "probe_F_n_categorical_derivation.py",
-        "line": 172,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "probe_F_n_categorical_derivation.py",
-        "line": 233,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "probe_V_222_projection_symbolic.py",
-        "line": 55,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "probe_V_222_projection_symbolic.py",
-        "line": 89,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
         "pattern": "P31",
         "file": "probe_a_ell_confinement.py",
         "line": 154,
@@ -1962,76 +1885,6 @@
         "note": "syt_prefix_cache.BlockCache caches block values by content distance ρ; precomputed SYT→index dict eliminates O(d_λ²) swap-partner search. Numerical-q callers can wire it directly. Ref: ocneanu_weights.py wiring."
       },
       {
-        "pattern": "P15",
-        "file": "probe_c3_categorical_consistency_check.py",
-        "line": 85,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "probe_c3_categorical_consistency_check.py",
-        "line": 110,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "probe_c3_categorical_consistency_check.py",
-        "line": 117,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "probe_c3_categorical_consistency_check.py",
-        "line": 121,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "probe_c3_categorical_consistency_check.py",
-        "line": 122,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "probe_c3_taylor_extraction.py",
-        "line": 76,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "probe_c3_taylor_extraction.py",
-        "line": 84,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "probe_c3_taylor_extraction.py",
-        "line": 87,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "probe_c3_taylor_extraction.py",
-        "line": 99,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "probe_c3_taylor_extraction.py",
-        "line": 100,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
         "pattern": "P31",
         "file": "probe_delta_coupling_leading_form.py",
         "line": 129,
@@ -2089,20 +1942,6 @@
       },
       {
         "pattern": "P31",
-        "file": "probe_flavor_split_subleading.py",
-        "line": 10,
-        "snippet": "CODATA literal \"938.272088\"",
-        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
-      },
-      {
-        "pattern": "P31",
-        "file": "probe_flavor_split_subleading.py",
-        "line": 10,
-        "snippet": "CODATA literal \"939.565421\"",
-        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
-      },
-      {
-        "pattern": "P31",
         "file": "probe_flavor_split_substrate.py",
         "line": 86,
         "snippet": "CODATA literal \"938.272088\"",
@@ -2135,48 +1974,6 @@
         "line": 1,
         "snippet": "Hoefsmit construction without BlockCache",
         "note": "syt_prefix_cache.BlockCache caches block values by content distance ρ; precomputed SYT→index dict eliminates O(d_λ²) swap-partner search. Numerical-q callers can wire it directly. Ref: ocneanu_weights.py wiring."
-      },
-      {
-        "pattern": "P15",
-        "file": "probe_hopf_markov_trace_genuine.py",
-        "line": 63,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "probe_hopf_markov_trace_genuine.py",
-        "line": 64,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "probe_hopf_markov_trace_genuine.py",
-        "line": 67,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "probe_hopf_markov_trace_genuine.py",
-        "line": 68,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "probe_hopf_markov_trace_genuine.py",
-        "line": 78,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "probe_hopf_markov_trace_genuine.py",
-        "line": 154,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",

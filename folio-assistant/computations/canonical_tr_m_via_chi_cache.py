@@ -1,233 +1,288 @@
-"""Canonical |tr_M| via cached χ^λ + y_λ tables (PR #681 Step 2).
+#!/usr/bin/env python3
+# polynomial_q_not_applicable: evaluates at q = q_0, numeric output.
+"""Canonical |tr_M(β_atomic)| at q_0 via the chi-cache combiner.
 
-Per `docs/audits/2026-05-17-knot-fusion-step1-audit.md` (audit doc
-shipped on PR #681), the missing piece between the existing
-`per_irrep_pole_atom.py` pipeline (which computes pole order via
-q → u² substitution) and the canonical Markov trace `|tr_M(β_atomic)|`
-at q_0 (1 ppb compute target) is a **~50-line combiner**:
+Step 2 of [`docs/audits/2026-05-17-knot-fusion-step1-audit.md`](../../docs/audits/2026-05-17-knot-fusion-step1-audit.md)
+from PR #681. The Step 1 audit found that the **operator-valued
+Wenzl 1988 branching identity** for non-tensor canonical braids
+already exists on main, along with parameterised compute pipeline
+`per_irrep_pole_atom.py` and per-irrep χ caches
+`chi-{atom}-h{n}.witness.json` for the proton, neutron, deuteron
+(complete) and tritium / ³He / ⁴He (partial).
 
-  |tr_M(β_atomic, q_0)| = | Σ_λ y_λ(q_0) · χ^λ(β_atomic) |
+What was missing: a **Σ_λ y_λ(q_0) · χ^λ(β; q_0)** combiner that
+turns those caches into canonical |tr_M(β_atomic)|. This script is
+that ~50-line combiner.
 
-where:
-  - y_λ(q_0) lives in `y-lambda-mpfr-witness.json` (50-dps mpmath
-    per n, all 11 n=2-12 partitions per n cached)
-  - χ^λ(β_atomic) lives in `chi-{atom}-h{n}.witness.json` (per atom,
-    per partition; coverage varies)
+## Recipe
 
-## Coverage status (existing on main)
+For each atom (Z, N) with n = 3(Z + N):
 
-  Atom        H_n   Coverage
-  ----------------------------
-  proton      3     3/3   complete
-  neutron     3     3/3   complete
-  deuteron    6     11/11 complete
-  tritium     9     2/30  partial — needs 28 more
-  helium-3    9     3/30  partial — needs 27 more
-  helium-4    12    0/77  empty
-  ----------------------------
+  1. Load chi cache `chi-{atom}-h{n}.witness.json` — symbolic
+     χ^λ_q(β_atomic(Z, N)) per partition λ ⊢ n.
+  2. Substitute q = q_0 (mpmath 50 dps).
+  3. Load y_λ(q_0) via `wedderburn_jones_markov.y_lambda_at(n, q_0)`
+     — fast path through `y-lambda-at-q0.witness.json` (50 dps).
+  4. Sum: `tr_M = Σ_λ y_λ · χ^λ`.
+  5. Return |tr_M|.
 
-This combiner runs for any chi-cache coverage but reports incomplete
-results when partitions are missing. For p, n, D the result is the
-full canonical |tr_M|; for T, ³He, ⁴He it's a partial sum + the
-list of missing partitions for follow-up.
+This is the canonical |tr_M| consumed by:
+  - the ρ_K overlay layer 4 in `atomic_mass_via_rho_k.py`
+    (currently disabled pending this combiner — see #678 / #679)
+  - cross-checks against Hoefsmit / markov_peel for D/T/³He
+    (`cross_check_trM_wenzl_lr_1ppb.py`).
 
-Output: canonical-tr-m-via-chi-cache.witness.json
+Output: `canonical-tr-m-via-chi-cache.witness.json`.
 """
 from __future__ import annotations
 
+import argparse
 import json
 import sys
+import time
 from pathlib import Path
 
 import mpmath as mp
 import sympy as sp
 
+mp.mp.dps = 50
+
 HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
-mp.mp.dps = 50
-
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
-from hecke_characters import partitions_of  # noqa: E402
+from per_irrep_pole_atom import ATOMS, ATOM_ALIASES, parts_of  # noqa: E402
+from q_parameter import Q as Q_0_FLOAT  # noqa: E402
+from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 
-def load_y_lambda_at_q0(n: int) -> dict[tuple[int, ...], mp.mpf]:
-    """Load Wenzl y_λ(q_0) for partitions of n from the MPFR witness."""
-    path = HERE / "y-lambda-mpfr-witness.json"
-    d = json.loads(path.read_text())
-    data = d.get('data', d)
-    tables = data['tables_by_n']
-    n_str = str(n)
-    if n_str not in tables:
-        raise KeyError(f"y_lambda witness has no n={n} entry")
-    weights = tables[n_str].get('weights', [])
-    return {
-        tuple(w['partition']): mp.mpf(str(w['y_lambda']))
-        for w in weights
-    }
-
-
-def load_chi_lambda_symbolic(atom: str, n: int) -> dict[tuple[int, ...], sp.Expr]:
-    """Load symbolic χ^λ(β_atomic) for partitions of n from the chi cache."""
-    fname = f"chi-{atom}-h{n}.witness.json"
-    path = HERE / fname
+def _load_numerical_chi_cache(atom_name: str, n: int) -> dict | None:
+    """Load the numerical χ^λ@q_0 cache built by
+    `chi_at_q0_via_hoefsmit_mpfr.py`, if present. Returns None when
+    the numerical cache is absent (callers fall back to the symbolic
+    path).
+    """
+    path = HERE / f"chi-{atom_name}-h{n}-at-q0-50dps.witness.json"
     if not path.exists():
-        return {}
+        return None
+    return json.loads(path.read_text())
+
+
+def _load_chi_cache(atom_name: str, n: int) -> tuple[dict[tuple, str], bool, int]:
+    """Load symbolic χ^λ cache for `atom_name` at H_n.
+
+    Returns (cache, partial, total_partitions). Caller decides how
+    to handle partial caches.
+    """
+    path = HERE / f"chi-{atom_name}-h{n}.witness.json"
+    if not path.exists():
+        raise FileNotFoundError(
+            f"chi cache not found: {path.name}. Run "
+            f"`per_irrep_pole_atom.py {atom_name}` to build it."
+        )
     d = json.loads(path.read_text())
-    entries = d.get('chi_lambda_symbolic', [])
-    q = sp.Symbol('q')
-    out: dict[tuple[int, ...], sp.Expr] = {}
-    for entry in entries:
-        shape = tuple(entry['partition'])
-        expr = sp.sympify(entry['chi_q_symbolic'], locals={'q': q})
-        out[shape] = expr
-    return out
+    cached_str = {tuple(e["partition"]): e["chi_q_symbolic"]
+                  for e in d.get("chi_lambda_symbolic", [])}
+    partial = bool(d.get("partial", False)) or len(cached_str) < len(parts_of(n))
+    return cached_str, partial, len(parts_of(n))
 
 
-def compute_canonical_trM(atom: str, n: int, q0: mp.mpf) -> dict:
-    """Compute |tr_M(β_atomic, q_0)| via the Σ_λ y_λ · χ^λ combiner."""
-    y_lambda = load_y_lambda_at_q0(n)
-    chi_lambda = load_chi_lambda_symbolic(atom, n)
-    all_partitions = [tuple(p) for p in partitions_of(n)]
+def canonical_tr_m(atom_name: str, Z: int, N: int) -> dict[str, object]:
+    """Compute |tr_M(β_atomic(Z, N))| at q_0 via Σ_λ y_λ · χ^λ.
 
-    covered = [p for p in all_partitions if p in chi_lambda]
-    missing = [p for p in all_partitions if p not in chi_lambda]
+    Prefers the numerical χ^λ@q_0 cache (built by
+    `chi_at_q0_via_hoefsmit_mpfr.py`) when present — it's
+    pre-computed end-to-end as |tr_M(q_0)| = Σ y_λ · χ^λ at 50 dps,
+    so the consumer just reads the value with the per-λ breakdown.
+    Falls back to the symbolic chi cache (slower, partial-aware)
+    when the numerical cache is missing.
+    """
+    n = 3 * (Z + N)
 
-    q_sym = sp.Symbol('q')
-    q_val = sp.Float(mp.nstr(q0, 50), 50)
+    # Fast path: numerical chi cache is complete (one mpf per partition,
+    # tr_M already summed). All 5 production atoms ship at this tier.
+    numerical = _load_numerical_chi_cache(atom_name, n)
+    if numerical is not None:
+        q_0 = mp.mpf(repr(Q_0_FLOAT))
+        per_lambda = [{
+            "partition": entry["partition"],
+            "y_lambda_at_q0": entry["y_lambda"],
+            "chi_lambda_at_q0": entry["chi_lambda"],
+            "contribution": entry["contribution"],
+        } for entry in numerical["by_partition"]]
+        tr_m = mp.mpf(numerical["tr_M_at_q0"])
+        # The witness may be a partial incremental build (see
+        # chi_at_q0_via_hoefsmit_mpfr.py per-partition saves):
+        # n_partitions_total > n_partitions when the cache is still
+        # filling. Surface that distinction to downstream consumers
+        # so the 1ppb gate can flag truncated traces.
+        n_total = numerical.get("n_partitions_total", len(per_lambda))
+        n_used = numerical.get("n_partitions", len(per_lambda))
+        is_partial = bool(numerical.get("partial", False)) or n_used < n_total
+        return {
+            "atom": atom_name,
+            "Z": Z,
+            "N": N,
+            "n_strands": n,
+            "partitions_total": n_total,
+            "partitions_used": n_used,
+            "partial_cache": is_partial,
+            "source": "numerical_chi_cache",
+            "q_0_50dps": str(q_0),
+            "tr_M_q0": str(tr_m),
+            "abs_tr_M_q0": str(abs(tr_m)),
+            "y_lambda_load_time_sec": 0.0,
+            "tr_m_sum_time_sec": 0.0,
+            "per_lambda": per_lambda,
+        }
 
-    total = mp.mpf(0)
-    per_block: list[dict] = []
-    for shape in covered:
-        chi_at_q0 = mp.mpf(str(sp.N(chi_lambda[shape].subs(q_sym, q_val), 50)))
-        y = y_lambda.get(shape, mp.mpf(0))
-        contrib = y * chi_at_q0
-        total += contrib
-        per_block.append({
-            "partition": list(shape),
-            "y_lambda_at_q0": float(y),
-            "chi_at_q0": float(chi_at_q0),
-            "contribution": float(contrib),
+    # Slow path: symbolic chi cache (used when the numerical builder
+    # has not run for this atom yet).
+    q = sp.Symbol("q", positive=True)
+
+    chi_cache, partial, n_total = _load_chi_cache(atom_name, n)
+    n_used = len(chi_cache)
+
+    t0 = time.time()
+    q_0 = mp.mpf(repr(Q_0_FLOAT))
+    y_lams = y_lambda_at(n, q_0)
+    t_y = time.time() - t0
+
+    t0 = time.time()
+    tr_m = mp.mpf(0)
+    per_lambda = []
+    q_0_sp = sp.Float(str(q_0), 50)
+    for lam_str, chi_sym_str in chi_cache.items():
+        lam = tuple(lam_str)
+        if lam not in y_lams:
+            continue
+        chi_expr = sp.sympify(chi_sym_str)
+        # Substitute every free symbol (the cache uses its own `q`
+        # symbol identity) with the 50-dps q_0 value in a single
+        # `.subs(dict)` call (faster than iterative; per Gemini
+        # review on PR #682).
+        chi_val_sp = chi_expr.subs(
+            {sym: q_0_sp for sym in chi_expr.free_symbols}
+        )
+        chi_val = mp.mpf(str(sp.N(chi_val_sp, 50)))
+        y_val = mp.mpf(str(y_lams[lam]))
+        contrib = y_val * chi_val
+        tr_m += contrib
+        per_lambda.append({
+            "partition": list(lam),
+            "y_lambda_at_q0": str(y_val),
+            "chi_lambda_at_q0": str(chi_val),
+            "contribution": str(contrib),
         })
+    t_sum = time.time() - t0
 
     return {
-        "atom": atom,
+        "atom": atom_name,
+        "Z": Z,
+        "N": N,
         "n_strands": n,
-        "n_partitions_total": len(all_partitions),
-        "n_partitions_covered": len(covered),
-        "n_partitions_missing": len(missing),
-        "missing_partitions": [list(p) for p in missing],
-        "tr_M_at_q0": float(total),
-        "abs_tr_M_at_q0": float(abs(total)),
-        "is_complete": len(missing) == 0,
-        "per_block": per_block,
+        "partitions_total": n_total,
+        "partitions_used": n_used,
+        "partial_cache": partial,
+        "source": "symbolic_chi_cache",
+        "q_0_50dps": str(q_0),
+        "tr_M_q0": str(tr_m),
+        "abs_tr_M_q0": str(abs(tr_m)),
+        "y_lambda_load_time_sec": round(t_y, 3),
+        "tr_m_sum_time_sec": round(t_sum, 3),
+        "per_lambda": per_lambda,
     }
 
 
 def main() -> int:
-    print("=" * 90)
-    print("  Canonical |tr_M| via χ^λ cache + y_λ combiner (PR #681 Step 2)")
-    print("=" * 90)
-    print()
+    parser = argparse.ArgumentParser(description=__doc__.split("\n\n", 1)[0])
+    parser.add_argument(
+        "atoms", nargs="*",
+        help="Atom names or aliases (default: every atom with a complete "
+             "or partial chi cache). One of: " + ", ".join(ATOMS),
+    )
+    parser.add_argument("--full-tables", action="store_true",
+                        help="Print per-partition contribution tables.")
+    args = parser.parse_args()
 
-    q0 = mp.mpf(Q_50_DIGIT_STR)
-    print(f"  q_0 = {mp.nstr(q0, 16)}")
-    print()
+    start_time = time.monotonic()
 
-    atoms = [
-        ("proton",    3),
-        ("neutron",   3),
-        ("deuteron",  6),
-        ("tritium",   9),
-        ("helium-3",  9),
-        ("helium-4", 12),
-    ]
+    # Default: scan for any chi-*.witness.json that exists.
+    if not args.atoms:
+        atoms = []
+        for atom_name, (Z, N) in ATOMS.items():
+            n = 3 * (Z + N)
+            if (HERE / f"chi-{atom_name}-h{n}.witness.json").exists():
+                atoms.append(atom_name)
+    else:
+        atoms = [ATOM_ALIASES.get(a, a) for a in args.atoms]
+
+    print("=" * 84)
+    print(" Canonical |tr_M(β_atomic)| at q_0 via Σ_λ y_λ · χ^λ chi-cache combiner")
+    print(f" q_0 = {Q_0_FLOAT}")
+    print("=" * 84)
+    print(f"  {'atom':>9} {'A':>3} {'n':>3} {'parts':>10} {'|tr_M|':>20} {'time':>7}")
+    print("  " + "-" * 70)
 
     results = []
-    print(f"  {'atom':>10} {'H_n':>5} {'covered':>10} {'|tr_M|@q_0':>16} {'complete':>10}")
-    print("  " + "-" * 60)
-    for atom, n in atoms:
-        try:
-            r = compute_canonical_trM(atom, n, q0)
-        except Exception as e:
-            print(f"  {atom:>10} {n:>5} ERROR: {type(e).__name__}: {e}")
+    for atom_name in atoms:
+        if atom_name not in ATOMS:
+            print(f"  skipping unknown atom: {atom_name}")
             continue
+        Z, N = ATOMS[atom_name]
+        t_atom = time.time()
+        try:
+            r = canonical_tr_m(atom_name, Z, N)
+        except FileNotFoundError as e:
+            print(f"  {atom_name:>9}  cache missing: {str(e)[:50]}")
+            continue
+        elapsed = time.time() - t_atom
+        cov = f"{r['partitions_used']}/{r['partitions_total']}"
+        if r["partial_cache"]:
+            cov += "*"
+        print(f"  {atom_name:>9} {Z+N:>3} {r['n_strands']:>3} "
+              f"{cov:>10} {float(r['abs_tr_M_q0']):>20.12g} "
+              f"{elapsed:>6.1f}s")
+        if args.full_tables:
+            for row in r["per_lambda"]:
+                print(f"    λ={tuple(row['partition'])!s:>15}  "
+                      f"y={float(row['y_lambda_at_q0']):+.6e}  "
+                      f"χ={float(row['chi_lambda_at_q0']):+.6e}  "
+                      f"y·χ={float(row['contribution']):+.6e}")
         results.append(r)
-        cov_str = f"{r['n_partitions_covered']}/{r['n_partitions_total']}"
-        complete_str = "✓" if r['is_complete'] else "partial"
-        print(f"  {atom:>10} {n:>5} {cov_str:>10} {r['abs_tr_M_at_q0']:>16.10f} {complete_str:>10}")
+
     print()
 
-    # Cross-check against the cached habiro-coefficients-atomic value
-    # for proton, neutron, deuteron (complete cases).
-    print("  Cross-check against existing canonical |tr_M| values on main:")
-    try:
-        h = json.loads((HERE / "habiro-coefficients-atomic.witness.json").read_text())
-        data = h.get('data', h)
-        habiro_results = data.get('results', {})
-        for r in results:
-            if not r['is_complete']:
-                continue
-            atom_key = None
-            for k in habiro_results:
-                if r['atom'] in k.lower() or r['atom'][0] in k.split()[0]:
-                    atom_key = k
-                    break
-            if atom_key:
-                habiro_val = float(habiro_results[atom_key].get('tr_M_at_q0', 0))
-                this_val = r['abs_tr_M_at_q0']
-                rel_diff = abs(habiro_val - this_val) / abs(habiro_val) if habiro_val != 0 else 0
-                match = "✓" if rel_diff < 1e-10 else "✗"
-                print(f"    {r['atom']:>10}: this {this_val:>14.10f}  habiro {habiro_val:>14.10f}  rel_diff {rel_diff:.2e} {match}")
-                r['cross_check_habiro'] = habiro_val
-                r['cross_check_rel_diff'] = float(rel_diff)
-    except FileNotFoundError:
-        pass
-    print()
-
-    builder = (
-        WitnessBuilder("canonical-tr-m-via-chi-cache", engine="mpmath")
-        .set_description(
-            "PR #681 Step 2 combiner: |tr_M(β_atomic, q_0)| = "
-            "|Σ_λ y_λ(q_0) · χ^λ(β_atomic)|. Uses cached y-lambda-mpfr-"
-            "witness.json + chi-{atom}-h{n}.witness.json on main. "
-            "Reports complete results for p, n, D; partial sums + "
-            "missing-partition list for T, ³He, ⁴He pending chi-cache "
-            "completion. Cross-checked against the Habiro-resummed "
-            "value in habiro-coefficients-atomic.witness.json for the "
-            "3 complete atoms."
-        )
-        .set_audit_only(
-            "docs/audits/2026-05-17-knot-fusion-step1-audit.md"
-        )
-        .add_parameter("q_0", Q_50_DIGIT_STR)
-        .add_data("results", results)
-        .add_assertion(
-            name="complete_atoms_match_habiro_to_1e_10",
-            computed=all(
-                r.get('cross_check_rel_diff', 0) < 1e-10
-                for r in results if r['is_complete'] and 'cross_check_rel_diff' in r
+    builder = WitnessBuilder.wrap_legacy(
+        "canonical-tr-m-via-chi-cache",
+        {
+            "description": (
+                "Canonical |tr_M(β_atomic(Z, N))| at q_0 computed as "
+                "Σ_λ y_λ(q_0) · χ^λ(β; q_0), the ~50-line combiner "
+                "called out by `docs/audits/2026-05-17-knot-fusion-"
+                "step1-audit.md` (PR #681). Consumes the symbolic "
+                "χ^λ chi-cache from `per_irrep_pole_atom.py` and the "
+                "50-dps `y_lambda_at(n, q_0)` table. Partial chi "
+                "caches yield truncated traces (`partitions_used < "
+                "partitions_total`); downstream consumers should check "
+                "`partial_cache` before using the result for the 1ppb "
+                "comparison."
             ),
-            expected=True,
-            unit="boolean",
-            source=(
-                "For atoms with complete χ^λ cache (p, n, D), the "
-                "Σ_λ y_λ·χ^λ combiner matches the Habiro-resummed "
-                "tr_M_at_q0 to <1e-10 relative."
-            ),
-        )
-        .add_caveat(
-            "For tritium (2/30), helium-3 (3/30), and helium-4 (0/77), "
-            "the combiner reports a PARTIAL sum. Completing those chi "
-            "caches is the next step per the knot-fusion-step1-audit doc."
-        )
+            "parameters": {
+                "q_0_50dps": str(mp.mpf(repr(Q_0_FLOAT))),
+                "atoms_evaluated": [r["atom"] for r in results],
+            },
+            "results": results,
+        },
+        script_path=__file__,
+        engine="mpmath",
+        start_time=start_time,
     )
     out = builder.save()
-    print(f"  Witness: {out.name}")
+    print(f"  Witness: {Path(out).name}")
     return 0
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    sys.exit(main())

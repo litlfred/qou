@@ -59,7 +59,13 @@ BIN_CANDIDATES = [
 
 CTYPE_TO_SIGN = {"sigma": 1, "sigma_inv": -1, "averaged": 0}
 
-# Atoms with cached y_λ(q_0) (n=2..12 from y-lambda-at-q0.witness.json).
+# Atoms with cached y_λ(q_0). Coverage:
+#   - n=2..12 from `y-lambda-at-q0.witness.json` (symbolic-bridge eval).
+#   - n=13..15 from `y-lambda-wenzl-witness.json` (numerical closed-form
+#     via Wenzl bridge; merged into the q_0 cache by this PR's
+#     extension script).  Unblocks ⁵Li (n=15) for the canonical-χ
+#     binary; ⁶Li (n=18) still requires the y_λ table extension to
+#     n=18 (next follow-up).
 ATOMS = [
     (1, 0, "p"),
     (0, 1, "n"),
@@ -67,6 +73,7 @@ ATOMS = [
     (1, 2, "T"),
     (2, 1, "3He"),
     (2, 2, "4He"),
+    (3, 2, "5Li"),
 ]
 
 
@@ -90,7 +97,7 @@ def canonical_word_for(Z: int, N: int) -> tuple[int, list[list[int]]]:
 
 def compute_tr_m(Z: int, N: int, label: str,
                  *, q_val: float | None = None,
-                 timeout_sec: int = 600) -> dict:
+                 timeout_sec: int = 3600) -> dict:
     bin_path = find_binary()
     if bin_path is None:
         return {
@@ -159,6 +166,9 @@ def compute_tr_m(Z: int, N: int, label: str,
                     f"y_λ table at H_{n_strands} missing λ={lam}"
                 ),
             }
+        # y_lam is typically a sympy.Float at 30+ dps; `mp.mpf(str(y_lam))`
+        # preserves that precision (per Gemini review on PR #683).
+        # chi_at_q0 is already set above from the Rust MPFR output.
         y_at_q0 = mp.mpf(str(y_lam))
         c = y_at_q0 * chi_at_q0
         tr_m_sum += c
