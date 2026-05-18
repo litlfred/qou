@@ -1,7 +1,6 @@
 ## Statement
 
-**Class-A discipline status.** The three forms below have **different
-discipline statuses**:
+**Class-A discipline status.** The three forms below have **different discipline statuses**:
 
 - **(GB-NF)** is the production-target algebraic form. Closure depends
   on substrate derivation of $\rho_K$, currently an **open problem**
