@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T20:06:13.020888+00:00",
-  "commitSha": "6909a65ad190aa0093bfaba1fc2a5c1be7611a9a",
+  "computedAt": "2026-05-18T20:20:06.302287+00:00",
+  "commitSha": "465272e3b025270e0d7e49c145547a7808206c6b",
   "assertions": [
     {
       "name": "no_unregistered_package_prefixes",
@@ -15,7 +15,7 @@
     },
     {
       "name": "ok_count_matches_total_minus_failures",
-      "computed": 601.0,
+      "computed": 603.0,
       "expected": 944.0,
       "passed": false,
       "tolerance": 0.0,
@@ -24,7 +24,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 9,
+  "durationMs": 11,
   "computation": "lean-ref-resolution-audit",
   "scriptFile": "lean_ref_resolution_audit.py",
   "scriptHash": "5a460527b690",
@@ -36,10 +36,10 @@
   },
   "data": {
     "by_result": {
-      "ok": 601,
+      "ok": 603,
       "sibling_no_decl": 218,
       "grep_no_match": 122,
-      "lake_root_missing_grep_hit": 3
+      "lake_root_missing_grep_hit": 1
     },
     "rows": [
       {
@@ -9878,11 +9878,11 @@
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "/home/user/qou/content/quantum-observable-universe/information-theory/jet-horizon.lean",
-          "/home/user/qou/content/quantum-observable-universe/information-theory/aeon.lean"
+          "/home/user/qou/content/quantum-observable-universe/information-theory/aeon.lean",
+          "/home/user/qou/content/quantum-observable-universe/lean/QOU/JetHorizon.lean"
         ],
         "grep_hit": true,
-        "grep_hit_under_lake_root": false,
+        "grep_hit_under_lake_root": true,
         "result": "ok",
         "resolved_via": "sibling"
       },
@@ -9898,11 +9898,11 @@
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "/home/user/qou/content/quantum-observable-universe/information-theory/jet-horizon.lean",
-          "/home/user/qou/content/quantum-observable-universe/information-theory/big-bang-state.lean"
+          "/home/user/qou/content/quantum-observable-universe/information-theory/big-bang-state.lean",
+          "/home/user/qou/content/quantum-observable-universe/lean/QOU/JetHorizon.lean"
         ],
         "grep_hit": true,
-        "grep_hit_under_lake_root": false,
+        "grep_hit_under_lake_root": true,
         "result": "ok",
         "resolved_via": "sibling"
       },
@@ -9937,11 +9937,11 @@
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "/home/user/qou/content/quantum-observable-universe/information-theory/jet-horizon.lean",
-          "/home/user/qou/content/quantum-observable-universe/information-theory/cmb-boundary-datum.lean"
+          "/home/user/qou/content/quantum-observable-universe/information-theory/cmb-boundary-datum.lean",
+          "/home/user/qou/content/quantum-observable-universe/lean/QOU/JetHorizon.lean"
         ],
         "grep_hit": true,
-        "grep_hit_under_lake_root": false,
+        "grep_hit_under_lake_root": true,
         "result": "ok",
         "resolved_via": "sibling"
       },
@@ -10026,11 +10026,12 @@
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "/home/user/qou/content/quantum-observable-universe/information-theory/jet-horizon.lean"
+          "/home/user/qou/content/quantum-observable-universe/lean/QOU/JetHorizon.lean"
         ],
         "grep_hit": true,
-        "grep_hit_under_lake_root": false,
-        "result": "lake_root_missing_grep_hit"
+        "grep_hit_under_lake_root": true,
+        "result": "ok",
+        "resolved_via": "grep_under_lake_root"
       },
       {
         "path": "content/quantum-observable-universe/information-theory/horizon-functor.ts",
@@ -10112,17 +10113,17 @@
         "pkg": "qou",
         "decl_path": "QOU.JetHorizon",
         "sibling_exists": true,
-        "sibling_declares": true,
-        "lake_root_exists": false,
-        "lake_root_declares": false,
+        "sibling_declares": false,
+        "lake_root_exists": true,
+        "lake_root_declares": true,
         "lake_parent_declares": false,
         "grep_hits": [
-          "/home/user/qou/content/quantum-observable-universe/information-theory/jet-horizon.lean"
+          "/home/user/qou/content/quantum-observable-universe/lean/QOU/JetHorizon.lean"
         ],
         "grep_hit": true,
-        "grep_hit_under_lake_root": false,
+        "grep_hit_under_lake_root": true,
         "result": "ok",
-        "resolved_via": "sibling"
+        "resolved_via": "lake_root"
       },
       {
         "path": "content/quantum-observable-universe/information-theory/mass-energy-equivalence.ts",
@@ -10334,11 +10335,12 @@
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "/home/user/qou/content/quantum-observable-universe/information-theory/jet-horizon.lean"
+          "/home/user/qou/content/quantum-observable-universe/lean/QOU/JetHorizon.lean"
         ],
         "grep_hit": true,
-        "grep_hit_under_lake_root": false,
-        "result": "lake_root_missing_grep_hit"
+        "grep_hit_under_lake_root": true,
+        "result": "ok",
+        "resolved_via": "grep_under_lake_root"
       },
       {
         "path": "content/quantum-observable-universe/information-theory/quantum-computational-universality.ts",
