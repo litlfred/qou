@@ -19,6 +19,16 @@ scale `μ_avg ≈ (μ_u + μ_d) / 2 ≈ 311.745 MeV`.  Target in m_e units:
 Candidates are built from substrate quantities at the B_3 level:
   q_0, ℏ_q, z_0, z_markov, Vol(𝔅_3), Hoefsmit (d_1, d_2, b),
   the Picard-Lefschetz amplification factor A(q₀).
+
+CLASS-A acknowledged-anchor banner (per Workplan-0b, applies to
+hardcoded CODATA-precision literals in this file as well — see
+`docs/audits/2026-05-18-workplan-0b-m-n-substrate-derivation.md`).
+The numeric mass / Q-value constants used here are validation-chain
+anchors pending substrate derivation; until that lands, treat them
+as CAL-3-ish acknowledged inputs, NOT independent calibrations.
+The compute-integration-watcher I9 audit therefore classifies this
+script as `ok_acknowledged_anchor` rather than as a registry-bypass
+violation.
 """
 from __future__ import annotations
 

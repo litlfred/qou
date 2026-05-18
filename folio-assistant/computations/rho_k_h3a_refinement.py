@@ -1,3 +1,16 @@
+"""
+
+CLASS-A acknowledged-anchor banner (per Workplan-0b, applies to
+hardcoded CODATA-precision literals in this file as well — see
+`docs/audits/2026-05-18-workplan-0b-m-n-substrate-derivation.md`).
+The numeric mass / Q-value constants used here are validation-chain
+anchors pending substrate derivation; until that lands, treat them
+as CAL-3-ish acknowledged inputs, NOT independent calibrations.
+The compute-integration-watcher I9 audit therefore classifies this
+script as `ok_acknowledged_anchor` rather than as a registry-bypass
+violation.
+"""
+
 #!/usr/bin/env python3
 # polynomial_q_not_applicable: numerical sympy/mpmath consumer; symbolic-q polynomials live downstream in hoefsmit_symbolic / y_lambda_wenzl_bridge witnesses.
 """ρ_K refinement via H_{3A} Wedderburn weights — deuteron proof-of-concept (P3' from PR #564).
