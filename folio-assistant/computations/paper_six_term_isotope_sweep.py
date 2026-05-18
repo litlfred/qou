@@ -1251,6 +1251,17 @@ if __name__ == "__main__":
             "prop:e-infinity-page-identifications",
             "prop:chirality-dual-space-derivation",
             "thm:frobenius-codim-universal",
+            # Phase-3 substrate-Δm wiring (PR #696 D3 lift): the
+            # canonical sweep's implicit (m_n − m_p) prediction is
+            # benchmarked against the substrate-pure formula via
+            # probe_flavor_dressed_mass_split.py /
+            # flavor-dressed-mass-from-substrate-split.witness.json.
+            # Listed here so the sweep witness records the dependency
+            # on the new D3 structural blocks without inlining the
+            # cross-check (kept in the dedicated probe for clarity).
+            "def:flavor-dressing-functor",
+            "prop:flavor-dressed-mass-from-substrate-split",
+            "thm:flavor-mass-splitting-bound",
         ],
         "computedAt": datetime.now(timezone.utc).isoformat(),
         "parameters": {

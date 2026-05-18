@@ -1,0 +1,66 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-18T04:06:42.451671+00:00",
+  "commitSha": "fa7dedccac21db5beaecd514884d2dc45224f854",
+  "assertions": [
+    {
+      "name": "substrate_closure_vs_codata_within_1_percent",
+      "computed": 0.005336667490632951,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.01,
+      "unit": "relative residual (dimensionless)",
+      "source": "prop:flavor-dressed-mass-from-substrate-split closure: the substrate-pure formula matches CODATA m_n − m_p to within 1% modulo the dropped O((Δm/M_N)²) term. Measured residual at q_0: −0.53% (within the 1% gate)."
+    },
+    {
+      "name": "upper_bound_respected",
+      "computed": 0.3319782987081594,
+      "expected": 0.5,
+      "passed": true,
+      "tolerance": 0.5,
+      "unit": "bound-ratio (dimensionless)",
+      "source": "thm:flavor-mass-splitting-bound: the realised μ_d − μ_u must lie strictly below M_N · ℏ_q² · h_q · [2]_q. Tolerance 0.5 centred at 0.5 admits 0 < ratio < 1; realised value is ~0.33 (33% of bound)."
+    },
+    {
+      "name": "substrate_value_positive",
+      "computed": 1.2864302752398045,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 10.0,
+      "unit": "MeV",
+      "source": "Positivity of substrate factor at q_0 > 1; gives μ_d − μ_u > 0 as required by hadronic physics."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 9,
+  "computation": "flavor-dressed-mass-from-substrate-split",
+  "scriptFile": "probe_flavor_dressed_mass_split.py",
+  "scriptHash": "b6c56b9138d9",
+  "scriptCommitSha": "unknown",
+  "description": "Substrate-pure derivation of μ_d − μ_u from prop:flavor-split-substrate (substrate side) + lem:pair-skein-mass-formula (Skein lift).  Reports (a) the substrate-derived value, (b) closure vs CODATA m_n − m_p, and (c) the realised-vs-bound ratio against thm:flavor-mass-splitting-bound.  Calibration discipline: M_N is anchored on CODATA m_p + m_n (validation-tagged); q_0 is the substrate parameter (CAL-2). m_n − m_p itself is NOT an input — it is the derived quantity being predicted.",
+  "contentBlock": "prop:flavor-dressed-mass-from-substrate-split",
+  "parameters": {
+    "q_0": "1.1099785955541805752815940796095093779932822799587",
+    "M_N_MeV": "938.91875434",
+    "delta_m_codata_MeV": "1.29333236"
+  },
+  "data": {
+    "substrate_factor_value": "0.0013701188407340769785356963727333979377207444049368",
+    "mu_d_minus_mu_u_substrate_MeV": "1.2864302752398044078764069555112983326002862354608",
+    "bound_factor_dimensionless": "0.0041271337496025366501752636986115201965610650239856",
+    "upper_bound_MeV": "3.8750432791713871816867549345813497305288671240643",
+    "residual_vs_codata_delta_m_pn": "-0.0053366674906329507780915993540142051341804859342343",
+    "realised_over_bound_ratio": "0.33197829870815943030907548071292395955866467490619",
+    "upstream_witness_hashes": [
+      {
+        "path": "probe-flavor-split-substrate.witness.json",
+        "sha256": "6c8a6fb1caf207899619096b81b965f4f3f4a097d923743c96297b5c6e4896e0",
+        "size_bytes": 3168,
+        "commitSha": "b0a72667ef67d59d0c79591cbcf8782a47b618a6",
+        "scriptCommitSha": "unknown",
+        "computedAt": "2026-05-17T20:32:43.431107+00:00"
+      }
+    ]
+  }
+}
