@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-18T01:29:38.626214+00:00",
-  "commitSha": "9ad15d9f57f0591739d997088a1440a2e9e58888",
+  "computedAt": "2026-05-18T04:26:51.201672+00:00",
+  "commitSha": "dc0f9394feecab82403453af071b11b80d144ac5",
   "assertions": [
     {
       "name": "m_p_within_1_percent",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 23,
+  "durationMs": 24,
   "computation": "proton-mass-full-tower-50dps",
   "scriptFile": "derive_m_p_hecke_full_tower_50dps.py",
   "scriptHash": "50f94145cf99",
-  "scriptCommitSha": "08070cc474cbe4421658e6134740219ab3bae146",
+  "scriptCommitSha": "0b3ecf45a699aeec7670cc6745e7aff56e75bc02",
   "description": "Full mass-endomorphism tower derivation of m_p, m_n, m_e at MPFR @ 50 dps. Sums T1 (descended) + T2 (single brane tower) + T3 (pair brane tower) + T4 (Frobenius co-Casimir) using the MPFR-native per-generator volumes from terms-2-3-atom-per-gen-mpfr-50dps.witness.json. m_p prediction in MeV computed as (m_p_hecke / m_e_hecke) × M_E_MEV. Three-cal discipline respected: only CAL-1 (M_E_MEV) and CAL-2 (q_0) consumed; no CODATA m_p / m_n / Q_β injection. The residual (+1.835 % vs CODATA m_p) is the framework's actual prediction error at this truncation; closure of T5 / T6 for the electron at MPFR is the next research step.",
   "contentBlock": "prop:mass-endomorphism-tower",
   "parameters": {
@@ -93,11 +93,11 @@
     "upstream_witness_hashes": [
       {
         "path": "terms-2-3-atom-per-gen-mpfr-50dps.witness.json",
-        "sha256": "d3aaef97cac76b290a86a1eb79d80635cc2c0cb9c22893688aafb80c71318aaa",
+        "sha256": "8fdf23e355a0e66c3004895e4dc0c38a51a0f15f722033088b279d809cbafee4",
         "size_bytes": 10078,
-        "commitSha": "3e704a1f6fa06c0df47d928da92f7af4baf69815",
-        "scriptCommitSha": "67fbb9613f6a914d8523200fa66a1031d59d5295",
-        "computedAt": "2026-05-17T07:11:38.579433+00:00"
+        "commitSha": "83b19a2f85c270e19890905437a29b4540fd7834",
+        "scriptCommitSha": "17f878e6857f795273cff6fd102ec2ac2a968c7b",
+        "computedAt": "2026-05-17T22:58:19.126946+00:00"
       }
     ]
   }
