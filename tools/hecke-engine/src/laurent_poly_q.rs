@@ -145,6 +145,60 @@ impl LaurentPolyQ {
         Some(total)
     }
 
+    /// Substitute `q` at MPFR precision and return the result as a
+    /// `rug::Float` at the precision of `q`.
+    ///
+    /// Used by [`crate::geck_pfeiffer::chi_lambda_via_gp_hoefsmit_mpfr`]
+    /// (C-full Step 2, 2026-05-18) for high-precision evaluation of
+    /// the per-T_w basis-coefficient polynomials `c_w(q)` at the
+    /// canonical substrate `q_0` to ≥50 dps.
+    ///
+    /// Half-integer exponents `he` are evaluated as `q^{he/2}` via
+    /// `q.sqrt().pow(he)` for `he` odd, or `q.pow(he/2)` for `he`
+    /// even — both stable at MPFR precision.
+    ///
+    /// BigInt coefficients are converted via decimal-string
+    /// round-trip (preserves arbitrary precision through the GMP/MPFR
+    /// FFI; `BigInt::to_f64` would cap at f64 mantissa, which is
+    /// inadequate for the ≥50 dps target).
+    pub fn evaluate_mpfr(&self, q: &rug::Float) -> rug::Float {
+        use rug::ops::Pow;
+        let prec = q.prec();
+        let mut total = rug::Float::with_val(prec, 0);
+        // Pre-compute q^{1/2} once if any odd half-exponent is present;
+        // otherwise skip the sqrt to keep the pure-integer-exp path
+        // exact.
+        let needs_sqrt = self.terms.keys().any(|he| he % 2 != 0);
+        let q_half = if needs_sqrt {
+            Some(rug::Float::with_val(prec, q.clone().sqrt()))
+        } else {
+            None
+        };
+        for (&he, c) in &self.terms {
+            // q^{he/2} at MPFR precision.
+            let monomial: rug::Float = if he == 0 {
+                rug::Float::with_val(prec, 1)
+            } else if he % 2 == 0 {
+                let e = he / 2;
+                rug::Float::with_val(prec, q.clone().pow(e))
+            } else {
+                // q^{he/2} = (q^{1/2})^he.
+                rug::Float::with_val(
+                    prec,
+                    q_half.as_ref().unwrap().clone().pow(he),
+                )
+            };
+            // BigInt → MPFR via decimal string (preserves precision
+            // beyond f64 cap).
+            let c_str = c.to_str_radix(10);
+            let c_float = rug::Float::parse(&c_str)
+                .map(|p| rug::Float::with_val(prec, p))
+                .unwrap_or_else(|_| rug::Float::with_val(prec, 0));
+            total += rug::Float::with_val(prec, c_float * monomial);
+        }
+        total
+    }
+
     /// Format as a string, useful for tests.
     pub fn pretty(&self) -> String {
         if self.is_zero() {
