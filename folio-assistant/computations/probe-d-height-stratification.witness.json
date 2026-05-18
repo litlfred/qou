@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T00:59:37.810610+00:00",
-  "commitSha": "9cd29e5460be025f80010446657d2357a10e57ec",
+  "computedAt": "2026-05-18T18:07:47.611778+00:00",
+  "commitSha": "7ed5bd92a83eb3187638d475d54804ab137b5e7b",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 23,
+  "durationMs": 24,
   "computation": "probe-d-height-stratification",
   "scriptFile": "probe_d_height_stratification.py",
-  "scriptHash": "255d63544690",
-  "scriptCommitSha": "ccc484ea9419441c0e2e685743a6a8f4d34e2748",
+  "scriptHash": "ff9fe50c5279",
+  "scriptCommitSha": "23e447dc914406d6aa03f347bdf4d28aff14f0e9",
   "description": "Height-stratified Markov trace for D's atom braid: splits the full Wenzl-Schur tr_M into per-height contributions, each corresponding to a colored-Jones-at-level-h piece. Per Schur duality, height-≤-(k+1) traces correspond to SU(k+1) projections; height-≤-2 = standard Jones polynomial.",
   "contentBlock": "thm:knot-mass-formula-unified",
   "parameters": {
@@ -37,9 +37,9 @@
         "height": 2,
         "d_lambda": 5,
         "dim_q": 5.220441324664572,
-        "chi": 2.673471840331177,
+        "chi": 3.2158914339387135,
         "y_wenzl": 0.058960681401453746,
-        "contrib": 0.15762972141352474
+        "contrib": 0.18961115025812472
       },
       {
         "lambda": [
@@ -49,9 +49,9 @@
         "height": 2,
         "d_lambda": 9,
         "dim_q": 9.669048397124518,
-        "chi": 1.583765638804527,
+        "chi": 1.6737481247387067,
         "y_wenzl": 0.04028438696593522,
-        "contrib": 0.06380102785695314
+        "contrib": 0.06742591714048247
       },
       {
         "lambda": [
@@ -62,9 +62,9 @@
         "height": 3,
         "d_lambda": 10,
         "dim_q": 10.669048397124513,
-        "chi": -0.6481636308453277,
+        "chi": -0.4701914800047221,
         "y_wenzl": 0.010133463492072928,
-        "contrib": -0.006568142490060562
+        "contrib": -0.00476466819691159
       },
       {
         "lambda": [
@@ -74,9 +74,9 @@
         "height": 2,
         "d_lambda": 5,
         "dim_q": 5.448607072459945,
-        "chi": 3.2076863422892794,
+        "chi": 4.249070292623656,
         "y_wenzl": 0.01412087400497529,
-        "contrib": 0.04529533468694696
+        "contrib": 0.06000058624042213
       },
       {
         "lambda": [
@@ -87,9 +87,9 @@
         "height": 3,
         "d_lambda": 16,
         "dim_q": 17.344673582613545,
-        "chi": -1.8845100728432118,
+        "chi": -1.9728210551001428,
         "y_wenzl": 0.007318454352285726,
-        "contrib": -0.013791700944525694
+        "contrib": -0.014438000836978559
       },
       {
         "lambda": [
@@ -101,9 +101,9 @@
         "height": 4,
         "d_lambda": 10,
         "dim_q": 10.669048397124515,
-        "chi": 0.079473126470548,
+        "chi": -0.48998813829170595,
         "y_wenzl": -0.0006853088855144674,
-        "contrib": -5.446363972988157e-05
+        "contrib": 0.00033579322496799776
       },
       {
         "lambda": [
@@ -114,9 +114,9 @@
         "height": 3,
         "d_lambda": 5,
         "dim_q": 5.448607072459945,
-        "chi": -2.907191188292891,
+        "chi": -3.4975646652884396,
         "y_wenzl": 0.0007731867369053795,
-        "contrib": -0.002247801668436253
+        "contrib": -0.0027042706106699247
       },
       {
         "lambda": [
@@ -128,9 +128,9 @@
         "height": 4,
         "d_lambda": 9,
         "dim_q": 9.669048397124518,
-        "chi": -0.6781155880379685,
+        "chi": -0.8197159558910508,
         "y_wenzl": -0.0003420517708854016,
-        "contrib": 0.00023195063775338255
+        "contrib": 0.00028038529433555367
       },
       {
         "lambda": [
@@ -143,9 +143,9 @@
         "height": 5,
         "d_lambda": 5,
         "dim_q": 5.220441324664572,
-        "chi": 2.010681783864115,
+        "chi": 2.155415987526445,
         "y_wenzl": 9.863557610980353e-05,
-        "contrib": 0.00019832475612492444
+        "contrib": 0.00021260069768595202
       },
       {
         "lambda": [
@@ -170,27 +170,27 @@
         "cum": 0.09231855875112129
       },
       "2": {
-        "sum": 0.26672608395742486,
-        "cum": 0.35904464270854614
+        "sum": 0.31703765363902936,
+        "cum": 0.40935621239015063
       },
       "3": {
-        "sum": -0.02260764510302251,
-        "cum": 0.33643699760552365
+        "sum": -0.021906939644560076,
+        "cum": 0.38744927274559054
       },
       "4": {
-        "sum": 0.00017748699802350097,
-        "cum": 0.33661448460354715
+        "sum": 0.0006161785193035514,
+        "cum": 0.3880654512648941
       },
       "5": {
-        "sum": 0.00019832475612492444,
-        "cum": 0.33681280935967206
+        "sum": 0.00021260069768595202,
+        "cum": 0.3882780519625801
       },
       "6": {
         "sum": 8.419585135167421e-06,
-        "cum": 0.3368212289448072
+        "cum": 0.38828647154771523
       }
     },
-    "total_wenzl": 0.3368212289448072,
+    "total_wenzl": 0.3882864715477153,
     "habiro_polynomial_value": 0.177437
   },
   "caveats": [

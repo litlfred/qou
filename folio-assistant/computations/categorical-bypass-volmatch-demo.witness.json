@@ -1,18 +1,17 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-27T15:58:22.269483+00:00",
-  "commitSha": "ac3736643130e29382fefe081be3078608cfa70d",
+  "computedAt": "2026-05-18T18:07:27.521842+00:00",
+  "commitSha": "7ed5bd92a83eb3187638d475d54804ab137b5e7b",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 9,
   "computation": "categorical-bypass-volmatch-demo",
   "scriptFile": "categorical_bypass_volmatch_demo.py",
   "scriptHash": "2996305e1614",
-  "scriptCommitSha": "",
+  "scriptCommitSha": "deeead4ec85e681e22a1567ac3ad828427b2f855",
   "description": "Bypass demo: compute B(𝔥) directly from joint-tower SDP Wedderburn blocks via tr_M = Σ_λ y_λ · χ_λ at q_0, without using volume-match knot identification. Surfaces a 27%–15× discrepancy with mass-table-ppb's volume-match B = m_e · ρ · Vol_hyp(K), establishing that the regular Markov trace at q_0 ≠ Vol_hyp(K). The canonical chain in PR #442 step (5)–(7) needs further resolution before sub-percent accuracy is possible.",
   "contentBlock": "prop:atom-knot-mass-derivation",
-  "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
   "parameters": {
     "q_0": 1.1099785955541805,
     "m_e_MeV": 0.51099895
@@ -28,7 +27,7 @@
         "tr_M_direct": 0.729319922671296,
         "B_pred_direct_MeV": 0.3726817146991134,
         "B_volmatch_MeV": null,
-        "B_AME_MeV": 1,
+        "B_AME_MeV": 1.0,
         "ratio_direct_to_volmatch": null,
         "ratio_direct_to_AME": 0.3726817146991134,
         "wedderburn_terms": [
@@ -186,7 +185,7 @@
             ],
             "d_lambda": 1,
             "chi_lambda": 1.516429918014132,
-            "y_lambda": 0.00008619758913550236,
+            "y_lambda": 8.619758913550236e-05,
             "contribution": 0.0001307126030257657
           }
         ],

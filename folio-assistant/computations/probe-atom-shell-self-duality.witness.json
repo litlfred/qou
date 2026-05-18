@@ -1,18 +1,17 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-27T20:09:41.276828+00:00",
-  "commitSha": "1c654c712c10f9c0dbe9ff1215422fe9f012a9bb",
+  "computedAt": "2026-05-18T18:07:46.899706+00:00",
+  "commitSha": "7ed5bd92a83eb3187638d475d54804ab137b5e7b",
   "assertions": [],
   "allPassed": true,
   "durationMs": 24,
   "computation": "probe-atom-shell-self-duality",
   "scriptFile": "probe_atom_shell_self_duality.py",
   "scriptHash": "5c2986d31e67",
-  "scriptCommitSha": "",
+  "scriptCommitSha": "deeead4ec85e681e22a1567ac3ad828427b2f855",
   "description": "Probe of the categorical magic condition (shell-self-duality) on atom braids. For each (Z, N), tests whether x_λ(β) = x_{λ*}(β) for every partition pair (λ, λ*) ⊢ 3A in the Wedderburn decomposition of H_{3A}(q) at q_0. NO Vol_hyp, NO knot identification, NO census search. Purely algebraic. Predicts: Z=N atoms are categorically magic (all dual pairs); Z≠N atoms are non-magic (some pairs not dual).",
   "contentBlock": "prop:shell-schur-weyl-self-duality",
-  "auditOnly": "docs/audits/sigma-shell-categorical-identification.md",
   "parameters": {
     "q_0": 1.1099785955541805,
     "m_e_MeV": 0.51099895
@@ -34,8 +33,8 @@
           "pair_dual_count": 0,
           "not_dual_count": 5,
           "all_dual": false,
-          "tr_M_total": -0.00512654141305666,
-          "B_term1_pred_MeV": 0.0026196572792034694
+          "tr_M_total": -0.005400322224014615,
+          "B_term1_pred_MeV": 0.0027595589861331327
         },
         "rows": [
           {
@@ -52,11 +51,11 @@
             ],
             "is_self_conjugate": false,
             "dim": 1,
-            "chi_lambda": 1.5597587394180774,
+            "chi_lambda": 1.559758739418077,
             "chi_lambda_star": -0.6769250645272102,
             "y_lambda": 0.0011921233292002005,
             "equal_within_1e-9": false,
-            "ratio_chi_to_chi_star": -2.3041822812506894
+            "ratio_chi_to_chi_star": -2.304182281250689
           },
           {
             "shape": [
@@ -72,11 +71,11 @@
             ],
             "is_self_conjugate": false,
             "dim": 5,
-            "chi_lambda": 2.673471840331177,
-            "chi_lambda_star": 2.010681783864115,
+            "chi_lambda": 3.2158914339387135,
+            "chi_lambda_star": 2.155415987526445,
             "y_lambda": 0.03248894617975795,
             "equal_within_1e-9": false,
-            "ratio_chi_to_chi_star": 1.3296344860663711
+            "ratio_chi_to_chi_star": 1.4920050016095825
           },
           {
             "shape": [
@@ -91,11 +90,11 @@
             ],
             "is_self_conjugate": false,
             "dim": 9,
-            "chi_lambda": 1.583765638804527,
-            "chi_lambda_star": -0.6781155880379685,
+            "chi_lambda": 1.6737481247387067,
+            "chi_lambda_star": -0.8197159558910508,
             "y_lambda": 0.11145220242008576,
             "equal_within_1e-9": false,
-            "ratio_chi_to_chi_star": -2.3355393486631515
+            "ratio_chi_to_chi_star": -2.041863541523115
           },
           {
             "shape": [
@@ -111,11 +110,11 @@
             ],
             "is_self_conjugate": false,
             "dim": 10,
-            "chi_lambda": -0.6481636308453277,
-            "chi_lambda_star": 0.079473126470548,
+            "chi_lambda": -0.4701914800047221,
+            "chi_lambda_star": -0.48998813829170595,
             "y_lambda": 0.13569772208004172,
             "equal_within_1e-9": false,
-            "ratio_chi_to_chi_star": -8.155758551735486
+            "ratio_chi_to_chi_star": 0.9595976785152333
           },
           {
             "shape": [
@@ -129,11 +128,11 @@
             ],
             "is_self_conjugate": false,
             "dim": 5,
-            "chi_lambda": 3.2076863422892794,
-            "chi_lambda_star": -2.907191188292891,
+            "chi_lambda": 4.249070292623656,
+            "chi_lambda_star": -3.4975646652884396,
             "y_lambda": 0.03539094559714424,
             "equal_within_1e-9": false,
-            "ratio_chi_to_chi_star": -1.1033627080346373
+            "ratio_chi_to_chi_star": -1.2148653989999183
           },
           {
             "shape": [
@@ -148,11 +147,11 @@
             ],
             "is_self_conjugate": true,
             "dim": 16,
-            "chi_lambda": -1.8845100728432118,
-            "chi_lambda_star": -1.8845100728432118,
+            "chi_lambda": -1.9728210551001428,
+            "chi_lambda_star": -1.9728210551001428,
             "y_lambda": 0.3586356424845347,
             "equal_within_1e-9": true,
-            "ratio_chi_to_chi_star": 1
+            "ratio_chi_to_chi_star": 1.0
           }
         ]
       },
@@ -171,8 +170,8 @@
           "pair_dual_count": 0,
           "not_dual_count": 14,
           "all_dual": false,
-          "tr_M_total": 0.0003097540266663153,
-          "B_term1_pred_MeV": 0.0001582839823847591
+          "tr_M_total": 0.00041595502450810293,
+          "B_term1_pred_MeV": 0.00021255258077086485
         },
         "rows": [
           {
@@ -193,10 +192,10 @@
             "is_self_conjugate": false,
             "dim": 1,
             "chi_lambda": 1.5768015283810746,
-            "chi_lambda_star": -0.6843215231761933,
-            "y_lambda": 0.0000016863231502783998,
+            "chi_lambda_star": -0.684321523176193,
+            "y_lambda": 1.6863231502783998e-06,
             "equal_within_1e-9": false,
-            "ratio_chi_to_chi_star": -2.3041822812506996
+            "ratio_chi_to_chi_star": -2.3041822812507005
           },
           {
             "shape": [
@@ -215,11 +214,11 @@
             ],
             "is_self_conjugate": false,
             "dim": 8,
-            "chi_lambda": 3.0287098547313067,
-            "chi_lambda_star": 2.383117034163959,
+            "chi_lambda": 3.7402811795852773,
+            "chi_lambda_star": 2.6619148276336446,
             "y_lambda": 0.00013494863434999652,
             "equal_within_1e-9": false,
-            "ratio_chi_to_chi_star": 1.2709026922774833
+            "ratio_chi_to_chi_star": 1.4051092622337076
           },
           {
             "shape": [
@@ -237,11 +236,11 @@
             ],
             "is_self_conjugate": false,
             "dim": 27,
-            "chi_lambda": 2.48591527036085,
-            "chi_lambda_star": -1.376052916122433,
+            "chi_lambda": 3.1900195401578078,
+            "chi_lambda_star": -1.8834918906730074,
             "y_lambda": 0.0018277517611946445,
             "equal_within_1e-9": false,
-            "ratio_chi_to_chi_star": -1.806554995985102
+            "ratio_chi_to_chi_star": -1.6936730951456092
           },
           {
             "shape": [
@@ -260,11 +259,11 @@
             ],
             "is_self_conjugate": false,
             "dim": 28,
-            "chi_lambda": -0.9039636996895914,
-            "chi_lambda_star": -1.102145016771176,
+            "chi_lambda": -0.5793963030209981,
+            "chi_lambda_star": -2.245440636943941,
             "y_lambda": 0.0019404728556170724,
             "equal_within_1e-9": false,
-            "ratio_chi_to_chi_star": 0.8201858067079295
+            "ratio_chi_to_chi_star": 0.258032340507367
           },
           {
             "shape": [
@@ -281,11 +280,11 @@
             ],
             "is_self_conjugate": false,
             "dim": 48,
-            "chi_lambda": 7.450187226222469,
-            "chi_lambda_star": -4.157287740795676,
+            "chi_lambda": 10.16741952165563,
+            "chi_lambda_star": -5.113738075027502,
             "y_lambda": 0.0065345301697155795,
             "equal_within_1e-9": false,
-            "ratio_chi_to_chi_star": -1.792078800106474
+            "ratio_chi_to_chi_star": -1.9882558262628554
           },
           {
             "shape": [
@@ -303,11 +302,11 @@
             ],
             "is_self_conjugate": false,
             "dim": 105,
-            "chi_lambda": -5.308569249758615,
-            "chi_lambda_star": -1.4648529261733296,
+            "chi_lambda": -6.34025567691465,
+            "chi_lambda_star": -1.049612218137806,
             "y_lambda": 0.030980102804028933,
             "equal_within_1e-9": false,
-            "ratio_chi_to_chi_star": 3.6239605730428637
+            "ratio_chi_to_chi_star": 6.040569619286027
           },
           {
             "shape": [
@@ -326,11 +325,11 @@
             ],
             "is_self_conjugate": false,
             "dim": 56,
-            "chi_lambda": 0.3032900285688376,
-            "chi_lambda_star": -1.0490705396156463,
+            "chi_lambda": -1.0292774959532975,
+            "chi_lambda_star": -0.3110226608108067,
             "y_lambda": 0.008547590539316672,
             "equal_within_1e-9": false,
-            "ratio_chi_to_chi_star": -0.28910356083391264
+            "ratio_chi_to_chi_star": 3.3093328096096544
           },
           {
             "shape": [
@@ -346,11 +345,11 @@
             ],
             "is_self_conjugate": false,
             "dim": 42,
-            "chi_lambda": 2.737669922654873,
-            "chi_lambda_star": 6.446590484484068,
+            "chi_lambda": 4.424038460464791,
+            "chi_lambda_star": 8.649844229996955,
             "y_lambda": 0.005386164090360497,
             "equal_within_1e-9": false,
-            "ratio_chi_to_chi_star": 0.4246694325076201
+            "ratio_chi_to_chi_star": 0.5114587433982437
           },
           {
             "shape": [
@@ -367,11 +366,11 @@
             ],
             "is_self_conjugate": false,
             "dim": 162,
-            "chi_lambda": 0.7137048034814417,
-            "chi_lambda_star": 1.7928238105339782,
+            "chi_lambda": 2.0741886151315865,
+            "chi_lambda_star": 3.3816375104065743,
             "y_lambda": 0.08022945414719775,
             "equal_within_1e-9": false,
-            "ratio_chi_to_chi_star": 0.3980897616865488
+            "ratio_chi_to_chi_star": 0.6133681119719443
           },
           {
             "shape": [
@@ -388,11 +387,11 @@
             ],
             "is_self_conjugate": false,
             "dim": 120,
-            "chi_lambda": -7.02307539296554,
-            "chi_lambda_star": 2.3481115229899476,
+            "chi_lambda": -9.370718720007407,
+            "chi_lambda_star": 3.370410925445953,
             "y_lambda": 0.04404019256724856,
             "equal_within_1e-9": false,
-            "ratio_chi_to_chi_star": -2.990946266480038
+            "ratio_chi_to_chi_star": -2.780289681967349
           },
           {
             "shape": [
@@ -410,11 +409,11 @@
             ],
             "is_self_conjugate": false,
             "dim": 189,
-            "chi_lambda": -3.582808698831382,
-            "chi_lambda_star": 2.99350560490752,
+            "chi_lambda": -5.974292298351348,
+            "chi_lambda_star": 3.75900348443889,
             "y_lambda": 0.10627616758037381,
             "equal_within_1e-9": false,
-            "ratio_chi_to_chi_star": -1.1968605279902484
+            "ratio_chi_to_chi_star": -1.5893287471222273
           },
           {
             "shape": [
@@ -433,11 +432,11 @@
             ],
             "is_self_conjugate": true,
             "dim": 70,
-            "chi_lambda": 5.304275713076871,
-            "chi_lambda_star": 5.304275713076871,
+            "chi_lambda": 6.044697902429194,
+            "chi_lambda_star": 6.044697902429194,
             "y_lambda": 0.01379245637223561,
             "equal_within_1e-9": true,
-            "ratio_chi_to_chi_star": 1
+            "ratio_chi_to_chi_star": 1.0
           },
           {
             "shape": [
@@ -453,11 +452,11 @@
             ],
             "is_self_conjugate": false,
             "dim": 84,
-            "chi_lambda": -1.1196719526943764,
-            "chi_lambda_star": 2.725623345439653,
+            "chi_lambda": -2.6078343855251664,
+            "chi_lambda_star": 2.866138662011526,
             "y_lambda": 0.02249658064522316,
             "equal_within_1e-9": false,
-            "ratio_chi_to_chi_star": -0.41079482040970305
+            "ratio_chi_to_chi_star": -0.9098772575416588
           },
           {
             "shape": [
@@ -473,11 +472,11 @@
             ],
             "is_self_conjugate": false,
             "dim": 168,
-            "chi_lambda": 5.528576114380268,
-            "chi_lambda_star": -2.135532738016207,
+            "chi_lambda": 7.027463840788607,
+            "chi_lambda_star": -2.21762059651941,
             "y_lambda": 0.09096956304401312,
             "equal_within_1e-9": false,
-            "ratio_chi_to_chi_star": -2.5888510234294104
+            "ratio_chi_to_chi_star": -3.1689207125052503
           },
           {
             "shape": [
@@ -494,11 +493,11 @@
             ],
             "is_self_conjugate": false,
             "dim": 216,
-            "chi_lambda": -1.8387315997806035,
-            "chi_lambda_star": -1.9472969490488143,
+            "chi_lambda": -3.744114651717305,
+            "chi_lambda_star": -2.17032013389698,
             "y_lambda": 0.14626651129310397,
             "equal_within_1e-9": false,
-            "ratio_chi_to_chi_star": 0.944248179857088
+            "ratio_chi_to_chi_star": 1.7251439514568083
           },
           {
             "shape": [
@@ -513,11 +512,11 @@
             ],
             "is_self_conjugate": true,
             "dim": 42,
-            "chi_lambda": 5.898969733071177,
-            "chi_lambda_star": 5.898969733071177,
+            "chi_lambda": 9.451258089817207,
+            "chi_lambda_star": 9.451258089817207,
             "y_lambda": 0.005867270647824394,
             "equal_within_1e-9": true,
-            "ratio_chi_to_chi_star": 1
+            "ratio_chi_to_chi_star": 1.0
           }
         ]
       },
@@ -536,8 +535,8 @@
           "pair_dual_count": 0,
           "not_dual_count": 14,
           "all_dual": false,
-          "tr_M_total": -0.0003768389794272582,
-          "B_term1_pred_MeV": 0.00019256432280640053
+          "tr_M_total": -0.0003963873332270496,
+          "B_term1_pred_MeV": 0.00020255351107232244
         },
         "rows": [
           {
@@ -557,11 +556,11 @@
             ],
             "is_self_conjugate": false,
             "dim": 1,
-            "chi_lambda": 2.3935111147542583,
-            "chi_lambda_star": -0.4508185556343536,
-            "y_lambda": 0.0000016863231502783998,
+            "chi_lambda": 2.3935111147542574,
+            "chi_lambda_star": -0.4508185556343537,
+            "y_lambda": 1.6863231502783998e-06,
             "equal_within_1e-9": false,
-            "ratio_chi_to_chi_star": -5.309255985229607
+            "ratio_chi_to_chi_star": -5.309255985229604
           },
           {
             "shape": [
@@ -580,11 +579,11 @@
             ],
             "is_self_conjugate": false,
             "dim": 8,
-            "chi_lambda": 5.73529973408143,
-            "chi_lambda_star": 1.7619455763310479,
+            "chi_lambda": 6.567663928203207,
+            "chi_lambda_star": 1.8583356615342184,
             "y_lambda": 0.00013494863434999652,
             "equal_within_1e-9": false,
-            "ratio_chi_to_chi_star": 3.2550947152546086
+            "ratio_chi_to_chi_star": 3.534164502219705
           },
           {
             "shape": [
@@ -602,11 +601,11 @@
             ],
             "is_self_conjugate": false,
             "dim": 27,
-            "chi_lambda": 6.8616872616689575,
-            "chi_lambda_star": -1.2848026043792178,
+            "chi_lambda": 7.5675725819338036,
+            "chi_lambda_star": -1.469520354228921,
             "y_lambda": 0.0018277517611946445,
             "equal_within_1e-9": false,
-            "ratio_chi_to_chi_star": -5.340654851010627
+            "ratio_chi_to_chi_star": -5.1496888492603565
           },
           {
             "shape": [
@@ -625,11 +624,11 @@
             ],
             "is_self_conjugate": false,
             "dim": 28,
-            "chi_lambda": 0.8295784426514266,
-            "chi_lambda_star": -1.9117390830498144,
+            "chi_lambda": 1.6704873634351625,
+            "chi_lambda_star": -2.381403633756616,
             "y_lambda": 0.0019404728556170724,
             "equal_within_1e-9": false,
-            "ratio_chi_to_chi_star": -0.4339391551947521
+            "ratio_chi_to_chi_star": -0.7014717453840459
           },
           {
             "shape": [
@@ -646,11 +645,11 @@
             ],
             "is_self_conjugate": false,
             "dim": 48,
-            "chi_lambda": 13.80469046922619,
-            "chi_lambda_star": -3.3251239393358425,
+            "chi_lambda": 16.06473221702975,
+            "chi_lambda_star": -3.7202585601890767,
             "y_lambda": 0.0065345301697155795,
             "equal_within_1e-9": false,
-            "ratio_chi_to_chi_star": -4.15163185525756
+            "ratio_chi_to_chi_star": -4.318176265741402
           },
           {
             "shape": [
@@ -668,11 +667,11 @@
             ],
             "is_self_conjugate": false,
             "dim": 105,
-            "chi_lambda": -3.270845169337587,
-            "chi_lambda_star": 0.6822942576371416,
+            "chi_lambda": -2.8969106724341294,
+            "chi_lambda_star": 1.128770286920232,
             "y_lambda": 0.030980102804028933,
             "equal_within_1e-9": false,
-            "ratio_chi_to_chi_star": -4.793892272616914
+            "ratio_chi_to_chi_star": -2.5664306599867546
           },
           {
             "shape": [
@@ -691,11 +690,11 @@
             ],
             "is_self_conjugate": false,
             "dim": 56,
-            "chi_lambda": -1.0236462659595194,
-            "chi_lambda_star": 0.45139937253981033,
+            "chi_lambda": -2.050052925402343,
+            "chi_lambda_star": 1.0771723348913127,
             "y_lambda": 0.008547590539316672,
             "equal_within_1e-9": false,
-            "ratio_chi_to_chi_star": -2.267717520739887
+            "ratio_chi_to_chi_star": -1.9031800752747652
           },
           {
             "shape": [
@@ -711,11 +710,11 @@
             ],
             "is_self_conjugate": false,
             "dim": 42,
-            "chi_lambda": 6.487657427541613,
-            "chi_lambda_star": 5.661812062014392,
+            "chi_lambda": 7.695237783827572,
+            "chi_lambda_star": 6.6592051254411775,
             "y_lambda": 0.005386164090360497,
             "equal_within_1e-9": false,
-            "ratio_chi_to_chi_star": 1.145862377006099
+            "ratio_chi_to_chi_star": 1.1555790276572622
           },
           {
             "shape": [
@@ -732,11 +731,11 @@
             ],
             "is_self_conjugate": false,
             "dim": 162,
-            "chi_lambda": 4.932173282935681,
-            "chi_lambda_star": 1.232447282421135,
+            "chi_lambda": 6.781882180538997,
+            "chi_lambda_star": 2.1104716648439275,
             "y_lambda": 0.08022945414719775,
             "equal_within_1e-9": false,
-            "ratio_chi_to_chi_star": 4.001934487004148
+            "ratio_chi_to_chi_star": 3.2134438445732587
           },
           {
             "shape": [
@@ -753,11 +752,11 @@
             ],
             "is_self_conjugate": false,
             "dim": 120,
-            "chi_lambda": -8.175117673873714,
-            "chi_lambda_star": 2.2565798956866434,
+            "chi_lambda": -9.994187764381584,
+            "chi_lambda_star": 2.1536654578904346,
             "y_lambda": 0.04404019256724856,
             "equal_within_1e-9": false,
-            "ratio_chi_to_chi_star": -3.622791149340692
+            "ratio_chi_to_chi_star": -4.640547921575119
           },
           {
             "shape": [
@@ -775,11 +774,11 @@
             ],
             "is_self_conjugate": false,
             "dim": 189,
-            "chi_lambda": -6.502717294567715,
-            "chi_lambda_star": 4.002965700953517,
+            "chi_lambda": -7.8590762053531975,
+            "chi_lambda_star": 3.633806237910743,
             "y_lambda": 0.10627616758037381,
             "equal_within_1e-9": false,
-            "ratio_chi_to_chi_star": -1.6244748969542133
+            "ratio_chi_to_chi_star": -2.162766997139554
           },
           {
             "shape": [
@@ -798,11 +797,11 @@
             ],
             "is_self_conjugate": true,
             "dim": 70,
-            "chi_lambda": 5.539235677980239,
-            "chi_lambda_star": 5.539235677980239,
+            "chi_lambda": 5.4790401914132545,
+            "chi_lambda_star": 5.4790401914132545,
             "y_lambda": 0.01379245637223561,
             "equal_within_1e-9": true,
-            "ratio_chi_to_chi_star": 1
+            "ratio_chi_to_chi_star": 1.0
           },
           {
             "shape": [
@@ -818,11 +817,11 @@
             ],
             "is_self_conjugate": false,
             "dim": 84,
-            "chi_lambda": -1.52590207790703,
-            "chi_lambda_star": 0.21822468194278216,
+            "chi_lambda": -1.7366642251213245,
+            "chi_lambda_star": -0.36967549463452853,
             "y_lambda": 0.02249658064522316,
             "equal_within_1e-9": false,
-            "ratio_chi_to_chi_star": -6.992344148803099
+            "ratio_chi_to_chi_star": 4.697807266987602
           },
           {
             "shape": [
@@ -838,11 +837,11 @@
             ],
             "is_self_conjugate": false,
             "dim": 168,
-            "chi_lambda": 7.27588735650275,
-            "chi_lambda_star": -2.520694785722282,
+            "chi_lambda": 8.649919881440567,
+            "chi_lambda_star": -2.9423453437429705,
             "y_lambda": 0.09096956304401312,
             "equal_within_1e-9": false,
-            "ratio_chi_to_chi_star": -2.8864610653042275
+            "ratio_chi_to_chi_star": -2.9398044318064196
           },
           {
             "shape": [
@@ -859,11 +858,11 @@
             ],
             "is_self_conjugate": false,
             "dim": 216,
-            "chi_lambda": -4.254073991468332,
-            "chi_lambda_star": -6.004371572427189,
+            "chi_lambda": -5.428685795250308,
+            "chi_lambda_star": -6.521717019760821,
             "y_lambda": 0.14626651129310397,
             "equal_within_1e-9": false,
-            "ratio_chi_to_chi_star": 0.708496124890665
+            "ratio_chi_to_chi_star": 0.8324013106979917
           },
           {
             "shape": [
@@ -878,11 +877,11 @@
             ],
             "is_self_conjugate": true,
             "dim": 42,
-            "chi_lambda": 8.679864561652202,
-            "chi_lambda_star": 8.679864561652202,
+            "chi_lambda": 11.305166229993473,
+            "chi_lambda_star": 11.305166229993473,
             "y_lambda": 0.005867270647824394,
             "equal_within_1e-9": true,
-            "ratio_chi_to_chi_star": 1
+            "ratio_chi_to_chi_star": 1.0
           }
         ]
       }

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T22:08:36.369953+00:00",
-  "commitSha": "c748cff8f81fe8a3a87abf94980be44912522bea",
+  "computedAt": "2026-05-18T18:07:26.580434+00:00",
+  "commitSha": "7ed5bd92a83eb3187638d475d54804ab137b5e7b",
   "assertions": [
     {
       "name": "delta_n_squared_is_placeholder",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 7,
   "computation": "braid-encoding-audit",
   "scriptFile": "braid_encoding_audit.py",
-  "scriptHash": "08af5904dab9",
-  "scriptCommitSha": "70171528bcadd5f6bee4d40d5a2cb61749c10768",
+  "scriptHash": "8ea5866ad2bb",
+  "scriptCommitSha": "930a2dbf54159eedb46d94f5c1430c78ba71b6a8",
   "description": "Phase 1.8 audit per user directive: validate braid encodings of p and n, classify all knot operations (SDP / Lean / fitted / fallback / placeholder), track γγ pair-production per particle, and identify where the structural differences really are.  Findings: (1) Δ_n² is a placeholder (returns 1.0 always); (2) canonical_a_k for ³H/³He/⁴He has method:unknown in source witness; (3) framework's own fresh_derivation_pn_true_sdp.py documents that absolute m_p / m_n are NOT directly derivable — only differences project to observables — but Strategy-3 ignores this and predicts m_n directly, hence the −8.3% error.",
   "contentBlock": "prop:atomic-mass-gb-nf",
   "parameters": {

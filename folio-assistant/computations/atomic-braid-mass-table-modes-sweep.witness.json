@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-18T13:52:58.860659+00:00",
-  "commitSha": "66707d4bd45661ccfaf098a429f8b01c27248373",
+  "computedAt": "2026-05-18T18:07:24.094087+00:00",
+  "commitSha": "7ed5bd92a83eb3187638d475d54804ab137b5e7b",
   "assertions": [],
   "allPassed": true,
   "durationMs": 17,
   "computation": "atomic-braid-mass-table-modes-sweep",
   "scriptFile": "atomic_braid_mass_table_modes_sweep.py",
   "scriptHash": "5c650ca1c49e",
-  "scriptCommitSha": "d85f0f84ce1f4f884dd88151e8f60334fb49c928",
+  "scriptCommitSha": "d43c21fb09e5ee52067318ba2add63aabbcb81dd",
   "description": "T1 modes sweep for the atomic-braid six-term mass formula. Tests seven T1 constructions (disjoint, disjoint × Jones, disjoint × canonical a_k, a_k alone, legacy GS-NF, geometric mean, mixed) and reports per-atom + mean err% vs CODATA, with proton-only calibration per mode. Identifies which T1 construction is closest to legacy GS-NF (or beyond).",
   "contentBlock": "prop:atomic-mass-gb-nf",
   "parameters": {
@@ -289,6 +289,6 @@
       }
     },
     "best_mode": "A_disjoint",
-    "legacy_GS_NF_mean_abs_err_pct": "97.54190009933338"
+    "legacy_GS_NF_mean_abs_err_pct": "97.51752921566434"
   }
 }
