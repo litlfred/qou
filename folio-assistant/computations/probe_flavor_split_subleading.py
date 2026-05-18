@@ -75,8 +75,10 @@ h_q = q - qi
 hbar = (q - mpf(1)) / q
 bracket_2 = q + qi
 
-M_P_CODATA = mpf("938.272088")
-M_N_CODATA = mpf("939.565421")
+# P31 compliance: CODATA m_p / m_n from codata_constants (single source).
+from codata_constants import M_P_MEV_VALIDATION, M_N_MEV_VALIDATION  # noqa: E402
+M_P_CODATA = mpf(str(M_P_MEV_VALIDATION))
+M_N_CODATA = mpf(str(M_N_MEV_VALIDATION))
 DELTA_M = M_N_CODATA - M_P_CODATA
 M_N_AVG = (M_P_CODATA + M_N_CODATA) / 2
 TARGET = DELTA_M / M_N_AVG
