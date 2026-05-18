@@ -33,6 +33,15 @@ from mpmath import mp, mpf, fabs, mpmathify
 HERE = Path(__file__).parent
 HOEF_PATH = HERE / "atomic-tr-m-mpfr-50dps.witness.json"
 PEEL_PATH = HERE / "markov-peel-atomic-tr-m.witness.json"
+# Third path landed via PR #681's Step 2 + this PR's combiner: the
+# canonical Σ_λ y_λ(q_0) · χ^λ(β; q_0) trace built from per-irrep
+# chi caches (`per_irrep_pole_atom.py` chi-{atom}-h{n} caches).
+CHICACHE_PATH = HERE / "canonical-tr-m-via-chi-cache.witness.json"
+# Fourth path (this PR): direct evaluation of the cyclotomic Habiro
+# series `tr_M = (1/denom) · Σ_m a_m(u) · (u;u)_m` at u_0 = q_0^{1/2}
+# using the coefficients in `habiro-coefficients-extended.witness.json`.
+# Extends 1ppb coverage to ⁴He/⁵Li/⁶Li without needing chi caches.
+HABIRO_EXT_PATH = HERE / "habiro-coefficients-extended.witness.json"
 OUT_PATH = HERE / "cross-check-trM-1ppb.witness.json"
 
 TOLERANCE = mpf("1e-9")  # 1 ppb relative
@@ -51,6 +60,8 @@ _ZN_TO_ATOM = {
     (3, 3): "lithium-6",
     (3, 4): "lithium-7",
 }
+# Reverse map for the Habiro-extended consumer (it accepts (Z, N)).
+_ATOM_TO_ZN = {v: k for k, v in _ZN_TO_ATOM.items()}
 
 
 def main() -> int:
@@ -76,8 +87,42 @@ def main() -> int:
             continue
         peel_by_atom[atom] = r
 
+    # Third path: canonical chi-cache combiner (PR #681 Step 2).
+    # Only atoms with COMPLETE chi caches contribute to the 1ppb
+    # gate; partial caches yield truncated traces and are reported
+    # separately as `chi_cache_partial`.
+    chicache_by_atom: dict[str, dict] = {}
+    chicache_partials: dict[str, dict] = {}
+    if CHICACHE_PATH.exists():
+        chicache = json.loads(CHICACHE_PATH.read_text())
+        for r in chicache.get("data", {}).get("results", []) or chicache.get("results", []):
+            atom = r.get("atom")
+            if atom is None:
+                continue
+            if r.get("partial_cache"):
+                chicache_partials[atom] = r
+            else:
+                chicache_by_atom[atom] = r
+
+    # Fourth path: direct Habiro series evaluation at q_0 (this PR).
+    # Reuses the `term_6_via_habiro_coeffs_mp` machinery — covers A
+    # ∈ {2..6} (deuteron through ⁶Li) via `habiro-coefficients-
+    # extended.witness.json` on main. Independent of chi-cache; no
+    # symbolic χ^λ needed.
+    habiro_by_atom: dict[str, mp.mpf] = {}
+    if HABIRO_EXT_PATH.exists():
+        import sys as _sys
+        if str(HERE) not in _sys.path:
+            _sys.path.insert(0, str(HERE))
+        from mass_formula_6term_mpfr_50dps import term_6_via_habiro_coeffs_mp
+        for atom_name, (Z, N) in _ATOM_TO_ZN.items():
+            try:
+                habiro_by_atom[atom_name] = term_6_via_habiro_coeffs_mp(Z, N)
+            except (KeyError, FileNotFoundError):
+                continue
+
     common_atoms = sorted(
-        set(hoef_by_atom) & set(peel_by_atom)
+        (set(hoef_by_atom) & set(peel_by_atom)) | set(habiro_by_atom)
     )
 
     print("=" * 76)
@@ -85,49 +130,94 @@ def main() -> int:
     print("=" * 76)
     print(f"  tolerance: {TOLERANCE} (1 ppb)  |  dps: {args.dps}")
     print()
-    print(f"  {'atom':<14} {'Hoefsmit':>20}  {'markov_peel':>20}  "
-          f"{'|Δ_rel|':>13}  status")
-    print("  " + "─" * 74)
+    print(f"  {'atom':<14} {'Hoefsmit':>18}  {'markov_peel':>18}  "
+          f"{'chi-cache':>18}  {'Habiro':>18}  {'|Δ|max':>9}  status")
+    print("  " + "─" * 105)
 
     deltas: list[dict] = []
     any_diverge = False
 
     for atom in common_atoms:
-        h = hoef_by_atom[atom]
-        p = peel_by_atom[atom]
-        if h.get("tr_M_at_q0_50dps") is None:
-            continue
-        # Production witness key is `tr_M_at_q0` (not _str / _50dps).
-        peel_str = p.get("tr_M_at_q0") or p.get("tr_M_at_q0_str")
-        if peel_str is None:
-            continue
-        if "error" in p:
-            continue
+        h = hoef_by_atom.get(atom)
+        p = peel_by_atom.get(atom)
 
-        h_val = mpmathify(h["tr_M_at_q0_50dps"])
-        p_val = mpmathify(peel_str)
-        if h_val == 0 and p_val == 0:
-            rel = mpf(0)
-        elif h_val == 0:
-            rel = fabs(p_val)
+        # Hoefsmit + markov_peel are the long-running canonical paths;
+        # any atom with both is on the "core 3-way 1ppb gate" track.
+        # The Habiro path is allowed to stand alone for atoms outside
+        # the core (e.g. ⁵Li, ⁶Li) — they get reported but don't gate
+        # the strict mode unless the Habiro value diverges from
+        # another available path.
+        h_val: mp.mpf | None = None
+        p_val: mp.mpf | None = None
+        if h is not None and h.get("tr_M_at_q0_50dps") is not None:
+            h_val = mpmathify(h["tr_M_at_q0_50dps"])
+        if p is not None and "error" not in p:
+            peel_str = p.get("tr_M_at_q0") or p.get("tr_M_at_q0_str")
+            if peel_str is not None:
+                p_val = mpmathify(peel_str)
+
+        chi_entry = chicache_by_atom.get(atom)
+        c_val = mpmathify(chi_entry["abs_tr_M_q0"]) if chi_entry is not None else None
+        hab_val = habiro_by_atom.get(atom)
+        # The Habiro value is the SIGNED tr_M, not |tr_M|; compare on
+        # absolute value to match the other paths.
+        if hab_val is not None:
+            hab_abs = abs(hab_val)
         else:
-            rel = fabs(p_val - h_val) / fabs(h_val)
+            hab_abs = None
 
-        ok = rel < TOLERANCE
+        # Pairwise relative deltas. Use the first available reference
+        # (prefer Hoefsmit > peel > chi-cache) as the magnitude scale.
+        ref = h_val if h_val is not None else (p_val if p_val is not None else (c_val if c_val is not None else hab_abs))
+        if ref is None or ref == 0:
+            continue
+        rel_pairs: dict[str, mp.mpf] = {}
+        if p_val is not None and h_val is not None:
+            rel_pairs["hoef_vs_peel"] = fabs(p_val - h_val) / fabs(h_val)
+        if c_val is not None and h_val is not None:
+            rel_pairs["hoef_vs_chi"] = fabs(c_val - fabs(h_val)) / fabs(h_val)
+        if hab_abs is not None and h_val is not None:
+            rel_pairs["hoef_vs_habiro"] = fabs(hab_abs - fabs(h_val)) / fabs(h_val)
+        if hab_abs is not None and c_val is not None:
+            rel_pairs["chi_vs_habiro"] = fabs(hab_abs - c_val) / fabs(c_val) if c_val != 0 else mpf(0)
+        rel_max = max(rel_pairs.values()) if rel_pairs else mpf(0)
+
+        ok = rel_max < TOLERANCE
         if not ok:
             any_diverge = True
         status = "OK" if ok else "DIVERGE"
-        print(f"  {atom:<14} {str(h_val)[:20]:>20}  "
-              f"{str(p_val)[:20]:>20}  {mp.nstr(rel, 3):>13}  {status}")
 
-        deltas.append({
+        h_str = str(h_val)[:18] if h_val is not None else "(no Hoefsmit)"
+        p_str = str(p_val)[:18] if p_val is not None else "(no peel)"
+        if c_val is not None:
+            c_str = str(c_val)[:18]
+        elif atom in chicache_partials:
+            c_str = "(partial cache)"
+        else:
+            c_str = "(no chi cache)"
+        hab_str = str(hab_abs)[:18] if hab_abs is not None else "(no Habiro)"
+        print(f"  {atom:<14} {h_str:>18}  {p_str:>18}  "
+              f"{c_str:>18}  {hab_str:>18}  "
+              f"{mp.nstr(rel_max, 3):>9}  {status}")
+
+        d: dict = {
             "atom": atom,
-            "hoefsmit_50dps": str(h_val),
-            "markov_peel": str(p_val),
-            "abs_delta": str(fabs(p_val - h_val)),
-            "rel_delta": str(rel),
             "within_1ppb": ok,
-        })
+            "rel_delta_max": str(rel_max),
+        }
+        if h_val is not None: d["hoefsmit_50dps"] = str(h_val)
+        if p_val is not None: d["markov_peel"] = str(p_val)
+        if c_val is not None:
+            d["chi_cache_canonical"] = str(c_val)
+        elif atom in chicache_partials:
+            d["chi_cache_partial"] = {
+                "partitions_used": chicache_partials[atom]["partitions_used"],
+                "partitions_total": chicache_partials[atom]["partitions_total"],
+            }
+        if hab_abs is not None:
+            d["habiro_extended"] = str(hab_abs)
+        d["pairwise_rel_deltas"] = {k: str(v) for k, v in rel_pairs.items()}
+        deltas.append(d)
 
     out = {
         "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",

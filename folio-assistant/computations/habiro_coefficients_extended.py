@@ -148,6 +148,13 @@ def main() -> int:
     if os.environ.get("HABIRO_EXT_INCLUDE_LI") == "1":
         cases.append(("⁵Li (A=5)", 3, 2, 25))
         cases.append(("⁶Li (A=6)", 3, 3, 28))
+    # A=7..8 — heavier atoms gated by a separate env var. These take
+    # ~10-30 min each on the symbolic markov_peel pipeline at single
+    # thread. Extends the 4-way 1ppb gate to ⁷Li / ⁷Be / ⁸Be.
+    if os.environ.get("HABIRO_EXT_INCLUDE_HIGHER") == "1":
+        cases.append(("⁷Li (A=7)", 3, 4, 32))
+        cases.append(("⁷Be (A=7)", 4, 3, 32))
+        cases.append(("⁸Be (A=8)", 4, 4, 35))
 
     results: dict[str, dict] = {}
     for label, Z, N, max_m in cases:

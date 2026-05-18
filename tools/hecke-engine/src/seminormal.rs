@@ -194,6 +194,32 @@ fn apply_sigma_inv_left(v: &mut [f64], blocks: &[Block], h: f64) {
     }
 }
 
+/// Apply `v ← (σ_i + σ_i⁻¹)/2 · v = (σ_i - h/2) · v` in-place.
+///
+/// **Averaged crossing direct-substitution.** From the Hecke relation
+/// `σ_i² = (q - q⁻¹) σ_i + 1`, we have `σ_i⁻¹ = σ_i - h` with
+/// `h = q - q⁻¹`. The half-sum is therefore
+/// `(σ_i + σ_i⁻¹)/2 = σ_i - h/2`, a single matrix operation.
+///
+/// Replaces the 2^k sub-word enumeration in `chi_lambda_canonical_h_n_*`
+/// for braids with `k` averaged crossings: the matrix product becomes
+/// O(n_gens) single-matrix applies instead of `2^k · O(n_gens)`.
+/// For ⁴He (k ≈ 20), that's a ~10⁶× speedup.
+fn apply_sigma_averaged_left(v: &mut [f64], blocks: &[Block], h: f64) {
+    let half_h = 0.5 * h;
+    for block in blocks {
+        match *block {
+            Block::One { i, a } => v[i] *= a - half_h,
+            Block::Two { i, j, a, ap, b } => {
+                let vi = v[i];
+                let vj = v[j];
+                v[i] = (a - half_h) * vi + b * vj;
+                v[j] = b * vi + (ap - half_h) * vj;
+            }
+        }
+    }
+}
+
 /// Build the Hoefsmit seminormal-form generators `σ_1, ..., σ_{n-1}`
 /// for partition `shape` at parameter `q`, in block form.
 ///
@@ -376,11 +402,17 @@ pub fn chi_lambda_braid(shape: &[usize], word: &[(i32, u32)], q: f64) -> f64 {
         }
         v[i] = 1.0;
         // Apply word right-to-left to v:  v ← M · e_i.
+        // Sign convention:
+        //   sign > 0  → σ_g           (positive crossing)
+        //   sign < 0  → σ_g - h·I     (negative crossing, σ_g⁻¹ from Hecke relation)
+        //   sign == 0 → σ_g - h/2·I   (averaged crossing, (σ_g + σ_g⁻¹)/2)
         for &(sign, blocks) in resolved.iter().rev() {
-            if sign >= 0 {
+            if sign > 0 {
                 apply_sigma_left(&mut v, blocks);
-            } else {
+            } else if sign < 0 {
                 apply_sigma_inv_left(&mut v, blocks, h);
+            } else {
+                apply_sigma_averaged_left(&mut v, blocks, h);
             }
         }
         trace += v[i];
