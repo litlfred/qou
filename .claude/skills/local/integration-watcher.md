@@ -21,13 +21,14 @@ compute-chain wiring, or any future domain — runs a domain QA
 pipeline on every detected change, queues findings, attempts
 auto-discharge where possible, and asks the author for the rest.
 
-Three concrete children today:
+Four concrete children today:
 
 | Child | Domain | Goal |
 |-------|--------|------|
 | [`proof-integration-watcher`](proof-integration-watcher.md) | Proof QA (narrative + Lean) | No bare sorries, no axiom growth, no naked conjectures with provable scaffolding |
 | [`canonical-watcher`](canonical-watcher.md) | Canonical-derivation discipline | No 4th calibration, no numerology, no coefficient fits (per `prop:three-calibration-discipline`) |
 | [`compute-integration-watcher`](compute-integration-watcher.md) | Cross-layer compute wiring | Every `prop:`/`thm:`/`lem:` block has a probe + production consumer (13-pattern I1-I13 audit) |
+| [`detangler-integration-watcher`](detangler-integration-watcher.md) | Structural QA (graph + density) | No new forward refs (H1-H7), sections in 3-18 block band (R1-R3), no new cross-chapter forward edges, archimedean wall preserved |
 
 ## Domain slots (every child must fill)
 
@@ -63,25 +64,30 @@ When the user invokes `/integration-watch` directly:
 
 | User input | Behaviour |
 |------------|-----------|
-| `/integration-watch` (no arg) | **Ask which.** Use `AskUserQuestion` with a 4-option chip set listing the three concrete watchers + "all three"; do NOT auto-pick. |
+| `/integration-watch` (no arg) | **Ask which.** Use `AskUserQuestion` with a 4-option chip set listing role-accessible watchers + "all"; do NOT auto-pick. |
 | `/integration-watch proof` | Dispatch `local/proof-integration-watcher` |
 | `/integration-watch canonical` | Dispatch `local/canonical-watcher` |
 | `/integration-watch compute` or `/integration-watch compute-integration` | Dispatch `local/compute-integration-watcher` |
-| `/integration-watch all` or `/integration-watch proof,canonical,compute` | Dispatch **all** named watchers in parallel — each gets its own Monitor, its own queue/ledger, its own PR subscription set (deduped). |
+| `/integration-watch detangler` or `/integration-watch detanglement` | Dispatch `local/detangler-integration-watcher` |
+| `/integration-watch all` or `/integration-watch proof,canonical,compute,detangler` | Dispatch **all** named watchers in parallel — each gets its own Monitor, its own queue/ledger, its own PR subscription set (deduped). |
 | `/integration-watch <unknown>` | List the available children, reject the unknown name, re-prompt via `AskUserQuestion`. |
 
 **No-arg full-context preamble (per §4e rule):** before the
 `AskUserQuestion`, write a short chat message:
 
-> The three watchers each cover one QA axis. Run them
+> The four watchers each cover one QA axis. Run them
 > independently (one focused PR per watcher's domain) or all
-> three in parallel (more events but full coverage).
+> four in parallel (more events but full coverage).
 > - **proof** (`proof-integration-watcher`): no bare sorries,
 >   no axiom growth, naked-conjecture handling per §3b-cond.
 > - **canonical** (`canonical-watcher`): no 4th calibration,
 >   no numerology, no fits (per `prop:three-calibration-discipline`).
 > - **compute** (`compute-integration-watcher`): every `prop:`
 >   has a probe + production consumer (13-pattern I1-I13 audit).
+> - **detangler** (`detangler-integration-watcher`): no new
+>   forward refs (H1-H7), sections in 3-18 block band (R1-R3),
+>   no new cross-chapter forward edges, archimedean wall
+>   preserved.
 
 Then the structured `AskUserQuestion` chip set.
 
