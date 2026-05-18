@@ -77,6 +77,10 @@ ANTIPATTERN_RX = (
 # Witness-emit recognition — when the suspicious line is inside or
 # adjacent to a builder call, classify as ok.
 BUILDER_CONTEXT_RX = re.compile(r"\.(add_data|add_parameter|add_assertion)\b")
+# Display-context recognition — print(...) calls, mp.nstr(...) wraps,
+# and other formatting-only contexts.  These don't leak precision into
+# downstream computation.
+DISPLAY_CONTEXT_RX = re.compile(r"\b(print|mp\.nstr|logger|warnings\.warn|sys\.stderr\.write)\b")
 # Mp re-wrap on next line: `mp.mpf(str(...))` indicates the float
 # cast is just a stringification step, not a precision leak.
 MP_REWRAP_RX = re.compile(r"\bmp\.mpf\s*\(\s*str\s*\(")
@@ -86,9 +90,14 @@ def _classify_line_context(lines: list[str], idx: int) -> str:
     """Look at ±3 lines around idx for false-positive cues.
     Returns:
         - 'ok_witness_emit' if inside a builder call
+        - 'ok_display' if inside a print / nstr / logger call
         - 'false_positive_candidate' if re-wrapped via mp.mpf(str(...))
         - 'violation' otherwise.
     """
+    # Check the same line first for display context — print / nstr
+    # wraps on the same line as the float cast are unambiguous.
+    if DISPLAY_CONTEXT_RX.search(lines[idx]):
+        return "ok_display"
     start = max(0, idx - 3)
     end = min(len(lines), idx + 4)
     window = "\n".join(lines[start:end])
@@ -142,6 +151,7 @@ def _classify_script(path: Path) -> dict[str, Any] | None:
 
     row["hit_count"] = len(hits)
     row["violation_count"] = sum(1 for h in hits if h["context"] == "violation")
+    row["display_count"] = sum(1 for h in hits if h["context"] == "ok_display")
     row["witness_emit_count"] = sum(
         1 for h in hits if h["context"] == "ok_witness_emit"
     )
@@ -152,8 +162,10 @@ def _classify_script(path: Path) -> dict[str, Any] | None:
 
     if row["violation_count"] > 0:
         row["result"] = "i8_violation"
-    elif row["witness_emit_count"] > 0 or row["false_positive_count"] > 0:
-        row["result"] = "ok_with_witness_emit_or_fp"
+    elif (row["witness_emit_count"] > 0
+          or row["display_count"] > 0
+          or row["false_positive_count"] > 0):
+        row["result"] = "ok_with_display_or_fp"
     else:
         row["result"] = "ok_no_leaks"
     return row
@@ -187,7 +199,7 @@ def main() -> int:
     print(f"I8 audit — float64 leaks in substrate-pure scripts")
     print(f"({total_substrate_scripts} scripts carry a substrate-pure banner)")
     print("=" * 80)
-    for cls in ("i8_violation", "ok_with_witness_emit_or_fp", "ok_no_leaks"):
+    for cls in ("i8_violation", "ok_with_display_or_fp", "ok_no_leaks"):
         rs = buckets.get(cls, [])
         if not rs:
             continue
@@ -203,7 +215,7 @@ def main() -> int:
     print(f"Summary:")
     print(f"  substrate-pure-banner scripts: {total_substrate_scripts}")
     print(f"  i8_violation:                  {len(buckets.get('i8_violation', []))}")
-    print(f"  ok_with_witness_emit_or_fp:    {len(buckets.get('ok_with_witness_emit_or_fp', []))}")
+    print(f"  ok_with_display_or_fp:         {len(buckets.get('ok_with_display_or_fp', []))}")
     print(f"  ok_no_leaks:                   {len(buckets.get('ok_no_leaks', []))}")
 
     b = (
