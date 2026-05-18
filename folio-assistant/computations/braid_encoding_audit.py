@@ -43,7 +43,9 @@ import mpmath as mp
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 
-mp.mp.dps = 50
+from _precision import set_compute_dps, fmt  # noqa: E402
+
+set_compute_dps()
 
 from witness_base import WitnessBuilder
 from q_parameter import Q as Q0_FLOAT, HA as HA_FLOAT
