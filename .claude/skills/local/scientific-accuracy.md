@@ -296,6 +296,65 @@ peer-review practices and the methodology of
   the same mathematical object before renaming.  Trace the geometric
   home of each: fiber, base, total space, or categorical.
 
+### 4b. Canonical-derivation discipline (three-calibration rule)
+
+The QOU framework admits **exactly three** external calibration
+inputs, per
+[`prop:three-calibration-inputs`](../../../content/quantum-observable-universe/braids-and-knots/three-calibration-inputs.md)
+and
+[`prop:three-calibration-discipline`](../../../content/quantum-observable-universe/observations/three-calibration-discipline.md):
+
+| ID | Quantity | (Co)homology | Source |
+|----|----------|--------------|--------|
+| **CAL-1** | $m_e$ | $H^0$ | CODATA |
+| **CAL-2** | $m_\mu/m_e \to q_0$ | $H^1$ | CODATA |
+| **CAL-3** | $Q_\beta(n) \to \mathbf{E}_0$ | $H^2$ | PDG |
+
+Every numerical observable in the paper must factor as
+$\mathcal{O} = \hat{\mathcal{O}}(q_0) \cdot m_e^{\,a} \cdot Q_\beta^{\,b}$
+with $\hat{\mathcal{O}}(q_0) \in \mathbb{Q}(q_0)$ (the discipline
+minimum per `prop:three-calibration-discipline`) and the
+empirically-observed Laurent refinement
+$\hat{\mathcal{O}}(q_0) \in \mathbb{Z}[q_0^{\pm 1/2}]$ per
+`prop:three-calibration-inputs`. Exponents
+$a, b \in \mathbb{Z}_{\geq 0}$ are subject to the dimensional-
+homogeneity constraint $a + b \in \{0, 1\}$ (output is
+dimensionless, mass-scale, or energy-scale; never higher-power
+composites). Anything else is a discipline violation. **Flag**
+as part of accuracy review:
+
+- *Free parameters* beyond CAL-1/2/3 — a fourth dimensional input
+  is a hard audit failure.
+- *Coefficient fits* to AME / CODATA / PDG (Bethe-Weizsäcker
+  coefficients labelled "ad hoc", "approx", "tuned").
+- *Numerological substitutions* (magic numbers $\{2,8,20,28,50,82,126\}$
+  asserted as data without derivation from Bring's surface or BB/LR
+  homology).
+- *Second pinning of $q_0$* (independent fits to $m_e$, $m_\mu$,
+  $m_\tau$, etc.).
+- *Second hadronic scale* (proton mass, pion mass introduced as
+  inputs rather than predictions).
+- *Archimedean-side input* (volumes, hyperbolic, Mostow constants)
+  appearing in an algebraic-side derivation.
+- *Tautologies* where a "derivation" uses its own result as input
+  (e.g. LO $\rho_K$ pattern in `atomic_mass_via_rho_k.py`).
+- *Rationalization*: prose in a proposition body arguing *why* a
+  value is right rather than *deriving* it.
+
+The three **categorically allowed exceptions** are Class-A
+(acknowledged-stub with banner), Class-B (baseline-extraction
+script that *produces* a calibration input), and Class-C
+(diagnostic probe / cross-check, read-only, no downstream witness).
+Each must carry an explicit banner / docstring marker. See
+[`canonical-watcher.md`](./canonical-watcher.md) for the
+opt-out protocol and
+[`docs/audits/2026-05-11-three-calibration-discipline-violations.md`](../../../docs/audits/2026-05-11-three-calibration-discipline-violations.md)
+for the audit precedent.
+
+For active monitoring of canonical-derivation discipline across
+incoming commits + PRs, route the request to
+[`local/canonical-watcher`](./canonical-watcher.md).
+
 ### 5. Reproducibility
 - Methods are described with sufficient detail to reproduce.
 - Magic numbers are explained or referenced.
