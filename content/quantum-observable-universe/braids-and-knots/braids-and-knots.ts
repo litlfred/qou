@@ -313,6 +313,7 @@ export default chapter({
         "borromean-baryon",
         "borromean-baryon-interpretation",
         "borromean-baryon-mass-formula",
+        "lambda-scale-substrate-form",
         "delta-skein-substrate-identity",
         "figure-8-muon-mass-cross-check",
         "typed-crossing-operator",
