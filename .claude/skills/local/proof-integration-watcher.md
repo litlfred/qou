@@ -171,15 +171,26 @@ grep -rlE '^export default (theorem|lemma|proposition|corollary|conjecture|defin
 #    module like `QGeometricLanglands.lean`); sibling-`.lean` absence
 #    is NOT sufficient (the ref may resolve via the grep fallback).
 #
-#    Resolution test (matches the validate-pipeline `lean-ref-resolves`
-#    rule + the namespace-walk verification):
+#    Note: there is no automated `lean-ref-resolves` rule in
+#    `content/pipeline/validate.ts` today (it only enforces schema
+#    shape + constraint rules). The watcher implements this
+#    resolution test in-session as documented below; if the
+#    pipeline later adopts the same test as a constraint rule,
+#    update this comment to point at it.
+#
+#    Resolution test (in-session, namespace-walk verification):
+#
+#      DECL_PREFIX_RE = ^\s*(?:noncomputable\s+|@\[[^\]]+\]\s+
+#                          |private\s+|protected\s+)*
+#      DECL_KIND_RE   = (theorem|lemma|class|def|structure|instance
+#                       |opaque|axiom)
+#      DECL_RE        = DECL_PREFIX_RE + DECL_KIND_RE + r'\s+'
 #
 #      for each .ts with `export default conjecture(...)`:
 #        ref = extract lean.ref from manifest
 #        if ref is missing → naked
 #        decl_name = ref.split('.')[-1]
-#        candidates = grep -rEln "^(theorem|lemma|class|def|structure|
-#                                   instance|opaque|axiom)\s+<decl_name>\b"
+#        candidates = grep -rEln "<DECL_RE><decl_name>\b"
 #                     content/<paper>/lean/
 #        if no candidates → naked
 #        for each candidate file:
@@ -189,6 +200,11 @@ grep -rlE '^export default (theorem|lemma|proposition|corollary|conjecture|defin
 #        if no namespace match → wrong-namespace ref (separate finding:
 #          `lean-ref-namespace-mismatch`, minor severity, auto-discharge
 #          by setting ref to the discovered `full`)
+#
+#    The DECL_PREFIX_RE handles `@[simp] theorem`, `noncomputable def`,
+#    `private theorem`, etc. — without it the watcher will false-positive
+#    "naked" on decorated declarations. Mirrors the DECL_RE used in
+#    Slot G item 2 (uncited-sorry detection).
 #
 #    The previous (sibling-`.lean`-only) heuristic over-counted by ~37%
 #    on the QOU paper (initial 32 substantive naked-conjecture flags

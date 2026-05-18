@@ -8,7 +8,7 @@ just sibling `.lean` presence) found that:
 | Class | Count | Action |
 |-------|------:|--------|
 | `lean.ref` resolves correctly, declaration exists, watcher discovery was wrong | 8 (BraidKnot + StaircaseCornerHook) | Queue clears as `wontfix-already-resolved`; no action |
-| `lean.ref` namespace was wrong, declaration exists | 5 (4 q-gl in #707, 1 q-clt in #708) | Fixed in PRs |
+| `lean.ref` namespace was wrong, declaration exists | 5 (4 q-gl in #707, 1 q-clt in #712) | Fixed in PRs |
 | Genuinely naked (no Lean anywhere) | **~19** | **Real formalizer dispatch needed** |
 
 This handover doc's per-chapter listing below is from the
@@ -39,7 +39,7 @@ shape with the conjecture's content as fields). ~19 blocks →
 
 **Sibling references for the refinement work:**
 - #707 (4 q-gl `lean.ref` namespace fixes + new `q_gl_kummer_filtration`)
-- #708 (1 q-clt `lean.ref` namespace fix + watcher Slot G refinement)
+- #712 (1 q-clt `lean.ref` namespace fix + watcher Slot G refinement)
 
 ## What the watcher found
 
