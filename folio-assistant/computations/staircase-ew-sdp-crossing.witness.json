@@ -1,0 +1,64 @@
+{
+  "engine": "numpy",
+  "engineVersion": "numpy 2.4.5",
+  "computedAt": "2026-05-18T00:31:06.955938+00:00",
+  "commitSha": "c158e2b7de634f54a81f00672c3e0f667fa3d426",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 45,
+  "computation": "staircase-ew-sdp-crossing",
+  "scriptFile": "probe_staircase_ew_sdp_crossing.py",
+  "scriptHash": "b0067b1a9e69",
+  "scriptCommitSha": "unknown",
+  "description": "SDPB-style staircase EW-residual derivation at k=3 — analogue of probe_sdpb_pl_crossing_equations.py (commit 5e7459cf0). Sets up a Wedderburn-block SDP over the 11 partitions of n_3=6 with Hoefsmit-σ-symmetric PSD block matrices, mirror-parity constraints, normalisation, Markov-pair-trace saturation, and an `a` parameter (EW residual scale) to maximise. Reports the SDP optimum and the best-match substrate scale (z_markov, 1/h_corner, q^(1/5), etc.). CAVEAT: constraints 5-6 are heuristic stand-ins mirroring the PL probe's structure, NOT derived from a categorical crossing-equation analysis of V_(3,2,1). Treat as directional: which substrate scale does the analogue-of-PL SDP saturate to?",
+  "contentBlock": "conj:staircase-ew-residual",
+  "auditOnly": "docs/audits/2026-05-17-staircase-ew-sdp-crossing.md",
+  "parameters": {
+    "k": 3,
+    "staircase_partition": [
+      3,
+      2,
+      1
+    ],
+    "n_strands": 6,
+    "h_corner": 5,
+    "q_0": 1.1099785955541805,
+    "z_markov": 0.4993203340335982
+  },
+  "data": {
+    "sdp_status": "optimal",
+    "a_sdp_optimum": 0.16666085958205737,
+    "best_match_label": "1/h_corner = 1/5",
+    "best_match_value": 0.2,
+    "best_match_rel_err": 0.1666957020897132,
+    "alpha_optimum": {
+      "(6,)": 0.5000003959833927,
+      "(5, 1)": 0.0,
+      "(4, 2)": 0.0,
+      "(4, 1, 1)": 0.0,
+      "(3, 3)": 0.0,
+      "(3, 2, 1)": 0.0,
+      "(3, 1, 1, 1)": 0.0,
+      "(2, 2, 2)": 0.0,
+      "(2, 2, 1, 1)": 0.0,
+      "(2, 1, 1, 1, 1)": 0.0,
+      "(1, 1, 1, 1, 1, 1)": 0.5000003954231762
+    },
+    "candidate_scales": {
+      "z_markov": 0.4993203340335982,
+      "z_markov² ": 0.2493207959794241,
+      "z_markov³ ": 0.12449094312996863,
+      "z_markov⁵ ": 0.031038181033392998,
+      "ℏ_q": 0.09908172643569886,
+      "ℏ_q²": 0.009817188513478667,
+      "h_amp/2": 0.10453016099493972,
+      "1/h_corner = 1/5": 0.2,
+      "k/Σhook(ρ_3) = 3/14": 0.21428571428571427,
+      "q^(1/5)": 1.0210874086805357,
+      "q^(3/14)": 1.0226105579808744
+    }
+  },
+  "caveats": [
+    "Heuristic SDP scaffolding: constraints 5-6 (Markov-pair saturation, a-consistency) MIRROR the PL probe's structure but are NOT derived from a categorical crossing-equation analysis specific to V_(3,2,1). The SDP-saturating value reported should be read as directional evidence about which substrate scale (z_markov, ℏ_q, 1/h_corner, q^p/q) appears naturally in the optimisation, not as a substrate derivation of the EW residual. A real derivation would replace the heuristic constraints with rigorous ones (e.g. via prop:operator-selection-sdp categorical bootstrap)."
+  ]
+}
