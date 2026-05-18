@@ -1,1 +1,3 @@
-_[draft]_ Recall examples of quantum observable universes. The natural next step is categorical Dirac operator, and this section takes it. _(draft.)_
+_[draft]_ Here is the question this section settles: categorical Dirac operator. The answer is not assumed; it falls out of the setup we already have.
+
+_(draft.)_

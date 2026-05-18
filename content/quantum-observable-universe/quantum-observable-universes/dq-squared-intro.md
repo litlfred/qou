@@ -1,1 +1,5 @@
-_[draft]_ Non-vanishing of $d_q^2$ and jet prolongation is the next object we need. We define it, derive its first structural properties, and check that it does what categorical instanton and self-duality promised it would. _(draft.)_
+_[draft]_ The chapter has been circling non-vanishing of $d_q^2$ and jet prolongation for a few sections. Here we make it explicit.
+
+The first formal move is **Non-vanishing of $d_q^2$**, the result that organises everything else here. The section is propositional: 3 structural results stack on one another, each used in the next, with the remarks below clarifying which hypotheses can be relaxed and which cannot.
+
+_(draft.)_

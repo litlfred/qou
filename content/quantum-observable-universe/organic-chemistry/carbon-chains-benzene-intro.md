@@ -1,1 +1,3 @@
-_[draft]_ Abstract structure is not an argument for itself. We pick examples that pin down carbon chains and benzene — one to fix the typical behaviour, the others to mark the edges where the theory does and does not apply. _(draft.)_
+_[draft]_ We pause the structural development to look at instances. The examples of carbon chains and benzene below are not illustrations — they are the test that the structure built so far is doing what we claimed.
+
+_(draft.)_

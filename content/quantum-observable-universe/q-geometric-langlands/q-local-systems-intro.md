@@ -1,1 +1,3 @@
-_[draft]_ $\\mathbb{G}_m$-torsors and $q$-local systems is the running example beat in this chapter. This section assembles the cases that the rest of the chapter will refer back to. _(draft.)_
+_[draft]_ Time for the cases. $\\mathbb{G}_m$-torsors and $q$-local systems is the umbrella; the examples are the test points that make the umbrella useful.
+
+_(draft.)_

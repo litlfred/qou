@@ -1,1 +1,3 @@
-_[draft]_ Interactive Simulations is the running example beat in this chapter. This section assembles the cases that the rest of the chapter will refer back to. _(draft.)_
+_[draft]_ We pause the structural development to look at instances. The examples of interactive Simulations below are not illustrations — they are the test that the structure built so far is doing what we claimed.
+
+_(draft.)_

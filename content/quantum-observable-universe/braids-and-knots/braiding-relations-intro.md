@@ -1,1 +1,3 @@
-_[draft]_ Definitions earn their keep by what they cover. This section grounds braiding Relations and the Spectral Filter in concrete cases; each example tests a different feature of the general theory. _(draft.)_
+_[draft]_ Abstract structure is not an argument for itself. We pick examples that pin down braiding Relations and the Spectral Filter — one to fix the typical behaviour, the others to mark the edges where the theory does and does not apply.
+
+_(draft.)_

@@ -1,1 +1,3 @@
-_[draft]_ The chapter has been circling nucleon derivation from pair production for a few sections. Here we make it explicit, and use the explicit form to drive nuclear binding and magic numbers. _(draft.)_
+_[draft]_ There is a question hanging over what we just did: nucleon derivation from pair production. This section answers it.
+
+_(draft.)_

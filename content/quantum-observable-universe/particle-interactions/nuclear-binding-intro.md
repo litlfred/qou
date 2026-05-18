@@ -1,1 +1,3 @@
-_[draft]_ The chapter has been circling nuclear binding and magic numbers for a few sections. Here we make it explicit, and use the explicit form to drive derived atom examples. _(draft.)_
+_[draft]_ Here is the question this section settles: nuclear binding and magic numbers. The answer is not assumed; it falls out of the setup we already have.
+
+_(draft.)_

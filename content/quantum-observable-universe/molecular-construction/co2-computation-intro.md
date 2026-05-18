@@ -1,1 +1,3 @@
-_[draft]_ Abstract structure is not an argument for itself. We pick examples that pin down linear triatomic molecule — one to fix the typical behaviour, the others to mark the edges where the theory does and does not apply. _(draft.)_
+_[draft]_ Time for the cases. Linear triatomic molecule is the umbrella; the examples are the test points that make the umbrella useful.
+
+_(draft.)_

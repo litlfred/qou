@@ -1,1 +1,3 @@
-_[draft]_ We have categorical Dirac operator; we now need categorical Lagrangian. This section supplies it in the form the rest of the chapter will use. _(draft.)_
+_[draft]_ Recall categorical Dirac operator. The natural next step is categorical Lagrangian, and this section takes it.
+
+_(draft.)_

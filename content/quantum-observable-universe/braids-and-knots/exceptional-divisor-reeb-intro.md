@@ -1,1 +1,3 @@
-_[draft]_ The narrative pauses; the definitions take over. Exceptional Divisor and Vertex Operators gets its full structural account here, in the form the rest of the chapter consumes. _(draft.)_
+_[draft]_ We pin down exceptional Divisor and Vertex Operators. The data, the conditions, the small set of structural facts that matter — all collected here so the proofs in the next section can run cleanly.
+
+_(draft.)_

@@ -1,1 +1,3 @@
-_[draft]_ We pause the structural development to look at instances. The examples of covalent bonding as shared sub-Hopf links below are not illustrations — they are the test that the structure built so far is doing what we claimed. _(draft.)_
+_[draft]_ Definitions earn their keep by what they cover. This section grounds covalent bonding as shared sub-Hopf links in concrete cases; each example tests a different feature of the general theory.
+
+_(draft.)_

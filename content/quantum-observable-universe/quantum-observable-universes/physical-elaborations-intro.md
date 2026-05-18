@@ -1,1 +1,3 @@
-_[draft]_ Definitions earn their keep by what they cover. This section grounds physical elaborations in concrete cases; each example tests a different feature of the general theory. _(draft.)_
+_[draft]_ Physical elaborations is the running example beat in this chapter. This section assembles the cases that the rest of the chapter will refer back to.
+
+_(draft.)_

@@ -1,1 +1,3 @@
-_[draft]_ Time to be precise about the molecular Hecke algebra. The definitions below are written for the use the propositions we are about to prove are going to make of them, not for maximum generality. _(draft.)_
+_[draft]_ The molecular Hecke algebra is the object. This section fixes its definition, its essential data, and the half-dozen structural lemmas that downstream proofs will lean on.
+
+_(draft.)_

@@ -1,1 +1,5 @@
-_[draft]_ Direct Limit Algebra delivered the data. Mass in the Brane Tower is what that data is for. The next move is betti Numbers and Harmonic Basis. _(draft.)_
+_[draft]_ Granted direct Limit Algebra, what does mass in the Brane Tower look like? This section answers concretely.
+
+The first formal move is **Non-commutativity and geometric drag**, the result that organises everything else here. The section is propositional: 3 structural results stack on one another, each used in the next, with the remarks below clarifying which hypotheses can be relaxed and which cannot.
+
+_(draft.)_

@@ -1,1 +1,3 @@
-_[draft]_ We pause the structural development to look at instances. The examples of the covalent bond prototype below are not illustrations — they are the test that the structure built so far is doing what we claimed. _(draft.)_
+_[draft]_ Time for the cases. The covalent bond prototype is the umbrella; the examples are the test points that make the umbrella useful.
+
+_(draft.)_
