@@ -445,6 +445,52 @@ events, no findings, queue empty), emit a one-liner:
 
 …and keep the Monitor armed.
 
+### 5e. Idle author-ask dispatcher
+
+When the session is idle (no incoming events, no in-flight backlog
+discharge) AND the queue contains items that need author input,
+**pull one ask and surface it** rather than just sitting on the queue.
+
+Triggers (in priority order):
+
+1. Items with `status: "needs-author"` that have never been asked
+   (`asked_author_at: null`).
+2. Items with `status: "queued"` that have aged > 24 h without any
+   discharge attempt and are in the **Author-assist** band of §4d
+   (Class-A stubs, naked-conjectures without conditional-class
+   scaffolding, hidden axioms, broken inter-proof chains, conjectural-
+   propagation violations).
+3. Items with `status: "needs-author"` that were asked > 7 days ago
+   and never resolved — **re-ask once**, then mark `wontfix` with
+   reason `author-unresponsive`.
+
+Per round (every quiescent ≥ 10 min window), pull **up to 3** asks,
+group by block, and surface them as a single consolidated message:
+
+- **Foreground session present** (the user is in the conversation):
+  use `AskUserQuestion` with a numbered list of items + options
+  (e.g. "1) write narrative, 2) weaken Lean, 3) split block, 4) skip
+  for now"). The user's reply updates the queue item's `status`.
+
+- **PR-driven session** (the trigger was a sibling PR event and there
+  is no foreground user): post a single consolidated coordination
+  comment on **own PR** (never on sibling PRs — that would spam the
+  other agent's review queue). Format follows §4e.
+
+- **Headless / batch session**: append the asks to the ledger under
+  a `## Pending author asks` section so the next interactive session
+  picks them up immediately.
+
+After each ask, set `asked_author_at: "<ISO ts>"` and increment a
+per-block ask counter. Cap consecutive asks per block at 3 — beyond
+that, mark `wontfix` with `reason: ask-fatigue` and let the author
+manually re-open if needed.
+
+**Anti-pattern:** never auto-mark a `needs-author` item as
+`resolved` based on inferred user assent (e.g. a thumbs-up reaction
+on a comment). Only an explicit author reply or commit closes the
+item.
+
 ## 6. Goal-driven invariants
 
 The skill **enforces** these invariants on every commit it makes (own
