@@ -20,10 +20,14 @@ export default conjecture({
     "n-sym",
     "open-problem",
   ],
+  // The witness below provides the q_0 numerical anchor cited via
+  // :val[q_0] in the body — it does NOT verify this conjecture
+  // (which is tagged `open-problem`). Status reflects the
+  // conjecture's open status, not the witness script's correctness.
   computation: {
     engine: "mpmath",
     script: "folio-assistant/computations/q_pinning_50_digit.py",
     witness: "folio-assistant/computations/q-pinning-50-digit.witness.json",
-    status: "verified",
+    status: "not_run",
   },
 });

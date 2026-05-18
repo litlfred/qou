@@ -3634,20 +3634,19 @@ export const references: CSLData[] = [
     ISBN: "978-0-226-87033-5",
   }),
 
-  // ── Differential geometry — Kobayashi–Nomizu Vol. I ─────────────
+  // ── Differential geometry — Kobayashi–Nomizu Vol. I (1963) ─────
   ref({
-    id: "kobayashi1996",
+    id: "kobayashi1963",
     type: "book",
     title: "Foundations of Differential Geometry, Volume I",
     author: [
       { family: "Kobayashi", given: "Shoshichi" },
       { family: "Nomizu", given: "Katsumi" },
     ],
-    publisher: "Wiley-Interscience",
+    publisher: "Interscience Publishers (John Wiley & Sons)",
     "publisher-place": "New York",
-    issued: { "date-parts": [[1996]] },
-    note: "Wiley Classics Library reprint of the 1963 edition",
-    ISBN: "978-0-471-15733-5",
+    issued: { "date-parts": [[1963]] },
+    note: "Wiley Classics Library reprint, 1996, ISBN 978-0-471-15733-5",
   }),
 
   // ── SDP primal-dual interior-point — Alizadeh–Haeberly–Overton ──
@@ -3668,17 +3667,19 @@ export const references: CSLData[] = [
     DOI: "10.1137/S1052623496304700",
   }),
 
-  // ── K-theory / Borel regulator ──────────────────────────────────
+  // ── K-theory / Borel regulator (1974 ENS) ───────────────────────
   ref({
-    id: "borel1986",
+    id: "borel1974",
     type: "article-journal",
-    title: "Cohomology of arithmetic groups",
+    title: "Stable real cohomology of arithmetic groups",
     author: [{ family: "Borel", given: "Armand" }],
-    "container-title": "Proceedings of the International Congress of Mathematicians (Vancouver 1974)",
-    issued: { "date-parts": [[1986]] },
-    volume: "1",
-    page: "435-442",
-    note: "Cited for the Borel regulator and rank computations on K_{2n-1}(Z); appears in classical surveys",
+    "container-title": "Annales Scientifiques de l'École Normale Supérieure",
+    issued: { "date-parts": [[1974]] },
+    volume: "7",
+    issue: "4",
+    page: "235-272",
+    DOI: "10.24033/asens.1269",
+    note: "Cited for the Borel regulator and rank computations on K_{2n-1}(Z)",
   }),
 
   // ── Surreal numbers — Berarducci & Mantova ──────────────────────
@@ -3841,20 +3842,21 @@ export const references: CSLData[] = [
     DOI: "10.2307/1968949",
   }),
 
-  // ── Adams — Hyperbolic structures on knot complements ───────────
+  // ── Adams — Hyperbolic structures on link complements (thesis) ──
   ref({
     id: "adams1985hyperbolic",
-    type: "article-journal",
+    type: "thesis",
     title: "Hyperbolic structures on link complements",
     author: [{ family: "Adams", given: "Colin C." }],
-    "container-title": "Ph.D. dissertation, University of Wisconsin–Madison",
+    genre: "Ph.D. dissertation",
+    publisher: "University of Wisconsin–Madison",
     issued: { "date-parts": [[1985]] },
     note: "Cited for hyperbolic volume computations on link complements",
   }),
 
   // ── Wenzl — Hecke-algebra trace and limit ───────────────────────
   ref({
-    id: "Wenzl1988",
+    id: "wenzl1988",
     type: "article-journal",
     title: "Hecke algebras of type A_n and subfactors",
     author: [{ family: "Wenzl", given: "Hans" }],
@@ -3868,7 +3870,7 @@ export const references: CSLData[] = [
 
   // ── Boyd–Vandenberghe — Convex Optimization ─────────────────────
   ref({
-    id: "BoydVandenberghe2004",
+    id: "boyd-vandenberghe2004",
     type: "book",
     title: "Convex Optimization",
     author: [
@@ -3922,7 +3924,7 @@ export const references: CSLData[] = [
   // resolves; these are not papers and have no DOI.
 
   ref({
-    id: "#639",
+    id: "pr-639",
     type: "manuscript",
     title: "GitHub PR #639 — per-partition K-lambda + braid-word-basis Gram discussion",
     URL: "https://github.com/litlfred/qou/pull/639",
@@ -3931,7 +3933,7 @@ export const references: CSLData[] = [
   }),
 
   ref({
-    id: "#637 review",
+    id: "pr-637-review",
     type: "manuscript",
     title: "GitHub PR #637 review — brane-tower N* discussion",
     URL: "https://github.com/litlfred/qou/pull/637",
@@ -3958,12 +3960,12 @@ export const references: CSLData[] = [
   }),
 
   ref({
-    id: "folio-assistant/computations/probe_magic_shell_empirical_instantiation.py",
+    id: "probe-magic-shell-empirical-instantiation",
     type: "manuscript",
     title: "probe_magic_shell_empirical_instantiation.py — magic-shell empirical instantiation probe",
     URL: "https://github.com/litlfred/qou/blob/main/folio-assistant/computations/probe_magic_shell_empirical_instantiation.py",
     issued: { "date-parts": [[2026]] },
-    note: "Internal computation script referenced by conj-magic-shell-stabilization.lean",
+    note: "Internal computation script (path: folio-assistant/computations/probe_magic_shell_empirical_instantiation.py) referenced by conj-magic-shell-stabilization.lean",
   }),
 
   ref({

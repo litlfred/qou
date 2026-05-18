@@ -141,7 +141,7 @@ def betaDecayNStarCandidates : NStarCandidates where
     requirement.) -/
 -- Ref: [manuscript] conj:brane-tower-z-habiro §"What this conjecture
 --      would buy"
--- Ref: [#637 review] copilot-pull-request-reviewer comment on
+-- Ref: [pr-637-review] copilot-pull-request-reviewer comment on
 --      RecoversWithRelativeError tautology
 def RecoversWithRelativeError
     (nStar : ℕ) (phiProj B_target eps : ℝ) : Prop :=

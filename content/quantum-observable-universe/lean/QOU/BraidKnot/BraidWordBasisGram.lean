@@ -84,7 +84,7 @@ def gramOffDiagonalWitnessValue : ℝ := 1.21967301
     G_{σ_0σ_1, σ_0σ_1} = tr_M(σ_0 σ_1 σ_0 σ_1) at q_0. -/
 def gramDiagonalWitnessValue : ℝ := 0.36460604
 
--- Ref: [#639] probe-braid-word-basis-gram.witness.json
+-- Ref: [pr-639] probe-braid-word-basis-gram.witness.json
 /-- **Structural finding (witness-recorded).** At H_3(q_0), there
     exists an off-diagonal Gram entry STRICTLY GREATER THAN the
     corresponding diagonal entry. The empirical witness gives
@@ -99,7 +99,7 @@ theorem off_diagonal_exceeds_diagonal_at_q0 :
   unfold gramOffDiagonalWitnessValue gramDiagonalWitnessValue
   norm_num
 
--- Ref: [#639] probe-braid-word-basis-gram.witness.json
+-- Ref: [pr-639] probe-braid-word-basis-gram.witness.json
 /-- **Structural finding (witness-recorded).** The σ-basis Gram at
     H_3(q_0) has a non-trivial off-diagonal entry bounded below
     by 1.0. -/
