@@ -200,8 +200,15 @@ def main() -> int:
                "assembly rather than a fundamental contribution.")
     # The structural finding IS that no clean match exists; the
     # assertion documents that we explored at least 15 candidates.
-    w.add_assertion("candidates_enumerated",
-                    computed=len(out), expected=len(out), tolerance=0)
+    # Fixed lower-bound check (Copilot review on PR #757) — catches
+    # accidental enumeration regressions.
+    EXPECTED_MIN_CANDIDATES = 15
+    w.add_assertion(
+        "candidates_enumerated",
+        computed=len(out),
+        expected=EXPECTED_MIN_CANDIDATES,
+        tolerance=max(0, len(out) - EXPECTED_MIN_CANDIDATES),
+    )
     print(f"  Witness: {w.save().name}")
     return 0
 

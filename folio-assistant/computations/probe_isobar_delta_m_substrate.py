@@ -68,15 +68,19 @@ from mpmath import mp, mpf
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, load_and_hash_upstream  # noqa: E402
 from codata_constants import M_P_MEV_VALIDATION, M_N_MEV_VALIDATION  # noqa: E402
 
 mp.dps = 50
 
 Q_WIT = HERE / "q-pinning-50-digit.witness.json"
-# Context manager to avoid file-handle leak (gemini #690 medium).
-with Q_WIT.open() as _fh:
-    q = mpf(json.load(_fh)["derived_50_digit"]["q"])
+# Module-level upstream-hash accumulator — the WitnessBuilder doesn't
+# exist yet, so we record the hash here and push it into the builder
+# later (Copilot review on PR #757).
+_UPSTREAM_HASHES: list[dict] = []
+_q_body, _q_hash = load_and_hash_upstream(Q_WIT)
+_UPSTREAM_HASHES.append(_q_hash)
+q = mpf(_q_body["derived_50_digit"]["q"])
 qi = mpf(1) / q
 
 # Validation-only CODATA constants — used as COMPARISON targets,
@@ -175,6 +179,11 @@ def main() -> int:
     # mpmath version (gemini #688: better traceability than "python+mpmath").
     w = (WitnessBuilder("probe-isobar-delta-m-substrate", engine="mpmath")
          .set_description("Isobar mass difference test for prop:flavor-split-substrate"))
+    # Push the module-level upstream-hash into the builder so
+    # `data.upstream_witness_hashes` carries the q-pinning sha256
+    # (Copilot review on PR #757).
+    for _hr in _UPSTREAM_HASHES:
+        w._upstream_hashes.append(_hr)
     w.add_data("q_pinned", str(q))
     w.add_data("substrate_delta_m", {
         "formula_dimensionless": "(q-1)² · (1 - q⁻⁴) / 3",

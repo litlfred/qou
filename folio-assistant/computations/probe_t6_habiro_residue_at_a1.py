@@ -159,8 +159,15 @@ def main() -> int:
                "aggressive-truncation; T6 at A=3 (tritium) DIVERGENT under "
                "the current truncation depth.  Full per-A residue-depth "
                "sweep deferred (compute-heavy).  Item B (T5) takes priority.")
-    w.add_assertion("t6_witness_loaded", computed=len(out),
-                    expected=len(out), tolerance=0)
+    # Fixed expected row count (Copilot review on PR #757) — catches
+    # an upstream T6 witness that drops the A=1..4 rows.
+    EXPECTED_T6_ROWS = 4  # A ∈ {1, 2, 3, 4}
+    w.add_assertion(
+        "t6_witness_loaded",
+        computed=len(out),
+        expected=EXPECTED_T6_ROWS,
+        tolerance=0,
+    )
     print(f"  Witness: {w.save().name}")
     return 0
 

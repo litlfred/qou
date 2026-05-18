@@ -19,7 +19,7 @@
   "scriptHash": "88af2494619d",
   "scriptCommitSha": "7676454f708371811845a96ce25f60e5131fbd8a",
   "description": "Per-interface A^λ_{μν}(I) extraction at A=3 (split 3+6) for the three canonical interfaces pp, nn, pn.  Verifies the linearity identity A_pn = (A_pp + A_nn) / 2 (which follows from the linearity of the LR projection in I per refined Sub-lemma 2.1).  Identity is checked at the χ-level: M·(predicted_pn - actual_pn) should be zero, since both sides of the identity reproduce the same χ^λ(β_1·I_pn·β_2).",
-  "contentBlock": "conj:operator-valued-sublemma-2-1",
+  "contentBlock": "prop:crystal-r-matrix-sub-lemma",
   "auditOnly": "docs/audits/2026-05-09-A-operator-rank-structure.md",
   "parameters": {
     "A": 3,

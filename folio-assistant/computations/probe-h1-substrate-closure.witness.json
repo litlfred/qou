@@ -1,36 +1,36 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-18T04:40:11.687904+00:00",
-  "commitSha": "846e5cec9068644b8c593de89d446b81fa57be79",
+  "computedAt": "2026-05-18T18:42:34.654245+00:00",
+  "commitSha": "f9007c5034e57a11bac58640b0bf50cbe721c119",
   "assertions": [
     {
       "name": "h1_within_0.1pct",
-      "computed": 0.06882778385143211,
+      "computed": 0.06882778385142954,
       "expected": 0.0,
       "passed": true,
       "tolerance": 0.1
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 8,
   "computation": "probe-h1-substrate-closure",
   "scriptFile": "probe_h1_substrate_closure.py",
-  "scriptHash": "87a8049a449f",
-  "scriptCommitSha": "846e5cec9068644b8c593de89d446b81fa57be79",
+  "scriptHash": "92501a073813",
+  "scriptCommitSha": "15789b499f7e18550d918484717d26fb1194b948",
   "description": "Honest ¹H closure via substrate m_p (C2 inflection) + CAL-1 m_e + Rydberg BE(¹H).  Reports residual +0.069 % vs CODATA.  Item 4 of the #663 follow-up queue.",
   "data": {
     "substrate_inputs": {
       "m_p_MeV": "938.9182313400801000000000000000000000000",
       "m_e_MeV": "0.5109989499999999518209392590506467968225",
-      "BE_H1_MeV": "0.00001360569300000000000000000000000000000000",
-      "BE_H1_eV": "13.60569300000000000000000000000000000000"
+      "BE_H1_MeV": "0.00001360569300000000048100901040015742182732",
+      "BE_H1_eV": "13.60569300000000048100901040015742182732"
     },
     "h1_prediction": {
-      "m_h1_pred_MeV": "939.4292166843870999518209392590506467968",
-      "m_h1_codata_MeV": "938.7830731000000000000000000000000000000",
-      "residual_MeV": "0.6461435843870999518209392590506467968225",
-      "residual_pct": 0.06882778385143211
+      "m_h1_pred_MeV": "939.4292166843870999518204582500402466394",
+      "m_h1_codata_MeV": "938.7830731000000241692760027945041656494",
+      "residual_MeV": "0.6461435843870757825444554555360809899867",
+      "residual_pct": 0.06882778385142954
     },
     "residual_source": {
       "m_p_substrate_residual_MeV": "0.6461431800801000000000000000000000000000",

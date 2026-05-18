@@ -108,6 +108,35 @@ import os as _os  # noqa: E402
 from _li_2_q_util import flavor_split_subleading as _flavor_split  # noqa: E402
 
 
+# Module-level accumulator for upstream-witness hash records.
+# Each call to ``_load_upstream(path)`` appends one entry; the
+# accumulated list is emitted under ``data.upstream_witness_hashes``
+# in the script's witness output (anti-staleness; see
+# docs/audits/2026-05-16-stale-witness-infra-gap.md).
+_UPSTREAM_HASHES: list[dict] = []
+# Per-path memo so repeated reads of the same upstream witness only
+# perform one sha256 + parse — `load_atomic_tr_m_status` and
+# `load_atomic_tr_m` both iterate the same extension files (gemini
+# #663 review: avoid the hundreds-of-redundant-I/O regression).
+_UPSTREAM_CACHE: dict[str, dict] = {}
+
+
+def _load_upstream(path: Path) -> dict:
+    """Read an upstream witness file, record its hash, return the body.
+
+    Cached per-path: the second and subsequent reads of the same
+    file return the memoised body and append the same hash record
+    only once — see ``_UPSTREAM_CACHE``.
+    """
+    key = str(path.resolve())
+    if key in _UPSTREAM_CACHE:
+        return _UPSTREAM_CACHE[key]
+    body, hr = load_and_hash_upstream(path)
+    _UPSTREAM_HASHES.append(hr)
+    _UPSTREAM_CACHE[key] = body
+    return body
+
+
 def _load_substrate_m_p_MeV() -> mp.mpf:
     """Read C2-inflection m_p from the merged probe witness; fall back
     to the published value (938.9182 MeV at q_0) if the witness is
@@ -119,14 +148,24 @@ def _load_substrate_m_p_MeV() -> mp.mpf:
     c2_wit = HERE / "probe-a-selection-criteria.witness.json"
     if not c2_wit.exists():
         return mp.mpf("938.9182")
-    with c2_wit.open() as fh:
-        c2_data = json.load(fh).get("data", {})
-    # Defensive: tolerate explicit JSON null at closest_to_post_hoc
-    # (gemini #690 medium: nested .get() failure on null vs missing).
-    return mp.mpf(str(
-        (c2_data.get("closest_to_post_hoc") or {}).get("m_p_pred")
-        or "938.9182"
-    ))
+    # Load + hash so witness_dependency_drift catches changes to the
+    # upstream C2 witness (Copilot review on PR #757).
+    c2_body = _load_upstream(c2_wit)
+    c2_data = c2_body.get("data", {})
+    # Pin to the explicit C2 inflection criterion (`d2A/da2=0`) rather
+    # than the moving `closest_to_post_hoc` summary — the latter could
+    # shift if a new criterion was added that happened to match
+    # `a_post_hoc` more closely (Copilot review on PR #757).
+    criteria = c2_data.get("criteria_tested", [])
+    c2_entry = next(
+        (c for c in criteria if c.get("criterion", "").startswith("C2 d2A/da2=0")),
+        None,
+    )
+    if c2_entry is None:
+        # Fallback to the legacy summary if no explicit C2 row exists
+        # (shouldn't happen on a normally-emitted witness).
+        c2_entry = c2_data.get("closest_to_post_hoc") or {}
+    return mp.mpf(str(c2_entry.get("m_p_pred") or "938.9182"))
 
 
 # Module-level constants — always defined regardless of mode
@@ -157,34 +196,6 @@ else:
         "substrate-pure (C2 inflection + prop:flavor-split-substrate "
         "with (1+ℏ_q³) sub-leading correction; no CODATA m_p / m_n input)"
     )
-
-# Module-level accumulator for upstream-witness hash records.
-# Each call to ``_load_upstream(path)`` appends one entry; the
-# accumulated list is emitted under ``data.upstream_witness_hashes``
-# in the script's witness output (anti-staleness; see
-# docs/audits/2026-05-16-stale-witness-infra-gap.md).
-_UPSTREAM_HASHES: list[dict] = []
-# Per-path memo so repeated reads of the same upstream witness only
-# perform one sha256 + parse — `load_atomic_tr_m_status` and
-# `load_atomic_tr_m` both iterate the same extension files (gemini
-# #663 review: avoid the hundreds-of-redundant-I/O regression).
-_UPSTREAM_CACHE: dict[str, dict] = {}
-
-
-def _load_upstream(path: Path) -> dict:
-    """Read an upstream witness file, record its hash, return the body.
-
-    Cached per-path: the second and subsequent reads of the same
-    file return the memoised body and append the same hash record
-    only once — see ``_UPSTREAM_CACHE``.
-    """
-    key = str(path.resolve())
-    if key in _UPSTREAM_CACHE:
-        return _UPSTREAM_CACHE[key]
-    body, hr = load_and_hash_upstream(path)
-    _UPSTREAM_HASHES.append(hr)
-    _UPSTREAM_CACHE[key] = body
-    return body
 
 # ── CODATA reference data (kept identical to legacy table) ─────
 ATOMS_CODATA = {

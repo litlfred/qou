@@ -1,21 +1,21 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T17:17:10.906375+00:00",
-  "commitSha": "2cb3430c7588bc0641618d66bd7fa525ec9d381e",
+  "computedAt": "2026-05-18T18:32:09.955305+00:00",
+  "commitSha": "f9007c5034e57a11bac58640b0bf50cbe721c119",
   "assertions": [
     {
       "name": "no_missing_labels",
-      "computed": 0.0,
+      "computed": 1.0,
       "expected": 1.0,
-      "passed": false,
+      "passed": true,
       "tolerance": 0.0,
       "unit": "boolean (1.0 = every label-shaped contentBlock resolves)",
       "source": "Closure gate: when this passes, every witness's contentBlock points at a real registered block label.  Currently informational; the production-side fix is a per-witness retarget."
     }
   ],
-  "allPassed": false,
-  "durationMs": 8,
+  "allPassed": true,
+  "durationMs": 7,
   "computation": "content-block-label-audit",
   "scriptFile": "content_block_label_audit.py",
   "scriptHash": "d86c5a63a3d7",
@@ -23,40 +23,39 @@
   "description": "I5 audit per local/compute-integration-watcher: every folio-assistant/computations/*.witness.json with a `contentBlock` field is cross-checked against the union of all `label: \"...\"` declarations in content/**/*.ts manifests. Reports `ok` / `missing_label` / `informational_label` per field. Operationalises the 9-hit I5 count from the 2026-05-18 idle sweep (PR #737).",
   "contentBlock": "I5 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
-    "total_fields_audited": 225,
+    "total_fields_audited": 230,
     "registered_labels_count": 2060
   },
   "data": {
     "by_result": {
-      "missing_label": 6,
-      "ok": 213,
-      "informational_label": 6
+      "informational_label": 14,
+      "ok": 216
     },
     "rows": [
       {
         "witness": "folio-assistant/computations/A-operator-extract-general.witness.json",
-        "content_block_value": "conj:operator-valued-sublemma-2-1",
-        "result": "missing_label"
+        "content_block_value": "operator-valued sub-lemma 2.1 (A-operator extraction probe; no formal block yet)",
+        "result": "informational_label"
       },
       {
         "witness": "folio-assistant/computations/A-operator-extract-kron.witness.json",
-        "content_block_value": "conj:operator-valued-sublemma-2-1",
-        "result": "missing_label"
+        "content_block_value": "operator-valued sub-lemma 2.1 (A-operator extraction probe; no formal block yet)",
+        "result": "informational_label"
       },
       {
         "witness": "folio-assistant/computations/A-operator-extract-reduced.witness.json",
-        "content_block_value": "conj:operator-valued-sublemma-2-1",
-        "result": "missing_label"
+        "content_block_value": "prop:crystal-r-matrix-sub-lemma",
+        "result": "ok"
       },
       {
         "witness": "folio-assistant/computations/A-operator-per-interface.witness.json",
-        "content_block_value": "conj:operator-valued-sublemma-2-1",
-        "result": "missing_label"
+        "content_block_value": "prop:crystal-r-matrix-sub-lemma",
+        "result": "ok"
       },
       {
         "witness": "folio-assistant/computations/A-operator-rank-probe.witness.json",
-        "content_block_value": "conj:operator-valued-sublemma-2-1",
-        "result": "missing_label"
+        "content_block_value": "operator-valued sub-lemma 2.1 (A-operator extraction probe; no formal block yet)",
+        "result": "informational_label"
       },
       {
         "witness": "folio-assistant/computations/a-K-via-lp-dual-full.witness.json",
@@ -374,6 +373,11 @@
         "result": "ok"
       },
       {
+        "witness": "folio-assistant/computations/guarded-off-audit.witness.json",
+        "content_block_value": "I3 antipattern (compute-integration-watcher.md §antipatterns)",
+        "result": "informational_label"
+      },
+      {
         "witness": "folio-assistant/computations/h2-integer-lp.witness.json",
         "content_block_value": "prop:h2-lp-dual-binding",
         "result": "ok"
@@ -437,6 +441,21 @@
         "witness": "folio-assistant/computations/hyperbolic-volumes.witness.json",
         "content_block_value": "prop:mostow-confinement",
         "result": "ok"
+      },
+      {
+        "witness": "folio-assistant/computations/i1-no-probe-audit.witness.json",
+        "content_block_value": "I1 antipattern (compute-integration-watcher.md §antipatterns)",
+        "result": "informational_label"
+      },
+      {
+        "witness": "folio-assistant/computations/i2-probe-only-audit.witness.json",
+        "content_block_value": "I2 antipattern (compute-integration-watcher.md §antipatterns)",
+        "result": "informational_label"
+      },
+      {
+        "witness": "folio-assistant/computations/incomplete-coverage-audit.witness.json",
+        "content_block_value": "I13 antipattern (compute-integration-watcher.md §antipatterns)",
+        "result": "informational_label"
       },
       {
         "witness": "folio-assistant/computations/intermediate-knot-detection.witness.json",
@@ -566,6 +585,11 @@
       {
         "witness": "folio-assistant/computations/lean-ref-resolution-audit.witness.json",
         "content_block_value": "I12 antipattern (compute-integration-watcher.md §antipatterns)",
+        "result": "informational_label"
+      },
+      {
+        "witness": "folio-assistant/computations/legacy-formula-audit.witness.json",
+        "content_block_value": "I10 antipattern (compute-integration-watcher.md §antipatterns)",
         "result": "informational_label"
       },
       {
@@ -1055,8 +1079,8 @@
       },
       {
         "witness": "folio-assistant/computations/term6-habiro-residue-mpfr-50dps.witness.json",
-        "content_block_value": "rem:term6-binding-density",
-        "result": "missing_label"
+        "content_block_value": "prop:term6-binding-density",
+        "result": "ok"
       },
       {
         "witness": "folio-assistant/computations/term6-residues-at-roots.witness.json",

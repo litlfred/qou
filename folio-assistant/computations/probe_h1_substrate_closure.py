@@ -50,15 +50,21 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 from witness_base import WitnessBuilder  # noqa: E402
-from codata_constants import M_E_MEV, M_P_MEV_VALIDATION  # noqa: E402
+from codata_constants import (  # noqa: E402
+    M_E_MEV,
+    M_P_MEV_VALIDATION,
+    M_H1_MEV_VALIDATION,
+    RYDBERG_eV_VALIDATION,
+)
 
 mp.dps = 50
 
 A_C2_WIT = HERE / "probe-a-selection-criteria.witness.json"
 
 # CODATA reference values for the comparison only (not inputs).
-M_H1_CODATA_MEV = mpf("938.7830731")     # PDG / AME 2020 ¹H atomic mass
-BE_H1_eV = mpf("13.605693")              # Rydberg ionisation energy
+# Imported from the constants registry per Copilot review on PR #757.
+M_H1_CODATA_MEV = M_H1_MEV_VALIDATION
+BE_H1_eV = RYDBERG_eV_VALIDATION
 BE_H1_MeV = BE_H1_eV * mpf("1e-6")
 
 
