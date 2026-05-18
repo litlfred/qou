@@ -72,7 +72,6 @@
   "scriptHash": "ce83de9142e8",
   "scriptCommitSha": "f178edd94a6d880523fadda22b11180b48760635",
   "description": "Closes the character gap in the partition-sum tr_M path: tr_M(β) = Σ_λ y_λ(q) · χ^λ_q(β) via canonical Wenzl y_λ (numerical-q-from-start) + Hoefsmit seminormal χ^λ_q at q_0. Cross-checks against `markov_trace_recursive` reference (atomic-tr-m-mpfr-50dps.witness.json). Closes the residual gap identified in tr-m-jones-markov-cross-check.witness.json (rel err ~55-80% with q=1 MN character → expected ~1e-6 with q-Hecke seminormal character).",
-  "auditOnly": "docs/audits/2026-05-08-q-hecke-character-gap-closure.md",
   "data": {
     "cross_check_table": [
       {

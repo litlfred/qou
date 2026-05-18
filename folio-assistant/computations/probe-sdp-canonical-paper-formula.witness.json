@@ -12,7 +12,6 @@
   "scriptCommitSha": "d2553e83c5b1e619b89f506ad0ad475a06954084",
   "description": "Test prop:atom-knot-mass-derivation flagship formula B(H) = m_e · ρ · tr_M(T_w(H)) on the SDP-canonical braid words + ρ_factor from joint-tower-sdp-h6-h9.witness.json. Tests both Plancherel and Wenzl-Schur Markov-trace conventions. Result: -87% to -100% error on all of {D, T, ³He} for both conventions; single-term formula is structurally inadequate.",
   "contentBlock": "prop:atom-knot-mass-derivation",
-  "auditOnly": "docs/audits/2026-05-10-workplan-0b-script-rewire-handoff.md",
   "parameters": {
     "q_0": 1.1099785955541805,
     "m_e_MeV": 0.51099895
@@ -44,7 +43,7 @@
               3
             ],
             "d_lambda": 1,
-            "dim_q": 1,
+            "dim_q": 1.0,
             "chi": 1.2320524825884343,
             "w_planch": 0.16338322733975824,
             "y_wenzl": 0.4153957863345666,
@@ -71,7 +70,7 @@
               1
             ],
             "d_lambda": 1,
-            "dim_q": 1,
+            "dim_q": 1.0,
             "chi": 0.8116537356420811,
             "w_planch": 0.16338322733975824,
             "y_wenzl": 0.022744945705705264,
@@ -201,7 +200,7 @@
             "dim_q": 0.9999999999999998,
             "chi": 1.5179533198523165,
             "w_planch": 0.007615387159641048,
-            "y_wenzl": 0.00008619758913550236,
+            "y_wenzl": 8.619758913550236e-05,
             "contrib_P": 0.011559802220937831,
             "contrib_W": 0.0001308439165915018
           }
@@ -232,7 +231,7 @@
               3
             ],
             "d_lambda": 1,
-            "dim_q": 1,
+            "dim_q": 1.0,
             "chi": 1.0000000000000027,
             "w_planch": 0.16338322733975824,
             "y_wenzl": 0.4153957863345666,
@@ -259,8 +258,8 @@
               1
             ],
             "d_lambda": 1,
-            "dim_q": 1,
-            "chi": 1,
+            "dim_q": 1.0,
+            "chi": 1.0,
             "w_planch": 0.16338322733975824,
             "y_wenzl": 0.022744945705705264,
             "contrib_P": 0.16338322733975824,

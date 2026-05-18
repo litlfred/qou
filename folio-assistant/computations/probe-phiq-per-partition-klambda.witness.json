@@ -43,7 +43,6 @@
   "scriptCommitSha": "6c25f7a51772b3a776d7cd7a88874ef04d66c3e7",
   "description": "Per-partition k_λ closure probe: tests non-uniform truncation across Wedderburn blocks. Reads PR #638's per-eigenvalue spectra; recomputes per-partition contributions; finds that ONE dominant partition per atom drives the failure at uniform k=2 (³He: λ=[5,4] contributes -11.69 of -10.60 total; D: [2,2,1,1] contributes -6.22; T: [6,3] contributes -3.00). Assigning k_λ=1 to the dominant outlier and k_λ=2 to all others collapses tower magnitude to |tower|<2 for all 3 atoms — positive structural finding. Remaining open: pin the substrate invariant of λ that selects k_λ. Empirical: outlier partitions have the maximum eigenvalue magnitude in their ρ_λ(β_atom) spectrum (³He max |μ|=10.69 at [5,4]; T max |μ|=8.23 at [4,3,1,1]). Class C (diagnostic). Data source: probe-phiq-operator-valued.witness.json on PR #638.",
   "contentBlock": "conj:brane-tower-z-habiro",
-  "auditOnly": "docs/audits/2026-05-11-per-partition-k-lambda-selector-investigation.md",
   "parameters": {
     "source_witness": "probe-phiq-operator-valued.witness.json (PR #638)",
     "source_branch": "claude/close-level-selection-rule-bvMvw",
@@ -59,9 +58,9 @@
           1
         ],
         "dim": 9,
-        "contrib_k1": 0,
+        "contrib_k1": 0.0,
         "contrib_k2": -6.2203,
-        "contrib_k3": -65
+        "contrib_k3": -65.0
       },
       "tritium": {
         "lambda": [
@@ -71,7 +70,7 @@
         "dim": 48,
         "contrib_k1": 0.05,
         "contrib_k2": -3.0006,
-        "contrib_k3": -27
+        "contrib_k3": -27.0
       },
       "he3": {
         "lambda": [
@@ -100,7 +99,7 @@
         ],
         "k_lambda_dominant": 1,
         "k_lambda_others": 2,
-        "dominant_contrib": 0,
+        "dominant_contrib": 0.0,
         "non_dominant_sum": 0.8764000000000003,
         "total_tower": 0.8764000000000003,
         "abs_total_tower": 0.8764000000000003,

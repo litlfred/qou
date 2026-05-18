@@ -37,7 +37,6 @@
   "scriptCommitSha": "3f2bd2de45209c7c48790f47f6a166d271d65e06",
   "description": "Demazure-fiber Markov-trace evaluator: replaces the manual Hecke-energy LP cost vector by Kashiwara weight-lattice projection.  For every Weyl element w ∈ S_n and partition λ ⊢ n, computes the Demazure character D_w(λ), the principal-specialisation ratio D_w/D_{w_0}, and the Demazure-fiber Markov-trace functional T^Dem(λ; w) = y_λ · D_w(λ)/D_{w_0}(λ).  At w = w_0 reduces to the standard Markov trace; at shorter w gives the structural Demazure resonance width.",
   "contentBlock": "prop:demazure-fiber-markov-trace",
-  "auditOnly": "docs/audits/onepb-status-dashboard.md",
   "data": {
     "verification": {
       "demazure_w0_equals_schur": {
@@ -480,6 +479,6 @@
       }
     },
     "precision": "symbolic_q",
-    "truncation_eps": 0
+    "truncation_eps": 0.0
   }
 }

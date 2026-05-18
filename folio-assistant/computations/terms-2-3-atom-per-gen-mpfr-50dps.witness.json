@@ -11,7 +11,6 @@
   "scriptHash": "dfe6b983d000",
   "scriptCommitSha": "17f878e6857f795273cff6fd102ec2ac2a968c7b",
   "description": "MPFR-native per-generator additive Wedderburn volumes V̂_i^full at 50 dps for the atom braid at A = 1, 2, 3 (proton, neutron, deuteron, tritium, helium-3). Feeds mass_formula_6term_mpfr_50dps.term_23_brane_tower_mp as the source of T2 and T3 per-generator volumes. PR #671 Item A: this witness now covers A=1 (was missing); either the proton T2+T3 yields a non-zero brane-tower contribution (closes m_p chain Items A/B/C analytically) or returns ~0 (confirms brane-tower-z-habiro level-selection structurally forbids A=1, per Story B).",
-  "auditOnly": "docs/audits/2026-05-09-proton-m_e-anomaly.md",
   "parameters": {
     "q_0_50dps": "1.1099785955541805752815940796095093779932822799587",
     "q_inv_50dps": "0.90091827356430111417998565731158747153152597604222",

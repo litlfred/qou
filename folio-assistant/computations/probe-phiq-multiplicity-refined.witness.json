@@ -19,12 +19,11 @@
   "scriptCommitSha": "unknown",
   "description": "Multiplicity-refined and Type-B-folded-crystal-depth `n_⋆` candidates for conj:brane-tower-z-habiro.  Tests four substrate-derived per-atom rules (R1 multiplicity-shifted Hecke; R2 multiplicity-truncated Hecke; R3 Type-B-folded self-dual partition diagonal depth; R4 combination) using the per-generator scalar volumes (hecke_core.atom_per_generator_volumes) and the per-irrep Wedderburn rows persisted in probe-phiq-operator-valued.witness.json (commit 00292059).  Substrate-derived per-atom n_⋆ is permitted by the conjecture's falsifiability criterion; ad-hoc retuning is not.  This is the remaining open branch of the n_⋆ existence claim after both scalar-eigenvalue and operator-valued (per-eigenvalue) uniform-k forms have been refuted.",
   "contentBlock": "conj:brane-tower-z-habiro",
-  "auditOnly": "docs/audits/2026-05-11-brane-tower-n_star-closure-audit.md",
   "parameters": {
     "q_0": 1.1099785955541805,
     "m_e_MeV": 0.51099895,
     "near_pole_epsilon": 0.15,
-    "threshold_pct": 10,
+    "threshold_pct": 10.0,
     "rules_tested": [
       "R1_mult_shifted",
       "R2_mult_truncated",

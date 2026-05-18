@@ -93,7 +93,6 @@
   "scriptCommitSha": "2e44f1ec9376f4fa1247a7ee3db1db09907b81df",
   "description": "α_k mass-tower coefficients via the Macdonald hook-content closed form for y_λ.  Replaces the linear-system / Hoefsmit-matrix path used in alpha_k_jones_markov_h3.py by a rounding-free algebraic evaluation of y_λ for every partition λ ⊢ n at every n ≤ 6, and cross-checks against the Markov-axiom prediction tr_M(σ_1 ⋯ σ_{k-1}) = z^{k-1}.",
   "contentBlock": "prop:macdonald-hook-telescope",
-  "auditOnly": "docs/audits/codata-reconciliation.md",
   "data": {
     "q_0": "1.1099785955541805752815940796095093779932822799587",
     "z_markov": "0.49932033403359825002066908467672150636931636263446",

@@ -12,7 +12,6 @@
   "scriptCommitSha": "2bcf340fec1ade81e0fccfa36480c42f55775118",
   "description": "M4 mass table: full N=4 categorical Q_β chain + interface-type-resolved magic-shell coupling correction (from PR #656 v6 probe). Tests whether adding the Δ_coupling(Z,N) = [A−2]_q·E_0·log(1/h) + (n_pp-n_nn)·κ correction closes the structural T/³He Z↔N asymmetry that the Q_β chain alone cannot reach (per M3 finding).",
   "contentBlock": "prop:magic-shell-coupling-witness",
-  "auditOnly": "docs/audits/2026-05-16-m4-coulomb-bottleneck.md",
   "parameters": {
     "kappa_per_excess_MeV": -1.0707907503265857,
     "kappa_source": "empirical_from_pr656_v6"
@@ -27,10 +26,10 @@
         "M_codata_MeV": 938.27208816,
         "M_pred_n4_MeV": 937.5965043710329,
         "err_n4_ppm": -720.0297200483868,
-        "delta_coupling_MeV": 0,
+        "delta_coupling_MeV": 0.0,
         "M_pred_m4_MeV": 937.5965043710329,
         "err_m4_ppm": -720.0297200483868,
-        "improvement_factor": 1
+        "improvement_factor": 1.0
       },
       {
         "atom": "n",
@@ -40,10 +39,10 @@
         "M_codata_MeV": 939.56542052,
         "M_pred_n4_MeV": 938.7466275041467,
         "err_n4_ppm": -871.4592916799318,
-        "delta_coupling_MeV": 0,
+        "delta_coupling_MeV": 0.0,
         "M_pred_m4_MeV": 938.7466275041467,
         "err_m4_ppm": -871.4592916799318,
-        "improvement_factor": 1
+        "improvement_factor": 1.0
       },
       {
         "atom": "D",
@@ -53,10 +52,10 @@
         "M_codata_MeV": 1875.61294257,
         "M_pred_n4_MeV": 1875.5822087951071,
         "err_n4_ppm": -16.385989985140146,
-        "delta_coupling_MeV": 0,
+        "delta_coupling_MeV": 0.0,
         "M_pred_m4_MeV": 1875.5822087951071,
         "err_m4_ppm": -16.385989985140146,
-        "improvement_factor": 1
+        "improvement_factor": 1.0
       },
       {
         "atom": "T",

@@ -1,11 +1,6 @@
 {
   "computation": "habiro-coefficients-atomic",
-  "description": "Habiro / cyclotomic expansion tr_M(T_w, q) = Σ_m a_m·(u;u)_m (u = q^{1/2}) for atomic braids p, n, D. Verifies the integrality and termination properties of the Habiro coefficients claimed in habiro-ring.md and full-pole-structure-mass-trace.md.",
-  "auditOnly": "docs/audits/2026-05-03-T2T3-derivation-chain-analysis.md",
-  "parameters": {
-    "q_0": 1.1099785955541805,
-    "engine": "sympy Poly + sequential cyclotomic division"
-  },
+  "description": "Habiro / cyclotomic expansion tr_M(T_w, q) = \u03a3_m a_m\u00b7(u;u)_m (u = q^{1/2}) for atomic braids p, n, D. Verifies the integrality and termination properties of the Habiro coefficients claimed in habiro-ring.md and full-pole-structure-mass-trace.md.",
   "reference_blocks": [
     "def:habiro-ring",
     "prop:full-pole-structure-mass-trace",
@@ -13,6 +8,10 @@
     "prop:e-infinity-page-identifications"
   ],
   "timestamp": "2026-05-09T15:56:21.689835+00:00",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "engine": "sympy Poly + sequential cyclotomic division"
+  },
   "results": {
     "p (proton, A=1)": {
       "Z": 1,

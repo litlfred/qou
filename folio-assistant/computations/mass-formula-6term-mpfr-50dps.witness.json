@@ -73,7 +73,6 @@
   "scriptCommitSha": "b835332dc4a6ffd6aff2a9e5c684ace4f82c1e7b",
   "description": "Six-term unified mass formula evaluated at 50 dps mpmath throughout (Phase A precision lift).  Replaces the f64 chokepoints in mass_formula_6term.py: native mp_Phi_q for Term 2/3 brane-tower contributions; Term 6 via the Habiro residue path (cyclotomic completion handles higher-order poles intrinsically).",
   "contentBlock": "thm:knot-mass-formula-unified",
-  "auditOnly": "docs/audits/2026-05-09-mass-table-1ppb-audit.md",
   "parameters": {
     "q_0": "1.1099785955541805",
     "working_dps": 50,

@@ -25,7 +25,6 @@
   "scriptCommitSha": "5030d3fe3cfacdf8e0d9bad767e139ed53663122",
   "description": "Joint PR #638 + #639 operator-valued Φ_q probe under the per-partition k_λ rule, sweeping non-dominant depth N ∈ {1, 2, 3, 4, 5}. Tests whether pushing the non-dominant Wedderburn blocks to deeper truncation approaches PR #639's substrate c(K) ceiling (N=3 → 9.4 ppb, N=4 → 0.092 ppb). Implements TWO selectors for the dominant partition: (A) max-|μ| — the selector PR #639's `per-partition-k-lambda-rule.md` states; (B) max-|y·contrib_k=2| — the selector whose values match PR #639's table. Both are run for each N so the gap between the .md's stated rule, its table, and the binding-formula reality is on the record. Eigenvalues via numpy.linalg.eigvals on Hoefsmit seminormal ρ_λ(β); per-eigenvalue Φ_q via the global `phi_q_truncated_complex` (with pole guard); Wedderburn-summed with signed y_λ(q_0); |·| at binding-formula level. Note: this probe records `allPassed: false` — under both selectors the worst-case error at N=2 is ~50%, not the ~5% PR #639's .md claims; full reconciliation in `docs/audits/2026-05-11-per-partition-k-lambda-selector-investigation.md`. Cherry-picks (per /coordinate §10): #638's eigenvalue / operator-trace infrastructure + #639's per-partition k_λ rule and selector candidates + #639's c(K) ceiling for comparison.",
   "contentBlock": "conj:brane-tower-z-habiro",
-  "auditOnly": "docs/audits/2026-05-11-per-partition-k-lambda-selector-investigation.md",
   "parameters": {
     "q_0": 1.1099785955541805,
     "hbar_q": 0.09908172643569886,
@@ -38,21 +37,21 @@
       5
     ],
     "k_dominant": 1,
-    "threshold_pct": 5
+    "threshold_pct": 5.0
   },
   "data": {
     "hbar_q_50dps_string": "0.099081726435698888599823419554013526067137718200684",
     "ceiling": {
       "1": {
-        "bound_rel": 0.00009733272400930723,
+        "bound_rel": 9.733272400930723e-05,
         "bound_ppb": 97332.72400930723
       },
       "2": {
-        "bound_rel": 9.555337001297602e-7,
+        "bound_rel": 9.555337001297602e-07,
         "bound_ppb": 955.5337001297602
       },
       "3": {
-        "bound_rel": 9.38065446515565e-9,
+        "bound_rel": 9.38065446515565e-09,
         "bound_ppb": 9.38065446515565
       },
       "4": {
@@ -316,7 +315,7 @@
         "tritium": {
           "tr_M_abs": 0.10405398879467263,
           "tower_complex_real": 226.16174157471931,
-          "tower_complex_imag": -1.1630202239905163e-9,
+          "tower_complex_imag": -1.1630202239905163e-09,
           "tower_abs": 226.16174157471931,
           "B_op_MeV": 233.84301183393316,
           "AME_MeV": 8.481798,
@@ -339,7 +338,7 @@
           "err_ppb": 316151546926.5709,
           "ame_close_within_threshold": false,
           "ceiling_ppb": 0.0009040811206129414,
-          "headroom_observed_over_ceiling": 349693782690904
+          "headroom_observed_over_ceiling": 349693782690904.0
         }
       }
     },
@@ -533,12 +532,12 @@
           "err_ppb": 431009252474.1444,
           "ame_close_within_threshold": false,
           "ceiling_ppb": 0.0009040811206129414,
-          "headroom_observed_over_ceiling": 476737366423416
+          "headroom_observed_over_ceiling": 476737366423416.0
         },
         "tritium": {
           "tr_M_abs": 0.10405398879467263,
           "tower_complex_real": 583.6513317463125,
-          "tower_complex_imag": -1.1804535823955111e-9,
+          "tower_complex_imag": -1.1804535823955111e-09,
           "tower_abs": 583.6513317463125,
           "B_op_MeV": 599.196622261162,
           "AME_MeV": 8.481798,

@@ -7,16 +7,16 @@
     {
       "name": "geometric_form_equals_exponential_form_to_50dps",
       "computed": 9.354676485322685e-51,
-      "expected": 0,
+      "expected": 0.0,
       "passed": true,
       "tolerance": 1e-40
     },
     {
       "name": "N0_observed_residual_within_per_braid_bound",
       "computed": 0.16919994952796186,
-      "expected": 0,
+      "expected": 0.0,
       "passed": true,
-      "tolerance": 1
+      "tolerance": 1.0
     }
   ],
   "allPassed": true,
@@ -27,7 +27,6 @@
   "scriptCommitSha": "1905cce0ed44e66baf1edd5f7b134d96b1411ec8",
   "description": "Substrate-derived dampening rate c(K) for the β-decay operator class. From the per-braid-mass-tower bound |R_N| ≤ ℏ_q^(2(N+1))/(1-ℏ_q²) and the substrate identity ℏ_q = (q_0-1)/q_0, the bound reads exactly C(K)·exp(-c(K)·N) with c(K) = -2 ln ℏ_q ≈ 4.624 and C(K) = ℏ_q²/(1-ℏ_q²) ≈ 0.00991. The observed N=0 residual (+0.168%, +1.31 keV) sits INSIDE the structural ceiling 0.991%, with a ~5.9× headroom. The actual c(K) for the operator may be larger than this ceiling rate — pinning it is the open lift-formula part of brane-tower-z-habiro. Witness CAL-1 + CAL-2 only; no CAL-3 (Q_β) input — N=0 prediction comes from prop:neutron-qvalue-symbolic.",
   "contentBlock": "conj:archimedean-remainder-exponential-decay",
-  "auditOnly": "docs/audits/2026-05-11-path-to-1ppb-cross-pr-synthesis.md",
   "parameters": {
     "q_0_50dps": "1.1099785955541805752815940796095093779932822799587",
     "m_e_MeV": "0.51099895",
@@ -62,7 +61,7 @@
         "bound_geometric": "0.00000095553370012976160257755890663283144959020454608996",
         "bound_exponential": "0.00000095553370012976160257755890663283144959020454608996",
         "ratio_geom_over_exp": "1.0",
-        "bound_pct": 0.00009555337001297616,
+        "bound_pct": 9.555337001297616e-05,
         "bound_ppm": 0.9555337001297616,
         "bound_ppb": 955.5337001297617
       },
@@ -71,7 +70,7 @@
         "bound_geometric": "0.000000009380654465155668903100394196119245382522095844271",
         "bound_exponential": "0.0000000093806544651556689031003941961192453825220958442711",
         "ratio_geom_over_exp": "0.99999999999999999999999999999999999999999999999999",
-        "bound_pct": 9.380654465155669e-7,
+        "bound_pct": 9.380654465155669e-07,
         "bound_ppm": 0.00938065446515567,
         "bound_ppb": 9.380654465155668
       },
@@ -80,8 +79,8 @@
         "bound_geometric": "0.000000000092091653264238642860320335063431176548804593684902",
         "bound_exponential": "0.000000000092091653264238642860320335063431176548804593684902",
         "ratio_geom_over_exp": "1.0",
-        "bound_pct": 9.209165326423864e-9,
-        "bound_ppm": 0.00009209165326423864,
+        "bound_pct": 9.209165326423864e-09,
+        "bound_ppm": 9.209165326423864e-05,
         "bound_ppb": 0.09209165326423864
       }
     ],

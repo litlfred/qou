@@ -12,7 +12,6 @@
   "scriptCommitSha": "1e1fb93751c0d8be41e9a4b784bde380af8f745b",
   "description": "Phase 1 diagnostic on the proton 544k ppb defect (target 1 ppb).  Computes m_p via the mass-endomorphism-tower formula using four independent Phi_q implementations: legacy-product f64, legacy-product MPFR50, Euler-series MPFR50, and per-block aggregate.  Reports pairwise diffs + Branch-A truncation depth to localise the defect in (1) f64 mantissa, (2) product-vs-series truncation bias, (3) per-block aliasing, or (4) upstream V_hat / formula structure.  See docs/audits/2026-05-09-mass-table-1ppb-audit.md for the audit.",
   "contentBlock": "prop:mass-endomorphism-tower",
-  "auditOnly": "docs/audits/2026-05-09-proton-m_e-anomaly.md",
   "parameters": {
     "q_0": 1.1099785955541805,
     "z_markov": 0.4993203340335982,
@@ -85,7 +84,7 @@
       "ppb_vs_codata": 442613885231.67224
     },
     "pairwise_diffs_hecke": {
-      "B_minus_A": 1.4202669262886047e-8,
+      "B_minus_A": 1.4202669262886047e-08,
       "C_minus_B": 40078680.461624295,
       "C_minus_A": 40078680.46162431,
       "D_minus_A": 512414093.4453252

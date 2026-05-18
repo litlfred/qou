@@ -141,7 +141,6 @@
   "scriptCommitSha": "3f2bd2de45209c7c48790f47f6a166d271d65e06",
   "description": "Macdonald hook-content telescope: Z_n = ((1-X)/(1-Q))^n, giving the clean closed form y_λ = Q^{n(λ)} (1-Q)^n / (1-X)^n · ∏ (1-X·Q^c)/(1-Q^h) — sorry-free, O(n) per partition, no sympy.simplify needed.  Resolves the 'Open: a telescope for general n?' question in y-lambda-clean-closed-forms.md.",
   "contentBlock": "prop:macdonald-hook-telescope",
-  "auditOnly": "docs/audits/onepb-status-dashboard.md",
   "data": {
     "telescope_identity": "Z_n := Σ_{λ ⊢ n} f_λ · s_{λ,X}(Q) = ((1-X)/(1-Q))^n",
     "closed_form": "y_λ = Q^{n(λ)} · (1-Q)^n / (1-X)^n · ∏_{x ∈ λ} (1-X·Q^{c(x)})/(1-Q^{h(x)})",
@@ -2994,6 +2993,6 @@
       "max_abs_diff": "2.5422586207322251556063305849663509277011735949437e-51"
     },
     "precision": "symbolic_q",
-    "truncation_eps": 0
+    "truncation_eps": 0.0
   }
 }

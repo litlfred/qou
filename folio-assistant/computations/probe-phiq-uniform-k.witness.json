@@ -12,7 +12,6 @@
   "scriptCommitSha": "ce288825a3417ab9f2977b763b1315030b8d4ba5",
   "description": "Test brane-tower formula with Φ_q truncated at UNIFORM depth k across {D, T, He3}. Tests whether atom-dependent k_max from GB filtration was misidentified — perhaps a single uniform structural depth applies.",
   "contentBlock": "conj:brane-tower-z-habiro",
-  "auditOnly": "docs/audits/2026-05-11-brane-tower-n_star-closure-audit.md",
   "parameters": {
     "q_0": 1.1099785955541805,
     "m_e_MeV": 0.51099895,

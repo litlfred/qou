@@ -6,14 +6,14 @@
   "assertions": [
     {
       "name": "li_2_q_finite_proton",
-      "computed": 1,
-      "expected": 1,
+      "computed": 1.0,
+      "expected": 1.0,
       "passed": true
     },
     {
       "name": "m_p_pred_honest_gap_above_50pct",
-      "computed": 1,
-      "expected": 1,
+      "computed": 1.0,
+      "expected": 1.0,
       "passed": true
     }
   ],
@@ -24,7 +24,6 @@
   "scriptHash": "b11cfe2d04ef",
   "scriptCommitSha": "fb62a66685680ec285c77bfc7c15bf9eeb54a72f",
   "description": "Full ¹H mass step-by-step under canonical Li_2^q tower",
-  "auditOnly": "docs/audits/2026-05-17-hydrogen-row-provenance.md",
   "data": {
     "convention": "paper canonical (Li_2^q, 2026-05-03 revision)",
     "q_pinned": "1.1099785955541805752815940796095093779932822799587",

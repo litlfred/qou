@@ -43,7 +43,6 @@
   "scriptCommitSha": "unknown",
   "description": "Type-B-folded-crystal-depth n_⋆ candidate: count of self-conjugate partitions of n = 3A (fixed points of the Kashiwara λ ↔ λ^T involution). Combinatorial probe, substrate-only (no CODATA, no operator-data needed). Result: candidate reproduces D (k=1) and T (k=2) observed closure depths from PR #638's per-eigenvalue probe, but FAILS for ³He (n_⋆ predicts k=2, ³He doesn't close at any uniform k). Same multiplicity-driven exception as PR #638; Type-B fold-depth is the (ℓ, n_0, k) piece of the open multiplicity-refined n_⋆(ℓ, n_0, k, m) candidate. Class C (diagnostic / probe) per three-calibration-discipline audit.",
   "contentBlock": "conj:brane-tower-z-habiro",
-  "auditOnly": "docs/audits/2026-05-11-type-b-fold-depth-n-star.md",
   "parameters": {
     "atoms": [
       "D",
@@ -94,7 +93,7 @@
         ],
         "n_star_candidate": 2,
         "observed_k_closure": 2,
-        "observed_residual_pct": -8,
+        "observed_residual_pct": -8.0,
         "match": true
       },
       {

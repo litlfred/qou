@@ -12,7 +12,6 @@
   "scriptCommitSha": "",
   "description": "Wedderburn weight scheme audit: compares Plancherel weights (dim_q² / [n]_q!) used in mass_endomorphism.py / light_isotope_sweep.py against Wenzl-bridge y_λ used in y-lambda-wenzl-witness.json. If they disagree on χ_λ(T_w) for non-trivial T_w, one (or both) is wrong, and the +1.84% m_p/m_e residual may live in the WEIGHT CHOICE.",
   "contentBlock": "prop:y-lambda-recipe-from-partition",
-  "auditOnly": "docs/audits/2026-05-11-plancherel-usage-audit.md",
   "parameters": {
     "q_0_mpf50": "1.1099785955541805677630215523262746828651420435574",
     "mpmath_dps": 50
@@ -27,7 +26,7 @@
               2
             ],
             "classical_dim": 1,
-            "q_dim_at_q_0": 1,
+            "q_dim_at_q_0": 1.0,
             "scheme_A_plancherel": 0.4972905450085915,
             "scheme_B_wenzl": 0.6963254203144307,
             "ratio_B_over_A": 1.4002386075978994
@@ -38,7 +37,7 @@
               1
             ],
             "classical_dim": 1,
-            "q_dim_at_q_0": 1,
+            "q_dim_at_q_0": 1.0,
             "scheme_A_plancherel": 0.4972905450085915,
             "scheme_B_wenzl": 0.3036745796855693,
             "ratio_B_over_A": 0.6106582615205822
@@ -53,7 +52,7 @@
               3
             ],
             "classical_dim": 1,
-            "q_dim_at_q_0": 1,
+            "q_dim_at_q_0": 1.0,
             "scheme_A_plancherel": 0.1633832273397582,
             "scheme_B_wenzl": 0.4153957863345666,
             "ratio_B_over_A": 2.542462853122273
@@ -76,7 +75,7 @@
               1
             ],
             "classical_dim": 1,
-            "q_dim_at_q_0": 1,
+            "q_dim_at_q_0": 1.0,
             "scheme_A_plancherel": 0.1633832273397582,
             "scheme_B_wenzl": 0.022744945705705264,
             "ratio_B_over_A": 0.13921224397414284
@@ -91,7 +90,7 @@
               5
             ],
             "classical_dim": 1,
-            "q_dim_at_q_0": 1,
+            "q_dim_at_q_0": 1.0,
             "scheme_A_plancherel": 0.007615387159641046,
             "scheme_B_wenzl": 0.1181483983336024,
             "ratio_B_over_A": 15.514430961533852
@@ -164,9 +163,9 @@
               1
             ],
             "classical_dim": 1,
-            "q_dim_at_q_0": 1,
+            "q_dim_at_q_0": 1.0,
             "scheme_A_plancherel": 0.007615387159641046,
-            "scheme_B_wenzl": 0.00008619758913550236,
+            "scheme_B_wenzl": 8.619758913550236e-05,
             "ratio_B_over_A": 0.01131887155945533
           }
         ]

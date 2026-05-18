@@ -24,8 +24,8 @@
     },
     {
       "name": "tr_M_proton_at_q0_matches_content_block",
-      "computed": 0.0000035640480804399743,
-      "expected": 0,
+      "computed": 3.5640480804399743e-06,
+      "expected": 0.0,
       "passed": true,
       "tolerance": 0.001
     }
@@ -38,7 +38,6 @@
   "scriptCommitSha": "unknown",
   "description": "Phase 1.6 of the 1ppb plan — Option B from the m_e-anomaly audit.  Full derivation of tr_M(σ_1^7 σ_2^4)(q) as a rational-in-q function via:  (A) braid roster, (B) Hecke quadratic recurrence (a_k, b_k), (C) Wedderburn-block characters χ^λ(β), (D) Markov-axiom y_λ(q), (E) γγ pair-production reduction at every σ-site, (F) SDP knot-operator selection per the prop:operator-selection-lp / §LP/SDP-duals contract, (G) per-step graded/filtered metadata, (H) closed-form symbolic tr_M.  Does NOT consume the placeholder literals M_HECKE_PIPELINE_AT_Q0; emits the rational-in-q anchors from which any downstream mass-formula assembly should derive m_p without algebraic +1 patches.  See docs/audits/2026-05-09-proton-m_e-anomaly.md for the audit; content/quantum-observable-universe/braids-and-knots/markov-trace-axiomatic-closed-form.md for the formal proposition.",
   "contentBlock": "prop:markov-trace-axiomatic-closed-form",
-  "auditOnly": "docs/audits/2026-05-09-braid-encoding-deepdive.md",
   "parameters": {
     "q_0": 1.1099785955541805,
     "M_E_MEV_codata": 0.51099895,
@@ -287,7 +286,7 @@
               ],
               "primal_obj": 1.0000000281092283,
               "dual_obj": 0.9999999627956595,
-              "duality_gap": 6.531356877559347e-8,
+              "duality_gap": 6.531356877559347e-08,
               "eigenvalues": [
                 0.5000000140545966,
                 0.5000000140546316
@@ -315,7 +314,7 @@
               ],
               "primal_obj": 5.000000061991458,
               "dual_obj": 4.9999990300492305,
-              "duality_gap": 0.0000010319422276694468,
+              "duality_gap": 1.0319422276694468e-06,
               "eigenvalues": [
                 1.666666687330478,
                 1.666666687330478,

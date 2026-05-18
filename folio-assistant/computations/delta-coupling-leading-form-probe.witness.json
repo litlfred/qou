@@ -12,7 +12,6 @@
   "scriptCommitSha": "unknown",
   "description": "P3.A follow-up: high-precision (50 dps) verification of the C1 = log(1/t) lead at t = h(q_0) for Δ_coupling at the doubly-magic (2,2) anchor and the (2,1) / (1,2) free-nucleon-clustering anchors. Tests the leading-factor ladder {(A−2), Z+N, Z·N, Z²+N², (A−2)², min(Z,N), Z·N−1}, a candidate (Z−N) chirality residual, and a q-dilogarithm alternative. Diagnostic probe — does NOT fit Δ_coupling to AME (forbidden by three-cal discipline).",
   "contentBlock": "conj:magic-shell-stabilization",
-  "auditOnly": "docs/audits/2026-05-12-delta-coupling-leading-term-followup.md",
   "parameters": {
     "mp_dps": 50,
     "delta_cat_source": "magic-shell-empirical-instantiation.witness.json#per_atom_delta_cat",

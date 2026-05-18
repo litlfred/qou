@@ -1,14 +1,13 @@
 {
-  "computedAt": "2026-04-20T15:28:35.735577+00:00",
   "computation": "4he-binding-full-pipeline",
-  "auditOnly": "docs/audits/2026-05-09-mass-table-fitting-audit.md",
+  "computedAt": "2026-04-20T15:28:35.735577+00:00",
   "kahler_order": 0,
   "result": {
-    "Z": 2,
-    "N": 2,
-    "A": 4,
+    "Z": 2.0,
+    "N": 2.0,
+    "A": 4.0,
     "pair_mode": "full",
-    "kahler_order": 0,
+    "kahler_order": 0.0,
     "E_0_MeV": 0.782,
     "tr_M_atom": 0.05534834587669848,
     "tr_M_free": 0.9673237505194691,
@@ -18,7 +17,7 @@
     "tower_level_1_delta_cat": 258908160.10540146,
     "tower_MeV": 1987648.6684683266,
     "eps_modeling_MeV": 196939.66161945983,
-    "eps_order": "O(ℏ_q^3)",
+    "eps_order": "O(\u210f_q^3)",
     "B_MeV": 1987649.3816330929
   },
   "V_atom_used": [
@@ -27,7 +26,7 @@
     0.15858619297929347,
     1.0185819508327827,
     1.600743067839152,
-    0,
+    0.0,
     0.8369358996781201,
     1.6511987084305073,
     -0.15858619297929347,
@@ -51,5 +50,5 @@
   "err_pct": 52959.618477720025,
   "time_sec": 930.8865597248077,
   "precision": "f64_numeric_fallback",
-  "truncation_eps": 0
+  "truncation_eps": 0.0
 }
