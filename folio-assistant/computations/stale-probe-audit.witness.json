@@ -1,20 +1,20 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T19:20:15.049934+00:00",
-  "commitSha": "fc9dd12ef148fcf3063ff8f03b9e1e5e3d0475ed",
+  "computedAt": "2026-05-18T19:22:39.116198+00:00",
+  "commitSha": "28b470f20438ddf4afea5a9fb3fb06f2e2421b6e",
   "assertions": [
     {
       "name": "no_stale_probes",
-      "computed": 0.0,
+      "computed": 1.0,
       "expected": 1.0,
-      "passed": false,
+      "passed": true,
       "tolerance": 0.0,
       "unit": "boolean (1.0 = no probe witness > threshold days behind .md)",
       "source": "Closure gate: when this passes, every label-shaped witness is current with its content-block .md.  Currently informational; the production-side fix is rerunning each stale probe's producer."
     }
   ],
-  "allPassed": false,
+  "allPassed": true,
   "durationMs": 8,
   "computation": "stale-probe-audit",
   "scriptFile": "stale_probe_audit.py",
@@ -29,8 +29,7 @@
   },
   "data": {
     "by_result": {
-      "ok": 191,
-      "stale": 4
+      "ok": 195
     },
     "rows": [
       {
@@ -1089,11 +1088,11 @@
       {
         "witness": "folio-assistant/computations/neutron-gap-probes-round7.witness.json",
         "label": "prop:atom-knot-mass-derivation",
-        "witness_mtime_unix": 1778263260,
+        "witness_mtime_unix": 1779132151,
         "md": "content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md",
         "md_mtime_unix": 1779113120,
-        "md_minus_witness_days": 9.84,
-        "result": "stale"
+        "md_minus_witness_days": -0.22,
+        "result": "ok"
       },
       {
         "witness": "folio-assistant/computations/neutron-gap-probes.witness.json",
@@ -1161,11 +1160,11 @@
       {
         "witness": "folio-assistant/computations/option-b-proton-mass-full-chain.witness.json",
         "label": "prop:markov-trace-axiomatic-closed-form",
-        "witness_mtime_unix": 1778385200,
+        "witness_mtime_unix": 1779132151,
         "md": "content/quantum-observable-universe/braids-and-knots/markov-trace-axiomatic-closed-form.md",
         "md_mtime_unix": 1779076693,
-        "md_minus_witness_days": 8.0,
-        "result": "stale"
+        "md_minus_witness_days": -0.64,
+        "result": "ok"
       },
       {
         "witness": "folio-assistant/computations/path-b-evacuation.witness.json",
@@ -1359,11 +1358,11 @@
       {
         "witness": "folio-assistant/computations/probe-phiq-yekutieli-truncation.witness.json",
         "label": "thm:knot-mass-formula-unified",
-        "witness_mtime_unix": 1778263260,
+        "witness_mtime_unix": 1779132151,
         "md": "content/quantum-observable-universe/braids-and-knots/knot-mass-formula-unified.md",
         "md_mtime_unix": 1779076693,
-        "md_minus_witness_days": 9.41,
-        "result": "stale"
+        "md_minus_witness_days": -0.64,
+        "result": "ok"
       },
       {
         "witness": "folio-assistant/computations/probe-proton-mass-scale.witness.json",
@@ -1440,11 +1439,11 @@
       {
         "witness": "folio-assistant/computations/proton-residual-rootcause.witness.json",
         "label": "prop:mass-endomorphism-tower",
-        "witness_mtime_unix": 1778386892,
+        "witness_mtime_unix": 1779132151,
         "md": "content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.md",
         "md_mtime_unix": 1779047549,
-        "md_minus_witness_days": 7.65,
-        "result": "stale"
+        "md_minus_witness_days": -0.98,
+        "result": "ok"
       },
       {
         "witness": "folio-assistant/computations/q-beta-form-a-n1-extension.witness.json",
