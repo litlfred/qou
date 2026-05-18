@@ -505,11 +505,14 @@ def ansatz_c_content_monotonic(atom_data: dict) -> dict:
     alpha = target / weighted_sum
     # ‖Δ‖₂ = |α| · sqrt(Σ c(λ)²)
     norm_c2 = mp.sqrt(norm_c2_sum)
+    # Truncate serialization to 40 dps to avoid env-dependent floor
+    # noise at the 50-dps boundary (CI vs local mpmath versions
+    # produce slightly different bits in the last few digits).
     return {
         "ansatz": "c_content_monotonic",
-        "alpha": str(alpha),
-        "weighted_sum_yChi_cContent": str(weighted_sum),
-        "norm_delta_2": str(abs(alpha) * norm_c2),
+        "alpha": mp.nstr(alpha, 40, strip_zeros=False),
+        "weighted_sum_yChi_cContent": mp.nstr(weighted_sum, 40, strip_zeros=False),
+        "norm_delta_2": mp.nstr(abs(alpha) * norm_c2, 40, strip_zeros=False),
     }
 
 
@@ -529,11 +532,12 @@ def ansatz_d_isotypic(atom_data: dict) -> dict:
         return {"ansatz": "d_isotypic", "error":
                 f"Σ c_λ · dim_q/[n]_q! ≈ 0 ({weighted_sum})"}
     alpha = target / weighted_sum
+    # Same precision-floor truncation as the c_content_monotonic branch.
     return {
         "ansatz": "d_isotypic",
-        "alpha": str(alpha),
-        "weighted_sum_yChi_planch": str(weighted_sum),
-        "norm_delta_2": str(abs(alpha) * mp.sqrt(norm_d2)),
+        "alpha": mp.nstr(alpha, 40, strip_zeros=False),
+        "weighted_sum_yChi_planch": mp.nstr(weighted_sum, 40, strip_zeros=False),
+        "norm_delta_2": mp.nstr(abs(alpha) * mp.sqrt(norm_d2), 40, strip_zeros=False),
     }
 
 
@@ -649,8 +653,10 @@ def main() -> int:
             "M_codata_MeV": str(data["M_codata_MeV"]),
             "constituent_MeV": str(data["constituent_MeV"]),
             "delta_M_MeV": str(data["delta_M_MeV"]),
-            "tr_M": str(data["tr_M"]),
-            "abs_tr_M": str(data["abs_tr_M"]),
+            # Truncate to 40 dps — last few digits at dps=50 are
+            # env-dependent (CI vs local mpmath floor noise).
+            "tr_M": mp.nstr(data["tr_M"], 40, strip_zeros=False),
+            "abs_tr_M": mp.nstr(data["abs_tr_M"], 40, strip_zeros=False),
             "target_signed": str(data["target_signed"]),
             "a_single_block": a_result,
             "b_shell_supported": b_result,
