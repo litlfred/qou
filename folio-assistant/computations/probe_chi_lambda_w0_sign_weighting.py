@@ -70,16 +70,21 @@ def main() -> int:
     # Per-irrep coefficients at ε^10 (= c_5 in the prop's notation) and
     # ε^12 (= c_6).  Prefer the symbolic ("c10_diff_symbolic") field when
     # the upstream provides it; fall back to the f64 ("c10_diff_float")
-    # otherwise.  Precision caveat: for the rational values currently
-    # stored on `per-wedderburn-block-ck.witness.json` (0.25, 16.25,
-    # 266.5, 22.5, 477.5) the f64 round-trip is exact, but the
-    # `compute-integration-watcher` I8 antipattern (float64 leak in a
-    # 50-dps probe) would activate as soon as the upstream emits
-    # non-exact rationals.  Both fields go through `mp.mpf(str(...))`
-    # so the cast is faithful when the source is.
+    # otherwise.  The symbolic field stores Sympy `Rational` strings
+    # like "1/4", "65/4", "533/2" — `mp.mpf(str(...))` cannot parse
+    # fraction strings (raises `ValueError`), so we go through
+    # `sympy.Rational` first and lift to mpmath via the `(p, q)`
+    # constructor.  This is the actual I8 fix (per Copilot #693
+    # follow-up): the previous `mp.mpf(str(sym))` would have crashed
+    # on next clean run; values happened to look correct because the
+    # currently-stored rationals are dyadic and the f64 cast was exact.
+    import sympy as sp  # noqa: E402
+
     def _coeff(v: dict, sym_key: str, f64_key: str) -> mp.mpf:
-        if sym_key in v and v[sym_key] is not None:
-            return mp.mpf(str(v[sym_key]))
+        sym = v.get(sym_key)
+        if sym is not None:
+            rat = sp.Rational(sym)
+            return mp.mpf(int(rat.p)) / mp.mpf(int(rat.q))
         return mp.mpf(str(v[f64_key]))
 
     c5_per_lambda = {
@@ -102,9 +107,15 @@ def main() -> int:
     s5_w0 = sum(chi_w0[lam] * c5_per_lambda[lam] for lam in chi_w0)
     s6_w0 = sum(chi_w0[lam] * c6_per_lambda[lam] for lam in chi_w0)
 
-    # Sign agreement check
+    # Sign agreement check.  Treats (0, 0) as a sign match (signs
+    # trivially agree at the zero ⇒ zero edge case per Copilot #693
+    # follow-up); strict-sign disagreement requires opposite non-zero
+    # signs.  Returns False on `nan` inputs (defensive — `mp.sign` is
+    # undefined there).
     def _same_sign(a: mp.mpf, b: mp.mpf) -> bool:
-        return (a > 0 and b > 0) or (a < 0 and b < 0)
+        if mp.isnan(a) or mp.isnan(b):
+            return False
+        return mp.sign(a) == mp.sign(b)
 
     s5_sign_ok = _same_sign(s5_w0, emp_c5)
     s6_sign_ok = _same_sign(s6_w0, emp_c6)

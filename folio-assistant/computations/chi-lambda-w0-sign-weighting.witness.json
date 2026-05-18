@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-18T04:27:05.861351+00:00",
-  "commitSha": "f3502306b451e6f544f1e78b10811bc1718c1c53",
+  "computedAt": "2026-05-18T05:17:35.872384+00:00",
+  "commitSha": "219880c9085855ae5da344f384c7557b74542409",
   "assertions": [
     {
       "name": "c5_sign_agreement_with_empirical",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 14,
   "computation": "chi-lambda-w0-sign-weighting",
   "scriptFile": "probe_chi_lambda_w0_sign_weighting.py",
-  "scriptHash": "365a33c9ded7",
-  "scriptCommitSha": "6e5d59216e740dbde2249b9c7da797c99b93a8fb",
+  "scriptHash": "45bf48b7f953",
+  "scriptCommitSha": "99a3bcfae7da984932b012a7ffa07403c4391834",
   "description": "Long-element (w_0 ∈ S_3) character-weighted sum S_k^(w_0) = Σ_λ χ_λ(w_0) · c_k^(λ) reproduces the SIGN of the empirical c_k at k = 5, 6 (ε^10 / ε^12 coefficients of χ_λ(β_n;q) − χ_λ(β_p;q) at q = 1+ε).  Magnitude closure remains open (ratios ≈ 1.49 at k=5, ≈ 95.3 at k=6) per the prop's `.md` § 'Open: magnitude closure'.",
   "contentBlock": "prop:chi-lambda-w0-sign-weighting",
   "parameters": {
