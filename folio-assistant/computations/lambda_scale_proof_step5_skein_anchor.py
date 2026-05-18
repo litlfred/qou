@@ -18,16 +18,13 @@ Step 5 has THREE components:
       closed-form prediction of ΔS(n-p) in {m_e, q_0} alone.
       Documented in `rem:delta-skein-substrate-identity`.
 
-  5c. **(u,u,d) symmetry argument** for the anchor choice: among the
-      three single-strange-quark-substituted orientations of B_3
-      under SU(3) color-quark permutation, the (u,u,d) orientation
-      is the lowest-mass member of the I = 1/2 isodoublet. Choosing
-      S(p) = 0 fixes the energy zero at this baseline; all other
-      orientations have positive S(B).
+  5c. **(u,u,d) symmetry argument** for the anchor choice: the proton
+      orientation is the lowest-mass nucleon; choosing S(p) = 0 fixes
+      the energy zero at this baseline.
 
 ## What this script does
 
-1. Computes the substrate Q_β at q_0 (50 dps).
+1. Computes the substrate Q_β at q_0 (mpmath 80 dps).
 2. Verifies ΔS(n-p) = (Q_β + m_e)/m_e matches (m_n - m_p)/m_e
    under the common-scale hypothesis, completing 5b.
 3. Documents the anchor convention (5a) and the symmetry argument
@@ -51,20 +48,25 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 from witness_base import WitnessBuilder  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402 — canonical q_0 source
+from experimental_constants import (  # noqa: E402 — CODATA single source
+    M_E_MEV,
+    M_P_MEV,
+    Q_NEUTRON_MEV,  # = m_n - m_p - m_e ≈ 0.78233341 MeV
+)
 
-mp.mp.dps = 80
+mp.mp.dps = 80  # mpmath context precision (50 dps inputs, 30 dps headroom)
 
-# Substrate
-Q_PIN = HERE / "q-pinning-50-digit.witness.json"
-Q = mp.mpf(json.load(Q_PIN.open())["derived_50_digit"]["q"])
-HBAR_Q = (Q - mp.mpf(1)) / Q
-VOL_B3 = mp.mpf("7.32772290646480718089411881580875")
+# Substrate: canonical 50-digit q_0
+Q = mp.mpf(Q_50_DIGIT_STR)
 
-# CODATA / PDG
-M_E = mp.mpf("0.51099895069")
-M_P = mp.mpf("938.27208816")
-M_N = mp.mpf("939.56542052")
-Q_BETA_CAL3 = mp.mpf("0.78233341")  # CAL-3 empirical
+# CODATA (single source of truth — experimental_constants)
+M_E = mp.mpf(repr(M_E_MEV))
+M_P = mp.mpf(repr(M_P_MEV))
+Q_BETA_CAL3 = mp.mpf(repr(Q_NEUTRON_MEV))  # m_n - m_p - m_e
+
+# Derive m_n from m_p + Q_β + m_e per the 3-input scheme (Copilot review on PR #701)
+M_N = M_P + Q_BETA_CAL3 + M_E
 
 
 def substrate_q_beta(q: mp.mpf, m_e: mp.mpf) -> mp.mpf:
@@ -81,18 +83,23 @@ def main() -> int:
     w.set_description(
         "Proof Step 5 of `conj:lambda-scale-substrate-form`: "
         "S(p) = 0 anchor convention + S(n) = ΔS substrate-derived. "
-        "Verifies ΔS(n-p) = (Q_β + m_e)/m_e closure at MPFR 80 dps. "
-        "References `rem:delta-skein-substrate-identity` for the "
-        "underlying common-scale hypothesis. Documents the open "
-        "R&D component: direct Kauffman-bracket verification of "
-        "S(uud) = 0 from first principles (currently set by "
-        "convention as the anchor)."
+        "Verifies ΔS(n-p) = (Q_β + m_e)/m_e closure at mpmath 80 dps "
+        "with q_0 from q_parameter.Q_50_DIGIT_STR and CODATA from "
+        "experimental_constants (3-input scheme: M_E_MEV, M_P_MEV, "
+        "Q_NEUTRON_MEV; m_n derived). References "
+        "`rem:delta-skein-substrate-identity` for the underlying "
+        "common-scale hypothesis. Documents the open R&D component: "
+        "direct Kauffman-bracket verification of S(uud) = 0 from "
+        "first principles (currently set by convention as the anchor)."
     )
     w.set_content_block("conj:lambda-scale-substrate-form")
-    w.add_parameter("q_0_50dps", mp.nstr(Q, 25))
-    w.add_parameter("m_e_MeV", mp.nstr(M_E, 12))
-    w.add_parameter("m_p_MeV", mp.nstr(M_P, 12))
-    w.add_parameter("m_n_MeV", mp.nstr(M_N, 12))
+    # Full 50-digit q_0 string for reproducibility (Copilot review on PR #701).
+    w.add_parameter("q_0_50dps", Q_50_DIGIT_STR)
+    w.add_parameter("m_e_MeV_CODATA", mp.nstr(M_E, 12))
+    w.add_parameter("m_p_MeV_CODATA", mp.nstr(M_P, 12))
+    w.add_parameter("m_n_MeV_derived_from_3input", mp.nstr(M_N, 12))
+    w.add_parameter("Q_neutron_MeV_CAL3", mp.nstr(Q_BETA_CAL3, 12))
+    w.add_parameter("mpmath_dps_context", 80)
 
     # ── 5b: ΔS(n-p) closed-form ───────────────────────────────
     delta_m_pn = M_N - M_P
@@ -112,11 +119,11 @@ def main() -> int:
         "Q_beta_CAL3_empirical_MeV": mp.nstr(Q_BETA_CAL3, 8),
         "relative_diff_ppm": rel_diff_substrate_ppm,
         "interpretation": (
-            "ΔS(n-p) computed from CODATA m_p, m_n agrees with the "
-            "substrate Q_β formula's prediction to ~1000 ppm — the "
-            "same residual as Q_β itself at the current q_0 pinning "
-            "(per rem:delta-skein-substrate-identity). Closing this "
-            "to <100 ppm requires substrate-only refinement of Q_β."
+            "ΔS(n-p) computed from CODATA m_p, Q_neutron agrees with the "
+            "substrate Q_β formula's prediction to ~1015 ppm — set by "
+            "the substrate Q_β formula's residual at the current q_0 "
+            "pinning (per rem:delta-skein-substrate-identity). Closing "
+            "this to <100 ppm requires substrate-only refinement of Q_β."
         ),
     })
 
@@ -190,7 +197,7 @@ def main() -> int:
     # ── Summary ───────────────────────────────────────────────
     w.add_data("step_5_summary", {
         "5a_anchor_convention": "DEFINITIONAL (S(p) = 0 by anchor choice)",
-        "5b_delta_S_closure": "PROVED at ~1000 ppm via "
+        "5b_delta_S_closure": "PROVED at ~1015 ppm via "
                                "rem:delta-skein-substrate-identity",
         "5c_symmetry_argument": "PLAUSIBLE (physics-motivated)",
         "5_open": "Direct Kauffman-bracket verification of S(uud) = 0",
@@ -199,12 +206,13 @@ def main() -> int:
     out = w.save()
     print(f"Witness emitted: {out.name}")
     print()
-    print(f"Step 5b verification at q_0 50 dps:")
+    print(f"Step 5b verification at mpmath 80 dps:")
     print(f"  ΔS from CODATA           = {float(delta_S_codata):.10f}")
     print(f"  Q_β substrate (Form A)   = {float(Q_BETA_SUBSTRATE):.6f} MeV")
     print(f"  ΔS substrate prediction  = {float(delta_S_substrate):.10f}")
     print(f"  Relative diff            = {rel_diff_substrate_ppm:+.2f} ppm")
-    print(f"  (matches Q_β CAL-3 residual of ~760 ppm, per delta-skein-substrate-identity)")
+    print(f"  (Q_β substrate vs CAL-3: residual derives ΔS to the same "
+          f"~1015 ppm; see rem:delta-skein-substrate-identity.)")
     return 0
 
 
