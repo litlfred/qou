@@ -47,34 +47,9 @@ export default chapter({
       ],
     }),
 
-    // ── §3. The Spectral Trace and Tannaka--Krein Duality ────────────
-    section({
-      title: "The spectral trace and Tannaka--Krein duality",
-      label: "sec:spectral-trace-tannaka",
-      blocks: [
-        "spectral-trace-intro",
-        "q-von-mangoldt-function",
-        "q-chebyshev-function",
-        "tannaka-krein-isomorphism",
-        "tannaka-krein-su2",
-        "explicit-formula",
-        "yekutieli-quantum-li",
-      ],
-    }),
-
-    // ── §4. Geometric Stability via the Weil Bound ──────────────────
-    section({
-      title: "Geometric stability via the Weil bound",
-      label: "sec:weil-bound-stability",
-      blocks: [
-        "weil-bound-intro",
-        "local-q-zeta-function",
-        "hasse-weil-bound",
-        "spectral-half-line",
-        "geometric-rh-exposition",
-        "unitary-stability",
-      ],
-    }),
+    // ── §3 + §4 dissolved: spectral-trace-tannaka + weil-bound-stability
+    // moved to `q-geometric-langlands/` as
+    // `sec:q-gl-spectral-trace-tannaka` and `sec:q-gl-weil-bound-stability`.
 
     // ── §5. The Classical Limit and the Macroscopic Continuum ───────
     section({
