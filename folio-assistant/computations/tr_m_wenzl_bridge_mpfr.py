@@ -38,6 +38,7 @@ Public entry point:
 """
 from __future__ import annotations
 
+import functools
 import json
 import sys
 from pathlib import Path
@@ -53,8 +54,40 @@ _HERE = Path(__file__).parent
 _Y_LAMBDA_DEFAULT = _HERE / "y-lambda-mpfr-witness.json"
 
 
+# Hoefsmit matrices are reused across consecutive calls to
+# tr_M_via_wenzl_bridge_mpfr that share the same (shape, q) — e.g.
+# the Habiro extension running tritium → helium-3 both at H_9, or
+# helium-3 → helium-4 sharing partition shapes. Cache the build
+# output once per (shape, q-string repr, current dps) tuple so the
+# expensive Bruhat-traversal + sqrt-of-axial-distance only runs
+# once per (shape, q) lifetime.
+_SEMINORMAL_CACHE: dict[tuple, tuple[list, int]] = {}
+
+
+def _build_seminormal_matrices_mpf_cached(
+    shape: tuple[int, ...], q: mp.mpf
+) -> tuple[list, int]:
+    """Cached wrapper for `_build_seminormal_matrices_mpf`. Key
+    includes `mp.mp.dps` so a precision bump invalidates the cache.
+    """
+    key = (tuple(shape), repr(q), mp.mp.dps)
+    cached = _SEMINORMAL_CACHE.get(key)
+    if cached is not None:
+        return cached
+    result = _build_seminormal_matrices_mpf_impl(shape, q)
+    _SEMINORMAL_CACHE[key] = result
+    return result
+
+
 def _build_seminormal_matrices_mpf(shape: tuple[int, ...],
                                     q: mp.mpf) -> tuple[list, int]:
+    """Public name kept for back-compat; delegates to the cached
+    wrapper. The actual implementation is `_build_seminormal_matrices_mpf_impl`."""
+    return _build_seminormal_matrices_mpf_cached(shape, q)
+
+
+def _build_seminormal_matrices_mpf_impl(shape: tuple[int, ...],
+                                         q: mp.mpf) -> tuple[list, int]:
     """Hoefsmit YSN matrices σ_1 .. σ_{n-1} at mpf precision.
 
     Mirrors `hecke_characters.build_seminormal_matrices` but in pure
