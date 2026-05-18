@@ -50,7 +50,7 @@ import sympy as sp  # noqa: F401  (used by hecke_core for symbolic q if needed)
 
 sys.path.insert(0, str(Path(__file__).parent))
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q as Q0_FLOAT  # noqa: E402
+from q_parameter import Q as Q0_FLOAT, Q_50_DIGIT_STR  # noqa: E402
 from experimental_constants import M_E_MEV  # noqa: E402
 
 # Local imports — these have mp.mpf-friendly internals where flagged.
@@ -68,7 +68,7 @@ mp.mp.dps = WORKING_DPS
 
 # Substrate parameter as mp.mpf at 50 dps (re-parsed from the canonical
 # float — q_parameter.Q is an f64 by design).
-Q0_MP = mp.mpf(repr(Q0_FLOAT))
+Q0_MP = mp.mpf(Q_50_DIGIT_STR)  # 50-dps q, not f64-quantised
 
 
 # ── Native-mpmath quantum dilogarithm ─────────────────────────
@@ -232,8 +232,8 @@ def term_23_brane_tower_mp(
         # Lazy import keeps the legacy Φ_q path zero-dependency on
         # the derived_masses module.
         from derived_masses import li2q_symmetric
-        from q_parameter import Q as Q_0_FLOAT
-        q0 = mp.mpf(repr(Q_0_FLOAT))
+        from q_parameter import Q as Q_0_FLOAT, Q_50_DIGIT_STR
+        q0 = mp.mpf(Q_50_DIGIT_STR)  # 50-dps q, not f64-quantised
 
         def tower_fn(x: mp.mpf) -> mp.mpf:
             # -Li_2^q(-|x|) — bounded analog of Φ_q(|x|) per the

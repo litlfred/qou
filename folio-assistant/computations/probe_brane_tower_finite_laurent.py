@@ -51,7 +51,7 @@ sys.path.insert(0, str(HERE))
 
 import mpmath as mp
 
-from q_parameter import Q as Q0_FLOAT  # noqa: E402
+from q_parameter import Q as Q0_FLOAT, Q_50_DIGIT_STR  # noqa: E402
 from experimental_constants import M_E_MEV  # noqa: E402
 from hecke_core import atom_per_generator_volumes  # noqa: E402
 from mass_endomorphism import Phi_q  # noqa: E402
@@ -95,7 +95,7 @@ def main() -> int:
     print("=" * 100)
 
     with mp.workdps(_DPS):
-        q = mp.mpf(repr(Q0_FLOAT))
+        q = mp.mpf(Q_50_DIGIT_STR)  # 50-dps q, not f64-quantised
         hbar_q = (q - 1) / q
         rho_q = 1 / hbar_q**2
         m_e = mp.mpf(str(M_E_MEV))

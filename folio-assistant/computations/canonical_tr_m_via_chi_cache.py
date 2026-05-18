@@ -53,7 +53,7 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
 from per_irrep_pole_atom import ATOMS, ATOM_ALIASES, parts_of  # noqa: E402
-from q_parameter import Q as Q_0_FLOAT  # noqa: E402
+from q_parameter import Q as Q_0_FLOAT, Q_50_DIGIT_STR  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
@@ -105,7 +105,7 @@ def canonical_tr_m(atom_name: str, Z: int, N: int) -> dict[str, object]:
     # tr_M already summed). All 5 production atoms ship at this tier.
     numerical = _load_numerical_chi_cache(atom_name, n)
     if numerical is not None:
-        q_0 = mp.mpf(repr(Q_0_FLOAT))
+        q_0 = mp.mpf(Q_50_DIGIT_STR)  # 50-dps q, not f64-quantised
         per_lambda = [{
             "partition": entry["partition"],
             "y_lambda_at_q0": entry["y_lambda"],
@@ -146,7 +146,7 @@ def canonical_tr_m(atom_name: str, Z: int, N: int) -> dict[str, object]:
     n_used = len(chi_cache)
 
     t0 = time.time()
-    q_0 = mp.mpf(repr(Q_0_FLOAT))
+    q_0 = mp.mpf(Q_50_DIGIT_STR)  # 50-dps q, not f64-quantised
     y_lams = y_lambda_at(n, q_0)
     t_y = time.time() - t0
 
@@ -271,7 +271,7 @@ def main() -> int:
                 "comparison."
             ),
             "parameters": {
-                "q_0_50dps": str(mp.mpf(repr(Q_0_FLOAT))),
+                "q_0_50dps": Q_50_DIGIT_STR,
                 "atoms_evaluated": [r["atom"] for r in results],
             },
             "results": results,

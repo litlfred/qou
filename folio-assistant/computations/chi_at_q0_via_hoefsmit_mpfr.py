@@ -48,7 +48,7 @@ set_compute_dps()
 
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from per_irrep_pole_atom import ATOMS, ATOM_ALIASES, parts_of  # noqa: E402
-from q_parameter import Q as Q_0_FLOAT  # noqa: E402
+from q_parameter import Q as Q_0_FLOAT, Q_50_DIGIT_STR  # noqa: E402
 from tr_m_wenzl_bridge_mpfr import (  # noqa: E402
     _build_seminormal_matrices_mpf,
     _chi_lambda_of_word_mpf,
@@ -206,7 +206,7 @@ def save_witness(record: dict) -> Path:
             f"symbolic data is not yet available. ~100× faster to build "
             f"than the symbolic counterpart (no sympy poly arithmetic)."
         ),
-        "q_0_50dps": str(mp.mpf(repr(Q_0_FLOAT))),
+        "q_0_50dps": Q_50_DIGIT_STR,
         "dps": 50,
         "n_strands": n,
         "atom": atom_name,
@@ -236,10 +236,12 @@ def main() -> int:
         atoms = [ATOM_ALIASES.get(a, a) for a in args.atoms]
 
     mp.mp.dps = args.dps
-    q_str = repr(Q_0_FLOAT)
+    # Per Q6 audit: use the canonical 50-dps decimal string, not the
+    # f64-quantised `repr(Q_FLOAT)` (which truncates to ~16 digits).
+    q_str = Q_50_DIGIT_STR
     print("=" * 80)
     print(f" Building numerical χ^λ caches at q_0 (50 dps)")
-    print(f" q_0 = {Q_0_FLOAT}")
+    print(f" q_0 = {Q_50_DIGIT_STR}")
     print("=" * 80)
     print(f"  {'atom':>9}  {'n':>3}  {'n_partitions':>14}  {'tr_M(q_0)':>22}  {'time':>10}")
     print("  " + "-" * 70)
