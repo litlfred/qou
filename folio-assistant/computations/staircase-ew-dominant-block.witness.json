@@ -1,0 +1,300 @@
+{
+  "engine": "numpy",
+  "engineVersion": "numpy 2.4.5",
+  "computedAt": "2026-05-18T00:41:34.889439+00:00",
+  "commitSha": "4f94e98371548a8644cdbe87532abaeb1122edf9",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 19,
+  "computation": "staircase-ew-dominant-block",
+  "scriptFile": "probe_staircase_ew_dominant_block.py",
+  "scriptHash": "2afba779f56c",
+  "scriptCommitSha": "unknown",
+  "description": "Dominant Markov-trace channel analysis for β_EW Δ_I^minimal at n=6. Decomposes tr_M = Σ y_λ χ_λ via canonical 50-dps Wenzl-bridge y_λ + float64 Hoefsmit χ_λ; identifies which Wedderburn block dominates the trace. Scans each block's internal eigenvalue ratios for the closest match to z_markov = 1/(√q+1/√q). Finding: the (5,1) block dominates (43% of |tr_M|) and has z_markov as an internal ratio to 0.5%, matching the PL SDP's identification of a_PL = z_markov (commit 5e7459cf0). The (3,2,1) staircase block — the target of the original conj:staircase-ew-residual — contributes only 0.9% to tr_M. Suggests the EW reading should be REFINED to target the dominant (Markov-trace-dominant) channel, not the staircase channel.",
+  "contentBlock": "conj:staircase-ew-residual",
+  "auditOnly": "docs/audits/2026-05-18-staircase-ew-dominant-block.md",
+  "parameters": {
+    "n_strands": 6,
+    "k": 3,
+    "q_0": 1.1099785955541805,
+    "z_markov": 0.4993203340335982
+  },
+  "data": {
+    "tr_M_50dps": "3.4187800525088380626283682759652722470483727745094",
+    "dominant_block": [
+      5,
+      1
+    ],
+    "dominant_block_pct_of_tr_M": 43.02682719584981,
+    "dominant_block_best_z_markov_ratio": 0.501847575852549,
+    "dominant_block_z_markov_rel_err": 0.0050613637112178105,
+    "staircase_block_pct_of_tr_M": 0.9068972179055402,
+    "per_block_rows": [
+      {
+        "lam": [
+          5,
+          1
+        ],
+        "dim": 5,
+        "chi": 24.94870395719159,
+        "y_lambda": 0.05896068140145373,
+        "contribution": 1.4709925853991612,
+        "abs_contribution": 1.4709925853991612,
+        "n_real_pos": 4,
+        "top_eigs": [
+          13.803480924920168,
+          7.939083101938812,
+          4.700589830924986,
+          2.3589796117268476
+        ],
+        "best_z_markov_ratio": 0.501847575852549,
+        "best_z_markov_rel_err": 0.0050613637112178105,
+        "best_z_markov_indices": [
+          3,
+          2
+        ]
+      },
+      {
+        "lam": [
+          6
+        ],
+        "dim": 1,
+        "chi": 16.729937179867438,
+        "y_lambda": 0.05918771693214863,
+        "contribution": 0.9902067860946229,
+        "abs_contribution": 0.9902067860946229,
+        "n_real_pos": 1,
+        "top_eigs": [
+          16.729937179867438
+        ],
+        "best_z_markov_ratio": 1000000000.0,
+        "best_z_markov_rel_err": 1000000000.0,
+        "best_z_markov_indices": [
+          -1,
+          -1
+        ]
+      },
+      {
+        "lam": [
+          4,
+          2
+        ],
+        "dim": 9,
+        "chi": 17.87479051552149,
+        "y_lambda": 0.04028438696593521,
+        "contribution": 0.7200749780622963,
+        "abs_contribution": 0.7200749780622963,
+        "n_real_pos": 6,
+        "top_eigs": [
+          11.034598172063703,
+          6.741341915859818,
+          3.4911770267094075,
+          2.1080647377060426
+        ],
+        "best_z_markov_ratio": 0.5178756796916046,
+        "best_z_markov_rel_err": 0.037161205729622615,
+        "best_z_markov_indices": [
+          2,
+          1
+        ]
+      },
+      {
+        "lam": [
+          3,
+          3
+        ],
+        "dim": 5,
+        "chi": 7.66545954241109,
+        "y_lambda": 0.014120874004975288,
+        "contribution": 0.10824298838862252,
+        "abs_contribution": 0.10824298838862252,
+        "n_real_pos": 3,
+        "top_eigs": [
+          8.434325767746586,
+          2.2455981410558072,
+          0.42002542218657923
+        ],
+        "best_z_markov_ratio": 0.26624512769510533,
+        "best_z_markov_rel_err": 0.4667849283358241,
+        "best_z_markov_indices": [
+          1,
+          0
+        ]
+      },
+      {
+        "lam": [
+          4,
+          1,
+          1
+        ],
+        "dim": 10,
+        "chi": 9.753875669618527,
+        "y_lambda": 0.010133463492072935,
+        "contribution": 0.09884054300429779,
+        "abs_contribution": 0.09884054300429779,
+        "n_real_pos": 6,
+        "top_eigs": [
+          6.550352280512088,
+          3.8783470236294795,
+          2.230634394775283,
+          1.9463390521233992
+        ],
+        "best_z_markov_ratio": 0.501847575852548,
+        "best_z_markov_rel_err": 0.0050613637112158095,
+        "best_z_markov_indices": [
+          3,
+          1
+        ]
+      },
+      {
+        "lam": [
+          3,
+          2,
+          1
+        ],
+        "dim": 16,
+        "chi": 4.236525868720991,
+        "y_lambda": 0.00731845435228573,
+        "contribution": 0.031004821182512222,
+        "abs_contribution": 0.031004821182512222,
+        "n_real_pos": 8,
+        "top_eigs": [
+          5.2403253081667485,
+          2.9388009575132643,
+          1.8703311844733372,
+          1.600282955779477
+        ],
+        "best_z_markov_ratio": 0.4579126678213883,
+        "best_z_markov_rel_err": 0.08292805918339326,
+        "best_z_markov_indices": [
+          4,
+          1
+        ]
+      },
+      {
+        "lam": [
+          2,
+          2,
+          2
+        ],
+        "dim": 5,
+        "chi": -1.3115376777988452,
+        "y_lambda": 0.0007731867369053802,
+        "contribution": -0.001014063537425749,
+        "abs_contribution": 0.001014063537425749,
+        "n_real_pos": 2,
+        "top_eigs": [
+          1.253930158644221,
+          0.3792192109822575
+        ],
+        "best_z_markov_ratio": 0.3024245077511161,
+        "best_z_markov_rel_err": 0.39432767476526076,
+        "best_z_markov_indices": [
+          1,
+          0
+        ]
+      },
+      {
+        "lam": [
+          2,
+          2,
+          1,
+          1
+        ],
+        "dim": 9,
+        "chi": -1.12613046728851,
+        "y_lambda": -0.0003420517708854012,
+        "contribution": 0.00038519492058403923,
+        "abs_contribution": 0.00038519492058403923,
+        "n_real_pos": 3,
+        "top_eigs": [
+          1.3848027782553352,
+          0.4088495353093554,
+          0.21792967572329303
+        ],
+        "best_z_markov_ratio": 0.5330314868974887,
+        "best_z_markov_rel_err": 0.06751407977232934,
+        "best_z_markov_indices": [
+          2,
+          1
+        ]
+      },
+      {
+        "lam": [
+          3,
+          1,
+          1,
+          1
+        ],
+        "dim": 10,
+        "chi": -0.14919540443475204,
+        "y_lambda": -0.0006853088855144668,
+        "contribution": 0.00010224493633706006,
+        "abs_contribution": 0.00010224493633706006,
+        "n_real_pos": 4,
+        "top_eigs": [
+          1.8404444073946777,
+          0.9236225643424087,
+          0.5468604847454628,
+          0.3145272454952068
+        ],
+        "best_z_markov_ratio": 0.5018475758525537,
+        "best_z_markov_rel_err": 0.005061363711227149,
+        "best_z_markov_indices": [
+          1,
+          0
+        ]
+      },
+      {
+        "lam": [
+          2,
+          1,
+          1,
+          1,
+          1
+        ],
+        "dim": 5,
+        "chi": -0.575546889811646,
+        "y_lambda": 9.863557610980337e-05,
+        "contribution": -5.6769399054777224e-05,
+        "abs_contribution": 5.6769399054777224e-05,
+        "n_real_pos": 1,
+        "top_eigs": [
+          0.2595090936017003
+        ],
+        "best_z_markov_ratio": 1000000000.0,
+        "best_z_markov_rel_err": 1000000000.0,
+        "best_z_markov_indices": [
+          -1,
+          -1
+        ]
+      },
+      {
+        "lam": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "dim": 1,
+        "chi": -0.059773087564452945,
+        "y_lambda": -1.2437986974301156e-05,
+        "contribution": 7.434568845404281e-07,
+        "abs_contribution": 7.434568845404281e-07,
+        "n_real_pos": 0,
+        "top_eigs": [],
+        "best_z_markov_ratio": 1000000000.0,
+        "best_z_markov_rel_err": 1000000000.0,
+        "best_z_markov_indices": [
+          -1,
+          -1
+        ]
+      }
+    ]
+  },
+  "caveats": [
+    "Float64 computation; q-derivative falsification test for the dominant-block reading not yet performed. The 0.5% match is well above float64 noise but the leading-order vs exact-identity question is still open."
+  ]
+}
