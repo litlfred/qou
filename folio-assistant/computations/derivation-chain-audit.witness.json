@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T05:11:28.151327+00:00",
-  "commitSha": "0d25ec2ef1932b2e93841c62239b6f0209d35c39",
+  "computedAt": "2026-05-18T05:11:53.375743+00:00",
+  "commitSha": "038daec122d93e6715a05f0a425ca07546f0150d",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2209,6 +2209,7 @@
         "ew-higgs-sdp-probe.witness.json",
         "ew-interface-knot-probe.witness.json",
         "factor-2-normalization-trace.witness.json",
+        "flavor-dressed-mass-from-substrate-split.witness.json",
         "free-neutron-decay.witness.json",
         "fresh-derivation-pn-steps-E-G.witness.json",
         "full-twist-delta-n2-verification.witness.json",
