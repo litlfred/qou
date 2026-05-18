@@ -61,17 +61,20 @@ appearing in a legitimate context (math expression, CAL-1/2/3
 provenance citation, post-Archimedean τ-image naming) from a
 genuine discipline violation.
 
-**Bottom-line:** 32 legitimate / 4 Class-A/B/C opt-out / **4 genuine
-violations**.
+**Bottom-line:** 32 legitimate / 8 Class-A/B/C opt-out after [PR #715](https://github.com/litlfred/qou/pull/715) lands / 0 unresolved violations.
 
-### 4a  Genuine violations (author escalation queued)
+### 4a  Violations — resolved via [PR #715](https://github.com/litlfred/qou/pull/715)
 
-| File | Marker line | Verdict | One-sentence finding |
-|------|------------:|---------|----------------------|
-| [`atom-knot-mass-derivation.md`](../../content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md) | 17–18 | **violation** (fit-then-interpret) | Predicts proton mass "≈5 MeV" from a structural form alone, then asserts a 173× shortfall "captured by open $\rho_K$" — a fourth-calibration ansatz embedded in narrative. |
-| [`recomputed-low-isotope-mass-table.md`](../../content/quantum-observable-universe/braids-and-knots/recomputed-low-isotope-mass-table.md) | 70, 107, 124–128 | **violation** (over-count) — already Class-A-banner-tagged per `docs/audits/2026-05-11-three-calibration-discipline-violations.md` | Self-acknowledged "calibrated form" injection of $m_p$ and $m_n$ as 4th/5th calibration constants. The `† LO TAUTOLOGY NOTICE` banner is present; treat as **Class-A opt-out pending Workplan-0b**. |
-| [`alpha-em-categorical-trace.md`](../../content/quantum-observable-universe/braids-and-knots/alpha-em-categorical-trace.md) | 50, 54 | **violation** (PSLQ fit) | EM coupling $\alpha_{\mathrm{EM}}$ derived via PSLQ fit on a 52-element basis. Author warning at line 50 already states *"Treat as conjectural empirical formula until each factor is structurally derived."* Demotion to `remark` or explicit Class-A banner pending. |
-| [`atomic-mass-gb-nf.md`](../../content/quantum-observable-universe/braids-and-knots/atomic-mass-gb-nf.md) | 32, 117–118, 167–180 | **violation** (multi-form) | (i) PSLQ-fit `shift · q · c_q² ≈ 1835.4` matches $m_p/m_e$ to 0.04% but 20% on neutron — fit-then-interpret; (ii) constituent form injects CODATA $(m_p, m_n)$ as upstream — over-count; (iii) line 32 self-flags "**categorical derivation of $\rho_K$ is open**" yet the formula is used for atomic-mass predictions. |
+All 4 files already documented the discipline concern in prose; what was missing was a machine-recognizable Class-A status banner. PR #715 adds those banners.
+
+| File | Original verdict | Resolution |
+|------|------------------|------------|
+| [`atom-knot-mass-derivation.md`](../../content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md) | violation (fit-then-interpret) | **Class-A banner added** after the existing "Caveat (structural form)" — explicit Workplan-0b + m_p chain closure gap audit references. Structural form correct; numerical instantiation empirical pending $\rho_K$ closure. |
+| [`recomputed-low-isotope-mass-table.md`](../../content/quantum-observable-universe/braids-and-knots/recomputed-low-isotope-mass-table.md) | violation (over-count) | **No change needed** — `† LO TAUTOLOGY NOTICE` banner already in place. Class-A opt-out pending Workplan-0b. |
+| [`alpha-em-categorical-trace.md`](../../content/quantum-observable-universe/braids-and-knots/alpha-em-categorical-trace.md) | violation (PSLQ fit) | **Class-A banner added** after "Status (May 2026)" — legacy form is PSLQ uniqueness match, not derivation; cites structural supersession + Bring zero-mode lead. Block already `remark`-kind. |
+| [`atomic-mass-gb-nf.md`](../../content/quantum-observable-universe/braids-and-knots/atomic-mass-gb-nf.md) | violation (multi-form) | **Class-A banner prepended** at §Statement — three forms classified: (GB-NF) production-target (open $\rho_K$); (constituent) Class-A opt-out (CODATA $m_p, m_n$ → Workplan-0b); (six-term spectral) Class-A opt-out ($E_0$ proton-calibration pending CAL-3 derivation). Substrate-pure replacement $m_n = m_p + Q_\beta + m_e$ documented. |
+
+**Underlying discipline concerns remain blocked on**: Workplan-0b (for mass-table forms), structural derivations of $\rho_K$ + $\alpha_{\mathrm{EM}}$. The Class-A banners make the status auditable from source; the math itself is unchanged.
 
 ### 4b  Class-A/B/C opt-outs (banner verified)
 
