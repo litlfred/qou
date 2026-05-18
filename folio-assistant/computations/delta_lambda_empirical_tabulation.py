@@ -57,7 +57,9 @@ HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
-mp.mp.dps = 50
+from _precision import set_compute_dps, fmt  # noqa: E402
+
+set_compute_dps()  # mp.mp.dps = QOU_COMPUTE_DPS (default 50)
 
 from q_parameter import Q_MP  # noqa: E402
 # Per Copilot PR #619 review: import CAL-3 constants from the
@@ -445,15 +447,18 @@ def ansatz_a_single_block(atom_data: dict) -> dict:
     # mpmath.mpf supports direct comparison; no need to cast to float
     # (Gemini PR #619 review).
     candidates.sort(key=lambda x: x["abs_delta"])
+    # Truncate to 40 dps for env-stable serialization (see top of file).
+    def _fmt(x):
+        return fmt(x) if x is not None else None
     return {
         "ansatz": "a_single_block",
         "best_lambda": candidates[0]["lambda"] if candidates else None,
-        "best_delta": str(candidates[0]["delta"]) if candidates else None,
-        "best_abs_delta": str(candidates[0]["abs_delta"]) if candidates else None,
+        "best_delta": _fmt(candidates[0]["delta"]) if candidates else None,
+        "best_abs_delta": _fmt(candidates[0]["abs_delta"]) if candidates else None,
         "candidates_top5": [
             {"lambda": c["lambda"],
-             "delta": str(c["delta"]),
-             "abs_delta": str(c["abs_delta"])}
+             "delta": _fmt(c["delta"]),
+             "abs_delta": _fmt(c["abs_delta"])}
             for c in candidates[:5]
         ],
         "n_candidates_skipped_singular": len(atom_data["rows"]) - len(candidates),
@@ -480,9 +485,9 @@ def ansatz_b_shell(atom_data: dict) -> dict:
     return {
         "ansatz": "b_shell_supported",
         "lambda_shell": list(lam_shell),
-        "c_shell": str(c_shell),
-        "delta": str(delta),
-        "abs_delta": str(abs(delta)),
+        "c_shell": fmt(c_shell),
+        "delta": fmt(delta),
+        "abs_delta": fmt(abs(delta)),
     }
 
 
@@ -510,9 +515,9 @@ def ansatz_c_content_monotonic(atom_data: dict) -> dict:
     # produce slightly different bits in the last few digits).
     return {
         "ansatz": "c_content_monotonic",
-        "alpha": mp.nstr(alpha, 40, strip_zeros=False),
-        "weighted_sum_yChi_cContent": mp.nstr(weighted_sum, 40, strip_zeros=False),
-        "norm_delta_2": mp.nstr(abs(alpha) * norm_c2, 40, strip_zeros=False),
+        "alpha": fmt(alpha),
+        "weighted_sum_yChi_cContent": fmt(weighted_sum),
+        "norm_delta_2": fmt(abs(alpha) * norm_c2),
     }
 
 
@@ -535,9 +540,9 @@ def ansatz_d_isotypic(atom_data: dict) -> dict:
     # Same precision-floor truncation as the c_content_monotonic branch.
     return {
         "ansatz": "d_isotypic",
-        "alpha": mp.nstr(alpha, 40, strip_zeros=False),
-        "weighted_sum_yChi_planch": mp.nstr(weighted_sum, 40, strip_zeros=False),
-        "norm_delta_2": mp.nstr(abs(alpha) * mp.sqrt(norm_d2), 40, strip_zeros=False),
+        "alpha": fmt(alpha),
+        "weighted_sum_yChi_planch": fmt(weighted_sum),
+        "norm_delta_2": fmt(abs(alpha) * mp.sqrt(norm_d2)),
     }
 
 
@@ -650,14 +655,14 @@ def main() -> int:
         per_atom[atom] = {
             "Z": data["Z"], "N": data["N"], "n": data["n"],
             "n_partitions": data["n_partitions"],
-            "M_codata_MeV": str(data["M_codata_MeV"]),
-            "constituent_MeV": str(data["constituent_MeV"]),
-            "delta_M_MeV": str(data["delta_M_MeV"]),
+            "M_codata_MeV": fmt(data["M_codata_MeV"]),
+            "constituent_MeV": fmt(data["constituent_MeV"]),
+            "delta_M_MeV": fmt(data["delta_M_MeV"]),
             # Truncate to 40 dps — last few digits at dps=50 are
             # env-dependent (CI vs local mpmath floor noise).
-            "tr_M": mp.nstr(data["tr_M"], 40, strip_zeros=False),
-            "abs_tr_M": mp.nstr(data["abs_tr_M"], 40, strip_zeros=False),
-            "target_signed": str(data["target_signed"]),
+            "tr_M": fmt(data["tr_M"]),
+            "abs_tr_M": fmt(data["abs_tr_M"]),
+            "target_signed": fmt(data["target_signed"]),
             "a_single_block": a_result,
             "b_shell_supported": b_result,
             "c_content_monotonic": c_result,
