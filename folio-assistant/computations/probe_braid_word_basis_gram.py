@@ -248,6 +248,16 @@ def main() -> int:
         w.add_data("lp_primal_obj_H3", float(lp_result.primal_obj))
         w.add_data("lp_dual_obj_H3", float(lp_result.dual_obj))
         w.add_data("lp_duality_gap_H3", float(lp_result.duality_gap))
+        # Bare-name aliases for lp_dual_witness_validator.py (CLAUDE.md
+        # "LP / SDP duals — first-class infra"). The _H3 names above
+        # retain the basis context for future H_6 extension; these
+        # bare names are what the validator looks for.
+        w.add_data("y0_star", float(lp_result.y0_star))
+        w.add_data("y_star", list(lp_result.y_star))
+        w.add_data("active_set", list(lp_result.active_set))
+        w.add_data("primal_obj", float(lp_result.primal_obj))
+        w.add_data("dual_obj", float(lp_result.dual_obj))
+        w.add_data("duality_gap", float(lp_result.duality_gap))
 
     w.add_assertion(
         "braid_word_basis_has_off_diagonal_entries",

@@ -173,7 +173,7 @@ def run_sdp_for_atom(atom_name: str) -> dict:
         "G_diagonal": g_diag.tolist(),
         "y0_star": result.y0_star,
         "y_star": list(result.y_star),
-        "active_set_indices": list(result.active_set),
+        "active_set": list(result.active_set),
         "primal_obj": result.primal_obj,
         "dual_obj": result.dual_obj,
         "duality_gap": result.duality_gap,
@@ -290,7 +290,7 @@ def main() -> int:
             )
             w.add_data(
                 f"active_set_{atom_record['atom']}",
-                atom_record["active_set_indices"],
+                atom_record["active_set"],
             )
             w.add_data(
                 f"duality_gap_{atom_record['atom']}",
