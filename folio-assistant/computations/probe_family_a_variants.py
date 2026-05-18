@@ -216,6 +216,8 @@ def main():
         "Family A is EXACT (not truncated). Variants test whether other "
         "natural sums close the 3% gap to CODATA."
     )
+    # Content-block linkage (Copilot review on PR #751).
+    w.set_content_block("conj:flavor-dressed-mass-from-substrate-split")
     w.add_data("target_at_q0", target_at_q0)
     w.add_data("variants", results)
     out = w.save()

@@ -148,6 +148,8 @@ def main():
         "5/2 - (13/16)h² + O(h^4) — within 11% of empirical -G "
         "and matches CODATA factor to 0.144% (20× better than V1)."
     )
+    # Content-block linkage (Copilot review on PR #751).
+    w.set_content_block("conj:flavor-dressed-mass-from-substrate-split")
     w.add_data("target", TARGET)
     w.add_data("variants", results)
     out = w.save()

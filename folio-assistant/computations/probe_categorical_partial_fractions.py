@@ -27,6 +27,7 @@ import sympy as sp
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
+from witness_base import WitnessBuilder
 
 
 def main():
@@ -108,7 +109,7 @@ def main():
     # Even simpler: just identify the irreducible factors of D
     print()
     print("Irreducible factors of D(z) over Q:")
-    D_factors_q = sp.factor_list(D, modulus=0)
+    D_factors_q = sp.factor_list(D)
     print(f"  D(z) = {D_factors_q[0]} · " + " · ".join(
         f"({sp.expand(f)})^{m}" for f, m in D_factors_q[1]))
     print()
@@ -137,7 +138,30 @@ def main():
 
     # Solve D̃(w) = 0 numerically
     w_num = sp.solve(D_tilde, w)
-    print(f"  w-roots numerical: {[complex(sp.N(wn, 12)) for wn in w_num]}")
+    w_roots_num = [complex(sp.N(wn, 12)) for wn in w_num]
+    print(f"  w-roots numerical: {w_roots_num}")
+
+    # Persist the structural results as a witness (Copilot review on PR #751).
+    builder = WitnessBuilder(
+        "probe-categorical-partial-fractions",
+        engine="sympy",
+    )
+    builder.set_description(
+        "Partial-fraction decomposition of -P(z)/D(z) and palindromic "
+        "reduction D(z) = z³ D̃(w) at w = z + 1/z. Records irreducible "
+        "factors of D over Q, the cubic D̃(w) in w, the w-roots and "
+        "their z-pair reciprocal structure."
+    )
+    builder.set_content_block("prop:sw-3root-rational-integrand")
+    builder.add_data("D_tilde_w", str(D_tilde))
+    builder.add_data("D_tilde_w_factored", str(sp.factor(D_tilde)))
+    builder.add_data("D_tilde_w_discriminant", str(D_tilde_disc))
+    builder.add_data("w_roots_numerical", [str(wr) for wr in w_roots_num])
+    builder.add_data("P_factored_over_Q", str(sp.factor(P)))
+    builder.add_data("D_factored_over_Q", str(sp.factor(D)))
+    builder.add_data("P_palindromic", bool(palindromic))
+    out = builder.save()
+    print(f"\nWitness emitted: {out.name}")
 
 
 if __name__ == "__main__":

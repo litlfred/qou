@@ -27,7 +27,7 @@ Subsequent re-probe at 2000-pt grid (`probe_c2_inflection_structure.py`) finds t
 
 ### Structural implication
 
-PR #690's substrate-pure m_p (via C2 inflection on A(a)) **implicitly computes ≈ `5/2 − h²·G`** via the inflection-point parametrisation. The 5.4 ppm CODATA match of `5/2 − h²·G` is NOT a numerical coincidence — it IS what the substrate categorical action produces.
+PR #690's substrate-pure m_p (via C2 inflection on A(a)) **implicitly computes ≈ `5/2 − h²·G`** via the inflection-point parametrisation. The −0.068 % (≈ 680 ppm) match between the mass-scale factor `5/2 − h²·G` and the required factor reported in the table above is NOT a numerical coincidence — it IS what the substrate categorical action produces. (An unrelated CODATA proton-mass residual of order 5 ppm has appeared in other R&D documents and should not be confused with this factor-level agreement.)
 
 What my PR #701 R&D showed:
 - `5/2 − h²·G` is NOT derivable from natural Wedderburn block sums at H_4

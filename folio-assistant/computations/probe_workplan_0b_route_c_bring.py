@@ -110,18 +110,26 @@ def main() -> int:
         print(f"  {name:30s} = {float(val):>10.5f}  (Δ {rel:+.2f}%){marker}")
 
     # Multiplicative candidates (Vol_effective = Vol(B_3) · factor)
+    # NOTE (Copilot review on PR #751): the C2 inflection parameter
+    # `(4-q)/(4q+3)` is the INPUT to the PR #690 categorical action
+    # A(a), NOT the multiplicative mass-scale factor. The comparable
+    # factor is the OUTPUT `A(a_C2) ≈ 2.46`. Keeping the input value
+    # in the multiplicative_candidates map produced contradictory
+    # numerics, so it is recorded separately under `c2_input_parameter`
+    # in the witness rather than being compared to the target factor.
     print()
     print(f"Multiplicative candidates (Vol_eff = Vol(B_3) · factor):")
     print(f"  Required factor = {float(vol_K_p_implied / VOL_B3):.10f}")
     multiplicative = {
         "5/2 - h²·G (orig conjecture)": mp.mpf(5)/2 - H**2 * G,
         "5/2 + h²·(3/4) (Family A)": mp.mpf(5)/2 + H**2 * mp.mpf(3)/4,
-        "(4-q)/(4q+3) (PR #690 C2)": (4 - Q)/(4*Q + 3),
         "1 + Vol(4_1)/(Vol(B_3)/2)": 1 + VOL_41 / (VOL_B3/2),
         "(1 + 1/q)^2 / 2": (1 + 1/Q)**2 / 2,
         "Vol(4_1)/h": VOL_41 / H,
         "[2]_q · (5/4)": (Q + 1/Q) * mp.mpf(5)/4,
     }
+    # Recorded for cross-reference but NOT a mass-scale candidate.
+    c2_input_parameter = (4 - Q)/(4*Q + 3)
     target_factor = vol_K_p_implied / VOL_B3
     for name, val in multiplicative.items():
         rel = float((val - target_factor) / target_factor * 100)
@@ -133,6 +141,7 @@ def main() -> int:
     w.add_data("target_factor", float(target_factor))
     w.add_data("additive_candidates", {n: float(v) for n, v in additive.items() if v is not None})
     w.add_data("multiplicative_candidates", {n: float(v) for n, v in multiplicative.items()})
+    w.add_data("c2_input_parameter", float(c2_input_parameter))
 
     # NOTE (Copilot review on PR #751): the C2 inflection produces a
     # CATEGORICAL ACTION VALUE A(a_C2) ≈ 2.4615 — the MULTIPLICATIVE
@@ -143,17 +152,19 @@ def main() -> int:
     #     m_p_pred = Vol(B_3)/ℏ_q² · A(a_C2) · m_e
     # where A(a_C2) ≈ 2.4615 (the OUTPUT of the categorical action
     # at the inflection point), NOT the input `a_C2 ≈ 0.388`.
-    # Below, the multiplicative-factor check above (where 5/2 − h²·G
-    # matched at 0.068%) is the correct comparison; the `pred_via_c2`
-    # line was misleading and has been removed.
+    # The required-factor cross-check below derives the mass-scale
+    # factor algebraically from the target M_NUCLEON. It is labelled
+    # `required_mass_scale_factor` (not `A_at_aC2`) to make explicit
+    # that this is the empirically demanded factor, not an independent
+    # PR #690 categorical-action computation.
     print()
     print(f"PR #690 C2 inflection cross-check (corrected per review):")
-    a_c2_param = (4 - Q)/(4*Q + 3)
-    A_at_aC2 = M_NUCLEON * HBAR**2 / (VOL_B3 * M_E)  # this IS the empirical factor
-    print(f"  PR #690 inflection INPUT a (≈ 0.388): {float(a_c2_param):.10f}")
-    print(f"  PR #690 inflection OUTPUT A(a) ≈ {float(A_at_aC2):.10f}")
-    print(f"  This OUTPUT is what `5/2 − h²·G` empirically matches to 0.068%.")
-    print(f"  Sanity m_p_pred = Vol(B_3)/ℏ_q² · A(a_C2) · m_e = {float(VOL_B3/HBAR**2 * A_at_aC2 * M_E):.6f} MeV")
+    required_mass_scale_factor = M_NUCLEON * HBAR**2 / (VOL_B3 * M_E)  # empirical
+    print(f"  PR #690 inflection INPUT a (≈ 0.388): {float(c2_input_parameter):.10f}")
+    print(f"  Required mass-scale factor (= M_N · ℏ_q² / (Vol(B_3)·m_e)): {float(required_mass_scale_factor):.10f}")
+    print(f"  (Independent PR #690 A(a_C2) is computed in probe_a_selection_criteria.py, not here.)")
+    print(f"  This required factor is what `5/2 − h²·G` empirically matches to 0.068%.")
+    print(f"  Sanity m_p_pred = Vol(B_3)/ℏ_q² · required · m_e = {float(VOL_B3/HBAR**2 * required_mass_scale_factor * M_E):.6f} MeV (= M_N target by construction)")
 
     print()
     print("VERDICT for Route C:")

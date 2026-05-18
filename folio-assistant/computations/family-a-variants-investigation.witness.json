@@ -1,16 +1,17 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T17:47:38.893904+00:00",
-  "commitSha": "aa24d52fd9261eea27c3c9e46c5e7ed904eaaf0d",
+  "computedAt": "2026-05-18T19:53:42.886611+00:00",
+  "commitSha": "8197914ddf2974fb11c2cfdd93804010ecbd5029",
   "assertions": [],
   "allPassed": true,
   "durationMs": 16,
   "computation": "family-a-variants-investigation",
   "scriptFile": "probe_family_a_variants.py",
-  "scriptHash": "d07d0a298c52",
-  "scriptCommitSha": "7c1faa48b970801e981cd8320ffa3b216d82aef7",
+  "scriptHash": "0b4c993076cd",
+  "scriptCommitSha": "aa5899a9441c08f1e7a8795127fb88a7ab3755fb",
   "description": "Investigation of Family A variants: 8 natural Wedderburn-sum normalizations tested for leading 5/2 at q=1 and h² coefficient. Family A is EXACT (not truncated). Variants test whether other natural sums close the 3% gap to CODATA.",
+  "contentBlock": "conj:flavor-dressed-mass-from-substrate-split",
   "data": {
     "target_at_q0": 2.4616482108893916,
     "variants": [

@@ -32,6 +32,7 @@ import sympy as sp
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
+from witness_base import WitnessBuilder
 
 
 def main():
@@ -141,6 +142,29 @@ def main():
     print("Note: electron integrand depends on the REAL root of F(z, c).")
     print("Symbolic integration of this algebraic branch is complex.")
     print("For practical purposes, use numerical integration as in production.")
+
+    # Persist the structural results as a witness (Copilot review on PR #751).
+    w = WitnessBuilder(
+        "probe-categorical-action-symbolic",
+        engine="sympy",
+    )
+    w.set_description(
+        "Symbolic derivation of the SW 3-root integrand as a rational "
+        "function of z via Vieta + resultants. Validates that "
+        "λ_SW^(1)(z) = -P(z)/D(z) with P, D the resultants computed "
+        "here, and checks against production "
+        "sw_3root_product_degree1(0.1) to machine precision."
+    )
+    w.set_content_block("prop:sw-3root-rational-integrand")
+    w.add_data("integrand_baryon_rational_form", str(integrand_baryon_simp))
+    w.add_data("numerator_P_factored", str(sp.factor(num.as_expr())))
+    w.add_data("denominator_D_factored", str(sp.factor(den.as_expr())))
+    w.add_data("numerator_deg_z", sp.Poly(sp.numer(integrand_baryon_simp), z).total_degree())
+    w.add_data("denominator_deg_z", sp.Poly(sp.denom(integrand_baryon_simp), z).total_degree())
+    w.add_data("value_at_z_0p1_symbolic", val_check)
+    w.add_data("value_at_z_0p1_production", float(getattr(val_prod, "real", val_prod)))
+    out = w.save()
+    print(f"\nWitness emitted: {out.name}")
 
 
 if __name__ == "__main__":

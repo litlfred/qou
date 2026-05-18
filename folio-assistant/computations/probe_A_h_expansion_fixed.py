@@ -30,6 +30,7 @@ from scipy import integrate
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 from picard_lefschetz_thimble import cubic_roots, sw_3root_product_degree1
+from witness_base import WitnessBuilder
 
 
 def integrand_baryon(z):
@@ -128,6 +129,27 @@ def main():
     elif leading_match:
         print()
         print(f"  → Leading verified; h² coefficient is {c_2_fit:.5f}, NOT -G.")
+
+    # Persist the proof-attempt result as a witness (Copilot review on PR #751).
+    w = WitnessBuilder("probe-A-h-expansion-fixed", engine="numpy+scipy")
+    w.set_description(
+        "Numerical proof-attempt: A((4-q)/(4q+3)) = 5/2 - h²·G + O(h^4). "
+        "Computes A(3/7) (the q=1 leading term) and fits A(a_post_hoc(q)) "
+        "to a polynomial in h² over a small q-grid. Records c_0, c_2, c_4 "
+        "fit coefficients and the leading/h² match flags."
+    )
+    w.set_content_block("conj:flavor-dressed-mass-from-substrate-split")
+    w.add_data("A_at_q1_3over7", A_at_q1)
+    w.add_data("leading_target", 2.5)
+    w.add_data("leading_match", bool(leading_match))
+    w.add_data("c_0_fit", float(c_0_fit))
+    w.add_data("c_2_fit", float(c_2_fit))
+    w.add_data("h2_match_minus_G", bool(h2_match))
+    w.add_data("target_h2_minus_G", -G)
+    w.add_data("q_samples", q_vals.tolist())
+    w.add_data("A_samples_at_a_post_hoc", [None if np.isnan(v) else float(v) for v in A_vals.tolist()])
+    out = w.save()
+    print(f"\nWitness emitted: {out.name}")
 
 
 if __name__ == "__main__":

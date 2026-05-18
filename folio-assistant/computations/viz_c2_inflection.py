@@ -29,14 +29,16 @@ from scipy import integrate
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 from q_parameter import Q as q0_float, HBAR_Q
-from experimental_constants import M_E_MEV, M_P_MEV, VOL_BORROMEAN
+from experimental_constants import M_E_MEV, M_P_MEV, Q_NEUTRON_MEV, VOL_BORROMEAN
 from picard_lefschetz_thimble import cubic_roots, sw_3root_product_degree1
 
 q0 = float(q0_float)
 z_mark = 1 / (np.sqrt(q0) + np.sqrt(1.0 / q0))
 borromean_factor = VOL_BORROMEAN / (HBAR_Q ** 2)
 a_post_hoc = (4 - q0) / (4 * q0 + 3)
-M_NUCLEON = (M_P_MEV + (M_P_MEV + 1.293)) / 2  # ≈ (m_p + m_n)/2
+# m_n = m_p + Q_β + m_e (β-decay rest-mass balance), all from the CODATA registry.
+M_N_MEV = M_P_MEV + Q_NEUTRON_MEV + M_E_MEV
+M_NUCLEON = (M_P_MEV + M_N_MEV) / 2  # ≈ (m_p + m_n)/2
 
 
 def integrand_baryon(z):
