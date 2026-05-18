@@ -5,215 +5,336 @@ user_invocable: true
 inherits: local/integration-watcher
 watch_arg: compute
 description: >
-  Cross-layer wiring integration watcher — watches for newly-landed
-  mathematical improvements (Lean proofs, propositions, lemmas,
-  axiom→theorem upgrades, witness data) on `origin/main` AND on
-  open PRs, and checks whether each one has been wired into the
-  production compute chain. Complements `local/compute-audit` (which
-  scans antipatterns *inside* one script). Inherits shared mechanics
-  (Monitor, subscriptions, queue, ledger, idle sweep, author-ask,
-  watch-prepared-PRs, witness-drift recovery, billing-quick-fail
-  flake, post-completion one-voice, sibling-PR comment protocol,
-  backlog-found PR spin-up, handover docs) from
-  `local/integration-watcher`.
-allowed-tools: Read Edit Write Bash Grep Glob Agent Monitor Skill
+  Cross-layer wiring auditor — watches for newly-landed mathematical
+  improvements (Lean proofs, propositions, lemmas, axiom→theorem
+  upgrades, witness data) on `origin/main` AND on open PRs, and
+  checks whether each one has been wired into the production compute
+  chain. Complements `local/compute-audit` (which scans for
+  performance/correctness antipatterns inside scripts).  Runs in two
+  modes: REACTIVE (watch new commits / PR events) and IDLE-SWEEP
+  (walk all existing content blocks and audit wiring).
+allowed-tools: Read Bash Grep Glob Edit Write Agent Monitor
 ---
 
-# /compute-integration-watcher
+# Compute Integration Watcher
 
-A concrete instance of [`local/integration-watcher`](integration-watcher.md).
-The parent encodes the shared mechanics; this file fills the nine
-domain-specific slots A-I.
+## Role
 
-**Setup:** use `NAME=compute-integration-watcher` everywhere the
-parent's §1 references `${NAME}`. Files at
-`todos/compute-integration-watcher-queue.json` and
-`todos/compute-integration-watcher-ledger.md`.
+When a new mathematical claim lands on `main` (or an open PR introduces
+one), the claim is not "done" until the compute chain that consumes it
+has been updated to reflect it.  A Lean theorem proving
+`c_3 = -2` (`prop:hopf-jones-c3-categorical`) is only valuable if the
+6-term mass-formula sweep actually uses `c_3 = -2` rather than a fitted
+free parameter.
 
-When a new mathematical claim lands on `main` (or an open PR
-introduces one), the claim is not "done" until the compute chain
-that consumes it has been updated to reflect it. A Lean theorem
-proving `c_3 = -2` (`prop:hopf-jones-c3-categorical`) is only
-valuable if the 6-term mass-formula sweep actually uses `c_3 = -2`
-rather than a fitted free parameter.
+This skill answers, on every new commit/PR event AND on demand against
+all existing blocks: **for each math improvement, is the matching
+compute consumer wired in, using the correct primitives, at the
+correct precision, against the correct constants?**
 
-This watcher answers, on every new commit/PR event AND on demand
-against all existing blocks: **for each math improvement, is the
-matching compute consumer wired in, using the correct primitives,
-at the correct precision, against the correct constants?**
+It is the *cross-layer* counterpart to:
 
-## Slot A — Goal statement
+- `local/compute-audit` — patterns INSIDE one script (P1–P32)
+- `local/watch` — event-stream router for upstream commits / PRs
+- `local/proof-gap-audit` — paper claims missing Lean proofs
 
-Every `prop:` / `thm:` / `lem:` / `cor:` block in the paper has:
-(1) a Lean sibling (proved or §3b-cond conditional-class);
-(2) a probe witness with `contentBlock: "<label>"`;
-(3) at least one production-chain consumer that imports the probe
-witness or its derived constant; (4) numerical-equivalence
-cross-check at $q_0$ in the consumer's witness; (5) anti-staleness
-wiring via `upstream_witness_hashes`. Anything missing is a wiring
-gap.
+Where those skills look at one layer in isolation, **this** skill
+looks at the boundary between layers: paper → compute, Lean → compute,
+upstream witness → downstream consumer.
 
-## Slot B — §3 trigger filter
+## When to use
 
-```bash
-SHA=<event sha>
-changed=$(git diff-tree --no-commit-id --name-only -r "$SHA")
+| User phrase | Action |
+|------------|--------|
+| "audit math compute" / "audit compute integration" | full idle-sweep |
+| "is X wired in?" / "where is X consumed?" | targeted wiring check |
+| "what props are not in compute?" | idle-sweep, filtered to NOT_WIRED |
+| "watch main + check wiring" | reactive mode (sub-mode of `watch`) |
+| "validate mass-table sweep pipeline" | run pipeline + cross-check witnesses |
+| post-merge of a `prop:*` block | reactive (auto-triggered from `watch` §3 Q3) |
+| idle / waiting on long task | start an idle-sweep agent in background |
 
-is_wiring_event=false
+## Invocation modes
 
-# (i) Any new/changed provable content block (with Lean sibling)
-echo "$changed" | grep -qE 'content/.*\.(md|ts|lean)$' && {
-  for f in $(echo "$changed" | grep -E 'content/.*\.ts$'); do
-    grep -qE '^export default (theorem|lemma|proposition|corollary|definition)\(' "$f" && is_wiring_event=true
-  done
-}
+### A. REACTIVE (called from `watch` §3 Q3 — "Can we reuse?")
 
-# (ii) Any change to a production-chain consumer or witness producer
-echo "$changed" | grep -qE '^folio-assistant/computations/(derive_|paper_six_term|build_|atomic_mass|mass_table|probe_).*\.py$' && is_wiring_event=true
+When `watch` sees a new commit on `main` (or PR event) that adds or
+changes a `prop:` / `thm:` / `lem:` / `cor:` block (or its `.lean`
+sibling), and Q3 hits step 4 ("Computation"), invoke this skill on the
+affected label.  Outputs:
 
-# (iii) Any change to a witness JSON (drift / new claim)
-echo "$changed" | grep -qE '\.(witness|derivation)\.json$' && is_wiring_event=true
-```
+- WIRED / PROBE-ONLY / NOT-WIRED verdict
+- list of consumer scripts that currently use (or should use) the block
+- recommended fix (script edit, witness regen, new probe)
 
-For PR review-comment events, pass through if the comment body
-mentions: `wired`, `wiring`, `consumer`, `production chain`,
-`probe`, `witness`, `not consumed`, `KeyError`, `staleness`.
+### B. IDLE-SWEEP (user-invoked or background)
 
-## Slot C — §4b dispatch table
+When the foreground task is blocked (long Rust build, CI wait, big
+agent), launch this skill in the background.  It walks every
+`prop:*` / `thm:*` / `lem:*` content block, checks the
+`local/compute-integration-watcher` patterns I1–I12 below, and emits
+a ranked workplan to
+`docs/audits/<date>-compute-integration-sweep.md`.
 
-| Specialist | When to run | What it checks |
-|------------|-------------|----------------|
-| `compute-audit` (P1-P32) | Any changed `.py` | In-script patterns; backs I8 (float64-precision-loss), I9 (hardcoded literal) |
-| `witness_dependency_drift.py` | Any changed witness | I4 (upstream-witness-hash drift) |
-| `canonical_derivation_pipeline_compliance.py` | Session start + after any prop:/witness: change | Cross-chain wiring contracts |
-| `validate.ts` (`bun run validate <paper>`) | Any content-block change | I5 (broken `contentBlock` label), I12 (`lean.ref` mismatch) |
-| `derivation_chain_validator.py` | Any changed `.derivation.json` | I13 (incomplete upstream coverage) |
-| `proof-narrative-lean-equivalence` | New Lean prop landed | I1 (proven-in-Lean, no probe) sanity check |
+The idle-sweep MUST be safe to interrupt — checkpoint every 50 blocks
+to a `.wip.json` so a partial sweep is still useful.
 
-## Slot D — §4c finding taxonomy (the 13 I-patterns)
+## The 12 integration antipatterns (I1–I12)
 
 ### Group A — Missing wiring
 
-| Finding | Severity | Definition |
-|---------|----------|------------|
-| `I1-PROVEN-IN-LEAN-NO-PROBE` | major | Block has Lean proved (0 sorrys or §3b-cond) but no probe script + no witness with `contentBlock` referencing the label |
-| `I2-PROBE-ONLY-NOT-CONSUMED` | major | Probe witness exists, but production consumers don't import it |
-| `I2a-PROBE-SUPERSEDES-PRODUCTION-LEMMA` | critical | Sub-case: new prop is the substrate-pure/no-fit version of an existing production lemma; needs full "fate of predecessor" decision per the §I2a 4-step bookkeeping |
-| `I3-WIRED-BUT-GUARDED-OFF` | major | Consumer references the witness but the call is behind `if False` / off-by-default env var |
+- **I1. PROVEN-IN-LEAN, NO PROBE.** A `prop:`/`thm:`/`lem:` block has a
+  `.lean` sibling with 0 sorrys (or §3b-cond conditional-class), but
+  no `folio-assistant/computations/probe_*` script and no
+  `*.witness.json` referencing the label via `contentBlock`.  Fix:
+  write a probe that exercises the claim at q₀ + emits a witness
+  whose `contentBlock` field points at the prop.
+
+- **I2. PROBE-ONLY (NOT CONSUMED IN PRODUCTION).** A probe witness
+  exists, but the production consumers
+  (`paper_six_term_isotope_sweep.py`, `derive_m_p_hecke_full_tower_50dps.py`,
+  `derive_m_n_hecke_full_tower_50dps.py`, `atomic_mass_via_rho_k.py`,
+  `mass_table_ppb.py`) do not import or reference the probe's witness
+  file or its derived constants.  Fix: thread the probe's result into
+  the relevant production formula or, if intentionally probe-only,
+  add a `# probe-only: <reason>` line to the script header.
+
+- **I3. WIRED BUT GUARDED OFF.** A consumer references the witness but
+  the call is behind an `if False`, an env var defaulting to off, or a
+  legacy fallback that hides it. Fix: promote to default-on after a
+  numerical-equivalence cross-check at q₀.
 
 ### Group B — Stale wiring
 
-| Finding | Severity | Definition |
-|---------|----------|------------|
-| `I4-WITNESS-HASH-DRIFT` | critical | Consumer's `upstream_witness_hashes` map disagrees with the on-disk witness SHA1 |
-| `I5-CONTENTBLOCK-MISSING-LABEL` | critical | Witness's `contentBlock` field names a label that has no `.ts`/`.md` file |
-| `I6-EMPTY-DATA-SECTION` | critical | Production witness has `"data": {}` or `"data": []` (sweep crashed silently) |
-| `I7-PROBE-STALE-VS-MD` | major | Probe `computedAt` > 7 days behind the prop `.md` mtime |
+- **I4. WITNESS-HASH DRIFT.** A consumer's witness records an
+  `upstream_witness_hashes` map; the SHA1 of one of the upstreams on
+  disk no longer matches.  Fix: rerun the script (or the producer that
+  emits the upstream witness) and recommit both.  See
+  `witness_dependency_drift.py` (PR #663).
+
+- **I5. CONTENTBLOCK REFERENCES MISSING LABEL.** A witness's
+  `contentBlock` field names a label that has no `.ts` / `.md` file in
+  `content/`.  Fix: either create the block or point the field at the
+  closest neighbour. (E.g. the 2026-05-16 finding:
+  `atomic_mass_via_rho_k.py` → `prop:atomic-mass-via-rho-k`
+  undefined.)
+
+- **I6. EMPTY `data` SECTION IN PRODUCTION WITNESS.** A production
+  witness file has `"data": {}` or `"data": []` (sweep crashed or
+  exits cleanly without populating).  Fix: run the script under
+  `python -X faulthandler`; usually exposes a silent exception that
+  was caught and turned into no-op.  (Spotted on
+  `paper-six-term-isotope-sweep.witness.json` 2026-05-16: rows present
+  at top level instead of under `data` — schema drift.)
+
+- **I7. PROBE WITNESS COMPUTED-AT > 7 DAYS BEHIND THE PROP'S `.md`
+  MTIME.** Indicates the prop has been edited and the probe is stale.
+  Fix: rerun probe + regen witness; if numbers shift, surface to
+  author for sign-off before recommitting.
 
 ### Group C — Wrong primitive
 
-| Finding | Severity | Definition |
-|---------|----------|------------|
-| `I8-FLOAT64-VS-MPMATH-50DPS` | critical | Production chain uses `float64` where witness has 50-dps precision; erodes faithfulness |
-| `I9-HARDCODED-CODATA-DERIVED` | major | Production script contains a literal that should be from registry (also P31 in `compute-audit`) |
-| `I10-LEGACY-MASS-FORMULA` | major | Consumer imports a deprecated formula superseded by current 6-term form |
+- **I8. PRODUCTION CHAIN USES `float64` WHERE WITNESS USES
+  `mpmath_50dps`.** The witness's value is faithful to ~50 digits;
+  the consumer's `q_parameter.Q` (or any internal `float()`) erodes it
+  to ~15 digits.  Trace the value through `mp.mpf(str(...))` instead
+  of `float(...)` and confirm the consumer's final precision matches
+  the witness's.  (Reference fix:
+  `paper_six_term_isotope_sweep.py` `mp.mpf(str(z_mark))` per PR #534
+  Gemini comment #3.)
+
+- **I9. HARDCODED CODATA / DERIVED LITERAL OUTSIDE THE REGISTRY.**
+  Production script contains a numerical literal (mass, Q-value,
+  ratio, constant) that *should* be derived from a prop or imported
+  from `codata_constants.py` / `experimental_constants.py`.  This is
+  P31 in `compute-audit`, surfaced here because it also breaks
+  wiring.  Fix: import the registry symbol, run the audit scanner.
+
+- **I10. LEGACY MASS FORMULA USED IN PLACE OF CANONICAL.** A consumer
+  imports / inlines a deprecated formula superseded by the current
+  6-term form (e.g. `compute_mass_at_level`, `crt_markov_v4`,
+  `markov_invariant_unified_mass`, `paper_six_term_canonical_t1`).
+  Fix: replace the call with `paper_six_term_isotope_sweep` or its
+  helper functions; keep the deprecated import in `_deprecated/`
+  only.
 
 ### Group D — Cross-paper / cross-layer
 
-| Finding | Severity | Definition |
-|---------|----------|------------|
-| `I11-CROSS-PAPER-USES-NOT-CONSUMED` | minor | `uses[]` contains `paper-dir:label` but no compute consumer references the upstream paper's witness |
-| `I12-LEAN-REF-MISMATCH` | major | Content block's `lean.ref` URI does not resolve; caught by `bun run validate` lean-ref-resolves rule |
-| `I13-INCOMPLETE-UPSTREAM-COVERAGE` | major | Production consumer expects entry X but upstream witness's `results` / `data` doesn't include X (KeyError or silent skip) |
+- **I11. CROSS-PAPER `uses[]` NOT CONSUMED.** A block's `uses[]`
+  contains a `paper-dir:label` (e.g. `unital-groebner-bases:cor:pbw`)
+  but no compute consumer references the upstream paper's witness.
+  Fix: either drop the cross-paper `uses[]` if it's only narrative
+  context, or wire the dependent witness in via a `from
+  upstream-paper-witness import …` block.
 
-## Slot E — §4d discharge bands (examples)
+- **I12. WITNESS `lean.ref` MISMATCH.** A content block's `lean.ref`
+  URI (`<pkg>:Decl.Path`) does not resolve to an actual Lean
+  declaration in the named Lake package.  Fix: either create the Lean
+  decl or update the `ref:` URI.  Detected by
+  `bun run validate <paper>` under the `lean-ref-resolves` rule;
+  surfaced here because it commonly catches "Lean theorem renamed,
+  forgot to update content block".
 
-| Band | Examples |
-|------|----------|
-| **Auto-discharge** | `I4-WITNESS-HASH-DRIFT` → rerun script + recommit; `I8-FLOAT64-VS-MPMATH-50DPS` → wrap with `mp.mpf(str(...))`; `I9-HARDCODED-CODATA-DERIVED` → `codata_constants` import; `I10-LEGACY-MASS-FORMULA` → swap to `paper_six_term_isotope_sweep`; `I5-CONTENTBLOCK-MISSING-LABEL` (only if a near-neighbour exists) |
-| **Author-assist** | `I1-PROVEN-IN-LEAN-NO-PROBE` (probe authoring is a write task); `I2a` (fate-of-predecessor needs owner sign-off); `I3-WIRED-BUT-GUARDED-OFF` (promoting to default-on needs cross-check); `I6-EMPTY-DATA-SECTION` (silent failure root-cause); `I7-PROBE-STALE-VS-MD` (sign-off on new numbers); `I13` (extending upstream producer or accepting `pending` row) |
-| **Defer** | Conjecture-class props don't need compute consumers (CLAUDE.md §3b) — skip in idle sweep |
+## Workflow
 
-**Sub-pattern detail for I2a:** when this sub-pattern fires, follow
-the **three-phase delivery** (validated on PR #696 for
-`prop:flavor-dressed-mass-from-substrate-split`):
-- **Phase 1 — Foundation.** Author new structural content blocks (def
-  + props + thm + remark) and their Lean stubs. Update chapter
-  manifest. `bun run validate <paper>` clean. Commit + push.
-- **Phase 2 — Predecessor deletion + downstream repointing.** Delete
-  the lemma's `.{ts,md,lean}` files. Repoint every `uses[]` /
-  `interprets[]` / markdown-link reference. Re-validate. Commit + push.
-- **Phase 3 — Production wiring.** Author the new probe script.
-  Wire into consumers via the new prop's witness. Commit + push.
+### Reactive mode (per-commit / per-PR-event)
 
-## Slot F — §4e author-ask templates
+For each new `prop:*` / `thm:*` / `lem:*` / `cor:*` label introduced or
+changed by the commit:
 
-```markdown
-**compute-integration-watcher ask — `<label>`** (from <source>)
+1. `git diff <prev_sha>..<new_sha> -- content/` — find affected labels.
+2. For each label `L`:
+   - Walk **I1–I12** below in order.  Stop at the first hit; emit a
+     concrete fix recommendation.
+   - If clean, emit a one-liner: `L: ✓ wired`.
+3. Roll the per-label results up into a single comment summary, with
+   actionable items at the top.
+4. If the commit was a sibling-PR (not main), and the wiring
+   recommendation is small and local to my branch, **act on it**
+   under `watch §3 Q4 — Act`; otherwise queue as a TODO under the
+   sibling PR.
 
-- Pattern: `<I-N-name>` — <one sentence>
-- Severity: <critical | major | minor>
-- File: <github-blob-url to `.md`>
-- Consumer chain involved: <which production scripts would consume this>
-- Attempted: <which scanners/specialists tried>
-- Question:
-  1. I should write a probe + thread into production (Auto-discharge)
-  2. Probe-only is intentional — mark with `# probe-only: <reason>` comment
-  3. This is conjecture-class — skip (no compute needed)
-  4. <pattern-specific option, e.g. for I2a: "approve the 3-phase fate-of-predecessor handling">
-```
+### Idle-sweep (full content scan)
 
-## Slot G — §5a backlog discovery
+1. Enumerate every `prop:*.ts` / `thm:*.ts` / `lem:*.ts` / `cor:*.ts`
+   under `content/quantum-observable-universe/`.
+2. For each label `L`:
+   - **Step 1 — Lean status.** Read the `.lean` sibling; count
+     sorrys, axioms, classes.  Skip blocks where the Lean side is
+     "conjecture-class" (CLAUDE.md §3b-cond) — those don't need a
+     compute consumer.
+   - **Step 2 — Probe presence.** Grep
+     `folio-assistant/computations/*.witness.json` for
+     `"contentBlock": "L"`.  Record producer script name.
+   - **Step 3 — Production consumption.** Grep
+     `folio-assistant/computations/{derive_*,paper_six_term*,build_*_chain,atomic_mass_*}` for the
+     producer witness file name OR for the prop label string.
+   - **Step 4 — Apply I-patterns.** Walk I1–I12 in order; emit
+     hits.
+3. Emit `docs/audits/<YYYY-MM-DD>-compute-integration-sweep.md`
+   with: per-label table, aggregate counts by pattern, recommended
+   next actions ranked by leverage × tractability.
+4. For sweep results that flag fixes ≤30 minutes apiece, batch
+   them into a single follow-up branch named
+   `claude/compute-integration-fixes-<YYYY-MM-DD>`.
 
-```bash
-# 1. Enumerate every prop:/thm:/lem:/cor: content block
-find content/quantum-observable-universe -name '*.ts' -type f 2>/dev/null \
-  | xargs grep -lE '^export default (theorem|lemma|proposition|corollary|definition)\(' \
-  | sort -u > /tmp/_pw_compute_blocks.txt
+### Mass-table sweep validation (sub-mode)
 
-# 2. For each label, walk I1-I13 (see Slot D)
-#    - Step 1 (Lean status): count sorrys + axioms + classes
-#    - Step 2 (Probe presence): grep contentBlock in witnesses
-#    - Step 3 (Production consumption): grep producer witness name OR label string in production scripts (.py only — not .witness.json!)
-#    - Step 4 (Apply patterns): walk I1-I13 in order
-```
+Triggered by "validate mass-table sweep" / "is the mass pipeline
+working?":
 
-The trailing `.py` filter on Step 3 is essential: a bare
-`derive_*` matches `derive_*.witness.json` files and produces
-false-positive "consumer" hits.
+1. Run `python3 paper_six_term_isotope_sweep.py` (the canonical 6-term
+   formula) and capture stdout + the regenerated witness.
+2. Cross-check each isotope row against
+   `atomic-tr-m-mpfr-50dps.witness.json` (T1 source) and
+   `term6-habiro-residue-mpfr-50dps.witness.json` (T6 source).
+3. For any `KeyError "no canonical T1 for X"`, report the missing atom
+   and check whether PR #683's Rust χ pipeline now covers it (the
+   `4-way 1ppb gate now covers 8 atoms` commit promises ⁶Li, ⁷Li,
+   ⁷Be, ⁸Be).
+4. Report ABSOLUTE prediction error AND ISOSPIN-DEGENERACY error
+   separately — the absolute number tracks calibration health, the
+   isospin number tracks structural correctness independent of
+   calibration.
+5. Run `python3 canonical_derivation_pipeline_compliance.py` for the
+   compliance dashboard; emit per-contract pass/warn/fail.
 
-## Slot H — §5b prioritisation
+## Tooling
 
-Order by **leverage × tractability**:
+| Question | Tool / file |
+|---------|-------------|
+| Which props have probes? | `grep '"contentBlock":' folio-assistant/computations/*.witness.json` |
+| Which probes have production consumers? | `grep -l '<witness-name>' folio-assistant/computations/derive_*.py paper_six_term_isotope_sweep.py atomic_mass_via_rho_k.py mass_table_ppb.py` |
+| What's the canonical mass formula? | `paper_six_term_isotope_sweep.py` (per its own docstring) |
+| What's the m_p production chain? | `derive_m_p_hecke_full_tower_50dps.py` → `build_proton_mass_50dps_chain.py` → `atomic-tr-m-mpfr-50dps.witness.json` |
+| What's the m_n production chain? | `derive_m_n_hecke_full_tower_50dps.py` → `build_neutron_mass_50dps_chain.py` |
+| Witness dependency drift | `python3 witness_dependency_drift.py` |
+| Compute-audit scan | `python3 compute_audit_scan.py` (I8/I9 cross-coverage) |
+| Canonical derivation chain doc | `docs/audits/derivation-chain-mass-tower.md` |
+| Compliance dashboard | `canonical_derivation_pipeline_compliance.py` |
 
-1. **Critical I-patterns first** (I4 / I5 / I6 / I8 / I2a) — wiring
-   gaps that produce silent wrong answers.
-2. **Major I-patterns next** (I1 / I2 / I3 / I7 / I9 / I10 / I12 / I13).
-3. **Minor / informational** (I11).
-4. **Within a severity, prefer high-leverage props** (many
-   downstream dependents via `uses[]`).
-5. **Skip conjecture-class blocks** in idle sweep.
+## Verification checklist before declaring a prop "wired"
 
-## Slot I — §6 invariants
+1. **Lean side proved** (or §3b-cond conditional-class instance).
+2. **Probe witness exists** with `contentBlock: "<label>"` and a
+   numerical assertion that fails CI if the prop is broken.
+3. **At least one production-chain consumer** imports the probe
+   witness, the producer script, or the derived constant (visible
+   via `grep` in the consumer file).
+4. **Numerical-equivalence cross-check** at q₀ — if the prop closes
+   to within X%, the consumer's witness records that residual.
+5. **Anti-staleness wiring** — consumer's witness has
+   `upstream_witness_hashes` entry for the probe witness.
+6. **`bun run validate`** passes (catches I5 / I12).
 
-| Invariant | Check |
-|-----------|-------|
-| No new `I1-PROVEN-IN-LEAN-NO-PROBE` introduced | Every prop block touched on this branch with `.lean` proved has a probe witness committed |
-| No new `I4-WITNESS-HASH-DRIFT` | Consumer's `upstream_witness_hashes` is in sync with on-disk witness SHA1 |
-| No new `I9-HARDCODED-CODATA-DERIVED` | `compute_audit_scan.py` reports no new P31 hits vs `origin/main` |
-| No new `I12-LEAN-REF-MISMATCH` | `bun run validate <paper>` passes |
+## Anti-patterns this skill explicitly rejects
 
-## Domain-specific anti-patterns (extends parent)
-
-- ❌ Auto-fixing wiring on someone else's PR branch. I-pattern
-  hits on sibling PRs become a coordination comment (per parent
-  §5i), not a force-push.
-- ❌ Generating new probes for conjecture-class props (CLAUDE.md
-  §3b). Their witnesses are axiomatic; skip in idle-sweep.
-- ❌ Declaring "wired" based on docstring-only mention. A line
+- **Auto-fixing wiring on someone else's PR branch.** I-pattern hits
+  on sibling PRs become a comment on that PR (one comment, batched),
+  not a force-push to its branch.  Per CLAUDE.md author-only-closes
+  rule, the sibling PR's owner accepts the recommendation.
+- **Generating new probes for conjecture-class props.** Conjectures
+  (CLAUDE.md §3b) don't need compute consumers — their witnesses are
+  axiomatic.  Skip them in idle-sweep.
+- **Declaring "wired" based on docstring-only mention.** A line
   `# uses prop:foo` in a comment is *not* wiring; the consumer
   must actually load the witness or compute the derived constant.
-- ❌ Three-route-convergence claims — also rejected by
-  `canonical-watcher`; restated here because the wiring step
-  can mask them ("we wired it, look at the agreement!" when the
-  routes compute different categorical objects).
+- **Numerology / three-route-convergence claims** — also explicitly
+  rejected in `local/compute-audit`; restated here because the
+  wiring step can mask them ("we wired it, look at the agreement!"
+  when the routes compute different categorical objects).
+
+## Pattern → reference example
+
+| Pattern | Example on main (2026-05-18) |
+|---------|------------------------------|
+| I1 | `prop:chi-lambda-w0-sign-weighting` — Lean proven (PR #672 merge), no probe witness |
+| I2 | `prop:flavor-split-substrate` — probe `probe_flavor_split_substrate.py` exists, no production consumer beyond docstring mention in `derive_m_p_hecke_full_tower_50dps.py:58` |
+| I3 | (placeholder — fill in when a real instance is spotted) |
+| I4 | (caught by `witness_dependency_drift.py` — running it weekly is the policy) |
+| I5 | `prop:atomic-mass-via-rho-k` referenced by `atomic_mass_via_rho_k.py` — content block does not exist (2026-05-16 audit) |
+| I6 | `paper-six-term-isotope-sweep.witness.json` — top-level `data: []` (rows are under top-level `rows`, schema-shift artifact) |
+| I7 | `light-isotope-sweep.witness.json` — 9 days behind main as of 2026-05-18 |
+| I8 | `paper_six_term_isotope_sweep.py:Z_MARK` — fixed in PR #534 by wrapping `mp.mpf(str(z_mark))` |
+| I9 | P31 hits in `compute-audit-scan.witness.json` (26 hits as of 2026-05-17) |
+| I10 | `paper_six_term_isotope_sweep.py` docstring lists 4 retired formulas — confirm no live imports of them |
+| I11 | (sweep produces these — check `uses[]` cross-paper entries) |
+| I12 | Detected by `bun run validate`; `lean-ref-resolves` rule |
+
+## Tie-in with `local/watch`
+
+`watch` §3 Q3 ("Can we reuse?") step 4 ("Computation") is the entry
+point.  When the commit adds a `prop:*` block, `watch` should
+delegate to this skill, capture its verdict, and either act-or-defer
+per Q4.  When the commit adds *only* a witness (no new prop), this
+skill is unnecessary — `compute-audit` already covers in-script
+patterns.
+
+For the idle-sweep, the SessionStart hook may optionally arm this in
+addition to `watch`; see `.claude/skills/local/compute-integration-watcher.md`
+§ "When to use" for the trigger phrases.
+
+## Output template (per-label)
+
+```
+prop:<label>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Lean:        ✓ 0 sorrys  (qou:QOU.Foo.bar, n axioms)
+  Probe:       ✓ probe_foo.py → foo-probe.witness.json (computedAt: …)
+  Production:  ✗ NOT consumed in production chain (I2)
+               ↳ recommend: thread probe_foo into paper_six_term_isotope_sweep at term N
+  Anti-stale:  ✓ upstream_witness_hashes has 1 entry
+  Validate:    ✓ bun run validate clean
+  Verdict:     PROBE-ONLY
+  Action:      I2 fix — see docs/audits/<date>-compute-integration-sweep.md row K
+```
+
+## CLAUDE.md interaction
+
+This skill respects the same rules as `compute-audit`:
+
+- Never write to **protected files** (deploy/google-viewers.txt,
+  deploy/github-collaborators.txt, .github/CODEOWNERS).
+- Never close / resolve TodoItems (human-only per CLAUDE.md §4a).
+- Cite the matching I-pattern (I1–I12) for every recommended fix.
+- For dual paths (probe-only vs production), preserve the
+  probe-only path as an opt-out — never delete it.

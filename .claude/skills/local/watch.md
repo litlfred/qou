@@ -194,6 +194,13 @@ Apply the four reuse questions from `prepare-merge.md §2a`:
    stale witness in our branch?  Swap in and regenerate the witness
    JSON. (See §2a for the routine compute-audit-scan / derivation-
    chain-audit / e0-calibration-audit drift-conflict pattern.)
+   - When the upstream commit adds or modifies a `prop:` / `thm:` /
+     `lem:` / `cor:` block (or its `.lean` sibling), delegate to
+     `local/compute-integration-watcher` to check whether the new
+     claim is wired into the production compute chain. The watcher
+     runs the I1–I12 wiring checklist and returns a verdict
+     (WIRED / PROBE-ONLY / NOT-WIRED) plus a concrete fix
+     recommendation. Capture the verdict here and feed it into Q4.
 
 ### Q4 — Report or act?
 
