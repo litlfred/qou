@@ -51,7 +51,8 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 from mpmath import mp, mpf
 
-from witness_base import WitnessBuilder
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from witness_base import WitnessBuilder  # noqa: E402
 
 # ── 50 dps for consistency with magic-shell-empirical-instantiation ──
 mp.dps = 50
@@ -127,11 +128,9 @@ def main() -> None:
         {atom: mp.nstr(v, 50) for atom, v in dc.items()},
     )
 
-    # ── Substrate parameters at 50 dps (reproduce q_parameter at 50 dps) ──
-    VOL_4_1 = mpf("2.029883212819307")  # SnapPy 3.3.2
-    MU_OVER_E = mpf("206.7682830")  # CODATA 2022
-    hbar_q = mp.sqrt(VOL_4_1 / MU_OVER_E)
-    q0 = 1 / (1 - hbar_q)
+    # ── Substrate parameters at 50 dps ───────────────────────────────
+    # Canonical 50-dps q_0 (CAL-2) from q_parameter.Q_50_DIGIT_STR.
+    q0 = mp.mpf(Q_50_DIGIT_STR)
     m_e = mpf("0.51099895069")  # CODATA 2022
     E0 = m_e / (q0 * (q0 - 1))
     t_h = q0 - 1 / q0  # Hecke deformation parameter

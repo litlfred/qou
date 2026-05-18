@@ -57,6 +57,7 @@ mp.mp.dps = 50
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 
@@ -83,10 +84,8 @@ def main() -> int:
     }
 
     # ── Substrate at 50 dps ──────────────────────────────────────────
-    vol_4_1 = mp.mpf("2.029883212819307")
-    mu_over_e = mp.mpf("206.7682830")
-    hbar_q = mp.sqrt(vol_4_1 / mu_over_e)
-    q0 = 1 / (1 - hbar_q)
+    # Canonical 50-dps q_0 (CAL-2) from q_parameter.Q_50_DIGIT_STR.
+    q0 = mp.mpf(Q_50_DIGIT_STR)
     m_e = mp.mpf("0.51099895069")
     e0 = m_e / (q0 * (q0 - 1))
     t_h = q0 - 1 / q0  # Hecke deformation h
