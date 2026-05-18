@@ -118,20 +118,18 @@ def fmt(value, dps: int | None = None, strip_zeros: bool = False) -> str:
 
     Routing:
 
-    - ``mpf`` (real) and ``mpc`` (complex): formatted via ``mp.nstr``.
-    - Plain Python numerics (``int``, ``float``): promoted to ``mpf``
-      and formatted via ``mp.nstr`` — keeps witness JSON byte-stable
-      when an upstream computation drops out of mpmath.
-    - Everything else (``str``, ``Path``, lists, dicts, ``None``, …):
-      short-circuited to ``str(value)`` without touching ``mp.nstr``.
-      Use ``str(...)`` directly for non-numeric witness fields; ``fmt``
-      tolerates them only as a safety net.
+    - ``mpf`` (real) and ``mpc`` (complex): formatted via ``mp.nstr``
+      at the requested precision — the canonical numeric path.
+    - Everything else (``int``, ``float``, ``str``, ``Path``, lists,
+      dicts, ``None``, …): short-circuited to ``str(value)`` without
+      touching ``mp.nstr``.  ``int`` and ``float`` get their natural
+      Python repr (no spurious mpf-promotion noise on a 0.1-style
+      float).  Use ``str(...)`` directly for non-numeric witness
+      fields; ``fmt`` tolerates them only as a safety net.
     """
     if dps is None:
         dps = OUTPUT_DPS
     from mpmath import mpc  # local import: mpc is rarely needed
     if isinstance(value, (mpf, mpc)):
         return mp.nstr(value, dps, strip_zeros=strip_zeros)
-    if isinstance(value, (int, float)) and not isinstance(value, bool):
-        return mp.nstr(mpf(value), dps, strip_zeros=strip_zeros)
     return str(value)
