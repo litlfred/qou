@@ -1,8 +1,8 @@
 {
   "engine": "codata-constants",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T03:19:21.738688+00:00",
-  "commitSha": "dbfc940f3d58cce2a1a86bcd497c1a8178f19977",
+  "computedAt": "2026-05-18T19:09:28.964684+00:00",
+  "commitSha": "b2c597d650aa5a9a75f94d49262c21be7fc3625d",
   "assertions": [
     {
       "name": "m_e_in_codata_2022_window",
@@ -30,10 +30,10 @@
   "durationMs": 7,
   "computation": "codata-masses",
   "scriptFile": "codata_masses.py",
-  "scriptHash": "45e3986590c7",
-  "scriptCommitSha": "52b294d87286486757d47b6b4a183ac7390848b0",
+  "scriptHash": "8b322563a508",
+  "scriptCommitSha": "f33f5c97f7bce950c88bd973d970f983b33bda6b",
   "description": "CODATA 2022 / AME 2020 proton, neutron, electron masses (MeV/c^2), re-exported from folio-assistant/computations/codata_constants.py so the values registry can pin Lean and Markdown literals via :leanval[m_e_MeV] / :leanval[m_p_MeV] / :leanval[m_n_MeV].",
-  "contentBlock": "prop:three-calibration-inputs",
+  "contentBlock": "codata mass anchors (CAL-1/2 inputs; informational, no formal block)",
   "parameters": {
     "source": "CODATA 2022 (m_e, m_p); AME 2020 + Q_β (m_n)"
   },
