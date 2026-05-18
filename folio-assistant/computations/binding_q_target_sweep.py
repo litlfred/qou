@@ -184,6 +184,35 @@ def load_qbeta_precision_ladder() -> list[dict]:
             ),
         })
 
+        # N=5 candidates — multi-stratum cohomological hypothesis
+        # (see 2026-05-18-qbeta-n5-cohomological-breakdown.md).
+        # The simple "alternating Kashiwara × Jones" pattern breaks
+        # here because (k=5) total degree admits ≥4 spectral-sequence
+        # strata E^{p,q}_∞ with p+q=5. Empirical closure: c_5 ≈ 12.82.
+        # Best clean candidate: c_5 = 13 = (-c_3)³ + (-c_3)² + 1
+        # = 8 + 4 + 1 (geometric-like sum over cohomological depths).
+        c5_13 = mpf(13)
+        Q_N5_13 = Q_N4_flipped * (1 + c5_13 * (b ** 5) * (hbar_sq ** 5))
+        rungs.append({
+            "N": 5,
+            "label": "Q_N4-flipped · (1 + 13·b⁵·ℏ_q^10)  [conjectural: 2³+2²+1]",
+            "Q_pred_MeV": fmt(Q_N5_13, 14),
+            "err_MeV": fmt(Q_N5_13 - Q_AME, 4),
+            "err_ppb": fmt((Q_N5_13 - Q_AME) / Q_AME * mpf("1e9"), 6),
+            "categorical_source": (
+                "Cohomological-strata conjecture: c_5 = (-c_3)³ + (-c_3)² + 1 "
+                "= 8 + 4 + 1 = 13. Sum-of-strata interpretation per "
+                "qbeta-n5-cohomological-breakdown audit. CONJECTURAL — "
+                "matches empirical 12.82 to ~1%."
+            ),
+            "note": (
+                "Closes to ~0.01 ppb. Empirical exact-closure c_5 = "
+                "+12.82 (categorical c_5 = 13 over-corrects by 1%, "
+                "leaving a tiny positive residual — consistent with "
+                "higher rungs N≥6 closing the remainder)."
+            ),
+        })
+
     return rungs
 
 
@@ -290,9 +319,9 @@ if __name__ == "__main__":
     w.add_assertion(
         "qbeta_ladder_rungs",
         computed=len(out["qbeta_precision_ladder"]),
-        expected=6,
+        expected=7,
         tolerance=0,
-        source="N=0..N=3 + N=4 doc-form + N=4 sign-fixed (6 rungs total)",
+        source="N=0..N=3 + N=4 doc-form + N=4 sign-fixed + N=5 conjectural (7 rungs)",
     )
     for upstream in [
         COMPUTE_DIR / "canonical-tr-m-via-chi-cache.witness.json",

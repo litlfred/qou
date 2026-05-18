@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T22:11:35.000277+00:00",
-  "commitSha": "adb9bfb002268731d1c0a75224873789da85a179",
+  "computedAt": "2026-05-18T23:20:38.528222+00:00",
+  "commitSha": "349834e8181773d7c32a76d8eaa65ac101269e76",
   "assertions": [
     {
       "name": "binding_rows_count",
@@ -14,19 +14,19 @@
     },
     {
       "name": "qbeta_ladder_rungs",
-      "computed": 6,
-      "expected": 6,
+      "computed": 7,
+      "expected": 7,
       "passed": true,
       "tolerance": 0,
-      "source": "N=0..N=3 + N=4 doc-form + N=4 sign-fixed (6 rungs total)"
+      "source": "N=0..N=3 + N=4 doc-form + N=4 sign-fixed + N=5 conjectural (7 rungs)"
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 15,
   "computation": "binding-q-target-sweep",
   "scriptFile": "binding_q_target_sweep.py",
-  "scriptHash": "f30353a0ab80",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "50d1c2946cfa",
+  "scriptCommitSha": "5e93de47d199400a541690f37c24f8b00fdae5a2",
   "description": "Per-isotope binding-energy + Q_β precision-ladder sweep against Workplan v7 L2 100×-experimental targets. Shows current canonical state across all on-disk witnesses. Audit-only — no new predictions.",
   "data": {
     "binding_rows": [
@@ -171,6 +171,15 @@
         "err_ppb": "-0.574486",
         "categorical_source": "Sign-flipped categorical (audit fix)",
         "note": "Sign-flipped categorical closes to -0.57 ppb. Beats 7.80 ppb target by 14×. Doc's claimed -7 ppt requires empirical c_4 = -1.144 (9.5% off categorical)."
+      },
+      {
+        "N": 5,
+        "label": "Q_N4-flipped · (1 + 13·b⁵·ℏ_q^10)  [conjectural: 2³+2²+1]",
+        "Q_pred_MeV": "0.78233341400642",
+        "err_MeV": "6.417e-12",
+        "err_ppb": "0.00820291",
+        "categorical_source": "Cohomological-strata conjecture: c_5 = (-c_3)³ + (-c_3)² + 1 = 8 + 4 + 1 = 13. Sum-of-strata interpretation per qbeta-n5-cohomological-breakdown audit. CONJECTURAL — matches empirical 12.82 to ~1%.",
+        "note": "Closes to ~0.01 ppb. Empirical exact-closure c_5 = +12.82 (categorical c_5 = 13 over-corrects by 1%, leaving a tiny positive residual — consistent with higher rungs N≥6 closing the remainder)."
       }
     ],
     "upstream_witness_hashes": [
