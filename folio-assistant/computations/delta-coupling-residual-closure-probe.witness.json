@@ -12,6 +12,7 @@
   "scriptCommitSha": "unknown",
   "description": "P3.A follow-up: 50 dps probe of three structural correction families (H6 q-dilog/q-trilog additive, H7 multiplicative q-deformation [A−2]_q or log_q, H8 m_e/E₀·h micro-correction) for the +0.71% (~7100 ppm) residual of Δ_coupling(2,2) − 2·E_0·log(1/h(q_0)) at the doubly-magic anchor. Diagnostic probe — does NOT fit Δ_coupling to AME (forbidden by three-cal discipline).",
   "contentBlock": "conj:magic-shell-stabilization",
+  "auditOnly": "docs/audits/2026-05-12-delta-coupling-residual-closure.md",
   "parameters": {
     "mp_dps": 50,
     "delta_cat_source": "magic-shell-empirical-instantiation.witness.json#per_atom_delta_cat",

@@ -12,6 +12,7 @@
   "scriptCommitSha": "534065b7111094b54b391c6fadc55c74c60439f4",
   "description": "Numeric cache of y_λ(q_0) at 50 dps for n ∈ {2, ..., 30}. Source for n=2..12 is `y-lambda-wenzl-bridge-symbolic-witness.json` evaluated via sympy.subs; source for n ≥ 13 is the numerical closed-form Wenzl-bridge evaluator (`y-lambda-wenzl-witness.json`, merged by `extend_y_lambda_at_q0_from_wenzl.py`). Output strings trimmed to exactly 50 dps via mp.nstr.",
   "contentBlock": "prop:y-lambda-closed-form-wenzl-bridge",
+  "auditOnly": "docs/audits/2026-05-09-workplan-update-rho-k.md",
   "parameters": {
     "q_0": "1.10997859555418057528159407960950937799328227995868680265283",
     "precision_dps": 50,

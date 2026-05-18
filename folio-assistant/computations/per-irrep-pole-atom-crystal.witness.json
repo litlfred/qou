@@ -6,10 +6,10 @@
   "assertions": [
     {
       "name": "asserted_atoms_match_closed_form_shift",
-      "computed": 1.0,
-      "expected": 1.0,
+      "computed": 1,
+      "expected": 1,
       "passed": true,
-      "tolerance": 0.0,
+      "tolerance": 0,
       "source": "prop:per-nucleon-shift-additive-linearity (verified for A ≥ 2 in per-nucleon-shift-derivation.witness.json) + crystal-bases Path A (this script)"
     }
   ],
@@ -21,6 +21,7 @@
   "scriptCommitSha": "c8c68b873f32a71faa2aa738e9e5e916cf32db45",
   "description": "Crystal-bases Path A pole-order verification of shift_NF(β_K) = 18Z + 21N + 1 for each atom K, computed via per-SYT-eigenline u-pole tally at q → 0 (Kashiwara crystal limit) on the canonical Δ_I-coupled atomic braid word.  Replaces the GS-reduction-bound per_irrep_pole_atom.py path that doesn't return at H_12. Per-letter contributions: σ on sym/anti = ±2; σ⁻¹ on sym/anti = ∓2; Δ_I = -2 always (leading u⁻² term).",
   "contentBlock": "rem:crystal-bases-path-a",
+  "auditOnly": "docs/audits/2026-05-15-a-minus-2-q-substrate-derivation.md",
   "data": {
     "conditional_on": [
       "conj:crystal-graph-realization"

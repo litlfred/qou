@@ -7,9 +7,9 @@
     {
       "name": "v2_t_vs_he3_distinct",
       "computed": 25.127502044405144,
-      "expected": 0.0,
+      "expected": 0,
       "passed": false,
-      "tolerance": -1.0,
+      "tolerance": -1,
       "unit": "percent (abs)",
       "source": "V2 should distinguish isospin mirrors; >0 confirms"
     }
@@ -22,6 +22,7 @@
   "scriptCommitSha": "unknown",
   "description": "V2 mirror-chirality (genuine geometric mirror knot β*) wired via numeric per-irrep Hoefsmit at q_0 — the fast path that the V1 symbolic backfill (term5_aK_audit.py) couldn't handle for A ≥ 3. Confirms the V1 = τ(β²) double-winding finding from `2026-05-15-three-pr-integration.md` §V1≠mirror by exhibiting a structural T ↔ ³He asymmetry under V2 that V1 cannot resolve.",
   "contentBlock": "prop:chirality-dual-space-derivation",
+  "auditOnly": "docs/audits/2026-05-15-three-pr-integration.md",
   "parameters": {
     "q_0": 1.1099785955541805
   },

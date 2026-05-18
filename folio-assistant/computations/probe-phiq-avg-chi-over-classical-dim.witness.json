@@ -19,6 +19,7 @@
   "scriptCommitSha": "e2204a4a5d5548d9e463ec2fbfaf502069377aa3",
   "description": "Operator-valued Φ_q brane-tower probe in Wedderburn-block form. For each isotope in {D, T, ³He} and each k in {1,2,3,4,5,6,8,10}, computes tower_op^(k) = Σ_λ y_λ Φ_q^{[≤k]}(|χ^λ_q(β)|/dim V_λ), Wedderburn-summed across irreps of H_{3A}(q_0) via the trusted q-Hecke seminormal infrastructure (per-irrep χ^λ via Hoefsmit, y_λ via Wenzl Schur principal specialization). Historical / superseded variant of the canonical per-eigenvalue operator-valued probe in probe_phiq_operator_valued.py: this one uses three approximations (classical SYT-count dim_V_λ instead of quantum dim_q; abs(χ) instead of signed χ; mean-of-eigenvalues instead of per-eigenvalue Φ_q + operator trace) that biased the k=2 ³He result.",
   "contentBlock": "conj:brane-tower-z-habiro",
+  "auditOnly": "docs/audits/2026-05-11-brane-tower-n_star-closure-audit.md",
   "parameters": {
     "q_0": 1.1099785955541805,
     "m_e_MeV": 0.51099895,
@@ -32,7 +33,7 @@
       8,
       10
     ],
-    "threshold_pct": 10.0
+    "threshold_pct": 10
   },
   "data": {
     "per_atom": {

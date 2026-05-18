@@ -6,14 +6,14 @@
   "assertions": [
     {
       "name": "m_n_predicted_within_1_ppb_of_codata",
-      "computed": 0.0,
-      "expected": 0.0,
+      "computed": 0,
+      "expected": 0,
       "passed": true,
-      "tolerance": 1.0
+      "tolerance": 1
     },
     {
       "name": "improvement_over_strategy_3",
-      "computed": 1.0,
+      "computed": 1,
       "expected": true,
       "passed": true
     },
@@ -32,6 +32,7 @@
   "scriptCommitSha": "25624da6200815ef502b0959ba18aea2567b536e",
   "description": "Item 2 from Phase 1.8 actionable path: derive m_n via the difference formula m_n − m_p = ((q+q⁻¹)/(q^{1/2}+q^{−1/2})) · (μ_d − μ_u) per fresh_derivation_pn_true_sdp.py:1-26.  Calibrates μ_d − μ_u against CODATA Δm; predicts m_n via difference at <1 ppb (by construction). Replaces Strategy-3's bare-|tr_M(n)| approach which violates 'only differences are observables' and produces 8.325% error.  Both paths are 1-parameter calibrations; the difference path is framework-consistent.",
   "contentBlock": "prop:atomic-mass-gb-nf",
+  "auditOnly": "docs/audits/2026-05-17-substrate-m-p-m-n-compute-audit.md",
   "parameters": {
     "q_0": "1.1099785955541805752815940796095093779932822799587",
     "q_0_inv": "0.90091827356430111417998565731158747153152597604223",

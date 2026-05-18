@@ -12,6 +12,7 @@
   "scriptCommitSha": "f4f2076185f84e8d11ba439335a2a9f08c40fad5",
   "description": "M2 mass-table comparison: per-derivation assembly under codata Q_β vs cos((z−1)·h/2) substrate Q_β. Verifies the q_beta_source flag from this commit, and surfaces the per-atom mass-prediction shift under the cos tightening. Closes the wiring half of M1 §7 item 3.",
   "contentBlock": "prop:q-beta-categorical-precision-ladder",
+  "auditOnly": "docs/audits/2026-05-16-m2-mass-table-cos-q-beta.md",
   "parameters": {
     "Q_beta_codata_MeV": 0.7823334100000222,
     "Q_beta_form_a_cos_MeV": 0.7825728174022026
@@ -61,7 +62,7 @@
         "M_pred_cos_MeV": 2814.1566610991863,
         "err_pct_codata": 0.16816894586171488,
         "err_pct_cos": 0.16816790491393008,
-        "delta_M_pred_MeV": -2.924472119048005e-05
+        "delta_M_pred_MeV": -0.00002924472119048005
       },
       {
         "atom": "3He",

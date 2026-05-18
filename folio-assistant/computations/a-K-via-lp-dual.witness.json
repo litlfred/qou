@@ -69,6 +69,7 @@
   "scriptCommitSha": "unknown",
   "description": "Item B (B.1a) — a_K candidate values via SDP shadow-price decomposition. Compares four a_K definitions (Ratio R, Closed-form C, SDP-dual signed D-sc, SDP-dual absolute D-chi) at q_0 50dps for the proton, neutron, deuteron, tritium, ³He, ⁴He chi-cache atoms. Emits per-partition breakdown with self-conjugate vs chirality-active classification (per content sum c(λ) and Λ^∨ involution). Per `prop:mass-coefficient-shadow-price` §3, a_K should equal 1 + Σ_{λ ∉ Λ^sc} u_λ*/u_0*; this script's D-sc / D-chi candidates are working approximations using chi-cache data directly (full LP solve deferred to B.1a-full). Reference: `conj:knot-factor-frobenius-pairing`.",
   "contentBlock": "conj:knot-factor-frobenius-pairing",
+  "auditOnly": "docs/audits/2026-05-18-m-p-item-b-t5-categorical-attribution.md",
   "parameters": {
     "q0_50dps": "1.1099785955541805753",
     "h_q": "0.2090603219898794611",
@@ -85,7 +86,7 @@
         "a_K_C_closed": "1.0",
         "a_K_D_sc_signed": "1.5232944120392722183",
         "a_K_D_chi_abs": "1.5548601702953381419",
-        "R_vs_C_ppm": 0.0,
+        "R_vs_C_ppm": 0,
         "D_chi_vs_C_ppm": 554860.1702953381,
         "n_active_chirality_blocks": 2,
         "active_chirality_partitions": [
@@ -153,7 +154,7 @@
         "a_K_C_closed": "1.0",
         "a_K_D_sc_signed": "1.4824384220533484674",
         "a_K_D_chi_abs": "1.5273138332740476544",
-        "R_vs_C_ppm": 0.0,
+        "R_vs_C_ppm": 0,
         "D_chi_vs_C_ppm": 527313.8332740477,
         "n_active_chirality_blocks": 2,
         "active_chirality_partitions": [
@@ -2103,6 +2104,6 @@
     "active_set": "see rows[*].active_chirality_partitions",
     "primal_obj": "see rows[*].dual_breakdown.abs_tr_M",
     "dual_obj": "= primal_obj by Wedderburn block diagonality (strong duality)",
-    "duality_gap": 0.0
+    "duality_gap": 0
   }
 }

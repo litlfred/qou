@@ -25,10 +25,11 @@
   "scriptCommitSha": "509e913dbe9de3e12b972d676a041ae6e542cd8e",
   "description": "Pair-knot magic-shell probe + operator-selection LP dual confirmation for the ³He brane-tower gap.  Tests whether collapsing the Z=2 closed proton shell (and N=2 closed neutron shell for ⁴He) into a single composite Φ_q(|V̂_pair|) — instead of summing 4 per-generator Φ_q(|V̂_i|) contributions — closes the AME light-isotope binding gap; calibrates Δ_shell(Z=2) from ³He and predicts ⁴He.  Emits full LP primal + dual (x_star, y_0_star, y_star, active_set, primal_obj, dual_obj, duality_gap) per CLAUDE.md `LP / SDP duals — first-class infra` and `prop:operator-selection-lp`.  The diagonal-Gram approximation is documented as a caveat; the full Hoefsmit-seminormal Frobenius pairing is a refinement.",
   "contentBlock": "conj:brane-tower-z-habiro",
+  "auditOnly": "docs/audits/2026-05-11-brane-tower-n_star-closure-audit.md",
   "parameters": {
     "q_0": 1.1099785955541805,
     "m_e_MeV": 0.51099895,
-    "threshold_pct": 10.0,
+    "threshold_pct": 10,
     "ame_targets": {
       "deuteron": 2.224566,
       "tritium": 8.481798,
@@ -348,17 +349,17 @@
         ],
         "n_target": 0.3882864712890246,
         "x_star": [
-          -0.0,
-          -0.0,
+          0,
+          0,
           0.3882864712890246,
-          -0.0,
-          -0.0
+          0,
+          0
         ],
         "y0_star": 0.26414511559102966,
         "y_star": [
           0.7410652428600943,
           0.7496734844804616,
-          0.0,
+          0,
           0.8086682264889562,
           0.7475308486694433
         ],
@@ -370,7 +371,7 @@
         ],
         "primal_obj": 0.10256397484107242,
         "dual_obj": 0.10256397484107242,
-        "duality_gap": 0.0,
+        "duality_gap": 0,
         "feasible": true
       },
       "tritium": {
@@ -409,15 +410,15 @@
         ],
         "n_target": 0.10405398879467263,
         "x_star": [
-          -0.0,
-          -0.0,
-          -0.0,
-          -0.0,
-          -0.0,
+          0,
+          0,
+          0,
+          0,
+          0,
           0.10405398879467263,
-          -0.0,
-          -0.0,
-          -0.0
+          0,
+          0,
+          0
         ],
         "y0_star": 0.15961495459608993,
         "y_star": [
@@ -426,7 +427,7 @@
           1.4981539735761955,
           0.9519239553516519,
           0.8573754302177307,
-          0.0,
+          0,
           0.9519239553516519,
           0.8573754302177305,
           1.1091028817927373
@@ -443,7 +444,7 @@
         ],
         "primal_obj": 0.016608572697003724,
         "dual_obj": 0.016608572697003724,
-        "duality_gap": 0.0,
+        "duality_gap": 0,
         "feasible": true
       },
       "he3": {
@@ -482,15 +483,15 @@
         ],
         "n_target": 0.2065441288958544,
         "x_star": [
-          -0.0,
-          -0.0,
-          -0.0,
-          -0.0,
-          -0.0,
+          0,
+          0,
+          0,
+          0,
+          0,
           0.2065441288958544,
-          -0.0,
-          -0.0,
-          -0.0
+          0,
+          0,
+          0
         ],
         "y0_star": 0.26414511559102966,
         "y_star": [
@@ -499,7 +500,7 @@
           0.7690482527844085,
           0.7410652428600943,
           0.7496734844804616,
-          0.0,
+          0,
           0.8086682264889562,
           0.7475308486694433,
           0.7736898843905697
@@ -516,7 +517,7 @@
         ],
         "primal_obj": 0.054557622801843994,
         "dual_obj": 0.054557622801843994,
-        "duality_gap": 0.0,
+        "duality_gap": 0,
         "feasible": true
       },
       "he4": {
@@ -567,19 +568,19 @@
         ],
         "n_target": 0.05534834587669884,
         "x_star": [
-          -0.0,
-          -0.0,
-          -0.0,
-          -0.0,
-          -0.0,
-          -0.0,
-          -0.0,
-          -0.0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
           0.05534834587669884,
-          -0.0,
-          -0.0,
-          -0.0,
-          -0.0
+          0,
+          0,
+          0,
+          0
         ],
         "y0_star": 0.15961495459608993,
         "y_star": [
@@ -591,7 +592,7 @@
           1.4981539735761955,
           0.9519239553516519,
           0.8573754302177307,
-          0.0,
+          0,
           0.9519239553516519,
           0.8573754302177305,
           0.8965585578095322,
@@ -613,7 +614,7 @@
         ],
         "primal_obj": 0.008834423714077966,
         "dual_obj": 0.008834423714077966,
-        "duality_gap": 0.0,
+        "duality_gap": 0,
         "feasible": true
       }
     }

@@ -27,6 +27,7 @@
   "scriptCommitSha": "08070cc474cbe4421658e6134740219ab3bae146",
   "description": "Full mass-endomorphism tower derivation of m_p, m_n, m_e at MPFR @ 50 dps. Sums T1 (descended) + T2 (single brane tower) + T3 (pair brane tower) + T4 (Frobenius co-Casimir) using the MPFR-native per-generator volumes from terms-2-3-atom-per-gen-mpfr-50dps.witness.json. m_p prediction in MeV computed as (m_p_hecke / m_e_hecke) × M_E_MEV. Three-cal discipline respected: only CAL-1 (M_E_MEV) and CAL-2 (q_0) consumed; no CODATA m_p / m_n / Q_β injection. The residual (+1.835 % vs CODATA m_p) is the framework's actual prediction error at this truncation; closure of T5 / T6 for the electron at MPFR is the next research step.",
   "contentBlock": "prop:mass-endomorphism-tower",
+  "auditOnly": "docs/audits/2026-05-16-compute-paper-lean-audit-mp-chain.md",
   "parameters": {
     "q_0_50dps": "1.1099785955541805752815940796095093779932822799587",
     "M_E_MEV_CAL1": "0.51099895"

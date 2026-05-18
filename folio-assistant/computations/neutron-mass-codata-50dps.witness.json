@@ -9,7 +9,7 @@
       "computed": "0.99940273671110514408458626738375947712600724668423",
       "expected": "0",
       "passed": false,
-      "tolerance": 1e-09
+      "tolerance": 1e-9
     },
     {
       "name": "m_n_pred_MeV_finite",
@@ -26,6 +26,7 @@
   "scriptCommitSha": "6efe798ed0262a145508b6f281a033cd37ad434f",
   "description": "Cross-pipeline m_n prediction vs CODATA at the precision achievable by the current pipeline (currently f64-bounded via mass_endomorphism.py; will lift to 50 dps once the Phase A tower-lift PRs land, and to ~0 ppb once the chain rebases onto the ρ_K canonical path).",
   "contentBlock": "prop:full-pole-structure-mass-trace",
+  "auditOnly": "docs/audits/2026-05-11-path-to-1ppb-cross-pr-synthesis.md",
   "parameters": {
     "q_0": 1.1099785955541805,
     "M_E_MEV_CODATA": "0.51099895",

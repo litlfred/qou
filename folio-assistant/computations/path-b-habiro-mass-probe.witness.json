@@ -11,6 +11,7 @@
   "scriptHash": "434ee6fe0ebe",
   "scriptCommitSha": "6a08255bdf23d9a2f5850f082968239f65dc680b",
   "description": "Probe of Path B from docs/audits/2026-05-03-T2T3-derivation-chain-analysis.md: predict atomic mass via the Habiro expansion sum_m a_m(T_w; q_0) (q_0;q_0)_m — using a single-prefactor binding model alpha_M * |tr_M| calibrated from deuteron.  Tests whether the Markov trace via Habiro gives sensible binding without the Phi_q brane-tower specialisation that produces the -737 MeV isospin pathology.",
+  "auditOnly": "docs/audits/2026-05-12-1ppb-implementation-plan.md",
   "alpha_M_MeV": 5.729217454145902,
   "calibrated_from": "deuteron binding",
   "rows": [
@@ -25,9 +26,9 @@
       "habiro_breakdown": [
         {
           "m": 0,
-          "a_m_at_u0": 4.0,
-          "u_u_m": 1.0,
-          "contribution": 4.0
+          "a_m_at_u0": 4,
+          "u_u_m": 1,
+          "contribution": 4
         },
         {
           "m": 1,
@@ -56,30 +57,30 @@
         {
           "m": 5,
           "a_m_at_u0": -4977.478438294281,
-          "u_u_m": -6.90141549060518e-05,
+          "u_u_m": -0.0000690141549060518,
           "contribution": 0.3435164679819743
         },
         {
           "m": 6,
           "a_m_at_u0": 2250.181469551074,
-          "u_u_m": 2.5366282677196877e-05,
+          "u_u_m": 0.000025366282677196877,
           "contribution": 0.057078739231622815
         },
         {
           "m": 7,
           "a_m_at_u0": -438.1401405003578,
-          "u_u_m": -1.1181239821757354e-05,
+          "u_u_m": -0.000011181239821757354,
           "contribution": 0.004898949986472963
         },
         {
           "m": 8,
           "a_m_at_u0": 19.16861183544073,
-          "u_u_m": 5.7913602857441455e-06,
+          "u_u_m": 0.0000057913602857441455,
           "contribution": 0.00011101233731661663
         }
       ],
       "B_pred_MeV": 6.103371038861861,
-      "B_obs_MeV": 0.0,
+      "B_obs_MeV": 0,
       "M_pred_MeV": 932.6797160711382,
       "err_pct": -0.650136450332822
     },
@@ -94,9 +95,9 @@
       "habiro_breakdown": [
         {
           "m": 0,
-          "a_m_at_u0": 4.0,
-          "u_u_m": 1.0,
-          "contribution": 4.0
+          "a_m_at_u0": 4,
+          "u_u_m": 1,
+          "contribution": 4
         },
         {
           "m": 1,
@@ -125,30 +126,30 @@
         {
           "m": 5,
           "a_m_at_u0": -4653.594610185967,
-          "u_u_m": -6.90141549060518e-05,
+          "u_u_m": -0.0000690141549060518,
           "contribution": 0.3211638992973421
         },
         {
           "m": 6,
           "a_m_at_u0": 2216.462811132862,
-          "u_u_m": 2.5366282677196877e-05,
+          "u_u_m": 0.000025366282677196877,
           "contribution": 0.056223422210690606
         },
         {
           "m": 7,
           "a_m_at_u0": -438.1401405003578,
-          "u_u_m": -1.1181239821757354e-05,
+          "u_u_m": -0.000011181239821757354,
           "contribution": 0.004898949986472963
         },
         {
           "m": 8,
           "a_m_at_u0": 19.16861183544073,
-          "u_u_m": 5.7913602857441455e-06,
+          "u_u_m": 0.0000057913602857441455,
           "contribution": 0.00011101233731661663
         }
       ],
       "B_pred_MeV": 5.2894043203926495,
-      "B_obs_MeV": 0.0,
+      "B_obs_MeV": 0,
       "M_pred_MeV": 934.2760161996073,
       "err_pct": -0.5629628554726167
     },
@@ -163,9 +164,9 @@
       "habiro_breakdown": [
         {
           "m": 0,
-          "a_m_at_u0": 32.0,
-          "u_u_m": 1.0,
-          "contribution": 32.0
+          "a_m_at_u0": 32,
+          "u_u_m": 1,
+          "contribution": 32
         },
         {
           "m": 1,
@@ -194,56 +195,56 @@
         {
           "m": 5,
           "a_m_at_u0": -1527542.04957441,
-          "u_u_m": -6.90141549060518e-05,
+          "u_u_m": -0.0000690141549060518,
           "contribution": 105.4220236348362
         },
         {
           "m": 6,
           "a_m_at_u0": 1859068.5155776786,
-          "u_u_m": 2.5366282677196877e-05,
+          "u_u_m": 0.000025366282677196877,
           "contribution": 47.15765748242018
         },
         {
           "m": 7,
           "a_m_at_u0": -1405934.9769810988,
-          "u_u_m": -1.1181239821757354e-05,
+          "u_u_m": -0.000011181239821757354,
           "contribution": 15.72009615142257
         },
         {
           "m": 8,
           "a_m_at_u0": 637316.6119435604,
-          "u_u_m": 5.7913602857441455e-06,
+          "u_u_m": 0.0000057913602857441455,
           "contribution": 3.690930115854949
         },
         {
           "m": 9,
           "a_m_at_u0": -154492.93047857718,
-          "u_u_m": -3.470458980721017e-06,
+          "u_u_m": -0.000003470458980721017,
           "contribution": 0.5361613780372859
         },
         {
           "m": 10,
           "a_m_at_u0": 12914.991409184333,
-          "u_u_m": 2.3769024123995792e-06,
+          "u_u_m": 0.0000023769024123995792,
           "contribution": 0.03069767423661008
         },
         {
           "m": 11,
           "a_m_at_u0": 1172.0592526295911,
-          "u_u_m": -1.8424099091396937e-06,
+          "u_u_m": -0.0000018424099091396937,
           "contribution": -0.002159413581143622
         },
         {
           "m": 12,
           "a_m_at_u0": -125.12034386513129,
-          "u_u_m": 1.603261705856328e-06,
+          "u_u_m": 0.000001603261705856328,
           "contribution": -0.00020060065594254073
         }
       ],
       "B_pred_MeV": 2.224577629999885,
       "B_obs_MeV": 2.224577629999885,
       "M_pred_MeV": 1876.12393,
-      "err_pct": 0.0
+      "err_pct": 0
     }
   ]
 }

@@ -12,6 +12,7 @@
   "scriptCommitSha": "dbaf2aa9c0a5b5d8deb69644685e51708f11bb54",
   "description": "Empirical verification of the full-twist Δ_n² scalar action q^{c(λ)} per Wedderburn block V_λ ↪ H_n(q). Tabulates c(λ) for every partition λ ⊢ n at n ∈ {1,...,12}; identifies the Δ_n²-invariant subspace (c(λ) = 0); records magic-n empirical realisability of the categorical-neutrality predicate (conj:categorical-neutrality-saturated-shells). Structural finding: at magic n = 2 the invariant subspace is empty under pure-scalar q^c(λ) action, indicating the conjecture must hold via a refined mechanism (root-of-unity specialisation, sum cancellation, or a non-scalar action component captured in T2/T3).",
   "contentBlock": "conj:categorical-neutrality-saturated-shells",
+  "auditOnly": "docs/audits/2026-05-09-braid-encoding-deepdive.md",
   "parameters": {
     "q_0": "1.1099785955541805752815940796095093779932822799587",
     "magic_nucleon_counts": [
@@ -43,7 +44,7 @@
         "sum_dim_irrep_sq": 1,
         "invariant_sum_dim": 1,
         "invariant_sum_dim_sq": 1,
-        "invariant_ratio_dim_sq": 1.0,
+        "invariant_ratio_dim_sq": 1,
         "is_magic_shell": false,
         "blocks": [
           {
@@ -65,7 +66,7 @@
         "sum_dim_irrep_sq": 2,
         "invariant_sum_dim": 0,
         "invariant_sum_dim_sq": 0,
-        "invariant_ratio_dim_sq": 0.0,
+        "invariant_ratio_dim_sq": 0,
         "is_magic_shell": true,
         "blocks": [
           {

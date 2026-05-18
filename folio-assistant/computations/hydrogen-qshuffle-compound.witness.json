@@ -6,14 +6,14 @@
   "assertions": [
     {
       "name": "T2_finite",
-      "computed": 1.0,
-      "expected": 1.0,
+      "computed": 1,
+      "expected": 1,
       "passed": true
     },
     {
       "name": "compound_T1_smaller_than_additive_T1",
-      "computed": 1.0,
-      "expected": 1.0,
+      "computed": 1,
+      "expected": 1,
       "passed": true
     }
   ],
@@ -24,6 +24,7 @@
   "scriptHash": "b63e70681a86",
   "scriptCommitSha": "27303e6755b4e07583d4d861302880a74c3e30a7",
   "description": "¹H mass via q-shuffle convolution (full-order, *_q)",
+  "auditOnly": "docs/audits/2026-05-17-hydrogen-row-provenance.md",
   "data": {
     "convention": "q-shuffle compound braid (*_q on disjoint strand sets ⇒ concatenation with boundary identity gen)",
     "q_pinned": "1.1099785955541805752815940796095093779932822799587",

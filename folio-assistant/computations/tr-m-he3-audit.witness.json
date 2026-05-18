@@ -19,6 +19,7 @@
   "scriptCommitSha": "8afaaa11fa62849cff7cda05000f99ce26e52bd0",
   "description": "Cross-check |tr_M(β)| for D, T, ³He via two independent canonical paths: (1) Hoefsmit seminormal + Wedderburn sum via `wedderburn_jones_markov.global_wedderburn_sum_q_hecke_seminormal` (used in all six brane-tower n_⋆ probe families of PR #638); (2) Markov-axiom recursive ascent via `markov_peel.tr_M_atomic` (canonical reducer, no Hoefsmit matrices). Tests whether the ³He structural gap identified in the closure audit is a real brane-tower-formula deficit or a Markov-trace mis-count.",
   "contentBlock": "conj:brane-tower-z-habiro",
+  "auditOnly": "docs/audits/2026-05-11-brane-tower-n_star-closure-audit.md",
   "parameters": {
     "q_0": 1.1099785955541805
   },
@@ -38,7 +39,7 @@
         "N": 2,
         "tr_M_hoefsmit": 0.10405398879467263,
         "tr_M_markov_peel": 0.10405211867552604,
-        "abs_delta": 1.870119146596405e-06,
+        "abs_delta": 0.000001870119146596405,
         "agree_at_1e_minus_10": false,
         "agree_at_1e_minus_5": true
       },
@@ -47,7 +48,7 @@
         "N": 1,
         "tr_M_hoefsmit": 0.20654412889585438,
         "tr_M_markov_peel": 0.20654085856226245,
-        "abs_delta": 3.270333591931518e-06,
+        "abs_delta": 0.000003270333591931518,
         "agree_at_1e_minus_10": false,
         "agree_at_1e_minus_5": true
       }

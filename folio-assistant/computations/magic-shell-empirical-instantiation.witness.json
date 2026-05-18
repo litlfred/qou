@@ -25,6 +25,7 @@
   "scriptCommitSha": "ab1e03a2b81c35c88fac6dd6b38f9b35ea2e4c24",
   "description": "Unified empirical instantiation of the load-bearing findings from PR #638 closure: (1) he4_eq_twice_he3_shell falsifiability test, (2) convention-independence of |τ(β_³He)| via Hoefsmit vs markov_peel at 50dps, (3) per-atom Δ_cat calibration table for {p, n, D, T, ³He, ⁴He} producing concrete numerical predictions for the magic-shell stabilization term and the cross-coupling anchors Δ_coupling(Z,N) consumed by P3.A (delta_coupling_closed_form_probe.py).",
   "contentBlock": "conj:magic-shell-stabilization",
+  "auditOnly": "docs/audits/2026-05-12-delta-coupling-leading-term-followup.md",
   "parameters": {
     "q_0": 1.1099785955541805,
     "m_e_MeV": 0.51099895,
@@ -45,7 +46,7 @@
         "rho": 1,
         "abs_tr_M_50dps": "1.0653062285923887592387232627278973729480786821694",
         "categorical_MeV_50dps": "0.54437036423917058263733689153015507974946711209669",
-        "AME_MeV": 0.0,
+        "AME_MeV": 0,
         "delta_cat_MeV_50dps": "-0.54437036423917058263733689153015507974946711209669",
         "delta_cat_MeV_float": -0.5443703642391706,
         "markov_peel_compute_seconds": 0.0051953792572021484
@@ -57,7 +58,7 @@
         "rho": 1,
         "abs_tr_M_50dps": "0.92323329716958324698108314085315440447507447038194",
         "categorical_MeV_50dps": "0.47177124545869496666441105243836818013858771594415",
-        "AME_MeV": 0.0,
+        "AME_MeV": 0,
         "delta_cat_MeV_50dps": "-0.47177124545869496666441105243836818013858771594415",
         "delta_cat_MeV_float": -0.471771245458695,
         "markov_peel_compute_seconds": 0.00403594970703125

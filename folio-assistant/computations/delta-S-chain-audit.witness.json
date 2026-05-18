@@ -11,6 +11,7 @@
   "scriptHash": "3ee9fcc4e364",
   "scriptCommitSha": "d0ccc52bddbedfc9a13e3d58479172143b0edefe",
   "description": "Audit of the ΔS = (Q_β + m_e)/m_e / (Vol(ℬ_3)/ℏ_q²) derivation chain. Verifies algebraically that the 1015 ppm ΔS residual in `derive_m_baryon_volume_form.py` is NOT coincidental — it equals the Q_β closed-form residual damped by the algebraic factor Q_β/(Q_β + m_e) ≈ 0.605. Implication: tightening Q_β's closed form propagates directly to ΔS precision.",
+  "auditOnly": "docs/audits/2026-05-15-m1-mass-table.md",
   "data": {
     "q_0_50dps": "1.1099785955541805752815940796095093779932822799587",
     "Vol_Borromean_over_hbar_q_squared": "746.41785128368885965408362959114677037639351703069",

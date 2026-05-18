@@ -6,7 +6,7 @@
   "assertions": [
     {
       "name": "g_A",
-      "computed": 1.0,
+      "computed": 1,
       "expected": 1.2754,
       "passed": true,
       "tolerance": 0.5,
@@ -15,17 +15,17 @@
     {
       "name": "lp_duality_gap_zero",
       "computed": 3.448090080566395e-17,
-      "expected": 0.0,
+      "expected": 0,
       "passed": true,
       "tolerance": 1e-10,
       "source": "prop:operator-selection-lp § strong duality"
     },
     {
       "name": "lp_active_set_nonempty",
-      "computed": 1.0,
-      "expected": 1.0,
+      "computed": 1,
+      "expected": 1,
       "passed": true,
-      "tolerance": 10.0,
+      "tolerance": 10,
       "source": "prop:confinement-frobenius-reciprocity § master formula"
     }
   ],
@@ -37,15 +37,16 @@
   "scriptCommitSha": "d95cd8418824ea1bc8d74f881cbae00fd4ce410c",
   "description": "Axial coupling g_A as an instance of the master formula ⟨O⟩_T = Σ_{i,j ∈ A*(T)} u_i (G⁻¹)_{ij} ⟨O,b_j⟩ (prop:confinement-frobenius-reciprocity). Replaces the prior cyclic-trivial conjugation-pattern computation tr(β·σ₁·β⁻¹)/tr(σ₁) — see docs/audits/2026-05-06-frobenius-pairing-compute-audit.md § 3.1. Bound-state observable: g_A (axial coupling, Gamow-Teller form factor).",
   "contentBlock": "prop:confinement-frobenius-reciprocity",
+  "auditOnly": "docs/audits/2026-05-06-frobenius-pairing-compute-audit.md",
   "parameters": {
     "q": 1.1099785955541805,
     "q_inv": 0.9009182735643011,
-    "n_target": 1.0
+    "n_target": 1
   },
   "data": {
     "gram_matrix": [
       [
-        1.0,
+        1,
         0.4993203340335982,
         0.4993203340335982,
         0.2493207959794241,
@@ -147,12 +148,12 @@
       0
     ],
     "shadow_prices": [
-      1.0,
-      0.0,
-      0.0,
-      0.0,
-      0.0,
-      0.0
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "active_basis_names": [
       "γ"
@@ -165,26 +166,26 @@
       4.264154314383165,
       -1.7231642649878602
     ],
-    "y0_star": -0.0,
+    "y0_star": 0,
     "y_star": [
-      1.0,
-      0.0,
-      0.0,
-      0.0,
-      0.0,
-      0.0
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
     ],
     "active_set": [
       0
     ],
     "primal_obj": -3.448090080566395e-17,
-    "dual_obj": -0.0,
+    "dual_obj": 0,
     "duality_gap": 3.448090080566395e-17,
     "lp_feasible": true,
     "observable_vector": {
       "name": "O_V (trivial / vector / +q eigenspace)",
       "char_on_basis": [
-        1.0,
+        1,
         1.1099785955541805,
         1.1099785955541805,
         1.2320524825884311,
@@ -193,16 +194,16 @@
       ],
       "dual_pairing_value": 1.6046952717164054,
       "u_active": [
-        1.0
+        1
       ],
       "obs_active": [
-        1.0
+        1
       ]
     },
     "observable_axial": {
       "name": "O_A (sign / axial / -q⁻¹ eigenspace)",
       "char_on_basis": [
-        1.0,
+        1,
         -0.9009182735643011,
         -0.9009182735643011,
         0.8116537356420809,
@@ -211,10 +212,10 @@
       ],
       "dual_pairing_value": 1.6046952717164054,
       "u_active": [
-        1.0
+        1
       ],
       "obs_active": [
-        1.0
+        1
       ]
     },
     "g_A_note": "g_A from confinement Frobenius reciprocity (master formula); no external Clebsch-Gordan factor inserted.",

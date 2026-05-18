@@ -73,6 +73,7 @@
   "scriptCommitSha": "1f6f3868e703d5b6975dec9a4756e5faf02fc84e",
   "description": "Close-the-gap probe for the (3,2,1) Weinberg-angle 2.19% residual.  Three independent paths: (A) sign-coherent conjugate-pair Wedderburn aggregate over 6-group quotient; (B) categorical pick of EW bar-pair channel via principal Frobenius coords on 16 SYT; (C/G3) hook-length q-rational sweep for the residual factor cot_codata / empirical = 1.0223944.  All values substrate-derived from q_0 (50dps) + canonical Hoefsmit + combinatorial invariants of (3,2,1).  No fit constants.",
   "contentBlock": "conj:weinberg-angle-categorical",
+  "auditOnly": "docs/audits/2026-05-06-close-321-weinberg-gap.md",
   "parameters": {
     "q_0": "1.1099785955541805169583001889887986763787613849839",
     "q_0_numeric": 1.1099785955541805,
@@ -110,9 +111,9 @@
           "w_lambda": 0.0011921233292002003,
           "w_lambda_prime": 0.0011921233292002003,
           "w_chi_lambda": 0.01994414840817355,
-          "w_chi_lambda_prime": -7.125689214391062e-05,
+          "w_chi_lambda_prime": -0.00007125689214391062,
           "pair_sum": 0.01987289151602964,
-          "det_product": -1.0,
+          "det_product": -1,
           "sign": -1
         },
         {

@@ -1,8 +1,8 @@
 {
   "engine": "scipy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T01:12:04.883534+00:00",
-  "commitSha": "6210dfec9ee4cdcf4adddfbcd5a638137ff4e717",
+  "computedAt": "2026-05-18T04:55:31.625245+00:00",
+  "commitSha": "f1832599f1656203366280b15de878904dea3cc0",
   "assertions": [
     {
       "name": "m_p from ∏ dc_k/dz (best-fit limit; NOT pure substrate)",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 18,
+  "durationMs": 28,
   "computation": "picard-lefschetz-thimble",
   "scriptFile": "picard_lefschetz_thimble.py",
   "scriptHash": "81c84e9e855a",

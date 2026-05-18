@@ -6,10 +6,10 @@
   "assertions": [
     {
       "name": "duality_gap_zero",
-      "computed": 0.0,
-      "expected": 0.0,
+      "computed": 0,
+      "expected": 0,
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": 0.000001,
       "unit": "dimensionless",
       "source": "strong duality for feasible LP/SDP"
     }
@@ -22,6 +22,7 @@
   "scriptCommitSha": "unknown",
   "description": "⁴He compositional channel identification via SDP active-set fingerprint. Identifies which of the three primary channels (D⊕D, T⊕p, ³He⊕n) carry the magic-shell coupling without computing the full β_{⁴He} Markov trace. Forward step on F1 from the three-PR integration audit.",
   "contentBlock": "prop:magic-shell-coupling-witness",
+  "auditOnly": "docs/audits/2026-05-15-three-pr-integration.md",
   "parameters": {
     "channels": [
       "DD",
@@ -52,14 +53,14 @@
     "solver": "lp_scipy_linprog",
     "sdp_full": {
       "x_star": [
-        -0.0,
+        0,
         13.19687380754797,
-        -0.0
+        0
       ],
       "y0_star": 20.379738571134418,
       "y_star": [
         3.778782547504065,
-        0.0,
+        0,
         0.7958821581574185
       ],
       "active_set": [
@@ -68,7 +69,7 @@
       ],
       "primal_obj": 268.9488381540789,
       "dual_obj": 268.9488381540789,
-      "duality_gap": 0.0,
+      "duality_gap": 0,
       "feasible": true
     },
     "active_channels": [

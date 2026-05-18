@@ -26,6 +26,7 @@
   "scriptCommitSha": "08070cc474cbe4421658e6134740219ab3bae146",
   "description": "Full mass-endomorphism tower derivation of m_n at MPFR @ 50 dps. Sums T1 + T2 + T3 + T4 for the neutron and electron via the MPFR-native per-generator volumes from terms-2-3-atom-per-gen-mpfr-50dps.witness.json. m_n prediction in MeV computed as (m_n_hecke / m_e_hecke) × M_E_MEV. Three-cal discipline respected: only CAL-1 (M_E_MEV) and CAL-2 (q_0) consumed; no CODATA m_n injection. The residual (~-62.9 %) is the framework's actual prediction at this truncation — a real structural gap in the neutron-brane-tower formula (the udd quark content with σ⁻¹ pair under-counts the neutron's Wedderburn-weighted single-generator volume vs the proton's uud). Documented; not patched.",
   "contentBlock": "prop:mass-endomorphism-tower",
+  "auditOnly": "docs/audits/2026-05-16-t1-t4-tower-closure-plan.md",
   "parameters": {
     "q_0_50dps": "1.1099785955541805752815940796095093779932822799587",
     "M_E_MEV_CAL1": "0.51099895"

@@ -9,7 +9,7 @@
       "computed": "5.3660102",
       "expected": "< 10",
       "passed": false,
-      "tolerance": 10.0,
+      "tolerance": 10,
       "unit": "ppm",
       "source": "Borromean tower prediction conditional on conj:lambda-scale-substrate-form (5.4 ppm match at q_0 50dps)"
     },
@@ -18,7 +18,7 @@
       "computed": "0.000005366010183402252426874421564766865918523390991663",
       "expected": "0",
       "passed": false,
-      "tolerance": 1e-09,
+      "tolerance": 1e-9,
       "source": "long-term 1 ppb target — REQUIRES the conjecture proof + h^4 and Skein corrections derivation (currently failing by ~3 orders of magnitude; 5.4 ppm vs 1 ppb)"
     },
     {
@@ -36,6 +36,7 @@
   "scriptCommitSha": "5ab388497c6b1d9074e51a16b684e92cfdc6a3b2",
   "description": "Cross-pipeline m_p prediction vs CODATA at the precision achievable by the current pipeline (currently f64-bounded via mass_endomorphism.py; will lift to 50 dps once the Phase A tower-lift PRs land).",
   "contentBlock": "prop:full-pole-structure-mass-trace",
+  "auditOnly": "docs/audits/2026-05-16-stale-witness-infra-gap.md",
   "parameters": {
     "q_0": 1.1099785955541805,
     "M_E_MEV_CODATA": "0.51099895",

@@ -43,6 +43,7 @@
   "scriptCommitSha": "cd523015984b3af986e24f697bdeb6381634f933",
   "description": "Symbolic-q NF reduction of per-nucleon braids β_p, β_n in H_3(q) = 6-dimensional Hecke algebra of B_3.  Decomposes each nucleon into the 6 fundamental knot operators (NF basis: γ, σ₀, σ₁, L₊, L₋, e⁻) with categorical coefficients c_b(q) ∈ Habiro ring.  Computes shift_NF(β_p), shift_NF(β_n) from the trace decomposition tr_M = Σ c_b · TR_M_SYM[b].  These are the H_3-context shifts; the embedded H_(3A)-context shifts (18 for p, 21 for n) require Littlewood-Richardson branching analysis.",
   "contentBlock": "prop:confinement-nf-partial-proof",
+  "auditOnly": "docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md",
   "data": {
     "nf_basis_names": [
       "γ",

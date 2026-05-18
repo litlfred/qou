@@ -7,9 +7,9 @@
     {
       "name": "step_5b_delta_S_substrate_within_2000_ppm",
       "computed": 1014.7374994373562,
-      "expected": 0.0,
+      "expected": 0,
       "passed": true,
-      "tolerance": 2000.0,
+      "tolerance": 2000,
       "unit": "ppm",
       "source": "rem:delta-skein-substrate-identity"
     }
@@ -22,6 +22,7 @@
   "scriptCommitSha": "bc030ce64faeaad6e9838228ff6c65023b7bd5d9",
   "description": "Proof Step 5 of `conj:lambda-scale-substrate-form`: S(p) = 0 anchor convention + S(n) = ΔS substrate-derived. Verifies ΔS(n-p) = (Q_β + m_e)/m_e closure at mpmath 80 dps with q_0 from q_parameter.Q_50_DIGIT_STR and CODATA from experimental_constants (3-input scheme: M_E_MEV, M_P_MEV, Q_NEUTRON_MEV; m_n derived). References `rem:delta-skein-substrate-identity` for the underlying common-scale hypothesis. Documents the open R&D component: direct Kauffman-bracket verification of S(uud) = 0 from first principles (currently set by convention as the anchor).",
   "contentBlock": "conj:lambda-scale-substrate-form",
+  "auditOnly": "docs/audits/2026-05-18-conjecture-proof-step5-skein.md",
   "parameters": {
     "q_0_50dps": "1.10997859555418057528159407960950937799328227995870",
     "m_e_MeV_CODATA": "0.51099895",

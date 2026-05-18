@@ -1,6 +1,7 @@
 {
   "computation": "deuteron-tr_M-symbolic",
-  "description": "Closed-form symbolic Markov trace of the internal A=2 (deuteron) braid in H_6(q), via the canonical Wenzl-Ocneanu y_\u03bb\u00b7\u03c7^\u03bb formula (matches CLAUDE.md \u00a77a `thm:jones-markov-trace`). Migrated from the historical Plancherel-trace formula on 2026-05-17 per audit doc 2026-05-17-dual-tr-m-discrepancy.md \u2014 no fallback.",
+  "description": "Closed-form symbolic Markov trace of the internal A=2 (deuteron) braid in H_6(q), via the canonical Wenzl-Ocneanu y_λ·χ^λ formula (matches CLAUDE.md §7a `thm:jones-markov-trace`). Migrated from the historical Plancherel-trace formula on 2026-05-17 per audit doc 2026-05-17-dual-tr-m-discrepancy.md — no fallback.",
+  "auditOnly": "docs/audits/2026-05-05-nv-categorical-impasse.md",
   "atom": {
     "Z": 1,
     "N": 1,
@@ -21,14 +22,14 @@
     "(1, 1, 1, 1, 1, 1)": {
       "f_lambda": 1,
       "chi_at_q0": -0.6769250645272094,
-      "compute_seconds": 0.0,
+      "compute_seconds": 0,
       "derived_from_conjugate": false,
       "source": "cached"
     },
     "(6,)": {
       "f_lambda": 1,
       "chi_at_q0": 1.559758739418061,
-      "compute_seconds": 0.0,
+      "compute_seconds": 0,
       "derived_from_conjugate": false,
       "conjugate_source": "(1, 1, 1, 1, 1, 1)",
       "source": "cached"
@@ -36,14 +37,14 @@
     "(2, 1, 1, 1, 1)": {
       "f_lambda": 5,
       "chi_at_q0": 2.1554159875264367,
-      "compute_seconds": 0.0,
+      "compute_seconds": 0,
       "derived_from_conjugate": false,
       "source": "cached"
     },
     "(5, 1)": {
       "f_lambda": 5,
       "chi_at_q0": 3.2158914339386846,
-      "compute_seconds": 0.0,
+      "compute_seconds": 0,
       "derived_from_conjugate": false,
       "conjugate_source": "(2, 1, 1, 1, 1)",
       "source": "cached"
@@ -51,14 +52,14 @@
     "(2, 2, 2)": {
       "f_lambda": 5,
       "chi_at_q0": -3.4975646652884254,
-      "compute_seconds": 0.0,
+      "compute_seconds": 0,
       "derived_from_conjugate": false,
       "source": "cached"
     },
     "(3, 3)": {
       "f_lambda": 5,
       "chi_at_q0": 4.249070292623647,
-      "compute_seconds": 0.0,
+      "compute_seconds": 0,
       "derived_from_conjugate": false,
       "conjugate_source": "(2, 2, 2)",
       "source": "cached"
@@ -66,14 +67,14 @@
     "(2, 2, 1, 1)": {
       "f_lambda": 9,
       "chi_at_q0": -0.8197159558910454,
-      "compute_seconds": 0.0,
+      "compute_seconds": 0,
       "derived_from_conjugate": false,
       "source": "cached"
     },
     "(4, 2)": {
       "f_lambda": 9,
       "chi_at_q0": 1.6737481247386987,
-      "compute_seconds": 0.0,
+      "compute_seconds": 0,
       "derived_from_conjugate": false,
       "conjugate_source": "(2, 2, 1, 1)",
       "source": "cached"
@@ -81,14 +82,14 @@
     "(3, 1, 1, 1)": {
       "f_lambda": 10,
       "chi_at_q0": -0.48998813829170385,
-      "compute_seconds": 0.0,
+      "compute_seconds": 0,
       "derived_from_conjugate": false,
       "source": "cached"
     },
     "(4, 1, 1)": {
       "f_lambda": 10,
       "chi_at_q0": -0.4701914800047225,
-      "compute_seconds": 0.0,
+      "compute_seconds": 0,
       "derived_from_conjugate": false,
       "conjugate_source": "(3, 1, 1, 1)",
       "source": "cached"
@@ -96,7 +97,7 @@
     "(3, 2, 1)": {
       "f_lambda": 16,
       "chi_at_q0": -1.972821055100127,
-      "compute_seconds": 0.0,
+      "compute_seconds": 0,
       "derived_from_conjugate": false,
       "source": "cached"
     }

@@ -12,6 +12,7 @@
   "scriptCommitSha": "0853dbd6f7802d6aed361df73aada4ff67076ddc",
   "description": "P3.A diagnostic probe: which closed form `f` reproduces the canonical magic-shell cross-coupling residuals Δ_coupling(Z,N) when evaluated at a natural substrate value t (q_0, q_0−1, or h(q_0))? Anchors are loaded from the canonical `magic-shell-empirical-instantiation.witness.json` (computed once); each is a Δ_cat difference where Δ_cat(𝔥) := AME(𝔥) − m_e·ρ·|τ(β_𝔥)| is the substrate-derived per-atom residual. Decompositions (⁴He → 2 ³He sub-clusters, ³He → D+p, T → D+n) follow the atomic-braid-recipe topology — combinatorial, not a modeling choice. Tests four candidates from the gap-narrowing plan: log(1/t), 1/t−1, log Φ_q^{(∞)}(t), KLR canonical-basis dim. Candidates whose multiplicative match-factor is a small rational on ≥2 anchors identify structural targets for the derivation; no fitting performed.",
   "contentBlock": "conj:magic-shell-stabilization",
+  "auditOnly": "docs/audits/2026-05-15-three-pr-integration.md",
   "parameters": {
     "q_0": "1.1099785955541805752815940796095093779932822799587",
     "E_0_full_MeV": "4.1859808220625237732985519083214879046242353091078",
@@ -162,7 +163,7 @@
         "candidate_human": "KLR canonical-basis dim count",
         "t_name": "q_0",
         "t_value": 1.1099785955541805,
-        "f_at_t": 2.0,
+        "f_at_t": 2,
         "E0_times_f_MeV": 8.371961644125047,
         "factor_to_match_Delta": 1.5763179967276562,
         "factor_no_E0_prefactor": 6.598436903773985
@@ -175,7 +176,7 @@
         "candidate_human": "KLR canonical-basis dim count",
         "t_name": "q_0_minus_1",
         "t_value": 0.10997859555418057,
-        "f_at_t": 2.0,
+        "f_at_t": 2,
         "E0_times_f_MeV": 8.371961644125047,
         "factor_to_match_Delta": 1.5763179967276562,
         "factor_no_E0_prefactor": 6.598436903773985
@@ -188,7 +189,7 @@
         "candidate_human": "KLR canonical-basis dim count",
         "t_name": "h(q_0)",
         "t_value": 0.20906032198987945,
-        "f_at_t": 2.0,
+        "f_at_t": 2,
         "E0_times_f_MeV": 8.371961644125047,
         "factor_to_match_Delta": 1.5763179967276562,
         "factor_no_E0_prefactor": 6.598436903773985
@@ -318,7 +319,7 @@
         "candidate_human": "KLR canonical-basis dim count",
         "t_name": "q_0",
         "t_value": 1.1099785955541805,
-        "f_at_t": 2.0,
+        "f_at_t": 2,
         "E0_times_f_MeV": 8.371961644125047,
         "factor_to_match_Delta": 0.7196872460604924,
         "factor_no_E0_prefactor": 3.0125970098922137
@@ -331,7 +332,7 @@
         "candidate_human": "KLR canonical-basis dim count",
         "t_name": "q_0_minus_1",
         "t_value": 0.10997859555418057,
-        "f_at_t": 2.0,
+        "f_at_t": 2,
         "E0_times_f_MeV": 8.371961644125047,
         "factor_to_match_Delta": 0.7196872460604924,
         "factor_no_E0_prefactor": 3.0125970098922137
@@ -344,7 +345,7 @@
         "candidate_human": "KLR canonical-basis dim count",
         "t_name": "h(q_0)",
         "t_value": 0.20906032198987945,
-        "f_at_t": 2.0,
+        "f_at_t": 2,
         "E0_times_f_MeV": 8.371961644125047,
         "factor_to_match_Delta": 0.7196872460604924,
         "factor_no_E0_prefactor": 3.0125970098922137
@@ -474,7 +475,7 @@
         "candidate_human": "KLR canonical-basis dim count",
         "t_name": "q_0",
         "t_value": 1.1099785955541805,
-        "f_at_t": 2.0,
+        "f_at_t": 2,
         "E0_times_f_MeV": 8.371961644125047,
         "factor_to_match_Delta": 0.8147524400961004,
         "factor_no_E0_prefactor": 3.4105380889709216
@@ -487,7 +488,7 @@
         "candidate_human": "KLR canonical-basis dim count",
         "t_name": "q_0_minus_1",
         "t_value": 0.10997859555418057,
-        "f_at_t": 2.0,
+        "f_at_t": 2,
         "E0_times_f_MeV": 8.371961644125047,
         "factor_to_match_Delta": 0.8147524400961004,
         "factor_no_E0_prefactor": 3.4105380889709216
@@ -500,7 +501,7 @@
         "candidate_human": "KLR canonical-basis dim count",
         "t_name": "h(q_0)",
         "t_value": 0.20906032198987945,
-        "f_at_t": 2.0,
+        "f_at_t": 2,
         "E0_times_f_MeV": 8.371961644125047,
         "factor_to_match_Delta": 0.8147524400961004,
         "factor_no_E0_prefactor": 3.4105380889709216
@@ -521,7 +522,7 @@
           "factor_to_match_Delta": 2.014293422964629,
           "factor_no_E0_prefactor": 8.431793638536613
         },
-        "near_value": 2.0,
+        "near_value": 2,
         "fractional_gap": 0.007146711482314494
       },
       {
@@ -538,7 +539,7 @@
           "factor_to_match_Delta": 1.041129064590324,
           "factor_no_E0_prefactor": 4.35814629766699
         },
-        "near_value": 1.0,
+        "near_value": 1,
         "fractional_gap": 0.04112906459032395
       }
     ],
@@ -551,8 +552,8 @@
           "(1,2)_T_eq_D_plus_n"
         ],
         "near_values": [
-          2.0,
-          1.0
+          2,
+          1
         ],
         "fractional_gaps": [
           0.007146711482314494,

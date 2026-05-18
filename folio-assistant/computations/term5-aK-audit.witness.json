@@ -12,6 +12,7 @@
   "scriptCommitSha": "b3c2bdeab97e3c2a1ece46c52587e6d982fc3b06",
   "description": "Term 5 chirality factor a_K — audit of the production closed form `Π(1+sign·h)` over pn-crossings vs four Gram-matrix variants `tr_M(β · β*⁻¹)` (PR #520 follow-up).  The proton showed a 2.2% gap between closed-form (1.000) and Gram-V1 (1.022 = cosh⁴(log q)); this audit tabulates all four mirror conventions across the spectrum so the narrative can be reconciled to a single canonical definition.",
   "contentBlock": "conj:knot-factor-frobenius-pairing",
+  "auditOnly": "docs/audits/2026-05-12-1ppb-implementation-plan.md",
   "parameters": {
     "q0": "1.1099785955541805"
   },
@@ -22,7 +23,7 @@
         "Z": 1,
         "N": 0,
         "A": 1,
-        "closed_form_aK": 1.0,
+        "closed_form_aK": 1,
         "gram_variants": {
           "V1": {
             "variant": "V1",
@@ -55,7 +56,7 @@
         "Z": 0,
         "N": 1,
         "A": 1,
-        "closed_form_aK": 1.0,
+        "closed_form_aK": 1,
         "gram_variants": {
           "V1": {
             "variant": "V1",

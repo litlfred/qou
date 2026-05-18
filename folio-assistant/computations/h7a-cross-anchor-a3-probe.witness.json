@@ -16,7 +16,7 @@
     {
       "name": "h7a_a3_z_n_asymmetry_pct",
       "computed": -11.667985188776488,
-      "expected": 0.0,
+      "expected": 0,
       "passed": false,
       "tolerance": 0.5,
       "unit": "percent",
@@ -31,6 +31,7 @@
   "scriptCommitSha": "unknown",
   "description": "F2 forward step from #644⊕#645⊕#652 three-PR integration: test whether H7a's [A−2]_q · E_0 · log(1/h) closed form generalises from the (2,2) doubly-magic anchor to the A=3 anchors (³He = D+p) and (1,2) (T = D+n). Diagnostic — NOT a fit (three-cal discipline).",
   "contentBlock": "conj:magic-shell-stabilization",
+  "auditOnly": "docs/audits/2026-05-15-three-pr-integration.md",
   "parameters": {
     "mp_dps": 50,
     "delta_cat_source": "magic-shell-empirical-instantiation.witness.json#per_atom_delta_cat",

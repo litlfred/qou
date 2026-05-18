@@ -55,6 +55,7 @@
   "scriptCommitSha": "96d52c7105b35699e1b17adcf05a839ff4c4af76",
   "description": "Test the staircase EW-residual conjecture: q^(1/(2k-1)) appears as the residual factor between raw β_EW spectral ratio and the structurally-meaningful ratio for staircase ρ_k = (k, k-1, …, 1).  Verified for k=3 (q^(1/5) closes the cot θ_W gap to 0.13%).  Tests k=2 (n=3, dim=2), k=3 (n=6, dim=16) for cross-validation, and k=4 (n=10, dim=768) for the prediction.  ρ_5 (dim≈3·10⁵) recorded as prediction only.",
   "contentBlock": "conj:weinberg-angle-categorical",
+  "auditOnly": "docs/audits/2026-05-06-staircase-ew-residual-conjecture.md",
   "parameters": {
     "q_0": 1.1099785955541805
   },
