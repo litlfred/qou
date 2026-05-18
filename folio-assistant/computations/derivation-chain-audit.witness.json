@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T15:47:16.881745+00:00",
-  "commitSha": "d631a4fb890c4c469a4c9fa75b57f39bb20347b9",
+  "computedAt": "2026-05-18T15:57:36.657139+00:00",
+  "commitSha": "cdce5b603cae528ff9b91ca026f0d202668798b3",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -576,7 +576,7 @@
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "deeead4ec85e681e22a1567ac3ad828427b2f855",
+  "scriptCommitSha": "875916a587c227572f421c22053ad81371976ccc",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
   "data": {
@@ -2278,6 +2278,8 @@
         "kummer-reflection-zeta5.witness.json",
         "lambda-scale-derivation-probes-123.witness.json",
         "lambda-scale-proof-step2-partition-count.witness.json",
+        "lambda-scale-proof-step4-h4-remainder.witness.json",
+        "lambda-scale-proof-step5-skein-anchor.witness.json",
         "lambda-scale-substrate-probe.witness.json",
         "laurentq-a5-ceiling-measure.witness.json",
         "level1-qvalues.witness.json",

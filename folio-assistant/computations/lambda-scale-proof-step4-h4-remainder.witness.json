@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-18T04:33:15.634288+00:00",
-  "commitSha": "0ea6e11979638ea002ee9213a119e92403d27ea2",
+  "computedAt": "2026-05-18T04:42:27.568403+00:00",
+  "commitSha": "83a3fd2cc9704646561a18e58437ab4d004ab973",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 13,
   "computation": "lambda-scale-proof-step4-h4-remainder",
   "scriptFile": "lambda_scale_proof_step4_h4_remainder.py",
-  "scriptHash": "e7e2f307dd19",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "1fbea0929a6c",
+  "scriptCommitSha": "83a3fd2cc9704646561a18e58437ab4d004ab973",
   "description": "Proof Step 4 of conj:lambda-scale-substrate-form — investigate the O(h^4) remainder coefficient c_4 in λ_p = 5/2 − h²·G − h^4·c_4 + O(h^6). Refines c_4 to high precision and tests candidate substrate forms.",
   "contentBlock": "conj:lambda-scale-substrate-form",
   "parameters": {
@@ -19,90 +19,90 @@
     "G_catalan": "0.915965594177219015054603514932"
   },
   "data": {
-    "c4_solved": "0.00691195951671680817414112215494",
-    "c4_solved_30dps": "0.00691195951671680817414112215494",
+    "c4_solved": "0.00691022063715040604183040227515",
+    "c4_solved_30dps": "0.00691022063715040604183040227515",
     "simple_substrate_candidates": {
       "G^2": {
         "value": "0.838992969716",
-        "abs_diff_from_c4": 0.832081010199709,
-        "ratio_to_c4": 121.38279567281796
+        "abs_diff_from_c4": 0.8320827490792755,
+        "ratio_to_c4": 121.41334029276446
       },
       "G^2/2": {
         "value": "0.419496484858",
-        "abs_diff_from_c4": 0.41258452534149614,
-        "ratio_to_c4": 60.69139783640898
+        "abs_diff_from_c4": 0.41258626422106254,
+        "ratio_to_c4": 60.70667014638223
       },
       "1/(8·G)": {
         "value": "0.136468007963",
-        "abs_diff_from_c4": 0.12955604844627144,
-        "ratio_to_c4": 19.743751049602615
+        "abs_diff_from_c4": 0.12955778732583786,
+        "ratio_to_c4": 19.74871934324576
       },
       "G/h": {
         "value": "4.3813459458",
-        "abs_diff_from_c4": 4.374433986279543,
-        "ratio_to_c4": 633.8789941115579
+        "abs_diff_from_c4": 4.37443572515911,
+        "ratio_to_c4": 634.0385026552512
       },
       "h·G": {
         "value": "0.19149206205",
-        "abs_diff_from_c4": 0.18458010253362386,
-        "ratio_to_c4": 27.704453648377225
+        "abs_diff_from_c4": 0.18458184141319026,
+        "ratio_to_c4": 27.71142516359752
       },
       "[2]_q · h": {
         "value": "0.420398746946",
-        "abs_diff_from_c4": 0.41348678742963346,
-        "ratio_to_c4": 60.82193420398393
+        "abs_diff_from_c4": 0.41348852630919986,
+        "ratio_to_c4": 60.837239361970894
       },
       "1/[2]_q": {
         "value": "0.497290545009",
-        "abs_diff_from_c4": 0.4903785854918747,
-        "ratio_to_c4": 71.9463914402099
+        "abs_diff_from_c4": 0.4903803243714411,
+        "ratio_to_c4": 71.96449594316587
       },
       "1/(2·[3]_q)": {
         "value": "0.164273410162",
-        "abs_diff_from_c4": 0.15736145064527965,
-        "ratio_to_c4": 23.766546919827242
+        "abs_diff_from_c4": 0.15736318952484604,
+        "ratio_to_c4": 23.772527504959452
       },
       "1/([4]_q)": {
         "value": "0.243327803464",
-        "abs_diff_from_c4": 0.23641584394769555,
-        "ratio_to_c4": 35.20388145733722
+        "abs_diff_from_c4": 0.23641758282726194,
+        "ratio_to_c4": 35.212740119504254
       },
       "h/(8·G)": {
         "value": "0.0285300456861",
-        "abs_diff_from_c4": 0.02161808616934295,
-        "ratio_to_c4": 4.127634951717943
+        "abs_diff_from_c4": 0.021619825048909354,
+        "ratio_to_c4": 4.128673624786719
       },
       "h/2": {
         "value": "0.104530160995",
-        "abs_diff_from_c4": 0.09761820147822292,
-        "ratio_to_c4": 15.12308640438793
+        "abs_diff_from_c4": 0.09761994035778933,
+        "ratio_to_c4": 15.12689195956632
       },
       "1/24": {
         "value": "0.0416666666667",
-        "abs_diff_from_c4": 0.03475470714994986,
-        "ratio_to_c4": 6.02819888714545
+        "abs_diff_from_c4": 0.03475644602951626,
+        "ratio_to_c4": 6.02971581582508
       },
       "G^2 · 5/2": {
         "value": "2.09748242429",
-        "abs_diff_from_c4": 2.090570464774348,
-        "ratio_to_c4": 303.4569891820449
+        "abs_diff_from_c4": 2.0905722036539145,
+        "ratio_to_c4": 303.5333507319111
       },
       "h^2/3": {
         "value": "0.0145687394102",
-        "abs_diff_from_c4": 0.0076567798934538845,
-        "ratio_to_c4": 2.1077582087880726
+        "abs_diff_from_c4": 0.007658518773020286,
+        "ratio_to_c4": 2.108288602515369
       }
     },
     "c4_normalised": {
-      "c4_over_h": "0.033062034205856689427",
-      "c4_over_h_squared": "0.15814590684241465594",
+      "c4_over_h": "0.033053716608572560538",
+      "c4_over_h_squared": "0.15810612120923012683",
       "comment": "If c_4 is itself O(h), the formula simplifies to λ_p = 5/2 − h²·G − h^5·(c_4/h) + O(h^7). c_4/h ≈ 0.033 — small but non-zero, suggests a fundamental h^5 contribution."
     },
     "FSC_analogy": {
       "FSC_bare_form": "1/α_EM = q · [9]_q · [10]_q (CODATA to 6.7e-9)",
       "baryon_bare_form": "λ_p = 5/2 - h²·G + O(h^4)",
       "FSC_correction_scale": "8e-9 relative",
-      "baryon_correction_scale": "5.367e-06 relative (c_4·h^4/λ_p)",
+      "baryon_correction_scale": "5.366e-06 relative (c_4·h^4/λ_p)",
       "interpretation": "The baryon-sector h^4 correction is ~5 ppm of λ_scale (consistent with the 5.4 ppm proton residual). FSC-style PSLQ uniqueness in a sufficiently large q-integer basis at 100+ dps might pin c_4's closed form."
     }
   },

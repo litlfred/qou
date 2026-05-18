@@ -65,18 +65,22 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 mp.mp.dps = 100
 
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402 — canonical q_0 source
+from experimental_constants import (  # noqa: E402 — CODATA single source
+    M_E_MEV, M_P_MEV, Q_NEUTRON_MEV,
+)
+
 # Substrate
-Q_PIN = HERE / "q-pinning-50-digit.witness.json"
-Q = mp.mpf(json.load(Q_PIN.open())["derived_50_digit"]["q"])
+Q = mp.mpf(Q_50_DIGIT_STR)
 H = Q - mp.mpf(1) / Q
 HBAR_Q = (Q - mp.mpf(1)) / Q
 G = mp.catalan
 VOL_B3 = mp.mpf("7.32772290646480718089411881580875")
 
-# CODATA
-M_E = mp.mpf("0.51099895069")
-M_P = mp.mpf("938.27208816")
-M_N = mp.mpf("939.56542052")
+# CODATA (single source — experimental_constants); m_n derived via 3-input scheme
+M_E = mp.mpf(repr(M_E_MEV))
+M_P = mp.mpf(repr(M_P_MEV))
+M_N = M_P + mp.mpf(repr(Q_NEUTRON_MEV)) + M_E
 
 LAM_P_TARGET = (M_P / M_E) * HBAR_Q**2 / VOL_B3
 
