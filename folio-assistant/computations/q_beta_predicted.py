@@ -48,7 +48,8 @@ import mpmath as mp
 # default 15 dps (per Copilot review on PR #639 q-beta-predicted.
 # witness.json:8 / 10 — fixes binary-rounded m_e_MeV strings AND
 # lets the WitnessBuilder timer below cover the full computation).
-mp.mp.dps = 50
+from _precision import set_compute_dps, fmt  # noqa: E402
+set_compute_dps()
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))

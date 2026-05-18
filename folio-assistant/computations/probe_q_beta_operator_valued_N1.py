@@ -56,9 +56,11 @@ import mpmath as mp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
+
+from _precision import set_compute_dps, fmt  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 
 def _q_0_50dps() -> mp.mpf:

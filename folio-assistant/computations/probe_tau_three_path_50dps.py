@@ -45,7 +45,8 @@ from hecke_symbolic import q as q_sym
 from wedderburn_jones_markov import global_wedderburn_sum_q_hecke_seminormal
 from atomic_tr_m_mpfr_50dps import _bridge_tr_M
 
-mp.dps = 50
+from _precision import set_compute_dps, fmt  # noqa: E402
+set_compute_dps()
 
 # Test atoms: AME light-isotope sample.
 Z_N = {"deuteron": (1, 1), "tritium": (1, 2), "he3": (2, 1)}

@@ -85,6 +85,8 @@ HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
+
+from _precision import set_compute_dps, fmt  # noqa: E402
 from mpmath import mp, mpf, fabs  # noqa: E402
 
 from q_parameter import Q_MP  # noqa: E402
@@ -93,7 +95,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 # avoid duplicating combinatorial utilities (per gemini #680 review).
 from hecke_character_symbolic import standard_young_tableaux  # noqa: E402
 
-mp.dps = 50
+set_compute_dps()
 
 
 def _dps_tol(margin_digits: int) -> "mpf":

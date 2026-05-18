@@ -63,6 +63,8 @@ HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
+
+from _precision import set_compute_dps, fmt  # noqa: E402
 # Reuse the established Occam pipeline pieces verbatim — they're
 # the *correct* y_λ / χ^λ loaders. We just plug a different
 # Δ_λ selector in front of them.
@@ -79,7 +81,7 @@ from codata_constants import M_E_MEV, M_P_MEV, M_N_MEV, M_D_MEV  # noqa: E402
 from q_parameter import Q_MP  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 
 # ── Categorical cost vectors ─────────────────────────────────────────

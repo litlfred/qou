@@ -42,12 +42,14 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
+
+from _precision import set_compute_dps, fmt  # noqa: E402
 import numpy as np
 import json
 from mpmath import mp, mpf
 from witness_base import WitnessBuilder
 
-mp.dps = 50
+set_compute_dps()
 
 # Substrate constants
 Q_WIT = HERE / "q-pinning-50-digit.witness.json"

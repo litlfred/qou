@@ -47,7 +47,8 @@ sys.path.insert(0, str(Path(__file__).parent))
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
 from witness_base import WitnessBuilder
 
-mp.mp.dps = 50
+from _precision import set_compute_dps, fmt  # noqa: E402
+set_compute_dps()
 
 VOL_FIGURE_EIGHT = mp.mpf("2.029883212819307")
 # CAL-2: m_μ/m_e from q_parameter registry (P31-triage Phase A).
