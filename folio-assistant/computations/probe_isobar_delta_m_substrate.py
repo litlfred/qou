@@ -76,18 +76,19 @@ mp.dps = 50
 Q_WIT = HERE / "q-pinning-50-digit.witness.json"
 q = mpf(json.load(Q_WIT.open())["derived_50_digit"]["q"])
 qi = mpf(1) / q
-hbar = (q - mpf(1)) / q
-h_q = q - qi
-bracket_2 = q + qi
 
+# Validation-only CODATA constants — used as COMPARISON targets,
+# never as inputs to predictions (three-calibration discipline,
+# gemini #688: M_P_MEV_VALIDATION / M_N_MEV_VALIDATION are validation
+# aliases, not CAL inputs).
 M_P_CODATA = mpf(str(M_P_MEV_VALIDATION))
 M_N_CODATA = mpf(str(M_N_MEV_VALIDATION))
-DELTA_M_NUCLEON = M_N_CODATA - M_P_CODATA
-M_N_AVG = (M_P_CODATA + M_N_CODATA) / 2
+DELTA_M_NUCLEON_OBS = M_N_CODATA - M_P_CODATA
+M_N_AVG_OBS = (M_P_CODATA + M_N_CODATA) / 2
 
-# Substrate Δm prediction from prop:flavor-split-substrate
+# Substrate-pure prediction from prop:flavor-split-substrate.
+# Dimensionless — does NOT consume any CODATA mass as input.
 DELTA_M_SUBSTRATE_OVER_M_N = (q - 1)**2 * (1 - qi**4) / 3
-DELTA_M_SUBSTRATE_MeV = DELTA_M_SUBSTRATE_OVER_M_N * M_N_AVG
 
 # Isobar masses (CODATA / AME 2020)
 ISOBARS_A3 = {
@@ -104,14 +105,24 @@ def main() -> int:
     print("=" * 78)
     print(f"  q_0 = {mp.nstr(q, 16)}")
     print()
-    print(f"  Substrate Δm (single n→p swap):")
-    print(f"    = M_N·(q-1)²·(1-q⁻⁴)/3 = {mp.nstr(DELTA_M_SUBSTRATE_MeV, 10)} MeV")
-    print(f"    CODATA m_n - m_p       = {mp.nstr(DELTA_M_NUCLEON, 10)} MeV")
-    delta_m_resid_ppm = float((DELTA_M_SUBSTRATE_MeV - DELTA_M_NUCLEON) / DELTA_M_NUCLEON * 1e6)
-    print(f"    residual               = {delta_m_resid_ppm:+.1f} ppm")
+    # Compare the substrate's DIMENSIONLESS ratio against the CODATA
+    # dimensionless ratio.  No CODATA mass is consumed as an input to
+    # the substrate prediction — three-calibration discipline (gemini #688).
+    delta_m_over_M_obs = DELTA_M_NUCLEON_OBS / M_N_AVG_OBS
+    print(f"  Substrate Δm/M_N (dimensionless, prediction):")
+    print(f"    (q-1)²·(1-q⁻⁴)/3 = {mp.nstr(DELTA_M_SUBSTRATE_OVER_M_N, 12)}")
+    print(f"  CODATA  Δm/M_N (dimensionless, observation):")
+    print(f"    (m_n−m_p)/M_N_avg = {mp.nstr(delta_m_over_M_obs, 12)}")
+    delta_m_resid_ppm = float(
+        (DELTA_M_SUBSTRATE_OVER_M_N - delta_m_over_M_obs) / delta_m_over_M_obs * 1e6
+    )
+    print(f"    residual         = {delta_m_resid_ppm:+.1f} ppm")
     print()
 
-    # Isobar test: ³H vs ³He
+    # Isobar test: ³H vs ³He — observed MeV from CODATA; the substrate
+    # contribution is computed dimensionlessly then multiplied by the
+    # OBSERVED M_N_AVG_OBS at print time (display-only scale, not a
+    # calibration input).
     H3 = ISOBARS_A3["tritium"]
     He3 = ISOBARS_A3["helium-3"]
     A = H3["Z"] + H3["N"]
@@ -119,8 +130,10 @@ def main() -> int:
 
     M_obs_diff = He3["M_MeV"] - H3["M_MeV"]
     delta_BE_codata = H3["BE_MeV"] - He3["BE_MeV"]
-    # Predicted contribution from substrate quark swap
-    quark_swap_contribution = -delta_Z * DELTA_M_SUBSTRATE_MeV
+    # Quark-swap contribution = -ΔZ · Δm.  Δm in MeV is the substrate
+    # ratio scaled by the OBSERVED nucleon mass scale (display scale,
+    # not a prediction input — the prediction is the dimensionless ratio).
+    quark_swap_contribution = -delta_Z * DELTA_M_SUBSTRATE_OVER_M_N * M_N_AVG_OBS
 
     print(f"  Test case: ³H vs ³He (A = {A}, ΔZ = +{delta_Z})")
     print(f"    m(³H)  = {H3['M_MeV']} MeV  (BE = {H3['BE_MeV']} MeV)")
@@ -153,15 +166,19 @@ def main() -> int:
         print(f"  ⚠ Consistency residual {float(consistency):.4f} MeV is non-zero;")
         print("    isobar decomposition may need higher-order substrate term.")
 
-    # Witness
-    w = (WitnessBuilder("probe-isobar-delta-m-substrate", engine="python+mpmath")
+    # Witness — engine="mpmath" so auto-detector records the specific
+    # mpmath version (gemini #688: better traceability than "python+mpmath").
+    w = (WitnessBuilder("probe-isobar-delta-m-substrate", engine="mpmath")
          .set_description("Isobar mass difference test for prop:flavor-split-substrate"))
     w.add_data("q_pinned", str(q))
     w.add_data("substrate_delta_m", {
-        "formula": "M_N · (q-1)² · (1 - q⁻⁴) / 3",
-        "value_MeV": str(DELTA_M_SUBSTRATE_MeV),
-        "codata_delta_m_MeV": str(DELTA_M_NUCLEON),
+        "formula_dimensionless": "(q-1)² · (1 - q⁻⁴) / 3",
+        "value_dimensionless": str(DELTA_M_SUBSTRATE_OVER_M_N),
+        "codata_delta_m_over_M_N": str(delta_m_over_M_obs),
         "residual_ppm": float(delta_m_resid_ppm),
+        "display_scale_MeV": str(M_N_AVG_OBS),
+        "scaled_value_MeV": str(DELTA_M_SUBSTRATE_OVER_M_N * M_N_AVG_OBS),
+        "codata_delta_m_MeV": str(DELTA_M_NUCLEON_OBS),
     })
     w.add_data("test_case_A3", {
         "atoms": ["tritium", "helium-3"],
