@@ -7,7 +7,7 @@ import { proposition } from "../../schema/builders";
  *
  * This closes the derivation loop:
  *   operator-selection-lp → shadow prices → mass coefficients
- *   bw-categorical-descent → partition structure → scaling functions
+ *   mass-categorical-descent → partition structure → scaling functions
  *   wedderburn-trace-identity → normalization → trace budget
  *
  * At each Hecke level k, the mass-formula coefficient for
@@ -36,7 +36,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:bw-categorical-descent",
+    "prop:mass-categorical-descent",
     "prop:wigner-coefficient-derivation",
     "prop:wedderburn-weight-canonical",
   ],

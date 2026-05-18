@@ -1,6 +1,10 @@
-The semi-empirical mass formula of Bethe and Weizsäcker is the
-:refterm[descent]{#descent} decomposition of the mass endomorphism
+The QOU mass formula is the :refterm[descent]{#descent}
+decomposition of the mass endomorphism
 $\mathfrak{m} \colon A \to A$ under the brane tower blow-up.
+The empirical Bethe–Weizsäcker liquid-drop ansatz is recovered
+as one phenomenology of this descent decomposition; see
+[`conj:q-integer-mass-formula`](#conj:q-integer-mass-formula)
+for the recovered coefficients.
 
 **Proposition.**
 \*Let $\mathcal{A}(Z,N)$ be the atomic braid in $H_{A+Z}(q)$,

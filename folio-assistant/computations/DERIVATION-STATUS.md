@@ -127,7 +127,7 @@ corresponding partition's Frobenius positivity constraint in the
 nuclear operator selection LP.  This closes the derivation loop:
 
   operator-selection-lp → shadow prices → BW coefficients
-  bw-categorical-descent → partition structure → scaling functions
+  mass-categorical-descent → partition structure → scaling functions
   wedderburn-trace-identity → normalization → trace budget
 
 Corollary: **branching rule for coefficients** — the branching

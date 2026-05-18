@@ -144,7 +144,7 @@ export default chapter({
         "step-lp-verification",
         "groebner-reduction-methods",
         "tower-binding-energy",
-        "bw-categorical-descent",
+        "mass-categorical-descent",
         "thurston-volume-additivity",
         "mass-volume-factorization",
         "crossing-graded-mass-expansion",

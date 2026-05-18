@@ -202,7 +202,7 @@
 | `step-lp-verification` | Step-by-step LP verification | ✓ |
 | `groebner-reduction-methods` | Computational methods for reduction | ✓ |
 | `tower-binding-energy` | **Prop:** Binding from brane tower partition function | ✓ |
-| `bw-categorical-descent` | Wedderburn categorical descent | ✓ |
+| `mass-categorical-descent` | Wedderburn categorical descent | ✓ |
 | `thurston-volume-additivity` | Thurston volume additivity property | ✓ |
 | `mass-volume-factorization` | Mass–volume factorization | ✓ |
 | `crossing-graded-mass-expansion` | **Conjecture:** Crossing-graded expansion | ⚠️ |
