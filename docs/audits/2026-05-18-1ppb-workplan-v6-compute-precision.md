@@ -1,6 +1,12 @@
-# Refocused 1-ppb workplan v6 — post-#730 / Hoefsmit stack
+# Refocused 1-ppb workplan v6 (compute-precision view) — post-#730 / Hoefsmit stack
 
 > **Predecessor:** [`2026-05-17-1ppb-workplan-v5.md`](2026-05-17-1ppb-workplan-v5.md)
+> **Sibling v6:** [`2026-05-18-1ppb-workplan-v6-refreshed.md`](2026-05-18-1ppb-workplan-v6-refreshed.md)
+> — the m_p-closure view of v6 (PR #708 author), focused on Borromean
+> tower scale-gap resolution, T5/T6 m_p tower depth, y_λ extension.
+> This doc and the sibling are **complementary**: this one covers the
+> compute-precision 1ppb gate (internal cross-method agreement at
+> q_0); the sibling covers per-isotope mass-prediction closure.
 > **Coordination ledger:** [`docs/coordination/1ppb.md`](../coordination/1ppb.md)
 > **Trigger:** user request 2026-05-18 ("coordinate with siblings,
 > refresh the work plan to get to 1 ppb").
