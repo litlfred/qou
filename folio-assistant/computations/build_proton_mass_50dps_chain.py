@@ -310,7 +310,7 @@ def emit_codata_witness(chain: DerivationChain) -> None:
     """Emit a separate `proton-mass-codata-50dps.witness.json` with
     the CODATA comparison data.  This is consumed by the Phase E
     final-convergence assertion in the workplan."""
-    from witness_base import WitnessBuilder
+    from witness_base import WitnessBuilder, load_and_hash_upstream
     out = HERE / "proton-mass-codata-50dps.witness.json"
     w = WitnessBuilder("proton-mass-codata-50dps", engine="python")
     w.set_description(
@@ -369,6 +369,21 @@ def emit_codata_witness(chain: DerivationChain) -> None:
         # mpmath log10 for full-precision OOM
         oom_to_target = mp.log10(GAP_REL / mp.mpf("1e-9"))
     w.add_data("gap_orders_of_magnitude_to_1ppb", mp.nstr(oom_to_target, 6))
+
+    # Fix #7 (sweep audit 2026-05-18) — declare the canonical Markov-
+    # trace axiomatic-closed-form witness in the dep chain, and add the
+    # corresponding `prop:` to reference_blocks via add_data so the
+    # block-resolver picks it up.
+    _option_b_path = HERE / "option-b-proton-mass-full-chain.witness.json"
+    upstream_hashes: list[dict] = []
+    if _option_b_path.exists():
+        _, _hr = load_and_hash_upstream(_option_b_path)
+        upstream_hashes.append(_hr)
+    w.add_data("upstream_witness_hashes", upstream_hashes)
+    w.add_data("reference_blocks", [
+        "prop:full-pole-structure-mass-trace",
+        "prop:markov-trace-axiomatic-closed-form",
+    ])
     w.save()
 
 

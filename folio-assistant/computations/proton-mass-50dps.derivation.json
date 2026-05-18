@@ -53,11 +53,11 @@
       "operation": "Same tower formula applied to the electron's 2-strand atomic braid; 50 dps via the same mpmath pipeline.",
       "inputs": [],
       "output_name": "m_e_Hecke",
-      "output_value": "2.0027223644625536785706018688474338071008612121826",
+      "output_value": "2.002722364462553678570601868847433807101",
       "trust_basis": "script-cited",
       "jet_order": 0,
       "citation": "manuscript:§mass-endomorphism-tower",
-      "notes": "script: folio-assistant/computations/mass_endomorphism.py electron-tower path.  SCRIPT_CITED until an electron-tr-M-q0 chain ships.  **Precision note**: the stored `output_value` (2.0027223644625536785706018688474338071008612121826) is a 4-sig-fig rounded summary of the upstream pipeline output, kept short for readability in the chain JSON.  Full-precision 50 dps values live in `mass-formula-6term-mpfr-50dps.witness.json`."
+      "notes": "script: folio-assistant/computations/mass_endomorphism.py electron-tower path.  SCRIPT_CITED until an electron-tr-M-q0 chain ships.  **Precision note**: the stored `output_value` (2.002722364462553678570601868847433807101) is a 4-sig-fig rounded summary of the upstream pipeline output, kept short for readability in the chain JSON.  Full-precision 50 dps values live in `mass-formula-6term-mpfr-50dps.witness.json`."
     },
     {
       "name": "Dimensionless mass ratio m_p/m_e at 50 dps",
@@ -67,7 +67,7 @@
         "m_e_Hecke"
       ],
       "output_name": "m_p_over_m_e",
-      "output_value": "1.1691181546100350623882322520699604817655548309914",
+      "output_value": "1.1691181546100350623882322520699604817654738115951",
       "trust_basis": "derived",
       "jet_order": 0,
       "citation": "manuscript:§dimensionless-mass-ratio",

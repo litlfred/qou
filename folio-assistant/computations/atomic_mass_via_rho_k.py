@@ -340,6 +340,13 @@ def main() -> int:
             row["tr_M_convention_status"] = flag
         rows.append(row)
 
+    # Fix #5 (S2) — record shadow-price upstream so the LP-dual a_K
+    # machinery shows in this script's dependency chain (sweep audit
+    # docs/audits/2026-05-18-compute-integration-sweep.md).
+    _shadow_price_path = HERE / "a-K-via-lp-dual-hecke-basis.witness.json"
+    if _shadow_price_path.exists():
+        _load_upstream(_shadow_price_path)
+
     # ── Compare to legacy E_0-anchored predictions ─────────────
     legacy_path = HERE / "atomic-braid-mass-table.witness.json"
     legacy_compare = []
@@ -409,6 +416,11 @@ def main() -> int:
         },
         "audit_reference": "AUDIT-DEEP-2026-05.md §3.3a (P4″)",
         "pr": "#564",
+        # Fix #5 (sweep audit 2026-05-18) — declare the shadow-price
+        # producer block in the dependency chain.
+        "reference_blocks": [
+            "prop:mass-coefficient-shadow-price",
+        ],
     }
     from witness_base import WitnessBuilder
     out_path = (

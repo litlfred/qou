@@ -1,5 +1,5 @@
+#!/usr/bin/env python3
 """
-
 CLASS-A acknowledged-anchor banner (per Workplan-0b/M_N):
 This script imports M_*_MEV_VALIDATION constants from
 `codata_constants.py` as production inputs (not just as
@@ -11,10 +11,9 @@ audit (`canonical-script-input-audit`) classifies this script
 as "with-substrate-splitting" or "anchor-pending"; reviewers
 should treat the M_*_MEV_VALIDATION usage as CAL-3-ish anchor,
 NOT as an independent calibration input.
-"""
+═══════════════════════════════════════════════════════════════
 
-#!/usr/bin/env python3
-"""Q_β tightening landscape — what works and what doesn't.
+Q_β tightening landscape — what works and what doesn't.
 
 Per PR #655's audit, ε_ΔS = 0.605 · ε_Q, so 1 ppb on ΔS requires
 ε_Q ≈ 0.0017 ppm (1700× tighter than the 1678 ppm Form A residual).

@@ -1,5 +1,8 @@
+#!/usr/bin/env python3
+# polynomial_q_not_applicable: derived-quantity module; consumes
+# upstream beta-decay-energy-scale witness, exposes predicted MeV
+# observables.
 """
-
 CLASS-A acknowledged-anchor banner (per Workplan-0b/M_N):
 This script imports M_*_MEV_VALIDATION constants from
 `codata_constants.py` as production inputs (not just as
@@ -11,13 +14,9 @@ audit (`canonical-script-input-audit`) classifies this script
 as "with-substrate-splitting" or "anchor-pending"; reviewers
 should treat the M_*_MEV_VALIDATION usage as CAL-3-ish anchor,
 NOT as an independent calibration input.
-"""
+═══════════════════════════════════════════════════════════════
 
-#!/usr/bin/env python3
-# polynomial_q_not_applicable: derived-quantity module; consumes
-# upstream beta-decay-energy-scale witness, exposes predicted MeV
-# observables.
-"""Framework-derived energy observables for the QOU mass / β-decay
+Framework-derived energy observables for the QOU mass / β-decay
 sector.
 
 Predictions come from the **FULL** chain per

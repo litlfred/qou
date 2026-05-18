@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-18T14:42:55.065800+00:00",
-  "commitSha": "c2a01939456cc60fa339516c73527a1004c0e398",
+  "computedAt": "2026-05-18T17:06:56.061126+00:00",
+  "commitSha": "ecaee8158d9eca429782936945e3e907ddcb6c07",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "atomic-mass-via-rho-k",
   "scriptFile": "atomic_mass_via_rho_k.py",
-  "scriptHash": "15777b5df0d5",
-  "scriptCommitSha": "b53c46f1117af3c259991dc9a8826780c1bbd4aa",
+  "scriptHash": "2c423baa1f13",
+  "scriptCommitSha": "1262d46c0e9a1b5414b05d163368c492fc3fbb1d",
   "description": "Atomic mass-table predictions using the resolved ρ_K assembly M(K) = ρ_K · m_e · |tr_M(K)| from PR #564 §3.3a (Options A + C: no additive T6, Mittag-Leffler complementarity). Calibration anchors: m_e (CODATA), m_p (CODATA), m_n (CODATA via Q_β = m_n - m_p - m_e). Reads |tr_M(K)| from atomic-tr-m-mpfr-50dps.witness.json. Atoms not in that witness are flagged tr_M_unavailable rather than fabricating values. Direct successor to atomic_braid_mass_table.py — see the side-by-side improvement_factor field.",
   "auditOnly": "AUDIT-DEEP-2026-05.md",
   "parameters": {
@@ -86,8 +86,8 @@
         "Z": 2,
         "N": 2,
         "A": 4,
-        "tr_M_at_q0": "0.9673237505194689789368375186313429980435",
-        "rho_K_leading_order": "7597.945017207953456509884143825827617780",
+        "tr_M_at_q0": "0.9673237505194689789368375186313429980439",
+        "rho_K_leading_order": "7597.945017207953456509884143825827617777",
         "M_pred_MeV": "3755.675017360000000000000000000000000000",
         "M_codata_MeV": "3727.379378000000000000000000000000000000",
         "err_pct": "0.7591295784649265181398983422717213949237",
@@ -176,11 +176,11 @@
       },
       {
         "path": "atomic-tr-m-helium4.witness.json",
-        "sha256": "76844c025edc6cf6226b58c1b843c16333d91c43513a19fe23013cfa1a9246b5",
-        "size_bytes": 4174,
-        "commitSha": "ae0e395343871f30feb34eaa973a474d4e5fc695",
-        "scriptCommitSha": "ceb6104f7e57111dd38a2226030e5fba0cf82112",
-        "computedAt": "2026-05-09T01:15:59.857893+00:00"
+        "sha256": "5f18f03ad90dbb7cef767a2b0b27ba790560757e9c18301f4382db09aeeea8ad",
+        "size_bytes": 4113,
+        "commitSha": "c2a01939456cc60fa339516c73527a1004c0e398",
+        "scriptCommitSha": "c2a01939456cc60fa339516c73527a1004c0e398",
+        "computedAt": "2026-05-18T14:45:17.933622+00:00"
       },
       {
         "path": "atomic-tr-m-wenzl-bridge.witness.json",
@@ -189,6 +189,14 @@
         "commitSha": null,
         "scriptCommitSha": null,
         "computedAt": "2026-04-27T21:27:46.973442+00:00"
+      },
+      {
+        "path": "a-K-via-lp-dual-hecke-basis.witness.json",
+        "sha256": "47e6103c378242ef2a1f36da671b1a5cca042ae82dd044a1f2ede40d5c2b0d71",
+        "size_bytes": 8987,
+        "commitSha": "021492602022b249fb09a01f62b1c7bf729a631b",
+        "scriptCommitSha": "unknown",
+        "computedAt": "2026-05-18T01:24:31.978707+00:00"
       },
       {
         "path": "atomic-braid-mass-table.witness.json",
@@ -201,5 +209,8 @@
     ]
   },
   "audit_reference": "AUDIT-DEEP-2026-05.md §3.3a (P4″)",
-  "pr": "#564"
+  "pr": "#564",
+  "reference_blocks": [
+    "prop:mass-coefficient-shadow-price"
+  ]
 }

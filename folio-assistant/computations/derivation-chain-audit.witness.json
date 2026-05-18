@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T17:02:26.695213+00:00",
-  "commitSha": "3ab225fd8d7492ef6e0b81b13af169a59c032b20",
+  "computedAt": "2026-05-18T18:01:45.362154+00:00",
+  "commitSha": "71299ff700f2c5a03d016917d66027ab614e1939",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -576,7 +576,7 @@
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "875916a587c227572f421c22053ad81371976ccc",
+  "scriptCommitSha": "67f1df24c9d76e62b2bb25a331814e511ba6dc3f",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
   "data": {
@@ -2257,6 +2257,8 @@
         "hydrogen-qshuffle-compound.witness.json",
         "hydrogen-step-by-step.witness.json",
         "hyperbolic-volumes.witness.json",
+        "i1-no-probe-audit.witness.json",
+        "i2-probe-only-audit.witness.json",
         "incomplete-coverage-audit.witness.json",
         "inter-knot-decoupling.witness.json",
         "interface-type-resolved-coupling-probe.witness.json",
