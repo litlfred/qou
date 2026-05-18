@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T16:01:04.033052+00:00",
-  "commitSha": "5462ed87f90ea6062b039b40d321a352196b027f",
+  "computedAt": "2026-05-18T16:11:42.936650+00:00",
+  "commitSha": "ba9414827e5db800ca211e0380bc38a532a307e0",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2193,6 +2193,7 @@
         "delta-lambda-closure-v3-full-vs-filtered.witness.json",
         "delta-lambda-closure-v4-two-row.witness.json",
         "delta-lambda-closure-v5-frobenius-chirality.witness.json",
+        "delta-lambda-empirical-tabulation.witness.json",
         "delta-lambda-q-sweep-2row.witness.json",
         "delta-lambda-shift-nf-wenzl-probe.witness.json",
         "delta-lambda-via-per-partition-shift-nf.witness.json",
