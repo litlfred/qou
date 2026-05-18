@@ -1,0 +1,68 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-18T17:20:26.089073+00:00",
+  "commitSha": "88b3cac4ac6f352d5cb0d448b9c020808c85fbe9",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 16,
+  "computation": "family-a-variants-investigation",
+  "scriptFile": "probe_family_a_variants.py",
+  "scriptHash": "09275064a89b",
+  "scriptCommitSha": "unknown",
+  "description": "Investigation of Family A variants: 8 natural Wedderburn-sum normalizations tested for leading 5/2 at q=1 and h² coefficient. Family A is EXACT (not truncated). Variants test whether other natural sums close the 3% gap to CODATA.",
+  "data": {
+    "target_at_q0": 2.4616482108893916,
+    "variants": [
+      {
+        "name": "V1: (1/4) Σ dim_q V_λ (Family A)",
+        "value_at_q1": "nan",
+        "h2_coefficient": "3/4",
+        "value_at_q0": 2.5327796636728834,
+        "rel_pct_vs_target": 2.8895864351710974
+      },
+      {
+        "name": "V2: (1/nan) Σ dim_q² V_λ",
+        "value_at_q1": "nan",
+        "h2_coefficient": "0",
+        "value_at_q0": NaN,
+        "rel_pct_vs_target": NaN
+      },
+      {
+        "name": "V3: (1/nan) Σ dim_q · dim_cl",
+        "value_at_q1": "nan",
+        "h2_coefficient": "0",
+        "value_at_q0": NaN,
+        "rel_pct_vs_target": NaN
+      },
+      {
+        "name": "V4: (1/nan) Σ hook_cl · dim_q",
+        "value_at_q1": "nan",
+        "h2_coefficient": "0",
+        "value_at_q0": NaN,
+        "rel_pct_vs_target": NaN
+      },
+      {
+        "name": "V6: (1/nan) · dim_q V_(2,2) only",
+        "value_at_q1": "nan",
+        "h2_coefficient": "0",
+        "value_at_q0": NaN,
+        "rel_pct_vs_target": NaN
+      },
+      {
+        "name": "V7: Σ dim_q V_λ / [4]_q",
+        "value_at_q1": "nan",
+        "h2_coefficient": "-13/16",
+        "value_at_q0": 2.465182848883424,
+        "rel_pct_vs_target": 0.1435882665279519
+      },
+      {
+        "name": "V8: 5/Σ(1/dim_q V_λ) (harmonic)",
+        "value_at_q1": "nan",
+        "h2_coefficient": "85/361",
+        "value_at_q0": 1.5891173386000912,
+        "rel_pct_vs_target": -35.444986348153115
+      }
+    ]
+  }
+}
