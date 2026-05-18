@@ -272,6 +272,89 @@ Atlas covers $\ell \leq 2$ at $q_0$; further atoms ($\ell = 3$
 molecules, heavier nuclei) defer to
 [appendix-atomic-mass-calculations](#app:atomic-mass-calculations).
 
+## All-atoms / all-isotopes extension (2026-05-18)
+
+A layered framework extends the atlas to every isotope (real or
+theoretical) under a single registry:
+
+| Layer | Coverage | Pipeline |
+|---|---|---|
+| **Layer 1** | Light isotopes ($A \leq 7$) | Canonical $\sum_\lambda y_\lambda \cdot \chi^\lambda(\beta_{\text{atom}})$ via Rust `hecke-canonical-chi` + mpmath $y_\lambda$ |
+| **Layer 2** | $\alpha$-cluster magic nuclei ($A = 4 n_\alpha$) | Recursive on $^4$He + $\alpha$–$\alpha$ coupling $c_{\alpha\alpha}$ |
+| **Layer 3** | Non-$\alpha$ intermediate ($5 \leq A \leq 40$) | Hybrid: nearest-$\alpha$-cluster + valence-nucleon via canonical interface |
+| **Layer 4** | Heavy nuclei ($A > 40$) | Brane-tower asymptotic + LP-active-set ansatz |
+| **Layer 5** | Theoretical / hypothetical isotopes | Same Layer-1/3 machinery; flagged `prediction-only` |
+
+Per-isotope records follow the [`IsotopeRecord`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/isotope_record_schema.py)
+dataclass schema with explicit knot-operator catalogue. Layer-1
+pipeline implementation: [`canonical_mass_table_extended.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/canonical_mass_table_extended.py).
+
+### Knot-operator catalogue — per-step primitives
+
+Every per-isotope record exposes a structured list of the knot
+operators used to build its canonical braid. The primitives are:
+
+**Intra-nucleon operators** (acting on the 3 strands at base $3k$):
+
+| Operator | Formula | Closure |
+|---|---|---|
+| `proton intra` | $\sigma_0\,\sigma_0\,\sigma_0$ in $H_3$ | trefoil $3_1 = T(2,3)$ |
+| `neutron intra` | $\sigma_0^{-1}\,\sigma_0^{-1}\,\sigma_0^{-1}$ in $H_3$ | mirror trefoil |
+| `vortex` $\varrho$ | $\mathbf{1}_{B_1}$ (single-strand identity) | unknot $0_1$ |
+
+**Inter-nucleon interfaces** (single-strand crossing at generator $3k+2$):
+
+| Channel | Formula | Wire-format `ctype` |
+|---|---|---|
+| `pp` | $\sigma$ (positive crossing) | `sigma` |
+| `nn` | $\sigma + (-h)\cdot\mathbf{1}$ | `sigma_inv` |
+| `pn` | $\sigma + (-h/2)\cdot\mathbf{1}$ (averaged half-shift) | `averaged` |
+
+where $h = q_0 - q_0^{-1}$.
+
+**Closure topology operators** (Markov closure $\widehat{\beta}$):
+
+| Closure | Braid word | Application |
+|---|---|---|
+| Hopf link $L_H$ | $\sigma_1^2$ | photon polarisation pair |
+| Borromean baryon $\mathcal{B}_3$ | $(\sigma_1 \sigma_2^{-1})^3$ | proton / neutron |
+| Trefoil $3_1$ | $\sigma_1^3$ | electron |
+| Figure-eight $4_1$ | $(\sigma_1 \sigma_2^{-1})^2$ | (notation, not currently used for matter) |
+| Connected sum $K \mathbin{\#} K'$ | concatenation | composite atoms (recursive) |
+
+**Fusion operators** (Layer 2 $\alpha$-cluster recursion):
+
+| Fusion | Description |
+|---|---|
+| $c_{\alpha\alpha}$ | $\alpha$–$\alpha$ pair-energy correction (⁸Be, ¹²C, …, ⁴⁰Ca) |
+| $\alpha$–N attachment | Layer 3: $^4$He cluster + valence nucleon (for non-magic $A$) |
+
+For an atom with mass number $A$, the canonical braid word in
+$B_{3A}$ is built sequentially per nucleon: at each $k \in \{0,
+\ldots, A-1\}$ apply the intra block at base $3k$ and $3k+1$,
+then (for $k < A-1$) apply the inter-nucleon interface at $3k+2$
+between nucleon $k$ and $k+1$. The full sequence is enumerated by
+[`build_knot_operator_catalogue(Z, N)`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/isotope_record_schema.py)
+and reported in every per-isotope record.
+
+### Layer-1 canonical $|\mathrm{tr}_M(q_0)|$ table
+
+| Atom | $A$ | $n$ | $\|\mathrm{tr}_M(\beta_{\text{atom}}, q_0)\|$ |
+|---|---|---|---|
+| $\mathfrak{p}$ | 1 | 3 | $1.06530622859$ |
+| $\mathfrak{n}$ | 1 | 3 | $0.92323329717$ |
+| D | 2 | 6 | $0.388286471548$ |
+| T | 3 | 9 | $0.104052118676$ |
+| ${}^3$He | 3 | 9 | $0.206540858562$ |
+| ${}^4$He | 4 | 12 | $0.0553483458767$ |
+| ${}^5$Li | 5 | 15 | *(computing)* |
+| ${}^6$Li | 6 | 18 | *(computing)* |
+| ${}^7$Li | 7 | 21 | *(canonical scaling limit)* |
+
+Computed via [`canonical_mass_table_extended.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/canonical_mass_table_extended.py)
+($\Sigma_\lambda y_\lambda \cdot \chi^\lambda$ at $q_0$, Rust f64 path).
+MPFR-50dps variant available via `--precision mpfr`.
+
 ## Build-pipeline integration
 
 The atlas is auto-rendered by
