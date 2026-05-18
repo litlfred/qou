@@ -57,7 +57,9 @@ HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
-mp.mp.dps = 50
+
+from _precision import set_compute_dps, fmt  # noqa: E402
+set_compute_dps()
 
 from witness_base import WitnessBuilder  # noqa: E402
 from wedderburn_pair_volumes import wedderburn_pair_volumes  # noqa: E402

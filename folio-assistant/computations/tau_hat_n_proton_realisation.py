@@ -37,7 +37,8 @@ sys.path.insert(0, str(Path(__file__).parent))
 # cap precision at ~15 digits (Gemini PR #533 review, r3178376577).
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
-mp.mp.dps = 50
+from _precision import set_compute_dps, fmt  # noqa: E402
+set_compute_dps()
 Q0 = mp.mpf(Q_50_DIGIT_STR)
 
 DIM_A0 = 6  # |S_3| = 6

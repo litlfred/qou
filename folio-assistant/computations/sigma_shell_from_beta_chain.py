@@ -64,7 +64,8 @@ from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 HERE = Path(__file__).parent
 
-mp.mp.dps = 50
+from _precision import set_compute_dps, fmt  # noqa: E402
+set_compute_dps()
 
 
 # ── Inputs (calibration anchors at the ρ_K layer; NOT shell-derivation params) ──
