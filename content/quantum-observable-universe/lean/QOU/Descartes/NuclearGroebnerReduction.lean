@@ -10,25 +10,13 @@ LaTeX label: `prop:nuclear-groebner-reduction`
 
 ## References
 - [manuscript] §6/nuclear-groebner-reduction
-
-**Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-Part of the formal proof chain. The parameter `q` is the canonical
-indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
-numerical evaluation.
 -/
 
-import Mathlib.Algebra.Polynomial.Laurent
-import Mathlib.Data.Int.Basic
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
 import Mathlib.Data.List.Basic
 
 namespace QOU.Descartes
-
-/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
-    See `QOU.Descartes.GroundRing` for the compiled definition. -/
-noncomputable section
-abbrev R_q := LaurentPolynomial ℤ
-def q_param : R_q := LaurentPolynomial.T 1
-def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-- A braid word: a list of generator indices. -/
 -- Ref: [manuscript] §6/nuclear-groebner-reduction
@@ -36,7 +24,7 @@ abbrev BraidWord := List ℕ
 
 /-- An element of the Hecke algebra: a list of (word, coefficient) pairs. -/
 -- Ref: [manuscript] §6/nuclear-groebner-reduction
-abbrev HeckeElement := List (BraidWord × R_q)
+abbrev HeckeElement := List (BraidWord × ℝ)
 
 /-- The crossing sign for a nucleon pair.
     pp = positive (weight q), nn = negative (weight q⁻¹),
@@ -63,16 +51,16 @@ def crossingType (p : ℕ) (i j : ℕ) : CrossingType :=
     Gröbner basis. -/
 -- Ref: [manuscript] §6/nuclear-groebner-reduction
 structure HeckeRelation where
-  q : R_q
-  -- q_gt_one : 1 < q  -- (archimedean; not meaningful over R_q)
+  q : ℝ
+  q_gt_one : 1 < q
   /-- σ² coefficient of σ: (q - q⁻¹). -/
-  sigma_coeff : R_q := q - 1/q
+  sigma_coeff : ℝ := q - 1/q
   /-- σ² constant term: 1. -/
-  const_coeff : R_q := 1
+  const_coeff : ℝ := 1
   /-- The sigma coefficient is positive. -/
-  -- sigma_coeff_pos : 0 < sigma_coeff := by  -- (archimedean; not meaningful over R_q)
+  sigma_coeff_pos : 0 < sigma_coeff := by
     show 0 < q - 1/q
-    rw [sub_pos, div_lt_one (by linarith : (0 : R_q) < q)]
+    rw [sub_pos, div_lt_one (by linarith : (0 : ℝ) < q)]
     nlinarith [q_gt_one]
 
 /-- The Gröbner basis for the Hecke algebra consists of three
@@ -101,11 +89,11 @@ def isReduced (w : BraidWord) : Prop :=
     Gröbner basis theory). -/
 -- Ref: [manuscript] §6/nuclear-groebner-reduction
 -- Ref: [manuscript] unital-groebner-bases/main-theorem
--- axiom normal_form_exists_unique (q : R_q) (hq : 1 < q) (A : ℕ)  -- (archimedean; not meaningful over R_q)
+axiom normal_form_exists_unique (q : ℝ) (hq : 1 < q) (A : ℕ)
     (word : BraidWord) :
     ∃! (nf : HeckeElement),
     -- The normal form consists entirely of reduced words
-    ∀ (wb : BraidWord × R_q), wb ∈ nf → isReduced wb.1
+    ∀ (wb : BraidWord × ℝ), wb ∈ nf → isReduced wb.1
 
 /-- The maximum word length of a reduced word with no duplicate
     generators and all generators in {0, ..., A-2} is A-1.
@@ -128,11 +116,11 @@ theorem max_word_length_bound (A : ℕ) (w : BraidWord)
 
 /-- Top-level alias matching the manifest declaration. -/
 -- Ref: [manuscript] §6/nuclear-groebner-reduction
--- noncomputable def nuclear_groebner_reduction (q : R_q) (hq : 1 < q)  -- (archimedean; not meaningful over R_q)
+noncomputable def nuclear_groebner_reduction (q : ℝ) (hq : 1 < q)
     (p n : ℕ) : Prop :=
   ∃ (nf : HeckeElement),
-    (∀ (wb : BraidWord × R_q), wb ∈ nf → isReduced wb.1) ∧
-    (∀ (wb : BraidWord × R_q), wb ∈ nf → wb.1.Nodup) ∧
-    (∀ (wb : BraidWord × R_q), wb ∈ nf → wb.1.length ≤ p + n - 1)
+    (∀ (wb : BraidWord × ℝ), wb ∈ nf → isReduced wb.1) ∧
+    (∀ (wb : BraidWord × ℝ), wb ∈ nf → wb.1.Nodup) ∧
+    (∀ (wb : BraidWord × ℝ), wb ∈ nf → wb.1.length ≤ p + n - 1)
 
 end QOU.Descartes

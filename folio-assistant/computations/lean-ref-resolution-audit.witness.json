@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T20:20:06.302287+00:00",
-  "commitSha": "465272e3b025270e0d7e49c145547a7808206c6b",
+  "computedAt": "2026-05-18T23:23:33.444574+00:00",
+  "commitSha": "53724089357560bf563dfc49d2050299040b8b9c",
   "assertions": [
     {
       "name": "no_unregistered_package_prefixes",
@@ -15,7 +15,7 @@
     },
     {
       "name": "ok_count_matches_total_minus_failures",
-      "computed": 603.0,
+      "computed": 606.0,
       "expected": 944.0,
       "passed": false,
       "tolerance": 0.0,
@@ -24,7 +24,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 11,
+  "durationMs": 12,
   "computation": "lean-ref-resolution-audit",
   "scriptFile": "lean_ref_resolution_audit.py",
   "scriptHash": "5a460527b690",
@@ -36,8 +36,8 @@
   },
   "data": {
     "by_result": {
-      "ok": 603,
-      "sibling_no_decl": 218,
+      "ok": 606,
+      "sibling_no_decl": 215,
       "grep_no_match": 122,
       "lake_root_missing_grep_hit": 1
     },
@@ -5953,6 +5953,25 @@
         "result": "sibling_no_decl"
       },
       {
+        "path": "content/quantum-observable-universe/braids-and-knots/sw-3root-rational-integrand.ts",
+        "ref": "qou:QOU.BraidKnot.sw3RootProductDegree1_rational_form",
+        "kind": "unknown",
+        "pkg": "qou",
+        "decl_path": "QOU.BraidKnot.sw3RootProductDegree1_rational_form",
+        "sibling_exists": true,
+        "sibling_declares": true,
+        "lake_root_exists": false,
+        "lake_root_declares": false,
+        "lake_parent_declares": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/braids-and-knots/sw-3root-rational-integrand.lean"
+        ],
+        "grep_hit": true,
+        "grep_hit_under_lake_root": false,
+        "result": "ok",
+        "resolved_via": "sibling"
+      },
+      {
         "path": "content/quantum-observable-universe/braids-and-knots/symbolic-character-table.ts",
         "ref": "qou:QOU.BraidKnot.symbolic_character_table",
         "kind": "unknown",
@@ -8594,24 +8613,6 @@
         "result": "grep_no_match"
       },
       {
-        "path": "content/quantum-observable-universe/descartes-universe/nuclear-groebner-reduction.ts",
-        "ref": "qou:QOU.Descartes.nuclear_groebner_reduction",
-        "kind": "unknown",
-        "pkg": "qou",
-        "decl_path": "QOU.Descartes.nuclear_groebner_reduction",
-        "sibling_exists": true,
-        "sibling_declares": false,
-        "lake_root_exists": false,
-        "lake_root_declares": false,
-        "lake_parent_declares": false,
-        "grep_hits": [
-          "/home/user/qou/content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean"
-        ],
-        "grep_hit": true,
-        "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
-      },
-      {
         "path": "content/quantum-observable-universe/descartes-universe/nuclear-spin-parity.ts",
         "ref": "qou:QOU.Descartes.nuclear_spin_parity",
         "kind": "unknown",
@@ -9841,11 +9842,12 @@
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "/home/user/qou/content/quantum-observable-universe/descartes-universe/weierstrass-projection.lean"
+          "/home/user/qou/content/quantum-observable-universe/lean/QOU/Descartes/WeierstrassProjection.lean"
         ],
         "grep_hit": true,
-        "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "grep_hit_under_lake_root": true,
+        "result": "ok",
+        "resolved_via": "grep_under_lake_root"
       },
       {
         "path": "content/quantum-observable-universe/information-theory/aeon-boundary-generates-chart.ts",
@@ -13395,17 +13397,17 @@
         "pkg": "qou",
         "decl_path": "QOU.Descartes.nuclear_groebner_reduction",
         "sibling_exists": true,
-        "sibling_declares": true,
+        "sibling_declares": false,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "/home/user/qou/content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean"
+          "/home/user/qou/content/quantum-observable-universe/lean/QOU/Descartes/NuclearGroebnerReduction.lean"
         ],
         "grep_hit": true,
-        "grep_hit_under_lake_root": false,
+        "grep_hit_under_lake_root": true,
         "result": "ok",
-        "resolved_via": "sibling"
+        "resolved_via": "grep_under_lake_root"
       },
       {
         "path": "content/quantum-observable-universe/particle-interactions/nuclear-operator-regimes.ts",
@@ -14353,17 +14355,17 @@
         "pkg": "qou",
         "decl_path": "QOU.categorical_dq_squared",
         "sibling_exists": true,
-        "sibling_declares": true,
+        "sibling_declares": false,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/categorical-dq-squared-proof.lean"
+          "/home/user/qou/content/quantum-observable-universe/lean/QOU/CategoricalDqSquared.lean"
         ],
         "grep_hit": true,
-        "grep_hit_under_lake_root": false,
+        "grep_hit_under_lake_root": true,
         "result": "ok",
-        "resolved_via": "sibling"
+        "resolved_via": "grep_under_lake_root"
       },
       {
         "path": "content/quantum-observable-universe/quantum-observable-universes/categorical-dq-squared.ts",
@@ -14377,11 +14379,12 @@
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "/home/user/qou/content/quantum-observable-universe/quantum-observable-universes/categorical-dq-squared-proof.lean"
+          "/home/user/qou/content/quantum-observable-universe/lean/QOU/CategoricalDqSquared.lean"
         ],
         "grep_hit": true,
-        "grep_hit_under_lake_root": false,
-        "result": "sibling_no_decl"
+        "grep_hit_under_lake_root": true,
+        "result": "ok",
+        "resolved_via": "grep_under_lake_root"
       },
       {
         "path": "content/quantum-observable-universe/quantum-observable-universes/categorical-fourier-transform-exists.ts",
