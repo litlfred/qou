@@ -38,24 +38,19 @@ opaque ChiralityInterpolationHolds (phi : ℝ) : Prop
     rotation upon imposing observability. -/
 opaque CPTAsQuotientHolds : Prop
 
-/-- **Sub-claim (4: CP suppression at O(θ²))**: any residual
-    pre-observable phase contributes at most `O(θ²)` to the
-    electron-positron CP asymmetry `δ_CP`. -/
-opaque CPSuppressionHolds : Prop
-
 /-- **Complex-chirality-rotation conjecture** (class-axiomatised
-    per §3b-cond). -/
+    per §3b-cond). Algebraic tier only — the CP-suppression
+    numerical bound `δ_CP = O(θ²)` belongs to a future
+    Archimedean tier per gemini review on #721. -/
 class ComplexChiralityRotation : Prop where
   crossing_energy_phase : ∀ (n_c : ℤ), CrossingEnergyPhaseFactorHolds n_c
   chirality_interpolation : ∀ (phi : ℝ), ChiralityInterpolationHolds phi
   cpt_quotient : CPTAsQuotientHolds
-  cp_suppression : CPSuppressionHolds
 
 -- Ref: [manuscript] conj:complex-chirality-rotation
 instance complex_chirality_rotation_conjecture : ComplexChiralityRotation where
   crossing_energy_phase := fun _ => sorry
   chirality_interpolation := fun _ => sorry
   cpt_quotient := sorry
-  cp_suppression := sorry
 
 end QOU.ComplexChiralityRotation

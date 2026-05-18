@@ -1,5 +1,3 @@
-import Mathlib.Data.Real.Basic
-
 /-!
 # Shell threading energy from Skein smoothing (conjectural)
 
@@ -12,6 +10,13 @@ link that interpolates between the parent `N(Z, N)` and daughter
 Per `CLAUDE.md §3b-cond`, opaque Prop + class field + sorry
 instance.
 
+The numerical claim (Skein-smoothing identification reproduces
+the observed shell-correction energies within experimental
+precision) belongs to a future Archimedean evaluation tier and
+is intentionally NOT in this pre-Archimedean class — per gemini
+review on #721, algebraic identities must be separated from
+their numerical counterparts.
+
 ## References
 
 - `[manuscript]` `conj:shell-threading-energy`
@@ -22,26 +27,19 @@ instance.
 
 namespace QOU.ShellThreadingEnergy
 
-/-- **Sub-claim (Skein-smoothing identification)**: the shell
-    energy scale `λ_shell` equals the crossing energy of `L_0`,
-    the Skein smoothing at the beta-decay vertex. -/
-opaque ShellEnergyEqualsSmoothingEnergyHolds (lambda_shell : ℝ) : Prop
-
-/-- **Sub-claim (numerical match)**: the Skein-smoothing
-    identification reproduces the observed shell-correction
-    energies for the standard magic numbers within experimental
-    precision. -/
-opaque ShellEnergyNumericalMatchHolds : Prop
+/-- **Sub-claim (Skein-smoothing identification)**: the (specific)
+    shell energy scale `λ_shell` equals the crossing energy of
+    `L_0`, the Skein smoothing at the beta-decay vertex. The
+    Prop is parameterless because the claim is about the
+    canonical scale, not a universally-quantified family. -/
+opaque ShellEnergyEqualsSmoothingEnergyHolds : Prop
 
 /-- **Shell-threading-energy conjecture** (class-axiomatised per §3b-cond). -/
 class ShellThreadingEnergy : Prop where
-  smoothing_identification : ∀ (lambda_shell : ℝ),
-    ShellEnergyEqualsSmoothingEnergyHolds lambda_shell
-  numerical_match : ShellEnergyNumericalMatchHolds
+  smoothing_identification : ShellEnergyEqualsSmoothingEnergyHolds
 
 -- Ref: [manuscript] conj:shell-threading-energy
 instance shell_threading_energy_conjecture : ShellThreadingEnergy where
-  smoothing_identification := fun _ => sorry
-  numerical_match := sorry
+  smoothing_identification := sorry
 
 end QOU.ShellThreadingEnergy
