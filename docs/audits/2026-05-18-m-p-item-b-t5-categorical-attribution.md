@@ -652,6 +652,77 @@ production code already uses C (`paper_six_term_isotope_sweep.term5_chirality`
 default mode). The audit just needs to reflect that C is canonical
 and update the narrative.
 
+## 7f. Course-correction — BW-shadow-price framework was deprecated
+
+*(Added 2026-05-18 after user note: "bw-coef … these were deprecated".)*
+
+The §7b–§7e investigation was built on
+[`prop:bw-coefficient-shadow-price`](../../content/quantum-observable-universe/braids-and-knots/bw-coefficient-shadow-price.md),
+whose computational backing
+(`bw_wenzl_shadow_equivalence.py`) was **moved to `_deprecated/`**
+per the 2026-05-11 plancherel-usage audit
+([`docs/audits/2026-05-11-plancherel-usage-audit.md`](2026-05-11-plancherel-usage-audit.md))
+together with related scripts
+(`bw_lagrangian_prefactor_derivation_attempt.py`,
+`sdp_on_shadows.py`, `symbolic_k6_shadow.py`). The
+plancherel-usage audit also systematically renamed
+`plancherel_sum` → `markov_m3_sum` across the LP-dual scripts
+and promoted
+[`prop:wedderburn-weight-canonical`](../../content/quantum-observable-universe/braids-and-knots/wedderburn-weight-canonical.md)
+(q-deformed weight $\tilde w_\lambda = \dim_q(\lambda)^2 / [n]_q!$)
+as the canonical Wedderburn-weight framework.
+
+The narrative `prop:bw-coefficient-shadow-price` block still
+exists (not marked deprecated in `.ts`), but **production six-
+term mass formula does not cite it**, and its compute path is
+the deprecated one. The §7b SDP-shadow-price attribution of a_K
+was therefore chasing a structural framing that the codebase has
+already moved past.
+
+**Consequence for Item B:** §7b, §7c, §7d, §7e are **withdrawn
+as primary attribution paths.** They remain in this audit as
+historical record of what was tested and why each failed
+(R/D-chi numerical mismatch in §7c; Wedderburn-block LP
+degeneracy in §7d; H_3 full-Hecke LP corner-degeneracy in
+§7e). But they should **not** drive the canonical T5
+implementation.
+
+**Live framework for Item B:**
+
+1. **`prop:wedderburn-weight-canonical`** ($\tilde w_\lambda$):
+   the q-deformed Wedderburn weight, replacing the older
+   classical Plancherel weight $w_\lambda$ in non-self-conjugate
+   strata. Used by `markov_m3_sum_numeric` and the production
+   `mass_formula_6term_mpfr_50dps`.
+
+2. **`prop:plancherel-weight-boundedness`** + **Wenzl-bridge
+   identification** $y_\lambda = w_\lambda$ on the
+   self-conjugate stratum only.
+
+3. **Closed form C** for $a_K = \prod_{c \in \text{pn-crossings}}(1 + \mathrm{sign}(c) \cdot h)$
+   — empirically matches conjecture Step 4 BW values
+   $(1+h, 1-h^2, (1-h^2)^2)$ at A=2,3,4, and used by the
+   production `paper_six_term_isotope_sweep.term5_chirality`
+   default. **This remains the canonical $a_K$.**
+
+**Revised closure plan for Item B:**
+
+| Step | Action |
+|------|--------|
+| **B.1a-rev.6 (NEW)** | Drop §7b SDP-shadow-price attribution from primary framing. Re-locate Item B audit's "structural attribution" claim onto `prop:wedderburn-weight-canonical` + Wenzl bridge on the self-conjugate stratum. The chirality $a_K$ then lives **between** the self-conjugate and non-self-conjugate strata where the bridge breaks. |
+| **B.1a-rev.7** | Verify the canonical T5 path: `mass_formula_6term_mpfr_50dps` with `chirality_source="closed_form"` (= C) at MPFR-50dps for proton, neutron — confirm it gives the BW values 1.0 / 1.0 as a sanity check. |
+| **B.3** | Re-derive ¹H mass under production C-mode at MPFR-50dps. |
+| **B.4** | Lift ¹H to `derived`; tighten `M_P_DERIVED_MAX_REL_DIFF` 1% → 1 ppb. |
+| **B.5** | Update `knot-factor-frobenius-pairing.md` Step 4 — drop literal Markov-trace ratio; cite C as canonical $a_K$; reference `wedderburn-weight-canonical` for the structural backing. |
+
+**Audit-author note:** apologies for chasing the deprecated
+framework over §7b–§7e. The B.1a-rev.4 and B.1a-rev.5 scripts
+remain in the tree as cautionary artefacts (degenerate-LP
+witnesses); they should not be re-run as part of the canonical
+m_p closure. The next concrete move is **B.1a-rev.7** (sanity-
+check the live C-mode path), which avoids both deprecated
+infrastructure and re-litigating §7b's structural claim.
+
 ## 8. Coordination notes
 
 This audit is **structural / R&D only** — no code changes in
