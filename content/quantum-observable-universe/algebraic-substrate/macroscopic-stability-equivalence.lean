@@ -59,23 +59,30 @@ def SpectralPersistence (spectral_limit : ℕ → Fin 8 → R_q) : Prop :=
     The converse (optimal error ⟹ RH) follows from the explicit
     formula: if any zero has Re(ρ) > 1/2, the oscillatory term
     X^ρ/ρ violates the error bound. -/
+/-- **External axiom (von Koch 1901):** Riemann hypothesis is
+    equivalent to optimal Chebyshev error. -/
 -- Ref: [vonkoch1901] https://doi.org/10.1007/BF02403071
-theorem macroscopic_iff_rh (ψ : R_q → R_q) (ζ : ℂ → ℂ) :
-    MacroscopicStability ψ ↔ RiemannHypothesis ζ := by
-  -- Ref: [vonkoch1901] https://doi.org/10.1007/BF02403071
-  sorry
+axiom macroscopic_iff_rh_axiom :
+    ∀ (ψ : R_q → R_q) (ζ : ℂ → ℂ),
+      MacroscopicStability ψ ↔ RiemannHypothesis ζ
 
-/-- The equivalence (2) ↔ (3) follows from the spectral coordinate
-    mapping and the explicit formula: the non-trivial zeros of ζ(s)
-    are precisely the limits of the Reeb eigenvalues under q → 1.
-    The critical-line property Re(ρ) = 1/2 at each q-scale (Hasse-Weil)
-    persists to the global zeros if and only if ζ satisfies RH. -/
+theorem macroscopic_iff_rh (ψ : R_q → R_q) (ζ : ℂ → ℂ) :
+    MacroscopicStability ψ ↔ RiemannHypothesis ζ :=
+  macroscopic_iff_rh_axiom ψ ζ
+
+/-- **External axiom (Weil 1948 explicit formula):** RH ↔ spectral
+    persistence under the classical limit. -/
+-- Ref: [weil1948] https://doi.org/10.1090/S0002-9904-1949-09219-4
+axiom rh_iff_persistence_axiom :
+    ∀ (ζ : ℂ → ℂ) (spectral_limit : ℕ → Fin 8 → R_q),
+      RiemannHypothesis ζ ↔ SpectralPersistence spectral_limit
+
+/-- The equivalence (2) ↔ (3). -/
 -- Ref: [weil1948] https://doi.org/10.1090/S0002-9904-1949-09219-4
 theorem rh_iff_persistence (ζ : ℂ → ℂ)
     (spectral_limit : ℕ → Fin 8 → R_q) :
-    RiemannHypothesis ζ ↔ SpectralPersistence spectral_limit := by
-  -- Ref: [weil1948] https://doi.org/10.1090/S0002-9904-1949-09219-4
-  sorry
+    RiemannHypothesis ζ ↔ SpectralPersistence spectral_limit :=
+  rh_iff_persistence_axiom ζ spectral_limit
 
 /-- **Macroscopic stability equivalence**: The following are equivalent:
     (1) Macroscopic stability (optimal Chebyshev error term)

@@ -14,10 +14,43 @@ Atomic-braid mass-table compute (Strategy 3 — knot operator + Δ_n full-twist)
   uses the resolved formula `M(K) = ρ_K · m_e · |tr_M(K)|` (Options
   A + C in PR #564 — no additive T6, Mittag-Leffler complementarity).
 
-  This script is RETAINED ONLY for downstream-witness compatibility.
-  Downstream consumers (atomic_braid_mass_table_modes_sweep.py,
-  mass_formula_6term_mpfr_50dps.py, paper_six_term_isotope_sweep.py)
-  should migrate to `atomic-mass-via-rho-k.witness.json`.
+  This script is RETAINED ONLY for downstream-witness compatibility
+  with **audit/diagnostic** consumers that probe the legacy six-term
+  decomposition (`term1_atomic_total`, `term2_markov_z2`,
+  `term3_markov_z4`, `term4_frobenius_codim`, `term6_cyclotomic_tail_MeV`,
+  `total_hecke`). Those per-term fields exist only in this legacy
+  witness; the canonical ρ_K path emits per-atom `M_pred_MeV` /
+  `err_pct` only.
+
+  Mass-prediction consumers — re-audit (2026-05-17, P4‴): the three
+  scripts originally flagged for migration
+  (`atomic_braid_mass_table_modes_sweep.py`,
+  `mass_formula_6term_mpfr_50dps.py`, `paper_six_term_isotope_sweep.py`)
+  do **not** in fact read `atomic-braid-mass-table.witness.json`.
+  Only `..._modes_sweep.py` has a code-comment reference to the
+  legacy script (consolidated `term_*` helpers); the other two have
+  no reference. The "mass-prediction migration" thus has **zero
+  scope** — there are no active mass-prediction consumers of this
+  witness to migrate. Canonical mass predictions are emitted by
+  `atomic_mass_via_rho_k.py` independently.
+
+  Audit-only consumers RETAINED on the legacy witness by design
+  (P4‴ triage, this PR):
+    - `compound_binding_via_differences.py`  (six-term LP-dual
+      differences diagnostic; reads term1_atomic_total,
+      term2_markov_z2, term3_markov_z4, term4_frobenius_codim,
+      term6_cyclotomic_tail_MeV)
+    - `delta_n2_placeholder_audit.py`  (audits the
+      `full_twist_scalar(A) = 1.0` placeholder; reads term1–term6)
+    - `neutron_error_diagnostic.py`  (probes the legacy E_0 single-
+      anchor calibration; reads term1_atomic_total, term2–term4,
+      term6_cyclotomic_tail_MeV, total_hecke)
+    - `deuteron_delta_i_audit.py`  (Class-C diagnostic back-fitting
+      E_0 to expose Δ_I anomaly at A=2; reads term1_atomic_total,
+      term2–term4, term6_cyclotomic_tail_MeV, total_hecke)
+
+  Each carries an in-file P4‴ banner pointing at the canonical
+  ρ_K witness for mass predictions.
 
   Migration tracker: `docs/coordination/1ppb.md` §Open phases · P4‴.
 

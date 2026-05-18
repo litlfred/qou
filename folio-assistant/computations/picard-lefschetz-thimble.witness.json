@@ -1,25 +1,25 @@
 {
   "engine": "scipy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-17T05:07:27.764340+00:00",
-  "commitSha": "3c1eafd4810fb4979fbb4c2d367f6adc7da48262",
+  "computedAt": "2026-05-18T01:12:04.883534+00:00",
+  "commitSha": "6210dfec9ee4cdcf4adddfbcd5a638137ff4e717",
   "assertions": [
     {
-      "name": "m_p from ∏ dc_k/dz",
+      "name": "m_p from ∏ dc_k/dz (best-fit limit; NOT pure substrate)",
       "computed": 938.267,
       "expected": 938.272,
       "passed": true,
       "tolerance": 1.0,
       "unit": "MeV",
-      "source": "CODATA 2018 proton mass"
+      "source": "CODATA 2018 proton mass.  AUDIT 2026-05-17: assertion uses post-hoc best-fit integration limit (4-q)/(4q+3) — NOT a substrate-only prediction.  Substrate-only limits z_0 / ℏ_q give 0.84 % residual."
     }
   ],
   "allPassed": true,
-  "durationMs": 20,
+  "durationMs": 18,
   "computation": "picard-lefschetz-thimble",
   "scriptFile": "picard_lefschetz_thimble.py",
-  "scriptHash": "5d7d37540283",
-  "scriptCommitSha": "3072aa73e46ef9cec1880308eaf654600eacde71",
+  "scriptHash": "81c84e9e855a",
+  "scriptCommitSha": "316c53d4f575b12885a44dfca5e0e3d47e155f35",
   "description": "Picard-Lefschetz thimble decomposition for the color-tube cubic. Computes critical points, Hessians, thimble directions, intersection numbers, SW period integrals (single-root and simultaneous 3-root prescriptions).",
   "contentBlock": "def:picard-lefschetz-thimble",
   "parameters": {
@@ -155,12 +155,17 @@
       "amplification_factor": 2.459938770426328,
       "m_p_predicted_MeV": 938.266741770523,
       "m_p_CODATA_MeV": 938.27208816,
-      "error_percent": 0.0005698122692119198
+      "error_percent": 0.0005698122692119198,
+      "derivation_status": "substrate_plus_best_fit_integration_limit",
+      "honest_substrate_only_residual_pct_using_z0": "0.836",
+      "honest_substrate_only_residual_pct_using_hbar_q": "0.843",
+      "audit_doc": "docs/audits/2026-05-17-substrate-m-p-m-n-compute-audit.md + docs/audits/2026-05-17-m-n-substrate-investigation-and-lit-search.md"
     }
   },
   "caveats": [
     "Thimble tracing uses simple Euler integration of the gradient flow ODE. Higher-order integrators (RK4) and adaptive step sizes may improve accuracy.",
     "Intersection numbers depend on the length and accuracy of anti-thimble paths. Results should be verified with finer step sizes.",
-    "Nine simultaneous 3-root prescriptions are tested. The product prescription ∏_k dc_k/dz yields 0.0006% agreement with CODATA m_p on the real axis. Theoretical justification for this prescription (why product, not sum) and for the integration limit a = (4-q)/(4q+3) remains to be established."
+    "Nine simultaneous 3-root prescriptions are tested. The product prescription ∏_k dc_k/dz yields 0.0006% agreement with CODATA m_p on the real axis. Theoretical justification for this prescription (why product, not sum) and for the integration limit a = (4-q)/(4q+3) remains to be established.",
+    "HONEST TAG (2026-05-17 audit, commit 8732de45): the 6 ppm m_p closure is NOT a pure substrate prediction.  It is 'substrate + best-fit integration limit'.  The integration limit a = (4-q)/(4q+3) was SELECTED post-hoc from 6 candidates by minimising |m_p_pred - M_P_MEV| (script lines 887-914).  Substrate-only PL m_p using categorically-clean limits (z_0 or ℏ_q) closes at 0.84% residual (~930 MeV), not 6 ppm.  See docs/audits/2026-05-17-substrate-m-p-m-n-compute-audit.md and docs/audits/2026-05-17-m-n-substrate-investigation-and-lit-search.md for the lit-search context (standard PL practice integrates along thimbles to infinity, not over finite real-axis intervals)."
   ]
 }

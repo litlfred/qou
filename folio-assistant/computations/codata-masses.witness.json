@@ -1,8 +1,8 @@
 {
   "engine": "codata-constants",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-11T22:18:45.378733+00:00",
-  "commitSha": "605c954cbc157b236f46b622b2a466b181cba21d",
+  "computedAt": "2026-05-18T01:11:58.128348+00:00",
+  "commitSha": "6210dfec9ee4cdcf4adddfbcd5a638137ff4e717",
   "assertions": [
     {
       "name": "m_e_in_codata_2022_window",
@@ -27,7 +27,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 7,
   "computation": "codata-masses",
   "scriptFile": "codata_masses.py",
   "scriptHash": "45e3986590c7",

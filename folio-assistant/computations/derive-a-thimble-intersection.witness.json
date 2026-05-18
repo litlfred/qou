@@ -1,0 +1,171 @@
+{
+  "engine": "scipy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-17T04:54:37.817354+00:00",
+  "commitSha": "202e9fb8d5e1de023eba47af7308995a65a2124c",
+  "assertions": [
+    {
+      "name": "discriminant_roots_count",
+      "computed": 13,
+      "expected": 6,
+      "passed": false,
+      "tolerance": 0
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 65,
+  "computation": "derive-a-thimble-intersection",
+  "scriptFile": "derive_a_thimble_intersection.py",
+  "scriptHash": "2753bb1667d6",
+  "scriptCommitSha": "202e9fb8d5e1de023eba47af7308995a65a2124c",
+  "description": "Substrate-derive PL integration limit from thimble geometry",
+  "data": {
+    "q_0": 1.1099785955541805,
+    "z_0": 0.10438806980915827,
+    "hbar_q": 0.09908172643569887,
+    "discriminant_roots": [
+      {
+        "real": -0.9748155329780397,
+        "imag": -0.22301272758464225
+      },
+      {
+        "real": -0.9748155329780397,
+        "imag": 0.22301272758464225
+      },
+      {
+        "real": 0.1058295861882663,
+        "imag": -0.9371389378389038
+      },
+      {
+        "real": 0.1058295861882663,
+        "imag": 0.9371389378389038
+      },
+      {
+        "real": 0.11898594678977274,
+        "imag": -1.0536407427121088
+      },
+      {
+        "real": 0.11898594678977274,
+        "imag": 1.0536407427121088
+      },
+      {
+        "real": -16.0,
+        "imag": 0.0
+      },
+      {
+        "real": -24.0,
+        "imag": 0.0
+      },
+      {
+        "real": -35.0,
+        "imag": 0.0
+      },
+      {
+        "real": -50.0,
+        "imag": 0.0
+      },
+      {
+        "real": -35.0,
+        "imag": 0.0
+      },
+      {
+        "real": -24.0,
+        "imag": 0.0
+      },
+      {
+        "real": -16.0,
+        "imag": 0.0
+      }
+    ],
+    "nearest_pair": {
+      "z_c_plus_re": 0.1058295861882663,
+      "z_c_plus_im": -0.9371389378389038,
+      "z_c_minus_re": 0.1058295861882663,
+      "z_c_minus_im": 0.9371389378389038
+    },
+    "real_axis_crossings": [
+      {
+        "label": "J⁺ (descent)",
+        "z_c_re": 0.1058295861882663,
+        "z_c_im": -0.9371389378389038,
+        "x_crossing": 3.8640577159498526
+      },
+      {
+        "label": "J⁻ (descent)",
+        "z_c_re": 0.1058295861882663,
+        "z_c_im": 0.9371389378389038,
+        "x_crossing": 3.8640577159498526
+      },
+      {
+        "label": "K⁺ (ascent)",
+        "z_c_re": 0.1058295861882663,
+        "z_c_im": -0.9371389378389038,
+        "x_crossing": null
+      },
+      {
+        "label": "K⁻ (ascent)",
+        "z_c_re": 0.1058295861882663,
+        "z_c_im": 0.9371389378389038,
+        "x_crossing": null
+      }
+    ],
+    "candidate_limits_with_predictions": [
+      {
+        "limit_label": "z_0",
+        "a": 0.10438806980915827,
+        "A_q0": 2.4393936890279084,
+        "m_p_pred_MeV": 930.4304627481131,
+        "err_pct": 0.8357517516336544
+      },
+      {
+        "limit_label": "ℏ_q",
+        "a": 0.09908172643569887,
+        "A_q0": 2.4392079987262902,
+        "m_p_pred_MeV": 930.359636987581,
+        "err_pct": 0.8433002827501449
+      },
+      {
+        "limit_label": "Re(z_c)",
+        "a": 0.1058295861882663,
+        "A_q0": 2.439445729927925,
+        "m_p_pred_MeV": 930.4503121225302,
+        "err_pct": 0.8336362272918735
+      },
+      {
+        "limit_label": "(4-q)/(4q+3) ← post-hoc",
+        "a": 0.38844820732799046,
+        "A_q0": 2.459938770426328,
+        "m_p_pred_MeV": 938.2667417705231,
+        "err_pct": 0.0005698122691998031
+      },
+      {
+        "limit_label": "Vol(4₁)/5",
+        "a": 0.4059766425638614,
+        "A_q0": 2.4616039491121002,
+        "m_p_pred_MeV": 938.9018721236639,
+        "err_pct": 0.06712167734830445
+      },
+      {
+        "limit_label": "1/(2q)",
+        "a": 0.45045913678215055,
+        "A_q0": 2.465810266371101,
+        "m_p_pred_MeV": 940.5062403448989,
+        "err_pct": 0.23811346549594062
+      },
+      {
+        "limit_label": "DERIVED J⁺ (descent) (thimble crossing)",
+        "a": 3.8640577159498526,
+        "A_q0": 4.954547217825716,
+        "m_p_pred_MeV": 1889.7571479845776,
+        "err_pct": 101.40822388636637
+      },
+      {
+        "limit_label": "DERIVED J⁻ (descent) (thimble crossing)",
+        "a": 3.8640577159498526,
+        "A_q0": 4.954547217825716,
+        "m_p_pred_MeV": 1889.7571479845776,
+        "err_pct": 101.40822388636637
+      }
+    ]
+  }
+}

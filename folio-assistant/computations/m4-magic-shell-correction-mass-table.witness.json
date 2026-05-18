@@ -1,0 +1,104 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-16T05:34:55.387660+00:00",
+  "commitSha": "2bcf340fec1ade81e0fccfa36480c42f55775118",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 29,
+  "computation": "m4-magic-shell-correction-mass-table",
+  "scriptFile": "probe_m4_magic_shell_correction.py",
+  "scriptHash": "075ea593e43a",
+  "scriptCommitSha": "2bcf340fec1ade81e0fccfa36480c42f55775118",
+  "description": "M4 mass table: full N=4 categorical Q_β chain + interface-type-resolved magic-shell coupling correction (from PR #656 v6 probe). Tests whether adding the Δ_coupling(Z,N) = [A−2]_q·E_0·log(1/h) + (n_pp-n_nn)·κ correction closes the structural T/³He Z↔N asymmetry that the Q_β chain alone cannot reach (per M3 finding).",
+  "contentBlock": "prop:magic-shell-coupling-witness",
+  "parameters": {
+    "kappa_per_excess_MeV": -1.0707907503265857,
+    "kappa_source": "empirical_from_pr656_v6"
+  },
+  "data": {
+    "rows": [
+      {
+        "atom": "p",
+        "Z": 1,
+        "N": 0,
+        "A": 1,
+        "M_codata_MeV": 938.27208816,
+        "M_pred_n4_MeV": 937.5965043710329,
+        "err_n4_ppm": -720.0297200483868,
+        "delta_coupling_MeV": 0.0,
+        "M_pred_m4_MeV": 937.5965043710329,
+        "err_m4_ppm": -720.0297200483868,
+        "improvement_factor": 1.0
+      },
+      {
+        "atom": "n",
+        "Z": 0,
+        "N": 1,
+        "A": 1,
+        "M_codata_MeV": 939.56542052,
+        "M_pred_n4_MeV": 938.7466275041467,
+        "err_n4_ppm": -871.4592916799318,
+        "delta_coupling_MeV": 0.0,
+        "M_pred_m4_MeV": 938.7466275041467,
+        "err_m4_ppm": -871.4592916799318,
+        "improvement_factor": 1.0
+      },
+      {
+        "atom": "D",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "M_codata_MeV": 1875.61294257,
+        "M_pred_n4_MeV": 1875.5822087951071,
+        "err_n4_ppm": -16.385989985140146,
+        "delta_coupling_MeV": 0.0,
+        "M_pred_m4_MeV": 1875.5822087951071,
+        "err_m4_ppm": -16.385989985140146,
+        "improvement_factor": 1.0
+      },
+      {
+        "atom": "T",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "M_codata_MeV": 2808.92113298,
+        "M_pred_n4_MeV": 2814.1566903422136,
+        "err_n4_ppm": 1863.9032975123373,
+        "delta_coupling_MeV": 7.622405156198428,
+        "M_pred_m4_MeV": 2806.534285186015,
+        "err_m4_ppm": -849.738273517412,
+        "improvement_factor": 2.193502817987572
+      },
+      {
+        "atom": "3He",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "M_codata_MeV": 2808.39160743,
+        "M_pred_n4_MeV": 2801.5273367875684,
+        "err_n4_ppm": -2444.199955686812,
+        "delta_coupling_MeV": 5.480823655545257,
+        "M_pred_m4_MeV": 2796.046513132023,
+        "err_m4_ppm": -4395.788060794791,
+        "improvement_factor": 0.5560322567610055
+      },
+      {
+        "atom": "4He",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "M_codata_MeV": 3727.3794066,
+        "M_pred_n4_MeV": 3747.3024280849695,
+        "err_n4_ppm": 5345.0479040830005,
+        "delta_coupling_MeV": 13.17462089643923,
+        "M_pred_m4_MeV": 3734.1278071885304,
+        "err_m4_ppm": 1810.4946806813027,
+        "improvement_factor": 2.952258275661776
+      }
+    ],
+    "mae_n4_ppm": 1876.8376931659348,
+    "mae_m4_ppm": 1443.9826694511607,
+    "improvement_factor": 1.2997646944608392
+  }
+}

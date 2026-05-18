@@ -377,11 +377,29 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
         "brane-tower closed form; framework-derived from CAL-1 + CAL-2.  " +
         "Note: currently overshoots E_0^(cal) by +1.75% — the geometric-" +
         "series direction is an open finding pending categorical Li_2^q " +
-        "derivation review (Workplan 2 Phase 2).",
+        "derivation review (conj:alpha-k-categorical-closure).",
       symbol: "\\mathbf{E}_0^{\\text{full}}",
       witnessFile:
         "folio-assistant/computations/q-beta-form-a-n1-extension.witness.json",
       witnessPath: "data.E0_full_MeV_50dps",
+      defaultPrecision: 6,
+      units: "MeV",
+    }),
+
+    E_0_full_li2q_MeV: Object.freeze({
+      name: "E_0_full_li2q_MeV",
+      description:
+        "Substrate symmetric q-dilogarithm tower form, candidate " +
+        "closure for conj:alpha-k-categorical-closure: " +
+        "E_0^(full,Li2q) = E_0^(N=0) · (1 + (-Li_2^q(-ℏ_q²))) ≈ 4.227 MeV. " +
+        "Bounded analog of the geometric series form. At the substrate " +
+        "level (no atom), agrees with geometric to 0.012% — both " +
+        "overshoot E_0^(cal) by ~1.74%. Per-atom Li_2^q evaluations " +
+        "(prop:mass-endomorphism-tower) require braid input.",
+      symbol: "\\mathbf{E}_0^{\\text{full},\\mathrm{Li}_2^q}",
+      witnessFile:
+        "folio-assistant/computations/q-beta-form-a-n1-extension.witness.json",
+      witnessPath: "data.E0_full_li2q_MeV_50dps",
       defaultPrecision: 6,
       units: "MeV",
     }),

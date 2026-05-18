@@ -1,22 +1,41 @@
 {
-  "computedAt": "2026-05-09T20:08:09.476486+00:00",
+  "computedAt": "2026-05-17T04:09:03.502678+00:00",
   "name": "low-isotope-mass-table",
   "description": "Low-isotope mass + mass-excess table (Z ≤ 10) from the categorical derivation chain. Predicted columns are emitted ONLY for rows whose every input (m_p, m_n, B) traces to a fit-free derivation rooted in q₀. Rows lacking such a chain (m_n MeV scale; B(⁴He) and beyond) are emitted with row_derivation_status='derivation_pending' and predicted values set to null. The framework consumes a small set of scale/unit CODATA constants (m_e MeV scale, atomic mass unit u) — these live in derivation_inputs.scale_constants. CODATA / AME values used purely as comparison anchors (M_P_REF, M_N_REF, AME binding energies, AME mass excesses) live in comparison_only_constants and are never consumed in the predicted column.",
   "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
-  "timestamp": "2026-05-09T20:08:09.476508+00:00",
+  "timestamp": "2026-05-17T04:09:03.502755+00:00",
   "derivation_inputs": {
-    "m_p_derived_MeV": 937.7615319092894,
-    "m_p_derived_source": "proton-mass-codata-50dps.witness.json",
-    "m_p_derived_rel_diff_vs_codata": 0.0005441451974893615,
+    "m_p_derived_MeV": null,
+    "m_p_derived_source": "proton-mass-full-tower-50dps.witness.json",
+    "m_p_derived_rel_diff_vs_codata": 0.9997435689900054,
+    "m_p_derivation_status": "pending: m_p_pred = 0.240602 MeV (rel_diff vs CODATA = 9.997e-01, above 1e-09 chain-closed threshold). Source: full_tower_T1_T2_T3_T4_T5_at_A_categorical_max_GS_grade. The mass-endomorphism tower closure path is documented in docs/audits/2026-05-16-t1-t4-tower-closure-plan.md.",
+    "m_p_derived_max_rel_diff_threshold": 1e-09,
     "m_n_derivation_status": "pending: tr_M(n, q_0) chain emits dimensionless trace only; MeV scale conversion (build_markov_trace_assembly_neutron_chain.py) awaits Phase A tower-lift",
     "B_4He_derivation_status": "pending: magic_A_formula is deprecation-candidate (PR #554, ρ_F=2 not chain-validated); canonical tr_M(H_12) compute (canonical_tr_m_helium4_stub.py) is the open frontier",
-    "delta_H_derived_MeV": 6.77842713928942,
+    "delta_H_derived_MeV": null,
     "delta_N_derivation_status": "pending: requires derived m_n",
+    "Q_beta_codata_MeV": 0.7823334100000222,
+    "Q_beta_substrate_MeV": 0.7823334238654475,
+    "Q_beta_substrate_source": "full_chain_n4 (PRs #661, #664, #665 + prop:kashiwara-jones-c4-categorical): Q_A · cos(α_N1) · (1−b²ℏ_q⁴) · (1−2b³ℏ_q⁶) · (1+(b²+½)b⁴ℏ_q⁸) — c_2, c_3, c_4 all categorical, cherry-picked from PR #664 (2026-05-17)",
+    "Q_beta_substrate_residual_ppm_vs_codata": 0.01772316645966872,
+    "Q_beta_form_a_cos_MeV": 0.7825728174022026,
+    "Q_beta_form_a_cos_residual_ppm_vs_codata": 306.01710104700516,
+    "Q_beta_substrate_tightening_vs_form_a_cos": 17266.50267283701,
     "scale_constants": {
       "M_E_MEV": 0.51099895,
       "U_MEV": 931.49410372,
       "q_0": 1.1099785955541805
-    }
+    },
+    "upstream_witness_hashes": [
+      {
+        "path": "proton-mass-full-tower-50dps.witness.json",
+        "sha256": "6173a45dd08499ee38eec24c1401a3853fe8edaee76f4f1c37f7bb462beb8598",
+        "size_bytes": 6682,
+        "commitSha": "cea10508bce11a9849218dce57c040aceff332ee",
+        "scriptCommitSha": "eb63239a8c63e391f2427c1c0002d2e6aaf9c959",
+        "computedAt": "2026-05-17T00:28:43.556139+00:00"
+      }
+    ]
   },
   "comparison_only_constants": {
     "M_P_REF_MEV_codata": 938.27208816,
@@ -31,14 +50,14 @@
       "B_AME_MeV_ref": 0.0,
       "B_pred_MeV": 0.0,
       "B_derivation_status": "derived: ¹H is a free proton (B = 0 by definition)",
-      "delta_pred_MeV": 6.77842713928942,
-      "delta_derivation_status": "derived (proton-only atom; no neutron dependency)",
-      "M_pred_MeV": 938.2725308592894,
-      "row_derivation_status": "derived",
+      "delta_pred_MeV": null,
+      "delta_derivation_status": "pending: B is derived but Δ requires m_p; m_p is derivation-pending — see derivation_inputs.m_p_derivation_status",
+      "M_pred_MeV": null,
+      "row_derivation_status": "derivation_pending",
       "delta_obs_MeV_ref": 7.28897,
       "M_obs_MeV_ref": 938.78307372,
-      "delta_residual_MeV": -0.5105428607105802,
-      "M_err_ppm": -543.8347526734417
+      "delta_residual_MeV": null,
+      "M_err_ppm": null
     },
     {
       "symbol": "2H",
@@ -49,7 +68,7 @@
       "B_pred_MeV": 2.2488195091285,
       "B_derivation_status": "derived:strategy-A:census:6_2,ρ=m_e",
       "delta_pred_MeV": null,
-      "delta_derivation_status": "pending: B is derived (strategy A) but Δ requires m_n; m_n is derivation-pending",
+      "delta_derivation_status": "pending: B is derived (strategy A) but Δ requires m_n (and m_p); both are derivation-pending",
       "M_pred_MeV": null,
       "row_derivation_status": "derivation_pending",
       "delta_obs_MeV_ref": 13.13572,
@@ -66,7 +85,7 @@
       "B_pred_MeV": 8.468601638728,
       "B_derivation_status": "derived:strategy-A:census:8_11,ρ=2m_e",
       "delta_pred_MeV": null,
-      "delta_derivation_status": "pending: B is derived (strategy A) but Δ requires m_n; m_n is derivation-pending",
+      "delta_derivation_status": "pending: B is derived (strategy A) but Δ requires m_n (and m_p); both are derivation-pending",
       "M_pred_MeV": null,
       "row_derivation_status": "derivation_pending",
       "delta_obs_MeV_ref": 14.9498,
@@ -83,7 +102,7 @@
       "B_pred_MeV": 7.48891930977096,
       "B_derivation_status": "derived:strategy-A:census:Borromean,ρ=2m_e",
       "delta_pred_MeV": null,
-      "delta_derivation_status": "pending: B is derived (strategy A) but Δ requires m_n; m_n is derivation-pending",
+      "delta_derivation_status": "pending: B is derived (strategy A) but Δ requires m_n (and m_p); both are derivation-pending",
       "M_pred_MeV": null,
       "row_derivation_status": "derivation_pending",
       "delta_obs_MeV_ref": 14.9312,
@@ -417,12 +436,12 @@
   ],
   "stats": {
     "n_rows_total": 23,
-    "n_rows_derived": 1,
-    "n_rows_pending": 22,
-    "delta_mean_abs_MeV": 0.5105428607105802,
-    "delta_max_abs_MeV": 0.5105428607105802,
-    "M_mean_abs_ppm": 543.8347526734417,
-    "M_max_abs_ppm": 543.8347526734417
+    "n_rows_derived": 0,
+    "n_rows_pending": 23,
+    "delta_mean_abs_MeV": 0.0,
+    "delta_max_abs_MeV": 0.0,
+    "M_mean_abs_ppm": null,
+    "M_max_abs_ppm": null
   },
   "framework_refs": [
     "conj:mass-volume-factorization",

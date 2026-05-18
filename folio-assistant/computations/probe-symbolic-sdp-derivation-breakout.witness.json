@@ -1,0 +1,103 @@
+{
+  "engine": "sympy+mpmath+numpy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-17T06:25:26.651074+00:00",
+  "commitSha": "5e7459cf0aeba022d4c1dc82a421f205a94ea852",
+  "assertions": [
+    {
+      "name": "symbolic_chi_3_equals_1",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true
+    },
+    {
+      "name": "symbolic_chi_111_equals_1",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 43,
+  "computation": "probe-symbolic-sdp-derivation-breakout",
+  "scriptFile": "probe_symbolic_sdp_derivation_breakout.py",
+  "scriptHash": "8d2e326ebf39",
+  "scriptCommitSha": "unknown",
+  "description": "Symbolic-in-q SDP-PL derivation with per-block + GB-grade breakdown",
+  "data": {
+    "q_0": "1.1099785955541805752815940796095093779932822799587",
+    "hoefsmit_chi_21_symbolic_length": 2,
+    "hoefsmit_chi_21_at_q0": "-2.00000000000000000000000000000",
+    "per_block_trM_contributions": {
+      "block_3": {
+        "value": "0.163383227339758211921125078419",
+        "pct": -16.427341016199644
+      },
+      "block_2_1": {
+        "value": "-1.32134754469669937473391254128",
+        "pct": 132.8546820323993
+      },
+      "block_1_1_1": {
+        "value": "0.163383227339758211921125078419",
+        "pct": -16.427341016199644
+      },
+      "total": "-0.994581090017182950891662384442",
+      "normalized": "-1.00723169139139732512225534269"
+    },
+    "damping_ratios": {
+      "ratio_3_over_21": -0.12364894307747097,
+      "ratio_111_over_21": -0.12364894307747097
+    },
+    "m_p_pred_per_integration_limit": [
+      {
+        "limit": "ℏ_q (substrate)",
+        "a": 0.09908172643569887,
+        "A_q0": 2.4392079987262902,
+        "m_p_pred_MeV": 930.359636987581,
+        "residual_pct": -0.8433002827501449,
+        "source": "substrate-clean"
+      },
+      {
+        "limit": "z_0 (substrate)",
+        "a": 0.10438806980915827,
+        "A_q0": 2.4393936890279084,
+        "m_p_pred_MeV": 930.4304627481131,
+        "residual_pct": -0.8357517516336544,
+        "source": "substrate-clean"
+      },
+      {
+        "limit": "|tr_M|_paper · z_mark",
+        "a": 0.5319259518459921,
+        "A_q0": 2.4729629750139632,
+        "m_p_pred_MeV": 943.2344174498961,
+        "residual_pct": 0.5288795598329633,
+        "source": "tr_M scaled"
+      },
+      {
+        "limit": "z_markov (SDP)",
+        "a": 0.4993203340335982,
+        "A_q0": 2.4702381691748325,
+        "m_p_pred_MeV": 942.1951254449998,
+        "residual_pct": 0.418112968988892,
+        "source": "SDP-derived"
+      },
+      {
+        "limit": "(4-q)/(4q+3)",
+        "a": 0.38844820732799046,
+        "A_q0": 2.459938770426328,
+        "m_p_pred_MeV": 938.2667417705231,
+        "residual_pct": -0.0005698122691998031,
+        "source": "post-hoc fit"
+      },
+      {
+        "limit": "1/(2q)",
+        "a": 0.45045913678215055,
+        "A_q0": 2.465810266371101,
+        "m_p_pred_MeV": 940.5062403448989,
+        "residual_pct": 0.23811346549594062,
+        "source": "alternate"
+      }
+    ],
+    "answer_to_owner_question": "All 3 Wedderburn blocks contribute to tr_M — they're NOT damped to zero.  The 1-dim blocks (3), (1,1,1) contribute equally (~9.9% each) and are mirror-symmetric.  The (2,1) standard block dominates (~80%) because of its larger Wenzl weight ([2]_q² vs 1) AND its larger character (χ_(2,1) ≈ 2 vs χ_(3) = χ_(1,1,1) = 1).  Damping rate: factor of ~10 between dominant and sub-dominant blocks."
+  }
+}

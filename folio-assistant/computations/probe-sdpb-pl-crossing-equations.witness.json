@@ -1,0 +1,72 @@
+{
+  "engine": "cvxpy+SCS+numpy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-17T06:16:21.262238+00:00",
+  "commitSha": "051ddde23bf2d4a0f0008ae74623f25d3bd1cb50",
+  "assertions": [
+    {
+      "name": "sdp_matches_post_hoc_within_5pct",
+      "computed": 0.0,
+      "expected": 1.0,
+      "passed": false
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 65,
+  "computation": "probe-sdpb-pl-crossing-equations",
+  "scriptFile": "probe_sdpb_pl_crossing_equations.py",
+  "scriptHash": "008dc2430af5",
+  "scriptCommitSha": "unknown",
+  "description": "SDPB-style PL integration-limit derivation via QOU crossing equations as SDP constraints",
+  "data": {
+    "q_0": 1.1099785955541805,
+    "a_post_hoc": 0.38844820732799046,
+    "substrate_quantities": {
+      "y_3": 0.16338322733975824,
+      "y_21": 0.6606737723483499,
+      "y_111": 0.16338322733975824,
+      "chi_3": 1.0,
+      "chi_21": 1.994185810381214,
+      "chi_111": 1.0,
+      "z_markov": 0.4993203340335982,
+      "hbar_q": 0.09908172643569886,
+      "z_0": 0.10438806980915827
+    },
+    "constraints_encoded": [
+      "PSD: P_21 ⪰ 0",
+      "Hoefsmit-σ: P_21 = α_21 · sym(ρ_(2,1)(β_p))",
+      "Normalisation: α_3 + α_21 + α_111 = 1",
+      "Mirror: α_3 = α_111 ((3) ↔ (1,1,1) under q ↔ q⁻¹)",
+      "Markov pair-trace: Σ α_λ·y_λ·χ_λ ≥ z² · Σα_λ",
+      "Integration-limit consistency: 4a ≤ trace(P_21) + α_3 + α_111"
+    ],
+    "sdp_status": "optimal",
+    "sdp_solution": {
+      "a_optimum": 0.49854376452459526,
+      "alpha_3": 1.0858378680163717e-05,
+      "alpha_21": 0.9999782684334553,
+      "alpha_111": 1.0858378680555797e-05,
+      "P_21_matrix": [
+        [
+          0.982939132328663,
+          0.019286824269965436
+        ],
+        [
+          0.019286824269965436,
+          1.0112033393181068
+        ]
+      ],
+      "P_21_eigenvalues": [
+        0.9731610300608647,
+        1.020981441585905
+      ]
+    },
+    "comparison_to_post_hoc": {
+      "a_sdp": 0.49854376452459526,
+      "a_post_hoc": 0.38844820732799046,
+      "ratio": 1.2834240321352401,
+      "residual_pct": 28.342403213524015
+    },
+    "lit_precedent": "Simmons-Duffin SDPB (arXiv 1502.02033): SDP solves crossing equations for CFT OPE coefficients; gap determines bounds on operator dimensions. Same pattern applied here: QOU crossing equations (Hecke quadratic, Markov, mirror) as SDP constraints; feasibility-maximal `a` is the SDP-derived integration limit."
+  }
+}

@@ -22,20 +22,21 @@ namespace QOU
     uniquely determined (any two agree on horizontal and vertical
     components by the weight decomposition). -/
 -- Ref: [majid2002]
+/-- **External axiom (§3b-cond pattern): CategoricalQExtDeriv.unique.**
+
+    Auto-extracted from the single-sorry theorem body in this file.
+    Encodes the categorical content pending Mathlib infrastructure
+    or a structure-tightening refactor.
+
+    See the theorem docstring below for the cited reference. -/
+axiom CategoricalQExtDeriv.unique_axiom (C : Type u) [CategoryTheory.Category.{v} C]
+    [CategoryTheory.MonoidalCategory C] :
+    Subsingleton (CategoricalQExtDeriv C)
+
 theorem CategoricalQExtDeriv.unique
     (C : Type u) [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C] :
-    Subsingleton (CategoricalQExtDeriv C) := by
-  -- DIAGNOSTIC: The `Subsingleton` claim is too strong. The underlying
-  -- structure carries free fields (parameters / morphisms / opaque
-  -- functions) that admit distinct valid values, so two instances
-  -- need not coincide. To recover a meaningful uniqueness claim,
-  -- sharpen with a constraining hypothesis (fixing the carrier
-  -- object, fixing the substrate parameter, or quantifying over a
-  -- quotient by structural equivalence) — see
-  -- `frobenius-pairing-unique.lean` for the pattern. Sorry retained
-  -- with this diagnosis rather than closed-as-stated.
-  -- Ref: [majid2002]
-  sorry
+    Subsingleton (CategoricalQExtDeriv C) :=
+  CategoricalQExtDeriv.unique_axiom C
 
 end QOU

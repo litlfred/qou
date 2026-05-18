@@ -85,6 +85,38 @@ def file_content_hash(path: str, length: int = 12) -> str:
     return hashlib.sha256(content.encode("utf-8")).hexdigest()[:length]
 
 
+# ── Upstream-witness hash recording (anti-staleness) ────────────
+
+def load_and_hash_upstream(path: Union[str, Path]) -> tuple[dict, dict]:
+    """Load an upstream witness file and return (body, hash_record).
+
+    The hash_record is the data a downstream consumer needs to verify
+    it has the same upstream as when its own witness was last
+    regenerated: file sha256, commitSha, scriptCommitSha, computedAt.
+
+    See ``witness_dependency_drift.py`` for the validator that walks
+    ``upstream_witness_hashes`` arrays and reports staleness.
+    See ``docs/audits/2026-05-16-stale-witness-infra-gap.md`` for
+    the adoption pattern.
+    """
+    p = Path(path)
+    if not p.exists():
+        raise FileNotFoundError(
+            f"Required upstream witness not found: {p}\n"
+            f"Run its producer first."
+        )
+    raw = p.read_bytes()
+    body = json.loads(raw.decode("utf-8"))
+    return body, {
+        "path":            p.name,
+        "sha256":          hashlib.sha256(raw).hexdigest(),
+        "size_bytes":      len(raw),
+        "commitSha":       body.get("commitSha"),
+        "scriptCommitSha": body.get("scriptCommitSha"),
+        "computedAt":      body.get("computedAt"),
+    }
+
+
 # ── Assertion type ───────────────────────────────────────────────
 
 class Assertion:
@@ -202,6 +234,12 @@ class WitnessBuilder:
         self.parameters: dict[str, Any] = {}
         self.data: dict[str, Any] = {}
         self.caveats: list[str] = []
+        # Anti-staleness hashes for every upstream witness this
+        # builder's caller has consumed.  Populated via
+        # ``add_upstream(path)``; emitted by ``build()`` under
+        # ``data.upstream_witness_hashes`` for the drift validator
+        # (``witness_dependency_drift.py``) to walk.
+        self._upstream_hashes: list[dict] = []
         # Extra top-level keys (used by wrap_legacy to preserve the
         # original flat layout of hand-written witnesses during P30
         # migration). Merged in by ``build()`` after the structured
@@ -296,6 +334,22 @@ class WitnessBuilder:
         """Add a caveat or limitation note."""
         self.caveats.append(text)
         return self
+
+    def add_upstream(self, path: Union[str, Path]) -> dict:
+        """Load an upstream witness file, record its hash, return body.
+
+        Replaces ``json.loads(path.read_text())`` at the call site
+        while accumulating the sha256 + commit-SHA + computedAt of
+        every upstream consumed.  The accumulated list is emitted by
+        ``build()`` under ``data.upstream_witness_hashes`` for the
+        drift validator ``witness_dependency_drift.py`` to walk.
+
+        See ``docs/audits/2026-05-16-stale-witness-infra-gap.md`` for
+        the rationale.
+        """
+        body, hash_record = load_and_hash_upstream(path)
+        self._upstream_hashes.append(hash_record)
+        return body
 
     # ── Reserved structured keys used by ``wrap_legacy`` ─────────
     # Keys that are routed to dedicated WitnessBuilder slots rather
@@ -516,6 +570,14 @@ class WitnessBuilder:
             witness["auditOnly"] = self.audit_only
         if self.parameters:
             witness["parameters"] = self.parameters
+        # Surface accumulated upstream hashes in ``data`` so the drift
+        # validator (witness_dependency_drift.py) can find them.  Done
+        # before the ``self.data`` check so a builder that tracked
+        # only upstreams (no other data) still emits the field.
+        if self._upstream_hashes:
+            self.data.setdefault(
+                "upstream_witness_hashes", self._upstream_hashes
+            )
         if self.data:
             witness["data"] = self.data
         if self.caveats:

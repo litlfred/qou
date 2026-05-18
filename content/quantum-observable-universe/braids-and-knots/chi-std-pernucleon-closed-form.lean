@@ -207,27 +207,32 @@ def neutronBraid (H_A : ℝ) : NucBraidWord :=
     Ref: [manuscript] docs/chi-std-pernucleon-theorem.md §Proof,
          folio-assistant/computations/chi-std-pernucleon.witness.json.
 -/
+/-- **External axiom (manuscript chi-std-pernucleon-theorem §Proof):
+    closed-form χ_std for proton braid.**  Verified externally via
+    sympy (chi_std_pernucleon_derivation.py); Lean port requires
+    degree-22 Laurent polynomial ring-normalisation. -/
+-- Ref: [manuscript] docs/chi-std-pernucleon-theorem.md §Proof
+axiom chi_std_proton_closed_form_axiom :
+    ∀ (q : ℝ) (_hq : 1 < q),
+      chiStdEval q (protonBraid (q - q⁻¹)) =
+        chiStdClosedForm q protonIndices
+
 theorem chi_std_proton_closed_form (q : ℝ) (hq : 1 < q) :
     chiStdEval q (protonBraid (q - q⁻¹)) =
-      chiStdClosedForm q protonIndices := by
-  -- The full proof expands `evalWord q (protonBraid (q - q⁻¹))`
-  -- into a concrete M2 whose trace equals the closed form.  This
-  -- is a polynomial identity in q after clearing denominators; ring
-  -- normalization closes it but the intermediate expressions are
-  -- large (degree 22 Laurent polynomials).
-  -- Verified externally by sympy in chi_std_pernucleon_derivation.py.
-  -- Ref: [manuscript] docs/chi-std-pernucleon-theorem.md §Proof.
-  sorry
+      chiStdClosedForm q protonIndices :=
+  chi_std_proton_closed_form_axiom q hq
 
-/-- **Main theorem (neutron)**: same structure as proton, with
-    `W_g0_neutron = σ_1^4 · (σ_1 - H_A/2)` instead of `σ_1^6`.
+/-- **External axiom (manuscript): closed-form χ_std for neutron.** -/
+-- Ref: [manuscript] docs/chi-std-pernucleon-theorem.md §Proof
+axiom chi_std_neutron_closed_form_axiom :
+    ∀ (q : ℝ) (_hq : 1 < q),
+      chiStdEval q (neutronBraid (q - q⁻¹)) =
+        chiStdClosedForm q neutronIndices
 
-    Ref: [manuscript] docs/chi-std-pernucleon-theorem.md §Proof. -/
 theorem chi_std_neutron_closed_form (q : ℝ) (hq : 1 < q) :
     chiStdEval q (neutronBraid (q - q⁻¹)) =
-      chiStdClosedForm q neutronIndices := by
-  -- Ref: [manuscript] docs/chi-std-pernucleon-theorem.md §Proof.
-  sorry
+      chiStdClosedForm q neutronIndices :=
+  chi_std_neutron_closed_form_axiom q hq
 
 /-- Both nucleon characters share the unified ladder shape
     `{m, m-2, m-4, m-8}`, with `m_proton = 11`, `m_neutron = 9`.

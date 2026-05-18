@@ -111,7 +111,19 @@ def plancherel_weight(shape: tuple[int, ...]) -> float:
     return f * f / factorial(n)
 
 
-# Atomic braid words (mirror atomic_braid_gb_filtration_extension)
+# Atomic braid words (mirror atomic_braid_gb_filtration_extension).
+#
+# A=1 atoms (proton, neutron, electron) are NOT included here.
+# Their Hecke-coefficient chains in build_particle_crossings
+# (terms_2_3_atom_per_gen_mpfr_50dps.py lines 195-218) contain
+# Wedderburn-MIDDLE (c=1, d=-h/2) "ud-quark" entries with no q=0
+# limit (h = q − q⁻¹ → −∞).  A skeleton drop-the-ud-entries
+# approximation was rejected by the owner (2026-05-17).
+#
+# The correct fix is to GENERALISE crystal_chi_lambda to consume
+# (c, d, gen) weighted Hecke chains directly, with the q=0 limit
+# evaluated as a finite ratio (e.g. via h·d normalisation or
+# expansion in 1/h).  Pending — research-level work.
 ATOMS = [
     ("D",   2, 6,  [1, 2, -1, 4, -5, 4]),
     ("³He", 3, 9,  [1, 2, -1, 4, 5, -4, 7, -8, 7]),

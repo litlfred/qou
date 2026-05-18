@@ -1,3 +1,30 @@
+**Notation (2026-05-17).**  The prefactor previously written
+$\rho$ in this block is the **SDP-solution multiplicity** in the
+Wedderburn decomposition, an integer $\in \mathbb{Z}_{>0}$.  To
+disambiguate from the distinct **categorical density** $\rho_K \in
+\mathbb{R}_{>0}$ used in
+[`prop:atomic-mass-gb-nf`](atomic-mass-gb-nf.md) (CODATA-fit
+scalar, e.g. $\rho_K^{\mathfrak{p}} \approx 1723.6$), this block
+uses **$\nu_{\mathrm{SDP}} \in \mathbb{Z}_{>0}$** throughout.  The
+old symbol $\rho$ is reserved (i) for the Hoefsmit irrep
+representation $\rho_\lambda \colon H_n(q) \to \mathrm{GL}_{d_\lambda}$
+and (ii) for $\rho_K$ in `prop:atomic-mass-gb-nf`.  See
+[`docs/audits/2026-05-17-rho-notation-fix-recommendation.md`](https://github.com/litlfred/qou/blob/claude/isotope-mass-witness-data-x5lCh/docs/audits/2026-05-17-rho-notation-fix-recommendation.md)
+for the full notation audit.
+
+**Caveat (structural form).**  The multi-term formula below is the
+**first-principles structural form** of the mass invariant.  At the
+substrate value $q_0$ it predicts $m_{\mathfrak{p}} \approx 5\,\mathrm{MeV}$
+(off CODATA $938\,\mathrm{MeV}$ by $\approx 173\times$).  The remaining
+factor is the **categorical density $\rho_K$** of
+[`prop:atomic-mass-gb-nf`](atomic-mass-gb-nf.md), whose
+substrate-only derivation is an **open problem** ("Open question:
+categorical derivation of $\rho_K$",
+[`atomic-mass-gb-nf.md` §Open](atomic-mass-gb-nf.md)).  This block
+formalises what the brane-tower contributes; closure of the nucleon-
+mass anchors requires the additional categorical content in
+$\rho_K$.
+
 **Statement (categorical, pre-Archimedean form).**  Let
 $\mathcal{U} = (\mathbf{C}, \varTheta, G, \mathcal{S})$ be a quantum
 observable universe at substrate parameter $q_0$
@@ -10,7 +37,7 @@ $T_w \in H_{n_0}(q_0)$ in Gröbner–Shirshov normal form
 element of $\mathbb{Q}(q)$
 
 $$
-M(\mathfrak{H}) \;:=\; \rho \cdot m(\mathfrak{H}) \;=\; \rho \cdot \bigl[\,|\mathrm{tr}_M(T_w)| + \mathrm{tower}(T_w) + \mathrm{tr}_M(C_{\dim_q})\,\bigr],
+M(\mathfrak{H}) \;:=\; \nu_{\mathrm{SDP}} \cdot m(\mathfrak{H}) \;=\; \nu_{\mathrm{SDP}} \cdot \bigl[\,|\mathrm{tr}_M(T_w)| + \mathrm{tower}(T_w) + \mathrm{tr}_M(C_{\dim_q})\,\bigr],
 $$
 
 where $m(\mathfrak{H})$ is the **categorical mass invariant** in
@@ -20,42 +47,53 @@ $|\mathrm{tr}_M(T_w)|$ is the descended Markov trace
 $\sum_\lambda y_\lambda(q)\,\chi_\lambda(T_w)$
 (Wenzl-bridge coefficients $y_\lambda$,
 $q$-Murnaghan–Nakayama character $\chi_\lambda$),
-$\mathrm{tower}(T_w) = \sum_i \Phi_q(|\hat{V}_i|) + z^2 \sum_{i<j} \Phi_q(|\hat{V}_i \hat{V}_j|)$
+$\mathrm{tower}(T_w) = \sum_i \mathrm{Li}_2^q(-|\hat{V}_i|) + z^2 \sum_{i<j} \mathrm{Li}_2^q(-|\hat{V}_i \hat{V}_j|)$
 is the brane tower built from per-generator additive-Wedderburn
-volumes $\hat{V}_i$
-([mass endomorphism tower](#prop:mass-endomorphism-tower)),
+volumes $\hat{V}_i$ (symmetric $q$-dilogarithm
+$\mathrm{Li}_2^q$ per the 2026-05-03 paper canon,
+[mass endomorphism tower](#prop:mass-endomorphism-tower)),
 and $\mathrm{tr}_M(C_{\dim_q}) = \sum_{\lambda \vdash n_0} 1/\dim_q(\lambda)$
 is the Frobenius co-Casimir trace
 ([Frobenius co-Casimir universal](#thm:frobenius-codim-universal)).
-The scalar $\rho \in \mathbb{Z}_{>0}$ is the multiplicity of
-$T_w$'s SDP solution in the Wedderburn decomposition (see
-algorithm step below).  This expression is **finite, exact, and
-entirely pre-Archimedean** — every quantity on the right-hand side
-lives in $\mathbb{Q}(q)$.
+The scalar $\nu_{\mathrm{SDP}} \in \mathbb{Z}_{>0}$ is the
+multiplicity of $T_w$'s SDP solution in the Wedderburn
+decomposition (see algorithm step below).  This expression is
+**finite, exact, and entirely pre-Archimedean** — every quantity
+on the right-hand side lives in $\mathbb{Q}(q)$.
 
-**Important historical note.**  An earlier wording wrote
-$M(\mathfrak{H}) = \rho \cdot \mathrm{tr}_M(T_w)$ (single term).
-That single-term form is **shorthand** for the multi-term sum
-above; on its own it is structurally inadequate (verified
-empirically in
+**Historical note — single-term shorthand retired.**  An earlier
+wording wrote $M(\mathfrak{H}) = \nu_{\mathrm{SDP}} \cdot \mathrm{tr}_M(T_w)$
+(single term, dropping the tower and Frobenius co-Casimir).  That
+single-term form is **shorthand** for the multi-term sum above
+and is structurally inadequate as a mass formula on its own,
+verified empirically in
 [`probe-sdp-canonical-paper-formula.witness.json`](https://github.com/litlfred/qou/blob/claude/continue-pr-442-DJRWm/folio-assistant/computations/probe-sdp-canonical-paper-formula.witness.json):
-single-term fails by 87--100% on $D$, $T$, ${}^3\mathrm{He}$
-under both Plancherel and Wenzl-Schur conventions; multi-term
-without the brane tower reduces error to 36--63%; the brane tower
-remains technically open at $|\hat{V}|\approx 1$).
+single-term fails by 87--100% on $D$, $T$, ${}^3\mathrm{He}$ under
+both Plancherel and Wenzl-Schur conventions; multi-term without
+the brane tower reduces error to 36--63%; the multi-term form
+with the canonical Li_2^q brane tower (above) reaches $\approx 5\,
+\mathrm{MeV}$ for $\mathfrak{p}$ at $q_0$, with the remaining
+$\sim 170 \times$ shortfall captured by $\rho_K$.  **This block uses
+the multi-term form throughout; the single-term shorthand should
+not appear elsewhere in the paper.**
 
-**Mass identity.**  After applying the Archimedean realization functor
+**Mass identity (structural form).**  After applying the
+Archimedean realization functor
 ([archimedean realization functor](#def:archimedean-realization-functor)),
 the binding energy of $\mathfrak{H}$ is
 
 $$
-\boxed{ \quad B(\mathfrak{H}) \;=\; m_e \cdot M(\mathfrak{H}) \big|_{q = q_0} \;=\; m_e \cdot \rho \cdot \mathrm{tr}_M(T_w) \big|_{q = q_0} \quad }
+\boxed{ \quad B(\mathfrak{H}) \;=\; m_e \cdot M(\mathfrak{H}) \big|_{q = q_0} \;=\; m_e \cdot \nu_{\mathrm{SDP}} \cdot m(\mathfrak{H})\big|_{q = q_0} \quad }
 $$
 
 — a single finite-categorical pipeline, no analytic asymptotic
 content.  The volume conjecture is *not* used in the derivation; it
 appears only as a post-functor naming convention (see "Post-Archimedean
-interpretation" below).
+interpretation" below).  **At $q_0$, this structural form
+under-predicts $m_{\mathfrak{p}}$ by $\sim 173\times$; the closure
+requires the additional categorical density $\rho_K$
+([atomic-mass-gb-nf](#prop:atomic-mass-gb-nf)) whose substrate-only
+derivation is open.**
 
 ## Architecture (single categorical pipeline; Yekutieli at finite slices)
 
@@ -118,9 +156,9 @@ T_w \in H_{n_0}(q_0) \text{ (canonical, GB-NF)} \arrow[d, "\text{Wedderburn}"]
 \\
 H_{n_0}(q) \cong \bigoplus_\lambda M_{d_\lambda}(\mathbb{Q}(q)) \arrow[d, "{y_\lambda \text{ (Wenzl)}, \chi_\lambda \text{ (q-MN)}}"]
 \\
-\mathrm{tr}_M(T_w) \;=\; \sum_\lambda y_\lambda(q) \chi_\lambda(T_w) \;\in\; \mathbb{Q}(q) \arrow[d, "\rho \cdot (-)"]
+\mathrm{tr}_M(T_w) \;=\; \sum_\lambda y_\lambda(q) \chi_\lambda(T_w) \;\in\; \mathbb{Q}(q) \arrow[d, "\nu_{\mathrm{SDP}} \cdot m(\cdot)"]
 \\
-M(\mathfrak{H}) \;=\; \rho \cdot \mathrm{tr}_M(T_w) \;\in\; \mathbb{Q}(q)
+M(\mathfrak{H}) \;=\; \nu_{\mathrm{SDP}} \cdot m(\mathfrak{H}) \;\in\; \mathbb{Q}(q)
 \\
 {} \arrow[d, "\text{\textbf{Archimedean realization functor}}"]
 \\
@@ -142,7 +180,7 @@ naming via the **volume conjecture** (Kashaev 1997, Murakami–Murakami
 $\zeta_N = e^{2\pi i / N}$ as $N \to \infty$ equals
 $\exp(\mathrm{Vol}_{\mathrm{hyp}}(K)/2\pi)$.  This is a **borrowed
 theorem about post-Archimedean analytic continuation**, allowing
-$B(\mathfrak{H})/m_e\rho$ to be *named* as a hyperbolic volume in
+$B(\mathfrak{H})/(m_e \nu_{\mathrm{SDP}})$ to be *named* as a hyperbolic volume in
 conventional language.  The QOU mass identity does **not** depend on
 the conjecture — it depends only on the finite-categorical
 $\mathrm{tr}_M(T_w)$.
@@ -189,18 +227,24 @@ with methodology tag and high-precision certificate.
         trace on the closed surface obtained by Markov closure of
         $T_w$; the Hecke quadratic relation is the curvature 2-form
         at adjacent slices.
-  \item Read $\rho \in \mathbb{Z}_{>0}$ from the structural prefactor
-        rule on $(Z, N)$ (= the multiplicity of $T_w$'s SDP solution
-        in the Wedderburn decomposition).  Currently OPEN in
-        general; confirmed values from the joint-tower SDP witness
-        are $\rho_D = 1$, $\rho_T = 2$, $\rho_{{}^3\mathrm{He}} = 2$.
-        The earlier statement "$\rho = 1$ for $\ell \leq 1$" was
-        too narrow — it holds for $D$ but is contradicted by the
+  \item Read $\nu_{\mathrm{SDP}} \in \mathbb{Z}_{>0}$ from the
+        structural prefactor rule on $(Z, N)$ (= the multiplicity
+        of $T_w$'s SDP solution in the Wedderburn decomposition).
+        Currently OPEN in general; confirmed values from the
+        joint-tower SDP witness are $\nu_{\mathrm{SDP},D} = 1$,
+        $\nu_{\mathrm{SDP},T} = 2$, $\nu_{\mathrm{SDP},{}^3\mathrm{He}} = 2$.
+        The earlier statement "$\nu_{\mathrm{SDP}} = 1$ for
+        $\ell \leq 1$" was too narrow — it holds for $D$ but is
+        contradicted by the
         SDP witness for $T$ and ${}^3\mathrm{He}$ (each carrying
-        $\rho = 2$ from the multiplicity of the trefoil-like
-        constituent in the $H_5$ / $H_3$ Wedderburn decomposition).
+        $\nu_{\mathrm{SDP}} = 2$ from the multiplicity of the
+        trefoil-like constituent in the $H_5$ / $H_3$ Wedderburn
+        decomposition).
   \item Form the categorical mass invariant
-        $M(\mathfrak{H}) := \rho \cdot \mathrm{tr}_M(T_w) \in \mathbb{Q}(q)$.
+        $M(\mathfrak{H}) := \nu_{\mathrm{SDP}} \cdot m(\mathfrak{H}) \in \mathbb{Q}(q)$
+        (multi-term form per the Statement above; the
+        single-term shorthand $M = \nu_{\mathrm{SDP}} \cdot \mathrm{tr}_M(T_w)$
+        is structurally inadequate and is no longer used).
 \end{enumerate}
 \textbf{Archimedean realization (functor $\mathbf{C} \to \text{Top}$, $\mathbb{Q}(q) \to \mathbb{R}$):}
 \begin{enumerate}
@@ -208,7 +252,7 @@ with methodology tag and high-precision certificate.
   \item Apply the Archimedean realization functor at $q = q_0$ and
         multiply by $m_e$:
         $B(\mathfrak{H}) := m_e \cdot M(\mathfrak{H}) \big|_{q = q_0}
-        = m_e \cdot \rho \cdot \mathrm{tr}_M(T_w)\big|_{q = q_0}$,
+        = m_e \cdot \nu_{\mathrm{SDP}} \cdot m(\mathfrak{H})\big|_{q = q_0}$,
         evaluated to $\geq 50$ decimal digits via MPFR.
   \item Compare to AME 2020 binding: residual
         $\Delta = B - B_{\mathrm{AME}}$ in MeV and ppb.
@@ -225,7 +269,7 @@ with methodology tag and high-precision certificate.
 \begin{enumerate}
   \setcounter{enumi}{7}
   \item For hyperbolic $K = \widehat{T_w}$, the volume conjecture
-        identifies $M(\mathfrak{H})/(m_e \rho)\big|_{q_0}$ with
+        identifies $M(\mathfrak{H})/(m_e \nu_{\mathrm{SDP}})\big|_{q_0}$ with
         $\mathrm{Vol}_{\mathrm{hyp}}(K)$ in conventional 3-manifold
         terminology.  Used only as a name for the post-Archimedean
         number; \emph{not} part of the derivation.
@@ -258,8 +302,8 @@ implementations:
 | 1e (cross-level embedding LR) | Rust `cross_level_embedding.rs` (R4; multi-LR; 2 unit tests including 77-partition $H_{12}$ identity) | ✓ |
 | 1f (PSD-cone $\alpha^*$ verifier) | Rust `sdp_verifier.rs` (R5-minimal; bisection equivalent to SDP value function; 2 unit tests) | ✓ |
 | 2 (Markov trace symbolic) | [`y_lambda_wenzl_bridge_extended.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/y_lambda_wenzl_bridge_extended.py) + [`q_mn_recursive_memoized.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/q_mn_recursive_memoized.py) | ✓ for $n \leq 12$ |
-| 3 ($\rho(Z, N)$ rule from Wedderburn multiplicity) | downstream of 1a — read off SDP solution multiplicity | ✗ |
-| 4 ($M(\mathfrak{H}) = \rho \cdot \mathrm{tr}_M(T_w) \in \mathbb{Q}(q)$) | algebraically trivial once 2 + 3 are in | partial |
+| 3 ($\nu_{\mathrm{SDP}}(Z, N)$ rule from Wedderburn multiplicity) | downstream of 1a — read off SDP solution multiplicity | ✗ |
+| 4 ($M(\mathfrak{H}) = \nu_{\mathrm{SDP}} \cdot m(\mathfrak{H}) \in \mathbb{Q}(q)$) | algebraically trivial once 2 + 3 are in | partial |
 | 5 (Archimedean realization at $q_0$ + $m_e$) | MPFR via SymPy/mpmath | ✓ |
 | 6 (AME comparison) | mass-table-ppb witness + [`recursive_atom_knot_atlas_render.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/recursive_atom_knot_atlas_render.py) | ✓ |
 | 7 (methodology tag) | [`methodology-deprecation.witness.json`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/folio-assistant/computations/methodology-deprecation.witness.json) | ✓ |
@@ -344,8 +388,8 @@ Markov-trace computation) and the production-scale Rust port
    top 17 % of the 138 canonical-basis classes by single-term cost;
    ²H ($6_2$) is **not** PSD-feasible on its own ($\alpha^* = 0.89$
    on the standard $(2,1)$ block) and ranks in the top 45 %.  The
-   single-term flagship formula $B = m_e \cdot \rho \cdot |\mathrm{tr}_M(T_w)|$
-   has the known structural offset documented in
+   single-term shorthand $B = m_e \cdot \nu_{\mathrm{SDP}} \cdot |\mathrm{tr}_M(T_w)|$
+   (retired — see Statement above) has the known structural offset documented in
    [`probe-sdp-canonical-paper-formula.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/probe-sdp-canonical-paper-formula.witness.json),
    which prevents the historical $T_w$ from being the unique global
    winner; wiring the multi-term tower (T2--T6 of
@@ -355,9 +399,9 @@ Markov-trace computation) and the production-scale Rust port
    $H_5$, consistent with the deferred-to-Rust posture in
    [`joint_tower_sdp_solver_v2.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/joint_tower_sdp_solver_v2.py).
 
-A second item — the structural prefactor rule $\rho(Z, N)$ — is a
+A second item — the structural prefactor rule $\nu_{\mathrm{SDP}}(Z, N)$ — is a
 downstream consequence: once the SDP-solver returns canonical $T_w$
-per atom, $\rho$ is read off as the multiplicity of $T_w$'s solution
+per atom, $\nu_{\mathrm{SDP}}$ is read off as the multiplicity of $T_w$'s solution
 in the Wedderburn decomposition.  No separate derivation is needed.
 
 The geometric "leg" (Reeb density → Mostow → Gromov → Vol) and the

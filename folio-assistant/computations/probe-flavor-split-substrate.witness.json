@@ -1,0 +1,66 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-17T20:32:43.431107+00:00",
+  "commitSha": "b0a72667ef67d59d0c79591cbcf8782a47b618a6",
+  "assertions": [
+    {
+      "name": "substrate_formula_within_1pct_of_target",
+      "computed": 0.006679772082221331,
+      "expected": 0.01,
+      "passed": true,
+      "tolerance": 0.005
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "probe-flavor-split-substrate",
+  "scriptFile": "probe_flavor_split_substrate.py",
+  "scriptHash": "4e071725e555",
+  "scriptCommitSha": "unknown",
+  "description": "Substrate-pure formula for (μ_d − μ_u)/μ_avg ≈ 0.00414",
+  "data": {
+    "q_pinned": "1.1099785955541805752815940796095093779932822799587",
+    "targets": {
+      "delta_quark": "0.0041379974017225617090891594091324640331039792137804",
+      "delta_nucleon": "0.0013774706211814198030272703430166704588921916140077",
+      "ratio_must_be_3": "3.0040549236349677882242120798546152116106485587224",
+      "mu_avg_hardcoded_MeV": "311.745",
+      "delta_mu_hardcoded_MeV": "1.29",
+      "delta_m_codata_MeV": "1.2933329999999999999999999999999999999999999999995"
+    },
+    "substrate_atoms": {
+      "h_q": "0.20906032198987946110160842229792190646175630391648",
+      "z_0": "0.10438806980915821810461267846072001076530149097119",
+      "z_mkv": "0.49932033403359825002066908467672150636931636263446",
+      "hbar_q": "0.099081726435698885820014342688412528468474023957784",
+      "sqrt_q": "1.0535552171358559483376072736540769089330813515769"
+    },
+    "substrate_formula": {
+      "expression": "h_q² · ℏ_q / √q",
+      "value": "0.0041103565222022309356070891182001938131622332148117",
+      "equivalent_forms": [
+        "h_q^2 * hbar / sqrt(q)",
+        "h_q^2 * z_0 / q",
+        "h_q^3 * z_mkv / q",
+        "h_q^2 * (q-1) / q^{3/2}"
+      ],
+      "pct_off_quark_delta": "-0.66797720822213309916031029819229300122012453089146",
+      "predicted_delta_mu_MeV": "1.2813830940139344830208319971533194202842603935515",
+      "pair_skein_ratio": "1.0040816963953571785292636994939907943622284869137",
+      "predicted_delta_m_MeV": "1.2866133107698427880088875817236483636769292159028",
+      "delta_m_pct_off_codata": "-0.51956373417806643695880475301810410181065387619756"
+    },
+    "phenomenological_context": {
+      "alpha_EM": 0.0072992700729927005,
+      "alpha_S_4pi": 0.009390141642421825,
+      "note": "Neither α_EM nor α_S/4π matches the substrate target; h_q² · ℏ_q / √q is the substrate-internal answer."
+    },
+    "interpretation": {
+      "h_q_squared": "two Hecke crossings (σ - σ⁻¹)² — minimal flavor-swap braid",
+      "hbar_q": "substrate Planck — quantum of action per braid step",
+      "one_over_sqrt_q": "half-step scale at the bar involution"
+    },
+    "status": "research-grade substrate formula matches the HadronicMass.lean 1-parameter fit (μ_d − μ_u = 1.29 MeV) to 0.67 %.  Combined with probe_mu_q_ell_1_substrate (μ_avg formula) the full pair-Skein chain reduces to one input: m_e (CAL-1).  The 0.67 % residual is research-level — likely a missing subleading (q-1)^k correction."
+  }
+}

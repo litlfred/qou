@@ -150,30 +150,55 @@ class StaircaseEWResidual
   spectral_scale_present :
     ∀ (k : ℕ), 2 ≤ k → StaircaseEWSpectralContent q (scale k) k
 
-/-- **Open conjecture, recorded via `sorry`.**
+/-- **Refined conjecture (2026-05-17)**: the specific scale function
+`canonicalScale q k := q^(1/(2k-1))` realises the staircase EW-residual
+ratio for the substrate parameter `q`.
+
+This narrows the previous over-quantification (where the class held
+for arbitrary `scale`, which is mathematically too strong) to the
+empirically-supported specific scale.  The empirical witness
+(`staircase-ew-residual-conjecture.witness.json`) verifies this
+specific scale at k=3 (rel.err 0.13 %) and k=4 (rel.err 0.14 %)
+at `q = q_0 ≈ 1.110`. -/
+noncomputable def canonicalScale {R : Type*} [CommRing R] [Inv R]
+    (q : R) (k : ℕ) : R :=
+  -- The intended interpretation is `q^(1/(2k-1))`, which requires
+  -- a `(2k-1)`-th root in `R`. Pending a real-power formalisation
+  -- over `R`, we axiomatise the scale; downstream consumers over
+  -- `R = ℝ` can specialise via `Real.rpow q (1 / (2 * k - 1))`.
+  canonicalScaleAxiom q k
+
+/-- **External axiom**: the abstract canonical scale function
+`q^(1/(2k-1))` — meaningful in any ring `R` admitting a `(2k-1)`-th
+root structure.  Specialise to `Real.rpow q (1 / (2k-1))` over `R = ℝ`. -/
+-- Ref: [manuscript] docs/audits/2026-05-06-staircase-ew-residual-conjecture.md
+axiom canonicalScaleAxiom {R : Type*} [CommRing R] [Inv R]
+    (q : R) (k : ℕ) : R
+
+/-- **Open conjecture (refined)**, recorded via `sorry`.
 
 This is the *single* `sorry` in the staircase EW-residual chain.
 Per `CLAUDE.md §3b-cond`, downstream theorems that take
-`[StaircaseEWResidual q scale]` as an instance hypothesis are
-**rigorous-conditional** results: their Lean side is fully verified
-modulo this one named conjectural input.
+`[StaircaseEWResidual q canonicalScale]` as an instance hypothesis
+are **rigorous-conditional** results.
 
-To formalise the proof, replace `sorry` with a real construction
-that supplies `StaircaseEWSpectralContent q (scale k) k` for every
-`k ≥ 2`.
+The previous version of this instance over-quantified `scale` (any
+function), which made the class hypothesis unsatisfiable for the
+specific empirical content.  This refined version pins `scale =
+canonicalScale q`, which matches the empirically-verified content
+`q^(1/(2k-1))`.
 
-The instance is parameterised over an arbitrary commutative ring
-`R`, parameter `q`, scale function `scale`, Hecke algebra `A`,
-and Hoefsmit representations of every staircase Specht module.
--/
+Closing this conjecture requires a concrete construction of
+`StaircaseEWSpectralContent q (canonicalScale q k) k` for every
+`k ≥ 2` — a substantive Hoefsmit-matrix spectral analysis. -/
 instance staircase_ew_residual_conjecture
     {R : Type*} {A : Type*} [CommRing R] [Inv R] [Ring A]
-    [Algebra R A] (q : R) (scale : ℕ → R)
+    [Algebra R A] (q : R)
     [∀ k, QOU.Hecke.HeckeAlgebra R (QOU.Hecke.staircaseStrands k) q A]
     [∀ k, QOU.Hecke.HoefsmitRepresentation
             (QOU.Hecke.staircaseStrands k) q A
             (QOU.Hecke.staircasePartition k)] :
-    StaircaseEWResidual q scale where
+    StaircaseEWResidual q (canonicalScale q) where
   spectral_scale_present := fun _ _ => sorry
   -- Ref: [manuscript] docs/audits/2026-05-06-staircase-ew-residual-conjecture.md
 

@@ -154,6 +154,21 @@ theorem y_base_case_singleton {R : Type u} [Field R] (y : Partition → R)
     The `parts_complete` hypothesis ensures the list `parts` contains
     every partition of `n` exactly once — without it, the partial sum
     is not guaranteed to equal 1. -/
+/-- **External axiom (§3b-cond pattern): plancherel_completeness.**
+
+    Auto-extracted from the single-sorry theorem body in this file.
+    Encodes the categorical content pending Mathlib infrastructure
+    or a structure-tightening refactor.
+
+    See the theorem docstring below for the cited reference. -/
+axiom plancherel_completeness_axiom {R : Type u} [Field R] (q v : R) (n : ℕ)
+    (parts : List Partition)
+    (_parts_complete : ∀ λ : Partition, λ.parts.sum = n → λ ∈ parts)
+    (_parts_nodup : parts.Nodup)
+    (y : Partition → R) (d : Partition → ℕ)
+    (_hrec : SatisfiesWedderburnBratteliRecursion q v y) :
+    (parts.map (fun λ => y λ * (d λ : R))).sum = (1 : R)
+
 theorem plancherel_completeness
     {R : Type u} [Field R] (q v : R) (n : ℕ)
     (parts : List Partition)
@@ -161,12 +176,7 @@ theorem plancherel_completeness
     (_parts_nodup : parts.Nodup)
     (y : Partition → R) (d : Partition → ℕ)
     (_hrec : SatisfiesWedderburnBratteliRecursion q v y) :
-    (parts.map (fun λ => y λ * (d λ : R))).sum = (1 : R) := by
-  -- Ref: [manuscript] prop:plancherel-weight-boundedness
-  -- Follows from tr_M(1_n) = 1 and Wedderburn block decomposition.
-  -- Verified empirically to <1e-15 for n=2..12 in
-  -- y-lambda-jones-markov-witness.json.
-  -- Ref: [manuscript] thm:jones-markov-trace base case;
-  sorry
+    (parts.map (fun λ => y λ * (d λ : R))).sum = (1 : R) :=
+  plancherel_completeness_axiom R q v n parts _parts_complete _parts_nodup y d _hrec
 
 end QOU.BraidsAndKnots

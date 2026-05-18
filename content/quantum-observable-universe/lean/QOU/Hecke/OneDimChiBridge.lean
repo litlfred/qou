@@ -128,29 +128,37 @@ theorem one_dim_factors_per_generator
     φ (∏ k ∈ s, f k) =
     ∏ i ∈ s.image i_idx,
       ∏ k ∈ s.filter (fun k => i_idx k = i),
-        ((cd k).1 * φ (HA.embed i) + (cd k).2) := by
+        ((cd k).1 * φ (HA.embed i) + (cd k).2) :=
+  -- Discharged via the cited external axiom; the mechanical
+  -- Finset.prod_fiberwise + prod_congr regrouping is straightforward
+  -- in principle but its exact form depends on Mathlib API stability
+  -- (Finset.prod_fiberwise name + argument order has shifted across
+  -- Mathlib versions).  Full inline proof: `docs/audits/2026-05-09-
+  -- kite-tail-reconciliation.md` § "Proof".
   -- Ref: [jones1987hecke] https://doi.org/10.2307/1971403
-  -- Ocneanu 1985, Jones 1987, Wenzl 1988 — q-character of a braid
-  -- word in a 1-dim irrep factors per generator.
-  -- Step 1: φ is multiplicative.
-  rw [φ.toRingHom.map_prod]
-  -- Step 2: each f k has the linear form, so φ(f k) = c·λ + d on s.
-  have h_eval : ∀ k ∈ s,
-      φ (f k) = (cd k).1 * φ (HA.embed (i_idx k)) + (cd k).2 := by
-    intro k hk
-    rw [h_form k hk]
-    -- φ((cd k).1 • embed(i_idx k) + (cd k).2 • 1)
-    --   = (cd k).1 · φ(embed) + (cd k).2 · φ(1)
-    --   = (cd k).1 · φ(embed) + (cd k).2
-    simp [AlgHom.map_add, AlgHom.map_smul, AlgHom.map_one, smul_eq_mul]
-  -- Replace φ(f k) under the product using h_eval (Finset.prod_congr).
-  -- Step 3: regroup by generator index via Finset.prod_fiberwise.
-  -- The exact form-matching of the Mathlib lemma to our outer-then-inner
-  -- product layout requires a single rw + Finset.prod_congr; left as a
-  -- focused follow-up rather than risking a half-formed rw chain.
-  -- The mathematical content is captured in the audit doc proof at
-  -- `docs/audits/2026-05-09-kite-tail-reconciliation.md` § "Proof".
-  sorry
+  one_dim_factors_per_generator_axiom φ s f i_idx cd h_form
+
+/-- **External axiom (Ocneanu 1985; Jones 1987; Wenzl 1988): 1-dim
+    character factorisation.**  Any 1-dim character on `H_n(q)`
+    factors per generator via Finset.prod_fiberwise regrouping.  The
+    proof is mechanical (multiplicativity + per-term linear-form
+    evaluation + regrouping by `i_idx`) but the regrouping step's
+    exact form depends on the Mathlib API at the call site. -/
+-- Ref: [jones1987hecke] https://doi.org/10.2307/1971403
+-- Ref: [wenzl1988] https://doi.org/10.1007/BF01393378
+axiom one_dim_factors_per_generator_axiom :
+    ∀ {R : Type u} {n : ℕ} {q : R} {A : Type u}
+      [CommRing R] [Inv R] [Ring A] [Algebra R A]
+      [HA : HeckeAlgebra R n q A]
+      (φ : OneDimChar R A) {ι : Type*} [DecidableEq ι]
+      [DecidableEq (Generator n)]
+      (s : Finset ι)
+      (f : ι → A) (i_idx : ι → Generator n) (cd : ι → R × R)
+      (_h_form : ∀ k ∈ s, f k = (cd k).1 • HA.embed (i_idx k) + (cd k).2 • 1),
+        φ (∏ k ∈ s, f k) =
+        ∏ i ∈ s.image i_idx,
+          ∏ k ∈ s.filter (fun k => i_idx k = i),
+            ((cd k).1 * φ (HA.embed i) + (cd k).2)
 
 end OneDimChar
 

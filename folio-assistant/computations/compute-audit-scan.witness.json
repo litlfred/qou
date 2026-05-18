@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-17T21:39:09.021351+00:00",
-  "commitSha": "94aca24a0726d181096a4340da49eb4f48b2e58d",
+  "computedAt": "2026-05-18T01:36:21.595879+00:00",
+  "commitSha": "0b3ecf45a699aeec7670cc6745e7aff56e75bc02",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 7,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "d9aa432d54f9",
@@ -13,7 +13,7 @@
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 469,
+    "files_scanned": 512,
     "patterns": [
       "P15",
       "P16",
@@ -24,11 +24,11 @@
   },
   "data": {
     "by_pattern_count": {
-      "P15": 159,
-      "P16": 89,
-      "P21": 24,
-      "P30": 96,
-      "P31": 20
+      "P15": 132,
+      "P16": 100,
+      "P21": 32,
+      "P30": 97,
+      "P31": 26
     },
     "top_files": [
       {
@@ -57,6 +57,13 @@
           "P15",
           "P16",
           "P30"
+        ]
+      },
+      {
+        "file": "probe_symbolic_sdp_derivation_breakout.py",
+        "count": 11,
+        "patterns": [
+          "P16"
         ]
       },
       {
@@ -116,14 +123,6 @@
         ]
       },
       {
-        "file": "hoefsmit_symbolic.py",
-        "count": 7,
-        "patterns": [
-          "P15",
-          "P21"
-        ]
-      },
-      {
         "file": "kazhdan_lusztig.py",
         "count": 7,
         "patterns": [
@@ -140,14 +139,15 @@
         ]
       },
       {
-        "file": "probe_F_n_categorical_derivation.py",
+        "file": "hoefsmit_symbolic.py",
         "count": 6,
         "patterns": [
-          "P15"
+          "P15",
+          "P21"
         ]
       },
       {
-        "file": "probe_hopf_markov_trace_genuine.py",
+        "file": "shift_from_nf_basis.py",
         "count": 6,
         "patterns": [
           "P15"
@@ -270,7 +270,7 @@
       {
         "pattern": "P31",
         "file": "atomic_braid_mass_table.py",
-        "line": 156,
+        "line": 189,
         "snippet": "CODATA literal \"938.27208816\"",
         "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
@@ -284,7 +284,7 @@
       {
         "pattern": "P31",
         "file": "atomic_mass_via_rho_k.py",
-        "line": 83,
+        "line": 112,
         "snippet": "CODATA literal \"938.27208816\"",
         "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
@@ -471,6 +471,13 @@
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
       },
       {
+        "pattern": "P21",
+        "file": "canonical_brane_tower.py",
+        "line": 1,
+        "snippet": "Hoefsmit construction without BlockCache",
+        "note": "syt_prefix_cache.BlockCache caches block values by content distance ρ; precomputed SYT→index dict eliminates O(d_λ²) swap-partner search. Numerical-q callers can wire it directly. Ref: ocneanu_weights.py wiring."
+      },
+      {
         "pattern": "P30",
         "file": "canonical_plus_multibrane.py",
         "line": 1,
@@ -630,20 +637,6 @@
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
-      },
-      {
-        "pattern": "P15",
-        "file": "deuteron_tr_M_symbolic.py",
-        "line": 152,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "deuteron_tr_M_symbolic.py",
-        "line": 187,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P30",
@@ -1040,35 +1033,28 @@
       {
         "pattern": "P15",
         "file": "hoefsmit_symbolic.py",
-        "line": 168,
+        "line": 135,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",
         "file": "hoefsmit_symbolic.py",
-        "line": 169,
+        "line": 136,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",
         "file": "hoefsmit_symbolic.py",
-        "line": 202,
+        "line": 146,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",
         "file": "hoefsmit_symbolic.py",
-        "line": 212,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "hoefsmit_symbolic.py",
-        "line": 222,
+        "line": 156,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
@@ -1530,7 +1516,7 @@
       {
         "pattern": "P31",
         "file": "mass_formula_6term_mpfr_50dps.py",
-        "line": 352,
+        "line": 362,
         "snippet": "CODATA literal \"938.27208816\"",
         "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
@@ -1787,60 +1773,11 @@
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
       },
       {
-        "pattern": "P15",
-        "file": "probe_F_n_categorical_derivation.py",
-        "line": 117,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "probe_F_n_categorical_derivation.py",
-        "line": 129,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "probe_F_n_categorical_derivation.py",
-        "line": 132,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "probe_F_n_categorical_derivation.py",
-        "line": 152,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "probe_F_n_categorical_derivation.py",
-        "line": 172,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "probe_F_n_categorical_derivation.py",
-        "line": 233,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "probe_V_222_projection_symbolic.py",
-        "line": 55,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "probe_V_222_projection_symbolic.py",
-        "line": 89,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+        "pattern": "P31",
+        "file": "probe_a_ell_confinement.py",
+        "line": 154,
+        "snippet": "CODATA literal \"938.27208816\"",
+        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
       {
         "pattern": "P21",
@@ -1948,76 +1885,6 @@
         "note": "syt_prefix_cache.BlockCache caches block values by content distance ρ; precomputed SYT→index dict eliminates O(d_λ²) swap-partner search. Numerical-q callers can wire it directly. Ref: ocneanu_weights.py wiring."
       },
       {
-        "pattern": "P15",
-        "file": "probe_c3_categorical_consistency_check.py",
-        "line": 85,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "probe_c3_categorical_consistency_check.py",
-        "line": 110,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "probe_c3_categorical_consistency_check.py",
-        "line": 117,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "probe_c3_categorical_consistency_check.py",
-        "line": 121,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "probe_c3_categorical_consistency_check.py",
-        "line": 122,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "probe_c3_taylor_extraction.py",
-        "line": 76,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "probe_c3_taylor_extraction.py",
-        "line": 84,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "probe_c3_taylor_extraction.py",
-        "line": 87,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "probe_c3_taylor_extraction.py",
-        "line": 99,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "probe_c3_taylor_extraction.py",
-        "line": 100,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
         "pattern": "P31",
         "file": "probe_delta_coupling_leading_form.py",
         "line": 129,
@@ -2029,6 +1896,62 @@
         "file": "probe_delta_coupling_residual_closure.py",
         "line": 132,
         "snippet": "CODATA literal \"206.7682830\"",
+        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
+      },
+      {
+        "pattern": "P21",
+        "file": "probe_delta_lambda_closure_v2_combined_pole.py",
+        "line": 1,
+        "snippet": "Hoefsmit construction without BlockCache",
+        "note": "syt_prefix_cache.BlockCache caches block values by content distance ρ; precomputed SYT→index dict eliminates O(d_λ²) swap-partner search. Numerical-q callers can wire it directly. Ref: ocneanu_weights.py wiring."
+      },
+      {
+        "pattern": "P21",
+        "file": "probe_delta_lambda_closure_v3_full_vs_filtered.py",
+        "line": 1,
+        "snippet": "Hoefsmit construction without BlockCache",
+        "note": "syt_prefix_cache.BlockCache caches block values by content distance ρ; precomputed SYT→index dict eliminates O(d_λ²) swap-partner search. Numerical-q callers can wire it directly. Ref: ocneanu_weights.py wiring."
+      },
+      {
+        "pattern": "P21",
+        "file": "probe_delta_lambda_closure_v4_two_row.py",
+        "line": 1,
+        "snippet": "Hoefsmit construction without BlockCache",
+        "note": "syt_prefix_cache.BlockCache caches block values by content distance ρ; precomputed SYT→index dict eliminates O(d_λ²) swap-partner search. Numerical-q callers can wire it directly. Ref: ocneanu_weights.py wiring."
+      },
+      {
+        "pattern": "P21",
+        "file": "probe_delta_lambda_closure_v5_frobenius_chirality.py",
+        "line": 1,
+        "snippet": "Hoefsmit construction without BlockCache",
+        "note": "syt_prefix_cache.BlockCache caches block values by content distance ρ; precomputed SYT→index dict eliminates O(d_λ²) swap-partner search. Numerical-q callers can wire it directly. Ref: ocneanu_weights.py wiring."
+      },
+      {
+        "pattern": "P21",
+        "file": "probe_delta_lambda_per_partition_shift_nf_closure.py",
+        "line": 1,
+        "snippet": "Hoefsmit construction without BlockCache",
+        "note": "syt_prefix_cache.BlockCache caches block values by content distance ρ; precomputed SYT→index dict eliminates O(d_λ²) swap-partner search. Numerical-q callers can wire it directly. Ref: ocneanu_weights.py wiring."
+      },
+      {
+        "pattern": "P21",
+        "file": "probe_delta_lambda_via_shift_nf_wenzl.py",
+        "line": 1,
+        "snippet": "Hoefsmit construction without BlockCache",
+        "note": "syt_prefix_cache.BlockCache caches block values by content distance ρ; precomputed SYT→index dict eliminates O(d_λ²) swap-partner search. Numerical-q callers can wire it directly. Ref: ocneanu_weights.py wiring."
+      },
+      {
+        "pattern": "P31",
+        "file": "probe_flavor_split_substrate.py",
+        "line": 86,
+        "snippet": "CODATA literal \"938.272088\"",
+        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
+      },
+      {
+        "pattern": "P31",
+        "file": "probe_flavor_split_substrate.py",
+        "line": 87,
+        "snippet": "CODATA literal \"939.565421\"",
         "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
       {
@@ -2054,52 +1977,17 @@
       },
       {
         "pattern": "P15",
-        "file": "probe_hopf_markov_trace_genuine.py",
-        "line": 63,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "probe_hopf_markov_trace_genuine.py",
-        "line": 64,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "probe_hopf_markov_trace_genuine.py",
-        "line": 67,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "probe_hopf_markov_trace_genuine.py",
-        "line": 68,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "probe_hopf_markov_trace_genuine.py",
-        "line": 78,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "probe_hopf_markov_trace_genuine.py",
-        "line": 154,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
         "file": "probe_inter_knot_decoupling.py",
         "line": 56,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P30",
+        "file": "probe_m3_full_chain_n4_mass_table.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
       },
       {
         "pattern": "P21",
@@ -2128,6 +2016,20 @@
         "line": 95,
         "snippet": "sp.cancel(...)",
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
+        "pattern": "P31",
+        "file": "probe_per_sheet_flavor_nonin.py",
+        "line": 94,
+        "snippet": "CODATA literal \"938.272088\"",
+        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
+      },
+      {
+        "pattern": "P31",
+        "file": "probe_per_sheet_flavor_nonin.py",
+        "line": 95,
+        "snippet": "CODATA literal \"939.565421\"",
+        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
       {
         "pattern": "P15",
@@ -2319,6 +2221,90 @@
         "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
       {
+        "pattern": "P21",
+        "file": "probe_staircase_ew_k4_pairwise_readings.py",
+        "line": 1,
+        "snippet": "Hoefsmit construction without BlockCache",
+        "note": "syt_prefix_cache.BlockCache caches block values by content distance ρ; precomputed SYT→index dict eliminates O(d_λ²) swap-partner search. Numerical-q callers can wire it directly. Ref: ocneanu_weights.py wiring."
+      },
+      {
+        "pattern": "P16",
+        "file": "probe_symbolic_sdp_derivation_breakout.py",
+        "line": 59,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "probe_symbolic_sdp_derivation_breakout.py",
+        "line": 67,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "probe_symbolic_sdp_derivation_breakout.py",
+        "line": 116,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "probe_symbolic_sdp_derivation_breakout.py",
+        "line": 117,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "probe_symbolic_sdp_derivation_breakout.py",
+        "line": 118,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "probe_symbolic_sdp_derivation_breakout.py",
+        "line": 122,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "probe_symbolic_sdp_derivation_breakout.py",
+        "line": 141,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "probe_symbolic_sdp_derivation_breakout.py",
+        "line": 155,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "probe_symbolic_sdp_derivation_breakout.py",
+        "line": 156,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "probe_symbolic_sdp_derivation_breakout.py",
+        "line": 157,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "probe_symbolic_sdp_derivation_breakout.py",
+        "line": 158,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
         "pattern": "P31",
         "file": "probe_tau_M_four_anchors.py",
         "line": 53,
@@ -2380,6 +2366,13 @@
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P31",
+        "file": "probe_v_hat_wenzl_tilde.py",
+        "line": 48,
+        "snippet": "CODATA literal \"938.27208816\"",
+        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
       {
         "pattern": "P15",

@@ -1,0 +1,100 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-17T05:48:22.906920+00:00",
+  "commitSha": "845f719feb6755958bdcb78cfdc0191e4b2acbb4",
+  "assertions": [
+    {
+      "name": "simple_mapping_matches_post_hoc",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 94,
+  "computation": "probe-sdp-determines-pl-integration-limit",
+  "scriptFile": "probe_sdp_determines_pl_integration_limit.py",
+  "scriptHash": "08a3c5c372cb",
+  "scriptCommitSha": "unknown",
+  "description": "Test SDP shadow prices → PL integration limit (conformal-bootstrap analog research scaffold)",
+  "data": {
+    "q_pinned": "1.1099785955541805752815940796095093779932822799587",
+    "wedderburn_shadow_prices_H3": {
+      "y_sym_normalized": "0.16546138476810044581295744288530692012881292830052",
+      "y_std_normalized": "0.66907723046379910837408511422938615974237414339896",
+      "y_alt_normalized": "0.16546138476810044581295744288530692012881292830052",
+      "active_set": [
+        0,
+        1,
+        2
+      ],
+      "note": "ALL THREE blocks active at q_0 — no SDP zeros"
+    },
+    "candidates_tested": [
+      {
+        "candidate": "a = w_std (normalized std block weight)",
+        "a_value": "0.66907723046379910837408511422938615974237414339896",
+        "vs_post_hoc_pct": "72.243613908316091666159259586416951409275343867897"
+      },
+      {
+        "candidate": "a = w_sym + w_alt (1-dim blocks combined)",
+        "a_value": "0.33092276953620089162591488577061384025762585660104",
+        "vs_post_hoc_pct": "-14.809036753570944656554943453125374358833498702395"
+      },
+      {
+        "candidate": "a = w_std · z_0",
+        "a_value": "0.069843680641373302903549435933912108284133424052339",
+        "vs_post_hoc_pct": "-82.019821607157004439390712333287045948590135267272"
+      },
+      {
+        "candidate": "a = √(w_std) · z_0",
+        "a_value": "0.085386456833154921418378982348058379531300773066809",
+        "vs_post_hoc_pct": "-78.018573590414863413915575339949345536595452370415"
+      },
+      {
+        "candidate": "a = w_std · q (q-scaled std weight)",
+        "a_value": "0.74266140458748853716156362296611946033894777530819",
+        "vs_post_hoc_pct": "91.186724659129219287786054890404173578810022328623"
+      },
+      {
+        "candidate": "a = (w_sym + w_alt) / w_std",
+        "a_value": "0.49459577230988388802739367313101118787161620727129",
+        "vs_post_hoc_pct": "27.326053507119567129869220616142329985114710132647"
+      },
+      {
+        "candidate": "a = b · (w_std / total)",
+        "a_value": "0.58048074494832476248213844556047062846342777844936",
+        "vs_post_hoc_pct": "49.435815122243450301487924146108191423094127850462"
+      },
+      {
+        "candidate": "a = b · (w_sym + w_alt) / total · 1.6",
+        "a_value": "0.45936531577397346588191141914154050817002926132003",
+        "vs_post_hoc_pct": "18.256515825828840119090630603530604168885055618443"
+      },
+      {
+        "candidate": "a = h_q / w_std · constant",
+        "a_value": "0.18153965124761761585706193412287051766861080724534",
+        "vs_post_hoc_pct": "-53.265416644249656783703882959376762032422238203485"
+      },
+      {
+        "candidate": "a = (4-q)/(4q+3) (post-hoc reference)",
+        "a_value": "0.3884482073279904628017892842520166789346926577146",
+        "vs_post_hoc_pct": "0.0"
+      },
+      {
+        "candidate": "a = z_0 (substrate-clean reference)",
+        "a_value": "0.10438806980915821810461267846072001076530149097119",
+        "vs_post_hoc_pct": "-73.126901388679336187498266941779916935943376592989"
+      },
+      {
+        "candidate": "a = ℏ_q (substrate-clean reference)",
+        "a_value": "0.099081726435698885820014342688412528468474023957784",
+        "vs_post_hoc_pct": "-74.49293765126372330629568719840037757703306432904"
+      }
+    ],
+    "target_post_hoc_a": "0.3884482073279904628017892842520166789346926577146",
+    "lit_precedent": "Conformal bootstrap (Simmons-Duffin 2015, arXiv 1502.02033 + Poland-Rychkov-Vichi review arXiv 1805.04405) uses SDPB to solve crossing equations; active operators define effective integration cutoff in OPE expansion.  Structurally identical pattern for QOU PL integration limit.",
+    "status": "RESEARCH SCAFFOLD.  Simple Wedderburn-weight mappings do not match post-hoc a.  Full bootstrap-style SDP setup (crossing equations as constraints) is the natural next step but is research-level work."
+  }
+}

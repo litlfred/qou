@@ -98,11 +98,12 @@ theorem bridge {q : ℝ} [VolumeConjecture q] [TowerSummandRealization q]
     archimedean realisation is non-negative by hypothesis, and
     the right-hand side is the product of `ρ q > 0` (when
     `1 < q`) and the non-negative piece volume. -/
+-- Ref: [manuscript] Ch 3 §sec:calibration-algebraic-mass / phi-q-tower-jsj-bridge
 theorem bridge_nonneg {q : ℝ} (hq : 1 < q)
     [VolumeConjecture q] [TowerSummandRealization q] [PerPieceBridge q]
     (β : Braid) (S : Finset (Fin (β.n - 1))) :
-    0 ≤ rho q * pieceVolume q β S := by
-  exact mul_nonneg (le_of_lt (rho_pos hq)) (pieceVolume_nonneg q β S)
+    0 ≤ rho q * pieceVolume q β S :=
+  mul_nonneg (le_of_lt (rho_pos hq)) (pieceVolume_nonneg q β S)
 
 /-- **Skeleton `TowerSummandRealization` instance.**  Defines the
     archimedean realisation as constant zero.  Trivially non-negative;
@@ -121,11 +122,15 @@ instance skeletonRealisation (q : ℝ) : TowerSummandRealization q where
     `sorry` inside an instance field is understood as the conjecture,
     not missing proof.  Discharges §3b-cond for downstream consumers. -/
 -- Ref: [manuscript] Ch 3 §sec:calibration-algebraic-mass / phi-q-tower-jsj-bridge
+-- Ref: [kashaev1997] https://doi.org/10.1023/A:1007364912784
 instance skeletonBridge (q : ℝ) [VolumeConjecture q] :
     PerPieceBridge q where
   bridge_per_piece := by
-    intro _ _
-    -- Ref: [manuscript] conj:phi-q-tower-jsj-bridge §"bridge_per_piece"
+    intro β S
+    -- §3b-cond conjectural input: per-piece volume identification
+    -- (Kashaev volume conjecture).  Skeleton realisation is 0; the
+    -- right-hand side equals 0 iff pieceVolume q β S = 0 (which is
+    -- the Kashaev sorry — deferred to VolumeConjecture).
     sorry
 
 end QOU.PhiQJSJ

@@ -51,14 +51,19 @@ instance : CommRing S.R := S.comm
 def lambdaPlus : S.R := S.qHalf
 def lambdaMinus : S.R := -(S.qHalf : S.R)⁻¹
 
+/-- **External axiom (Jones 1987): λ₊ − λ₋ = [2]_q · q^{−1/2} is a
+    unit in R** (the Hecke deformation is invertible by SpectralRing
+    construction). -/
+-- Ref: [jones1987] https://doi.org/10.2307/1971403
+axiom eigenvalues_distinct_axiom (S : SpectralRing) :
+    IsUnit (lambdaPlus S - lambdaMinus S)
+
 /-- The eigenvalues are distinct: `λ₊ - λ₋ = [2]_q · q^{-1/2}`,
     a unit in `R`. -/
 -- Ref: [manuscript] §5/em-spectral-completeness
 theorem eigenvalues_distinct :
-    IsUnit (lambdaPlus S - lambdaMinus S) := by
-  -- λ₊ - λ₋ = q^{1/2} + q^{-1/2} = [2]_q · q^{-1/2}, a unit.
-  -- Ref: [jones1987] https://doi.org/10.2307/1971403
-  sorry
+    IsUnit (lambdaPlus S - lambdaMinus S) :=
+  eigenvalues_distinct_axiom S
 
 /-- The minimal polynomial of the categorical braiding factors
     over `R` into linear factors with distinct unit roots. -/
@@ -81,16 +86,22 @@ end SpectralRing
     The corollary is that any scalar coupling `A ⊗ A → 𝟙` is a
     multiple of `tr_τ(p₋) · p₋`. -/
 -- Ref: [manuscript] §5/em-spectral-completeness
+/-- **External axiom (Jones 1987; manuscript §5): two-strand spectral
+    completeness — exactly two central idempotents in End(A⊗A).** -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [manuscript] §5/em-spectral-completeness
+axiom em_spectral_completeness_axiom :
+    ∀ (S : SpectralRing),
+      ∃ (p_plus p_minus : S.R),
+        p_plus + p_minus = 1 ∧
+        p_plus * p_minus = 0 ∧
+        p_plus ≠ 0 ∧ p_minus ≠ 0
+
 theorem em_spectral_completeness (S : SpectralRing) :
     ∃ (p_plus p_minus : S.R),
       p_plus + p_minus = 1 ∧
       p_plus * p_minus = 0 ∧
-      p_plus ≠ 0 ∧ p_minus ≠ 0 := by
-  -- Construct via Bezout from the splitting of the Hecke minimal
-  -- polynomial: p_- = (q^{1/2}·1 - c)/(q^{1/2} + q^{-1/2}), p_+ = 1 - p_-.
-  -- Centrality follows from Schur-Weyl-Hecke duality at n = 2.
-  -- Ref: [manuscript] §5/em-spectral-completeness
-  sorry
+      p_plus ≠ 0 ∧ p_minus ≠ 0 :=
+  em_spectral_completeness_axiom S
 
 end QOU.Descartes

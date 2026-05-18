@@ -126,6 +126,25 @@ but not the literal integration evaluation.  The dilogarithm form
 $-\mathrm{Li}_2^q(-|V|)$ is the actual integration result and may be
 the correct specialisation; this needs paper-side verification.*
 
+**Resolution (added 2026-05-17).** *The corrected canonical form of
+the mass-endomorphism tower uses $-\mathrm{Li}_2^q(-|\hat V_i|)$ in
+place of $\Phi_q(|\hat V_i|)$; see the proposition statement below.
+The production compute pipeline at
+[`canonical_plus_multibrane.py`](folio-assistant/computations/canonical_plus_multibrane.py)
+and
+[`paper_six_term_isotope_sweep.py`](folio-assistant/computations/paper_six_term_isotope_sweep.py)
+use `tower_mode="li2q"` and evaluate $-\mathrm{Li}_2^q(-|V|)$ via the
+symmetric q-dilogarithm series
+$\mathrm{Li}_2^q(z) = \sum_{n \geq 1} z^n / (n \cdot [n]_q)$. The
+$\Phi_q$ product form survives only in
+[`brane_tower_isospin_diagnosis.py`](folio-assistant/computations/brane_tower_isospin_diagnosis.py)
+as a **diagnostic** that exposes the $-737$ MeV mirror-nucleus
+pathology — it documents the bug, not the corrected mass formula.
+The Lean stub
+[`QOU.BraidKnot.QuantumDilogarithm`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/lean/QOU/BraidKnot/QuantumDilogarithm.lean)
+axiomatises both functions and their distinct definitions to
+prevent regression.*
+
 **Trace-vs-evaluation note (added 2026-05-03).**
 The R-side algebraic form of the tower above expresses each
 $\mathrm{Vol}_q^{(S)}(\beta)$ as a Markov trace over the chain on $S$

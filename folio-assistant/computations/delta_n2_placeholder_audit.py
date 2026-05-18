@@ -137,7 +137,12 @@ def main() -> int:
     print("  For a rigorous discharge, see term7-alpha5's iterative LP-dual")
     print("  unification.")
 
-    # Strategy-3 baseline
+    # P4‴ note: audit-only consumer of the legacy six-term decomposition
+    # (term1_atomic_total/term2_markov_z2/term3_markov_z4/term4_frobenius_codim/
+    # term6_cyclotomic_tail_MeV). Canonical mass predictions are in
+    # `atomic-mass-via-rho-k.witness.json`; this script audits the
+    # placeholder `full_twist_scalar(A)=1.0` shortcut in the legacy
+    # path and therefore remains a legacy-witness consumer by design.
     s3_path = HERE / "atomic-braid-mass-table.witness.json"
     s3 = json.loads(s3_path.read_text())
     rows = {r["atom"]: r for r in s3["data"]["rows"]}

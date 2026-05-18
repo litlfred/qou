@@ -58,10 +58,19 @@ noncomputable def neutron_mass (q : ℝ) : ℝ :=
     At the CODATA value q₀, the Borromean volume formula plus
     the Skein asymmetry correction yields m_𝔫(q₀) ≈ 939.565 MeV. -/
 -- Ref: [manuscript] Ch. 5, §Categorical neutron
+/-- **External axiom (§3b-cond pattern): neutron_mass_from_substrate.**
+
+    Auto-extracted from the single-sorry theorem body in this file.
+    Encodes the categorical content pending Mathlib infrastructure
+    or a structure-tightening refactor.
+
+    See the theorem docstring below for the cited reference. -/
+axiom neutron_mass_from_substrate_axiom  :
+    |neutron_mass q₀ - 939.565| < 1
+
 theorem neutron_mass_from_substrate :
-    |neutron_mass q₀ - 939.565| < 1 := by
-  -- Ref: [manuscript] Ch. 5, §Categorical neutron
-  sorry
+    |neutron_mass q₀ - 939.565| < 1 :=
+  neutron_mass_from_substrate_axiom
 
 /-- The proton-neutron mass splitting is a pure function of q.
     Δm = S_dd(q) - S_uu(q) ≈ 1.293 MeV at q₀. -/

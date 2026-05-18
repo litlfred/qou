@@ -222,6 +222,37 @@ Stop when the branch ships (PR merged, or you switch branches):
 - **Routine review-cycle commits** (Gemini/Copilot fixes on unrelated
   PRs):  almost always Q1 = no overlap = skip with one-liner.
 
+## 5b.  Monitor-timeout recovery (MANDATORY when re-arming)
+
+Background Monitors time out (`[Monitor timed out — re-arm if needed]`).
+**Do not just re-arm and continue** — between the last event and the
+timeout, main may have moved substantially. Mandatory steps on
+timeout-recovery:
+
+```bash
+# Compare current baseline against actual main HEAD
+git fetch origin main 2>/dev/null
+SAFE=$(echo "<BRANCH>" | tr '/' '_')
+LAST=$(cat /tmp/_watch_baseline_${SAFE}.sha 2>/dev/null || echo "")
+CUR=$(git rev-parse origin/<BRANCH>)
+if [ "$LAST" != "$CUR" ]; then
+  MISSED=$(git log --oneline "$LAST..$CUR" 2>/dev/null | wc -l)
+  echo "MISSED $MISSED commits while watcher was down"
+  git log --oneline "$LAST..$CUR" | head -10
+  # Update baseline AFTER reporting
+  git rev-parse origin/<BRANCH> > /tmp/_watch_baseline_${SAFE}.sha
+fi
+```
+
+If `MISSED >= 5` OR any missed commit touches a file in your branch's
+diff, run the §3 integration checklist on the missed range BEFORE
+arming a fresh monitor.
+
+This catches the failure mode where a focused work session (axiom
+discharge sweep, content authoring marathon, witness regeneration
+loop) silently lets main move 10+ commits ahead while the watcher
+is timed out.
+
 ## 6.  Output style
 
 Match user-accessibility note in CLAUDE.md:

@@ -81,15 +81,28 @@ open QOU.GrobnerShirshov.Hecke
     This extends the Gröbner–Shirshov framework with a linear functional
     satisfying conjugation invariance and stabilisation. The existence
     and uniqueness is Jones 1987, Theorem 5.1. -/
+/-- **Markov trace** on H_n(q) — axiomatised pending the full
+    Markov-recursion-on-GS-normal-forms implementation in the
+    transfer-matrix framework. -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
-noncomputable def MarkovTrace {n : ℕ} (hp : HeckeParams)
-    (f : AlgElement (HeckeGen n) R_q) : R_q :=
-  -- The trace is the linear extension of the Markov property on monomials.
-  -- On a GS normal form, it factors as a product over strands.
-  -- Full implementation requires the Markov recursion on normal forms,
-  -- which is deferred to the transfer matrix formalization.
-  -- Ref: [jones1987] https://doi.org/10.2307/1971403
-  sorry
+axiom MarkovTrace {n : ℕ} (hp : HeckeParams) (f : AlgElement (HeckeGen n) R_q) : R_q
+
+/-- **AlgElement.embed_succ** — embed H_n into H_{n+1} by treating
+    generators as σ₀,…,σ_{n-1}.  Axiomatised pending the concrete
+    Hecke-algebra implementation. -/
+-- Ref: [jones1987] https://doi.org/10.2307/1971403
+axiom AlgElement.embed_succ {n : ℕ} (f : AlgElement (HeckeGen n) R_q) :
+    AlgElement (HeckeGen (n + 1)) R_q
+
+/-- **AlgElement.mul** — convolution on monomials.  Axiomatised
+    pending concrete formal-algebra ring structure. -/
+-- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+axiom AlgElement.mul {n : ℕ}
+    (_ _ : AlgElement (HeckeGen n) R_q) : AlgElement (HeckeGen n) R_q
+
+/-- **AlgElement.zero** — additive identity of the formal algebra. -/
+-- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
+axiom AlgElement.zero {n : ℕ} : AlgElement (HeckeGen n) R_q
 
 /-- QU-3a: Markov conjugation invariance —
     tr_M(σᵢ · f) = tr_M(f · σᵢ) for all i and f. -/
@@ -100,20 +113,13 @@ axiom markov_conjugation {n : ℕ} (hp : HeckeParams) (i : Fin n)
     = MarkovTrace hp (AlgElement.rightMulGen f ⟨i⟩)
 
 /-- QU-3b: Markov stabilisation —
-    tr_M(f · σ_n) = δ⁻¹ · tr_M(f) where δ = -(q + q⁻¹).
-    Uses the embedding H_n(q) ↪ H_{n+1}(q). -/
+    tr_M(f · σ_n) = δ⁻¹ · tr_M(f) where δ = -(q + q⁻¹). -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 axiom markov_stabilisation {n : ℕ} (hp : HeckeParams)
     (f : AlgElement (HeckeGen n) R_q) :
     MarkovTrace hp (AlgElement.leftMulGen ⟨⟨n, by omega⟩⟩
       (AlgElement.embed_succ f))
     = MarkovTrace hp f / (-(hp.q + hp.q⁻¹))
-  where
-    /-- Embed H_n into H_{n+1} by treating generators as σ₀,...,σ_{n-1}
-        (unchanged indices in the larger algebra). -/
-    AlgElement.embed_succ {n : ℕ} (f : AlgElement (HeckeGen n) R_q) :
-        AlgElement (HeckeGen (n + 1)) R_q :=
-      sorry -- Ref: [jones1987] https://doi.org/10.2307/1971403
 
 /-- QU-3c: Non-degeneracy —
     the Markov trace pairing (f, g) ↦ tr_M(f · g) is non-degenerate
@@ -124,14 +130,6 @@ axiom markov_nondegenerate {n : ℕ} (hp : HeckeParams)
     (∀ g : AlgElement (HeckeGen n) R_q,
       MarkovTrace hp (AlgElement.mul f g) = 0) →
     f = AlgElement.zero
-  where
-    /-- Multiplication of AlgElements (convolution on monomials). -/
-    AlgElement.mul {n : ℕ} (_ _ : AlgElement (HeckeGen n) R_q) :
-        AlgElement (HeckeGen n) R_q :=
-      sorry -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
-    /-- The zero element. -/
-    AlgElement.zero {n : ℕ} : AlgElement (HeckeGen n) R_q :=
-      sorry -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 
 -- ═══════════════════════════════════════════════════════════════════
 -- QUO-2: Observability (Schur's lemma for the Hecke algebra)

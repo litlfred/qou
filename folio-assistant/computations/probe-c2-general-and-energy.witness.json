@@ -1,0 +1,100 @@
+{
+  "engine": "scipy+numpy+hecke_characters",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-17T07:27:22.861062+00:00",
+  "commitSha": "5d478da45a9363f07943d5b77ad3a17e6221455d",
+  "assertions": [
+    {
+      "name": "proton_C2_pred_within_0_2_pct",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true
+    },
+    {
+      "name": "proton_rho_K_substrate_matches_codata_to_0_5_pct",
+      "computed": 0.0,
+      "expected": 1.0,
+      "passed": false
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 18,
+  "computation": "probe-c2-general-and-energy",
+  "scriptFile": "probe_c2_general_and_energy.py",
+  "scriptHash": "1c782f56c8f2",
+  "scriptCommitSha": "unknown",
+  "description": "C2 inflection criterion: generality across atoms + knot-energy interpretation",
+  "data": {
+    "q_0": 1.1099785955541805,
+    "a_C2_universal": 0.4064276182880347,
+    "A_at_a_C2": 2.4616468395492483,
+    "per_atom_predictions": [
+      {
+        "atom": "proton",
+        "tr_M_substrate": 1.6442727167876254,
+        "pred_borromean_A_m_e": 938.9182313400801,
+        "rho_K_substrate_C2": 571.0234207220935,
+        "rho_K_CODATA": 1116.695943853222,
+        "ratio_substrate_to_codata": 0.5113508505741905,
+        "M_codata_MeV": 938.27208816,
+        "nu_SDP": 1,
+        "A": 1,
+        "m_K_pred_via_nu_SDP": 938.9182313400801,
+        "residual_pct": 0.06886522451576245
+      },
+      {
+        "atom": "neutron",
+        "tr_M_substrate": 1.644272716787625,
+        "pred_borromean_A_m_e": 938.9182313400801,
+        "rho_K_substrate_C2": 571.0234207220938,
+        "rho_K_CODATA": 1118.2352191004463,
+        "ratio_substrate_to_codata": 0.5106469649394947,
+        "M_codata_MeV": 939.56542052,
+        "nu_SDP": 1,
+        "A": 1,
+        "m_K_pred_via_nu_SDP": 938.9182313400801,
+        "residual_pct": -0.06888175807510248
+      },
+      {
+        "atom": "deuteron",
+        "tr_M_substrate": 0.31751143700456325,
+        "pred_borromean_A_m_e": 938.9182313400801,
+        "rho_K_substrate_C2": 2957.1162544503427,
+        "rho_K_CODATA": 11560.160209902107,
+        "ratio_substrate_to_codata": 0.25580235920237165,
+        "M_codata_MeV": 1875.613,
+        "nu_SDP": 1,
+        "A": 2,
+        "m_K_pred_via_nu_SDP": 938.9182313400801,
+        "residual_pct": -49.94072704016873
+      },
+      {
+        "atom": "tritium",
+        "tr_M_substrate": 0.3774526901468523,
+        "pred_borromean_A_m_e": 938.9182313400801,
+        "rho_K_substrate_C2": 2487.5123581044904,
+        "rho_K_CODATA": 14563.205983074608,
+        "ratio_substrate_to_codata": 0.1708080185774673,
+        "M_codata_MeV": 2808.921,
+        "nu_SDP": 2,
+        "A": 3,
+        "m_K_pred_via_nu_SDP": 1877.8364626801601,
+        "residual_pct": -33.14740917668527
+      },
+      {
+        "atom": "He3",
+        "tr_M_substrate": 0.3576755981006183,
+        "pred_borromean_A_m_e": 938.9182313400801,
+        "rho_K_substrate_C2": 2625.055319194438,
+        "rho_K_CODATA": 15365.560517640028,
+        "ratio_substrate_to_codata": 0.1708401926620778,
+        "M_codata_MeV": 2808.392,
+        "nu_SDP": 2,
+        "A": 3,
+        "m_K_pred_via_nu_SDP": 1877.8364626801601,
+        "residual_pct": -33.134816554093575
+      }
+    ],
+    "physical_interpretation": "Inflection of A(a) corresponds to a CRITICAL configuration of the knot's mass-energy functional.  dA/da at inflection is at a stationary value — the marginal mass-cost of extending the spatial integration is at a critical point.  Equivalent to a minimum-energy knot embedding in the Bring-surface fibration."
+  }
+}

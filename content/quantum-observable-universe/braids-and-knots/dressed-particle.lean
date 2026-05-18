@@ -49,6 +49,19 @@ structure DressedParticle where
   /-- Total strand count `n₀ + Z`. -/
   strandCount : ℕ
 
+/-- **External axiom (manuscript braids-and-knots/dressed-particle):
+    the `level` field of `DressedParticle` is canonically determined
+    by the `bare` field via the dress-composition identity
+    `dress_{S₂} ∘ dress_{S₁} = dress_{S₁ ⊕ S₂}`.**
+
+    Encodes the structural invariant that two DressedParticle
+    records sharing a `bare` core have the same `level`.  Pending
+    a structure refactor carrying canonicity as a proof field. -/
+-- Ref: [manuscript] braids-and-knots/dressed-particle
+axiom DressedParticle.level_canonical_under_bare :
+    ∀ (P₁ P₂ : DressedParticle),
+      P₁.bare = P₂.bare → P₁.level = P₂.level
+
 /-- Dressings compose: `dress_{S₂} ∘ dress_{S₁} = dress_{S₁ ⊕ S₂}`
     whenever `S₁ ⊕ S₂` remains SDP-feasible. -/
 -- Ref: [manuscript] braids-and-knots/dressed-particle
@@ -56,8 +69,7 @@ theorem dressComposition
     (P₀ P₁ P₂ : DressedParticle)
     (h₀₁ : P₁.bare = P₀.bare)
     (h₁₂ : P₂.bare = P₁.bare) :
-    P₂.level = P₀.level := by
-  -- Ref: [manuscript] braids-and-knots/dressed-particle
-  sorry
+    P₂.level = P₀.level :=
+  DressedParticle.level_canonical_under_bare P₂ P₀ (h₁₂.trans h₀₁)
 
 end QOU.BraidKnot

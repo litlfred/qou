@@ -1,0 +1,78 @@
+{
+  "engine": "cvxpy+HIGHS+numpy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-17T06:43:40.587178+00:00",
+  "commitSha": "11d1abb54cc521575a88c8fa5c2231ef5a407247",
+  "assertions": [
+    {
+      "name": "proton_active_block_is_2_1",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 65,
+  "computation": "probe-milp-knot-operator-count",
+  "scriptFile": "probe_milp_knot_operator_count.py",
+  "scriptHash": "1d45793a97a9",
+  "scriptCommitSha": "unknown",
+  "description": "MILP with integer knot-operator counts per QOU operator-selection convention",
+  "data": {
+    "q_0": 1.1099785955541805,
+    "z_markov": 0.4993203340335982,
+    "characters": {
+      "chi_3": 1.0,
+      "chi_21": 1.994185810381214,
+      "chi_111": 1.0
+    },
+    "hoefsmit_eigenvalues_21": [
+      0.9731821797458836,
+      1.0210036306353303
+    ],
+    "milp_results_per_nu_target": [
+      {
+        "nu_target": 1,
+        "n_3": 0,
+        "n_21": 1,
+        "n_111": 0,
+        "alpha_3": 0.0,
+        "alpha_21": 1.0,
+        "alpha_111": 0.0,
+        "a_opt": 0.4985464525953035,
+        "active_blocks": [
+          "(2,1)"
+        ]
+      },
+      {
+        "nu_target": 2,
+        "n_3": 0,
+        "n_21": 1,
+        "n_111": 1,
+        "alpha_3": 0.0,
+        "alpha_21": 1.0,
+        "alpha_111": 0.0,
+        "a_opt": 0.4985464525953035,
+        "active_blocks": [
+          "(2,1)",
+          "(1,1,1)"
+        ]
+      },
+      {
+        "nu_target": 3,
+        "n_3": 0,
+        "n_21": 1,
+        "n_111": 2,
+        "alpha_3": 0.0,
+        "alpha_21": 1.0,
+        "alpha_111": 0.0,
+        "a_opt": 0.4985464525953035,
+        "active_blocks": [
+          "(2,1)",
+          "(1,1,1)"
+        ]
+      }
+    ],
+    "conclusion": "MILP with integer knot-operator counts confirms the proton's active operator is the (2,1) standard block (n_21=1 for ν_SDP=1). `a` saturates at z_markov regardless of ν_SDP target — the integration limit is fixed by the feasibility ceiling, not by the count of active operators.  Continuous LP convention is appropriate."
+  }
+}

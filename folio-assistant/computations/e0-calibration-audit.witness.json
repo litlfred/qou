@@ -2,7 +2,7 @@
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "computation": "e0-calibration-audit",
   "description": "Audit of E_0 / Q_β(n) calibration constants across folio-assistant/computations. Reports value-precision drift, anchor-of-pinning violations vs CAL-3, and the PDG-derived uncertainty floor on every E_0-dependent quantity.",
-  "computedAt": "2026-05-17T07:15:53.564640+00:00",
+  "computedAt": "2026-05-18T01:12:08.246600+00:00",
   "reference_blocks": [
     "prop:three-calibration-inputs",
     "rem:calibration-inputs"
@@ -34,7 +34,7 @@
       },
       {
         "file": "folio-assistant/computations/derived_masses.py",
-        "line": 341,
+        "line": 449,
         "pattern": "literal_0_782",
         "match": "0.782",
         "context": "\"0.788 MeV vs CODATA 0.782 MeV at 0.75%).\",",
@@ -284,7 +284,7 @@
       },
       {
         "file": "folio-assistant/computations/paper_six_term_isotope_sweep.py",
-        "line": 894,
+        "line": 921,
         "pattern": "literal_0_78233341",
         "match": "0.78233341",
         "context": "#   T1 (descended Markov):  E_0_β = 0.78233341 MeV per cat unit",
@@ -658,7 +658,7 @@
       },
       {
         "file": "folio-assistant/computations/derived_masses.py",
-        "line": 381,
+        "line": 489,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "\"CAL-3_Q_beta_MeV\": str(Q_BETA_MEV) + \" (cross-check only; predicted by framework below)\",",

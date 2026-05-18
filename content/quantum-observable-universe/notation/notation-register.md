@@ -81,3 +81,13 @@ refers to it.
 | Neutron number | Latin cap | $N$ |
 | Particles | fraktur | $\mathfrak{u}$, $\mathfrak{d}$, $\mathfrak{s}$, $\mathfrak{c}$, $\mathfrak{b}$, $\mathfrak{t}$ (quarks); $\mathfrak{p}$, $\mathfrak{n}$ (proton, neutron); $\mathfrak{H}$, $\mathfrak{H}_p$ (hadron, localised) |
 | Proton number | Latin cap | $Z$ — atomic number. Never use $p$ for proton count; $p$ is reserved for brane points. |
+
+### Lean source convention (cross-chapter)
+
+Applies to every `.lean` file in the paper. Mirrors
+[`CLAUDE.md` §7c](https://github.com/litlfred/qou/blob/main/CLAUDE.md#7c-base-ring-convention-generic-r-vs-archimedean-r-strict).
+
+| Concept | Font | Symbols |
+|---------|------|---------|
+| Generic base ring | Latin cap | $R$ — type variable in Lean (`{R : Type*}` with the weakest typeclass that admits the construction: `[CommRing R]`, `[Field R]`, `[GroupWithZero R]`, etc.). Default for **all** categorical / algebraic / q-deformation / Wenzl–Hecke–Hoefsmit structural data. |
+| Archimedean base ring | blackboard bold | $\mathbb{R}$ (`ℝ` in Lean) — used **only past the archimedean wall**: any declaration that genuinely needs `Real.sqrt`, `Real.rpow`, `Real.cos`, `Real.exp`, `Real.log`, an ordering predicate (`0 < q`), `linarith`, or a CODATA / experimental numerical value. Narrative side: $q \in R$ when only the algebraic structure matters; $q \in \mathbb{R}$ only for archimedean evaluation (e.g. $q_0 \approx 1.1097$). |

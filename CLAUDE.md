@@ -948,6 +948,53 @@ hand-rolled combinatorial rule; the symmetric-crystal route gives the
 correct algebraic answer with less code and an audit trail to the
 KLR / Kashiwara literature (Brundan–Kleshchev, Kashiwara, Lecouvey).
 
+### 7c. Base ring convention: generic `R` vs. archimedean `ℝ` (STRICT)
+
+Every Lean declaration that holds in a generic commutative ring must
+be stated over a **type variable** — never silently specialised to `ℝ`.
+The substrate-to-archimedean wall is the structural cut: a definition
+or theorem that uses any of `Real.sqrt`, `Real.rpow`, `Real.log`,
+`Real.exp`, `Real.cos`, ordering predicates (`0 < q`, `q < 1`),
+`linarith`, or any other archimedean-specific construct **must**
+declare its types as `ℝ`. Everything else — categorical content,
+algebraic identities, q-deformation combinatorics, Wenzl / Hecke /
+Hoefsmit structural data — uses a generic `{R : Type*}` parameter
+with the weakest typeclass that admits the construction:
+
+| Construction | Typeclass | Example |
+|--------------|-----------|---------|
+| Polynomial identity | `[CommRing R]` | `theorem foo (x : R) : (x + 1)^2 = ...` |
+| Inverse / `x⁻¹` | `[Field R]` or `[GroupWithZero R]` | `def bar (Q : R) := 1 / (1 - Q)` |
+| Negative-integer powers `x^(n : ℤ)` | `[GroupWithZero R]` | `Q ^ (contentSum λ)` |
+| Square root / radical | `ℝ` | `noncomputable def hoefsmitB (q : ℝ) := …` |
+| Ordering `0 < q` | `ℝ` (or `[LinearOrderedField R]`) | `theorem bar_inv (q : ℝ) (hq : 0 < q) : …` |
+| `Real.cos`, `Real.exp`, … | `ℝ` | `noncomputable def alpha_N1 (q : ℝ) := Real.cos …` |
+| CODATA / experimental value | `ℝ` | `noncomputable def codata_proton_MeV : ℝ := 938.272` |
+
+**When in doubt, start generic.** Refactoring `ℝ`-specialised code to
+generic `R` later is cheap (parameter sweep); refactoring generic-`R`
+code to `ℝ` when an archimedean construct lands is also cheap (drop
+the parameter). What is *not* cheap is the downstream code that
+inherits the wrong specialisation and accretes archimedean assumptions
+silently. Prefer the more general signature at the point of authoring.
+
+**Lean integer / rational literals** — `(2 : R)`, `((3 : ℕ) : R)`,
+`((p / q : ℚ) : R)` — are uniformly available over any `CommRing R`
+(via `Nat.cast`, `Int.cast`, `Rat.cast`), so concrete combinatorial
+identities like `[2]_q = q + q⁻¹` state cleanly over generic `R` with
+`q : R`.
+
+**Archimedean specialisation** — when a generic-`R` block needs to
+specialise to `ℝ` for a numerical evaluation (e.g. computing the
+substrate `q ≈ 1.1097`), the specialisation lives in a *separate*
+file under `descartes-universe/` or `observations/` and consumes the
+generic result via a `(R := ℝ)` instantiation. The generic block
+itself stays in `braids-and-knots/` or `quantum-observable-universes/`
+without ever mentioning `ℝ`.
+
+See `notation/notation-collisions.md §Base ring convention` for the
+notation-table entry and the §7c row in this rule's table.
+
 ### 8. File hygiene
 
 - Never commit `.lake/`, `lake-packages/`, or `build/`.

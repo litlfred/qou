@@ -182,12 +182,63 @@ def e_0_n_mev(n: int) -> mp.mpf:
     return e_0_n0_mev() * geometric
 
 
+def li2q_symmetric(z, q, terms: int | None = None):
+    """Symmetric q-dilogarithm Li_2^q(z) = Σ_{n≥1} z^n / (n · [n]_q).
+
+    With symmetric q-integer [n]_q = (q^n − q^{-n})/(q − q^{-1}).
+    Per [`prop:mass-endomorphism-tower`](../../content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.md)
+    lines 162–183 (the bounded Kashaev specialisation, distinct from
+    the divergent Faddeev Φ_q). Series converges for |z| < 1.
+
+    When `terms` is None (default), the count is **dynamically scaled
+    to `mp.mp.dps`** so the truncation error stays below the current
+    precision floor: terms ≈ dps · ln(10) / (-ln|z|) + 20-term margin.
+    For |z| near 1 (e.g. per-atom Wedderburn volumes |V_i| ≈ 0.989),
+    this picks ~1100 terms at 50 dps; for small |z| (substrate
+    ℏ_q² ≈ 0.0098), ~30 terms suffice.
+
+    No `lru_cache` — `mp.mp.dps` is global state and a stale cached
+    result at lower precision would silently leak under a precision
+    bump. The series is cheap enough to recompute.
+
+    Uses incremental powers (q_pow *= q, q_inv_pow /= q) to avoid
+    repeated O(n) exponentiation in the tight loop.
+    """
+    if terms is None:
+        abs_z = abs(z)
+        if abs_z >= 1:
+            raise ValueError(
+                f"li2q_symmetric: series diverges for |z| >= 1 (got {abs_z})"
+            )
+        if abs_z < mp.mpf("1e-12"):
+            terms = 50
+        else:
+            terms = int(mp.ceil(mp.mp.dps * mp.ln(10) / (-mp.ln(abs_z)))) + 20
+            terms = max(50, terms)
+    q_minus_qinv = q - 1 / q
+    total = mp.mpf(0)
+    z_pow = mp.mpf(1)
+    q_pow = q
+    q_inv_pow = 1 / q
+    for n in range(1, terms + 1):
+        z_pow *= z
+        n_q = (q_pow - q_inv_pow) / q_minus_qinv
+        total += z_pow / (n * n_q)
+        q_pow *= q
+        q_inv_pow /= q
+    return total
+
+
+# Back-compat alias for any callers using the private name.
+_li2q_symmetric = li2q_symmetric
+
+
 @lru_cache(maxsize=None)
 def e_0_full_mev() -> mp.mpf:
-    """E_0 from the FULL chain, tower-summed (N → ∞).
+    """E_0 from the FULL chain, tower-summed (N → ∞), geometric form.
 
-    E_0^{full} = E_0^{(N=0)} / (1 − ℏ_q²)
-               = m_e / (q_0 · (q_0 - 1)) · 1/(1 − ℏ_q²)
+    E_0^{full,geom} = E_0^{(N=0)} / (1 − ℏ_q²)
+                    = m_e / (q_0 · (q_0 - 1)) · 1/(1 − ℏ_q²)
 
     Per the geometric brane-tower series derived symbolically in
     [`q_beta_form_a_n1_extension.py`](./q_beta_form_a_n1_extension.py)
@@ -197,20 +248,77 @@ def e_0_full_mev() -> mp.mpf:
     Derived from CAL-1 m_e and CAL-2 q_0 only — no CAL-3 (Q_β) input.
     CAL-3 becomes the *prediction*, not an input.
 
-    **Important — direction of the residual.** Wiring the geometric
-    tower form makes the framework-derived E_0 *larger* than the
-    CODATA-calibrated value (`e_0_calibrated_mev()` ≈ 4.155 MeV),
-    not smaller. The N=0 derived overshoots by +0.75%; the
-    tower-summed form overshoots by ≈ +1.75%. The geometric series
-    direction may be a placeholder pending the categorical / Li_2^q
-    derivation review (see
-    [`docs/audits/2026-05-03-tower-mev-calibration-finding.md`](../../docs/audits/2026-05-03-tower-mev-calibration-finding.md)
-    for the open finding that Φ_q is the wrong analytic function
-    and Li_2^q is bounded). Track via Workplan 2 Phase 2.
+    **Two candidate closed forms.** The substrate brane-tower
+    resummation $\\sum_k \\alpha_k \\cdot \\hbar_q^{2k}$ admits at least
+    two candidate closed forms — the (unbounded) geometric series
+    wired here, and the **bounded** symmetric q-dilogarithm form
+    `e_0_full_li2q_mev()`. The categorical question of which is the
+    correct resummation of the $\\alpha_k$ stratum prefactors
+    ([`prop:alpha-k-derivation-procedure`](../../content/quantum-observable-universe/braids-and-knots/alpha-k-derivation-procedure.md))
+    is open — see
+    [`conj:alpha-k-categorical-closure`](../../content/quantum-observable-universe/braids-and-knots/alpha-k-categorical-closure.md).
+    The empirical $\\alpha_k$ values at $H_3$ (1, 0, $z^2$,
+    $z(1+q^{1/2}-q^{-1/2})$) do **not** match the naive geometric
+    recursion $\\alpha_k = \\hbar_q^{2(k-1)}\\alpha_{k-1}$.
+
+    **Direction of the residual.** Wiring the geometric tower form
+    makes the framework-derived E_0 *larger* than the CODATA-
+    calibrated value (`e_0_calibrated_mev()` ≈ 4.155 MeV), not
+    smaller. The N=0 derived overshoots by +0.75%; the geometric
+    tower form overshoots by ≈ +1.75%. The Li_2^q candidate (see
+    `e_0_full_li2q_mev`) gives a numerically close value — the two
+    candidates differ at higher correction orders, and the
+    categorical resolution awaits the conjecture above.
     """
     q0 = _q_0()
     hbar_q = (q0 - 1) / q0
     return e_0_n0_mev() / (1 - hbar_q ** 2)
+
+
+@lru_cache(maxsize=None)
+def e_0_full_li2q_mev() -> mp.mpf:
+    """Bounded Li_2^q tower form (substrate level, candidate).
+
+    E_0^{full,Li2q} := E_0^{(N=0)} · (1 + (−Li_2^q(−ℏ_q²)))
+
+    Per [`prop:mass-endomorphism-tower`](../../content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.md)
+    lines 162–183, the **bounded** Kashaev specialisation of the
+    brane-tower integral is $-\\mathrm{Li}_2^q(-V)$, not the
+    divergent $\\Phi_q(V)$ — the 2026-05-03 audit verified the
+    integration identity $\\int_0^V \\ln_q(1+t)/t\\,dt = -\\mathrm{Li}_2^q(-V)$
+    holds to all displayed digits at $q_0$, while the asserted
+    $\\Phi_q$ form is off by 10⁶ at the high end.
+
+    At the **substrate** level (no atom, single Planck-tick
+    expansion variable $x = \\hbar_q^2$) the bounded analog factor
+    $1 + (-\\mathrm{Li}_2^q(-x))$ matches the geometric factor
+    $1/(1-x) = 1 + x + x^2 + \\ldots$ at leading order in $x$
+    (since $-\\mathrm{Li}_2^q(-x) = x/[1]_q + x^2/(2 [2]_q) + \\ldots$
+    with $[1]_q = 1$) but differs at higher orders, *without* the
+    divergence as $x \\to 1$.
+
+    **Empirical finding at $q_0 \\approx 1.110$:** the substrate
+    Li_2^q form returns ≈ 4.227 MeV — only ≈ 0.012% smaller than
+    the geometric form's 4.227 MeV. Both **overshoot** the CODATA-
+    calibrated 4.155 MeV by ≈ +1.74% (Li_2^q) vs +1.75% (geometric).
+    The bounded substrate form **does not** close CAL-3 in the
+    correct direction at this level. The per-atom Li_2^q evaluation
+    from `prop:mass-endomorphism-tower` (summing
+    $-\\mathrm{Li}_2^q(-|\\hat V_i|)$ over generators with proper
+    $|\\hat V_i|$ values) requires atomic-braid input; see
+    [`conj:alpha-k-categorical-closure`](../../content/quantum-observable-universe/braids-and-knots/alpha-k-categorical-closure.md)
+    for the open question of which categorical resummation closes
+    CAL-3 in the correct direction.
+    """
+    q0 = _q_0()
+    hbar_q = (q0 - 1) / q0
+    hbar_q_sq = hbar_q ** 2
+    # -Li_2^q(-x) = x/[1]_q + x²/(2[2]_q) - x³/(3[3]_q) + … which at
+    # leading order in x matches the geometric correction x = ℏ_q²;
+    # higher-order terms are *bounded* (no divergence as x → 1).
+    li2q_val = li2q_symmetric(-hbar_q_sq, q0)
+    correction = 1 + (-li2q_val)
+    return e_0_n0_mev() * correction
 
 
 @lru_cache(maxsize=None)
@@ -424,7 +532,8 @@ def derivation_summary() -> dict:
 
 
 __all__ = [
-    "e_0_n0_mev", "e_0_n_mev", "e_0_full_mev", "e_0_calibrated_mev",
+    "e_0_n0_mev", "e_0_n_mev", "e_0_full_mev", "e_0_full_li2q_mev",
+    "e_0_calibrated_mev",
     "q_beta_predicted_mev", "q_beta_observable_mev", "q_beta_virtual_mev",
     "proton_mass_mev", "neutron_mass_mev",
     "deuteron_mass_mev", "triton_mass_mev",

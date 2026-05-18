@@ -157,6 +157,18 @@ def main() -> int:
     w.add_data("m_n_predicted_MeV", str(m_n_pred))
     w.add_data("err_vs_codata_ppm", str(err_ppm))
     w.add_data("err_vs_codata_ppb", str(err_ppb))
+    w.add_data("derivation_status", "m_n_via_1param_fit")
+    w.add_data("derivation_status_explanation",
+               "AUDIT 2026-05-17 (commit 8732de45): (μ_d − μ_u) is "
+               "FIT to CODATA Δm = m_n − m_p, NOT substrate-derived. "
+               "m_n prediction is therefore a 1-parameter calibration; "
+               "<1 ppb residual is BY CONSTRUCTION.  Substrate-only "
+               "derivation of (μ_d − μ_u) from V_(2,1) Hoefsmit is "
+               "OPEN — best categorical candidate tested (|d_1| · 4) "
+               "gives 2.77 % residual.  See "
+               "probe_mu_d_minus_mu_u_categorical.py + "
+               "docs/audits/2026-05-17-m-n-substrate-investigation-"
+               "and-lit-search.md")
     w.add_data("strategy_3_m_n_MeV", strategy_3_m_n)
     w.add_data("strategy_3_err_pct", strategy_3_err_pct)
     w.add_data("framework_consistent", True)
