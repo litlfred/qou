@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T05:11:53.144782+00:00",
-  "commitSha": "038daec122d93e6715a05f0a425ca07546f0150d",
+  "computedAt": "2026-05-18T15:47:16.656993+00:00",
+  "commitSha": "d631a4fb890c4c469a4c9fa75b57f39bb20347b9",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 7,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "d9aa432d54f9",
@@ -13,7 +13,7 @@
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 543,
+    "files_scanned": 544,
     "patterns": [
       "P15",
       "P16",
@@ -28,7 +28,7 @@
       "P16": 100,
       "P21": 32,
       "P30": 97,
-      "P31": 31
+      "P31": 28
     },
     "top_files": [
       {
@@ -2053,20 +2053,6 @@
         "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
-        "pattern": "P31",
-        "file": "probe_delta_coupling_leading_form.py",
-        "line": 129,
-        "snippet": "CODATA literal \"206.7682830\"",
-        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
-      },
-      {
-        "pattern": "P31",
-        "file": "probe_delta_coupling_residual_closure.py",
-        "line": 132,
-        "snippet": "CODATA literal \"206.7682830\"",
-        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
-      },
-      {
         "pattern": "P21",
         "file": "probe_delta_lambda_closure_v2_combined_pole.py",
         "line": 1,
@@ -2134,13 +2120,6 @@
         "file": "probe_flavor_split_substrate.py",
         "line": 87,
         "snippet": "CODATA literal \"939.565421\"",
-        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
-      },
-      {
-        "pattern": "P31",
-        "file": "probe_h7a_cross_anchor_a3.py",
-        "line": 87,
-        "snippet": "CODATA literal \"206.7682830\"",
         "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
       {

@@ -159,6 +159,7 @@ When a user request arrives, route to the right skill(s):
 | "glossary / terminology / naming" | `local/ontologist` + `local/content-validation` | collaborator |
 | "witnessed value / drift / numerical literal / :val / hardcoded number / pin to witness" | `local/witnessed-values` + `local/content-validation` | collaborator |
 | "audit compute / compute audit / what can be sped up / find slow scripts / where is sympy.simplify / LaurentQ wiring / BlockCache wiring" | `local/compute-audit` | collaborator |
+| "audit math compute integration / is X wired in / where is prop:foo consumed / props not in compute / validate mass-table sweep" | `local/compute-integration-watcher` | collaborator |
 | "coordinate / coordinate with PR / sibling PR / cherry-pick / cross-PR request" | `local/coordinate` | collaborator |
 | "work on todos / process feedback" | `local/todo-review` | reader |
 | "missing proof (narrative)" | `local/editor` §Proof workflow | collaborator |

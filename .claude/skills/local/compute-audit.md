@@ -250,6 +250,16 @@ numerical equivalence at q₀ before/after.
    exact algebraic outputs.
 5. **Run `bun run validate`** for any content-block touch.
 
+## Sibling skill: `compute-integration-watcher`
+
+This skill scans patterns INSIDE one script (correctness +
+performance, P1–P32). For **cross-layer wiring** — is a paper / Lean
+claim consumed by the production compute chain at all? — use
+`local/compute-integration-watcher`. The two skills are
+complementary: run `compute-audit` to clean up a script, run
+`compute-integration-watcher` to verify the script's outputs are
+threaded into the canonical mass-table sweep.
+
 ## Anti-patterns this skill explicitly rejects
 
 - "Numerology": pattern-matching numerical agreements without a

@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-18T15:30:46.932606+00:00",
-  "commitSha": "e41547d6e96b04e947f0d4bd19d1443e25e6278e",
+  "computedAt": "2026-05-18T15:51:10.956903+00:00",
+  "commitSha": "d631a4fb890c4c469a4c9fa75b57f39bb20347b9",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "paper-six-term-isotope-sweep",
   "scriptFile": "paper_six_term_isotope_sweep.py",
   "scriptHash": "4eadbc257ed9",
-  "scriptCommitSha": "00c83de39f6271b457654587b82615479c001ef1",
+  "scriptCommitSha": "d631a4fb890c4c469a4c9fa75b57f39bb20347b9",
   "description": "Paper 6-term mass formula sweep across light isotopes, replacing the non-Markov-invariant all-subsets extension of combined_tower_isotope_sweep.py.  Each term is Markov-invariant by construction, so different nucleon orderings give the same mass.  Validates isospin symmetry (T vs ³He degeneracy modulo Coulomb + n-p mass diff).",
   "reference_blocks": [
     "thm:knot-mass-formula-unified",
