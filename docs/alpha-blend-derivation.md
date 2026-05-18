@@ -911,7 +911,7 @@ with all mass predictions sub-percent:
 - `knot-mass-formula-unified.md`: unified 6-term formula
 - `borromean-baryon-interpretation.md`: Vol(𝓑_3) = 8G
 - `np-discrepancy-resolution.md`: pre-α* diagnosis
-- `figure-eight-bw-coefficients.md`: piece-5 chirality derivation
+- `six-term-mass-formula-complete.md`: piece-5 chirality derivation
 - `frobenius-codim-universal.md`: Frobenius co-Casimir trace
 
 ## Computational artifacts

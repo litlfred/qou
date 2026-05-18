@@ -127,7 +127,7 @@ Source: [`content/quantum-observable-universe/particle-interactions/q-integer-ma
 | proposition | `prop:explicit-alpha-k-h4` | `content/quantum-observable-universe/braids-and-knots/explicit-alpha-k-h4.ts` |
 | proposition | `prop:exterior-square-borromean` | `content/quantum-observable-universe/braids-and-knots/exterior-square-borromean.ts` |
 | proposition | `prop:figure-eight-branching-rule` | `content/quantum-observable-universe/braids-and-knots/figure-eight-branching-rule.ts` |
-| proposition | `prop:figure-eight-bw-coefficients` | `content/quantum-observable-universe/braids-and-knots/figure-eight-bw-coefficients.ts` |
+| proposition | `prop:six-term-mass-formula-complete` | `content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.ts` |
 | proposition | `prop:full-pole-structure-mass-trace` | `content/quantum-observable-universe/braids-and-knots/full-pole-structure-mass-trace.ts` |
 | proposition | `prop:gb-residue-spectral-sum` | `content/quantum-observable-universe/braids-and-knots/gb-residue-spectral-sum.ts` |
 | proposition | `prop:gb-spectral-sequence` | `content/quantum-observable-universe/braids-and-knots/gb-spectral-sequence.ts` |
@@ -228,7 +228,7 @@ Source: [`content/quantum-observable-universe/molecular-construction/palindromic
 | proposition | `prop:explicit-alpha-k-h4` | `content/quantum-observable-universe/braids-and-knots/explicit-alpha-k-h4.ts` |
 | proposition | `prop:exterior-square-borromean` | `content/quantum-observable-universe/braids-and-knots/exterior-square-borromean.ts` |
 | proposition | `prop:figure-eight-branching-rule` | `content/quantum-observable-universe/braids-and-knots/figure-eight-branching-rule.ts` |
-| proposition | `prop:figure-eight-bw-coefficients` | `content/quantum-observable-universe/braids-and-knots/figure-eight-bw-coefficients.ts` |
+| proposition | `prop:six-term-mass-formula-complete` | `content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.ts` |
 | proposition | `prop:full-pole-structure-mass-trace` | `content/quantum-observable-universe/braids-and-knots/full-pole-structure-mass-trace.ts` |
 | proposition | `prop:gb-residue-spectral-sum` | `content/quantum-observable-universe/braids-and-knots/gb-residue-spectral-sum.ts` |
 | proposition | `prop:gb-spectral-sequence` | `content/quantum-observable-universe/braids-and-knots/gb-spectral-sequence.ts` |
@@ -329,7 +329,7 @@ Source: [`content/quantum-observable-universe/molecular-construction/shell-closu
 | proposition | `prop:explicit-alpha-k-h4` | `content/quantum-observable-universe/braids-and-knots/explicit-alpha-k-h4.ts` |
 | proposition | `prop:exterior-square-borromean` | `content/quantum-observable-universe/braids-and-knots/exterior-square-borromean.ts` |
 | proposition | `prop:figure-eight-branching-rule` | `content/quantum-observable-universe/braids-and-knots/figure-eight-branching-rule.ts` |
-| proposition | `prop:figure-eight-bw-coefficients` | `content/quantum-observable-universe/braids-and-knots/figure-eight-bw-coefficients.ts` |
+| proposition | `prop:six-term-mass-formula-complete` | `content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.ts` |
 | proposition | `prop:full-pole-structure-mass-trace` | `content/quantum-observable-universe/braids-and-knots/full-pole-structure-mass-trace.ts` |
 | proposition | `prop:gb-residue-spectral-sum` | `content/quantum-observable-universe/braids-and-knots/gb-residue-spectral-sum.ts` |
 | proposition | `prop:gb-spectral-sequence` | `content/quantum-observable-universe/braids-and-knots/gb-spectral-sequence.ts` |
@@ -898,7 +898,7 @@ Source: [`content/quantum-observable-universe/observations/borromean-quark.ts`](
 | proposition | `prop:explicit-alpha-k-h4` | `content/quantum-observable-universe/braids-and-knots/explicit-alpha-k-h4.ts` |
 | proposition | `prop:exterior-square-borromean` | `content/quantum-observable-universe/braids-and-knots/exterior-square-borromean.ts` |
 | proposition | `prop:figure-eight-branching-rule` | `content/quantum-observable-universe/braids-and-knots/figure-eight-branching-rule.ts` |
-| proposition | `prop:figure-eight-bw-coefficients` | `content/quantum-observable-universe/braids-and-knots/figure-eight-bw-coefficients.ts` |
+| proposition | `prop:six-term-mass-formula-complete` | `content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.ts` |
 | proposition | `prop:frobenius-s-classification` | `content/quantum-observable-universe/braids-and-knots/frobenius-s-classification.ts` |
 | proposition | `prop:full-pole-structure-mass-trace` | `content/quantum-observable-universe/braids-and-knots/full-pole-structure-mass-trace.ts` |
 | proposition | `prop:gb-residue-spectral-sum` | `content/quantum-observable-universe/braids-and-knots/gb-residue-spectral-sum.ts` |

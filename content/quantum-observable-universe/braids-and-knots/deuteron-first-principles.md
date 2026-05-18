@@ -133,7 +133,7 @@ neutron contribution, not the partition sum.  Paths forward:*
 
 1. *The **paper's own** figure-eight-BW formula with chirality
    factors
-   ([figure-eight BW coefficients](#prop:figure-eight-bw-coefficients))
+   ([figure-eight BW coefficients](#thm:six-term-mass-formula-complete))
    gives $T$ at $0.505\%$ and $^3\mathrm{He}$ at $0.856\%$
    agreement with AME.  Chirality factors per knot type:*
 

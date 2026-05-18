@@ -1,10 +1,10 @@
 import { conjecture } from "../../schema/builders";
 
 /**
- * The Bethe-Weizsäcker coefficients are q-integer products.
+ * The seven-term atomic mass-formula coefficients are q-integer products.
  *
- * All seven extended BW coefficients are derivable from the substrate
- * parameter q₀ alone as products of quantum integers
+ * All seven coefficients are derivable from the substrate parameter q₀
+ * alone as products of quantum integers
  * [n]_q = (q^n - q^{-n})/(q - q^{-1}) times m_e.  The two additional
  * terms (exchange Coulomb and shell correction) are derived from Hecke
  * representation theory and the shell closure / palindromicity
@@ -12,7 +12,7 @@ import { conjecture } from "../../schema/builders";
  */
 export default conjecture({
   label: "conj:q-integer-mass-formula",
-  title: "Atomic mass formula with $q$-integer Bethe--Weizs\\\"acker coefficients",
+  title: "Seven-term atomic mass formula with $q$-integer coefficients",
   uses: [
     "thm:wedderburn-mass-formula",
     "prop:operator-selection-lp",
@@ -21,7 +21,6 @@ export default conjecture({
   tags: [
     "mass-formula",
     "q-integer",
-    "Bethe-Weizsacker",
     "zero-parameters",
     "Wedderburn",
     "exchange-coulomb",

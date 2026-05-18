@@ -374,7 +374,6 @@ export default chapter({
         "deuteron-binding-frobenius-codim",
         "hoefsmit-seminormal-form",
         "figure-eight-branching-rule",
-        "figure-eight-bw-coefficients",
         "universal-braid-branching",
         "hoefsmit-scattering-pipeline",
         "hecke-convergence-bound",

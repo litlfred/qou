@@ -148,7 +148,7 @@ non-invariance as Term 2.*
   reverse+invert; V2 invert each, keep order = mirror knot $K^*$;
   V3 reverse only; V4 V2 with explicit averaged-crossing notation).*
 - *Earlier blocks (now superseded):*
-  - *[figure-eight BW coefficients](#prop:figure-eight-bw-coefficients)
+  - *[figure-eight BW coefficients](#thm:six-term-mass-formula-complete)
     derived the amphichiral $a_{4_1} = 1 - h^2$ via Fricke identity.*
   - *[chirality Frobenius self-pairing](#prop:chirality-from-frobenius-self-pairing)
     framed chirality as $\tau(\beta \beta^*)$.*

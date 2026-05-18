@@ -15,7 +15,7 @@ chains; identify the canonical substrate-only predictor.
 | **T2** | brane tower, single gen | [`prop:mass-endomorphism-tower`](../../content/quantum-observable-universe/braids-and-knots/mass-endomorphism-tower.md) | **derived** (3 paths, see below) |
 | **T3** | brane tower, gen-pair | same | **derived** (3 paths) |
 | **T4** | $m_e \cdot \mathrm{tr}_M(C_{\dim_q}^{H_n(R, q)})$ | [`thm:frobenius-codim-universal`](../../content/quantum-observable-universe/braids-and-knots/frobenius-codim-universal.md) | derived (per-$3A$ form) |
-| **T5** | $a_K \cdot \mathcal{C}_K$ chirality | [`prop:figure-eight-bw-coefficients`](../../content/quantum-observable-universe/braids-and-knots/figure-eight-bw-coefficients.md) | derived (for D, T, ⁴He) |
+| **T5** | $a_K \cdot \mathcal{C}_K$ chirality | [`prop:six-term-mass-formula-complete`](../../content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.md) | derived (for D, T, ⁴He) |
 | **T6** | jet-prefix Habiro residue tail | (`pure_hecke_binding.py`) | **open R&D** |
 
 ### T2 + T3 has three derivation paths in the paper

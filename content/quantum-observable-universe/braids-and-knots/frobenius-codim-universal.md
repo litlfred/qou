@@ -228,7 +228,7 @@ $\sigma_w$ representing $\varrho$.  This is both a **feature** and a
   $\varrho_{\mathfrak{n}}$ or any other trefoil-like vortex.
   Vortex-dependent corrections (e.g. chirality factors
   $\{1+h, 1-h^2, (1-h^2)^2\}$ per
-  ([figure-eight BW coefficients](#prop\:figure-eight-bw-coefficients))
+  ([figure-eight BW coefficients](#prop\:six-term-mass-formula-complete))
   or knot-factor Frobenius pairings per
   ([knot-factor Frobenius pairing](#conj\:knot-factor-frobenius-pairing))
   — are separate structural terms beyond $\tau(C_{\dim_q})$.*
@@ -243,7 +243,7 @@ three tiers:*
    co-Casimir $\tau(C_{\dim_q}^{(A)})$.*
 3. *Isotope-specific (vortex-dependent but structural):
    chirality / knot-factor coefficients from
-   `prop:figure-eight-bw-coefficients`.*
+   `thm:six-term-mass-formula-complete`.*
 
 **Consistency.**
 

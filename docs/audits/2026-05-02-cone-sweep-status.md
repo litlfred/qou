@@ -24,7 +24,7 @@ provable blocks:
 | `conj:hyperbolic-volume-transcendence` | `prop:geom-yekutieli-alignment` |
 | `conj:knot-factor-frobenius-pairing` | `prop:knot-factor-spectral-form`, `thm:knot-mass-formula-unified` |
 | `conj:palindromicity-orbital-type` | only via `conj:q-integer-mass-formula` |
-| `conj:q-integer-mass-formula` | `prop:wigner-coefficient-derivation`, `prop:figure-eight-bw-coefficients` |
+| `conj:q-integer-mass-formula` | `prop:wigner-coefficient-derivation`, `prop:six-term-mass-formula-complete` |
 | `conj:shell-closure-nf-term-count` | `prop:magic-numbers-from-q` |
 | `conj:shell-correction-term-seven` | `prop:derived-mass-formula-light-isotopes`, `prop:plancherel-term-7-formulation` |
 

@@ -32,7 +32,7 @@ $$
   Frobenius co-Casimir correction
   ([partition-sum residual](#prop:partition-sum-proton-residual)).*
 - *$B_{\mathrm{BW}+\chi}$ is the paper's BW + chirality formula
-  ([figure-eight BW coefficients](#prop:figure-eight-bw-coefficients))
+  ([figure-eight BW coefficients](#thm:six-term-mass-formula-complete))
   with chirality factor $1 - h^2$ for $A = 3$ and $(1 - h^2)^2$ for $A = 4$.*
 - *$B_{\mathrm{BW}}$ is the standard BW formula without chirality, plus a shell correction for magic numbers.*
 
@@ -139,14 +139,14 @@ $\lambda \vdash 3A$.  Paper's BW formula captures this collective
 content via the Hecke-algebra-derived coefficients
 $\lambda_V = 2[2]_q[7]_q m_e$, $\lambda_S = 2[4]_q^2 m_e$, etc.
 The chirality factor $1 - h^2$ is the $H_3$-level figure-eight
-topology correction ([figure-eight BW coefficients](#prop:figure-eight-bw-coefficients)).*
+topology correction ([figure-eight BW coefficients](#thm:six-term-mass-formula-complete)).*
 
 **No double-counting: SW and BW are not independent.**
 
 *The paper's $B_{\mathrm{bulk}}$ coefficients are derived from
 the Wedderburn channel weights $(w_{\mathrm{sym}}, w_{\mathrm{std}}, w_{\mathrm{alt}})$
 times character differences $\chi_{4_1}(\lambda) - \chi_{B_3}(\lambda)$
-([figure-eight BW coefficients](#prop:figure-eight-bw-coefficients) proof).
+([figure-eight BW coefficients](#thm:six-term-mass-formula-complete) proof).
 The Schur–Weyl descended trace $|\mathrm{tr}_M(T_w)|$ is
 $\sum_\lambda w_\lambda \chi_\lambda(T_w)$ for the **specific**
 braid word $T_w$, weighted by $w_\lambda$.  The two are computing
@@ -167,7 +167,7 @@ in the BW regime at all**, so asking for its chirality factor is
 a category error.*
 
 *The paper's figure-eight BW derivation
-([figure-eight BW coefficients](#prop:figure-eight-bw-coefficients))
+([figure-eight BW coefficients](#thm:six-term-mass-formula-complete))
 explicitly starts from the $4_1$ knot on $H_3(R, q)$ and derives
 $a_K = 1 - h^2$ from the character $\chi_{4_1}(2,1) = 2 - [3]_q
 = -1 - h^2$.  For $D$ (satellite topology, $H_6(R, q)$), that
@@ -182,7 +182,7 @@ which already distinguishes positive and negative crossings
 through the Hecke eigenvalues $(q, -q^{-1})$.*
 
 *Recommended update to
-[figure-eight BW coefficients](#prop:figure-eight-bw-coefficients):*
+[figure-eight BW coefficients](#thm:six-term-mass-formula-complete):*
 
 *Add a scope note: "The $a_K$ chirality factor applies to
 isotopes in the Borromean / $4_1$ topology ($A \geq 3$). For
