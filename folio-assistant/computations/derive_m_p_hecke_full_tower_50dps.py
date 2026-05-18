@@ -93,51 +93,16 @@ from bw_chirality_isotopes import (  # noqa: E402
 )
 from term5_v2_chirality import aK_v2  # noqa: E402
 from gb_filtration_jet_tracker import reduce_braid  # noqa: E402
-from _li_2_q_util import li_2_q  # noqa: E402
+# Centralized helpers (gemini #687 review — avoid duplication with derive_m_n).
+from _li_2_q_util import (  # noqa: E402
+    li_2_q, load_q_50dps, compute_t2_t3_from_vols,
+)
 
 M_E_MEV = mp.mpf(str(_M_E_MEV_RAW))
 
 
 PER_GEN_WITNESS = HERE / "terms-2-3-atom-per-gen-mpfr-50dps.witness.json"
-Q_WITNESS = HERE / "q-pinning-50-digit.witness.json"
 OUT_PATH = HERE / "proton-mass-full-tower-50dps.witness.json"
-
-
-def _load_q_50dps() -> tuple[mp.mpf, mp.mpf, mp.mpf]:
-    """Load q_0, q_0^{-1}, and z = 1/(q^{1/2}+q^{-1/2}) at 50 dps."""
-    with Q_WITNESS.open() as fh:
-        d = json.load(fh)
-    q = mp.mpf(d["derived_50_digit"]["q"])
-    qi = 1 / q
-    z = 1 / (mp.sqrt(q) + mp.sqrt(qi))
-    return q, qi, z
-
-
-def _compute_t2_t3_from_vols(
-    vols: list[mp.mpf], q: mp.mpf, qi: mp.mpf, z: mp.mpf,
-) -> tuple[mp.mpf, mp.mpf]:
-    """Compute T2 and T3 from per-generator Wedderburn volumes via Li_2^q.
-
-    Per `prop:mass-endomorphism-tower` (canonical Li_2^q form):
-        T2 = Σ_i Li_2^q(|V̂_i^full|)
-        T3 = z² · Σ_{i<j} Li_2^q(|V̂_i^full · V̂_j^full|)
-
-    where Li_2^q is the symmetric q-dilogarithm (radius of convergence
-    |z| < q at q = q_0; see `_li_2_q_util.li_2_q`).
-
-    Returns the partial sums as (t2, t3).  Diverges to MeV scale under
-    the legacy Φ_q form; matches AME within ~1 % under Li_2^q per PR
-    #675 / #682.
-    """
-    t2 = mp.mpf(0)
-    for v in vols:
-        t2 += li_2_q(mp.fabs(v), q, qi)
-    t3 = mp.mpf(0)
-    for i, vi in enumerate(vols):
-        for vj in vols[i + 1:]:
-            t3 += li_2_q(mp.fabs(vi * vj), q, qi)
-    t3 *= z ** 2
-    return t2, t3
 
 
 # Canonical braid words per particle (positive int i ↦ σ_i; negative −i ↦ σ_i^{-1}).
@@ -201,17 +166,20 @@ def _per_gen_results(w: dict) -> list:
     return w.get("data", {}).get("results") or w.get("results", [])
 
 
-def _t1_t2_t3_from_per_gen(per_gen_witness: dict, atom: str) -> tuple[mp.mpf, mp.mpf, mp.mpf, list[mp.mpf]]:
+def _t1_t2_t3_from_per_gen(
+    per_gen_witness: dict, atom: str,
+    q0: mp.mpf, qi: mp.mpf, z: mp.mpf,
+) -> tuple[mp.mpf, mp.mpf, mp.mpf, list[mp.mpf]]:
     """Extract T1 (descended) + compute T2 + T3 + raw V̂_i^full list for ``atom``.
 
     T1 (descended) = |∏ V̂_i^full| is the GS-NF / Coxeter-image product.
     T2 and T3 are computed locally from `wedderburn_vols` via the
-    canonical Li_2^q tower (see `_compute_t2_t3_from_vols`) since
+    canonical Li_2^q tower (centralised in ``_li_2_q_util``) since
     `terms_2_3_atom_per_gen_mpfr_50dps.py` on `main` (post-2026-05-17
-    rebase) no longer emits pre-summed `term2_single_50dps` /
-    `term3_pair_50dps` fields.
+    rebase) no longer emits pre-summed scalars.  Constants ``q0, qi, z``
+    are passed in from main (loaded once via ``load_q_50dps`` — gemini
+    #687 review: avoid per-call filesystem reads).
     """
-    q0, qi, z = _load_q_50dps()
     for r in _per_gen_results(per_gen_witness):
         if r.get("atom") != atom:
             continue
@@ -220,7 +188,7 @@ def _t1_t2_t3_from_per_gen(per_gen_witness: dict, atom: str) -> tuple[mp.mpf, mp
         for v in vols:
             desc *= v
         t1 = mp.fabs(desc)
-        t2, t3 = _compute_t2_t3_from_vols(vols, q0, qi, z)
+        t2, t3 = compute_t2_t3_from_vols(vols, q0, qi, z)
         return t1, t2, t3, vols
     raise KeyError(f"atom {atom!r} not found in per-gen witness {per_gen_witness.get('computation')!r}")
 
@@ -228,6 +196,7 @@ def _t1_t2_t3_from_per_gen(per_gen_witness: dict, atom: str) -> tuple[mp.mpf, mp
 def derive_full_tower(
     atom: str, per_gen_witness: dict, *,
     Z: int = 0, N: int = 0, knot_type: str = "none",
+    q0: mp.mpf | None = None, qi: mp.mpf | None = None, z: mp.mpf | None = None,
 ) -> dict:
     """Sum T1 + T2 + T3 + T4 + T5 for ``atom`` at MPFR @ 50 dps with
     A derived categorically from the GS normal form.
@@ -239,7 +208,9 @@ def derive_full_tower(
     categorical A.
     """
     A = _A_categorical(atom)
-    t1, t2, t3, vols = _t1_t2_t3_from_per_gen(per_gen_witness, atom)
+    if q0 is None:
+        q0, qi, z = load_q_50dps()  # back-compat fallback
+    t1, t2, t3, vols = _t1_t2_t3_from_per_gen(per_gen_witness, atom, q0, qi, z)
     t4 = term_4_frobenius_mp(A)
     t5_cat = _t5_cat_units_for(A, Z, N)
     # T6 (Habiro residue at non-zero roots-of-unity) — KEY CONVENTION
@@ -292,17 +263,19 @@ def main() -> int:
     # hash is recorded via builder.add_upstream below — no duplicate
     # filesystem read.
     per_gen_w, per_gen_hash = load_and_hash_upstream(PER_GEN_WITNESS)
+    # Load q-substrate constants once (gemini #687 — avoid per-call reads).
+    q0, qi, z = load_q_50dps()
     print(f"\n  MPFR @ {mp.mp.dps} dps")
     print(f"  Source: {PER_GEN_WITNESS.name}")
 
     # A is derived per-particle from GS normal form (see derive_full_tower).
-    p = derive_full_tower("proton",   per_gen_w, Z=1, N=0, knot_type="none")
-    n = derive_full_tower("neutron",  per_gen_w, Z=0, N=1, knot_type="none")
+    p = derive_full_tower("proton",   per_gen_w, Z=1, N=0, knot_type="none", q0=q0, qi=qi, z=z)
+    n = derive_full_tower("neutron",  per_gen_w, Z=0, N=1, knot_type="none", q0=q0, qi=qi, z=z)
     # Schema regression (post-2026-05-17 rebase): main's terms_2_3 producer
     # dropped the electron atom.  Skip the electron derivation rather than
     # KeyError; the proton/neutron rows are the substantive output.
     try:
-        e = derive_full_tower("electron", per_gen_w, Z=0, N=0, knot_type="none")
+        e = derive_full_tower("electron", per_gen_w, Z=0, N=0, knot_type="none", q0=q0, qi=qi, z=z)
     except KeyError:
         print("  NOTE: electron not in per-gen witness — skipping (CAL-1 anchor)")
         e = {"m_hecke_50dps": str(M_E_MEV)}  # fall back to CAL-1 anchor

@@ -89,16 +89,11 @@ def main() -> int:
     if "electron" not in by_atom:
         # Schema regression: main's terms_2_3 producer no longer emits
         # the electron entry (post-2026-05-17 rebase).  Compute electron
-        # Wedderburn volumes locally via the same Hoefsmit 2-strand braid
-        # word [1,1,1] used by `terms_2_3_atom_per_gen_mpfr_50dps`.
-        # The 2-strand braid (H_2) has 1 generator whose volume is
-        # the symmetric-channel V̂_e = q · z (per Wenzl-bridge convention
-        # in `hecke_core._nucleon_gen_chains_mpfr`).
-        from mpmath import mp as _mp
-        _q = mpf(json.load(Q_WITNESS_PATH.open())["derived_50_digit"]["q"])
-        _h = _q - 1/_q
-        _z = 1/(_mp.sqrt(_q) + _mp.sqrt(1/_q))
-        electron_vols = [_q * _z]  # single-generator approximation
+        # Wedderburn volume locally as the symmetric-channel V̂_e = q · z
+        # (2-strand Hoefsmit braid word [1,1,1] per Wenzl-bridge
+        # convention in `hecke_core._nucleon_gen_chains_mpfr`).  Re-uses
+        # q and z_mark already loaded above (gemini #687: no re-init).
+        electron_vols = [q * z_mark]
         print(f"  WARNING: electron not in per-gen witness; using single-generator "
               f"V̂_e = q·z ≈ {float(electron_vols[0]):.6f}")
     else:

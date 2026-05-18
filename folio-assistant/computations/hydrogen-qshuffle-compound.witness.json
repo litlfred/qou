@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T00:40:24.344604+00:00",
-  "commitSha": "0fd092af098ad97f907de89376fe0a570b24dc76",
+  "computedAt": "2026-05-18T00:54:36.548445+00:00",
+  "commitSha": "27303e6755b4e07583d4d861302880a74c3e30a7",
   "assertions": [
     {
       "name": "T2_finite",
@@ -18,11 +18,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 10,
   "computation": "hydrogen-qshuffle-compound",
   "scriptFile": "hydrogen_qshuffle_compound.py",
-  "scriptHash": "990fa11aa91e",
-  "scriptCommitSha": "19339e09c0c85f150f1458ea90a59be549c0f5c5",
+  "scriptHash": "b63e70681a86",
+  "scriptCommitSha": "27303e6755b4e07583d4d861302880a74c3e30a7",
   "description": "¹H mass via q-shuffle convolution (full-order, *_q)",
   "data": {
     "convention": "q-shuffle compound braid (*_q on disjoint strand sets ⇒ concatenation with boundary identity gen)",

@@ -85,3 +85,52 @@ def li_2_q(
         if mp.fabs(term) < eps:
             break
     return total
+
+
+# ── Shared helpers (centralized per gemini #687 review) ─────────
+
+from pathlib import Path  # noqa: E402
+import json as _json  # noqa: E402
+
+_Q_WITNESS_DEFAULT = Path(__file__).parent / "q-pinning-50-digit.witness.json"
+
+
+def load_q_50dps(path: Path | None = None) -> tuple[mpf, mpf, mpf]:
+    """Load q_0, q_0^{-1}, and z = 1/(q^{1/2}+q^{-1/2}) at full
+    ``mp.dps`` precision from the canonical pinning witness.
+
+    Returns ``(q, q_inv, z)``.  Shared by every script that ingests
+    per-generator Wedderburn volumes — centralized per gemini #687.
+    """
+    if path is None:
+        path = _Q_WITNESS_DEFAULT
+    with path.open() as fh:
+        d = _json.load(fh)
+    q = mpf(d["derived_50_digit"]["q"])
+    qi = mpf(1) / q
+    z = mpf(1) / (mp.sqrt(q) + mp.sqrt(qi))
+    return q, qi, z
+
+
+def compute_t2_t3_from_vols(
+    vols: list[mpf], q: mpf, q_inv: mpf, z: mpf,
+) -> tuple[mpf, mpf]:
+    """Compute T2 = Σ_i Li_2^q(|V̂_i|) and T3 = z²·Σ_{i<j} Li_2^q(|V̂_i·V̂_j|).
+
+    Canonical Li_2^q brane-tower contributions per
+    ``prop:mass-endomorphism-tower``, applied locally to a list of
+    per-generator Wedderburn full-volume scalars.
+
+    Used by ``derive_m_{p,n}_hecke_full_tower_50dps`` when the
+    upstream producer no longer emits pre-summed
+    ``term2_single_50dps`` / ``term3_pair_50dps`` fields.
+    """
+    t2 = mpf(0)
+    for v in vols:
+        t2 = t2 + li_2_q(mp.fabs(v), q, q_inv)
+    t3 = mpf(0)
+    for i, vi in enumerate(vols):
+        for vj in vols[i + 1:]:
+            t3 = t3 + li_2_q(mp.fabs(vi * vj), q, q_inv)
+    t3 = t3 * z ** 2
+    return t2, t3
