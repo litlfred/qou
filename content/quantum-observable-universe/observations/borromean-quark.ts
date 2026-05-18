@@ -4,6 +4,10 @@ export default conjecture({
   label: "conj:borromean-quark",
   title:
     "Quarks as Borromean-linked unknots in the exceptional divisor",
+  lean: {
+    ref: "qou:QOU.Descartes.BorromeanQuark",
+    validation: "not_checked",
+  },
   tags: [
     "borromean",
     "quark",
