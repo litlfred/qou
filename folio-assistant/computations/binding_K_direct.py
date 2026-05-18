@@ -59,8 +59,8 @@ HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
-mp.mp.dps = 50
-
+from _precision import set_compute_dps, fmt
+set_compute_dps()  # mp.mp.dps via QOU_COMPUTE_DPS (default 50)
 from codata_constants import M_E_MEV, M_P_MEV, M_N_MEV  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
@@ -215,9 +215,9 @@ def main() -> int:
         row = {
             "atom": atom,
             "Z": Z, "N": N, "A": Z + N,
-            "M_codata_MeV": str(M_codata),
-            "constituent_MeV": str(constituent),
-            "binding_codata_MeV": str(binding_codata),
+            "M_codata_MeV": fmt(M_codata),
+            "constituent_MeV": fmt(constituent),
+            "binding_codata_MeV": fmt(binding_codata),
         }
 
         if abs_tr is None:
