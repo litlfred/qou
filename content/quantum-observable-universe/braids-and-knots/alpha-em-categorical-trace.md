@@ -13,6 +13,17 @@
 > multiplicative $q$-rational family entirely. This remark is retained
 > for historical context.
 
+**Class-A discipline status.** The legacy closed form $1/\alpha_{EM} =
+q[9]_q[10]_q$ reproduced below is a PSLQ uniqueness match on a
+52-element basis at $q_0$, not a derivation. Per the
+[three-calibration discipline](three-calibration-inputs.md), this is
+a Class-A opt-out (acknowledged-stub pending structural derivation),
+superseded by [`prop:alpha-em-categorical-trace-ratio`](#prop:alpha-em-categorical-trace-ratio)
+(structural) and the additive Bring zero-mode lead
+[`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode).
+The block is `remark`-kind precisely because it makes no derivation
+claim; the warning paragraph below restates this in narrative form.
+
 The numerical PSLQ-confirmed form
 
 $$

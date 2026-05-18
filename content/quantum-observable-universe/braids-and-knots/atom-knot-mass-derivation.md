@@ -25,6 +25,19 @@ formalises what the brane-tower contributes; closure of the nucleon-
 mass anchors requires the additional categorical content in
 $\rho_K$.
 
+**Class-A discipline status.** The 173× shortfall is captured by the
+open $\rho_K$ in [`prop:atomic-mass-gb-nf`](atomic-mass-gb-nf.md);
+until that derivation closes, this proposition's numerical output
+relies on a fourth-calibration anchor (whatever pins $\rho_K$).
+Per the [three-calibration discipline](three-calibration-inputs.md),
+that is a Class-A opt-out (acknowledged-stub pending structural
+derivation), tracked under
+[Workplan 0b](../../../docs/audits/2026-05-10-workplan-0b-script-rewire-handoff.md)
+and the [m_p chain closure gap](../../../docs/audits/2026-05-17-m-p-chain-closure-gap-analysis.md).
+The structural form (this block) is correct and independent of the
+$\rho_K$ closure; only its numerical instantiation is currently
+empirical.
+
 **Statement (categorical, pre-Archimedean form).**  Let
 $\mathcal{U} = (\mathbf{C}, \varTheta, G, \mathcal{S})$ be a quantum
 observable universe at substrate parameter $q_0$

@@ -1,5 +1,31 @@
 ## Statement
 
+**Class-A discipline status.** The three forms below have **different
+discipline statuses**:
+
+- **(GB-NF)** is the production-target algebraic form. Closure depends
+  on substrate derivation of $\rho_K$, currently an **open problem**
+  (see §Open below).
+- **(constituent)** consumes CODATA $m_{\mathfrak{p}}, m_{\mathfrak{n}}$
+  as upstream inputs — a **Class-A opt-out** (acknowledged 4th/5th
+  calibration injection) tracked under
+  [Workplan 0b](../../../docs/audits/2026-05-10-workplan-0b-script-rewire-handoff.md);
+  the substrate-pure replacement is $m_{\mathfrak{n}} = m_{\mathfrak{p}}
+  + Q_\beta + m_e$ (with $m_{\mathfrak{p}}$ from
+  [`prop:flavor-split-substrate`](../observations/flavor-split-substrate.md)
+  + the m_p chain closure).
+- **(six-term spectral)** consumes a proton-mass calibration to fix
+  $E_0$ — also a **Class-A opt-out** until $E_0$ is independently
+  derived from CAL-3 ($Q_\beta(n)$).
+
+Per the [three-calibration discipline](three-calibration-inputs.md),
+the (constituent) and (six-term spectral) forms violate the rule by
+admitting additional calibrations beyond CAL-1/2/3; the §Open §Negative
+result on shift-anchor sections below document the empirical
+falsifications and the structural barriers to closure. Treat numerical
+outputs from those two forms as illustrative until the substrate-pure
+replacements land.
+
 **Proposition.**
 *Let $(Z, N)$ be a neutral atom with atomic braid
 $\beta_K \in B_{n}$, where $n = 3A + Z$ and $A = Z + N$
