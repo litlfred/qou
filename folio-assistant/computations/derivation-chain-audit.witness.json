@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T03:17:52.288422+00:00",
-  "commitSha": "0451e0e4c66e854e90ac8ed425d7148161814160",
+  "computedAt": "2026-05-18T03:43:49.544730+00:00",
+  "commitSha": "6073bf16939986316e2f1bbe32c7a05573d117ae",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -572,11 +572,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 2,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "875916a587c227572f421c22053ad81371976ccc",
+  "scriptCommitSha": "67f1df24c9d76e62b2bb25a331814e511ba6dc3f",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
   "data": {
@@ -2374,6 +2374,7 @@
         "probe-gamma-gamma-h3-psd-scan.witness.json",
         "probe-gamma-gamma-lr-embed-h6.witness.json",
         "probe-hoefsmit-content-selector.witness.json",
+        "probe-isobar-delta-m-substrate.witness.json",
         "probe-lp-cost-dominant-partition.witness.json",
         "probe-milp-knot-operator-count.witness.json",
         "probe-mu-d-minus-mu-u-categorical.witness.json",

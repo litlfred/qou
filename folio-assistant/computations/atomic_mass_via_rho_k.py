@@ -108,9 +108,12 @@ if _os.environ.get("SUBSTRATE_NUCLEON_ANCHORS"):
     # not been regenerated.
     _c2_wit = HERE / "probe-a-selection-criteria.witness.json"
     if _c2_wit.exists():
-        _c2_data = json.load(_c2_wit.open()).get("data", {})
+        # m_p_pred is the substrate-pure C2-inflection mass in MeV;
+        # value is absolute and does NOT require E_0 scaling.
+        with _c2_wit.open() as _fh:
+            _c2_data = json.load(_fh).get("data", {})
         _m_p_substrate = mp.mpf(str(
-            _c2_data.get("c2_inflection", {}).get("m_p_MeV")
+            _c2_data.get("closest_to_post_hoc", {}).get("m_p_pred")
             or "938.9182"
         ))
     else:
