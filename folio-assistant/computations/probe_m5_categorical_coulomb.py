@@ -27,6 +27,18 @@ The M4 probe added an EMPIRICAL "interface-type" correction
 categorical Q·h captures this directly without an empirical fit:
 ³He has Q = +4 (per the braid-word inspection), giving
 E_C(³He) ≈ Q·h·E_0 ≈ 3.5 MeV.
+
+CLASS-A acknowledged-anchor banner (per Workplan-0b/M_N):
+This script imports M_*_MEV_VALIDATION constants from
+`codata_constants.py` as production inputs (not just as
+comparison targets).  M_N is currently a CLASS-A acknowledged-
+stub anchor pending its own substrate derivation — see
+`docs/audits/2026-05-18-workplan-0b-m-n-substrate-derivation.md`
+for the open spec.  Until that lands, the calibration-discipline
+audit (`canonical-script-input-audit`) classifies this script
+as "with-substrate-splitting" or "anchor-pending"; reviewers
+should treat the M_*_MEV_VALIDATION usage as CAL-3-ish anchor,
+NOT as an independent calibration input.
 """
 
 from __future__ import annotations

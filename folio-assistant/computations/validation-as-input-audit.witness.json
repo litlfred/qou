@@ -1,25 +1,25 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T16:39:18.092970+00:00",
-  "commitSha": "74aa18470524511148fc9b8146868f090fcae222",
+  "computedAt": "2026-05-18T17:50:26.409281+00:00",
+  "commitSha": "d48c5820fc95036f3935e40976c6590336753705",
   "assertions": [
     {
       "name": "no_i11_violations",
-      "computed": 0.0,
+      "computed": 1.0,
       "expected": 1.0,
-      "passed": false,
+      "passed": true,
       "tolerance": 0.0,
       "unit": "boolean (1.0 = no script uses _VALIDATION as a prediction input)",
       "source": "Closure gate: every script using a _VALIDATION constant either uses it only as comparison target or carries an explicit CLASS-A acknowledged-anchor banner."
     }
   ],
-  "allPassed": false,
+  "allPassed": true,
   "durationMs": 7,
   "computation": "validation-as-input-audit",
   "scriptFile": "validation_as_input_audit.py",
   "scriptHash": "1535a12e8aa7",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "8d025364c5f553aa009b5f71179be92660371c17",
   "description": "I11 audit per local/compute-integration-watcher: scripts that import M_*_MEV_VALIDATION constants from codata_constants.py are classified by usage. The validation constants are tagged 'DO NOT USE AS PREDICTION INPUTS' in the source; using them outside `pred - VAL` / `abs(...)` / `expected=VAL` style comparison contexts is an I11 violation unless the script's docstring carries a CLASS-A acknowledged-anchor banner (typical for the M_N anchor pending Workplan-0b). Per-script classification surfaces the violation queue for follow-up.",
   "contentBlock": "I11 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
@@ -42,10 +42,9 @@
   },
   "data": {
     "by_result": {
-      "i11_violation": 30,
+      "ok_acknowledged_anchor": 32,
       "imported_unused": 4,
-      "ok_comparison_only": 1,
-      "ok_acknowledged_anchor": 2
+      "ok_comparison_only": 1
     },
     "rows": [
       {
@@ -56,11 +55,11 @@
         ],
         "comparison_lines": [],
         "violation_lines": [
-          75,
-          76
+          90,
+          91
         ],
         "violation_count": 2,
-        "result": "i11_violation"
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "folio-assistant/computations/build_neutron_mass_50dps_chain.py",
@@ -69,10 +68,10 @@
         ],
         "comparison_lines": [],
         "violation_lines": [
-          79
+          95
         ],
         "violation_count": 1,
-        "result": "i11_violation"
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "folio-assistant/computations/build_proton_mass_50dps_chain.py",
@@ -89,10 +88,10 @@
         ],
         "comparison_lines": [],
         "violation_lines": [
-          373
+          388
         ],
         "violation_count": 1,
-        "result": "i11_violation"
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "folio-assistant/computations/derive_m_baryon_volume_form.py",
@@ -101,8 +100,8 @@
           "M_N_MEV_VALIDATION"
         ],
         "comparison_lines": [
-          122,
-          123
+          124,
+          125
         ],
         "violation_lines": [],
         "violation_count": 0,
@@ -115,10 +114,10 @@
         ],
         "comparison_lines": [],
         "violation_lines": [
-          55
+          71
         ],
         "violation_count": 1,
-        "result": "i11_violation"
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "folio-assistant/computations/derive_m_p_hecke_full_tower_50dps.py",
@@ -127,10 +126,10 @@
         ],
         "comparison_lines": [],
         "violation_lines": [
-          83
+          99
         ],
         "violation_count": 1,
-        "result": "i11_violation"
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "folio-assistant/computations/derived_masses.py",
@@ -140,10 +139,10 @@
         ],
         "comparison_lines": [],
         "violation_lines": [
-          98
+          113
         ],
         "violation_count": 1,
-        "result": "i11_violation"
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "folio-assistant/computations/e0_calibration_audit.py",
@@ -155,13 +154,13 @@
         ],
         "comparison_lines": [],
         "violation_lines": [
-          51,
-          52,
-          55,
-          56
+          66,
+          67,
+          70,
+          71
         ],
         "violation_count": 4,
-        "result": "i11_violation"
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "folio-assistant/computations/habiro_exact_mass_endomorphism.py",
@@ -171,11 +170,11 @@
         ],
         "comparison_lines": [],
         "violation_lines": [
-          237,
-          238
+          253,
+          254
         ],
         "violation_count": 2,
-        "result": "i11_violation"
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "folio-assistant/computations/hydrogen_step_by_step.py",
@@ -184,10 +183,10 @@
         ],
         "comparison_lines": [],
         "violation_lines": [
-          57
+          71
         ],
         "violation_count": 1,
-        "result": "i11_violation"
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "folio-assistant/computations/low_isotope_mass_table.py",
@@ -197,11 +196,11 @@
         ],
         "comparison_lines": [],
         "violation_lines": [
-          91,
-          92
+          106,
+          107
         ],
         "violation_count": 2,
-        "result": "i11_violation"
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "folio-assistant/computations/markov_trace_axiomatic_multi_atom.py",
@@ -219,11 +218,11 @@
         ],
         "comparison_lines": [],
         "violation_lines": [
-          94,
-          95
+          109,
+          110
         ],
         "violation_count": 2,
-        "result": "i11_violation"
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "folio-assistant/computations/paper_six_term_isotope_sweep.py",
@@ -233,11 +232,11 @@
         ],
         "comparison_lines": [],
         "violation_lines": [
-          1058,
-          1059
+          1073,
+          1074
         ],
         "violation_count": 2,
-        "result": "i11_violation"
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "folio-assistant/computations/path_b_defect_binding_probe.py",
@@ -247,11 +246,11 @@
         ],
         "comparison_lines": [],
         "violation_lines": [
-          52,
-          53
+          68,
+          69
         ],
         "violation_count": 2,
-        "result": "i11_violation"
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "folio-assistant/computations/path_b_habiro_mass_probe.py",
@@ -261,11 +260,11 @@
         ],
         "comparison_lines": [],
         "violation_lines": [
-          57,
-          58
+          73,
+          74
         ],
         "violation_count": 2,
-        "result": "i11_violation"
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "folio-assistant/computations/phase2_proton_m_e_hecke_diagnostic.py",
@@ -286,17 +285,17 @@
         ],
         "comparison_lines": [],
         "violation_lines": [
-          55,
-          56,
-          57,
           67,
           68,
           69,
-          77,
-          78
+          79,
+          80,
+          81,
+          89,
+          90
         ],
         "violation_count": 8,
-        "result": "i11_violation"
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "folio-assistant/computations/probe_delta_lambda_closure_v3_full_vs_filtered.py",
@@ -310,16 +309,16 @@
         ],
         "comparison_lines": [],
         "violation_lines": [
-          39,
-          40,
-          41,
           51,
           52,
-          60,
-          61
+          53,
+          63,
+          64,
+          72,
+          73
         ],
         "violation_count": 7,
-        "result": "i11_violation"
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "folio-assistant/computations/probe_delta_lambda_closure_v4_two_row.py",
@@ -333,16 +332,16 @@
         ],
         "comparison_lines": [],
         "violation_lines": [
-          35,
-          36,
-          37,
-          46,
           47,
-          64,
-          65
+          48,
+          49,
+          58,
+          59,
+          76,
+          77
         ],
         "violation_count": 7,
-        "result": "i11_violation"
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "folio-assistant/computations/probe_delta_lambda_closure_v5_frobenius_chirality.py",
@@ -356,16 +355,16 @@
         ],
         "comparison_lines": [],
         "violation_lines": [
-          48,
-          49,
-          50,
           60,
           61,
-          69,
-          70
+          62,
+          72,
+          73,
+          81,
+          82
         ],
         "violation_count": 7,
-        "result": "i11_violation"
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "folio-assistant/computations/probe_delta_lambda_per_partition_shift_nf_closure.py",
@@ -379,17 +378,17 @@
         ],
         "comparison_lines": [],
         "violation_lines": [
-          48,
-          49,
-          50,
           60,
           61,
           62,
-          70,
-          71
+          72,
+          73,
+          74,
+          82,
+          83
         ],
         "violation_count": 8,
-        "result": "i11_violation"
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "folio-assistant/computations/probe_delta_lambda_via_shift_nf_wenzl.py",
@@ -403,19 +402,19 @@
         ],
         "comparison_lines": [],
         "violation_lines": [
-          61,
-          62,
-          63,
-          72,
           73,
           74,
           75,
-          76,
-          77,
-          93
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          105
         ],
         "violation_count": 11,
-        "result": "i11_violation"
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "folio-assistant/computations/probe_derived_A_from_gs_normal_form.py",
@@ -424,10 +423,10 @@
         ],
         "comparison_lines": [],
         "violation_lines": [
-          53
+          69
         ],
         "violation_count": 1,
-        "result": "i11_violation"
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "folio-assistant/computations/probe_flavor_dressed_mass_split.py",
@@ -451,8 +450,8 @@
         ],
         "comparison_lines": [],
         "violation_lines": [
-          80,
-          81
+          82,
+          83
         ],
         "violation_count": 2,
         "result": "ok_acknowledged_anchor"
@@ -469,18 +468,18 @@
         ],
         "comparison_lines": [],
         "violation_lines": [
-          39,
-          40,
-          41,
-          50,
           51,
           52,
           53,
-          54,
-          55
+          62,
+          63,
+          64,
+          65,
+          66,
+          67
         ],
         "violation_count": 9,
-        "result": "i11_violation"
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "folio-assistant/computations/probe_m3_full_chain_n4_mass_table.py",
@@ -494,12 +493,12 @@
         ],
         "comparison_lines": [],
         "violation_lines": [
-          7,
-          8,
-          9
+          22,
+          23,
+          24
         ],
         "violation_count": 3,
-        "result": "i11_violation"
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "folio-assistant/computations/probe_m4_magic_shell_correction.py",
@@ -513,18 +512,18 @@
         ],
         "comparison_lines": [],
         "violation_lines": [
-          58,
-          59,
-          60,
-          65,
-          66,
-          67,
-          68,
-          69,
-          70
+          70,
+          71,
+          72,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82
         ],
         "violation_count": 9,
-        "result": "i11_violation"
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "folio-assistant/computations/probe_m5_categorical_coulomb.py",
@@ -538,15 +537,15 @@
         ],
         "comparison_lines": [],
         "violation_lines": [
-          51,
-          52,
-          53,
-          58,
-          59,
-          60
+          63,
+          64,
+          65,
+          70,
+          71,
+          72
         ],
         "violation_count": 6,
-        "result": "i11_violation"
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "folio-assistant/computations/probe_per_orientation_skein.py",
@@ -556,11 +555,11 @@
         ],
         "comparison_lines": [],
         "violation_lines": [
-          106,
-          107
+          123,
+          124
         ],
         "violation_count": 2,
-        "result": "i11_violation"
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "folio-assistant/computations/probe_q_beta_cos_sweep_and_three_irrep.py",
@@ -569,14 +568,14 @@
           "M_N_MEV_VALIDATION"
         ],
         "comparison_lines": [
-          84
+          101
         ],
         "violation_lines": [
-          40,
-          41
+          57,
+          58
         ],
         "violation_count": 2,
-        "result": "i11_violation"
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "folio-assistant/computations/probe_q_beta_tightening_landscape.py",
@@ -586,11 +585,11 @@
         ],
         "comparison_lines": [],
         "violation_lines": [
-          61,
-          62
+          78,
+          79
         ],
         "violation_count": 2,
-        "result": "i11_violation"
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "folio-assistant/computations/probe_v2_plus_cos_q_beta_compose.py",
@@ -600,12 +599,12 @@
         ],
         "comparison_lines": [],
         "violation_lines": [
-          59,
-          72,
-          73
+          73,
+          86,
+          87
         ],
         "violation_count": 3,
-        "result": "i11_violation"
+        "result": "ok_acknowledged_anchor"
       },
       {
         "path": "folio-assistant/computations/proton_m_e_anomaly_audit.py",
@@ -622,11 +621,11 @@
         ],
         "comparison_lines": [],
         "violation_lines": [
-          48,
-          49
+          60,
+          61
         ],
         "violation_count": 2,
-        "result": "i11_violation"
+        "result": "ok_acknowledged_anchor"
       }
     ]
   }

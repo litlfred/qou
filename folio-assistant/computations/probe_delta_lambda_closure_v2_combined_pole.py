@@ -35,6 +35,18 @@ A = 2..4 by SYT enumeration in `crystal_shift_nf`. Beyond, it's
 extrapolated. For ⁴He (A=4): shift_NF = 79 = 2·(47 − 7.5) — but
 7.5 is half-integer, so the cancellation goes to a fractional pole
 order. The combined-leading-pole filter is therefore approximate.
+
+CLASS-A acknowledged-anchor banner (per Workplan-0b/M_N):
+This script imports M_*_MEV_VALIDATION constants from
+`codata_constants.py` as production inputs (not just as
+comparison targets).  M_N is currently a CLASS-A acknowledged-
+stub anchor pending its own substrate derivation — see
+`docs/audits/2026-05-18-workplan-0b-m-n-substrate-derivation.md`
+for the open spec.  Until that lands, the calibration-discipline
+audit (`canonical-script-input-audit`) classifies this script
+as "with-substrate-splitting" or "anchor-pending"; reviewers
+should treat the M_*_MEV_VALIDATION usage as CAL-3-ish anchor,
+NOT as an independent calibration input.
 """
 
 from __future__ import annotations
