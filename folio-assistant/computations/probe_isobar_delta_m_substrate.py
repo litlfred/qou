@@ -74,7 +74,9 @@ from codata_constants import M_P_MEV_VALIDATION, M_N_MEV_VALIDATION  # noqa: E40
 mp.dps = 50
 
 Q_WIT = HERE / "q-pinning-50-digit.witness.json"
-q = mpf(json.load(Q_WIT.open())["derived_50_digit"]["q"])
+# Context manager to avoid file-handle leak (gemini #690 medium).
+with Q_WIT.open() as _fh:
+    q = mpf(json.load(_fh)["derived_50_digit"]["q"])
 qi = mpf(1) / q
 
 # Validation-only CODATA constants — used as COMPARISON targets,
