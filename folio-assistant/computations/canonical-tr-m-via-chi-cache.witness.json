@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-17T23:55:39.204514+00:00",
-  "commitSha": "b1c23c5f350cfcfe5788026e63f37aeb8707ac08",
+  "computedAt": "2026-05-18T00:45:28.750572+00:00",
+  "commitSha": "6999562efff9792968d5473821f5bca6a970fe53",
   "assertions": [],
   "allPassed": true,
   "durationMs": 1,
   "computation": "canonical-tr-m-via-chi-cache",
   "scriptFile": "canonical_tr_m_via_chi_cache.py",
   "scriptHash": "9222fc672a20",
-  "scriptCommitSha": "a59ab6f593c2d4c50cc666e8a06a2e7aa363fabe",
+  "scriptCommitSha": "49075a0f5cc4b05228f2f70ce902543617a29e49",
   "description": "Canonical |tr_M(β_atomic(Z, N))| at q_0 computed as Σ_λ y_λ(q_0) · χ^λ(β; q_0), the ~50-line combiner called out by `docs/audits/2026-05-17-knot-fusion-step1-audit.md` (PR #681). Consumes the symbolic χ^λ chi-cache from `per_irrep_pole_atom.py` and the 50-dps `y_lambda_at(n, q_0)` table. Partial chi caches yield truncated traces (`partitions_used < partitions_total`); downstream consumers should check `partial_cache` before using the result for the 1ppb comparison.",
   "parameters": {
     "q_0_50dps": "1.1099785955541805",
@@ -956,12 +956,12 @@
       "N": 2,
       "n_strands": 12,
       "partitions_total": 77,
-      "partitions_used": 16,
+      "partitions_used": 22,
       "partial_cache": true,
       "source": "numerical_chi_cache",
       "q_0_50dps": "1.1099785955541805",
-      "tr_M_q0": "0.051444373654957589227501455704908902381741058619039",
-      "abs_tr_M_q0": "0.051444373654957589227501455704908902381741058619039",
+      "tr_M_q0": "0.053856030626245133284284863679459664230955210252545",
+      "abs_tr_M_q0": "0.053856030626245133284284863679459664230955210252545",
       "y_lambda_load_time_sec": 0.0,
       "tr_m_sum_time_sec": 0.0,
       "per_lambda": [
@@ -1122,6 +1122,71 @@
           "y_lambda_at_q0": "-0.000017836038205158153867358277790571740509892928989934",
           "chi_lambda_at_q0": "-23.126951359128195193645510675268521543737344337512",
           "contribution": "0.00041249318801024478176421160448503911129145320707641"
+        },
+        {
+          "partition": [
+            7,
+            2,
+            2,
+            1
+          ],
+          "y_lambda_at_q0": "-0.0000068090994392484652570568787057394846640442686211583",
+          "chi_lambda_at_q0": "-25.099814794551082486263662729638458664734119724869",
+          "contribution": "0.00017090713484281810794906881298785897223583555273207"
+        },
+        {
+          "partition": [
+            7,
+            2,
+            1,
+            1,
+            1
+          ],
+          "y_lambda_at_q0": "0.0000048263092013835171414594665191174711961615163930682",
+          "chi_lambda_at_q0": "11.763008717655480163980184855748972255516411221585",
+          "contribution": "0.00005677191720997517054184856959630364623635978076953"
+        },
+        {
+          "partition": [
+            7,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "y_lambda_at_q0": "-0.0000011400957464074627932463221805855232177053796018179",
+          "chi_lambda_at_q0": "5.9335784836797431966061972632669884856792175590395",
+          "contribution": "-0.000006764847590218118107729592208274781625053358866525"
+        },
+        {
+          "partition": [
+            6,
+            6
+          ],
+          "y_lambda_at_q0": "0.000087665260219009379977867921874853129112469503898064",
+          "chi_lambda_at_q0": "20.470386787186632716411607354723830853550030952035",
+          "contribution": "0.0017945417844824875437776140016528100034231623478701"
+        },
+        {
+          "partition": [
+            6,
+            5,
+            1
+          ],
+          "y_lambda_at_q0": "0.000065970075485058714347954228976102715128246012433612",
+          "chi_lambda_at_q0": "3.0433709654006906407712172474622216216246128272688",
+          "contribution": "0.00020077141231651957438462655433495361136030192339086"
+        },
+        {
+          "partition": [
+            6,
+            4,
+            2
+          ],
+          "y_lambda_at_q0": "0.00004203075056887348340585413607359316313355115764257",
+          "chi_lambda_at_q0": "4.6496807071223263361302568210863937909566419385851",
+          "contribution": "0.00019542957002596177823797962818711039758354538760993"
         }
       ]
     }
