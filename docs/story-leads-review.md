@@ -1,11 +1,9 @@
 # Story-Leads Review — All Section Intros
 
 Single-page consolidation of every section's opening prose lead,
-in document order. Drafts from PR #745 (marked 🆕 **DRAFT**)
-are templated stubs flagged `_[draft]_` for an author refinement
-pass; pre-existing leads (marked ✓) are shown as-is for context.
-
-Each entry header links to the lead block's `.md` file on GitHub.
+in document order. PR #745 drafts (🆕) are now framed as
+*why / so-what* prose, not block-title listings. Each draft is
+still marked `_[draft]_` for the author refinement pass.
 
 ---
 
@@ -34,42 +32,42 @@ Each entry header links to the lead block's `.md` file on GitHub.
 
 ### §2.2 Preliminary: rigid monoidal categories  `sec:rigid-monoidal`  · 🆕 **DRAFT**  · [`rigid-monoidal-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-universes/rigid-monoidal-intro.md)
 
-> _[draft]_ This section develops *Preliminary: rigid monoidal categories*. The arc runs from **Snake identity** through **Why monoidal categories?** to **Rigid monoidal category**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Before we can talk about the heart of *Quantum Universes*, we need the language of rigid monoidal categories. This section fixes the definitions, conventions, and minimum structural facts that everything downstream assumes. Working this out here makes the Quantum Universe available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §2.3 The Quantum Universe  `sec:quantum-universe`  · 🆕 **DRAFT**  · [`quantum-universe-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-universes/quantum-universe-intro.md)
 
-> _[draft]_ This section develops *The Quantum Universe*. The arc runs from **Quantum Universe** through **Existence of quantum universes** to **Proof of existence of quantum universes**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Why the Quantum Universe? Because the rest of the chapter cannot be stated without it. This section establishes the propositions and lemmas that make the Quantum Universe actionable, and identifies which of its features the downstream physics will actually use. Working this out here makes consequences of the QU axioms available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §2.4 Consequences of the QU axioms  `sec:qu-consequences`  · 🆕 **DRAFT**  · [`qu-consequences-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-universes/qu-consequences-intro.md)
 
-> _[draft]_ This section develops *Consequences of the QU axioms*. The arc runs from **Frobenius relation** through **Proof of Frobenius relation** to **The Frobenius relation in $\mathrm{SU}(2)$**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ With the structural setup in place, the natural question is what *follows* from it. This section pushes on consequences of the QU axioms — the immediate consequences of the previous section's definitions, sharpened into the form the rest of the chapter actually uses. Working this out here makes structures on a Quantum Universe available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §2.5 Structures on a Quantum Universe  `sec:qu-structures`  · 🆕 **DRAFT**  · [`qu-structures-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-universes/qu-structures-intro.md)
 
-> _[draft]_ This section develops *Structures on a Quantum Universe*. The arc runs from **Categorical connection and curvature** through **Existence of categorical connections** to **Proof of existence of categorical connections**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ This section gives structures on a Quantum Universe the formal definitions and structural data the rest of the chapter will manipulate. The point is not to motivate — that happens around the section, in the chapter intro and in the propositions that consume these definitions — but to commit to a precise object so the downstream arguments can run. Subsequent sections build on the results developed here.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 
 ## Ch 3 — Quantum Observable Universes  `quantum-observable-universes`
 
 ### §3.1 The Quantum Observable Universe  `sec:qou-definition`  · 🆕 **DRAFT**  · [`qou-definition-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/qou-definition-intro.md)
 
-> _[draft]_ This chapter establishes *Quantum Observable Universes*. The opening sections lay foundations — **Quantum Observable Universe**, **Existence of quantum observable universes**, **Axiom 1 — Haar state gives a non-degenerate Frobenius pairing** — and the chapter then develops the structural consequences and physical interpretations. (Placeholder draft — replace with the chapter's actual framing, dependencies on earlier chapters, and outline of its sections.)
+> _[draft]_ Why the Quantum Observable Universe? Because the rest of the chapter cannot be stated without it. This section establishes the propositions and lemmas that make the Quantum Observable Universe actionable, and identifies which of its features the downstream physics will actually use. Working this out here makes emergence from observability available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §3.2 Emergence from observability  `sec:emergence`  · 🆕 **DRAFT**  · [`emergence-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/emergence-intro.md)
 
-> _[draft]_ This section develops *Emergence from observability*. The arc runs from **Frobenius relation for $\mathrm{SU}(2)$** through **Involutive structure on $\mathrm{Rep}(\mathrm{SU}(2))$** to **Volume form from rigidity and symplectic self-duality**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Abstract structure is only as useful as the instances it covers. This section makes emergence from observability concrete: each example or realisation is chosen to pin down a different aspect of the general theory. Working this out here makes maximal torus and weight decomposition available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §3.3 Maximal torus and weight decomposition  `sec:weight-decomposition`  · 🆕 **DRAFT**  · [`weight-decomposition-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/weight-decomposition-intro.md)
 
-> _[draft]_ This section develops *Maximal torus and weight decomposition*. The arc runs from **Maximal torus and weight subcategory** through **Maximal torus for $\mathrm{SU}(2)$** to **Weight decomposition**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ This section gives maximal torus and weight decomposition the formal definitions and structural data the rest of the chapter will manipulate. The point is not to motivate — that happens around the section, in the chapter intro and in the propositions that consume these definitions — but to commit to a precise object so the downstream arguments can run. Working this out here makes vectors, hadrons, and the PawLei basis available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §3.4 Vectors, hadrons, and the PawLei basis  `sec:vectors-hadrons`  · 🆕 **DRAFT**  · [`vectors-hadrons-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/vectors-hadrons-intro.md)
 
-> _[draft]_ This section develops *Vectors, hadrons, and the PawLei basis*. The arc runs from **Adjoint trace and the categorical inner product** through **Pawlowski--Leitner basis for $\mathrm{Hom}(V_j, V_{1/2}^{\otimes n})$** to **Inner product on intertwiner spaces**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Why vectors, hadrons, and the PawLei basis? Because the rest of the chapter cannot be stated without it. This section establishes the propositions and lemmas that make vectors, hadrons, and the PawLei basis actionable, and identifies which of its features the downstream physics will actually use. Working this out here makes differential structures and gauge actions available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §3.5 Differential structures and gauge actions  `sec:differential-structures`  · 🆕 **DRAFT**  · [`differential-structures-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/differential-structures-intro.md)
 
-> _[draft]_ This section develops *Differential structures and gauge actions*. The arc runs from **Categorical Reeb derivation** through **Existence of the categorical Reeb derivation** to **Proof of existence of the categorical Reeb derivation**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ This section gives differential structures and gauge actions the formal definitions and structural data the rest of the chapter will manipulate. The point is not to motivate — that happens around the section, in the chapter intro and in the propositions that consume these definitions — but to commit to a precise object so the downstream arguments can run. Working this out here makes substrate parameter and deformation available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §3.6 Substrate parameter and deformation  `sec:substrate-parameter`  · ✓ existing  · [`quantum-universe-explication.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/quantum-universe-explication.md)
 
@@ -122,47 +120,47 @@ Each entry header links to the lead block's `.md` file on GitHub.
 
 ### §3.9 Categorical Dirac operator  `sec:categorical-dirac-operator`  · 🆕 **DRAFT**  · [`categorical-dirac-operator-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/categorical-dirac-operator-intro.md)
 
-> _[draft]_ This section develops *Categorical Dirac operator*. The arc runs from **Categorical Dirac operator** through **Existence of the categorical Dirac operator** to **Proof of existence of the categorical Dirac operator**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Why categorical Dirac operator? Because the rest of the chapter cannot be stated without it. This section establishes the propositions and lemmas that make categorical Dirac operator actionable, and identifies which of its features the downstream physics will actually use. Working this out here makes categorical Lagrangian available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §3.10 Categorical Lagrangian  `sec:categorical-lagrangian`  · 🆕 **DRAFT**  · [`categorical-lagrangian-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/categorical-lagrangian-intro.md)
 
-> _[draft]_ This section develops *Categorical Lagrangian*. The arc runs from **Categorical Lagrangian** through **Existence of the categorical Lagrangian** to **Proof of existence of the categorical Lagrangian**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Why categorical Lagrangian? Because the rest of the chapter cannot be stated without it. This section establishes the propositions and lemmas that make categorical Lagrangian actionable, and identifies which of its features the downstream physics will actually use. Working this out here makes categorical action available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §3.11 Categorical action  `sec:categorical-action`  · 🆕 **DRAFT**  · [`categorical-action-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/categorical-action-intro.md)
 
-> _[draft]_ This section develops *Categorical action*. The arc runs from **Categorical action** through **Existence of the categorical action** to **Proof of existence of the categorical action**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Why categorical action? Because the rest of the chapter cannot be stated without it. This section establishes the propositions and lemmas that make categorical action actionable, and identifies which of its features the downstream physics will actually use. Working this out here makes variational equations and wavefronts available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §3.12 Variational equations and wavefronts  `sec:variational-equations`  · 🆕 **DRAFT**  · [`variational-equations-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/variational-equations-intro.md)
 
-> _[draft]_ This section develops *Variational equations and wavefronts*. The arc runs from **Variational equations of the categorical action** through **Proof of Variational equations of the categorical action** to **Wavefront propagation and the categorical Dirac equation**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Abstract structure is only as useful as the instances it covers. This section makes variational equations and wavefronts concrete: each example or realisation is chosen to pin down a different aspect of the general theory. Working this out here makes particles, fermions, bosons, and observation available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §3.13 Particles, fermions, bosons, and observation  `sec:particles`  · 🆕 **DRAFT**  · [`particles-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/particles-intro.md)
 
-> _[draft]_ This section develops *Particles, fermions, bosons, and observation*. The arc runs from **Categorical $q$-deformed exterior derivative** through **Existence of the categorical $q$-exterior derivative** to **Proof of existence of the categorical $q$-exterior derivative**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Why particles, fermions, bosons, and observation? Because the rest of the chapter cannot be stated without it. This section establishes the propositions and lemmas that make particles, fermions, bosons, and observation actionable, and identifies which of its features the downstream physics will actually use. Working this out here makes geometric interpretations available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §3.14 Geometric interpretations  `sec:geometric-interpretations`  · 🆕 **DRAFT**  · [`geometric-interpretations-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/geometric-interpretations-intro.md)
 
-> _[draft]_ This section develops *Geometric interpretations*. The arc runs from **Differential forms and the classical vector calculus operators** through **The $q$-Laplacian as quantum averaging** to **Closed formula for the $q$-codifferential $\delta_q$**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Abstract structure is only as useful as the instances it covers. This section makes geometric interpretations concrete: each example or realisation is chosen to pin down a different aspect of the general theory. Working this out here makes categorical instanton and self-duality available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §3.15 Categorical instanton and self-duality  `sec:instanton`  · 🆕 **DRAFT**  · [`instanton-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/instanton-intro.md)
 
-> _[draft]_ This section develops *Categorical instanton and self-duality*. The arc runs from **Categorical instanton** through **Existence of categorical instantons** to **Proof of existence of categorical instantons**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Why categorical instanton and self-duality? Because the rest of the chapter cannot be stated without it. This section establishes the propositions and lemmas that make categorical instanton and self-duality actionable, and identifies which of its features the downstream physics will actually use. Working this out here makes non-vanishing of $d_q^2$ and jet prolongation available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §3.16 Non-vanishing of $d_q^2$ and jet prolongation  `sec:dq-squared`  · 🆕 **DRAFT**  · [`dq-squared-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/dq-squared-intro.md)
 
-> _[draft]_ This section develops *Non-vanishing of $d_q^2$ and jet prolongation*. The arc runs from **Non-vanishing of $d_q^2$** through **Proof of Non-vanishing of $d_q^2$** to **Categorical $q$-Lie bracket**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ This section gives non-vanishing of $d_q^2$ and jet prolongation the formal definitions and structural data the rest of the chapter will manipulate. The point is not to motivate — that happens around the section, in the chapter intro and in the propositions that consume these definitions — but to commit to a precise object so the downstream arguments can run. Working this out here makes $q$-Deformed operators available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §3.17 $q$-Deformed operators  `sec:q-deformed-operators`  · 🆕 **DRAFT**  · [`q-deformed-operators-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/q-deformed-operators-intro.md)
 
-> _[draft]_ This section develops *$q$-Deformed operators*. The arc runs from **$q$-Deformed exterior derivative** through **$q$-Deformed Lie bracket** to **$q$-Deformed connection**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Abstract structure is only as useful as the instances it covers. This section makes $q$-Deformed operators concrete: each example or realisation is chosen to pin down a different aspect of the general theory. Working this out here makes heat equation, Laplace, Fourier available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §3.18 $q$-Harmonic analysis: heat equation, Laplace, Fourier  `sec:q-harmonic-analysis`  · 🆕 **DRAFT**  · [`q-harmonic-analysis-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/q-harmonic-analysis-intro.md)
 
-> _[draft]_ This section develops *$q$-Harmonic analysis: heat equation, Laplace, Fourier*. The arc runs from **$q$-Heat equation** through **Well-posedness of the $q$-heat equation** to **Proof of well-posedness of the $q$-heat equation**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Why heat equation, Laplace, Fourier? Because the rest of the chapter cannot be stated without it. This section establishes the propositions and lemmas that make heat equation, Laplace, Fourier actionable, and identifies which of its features the downstream physics will actually use. Working this out here makes eigenvalue labelling, ribbon, orientation available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §3.19 Braiding conventions: eigenvalue labelling, ribbon, orientation  `sec:braiding-conventions`  · 🆕 **DRAFT**  · [`braiding-conventions-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/braiding-conventions-intro.md)
 
-> _[draft]_ This section develops *Braiding conventions: eigenvalue labelling, ribbon, orientation*. The arc runs from **The unit-circle convention for the braiding eigenvalue** through **The element $\sqrt{q}$ and the ribbon structure** to **The sign of $\sqrt{q}$ as a spin structure**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Abstract structure is only as useful as the instances it covers. This section makes eigenvalue labelling, ribbon, orientation concrete: each example or realisation is chosen to pin down a different aspect of the general theory. Working this out here makes categorical context available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §3.20 Elaboration: categorical context  `sec:elaboration-intro`  · ✓ existing  · [`intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/intro.md)
 
@@ -176,18 +174,18 @@ Each entry header links to the lead block's `.md` file on GitHub.
 
 ### §3.21 Non-vanishing of $d_q^2$ and the $q$-jacobiator  `sec:dq-squared-elaboration`  · 🆕 **DRAFT**  · [`dq-squared-elaboration-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/dq-squared-elaboration-intro.md)
 
-> _[draft]_ This section develops *Non-vanishing of $d_q^2$ and the $q$-jacobiator*. The arc runs from **$d_q^2$ does not vanish** through **Proof of $d_q^2$ does not vanish** to **Jacobiator of the q-Lie bracket**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Why non-vanishing of $d_q^2$ and the $q$-jacobiator? Because the rest of the chapter cannot be stated without it. This section establishes the propositions and lemmas that make non-vanishing of $d_q^2$ and the $q$-jacobiator actionable, and identifies which of its features the downstream physics will actually use. Working this out here makes physical elaborations available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §3.22 Physical elaborations  `sec:physical-elaborations`  · 🆕 **DRAFT**  · [`physical-elaborations-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/physical-elaborations-intro.md)
 
-> _[draft]_ This section develops *Physical elaborations*. The arc runs from **q-Torsion leaves as energy minima** through **Physical interpretation of q-harmonicity** to **Linearisation convention and the role of $J$**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Abstract structure is only as useful as the instances it covers. This section makes physical elaborations concrete: each example or realisation is chosen to pin down a different aspect of the general theory. Subsequent sections build on the results developed here.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 
 ## Ch 4 — Lifting and Descent  `lifting-and-descent`
 
 ### §4.1 Jet Prolongation and the Recursive Brane Tower  `sec:jet-prolongation`  · 🆕 **DRAFT**  · [`jet-prolongation-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/lifting-and-descent/jet-prolongation-intro.md)
 
-> _[draft]_ This chapter establishes *Lifting and Descent*. The opening sections lay foundations — **Jet Prolongation**, **Jet prolongation of $\mathcal{O}(\mathrm{SU}(2))$**, **Categorical jet object $J^1(A)$ inherits the Frobenius--Hopf structure** — and the chapter then develops the structural consequences and physical interpretations. (Placeholder draft — replace with the chapter's actual framing, dependencies on earlier chapters, and outline of its sections.)
+> _[draft]_ Why jet Prolongation and the Recursive Brane Tower? Because the rest of the chapter cannot be stated without it. This section establishes the propositions and lemmas that make jet Prolongation and the Recursive Brane Tower actionable, and identifies which of its features the downstream physics will actually use. Working this out here makes transport and Torsion available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §4.2 Categorical Lifting: Transport and Torsion  `sec:lifting`  · ✓ existing  · [`lifting-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/lifting-and-descent/lifting-intro.md)
 
@@ -199,23 +197,23 @@ Each entry header links to the lead block's `.md` file on GitHub.
 
 ### §4.3 Descent Preliminaries  `ssec:descent-prelim`  · 🆕 **DRAFT**  · [`sdescent-prelim-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/lifting-and-descent/sdescent-prelim-intro.md)
 
-> _[draft]_ This section develops *Descent Preliminaries*. The arc runs from **Descent preserves the quantum observable universe** through **Descent lemma for $\mathrm{SU}(2)$** to **Proof of Descent preserves the quantum observable universe**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Before we can talk about the heart of *Lifting and Descent*, we need the language of descent Preliminaries. This section fixes the definitions, conventions, and minimum structural facts that everything downstream assumes. Working this out here makes categorical Lifting and Quantum Characteristic Classes available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §4.4 Categorical Lifting and Quantum Characteristic Classes  `sec:yekutieli-lifting`  · 🆕 **DRAFT**  · [`yekutieli-lifting-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/lifting-and-descent/yekutieli-lifting-intro.md)
 
-> _[draft]_ This section develops *Categorical Lifting and Quantum Characteristic Classes*. The arc runs from **Categorical Lifting Condition** through **Categorical lifting condition for $\mathrm{SU}(2)$** to **Quantum Characteristic Classes**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ This section gives categorical Lifting and Quantum Characteristic Classes the formal definitions and structural data the rest of the chapter will manipulate. The point is not to motivate — that happens around the section, in the chapter intro and in the propositions that consume these definitions — but to commit to a precise object so the downstream arguments can run. Working this out here makes direct Limit Algebra available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §4.5 Direct Limit Algebra  `sec:direct-limit`  · 🆕 **DRAFT**  · [`direct-limit-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/lifting-and-descent/direct-limit-intro.md)
 
-> _[draft]_ This section develops *Direct Limit Algebra*. The arc runs from **Quantum Observable Universe as Direct Limit** through **Direct limit algebra for $\mathrm{SU}(2)$** to **Direct limit algebra and the Lusztig integral form**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Abstract structure is only as useful as the instances it covers. This section makes direct Limit Algebra concrete: each example or realisation is chosen to pin down a different aspect of the general theory. Working this out here makes mass in the Brane Tower available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §4.6 Mass in the Brane Tower  `sec:mass-brane`  · 🆕 **DRAFT**  · [`mass-brane-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/lifting-and-descent/mass-brane-intro.md)
 
-> _[draft]_ This section develops *Mass in the Brane Tower*. The arc runs from **Non-commutativity and geometric drag** through **Stability of the Euler characteristic** to **Proof of Stability of the Euler characteristic**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Why mass in the Brane Tower? Because the rest of the chapter cannot be stated without it. This section establishes the propositions and lemmas that make mass in the Brane Tower actionable, and identifies which of its features the downstream physics will actually use. Working this out here makes betti Numbers and Harmonic Basis available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §4.7 Betti Numbers and Harmonic Basis  `sec:betti-harmonic`  · 🆕 **DRAFT**  · [`betti-harmonic-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/lifting-and-descent/betti-harmonic-intro.md)
 
-> _[draft]_ This section develops *Betti Numbers and Harmonic Basis*. The arc runs from **Betti numbers of the brane tower** through **$q$-Harmonic basis of the brane tower** to **Weight-space decomposition of the harmonic basis**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Abstract structure is only as useful as the instances it covers. This section makes betti Numbers and Harmonic Basis concrete: each example or realisation is chosen to pin down a different aspect of the general theory. Working this out here makes descent available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §4.8 Descent  `ssec:descent`  · ✓ existing  · [`descent-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/lifting-and-descent/descent-intro.md)
 
@@ -257,7 +255,7 @@ Each entry header links to the lead block's `.md` file on GitHub.
 
 ### §4.11 Archimedean Specialisations  `sec:archimedean-lifting`  · 🆕 **DRAFT**  · [`archimedean-lifting-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/lifting-and-descent/archimedean-lifting-intro.md)
 
-> _[draft]_ This section develops *Archimedean Specialisations*. The arc runs from **Archimedean realisation of jet prolongation** through **Proof of Archimedean realisation of jet prolongation** to **Archimedean band of the gerbe extension**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Abstract structure is only as useful as the instances it covers. This section makes archimedean Specialisations concrete: each example or realisation is chosen to pin down a different aspect of the general theory. Subsequent sections build on the results developed here.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 
 ## Ch 5 — Braids and Knots  `braids-and-knots`
@@ -325,63 +323,63 @@ Each entry header links to the lead block's `.md` file on GitHub.
 
 ### §5.9 Categorical Möbius energy and self-avoidance  `sec:mobius-energy`  · 🆕 **DRAFT**  · [`mobius-energy-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/mobius-energy-intro.md)
 
-> _[draft]_ This section develops *Categorical Möbius energy and self-avoidance*. The arc runs from **Categorical recovery of Möbius energy** through **Classical limit of the Frobenius--Hopf kernel is the repulsive $1/r^2$** to **Proof of the classical limit of the Frobenius--Hopf kernel**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Why categorical Möbius energy and self-avoidance? Because the rest of the chapter cannot be stated without it. This section establishes the propositions and lemmas that make categorical Möbius energy and self-avoidance actionable, and identifies which of its features the downstream physics will actually use. Working this out here makes crossing energy and Coulomb charge available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §5.10 Crossing energy and Coulomb charge  `sec:crossing-energy`  · 🆕 **DRAFT**  · [`crossing-energy-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/crossing-energy-intro.md)
 
-> _[draft]_ This section develops *Crossing energy and Coulomb charge*. The arc runs from **Crossing energy of a knot composite** through **Crossing energy and binding in the trefoil** to **the categorical coordinate of the commutative limit** (the $\sqrt{\lambda_-}$ identification and the $\mathbb{Z}_2 \hookrightarrow \mathrm{U}(1) \hookrightarrow \mathrm{U}_q(1)$ hierarchy), with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Why crossing energy and Coulomb charge? Because the rest of the chapter cannot be stated without it. This section establishes the propositions and lemmas that make crossing energy and Coulomb charge actionable, and identifies which of its features the downstream physics will actually use. Working this out here makes lagrange Resolvents and $q$-Deformed Kinematics available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §5.11 Lagrange Resolvents and $q$-Deformed Kinematics  `sec:lagrange-q-kinematics`  · 🆕 **DRAFT**  · [`lagrange-q-kinematics-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/lagrange-q-kinematics-intro.md)
 
-> _[draft]_ This section develops *Lagrange Resolvents and $q$-Deformed Kinematics*. The arc runs from **Discrete Fourier transform diagonalises $C_5$ on the Bring's surface** through **Lagrange resolvents and spectral form** to **$q$-Momentum from the braid writhe**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ This section gives lagrange Resolvents and $q$-Deformed Kinematics the formal definitions and structural data the rest of the chapter will manipulate. The point is not to motivate — that happens around the section, in the chapter intro and in the propositions that consume these definitions — but to commit to a precise object so the downstream arguments can run. Working this out here makes exceptional Divisor and Vertex Operators available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §5.12 Exceptional Divisor and Vertex Operators  `sec:exceptional-divisor-reeb`  · 🆕 **DRAFT**  · [`exceptional-divisor-reeb-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/exceptional-divisor-reeb-intro.md)
 
-> _[draft]_ This section develops *Exceptional Divisor and Vertex Operators*. The arc runs from **Exceptional divisor at $p$** through **Reeb bundle over the exceptional divisor** to **Reeb vector field on the exceptional divisor**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ This section gives exceptional Divisor and Vertex Operators the formal definitions and structural data the rest of the chapter will manipulate. The point is not to motivate — that happens around the section, in the chapter intro and in the propositions that consume these definitions — but to commit to a precise object so the downstream arguments can run. Working this out here makes vertex Factorisation and the Markov Trace available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §5.13 Vertex Factorisation and the Markov Trace  `sec:vertex-factorisation`  · 🆕 **DRAFT**  · [`vertex-factorisation-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/vertex-factorisation-intro.md)
 
-> _[draft]_ This section develops *Vertex Factorisation and the Markov Trace*. It opens with **Vertex operators factor through the exceptional divisor**, then turns to **Breit--Wheeler vertex: photon polarisation states as Hecke generators on the exceptional divisor**; the remaining blocks unfold the consequences and examples. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Abstract structure is only as useful as the instances it covers. This section makes vertex Factorisation and the Markov Trace concrete: each example or realisation is chosen to pin down a different aspect of the general theory. Working this out here makes transfer Matrix and Topological Mass available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §5.14 Transfer Matrix and Topological Mass  `sec:transfer-matrix-mass`  · 🆕 **DRAFT**  · [`transfer-matrix-mass-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/transfer-matrix-mass-intro.md)
 
-> _[draft]_ This section develops *Transfer Matrix and Topological Mass*. The arc runs from **Categorical transfer matrix** through **Transfer matrix level independence** to **Constituent and composite Markov-trace evaluations agree exactly**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Why transfer Matrix and Topological Mass? Because the rest of the chapter cannot be stated without it. This section establishes the propositions and lemmas that make transfer Matrix and Topological Mass actionable, and identifies which of its features the downstream physics will actually use. Working this out here makes braiding Relations and the Spectral Filter available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §5.15 Braiding Relations and the Spectral Filter  `sec:braiding-relations`  · 🆕 **DRAFT**  · [`braiding-relations-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/braiding-relations-intro.md)
 
-> _[draft]_ This section develops *Braiding Relations and the Spectral Filter*. The arc runs from **Skein relations as an archimedean shadow** through **QU and QUO axioms as relations on Hecke generators** to **QU/QUO and cohomological relations on the jet bundle**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Abstract structure is only as useful as the instances it covers. This section makes braiding Relations and the Spectral Filter concrete: each example or realisation is chosen to pin down a different aspect of the general theory. Working this out here makes hadron Algebra and Knot Factorisation available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §5.16 Hadron Algebra and Knot Factorisation  `sec:hadron-algebra`  · 🆕 **DRAFT**  · [`hadron-algebra-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/hadron-algebra-intro.md)
 
-> _[draft]_ This section develops *Hadron Algebra and Knot Factorisation*. The arc runs from **Hadron (stable knot composite)** through **Existence of hadrons** to **Proof of existence of hadrons**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Why hadron Algebra and Knot Factorisation? Because the rest of the chapter cannot be stated without it. This section establishes the propositions and lemmas that make hadron Algebra and Knot Factorisation actionable, and identifies which of its features the downstream physics will actually use. Working this out here makes skein Generation and Particle Correspondence available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §5.17 Skein Generation and Particle Correspondence  `sec:skein-particle-generation`  · 🆕 **DRAFT**  · [`skein-particle-generation-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/skein-particle-generation-intro.md)
 
-> _[draft]_ This section develops *Skein Generation and Particle Correspondence*. The arc runs from **Skein generation of hadrons from mass-zero fundamentals** through **Mass functional on a Skein resolution: linking-energy plus constituent volume** to **Proof of the Skein-resolution mass formula**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Why skein Generation and Particle Correspondence? Because the rest of the chapter cannot be stated without it. This section establishes the propositions and lemmas that make skein Generation and Particle Correspondence actionable, and identifies which of its features the downstream physics will actually use. Working this out here makes bundle Structure and Observation available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §5.18 Bundle Structure and Observation  `sec:bundle-observation`  · 🆕 **DRAFT**  · [`bundle-observation-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/bundle-observation-intro.md)
 
-> _[draft]_ This section develops *Bundle Structure and Observation*. The arc runs from **Quarks and hadrons in the Borromean picture** through **Bundle initial conditions** to **Observation as an open map on the braid: intent, crossings, and input**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ This section gives bundle Structure and Observation the formal definitions and structural data the rest of the chapter will manipulate. The point is not to motivate — that happens around the section, in the chapter intro and in the propositions that consume these definitions — but to commit to a precise object so the downstream arguments can run. Working this out here makes borromean Baryons and Reidemeister Invariance available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §5.19 Borromean Baryons and Reidemeister Invariance  `sec:borromean-reidemeister`  · 🆕 **DRAFT**  · [`borromean-reidemeister-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/borromean-reidemeister-intro.md)
 
-> _[draft]_ This section develops *Borromean Baryons and Reidemeister Invariance*. The arc runs from **Borromean baryon** through **Properties, mass, and confinement of the Borromean baryon** to **Borromean baryon mass formula with common scale $\lambda_{\mathrm{scale}}$**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Why borromean Baryons and Reidemeister Invariance? Because the rest of the chapter cannot be stated without it. This section establishes the propositions and lemmas that make borromean Baryons and Reidemeister Invariance actionable, and identifies which of its features the downstream physics will actually use. Working this out here makes categorical Mass Foundations available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §5.20 Categorical Mass Foundations  `sec:categorical-mass-foundations`  · 🆕 **DRAFT**  · [`categorical-mass-foundations-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/categorical-mass-foundations-intro.md)
 
-> _[draft]_ This section develops *Categorical Mass Foundations*. The arc runs from **Topological Decomposition of Mass** through **Eigenspace decomposition of the categorical mass integrand** to **Proof of the eigenspace decomposition (categorical)**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Before we can talk about the heart of *Braids and Knots*, we need the language of categorical Mass Foundations. This section fixes the definitions, conventions, and minimum structural facts that everything downstream assumes. Working this out here makes calibration and Algebraic Mass Formula available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §5.21 Calibration and Algebraic Mass Formula  `sec:calibration-algebraic-mass`  · 🆕 **DRAFT**  · [`calibration-algebraic-mass-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/calibration-algebraic-mass-intro.md)
 
-> _[draft]_ This section develops *Calibration and Algebraic Mass Formula*. The arc runs from **Normal form of the Hecke mass element** through **Calibration inputs and predictive content** to **Two-tier scaling of $P_K(q)$: quantum dimension $[N]_q$ (topological) and base mass $m_0$ (physical)**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Abstract structure is only as useful as the instances it covers. This section makes calibration and Algebraic Mass Formula concrete: each example or realisation is chosen to pin down a different aspect of the general theory. Working this out here makes atom, Isotope, and Confinement Levels available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §5.22 Atom, Isotope, and Confinement Levels  `sec:atom-isotope-confinement`  · 🆕 **DRAFT**  · [`atom-isotope-confinement-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/atom-isotope-confinement-intro.md)
 
-> _[draft]_ This section develops *Atom, Isotope, and Confinement Levels*. The arc runs from **Knot operator energy (LP-dual shadow price)** through **Existence of the knot operator energy** to **Uniqueness of the knot operator energy**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Why atom, Isotope, and Confinement Levels? Because the rest of the chapter cannot be stated without it. This section establishes the propositions and lemmas that make atom, Isotope, and Confinement Levels actionable, and identifies which of its features the downstream physics will actually use. Working this out here makes nuclear Binding and Beta Stability available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §5.23 Nuclear Binding and Beta Stability  `sec:nuclear-binding-beta-stability`  · 🆕 **DRAFT**  · [`nuclear-binding-beta-stability-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/nuclear-binding-beta-stability-intro.md)
 
-> _[draft]_ This section develops *Nuclear Binding and Beta Stability*. The arc runs from **Confined knot binding mechanism: character ratio decomposition per jet level** through **Jet-filtered knot factor: per-level character convergence and nuclear quotient braid** to **Jet-filtered knot invariant converges to classical dimension-weighted average**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Why nuclear Binding and Beta Stability? Because the rest of the chapter cannot be stated without it. This section establishes the propositions and lemmas that make nuclear Binding and Beta Stability actionable, and identifies which of its features the downstream physics will actually use. Working this out here makes pre-Archimedean Derivation Chain and Audit available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §5.24 Pre-Archimedean Derivation Chain and Audit  `sec:derivation-audit`  · ✓ existing  · [`pre-archimedean-derivation-chain.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/pre-archimedean-derivation-chain.md)
 
@@ -852,7 +850,7 @@ Each entry header links to the lead block's `.md` file on GitHub.
 
 ### §6.2 Archimedean specialisations  `sec:archimedean-models`  · 🆕 **DRAFT**  · [`archimedean-models-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/models-of-qous/archimedean-models-intro.md)
 
-> _[draft]_ This section develops *Archimedean specialisations*. The arc runs from **Real hypersurface in a Calabi--Yau $2$-fold** through **ALE links** to **Bring's surface unit circle bundle**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Abstract structure is only as useful as the instances it covers. This section makes archimedean specialisations concrete: each example or realisation is chosen to pin down a different aspect of the general theory. Working this out here makes non-Archimedean models available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §6.3 Non-Archimedean models  `sec:non-archimedean-models`  · ✓ existing  · [`categorical-reformulation.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/models-of-qous/categorical-reformulation.md)
 
@@ -883,11 +881,11 @@ Each entry header links to the lead block's `.md` file on GitHub.
 
 ### §6.5 Finite fields and Jones polynomials  `sec:finite-fields`  · 🆕 **DRAFT**  · [`finite-fields-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/models-of-qous/finite-fields-intro.md)
 
-> _[draft]_ This section develops *Finite fields and Jones polynomials*. It opens with **$\mathbb{F}_\pp$ realisation**, which establishes the section's central object; the remaining blocks unfold its consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Abstract structure is only as useful as the instances it covers. This section makes finite fields and Jones polynomials concrete: each example or realisation is chosen to pin down a different aspect of the general theory. Working this out here makes mostow confinement and the Archimedean wall available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §6.6 Mostow confinement and the Archimedean wall  `sec:archimedean-encounter`  · 🆕 **DRAFT**  · [`archimedean-encounter-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/models-of-qous/archimedean-encounter-intro.md)
 
-> _[draft]_ This section develops *Mostow confinement and the Archimedean wall*. The arc runs from **Mostow confinement: hyperbolic rigidity locks the mass eigenvalue** through **Algebraic and geometric rigidity: SDPSlaterUniqueness paired with MostowRigidity** to **Literature precedents for the geometric encounter picture**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Abstract structure is only as useful as the instances it covers. This section makes mostow confinement and the Archimedean wall concrete: each example or realisation is chosen to pin down a different aspect of the general theory. Subsequent sections build on the results developed here.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 
 ## Ch 7 — The Descartes Universe  `descartes-universe`
@@ -929,27 +927,27 @@ Each entry header links to the lead block's `.md` file on GitHub.
 
 ### §7.2 Bring  `sec:brings-surface-qou`  · 🆕 **DRAFT**  · [`brings-surface-qou-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/descartes-universe/brings-surface-qou-intro.md)
 
-> _[draft]_ This section develops *Bring*. The arc runs from **Bring's surface** through **Bring's surface as a concrete genus-4 curve** to **Realisations of Bring's surface**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Abstract structure is only as useful as the instances it covers. This section makes bring concrete: each example or realisation is chosen to pin down a different aspect of the general theory. Working this out here makes color tube coordinates available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §7.3 Color tube coordinates  `sec:color-tube-coords`  · 🆕 **DRAFT**  · [`color-tube-coords-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/descartes-universe/color-tube-coords-intro.md)
 
-> _[draft]_ This section develops *Color tube coordinates*. The arc runs from **Color tube coordinates** through **Aggregate color quantities** to **Constraint equations in color tube coordinates**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Abstract structure is only as useful as the instances it covers. This section makes color tube coordinates concrete: each example or realisation is chosen to pin down a different aspect of the general theory. Working this out here makes coral fibration and elliptic curves available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §7.4 Coral fibration and elliptic curves  `sec:coral-fibration-elliptic`  · 🆕 **DRAFT**  · [`coral-fibration-elliptic-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/descartes-universe/coral-fibration-elliptic-intro.md)
 
-> _[draft]_ This section develops *Coral fibration and elliptic curves*. The arc runs from **Coral fibre as an elliptic curve** through **Proof of Coral fibre as an elliptic curve** to **Self-duality of the coral elliptic curve**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Abstract structure is only as useful as the instances it covers. This section makes coral fibration and elliptic curves concrete: each example or realisation is chosen to pin down a different aspect of the general theory. Working this out here makes bundle structures and smoothness available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §7.5 Bundle structures and smoothness  `sec:brings-smoothness`  · 🆕 **DRAFT**  · [`brings-smoothness-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/descartes-universe/brings-smoothness-intro.md)
 
-> _[draft]_ This section develops *Bundle structures and smoothness*. The arc runs from **Coral space as spectral curve and spinor bundle** through **Smoothness of the Bring's surface and intrinsic resolution of projection singularities** to **Smoothness of Bring's surface and resolution of spacetime defects**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ This section gives bundle structures and smoothness the formal definitions and structural data the rest of the chapter will manipulate. The point is not to motivate — that happens around the section, in the chapter intro and in the propositions that consume these definitions — but to commit to a precise object so the downstream arguments can run. Working this out here makes spectral resolvents and gauge structures available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §7.6 Spectral resolvents and gauge structures  `sec:spectral-gauge`  · 🆕 **DRAFT**  · [`spectral-gauge-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/descartes-universe/spectral-gauge-intro.md)
 
-> _[draft]_ This section develops *Spectral resolvents and gauge structures*. The arc runs from **Quaternionic spectral resolvents** through **Algebraic constraints in the $\omega_k$ basis** to **Spectral dynamics and the $\mathrm{Sp}(1)$ action**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ This section gives spectral resolvents and gauge structures the formal definitions and structural data the rest of the chapter will manipulate. The point is not to motivate — that happens around the section, in the chapter intro and in the propositions that consume these definitions — but to commit to a precise object so the downstream arguments can run. Working this out here makes the Descartes condition and lepton spectrum available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §7.7 The Descartes condition and lepton spectrum  `sec:descartes-condition`  · 🆕 **DRAFT**  · [`descartes-condition-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/descartes-universe/descartes-condition-intro.md)
 
-> _[draft]_ This section develops *The Descartes condition and lepton spectrum*. The arc runs from **Descent to dimension zero** through **Descartes condition** to **Why $\chi(A) = -6$: the complete derivation chain**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Abstract structure is only as useful as the instances it covers. This section makes the Descartes condition and lepton spectrum concrete: each example or realisation is chosen to pin down a different aspect of the general theory. Working this out here makes the unit particle as a cohomological defect available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §7.8 The unit particle as a cohomological defect  `sec:cohomological-defect`  · ✓ existing  · [`cohomological-defect-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/descartes-universe/cohomological-defect-intro.md)
 
@@ -963,19 +961,19 @@ Each entry header links to the lead block's `.md` file on GitHub.
 
 ### §7.9 Fundamental particles  `sec:fundamental-particles`  · 🆕 **DRAFT**  · [`fundamental-particles-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/descartes-universe/fundamental-particles-intro.md)
 
-> _[draft]_ This section develops *Fundamental particles*. The arc runs from **Up quark** through **Up quark: crossing orientation and isolation** to **Down quark**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Why fundamental particles? Because the rest of the chapter cannot be stated without it. This section establishes the propositions and lemmas that make fundamental particles actionable, and identifies which of its features the downstream physics will actually use. Working this out here makes nuclear stability and decay available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §7.10 Nuclear stability and decay  `sec:nuclear-stability-decay`  · 🆕 **DRAFT**  · [`nuclear-stability-decay-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/descartes-universe/nuclear-stability-decay-intro.md)
 
-> _[draft]_ This section develops *Nuclear stability and decay*. The arc runs from **Beta decay as a Skein crossing change on the Gröbner normal form** through **Categorical Lepton Number** to **Continuant recurrence for the lepton tower $T_{2,n}$**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ This section gives nuclear stability and decay the formal definitions and structural data the rest of the chapter will manipulate. The point is not to motivate — that happens around the section, in the chapter intro and in the propositions that consume these definitions — but to commit to a precise object so the downstream arguments can run. Working this out here makes atomic shells and the periodic table available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §7.11 Atomic shells and the periodic table  `sec:atomic-shells`  · 🆕 **DRAFT**  · [`atomic-shells-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/descartes-universe/atomic-shells-intro.md)
 
-> _[draft]_ This section develops *Atomic shells and the periodic table*. The arc runs from **Orbital shells from eigenvalues of the photon-electron transfer matrix** through **Shell eigenvalue properties, sub-shells, and the Skein extraction algorithm** to **Nuclear energy from the quantum dilogarithm of the Markov trace**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Why atomic shells and the periodic table? Because the rest of the chapter cannot be stated without it. This section establishes the propositions and lemmas that make atomic shells and the periodic table actionable, and identifies which of its features the downstream physics will actually use. Working this out here makes the Descartes theorem available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §7.12 The Descartes theorem  `sec:descartes-theorem`  · 🆕 **DRAFT**  · [`descartes-theorem-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/descartes-universe/descartes-theorem-intro.md)
 
-> _[draft]_ This section develops *The Descartes theorem*. The arc runs from **Descartes theorem** through **Proof of Descartes theorem** to **Constructive terminal morphism to Bring's QOU**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Abstract structure is only as useful as the instances it covers. This section makes the Descartes theorem concrete: each example or realisation is chosen to pin down a different aspect of the general theory. Working this out here makes topological mass and the knot-particle spectrum available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §7.13 Topological mass and the knot-particle spectrum  `sec:topological-mass-spectrum`  · ✓ existing  · [`hyperbolic-volumes-prose.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/descartes-universe/hyperbolic-volumes-prose.md)
 
@@ -1019,7 +1017,7 @@ Each entry header links to the lead block's `.md` file on GitHub.
 
 ### §7.14 Orbital Symmetry and Cohomological Embedding  `sec:orbital-symmetry-embedding`  · 🆕 **DRAFT**  · [`orbital-symmetry-embedding-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/descartes-universe/orbital-symmetry-embedding-intro.md)
 
-> _[draft]_ This section develops *Orbital Symmetry and Cohomological Embedding*. The arc runs from **The orbital space at shell $n$ is the space of framing-$k$ sections of the normal bundle** through **Quantum numbers from Fourier decomposition of normal-bundle sections** to **Five-fold symmetry: the Bring surface, the golden ratio, and the crystallographic obstruction**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Why orbital Symmetry and Cohomological Embedding? Because the rest of the chapter cannot be stated without it. This section establishes the propositions and lemmas that make orbital Symmetry and Cohomological Embedding actionable, and identifies which of its features the downstream physics will actually use. Subsequent sections build on the results developed here.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 
 ## Ch 8 — Particle Interactions and Nuclear Structure  `particle-interactions`
@@ -1056,35 +1054,35 @@ Each entry header links to the lead block's `.md` file on GitHub.
 
 ### §8.2 Confinement operator selection  `sec:confinement-selection`  · 🆕 **DRAFT**  · [`confinement-selection-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/particle-interactions/confinement-selection-intro.md)
 
-> _[draft]_ This section develops *Confinement operator selection*. The arc runs from **Algebraic primality of $n$ at substrate $q$** through **Proposition 7. Algebraic primality at $q_0$ equals the empirical magic ladder** to **Confinement as linear program over the Hecke normal form basis**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Why confinement operator selection? Because the rest of the chapter cannot be stated without it. This section establishes the propositions and lemmas that make confinement operator selection actionable, and identifies which of its features the downstream physics will actually use. Working this out here makes nucleon derivation from pair production available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §8.3 Nucleon derivation from pair production  `sec:nucleon-derivation`  · 🆕 **DRAFT**  · [`nucleon-derivation-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/particle-interactions/nucleon-derivation-intro.md)
 
-> _[draft]_ This section develops *Nucleon derivation from pair production*. The arc runs from **Nucleon derivation from 4-term photon pair production** through **Confinement universality: nucleon NF independent of photon polarization** to **Derived atom $\mathcal{A}(Z, N)$ from pair production**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Why nucleon derivation from pair production? Because the rest of the chapter cannot be stated without it. This section establishes the propositions and lemmas that make nucleon derivation from pair production actionable, and identifies which of its features the downstream physics will actually use. Working this out here makes nuclear binding and magic numbers available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §8.4 Nuclear binding and magic numbers  `sec:nuclear-binding`  · 🆕 **DRAFT**  · [`nuclear-binding-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/particle-interactions/nuclear-binding-intro.md)
 
-> _[draft]_ This section develops *Nuclear binding and magic numbers*. The arc runs from **Three operator regimes for nuclear binding** through **Demand profile determines nuclear and atomic stability** to **The valley of stability is the demand-minimizing locus in $(Z, N)$-space**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Why nuclear binding and magic numbers? Because the rest of the chapter cannot be stated without it. This section establishes the propositions and lemmas that make nuclear binding and magic numbers actionable, and identifies which of its features the downstream physics will actually use. Working this out here makes derived atom examples available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §8.5 Derived atom examples  `sec:derived-atoms`  · 🆕 **DRAFT**  · [`derived-atoms-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/particle-interactions/derived-atoms-intro.md)
 
-> _[draft]_ This section develops *Derived atom examples*. The arc runs from **Hydrogen: full normal form from pair production** through **Deuterium: proton--neutron binding normal form** to **Deuterium binding energy from the Markov trace volume integral**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Abstract structure is only as useful as the instances it covers. This section makes derived atom examples concrete: each example or realisation is chosen to pin down a different aspect of the general theory. Working this out here makes typed Garside element and Gram-weighted $\\mathcal{Q}_q$-value available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §8.6 Typed Garside element and Gram-weighted $\\mathcal{Q}_q$-value  `sec:garside-gram`  · 🆕 **DRAFT**  · [`garside-gram-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/particle-interactions/garside-gram-intro.md)
 
-> _[draft]_ This section develops *Typed Garside element and Gram-weighted $\mathcal{Q}_q$-value*. The arc runs from **Typed Garside element of the nuclear braid** through **Gram-weighted $\mathcal{Q}_q$-value from Frobenius norm of conversion channels** to **Eigenstructure of the Gram weight and the adjoint character**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Why typed Garside element and Gram-weighted $\\mathcal{Q}_q$-value? Because the rest of the chapter cannot be stated without it. This section establishes the propositions and lemmas that make typed Garside element and Gram-weighted $\\mathcal{Q}_q$-value actionable, and identifies which of its features the downstream physics will actually use. Working this out here makes transfer matrices and beta decay available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §8.7 Transfer matrices and beta decay  `sec:transfer-beta-decay`  · 🆕 **DRAFT**  · [`transfer-beta-decay-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/particle-interactions/transfer-beta-decay-intro.md)
 
-> _[draft]_ This section develops *Transfer matrices and beta decay*. The arc runs from **The nuclear Skein polynomial as a transfer matrix product in $q$** through **Transfer Matrix Operator for Nuclear Braid Interactions** to **Beta decay as a universal matrix-valued polynomial in $q$**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Why transfer matrices and beta decay? Because the rest of the chapter cannot be stated without it. This section establishes the propositions and lemmas that make transfer matrices and beta decay actionable, and identifies which of its features the downstream physics will actually use. Working this out here makes atomic braid and Wedderburn mass formula available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §8.8 Atomic braid and Wedderburn mass formula  `sec:atomic-braid-mass`  · 🆕 **DRAFT**  · [`atomic-braid-mass-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/particle-interactions/atomic-braid-mass-intro.md)
 
-> _[draft]_ This section develops *Atomic braid and Wedderburn mass formula*. The arc runs from **Atomic braid $H_{A+Z}(q)$** through **LP stability of the atomic braid** to **Seven-term atomic mass formula with $q$-integer coefficients**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ This section gives atomic braid and Wedderburn mass formula the formal definitions and structural data the rest of the chapter will manipulate. The point is not to motivate — that happens around the section, in the chapter intro and in the propositions that consume these definitions — but to commit to a precise object so the downstream arguments can run. Working this out here makes branching Q-value derivation available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §8.9 Branching Q-value derivation  `sec:branching-qvalue`  · 🆕 **DRAFT**  · [`branching-qvalue-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/particle-interactions/branching-qvalue-intro.md)
 
-> _[draft]_ This section develops *Branching Q-value derivation*. The arc runs from **Per-nucleon channel decomposition via $S_3^A$ branching** through **Spectator normalization factor** to **Exact factorization of the branching Q-value**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Why branching Q-value derivation? Because the rest of the chapter cannot be stated without it. This section establishes the propositions and lemmas that make branching Q-value derivation actionable, and identifies which of its features the downstream physics will actually use. Subsequent sections build on the results developed here.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 
 ## Ch 9 — Physical Observations  `observations`
@@ -1132,7 +1130,7 @@ Each entry header links to the lead block's `.md` file on GitHub.
 
 ### §9.2 Particle Identification Conjectures  `sec:particle-conjectures`  · 🆕 **DRAFT**  · [`particle-conjectures-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/particle-conjectures-intro.md)
 
-> _[draft]_ This section develops *Particle Identification Conjectures*. The arc runs from **Quarks as Borromean-linked unknots in the exceptional divisor** through **The Higgs boson as $T(2,8)$: the link spanning three exceptional divisors** to **$S_5$-equivariant torus-knot embeddings: only $T_{2,3}$ and $T_{2,5}$**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Abstract structure is only as useful as the instances it covers. This section makes particle Identification Conjectures concrete: each example or realisation is chosen to pin down a different aspect of the general theory. Working this out here makes double-slit experiment available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §9.3 Double-slit experiment  `sec:double-slit-experiment`  · ✓ existing  · [`double-slit-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/double-slit-intro.md)
 
@@ -1173,23 +1171,23 @@ Each entry header links to the lead block's `.md` file on GitHub.
 
 ### §9.4 Substrate Parameter from Lepton Masses  `sec:substrate-from-leptons`  · 🆕 **DRAFT**  · [`substrate-from-leptons-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/substrate-from-leptons-intro.md)
 
-> _[draft]_ This section develops *Substrate Parameter from Lepton Masses*. The arc runs from **$q$-Deformed Skein Relation (Observation)** through **Proof of $q$-Deformed Skein Relation** to **Knot volume verification (SnapPy)**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Abstract structure is only as useful as the instances it covers. This section makes substrate Parameter from Lepton Masses concrete: each example or realisation is chosen to pin down a different aspect of the general theory. Working this out here makes mass Predictions and CODATA Comparison available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §9.5 Mass Predictions and CODATA Comparison  `sec:mass-predictions`  · 🆕 **DRAFT**  · [`mass-predictions-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/mass-predictions-intro.md)
 
-> _[draft]_ This section develops *Mass Predictions and CODATA Comparison*. The arc runs from **The stability cubic at $q = 1.1097$: lattice points and the nuclear chart** through **Comparison of predicted and observed stable neutron numbers for $p \leq 103$** to **Stability of $n_{\mathrm{pred}}$ under local variations in $q$**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ This section gives mass Predictions and CODATA Comparison the formal definitions and structural data the rest of the chapter will manipulate. The point is not to motivate — that happens around the section, in the chapter intro and in the propositions that consume these definitions — but to commit to a precise object so the downstream arguments can run. Working this out here makes beta Decay available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §9.6 Beta Decay  `sec:beta-decay-observations`  · 🆕 **DRAFT**  · [`beta-decay-observations-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/beta-decay-observations-intro.md)
 
-> _[draft]_ This section develops *Beta Decay*. The arc runs from **Q-value predictions vs experiment: $q$-weighted channel separation** through **Half-life predictions for selected beta emitters** to **Half-life regimes and the $q$-landscape**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Abstract structure is only as useful as the instances it covers. This section makes beta Decay concrete: each example or realisation is chosen to pin down a different aspect of the general theory. Working this out here makes large-Scale Observations available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §9.7 Large-Scale Observations  `sec:large-scale`  · 🆕 **DRAFT**  · [`large-scale-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/large-scale-intro.md)
 
-> _[draft]_ This section develops *Large-Scale Observations*. It opens with **CMB non-uniformity from $q$-torsion**, then turns to **Gravity as emergent substrate geometry**; the remaining blocks unfold the consequences and examples. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Abstract structure is only as useful as the instances it covers. This section makes large-Scale Observations concrete: each example or realisation is chosen to pin down a different aspect of the general theory. Working this out here makes nuclear Stability available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §9.8 Nuclear Stability  `sec:nuclear-stability-observations`  · 🆕 **DRAFT**  · [`nuclear-stability-observations-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/nuclear-stability-observations-intro.md)
 
-> _[draft]_ This section develops *Nuclear Stability*. The arc runs from **Representative stable isotopes: Coulomb ratio and Diophantine error** through **The golden ratio as the boundary of stable chiral structure** to **Hydrogen: the simplest atom in knot form**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Abstract structure is only as useful as the instances it covers. This section makes nuclear Stability concrete: each example or realisation is chosen to pin down a different aspect of the general theory. Working this out here makes strangelet Stability and Deconfinement available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §9.9 Strangelet Stability and Deconfinement  `sec:strangelet-stability`  · ✓ existing  · [`strangelet-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/strangelet-intro.md)
 
@@ -1268,23 +1266,23 @@ Each entry header links to the lead block's `.md` file on GitHub.
 
 ### §9.10 Precision Tests  `sec:precision-tests`  · 🆕 **DRAFT**  · [`precision-tests-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/precision-tests-intro.md)
 
-> _[draft]_ This section develops *Precision Tests*. It opens with **Photonic quantum Hall effect and $q$-deformed braiding**, then turns to **Fine structure constant: CODATA comparison**; the remaining blocks unfold the consequences and examples. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Abstract structure is only as useful as the instances it covers. This section makes precision Tests concrete: each example or realisation is chosen to pin down a different aspect of the general theory. Working this out here makes proton Radius and Gravity Tests available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §9.11 Proton Radius and Gravity Tests  `sec:proton-gravity-tests`  · 🆕 **DRAFT**  · [`proton-gravity-tests-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/proton-gravity-tests-intro.md)
 
-> _[draft]_ This section develops *Proton Radius and Gravity Tests*. It opens with **The Proton Radius Puzzle**, then turns to **Entropic forces and the substrate parameter**; the remaining blocks unfold the consequences and examples. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Abstract structure is only as useful as the instances it covers. This section makes proton Radius and Gravity Tests concrete: each example or realisation is chosen to pin down a different aspect of the general theory. Working this out here makes crystal Resonance Experiments available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §9.12 Crystal Resonance Experiments  `sec:crystal-resonance`  · 🆕 **DRAFT**  · [`crystal-resonance-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/crystal-resonance-intro.md)
 
-> _[draft]_ This section develops *Crystal Resonance Experiments*. The arc runs from **Crystal-lattice probe of $q$** through **Substrate Telescopes** to **Non-monotonic magnetic friction from collective rotor dynamics**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Abstract structure is only as useful as the instances it covers. This section makes crystal Resonance Experiments concrete: each example or realisation is chosen to pin down a different aspect of the general theory. Working this out here makes breit--Wheeler Pair Creation available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §9.13 Breit--Wheeler Pair Creation  `sec:breit-wheeler-pair-creation`  · 🆕 **DRAFT**  · [`breit-wheeler-pair-creation-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/breit-wheeler-pair-creation-intro.md)
 
-> _[draft]_ This section develops *Breit--Wheeler Pair Creation*. It opens with **Breit--Wheeler process: first direct observation and QOU prediction**, then turns to **Energy cost of electron--positron conversion**; the remaining blocks unfold the consequences and examples. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Abstract structure is only as useful as the instances it covers. This section makes breit--Wheeler Pair Creation concrete: each example or realisation is chosen to pin down a different aspect of the general theory. Working this out here makes complexity and Interpretation available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §9.14 Complexity and Interpretation  `sec:complexity-interpretation`  · 🆕 **DRAFT**  · [`complexity-interpretation-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/complexity-interpretation-intro.md)
 
-> _[draft]_ This section develops *Complexity and Interpretation*. The arc runs from **Fermion--boson sectors as chart-glue data of $\mathbb{P}_q(V)$** through **Chirality as continuous phase rotation in the pre-observable sector** to **Can the chirality of a stable trefoil vortex flip?**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Abstract structure is only as useful as the instances it covers. This section makes complexity and Interpretation concrete: each example or realisation is chosen to pin down a different aspect of the general theory. Working this out here makes non-Commutative Probability, the q-CLT, and the Archimedean Macroscopic Limit available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §9.15 Non-Commutative Probability, the q-CLT, and the Archimedean Macroscopic Limit  `sec:non-comm-probability-q-clt`  · ✓ existing  · [`non-comm-probability-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/non-comm-probability-intro.md)
 
@@ -1323,61 +1321,61 @@ Each entry header links to the lead block's `.md` file on GitHub.
 
 ### §9.16 Transcendence Falsifiability Signatures  `sec:transcendence-signatures`  · 🆕 **DRAFT**  · [`transcendence-signatures-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/transcendence-signatures-intro.md)
 
-> _[draft]_ This section develops *Transcendence Falsifiability Signatures*. It opens with **Observational signatures if the QOU volumes are algebraically independent**, then turns to **Observational signatures if the QOU volumes are algebraically dependent**; the remaining blocks unfold the consequences and examples. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Abstract structure is only as useful as the instances it covers. This section makes transcendence Falsifiability Signatures concrete: each example or realisation is chosen to pin down a different aspect of the general theory. Working this out here makes interactive Simulations available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §9.17 Interactive Simulations  `sec:simulations`  · 🆕 **DRAFT**  · [`simulations-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/simulations-intro.md)
 
-> _[draft]_ This section develops *Interactive Simulations*. The arc runs from **q-Deformed Double-Slit Simulator** through **Double-Slit Analytical Simulator** to **Bring's Surface Simulator**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Why interactive Simulations? Because the rest of the chapter cannot be stated without it. This section establishes the propositions and lemmas that make interactive Simulations actionable, and identifies which of its features the downstream physics will actually use. Subsequent sections build on the results developed here.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 
 ## Ch 10 — Molecular Construction from Nucleon Braids  `molecular-construction`
 
 ### §10.1 The molecular Hecke algebra  `sec:molecular-hecke-algebra`  · 🆕 **DRAFT**  · [`molecular-hecke-algebra-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/molecular-construction/molecular-hecke-algebra-intro.md)
 
-> _[draft]_ This chapter establishes *Molecular Construction from Nucleon Braids*. The opening sections lay foundations — **Molecular braid $H_{N_{\mathrm{mol}}}(q)$**, **Inter-atomic crossing coefficients**, **Covalent bond as shared electron trefoil** — and the chapter then develops the structural consequences and physical interpretations. (Placeholder draft — replace with the chapter's actual framing, dependencies on earlier chapters, and outline of its sections.)
+> _[draft]_ This section gives the molecular Hecke algebra the formal definitions and structural data the rest of the chapter will manipulate. The point is not to motivate — that happens around the section, in the chapter intro and in the propositions that consume these definitions — but to commit to a precise object so the downstream arguments can run. Working this out here makes electron shells and bonding capacity available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §10.2 Electron shells and bonding capacity  `sec:electron-shells`  · 🆕 **DRAFT**  · [`electron-shells-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/molecular-construction/electron-shells-intro.md)
 
-> _[draft]_ This section develops *Electron shells and bonding capacity*. The arc runs from **Electron shell as braid bonding capacity** through **Shell filling minimises $\Phi_1$ (aufbau from LP dual)** to **Valence and bonding capacity from the atomic braid**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Why electron shells and bonding capacity? Because the rest of the chapter cannot be stated without it. This section establishes the propositions and lemmas that make electron shells and bonding capacity actionable, and identifies which of its features the downstream physics will actually use. Working this out here makes the covalent bond prototype available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §10.3 Hydrogen molecule $H_2$: the covalent bond prototype  `sec:h2-computation`  · 🆕 **DRAFT**  · [`h2-computation-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/molecular-construction/h2-computation-intro.md)
 
-> _[draft]_ This section develops *Hydrogen molecule $H_2$: the covalent bond prototype*. The arc runs from **Hydrogen molecule $H_2$ as a braid in $H_4(q)$** through **LP dual gives optimal $H_2$ binding** to **$H_2$ binding energy from the LP dual**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Abstract structure is only as useful as the instances it covers. This section makes the covalent bond prototype concrete: each example or realisation is chosen to pin down a different aspect of the general theory. Working this out here makes heteronuclear bonding available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §10.4 Carbon monoxide: heteronuclear bonding  `sec:co-computation`  · 🆕 **DRAFT**  · [`co-computation-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/molecular-construction/co-computation-intro.md)
 
-> _[draft]_ This section develops *Carbon monoxide: heteronuclear bonding*. The arc runs from **Carbon monoxide $CO$ as a molecular braid** through **LP dual selects the triple bond as optimal for $CO$** to **$CO$ triple bond energy from the Wedderburn invariants**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Why heteronuclear bonding? Because the rest of the chapter cannot be stated without it. This section establishes the propositions and lemmas that make heteronuclear bonding actionable, and identifies which of its features the downstream physics will actually use. Working this out here makes linear triatomic molecule available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §10.5 Carbon dioxide: linear triatomic molecule  `sec:co2-computation`  · 🆕 **DRAFT**  · [`co2-computation-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/molecular-construction/co2-computation-intro.md)
 
-> _[draft]_ This section develops *Carbon dioxide: linear triatomic molecule*. The arc runs from **Carbon dioxide $CO_2$ as a molecular braid** through **LP dual selects linear $O{=}C{=}O$ geometry** to **VSEPR molecular geometry from $\Phi_1$ minimisation**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Why linear triatomic molecule? Because the rest of the chapter cannot be stated without it. This section establishes the propositions and lemmas that make linear triatomic molecule actionable, and identifies which of its features the downstream physics will actually use. Working this out here makes tetrahedral bonding from braid optimization available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §10.6 Methane: tetrahedral bonding from braid optimization  `sec:ch4-computation`  · 🆕 **DRAFT**  · [`ch4-computation-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/molecular-construction/ch4-computation-intro.md)
 
-> _[draft]_ This section develops *Methane: tetrahedral bonding from braid optimization*. The arc runs from **Methane $CH_4$ as a molecular braid** through **$S_4$-symmetric strand ordering minimises $\Phi_1$ for $CH_4$** to **Tetrahedral geometry as $S_4$ symmetry of the LP dual**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Why tetrahedral bonding from braid optimization? Because the rest of the chapter cannot be stated without it. This section establishes the propositions and lemmas that make tetrahedral bonding from braid optimization actionable, and identifies which of its features the downstream physics will actually use. Working this out here makes delocalization from threading links available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §10.7 Benzene: delocalization from threading links  `sec:benzene-computation`  · 🆕 **DRAFT**  · [`benzene-computation-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/molecular-construction/benzene-computation-intro.md)
 
-> _[draft]_ This section develops *Benzene: delocalization from threading links*. The arc runs from **Benzene $C_6H_6$ as a molecular braid** through **Threading link $T(2,6)$ emerges as the LP-optimal $\pi$ configuration** to **Bond equalization from $D_6$ symmetry of $T(2,6)$**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Why delocalization from threading links? Because the rest of the chapter cannot be stated without it. This section establishes the propositions and lemmas that make delocalization from threading links actionable, and identifies which of its features the downstream physics will actually use. Subsequent sections build on the results developed here.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 
 ## Ch 11 — Organic Chemistry from Hopf Chains  `organic-chemistry`
 
 ### §11.1 Covalent bonding as shared sub-Hopf links  `sec:covalent-bonding`  · 🆕 **DRAFT**  · [`covalent-bonding-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/organic-chemistry/covalent-bonding-intro.md)
 
-> _[draft]_ This chapter establishes *Organic Chemistry from Hopf Chains*. The opening sections lay foundations — **Covalent bond (shared Hopf links)**, **Carbon's four open linking sites** — and the chapter then develops the structural consequences and physical interpretations. (Placeholder draft — replace with the chapter's actual framing, dependencies on earlier chapters, and outline of its sections.)
+> _[draft]_ Why covalent bonding as shared sub-Hopf links? Because the rest of the chapter cannot be stated without it. This section establishes the propositions and lemmas that make covalent bonding as shared sub-Hopf links actionable, and identifies which of its features the downstream physics will actually use. Working this out here makes molecular Hopf chains and rings available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §11.2 Molecular Hopf chains and rings  `sec:molecular-chains-rings`  · 🆕 **DRAFT**  · [`molecular-chains-rings-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/organic-chemistry/molecular-chains-rings-intro.md)
 
-> _[draft]_ This section develops *Molecular Hopf chains and rings*. The arc runs from **Molecular Hopf chain (open)** through **Threading link $T(2,N)$** to **Molecular Hopf ring (closed)**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ This section gives molecular Hopf chains and rings the formal definitions and structural data the rest of the chapter will manipulate. The point is not to motivate — that happens around the section, in the chapter intro and in the propositions that consume these definitions — but to commit to a precise object so the downstream arguments can run. Working this out here makes carbon chains and benzene available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §11.3 Carbon chains and benzene  `sec:carbon-chains-benzene`  · 🆕 **DRAFT**  · [`carbon-chains-benzene-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/organic-chemistry/carbon-chains-benzene-intro.md)
 
-> _[draft]_ This section develops *Carbon chains and benzene*. The arc runs from **Linear $\mathrm{C}_6$ Hopf chain** through **Benzene as a molecular Hopf ring $\mathrm{C}_6$** to **Why the C$_6$ chain resists hexagonalisation**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Abstract structure is only as useful as the instances it covers. This section makes carbon chains and benzene concrete: each example or realisation is chosen to pin down a different aspect of the general theory. Working this out here makes organic chain taxonomy available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §11.4 Organic chain taxonomy  `sec:organic-taxonomy`  · 🆕 **DRAFT**  · [`organic-taxonomy-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/organic-chemistry/organic-taxonomy-intro.md)
 
-> _[draft]_ This section develops *Organic chain taxonomy*. It opens with **Organic chain taxonomy from bond-order patterns**, which establishes the section's central object; the remaining blocks unfold its consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Abstract structure is only as useful as the instances it covers. This section makes organic chain taxonomy concrete: each example or realisation is chosen to pin down a different aspect of the general theory. Subsequent sections build on the results developed here.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 
 ## Ch 12 — Fluid Dynamics of the Brane  `fluid-dynamics`
@@ -1409,23 +1407,23 @@ Each entry header links to the lead block's `.md` file on GitHub.
 
 ### §12.2 Vortex spectrum and helicity  `sec:vortex-spectrum`  · 🆕 **DRAFT**  · [`vortex-spectrum-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/fluid-dynamics/vortex-spectrum-intro.md)
 
-> _[draft]_ This section develops *Vortex spectrum and helicity*. The arc runs from **Vortex intensity modes: from classical fluids to $q$-deformation** through **Discrete vortex mode spectrum** to **Vortex intensity levels as fluid-dynamical orbitals**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Abstract structure is only as useful as the instances it covers. This section makes vortex spectrum and helicity concrete: each example or realisation is chosen to pin down a different aspect of the general theory. Working this out here makes turbulence and acoustics available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §12.3 Turbulence and acoustics  `sec:turbulence-acoustics`  · 🆕 **DRAFT**  · [`turbulence-acoustics-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/fluid-dynamics/turbulence-acoustics-intro.md)
 
-> _[draft]_ This section develops *Turbulence and acoustics*. The arc runs from **$q$-deformed energy cascade and modified Kolmogorov spectrum** through **Testable prediction: high-wavenumber deviations from Kolmogorov scaling** to **Berry phase on the vortex moduli space**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Abstract structure is only as useful as the instances it covers. This section makes turbulence and acoustics concrete: each example or realisation is chosen to pin down a different aspect of the general theory. Working this out here makes global regularity for $q > 1$ available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §12.4 Global regularity for $q > 1$  `sec:q-ns-regularity`  · 🆕 **DRAFT**  · [`q-ns-regularity-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/fluid-dynamics/q-ns-regularity-intro.md)
 
-> _[draft]_ This section develops *Global regularity for $q > 1$*. The arc runs from **Global regularity of the $q$-deformed Navier--Stokes equation** through **Proof strategy: three mechanisms for $q$-deformed regularity** to **Spectral theory and Sobolev embedding for the $q$-Laplacian on $\Omega^1(A)$**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Why global regularity for $q > 1$? Because the rest of the chapter cannot be stated without it. This section establishes the propositions and lemmas that make global regularity for $q > 1$ actionable, and identifies which of its features the downstream physics will actually use. Working this out here makes the NS obstruction available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §12.5 The NS obstruction  `sec:ns-obstruction`  · 🆕 **DRAFT**  · [`ns-obstruction-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/fluid-dynamics/ns-obstruction-intro.md)
 
-> _[draft]_ This section develops *The NS obstruction*. The arc runs from **What observability means for the brane fluid** through **Independent motivation for observability: why $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ is not an NS assumption** to **The substrate line bundle and the $\mathbb{G}_m$-family of differentials**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Abstract structure is only as useful as the instances it covers. This section makes the NS obstruction concrete: each example or realisation is chosen to pin down a different aspect of the general theory. Working this out here makes approaches and open problems available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §12.6 Approaches and open problems  `sec:ns-approaches`  · 🆕 **DRAFT**  · [`ns-approaches-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/fluid-dynamics/ns-approaches-intro.md)
 
-> _[draft]_ This section develops *Approaches and open problems*. The arc runs from **Regularity breakdown at $q = 1$: the classical limit as a phase transition** through **Critical exponent of the enstrophy divergence at $q = 1$** to **Blowup mechanism as Yekutieli lifting obstruction in the brane tower**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Abstract structure is only as useful as the instances it covers. This section makes approaches and open problems concrete: each example or realisation is chosen to pin down a different aspect of the general theory. Subsequent sections build on the results developed here.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 
 ## Ch 13 — Information-Theoretic Perspectives  `information-theory`
@@ -1483,11 +1481,11 @@ Each entry header links to the lead block's `.md` file on GitHub.
 
 ### §13.3 Golden Ratio, Julia Sets, and Discrete Dynamics  `sec:golden-julia-dynamics`  · 🆕 **DRAFT**  · [`golden-julia-dynamics-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/information-theory/golden-julia-dynamics-intro.md)
 
-> _[draft]_ This section develops *Golden Ratio, Julia Sets, and Discrete Dynamics*. The arc runs from **Parallel transport of a golden-ratio parallelogram to $q_{\mathrm{gold}}$** through **Julia set of the Reeb flow on the exceptional divisor** to **Operational entropy of the Reeb dynamics**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Abstract structure is only as useful as the instances it covers. This section makes golden Ratio, Julia Sets, and Discrete Dynamics concrete: each example or realisation is chosen to pin down a different aspect of the general theory. Working this out here makes speed of Light and Mass--Energy Equivalence available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §13.4 Speed of Light and Mass--Energy Equivalence  `sec:speed-of-light`  · 🆕 **DRAFT**  · [`speed-of-light-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/information-theory/speed-of-light-intro.md)
 
-> _[draft]_ This section develops *Speed of Light and Mass--Energy Equivalence*. The arc runs from **Speed of light as Lieb--Robinson velocity** through **Mass--energy equivalence ($E_{\mathfrak{H}} = \mathfrak{m}_{\mathfrak{H}} \cdot c_q^2$)** to **Mass as photon threading cost**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Why speed of Light and Mass--Energy Equivalence? Because the rest of the chapter cannot be stated without it. This section establishes the propositions and lemmas that make speed of Light and Mass--Energy Equivalence actionable, and identifies which of its features the downstream physics will actually use. Working this out here makes computation at Planck Time Lengths available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §13.5 Computation at Planck Time Lengths  `sec:planck-scale-computation`  · ✓ existing  · [`planck-scale-computation.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/information-theory/planck-scale-computation.md)
 
@@ -1520,11 +1518,11 @@ Each entry header links to the lead block's `.md` file on GitHub.
 
 ### §13.6 P versus NP as a Boundary Condition  `sec:p-vs-np-boundary`  · 🆕 **DRAFT**  · [`p-vs-np-boundary-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/information-theory/p-vs-np-boundary-intro.md)
 
-> _[draft]_ This section develops *P versus NP as a Boundary Condition*. The arc runs from **Computational horizon** through **Skein resolution obstruction $\kappa_c^{\mathrm{comp}}(L, q)$** to **Polynomial computation as sub-horizon bandwidth**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ This section gives P versus NP as a Boundary Condition the formal definitions and structural data the rest of the chapter will manipulate. The point is not to motivate — that happens around the section, in the chapter intro and in the propositions that consume these definitions — but to commit to a precise object so the downstream arguments can run. Working this out here makes $q$-Heat kernel and spectral analysis available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §13.7 $q$-Heat kernel and spectral analysis  `sec:q-heat-kernel-analysis`  · 🆕 **DRAFT**  · [`q-heat-kernel-analysis-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/information-theory/q-heat-kernel-analysis-intro.md)
 
-> _[draft]_ This section develops *$q$-Heat kernel and spectral analysis*. The arc runs from **Taylor series of $\exp_q$ (archimedean)** through **Reeb-invariant $q$-Gaussian solves the $q$-heat equation (archimedean)** to **Peter--Weyl decomposition of the $q$-heat kernel (archimedean)**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Why $q$-Heat kernel and spectral analysis? Because the rest of the chapter cannot be stated without it. This section establishes the propositions and lemmas that make $q$-Heat kernel and spectral analysis actionable, and identifies which of its features the downstream physics will actually use. Working this out here makes statistical Mechanics available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §13.8 Statistical Mechanics  `sec:stat-mech`  · ✓ existing  · [`stat-mech-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/information-theory/stat-mech-intro.md)
 
@@ -1552,15 +1550,15 @@ Each entry header links to the lead block's `.md` file on GitHub.
 
 ### §13.9 Phase Transitions and Sublimation  `sec:phase-transitions`  · 🆕 **DRAFT**  · [`phase-transitions-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/information-theory/phase-transitions-intro.md)
 
-> _[draft]_ This section develops *Phase Transitions and Sublimation*. The arc runs from **Phase transitions as $S^3$ boundary actions** through **Three phases from Hecke channels and the triple point** to **Sublimation from shell-filling representation theory**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Abstract structure is only as useful as the instances it covers. This section makes phase Transitions and Sublimation concrete: each example or realisation is chosen to pin down a different aspect of the general theory. Working this out here makes incompleteness and the Horizon available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §13.10 Incompleteness and the Horizon  `sec:incompleteness-horizon`  · 🆕 **DRAFT**  · [`incompleteness-horizon-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/information-theory/incompleteness-horizon-intro.md)
 
-> _[draft]_ This section develops *Incompleteness and the Horizon*. The arc runs from **Turing completeness with $\mathbb{N}$-embedding implies non-empty computational horizon** through **Incompleteness as degree-$0$ opacity: the Turing--Gödel--horizon triangle** to **Statistical mechanics as the polynomial observable subcategory**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Abstract structure is only as useful as the instances it covers. This section makes incompleteness and the Horizon concrete: each example or realisation is chosen to pin down a different aspect of the general theory. Working this out here makes horizons and Aeons available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §13.11 Horizons and Aeons  `sec:horizons-aeons`  · 🆕 **DRAFT**  · [`horizons-aeons-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/information-theory/horizons-aeons-intro.md)
 
-> _[draft]_ This section develops *Horizons and Aeons*. The arc runs from **Jet horizon (degree-$0$ vanishing locus)** through **Big bang state (degree-$0$ trivial configuration)** to **CMB as boundary datum of a big bang state**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ This section gives horizons and Aeons the formal definitions and structural data the rest of the chapter will manipulate. The point is not to motivate — that happens around the section, in the chapter intro and in the propositions that consume these definitions — but to commit to a precise object so the downstream arguments can run. Working this out here makes quantum Geometry Variants available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §13.12 Quantum Geometry Variants  `sec:info-geometry-variants`  · ✓ existing  · [`quantum-brings-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/information-theory/quantum-brings-intro.md)
 
@@ -1624,23 +1622,23 @@ Each entry header links to the lead block's `.md` file on GitHub.
 
 ### §14.2 $\\mathbb{G}_m$-torsors and $q$-local systems  `sec:q-local-systems`  · 🆕 **DRAFT**  · [`q-local-systems-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/q-geometric-langlands/q-local-systems-intro.md)
 
-> _[draft]_ This section develops *$\mathbb{G}_m$-torsors and $q$-local systems*. The arc runs from **$q$-Local system** through **From monodromy to $q$-monodromy** to **$q$-Flat connection**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Why $\\mathbb{G}_m$-torsors and $q$-local systems? Because the rest of the chapter cannot be stated without it. This section establishes the propositions and lemmas that make $\\mathbb{G}_m$-torsors and $q$-local systems actionable, and identifies which of its features the downstream physics will actually use. Working this out here makes $q$-Hecke correspondences available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §14.3 $q$-Hecke correspondences  `sec:q-hecke-correspondences`  · 🆕 **DRAFT**  · [`q-hecke-correspondences-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/q-geometric-langlands/q-hecke-correspondences-intro.md)
 
-> _[draft]_ This section develops *$q$-Hecke correspondences*. The arc runs from **$q$-Hecke operator** through **$q$-Hecke eigensheaf** to **$q$-Hecke eigenvalues from the fibre functor**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ This section gives $q$-Hecke correspondences the formal definitions and structural data the rest of the chapter will manipulate. The point is not to motivate — that happens around the section, in the chapter intro and in the propositions that consume these definitions — but to commit to a precise object so the downstream arguments can run. Working this out here makes the $q$-Geometric Langlands conjecture available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §14.4 The $q$-Geometric Langlands conjecture  `sec:q-gl-conjecture`  · 🆕 **DRAFT**  · [`q-gl-conjecture-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/q-geometric-langlands/q-gl-conjecture-intro.md)
 
-> _[draft]_ This section develops *The $q$-Geometric Langlands conjecture*. The arc runs from **$q$-Langlands dual group** through **$q$-Geometric Langlands correspondence** to **Obstruction to $q$-flatness**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Why the $q$-Geometric Langlands conjecture? Because the rest of the chapter cannot be stated without it. This section establishes the propositions and lemmas that make the $q$-Geometric Langlands conjecture actionable, and identifies which of its features the downstream physics will actually use. Working this out here makes $q$-Opers and the spectral side available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §14.5 $q$-Opers and the spectral side  `sec:q-opers`  · 🆕 **DRAFT**  · [`q-opers-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/q-geometric-langlands/q-opers-intro.md)
 
-> _[draft]_ This section develops *$q$-Opers and the spectral side*. The arc runs from **$q$-Oper** through **$q$-Opers are $q$-Hecke eigensheaves** to **Proof sketch: $q$-opers produce eigensheaves**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Why $q$-Opers and the spectral side? Because the rest of the chapter cannot be stated without it. This section establishes the propositions and lemmas that make $q$-Opers and the spectral side actionable, and identifies which of its features the downstream physics will actually use. Working this out here makes classical limit and physical interpretation available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §14.6 Classical limit and physical interpretation  `sec:q-gl-classical-limit`  · 🆕 **DRAFT**  · [`q-gl-classical-limit-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/q-geometric-langlands/q-gl-classical-limit-intro.md)
 
-> _[draft]_ This section develops *Classical limit and physical interpretation*. The arc runs from **Classical limit of the $q$-Geometric Langlands correspondence** through **Proof sketch for classical recovery** to **Perpetual obstruction and the classical limit**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+> _[draft]_ Abstract structure is only as useful as the instances it covers. This section makes classical limit and physical interpretation concrete: each example or realisation is chosen to pin down a different aspect of the general theory. Working this out here makes spectral trace and Tannaka--Krein duality available to the next section.  *(Placeholder draft — refine with the section's actual stakes and the question it answers.)*
 
 ### §14.7 Spectral trace and Tannaka--Krein duality  `sec:q-gl-spectral-trace-tannaka`  · ✓ existing  · [`spectral-trace-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/q-geometric-langlands/spectral-trace-intro.md)
 
@@ -1681,4 +1679,4 @@ Each entry header links to the lead block's `.md` file on GitHub.
 
 **Stats:** 107 drafts (PR #745) + 40 pre-existing = 147 leads.
 
-Find all drafts with `grep -rl '_\[draft\]_' content/quantum-observable-universe/`.
+Find all drafts: `grep -rl '_\[draft\]_' content/quantum-observable-universe/`
