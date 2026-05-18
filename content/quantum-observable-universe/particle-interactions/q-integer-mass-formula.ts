@@ -13,6 +13,10 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:q-integer-mass-formula",
   title: "Seven-term atomic mass formula with $q$-integer coefficients",
+  lean: {
+    ref: "qou:QOU.Interactions.QIntegerMassFormula",
+    validation: "not_checked",
+  },
   uses: [
     "thm:wedderburn-mass-formula",
     "prop:operator-selection-lp",

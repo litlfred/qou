@@ -4,6 +4,10 @@ export default conjecture({
   label: "conj:periodic-table-demand",
   title:
     "The valley of stability is the demand-minimizing locus in $(Z, N)$-space",
+  lean: {
+    ref: "qou:QOU.PeriodicTableDemand.PeriodicTableDemand",
+    validation: "not_checked",
+  },
   tags: [
     "periodic-table",
     "valley-of-stability",
