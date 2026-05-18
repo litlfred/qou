@@ -1,34 +1,52 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-18T13:45:59.499154+00:00",
-  "commitSha": "d3bdef8232fc3bb0e972b8f5ea142e7aa52ae17f",
+  "computedAt": "2026-05-18T13:55:49.125770+00:00",
+  "commitSha": "ffd43bea85a2f106fae6b1dc9d41dc817ef01d89",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 1683,
+  "durationMs": 1659,
   "computation": "lambda-scale-rd-hoefsmit-symbolic",
   "scriptFile": "lambda_scale_rd_hoefsmit_symbolic.py",
-  "scriptHash": "74f1b301c2db",
-  "scriptCommitSha": "unknown",
-  "description": "APPROACH A: symbolic Hoefsmit-matrix derivation of c_4, c_6, c_8, ... for conj:lambda-scale-substrate-form. Computes the half-symmetric H_3 Markov trace of (σ_1 σ_2^{-1})^3 in closed form via the 2x2 seminormal matrices on V_(2,1), then Taylor-expands around q = 1 to extract all h-coefficients simultaneously.",
+  "scriptHash": "294f32bcd34e",
+  "scriptCommitSha": "b595b01afee2ef8c5eae7a1a5c3fd1cba583cd33",
+  "description": "APPROACH A v2: symbolic χ^λ via canonical hoefsmit_symbolic + Markov-trace half-symmetric projection at the Borromean braid (σ_1 σ_2^{-1})^3. Extracts c_4, c_6 in closed form via sympy.series at q=1+ε.",
   "contentBlock": "conj:lambda-scale-substrate-form",
   "parameters": {
-    "approach": "A — Hoefsmit symbolic 2x2 matrix product"
+    "approach": "A v2 — canonical hoefsmit_symbolic engine"
   },
   "data": {
-    "hecke_relation_ok": true,
-    "braid_relation_ok": false,
-    "inverse_relation_ok": true,
-    "chi_2_1_borromean_symbolic": "-q**6 + 6*q**4 - 9*q**2 + 2",
-    "tau_q_borromean_full_symbolic": "q*(-q**10 + 4*q**8 + 2*q**6 - 10*q**4 - 3*q**2 + 2)/(q**6 + 2*q**4 + 2*q**2 + 1)",
-    "tau_q_h_expansion": "484*eps**9/81 + 215*eps**8/144 - 1613*eps**7/216 + 431*eps**6/72 + 4*eps**5/9 - 149*eps**4/12 + 13*eps**3/6 + 17*eps**2/2 - 1",
-    "chi_21_at_q0_f64": -1.8509505803593802,
-    "tau_q_at_q0_f64": -0.8961080476768817,
+    "chi_by_shape_symbolic": {
+      "(3,)": "1",
+      "(2, 1)": "-q**6 + 3*q**4 - 3*q**2 + 4 - 3/q**2 + 3/q**4 - 1/q**6",
+      "(1, 1, 1)": "1"
+    },
+    "sanity_check_at_q1_ok": true,
+    "y_lambda_symbolic": {
+      "(3,)": "q**3/(q**6 + 2*q**4 + 2*q**2 + 1)",
+      "(2, 1)": "q*(q**4 - 1)/(q**6 - 1)",
+      "(1, 1, 1)": "q**3/(q**6 + 2*q**4 + 2*q**2 + 1)"
+    },
+    "tau_M_borromean_symbolic": "(-q**16 + q**14 + 2*q**12 + q**10 + 4*q**8 + q**6 + 2*q**4 + q**2 - 1)/(q**11 + 2*q**9 + 2*q**7 + q**5)",
+    "tau_M_at_q1": "5/3",
+    "tau_M_epsilon_expansion": "134620*eps**9/243 - 1415443*eps**8/3888 + 1793*eps**7/8 - 81745*eps**6/648 + 1676*eps**5/27 - 3445*eps**4/108 + 31*eps**3/18 - 31*eps**2/18 + 5/3",
+    "epsilon_of_h_series": "h_sym*(-5*h_sym**7 + 32*h_sym**5 - 256*h_sym**3 + 4096*h_sym + 16384)/32768",
+    "tau_M_h_expansion": "251167*h_sym**8/7962624 - 24659*h_sym**6/82944 - 6425*h_sym**4/3456 - 31*h_sym**2/72 + 5/3",
+    "h_coefficients": {
+      "h0": "5/3",
+      "h2": "-31/72",
+      "h4": "-6425/3456"
+    },
+    "tau_M_at_q0_numeric": 1.6442727167876234,
+    "lambda_p_target_numeric": 2.459953407714213,
     "structural_finding": {
-      "result": "χ_(2,1)((σ_1 σ_2^{-1})^3) computed symbolically. The H_3 Markov trace τ_q(β_Bor) is a closed q-rational expression. Taylor expansion in h around q=1 gives ALL coefficients (c_0, c_2, c_4, c_6, ...) simultaneously.",
-      "extends_to_higher_c": true,
-      "approach": "A (Hoefsmit symbolic)",
-      "next_step": "Verify the leading coefficients match the conjecture: c_0 ?= 5/2, c_2 ?= -G. If yes, c_4 is read off from the h^4 coefficient as a closed q-rational expression."
+      "tau_M_at_q1": "5/3",
+      "expected_5_2": "5/2",
+      "tau_M_h2_coeff": "-31/72",
+      "expected_h2_coeff_neg_G": "-G (Catalan)",
+      "h2_coeff_at_q0_numeric": -0.4305555555555556,
+      "interpretation": "The canonical Markov trace τ_M(β_Bor) does NOT equal the conjecture's λ_scale at the Borromean braid. At q=1, τ_M(β_Bor) = 5/3 (Plancherel sum of χ²/n!), not 5/2 (half-symmetric conjugate-pair count). This means the conjecture's '5/2 - h²·G' is NOT the Markov trace of the Borromean braid — it's a DIFFERENT categorical projection involving the half-symmetric Wedderburn weighting derived in Step 2 of the proof. The h^4 coefficient c_4 must come from THAT projection's expansion, not from the canonical Markov trace.",
+      "next_step": "Define the half-symmetric projection π_HS explicitly: π_HS(τ) = Σ over conjugate pairs (χ_λ + χ_λ') with weight 1, plus self-conjugate χ_λ with weight 1/2 (no normalisation by [n]_q!). Apply to χ^λ(β_Bor) and expand in h."
     }
   }
 }
