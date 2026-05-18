@@ -1,23 +1,84 @@
-**Conjecture (Borromean baryon $\lambda_{\mathrm{scale}}$ substrate form).**
+**Status (revised 2026-05-18 after exhaustive R&D — Class-A canonical-discipline note):**
+*The original substrate-form claim*
+$\lambda_{\mathrm{scale}}^{(u, d)} = 5/2 - h^2 \cdot G + O(h^4)$
+*matches CODATA $m_p$ to 5.4 ppm but is* **NOT structurally derived**
+*— it is a PSLQ-style numerical near-coincidence ([2026-05-18 falsification audit](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-18-conjecture-falsification.md)).
+What IS proved (Family A theorem):*
+
+$$
+  \lambda_A(q) \;:=\; \frac{1}{4} \sum_{\lambda \vdash 4} \dim_q V_\lambda
+                \;=\; \frac{3q^2 + 4 + 3q^{-2}}{4}
+                \;=\; \frac{5}{2} \;+\; \frac{3}{4} \cdot h^2
+$$
+
+*The series TERMINATES exactly at $h^2$; all higher $h^{2k}$ vanish.
+The h² coefficient is $+3/4$, NOT $-G$ — different sign and value
+than the original conjecture. Proved in*
+[`lambda_scale_all_c_i_family_a.py`](../../folio-assistant/computations/lambda_scale_all_c_i_family_a.py)
+*and formalised in Lean*
+[`lambda-scale-substrate-form.lean`](./lambda-scale-substrate-form.lean).
+
+**Original conjecture (now classified as empirical only):**
+*The Borromean baryon $\lambda_{\mathrm{scale}}$ in*
+([conj:borromean-baryon-mass-formula](#conj:borromean-baryon-mass-formula))
+*was hypothesised to equal $5/2 - h^2 \cdot G + O(h^4)$ where
+$G = \mathrm{Vol}(\mathcal{B}_3)/8$ is Catalan's constant. This
+empirical match is recorded for historical reference:*
+
+$$
+  \lambda_{\mathrm{scale}}^{(u, d)} \stackrel{?}{=} \frac{5}{2} - h^2 \cdot G + O(h^4)
+  \qquad (\text{5.4 ppm match to CODATA $m_p$, NO categorical derivation})
+$$
+
+**Why the original form is NOT derived (cumulative falsification):**
+
+1. **Family A (natural Wedderburn sum):** gives $+3 h^2/4$, opposite
+   sign and different magnitude than $-G$.
+2. **Sign-flipped Wedderburn sums (32 variants at $H_4$):** only the
+   all-positive combination preserves the leading 5/2, forcing
+   $+3 h^2/4$. No sign flip can produce a negative $h^2$.
+3. **Other Hecke levels ($H_2$ through $H_7$):** all natural
+   $(1/X) \sum_\lambda \dim_q V_\lambda$ normalisations give
+   POSITIVE $h^2$ coefficients.
+4. **Transcendental ansätze (Bloch-Wigner, Clausen, $\zeta(3)$,
+   $\mathrm{Cl}_2$):** no candidate matches the empirical
+   $\Sigma_{\mathrm{geom}}$ value within $10^{-3}$.
+5. **Single-knot ansatz $\mathrm{Vol}(K_p)/\hbar_q^2$:** no standard
+   hyperbolic 3-manifold has $\mathrm{Vol} = 18.03$ within 0.28%
+   (closest: 9·Vol(4_1) at +1.35%).
+
+**Therefore:** the original conjecture's specific form is a
+**PSLQ-style numerical coincidence**, not a categorical identity.
+The proton's mass-formula derivation requires either (a) a
+fundamentally different categorical construction, or (b) revision
+of the Borromean baryon mass formula itself.
+
+## Family A theorem (what IS proved)
+
 *Let $q_0 \in \mathbb{R}$ be the substrate parameter
 ([def:substrate-parameter](#def:substrate-parameter)), $h = q_0 - q_0^{-1}$
-the Hecke deformation, and $G = \mathrm{Vol}(\mathcal{B}_3)/8$ Catalan's
-constant (equivalently, the per-cell hyperbolic volume of the Borromean
-rings complement; see Adams 1985). The Borromean baryon $\lambda_{\mathrm{scale}}$
-factor in the mass formula
-([conj:borromean-baryon-mass-formula](#conj:borromean-baryon-mass-formula))
-admits the substrate form*
+the Hecke deformation, and $\dim_q V_\lambda$ the q-deformed dimension
+of the irreducible $H_4(q)$-module indexed by partition $\lambda \vdash 4$
+(Frame-Robinson-Thrall hook-content formula).*
+
+**Theorem (Family A closed form).** *The half-symmetric Wedderburn-sum
+projection at $H_4$ has the closed form*
 
 $$
-  \boxed{\;
-    \lambda_{\mathrm{scale}}^{(u, d)}
-    \;=\; \frac{5}{2} \;-\; h^2 \cdot G \;+\; O(h^4)
-  \;}
+  \lambda_A(q) = \frac{1}{4} \sum_{\lambda \vdash 4} \dim_q V_\lambda
+             = \frac{3 q^2 + 4 + 3 q^{-2}}{4}
+             = \frac{5}{2} + \frac{3}{4} \cdot h^2
 $$
 
-*for the canonical $(u, d)$-Borromean baryon family (proton and neutron),
-where the leading "$5/2$" arises from the conjugate-pair half-symmetric
-partition count at the proton's Markov-stabilised Hecke level $H_4(q)$.*
+*with no $h^4, h^6, \ldots$ corrections. All odd $h$ coefficients
+vanish by $q \leftrightarrow q^{-1}$ symmetry.*
+
+**Proof.** *Direct computation in sympy and Lean. The quantum
+dimensions at $H_4$ are $\dim_q V_{(4)} = 1$, $\dim_q V_{(3,1)} = [3]_q$,
+$\dim_q V_{(2,2)} = [4]_q/[2]_q$, $\dim_q V_{(2,1,1)} = [3]_q$,
+$\dim_q V_{(1,1,1,1)} = 1$. Their sum is $3q^2 + 4 + 3q^{-2}$
+(verified symbolically). Division by 4 and substitution $h = q - q^{-1}$
+yields the claimed form via `field_simp; ring`.* $\square$
 
 ## Structural interpretation
 

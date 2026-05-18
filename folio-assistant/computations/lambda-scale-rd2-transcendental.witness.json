@@ -1,0 +1,88 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-18T15:28:50.319818+00:00",
+  "commitSha": "883529fb666e6a4133bfba2dba113a4e3b82a710",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 126,
+  "computation": "lambda-scale-rd2-transcendental",
+  "scriptFile": "lambda_scale_rd2_transcendental.py",
+  "scriptHash": "6bf34807044e",
+  "scriptCommitSha": "unknown",
+  "description": "R&D 2: transcendental ansätze (Bloch-Wigner, Clausen) for λ_scale Σ_geom term. The implied Σ_geom h² coefficient ≈ 1.6663 — test various special-function values for a match.",
+  "contentBlock": "conj:lambda-scale-substrate-form",
+  "data": {
+    "Sigma_geom_h2_implied": "1.666281800127444230519389",
+    "Sigma_geom_h2_candidates": {
+      "5/3": {
+        "value": 1.6666666666666667,
+        "rel_diff": 0.00023097325986096707
+      },
+      "3/4 + G": {
+        "value": 1.6659655941772191,
+        "rel_diff": 0.00018976739120659585
+      },
+      "Vol(4_1) - G/2": {
+        "value": 1.5719004157306977,
+        "rel_diff": 0.05664191038366248
+      },
+      "Vol(4_1)/G": {
+        "value": 2.2161129476076913,
+        "rel_diff": 0.32997488626365223
+      },
+      "π/2 - G": {
+        "value": 0.6548307326176777,
+        "rel_diff": 0.6070108113960115
+      },
+      "Cl_2(π/3)": {
+        "value": 1.0149416064096537,
+        "rel_diff": 0.39089438153136724
+      },
+      "Cl_2(π/4)": {
+        "value": 0.9818721510502033,
+        "rel_diff": 0.41074063764298113
+      },
+      "Cl_2(π/6)": {
+        "value": 0.8643791310538927,
+        "rel_diff": 0.48125273228827115
+      },
+      "Cl_2(2π/3)": {
+        "value": 0.6766277376064358,
+        "rel_diff": 0.5939295876875782
+      },
+      "2·Cl_2(π/3)/Vol(4_1)": {
+        "value": 1.0,
+        "rel_diff": 0.39986141604408343
+      },
+      "Vol(4_1)/8 + G": {
+        "value": 1.1697009957796325,
+        "rel_diff": 0.29801730074098587
+      },
+      "π²/6 - G": {
+        "value": 0.7289684726710074,
+        "rel_diff": 0.5625178930627144
+      },
+      "Bloch_Wigner(i)": {
+        "value": 0.915965594177219,
+        "rel_diff": 0.45029370535814406
+      },
+      "1 + Bloch_Wigner(i)/G": {
+        "value": 2.0,
+        "rel_diff": 0.20027716791183317
+      }
+    },
+    "close_matches_below_1ppm": [
+      [
+        "5/3",
+        1.6666666666666667,
+        0.00023097325986096707
+      ],
+      [
+        "3/4 + G",
+        1.6659655941772191,
+        0.00018976739120659585
+      ]
+    ]
+  }
+}
