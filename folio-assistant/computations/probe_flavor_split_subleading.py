@@ -10,7 +10,9 @@ closes the CODATA proton–neutron split to **-1277 ppm** (at precise
 M_p = 938.272088 / M_n = 939.565421 / Δm/M_N = 0.001377471).
 The needed multiplicative correction is **+0.128 %**.
 
-DERIVABLE RESULT (categorically clean).
+DERIVABLE RESULT (mechanically obtainable from substrate machinery —
+*not* yet justified by a categorical proof, but follows from the
+substrate-Planck loop expansion structure).
 
   Δm / M_N  ≈  ℏ_q² · h_q · [2]_q · (1 + ℏ_q³) / 3
             =  (q-1)² · (1 - q⁻⁴) · (1 + ℏ_q³) / 3
@@ -25,19 +27,22 @@ closes the residual from -1277 ppm to **-306 ppm**.  The correction
 The substrate Planck ℏ_q = (q-1)/q is the natural dimensionless
 expansion variable in the substrate-physics tower.  Adding one
 power of ℏ_q to the leading 2-loop contribution gives the
-3-loop correction — categorically clean.
+3-loop correction — derivable in principle from the brane-tower
+expansion; *not yet justified* by an explicit categorical proof
+(deferred to the substrate Li_2^q convergence analysis once #682
+wires Li_2^q as the production tower form).
 
-EMPIRICALLY TIGHTER ALTERNATIVE (less clean derivation).
+EMPIRICALLY TIGHTER FORM (not categorically clean).
 
   Δm / M_N  ≈  ℏ_q² · h_q · [2]_q · (1 + (q-1)³) / 3
             =  ℏ_q² · h_q · [2]_q · (1 + q³ · ℏ_q³) / 3
 
 closes the residual to **+51 ppm** (25× tighter than leading-order,
-6× tighter than the categorically-clean derivable form).  The
-multiplier q³ relative to the clean `(1 + ℏ_q³)` form lacks a clean
-categorical reading; could correspond to "3 strands of the baryon
-braid each contributing one factor of q to the cubic correction"
-but this is speculative.
+6× tighter than the derivable form).  The multiplier q³ relative to
+the derivable `(1 + ℏ_q³)` form is *not derivable* from the substrate
+loop expansion — it could be a stronger version of the categorical
+formula, or a numerical coincidence at q_0.  Resolving requires
+q-dependence analysis away from q_0.
 
 Caveats.
   - All residuals are well below the 0.1 % framework target and
@@ -94,22 +99,27 @@ def main() -> int:
     print(f"    residual  = {base_ppm:+.2f} ppm")
     print()
 
-    # Categorically derivable sub-leading: 3-loop in substrate Planck
+    # Derivable sub-leading: 3-loop in substrate Planck
+    # (mechanically obtainable from the substrate brane-tower; not yet
+    # justified by an explicit categorical proof)
     corr_derive = mpf(1) + hbar**3
     refined_derive = base * corr_derive
     derive_ppm = float((refined_derive - TARGET) / TARGET * 1e6)
-    print(f"  DERIVABLE — (1 + ℏ_q³)  (3-loop substrate Planck):")
+    print(f"  DERIVABLE — (1 + ℏ_q³)  (3-loop substrate Planck;")
+    print(f"  follows from substrate machinery, not yet *justified* by proof):")
     print(f"    correction factor = {mp.nstr(corr_derive, 14)}")
     print(f"    refined value     = {mp.nstr(refined_derive, 14)}")
     print(f"    residual          = {derive_ppm:+.2f} ppm")
     print(f"    tightening        = {abs(base_ppm)/abs(derive_ppm):.1f}× over leading order")
     print()
 
-    # Empirical tighter alternative: 1 + (q-1)³
+    # Empirical tighter alternative — not derivable from substrate
+    # machinery in the same clean way (q³ multiplier on top of ℏ_q³)
     corr_emp = mpf(1) + (q - 1)**3
     refined_emp = base * corr_emp
     emp_ppm = float((refined_emp - TARGET) / TARGET * 1e6)
-    print(f"  EMPIRICAL — (1 + (q-1)³)  (less clean derivation, q³·ℏ_q³):")
+    print(f"  EMPIRICAL — (1 + (q-1)³ = 1 + q³·ℏ_q³)  (NOT derivable; q³")
+    print(f"  multiplier on top of ℏ_q³ lacks substrate structure):")
     print(f"    correction factor = {mp.nstr(corr_emp, 14)}")
     print(f"    refined value     = {mp.nstr(refined_emp, 14)}")
     print(f"    residual          = {emp_ppm:+.2f} ppm")
@@ -170,6 +180,9 @@ def main() -> int:
     })
     w.add_data("derivable_correction", {
         "factor": "1 + ℏ_q³",
+        "status": "derivable — follows from substrate brane-tower loop expansion",
+        "justification_status": "not yet justified by explicit categorical proof; "
+                                 "deferred to substrate Li_2^q convergence analysis (PR #682 dep)",
         "reading": "3-loop substrate Planck (one more action quantum on top of leading 2-loop)",
         "value": str(refined_derive),
         "residual_ppm": float(derive_ppm),
@@ -179,7 +192,10 @@ def main() -> int:
     w.add_data("empirical_correction", {
         "factor": "1 + (q-1)³",
         "factor_alt": "1 + q³·ℏ_q³",
-        "reading": "ad hoc — q³ multiplier on top of derivable ℏ_q³ lacks clean categorical reading",
+        "status": "NOT derivable from substrate machinery — q³ multiplier "
+                  "on top of ℏ_q³ lacks loop-expansion structure",
+        "reading": "tighter numerical match but ad hoc; could be a stronger "
+                   "categorical formula or a coincidence at q_0",
         "value": str(refined_emp),
         "residual_ppm": float(emp_ppm),
         "tightening_over_leading": float(abs(base_ppm) / abs(emp_ppm)),
@@ -192,11 +208,15 @@ def main() -> int:
         "codata": str(DELTA_M),
     })
     w.add_data("status",
-               "Derivable correction (1+ℏ_q³) is the categorically clean 3-loop "
-               "substrate-Planck contribution, closing -306 ppm.  Empirical "
+               "Derivable correction (1+ℏ_q³) is the 3-loop substrate-Planck "
+               "contribution — follows mechanically from the brane-tower loop "
+               "expansion, closing -306 ppm.  *Derivable* != *justified*: a "
+               "categorical proof of the exact coefficient is deferred to the "
+               "substrate Li_2^q convergence analysis (PR #682 dep).  Empirical "
                "(1+(q-1)³) closes +51 ppm but its q³ multiplier on top of "
-               "the derivable ℏ_q³ lacks a categorical proof — open research "
-               "for the substrate brane-tower expansion.")
+               "the derivable ℏ_q³ is NOT derivable from substrate machinery — "
+               "either a stronger categorical formula or a numerical "
+               "coincidence at q_0 (open research).")
     # Assertion: derivable form within 500 ppm of CODATA
     w.add_assertion("derivable_within_500ppm",
                     computed=abs(float(derive_ppm)),
