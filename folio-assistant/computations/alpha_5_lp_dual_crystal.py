@@ -268,7 +268,7 @@ def main() -> int:
     # and add ⁴He as a separate confirmation run when the signal
     # is clear.  Pass --include-4he via env var to opt in.
     import os
-    include_4he = os.environ.get("INCLUDE_4HE", "0") == "1"
+    include_4he = os.environ.get("INCLUDE_4HE", "0") == "1"  # noqa: I3 — intentional opt-in toggle, not guarded-off canonical
     atoms = ["D", "T", "3He"] + (["4He"] if include_4he else [])
     strata = ["two_row", "ht6"]
     print(f"  atoms: {atoms}", flush=True)

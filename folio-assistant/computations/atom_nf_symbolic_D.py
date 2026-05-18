@@ -185,7 +185,7 @@ def main() -> int:
     # trace (much faster), see atom_jones_vs_knots_D.py which uses
     # Plancherel-weighted seminormal traces at fixed q_val.
     import os
-    SKIP_TRACE = os.environ.get("SKIP_TRACE", "0") == "1"
+    SKIP_TRACE = os.environ.get("SKIP_TRACE", "0") == "1"  # noqa: I3 — performance gate (expensive symbolic trace), not guarded-off canonical
     if SKIP_TRACE:
         print("\n  [SKIP_TRACE=1; skipping symbolic Markov trace]")
         print("  (Numeric tr_M(D) at various q available in")

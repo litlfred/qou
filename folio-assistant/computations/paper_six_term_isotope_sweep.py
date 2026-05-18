@@ -861,7 +861,13 @@ def run_sweep_for_mode(tower_mode: str, isotopes: list, *, verbose: bool = True,
             E_0 = e_0_full_mev()
             e0_mode = "substrate"  # keep label honest in print/witness
         else:
-            # Legacy: fit E_0 to make proton residual exactly zero.
+            # Proton-fit method (this IS the proton-fit calibration the
+            # outer `e0_mode == "proton-fit"` selects when tower_mode
+            # is neither "li2q" nor "combined"): fit E_0 to make
+            # proton residual exactly zero.  Not guarded-off canonical;
+            # this is the intended behavior when the user opts in to
+            # e0_mode="proton-fit" for a single-sub-mode tower.
+            # noqa: I3 — intentional alternative calibration mode
             E_0 = (M_P_CODATA - p_t6_MeV) / m_p_hecke
     else:  # substrate
         # Canonical: E_0 from CAL-1 (m_e) and CAL-2 (q_0) only.
