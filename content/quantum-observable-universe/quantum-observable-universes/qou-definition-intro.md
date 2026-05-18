@@ -1,1 +1,1 @@
-_[draft]_ This chapter is about *Quantum Observable Universes*. The earlier chapters have given us the setup; we now turn to what that setup forces. We open with the Quantum Observable Universe and unfold the structural and physical consequences in the sections that follow. _(draft.)_
+_[draft]_ Before we can argue about *Quantum Observable Universes*, we need the language to argue in. The Quantum Observable Universe is that language; this section fixes it with just enough structural detail to make the rest of the chapter run. _(draft.)_

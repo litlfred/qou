@@ -1,1 +1,1 @@
-_[draft]_ Definitions earn their keep by what they cover. This section grounds crossing energy and Coulomb charge in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+_[draft]_ We pause the structural development to look at instances. The examples of crossing energy and Coulomb charge below are not illustrations — they are the test that the structure built so far is doing what we claimed. _(draft.)_

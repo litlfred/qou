@@ -1,1 +1,1 @@
-_[draft]_ Definitions earn their keep by what they cover. This section grounds golden Ratio, Julia Sets, and Discrete Dynamics in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+_[draft]_ Golden Ratio, Julia Sets, and Discrete Dynamics is the running example beat in this chapter. This section assembles the cases that the rest of the chapter will refer back to. _(draft.)_

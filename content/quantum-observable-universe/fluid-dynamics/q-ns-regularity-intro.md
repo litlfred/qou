@@ -1,1 +1,1 @@
-_[draft]_ The previous section gave us turbulence and acoustics. The question that drives the present one is global regularity for $q > 1$: we have the setup, we now want the structural answer. This section delivers it. The result is the input for the NS obstruction. _(draft.)_
+_[draft]_ The chapter has been circling global regularity for $q > 1$ for a few sections. Here we make it explicit, and use the explicit form to drive the NS obstruction. _(draft.)_

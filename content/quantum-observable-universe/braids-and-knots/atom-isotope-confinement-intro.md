@@ -1,1 +1,1 @@
-_[draft]_ The previous section gave us calibration and Algebraic Mass Formula. The question that drives the present one is atom, Isotope, and Confinement Levels: we have the setup, we now want the structural answer. This section delivers it. The result is the input for nuclear Binding and Beta Stability. _(draft.)_
+_[draft]_ We pin down atom, Isotope, and Confinement Levels. The data, the conditions, the small set of structural facts that matter — all collected here so the proofs in the next section can run cleanly. _(draft.)_

@@ -1,1 +1,1 @@
-_[draft]_ Definitions earn their keep by what they cover. This section grounds fundamental particles in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+_[draft]_ Time to be precise about fundamental particles. The definitions below are written for the use the propositions we are about to prove are going to make of them, not for maximum generality. _(draft.)_

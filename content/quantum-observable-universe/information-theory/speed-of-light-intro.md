@@ -1,1 +1,1 @@
-_[draft]_ The previous section gave us golden Ratio, Julia Sets, and Discrete Dynamics. The question that drives the present one is speed of Light and Mass--Energy Equivalence: we have the setup, we now want the structural answer. This section delivers it. The result is the input for computation at Planck Time Lengths. _(draft.)_
+_[draft]_ Recall golden Ratio, Julia Sets, and Discrete Dynamics. The natural next step is speed of Light and Mass--Energy Equivalence, and this section takes it. _(draft.)_

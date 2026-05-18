@@ -1,1 +1,1 @@
-_[draft]_ The previous section gave us atom, Isotope, and Confinement Levels. The question that drives the present one is nuclear Binding and Beta Stability: we have the setup, we now want the structural answer. This section delivers it. The result is the input for pre-Archimedean Derivation Chain and Audit. _(draft.)_
+_[draft]_ The previous section gave us atom, Isotope, and Confinement Levels. Here we turn it on nuclear Binding and Beta Stability and read off what it produces. The output is what pre-Archimedean Derivation Chain and Audit is built from. _(draft.)_

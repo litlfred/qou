@@ -1,1 +1,1 @@
-_[draft]_ The previous section gave us categorical Lagrangian. The question that drives the present one is categorical action: we have the setup, we now want the structural answer. This section delivers it. The result is the input for variational equations and wavefronts. _(draft.)_
+_[draft]_ Here is the question this section settles: categorical action. The answer is not assumed; it falls out of the setup we already have. _(draft.)_

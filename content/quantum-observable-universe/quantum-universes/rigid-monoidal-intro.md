@@ -1,1 +1,1 @@
-_[draft]_ We come into this chapter from the Introduction. Before we can argue, we need the language we will argue in: rigid monoidal categories. This section fixes that language, with just enough structural detail to make the rest of the chapter run. _(draft.)_
+_[draft]_ Rigid monoidal categories is the floor of this chapter. Every later section assumes it; this section earns the assumption. _(draft.)_

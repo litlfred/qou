@@ -1,1 +1,1 @@
-_[draft]_ The previous section gave us p versus NP as a Boundary Condition. The question that drives the present one is $q$-Heat kernel and spectral analysis: we have the setup, we now want the structural answer. This section delivers it. The result is the input for statistical Mechanics. _(draft.)_
+_[draft]_ P versus NP as a Boundary Condition delivered the data. $q$-Heat kernel and spectral analysis is what that data is for. The next move is statistical Mechanics. _(draft.)_

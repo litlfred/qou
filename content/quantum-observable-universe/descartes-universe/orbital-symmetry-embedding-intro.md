@@ -1,1 +1,1 @@
-_[draft]_ The previous section gave us topological mass and the knot-particle spectrum. The question that drives the present one is orbital Symmetry and Cohomological Embedding: we have the setup, we now want the structural answer. This section delivers it. _(draft.)_
+_[draft]_ Pause. Before we go further into *The Descartes Universe*, we owe a precise account of orbital Symmetry and Cohomological Embedding. This section gives it. _(draft.)_

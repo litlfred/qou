@@ -1,1 +1,1 @@
-_[draft]_ Definitions earn their keep by what they cover. This section grounds braiding Relations and the Spectral Filter in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+_[draft]_ Definitions earn their keep by what they cover. This section grounds braiding Relations and the Spectral Filter in concrete cases; each example tests a different feature of the general theory. _(draft.)_

@@ -1,1 +1,1 @@
-_[draft]_ Definitions earn their keep by what they cover. This section grounds heteronuclear bonding in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+_[draft]_ Time for the cases. Heteronuclear bonding is the umbrella; the examples are the test points that make the umbrella useful. _(draft.)_

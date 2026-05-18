@@ -1,1 +1,1 @@
-_[draft]_ This chapter is about *Molecular Construction from Nucleon Braids*. The earlier chapters have given us the setup; we now turn to what that setup forces. We open with the molecular Hecke algebra and unfold the structural and physical consequences in the sections that follow. _(draft.)_
+_[draft]_ Time to be precise about the molecular Hecke algebra. The definitions below are written for the use the propositions we are about to prove are going to make of them, not for maximum generality. _(draft.)_

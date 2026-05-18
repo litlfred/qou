@@ -1,1 +1,1 @@
-_[draft]_ The previous section gave us categorical Dirac operator. The question that drives the present one is categorical Lagrangian: we have the setup, we now want the structural answer. This section delivers it. The result is the input for categorical action. _(draft.)_
+_[draft]_ We have categorical Dirac operator; we now need categorical Lagrangian. This section supplies it in the form the rest of the chapter will use. _(draft.)_

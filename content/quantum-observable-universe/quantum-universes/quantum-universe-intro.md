@@ -1,1 +1,1 @@
-_[draft]_ The previous section gave us rigid monoidal categories. The question that drives the present one is the Quantum Universe: we have the setup, we now want the structural answer. This section delivers it. The result is the input for consequences of the QU axioms. _(draft.)_
+_[draft]_ The Quantum Universe is the object. This section fixes its definition, its essential data, and the half-dozen structural lemmas that downstream proofs will lean on. _(draft.)_

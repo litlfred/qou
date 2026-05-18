@@ -1,1 +1,1 @@
-_[draft]_ The previous section gave us geometric interpretations. The question that drives the present one is categorical instanton and self-duality: we have the setup, we now want the structural answer. This section delivers it. The result is the input for non-vanishing of $d_q^2$ and jet prolongation. _(draft.)_
+_[draft]_ Categorical instanton and self-duality is the next object we need. We define it, derive its first structural properties, and check that it does what geometric interpretations promised it would. _(draft.)_

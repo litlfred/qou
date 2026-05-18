@@ -1,1 +1,1 @@
-_[draft]_ We come into this chapter from transport and Torsion. Before we can argue, we need the language we will argue in: descent Preliminaries. This section fixes that language, with just enough structural detail to make the rest of the chapter run. _(draft.)_
+_[draft]_ This is preliminary work — but it is the preliminary work the rest of the chapter cannot do without. We commit to descent Preliminaries here so the later sections can treat it as background. _(draft.)_

@@ -1,1 +1,1 @@
-_[draft]_ We come into this chapter from borromean Baryons and Reidemeister Invariance. Before we can argue, we need the language we will argue in: categorical Mass Foundations. This section fixes that language, with just enough structural detail to make the rest of the chapter run. _(draft.)_
+_[draft]_ A section of definitions is not a section without ambition. Here we set out categorical Mass Foundations, the apparatus the rest of *Braids and Knots* will manipulate, and identify the few structural facts that the proofs will actually use. _(draft.)_

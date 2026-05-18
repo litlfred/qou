@@ -1,1 +1,1 @@
-_[draft]_ The previous section gave us variational equations and wavefronts. The question that drives the present one is particles, fermions, bosons, and observation: we have the setup, we now want the structural answer. This section delivers it. The result is the input for geometric interpretations. _(draft.)_
+_[draft]_ The chapter has been circling particles, fermions, bosons, and observation for a few sections. Here we make it explicit, and use the explicit form to drive geometric interpretations. _(draft.)_

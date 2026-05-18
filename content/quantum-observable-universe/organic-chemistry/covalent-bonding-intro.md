@@ -1,1 +1,1 @@
-_[draft]_ This chapter is about *Organic Chemistry from Hopf Chains*. The earlier chapters have given us the setup; we now turn to what that setup forces. We open with covalent bonding as shared sub-Hopf links and unfold the structural and physical consequences in the sections that follow. _(draft.)_
+_[draft]_ We pause the structural development to look at instances. The examples of covalent bonding as shared sub-Hopf links below are not illustrations — they are the test that the structure built so far is doing what we claimed. _(draft.)_

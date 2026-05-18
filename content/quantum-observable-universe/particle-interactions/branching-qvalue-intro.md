@@ -1,1 +1,1 @@
-_[draft]_ The previous section gave us atomic braid and Wedderburn mass formula. The question that drives the present one is branching Q-value derivation: we have the setup, we now want the structural answer. This section delivers it. _(draft.)_
+_[draft]_ Here is the question this section settles: branching Q-value derivation. The answer is not assumed; it falls out of the setup we already have. _(draft.)_

@@ -1,1 +1,1 @@
-_[draft]_ The previous section gave us $q$-Deformed operators. The question that drives the present one is heat equation, Laplace, Fourier: we have the setup, we now want the structural answer. This section delivers it. The result is the input for eigenvalue labelling, ribbon, orientation. _(draft.)_
+_[draft]_ Heat equation, Laplace, Fourier is the next object we need. We define it, derive its first structural properties, and check that it does what $q$-Deformed operators promised it would. _(draft.)_

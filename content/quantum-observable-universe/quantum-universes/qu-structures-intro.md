@@ -1,1 +1,1 @@
-_[draft]_ The objects this section commits to are structures on a Quantum Universe. We give them the formal definitions and structural data the downstream arguments will operate on — which fields they carry, which conditions they satisfy, and which structural facts the proofs will lean on. _(draft.)_
+_[draft]_ We pin down structures on a Quantum Universe. The data, the conditions, the small set of structural facts that matter — all collected here so the proofs in the next section can run cleanly. _(draft.)_

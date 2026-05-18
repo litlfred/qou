@@ -1,11 +1,10 @@
 # Story-Leads Review — All Section Intros
 
 Single-page consolidation of every section's opening prose lead,
-in document order. PR #745 drafts (🆕) follow the *one-voice*
-profile (first-person plural, no editorialising, declarative),
-in lecturer-opening cadence — connect to prior context, pose the
-question this section answers, name what comes next. Drafts are
-still marked `_[draft]_` for the author refinement pass.
+in document order. PR #745 drafts (🆕) use 32 lecturer-opening
+templates rotated by section-label hash for variety. One-voice
+rules enforced: first-person plural, no editorialising, declarative.
+Drafts are still marked `_[draft]_` for the author refinement pass.
 
 ---
 
@@ -34,42 +33,42 @@ still marked `_[draft]_` for the author refinement pass.
 
 ### §2.2 Preliminary: rigid monoidal categories  `sec:rigid-monoidal`  · 🆕 **DRAFT**  · [`rigid-monoidal-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-universes/rigid-monoidal-intro.md)
 
-> _[draft]_ We come into this chapter from the Introduction. Before we can argue, we need the language we will argue in: rigid monoidal categories. This section fixes that language, with just enough structural detail to make the rest of the chapter run. _(draft.)_
+> _[draft]_ Rigid monoidal categories is the floor of this chapter. Every later section assumes it; this section earns the assumption. _(draft.)_
 
 ### §2.3 The Quantum Universe  `sec:quantum-universe`  · 🆕 **DRAFT**  · [`quantum-universe-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-universes/quantum-universe-intro.md)
 
-> _[draft]_ The previous section gave us rigid monoidal categories. The question that drives the present one is the Quantum Universe: we have the setup, we now want the structural answer. This section delivers it. The result is the input for consequences of the QU axioms. _(draft.)_
+> _[draft]_ The Quantum Universe is the object. This section fixes its definition, its essential data, and the half-dozen structural lemmas that downstream proofs will lean on. _(draft.)_
 
 ### §2.4 Consequences of the QU axioms  `sec:qu-consequences`  · 🆕 **DRAFT**  · [`qu-consequences-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-universes/qu-consequences-intro.md)
 
-> _[draft]_ The quantum universe has been put in place. What does that buy us? This section follows the consequences for consequences of the QU axioms: which results drop out at once, which need sharper inputs, and which we leave open for the next section. _(draft.)_
+> _[draft]_ With the structural setup behind us, the propositions of this section follow at once — almost. We work through consequences of the QU axioms carefully and flag the cases that need additional input. _(draft.)_
 
 ### §2.5 Structures on a Quantum Universe  `sec:qu-structures`  · 🆕 **DRAFT**  · [`qu-structures-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-universes/qu-structures-intro.md)
 
-> _[draft]_ The objects this section commits to are structures on a Quantum Universe. We give them the formal definitions and structural data the downstream arguments will operate on — which fields they carry, which conditions they satisfy, and which structural facts the proofs will lean on. _(draft.)_
+> _[draft]_ We pin down structures on a Quantum Universe. The data, the conditions, the small set of structural facts that matter — all collected here so the proofs in the next section can run cleanly. _(draft.)_
 
 
 ## Ch 3 — Quantum Observable Universes  `quantum-observable-universes`
 
 ### §3.1 The Quantum Observable Universe  `sec:qou-definition`  · 🆕 **DRAFT**  · [`qou-definition-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/qou-definition-intro.md)
 
-> _[draft]_ This chapter is about *Quantum Observable Universes*. The earlier chapters have given us the setup; we now turn to what that setup forces. We open with the Quantum Observable Universe and unfold the structural and physical consequences in the sections that follow. _(draft.)_
+> _[draft]_ Before we can argue about *Quantum Observable Universes*, we need the language to argue in. The Quantum Observable Universe is that language; this section fixes it with just enough structural detail to make the rest of the chapter run. _(draft.)_
 
 ### §3.2 Emergence from observability  `sec:emergence`  · 🆕 **DRAFT**  · [`emergence-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/emergence-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds emergence from observability in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ Emergence from observability is the running example beat in this chapter. This section assembles the cases that the rest of the chapter will refer back to. _(draft.)_
 
 ### §3.3 Maximal torus and weight decomposition  `sec:weight-decomposition`  · 🆕 **DRAFT**  · [`weight-decomposition-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/weight-decomposition-intro.md)
 
-> _[draft]_ The objects this section commits to are maximal torus and weight decomposition. We give them the formal definitions and structural data the downstream arguments will operate on — which fields they carry, which conditions they satisfy, and which structural facts the proofs will lean on. That is the apparatus the next section, on vectors, hadrons, and the PawLei basis, picks up. _(draft.)_
+> _[draft]_ Time to be precise about maximal torus and weight decomposition. The definitions below are written for the use the propositions we are about to prove are going to make of them, not for maximum generality. _(draft.)_
 
 ### §3.4 Vectors, hadrons, and the PawLei basis  `sec:vectors-hadrons`  · 🆕 **DRAFT**  · [`vectors-hadrons-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/vectors-hadrons-intro.md)
 
-> _[draft]_ The previous section gave us maximal torus and weight decomposition. The question that drives the present one is vectors, hadrons, and the PawLei basis: we have the setup, we now want the structural answer. This section delivers it. The result is the input for differential structures and gauge actions. _(draft.)_
+> _[draft]_ Pause. Before we go further into *Quantum Observable Universes*, we owe a precise account of vectors, hadrons, and the PawLei basis. This section gives it. _(draft.)_
 
 ### §3.5 Differential structures and gauge actions  `sec:differential-structures`  · 🆕 **DRAFT**  · [`differential-structures-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/differential-structures-intro.md)
 
-> _[draft]_ The objects this section commits to are differential structures and gauge actions. We give them the formal definitions and structural data the downstream arguments will operate on — which fields they carry, which conditions they satisfy, and which structural facts the proofs will lean on. That is the apparatus the next section, on substrate parameter and deformation, picks up. _(draft.)_
+> _[draft]_ Time to be precise about differential structures and gauge actions. The definitions below are written for the use the propositions we are about to prove are going to make of them, not for maximum generality. _(draft.)_
 
 ### §3.6 Substrate parameter and deformation  `sec:substrate-parameter`  · ✓ existing  · [`quantum-universe-explication.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/quantum-universe-explication.md)
 
@@ -122,47 +121,47 @@ still marked `_[draft]_` for the author refinement pass.
 
 ### §3.9 Categorical Dirac operator  `sec:categorical-dirac-operator`  · 🆕 **DRAFT**  · [`categorical-dirac-operator-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/categorical-dirac-operator-intro.md)
 
-> _[draft]_ The previous section gave us examples of quantum observable universes. The question that drives the present one is categorical Dirac operator: we have the setup, we now want the structural answer. This section delivers it. The result is the input for categorical Lagrangian. _(draft.)_
+> _[draft]_ Recall examples of quantum observable universes. The natural next step is categorical Dirac operator, and this section takes it. _(draft.)_
 
 ### §3.10 Categorical Lagrangian  `sec:categorical-lagrangian`  · 🆕 **DRAFT**  · [`categorical-lagrangian-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/categorical-lagrangian-intro.md)
 
-> _[draft]_ The previous section gave us categorical Dirac operator. The question that drives the present one is categorical Lagrangian: we have the setup, we now want the structural answer. This section delivers it. The result is the input for categorical action. _(draft.)_
+> _[draft]_ We have categorical Dirac operator; we now need categorical Lagrangian. This section supplies it in the form the rest of the chapter will use. _(draft.)_
 
 ### §3.11 Categorical action  `sec:categorical-action`  · 🆕 **DRAFT**  · [`categorical-action-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/categorical-action-intro.md)
 
-> _[draft]_ The previous section gave us categorical Lagrangian. The question that drives the present one is categorical action: we have the setup, we now want the structural answer. This section delivers it. The result is the input for variational equations and wavefronts. _(draft.)_
+> _[draft]_ Here is the question this section settles: categorical action. The answer is not assumed; it falls out of the setup we already have. _(draft.)_
 
 ### §3.12 Variational equations and wavefronts  `sec:variational-equations`  · 🆕 **DRAFT**  · [`variational-equations-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/variational-equations-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds variational equations and wavefronts in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ We pause the structural development to look at instances. The examples of variational equations and wavefronts below are not illustrations — they are the test that the structure built so far is doing what we claimed. _(draft.)_
 
 ### §3.13 Particles, fermions, bosons, and observation  `sec:particles`  · 🆕 **DRAFT**  · [`particles-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/particles-intro.md)
 
-> _[draft]_ The previous section gave us variational equations and wavefronts. The question that drives the present one is particles, fermions, bosons, and observation: we have the setup, we now want the structural answer. This section delivers it. The result is the input for geometric interpretations. _(draft.)_
+> _[draft]_ The chapter has been circling particles, fermions, bosons, and observation for a few sections. Here we make it explicit, and use the explicit form to drive geometric interpretations. _(draft.)_
 
 ### §3.14 Geometric interpretations  `sec:geometric-interpretations`  · 🆕 **DRAFT**  · [`geometric-interpretations-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/geometric-interpretations-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds geometric interpretations in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ We pause the structural development to look at instances. The examples of geometric interpretations below are not illustrations — they are the test that the structure built so far is doing what we claimed. _(draft.)_
 
 ### §3.15 Categorical instanton and self-duality  `sec:instanton`  · 🆕 **DRAFT**  · [`instanton-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/instanton-intro.md)
 
-> _[draft]_ The previous section gave us geometric interpretations. The question that drives the present one is categorical instanton and self-duality: we have the setup, we now want the structural answer. This section delivers it. The result is the input for non-vanishing of $d_q^2$ and jet prolongation. _(draft.)_
+> _[draft]_ Categorical instanton and self-duality is the next object we need. We define it, derive its first structural properties, and check that it does what geometric interpretations promised it would. _(draft.)_
 
 ### §3.16 Non-vanishing of $d_q^2$ and jet prolongation  `sec:dq-squared`  · 🆕 **DRAFT**  · [`dq-squared-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/dq-squared-intro.md)
 
-> _[draft]_ The objects this section commits to are non-vanishing of $d_q^2$ and jet prolongation. We give them the formal definitions and structural data the downstream arguments will operate on — which fields they carry, which conditions they satisfy, and which structural facts the proofs will lean on. That is the apparatus the next section, on $q$-Deformed operators, picks up. _(draft.)_
+> _[draft]_ Non-vanishing of $d_q^2$ and jet prolongation is the next object we need. We define it, derive its first structural properties, and check that it does what categorical instanton and self-duality promised it would. _(draft.)_
 
 ### §3.17 $q$-Deformed operators  `sec:q-deformed-operators`  · 🆕 **DRAFT**  · [`q-deformed-operators-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/q-deformed-operators-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds $q$-Deformed operators in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ $q$-Deformed operators is the running example beat in this chapter. This section assembles the cases that the rest of the chapter will refer back to. _(draft.)_
 
 ### §3.18 $q$-Harmonic analysis: heat equation, Laplace, Fourier  `sec:q-harmonic-analysis`  · 🆕 **DRAFT**  · [`q-harmonic-analysis-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/q-harmonic-analysis-intro.md)
 
-> _[draft]_ The previous section gave us $q$-Deformed operators. The question that drives the present one is heat equation, Laplace, Fourier: we have the setup, we now want the structural answer. This section delivers it. The result is the input for eigenvalue labelling, ribbon, orientation. _(draft.)_
+> _[draft]_ Heat equation, Laplace, Fourier is the next object we need. We define it, derive its first structural properties, and check that it does what $q$-Deformed operators promised it would. _(draft.)_
 
 ### §3.19 Braiding conventions: eigenvalue labelling, ribbon, orientation  `sec:braiding-conventions`  · 🆕 **DRAFT**  · [`braiding-conventions-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/braiding-conventions-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds eigenvalue labelling, ribbon, orientation in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ Eigenvalue labelling, ribbon, orientation is the running example beat in this chapter. This section assembles the cases that the rest of the chapter will refer back to. _(draft.)_
 
 ### §3.20 Elaboration: categorical context  `sec:elaboration-intro`  · ✓ existing  · [`intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/intro.md)
 
@@ -176,18 +175,18 @@ still marked `_[draft]_` for the author refinement pass.
 
 ### §3.21 Non-vanishing of $d_q^2$ and the $q$-jacobiator  `sec:dq-squared-elaboration`  · 🆕 **DRAFT**  · [`dq-squared-elaboration-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/dq-squared-elaboration-intro.md)
 
-> _[draft]_ The previous section gave us categorical context. The question that drives the present one is non-vanishing of $d_q^2$ and the $q$-jacobiator: we have the setup, we now want the structural answer. This section delivers it. The result is the input for physical elaborations. _(draft.)_
+> _[draft]_ We have categorical context; we now need non-vanishing of $d_q^2$ and the $q$-jacobiator. This section supplies it in the form the rest of the chapter will use. _(draft.)_
 
 ### §3.22 Physical elaborations  `sec:physical-elaborations`  · 🆕 **DRAFT**  · [`physical-elaborations-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/quantum-observable-universes/physical-elaborations-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds physical elaborations in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ Definitions earn their keep by what they cover. This section grounds physical elaborations in concrete cases; each example tests a different feature of the general theory. _(draft.)_
 
 
 ## Ch 4 — Lifting and Descent  `lifting-and-descent`
 
 ### §4.1 Jet Prolongation and the Recursive Brane Tower  `sec:jet-prolongation`  · 🆕 **DRAFT**  · [`jet-prolongation-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/lifting-and-descent/jet-prolongation-intro.md)
 
-> _[draft]_ This chapter is about *Lifting and Descent*. The earlier chapters have given us the setup; we now turn to what that setup forces. We open with jet Prolongation and the Recursive Brane Tower and unfold the structural and physical consequences in the sections that follow. _(draft.)_
+> _[draft]_ Jet Prolongation and the Recursive Brane Tower is the floor of this chapter. Every later section assumes it; this section earns the assumption. _(draft.)_
 
 ### §4.2 Categorical Lifting: Transport and Torsion  `sec:lifting`  · ✓ existing  · [`lifting-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/lifting-and-descent/lifting-intro.md)
 
@@ -199,23 +198,23 @@ still marked `_[draft]_` for the author refinement pass.
 
 ### §4.3 Descent Preliminaries  `ssec:descent-prelim`  · 🆕 **DRAFT**  · [`sdescent-prelim-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/lifting-and-descent/sdescent-prelim-intro.md)
 
-> _[draft]_ We come into this chapter from transport and Torsion. Before we can argue, we need the language we will argue in: descent Preliminaries. This section fixes that language, with just enough structural detail to make the rest of the chapter run. _(draft.)_
+> _[draft]_ This is preliminary work — but it is the preliminary work the rest of the chapter cannot do without. We commit to descent Preliminaries here so the later sections can treat it as background. _(draft.)_
 
 ### §4.4 Categorical Lifting and Quantum Characteristic Classes  `sec:yekutieli-lifting`  · 🆕 **DRAFT**  · [`yekutieli-lifting-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/lifting-and-descent/yekutieli-lifting-intro.md)
 
-> _[draft]_ The objects this section commits to are categorical Lifting and Quantum Characteristic Classes. We give them the formal definitions and structural data the downstream arguments will operate on — which fields they carry, which conditions they satisfy, and which structural facts the proofs will lean on. That is the apparatus the next section, on direct Limit Algebra, picks up. _(draft.)_
+> _[draft]_ The narrative pauses; the definitions take over. Categorical Lifting and Quantum Characteristic Classes gets its full structural account here, in the form the rest of the chapter consumes. _(draft.)_
 
 ### §4.5 Direct Limit Algebra  `sec:direct-limit`  · 🆕 **DRAFT**  · [`direct-limit-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/lifting-and-descent/direct-limit-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds direct Limit Algebra in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ Abstract structure is not an argument for itself. We pick examples that pin down direct Limit Algebra — one to fix the typical behaviour, the others to mark the edges where the theory does and does not apply. _(draft.)_
 
 ### §4.6 Mass in the Brane Tower  `sec:mass-brane`  · 🆕 **DRAFT**  · [`mass-brane-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/lifting-and-descent/mass-brane-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds mass in the Brane Tower in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ Direct Limit Algebra delivered the data. Mass in the Brane Tower is what that data is for. The next move is betti Numbers and Harmonic Basis. _(draft.)_
 
 ### §4.7 Betti Numbers and Harmonic Basis  `sec:betti-harmonic`  · 🆕 **DRAFT**  · [`betti-harmonic-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/lifting-and-descent/betti-harmonic-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds betti Numbers and Harmonic Basis in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ Definitions earn their keep by what they cover. This section grounds betti Numbers and Harmonic Basis in concrete cases; each example tests a different feature of the general theory. _(draft.)_
 
 ### §4.8 Descent  `ssec:descent`  · ✓ existing  · [`descent-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/lifting-and-descent/descent-intro.md)
 
@@ -257,7 +256,7 @@ still marked `_[draft]_` for the author refinement pass.
 
 ### §4.11 Archimedean Specialisations  `sec:archimedean-lifting`  · 🆕 **DRAFT**  · [`archimedean-lifting-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/lifting-and-descent/archimedean-lifting-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds archimedean Specialisations in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ Archimedean Specialisations is the running example beat in this chapter. This section assembles the cases that the rest of the chapter will refer back to. _(draft.)_
 
 
 ## Ch 5 — Braids and Knots  `braids-and-knots`
@@ -325,63 +324,63 @@ still marked `_[draft]_` for the author refinement pass.
 
 ### §5.9 Categorical Möbius energy and self-avoidance  `sec:mobius-energy`  · 🆕 **DRAFT**  · [`mobius-energy-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/mobius-energy-intro.md)
 
-> _[draft]_ The previous section gave us universal enveloping algebras and quantum groups. The question that drives the present one is categorical Möbius energy and self-avoidance: we have the setup, we now want the structural answer. This section delivers it. The result is the input for crossing energy and Coulomb charge. _(draft.)_
+> _[draft]_ The previous section gave us universal enveloping algebras and quantum groups. Here we turn it on categorical Möbius energy and self-avoidance and read off what it produces. The output is what crossing energy and Coulomb charge is built from. _(draft.)_
 
 ### §5.10 Crossing energy and Coulomb charge  `sec:crossing-energy`  · 🆕 **DRAFT**  · [`crossing-energy-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/crossing-energy-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds crossing energy and Coulomb charge in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ We pause the structural development to look at instances. The examples of crossing energy and Coulomb charge below are not illustrations — they are the test that the structure built so far is doing what we claimed. _(draft.)_
 
 ### §5.11 Lagrange Resolvents and $q$-Deformed Kinematics  `sec:lagrange-q-kinematics`  · 🆕 **DRAFT**  · [`lagrange-q-kinematics-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/lagrange-q-kinematics-intro.md)
 
-> _[draft]_ The objects this section commits to are lagrange Resolvents and $q$-Deformed Kinematics. We give them the formal definitions and structural data the downstream arguments will operate on — which fields they carry, which conditions they satisfy, and which structural facts the proofs will lean on. That is the apparatus the next section, on exceptional Divisor and Vertex Operators, picks up. _(draft.)_
+> _[draft]_ Abstract structure is not an argument for itself. We pick examples that pin down lagrange Resolvents and $q$-Deformed Kinematics — one to fix the typical behaviour, the others to mark the edges where the theory does and does not apply. _(draft.)_
 
 ### §5.12 Exceptional Divisor and Vertex Operators  `sec:exceptional-divisor-reeb`  · 🆕 **DRAFT**  · [`exceptional-divisor-reeb-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/exceptional-divisor-reeb-intro.md)
 
-> _[draft]_ The objects this section commits to are exceptional Divisor and Vertex Operators. We give them the formal definitions and structural data the downstream arguments will operate on — which fields they carry, which conditions they satisfy, and which structural facts the proofs will lean on. That is the apparatus the next section, on vertex Factorisation and the Markov Trace, picks up. _(draft.)_
+> _[draft]_ The narrative pauses; the definitions take over. Exceptional Divisor and Vertex Operators gets its full structural account here, in the form the rest of the chapter consumes. _(draft.)_
 
 ### §5.13 Vertex Factorisation and the Markov Trace  `sec:vertex-factorisation`  · 🆕 **DRAFT**  · [`vertex-factorisation-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/vertex-factorisation-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds vertex Factorisation and the Markov Trace in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ We pause the structural development to look at instances. The examples of vertex Factorisation and the Markov Trace below are not illustrations — they are the test that the structure built so far is doing what we claimed. _(draft.)_
 
 ### §5.14 Transfer Matrix and Topological Mass  `sec:transfer-matrix-mass`  · 🆕 **DRAFT**  · [`transfer-matrix-mass-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/transfer-matrix-mass-intro.md)
 
-> _[draft]_ The previous section gave us vertex Factorisation and the Markov Trace. The question that drives the present one is transfer Matrix and Topological Mass: we have the setup, we now want the structural answer. This section delivers it. The result is the input for braiding Relations and the Spectral Filter. _(draft.)_
+> _[draft]_ Granted vertex Factorisation and the Markov Trace, what does transfer Matrix and Topological Mass look like? This section answers concretely. _(draft.)_
 
 ### §5.15 Braiding Relations and the Spectral Filter  `sec:braiding-relations`  · 🆕 **DRAFT**  · [`braiding-relations-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/braiding-relations-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds braiding Relations and the Spectral Filter in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ Definitions earn their keep by what they cover. This section grounds braiding Relations and the Spectral Filter in concrete cases; each example tests a different feature of the general theory. _(draft.)_
 
 ### §5.16 Hadron Algebra and Knot Factorisation  `sec:hadron-algebra`  · 🆕 **DRAFT**  · [`hadron-algebra-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/hadron-algebra-intro.md)
 
-> _[draft]_ The previous section gave us braiding Relations and the Spectral Filter. The question that drives the present one is hadron Algebra and Knot Factorisation: we have the setup, we now want the structural answer. This section delivers it. The result is the input for skein Generation and Particle Correspondence. _(draft.)_
+> _[draft]_ The chapter has been circling hadron Algebra and Knot Factorisation for a few sections. Here we make it explicit, and use the explicit form to drive skein Generation and Particle Correspondence. _(draft.)_
 
 ### §5.17 Skein Generation and Particle Correspondence  `sec:skein-particle-generation`  · 🆕 **DRAFT**  · [`skein-particle-generation-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/skein-particle-generation-intro.md)
 
-> _[draft]_ The previous section gave us hadron Algebra and Knot Factorisation. The question that drives the present one is skein Generation and Particle Correspondence: we have the setup, we now want the structural answer. This section delivers it. The result is the input for bundle Structure and Observation. _(draft.)_
+> _[draft]_ Hadron Algebra and Knot Factorisation delivered the data. Skein Generation and Particle Correspondence is what that data is for. The next move is bundle Structure and Observation. _(draft.)_
 
 ### §5.18 Bundle Structure and Observation  `sec:bundle-observation`  · 🆕 **DRAFT**  · [`bundle-observation-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/bundle-observation-intro.md)
 
-> _[draft]_ The objects this section commits to are bundle Structure and Observation. We give them the formal definitions and structural data the downstream arguments will operate on — which fields they carry, which conditions they satisfy, and which structural facts the proofs will lean on. That is the apparatus the next section, on borromean Baryons and Reidemeister Invariance, picks up. _(draft.)_
+> _[draft]_ We pin down bundle Structure and Observation. The data, the conditions, the small set of structural facts that matter — all collected here so the proofs in the next section can run cleanly. _(draft.)_
 
 ### §5.19 Borromean Baryons and Reidemeister Invariance  `sec:borromean-reidemeister`  · 🆕 **DRAFT**  · [`borromean-reidemeister-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/borromean-reidemeister-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds borromean Baryons and Reidemeister Invariance in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ Abstract structure is not an argument for itself. We pick examples that pin down borromean Baryons and Reidemeister Invariance — one to fix the typical behaviour, the others to mark the edges where the theory does and does not apply. _(draft.)_
 
 ### §5.20 Categorical Mass Foundations  `sec:categorical-mass-foundations`  · 🆕 **DRAFT**  · [`categorical-mass-foundations-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/categorical-mass-foundations-intro.md)
 
-> _[draft]_ We come into this chapter from borromean Baryons and Reidemeister Invariance. Before we can argue, we need the language we will argue in: categorical Mass Foundations. This section fixes that language, with just enough structural detail to make the rest of the chapter run. _(draft.)_
+> _[draft]_ A section of definitions is not a section without ambition. Here we set out categorical Mass Foundations, the apparatus the rest of *Braids and Knots* will manipulate, and identify the few structural facts that the proofs will actually use. _(draft.)_
 
 ### §5.21 Calibration and Algebraic Mass Formula  `sec:calibration-algebraic-mass`  · 🆕 **DRAFT**  · [`calibration-algebraic-mass-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/calibration-algebraic-mass-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds calibration and Algebraic Mass Formula in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ Calibration and Algebraic Mass Formula is the running example beat in this chapter. This section assembles the cases that the rest of the chapter will refer back to. _(draft.)_
 
 ### §5.22 Atom, Isotope, and Confinement Levels  `sec:atom-isotope-confinement`  · 🆕 **DRAFT**  · [`atom-isotope-confinement-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/atom-isotope-confinement-intro.md)
 
-> _[draft]_ The previous section gave us calibration and Algebraic Mass Formula. The question that drives the present one is atom, Isotope, and Confinement Levels: we have the setup, we now want the structural answer. This section delivers it. The result is the input for nuclear Binding and Beta Stability. _(draft.)_
+> _[draft]_ We pin down atom, Isotope, and Confinement Levels. The data, the conditions, the small set of structural facts that matter — all collected here so the proofs in the next section can run cleanly. _(draft.)_
 
 ### §5.23 Nuclear Binding and Beta Stability  `sec:nuclear-binding-beta-stability`  · 🆕 **DRAFT**  · [`nuclear-binding-beta-stability-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/nuclear-binding-beta-stability-intro.md)
 
-> _[draft]_ The previous section gave us atom, Isotope, and Confinement Levels. The question that drives the present one is nuclear Binding and Beta Stability: we have the setup, we now want the structural answer. This section delivers it. The result is the input for pre-Archimedean Derivation Chain and Audit. _(draft.)_
+> _[draft]_ The previous section gave us atom, Isotope, and Confinement Levels. Here we turn it on nuclear Binding and Beta Stability and read off what it produces. The output is what pre-Archimedean Derivation Chain and Audit is built from. _(draft.)_
 
 ### §5.24 Pre-Archimedean Derivation Chain and Audit  `sec:derivation-audit`  · ✓ existing  · [`pre-archimedean-derivation-chain.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/braids-and-knots/pre-archimedean-derivation-chain.md)
 
@@ -852,7 +851,7 @@ still marked `_[draft]_` for the author refinement pass.
 
 ### §6.2 Archimedean specialisations  `sec:archimedean-models`  · 🆕 **DRAFT**  · [`archimedean-models-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/models-of-qous/archimedean-models-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds archimedean specialisations in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ We pause the structural development to look at instances. The examples of archimedean specialisations below are not illustrations — they are the test that the structure built so far is doing what we claimed. _(draft.)_
 
 ### §6.3 Non-Archimedean models  `sec:non-archimedean-models`  · ✓ existing  · [`categorical-reformulation.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/models-of-qous/categorical-reformulation.md)
 
@@ -883,11 +882,11 @@ still marked `_[draft]_` for the author refinement pass.
 
 ### §6.5 Finite fields and Jones polynomials  `sec:finite-fields`  · 🆕 **DRAFT**  · [`finite-fields-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/models-of-qous/finite-fields-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds finite fields and Jones polynomials in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ We pause the structural development to look at instances. The examples of finite fields and Jones polynomials below are not illustrations — they are the test that the structure built so far is doing what we claimed. _(draft.)_
 
 ### §6.6 Mostow confinement and the Archimedean wall  `sec:archimedean-encounter`  · 🆕 **DRAFT**  · [`archimedean-encounter-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/models-of-qous/archimedean-encounter-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds mostow confinement and the Archimedean wall in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ Time for the cases. Mostow confinement and the Archimedean wall is the umbrella; the examples are the test points that make the umbrella useful. _(draft.)_
 
 
 ## Ch 7 — The Descartes Universe  `descartes-universe`
@@ -929,27 +928,27 @@ still marked `_[draft]_` for the author refinement pass.
 
 ### §7.2 Bring  `sec:brings-surface-qou`  · 🆕 **DRAFT**  · [`brings-surface-qou-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/descartes-universe/brings-surface-qou-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds bring in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ Time for the cases. Bring is the umbrella; the examples are the test points that make the umbrella useful. _(draft.)_
 
 ### §7.3 Color tube coordinates  `sec:color-tube-coords`  · 🆕 **DRAFT**  · [`color-tube-coords-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/descartes-universe/color-tube-coords-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds color tube coordinates in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ Color tube coordinates is the running example beat in this chapter. This section assembles the cases that the rest of the chapter will refer back to. _(draft.)_
 
 ### §7.4 Coral fibration and elliptic curves  `sec:coral-fibration-elliptic`  · 🆕 **DRAFT**  · [`coral-fibration-elliptic-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/descartes-universe/coral-fibration-elliptic-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds coral fibration and elliptic curves in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ Time for the cases. Coral fibration and elliptic curves is the umbrella; the examples are the test points that make the umbrella useful. _(draft.)_
 
 ### §7.5 Bundle structures and smoothness  `sec:brings-smoothness`  · 🆕 **DRAFT**  · [`brings-smoothness-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/descartes-universe/brings-smoothness-intro.md)
 
-> _[draft]_ The objects this section commits to are bundle structures and smoothness. We give them the formal definitions and structural data the downstream arguments will operate on — which fields they carry, which conditions they satisfy, and which structural facts the proofs will lean on. That is the apparatus the next section, on spectral resolvents and gauge structures, picks up. _(draft.)_
+> _[draft]_ The narrative pauses; the definitions take over. Bundle structures and smoothness gets its full structural account here, in the form the rest of the chapter consumes. _(draft.)_
 
 ### §7.6 Spectral resolvents and gauge structures  `sec:spectral-gauge`  · 🆕 **DRAFT**  · [`spectral-gauge-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/descartes-universe/spectral-gauge-intro.md)
 
-> _[draft]_ The objects this section commits to are spectral resolvents and gauge structures. We give them the formal definitions and structural data the downstream arguments will operate on — which fields they carry, which conditions they satisfy, and which structural facts the proofs will lean on. That is the apparatus the next section, on the Descartes condition and lepton spectrum, picks up. _(draft.)_
+> _[draft]_ The objects this section commits to are spectral resolvents and gauge structures. We give them the formal definitions and structural data the downstream arguments will operate on. _(draft.)_
 
 ### §7.7 The Descartes condition and lepton spectrum  `sec:descartes-condition`  · 🆕 **DRAFT**  · [`descartes-condition-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/descartes-universe/descartes-condition-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds the Descartes condition and lepton spectrum in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ Time for the cases. The Descartes condition and lepton spectrum is the umbrella; the examples are the test points that make the umbrella useful. _(draft.)_
 
 ### §7.8 The unit particle as a cohomological defect  `sec:cohomological-defect`  · ✓ existing  · [`cohomological-defect-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/descartes-universe/cohomological-defect-intro.md)
 
@@ -963,19 +962,19 @@ still marked `_[draft]_` for the author refinement pass.
 
 ### §7.9 Fundamental particles  `sec:fundamental-particles`  · 🆕 **DRAFT**  · [`fundamental-particles-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/descartes-universe/fundamental-particles-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds fundamental particles in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ Time to be precise about fundamental particles. The definitions below are written for the use the propositions we are about to prove are going to make of them, not for maximum generality. _(draft.)_
 
 ### §7.10 Nuclear stability and decay  `sec:nuclear-stability-decay`  · 🆕 **DRAFT**  · [`nuclear-stability-decay-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/descartes-universe/nuclear-stability-decay-intro.md)
 
-> _[draft]_ The objects this section commits to are nuclear stability and decay. We give them the formal definitions and structural data the downstream arguments will operate on — which fields they carry, which conditions they satisfy, and which structural facts the proofs will lean on. That is the apparatus the next section, on atomic shells and the periodic table, picks up. _(draft.)_
+> _[draft]_ Fundamental particles works at one level; nuclear stability and decay is the structure that pushes it to the next. _(draft.)_
 
 ### §7.11 Atomic shells and the periodic table  `sec:atomic-shells`  · 🆕 **DRAFT**  · [`atomic-shells-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/descartes-universe/atomic-shells-intro.md)
 
-> _[draft]_ The previous section gave us nuclear stability and decay. The question that drives the present one is atomic shells and the periodic table: we have the setup, we now want the structural answer. This section delivers it. The result is the input for the Descartes theorem. _(draft.)_
+> _[draft]_ The chapter has been circling atomic shells and the periodic table for a few sections. Here we make it explicit, and use the explicit form to drive the Descartes theorem. _(draft.)_
 
 ### §7.12 The Descartes theorem  `sec:descartes-theorem`  · 🆕 **DRAFT**  · [`descartes-theorem-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/descartes-universe/descartes-theorem-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds the Descartes theorem in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ We pause the structural development to look at instances. The examples of the Descartes theorem below are not illustrations — they are the test that the structure built so far is doing what we claimed. _(draft.)_
 
 ### §7.13 Topological mass and the knot-particle spectrum  `sec:topological-mass-spectrum`  · ✓ existing  · [`hyperbolic-volumes-prose.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/descartes-universe/hyperbolic-volumes-prose.md)
 
@@ -1019,7 +1018,7 @@ still marked `_[draft]_` for the author refinement pass.
 
 ### §7.14 Orbital Symmetry and Cohomological Embedding  `sec:orbital-symmetry-embedding`  · 🆕 **DRAFT**  · [`orbital-symmetry-embedding-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/descartes-universe/orbital-symmetry-embedding-intro.md)
 
-> _[draft]_ The previous section gave us topological mass and the knot-particle spectrum. The question that drives the present one is orbital Symmetry and Cohomological Embedding: we have the setup, we now want the structural answer. This section delivers it. _(draft.)_
+> _[draft]_ Pause. Before we go further into *The Descartes Universe*, we owe a precise account of orbital Symmetry and Cohomological Embedding. This section gives it. _(draft.)_
 
 
 ## Ch 8 — Particle Interactions and Nuclear Structure  `particle-interactions`
@@ -1056,35 +1055,35 @@ still marked `_[draft]_` for the author refinement pass.
 
 ### §8.2 Confinement operator selection  `sec:confinement-selection`  · 🆕 **DRAFT**  · [`confinement-selection-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/particle-interactions/confinement-selection-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds confinement operator selection in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ The chapter has been circling confinement operator selection for a few sections. Here we make it explicit, and use the explicit form to drive nucleon derivation from pair production. _(draft.)_
 
 ### §8.3 Nucleon derivation from pair production  `sec:nucleon-derivation`  · 🆕 **DRAFT**  · [`nucleon-derivation-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/particle-interactions/nucleon-derivation-intro.md)
 
-> _[draft]_ The previous section gave us confinement operator selection. The question that drives the present one is nucleon derivation from pair production: we have the setup, we now want the structural answer. This section delivers it. The result is the input for nuclear binding and magic numbers. _(draft.)_
+> _[draft]_ The chapter has been circling nucleon derivation from pair production for a few sections. Here we make it explicit, and use the explicit form to drive nuclear binding and magic numbers. _(draft.)_
 
 ### §8.4 Nuclear binding and magic numbers  `sec:nuclear-binding`  · 🆕 **DRAFT**  · [`nuclear-binding-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/particle-interactions/nuclear-binding-intro.md)
 
-> _[draft]_ The previous section gave us nucleon derivation from pair production. The question that drives the present one is nuclear binding and magic numbers: we have the setup, we now want the structural answer. This section delivers it. The result is the input for derived atom examples. _(draft.)_
+> _[draft]_ The chapter has been circling nuclear binding and magic numbers for a few sections. Here we make it explicit, and use the explicit form to drive derived atom examples. _(draft.)_
 
 ### §8.5 Derived atom examples  `sec:derived-atoms`  · 🆕 **DRAFT**  · [`derived-atoms-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/particle-interactions/derived-atoms-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds derived atom examples in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ We pause the structural development to look at instances. The examples of derived atom examples below are not illustrations — they are the test that the structure built so far is doing what we claimed. _(draft.)_
 
 ### §8.6 Typed Garside element and Gram-weighted $\\mathcal{Q}_q$-value  `sec:garside-gram`  · 🆕 **DRAFT**  · [`garside-gram-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/particle-interactions/garside-gram-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds typed Garside element and Gram-weighted $\\mathcal{Q}_q$-value in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ Abstract structure is not an argument for itself. We pick examples that pin down typed Garside element and Gram-weighted $\\mathcal{Q}_q$-value — one to fix the typical behaviour, the others to mark the edges where the theory does and does not apply. _(draft.)_
 
 ### §8.7 Transfer matrices and beta decay  `sec:transfer-beta-decay`  · 🆕 **DRAFT**  · [`transfer-beta-decay-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/particle-interactions/transfer-beta-decay-intro.md)
 
-> _[draft]_ The previous section gave us typed Garside element and Gram-weighted $\\mathcal{Q}_q$-value. The question that drives the present one is transfer matrices and beta decay: we have the setup, we now want the structural answer. This section delivers it. The result is the input for atomic braid and Wedderburn mass formula. _(draft.)_
+> _[draft]_ Typed Garside element and Gram-weighted $\\mathcal{Q}_q$-value works at one level; transfer matrices and beta decay is the structure that pushes it to the next. _(draft.)_
 
 ### §8.8 Atomic braid and Wedderburn mass formula  `sec:atomic-braid-mass`  · 🆕 **DRAFT**  · [`atomic-braid-mass-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/particle-interactions/atomic-braid-mass-intro.md)
 
-> _[draft]_ The objects this section commits to are atomic braid and Wedderburn mass formula. We give them the formal definitions and structural data the downstream arguments will operate on — which fields they carry, which conditions they satisfy, and which structural facts the proofs will lean on. That is the apparatus the next section, on branching Q-value derivation, picks up. _(draft.)_
+> _[draft]_ Transfer matrices and beta decay works at one level; atomic braid and Wedderburn mass formula is the structure that pushes it to the next. _(draft.)_
 
 ### §8.9 Branching Q-value derivation  `sec:branching-qvalue`  · 🆕 **DRAFT**  · [`branching-qvalue-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/particle-interactions/branching-qvalue-intro.md)
 
-> _[draft]_ The previous section gave us atomic braid and Wedderburn mass formula. The question that drives the present one is branching Q-value derivation: we have the setup, we now want the structural answer. This section delivers it. _(draft.)_
+> _[draft]_ Here is the question this section settles: branching Q-value derivation. The answer is not assumed; it falls out of the setup we already have. _(draft.)_
 
 
 ## Ch 9 — Physical Observations  `observations`
@@ -1132,7 +1131,7 @@ still marked `_[draft]_` for the author refinement pass.
 
 ### §9.2 Particle Identification Conjectures  `sec:particle-conjectures`  · 🆕 **DRAFT**  · [`particle-conjectures-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/particle-conjectures-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds particle Identification Conjectures in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ Definitions earn their keep by what they cover. This section grounds particle Identification Conjectures in concrete cases; each example tests a different feature of the general theory. _(draft.)_
 
 ### §9.3 Double-slit experiment  `sec:double-slit-experiment`  · ✓ existing  · [`double-slit-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/double-slit-intro.md)
 
@@ -1173,23 +1172,23 @@ still marked `_[draft]_` for the author refinement pass.
 
 ### §9.4 Substrate Parameter from Lepton Masses  `sec:substrate-from-leptons`  · 🆕 **DRAFT**  · [`substrate-from-leptons-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/substrate-from-leptons-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds substrate Parameter from Lepton Masses in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ Substrate Parameter from Lepton Masses is the running example beat in this chapter. This section assembles the cases that the rest of the chapter will refer back to. _(draft.)_
 
 ### §9.5 Mass Predictions and CODATA Comparison  `sec:mass-predictions`  · 🆕 **DRAFT**  · [`mass-predictions-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/mass-predictions-intro.md)
 
-> _[draft]_ The objects this section commits to are mass Predictions and CODATA Comparison. We give them the formal definitions and structural data the downstream arguments will operate on — which fields they carry, which conditions they satisfy, and which structural facts the proofs will lean on. That is the apparatus the next section, on beta Decay, picks up. _(draft.)_
+> _[draft]_ Time to be precise about mass Predictions and CODATA Comparison. The definitions below are written for the use the propositions we are about to prove are going to make of them, not for maximum generality. _(draft.)_
 
 ### §9.6 Beta Decay  `sec:beta-decay-observations`  · 🆕 **DRAFT**  · [`beta-decay-observations-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/beta-decay-observations-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds beta Decay in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ Definitions earn their keep by what they cover. This section grounds beta Decay in concrete cases; each example tests a different feature of the general theory. _(draft.)_
 
 ### §9.7 Large-Scale Observations  `sec:large-scale`  · 🆕 **DRAFT**  · [`large-scale-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/large-scale-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds large-Scale Observations in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ Large-Scale Observations is the running example beat in this chapter. This section assembles the cases that the rest of the chapter will refer back to. _(draft.)_
 
 ### §9.8 Nuclear Stability  `sec:nuclear-stability-observations`  · 🆕 **DRAFT**  · [`nuclear-stability-observations-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/nuclear-stability-observations-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds nuclear Stability in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ Abstract structure is not an argument for itself. We pick examples that pin down nuclear Stability — one to fix the typical behaviour, the others to mark the edges where the theory does and does not apply. _(draft.)_
 
 ### §9.9 Strangelet Stability and Deconfinement  `sec:strangelet-stability`  · ✓ existing  · [`strangelet-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/strangelet-intro.md)
 
@@ -1268,23 +1267,23 @@ still marked `_[draft]_` for the author refinement pass.
 
 ### §9.10 Precision Tests  `sec:precision-tests`  · 🆕 **DRAFT**  · [`precision-tests-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/precision-tests-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds precision Tests in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ Definitions earn their keep by what they cover. This section grounds precision Tests in concrete cases; each example tests a different feature of the general theory. _(draft.)_
 
 ### §9.11 Proton Radius and Gravity Tests  `sec:proton-gravity-tests`  · 🆕 **DRAFT**  · [`proton-gravity-tests-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/proton-gravity-tests-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds proton Radius and Gravity Tests in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ We pause the structural development to look at instances. The examples of proton Radius and Gravity Tests below are not illustrations — they are the test that the structure built so far is doing what we claimed. _(draft.)_
 
 ### §9.12 Crystal Resonance Experiments  `sec:crystal-resonance`  · 🆕 **DRAFT**  · [`crystal-resonance-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/crystal-resonance-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds crystal Resonance Experiments in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ Crystal Resonance Experiments is the running example beat in this chapter. This section assembles the cases that the rest of the chapter will refer back to. _(draft.)_
 
 ### §9.13 Breit--Wheeler Pair Creation  `sec:breit-wheeler-pair-creation`  · 🆕 **DRAFT**  · [`breit-wheeler-pair-creation-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/breit-wheeler-pair-creation-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds breit--Wheeler Pair Creation in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ Definitions earn their keep by what they cover. This section grounds breit--Wheeler Pair Creation in concrete cases; each example tests a different feature of the general theory. _(draft.)_
 
 ### §9.14 Complexity and Interpretation  `sec:complexity-interpretation`  · 🆕 **DRAFT**  · [`complexity-interpretation-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/complexity-interpretation-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds complexity and Interpretation in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ Complexity and Interpretation is the running example beat in this chapter. This section assembles the cases that the rest of the chapter will refer back to. _(draft.)_
 
 ### §9.15 Non-Commutative Probability, the q-CLT, and the Archimedean Macroscopic Limit  `sec:non-comm-probability-q-clt`  · ✓ existing  · [`non-comm-probability-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/non-comm-probability-intro.md)
 
@@ -1323,61 +1322,61 @@ still marked `_[draft]_` for the author refinement pass.
 
 ### §9.16 Transcendence Falsifiability Signatures  `sec:transcendence-signatures`  · 🆕 **DRAFT**  · [`transcendence-signatures-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/transcendence-signatures-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds transcendence Falsifiability Signatures in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ Time for the cases. Transcendence Falsifiability Signatures is the umbrella; the examples are the test points that make the umbrella useful. _(draft.)_
 
 ### §9.17 Interactive Simulations  `sec:simulations`  · 🆕 **DRAFT**  · [`simulations-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/observations/simulations-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds interactive Simulations in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ Interactive Simulations is the running example beat in this chapter. This section assembles the cases that the rest of the chapter will refer back to. _(draft.)_
 
 
 ## Ch 10 — Molecular Construction from Nucleon Braids  `molecular-construction`
 
 ### §10.1 The molecular Hecke algebra  `sec:molecular-hecke-algebra`  · 🆕 **DRAFT**  · [`molecular-hecke-algebra-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/molecular-construction/molecular-hecke-algebra-intro.md)
 
-> _[draft]_ This chapter is about *Molecular Construction from Nucleon Braids*. The earlier chapters have given us the setup; we now turn to what that setup forces. We open with the molecular Hecke algebra and unfold the structural and physical consequences in the sections that follow. _(draft.)_
+> _[draft]_ Time to be precise about the molecular Hecke algebra. The definitions below are written for the use the propositions we are about to prove are going to make of them, not for maximum generality. _(draft.)_
 
 ### §10.2 Electron shells and bonding capacity  `sec:electron-shells`  · 🆕 **DRAFT**  · [`electron-shells-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/molecular-construction/electron-shells-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds electron shells and bonding capacity in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ Electron shells and bonding capacity is the running example beat in this chapter. This section assembles the cases that the rest of the chapter will refer back to. _(draft.)_
 
 ### §10.3 Hydrogen molecule $H_2$: the covalent bond prototype  `sec:h2-computation`  · 🆕 **DRAFT**  · [`h2-computation-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/molecular-construction/h2-computation-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds the covalent bond prototype in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ We pause the structural development to look at instances. The examples of the covalent bond prototype below are not illustrations — they are the test that the structure built so far is doing what we claimed. _(draft.)_
 
 ### §10.4 Carbon monoxide: heteronuclear bonding  `sec:co-computation`  · 🆕 **DRAFT**  · [`co-computation-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/molecular-construction/co-computation-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds heteronuclear bonding in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ Time for the cases. Heteronuclear bonding is the umbrella; the examples are the test points that make the umbrella useful. _(draft.)_
 
 ### §10.5 Carbon dioxide: linear triatomic molecule  `sec:co2-computation`  · 🆕 **DRAFT**  · [`co2-computation-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/molecular-construction/co2-computation-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds linear triatomic molecule in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ Abstract structure is not an argument for itself. We pick examples that pin down linear triatomic molecule — one to fix the typical behaviour, the others to mark the edges where the theory does and does not apply. _(draft.)_
 
 ### §10.6 Methane: tetrahedral bonding from braid optimization  `sec:ch4-computation`  · 🆕 **DRAFT**  · [`ch4-computation-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/molecular-construction/ch4-computation-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds tetrahedral bonding from braid optimization in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ Tetrahedral bonding from braid optimization is the running example beat in this chapter. This section assembles the cases that the rest of the chapter will refer back to. _(draft.)_
 
 ### §10.7 Benzene: delocalization from threading links  `sec:benzene-computation`  · 🆕 **DRAFT**  · [`benzene-computation-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/molecular-construction/benzene-computation-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds delocalization from threading links in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ Delocalization from threading links is the running example beat in this chapter. This section assembles the cases that the rest of the chapter will refer back to. _(draft.)_
 
 
 ## Ch 11 — Organic Chemistry from Hopf Chains  `organic-chemistry`
 
 ### §11.1 Covalent bonding as shared sub-Hopf links  `sec:covalent-bonding`  · 🆕 **DRAFT**  · [`covalent-bonding-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/organic-chemistry/covalent-bonding-intro.md)
 
-> _[draft]_ This chapter is about *Organic Chemistry from Hopf Chains*. The earlier chapters have given us the setup; we now turn to what that setup forces. We open with covalent bonding as shared sub-Hopf links and unfold the structural and physical consequences in the sections that follow. _(draft.)_
+> _[draft]_ We pause the structural development to look at instances. The examples of covalent bonding as shared sub-Hopf links below are not illustrations — they are the test that the structure built so far is doing what we claimed. _(draft.)_
 
 ### §11.2 Molecular Hopf chains and rings  `sec:molecular-chains-rings`  · 🆕 **DRAFT**  · [`molecular-chains-rings-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/organic-chemistry/molecular-chains-rings-intro.md)
 
-> _[draft]_ The objects this section commits to are molecular Hopf chains and rings. We give them the formal definitions and structural data the downstream arguments will operate on — which fields they carry, which conditions they satisfy, and which structural facts the proofs will lean on. That is the apparatus the next section, on carbon chains and benzene, picks up. _(draft.)_
+> _[draft]_ Time to be precise about molecular Hopf chains and rings. The definitions below are written for the use the propositions we are about to prove are going to make of them, not for maximum generality. _(draft.)_
 
 ### §11.3 Carbon chains and benzene  `sec:carbon-chains-benzene`  · 🆕 **DRAFT**  · [`carbon-chains-benzene-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/organic-chemistry/carbon-chains-benzene-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds carbon chains and benzene in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ Abstract structure is not an argument for itself. We pick examples that pin down carbon chains and benzene — one to fix the typical behaviour, the others to mark the edges where the theory does and does not apply. _(draft.)_
 
 ### §11.4 Organic chain taxonomy  `sec:organic-taxonomy`  · 🆕 **DRAFT**  · [`organic-taxonomy-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/organic-chemistry/organic-taxonomy-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds organic chain taxonomy in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ Definitions earn their keep by what they cover. This section grounds organic chain taxonomy in concrete cases; each example tests a different feature of the general theory. _(draft.)_
 
 
 ## Ch 12 — Fluid Dynamics of the Brane  `fluid-dynamics`
@@ -1409,23 +1408,23 @@ still marked `_[draft]_` for the author refinement pass.
 
 ### §12.2 Vortex spectrum and helicity  `sec:vortex-spectrum`  · 🆕 **DRAFT**  · [`vortex-spectrum-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/fluid-dynamics/vortex-spectrum-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds vortex spectrum and helicity in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ Vortex spectrum and helicity is the running example beat in this chapter. This section assembles the cases that the rest of the chapter will refer back to. _(draft.)_
 
 ### §12.3 Turbulence and acoustics  `sec:turbulence-acoustics`  · 🆕 **DRAFT**  · [`turbulence-acoustics-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/fluid-dynamics/turbulence-acoustics-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds turbulence and acoustics in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ Turbulence and acoustics is the running example beat in this chapter. This section assembles the cases that the rest of the chapter will refer back to. _(draft.)_
 
 ### §12.4 Global regularity for $q > 1$  `sec:q-ns-regularity`  · 🆕 **DRAFT**  · [`q-ns-regularity-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/fluid-dynamics/q-ns-regularity-intro.md)
 
-> _[draft]_ The previous section gave us turbulence and acoustics. The question that drives the present one is global regularity for $q > 1$: we have the setup, we now want the structural answer. This section delivers it. The result is the input for the NS obstruction. _(draft.)_
+> _[draft]_ The chapter has been circling global regularity for $q > 1$ for a few sections. Here we make it explicit, and use the explicit form to drive the NS obstruction. _(draft.)_
 
 ### §12.5 The NS obstruction  `sec:ns-obstruction`  · 🆕 **DRAFT**  · [`ns-obstruction-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/fluid-dynamics/ns-obstruction-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds the NS obstruction in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ The NS obstruction is the running example beat in this chapter. This section assembles the cases that the rest of the chapter will refer back to. _(draft.)_
 
 ### §12.6 Approaches and open problems  `sec:ns-approaches`  · 🆕 **DRAFT**  · [`ns-approaches-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/fluid-dynamics/ns-approaches-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds approaches and open problems in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ Approaches and open problems is the running example beat in this chapter. This section assembles the cases that the rest of the chapter will refer back to. _(draft.)_
 
 
 ## Ch 13 — Information-Theoretic Perspectives  `information-theory`
@@ -1483,11 +1482,11 @@ still marked `_[draft]_` for the author refinement pass.
 
 ### §13.3 Golden Ratio, Julia Sets, and Discrete Dynamics  `sec:golden-julia-dynamics`  · 🆕 **DRAFT**  · [`golden-julia-dynamics-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/information-theory/golden-julia-dynamics-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds golden Ratio, Julia Sets, and Discrete Dynamics in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ Golden Ratio, Julia Sets, and Discrete Dynamics is the running example beat in this chapter. This section assembles the cases that the rest of the chapter will refer back to. _(draft.)_
 
 ### §13.4 Speed of Light and Mass--Energy Equivalence  `sec:speed-of-light`  · 🆕 **DRAFT**  · [`speed-of-light-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/information-theory/speed-of-light-intro.md)
 
-> _[draft]_ The previous section gave us golden Ratio, Julia Sets, and Discrete Dynamics. The question that drives the present one is speed of Light and Mass--Energy Equivalence: we have the setup, we now want the structural answer. This section delivers it. The result is the input for computation at Planck Time Lengths. _(draft.)_
+> _[draft]_ Recall golden Ratio, Julia Sets, and Discrete Dynamics. The natural next step is speed of Light and Mass--Energy Equivalence, and this section takes it. _(draft.)_
 
 ### §13.5 Computation at Planck Time Lengths  `sec:planck-scale-computation`  · ✓ existing  · [`planck-scale-computation.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/information-theory/planck-scale-computation.md)
 
@@ -1520,11 +1519,11 @@ still marked `_[draft]_` for the author refinement pass.
 
 ### §13.6 P versus NP as a Boundary Condition  `sec:p-vs-np-boundary`  · 🆕 **DRAFT**  · [`p-vs-np-boundary-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/information-theory/p-vs-np-boundary-intro.md)
 
-> _[draft]_ The objects this section commits to are p versus NP as a Boundary Condition. We give them the formal definitions and structural data the downstream arguments will operate on — which fields they carry, which conditions they satisfy, and which structural facts the proofs will lean on. That is the apparatus the next section, on $q$-Heat kernel and spectral analysis, picks up. _(draft.)_
+> _[draft]_ The narrative pauses; the definitions take over. P versus NP as a Boundary Condition gets its full structural account here, in the form the rest of the chapter consumes. _(draft.)_
 
 ### §13.7 $q$-Heat kernel and spectral analysis  `sec:q-heat-kernel-analysis`  · 🆕 **DRAFT**  · [`q-heat-kernel-analysis-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/information-theory/q-heat-kernel-analysis-intro.md)
 
-> _[draft]_ The previous section gave us p versus NP as a Boundary Condition. The question that drives the present one is $q$-Heat kernel and spectral analysis: we have the setup, we now want the structural answer. This section delivers it. The result is the input for statistical Mechanics. _(draft.)_
+> _[draft]_ P versus NP as a Boundary Condition delivered the data. $q$-Heat kernel and spectral analysis is what that data is for. The next move is statistical Mechanics. _(draft.)_
 
 ### §13.8 Statistical Mechanics  `sec:stat-mech`  · ✓ existing  · [`stat-mech-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/information-theory/stat-mech-intro.md)
 
@@ -1552,15 +1551,15 @@ still marked `_[draft]_` for the author refinement pass.
 
 ### §13.9 Phase Transitions and Sublimation  `sec:phase-transitions`  · 🆕 **DRAFT**  · [`phase-transitions-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/information-theory/phase-transitions-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds phase Transitions and Sublimation in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ We pause the structural development to look at instances. The examples of phase Transitions and Sublimation below are not illustrations — they are the test that the structure built so far is doing what we claimed. _(draft.)_
 
 ### §13.10 Incompleteness and the Horizon  `sec:incompleteness-horizon`  · 🆕 **DRAFT**  · [`incompleteness-horizon-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/information-theory/incompleteness-horizon-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds incompleteness and the Horizon in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ Time for the cases. Incompleteness and the Horizon is the umbrella; the examples are the test points that make the umbrella useful. _(draft.)_
 
 ### §13.11 Horizons and Aeons  `sec:horizons-aeons`  · 🆕 **DRAFT**  · [`horizons-aeons-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/information-theory/horizons-aeons-intro.md)
 
-> _[draft]_ The objects this section commits to are horizons and Aeons. We give them the formal definitions and structural data the downstream arguments will operate on — which fields they carry, which conditions they satisfy, and which structural facts the proofs will lean on. That is the apparatus the next section, on quantum Geometry Variants, picks up. _(draft.)_
+> _[draft]_ Horizons and Aeons is the object. This section fixes its definition, its essential data, and the half-dozen structural lemmas that downstream proofs will lean on. _(draft.)_
 
 ### §13.12 Quantum Geometry Variants  `sec:info-geometry-variants`  · ✓ existing  · [`quantum-brings-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/information-theory/quantum-brings-intro.md)
 
@@ -1624,23 +1623,23 @@ still marked `_[draft]_` for the author refinement pass.
 
 ### §14.2 $\\mathbb{G}_m$-torsors and $q$-local systems  `sec:q-local-systems`  · 🆕 **DRAFT**  · [`q-local-systems-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/q-geometric-langlands/q-local-systems-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds $\\mathbb{G}_m$-torsors and $q$-local systems in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ $\\mathbb{G}_m$-torsors and $q$-local systems is the running example beat in this chapter. This section assembles the cases that the rest of the chapter will refer back to. _(draft.)_
 
 ### §14.3 $q$-Hecke correspondences  `sec:q-hecke-correspondences`  · 🆕 **DRAFT**  · [`q-hecke-correspondences-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/q-geometric-langlands/q-hecke-correspondences-intro.md)
 
-> _[draft]_ The objects this section commits to are $q$-Hecke correspondences. We give them the formal definitions and structural data the downstream arguments will operate on — which fields they carry, which conditions they satisfy, and which structural facts the proofs will lean on. That is the apparatus the next section, on the $q$-Geometric Langlands conjecture, picks up. _(draft.)_
+> _[draft]_ The narrative pauses; the definitions take over. $q$-Hecke correspondences gets its full structural account here, in the form the rest of the chapter consumes. _(draft.)_
 
 ### §14.4 The $q$-Geometric Langlands conjecture  `sec:q-gl-conjecture`  · 🆕 **DRAFT**  · [`q-gl-conjecture-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/q-geometric-langlands/q-gl-conjecture-intro.md)
 
-> _[draft]_ The previous section gave us $q$-Hecke correspondences. The question that drives the present one is the $q$-Geometric Langlands conjecture: we have the setup, we now want the structural answer. This section delivers it. The result is the input for $q$-Opers and the spectral side. _(draft.)_
+> _[draft]_ $q$-Hecke correspondences delivered the data. The $q$-Geometric Langlands conjecture is what that data is for. The next move is $q$-Opers and the spectral side. _(draft.)_
 
 ### §14.5 $q$-Opers and the spectral side  `sec:q-opers`  · 🆕 **DRAFT**  · [`q-opers-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/q-geometric-langlands/q-opers-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds $q$-Opers and the spectral side in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ Definitions earn their keep by what they cover. This section grounds $q$-Opers and the spectral side in concrete cases; each example tests a different feature of the general theory. _(draft.)_
 
 ### §14.6 Classical limit and physical interpretation  `sec:q-gl-classical-limit`  · 🆕 **DRAFT**  · [`q-gl-classical-limit-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/q-geometric-langlands/q-gl-classical-limit-intro.md)
 
-> _[draft]_ Definitions earn their keep by what they cover. This section grounds classical limit and physical interpretation in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+> _[draft]_ Classical limit and physical interpretation is the running example beat in this chapter. This section assembles the cases that the rest of the chapter will refer back to. _(draft.)_
 
 ### §14.7 Spectral trace and Tannaka--Krein duality  `sec:q-gl-spectral-trace-tannaka`  · ✓ existing  · [`spectral-trace-intro.md`](https://github.com/litlfred/qou/blob/claude/fill-story-leads-V01/content/quantum-observable-universe/q-geometric-langlands/spectral-trace-intro.md)
 
@@ -1679,4 +1678,4 @@ still marked `_[draft]_` for the author refinement pass.
 
 ---
 
-**Stats:** 107 drafts (PR #745) + 40 pre-existing = 147 leads.
+**Stats:** 107 drafts + 40 pre-existing = 147 leads.

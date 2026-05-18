@@ -1,1 +1,1 @@
-_[draft]_ The previous section gave us typed Garside element and Gram-weighted $\\mathcal{Q}_q$-value. The question that drives the present one is transfer matrices and beta decay: we have the setup, we now want the structural answer. This section delivers it. The result is the input for atomic braid and Wedderburn mass formula. _(draft.)_
+_[draft]_ Typed Garside element and Gram-weighted $\\mathcal{Q}_q$-value works at one level; transfer matrices and beta decay is the structure that pushes it to the next. _(draft.)_

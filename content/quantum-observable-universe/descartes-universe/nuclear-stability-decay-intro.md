@@ -1,1 +1,1 @@
-_[draft]_ The objects this section commits to are nuclear stability and decay. We give them the formal definitions and structural data the downstream arguments will operate on — which fields they carry, which conditions they satisfy, and which structural facts the proofs will lean on. That is the apparatus the next section, on atomic shells and the periodic table, picks up. _(draft.)_
+_[draft]_ Fundamental particles works at one level; nuclear stability and decay is the structure that pushes it to the next. _(draft.)_

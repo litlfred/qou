@@ -1,1 +1,1 @@
-_[draft]_ The previous section gave us maximal torus and weight decomposition. The question that drives the present one is vectors, hadrons, and the PawLei basis: we have the setup, we now want the structural answer. This section delivers it. The result is the input for differential structures and gauge actions. _(draft.)_
+_[draft]_ Pause. Before we go further into *Quantum Observable Universes*, we owe a precise account of vectors, hadrons, and the PawLei basis. This section gives it. _(draft.)_

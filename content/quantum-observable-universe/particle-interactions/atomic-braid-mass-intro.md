@@ -1,1 +1,1 @@
-_[draft]_ The objects this section commits to are atomic braid and Wedderburn mass formula. We give them the formal definitions and structural data the downstream arguments will operate on — which fields they carry, which conditions they satisfy, and which structural facts the proofs will lean on. That is the apparatus the next section, on branching Q-value derivation, picks up. _(draft.)_
+_[draft]_ Transfer matrices and beta decay works at one level; atomic braid and Wedderburn mass formula is the structure that pushes it to the next. _(draft.)_

@@ -1,1 +1,1 @@
-_[draft]_ The previous section gave us nuclear stability and decay. The question that drives the present one is atomic shells and the periodic table: we have the setup, we now want the structural answer. This section delivers it. The result is the input for the Descartes theorem. _(draft.)_
+_[draft]_ The chapter has been circling atomic shells and the periodic table for a few sections. Here we make it explicit, and use the explicit form to drive the Descartes theorem. _(draft.)_

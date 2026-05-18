@@ -1,1 +1,1 @@
-_[draft]_ The previous section gave us categorical context. The question that drives the present one is non-vanishing of $d_q^2$ and the $q$-jacobiator: we have the setup, we now want the structural answer. This section delivers it. The result is the input for physical elaborations. _(draft.)_
+_[draft]_ We have categorical context; we now need non-vanishing of $d_q^2$ and the $q$-jacobiator. This section supplies it in the form the rest of the chapter will use. _(draft.)_

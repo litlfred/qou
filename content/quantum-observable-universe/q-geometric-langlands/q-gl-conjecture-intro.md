@@ -1,1 +1,1 @@
-_[draft]_ The previous section gave us $q$-Hecke correspondences. The question that drives the present one is the $q$-Geometric Langlands conjecture: we have the setup, we now want the structural answer. This section delivers it. The result is the input for $q$-Opers and the spectral side. _(draft.)_
+_[draft]_ $q$-Hecke correspondences delivered the data. The $q$-Geometric Langlands conjecture is what that data is for. The next move is $q$-Opers and the spectral side. _(draft.)_

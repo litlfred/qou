@@ -1,1 +1,1 @@
-_[draft]_ The previous section gave us examples of quantum observable universes. The question that drives the present one is categorical Dirac operator: we have the setup, we now want the structural answer. This section delivers it. The result is the input for categorical Lagrangian. _(draft.)_
+_[draft]_ Recall examples of quantum observable universes. The natural next step is categorical Dirac operator, and this section takes it. _(draft.)_

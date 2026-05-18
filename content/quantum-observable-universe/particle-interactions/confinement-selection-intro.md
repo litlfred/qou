@@ -1,1 +1,1 @@
-_[draft]_ Definitions earn their keep by what they cover. This section grounds confinement operator selection in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+_[draft]_ The chapter has been circling confinement operator selection for a few sections. Here we make it explicit, and use the explicit form to drive nucleon derivation from pair production. _(draft.)_

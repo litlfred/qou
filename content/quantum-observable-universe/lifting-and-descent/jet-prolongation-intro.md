@@ -1,1 +1,1 @@
-_[draft]_ This chapter is about *Lifting and Descent*. The earlier chapters have given us the setup; we now turn to what that setup forces. We open with jet Prolongation and the Recursive Brane Tower and unfold the structural and physical consequences in the sections that follow. _(draft.)_
+_[draft]_ Jet Prolongation and the Recursive Brane Tower is the floor of this chapter. Every later section assumes it; this section earns the assumption. _(draft.)_

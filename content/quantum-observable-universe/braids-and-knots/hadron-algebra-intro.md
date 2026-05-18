@@ -1,1 +1,1 @@
-_[draft]_ The previous section gave us braiding Relations and the Spectral Filter. The question that drives the present one is hadron Algebra and Knot Factorisation: we have the setup, we now want the structural answer. This section delivers it. The result is the input for skein Generation and Particle Correspondence. _(draft.)_
+_[draft]_ The chapter has been circling hadron Algebra and Knot Factorisation for a few sections. Here we make it explicit, and use the explicit form to drive skein Generation and Particle Correspondence. _(draft.)_

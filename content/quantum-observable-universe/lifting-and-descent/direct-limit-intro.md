@@ -1,1 +1,1 @@
-_[draft]_ Definitions earn their keep by what they cover. This section grounds direct Limit Algebra in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+_[draft]_ Abstract structure is not an argument for itself. We pick examples that pin down direct Limit Algebra — one to fix the typical behaviour, the others to mark the edges where the theory does and does not apply. _(draft.)_

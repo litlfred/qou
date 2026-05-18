@@ -1,1 +1,1 @@
-_[draft]_ The objects this section commits to are horizons and Aeons. We give them the formal definitions and structural data the downstream arguments will operate on — which fields they carry, which conditions they satisfy, and which structural facts the proofs will lean on. That is the apparatus the next section, on quantum Geometry Variants, picks up. _(draft.)_
+_[draft]_ Horizons and Aeons is the object. This section fixes its definition, its essential data, and the half-dozen structural lemmas that downstream proofs will lean on. _(draft.)_

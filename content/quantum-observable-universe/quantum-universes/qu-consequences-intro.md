@@ -1,1 +1,1 @@
-_[draft]_ The quantum universe has been put in place. What does that buy us? This section follows the consequences for consequences of the QU axioms: which results drop out at once, which need sharper inputs, and which we leave open for the next section. _(draft.)_
+_[draft]_ With the structural setup behind us, the propositions of this section follow at once — almost. We work through consequences of the QU axioms carefully and flag the cases that need additional input. _(draft.)_

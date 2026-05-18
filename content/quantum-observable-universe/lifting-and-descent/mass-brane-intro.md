@@ -1,1 +1,1 @@
-_[draft]_ Definitions earn their keep by what they cover. This section grounds mass in the Brane Tower in concrete cases — each example is chosen to test a different feature of the general theory, and together they pin down what the abstract apparatus is doing. _(draft.)_
+_[draft]_ Direct Limit Algebra delivered the data. Mass in the Brane Tower is what that data is for. The next move is betti Numbers and Harmonic Basis. _(draft.)_

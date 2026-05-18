@@ -1,1 +1,1 @@
-_[draft]_ The previous section gave us vertex Factorisation and the Markov Trace. The question that drives the present one is transfer Matrix and Topological Mass: we have the setup, we now want the structural answer. This section delivers it. The result is the input for braiding Relations and the Spectral Filter. _(draft.)_
+_[draft]_ Granted vertex Factorisation and the Markov Trace, what does transfer Matrix and Topological Mass look like? This section answers concretely. _(draft.)_

@@ -1,1 +1,1 @@
-_[draft]_ The previous section gave us hadron Algebra and Knot Factorisation. The question that drives the present one is skein Generation and Particle Correspondence: we have the setup, we now want the structural answer. This section delivers it. The result is the input for bundle Structure and Observation. _(draft.)_
+_[draft]_ Hadron Algebra and Knot Factorisation delivered the data. Skein Generation and Particle Correspondence is what that data is for. The next move is bundle Structure and Observation. _(draft.)_

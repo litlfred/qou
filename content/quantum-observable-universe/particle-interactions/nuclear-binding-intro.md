@@ -1,1 +1,1 @@
-_[draft]_ The previous section gave us nucleon derivation from pair production. The question that drives the present one is nuclear binding and magic numbers: we have the setup, we now want the structural answer. This section delivers it. The result is the input for derived atom examples. _(draft.)_
+_[draft]_ The chapter has been circling nuclear binding and magic numbers for a few sections. Here we make it explicit, and use the explicit form to drive derived atom examples. _(draft.)_
