@@ -491,6 +491,53 @@ manually re-open if needed.
 on a comment). Only an explicit author reply or commit closes the
 item.
 
+## 5f. Witness-drift CI failure pattern (RECOVERY RECIPE)
+
+The `witness-pipeline.yml > validate` job triggers on `.lean` edits
+under `content/quantum-observable-universe/**/*.lean` AND on any
+`*.witness.json` / `*.derivation.json` change. The job re-runs every
+Python computation, regenerates witnesses, and fires a drift check.
+
+**Failure mode** (observed repeatedly during 2026-05 main churn):
+even a comment-only `.lean` edit triggers validate. Validate runs
+many scripts; one of them regenerates a witness that has drifted on
+main since the last refresh (e.g. `files_scanned: 516 → 517` when a
+new probe lands without a witness refresh). The drift check then
+fires.
+
+**The pattern is endemic.** Main's own commit log shows repeated
+`fix(witness-pipeline): post-rebase drift refresh` / `post-push
+drift refresh` entries — author + sibling agents do this routinely.
+
+**Recovery recipe** (apply IN ORDER, do not skip):
+
+1. **Pull fresh main.** `git fetch origin main`. If ≥ 5 commits
+   landed, jump straight to step 2 — don't waste cycles re-running
+   validators locally first.
+2. **Rebase.** `git rebase origin/main`. Witness conflicts are
+   expected on `compute-audit-scan.witness.json` and
+   `derivation-chain-audit.witness.json` (rarely also
+   `e0-calibration-audit.witness.json`).
+3. **Take main's witnesses.** `git checkout --ours <witness>` for
+   each conflicted witness file (in rebase context `--ours` = the
+   branch being rebased onto = main). `git add <witness>`.
+4. **Continue.** `git rebase --continue`. If the same conflict reappears
+   on a later commit, repeat step 3.
+5. **Force-push.** `git push --force-with-lease`. CI re-runs; the
+   drift check should now pass because the witnesses match main's
+   freshly-refreshed baseline.
+
+**Do not** try to fix the drift by manually editing witness JSON.
+**Do not** regenerate witnesses on your branch and commit them as a
+"fix" — by the time CI runs, main has likely moved again, and your
+fresh witnesses will be a new round of drift.
+
+**Do not** auto-trigger this loop. The recovery is the right action
+on a single CI failure with an exhausted "everything else is green"
+local diagnosis — don't rebase + force-push reactively on every
+single CI failure. If two consecutive rebase-and-refresh cycles fail,
+escalate to the author per §4e.
+
 ## 6. Goal-driven invariants
 
 The skill **enforces** these invariants on every commit it makes (own
