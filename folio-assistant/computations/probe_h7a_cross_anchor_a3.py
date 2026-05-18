@@ -86,7 +86,6 @@ def main() -> int:
     # ── Substrate at 50 dps ──────────────────────────────────────────
     # Canonical 50-dps q_0 (CAL-2) from q_parameter.Q_50_DIGIT_STR.
     q0 = mp.mpf(Q_50_DIGIT_STR)
-    hbar_q = 1 - 1 / q0
     m_e = mp.mpf("0.51099895069")
     e0 = m_e / (q0 * (q0 - 1))
     t_h = q0 - 1 / q0  # Hecke deformation h

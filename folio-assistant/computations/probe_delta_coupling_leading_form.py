@@ -62,8 +62,8 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 from mpmath import mp, mpf
 
-from q_parameter import Q_50_DIGIT_STR
-from witness_base import WitnessBuilder
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from witness_base import WitnessBuilder  # noqa: E402
 
 # ── 50 dps for consistency with magic-shell-empirical-instantiation ──
 mp.dps = 50
@@ -127,7 +127,6 @@ def main() -> None:
     # Equivalent to `hbar_q = sqrt(Vol(4_1) / (m_μ/m_e)); q_0 = 1/(1-hbar_q)`
     # but routed through the single source-of-truth so CAL-2 cannot drift.
     q0 = mp.mpf(Q_50_DIGIT_STR)
-    hbar_q = 1 - 1 / q0
     # m_e from CODATA 2022 (codata_constants is the SoT, but we re-state
     # the literal so the witness is self-contained and re-runnable).
     m_e = mpf("0.51099895069")

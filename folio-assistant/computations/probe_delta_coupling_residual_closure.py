@@ -51,8 +51,8 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 from mpmath import mp, mpf
 
-from q_parameter import Q_50_DIGIT_STR
-from witness_base import WitnessBuilder
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from witness_base import WitnessBuilder  # noqa: E402
 
 # ── 50 dps for consistency with magic-shell-empirical-instantiation ──
 mp.dps = 50
@@ -131,7 +131,6 @@ def main() -> None:
     # ── Substrate parameters at 50 dps ───────────────────────────────
     # Canonical 50-dps q_0 (CAL-2) from q_parameter.Q_50_DIGIT_STR.
     q0 = mp.mpf(Q_50_DIGIT_STR)
-    hbar_q = 1 - 1 / q0
     m_e = mpf("0.51099895069")  # CODATA 2022
     E0 = m_e / (q0 * (q0 - 1))
     t_h = q0 - 1 / q0  # Hecke deformation parameter
