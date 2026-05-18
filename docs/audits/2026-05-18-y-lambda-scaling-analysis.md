@@ -113,10 +113,27 @@ The y_λ table at n = 3A is read by:
 For the canonical |tr_M| via the Rust binary, the **per-partition
 Hoefsmit matrix product** is the real bottleneck (not y_λ): max
 partition dim grows ~exp(c√n) and MPFR-50dps multiplications at
-that dim are expensive. ⁴He at H_12 took 17 min on 4-core rayon;
-⁵Li at H_15 with max dim ~6000 (vs ⁴He's max 462) would project
-to **~30-50 hours single-machine MPFR-50dps** without further
-optimization.
+that dim are expensive. The relevant figure under FULL coverage
+(every λ ⊢ n, not just balanced (n/3,)×3) is the **maximum** dim
+across all partitions of n, since the slowest block dominates:
+
+| n | max dim_λ | partition λ | balanced (n/3)³ dim | Σ dim_λ² (= n!/n!) |
+|---|---|---|---|---|
+| 12 | **7,700** | (5,3,2,1,1) | 462 | 12! ≈ 4.8 × 10⁸ |
+| 15 | **292,864** | (5,4,3,2,1) | 6,006 | 15! ≈ 1.3 × 10¹² |
+| 18 | **16,336,320** | (7,4,3,2,1,1) | 87,516 | 18! ≈ 6.4 × 10¹⁵ |
+| 21 | **1,118,939,184** | (7,5,3,2,2,1,1) | 1,385,670 | 21! ≈ 5.1 × 10¹⁹ |
+
+⁴He at H_12 took 17 min on 4-core rayon. ⁵Li at H_15 with max dim
+292,864 (38× over ⁴He's 7,700) would project to **wall × ~(N/N')³ ×
+(crossings ratio)** at fixed dps. The dominant matrix-product cost
+per partition is O(dim_λ³) per crossing, so a naive single-machine
+projection from ⁴He → ⁵Li at fixed precision is **many orders of
+magnitude** worse than 17 min, not the ~30-50 hr a balanced-dim
+projection would suggest. Concretely: at 4-core rayon, an MPFR-50dps
+chi_lambda compute for ⁵Li at H_15 is **multi-week wall time** on a
+single machine without algorithmic compression. ⁶Li at H_18 (max
+dim ~1.6 × 10⁷) is **infeasible on a single machine at all**.
 
 That is the next-step gating concern, not y_λ. Possible mitigations
 (deferred to a separate audit):
