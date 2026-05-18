@@ -1,22 +1,22 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-18T02:39:34.001810+00:00",
-  "commitSha": "a7b9611ce6f8bde61934f8026061117e651b23fe",
+  "computedAt": "2026-05-18T03:01:45.934167+00:00",
+  "commitSha": "14b7677477fc2227c9ada588d2f8fb3275bac692",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "atomic-mass-via-rho-k",
   "scriptFile": "atomic_mass_via_rho_k.py",
-  "scriptHash": "8102662bd5ee",
-  "scriptCommitSha": "a7b9611ce6f8bde61934f8026061117e651b23fe",
-  "description": "Atomic mass-table predictions using the resolved ρ_K assembly M(K) = ρ_K · m_e · |tr_M(K)| from PR #564 §3.3a (Options A + C: no additive T6, Mittag-Leffler complementarity). Calibration anchors: m_e (CODATA, CAL-1); nucleon anchors = CODATA (legacy CAL anchors via Q_β = m_n - m_p - m_e). Reads |tr_M(K)| from atomic-tr-m-mpfr-50dps.witness.json. Atoms not in that witness are flagged tr_M_unavailable rather than fabricating values. Direct successor to atomic_braid_mass_table.py — see the side-by-side improvement_factor field.",
+  "scriptHash": "c1a042e6841e",
+  "scriptCommitSha": "14b7677477fc2227c9ada588d2f8fb3275bac692",
+  "description": "Atomic mass-table predictions using the resolved ρ_K assembly M(K) = ρ_K · m_e · |tr_M(K)| from PR #564 §3.3a (Options A + C: no additive T6, Mittag-Leffler complementarity). Calibration anchors: m_e (CODATA, CAL-1); nucleon anchors = substrate-pure (C2 inflection + prop:flavor-split-substrate; no CODATA m_p / m_n input). Reads |tr_M(K)| from atomic-tr-m-mpfr-50dps.witness.json. Atoms not in that witness are flagged tr_M_unavailable rather than fabricating values. Direct successor to atomic_braid_mass_table.py — see the side-by-side improvement_factor field.",
   "auditOnly": "AUDIT-DEEP-2026-05.md",
   "parameters": {
     "q0": "1.10997859555418051695830018898879867637876138498395",
     "m_e_MeV": "0.51099895",
-    "m_p_MeV": "938.27208816",
-    "m_n_MeV": "939.56542052",
+    "m_p_MeV": "938.9182313400801",
+    "m_n_MeV": "940.20991171364035368018412918140815251884892672775",
     "mpmath_dps": 50
   },
   "data": {
@@ -27,11 +27,11 @@
         "N": 0,
         "A": 1,
         "tr_M_at_q0": "1.0653062285923892551532775699680661193337632009791",
-        "rho_K_leading_order": "1723.5914182642152632366488451877960410679809803601",
-        "M_pred_MeV": "938.27208816",
+        "rho_K_leading_order": "1724.7783733641372988445200912976971878087784480678",
+        "M_pred_MeV": "938.9182313400801",
         "M_codata_MeV": "938.27208816",
-        "err_pct": "0.0",
-        "binding_residual_MeV": "0.0"
+        "err_pct": "0.068865224515760682073575965597974652214448113952416",
+        "binding_residual_MeV": "0.64614318008010000000000000000000000000000000000107"
       },
       {
         "atom": "n",
@@ -39,11 +39,11 @@
         "N": 1,
         "A": 1,
         "tr_M_at_q0": "0.92323329716958364246376988091871375932688744507312",
-        "rho_K_leading_order": "1991.5699177606223369931460602713667091722392050466",
-        "M_pred_MeV": "939.56542052",
+        "rho_K_leading_order": "1992.9360272890098201657512073389450293671491532069",
+        "M_pred_MeV": "940.20991171364035368018412918140815251884892672775",
         "M_codata_MeV": "939.56542052",
-        "err_pct": "0.0",
-        "binding_residual_MeV": "0.0"
+        "err_pct": "0.068594605502154573927691527534522989965872432803236",
+        "binding_residual_MeV": "0.64449119364035368018412918140815251884892672775448"
       },
       {
         "atom": "D",
@@ -51,11 +51,11 @@
         "N": 1,
         "A": 2,
         "tr_M_at_q0": "0.2883259310126921",
-        "rho_K_leading_order": "12745.424326684609590821755687730761307483573046479",
-        "M_pred_MeV": "1877.83750868",
+        "rho_K_leading_order": "12754.184234114105502817146002821310121578624954512",
+        "M_pred_MeV": "1879.1281430537204536801841291814081525188489267278",
         "M_codata_MeV": "1875.61294257",
-        "err_pct": "0.1186047536519905770720392966178080471614966138988",
-        "binding_residual_MeV": "2.2245661099999999999999999999999999999999999999983"
+        "err_pct": "0.18741609230441010435558146125125949305359120396524",
+        "binding_residual_MeV": "3.5152004837204536801841291814081525188489267277511"
       },
       {
         "atom": "T",
@@ -63,11 +63,11 @@
         "N": 2,
         "A": 3,
         "tr_M_at_q0": "0.012888943963108688",
-        "rho_K_leading_order": "427771.27533815756238128941388811035119179405662484",
-        "M_pred_MeV": "2817.4029292",
+        "rho_K_leading_order": "428065.08887945478078354766998920364890930071238136",
+        "M_pred_MeV": "2819.3380547673608073603682583628163050376978534555",
         "M_codata_MeV": "2808.92113298",
-        "err_pct": "0.30195921560110217032285115546761669193129045173455",
-        "binding_residual_MeV": "8.4817962199999999999999999999999999999999999999967"
+        "err_pct": "0.37085134449145025636668697504828244078391181884619",
+        "binding_residual_MeV": "10.416921787360807360368258362816305037697853455499"
       },
       {
         "atom": "3He",
@@ -75,11 +75,11 @@
         "N": 1,
         "A": 3,
         "tr_M_at_q0": "0.20654085856226262948910490901292677841811332568243",
-        "rho_K_leading_order": "26682.318679851432823306939724634956481224926984596",
-        "M_pred_MeV": "2816.10959684",
+        "rho_K_leading_order": "26700.669427265694625727959272892162954579578599568",
+        "M_pred_MeV": "2818.0463743938005536801841291814081525188489267278",
         "M_codata_MeV": "2808.39160743",
-        "err_pct": "0.27481884611750582552195773423188348614100173849407",
-        "binding_residual_MeV": "7.7179894099999999999999999999999999999999999999979"
+        "err_pct": "0.34378278792236426492489381813734743513846189744208",
+        "binding_residual_MeV": "9.6547669638005536801841291814081525188489267277517"
       },
       {
         "atom": "4He",
@@ -87,11 +87,11 @@
         "N": 2,
         "A": 4,
         "tr_M_at_q0": "0.96732375051946897893683751863134299804348930227964",
-        "rho_K_leading_order": "7597.9450172079534565098841438258276177804415370036",
-        "M_pred_MeV": "3755.67501736",
+        "rho_K_leading_order": "7603.1670712800013303669481383409907957542220627458",
+        "M_pred_MeV": "3758.2562861074409073603682583628163050376978534555",
         "M_codata_MeV": "3727.379378",
-        "err_pct": "0.75912957846492651813989834227172139492370180731319",
-        "binding_residual_MeV": "28.295639360000000000000000000000000000000000000005",
+        "err_pct": "0.82838114868813086405309447314370759062824469635996",
+        "binding_residual_MeV": "30.8769081074409073603682583628163050376978534555",
         "tr_M_convention_status": "DEPRECATED_DISJOINT — value below uses the disjoint-product convention (44 crossings, no interface) which is empirically wrong per PR #564 audit. Canonical word atom_braid_word_3A(2,2) has 47 crossings with 3 interfaces (pp, pn, nn). Canonical |tr_M(⁴He)| at H_12 via the Wenzl bridge is intractable with current Python mpmath (p(12)=77 partitions, max dim 7700, ~2×10¹³ ops per partition × 47 crossings); needs a Rust kernel with rayon parallel partitions or a categorical reduction via Wenzl 1988 LR branching. DO NOT use for mass predictions."
       },
       {
@@ -122,39 +122,39 @@
     "legacy_compare": [
       {
         "atom": "p",
-        "rho_K_err_pct": "0.0",
+        "rho_K_err_pct": "0.06886522451576069",
         "legacy_E0_err_pct": "0.0",
         "improvement_factor": 0.0
       },
       {
         "atom": "n",
-        "rho_K_err_pct": "0.0",
+        "rho_K_err_pct": "0.06859460550215457",
         "legacy_E0_err_pct": "-8.331113281944141",
-        "improvement_factor": 8331113281944.142
+        "improvement_factor": 121.45435083349899
       },
       {
         "atom": "D",
-        "rho_K_err_pct": "0.11860475365199058",
+        "rho_K_err_pct": "0.18741609230441011",
         "legacy_E0_err_pct": "-24.194378496912112",
-        "improvement_factor": 203.99164242525325
+        "improvement_factor": 129.09445608125503
       },
       {
         "atom": "T",
-        "rho_K_err_pct": "0.30195921560110217",
+        "rho_K_err_pct": "0.37085134449145024",
         "legacy_E0_err_pct": "-54.11695166232587",
-        "improvement_factor": 179.2194073447856
+        "improvement_factor": 145.9262652439258
       },
       {
         "atom": "3He",
-        "rho_K_err_pct": "0.27481884611750584",
+        "rho_K_err_pct": "0.3437827879223643",
         "legacy_E0_err_pct": "-50.427614625431424",
-        "improvement_factor": 183.49401919790392
+        "improvement_factor": 146.6845240571479
       },
       {
         "atom": "4He",
-        "rho_K_err_pct": "0.7591295784649266",
+        "rho_K_err_pct": "0.8283811486881308",
         "legacy_E0_err_pct": "-39.76421238458452",
-        "improvement_factor": 52.381323969741366
+        "improvement_factor": 48.00231445097136
       }
     ],
     "upstream_witness_hashes": [

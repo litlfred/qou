@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T03:43:49.381055+00:00",
-  "commitSha": "6073bf16939986316e2f1bbe32c7a05573d117ae",
+  "computedAt": "2026-05-18T03:43:52.001076+00:00",
+  "commitSha": "4247bf2491d335624d1dcc1640da072784612528",
   "assertions": [],
   "allPassed": true,
   "durationMs": 6,
@@ -284,7 +284,7 @@
       {
         "pattern": "P31",
         "file": "atomic_mass_via_rho_k.py",
-        "line": 162,
+        "line": 166,
         "snippet": "CODATA literal \"938.27208816\"",
         "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
