@@ -50,7 +50,7 @@ The unbroken photon $\gamma = \cos\theta_W \, B + \sin\theta_W \, W^3$
 remains a 1-component knot — image in $\mathrm{Hom}_R(\mathbf{1},
 A)$ — and is identified with the saturating EM force-carrier
 $T_{2,9}$ on Bring's surface
-([`prop:alpha-em-categorical-trace`](#prop:alpha-em-categorical-trace)).
+([`rem:alpha-em-categorical-trace`](#rem:alpha-em-categorical-trace)).
 
 ### Categorical content (sketch)
 
