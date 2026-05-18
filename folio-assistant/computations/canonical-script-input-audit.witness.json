@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T16:01:49.540531+00:00",
-  "commitSha": "eb44ce868ff54318717c6e07dc031677c627a3c5",
+  "computedAt": "2026-05-18T16:08:47.936358+00:00",
+  "commitSha": "54873b6ac4668de21c4ea777e31d55a62fd8b8f0",
   "assertions": [],
   "allPassed": true,
   "durationMs": 7,
   "computation": "canonical-script-input-audit",
   "scriptFile": "canonical_script_input_audit.py",
-  "scriptHash": "eb68163437fb",
-  "scriptCommitSha": "deeead4ec85e681e22a1567ac3ad828427b2f855",
+  "scriptHash": "6bec73dc14ca",
+  "scriptCommitSha": "54873b6ac4668de21c4ea777e31d55a62fd8b8f0",
   "description": "Audit of every Python computation script under folio-assistant/computations/ for alignment with the paper's 3-input canonical scheme (calibration-inputs.md): q_0 from m_μ/m_e, m_e, and Q_β(n). Flags scripts that use both m_p AND m_n from CODATA (over-counts hadronic input), use Vol_hyp (fitted under option B), or omit canonical input modules entirely.",
   "contentBlock": "calibration-inputs.md",
   "parameters": {
@@ -17,12 +17,13 @@
   },
   "data": {
     "by_scheme": {
-      "no-hadronic-input (substrate-only or pure dimensionless)": 416,
+      "no-hadronic-input (substrate-only or pure dimensionless)": 418,
       "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)": 56,
-      "vol-hyp-fitted (uses hyperbolic volume; FITTED under option B)": 39,
+      "vol-hyp-fitted (uses hyperbolic volume; FITTED under option B)": 36,
       "Q_β-only-hadronic": 14,
       "3-input-canonical-with-substrate-splitting (m_n − m_p derived from prop:flavor-dressed-mass-from-substrate-split; m_p + m_n used only for M_N anchor — CLASS-A pending Workplan-0b)": 1,
-      "m_p-only (no Q_β; m_n derivation TBD)": 16
+      "m_p-only (no Q_β; m_n derivation TBD)": 16,
+      "3-input-canonical-with-substrate-splitting-pure (consumes substrate-splitting witness; no CODATA nucleon masses — post-Workplan-0b target form)": 1
     },
     "rows": [
       {
@@ -1394,14 +1395,14 @@
           "Q_NEUTRON": false,
           "Q_TRITIUM": false,
           "Q_C14": false,
-          "Vol_hyp": true,
+          "Vol_hyp": false,
           "q_parameter": true,
           "experimental_constants": false,
           "MASS_RATIO_MU_E": false,
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "vol-hyp-fitted (uses hyperbolic volume; FITTED under option B)",
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
         "uses_canonical_q0_source": true,
         "uses_canonical_consts_source": false
       },
@@ -1634,7 +1635,7 @@
           "Q_NEUTRON": true,
           "Q_TRITIUM": false,
           "Q_C14": false,
-          "Vol_hyp": true,
+          "Vol_hyp": false,
           "q_parameter": true,
           "experimental_constants": true,
           "MASS_RATIO_MU_E": false,
@@ -1834,7 +1835,7 @@
           "Q_NEUTRON": false,
           "Q_TRITIUM": false,
           "Q_C14": false,
-          "Vol_hyp": true,
+          "Vol_hyp": false,
           "q_parameter": true,
           "experimental_constants": true,
           "MASS_RATIO_MU_E": false,
@@ -4354,14 +4355,14 @@
           "Q_NEUTRON": false,
           "Q_TRITIUM": false,
           "Q_C14": false,
-          "Vol_hyp": true,
+          "Vol_hyp": false,
           "q_parameter": true,
           "experimental_constants": false,
           "MASS_RATIO_MU_E": false,
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "vol-hyp-fitted (uses hyperbolic volume; FITTED under option B)",
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
         "uses_canonical_q0_source": true,
         "uses_canonical_consts_source": false
       },
@@ -5639,7 +5640,7 @@
           "experimental_constants": true,
           "MASS_RATIO_MU_E": false,
           "calibration_skein_pair": false,
-          "substrate_splitting_witness": true
+          "substrate_splitting_witness": false
         },
         "scheme": "Q_β-only-hadronic",
         "uses_canonical_q0_source": true,
@@ -6574,14 +6575,14 @@
           "Q_NEUTRON": false,
           "Q_TRITIUM": false,
           "Q_C14": false,
-          "Vol_hyp": true,
+          "Vol_hyp": false,
           "q_parameter": true,
           "experimental_constants": false,
           "MASS_RATIO_MU_E": false,
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
-        "scheme": "vol-hyp-fitted (uses hyperbolic volume; FITTED under option B)",
+        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
         "uses_canonical_q0_source": true,
         "uses_canonical_consts_source": false
       },
@@ -6801,7 +6802,7 @@
           "calibration_skein_pair": true,
           "substrate_splitting_witness": true
         },
-        "scheme": "no-hadronic-input (substrate-only or pure dimensionless)",
+        "scheme": "3-input-canonical-with-substrate-splitting-pure (consumes substrate-splitting witness; no CODATA nucleon masses — post-Workplan-0b target form)",
         "uses_canonical_q0_source": true,
         "uses_canonical_consts_source": false
       },
@@ -9035,14 +9036,14 @@
           "Q_TRITIUM": false,
           "Q_C14": false,
           "Vol_hyp": true,
-          "q_parameter": true,
+          "q_parameter": false,
           "experimental_constants": false,
           "MASS_RATIO_MU_E": true,
           "calibration_skein_pair": false,
           "substrate_splitting_witness": false
         },
         "scheme": "vol-hyp-fitted (uses hyperbolic volume; FITTED under option B)",
-        "uses_canonical_q0_source": true,
+        "uses_canonical_q0_source": false,
         "uses_canonical_consts_source": false
       },
       {
@@ -10866,9 +10867,10 @@
         "uses_canonical_consts_source": false
       }
     ],
-    "canonical_3input_count": 15,
+    "canonical_3input_count": 16,
+    "substrate_splitting_count": 2,
     "over_count_count": 56,
-    "vol_hyp_fitted_count": 39
+    "vol_hyp_fitted_count": 36
   },
   "caveats": [
     "Heuristic detection by import + regex. False positives possible for scripts that comment out CODATA constants or use them only for comparison rather than derivation.",

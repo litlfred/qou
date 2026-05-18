@@ -66,6 +66,18 @@ MARKERS = {
 }
 
 
+_COMMENT_RX = re.compile(r"(?m)^\s*#.*$")
+
+
+def _strip_comments(text: str) -> str:
+    """Remove Python `#` comment lines (per Copilot #733: comment-only
+    references to a marker name must not trigger the marker — e.g.
+    `paper_six_term_isotope_sweep.py` mentions
+    `flavor-dressed-mass-from-substrate-split.witness.json` in a
+    comment explaining it is NOT consumed)."""
+    return _COMMENT_RX.sub("", text)
+
+
 def classify_script(path: Path) -> dict:
     """Read script and tally which canonical inputs it uses."""
     try:
@@ -74,7 +86,8 @@ def classify_script(path: Path) -> dict:
         return None
     if "import" not in text and "def " not in text:
         return None  # data file, skip
-    found = {key: bool(rx.search(text)) for key, rx in MARKERS.items()}
+    code = _strip_comments(text)
+    found = {key: bool(rx.search(code)) for key, rx in MARKERS.items()}
     # Determine alignment status
     uses_m_p = found["M_P_MEV"]
     uses_m_n = found["M_N_MEV"]
@@ -97,6 +110,15 @@ def classify_script(path: Path) -> dict:
             "3-input-canonical-with-substrate-splitting-partial "
             "(consumes substrate-splitting witness; single nucleon-mass "
             "anchor for M_N — CLASS-A pending Workplan-0b)"
+        )
+    elif uses_substrate_split:
+        # Per Gemini #733: a pure-substrate consumer (no CODATA
+        # nucleon mass) is the post-Workplan-0b target form; counted
+        # in the substrate-splitting summary statistic.
+        scheme = (
+            "3-input-canonical-with-substrate-splitting-pure "
+            "(consumes substrate-splitting witness; no CODATA nucleon "
+            "masses — post-Workplan-0b target form)"
         )
     elif uses_m_p and uses_m_n:
         # Two hadronic inputs — over-count if Q_β not also used
@@ -159,7 +181,6 @@ def main():
         if "3-input-canonical" in s
         or "3-input-alt" in s
         or "Q_β-only-hadronic" in s
-        or "3-input-canonical-with-substrate-splitting" in s
     )
     substrate_splitting = sum(
         n for s, n in by_scheme.items()
@@ -196,6 +217,7 @@ def main():
         .add_data("by_scheme", by_scheme)
         .add_data("rows", rows)
         .add_data("canonical_3input_count", canonical_3input)
+        .add_data("substrate_splitting_count", substrate_splitting)
         .add_data("over_count_count", over_counts)
         .add_data("vol_hyp_fitted_count", fitted)
         .add_caveat(
