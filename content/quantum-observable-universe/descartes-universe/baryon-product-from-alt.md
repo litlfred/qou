@@ -180,7 +180,7 @@ defined entirely over $R$; the proposition is a statement in
 $\mathrm{End}_{\mathbf{C}}(\Lambda^3 V) = R$ and does **not**
 require the embedding $R \hookrightarrow \mathbb{C}$.  The
 analytic / archimedean evaluation of $\int_{-a}^{a} \prod_k dc_k/dz \,dz$
-([baryon period ratio](#conj:baryon-period-ratio)) is a separate
+([baryon period ratio](#rem:baryon-period-ratio)) is a separate
 step — see [SW-period thimble equivalence](#prop:sw-period-thimble-equivalence) —
 which lifts this $R$-rational integrand to a Picard–Lefschetz
 contour integral after applying $\tau$.*

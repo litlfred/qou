@@ -93,10 +93,10 @@ specialisations to trivial / standard isotypes recover the electron
 $(k=0)$ / muon $(k=1)$ cases. Applying $\tau$ to the resulting
 $R$-valued expression gives $\mathfrak{m}^{(k)}_{\mathrm{an}}$.*  $\square$
 
-**Promotion of `conj:baryon-period-ratio`.**
+**Promotion of `rem:baryon-period-ratio`.**
 *The $k = 3$ case applied to the proton's atomic braid is now a
 corollary (A2.4 is derived). The downstream
-([baryon period ratio](#conj:baryon-period-ratio)) upgrades to a
+([baryon period ratio](#rem:baryon-period-ratio)) upgrades to a
 provable statement.*
 
 **Archimedean shadow.**
