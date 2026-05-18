@@ -1,23 +1,23 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-18T04:00:45.707339+00:00",
-  "commitSha": "3dd982ade41e7abdba83f5d5633fc7199d692ad0",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-05-18T04:19:32.986606+00:00",
+  "commitSha": "39ca6b72856b6f9f883d471a3b0b0efccfef3aba",
   "assertions": [
     {
-      "name": "ratio_identity_within_floor",
-      "computed": 0.0,
-      "expected": 0.0,
+      "name": "rho_K_flavor_asymmetry",
+      "computed": 1.1554752316408885,
+      "expected": 1.15548,
       "passed": true,
-      "tolerance": 1e-30
+      "tolerance": 0.0001
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 6,
   "computation": "probe-substrate-vs-chi-cache-delta-m",
   "scriptFile": "probe_substrate_vs_chi_cache_delta_m.py",
-  "scriptHash": "dd575b13c547",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "de513f1ae4d1",
+  "scriptCommitSha": "d24a01b2edf8048ac41548b8d7ca7aa82bc98763",
   "description": "Cross-check the substrate prop:flavor-split-substrate Δm against the χ-cache combiner |tr_M| (PR #682).  Item 1 of the #663 follow-up queue, unblocked by #682 landing on main.",
   "data": {
     "q_pinned": "1.109978595554180575281594079609509377993",
@@ -43,6 +43,32 @@
       "delta_m_via_chi_cache_MeV": "1.292936796209108344354595725389436142037",
       "delta_m_substrate_MeV": "1.292936796209108344354595725389436142037",
       "delta_m_residual_keV": 0.0
-    }
+    },
+    "upstream_witness_hashes": [
+      {
+        "path": "q-pinning-50-digit.witness.json",
+        "sha256": "1b3888e92f59381ee8f08868664422b509c5ebcb7d3ee8b3f784429be3f3e877",
+        "size_bytes": 3817,
+        "commitSha": null,
+        "scriptCommitSha": null,
+        "computedAt": "2026-04-27T20:27:23.154181+00:00"
+      },
+      {
+        "path": "probe-a-selection-criteria.witness.json",
+        "sha256": "6432d9d8e1f8a90a3c36edd83a59f018200982d7a86f4ac5b8295788fe3d2bd1",
+        "size_bytes": 1543,
+        "commitSha": "969e20fa337416e3e6b2a6cddea19183ee3db29c",
+        "scriptCommitSha": "unknown",
+        "computedAt": "2026-05-17T07:13:06.650069+00:00"
+      },
+      {
+        "path": "canonical-tr-m-via-chi-cache.witness.json",
+        "sha256": "a613a0eb1ada8c524068cccf2046da77f4f026b955f5bbabf16df7950c5992d4",
+        "size_bytes": 40939,
+        "commitSha": "957288e7d7426439c83288a047eaeec3f513e733",
+        "scriptCommitSha": "46d347363f6308545ed7aa5387ecb5cb252e5c06",
+        "computedAt": "2026-05-18T02:23:01.830243+00:00"
+      }
+    ]
   }
 }

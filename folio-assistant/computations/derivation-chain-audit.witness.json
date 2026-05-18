@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T04:09:03.675050+00:00",
-  "commitSha": "d24a01b2edf8048ac41548b8d7ca7aa82bc98763",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-05-18T04:19:57.458020+00:00",
+  "commitSha": "39ca6b72856b6f9f883d471a3b0b0efccfef3aba",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -576,7 +576,7 @@
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "67f1df24c9d76e62b2bb25a331814e511ba6dc3f",
+  "scriptCommitSha": "2c902dba4fd09829bc702287b1ca56710d8ab69e",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
   "data": {
