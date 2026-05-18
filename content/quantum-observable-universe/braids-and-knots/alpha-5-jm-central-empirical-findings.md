@@ -67,7 +67,7 @@ form correctly extracts the AME-fitted shell correction.
    the operator-selection LP; "shadow price = central scalar"
    is a leading-order *guess* at how the LP solves. A genuine
    LP-dual computation per
-   [`prop:bw-coefficient-shadow-price`](#prop:bw-coefficient-shadow-price)
+   [`prop:mass-coefficient-shadow-price`](#prop:mass-coefficient-shadow-price)
    that uses $P_\ell$-mediated cost (rather than dim-blind cost)
    would derive the correct atom-dependence — the
    $[3A]_{q_0}!$ normalisation included.

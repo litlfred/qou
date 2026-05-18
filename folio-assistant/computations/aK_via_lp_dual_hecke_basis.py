@@ -15,7 +15,7 @@ from `pyhecke.gram` (loaded via `gram-matrix-dual.witness.json`).
 For each atom in {proton, neutron}:
 
 1. Build the operator-selection LP per
-   `prop:bw-coefficient-shadow-price`:
+   `prop:mass-coefficient-shadow-price`:
      t_i = tr_M(b_i)
      G_ij = tr_M(b_i b_j)            (full 6x6 Gram)
      n_target = |tr_M(W_atom)|       (the categorical mass target)
@@ -42,7 +42,7 @@ under test.
 - A ≥ 2 needs H_{3A} basis: H_6 = 720 elements, H_9 = 362,880,
   H_12 = ~10^8. The H_3 case is the only one where the full basis
   fits in memory + scipy's LP solver. For higher A, the analytical
-  path C_λ · S_λ from `prop:bw-coefficient-shadow-price` is the
+  path C_λ · S_λ from `prop:mass-coefficient-shadow-price` is the
   only tractable route (see audit §7d).
 
 - f64 precision via scipy.linprog. MPFR-50dps follow-on would
@@ -202,7 +202,7 @@ def main() -> int:
         "(A=1, 6 elements). A ≥ 2 requires the analytical C_λ · S_λ "
         "factorisation per audit §7d (H_6 = 720, H_9 = 360K elements)."
     )
-    w.set_content_block("prop:bw-coefficient-shadow-price")
+    w.set_content_block("prop:mass-coefficient-shadow-price")
     w.add_parameter("q0", repr(Q))
     w.add_parameter("h", repr(H))
     w.add_parameter("basis_size", 6)

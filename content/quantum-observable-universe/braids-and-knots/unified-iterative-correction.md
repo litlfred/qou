@@ -30,7 +30,7 @@ $$
   scale \cite{satula1997});*
 - *$u_\lambda = w_\lambda / d_\lambda - 1/[k]_q!$ is the LP-dual
   shadow price of $\lambda$'s Frobenius positivity constraint
-  ([prop:bw-coefficient-shadow-price](#prop:bw-coefficient-shadow-price));
+  ([prop:mass-coefficient-shadow-price](#prop:mass-coefficient-shadow-price));
   the constant $1/[k]_q!$ is the dual variable of the
   normalisation $\mathbf{1}^T x = n_{\mathrm{target}}$ (the
   smallest $w_\lambda / d_\lambda$ across partitions of $k$,
@@ -62,7 +62,7 @@ $(A, Z_k, N_k, \mathrm{nuc}, \{\Delta B_\lambda\}_\lambda,
 \mathrm{cumulative})$ uniquely determine the next.*
 
 *Proof.*
-By [prop:bw-coefficient-shadow-price](#prop:bw-coefficient-shadow-price),
+By [prop:mass-coefficient-shadow-price](#prop:mass-coefficient-shadow-price),
 the BW coefficient of partition $\lambda$ is the LP-dual variable
 $u_\lambda^* = C_\lambda \cdot S_\lambda(Z, N, A)$.  The
 categorical scale $C_\lambda = m_e \cdot H_q(\lambda)$ (the
@@ -84,7 +84,7 @@ By the Wedderburn-Artin trace identity
 $\sum_\lambda \dim_q(\lambda)^2 = [k]_q!$ ($k$ fixed), the dual
 shadow prices satisfy a single budget constraint per Hecke
 level; by Frobenius reciprocity
-([prop:bw-coefficient-shadow-price](#prop:bw-coefficient-shadow-price),
+([prop:mass-coefficient-shadow-price](#prop:mass-coefficient-shadow-price),
 branching corollary), shadow prices at level $k+1$ are
 determined by those at level $k$.  Telescoping per-step log-trace
 differences across $k = 1, \ldots, A$ yields the closed-form

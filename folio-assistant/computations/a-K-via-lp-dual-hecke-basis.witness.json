@@ -42,7 +42,7 @@
   "scriptHash": "34bdd94f5208",
   "scriptCommitSha": "unknown",
   "description": "Item B (B.1a-rev.5) — full Hecke-algebra-basis LP-dual extraction for a_K at H_3 (proton, neutron). Uses the complete 6-element NF basis {𝟙, σ_0, σ_1, L_+, L_-, e^-} from `pyhecke.gram` (loaded via `gram-matrix-dual.witness.json`) with non-diagonal Frobenius Gram. Compares chirality-active dual sum (a_K^{chi-active} = 1 + Σ_{i ∉ sc-active} y_i^*/u_0^*) to closed-form C = 1 at A=1. Wires the SDP-attribution path from audit §7b at the only A where the full basis is tractable (A=1, 6 elements). A ≥ 2 requires the analytical C_λ · S_λ factorisation per audit §7d (H_6 = 720, H_9 = 360K elements).",
-  "contentBlock": "prop:bw-coefficient-shadow-price",
+  "contentBlock": "prop:mass-coefficient-shadow-price",
   "parameters": {
     "q0": "1.1099785955541805",
     "h": "0.20906032198987945",

@@ -277,7 +277,7 @@ archimedean wall**:
 
 ### 7b.1 Algebraic side: a_K = knot-factor SDP shadow price
 
-[`prop:bw-coefficient-shadow-price`](../../content/quantum-observable-universe/braids-and-knots/bw-coefficient-shadow-price.md)
+[`prop:mass-coefficient-shadow-price`](../../content/quantum-observable-universe/braids-and-knots/mass-coefficient-shadow-price.md)
 already proves that *each* coefficient of the Bethe–Weizsäcker
 formula is a **shadow price (LP dual variable) of a Wedderburn-
 block Frobenius positivity constraint** in the nuclear-operator
@@ -538,7 +538,7 @@ binding lives entirely in the chirality stratum at A ≥ 3.
 The script
 [`aK_via_lp_dual_full.py`](../../folio-assistant/computations/aK_via_lp_dual_full.py)
 solves the operator-selection LP per
-[`prop:bw-coefficient-shadow-price`](../../content/quantum-observable-universe/braids-and-knots/bw-coefficient-shadow-price.md)
+[`prop:mass-coefficient-shadow-price`](../../content/quantum-observable-universe/braids-and-knots/mass-coefficient-shadow-price.md)
 using the Wedderburn-block projector basis $\{\pi_\lambda : \lambda \vdash n\}$
 with diagonal Gram $G_{\lambda\lambda'} = w_\lambda \cdot \delta_{\lambda\lambda'}$.
 Result (f64 prototype, scipy linprog highs method):
@@ -564,7 +564,7 @@ not the Wedderburn-block-diagonal projection. The block-diagonal
 LP discards inter-block coupling information that the proper LP
 needs to bind the dual variables.
 
-This is consistent with `prop:bw-coefficient-shadow-price`'s
+This is consistent with `prop:mass-coefficient-shadow-price`'s
 proof structure — the Wedderburn decomposition is a *consequence*
 of solving the full LP (the block-diagonalisation falls out of
 the Wedderburn structure of $H_n$), not an input simplification.
@@ -584,12 +584,12 @@ plausible but **not yet verified**. Verification requires:
 
 3. Or: deriving the dual variables analytically from the
    $C_\lambda \cdot S_\lambda(Z,N,A)$ factorisation in
-   `prop:bw-coefficient-shadow-price` Step "Factorisation" —
+   `prop:mass-coefficient-shadow-price` Step "Factorisation" —
    bypassing the explicit LP solve. This is the path that the
    block already proves in narrative form.
 
 **Practical recommendation**: pursue path (3) — the dual factorisation
-is already proved in `prop:bw-coefficient-shadow-price` and gives
+is already proved in `prop:mass-coefficient-shadow-price` and gives
 $u_\lambda^*(Z,N) = C_\lambda \cdot S_\lambda$ in closed form.
 Read off $a_K$ via the $C_\lambda$ values for the chirality-active
 partitions. This is **analytical**, not numerical — no LP solve
@@ -625,7 +625,7 @@ candidates tested (R, D-sc, D-chi, dual-ratio, chi-active) match
 the closed-form C numerically. The §7b claim that "a_K = $1 + \sum_\lambda u_\lambda^*/u_0^*$"
 holds only in the analytical-factorisation form
 $u_\lambda^*(Z,N) = C_\lambda \cdot S_\lambda$ proved in
-`prop:bw-coefficient-shadow-price`, not via direct LP solves at
+`prop:mass-coefficient-shadow-price`, not via direct LP solves at
 LP corner-vertex solutions.
 
 **Definitive recommendation:** The canonical a_K is the closed
@@ -657,7 +657,7 @@ and update the narrative.
 *(Added 2026-05-18 after user note: "bw-coef … these were deprecated".)*
 
 The §7b–§7e investigation was built on
-[`prop:bw-coefficient-shadow-price`](../../content/quantum-observable-universe/braids-and-knots/bw-coefficient-shadow-price.md),
+[`prop:mass-coefficient-shadow-price`](../../content/quantum-observable-universe/braids-and-knots/mass-coefficient-shadow-price.md),
 whose computational backing
 (`bw_wenzl_shadow_equivalence.py`) was **moved to `_deprecated/`**
 per the 2026-05-11 plancherel-usage audit
@@ -672,7 +672,7 @@ and promoted
 (q-deformed weight $\tilde w_\lambda = \dim_q(\lambda)^2 / [n]_q!$)
 as the canonical Wedderburn-weight framework.
 
-The narrative `prop:bw-coefficient-shadow-price` block still
+The narrative `prop:mass-coefficient-shadow-price` block still
 exists (not marked deprecated in `.ts`), but **production six-
 term mass formula does not cite it**, and its compute path is
 the deprecated one. The §7b SDP-shadow-price attribution of a_K

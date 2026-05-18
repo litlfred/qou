@@ -245,7 +245,7 @@ Candidate routes (all $(q, \beta)$-aware):
   $\mathrm{argmax}_\lambda y_\lambda^\star$ — both measure
   "where the operator's binding-energy demand concentrates," one
   via the spectrum, the other via the LP shadow price. The
-  prop:bw-coefficient-shadow-price linkage between BW coefficients
+  prop:mass-coefficient-shadow-price linkage between BW coefficients
   and SDP shadow prices (per the existing LP/SDP infra) supports
   the structural equivalence.
 

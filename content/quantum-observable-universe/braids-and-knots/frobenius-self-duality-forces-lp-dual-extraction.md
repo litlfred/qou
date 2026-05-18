@@ -99,7 +99,7 @@ This is not a derivation; it is the structure of the
 observation frame in a Frobenius-self-dual category. $\square$
 
 **Corollary (mass-formula coefficients are LP-dual variables).**
-By [bw-coefficient-shadow-price](#prop:bw-coefficient-shadow-price),
+By [mass-coefficient-shadow-price](#prop:mass-coefficient-shadow-price),
 every Bethe–Weizsäcker mass coefficient $C_\lambda$ at every
 Hecke level $k$ is the τ-extraction of a shadow price; by the
 proposition above, this is the *only* form a τ-extracted

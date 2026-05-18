@@ -555,7 +555,7 @@ export default chapter({
         "wedderburn-weight-canonical",
         "hook-weight-derivation",
         "wigner-coefficient-derivation",
-        "bw-coefficient-shadow-price",
+        "mass-coefficient-shadow-price",
         "frobenius-self-duality-forces-lp-dual-extraction",
         "jucys-murphy-central-elements-qou",
         "mass-formula-iterative-lp-dual",

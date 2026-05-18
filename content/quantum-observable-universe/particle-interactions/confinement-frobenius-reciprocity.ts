@@ -19,7 +19,7 @@ export default proposition({
   uses: [
     "prop:frobenius-gram-matrix",
     "prop:operator-selection-lp",
-    "prop:bw-coefficient-shadow-price",
+    "prop:mass-coefficient-shadow-price",
     "prop:confinement-operator-selection",
     "conj:knot-factor-frobenius-pairing",
   ],

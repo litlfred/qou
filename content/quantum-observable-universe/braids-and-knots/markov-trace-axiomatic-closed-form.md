@@ -185,7 +185,7 @@ whereas this Markov-trace closed form is **not** anti-self-reciprocal —
 the two traces are genuinely different categorical objects, both
 finite linear combinations of irreducible characters but with
 different weights ($w_\lambda$ Plancherel vs $y_\lambda$ Jones-Markov,
-[`prop:bw-coefficient-shadow-price`](#prop:bw-coefficient-shadow-price)).
+[`prop:mass-coefficient-shadow-price`](#prop:mass-coefficient-shadow-price)).
 
 ## Witness scripts
 

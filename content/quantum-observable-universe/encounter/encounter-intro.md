@@ -35,6 +35,6 @@ name and sequence pieces that already live elsewhere in the
 manuscript ---
 [Picard--Lefschetz thimbles](#def:picard-lefschetz-thimble),
 [$\Phi_q$-piece](#def:phi-q-piece) cusp data, the
-[shadow-price reading of the LP dual](#prop:bw-coefficient-shadow-price)
+[shadow-price reading of the LP dual](#prop:mass-coefficient-shadow-price)
 --- so that the reader has a single geometric story binding the
 algebraic SDP to the observed mass spectrum.

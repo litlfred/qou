@@ -26,7 +26,7 @@ $H_n(R, q)$ induced by the Markov trace.
 
 ## References
 - [manuscript] conj:knot-factor-frobenius-pairing
-- [manuscript] prop:bw-coefficient-shadow-price
+- [manuscript] prop:mass-coefficient-shadow-price
 - [yekutieli2015] https://doi.org/10.4310/HHA.2015.v17.n2.a5
 - [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 -/

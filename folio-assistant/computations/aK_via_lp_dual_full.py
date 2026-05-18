@@ -2,7 +2,7 @@
 """Item B (B.1a-rev.4) — full LP-dual extraction for a_K.
 
 Solves the operator-selection LP per
-[`prop:bw-coefficient-shadow-price`](../../content/quantum-observable-universe/braids-and-knots/bw-coefficient-shadow-price.md)
+[`prop:mass-coefficient-shadow-price`](../../content/quantum-observable-universe/braids-and-knots/mass-coefficient-shadow-price.md)
 explicitly via `lp_dual_solver.solve_operator_selection_lp` and
 reads off the literal dual variables `u_λ*`.
 
@@ -195,7 +195,7 @@ def main() -> int:
     w.set_description(
         "Item B (B.1a-rev.4) — full LP-dual extraction for a_K. "
         "Solves the operator-selection LP per "
-        "`prop:bw-coefficient-shadow-price` for each of "
+        "`prop:mass-coefficient-shadow-price` for each of "
         "proton/neutron/D/T/³He/⁴He at f64 precision (scipy linprog "
         "via lp_dual_solver.solve_operator_selection_lp) and extracts "
         "literal u_λ^* dual variables. Compares the chirality-active "
@@ -216,7 +216,7 @@ def main() -> int:
         "too coarse for the operator-selection LP — the duals come "
         "out DEGENERATE (y0^* = 0 for A ≥ 2; chirality dual sum "
         "diverges in the limit). The full operator-selection LP "
-        "per `prop:bw-coefficient-shadow-price` requires the full "
+        "per `prop:mass-coefficient-shadow-price` requires the full "
         "Hecke algebra basis {b_i : i = 1..[n]_q!} with non-diagonal "
         "Gram G_ij = tr_M(b_i b_j). That setup is an open R&D item "
         "(per Item B audit §7c B.1a-rev.4); the present script "

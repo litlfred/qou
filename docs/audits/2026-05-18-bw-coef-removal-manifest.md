@@ -9,7 +9,7 @@
 
 ## Why remove
 
-Per §7f of the Item B audit: `prop:bw-coefficient-shadow-price`'s
+Per §7f of the Item B audit: `prop:mass-coefficient-shadow-price`'s
 **computational scaffolding was deprecated in the 2026-05-11
 plancherel-usage audit** (moved to `_deprecated/`), but the
 narrative block remained in the paper. Production six-term mass
@@ -30,7 +30,7 @@ removal without losing essential coupling.
 
 | Block label | .ts | .md | .lean | Reason |
 |-------------|-----|-----|-------|--------|
-| `prop:bw-coefficient-shadow-price` | ✅ | ✅ | ✅ | the Tier-1 target |
+| `prop:mass-coefficient-shadow-price` | ✅ | ✅ | ✅ | the Tier-1 target |
 | `prop:frobenius-self-duality-forces-lp-dual-extraction` | ✅ | ✅ | ✅ | foundation — "structural justification for the LP-dual formulation of mass" |
 | `prop:mass-formula-iterative-lp-dual` | ✅ | ✅ | ✅ | "REPLACES the seven ad-hoc mass-formula terms with one iterative recursion" — superseded by the actual six-term-mass-formula-complete in production |
 | `prop:unified-iterative-correction` | ✅ | ✅ | ✅ | "per-step Wedderburn projection over all partitions" — uses bw-coef as primary backing, becomes orphaned without it |
@@ -41,22 +41,22 @@ removal without losing essential coupling.
 ### Category B — keep block, scrub bw-coef references (4 blocks)
 
 These blocks have **independent structural content**; they merely
-cited bw-coefficient-shadow-price as supporting infrastructure.
+cited mass-coefficient-shadow-price as supporting infrastructure.
 Scrub the `uses[]` entry + narrative cite; leave the block
 intact.
 
 | Block label | Action |
 |-------------|--------|
-| `conj:knot-factor-frobenius-pairing` | Drop `prop:bw-coefficient-shadow-price` from `uses[]`. Item B's canonical T5 lives here; rewrite is straightforward. |
-| `prop:magic-numbers-from-q` | Drop `prop:bw-coefficient-shadow-price` from `uses[]` (uses[] keeps `conj:shell-closure-nf-term-count`, `prop:nuclear-knot-classification`). |
-| `rem:sdp-as-thimble-flow` | Drop `prop:bw-coefficient-shadow-price` from `uses[]` (encounter remark; keeps Picard–Lefschetz cites). |
-| `prop:confinement-frobenius-reciprocity` | Drop `prop:bw-coefficient-shadow-price` from `uses[]`. |
+| `conj:knot-factor-frobenius-pairing` | Drop `prop:mass-coefficient-shadow-price` from `uses[]`. Item B's canonical T5 lives here; rewrite is straightforward. |
+| `prop:magic-numbers-from-q` | Drop `prop:mass-coefficient-shadow-price` from `uses[]` (uses[] keeps `conj:shell-closure-nf-term-count`, `prop:nuclear-knot-classification`). |
+| `rem:sdp-as-thimble-flow` | Drop `prop:mass-coefficient-shadow-price` from `uses[]` (encounter remark; keeps Picard–Lefschetz cites). |
+| `prop:confinement-frobenius-reciprocity` | Drop `prop:mass-coefficient-shadow-price` from `uses[]`. |
 
 **Subtotal: 4 .ts files modified.**
 
 ### Category C — soft cite scrubbing in .md narrative (~19 files)
 
-These .md files cite `bw-coefficient-shadow-price` (or one of the
+These .md files cite `mass-coefficient-shadow-price` (or one of the
 Category-A removed blocks) in prose. For each:
 
 1. If the cite is just supporting context → remove the parenthetical
@@ -94,9 +94,9 @@ Category-A removed blocks) in prose. For each:
 
 ### Category D — chapter manifest + Lean references
 
-- `content/quantum-observable-universe/braids-and-knots/braids-and-knots.ts` — remove `"bw-coefficient-shadow-price"` (and the four Category-A block labels) from the chapter section list.
-- `content/quantum-observable-universe/index-of-definitions/definition-index.md` — remove the `BWCoefficientShadowPrice` row.
-- `content/quantum-observable-universe/braids-and-knots/knot-operator-energy-unique.lean` — currently cites `BWCoefficientShadowPrice`; update or remove.
+- `content/quantum-observable-universe/braids-and-knots/braids-and-knots.ts` — remove `"mass-coefficient-shadow-price"` (and the four Category-A block labels) from the chapter section list.
+- `content/quantum-observable-universe/index-of-definitions/definition-index.md` — remove the `MassCoefficientShadowPrice` row.
+- `content/quantum-observable-universe/braids-and-knots/knot-operator-energy-unique.lean` — currently cites `MassCoefficientShadowPrice`; update or remove.
 - `content/quantum-observable-universe/braids-and-knots/knot-factor-frobenius-pairing.lean` — citation cleanup.
 - `content/quantum-observable-universe/braids-and-knots/unified-iterative-correction.lean` — removed wholesale with the block (Category A).
 
@@ -152,7 +152,7 @@ Single atomic commit recommended (39 files moves together):
 4. Edit Category D infrastructure (~4 cross-ref cleanups).
 5. Run `cd content && bun run validate` → must pass.
 6. Run `cd content && bun run pipeline/conjectural-propagation-audit.ts` → no new orphans.
-7. Single commit: `paper: remove bw-coefficient-shadow-price + 4 deprecated LP-dual siblings (per Item B audit §7f)`.
+7. Single commit: `paper: remove mass-coefficient-shadow-price + 4 deprecated LP-dual siblings (per Item B audit §7f)`.
 
 ## Open questions
 

@@ -107,7 +107,7 @@ Source: [`content/quantum-observable-universe/particle-interactions/q-integer-ma
 | proposition | `prop:baryon-product-from-alt` | `content/quantum-observable-universe/descartes-universe/baryon-product-from-alt.ts` |
 | proposition | `prop:benzene-threading-emergence` | `content/quantum-observable-universe/molecular-construction/benzene-threading-emergence.ts` |
 | proposition | `prop:boltzmann-constant` | `content/quantum-observable-universe/information-theory/boltzmann-constant.ts` |
-| proposition | `prop:bw-coefficient-shadow-price` | `content/quantum-observable-universe/braids-and-knots/bw-coefficient-shadow-price.ts` |
+| proposition | `prop:mass-coefficient-shadow-price` | `content/quantum-observable-universe/braids-and-knots/mass-coefficient-shadow-price.ts` |
 | proposition | `prop:ch4-lp-dual-binding` | `content/quantum-observable-universe/molecular-construction/ch4-lp-dual-binding.ts` |
 | proposition | `prop:chirality-dual-space-derivation` | `content/quantum-observable-universe/braids-and-knots/chirality-dual-space-derivation.ts` |
 | proposition | `prop:chirality-from-frobenius-self-pairing` | `content/quantum-observable-universe/braids-and-knots/chirality-from-frobenius-self-pairing.ts` |
@@ -208,7 +208,7 @@ Source: [`content/quantum-observable-universe/molecular-construction/palindromic
 | proposition | `prop:baryon-product-from-alt` | `content/quantum-observable-universe/descartes-universe/baryon-product-from-alt.ts` |
 | proposition | `prop:benzene-threading-emergence` | `content/quantum-observable-universe/molecular-construction/benzene-threading-emergence.ts` |
 | proposition | `prop:boltzmann-constant` | `content/quantum-observable-universe/information-theory/boltzmann-constant.ts` |
-| proposition | `prop:bw-coefficient-shadow-price` | `content/quantum-observable-universe/braids-and-knots/bw-coefficient-shadow-price.ts` |
+| proposition | `prop:mass-coefficient-shadow-price` | `content/quantum-observable-universe/braids-and-knots/mass-coefficient-shadow-price.ts` |
 | proposition | `prop:ch4-lp-dual-binding` | `content/quantum-observable-universe/molecular-construction/ch4-lp-dual-binding.ts` |
 | proposition | `prop:chirality-dual-space-derivation` | `content/quantum-observable-universe/braids-and-knots/chirality-dual-space-derivation.ts` |
 | proposition | `prop:chirality-from-frobenius-self-pairing` | `content/quantum-observable-universe/braids-and-knots/chirality-from-frobenius-self-pairing.ts` |
@@ -309,7 +309,7 @@ Source: [`content/quantum-observable-universe/molecular-construction/shell-closu
 | proposition | `prop:baryon-product-from-alt` | `content/quantum-observable-universe/descartes-universe/baryon-product-from-alt.ts` |
 | proposition | `prop:benzene-threading-emergence` | `content/quantum-observable-universe/molecular-construction/benzene-threading-emergence.ts` |
 | proposition | `prop:boltzmann-constant` | `content/quantum-observable-universe/information-theory/boltzmann-constant.ts` |
-| proposition | `prop:bw-coefficient-shadow-price` | `content/quantum-observable-universe/braids-and-knots/bw-coefficient-shadow-price.ts` |
+| proposition | `prop:mass-coefficient-shadow-price` | `content/quantum-observable-universe/braids-and-knots/mass-coefficient-shadow-price.ts` |
 | proposition | `prop:ch4-lp-dual-binding` | `content/quantum-observable-universe/molecular-construction/ch4-lp-dual-binding.ts` |
 | proposition | `prop:chirality-dual-space-derivation` | `content/quantum-observable-universe/braids-and-knots/chirality-dual-space-derivation.ts` |
 | proposition | `prop:chirality-from-frobenius-self-pairing` | `content/quantum-observable-universe/braids-and-knots/chirality-from-frobenius-self-pairing.ts` |

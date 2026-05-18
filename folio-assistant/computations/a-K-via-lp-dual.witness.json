@@ -67,7 +67,7 @@
   "scriptFile": "aK_via_lp_dual.py",
   "scriptHash": "0a3e5e0ce27c",
   "scriptCommitSha": "unknown",
-  "description": "Item B (B.1a) — a_K candidate values via SDP shadow-price decomposition. Compares four a_K definitions (Ratio R, Closed-form C, SDP-dual signed D-sc, SDP-dual absolute D-chi) at q_0 50dps for the proton, neutron, deuteron, tritium, ³He, ⁴He chi-cache atoms. Emits per-partition breakdown with self-conjugate vs chirality-active classification (per content sum c(λ) and Λ^∨ involution). Per `prop:bw-coefficient-shadow-price` §3, a_K should equal 1 + Σ_{λ ∉ Λ^sc} u_λ*/u_0*; this script's D-sc / D-chi candidates are working approximations using chi-cache data directly (full LP solve deferred to B.1a-full). Reference: `conj:knot-factor-frobenius-pairing`.",
+  "description": "Item B (B.1a) — a_K candidate values via SDP shadow-price decomposition. Compares four a_K definitions (Ratio R, Closed-form C, SDP-dual signed D-sc, SDP-dual absolute D-chi) at q_0 50dps for the proton, neutron, deuteron, tritium, ³He, ⁴He chi-cache atoms. Emits per-partition breakdown with self-conjugate vs chirality-active classification (per content sum c(λ) and Λ^∨ involution). Per `prop:mass-coefficient-shadow-price` §3, a_K should equal 1 + Σ_{λ ∉ Λ^sc} u_λ*/u_0*; this script's D-sc / D-chi candidates are working approximations using chi-cache data directly (full LP solve deferred to B.1a-full). Reference: `conj:knot-factor-frobenius-pairing`.",
   "contentBlock": "conj:knot-factor-frobenius-pairing",
   "parameters": {
     "q0_50dps": "1.1099785955541805753",

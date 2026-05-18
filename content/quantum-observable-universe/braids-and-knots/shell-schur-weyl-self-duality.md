@@ -146,7 +146,7 @@ significant computational saving for large $A_{\mathrm{magic}}$.*
 
 **Relation to existing propositions.**
 *This result refines
-[bw-coefficient-shadow-price](#prop:bw-coefficient-shadow-price)
+[mass-coefficient-shadow-price](#prop:mass-coefficient-shadow-price)
 (which gives y_λ per partition) by asserting the self-dual
 symmetry of the physical shell operator.  It complements
 [skein-crossing-asymmetry](#prop:skein-crossing-asymmetry)

@@ -19,6 +19,6 @@ export default proposition({
   uses: [
     "conj:shell-closure-nf-term-count",
     "prop:nuclear-knot-classification",
-    "prop:bw-coefficient-shadow-price",
+    "prop:mass-coefficient-shadow-price",
   ],
 });

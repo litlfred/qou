@@ -150,7 +150,7 @@ For $\ell \to \ell + 1$:
 $$P_{\ell + 1} = \frac{1}{\ell + 1} \sum_{k=1}^{n} (J_k)^{(\ell+1)} \cdot P_\ell^{(k)}$$
 
 (Newton's identity in JM elements). The LP-dual recursion gives the
-branching rule per Frobenius reciprocity (`prop:bw-coefficient-shadow-price`).
+branching rule per Frobenius reciprocity (`prop:mass-coefficient-shadow-price`).
 
 ---
 
@@ -370,7 +370,7 @@ It **does**:
 - Workplan v3 (operative on main):
   [`docs/audits/2026-05-09-refocused-1ppb-workplan-v3.md`](2026-05-09-refocused-1ppb-workplan-v3.md)
 - Cited blocks (existing):
-  - `prop:bw-coefficient-shadow-price`
+  - `prop:mass-coefficient-shadow-price`
   - `prop:content-scaling-correspondence`
   - `def:categorical-q-connection`
   - `rem:ontological-agnosticism`

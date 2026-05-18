@@ -11,7 +11,7 @@ export default proposition({
   },
   uses: [
     "prop:wigner-np-pairing",
-    "prop:bw-coefficient-shadow-price",
+    "prop:mass-coefficient-shadow-price",
   ],
   cites: [
     "kerov1996",

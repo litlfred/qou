@@ -120,7 +120,7 @@ k=13: substrate uncertainty floor (δq from CODATA m_μ/m_e).
 
 ## New proposition: BW coefficients as LP shadow prices
 
-**prop:bw-coefficient-shadow-price** (braids-and-knots chapter)
+**prop:mass-coefficient-shadow-price** (braids-and-knots chapter)
 
 Each BW coefficient is the shadow price (LP dual variable) of the
 corresponding partition's Frobenius positivity constraint in the

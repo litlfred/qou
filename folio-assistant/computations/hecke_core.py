@@ -415,7 +415,7 @@ def lp_shadow_price(partition):
     """LP-dual shadow price y_λ for the Frobenius positivity constraint
     of partition λ in the operator-selection LP at level k = |λ|.
 
-    From prop:bw-coefficient-shadow-price:
+    From prop:mass-coefficient-shadow-price:
 
         y_λ = w_λ / d_λ − y_0
 
@@ -427,7 +427,7 @@ def lp_shadow_price(partition):
     H_q(λ) to produce a per-partition binding contribution
     Δ B_λ = y_λ · C_λ · S_λ(Z, N, A) (BW formula factorisation).
 
-    Reference: prop:bw-coefficient-shadow-price.
+    Reference: prop:mass-coefficient-shadow-price.
     """
     k = sum(partition)
     if k == 0:
@@ -1923,7 +1923,7 @@ def unified_iterative_correction(Z, N, return_per_step=False,
         derivation of [3]·[2]² · m_e to every λ);
       • y_λ = w_λ/d_λ − 1/[k]_q! is the LP-dual shadow price of the
         Frobenius positivity constraint of λ
-        (prop:bw-coefficient-shadow-price); shadow prices are the
+        (prop:mass-coefficient-shadow-price); shadow prices are the
         unique invariants that the operator-selection LP assigns to
         the partition basis;
       • M_λ^{(0..step)} is the running YSN matrix product across
@@ -1971,7 +1971,7 @@ def unified_iterative_correction(Z, N, return_per_step=False,
     Kerov 1996 (q-hook walk) [kerov1996],
     Féray–Méliot 2010 (q-Plancherel CLT) [feray-meliot2012],
     Satuła et al. 1997 (empirical Wigner energy) [satula1997],
-    prop:bw-coefficient-shadow-price (LP dual = BW coefficient).
+    prop:mass-coefficient-shadow-price (LP dual = BW coefficient).
     """
     A = Z + N
     if A < 1:
@@ -2015,7 +2015,7 @@ def unified_iterative_correction(Z, N, return_per_step=False,
     #
     # Pass 2 (gate): at the FINAL state, check the sign of the raw
     #   trace tr(M_λ(atom)).  By complementary slackness of the
-    #   operator-selection LP (prop:bw-coefficient-shadow-price):
+    #   operator-selection LP (prop:mass-coefficient-shadow-price):
     #     y_λ* × ⟨Φ*, π_λ⟩_F = 0
     #   so y_λ* = 0 whenever the Frobenius constraint is SLACK
     #   (tr > 0).  Only partitions with TIGHT constraints (tr ≤ 0)
