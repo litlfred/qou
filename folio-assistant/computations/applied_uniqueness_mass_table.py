@@ -189,7 +189,7 @@ def main() -> int:
         if path.exists():
             d = json.loads(path.read_text())
             sources[atom] = {
-                "path": fmt(path.relative_to(ASSEMBLY_DIR.parent.parent)),
+                "path": str(path.relative_to(ASSEMBLY_DIR.parent.parent)),
                 "target": d.get("target", ""),
                 "target_value": d.get("target_value", str(canonical_val)),
                 "canonical_source": "derivation_chain.TR_M_AT_Q0",

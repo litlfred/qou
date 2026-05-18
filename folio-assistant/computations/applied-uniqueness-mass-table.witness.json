@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-18T05:04:22.367971+00:00",
-  "commitSha": "260522a6b92529e5656455e73d825392f847f5cb",
+  "computedAt": "2026-05-18T05:15:45.587261+00:00",
+  "commitSha": "a1d4e9218a1bdace82b1e3e4a8e10879aa65b4d8",
   "assertions": [
     {
       "name": "all_predictions_finite",
@@ -18,11 +18,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 319,
+  "durationMs": 5,
   "computation": "applied-uniqueness-mass-table",
   "scriptFile": "applied_uniqueness_mass_table.py",
-  "scriptHash": "7a01e63060a5",
-  "scriptCommitSha": "9003a0878b794f6ada78b757b6f9d3584e86f9dd",
+  "scriptHash": "a1ad1737399f",
+  "scriptCommitSha": "04d93e93e74f8aa7cc81f18b39526bde1175aa82",
   "description": "Phase 1 of the 1 ppb workplan — wires AppliedDeuteron/Tritium/Helium3Uniqueness theorems into mass-table predictions by applying the categorical mass formula M(K) = ρ · m_e · |tr_M| from QOU.BraidKnot.MassFormulaCategorical to the canonical |tr_M(β_K, q_0)| values from derivation_chain.TR_M_AT_Q0.  Currently uses placeholder m_e_Hecke literal (DEPRECATED in derivation_chain.py); Phase 2 of the workplan replaces it with the Path A 50-dps derivation, expected to tighten predictions by ~5 orders of magnitude.  AUDIT-ONLY scaffolding.",
   "contentBlock": "prop:atom-knot-mass-derivation",
   "auditOnly": "docs/audits/2026-05-10-1ppb-workplan-update.md",
