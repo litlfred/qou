@@ -98,6 +98,21 @@ export default chapter({
       ],
     }),
 
+    // ── Mostow confinement and the Archimedean wall (narrative bridge) ─
+    // Absorbed from former Ch `encounter` (now dissolved). These blocks
+    // narrate the archimedean wall that `sec:archimedean-models` above
+    // specifies formally: Mostow confinement, the algebraic↔geometric
+    // rigidity pairing, and the literature bridge.
+    section({
+      title: "Mostow confinement and the Archimedean wall",
+      label: "sec:archimedean-encounter",
+      blocks: [
+        "mostow-confinement",
+        "algebraic-geometric-rigidity-pairing",
+        "encounter-literature-bridge",
+      ],
+    }),
+
     // ── Fluid dynamics moved to Chapter 10 ──────────────────────────
     // The full development of brane fluid dynamics, q-NS regularity,
     // and the NS obstruction lives in fluid-dynamics/.

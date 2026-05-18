@@ -432,6 +432,10 @@ export default chapter({
         "phi-q-categorical-truncation-proof",
         "algebraic-quantum-volume-specialization",
         "archimedean-realization-functor",
+        // Absorbed from former Ch `encounter`: pre-tau-vs-post-tau
+        // interprets `def:archimedean-realization-functor` directly
+        // above and explains the τ-wall semantically.
+        "pre-tau-vs-post-tau",
         "vol-through-tau",
         "vol-as-motivic-period",
         "kashaev-volume-density",

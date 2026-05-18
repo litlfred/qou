@@ -52,6 +52,9 @@ export default chapter({
         "lp-dual-stability",
         "n-equals-1-vacuous-magic",
         "operator-selection-lp",
+        // Absorbed from former Ch `encounter`: SDP-as-thimble-flow
+        // interprets `prop:operator-selection-lp` directly above.
+        "sdp-as-thimble-flow",
         "q-beta-cos-resummation",
       ],
     }),

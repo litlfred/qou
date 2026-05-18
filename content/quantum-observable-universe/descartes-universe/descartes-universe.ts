@@ -82,6 +82,12 @@ export default chapter({
         "coral-bundles",
         "brings-smoothness-resolution",
         "brings-smoothness",
+        // Absorbed from former Ch `encounter` (now dissolved): the
+        // base-M↔fibre-S_p exposition and the Thurston / hyperbolic
+        // relaxation narrative live here, adjacent to the descartes
+        // geometric machinery they bridge.
+        "approach-to-exceptional-divisor",
+        "thurston-relaxation",
         "briggs-klein-chart",
         "radial-projection",
         "four-colourability",
