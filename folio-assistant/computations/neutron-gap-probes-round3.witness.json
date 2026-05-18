@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-04-28T02:15:53.066847+00:00",
-  "commitSha": "ba4430400f828deaa6eb35673687b62027108a77",
+  "computedAt": "2026-05-18T19:13:53.473692+00:00",
+  "commitSha": "b04b9d9448368dbef60abb37b0f96d9d9d42e9a4",
   "assertions": [
     {
       "name": "h5_self_consistent",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 27,
   "computation": "neutron-gap-probes-round3",
   "scriptFile": "probe_neutron_gap_round3.py",
-  "scriptHash": "a771c6700c23",
-  "scriptCommitSha": "6171ac4615f39b75bfd54ab722a93f855343a4d4",
+  "scriptHash": "82b9e9b5273b",
+  "scriptCommitSha": "769dc81b1ad61f35ee5471afccf6de2601815129",
   "description": "Round-3 neutron-gap probe per calibration-inputs.md and nucleon-mass-splitting-proof.md (3-input Skein-pair scheme). Tests whether the −56 % round-1 / −25 % round-2 neutron residual closes when m_n is sourced from the canonical 3-input form m_n = m_p + Q_β(n) + m_e rather than from the Hecke trace alone.",
   "contentBlock": "prop:atom-knot-mass-derivation",
   "parameters": {

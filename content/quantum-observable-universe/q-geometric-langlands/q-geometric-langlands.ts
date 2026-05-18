@@ -33,6 +33,7 @@ export default chapter({
       title: "$\\mathbb{G}_m$-torsors and $q$-local systems",
       label: "sec:q-local-systems",
       blocks: [
+        "q-local-systems-intro",
         "q-local-system",
         "q-local-system-remark",
         "q-flat-connection",
@@ -45,6 +46,7 @@ export default chapter({
       title: "$q$-Hecke correspondences",
       label: "sec:q-hecke-correspondences",
       blocks: [
+        "q-hecke-correspondences-intro",
         "q-hecke-operator",
         "q-hecke-eigensheaf",
         "q-hecke-eigenvalue",
@@ -57,6 +59,7 @@ export default chapter({
       title: "The $q$-Geometric Langlands conjecture",
       label: "sec:q-gl-conjecture",
       blocks: [
+        "q-gl-conjecture-intro",
         "q-langlands-dual",
         "q-gl-conjecture",
         "q-gl-obstruction-calc",
@@ -72,6 +75,7 @@ export default chapter({
       title: "$q$-Opers and the spectral side",
       label: "sec:q-opers",
       blocks: [
+        "q-opers-intro",
         "q-oper",
         "q-oper-hecke",
         "q-oper-hecke-proof",
@@ -83,6 +87,7 @@ export default chapter({
       title: "Classical limit and physical interpretation",
       label: "sec:q-gl-classical-limit",
       blocks: [
+        "q-gl-classical-limit-intro",
         "q-gl-classical-limit",
         "q-gl-classical-limit-proof",
         "q-gl-obstruction-classical-compatibility",

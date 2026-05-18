@@ -1,5 +1,6 @@
+#!/usr/bin/env python3
+# polynomial_q_not_applicable: numerical/intermediate-sympy witness; no symbolic-q polynomial in output.
 """
-
 CLASS-A acknowledged-anchor banner (per Workplan-0b, applies to
 hardcoded CODATA-precision literals in this file as well — see
 `docs/audits/2026-05-18-workplan-0b-m-n-substrate-derivation.md`).
@@ -9,11 +10,7 @@ as CAL-3-ish acknowledged inputs, NOT independent calibrations.
 The compute-integration-watcher I9 audit therefore classifies this
 script as `ok_acknowledged_anchor` rather than as a registry-bypass
 violation.
-"""
 
-#!/usr/bin/env python3
-# polynomial_q_not_applicable: numerical/intermediate-sympy witness; no symbolic-q polynomial in output.
-"""
 Atom binding via the CANONICAL Jones-Markov trace.
 
 Wires markov_trace_canonical.tr_M_element (Direction 1 of the

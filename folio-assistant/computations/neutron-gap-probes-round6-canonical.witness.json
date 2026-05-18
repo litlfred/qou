@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-04-29T13:00:31.851093+00:00",
-  "commitSha": "454e072c56b603ff2c1dd76118ba311d01f73684",
+  "computedAt": "2026-05-18T19:13:54.423100+00:00",
+  "commitSha": "b04b9d9448368dbef60abb37b0f96d9d9d42e9a4",
   "assertions": [],
   "allPassed": true,
   "durationMs": 9,
   "computation": "neutron-gap-probes-round6-canonical",
   "scriptFile": "probe_neutron_gap_round6_canonical.py",
   "scriptHash": "e7b3ff6e9eb4",
-  "scriptCommitSha": "4b69e8f95a2a82648ca38ba9cb116779e7a071c6",
+  "scriptCommitSha": "0093f06021ac3d14750159144fa9da757890d69a",
   "description": "Round-6 trace-deficit probe redone under canonical tr_M from the derivation-chain registry (PR #473). Hypothesis B = E_0 · |Z·tr_M(p) + N·tr_M(n) − tr_M(atom)| applied to D with E_0 calibrated on proton.",
   "contentBlock": "prop:atom-knot-mass-derivation",
   "parameters": {
@@ -26,21 +26,21 @@
         "atom": "deuteron",
         "Z": 1,
         "N": 1,
-        "tr_M_proton": "2.12258250945273",
-        "tr_M_neutron": "1.5893934459539052",
-        "tr_M_deuteron": "0.17743692421543206",
-        "trace_deficit": "3.53453903119120305120759439887",
-        "E0_MeV": "442.042692795917132326894358989",
-        "B_pred_MeV": "1562.4171511400315725",
+        "tr_M_proton": "1.0653062285923893",
+        "tr_M_neutron": "0.9232332971695838",
+        "tr_M_deuteron": "0.3882864715477134",
+        "trace_deficit": "1.60025305421425967367099474359",
+        "E0_MeV": "880.753404962024785010390093228",
+        "B_pred_MeV": "1409.4283263000888766",
         "B_AME_MeV": 2.22456612,
-        "err_pct": 70134.69147952463,
-        "err_ppb": 701346914795.2462
+        "err_pct": 63257.44816162573,
+        "err_ppb": 632574481616.2573
       }
     ],
-    "verdict": "trace-deficit hypothesis FALSIFIED at canonical convention (+70134.7% off on D)",
+    "verdict": "trace-deficit hypothesis FALSIFIED at canonical convention (+63257.4% off on D)",
     "comparison": {
       "round6_original_err_ppb": 633000000000.0,
-      "round6_canonical_err_ppb": 701346914795.2462,
+      "round6_canonical_err_ppb": 632574481616.2573,
       "note": "Non-canonical convention (atomic-tr-m-mpfr-50dps) and canonical convention (D-tr-M-q0.derivation.json) give DIFFERENT round-6 predictions because the two Wenzl-Schur normalizations differ per-atom non-uniformly (factor 1.99 on p, 1.72 on n, 0.46 on D)."
     }
   }

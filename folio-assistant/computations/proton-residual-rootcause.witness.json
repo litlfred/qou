@@ -1,7 +1,7 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-10T04:19:55.190539+00:00",
+  "computedAt": "2026-05-18T19:21:32.810661+00:00",
   "commitSha": "918a58978da02089ac7e987a1afc68647cce748b",
   "assertions": [],
   "allPassed": true,
@@ -121,7 +121,7 @@
     "diagnosis_notes": [
       "f64 mantissa is NOT the bottleneck: rel(B,A)=1.20e-14",
       "EULER_SERIES_INADEQUATE_FOR_PROTON: max |v|=0.9890 >= 0.85; the Euler-series form converges too slowly here. Stay with the product form for proton-scale V_hat. Euler series only useful when |v| is well below 1 (e.g. deuteron level).",
-      "PER_BLOCK_FORMULA_DIFFERS: rel(D,A)=4.35e+02; per-block reformulation sums three block-masses rather than applying Phi_q to the aggregate V_hat.  Cannot be calibrated via the same m_e ratio — needs three E_0 scales (see per_block_phi_q.fit_three_E0).",
+      "PER_BLOCK_FORMULA_DIFFERS: rel(D,A)=4.35e+02; per-block reformulation sums three block-masses rather than applying Phi_q to the aggregate V_hat.  Cannot be calibrated via the same m_e ratio \u2014 needs three E_0 scales (see per_block_phi_q.fit_three_E0).",
       "NAIVE_TOWER_RESIDUAL: Branch A m_p = 955.4917 MeV gives +18352460 ppb error vs CODATA.  This is the *uncalibrated* mass-endomorphism tower (1.83% admitted in mass_endomorphism.py:26).  The 544k ppb in proton-mass-50dps.derivation.json is a DIFFERENT CHAIN that adds Terms 2-6 atop this base; the SCRIPT_CITED Terms 2-6 are where the residual 544k ppb actually lives."
     ],
     "finding": "Phase-1 root-cause finding: the 1.83% naive tower residual + the 544k ppb proton-mass-50dps residual are NOT in Phi_q precision (f64 == MPFR50 to ~1e-14) and NOT in product-vs-series convergence for |v| < 0.85.  The defect is structural: it lives in Terms 2-6 (SCRIPT_CITED frontier) of the unified mass formula.  T1 (n=6 Frobenius codim closure) and SCRIPT_CITED -> DERIVED migration of Terms 2-6 are the next levers.  Per-block reformulation (Branch D) is a structural reframe, not a precision fix.",

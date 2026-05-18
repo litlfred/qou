@@ -1,5 +1,6 @@
+#!/usr/bin/env python3
+# polynomial_q_not_applicable: numerical mpmath consumer of pre-computed |tr_M| + Δ_λ witnesses.
 """
-
 CLASS-A acknowledged-anchor banner (per Workplan-0b, applies to
 hardcoded CODATA-precision literals in this file as well — see
 `docs/audits/2026-05-18-workplan-0b-m-n-substrate-derivation.md`).
@@ -9,11 +10,8 @@ as CAL-3-ish acknowledged inputs, NOT independent calibrations.
 The compute-integration-watcher I9 audit therefore classifies this
 script as `ok_acknowledged_anchor` rather than as a registry-bypass
 violation.
-"""
 
-#!/usr/bin/env python3
-# polynomial_q_not_applicable: numerical mpmath consumer of pre-computed |tr_M| + Δ_λ witnesses.
-"""Atomic binding energy via direct partition-block sum.
+Atomic binding energy via direct partition-block sum.
 
 Per PR #616 follow-up (audit doc 2026-05-09-mass-table-fitting-audit.md
 §"Δ_λ derivation status"): the canonical formula
@@ -74,7 +72,7 @@ if str(HERE) not in sys.path:
 
 from _precision import set_compute_dps, fmt
 set_compute_dps()  # mp.mp.dps via QOU_COMPUTE_DPS (default 50)
-from codata_constants import M_E_MEV, M_P_MEV, M_N_MEV  # noqa: E402
+from codata_constants import M_E_MEV, M_P_MEV_VALIDATION, M_N_MEV_VALIDATION  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 # Atom roster + CODATA total masses (MeV).  Binding = M_codata − (Z m_p + N m_n).
@@ -207,8 +205,8 @@ def main() -> int:
     w.set_audit_only("docs/audits/2026-05-09-kite-tail-reconciliation.md")
     w.set_content_block("prop:rho-k-graded-expansion")
     w.add_parameter("m_e_MeV", str(M_E_MEV))
-    w.add_parameter("m_p_MeV", str(M_P_MEV))
-    w.add_parameter("m_n_MeV", str(M_N_MEV))
+    w.add_parameter("m_p_MeV", str(M_P_MEV_VALIDATION))
+    w.add_parameter("m_n_MeV", str(M_N_MEV_VALIDATION))
     w.add_parameter("delta_lambda_witness_present", delta_lambda is not None)
 
     print(f"  {'atom':<5}{'Z':>3}{'N':>3}  {'|tr_M|':>16}  "
@@ -218,7 +216,7 @@ def main() -> int:
     rows = []
     for atom, info in ATOMS.items():
         Z, N = info["Z"], info["N"]
-        constituent = mp.mpf(Z) * M_P_MEV + mp.mpf(N) * M_N_MEV
+        constituent = mp.mpf(Z) * M_P_MEV_VALIDATION + mp.mpf(N) * M_N_MEV_VALIDATION
         M_codata = mp.mpf(info["M_MeV"])
         binding_codata = M_codata - constituent
 

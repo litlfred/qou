@@ -28,6 +28,7 @@ export default chapter({
       title: "Bring's surface as a QOU",
       label: "sec:brings-surface-qou",
       blocks: [
+        "brings-surface-qou-intro",
         "brings-surface",
         "brings-surface-example",
         "brings-realisations",
@@ -49,6 +50,7 @@ export default chapter({
       title: "Color tube coordinates",
       label: "sec:color-tube-coords",
       blocks: [
+        "color-tube-coords-intro",
         "color-tube-coordinates",
         "aggregate-color-quantities",
         "color-tube-constraints",
@@ -63,6 +65,7 @@ export default chapter({
       title: "Coral fibration and elliptic curves",
       label: "sec:coral-fibration-elliptic",
       blocks: [
+        "coral-fibration-elliptic-intro",
         "coral-elliptic",
         "coral-elliptic-proof",
         "t-duality-elliptic",
@@ -79,6 +82,7 @@ export default chapter({
       title: "Bundle structures and smoothness",
       label: "sec:brings-smoothness",
       blocks: [
+        "brings-smoothness-intro",
         "coral-bundles",
         "brings-smoothness-resolution",
         "brings-smoothness",
@@ -101,6 +105,7 @@ export default chapter({
       title: "Spectral resolvents and gauge structures",
       label: "sec:spectral-gauge",
       blocks: [
+        "spectral-gauge-intro",
         // Quaternionic spectral resolvents (minus SO(3) motivation → braids-and-knots)
         "quaternionic-spectral-resolvents",
         "omega-constraints",
@@ -128,6 +133,7 @@ export default chapter({
       title: "The Descartes condition and lepton spectrum",
       label: "sec:descartes-condition",
       blocks: [
+        "descartes-condition-intro",
         // The Descartes condition (χ = −6)
         "descent-to-zero",
         "descartes-condition",
@@ -184,6 +190,7 @@ export default chapter({
       title: "Fundamental particles",
       label: "sec:fundamental-particles",
       blocks: [
+        "fundamental-particles-intro",
         // Fundamental fermions (Descartes-specific assignments)
         "up-quark",
         "up-quark-properties",
@@ -270,6 +277,7 @@ export default chapter({
       title: "Nuclear stability and decay",
       label: "sec:nuclear-stability-decay",
       blocks: [
+        "nuclear-stability-decay-intro",
         // Beta decay as categorical Skein operation
         "beta-decay-skein",
         "lepton-number-categorical",
@@ -306,6 +314,7 @@ export default chapter({
       title: "Atomic shells and the periodic table",
       label: "sec:atomic-shells",
       blocks: [
+        "atomic-shells-intro",
         "shell-structure-eigenvalues",
         "shell-eigenvalue-properties",
         "quantum-dilogarithm-volume",
@@ -336,6 +345,7 @@ export default chapter({
       title: "The Descartes theorem",
       label: "sec:descartes-theorem",
       blocks: [
+        "descartes-theorem-intro",
         "descartes",
         "descartes-proof",
         "terminal-morphism-brings",
@@ -401,6 +411,7 @@ export default chapter({
       title: "Orbital Symmetry and Cohomological Embedding",
       label: "sec:orbital-symmetry-embedding",
       blocks: [
+        "orbital-symmetry-embedding-intro",
         "orbital-space-normal-bundle",
         "orbital-fourier-decomposition",
         "fivefold-symmetry",

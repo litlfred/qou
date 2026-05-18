@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
-  "engineVersion": "numpy 2.4.4",
-  "computedAt": "2026-05-08T17:56:11.047514+00:00",
-  "commitSha": "84e33e7a7de5c942dbdd849653df64b7e48df78a",
+  "engineVersion": "numpy 2.4.5",
+  "computedAt": "2026-05-18T19:14:59.155685+00:00",
+  "commitSha": "b04b9d9448368dbef60abb37b0f96d9d9d42e9a4",
   "assertions": [
     {
       "name": "g_A",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 21,
+  "durationMs": 20,
   "computation": "borromean-axial-coupling",
   "scriptFile": "borromean-axial-coupling.py",
-  "scriptHash": "0e8fd976829c",
-  "scriptCommitSha": "d95cd8418824ea1bc8d74f881cbae00fd4ce410c",
+  "scriptHash": "4842690bbdef",
+  "scriptCommitSha": "03701c4df38ee768d9afc22c4fb5639bb2863852",
   "description": "Axial coupling g_A as an instance of the master formula ⟨O⟩_T = Σ_{i,j ∈ A*(T)} u_i (G⁻¹)_{ij} ⟨O,b_j⟩ (prop:confinement-frobenius-reciprocity). Replaces the prior cyclic-trivial conjugation-pattern computation tr(β·σ₁·β⁻¹)/tr(σ₁) — see docs/audits/2026-05-06-frobenius-pairing-compute-audit.md § 3.1. Bound-state observable: g_A (axial coupling, Gamow-Teller form factor).",
   "contentBlock": "prop:confinement-frobenius-reciprocity",
   "parameters": {

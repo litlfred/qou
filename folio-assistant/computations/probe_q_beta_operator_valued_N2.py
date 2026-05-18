@@ -1,5 +1,5 @@
+#!/usr/bin/env python3
 """
-
 CLASS-A acknowledged-anchor banner (per Workplan-0b, applies to
 hardcoded CODATA-precision literals in this file as well — see
 `docs/audits/2026-05-18-workplan-0b-m-n-substrate-derivation.md`).
@@ -9,10 +9,8 @@ as CAL-3-ish acknowledged inputs, NOT independent calibrations.
 The compute-integration-watcher I9 audit therefore classifies this
 script as `ok_acknowledged_anchor` rather than as a registry-bypass
 violation.
-"""
 
-#!/usr/bin/env python3
-"""Q_β N=2 brane-tower truncation — Hoefsmit recursion beyond N=1.
+Q_β N=2 brane-tower truncation — Hoefsmit recursion beyond N=1.
 
 PR #655 N=1 finding (probe_q_beta_operator_valued_N1.py):
   Q_β^{A,N=1}  =  Q_β^A · cos(α − b·ℏ_q²/2)    →  74 ppm

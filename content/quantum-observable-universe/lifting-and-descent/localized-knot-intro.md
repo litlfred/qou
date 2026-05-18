@@ -1,5 +1,5 @@
 The preceding sections established the $q$-torsion as a geometric invariant
-of the brane tower, and the topological decomposition of mass showed that
+of the brane tower, and the descent-eigenspace decomposition of mass showed that
 particle identity is encoded by knot type.  We now make this precise in the
 categorical framework: a *particle at a point* is a knot localized at a
 categorical point of the projective line $\mathbb{P}(V)$, and a *bundle*
