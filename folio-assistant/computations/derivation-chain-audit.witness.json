@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T19:06:17.845981+00:00",
-  "commitSha": "aa5899a9441c08f1e7a8795127fb88a7ab3755fb",
+  "computedAt": "2026-05-18T20:15:33.492133+00:00",
+  "commitSha": "e96275c1e58f89d1a3d1c787d376c573392afc53",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -576,7 +576,7 @@
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "875916a587c227572f421c22053ad81371976ccc",
+  "scriptCommitSha": "0fd092af098ad97f907de89376fe0a570b24dc76",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
   "data": {
@@ -2394,6 +2394,7 @@
         "piece3-interface-vs-intra.witness.json",
         "pn-alpha-lp-dual.witness.json",
         "poly-q-proof.witness.json",
+        "probe-A-h-expansion-fixed.witness.json",
         "probe-a-ell-confinement.witness.json",
         "probe-a-higher-derivatives-and-gb-tracking.witness.json",
         "probe-a-interval-transitions.witness.json",
@@ -2403,6 +2404,8 @@
         "probe-atom-specific-cubic.witness.json",
         "probe-braid-word-basis-gram.witness.json",
         "probe-c2-general-and-energy.witness.json",
+        "probe-categorical-action-symbolic.witness.json",
+        "probe-categorical-partial-fractions.witness.json",
         "probe-d-height-stratification.witness.json",
         "probe-d-term23-binding.witness.json",
         "probe-derived-A-from-gs-normal-form.witness.json",
