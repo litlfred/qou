@@ -49,30 +49,18 @@ sys.path.insert(0, str(HERE))
 
 from witness_base import WitnessBuilder  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
+from _li_2_q_util import flavor_split_subleading  # noqa: E402
 
-# 50-dps compute, 40-dps serialization (will switch to _precision
-# module once PR #690 lands).
-mp.dps = 50
+set_compute_dps()  # mp.mp.dps = QOU_COMPUTE_DPS (default 50)
 
 Q_WIT = HERE / "q-pinning-50-digit.witness.json"
 CHI_CACHE_WIT = HERE / "canonical-tr-m-via-chi-cache.witness.json"
 A_C2_WIT = HERE / "probe-a-selection-criteria.witness.json"
 
 
-def fmt(x, dps: int = 40) -> str:
-    """Serialize at 40 dps to avoid mpmath floor noise."""
-    try:
-        return mp.nstr(x, dps, strip_zeros=False)
-    except Exception:
-        return str(x)
-
-
-def flavor_split_subleading(q: mpf, qi: mpf) -> mpf:
-    """Δm/M_N with (1+ℏ_q³) sub-leading correction (will move to
-    _li_2_q_util when #690 lands)."""
-    hbar = (q - 1) / q
-    leading = (q - 1)**2 * (1 - qi**4) / 3
-    return leading * (1 + hbar**3)
+# `fmt` + `set_compute_dps` come from `_precision`; `flavor_split_subleading`
+# from `_li_2_q_util` (copilot #700 review — use shared infra).
 
 
 def _m_p_from_c2_body(body: dict) -> mpf:
