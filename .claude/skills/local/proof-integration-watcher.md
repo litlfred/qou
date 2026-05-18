@@ -501,6 +501,27 @@ manually re-open if needed.
 on a comment). Only an explicit author reply or commit closes the
 item.
 
+### 5h. Post-completion one-voice review on prepared PRs
+
+When a prepared PR (per §5g) lands its **last substantive fix**
+(i.e. the diff settles and no more code changes are planned), run
+`local/one-voice-audit` on the **diff scope** before prompting the
+author for merge:
+
+- **PR touches `.md` content** → run the §1 greps (status leaks,
+  emoji, work-tracker words, first-person tone, unicode crashes)
+  on the diff. Apply mechanical fixes (Category A/C/E per
+  one-voice-audit §3). Push as `style: one-voice sweep on PR
+  diff`. Then the §5g step 5 merge prompt.
+- **PR is content-free** (only `.lean`, `.ts`, `.py`, witness
+  JSON, or skill `.md`) → one-voice is a **no-op**; record that
+  in the ledger and in the merge-prompt reply ("one-voice: n/a,
+  PR scope is X only"). The author still gets the merge prompt.
+
+This rule extends §5g step 5(a): "every open review thread on
+the PR is resolved or replied to" → adds "AND one-voice sweep
+has been applied or formally noted as n/a".
+
 ### 5g. Watch PRs you prepare
 
 When this watcher (or any skill it dispatches) **prepares a PR** —
@@ -570,7 +591,17 @@ fires.
 `fix(witness-pipeline): post-rebase drift refresh` / `post-push
 drift refresh` entries — author + sibling agents do this routinely.
 
-**Recovery recipe** (apply IN ORDER, do not skip):
+**Sub-case: quick-fail = billing.** If `validate` (or any CI job)
+fails in **under ~60 seconds**, the runner almost never even
+reached the Python validators. This is a billing / queue / quota
+condition on the GitHub Actions account, **not** a content
+failure. Treat as a flake: do NOT rebase, do NOT regenerate
+witnesses, do NOT diagnose the validators — they didn't run.
+Document in ledger as `quick-fail / billing` and proceed per
+§5g step 5(b) ("CI green OR documented flake").
+
+**Recovery recipe** (apply IN ORDER, do not skip) for genuine
+multi-minute validate failures:
 
 1. **Pull fresh main.** `git fetch origin main`. If ≥ 5 commits
    landed, jump straight to step 2 — don't waste cycles re-running
