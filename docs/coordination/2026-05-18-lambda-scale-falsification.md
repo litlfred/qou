@@ -17,6 +17,8 @@
 | [#696](https://github.com/litlfred/qou/pull/696) | open | tangent | Flavor-dressing functor (different scope, but uses CODATA validation aliases — flagged by canonical-watcher) |
 | [#689](https://github.com/litlfred/qou/pull/689) | merged | predecessor | Operator-valued framework: vol-hyp 54→34 |
 | [#715](https://github.com/litlfred/qou/pull/715) | merged | dependency | Class-A banner pattern I'm following |
+| [#751](https://github.com/litlfred/qou/pull/751) | open | **constructive sibling** | Workplan-0b/M_N routes A/B/C; explicitly flags "$d^2 A/da^2 = 0$ meaning" as open R&D piece |
+| `claude/explore-d2a-categorical-8Eq2n` (branch, no PR) | branch | **resolves PR #751's open piece** | Audit doc proposes the categorical meaning of $d^2 A/da^2 = 0$: golden Morse wall in $q$-moduli, not in $a$ |
 
 ## Findings
 
@@ -44,6 +46,20 @@ Substrate-pure default for m_p / m_n:
 
 Canonical-watcher baseline audit lists `lambda-scale-substrate-form` as "CANONICAL DERIVED at justification (5.4 ppm)" in §8a. **My PR #701 supersedes this** — the form is empirical only, not derived in any tested basis.
 
+### `claude/explore-d2a-categorical-8Eq2n` (branch, no PR)
+
+**Audit doc**: [`docs/audits/2026-05-18-d2a-categorical-thimble-resolution.md`](https://github.com/litlfred/qou/blob/claude/explore-d2a-categorical-8Eq2n/docs/audits/2026-05-18-d2a-categorical-thimble-resolution.md)
+
+Five findings relevant to the λ_scale / m_p / C2-inflection thread:
+
+1. **Color-tube cubic is $q$-independent** ($F \in \mathbb{Z}[z][c]$). $z_c$ and $H(z_c)$ are fixed complex numbers; the $d^2 S = 0$ wall must live in $q$-moduli, not $z$-plane. Rules out "saddle point of PL contour" as the meaning of $d^2 A/da^2 = 0$.
+2. **Möbius $a(q)=(4-q)/(4q+3)$** has fixed points $q=1/\varphi,-\varphi$ from $q^2+q-1=0$ (golden node). $d^2 A/da^2 = 0$ at $a = a(q_0)$ is the archimedean reading of this algebraic wall via $\tau_q$.
+3. **`prop:mobius-limit-from-thimble` Step 3 is unsupported** numerically — the actual descent re-entry is $z\approx 3.86$, not $0.388$. The Möbius value comes from the cubic's binomial $\binom{4}{1}=4,\binom{4}{3}=4,\deg_c F=3$, not steepest-descent geometry.
+4. **`prop:sw-period-thimble-equivalence` A2.4** is mis-framed as Lefschetz decomposition; correct framing is Cauchy residue on $\mathcal{E}_q$ restricted to the principal Galois orbit $\{z_c^\pm\}$.
+5. **Laurent-ring check** ($\mathbb{Z}[q^{\pm 1/2}, \zeta_5]$, with $\sqrt{5}\in\mathbb{Z}[\zeta_5]$): the Möbius $(4-q)/(4q+3)$ IS Laurent-compatible — contrary to "fails canonical form" judgment in PR #751's Route A table.
+
+**Categorical-wall interpretation**: the C2 inflection on PR #690's categorical action $A(a)$ at $a = a(q_0)$ is the **archimedean specialisation** of the Morse-singular locus $\{q : q^2+q-1=0\}$ of the SW action $S_q$ on $\mathcal{E}_q$. PR #690's empirical 0.069% match is a section of the Möbius-wall family at $\tau_{q_0}$.
+
 ## Coordination actions
 
 | When | Action | Where |
@@ -51,6 +67,7 @@ Canonical-watcher baseline audit lists `lambda-scale-substrate-form` as "CANONIC
 | 2026-05-18 | Posted coordination comment on #690 declaring constructive overlap, structural support for substrate-pure path | https://github.com/litlfred/qou/pull/690#issuecomment-4479405117 |
 | 2026-05-18 | Updated `lambda-scale-substrate-form.md` with Class-A status banner + Family A theorem statement | `content/.../lambda-scale-substrate-form.md` |
 | 2026-05-18 | Updated `lambda-scale-substrate-form.lean` with proved Family A theorems (7 closed-form theorems) | `content/.../lambda-scale-substrate-form.lean` |
+| 2026-05-18 | Coordination comment from `claude/explore-d2a-categorical-8Eq2n` on PR #751 — proposes the categorical meaning of $d^2 A/da^2 = 0$ as the golden Morse wall ($q^2{+}q{-}1{=}0$ fixed points of the Möbius integration-limit pencil) | https://github.com/litlfred/qou/pull/751#issuecomment-4481902070 |
 
 ## Inconsistent findings
 
