@@ -32,20 +32,9 @@ export default chapter({
       ],
     }),
 
-    // ── §2. The Unit Particle as a Cohomological Defect ─────────────
-    section({
-      title: "The unit particle as a cohomological defect",
-      label: "sec:cohomological-defect",
-      blocks: [
-        "cohomological-defect-intro",
-        "levi-form-defect",
-        "maximal-ideal-defect",
-        "local-cohomology-group",
-        "unit-particle-state",
-        "topological-charge-quantization",
-        "defect-legendrian-knot",
-      ],
-    }),
+    // ── §2 dissolved: cohomological-defect moved to descartes-universe
+    // as sec:cohomological-defect (sitting adjacent to fundamental-particles
+    // where the unit particle as defect narratively belongs).
 
     // ── §3 + §4 dissolved: spectral-trace-tannaka + weil-bound-stability
     // moved to `q-geometric-langlands/` as
