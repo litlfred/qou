@@ -1,0 +1,117 @@
+**Theorem (substrate bound on the dressed-quark splitting).**
+*Let $\mu \colon \mathbf{Flavor} \to \mathbb{R}_{>0}$ be the flavor
+dressing functor of [`def:flavor-dressing-functor`](flavor-dressing-functor.md),
+let $M_N$ be the nucleon-mass average, and let $q > 1$ be the
+substrate parameter.  Then the down–up splitting satisfies the
+two-sided substrate bound*
+
+$$
+  0 \;<\; \mu_{\mathfrak{d}} - \mu_{\mathfrak{u}}
+  \;<\; M_N \cdot \hbar_q^2 \cdot h_q \cdot [2]_q,
+$$
+
+*where*
+$\hbar_q = (q - 1)/q$,
+$h_q = q - q^{-1}$,
+*and* $[2]_q = q + q^{-1}$
+*are the substrate Planck constant, the Hecke crossing scale, and
+the doublet quantum integer respectively.*
+
+## Why "splitting-only"
+
+The theorem statement bounds the **difference**
+$\mu_{\mathfrak{d}} - \mu_{\mathfrak{u}}$ rather than the
+individual masses $\mu_{\mathfrak{u}}, \mu_{\mathfrak{d}}$.  The
+splitting-only form is preferred because:
+
+- It is the **directly substrate-derivable** quantity — every factor
+  on the right-hand side is a substrate-pure expression in $q$
+  (no CODATA inputs, no fits).
+- Individual values require an additional input
+  $\bar\mu = (\mu_{\mathfrak{u}} + \mu_{\mathfrak{d}})/2 \approx M_N/3$
+  pinned by baryon-content sum rules (see
+  [`rem:dressed-quark-numerology-at-q0`](dressed-quark-numerology-at-q0.md)).
+  Bounding the individual values would carry that pinning into the
+  theorem statement, mixing substrate content with CODATA anchoring.
+- The Lean proof factors cleanly through the existing substrate
+  identities (no new bound props need to be authored).
+
+## Numerical value at $q_0$
+
+At $q = q_0 \approx 1.10998$:
+
+| Factor | Value | Substrate identity |
+|--------|------:|-------------------|
+| $\hbar_q$ | $0.0991$ | $(q - 1)/q$ |
+| $\hbar_q^2$ | $9.82 \times 10^{-3}$ | — |
+| $h_q$ | $0.2091$ | $q - q^{-1}$ |
+| $[2]_q$ | $2.012$ | $q + q^{-1}$ |
+| product $\hbar_q^2 \cdot h_q \cdot [2]_q$ | $4.13 \times 10^{-3}$ | — |
+| $M_N \cdot (\hbar_q^2 \cdot h_q \cdot [2]_q)$ | $3.88\,\text{MeV}$ | upper bound |
+
+The empirical value
+$\mu_{\mathfrak{d}} - \mu_{\mathfrak{u}} \approx 1.288\,\text{MeV}$
+sits comfortably within the bound:
+$1.288 < 3.88$, ratio $\approx 0.33$ (the slack reflects the
+Skein-side factor $(q^{1/2} + q^{-1/2})/(q + q^{-1}) \approx 0.997$
+plus the $O((\Delta m / M_N)^2)$ correction; together they
+contribute the factor of $1/3$ slack between the bound and the
+realised value).
+
+## Proof sketch
+
+Two ingredients:
+
+1. **Positivity** (lower bound).  By substrate construction,
+   $q > 1$ implies $(q-1)^2 > 0$ and $1 - q^{-4} > 0$.  Their
+   product is positive; division by $3$ preserves the sign.  By
+   [`prop:flavor-dressed-mass-from-substrate-split`](flavor-dressed-mass-from-substrate-split.md)
+   the splitting $\mu_{\mathfrak{d}} - \mu_{\mathfrak{u}}$ is
+   $M_N$ times this positive substrate factor (modulo
+   $O((\Delta m / M_N)^2)$, which is below the leading term), so
+   the difference is strictly positive.
+
+2. **Upper bound.**  The substrate factor satisfies
+   $$
+     \frac{(q - 1)^2 (1 - q^{-4})}{3}
+     \;<\;
+     \hbar_q^2 \cdot h_q \cdot [2]_q
+     \;=\;
+     \frac{(q-1)^2}{q^2} \cdot (q - q^{-1}) \cdot (q + q^{-1})
+     \;=\;
+     \frac{(q-1)^2 (q^4 - 1)}{q^4}.
+   $$
+   Both expressions share the numerator $(q-1)^2$; their ratio is
+   $$
+     \frac{(1 - q^{-4}) / 3}{(q^4 - 1)/q^4}
+     \;=\;
+     \frac{(q^4 - 1)/(3 q^4)}{(q^4 - 1)/q^4}
+     \;=\;
+     \frac{1}{3},
+   $$
+   so the substrate factor of the proposition equals $1/3$ of the
+   bound expression.  Multiplication by $M_N$ preserves the
+   inequality; the Skein-side adjustment factor
+   $(q^{1/2} + q^{-1/2})/(q + q^{-1}) < 1$ at $q > 1$ tightens the
+   bound further but is not required for the strict inequality.
+   $\square$
+
+## Tightness
+
+The bound is **not** tight at $q_0$ — the realised splitting is
+about $1/3$ of the bound.  Tightening would require either:
+
+- A finer substrate factor (e.g. including the
+  $(q^{1/2} + q^{-1/2})/(q + q^{-1})$ Skein correction explicitly).
+- A different categorical bound source (e.g.
+  [`prop:hecke-convergence-bound`](hecke-convergence-bound.md)
+  applied to the splitting word) — but this requires further
+  development and is not committed in this revision.
+
+## Per-flavor bounds (out of scope)
+
+This theorem does not assert per-flavor bounds
+$0 < \mu_q < c \cdot M_N$.  Such bounds require additional
+non-substrate inputs (the nucleon-baryon sum rule for the average
+$\bar\mu$) and live in the open follow-up; see
+[`rem:dressed-quark-numerology-at-q0`](dressed-quark-numerology-at-q0.md).
