@@ -99,6 +99,40 @@ to a `.wip.json` so a partial sweep is still useful.
   the relevant production formula or, if intentionally probe-only,
   add a `# probe-only: <reason>` line to the script header.
 
+  - **I2-a. PROBE-ONLY that SUPERSEDES a production lemma.** Sub-case
+    of I2 — the new prop is the *substrate-pure / no-fit* version of
+    what an existing production `lem:` / `prop:` was already using as
+    input (typical sign: the new block's `.md` calls itself the
+    "substrate-pure counterpart of `lem:foo`").  Wiring it in is
+    NOT a single-script edit; it also requires:
+    1. A "fate of the predecessor" decision — keep as physical
+       interpretation (`interprets:` link), demote to `remark`,
+       deprecate-banner, or delete.  **Default: keep + complementary**
+       unless the predecessor's narrative content already lives
+       elsewhere.
+    2. Calibration-count accounting update — if the predecessor was
+       a CAL input (CLAUDE.md §"three-cal discipline"), the
+       substrate prop typically reduces the CAL count by one.  Update
+       `canonical-script-input-audit.witness.json`'s classification
+       AND the affected scripts' `calibration_inputs` metadata.
+    3. Sweep for downstream consumers of the predecessor's
+       derived-output constants (`μ_u`, `μ_d`, `mu_d - mu_u`, etc.).
+       Those constants disappear under the new substrate prop;
+       repoint them to the substrate formula OR mark `_VALIDATION`
+       per the existing convention.
+    4. Before deprecating the predecessor's block, verify the
+       physical-interpretation narrative content has a home.  In
+       QOU's content tree, dressed-quark masses are introduced
+       *only* inside `lem:nucleon-mass-splitting` — there is no
+       dedicated `prop:dressed-quark-mass` block.  Deleting the
+       lemma would orphan the dressed-quark narrative.
+
+    Practical workflow when this sub-pattern fires: open a fresh
+    sibling PR (do NOT bundle with the audit doc PR), name it
+    `claude/wire-<prop-label>`, list the four bookkeeping items
+    above in the PR body, and request owner review **on the fate
+    decision** before pushing the production-formula edits.
+
 - **I3. WIRED BUT GUARDED OFF.** A consumer references the witness but
   the call is behind an `if False`, an env var defaulting to off, or a
   legacy fallback that hides it. Fix: promote to default-on after a
