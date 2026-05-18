@@ -1,15 +1,15 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-12T17:44:02.823899+00:00",
-  "commitSha": "b3c2bdeab97e3c2a1ece46c52587e6d982fc3b06",
+  "computedAt": "2026-05-18T04:47:02.999183+00:00",
+  "commitSha": "b40373247dce043c1fdf9a3fa507fbbc490951be",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 24,
+  "durationMs": 17,
   "computation": "term5-aK-audit",
   "scriptFile": "term5_aK_audit.py",
-  "scriptHash": "1660dc896116",
-  "scriptCommitSha": "b3c2bdeab97e3c2a1ece46c52587e6d982fc3b06",
+  "scriptHash": "87cd236eef21",
+  "scriptCommitSha": "b40373247dce043c1fdf9a3fa507fbbc490951be",
   "description": "Term 5 chirality factor a_K — audit of the production closed form `Π(1+sign·h)` over pn-crossings vs four Gram-matrix variants `tr_M(β · β*⁻¹)` (PR #520 follow-up).  The proton showed a 2.2% gap between closed-form (1.000) and Gram-V1 (1.022 = cosh⁴(log q)); this audit tabulates all four mirror conventions across the spectrum so the narrative can be reconciled to a single canonical definition.",
   "contentBlock": "conj:knot-factor-frobenius-pairing",
   "parameters": {
@@ -103,7 +103,7 @@
         "Z": 1,
         "N": 2,
         "A": 3,
-        "closed_form_aK": 1.2090603219898794,
+        "closed_form_aK": 0.9562937817694879,
         "gram_variants": {
           "V1": {
             "variant": "V1",
@@ -118,7 +118,7 @@
         "Z": 2,
         "N": 1,
         "A": 3,
-        "closed_form_aK": 1.2090603219898794,
+        "closed_form_aK": 0.9562937817694879,
         "gram_variants": {
           "V1": {
             "variant": "V1",
