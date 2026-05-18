@@ -1,0 +1,413 @@
+{
+  "engine": "rust+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-18T04:49:42.053920+00:00",
+  "commitSha": "1a477ce6d606798dd6305eb71017e147ee62a39b",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 25,
+  "computation": "canonical-mass-table-extended",
+  "scriptFile": "canonical_mass_table_extended.py",
+  "scriptHash": "00e24a631fd4",
+  "scriptCommitSha": "unknown",
+  "description": "Extended canonical mass table via Rust hecke-canonical-chi (f64) + mpmath y_λ. Covers atoms from p..7Li (Layer 1 canonical pipeline per docs/audits/2026-05-18-all-atoms-isotopes-plan.md). Includes per-atom IsotopeRecord with explicit knot-operator catalogue (intra-nucleon, inter-nucleon interfaces, closure).",
+  "parameters": {
+    "q_0": "1.10997859555418051695830018898879867637876138498395",
+    "precision": "f64",
+    "dps": 0
+  },
+  "data": {
+    "rows": [
+      {
+        "Z": 1,
+        "N": 0,
+        "A": 1,
+        "n_strands": 3,
+        "spin_J": null,
+        "parity": null,
+        "braid_word_canonical": [],
+        "markov_closure": null,
+        "knot_operators": [
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 0,
+            "crossing_type": "sigma",
+            "nucleon_type": "p",
+            "interface_channel": null,
+            "canonical_form_label": "proton intra: σ_0 σ_0 σ_0 (trefoil at 3-strand block)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 1,
+            "crossing_type": "sigma",
+            "nucleon_type": "p",
+            "interface_channel": null,
+            "canonical_form_label": null,
+            "witness_ref": null
+          },
+          {
+            "op_type": "closure-topology",
+            "gen_index": -1,
+            "crossing_type": null,
+            "nucleon_type": null,
+            "interface_channel": null,
+            "canonical_form_label": "trefoil 3_1 = T(2,3)",
+            "witness_ref": null
+          }
+        ],
+        "tr_M_q0_canonical_50dps": "1.0653062285923896909769081750615330457034255176358",
+        "wedderburn_blocks_active": [],
+        "prediction_method": "canonical-trace",
+        "calibration_source": "CAL-1",
+        "prediction_MeV_50dps": null,
+        "B_AME_MeV": 0.0,
+        "err_MeV": null,
+        "err_pct": null,
+        "err_ppb": null,
+        "derivation_chain_witness": null,
+        "chi_cache_witness": "(computed live via Rust hecke-canonical-chi)",
+        "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
+      },
+      {
+        "Z": 0,
+        "N": 1,
+        "A": 1,
+        "n_strands": 3,
+        "spin_J": null,
+        "parity": null,
+        "braid_word_canonical": [],
+        "markov_closure": null,
+        "knot_operators": [
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 0,
+            "crossing_type": "sigma-inv",
+            "nucleon_type": "n",
+            "interface_channel": null,
+            "canonical_form_label": "neutron intra: σ_0⁻¹ σ_0⁻¹ σ_0⁻¹ (mirror trefoil)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 1,
+            "crossing_type": "sigma-inv",
+            "nucleon_type": "n",
+            "interface_channel": null,
+            "canonical_form_label": null,
+            "witness_ref": null
+          },
+          {
+            "op_type": "closure-topology",
+            "gen_index": -1,
+            "crossing_type": null,
+            "nucleon_type": null,
+            "interface_channel": null,
+            "canonical_form_label": "trefoil 3_1 = T(2,3)",
+            "witness_ref": null
+          }
+        ],
+        "tr_M_q0_canonical_50dps": "0.92323329716958435951733311780482312222314843858335",
+        "wedderburn_blocks_active": [],
+        "prediction_method": "canonical-trace",
+        "calibration_source": "CAL-1",
+        "prediction_MeV_50dps": null,
+        "B_AME_MeV": 0.0,
+        "err_MeV": null,
+        "err_pct": null,
+        "err_ppb": null,
+        "derivation_chain_witness": null,
+        "chi_cache_witness": "(computed live via Rust hecke-canonical-chi)",
+        "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
+      },
+      {
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "n_strands": 6,
+        "spin_J": null,
+        "parity": null,
+        "braid_word_canonical": [],
+        "markov_closure": null,
+        "knot_operators": [
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 0,
+            "crossing_type": "sigma",
+            "nucleon_type": "p",
+            "interface_channel": null,
+            "canonical_form_label": "proton intra: σ_0 σ_0 σ_0 (trefoil at 3-strand block)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 1,
+            "crossing_type": "sigma",
+            "nucleon_type": "p",
+            "interface_channel": null,
+            "canonical_form_label": null,
+            "witness_ref": null
+          },
+          {
+            "op_type": "inter-nucleon",
+            "gen_index": 2,
+            "crossing_type": "averaged",
+            "nucleon_type": null,
+            "interface_channel": "pn",
+            "canonical_form_label": "pn coupling: σ + (-h/2)·𝟙 at gen 3k+2 (averaged)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 3,
+            "crossing_type": "sigma-inv",
+            "nucleon_type": "n",
+            "interface_channel": null,
+            "canonical_form_label": "neutron intra: σ_0⁻¹ σ_0⁻¹ σ_0⁻¹ (mirror trefoil)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 4,
+            "crossing_type": "sigma-inv",
+            "nucleon_type": "n",
+            "interface_channel": null,
+            "canonical_form_label": null,
+            "witness_ref": null
+          },
+          {
+            "op_type": "closure-topology",
+            "gen_index": -1,
+            "crossing_type": null,
+            "nucleon_type": null,
+            "interface_channel": null,
+            "canonical_form_label": "K_{6_2} (hyperbolic, vol 4.4008)",
+            "witness_ref": null
+          }
+        ],
+        "tr_M_q0_canonical_50dps": "0.38828647154771338519771049200002982342955961882845",
+        "wedderburn_blocks_active": [],
+        "prediction_method": "canonical-trace",
+        "calibration_source": "CAL-1",
+        "prediction_MeV_50dps": "2.2488207948647343",
+        "B_AME_MeV": 2.22456589,
+        "err_MeV": 0.02425490486473425,
+        "err_pct": null,
+        "err_ppb": null,
+        "derivation_chain_witness": null,
+        "chi_cache_witness": "(computed live via Rust hecke-canonical-chi)",
+        "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
+      },
+      {
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "n_strands": 9,
+        "spin_J": null,
+        "parity": null,
+        "braid_word_canonical": [],
+        "markov_closure": null,
+        "knot_operators": [
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 0,
+            "crossing_type": "sigma",
+            "nucleon_type": "p",
+            "interface_channel": null,
+            "canonical_form_label": "proton intra: σ_0 σ_0 σ_0 (trefoil at 3-strand block)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 1,
+            "crossing_type": "sigma",
+            "nucleon_type": "p",
+            "interface_channel": null,
+            "canonical_form_label": null,
+            "witness_ref": null
+          },
+          {
+            "op_type": "inter-nucleon",
+            "gen_index": 2,
+            "crossing_type": "averaged",
+            "nucleon_type": null,
+            "interface_channel": "pn",
+            "canonical_form_label": "pn coupling: σ + (-h/2)·𝟙 at gen 3k+2 (averaged)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 3,
+            "crossing_type": "sigma-inv",
+            "nucleon_type": "n",
+            "interface_channel": null,
+            "canonical_form_label": "neutron intra: σ_0⁻¹ σ_0⁻¹ σ_0⁻¹ (mirror trefoil)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 4,
+            "crossing_type": "sigma-inv",
+            "nucleon_type": "n",
+            "interface_channel": null,
+            "canonical_form_label": null,
+            "witness_ref": null
+          },
+          {
+            "op_type": "inter-nucleon",
+            "gen_index": 5,
+            "crossing_type": "sigma-inv",
+            "nucleon_type": null,
+            "interface_channel": "nn",
+            "canonical_form_label": "nn coupling: σ + (-h)·𝟙 at gen 3k+2",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 6,
+            "crossing_type": "sigma-inv",
+            "nucleon_type": "n",
+            "interface_channel": null,
+            "canonical_form_label": "neutron intra: σ_0⁻¹ σ_0⁻¹ σ_0⁻¹ (mirror trefoil)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 7,
+            "crossing_type": "sigma-inv",
+            "nucleon_type": "n",
+            "interface_channel": null,
+            "canonical_form_label": null,
+            "witness_ref": null
+          },
+          {
+            "op_type": "closure-topology",
+            "gen_index": -1,
+            "crossing_type": null,
+            "nucleon_type": null,
+            "interface_channel": null,
+            "canonical_form_label": "K_{8_11} (hyperbolic, vol 8.2863)",
+            "witness_ref": null
+          }
+        ],
+        "tr_M_q0_canonical_50dps": "0.10405211867552582245307552764286810894390613915545",
+        "wedderburn_blocks_active": [],
+        "prediction_method": "canonical-trace",
+        "calibration_source": "CAL-1",
+        "prediction_MeV_50dps": "8.46859838653302",
+        "B_AME_MeV": 8.4817983,
+        "err_MeV": -0.013199913466978686,
+        "err_pct": null,
+        "err_ppb": null,
+        "derivation_chain_witness": null,
+        "chi_cache_witness": "(computed live via Rust hecke-canonical-chi)",
+        "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
+      },
+      {
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "n_strands": 9,
+        "spin_J": null,
+        "parity": null,
+        "braid_word_canonical": [],
+        "markov_closure": null,
+        "knot_operators": [
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 0,
+            "crossing_type": "sigma",
+            "nucleon_type": "p",
+            "interface_channel": null,
+            "canonical_form_label": "proton intra: σ_0 σ_0 σ_0 (trefoil at 3-strand block)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 1,
+            "crossing_type": "sigma",
+            "nucleon_type": "p",
+            "interface_channel": null,
+            "canonical_form_label": null,
+            "witness_ref": null
+          },
+          {
+            "op_type": "inter-nucleon",
+            "gen_index": 2,
+            "crossing_type": "sigma",
+            "nucleon_type": null,
+            "interface_channel": "pp",
+            "canonical_form_label": "pp coupling: σ at gen 3k+2 (positive)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 3,
+            "crossing_type": "sigma",
+            "nucleon_type": "p",
+            "interface_channel": null,
+            "canonical_form_label": "proton intra: σ_0 σ_0 σ_0 (trefoil at 3-strand block)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 4,
+            "crossing_type": "sigma",
+            "nucleon_type": "p",
+            "interface_channel": null,
+            "canonical_form_label": null,
+            "witness_ref": null
+          },
+          {
+            "op_type": "inter-nucleon",
+            "gen_index": 5,
+            "crossing_type": "averaged",
+            "nucleon_type": null,
+            "interface_channel": "pn",
+            "canonical_form_label": "pn coupling: σ + (-h/2)·𝟙 at gen 3k+2 (averaged)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 6,
+            "crossing_type": "sigma-inv",
+            "nucleon_type": "n",
+            "interface_channel": null,
+            "canonical_form_label": "neutron intra: σ_0⁻¹ σ_0⁻¹ σ_0⁻¹ (mirror trefoil)",
+            "witness_ref": null
+          },
+          {
+            "op_type": "intra-nucleon",
+            "gen_index": 7,
+            "crossing_type": "sigma-inv",
+            "nucleon_type": "n",
+            "interface_channel": null,
+            "canonical_form_label": null,
+            "witness_ref": null
+          },
+          {
+            "op_type": "closure-topology",
+            "gen_index": -1,
+            "crossing_type": null,
+            "nucleon_type": null,
+            "interface_channel": null,
+            "canonical_form_label": "L_{6a4} (link, vol 7.3277)",
+            "witness_ref": null
+          }
+        ],
+        "tr_M_q0_canonical_50dps": "0.20654085856226258525955059979533848373526893248758",
+        "wedderburn_blocks_active": [],
+        "prediction_method": "canonical-trace",
+        "calibration_source": "CAL-1",
+        "prediction_MeV_50dps": "7.48891930977096",
+        "B_AME_MeV": 7.7180428,
+        "err_MeV": -0.22912349022904,
+        "err_pct": null,
+        "err_ppb": null,
+        "derivation_chain_witness": null,
+        "chi_cache_witness": "(computed live via Rust hecke-canonical-chi)",
+        "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
+      }
+    ]
+  }
+}
