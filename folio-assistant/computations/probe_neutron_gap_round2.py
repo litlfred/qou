@@ -24,11 +24,20 @@ approximation, just the rational function in q from the Habiro
 expansion (committed in `habiro-coefficients-atomic.witness.json`).
 
 H4: full tr_M(T_w, q_0) via direct evaluation of the symbolic
-    rational function from the Habiro witness.  If the proton-
-    calibrated tr_M(neutron, q_0) lands within 1 % of CODATA, the
-    −56 % gap was the Wedderburn-truncation phenomenon.  Otherwise
-    the gap is elsewhere (T2/T3 brane-tower assembly, T4/T5/T6
-    accounting, or brane-tower formulation itself).
+    rational function from the Habiro witness, combined with the
+    substrate-derived energy scale
+    `E_0 = m_e / (q_0 · (q_0 - 1))` (canonical Planck-tick form per
+    `prop:three-calibration-inputs`).  Uses **only** CAL-1 + CAL-2
+    + CAL-3 (no proton-mass calibration): the proton prediction is
+    `|tr_M(p, q_0)| · E_0` and the neutron prediction follows the
+    three-calibration chain
+    `m_n = m_p + Q_β + m_e`.
+
+**Workplan-0b Bucket D rewire (PR #759):** previously this script
+calibrated `E_0 = m_p (CODATA) / |tr_M(p)|`, introducing m_p as a
+fourth empirical input. Replaced with the canonical Planck-tick
+substrate form to surface the structural agreement (or gap) without
+proton calibration.
 
 Output: `neutron-gap-probes-round2.witness.json`
 """
@@ -44,7 +53,12 @@ import sympy as sp
 import mpmath as mp
 
 from q_parameter import Q as Q0_FLOAT  # noqa: E402
-from experimental_constants import M_P_MEV, M_N_MEV  # noqa: E402
+from codata_constants import (  # noqa: E402
+    M_E_MEV,
+    Q_BETA_MEV,
+    M_P_MEV_VALIDATION,
+    M_N_MEV_VALIDATION,
+)
 from witness_base import WitnessBuilder  # noqa: E402
 
 _DPS = 50
@@ -85,33 +99,46 @@ def main() -> int:
     print("NEUTRON-GAP PROBES — ROUND 2 (full tr_M at q_0, no Wedderburn truncation)")
     print("=" * 100)
     print(f"  q_0 = {Q0_FLOAT}")
-    print(f"  m_p (CODATA) = {M_P_MEV} MeV")
-    print(f"  m_n (CODATA) = {M_N_MEV} MeV")
+    print(f"  m_e (CAL-1)          = {mp.nstr(M_E_MEV, 10)} MeV")
+    print(f"  Q_beta (CAL-3)       = {mp.nstr(Q_BETA_MEV, 10)} MeV")
+    print(f"  m_p (validation)     = {mp.nstr(M_P_MEV_VALIDATION, 10)} MeV  (comparison target only)")
+    print(f"  m_n (validation)     = {mp.nstr(M_N_MEV_VALIDATION, 10)} MeV  (comparison target only)")
     print()
 
-    # H4: full Markov trace evaluation
+    # H4: full Markov trace evaluation with substrate-derived E_0.
     with mp.workdps(_DPS):
+        q0 = mp.mpf(str(Q0_FLOAT))
         tr_p = predict_h4_full_tr_M(habiro, "p (proton, A=1)")
         tr_n = predict_h4_full_tr_M(habiro, "n (neutron, A=1)")
 
-        # Calibrate energy scale on the proton (single point, no fit).
         if tr_p == 0:
-            print("  [ERROR] proton tr_M evaluated to 0 — cannot calibrate.")
+            print("  [ERROR] proton tr_M evaluated to 0 — cannot evaluate.")
             return 1
 
-        E0 = mp.mpf(str(M_P_MEV)) / mp.fabs(tr_p)
-        mp_pred = float(mp.fabs(tr_p) * E0)  # exact by construction
-        mn_pred = float(mp.fabs(tr_n) * E0)
+        # Substrate-derived Planck-tick energy scale: E_0 = m_e / (q_0·(q_0-1))
+        # Per `prop:three-calibration-inputs` line 52. CAL-1 + CAL-2 only.
+        E0 = M_E_MEV / (q0 * (q0 - 1))
+        mp_pred = float(mp.fabs(tr_p) * E0)
+        # Three-calibration neutron chain: m_n = m_p + Q_β + m_e
+        mn_pred = float(mp.mpf(str(mp_pred)) + Q_BETA_MEV + M_E_MEV)
 
-    err_n_pct = (mn_pred - M_N_MEV) / M_N_MEV * 100
+    m_p_val = float(M_P_MEV_VALIDATION)
+    m_n_val = float(M_N_MEV_VALIDATION)
+    err_p_pct = (mp_pred - m_p_val) / m_p_val * 100
+    err_p_ppb = err_p_pct * 1e7
+    err_n_pct = (mn_pred - m_n_val) / m_n_val * 100
     err_n_ppb = err_n_pct * 1e7
+    E0_MeV = float(E0)
 
-    print(f"  H4 — full tr_M(T_w, q_0) direct evaluation")
+    print(f"  H4 — full tr_M(T_w, q_0) · substrate-derived E_0")
+    print(f"    E_0^(N=0) = m_e / (q_0(q_0-1)) = {E0_MeV:.6f} MeV  (CAL-1 + CAL-2)")
     print(f"    tr_M(proton, q_0)  = {mp.nstr(tr_p, 12)}")
     print(f"    tr_M(neutron, q_0) = {mp.nstr(tr_n, 12)}")
-    print(f"    proton pred = {mp_pred:.6f} MeV  (CODATA {M_P_MEV})")
-    print(f"    neutron pred = {mn_pred:.6f} MeV  (CODATA {M_N_MEV})")
-    print(f"    neutron err = {err_n_pct:+.4f}%   ({err_n_ppb:+.4e} ppb)")
+    print(f"    proton  pred = {mp_pred:.6f} MeV  (validation {m_p_val})")
+    print(f"      err = {err_p_pct:+.4f}%   ({err_p_ppb:+.4e} ppb)")
+    print(f"    neutron pred = {mn_pred:.6f} MeV  (validation {m_n_val})")
+    print(f"      err = {err_n_pct:+.4f}%   ({err_n_ppb:+.4e} ppb)")
+    print(f"      [via three-calibration chain: m_n = m_p + Q_beta + m_e]")
     print()
 
     # Round-1 baseline reminder
@@ -127,26 +154,37 @@ def main() -> int:
     closed = abs(err_n_ppb) < THRESHOLD_PPB
     if closed:
         verdict = "h4_full_tr_M closes the gap"
-        rec = (f"H4 brings neutron err to {err_n_ppb:+.2e} ppb "
-               f"(< {THRESHOLD_PPB:.0e} threshold). The −56% baseline "
-               f"residual was Wedderburn-channel truncation; the full "
-               f"symbolic tr_M evaluation at q_0 (which packages all "
-               f"cyclotomic residues per prop:full-pole-structure-mass-trace) "
-               f"reproduces CODATA. Promote: replace V_3term path with "
-               f"direct tr_M evaluation, or extend V_3term to include "
-               f"all Wedderburn blocks correctly weighted.")
+        rec = (f"H4 with substrate-derived E_0 brings neutron err to "
+               f"{err_n_ppb:+.2e} ppb (< {THRESHOLD_PPB:.0e}). The −56% "
+               f"baseline residual was Wedderburn-channel truncation; "
+               f"the full symbolic tr_M evaluation at q_0 (packaging "
+               f"all cyclotomic residues per "
+               f"prop:full-pole-structure-mass-trace) reproduces the "
+               f"validation mass within 1 % when paired with the "
+               f"canonical Planck-tick E_0 = m_e/(q_0(q_0-1)).")
     else:
+        # tr_M(p) ≈ 1.065 from the Habiro witness is normalised to
+        # what would pair with E_0 ≈ 881 MeV (the implicit value the
+        # previous proton-calibrated form was using), not the
+        # substrate-derived Planck-tick E_0 ≈ 4.186 MeV. The previous
+        # script absorbed this factor-of-~210 scale mismatch into
+        # the calibration tautology m_p = m_p.
+        implicit_E0_calibrated = float(mp.fabs(tr_p)) and m_p_val / float(mp.fabs(tr_p))
         verdict = "h4_full_tr_M does NOT close the gap"
-        rec = (f"H4 (full tr_M) gives neutron err = {err_n_ppb:+.2e} ppb, "
-               f"still above {THRESHOLD_PPB:.0e}. The full pole structure "
-               f"alone does not account for the gap; the residual must "
-               f"live elsewhere — most likely in the assembly between "
-               f"tr_M and the brane-tower (T1 vs T1+T2+T3 mismatch), "
-               f"in Term 4/5/6 contributions not yet added, or in a "
-               f"normalisation/sign convention discrepancy. Next probe: "
-               f"compute T1+T4 (Frobenius co-Casimir) only (no brane "
-               f"tower) and see if that lands closer to CODATA, "
-               f"isolating the brane-tower contribution.")
+        rec = (f"H4 with substrate-derived E_0 gives proton err "
+               f"{err_p_ppb:+.2e} ppb, neutron err {err_n_ppb:+.2e} ppb "
+               f"(threshold {THRESHOLD_PPB:.0e}). Structural finding: "
+               f"tr_M(p, q_0) ≈ {float(mp.fabs(tr_p)):.3f} from the Habiro "
+               f"witness is normalised at a scale where the implicit "
+               f"E_0_calibrated ≈ {implicit_E0_calibrated:.1f} MeV would match "
+               f"m_p, NOT the substrate-derived Planck-tick "
+               f"E_0^(N=0) ≈ {E0_MeV:.3f} MeV. The previous proton-calibrated "
+               f"form (E_0 = m_p / |tr_M(p)|) absorbed this "
+               f"~{(implicit_E0_calibrated/E0_MeV):.0f}x scale discrepancy into "
+               f"the calibration tautology m_p = m_p. The mismatch lives in "
+               f"either the Habiro tr_M normalisation convention, missing "
+               f"brane-tower factors, or in the link between tr_M and "
+               f"the substrate Planck-tick scale.")
     print(f"  VERDICT: {verdict}")
     print(f"  RECOMMENDATION: {rec}")
     print()
@@ -158,14 +196,20 @@ def main() -> int:
             "Round-2 neutron-gap probe per prop:full-pole-structure-mass-trace. "
             "Evaluates the FULL symbolic Markov trace tr_M(T_w, q_0) directly "
             "from the Habiro-coefficients witness — no Wedderburn-channel "
-            "truncation, no V_3term approximation. Tests whether the −56% "
-            "neutron residual from round-1 (PR #452) was the cyclotomic-"
-            "residue truncation phenomenon. Read-only investigation."
+            "truncation, no V_3term approximation. Pairs the full tr_M with "
+            "the substrate-derived Planck-tick energy scale "
+            "E_0 = m_e / (q_0 · (q_0 - 1)) (CAL-1 + CAL-2 only) and the "
+            "three-calibration neutron chain m_n = m_p + Q_β + m_e. No "
+            "proton-mass calibration: m_p_validation / m_n_validation are "
+            "comparison targets only. Workplan-0b Bucket D rewire (PR #759)."
         )
         .set_content_block("prop:full-pole-structure-mass-trace")
         .add_parameter("q_0", Q0_FLOAT)
-        .add_parameter("m_p_codata_MeV", M_P_MEV)
-        .add_parameter("m_n_codata_MeV", M_N_MEV)
+        .add_parameter("m_e_MeV_CAL1", float(M_E_MEV))
+        .add_parameter("Q_beta_MeV_CAL3", float(Q_BETA_MEV))
+        .add_parameter("m_p_MeV_validation", float(M_P_MEV_VALIDATION))
+        .add_parameter("m_n_MeV_validation", float(M_N_MEV_VALIDATION))
+        .add_parameter("E0_substrate_MeV", E0_MeV)
         .add_parameter("precision_dps", _DPS)
         .add_parameter("threshold_ppb", THRESHOLD_PPB)
         # P2.5 marker — script substitutes q_0 numerically before
@@ -173,11 +217,23 @@ def main() -> int:
         # from habiro-coefficients-atomic.witness.json (the upstream
         # symbolic witness). Polynomial exposure does not apply here.
         .add_data("polynomial_q_not_applicable", True)
+        .add_data("calibration_inputs_used", {
+            "CAL-1": "m_e (M_E_MEV)",
+            "CAL-2": "q_0 (from q_parameter.Q)",
+            "CAL-3": "Q_beta (Q_BETA_MEV)",
+            "uses_m_p_as_calibration": False,
+            "uses_m_n_as_calibration": False,
+        })
         .add_data("h4_full_tr_M", {
             "tr_M_proton": mp.nstr(tr_p, _DPS),
             "tr_M_neutron": mp.nstr(tr_n, _DPS),
+            "E0_form": "E_0^(N=0) = m_e / (q_0 · (q_0 - 1))",
+            "E0_MeV": E0_MeV,
             "proton_pred_MeV": mp_pred,
             "neutron_pred_MeV": mn_pred,
+            "neutron_chain": "m_n_pred = m_p_pred + Q_beta + m_e",
+            "proton_err_pct": err_p_pct,
+            "proton_err_ppb": err_p_ppb,
             "neutron_err_pct": err_n_pct,
             "neutron_err_ppb": err_n_ppb,
         })
@@ -194,13 +250,17 @@ def main() -> int:
             "used_volume": False,
             "modifies_baseline_alpha_blend_tower_py": False,
             "uses_habiro_witness_directly": True,
+            "uses_proton_mass_calibration": False,
         })
         .add_assertion(
-            "proton_calibration_exact",
-            computed=mp_pred,
-            expected=M_P_MEV,
-            tolerance=1e-6,
-            source="single-point proton calibration (E0 = m_p / |tr_M(p)|)",
+            "proton_pred_within_threshold",
+            computed=abs(err_p_ppb),
+            expected=0.0,
+            tolerance=THRESHOLD_PPB,
+            source=(
+                "substrate-derived E_0 prediction (CAL-1 + CAL-2 only) "
+                "compared against m_p_validation"
+            ),
         )
     )
     out_path = w.save()
