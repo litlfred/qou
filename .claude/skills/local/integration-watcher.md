@@ -838,11 +838,26 @@ state and surface a structured suggestion to the user.
 
    ```bash
    git fetch origin main 2>/dev/null
-   LAST=$(jq -r ".reviewed_up_to.\"$C\" // empty" "$QUEUE")
+   # jq --arg passes $C safely (no shell-quoting injection if a
+   # criterion name contains '.', '[', ']', or quotes).
+   LAST=$(jq -r --arg c "$C" '.reviewed_up_to[$c] // empty' "$QUEUE")
    CUR=$(git rev-parse origin/main)
    if [ -n "$LAST" ] && [ "$LAST" != "$CUR" ]; then
-     # Normal case: scan commits since last full sweep
-     git log --reverse --format='%H %s' "$LAST..$CUR" > "/tmp/_${NAME}_${C}_missed"
+     # Verify $LAST is still in origin/main's history. If main was
+     # force-pushed (history rewrite) or the SHA was on a closed
+     # PR branch that never merged, `git log $LAST..$CUR` would
+     # error. Fall back to "history diverged" handling.
+     if git merge-base --is-ancestor "$LAST" "$CUR" 2>/dev/null; then
+       # Normal case: scan commits since last full sweep
+       git log --reverse --format='%H %s' "$LAST..$CUR" > "/tmp/_${NAME}_${C}_missed"
+     else
+       # History diverged. Treat like no-prior-pointer: fall back
+       # to backlog-only and write reviewed_up_to[C] = CUR after
+       # the sweep completes. Surface a one-line warning to the
+       # ledger so a fresh agent knows the pointer was invalidated.
+       printf 'HISTORY_DIVERGED %s last=%s cur=%s\n' "$C" "$LAST" "$CUR" \
+         > "/tmp/_${NAME}_${C}_missed"
+     fi
    elif [ -z "$LAST" ]; then
      # No prior pointer (first run, or queue.json freshly bootstrapped).
      # Fall back to "backlog only" mode: skip the per-commit triage
