@@ -198,39 +198,104 @@ pub fn hecke_mul_ts_inv_right(x: &HeckeElement, i: usize) -> HeckeElement {
     result
 }
 
+/// Right-multiply by `2 · (σ + σ⁻¹)/2 = σ + σ⁻¹`, i.e. the **doubled
+/// averaged crossing**.
+///
+/// **Why doubled**: the averaged Hecke crossing as a matrix is
+/// `(σ + σ⁻¹) / 2 = σ − h/2 · I` (via the Hecke relation
+/// `σ² = h · σ + I` ⇒ `σ⁻¹ = σ − h`).  Including the `/2` factor in
+/// the Hecke-basis expansion would require rational coefficients in
+/// `LaurentPolyQ`, which currently uses `BigInt`.  Instead we compute
+/// the **doubled** version `(σ + σ⁻¹) · x = 2 · σ x − h · x` here,
+/// and the caller tracks a separate `2^k` divisor (one factor of 2 per
+/// averaged crossing in the word).  `chi_lambda_via_gp_hoefsmit_with_avg`
+/// divides the final χ^λ output by `2^k` to absorb the deferred
+/// normalisation.
+///
+/// Returns a single Hecke element — **no basis branching**.  Despite
+/// the half-sum semantics, the basis grows the same as for a single
+/// σ-application (NOT doubled per averaged crossing the way a literal
+/// 2^k expansion would).  This is the structural win that makes GP
+/// viable for canonical atomic braids with averaged crossings.
+pub fn hecke_mul_ts_averaged_right(x: &HeckeElement, i: usize) -> HeckeElement {
+    let h = LaurentPolyQ::hecke_h();
+    // (σ + σ⁻¹) · x = (σ · x) + (σ⁻¹ · x)
+    //              = (σ · x) + (σ · x − h · x)
+    //              = 2 · (σ · x) − h · x.
+    let sigma_x = hecke_mul_ts_right(x, i);
+    // result := 2 · sigma_x.
+    let mut result: HeckeElement = BTreeMap::new();
+    for (w, c) in &sigma_x {
+        let mut c2 = c.clone();
+        c2.scalar_mul_assign(2_i32);
+        if !c2.is_zero() {
+            result.insert(w.clone(), c2);
+        }
+    }
+    // result := 2 · sigma_x − h · x.
+    for (w, c) in x {
+        let h_c = h.clone() * c.clone();
+        let entry = result.entry(w.clone()).or_insert_with(LaurentPolyQ::zero);
+        *entry -= &h_c;
+    }
+    result.retain(|_, v| !v.is_zero());
+    result
+}
+
 /// Convert a braid word `[(sign, gen_1based), ...]` on `n` strands
 /// into its expansion `T_β = Σ c_w(q) · T_w` in the Hecke basis.
 pub fn braid_to_hecke(n: usize, word: &[(i32, u32)]) -> HeckeElement {
+    let (x, _avg_count) = braid_to_hecke_with_avg(n, word);
+    x
+}
+
+/// Like [`braid_to_hecke`] but also handles **averaged** crossings
+/// (sign == 0) and returns the count of averaged crossings encountered.
+///
+/// The averaged crossings are expanded via the doubled half-sum
+/// `(σ + σ⁻¹) · x = 2 σ x − h x` (see
+/// [`hecke_mul_ts_averaged_right`]).  Each averaged crossing contributes
+/// a deferred factor of `1/2` to the χ^λ output; the caller divides
+/// by `2^avg_count` at the χ^λ evaluation step.
+///
+/// **Why a separate `avg_count` return** instead of pre-normalising:
+/// `LaurentPolyQ` uses `BigInt` coefficients, so `h/2 = (q − q⁻¹)/2`
+/// cannot be represented directly without migrating the whole
+/// `LaurentPolyQ` arithmetic to rationals.  Tracking `2^k` as an
+/// external scalar avoids that refactor and matches the
+/// `averaging_denominator` convention already used by
+/// `tools/hecke-engine/src/wenzl_lr.rs::averaging_denominator`.
+///
+/// **Key structural property**: the basis size grows as if we'd done
+/// a single σ-application per averaged crossing — NOT the 2^k blow-up
+/// that a literal sub-word enumeration would produce.  The half-sum
+/// is computed as ONE Hecke element via the algebraic identity, not
+/// as two separate computations.  This is the structural win that
+/// makes GP viable on canonical atomic braids with averaged crossings.
+pub fn braid_to_hecke_with_avg(
+    n: usize,
+    word: &[(i32, u32)],
+) -> (HeckeElement, u32) {
     let mut x = hecke_identity(n);
+    let mut avg_count: u32 = 0;
     for &(sign, gen) in word {
         let i = (gen as usize).saturating_sub(1);
         if i + 1 >= n {
             continue;
         }
-        // Per Copilot review on PR #718 (gp_cross_validate.rs:14):
-        // averaged crossings (sign == 0, used in canonical atomic
-        // braids per `prop:hecke-branching-trace-decomposition`)
-        // require half-sum expansion `(σ + σ⁻¹)/2 = σ − h/2 · I`
-        // and are NOT handled here.  Treating sign == 0 as positive
-        // would silently produce wrong χ^λ values.  Until the
-        // averaged-crossing extension lands (C-full work, see
-        // docs/audits/2026-05-18-hoefsmit-c-gate-gp-cross-validate.md),
-        // panic loudly rather than fail silently.
-        if sign == 0 {
-            panic!(
-                "braid_to_hecke: averaged crossing (sign == 0) at gen \
-                 σ_{gen} is not yet supported. The Geck-Pfeiffer basis-\
-                 expansion path needs a half-sum extension; see C-full \
-                 in docs/audits/2026-05-18-hoefsmit-c-gate-gp-cross-validate.md."
-            );
-        }
         x = if sign > 0 {
             hecke_mul_ts_right(&x, i)
-        } else {
+        } else if sign < 0 {
             hecke_mul_ts_inv_right(&x, i)
+        } else {
+            // sign == 0: averaged crossing.
+            avg_count = avg_count
+                .checked_add(1)
+                .expect("braid_to_hecke_with_avg: averaged-crossing count overflow");
+            hecke_mul_ts_averaged_right(&x, i)
         };
     }
-    x
+    (x, avg_count)
 }
 
 /// **Compute minimal length within S_n conjugacy class** of cycle
@@ -303,7 +368,14 @@ pub fn chi_lambda_via_gp_hoefsmit(
     if n_lambda != n {
         return 0.0;
     }
-    let basis_expansion = braid_to_hecke(n, word);
+    // **Averaged-crossing handling (C-full Step 1, 2026-05-18)**:
+    // `braid_to_hecke_with_avg` expands each averaged crossing
+    // (sign == 0) via the doubled half-sum
+    // `(σ + σ⁻¹) · x = 2 σ x − h x` as a single Hecke element (no
+    // 2^k branching of the basis).  Each averaged crossing carries a
+    // deferred factor of `1/2` which we divide out at the χ^λ
+    // evaluation step here.
+    let (basis_expansion, avg_count) = braid_to_hecke_with_avg(n, word);
     let mut total = 0.0_f64;
     for (w, c_w) in &basis_expansion {
         let red_word = reduced_word(w);
@@ -311,6 +383,10 @@ pub fn chi_lambda_via_gp_hoefsmit(
         let chi_w = crate::seminormal::chi_lambda_braid(lambda, &positive_word, q);
         let c_w_f64 = c_w.evaluate_f64(q);
         total += c_w_f64 * chi_w;
+    }
+    // Apply the deferred `(1/2)^avg_count` averaging normalisation.
+    if avg_count > 0 {
+        total /= (1u64 << avg_count) as f64;
     }
     total
 }
