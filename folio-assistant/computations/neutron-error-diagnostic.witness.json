@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-09T22:08:33.796682+00:00",
-  "commitSha": "c748cff8f81fe8a3a87abf94980be44912522bea",
+  "computedAt": "2026-05-18T19:13:52.824817+00:00",
+  "commitSha": "b04b9d9448368dbef60abb37b0f96d9d9d42e9a4",
   "assertions": [
     {
       "name": "neutron_gap_localised_to_T1",
@@ -29,8 +29,8 @@
   "durationMs": 9,
   "computation": "neutron-error-diagnostic",
   "scriptFile": "neutron_error_diagnostic.py",
-  "scriptHash": "6720a9f165e0",
-  "scriptCommitSha": "5362643ebb37a2008af703770e521ad0a83284e0",
+  "scriptHash": "ec1b18da0fd5",
+  "scriptCommitSha": "9d90d8c1be442721be328306ed7cf4c67a64ca26",
   "description": "Strategy-3 component decomposition of the −8.3% neutron error.  All components except T1=|tr_M_atomic| are identical between proton and neutron at A=1; the entire gap localises to the trace ratio |tr_M(n)| / |tr_M(p)| = 0.764.  Root cause: σ↔σ⁻¹ asymmetry at q ≠ 1 in the proton-uud vs neutron-udd quark encoding (uu→σ, dd→σ⁻¹).  Physical splitting = 0.14% of m_p; framework's encoding predicts 8.3% — over-prediction factor ≈60×.  This diagnostic does NOT propose a fix; it identifies the structural target for the next agent.  See docs/audits/2026-05-09-proton-m_e-anomaly.md §9.5 for the 1ppb-frontier ranking.",
   "contentBlock": "prop:atomic-mass-gb-nf",
   "auditOnly": "docs/audits/2026-05-09-mass-table-1ppb-audit.md",

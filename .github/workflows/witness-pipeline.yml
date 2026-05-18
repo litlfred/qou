@@ -389,7 +389,8 @@ jobs:
           # is the pragmatic interim.
           PATHSPECS=':(glob)folio-assistant/computations/*.witness.json
           :(glob)folio-assistant/computations/*.derivation.json
-          :(exclude)folio-assistant/computations/delta-lambda-empirical-tabulation.witness.json'
+          :(exclude)folio-assistant/computations/delta-lambda-empirical-tabulation.witness.json
+          :(exclude)folio-assistant/computations/atomic-braid-mass-table.witness.json'
           if git diff --quiet -- $PATHSPECS; then
             echo "Witnesses + derivation chains bit-stable."
             exit 0

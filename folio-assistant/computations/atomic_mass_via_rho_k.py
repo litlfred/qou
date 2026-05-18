@@ -1,5 +1,6 @@
+#!/usr/bin/env python3
+# polynomial_q_not_applicable: numerical mpmath consumer of pre-computed |tr_M| witness; no symbolic-q polynomial in this layer.
 """
-
 CLASS-A acknowledged-anchor banner (per Workplan-0b, applies to
 hardcoded CODATA-precision literals in this file as well — see
 `docs/audits/2026-05-18-workplan-0b-m-n-substrate-derivation.md`).
@@ -9,11 +10,8 @@ as CAL-3-ish acknowledged inputs, NOT independent calibrations.
 The compute-integration-watcher I9 audit therefore classifies this
 script as `ok_acknowledged_anchor` rather than as a registry-bypass
 violation.
-"""
 
-#!/usr/bin/env python3
-# polynomial_q_not_applicable: numerical mpmath consumer of pre-computed |tr_M| witness; no symbolic-q polynomial in this layer.
-"""Atomic mass via the categorical density ρ_K  (P4″ from PR #564).
+Atomic mass via the categorical density ρ_K  (P4″ from PR #564).
 
 ⚠ **LO TAUTOLOGY NOTICE.**  The leading-order ρ_K^LO ansatz used here
 is mathematically tautological: by construction, the |tr_M| factor

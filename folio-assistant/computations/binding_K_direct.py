@@ -1,5 +1,6 @@
+#!/usr/bin/env python3
+# polynomial_q_not_applicable: numerical mpmath consumer of pre-computed |tr_M| + Δ_λ witnesses.
 """
-
 CLASS-A acknowledged-anchor banner (per Workplan-0b, applies to
 hardcoded CODATA-precision literals in this file as well — see
 `docs/audits/2026-05-18-workplan-0b-m-n-substrate-derivation.md`).
@@ -9,11 +10,8 @@ as CAL-3-ish acknowledged inputs, NOT independent calibrations.
 The compute-integration-watcher I9 audit therefore classifies this
 script as `ok_acknowledged_anchor` rather than as a registry-bypass
 violation.
-"""
 
-#!/usr/bin/env python3
-# polynomial_q_not_applicable: numerical mpmath consumer of pre-computed |tr_M| + Δ_λ witnesses.
-"""Atomic binding energy via direct partition-block sum.
+Atomic binding energy via direct partition-block sum.
 
 Per PR #616 follow-up (audit doc 2026-05-09-mass-table-fitting-audit.md
 §"Δ_λ derivation status"): the canonical formula

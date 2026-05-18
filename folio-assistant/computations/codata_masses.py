@@ -1,5 +1,5 @@
+#!/usr/bin/env python3
 """
-
 CLASS-A acknowledged-anchor banner (per Workplan-0b, applies to
 hardcoded CODATA-precision literals in this file as well — see
 `docs/audits/2026-05-18-workplan-0b-m-n-substrate-derivation.md`).
@@ -9,10 +9,7 @@ as CAL-3-ish acknowledged inputs, NOT independent calibrations.
 The compute-integration-watcher I9 audit therefore classifies this
 script as `ok_acknowledged_anchor` rather than as a registry-bypass
 violation.
-"""
 
-#!/usr/bin/env python3
-"""
 CODATA proton/neutron/electron mass witness.
 
 Re-exports the canonical CODATA-2022 / AME-2020 values from
@@ -65,7 +62,7 @@ def main() -> int:
         "values registry can pin Lean and Markdown literals via "
         ":leanval[m_e_MeV] / :leanval[m_p_MeV] / :leanval[m_n_MeV]."
     )
-    w.set_content_block("codata mass anchors (CAL-1/2 inputs; informational, no formal block)")
+    w.set_content_block("prop:three-calibration-inputs")
     w.add_parameter("source", "CODATA 2022 (m_e, m_p); AME 2020 + Q_β (m_n)")
 
     w.add_assertion(

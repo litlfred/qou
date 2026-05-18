@@ -1,5 +1,8 @@
+#!/usr/bin/env python3
+# polynomial_q_not_applicable: numerical mpmath consumer; symbolic-q
+# polynomials live upstream in chi-{atom}-h{n}.witness.json + y-lambda-
+# wenzl-bridge-symbolic-witness.json.
 """
-
 CLASS-A acknowledged-anchor banner (per Workplan-0b, applies to
 hardcoded CODATA-precision literals in this file as well — see
 `docs/audits/2026-05-18-workplan-0b-m-n-substrate-derivation.md`).
@@ -9,13 +12,8 @@ as CAL-3-ish acknowledged inputs, NOT independent calibrations.
 The compute-integration-watcher I9 audit therefore classifies this
 script as `ok_acknowledged_anchor` rather than as a registry-bypass
 violation.
-"""
 
-#!/usr/bin/env python3
-# polynomial_q_not_applicable: numerical mpmath consumer; symbolic-q
-# polynomials live upstream in chi-{atom}-h{n}.witness.json + y-lambda-
-# wenzl-bridge-symbolic-witness.json.
-"""Proposal 1 (workplan 2026-05-09-rho-k): empirical Δ_λ tabulation.
+Proposal 1 (workplan 2026-05-09-rho-k): empirical Δ_λ tabulation.
 
 ⚠ **Class-A discipline status (audit-only).**  This script
 consumes CODATA `M_P_MEV` and `M_N_MEV` (lines 100, 102 and lines

@@ -1,7 +1,7 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-04-28T20:25:33.912648+00:00",
+  "computedAt": "2026-05-18T19:21:32.810661+00:00",
   "commitSha": "63f06b944414deba53dccb696f580debc3a27fd7",
   "assertions": [],
   "allPassed": true,
@@ -10,7 +10,7 @@
   "scriptFile": "probe_phiq_yekutieli_truncation.py",
   "scriptHash": "8c1a7bfc321f",
   "scriptCommitSha": "",
-  "description": "Test brane-tower formula with Φ_q truncated at SDP max_grade (Yekutieli finite-slice interpretation). Per atom-knot-mass-derivation §Architecture, Yekutieli's non-abelian Stokes truncates the multiplicative integral at finite slice depth = GB filtration max_grade. The brane-tower Σ Φ_q in this interpretation uses the TRUNCATED q-Pochhammer ∏_{k=1}^{k_max} (1 - q^{-k} z)^{-1} instead of the divergent infinite product.",
+  "description": "Test brane-tower formula with \u03a6_q truncated at SDP max_grade (Yekutieli finite-slice interpretation). Per atom-knot-mass-derivation \u00a7Architecture, Yekutieli's non-abelian Stokes truncates the multiplicative integral at finite slice depth = GB filtration max_grade. The brane-tower \u03a3 \u03a6_q in this interpretation uses the TRUNCATED q-Pochhammer \u220f_{k=1}^{k_max} (1 - q^{-k} z)^{-1} instead of the divergent infinite product.",
   "contentBlock": "thm:knot-mass-formula-unified",
   "parameters": {
     "q_0": 1.1099785955541805,
@@ -60,6 +60,6 @@
     }
   },
   "caveats": [
-    "Compute uses hand-built atom volumes (atom_per_generator_volumes) for the brane tower. Wenzl |tr_M| values are reused from light_isotope_sweep H_{3A} computation (matching the 6-strand braid). The SDP-canonical braid word is at H_{n_0}, not H_{3A}; consistency between H_{3A} brane-tower and H_{n_0} Markov-trace is open — one of the deeper compute/paper alignment issues."
+    "Compute uses hand-built atom volumes (atom_per_generator_volumes) for the brane tower. Wenzl |tr_M| values are reused from light_isotope_sweep H_{3A} computation (matching the 6-strand braid). The SDP-canonical braid word is at H_{n_0}, not H_{3A}; consistency between H_{3A} brane-tower and H_{n_0} Markov-trace is open \u2014 one of the deeper compute/paper alignment issues."
   ]
 }

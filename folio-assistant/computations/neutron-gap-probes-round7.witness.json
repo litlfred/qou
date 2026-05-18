@@ -1,7 +1,7 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-04-28T14:28:58.410118+00:00",
+  "computedAt": "2026-05-18T19:21:32.810661+00:00",
   "commitSha": "709fc166085e3e1aae101036fd8a2a04cbaa4e5e",
   "assertions": [],
   "allPassed": true,
@@ -10,7 +10,7 @@
   "scriptFile": "probe_neutron_gap_round7.py",
   "scriptHash": "c1d0126d6ee2",
   "scriptCommitSha": "",
-  "description": "Round-7 probe: per-bond Skein-pair binding B = z_inv · (n_pp μ_pp + n_pn μ_pn + n_nn μ_nn) under K_A complete-graph bond counting. Three structural inputs (μ_pp, μ_pn, μ_nn) calibrated from D/T/³He. Tests on ⁴He, ⁶Li, ⁷Li, ⁹Be, ¹²C, ¹⁶O. Generalizes round-3's nucleon n/p Skein-pair scheme to the atomic level.",
+  "description": "Round-7 probe: per-bond Skein-pair binding B = z_inv \u00b7 (n_pp \u03bc_pp + n_pn \u03bc_pn + n_nn \u03bc_nn) under K_A complete-graph bond counting. Three structural inputs (\u03bc_pp, \u03bc_pn, \u03bc_nn) calibrated from D/T/\u00b3He. Tests on \u2074He, \u2076Li, \u2077Li, \u2079Be, \u00b9\u00b2C, \u00b9\u2076O. Generalizes round-3's nucleon n/p Skein-pair scheme to the atomic level.",
   "contentBlock": "prop:atom-knot-mass-derivation",
   "parameters": {
     "q_0": 1.1099785955541805,
@@ -20,7 +20,7 @@
     "mu_nn_MeV": "4.0162729531642987727",
     "mu_pp_MeV": "3.2556168205588607172",
     "bond_model": "K_A complete graph",
-    "hypothesis": "B = z_inv · Σ_t n_t μ_t for t ∈ {pp, pn, nn}"
+    "hypothesis": "B = z_inv \u00b7 \u03a3_t n_t \u03bc_t for t \u2208 {pp, pn, nn}"
   },
   "data": {
     "results": [
@@ -169,7 +169,7 @@
         "is_calibration": false
       }
     ],
-    "verdict": "K_A complete-graph hypothesis FALSIFIED — worst oxygen-16: +171.76% (+1.72e+09 ppb). The right bond topology is not fully-connected.",
+    "verdict": "K_A complete-graph hypothesis FALSIFIED \u2014 worst oxygen-16: +171.76% (+1.72e+09 ppb). The right bond topology is not fully-connected.",
     "attestation": {
       "used_fitting": false,
       "used_root_find": false,

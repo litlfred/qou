@@ -1,5 +1,5 @@
+#!/usr/bin/env python3
 """
-
 CLASS-A acknowledged-anchor banner (per Workplan-0b, applies to
 hardcoded CODATA-precision literals in this file as well — see
 `docs/audits/2026-05-18-workplan-0b-m-n-substrate-derivation.md`).
@@ -9,10 +9,7 @@ as CAL-3-ish acknowledged inputs, NOT independent calibrations.
 The compute-integration-watcher I9 audit therefore classifies this
 script as `ok_acknowledged_anchor` rather than as a registry-bypass
 violation.
-"""
 
-#!/usr/bin/env python3
-"""
 Proper Kähler-differential jet lift with analytic q-derivatives.
 
 Supersedes the Markov-stabilization stub lift_V_markov.  For the

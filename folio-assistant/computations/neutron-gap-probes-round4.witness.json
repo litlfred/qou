@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-04-28T01:51:18.905524+00:00",
-  "commitSha": "a40ce15a7a982316ea277f66c8b2abbf753a8cee",
+  "computedAt": "2026-05-18T19:13:53.629666+00:00",
+  "commitSha": "b04b9d9448368dbef60abb37b0f96d9d9d42e9a4",
   "assertions": [
     {
       "name": "proton_calibration_recovers_m_p_AME",
-      "computed": 938.27208816,
+      "computed": 938.2720881600001,
       "expected": 938.27208816,
       "passed": true,
       "tolerance": 1e-06,
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 9,
   "computation": "neutron-gap-probes-round4",
   "scriptFile": "probe_neutron_gap_round4.py",
-  "scriptHash": "9553538c3186",
-  "scriptCommitSha": "",
+  "scriptHash": "f4e26196e1aa",
+  "scriptCommitSha": "0093f06021ac3d14750159144fa9da757890d69a",
   "description": "Round-4 canonical-assembly probe: applies round-3's proton-calibration scheme to upstream's atomic tr_M values (atomic-tr-m-mpfr-50dps.witness.json from PR #454, 3A-strand convention, 50 dps via Hoefsmit + Wenzl). Tests whether M = |tr_M(atom)| · E0 closes D/T/³He binding-energy ppb residual when E0 is calibrated on the proton.",
   "contentBlock": "prop:atom-knot-mass-derivation",
   "parameters": {
@@ -36,24 +36,24 @@
         "Z": 1,
         "N": 1,
         "A": 2,
-        "tr_M_atom_50dps": "0.3882864715477134196206286177859443593534762784089",
-        "M_atom_pred_MeV": "341.98463191633894127",
+        "tr_M_atom_50dps": "0.3882864715477132785110659223165687998713",
+        "M_atom_pred_MeV": "341.98463191633884217",
         "constituent_sum_MeV": "1878.34850763",
         "B_AME_MeV": 2.22456612,
-        "B_pred_MeV": "1536.3638757136610587",
+        "B_pred_MeV": "1536.3638757136611578",
         "B_err_pct": 68963.52937325419,
-        "B_err_ppb": 689635293732.5419
+        "B_err_ppb": 689635293732.542
       },
       {
         "atom": "tritium",
         "Z": 1,
         "N": 2,
         "A": 3,
-        "tr_M_atom_50dps": "0.10405211867552573145768305458682264882849191283961",
-        "M_atom_pred_MeV": "91.644257816981973678",
+        "tr_M_atom_50dps": "0.1040521186755256548979583274321227548353",
+        "M_atom_pred_MeV": "91.644257816981912997",
         "constituent_sum_MeV": "2817.91392815",
         "B_AME_MeV": 8.4817984,
-        "B_pred_MeV": "2726.2696703330180263",
+        "B_pred_MeV": "2726.269670333018087",
         "B_err_pct": 32042.589834875325,
         "B_err_ppb": 320425898348.75323
       },
@@ -62,13 +62,13 @@
         "Z": 2,
         "N": 1,
         "A": 3,
-        "tr_M_atom_50dps": "0.20654085856226274930598854594486682967873245140839",
-        "M_atom_pred_MeV": "181.91156444249288171",
+        "tr_M_atom_50dps": "0.2065408585622626294891049090129267784181",
+        "M_atom_pred_MeV": "181.91156444249278958",
         "constituent_sum_MeV": "2817.13159474",
         "B_AME_MeV": 7.7180375,
-        "B_pred_MeV": "2635.2200302975071183",
+        "B_pred_MeV": "2635.2200302975072104",
         "B_err_pct": 34043.65413873031,
-        "B_err_ppb": 340436541387.30304
+        "B_err_ppb": 340436541387.3031
       }
     ],
     "verdict": "residual remains: worst deuteron = +6.90e+11 ppb",
