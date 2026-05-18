@@ -18,8 +18,8 @@
 //!   - n (Z=0, N=1) at H_3 — small, sanity
 //!   - tritium (Z=1, N=2) at H_9 — medium, ~30 partitions
 //!
-//! ⁴He (Z=2, N=2) at H_12 is too expensive for a quick bench (~8 min
-//! seminormal baseline per PR #716); to add it pass `--include-he4`.
+//! ⁴He (Z=2, N=2) at H_12 word builder is not yet wired in this bin (~8 min
+//! seminormal baseline per PR #716).  Passing `--include-he4` currently exits 2 with an explanatory message; the H_12 word builder is deferred to a Python harness.
 //!
 //! ## Output
 //!
@@ -318,19 +318,27 @@ fn main() {
     };
     rows.push(bench_atom("tritium-like-h9", 9, &tritium_like));
 
-    if !include_he4 {
+    if include_he4 {
+        // Per Copilot review on PR #730: the flag was previously
+        // documented as enabling a ⁴He benchmark but the code only
+        // ever printed a "not implemented" message — misleading both
+        // for users and for automation. Now: when --include-he4 is
+        // passed but the H_12 word builder is not yet wired here,
+        // exit non-zero with an explicit error message so callers
+        // can detect the mis-configuration.
         eprintln!(
-            "→ ⁴He skipped (pass --include-he4 to enable; ~10+ min seminormal baseline)"
+            "ERROR: --include-he4 requested but the H_12 canonical-\
+             word builder is not yet implemented in this binary.\n\
+             The 4-nucleon word has a more complex inter-nucleon\n\
+             adjacency pattern than the 3-nucleon stub above; the\n\
+             builder is deferred to a Python harness in\n\
+             folio-assistant/computations/."
         );
-        // ⁴He benchmark not yet wired into this bin — would require a
-        // proper canonical word builder for higher A (the 4-nucleon
-        // word has a more complex inter-nucleon adjacency pattern
-        // than the 3-nucleon stub above). Deferred to a Python-driven
-        // harness in `folio-assistant/computations/`.
+        std::process::exit(2);
     } else {
         eprintln!(
-            "→ ⁴He requested via --include-he4 but the H_12 canonical-word \
-             builder is not yet implemented in this bin. Skipping."
+            "(⁴He bench skipped; the H_12 word builder is not wired \
+             in this binary — see --include-he4 for details)"
         );
     }
 

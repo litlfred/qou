@@ -403,71 +403,95 @@ mod tests {
 
     #[test]
     fn evaluate_mpfr_pure_integer_exponents() {
-        // (q + q^{-1}) at q = 2 (50dps precision).
+        // (q + q^{-1}) at q = 2 — expected exactly 2.5 (1/2 = 0.5
+        // is exactly representable in binary).  Compare in MPFR
+        // space against an MPFR-constructed expected value, not via
+        // f64 downcast (per Copilot review on PR #730: 1e-50 bound
+        // is below f64 resolution and a downcast comparison is
+        // either trivially true after rounding or fails for
+        // unrelated f64 reasons).
         let p = LaurentPolyQ::q_pow(1) + LaurentPolyQ::q_pow(-1);
         let q = rug::Float::with_val(180, 2);
         let v = p.evaluate_mpfr(&q);
-        let v_f64: f64 = v.to_f64();
-        // Expected: 2 + 0.5 = 2.5.
-        assert!((v_f64 - 2.5).abs() < 1e-50);
+        let expected = rug::Float::with_val(180, 5) / 2;
+        let diff = rug::Float::with_val(180, &v - &expected);
+        assert!(diff.is_zero(), "v = {} ≠ expected 5/2", v);
     }
 
     #[test]
     fn evaluate_mpfr_hecke_h_at_q0() {
         // h = q − q^{-1} at the canonical substrate q_0 =
         // 1.10997859555418057528159407960950937799328227995870.
+        // Compare in MPFR space against an MPFR-constructed
+        // expected `q − 1/q`.
         let h = LaurentPolyQ::hecke_h();
         let q_str = "1.10997859555418057528159407960950937799328227995870";
         let q = rug::Float::with_val(180, rug::Float::parse(q_str).unwrap());
         let h_at_q0 = h.evaluate_mpfr(&q);
-        // h = q − 1/q. At q_0 = 1.10998 → 1/q_0 ≈ 0.90091.
-        // Expected: ≈ 0.20906.
-        let h_f64: f64 = h_at_q0.to_f64();
+        // expected = q - 1/q
+        let q_inv = rug::Float::with_val(180, q.clone().recip());
+        let expected = rug::Float::with_val(180, &q - &q_inv);
+        let diff = rug::Float::with_val(180, &h_at_q0 - &expected);
         assert!(
-            (h_f64 - 0.20906).abs() < 1e-4,
-            "h at q_0 ≈ 0.20906, got {h_f64}"
+            diff.is_zero(),
+            "h(q_0) MPFR-space mismatch: h={} expected={}",
+            h_at_q0,
+            expected
         );
     }
 
     #[test]
     fn evaluate_mpfr_odd_half_exponent() {
-        // q^{1/2} at q = 4 → 2.
+        // q^{1/2} at q = 4 → 2 exactly.  Compare in MPFR space; 2
+        // is exactly representable at any precision.
         let p = LaurentPolyQ::q_half_pow(1);
         let q = rug::Float::with_val(180, 4);
         let v = p.evaluate_mpfr(&q);
-        let v_f64: f64 = v.to_f64();
-        assert!((v_f64 - 2.0).abs() < 1e-50);
+        let expected = rug::Float::with_val(180, 2);
+        let diff = rug::Float::with_val(180, &v - &expected);
+        assert!(diff.is_zero(), "v = {} ≠ 2", v);
     }
 
     #[test]
     fn evaluate_mpfr_negative_half_exponent() {
-        // q^{-3/2} at q = 4 → 1/8 = 0.125.
+        // q^{-3/2} at q = 4 → 1/8 = 0.125 exactly.
         let p = LaurentPolyQ::q_half_pow(-3);
         let q = rug::Float::with_val(180, 4);
         let v = p.evaluate_mpfr(&q);
-        let v_f64: f64 = v.to_f64();
-        assert!((v_f64 - 0.125).abs() < 1e-50);
+        let expected = rug::Float::with_val(180, 1) / 8;
+        let diff = rug::Float::with_val(180, &v - &expected);
+        assert!(diff.is_zero(), "v = {} ≠ 1/8", v);
     }
 
     #[test]
     fn evaluate_mpfr_bigint_coefficient_beyond_f64() {
-        // Coefficient 2^100 is well beyond f64 mantissa (53 bits).
-        // The BigInt → decimal-string → MPFR round-trip must
-        // preserve full precision.
-        let big: BigInt = BigInt::from(1u128) << 100u32;
+        // Coefficient 2^100 is well beyond the f64 mantissa (53 bits),
+        // though by coincidence 2^100 IS exactly representable in f64
+        // (it's a power of 2).  Use a BigInt that is NOT a power of
+        // 2 to make the f64-downcast pitfall impossible: 3^60.  At
+        // BigInt precision this is exact; at f64 precision it rounds.
+        //
+        // The MPFR round-trip must preserve full precision regardless
+        // — we assert exact equality in MPFR space against the
+        // decimal-string representation of the expected value.
+        use num_traits::pow::Pow;
+        let three: BigInt = BigInt::from(3u32);
+        let big: BigInt = three.pow(60u32);
+        let expected_decimal = big.to_str_radix(10);
         let p = LaurentPolyQ::from_terms(vec![(0, big.clone())]);
         let q = rug::Float::with_val(180, 7); // q value doesn't matter for he=0
         let v = p.evaluate_mpfr(&q);
-        // Expected: exactly 2^100 = 1267650600228229401496703205376.
-        let expected = rug::Float::with_val(180, rug::Float::parse(
-            "1267650600228229401496703205376"
-        ).unwrap());
+        let expected = rug::Float::with_val(
+            180,
+            rug::Float::parse(&expected_decimal)
+                .expect("expected decimal parse"),
+        );
         let diff = rug::Float::with_val(180, &v - &expected);
-        // Full-precision equality at 180 bits.
-        let diff_f64: f64 = diff.abs().to_f64();
         assert!(
-            diff_f64 < 1e-100,
-            "2^100 coefficient lost precision through round-trip: diff = {diff_f64}"
+            diff.is_zero(),
+            "3^60 coefficient lost precision through round-trip: \
+             v={} expected={}",
+            v, expected
         );
     }
 }
