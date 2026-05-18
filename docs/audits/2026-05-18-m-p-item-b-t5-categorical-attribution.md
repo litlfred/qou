@@ -595,6 +595,58 @@ Read off $a_K$ via the $C_\lambda$ values for the chirality-active
 partitions. This is **analytical**, not numerical — no LP solve
 needed.
 
+## 7e. B.1a-rev.5 — full Hecke-basis LP at H_3 (proton, neutron): also degenerate
+
+The script
+[`aK_via_lp_dual_hecke_basis.py`](../../folio-assistant/computations/aK_via_lp_dual_hecke_basis.py)
+implements the recommended *path 1* from §7d: full Hecke-algebra
+basis at H_3 (proton, neutron) with the non-diagonal Frobenius
+Gram from
+[`gram-matrix-dual.witness.json`](../../folio-assistant/computations/gram-matrix-dual.witness.json)
+(6×6, $\det G \approx -0.36$ at $q_0$).
+
+Result (f64 prototype):
+
+| atom | $u_0^*$ | active set | chirality y-sum | $a_K^{\mathrm{chi-active}}$ | $a_K^C$ |
+|------|---------|------------|------------------|------------------------------|---------|
+| proton  | $-0.000$ | $\{\mathbf{1}\}$ | 1.000 | **NaN** (division by 0) | 1.0 |
+| neutron | $-0.000$ | $\{\mathbf{1}\}$ | 1.000 | **NaN** (division by 0) | 1.0 |
+
+**Same degeneracy pattern as §7d**: the LP corner solution puts
+all weight on the identity basis element, $u_0^* \to 0$, and
+$a_K^{\mathrm{chi-active}}$ formally diverges. Even with the full
+non-diagonal Gram, the corner-solution structure does not yield
+the C-matching a_K via dual shadow prices.
+
+**Cumulative finding (audit §7c + §7d + §7e):** The SDP-shadow-
+price identification of $a_K$ from audit §7b is **not directly
+extractable as a corner-LP-dual**. None of the four numerical
+candidates tested (R, D-sc, D-chi, dual-ratio, chi-active) match
+the closed-form C numerically. The §7b claim that "a_K = $1 + \sum_\lambda u_\lambda^*/u_0^*$"
+holds only in the analytical-factorisation form
+$u_\lambda^*(Z,N) = C_\lambda \cdot S_\lambda$ proved in
+`prop:bw-coefficient-shadow-price`, not via direct LP solves at
+LP corner-vertex solutions.
+
+**Definitive recommendation:** The canonical a_K is the closed
+form C; the SDP-shadow-price attribution should be interpreted as
+the *analytical* dual factorisation $C_\lambda \cdot S_\lambda$,
+not the numerical LP-corner duals. The §7b narrative is **correct
+in principle** but needs reformulation: the dual variables
+referenced are the **factorised analytical $u_\lambda^*$**, not
+the corner-solution duals returned by scipy linprog.
+
+This is the closure of the Item B SDP-shadow-price investigation
+within the scope of B.1a-rev.{1..5}. The next concrete step is
+B.1a-rev.3 (narrative update to
+`knot-factor-frobenius-pairing.md` Step 4) — drop the literal
+"$a(N) = \lvert\mathrm{tr}_M\rvert/\lvert\mathrm{tr}_M\rvert$ "
+identity, clarify that the BW values $1+h, 1-h^2, (1-h^2)^2$
+come from Skein eigenvalues / Wenzl branching, and document
+the analytical $C_\lambda \cdot S_\lambda$ dual factorisation as
+the canonical structural form (with C as the q-integer product
+the conjecture's Step 4 BW values agree with empirically).
+
 This finding is **non-blocking for the m_p chain** because the
 production code already uses C (`paper_six_term_isotope_sweep.term5_chirality`
 default mode). The audit just needs to reflect that C is canonical
