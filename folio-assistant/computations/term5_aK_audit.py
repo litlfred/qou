@@ -231,34 +231,31 @@ def aK_via_gram(Z: int, N: int, *, variant: str) -> dict:
 
 
 def aK_closed_form(Z: int, N: int) -> float:
-    """Production closed-form `a_K = Π_{c ∈ pn-crossings} (1 + sign·h)`.
+    """Canonical closed-form `a_K = Π_{c ∈ pn-crossings} (1 + sign(c)·h)`.
 
-    For atoms with no pn-crossings (proton, neutron, pure-D, ³He
-    in the proton-rich case, etc. depending on which crossings are
-    pn) this evaluates to 1.  For atoms with pn crossings it
-    multiplies (1 + h) and (1 − h) factors per pp/nn vs pn pair.
+    Uses the (Z, N)-keyed sign pattern from
+    `paper_six_term_isotope_sweep.chirality_signs_for_isotope_inferred`,
+    which is the authoritative pattern per
+    `prop:chirality-dual-space-derivation` §"Verification" (D: 1+; T,
+    ³He: amphichiral 1+/1−; ⁴He: Borromean² 2+/2−).
 
-    A simplification: count pn pairs from the (Z, N) tuple.  In
-    `paper_six_term_isotope_sweep.term5_chirality` the explicit
-    `chirality_signs` list is consulted; here we approximate by
-    counting structurally — adequate for the comparison with
-    Gram form.
+    Previous adjacency-counting implementation (used `['p']*Z + ['n']*N`
+    string ordering) gave 1.209 at T/³He instead of the canonical
+    0.956 = 1 − h² — fixed 2026-05-18 per audit doc
+    `docs/audits/2026-05-18-chirality-pn-counting-finding2.md`.
     """
-    # Number of pn inter-nucleon crossings:
-    # ordering = ['p']*Z + ['n']*N; count pairs of adjacent (p,n)
-    # or (n,p).  At most 1 in this ordering, but per atomic_braid
-    # convention internal pn channel multiplicities matter.
-    ordering = ["p"] * Z + ["n"] * N
-    n_pn = sum(
-        1
-        for k in range(len(ordering) - 1)
-        if {ordering[k], ordering[k + 1]} == {"p", "n"}
+    # Import lazily so the module load doesn't trigger the heavy
+    # paper_six_term_isotope_sweep import chain when callers only
+    # want the audit machinery (e.g. CI smoke tests).
+    from paper_six_term_isotope_sweep import (
+        chirality_signs_for_isotope_inferred,
     )
+    signs = chirality_signs_for_isotope_inferred(Z, N)
     h_val = float(_h_num)
-    # Default "sign chosen to be +" — matches the paper's chirality
-    # default.  Per paper_six_term_isotope_sweep the signs are
-    # supplied by the caller; we audit the +1 case.
-    return float((1.0 + h_val) ** n_pn)
+    a_K = 1.0
+    for s in signs:
+        a_K *= 1.0 + s * h_val
+    return float(a_K)
 
 
 def main() -> int:
