@@ -442,10 +442,16 @@ Per prepared PR:
 1. **Subscribe.** Right after `create_pull_request`, call
    `mcp__github__subscribe_pr_activity` with the new PR number.
    Add to the ledger under "watching".
-2. **Request a copilot review.** Call
-   `mcp__github__request_copilot_review` so
-   gemini-code-assist / copilot-pull-request-reviewer surface
-   feedback as actionable threads. Don't wait for human review.
+2. **Request automated reviews from both bots.** Call
+   `mcp__github__request_copilot_review` to surface
+   `copilot-pull-request-reviewer` feedback as actionable threads.
+   `gemini-code-assist` runs separately (automatic on PR open in
+   this repo); if it doesn't post within a few minutes, check
+   for a quota-limit comment ("you have reached your daily
+   quota") and document in the ledger. The two bots find
+   different classes of issue (copilot — style + small bugs;
+   gemini — semantic correctness, cross-file conventions),
+   so request **both**. Don't wait for human review.
 3. **Triage every review event** per coordinate §5a:
    - `accept` → fix the small thing, push
    - `accept-with-modification` → fix differently, reply
