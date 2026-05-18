@@ -152,3 +152,62 @@ This is a snapshot. Drift accrues quickly (the main burst landed 70 commits duri
 - The watcher's queue/ledger crosses 30 items (rebaseline)
 
 Update by editing this file, committing on the watcher's home branch, and pushing.
+
+## 8  Derivation-status audit (deep, 2026-05-18 evening)
+
+Author pointed out that §4a's "violations" framing missed that
+several flagged blocks **have canonical derivations** that landed
+earlier on main. Re-audit produces three lists.
+
+### 8a  Canonical derived (KEEP)
+
+| File | Label | What's derived | Evidence |
+|------|-------|----------------|----------|
+| `braids-and-knots/rho-k-graded-expansion.md` | `prop:rho-k-graded-expansion` | LO piece $Z m_p + N m_n + Z m_e$ via Markov multiplicativity | Wenzl 1988 Thm 5 proved; witness at $3.2 \times 10^{-14}$ |
+| `braids-and-knots/rho-k-h3a-refinement.md` | `prop:rho-k-h3a-refinement` | Single-gen binding $\alpha \sum_i \ln\lvert\hat V_i\rvert$ | Kashaev-limit derivation; 0.18% accuracy |
+| `descartes-universe/alpha-em-categorical-trace-ratio.md` | `prop:alpha-em-categorical-trace-ratio` | $\alpha_{EM} = h^2 / (q \cdot \delta_q(T_{2,9}) \cdot \delta_q(T_{3,5}))$ | Categorical trace ratio; $10^{-12}$ at $q_0$ |
+| `descartes-universe/em-coupling-bring-zero-mode.md` | `prop:em-coupling-bring-zero-mode` | Additive Bring zero-mode $1/\alpha = q[9]_q[10]_q + 2/(3\pi)$ | Bloch-Suslin uniqueness; Lean closes the algebraic identity at $g=4$ |
+| `braids-and-knots/lambda-scale-substrate-form.md` | `conj:lambda-scale-substrate-form` | $\lambda_{\mathrm{scale}} = 5/2 - h^2 G$ (**justification**, not derivation) | 5.4 ppm match; $\mathrm{Vol}(\mathcal{B}_3) = 8G$ derived (Adams 1985); $h^2 G$ correction conjectural per audit §13 |
+| `braids-and-knots/three-calibration-inputs.md` | `prop:three-calibration-inputs` | Three external calibrations CAL-1/2/3 aligned to Wedderburn blocks | 19-link chain audit |
+| `observations/three-calibration-discipline.md` | `prop:three-calibration-discipline` | $\mathfrak{m}(X) = m_e^{a(X)} Q_\beta^{c(X)} Q_X(q_0)$ | Induction along chain |
+
+### 8b  Current best mass-table compute infra (KEEP)
+
+| Script | Role |
+|--------|------|
+| `rho_k_graded_expansion.py` | Production: LO + single-gen binding witness |
+| `m_p_borromean_verification_50dps.py` | Production cross-check (proton Borromean at 50 dps) |
+| `markov_trace_via_wenzl_lr.py` | Production: canonical Wenzl-bridge Markov-trace |
+| `y_lambda_wenzl_bridge.py` | Production: Schur principal specialization for $y_\lambda$ |
+| `wedderburn_jones_markov.py` | Production: hybrid 30-dps Wenzl + float64 Hoefsmit |
+| `rho_k_h3a_refinement.py` | Production: full 50-dps mpmath partition-sum |
+| `q_beta_spectral_bridge_witness.py` | Production: CAL-3 prediction at +0.168% vs CODATA |
+| `cross_check_trM_wenzl_lr_1ppb.py` | Production: 3-path $\mathrm{tr}_M$ agreement at $\epsilon_{\mathrm{mach}}$ |
+| `canonical_tr_m_via_rust.py` + `tools/hecke-engine/` | Production: Rust Hecke-engine R2-R4 (3400× speedup); R5-full prototype landed |
+| `alpha_em_pslq_uniqueness.py` | Production witness (multiplicative $q$-rational family ruled out) |
+| `lambda_scale_substrate_probe.py` + `lambda_scale_derivation_probes_123.py` | Experimental (conjectural λ-scale chain; tracked for closure) |
+
+### 8c  Deprecated / legacy / probing (REMOVE — aggressive scope per author)
+
+All have canonical replacements on main or are documented falsifications.
+
+| File / section | Why remove | Supersedes / replaced by |
+|----------------|------------|---------------------------|
+| `descartes-universe/alpha-em-gluon-octet-form.md` (full file) | PSLQ-empirical fit; 100-dps extended scan ruled out multiplicative $q$-rational family | `prop:alpha-em-categorical-trace-ratio` + `prop:em-coupling-bring-zero-mode` |
+| `descartes-universe/em-coupling-reeb-holonomy-falsified.md` (full file) | Falsification — Option C ruled out by Reeb-bundle analysis | (negative result; consumed by `em-coupling-bring-zero-mode`) |
+| `descartes-universe/em-coupling-stratum-coupling-h3-attempt.md` (full file) | Probing attempt — Option B at $H_3$ doesn't close (3.2% off) | `em-coupling-bring-zero-mode` |
+| `braids-and-knots/alpha-em-categorical-trace.md` (full file) | Legacy remark — bare PSLQ-fit, explicit "*retained for historical context*" | `prop:alpha-em-categorical-trace-ratio` (structural) + `prop:em-coupling-bring-zero-mode` (additive) |
+| `braids-and-knots/delta-coupling-substrate-form.md` (full file) | **Conjecture REFUTED** at single-magic anchors | (open research; no replacement yet) |
+| `braids-and-knots/recomputed-low-isotope-mass-table.md` §Calibrated form (section) | 4th/5th-calibration injection; tautological p/n rows | `prop:neutron-qvalue-symbolic` (framework prediction) |
+| `braids-and-knots/rho-k-h3a-refinement.md` §pair-gen piece (section, ~lines 71-113) | Pair-coupling structure incomplete; six-term theorem requires Li₂^q form not log-formula | (open work; LO + single-gen remain) |
+| BW-shadow-price family (4 scripts) | Already moved to `folio-assistant/computations/_deprecated/` by `3befb7ca` | (already done) |
+
+**Removal PR** (separate from this audit): 5 whole-file deletions + 2 section-level removals + `uses[]` rewires.
+
+### 8d  Correction to PR #715 strategy
+
+- **`alpha-em-categorical-trace.md`** — banner was the **wrong move**; this is a purely legacy block. Correct action: **REMOVE the file** (queued for the removal PR). The banner becomes moot when the file is removed.
+- **`atom-knot-mass-derivation.md`** — banner stands. Block is the canonical mass-derivation entry point; its 173× shortfall is captured by ρ_K (derived) + λ_scale (conjectural at 5.4 ppm).
+- **`atomic-mass-gb-nf.md`** — banner stands. Three-form classification correctly attributes derivation status per form.
+
+PR #715's `b4c9daa1` reanalysis already updated the two stand-firm banners to cite the derived substrate machinery. The third banner (alpha-em-categorical-trace.md) is moot in the removal PR's diff.
