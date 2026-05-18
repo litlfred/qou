@@ -26,9 +26,20 @@ $$
   R&D.** No closed-form derivation exists; multiple ansätze have all failed
   (see below).
 
-## Why Δ_λ matters for Track A
+## When Δ_λ is needed (and when it's not)
 
-The non-tautological binding-energy prediction is
+Δ_λ is **only** the gating quantity if Track A uses the **ρ_K · m_e · |tr_M|** formulation (Path D below). The framework has FOUR independent binding-energy paths; Δ_λ is needed by only one:
+
+| Path | Formula | Independent gate(s) |
+|------|---------|---------------------|
+| **A. Direct trace** | `B = E_0 · (|tr_M(W_free)| − |tr_M(W_atom)|)` | E_0 calibration discipline (Q_β anchor) |
+| **B. Borromean tower extension** | `m(K) = m_e · Vol(K)/ℏ_q² · λ(K) + S(K)` | per-atom λ(K) substrate-derivation (#751 / #690 / #777) |
+| **C. Kashaev volume law** | `B(K) = ρ_F · Vol_hyp(K)` | atom→knot assignment + ρ_F derivation |
+| **D. ρ_K · m_e · |tr_M|** | `M = ρ_K · m_e · |tr_M|`, `ρ_K = ρ_K^{LO} + (1/|tr_M|) Σ y_λ χ^λ Δ_λ` | **Δ_λ (this document)** |
+
+PR #564's T6-unit-convention resolution (`e578392b8`) declared **Path D canonical** ("no additive T6, Mittag–Leffler complementarity is the rigorous justification"). That declaration is what makes Δ_λ load-bearing for Track A. **Reverting Path D in favour of Path B (Borromean tower extension)** would bypass the Δ_λ gate at the cost of opening the per-atom λ(K) derivation problem — which the framework is already working on for individual baryons (#751).
+
+The non-tautological binding-energy prediction under **Path D** is
 
 $$B(K) \;=\; m_e \cdot \sum_{\lambda \vdash 3A} y_\lambda(q_0)\, \chi^\lambda(\beta_K)\, \Delta_\lambda(K).$$
 
