@@ -78,6 +78,80 @@ fixed-point identity $A \cdot a = 1$ at the inflection is the most
 likely to close cleanly because of its dimensional symmetry, but
 needs $\ge 30$ dps integration to test.
 
+## Update — mpmath 60-dps re-derivation
+
+The high-precision finder (`/tmp/c2_inflection_mp.py`, included as a
+session artifact) re-derives the inflection at mpmath 60 dps using
+`mpmath.polyroots` for the color-tube cubic, `mpmath.quad` for the
+integrals, and `mpmath.findroot` on a centered finite-difference
+$A''(a)$. Step size $h = 10^{-15}$; effective precision $\sim$ 12 dps
+on $a_{C_2}$.
+
+| Quantity | mpmath 60 dps value | float64 prior |
+|----------|---------------------|--------------|
+| $a_{C_2}$ | $0.407\,216\,918\,617$ | $0.406\,427\,618$ |
+| $A(a_{C_2})$ | $2.461\,721\,907\,218$ | $2.461\,646\,840$ |
+
+Correction: float64 was off by $\sim 2 \times 10^{-3}$ on $a_{C_2}$
+(np.gradient on a 500-point grid is much less precise than the
+inflection finder needs).
+
+### Findings
+
+**Fixed-point identity $A \cdot a = 1$ — DISPROVEN.**
+At the refined $a_{C_2}$, $A(a_{C_2}) \cdot a_{C_2} - 1 =
+2.45 \times 10^{-3}$. The 5e-4 fit at float64 was a
+**numerical coincidence**, not an identity.
+
+**New leading candidate: $a_{C_2} \approx \hbar_q \cdot (q_0 + 3)$.**
+
+| Form | Value | Relative error |
+|------|-------|----------------|
+| $\hbar_q \cdot (q_0 + 3)$ | $0.407\,223\,774\,861\,277$ | $1.7 \times 10^{-5}$ |
+
+The residual $a_{C_2} - \hbar_q(q_0 + 3) = -6.86 \times 10^{-6}$
+sits right at the finite-difference $A''$ noise floor. **Cannot
+confirm or reject** this candidate without a more precise
+inflection finder — see "What's needed (next pass)" below.
+
+PSLQ on the small basis $\{a_{C_2}, q_0, \hbar_q, z_\mathrm{mark}, 1\}$
+at tol $10^{-12}$ returned $(-53, 67, 21, -196, 43)$ — a 4-term
+integer combination with no obvious physical meaning; almost
+certainly a spurious relation at the available precision rather
+than a real identity.
+
+### What's needed (next pass)
+
+The finite-difference $A''$ caps $a_{C_2}$ precision at $\sim 10^{-12}$
+(step size $10^{-15}$ × cubic-root cancellation). To verify
+$a_{C_2} = \hbar_q(q_0+3)$ — or rule it out — one of:
+
+1. **Analytic $A'(a)$ via Leibniz**:
+   $A(a) = N(a) / D(a)$ where $N(a) = |\int_{-a}^a \text{prod}_z\, dz|$,
+   $D(a) = |\int_{-a}^a (c+z)\, dz|$. Each integrand is continuous, so
+   $N'(a) = 2 \,\text{prod}_z(a)$, $N''(a) = 2 \,\text{prod}_z'(a)$ (and
+   similarly for $D$). Then $A''(a)$ is an algebraic combination of
+   $N, N', N'', D, D', D''$ — no finite differences needed. This
+   yields full mpmath precision on $a_{C_2}$ via findroot.
+
+2. **Adaptive-quad refinement** with `mpmath.quad(..., tol=10e-30)`
+   and finite differences at $h = 10^{-25}$ (`mp.dps` raised to
+   $\sim 80$ dps). Slower but no derivation work needed.
+
+Either path gets us to 25+ dps on $a_{C_2}$, sufficient to confirm
+or reject $\hbar_q(q_0+3)$ at the $10^{-5}$ residual floor.
+
+### Categorical interpretation if $a_{C_2} = \hbar_q(q_0 + 3)$ holds
+
+$\hbar_q(q_0+3) = (q_0-1) + 3 \hbar_q = (q_0-1) + 3(q_0-1)/q_0$.
+
+That's $(q_0-1) \cdot (1 + 3/q_0) = (q_0-1)(q_0+3)/q_0$.
+
+Possible categorical reading: $(q_0 - 1)$ is the Hecke deformation
+scale; $(q_0+3)$ is the dimension count of the trivial-plus-standard
+$S_3$ representation ($1 + 3 \cdot 1$ from the partition $(2,1)$ + sign).
+Worth chasing if the identity holds at higher precision.
+
 ## Pointer files
 
 - Numerical finder:
