@@ -17,6 +17,21 @@ violation.
 # wenzl-bridge-symbolic-witness.json.
 """Proposal 1 (workplan 2026-05-09-rho-k): empirical Δ_λ tabulation.
 
+⚠ **Class-A discipline status (audit-only).**  This script
+consumes CODATA `M_P_MEV` and `M_N_MEV` (lines 100, 102 and lines
+~395-397) to build the right-hand side of equation (★) below.
+Per the three-calibration discipline
+(`content/quantum-observable-universe/braids-and-knots/three-calibration-inputs.md`),
+that is a fourth/fifth dimensional input over the allowed
+{CAL-1 m_e, CAL-2 m_μ/m_e → q_0, CAL-3 Q_β}.  This script is an
+**empirical-fit probe** for the binding-fraction ansatz space —
+the Δ_λ values it emits are *targets* fitted to CODATA, not
+predictions.  The witness is tagged `auditOnly`; the output is
+NOT consumed by any production prediction pipeline.  Tracked
+under Workplan-0b for substrate-pure replacement; the canonical
+closure path is to derive Δ_λ from the H_3a binding fractions
+per `prop:rho-k-h3a-refinement`.
+
 Per `prop:rho-k-h3a-refinement` the full ρ_K mass formula reads
 
     M(K) = m_e · Σ_{λ ⊢ 3A} y_λ(q) · χ^λ(β_K) · (1 + Δ_λ(K))
@@ -600,9 +615,15 @@ def main() -> int:
             "recurrence pattern. Mixed-precision: tier-2 chi data "
             "is float64 (numpy), per-ansatz solutions are mpmath. "
             "Proposal 1 of "
-            "docs/audits/2026-05-09-workplan-update-rho-k.md."
+            "docs/audits/2026-05-09-workplan-update-rho-k.md. "
+            "**Class-A audit-only**: consumes CODATA m_p, m_n as fit "
+            "targets per the docstring banner; the emitted Δ_λ values "
+            "are *fitted to CODATA*, not predicted from substrate. "
+            "Tracked under Workplan-0b for substrate-pure replacement."
          )
-         .set_content_block("prop:rho-k-h3a-refinement"))
+         .set_content_block("prop:rho-k-h3a-refinement")
+         .set_audit_only(
+            "docs/audits/2026-05-09-workplan-update-rho-k.md"))
 
     print("=" * 96)
     print("  Empirical Δ_λ tabulation across atoms (Proposal 1)")
