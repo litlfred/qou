@@ -88,7 +88,10 @@ M_N_AVG_OBS = (M_P_CODATA + M_N_CODATA) / 2
 
 # Substrate-pure prediction from prop:flavor-split-substrate.
 # Dimensionless — does NOT consume any CODATA mass as input.
-DELTA_M_SUBSTRATE_OVER_M_N = (q - 1)**2 * (1 - qi**4) / 3
+# Uses the centralized helper from _li_2_q_util (gemini #690 review:
+# single source of truth for the sub-leading-corrected formula).
+from _li_2_q_util import flavor_split_subleading  # noqa: E402
+DELTA_M_SUBSTRATE_OVER_M_N = flavor_split_subleading(q, qi)
 
 # Isobar masses (CODATA / AME 2020)
 ISOBARS_A3 = {

@@ -94,8 +94,10 @@ from witness_base import load_and_hash_upstream  # noqa: E402
 #
 #   m_p_substrate  ← C2 inflection at d²A/da² = 0
 #                     (probe_a_selection_criteria, merged)
-#   m_n_substrate  ← m_p_substrate · (1 + (q-1)²·(1-q⁻⁴)/3)
-#                     (prop:flavor-split-substrate, merged in #663)
+#   m_n_substrate  ← m_p_substrate · (1 + (q-1)²·(1-q⁻⁴)·(1+ℏ_q³)/3)
+#                     (prop:flavor-split-substrate, merged in #663;
+#                      sub-leading (1+ℏ_q³) correction via centralized
+#                      _li_2_q_util.flavor_split_subleading helper)
 #
 # Backwards compatibility: set the env var
 #   LEGACY_CODATA_NUCLEON_ANCHORS=1
@@ -103,36 +105,51 @@ from witness_base import load_and_hash_upstream  # noqa: E402
 # p/n for downstream calibration-check consumers).
 import os as _os  # noqa: E402
 
-if _os.environ.get("LEGACY_CODATA_NUCLEON_ANCHORS"):
+from _li_2_q_util import flavor_split_subleading as _flavor_split  # noqa: E402
+
+
+def _load_substrate_m_p_MeV() -> mp.mpf:
+    """Read C2-inflection m_p from the merged probe witness; fall back
+    to the published value (938.9182 MeV at q_0) if the witness is
+    absent or its schema is unexpected.
+
+    m_p_pred is in MeV; the value is absolute and does NOT require
+    E_0 scaling (gemini #690 documentation note).
+    """
+    c2_wit = HERE / "probe-a-selection-criteria.witness.json"
+    if not c2_wit.exists():
+        return mp.mpf("938.9182")
+    with c2_wit.open() as fh:
+        c2_data = json.load(fh).get("data", {})
+    return mp.mpf(str(
+        c2_data.get("closest_to_post_hoc", {}).get("m_p_pred")
+        or "938.9182"
+    ))
+
+
+# Module-level constants — always defined regardless of mode
+# (gemini #690 Rule-2 fix: no scope-dependent NameError risk).
+_USE_LEGACY = bool(_os.environ.get("LEGACY_CODATA_NUCLEON_ANCHORS"))
+if _USE_LEGACY:
+    # CODATA tautology mode (back-compat).  M_P_MEV / M_N_MEV remain
+    # the codata_constants values imported above.
     _NUCLEON_ANCHOR_SOURCE = (
         "CODATA (LEGACY CAL anchors via Q_β = m_n - m_p - m_e; "
         "M_pred(p), M_pred(n) tautological)"
     )
 else:
-    _q = mp.mpf(Q_50_DIGIT_STR)
-    _qi = 1 / _q
-    # Read C2-inflection m_p from the merged probe witness; fall back
-    # to the published value (938.9182 MeV at q_0) if the witness has
-    # not been regenerated.
-    _c2_wit = HERE / "probe-a-selection-criteria.witness.json"
-    if _c2_wit.exists():
-        # m_p_pred is the substrate-pure C2-inflection mass in MeV;
-        # value is absolute and does NOT require E_0 scaling.
-        with _c2_wit.open() as _fh:
-            _c2_data = json.load(_fh).get("data", {})
-        _m_p_substrate = mp.mpf(str(
-            _c2_data.get("closest_to_post_hoc", {}).get("m_p_pred")
-            or "938.9182"
-        ))
-    else:
-        _m_p_substrate = mp.mpf("938.9182")
-    _delta_m_over_M_N = (_q - 1) ** 2 * (1 - _qi ** 4) / 3
-    _m_n_substrate = _m_p_substrate * (1 + _delta_m_over_M_N)
+    # Substrate-pure production mode (default).
+    _Q = mp.mpf(Q_50_DIGIT_STR)
+    _QI = 1 / _Q
+    _m_p_substrate = _load_substrate_m_p_MeV()
+    # Use the centralized flavor_split_subleading helper from
+    # _li_2_q_util — single source of truth (gemini #690 review).
+    _m_n_substrate = _m_p_substrate * (1 + _flavor_split(_Q, _QI))
     M_P_MEV = _m_p_substrate
     M_N_MEV = _m_n_substrate
     _NUCLEON_ANCHOR_SOURCE = (
-        "substrate-pure (C2 inflection + prop:flavor-split-substrate; "
-        "no CODATA m_p / m_n input)"
+        "substrate-pure (C2 inflection + prop:flavor-split-substrate "
+        "with (1+ℏ_q³) sub-leading correction; no CODATA m_p / m_n input)"
     )
 
 # Module-level accumulator for upstream-witness hash records.
