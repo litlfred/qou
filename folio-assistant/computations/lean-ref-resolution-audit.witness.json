@@ -1,22 +1,22 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T16:25:16.106855+00:00",
-  "commitSha": "803ffcd0c8814e20b4bbd12580c3f00d90825e1d",
+  "computedAt": "2026-05-18T16:56:04.397877+00:00",
+  "commitSha": "90f2b2ffefe0390eabfdb3d4ab7acaef34ee4d93",
   "assertions": [
     {
       "name": "no_unregistered_package_prefixes",
-      "computed": 0.0,
+      "computed": 1.0,
       "expected": 1.0,
-      "passed": false,
+      "passed": true,
       "tolerance": 0.0,
       "unit": "boolean",
       "source": "Every lean.ref prefix must appear in LEAN_PACKAGES (folio-assistant/schemas/lean-packages.ts)."
     },
     {
       "name": "ok_count_matches_total_minus_failures",
-      "computed": 541.0,
-      "expected": 949.0,
+      "computed": 538.0,
+      "expected": 944.0,
       "passed": false,
       "tolerance": 0.0,
       "unit": "count (gates only at full closure)",
@@ -24,24 +24,23 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 9,
+  "durationMs": 8,
   "computation": "lean-ref-resolution-audit",
   "scriptFile": "lean_ref_resolution_audit.py",
-  "scriptHash": "670b42fe94c1",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "ed9200a799e1",
+  "scriptCommitSha": "19edfc1b1819b848a5156a3e3aac62faa771f686",
   "description": "I12 audit per local/compute-integration-watcher: walk every content/.../*.ts content-block file with a `lean.ref` URI of the form `<package>:<Decl.Path>` and attempt the 3-step resolution the export pipeline performs (sibling → Lake-root → grep). Classifies each as `ok` or one of six failure modes. Operationalises the 305-hit I12 count from the 2026-05-18 idle sweep (PR #737).",
   "contentBlock": "I12 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
-    "total_blocks_with_lean_ref": 949
+    "total_blocks_with_lean_ref": 944
   },
   "data": {
     "by_result": {
       "lake_root_missing_grep_hit": 30,
-      "sibling_no_decl": 249,
-      "ok": 541,
+      "sibling_no_decl": 250,
+      "ok": 538,
       "grep_no_match": 122,
-      "lake_root_no_decl": 4,
-      "unregistered_package": 3
+      "lake_root_no_decl": 4
     },
     "rows": [
       {
@@ -1949,24 +1948,6 @@
         "resolved_via": "sibling"
       },
       {
-        "path": "content/quantum-observable-universe/braids-and-knots/delta-coupling-substrate-form.ts",
-        "ref": "qou:QOU.MagicShell.DeltaCouplingSubstrateForm",
-        "kind": "unknown",
-        "pkg": "qou",
-        "decl_path": "QOU.MagicShell.DeltaCouplingSubstrateForm",
-        "sibling_exists": false,
-        "sibling_declares": false,
-        "lake_root_exists": true,
-        "lake_root_declares": true,
-        "lake_parent_declares": false,
-        "grep_hits": [
-          "/home/user/qou/content/quantum-observable-universe/lean/QOU/MagicShell/DeltaCouplingSubstrateForm.lean"
-        ],
-        "grep_hit": true,
-        "result": "ok",
-        "resolved_via": "lake_root"
-      },
-      {
         "path": "content/quantum-observable-universe/braids-and-knots/delta-max-uniform-bound.ts",
         "ref": "qou:QOU.MassEndomorphism.delta_max_uniform_bound",
         "kind": "unknown",
@@ -3859,16 +3840,12 @@
         "pkg": "qou",
         "decl_path": "QOU.BraidKnot.LambdaScaleSubstrateForm",
         "sibling_exists": true,
-        "sibling_declares": true,
+        "sibling_declares": false,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hits": [
-          "/home/user/qou/content/quantum-observable-universe/braids-and-knots/lambda-scale-substrate-form.lean"
-        ],
-        "grep_hit": true,
-        "result": "ok",
-        "resolved_via": "sibling"
+        "grep_hit": false,
+        "result": "sibling_no_decl"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/level-sufficiency.ts",
@@ -6569,24 +6546,6 @@
         "resolved_via": "sibling"
       },
       {
-        "path": "content/quantum-observable-universe/descartes-universe/alpha-em-gluon-octet-form.ts",
-        "ref": "qou:QOU.DescartesUniverse.alpha_em_gluon_octet_form",
-        "kind": "unknown",
-        "pkg": "qou",
-        "decl_path": "QOU.DescartesUniverse.alpha_em_gluon_octet_form",
-        "sibling_exists": true,
-        "sibling_declares": true,
-        "lake_root_exists": false,
-        "lake_root_declares": false,
-        "lake_parent_declares": false,
-        "grep_hits": [
-          "/home/user/qou/content/quantum-observable-universe/descartes-universe/alpha-em-gluon-octet-form.lean"
-        ],
-        "grep_hit": true,
-        "result": "ok",
-        "resolved_via": "sibling"
-      },
-      {
         "path": "content/quantum-observable-universe/descartes-universe/alpha-em-shift-multiplicative-chain.ts",
         "ref": "qou:QOU.Descartes.AlphaEmShiftChain.alpha_em_shift_chain",
         "kind": "unknown",
@@ -8446,14 +8405,6 @@
         "grep_hit": true,
         "result": "ok",
         "resolved_via": "sibling"
-      },
-      {
-        "path": "content/quantum-observable-universe/descartes-universe/spectral-dynamics.ts",
-        "ref": "sim:quantum-brings-surface",
-        "kind": "unknown",
-        "pkg": "sim",
-        "decl_path": "quantum-brings-surface",
-        "result": "unregistered_package"
       },
       {
         "path": "content/quantum-observable-universe/descartes-universe/stable-nucleus.ts",
@@ -11434,14 +11385,6 @@
         "resolved_via": "sibling"
       },
       {
-        "path": "content/quantum-observable-universe/observations/double-slit-two-modes.ts",
-        "ref": "sim:double-slit-analytical",
-        "kind": "unknown",
-        "pkg": "sim",
-        "decl_path": "double-slit-analytical",
-        "result": "unregistered_package"
-      },
-      {
         "path": "content/quantum-observable-universe/observations/eos-borromean-cfl.ts",
         "ref": "qou:QOU.Descartes.eos_borromean_cfl",
         "kind": "unknown",
@@ -11712,14 +11655,6 @@
         "grep_hit": true,
         "result": "ok",
         "resolved_via": "lake_parent"
-      },
-      {
-        "path": "content/quantum-observable-universe/observations/q-deformed-double-slit.ts",
-        "ref": "sim:q-double-slit",
-        "kind": "unknown",
-        "pkg": "sim",
-        "decl_path": "q-double-slit",
-        "result": "unregistered_package"
       },
       {
         "path": "content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.ts",
