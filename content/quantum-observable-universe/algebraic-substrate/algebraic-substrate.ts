@@ -13,24 +13,10 @@ export default chapter({
   label: "chap:algebraic-substrate",
   sections: [
     // ── §1. The Algebraic Substrate and the Reeb Derivation ─────────
-    section({
-      title: "The algebraic substrate and the Reeb derivation",
-      label: "sec:algebraic-substrate-reeb",
-      blocks: [
-        "algebraic-substrate-intro",
-        "substrate-preamble",
-        "frobenius-hopf-substrate",
-        "substrate-parameter-planck",
-        "categorical-reeb-derivation",
-        "reeb-flow-bridge",
-        "reeb-contact-universal-computer",
-        "brings-coordinate-ring",
-        "magic-numbers-bring",
-        "rigid-dualizing-complex",
-        "rigid-dualizing-brings",
-        "substrate-self-duality",
-      ],
-    }),
+    // ── §1 dissolved: algebraic-substrate-reeb (substrate parameter,
+    // Reeb derivation, Frobenius-Hopf substrate, Brings coordinate ring,
+    // rigid dualizing complex) moved to
+    // `quantum-observable-universes/sec:algebraic-substrate-reeb`.
 
     // ── §2 dissolved: cohomological-defect moved to descartes-universe
     // as sec:cohomological-defect (sitting adjacent to fundamental-particles
