@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T03:17:52.288422+00:00",
-  "commitSha": "0451e0e4c66e854e90ac8ed425d7148161814160",
+  "computedAt": "2026-05-18T04:03:43.803902+00:00",
+  "commitSha": "11e0cb56ab223fe59eb3c63dce3dbccae5e1623d",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -262,10 +262,10 @@
     },
     {
       "name": "leaf_value[proton-mass-50dps.derivation]",
-      "computed": 0.5974181494316655,
-      "expected": 0.5974181494316655,
+      "computed": 938.2771229375799,
+      "expected": 938.2771229375799,
       "passed": true,
-      "tolerance": 0.005974181494316655
+      "tolerance": 9.382771229375798
     },
     {
       "name": "chain_valid[q0-anchor.derivation]",
@@ -1324,8 +1324,8 @@
       {
         "chain": "proton-mass-50dps.derivation.json",
         "target": "m_p (MeV)",
-        "target_value": 0.5974181494316655,
-        "computed_value": 0.5974181494316655,
+        "target_value": 938.2771229375799,
+        "computed_value": 938.2771229375799,
         "structural_ok": true,
         "leaf_matches": true,
         "issues": [],
@@ -2066,6 +2066,9 @@
         "T5-categorical-attribution-candidates.witness.json",
         "V-222-projection-probe.witness.json",
         "V-222-projection-symbolic.witness.json",
+        "a-K-via-lp-dual-full.witness.json",
+        "a-K-via-lp-dual-hecke-basis.witness.json",
+        "a-K-via-lp-dual.witness.json",
         "a-minus-2-q-substrate-probe.witness.json",
         "adjacent-vs-full-probe.witness.json",
         "alpha-5-jucys-murphy-central.witness.json",
@@ -2165,6 +2168,7 @@
         "confined-knot-binding.witness.json",
         "confinement-operator-selection.witness.json",
         "cross-check-trM-1ppb.witness.json",
+        "cross-check-trM-wenzl-lr-1ppb.witness.json",
         "crystal-alpha-shift-pole-orders.witness.json",
         "crystal-basis-primitives.witness.json",
         "crystal-limit-transport-probe.witness.json",
@@ -2270,6 +2274,9 @@
         "knot-operator-table.witness.json",
         "knot-volumes.witness.json",
         "kummer-reflection-zeta5.witness.json",
+        "lambda-scale-derivation-probes-123.witness.json",
+        "lambda-scale-proof-step2-partition-count.witness.json",
+        "lambda-scale-substrate-probe.witness.json",
         "laurentq-a5-ceiling-measure.witness.json",
         "level1-qvalues.witness.json",
         "light-isotope-sweep.witness.json",
@@ -2279,6 +2286,7 @@
         "lr-fusion-self-conj-test.witness.json",
         "m-baryon-volume-form.witness.json",
         "m-n-difference-formula.witness.json",
+        "m-p-borromean-verification-50dps.witness.json",
         "m2-codata-vs-cos-q-beta.witness.json",
         "m3-full-chain-n4-mass-table.witness.json",
         "m4-magic-shell-correction-mass-table.witness.json",

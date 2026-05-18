@@ -1,7 +1,7 @@
 **Proposition.**
 *The semidefinite-programming (SDP) extension of the LP-dual
 operator-selection framework
-([BW coefficient shadow price](#prop:bw-coefficient-shadow-price))
+([BW coefficient shadow price](#prop:mass-coefficient-shadow-price))
 introduces matrix-valued cross-block couplings
 $c_{\lambda\lambda'}$ between conjugate-partition pairs in the
 Wedderburn decomposition of $H_n(q)$.  These couplings vary
@@ -99,7 +99,7 @@ scalar LP if `cvxpy` unavailable.
 
 **Related**:
 - Complementary to the LP-dual shadow prices
-  ([prop:bw-coefficient-shadow-price](#prop:bw-coefficient-shadow-price)),
+  ([prop:mass-coefficient-shadow-price](#prop:mass-coefficient-shadow-price)),
   which give only scalar per-partition variables.
 - The $q$-dependence of the couplings $c_{\lambda\lambda'}(q)$
   (varying $q$ at fixed $Z, N$) detects SUBSTRATE regime switches

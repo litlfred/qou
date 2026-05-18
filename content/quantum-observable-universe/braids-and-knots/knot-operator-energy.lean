@@ -2,7 +2,7 @@
 # QOU.BraidKnot.KnotOperatorEnergy — knot operator energy
 
 E(λ, q) := |y_λ(q)| where y_λ(q) = w_λ(q)/d_λ(q) - 1/[k]_q! is the
-LP-dual shadow price (prop:bw-coefficient-shadow-price).
+LP-dual shadow price (prop:mass-coefficient-shadow-price).
 
 LaTeX: `\label{def:knot-operator-energy}`
 -/

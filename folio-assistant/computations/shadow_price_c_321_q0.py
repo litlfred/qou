@@ -145,7 +145,7 @@ if __name__ == "__main__":
         ),
         "reference_blocks": [
             "prop:wigner-2-coefficient",
-            "prop:bw-coefficient-shadow-price",
+            "prop:mass-coefficient-shadow-price",
             "conj:shell-correction-term-seven",
         ],
         "timestamp": datetime.now(timezone.utc).isoformat(),

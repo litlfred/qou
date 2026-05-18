@@ -157,7 +157,7 @@ remains a P3.6 follow-up but does not block the BW closure.
 
 🟠 **Original action.** Reduce to either the Wenzl-bridge derivation
 (currently used for the other 9) or to LP-shadow-prices via
-[`prop:bw-coefficient-shadow-price`](../../content/quantum-observable-universe/braids-and-knots/bw-coefficient-shadow-price.md). The ad-hoc / approx flags must
+[`prop:mass-coefficient-shadow-price`](../../content/quantum-observable-universe/braids-and-knots/mass-coefficient-shadow-price.md). The ad-hoc / approx flags must
 disappear before the BW formula can claim *fully derived*.
 
 ### §2·D — Magic numbers

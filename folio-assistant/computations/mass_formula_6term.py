@@ -189,7 +189,7 @@ def term_5_chirality_bw(Z, N, knot_type):
     return float(B)
 
 
-# Knot-type assignments per paper (figure-eight-bw-coefficients.md)
+# Knot-type assignments per paper (six-term-mass-formula-complete.md)
 KNOT_TYPE = {
     "D": "chiral+",          # paper's assignment (gives -353%, questionable)
     "T": "amphichiral",
@@ -391,7 +391,7 @@ if __name__ == "__main__":
         "reference_blocks": [
             "thm:knot-mass-formula-unified",
             "thm:frobenius-codim-universal",
-            "prop:figure-eight-bw-coefficients",
+            "prop:six-term-mass-formula-complete",
         ],
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "parameters": {

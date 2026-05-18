@@ -42,14 +42,41 @@ What changed structurally:
    module + canonical-crossing-aware binary + Python wrapper.
    ⁴He at H_12 in 173 ms (was >30 min Hoefsmit timeout).
 
-## 2. Floor restated
+## 2. Two distinct precision targets (clarified 2026-05-17)
 
-CAL-2 uncertainty floor remains **~780 ppb** (`Q_β` CODATA
-±6.1×10⁻⁷ MeV). Q_β substrate-derivation declined explicitly.
+**1 ppb = compute-precision target** (internal cross-method
+agreement at substrate q_0). Distinct from the
+**~780 ppb experimental-floor target** (CODATA Q_β uncertainty
+on absolute mass predictions).
 
-The **achievable target** for this workplan is therefore "**reach
-the 780 ppb floor on absolute mass predictions for D, T, ³He, ⁴He,
-⁶Li, ⁷Li**", not "1 ppb" (which would require deriving Q_β).
+| Target | Layer | Gate |
+|--------|-------|------|
+| **1 ppb compute** | independent compute paths agree at q_0 to 1e-9 relative | `cross_check_trM_1ppb.py` (Hoefsmit ↔ markov_peel; in CI --strict) + `cross_check_trM_wenzl_lr_1ppb.py` (Wenzl LR ↔ both; PR #679) |
+| ~780 ppb experimental | absolute mass prediction vs CODATA | `atomic_mass_via_rho_k.py` side-by-side comparison + downstream consumers |
+
+Q_β substrate-derivation declined explicitly; experimental floor
+stands. The compute-precision target is **achievable independently**
+and is the gate of choice for cross-validating new methods like the
+Wenzl LR bridge.
+
+## 2a. Wenzl LR consumer bug (2026-05-17)
+
+`cross_check_trM_wenzl_lr_1ppb.py` flagged ~80 % relative
+divergence between Wenzl LR and Hoefsmit/markov_peel for D, T,
+³He |tr_M| values. Root cause: the LR identity
+`χ^λ(β_1 ⊗ β_2) = Σ_{μν} c^λ_{μν} · χ^μ(β_1) · χ^ν(β_2)` applies
+to **tensor-product** braids only; the canonical atomic braid is
+**not** a tensor product (inter-nucleon arc crossings break
+tensor structure).
+
+PR #679's `atomic_mass_via_rho_k.py` LR-overlay layer was
+**disabled** after this finding. The producer
+(`rho_k_full_via_wenzl_lr.py` + `hecke-tr-m-wenzl-lr` Rust binary)
+remains in place as a tensor-product χ^λ primitive — building
+block for a future canonical consumer that handles non-tensor
+inter-nucleon braiding per
+`hecke-branching-trace-decomposition.md`. Bug surfaced *by* the
+new 1 ppb cross-check, which is the intended QA mechanism.
 
 PR #663 wired a candidate substrate `Q_β = 0.7825728 MeV` (residual
 vs CODATA: +306 ppm) via `form_a_cos` with c_2 = b² Kashiwara

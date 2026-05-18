@@ -82,7 +82,7 @@
     },
     {
       "name": "Closed form C_{(3,2,1)}(q) — staircase shadow price",
-      "operation": "C_λ(q) := w_λ(q) · τ_λ(σ_g) is the BW shadow-price coefficient (`prop:bw-coefficient-shadow-price`).  Substitute w_{(3,2,1)} and τ_{(3,2,1)} = h/2; collect q-integer factors:\n  C_{(3,2,1)}(q) = [2]_q · [4]_q · [6]_q · h / (2 · [3]_q³ · [5]_q).\n(The combinatorial reduction from [6]_q! / ([5]_q² · [3]_q⁴) · h/2 to the stated form uses [k]_q recurrences and simplification.)",
+      "operation": "C_λ(q) := w_λ(q) · τ_λ(σ_g) is the BW shadow-price coefficient (`prop:mass-coefficient-shadow-price`).  Substitute w_{(3,2,1)} and τ_{(3,2,1)} = h/2; collect q-integer factors:\n  C_{(3,2,1)}(q) = [2]_q · [4]_q · [6]_q · h / (2 · [3]_q³ · [5]_q).\n(The combinatorial reduction from [6]_q! / ([5]_q² · [3]_q⁴) · h/2 to the stated form uses [k]_q recurrences and simplification.)",
       "inputs": [
         "w_321",
         "tau_321"

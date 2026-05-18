@@ -26,7 +26,7 @@ $$
 
 *the constraint with the smallest (most negative) Frobenius
 positivity value at the rounded integer point.  By LP duality
-([bw-coefficient-shadow-price](#prop:bw-coefficient-shadow-price)),
+([mass-coefficient-shadow-price](#prop:mass-coefficient-shadow-price)),
 this corresponds to a unique partition $\lambda^*(K, q)$ — the
 operator $e_{\lambda^*}$ that fails to satisfy positivity.*
 

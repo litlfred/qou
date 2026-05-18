@@ -42,7 +42,7 @@ hook–content closed form:*
 | Named form | Identity | Domain | Where used |
 |------------|----------|--------|------------|
 | **BW form** | $\beta_\lambda \;=\; -\tfrac12\,\tilde w_\lambda$ | all $\lambda$ (definitional) | mass coefficient ([hook-weight-derivation](#prop:hook-weight-derivation)) |
-| **LP shadow-price** | $C_\lambda \;=\; \tilde w_\lambda \cdot h/2$, $h := q - q^{-1}$ | all $\lambda$ (definitional) | nuclear operator-selection LP dual ([bw-coefficient-shadow-price](#prop:bw-coefficient-shadow-price)) |
+| **LP shadow-price** | $C_\lambda \;=\; \tilde w_\lambda \cdot h/2$, $h := q - q^{-1}$ | all $\lambda$ (definitional) | nuclear operator-selection LP dual ([mass-coefficient-shadow-price](#prop:mass-coefficient-shadow-price)) |
 | **Wenzl-bridge (self-conjugate case)** | $y_\lambda \;=\; \tilde w_\lambda$ when $\kappa_\lambda = 0$, $\kappa_\lambda := \sum_{x\in\lambda} c(x)$ | self-conjugate $\lambda$ only | sign-tracked closed form ([y-lambda-closed-form-wenzl-bridge](#prop:y-lambda-closed-form-wenzl-bridge)) |
 
 *For self-conjugate partitions ($\kappa_\lambda = 0$), the
@@ -129,7 +129,7 @@ correction.
 ### LP shadow-price: $C_\lambda = \tilde w_\lambda \cdot h/2$
 
 In the nuclear operator-selection LP
-([bw-coefficient-shadow-price](#prop:bw-coefficient-shadow-price)),
+([mass-coefficient-shadow-price](#prop:mass-coefficient-shadow-price)),
 each partition $\lambda$ contributes a Frobenius-positivity
 constraint, and its dual variable (shadow price) is
 

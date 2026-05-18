@@ -25,7 +25,7 @@
   "scriptHash": "8b48698c84c8",
   "scriptCommitSha": "unknown",
   "description": "Item (a) audit: the genuine Δ_I knot operator at A=2 is |tr_M(β_D)|/|tr_M(p)|·|tr_M(n)| = 0.3883/2.0386 = 0.1904, NOT the fallback 1.0 used by Strategy-3 (jones_quotient_factor_fallback). Replacing the fallback with the true Δ_I makes Strategy-3's M_pred[D] WORSE (1091 vs 1421 MeV; CODATA 1876). The fallback was hiding a convention choice: disjoint-product (Δ_I=1) vs true-atomic-trace (Δ_I=0.19). Either choice requires re-deriving E_0 + T2..T4 consistently. The proper path is term7-alpha5's iterative LP-dual 𝔪 = Σ_l u^{(l)*}, where the convention is automatic via the LP duality theorem.",
-  "contentBlock": "prop:bw-coefficient-shadow-price",
+  "contentBlock": "prop:mass-coefficient-shadow-price",
   "parameters": {
     "q_0": "1.1099785955541805752815940796095093779932822799587"
   },

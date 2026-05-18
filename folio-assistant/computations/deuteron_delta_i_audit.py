@@ -205,7 +205,7 @@ def main() -> int:
         "iterative LP-dual 𝔪 = Σ_l u^{(l)*}, where the convention is "
         "automatic via the LP duality theorem."
     )
-    w.set_content_block("prop:bw-coefficient-shadow-price")
+    w.set_content_block("prop:mass-coefficient-shadow-price")
     w.add_parameter("q_0", str(Q_MP))
     w.add_data("tr_M_p_q0", str(TR_M_PROTON_AT_Q0))
     w.add_data("tr_M_n_q0", str(TR_M_NEUTRON_AT_Q0))

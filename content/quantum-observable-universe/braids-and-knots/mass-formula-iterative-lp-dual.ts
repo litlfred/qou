@@ -53,7 +53,7 @@ export default proposition({
   uses: [
     "prop:frobenius-self-duality-forces-lp-dual-extraction",
     "prop:jucys-murphy-central-elements-qou",
-    "prop:bw-coefficient-shadow-price",
+    "prop:mass-coefficient-shadow-price",
     "prop:wedderburn-trace-identity",
     "rem:ontological-agnosticism",
     "prop:operator-selection-lp",

@@ -1,15 +1,25 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-11T22:01:30.300450+00:00",
-  "commitSha": "15dd1c2fc5dac49c84c0d3c212d896dd0b7a6bbb",
+  "computedAt": "2026-05-18T03:47:42.785948+00:00",
+  "commitSha": "b56cda6d2d7a7e183206d9f1c5e2564e103e156d",
   "assertions": [
     {
-      "name": "m_p_within_1_ppb",
-      "computed": "0.99936327835286752124843447223813068594802972333566",
+      "name": "m_p_within_10_ppm_conditional_on_conjecture",
+      "computed": "5.3660102",
+      "expected": "< 10",
+      "passed": false,
+      "tolerance": 10.0,
+      "unit": "ppm",
+      "source": "Borromean tower prediction conditional on conj:lambda-scale-substrate-form (5.4 ppm match at q_0 50dps)"
+    },
+    {
+      "name": "m_p_within_1_ppb_target",
+      "computed": "0.000005366010183402252426874421564766865918523390991663",
       "expected": "0",
       "passed": false,
-      "tolerance": 1e-09
+      "tolerance": 1e-09,
+      "source": "long-term 1 ppb target — REQUIRES the conjecture proof + h^4 and Skein corrections derivation (currently failing by ~3 orders of magnitude; 5.4 ppm vs 1 ppb)"
     },
     {
       "name": "m_p_pred_MeV_finite",
@@ -19,24 +29,26 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 3,
+  "durationMs": 4,
   "computation": "proton-mass-codata-50dps",
   "scriptFile": "build_proton_mass_50dps_chain.py",
-  "scriptHash": "1880cfc17db4",
-  "scriptCommitSha": "6efe798ed0262a145508b6f281a033cd37ad434f",
+  "scriptHash": "61c6221da778",
+  "scriptCommitSha": "5ab388497c6b1d9074e51a16b684e92cfdc6a3b2",
   "description": "Cross-pipeline m_p prediction vs CODATA at the precision achievable by the current pipeline (currently f64-bounded via mass_endomorphism.py; will lift to 50 dps once the Phase A tower-lift PRs land).",
   "contentBlock": "prop:full-pole-structure-mass-trace",
   "parameters": {
     "q_0": 1.1099785955541805,
     "M_E_MEV_CODATA": "0.51099895",
-    "target_precision_ppb": "1.0"
+    "target_precision_ppb": "1.0",
+    "conjectural_derivation": true,
+    "conjecture_label": "conj:lambda-scale-substrate-form"
   },
   "data": {
-    "m_p_pred_MeV": "0.59741814943166551438821760220157252056898224810419",
+    "m_p_pred_MeV": "938.27712293757986865595781089122366594196895167849",
     "m_p_codata_MeV": "938.27208816",
-    "rel_diff": "0.99936327835286752124843447223813068594802972333566",
-    "rel_diff_ppb": "999363278.353",
+    "rel_diff": "0.000005366010183402252426874421564766865918523390991663",
+    "rel_diff_ppb": "5366.0101834",
     "target_ppb": "1.0",
-    "gap_orders_of_magnitude_to_1ppb": "8.99972"
+    "gap_orders_of_magnitude_to_1ppb": "3.72965"
   }
 }

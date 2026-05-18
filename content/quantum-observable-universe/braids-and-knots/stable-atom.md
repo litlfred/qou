@@ -3,7 +3,7 @@
 $T_w \in H_{n(K)}(q)$.  Let $G(q)$ be the Frobenius Gram matrix
 of the primitive Wedderburn-block operators
 $\{e_\lambda\}_{\lambda \vdash k,\;k \leq k_{\max}}$
-([bw-coefficient-shadow-price](#prop:bw-coefficient-shadow-price)).
+([mass-coefficient-shadow-price](#prop:mass-coefficient-shadow-price)).
 Decompose the NF in the primitive basis:*
 
 $$

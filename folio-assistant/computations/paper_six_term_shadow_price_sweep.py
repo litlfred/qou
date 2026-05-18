@@ -315,7 +315,7 @@ if __name__ == "__main__":
         ),
         "reference_blocks": [
             "thm:knot-mass-formula-unified",
-            "prop:bw-coefficient-shadow-price",
+            "prop:mass-coefficient-shadow-price",
             "prop:wigner-2-coefficient",
             "prop:content-scaling-correspondence",
             "conj:shell-correction-term-seven",

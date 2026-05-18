@@ -258,7 +258,7 @@ the first two pieces (descended + brane tower).*
 **Isotope binding: chirality factors are a FOURTH tier.**
 
 *For compound isotope bindings, the paper's full formula
-([figure-eight BW coefficients](#prop:figure-eight-bw-coefficients))
+([figure-eight BW coefficients](#thm:six-term-mass-formula-complete))
 adds a **vortex-dependent chirality factor**
 $a_K \in \{1 + h,\; 1 - h^2,\; (1 - h^2)^2\}$ for $\{D, T, ^4\mathrm{He}\}$
 respectively — reflecting the knot type (chiral+, amphichiral,

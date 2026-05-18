@@ -83,7 +83,7 @@ algebraic-combinatorial fact.
 ## Action — none required
 
 Both BW-8 and BW-11 are derived (P1.2 / P1.3 marked ✅ landed). The
-shadow-price view (`prop:bw-coefficient-shadow-price`) and the
+shadow-price view (`prop:mass-coefficient-shadow-price`) and the
 Wenzl-bridge view (`prop:y-lambda-closed-form-wenzl-bridge`) remain
 in the paper as cross-checks; the equivalence is now symbolically
 verified.

@@ -138,3 +138,24 @@ Open siblings classified against #674 (P4‴ atomic_braid_mass_table downstream 
 | [#671](https://github.com/litlfred/qou/pull/671) | Story B forced + m_p chain closure gap (docs only) | upstream gap analysis | **dependency** — closure status will inform #674's banner phrasing | none (docs PR) |
 
 Intent comments posted (links above in questions table).
+
+## 2026-05-17 (evening) — /coordinate sweep (PR #683 author, knot-fusion Step 2 Rust)
+
+Open siblings classified against #683 (canonical χ^λ via fast Rust f64 Hoefsmit; companion to PR #682):
+
+| Sibling | Title | Overlap | Classification | Cherry-pick |
+|---------|-------|---------|----------------|-------------|
+| [#682](https://github.com/litlfred/qou/pull/682) | Closes #681 Step 2 + Li₂^q production wiring + 3-way 1ppb cross-check via chi-cache combiner | **complementary** — same canonical-|tr_M| goal, different path (Python sympy chi-cache reader vs Rust direct f64 Hoefsmit) | **adjacent** — no file conflicts, disjoint sources; #682 covers atoms with complete caches, #683 covers atoms where caches are partial | none either way; both witnesses can co-exist as alternative T1 sources |
+| [#681](https://github.com/litlfred/qou/pull/681) | Knot-fusion Step 1 audit | predecessor (my own) | **dependency-merged-eventually** — #683 answers #681's Q5 (Python vs Rust → both, complementary) | none |
+| [#679](https://github.com/litlfred/qou/pull/679) | Wire ρ_K consumer to LR witness + ⁶Li/⁷Li | unrelated layer (my own) | **adjacent** | none |
+| [#664](https://github.com/litlfred/qou/pull/664) | c_3 = J_Hopf(q=1) categorical | precision-ladder layer | **adjacent** | none |
+| [#671](https://github.com/litlfred/qou/pull/671) | m_p chain closure gap (docs) | upstream gap analysis | **adjacent** | none |
+| [#663](https://github.com/litlfred/qou/pull/663) | anti-staleness infra | adjacent | **future cherry-pick** (`witness_dependency_drift.py` could wrap the new Rust witness) | pending #663 merge |
+
+**Net:** #683 lands as a complement to #682. Intent comment posted on #682 ([link](https://github.com/litlfred/qou/pull/682#issuecomment-4472589129)) — no contention.
+
+### Question 5 resolved (originally opened by #681)
+
+| # | Question | Resolution |
+|---|----------|------------|
+| 5 | Python vs Rust for ⁴He chi cache compute? | **Both, complementary.** PR #682 ships Python sympy chi-cache reader (covers atoms with built caches); PR #683 ships Rust direct f64 Hoefsmit (covers atoms where caches are partial, faster compute, f64 precision). Same downstream witness consumers can read either via `canonical-tr-m-via-{chi-cache,rust}.witness.json`. |

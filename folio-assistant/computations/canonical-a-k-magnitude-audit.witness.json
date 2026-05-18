@@ -25,7 +25,7 @@
   "scriptHash": "0d2d49fe45a0",
   "scriptCommitSha": "unknown",
   "description": "Item (b) audit: canonical_a_k(jet-knot) values for A≥3 atoms (0.065/0.205/0.677 for ³H/³He/⁴He) capture a DIFFERENT physical quantity than what Strategy-3's t1_atom needs. Verified by comparing the deuteron's true Δ_I = 0.1904 (from closed-form atomic Markov trace) — a different VALUE and different DERIVATION than what canonical_a_k would produce. Both canonical_a_k and Δ_I are partial views of the iterative LP-dual shadow-price differences u^{(l)*}[atom] − u^{(l)*}[free] per term7-alpha5's prop:mass-formula-iterative-lp-dual. The 70-84% binding-energy under-prediction reflects this structural mismatch, not an error in canonical_a_k itself.",
-  "contentBlock": "prop:bw-coefficient-shadow-price",
+  "contentBlock": "prop:mass-coefficient-shadow-price",
   "parameters": {
     "q_0": "1.1099785955541805752815940796095093779932822799587"
   },

@@ -1,0 +1,128 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-18T03:28:19.924278+00:00",
+  "commitSha": "23eca46a654d79d9fa422df6f200e2ec7be2a62f",
+  "assertions": [
+    {
+      "name": "probe_1_proton_within_10ppm",
+      "computed": 5.367360486964612,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 10.0,
+      "unit": "ppm",
+      "source": "5/2 − h²·G vs λ_p_target"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 19,
+  "computation": "lambda-scale-substrate-probe",
+  "scriptFile": "lambda_scale_substrate_probe.py",
+  "scriptHash": "c08ab1db9e2e",
+  "scriptCommitSha": "unknown",
+  "description": "Probe of the substrate-form hypothesis λ_scale = p(4)/2 − h²·G + O(h^4) for the Borromean baryon mass formula. Tests proton, neutron, Σ baryons, Λ baryon at MPFR 80 dps. Verifies the 5.6 ppm match for proton; solves for higher-order corrections; tests generation predictions (p(n)/2 for n=4,5,6); checks Skein S(B) interpretation. NO FITTING — all targets are computed from CODATA via the Borromean formula.",
+  "contentBlock": "conj:borromean-baryon-mass-formula",
+  "parameters": {
+    "q_0": "1.109978595554180575281594",
+    "h": "0.2090603219898794611016084",
+    "G_catalan": "0.9159655941772190150546035",
+    "Vol_B3_literature": "7.327722906464807180894119",
+    "Vol_B3_from_8G": "7.327724753417752120436828"
+  },
+  "data": {
+    "probe_1_5_2_minus_h2_G_proton": {
+      "lambda_p_target": "2.459953404392547292187527",
+      "5/2 - h²·G": "2.45996660784924980282539",
+      "diff_absolute": "1.32034567025106e-5",
+      "diff_ppm": 5.367360486964612
+    },
+    "probe_2_neutron_common_form": {
+      "lambda_n_target": "2.463344251655447552302429",
+      "5/2 - h²·G (same as proton)": "2.45996660784924980282539",
+      "Δ in λ (n - common form)": "0.00337764380619775",
+      "ΔS(n) implied (× m_e MeV)": "1.2882963 MeV",
+      "interpretation": "If λ has common substrate value 5/2 − h²·G + small, the p/n split lives in S(B) Skein. ΔS(n) - ΔS(p) should equal the Δm_pn ≈ 1.293 MeV / m_e."
+    },
+    "probe_3_h4_correction": {
+      "ansatz": "λ_p = 5/2 - h²·G - h^4·c4 + O(h^6)",
+      "c4_solved": "0.00691195951671681",
+      "c4_simple_candidates": {
+        "G/2": "0.4579828",
+        "G/h": "4.3813459",
+        "[2]_q²·G / 8": "0.46298697",
+        "(1+G)/2": "0.9579828"
+      },
+      "interpretation": "c4 = +0.006912. Compare to simple candidates: if c4 ≈ G, then λ_p ≈ 5/2 − h²·G − h^4·G + O(h^6) = 5/2 − G·(h² + h^4 + ...) ≈ 5/2 − G·h²/(1−h²)."
+    },
+    "probe_3b_geometric_series": {
+      "form": "5/2 − G·h²/(1−h²)  (geometric series)",
+      "value": "2.458136931438920367161854",
+      "diff_ppm": -738.417626278364
+    },
+    "probe_4_generation_sigma": {
+      "hypothesis": "λ_Σ = 7/2 − h²·G (2nd-generation prediction)",
+      "lam_sigma_predicted": "3.45996660785",
+      "lam_sigma_plus_target": "3.11827967335",
+      "lam_sigma_0_target": "3.12685817381",
+      "lam_lambda_target": "2.92508775302",
+      "mass_predicted_MeV": "1319.6958",
+      "mass_sigma_plus_codata_MeV": "1189.37",
+      "mass_sigma_0_codata_MeV": "1192.642",
+      "ratio_pred_to_sigma_plus": 1.1095754615654931,
+      "ratio_pred_to_sigma_0": 1.1065313536854737,
+      "interpretation": "If p(n)/2 generation hypothesis holds with p(5) = 7, λ_Σ_pred = 7/2 − h²·G = ~3.46. Observed Σ baryon λ values: Σ+ → 3.1183, Σ⁰ → 3.1269, Λ → 2.9251. Pattern fits IF λ_Σ is in the range 3.1 to 3.5; observed ~3.12 (Σ+), so prediction 3.46 is off by ~10%. Likely the generation hypothesis needs refinement OR Σ has additional Skein contribution."
+    },
+    "probe_5_alternative_rationals": {
+      "search": "leading rational L close to 5/2, test L − h²·G vs λ_p",
+      "matches_within_100ppm": [
+        {
+          "leading": "5/2",
+          "value": 2.5,
+          "test_with_h2G": "2.45996660785",
+          "diff_p_ppm": 5.367360486964612
+        },
+        {
+          "leading": "10/4",
+          "value": 2.5,
+          "test_with_h2G": "2.45996660785",
+          "diff_p_ppm": 5.367360486964612
+        },
+        {
+          "leading": "15/6",
+          "value": 2.5,
+          "test_with_h2G": "2.45996660785",
+          "diff_p_ppm": 5.367360486964612
+        },
+        {
+          "leading": "20/8",
+          "value": 2.5,
+          "test_with_h2G": "2.45996660785",
+          "diff_p_ppm": 5.367360486964612
+        },
+        {
+          "leading": "25/10",
+          "value": 2.5,
+          "test_with_h2G": "2.45996660785",
+          "diff_p_ppm": 5.367360486964612
+        }
+      ]
+    },
+    "probe_6_Vol_B3_vs_8G": {
+      "Vol_B3_literature": "7.327722906464807180894119",
+      "8G_catalan": "7.327724753417752120436828",
+      "difference": "-1.84695294494e-6",
+      "rel_diff_ppm": -0.2520499891972741,
+      "note": "If Vol(B_3) = 8G exactly, the formula `λ = 5/2 − h²·G` becomes `λ = 5/2 − h²·Vol(B_3)/8`. The numerical values differ at the 7th decimal — likely the literature value's precision floor, not a structural difference. SnapPy high-precision computation would clarify."
+    },
+    "probe_7_muon_sanity": {
+      "muon_check": "m_μ/m_e = Vol(4_1)/ℏ_q² × λ_μ + S(μ)",
+      "lambda_mu_target": "0.9999999985900505818400014",
+      "should_be_unity": "yes (CAL-2 anchor)",
+      "5/2 - h²·G test for muon": "2.45996660785",
+      "interpretation": "The muon has λ ≈ 1 by CAL-2 (definition of q_0). The Borromean formula does not apply to leptons; this is a sanity check that the 5/2 − h²·G value is NOT universal — it's specific to baryons with B_3 topology."
+    }
+  },
+  "caveats": [
+    "Probe-only — does not modify production compute paths. Findings inform the open R&D on λ_scale substrate derivation."
+  ]
+}

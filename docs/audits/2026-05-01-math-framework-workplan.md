@@ -187,7 +187,7 @@ schema or content changes required.
      $C_\lambda := w_\lambda \cdot h/2$ (shadow-price),
      $y_\lambda := (-1)^{\kappa_\lambda} w_\lambda$ (Wenzl).
   3. Cites the three existing derivation blocks
-     (`hook-weight-derivation`, `bw-coefficient-shadow-price`,
+     (`hook-weight-derivation`, `mass-coefficient-shadow-price`,
      `y-lambda-closed-form-wenzl-bridge`) as proofs of each scaling.
   4. Refers to
      [`bw_wenzl_shadow_equivalence.py`](../../folio-assistant/computations/bw_wenzl_shadow_equivalence.py)
@@ -211,7 +211,7 @@ schema or content changes required.
   3. **LP shadow-price form**: BW coefficient as the dual variable
      of the partition's Frobenius-positivity constraint in the
      nuclear operator-selection LP
-     ([bw-coefficient-shadow-price](../../content/quantum-observable-universe/braids-and-knots/bw-coefficient-shadow-price.md)).
+     ([mass-coefficient-shadow-price](../../content/quantum-observable-universe/braids-and-knots/mass-coefficient-shadow-price.md)).
 - **D**: Decide between two outcomes:
   - **(Equivalence)** Prove the three forms agree on every BW
     coefficient (one derivation, three views) — preferred outcome:

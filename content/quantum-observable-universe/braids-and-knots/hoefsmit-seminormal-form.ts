@@ -8,7 +8,6 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-        "prop:figure-eight-bw-coefficients",
   ],
   cites: ["hoefsmit1974", "wenzl1988"],
   tags: [

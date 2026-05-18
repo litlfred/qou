@@ -100,12 +100,17 @@ def derive_m_n_hecke() -> dict:
     row = _load_six_term_row("n (neutron)")
 
     t1 = mp.mpf(str(row["term1_descended"]))
-    t4 = mp.mpf(str(row["term4_frob_per_vortex"]))
+    # P1.C HARD BREAK (2026-05-12): `term4_frob_per_vortex` renamed to
+    # `term4_frob_canonical_per_3A`. Apply the same fix here that
+    # Item A landed for `derive_m_p_hecke_path_a.py`.
+    t4 = mp.mpf(str(row["term4_frob_canonical_per_3A"]))
 
     # Quarantine reasons (loaded for documentation only)
     t2_err = row.get("term23_error") or "(none)"
-    t5 = mp.mpf(str(row.get("term5_chirality_bw", 0)))
-    t6 = mp.mpf(str(row.get("term6_habiro_residue", 0)))
+    # `row.get(k) or "0"` handles None/null values from the 50dps
+    # witness (Item A pattern, gemini fix from PR #683).
+    t5 = mp.mpf(str(row.get("term5_chirality_bw") or "0"))
+    t6 = mp.mpf(str(row.get("term6_habiro_residue") or "0"))
 
     # Path A partial: T1 + T4 only
     m_n_hecke_partial = t1 + t4
