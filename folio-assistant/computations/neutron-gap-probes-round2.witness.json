@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-18T17:38:12.362397+00:00",
-  "commitSha": "78e889115cacec6f1f7e370b571171863f8a2558",
+  "computedAt": "2026-05-18T17:52:46.392085+00:00",
+  "commitSha": "9feba97ee3f789813e1cc9feff7c4c3f34a98aaf",
   "assertions": [
     {
       "name": "proton_pred_within_threshold",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 16,
+  "durationMs": 15,
   "computation": "neutron-gap-probes-round2",
   "scriptFile": "probe_neutron_gap_round2.py",
-  "scriptHash": "682f3260ebb8",
-  "scriptCommitSha": "f3e459ee10afa1e0cc671af787d921742074031d",
+  "scriptHash": "b1f8ec887bb4",
+  "scriptCommitSha": "9feba97ee3f789813e1cc9feff7c4c3f34a98aaf",
   "description": "Round-2 neutron-gap probe per prop:full-pole-structure-mass-trace. Evaluates the FULL symbolic Markov trace tr_M(T_w, q_0) directly from the Habiro-coefficients witness — no Wedderburn-channel truncation, no V_3term approximation. Pairs the full tr_M with the substrate-derived Planck-tick energy scale E_0 = m_e / (q_0 · (q_0 - 1)) (CAL-1 + CAL-2 only) and the three-calibration neutron chain m_n = m_p + Q_β + m_e. No proton-mass calibration: m_p_validation / m_n_validation are comparison targets only. Workplan-0b Bucket D rewire (PR #759).",
   "contentBlock": "prop:full-pole-structure-mass-trace",
   "parameters": {
@@ -27,7 +27,7 @@
     "Q_beta_MeV_CAL3": 0.78233341,
     "m_p_MeV_validation": 938.27208816,
     "m_n_MeV_validation": 939.56542052,
-    "E0_substrate_MeV": 4.185980822062526,
+    "E0_substrate_MeV": 4.185980822062524,
     "precision_dps": 50,
     "threshold_ppb": 10000000.0
   },
@@ -41,12 +41,12 @@
       "uses_m_n_as_calibration": false
     },
     "h4_full_tr_M": {
-      "tr_M_proton": "1.0653062285923887592387232627278973729480786821694",
-      "tr_M_neutron": "0.92323329716958324698108314085315440447507447038193",
+      "tr_M_proton": "1.0653062285923892551532775699680661193337632009792",
+      "tr_M_neutron": "0.92323329716958364246376988091871375932688744507317",
       "E0_form": "E_0^(N=0) = m_e / (q_0 · (q_0 - 1))",
-      "E0_MeV": 4.185980822062526,
-      "proton_pred_MeV": 4.4593514425114975,
-      "neutron_pred_MeV": 5.7526838025114975,
+      "E0_MeV": 4.185980822062524,
+      "proton_pred_MeV": 4.459351442511496,
+      "neutron_pred_MeV": 5.752683802511496,
       "neutron_chain": "m_n_pred = m_p_pred + Q_beta + m_e",
       "proton_err_pct": -99.52472726208273,
       "proton_err_ppb": -995247272.6208273,

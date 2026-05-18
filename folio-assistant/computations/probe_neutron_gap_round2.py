@@ -52,7 +52,7 @@ import json
 import sympy as sp
 import mpmath as mp
 
-from q_parameter import Q as Q0_FLOAT  # noqa: E402
+from q_parameter import Q as Q0_FLOAT, Q_50_DIGIT_STR  # noqa: E402
 from codata_constants import (  # noqa: E402
     M_E_MEV,
     Q_BETA_MEV,
@@ -81,14 +81,11 @@ def eval_tr_M_symbolic(tr_M_in_q_str: str, q0_mp) -> mp.mpf:
     return mp.mpf(str(val))
 
 
-def predict_h4_full_tr_M(habiro_data, particle_key: str):
+def predict_h4_full_tr_M(habiro_data, particle_key: str, q0_mp: mp.mpf):
     """H4: evaluate the FULL symbolic tr_M at q_0 — no truncation."""
     e = habiro_data["results"][particle_key]
     tr_M_str = e["tr_M_in_q"]
-    with mp.workdps(_DPS):
-        q0 = mp.mpf(str(Q0_FLOAT))
-        tr_M_val = eval_tr_M_symbolic(tr_M_str, q0)
-    return tr_M_val
+    return eval_tr_M_symbolic(tr_M_str, q0_mp)
 
 
 def main() -> int:
@@ -106,10 +103,12 @@ def main() -> int:
     print()
 
     # H4: full Markov trace evaluation with substrate-derived E_0.
+    # Use Q_50_DIGIT_STR for the high-precision q_0 — Q0_FLOAT only carries
+    # ~16 significant digits and would silently cap downstream precision.
     with mp.workdps(_DPS):
-        q0 = mp.mpf(str(Q0_FLOAT))
-        tr_p = predict_h4_full_tr_M(habiro, "p (proton, A=1)")
-        tr_n = predict_h4_full_tr_M(habiro, "n (neutron, A=1)")
+        q0 = mp.mpf(Q_50_DIGIT_STR)
+        tr_p = predict_h4_full_tr_M(habiro, "p (proton, A=1)", q0)
+        tr_n = predict_h4_full_tr_M(habiro, "n (neutron, A=1)", q0)
 
         if tr_p == 0:
             print("  [ERROR] proton tr_M evaluated to 0 — cannot evaluate.")
@@ -117,18 +116,29 @@ def main() -> int:
 
         # Substrate-derived Planck-tick energy scale: E_0 = m_e / (q_0·(q_0-1))
         # Per `prop:three-calibration-inputs` line 52. CAL-1 + CAL-2 only.
-        E0 = M_E_MEV / (q0 * (q0 - 1))
-        mp_pred = float(mp.fabs(tr_p) * E0)
+        E0_mp = M_E_MEV / (q0 * (q0 - 1))
+        abs_tr_p = mp.fabs(tr_p)
+        abs_tr_n = mp.fabs(tr_n)
+        mp_pred_mp = abs_tr_p * E0_mp
         # Three-calibration neutron chain: m_n = m_p + Q_β + m_e
-        mn_pred = float(mp.mpf(str(mp_pred)) + Q_BETA_MEV + M_E_MEV)
+        mn_pred_mp = mp_pred_mp + Q_BETA_MEV + M_E_MEV
 
-    m_p_val = float(M_P_MEV_VALIDATION)
-    m_n_val = float(M_N_MEV_VALIDATION)
-    err_p_pct = (mp_pred - m_p_val) / m_p_val * 100
+        m_p_val_mp = M_P_MEV_VALIDATION
+        m_n_val_mp = M_N_MEV_VALIDATION
+        err_p_pct_mp = (mp_pred_mp - m_p_val_mp) / m_p_val_mp * 100
+        err_n_pct_mp = (mn_pred_mp - m_n_val_mp) / m_n_val_mp * 100
+
+    # Cast to float only for display + JSON serialisation.
+    mp_pred = float(mp_pred_mp)
+    mn_pred = float(mn_pred_mp)
+    m_p_val = float(m_p_val_mp)
+    m_n_val = float(m_n_val_mp)
+    err_p_pct = float(err_p_pct_mp)
     err_p_ppb = err_p_pct * 1e7
-    err_n_pct = (mn_pred - m_n_val) / m_n_val * 100
+    err_n_pct = float(err_n_pct_mp)
     err_n_ppb = err_n_pct * 1e7
-    E0_MeV = float(E0)
+    E0_MeV = float(E0_mp)
+    abs_tr_p_f = float(abs_tr_p)
 
     print(f"  H4 — full tr_M(T_w, q_0) · substrate-derived E_0")
     print(f"    E_0^(N=0) = m_e / (q_0(q_0-1)) = {E0_MeV:.6f} MeV  (CAL-1 + CAL-2)")
@@ -169,12 +179,13 @@ def main() -> int:
         # substrate-derived Planck-tick E_0 ≈ 4.186 MeV. The previous
         # script absorbed this factor-of-~210 scale mismatch into
         # the calibration tautology m_p = m_p.
-        implicit_E0_calibrated = float(mp.fabs(tr_p)) and m_p_val / float(mp.fabs(tr_p))
+        # `tr_p == 0` is already guarded above, so abs_tr_p_f is safe.
+        implicit_E0_calibrated = m_p_val / abs_tr_p_f
         verdict = "h4_full_tr_M does NOT close the gap"
         rec = (f"H4 with substrate-derived E_0 gives proton err "
                f"{err_p_ppb:+.2e} ppb, neutron err {err_n_ppb:+.2e} ppb "
                f"(threshold {THRESHOLD_PPB:.0e}). Structural finding: "
-               f"tr_M(p, q_0) ≈ {float(mp.fabs(tr_p)):.3f} from the Habiro "
+               f"tr_M(p, q_0) ≈ {abs_tr_p_f:.3f} from the Habiro "
                f"witness is normalised at a scale where the implicit "
                f"E_0_calibrated ≈ {implicit_E0_calibrated:.1f} MeV would match "
                f"m_p, NOT the substrate-derived Planck-tick "
