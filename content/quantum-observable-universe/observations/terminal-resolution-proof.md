@@ -9,7 +9,7 @@ entirely from the Skein functional.  By
 each color-exchange crossing pair contributes
 $\mathcal{S}_{ab}(q) = (q\mu_a + q^{-1}\mu_b)/(q^{1/2} + q^{-1/2})$
 and the nucleon mass is the sum over its three pairs.  By
-([flavor-dressed mass from substrate split](#prop:flavor-dressed-mass-from-substrate-split)),
+([flavor-dressed mass from substrate split](../braids-and-knots/flavor-dressed-mass-from-substrate-split.md)),
 the proton and neutron formulas $m_p = \mathcal{S}_{\mathfrak{u}\mathfrak{u}} + 2\mathcal{S}_{\mathfrak{u}\mathfrak{d}}$
 and $m_n = 2\mathcal{S}_{\mathfrak{u}\mathfrak{d}} + \mathcal{S}_{\mathfrak{d}\mathfrak{d}}$
 together with the substrate-derived splitting
@@ -20,7 +20,7 @@ CODATA proton and neutron masses to within a $-0.53\%$ residual on the
 splitting $m_n - m_p$ (dominated by the dropped
 $O((\Delta m / M_N)^2)$ correction to
 [`prop:flavor-split-substrate`](#prop:flavor-split-substrate)).
-See [`rem:dressed-quark-numerology-at-q0`](#rem:dressed-quark-numerology-at-q0)
+See [`rem:dressed-quark-numerology-at-q0`](dressed-quark-numerology-at-q0.md)
 for the per-quark numerology and the closure tabulation.  By
 ([deuteron binding energy](#lem:deuteron-binding-energy)),
 smoothing the proton--neutron crossing of the six-component link $L_6$

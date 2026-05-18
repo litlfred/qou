@@ -10,7 +10,7 @@ $$
   \qquad
   \mu_{\mathfrak{d}} \;\approx\; 312.39\,\text{MeV},
   \qquad
-  \mu_{\mathfrak{d}} - \mu_{\mathfrak{u}} \;\approx\; 1.288\,\text{MeV}.
+  \mu_{\mathfrak{d}} - \mu_{\mathfrak{u}} \;\approx\; 1.286\,\text{MeV}.
 $$
 
 These are the values previously absorbed into the deprecated
@@ -20,7 +20,7 @@ CODATA).  Under the substrate-pure derivation they reduce to a
 **two-input** form: $M_N$ (anchored by CODATA) and $q_0$ (the
 substrate parameter).  The CODATA value $m_n - m_p \approx 1.293\,
 \text{MeV}$ is **no longer an input** — it is a prediction at
-$-0.4\%$ residual.
+$-0.53\%$ residual.
 
 ## Why $\bar\mu \approx M_N / 3$ (and the Skein cross-term shift)
 
@@ -67,7 +67,7 @@ $$
 consistent with $\bar\mu = (\mu_{\mathfrak{u}} + \mu_{\mathfrak{d}})/2
 = (311.10 + 312.39)/2 = 311.745\,\text{MeV}$ from the per-quark values
 quoted above.  The substrate split $\mu_{\mathfrak{d}} -
-\mu_{\mathfrak{u}}$ (1.288 MeV) is unaffected by the Skein cross-term
+\mu_{\mathfrak{u}}$ (1.286 MeV) is unaffected by the Skein cross-term
 adjustment, which acts uniformly on both flavors.
 
 ## Distance from the substrate bound
@@ -83,7 +83,7 @@ $$
   3.88\,\text{MeV},
 $$
 
-so the realised value $1.288\,\text{MeV}$ sits at about $33\%$ of
+so the realised value $1.286\,\text{MeV}$ sits at about $33\%$ of
 the bound.  Per the slack-ratio identity in
 [`thm:flavor-mass-splitting-bound`](../braids-and-knots/flavor-mass-splitting-bound.md)
 the closed form for this ratio is
@@ -115,7 +115,7 @@ nucleon doublet topology ($\mathfrak{u}\mathfrak{d}$).  An
 extension to higher-flavor braids requires either:
 
 - The strangelet topology
-  ([`def:strangelet-intro`](strangelet-intro.md))
+  ([`sec:strangelet-intro`](strangelet-intro.md))
   for $\mathfrak{s}$.
 - A flavor-dependent confinement-category extension for
   $\mathfrak{c}, \mathfrak{b}, \mathfrak{t}$ via the heavy-quark

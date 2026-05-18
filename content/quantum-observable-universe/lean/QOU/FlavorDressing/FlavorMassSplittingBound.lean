@@ -33,10 +33,14 @@ open Flavor
 /-- The substrate ratio `(q − 1)²(1 − q⁻⁴)/3` over the bound
     factor `ℏ_q² · h_q · [2]_q` equals exactly `1/3` for any
     non-zero `q`.  This algebraic identity is the engine of the
-    upper bound; proved at the rational-function level so it lifts
-    to any commutative ring carrying inverses where needed. -/
+    upper bound; stated over a generic `Field R` per the
+    repository's base-ring convention (CLAUDE.md §7c) — the
+    identity is a rational-function fact with no archimedean
+    content.  The downstream inequality `flavor_mass_splitting_bound`
+    keeps its `ℝ` specialisation because it uses ordering. -/
 -- Ref: [manuscript] braids-and-knots/flavor-mass-splitting-bound
-theorem substrate_to_bound_ratio (q : ℝ) (hq : q ≠ 0) (hq4 : q^4 ≠ 1) :
+theorem substrate_to_bound_ratio {R : Type*} [Field R]
+    (q : R) (hq : q ≠ 0) (hq4 : q^4 ≠ 1) :
     ((q - 1)^2 * (1 - q^(-4 : ℤ)) / 3)
     / (((q - 1)/q)^2 * (q - q⁻¹) * (q + q⁻¹))
       = 1 / 3 := by

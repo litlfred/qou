@@ -6,9 +6,18 @@ prop:
     μ_d − μ_u = M_N · (q-1)²(1 - q^{-4})/3 · (q^{1/2}+q^{-1/2})/(q+q^{-1})
               = (M_N / 3) · ℏ_q² · h_q · (q^{1/2}+q^{-1/2})
 
-at q = q_0 and M_N = (m_p + m_n)/2 (CODATA-anchored nucleon-mass
-scale; flagged as a calibration anchor pending its own substrate
-derivation — see `docs/audits/2026-05-17-1ppb-workplan-v4.md`).
+at q = q_0 and M_N = (m_p + m_n)/2.
+
+CLASS-A acknowledged-stub status (CLAUDE.md §canonical-discipline):
+M_N is anchored on CODATA m_p + m_n (the `_VALIDATION` constants in
+`codata_constants`), which is acknowledged to be a CAL-3-ish
+calibration input pending its own substrate derivation.  This is
+the same anchor used by the existing nucleon-mass-splitting
+production chain; eliminating it requires a substrate-pure
+derivation of M_N itself, which is the open Workplan-0b item
+tracked in `docs/audits/2026-05-17-1ppb-workplan-v4.md`.  The
+substrate-pure quantity this probe DERIVES is m_n − m_p; M_N
+remains an external scale.
 Emits a witness whose `contentBlock` references the new prop and
 whose assertion gates the residual against CODATA m_n − m_p to
 within 1% (measured residual at q_0 is −0.53%, dominated by the
@@ -88,6 +97,30 @@ def _substrate_split_factor(q: mp.mpf) -> mp.mpf:
 def main() -> int:
     mp.mp.dps = 50
 
+    # Construct the builder BEFORE the computation so durationMs
+    # captures actual runtime, not just the save step (per
+    # Copilot #696 review).
+    builder = (
+        WitnessBuilder(
+            "flavor-dressed-mass-from-substrate-split",
+            engine="mpmath",
+        )
+        .set_description(
+            "Substrate-pure derivation of μ_d − μ_u from "
+            "prop:flavor-split-substrate (substrate side) + "
+            "lem:pair-skein-mass-formula (Skein lift).  Reports "
+            "(a) the substrate-derived value, (b) closure vs CODATA "
+            "m_n − m_p, and (c) the realised-vs-bound ratio against "
+            "thm:flavor-mass-splitting-bound.  Calibration discipline: "
+            "M_N is anchored on CODATA m_p + m_n (validation-tagged, "
+            "Class-A acknowledged-stub pending Workplan-0b); "
+            "q_0 is the substrate parameter (CAL-2). m_n − m_p itself "
+            "is NOT an input — it is the derived quantity being "
+            "predicted."
+        )
+        .set_content_block("prop:flavor-dressed-mass-from-substrate-split")
+    )
+
     q0 = Q0_MP
     m_p_codata = mp.mpf(str(M_P_CODATA))
     m_n_codata = mp.mpf(str(M_N_CODATA))
@@ -129,23 +162,7 @@ def main() -> int:
     print()
 
     builder = (
-        WitnessBuilder(
-            "flavor-dressed-mass-from-substrate-split",
-            engine="mpmath",
-        )
-        .set_description(
-            "Substrate-pure derivation of μ_d − μ_u from "
-            "prop:flavor-split-substrate (substrate side) + "
-            "lem:pair-skein-mass-formula (Skein lift).  Reports "
-            "(a) the substrate-derived value, (b) closure vs CODATA "
-            "m_n − m_p, and (c) the realised-vs-bound ratio against "
-            "thm:flavor-mass-splitting-bound.  Calibration discipline: "
-            "M_N is anchored on CODATA m_p + m_n (validation-tagged); "
-            "q_0 is the substrate parameter (CAL-2). m_n − m_p itself "
-            "is NOT an input — it is the derived quantity being "
-            "predicted."
-        )
-        .set_content_block("prop:flavor-dressed-mass-from-substrate-split")
+        builder
         .add_parameter("q_0", mp.nstr(q0, 50))
         .add_parameter("M_N_MeV", mp.nstr(M_N, 50))
         .add_parameter(
@@ -189,7 +206,9 @@ def main() -> int:
         )
     )
     # add_upstream returns the body, not the builder — call separately.
-    builder.add_upstream("probe-flavor-split-substrate.witness.json")
+    # Pass an absolute path (HERE / ...) so the lookup works regardless
+    # of the script's CWD (per Copilot #696 review).
+    builder.add_upstream(str(HERE / "probe-flavor-split-substrate.witness.json"))
     builder = (
         builder
         .add_assertion(

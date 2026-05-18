@@ -69,7 +69,7 @@ substituting (1) gives the closed-form expression above.
 
 ## Calibration discipline
 
-The CODATA value $m_n - m_p = 1.29333251\,\text{MeV}$ is **no longer
+The CODATA value $m_n - m_p = 1.29333236\,\text{MeV}$ is **no longer
 an input** of the production formula under
 [`prop:flavor-split-substrate`](../observations/flavor-split-substrate.md).
 This proposition makes $\mu_{\mathfrak{d}} - \mu_{\mathfrak{u}}$ a
@@ -101,9 +101,9 @@ $$
     + \text{(Skein cross-terms)},
 $$
 
-so $\bar\mu \approx M_N / 3 \approx 312.7\,\text{MeV}$.  Combined
+so $\bar\mu \approx M_N / 3 \approx 312.97\,\text{MeV}$.  Combined
 with the substrate splitting, this gives
 $\mu_{\mathfrak{u}} \approx 311.10\,\text{MeV}$ and
 $\mu_{\mathfrak{d}} \approx 312.39\,\text{MeV}$; see the companion
-remark [`rem:dressed-quark-numerology-at-q0`](dressed-quark-numerology-at-q0.md)
+remark [`rem:dressed-quark-numerology-at-q0`](../observations/dressed-quark-numerology-at-q0.md)
 for the full numerology.

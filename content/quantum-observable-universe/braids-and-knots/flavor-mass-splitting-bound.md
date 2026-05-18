@@ -126,4 +126,4 @@ This theorem does not assert per-flavor bounds
 $0 < \mu_q < c \cdot M_N$.  Such bounds require additional
 non-substrate inputs (the nucleon-baryon sum rule for the average
 $\bar\mu$) and live in the open follow-up; see
-[`rem:dressed-quark-numerology-at-q0`](dressed-quark-numerology-at-q0.md).
+[`rem:dressed-quark-numerology-at-q0`](../observations/dressed-quark-numerology-at-q0.md).
