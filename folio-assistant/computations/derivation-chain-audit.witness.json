@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T18:13:12.076207+00:00",
-  "commitSha": "e12648a9ebbf12b3b99b9d31a74e871258d26dc8",
+  "computedAt": "2026-05-18T18:13:16.387862+00:00",
+  "commitSha": "d7e0cdb1f5f9cd476ce5d1f6ae696dfab783688d",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2406,6 +2406,7 @@
         "probe-flavor-split-substrate.witness.json",
         "probe-gamma-gamma-h3-psd-scan.witness.json",
         "probe-gamma-gamma-lr-embed-h6.witness.json",
+        "probe-h1-substrate-closure.witness.json",
         "probe-hoefsmit-content-selector.witness.json",
         "probe-lp-cost-dominant-partition.witness.json",
         "probe-milp-knot-operator-count.witness.json",

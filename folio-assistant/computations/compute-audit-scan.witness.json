@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T18:13:11.566676+00:00",
-  "commitSha": "e12648a9ebbf12b3b99b9d31a74e871258d26dc8",
+  "computedAt": "2026-05-18T18:13:15.997850+00:00",
+  "commitSha": "d7e0cdb1f5f9cd476ce5d1f6ae696dfab783688d",
   "assertions": [],
   "allPassed": true,
   "durationMs": 9,
@@ -13,7 +13,7 @@
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 576,
+    "files_scanned": 577,
     "patterns": [
       "P15",
       "P16",
@@ -28,7 +28,7 @@
       "P16": 118,
       "P21": 32,
       "P30": 97,
-      "P31": 27
+      "P31": 29
     },
     "top_files": [
       {
@@ -2261,6 +2261,20 @@
         "file": "probe_flavor_split_substrate.py",
         "line": 89,
         "snippet": "CODATA literal \"939.565421\"",
+        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
+      },
+      {
+        "pattern": "P31",
+        "file": "probe_h1_substrate_closure.py",
+        "line": 15,
+        "snippet": "CODATA literal \"0.51099895\"",
+        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
+      },
+      {
+        "pattern": "P31",
+        "file": "probe_h1_substrate_closure.py",
+        "line": 114,
+        "snippet": "CODATA literal \"938.272088\"",
         "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
       {
