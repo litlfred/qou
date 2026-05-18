@@ -27,7 +27,8 @@ from mpmath import fabs as mpabs
 
 from witness_base import WitnessBuilder
 
-mp.dps = 50
+from _precision import set_compute_dps, fmt  # noqa: E402
+set_compute_dps()
 
 TARGET_NS = [3, 4, 5, 6, 7, 10, 11, 12, 13]
 

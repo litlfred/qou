@@ -37,9 +37,11 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
+
+from _precision import set_compute_dps, fmt  # noqa: E402
 import mpmath as mp
 
-mp.mp.dps = 50
+set_compute_dps()
 
 from paper_six_term_isotope_sweep import (  # noqa: E402
     Q0,

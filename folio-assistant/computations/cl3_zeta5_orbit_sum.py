@@ -39,7 +39,8 @@ from mpmath import fabs as mpabs
 
 from witness_base import WitnessBuilder
 
-mp.dps = 50
+from _precision import set_compute_dps, fmt  # noqa: E402
+set_compute_dps()
 
 
 def main() -> None:

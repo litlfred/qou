@@ -32,7 +32,8 @@ from mpmath import mp, mpf, mpc, pi, exp, polylog, re, im, zeta, log, sqrt, pslq
 
 from witness_base import WitnessBuilder
 
-mp.dps = 50
+from _precision import set_compute_dps, fmt  # noqa: E402
+set_compute_dps()
 
 
 def pslq_search(target, basis_vals, basis_names, tol=None,
