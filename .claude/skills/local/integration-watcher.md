@@ -43,7 +43,7 @@ Three concrete children today:
 | **H. §5b prioritisation** | §5b | Domain-specific ranking rule for the backlog |
 | **I. §6 invariants** | §6 | Per-commit checks the watcher enforces on its own branch |
 
-Everything else — §1, §2, §4a, §4f, §5c-§5l, §7-§9, anti-patterns,
+Everything else — §1, §2, §4a, §4f, §5c-§5m, §7-§9, anti-patterns,
 checklist — is defined here and inherited verbatim.
 
 ## 0. Invocation as `/integration-watch [args]`
@@ -1078,14 +1078,14 @@ window — use it.
 
 **Parallel-by-default decisions:**
 
-| Idle activity | Sequential (anti-pattern) | Parallel (mandatory when ≥ 2 items) |
+| Idle activity | Sequential (anti-pattern) | Parallel (mandatory when ≥ 2 items, capped at 4 per round) |
 |---------------|---------------------------|-------------------------------------|
-| Backlog sweep (§5c) | One block at a time | **One `Agent(Explore)` per block in a single tool-call batch** |
-| Sibling-PR triage (§coordinate §7) | Walk PRs serially | **One agent per PR**, dispatched in one batch |
-| Prepare-merge sweep on multiple PRs | One PR at a time | **One agent per PR**, each running its own §3a/§3b/one-voice pass |
-| Cross-criterion §3a derivation-completion sweep | One criterion's missed range serially | **One agent per criterion**, each scanning its slice of `reviewed_up_to[*]..origin/main` |
+| Backlog sweep (§5c) | One block at a time | **One read-only `Agent(Explore)` per block in a single tool-call batch.** Per-block agents must NOT write to `todos/${NAME}-queue.json` — they return findings; the foreground aggregator (Rule 4) does the single queue write. |
+| Sibling-PR triage (`coordinate §7`) | Walk PRs serially | **One agent per PR**, dispatched in one batch (read-only triage, aggregated by foreground) |
+| Prepare-merge sweep on multiple PRs | One PR at a time | **One agent per PR**, each running its own §3a/§3b/one-voice pass (read-only; foreground consolidates) |
+| Cross-criterion §3a derivation-completion sweep | One criterion's missed range serially | **One agent per criterion**, each scanning its slice of `reviewed_up_to[*]..origin/main` (read-only; foreground writes the per-criterion checkpoint) |
 | §4b dispatch to QA specialists | (already required parallel per §4b — keep it) | (same) |
-| §4d auto-discharge attempts on multiple queue items | One sorry / one violation at a time | **One agent per item** if the items don't share state |
+| §4d auto-discharge attempts on multiple queue items | One sorry / one violation at a time | **One agent per independent item** (4-agent cap; items sharing state must serialize) |
 
 **Anti-parallel cases** (must run sequentially):
 
@@ -1100,14 +1100,14 @@ window — use it.
 2. **`run_in_background` — pick by aggregation need:**
    - `false` (foreground waits, default) when you want **same-turn atomic aggregation**: prepare-merge multi-PR sweep, parallel triage that posts a single consolidated status comment. The foreground turn blocks until all parallel agents return, then writes one consolidated queue update.
    - `true` (background, async) when the **watcher will continue running anyway** and same-turn aggregation isn't required: idle backlog sweeps, long-running audits. Results arrive as separate notifications; queue updates happen as each agent completes (with care to avoid same-file write races).
-3. **Cap parallelism at 4 agents per round** — beyond that, queue the rest for the next idle window. With `run_in_background: true`, also re-check the cap on each subsequent idle TICK before launching more so the in-flight count stays ≤ 4.
+3. **Cap parallelism at 4 agents per round** — beyond that, queue the rest for the next idle window. Avoids context-overflow on the dispatcher's side. With `run_in_background: true`, also re-check the cap on each subsequent idle TICK before launching more so the in-flight count stays ≤ 4.
 4. **Aggregate results** — after all parallel agents return, consolidate findings into a single queue update (single write). With `false` this happens in the same turn; with `true` it happens in a later turn after the last completion notification.
 5. **Don't dispatch parallel work while an author-ask is pending** — the user's reply may pivot the priorities.
 
 **Failure modes this guards against:**
 
 - ❌ Idle watcher walking the backlog one item at a time, finishing 1 audit per 30 s when 4 could finish in the same 30 s.
-- ❌ Per-PR triage taking 5 minutes for 5 PRs when 5 parallel agents finish in ~90 s.
+- ❌ Per-PR triage taking 5 minutes for 5 PRs when 4 parallel agents finish 4 in ~90 s and the 5th is queued for the next idle window (per the 4-agent cap above).
 - ❌ Dispatching one prepare-merge sweep per response, requiring N round-trips for N PRs.
 
 **Default invariant:** in an idle window with K ≥ 2 independent tasks, the watcher MUST dispatch them in parallel unless one of the anti-parallel cases above applies.
