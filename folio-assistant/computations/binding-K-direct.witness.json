@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-18T17:32:49.751257+00:00",
-  "commitSha": "78e889115cacec6f1f7e370b571171863f8a2558",
+  "computedAt": "2026-05-18T05:05:07.936486+00:00",
+  "commitSha": "260522a6b92529e5656455e73d825392f847f5cb",
   "assertions": [
     {
       "name": "status_report_emitted",
@@ -13,13 +13,13 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 10,
   "computation": "binding-K-direct",
   "scriptFile": "binding_K_direct.py",
-  "scriptHash": "7add8399c8a9",
-  "scriptCommitSha": "bb68fc2a7785a02c3955014ff69fa223cf14b753",
+  "scriptHash": "c7b5c4ff720a",
+  "scriptCommitSha": "c9c2f8cebd49787668da7f618cdbd940aae9d951",
   "description": "Direct binding-energy computation for atomic mass.  Surfaces the physical content of the ρ_K formula by removing the ρ_K^LO tautology (which has the |tr_M| factor cancel against itself).  Binding(K) = m_e · Σ_λ y_λ(q) χ^λ(β_K) Δ_λ(K) — the second-order correction that IS the binding energy.  Requires Δ_λ values from the in-flight derivation race (currently open).  When delta-lambda-witness.json is absent, this script reports per-atom status only.",
-  "contentBlock": "prop:rho-k-graded-expansion",
+  "contentBlock": "prop:rho-k-h3a-refinement",
   "auditOnly": "docs/audits/2026-05-09-kite-tail-reconciliation.md",
   "parameters": {
     "m_e_MeV": "0.51099895",
@@ -93,7 +93,7 @@
         "constituent_MeV": "3755.675017360000000000000000000000000000",
         "binding_codata_MeV": "-28.29563936000000000000000000000000000000",
         "status": "delta_lambda_unavailable",
-        "abs_tr_M": "0.9673237505194689789368375186313429980439"
+        "abs_tr_M": "0.96732375051946897893683751863134299804348930227964"
       }
     ],
     "formula": "Binding(K) = m_e * sum_lambda(y_lambda(q) * chi^lambda(beta_K) * Delta_lambda(K))",
@@ -109,11 +109,11 @@
       },
       {
         "path": "atomic-tr-m-helium4.witness.json",
-        "sha256": "5f18f03ad90dbb7cef767a2b0b27ba790560757e9c18301f4382db09aeeea8ad",
-        "size_bytes": 4113,
-        "commitSha": "c2a01939456cc60fa339516c73527a1004c0e398",
-        "scriptCommitSha": "c2a01939456cc60fa339516c73527a1004c0e398",
-        "computedAt": "2026-05-18T14:45:17.933622+00:00"
+        "sha256": "76844c025edc6cf6226b58c1b843c16333d91c43513a19fe23013cfa1a9246b5",
+        "size_bytes": 4174,
+        "commitSha": "ae0e395343871f30feb34eaa973a474d4e5fc695",
+        "scriptCommitSha": "ceb6104f7e57111dd38a2226030e5fba0cf82112",
+        "computedAt": "2026-05-09T01:15:59.857893+00:00"
       },
       {
         "path": "atomic-tr-m-wenzl-bridge.witness.json",

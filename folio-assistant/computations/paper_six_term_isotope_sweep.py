@@ -1308,8 +1308,13 @@ if __name__ == "__main__":
         # Hash records of every transitively-consumed upstream witness.
         # `witness_dependency_drift.py` walks this list and reports
         # staleness when an upstream is rerun without this sweep being
-        # regenerated.
-        "upstream_witness_hashes": _upstream_hashes,
+        # regenerated.  Placed under `derivation_inputs` so the
+        # validator's `derivation_inputs.upstream_witness_hashes` path
+        # picks it up (per Copilot review on PR #757 — top-level
+        # placement is invisible to the validator).
+        "derivation_inputs": {
+            "upstream_witness_hashes": _upstream_hashes,
+        },
         # The Phase-3 substrate-Δm benchmark (PR #696 D3 lift) lives
         # entirely in the sibling probe `probe_flavor_dressed_mass_split.py`
         # / `flavor-dressed-mass-from-substrate-split.witness.json`.
