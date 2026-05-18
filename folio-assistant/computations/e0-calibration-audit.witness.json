@@ -2,7 +2,7 @@
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "computation": "e0-calibration-audit",
   "description": "Audit of E_0 / Q_β(n) calibration constants across folio-assistant/computations. Reports value-precision drift, anchor-of-pinning violations vs CAL-3, and the PDG-derived uncertainty floor on every E_0-dependent quantity.",
-  "computedAt": "2026-05-18T04:42:51.751152+00:00",
+  "computedAt": "2026-05-18T15:32:42.376959+00:00",
   "reference_blocks": [
     "prop:three-calibration-inputs",
     "rem:calibration-inputs"
@@ -193,14 +193,6 @@
         "match": "0.78233341",
         "context": "print(\"  Q₀ = m_n - m_p - m_e = 0.78233341 MeV (free neutron Q-value)\")",
         "kind": "doc"
-      },
-      {
-        "file": "folio-assistant/computations/lambda_scale_proof_step5_skein_anchor.py",
-        "line": 55,
-        "pattern": "literal_0_78233341",
-        "match": "0.78233341",
-        "context": "Q_NEUTRON_MEV,  # = m_n - m_p - m_e ≈ 0.78233341 MeV",
-        "kind": "active"
       },
       {
         "file": "folio-assistant/computations/light_isotope_sweep.py",
