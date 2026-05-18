@@ -253,7 +253,7 @@ authored.  Each entry resolves or supersedes an audit finding above:
 
 | Commit / PR | Effect on this audit |
 |-------------|----------------------|
-| **PR #683** (`dc0f9394`, knot-fusion Step 2 + m_p Item A + Items C/Q6) | Resolves the I13 ⁵Li..⁹Be coverage gap in §3.2.  Rust χ^λ producer (`canonical_tr_m_via_rust.py`) now provides the missing T1 entries; 4-way 1ppb gate covers 8 atoms (D, T, ³He, ⁴He, ⁶Li, ⁷Li, ⁷Be, ⁸Be). |
+| **PR #683** (`dc0f9394`, knot-fusion Step 2 + m_p Item A + Items C/Q6) | Partial progress on the I13 ⁵Li..⁹Be coverage gap in §3.2.  Rust χ^λ producer (`canonical_tr_m_via_rust.py`) lands with scope `{p, n, D, T, ³He}` per the PR body; A=5..9 atom list extension is the follow-up.  4-way 1ppb gate currently covers D / T / ³He / ⁴He (4 atoms). |
 | `11e0cb56` (Borromean tower wired into m_p chain) | Resolves the ¹H "PROBE-ONLY" status in §2.1.  ¹H now lifts to `derived` via the conjectural Borromean tower formula. |
 | **PR #695** (`y-lambda-n18-scaling`) `3d3f3833` | Extends y_λ table coverage from n=12 → n=30; orthogonal to this audit's scope. |
 | `df3bfffe` / `dc3a8550` (Scale-gap §11 RESOLUTION via Borromean tower formula at 0.25 ppm) | New result not in the audit; relevant to the m_p production chain.  Did not exist at audit-author time. |
@@ -263,7 +263,7 @@ authored.  Each entry resolves or supersedes an audit finding above:
 
 **Net effect on §5 TODOs (ranked by leverage × tractability):**
 
-- Item 4 (extend T1 source to A=5..9 atoms) — **CLOSED** by PR #683.
+- Item 4 (extend T1 source to A=5..9 atoms) — **partial** via PR #683 (Rust producer landed with `{p, n, D, T, ³He}` scope); atom-list extension to A=5..9 still pending.
 - All other items unchanged.  Item 5.1 (`prop:flavor-split-substrate`
   wiring) is now being delivered by PR #696 (companion to this PR
   #693); the three-phase delivery template documented in the

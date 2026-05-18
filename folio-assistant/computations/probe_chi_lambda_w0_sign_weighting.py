@@ -38,6 +38,7 @@ import sys
 from pathlib import Path
 
 import mpmath as mp
+import sympy as sp
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
@@ -63,9 +64,33 @@ def main() -> int:
     upstream = _load_upstream()
     results = upstream.get("results", upstream.get("data", {}))
 
+    # Defensive: surface upstream-witness-shape drift early with a
+    # message pointing at the exact path (I5/I6 in the watcher's
+    # pattern list).  Without this, a missing `per_lambda` /
+    # `empirical_c{5,6}_reference` raises a bare `KeyError` with no
+    # hint that the producer's output schema has changed.
+    for key in ("per_lambda", "empirical_c5_reference", "empirical_c6_reference"):
+        if key not in results:
+            raise KeyError(
+                f"upstream witness {UPSTREAM} is missing required key "
+                f"'{key}' under 'results' (or 'data'). Re-run the "
+                f"per-wedderburn-block-ck producer; if the field name "
+                f"has changed upstream, update this probe to match."
+            )
+
     per_lambda = results["per_lambda"]
-    emp_c5 = mp.mpf(str(results["empirical_c5_reference"]))
-    emp_c6 = mp.mpf(str(results["empirical_c6_reference"]))
+    # Route the two empirical references through `_coeff` (defined
+    # below) so they handle Sympy-Rational-string drift the same way
+    # the per-λ coefficients do.  Today they're stored as floats —
+    # this is future-proofing per Copilot #693's suppressed comment.
+    def _emp_ref(key: str) -> mp.mpf:
+        v = results[key]
+        if isinstance(v, str) and "/" in v:
+            rat = sp.Rational(v)
+            return mp.mpf(int(rat.p)) / mp.mpf(int(rat.q))
+        return mp.mpf(str(v))
+    emp_c5 = _emp_ref("empirical_c5_reference")
+    emp_c6 = _emp_ref("empirical_c6_reference")
 
     # Per-irrep coefficients at ε^10 (= c_5 in the prop's notation) and
     # ε^12 (= c_6).  Prefer the symbolic ("c10_diff_symbolic") field when
@@ -74,12 +99,7 @@ def main() -> int:
     # like "1/4", "65/4", "533/2" — `mp.mpf(str(...))` cannot parse
     # fraction strings (raises `ValueError`), so we go through
     # `sympy.Rational` first and lift to mpmath via the `(p, q)`
-    # constructor.  This is the actual I8 fix (per Copilot #693
-    # follow-up): the previous `mp.mpf(str(sym))` would have crashed
-    # on next clean run; values happened to look correct because the
-    # currently-stored rationals are dyadic and the f64 cast was exact.
-    import sympy as sp  # noqa: E402
-
+    # constructor.
     def _coeff(v: dict, sym_key: str, f64_key: str) -> mp.mpf:
         sym = v.get(sym_key)
         if sym is not None:
