@@ -25,7 +25,7 @@ since E_0^full / E_0^(N=0) ≈ 1.01x at q_0).
 
 The production mass formula is **not** `m = |tr_M| · E_0` (single
 constant). Per
-[`atomic_mass_via_rho_k.py:363`](../../folio-assistant/computations/atomic_mass_via_rho_k.py):
+[`atomic_mass_via_rho_k.py:349`](../../folio-assistant/computations/atomic_mass_via_rho_k.py):
 
 ```python
 # M(K) = ρ_K · m_e · |tr_M(K)|
@@ -71,7 +71,7 @@ and were never supposed to be equal.
 
 ## Why the round-2 script's setup was misleading
 
-`probe_neutron_gap_round2.py:96-100`:
+`probe_neutron_gap_round2.py:97-104`:
 
 ```python
 E0 = mp.mpf(str(M_P_MEV)) / mp.fabs(tr_p)
@@ -186,7 +186,7 @@ err = (M_pred_p_substrate - m_p_CODATA) / m_p_CODATA
 ## Cross-references
 
 - [`prop:categorical-mass-markov`](../../content/quantum-observable-universe/braids-and-knots/categorical-mass-markov.md)
-- [`prop:atomic-mass-via-rho-k`](../../content/quantum-observable-universe/braids-and-knots/atomic-mass-via-rho-k.md)
+- [`prop:rho-k-h3a-refinement`](../../content/quantum-observable-universe/braids-and-knots/rho-k-h3a-refinement.md)
 - [`derived_masses.py`](../../folio-assistant/computations/derived_masses.py)
   `e_0_n0_mev`, `e_0_full_mev` definitions
 - [`atomic_mass_via_rho_k.py`](../../folio-assistant/computations/atomic_mass_via_rho_k.py)
