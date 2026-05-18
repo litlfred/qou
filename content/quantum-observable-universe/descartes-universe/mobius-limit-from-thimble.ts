@@ -3,9 +3,9 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:mobius-limit-from-thimble",
   title:
-    "The integration limit $a = (4-q)/(4q+3)$ is the steepest-descent re-entry point on $\\mathbb{R}$",
+    "The integration limit $a(q) = (4-q)/(4q+3)$ is determined by the color-tube cubic's Galois data",
   chapter: "descartes-universe",
-  cites: ["witten2011"],
+  cites: ["witten2011", "pham1965", "arnold-gusein-zade-varchenko1988"],
   uses: [
     "def:picard-lefschetz-thimble",
     "prop:mobius-golden-fixed-points",

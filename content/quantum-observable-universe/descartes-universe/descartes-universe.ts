@@ -393,6 +393,7 @@ export default chapter({
         "golden-quartet-galois",
         "moduli-symmetry-d4",
         "mobius-limit-from-thimble",
+        "morse-wall-q-moduli",
         // PL ↔ categorical mass-tower bridges (archimedean split kept strict)
         "sw-period-thimble-equivalence",
         "jet-gb-pl-correspondence",
