@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T04:09:03.449981+00:00",
-  "commitSha": "d24a01b2edf8048ac41548b8d7ca7aa82bc98763",
+  "computedAt": "2026-05-18T04:16:45.716090+00:00",
+  "commitSha": "aaea1c2e624b9f9f05126deaf7844ab3a906f841",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 8,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "d9aa432d54f9",
@@ -13,7 +13,7 @@
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 535,
+    "files_scanned": 536,
     "patterns": [
       "P15",
       "P16",
@@ -564,7 +564,7 @@
       {
         "pattern": "P31",
         "file": "delta_lambda_empirical_tabulation.py",
-        "line": 85,
+        "line": 87,
         "snippet": "CODATA literal \"938.27208816\"",
         "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
