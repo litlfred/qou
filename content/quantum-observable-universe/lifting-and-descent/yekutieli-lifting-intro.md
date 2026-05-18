@@ -1,7 +1,7 @@
 _[draft]_ Granted descent Preliminaries, what does categorical Lifting and Quantum Characteristic Classes look like? This section answers concretely.
 
-The section opens with **Categorical Lifting Condition** — the central definition the rest of categorical Lifting and Quantum Characteristic Classes hangs on. From there we work through 4 formal definitions and 4 structural propositions, in the order the chapter’s later arguments will call on them. The few remarks and examples interspersed are not asides; they pin the abstract definitions to the concrete objects we will actually compute with.
+The section opens with **Categorical Lifting Condition** (def), builds through **Categorical lifting condition holds in the brane tower** (prop) as the central structural result, and closes with **Motivic perpetual obstruction: $\chi^{\mathrm{mot}}_A$ is non-trivial at almost…** (conj) — the concrete fact the next section will use.
 
-What this section gives us is the input the next section will consume. Once we have the structural account of categorical Lifting and Quantum Characteristic Classes in hand, the work on **Direct Limit Algebra** below treats the present material as fixed and turns to the next layer of the argument.
+What carries forward into the next section, **Direct Limit Algebra**, is **Motivic perpetual obstruction: $\chi^{\mathrm{mot}}_A$ is non-trivial at almost…** (conj) — the form of the result that next section treats as given.
 
 _(draft.)_

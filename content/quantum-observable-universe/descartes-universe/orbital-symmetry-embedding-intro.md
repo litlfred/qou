@@ -1,5 +1,5 @@
-_[draft]_ Definitions earn their keep by what they cover. This section grounds orbital Symmetry and Cohomological Embedding in concrete cases; each example tests a different feature of the general theory.
+_[draft]_ Definitions earn their keep by what they cover. This section grounds orbital Symmetry and Cohomological Embedding in concrete cases.
 
-The first formal move is **The orbital space at shell $n$ is the space of framing-$k$ sections of the normal bundle**, the result that organises everything else here. The section is propositional: 3 structural results stack on one another, each used in the next, with the remarks below clarifying which hypotheses can be relaxed and which cannot.
+We open at **The orbital space at shell $n$ is the space of framing-$k$ sections of the…** (prop). **Cohomological embedding: torus knot representations exhaust $H^1(\Sigma_g)$** (prop) is the central proposition — the rest of the section hangs on it. The closing block, **Term-by-term interpretation of the trivial knot operator on colored photons** (rem), packages the result for downstream use.
 
 _(draft.)_

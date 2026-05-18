@@ -1,7 +1,7 @@
-_[draft]_ Abstract structure is not an argument for itself. We pick examples that pin down nuclear stability and decay — one to fix the typical behaviour, the others to mark the edges where the theory does and does not apply.
+_[draft]_ Abstract structure is not an argument for itself. We pick examples that pin down nuclear stability and decay.
 
-The first formal move is **Beta decay as a Skein crossing change on the Gröbner normal form**, the result that organises everything else here. The section is propositional: 7 structural results stack on one another, each used in the next, with the remarks below clarifying which hypotheses can be relaxed and which cannot.
+Three milestones organise the section: **Beta decay as a Skein crossing change on the Gröbner normal form** (def) sets the object, **Parity non-conservation from the Skein relation at $q \neq 1$** (prop) is the structural fact it forces, and **Shell corrections from Skein polynomial factorization of the multi-nucleon link** (conj) is the version we will actually compute with.
 
-What this section gives us is the input the next section will consume. Once we have the structural account of nuclear stability and decay in hand, the work on **Atomic shells and the periodic table** below treats the present material as fixed and turns to the next layer of the argument.
+What carries forward into the next section, **Atomic shells and the periodic table**, is **Shell corrections from Skein polynomial factorization of the multi-nucleon link** (conj) — the form of the result that next section treats as given.
 
 _(draft.)_

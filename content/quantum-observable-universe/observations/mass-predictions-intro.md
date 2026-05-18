@@ -1,8 +1,8 @@
-_[draft]_ The objects this section commits to are mass Predictions and CODATA Comparison. We give them the formal definitions and structural data the downstream arguments will operate on.
+_[draft]_ The objects this section commits to are mass Predictions and CODATA Comparison. We give them the formal definitions the downstream arguments will operate on.
 
-The first formal move is **The stability cubic at $q = 1.1097$: lattice points and the nuclear chart**, the result that organises everything else here. The section is propositional: 6 structural results stack on one another, each used in the next, with the remarks below clarifying which hypotheses can be relaxed and which cannot.
+**The stability cubic at $q = 1.1097$: lattice points and the nuclear chart** (rem) fixes the data, **Neutron--proton mass splitting from quark crossing change** (prop) extracts the structural content, and **Electroweak boson masses from vertex $\delta q$ at the CODATA substrate** (rem) states it in the form the chapter needs.
 
-What this section gives us is the input the next section will consume. Once we have the structural account of mass Predictions and CODATA Comparison in hand, the work on **Beta Decay** below treats the present material as fixed and turns to the next layer of the argument.
+What carries forward into the next section, **Beta Decay**, is **Electroweak boson masses from vertex $\delta q$ at the CODATA substrate** (rem) — the form of the result that next section treats as given.
 
 One final note. Several of the constructions here have natural extensions that we deliberately do not pursue — the section length is set by what the rest of the chapter actually consumes, not by the structural completeness of the local theory.
 

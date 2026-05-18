@@ -1,5 +1,5 @@
-_[draft]_ Time for the cases. Turbulence and acoustics is the umbrella; the examples are the test points that make the umbrella useful.
+_[draft]_ Time for the cases. Turbulence and acoustics is the umbrella; the examples are the test points.
 
-The first formal move is **$q$-deformed energy cascade and modified Kolmogorov spectrum**, the result that organises everything else here. The section is propositional: 3 structural results stack on one another, each used in the next, with the remarks below clarifying which hypotheses can be relaxed and which cannot.
+**$q$-deformed energy cascade and modified Kolmogorov spectrum** (prop) fixes the data, **Kelvin wave dispersion from the $q$-Laplacian eigenvalue problem** (prop) extracts the structural content, and **Acoustic horizon formation and gravitational emergence** (prop) states it in the form the chapter needs.
 
 _(draft.)_

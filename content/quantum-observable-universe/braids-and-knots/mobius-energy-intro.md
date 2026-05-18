@@ -1,5 +1,5 @@
-_[draft]_ We turn now to categorical Möbius energy and self-avoidance. The blocks below give the structural results in the order the argument needs them.
+_[draft]_ We turn now to categorical Möbius energy and self-avoidance.
 
-The first formal move is **Categorical recovery of Möbius energy**, the result that organises everything else here. The section is propositional: 4 structural results stack on one another, each used in the next, with the remarks below clarifying which hypotheses can be relaxed and which cannot.
+Three milestones organise the section: **Categorical recovery of Möbius energy** (prop) sets the object, **Proof of Categorical recovery of Möbius energy** (proo) is the structural fact it forces, and **Proof of Obstruction to self-intersection** (proo) is the version we will actually compute with.
 
 _(draft.)_

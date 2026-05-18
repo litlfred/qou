@@ -1,8 +1,8 @@
-_[draft]_ Nuclear Binding and Beta Stability is the next object we need. We define it, derive its first structural properties, and check that it does what atom, Isotope, and Confinement Levels promised it would.
+_[draft]_ Nuclear Binding and Beta Stability is the next object we need.
 
-The first formal move is **Confined knot binding mechanism: character ratio decomposition per jet level**, the result that organises everything else here. The section is propositional: 85 structural results stack on one another, each used in the next, with the remarks below clarifying which hypotheses can be relaxed and which cannot.
+The section opens with **Confined knot binding mechanism: character ratio decomposition per jet level** (prop), builds through **Universal Frobenius co-dimension trace: $\tau(C_{\dim_q}) = \sum_\lambda…** (thm) as the central structural result, and closes with **Derivation, verification, and limiting behaviour of beta-stability** (rem) — the concrete fact the next section will use.
 
-What this section gives us is the input the next section will consume. Once we have the structural account of nuclear Binding and Beta Stability in hand, the work on **Pre-Archimedean Derivation Chain and Audit** below treats the present material as fixed and turns to the next layer of the argument.
+What carries forward into the next section, **Pre-Archimedean Derivation Chain and Audit**, is **Derivation, verification, and limiting behaviour of beta-stability** (rem) — the form of the result that next section treats as given.
 
 A subtlety to watch: several of the structural results here come in two flavours, a generic-ring version (over a `CommRing R`) and an archimedean specialisation (over the real numbers). Where both versions are stated, they are stated separately so the generic one can be used outside its archimedean context.
 

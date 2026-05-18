@@ -1,7 +1,7 @@
-_[draft]_ The narrative pauses; the definitions take over. Differential structures and gauge actions gets its full structural account here, in the form the rest of the chapter consumes.
+_[draft]_ The narrative pauses; the definitions take over. Differential structures and gauge actions gets its full structural account here.
 
-The first formal move is **Categorical Reeb derivation**, the result that organises everything else here. The section is propositional: 6 structural results stack on one another, each used in the next, with the remarks below clarifying which hypotheses can be relaxed and which cannot.
+Three milestones organise the section: **Categorical Reeb derivation** (def) sets the object, **Fibre functors as an affine atlas with $G$-torsor transitions** (prop) is the structural fact it forces, and **Connection and curvature on $\mathcal{O}(\mathrm{SU}(2))$** (ex) is the version we will actually compute with.
 
-What this section gives us is the input the next section will consume. Once we have the structural account of differential structures and gauge actions in hand, the work on **Substrate parameter and deformation** below treats the present material as fixed and turns to the next layer of the argument.
+What carries forward into the next section, **Substrate parameter and deformation**, is **Connection and curvature on $\mathcal{O}(\mathrm{SU}(2))$** (ex) — the form of the result that next section treats as given.
 
 _(draft.)_

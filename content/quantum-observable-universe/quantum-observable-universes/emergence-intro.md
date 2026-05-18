@@ -1,7 +1,7 @@
-_[draft]_ Time for the cases. Emergence from observability is the umbrella; the examples are the test points that make the umbrella useful.
+_[draft]_ Time for the cases. Emergence from observability is the umbrella; the examples are the test points.
 
-The first formal move is **Frobenius relation for $\\mathrm{SU}(2)$**, the result that organises everything else here. The section is propositional: 5 structural results stack on one another, each used in the next, with the remarks below clarifying which hypotheses can be relaxed and which cannot.
+We open at **Frobenius relation for $\mathrm{SU}(2)$** (ex). **Emergence of the gauge group** (thm) is the central proposition — the rest of the section hangs on it. The closing block, **The spin-$\tfrac{1}{2}$ representation $V_{1/2}$** (rem), packages the result for downstream use.
 
-What this section gives us is the input the next section will consume. Once we have the structural account of emergence from observability in hand, the work on **Maximal torus and weight decomposition** below treats the present material as fixed and turns to the next layer of the argument.
+What carries forward into the next section, **Maximal torus and weight decomposition**, is **The spin-$\tfrac{1}{2}$ representation $V_{1/2}$** (rem) — the form of the result that next section treats as given.
 
 _(draft.)_

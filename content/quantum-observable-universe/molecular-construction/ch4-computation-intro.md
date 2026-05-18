@@ -1,3 +1,3 @@
-_[draft]_ We pause the structural development to look at instances. The examples of tetrahedral bonding from braid optimization below are not illustrations — they are the test that the structure built so far is doing what we claimed.
+_[draft]_ We pause the structural development to look at instances of tetrahedral bonding from braid optimization.
 
 _(draft.)_

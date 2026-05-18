@@ -1,5 +1,5 @@
-_[draft]_ Transfer Matrix and Topological Mass is the next object we need. We define it, derive its first structural properties, and check that it does what vertex Factorisation and the Markov Trace promised it would.
+_[draft]_ Transfer Matrix and Topological Mass is the next object we need.
 
-The first formal move is **Categorical transfer matrix**, the result that organises everything else here. The section is propositional: 4 structural results stack on one another, each used in the next, with the remarks below clarifying which hypotheses can be relaxed and which cannot.
+**Categorical transfer matrix** (def) fixes the data, **Topological mass formula (Archimedean)** (prop) extracts the structural content, and **Topological ansatz and field character** (rem) states it in the form the chapter needs.
 
 _(draft.)_

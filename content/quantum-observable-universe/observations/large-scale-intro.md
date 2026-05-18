@@ -1,5 +1,5 @@
-_[draft]_ Time for the cases. Large-Scale Observations is the umbrella; the examples are the test points that make the umbrella useful.
+_[draft]_ Time for the cases. Large-Scale Observations is the umbrella; the examples are the test points.
 
-We open with **CMB non-uniformity from $q$-torsion** and develop 5 interpretive remarks or worked examples around it. The role of each remark is fixed in advance — some anchor notation, some make a definition concrete, and the small number of formal results in the section give the remarks the structural backbone they need.
+We open at **CMB non-uniformity from $q$-torsion** (rem). **Newton's $G$ as the universal-residue prefactor of the unified mass formula** (prop) is the central proposition — the rest of the section hangs on it. The closing block, **Physical signatures of the Navier--Stokes blow-up: intermittency, GRBs, CMB…** (rem), packages the result for downstream use.
 
 _(draft.)_

@@ -1,7 +1,5 @@
-_[draft]_ Abstract structure is not an argument for itself. We pick examples that pin down approaches and open problems — one to fix the typical behaviour, the others to mark the edges where the theory does and does not apply.
+_[draft]_ Abstract structure is not an argument for itself. We pick examples that pin down approaches and open problems.
 
-The first formal move is **Regularity breakdown at $q = 1$: the classical limit as a phase transition**, the result that organises everything else here. The section is propositional: 4 structural results stack on one another, each used in the next, with the remarks below clarifying which hypotheses can be relaxed and which cannot.
-
-What this section gives us is the structural input the chapter’s final result will consume. After this we leave approaches and open problems behind in its current form and use it as a black box.
+Three milestones organise the section: **Regularity breakdown at $q = 1$: the classical limit as a phase transition** (conj) sets the object, **Universality of the critical exponent: dependence on $\chi(A)$ alone** (prop) is the structural fact it forces, and **The quantum Navier--Stokes programme: from categorical regularity to the Clay…** (rem) is the version we will actually compute with.
 
 _(draft.)_

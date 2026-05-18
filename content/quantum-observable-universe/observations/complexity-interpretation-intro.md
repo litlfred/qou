@@ -1,5 +1,5 @@
-_[draft]_ We pause the structural development to look at instances. The examples of complexity and Interpretation below are not illustrations — they are the test that the structure built so far is doing what we claimed.
+_[draft]_ We pause the structural development to look at instances of complexity and Interpretation.
 
-We open with **Fermion--boson sectors as chart-glue data of $\\mathbb{P}_q(V)$** and develop 8 interpretive remarks or worked examples around it. The role of each remark is fixed in advance — some anchor notation, some make a definition concrete, and the small number of formal results in the section give the remarks the structural backbone they need.
+We open at **Fermion--boson sectors as chart-glue data of $\mathbb{P}_q(V)$** (rem). **Crossing energy decomposes into strong and Coulomb channels** (prop) is the central proposition — the rest of the section hangs on it. The closing block, **Electrons are immortal: no beta decay for elementary trefoils** (rem), packages the result for downstream use.
 
 _(draft.)_

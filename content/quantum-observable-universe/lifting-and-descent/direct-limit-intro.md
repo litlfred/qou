@@ -1,5 +1,5 @@
-_[draft]_ We pause the structural development to look at instances. The examples of direct Limit Algebra below are not illustrations — they are the test that the structure built so far is doing what we claimed.
+_[draft]_ We pause the structural development to look at instances of direct Limit Algebra.
 
-The first formal move is **Quantum Observable Universe as Direct Limit**, the result that organises everything else here. The section is propositional: 3 structural results stack on one another, each used in the next, with the remarks below clarifying which hypotheses can be relaxed and which cannot.
+We open at **Quantum Observable Universe as Direct Limit** (def). **Existence and Uniqueness of the Vacuum State** (prop) is the central proposition — the rest of the section hangs on it. The closing block, **The admissible ordering extends through the jet tower** (prop), packages the result for downstream use.
 
 _(draft.)_

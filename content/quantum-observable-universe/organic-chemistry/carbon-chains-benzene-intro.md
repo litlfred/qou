@@ -1,3 +1,3 @@
-_[draft]_ We pause the structural development to look at instances. The examples of carbon chains and benzene below are not illustrations — they are the test that the structure built so far is doing what we claimed.
+_[draft]_ We pause the structural development to look at instances of carbon chains and benzene.
 
 _(draft.)_
