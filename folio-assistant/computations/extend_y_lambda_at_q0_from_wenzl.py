@@ -91,12 +91,38 @@ def main() -> int:
         added.append(n)
         print(f"  added n={n}: {len(rows)} partitions")
 
-    if not added:
-        print("  no new entries (cache already covers every n in the source)")
+    # Keep the witness metadata self-consistent with the by_n data
+    # (per Gemini review on PR #691): n_values, n_total_partitions,
+    # and description all need to reflect the current ceiling, not
+    # the original n=12 boundary baked into the legacy witness.
+    # Runs unconditionally (even when `added` is empty) so a stale
+    # witness from a prior partial run gets fixed up on the next
+    # invocation.
+    params = dst.setdefault("parameters", {})
+    new_n_values = sorted(int(k) for k in dst_by_n.keys())
+    new_total = sum(len(rows) for rows in dst_by_n.values())
+    metadata_stale = (
+        params.get("n_values") != new_n_values
+        or params.get("n_total_partitions") != new_total
+    )
+    if not added and not metadata_stale:
+        print("  no new entries; metadata already consistent — no-op.")
         return 0
+    params["n_values"] = new_n_values
+    params["n_total_partitions"] = new_total
+    n_min, n_max = new_n_values[0], new_n_values[-1]
+    dst["description"] = (
+        f"Numeric cache of y_λ(q_0) at 50 dps for n ∈ "
+        f"{{{n_min}, ..., {n_max}}}. Source for n=2..12 is "
+        f"`y-lambda-wenzl-bridge-symbolic-witness.json` evaluated "
+        f"via sympy.subs; source for n ≥ 13 is the numerical "
+        f"closed-form Wenzl-bridge evaluator "
+        f"(`y-lambda-wenzl-witness.json`, merged by "
+        f"`extend_y_lambda_at_q0_from_wenzl.py`). Output strings "
+        f"trimmed to exactly 50 dps via mp.nstr."
+    )
 
-    dst["computedAt"] = datetime.now(timezone.utc).isoformat()
-    sources = dst.setdefault("parameters", {}).setdefault("sources", [])
+    sources = params.setdefault("sources", [])
     new_src = (
         f"y-lambda-wenzl-witness.json (n={'/'.join(str(n) for n in added)}, "
         "numerical closed-form via Wenzl bridge)"
@@ -104,9 +130,20 @@ def main() -> int:
     if new_src not in sources:
         sources.append(new_src)
 
-    DST.write_text(json.dumps(dst, indent=2, ensure_ascii=False))
+    # Save via WitnessBuilder.wrap_legacy so scriptHash, scriptCommitSha,
+    # computedAt and durationMs are refreshed automatically. This
+    # keeps the drift detector aware that THIS script touched the
+    # file (per Gemini review on PR #691).
+    from witness_base import WitnessBuilder
+    builder = WitnessBuilder.wrap_legacy(
+        "y-lambda-at-q0",
+        dst,
+        script_path=__file__,
+        engine="mpmath",
+    )
+    out = builder.save()
     covered = sorted(dst_by_n.keys(), key=int)
-    print(f"\n  extended {DST.name}: n now = {covered}")
+    print(f"\n  extended {Path(out).name}: n now = {covered}")
     return 0
 
 
