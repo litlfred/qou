@@ -68,14 +68,26 @@ def main() -> int:
     emp_c6 = mp.mpf(str(results["empirical_c6_reference"]))
 
     # Per-irrep coefficients at ε^10 (= c_5 in the prop's notation) and
-    # ε^12 (= c_6).  The upstream witness names them c10_diff / c12_diff
-    # to match the ε-power; we rename to c_k_per_lambda for clarity.
+    # ε^12 (= c_6).  Prefer the symbolic ("c10_diff_symbolic") field when
+    # the upstream provides it; fall back to the f64 ("c10_diff_float")
+    # otherwise.  Precision caveat: for the rational values currently
+    # stored on `per-wedderburn-block-ck.witness.json` (0.25, 16.25,
+    # 266.5, 22.5, 477.5) the f64 round-trip is exact, but the
+    # `compute-integration-watcher` I8 antipattern (float64 leak in a
+    # 50-dps probe) would activate as soon as the upstream emits
+    # non-exact rationals.  Both fields go through `mp.mpf(str(...))`
+    # so the cast is faithful when the source is.
+    def _coeff(v: dict, sym_key: str, f64_key: str) -> mp.mpf:
+        if sym_key in v and v[sym_key] is not None:
+            return mp.mpf(str(v[sym_key]))
+        return mp.mpf(str(v[f64_key]))
+
     c5_per_lambda = {
-        lam: mp.mpf(str(v["c10_diff_float"]))
+        lam: _coeff(v, "c10_diff_symbolic", "c10_diff_float")
         for lam, v in per_lambda.items()
     }
     c6_per_lambda = {
-        lam: mp.mpf(str(v["c12_diff_float"]))
+        lam: _coeff(v, "c12_diff_symbolic", "c12_diff_float")
         for lam, v in per_lambda.items()
     }
 
@@ -140,7 +152,9 @@ def main() -> int:
             "the prop's `.md` § 'Open: magnitude closure'."
         )
         .set_content_block("prop:chi-lambda-w0-sign-weighting")
-        .add_parameter("S_3_long_element", "(1,3)")
+        .add_parameter("w_0_one_line", "[3,2,1]")
+        .add_parameter("w_0_reduced_word", "s_1 s_2 s_1")
+        .add_parameter("w_0_cycle", "(1 3)")
         .add_parameter(
             "chi_w0_values",
             "{(3): +1, (2,1): 0, (1,1,1): -1}",
@@ -179,14 +193,15 @@ def main() -> int:
             unit="boolean (1.0 = signs agree)",
             source="prop:chi-lambda-w0-sign-weighting Step 4 — sign matches at k=6",
         )
-        .add_assertion(
-            name="chi_2_1_w0_eq_zero",
-            computed=float(chi_w0["(2, 1)"]),
-            expected=0.0,
-            tolerance=0.0,
-            unit="dimensionless",
-            source="prop:chi-lambda-w0-sign-weighting table — trace of S_3 reflection is 0",
-        )
+        # Removed: the previous `chi_2_1_w0_eq_zero` assertion compared
+        # the hardcoded chi_w0["(2, 1)"] = mp.mpf(0) against 0.0 and was
+        # therefore tautological by construction.  The character value
+        # χ_(2,1)(w_0) = 0 is a standard S_3 character-table fact (the
+        # trace of a reflection in the 2-d standard rep is 0) but a
+        # non-tautological check would require deriving it from the
+        # Hoefsmit seminormal matrices, which is out of scope for this
+        # probe.  Captured in the prop's `.md` § "Step 1 — character
+        # values at w_0" and the `chi_w0_values` parameter above.
     )
     out = builder.save()
     print(f"\nWitness: {out}")
