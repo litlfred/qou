@@ -5,10 +5,12 @@
 > **Trigger:** user request 2026-05-18 ("coordinate with siblings,
 > refresh the work plan to get to 1 ppb").
 
-## 1. Status snapshot — 1ppb gate is GREEN
+## 1. Status snapshot — 1ppb gate is GREEN (with corrections)
 
 The 1 ppb **compute-precision** target (internal cross-method
-agreement at substrate `q_0`) is **currently passing on 8 atoms**:
+agreement at substrate `q_0`) is **currently passing on 8 atoms**,
+though `cross_check_trM_1ppb.py`'s headline table over-reports
+agreement at atoms where it can't run a full 4-way comparison:
 
 ```
 $ python3 folio-assistant/computations/cross_check_trM_1ppb.py
@@ -20,13 +22,58 @@ $ python3 folio-assistant/computations/cross_check_trM_1ppb.py
   helium-4     peel, Habiro (partial chi-cache)            0.0  OK
   lithium-5    peel, Habiro                                0.0  OK
   lithium-6    peel, Habiro                                0.0  OK
-
   atoms compared: 8, divergent: 0
 ```
 
-Worst residual is ~4e-15 — **6 orders of magnitude below the
-1 ppb (1e-9) gate**. Every atom has at least 2 independent paths
-agreeing.
+**Correction (per Gemini #739 review)**: the `0.0` rel_delta_max
+for ⁴He, ⁵Li, ⁶Li is **misleading** — `cross_check_trM_1ppb.py`
+computes only Hoefsmit-vs-{other} and chi-cache-vs-{other} diffs;
+at these atoms one or both anchors are missing/partial and the
+script defaults to 0.0 instead of comparing the two paths that
+DO exist (peel vs Habiro). Direct mpmath verification of the
+stored witness strings:
+
+| atom | actual peel-vs-Habiro rel_diff |
+|---|---|
+| ⁴He | 1.27 × 10⁻¹⁶ (~16 digits) |
+| ⁵Li | 1.77 × 10⁻¹⁵ (~15 digits) |
+| **⁶Li** | **2.15 × 10⁻¹³ (~13 digits)** |
+
+⁶Li agreement is **2.15e-13**, only **~4 orders below 1ppb** —
+not 6 orders as the headline table suggested. The 1 ppb gate
+still passes for all 8 atoms, but **⁶Li has the tightest residual**.
+
+For the 5 atoms with full 3-/4-way coverage: worst residual is
+~3.7e-15 (~14.4 digits) at tritium — 5+ orders below 1ppb.
+
+**Follow-up action**: patch `cross_check_trM_1ppb.py` to also
+report peel-vs-Habiro deltas when Hoefsmit/chi-cache anchors are
+unavailable. Filed as a v6 follow-up in §4.
+
+### Q6 root cause identified (this audit)
+
+Per `q_parameter.py` lines 88-95's own comment, a prior fix
+corrected the `Q_50_DIGIT_STR` literal to match the high-precision
+derivation. But **8 downstream scripts** still use the f64 import
+pattern `mp.mpf(repr(Q_FLOAT))` instead of `mp.mpf(Q_50_DIGIT_STR)`:
+
+```
+canonical_tr_m_via_chi_cache.py:107, 148, 273
+chi_at_q0_via_hoefsmit_mpfr.py:207
+paper_six_term_isotope_sweep.py:957
+probe_brane_tower_finite_laurent.py:98
+mass_formula_6term_mpfr_50dps.py:71, 236
+rho_k_full_via_wenzl_lr.py:207
+tau_hat_n_proton_realisation.py:272
+```
+
+Verified at dps=50: `mp.mpf(repr(Q_FLOAT))` vs
+`mp.mpf(Q_50_DIGIT_STR)` differ by **6.78 × 10⁻¹⁷** relative —
+exactly the f64 epsilon. This is the precision floor propagating
+through downstream MPFR computes. Switching all 8 callsites to
+`Q_50_DIGIT_STR` is the **concrete fix for Q6**; expected to drop
+the worst cross-check residual from ~3.7e-15 to ~1e-49 (true MPFR
+floor at 50 dps) for the affected paths.
 
 ## 2. Since v5 (2026-05-17 evening → 2026-05-18 afternoon)
 
@@ -35,7 +82,8 @@ agreeing.
 - **#683** Rust canonical-χ MPFR-50dps default
 - **#691** Wenzl-bridge y_λ ceiling extension n=12 → n=15
 - **#695** y_λ ceiling extension n=15 → n=30 + scaling-analysis audit
-- **#697 / #699 / #715** canonical-discipline cleanup
+- **#699 / #715** canonical-discipline cleanup
+  (PR #697 is mine and still **open** — see §2 "Open at v6 time")
 - **#716**'s ancestors (PR #713 duplicate-fn fix, etc) — actually
   still open; #716 itself is clean + waiting
 - **#730** GP-without-cuspidal-moves benchmark (negative result;
@@ -160,13 +208,17 @@ Ranked by 1 ppb yield × tractability:
 
 ## 7. Coordination map (open PRs vs this workplan)
 
-| Tier | Open PRs (mine) | Open PRs (siblings) | Merged |
-|------|-----------------|---------------------|--------|
-| 1 (compute 1 ppb) | #713, #716, #718, #720, #725, #728 (Hoefsmit / GP) | #700 (chi-cache identity) | #682, #683, #695, #730 |
-| 2 (m_p closure) | — | **#690**, #704, #709, #702 | #674 |
+| Tier | Open PRs (mine) | Open PRs (siblings) | Merged (recent) |
+|------|-----------------|---------------------|-----------------|
+| 1 (compute 1 ppb) | #713, #716, #718, #720, #725, #728 (Hoefsmit / GP); #697 (chirality V4 retire); #705 (chirality Finding 2); #710 (Hoefsmit optimization audit) | #700 (chi-cache identity) | #682, #683, **#691**, #695, #730 |
+| 2 (m_p closure) | — | **#690**, #704, #709, #702, #679 (ρ_K + ⁶Li/⁷Li) | #674 |
 | 3 (Q_β ladder) | — | #701 (λ_scale) | #715 |
 | 4 (mass tables) | — | #708 | #696 |
 | infra | — | #711 (_precision rollout) | #693, #694, #722, #732, #734 |
+
+Per Gemini #739 review: this table now includes #691 (Tier 1 merged),
+#697 / #705 / #710 (Tier 1 mine), and #679 (Tier 2 sibling) that
+were referenced earlier in the doc but missing from the table.
 
 ## 8. Next-session high-value moves (rank-ordered)
 
