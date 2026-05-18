@@ -1,0 +1,61 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-18T00:05:18.797599+00:00",
+  "commitSha": "0fd092af098ad97f907de89376fe0a570b24dc76",
+  "assertions": [
+    {
+      "name": "derivable_within_500ppm",
+      "computed": 305.7861925991115,
+      "expected": 500.0,
+      "passed": true,
+      "tolerance": 200.0
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 9,
+  "computation": "probe-flavor-split-subleading",
+  "scriptFile": "probe_flavor_split_subleading.py",
+  "scriptHash": "3a6591b0643e",
+  "scriptCommitSha": "unknown",
+  "description": "Sub-leading substrate corrections to prop:flavor-split-substrate. Derivable (1 + ℏ_q³) closes -306 ppm; empirical (1 + (q-1)³) closes +51 ppm.",
+  "data": {
+    "q_pinned": "1.1099785955541805752815940796095093779932822799587",
+    "codata": {
+      "M_p_MeV": "938.272088",
+      "M_n_MeV": "939.565421",
+      "delta_m_MeV": "1.2933329999999999999999999999999999999999999999995",
+      "M_N_avg_MeV": "938.9187545",
+      "target_delta_m_over_M_N": "0.0013774706211814198030272703430166704588921916140077"
+    },
+    "leading_order": {
+      "expression": "ℏ_q²·h_q·[2]_q/3 = (q-1)²·(1-q⁻⁴)/3",
+      "value": "0.001375711249867512216725087899537173398853688341329",
+      "residual_ppm": -1277.2477952369106
+    },
+    "derivable_correction": {
+      "factor": "1 + ℏ_q³",
+      "reading": "3-loop substrate Planck (one more action quantum on top of leading 2-loop)",
+      "value": "0.0013770494096847516036825835492099447373101085394177",
+      "residual_ppm": -305.7861925991115,
+      "tightening_over_leading": 4.176930895344233,
+      "closed_form": "ℏ_q²·h_q·[2]_q·(1 + ℏ_q³)/3 = (q-1)²·(1-q⁻⁴)·(1 + ((q-1)/q)³)/3"
+    },
+    "empirical_correction": {
+      "factor": "1 + (q-1)³",
+      "factor_alt": "1 + q³·ℏ_q³",
+      "reading": "ad hoc — q³ multiplier on top of derivable ℏ_q³ lacks clean categorical reading",
+      "value": "0.0013775412528470357492957303828788862597414182126851",
+      "residual_ppm": 51.276349948841286,
+      "tightening_over_leading": 24.909101301306123,
+      "closed_form": "(q-1)²·(1-q⁻⁴)·(1 + (q-1)³)/3"
+    },
+    "delta_m_predictions_MeV": {
+      "leading": "1.2916810932772428605410535995364639741022367851718",
+      "with_derivable": "1.2929375166261672133715289593663907717690367900899",
+      "with_empirical": "1.2933993173955083847457214232604520113435758803179",
+      "codata": "1.2933329999999999999999999999999999999999999999995"
+    },
+    "status": "Derivable correction (1+ℏ_q³) is the categorically clean 3-loop substrate-Planck contribution, closing -306 ppm.  Empirical (1+(q-1)³) closes +51 ppm but its q³ multiplier on top of the derivable ℏ_q³ lacks a categorical proof — open research for the substrate brane-tower expansion."
+  }
+}
