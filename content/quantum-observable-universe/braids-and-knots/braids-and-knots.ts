@@ -389,6 +389,7 @@ export default chapter({
         "he4-two-row-dominance",
         "he4-magic-shell-fingerprint",
         "schur-weyl-vanishing",
+        "sw-3root-rational-integrand",
         "markov-trace-frobenius-selection",
         "hecke-1d-irrep-closed-form-character",
         "hoefsmit-V21-cos-symmetrization",
