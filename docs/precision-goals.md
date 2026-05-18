@@ -69,6 +69,16 @@ For light-atom binding energies (B_D, B_T, B_³He, B_⁴He), the experimental
 giving σ_rel(B) of order 0.04–0.45 ppm. **100× targets here are in the
 0.35–4.5 ppb range — within reach post-Borromean-tower per-isotope extension.**
 
+> **⚠ Δ_λ gate.** The per-isotope binding-energy formula is
+> `B(K) = m_e · Σ_λ y_λ χ^λ Δ_λ(K)`. The Δ_λ values are *not yet
+> derived* — six closure ansätze (Frobenius co-Casimir, Demazure-fibre,
+> LP-Plancherel, LP-Frobenius, crystal-graph, augmented Markov) have all
+> failed on the deuteron. See
+> [`docs/audits/2026-05-18-delta-lambda-gating-context.md`](audits/2026-05-18-delta-lambda-gating-context.md)
+> for the full closure-attempt history. **L2 binding-energy targets are
+> presently unreachable** — not because of compute precision, but
+> because the structural Δ_λ derivation is open R&D (GAP-A-3 / GAP-A-4).
+
 | Atom | B_AME (MeV) | σ_B / B | 100× target |
 |---|---:|---:|---:|
 | D  |   2.224 | 0.45 ppm | 4.5 ppb |

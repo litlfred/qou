@@ -140,6 +140,17 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
   derivation of q_0, which the coordination ledger explicitly
   declined on 2026-05-08. Do **not** attempt without owner reversal.
 
+**Δ_λ gate (Track A blocker).** The per-isotope binding-energy
+formula `B(K) = m_e · Σ_λ y_λ χ^λ Δ_λ` requires per-partition Δ_λ
+values, and six closure ansätze (Frobenius co-Casimir, Demazure-
+fibre, LP-Plancherel, LP-Frobenius, crystal-graph, augmented Markov)
+have all failed on the deuteron. **Do not propose a seventh fit-
+based ansatz** — the three-calibration discipline review will catch
+it. The productive directions are GAP-A-3 / GAP-A-4 (categorical
+brane-tower level selection / ρ general rule) and Option E (Kashiwara
+crystal). Full context:
+[`docs/audits/2026-05-18-delta-lambda-gating-context.md`](docs/audits/2026-05-18-delta-lambda-gating-context.md).
+
 **Where to check status:**
 
 - L1: `folio-assistant/computations/onepb-status-dashboard.witness.json`

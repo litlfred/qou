@@ -100,6 +100,19 @@ it's an **absolute-prediction** error, not a cross-method identity. It depends o
 
 ## 5. Track A + Track B (this branch's scope)
 
+> **Track A is gated on Δ_λ closure** — see
+> [`2026-05-18-delta-lambda-gating-context.md`](2026-05-18-delta-lambda-gating-context.md)
+> for full context. The non-tautological binding formula
+> `B(K) = m_e · Σ_λ y_λ χ^λ Δ_λ` requires per-block Δ_λ(K) values, and
+> six closure ansätze (Frobenius co-Casimir, Demazure-fibre,
+> LP-Plancherel, LP-Frobenius, crystal-graph, augmented Markov) have all
+> failed on the deuteron. Until Δ_λ has a categorical derivation, Track A
+> can only document the gap; it cannot close per-isotope binding-energy
+> predictions to 100× experimental.
+>
+> **Track B is independent of Δ_λ** — operator-valued Wenzl branching is
+> pure χ^λ machinery. **Track B is the in-scope work for this branch.**
+
 ### Track A — per-isotope mass-formula extension to A ∈ {2, 3, 4}
 
 Borromean tower formula (commit `dc3a85500`) closes m_p scale gap to
