@@ -66,7 +66,11 @@ Predictions where 100× experimental is *above* the ~780 ppb CAL-2 floor:
 - **Mass differences** (Δm_pn = m_n − m_p) — σ_exp_rel ≈ 474 ppb
   (combined from m_p, m_n CODATA uncertainties), so 100× target =
   4.74 ppb. Current Borromean prediction at 254 ppb misses by 54× —
-  closure path is λ_scale substrate-derivation (#751).
+  closure path is λ_scale substrate-derivation, landed on main via
+  PR #751 (commit `894c3db97`, 2026-05-18):
+  [`probe_workplan_0b_route_b_operator.py`](../../folio-assistant/computations/probe_workplan_0b_route_b_operator.py),
+  [`probe_c2_inflection_structure.py`](../../folio-assistant/computations/probe_c2_inflection_structure.py),
+  [`2026-05-18-workplan-0b-routes-b-c-findings.md`](2026-05-18-workplan-0b-routes-b-c-findings.md).
 - **Binding energies for light atoms** (target 0.35–4.5 ppb) — gated by
   per-isotope Borromean-tower extension (Track A) and operator-valued
   branching at A≥3 (Track B). All currently `delta_lambda_unavailable`.
@@ -166,10 +170,12 @@ energy prediction, removing the 22-minute compute bottleneck.
 
 ## 6. Concrete next-action queue
 
-1. **Δm_pn 100× closure (Subgoal-1)** — coordinate with #751
-   (Workplan-0b/M_N) on λ_scale substrate-derivation. Closing the
-   54× gap from current 254 ppb pred → 4.74 ppb target is the
-   highest-leverage Subgoal-1 task.
+1. **Δm_pn 100× closure (Subgoal-1)** — λ_scale substrate-derivation
+   landed on main via PR #751 (Workplan-0b/M_N Routes A/B/C). Next
+   step is to wire the C2-inflection / Route-B / Route-C probes into
+   the m_p / m_n Borromean prediction so the 254 ppb residual moves
+   toward the 4.74 ppb target. Tracked separately from this branch;
+   highest-leverage Subgoal-1 task post-#777.
 2. **Δ_λ closure (Track A unblock)** — independent of every other
    item; see [Δ_λ gating context](2026-05-18-delta-lambda-gating-context.md).
    Without Δ_λ, light-atom binding-energy predictions (D / T / ³He / ⁴He
