@@ -278,7 +278,6 @@ noncomputable def mkDegLexOrder {G : Type u} [DecidableEq G]
         · right; left; exact heq'
         · right; right; right; exact ⟨heq.symm, hrx⟩
   wf := by
-    -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5
     -- The deg-lex order is well-founded as `Prod.Lex Nat.lt L` where L
     -- is the length-restricted lex order on `(map rank ·) : Monomial G
     -- → List ℕ`. Mathlib provides `Nat.lt_wfRel.wf.prod_lex` for the
