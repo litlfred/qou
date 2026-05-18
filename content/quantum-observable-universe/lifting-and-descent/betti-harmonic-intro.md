@@ -1,0 +1,1 @@
+_[draft]_ This section develops *Betti Numbers and Harmonic Basis*. The arc runs from **Betti numbers of the brane tower** through **$q$-Harmonic basis of the brane tower** to **Weight-space decomposition of the harmonic basis**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)

@@ -39,6 +39,7 @@ export default chapter({
       title: "Golden Ratio, Julia Sets, and Discrete Dynamics",
       label: "sec:golden-julia-dynamics",
       blocks: [
+"golden-julia-dynamics-intro",
         "golden-ratio-transport",
         "julia-set-reeb",
         "operational-entropy",
@@ -50,6 +51,7 @@ section({
       title: "Speed of Light and Mass--Energy Equivalence",
       label: "sec:speed-of-light",
       blocks: [
+"speed-of-light-intro",
         "information-speed-of-light",
         "mass-energy-equivalence",
         "photon-threading-mass",
@@ -77,6 +79,7 @@ section({
       title: "P versus NP as a Boundary Condition",
       label: "sec:p-vs-np-boundary",
       blocks: [
+"p-vs-np-boundary-intro",
         "computational-horizon",
         "skein-resolution-obstruction",
         "p-bandwidth-bound",
@@ -89,6 +92,7 @@ section({
       title: "$q$-Heat kernel and spectral analysis",
       label: "sec:q-heat-kernel-analysis",
       blocks: [
+"q-heat-kernel-analysis-intro",
         "q-exponential-taylor",
         "q-gaussian-solves-q-heat",
         "q-heat-kernel-peter-weyl",
@@ -117,6 +121,7 @@ section({
       title: "Phase Transitions and Sublimation",
       label: "sec:phase-transitions",
       blocks: [
+"phase-transitions-intro",
         "phase-transition-boundary",
         "phase-transition-interpretation",
         "composite-crossing-parity",
@@ -127,6 +132,7 @@ section({
       title: "Incompleteness and the Horizon",
       label: "sec:incompleteness-horizon",
       blocks: [
+"incompleteness-horizon-intro",
         "incompleteness-implies-horizon",
         "incompleteness-horizon",
         "stat-mech-computational-horizon",
@@ -137,6 +143,7 @@ section({
       title: "Horizons and Aeons",
       label: "sec:horizons-aeons",
       blocks: [
+"horizons-aeons-intro",
         "jet-horizon",
         "big-bang-state",
         "cmb-boundary-datum",

@@ -1,0 +1,1 @@
+_[draft]_ This section develops *Physical elaborations*. The arc runs from **q-Torsion leaves as energy minima** through **Physical interpretation of q-harmonicity** to **Linearisation convention and the role of $J$**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)

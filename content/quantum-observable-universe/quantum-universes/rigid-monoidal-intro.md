@@ -1,0 +1,1 @@
+_[draft]_ This section develops *Preliminary: rigid monoidal categories*. The arc runs from **Snake identity** through **Why monoidal categories?** to **Rigid monoidal category**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)

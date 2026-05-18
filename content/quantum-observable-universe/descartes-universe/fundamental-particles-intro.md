@@ -1,0 +1,1 @@
+_[draft]_ This section develops *Fundamental particles*. The arc runs from **Up quark** through **Up quark: crossing orientation and isolation** to **Down quark**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)

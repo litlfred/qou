@@ -1,0 +1,1 @@
+_[draft]_ This section develops *$q$-Deformed operators*. The arc runs from **$q$-Deformed exterior derivative** through **$q$-Deformed Lie bracket** to **$q$-Deformed connection**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)

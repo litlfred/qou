@@ -1,0 +1,1 @@
+_[draft]_ This section develops *Categorical action*. The arc runs from **Categorical action** through **Existence of the categorical action** to **Proof of existence of the categorical action**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)

@@ -1,0 +1,1 @@
+_[draft]_ This section develops *Carbon chains and benzene*. The arc runs from **Linear $\\mathrm{C}_6$ Hopf chain** through **Benzene as a molecular Hopf ring $\\mathrm{C}_6$** to **Why the C$_6$ chain resists hexagonalisation**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)

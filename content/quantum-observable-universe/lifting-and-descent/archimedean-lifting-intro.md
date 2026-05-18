@@ -1,0 +1,1 @@
+_[draft]_ This section develops *Archimedean Specialisations*. The arc runs from **Archimedean realisation of jet prolongation** through **Proof of Archimedean realisation of jet prolongation** to **Archimedean band of the gerbe extension**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)

@@ -1,0 +1,1 @@
+_[draft]_ This section develops *P versus NP as a Boundary Condition*. The arc runs from **Computational horizon** through **Skein resolution obstruction $\\kappa_c^{\\mathrm{comp}}(L, q)$** to **Polynomial computation as sub-horizon bandwidth**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)

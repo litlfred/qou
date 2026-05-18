@@ -1,0 +1,1 @@
+_[draft]_ This section develops *Transfer Matrix and Topological Mass*. The arc runs from **Categorical transfer matrix** through **Transfer matrix level independence** to **Constituent and composite Markov-trace evaluations agree exactly**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)

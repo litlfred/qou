@@ -1,0 +1,1 @@
+_[draft]_ This section develops *Precision Tests*. It opens with **Photonic quantum Hall effect and $q$-deformed braiding**, then turns to **Fine structure constant: CODATA comparison**; the remaining blocks unfold the consequences and examples. (Placeholder draft — replace with the section's actual narrative arc.)

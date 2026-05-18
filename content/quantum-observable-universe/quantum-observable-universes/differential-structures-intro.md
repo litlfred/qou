@@ -1,0 +1,1 @@
+_[draft]_ This section develops *Differential structures and gauge actions*. The arc runs from **Categorical Reeb derivation** through **Existence of the categorical Reeb derivation** to **Proof of existence of the categorical Reeb derivation**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)

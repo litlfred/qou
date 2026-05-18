@@ -1,0 +1,1 @@
+_[draft]_ This section develops *Atomic braid and Wedderburn mass formula*. The arc runs from **Atomic braid $H_{A+Z}(q)$** through **LP stability of the atomic braid** to **Seven-term atomic mass formula with $q$-integer coefficients**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)

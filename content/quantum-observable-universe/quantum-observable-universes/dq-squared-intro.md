@@ -1,0 +1,1 @@
+_[draft]_ This section develops *Non-vanishing of $d_q^2$ and jet prolongation*. The arc runs from **Non-vanishing of $d_q^2$** through **Proof of Non-vanishing of $d_q^2$** to **Categorical $q$-Lie bracket**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)

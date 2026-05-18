@@ -1,0 +1,1 @@
+_[draft]_ This section develops *Hadron Algebra and Knot Factorisation*. The arc runs from **Hadron (stable knot composite)** through **Existence of hadrons** to **Proof of existence of hadrons**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)

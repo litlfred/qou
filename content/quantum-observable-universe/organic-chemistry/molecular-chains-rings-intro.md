@@ -1,0 +1,1 @@
+_[draft]_ This section develops *Molecular Hopf chains and rings*. The arc runs from **Molecular Hopf chain (open)** through **Threading link $T(2,N)$** to **Molecular Hopf ring (closed)**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)

@@ -1,0 +1,1 @@
+_[draft]_ This section develops *Non-vanishing of $d_q^2$ and the $q$-jacobiator*. The arc runs from **$d_q^2$ does not vanish** through **Proof of $d_q^2$ does not vanish** to **Jacobiator of the q-Lie bracket**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)

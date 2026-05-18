@@ -1,0 +1,1 @@
+_[draft]_ This section develops *Carbon dioxide: linear triatomic molecule*. The arc runs from **Carbon dioxide $CO_2$ as a molecular braid** through **LP dual selects linear $O{=}C{=}O$ geometry** to **VSEPR molecular geometry from $\\Phi_1$ minimisation**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)

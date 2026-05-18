@@ -1,0 +1,1 @@
+_[draft]_ This section develops *Color tube coordinates*. The arc runs from **Color tube coordinates** through **Aggregate color quantities** to **Constraint equations in color tube coordinates**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)

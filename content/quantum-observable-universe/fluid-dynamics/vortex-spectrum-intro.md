@@ -1,0 +1,1 @@
+_[draft]_ This section develops *Vortex spectrum and helicity*. The arc runs from **Vortex intensity modes: from classical fluids to $q$-deformation** through **Discrete vortex mode spectrum** to **Vortex intensity levels as fluid-dynamical orbitals**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)

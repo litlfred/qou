@@ -1,0 +1,1 @@
+_[draft]_ This section develops *Organic chain taxonomy*. It opens with **Organic chain taxonomy from bond-order patterns**, which establishes the section's central object; the remaining blocks unfold its consequences. (Placeholder draft — replace with the section's actual narrative arc.)

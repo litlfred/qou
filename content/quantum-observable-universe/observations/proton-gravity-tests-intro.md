@@ -1,0 +1,1 @@
+_[draft]_ This section develops *Proton Radius and Gravity Tests*. It opens with **The Proton Radius Puzzle**, then turns to **Entropic forces and the substrate parameter**; the remaining blocks unfold the consequences and examples. (Placeholder draft — replace with the section's actual narrative arc.)

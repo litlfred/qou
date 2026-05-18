@@ -1,0 +1,1 @@
+_[draft]_ This section develops *$\\mathbb{G}_m$-torsors and $q$-local systems*. The arc runs from **$q$-Local system** through **From monodromy to $q$-monodromy** to **$q$-Flat connection**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)

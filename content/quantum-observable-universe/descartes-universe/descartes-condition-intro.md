@@ -1,0 +1,1 @@
+_[draft]_ This section develops *The Descartes condition and lepton spectrum*. The arc runs from **Descent to dimension zero** through **Descartes condition** to **Why $\\chi(A) = -6$: the complete derivation chain**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)

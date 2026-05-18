@@ -1,0 +1,1 @@
+_[draft]_ This section develops *Bundle Structure and Observation*. The arc runs from **Quarks and hadrons in the Borromean picture** through **Bundle initial conditions** to **Observation as an open map on the braid: intent, crossings, and input**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)

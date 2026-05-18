@@ -1,0 +1,1 @@
+_[draft]_ This section develops *Crossing energy and Coulomb charge*. The arc runs from **Crossing energy of a knot composite** through **Crossing energy and binding in the trefoil** to **Categorical coordinate of the commutative limit: **, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)

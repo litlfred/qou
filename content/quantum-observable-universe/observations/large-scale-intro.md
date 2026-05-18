@@ -1,0 +1,1 @@
+_[draft]_ This section develops *Large-Scale Observations*. It opens with **CMB non-uniformity from $q$-torsion**, then turns to **Gravity as emergent substrate geometry**; the remaining blocks unfold the consequences and examples. (Placeholder draft — replace with the section's actual narrative arc.)

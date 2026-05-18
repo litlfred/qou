@@ -1,0 +1,1 @@
+_[draft]_ This section develops *Categorical instanton and self-duality*. The arc runs from **Categorical instanton** through **Existence of categorical instantons** to **Proof of existence of categorical instantons**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)

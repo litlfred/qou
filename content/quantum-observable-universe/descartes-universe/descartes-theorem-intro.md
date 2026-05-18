@@ -1,0 +1,1 @@
+_[draft]_ This section develops *The Descartes theorem*. The arc runs from **Descartes theorem** through **Proof of Descartes theorem** to **Constructive terminal morphism to Bring's QOU**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)

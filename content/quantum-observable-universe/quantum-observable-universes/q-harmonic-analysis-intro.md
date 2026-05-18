@@ -1,0 +1,1 @@
+_[draft]_ This section develops *$q$-Harmonic analysis: heat equation, Laplace, Fourier*. The arc runs from **$q$-Heat equation** through **Well-posedness of the $q$-heat equation** to **Proof of well-posedness of the $q$-heat equation**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)

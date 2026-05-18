@@ -1,0 +1,1 @@
+_[draft]_ This section develops *Atom, Isotope, and Confinement Levels*. The arc runs from **Knot operator energy (LP-dual shadow price)** through **Existence of the knot operator energy** to **Uniqueness of the knot operator energy**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)

@@ -1,0 +1,1 @@
+_[draft]_ This section develops *Coral fibration and elliptic curves*. The arc runs from **Coral fibre as an elliptic curve** through **Proof of Coral fibre as an elliptic curve** to **Self-duality of the coral elliptic curve**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)

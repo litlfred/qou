@@ -1,0 +1,1 @@
+_[draft]_ This section develops *$q$-Opers and the spectral side*. The arc runs from **$q$-Oper** through **$q$-Opers are $q$-Hecke eigensheaves** to **Proof sketch: $q$-opers produce eigensheaves**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)

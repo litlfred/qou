@@ -1,0 +1,1 @@
+_[draft]_ This section develops *Emergence from observability*. The arc runs from **Frobenius relation for $\\mathrm{SU}(2)$** through **Involutive structure on $\\mathrm{Rep}(\\mathrm{SU}(2))$** to **Volume form from rigidity and symplectic self-duality**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)

@@ -129,6 +129,7 @@ export default chapter({
       title: "Categorical Möbius energy and self-avoidance",
       label: "sec:mobius-energy",
       blocks: [
+"mobius-energy-intro",
         "mobius-energy",
         "mobius-energy-frobenius-kernel",
         "mobius-energy-frobenius-kernel-proof",
@@ -145,6 +146,7 @@ export default chapter({
       title: "Crossing energy and Coulomb charge",
       label: "sec:crossing-energy",
       blocks: [
+"crossing-energy-intro",
         "crossing-energy",
         "crossing-energy-trefoil",
         "commutative-crossing-energy",
@@ -160,6 +162,7 @@ export default chapter({
       title: "Lagrange Resolvents and $q$-Deformed Kinematics",
       label: "sec:lagrange-q-kinematics",
       blocks: [
+"lagrange-q-kinematics-intro",
         // DFT decomposition of cyclic representations
         "lagrange-resolvent-transform",
         "lagrange-resolvents",
@@ -178,6 +181,7 @@ export default chapter({
       title: "Exceptional Divisor and Vertex Operators",
       label: "sec:exceptional-divisor-reeb",
       blocks: [
+"exceptional-divisor-reeb-intro",
         "exceptional-divisor",
         "reeb-bundle",
         "reeb-exceptional-divisor",
@@ -191,6 +195,7 @@ export default chapter({
       title: "Vertex Factorisation and the Markov Trace",
       label: "sec:vertex-factorisation",
       blocks: [
+"vertex-factorisation-intro",
         "vertex-is-exceptional-divisor",
         "vertex-is-exceptional-divisor-proof",
         // Photon polarisation states as Hecke generators on the exceptional divisor
@@ -225,6 +230,7 @@ export default chapter({
       title: "Transfer Matrix and Topological Mass",
       label: "sec:transfer-matrix-mass",
       blocks: [
+"transfer-matrix-mass-intro",
         "categorical-transfer-matrix",
         "transfer-matrix-level-independence",
         "tmli-constituent-composite-agreement",
@@ -245,6 +251,7 @@ export default chapter({
       title: "Braiding Relations and the Spectral Filter",
       label: "sec:braiding-relations",
       blocks: [
+"braiding-relations-intro",
         "skein-archimedean-shadow",
         "vertex-algebra-relations",
         "vertex-algebra-jet-relations",
@@ -258,6 +265,7 @@ export default chapter({
       title: "Hadron Algebra and Knot Factorisation",
       label: "sec:hadron-algebra",
       blocks: [
+"hadron-algebra-intro",
         "hadron",
         "hadron-exists",
         "hadron-exists-proof",
@@ -277,6 +285,7 @@ export default chapter({
       title: "Skein Generation and Particle Correspondence",
       label: "sec:skein-particle-generation",
       blocks: [
+"skein-particle-generation-intro",
         "skein-generation",
         "skein-mass-from-linking",
         "skein-mass-from-linking-proof",
@@ -294,6 +303,7 @@ export default chapter({
       title: "Bundle Structure and Observation",
       label: "sec:bundle-observation",
       blocks: [
+"bundle-observation-intro",
         "quarks-borromean-picture",
         "bundle-initial-conditions",
         "observation-braid",
@@ -309,6 +319,7 @@ export default chapter({
       title: "Borromean Baryons and Reidemeister Invariance",
       label: "sec:borromean-reidemeister",
       blocks: [
+"borromean-reidemeister-intro",
         "borromean-baryon",
         "borromean-baryon-interpretation",
         "borromean-baryon-mass-formula",
@@ -330,6 +341,7 @@ export default chapter({
       title: "Categorical Mass Foundations",
       label: "sec:categorical-mass-foundations",
       blocks: [
+"categorical-mass-foundations-intro",
         "topological-mass",
         "topological-mass-cat-eigenspace",
         "topological-mass-cat-eigenspace-proof",
@@ -360,6 +372,7 @@ export default chapter({
       title: "Calibration and Algebraic Mass Formula",
       label: "sec:calibration-algebraic-mass",
       blocks: [
+"calibration-algebraic-mass-intro",
         "mass-element-nf",
         "calibration-inputs",
         "two-tier-scaling-pq",
@@ -498,6 +511,7 @@ export default chapter({
       title: "Atom, Isotope, and Confinement Levels",
       label: "sec:atom-isotope-confinement",
       blocks: [
+"atom-isotope-confinement-intro",
         "knot-operator-energy",
         "knot-operator-energy-exists",
         "knot-operator-energy-unique",
@@ -549,6 +563,7 @@ export default chapter({
       title: "Nuclear Binding and Beta Stability",
       label: "sec:nuclear-binding-beta-stability",
       blocks: [
+"nuclear-binding-beta-stability-intro",
         "confined-knot-binding",
         "jet-filtered-knot-factor",
         "jet-convergence-classical-limit",

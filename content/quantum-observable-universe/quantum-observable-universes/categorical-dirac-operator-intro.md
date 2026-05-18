@@ -1,0 +1,1 @@
+_[draft]_ This section develops *Categorical Dirac operator*. The arc runs from **Categorical Dirac operator** through **Existence of the categorical Dirac operator** to **Proof of existence of the categorical Dirac operator**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)

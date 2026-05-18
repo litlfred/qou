@@ -1,0 +1,1 @@
+_[draft]_ This section develops *Derived atom examples*. The arc runs from **Hydrogen: full normal form from pair production** through **Deuterium: proton--neutron binding normal form** to **Deuterium binding energy from the Markov trace volume integral**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)

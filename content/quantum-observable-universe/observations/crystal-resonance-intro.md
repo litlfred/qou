@@ -1,0 +1,1 @@
+_[draft]_ This section develops *Crystal Resonance Experiments*. The arc runs from **Crystal-lattice probe of $q$** through **Substrate Telescopes** to **Non-monotonic magnetic friction from collective rotor dynamics**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)

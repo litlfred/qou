@@ -1,0 +1,1 @@
+_[draft]_ This section develops *Categorical Mass Foundations*. The arc runs from **Topological Decomposition of Mass** through **Eigenspace decomposition of the categorical mass integrand** to **Proof of the eigenspace decomposition (categorical)**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)

@@ -1,0 +1,1 @@
+_[draft]_ This section develops *Interactive Simulations*. The arc runs from **q-Deformed Double-Slit Simulator** through **Double-Slit Analytical Simulator** to **Bring's Surface Simulator**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)

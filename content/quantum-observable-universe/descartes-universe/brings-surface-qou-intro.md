@@ -1,0 +1,1 @@
+_[draft]_ This section develops *Bring*. The arc runs from **Bring's surface** through **Bring's surface as a concrete genus-4 curve** to **Realisations of Bring's surface**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)

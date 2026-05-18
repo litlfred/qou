@@ -1,0 +1,1 @@
+_[draft]_ This section develops *Breit--Wheeler Pair Creation*. It opens with **Breit--Wheeler process: first direct observation and QOU prediction**, then turns to **Energy cost of electron--positron conversion**; the remaining blocks unfold the consequences and examples. (Placeholder draft — replace with the section's actual narrative arc.)

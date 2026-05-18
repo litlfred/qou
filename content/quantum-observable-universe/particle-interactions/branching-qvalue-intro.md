@@ -1,0 +1,1 @@
+_[draft]_ This section develops *Branching Q-value derivation*. The arc runs from **Per-nucleon channel decomposition via $S_3^A$ branching** through **Spectator normalization factor** to **Exact factorization of the branching Q-value**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)

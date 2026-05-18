@@ -1,0 +1,1 @@
+_[draft]_ This section develops *Horizons and Aeons*. The arc runs from **Jet horizon (degree-$0$ vanishing locus)** through **Big bang state (degree-$0$ trivial configuration)** to **CMB as boundary datum of a big bang state**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)

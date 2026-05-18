@@ -1,0 +1,1 @@
+_[draft]_ This section develops *Nuclear stability and decay*. The arc runs from **Beta decay as a Skein crossing change on the Gröbner normal form** through **Categorical Lepton Number** to **Continuant recurrence for the lepton tower $T_{2,n}$**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)

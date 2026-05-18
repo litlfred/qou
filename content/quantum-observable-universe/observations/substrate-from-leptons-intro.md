@@ -1,0 +1,1 @@
+_[draft]_ This section develops *Substrate Parameter from Lepton Masses*. The arc runs from **$q$-Deformed Skein Relation (Observation)** through **Proof of $q$-Deformed Skein Relation** to **Knot volume verification (SnapPy)**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)

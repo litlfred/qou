@@ -1,0 +1,1 @@
+_[draft]_ This section develops *Mass in the Brane Tower*. The arc runs from **Non-commutativity and geometric drag** through **Stability of the Euler characteristic** to **Proof of Stability of the Euler characteristic**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)

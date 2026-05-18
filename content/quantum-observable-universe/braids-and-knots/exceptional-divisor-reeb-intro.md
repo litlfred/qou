@@ -1,0 +1,1 @@
+_[draft]_ This section develops *Exceptional Divisor and Vertex Operators*. The arc runs from **Exceptional divisor at $p$** through **Reeb bundle over the exceptional divisor** to **Reeb vector field on the exceptional divisor**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)

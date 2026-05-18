@@ -1,0 +1,1 @@
+_[draft]_ This section develops *$q$-Hecke correspondences*. The arc runs from **$q$-Hecke operator** through **$q$-Hecke eigensheaf** to **$q$-Hecke eigenvalues from the fibre functor**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)

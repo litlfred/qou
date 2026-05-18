@@ -1,0 +1,1 @@
+_[draft]_ This section develops *Direct Limit Algebra*. The arc runs from **Quantum Observable Universe as Direct Limit** through **Direct limit algebra for $\\mathrm{SU}(2)$** to **Direct limit algebra and the Lusztig integral form**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)

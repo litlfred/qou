@@ -29,6 +29,7 @@ export default chapter({
       title: "Preliminary: rigid monoidal categories",
       label: "sec:rigid-monoidal",
       blocks: [
+"rigid-monoidal-intro",
         "snake-identity",
         "monoidal-justification",
         "rigid-monoidal-category",
@@ -40,6 +41,7 @@ export default chapter({
       title: "The Quantum Universe",
       label: "sec:quantum-universe",
       blocks: [
+"quantum-universe-intro",
         "quantum-universe",
         "quantum-universe-exists",
         "quantum-universe-exists-proof",
@@ -64,6 +66,7 @@ export default chapter({
       title: "Consequences of the QU axioms",
       label: "sec:qu-consequences",
       blocks: [
+"qu-consequences-intro",
         "frobenius-relation",
         "frobenius-relation-proof",
         "frobenius-relation-su2",
@@ -81,6 +84,7 @@ export default chapter({
       title: "Structures on a Quantum Universe",
       label: "sec:qu-structures",
       blocks: [
+"qu-structures-intro",
         "categorical-connection",
         "categorical-connection-exists",
         "categorical-connection-exists-proof",

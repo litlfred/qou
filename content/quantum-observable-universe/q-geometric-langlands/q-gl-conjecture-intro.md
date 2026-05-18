@@ -1,0 +1,1 @@
+_[draft]_ This section develops *The $q$-Geometric Langlands conjecture*. The arc runs from **$q$-Langlands dual group** through **$q$-Geometric Langlands correspondence** to **Obstruction to $q$-flatness**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)

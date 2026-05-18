@@ -1,0 +1,1 @@
+_[draft]_ This section develops *Hydrogen molecule $H_2$: the covalent bond prototype*. The arc runs from **Hydrogen molecule $H_2$ as a braid in $H_4(q)$** through **LP dual gives optimal $H_2$ binding** to **$H_2$ binding energy from the LP dual**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)

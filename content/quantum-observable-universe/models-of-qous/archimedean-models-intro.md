@@ -1,0 +1,1 @@
+_[draft]_ This section develops *Archimedean specialisations*. The arc runs from **Real hypersurface in a Calabi--Yau $2$-fold** through **ALE links** to **Bring's surface unit circle bundle**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)

@@ -19,6 +19,7 @@ export default chapter({
       title: "Covalent bonding as shared sub-Hopf links",
       label: "sec:covalent-bonding",
       blocks: [
+"covalent-bonding-intro",
         "covalent-bond-types",
         "carbon-valence",
       ],
@@ -29,6 +30,7 @@ export default chapter({
       title: "Molecular Hopf chains and rings",
       label: "sec:molecular-chains-rings",
       blocks: [
+"molecular-chains-rings-intro",
         "molecular-hopf-chain",
         "threading-link",
         "molecular-hopf-ring",
@@ -42,6 +44,7 @@ export default chapter({
       title: "Carbon chains and benzene",
       label: "sec:carbon-chains-benzene",
       blocks: [
+"carbon-chains-benzene-intro",
         "carbon-chain-c6",
         "benzene-ring",
         "chain-ring-energy",
@@ -54,6 +57,7 @@ export default chapter({
       title: "Organic chain taxonomy",
       label: "sec:organic-taxonomy",
       blocks: [
+"organic-taxonomy-intro",
         "organic-chain-taxonomy",
       ],
     }),

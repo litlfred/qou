@@ -1,0 +1,1 @@
+_[draft]_ This section develops *Beta Decay*. The arc runs from **Q-value predictions vs experiment: $q$-weighted channel separation** through **Half-life predictions for selected beta emitters** to **Half-life regimes and the $q$-landscape**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)

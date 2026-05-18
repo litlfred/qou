@@ -21,6 +21,7 @@ export default chapter({
       title: "Jet Prolongation and the Recursive Brane Tower",
       label: "sec:jet-prolongation",
       blocks: [
+"jet-prolongation-intro",
         "jet-prolongation",
         "jet-prolongation-su2",
         "jet-prolongation-categorical-jet",
@@ -52,6 +53,7 @@ export default chapter({
       title: "Descent Preliminaries",
       label: "ssec:descent-prelim",
       blocks: [
+"sdescent-prelim-intro",
         "descent-lemma",
         "descent-lemma-su2",
         "descent-lemma-proof",
@@ -65,6 +67,7 @@ export default chapter({
       title: "Categorical Lifting and Quantum Characteristic Classes",
       label: "sec:yekutieli-lifting",
       blocks: [
+"yekutieli-lifting-intro",
         "yekutieli-lifting-condition",
         "yekutieli-lifting-condition-su2",
         "quantum-characteristic-classes",
@@ -93,6 +96,7 @@ export default chapter({
       title: "Direct Limit Algebra",
       label: "sec:direct-limit",
       blocks: [
+"direct-limit-intro",
         "direct-limit-algebra",
         "direct-limit-algebra-su2",
         "direct-limit-lusztig",
@@ -111,6 +115,7 @@ export default chapter({
       title: "Mass in the Brane Tower",
       label: "sec:mass-brane",
       blocks: [
+"mass-brane-intro",
         "mass-noncommutative-drag",
         "euler-char-stability",
         "euler-char-stability-proof",
@@ -128,6 +133,7 @@ export default chapter({
       title: "Betti Numbers and Harmonic Basis",
       label: "sec:betti-harmonic",
       blocks: [
+"betti-harmonic-intro",
         "betti-numbers-brane",
         "q-harmonic-basis-brane",
         "weight-space-decomposition-brane",
@@ -197,6 +203,7 @@ export default chapter({
       title: "Archimedean Specialisations",
       label: "sec:archimedean-lifting",
       blocks: [
+"archimedean-lifting-intro",
         "jet-prolongation-C",
         "jet-prolongation-C-proof",
         "yekutieli-archimedean-band",

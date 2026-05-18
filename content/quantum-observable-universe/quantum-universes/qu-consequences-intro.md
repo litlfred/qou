@@ -1,0 +1,1 @@
+_[draft]_ This section develops *Consequences of the QU axioms*. The arc runs from **Frobenius relation** through **Proof of Frobenius relation** to **The Frobenius relation in $\\mathrm{SU}(2)$**, with subsequent blocks elaborating the consequences. (Placeholder draft — replace with the section's actual narrative arc.)
