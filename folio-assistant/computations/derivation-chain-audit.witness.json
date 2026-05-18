@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T04:03:43.803902+00:00",
-  "commitSha": "11e0cb56ab223fe59eb3c63dce3dbccae5e1623d",
+  "computedAt": "2026-05-18T04:52:33.081647+00:00",
+  "commitSha": "9e6d322999e26bca46cbd42855681f56912bbbf9",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -572,11 +572,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 2,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "875916a587c227572f421c22053ad81371976ccc",
+  "scriptCommitSha": "67f1df24c9d76e62b2bb25a331814e511ba6dc3f",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
   "data": {
@@ -2406,6 +2406,7 @@
         "probe-pl-flavor-extended-cubic.witness.json",
         "probe-pn-flavor-asymmetry.witness.json",
         "probe-proton-mass-scale.witness.json",
+        "probe-proton-t2-t3-at-a1.witness.json",
         "probe-proton-t2-t3-li2q-comparison.witness.json",
         "probe-proton-with-wenzl-weights.witness.json",
         "probe-rho-K-candidate-search.witness.json",
@@ -2418,6 +2419,8 @@
         "probe-sdpb-multilevel-crossing.witness.json",
         "probe-sdpb-pl-crossing-equations.witness.json",
         "probe-symbolic-sdp-derivation-breakout.witness.json",
+        "probe-t5-chirality-categorical-audit.witness.json",
+        "probe-t6-habiro-residue-at-a1.witness.json",
         "probe-term4-conventions.witness.json",
         "probe-tritium-k-star.witness.json",
         "probe-v-hat-wenzl-tilde.witness.json",
