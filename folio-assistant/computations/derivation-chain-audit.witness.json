@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-17T23:12:49.779322+00:00",
-  "commitSha": "c344c0580df343b823f6c1a2802331303b77fd2a",
+  "computedAt": "2026-05-18T00:13:56.722222+00:00",
+  "commitSha": "e6d4e4566c4642ebfd1a76b76e0031565159cfa0",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2348,6 +2348,7 @@
         "probe-d-height-stratification.witness.json",
         "probe-d-term23-binding.witness.json",
         "probe-derived-A-from-gs-normal-form.witness.json",
+        "probe-flavor-split-subleading.witness.json",
         "probe-flavor-split-substrate.witness.json",
         "probe-gamma-gamma-h3-psd-scan.witness.json",
         "probe-gamma-gamma-lr-embed-h6.witness.json",
