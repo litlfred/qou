@@ -19,9 +19,11 @@ Tested multiplicative candidates:
 | `5/2 + h²·(3/4)` (Family A, PROVED) | 2.5327797 | +2.890% |
 | `(1 + 1/q)² / 2` | 1.8067451 | −26.604% |
 | `1 + Vol(4_1)/(Vol(B_3)/2)` | 1.5540282 | −36.870% |
-| `(4-q)/(4q+3)` (PR #690 C2 `a` value, NOT the factor) | 0.3884482 | −84% |
+**Clarification (Copilot review):** PR #690's C2 inflection criterion is `d²A/da² = 0` on a categorical action A(a) over `a ∈ (0, z_markov)`. The INPUT parameter `a` at the inflection (≈ 0.388, computed via the empirical formula `(4-q)/(4q+3)`) is NOT the mass-scale factor. The OUTPUT `A(a_C2) ≈ 2.4615` IS the multiplicative factor that produces m_p_pred = Vol(B_3)/ℏ_q² · A(a_C2) · m_e = 938.918 MeV. The table above compares mass-scale-factor candidates (not `a`-input values).
 
-**The original `5/2 − h²·G` form gives the best empirical match.** PR #690's C2 inflection produces a categorical action A(a) whose inflection-point value is **2.4615**, matching `5/2 − h²·G = 2.4600` to within 600 ppm.
+Subsequent re-probe at 2000-pt grid (`probe_c2_inflection_structure.py`) finds the actual C2 inflection at a_C2 = 0.4072 (5% LARGER than `(4-q)/(4q+3) = 0.3884`), giving m_p = 938.946 MeV. The OUTPUT A(a_C2) at this corrected a still produces ≈ 2.46.
+
+**The original `5/2 − h²·G` form gives the best empirical match for the OUTPUT factor.** PR #690's C2 inflection produces a categorical action A(a) whose inflection-point output value is **2.4615**, matching `5/2 − h²·G = 2.4600` to within 600 ppm.
 
 ### Structural implication
 
@@ -57,7 +59,7 @@ Tested scalar invariants × Vol(B_3)/ℏ_q² · m_e:
 | Σ spec_rad | 2034 | +117% |
 | Σ |det| | 1915 | +104% |
 | max spec_rad | 425 | −55% |
-| Σ trace (= τ_M) | 394 | −58% |
+|  Σ trace (UNWEIGHTED, ≠ τ_M) | 394 | −58% |
 | spec_rad(λ=(2,2)) | 417 | −56% |
 
 **None of the scalar invariants of the operator-valued ρ_λ matches M_N.** Route B requires a non-scalar invariant — specifically the inflection-point value of a categorical action depending on these operators (which is what PR #690's framework computes).

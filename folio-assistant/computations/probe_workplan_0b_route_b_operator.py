@@ -137,8 +137,12 @@ def main() -> int:
             sum(abs(inv["det"]) for inv in invariants.values()) * float(VOL_B3 / HBAR**2 * M_E),
         "max spec_rad · Vol(B_3)/ℏ_q² · m_e":
             max(inv["spec_rad"] for inv in invariants.values()) * float(VOL_B3 / HBAR**2 * M_E),
-        "Σ trace · Vol(B_3)/ℏ_q² · m_e (= τ_M)":
+        "Σ_λ trace (UNWEIGHTED, not τ_M) · Vol(B_3)/ℏ_q² · m_e":
             sum(inv["trace"] for inv in invariants.values()) * float(VOL_B3 / HBAR**2 * M_E),
+        # NOTE per Copilot review on PR #751: this is Σ_λ χ^λ(β) — the
+        # UNWEIGHTED block-trace sum, NOT τ_M = Σ_λ y_λ(q)·χ^λ(β).
+        # The Wenzl Markov weights y_λ are not applied here. For the
+        # canonical Markov trace, see `wedderburn_jones_markov.tr_M_at`.
         "spec_rad(λ=(2,2)) · Vol(B_3)/ℏ_q² · m_e":
             invariants["(2, 2)"]["spec_rad"] * float(VOL_B3 / HBAR**2 * M_E) if "(2, 2)" in invariants else None,
     }
