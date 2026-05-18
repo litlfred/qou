@@ -243,12 +243,15 @@ pub fn chi_lambda_braid_mpfr(
     // Inner parallelism is nested under the partition-level rayon in
     // `chi_lambdas_braid_mpfr`. Rayon's work-stealing scheduler
     // handles the nested case: when outer (partitions) saturates the
-    // pool, inner is a no-op; when outer is in the long-tail (one
-    // max-dim partition remaining), inner kicks in and parallelises
-    // the dim loop across the now-idle cores. This is the wall-time
-    // win for max-dim partitions at n ≥ 12 (e.g. partition
-    // (5,3,2,1,1) at n=12 has dim 7,700; (5,4,3,2,1) at n=15 has dim
-    // 292,864 — see the audit's max-dim table).
+    // pool, the inner iterator effectively runs sequentially on each
+    // worker (rayon still schedules tasks for it, with some overhead,
+    // but no parallel speedup is available); when outer is in the
+    // long-tail (one max-dim partition remaining and other cores
+    // idle), inner kicks in and parallelises the dim loop across the
+    // now-idle cores. This is the wall-time win for max-dim
+    // partitions at n ≥ 12 (e.g. partition (5,3,2,1,1) at n=12 has
+    // dim 7,700; (5,4,3,2,1) at n=15 has dim 292,864 — see the
+    // audit's max-dim table).
     //
     // **Determinism**: we collect the per-i diagonal contributions
     // into a Vec and sum sequentially in i order, rather than using
@@ -260,36 +263,51 @@ pub fn chi_lambda_braid_mpfr(
     // O(dim × |word|) main work — and preserves bit-equality with
     // the original sequential implementation. This matters for the
     // QOU witness-pipeline drift check which compares decimal-string
-    // χ^λ values byte-for-byte across runs.
+    // χ^λ values byte-for-byte across runs, and is regression-tested
+    // in `chi_lambda_braid_mpfr_deterministic_under_pool_size` below.
     //
-    // Each parallel worker allocates its own `Vec<Float>` of length
-    // dim to avoid sharing mutable state — `rug::Float` is Send/Sync
-    // but mutating one in place from multiple threads would race.
+    // **Buffer reuse** via `map_init`: each rayon worker thread
+    // allocates a `Vec<Float>` once and resets it in place per i
+    // (via `.assign(0)` / `.assign(1)`), instead of allocating and
+    // initialising a fresh Vec per i. At dim = 7,700 this avoids
+    // dim - n_workers Float allocations per partition; at dim =
+    // 292,864 the saving is much larger. `rug::Float` is
+    // `Send + Sync` but mutating one in place from multiple threads
+    // would race, so each worker owns its own buffer.
     use rayon::prelude::*;
+    use rug::Assign;
     let diagonal_contribs: Vec<Float> = (0..dim)
         .into_par_iter()
-        .map(|i| {
-            let mut v: Vec<Float> =
-                (0..dim).map(|_| Float::with_val(prec, 0)).collect();
-            v[i] = Float::with_val(prec, 1);
-            // Sign convention (matches f64 chi_lambda_braid):
-            //   sign > 0  → σ_g           (positive crossing)
-            //   sign < 0  → σ_g - h·I     (σ_g⁻¹ via Hecke relation)
-            //   sign == 0 → σ_g - h/2·I   (averaged crossing, direct
-            //                              substitution, no 2^k expansion)
-            for &(sign, blocks) in resolved.iter().rev() {
-                if sign > 0 {
-                    apply_sigma_mpfr(&mut v, blocks, prec);
-                } else if sign < 0 {
-                    apply_sigma_inv_mpfr(&mut v, blocks, &h, prec);
-                } else {
-                    apply_sigma_averaged_mpfr(&mut v, blocks, &h, prec);
+        .map_init(
+            || -> Vec<Float> {
+                (0..dim).map(|_| Float::with_val(prec, 0)).collect()
+            },
+            |v, i| {
+                // Reset the thread-local buffer to e_i without
+                // dropping the `rug::Float` allocations.
+                for k in 0..dim {
+                    v[k].assign(0);
                 }
-            }
-            // Return this thread's diagonal contribution v[i]; the
-            // deterministic sequential sum below builds trace.
-            v[i].clone()
-        })
+                v[i].assign(1);
+                // Sign convention (matches f64 chi_lambda_braid):
+                //   sign > 0  → σ_g           (positive crossing)
+                //   sign < 0  → σ_g - h·I     (σ_g⁻¹ via Hecke relation)
+                //   sign == 0 → σ_g - h/2·I   (averaged crossing, direct
+                //                              substitution, no 2^k expansion)
+                for &(sign, blocks) in resolved.iter().rev() {
+                    if sign > 0 {
+                        apply_sigma_mpfr(v, blocks, prec);
+                    } else if sign < 0 {
+                        apply_sigma_inv_mpfr(v, blocks, &h, prec);
+                    } else {
+                        apply_sigma_averaged_mpfr(v, blocks, &h, prec);
+                    }
+                }
+                // Return this thread's diagonal contribution v[i];
+                // the deterministic sequential sum below builds trace.
+                v[i].clone()
+            },
+        )
         .collect();
     let mut trace = Float::with_val(prec, 0);
     for c in &diagonal_contribs {
@@ -421,6 +439,66 @@ mod tests {
             s.starts_with("1.10998") || s.starts_with("1.1099"),
             "expected entry ≈ q = 1.10998…, got {}",
             s
+        );
+    }
+
+    /// Regression test for the byte-equality determinism guarantee
+    /// introduced by the `map_init` + sequential-sum refactor.
+    ///
+    /// Per Copilot review on PR #716 (line 263):
+    /// > "Given determinism/byte-equality is a stated requirement here,
+    /// >  consider adding a regression test that calls
+    /// >  `chi_lambda_braid_mpfr` multiple times (and ideally under
+    /// >  different rayon thread counts via a local `ThreadPoolBuilder`)
+    /// >  and asserts the returned decimal string is exactly identical."
+    ///
+    /// This test runs the same input under 1-thread, 2-thread, and
+    /// 4-thread rayon pools and asserts byte-equal output. If the
+    /// parallel-reduction order ever leaks into the result, this test
+    /// fails immediately.
+    #[test]
+    fn chi_lambda_braid_mpfr_deterministic_under_pool_size() {
+        let shape = vec![2usize, 1];
+        // A 5-crossing mixed σ/σ⁻¹ word — enough crossings to exercise
+        // the inner matvec loop, and dim=2 (λ=[2,1] at n=3) so the
+        // outer `(0..dim).into_par_iter()` actually splits work.
+        let word: Vec<(i32, u32)> = vec![
+            (1, 1), (-1, 2), (1, 1), (-1, 2), (1, 1),
+        ];
+        let q_str = "1.10977859555418057297748154126596420587829";
+        let dps = 50;
+
+        // Helper to run inside a freshly-built thread pool.
+        fn run_under_pool(
+            n_threads: usize,
+            shape: &[usize],
+            word: &[(i32, u32)],
+            q_str: &str,
+            dps: u32,
+        ) -> String {
+            let pool = rayon::ThreadPoolBuilder::new()
+                .num_threads(n_threads)
+                .build()
+                .expect("rayon ThreadPoolBuilder");
+            pool.install(|| {
+                chi_lambda_braid_mpfr(shape, word, q_str, dps)
+            })
+        }
+
+        let baseline = run_under_pool(1, &shape, &word, q_str, dps);
+        let parallel_2 = run_under_pool(2, &shape, &word, q_str, dps);
+        let parallel_4 = run_under_pool(4, &shape, &word, q_str, dps);
+
+        // The sequential sum at the end of the parallel section
+        // guarantees byte-equal output regardless of how rayon
+        // splits the outer `(0..dim).into_par_iter()` work.
+        assert_eq!(
+            baseline, parallel_2,
+            "1-thread vs 2-thread output diverged at 50dps"
+        );
+        assert_eq!(
+            baseline, parallel_4,
+            "1-thread vs 4-thread output diverged at 50dps"
         );
     }
 
