@@ -189,7 +189,7 @@ def main() -> int:
                                  "deferred to substrate Li_2^q convergence analysis (PR #682 dep)",
         "reading": "3-loop substrate Planck (one more action quantum on top of leading 2-loop)",
         "value": str(refined_derive),
-        "residual_ppm": float(derive_ppm),
+        "residual_ppm": float(derive_ppm),  # noqa: I8 — display / raw-dict emit
         "tightening_over_leading": float(abs(base_ppm) / abs(derive_ppm)),
         "closed_form": "ℏ_q²·h_q·[2]_q·(1 + ℏ_q³)/3 = (q-1)²·(1-q⁻⁴)·(1 + ((q-1)/q)³)/3",
     })
@@ -201,7 +201,7 @@ def main() -> int:
         "reading": "tighter numerical match but ad hoc; could be a stronger "
                    "categorical formula or a coincidence at q_0",
         "value": str(refined_emp),
-        "residual_ppm": float(emp_ppm),
+        "residual_ppm": float(emp_ppm),  # noqa: I8 — display / raw-dict emit
         "tightening_over_leading": float(abs(base_ppm) / abs(emp_ppm)),
         "closed_form": "(q-1)²·(1-q⁻⁴)·(1 + (q-1)³)/3",
     })

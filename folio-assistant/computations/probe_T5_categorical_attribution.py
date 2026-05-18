@@ -130,7 +130,7 @@ def main() -> int:
         gap_n = float((val - targets["neutron"]) / targets["neutron"] * 100)
         rows.append({
             "candidate": name,
-            "value_MeV": float(val),
+            "value_MeV": float(val),  # noqa: I8 — display / raw-dict emit
             "gap_proton_pct": gap_p,
             "gap_neutron_pct": gap_n,
             "avg_abs_gap_pct": (abs(gap_p) + abs(gap_n)) / 2,
