@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T01:51:01.999441+00:00",
-  "commitSha": "ca5022cebeb11c478b0d1d3a79f254cd207c2d97",
+  "computedAt": "2026-05-18T01:51:03.827018+00:00",
+  "commitSha": "e798168b35d99ac49374da6739860a106986c556",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2454,6 +2454,7 @@
         "staircase-ew-predictions.witness.json",
         "staircase-ew-residual-conjecture.witness.json",
         "staircase-ew-sdp-crossing.witness.json",
+        "staircase-ew-symbolic-trM-h6.witness.json",
         "sublemma-2-1-A-operator-extract-h9-nn.witness.json",
         "sublemma-2-1-A-operator-extract.witness.json",
         "sublemma-2-1-alpha-shift-extract.witness.json",

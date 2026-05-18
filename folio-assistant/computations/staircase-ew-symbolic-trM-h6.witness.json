@@ -1,0 +1,43 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-05-18T01:30:52.155252+00:00",
+  "commitSha": "081d26bece48e263e6ee0c92630e0b383d63142c",
+  "assertions": [
+    {
+      "name": "symbolic_tr_M_matches_numerical_at_q0",
+      "computed": 3.4187800525087537,
+      "expected": 3.4187800525,
+      "passed": true,
+      "tolerance": 1e-06,
+      "unit": "dimensionless"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 186,
+  "computation": "staircase-ew-symbolic-trM-h6",
+  "scriptFile": "probe_symbolic_trM_h6.py",
+  "scriptHash": "8c41ad624bd7",
+  "scriptCommitSha": "unknown",
+  "description": "Closed-form symbolic q-rational expression for tr_M(β_EW Δ_I^minimal) at H_6, computed via iterative Hecke quadratic + braid-relation reduction + Markov peel. Implements the bring_top_together algorithm diagnosed as missing in docs/audits/2026-05-18-symbolic-trM-H6-partial.md (the gap that forces tr_M_element to punt to the numeric-only Ocneanu fallback). The full symbolic tr_M is a pure-q rational function (size ~24k chars unsimplified); numerical evaluation at q_0 matches the float64 Wenzl-bridge value 3.4187800525 to 12 decimal digits, confirming the symbolic derivation. Simplification + structural inspection (does z = z_markov, ℏ_q, or some categorical scale appear?) is the next step in a separate probe.",
+  "contentBlock": "conj:staircase-ew-residual",
+  "auditOnly": "docs/audits/2026-05-18-symbolic-trM-H6-partial.md",
+  "parameters": {
+    "n_strands": 6,
+    "beta_ew_word_length": 27,
+    "q_0": 1.1099785955541805
+  },
+  "data": {
+    "compute_time_seconds": 5.413733720779419,
+    "raw_expression_size_chars": 24409,
+    "free_symbols": [
+      "q"
+    ],
+    "symbolic_tr_M_value_at_q0": 3.4187800525087537,
+    "wenzl_bridge_target_at_q0": 3.4187800525,
+    "agreement_abs_diff": 8.753886504564434e-12
+  },
+  "caveats": [
+    "Expression is unsimplified (~24k chars). Running sp.cancel/sp.factor for closed-form display is the next step. The bring_top_together algorithm is documented in this file's docstring; mainstreaming it into hecke_laurent_fast.reduce_laurent_rules is recommended follow-up."
+  ]
+}
