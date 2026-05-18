@@ -1,0 +1,324 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-18T16:47:03.996746+00:00",
+  "commitSha": "ecaee8158d9eca429782936945e3e907ddcb6c07",
+  "assertions": [
+    {
+      "name": "no_guarded_off_candidates",
+      "computed": 0.0,
+      "expected": 1.0,
+      "passed": false,
+      "tolerance": 0.0,
+      "unit": "boolean (1.0 = no script contains guarded-off shapes)",
+      "source": "Closure gate: when this passes, every canonical-witness consumer runs unconditionally (or behind a gate the watcher has explicitly approved)."
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 8,
+  "computation": "guarded-off-audit",
+  "scriptFile": "guarded_off_audit.py",
+  "scriptHash": "e3aa68488ccb",
+  "scriptCommitSha": "unknown",
+  "description": "I3 audit per local/compute-integration-watcher: scripts that contain `if False:` / `if 0:` blocks, env-var-defaulting-to-off gates, or explicit `# DEAD`/`# DISABLED`/`# LEGACY` markers where a canonical-witness consumer may have been disabled.  Candidates only — review the per-line context to confirm the block actually wraps a canonical-path call (vs being a debug toggle / leftover scaffolding).",
+  "contentBlock": "I3 antipattern (compute-integration-watcher.md §antipatterns)",
+  "parameters": {
+    "scripts_with_hits": 23,
+    "total_guard_lines_flagged": 26
+  },
+  "data": {
+    "rows": [
+      {
+        "path": "folio-assistant/computations/atom_nf_symbolic_D.py",
+        "hit_count": 2,
+        "hits": [
+          {
+            "line_number": 183,
+            "pattern": "explicit_skip_block",
+            "snippet": "    # computationally expensive (≫5 min on a standard core).  Set\n    # SKIP_TRACE=1 to produce a witness with the NF only and leave\n    # markov_trace=0.  For arbitrary-q NUMERIC evaluation of the same\n    # trace (much faster), see atom_jones_vs_knots_D.py which uses"
+          },
+          {
+            "line_number": 188,
+            "pattern": "env_var_off_default",
+            "snippet": "    import os\n    SKIP_TRACE = os.environ.get(\"SKIP_TRACE\", \"0\") == \"1\"\n    if SKIP_TRACE:\n        print(\"\\n  [SKIP_TRACE=1; skipping symbolic Markov trace]\")"
+          }
+        ],
+        "result": "i3_candidate"
+      },
+      {
+        "path": "folio-assistant/computations/habiro_coefficients_atomic.py",
+        "hit_count": 2,
+        "hits": [
+          {
+            "line_number": 122,
+            "pattern": "explicit_skip_block",
+            "snippet": "                continue\n            # Skip per-term sp.cancel: the deuteron n=6 case had\n            # sympy spending minutes on cancel even after q→u² (the\n            # accumulated chi numerators are large polynomials in u);"
+          },
+          {
+            "line_number": 244,
+            "pattern": "explicit_skip_block",
+            "snippet": "    p_q = markov_trace_symbolic(Z, N, q, include_inter=include_inter)\n    # Skip sp.nsimplify in the log line — for the deuteron's\n    # ~degree-194 rational over q this call alone takes >30 s while\n    # adding zero diagnostic value (the polynomial is already in"
+          }
+        ],
+        "result": "i3_candidate"
+      },
+      {
+        "path": "folio-assistant/computations/probe_sdpb_h3a_deuteron.py",
+        "hit_count": 2,
+        "hits": [
+          {
+            "line_number": 153,
+            "pattern": "explicit_skip_block",
+            "snippet": "    # absolute-value form OR separate positive/negative variables.\n    # Skipping for now; H_3 pair-trace at proton/neutron remains.\n    # 4. Integration-limit consistency at each particle's character magnitude\n    chi_p_21_M = represent_braid_in_h3_standard([1, -2, 1, -2, 1, -2], q0)"
+          },
+          {
+            "line_number": 165,
+            "pattern": "explicit_skip_block",
+            "snippet": "    # (use absolute-value form via auxiliary variable since |·| not DCP-direct).\n    # Skip the bilinear multiplicativity constraint — relax to allow LP to find a.\n    # (Markov multiplicativity needs proper normalisation handling — currently\n    # tr_M_D direct at H_6 = -0.318 vs tr_M_p·tr_M_n = +2"
+          }
+        ],
+        "result": "i3_candidate"
+      },
+      {
+        "path": "folio-assistant/computations/alpha_5_lp_dual_crystal.py",
+        "hit_count": 1,
+        "hits": [
+          {
+            "line_number": 271,
+            "pattern": "env_var_off_default",
+            "snippet": "    import os\n    include_4he = os.environ.get(\"INCLUDE_4HE\", \"0\") == \"1\"\n    atoms = [\"D\", \"T\", \"3He\"] + ([\"4He\"] if include_4he else [])\n    strata = [\"two_row\", \"ht6\"]"
+          }
+        ],
+        "result": "i3_candidate"
+      },
+      {
+        "path": "folio-assistant/computations/c_alpha_from_Q_beta_trace.py",
+        "hit_count": 1,
+        "hits": [
+          {
+            "line_number": 128,
+            "pattern": "explicit_skip_block",
+            "snippet": "        except (OSError, UnicodeDecodeError):\n            # Skip files we can't read (permissions, encoding).  Other\n            # exception types should surface as bugs.\n            pass"
+          }
+        ],
+        "result": "i3_candidate"
+      },
+      {
+        "path": "folio-assistant/computations/compute_audit_scan.py",
+        "hit_count": 1,
+        "hits": [
+          {
+            "line_number": 231,
+            "pattern": "explicit_skip_block",
+            "snippet": "            for m in re.finditer(pattern, src):\n                # Skip if line carries explicit `# noqa: P31` justification.\n                line_no = _line_of(src, m.start())\n                line_start = src.rfind(\"\\n\", 0, m.start()) + 1"
+          }
+        ],
+        "result": "i3_candidate"
+      },
+      {
+        "path": "folio-assistant/computations/crt_markov.py",
+        "hit_count": 1,
+        "hits": [
+          {
+            "line_number": 252,
+            "pattern": "explicit_skip_block",
+            "snippet": "    for gen in range(n_strands - 1):\n        # Skip inter-nucleon generators when computing free baseline\n        if not include_inter and (gen % 3 == 2) and gen < 3 * A - 1:\n            continue"
+          }
+        ],
+        "result": "i3_candidate"
+      },
+      {
+        "path": "folio-assistant/computations/crystal_shift_nf_atomic.py",
+        "hit_count": 1,
+        "hits": [
+          {
+            "line_number": 448,
+            "pattern": "explicit_skip_block",
+            "snippet": "        if 3 * (Z + N) > 12:\n            # Skip SYT enumeration; use closed-form crystal pole\n            qpole = closed_form_crystal_q_pole(Z, N)\n            bridge_shift = habiro_shift_via_crystal(Z, N, qpole)"
+          }
+        ],
+        "result": "i3_candidate"
+      },
+      {
+        "path": "folio-assistant/computations/derivation_chain_validator.py",
+        "hit_count": 1,
+        "hits": [
+          {
+            "line_number": 315,
+            "pattern": "explicit_skip_block",
+            "snippet": "    for wp in sorted(chains_dir.glob(\"*.witness.json\")):\n        # Skip the audit's own output to avoid self-reference noise.\n        if wp.name == AUDIT_WITNESS_NAME:\n            continue"
+          }
+        ],
+        "result": "i3_candidate"
+      },
+      {
+        "path": "folio-assistant/computations/habiro_coefficients_interpolate.py",
+        "hit_count": 1,
+        "hits": [
+          {
+            "line_number": 324,
+            "pattern": "explicit_skip_block",
+            "snippet": "    # A = 3 demo: triton (Z=1, N=2) and ³He (Z=2, N=1) — symbolic intractable.\n    # Skipped by default: post-Wenzl-bridge migration the n=9 symbolic\n    # weight evaluation is too slow (>>1 min).  The cross-validator does\n    # not check A=3 (T and ³He are interpolate-only — no atomic"
+          }
+        ],
+        "result": "i3_candidate"
+      },
+      {
+        "path": "folio-assistant/computations/hardcoded_literal_audit.py",
+        "hit_count": 1,
+        "hits": [
+          {
+            "line_number": 140,
+            "pattern": "explicit_skip_block",
+            "snippet": "                continue\n            # Skip tiny / very-large literals — likely indices /\n            # bounds / iteration counts, not physical constants.\n            if abs(literal_val) < mp.mpf(\"0.0001\"):"
+          }
+        ],
+        "result": "i3_candidate"
+      },
+      {
+        "path": "folio-assistant/computations/hecke_symbolic.py",
+        "hit_count": 1,
+        "hits": [
+          {
+            "line_number": 349,
+            "pattern": "explicit_skip_block",
+            "snippet": "            nf_terms = info['nf_terms']\n            # Skip single-term — handled by _try_subword_quotient.\n            nonzero = [(w, c) for w, c in nf_terms.items() if c != 0]\n            if len(nonzero) <= 1:"
+          }
+        ],
+        "result": "i3_candidate"
+      },
+      {
+        "path": "folio-assistant/computations/lean_ref_resolution_audit.py",
+        "hit_count": 1,
+        "hits": [
+          {
+            "line_number": 237,
+            "pattern": "explicit_skip_block",
+            "snippet": "    for ts in sorted(CONTENT_ROOT.rglob(\"*.ts\")):\n        # Skip schema / pipeline / generated.\n        rel = ts.relative_to(CONTENT_ROOT)\n        if rel.parts[0] in (\"schema\", \"pipeline\"):"
+          }
+        ],
+        "result": "i3_candidate"
+      },
+      {
+        "path": "folio-assistant/computations/markov_pipeline_cross_validator.py",
+        "hit_count": 1,
+        "hits": [
+          {
+            "line_number": 134,
+            "pattern": "explicit_skip_block",
+            "snippet": "    if term6_data is None:\n        # SKIP path: don't write a witness — absence of file means\n        # \"not yet generated\", which lets run_pipeline.py and human\n        # readers detect that the cross-validation is pending.  When"
+          }
+        ],
+        "result": "i3_candidate"
+      },
+      {
+        "path": "folio-assistant/computations/optimised_magic_verifier.py",
+        "hit_count": 1,
+        "hits": [
+          {
+            "line_number": 85,
+            "pattern": "explicit_skip_block",
+            "snippet": "\n    # Skip degenerate cases\n    if lam_Z is None or lam_N is None:\n        return {"
+          }
+        ],
+        "result": "i3_candidate"
+      },
+      {
+        "path": "folio-assistant/computations/paper_six_term_isotope_sweep.py",
+        "hit_count": 1,
+        "hits": [
+          {
+            "line_number": 849,
+            "pattern": "dead_disabled_marker",
+            "snippet": "        else:\n            # Legacy: fit E_0 to make proton residual exactly zero.\n            E_0 = (M_P_CODATA - p_t6_MeV) / m_p_hecke\n    else:  # substrate"
+          }
+        ],
+        "result": "i3_candidate"
+      },
+      {
+        "path": "folio-assistant/computations/probe_atom_shell_self_duality.py",
+        "hit_count": 1,
+        "hits": [
+          {
+            "line_number": 122,
+            "pattern": "explicit_skip_block",
+            "snippet": "\n        # Skip the dual pair if we've seen (λ*, λ) already\n        sorted_pair = tuple(sorted([shape, shape_star]))\n        if sorted_pair in seen_pairs:"
+          }
+        ],
+        "result": "i3_candidate"
+      },
+      {
+        "path": "folio-assistant/computations/probe_inter_knot_decoupling.py",
+        "hit_count": 1,
+        "hits": [
+          {
+            "line_number": 73,
+            "pattern": "explicit_skip_block",
+            "snippet": "        except Exception:\n            # Skip — no y_λ available\n            return None\n    return total"
+          }
+        ],
+        "result": "i3_candidate"
+      },
+      {
+        "path": "folio-assistant/computations/probe_phiq_per_partition_klambda.py",
+        "hit_count": 1,
+        "hits": [
+          {
+            "line_number": 146,
+            "pattern": "explicit_skip_block",
+            "snippet": "    else:\n        # Skip — would require recomputation; out of scope here.\n        non_dom_sum = float(\"nan\")\n"
+          }
+        ],
+        "result": "i3_candidate"
+      },
+      {
+        "path": "folio-assistant/computations/wedderburn_lp_ew_wiring.py",
+        "hit_count": 1,
+        "hits": [
+          {
+            "line_number": 381,
+            "pattern": "explicit_skip_block",
+            "snippet": "        if n_strands_a > MAX_FULL_GRAM_N:\n            # Skip with explicit deferred status — math is well-defined\n            # but Hoefsmit precomputation at H_n exceeds session budget\n            # without the Rust mpfr kernel."
+          }
+        ],
+        "result": "i3_candidate"
+      },
+      {
+        "path": "folio-assistant/computations/witness_base.py",
+        "hit_count": 1,
+        "hits": [
+          {
+            "line_number": 458,
+            "pattern": "explicit_skip_block",
+            "snippet": "            elif key in cls._RESERVED_LEGACY_KEYS:\n                # Skip auto-generated metadata; build() will recompute\n                continue\n            else:"
+          }
+        ],
+        "result": "i3_candidate"
+      },
+      {
+        "path": "folio-assistant/computations/witness_reproducibility_check.py",
+        "hit_count": 1,
+        "hits": [
+          {
+            "line_number": 176,
+            "pattern": "explicit_skip_block",
+            "snippet": "            continue\n        # Skip the snapshot path itself (just created)\n        if child == snapshot_path:\n            continue"
+          }
+        ],
+        "result": "i3_candidate"
+      },
+      {
+        "path": "folio-assistant/computations/y_lambda_pole_order_cache.py",
+        "hit_count": 1,
+        "hits": [
+          {
+            "line_number": 109,
+            "pattern": "explicit_skip_block",
+            "snippet": "            continue\n        # Skip if already cached at this n.\n        if n_key in existing[\"by_n\"]:\n            cached_count = len(existing[\"by_n\"][n_key][\"partitions\"])"
+          }
+        ],
+        "result": "i3_candidate"
+      }
+    ]
+  }
+}
