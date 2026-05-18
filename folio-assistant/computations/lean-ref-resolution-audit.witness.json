@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T19:53:13.016346+00:00",
-  "commitSha": "935861a897d30ccb42e9905ffa57c263d4d1a2f1",
+  "computedAt": "2026-05-18T20:06:13.020888+00:00",
+  "commitSha": "6909a65ad190aa0093bfaba1fc2a5c1be7611a9a",
   "assertions": [
     {
       "name": "no_unregistered_package_prefixes",
@@ -15,7 +15,7 @@
     },
     {
       "name": "ok_count_matches_total_minus_failures",
-      "computed": 599.0,
+      "computed": 601.0,
       "expected": 944.0,
       "passed": false,
       "tolerance": 0.0,
@@ -24,7 +24,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 13,
+  "durationMs": 9,
   "computation": "lean-ref-resolution-audit",
   "scriptFile": "lean_ref_resolution_audit.py",
   "scriptHash": "5a460527b690",
@@ -36,10 +36,10 @@
   },
   "data": {
     "by_result": {
-      "ok": 599,
+      "ok": 601,
       "sibling_no_decl": 218,
       "grep_no_match": 122,
-      "lake_root_missing_grep_hit": 5
+      "lake_root_missing_grep_hit": 3
     },
     "rows": [
       {
@@ -2896,21 +2896,22 @@
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/gs-graded-markov-trace-existence.ts",
-        "ref": "qou:QOU.BraidKnot.GBResidueSpectralSum.gradedTrace",
+        "ref": "qou:QOU.BraidKnot.GradedMarkovTraceFromGSFiltration",
         "kind": "unknown",
         "pkg": "qou",
-        "decl_path": "QOU.BraidKnot.GBResidueSpectralSum.gradedTrace",
+        "decl_path": "QOU.BraidKnot.GradedMarkovTraceFromGSFiltration",
         "sibling_exists": false,
         "sibling_declares": false,
-        "lake_root_exists": false,
-        "lake_root_declares": false,
+        "lake_root_exists": true,
+        "lake_root_declares": true,
         "lake_parent_declares": false,
         "grep_hits": [
-          "/home/user/qou/content/quantum-observable-universe/braids-and-knots/graded-trace-residue-split.lean"
+          "/home/user/qou/content/quantum-observable-universe/lean/QOU/BraidKnot/GradedMarkovTraceFromGSFiltration.lean"
         ],
         "grep_hit": true,
-        "grep_hit_under_lake_root": false,
-        "result": "lake_root_missing_grep_hit"
+        "grep_hit_under_lake_root": true,
+        "result": "ok",
+        "resolved_via": "lake_root"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/gs-residue-at-root-existence.ts",
@@ -2954,11 +2955,13 @@
         "lake_root_declares": false,
         "lake_parent_declares": false,
         "grep_hits": [
-          "/home/user/qou/content/quantum-observable-universe/braids-and-knots/gb-residue-spectral-sum.lean"
+          "/home/user/qou/content/quantum-observable-universe/braids-and-knots/gb-residue-spectral-sum.lean",
+          "/home/user/qou/content/quantum-observable-universe/lean/QOU/BraidKnot/GBResidueSpectralSum.lean"
         ],
         "grep_hit": true,
-        "grep_hit_under_lake_root": false,
-        "result": "lake_root_missing_grep_hit"
+        "grep_hit_under_lake_root": true,
+        "result": "ok",
+        "resolved_via": "grep_under_lake_root"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/h3-hecke-idempotents.ts",
@@ -13352,10 +13355,10 @@
       },
       {
         "path": "content/quantum-observable-universe/particle-interactions/neutron-proton-splitting.ts",
-        "ref": "qou:QOU.ParticleInteractions.neutron_proton_splitting",
+        "ref": "qou:QOU.Torsion.neutron_proton_splitting",
         "kind": "unknown",
         "pkg": "qou",
-        "decl_path": "QOU.ParticleInteractions.neutron_proton_splitting",
+        "decl_path": "QOU.Torsion.neutron_proton_splitting",
         "sibling_exists": false,
         "sibling_declares": false,
         "lake_root_exists": false,

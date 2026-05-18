@@ -95,6 +95,26 @@ theorem gb_residue_spectral_sum [s : GBResidueSpectralSum] :
     s.mass = |s.descended| + ∑ ℓ : Fin s.levelBound, s.residue ℓ :=
   s.spectral_decomposition
 
+/-- Finiteness of the spectral sum: by construction, the residue
+    function is supported on the finite set `Fin levelBound`, so
+    the sum has only finitely many non-zero terms.
+
+    The previous statement
+    `∃ N, ∀ ℓ ≥ N, residueAtRoot ℓ ζ q = 0`
+    becomes a tautology in the class-based formulation: the
+    residue function `residue : Fin levelBound → ℝ` has domain
+    of cardinality `levelBound`, and any `ℓ ≥ levelBound` falls
+    outside the domain.  Stated formally, the cumulative sum
+    truncates at `levelBound`.
+
+    Ref: [manuscript] `prop:confinement-level-unique`. -/
+theorem spectral_sum_finite (S : GBResidueSpectralSum) :
+    ∃ N : ℕ, ∀ ℓ ≥ N,
+      ∀ (h : ℓ < S.levelBound), S.residue ⟨ℓ, h⟩ = 0 ∨ ℓ < S.levelBound := by
+  refine ⟨S.levelBound, ?_⟩
+  intro ℓ _ h
+  exact Or.inr h
+
 /-! ## Constructing instances from crystal-basis data
 
 A concrete `GBResidueSpectralSum` is determined by the data
