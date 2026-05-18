@@ -441,7 +441,7 @@ theorem HyperbolicVolumeIndependence.implies_borel_zagier
     BorelZagierQOU where
   linear_independent := by
     intro a₁ a₂ a₃ h
-    -- Ref: [borel1986] manuscript Chapter 5 — Borel-Zagier
+    -- Ref: [borel1974] manuscript Chapter 5 — Borel-Zagier
     -- Witness: 3-element finset S = {(1,0,0),(0,1,0),(0,0,1)} with
     -- coefficient function f assigning a₁,a₂,a₃ to each triple.
     let S : Finset (ℕ × ℕ × ℕ) :=

@@ -4,7 +4,7 @@
 \mathbf{Rep}(\mathrm{SU}_q(2))$. Then $A$ admits a unique
 $G$-equivariant structure for $G = \mathrm{SU}(2)_L \times
 \mathrm{U}(1)_Y$ compatible with the path-α torus-link identification
-(electroweak/Higgs torus-link triplet (planned, not yet authored)),
+(electroweak/Higgs torus-link triplet [planned, not yet authored]),
 specified by the four axioms below. From these axioms the
 symmetric-channel Frobenius trace
 $\mathrm{tr}_F(e_{\rm sym}^{\rm EW} \cdot e_H)$ — the value
@@ -35,7 +35,7 @@ where each $A^{(X)}$ carries a unique irrep of $G$:
 **Axiom (G-2) — Per-host q-dim assignment.**
 The categorical q-dimension of each component is determined by its
 torus-link host (per
-force-carrier Bring uniqueness (planned, not yet authored)
+force-carrier Bring uniqueness [planned, not yet authored]
 + path-α identification):
 
 $$

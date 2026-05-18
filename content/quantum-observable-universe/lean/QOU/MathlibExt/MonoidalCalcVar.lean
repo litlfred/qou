@@ -101,7 +101,7 @@ instances are the conjectural input. -/
 /-- **Categorical equations of motion typeclass**: bundles the
     three on-shell variational identities. -/
 -- Ref: [wald1984] §4.3 (Einstein); [bleecker1981] Ch VII (YM)
--- Ref: [kobayashi1996] Vol I Ch II (transport)
+-- Ref: [kobayashi1963] Vol I Ch II (transport)
 class HasMonoidalEOM (C : Type u) [Category.{v} C]
     [MonoidalCategory C] [Preadditive C]
     (vd : VariationalData C) (ec : ExternalCurrents C) : Prop where
