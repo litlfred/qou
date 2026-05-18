@@ -1,0 +1,28 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-05-18T19:55:15.507801+00:00",
+  "commitSha": "8197914ddf2974fb11c2cfdd93804010ecbd5029",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 25,
+  "computation": "probe-categorical-partial-fractions",
+  "scriptFile": "probe_categorical_partial_fractions.py",
+  "scriptHash": "61ee168e0f85",
+  "scriptCommitSha": "b1289d894255d4236f71b7e15abbe1dca5da7b14",
+  "description": "Partial-fraction decomposition of -P(z)/D(z) and palindromic reduction D(z) = z³ D̃(w) at w = z + 1/z. Records irreducible factors of D over Q, the cubic D̃(w) in w, the w-roots and their z-pair reciprocal structure.",
+  "contentBlock": "prop:sw-3root-rational-integrand",
+  "data": {
+    "D_tilde_w": "16*w**3 + 24*w**2 - 13*w + 2",
+    "D_tilde_w_factored": "16*w**3 + 24*w**2 - 13*w + 2",
+    "D_tilde_w_discriminant": "-80000",
+    "w_roots_numerical": [
+      "(0.22481553297802748+0.11650180487320938j)",
+      "(0.22481553297802748-0.11650180487320938j)",
+      "(-1.949631065956055+0j)"
+    ],
+    "P_factored_over_Q": "64*z**6 + 96*z**5 + 120*z**4 + 160*z**3 + 105*z**2 + 66*z + 39",
+    "D_factored_over_Q": "16*z**6 + 24*z**5 + 35*z**4 + 50*z**3 + 35*z**2 + 24*z + 16",
+    "P_palindromic": false
+  }
+}

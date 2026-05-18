@@ -1,0 +1,24 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-05-18T20:34:09.880445+00:00",
+  "commitSha": "76d8f4327f8043f573a97f542ae263eb2c84f30d",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 40,
+  "computation": "probe-categorical-action-symbolic",
+  "scriptFile": "probe_categorical_action_symbolic.py",
+  "scriptHash": "c865ab4fa389",
+  "scriptCommitSha": "fa01be4f33b453813feb60aa4ec4232292c93bab",
+  "description": "Symbolic derivation of the SW 3-root integrand as a rational function of z via Vieta + resultants. Validates that λ_SW^(1)(z) = -P(z)/D(z) with P, D the resultants computed here, and checks against production sw_3root_product_degree1(0.1) to machine precision.",
+  "contentBlock": "prop:sw-3root-rational-integrand",
+  "data": {
+    "integrand_baryon_rational_form": "(-64*z**6 - 96*z**5 - 120*z**4 - 160*z**3 - 105*z**2 - 66*z - 39)/(16*z**6 + 24*z**5 + 35*z**4 + 50*z**3 + 35*z**2 + 24*z + 16)",
+    "numerator_P_factored": "-64*z**6 - 96*z**5 - 120*z**4 - 160*z**3 - 105*z**2 - 66*z - 39",
+    "denominator_D_factored": "16*z**6 + 24*z**5 + 35*z**4 + 50*z**3 + 35*z**2 + 24*z + 16",
+    "numerator_deg_z": 6,
+    "denominator_deg_z": 6,
+    "value_at_z_0p1_symbolic": -2.49008889500587,
+    "value_at_z_0p1_production": -2.490088895005872
+  }
+}

@@ -1711,6 +1711,23 @@ export const references: CSLData[] = [
     DOI: "10.1038/35023282",
   }),
 
+  // ── Lang 2002: Algebra (Vieta + resultants, §IV.8) ───────────
+  ref({
+    id: "lang2002algebra",
+    type: "book",
+    title: "Algebra",
+    author: [
+      { family: "Lang", given: "Serge" },
+    ],
+    publisher: "Springer",
+    "publisher-place": "New York",
+    edition: "3",
+    issued: { "date-parts": [[2002]] },
+    "collection-title": "Graduate Texts in Mathematics",
+    "collection-number": 211,
+    DOI: "10.1007/978-1-4613-0041-0",
+  }),
+
   // ── Jacobson 1995: Thermodynamics of spacetime ────────────────
   ref({
     id: "jacobson1995",
