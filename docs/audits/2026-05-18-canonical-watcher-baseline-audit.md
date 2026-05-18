@@ -52,46 +52,51 @@ These commits on `origin/main` between session-start (`47e07087`) and HEAD lande
 | [`dc3a8355`](https://github.com/litlfred/qou/commit/dc3a8355) | Scale-gap RESOLUTION: Borromean tower formula at 0.25 ppm | `Vol(B_3) = 8·G` is DERIVATION (Adams 1985 + standard topology). Closes the m_p 1700× scale gap structurally. |
 | [`4f63dc80`](https://github.com/litlfred/qou/commit/4f63dc80) | Q6 closure: sync `Q_50_DIGIT_STR` with q-pinning witness (lifts 14-digit floor) | Affects PR #699 — refactor still correct (imports canonical); witness output will refine at digit 17+. |
 
-## 4  Content-level marker sweep (candidate findings — *needs per-file verification*)
+## 4  Content-level marker sweep — per-file audit results
 
-Brute grep for canonical-discipline marker words in `content/**/*.md`. Each hit is a **candidate**, not a confirmed violation — many uses of "approx" / "calibrated" are legitimate (e.g. inside math, referring to CAL-1/2/3, citing PDG provenance).
+Brute grep for canonical-discipline marker words in
+`content/**/*.md` produced 40 candidate files. A follow-up per-file
+read classified each in context — distinguishing the marker
+appearing in a legitimate context (math expression, CAL-1/2/3
+provenance citation, post-Archimedean τ-image naming) from a
+genuine discipline violation.
 
-### 4a  "ad hoc" / "fit to AME/CODATA/PDG" / "tuned" / "approx" / "justification" / "numerolog" markers
+**Bottom-line:** 32 legitimate / 4 Class-A/B/C opt-out / **4 genuine
+violations**.
 
-20 candidate files (all under `content/quantum-observable-universe/braids-and-knots/`):
+### 4a  Genuine violations (author escalation queued)
 
-```
-force-carrier-intertwining-correspondence.md
-np-discrepancy-resolution.md
-qmn-recursive-memoized.md
-atom-knot-mass-derivation.md
-gs-archimedean-agreement-residue.md
-unified-curvature-rank-mass-formula.md
-jet-filtered-knot-factor.md
-binding-knots-visual-inventory.md
-hoefsmit-scattering-pipeline.md
-per-braid-mass-tower.md
-figure-8-archimedean-illustration.md
-knot-operator-lp-selection.md
-recomputed-low-isotope-mass-table.md       ← KNOWN: † tautology-banner per docs/audits/2026-05-11-three-calibration-discipline-violations.md
-cl3-zeta5-pslq-independence.md
-alpha-em-categorical-trace.md
-y-lambda-closed-form-wenzl-bridge.md
-hook-weight-derivation.md
-atomic-mass-gb-nf.md
-categorical-chain-convergence-mechanisms.md
-eigenvalue-product-expansion.md
-```
+| File | Marker line | Verdict | One-sentence finding |
+|------|------------:|---------|----------------------|
+| [`atom-knot-mass-derivation.md`](../../content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md) | 17–18 | **violation** (fit-then-interpret) | Predicts proton mass "≈5 MeV" from a structural form alone, then asserts a 173× shortfall "captured by open $\rho_K$" — a fourth-calibration ansatz embedded in narrative. |
+| [`recomputed-low-isotope-mass-table.md`](../../content/quantum-observable-universe/braids-and-knots/recomputed-low-isotope-mass-table.md) | 70, 107, 124–128 | **violation** (over-count) — already Class-A-banner-tagged per `docs/audits/2026-05-11-three-calibration-discipline-violations.md` | Self-acknowledged "calibrated form" injection of $m_p$ and $m_n$ as 4th/5th calibration constants. The `† LO TAUTOLOGY NOTICE` banner is present; treat as **Class-A opt-out pending Workplan-0b**. |
+| [`alpha-em-categorical-trace.md`](../../content/quantum-observable-universe/braids-and-knots/alpha-em-categorical-trace.md) | 50, 54 | **violation** (PSLQ fit) | EM coupling $\alpha_{\mathrm{EM}}$ derived via PSLQ fit on a 52-element basis. Author warning at line 50 already states *"Treat as conjectural empirical formula until each factor is structurally derived."* Demotion to `remark` or explicit Class-A banner pending. |
+| [`atomic-mass-gb-nf.md`](../../content/quantum-observable-universe/braids-and-knots/atomic-mass-gb-nf.md) | 32, 117–118, 167–180 | **violation** (multi-form) | (i) PSLQ-fit `shift · q · c_q² ≈ 1835.4` matches $m_p/m_e$ to 0.04% but 20% on neutron — fit-then-interpret; (ii) constituent form injects CODATA $(m_p, m_n)$ as upstream — over-count; (iii) line 32 self-flags "**categorical derivation of $\rho_K$ is open**" yet the formula is used for atomic-mass predictions. |
 
-**Triage status:** **per-file verification queued.** Methodology: open each `.md`, locate the marker, classify as (i) legitimate (math context / CAL provenance / cited TODO), (ii) Class-A opt-out (acknowledged-stub with banner), or (iii) genuine discipline violation needing escalation.
+### 4b  Class-A/B/C opt-outs (banner verified)
 
-### 4b  Archimedean-leak candidates (algebraic-side uses of `Vol(K)` / hyperbolic / Mostow)
+| File | Class | Where the marker lives |
+|------|:-----:|------------------------|
+| [`gs-archimedean-agreement-residue.md`](../../content/quantum-observable-universe/braids-and-knots/gs-archimedean-agreement-residue.md) | A | Numerical-witness block with transparent `**Status (current Lean encoding)**` + explicit `sorry` — acknowledged stub. |
+| [`per-braid-mass-tower.md`](../../content/quantum-observable-universe/braids-and-knots/per-braid-mass-tower.md) | C | Diagnostic cross-check; line 169 banner: *"No τ-image quantities (hyperbolic volumes, Mostow rigidity, etc.) appear in the per-braid mass formula."* |
+| [`recomputed-low-isotope-mass-table.md`](../../content/quantum-observable-universe/braids-and-knots/recomputed-low-isotope-mass-table.md) | A | (listed above; the † LO TAUTOLOGY NOTICE banner is in place) |
+| [`kashaev-volume-conjecture.md`](../../content/quantum-observable-universe/braids-and-knots/kashaev-volume-conjecture.md) | A | The whole block is the KVC conjecture statement — external boundary condition, no algebraic-side derivation. |
 
-20 candidate files mention `Vol(...)`, hyperbolic, or Mostow. Many are legitimate (Descartes elliptic curve chapter, Bring's surface, the explicit Vol(4_1)/(m_μ/m_e) → q_0 CAL-2 definition, the Kashaev volume conjecture context). **Per-file verification queued.** The audit rule (per `three-calibration-discipline.md §4`): an archimedean input is forbidden *only* in an algebraic-side derivation; cross-domain comparison is honest.
+### 4c  Legitimate (false-positive marker hits)
 
-### 4c  "Three-route convergence" / "universal extrapolation" patterns
+32 files where the marker was a false positive on per-file read.
+Reasons fell into these patterns:
 
-Zero hits from the grep — either the patterns don't exist in content, or they're phrased differently. Lower priority for the manual sweep.
+| Pattern | Count | Example |
+|---------|------:|---------|
+| `approx` in math context (numerical evaluation of an exact form at $q_0$) | 11 | `hook-weight-derivation.md`, `categorical-chain-convergence-mechanisms.md` |
+| Vol/hyperbolic as **post-Archimedean τ-image naming**, not algebraic-side input | 9 | `atom-knot-mass-derivation.md` (lines 176–191 explicitly: *"the volume conjecture…is a **borrowed theorem**…allowing $B(H)/(m_e \nu_{\mathrm{SDP}})$ to be **named** as a hyperbolic volume"*), `vol-through-tau.md`, `geom-yekutieli-alignment.md`, `dilogarithm-archimedean-limit.md` |
+| Vol(K) for the **categorical state space**, not an input | 4 | `borromean-baryon-interpretation.md`, `binding-scale-catalan.md`, `frobenius-antipode-unifies-chirality-and-tower.md` |
+| External theorem cited as boundary condition (KVC, Ruberman, Gromov norm) | 4 | `conj-canonical-knot-id-sdp.md`, `geom-universality.md`, `conway-kt-vol-injectivity-test.md` |
+| "non-calibrated" mode explicitly approved per discipline | 2 | `np-discrepancy-resolution.md`, `topological-mass-trefoil.md` |
+| Convergence rate / complexity estimate (not a fit) | 2 | `qmn-recursive-memoized.md`, `hoefsmit-scattering-pipeline.md` |
+
+The audit-doc reader should not chase those 32 — they're documented here so the next watcher pass doesn't repeat the work.
 
 ## 5  Working queue — prioritised next actions
 
