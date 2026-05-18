@@ -62,6 +62,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 from mpmath import mp, mpf
 
+from q_parameter import Q_50_DIGIT_STR
 from witness_base import WitnessBuilder
 
 # ── 50 dps for consistency with magic-shell-empirical-instantiation ──
@@ -122,13 +123,11 @@ def main() -> None:
     )
 
     # ── Substrate parameters at 50 dps ───────────────────────────────
-    # Reproduce q_0 from q_parameter.py inputs at mpmath precision.
-    # (q_parameter.Q is float64; we re-derive at 50 dps for consistency
-    # with the 50-dps Δ_cat values.)
-    VOL_4_1 = mpf("2.029883212819307")  # SnapPy 3.3.2
-    MU_OVER_E = mpf("206.7682830")  # CODATA 2022
-    hbar_q = mp.sqrt(VOL_4_1 / MU_OVER_E)
-    q0 = 1 / (1 - hbar_q)
+    # Canonical 50-dps q_0 (CAL-2) from q_parameter.Q_50_DIGIT_STR.
+    # Equivalent to `hbar_q = sqrt(Vol(4_1) / (m_μ/m_e)); q_0 = 1/(1-hbar_q)`
+    # but routed through the single source-of-truth so CAL-2 cannot drift.
+    q0 = mp.mpf(Q_50_DIGIT_STR)
+    hbar_q = 1 - 1 / q0
     # m_e from CODATA 2022 (codata_constants is the SoT, but we re-state
     # the literal so the witness is self-contained and re-runnable).
     m_e = mpf("0.51099895069")
