@@ -8,11 +8,8 @@ export default conjecture({
   uses: [
     "def:frobenius-hopf-substrate",
     "def:rigid-monoidal-category",
-    "def:fibre-functor",
     "def:categorical-action",
     "rem:hecke-algebra-from-braiding",
-    "conj:electroweak-higgs-torus-link-triplet",
-    "conj:weak-spectral-completeness",
     "conj:categorical-higgs-idempotent",
   ],
   tags: [
@@ -25,7 +22,9 @@ export default conjecture({
     "open-problem",
   ],
   computation: {
+    engine: "mpmath",
+    script: "folio-assistant/computations/q_pinning_50_digit.py",
     witness: "folio-assistant/computations/q-pinning-50-digit.witness.json",
-    label: "q_0 numerical anchor (cited via :val[q_0])",
+    status: "verified",
   },
 });

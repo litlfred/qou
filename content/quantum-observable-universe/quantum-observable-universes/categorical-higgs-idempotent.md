@@ -46,7 +46,7 @@ is the projector onto this unbroken direction:
 Hence $1 - e_H$ projects onto the **3-dimensional broken-direction
 subspace**, where the 3 Goldstones live before they are eaten by
 $W^\pm, Z$ longitudinal modes
-([electroweak mass eigenstate count](#conj:electroweak-mass-eigenstate-count)).
+(electroweak mass eigenstate count (planned, not yet authored)).
 
 ### What this conjecture closes
 
@@ -54,7 +54,7 @@ This single artifact unlocks **four** downstream open problems:
 
 1. **NV-1 closed form via candidate (b)**:
    $\mathcal{N}_{\rm sym}(q)$
-   ([N_sym](#conj:n-sym-symmetric-channel-normalization)) is
+   (N_sym (planned, not yet authored)) is
    computed as the Frobenius trace of the symmetric-channel
    projector
    $$
@@ -63,7 +63,7 @@ This single artifact unlocks **four** downstream open problems:
    $$
    where $e_{\rm sym}^{\rm EW} = \bigotimes_{k=2,3,4} e_{\rm sym}^{(T(2,2k))}$
    is the EW symmetric-channel projector
-   ([weak spectral completeness](#conj:weak-spectral-completeness)).
+   (weak spectral completeness (planned, not yet authored)).
    The closed form falls out of the categorical Higgs idempotent
    composition without ansatz-fitting.
 
@@ -73,13 +73,13 @@ This single artifact unlocks **four** downstream open problems:
    couple to 2-component links. The 1-dimensional unbroken
    direction $e_H \cdot \mathrm{End}(A) \cdot e_H$ couples to the
    1-component knot (the photon in the EM sector)
-   ([force-carrier knot/link dichotomy](#conj:force-carrier-knot-vs-link-dichotomy)).
+   (force-carrier knot/link dichotomy (planned, not yet authored)).
 
 3. **U4 (electroweak mass-eigenstate count)**: the 3 distinct
    masses $\{m_W, m_Z, m_H\}$ are the 3 distinct eigenvalues of
    the mass operator on $(1 - e_H) \cdot \mathrm{End}(A) \cdot
    (1 - e_H)$
-   ([EW mass eigenstate count](#conj:electroweak-mass-eigenstate-count)).
+   (EW mass eigenstate count (planned, not yet authored)).
 
 4. **HIGGS-SLOT** (PR #513/#514): the Higgs scalar lives on the
    single residual direction in $(1 - e_H) \cdot \mathrm{End}(A) \cdot
@@ -139,7 +139,7 @@ complete, $\mathrm{tr}_F(e_{\rm sym}^{\rm EW} \cdot e_H)$
 evaluated at $q_0 = 1.10998\ldots$ MUST equal
 $\mathcal{N}_{\rm sym}(q_0) = 213.111807\ldots$ (the value pinned
 by CODATA $G_F$ via the
-[conjectured product structure](#conj:weak-spectral-completeness)).
+conjectured product structure (planned, not yet authored)).
 The closeness of empirical zero-free-parameter forms
 (e.g. $[3]_q \cdot [4]_q^3$ at 0.87%) provides anchor structure
 but is *not* a substitute for derivation.
