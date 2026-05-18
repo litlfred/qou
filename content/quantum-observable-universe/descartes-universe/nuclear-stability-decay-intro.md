@@ -3,7 +3,7 @@ is a Diophantine locus; the present section asks which transitions
 across that valley the categorical Skein relation actually permits.
 **Beta decay as a Skein crossing change on the Gröbner normal form**
 (def) realises beta decay as a single Skein crossing change applied
-to the nucleon's Gröbner–Shirshov normal form, and **Categorical
+to the relevant Gröbner–Shirshov normal form, and **Categorical
 Lepton Number** (def) records the conserved categorical quantum
 number this operation preserves.
 

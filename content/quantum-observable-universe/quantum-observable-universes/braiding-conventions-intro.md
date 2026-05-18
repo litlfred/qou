@@ -9,13 +9,12 @@ so that the rest of the chapter can refer to a single convention.
 $S^2 V$ eigenvalue), justified by the positivity axiom and
 compatibility with the standard Kauffman orientation.
 **$\sqrt q$ as ribbon datum** (rem) places the formal square
-root $v = q^{1/2}$ in $\mathbb{Q}(q^{1/2})$ before
-archimedean realisation and reads the ribbon twist
-$\varTheta_V = q^{1/2}\,\mathrm{id}_V$ on the defining
-representation. **The binary sign of $\sqrt q$ as spin
-structure** (rem) records that the choice $v$ vs $-v$, after
-realisation at $q_0$, is the spin structure on the realised
-worldline.
+root $v = q^{1/2}$ in $\mathbb{Q}(q^{1/2})$ and reads the
+ribbon twist $\varTheta_V = q^{1/2}\,\mathrm{id}_V$ on the
+defining representation. **The binary sign of $\sqrt q$ as
+spin structure** (rem) records that the choice $v$ vs $-v$,
+once $q$ is fixed to a numerical value, is the spin structure
+on the resulting worldline.
 
 **The imaginary unit $i$ as braiding-orientation datum** (rem)
 collects the three faces of $i$ — Wick rotation, CR complex

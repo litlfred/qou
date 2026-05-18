@@ -7,4 +7,4 @@ full QOU structure from $A$.  The :refterm[descent]{#descent} involution
 ([:refterm[descent]{#descent} involution](#def\:descent-involution)) then splits each $A_n$ into
 eigenspaces whose direct limit recovers the physical algebra.  This section
 develops the :refterm[descent]{#descent} involution, its eigenspace decomposition, and the
-topological mass formula that results.
+mass-decomposition formula that results.

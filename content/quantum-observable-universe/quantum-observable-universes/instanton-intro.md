@@ -31,7 +31,7 @@ splitting of two-forms into the eigenspaces of $\star_q$.
 what fails at $q \neq 1$: $\Delta \neq \sigma \circ \Delta$,
 controlled by the universal $R$-matrix, and identifies this
 with the algebraic origin of quantum uncertainty. The next
-section, **Non-vanishing of $d_q^2$ and jet prolongation**,
-asks the parallel question for the deformed exterior derivative.
+section, **Non-vanishing of $d_q^2$**, asks the parallel
+question for the deformed exterior derivative.
 
 _(draft.)_

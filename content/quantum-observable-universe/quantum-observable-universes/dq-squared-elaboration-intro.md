@@ -1,7 +1,7 @@
 _[draft]_ The categorical $d_q^2$ obstruction was computed in
-the earlier core development; we now specialise it to the
-archimedean realisation on $M$ and explore the parallel failure
-of the Jacobi identity for the $q$-deformed Lie bracket.
+the earlier core development; we now specialise it to a
+concrete manifold $M$ and explore the parallel failure of the
+Jacobi identity for the $q$-deformed Lie bracket.
 **Archimedean $d_q^2$** (prop), with its proof, computes
 $d_q^2 \alpha = q^{-1}(1 - q^{-1})\,d\varTheta \wedge
 \mathcal{L}_\xi \alpha$ on $\Omega^k(M)$ and identifies the

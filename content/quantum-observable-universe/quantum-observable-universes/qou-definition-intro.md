@@ -16,7 +16,7 @@ that the non-symmetric braiding $c_{V,V}$ supplies a canonical
 admissible well-ordering $\prec_c$ on the Hecke monomial basis,
 identifying the categorical arrow of time with positive crossings.
 **Frobenius integration** (rem) reads the non-degeneracy axiom
-as a categorical Haar measure, **Yekutieli--Stokes** (rem)
+as a categorical Haar measure, **categorical Stokes** (rem)
 reads the measurability axiom through the nonabelian Stokes
 theorem, and **fibre-functor rigidity** (rem) collects the
 cohomological consequence that $\tau$ admits no non-trivial

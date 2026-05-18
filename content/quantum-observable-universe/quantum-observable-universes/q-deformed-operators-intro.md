@@ -1,8 +1,7 @@
 _[draft]_ The categorical $q$-deformed operators of the previous
 section live abstractly on $\Omega^\bullet(A)$; we now specialise
-them to the archimedean realisation on a CR manifold $M$ and
-read the resulting formulas in classical differential-geometric
-language. Each operator inherits a uniform interpolation pattern
+them to a concrete CR manifold $M$ and read the resulting
+formulas in classical differential-geometric language. Each operator inherits a uniform interpolation pattern
 $q^{-1}(\text{classical}) + (1 - q^{-1})(\text{Reeb correction})$.
 
 **$q$-deformed exterior derivative** (ex) writes $d_q = q^{-1}d

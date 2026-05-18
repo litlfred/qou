@@ -15,10 +15,7 @@ with its proof block, deliver $(\xi, \varTheta_A)$ from the
 weight decomposition. **Reeb derivation for $\mathrm{SU}(2)$**
 (ex) realises $(\xi, \varTheta_A) = (e_3, \omega_3)$ in the
 Woronowicz left-covariant calculus on
-$\mathcal{O}_q(\mathrm{SU}(2))$, and **Reeb derivation on
-Bring's surface** (rem) — referenced ahead to Chapter 5 —
-reads the $4{+}4$ Hodge decomposition of $H^1(\Sigma_4)$ as
-$\xi$-eigenspaces.
+$\mathcal{O}_q(\mathrm{SU}(2))$.
 
 **Projective line object** (def) and **projective line on
 $\mathrm{SU}(2)$** (rem) introduce $\mathbb{P}(V) = G/T$ as the

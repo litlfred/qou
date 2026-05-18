@@ -4,8 +4,8 @@ previous sections support. **Up quark** (def) and **Down quark**
 (def) fix the two light-quark assignments; **Electron** (def),
 **Positron** (def), **Neutrino** (def), and **Antineutrino as
 mirror unknot $T_{1,0}^{\sigma}$** (def) fix the first-generation
-leptons. **Linking relations between building block knots** (rem)
-tabulates the linking data among these primitives, and
+leptons. **Linking relations** (rem) tabulates the linking data
+among these primitives, and
 **$\mathcal{Q}_q$-Value as Categorical Action Difference** (def)
 imports the $q$-deformed kinematic transition energy from the
 braid-and-knot chapter for use in the production vertices that

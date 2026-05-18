@@ -1,9 +1,9 @@
 _[draft]_ The previous section handed over a Skein-polynomial
-factorisation of the multi-nucleon link as the shape of shell
+factorisation of a multi-component link as the shape of shell
 corrections. The atomic shells now use the same factorisation
 on the electron side. **Orbital shells from eigenvalues of the
-photon–electron transfer matrix** (prop) introduces the transfer
-matrix whose eigenvalues label atomic shells, and **Shell eigenvalue
+photon–electron transfer matrix** (prop) introduces a linear
+operator whose eigenvalues label atomic shells, and **Shell eigenvalue
 properties, sub-shells, and the Skein extraction algorithm** (rem)
 records the eigenvalue spectrum, sub-shell decomposition, and the
 extraction algorithm.

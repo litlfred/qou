@@ -47,8 +47,7 @@ inverting $\exp_q$ — the Hopf-algebraic shadow of the Lie
 exponential. **$q$-dilogarithm** (def), with its existence and
 uniqueness propositions, is the unique level-$2$ primitive of
 $\mathcal{H}_q$ normalised by the pentagon identity — the
-categorical braiding potential whose derivative recovers the
-universal $R$-matrix. The next section, **Braiding
+potential whose derivative recovers the universal $R$-matrix. The next section, **Braiding
 conventions**, returns to the algebraic origin of the
 substrate parameter and pins down the orientation choices
 behind $q$, $i$, and the ribbon twist.

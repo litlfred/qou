@@ -25,7 +25,7 @@ the $q$-deformation of the categorical connection.
 **uniqueness of the categorical $q$-connection** (prop), each
 with its proof block, fix $\nabla_q$ once $\nabla$ and the QOU
 data are chosen. The next section, **$q$-Deformed operators**,
-specialises this whole package to the archimedean realisation
-and writes the deformed operators in coordinate form on $M$.
+specialises this whole package to a concrete manifold $M$ and
+writes the deformed operators in coordinate form.
 
 _(draft.)_

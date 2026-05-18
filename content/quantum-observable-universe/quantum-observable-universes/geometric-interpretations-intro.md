@@ -12,24 +12,23 @@ neighbourhoods and the $q$-Laplacian** (rem) reads $\Delta_q
 \alpha = 0$ as the statement that $\alpha$ has found
 equilibrium between its spatial environment and its internal
 quantum spin, with $q$ tuning the relative weight.
-**Closed form of $\delta_q$ in the Webster inner product**
-(prop) and its archimedean specialisation (rem) deliver the
-adjoint formula $\delta_q = q^{-1}\delta + (1-q^{-1})
-\mathcal{L}_\xi^* \circ \iota_\xi$. **Three-term expansion of
+**Closed form of $\delta_q$** (prop) and its archimedean
+specialisation (rem) deliver the adjoint formula $\delta_q =
+q^{-1}\delta + (1-q^{-1}) \mathcal{L}_\xi^* \circ \iota_\xi$. **Three-term expansion of
 the $q$-Laplacian** (rem) decomposes $\Delta_q = q^{-2}\Delta
 + q^{-1}(1-q^{-1})[\text{Coriolis}] + (1-q^{-1})^2 \Delta_\xi$
 into classical diffusion, Coriolis cross-coupling, and pure
 spin diffusion.
 
-**Self-adjointness of $\Delta_q$ in the Webster inner product**
-(rem) and **A particle is a $q$-harmonic form** (rem) make
-the equivalence $\Delta_q \alpha = 0 \Leftrightarrow d_q
-\alpha = 0$ and $\delta_q \alpha = 0$ explicit: a particle is
-simultaneously $q$-closed and $q$-coclosed. **Bring's surface
-as a concrete geometric realisation** (rem) refers ahead to
-Chapter 5: on the genus-$4$ Bring curve, $\xi$, $\varTheta$,
-and $q$ are explicit formulas and the boson--fermion split
-becomes a Hodge decomposition of the harmonic space.
+**Self-adjointness of $\Delta_q$** (rem) and **A particle is a
+$q$-harmonic form** (rem) make the equivalence $\Delta_q
+\alpha = 0 \Leftrightarrow d_q \alpha = 0$ and $\delta_q
+\alpha = 0$ explicit: a particle is simultaneously $q$-closed
+and $q$-coclosed. **A concrete geometric realisation** (rem)
+refers ahead to a later chapter: on a suitable genus-$4$
+curve, $\xi$, $\varTheta$, and $q$ are explicit formulas and
+the boson--fermion split becomes a Hodge decomposition of the
+harmonic space.
 **Complex substrate parameter and the observability
 constraint** (rem) records what changes if $q$ is allowed to
 acquire a phase: the imaginary part of $\hbar_q$ destroys
