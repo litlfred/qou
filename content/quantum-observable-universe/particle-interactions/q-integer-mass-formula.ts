@@ -14,7 +14,7 @@ export default conjecture({
   label: "conj:q-integer-mass-formula",
   title: "Seven-term atomic mass formula with $q$-integer coefficients",
   lean: {
-    ref: "qou:QOU.QIntegerMassFormula.QIntegerMassFormula",
+    ref: "qou:QOU.Interactions.QIntegerMassFormula",
     validation: "not_checked",
   },
   uses: [
