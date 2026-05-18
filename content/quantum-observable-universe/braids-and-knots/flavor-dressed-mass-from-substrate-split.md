@@ -33,19 +33,13 @@ $$
   \;\;\;\;\text{(at } q = q_0 \text{)},
 $$
 
-*where $z_{\mathrm{mkv}} = (q^{1/2} + q^{-1/2})^{-1}$.  Numerical
-check at $q_0$:*
-
-| Factor | Value |
-|--------|------:|
-| $\hbar_q^2$ | $9.82 \times 10^{-3}$ |
-| $h_q$ | $0.2091$ |
-| $1/z_{\mathrm{mkv}} = q^{1/2} + q^{-1/2}$ | $2.003$ |
-| $M_N / 3$ | $312.97\,\text{MeV}$ |
-| product | $1.287\,\text{MeV}$ |
-
-*matching the CODATA value $m_n - m_p \approx 1.293\,\text{MeV}$
-to within $-0.5\%$.*
+*where $z_{\mathrm{mkv}} = (q^{1/2} + q^{-1/2})^{-1}$.  The
+numerical evaluation at $q = q_0$ and the matching CODATA residual
+are tabulated in
+[`rem:dressed-quark-numerology-at-q0`](../observations/dressed-quark-numerology-at-q0.md)
+(Observations chapter; per the manuscript convention numerical
+substrate values stay out of geometry / braids chapters and are
+collected with the other Physical-Observations numerology there).*
 
 ## Derivation
 
@@ -73,34 +67,19 @@ Combine two identities:
 Solving (2) for $\mu_{\mathfrak{d}} - \mu_{\mathfrak{u}}$ and
 substituting (1) gives the closed-form expression above.
 
-## Numerical value at $q_0$
-
-At $q = q_0 \approx 1.10998$ and using the CODATA nucleon-mass
-average $M_N = (m_p + m_n)/2 \approx 938.92\,\text{MeV}$:
-
-$$
-  \mu_{\mathfrak{d}} - \mu_{\mathfrak{u}}
-  \;\approx\;
-  938.92 \cdot \frac{(0.110)^2 \cdot (1 - 0.658)}{3}
-  \cdot
-  \frac{2.005}{2.012}
-  \;\approx\;
-  1.288\,\text{MeV}.
-$$
-
-This matches the value previously assigned to
-$\mu_{\mathfrak{d}} - \mu_{\mathfrak{u}}$ via CODATA
-$m_n - m_p \approx 1.293\,\text{MeV}$ (residual $-0.5\%$,
-attributable to the dropped $O\!\left((\Delta m / M_N)^2\right)$ term).
-
 ## Calibration discipline
 
 The CODATA value $m_n - m_p = 1.29333251\,\text{MeV}$ is **no longer
 an input** of the production formula under
 [`prop:flavor-split-substrate`](../observations/flavor-split-substrate.md).
 This proposition makes $\mu_{\mathfrak{d}} - \mu_{\mathfrak{u}}$ a
-derived output of the substrate parameter $q_0$ plus $M_N$, removing
-the $u$–$d$ splitting from the calibration count.
+derived output of the substrate parameter $q_0$ plus the nucleon-mass
+scale $M_N = (m_p + m_n)/2$ (CODATA-anchored), removing the $u$–$d$
+splitting from the calibration count.  $M_N$ itself is currently a
+CODATA input (its substrate derivation is open — see
+[`docs/audits/2026-05-17-1ppb-workplan-v4.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-17-1ppb-workplan-v4.md)),
+so the calibration boundary for this proposition is $\{m_e, q_0,
+M_N\}$.
 
 The remaining calibration inputs at the production-formula boundary
 are $m_e$ and $q_0$ (with $Q_\beta$ as the third input until the

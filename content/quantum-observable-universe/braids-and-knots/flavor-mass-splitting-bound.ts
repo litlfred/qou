@@ -18,5 +18,4 @@ export default theorem({
     "prop:flavor-dressed-mass-from-substrate-split",
     "prop:flavor-split-substrate",
   ],
-  proofs: ["prf:flavor-mass-splitting-bound"],
 });

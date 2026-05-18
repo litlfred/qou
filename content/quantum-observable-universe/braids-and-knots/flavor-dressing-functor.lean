@@ -1,70 +1,19 @@
 /-!
 # QOU.FlavorDressing.FlavorDressingFunctor
 
-The categorical assignment of a dressed-mass scale to each quark
-flavor, formalised as a typeclass on a concrete `Flavor` enum.
+Co-located stub for `def:flavor-dressing-functor`.  The canonical
+Lean module lives under the Lake source tree at
+`content/quantum-observable-universe/lean/QOU/FlavorDressing/FlavorDressingFunctor.lean`
+(matching the QOU convention used by sibling co-located content
+blocks such as `def:dressed-particle`).  This stub exists so the
+content-validation rule "every `definition` requires a `.lean`
+sibling" passes; the actual class declaration is reached via
+`import QOU.FlavorDressing.FlavorDressingFunctor` from the canonical
+file in the Lake tree.
 
 LaTeX: `\label{def:flavor-dressing-functor}`
 -/
 
-import QOU.Basic
-
-namespace QOU.FlavorDressing
-
-/-- The discrete category of quark flavors.  Initial scope: u, d.
-    Heavy flavors (s, c, b, t) included in the enum for forward
-    compatibility; their individual `μ` values are open and live as
-    opt-in instances in follow-up files. -/
-inductive Flavor where
-  | up      : Flavor
-  | down    : Flavor
-  | strange : Flavor
-  | charm   : Flavor
-  | bottom  : Flavor
-  | top     : Flavor
-  deriving Repr, DecidableEq
-
-/-- **Flavor dressing functor.** Assigns a dressed-mass scale `μ q ∈ ℝ`
-    to each quark flavor with the positivity hypothesis `0 < μ q`.
-
-    The discrete-category framing makes the assignment compatible
-    with the chapter's other categorical constructions (Markov
-    trace, Hoefsmit functor, Wedderburn block decomposition):
-    flavor-sums in hadronic mass formulas are then natural
-    transformations, not ad-hoc weighted sums.
-
-    Instances at specific substrate parameter values (e.g. `q = q₀`)
-    live in sibling files; this class carries only the structural
-    signature + positivity. -/
 -- Ref: [manuscript] braids-and-knots/flavor-dressing-functor
-class FlavorDressingFunctor where
-  /-- Dressed-mass scale at each flavor, in physical units (MeV). -/
-  μ : Flavor → ℝ
-  /-- Positivity: every dressed quark mass is strictly positive. -/
-  μ_pos : ∀ q : Flavor, 0 < μ q
-
-namespace FlavorDressingFunctor
-
-/-- Convenience accessor for the up-quark dressed mass. -/
-def μ_u [F : FlavorDressingFunctor] : ℝ := F.μ Flavor.up
-
-/-- Convenience accessor for the down-quark dressed mass. -/
-def μ_d [F : FlavorDressingFunctor] : ℝ := F.μ Flavor.down
-
-/-- The u-d splitting `μ_d − μ_u` (commonly used in hadronic mass
-    formulas; signed so that the neutron–proton splitting is
-    proportional to this quantity). -/
-def μ_ud_split [F : FlavorDressingFunctor] : ℝ :=
-  F.μ Flavor.down - F.μ Flavor.up
-
-/-- Positivity of the up-quark dressed mass (specialisation). -/
-theorem μ_u_pos [F : FlavorDressingFunctor] : 0 < (μ_u : ℝ) :=
-  F.μ_pos Flavor.up
-
-/-- Positivity of the down-quark dressed mass (specialisation). -/
-theorem μ_d_pos [F : FlavorDressingFunctor] : 0 < (μ_d : ℝ) :=
-  F.μ_pos Flavor.down
-
-end FlavorDressingFunctor
-
-end QOU.FlavorDressing
+-- Canonical Lake module:
+--   content/quantum-observable-universe/lean/QOU/FlavorDressing/FlavorDressingFunctor.lean

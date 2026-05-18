@@ -15,10 +15,13 @@ and $m_n = 2\mathcal{S}_{\mathfrak{u}\mathfrak{d}} + \mathcal{S}_{\mathfrak{d}\m
 together with the substrate-derived splitting
 [`prop:flavor-split-substrate`](#prop:flavor-split-substrate) determine the dressed quark masses
 $\mu_{\mathfrak{u}} \approx 311.10\,\text{MeV}$,
-$\mu_{\mathfrak{d}} \approx 312.39\,\text{MeV}$, and reproduce
-$m_p = 938.272\,\text{MeV}$, $m_n = 939.565\,\text{MeV}$ (see
-[`rem:dressed-quark-numerology-at-q0`](#rem:dressed-quark-numerology-at-q0)
-for the per-quark numerology).  By
+$\mu_{\mathfrak{d}} \approx 312.39\,\text{MeV}$, and reproduce the
+CODATA proton and neutron masses to within a $-0.53\%$ residual on the
+splitting $m_n - m_p$ (dominated by the dropped
+$O((\Delta m / M_N)^2)$ correction to
+[`prop:flavor-split-substrate`](#prop:flavor-split-substrate)).
+See [`rem:dressed-quark-numerology-at-q0`](#rem:dressed-quark-numerology-at-q0)
+for the per-quark numerology and the closure tabulation.  By
 ([deuteron binding energy](#lem:deuteron-binding-energy)),
 smoothing the proton--neutron crossing of the six-component link $L_6$
 yields $\Delta \mathbf{E}_{\mathrm{bind}} \approx 2.224\,\text{MeV}$,

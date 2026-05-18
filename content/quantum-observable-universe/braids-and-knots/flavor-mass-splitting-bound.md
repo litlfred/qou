@@ -28,35 +28,41 @@ splitting-only form is preferred because:
   on the right-hand side is a substrate-pure expression in $q$
   (no CODATA inputs, no fits).
 - Individual values require an additional input
-  $\bar\mu = (\mu_{\mathfrak{u}} + \mu_{\mathfrak{d}})/2 \approx M_N/3$
+  $\bar\mu = (\mu_{\mathfrak{u}} + \mu_{\mathfrak{d}})/2$
   pinned by baryon-content sum rules (see
-  [`rem:dressed-quark-numerology-at-q0`](dressed-quark-numerology-at-q0.md)).
+  [`rem:dressed-quark-numerology-at-q0`](../observations/dressed-quark-numerology-at-q0.md)).
   Bounding the individual values would carry that pinning into the
   theorem statement, mixing substrate content with CODATA anchoring.
 - The Lean proof factors cleanly through the existing substrate
   identities (no new bound props need to be authored).
 
-## Numerical value at $q_0$
+## Slack ratio (symbolic)
 
-At $q = q_0 \approx 1.10998$:
+The realised splitting from
+[`prop:flavor-dressed-mass-from-substrate-split`](flavor-dressed-mass-from-substrate-split.md)
+relates to the bound expression by
 
-| Factor | Value | Substrate identity |
-|--------|------:|-------------------|
-| $\hbar_q$ | $0.0991$ | $(q - 1)/q$ |
-| $\hbar_q^2$ | $9.82 \times 10^{-3}$ | — |
-| $h_q$ | $0.2091$ | $q - q^{-1}$ |
-| $[2]_q$ | $2.012$ | $q + q^{-1}$ |
-| product $\hbar_q^2 \cdot h_q \cdot [2]_q$ | $4.13 \times 10^{-3}$ | — |
-| $M_N \cdot (\hbar_q^2 \cdot h_q \cdot [2]_q)$ | $3.88\,\text{MeV}$ | upper bound |
+$$
+  \frac{\mu_{\mathfrak{d}} - \mu_{\mathfrak{u}}}{M_N \cdot \hbar_q^2 \cdot h_q \cdot [2]_q}
+  \;=\;
+  \frac{1}{3}
+  \cdot
+  \frac{q^{1/2} + q^{-1/2}}{q + q^{-1}}
+  \;+\;
+  O\!\left((\Delta m / M_N)^2\right).
+$$
 
-The empirical value
-$\mu_{\mathfrak{d}} - \mu_{\mathfrak{u}} \approx 1.288\,\text{MeV}$
-sits comfortably within the bound:
-$1.288 < 3.88$, ratio $\approx 0.33$ (the slack reflects the
-Skein-side factor $(q^{1/2} + q^{-1/2})/(q + q^{-1}) \approx 0.997$
-plus the $O((\Delta m / M_N)^2)$ correction; together they
-contribute the factor of $1/3$ slack between the bound and the
-realised value).
+The dominant factor is the explicit $1/3$ in the substrate formula
+of [`prop:flavor-split-substrate`](../observations/flavor-split-substrate.md);
+the Skein-side correction
+$(q^{1/2} + q^{-1/2})/(q + q^{-1})$ is close to $1$ at the substrate
+regime and contributes a small additional reduction.  Together they
+explain why the theorem's upper bound is loose:  it does not absorb
+either the explicit $1/3$ or the Skein correction.  Tightening the
+bound to match the realised value is open (no canonical closed form
+is committed in this revision).  The numerical evaluation at $q_0$
+of both sides is tabulated in
+[`rem:dressed-quark-numerology-at-q0`](../observations/dressed-quark-numerology-at-q0.md).
 
 ## Proof sketch
 
@@ -98,11 +104,17 @@ Two ingredients:
 
 ## Tightness
 
-The bound is **not** tight at $q_0$ — the realised splitting is
-about $1/3$ of the bound.  Tightening would require either:
+The bound is **not** tight: the slack-ratio identity above shows
+that the realised splitting is exactly $(1/3) \cdot (q^{1/2} +
+q^{-1/2})/(q + q^{-1})$ of the bound (plus a small higher-order
+correction).  The dominant factor is the explicit $1/3$ baked
+into the substrate formula of
+[`prop:flavor-split-substrate`](../observations/flavor-split-substrate.md).
+Tightening would require either:
 
-- A finer substrate factor (e.g. including the
-  $(q^{1/2} + q^{-1/2})/(q + q^{-1})$ Skein correction explicitly).
+- A finer substrate factor that absorbs the $1/3$ directly into
+  the categorical derivation (rather than as an artefact of the
+  closed-form algebra).
 - A different categorical bound source (e.g.
   [`prop:hecke-convergence-bound`](hecke-convergence-bound.md)
   applied to the splitting word) — but this requires further

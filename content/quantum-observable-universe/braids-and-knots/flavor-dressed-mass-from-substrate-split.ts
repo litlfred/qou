@@ -18,5 +18,4 @@ export default proposition({
     "prop:flavor-split-substrate",
     "lem:pair-skein-mass-formula",
   ],
-  proofs: ["prf:flavor-dressed-mass-from-substrate-split"],
 });

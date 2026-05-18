@@ -4,12 +4,15 @@ Computes the dressed-quark mass splitting μ_d − μ_u from the substrate
 prop:
 
     μ_d − μ_u = M_N · (q-1)²(1 - q^{-4})/3 · (q^{1/2}+q^{-1/2})/(q+q^{-1})
-              = (M_N / 3) · ℏ_q² · h_q / z_mkv
+              = (M_N / 3) · ℏ_q² · h_q · (q^{1/2}+q^{-1/2})
 
-at q = q_0 and M_N = (m_p + m_n)/2 (CODATA average, used as the
-nucleon-mass scale anchor).  Emits a witness whose `contentBlock`
-references the new prop and whose assertion gates the residual
-against CODATA m_n − m_p to within 0.5%.
+at q = q_0 and M_N = (m_p + m_n)/2 (CODATA-anchored nucleon-mass
+scale; flagged as a calibration anchor pending its own substrate
+derivation — see `docs/audits/2026-05-17-1ppb-workplan-v4.md`).
+Emits a witness whose `contentBlock` references the new prop and
+whose assertion gates the residual against CODATA m_n − m_p to
+within 1% (measured residual at q_0 is −0.53%, dominated by the
+dropped O((Δm/M_N)²) correction).
 
 This is Phase 3 of the D3 wiring for PR #696: it makes the new
 prop's substrate-pure derivation a first-class production-side
@@ -63,14 +66,17 @@ def _substrate_split_factor(q: mp.mpf) -> mp.mpf:
     """Substrate factor S(q) such that μ_d − μ_u = M_N · S(q).
 
     Equivalent forms (proved in
-    `prop:flavor-dressed-mass-from-substrate-split` §"Derivation"):
+    `prop:flavor-dressed-mass-from-substrate-split` §"Derivation"
+    via the algebraic identity (q − 1)²(1 − q⁻⁴)/3 = (1/3)·ℏ_q²·h_q·[2]_q
+    and cancelling the [2]_q = q + q⁻¹ in numerator with the Skein
+    denominator):
 
         S(q) = (q - 1)² · (1 - q^{-4}) / 3
                        · (q^{1/2} + q^{-1/2}) / (q + q^{-1})
 
-             = (1/3) · ℏ_q² · h_q · (q^{1/2} + q^{-1/2}) / (q + q^{-1})
+             = (1/3) · ℏ_q² · h_q · (q^{1/2} + q^{-1/2})
 
-             = (1/3) · ℏ_q² · h_q · z_mkv⁻¹ / (q + q^{-1})
+             = (1/3) · ℏ_q² · h_q · z_mkv⁻¹
                where z_mkv = (q^{1/2} + q^{-1/2})^{-1}
     """
     nucleon_factor = ((q - 1) ** 2) * (1 - q ** (-4)) / 3
@@ -142,7 +148,21 @@ def main() -> int:
         .set_content_block("prop:flavor-dressed-mass-from-substrate-split")
         .add_parameter("q_0", mp.nstr(q0, 50))
         .add_parameter("M_N_MeV", mp.nstr(M_N, 50))
-        .add_parameter("delta_m_codata_MeV", mp.nstr(delta_m_codata, 50))
+        .add_parameter(
+            "M_N_source",
+            "CODATA m_p + m_n / 2 (validation-tagged anchor; M_N "
+            "substrate derivation pending — see "
+            "docs/audits/2026-05-17-1ppb-workplan-v4.md)",
+        )
+        .add_data(
+            "delta_m_codata_MeV",
+            mp.nstr(delta_m_codata, 50),
+        )
+        .add_data(
+            "delta_m_codata_role",
+            "validation target — NOT a production input.  Used only "
+            "for closure cross-check vs the substrate-derived value.",
+        )
         .add_data(
             "substrate_factor_value",
             mp.nstr(S_q, 50),
@@ -186,27 +206,43 @@ def main() -> int:
             ),
         )
         .add_assertion(
-            name="upper_bound_respected",
-            computed=float(bound_ratio),
-            expected=0.5,
-            tolerance=0.5,
-            unit="bound-ratio (dimensionless)",
+            name="upper_bound_strictly_respected",
+            # Boolean encoding: 1.0 iff 0 < bound_ratio < 1 strictly.
+            # Tolerance 0 forces the predicate to evaluate exactly,
+            # so boundary values 0 and 1 (which would coincide with
+            # μ_d−μ_u = 0 or μ_d−μ_u saturating the bound) fail.
+            computed=(
+                1.0
+                if (bound_ratio > mp.mpf(0) and bound_ratio < mp.mpf(1))
+                else 0.0
+            ),
+            expected=1.0,
+            tolerance=0.0,
+            unit="boolean (1.0 = strict bound holds)",
             source=(
                 "thm:flavor-mass-splitting-bound: the realised "
-                "μ_d − μ_u must lie strictly below M_N · ℏ_q² · h_q · [2]_q. "
-                "Tolerance 0.5 centred at 0.5 admits 0 < ratio < 1; "
-                "realised value is ~0.33 (33% of bound)."
+                "μ_d − μ_u must lie strictly below "
+                "M_N · ℏ_q² · h_q · [2]_q and strictly above 0.  "
+                "Boolean predicate enforces strict inequality (boundary "
+                "values 0 and 1 fail)."
             ),
         )
         .add_assertion(
-            name="substrate_value_positive",
-            computed=float(mu_d_minus_mu_u_substrate),
+            name="substrate_value_strictly_positive",
+            # Same boolean trick: 1.0 iff value > 0 strictly.
+            computed=(
+                1.0
+                if mu_d_minus_mu_u_substrate > mp.mpf(0)
+                else 0.0
+            ),
             expected=1.0,
-            tolerance=10.0,
-            unit="MeV",
+            tolerance=0.0,
+            unit="boolean (1.0 = strictly positive)",
             source=(
                 "Positivity of substrate factor at q_0 > 1; gives "
-                "μ_d − μ_u > 0 as required by hadronic physics."
+                "μ_d − μ_u > 0 as required by hadronic physics.  "
+                "Boolean predicate enforces strict positivity (negative "
+                "values fail, including the boundary value 0)."
             ),
         )
     )

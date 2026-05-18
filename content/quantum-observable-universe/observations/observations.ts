@@ -82,6 +82,7 @@ export default chapter({
         "pair-skein-mass-formula-proof",
         "flavor-split-substrate",
         "flavor-split-substrate-proof",
+        "dressed-quark-numerology-at-q0",
         "deuteron-binding-energy",
         "deuteron-binding-energy-proof",
         "terminal-resolution-proof",

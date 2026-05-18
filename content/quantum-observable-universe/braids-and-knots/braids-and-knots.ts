@@ -638,7 +638,6 @@ export default chapter({
         "flavor-dressing-functor",
         "flavor-dressed-mass-from-substrate-split",
         "flavor-mass-splitting-bound",
-        "dressed-quark-numerology-at-q0",
         "alpha-k-derivation-procedure",
         "alpha-k-categorical-closure",
         "chi-lambda-w0-sign-weighting",
