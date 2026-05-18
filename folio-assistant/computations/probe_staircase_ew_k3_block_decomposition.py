@@ -293,7 +293,56 @@ def main() -> int:
     codata_uncertainty_floor = mpf("1e-4")
     is_sub_codata = rel_diff_hyp < codata_uncertainty_floor
     print(f"   below CODATA floor (~1e-4)? "
-          f"{'✓ yes — structurally consistent' if is_sub_codata else '✗ no'}")
+          f"{'✓ yes — single-point match' if is_sub_codata else '✗ no'}")
+    print()
+
+    # ─── §5: q-derivative falsification of the q^a hypothesis ─────
+    # If residual(q) really equals q^a globally, then
+    # d/d(log q) log(residual) should equal `a` at every q.
+    # Compute the slope numerically and check.
+    print(f"§5 q-derivative consistency test (CRITICAL):")
+    h_step = mpf("1e-10")
+    log_q0 = mp.log(q0)
+
+    def residual_at_q(q_val):
+        sig_q, _dim = build_hoefsmit_mpfr(SHAPE, q_val)
+        M_q = mp.eye(_dim)
+        for g in word:
+            M_q = M_q * sig_q[g]
+        eigs_q, _ = mp.eig(M_q)
+        pr = sorted(
+            [e for e in eigs_q
+             if fabs(e.imag if hasattr(e, "imag") else 0) < _dps_tol(20)
+             and (e.real if hasattr(e, "real") else e) > 0],
+            key=lambda e: -fabs(e),
+        )
+        bare_q = fabs(pr[0]) / fabs(pr[1])
+        return cot_theta_W_codata / bare_q
+
+    qs = [mp.exp(log_q0 + k * h_step) for k in (-2, -1, 0, 1, 2)]
+    log_res = [mp.log(residual_at_q(qi)) for qi in qs]
+    deriv1 = (
+        -log_res[4] + 8 * log_res[3] - 8 * log_res[1] + log_res[0]
+    ) / (12 * h_step)
+    deriv2 = (
+        -log_res[4] + 16 * log_res[3] - 30 * log_res[2]
+        + 16 * log_res[1] - log_res[0]
+    ) / (12 * h_step ** 2)
+
+    print(f"   d/d(log q) log(residual)        = {mp.nstr(deriv1, 12)}")
+    print(f"   d²/d(log q)² log(residual)      = {mp.nstr(deriv2, 12)}")
+    print(f"   q^a hypothesis predicts:")
+    print(f"     d/d(log q) log(residual)      = a = 3/14 = "
+          f"{mp.nstr(mpf(3)/14, 12)}")
+    print(f"     d²/d(log q)² log(residual)    = 0 (constant slope)")
+    hypothesis_consistent_with_derivative = (
+        fabs(deriv1 - mpf(3) / 14) < mpf("0.1")
+        and fabs(deriv2) < mpf("1")
+    )
+    print(f"   q^a hypothesis CONSISTENT with derivative test? "
+          f"{'✓ yes' if hypothesis_consistent_with_derivative else '✗ NO — FALSIFIED'}")
+    print(f"   → the single-point match at q_0 (5 ppm) is a coincidence;")
+    print(f"     residual is NOT a pure power function of q.")
     print()
 
     # Build witness
@@ -367,13 +416,27 @@ def main() -> int:
                   mp.nstr(rel_diff_hyp, 50))
         .add_data("structural_hypothesis_below_codata_floor",
                   bool(is_sub_codata))
+        .add_data("q_derivative_log_residual_50dps",
+                  mp.nstr(deriv1, 50))
+        .add_data("q_second_derivative_log_residual_50dps",
+                  mp.nstr(deriv2, 50))
+        .add_data("q_derivative_predicted_by_hypothesis",
+                  mp.nstr(mpf(3) / 14, 50))
+        .add_data("q_derivative_hypothesis_consistent",
+                  bool(hypothesis_consistent_with_derivative))
         .add_caveat(
-            "Empirical fit: rational hits are reported only for "
-            "small denominators ≤ 12 within rel-err 1e-3. The "
-            "ACTUAL closed form (if any) may require larger "
-            "denominators, transcendental constants (ζ(2), ζ(3)), or "
-            "a different parameterisation (e.g. content sums, "
-            "Frobenius coordinates)."
+            "§3-§4 are EMPIRICAL pattern-matching at a single point q=q_0, "
+            "NOT a derivation. §5 (q-derivative test) falsifies the q^a "
+            "hypothesis: the actual slope d/d(log q) log(residual) at "
+            "q_0 is large and negative (~-4.6), not the predicted 3/14. "
+            "The single-point match (5 ppm at q_0) is a coincidence; "
+            "residual is not a pure power function of q.  A real "
+            "derivation would require either (a) constructing M(q)'s "
+            "eigenvalues as symbolic q-functions and identifying the "
+            "categorical mechanism producing the cot θ_W ratio, or "
+            "(b) finding a different parameterisation where the "
+            "residual IS a clean function (e.g. of substrate "
+            "invariants, not just q itself)."
         )
     )
     out_path = builder.save()

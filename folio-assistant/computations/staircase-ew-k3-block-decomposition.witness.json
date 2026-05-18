@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-18T00:06:57.805822+00:00",
-  "commitSha": "51b72e5d8985d7e9934522612fce24a7819a0d98",
+  "computedAt": "2026-05-18T00:15:28.809194+00:00",
+  "commitSha": "1431511073a390158a513ca17ec1127aec536081",
   "assertions": [
     {
       "name": "bar_pair_structure_exact",
@@ -17,8 +17,8 @@
   "durationMs": 15,
   "computation": "staircase-ew-k3-block-decomposition",
   "scriptFile": "probe_staircase_ew_k3_block_decomposition.py",
-  "scriptHash": "5bc99250c300",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "6393f6c52d2d",
+  "scriptCommitSha": "1431511073a390158a513ca17ec1127aec536081",
   "description": "Schur-Weyl-style block decomposition probe for V_(3,2,1) at mpmath 50 dps. Two analyses: (§1) bar-pair structure of M = ρ(β_EW Δ_I^minimal) — verifies all 16 eigenvalues form 8 perfect bar-pairs with sign −1 (anti-self-reciprocal spectrum: closed under x↦−1/x); det(M) = +1. (§2) next-order correction fit — given the empirical residual = CODATA cot θ_W / (top/2nd) and the leading q^(1/5) approximation from rem:staircase-ew-k3-mpfr-finding, fits residual = q^(1/5) · (1 + α·X) for X ∈ {h, h², h³, h⁴, ℏ_q, ℏ_q², ℏ_q³} and reports α plus any small-denom rational match. Complements rem:staircase-ew-k3-mpfr-finding by searching for the structural origin of the 0.15 % residual. (Note: a direct bar-involution operator B on the SYT basis requires the Schützenberger jeu-de-taquin algorithm — not implemented here; the spectral symmetry is observed directly via the reciprocity check.)",
   "contentBlock": "conj:staircase-ew-residual",
   "auditOnly": "docs/audits/2026-05-17-staircase-ew-k3-block-decomposition.md",
@@ -117,9 +117,13 @@
     "structural_hypothesis_exponent": "0.21428571428571428571428571428571428571428571428571",
     "structural_hypothesis_value_50dps": "1.0226105579808744108400673838827546058131269285766",
     "structural_hypothesis_rel_diff_50dps": "0.0000050851119062756657996726170983902120654519395543113",
-    "structural_hypothesis_below_codata_floor": true
+    "structural_hypothesis_below_codata_floor": true,
+    "q_derivative_log_residual_50dps": "-4.6332994073297318530321250621260590870117765513313",
+    "q_second_derivative_log_residual_50dps": "34.927739576277609042473100035524076087114441898192",
+    "q_derivative_predicted_by_hypothesis": "0.21428571428571428571428571428571428571428571428571",
+    "q_derivative_hypothesis_consistent": false
   },
   "caveats": [
-    "Empirical fit: rational hits are reported only for small denominators ≤ 12 within rel-err 1e-3. The ACTUAL closed form (if any) may require larger denominators, transcendental constants (ζ(2), ζ(3)), or a different parameterisation (e.g. content sums, Frobenius coordinates)."
+    "§3-§4 are EMPIRICAL pattern-matching at a single point q=q_0, NOT a derivation. §5 (q-derivative test) falsifies the q^a hypothesis: the actual slope d/d(log q) log(residual) at q_0 is large and negative (~-4.6), not the predicted 3/14. The single-point match (5 ppm at q_0) is a coincidence; residual is not a pure power function of q.  A real derivation would require either (a) constructing M(q)'s eigenvalues as symbolic q-functions and identifying the categorical mechanism producing the cot θ_W ratio, or (b) finding a different parameterisation where the residual IS a clean function (e.g. of substrate invariants, not just q itself)."
   ]
 }
