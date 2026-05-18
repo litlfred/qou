@@ -62,7 +62,7 @@ def main() -> int:
         "values registry can pin Lean and Markdown literals via "
         ":leanval[m_e_MeV] / :leanval[m_p_MeV] / :leanval[m_n_MeV]."
     )
-    w.set_content_block("codata mass anchors (CAL-1/2 inputs; informational, no formal block)")
+    w.set_content_block("prop:three-calibration-inputs")
     w.add_parameter("source", "CODATA 2022 (m_e, m_p); AME 2020 + Q_β (m_n)")
 
     w.add_assertion(
