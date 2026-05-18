@@ -635,18 +635,29 @@ Workflow:
      - `canonical` — from `local/canonical-watcher`
      - `meta` — for changes to the integration-watcher skill family
        itself (this parent + children + routing).
-     A new sibling child watcher (e.g. `local/<foo>-integration-watcher`)
-     uses `<TYPE> = foo` consistently.
+     A future sibling watcher uses `<TYPE> = <its-domain-tag>`
+     consistently with its skill filename's domain prefix.  The
+     existing children show the precedent: `compute-integration-watcher`
+     → `compute`; `proof-integration-watcher` → `proof`;
+     `canonical-watcher` (no `-integration-` infix) → `canonical`.
    - `<DESCRIPTIVE-STUB>` — kebab-case slug naming the issue
      being addressed.  Aim for 3–6 words that read clearly in a
-     `gh pr list` output.  Examples:
+     `gh pr list` output.
 
-     | Watcher | Backlog item | Branch name |
-     |---------|-------------|-------------|
-     | compute | wire `prop:flavor-split-substrate` into 6-term sweep | `claude/iw-compute-wire-flavor-split-substrate` |
-     | proof   | chase `prop:foo` 1 sorry + missing cite | `claude/iw-proof-foo-sorry-and-cite-hygiene` |
-     | canonical | replace fitted κ with substrate-pure form | `claude/iw-canonical-kappa-substrate-derivation` |
-     | meta | add new I-pattern to compute-integration-watcher | `claude/iw-meta-add-new-i-pattern` |
+   Examples of well-formed branch names (each one binds a
+   `<TYPE>` + `<DESCRIPTIVE-STUB>` to a backlog item):
+
+   - **compute** wiring `prop:flavor-split-substrate` into the
+     6-term sweep: `claude/iw-compute-wire-flavor-split-substrate`.
+   - **proof** chasing the last `sorry` in `prop:foo` plus a
+     missing `-- Ref:` citation:
+     `claude/iw-proof-foo-sorry-and-cite-hygiene`.
+   - **canonical** replacing a fitted κ value with a
+     substrate-pure derivation:
+     `claude/iw-canonical-kappa-substrate-derivation`.
+   - **meta** adding a new I-pattern to
+     `compute-integration-watcher`:
+     `claude/iw-meta-add-new-i-pattern`.
 
    The `iw-` infix is the **mandatory marker** that ties the branch
    back to the integration-watcher family; CI dashboards + the
