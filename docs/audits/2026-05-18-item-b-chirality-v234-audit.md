@@ -6,13 +6,17 @@
 > `folio-assistant/computations/term5_aK_audit.py` and the witness is
 > `term5-aK-audit.witness.json`.
 >
-> **Two findings, one immediate, one compute-bound:**
+> **Three findings, two immediate (code-level) and one compute-bound:**
 >
 > 1. **V4 ≡ V2 by construction.** The two variants share byte-identical
 >    code paths; the four-variant taxonomy is effectively three
 >    (V1, V2, V3). V4 should be retired from the witness schema or
 >    re-defined to actually differ from V2 (proposal below).
-> 2. **V2/V3 deuteron numerics**: filled in by this branch via
+> 2. **Closed-form pn-counting discrepancy at T/³He.** The audit
+>    script's adjacency count disagrees with `prop:chirality-dual-
+>    space-derivation`'s tabulation at A=3 (`(1+h)^1 ≈ 1.209` vs
+>    `(1-h²) ≈ 0.956`). Surfaced as a separate reconciliation item.
+> 3. **V2/V3 deuteron numerics**: filled in by this branch via
 >    `--variants V2,V3 --atoms deuteron --merge-prior` (≥30 min/cell,
 >    symbolic).
 
@@ -39,7 +43,7 @@ For the production atomic spectrum:
 (The audit script counts pn-pairs via the `['p']*Z + ['n']*N` adjacency
 ordering, which **does not match** the prop's
 "amphichiral 1+/1−" pattern at T/³He. **This is an independent finding
-the audit surfaces** — see §5.)
+the audit surfaces** — see Finding 3 below.)
 
 `conj:knot-factor-frobenius-pairing` claims this closed-form equals the
 **Gram-form**:
@@ -105,7 +109,7 @@ genuinely produce the same Hecke element.
    the identity. (Least useful — wastes compute on subsequent re-runs.)
 
 The audit on this branch implements **option 1** in a follow-up commit
-(see §6).
+(see "Plan (this branch)" below).
 
 ## Finding 2: V2/V3 numerics for deuteron
 
@@ -115,7 +119,7 @@ Background task `b6d5ypr5m` running
 > **`[V2 deuteron — TO BE FILLED]`** when the background compute lands.
 > Expected wall time ~30 min based on the docstring's estimate.
 
-(V3 deuteron deferred — see §3 for plan.)
+(V3 deuteron deferred — see "Plan (this branch)" below.)
 
 ## Finding 3: closed-form pn-counting discrepancy at T/³He
 
