@@ -36,8 +36,11 @@
 //! Reference: `docs/audits/2026-05-18-hoefsmit-matrix-product-optimization.md`
 //! §C "Geck-Pfeiffer factorization (already scaffolded — biggest potential)".
 
-use hecke_engine::geck_pfeiffer::{braid_to_hecke, chi_lambda_via_gp_hoefsmit};
+use hecke_engine::geck_pfeiffer::{
+    braid_to_hecke, chi_lambda_via_gp_hoefsmit, chi_lambda_via_gp_hoefsmit_mpfr,
+};
 use hecke_engine::seminormal::{chi_lambda_braid, partitions_of};
+use hecke_engine::seminormal_mpfr::chi_lambda_braid_mpfr;
 
 /// f64 approximation of the substrate parameter q_0 (calibrated per
 /// `prop:three-calibration-inputs`).  Per Gemini + Copilot reviews on
@@ -65,6 +68,21 @@ struct Row {
     chi_via_gp: f64,
     abs_diff: f64,
     rel_diff: f64,
+}
+
+/// MPFR cross-validation row (C-full Step 2): compares GP and
+/// seminormal at MPFR precision via decimal-string output.
+#[derive(serde::Serialize)]
+struct MpfrRow {
+    n: usize,
+    lambda: Vec<usize>,
+    word_str: String,
+    chi_via_seminormal_mpfr: String,
+    chi_via_gp_mpfr: String,
+    /// abs diff at MPFR precision, as decimal string.
+    abs_diff_mpfr: String,
+    /// abs diff cast to f64 for quick numeric comparison.
+    abs_diff_f64: f64,
 }
 
 #[derive(serde::Serialize, Clone)]
@@ -118,6 +136,46 @@ fn validate(n: usize, word: &[(i32, u32)], q: f64) -> Vec<Row> {
     rows
 }
 
+/// MPFR cross-validation: compares the MPFR GP path
+/// (`chi_lambda_via_gp_hoefsmit_mpfr`) against the MPFR Hoefsmit
+/// seminormal path (`chi_lambda_braid_mpfr`) at the same dps.
+fn validate_mpfr(
+    n: usize,
+    word: &[(i32, u32)],
+    q_str: &str,
+    dps: u32,
+) -> Vec<MpfrRow> {
+    use rug::Float;
+    let prec = (dps as f64 * 3.322 + 16.0) as u32;
+    let mut rows = Vec::new();
+    for lambda in partitions_of(n) {
+        let chi_semi_str = chi_lambda_braid_mpfr(&lambda, word, q_str, dps);
+        let chi_gp_str = chi_lambda_via_gp_hoefsmit_mpfr(
+            &lambda, n, word, q_str, dps,
+        );
+        // Compute |chi_semi - chi_gp| at MPFR precision.
+        let chi_semi = Float::parse(&chi_semi_str)
+            .map(|p| Float::with_val(prec, p))
+            .unwrap_or_else(|_| Float::with_val(prec, 0));
+        let chi_gp = Float::parse(&chi_gp_str)
+            .map(|p| Float::with_val(prec, p))
+            .unwrap_or_else(|_| Float::with_val(prec, 0));
+        let diff = Float::with_val(prec, &chi_semi - &chi_gp);
+        let abs_diff = Float::with_val(prec, diff.abs());
+        let abs_diff_f64: f64 = abs_diff.to_f64();
+        rows.push(MpfrRow {
+            n,
+            lambda,
+            word_str: word_str(word),
+            chi_via_seminormal_mpfr: chi_semi_str,
+            chi_via_gp_mpfr: chi_gp_str,
+            abs_diff_mpfr: abs_diff.to_string_radix(10, Some(dps as usize)),
+            abs_diff_f64,
+        });
+    }
+    rows
+}
+
 fn main() {
     // Substrate q_0 — see Q0_F64 module-level const above for
     // provenance and drift discipline.
@@ -161,9 +219,18 @@ fn main() {
 
     let mut all_rows = Vec::new();
     let mut sparsity_rows = Vec::new();
+    let mut mpfr_rows = Vec::new();
     let tolerance = 1.0e-12_f64;
+    // C-full Step 2: MPFR cross-validation tolerance.  At dps=50 the
+    // round-off floor is ~10⁻⁵⁰; we use 10⁻⁴⁵ to allow for accumulated
+    // error across the per-T_w sum + 2^k normalisation.
+    let mpfr_tolerance = 1.0e-45_f64;
+    let mpfr_dps = 50_u32;
+    let q_str_50dps = "1.10977859555418057297748154126596420587829";
     let mut worst: f64 = 0.0;
+    let mut worst_mpfr: f64 = 0.0;
     let mut failures = 0_usize;
+    let mut mpfr_failures = 0_usize;
 
     fn n_factorial(n: usize) -> usize {
         (1..=n).product()
@@ -203,37 +270,72 @@ fn main() {
             basis_size, nf, sparsity
         );
         all_rows.extend(rows);
+
+        // C-full Step 2: also cross-validate at MPFR precision.
+        // This exercises chi_lambda_via_gp_hoefsmit_mpfr against
+        // chi_lambda_braid_mpfr (both at dps=50).
+        let mpfr_case = validate_mpfr(*n, word, q_str_50dps, mpfr_dps);
+        for r in &mpfr_case {
+            if r.abs_diff_f64 > worst_mpfr {
+                worst_mpfr = r.abs_diff_f64;
+            }
+            if r.abs_diff_f64 > mpfr_tolerance {
+                mpfr_failures += 1;
+                eprintln!(
+                    "  MPFR FAIL λ={:?}: abs_diff_f64 = {:.3e}",
+                    r.lambda, r.abs_diff_f64
+                );
+            }
+        }
+        mpfr_rows.extend(mpfr_case);
     }
 
     let summary = serde_json::json!({
         "binary": "gp-cross-validate",
-        "purpose": "C-gate: cross-validate Geck-Pfeiffer χ^λ against Hoefsmit seminormal",
+        "purpose": "C-gate + C-full Step 2: cross-validate Geck-Pfeiffer χ^λ against Hoefsmit seminormal (f64 + MPFR-50dps)",
         "tolerance_rel_diff": tolerance,
         "worst_rel_diff": worst,
         "n_cases": cases.len(),
         "n_partition_rows": all_rows.len(),
         "n_failures": failures,
+        "mpfr_dps": mpfr_dps,
+        "mpfr_tolerance_abs": mpfr_tolerance,
+        "mpfr_worst_abs": worst_mpfr,
+        "mpfr_n_failures": mpfr_failures,
+        "mpfr_q_str": q_str_50dps,
         "q": q0,
         "rows": all_rows,
+        "mpfr_rows": mpfr_rows,
         "sparsity_rows": sparsity_rows,
     });
 
     println!("{}", serde_json::to_string_pretty(&summary).unwrap());
 
-    if failures > 0 {
+    if failures > 0 || mpfr_failures > 0 {
         eprintln!(
-            "✗ {} failures across {} rows (worst rel_diff = {:.3e})",
+            "✗ f64: {} failures / {} rows (worst rel_diff = {:.3e}); \
+             MPFR: {} failures / {} rows (worst abs_diff = {:.3e})",
             failures,
             all_rows.len(),
-            worst
+            worst,
+            mpfr_failures,
+            mpfr_rows.len(),
+            worst_mpfr,
         );
         std::process::exit(1);
     } else {
         eprintln!(
-            "✓ all {} rows agree at rel_diff ≤ {:.0e} (worst {:.3e})",
+            "✓ f64: all {} rows ≤ {:.0e} rel (worst {:.3e})",
             all_rows.len(),
             tolerance,
             worst
+        );
+        eprintln!(
+            "✓ MPFR-{}dps: all {} rows ≤ {:.0e} abs (worst {:.3e})",
+            mpfr_dps,
+            mpfr_rows.len(),
+            mpfr_tolerance,
+            worst_mpfr
         );
     }
 }
