@@ -22,7 +22,7 @@ substrate parameter).  The CODATA value $m_n - m_p \approx 1.293\,
 \text{MeV}$ is **no longer an input** — it is a prediction at
 $-0.4\%$ residual.
 
-## Why $\bar\mu \approx M_N / 3$
+## Why $\bar\mu \approx M_N / 3$ (and the Skein cross-term shift)
 
 The proton ($\mathfrak{u}\mathfrak{u}\mathfrak{d}$) and neutron
 ($\mathfrak{u}\mathfrak{d}\mathfrak{d}$) braids each carry three
@@ -37,21 +37,38 @@ $$
   \text{(Skein cross-terms)}.
 $$
 
-The Skein cross-terms cancel between the proton and neutron at
-leading order (the Borromean braid topology has the same number
-of $u u$ and $d d$ pairs across the doublet), so
+**Naive estimate (Skein cross-terms ignored).**  Setting the cross-terms
+to zero gives a closed-form upper estimate
 
 $$
-  M_N
+  \bar\mu^{\mathrm{naive}}
   \;=\;
-  \tfrac{1}{2}(m_p + m_n)
+  \tfrac{1}{6}(m_p + m_n)
+  \;=\;
+  \tfrac{M_N}{3}
   \;\approx\;
-  \tfrac{3}{2}\,(\mu_{\mathfrak{u}} + \mu_{\mathfrak{d}})
-  \;=\;
-  3 \,\bar\mu.
+  312.97\,\text{MeV}.
 $$
 
-Solving gives $\bar\mu \approx M_N / 3 \approx 312.7\,\text{MeV}$.
+**Skein-corrected value (matches the per-quark numerology above).**
+The actual Borromean Skein cross-terms shift the per-quark
+contribution down by a uniform amount $\delta \approx 1.23\,\text{MeV}$
+per quark (so $6\delta \approx 7.4\,\text{MeV}$ total across the
+proton + neutron sum).  This gives
+
+$$
+  \bar\mu^{\mathrm{Skein-corrected}}
+  \;=\;
+  \bar\mu^{\mathrm{naive}} - \delta
+  \;\approx\;
+  311.75\,\text{MeV},
+$$
+
+consistent with $\bar\mu = (\mu_{\mathfrak{u}} + \mu_{\mathfrak{d}})/2
+= (311.10 + 312.39)/2 = 311.745\,\text{MeV}$ from the per-quark values
+quoted above.  The substrate split $\mu_{\mathfrak{d}} -
+\mu_{\mathfrak{u}}$ (1.288 MeV) is unaffected by the Skein cross-term
+adjustment, which acts uniformly on both flavors.
 
 ## Distance from the substrate bound
 

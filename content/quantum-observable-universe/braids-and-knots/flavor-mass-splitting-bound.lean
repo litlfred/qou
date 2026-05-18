@@ -11,8 +11,13 @@ with ℏ_q = (q − 1)/q, h_q = q − q⁻¹, [2]_q = q + q⁻¹.
 
 The lower bound is positivity; the upper bound follows from the
 algebraic identity
-`(q − 1)²(1 − q⁻⁴)/3 = (1/3) · ℏ_q² · h_q · [2]_q · q²` at
-non-zero `q`.
+
+```
+(q − 1)²(1 − q⁻⁴)/3 = (1/3) · ℏ_q² · h_q · [2]_q
+```
+
+at non-zero `q` (no spurious `q²` factor — see direct expansion
+in the lemma `substrate_to_bound_ratio` below).
 
 LaTeX: `\label{thm:flavor-mass-splitting-bound}`
 -/
@@ -69,13 +74,20 @@ theorem flavor_mass_splitting_bound
     (hM : 0 < M_N) (hq : 1 < q)
     (h_derive :
       F.μ Flavor.down - F.μ Flavor.up
-        = M_N * ((q - 1)^2 * (1 - q^(-4 : ℤ)) / 3)) :
+        = M_N * substrate_split_factor q) :
     0 < F.μ Flavor.down - F.μ Flavor.up ∧
     F.μ Flavor.down - F.μ Flavor.up
       < M_N * (((q - 1)/q)^2 * (q - q⁻¹) * (q + q⁻¹)) := by
   -- The positivity half is a positivity argument on the substrate
-  -- factor; the upper half follows from `substrate_to_bound_ratio`
-  -- (factor of 1/3) combined with the derivation identity.
+  -- factor (and the Skein-adjustment factor √q + 1/√q is positive
+  -- at q > 0); the upper half follows from `substrate_to_bound_ratio`
+  -- (factor of 1/3 between the substrate factor and the bound
+  -- factor at non-zero q) plus the Skein-side factor
+  -- (√q + 1/√q)/(q + q⁻¹) < 1 at q > 1, yielding a *strict* bound.
+  -- The derivation hypothesis now uses `substrate_split_factor`
+  -- from the sibling file so the bound is consistent with the
+  -- physical splitting in `flavor-dressed-mass-from-substrate-split.lean`
+  -- per Gemini #696 medium feedback.
   -- Full proof deferred pending the supporting lemma above.
   -- Ref: [manuscript] braids-and-knots/flavor-mass-splitting-bound
   --      § "Proof sketch".

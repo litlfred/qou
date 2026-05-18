@@ -17,16 +17,35 @@ $$
 $$
 
 *The leading-order substrate-pure form (dropping the
-$O(\Delta m / M_N)^2$ correction) reads*
+$O\!\left((\Delta m / M_N)^2\right)$ correction) reads, using the
+algebraic identity $(q-1)^2 (1 - q^{-4})/3 = (1/3)\,\hbar_q^2 \cdot h_q \cdot [2]_q$,*
 
 $$
   \mu_{\mathfrak{d}} - \mu_{\mathfrak{u}}
   \;\approx\;
-  M_N \cdot \hbar_q^2 \cdot h_q \cdot [2]_q
-  \cdot
-  \frac{1}{z_{\mathrm{mkv}} \cdot \sqrt{q}}
-  \;\;\;\;\text{(at } q = q_0 \text{).}
+  \frac{M_N}{3} \cdot
+  \hbar_q^2 \cdot h_q \cdot
+  \frac{[2]_q\,(q^{1/2} + q^{-1/2})}{q + q^{-1}}
+  \;=\;
+  \frac{M_N}{3} \cdot
+  \hbar_q^2 \cdot h_q \cdot
+  \frac{1}{z_{\mathrm{mkv}}}
+  \;\;\;\;\text{(at } q = q_0 \text{)},
 $$
+
+*where $z_{\mathrm{mkv}} = (q^{1/2} + q^{-1/2})^{-1}$.  Numerical
+check at $q_0$:*
+
+| Factor | Value |
+|--------|------:|
+| $\hbar_q^2$ | $9.82 \times 10^{-3}$ |
+| $h_q$ | $0.2091$ |
+| $1/z_{\mathrm{mkv}} = q^{1/2} + q^{-1/2}$ | $2.003$ |
+| $M_N / 3$ | $312.97\,\text{MeV}$ |
+| product | $1.287\,\text{MeV}$ |
+
+*matching the CODATA value $m_n - m_p \approx 1.293\,\text{MeV}$
+to within $-0.5\%$.*
 
 ## Derivation
 
@@ -71,8 +90,8 @@ $$
 
 This matches the value previously assigned to
 $\mu_{\mathfrak{d}} - \mu_{\mathfrak{u}}$ via CODATA
-$m_n - m_p \approx 1.293\,\text{MeV}$ (residual $-0.4\%$,
-attributable to the dropped $O((\Delta m / M_N)^2)$ term).
+$m_n - m_p \approx 1.293\,\text{MeV}$ (residual $-0.5\%$,
+attributable to the dropped $O\!\left((\Delta m / M_N)^2\right)$ term).
 
 ## Calibration discipline
 
