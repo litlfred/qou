@@ -1,0 +1,77 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-18T04:43:30.321257+00:00",
+  "commitSha": "dc0f9394feecab82403453af071b11b80d144ac5",
+  "assertions": [
+    {
+      "name": "t2_t3_computable_at_a1",
+      "computed": 2,
+      "expected": 2,
+      "passed": true,
+      "tolerance": 0
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 88,
+  "computation": "probe-proton-t2-t3-at-a1",
+  "scriptFile": "probe_proton_t2_t3_at_a1.py",
+  "scriptHash": "3e80869ffd6a",
+  "scriptCommitSha": "unknown",
+  "description": "m_p chain Item A from PR #671 audit: compute T2 and T3 at A=1 for proton + neutron under the canonical Li_2^q tower.  The audit reported KeyError; PR #684 identified that as a consumer bug.  Reports the actual contributions.",
+  "data": {
+    "q_pinned": "1.109978595554180575281594079609509377993",
+    "z_markov": "0.4993203340335982500206690846767215063693",
+    "rows": [
+      {
+        "atom": "proton",
+        "n_gens": 2,
+        "vols_abs": [
+          "0.9890073159292597737327090873425711234998",
+          "0.9710701586527436964446772960620824610332"
+        ],
+        "T1_50dps": "0.9603954911881504965121598614972395584057",
+        "T2_li2q_50dps": "3.019786111767924911160448565324420393469",
+        "T3_li2q_50dps": "0.3612748188446103618106088607906079631927",
+        "T1_plus_T2_plus_T3_50dps": "4.341456421800685769483217287612267915067",
+        "pred_MeV_T_tower_times_m_e": "2.218479673010907328318573426471841489641",
+        "codata_MeV": "938.2720881600000000000000000000000000000",
+        "residual_pct": -99.76355689346344
+      },
+      {
+        "atom": "neutron",
+        "n_gens": 2,
+        "vols_abs": [
+          "0.8542103128258389606769442997911669155688",
+          "0.9755094711077459431568794824716105851770"
+        ],
+        "T1_50dps": "0.8332902504795163754709088211680541280811",
+        "T2_li2q_50dps": "2.677338934461750667882700352331817273267",
+        "T3_li2q_50dps": "0.2836164123718696897109427242426188670111",
+        "T1_plus_T2_plus_T3_50dps": "3.794245597313136733064551897742490268360",
+        "pred_MeV_T_tower_times_m_e": "1.938855516269135508999227202937645223824",
+        "codata_MeV": "939.5654205200000000000000000000000000000",
+        "residual_pct": -99.79364337235867
+      }
+    ],
+    "status": "T2 + T3 ARE computed at A=1 via canonical Li_2^q form.  The earlier KeyError was a consumer-side bug (per PR #684).  Tower at A=1 still under-shoots CODATA by ~99 % because the T1+T2+T3 contribution is structurally small at A=1 (single-particle truncation does not reproduce m_p/m_e ≈ 1836).  Resolution requires Items B (T5 categorical) and C (full Habiro residue) per PR #671 audit.",
+    "upstream_witness_hashes": [
+      {
+        "path": "q-pinning-50-digit.witness.json",
+        "sha256": "1b3888e92f59381ee8f08868664422b509c5ebcb7d3ee8b3f784429be3f3e877",
+        "size_bytes": 3817,
+        "commitSha": null,
+        "scriptCommitSha": null,
+        "computedAt": "2026-04-27T20:27:23.154181+00:00"
+      },
+      {
+        "path": "terms-2-3-atom-per-gen-mpfr-50dps.witness.json",
+        "sha256": "8fdf23e355a0e66c3004895e4dc0c38a51a0f15f722033088b279d809cbafee4",
+        "size_bytes": 10078,
+        "commitSha": "83b19a2f85c270e19890905437a29b4540fd7834",
+        "scriptCommitSha": "17f878e6857f795273cff6fd102ec2ac2a968c7b",
+        "computedAt": "2026-05-17T22:58:19.126946+00:00"
+      }
+    ]
+  }
+}

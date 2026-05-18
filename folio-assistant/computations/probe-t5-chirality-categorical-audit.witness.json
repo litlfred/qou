@@ -1,0 +1,124 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-18T04:47:33.633859+00:00",
+  "commitSha": "dc0f9394feecab82403453af071b11b80d144ac5",
+  "assertions": [
+    {
+      "name": "no_categorical_match_within_10pct",
+      "computed": 21.430304175145174,
+      "expected": 0.0,
+      "passed": false,
+      "tolerance": 10.0
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 10,
+  "computation": "probe-t5-chirality-categorical-audit",
+  "scriptFile": "probe_t5_chirality_categorical_audit.py",
+  "scriptHash": "07618d811da9",
+  "scriptCommitSha": "unknown",
+  "description": "m_p chain Item B from PR #671 audit: enumerate categorical candidates for T5 = -7.79 (proton) at q_0.  Tests whether T5 has a clean categorical attribution or is a numerical artefact of double-counting between T1+T2+T3 and the chirality channel.",
+  "data": {
+    "q_pinned": "1.10997859555418057528159407961",
+    "T5_proton_target": "-7.79000000000000000000000000000",
+    "T5_neutron_target": "-7.47000000000000000000000000000",
+    "candidates": [
+      {
+        "candidate": "FS(V_(2,1))",
+        "value": "1.00000000000000000000000000000",
+        "gap_pct_vs_T5_proton": -112.83697047496791
+      },
+      {
+        "candidate": "[3]_q",
+        "value": "3.04370621823051207775827988827",
+        "gap_pct_vs_T5_proton": -139.07196685790132
+      },
+      {
+        "candidate": "[3]_q · [2]_q",
+        "value": "6.12057930475619091239147634394",
+        "gap_pct_vs_T5_proton": -178.56969582485482
+      },
+      {
+        "candidate": "-[3]_q · [2]_q",
+        "value": "-6.12057930475619091239147634394",
+        "gap_pct_vs_T5_proton": -21.430304175145174
+      },
+      {
+        "candidate": "Δ_3² (= q^6) on V_(2,1)",
+        "value": "1.87019815617739749083801943913",
+        "gap_pct_vs_T5_proton": -124.00767851318867
+      },
+      {
+        "candidate": "-Δ_3²",
+        "value": "-1.87019815617739749083801943913",
+        "gap_pct_vs_T5_proton": -75.99232148681133
+      },
+      {
+        "candidate": "[3]_q / [2]_q (dim_q V_(2,1))",
+        "value": "1.51360632410989021401574854470",
+        "gap_pct_vs_T5_proton": -119.43011969332336
+      },
+      {
+        "candidate": "-h_q · [3]_q · b²",
+        "value": "-0.478958055742958433753036718736",
+        "gap_pct_vs_T5_proton": -93.85162957967961
+      },
+      {
+        "candidate": "-(q + q⁻¹) · b · ℏ_q",
+        "value": "-0.172860168124458879295125238422",
+        "gap_pct_vs_T5_proton": -97.78099912548834
+      },
+      {
+        "candidate": "-[3]_q · [2]_q · z_mkv",
+        "value": "-3.05612970292998978869560817005",
+        "gap_pct_vs_T5_proton": -60.768553235815276
+      },
+      {
+        "candidate": "-[3]_q² · ℏ_q",
+        "value": "-0.917907732505082881950269565924",
+        "gap_pct_vs_T5_proton": -88.21684553908752
+      },
+      {
+        "candidate": "-[3]_q · [2]_q · h_q",
+        "value": "-1.27957028021692184270356032560",
+        "gap_pct_vs_T5_proton": -83.57419409220896
+      },
+      {
+        "candidate": "-4 · [3]_q",
+        "value": "-12.1748248729220483110331195531",
+        "gap_pct_vs_T5_proton": 56.28786743160524
+      },
+      {
+        "candidate": "-4 · [3]_q · b",
+        "value": "-10.5626840820008483986202105118",
+        "gap_pct_vs_T5_proton": 35.59286369705839
+      },
+      {
+        "candidate": "log(Δ_3²) = 6·log(q)",
+        "value": "0.626044391122775053993883054540",
+        "gap_pct_vs_T5_proton": -108.03651336486233
+      },
+      {
+        "candidate": "-(Δ_3² + Δ_3^{-2})",
+        "value": "-2.40490085422943486169576796207",
+        "gap_pct_vs_T5_proton": -69.12835873903164
+      }
+    ],
+    "best_match": {
+      "candidate": "-[3]_q · [2]_q",
+      "gap_pct": -21.430304175145174
+    },
+    "structural_finding": "No simple categorical object on H_3 / V_(2,1) at q_0 produces T5 = -7.79 within 10 %.  Supports the hypothesis (PR #671 audit) that T5 is a numerical artefact of double-counting in the tower assembly rather than a fundamental contribution.",
+    "upstream_witness_hashes": [
+      {
+        "path": "q-pinning-50-digit.witness.json",
+        "sha256": "1b3888e92f59381ee8f08868664422b509c5ebcb7d3ee8b3f784429be3f3e877",
+        "size_bytes": 3817,
+        "commitSha": null,
+        "scriptCommitSha": null,
+        "computedAt": "2026-04-27T20:27:23.154181+00:00"
+      }
+    ]
+  }
+}
