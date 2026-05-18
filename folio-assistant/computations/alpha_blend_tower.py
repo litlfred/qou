@@ -91,7 +91,8 @@ _DPS = 50  # 50 decimal places per Sprint B requirement.
 #   The precision-critical calibration step inside main() additionally
 #   wraps in `with mp.workdps(_DPS):` for explicit, locally-scoped
 #   high precision (no reliance on the import-time global).
-mp.mp.dps = _DPS
+from _precision import set_compute_dps, fmt  # noqa: E402
+set_compute_dps(_DPS)
 
 from hecke_core import (_PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1)  # noqa: E402
 from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP  # noqa: E402

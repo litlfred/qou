@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T16:33:06.912499+00:00",
-  "commitSha": "e34912f9f43a1a1f74ef17a42d5ce5381cfdff08",
+  "computedAt": "2026-05-18T16:33:09.855837+00:00",
+  "commitSha": "d43c21fb09e5ee52067318ba2add63aabbcb81dd",
   "assertions": [],
   "allPassed": true,
   "durationMs": 7,
@@ -278,14 +278,14 @@
       {
         "pattern": "P31",
         "file": "atomic_braid_mass_table_modes_sweep.py",
-        "line": 102,
+        "line": 104,
         "snippet": "CODATA literal \"938.27208816\"",
         "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
       {
         "pattern": "P31",
         "file": "atomic_mass_via_rho_k.py",
-        "line": 112,
+        "line": 114,
         "snippet": "CODATA literal \"938.27208816\"",
         "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },

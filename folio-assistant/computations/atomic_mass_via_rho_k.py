@@ -67,14 +67,16 @@ import mpmath as mp
 
 HERE = Path(__file__).parent
 
-mp.mp.dps = 50
-
 # ── Inputs (calibration anchors) — imported from codata_constants ──
 # Centralised per Gemini review on PR #564: avoids duplicating these
 # literals across atomic_braid_mass_table.py, atomic_tr_m_mpfr_50dps.py,
 # rho_k_h3a_refinement.py, sigma_shell_from_beta_chain.py, etc.
 import sys as _sys
 _sys.path.insert(0, str(HERE))
+from _precision import set_compute_dps, fmt  # noqa: E402
+
+set_compute_dps()
+
 from codata_constants import M_E_MEV, M_P_MEV, M_N_MEV  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import load_and_hash_upstream  # noqa: E402
@@ -327,12 +329,12 @@ def main() -> int:
 
         row = {
             "atom": atom, "Z": Z, "N": N, "A": Z + N,
-            "tr_M_at_q0": str(abs_tr),
-            "rho_K_leading_order": str(rho_K),
-            "M_pred_MeV": str(M_pred),
-            "M_codata_MeV": str(M_codata),
-            "err_pct": str(err_pct),
-            "binding_residual_MeV": str(binding),
+            "tr_M_at_q0": fmt(abs_tr),
+            "rho_K_leading_order": fmt(rho_K),
+            "M_pred_MeV": fmt(M_pred),
+            "M_codata_MeV": fmt(M_codata),
+            "err_pct": fmt(err_pct),
+            "binding_residual_MeV": fmt(binding),
         }
         if flag:
             row["tr_M_convention_status"] = flag
@@ -366,8 +368,8 @@ def main() -> int:
                       f"×{improvement:>9.1f}")
                 legacy_compare.append({
                     "atom": atom,
-                    "rho_K_err_pct": str(rho_err_f),
-                    "legacy_E0_err_pct": str(legacy_err_f),
+                    "rho_K_err_pct": fmt(rho_err_f),
+                    "legacy_E0_err_pct": fmt(legacy_err_f),
                     "improvement_factor": improvement,
                 })
             except (TypeError, ValueError):
@@ -393,9 +395,9 @@ def main() -> int:
         "scriptHash": None,  # will be filled by WitnessBuilder if/when wired
         "parameters": {
             "q0": Q_50_DIGIT_STR,
-            "m_e_MeV": str(M_E_MEV),
-            "m_p_MeV": str(M_P_MEV),
-            "m_n_MeV": str(M_N_MEV),
+            "m_e_MeV": fmt(M_E_MEV),
+            "m_p_MeV": fmt(M_P_MEV),
+            "m_n_MeV": fmt(M_N_MEV),
             "mpmath_dps": 50,
         },
         "data": {
