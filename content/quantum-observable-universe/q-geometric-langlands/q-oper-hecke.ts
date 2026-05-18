@@ -2,7 +2,7 @@ import { conjecture } from "../../schema/builders";
 
 export default conjecture({
   label: "conj:q-oper-hecke",
-  lean: { ref: "qou:QOU.q_oper_hecke", validation: "not_checked" },
+  lean: { ref: "qou:QOU.QGeometricLanglands.q_oper_hecke", validation: "not_checked" },
   title: "$q$-Opers are $q$-Hecke eigensheaves",
   uses: [
     "def:q-oper",
