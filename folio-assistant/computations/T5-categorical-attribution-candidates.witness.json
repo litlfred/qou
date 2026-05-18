@@ -1,0 +1,186 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-17T20:41:56.369911+00:00",
+  "commitSha": "e3a1b22ac9476f652a9528f12c713915f65bda74",
+  "assertions": [
+    {
+      "name": "T5_attribution_remains_open_R_and_D",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "unit": "boolean",
+      "source": "Best candidate has avg gap >5% across proton+neutron T5. No tested form simultaneously matches both anchors AND reproduces the Z↔N asymmetry. Item B (T5 attribution) is open R&D — likely needs the Z↔N-asymmetric channel structure surfaced by the cross-anchor falsification probe (probe_delta_coupling_cross_anchor.py)."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 9,
+  "computation": "T5-categorical-attribution-candidates",
+  "scriptFile": "probe_T5_categorical_attribution.py",
+  "scriptHash": "2be6203ddf16",
+  "scriptCommitSha": "unknown",
+  "description": "m_p chain Item B probe — T5 categorical attribution via substrate-primitive candidate enumeration. Tests 20 candidate forms built from {E_0, m_e, h, ℏ_q, z, b, b², [n]_q, log(1/h), Jones-at-q=1 values} against the empirical T5 values (-7.79 proton, -7.47 neutron). REPORTS best candidates ranked by avg gap; CONFIRMS Item B remains open R&D — no purely-substrate ansatz matches both anchors AND reproduces the Z↔N asymmetry (-0.325 MeV between proton and neutron).",
+  "auditOnly": "docs/audits/2026-05-17-m-p-chain-closure-gap-analysis.md",
+  "parameters": {
+    "q_0": "1.10997859555418051695830018898879867637876138498395"
+  },
+  "data": {
+    "targets_MeV": {
+      "proton": -7.79175121067811,
+      "neutron": -7.466593277577004
+    },
+    "z_n_asymmetry_MeV": -0.325157933101107,
+    "candidates_ranked": [
+      {
+        "candidate": "-[2]_q · log(1/h) · m_e · 5",
+        "value_MeV": -8.041385926013257,
+        "gap_proton_pct": 3.2038332408899004,
+        "gap_neutron_pct": 7.698191491994331,
+        "avg_abs_gap_pct": 5.451012366442116
+      },
+      {
+        "candidate": "-E_0 · (log(1/h) + 2·h)",
+        "value_MeV": -8.301859414089522,
+        "gap_proton_pct": 6.546772216139815,
+        "gap_neutron_pct": 11.186709995586806,
+        "avg_abs_gap_pct": 8.86674110586331
+      },
+      {
+        "candidate": "-8 · z² · E_0",
+        "value_MeV": -8.349216575363782,
+        "gap_proton_pct": 7.154558065479556,
+        "gap_neutron_pct": 11.820963925240083,
+        "avg_abs_gap_pct": 9.48776099535982
+      },
+      {
+        "candidate": "-E_0 · log(1/h) · b",
+        "value_MeV": -5.684076281349002,
+        "gap_proton_pct": -27.050079915804695,
+        "gap_neutron_pct": -23.873230132691106,
+        "avg_abs_gap_pct": 25.4616550242479
+      },
+      {
+        "candidate": "-E_0 · log(1/h) · b²",
+        "value_MeV": -4.931414019056345,
+        "gap_proton_pct": -36.70981162362899,
+        "gap_neutron_pct": -33.953627367571755,
+        "avg_abs_gap_pct": 35.33171949560037
+      },
+      {
+        "candidate": "-E_0 · b·log(1/h)·[2]_q·z·b²",
+        "value_MeV": -4.295879428340873,
+        "gap_proton_pct": -44.86631679854411,
+        "gap_neutron_pct": -42.46533501105693,
+        "avg_abs_gap_pct": 43.66582590480052
+      },
+      {
+        "candidate": "-[2]_q·[3]_q·E_0·z·log(1/h)·h",
+        "value_MeV": -4.185927735801884,
+        "gap_proton_pct": -46.27744620406603,
+        "gap_neutron_pct": -43.93791679570008,
+        "avg_abs_gap_pct": 45.10768149988306
+      },
+      {
+        "candidate": "-2 · E_0 · log(1/h) · b",
+        "value_MeV": -11.368152562698004,
+        "gap_proton_pct": 45.89984016839061,
+        "gap_neutron_pct": 52.25353973461779,
+        "avg_abs_gap_pct": 49.0766899515042
+      },
+      {
+        "candidate": "-2 · E_0 · b·log(1/h)·z·[2]_q",
+        "value_MeV": -11.414553910035039,
+        "gap_proton_pct": 46.49535902008912,
+        "gap_neutron_pct": 52.874992458932944,
+        "avg_abs_gap_pct": 49.68517573951103
+      },
+      {
+        "candidate": "-E_0 · log(1/h) · [2]_q · b",
+        "value_MeV": -11.43009119799533,
+        "gap_proton_pct": 46.694765899751786,
+        "gap_neutron_pct": 53.08308318227463,
+        "avg_abs_gap_pct": 49.88892454101321
+      },
+      {
+        "candidate": "-2 · b²·E_0·[2]_q",
+        "value_MeV": -12.67185410686387,
+        "gap_proton_pct": 62.6316570464658,
+        "gap_neutron_pct": 69.71399988959939,
+        "avg_abs_gap_pct": 66.17282846803259
+      },
+      {
+        "candidate": "-([2]_q² - 1)·E_0",
+        "value_MeV": -12.740895874709366,
+        "gap_proton_pct": 63.51774498714437,
+        "gap_neutron_pct": 70.63867551178488,
+        "avg_abs_gap_pct": 67.07821024946463
+      },
+      {
+        "candidate": "-E_0 · log(1/h) · [2]_q",
+        "value_MeV": -13.174620914228885,
+        "gap_proton_pct": 69.0842091592181,
+        "gap_neutron_pct": 76.44755010017371,
+        "avg_abs_gap_pct": 72.76587962969592
+      },
+      {
+        "candidate": "-E_0 · log(1/h²) · [2]_q / 2",
+        "value_MeV": -13.174620914228885,
+        "gap_proton_pct": 69.0842091592181,
+        "gap_neutron_pct": 76.44755010017371,
+        "avg_abs_gap_pct": 72.76587962969592
+      },
+      {
+        "candidate": "-2 · E_0·log(1/h)·(1+h)",
+        "value_MeV": -15.842594067626097,
+        "gap_proton_pct": 103.32520429957782,
+        "gap_neutron_pct": 112.17968461203237,
+        "avg_abs_gap_pct": 107.75244445580509
+      },
+      {
+        "candidate": "-[2]_q³ · E_0 / [2]_q",
+        "value_MeV": -16.926876702424206,
+        "gap_proton_pct": 117.24098016922018,
+        "gap_neutron_pct": 126.7014697754794,
+        "avg_abs_gap_pct": 121.97122497234979
+      },
+      {
+        "candidate": "-2 · E_0 · z · [3]_q·log(1/h)·b",
+        "value_MeV": -17.27714098512231,
+        "gap_proton_pct": 121.73630186555573,
+        "gap_neutron_pct": 131.39255538409267,
+        "avg_abs_gap_pct": 126.5644286248242
+      },
+      {
+        "candidate": "-E_0 · [2]_q² / b²",
+        "value_MeV": -22.488148221021955,
+        "gap_proton_pct": 188.61481344788507,
+        "gap_neutron_pct": 201.18351683298894,
+        "avg_abs_gap_pct": 194.899165140437
+      },
+      {
+        "candidate": "-4 · J_Hopf · E_0·z",
+        "value_MeV": 16.721162761222498,
+        "gap_proton_pct": -314.60082989183724,
+        "gap_neutron_pct": -323.94634526883874,
+        "avg_abs_gap_pct": 319.273587580338
+      },
+      {
+        "candidate": "-J_Borromean · E_0·z·[2]_q²",
+        "value_MeV": 67.6154698335999,
+        "gap_proton_pct": -967.7827102710505,
+        "gap_neutron_pct": -1005.5732289136004,
+        "avg_abs_gap_pct": 986.6779695923254
+      }
+    ],
+    "best_candidate": {
+      "candidate": "-[2]_q · log(1/h) · m_e · 5",
+      "value_MeV": -8.041385926013257,
+      "gap_proton_pct": 3.2038332408899004,
+      "gap_neutron_pct": 7.698191491994331,
+      "avg_abs_gap_pct": 5.451012366442116
+    }
+  },
+  "caveats": [
+    "Enumeration-only probe. The 20 candidates tested are polynomial in {E_0, m_e, h, ℏ_q, z, b, [n]_q, log(1/h)} with small integer coefficients and Jones-at-q=1 values. Doesn't exhaustively cover the substrate-primitive space (e.g. doesn't test Real.rpow-fractional combinations or operator-valued contributions from the canonical Wenzl-LR decomposition). The Z↔N asymmetry suggests the genuine T5 form is operator-valued (per knot-fusion-step1-audit.md / PR #681), not a purely scalar substrate combination."
+  ]
+}

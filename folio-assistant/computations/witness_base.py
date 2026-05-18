@@ -595,12 +595,42 @@ class WitnessBuilder:
         return witness
 
     def save(self, extra: Optional[dict] = None) -> Path:
-        """Build and write the witness JSON file. Returns the path."""
+        """Build and write the witness JSON file. Returns the path.
+
+        **Content-diff-aware:** if the on-disk witness already exists and
+        differs from the new one ONLY in ephemeral meta fields (commitSha,
+        scriptCommitSha, computedAt, durationMs), the on-disk file is
+        PRESERVED unchanged. This breaks the CI drift loop (each commit
+        embeds a fresh commitSha, but CI's strict-diff check would always
+        fail) while keeping commitSha as a staleness audit-trail: it
+        records the LAST commit that substantively changed the witness
+        content, not the most recent commit that ran the validator.
+        """
         witness = self.build()
         if extra:
             witness.update(extra)
 
         out_path = self._output_dir / f"{self.name}.witness.json"
+
+        # If an existing witness is substantively identical (ignoring
+        # ephemeral meta fields), preserve it — avoids CI drift loops
+        # when only commitSha/computedAt/durationMs would change.
+        if out_path.exists():
+            try:
+                with open(out_path, "r", encoding="utf-8") as f:
+                    existing = json.load(f)
+                if _witnesses_substantively_equal(existing, witness):
+                    # Re-print the assertion summary for the validator runner
+                    # without re-writing the file.
+                    print(f"✓ Witness: {out_path.name}  "
+                          f"({len(self.assertions)} assertions, "
+                          f"{'all passed' if witness['allPassed'] else 'FAILURES'}) "
+                          f"[unchanged — kept on-disk commitSha for staleness]")
+                    return out_path
+            except (json.JSONDecodeError, OSError):
+                # On-disk file unreadable: fall through and overwrite.
+                pass
+
         with open(out_path, "w", encoding="utf-8") as f:
             json.dump(witness, f, indent=2, ensure_ascii=False, default=str)
             f.write("\n")
@@ -610,6 +640,36 @@ class WitnessBuilder:
               f"{'all passed' if witness['allPassed'] else 'FAILURES'})")
 
         return out_path
+
+
+# Ephemeral meta fields that change on every validator run regardless of
+# whether the substantive content drifted. Masked in the equality check
+# so the on-disk witness is preserved when only these would change.
+_EPHEMERAL_META_FIELDS = frozenset({
+    "commitSha", "scriptCommitSha", "computedAt", "durationMs",
+})
+
+
+def _strip_ephemeral_fields(d: object) -> object:
+    """Recursively strip the ephemeral-meta fields from a witness dict.
+    Returns a new structure suitable for substantive-equality comparison."""
+    if isinstance(d, dict):
+        return {k: _strip_ephemeral_fields(v) for k, v in d.items()
+                if k not in _EPHEMERAL_META_FIELDS}
+    if isinstance(d, list):
+        return [_strip_ephemeral_fields(item) for item in d]
+    return d
+
+
+def _witnesses_substantively_equal(a: dict, b: dict) -> bool:
+    """True iff `a` and `b` are equal after masking ephemeral meta fields.
+
+    Substantive content includes: assertions, allPassed, computation,
+    description, data payload, parameters, scriptFile, scriptHash,
+    engineVersion. Ephemeral (masked): commitSha, scriptCommitSha,
+    computedAt, durationMs.
+    """
+    return _strip_ephemeral_fields(a) == _strip_ephemeral_fields(b)
 
 
 # ── Staleness checker ────────────────────────────────────────────

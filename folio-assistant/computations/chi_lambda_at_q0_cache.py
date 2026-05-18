@@ -137,7 +137,7 @@ def main() -> int:
             "Numeric cache of χ^λ(β_K) at q_0 to 50 dps for atoms "
             "{D, T, ³He}, evaluated from chi-{atom}-h{n}.witness.json "
             "in parallel via multiprocessing.Pool. ⁴He is excluded — "
-            "its chi-helium-4-h12.witness.json already carries a "
+            "its chi-helium-4-h12-numeric.witness.json already carries a "
             "per_partition table with numeric chi_q_at_q0. "
             "Pre-computes the symbolic-to-numeric step for fast "
             "downstream reuse by delta_lambda_empirical_tabulation.py. "

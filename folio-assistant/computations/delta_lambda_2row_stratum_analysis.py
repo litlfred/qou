@@ -159,7 +159,7 @@ def analyse_2row_sector(atom: str, atom_data: dict) -> dict:
     # ⁴He: prefer the cached per_partition (instant) over recomputing.
     if atom == "4He":
         cached = json.loads(
-            (HERE / "chi-helium-4-h12.witness.json").read_text())
+            (HERE / "chi-helium-4-h12-numeric.witness.json").read_text())
         terms = cached["per_partition"]
         for t in terms:
             t["y_at_q0"] = float(t["y_at_q0"])

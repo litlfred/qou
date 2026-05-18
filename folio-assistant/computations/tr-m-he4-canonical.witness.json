@@ -17,7 +17,7 @@
   "scriptFile": "probe_tr_m_he4_canonical.py",
   "scriptHash": "ba921f9fc53a",
   "scriptCommitSha": "f6ad68e027dd44df2eb9b5ff5d4a7054263f8483",
-  "description": "Canonical |tr_M(β_⁴He)| computed via markov_peel.tr_M_atomic(2, 2) — the recursive symbolic Markov-axiom ascent that uses Gröbner-Shirshov reduction + Markov-peel without building Hoefsmit seminormal matrices at H_12.  Replaces the deprecated disjoint-word value in chi-helium-4-h12.witness.json (which used tr_M(α⊗β) = tr_M(α)·tr_M(β) — invalid for atomic braids with σ_{3k} inter-nucleon interfaces per PR #564 hecke-branching-trace-decomposition.md).  Symbolic result returned in sympy; evaluated at q_0 with mpmath 50dps.  NO FLOAT64 in the pipeline.",
+  "description": "Canonical |tr_M(β_⁴He)| computed via markov_peel.tr_M_atomic(2, 2) — the recursive symbolic Markov-axiom ascent that uses Gröbner-Shirshov reduction + Markov-peel without building Hoefsmit seminormal matrices at H_12.  Replaces the deprecated disjoint-word value in chi-helium-4-h12-numeric.witness.json (which used tr_M(α⊗β) = tr_M(α)·tr_M(β) — invalid for atomic braids with σ_{3k} inter-nucleon interfaces per PR #564 hecke-branching-trace-decomposition.md).  Symbolic result returned in sympy; evaluated at q_0 with mpmath 50dps.  NO FLOAT64 in the pipeline.",
   "contentBlock": "conj:brane-tower-z-habiro",
   "parameters": {
     "mp_dps": 50,

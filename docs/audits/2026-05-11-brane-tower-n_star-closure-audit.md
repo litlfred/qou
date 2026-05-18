@@ -350,7 +350,7 @@ $$
 $$
 
 Compare to the deprecated disjoint-word value in
-`chi-helium-4-h12.witness.json`: $0.05534834587669884$. Relative
+`chi-helium-4-h12-numeric.witness.json`: $0.05534834587669884$. Relative
 difference $1.54 \times 10^{-14}$ — **float64 precision floor**.
 The disjoint-word value was correct at float64 precision after all
 (an empirical accident of the $Z=N=2$ doubly-magic symmetry); the

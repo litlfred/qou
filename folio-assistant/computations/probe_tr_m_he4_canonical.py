@@ -4,7 +4,7 @@
 
 Replaces the deprecated disjoint-word value
 `abs_tr_M = 0.05534834587669884` in
-`chi-helium-4-h12.witness.json` (which used
+`chi-helium-4-h12-numeric.witness.json` (which used
 `σ₁⁷σ₂⁴ · σ₄⁷σ₅⁴ · σ₇⁶σ₈⁴σ₇⁻¹ · σ₁₀⁶σ₁₁⁴σ₁₀⁻¹` — 44 crossings
 under the deprecated `tr_M(α⊗β) = tr_M(α)·tr_M(β)` convention,
 which is INVALID for atomic braids with inter-nucleon σ_{3k}
@@ -95,7 +95,7 @@ def main():
             "Markov-axiom ascent that uses Gröbner-Shirshov reduction "
             "+ Markov-peel without building Hoefsmit seminormal "
             "matrices at H_12.  Replaces the deprecated disjoint-word "
-            "value in chi-helium-4-h12.witness.json (which used "
+            "value in chi-helium-4-h12-numeric.witness.json (which used "
             "tr_M(α⊗β) = tr_M(α)·tr_M(β) — invalid for atomic braids "
             "with σ_{3k} inter-nucleon interfaces per PR #564 "
             "hecke-branching-trace-decomposition.md).  Symbolic "

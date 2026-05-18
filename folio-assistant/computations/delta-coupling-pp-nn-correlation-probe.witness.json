@@ -1,0 +1,70 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-17T07:09:53.172478+00:00",
+  "commitSha": "86fbd66b885ac50342f1003a1dac9dbfbdcd580d",
+  "assertions": [
+    {
+      "name": "refined_form_at_2_2_within_0_1_pct",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "unit": "boolean",
+      "source": "Refined Δ_coupling(2,2) = leading + 2·(Z-1)(N-1)·z²·E_0·h² = 13.1945 MeV vs target 13.20 MeV (0.042% gap)."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 9,
+  "computation": "delta-coupling-pp-nn-correlation-probe",
+  "scriptFile": "probe_delta_coupling_pp_nn_correlation.py",
+  "scriptHash": "ed45922e0a01",
+  "scriptCommitSha": "unknown",
+  "description": "Δ_coupling refinement adding a pp-nn cross-channel correlation term 2·(Z-1)·(N-1)·z²·E_0·h² to the leading form. Closes the 0.73% gap at doubly-magic ⁴He (2,2) to 0.04% — a 17× improvement — using only substrate primitives (no fitting). Inspired by PR #663's 'a = z_markov' SDP-PL finding. Single-magic anchors (2,1)/(1,2) have correlation = 0 by design ((Z-1)(N-1) = 0), preserving the leading-form prediction.",
+  "auditOnly": "docs/audits/2026-05-17-delta-coupling-substrate-derivation.md",
+  "parameters": {
+    "q_0": "1.10997859555418051695830018898879867637876138498395"
+  },
+  "data": {
+    "results": [
+      {
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "leading_MeV": 13.10322882943694,
+        "correlation_MeV": 0.09122817042416445,
+        "total_MeV": 13.194456999861105,
+        "active_doubly_magic": true,
+        "target_MeV": 13.2,
+        "gap_pct": 0.04199242529465551
+      },
+      {
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "leading_MeV": 6.55161441471847,
+        "correlation_MeV": 0.0,
+        "total_MeV": 6.55161441471847,
+        "active_doubly_magic": false,
+        "target_MeV": null,
+        "gap_pct": null
+      },
+      {
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "leading_MeV": 6.55161441471847,
+        "correlation_MeV": 0.0,
+        "total_MeV": 6.55161441471847,
+        "active_doubly_magic": false,
+        "target_MeV": null,
+        "gap_pct": null
+      }
+    ],
+    "leading_form_only_gap_pct": 0.7331,
+    "refined_gap_pct_at_2_2": 0.04199242529465551,
+    "improvement_factor_x": 17.457910441131478
+  },
+  "caveats": [
+    "Single-anchor (2,2) verification only — cross-anchor verification on (2,1) and (1,2) pending PR #644's Δ_cat data. The pp-nn correlation term vanishes by design at single-magic anchors ((Z-1)(N-1) = 0), so the leading form prediction is preserved there. If cross-anchor data agrees, this refined form should be promoted to a proposition replacing the current conjecture (conj:delta-coupling-substrate-form)."
+  ]
+}

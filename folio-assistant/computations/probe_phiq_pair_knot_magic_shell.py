@@ -281,7 +281,7 @@ def main():
             # Fall back to chi cache for ⁴He
             if name == "he4":
                 he4 = json.loads(
-                    (HERE / "chi-helium-4-h12.witness.json").read_text()
+                    (HERE / "chi-helium-4-h12-numeric.witness.json").read_text()
                 )
                 tr_M = abs(float(he4["abs_tr_M"]))
             else:

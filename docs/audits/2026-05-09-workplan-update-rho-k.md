@@ -404,7 +404,7 @@ verifying $\operatorname{ord}_{u=0}(\operatorname{tr}_M(\beta_{^4\!He}))
 = 18 \cdot 2 + 21 \cdot 2 + 1 = 79$, parallel to PR #572's proton
 ($H_3$, ord 19) and deuteron ($H_6$, ord 40) verifications. The
 ⁴He chi cache is already saved in
-[`chi-helium-4-h12.witness.json`](../../folio-assistant/computations/chi-helium-4-h12.witness.json)
+[`chi-helium-4-h12-numeric.witness.json`](../../folio-assistant/computations/chi-helium-4-h12-numeric.witness.json)
 (per the GAP-A-3/A-4 guidance), so this is a per-term ord
 analysis, not a full χ recomputation.
 

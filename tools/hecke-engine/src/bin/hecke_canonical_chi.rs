@@ -175,9 +175,19 @@ fn run(args: Args) -> io::Result<()> {
         // MPFR path: q passed as decimal string; preserves the
         // canonical 50-dps q_0 precision through the FFI.
         let q_str = if spec.q_str.is_empty() {
-            // Fallback: derive from f64 (legacy callers that only
-            // sent `q`). Loses precision; warn-via-comment.
-            format!("{}", spec.q)
+            // Per CLAUDE.md "only do arbitrary precision w/ >= 50 dps":
+            // if MPFR mode (--dps > 0) is requested but no decimal
+            // string was provided, refuse to silently downgrade to
+            // f64 (which would cap precision at ~15-17 digits).
+            // Re-run with `--dps 0` for the f64 fallback path or
+            // pass `q_str` to keep MPFR precision.
+            eprintln!(
+                "hecke-canonical-chi: MPFR mode (--dps {dps}) requires \
+                 `q_str` in the JSON spec to preserve the requested \
+                 precision. Pass `q_str` (decimal string), or re-run \
+                 with `--dps 0` for the f64 fallback path."
+            );
+            std::process::exit(2);
         } else {
             spec.q_str.clone()
         };
@@ -191,12 +201,27 @@ fn run(args: Args) -> io::Result<()> {
             .iter()
             .map(|(lam, chi_str)| {
                 use rug::Float;
+                // Parse failures here would corrupt the χ^λ output
+                // (returning 0 silently misrepresents non-zero values
+                // as zero downstream). Fail explicitly per
+                // CLAUDE.md "fail explicitly rather than returning a
+                // default value like zero".
                 let chi = Float::parse(chi_str)
                     .map(|p| Float::with_val(prec, p))
-                    .unwrap_or_else(|_| Float::with_val(prec, 0));
+                    .unwrap_or_else(|e| {
+                        panic!(
+                            "hecke-canonical-chi: failed to parse chi value \
+                             {chi_str:?} for partition {lam:?}: {e}"
+                        )
+                    });
                 let denom = Float::parse(&denom_str)
                     .map(|p| Float::with_val(prec, p))
-                    .unwrap_or_else(|_| Float::with_val(prec, 1));
+                    .unwrap_or_else(|e| {
+                        panic!(
+                            "hecke-canonical-chi: failed to parse averaging \
+                             denominator {denom_str:?}: {e}"
+                        )
+                    });
                 let normalised = Float::with_val(prec, &chi / &denom);
                 ChiTerm {
                     lambda: lam.clone(),
