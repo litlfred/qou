@@ -8,7 +8,7 @@ Re(S) defines the Picard–Lefschetz thimble 𝒥_{z_c}, and the real-axis
 integration contour decomposes as γ = Σ n_σ 𝒥_σ with integer intersection
 numbers n_σ = ⟨𝒦_σ, γ⟩.
 
-LaTeX label: `def:picard-lefschetz-thimble`
+LaTeX label: `rem:picard-lefschetz-thimble`
 
 ## References
 
