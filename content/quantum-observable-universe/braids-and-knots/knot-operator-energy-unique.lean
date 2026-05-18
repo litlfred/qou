@@ -23,7 +23,7 @@ universe u
     duality library + a structure refactor carrying the LP-
     canonicity as a proof field. -/
 -- Ref: [schrijver1986theory] https://www.wiley.com/en-us/Theory+of+Linear+and+Integer+Programming-p-9780471982326
--- Ref: [manuscript] prop:bw-coefficient-shadow-price
+-- Ref: [manuscript] prop:mass-coefficient-shadow-price
 axiom KnotOperatorEnergy.shadowPrice_canonical :
     ∀ {R : Type u} [CommRing R]
       (E₁ E₂ : KnotOperatorEnergy R),

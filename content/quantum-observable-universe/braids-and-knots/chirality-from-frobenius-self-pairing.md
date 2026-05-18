@@ -1,6 +1,6 @@
 The paper's chirality factors $\{1 + h,\ 1 - h^2,\ (1 - h^2)^2\}$
 for $\{D,\ T/^3{\rm He},\ {}^4{\rm He}\}$
-([figure-eight BW coefficients](#prop\:figure-eight-bw-coefficients))
+([figure-eight BW coefficients](#prop\:six-term-mass-formula-complete))
 arise from a "Frobenius-norm-deviation" argument that upstream
 commits describe but do not fully derive.  This proposition
 formalises the chirality factor as a **Frobenius self-pairing**
@@ -84,7 +84,7 @@ moments** when the braid is viewed as a morphism $\varrho: \mathbf{1}
 \to A$ (closure operation), not as an abstract algebra element.*
 
 *Paper's derivation
-([figure-eight BW coefficients](#prop\:figure-eight-bw-coefficients)
+([figure-eight BW coefficients](#prop\:six-term-mass-formula-complete)
 §Proof) uses the Fricke trace relation*
 
 $$

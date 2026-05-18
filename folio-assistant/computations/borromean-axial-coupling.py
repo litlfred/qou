@@ -112,7 +112,7 @@ y_star = np.asarray(lp.y_star, dtype=float)
 y0_star = float(lp.y0_star)
 
 # Active set: indices where the Frobenius positivity constraint is
-# tight (shadow price > 0).  Per prop:bw-coefficient-shadow-price
+# tight (shadow price > 0).  Per prop:mass-coefficient-shadow-price
 # these are the "most receptive sub-braids on the shell".
 ACTIVE_TOL = 1e-9
 # Threshold below which a denominator pairing is treated as numerically

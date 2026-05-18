@@ -9,7 +9,7 @@ absolute-value image $|R|$ of the base ring.*
 *The shadow price $u_\lambda(q) = w_\lambda(q)/d_\lambda(q) -
 1/[k]_q! \in R$ is a rational function of $q$ with denominator
 $[k]_q! \cdot d_\lambda(q)$, both of which are nonzero on the
-generic locus by [bw-coefficient-shadow-price](#prop:bw-coefficient-shadow-price).
+generic locus by [mass-coefficient-shadow-price](#prop:mass-coefficient-shadow-price).
 The absolute value $|\cdot|: R \to |R|$ is well-defined for:*
 
 - *$R = \mathbb{R}$: archimedean $|\cdot|_\infty$, image $\mathbb{R}_{\geq 0}$;*

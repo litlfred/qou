@@ -90,24 +90,46 @@ functional**: binding energy is the difference of nonabelian
 action integrals between the atom braid and the disconnected
 baseline.
 
-**Step 4: Knot factor as ratio.**
-For small $A = 2, 3, 4$ the Markov trace is dominated by the local
-knot type; the ratio
+**Step 4: Knot factor via Skein eigenvalues.**
+For small $A = 2, 3, 4$ the binding chirality is dominated by the
+local knot type. The categorical knot factor $a_K$ is the
+**Skein eigenvalue** of the canonical atomic braid at the
+relevant Hecke representation — equivalently, the **closed-form
+product** over signed pn-crossings:
 
 $$
-  a(N) \;=\;
-    \frac{|\mathrm{tr}_M(W_{\mathrm{atom}})|}
-         {|\mathrm{tr}_M(W_{\mathrm{free}})|}
+  a_K \;=\;
+    \prod_{c \in \text{pn-crossings}}
+      \bigl(1 + \mathrm{sign}(c) \cdot h\bigr),
+  \qquad h = q - q^{-1}.
 $$
 
-reproduces the old BW knot factors:
-- $A = 3$ (figure-8): $a = 1 - h^2 = 4 - [3]_q$ (Skein eigenvalue of
-  $4_1$ at $\sigma^2$, cf. `nuclear-knot-classification`)
-- $A = 4$ (Borromean): $a = (1 - h^2)^2$
-- $A = 2$ (satellite): $a = 1 + h$
+This recovers the empirical BW knot factors:
+- $A = 1$ (free nucleon, no pn-crossings): $a_K = 1$
+- $A = 2$ (satellite): $a_K = 1 + h$
+- $A = 3$ (figure-8): $a_K = 1 - h^2 = 4 - [3]_q$
+  (Skein eigenvalue of $4_1$ at $\sigma^2$, cf.
+  `nuclear-knot-classification`)
+- $A = 4$ (Borromean): $a_K = (1 - h^2)^2$
 
-For $A \geq 5$ the formula generalises beyond the local-knot regime;
-the Markov trace is the universal categorical quantity.
+For $A \geq 5$ the closed-form product generalises beyond the
+local-knot regime via the Wenzl-LR branching identity on the
+self-conjugate stratum (cf.
+[`hecke-branching-trace-decomposition`](#prop:hecke-branching-trace-decomposition));
+the Markov trace remains the universal categorical quantity.
+
+*Historical note (2026-05-18):* an earlier formulation of this
+step proposed
+$a(N) = \lvert\mathrm{tr}_M(W_{\mathrm{atom}})\rvert / \lvert\mathrm{tr}_M(W_{\mathrm{free}})\rvert$
+as the ratio form. Empirical verification at 50dps
+([`a-K-via-lp-dual` witness](../../folio-assistant/computations/a-K-via-lp-dual.witness.json),
+see `2026-05-18-m-p-item-b-t5-categorical-attribution.md §7c`)
+finds this ratio is 6–17× off the Skein values above for
+A=2,3,4. The ratio form measures the **mass-defect envelope**
+$\mathcal{B}_{\mathrm{bulk}}$, not the chirality factor $a_K$;
+the closed-form Skein-product **is** the canonical $a_K$ entering
+the QOU six-term mass formula
+([`six-term-mass-formula-complete`](#thm:six-term-mass-formula-complete)).
 
 $\square$
 

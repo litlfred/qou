@@ -133,7 +133,7 @@ fold the witnesses into existing blocks via `cites:` entries.
    `prop:multi-level-sdp`, `thm:cross-channel-sdp`,
    `thm:shadow-sdp`, `prop:knot-operator-energy-exists`,
    `thm:pn-alpha-duality` — all exist.  `integer-lp-gluon` has a
-   corresponding remark in `bw-coefficient-shadow-price.md` but
+   corresponding remark in `mass-coefficient-shadow-price.md` but
    **no dedicated prop**; after P2.1b lands, promote to a proposition.
 
 ## Recommended session order

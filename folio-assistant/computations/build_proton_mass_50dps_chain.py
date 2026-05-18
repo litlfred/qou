@@ -69,7 +69,58 @@ from codata_constants import M_P_MEV_VALIDATION as M_P_MEV_CODATA
 # docstring §"Keep the values as mp.mpf to preserve 50-dps precision").
 M_E_HECKE_PIPELINE   = M_HECKE_PIPELINE_AT_Q0["e"]
 M_P_HECKE_PIPELINE   = M_HECKE_PIPELINE_AT_Q0["p"]
-M_P_PRED_MEV         = (M_P_HECKE_PIPELINE / M_E_HECKE_PIPELINE) * M_E_MEV_CODATA
+M_P_PRED_HECKE_RATIO_MEV = (M_P_HECKE_PIPELINE / M_E_HECKE_PIPELINE) * M_E_MEV_CODATA
+"""Single-level Markov-trace prediction for m_p — the 0.597 MeV
+result that motivates the brane-tower extension below.  Retained
+as `M_P_PRED_HECKE_RATIO_MEV` for the comparison line in the
+chain step output."""
+
+# ── CONJECTURAL: Borromean tower with substrate-form λ_scale ──
+#
+# Per `conj:lambda-scale-substrate-form` (formalised 2026-05-18 on
+# PR #683), the Borromean baryon mass formula
+# (`conj:borromean-baryon-mass-formula`) closes to 5.4 ppm for the
+# proton under the substrate ansatz
+#
+#   λ_scale = 5/2 − h²·G + O(h^4)
+#
+# where h = q - 1/q and G = Catalan's constant = Vol(B_3)/8.
+#
+# Status: JUSTIFICATION (numerical match at 5.4 ppm, plausible
+# categorical interpretation), NOT yet derivation. Step 2 of the
+# proof (5/2 = H_4 conjugate-pair half-symmetric partition count)
+# is rigorously established by enumeration; Steps 1, 3, 4, 5 are
+# open R&D.
+#
+# Wired here clearly marked as CONJECTURAL — the chain step emits
+# both the legacy Hecke-pipeline ratio (single-level, off by 99%)
+# and the Borromean tower prediction (5.4 ppm) so reviewers see
+# both interpretations.
+from q_parameter import Q_50_DIGIT_STR
+_Q_0 = mp.mpf(Q_50_DIGIT_STR)
+_HBAR_Q = (_Q_0 - mp.mpf(1)) / _Q_0
+_H = _Q_0 - mp.mpf(1) / _Q_0
+_VOL_B3_LIT = mp.mpf("7.32772290646480718089411881580875")  # Adams 1985
+_CATALAN_G = mp.mpf("0.9159655941772190150546035149323841")  # Catalan's constant
+
+# Substrate-form λ_scale (CONJECTURAL — see conj:lambda-scale-substrate-form)
+LAMBDA_SCALE_SUBSTRATE_FORM = mp.mpf(5) / 2 - _H**2 * _CATALAN_G
+
+# Borromean tower prediction (CONJECTURAL — gates ¹H lift to `derived`)
+M_P_PRED_BORROMEAN_MEV = (
+    _VOL_B3_LIT / _HBAR_Q**2 * LAMBDA_SCALE_SUBSTRATE_FORM * M_E_MEV_CODATA
+)
+
+# Production chain prediction:
+# - Use the Borromean tower as the headline prediction (5.4 ppm conditional
+#   on conjecture), but flag CONJECTURAL_M_P_DERIVATION = True so downstream
+#   consumers can still see the legacy ratio.
+M_P_PRED_MEV = M_P_PRED_BORROMEAN_MEV
+CONJECTURAL_M_P_DERIVATION = True
+"""When True, M_P_PRED_MEV is the Borromean-tower prediction conditional
+on `conj:lambda-scale-substrate-form`. Downstream consumers MUST treat
+the resulting m_p as conjectural pending proof of that conjecture."""
+
 GAP_REL              = abs(M_P_PRED_MEV - M_P_MEV_CODATA) / M_P_MEV_CODATA
 
 
@@ -273,11 +324,33 @@ def emit_codata_witness(chain: DerivationChain) -> None:
     w.add_parameter("q_0", Q_0)
     w.add_parameter("M_E_MEV_CODATA", mp.nstr(M_E_MEV_CODATA, 12))
     w.add_parameter("target_precision_ppb", "1.0")
+    w.add_parameter("conjectural_derivation", CONJECTURAL_M_P_DERIVATION)
+    w.add_parameter("conjecture_label", "conj:lambda-scale-substrate-form")
+    # Under the conjectural Borromean tower prediction with substrate-form
+    # λ_scale = 5/2 - h²·G, the chain closes to ~5.4 ppm. The 1 ppb
+    # target is the long-term goal but is NOT achievable until the
+    # conjecture is proved AND the higher-order corrections derived.
     w.add_assertion(
-        "m_p_within_1_ppb",
+        "m_p_within_10_ppm_conditional_on_conjecture",
+        computed=mp.nstr(GAP_REL * mp.mpf("1e6"), 8),
+        expected="< 10",
+        tolerance=10.0,
+        unit="ppm",
+        source=(
+            "Borromean tower prediction conditional on "
+            "conj:lambda-scale-substrate-form (5.4 ppm match at q_0 50dps)"
+        ),
+    )
+    w.add_assertion(
+        "m_p_within_1_ppb_target",
         computed=mp.nstr(GAP_REL, 50),
         expected="0",
         tolerance=1e-9,
+        source=(
+            "long-term 1 ppb target — REQUIRES the conjecture proof + "
+            "h^4 and Skein corrections derivation (currently failing "
+            "by ~3 orders of magnitude; 5.4 ppm vs 1 ppb)"
+        ),
     )
     w.add_assertion(
         "m_p_pred_MeV_finite",

@@ -35,7 +35,9 @@ import sympy as sp
 import time
 
 q = sp.Symbol('q', positive=True)
-q0 = sp.Float('1.10997859555418051695830018898879867637876138498395', 30)
+# Canonical 50-dps q_0 — keep in sync with `q_parameter.Q_50_DIGIT_STR`
+# (was stale `...51695830...` pre-Q6; corrected to witness-derived value).
+q0 = sp.Float('1.10997859555418057528159407960950937799328227995870', 30)
 
 ch = {
     'triv':   {'p': (q**2 + 1)**2 / (4*q),               'n': (q**2 + 1)**2 / (4*q**3)},

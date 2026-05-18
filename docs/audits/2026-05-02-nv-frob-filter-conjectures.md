@@ -414,7 +414,7 @@ positive/negative split; at $n = 18$ the split is much richer.
 > $A \geq A_*$ the Q-value uses $\|\Sigma_{\rm FP}\|$, where
 > $\Sigma_{\rm FP}$ restricts to the **maximal positive-definite
 > sub-cone** of the Frobenius form — equivalently, to the LP-feasible
-> dual cone of `prop:bw-coefficient-shadow-price`.*
+> dual cone of `prop:mass-coefficient-shadow-price`.*
 
 **Categorical content.** The filter is the projection onto the
 positive-definite part of the Wedderburn-block signature. The
@@ -433,7 +433,7 @@ given existing
 **Refinement.** A stronger version pins the filter rule
 "me_par ≥ 0 AND me_dau ≥ 0" (line 63) to the *intersection* of
 two LP feasible cones (one per state): exactly the operator-
-selection LP from `prop:bw-coefficient-shadow-price` evaluated at
+selection LP from `prop:mass-coefficient-shadow-price` evaluated at
 both parent and daughter states.
 
 #### Why this connects to existing framework
@@ -442,7 +442,7 @@ If true, **FROB-FILTER closes via**:
 
 - **Step 12** (partition weights, $y_\lambda$ closed forms via Wenzl
   bridge);
-- **`prop:bw-coefficient-shadow-price`** (LP shadow prices ↔
+- **`prop:mass-coefficient-shadow-price`** (LP shadow prices ↔
   positivity cones);
 - **`conj:homological-shell-condensation`** (the magic-shell
   structure determines which Wedderburn blocks have $c(\lambda) =
@@ -872,7 +872,7 @@ trace**. The analogous structures are:
 | Step 16: Markov trace (`thm:jones-markov-trace`) | $\mathrm{tr}_M(\sigma_n x) = z\,\mathrm{tr}_M(x)$ for $x \in H_n$ | One new rightmost strand → factor $z = 1/(q^{1/2}+q^{-1/2})$ |
 | Step 17: All-pairs (`prop:markov-pair-z2`) | $\mathrm{tr}_M(\sigma_i \sigma_j) = z^2$ for adjacent $\|i-j\|=1$ | Two new strands → $z^2$ |
 | Step 10: Bratteli recursion | $H_{n+1} = \mathrm{Ind}^{H_{n+1}}_{H_n} H_n$ | Restriction-induction adjunction |
-| Step 11: BW coefficient branching (`prop:bw-coefficient-shadow-price`) | $C_\mu = \sum_\lambda (\dim_q\mu/\Sigma\dim_q\mu')\,C_\lambda$ | Frobenius reciprocity on Wedderburn channels |
+| Step 11: BW coefficient branching (`prop:mass-coefficient-shadow-price`) | $C_\mu = \sum_\lambda (\dim_q\mu/\Sigma\dim_q\mu')\,C_\lambda$ | Frobenius reciprocity on Wedderburn channels |
 | Step 9: Two-strand spectral completeness (`thm:em-spectral-completeness`) | $w_+ + w_- = 1$ on $V \otimes V$ | Sym + alt partition |
 | §7a Skein dictionary | $L_+ - L_- = (q - q^{-1})\,L_0$ | Crossing change as trace recursion |
 | **β-decay $\Sigma_{\rm all}$ recursion** *(this work)* | $\Sigma_{\rm all}(A+1) = K_n \Sigma_{\rm all}(A)$ when appending spectator-$\mathfrak{n}$ | Channel sum factors out |
@@ -933,7 +933,7 @@ call it **ELECTRON-1** — distinct from FROB-FILTER and NV-1.
   — the bottleneck-fixed driver script.
 
 **Reduction to existing framework.** The conjecture is now a
-**corollary** of `prop:bw-coefficient-shadow-price` (which
+**corollary** of `prop:mass-coefficient-shadow-price` (which
 identifies BW coefficients with LP dual variables on the
 Frobenius positivity cone) + `prop:y-lambda-recipe-from-partition`
 (which gives $y_\lambda \in \mathbb{Z}[q^{\pm 1/2}]$ closed forms).

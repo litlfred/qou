@@ -80,7 +80,7 @@ noncomputable def w22 (q : F) : F := (dq22 q) ^ 2 / qFact4 q
 
 /-! ## §4  Per-partition LP-dual shadow price + telescoping -/
 
-/-- LP-dual shadow price (prop:bw-coefficient-shadow-price):
+/-- LP-dual shadow price (prop:mass-coefficient-shadow-price):
     y_λ = w_λ / d_λ − 1/[k]_q!.
     The constant 1/[k]_q! is the LP normalisation dual (smallest
     w_λ/d_λ across partitions of k, attained by the trivial 1-dim

@@ -139,7 +139,7 @@ not just better implementation.*
   is the **full** Markov trace; the prefix formula computes it
   level-by-level.*
 - *Paper's figure-eight BW coefficients
-  ([figure-eight BW coefficients](#prop:figure-eight-bw-coefficients))
+  ([figure-eight BW coefficients](#thm:six-term-mass-formula-complete))
   give the A≥3 specialisation that the prefix formula must
   reproduce.*
 

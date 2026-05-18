@@ -236,7 +236,7 @@ def main() -> int:
         "70-84% binding-energy under-prediction reflects this structural "
         "mismatch, not an error in canonical_a_k itself."
     )
-    w.set_content_block("prop:bw-coefficient-shadow-price")
+    w.set_content_block("prop:mass-coefficient-shadow-price")
     w.add_parameter("q_0", str(Q_MP))
     w.add_data("canonical_a_k_values",
                {k: float(v) for k, v in CANONICAL_A_K.items()})

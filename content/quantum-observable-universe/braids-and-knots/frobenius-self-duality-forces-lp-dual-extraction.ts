@@ -33,7 +33,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:bw-coefficient-shadow-price",
+    "prop:mass-coefficient-shadow-price",
     "prop:operator-selection-lp",
     "prop:wedderburn-trace-identity",
     "thm:jones-markov-trace",

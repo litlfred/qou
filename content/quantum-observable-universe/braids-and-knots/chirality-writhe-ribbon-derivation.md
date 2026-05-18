@@ -2,7 +2,7 @@ This proposition derives the chiral-case factor $a_K = 1 + w(K) \cdot h$
 (first order in $h = q - q^{-1}$) from the **Kauffman framing
 formula** applied to the ribbon twist on $H_n(R, q)$.  The amphichiral
 case $a_K = 1 - h^2$ is derived elsewhere
-([figure-eight BW coefficients](#prop:figure-eight-bw-coefficients));
+([figure-eight BW coefficients](#thm:six-term-mass-formula-complete));
 this proposition closes the chiral case
 ([chirality Frobenius self-pairing](#prop:chirality-from-frobenius-self-pairing) §Partial derivation).
 
@@ -253,7 +253,7 @@ knot-complement machinery.*
 *For an amphichiral braid, writhe $w = 0$, so the first-order
 chirality correction vanishes.  The second-order $h^2$ term then
 dominates and gives $a_K = 1 - c_K h^2$
-([figure-eight BW coefficients](#prop:figure-eight-bw-coefficients)),
+([figure-eight BW coefficients](#thm:six-term-mass-formula-complete)),
 matching the $4_1$ knot's $a_K = 1 - h^2$.*
 
 **Result.** The derivation is complete to leading order; the $\langle c \rangle$ coefficient requires channel-by-channel computation.

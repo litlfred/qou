@@ -20,7 +20,7 @@ via the ILP at confinement level 4, with three categorical inputs:
 | input | source |
 |---|---|
 | **Position** | shell-boundary generators `gen = 3·A_magic − 1` (per `sigma_shell_characterization.py` line 24) |
-| **Weight** `y_shell(q)` | LP-dual shadow price at shell partition `λ ⊢ 3·A_magic` (per [`prop:bw-coefficient-shadow-price`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/bw-coefficient-shadow-price.md)) |
+| **Weight** `y_shell(q)` | LP-dual shadow price at shell partition `λ ⊢ 3·A_magic` (per [`prop:mass-coefficient-shadow-price`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/mass-coefficient-shadow-price.md)) |
 | **Multiplicity** `m_shell` | level-4 ILP — number of crossings per shell boundary |
 
 Decomposed in the Wedderburn basis at `H_{3·A_magic}(q)`:
@@ -133,7 +133,7 @@ but not numerically deployed.
 ## See also
 
 - [`prop:shell-schur-weyl-self-duality`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/shell-schur-weyl-self-duality.md)
-- [`prop:bw-coefficient-shadow-price`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/bw-coefficient-shadow-price.md)
+- [`prop:mass-coefficient-shadow-price`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/mass-coefficient-shadow-price.md)
 - [`folio-assistant/computations/sigma_shell_characterization.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/sigma_shell_characterization.py)
 - [`folio-assistant/computations/sdp_on_shadows.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/sdp_on_shadows.py)
 - The two falsifying probes:

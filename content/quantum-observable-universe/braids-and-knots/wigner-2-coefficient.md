@@ -10,7 +10,7 @@ $$
 $$
 
 *for every generator $g = 1, \ldots, k{-}1$.  Consequently, the
-BW coefficient ([shadow price](#prop:bw-coefficient-shadow-price))
+BW coefficient ([shadow price](#prop:mass-coefficient-shadow-price))
 for $\lambda$ is*
 
 $$
@@ -91,7 +91,7 @@ This is independent of $g$ (since all generators are conjugate in
 $S_k$, and the trace is conjugation-invariant).
 
 **Corollary (BW coefficient).**
-By the [shadow price proposition](#prop:bw-coefficient-shadow-price),
+By the [shadow price proposition](#prop:mass-coefficient-shadow-price),
 $C_\lambda = w_\lambda \cdot \mathrm{tr}(\sigma_g)/\dim$.
 Substituting $\mathrm{tr}/\dim = h/2$:
 

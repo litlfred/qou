@@ -1,8 +1,9 @@
 **Proposition.**
-*Each coefficient of the Bethe-Weizsäcker mass formula is the
-shadow price (LP dual variable) of the corresponding partition's
-Frobenius positivity constraint in the nuclear operator
-selection LP.*
+*Each coefficient of the QOU mass formula
+([six-term mass formula](#thm:six-term-mass-formula-complete))
+is the shadow price (LP dual variable) of the corresponding
+partition's Frobenius positivity constraint in the nuclear
+operator selection LP.*
 
 *Proof.*
 The [operator selection LP](#prop:operator-selection-lp) at
@@ -79,18 +80,18 @@ The factorisation is unique because the Wedderburn blocks are
 orthogonal under the Frobenius pairing: different partitions
 contribute to linearly independent scaling functions.
 
-**BW formula.**  The binding energy is:
+**Mass-formula decomposition.**  The binding energy is:
 
 $$
   B(Z,N) = \sum_{\lambda} C_\lambda \cdot S_\lambda(Z,N,A)
            \cdot m_e
 $$
 
-Each BW "term" is one shadow price $u_\lambda^*$ (or the sum of
-a conjugate pair $u_\lambda^* + u_{\lambda'}^*$ when
-$\lambda' = \lambda^\vee$).  The coefficient $C_\lambda \cdot m_e$
-is the shadow price evaluated at the normalisation point where
-$S_\lambda = 1$.
+Each term of the QOU six-term mass formula is one shadow price
+$u_\lambda^*$ (or the sum of a conjugate pair
+$u_\lambda^* + u_{\lambda'}^*$ when $\lambda' = \lambda^\vee$).
+The coefficient $C_\lambda \cdot m_e$ is the shadow price
+evaluated at the normalisation point where $S_\lambda = 1$.
 
 **Corollary (coefficient at each level).**
 By the [Wedderburn trace identity](#prop:wedderburn-trace-identity),

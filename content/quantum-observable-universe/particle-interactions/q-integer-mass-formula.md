@@ -1,10 +1,21 @@
-**Conjecture (BW q-integer mass formula, conditional on conj:palindromicity-orbital-type and conj:shell-closure-nf-term-count).**
-*All seven coefficients of the extended Bethe--Weizsäcker mass
-formula are products of quantum integers
-$[n]_q = (q^n - q^{-n})/(q - q^{-1})$ evaluated at
-$q_0 \approx 1.110$, times the electron mass $m_e$:*
+**Conjecture (BW-emergence: empirical liquid-drop coefficients as q-integer products, conditional on conj:palindromicity-orbital-type and conj:shell-closure-nf-term-count).**
+*The QOU production mass formula is the six-term framework
+([six-term mass formula](#thm:six-term-mass-formula-complete)).
+The empirical Bethe--Weizsäcker liquid-drop formula — historically
+**fit** to nuclear binding data in the 20th century — is recovered
+from QOU as a derivative phenomenology: all five standard
+liquid-drop coefficients (volume, surface, Coulomb, asymmetry,
+pairing), together with the two extended terms (exchange Coulomb,
+shell correction), are products of quantum integers
+$[n]_q = (q^n - q^{-n})/(q - q^{-1})$ evaluated at the substrate
+parameter $q_0 \approx 1.110$, times the electron mass $m_e$.*
 
-*Five standard BW terms:*
+*This block is a **BW-emergence result**, not a definition of
+QOU's mass framework. It demonstrates that the parameters
+nuclear physicists fit to data are themselves substrate-derived
+algebraic q-rationals.*
+
+*Five empirical liquid-drop coefficients (recovered):*
 
 | Coefficient                     | $q$-expression                | Value (MeV) | Fitted (MeV) | Error    |
 | :------------------------------ | :---------------------------- | :---------- | :----------- | :------- |
@@ -14,14 +25,16 @@ $q_0 \approx 1.110$, times the electron mass $m_e$:*
 | $a_{\mathrm{asym}}$ (asymmetry) | $3[2]_q[7]_q \cdot m_e$       | $23.51$     | $23.29$      | $+0.9\%$ |
 | $\delta_P$ (pairing)            | $[3]_q[7]_q \cdot m_e$        | $11.86$     | $12.00$      | $-1.2\%$ |
 
-*Two additional terms from Hecke representation theory:*
+*Two extended terms from Hecke representation theory:*
 
 | Coefficient                        | $q$-expression                  | Value (MeV) | Origin                  |
 | :--------------------------------- | :------------------------------ | :---------- | :---------------------- |
 | $\lambda_{\mathrm{ex}}$ (exchange) | $\frac{[3]_q}{[2]_q} \cdot m_e$ | $0.77$      | nucleon screening ratio |
 | $\delta_S$ (shell)                 | $[2]_q^2 [3]_q \cdot m_e$       | $6.29$      | torus knot coherence    |
 
-*The mass of an atom $(Z, N)$ with $A = Z + N$ is:*
+*The phenomenological seven-term mass of an atom $(Z, N)$ with
+$A = Z + N$, obtained by substituting these q-integer
+coefficients into the empirical liquid-drop ansatz, is:*
 
 $$
   M(Z, N) = Z m_p + N m_n + Z m_e
@@ -45,7 +58,14 @@ $$
   \qquad (\text{32 isotopes, He through U})
 $$
 
-### Derivation of the five standard terms
+*This match is the BW-emergence result: the seven liquid-drop
+parameters that 20th-century nuclear physics fit empirically
+are recovered from $q_0$ alone, as products of quantum integers
+specific to the Hecke algebra $H_3(q)$ of the nucleon. The
+production QOU mass formula (six-term framework) achieves
+higher accuracy without going through the liquid-drop ansatz.*
+
+### Derivation of the five recovered coefficients
 
 *The $q$-integer products arise from the Wedderburn-Artin decomposition
 of the Hecke algebra $H_3(q)$ at different levels of the
@@ -63,13 +83,13 @@ nuclear construction:*
 *The asymmetry coefficient satisfies $a_{\mathrm{asym}} = \frac{3}{2}
 \lambda_V$ exactly in the $q$-integer formula, because both involve
 $[2]_q[7]_q$ with different integer prefactors (2 vs 3).  This
-relation is approximate in the fitted BW formula ($23.29/15.56 = 1.50$)
-and exact here.*
+relation is approximate in the empirically-fit liquid-drop formula
+($23.29/15.56 = 1.50$) and exact here.*
 
 ### Derivation from the channel product
 
-*The first three BW coefficients $\lambda_V$, $\lambda_S$, $\lambda_C$
-are derivable from the per-nucleon channel product
+*The first three recovered coefficients $\lambda_V$, $\lambda_S$,
+$\lambda_C$ are derivable from the per-nucleon channel product
 ([per-nucleon channel decomposition](#rem\:per-nucleon-channel-decomposition)).
 The effective binding scale is $\alpha_{\mathrm{eff}} = m_e \times 8G
 \times [3]_q$, where $8G = \mathrm{Vol}(\mathcal{B}_3)$ is the
@@ -108,8 +128,8 @@ deficit in the confining channel.*
 *All seven terms derive from the Hecke algebra $H_3(q)$ and
 brane topology — no external quantum statistics (Fermi--Dirac,
 Bose--Einstein, Pauli exclusion) is imported.  What appears as
-"pairing" and "exchange" in the standard BW literature emerges
-here from the representation theory of $H_n(q)$ and the
+"pairing" and "exchange" in the empirical liquid-drop literature
+emerges here from the representation theory of $H_n(q)$ and the
 self-intersection of exceptional divisors in the brane blow-up.*
 
 *The asymmetry coefficient $a_{\mathrm{asym}} = \frac{3}{2}\lambda_V$
@@ -144,9 +164,9 @@ Chebyshev structure of iterated Hecke generators.  The
 [palindromicity conjecture](#conj\:palindromicity-orbital-type)
 shows the paired state has Poincaré-dual NF (palindromic
 histogram), confirming the coherence of the exceptional
-divisor intersection form.  The BW approximation
-$\mp \delta_P / \sqrt{A}$ is a leading-order fit to this
-exact Chebyshev alternation.*
+divisor intersection form.  The empirical liquid-drop
+approximation $\mp \delta_P / \sqrt{A}$ is a leading-order fit
+to this exact Chebyshev alternation.*
 
 *The shell correction $\delta_S = [2]_q^2 [3]_q \cdot m_e$ captures
 the distinction between :refterm[exact pairing]{#exact-pairing} ($\gamma = 1$, s-shells)
@@ -169,14 +189,17 @@ strand count.*
 
 2. *Evaluate $[n]_{q_0}$ for $n = 2, 3, 4, 6, 7$.*
 
-3. *Compute all seven BW coefficients as products of
-   $[n]_{q_0} \times m_e$.*
+3. *Compute all seven liquid-drop-recovered coefficients as
+   products of $[n]_{q_0} \times m_e$.*
 
 4. *Compute magic proximity $f(Z)$, $f(N)$ for the
    shell correction.*
 
-5. *Apply the seven-term BW formula.*
+5. *Apply the seven-term liquid-drop ansatz.*
 
 *No intermediate fitting, no free parameters, no numerical
-optimization.  The entire mass formula is derived from the
-single substrate parameter $q_0$.*
+optimization.  The entire phenomenological match is derived
+from the single substrate parameter $q_0$.  For higher-precision
+predictions, use the production
+[six-term mass formula](#thm:six-term-mass-formula-complete)
+directly.*

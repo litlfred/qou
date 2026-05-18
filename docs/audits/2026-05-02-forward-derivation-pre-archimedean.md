@@ -577,7 +577,7 @@ Below: how each output sector consumes the chain.
   **not categorically justified**; the witness explicitly lists
   it as "open problem: Frobenius filter activation threshold
   between A=3 and A=6 needs derivation." Likely this is a
-  threshold on LP-dual eigenvalues (per `prop:bw-coefficient-shadow-price`),
+  threshold on LP-dual eigenvalues (per `prop:mass-coefficient-shadow-price`),
   but the current rule is empirical.
 - **🟡 Φ_q truncation (residual).** The 2% gap on Q(³H→³He)
   closes on switching from truncated series (max_iter=2000) to
@@ -598,7 +598,7 @@ Below: how each output sector consumes the chain.
   term has the form $C_\lambda \cdot S_\lambda(Z, N, A) \cdot m_e$
   with $C_\lambda \in \mathbb{Z}[q_0^{\pm 1}]$ and $S_\lambda$
   rational in $A^{1/3}$.
-- **Branching to k=6.** `prop:bw-coefficient-shadow-price` — each
+- **Branching to k=6.** `prop:mass-coefficient-shadow-price` — each
   BW coefficient is the **LP shadow price** of the partition's
   Frobenius positivity constraint in the nuclear operator-selection
   LP. The branching rule
@@ -697,7 +697,7 @@ Cross-referenced against §A audit flags and current branch state
 | ID | Gap | Sector | Action |
 |----|-----|--------|--------|
 | **🔴 NV-1** | Effective weak-scale crossing count $N_v\approx 1.45\times 10^6$ read backward from CODATA, not derived from brane-tower topology | β-decay rates / $G_F$ | **Single largest blocker for categorical β-decay rates.** Needs identification of $N_v$ as a topological invariant (likely a count of crossings in the EW sub-tower). Half-lives scale as $G_F^2 \propto N_v^{-4}$. |
-| **🔴 FROB-FILTER** | Frobenius-positivity filter activation threshold A=3 → A=6 not categorically justified | β-decay Q-values for A≥6 | Likely a threshold on LP-dual eigenvalues per `prop:bw-coefficient-shadow-price`; needs derivation. |
+| **🔴 FROB-FILTER** | Frobenius-positivity filter activation threshold A=3 → A=6 not categorically justified | β-decay Q-values for A≥6 | Likely a threshold on LP-dual eigenvalues per `prop:mass-coefficient-shadow-price`; needs derivation. |
 | **🟠 GT-MATRIX** | Gamow-Teller matrix element $g_A = 1.275$ stated as target but **not yet computed** from Borromean Skein-algebra trace | β-decay rates | "Open computation" in `beta-decay-from-q.py` — research-grade. |
 | **🟡 Φ_q-TRUNC** | Φ_q series truncated at max_iter=2000; 2% gap on Q(³H→³He) | Q-value precision | Replace by exact Habiro cyclotomic form. Numerical, not proof gap. |
 

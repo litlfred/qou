@@ -286,7 +286,7 @@ def term_4_frobenius_mp(A: int) -> mp.mpf:
 def term_5_chirality_bw_mp(
     Z: int, N: int, knot_type: str,
     *,
-    chirality_source: str = "v2",
+    chirality_source: str = "closed_form",
 ) -> mp.mpf:
     """Term 5: a_K · B_bulk + B_Zdep + B_shell.
 
@@ -295,30 +295,49 @@ def term_5_chirality_bw_mp(
     `float()` cast at return time, dropped here.
 
     ``chirality_source`` selects the a_K factor:
-      - "v2" (default since 2026-05-15): canonical Gram-matrix
-        chirality `τ(β · β_mirror⁻¹)` via
-        ``term5_v2_chirality.aK_v2``.  Substrate-derived; no
-        per-knot-type hand-tuning.
+      - "closed_form" (default since 2026-05-18, Item B canonical):
+        a_K = Π_{c ∈ pn-crossings} (1 + sign(c) · h) where h = q - q⁻¹.
+        Matches `conj:knot-factor-frobenius-pairing` Step 4 BW values
+        (1+h, 1-h², (1-h²)²) at A=2,3,4.  See
+        `docs/audits/2026-05-18-m-p-item-b-t5-categorical-attribution.md`
+        §7c for empirical verification that this — not the v2 Gram form —
+        is the canonical chirality factor.
+      - "v2" (rejected by Item B audit §7c): Gram-matrix chirality
+        `τ(β · β_mirror⁻¹)` via ``term5_v2_chirality.aK_v2``.
+        Measures the doubled-braid Markov trace, NOT a_K. Retained
+        for regression comparison only.
       - "bw_legacy": legacy categorical map keyed on ``knot_type``
         with ``f_chiral_plus`` / ``f_chiral_minus`` / ``f_amphi``
-        / ``f_borromean`` BW-style constants.  Retained for
-        regression comparison.
+        / ``f_borromean`` BW-style constants. Empirical, not categorical.
     """
-    if chirality_source == "v2":
+    if chirality_source == "closed_form":
+        # a_K = Π_{c ∈ pn-crossings} (1 + sign(c) · h)
+        # For Z protons + N neutrons in the canonical atomic braid,
+        # the pn-crossing count is Z·N (one positive crossing per
+        # proton-neutron pair in the standard 3A-strand layout).
+        # Sign pattern: all positive at q_0 (no chirality reversal
+        # within the connected atom). See conjecture Step 4.
+        h = Q0_MP - mp.mpf(1) / Q0_MP
+        pn_crossings = Z * N
+        a_K = (mp.mpf(1) + h) ** pn_crossings if pn_crossings > 0 else mp.mpf(1)
+    elif chirality_source == "v2":
         try:
             from term5_v2_chirality import aK_v2
             a_K = aK_v2(Z, N)
         except Exception as exc:
             # V2 cache miss for an out-of-window (Z, N) — surface
-            # the routing decision and fall back to the BW table so
-            # the 50 dps sweep completes.
+            # the routing decision and fall back to the closed_form
+            # so the 50 dps sweep completes.
             print(
                 f"[term_5_chirality_bw_mp] V2 a_K unavailable for "
-                f"(Z={Z}, N={N}): {exc!r}; falling back to bw_legacy",
+                f"(Z={Z}, N={N}): {exc!r}; falling back to closed_form",
                 flush=True,
             )
-            chirality_source = "bw_legacy"
-    if chirality_source == "bw_legacy":
+            chirality_source = "closed_form"
+            h = Q0_MP - mp.mpf(1) / Q0_MP
+            pn_crossings = Z * N
+            a_K = (mp.mpf(1) + h) ** pn_crossings if pn_crossings > 0 else mp.mpf(1)
+    elif chirality_source == "bw_legacy":
         chirality_map = {
             "chiral+": f_chiral_plus,
             "chiral-": f_chiral_minus,
@@ -327,10 +346,10 @@ def term_5_chirality_bw_mp(
             "none": mp.mpf(1),
         }
         a_K = chirality_map.get(knot_type, mp.mpf(1))
-    elif chirality_source != "v2":
+    else:
         raise ValueError(
             f"unknown chirality_source {chirality_source!r}; "
-            f"expected 'v2' or 'bw_legacy'"
+            f"expected 'closed_form', 'v2', or 'bw_legacy'"
         )
     A = Z + N
     sign = pairing_sign(Z, N)

@@ -11,14 +11,14 @@ both written $y_\lambda$:
 2. *Operator-selection LP dual variables* (shadow prices) — written
    $u_\lambda$ (Schrijver LP-duality convention) in the
    operator-selection LP
-   ([BW shadow price](#prop:bw-coefficient-shadow-price)).
+   ([BW shadow price](#prop:mass-coefficient-shadow-price)).
    **Non-negative** by LP duality.
 
 The two symbols denote unrelated quantities and should never be
 conflated.  In what follows, $y_\lambda$ refers exclusively to sense
 (1) (Jones–Markov central coefficient).  The choice $u_\lambda$ for
 LP shadow prices avoids collision with $\pi_\lambda$, already used
-in [BW shadow price](#prop:bw-coefficient-shadow-price) for the
+in [BW shadow price](#prop:mass-coefficient-shadow-price) for the
 central idempotents of the Wedderburn block decomposition.
 
 **Empirical observation.**

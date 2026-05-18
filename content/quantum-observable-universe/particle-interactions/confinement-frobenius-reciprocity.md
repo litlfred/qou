@@ -67,7 +67,7 @@ to the entire class of bound-state observables.
    Including them in the dual pairing pollutes the observable with
    off-shell contributions.  Only the active channels — the
    "most receptive sub-braids" of the bound state, in the language
-   of [BW shadow price](#prop:bw-coefficient-shadow-price) — carry
+   of [BW shadow price](#prop:mass-coefficient-shadow-price) — carry
    physical weight.
 
 3. **The shadow prices $u_i^* = y_i^*$.**  By LP duality, the shadow

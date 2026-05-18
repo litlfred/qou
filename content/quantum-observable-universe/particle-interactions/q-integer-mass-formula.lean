@@ -1,7 +1,7 @@
 /-
-  Seven-term atomic mass formula with q-integer Bethe-Weizsäcker coefficients.
+  Seven-term atomic mass formula with q-integer coefficients.
 
-  All seven BW coefficients are products of quantum integers [n]_q × m_e:
+  All seven coefficients are products of quantum integers [n]_q × m_e:
     λ_V     = 2[2]_q[7]_q · m_e       (volume)
     λ_S     = 2[4]_q² · m_e           (surface)
     λ_C     = (q-q⁻¹)[6]_q · m_e      (Coulomb)
@@ -27,7 +27,7 @@ namespace QOU.Interactions
 noncomputable def q_int (q : ℝ) (n : ℤ) : ℝ :=
   (q ^ n - q ^ (-n)) / (q - q⁻¹)
 
--- ── Standard five BW coefficients ──────────────────────────────
+-- ── Standard five mass-formula coefficients ──────────────────────────────
 
 /-- Volume coefficient λ_V = 2[2]_q[7]_q · m_e. -/
 -- Ref: [manuscript] Ch 11 §8
@@ -90,7 +90,7 @@ theorem exchange_coulomb_relation (q m_e : ℝ) (hq : q_int q 2 ≠ 0) :
 
 -- ── Seven-term binding energy ──────────────────────────────────
 
-/-- Seven-term Bethe-Weizsäcker binding energy with q-integer coefficients.
+/-- Seven-term binding energy with q-integer coefficients.
     Includes the five standard terms plus exchange Coulomb (term 6)
     and magic shell correction (term 7).
 

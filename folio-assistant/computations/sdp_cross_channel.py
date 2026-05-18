@@ -1,6 +1,6 @@
 """Semidefinite-programming cross-channel LP for the nuclear braid.
 
-Extends the scalar LP-dual of prop:bw-coefficient-shadow-price to a
+Extends the scalar LP-dual of prop:mass-coefficient-shadow-price to a
 matrix-valued (SDP) formulation that captures cross-channel coupling
 between Wedderburn blocks and — critically — discrete regime switches
 as the substrate parameter q varies continuously.
@@ -41,7 +41,7 @@ cannot represent.
 
 References
 ----------
-- prop:bw-coefficient-shadow-price (scalar LP formulation)
+- prop:mass-coefficient-shadow-price (scalar LP formulation)
 - def:q-heat-equation (cost operator T = Δ_q)
 - def:categorical-laplace-transform (resolvent of T)
 """
@@ -136,7 +136,7 @@ def sdp_bulk_shadow_price(partition_entries, n_target):
 
 
 def _scalar_lp_fallback(partition_entries, n_target):
-    """Pure scalar LP dual — matches prop:bw-coefficient-shadow-price.
+    """Pure scalar LP dual — matches prop:mass-coefficient-shadow-price.
 
     y₀* = min_λ μ_λ  (the Frobenius bound)
     y_λ* = μ_λ − y₀* for each partition.

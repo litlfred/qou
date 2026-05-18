@@ -32,7 +32,7 @@ for $A \geq 5$, where:*
 
 1. *$C_\lambda(q) = w_\lambda(q) \cdot \tau_\lambda(\sigma_g)$ is the
    **shadow-price coefficient** of partition $\lambda$
-   ([BW shadow price](#prop:bw-coefficient-shadow-price)),
+   ([BW shadow price](#prop:mass-coefficient-shadow-price)),
    with $w_\lambda = \dim_q(\lambda)^2 / [3A]_q!$ and
    $\tau_\lambda = \mathrm{tr}(\sigma_g^{(\lambda)})/\dim(\lambda)$
    the per-generator-trace per-dim;*

@@ -91,7 +91,7 @@ in the operator-selection LP. For self-conjugate partitions, the
 trace-per-dim identity (Wigner-2) gives the direct closed form.
 
 **Source**:
-[`prop:bw-coefficient-shadow-price`](../../content/quantum-observable-universe/braids-and-knots/bw-coefficient-shadow-price.md),
+[`prop:mass-coefficient-shadow-price`](../../content/quantum-observable-universe/braids-and-knots/mass-coefficient-shadow-price.md),
 [`prop:wigner-coefficient-derivation`](../../content/quantum-observable-universe/braids-and-knots/wigner-coefficient-derivation.md).
 
 **Compute**:

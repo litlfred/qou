@@ -234,6 +234,25 @@ def load_atomic_tr_m() -> dict[str, mp.mpf]:
             if atom is None or tr_str is None:
                 continue
             out[atom] = abs(mp.mpf(tr_str))
+
+    # 4. Wenzl LR overlay — DISABLED 2026-05-17 after
+    #    `cross_check_trM_wenzl_lr_1ppb.py` revealed ~80 % relative
+    #    divergence vs Hoefsmit / markov_peel for D, T, ³He.
+    #
+    #    Root cause: the LR identity
+    #      χ^λ(β_1 ⊗ β_2) = Σ_{μν} c^λ_{μν} · χ^μ(β_1) · χ^ν(β_2)
+    #    applies to *tensor-product* (disjoint) braids only. The
+    #    canonical atomic braid `atom_canonical_crossings(Z, N)` is
+    #    NOT a tensor product — it includes inter-nucleon arc
+    #    crossings (the "averaged" ctype). The LR consumer was
+    #    computing |tr_M(β_p ⊗ β_n)| (disjoint product), not
+    #    |tr_M(β_D)| (canonical deuteron with inter-nucleon arcs).
+    #
+    #    Re-enable only after the consumer is extended to handle
+    #    non-tensor inter-nucleon braiding (the categorical Wenzl
+    #    bridge per `hecke-branching-trace-decomposition.md`).
+    #    Tracker: docs/audits/2026-05-17-1ppb-workplan-v4.md
+    #    §"Wenzl LR consumer bug".
     return out
 
 

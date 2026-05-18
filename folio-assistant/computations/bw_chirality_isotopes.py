@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Implement the paper's BW formula with chirality factors derived in
-figure-eight-bw-coefficients.md and q-integer-mass-formula.md.
+six-term-mass-formula-complete.md and q-integer-mass-formula.md.
 
 Formula (q-integer-mass-formula.md lines 26-35):
   M(Z,N) = Z·m_p + N·m_n + Z·m_e
@@ -18,7 +18,7 @@ Coefficients (all in MeV, derived from q_0 alone):
   λ_ex    = [3]_q/[2]_q · m_e
   δ_S     = [2]_q²·[3]_q · m_e
 
-Then apply chirality factor per figure-eight-bw-coefficients.md:
+Then apply chirality factor per six-term-mass-formula-complete.md:
   B_K(Z,N) = (chirality factor) · B_bulk(Z,N) + h·[2]_q·B_Z(Z,N)
 
 where chirality factor is:
@@ -137,7 +137,7 @@ def predict_binding(A: int, Z: int, N: int,
                       include_shell: bool = False) -> dict:
     """Paper-formula prediction of B(Z,N).
 
-    figure-eight-bw-coefficients.md formula (light isotopes, NO shell):
+    six-term-mass-formula-complete.md formula (light isotopes, NO shell):
         B_K = (chirality_factor) · B_bulk + (h·[2]_q) · B_Z
     where B_bulk = volume − surface − asymmetry ± pairing
     and   B_Z   = -Coulomb − exchange
@@ -272,7 +272,7 @@ def main() -> int:
         "computation": "bw-chirality-isotopes",
         "description": (
             "Paper's full BW formula with chirality factors (derived in "
-            "figure-eight-bw-coefficients.md) applied to light isotopes. "
+            "six-term-mass-formula-complete.md) applied to light isotopes. "
             "Coefficients from q-integer-mass-formula.md.  Verifies "
             "quoted errors for T (~0.5%), ³He (~0.9%), and extends to "
             "A≥5 where chirality limit → 1."

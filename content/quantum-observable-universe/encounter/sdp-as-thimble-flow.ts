@@ -6,7 +6,7 @@ export default remark({
   title: "SDP/LP selection as Picard--Lefschetz steepest descent",
   uses: [
     "prop:confinement-sdp",
-    "prop:bw-coefficient-shadow-price",
+    "prop:mass-coefficient-shadow-price",
     "def:picard-lefschetz-thimble",
     "conj:gb-reduction-pl-thimble-bijection",
   ],

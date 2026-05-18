@@ -36,7 +36,7 @@ for each crossing.
 | prop:eigenvalue-product-expansion | ln\|Λ_sym\| = ℓ₂A²/4 + ℓTA - ℓT - ℓ₂T² | Direct eigenvalue algebra |
 | prop:geom-yekutieli-alignment | Geom(K) = ⟨ω_A•, S³∖K⟩_Frob | Yekutieli rigidity |
 | prop:geom-universality | Geom(K) is unique (additivity+functoriality+normalisation) | Neumann-Zagier + Yekutieli |
-| prop:figure-eight-bw-coefficients | B_{4₁} = (1-h²)B_bulk + z²[3]/[2]·B_C + z·B_ex | Wedderburn-Artin channels |
+| prop:six-term-mass-formula-complete | B_{4₁} = (1-h²)B_bulk + z²[3]/[2]·B_C + z·B_ex | Wedderburn-Artin channels |
 
 ## BW Mass Formula: 11 terms at k=5
 
@@ -120,14 +120,14 @@ k=13: substrate uncertainty floor (δq from CODATA m_μ/m_e).
 
 ## New proposition: BW coefficients as LP shadow prices
 
-**prop:bw-coefficient-shadow-price** (braids-and-knots chapter)
+**prop:mass-coefficient-shadow-price** (braids-and-knots chapter)
 
 Each BW coefficient is the shadow price (LP dual variable) of the
 corresponding partition's Frobenius positivity constraint in the
 nuclear operator selection LP.  This closes the derivation loop:
 
   operator-selection-lp → shadow prices → BW coefficients
-  bw-categorical-descent → partition structure → scaling functions
+  mass-categorical-descent → partition structure → scaling functions
   wedderburn-trace-identity → normalization → trace budget
 
 Corollary: **branching rule for coefficients** — the branching
