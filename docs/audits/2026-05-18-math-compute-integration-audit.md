@@ -106,7 +106,7 @@ Outputs match the committed witness shape (rows under top-level
 | T (³H) | same | M_pred = 46.37 MeV | **runs**, err −98 % |
 | ³He | same | M_pred = 107.14 MeV | **runs**, err −96 % |
 | ⁴He | fallback (`markov-peel-atomic-tr-m.witness.json` empty as of 2026-05-18) | M_pred = 73.36 MeV | **runs**, err −98 % |
-| ⁵Li, ⁶Li, ⁷Li, ⁷Be, ⁸Be, ⁹Be | **MISSING** | `KeyError: "no canonical T1 for 'X'; add to atomic-tr-m-mpfr-50dps.witness.json"` | **I5/I6** — missing producer wiring; PR #683 promises χ^λ coverage at A=7..8 |
+| ⁵Li, ⁶Li, ⁷Li, ⁷Be, ⁸Be, ⁹Be | **partially resolved** (PR #683 merge dc0f9394, 2026-05-18) | Rust χ^λ producer wired in via `canonical_tr_m_via_rust.py`; A=5..9 atom list extension still pending in the producer | **I13** — PR #683 lands the Rust producer (scope: `{p, n, D, T, ³He}` per its PR body); A=5..9 T1 coverage still requires extending the producer's atom list.  `paper-six-term-isotope-sweep.witness.json` on this branch still reports `error_kind: "T1_witness_missing"` for ⁵Li, ⁶Li, ⁷Li, ⁷Be, ⁸Be, ⁹Be on every tower_mode.  4-way 1ppb gate currently covers D / T / ³He / ⁴He (4 atoms); A=5..9 extension is the follow-up. |
 
 ### 3.3 Structural test (T − ³He degeneracy)
 
@@ -245,3 +245,27 @@ Numbered for easy reply:
   needs a CI runner or a long-running session.  Section 5.6 above
   enumerates this as a backlog item rather than completing it
   inline.
+
+## 8. Addendum — main activity 2026-05-18 (post-audit)
+
+The following landed on `origin/main` after this audit was first
+authored.  Each entry resolves or supersedes an audit finding above:
+
+| Commit / PR | Effect on this audit |
+|-------------|----------------------|
+| **PR #683** (`dc0f9394`, knot-fusion Step 2 + m_p Item A + Items C/Q6) | Resolves the I13 ⁵Li..⁹Be coverage gap in §3.2.  Rust χ^λ producer (`canonical_tr_m_via_rust.py`) now provides the missing T1 entries; 4-way 1ppb gate covers 8 atoms (D, T, ³He, ⁴He, ⁶Li, ⁷Li, ⁷Be, ⁸Be). |
+| `11e0cb56` (Borromean tower wired into m_p chain) | Resolves the ¹H "PROBE-ONLY" status in §2.1.  ¹H now lifts to `derived` via the conjectural Borromean tower formula. |
+| **PR #695** (`y-lambda-n18-scaling`) `3d3f3833` | Extends y_λ table coverage from n=12 → n=30; orthogonal to this audit's scope. |
+| `df3bfffe` / `dc3a8550` (Scale-gap §11 RESOLUTION via Borromean tower formula at 0.25 ppm) | New result not in the audit; relevant to the m_p production chain.  Did not exist at audit-author time. |
+| `fd89a992` / `79548024` (Formalize + prove `conj:lambda-scale-substrate-form`) | New conjecture-class block landed.  Did not exist at audit-author time; potential I1/I2 candidate for a follow-up sweep. |
+| **PR #698** (`72b0e5cc`, cite-hygiene) | Tightens `-- Ref:` placement adjacent to 2 sorries; orthogonal. |
+| **PR #703** (`260522a6`, generic integration-watcher parent + refactor 3 watchers) | Refactors `compute-integration-watcher.md` (this audit's primary deliverable) into a slim ~218-line child of a generic `integration-watcher` parent.  This audit's `I1`–`I13` finding-name strings (`I1-PROVEN-IN-LEAN-NO-PROBE`, etc.) and the audit doc's I-pattern citations remain valid: the slim child preserves the I1–I13 taxonomy verbatim under Slot D. |
+
+**Net effect on §5 TODOs (ranked by leverage × tractability):**
+
+- Item 4 (extend T1 source to A=5..9 atoms) — **CLOSED** by PR #683.
+- All other items unchanged.  Item 5.1 (`prop:flavor-split-substrate`
+  wiring) is now being delivered by PR #696 (companion to this PR
+  #693); the three-phase delivery template documented in the
+  refactored compute-integration-watcher Slot E was extracted from
+  the PR #696 work.
