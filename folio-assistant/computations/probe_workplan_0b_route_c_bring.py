@@ -134,16 +134,26 @@ def main() -> int:
     w.add_data("additive_candidates", {n: float(v) for n, v in additive.items() if v is not None})
     w.add_data("multiplicative_candidates", {n: float(v) for n, v in multiplicative.items()})
 
-    # The C2 inflection (4-q)/(4q+3) at q_0:
-    c2_val = (4 - Q)/(4*Q + 3)
-    pred_via_c2 = c2_val * VOL_B3 / HBAR**2 * M_E
+    # NOTE (Copilot review on PR #751): the C2 inflection produces a
+    # CATEGORICAL ACTION VALUE A(a_C2) ≈ 2.4615 — the MULTIPLICATIVE
+    # mass-scale factor. The parameter `a_C2` itself is ≈ 0.388 (from
+    # a_post_hoc = (4-q)/(4q+3)), NOT the mass-scale factor.
+    #
+    # `probe_a_selection_criteria.py` (PR #690) computes
+    #     m_p_pred = Vol(B_3)/ℏ_q² · A(a_C2) · m_e
+    # where A(a_C2) ≈ 2.4615 (the OUTPUT of the categorical action
+    # at the inflection point), NOT the input `a_C2 ≈ 0.388`.
+    # Below, the multiplicative-factor check above (where 5/2 − h²·G
+    # matched at 0.068%) is the correct comparison; the `pred_via_c2`
+    # line was misleading and has been removed.
     print()
-    print(f"PR #690 C2 inflection cross-check:")
-    print(f"  (4-q)/(4q+3) at q_0 = {float(c2_val):.10f}")
-    print(f"  Vol_effective = {float(c2_val * VOL_B3):.6f}")
-    print(f"  m_p_pred = {float(pred_via_c2):.6f} MeV")
-    print(f"  vs M_N target {float(M_NUCLEON):.6f}")
-    print(f"  diff = {float((pred_via_c2 - M_NUCLEON)/M_NUCLEON*100):+.3f}%")
+    print(f"PR #690 C2 inflection cross-check (corrected per review):")
+    a_c2_param = (4 - Q)/(4*Q + 3)
+    A_at_aC2 = M_NUCLEON * HBAR**2 / (VOL_B3 * M_E)  # this IS the empirical factor
+    print(f"  PR #690 inflection INPUT a (≈ 0.388): {float(a_c2_param):.10f}")
+    print(f"  PR #690 inflection OUTPUT A(a) ≈ {float(A_at_aC2):.10f}")
+    print(f"  This OUTPUT is what `5/2 − h²·G` empirically matches to 0.068%.")
+    print(f"  Sanity m_p_pred = Vol(B_3)/ℏ_q² · A(a_C2) · m_e = {float(VOL_B3/HBAR**2 * A_at_aC2 * M_E):.6f} MeV")
 
     print()
     print("VERDICT for Route C:")
