@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-18T04:34:30.654508+00:00",
-  "commitSha": "f7d019b491c4e7d121401e4297a784bede7f18f2",
+  "computedAt": "2026-05-18T04:40:11.687904+00:00",
+  "commitSha": "846e5cec9068644b8c593de89d446b81fa57be79",
   "assertions": [
     {
       "name": "h1_within_0.1pct",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 10,
   "computation": "probe-h1-substrate-closure",
   "scriptFile": "probe_h1_substrate_closure.py",
-  "scriptHash": "f3703c4e5f56",
-  "scriptCommitSha": "5d289221f811562a152881d6620b707fff1106f2",
+  "scriptHash": "87a8049a449f",
+  "scriptCommitSha": "846e5cec9068644b8c593de89d446b81fa57be79",
   "description": "Honest ¹H closure via substrate m_p (C2 inflection) + CAL-1 m_e + Rydberg BE(¹H).  Reports residual +0.069 % vs CODATA.  Item 4 of the #663 follow-up queue.",
   "data": {
     "substrate_inputs": {
