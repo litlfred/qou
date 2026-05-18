@@ -748,7 +748,12 @@ export default chapter({
         "classical-limit-obstruction",
         "qou-obstruction-reduction",
         // Surreal error calculus (substrate-level — see appendix
-        // for the full surreal formalism).
+        // for the full surreal formalism). The cheat-sheet remark
+        // immediately below is for first-time readers of $\omega$
+        // and $\varepsilon$ notation; it points to app:surreals
+        // for the Conway construction, sign sequences, standard-part
+        // functor, etc.
+        "surreal-notation-cheat-sheet",
         "reeb-epsilon",
         "q-from-epsilon",
         // Graded-Mikusiński / joint-Galois-braid machinery.
