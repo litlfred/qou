@@ -124,6 +124,70 @@ auto-derived at runtime.
 
 ---
 
+## Chapter dissolutions (D1, D2 — 2026-05)
+
+Two chapters dissolved entirely; their blocks redistributed across
+other chapters to reduce cross-chapter coupling and place content
+with its natural consumers.
+
+### D1 — `encounter` chapter dissolved (8 blocks)
+
+`encounter` was a narrative bridge between `particle-interactions`
+and `descartes-universe`. Zero reverse refs from the rest of the
+paper, so redistribution was trivial.
+
+| Block | Destination |
+|-------|-------------|
+| `encounter-intro` (prose)             | DROPPED |
+| `approach-to-exceptional-divisor`     | `descartes-universe / sec:brings-smoothness` |
+| `thurston-relaxation`                 | `descartes-universe / sec:brings-smoothness` |
+| `sdp-as-thimble-flow`                 | `particle-interactions / sec:confinement-selection` |
+| `prop:mostow-confinement`             | `models-of-qous / sec:archimedean-encounter` (new) |
+| `rem:algebraic-geometric-rigidity-pairing` | `models-of-qous / sec:archimedean-encounter` |
+| `rem:encounter-literature-bridge`     | `models-of-qous / sec:archimedean-encounter` |
+| `rem:pre-tau-vs-post-tau`             | `braids-and-knots / sec:calibration-algebraic-mass` |
+
+### D2 — `algebraic-substrate` chapter dissolved (49 blocks + 2 orphans)
+
+5 loosely-linked sections under an "algebraic substrate" umbrella
+that did not tell a single story.
+
+| Source section | Blocks | Destination |
+|----------------|-------:|-------------|
+| §1 `sec:algebraic-substrate-reeb` | 12 | `quantum-observable-universes / sec:algebraic-substrate-reeb` (new) |
+| §2 `sec:cohomological-defect` | 7 | `descartes-universe / sec:cohomological-defect` (new) |
+| §3 `sec:spectral-trace-tannaka` | 7 | `q-geometric-langlands / sec:q-gl-spectral-trace-tannaka` (new) |
+| §4 `sec:weil-bound-stability` | 6 | `q-geometric-langlands / sec:q-gl-weil-bound-stability` (new) |
+| §5 surreal-bound subset | 17 | `appendix-surreals / sec:surreal-rate-calculus` + `sec:millennium-bounds-via-surreals` (new) |
+| §5 non-surreal subset | 23 | `braids-and-knots / sec:classical-limit` (new) |
+| (orphan files: `categorical-higgs-idempotent`, `g-action-on-substrate`) | 2 | `quantum-observable-universes/` (orphan files, not wired into manifest pending dependency resolution) |
+
+`appendix-surreals.ts` was patched to add `label:` fields to its 10
+existing sections (previously invisible to the content-graph audit).
+A new **surreal-notation cheat-sheet remark**
+(`rem:surreal-notation-cheat-sheet`) was added at
+`braids-and-knots / sec:classical-limit`, immediately before
+`def:reeb-epsilon`, with a one-page reading aid for $\omega$,
+$\varepsilon$, $\mathrm{st}$, $b(x)$, $\{L\mid R\}$,
+$\mathrm{ord}_\omega$, $\sim$, $\prec$ — sufficient for substrate-
+level uses in the main paper. The remark forwards to `app:surreals`
+for the full formalism.
+
+### Result
+
+- Total chapters: 25 → 23
+- Cross-chapter forward edges: 215 → **205** (−10)
+- Forward-edge energy (Σ spans): 872 → **603** (**−31%**)
+
+Achieved by (a) dissolution placing blocks with their consumers
+(§5 → braids where it has 32 outgoing edges; §3+§4 → q-GL where
+Tannaka-Krein is natural; §1 → QOU where readers first need
+substrate parameter), and (b) the parallel chapter reorder
+(intro before notation, physics narrative
+braids → models → descartes → particles → observations →
+mol → organic placed sequentially, fluid/info/q-GL moved to
+trailing part).
+
 ## How to use this map
 
 If you encounter a broken reference like `ch5-brings-surface/foo`, look up:

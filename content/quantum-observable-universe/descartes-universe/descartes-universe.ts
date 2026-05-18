@@ -82,6 +82,12 @@ export default chapter({
         "coral-bundles",
         "brings-smoothness-resolution",
         "brings-smoothness",
+        // Absorbed from former Ch `encounter` (now dissolved): the
+        // base-M↔fibre-S_p exposition and the Thurston / hyperbolic
+        // relaxation narrative live here, adjacent to the descartes
+        // geometric machinery they bridge.
+        "approach-to-exceptional-divisor",
+        "thurston-relaxation",
         "briggs-klein-chart",
         "radial-projection",
         "four-colourability",
@@ -156,6 +162,24 @@ export default chapter({
     }),
 
     // ── §3b. Fundamental particles ────────────────────────────────────
+    // ── Unit particle as a cohomological defect ─────────────────────
+    // Absorbed from former `algebraic-substrate / sec:cohomological-defect`
+    // (now dissolved). The unit particle IS a particle; defects belong
+    // adjacent to the fundamental-particles section below.
+    section({
+      title: "The unit particle as a cohomological defect",
+      label: "sec:cohomological-defect",
+      blocks: [
+        "cohomological-defect-intro",
+        "levi-form-defect",
+        "maximal-ideal-defect",
+        "local-cohomology-group",
+        "unit-particle-state",
+        "topological-charge-quantization",
+        "defect-legendrian-knot",
+      ],
+    }),
+
     section({
       title: "Fundamental particles",
       label: "sec:fundamental-particles",

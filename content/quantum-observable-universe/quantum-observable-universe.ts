@@ -41,32 +41,28 @@ export default paper({
     ordw:  { tex: "\\mathrm{ord}_{\\omega}",  unicode: "ord_ω" },
   },
   chapters: [
-    // ── Front matter ────────────────────────────────────────────────
-    chapterRef({ dir: "notation" }),                          // Notation register (after TOC)
+    // ── Front matter (intro first, then notation register) ──────────
+    chapterRef({ dir: "introduction" }),
+    chapterRef({ dir: "notation" }),                          // Symbol register; forward refs from notation are ignored by the detangler (preview chapter).
 
     // ── Part I: Foundations ──────────────────────────────────────────
-    chapterRef({ dir: "introduction" }),
-    chapterRef({ dir: "quantum-universes" }),                // QU axioms
-    chapterRef({ dir: "quantum-observable-universes" }),      // QOU axioms, q-operators
-    chapterRef({ dir: "lifting-and-descent" }),              // Yekutieli tower
+    chapterRef({ dir: "quantum-universes" }),                 // QU axioms
+    chapterRef({ dir: "quantum-observable-universes" }),       // QOU axioms, q-operators, substrate parameter, Reeb derivation
+    chapterRef({ dir: "lifting-and-descent" }),                // Yekutieli tower
 
-    // ── Part II: Structure ──────────────────────────────────────────
-    chapterRef({ dir: "braids-and-knots" }),                 // Braids, knots, Hecke
-    chapterRef({ dir: "models-of-qous" }),                   // Models of QOUs
-    chapterRef({ dir: "algebraic-substrate" }),               // Algebraic substrate
-    chapterRef({ dir: "fluid-dynamics" }),                    // Fluid dynamics
-    chapterRef({ dir: "information-theory" }),                // Information theory
-
-    // ── Part III: The Descartes Universe and Observations ────────────
-    chapterRef({ dir: "descartes-universe" }),               // Bring's surface, χ = −6
-    chapterRef({ dir: "particle-interactions" }),             // GB, LP, nuclear structure
-    chapterRef({ dir: "encounter" }),                         // Geometric encounter: SDP ↔ Mostow rigidity
-    chapterRef({ dir: "observations" }),                     // Physical observations
-    chapterRef({ dir: "molecular-construction" }),             // Molecular braids: H₂→benzene
+    // ── Part II: Structure (physics narrative — bk, particles, obs) ──
+    chapterRef({ dir: "braids-and-knots" }),                  // Braids, knots, Hecke, classical-limit machinery
+    chapterRef({ dir: "models-of-qous" }),                    // Models of QOUs — the archimedean wall (Calabi-Yau, ALE, SW)
+    chapterRef({ dir: "descartes-universe" }),                // Bring's surface, χ = −6, fundamental particles (incl. cohomological defect)
+    chapterRef({ dir: "particle-interactions" }),              // GB, LP, nuclear structure, SDP-as-thimble
+    chapterRef({ dir: "observations" }),                      // Physical observations / CODATA
+    chapterRef({ dir: "molecular-construction" }),             // Molecular braids: H₂ → benzene
     chapterRef({ dir: "organic-chemistry" }),                  // Organic chemistry (covalent / Hopf-ring)
 
-    // ── q-Geometric Langlands ───────────────────────────────────────
-    chapterRef({ dir: "q-geometric-langlands" }),
+    // ── Part III: Further machinery (deeper algebraic / dynamical) ───
+    chapterRef({ dir: "fluid-dynamics" }),                     // Fluid dynamics of the brane
+    chapterRef({ dir: "information-theory" }),                 // Information-theoretic perspectives
+    chapterRef({ dir: "q-geometric-langlands" }),              // q-Geometric Langlands (incl. Tannaka–Krein, Hasse–Weil)
 
     // ── Back matter ─────────────────────────────────────────────────
     chapterRef({ dir: "glossary" }),
@@ -75,7 +71,7 @@ export default paper({
     chapterRef({ dir: "appendix-transfer-matrices" }),
     chapterRef({ dir: "appendix-atomic-mass-calculations" }),
     chapterRef({ dir: "appendix-qvalues" }),
-    chapterRef({ dir: "appendix-surreals" }),
+    chapterRef({ dir: "appendix-surreals" }),                  // Surreal-number lift + Millennium-problem surreal bounds
     chapterRef({ dir: "index-of-definitions" }),
   ],
 });

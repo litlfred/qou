@@ -90,5 +90,41 @@ export default chapter({
         "q-gl-automorphic-observability",
       ],
     }),
+
+    // ── Spectral trace and Tannaka–Krein duality ─────────────────────
+    // Absorbed from former `algebraic-substrate / sec:spectral-trace-tannaka`
+    // (now dissolved). This content is foundational number-theoretic
+    // material for the explicit formula and the q-Langlands automorphic
+    // side; it sits naturally here rather than as an isolated chapter.
+    section({
+      title: "Spectral trace and Tannaka--Krein duality",
+      label: "sec:q-gl-spectral-trace-tannaka",
+      blocks: [
+        "spectral-trace-intro",
+        "q-von-mangoldt-function",
+        "q-chebyshev-function",
+        "tannaka-krein-isomorphism",
+        "tannaka-krein-su2",
+        "explicit-formula",
+        "yekutieli-quantum-li",
+      ],
+    }),
+
+    // ── Geometric stability via the Weil bound ───────────────────────
+    // Absorbed from former `algebraic-substrate / sec:weil-bound-stability`
+    // (now dissolved). The Hasse--Weil bound and the geometric-RH
+    // statement are q-Langlands-side stability results.
+    section({
+      title: "Geometric stability via the Weil bound",
+      label: "sec:q-gl-weil-bound-stability",
+      blocks: [
+        "weil-bound-intro",
+        "local-q-zeta-function",
+        "hasse-weil-bound",
+        "spectral-half-line",
+        "geometric-rh-exposition",
+        "unitary-stability",
+      ],
+    }),
   ],
 });
