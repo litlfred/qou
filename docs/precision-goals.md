@@ -49,20 +49,27 @@ operations. `compute-integration-watcher` I8 audit flags float64 leaks.
 **Definition.** For each predicted observable O, the *prediction error*
 `|O_pred − O_exp| / |O_exp|` must be at most `σ_exp(O) / |O_exp| / 100`.
 
-This is **variable per observable**. Some observables are loose (Q_β with
-640 ppm experimental → 6.4 ppm target) and some are tight (m_⁴He with
-0.06 ppb experimental → 0.6 ppt target).
+This is **variable per observable**. Most observables have very tight
+σ_exp (CODATA 2022 absolute masses at sub-ppb), so most 100× targets
+are in the ppt range. The single exception in the framework's L2 set
+is the muon at σ_exp ≈ 22 ppb (100× target 0.22 ppb).
 
 ### Per-observable target table (CODATA 2022)
 
 | Observable | σ_exp_rel | **100× target** | Current pred error | Status | Source witness |
 |---|---:|---:|---:|---|---|
-| Q_β (CAL-3 anchor) | 640 ppm | **6.4 ppm** | 1.68 ppm (relative) ≈ 1.31 keV abs | misses target by 263× | `q-beta-predicted.witness.json` |
-| Δm_pn = m_n − m_p | 394 ppb | **3.94 ppb** | 254 ppb (Borromean) | misses target by 64× | `m-p-borromean-verification-50dps.witness.json` |
+| Q_β (CAL-3 anchor) | 0.78 ppm | **7.8 ppb** | 1.68 ppm (relative) ≈ 1.31 keV abs | misses target by ~215 000× | `q-beta-predicted.witness.json` + `cal-3-q-beta.witness.json` |
+| Δm_pn = m_n − m_p | 474 ppb | **4.74 ppb** | 254 ppb (Borromean) | misses target by 54× | `m-p-borromean-verification-50dps.witness.json` |
 | m_μ (muon) | 21.8 ppb | **0.22 ppb** | 1.41 ppb (Borromean μ formula) | misses target by 6.5× | `m-p-borromean-verification-50dps.witness.json` |
 | m_p | 0.31 ppb | **3.1 ppt** | 251 ppb (Borromean) | misses target by 81 000× | `m-p-borromean-verification-50dps.witness.json` |
 | m_n | 0.57 ppb | **5.7 ppt** | 251 ppb (Borromean) | misses target by 44 000× | `m-p-borromean-verification-50dps.witness.json` |
 | m_e (CAL-1 anchor) | 0.29 ppb | 2.9 ppt | 0 (anchor) | meets by definition | CAL-1 |
+
+> **CAL-3 σ source.** Q_β experimental uncertainty here is the PDG 2024
+> value Q_β(n) = 0.78233341(61) MeV (≈0.78 ppm, 779.7 ppb relative). The
+> earlier 640 ppm draft was based on a coarser AME quote (0.78232 ± 0.00050
+> MeV); that figure is **incorrect** at the precision we care about. See
+> [`folio-assistant/computations/cal-3-q-beta.witness.json`](../folio-assistant/computations/cal-3-q-beta.witness.json).
 
 For light-atom binding energies (B_D, B_T, B_³He, B_⁴He), the experimental
 σ_B is dominated by the AME mass-table uncertainty (~10⁻⁶ for these atoms),
@@ -89,9 +96,14 @@ giving σ_rel(B) of order 0.04–0.45 ppm. **100× targets here are in the
 ### Two subgoals (L2 split)
 
 **Subgoal-1 (achievable from current anchors).** 100× targets ≥ ~780 ppb
-CAL-2 floor. Includes: Q_β (6.4 ppm), Δm_pn (3.94 ppb), all light-atom
-binding energies. Closure path: per-isotope Borromean-tower extension +
+CAL-2 floor. Includes: Δm_pn (4.74 ppb), all light-atom binding
+energies. Closure path: per-isotope Borromean-tower extension +
 operator-valued branching combiner.
+
+**Q_β was originally drafted as Subgoal-1** (6.4 ppm target) based on
+the AME coarse quote. Per Copilot review on #777, the canonical CAL-3
+σ is 0.78 ppm (PDG 2024), so Q_β's 100× target is 7.8 ppb — below the
+CAL-2 floor. **Q_β is therefore Subgoal-2.**
 
 **Subgoal-2 (research-grade).** 100× targets < CAL-2 floor. Includes
 absolute m_p (3 ppt), m_n (6 ppt), m_⁴He (0.6 ppt). **Requires

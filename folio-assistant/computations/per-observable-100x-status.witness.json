@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T20:09:44.384080+00:00",
-  "commitSha": "7e2af75987d7b29edac5f45c0e32ce9ee8862d4c",
+  "computedAt": "2026-05-18T21:41:05.824073+00:00",
+  "commitSha": "7030ea99e7ffc037310d81140a57b72238e5904c",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -10,83 +10,99 @@
       "expected": 6,
       "passed": true,
       "tolerance": 0,
-      "description": "Snapshot count"
+      "source": "Snapshot count of observables in the table."
     }
   ],
   "allPassed": true,
-  "durationMs": 0,
-  "computation": "per-observable-100x-experimental-status",
+  "durationMs": 11,
+  "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
-  "scriptHash": "f86007a13e1b",
-  "scriptCommitSha": "7e2af75987d7b29edac5f45c0e32ce9ee8862d4c",
-  "description": "Headline status for Workplan v7: report each predicted observable's current error against the 100\u00d7 experimental target (\u03c3_pred \u2264 \u03c3_exp / 100). Audit-only \u2014 reads existing witnesses, does not introduce new predictions.",
-  "auditOnly": "docs/audits/2026-05-18-1ppb-workplan-v7-100x-experimental.md",
+  "scriptHash": "505bfd51ab65",
+  "scriptCommitSha": "386b91abd35b90de19c422594805d4d095c6fd15",
+  "description": "Headline status for Workplan v7: report each predicted observable's current error against the 100× experimental target (σ_pred ≤ σ_exp / 100). Audit-only — reads existing witnesses, does not introduce new predictions. All CODATA values + uncertainties source from codata_constants / codata-2022-validation-masses.witness.json / cal-3-q-beta.witness.json — no floating literals.",
   "data": {
     "rows": [
       {
         "obs": "m_p",
+        "role": "validation",
         "pred_MeV": "938.271852637",
         "codata_MeV": "938.272088160",
+        "sigma_exp_MeV": "2.90000e-7",
         "err_ppb": "251.0",
         "sigma_exp_ppb": "0.3091",
         "target_100x_ppb": "0.003091",
         "miss_factor": "8.121e+4",
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
-        "source_witness": "m-p-borromean-verification-50dps.witness.json"
+        "source_witness": "m-p-borromean-verification-50dps.witness.json",
+        "sigma_source": "codata_constants.M_P_MEV_VALIDATION"
       },
       {
         "obs": "m_n",
+        "role": "validation",
         "pred_MeV": "939.565184668",
         "codata_MeV": "939.565420520",
+        "sigma_exp_MeV": "5.40000e-7",
         "err_ppb": "251.0",
         "sigma_exp_ppb": "0.5747",
         "target_100x_ppb": "0.005747",
         "miss_factor": "4.368e+4",
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
-        "source_witness": "m-p-borromean-verification-50dps.witness.json"
+        "source_witness": "m-p-borromean-verification-50dps.witness.json",
+        "sigma_source": "codata_constants.M_N_MEV_VALIDATION"
       },
       {
         "obs": "m_mu",
+        "role": "validation",
         "pred_MeV": "105.658375649",
         "codata_MeV": "105.658375500",
+        "sigma_exp_MeV": "2.30000e-6",
         "err_ppb": "1.410",
         "sigma_exp_ppb": "21.77",
         "target_100x_ppb": "0.2177",
         "miss_factor": "6.477",
         "beats_1x_experimental": true,
         "beats_100x_experimental": false,
-        "source_witness": "m-p-borromean-verification-50dps.witness.json"
+        "source_witness": "m-p-borromean-verification-50dps.witness.json",
+        "sigma_source": "105.6583755(23) MeV/c² (PDG 2024 / CODATA 2022)"
       },
       {
         "obs": "Delta_pn",
+        "role": "validation (derived)",
         "pred_MeV": "1.29333203087",
         "codata_MeV": "1.29333236000",
+        "sigma_exp_MeV": "6.12944e-7",
         "err_ppb": "254.5",
-        "sigma_exp_ppb": "394.3",
-        "target_100x_ppb": "3.943",
-        "miss_factor": "64.54",
+        "sigma_exp_ppb": "473.9",
+        "target_100x_ppb": "4.739",
+        "miss_factor": "53.70",
         "beats_1x_experimental": true,
         "beats_100x_experimental": false,
-        "source_witness": "m-p-borromean-verification-50dps.witness.json"
+        "source_witness": "m-p-borromean-verification-50dps.witness.json",
+        "sigma_source": "M_N_MEV_VALIDATION − M_P_MEV_VALIDATION; σ in quadrature"
       },
       {
         "obs": "Q_beta",
+        "role": "CAL-3 anchor",
         "pred_MeV": "0.783645802845",
-        "codata_MeV": "0.782320000000",
-        "err_ppb": "1.695e+6",
-        "sigma_exp_ppb": "6.391e+5",
-        "target_100x_ppb": "6391.",
-        "miss_factor": "265.2",
+        "codata_MeV": "0.782333410000",
+        "sigma_exp_MeV": "6.10000e-7",
+        "err_ppb": "1.678e+6",
+        "sigma_exp_ppb": "779.7",
+        "target_100x_ppb": "7.797",
+        "miss_factor": "2.151e+5",
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
-        "source_witness": "q-beta-predicted.witness.json"
+        "source_witness": "q-beta-predicted.witness.json",
+        "sigma_source": "codata_constants.Q_BETA_MEV (← cal-3-q-beta.witness.json)"
       },
       {
         "obs": "m_e",
+        "role": "CAL-1 anchor",
         "pred_MeV": "0.510998950000",
         "codata_MeV": "0.510998950000",
+        "sigma_exp_MeV": "1.50000e-10",
         "err_ppb": "0",
         "sigma_exp_ppb": "0.2935",
         "target_100x_ppb": "0.002935",
@@ -94,13 +110,48 @@
         "beats_1x_experimental": true,
         "beats_100x_experimental": true,
         "source_witness": "(CAL-1 anchor)",
-        "note": "calibration anchor \u2014 err defined as 0"
+        "sigma_source": "codata_constants.M_E_MEV",
+        "note": "calibration anchor — err defined as 0"
       }
     ],
     "summary": {
       "total": 6,
       "beats_1x_count": 3,
       "beats_100x_count": 1
-    }
+    },
+    "upstream_witness_hashes": [
+      {
+        "path": "m-p-borromean-verification-50dps.witness.json",
+        "sha256": "04f216b2ab8daf3f4435b0aa97e28999801f31f905f4c5370ea47a80eb1294d5",
+        "size_bytes": 4468,
+        "commitSha": "86a114e3f13da58d7dcce2f5d7db72f1fcee9a41",
+        "scriptCommitSha": "unknown",
+        "computedAt": "2026-05-18T03:09:25.085797+00:00"
+      },
+      {
+        "path": "q-beta-predicted.witness.json",
+        "sha256": "ac5b35a392db55bda37df0ee35b3b2c919244baca0cee04eba1eb957a9f8f4fe",
+        "size_bytes": 6719,
+        "commitSha": "9b13047f672c45fed1cb58aa347daad5d71e335e",
+        "scriptCommitSha": "bd3f2bddb7c582ebfb964f2fcba18fcc2461739f",
+        "computedAt": "2026-05-11T21:02:21.035127+00:00"
+      },
+      {
+        "path": "codata-2022-validation-masses.witness.json",
+        "sha256": "422e0ab5f91bd785681c688a063de1a70719efe76bde91995e1e54befc71f6f1",
+        "size_bytes": 4048,
+        "commitSha": null,
+        "scriptCommitSha": null,
+        "computedAt": "2026-05-10T07:21:00+00:00"
+      },
+      {
+        "path": "cal-3-q-beta.witness.json",
+        "sha256": "32d572e73bc535b47523386dc71899024b8c0f415c1b6d97247c82e441402ed8",
+        "size_bytes": 2130,
+        "commitSha": null,
+        "scriptCommitSha": null,
+        "computedAt": "2026-05-10T07:21:00+00:00"
+      }
+    ]
   }
 }

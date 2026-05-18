@@ -18,13 +18,13 @@ This is **two** distinct precision targets composed:
 | Target | Definition | Current state |
 |--------|-----------|----------------|
 | **Compute precision** | internal cross-method agreement on `|tr_M|`, χ^λ, y_λ at substrate q_0 | **trivially met** — `_precision.py` default is 50 dps compute / 40 dps output (10⁻⁴⁰ relative); Layer 2 dashboard at 0.0 max_rel_delta |
-| **Per-observable precision** | for each predicted observable O with experimental uncertainty σ_O, achieve `σ_pred(O) ≤ σ_O / 100` | **partial** — Q_β easy; m_p/m_n/m_D/m_T/³He/⁴He need sub-ppt which is below the CAL-2 ~780 ppb hard floor |
+| **Per-observable precision** | for each predicted observable O with experimental uncertainty σ_O, achieve `σ_pred(O) ≤ σ_O / 100` | **partial — 1 of 6 observables beat target** (only m_e by anchor definition); all others miss including Q_β (research-grade; CAL-3 σ ~0.78 ppm, not the 640 ppm AME draft figure) |
 
 ## 2. 100× experimental targets (CODATA 2022)
 
 | Observable | value | σ_exp (MeV) | σ_rel | 100× target | Reachable from current anchors? |
 |---|---:|---:|---:|---:|---|
-| **Q_β (β-decay endpoint)** | 0.78232 MeV | 5.0×10⁻⁴ | 640 ppm | **6391 ppb** (= 6.4 ppm) | **YES** — easy |
+| **Q_β (β-decay endpoint)** | 0.78233341 MeV | 6.1×10⁻⁷ | 0.78 ppm (= 779.7 ppb) | **7.8 ppb** | No — below CAL-2 floor (CAL-3 σ is sharper than expected) |
 | m_e | 0.51100 MeV | 1.5×10⁻¹⁰ | 0.29 ppb | 2.9 ppt | No — *is* CAL-1 anchor |
 | q_0 (substrate) | 1.10974 | 8×10⁻¹¹ | 0.07 ppb | 0.7 ppt | No — *is* CAL-2 anchor |
 | m_p | 938.272 MeV | 2.9×10⁻⁷ | 0.31 ppb | 3.1 ppt | No — below 780 ppb CAL-2 floor |
@@ -32,7 +32,15 @@ This is **two** distinct precision targets composed:
 | m_D | 1875.6 MeV | 5.7×10⁻⁷ | 0.30 ppb | 3.0 ppt | No — below CAL-2 floor |
 | m_T | 2808.9 MeV | 8.5×10⁻⁷ | 0.30 ppb | 3.0 ppt | No — below CAL-2 floor |
 | m_³He | 2808.4 MeV | 8.5×10⁻⁷ | 0.30 ppb | 3.0 ppt | No — below CAL-2 floor |
-| m_⁴He | 3727.4 MeV | 2.3×10⁻⁷ | 0.06 ppb | 0.6 ppt | No — below CAL-2 floor |
+| m_⁴He | 3727.4 MeV | 1.1×10⁻⁶ | 0.30 ppb | 3.0 ppt | No — below CAL-2 floor |
+
+> **CAL-3 σ correction (2026-05-18 Copilot review on #777).** The Q_β
+> uncertainty is the PDG 2024 / CAL-3 witness value 6.1×10⁻⁷ MeV
+> (≈0.78 ppm, 779.7 ppb relative), NOT the earlier draft figure of
+> 5×10⁻⁴ MeV (640 ppm). Source: `cal-3-q-beta.witness.json`. This
+> moves Q_β from "trivially achievable Subgoal-1 target" to
+> "research-grade Subgoal-2 target" — its 100× target (7.8 ppb) is
+> **below** the CAL-2 floor.
 
 ### Binding-energy observables (typically less anchor-amplified)
 
@@ -55,24 +63,32 @@ post-Borromean-tower.**
 
 Predictions where 100× experimental is *above* the ~780 ppb CAL-2 floor:
 
-- **Q_β** (target 6391 ppb) — trivially met by current canonical chain
+- **Mass differences** (Δm_pn = m_n − m_p) — σ_exp_rel ≈ 474 ppb
+  (combined from m_p, m_n CODATA uncertainties), so 100× target =
+  4.74 ppb. Current Borromean prediction at 254 ppb misses by 54× —
+  closure path is λ_scale substrate-derivation (#751).
 - **Binding energies for light atoms** (target 0.35–4.5 ppb) — gated by
   per-isotope Borromean-tower extension (Track A) and operator-valued
-  branching at A≥3 (Track B)
-- **Mass differences** (Δm = m_n − m_p) — exp σ ≈ 5×10⁻⁴ MeV /
-  1.29 MeV = 388 ppm → 100× target = 3.9 ppb. Reachable.
+  branching at A≥3 (Track B). All currently `delta_lambda_unavailable`.
 
 ### Subgoal-2: **Research-grade** (target < CAL-2 floor)
 
 Predictions where 100× experimental is *below* the 780 ppb floor:
 
+- **Q_β (CAL-3 anchor)** — σ_exp ≈ 0.78 ppm (PDG 2024), so 100× target
+  ≈ 7.8 ppb. The original v7 draft used the coarser AME quote
+  (640 ppm) which would have made Q_β a trivially-achievable
+  Subgoal-1 target; the PDG-grade σ shifts it into Subgoal-2.
+  Current single-wrap symbolic prediction error 1.68 ppm → misses by
+  ~215 000×. Closure path requires either the brane-tower full-sum
+  (Workplan 2 Phase 2 m_e_Hecke lift) OR substrate-q_0 derivation.
 - **Absolute m_p, m_n, m_D, m_T, m_³He, m_⁴He** — need σ_pred ~3 ppt.
-- **Requires substrate-derivation of q_0** (currently declined per
+  **Requires substrate-derivation of q_0** (currently declined per
   ledger 2026-05-08 explicit decision).
 - Alternative: identify a *calibration-independent* formula path
   whose q_0 dependence cancels — speculative.
 
-This subgoal is **explicitly out of scope** for this branch.
+Subgoal-2 is **explicitly out of scope** for this branch.
 
 ## 4. What the Layer-1/2/3 dashboard actually measures
 
@@ -150,17 +166,22 @@ energy prediction, removing the 22-minute compute bottleneck.
 
 ## 6. Concrete next-action queue
 
-1. **Q_β prediction cross-check at current state** — does the canonical
-   chain already meet the 6391 ppb target? (Quick win sanity check.)
-2. **Track A.1** — wire Borromean tower B_3(Z,N) into atom-formula
-   for A=2 (D), measure B_D prediction vs AME at 4.5 ppb target.
-3. **Track A.2** — extend to A=3 (T, ³He), measure against 1.2/1.3 ppb
-   targets.
-4. **Track B.1** — implement recursive ρ_ξ in branching combiner; test
-   A=3 against markov_peel reference.
-5. **Track A.3** — A=4 (⁴He) end-to-end via Track B combiner; target 0.35 ppb.
-6. **Update onepb-status-dashboard** to report per-observable
-   100×-experimental status alongside cross-method identity.
+1. **Δm_pn 100× closure (Subgoal-1)** — coordinate with #751
+   (Workplan-0b/M_N) on λ_scale substrate-derivation. Closing the
+   54× gap from current 254 ppb pred → 4.74 ppb target is the
+   highest-leverage Subgoal-1 task.
+2. **Δ_λ closure (Track A unblock)** — independent of every other
+   item; see [Δ_λ gating context](2026-05-18-delta-lambda-gating-context.md).
+   Without Δ_λ, light-atom binding-energy predictions (D / T / ³He / ⁴He
+   targets 0.35–4.5 ppb) remain undefined.
+3. **Track B recursive ρ_ξ infrastructure** — gated on H_9+ extract
+   regeneration; see [ρ_ξ blocker audit](2026-05-18-recursive-rho-xi-blocked-by-underdetermined-extracts.md).
+   Track B is NOT on the immediate 1ppb critical path until the
+   H_9 extracts get the test-word coverage needed to make them
+   universal.
+4. **Update onepb-status-dashboard** to report per-observable
+   100×-experimental status alongside cross-method identity (in
+   progress via `per_observable_100x_status.py`).
 
 ## 7. Updates from v6
 
@@ -173,8 +194,10 @@ energy prediction, removing the 22-minute compute bottleneck.
 - v6's "CAL-2 hard floor unfixable" stands — confirmed as the binding
   constraint for absolute mass predictions; logged as Subgoal-2
   (research-grade, out of scope).
-- Q_β prediction (per-observable 100×-experimental = 6391 ppb) is the
-  easiest target and likely already met; flagged for verification.
+- Q_β prediction target was originally drafted as 6391 ppb based on
+  the AME coarse Q-value (640 ppm). Per Copilot review on #777, the
+  canonical CAL-3 σ is 0.78 ppm (PDG 2024) → 100× target = 7.8 ppb,
+  placing Q_β in Subgoal-2 (research-grade), not Subgoal-1.
 - The mass-table sweep at 6.80% absolute is **not** a precision failure;
   it is a **structural completeness** failure of the per-isotope formula.
   Tracks A+B address this directly.
