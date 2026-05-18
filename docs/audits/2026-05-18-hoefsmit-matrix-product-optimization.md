@@ -178,31 +178,78 @@ via `chi_lambda_braid_f64`. f64 ops are ~50× faster than MPFR-50dps.
 Useful as a cross-check / smoke test, **NOT** as a production path
 per the standing directive. Mention only for completeness.
 
-### G. Block-fusion (per existing audit)
+### G. Block-fusion (per existing audit — **re-analysis: does NOT win in current architecture**)
 
-Already analyzed in
-[`2026-05-18-lie-eigendecomp-sigma-g.md`](2026-05-18-lie-eigendecomp-sigma-g.md).
-Fuses `(σ_0 σ_1⁻¹)^3` confinement word once per partition. ~3-5×
-speedup. Easy to implement (1-2 days). **Independent of and
-compatible with B, C above.**
+Originally claimed in
+[`2026-05-18-lie-eigendecomp-sigma-g.md`](2026-05-18-lie-eigendecomp-sigma-g.md):
+"Fuse `(σ_0 σ_1⁻¹)^3` confinement word once per partition. ~3-5×
+speedup."
 
-## Recommended sequence
+**Re-analysis (2026-05-18, this PR follow-up):** the claim does not
+survive close inspection of the current `chi_lambda_braid_mpfr`
+algorithm. At dim = 7700 (max for n=12):
 
-In dependency / risk-adjusted order:
+| approach | per-partition cost | concrete |
+|---|---|---|
+| current sparse-matvec (6 ops × dim outer × O(dim) per matvec) | **6 × dim²** | 3.6 × 10⁸ |
+| fused F = (σ_0 σ_1⁻¹)³ as dense, 1 matvec × dim outer | **dim³** | 4.6 × 10¹¹ |
+| F³ as sparse (~64 × dim nnz after 3 sparse matmuls) | **64 × dim²** | 3.8 × 10⁹ |
+
+Both fused variants are **worse** than the current sparse-per-op
+path because the σ matrices are already sparse (1×1 + 2×2 blocks)
+and per-matvec stays O(dim). Block fusion only pays off when **F
+is reused** across many applications — which only happens if
+**multiple atoms are batched in one Rust call**. The current
+`canonical_tr_m_via_rust.py` invokes the binary **once per atom**
+(subprocess per atom), so within a single invocation, no reuse.
+
+The original "3-5× speedup" estimate from the Lie-eigendecomp
+audit appears to have implicitly assumed batched-atom calls; the
+audit also explicitly noted "matrix exponentiation F^A via
+repeated squaring + Lie diagonalization is O(d² log A) instead of
+O(A × d²)" — but each nucleon's F is at a DIFFERENT generator
+base index (`gen = 3k, 3k+1`), so F at k=0 ≠ F at k=1; matrix
+exponentiation doesn't apply within a single atomic braid.
+
+**Revised verdict**: G in isolation is NOT a 1-2 day mechanical
+win. To realize the claimed speedup, the change requires:
+- Refactor `canonical_tr_m_via_rust.py` to batch atoms per Rust
+  invocation, AND
+- Add a per-(λ, gen_base, nucleon_type) cache for intra-nucleon
+  fused operators
+- Total effort: ~1 week, not 1-2 days
+
+Without batching, candidate **B (inner rayon over the dim outer
+loop)** is the genuine "mechanical safe win". G can be revisited
+once atom batching is implemented; the savings only materialize
+across atoms, not within one atom call.
+
+## Recommended sequence (REVISED)
+
+In dependency / risk-adjusted order, after the §G re-analysis:
 
 | # | Candidate | Effort | Speedup (n=12 / n=15) | Risk |
 |---|---|---|---|---|
-| 1 | **G — confinement block fusion** | 1-2 days | 3-5× / 3-5× | Low; mechanical |
-| 2 | **B — rayon over dim outer loop** | ½ day | ~Nc on max-dim partition | Low; thread-local MPFR buffers |
-| 3 | **C — Geck-Pfeiffer cross-validation** (gate for full impl) | 1-2 days | TBD; if sparsity is ~100×, 10× / 50× | Medium; depends on sparsity |
+| 1 | **B — rayon over dim outer loop** | ½ day | ~Nc on max-dim partition | Low; thread-local MPFR buffers |
+| 2 | **C — Geck-Pfeiffer cross-validation** (gate for full impl) | 1-2 days | TBD; if sparsity is ~100×, 10× / 50× | Medium; depends on sparsity |
+| 3 | **G + atom batching** (combined) | ~1 week | 3-5× / 3-5× | Medium; subprocess refactor + cache |
 | 4 | **C-full — GP implementation** (after gate passes) | 1-2 weeks | per gate result | Medium; need F3.2.ζ cuspidal moves |
 | 5 | **D — q-MN recursion** | 2-3 weeks | 100× / 1000× (estimated) | High; research-level porting |
 
-Steps 1+2 are **safe**, combine multiplicatively, and address
-**single-machine** ⁴He → ⁵Li scaling. Combined: ~10-20× at n=15.
+Step 1 (B) is the genuine **mechanical safe win**: per-partition
+inner rayon parallelism, ½ day, definitely speeds up max-dim
+partitions by ~Nc on n ≥ 15 workloads.
 
-Step 3 is the **gate** for the bigger wins. A 1-2 day investment
-that determines whether GP / MN are worth pursuing at scale.
+Step 2 (C-gate) is the **highest-leverage 1-2 day investment**: a
+cross-validation of `chi_lambda_via_gp_hoefsmit` against
+`chi_lambda_braid_mpfr` at q_0 on D/T/³He tells us whether the GP
+basis-expansion sparsity holds at higher n; if yes, the GP path is
+10-50× faster than the seminormal path at n=12+.
+
+Step 3 (G + batching) becomes attractive **only after** step 1+2
+characterise the workload. The original "1-2 day mechanical"
+estimate was wrong; the actual realisation needs atom batching to
+make F reusable across atom invocations.
 
 Steps 4+5 are **research-grade** and target ⁶Li and beyond
 (n ≥ 18) where steps 1+2 alone are not enough.
