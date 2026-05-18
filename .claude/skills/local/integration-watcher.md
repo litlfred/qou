@@ -660,8 +660,13 @@ Workflow:
      `claude/iw-meta-add-new-i-pattern`.
 
    The `iw-` infix is the **mandatory marker** that ties the branch
-   back to the integration-watcher family; CI dashboards + the
-   `/coordinate` skill use it to discover watcher-spawned PRs.
+   back to the integration-watcher family.  It is the agreed-upon
+   discovery handle for integration-watcher tooling: any future
+   CI dashboard, `/coordinate` extension, or watcher-spawned-PR
+   sweep can grep `claude/iw-` to enumerate the family.  As of
+   this writing the convention is established but not yet
+   programmatically consumed; the §5g step 7 rebase walker in this
+   skill is the first concrete consumer.
 
    Random suffixes (e.g. `-Xyz12`) are not part of the convention.
    If a branch name collides with an existing one, append a `-v2`
