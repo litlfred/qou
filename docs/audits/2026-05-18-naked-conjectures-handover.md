@@ -1,18 +1,31 @@
-# Handover: 32 substantive naked conjectures lack class-axiomatised Lean stubs
+# Handover: ~19 substantive naked conjectures lack class-axiomatised Lean stubs
+
+**REVISION (2026-05-18 round 2):** the original handover counted
+32, but a follow-up discovery refinement (testing `lean.ref`
+resolution via namespace-walk of the matching Lean file, NOT
+just sibling `.lean` presence) found that:
+
+| Class | Count | Action |
+|-------|------:|--------|
+| `lean.ref` resolves correctly, declaration exists, watcher discovery was wrong | 8 (BraidKnot + StaircaseCornerHook) | Queue clears as `wontfix-already-resolved`; no action |
+| `lean.ref` namespace was wrong, declaration exists | 5 (4 q-gl in #707, 1 q-clt in #708) | Fixed in PRs |
+| Genuinely naked (no Lean anywhere) | **~19** | **Real formalizer dispatch needed** |
+
+This handover doc's per-chapter listing below is from the
+**original** 32-item count. The ~19 actually-naked subset is a
+strict subset of that listing, modulo the 8 BraidKnot / Staircase
+items that are already wired and should be skipped.
 
 **Scope:** every `conjecture`-kind content block under
 `content/quantum-observable-universe/` whose `.ts` manifest does
 NOT carry the `open-problem` tag, is NOT a famously unsolved
-millennium-style problem, AND has no `.lean` sibling. These are
-the *real research conjectures* that the framework states and
+millennium-style problem, AND has no resolvable `lean.ref`. These
+are the *real research conjectures* that the framework states and
 treats as anchors, but for which no class-axiomatised Lean
 encoding (per CLAUDE.md §3b-cond) exists yet.
 
 **Discovered by:** `proof-integration-watcher` backlog sweep on
-2026-05-18, after the watcher's "naked-conjecture" finding was
-filtered (a) by the `open-problem` tag (33 dropped) and (b) by
-substantive `.md` body length (every survivor has 30+ lines of
-narrative).
+2026-05-18 (refined heuristic, round 2).
 
 **Severity:** major — these conjectures are part of the paper's
 framework but lack the Lean-class scaffolding that would let
@@ -21,8 +34,12 @@ framework but lack the Lean-class scaffolding that would let
 
 **Estimated effort:** ~30 minutes per block to author a
 class-axiomatised stub (no proof — just the `class C { … : sorry }`
-shape with the conjecture's content as fields). 32 blocks → ~16
-hours total, split across chapters.
+shape with the conjecture's content as fields). ~19 blocks →
+~10 hours total, split across chapters.
+
+**Sibling references for the refinement work:**
+- #707 (4 q-gl `lean.ref` namespace fixes + new `q_gl_kummer_filtration`)
+- #708 (1 q-clt `lean.ref` namespace fix + watcher Slot G refinement)
 
 ## What the watcher found
 
