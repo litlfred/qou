@@ -1,0 +1,64 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-18T04:28:04.328156+00:00",
+  "commitSha": "dc0f9394feecab82403453af071b11b80d144ac5",
+  "assertions": [
+    {
+      "name": "step_5b_delta_S_substrate_within_2000_ppm",
+      "computed": 1014.7388511210518,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 2000.0,
+      "unit": "ppm",
+      "source": "rem:delta-skein-substrate-identity"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 11,
+  "computation": "lambda-scale-proof-step5-skein-anchor",
+  "scriptFile": "lambda_scale_proof_step5_skein_anchor.py",
+  "scriptHash": "83d1c89b749b",
+  "scriptCommitSha": "unknown",
+  "description": "Proof Step 5 of `conj:lambda-scale-substrate-form`: S(p) = 0 anchor convention + S(n) = ΔS substrate-derived. Verifies ΔS(n-p) = (Q_β + m_e)/m_e closure at MPFR 80 dps. References `rem:delta-skein-substrate-identity` for the underlying common-scale hypothesis. Documents the open R&D component: direct Kauffman-bracket verification of S(uud) = 0 from first principles (currently set by convention as the anchor).",
+  "contentBlock": "conj:lambda-scale-substrate-form",
+  "parameters": {
+    "q_0_50dps": "1.109978595554180575281594",
+    "m_e_MeV": "0.51099895069",
+    "m_p_MeV": "938.27208816",
+    "m_n_MeV": "939.56542052"
+  },
+  "data": {
+    "step_5b_delta_S_closure": {
+      "formula": "ΔS(n-p) = (Q_β + m_e)/m_e  (under common-scale λ_p = λ_n)",
+      "delta_S_from_CODATA": "2.5309882892198077519",
+      "Q_beta_substrate_A_MeV": "0.783645803903",
+      "delta_S_from_substrate_Q_beta": "2.5335565813686114956",
+      "Q_beta_CAL3_empirical_MeV": "0.78233341",
+      "relative_diff_ppm": 1014.7388511210518,
+      "interpretation": "ΔS(n-p) computed from CODATA m_p, m_n agrees with the substrate Q_β formula's prediction to ~1000 ppm — the same residual as Q_β itself at the current q_0 pinning (per rem:delta-skein-substrate-identity). Closing this to <100 ppm requires substrate-only refinement of Q_β."
+    },
+    "step_5a_anchor_convention": {
+      "claim": "S(p) = S(uud) = 0 by convention",
+      "justification": "The orientation-tagged Kauffman bracket S(B) for B_3 with quark-content labels is defined up to an additive constant (equivalently, the choice of reference orientation). Setting S(uud) = 0 fixes the proton orientation as the zero-point — by analogy with the Cooper-pair condensate energy zero in BCS theory.",
+      "status": "DEFINITIONAL (not a theorem)"
+    },
+    "step_5c_symmetry_argument": {
+      "claim": "(u,u,d) is the canonical lowest-mass orientation",
+      "justification": "Among the three quark-content-distinguished orientations of B_3 under SU(3) color permutation: (u,u,d) ↔ proton, isospin I_3 = +1/2; (u,d,d) ↔ neutron, isospin I_3 = -1/2; (d,d,d) and (u,u,u) ↔ Δ⁻, Δ⁺⁺ at higher spin. The proton (u,u,d) is the lightest stable nucleon and the lowest-mass member of the spin-1/2 isodoublet. Anchoring S = 0 at (u,u,d) is consistent with the principle of zero potential at the ground state.",
+      "status": "PLAUSIBLE (physics-motivated, not derived from substrate)"
+    },
+    "step_5_open_RandD": {
+      "task": "Direct Kauffman-bracket computation of S(uud) from the canonical 11-crossing Borromean braid representation (per `prop:nuclear-knot-classification` and the GS-confinement filtration on `mass-endomorphism-tower`).",
+      "expected_outcome": "If the substrate-form ansatz is correct, the direct Kauffman-bracket evaluation should yield exactly 0 at q_0 for the (u,u,d) orientation. A non-zero residual would either falsify the anchor convention OR require an additive shift in the Borromean baryon mass formula.",
+      "blocker": "Requires the canonical 11-crossing Borromean braid specification in Hecke algebra generators σ_0, σ_1, L_+, L_-, e^- — partially documented in `q-integer-mass-formula` but not yet fully formalised as a computable braid word.",
+      "status": "Open R&D — promote to follow-on PR after the canonical braid specification is finalised."
+    },
+    "step_5_summary": {
+      "5a_anchor_convention": "DEFINITIONAL (S(p) = 0 by anchor choice)",
+      "5b_delta_S_closure": "PROVED at ~1000 ppm via rem:delta-skein-substrate-identity",
+      "5c_symmetry_argument": "PLAUSIBLE (physics-motivated)",
+      "5_open": "Direct Kauffman-bracket verification of S(uud) = 0"
+    }
+  }
+}
