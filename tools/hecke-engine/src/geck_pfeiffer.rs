@@ -207,7 +207,24 @@ pub fn braid_to_hecke(n: usize, word: &[(i32, u32)]) -> HeckeElement {
         if i + 1 >= n {
             continue;
         }
-        x = if sign >= 0 {
+        // Per Copilot review on PR #718 (gp_cross_validate.rs:14):
+        // averaged crossings (sign == 0, used in canonical atomic
+        // braids per `prop:hecke-branching-trace-decomposition`)
+        // require half-sum expansion `(σ + σ⁻¹)/2 = σ − h/2 · I`
+        // and are NOT handled here.  Treating sign == 0 as positive
+        // would silently produce wrong χ^λ values.  Until the
+        // averaged-crossing extension lands (C-full work, see
+        // docs/audits/2026-05-18-hoefsmit-c-gate-gp-cross-validate.md),
+        // panic loudly rather than fail silently.
+        if sign == 0 {
+            panic!(
+                "braid_to_hecke: averaged crossing (sign == 0) at gen \
+                 σ_{gen} is not yet supported. The Geck-Pfeiffer basis-\
+                 expansion path needs a half-sum extension; see C-full \
+                 in docs/audits/2026-05-18-hoefsmit-c-gate-gp-cross-validate.md."
+            );
+        }
+        x = if sign > 0 {
             hecke_mul_ts_right(&x, i)
         } else {
             hecke_mul_ts_inv_right(&x, i)
