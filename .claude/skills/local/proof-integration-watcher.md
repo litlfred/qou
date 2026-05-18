@@ -84,7 +84,7 @@ content block label.
 
 | Finding | Severity | Description |
 |---------|----------|-------------|
-| `uncited-sorry` | critical | `sorry` without a `-- Ref:` adjacent to it (within 6 lines OR above enclosing decl header) per CLAUDE.md §1 |
+| `uncited-sorry` | critical | `sorry` with **no** `-- Ref:` anywhere within: (a) the 6 lines above the sorry, **OR** (b) the 6 lines above the enclosing decl header. CLAUDE.md §1 strictly requires the Ref **immediately above** the sorry; this finding catches the "no Ref reachable at all" case. The looser-but-not-strict case (Ref present somewhere in the enclosing decl but not adjacent to the sorry) is the **separate** `cite-position-hygiene` (minor) finding. The 2-tier split deliberately surfaces "missing entirely" as critical and "wrong position" as polish. |
 | `hidden-axiom` | critical | New `axiom` declaration that isn't a §3b-cond class encoding |
 | `drift-class-A` | critical | Lean stub-weakening — `theorem foo : True := trivial` while narrative claims something substantive |
 | `conditional-class-violation` | critical | Theorem's `uses[]` transitively includes a `conj:` but the block isn't class-axiomatised per §3b-cond |
@@ -140,14 +140,29 @@ grep -rlE '^export default (theorem|lemma|proposition|corollary|conjecture|defin
   content/ --include='*.ts' 2>/dev/null \
   | sort -u > /tmp/_pw_proof_blocks.txt
 
-# 2. Uncited sorries — smart detection: skip block comments, skip
-#    "sorry-free" text, look in 6-line window above the sorry AND
-#    in the 6 lines above the enclosing theorem/lemma/instance/def
-#    header. This avoids both false positives (docstring "sorry-free")
-#    and false negatives (cites on the wrong side of the sorry).
-#    Implementation: see find_uncited_sorries() in this skill's
-#    delivery (regex DECL_RE + per-line check + window scan + decl
-#    walk-back).
+# 2. Uncited sorries — smart detection. Inline pseudocode:
+#
+#    DECL_RE  = ^(noncomputable\s+|@\[[^\]]+\]\s+)*(theorem|lemma|
+#                 proposition|corollary|instance|def|example)\b
+#    SORRY_RE = (^|\s)(sorry)(\s|$|\b)
+#
+#    For each .lean file:
+#      1. Mark which lines are inside `/- ... -/` block comments.
+#      2. For each line that is NOT in a block comment AND matches
+#         SORRY_RE AND does not start with `--` AND does not contain
+#         "sorry-free" or "no sorry":
+#         a. Strip line-comment with `re.sub(r'--.*$', '', ln)`;
+#            re-test SORRY_RE on the stripped form.
+#         b. If a `-- Ref:` appears in the 6 lines above → cited.
+#         c. Else walk backward to the nearest line matching DECL_RE;
+#            if a `-- Ref:` appears in the 6 lines above the decl
+#            header → cited.
+#         d. Otherwise → `uncited-sorry` finding (critical).
+#
+#    Calling code lives in the watcher's session script (e.g. a
+#    one-off block in the agent's working memory, NOT a committed
+#    .py module). This avoids creating maintenance burden for a
+#    function whose only consumer is the watcher's own backlog scan.
 
 # 3. Naked conjectures (no .lean sibling)
 grep -rlE '^export default conjecture\(' content/ --include='*.ts' 2>/dev/null \

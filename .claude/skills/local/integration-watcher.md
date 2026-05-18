@@ -27,7 +27,7 @@ Three concrete children today:
 |-------|--------|------|
 | [`proof-integration-watcher`](proof-integration-watcher.md) | Proof QA (narrative + Lean) | No bare sorries, no axiom growth, no naked conjectures with provable scaffolding |
 | [`canonical-watcher`](canonical-watcher.md) | Canonical-derivation discipline | No 4th calibration, no numerology, no coefficient fits (per `prop:three-calibration-discipline`) |
-| [`compute-integration-watcher`](compute-integration-watcher.md) | Cross-layer compute wiring | Every `prop:`/`thm:`/`lem:` block has a probe + production consumer (12-pattern I1-I13 audit) |
+| [`compute-integration-watcher`](compute-integration-watcher.md) | Cross-layer compute wiring | Every `prop:`/`thm:`/`lem:` block has a probe + production consumer (13-pattern I1-I13 audit) |
 
 ## Domain slots (every child must fill)
 
@@ -116,7 +116,9 @@ Monitor:
       cur=$(git ls-remote origin main 2>/dev/null | cut -f1)
       if [ -n "$cur" ] && [ "$cur" != "$last" ]; then
         git fetch origin main 2>/dev/null
-        git log --reverse --format='MAIN %h %s' "$last..$cur"
+        # Use %H (full SHA) so downstream `git diff-tree` / `git show`
+        # calls don't risk abbreviation ambiguity in long-running sessions.
+        git log --reverse --format='MAIN %H %s' "$last..$cur"
         last=$cur
       fi
       gh_now=$(date -u +%s)
