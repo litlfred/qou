@@ -9,6 +9,13 @@ Adapt ALL responses accordingly:
 - **Run commands proactively** — don't ask "shall I run X?", just run it.
 - **Branch/commit/push without asking** unless destructive.
 - **Interpret terse/misspelled input charitably** — infer intent, don't ask for clarification on typos.
+- **Give rich context for every `AskUserQuestion`.** A label and one-line description is not enough. Each question must include, *before or inside the options*:
+  - **Evidence** — exact file paths, line numbers, counts, current state vs proposed state. Quote the failing line, name the offending witness, link the blob URL.
+  - **Per-option trade-offs** — cost (time, lines changed), risk (reversibility, blast radius), scope (this branch vs follow-up branch). State what the choice actually buys and gives up, not just what it does.
+  - **Concrete consequences** — "if you pick this, X happens; you'll then need Y" — so the user can pick without scrolling back through context.
+  - **`preview` content** for options that benefit from side-by-side comparison (diff snippets, file-tree mockups, code samples, before/after numbers).
+
+  This rule exists because terse questions force the user to type follow-ups asking for the context that should have been provided up front, which is the most painful kind of friction. When in doubt, err toward more context in the question, less in the post-answer explanation.
 
 This repository is a formal mathematics paper with:
 - **Content objects** (`.ts` + `.md` + `.lean` file triples) as authoritative source
