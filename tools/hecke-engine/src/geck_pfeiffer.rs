@@ -208,7 +208,7 @@ pub fn hecke_mul_ts_inv_right(x: &HeckeElement, i: usize) -> HeckeElement {
 /// `LaurentPolyQ`, which currently uses `BigInt`.  Instead we compute
 /// the **doubled** version `(σ + σ⁻¹) · x = 2 · σ x − h · x` here,
 /// and the caller tracks a separate `2^k` divisor (one factor of 2 per
-/// averaged crossing in the word).  `chi_lambda_via_gp_hoefsmit_with_avg`
+/// averaged crossing in the word).  [`chi_lambda_via_gp_hoefsmit`]
 /// divides the final χ^λ output by `2^k` to absorb the deferred
 /// normalisation.
 ///
@@ -385,8 +385,18 @@ pub fn chi_lambda_via_gp_hoefsmit(
         total += c_w_f64 * chi_w;
     }
     // Apply the deferred `(1/2)^avg_count` averaging normalisation.
+    // **Why `f64::powi` instead of `1u64 << avg_count`**: the bit-
+    // shift is UB for `avg_count >= 64` (debug panic; release wraps).
+    // Per Copilot + Gemini review on PR #720, this is a real concern
+    // at the scaling targets — canonical atomic braid words for
+    // heavy atoms can exceed 64 averaged crossings (per
+    // `mass_at_3A_proper.atom_braid_word_3A`, each mixed-quark pair
+    // and each pn-interface contributes; for A=40 the count is
+    // ~120). f64::powi handles the full range up to f64::INFINITY
+    // (~2^1023) and underflows gracefully beyond f64 mantissa width
+    // (~1024) rather than silently corrupting the result.
     if avg_count > 0 {
-        total /= (1u64 << avg_count) as f64;
+        total /= 2.0_f64.powi(avg_count as i32);
     }
     total
 }
