@@ -45,13 +45,57 @@ post-event snapshot (see Slot D).
 
 ## Slot A — Goal statement
 
-Zero new forward references on landing commits, no section pushed
-out of the 3–18 block band, no new cross-chapter forward edges,
-no new topic-mixed blocks, and `docs/reorganization-map.md` updated
-alongside every move. The section graph trends toward lower energy.
-Forward edges that exist for architectural reasons (Archimedean ↔
-categorical wall, deliberate cross-chapter callbacks) are accepted
-and recorded as `wontfix: architectural`.
+Zero new forward references on landing commits (**excluding refs
+sourced from `intro` / `notation` chapters — see §Preview-chapter
+exclusion below**), no section pushed out of the 3–18 block band,
+no new cross-chapter forward edges, no new topic-mixed blocks, and
+`docs/reorganization-map.md` updated alongside every move. The
+section graph trends toward lower energy. Forward edges that exist
+for architectural reasons (the archimedean wall in
+[`models-of-qous/sec:archimedean-models`](../../content/quantum-observable-universe/models-of-qous/),
+deliberate cross-chapter callbacks) are accepted and recorded as
+`wontfix: architectural`.
+
+### Preview-chapter exclusion (STRICT)
+
+Forward references whose **source** lives in a *preview chapter*
+are info-only — never findings, never invariant violations,
+never auto-discharge targets. Preview chapters preview future
+material (intro motivates the paper) or are reference lookups
+(notation is a symbol index); forward refs from them are the
+expected reading pattern.
+
+The preview list is hard-coded in this watcher (not yet a
+content-schema field):
+
+```python
+PREVIEW_CHAPTERS = {'introduction', 'notation'}
+```
+
+When filtering H1 / H2 findings from `content-graph-analysis.py`,
+**drop any finding whose source block's `chapter_dir` is in
+`PREVIEW_CHAPTERS`**. Apply this filter in Slot B (event trigger
+delta), Slot C (graph-delta synthesis), Slot D (taxonomy), and
+Slot I (invariants).
+
+### Archimedean wall awareness
+
+The paper's structural cut is the archimedean wall: pre-wall
+content uses generic `{R : Type*}` (categorical, q-deformed,
+combinatorial); post-wall content specialises to `ℝ` for numerical
+evaluation. The wall is implemented as the
+**`models-of-qous/sec:archimedean-models`** section, which contains
+the canonical bridge constructions (Calabi-Yau, ALE, Seiberg-Witten,
+Brings-surface archimedean specialisation, categorical-action ↔
+Chern-Simons).
+
+In the paper's reading order, the wall **must** sit between
+`braids-and-knots` (last pre-wall chapter) and `descartes-universe`
+(first post-wall chapter). Forward edges crossing the wall in the
+wrong direction (post-wall → pre-wall categorical content silently)
+are a finding (`archimedean-wall-violation`, minor) unless the
+target block carries `tags: ['archimedean-bridge']` or an explicit
+banner. See Slot D.
 
 ## Slot B — §3 trigger filter
 
@@ -188,7 +232,9 @@ mv /tmp/_detangler_watcher_graph_current.json \
 | `intra-chapter-energy` | minor | `chapter-complexity-review` graph energy increased without a new forward-ref finding (suggests room for section reordering) |
 | `cross-section-coupling` | minor | New H3 cross-section edge crossing > 3 sections |
 | `isolated-block` | minor | H6 isolated block — no incoming or outgoing edges |
+| `archimedean-wall-violation` | minor | A post-wall block (in `descartes-universe` and later chapters) is referenced from a pre-wall block via `uses[]` without the target carrying `tags: ['archimedean-bridge']` or an explicit conditional banner — the pre-wall block has silently leaked an `ℝ`-specific dependency into generic-`R` content |
 | `remark-ratio` | info | H7 remark/example ratio drifted outside the 2:1 band |
+| `preview-source-fwd-ref` | info | H1 forward ref sourced from a preview chapter (`intro` / `notation`) — info-only, never escalated (see §Preview-chapter exclusion) |
 
 ## Slot E — §4d discharge bands (examples)
 
@@ -316,9 +362,10 @@ the `findings[]` array.
 
 | Invariant | Check |
 |-----------|-------|
-| H1 forward-ref count never increases on own-branch commits | `len([f for f in current.findings if f.heuristic=='H1']) <= len([f for f in baseline.findings if f.heuristic=='H1'])` |
+| H1 forward-ref count never increases on own-branch commits **(excluding preview-chapter sources)** | `count_nonpreview(current.H1) <= count_nonpreview(baseline.H1)` where `count_nonpreview(H) = len([f for f in H if by_label[f.blocks[0]]['chapter_dir'] not in PREVIEW_CHAPTERS])` |
 | No section newly leaves the 3–18 band | For every section S, if pre-edit `len(S.blocks) in [3,18]` then post-edit `len(S.blocks) in [3,18]` |
-| H2 cross-chapter forward edges don't grow | `len([f for f in current.findings if f.heuristic=='H2']) <= baseline` |
+| H2 cross-chapter forward edges don't grow **(excluding preview-chapter sources)** | `count_nonpreview(current.H2) <= count_nonpreview(baseline.H2)` |
+| No new `archimedean-wall-violation` (silent post-wall → pre-wall leak) | Walk every new / changed block whose `chapter_dir` precedes `models-of-qous` in the paper's chapter order; for each `uses[]` target whose `chapter_dir` is `descartes-universe` or later, the target must carry `tags: ['archimedean-bridge']` OR the source's `.md` must contain an explicit `Theorem (conditional on archimedean specialisation)` banner |
 | No new R1 topic-mix | `python3 pipeline/block-density-audit.py <paper>` exit code 0 AND `grep -c 'R1' stdout` does not increase vs baseline (the script prints `R1`/`R2`/`R3` per-violation lines on stdout — there is no `--json` mode) |
 | `docs/reorganization-map.md` updated alongside every block move | `git diff --name-only HEAD~1 HEAD` includes both the chapter manifest AND `docs/reorganization-map.md` whenever a block changed sections |
 | Schema clean | `cd content && bun run validate` exits 0 |
@@ -360,6 +407,10 @@ and ask the author (per parent §6).
       never invents a `--json` flag that doesn't exist
 - [ ] Slot D finding kinds map 1-to-1 to `content-graph.md`
       heuristics H1–H7 + `block-density` R1–R3 + PR1–PR7
+- [ ] Preview-chapter filter applied to every H1 / H2 finding
+      (forward refs sourced from `intro` / `notation` are info-only)
+- [ ] Archimedean-wall check applied to every new pre-wall block
+      with `uses[]` targeting post-wall content
 - [ ] Slot E auto-discharge band is **only** intra-section swaps
       + R3 table extraction (NO section merge / split)
 - [ ] Slot I invariants derive from `findings[]` array — not
