@@ -1,5 +1,42 @@
 ## Statement
 
+**Class-A discipline status.** The three forms below have **different discipline statuses**:
+
+- **(GB-NF)** is the production-target algebraic form. $\rho_K$ admits a
+  **graded substrate expansion**
+  ([`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md)) —
+  LO piece (Markov-multiplicative nucleon sum) **proved** via Wenzl
+  1988; single-gen piece $\alpha \sum_i \ln|\hat V_i^{\mathrm{full}}|$
+  closes empirically to $0.18\%$ mean error; pair-gen piece remains
+  open. The H_3-anchor refinement of the per-irrep coefficients is
+  the subject of [`prop:rho-k-h3a-refinement`](rho-k-h3a-refinement.md).
+- **(constituent)** consumes CODATA $m_{\mathfrak{p}}, m_{\mathfrak{n}}$
+  as upstream inputs — a **Class-A opt-out** (acknowledged 4th/5th
+  calibration injection) tracked under
+  [Workplan 0b](../../../docs/audits/2026-05-10-workplan-0b-script-rewire-handoff.md).
+  The substrate-pure replacement is $m_{\mathfrak{n}} = m_{\mathfrak{p}}
+  + Q_\beta + m_e$ with $m_{\mathfrak{p}}$ from
+  [`conj:lambda-scale-substrate-form`](lambda-scale-substrate-form.md)
+  ($\lambda_{\mathrm{scale}} \approx 5/2 - h^2 G$, matching CODATA to
+  ~5.4 ppm — currently *justification* at this precision per
+  [`docs/audits/2026-05-18-lambda-scale-derivation-search.md §13`](../../../docs/audits/2026-05-18-lambda-scale-derivation-search.md))
+  and [`prop:flavor-split-substrate`](../observations/flavor-split-substrate.md)
+  for the $m_n - m_p$ split. ${}^1\mathrm{H}$ already lifts to
+  `derived` once the Borromean tower wiring is on-trunk.
+- **(six-term spectral)** consumes a proton-mass calibration to fix
+  $E_0$ — also a **Class-A opt-out** until $E_0$ is independently
+  derived from CAL-3 ($Q_\beta(n)$). Substrate replacement candidate:
+  $E_0 = m_e / (q_0(q_0 - 1))$ from
+  [`prop:three-calibration-inputs`](three-calibration-inputs.md).
+
+Per the [three-calibration discipline](three-calibration-inputs.md),
+the (constituent) and (six-term spectral) forms violate the rule by
+admitting additional calibrations beyond CAL-1/2/3; the §Open and
+§Negative-result shift-anchor sections below document the empirical
+falsifications and the structural barriers to closure. Treat numerical
+outputs from those two forms as illustrative until the substrate-pure
+replacements land.
+
 **Proposition.**
 *Let $(Z, N)$ be a neutral atom with atomic braid
 $\beta_K \in B_{n}$, where $n = 3A + Z$ and $A = Z + N$

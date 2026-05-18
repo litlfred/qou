@@ -25,6 +25,32 @@ formalises what the brane-tower contributes; closure of the nucleon-
 mass anchors requires the additional categorical content in
 $\rho_K$.
 
+**Class-A discipline status.** The 173× shortfall is captured by
+$\rho_K$ in [`prop:atomic-mass-gb-nf`](atomic-mass-gb-nf.md), which
+admits a **graded substrate expansion**
+([`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md)) — the
+LO piece $Z m_{\mathfrak{p}} + N m_{\mathfrak{n}} + Z m_e$ is
+**proved** (Wenzl 1988 Markov multiplicativity); the single-gen
+piece $\alpha \sum_i \ln|\hat V_i^{\mathrm{full}}|$ closes
+empirically to $0.18\%$; the pair-gen piece is open. On the
+nucleon-anchor side, $m_{\mathfrak{p}}$ has a **conjectural
+substrate form**
+([`conj:lambda-scale-substrate-form`](lambda-scale-substrate-form.md))
+at $\lambda_{\mathrm{scale}} \approx 5/2 - h^2 G$ matching CODATA
+to ~5.4 ppm; ${}^1\mathrm{H}$ lifts to `derived` once the Borromean
+tower wiring lands. Per
+[`docs/audits/2026-05-18-lambda-scale-derivation-search.md`](../../../docs/audits/2026-05-18-lambda-scale-derivation-search.md)
+§13, the current state is **justification** (5.4 ppm structural match)
+rather than full derivation. This proposition is therefore a Class-A
+opt-out (conditional on the substrate forms above) per the
+[three-calibration discipline](three-calibration-inputs.md); the
+structural form (this block) is correct and independent of the open
+pieces. Tracked under
+[Workplan 0b](../../../docs/audits/2026-05-10-workplan-0b-script-rewire-handoff.md)
+and the [m_p chain closure gap](../../../docs/audits/2026-05-17-m-p-chain-closure-gap-analysis.md).
+$\rho_K$ closure; only its numerical instantiation is currently
+empirical.
+
 **Statement (categorical, pre-Archimedean form).**  Let
 $\mathcal{U} = (\mathbf{C}, \varTheta, G, \mathcal{S})$ be a quantum
 observable universe at substrate parameter $q_0$
