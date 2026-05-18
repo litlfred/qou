@@ -48,8 +48,10 @@ HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
-mp.mp.dps = 50
-
+from _precision import set_compute_dps, fmt, COMPUTE_DPS, OUTPUT_DPS  # noqa: E402
+from active_set_pruning import (  # noqa: E402
+    select_active_set, verify_pruning_safe, CHI_MAX_EMPIRICAL_BOUND,
+)
 from canonical_braid_crossings import atom_canonical_crossings  # noqa: E402
 from canonical_tr_m_via_rust import canonical_word_for, find_binary  # noqa: E402
 from isotope_record_schema import (  # noqa: E402
@@ -59,6 +61,8 @@ from isotope_record_schema import (  # noqa: E402
 from q_parameter import Q as Q_FLOAT, Q_50_DIGIT_STR  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+
+set_compute_dps()  # ensure mp.mp.dps = COMPUTE_DPS (consistent with infra)
 
 # AME 2020 binding energies (MeV) for the canonical atoms.
 B_AME_MEV: dict[tuple[int, int], float] = {
@@ -210,6 +214,16 @@ def main() -> int:
         default="markov_peel",
         help="Computation method (default markov_peel — fastest at H_n ≥ 12).",
     )
+    parser.add_argument(
+        "--target-dps", type=int, default=OUTPUT_DPS,
+        help=(
+            "Target precision (decimal places) for the |tr_M| sum. "
+            "When < COMPUTE_DPS, active-set pruning drops y_λ terms "
+            "whose tail-bound contribution falls below 10^(-target-dps). "
+            "Paper hard floor ~780 ppb means target_dps > 10 is "
+            "over-spent precision."
+        ),
+    )
     parser.add_argument("--timeout", type=int, default=1500)
     args = parser.parse_args()
 
@@ -219,6 +233,10 @@ def main() -> int:
     label_to_ZN.update({"proton": (1, 0), "neutron": (0, 1)})
     requested = [s.strip() for s in args.atoms.split(",") if s.strip()]
 
+    paper_floor_ppb = 780.0
+    paper_floor_dps = float(-mp.log10(mp.mpf(paper_floor_ppb) * mp.mpf("1e-9")))
+    pruning_safe = verify_pruning_safe(args.target_dps, paper_floor_ppb)
+
     print("=" * 90)
     print(f"  Canonical mass table — method={args.method} "
           f"(precision={args.precision} if Rust)")
@@ -226,6 +244,12 @@ def main() -> int:
     print()
     print(f"  q_0 = {Q_FLOAT}")
     print(f"  Method: {args.method} (Rust dps={dps}; markov_peel uses symbolic-q)")
+    print(f"  COMPUTE_DPS / OUTPUT_DPS / target_dps = "
+          f"{COMPUTE_DPS} / {OUTPUT_DPS} / {args.target_dps}")
+    print(f"  Paper hard floor: {paper_floor_ppb} ppb "
+          f"(~{paper_floor_dps:.1f} dps; CAL-2 propagation)")
+    print(f"  Active-set pruning at target_dps={args.target_dps}: "
+          f"{'SAFE (within paper bound)' if pruning_safe else 'WARNING — below paper floor'}")
     print()
     print(f"  {'atom':<6} {'A':>2} {'n':>3} {'|tr_M(q_0)|':<22} "
           f"{'B_pred(existing)':>16} {'B_AME':>10} {'origin':<22} "
@@ -268,7 +292,7 @@ def main() -> int:
             braid_word_canonical=braid_word,
             markov_closure=CANONICAL_CLOSURES.get((Z, N)),
             knot_operators=ops,
-            tr_M_q0_canonical_50dps=mp.nstr(tr_m, 50, strip_zeros=False),
+            tr_M_q0_canonical_50dps=fmt(tr_m),  # OUTPUT_DPS via _precision
             prediction_method=PredictionMethod.CANONICAL_TRACE,
             calibration_source=CalibrationSource.CAL_1,
             prediction_MeV_50dps=(
@@ -283,7 +307,7 @@ def main() -> int:
         )
         records.append(record.to_dict())
 
-        tr_m_str = mp.nstr(tr_m, 15)
+        tr_m_str = fmt(tr_m, dps=15)  # display-only, full precision via fmt
         pred_str = f"{b_pred_existing:.4f}" if b_pred_existing is not None else "—"
         ame_str = f"{b_ame:.4f}" if b_ame is not None else "—"
         origin_str = (origin or "—")[:20]
@@ -308,6 +332,11 @@ def main() -> int:
         .add_parameter("method", args.method)
         .add_parameter("precision", args.precision)
         .add_parameter("dps", dps)
+        .add_parameter("compute_dps", COMPUTE_DPS)
+        .add_parameter("output_dps", OUTPUT_DPS)
+        .add_parameter("target_dps", args.target_dps)
+        .add_parameter("paper_hard_floor_ppb", paper_floor_ppb)
+        .add_parameter("active_set_pruning_safe", pruning_safe)
         .add_parameter("atoms_requested", ",".join(requested))
         .add_parameter("timeout_per_atom_sec", args.timeout)
         .add_data("rows", records)
