@@ -95,25 +95,25 @@ theorem gb_residue_spectral_sum [s : GBResidueSpectralSum] :
     s.mass = |s.descended| + ∑ ℓ : Fin s.levelBound, s.residue ℓ :=
   s.spectral_decomposition
 
-/-- Finiteness of the spectral sum: by construction, the residue
-    function is supported on the finite set `Fin levelBound`, so
-    the sum has only finitely many non-zero terms.
+/-- **Finiteness (cardinality form).**
 
-    The previous statement
-    `∃ N, ∀ ℓ ≥ N, residueAtRoot ℓ ζ q = 0`
-    becomes a tautology in the class-based formulation: the
-    residue function `residue : Fin levelBound → ℝ` has domain
-    of cardinality `levelBound`, and any `ℓ ≥ levelBound` falls
-    outside the domain.  Stated formally, the cumulative sum
-    truncates at `levelBound`.
+    The spectral sum `∑ ℓ : Fin S.levelBound, S.residue ℓ` is
+    a sum over a `Finset` of cardinality `S.levelBound`, hence
+    finite by Mathlib's standard finite-sum machinery.
 
-    Ref: [manuscript] `prop:confinement-level-unique`. -/
+    Note: this is the *algebraic* finiteness — the index set
+    `Fin S.levelBound` has cardinality `S.levelBound` by
+    construction, so the sum has at most `S.levelBound`
+    non-zero terms.  The *substantive* claim of
+    `conj:gs-spectral-sum-finite` — that `S.levelBound` truly
+    equals the confinement level `ℓ(K, q_0)` of the underlying
+    braid, so that any analytic extension of `S.residue` to
+    `ℕ` vanishes above the cutoff — is the conjectural part
+    and is not formalised here; see the `.md` narrative under
+    "Why a conjecture and not a theorem". -/
 theorem spectral_sum_finite (S : GBResidueSpectralSum) :
-    ∃ N : ℕ, ∀ ℓ ≥ N,
-      ∀ (h : ℓ < S.levelBound), S.residue ⟨ℓ, h⟩ = 0 ∨ ℓ < S.levelBound := by
-  refine ⟨S.levelBound, ?_⟩
-  intro ℓ _ h
-  exact Or.inr h
+    (Finset.univ : Finset (Fin S.levelBound)).card = S.levelBound := by
+  simp
 
 /-! ## Constructing instances from crystal-basis data
 
