@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T18:17:54.822255+00:00",
-  "commitSha": "99b5487de6007eacb7b84deac03292797dafc496",
+  "computedAt": "2026-05-18T19:06:17.845981+00:00",
+  "commitSha": "aa5899a9441c08f1e7a8795127fb88a7ab3755fb",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -576,7 +576,7 @@
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "67f1df24c9d76e62b2bb25a331814e511ba6dc3f",
+  "scriptCommitSha": "875916a587c227572f421c22053ad81371976ccc",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
   "data": {
@@ -2057,6 +2057,7 @@
       ],
       "computational-only": [
         "4he-binding-full-pipeline.witness.json",
+        "A-at-post-hoc-h-expansion.witness.json",
         "A-operator-extract-general.witness.json",
         "A-operator-extract-h9-pn.witness.json",
         "A-operator-extract-h9-pp.witness.json",
@@ -2124,6 +2125,7 @@
         "bw-chirality-isotopes.witness.json",
         "c-alpha-from-Q-beta-trace.witness.json",
         "c-k-beta-decay-bound.witness.json",
+        "c2-inflection-structure-probe.witness.json",
         "c3-categorical-consistency-check.witness.json",
         "c3-taylor-extraction.witness.json",
         "cal-3-q-beta.witness.json",
@@ -2214,6 +2216,8 @@
         "ew-higgs-sdp-probe.witness.json",
         "ew-interface-knot-probe.witness.json",
         "factor-2-normalization-trace.witness.json",
+        "family-a-extended-variants.witness.json",
+        "family-a-variants-investigation.witness.json",
         "flavor-dressed-mass-from-substrate-split.witness.json",
         "float64-leak-audit.witness.json",
         "free-neutron-decay.witness.json",
@@ -2557,6 +2561,9 @@
         "wedderburn-lp-ew-wiring.witness.json",
         "wedderburn-pair-volumes.witness.json",
         "witness-reproducibility-check.witness.json",
+        "workplan-0b-mn-routes-b-c.witness.json",
+        "workplan-0b-route-b-operator.witness.json",
+        "workplan-0b-route-c-bring.witness.json",
         "y-lambda-at-q0.witness.json",
         "y-lambda-cyclotomic-factor.witness.json",
         "y-lambda-macdonald-telescope.witness.json",
