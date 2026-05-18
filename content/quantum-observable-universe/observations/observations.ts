@@ -80,8 +80,6 @@ export default chapter({
         "nucleon-borromean-topology-proof",
         "pair-skein-mass-formula",
         "pair-skein-mass-formula-proof",
-        "nucleon-mass-splitting",
-        "nucleon-mass-splitting-proof",
         "flavor-split-substrate",
         "flavor-split-substrate-proof",
         "deuteron-binding-energy",

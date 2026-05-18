@@ -1,7 +1,9 @@
 **Proof.**
 
 *Step 1 (Pair-Skein difference, exact).*
-[`lem:nucleon-mass-splitting`](nucleon-mass-splitting.md) gives the exact
+[`lem:pair-skein-mass-formula`](pair-skein-mass-formula.md) applied to the
+Borromean baryon braids of the proton ($\mathfrak{u}\mathfrak{u}\mathfrak{d}$)
+and neutron ($\mathfrak{u}\mathfrak{d}\mathfrak{d}$) gives the exact
 relation
 
 $$

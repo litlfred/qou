@@ -9,7 +9,6 @@ export default proposition({
   tags: ["flavor-split", "u-d-splitting", "substrate-only", "no-fit",
          "hecke-substrate-atoms", "categorical-derivation"],
   uses: [
-    "lem:nucleon-mass-splitting",
     "lem:pair-skein-mass-formula",
   ],
   proofs: ["prf:flavor-split-substrate"],

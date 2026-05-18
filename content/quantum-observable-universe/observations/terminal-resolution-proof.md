@@ -9,13 +9,16 @@ entirely from the Skein functional.  By
 each color-exchange crossing pair contributes
 $\mathcal{S}_{ab}(q) = (q\mu_a + q^{-1}\mu_b)/(q^{1/2} + q^{-1/2})$
 and the nucleon mass is the sum over its three pairs.  By
-([nucleon mass splitting](#lem:nucleon-mass-splitting)),
+([flavor-dressed mass from substrate split](#prop:flavor-dressed-mass-from-substrate-split)),
 the proton and neutron formulas $m_p = \mathcal{S}_{\mathfrak{u}\mathfrak{u}} + 2\mathcal{S}_{\mathfrak{u}\mathfrak{d}}$
 and $m_n = 2\mathcal{S}_{\mathfrak{u}\mathfrak{d}} + \mathcal{S}_{\mathfrak{d}\mathfrak{d}}$
-together with the CODATA splitting determine the dressed quark masses
+together with the substrate-derived splitting
+[`prop:flavor-split-substrate`](#prop:flavor-split-substrate) determine the dressed quark masses
 $\mu_{\mathfrak{u}} \approx 311.10\,\text{MeV}$,
 $\mu_{\mathfrak{d}} \approx 312.39\,\text{MeV}$, and reproduce
-$m_p = 938.272\,\text{MeV}$, $m_n = 939.565\,\text{MeV}$.  By
+$m_p = 938.272\,\text{MeV}$, $m_n = 939.565\,\text{MeV}$ (see
+[`rem:dressed-quark-numerology-at-q0`](#rem:dressed-quark-numerology-at-q0)
+for the per-quark numerology).  By
 ([deuteron binding energy](#lem:deuteron-binding-energy)),
 smoothing the proton--neutron crossing of the six-component link $L_6$
 yields $\Delta \mathbf{E}_{\mathrm{bind}} \approx 2.224\,\text{MeV}$,

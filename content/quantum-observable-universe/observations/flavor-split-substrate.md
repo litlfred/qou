@@ -31,7 +31,7 @@ $(m_n - m_p)/M_N = 1.293\,\text{MeV} / 938.92\,\text{MeV} \approx 1.377 \times 1
 $h_q \cdot z_{\text{mkv}} = z_0 = \hbar_q \cdot \sqrt{q}$,
 where $z_0 = q^{1/2} - q^{-1/2}$ and $z_{\text{mkv}} = (q^{1/2} + q^{-1/2})^{-1}$.*
 
-This is the **substrate-pure** counterpart of [`lem:nucleon-mass-splitting`](nucleon-mass-splitting.md), which absorbs the splitting into the dressed-mass difference $\mu_{\mathfrak{d}} - \mu_{\mathfrak{u}} \approx 1.288\,\text{MeV}$ as a single fit input.  In the substrate-pure form, neither $\mu_{\mathfrak{u}}$ nor $\mu_{\mathfrak{d}}$ appears — only $q_0$ and the universal nucleon scale $M_N$.
+In the substrate-pure form, neither $\mu_{\mathfrak{u}}$ nor $\mu_{\mathfrak{d}}$ appears — only $q_0$ and the universal nucleon scale $M_N$.  The companion proposition [`prop:flavor-dressed-mass-from-substrate-split`](../braids-and-knots/flavor-dressed-mass-from-substrate-split.md) lifts the splitting back to the dressed-quark masses via the Skein factor, recovering the dressed-mass difference $\mu_{\mathfrak{d}} - \mu_{\mathfrak{u}} \approx 1.288\,\text{MeV}$ as a derived consequence of $q_0$ and $M_N$ (not a separate input).
 
 The categorical reading of the factored form
 $\hbar_q^2 \cdot h_q \cdot [2]_q$:
