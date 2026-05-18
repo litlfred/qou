@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T18:17:25.790248+00:00",
-  "commitSha": "610edec88409131bfdb591275068c02c33df07ea",
+  "computedAt": "2026-05-18T18:17:34.336207+00:00",
+  "commitSha": "75d972cc26023b57b9a981f51f9be3768d50b678",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2408,6 +2408,7 @@
         "probe-gamma-gamma-lr-embed-h6.witness.json",
         "probe-h1-substrate-closure.witness.json",
         "probe-hoefsmit-content-selector.witness.json",
+        "probe-isobar-delta-m-substrate.witness.json",
         "probe-lp-cost-dominant-partition.witness.json",
         "probe-milp-knot-operator-count.witness.json",
         "probe-mu-d-minus-mu-u-categorical.witness.json",
