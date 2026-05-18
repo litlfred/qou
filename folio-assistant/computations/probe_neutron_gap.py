@@ -60,10 +60,7 @@ from alpha_blend_tower import (  # noqa: E402
     lam_sym, lam_alt, V_std, V_3term, tower, _DPS,
 )
 from hecke_core import _PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1  # noqa: E402
-from codata_constants import (  # noqa: E402
-    M_P_MEV_VALIDATION,
-    M_N_MEV_VALIDATION,
-)
+from experimental_constants import M_P_MEV, M_N_MEV  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 WITNESS_OUT = HERE / "neutron-gap-probes.witness.json"
@@ -79,10 +76,10 @@ def _calibrate_and_predict(mp_v, mn_v):
     if mp_v == 0:
         return None, None, None
     with mp.workdps(_DPS):
-        E0 = mp.mpf(str(M_P_MEV_VALIDATION)) / mp_v
+        E0 = mp.mpf(str(M_P_MEV)) / mp_v
         mp_pred = float(mp_v * E0)
         mn_pred = float(mn_v * E0)
-    err_n_ppb = ((mn_pred - M_N_MEV_VALIDATION) / M_N_MEV_VALIDATION) * 1e9
+    err_n_ppb = ((mn_pred - M_N_MEV) / M_N_MEV) * 1e9
     return mp_pred, mn_pred, err_n_ppb
 
 
@@ -102,7 +99,7 @@ def predict_baseline():
         "description": "current PR #450 V_3term (W_SYM·λ_sym + W_ALT·λ_alt + W_STD·V_std)",
         "proton_pred_MeV": mp_pred,
         "neutron_pred_MeV": mn_pred,
-        "neutron_codata_MeV": M_N_MEV_VALIDATION,
+        "neutron_codata_MeV": M_N_MEV,
         "neutron_err_ppb": err,
     }
 
@@ -131,7 +128,7 @@ def predict_h1():
         ),
         "proton_pred_MeV": mp_pred,
         "neutron_pred_MeV": mn_pred,
-        "neutron_codata_MeV": M_N_MEV_VALIDATION,
+        "neutron_codata_MeV": M_N_MEV,
         "neutron_err_ppb": err,
     }
 
@@ -183,7 +180,7 @@ def predict_h2():
         ),
         "proton_pred_MeV": mp_pred,
         "neutron_pred_MeV": mn_pred,
-        "neutron_codata_MeV": M_N_MEV_VALIDATION,
+        "neutron_codata_MeV": M_N_MEV,
         "neutron_err_ppb": err,
     }
 
@@ -243,7 +240,7 @@ def predict_h3():
         ),
         "proton_pred_MeV": mp_pred,
         "neutron_pred_MeV": mn_pred,
-        "neutron_codata_MeV": M_N_MEV_VALIDATION,
+        "neutron_codata_MeV": M_N_MEV,
         "neutron_err_ppb": err,
     }
 
@@ -253,8 +250,8 @@ def main() -> int:
     print("NEUTRON-GAP PROBES — Sprint B follow-up")
     print("=" * 100)
     print(f"  q_0 = {float(Q0):.10f}")
-    print(f"  m_p (CODATA) = {M_P_MEV_VALIDATION} MeV")
-    print(f"  m_n (CODATA) = {M_N_MEV_VALIDATION} MeV")
+    print(f"  m_p (CODATA) = {M_P_MEV} MeV")
+    print(f"  m_n (CODATA) = {M_N_MEV} MeV")
     print()
 
     results = []
@@ -322,8 +319,8 @@ def main() -> int:
         )
         .set_content_block("prop:joint-tower-sdp-confinement")
         .add_parameter("q_0", float(Q0))
-        .add_parameter("m_p_codata_MeV", M_P_MEV_VALIDATION)
-        .add_parameter("m_n_codata_MeV", M_N_MEV_VALIDATION)
+        .add_parameter("m_p_codata_MeV", M_P_MEV)
+        .add_parameter("m_n_codata_MeV", M_N_MEV)
         .add_parameter("precision_dps", _DPS)
         .add_parameter("threshold_ppb", THRESHOLD_PPB)
         .add_data("results", results)
@@ -337,7 +334,7 @@ def main() -> int:
             w.add_assertion(
                 f"proton_calibration_exact_{r['name']}",
                 computed=r["proton_pred_MeV"],
-                expected=M_P_MEV_VALIDATION,
+                expected=M_P_MEV,
                 tolerance=1e-6,
                 source="single-point proton calibration (E0 = m_p / mp_v)",
             )

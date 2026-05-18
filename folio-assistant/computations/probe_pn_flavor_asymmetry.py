@@ -298,8 +298,11 @@ def main() -> int:
     w.add_data("mu_u_MeV", MU_U)
     w.add_data("mu_d_MeV", MU_D)
     w.add_data("mu_ratio", MU_D/MU_U)
-    w.add_data("codata_m_n_over_m_p", M_N_MEV_VALIDATION/M_P_MEV_VALIDATION)
-    w.add_data("codata_delta_m_MeV", delta_codata)
+    # float() casts: M_*_VALIDATION are mpmath.mpf; WitnessBuilder.save
+    # serialises with default=str so we'd emit JSON strings without
+    # the cast — keep numeric type for downstream consumers.
+    w.add_data("codata_m_n_over_m_p", float(M_N_MEV_VALIDATION/M_P_MEV_VALIDATION))
+    w.add_data("codata_delta_m_MeV", float(delta_codata))
     w.add_data("schemes_tested", [
         {"scheme": "1 unweighted", "delta_m_pred": 0.0, "ratio_to_codata": 0.0},
         {"scheme": "2 product (μ_u²μ_d / μ_uμ_d²)",

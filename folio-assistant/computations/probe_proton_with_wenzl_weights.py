@@ -264,8 +264,11 @@ def main():
         .set_content_block("prop:y-lambda-recipe-from-partition")
         .add_parameter("q_0_mpf50", mp.nstr(Q0, 50))
         .add_parameter("m_e_MeV", M_E_MEV)
-        .add_parameter("m_p_AME_MeV", M_P_MEV_VALIDATION)
-        .add_parameter("m_n_AME_MeV", M_N_MEV_VALIDATION)
+        # float() casts: M_*_VALIDATION are mpmath.mpf; WitnessBuilder.save
+        # uses default=str so without the cast these would emit as
+        # JSON strings — keep numeric.
+        .add_parameter("m_p_AME_MeV", float(M_P_MEV_VALIDATION))
+        .add_parameter("m_n_AME_MeV", float(M_N_MEV_VALIDATION))
         .add_parameter("mpmath_dps", mp.mp.dps)
         .add_data("plancherel_results", {
             "e_total_50dps": mp.nstr(e_total_A, 30),
