@@ -14,7 +14,7 @@ symplectically self-dual simple object of an $R$-linear rigid
 :refterm[monoidal category]{#monoidal-category} has rank
 two, with the volume form $\epsilon \colon \Lambda^2 V \to
 \mathbf{1}$ produced by the factorisation through evaluation;
-the proof is the **volume from rigidity** (proo) block.
+the proof is the **volume from rigidity** (proof) block.
 **Volume from rigidity on $\mathrm{SU}(2)$** (rem) reads the
 factorisation off the determinant on $\mathbb{C}^2$.
 **Emergence of the gauge group** (thm) packages the result:
@@ -22,7 +22,7 @@ $G \cong \mathrm{SU}(2)$ (or $\mathrm{SL}(2, R)$ depending on
 the signature of the Frobenius pairing). The proof is split
 into **volume-determinant on $\mathrm{SU}(2)$** (prop),
 **dagger-unitarity on $\mathrm{SU}(2)$** (prop), the assembled
-**emergence proof** (proo), each with its own proof block, and
+**emergence proof** (proof), each with its own proof block, and
 **$\mathrm{SU}(2)$ emergence on $\mathrm{SU}(2)$** (ex) as a
 sanity check.
 
