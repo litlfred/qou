@@ -393,10 +393,10 @@ export default chapter({
         "moduli-symmetry-d4",
         "mobius-limit-from-thimble",
         "morse-wall-q-moduli",
-        // PL ↔ categorical mass-tower bridges (archimedean split kept strict)
+        // Categorical Markov-Frobenius ≡ algebraic residue (PL = archimedean shadow)
         "sw-period-thimble-equivalence",
         "jet-gb-pl-correspondence",
-        // Algebraic-geometric duality of PL and SW theories
+        // Algebraic-geometric duality with SW theory
         "gb-reduction-pl-thimble-bijection",
         "denominator-zeros-as-sw-critical-points",
         "abelianisation-at-algebraic-poles",
