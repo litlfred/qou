@@ -35,6 +35,18 @@ isospin mirrors (T vs ³He), exactly what's needed to fix the
   closure by PR #654's F2 probe — but it survives at the doubly-
   magic anchor. The interface-type-resolved formula is the
   candidate that addresses the Z↔N asymmetry.
+
+CLASS-A acknowledged-anchor banner (per Workplan-0b/M_N):
+This script imports M_*_MEV_VALIDATION constants from
+`codata_constants.py` as production inputs (not just as
+comparison targets).  M_N is currently a CLASS-A acknowledged-
+stub anchor pending its own substrate derivation — see
+`docs/audits/2026-05-18-workplan-0b-m-n-substrate-derivation.md`
+for the open spec.  Until that lands, the calibration-discipline
+audit (`canonical-script-input-audit`) classifies this script
+as "with-substrate-splitting" or "anchor-pending"; reviewers
+should treat the M_*_MEV_VALIDATION usage as CAL-3-ish anchor,
+NOT as an independent calibration input.
 """
 
 from __future__ import annotations
