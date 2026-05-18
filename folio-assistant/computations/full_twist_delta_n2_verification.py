@@ -47,7 +47,8 @@ import sympy as sp
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 
-mp.mp.dps = 50
+from _precision import set_compute_dps, fmt
+set_compute_dps()  # mp.mp.dps = QOU_COMPUTE_DPS (default 50)
 
 from q_parameter import Q_MP  # noqa: E402
 
@@ -112,7 +113,7 @@ def main() -> int:
                 "lambda": list(lam),
                 "content_sum": c,
                 "dim_irrep": d,
-                "q_to_c_at_q0_50dps": str(q_c_at_q0),
+                "q_to_c_at_q0_50dps": fmt(q_c_at_q0),
                 "is_delta_invariant": is_invariant,
             })
             sum_dim_irrep += d
@@ -230,7 +231,7 @@ def main() -> int:
          )
          .set_content_block("conj:categorical-neutrality-saturated-shells"))
     w.parameters.update({
-        "q_0": str(Q0),
+        "q_0": fmt(Q0),
         "magic_nucleon_counts": sorted(MAGIC),
         "n_range_swept": [1, 12],
     })

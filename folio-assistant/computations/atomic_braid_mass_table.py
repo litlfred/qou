@@ -156,7 +156,8 @@ import sympy as sp
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 
-mp.mp.dps = 50
+from _precision import set_compute_dps, fmt
+set_compute_dps()  # mp.mp.dps = QOU_COMPUTE_DPS (default 50)
 
 from markov_trace_recursive import markov_trace_of_word, q as _q  # noqa: E402
 from q_parameter import Q_MP  # noqa: E402
@@ -496,19 +497,19 @@ def main() -> int:
         rows.append({
             "atom": atom, "Z": terms["Z"], "N": terms["N"], "A": terms["A"],
             "is_magic": terms["is_magic"],
-            "M_codata_MeV": str(M_codata),
-            "M_pred_MeV": str(M_pred),
-            "err_pct": str(err_pct),
-            "term1_atomic_total": str(terms["t1"]),
-            "term1_factor_disjoint_base": str(terms["t1_factors"]["base_disjoint"]),
-            "term1_factor_a_ZN": str(a_ZN),
+            "M_codata_MeV": fmt(M_codata),
+            "M_pred_MeV": fmt(M_pred),
+            "err_pct": fmt(err_pct),
+            "term1_atomic_total": fmt(terms["t1"]),
+            "term1_factor_disjoint_base": fmt(terms["t1_factors"]["base_disjoint"]),
+            "term1_factor_a_ZN": fmt(a_ZN),
             "term1_factor_a_ZN_source": terms["t1_factors"]["a_ZN_source"],
-            "term1_factor_full_twist_delta_n2": str(terms["t1_factors"]["full_twist_delta_n2"]),
-            "term2_markov_z2": str(terms["t2"]),
-            "term3_markov_z4": str(terms["t3"]),
-            "term4_frobenius_codim": str(terms["t4"]),
-            "term6_cyclotomic_tail_MeV": str(terms["t6_MeV"]),
-            "total_hecke": str(terms["total_hecke"]),
+            "term1_factor_full_twist_delta_n2": fmt(terms["t1_factors"]["full_twist_delta_n2"]),
+            "term2_markov_z2": fmt(terms["t2"]),
+            "term3_markov_z4": fmt(terms["t3"]),
+            "term4_frobenius_codim": fmt(terms["t4"]),
+            "term6_cyclotomic_tail_MeV": fmt(terms["t6_MeV"]),
+            "total_hecke": fmt(terms["total_hecke"]),
             "n_gens": terms["n_gens"],
         })
         if atom != "p":
@@ -573,13 +574,13 @@ def main() -> int:
          )
          .set_content_block("prop:atomic-mass-gb-nf"))
     w.parameters.update({
-        "q_0": str(Q0),
-        "h": str(H_VAL),
-        "z": str(Z_MARK),
-        "m_e_MeV": str(M_E_MEV),
-        "E_0_MeV_proton_anchored": str(E_0),
-        "abs_tr_M_atomic_p": str(tr_p),
-        "abs_tr_M_atomic_n": str(tr_n),
+        "q_0": fmt(Q0),
+        "h": fmt(H_VAL),
+        "z": fmt(Z_MARK),
+        "m_e_MeV": fmt(M_E_MEV),
+        "E_0_MeV_proton_anchored": fmt(E_0),
+        "abs_tr_M_atomic_p": fmt(tr_p),
+        "abs_tr_M_atomic_n": fmt(tr_n),
         "magic_shells_used": sorted(MAGIC_NUCLEON_COUNTS),
         "jones_quotient_table": {
             "A=1": "1",
@@ -600,7 +601,7 @@ def main() -> int:
     ])
     w.add_data("rows", rows)
     w.add_data("summary", {
-        "mean_abs_err_pct_strategy3": str(mean_atomic),
+        "mean_abs_err_pct_strategy3": fmt(mean_atomic),
         "mean_abs_err_pct_legacy_GS_NF": (
             str(legacy_mean) if legacy_mean is not None else None
         ),
