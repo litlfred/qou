@@ -58,7 +58,7 @@ def main():
     res_Fc_simp = sp.cancel(res_Fc)
     print(f"  ∏ F_z(z, c_k) = {res_Fz_simp}")
     print()
-    print(f"  ∏ F_c(z, c_k) = discriminant_c(F) = {res_Fc_simp}")
+    print(f"  ∏ F_c(z, c_k) = res_c(F, F_c) = -disc_c(F) = {res_Fc_simp}")
     print()
 
     # sw_3root_product_degree1(z) = -res_Fz / res_Fc · (leading-coeff correction)

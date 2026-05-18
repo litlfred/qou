@@ -2,13 +2,15 @@
 # QOU.BraidKnot.SW3RootRationalIntegrand
 
 The Schur-Weyl 3-root product `λ_{SW}^(1)(z)` is the exact rational
-function `-P(z)/D(z)` where `P, D` are the resultant and discriminant
-of the color-tube cubic.
+function `-P(z)/D(z)` where `P, D` are the cross-resultant and the
+derivative resultant of the color-tube cubic, respectively.
 
 This file contains:
 - Definitions of the color-tube cubic `F(z, c)`
 - The numerator `P(z) = res_c(F, F_z)`
-- The denominator `D(z) = disc_c(F)` (palindromic)
+- The denominator `D(z) = res_c(F, F_c) = -disc_c(F)` (palindromic).
+  For a monic cubic, `res_c(F, F_c)` is `(-1)^{n(n-1)/2} = -1` times
+  `disc_c(F)`, so `D(0) = +16` while `disc_c(F)|_{z=0} = -16`.
 - The proposition `sw_3root_product_degree1 = -P/D`
 
 Proof relies on:
@@ -45,8 +47,9 @@ noncomputable def colorTubeCubic_dc (z c : ℝ) : ℝ :=
 noncomputable def sw3RootProduct_numerator (z : ℝ) : ℝ :=
   64 * z^6 + 96 * z^5 + 120 * z^4 + 160 * z^3 + 105 * z^2 + 66 * z + 39
 
-/-- Denominator polynomial `D(z) = disc_c(F) = ∏_k F_c(z, c_k)`.
-    Palindromic coefficients: (16, 24, 35, 50, 35, 24, 16). -/
+/-- Denominator polynomial `D(z) = res_c(F, F_c) = ∏_k F_c(z, c_k)`.
+    For this monic cubic, `D(z) = -disc_c(F)` (sign `(-1)^{n(n-1)/2} = -1`
+    with `n = 3`). Palindromic coefficients: (16, 24, 35, 50, 35, 24, 16). -/
 noncomputable def sw3RootProduct_denominator (z : ℝ) : ℝ :=
   16 * z^6 + 24 * z^5 + 35 * z^4 + 50 * z^3 + 35 * z^2 + 24 * z + 16
 

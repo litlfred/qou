@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T20:15:33.492133+00:00",
-  "commitSha": "e96275c1e58f89d1a3d1c787d376c573392afc53",
+  "computedAt": "2026-05-18T20:33:51.823222+00:00",
+  "commitSha": "76d8f4327f8043f573a97f542ae263eb2c84f30d",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2057,7 +2057,6 @@
       ],
       "computational-only": [
         "4he-binding-full-pipeline.witness.json",
-        "A-at-post-hoc-h-expansion.witness.json",
         "A-operator-extract-general.witness.json",
         "A-operator-extract-h9-pn.witness.json",
         "A-operator-extract-h9-pp.witness.json",

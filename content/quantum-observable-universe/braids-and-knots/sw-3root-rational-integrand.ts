@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 /**
  * The Schur-Weyl 3-root product λ_{SW}^(1)(z) appearing in the
  * categorical action integral A(a) is an EXACT rational function
- * of z with palindromic-coefficient discriminant.
+ * of z with palindromic-coefficient denominator.
  *
  * Specifically:
  *   λ_{SW}^(1)(z) = ∏_k dc_k/dz = -P(z)/D(z)
@@ -11,10 +11,12 @@ import { proposition } from "../../schema/builders";
  * where the cubic roots c_k(z) satisfy the color-tube cubic
  * F(z, c) = c³ + (4z+1)c² + (6z²+3z+1)c + (4z³+3z²+2z+1), and:
  *
- *   P(z) = res_c(F, F_z) = 64z⁶+96z⁵+120z⁴+160z³+105z²+66z+39
- *   D(z) = disc_c(F)     = 16z⁶+24z⁵+35z⁴+50z³+35z²+24z+16
+ *   P(z) = res_c(F, F_z)   = 64z⁶+96z⁵+120z⁴+160z³+105z²+66z+39
+ *   D(z) = res_c(F, F_c)   = 16z⁶+24z⁵+35z⁴+50z³+35z²+24z+16
+ *                          = -disc_c(F)   (sign for monic cubic: (-1)^{n(n-1)/2} = -1)
  *
- * D(z) has palindromic coefficients (z ↔ 1/z symmetry).
+ * D(z) has palindromic coefficients (z ↔ 1/z symmetry). The .md
+ * proof explains the sign convention in detail.
  *
  * Proof: implicit function theorem + classical Vieta-resultant
  * identity. Verified numerically at z=0.1 to machine precision
