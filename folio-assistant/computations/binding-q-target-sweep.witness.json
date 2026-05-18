@@ -1,0 +1,211 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-18T22:11:35.000277+00:00",
+  "commitSha": "adb9bfb002268731d1c0a75224873789da85a179",
+  "assertions": [
+    {
+      "name": "binding_rows_count",
+      "computed": 6,
+      "expected": 6,
+      "passed": true,
+      "tolerance": 0,
+      "source": "6 atoms: D, T, 3He, 4He, 6Li, 7Li"
+    },
+    {
+      "name": "qbeta_ladder_rungs",
+      "computed": 6,
+      "expected": 6,
+      "passed": true,
+      "tolerance": 0,
+      "source": "N=0..N=3 + N=4 doc-form + N=4 sign-fixed (6 rungs total)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 9,
+  "computation": "binding-q-target-sweep",
+  "scriptFile": "binding_q_target_sweep.py",
+  "scriptHash": "f30353a0ab80",
+  "scriptCommitSha": "unknown",
+  "description": "Per-isotope binding-energy + Q_β precision-ladder sweep against Workplan v7 L2 100×-experimental targets. Shows current canonical state across all on-disk witnesses. Audit-only — no new predictions.",
+  "data": {
+    "binding_rows": [
+      {
+        "atom": "D",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "B_AME_MeV": "2.224566120",
+        "sigma_B_MeV": "1.000e-6",
+        "sigma_rel_ppb": "449.5",
+        "target_100x_ppb": "4.49526",
+        "abs_tr_M_q0": null,
+        "zero_param_pred_MeV": "2.248820795",
+        "zero_param_err_ppb": "1.090e+07",
+        "zero_param_status": "misses-1x",
+        "canonical_binding_status": "delta_lambda_unavailable"
+      },
+      {
+        "atom": "T",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "B_AME_MeV": "8.481798000",
+        "sigma_B_MeV": "1.000e-6",
+        "sigma_rel_ppb": "117.9",
+        "target_100x_ppb": "1.17900",
+        "abs_tr_M_q0": null,
+        "zero_param_pred_MeV": "8.468598387",
+        "zero_param_err_ppb": "1.556e+06",
+        "zero_param_status": "misses-1x",
+        "canonical_binding_status": "delta_lambda_unavailable"
+      },
+      {
+        "atom": "3He",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "B_AME_MeV": "7.718037510",
+        "sigma_B_MeV": "1.000e-6",
+        "sigma_rel_ppb": "129.6",
+        "target_100x_ppb": "1.29567",
+        "abs_tr_M_q0": null,
+        "zero_param_pred_MeV": "7.488919310",
+        "zero_param_err_ppb": "2.969e+07",
+        "zero_param_status": "misses-1x",
+        "canonical_binding_status": "delta_lambda_unavailable"
+      },
+      {
+        "atom": "4He",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "B_AME_MeV": "28.29569127",
+        "sigma_B_MeV": "1.000e-6",
+        "sigma_rel_ppb": "35.34",
+        "target_100x_ppb": "0.353411",
+        "abs_tr_M_q0": null,
+        "zero_param_pred_MeV": "29.95567724",
+        "zero_param_err_ppb": "5.867e+07",
+        "zero_param_status": "misses-1x",
+        "canonical_binding_status": "delta_lambda_unavailable"
+      },
+      {
+        "atom": "6Li",
+        "Z": 3,
+        "N": 3,
+        "A": 6,
+        "B_AME_MeV": "31.99404550",
+        "sigma_B_MeV": "5.000e-6",
+        "sigma_rel_ppb": "156.3",
+        "target_100x_ppb": "1.56279",
+        "abs_tr_M_q0": null,
+        "zero_param_pred_MeV": null,
+        "zero_param_err_ppb": null,
+        "zero_param_status": "—",
+        "canonical_binding_status": "delta_lambda_unavailable"
+      },
+      {
+        "atom": "7Li",
+        "Z": 3,
+        "N": 4,
+        "A": 7,
+        "B_AME_MeV": "39.24470100",
+        "sigma_B_MeV": "5.000e-6",
+        "sigma_rel_ppb": "127.4",
+        "target_100x_ppb": "1.27406",
+        "abs_tr_M_q0": null,
+        "zero_param_pred_MeV": null,
+        "zero_param_err_ppb": null,
+        "zero_param_status": "—",
+        "canonical_binding_status": "delta_lambda_unavailable"
+      }
+    ],
+    "qbeta_precision_ladder": [
+      {
+        "N": 0,
+        "label": "Form A bare (single-wrap symbolic)",
+        "Q_pred_MeV": "0.78364580284495",
+        "err_MeV": "0.001312",
+        "err_ppb": "1.67754e+6",
+        "categorical_source": "m_e · |q²-2q-1| (q+1) / (2q³)"
+      },
+      {
+        "N": 1,
+        "label": "cos(α - b·ℏ_q²/2)  [Kashiwara b]",
+        "Q_pred_MeV": "0.78239114271466",
+        "err_MeV": "5.773e-5",
+        "err_ppb": "73790.4",
+        "categorical_source": "Kashiwara f₁ matrix element on V_(2,1)"
+      },
+      {
+        "N": 2,
+        "label": "Q_N1 · (1 - b² ℏ_q⁴)  [Kashiwara b²]",
+        "Q_pred_MeV": "0.78233438546764",
+        "err_MeV": "9.715e-7",
+        "err_ppb": "1241.76",
+        "categorical_source": "Kashiwara f₁†f₁ return amplitude (b²)"
+      },
+      {
+        "N": 3,
+        "label": "Q_N2 · (1 + c₃·b³·ℏ_q⁶)  [c₃ = J_Hopf(q=1) = -2]",
+        "Q_pred_MeV": "0.78233341870800",
+        "err_MeV": "4.708e-9",
+        "err_ppb": "6.01790",
+        "categorical_source": "Hopf-link Jones polynomial at q=1 (cross-block)"
+      },
+      {
+        "N": 4,
+        "label": "Q_N3 · (1 + c₄·b⁴·ℏ_q⁸)  [doc: c₄ = +(b²+1/2)]",
+        "Q_pred_MeV": "0.78233342386545",
+        "err_MeV": "9.865e-9",
+        "err_ppb": "12.6103",
+        "categorical_source": "Kashiwara b² + Hopf-half integer offset (mixed)",
+        "note": "Doc-form c₄ = +(b²+1/2) WORSENS to +12.6 ppb. Sign issue — see 2026-05-18-qbeta-n4-sign-investigation.md."
+      },
+      {
+        "N": "4-flipped",
+        "label": "Q_N3 · (1 + c₄·b⁴·ℏ_q⁸)  [SIGN-FIXED: c₄ = -(b²+1/2)]",
+        "Q_pred_MeV": "0.78233341355056",
+        "err_MeV": "-4.494e-10",
+        "err_ppb": "-0.574486",
+        "categorical_source": "Sign-flipped categorical (audit fix)",
+        "note": "Sign-flipped categorical closes to -0.57 ppb. Beats 7.80 ppb target by 14×. Doc's claimed -7 ppt requires empirical c_4 = -1.144 (9.5% off categorical)."
+      }
+    ],
+    "upstream_witness_hashes": [
+      {
+        "path": "canonical-tr-m-via-chi-cache.witness.json",
+        "sha256": "a613a0eb1ada8c524068cccf2046da77f4f026b955f5bbabf16df7950c5992d4",
+        "size_bytes": 40939,
+        "commitSha": "957288e7d7426439c83288a047eaeec3f513e733",
+        "scriptCommitSha": "46d347363f6308545ed7aa5387ecb5cb252e5c06",
+        "computedAt": "2026-05-18T02:23:01.830243+00:00"
+      },
+      {
+        "path": "mass-table-ppb.witness.json",
+        "sha256": "25cc77c37de0a92bd627e56baefa4e3c08401b3aac93ca1bcfe31888238de89d",
+        "size_bytes": 6158,
+        "commitSha": null,
+        "scriptCommitSha": null,
+        "computedAt": "2026-05-18T19:42:13.654186+00:00"
+      },
+      {
+        "path": "q-beta-predicted.witness.json",
+        "sha256": "ac5b35a392db55bda37df0ee35b3b2c919244baca0cee04eba1eb957a9f8f4fe",
+        "size_bytes": 6719,
+        "commitSha": "9b13047f672c45fed1cb58aa347daad5d71e335e",
+        "scriptCommitSha": "bd3f2bddb7c582ebfb964f2fcba18fcc2461739f",
+        "computedAt": "2026-05-11T21:02:21.035127+00:00"
+      },
+      {
+        "path": "q-beta-operator-valued-N3.witness.json",
+        "sha256": "4732372316e8f59d81ccceff8d7909fa9b459be6e4790e94d4bacc06294173d6",
+        "size_bytes": 4731,
+        "commitSha": "31201ed80a4fdeb3fb994ffe14cee3a0abd5add5",
+        "scriptCommitSha": "unknown",
+        "computedAt": "2026-05-16T01:04:25.932637+00:00"
+      }
+    ]
+  }
+}

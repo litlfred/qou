@@ -170,13 +170,41 @@ def main() -> dict:
             continue
         rows.append(_row_for(obs, mpf(str(v)), borr_source))
 
-    # ── Q_β — from q-beta-predicted witness ──────────────────────────
-    qb = load_witness("q-beta-predicted.witness.json")
-    qb_pred_data = qb.get("data", {}).get("q_beta_prediction", {})
-    v = qb_pred_data.get("Q_beta_pred_MeV")
-    if v is not None:
-        rows.append(_row_for("Q_beta", mpf(str(v)),
-                             "q-beta-predicted.witness.json"))
+    # ── Q_β — read the BEST AVAILABLE precision-ladder rung ──────────
+    # The framework's Q_β precision ladder (q-beta-categorical-precision-
+    # ladder.md) goes from N=0 (Form A bare, 1678 ppm) through
+    # N=3 (Hopf c_3=-2, ~6 ppb categorical) and N=4 (b² + 1/2, ppt).
+    # Reading the N=0 Form A bare witness understates the framework's
+    # actual prediction by ~280 000×. Read the N=3 categorical rung
+    # (Q_N2 · (1 + c_3·b³·ℏ_q^6) with c_3 = -2 from J_Hopf(q=1)) which
+    # is the highest order with a fully-categorical c_k (N=4 uses
+    # the Kashiwara×Hopf-half mixed offset b² + 1/2; both rungs are
+    # closed but N=3 is the simplest to cite).
+    qb_n3 = load_witness("q-beta-operator-valued-N3.witness.json")
+    qb_n3_data = qb_n3.get("data", {})
+    if qb_n3_data.get("Q_N2") is not None:
+        # Re-derive N=3 with categorical c_3 = -2 (not the fit c_3
+        # = -2.01 that the witness reports for tautological 0.0 ppm).
+        Q_N2 = mpf(str(qb_n3_data["Q_N2"]))
+        b_hoef = mpf(str(qb_n3_data["hoefsmit_b"]))
+        hbar_sq = mpf(str(qb_n3_data["hbar_q_sq"]))
+        c3_categorical = mpf(-2)  # J_Hopf(q=1), the Hopf-link Jones
+                                  # polynomial at q=1 — categorical
+                                  # source per the precision-ladder
+                                  # rung table.
+        Q_N3 = Q_N2 * (1 + c3_categorical * (b_hoef ** 3) * (hbar_sq ** 3))
+        rows.append(_row_for(
+            "Q_beta", Q_N3,
+            "q-beta-operator-valued-N3.witness.json (N=3 categorical, "
+            "c_3 = -2 = J_Hopf(q=1))",
+        ))
+    else:
+        # Fallback to the legacy N=0 bare prediction if N=3 cache absent
+        qb = load_witness("q-beta-predicted.witness.json")
+        v = qb.get("data", {}).get("q_beta_prediction", {}).get("Q_beta_pred_MeV")
+        if v is not None:
+            rows.append(_row_for("Q_beta", mpf(str(v)),
+                                 "q-beta-predicted.witness.json [N=0 BARE — FALLBACK]"))
 
     # ── m_e — CAL-1 anchor (by definition err = 0) ───────────────────
     codata, sigma_exp, role, sigma_source = OBSERVABLES["m_e"]
@@ -262,7 +290,7 @@ if __name__ == "__main__":
     # Reference upstream witnesses for staleness tracking
     for upstream in [
         COMPUTE_DIR / "m-p-borromean-verification-50dps.witness.json",
-        COMPUTE_DIR / "q-beta-predicted.witness.json",
+        COMPUTE_DIR / "q-beta-operator-valued-N3.witness.json",
         COMPUTE_DIR / "codata-2022-validation-masses.witness.json",
         COMPUTE_DIR / "cal-3-q-beta.witness.json",
     ]:

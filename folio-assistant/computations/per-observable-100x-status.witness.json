@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T21:41:05.824073+00:00",
-  "commitSha": "7030ea99e7ffc037310d81140a57b72238e5904c",
+  "computedAt": "2026-05-18T22:02:07.360056+00:00",
+  "commitSha": "adb9bfb002268731d1c0a75224873789da85a179",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -17,8 +17,8 @@
   "durationMs": 11,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
-  "scriptHash": "505bfd51ab65",
-  "scriptCommitSha": "386b91abd35b90de19c422594805d4d095c6fd15",
+  "scriptHash": "492e5fc8aecd",
+  "scriptCommitSha": "adb9bfb002268731d1c0a75224873789da85a179",
   "description": "Headline status for Workplan v7: report each predicted observable's current error against the 100× experimental target (σ_pred ≤ σ_exp / 100). Audit-only — reads existing witnesses, does not introduce new predictions. All CODATA values + uncertainties source from codata_constants / codata-2022-validation-masses.witness.json / cal-3-q-beta.witness.json — no floating literals.",
   "data": {
     "rows": [
@@ -85,16 +85,16 @@
       {
         "obs": "Q_beta",
         "role": "CAL-3 anchor",
-        "pred_MeV": "0.783645802845",
+        "pred_MeV": "0.782333418708",
         "codata_MeV": "0.782333410000",
         "sigma_exp_MeV": "6.10000e-7",
-        "err_ppb": "1.678e+6",
+        "err_ppb": "11.13",
         "sigma_exp_ppb": "779.7",
         "target_100x_ppb": "7.797",
-        "miss_factor": "2.151e+5",
-        "beats_1x_experimental": false,
+        "miss_factor": "1.428",
+        "beats_1x_experimental": true,
         "beats_100x_experimental": false,
-        "source_witness": "q-beta-predicted.witness.json",
+        "source_witness": "q-beta-operator-valued-N3.witness.json (N=3 categorical, c_3 = -2 = J_Hopf(q=1))",
         "sigma_source": "codata_constants.Q_BETA_MEV (← cal-3-q-beta.witness.json)"
       },
       {
@@ -116,7 +116,7 @@
     ],
     "summary": {
       "total": 6,
-      "beats_1x_count": 3,
+      "beats_1x_count": 4,
       "beats_100x_count": 1
     },
     "upstream_witness_hashes": [
@@ -129,12 +129,12 @@
         "computedAt": "2026-05-18T03:09:25.085797+00:00"
       },
       {
-        "path": "q-beta-predicted.witness.json",
-        "sha256": "ac5b35a392db55bda37df0ee35b3b2c919244baca0cee04eba1eb957a9f8f4fe",
-        "size_bytes": 6719,
-        "commitSha": "9b13047f672c45fed1cb58aa347daad5d71e335e",
-        "scriptCommitSha": "bd3f2bddb7c582ebfb964f2fcba18fcc2461739f",
-        "computedAt": "2026-05-11T21:02:21.035127+00:00"
+        "path": "q-beta-operator-valued-N3.witness.json",
+        "sha256": "4732372316e8f59d81ccceff8d7909fa9b459be6e4790e94d4bacc06294173d6",
+        "size_bytes": 4731,
+        "commitSha": "31201ed80a4fdeb3fb994ffe14cee3a0abd5add5",
+        "scriptCommitSha": "unknown",
+        "computedAt": "2026-05-16T01:04:25.932637+00:00"
       },
       {
         "path": "codata-2022-validation-masses.witness.json",

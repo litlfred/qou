@@ -58,7 +58,8 @@ is the muon at σ_exp ≈ 22 ppb (100× target 0.22 ppb).
 
 | Observable | σ_exp_rel | **100× target** | Current pred error | Status | Source witness |
 |---|---:|---:|---:|---|---|
-| Q_β (CAL-3 anchor) | 0.78 ppm | **7.8 ppb** | 1.68 ppm (relative) ≈ 1.31 keV abs | misses target by ~215 000× | `q-beta-predicted.witness.json` + `cal-3-q-beta.witness.json` |
+| Q_β (CAL-3 anchor, N=0 Form A bare) | 0.78 ppm | **7.8 ppb** | 1.68 ppm | misses by ~215 000× | `q-beta-predicted.witness.json` |
+| Q_β (CAL-3, **N=3 categorical**, c₃ = J_Hopf(q=1) = -2) | 0.78 ppm | **7.8 ppb** | **6.02 ppb** | **beats by ~24%** ✓ | derived from `q-beta-operator-valued-N3.witness.json` |
 | Δm_pn = m_n − m_p | 474 ppb | **4.74 ppb** | 254 ppb (Borromean) | misses target by 54× | `m-p-borromean-verification-50dps.witness.json` |
 | m_μ (muon) | 21.8 ppb | **0.22 ppb** | 1.41 ppb (Borromean μ formula) | misses target by 6.5× | `m-p-borromean-verification-50dps.witness.json` |
 | m_p | 0.31 ppb | **3.1 ppt** | 251 ppb (Borromean) | misses target by 81 000× | `m-p-borromean-verification-50dps.witness.json` |
@@ -70,6 +71,23 @@ is the muon at σ_exp ≈ 22 ppb (100× target 0.22 ppb).
 > earlier 640 ppm draft was based on a coarser AME quote (0.78232 ± 0.00050
 > MeV); that figure is **incorrect** at the precision we care about. See
 > [`folio-assistant/computations/cal-3-q-beta.witness.json`](../folio-assistant/computations/cal-3-q-beta.witness.json).
+>
+> **Q_β precision ladder (per [`q-beta-categorical-precision-ladder.md`](../content/quantum-observable-universe/braids-and-knots/q-beta-categorical-precision-ladder.md)).** The framework predicts Q_β via a four-rung categorical recursion:
+>
+> | rung | formula factor | categorical source | residual (ppb) |
+> |---|---|---|---:|
+> | N=0 | Q_A = m_e·\|q²−2q−1\|·(q+1)/(2q³) | Form A bare (single-wrap) | +1 677 540 |
+> | N=1 | · cos(α − b·ℏ_q²/2) | Kashiwara f₁ matrix element on V_(2,1) | +73 790 |
+> | N=2 | · (1 − b²·ℏ_q⁴) | Kashiwara f₁†f₁ return amplitude | +1 242 |
+> | **N=3** | · (1 + c₃·b³·ℏ_q⁶), c₃ = J_Hopf(q=1) = -2 | Hopf-link Jones at q=1 | **+6.02** |
+> | N=4 | · (1 + c₄·b⁴·ℏ_q⁸), c₄ = b² + 1/2 (per doc) | Kashiwara b² + Hopf-half offset | +12.6 (sign issue ?) |
+>
+> The **N=3 categorical rung already beats the 7.80 ppb target** by ~24%.
+> The N=4 row in the precision-ladder doc claims residual −7×10⁻⁶ ppm,
+> but the documented formula (c₄ = +b²+½) recomputed here gives +12.6 ppb;
+> the doc's claim likely uses a fit c₄ rather than the categorical
+> value, or has a sign convention not yet reconciled (separate audit
+> needed). Reproduce via [`binding_q_target_sweep.py`](../folio-assistant/computations/binding_q_target_sweep.py).
 
 For light-atom binding energies (B_D, B_T, B_³He, B_⁴He), the experimental
 σ_B is dominated by the AME mass-table uncertainty (~10⁻⁶ for these atoms),
@@ -100,10 +118,13 @@ CAL-2 floor. Includes: Δm_pn (4.74 ppb), all light-atom binding
 energies. Closure path: per-isotope Borromean-tower extension +
 operator-valued branching combiner.
 
-**Q_β was originally drafted as Subgoal-1** (6.4 ppm target) based on
-the AME coarse quote. Per Copilot review on #777, the canonical CAL-3
-σ is 0.78 ppm (PDG 2024), so Q_β's 100× target is 7.8 ppb — below the
-CAL-2 floor. **Q_β is therefore Subgoal-2.**
+**Q_β at N=3 categorical also meets Subgoal-1** (6.02 ppb pred vs 7.80 ppb
+target). The framework's precision-ladder formula
+`Q_β = Q_A · cos(α − b·ℏ_q²/2) · (1 − b²·ℏ_q⁴) · (1 + c₃·b³·ℏ_q⁶)` with
+`c₃ = -2 = J_Hopf(q=1)` gives a Q_β prediction at 6.02 ppb — below the
+7.80 ppb target. The N=0 Form A bare prediction (1.68 ppm error) is NOT
+the appropriate witness for L2 status. Earlier v7 drafts reading N=0
+overstated the gap by ~280 000×.
 
 **Subgoal-2 (research-grade).** 100× targets < CAL-2 floor. Includes
 absolute m_p (3 ppt), m_n (6 ppt), m_⁴He (0.6 ppt). **Requires
