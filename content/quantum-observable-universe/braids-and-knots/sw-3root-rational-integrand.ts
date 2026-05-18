@@ -30,7 +30,7 @@ export default proposition({
     "Schur-Weyl 3-root product is an exact rational function with palindromic discriminant",
   lean: {
     ref: "qou:QOU.BraidKnot.SW3RootRationalIntegrand",
-    validation: "not_checked",
+    validation: "stub",  // .lean colocated; not yet imported into Lake tree (Copilot review on PR #751)
   },
   uses: [],
   cites: [

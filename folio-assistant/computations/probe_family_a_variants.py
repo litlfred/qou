@@ -114,14 +114,14 @@ def main():
 
     # V2: (1/N) Σ dim_q²; choose N so leading = 5/2 at q=1
     sum_dim_q2 = sum(d**2 for d in dim_q.values())
-    sum_dim_q2_at_1 = sum_dim_q2.subs(q, 1)
+    sum_dim_q2_at_1 = sp.limit(sum_dim_q2, q, 1)
     N2 = sum_dim_q2_at_1 / sp.Rational(5, 2)
     V2 = sum_dim_q2 / N2
     variants[f"V2: (1/{N2}) Σ dim_q² V_λ"] = V2
 
     # V3: (1/N) Σ dim_q · dim_classical
     sum_mixed = sum(dim_q[k] * dim_cl[k] for k in dim_q)
-    sum_mixed_at_1 = sum_mixed.subs(q, 1)
+    sum_mixed_at_1 = sp.limit(sum_mixed, q, 1)
     N3 = sum_mixed_at_1 / sp.Rational(5, 2)
     V3 = sum_mixed / N3
     variants[f"V3: (1/{N3}) Σ dim_q · dim_cl"] = V3
@@ -130,7 +130,7 @@ def main():
     # Use [h_x(λ)]_q product as q-deformed hook
     # Simplification: use classical hook product
     sum_v4 = sum(dim_q[k] * sp.Integer(hook_prod[k]) for k in dim_q)
-    sum_v4_at_1 = sum_v4.subs(q, 1)
+    sum_v4_at_1 = sp.limit(sum_v4, q, 1)
     N4 = sum_v4_at_1 / sp.Rational(5, 2)
     V4 = sum_v4 / N4
     variants[f"V4: (1/{N4}) Σ hook_cl · dim_q"] = V4
@@ -142,13 +142,13 @@ def main():
         dim_q[(4,)] + dim_q[(3, 1)]
         - dim_q[(2, 1, 1)] - dim_q[(1, 1, 1, 1)]
     )
-    sum_v5_at_1 = sum_v5.subs(q, 1)
+    sum_v5_at_1 = sp.limit(sum_v5, q, 1)
     print(f"V5 sum at q=1: {sum_v5_at_1}")  # = 1+3-3-1 = 0
     # Can't normalize to 5/2; skip
 
     # V6: only self-conjugate (just (2,2))
     sum_v6 = dim_q[(2, 2)]
-    sum_v6_at_1 = sum_v6.subs(q, 1)
+    sum_v6_at_1 = sp.limit(sum_v6, q, 1)
     N6 = sum_v6_at_1 / sp.Rational(5, 2)
     V6 = sum_v6 / N6
     variants[f"V6: (1/{N6}) · dim_q V_(2,2) only"] = V6
@@ -173,8 +173,9 @@ def main():
 
     results = []
     for name, V in variants.items():
-        # Expand in ε
-        V_at_1 = sp.simplify(V.subs(q, 1))
+        # Expand in ε — use sp.limit for q→1 to handle q-integer 0/0
+        # (Copilot review on PR #751)
+        V_at_1 = sp.limit(V, q, 1)
         V_eps = V.subs(q, 1 + eps)
         try:
             V_series = sp.series(V_eps, eps, 0, 6).removeO()

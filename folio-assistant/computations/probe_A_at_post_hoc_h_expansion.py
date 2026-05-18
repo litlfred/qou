@@ -157,18 +157,29 @@ def main():
     print("=" * 70)
     print("VERDICT")
     print("=" * 70)
-    # Use degree-2 fit (linear in h²) for cleanest test
-    coeffs_2 = np.polyfit(h2, A_v, 1)
-    c_2_fit, c_0_fit = coeffs_2[0], coeffs_2[1]
-    if abs(c_0_fit - 2.5) < 0.005:
-        print(f"  c_0 = {c_0_fit:.6f} matches 5/2 (within 0.5%)")
+    # Guard on sample count — need ≥3 for a meaningful linear fit
+    # in h² (Copilot review on PR #751).
+    MIN_SAMPLES = 3
+    if len(q_v) < MIN_SAMPLES:
+        print(f"  Only {len(q_v)} valid sample(s) — INSUFFICIENT for fit.")
+        print(f"  Need ≥ {MIN_SAMPLES}. Skipping fit + witness output.")
+        c_0_fit = None
+        c_2_fit = None
+        fit_status = "insufficient_samples"
     else:
-        print(f"  c_0 = {c_0_fit:.6f} does NOT match 5/2 (off by {c_0_fit - 2.5:.4f})")
-    if abs(c_2_fit - (-G)) < 0.01:
-        print(f"  c_2 = {c_2_fit:.6f} matches -G = {-G:.6f} (within 0.01)")
-    else:
-        print(f"  c_2 = {c_2_fit:.6f} does NOT match -G = {-G:.6f}")
-        print(f"  Ratio c_2 / (-G) = {c_2_fit / (-G):.6f}")
+        # Use degree-2 fit (linear in h²) for cleanest test
+        coeffs_2 = np.polyfit(h2, A_v, 1)
+        c_2_fit, c_0_fit = coeffs_2[0], coeffs_2[1]
+        if abs(c_0_fit - 2.5) < 0.005:
+            print(f"  c_0 = {c_0_fit:.6f} matches 5/2 (within 0.5%)")
+        else:
+            print(f"  c_0 = {c_0_fit:.6f} does NOT match 5/2 (off by {c_0_fit - 2.5:.4f})")
+        if abs(c_2_fit - (-G)) < 0.01:
+            print(f"  c_2 = {c_2_fit:.6f} matches -G = {-G:.6f} (within 0.01)")
+        else:
+            print(f"  c_2 = {c_2_fit:.6f} does NOT match -G = {-G:.6f}")
+            print(f"  Ratio c_2 / (-G) = {c_2_fit / (-G):.6f}")
+        fit_status = "fit_completed"
 
     w = WitnessBuilder("A-at-post-hoc-h-expansion", engine="numpy+scipy")
     w.set_description(
@@ -177,12 +188,13 @@ def main():
     )
     w.set_content_block("conj:flavor-dressed-mass-from-substrate-split")
     w.add_data("n_samples", int(len(q_v)))
-    w.add_data("c_0_fit", float(c_0_fit))
-    w.add_data("c_2_fit", float(c_2_fit))
+    w.add_data("fit_status", fit_status)
+    w.add_data("c_0_fit", float(c_0_fit) if c_0_fit is not None else None)
+    w.add_data("c_2_fit", float(c_2_fit) if c_2_fit is not None else None)
     w.add_data("c_0_target_5_over_2", 2.5)
     w.add_data("c_2_target_minus_G", float(-G))
-    w.add_data("c_0_diff", float(c_0_fit - 2.5))
-    w.add_data("c_2_diff", float(c_2_fit - (-G)))
+    w.add_data("c_0_diff", float(c_0_fit - 2.5) if c_0_fit is not None else None)
+    w.add_data("c_2_diff", float(c_2_fit - (-G)) if c_2_fit is not None else None)
     out = w.save()
     print(f"\nWitness: {out.name}")
 
