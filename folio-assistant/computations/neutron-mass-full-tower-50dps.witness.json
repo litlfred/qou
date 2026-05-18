@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-17T00:29:41.511810+00:00",
-  "commitSha": "cea10508bce11a9849218dce57c040aceff332ee",
+  "computedAt": "2026-05-18T01:29:40.065466+00:00",
+  "commitSha": "9ad15d9f57f0591739d997088a1440a2e9e58888",
   "assertions": [
     {
       "name": "m_n_within_2_percent",
-      "computed": "0.9998041461361470288115187870939557517875648362181",
+      "computed": "0.98975983402739367080241885508369049889911954842642",
       "expected": "0",
       "passed": false,
       "tolerance": 0.02
@@ -19,11 +19,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 25,
+  "durationMs": 23,
   "computation": "neutron-mass-full-tower-50dps",
   "scriptFile": "derive_m_n_hecke_full_tower_50dps.py",
-  "scriptHash": "0f79615439f3",
-  "scriptCommitSha": "eb63239a8c63e391f2427c1c0002d2e6aaf9c959",
+  "scriptHash": "5d5af9c19e6b",
+  "scriptCommitSha": "08070cc474cbe4421658e6134740219ab3bae146",
   "description": "Full mass-endomorphism tower derivation of m_n at MPFR @ 50 dps. Sums T1 + T2 + T3 + T4 for the neutron and electron via the MPFR-native per-generator volumes from terms-2-3-atom-per-gen-mpfr-50dps.witness.json. m_n prediction in MeV computed as (m_n_hecke / m_e_hecke) × M_E_MEV. Three-cal discipline respected: only CAL-1 (M_E_MEV) and CAL-2 (q_0) consumed; no CODATA m_n injection. The residual (~-62.9 %) is the framework's actual prediction at this truncation — a real structural gap in the neutron-brane-tower formula (the udd quark content with σ⁻¹ pair under-counts the neutron's Wedderburn-weighted single-generator volume vs the proton's uud). Documented; not patched.",
   "contentBlock": "prop:mass-endomorphism-tower",
   "parameters": {
@@ -38,53 +38,40 @@
         "A_derivation": "max filtration grade of GS normal form",
         "Z": 0,
         "N": 1,
-        "T1_descended_50dps": "0.69860079680904402981227683415118999032035194675018",
-        "T2_single_50dps": "1.4230879031012522468576513528597279903439840504031",
-        "T3_pair_50dps": "0.15070113746601376515594220835655645541380032347035",
+        "T1_descended_50dps": "0.83329025047951637547090882116805412808114314357792",
+        "T2_single_50dps": "2.677338934461750667882700352331817273267449762642",
+        "T3_pair_50dps": "0.28361641237186968971094272424261886701109257208723",
         "T4_Frobenius_50dps": "1.6362871034827517326799193655339867440321053551337",
         "T5_chirality_BW_50dps_cat_units": "4.1907731474505720271944113268389195959283535915388",
-        "m_hecke_50dps": "8.0994500883096338017002010877403807760385952672961",
+        "m_hecke_50dps": "9.6213058482464604929388825901153966083201444249797",
         "wedderburn_vols_full_50dps": [
-          "0.7194133097224181476211795122397627076378432411659",
-          "0.97107015865274369644467729606208246103317407697938"
+          "0.8542103128258389606769442997911669155688329382913",
+          "0.97550947110774594315687948247161058517697160610811"
         ]
       },
       "electron": {
-        "atom": "electron",
-        "A_categorical_max_grade": 1,
-        "A_derivation": "max filtration grade of GS normal form",
-        "Z": 0,
-        "N": 0,
-        "T1_descended_50dps": "0.59384900067050962477184280318482122091510198537029",
-        "T2_single_50dps": "0.5235567176443421286045989066972462642711878244579",
-        "T3_pair_50dps": "0.0",
-        "T4_Frobenius_50dps": "1.2761128463443181177567435067352497395009951716945",
-        "T5_chirality_BW_50dps_cat_units": "20.097875389447032754312442527739237585472881589362",
-        "m_hecke_50dps": "22.491393954106202625445627744356554810160166570884",
-        "wedderburn_vols_full_50dps": [
-          "0.59384900067050962477184280318482122091510198537029"
-        ]
+        "m_hecke_50dps": "0.51099895"
       }
     },
     "ratios": {
-      "m_n_over_m_e_50dps": "0.36011329955077931599819331172229477466421986184991"
+      "m_n_over_m_e_50dps": "18.828425867110804225603364919077420038378052293414"
     },
     "predictions_MeV": {
-      "m_n_pred_50dps": "0.18401751795148370215679498418711532144390295197445"
+      "m_n_pred_50dps": "9.6213058482464604929388825901153966083201444249797"
     },
     "comparisons": {
       "m_n_codata_MeV": "939.56542052",
-      "rel_diff_n": "-0.9998041461361470288115187870939557517875648362181",
-      "rel_diff_n_ppm": "-999804.1461361470288115187870939557517875648362181"
+      "rel_diff_n": "-0.98975983402739367080241885508369049889911954842642",
+      "rel_diff_n_ppm": "-989759.83402739367080241885508369049889911954842642"
     },
     "upstream_witness_hashes": [
       {
         "path": "terms-2-3-atom-per-gen-mpfr-50dps.witness.json",
-        "sha256": "59844bcf6642edcd3c2d423ffa6dfe34f2a760522084d05fca6a9776c709eafa",
-        "size_bytes": 5304,
-        "commitSha": "cea10508bce11a9849218dce57c040aceff332ee",
-        "scriptCommitSha": "c1f6a93a50334848d674c02d99c2599bfe0447e8",
-        "computedAt": "2026-05-17T00:22:27.052628+00:00"
+        "sha256": "d3aaef97cac76b290a86a1eb79d80635cc2c0cb9c22893688aafb80c71318aaa",
+        "size_bytes": 10078,
+        "commitSha": "3e704a1f6fa06c0df47d928da92f7af4baf69815",
+        "scriptCommitSha": "67fbb9613f6a914d8523200fa66a1031d59d5295",
+        "computedAt": "2026-05-17T07:11:38.579433+00:00"
       }
     ]
   }

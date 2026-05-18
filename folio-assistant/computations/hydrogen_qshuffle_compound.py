@@ -86,7 +86,18 @@ def main() -> int:
     results = per_gen.get("data", {}).get("results") or per_gen.get("results", [])
     by_atom = {r["atom"]: r for r in results}
     proton_vols = [mpf(v["full"]) for v in by_atom["proton"]["wedderburn_vols"]]
-    electron_vols = [mpf(v["full"]) for v in by_atom["electron"]["wedderburn_vols"]]
+    if "electron" not in by_atom:
+        # Schema regression: main's terms_2_3 producer no longer emits
+        # the electron entry (post-2026-05-17 rebase).  Compute electron
+        # Wedderburn volume locally as the symmetric-channel V̂_e = q · z
+        # (2-strand Hoefsmit braid word [1,1,1] per Wenzl-bridge
+        # convention in `hecke_core._nucleon_gen_chains_mpfr`).  Re-uses
+        # q and z_mark already loaded above (gemini #687: no re-init).
+        electron_vols = [q * z_mark]
+        print(f"  WARNING: electron not in per-gen witness; using single-generator "
+              f"V̂_e = q·z ≈ {float(electron_vols[0]):.6f}")
+    else:
+        electron_vols = [mpf(v["full"]) for v in by_atom["electron"]["wedderburn_vols"]]
 
     # Build the COMPOUND ¹H chain via q-shuffle (disjoint strands ⇒
     # concatenation with identity gen at the boundary).

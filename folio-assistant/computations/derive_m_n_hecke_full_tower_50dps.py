@@ -65,6 +65,10 @@ from bw_chirality_isotopes import (  # noqa: E402
 )
 from term5_v2_chirality import aK_v2  # noqa: E402
 from gb_filtration_jet_tracker import reduce_braid  # noqa: E402
+# Centralized helpers (gemini #687 review — single source of truth).
+from _li_2_q_util import (  # noqa: E402
+    load_q_50dps, compute_t2_t3_from_vols,
+)
 
 M_E_MEV = mp.mpf(str(_M_E_MEV_RAW))
 
@@ -103,8 +107,15 @@ PER_GEN_WITNESS = HERE / "terms-2-3-atom-per-gen-mpfr-50dps.witness.json"
 OUT_PATH = HERE / "neutron-mass-full-tower-50dps.witness.json"
 
 
-def _sum_full_tower(per_gen_witness: dict, atom: str, Z: int, N: int) -> dict:
-    """Sum T1+T2+T3+T4+T5 with categorical A (max GS filtration grade)."""
+def _sum_full_tower(
+    per_gen_witness: dict, atom: str, Z: int, N: int,
+    q0: mp.mpf, qi: mp.mpf, z: mp.mpf,
+) -> dict:
+    """Sum T1+T2+T3+T4+T5 with categorical A (max GS filtration grade).
+
+    ``q0, qi, z`` are passed in from main (loaded once via
+    ``load_q_50dps`` — gemini #687 review).
+    """
     A = _A_categorical(atom)
     # Tolerate both data.results (modern) and top-level results (legacy)
     # schemas — gemini #663 review guidance.
@@ -117,8 +128,9 @@ def _sum_full_tower(per_gen_witness: dict, atom: str, Z: int, N: int) -> dict:
         for v in vols:
             desc *= v
         t1 = mp.fabs(desc)
-        t2 = mp.mpf(r["term2_single_50dps"])
-        t3 = mp.mpf(r["term3_pair_50dps"])
+        # T2/T3 computed locally via Li_2^q since the producer (post-2026-05-17
+        # rebase) no longer emits pre-summed scalars (item 3 from PR #663 followup).
+        t2, t3 = compute_t2_t3_from_vols(vols, q0, qi, z)
         t4 = term_4_frobenius_mp(A)
         t5_cat = _t5_cat_units_for(A, Z, N)
         return {
@@ -142,10 +154,18 @@ def main() -> int:
     # P31 / centralization: keep per_gen_hash for builder.add_upstream
     # equivalent below — no duplicate filesystem read.
     per_gen_w, per_gen_hash = load_and_hash_upstream(PER_GEN_WITNESS)
+    # Load q-substrate constants once (gemini #687 — avoid per-call reads).
+    q0, qi, z = load_q_50dps()
     print(f"\n  MPFR @ {mp.mp.dps} dps  —  m_n_pred from full tower (A_categorical)\n")
 
-    n_data = _sum_full_tower(per_gen_w, "neutron",  Z=0, N=1)
-    e_data = _sum_full_tower(per_gen_w, "electron", Z=0, N=0)
+    n_data = _sum_full_tower(per_gen_w, "neutron",  Z=0, N=1, q0=q0, qi=qi, z=z)
+    # Schema regression (post-2026-05-17 rebase): main's terms_2_3 producer
+    # dropped the electron atom.  Skip and fall back to CAL-1 anchor.
+    try:
+        e_data = _sum_full_tower(per_gen_w, "electron", Z=0, N=0, q0=q0, qi=qi, z=z)
+    except KeyError:
+        print("  NOTE: electron not in per-gen witness — using CAL-1 anchor")
+        e_data = {"m_hecke_50dps": str(M_E_MEV)}
 
     m_n_hecke = mp.mpf(n_data["m_hecke_50dps"])
     m_e_hecke = mp.mpf(e_data["m_hecke_50dps"])
