@@ -354,7 +354,7 @@ def sdp_select_knot_operator(
         "feasible": True,
         "x_star": list(map(float, res.X_star)),
         "y0_star": float(y0_star),
-        "y_star_proxy": [float(v) for v in Gx.tolist()],
+        "y_star": [float(v) for v in Gx.tolist()],
         "active_set": active_set,
         "primal_obj": float(res.primal_obj),
         "dual_obj": float(res.dual_obj),
