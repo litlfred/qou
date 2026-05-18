@@ -1,0 +1,45 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-18T00:44:38.584205+00:00",
+  "commitSha": "0fd092af098ad97f907de89376fe0a570b24dc76",
+  "assertions": [
+    {
+      "name": "isobar_decomposition_consistent",
+      "computed": 0.0016069069428709395,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.01
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 9,
+  "computation": "probe-isobar-delta-m-substrate",
+  "scriptFile": "probe_isobar_delta_m_substrate.py",
+  "scriptHash": "405b70dc8345",
+  "scriptCommitSha": "unknown",
+  "description": "Isobar mass difference test for prop:flavor-split-substrate",
+  "data": {
+    "q_pinned": "1.1099785955541805752815940796095093779932822799587",
+    "substrate_delta_m": {
+      "formula": "M_N · (q-1)² · (1 - q⁻⁴) / 3",
+      "value_MeV": "1.2916810930571290605622516448604499101762890413552",
+      "codata_delta_m_MeV": "1.29333236",
+      "residual_ppm": -1276.7537517355086
+    },
+    "test_case_A3": {
+      "atoms": [
+        "tritium",
+        "helium-3"
+      ],
+      "delta_Z": 1,
+      "M_observed_diff_MeV": "-0.5295249999999999999999999999999999999999999999977",
+      "quark_swap_contribution_MeV": "-1.2916810930571290605622516448604499101762890413552",
+      "implied_delta_BE_MeV": "0.76215609305712906056225164486044991017628904135751",
+      "codata_delta_BE_MeV": "0.763763",
+      "consistency_residual_MeV": "-0.001606906942870939437748355139550089823710958642493"
+    },
+    "interpretation": "Substrate prop:flavor-split-substrate provides the quark-swap contribution -ΔZ · Δm to isobaric mass differences.  The remaining contribution is the binding-energy difference, which depends on Coulomb + nuclear-symmetry + pairing energies — a separate substrate-derivation problem (open R&D, PR #679 territory).  Consistency of the decomposition for ³H ↔ ³He verifies the methodology.",
+    "extension_to_lithium": "⁶Li, ⁷Li have no stable isobar pair in the framework's current low-A atom set.  Once tr_M for H_{18}/H_{21} is available (deferred per atomic_mass_via_rho_k.py), the ⁶He/⁶Li/⁶Be triplet becomes the next testbed."
+  }
+}
