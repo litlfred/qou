@@ -70,13 +70,14 @@ from q_parameter import (
 )
 from experimental_constants import (
     M_E_MEV, M_E_MEV_ERR,
-    M_P_MEV, M_P_MEV_ERR,
-    M_N_MEV, M_N_MEV_ERR,
+    M_P_MEV_ERR,
+    M_N_MEV_ERR,
     M_N_MINUS_P_MEV, M_N_MINUS_P_MEV_ERR,
     VOL_BORROMEAN, VOL_BORROMEAN_ERR,
     rel_err, prop_power, prop_power_rel,
 )
 from witness_base import WitnessBuilder
+from codata_constants import M_P_MEV_VALIDATION, M_N_MEV_VALIDATION  # noqa: E402
 
 
 # ═══════════════════════════════════════════════════════════════════
@@ -267,7 +268,7 @@ skein_ratio_err = skein_ratio_n_p * math.sqrt(
 log_q_ratio = math.log(skein_ratio_n_p) / math.log(Q0)
 
 # CODATA mass ratio
-codata_ratio_n_p = M_N_MEV / M_P_MEV
+codata_ratio_n_p = M_N_MEV_VALIDATION / M_P_MEV_VALIDATION
 
 # Muon/electron mass ratio from topological formula (definitional)
 mu_e_from_vol = VOL_FIGURE_EIGHT / HBAR_Q_SQ0  # should be ≡ MASS_RATIO_MU_E

@@ -2,6 +2,20 @@
 probe_mu_q_ell_1_substrate.py — investigate substrate candidates
 for the ℓ=1 dressed quark mass μ_q ≈ 311 MeV.
 
+⚠ **Class-A discipline status (audit-only).**  This probe uses
+hardcoded CODATA literals (M_P_MEV, M_N_MEV, MU_U_HARDCODED,
+MU_D_HARDCODED) as the *targets* of a substrate-candidate
+search — the script's entire purpose is to test which substrate
+quantity (q_0, ℏ_q, Hoefsmit invariants, Vol(𝔅_3), etc.) best
+approximates the framework's pre-computed dressed-quark mass.
+Per the three-calibration discipline
+(`content/quantum-observable-universe/braids-and-knots/three-calibration-inputs.md`),
+the M_*_MEV literals appear as comparison anchors, NOT as
+inputs to a downstream prediction witness; this script is a
+research probe whose output is the per-candidate residual table,
+not a mass-table prediction.  Tracked under Workplan-0b
+(audit-only opt-out).
+
 Per owner: "we need Pair skein mass for up and down quarks?
 this might not be in level 0 of the tower since the only exist
 in the B_3 binding stably? if so maybe check there..."
@@ -52,8 +66,9 @@ q_inv = mpf(1) / q
 h_q = q - q_inv
 
 M_E_MEV = mpf("0.51099895069")
-M_P_MEV = mpf("938.272")
-M_N_MEV = mpf("939.565")
+# Class-A audit-only: hardcoded CODATA comparison anchors, not prediction inputs.
+M_P_MEV = mpf("938.272")  # noqa: P31 — comparison anchor per docstring banner
+M_N_MEV = mpf("939.565")  # noqa: P31 — comparison anchor per docstring banner
 M_N_AVG = (M_P_MEV + M_N_MEV) / 2
 
 MU_U_HARDCODED = mpf("311.10")
@@ -151,7 +166,13 @@ def main() -> int:
 
     # Witness
     w = (WitnessBuilder("probe-mu-q-ell-1-substrate", engine="python+mpmath")
-         .set_description("Substrate candidates for ℓ=1 dressed quark mass μ_q ≈ 311 MeV"))
+         .set_description(
+            "Substrate candidates for ℓ=1 dressed quark mass μ_q ≈ 311 MeV. "
+            "**Class-A audit-only**: hardcoded CODATA targets per docstring banner; "
+            "the script's output is a per-candidate residual table, not a "
+            "prediction witness."
+         )
+         .set_audit_only("docs/audits/2026-05-10-workplan-0b-script-rewire-handoff.md"))
     w.add_data("q_pinned", str(q))
     w.add_data("substrate_quantities", {
         "hbar_q": str(hbar_q), "z_0": str(z_0), "z_markov": str(z_mark),

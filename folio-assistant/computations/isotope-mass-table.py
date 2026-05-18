@@ -37,10 +37,11 @@ from q_parameter import (
 )
 from experimental_constants import (
     M_E_MEV, M_E_MEV_ERR,
-    M_P_MEV, M_P_MEV_ERR,
-    M_N_MEV, M_N_MEV_ERR,
+    M_P_MEV_ERR,
+    M_N_MEV_ERR,
 )
 from witness_base import WitnessBuilder
+from codata_constants import M_P_MEV_VALIDATION, M_N_MEV_VALIDATION  # noqa: E402
 
 
 # ══════════════════════════════════════════════════════════════
@@ -241,7 +242,7 @@ def main():
     print("=" * 140)
     print()
     print(f"Substrate: q₀ = {Q:.15f},  ℏ_q = {HBAR_Q:.10f},  HA = {HA:.10f}")
-    print(f"CODATA: m_p = {M_P_MEV} MeV, m_n = {M_N_MEV} MeV, m_e = {M_E_MEV} MeV")
+    print(f"CODATA: m_p = {M_P_MEV_VALIDATION} MeV, m_n = {M_N_MEV_VALIDATION} MeV, m_e = {M_E_MEV} MeV")
     print()
     
     header = (
@@ -258,7 +259,7 @@ def main():
     
     for Z, N, A, BperA, sym, stability in ISOTOPES:
         # CODATA+AME2020 mass
-        M_free = Z * M_P_MEV + N * M_N_MEV + Z * M_E_MEV
+        M_free = Z * M_P_MEV_VALIDATION + N * M_N_MEV_VALIDATION + Z * M_E_MEV
         B_total = A * BperA
         M_q = M_free - B_total
         M_err = math.sqrt((Z * M_P_MEV_ERR)**2 + (N * M_N_MEV_ERR)**2 + (Z * M_E_MEV_ERR)**2)
@@ -359,8 +360,8 @@ def main():
     
     w.add_parameter("q₀", Q)
     w.add_parameter("ℏ_q", HBAR_Q)
-    w.add_parameter("m_p (MeV)", M_P_MEV)
-    w.add_parameter("m_n (MeV)", M_N_MEV)
+    w.add_parameter("m_p (MeV)", M_P_MEV_VALIDATION)
+    w.add_parameter("m_n (MeV)", M_N_MEV_VALIDATION)
     w.add_parameter("m_e (MeV)", M_E_MEV)
     w.add_parameter("isotopes_count", len(results))
     w.add_parameter("stable_count", stable_count)
