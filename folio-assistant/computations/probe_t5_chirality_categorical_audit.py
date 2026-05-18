@@ -43,7 +43,6 @@ resolution would be to either (a) DROP T5 from the tower, or
 """
 from __future__ import annotations
 
-import json
 import sys
 from pathlib import Path
 from mpmath import mp, mpf
@@ -56,11 +55,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 mp.dps = 50
 
 Q_WIT = HERE / "q-pinning-50-digit.witness.json"
-
-# T5 values from the canonical chain at q_0 (from
-# six-term-mpfr-50dps.witness.json / bw_chirality_isotopes).
-T5_PROTON_TARGET = mpf("-7.79")
-T5_NEUTRON_TARGET = mpf("-7.47")
+SIX_TERM_WIT = HERE / "mass-formula-6term-mpfr-50dps.witness.json"
 
 
 def _fmt(x, dps=30):
@@ -86,6 +81,20 @@ def main() -> int:
     q = mpf(q_body["derived_50_digit"]["q"])
     qi = mpf(1) / q
     h_q = q - qi
+
+    # Load T5 targets from canonical 6-term witness (copilot #704:
+    # self-validating; avoids hardcoded literals drifting silently).
+    six_term_body = w.add_upstream(SIX_TERM_WIT)
+    T5_PROTON_TARGET = None
+    T5_NEUTRON_TARGET = None
+    for atom in six_term_body.get("data", {}).get("results", []):
+        a = atom.get("atom", "")
+        if a.startswith("p"):
+            T5_PROTON_TARGET = mpf(str(atom.get("term5_chirality_bw")))
+        elif a.startswith("n"):
+            T5_NEUTRON_TARGET = mpf(str(atom.get("term5_chirality_bw")))
+    if T5_PROTON_TARGET is None:
+        raise KeyError("term5_chirality_bw for proton missing from 6-term witness")
     z_0 = mp.sqrt(q) - mp.sqrt(qi)
     z_mkv = mpf(1) / (mp.sqrt(q) + mp.sqrt(qi))
     hbar = (q - mpf(1)) / q

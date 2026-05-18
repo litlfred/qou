@@ -18,10 +18,9 @@ structurally small or merely truncated.
 OBSERVED PATTERN (existing witness, cyclotomic depth k_default):
 
   A=1 (proton):     T6 ≈ +0.98  MeV    [|T6| / m_p ≈ 0.001]
-  A=2 (deuteron):   T6 ≈ +55.8  MeV    [|T6| / m_D ≈ 0.03]
-  A=3 (tritium):    T6 ≈ -21375 MeV    [|T6| / m_T ≈ 7.6]  ← divergent
-  A=4 (He-3):       T6 ≈ ?
-  A=5 (He-4):       T6 ≈ ?
+  A=2 (deuteron):   T6 ≈ +55.8   MeV   [|T6| / m_D ≈ 0.03]
+  A=3 (tritium):    T6 ≈ -21375  MeV   [|T6| / m_T ≈ 7.6]    ← divergent
+  A=4 (helium-4):   T6 ≈ +692957 MeV   [|T6| / m_He4 huge]   ← extremely divergent
 
 The divergent T6 at tritium (|T6| > m_T) is the smoking-gun:
 the residue series at higher A is structurally NOT convergent
@@ -50,7 +49,6 @@ since T5 dominates the gap.
 """
 from __future__ import annotations
 
-import json
 import sys
 from pathlib import Path
 from mpmath import mp, mpf

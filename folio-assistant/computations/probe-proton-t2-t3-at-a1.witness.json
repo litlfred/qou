@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-18T04:43:30.321257+00:00",
-  "commitSha": "dc0f9394feecab82403453af071b11b80d144ac5",
+  "computedAt": "2026-05-18T04:57:03.731467+00:00",
+  "commitSha": "7c102f57d7404c56da2ebe31fbb5a02463baa96b",
   "assertions": [
     {
       "name": "t2_t3_computable_at_a1",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 88,
+  "durationMs": 85,
   "computation": "probe-proton-t2-t3-at-a1",
   "scriptFile": "probe_proton_t2_t3_at_a1.py",
-  "scriptHash": "3e80869ffd6a",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "643cd47aae7e",
+  "scriptCommitSha": "9e6d322999e26bca46cbd42855681f56912bbbf9",
   "description": "m_p chain Item A from PR #671 audit: compute T2 and T3 at A=1 for proton + neutron under the canonical Li_2^q tower.  The audit reported KeyError; PR #684 identified that as a consumer bug.  Reports the actual contributions.",
   "data": {
     "q_pinned": "1.109978595554180575281594079609509377993",
