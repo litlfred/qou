@@ -7,7 +7,7 @@ export default proposition({
   chapter: "descartes-universe",
   cites: ["yekutieli2015"],
   uses: [
-    "def:picard-lefschetz-thimble",
+    "rem:picard-lefschetz-thimble",
     "prop:gb-spectral-sequence",
     "prop:e-infinity-page-identifications",
     "cor:jet-prolongation-C",

@@ -368,9 +368,8 @@ export default chapter({
         // Knot-to-particle mass spectrum
         "knot-formula-table",
         "mass-from-generators",
-        // Volume tower and Picard-Lefschetz decomposition
+        // Volume tower and Picard-Lefschetz decomposition (archimedean shadow only)
         "picard-lefschetz-thimble",
-        "pl-yekutieli-stokes",
         "volume-tower-decomposition",
         "cs-evaluation-faithfulness",
         // Transcendence and algebraic independence
@@ -401,7 +400,6 @@ export default chapter({
         "gb-reduction-pl-thimble-bijection",
         "denominator-zeros-as-sw-critical-points",
         "abelianisation-at-algebraic-poles",
-        "pl-jsj-mass-integration-equivalence",
       ],
     }),
     // ── §5. Orbital symmetry and cohomological embedding ────────────

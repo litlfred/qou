@@ -13,7 +13,7 @@ on the archimedean realisation of $\mathcal{E}_q$.  Let
 $\lambda_{\mathrm{SW}}^{(p)}$ denote the $p$-th jet prolongation of
 the Seiberg–Witten differential, and $\Pi^{(p)}$ the corresponding
 Picard–Lefschetz thimble period
-([Picard–Lefschetz thimble](#def:picard-lefschetz-thimble),
+([Picard–Lefschetz thimble](#rem:picard-lefschetz-thimble),
  [SW-period thimble equivalence](#prop:sw-period-thimble-equivalence)).*
 
 *The four-way correspondence holds:*

@@ -15,7 +15,7 @@ $$
 *([color-tube cubic](#rem:color-tube-cubic)).
 The Picard–Lefschetz critical points $\{z_c\}$ of the SW action
 $S(z) = \int^z \lambda_{\mathrm{SW}}^{(1)}\, dz'$
-([Picard–Lefschetz thimble](#def:picard-lefschetz-thimble))
+([Picard–Lefschetz thimble](#rem:picard-lefschetz-thimble))
 are identically the **algebraic image** of the denominator zeros of
 $\Phi_n$ under the Archimedean realization
 ([archimedean realization functor](#def:archimedean-realization-functor)):*
@@ -46,7 +46,7 @@ in $\lambda_{\mathrm{SW}}^{(1)}$.
 | Geometric ($\mathbf{Hyp}_3$) | ideal-tetrahedron cusp | shape parameter $z_k$ at completeness locus |
 
 The first row is the algebraic computation; the second row is the
-PL setup ([picard-lefschetz-thimble](#def:picard-lefschetz-thimble));
+PL setup ([picard-lefschetz-thimble](#rem:picard-lefschetz-thimble));
 the third row is the geometric interpretation
 ([shared-denominator cusp holonomy](#conj:shared-denominator-cusp-holonomy)).
 The conjecture asserts the rows are isomorphic under $\tau$.

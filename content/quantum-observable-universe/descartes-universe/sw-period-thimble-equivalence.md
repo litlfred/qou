@@ -41,7 +41,7 @@ $$
   ([lepton mass integrals](#rem:lepton-mass-integrals)),
   $\mathcal{J}_\sigma$ are the Picard–Lefschetz thimbles attached to the
   discriminant locus of the color-tube cubic
-  ([Picard–Lefschetz thimble](#def:picard-lefschetz-thimble)),
+  ([Picard–Lefschetz thimble](#rem:picard-lefschetz-thimble)),
   $n_\sigma^{(k)} \in \mathbb{Z}$ are the intersection numbers
   $\langle \mathcal{K}_\sigma, \gamma \rangle$, and $\tau \colon R
   \hookrightarrow \mathbb{C}$ is the archimedean fibre functor.*

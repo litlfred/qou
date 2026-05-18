@@ -14,5 +14,5 @@ export default conjecture({
     "thimble",
     "open-problem",
   ],
-  uses: ["def:picard-lefschetz-thimble"],
+  uses: ["rem:picard-lefschetz-thimble"],
 });

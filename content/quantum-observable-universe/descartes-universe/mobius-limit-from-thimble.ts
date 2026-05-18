@@ -7,7 +7,7 @@ export default proposition({
   chapter: "descartes-universe",
   cites: ["witten2011", "pham1965", "arnold-gusein-zade-varchenko1988"],
   uses: [
-    "def:picard-lefschetz-thimble",
+    "rem:picard-lefschetz-thimble",
     "prop:mobius-golden-fixed-points",
     "rem:baryon-integration-limit",
   ],

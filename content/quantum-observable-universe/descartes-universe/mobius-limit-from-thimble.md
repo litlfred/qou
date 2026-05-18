@@ -9,7 +9,7 @@ $\mathbb{C}$
 *Let $z_c^\pm \in \mathbb{C} \setminus \mathbb{R}$ be the two complex
 critical points of the SW action $S(z) = \int^z \lambda_{\mathrm{SW}}^{(1)}\,dz'$
 closest to the real axis
-([Picard–Lefschetz thimble](#def\:picard-lefschetz-thimble)), with
+([Picard–Lefschetz thimble](#rem\:picard-lefschetz-thimble)), with
 $z_c^- = \overline{z_c^+}$ and $\mathrm{Re}(z_c^\pm) \approx 0.106$,
 $\lvert\mathrm{Im}(z_c^\pm)\rvert \approx 0.937$ at $q = q_0$.  Let
 $\mathcal{J}_{z_c^\pm}$ denote the steepest-:refterm[descent]{#descent} thimbles emanating

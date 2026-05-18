@@ -11,7 +11,7 @@ export default conjecture({
   uses: [
     "def:q-pochhammer-partial-product",
     "conj:shared-denominator-cusp-holonomy",
-    "def:picard-lefschetz-thimble",
+    "rem:picard-lefschetz-thimble",
     "rem:color-tube-cubic",
     "prop:sw-period-thimble-equivalence",
     "prop:jet-gb-pl-correspondence",
