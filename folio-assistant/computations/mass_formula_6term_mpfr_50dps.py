@@ -466,8 +466,9 @@ def term_6_via_habiro_coeffs_mp(Z: int, N: int) -> mp.mpf:
     def _eval_sym(expr_str: str) -> mp.mpf:
         """Evaluate a u-polynomial string at u = u_0 (50 dps)."""
         expr = sp.sympify(expr_str)
-        for sym in expr.free_symbols:
-            expr = expr.subs(sym, u_0_sp)
+        # Single dict-mapped .subs() call (faster than iterative;
+        # per Gemini review on PR #682).
+        expr = expr.subs({sym: u_0_sp for sym in expr.free_symbols})
         return mp.mpf(str(sp.N(expr, 50)))
 
     poch = mp.mpf(1)          # (u; u)_0 = 1

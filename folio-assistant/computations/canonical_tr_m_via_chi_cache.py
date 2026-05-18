@@ -159,10 +159,12 @@ def canonical_tr_m(atom_name: str, Z: int, N: int) -> dict[str, object]:
             continue
         chi_expr = sp.sympify(chi_sym_str)
         # Substitute every free symbol (the cache uses its own `q`
-        # symbol identity) with the 50-dps q_0 value.
-        chi_val_sp = chi_expr
-        for sym in chi_expr.free_symbols:
-            chi_val_sp = chi_val_sp.subs(sym, q_0_sp)
+        # symbol identity) with the 50-dps q_0 value in a single
+        # `.subs(dict)` call (faster than iterative; per Gemini
+        # review on PR #682).
+        chi_val_sp = chi_expr.subs(
+            {sym: q_0_sp for sym in chi_expr.free_symbols}
+        )
         chi_val = mp.mpf(str(sp.N(chi_val_sp, 50)))
         y_val = mp.mpf(str(y_lams[lam]))
         contrib = y_val * chi_val
