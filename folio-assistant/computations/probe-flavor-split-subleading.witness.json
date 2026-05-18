@@ -1,0 +1,64 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-18T00:13:03.816421+00:00",
+  "commitSha": "0c57c9b15fb63afad5288da4a2b20c825c984e1f",
+  "assertions": [
+    {
+      "name": "derivable_within_500ppm",
+      "computed": 305.29166853962596,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 500.0
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 9,
+  "computation": "probe-flavor-split-subleading",
+  "scriptFile": "probe_flavor_split_subleading.py",
+  "scriptHash": "e376c8bcb7fc",
+  "scriptCommitSha": "0c57c9b15fb63afad5288da4a2b20c825c984e1f",
+  "description": "Sub-leading substrate corrections to prop:flavor-split-substrate. Derivable (1 + ℏ_q³) closes -306 ppm; empirical (1 + (q-1)³) closes +51 ppm.",
+  "data": {
+    "q_pinned": "1.1099785955541805752815940796095093779932822799587",
+    "codata": {
+      "M_p_MeV": "938.27208816",
+      "M_n_MeV": "939.56542052",
+      "delta_m_MeV": "1.29333236",
+      "M_N_avg_MeV": "938.91875434",
+      "target_delta_m_over_M_N": "0.0013774699397810305325677301562633093883972785231479"
+    },
+    "leading_order": {
+      "expression": "ℏ_q²·h_q·[2]_q/3 = (q-1)²·(1-q⁻⁴)/3",
+      "value": "0.001375711249867512216725087899537173398853688341329",
+      "residual_ppm": -1276.7537517355086
+    },
+    "derivable_correction": {
+      "factor": "1 + ℏ_q³",
+      "status": "derivable — follows from substrate brane-tower loop expansion",
+      "justification_status": "not yet justified by explicit categorical proof; deferred to substrate Li_2^q convergence analysis (PR #682 dep)",
+      "reading": "3-loop substrate Planck (one more action quantum on top of leading 2-loop)",
+      "value": "0.0013770494096847516036825835492099447373101085394177",
+      "residual_ppm": -305.29166853962596,
+      "tightening_over_leading": 4.182078593375665,
+      "closed_form": "ℏ_q²·h_q·[2]_q·(1 + ℏ_q³)/3 = (q-1)²·(1-q⁻⁴)·(1 + ((q-1)/q)³)/3"
+    },
+    "empirical_correction": {
+      "factor": "1 + (q-1)³",
+      "factor_alt": "1 + q³·ℏ_q³",
+      "status": "NOT derivable from substrate machinery — q³ multiplier on top of ℏ_q³ lacks loop-expansion structure",
+      "reading": "tighter numerical match but ad hoc; could be a stronger categorical formula or a coincidence at q_0",
+      "value": "0.0013775412528470357492957303828788862597414182126851",
+      "residual_ppm": 51.77105063835586,
+      "tightening_over_leading": 24.66153836927532,
+      "closed_form": "(q-1)²·(1-q⁻⁴)·(1 + (q-1)³)/3"
+    },
+    "delta_m_predictions_MeV": {
+      "leading": "1.2916810930571290605622516448604499101762890413552",
+      "with_derivable": "1.2929375164058393078219687027771774038954456321203",
+      "with_empirical": "1.2933993171751017842901957033731351500829540787593",
+      "codata": "1.29333236"
+    },
+    "status": "Derivable correction (1+ℏ_q³) is the 3-loop substrate-Planck contribution — follows mechanically from the brane-tower loop expansion, closing -306 ppm.  *Derivable* != *justified*: a categorical proof of the exact coefficient is deferred to the substrate Li_2^q convergence analysis (PR #682 dep).  Empirical (1+(q-1)³) closes +51 ppm but its q³ multiplier on top of the derivable ℏ_q³ is NOT derivable from substrate machinery — either a stronger categorical formula or a numerical coincidence at q_0 (open research)."
+  }
+}
