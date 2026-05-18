@@ -164,12 +164,51 @@ grep -rlE '^export default (theorem|lemma|proposition|corollary|conjecture|defin
 #    .py module). This avoids creating maintenance burden for a
 #    function whose only consumer is the watcher's own backlog scan.
 
-# 3. Naked conjectures (no .lean sibling)
-grep -rlE '^export default conjecture\(' content/ --include='*.ts' 2>/dev/null \
-  | while IFS= read -r ts; do
-      lean="${ts%.ts}.lean"
-      [ ! -f "$lean" ] && echo "$ts"
-    done > /tmp/_pw_naked_conjectures.txt
+# 3. Naked conjectures — REFINED (2026-05-18 round 2):
+#    A `conjecture` block is naked iff its `lean.ref` URI does NOT
+#    resolve to an actual Lean declaration. Sibling-`.lean` presence
+#    is NOT sufficient (the declaration may live in a chapter-level
+#    module like `QGeometricLanglands.lean`); sibling-`.lean` absence
+#    is NOT sufficient (the ref may resolve via the grep fallback).
+#
+#    Note: there is no automated `lean-ref-resolves` rule in
+#    `content/pipeline/validate.ts` today (it only enforces schema
+#    shape + constraint rules). The watcher implements this
+#    resolution test in-session as documented below; if the
+#    pipeline later adopts the same test as a constraint rule,
+#    update this comment to point at it.
+#
+#    Resolution test (in-session, namespace-walk verification):
+#
+#      DECL_PREFIX_RE = ^\s*(?:noncomputable\s+|@\[[^\]]+\]\s+
+#                          |private\s+|protected\s+)*
+#      DECL_KIND_RE   = (theorem|lemma|class|def|structure|instance
+#                       |opaque|axiom)
+#      DECL_RE        = DECL_PREFIX_RE + DECL_KIND_RE + r'\s+'
+#
+#      for each .ts with `export default conjecture(...)`:
+#        ref = extract lean.ref from manifest
+#        if ref is missing → naked
+#        decl_name = ref.split('.')[-1]
+#        candidates = grep -rEln "<DECL_RE><decl_name>\b"
+#                     content/<paper>/lean/
+#        if no candidates → naked
+#        for each candidate file:
+#          read namespaces above the decl line
+#          full = '.'.join(reversed(namespaces)) + '.' + decl_name
+#          if full matches ref's qualifier → WIRED (not naked)
+#        if no namespace match → wrong-namespace ref (separate finding:
+#          `lean-ref-namespace-mismatch`, minor severity, auto-discharge
+#          by setting ref to the discovered `full`)
+#
+#    The DECL_PREFIX_RE handles `@[simp] theorem`, `noncomputable def`,
+#    `private theorem`, etc. — without it the watcher will false-positive
+#    "naked" on decorated declarations. Mirrors the DECL_RE used in
+#    Slot G item 2 (uncited-sorry detection).
+#
+#    The previous (sibling-`.lean`-only) heuristic over-counted by ~37%
+#    on the QOU paper (initial 32 substantive naked-conjecture flags
+#    reduced to 19 actually-naked under the refined test).
 
 # 4. Dual-sibling discovery — .lean exists but .md missing or stub.
 #    Heuristic must handle (a) .md files without `---` frontmatter

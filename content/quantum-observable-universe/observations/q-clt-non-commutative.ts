@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "q-Central Limit Theorem for Hecke transfer matrices — categorical q-convolution converges to the q-Gaussian attractor",
   lean: {
-    ref: "qou:QOU.Observations.QCltNonCommutative",
+    ref: "qou:QOU.Observations.QCltNonCommutative.QCltNonCommutative",
     validation: "not_checked",
   },
   uses: [
