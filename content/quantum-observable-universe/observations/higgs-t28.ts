@@ -4,6 +4,10 @@ export default conjecture({
   label: "conj:higgs-t28",
   title:
     "The Higgs boson as $T(2,8)$: the link spanning three exceptional divisors",
+  lean: {
+    ref: "qou:QOU.HiggsT28.HiggsAsT28",
+    validation: "not_checked",
+  },
   uses: [
     "def:color-tube-coordinates",
     "def:brings-surface",
