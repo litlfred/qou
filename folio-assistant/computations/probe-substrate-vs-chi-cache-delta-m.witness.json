@@ -1,0 +1,48 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-18T04:00:45.707339+00:00",
+  "commitSha": "3dd982ade41e7abdba83f5d5633fc7199d692ad0",
+  "assertions": [
+    {
+      "name": "ratio_identity_within_floor",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-30
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 8,
+  "computation": "probe-substrate-vs-chi-cache-delta-m",
+  "scriptFile": "probe_substrate_vs_chi_cache_delta_m.py",
+  "scriptHash": "dd575b13c547",
+  "scriptCommitSha": "unknown",
+  "description": "Cross-check the substrate prop:flavor-split-substrate Δm against the χ-cache combiner |tr_M| (PR #682).  Item 1 of the #663 follow-up queue, unblocked by #682 landing on main.",
+  "data": {
+    "q_pinned": "1.109978595554180575281594079609509377993",
+    "substrate_inputs": {
+      "m_p_MeV": "938.9182313400801000000000000000000000000",
+      "m_n_MeV": "940.2111681362892083443545957253894361420",
+      "delta_m_over_M_N": "0.001377049409684751603682583549209944737310",
+      "delta_m_MeV": "1.292936796209108344354595725389436142037"
+    },
+    "chi_cache_tr_M": {
+      "proton": "1.065306228592388703610849852651930768896",
+      "neutron": "0.9232332971695832001654497287354692544525"
+    },
+    "rho_K_LO_substrate": {
+      "proton": "1724.778373364138354435473808901105494265",
+      "neutron": "1992.938690492122532439230375289859505773"
+    },
+    "cross_check": {
+      "ratio_chi_tr_M_n_over_p": "0.8666365335997993503934193386161744570160",
+      "ratio_substrate_mass_n_over_p": "1.001377049409684751603682583549209944737",
+      "ratio_rho_K_n_over_p": "1.155475231640888439525075920934002203665",
+      "identity_residual": "0.0",
+      "delta_m_via_chi_cache_MeV": "1.292936796209108344354595725389436142037",
+      "delta_m_substrate_MeV": "1.292936796209108344354595725389436142037",
+      "delta_m_residual_keV": 0.0
+    }
+  }
+}
