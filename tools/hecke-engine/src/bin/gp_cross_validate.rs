@@ -37,26 +37,31 @@
 //! §C "Geck-Pfeiffer factorization (already scaffolded — biggest potential)".
 
 use hecke_engine::geck_pfeiffer::{
-    braid_to_hecke, chi_lambda_via_gp_hoefsmit, chi_lambda_via_gp_hoefsmit_mpfr,
+    braid_to_hecke, chi_lambda_via_gp_hoefsmit, chi_lambda_via_gp_hoefsmit_all_partitions_mpfr,
+    chi_lambda_via_gp_hoefsmit_mpfr,
 };
 use hecke_engine::seminormal::{chi_lambda_braid, partitions_of};
 use hecke_engine::seminormal_mpfr::chi_lambda_braid_mpfr;
 
-/// f64 approximation of the substrate parameter q_0 (calibrated per
-/// `prop:three-calibration-inputs`).  Per Gemini + Copilot reviews on
-/// PR #718, this binary uses the canonical literal rather than a
-/// magic constant.  The full 50-dps decimal lives in
-/// `folio-assistant/computations/q_parameter.py::Q_50_DIGIT_STR`; the
-/// Rust kernel reads that via `q_str` for MPFR paths and uses this
-/// f64 cast for the cross-validation tests (which run at f64
-/// precision via `chi_lambda_braid` / `chi_lambda_via_gp_hoefsmit`).
+/// f64 representation of the substrate parameter `q_0` (calibrated
+/// per `prop:three-calibration-inputs`).  The canonical 50-dps
+/// decimal lives in
+/// `folio-assistant/computations/q_parameter.py::Q_50_DIGIT_STR`; this
+/// literal is the f64 truncation (Python `float(Q_50_DIGIT_STR)`).
+///
+/// **Bug fix (2026-05-18, PR #725 Copilot review)**: the original
+/// literal `1.10977…` was a typo (transposed digits, wrong suffix).
+/// Cross-validation tautologically passed at the wrong q because both
+/// seminormal and GP used the same wrong literal. Corrected to match
+/// the f64 cast of Q_50_DIGIT_STR:
+/// - Canonical 50-dps: `1.10997859555418057528159407960950937799328227995870`
+/// - f64 cast:         `1.1099785955541805`
 ///
 /// **Drift discipline**: if Q_50_DIGIT_STR's leading f64-representable
 /// digits drift, update this literal in lock-step. There is no
-/// shared Rust constant module for substrate parameters yet (a
-/// future C-full follow-up could add one and re-export
-/// Q_50_DIGIT_STR's f64 prefix).
-const Q0_F64: f64 = 1.10977859555418057297748154126596420587829;
+/// shared Rust constant module for substrate parameters yet (flagged
+/// as future C-full follow-up).
+const Q0_F64: f64 = 1.1099785955541805;
 
 #[derive(serde::Serialize)]
 struct Row {
@@ -153,13 +158,24 @@ fn validate_mpfr(
         let chi_gp_str = chi_lambda_via_gp_hoefsmit_mpfr(
             &lambda, n, word, q_str, dps,
         );
-        // Compute |chi_semi - chi_gp| at MPFR precision.
+        // Compute |chi_semi - chi_gp| at MPFR precision. Parse
+        // failures here would silently corrupt the diff to 0 and
+        // mask real disagreements — fail loudly instead (per Copilot
+        // review on PR #725).
         let chi_semi = Float::parse(&chi_semi_str)
             .map(|p| Float::with_val(prec, p))
-            .unwrap_or_else(|_| Float::with_val(prec, 0));
+            .unwrap_or_else(|_| {
+                panic!(
+                    "validate_mpfr: chi_semi_str is not a valid MPFR decimal: {chi_semi_str:?}"
+                )
+            });
         let chi_gp = Float::parse(&chi_gp_str)
             .map(|p| Float::with_val(prec, p))
-            .unwrap_or_else(|_| Float::with_val(prec, 0));
+            .unwrap_or_else(|_| {
+                panic!(
+                    "validate_mpfr: chi_gp_str is not a valid MPFR decimal: {chi_gp_str:?}"
+                )
+            });
         let diff = Float::with_val(prec, &chi_semi - &chi_gp);
         let abs_diff = Float::with_val(prec, diff.abs());
         let abs_diff_f64: f64 = abs_diff.to_f64();
@@ -226,7 +242,12 @@ fn main() {
     // error across the per-T_w sum + 2^k normalisation.
     let mpfr_tolerance = 1.0e-45_f64;
     let mpfr_dps = 50_u32;
-    let q_str_50dps = "1.10977859555418057297748154126596420587829";
+    // Canonical 50-dps substrate q_0 from
+    // folio-assistant/computations/q_parameter.py::Q_50_DIGIT_STR
+    // (fixed in PR #725 per Copilot review: prior `1.10977…` literal
+    // was a typo, making cross-validation tautologically agree at
+    // the wrong q.)
+    let q_str_50dps = "1.10997859555418057528159407960950937799328227995870";
     let mut worst: f64 = 0.0;
     let mut worst_mpfr: f64 = 0.0;
     let mut failures = 0_usize;
@@ -270,6 +291,26 @@ fn main() {
             basis_size, nf, sparsity
         );
         all_rows.extend(rows);
+
+        // C-full Step 3: also cross-validate the all-partitions
+        // GP path against per-partition GP MPFR.  This confirms the
+        // basis-expansion + per-T_w cache (built once per λ) gives
+        // bit-identical output to the simpler per-partition loop.
+        let gp_all = chi_lambda_via_gp_hoefsmit_all_partitions_mpfr(
+            *n, word, q_str_50dps, mpfr_dps,
+        );
+        for (lam, chi_all_str) in &gp_all {
+            let chi_solo_str = chi_lambda_via_gp_hoefsmit_mpfr(
+                lam, *n, word, q_str_50dps, mpfr_dps,
+            );
+            if chi_all_str != &chi_solo_str {
+                eprintln!(
+                    "  GP-all-partitions MISMATCH λ={:?}: solo={} all={}",
+                    lam, chi_solo_str, chi_all_str
+                );
+                mpfr_failures += 1;
+            }
+        }
 
         // C-full Step 2: also cross-validate at MPFR precision.
         // This exercises chi_lambda_via_gp_hoefsmit_mpfr against
