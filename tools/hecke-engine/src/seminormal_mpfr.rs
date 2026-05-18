@@ -234,28 +234,66 @@ pub fn chi_lambda_braid_mpfr(
         })
         .collect();
 
-    let mut v: Vec<Float> = (0..dim).map(|_| Float::with_val(prec, 0)).collect();
-    let mut trace = Float::with_val(prec, 0);
-    for i in 0..dim {
-        for k in 0..dim {
-            v[k] = Float::with_val(prec, 0);
-        }
-        v[i] = Float::with_val(prec, 1);
-        // Sign convention (matches f64 chi_lambda_braid):
-        //   sign > 0  → σ_g           (positive crossing)
-        //   sign < 0  → σ_g - h·I     (σ_g⁻¹ via Hecke relation)
-        //   sign == 0 → σ_g - h/2·I   (averaged crossing, direct
-        //                              substitution, no 2^k expansion)
-        for &(sign, blocks) in resolved.iter().rev() {
-            if sign > 0 {
-                apply_sigma_mpfr(&mut v, blocks, prec);
-            } else if sign < 0 {
-                apply_sigma_inv_mpfr(&mut v, blocks, &h, prec);
-            } else {
-                apply_sigma_averaged_mpfr(&mut v, blocks, &h, prec);
+    // Candidate B (per docs/audits/2026-05-18-hoefsmit-matrix-product-optimization.md):
+    // rayon-parallelise the outer dim loop over basis vectors. Each
+    // iteration computes one diagonal contribution v[i] (after
+    // applying the braid word in reverse to e_i) — fully independent
+    // across i.
+    //
+    // Inner parallelism is nested under the partition-level rayon in
+    // `chi_lambdas_braid_mpfr`. Rayon's work-stealing scheduler
+    // handles the nested case: when outer (partitions) saturates the
+    // pool, inner is a no-op; when outer is in the long-tail (one
+    // max-dim partition remaining), inner kicks in and parallelises
+    // the dim loop across the now-idle cores. This is the wall-time
+    // win for max-dim partitions at n ≥ 12 (e.g. partition
+    // (5,3,2,1,1) at n=12 has dim 7,700; (5,4,3,2,1) at n=15 has dim
+    // 292,864 — see the audit's max-dim table).
+    //
+    // **Determinism**: we collect the per-i diagonal contributions
+    // into a Vec and sum sequentially in i order, rather than using
+    // `.reduce()` with a free combine order. MPFR floating-point
+    // addition is non-associative at the precision boundary, so
+    // a free-order reduce produces last-digit (10⁻⁵⁰) differences
+    // depending on how rayon splits work. The sequential post-sum
+    // costs O(dim) MPFR adds — negligible compared to the per-i
+    // O(dim × |word|) main work — and preserves bit-equality with
+    // the original sequential implementation. This matters for the
+    // QOU witness-pipeline drift check which compares decimal-string
+    // χ^λ values byte-for-byte across runs.
+    //
+    // Each parallel worker allocates its own `Vec<Float>` of length
+    // dim to avoid sharing mutable state — `rug::Float` is Send/Sync
+    // but mutating one in place from multiple threads would race.
+    use rayon::prelude::*;
+    let diagonal_contribs: Vec<Float> = (0..dim)
+        .into_par_iter()
+        .map(|i| {
+            let mut v: Vec<Float> =
+                (0..dim).map(|_| Float::with_val(prec, 0)).collect();
+            v[i] = Float::with_val(prec, 1);
+            // Sign convention (matches f64 chi_lambda_braid):
+            //   sign > 0  → σ_g           (positive crossing)
+            //   sign < 0  → σ_g - h·I     (σ_g⁻¹ via Hecke relation)
+            //   sign == 0 → σ_g - h/2·I   (averaged crossing, direct
+            //                              substitution, no 2^k expansion)
+            for &(sign, blocks) in resolved.iter().rev() {
+                if sign > 0 {
+                    apply_sigma_mpfr(&mut v, blocks, prec);
+                } else if sign < 0 {
+                    apply_sigma_inv_mpfr(&mut v, blocks, &h, prec);
+                } else {
+                    apply_sigma_averaged_mpfr(&mut v, blocks, &h, prec);
+                }
             }
-        }
-        trace += &v[i];
+            // Return this thread's diagonal contribution v[i]; the
+            // deterministic sequential sum below builds trace.
+            v[i].clone()
+        })
+        .collect();
+    let mut trace = Float::with_val(prec, 0);
+    for c in &diagonal_contribs {
+        trace += c;
     }
     trace.to_string_radix(10, Some(dps as usize))
 }
