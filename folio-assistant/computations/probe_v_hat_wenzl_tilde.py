@@ -32,6 +32,7 @@ from mpmath import mp, mpf
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
+from _precision import set_compute_dps, fmt  # noqa: E402
 from _li_2_q_util import li_2_q as Li_2_q  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from terms_2_3_atom_per_gen_mpfr_50dps import (  # noqa: E402
@@ -42,7 +43,7 @@ from mass_formula_6term_mpfr_50dps import (  # noqa: E402
 )
 from derive_m_p_hecke_full_tower_50dps import _t5_cat_units_for  # noqa: E402
 
-mp.dps = 50
+set_compute_dps()
 
 M_E_MEV = mpf("0.51099895069")
 M_P_CODATA = mpf("938.27208816")
