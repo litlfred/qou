@@ -49,7 +49,8 @@ from mpmath import fabs as mpabs
 from witness_base import WitnessBuilder
 
 # 50-decimal-digit working precision (matches q_pinning_50_digit.py).
-mp.dps = 50
+from _precision import set_compute_dps, fmt  # noqa: E402
+set_compute_dps()
 
 
 def bloch_wigner(z: mpc) -> mpf:

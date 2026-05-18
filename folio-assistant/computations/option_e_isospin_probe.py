@@ -52,7 +52,8 @@ import mpmath as mp
 # the χ^λ matrix product is in numpy float64 (~1e-15 rel) for
 # speed but the resulting per-atom W_c value is recovered to ~1e-15
 # rel — well above the 1e-3 falsification threshold this probe uses.
-mp.mp.dps = 50
+from _precision import set_compute_dps, fmt  # noqa: E402
+set_compute_dps()
 
 from witness_base import WitnessBuilder
 from canonical_braid_crossings import atom_canonical_crossings

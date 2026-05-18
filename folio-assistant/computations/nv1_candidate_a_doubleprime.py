@@ -41,13 +41,15 @@ HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
+
+from _precision import set_compute_dps, fmt  # noqa: E402
 from q_parameter import q_at  # high-precision substrate parameter
 from partition_utils import hook_lengths  # noqa: E402
 
 # -----------------------------------------------------------------
 # Precision
 # -----------------------------------------------------------------
-mp.mp.dps = 50
+set_compute_dps()
 
 # -----------------------------------------------------------------
 # Targets
