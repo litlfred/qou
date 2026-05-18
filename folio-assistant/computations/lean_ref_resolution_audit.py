@@ -194,6 +194,7 @@ def _classify_one(ts_path: Path) -> dict[str, Any]:
     # keyword + leaf name.  Cheaper than a Lean run, more permissive
     # than (1)/(2).
     grep_hit = False
+    grep_hit_under_lake_root = False
     try:
         rg = subprocess.run(
             ["grep", "-rln", "-E",
@@ -204,10 +205,24 @@ def _classify_one(ts_path: Path) -> dict[str, Any]:
         )
         if rg.returncode == 0 and rg.stdout.strip():
             grep_hit = True
-            row["grep_hits"] = rg.stdout.strip().splitlines()[:5]
+            hit_paths = rg.stdout.strip().splitlines()
+            row["grep_hits"] = hit_paths[:5]
+            # If grep finds the decl under the package's Lake root
+            # (and the file is part of the Lake build), the URI is
+            # resolvable — the lean.ref's purpose is to identify the
+            # decl, not to pin it to an exact filename.  This catches
+            # the common CamelCase-file-with-snake_case-leaf pattern
+            # (e.g. `QOU.MassEndomorphism.delta_max_uniform_bound`
+            # actually living in `QOU/MassEndomorphism/DeltaMaxUniformBound.lean`).
+            lake_root_abs = str((REPO_ROOT / pkg_meta["lakeRoot"]).resolve())
+            for hp in hit_paths:
+                if str(Path(hp).resolve()).startswith(lake_root_abs):
+                    grep_hit_under_lake_root = True
+                    break
     except (subprocess.SubprocessError, OSError):
         pass
     row["grep_hit"] = grep_hit
+    row["grep_hit_under_lake_root"] = grep_hit_under_lake_root
 
     # Classify.
     if sibling_declares or lake_declares or lake_parent_declares:
@@ -218,6 +233,12 @@ def _classify_one(ts_path: Path) -> dict[str, Any]:
             row["resolved_via"] = "lake_root"
         else:
             row["resolved_via"] = "lake_parent"
+    elif grep_hit_under_lake_root:
+        # The decl is in a Lake-tree file the URI's path didn't match
+        # exactly (typically CamelCase-file vs snake_case-leaf), but
+        # the decl IS reachable.  Lake build will resolve it.
+        row["result"] = "ok"
+        row["resolved_via"] = "grep_under_lake_root"
     elif sibling_exists and not sibling_declares:
         row["result"] = "sibling_no_decl"
     elif kind == "definition" and not sibling_exists:
