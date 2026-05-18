@@ -720,5 +720,57 @@ export default chapter({
         "e-minus-one",
       ],
     }),
+
+    // ── Classical limit and the macroscopic continuum ─────────────────
+    // Absorbed from former `algebraic-substrate / sec:classical-limit`
+    // (now dissolved). The classical-limit machinery (motivic + adelic
+    // substrate, joint Galois-braid action, two-filtration bridge,
+    // classical Riemann zeta / RH statement) is heavy braid-coupled
+    // (32 uses → braids, 13 reverse) and belongs adjacent to the rest
+    // of the braid content.
+    //
+    // NOTE: surreal-bound formalism (BSD, Collatz, P-vs-NP, RH,
+    // Yang-Mills surreal bounds + millennium-unification + the
+    // graded-Mikusiński unification remark) is in
+    // `appendix-surreals/sec:millennium-bounds-via-surreals`, joining
+    // the rest of the surreal-formalism story. Cheat-sheet remark for
+    // first-time surreal notation should sit at the head of this
+    // section's surreal-flavored sub-block (reeb-epsilon / q-from-epsilon).
+    section({
+      title: "Classical limit and the macroscopic continuum",
+      label: "sec:classical-limit",
+      blocks: [
+        "classical-limit-intro",
+        "motivic-substrate",
+        "adelic-substrate",
+        "classical-limit-functor",
+        "quantum-gap-collapse",
+        "classical-limit-obstruction",
+        "qou-obstruction-reduction",
+        // Surreal error calculus (substrate-level — see appendix
+        // for the full surreal formalism).
+        "reeb-epsilon",
+        "q-from-epsilon",
+        // Graded-Mikusiński / joint-Galois-braid machinery.
+        "gb-depth-period-correspondence",
+        "hq-bi-filtration",
+        "joint-galois-braid-action",
+        "joint-galois-braid-figure-8-verified",
+        "joint-galois-braid-discharged",
+        "graded-baer-star-Hq",
+        "two-filtration-bridge",
+        "two-filtration-bridge-small-cases",
+        "two-filtration-bridge-general",
+        "cl3-zeta5-geometric-realization",
+        // Classical (q = 1) zeta + RH statement.
+        "classical-riemann-zeta",
+        "classical-riemann-hypothesis",
+        "macroscopic-stability-equivalence",
+        // Adelic Tate squeeze — surreal-bound infrastructure used
+        // by the appendix-surreal Millennium bounds; lives here as
+        // the bridge to those bounds.
+        "adelic-tate-squeeze",
+      ],
+    }),
   ],
 });

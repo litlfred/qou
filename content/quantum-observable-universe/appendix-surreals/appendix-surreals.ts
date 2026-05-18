@@ -6,12 +6,14 @@ export default chapter({
   sections: [
     {
       title: "Motivation and scope",
+      label: "sec:surreal-motivation",
       blocks: [
         "surreal-appendix-intro",
       ],
     },
     {
       title: "What survives and what breaks",
+      label: "sec:surreal-survives-breaks",
       blocks: [
         "algebraic-core-survives",
         // Dual ledger: every transcendental in the paper, indexed
@@ -46,6 +48,7 @@ export default chapter({
     },
     {
       title: "Surreal construction as a grading",
+      label: "sec:surreal-construction-grading",
       blocks: [
         "birthday-grading",
         "hoefsmit-is-surreal-construction",
@@ -55,6 +58,7 @@ export default chapter({
     },
     {
       title: "Standard-part replaces classical limits",
+      label: "sec:standard-part-classical-limits",
       blocks: [
         "standard-part-functor",
         "valuation-ring-finite-surreals",
@@ -65,6 +69,7 @@ export default chapter({
     },
     {
       title: "Conway normal form and asymptotic notation",
+      label: "sec:conway-normal-form",
       blocks: [
         "conway-normal-form",
         "body-asymptotics-catalog",
@@ -72,6 +77,7 @@ export default chapter({
     },
     {
       title: "Named surreals for singular objects",
+      label: "sec:named-surreals-singular",
       blocks: [
         "surreal-blowup-calculus",
         "bigbang-heatdeath",
@@ -79,6 +85,7 @@ export default chapter({
     },
     {
       title: "Relaxing strict equalities to $1 + \\varepsilon$",
+      label: "sec:relaxing-strict-equalities",
       blocks: [
         "infinitesimal-frobenius",
         "infinitesimal-observability",
@@ -87,6 +94,7 @@ export default chapter({
     },
     {
       title: "Speculative reformulations",
+      label: "sec:surreal-speculative",
       blocks: [
         "hahn-substrate",
         "local-infinitesimal-field",
@@ -97,12 +105,49 @@ export default chapter({
     },
     {
       title: "Characteristic-$p$ companion: nimber surreals",
+      label: "sec:nimber-surreals",
       blocks: [
         "on-p-modular-hecke",
       ],
     },
     {
+      title: "Surreal rate calculus and the squeeze inequality",
+      label: "sec:surreal-rate-calculus",
+      blocks: [
+        "surreal-rate-calculus",
+        "surreal-squeeze",
+      ],
+    },
+    {
+      title: "Millennium-problem surreal bounds",
+      label: "sec:millennium-bounds-via-surreals",
+      blocks: [
+        // BSD
+        "q-birch-swinnerton-dyer",
+        "bsd-surreal-bound",
+        // RH
+        "rh-surreal-bound",
+        // Yang-Mills
+        "yang-mills-surreal-bound",
+        // P vs NP
+        "p-vs-np-conjecture",
+        "p-vs-np-surreal-bound",
+        // Collatz family
+        "q-collatz-conjecture",
+        "collatz-contact-boundary",
+        "collatz-no-cycles",
+        "collatz-three-forms",
+        "collatz-hausdorff-comparison",
+        "q-collatz-interpretation",
+        "collatz-surreal-bound",
+        // Graded-Mikusiński unification of the bounds.
+        "surreal-bounds-graded-mikusinski",
+        "millennium-unification",
+      ],
+    },
+    {
       title: "Outlook",
+      label: "sec:surreal-outlook",
       blocks: [
         "surreal-appendix-conclusion",
       ],

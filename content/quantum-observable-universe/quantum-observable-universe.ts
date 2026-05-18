@@ -53,7 +53,6 @@ export default paper({
     // ── Part II: Structure ──────────────────────────────────────────
     chapterRef({ dir: "braids-and-knots" }),                 // Braids, knots, Hecke
     chapterRef({ dir: "models-of-qous" }),                   // Models of QOUs
-    chapterRef({ dir: "algebraic-substrate" }),               // Algebraic substrate
     chapterRef({ dir: "fluid-dynamics" }),                    // Fluid dynamics
     chapterRef({ dir: "information-theory" }),                // Information theory
 
