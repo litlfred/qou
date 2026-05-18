@@ -170,6 +170,33 @@ integration improvement instead.
     above in the PR body, and request owner review **on the fate
     decision** before pushing the production-formula edits.
 
+    **Three-phase delivery (validated on PR #696 for
+    `prop:flavor-dressed-mass-from-substrate-split`):**
+    - **Phase 1 — Foundation.**  Author the new structural
+      content blocks (def + props + thm + remark) and their Lean
+      stubs.  Update the chapter manifest.  Run
+      `bun run validate <paper>` and confirm pass.  Commit + push
+      for early review.
+    - **Phase 2 — Predecessor deletion + downstream repointing.**
+      Delete the lemma's `.{ts,md,lean}` files. Grep `content/`
+      for every `uses[]` / `interprets[]` / markdown-link
+      reference and repoint to the new prop.  Update the chapter
+      manifest to remove the deleted blocks.  Re-run
+      `bun run validate` to catch any residual references.
+      Commit + push.
+    - **Phase 3 — Production wiring.**  Author a NEW probe script
+      `probe_<new_prop_slug>.py` whose witness's `contentBlock`
+      points to the new prop AND whose assertions cross-check the
+      substrate-pure formula against the appropriate CODATA /
+      validation anchor.  Add the new prop's label to
+      `reference_blocks` in the canonical sweep's witness.  This
+      lets downstream consumers see the dependency without
+      inlining the cross-check.  Commit + push.
+
+    Across the three phases keep `bun run validate` clean.  Each
+    phase is a single commit; reviewers can read the diff per
+    phase rather than as a giant atomic squash.
+
 - **I3. WIRED BUT GUARDED OFF.** A consumer references the witness but
   the call is behind an `if False`, an env var defaulting to off, or a
   legacy fallback that hides it. Fix: promote to default-on after a
