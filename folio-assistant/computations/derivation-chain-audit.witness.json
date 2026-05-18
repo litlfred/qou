@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T03:17:52.288422+00:00",
-  "commitSha": "0451e0e4c66e854e90ac8ed425d7148161814160",
+  "computedAt": "2026-05-18T04:09:03.675050+00:00",
+  "commitSha": "d24a01b2edf8048ac41548b8d7ca7aa82bc98763",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -572,11 +572,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 2,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "875916a587c227572f421c22053ad81371976ccc",
+  "scriptCommitSha": "67f1df24c9d76e62b2bb25a331814e511ba6dc3f",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
   "data": {
@@ -2409,6 +2409,7 @@
         "probe-sdpb-h3a-deuteron.witness.json",
         "probe-sdpb-multilevel-crossing.witness.json",
         "probe-sdpb-pl-crossing-equations.witness.json",
+        "probe-substrate-vs-chi-cache-delta-m.witness.json",
         "probe-symbolic-sdp-derivation-breakout.witness.json",
         "probe-term4-conventions.witness.json",
         "probe-tritium-k-star.witness.json",
