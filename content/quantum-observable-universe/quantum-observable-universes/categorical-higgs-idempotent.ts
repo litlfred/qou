@@ -7,10 +7,7 @@ export default conjecture({
   uses: [
     "def:frobenius-hopf-substrate",
     "def:categorical-action",
-    "conj:electroweak-mass-eigenstate-count",
-    "conj:force-carrier-knot-vs-link-dichotomy",
     "thm:em-spectral-completeness",
-    "prop:gauge-coupling-uniqueness",
   ],
   tags: [
     "higgs-mechanism",
