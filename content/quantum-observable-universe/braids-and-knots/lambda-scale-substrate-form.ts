@@ -39,7 +39,7 @@ export default conjecture({
     "Borromean baryon $\\lambda_{\\text{scale}}$ substrate form: $5/2 - h^2 \\cdot G + O(h^4)$",
   lean: {
     ref: "qou:QOU.BraidKnot.LambdaScaleSubstrateForm",
-    validation: "not_started",
+    validation: "not_checked",
   },
   uses: [
     "conj:borromean-baryon-mass-formula",
