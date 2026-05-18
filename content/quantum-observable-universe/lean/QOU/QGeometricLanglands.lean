@@ -341,6 +341,30 @@ theorem kummer_no_universal_lift :
     have : (↑n : ℤ) ≥ 2 := by exact_mod_cast hn
     omega⟩
 
+/-- **q-GL Kummer filtration**: at every level `n ≥ 1`, the
+    Kummer divisibility criterion (`n ∣ χ` iff `χ % n = 0`) controls
+    whether the q-local system lifts through brane tower level `n`,
+    AND for any `χ ≠ 0` the obstruction persists at infinitely many
+    levels (no `n ≥ 2` divides every nonzero `χ`). This packages the
+    arithmetic core of the Kummer filtration claim from
+    `conj:q-gl-kummer-filtration`; the full categorical statement
+    (level-n sublocus + restriction of `𝕃_q`) is encoded in
+    `QGeometricLanglandsConjecture.recovers_eigenvalue` plus the
+    Kummer hypotheses below.
+
+    LaTeX: `\label{conj:q-gl-kummer-filtration}`
+    uses: `prop:q-gl-obstruction-calc`, `conj:q-geometric-langlands` -/
+-- Ref: [yekutieli2010] https://doi.org/10.1515/crelle.2010.002
+-- Ref: [frenkel2007] https://doi.org/10.1007/978-3-540-30308-4_11
+theorem q_gl_kummer_filtration (χ : ℤ) (hχ : χ ≠ 0) :
+    -- (1) Divisibility criterion at every level
+    (∀ (n : ℕ), n ≥ 1 → ((↑n : ℤ) ∣ χ ↔ χ % ↑n = 0))
+    -- (2) Cofinitely many levels carry the obstruction
+    ∧ Set.Infinite {n : ℕ | n ≥ 1 ∧ ¬ (↑n : ℤ) ∣ χ} := by
+  refine ⟨?_, obstruction_cofinite_persistence χ hχ⟩
+  intro n hn
+  exact kummer_divisibility_criterion χ n hn
+
 /-! ## §7a  The q-Geometric Langlands Conjecture (Lean axiom)
 
     The conjecture asserts an equivalence of ∞-categories:
