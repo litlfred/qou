@@ -1,18 +1,17 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-05T18:19:35.903382+00:00",
-  "commitSha": "7b34963df80d979e730863d033d206e0209480ab",
+  "computedAt": "2026-05-18T18:08:14.379853+00:00",
+  "commitSha": "7ed5bd92a83eb3187638d475d54804ab137b5e7b",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 17,
+  "durationMs": 19,
   "computation": "term6-residues-at-roots",
   "scriptFile": "term6_residues_at_roots.py",
   "scriptHash": "de325dbecab8",
-  "scriptCommitSha": "b426b6e23cc89ac23dd58693004b3ad1bf8b04b1",
+  "scriptCommitSha": "deeead4ec85e681e22a1567ac3ad828427b2f855",
   "description": "Term 6 of thm:six-term-mass-formula-complete via partial-fraction polar split on the u-plane lift tr_M(u²): tr_M(u²) = entire(u) + A(u)/u^k + B(u)/Dprime(u), with Term 6 = B(u₀)/Dprime(u₀) the principal-part contribution at non-zero poles only.  This split avoids per-pole residue extraction; sp.div + one sp.series-based power-series inversion deliver the answer in seconds where sp.residue scaled polynomially in atom size and timed out at deuteron.  Evaluation enabled by the Markov-axiom recursive ascent (#508 / PR #516) returning tr_M as a symbolic rational function in q^{1/2}.",
   "contentBlock": "thm:six-term-mass-formula-complete",
-  "auditOnly": "docs/audits/2026-05-03-t6-calibration-and-gs-reducer-perf.md",
   "parameters": {
     "q0": "1.1099785955541805",
     "method": "partial_fraction_split_u_plane"
@@ -33,7 +32,7 @@
         "pp_at_roots_at_u0": "(1.921135705204251+0j)",
         "term6_at_q0": "(1.921135705204251+0j)",
         "term6_at_q0_real": 1.921135705204251,
-        "term6_at_q0_imag": 0,
+        "term6_at_q0_imag": 0.0,
         "atom": "proton"
       },
       {
@@ -50,7 +49,7 @@
         "pp_at_roots_at_u0": "(2.3950741622611353+0j)",
         "term6_at_q0": "(2.3950741622611353+0j)",
         "term6_at_q0_real": 2.3950741622611353,
-        "term6_at_q0_imag": 0,
+        "term6_at_q0_imag": 0.0,
         "atom": "neutron"
       },
       {
@@ -67,7 +66,7 @@
         "pp_at_roots_at_u0": "(109.24651860237559+0j)",
         "term6_at_q0": "(109.24651860237559+0j)",
         "term6_at_q0_real": 109.24651860237559,
-        "term6_at_q0_imag": 0,
+        "term6_at_q0_imag": 0.0,
         "atom": "deuteron"
       },
       {
@@ -84,7 +83,7 @@
         "pp_at_roots_at_u0": "(-41830.77892304886+0j)",
         "term6_at_q0": "(-41830.77892304886+0j)",
         "term6_at_q0_real": -41830.77892304886,
-        "term6_at_q0_imag": 0,
+        "term6_at_q0_imag": 0.0,
         "atom": "tritium"
       },
       {
@@ -101,7 +100,7 @@
         "pp_at_roots_at_u0": "(-37109.96708558529+0j)",
         "term6_at_q0": "(-37109.96708558529+0j)",
         "term6_at_q0_real": -37109.96708558529,
-        "term6_at_q0_imag": 0,
+        "term6_at_q0_imag": 0.0,
         "atom": "helium-3"
       },
       {
@@ -118,7 +117,7 @@
         "pp_at_roots_at_u0": "(1356084.8166204458+0j)",
         "term6_at_q0": "(1356084.8166204458+0j)",
         "term6_at_q0_real": 1356084.8166204458,
-        "term6_at_q0_imag": 0,
+        "term6_at_q0_imag": 0.0,
         "atom": "helium-4"
       }
     ]

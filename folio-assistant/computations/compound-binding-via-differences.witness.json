@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-09T22:08:33.886965+00:00",
-  "commitSha": "c748cff8f81fe8a3a87abf94980be44912522bea",
+  "computedAt": "2026-05-18T18:07:29.479578+00:00",
+  "commitSha": "7ed5bd92a83eb3187638d475d54804ab137b5e7b",
   "assertions": [
     {
       "name": "all_4_compounds_predicted",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 10,
   "computation": "compound-binding-via-differences",
   "scriptFile": "compound_binding_via_differences.py",
-  "scriptHash": "a889881789fa",
-  "scriptCommitSha": "f32c170eba9df35642f71b2ec5cc5c2ab0742648",
+  "scriptHash": "9715ae351d66",
+  "scriptCommitSha": "621cbb9207942e0a9db11c2f336e2da439e42bca",
   "description": "Item 3 from Phase 1.8 actionable path: compound binding energies B(Z, N) via LP-dual differences per term7-alpha5's prop:mass-formula-iterative-lp-dual.  Re-expresses the Strategy-3 six-term decomposition in the difference frame (B = Σ_l (u^{(l)*}[atom] − u^{(l)*}[free])) per the audit 2026-05-05-categorical-chain-gamma-to-six-term.md.  Numerical predictions identical to Strategy-3 by construction (same components); structural framing now framework-consistent. Remaining errors (24-54% on D, T, ³He, ⁴He) localised to the component values: canonical_a_k(jet-knot) at A≥3 and the disjoint-product t1_free approximation.",
   "contentBlock": "prop:atomic-mass-gb-nf",
   "parameters": {
@@ -46,7 +46,7 @@
         "B_pred_diff_MeV": 1.003225315755833,
         "err_pct": -54.90242520312577,
         "components_diff_MeV": {
-          "T1_E0_beta_dT1": -2.50908459924615e-50,
+          "T1_E0_beta_dT1": 6.303984018823981e-40,
           "T2_alpha_dT2": 0.9335817205449537,
           "T3_alpha_dT3": 1.8620907014248653,
           "T4_dT4": -1.7924471062139857,
@@ -54,7 +54,7 @@
           "T6_dT6": 0.0
         },
         "delta_components_cat_units": {
-          "delta_T1_atom_minus_free": 3.207317652110635e-50,
+          "delta_T1_atom_minus_free": -8.05826923024924e-40,
           "delta_T2_atom_minus_free": 0.24932079597942414,
           "delta_T3_atom_minus_free": 0.4972868744625091,
           "delta_T4_atom_minus_free_MeV": -1.7924471062139857,

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T16:33:32.625802+00:00",
-  "commitSha": "803ffcd0c8814e20b4bbd12580c3f00d90825e1d",
+  "computedAt": "2026-05-18T18:09:25.016636+00:00",
+  "commitSha": "0369ff7cf2044cc1a93fe49fffe85833b1ec78bd",
   "assertions": [
     {
       "name": "no_stale_probes",
@@ -15,37 +15,25 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 11,
+  "durationMs": 9,
   "computation": "stale-probe-audit",
   "scriptFile": "stale_probe_audit.py",
   "scriptHash": "24ad1c691d9f",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "74aa18470524511148fc9b8146868f090fcae222",
   "description": "I7 audit per local/compute-integration-watcher: every folio-assistant/computations/*.witness.json with a label-shaped `contentBlock` is cross-checked against the git-log mtime of its `.md` sibling.  A witness is stale if its `.md` was modified >7 days after the witness was last committed.  Operationalises the 86-hit I7 count from the 2026-05-18 idle sweep (PR #737).",
   "contentBlock": "I7 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
     "stale_threshold_days": 7,
-    "total_fields_audited": 186,
-    "registered_labels_count": 1826
+    "total_fields_audited": 193,
+    "registered_labels_count": 1822
   },
   "data": {
     "by_result": {
-      "md_missing": 14,
-      "ok": 140,
-      "stale": 32
+      "md_missing": 3,
+      "ok": 177,
+      "stale": 13
     },
     "rows": [
-      {
-        "witness": "folio-assistant/computations/A-operator-extract-general.witness.json",
-        "label": "conj:operator-valued-sublemma-2-1",
-        "witness_mtime_unix": 1778388915,
-        "result": "md_missing"
-      },
-      {
-        "witness": "folio-assistant/computations/A-operator-extract-kron.witness.json",
-        "label": "conj:operator-valued-sublemma-2-1",
-        "witness_mtime_unix": 1778388481,
-        "result": "md_missing"
-      },
       {
         "witness": "folio-assistant/computations/A-operator-extract-reduced.witness.json",
         "label": "conj:operator-valued-sublemma-2-1",
@@ -54,12 +42,6 @@
       },
       {
         "witness": "folio-assistant/computations/A-operator-per-interface.witness.json",
-        "label": "conj:operator-valued-sublemma-2-1",
-        "witness_mtime_unix": 1778388481,
-        "result": "md_missing"
-      },
-      {
-        "witness": "folio-assistant/computations/A-operator-rank-probe.witness.json",
         "label": "conj:operator-valued-sublemma-2-1",
         "witness_mtime_unix": 1778388481,
         "result": "md_missing"
@@ -85,10 +67,10 @@
       {
         "witness": "folio-assistant/computations/a-K-via-lp-dual.witness.json",
         "label": "conj:knot-factor-frobenius-pairing",
-        "witness_mtime_unix": 1779076693,
+        "witness_mtime_unix": 1779121991,
         "md": "content/quantum-observable-universe/braids-and-knots/knot-factor-frobenius-pairing.md",
         "md_mtime_unix": 1779076693,
-        "md_minus_witness_days": 0.0,
+        "md_minus_witness_days": -0.52,
         "result": "ok"
       },
       {
@@ -139,28 +121,28 @@
       {
         "witness": "folio-assistant/computations/applied-uniqueness-mass-table.witness.json",
         "label": "prop:atom-knot-mass-derivation",
-        "witness_mtime_unix": 1778539641,
+        "witness_mtime_unix": 1779121985,
         "md": "content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md",
         "md_mtime_unix": 1779113120,
-        "md_minus_witness_days": 6.64,
+        "md_minus_witness_days": -0.1,
         "result": "ok"
       },
       {
         "witness": "folio-assistant/computations/atomic-braid-mass-table-modes-sweep.witness.json",
         "label": "prop:atomic-mass-gb-nf",
-        "witness_mtime_unix": 1778298944,
+        "witness_mtime_unix": 1779127757,
         "md": "content/quantum-observable-universe/braids-and-knots/atomic-mass-gb-nf.md",
         "md_mtime_unix": 1779113120,
-        "md_minus_witness_days": 9.42,
-        "result": "stale"
+        "md_minus_witness_days": -0.17,
+        "result": "ok"
       },
       {
         "witness": "folio-assistant/computations/atomic-braid-mass-table.witness.json",
         "label": "prop:atomic-mass-gb-nf",
-        "witness_mtime_unix": 1779119111,
+        "witness_mtime_unix": 1779125168,
         "md": "content/quantum-observable-universe/braids-and-knots/atomic-mass-gb-nf.md",
         "md_mtime_unix": 1779113120,
-        "md_minus_witness_days": -0.07,
+        "md_minus_witness_days": -0.14,
         "result": "ok"
       },
       {
@@ -183,9 +165,12 @@
       },
       {
         "witness": "folio-assistant/computations/binding-K-direct.witness.json",
-        "label": "prop:atomic-mass-via-rho-k",
-        "witness_mtime_unix": 1779055797,
-        "result": "md_missing"
+        "label": "prop:rho-k-graded-expansion",
+        "witness_mtime_unix": 1779125791,
+        "md": "content/quantum-observable-universe/braids-and-knots/rho-k-graded-expansion.md",
+        "md_mtime_unix": 1778298944,
+        "md_minus_witness_days": -9.57,
+        "result": "ok"
       },
       {
         "witness": "folio-assistant/computations/binding-k-enumerator.witness.json",
@@ -217,11 +202,11 @@
       {
         "witness": "folio-assistant/computations/braid-encoding-audit.witness.json",
         "label": "prop:atomic-mass-gb-nf",
-        "witness_mtime_unix": 1778385334,
+        "witness_mtime_unix": 1779127757,
         "md": "content/quantum-observable-universe/braids-and-knots/atomic-mass-gb-nf.md",
         "md_mtime_unix": 1779113120,
-        "md_minus_witness_days": 8.42,
-        "result": "stale"
+        "md_minus_witness_days": -0.17,
+        "result": "ok"
       },
       {
         "witness": "folio-assistant/computations/brane-tower-finite-laurent.witness.json",
@@ -271,29 +256,29 @@
       {
         "witness": "folio-assistant/computations/canonical-a-k-magnitude-audit.witness.json",
         "label": "prop:mass-coefficient-shadow-price",
-        "witness_mtime_unix": 1779076693,
+        "witness_mtime_unix": 1779121991,
         "md": "content/quantum-observable-universe/braids-and-knots/mass-coefficient-shadow-price.md",
         "md_mtime_unix": 1779076693,
-        "md_minus_witness_days": 0.0,
+        "md_minus_witness_days": -0.52,
         "result": "ok"
       },
       {
         "witness": "folio-assistant/computations/categorical-bypass-volmatch-demo.witness.json",
         "label": "prop:atom-knot-mass-derivation",
-        "witness_mtime_unix": 1778298944,
+        "witness_mtime_unix": 1779127757,
         "md": "content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md",
         "md_mtime_unix": 1779113120,
-        "md_minus_witness_days": 9.42,
-        "result": "stale"
+        "md_minus_witness_days": -0.17,
+        "result": "ok"
       },
       {
         "witness": "folio-assistant/computations/categorical-q-decay-ba-low-isotopes.witness.json",
         "label": "prop:atom-knot-mass-derivation",
-        "witness_mtime_unix": 1778298944,
+        "witness_mtime_unix": 1779127757,
         "md": "content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md",
         "md_mtime_unix": 1779113120,
-        "md_minus_witness_days": 9.42,
-        "result": "stale"
+        "md_minus_witness_days": -0.17,
+        "result": "ok"
       },
       {
         "witness": "folio-assistant/computations/ch-bond-writhe-lp.witness.json",
@@ -316,11 +301,11 @@
       {
         "witness": "folio-assistant/computations/chirality-avg-content.witness.json",
         "label": "prop:chirality-writhe-ribbon-derivation",
-        "witness_mtime_unix": 1778301164,
+        "witness_mtime_unix": 1779127757,
         "md": "content/quantum-observable-universe/braids-and-knots/chirality-writhe-ribbon-derivation.md",
         "md_mtime_unix": 1779076693,
-        "md_minus_witness_days": 8.98,
-        "result": "stale"
+        "md_minus_witness_days": -0.59,
+        "result": "ok"
       },
       {
         "witness": "folio-assistant/computations/close-321-weinberg-gap.witness.json",
@@ -341,19 +326,13 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/codata-masses.witness.json",
-        "label": "prop:codata-mass-anchors",
-        "witness_mtime_unix": 1779066870,
-        "result": "md_missing"
-      },
-      {
         "witness": "folio-assistant/computations/compound-binding-via-differences.witness.json",
         "label": "prop:atomic-mass-gb-nf",
-        "witness_mtime_unix": 1778385334,
+        "witness_mtime_unix": 1779127757,
         "md": "content/quantum-observable-universe/braids-and-knots/atomic-mass-gb-nf.md",
         "md_mtime_unix": 1779113120,
-        "md_minus_witness_days": 8.42,
-        "result": "stale"
+        "md_minus_witness_days": -0.17,
+        "result": "ok"
       },
       {
         "witness": "folio-assistant/computations/confined-knot-binding.witness.json",
@@ -376,11 +355,11 @@
       {
         "witness": "folio-assistant/computations/d-from-scratch.witness.json",
         "label": "prop:atom-knot-mass-derivation",
-        "witness_mtime_unix": 1778298944,
+        "witness_mtime_unix": 1779127757,
         "md": "content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md",
         "md_mtime_unix": 1779113120,
-        "md_minus_witness_days": 9.42,
-        "result": "stale"
+        "md_minus_witness_days": -0.17,
+        "result": "ok"
       },
       {
         "witness": "folio-assistant/computations/delta-coupling-closed-form-probe.witness.json",
@@ -457,10 +436,10 @@
       {
         "witness": "folio-assistant/computations/delta-lambda-empirical-tabulation.witness.json",
         "label": "prop:rho-k-h3a-refinement",
-        "witness_mtime_unix": 1779066870,
+        "witness_mtime_unix": 1779121988,
         "md": "content/quantum-observable-universe/braids-and-knots/rho-k-h3a-refinement.md",
         "md_mtime_unix": 1778298944,
-        "md_minus_witness_days": -8.89,
+        "md_minus_witness_days": -9.53,
         "result": "ok"
       },
       {
@@ -547,10 +526,10 @@
       {
         "witness": "folio-assistant/computations/full-twist-delta-n2-verification.witness.json",
         "label": "conj:categorical-neutrality-saturated-shells",
-        "witness_mtime_unix": 1779071981,
+        "witness_mtime_unix": 1779124769,
         "md": "content/quantum-observable-universe/braids-and-knots/categorical-neutrality-saturated-shells.md",
         "md_mtime_unix": 1778307000,
-        "md_minus_witness_days": -8.85,
+        "md_minus_witness_days": -9.46,
         "result": "ok"
       },
       {
@@ -627,9 +606,12 @@
       },
       {
         "witness": "folio-assistant/computations/he4-sdp-compositional-probe.witness.json",
-        "label": "prop:magic-shell-coupling-witness",
-        "witness_mtime_unix": 1778893543,
-        "result": "md_missing"
+        "label": "prop:magic-shell-coupling-kappa",
+        "witness_mtime_unix": 1779125791,
+        "md": "content/quantum-observable-universe/braids-and-knots/magic-shell-coupling-kappa.md",
+        "md_mtime_unix": 1779047550,
+        "md_minus_witness_days": -0.91,
+        "result": "ok"
       },
       {
         "witness": "folio-assistant/computations/hh-trefoil-corrected.witness.json",
@@ -697,10 +679,10 @@
       {
         "witness": "folio-assistant/computations/jet-gb-pl-correspondence.witness.json",
         "label": "prop:jet-gb-pl-correspondence",
-        "witness_mtime_unix": 1779071981,
+        "witness_mtime_unix": 1779124769,
         "md": "content/quantum-observable-universe/descartes-universe/jet-gb-pl-correspondence.md",
         "md_mtime_unix": 1778298944,
-        "md_minus_witness_days": -8.95,
+        "md_minus_witness_days": -9.56,
         "result": "ok"
       },
       {
@@ -714,21 +696,30 @@
       },
       {
         "witness": "folio-assistant/computations/kappa-categorical-h7a-closed.witness.json",
-        "label": "prop:magic-shell-coupling-witness",
-        "witness_mtime_unix": 1779047550,
-        "result": "md_missing"
+        "label": "prop:magic-shell-coupling-kappa",
+        "witness_mtime_unix": 1779125791,
+        "md": "content/quantum-observable-universe/braids-and-knots/magic-shell-coupling-kappa.md",
+        "md_mtime_unix": 1779047550,
+        "md_minus_witness_days": -0.91,
+        "result": "ok"
       },
       {
         "witness": "folio-assistant/computations/kappa-categorical-via-canonical-brane.witness.json",
-        "label": "prop:magic-shell-coupling-witness",
-        "witness_mtime_unix": 1779047550,
-        "result": "md_missing"
+        "label": "prop:magic-shell-coupling-kappa",
+        "witness_mtime_unix": 1779125791,
+        "md": "content/quantum-observable-universe/braids-and-knots/magic-shell-coupling-kappa.md",
+        "md_mtime_unix": 1779047550,
+        "md_minus_witness_days": -0.91,
+        "result": "ok"
       },
       {
         "witness": "folio-assistant/computations/kappa-d2-catalan-derivation.witness.json",
-        "label": "prop:magic-shell-coupling-witness",
-        "witness_mtime_unix": 1779047550,
-        "result": "md_missing"
+        "label": "prop:magic-shell-coupling-kappa",
+        "witness_mtime_unix": 1779125791,
+        "md": "content/quantum-observable-universe/braids-and-knots/magic-shell-coupling-kappa.md",
+        "md_mtime_unix": 1779047550,
+        "md_minus_witness_days": -0.91,
+        "result": "ok"
       },
       {
         "witness": "folio-assistant/computations/kashiwara-jones-c4-categorical.witness.json",
@@ -749,12 +740,21 @@
         "result": "ok"
       },
       {
+        "witness": "folio-assistant/computations/lambda-scale-all-c-i-family-a.witness.json",
+        "label": "conj:lambda-scale-substrate-form",
+        "witness_mtime_unix": 1779121406,
+        "md": "content/quantum-observable-universe/braids-and-knots/lambda-scale-substrate-form.md",
+        "md_mtime_unix": 1779120035,
+        "md_minus_witness_days": -0.02,
+        "result": "ok"
+      },
+      {
         "witness": "folio-assistant/computations/lambda-scale-derivation-probes-123.witness.json",
         "label": "conj:borromean-baryon-mass-formula",
-        "witness_mtime_unix": 1779076694,
+        "witness_mtime_unix": 1779121406,
         "md": "content/quantum-observable-universe/braids-and-knots/borromean-baryon-mass-formula.md",
         "md_mtime_unix": 1778539641,
-        "md_minus_witness_days": -6.22,
+        "md_minus_witness_days": -6.73,
         "result": "ok"
       },
       {
@@ -762,17 +762,107 @@
         "label": "conj:lambda-scale-substrate-form",
         "witness_mtime_unix": 1779076694,
         "md": "content/quantum-observable-universe/braids-and-knots/lambda-scale-substrate-form.md",
-        "md_mtime_unix": 1779076694,
+        "md_mtime_unix": 1779120035,
+        "md_minus_witness_days": 0.5,
+        "result": "ok"
+      },
+      {
+        "witness": "folio-assistant/computations/lambda-scale-proof-step4-h4-remainder.witness.json",
+        "label": "conj:lambda-scale-substrate-form",
+        "witness_mtime_unix": 1779120034,
+        "md": "content/quantum-observable-universe/braids-and-knots/lambda-scale-substrate-form.md",
+        "md_mtime_unix": 1779120035,
         "md_minus_witness_days": 0.0,
+        "result": "ok"
+      },
+      {
+        "witness": "folio-assistant/computations/lambda-scale-proof-step5-skein-anchor.witness.json",
+        "label": "conj:lambda-scale-substrate-form",
+        "witness_mtime_unix": 1779120034,
+        "md": "content/quantum-observable-universe/braids-and-knots/lambda-scale-substrate-form.md",
+        "md_mtime_unix": 1779120035,
+        "md_minus_witness_days": 0.0,
+        "result": "ok"
+      },
+      {
+        "witness": "folio-assistant/computations/lambda-scale-rd-c4-categorical.witness.json",
+        "label": "conj:lambda-scale-substrate-form",
+        "witness_mtime_unix": 1779120032,
+        "md": "content/quantum-observable-universe/braids-and-knots/lambda-scale-substrate-form.md",
+        "md_mtime_unix": 1779120035,
+        "md_minus_witness_days": 0.0,
+        "result": "ok"
+      },
+      {
+        "witness": "folio-assistant/computations/lambda-scale-rd-c4-pslq-search.witness.json",
+        "label": "conj:lambda-scale-substrate-form",
+        "witness_mtime_unix": 1779120032,
+        "md": "content/quantum-observable-universe/braids-and-knots/lambda-scale-substrate-form.md",
+        "md_mtime_unix": 1779120035,
+        "md_minus_witness_days": 0.0,
+        "result": "ok"
+      },
+      {
+        "witness": "folio-assistant/computations/lambda-scale-rd-h4-half-symmetric.witness.json",
+        "label": "conj:lambda-scale-substrate-form",
+        "witness_mtime_unix": 1779121406,
+        "md": "content/quantum-observable-universe/braids-and-knots/lambda-scale-substrate-form.md",
+        "md_mtime_unix": 1779120035,
+        "md_minus_witness_days": -0.02,
+        "result": "ok"
+      },
+      {
+        "witness": "folio-assistant/computations/lambda-scale-rd-hoefsmit-symbolic.witness.json",
+        "label": "conj:lambda-scale-substrate-form",
+        "witness_mtime_unix": 1779121406,
+        "md": "content/quantum-observable-universe/braids-and-knots/lambda-scale-substrate-form.md",
+        "md_mtime_unix": 1779120035,
+        "md_minus_witness_days": -0.02,
+        "result": "ok"
+      },
+      {
+        "witness": "folio-assistant/computations/lambda-scale-rd1-geometric.witness.json",
+        "label": "conj:lambda-scale-substrate-form",
+        "witness_mtime_unix": 1779120034,
+        "md": "content/quantum-observable-universe/braids-and-knots/lambda-scale-substrate-form.md",
+        "md_mtime_unix": 1779120035,
+        "md_minus_witness_days": 0.0,
+        "result": "ok"
+      },
+      {
+        "witness": "folio-assistant/computations/lambda-scale-rd2-transcendental.witness.json",
+        "label": "conj:lambda-scale-substrate-form",
+        "witness_mtime_unix": 1779120034,
+        "md": "content/quantum-observable-universe/braids-and-knots/lambda-scale-substrate-form.md",
+        "md_mtime_unix": 1779120035,
+        "md_minus_witness_days": 0.0,
+        "result": "ok"
+      },
+      {
+        "witness": "folio-assistant/computations/lambda-scale-rd3-hecke-levels.witness.json",
+        "label": "conj:lambda-scale-substrate-form",
+        "witness_mtime_unix": 1779120034,
+        "md": "content/quantum-observable-universe/braids-and-knots/lambda-scale-substrate-form.md",
+        "md_mtime_unix": 1779120035,
+        "md_minus_witness_days": 0.0,
+        "result": "ok"
+      },
+      {
+        "witness": "folio-assistant/computations/lambda-scale-rd4-k-p-search.witness.json",
+        "label": "conj:borromean-baryon-mass-formula",
+        "witness_mtime_unix": 1779120035,
+        "md": "content/quantum-observable-universe/braids-and-knots/borromean-baryon-mass-formula.md",
+        "md_mtime_unix": 1778539641,
+        "md_minus_witness_days": -6.72,
         "result": "ok"
       },
       {
         "witness": "folio-assistant/computations/lambda-scale-substrate-probe.witness.json",
         "label": "conj:borromean-baryon-mass-formula",
-        "witness_mtime_unix": 1779076694,
+        "witness_mtime_unix": 1779120034,
         "md": "content/quantum-observable-universe/braids-and-knots/borromean-baryon-mass-formula.md",
         "md_mtime_unix": 1778539641,
-        "md_minus_witness_days": -6.22,
+        "md_minus_witness_days": -6.72,
         "result": "ok"
       },
       {
@@ -796,11 +886,11 @@
       {
         "witness": "folio-assistant/computations/m-n-difference-formula.witness.json",
         "label": "prop:atomic-mass-gb-nf",
-        "witness_mtime_unix": 1778385334,
+        "witness_mtime_unix": 1779127757,
         "md": "content/quantum-observable-universe/braids-and-knots/atomic-mass-gb-nf.md",
         "md_mtime_unix": 1779113120,
-        "md_minus_witness_days": 8.42,
-        "result": "stale"
+        "md_minus_witness_days": -0.17,
+        "result": "ok"
       },
       {
         "witness": "folio-assistant/computations/m-p-borromean-verification-50dps.witness.json",
@@ -1000,10 +1090,10 @@
       {
         "witness": "folio-assistant/computations/neutron-mass-codata-50dps.witness.json",
         "label": "prop:full-pole-structure-mass-trace",
-        "witness_mtime_unix": 1778539648,
+        "witness_mtime_unix": 1779121988,
         "md": "content/quantum-observable-universe/braids-and-knots/full-pole-structure-mass-trace.md",
         "md_mtime_unix": 1778362891,
-        "md_minus_witness_days": -2.05,
+        "md_minus_witness_days": -8.79,
         "result": "ok"
       },
       {
@@ -1108,38 +1198,38 @@
       {
         "witness": "folio-assistant/computations/probe-atom-shell-self-duality-mpfr.witness.json",
         "label": "prop:shell-schur-weyl-self-duality",
-        "witness_mtime_unix": 1778298944,
+        "witness_mtime_unix": 1779127757,
         "md": "content/quantum-observable-universe/braids-and-knots/shell-schur-weyl-self-duality.md",
         "md_mtime_unix": 1779076693,
-        "md_minus_witness_days": 9.0,
-        "result": "stale"
+        "md_minus_witness_days": -0.59,
+        "result": "ok"
       },
       {
         "witness": "folio-assistant/computations/probe-atom-shell-self-duality.witness.json",
         "label": "prop:shell-schur-weyl-self-duality",
-        "witness_mtime_unix": 1778298944,
+        "witness_mtime_unix": 1779127757,
         "md": "content/quantum-observable-universe/braids-and-knots/shell-schur-weyl-self-duality.md",
         "md_mtime_unix": 1779076693,
-        "md_minus_witness_days": 9.0,
-        "result": "stale"
+        "md_minus_witness_days": -0.59,
+        "result": "ok"
       },
       {
         "witness": "folio-assistant/computations/probe-d-height-stratification.witness.json",
         "label": "thm:knot-mass-formula-unified",
-        "witness_mtime_unix": 1778298944,
+        "witness_mtime_unix": 1779127757,
         "md": "content/quantum-observable-universe/braids-and-knots/knot-mass-formula-unified.md",
         "md_mtime_unix": 1779076693,
-        "md_minus_witness_days": 9.0,
-        "result": "stale"
+        "md_minus_witness_days": -0.59,
+        "result": "ok"
       },
       {
         "witness": "folio-assistant/computations/probe-d-term23-binding.witness.json",
         "label": "prop:atom-knot-mass-derivation",
-        "witness_mtime_unix": 1778298944,
+        "witness_mtime_unix": 1779127757,
         "md": "content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md",
         "md_mtime_unix": 1779113120,
-        "md_minus_witness_days": 9.42,
-        "result": "stale"
+        "md_minus_witness_days": -0.17,
+        "result": "ok"
       },
       {
         "witness": "folio-assistant/computations/probe-derived-A-from-gs-normal-form.witness.json",
@@ -1153,11 +1243,11 @@
       {
         "witness": "folio-assistant/computations/probe-per-nucleon-self-duality.witness.json",
         "label": "prop:shell-schur-weyl-self-duality",
-        "witness_mtime_unix": 1778298944,
+        "witness_mtime_unix": 1779127757,
         "md": "content/quantum-observable-universe/braids-and-knots/shell-schur-weyl-self-duality.md",
         "md_mtime_unix": 1779076693,
-        "md_minus_witness_days": 9.0,
-        "result": "stale"
+        "md_minus_witness_days": -0.59,
+        "result": "ok"
       },
       {
         "witness": "folio-assistant/computations/probe-phiq-avg-chi-over-classical-dim.witness.json",
@@ -1261,11 +1351,11 @@
       {
         "witness": "folio-assistant/computations/probe-proton-mass-scale.witness.json",
         "label": "prop:atom-knot-mass-derivation",
-        "witness_mtime_unix": 1778298944,
+        "witness_mtime_unix": 1779127757,
         "md": "content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md",
         "md_mtime_unix": 1779113120,
-        "md_minus_witness_days": 9.42,
-        "result": "stale"
+        "md_minus_witness_days": -0.17,
+        "result": "ok"
       },
       {
         "witness": "folio-assistant/computations/probe-proton-with-wenzl-weights.witness.json",
@@ -1315,10 +1405,10 @@
       {
         "witness": "folio-assistant/computations/proton-mass-codata-50dps.witness.json",
         "label": "prop:full-pole-structure-mass-trace",
-        "witness_mtime_unix": 1779076694,
+        "witness_mtime_unix": 1779121988,
         "md": "content/quantum-observable-universe/braids-and-knots/full-pole-structure-mass-trace.md",
         "md_mtime_unix": 1778362891,
-        "md_minus_witness_days": -8.26,
+        "md_minus_witness_days": -8.79,
         "result": "ok"
       },
       {
@@ -1347,12 +1437,6 @@
         "md_mtime_unix": 1778532456,
         "md_minus_witness_days": -5.45,
         "result": "ok"
-      },
-      {
-        "witness": "folio-assistant/computations/q-beta-predicted.witness.json",
-        "label": "prop:beta-decay-energy-scale",
-        "witness_mtime_unix": 1778533451,
-        "result": "md_missing"
       },
       {
         "witness": "folio-assistant/computations/q-beta-spectral-bridge.witness.json",
@@ -1499,31 +1583,40 @@
         "result": "ok"
       },
       {
+        "witness": "folio-assistant/computations/term6-habiro-residue-mpfr-50dps.witness.json",
+        "label": "prop:term6-binding-density",
+        "witness_mtime_unix": 1779125791,
+        "md": "content/quantum-observable-universe/braids-and-knots/term6-binding-density.md",
+        "md_mtime_unix": 1778298944,
+        "md_minus_witness_days": -9.57,
+        "result": "ok"
+      },
+      {
         "witness": "folio-assistant/computations/term6-residues-at-roots.witness.json",
         "label": "thm:six-term-mass-formula-complete",
-        "witness_mtime_unix": 1778298944,
+        "witness_mtime_unix": 1779127757,
         "md": "content/quantum-observable-universe/braids-and-knots/six-term-mass-formula-complete.md",
         "md_mtime_unix": 1779076693,
-        "md_minus_witness_days": 9.0,
-        "result": "stale"
+        "md_minus_witness_days": -0.59,
+        "result": "ok"
       },
       {
         "witness": "folio-assistant/computations/term7-chi5-basis.witness.json",
         "label": "conj:shell-correction-term-seven",
-        "witness_mtime_unix": 1778301164,
+        "witness_mtime_unix": 1779127757,
         "md": "content/quantum-observable-universe/braids-and-knots/shell-correction-term-seven.md",
         "md_mtime_unix": 1779076693,
-        "md_minus_witness_days": 8.98,
-        "result": "stale"
+        "md_minus_witness_days": -0.59,
+        "result": "ok"
       },
       {
         "witness": "folio-assistant/computations/term7-height6-partition-enum.witness.json",
         "label": "conj:shell-correction-term-seven",
-        "witness_mtime_unix": 1778296723,
+        "witness_mtime_unix": 1779127757,
         "md": "content/quantum-observable-universe/braids-and-knots/shell-correction-term-seven.md",
         "md_mtime_unix": 1779076693,
-        "md_minus_witness_days": 9.03,
-        "result": "stale"
+        "md_minus_witness_days": -0.59,
+        "result": "ok"
       },
       {
         "witness": "folio-assistant/computations/tier-0-atlas-pslq-check.witness.json",
@@ -1582,11 +1675,11 @@
       {
         "witness": "folio-assistant/computations/unified-low-isotope-predictor.witness.json",
         "label": "prop:atom-knot-mass-derivation",
-        "witness_mtime_unix": 1778388481,
+        "witness_mtime_unix": 1779127757,
         "md": "content/quantum-observable-universe/braids-and-knots/atom-knot-mass-derivation.md",
         "md_mtime_unix": 1779113120,
-        "md_minus_witness_days": 8.39,
-        "result": "stale"
+        "md_minus_witness_days": -0.17,
+        "result": "ok"
       },
       {
         "witness": "folio-assistant/computations/unified-mass-molecular.witness.json",
@@ -1617,9 +1710,12 @@
       },
       {
         "witness": "folio-assistant/computations/v-hat-to-delta-lambda-bridge.witness.json",
-        "label": "prop:atomic-mass-via-rho-k",
-        "witness_mtime_unix": 1778388481,
-        "result": "md_missing"
+        "label": "prop:rho-k-graded-expansion",
+        "witness_mtime_unix": 1779125791,
+        "md": "content/quantum-observable-universe/braids-and-knots/rho-k-graded-expansion.md",
+        "md_mtime_unix": 1778298944,
+        "md_minus_witness_days": -9.57,
+        "result": "ok"
       },
       {
         "witness": "folio-assistant/computations/wedderburn-lp-ew-wiring.witness.json",
@@ -1651,11 +1747,11 @@
       {
         "witness": "folio-assistant/computations/y-lambda-macdonald-telescope.witness.json",
         "label": "prop:macdonald-hook-telescope",
-        "witness_mtime_unix": 1778301074,
+        "witness_mtime_unix": 1779127757,
         "md": "content/quantum-observable-universe/braids-and-knots/macdonald-hook-telescope.md",
         "md_mtime_unix": 1778984886,
-        "md_minus_witness_days": 7.91,
-        "result": "stale"
+        "md_minus_witness_days": -1.65,
+        "result": "ok"
       },
       {
         "witness": "folio-assistant/computations/z-n-brane-tower-falsifiability.witness.json",

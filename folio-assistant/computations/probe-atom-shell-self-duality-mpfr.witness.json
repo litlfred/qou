@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-08T18:24:54.354171+00:00",
-  "commitSha": "d05fc78da316bdb6d732851ac69f33d3886b178c",
+  "computedAt": "2026-05-18T18:07:45.713584+00:00",
+  "commitSha": "7ed5bd92a83eb3187638d475d54804ab137b5e7b",
   "assertions": [
     {
       "name": "all_dual_is_false",
@@ -22,7 +22,7 @@
     },
     {
       "name": "tr_M_at_q0_finite",
-      "computed": 2.7725932551947156e-05,
+      "computed": 3.718718253334805e-05,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1.0,
@@ -33,8 +33,8 @@
   "durationMs": 25,
   "computation": "probe-atom-shell-self-duality-mpfr",
   "scriptFile": "probe_atom_shell_self_duality_mpfr.py",
-  "scriptHash": "2c88e286e6ed",
-  "scriptCommitSha": "d05fc78da316bdb6d732851ac69f33d3886b178c",
+  "scriptHash": "ae5908711d2c",
+  "scriptCommitSha": "f882575823dc21a8c718f9bbfb64ec61a4e46133",
   "description": "MPFR-precision extension of probe_atom_shell_self_duality.py to ⁴He at H_12 (A=4, 77 partitions). The f64 version timed out; mpmath at 50 dps handles the load. Tests χ_λ(β) = χ_{λ*}(β) for every Wedderburn pair of H_12. Predicts: NOT shell-self-dual (extending the empirical pattern from D/T/³He where the (n) ↔ (1ⁿ) extreme pair is sign-asymmetric).",
   "contentBlock": "prop:shell-schur-weyl-self-duality",
   "parameters": {
@@ -57,7 +57,7 @@
         "pair_dual_count": 0,
         "not_dual_count": 37,
         "all_dual": false,
-        "tr_M_at_q0": 2.7725932551947156e-05
+        "tr_M_at_q0": 3.718718253334805e-05
       },
       "rows": [
         {
@@ -80,11 +80,11 @@
           ],
           "is_self_conjugate": false,
           "dim": 1,
-          "chi_lambda": 2.4196639445339225,
-          "chi_lambda_star": -0.4557444491780836,
+          "chi_lambda": 2.4196639445339216,
+          "chi_lambda_star": -0.4557444491780837,
           "y_lambda": 6.808425913426599e-10,
           "equal_within_1e-9": false,
-          "ratio_chi_to_chi_star": -5.309255985229632
+          "ratio_chi_to_chi_star": -5.30925598522963
         },
         {
           "shape": [
@@ -106,11 +106,11 @@
           ],
           "is_self_conjugate": false,
           "dim": 11,
-          "chi_lambda": 6.298266789630111,
-          "chi_lambda_star": 2.014600535866939,
+          "chi_lambda": 7.390200966330934,
+          "chi_lambda_star": 2.200274290839852,
           "y_lambda": 1.2509009856430402e-07,
           "equal_within_1e-9": false,
-          "ratio_chi_to_chi_star": 3.1263104905905283
+          "ratio_chi_to_chi_star": 3.3587634946686893
         },
         {
           "shape": [
@@ -131,11 +131,11 @@
           ],
           "is_self_conjugate": false,
           "dim": 54,
-          "chi_lambda": 8.635774083316255,
-          "chi_lambda_star": -1.9776528235243778,
+          "chi_lambda": 10.461121094404168,
+          "chi_lambda_star": -2.4897606265508023,
           "y_lambda": 4.267931870669841e-06,
           "equal_within_1e-9": false,
-          "ratio_chi_to_chi_star": -4.366678509287809
+          "ratio_chi_to_chi_star": -4.201657373342157
         },
         {
           "shape": [
@@ -157,11 +157,11 @@
           ],
           "is_self_conjugate": false,
           "dim": 55,
-          "chi_lambda": 0.7982590188298129,
-          "chi_lambda_star": -2.939074180123093,
+          "chi_lambda": 2.0411917748575257,
+          "chi_lambda_star": -3.8746497930911015,
           "y_lambda": 4.376423469579853e-06,
           "equal_within_1e-9": false,
-          "ratio_chi_to_chi_star": -0.2716022018867113
+          "ratio_chi_to_chi_star": -0.5268067783821857
         },
         {
           "shape": [
@@ -181,11 +181,11 @@
           ],
           "is_self_conjugate": false,
           "dim": 154,
-          "chi_lambda": 21.679565424569876,
-          "chi_lambda_star": -3.9604048380178956,
+          "chi_lambda": 27.331191373309558,
+          "chi_lambda_star": -4.45455062547255,
           "y_lambda": 4.5823948025225297e-05,
           "equal_within_1e-9": false,
-          "ratio_chi_to_chi_star": -5.474078108494603
+          "ratio_chi_to_chi_star": -6.135566451309596
         },
         {
           "shape": [
@@ -206,11 +206,11 @@
           ],
           "is_self_conjugate": false,
           "dim": 320,
-          "chi_lambda": -7.725827092158561,
-          "chi_lambda_star": 2.300941177265352,
+          "chi_lambda": -7.931822945220357,
+          "chi_lambda_star": 3.7263702030053647,
           "y_lambda": 0.00019637260361815768,
           "equal_within_1e-9": false,
-          "ratio_chi_to_chi_star": -3.3576812690799147
+          "ratio_chi_to_chi_star": -2.128565470715508
         },
         {
           "shape": [
@@ -232,11 +232,11 @@
           ],
           "is_self_conjugate": false,
           "dim": 165,
-          "chi_lambda": -1.1567321631529026,
-          "chi_lambda_star": 1.2996121166298722,
+          "chi_lambda": -3.3063680415153294,
+          "chi_lambda_star": 2.797193254735457,
           "y_lambda": 5.073740827451146e-05,
           "equal_within_1e-9": false,
-          "ratio_chi_to_chi_star": -0.8900595403438658
+          "ratio_chi_to_chi_star": -1.1820306072588564
         },
         {
           "shape": [
@@ -255,11 +255,11 @@
           ],
           "is_self_conjugate": false,
           "dim": 275,
-          "chi_lambda": 21.991434567397253,
-          "chi_lambda_star": 9.540285695492516,
+          "chi_lambda": 30.262869451455778,
+          "chi_lambda_star": 12.17957684265008,
           "y_lambda": 0.0001799068661482765,
           "equal_within_1e-9": false,
-          "ratio_chi_to_chi_star": 2.305112789000387
+          "ratio_chi_to_chi_star": 2.484722568150493
         },
         {
           "shape": [
@@ -279,11 +279,11 @@
           ],
           "is_self_conjugate": false,
           "dim": 891,
-          "chi_lambda": 7.441325869502653,
-          "chi_lambda_star": 3.2913231603178628,
+          "chi_lambda": 12.767955456297095,
+          "chi_lambda_star": 5.316418834950786,
           "y_lambda": 0.0018946053928511554,
           "equal_within_1e-9": false,
-          "ratio_chi_to_chi_star": 2.2608918988021824
+          "ratio_chi_to_chi_star": 2.401608272914654
         },
         {
           "shape": [
@@ -303,11 +303,11 @@
           ],
           "is_self_conjugate": false,
           "dim": 616,
-          "chi_lambda": -17.532612280036137,
-          "chi_lambda_star": 0.2339586650952823,
+          "chi_lambda": -22.75354643431056,
+          "chi_lambda_star": -0.7120080351291875,
           "y_lambda": 0.0009068607376704424,
           "equal_within_1e-9": false,
-          "ratio_chi_to_chi_star": -74.93893108381253
+          "ratio_chi_to_chi_star": 31.95686749543793
         },
         {
           "shape": [
@@ -328,11 +328,11 @@
           ],
           "is_self_conjugate": false,
           "dim": 945,
-          "chi_lambda": -15.275224773086963,
-          "chi_lambda_star": 3.959879409341131,
+          "chi_lambda": -22.33170153190018,
+          "chi_lambda_star": 2.8406709910597177,
           "y_lambda": 0.0020787182216579617,
           "equal_within_1e-9": false,
-          "ratio_chi_to_chi_star": -3.8574974624362484
+          "ratio_chi_to_chi_star": -7.861417813672712
         },
         {
           "shape": [
@@ -354,11 +354,11 @@
           ],
           "is_self_conjugate": false,
           "dim": 330,
-          "chi_lambda": 11.260406345075646,
-          "chi_lambda_star": 6.947380977657144,
+          "chi_lambda": 11.354456918576773,
+          "chi_lambda_star": 6.300996867941931,
           "y_lambda": 0.00024040275616378425,
           "equal_within_1e-9": false,
-          "ratio_chi_to_chi_star": 1.6208131353799715
+          "ratio_chi_to_chi_star": 1.802009611581577
         },
         {
           "shape": [
@@ -376,11 +376,11 @@
           ],
           "is_self_conjugate": false,
           "dim": 297,
-          "chi_lambda": 15.383208408452084,
-          "chi_lambda_star": -2.367848023949817,
+          "chi_lambda": 21.773345101891422,
+          "chi_lambda_star": -3.5287947273915683,
           "y_lambda": 0.00024101203521981852,
           "equal_within_1e-9": false,
-          "ratio_chi_to_chi_star": -6.496704287123668
+          "ratio_chi_to_chi_star": -6.170193163371096
         },
         {
           "shape": [
@@ -399,11 +399,11 @@
           ],
           "is_self_conjugate": false,
           "dim": 1408,
-          "chi_lambda": -0.7696501745894739,
-          "chi_lambda_star": -3.5631286710998915,
+          "chi_lambda": 1.6877429563112543,
+          "chi_lambda_star": -6.905088193672613,
           "y_lambda": 0.0055294204188684375,
           "equal_within_1e-9": false,
-          "ratio_chi_to_chi_star": 0.2160040362370335
+          "ratio_chi_to_chi_star": -0.24442018826896308
         },
         {
           "shape": [
@@ -422,11 +422,11 @@
           ],
           "is_self_conjugate": false,
           "dim": 1925,
-          "chi_lambda": 12.410069523841592,
-          "chi_lambda_star": 0.1898427284793338,
+          "chi_lambda": 16.727928586796345,
+          "chi_lambda_star": 0.6355504598223329,
           "y_lambda": 0.010460836455787147,
           "equal_within_1e-9": false,
-          "ratio_chi_to_chi_star": 65.37026528878901
+          "ratio_chi_to_chi_star": 26.320378387378728
         },
         {
           "shape": [
@@ -446,11 +446,11 @@
           ],
           "is_self_conjugate": false,
           "dim": 2376,
-          "chi_lambda": -15.303022515140317,
-          "chi_lambda_star": -9.18362153374785,
+          "chi_lambda": -23.126951359128405,
+          "chi_lambda_star": -11.859240992889186,
           "y_lambda": 0.015518216006911166,
           "equal_within_1e-9": false,
-          "ratio_chi_to_chi_star": 1.6663385418165344
+          "ratio_chi_to_chi_star": 1.9501207010630235
         },
         {
           "shape": [
@@ -470,11 +470,11 @@
           ],
           "is_self_conjugate": false,
           "dim": 2079,
-          "chi_lambda": -19.07520334492545,
-          "chi_lambda_star": -6.775935652829983,
+          "chi_lambda": -25.0998147945514,
+          "chi_lambda_star": -8.884548400573095,
           "y_lambda": 0.01189137239704473,
           "equal_within_1e-9": false,
-          "ratio_chi_to_chi_star": 2.81513938771816
+          "ratio_chi_to_chi_star": 2.825108678898338
         },
         {
           "shape": [
@@ -495,11 +495,11 @@
           ],
           "is_self_conjugate": false,
           "dim": 1728,
-          "chi_lambda": 12.096699605249235,
-          "chi_lambda_star": -13.399794390308688,
+          "chi_lambda": 11.763008717655609,
+          "chi_lambda_star": -17.214619345893503,
           "y_lambda": 0.007809853179154433,
           "equal_within_1e-9": false,
-          "ratio_chi_to_chi_star": -0.902752628353618
+          "ratio_chi_to_chi_star": -0.6833150638594655
         },
         {
           "shape": [
@@ -521,11 +521,11 @@
           ],
           "is_self_conjugate": false,
           "dim": 462,
-          "chi_lambda": 2.9701039970476444,
-          "chi_lambda_star": -5.858734144050298,
+          "chi_lambda": 5.93357848367982,
+          "chi_lambda_star": -8.286257878190318,
           "y_lambda": 0.0005129129669788221,
           "equal_within_1e-9": false,
-          "ratio_chi_to_chi_star": -0.5069531956939648
+          "ratio_chi_to_chi_star": -0.716074562354278
         },
         {
           "shape": [
@@ -542,11 +542,11 @@
           ],
           "is_self_conjugate": false,
           "dim": 132,
-          "chi_lambda": 14.802210230241117,
-          "chi_lambda_star": -11.37236182375748,
+          "chi_lambda": 20.470386787186825,
+          "chi_lambda_star": -14.998813902138497,
           "y_lambda": 5.1017521710044194e-05,
           "equal_within_1e-9": false,
-          "ratio_chi_to_chi_star": -1.3015950828541614
+          "ratio_chi_to_chi_star": -1.3648003715992638
         },
         {
           "shape": [
@@ -564,11 +564,11 @@
           ],
           "is_self_conjugate": false,
           "dim": 1155,
-          "chi_lambda": -0.22630972565928875,
-          "chi_lambda_star": -0.7274233887888388,
+          "chi_lambda": 3.0433709654006753,
+          "chi_lambda_star": -0.8440455014244967,
           "y_lambda": 0.004085115816404935,
           "equal_within_1e-9": false,
-          "ratio_chi_to_chi_star": 0.3111114230683383
+          "ratio_chi_to_chi_star": -3.605695380479339
         },
         {
           "shape": [
@@ -586,11 +586,11 @@
           ],
           "is_self_conjugate": false,
           "dim": 2673,
-          "chi_lambda": 2.767991661934091,
-          "chi_lambda_star": -2.6893760090675616,
+          "chi_lambda": 4.6496807071223,
+          "chi_lambda_star": -4.172904987199232,
           "y_lambda": 0.022532334933011832,
           "equal_within_1e-9": false,
-          "ratio_chi_to_chi_star": -1.0292319306045221
+          "ratio_chi_to_chi_star": -1.1142551103812863
         },
         {
           "shape": [
@@ -609,11 +609,11 @@
           ],
           "is_self_conjugate": false,
           "dim": 3080,
-          "chi_lambda": -19.212225017737385,
-          "chi_lambda_star": 1.0924939419861524,
+          "chi_lambda": -32.408652684339124,
+          "chi_lambda_star": 2.528794025935799,
           "y_lambda": 0.029125974262945404,
           "equal_within_1e-9": false,
-          "ratio_chi_to_chi_star": -17.58565817107378
+          "ratio_chi_to_chi_star": -12.815853071444229
         },
         {
           "shape": [
@@ -631,11 +631,11 @@
           ],
           "is_self_conjugate": false,
           "dim": 1650,
-          "chi_lambda": 45.12315751670121,
-          "chi_lambda_star": 6.119952330827563,
+          "chi_lambda": 63.61876108586558,
+          "chi_lambda_star": 7.559961438892859,
           "y_lambda": 0.00871151346026886,
           "equal_within_1e-9": false,
-          "ratio_chi_to_chi_star": 7.373122383552861
+          "ratio_chi_to_chi_star": 8.415222961134894
         },
         {
           "shape": [
@@ -654,11 +654,11 @@
           ],
           "is_self_conjugate": false,
           "dim": 5632,
-          "chi_lambda": -18.876690633180967,
-          "chi_lambda_star": 14.538902689198395,
+          "chi_lambda": -23.678686533467854,
+          "chi_lambda_star": 18.712341031033766,
           "y_lambda": 0.09849072753985015,
           "equal_within_1e-9": false,
-          "ratio_chi_to_chi_star": -1.2983573132520732
+          "ratio_chi_to_chi_star": -1.2654048199633374
         },
         {
           "shape": [
@@ -678,11 +678,11 @@
           ],
           "is_self_conjugate": false,
           "dim": 3696,
-          "chi_lambda": 17.643659953862464,
-          "chi_lambda_star": -9.399498704206799,
+          "chi_lambda": 17.94780669304665,
+          "chi_lambda_star": -9.264921958904885,
           "y_lambda": 0.04031159027651672,
           "equal_within_1e-9": false,
-          "ratio_chi_to_chi_star": -1.877085205189288
+          "ratio_chi_to_chi_star": -1.9371783996298317
         },
         {
           "shape": [
@@ -701,11 +701,11 @@
           ],
           "is_self_conjugate": false,
           "dim": 1925,
-          "chi_lambda": 5.443377763479747,
-          "chi_lambda_star": 0.37046993035345555,
+          "chi_lambda": 5.420639295197692,
+          "chi_lambda_star": 2.302970218086,
           "y_lambda": 0.011395226298169343,
           "equal_within_1e-9": false,
-          "ratio_chi_to_chi_star": 14.693170261581997
+          "ratio_chi_to_chi_star": 2.3537600497946465
         },
         {
           "shape": [
@@ -725,11 +725,11 @@
           ],
           "is_self_conjugate": false,
           "dim": 3564,
-          "chi_lambda": 6.937722774909247,
-          "chi_lambda_star": 11.788694359255889,
+          "chi_lambda": 11.941422086481028,
+          "chi_lambda_star": 19.137980380539613,
           "y_lambda": 0.037494439440477485,
           "equal_within_1e-9": false,
-          "ratio_chi_to_chi_star": 0.5885064591111481
+          "ratio_chi_to_chi_star": 0.6239645902565362
         },
         {
           "shape": [
@@ -750,8 +750,8 @@
           ],
           "is_self_conjugate": true,
           "dim": 2100,
-          "chi_lambda": 0.5492135797548929,
-          "chi_lambda_star": 0.5492135797548929,
+          "chi_lambda": 4.771552114709749,
+          "chi_lambda_star": 4.771552114709749,
           "y_lambda": 0.011991974285223755,
           "equal_within_1e-9": true,
           "ratio_chi_to_chi_star": 1.0
@@ -771,11 +771,11 @@
           ],
           "is_self_conjugate": false,
           "dim": 1320,
-          "chi_lambda": -14.979844104938664,
-          "chi_lambda_star": 2.128970663915667,
+          "chi_lambda": -17.5607056812242,
+          "chi_lambda_star": 1.086379314867056,
           "y_lambda": 0.005807252750322996,
           "equal_within_1e-9": false,
-          "ratio_chi_to_chi_star": -7.036190943743341
+          "ratio_chi_to_chi_star": -16.16443303080855
         },
         {
           "shape": [
@@ -793,11 +793,11 @@
           ],
           "is_self_conjugate": false,
           "dim": 1485,
-          "chi_lambda": -5.5424946227886895,
-          "chi_lambda_star": 12.412497198987396,
+          "chi_lambda": -7.606882184907591,
+          "chi_lambda_star": 14.059979767683815,
           "y_lambda": 0.007155001179654943,
           "equal_within_1e-9": false,
-          "ratio_chi_to_chi_star": -0.44652534731213017
+          "ratio_chi_to_chi_star": -0.5410308059184866
         },
         {
           "shape": [
@@ -814,11 +814,11 @@
           ],
           "is_self_conjugate": false,
           "dim": 2112,
-          "chi_lambda": 10.891983965472761,
-          "chi_lambda_star": -10.948494661084009,
+          "chi_lambda": 15.480634706673175,
+          "chi_lambda_star": -16.91740991294038,
           "y_lambda": 0.01534799397703735,
           "equal_within_1e-9": false,
-          "ratio_chi_to_chi_star": -0.9948384963083452
+          "ratio_chi_to_chi_star": -0.915071206900993
         },
         {
           "shape": [
@@ -836,11 +836,11 @@
           ],
           "is_self_conjugate": false,
           "dim": 5775,
-          "chi_lambda": -13.327037479544135,
-          "chi_lambda_star": -14.752945543424785,
+          "chi_lambda": -20.522491729616128,
+          "chi_lambda_star": -17.426024553464654,
           "y_lambda": 0.11133169249049167,
           "equal_within_1e-9": false,
-          "ratio_chi_to_chi_star": 0.9033475681392886
+          "ratio_chi_to_chi_star": 1.1776921159872826
         },
         {
           "shape": [
@@ -859,11 +859,11 @@
           ],
           "is_self_conjugate": false,
           "dim": 3520,
-          "chi_lambda": 9.534917128443798,
-          "chi_lambda_star": 28.031299252734655,
+          "chi_lambda": 8.960943127573556,
+          "chi_lambda_star": 38.56982112000411,
           "y_lambda": 0.03930191018659705,
           "equal_within_1e-9": false,
-          "ratio_chi_to_chi_star": 0.3401525217391983
+          "ratio_chi_to_chi_star": 0.23233043004511092
         },
         {
           "shape": [
@@ -881,11 +881,11 @@
           ],
           "is_self_conjugate": false,
           "dim": 4158,
-          "chi_lambda": 15.477910417617172,
-          "chi_lambda_star": -10.905401718909388,
+          "chi_lambda": 23.6146516896836,
+          "chi_lambda_star": -17.21570728140872,
           "y_lambda": 0.05853213110246002,
           "equal_within_1e-9": false,
-          "ratio_chi_to_chi_star": -1.4192884238990753
+          "ratio_chi_to_chi_star": -1.3716922170943924
         },
         {
           "shape": [
@@ -903,11 +903,11 @@
           ],
           "is_self_conjugate": false,
           "dim": 4455,
-          "chi_lambda": 0.844329346278023,
-          "chi_lambda_star": -2.946651223089308,
+          "chi_lambda": 1.3368611760011417,
+          "chi_lambda_star": -4.709649628226719,
           "y_lambda": 0.06628498659791168,
           "equal_within_1e-9": false,
-          "ratio_chi_to_chi_star": -0.2865386102237159
+          "ratio_chi_to_chi_star": -0.2838557603072689
         },
         {
           "shape": [
@@ -926,8 +926,8 @@
           ],
           "is_self_conjugate": true,
           "dim": 7700,
-          "chi_lambda": -5.574469646716285,
-          "chi_lambda_star": -5.574469646716285,
+          "chi_lambda": -6.146077447258954,
+          "chi_lambda_star": -6.146077447258954,
           "y_lambda": 0.1900456644783265,
           "equal_within_1e-9": true,
           "ratio_chi_to_chi_star": 1.0
@@ -946,11 +946,11 @@
           ],
           "is_self_conjugate": false,
           "dim": 462,
-          "chi_lambda": -7.84507791685729,
-          "chi_lambda_star": 16.12153075963871,
+          "chi_lambda": -12.16954347799887,
+          "chi_lambda_star": 23.622870029780387,
           "y_lambda": 0.000773673356546731,
           "equal_within_1e-9": false,
-          "ratio_chi_to_chi_star": -0.48662115489044927
+          "ratio_chi_to_chi_star": -0.5151593969173611
         },
         {
           "shape": [
@@ -967,11 +967,11 @@
           ],
           "is_self_conjugate": false,
           "dim": 2970,
-          "chi_lambda": -1.4342376020871335,
-          "chi_lambda_star": 12.19904903923101,
+          "chi_lambda": -6.641343790175661,
+          "chi_lambda_star": 19.423125553579105,
           "y_lambda": 0.03112177303028527,
           "equal_within_1e-9": false,
-          "ratio_chi_to_chi_star": -0.11756962345792352
+          "ratio_chi_to_chi_star": -0.34192971526932536
         },
         {
           "shape": [
@@ -988,8 +988,8 @@
           ],
           "is_self_conjugate": true,
           "dim": 2640,
-          "chi_lambda": 5.544570027078615,
-          "chi_lambda_star": 5.544570027078615,
+          "chi_lambda": 9.662184293418218,
+          "chi_lambda_star": 9.662184293418218,
           "y_lambda": 0.02425535643420981,
           "equal_within_1e-9": true,
           "ratio_chi_to_chi_star": 1.0
