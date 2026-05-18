@@ -1,7 +1,7 @@
 ---
 name: integration-watcher
 roles: [reader, collaborator, owner]
-user_invocable: true
+user_invocable: false
 description: >
   Abstract parent skill for domain-specific **integration watchers**.
   Encodes the shared mechanics — Monitor on `origin/main`, PR
@@ -48,6 +48,17 @@ checklist — is defined here and inherited verbatim.
 
 ## 0. Invocation as `/integration-watch [args]`
 
+This parent skill is **abstract — `user_invocable: false`**.
+The `/integration-watch` slash command is implemented by
+[`local/integration-watch`](integration-watch.md), which acts
+as the single entry point and dispatches to one or more
+concrete children. Keeping the dispatcher and the abstract
+parent separate avoids duplicating the slash-command routing.
+
+This section documents the **invocation grammar** that the
+dispatcher must implement; the parent only describes shared
+mechanics that every concrete watcher inherits.
+
 When the user invokes `/integration-watch` directly:
 
 | User input | Behaviour |
@@ -85,7 +96,7 @@ REPO=qou
 mkdir -p todos
 NAME="<your-watcher-name>"
 [ -f "todos/${NAME}-queue.json" ] || \
-  echo '{"items":[],"audited":{}}' > "todos/${NAME}-queue.json"
+  echo '{"items":[],"audited":{},"reviewed_up_to":{}}' > "todos/${NAME}-queue.json"
 [ -f "todos/${NAME}-ledger.md" ] || cat > "todos/${NAME}-ledger.md" <<EOF
 # ${NAME} — session ledger
 
@@ -830,10 +841,19 @@ state and surface a structured suggestion to the user.
    LAST=$(jq -r ".reviewed_up_to.\"$C\" // empty" "$QUEUE")
    CUR=$(git rev-parse origin/main)
    if [ -n "$LAST" ] && [ "$LAST" != "$CUR" ]; then
+     # Normal case: scan commits since last full sweep
      git log --reverse --format='%H %s' "$LAST..$CUR" > "/tmp/_${NAME}_${C}_missed"
+   elif [ -z "$LAST" ]; then
+     # No prior pointer (first run, or queue.json freshly bootstrapped).
+     # Fall back to "backlog only" mode: skip the per-commit triage
+     # this round; let §5 backlog sweep do the initial pass; then
+     # write reviewed_up_to[C] = CUR at the end of that pass. This
+     # avoids scanning a potentially huge history range on first
+     # boot, and the next resume will pick up cleanly.
+     printf 'NO_PRIOR_POINTER %s\n' "$C" > "/tmp/_${NAME}_${C}_missed"
    else
-     # No prior pointer; everything is "missed" until first sweep
-     echo "(no prior reviewed-up-to pointer — full backlog applies)"
+     # LAST == CUR: nothing new since last sweep
+     : > "/tmp/_${NAME}_${C}_missed"
    fi
    ```
 
@@ -873,10 +893,19 @@ state and surface a structured suggestion to the user.
    - Option D: **Just watch passively** — arm Monitor, no
      proactive work
 
-4. **Record on every full sweep.** After §4 completes for the
-   newest in-scope commit `S` under criterion `C`, update
-   `reviewed_up_to[C] = S`. After §5 backlog sweep completes a
-   block `B`, update `audited[B] = { ts, sha: <main HEAD>,
+4. **Record on every full sweep.** After §4 scans (and either
+   processes or §3-filters-out) the **entire** missed range
+   `LAST..CUR` under criterion `C`, update
+   `reviewed_up_to[C] = CUR` — the scanned-up-to-and-including
+   HEAD, **not** just the newest in-scope commit. Otherwise
+   out-of-scope commits between the newest in-scope one and
+   `CUR` would stay in the range forever and get reprocessed
+   on every resume (a §5l convergence bug). The pointer
+   advances when the scan is *complete*, regardless of how
+   many commits passed §3.
+
+   After §5 backlog sweep completes a block `B`, update
+   `audited[B] = { ts, sha: <main HEAD at sweep time>,
    criteria: [<Slot D criteria checked>] }`.
 
 5. **Resume-suggestion frequency.** Run at session start and

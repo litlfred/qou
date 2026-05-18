@@ -51,14 +51,37 @@ Per `integration-watcher §0` + `§4e` (full-context preamble):
    > - **compute** — compute-integration-watcher: every `prop:`
    >   has a probe + production consumer (13-pattern I1-I13 audit).
 
-2. **AskUserQuestion** with 4 chips:
+2. **Role-gate the chip set.** Before composing the
+   `AskUserQuestion`, detect the user's role (`reader` /
+   `collaborator` / `owner`). The `compute` chip requires
+   `collaborator`+ (the child skill's role gate); the `all` chip
+   transitively requires `collaborator`+ because it includes
+   compute. For a `reader` invocation:
+
+   - Either **hide** the `compute` chip and replace `all three`
+     with `both two` (proof + canonical), OR
+   - **Annotate** the chip with `(needs collaborator)` and reject
+     the selection at dispatch time with a re-prompt explaining
+     the role gate.
+
+   Default behaviour: hide `compute` from `reader`s entirely;
+   annotate for `collaborator`+ (no annotation needed; chips are
+   already accessible).
+
+3. **AskUserQuestion** with 4 chips (role-gated):
 
    - Header `Which watcher`, question `Which integration watcher(s) to invoke?`
-   - Options:
+   - Options (when role ≥ collaborator):
+     - `proof` — proof QA (any role)
+     - `canonical` — canonical-derivation discipline (any role)
+     - `compute` — compute-wiring completeness (collaborator+)
+     - `all three` — parallel dispatch (collaborator+ since all
+       includes compute)
+   - Options (when role = reader):
      - `proof` — proof QA
      - `canonical` — canonical-derivation discipline
-     - `compute` — compute-wiring completeness
-     - `all three` — parallel dispatch
+     - `both two` — parallel proof + canonical
+     - (compute / all-three hidden)
 
    `multiSelect: true` so the user can pick any subset.
 
