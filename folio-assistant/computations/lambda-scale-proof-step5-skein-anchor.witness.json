@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-18T05:10:35.363456+00:00",
-  "commitSha": "a30b319651d77c059ea88453be2be055e0492f9e",
+  "computedAt": "2026-05-18T15:26:47.242102+00:00",
+  "commitSha": "883529fb666e6a4133bfba2dba113a4e3b82a710",
   "assertions": [
     {
       "name": "step_5b_delta_S_substrate_within_2000_ppm",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 9,
   "computation": "lambda-scale-proof-step5-skein-anchor",
   "scriptFile": "lambda_scale_proof_step5_skein_anchor.py",
-  "scriptHash": "5c15b5ff1530",
-  "scriptCommitSha": "bc030ce64faeaad6e9838228ff6c65023b7bd5d9",
+  "scriptHash": "f85d3f27ea8f",
+  "scriptCommitSha": "a46166f2c4ad717315e84836390e59c07288fce5",
   "description": "Proof Step 5 of `conj:lambda-scale-substrate-form`: S(p) = 0 anchor convention + S(n) = ΔS substrate-derived. Verifies ΔS(n-p) = (Q_β + m_e)/m_e closure at mpmath 80 dps with q_0 from q_parameter.Q_50_DIGIT_STR and CODATA from experimental_constants (3-input scheme: M_E_MEV, M_P_MEV, Q_NEUTRON_MEV; m_n derived). References `rem:delta-skein-substrate-identity` for the underlying common-scale hypothesis. Documents the open R&D component: direct Kauffman-bracket verification of S(uud) = 0 from first principles (currently set by convention as the anchor).",
   "contentBlock": "conj:lambda-scale-substrate-form",
   "parameters": {

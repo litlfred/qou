@@ -44,9 +44,12 @@ VOL_B3_FROM_G = 8 * G  # 7.327724753...
 VOL_41 = mp.mpf("2.02988321281930725004240510854658")
 
 # CODATA validation (CAL-1: m_e MeV; comparison only)
-M_E = mp.mpf("0.51099895069")
-M_P = mp.mpf("938.27208816")
-M_N = mp.mpf("939.56542052")
+from experimental_constants import M_E_MEV as _M_E_MEV  # noqa: E402
+M_E = mp.mpf(repr(_M_E_MEV))
+from experimental_constants import M_P_MEV as _M_P_MEV  # noqa: E402
+M_P = mp.mpf(repr(_M_P_MEV))
+from experimental_constants import Q_NEUTRON_MEV as _Q_NEUTRON_MEV  # noqa: E402
+M_N = M_P + mp.mpf(repr(_Q_NEUTRON_MEV)) + M_E  # m_n derived via 3-input scheme
 # Σ baryons (PDG):
 M_SIGMA_PLUS = mp.mpf("1189.37")
 M_SIGMA_0 = mp.mpf("1192.642")

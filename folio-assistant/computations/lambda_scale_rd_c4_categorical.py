@@ -75,7 +75,7 @@ Q = mp.mpf(Q_50_DIGIT_STR)
 H = Q - mp.mpf(1) / Q
 HBAR_Q = (Q - mp.mpf(1)) / Q
 G = mp.catalan
-VOL_B3 = mp.mpf("7.32772290646480718089411881580875")
+VOL_B3 = 8 * mp.catalan  # = Vol(Borromean rings complement), 8·G via Adams 1985
 M_E = mp.mpf(repr(M_E_MEV))
 M_P = mp.mpf(repr(M_P_MEV))
 LAM_P_TARGET = (M_P / M_E) * HBAR_Q**2 / VOL_B3

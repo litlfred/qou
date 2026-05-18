@@ -1,0 +1,55 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-05-18T15:22:50.740694+00:00",
+  "commitSha": "883529fb666e6a4133bfba2dba113a4e3b82a710",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 2403,
+  "computation": "lambda-scale-rd3-hecke-levels",
+  "scriptFile": "lambda_scale_rd3_hecke_levels.py",
+  "scriptHash": "83866009c9d1",
+  "scriptCommitSha": "unknown",
+  "description": "R&D 3: test natural categorical sum at H_3, H_5, H_6, H_7. For each H_n compute (1/?) · Σ_λ dim_q V_λ and extract its leading + h² coefficients. Find a level (and normalization) matching `5/2 − h²·G` empirically.",
+  "contentBlock": "conj:lambda-scale-substrate-form",
+  "data": {
+    "results_by_n": [
+      {
+        "n": 2,
+        "at_q1": "2",
+        "h2_coeff_normalized": 0.0,
+        "matches_neg_G": false
+      },
+      {
+        "n": 3,
+        "at_q1": "4",
+        "h2_coeff_normalized": 0.15625,
+        "matches_neg_G": false
+      },
+      {
+        "n": 4,
+        "at_q1": "10",
+        "h2_coeff_normalized": 0.75,
+        "matches_neg_G": false
+      },
+      {
+        "n": 5,
+        "at_q1": "26",
+        "h2_coeff_normalized": 1.9230769230769231,
+        "matches_neg_G": false
+      },
+      {
+        "n": 6,
+        "at_q1": "76",
+        "h2_coeff_normalized": 3.9473684210526314,
+        "matches_neg_G": false
+      },
+      {
+        "n": 7,
+        "at_q1": "232",
+        "h2_coeff_normalized": 6.977370689655173,
+        "matches_neg_G": false
+      }
+    ]
+  }
+}

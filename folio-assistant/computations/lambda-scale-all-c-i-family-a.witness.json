@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-18T14:43:58.527469+00:00",
-  "commitSha": "a2999ae6b7dbcf0980be1e10ec523a2b1d27b2c1",
+  "computedAt": "2026-05-18T15:28:30.385886+00:00",
+  "commitSha": "883529fb666e6a4133bfba2dba113a4e3b82a710",
   "assertions": [
     {
       "name": "lambda_A_h_form_equals_lambda_A_q_form",
@@ -47,11 +47,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 338,
+  "durationMs": 289,
   "computation": "lambda-scale-all-c-i-family-a",
   "scriptFile": "lambda_scale_all_c_i_family_a.py",
-  "scriptHash": "a17e8b292a56",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "49b396e16a7c",
+  "scriptCommitSha": "c45fb69445774b74220e1e9950f06737084537fd",
   "description": "Closed-form proof of ALL h-expansion coefficients c_i for the natural categorical Family A: λ_A(q) = (1/4) Σ_λ dim_q V_λ at H_4. Proved by direct algebraic manipulation: λ_A = 5/2 + (3/4)·h², series TERMINATES (c_4 = c_6 = ... = 0).",
   "contentBlock": "conj:lambda-scale-substrate-form",
   "data": {
@@ -73,7 +73,7 @@
     },
     "lambda_A_at_q0_from_q_expr": 2.5327796636728843,
     "lambda_A_at_q0_from_h_expr": 2.532779663672884,
-    "lambda_B_target_at_q0": 2.459953404392546,
-    "family_A_vs_B_rel_diff": 0.029604731191370536
+    "lambda_B_target_at_q0": 2.4599527876829823,
+    "family_A_vs_B_rel_diff": 0.02960498931302551
   }
 }

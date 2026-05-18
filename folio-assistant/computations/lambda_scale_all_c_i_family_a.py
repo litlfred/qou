@@ -150,9 +150,11 @@ def main() -> int:
     w.add_data("lambda_A_at_q0_from_h_expr", lambda_A_at_q0_h)
 
     # Family B comparison
-    M_E = mp.mpf("0.51099895069")
-    M_P = mp.mpf("938.27208816")
-    VOL_B3 = mp.mpf("7.32772290646480718089411881580875")
+    from experimental_constants import M_E_MEV as _M_E_MEV  # noqa: E402
+    M_E = mp.mpf(repr(_M_E_MEV))
+    from experimental_constants import M_P_MEV as _M_P_MEV  # noqa: E402
+    M_P = mp.mpf(repr(_M_P_MEV))
+    VOL_B3 = 8 * mp.catalan  # = Vol(Borromean rings complement), 8·G via Adams 1985
     HBAR_Q = (Q0 - 1) / Q0
     lambda_B_target = float((M_P / M_E) * HBAR_Q**2 / VOL_B3)
     rel_diff = (lambda_A_at_q0_symbolic - lambda_B_target) / lambda_B_target

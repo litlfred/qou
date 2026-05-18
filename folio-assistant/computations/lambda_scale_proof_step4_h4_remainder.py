@@ -14,7 +14,7 @@ proved closure, c_4 must come from a substrate-derivable expression.
 This script does three things:
 
 1. **Refine c_4 to higher precision** by computing
-   λ_p_target = (m_p/m_e) · ℏ_q² / Vol(B_3) at MPFR 100 dps and
+   λ_p_target = (m_p/m_e) · ℏ_q² / Vol(B_3) at mpmath 100 dps and
    isolating the h^4 coefficient.
 
 2. **Test candidate substrate forms** for c_4: rational multiples of
@@ -75,7 +75,7 @@ Q = mp.mpf(Q_50_DIGIT_STR)
 H = Q - mp.mpf(1) / Q
 HBAR_Q = (Q - mp.mpf(1)) / Q
 G = mp.catalan
-VOL_B3 = mp.mpf("7.32772290646480718089411881580875")
+VOL_B3 = 8 * mp.catalan  # = Vol(Borromean rings complement), 8·G via Adams 1985
 
 # CODATA (single source — experimental_constants); m_n derived via 3-input scheme
 M_E = mp.mpf(repr(M_E_MEV))

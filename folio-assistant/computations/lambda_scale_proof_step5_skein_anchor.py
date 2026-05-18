@@ -52,7 +52,7 @@ from q_parameter import Q_50_DIGIT_STR  # noqa: E402 — canonical q_0 source
 from experimental_constants import (  # noqa: E402 — CODATA single source
     M_E_MEV,
     M_P_MEV,
-    Q_NEUTRON_MEV,  # = m_n - m_p - m_e ≈ 0.78233341 MeV
+    Q_NEUTRON_MEV,  # = m_n - m_p - m_e ≈ Q_NEUTRON_MEV per experimental_constants
 )
 
 mp.mp.dps = 80  # mpmath context precision (50 dps inputs, 30 dps headroom)

@@ -1,0 +1,27 @@
+{
+  "engine": "mpmath+sympy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-18T15:28:50.017286+00:00",
+  "commitSha": "883529fb666e6a4133bfba2dba113a4e3b82a710",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 17,
+  "computation": "lambda-scale-rd1-geometric",
+  "scriptFile": "lambda_scale_rd1_geometric.py",
+  "scriptHash": "de84d22039cd",
+  "scriptCommitSha": "unknown",
+  "description": "R&D 1: Yekutieli-Stokes geometric family — λ_geom = π_alg − Σ_geom. Tests if Family A's +3h²/4 minus a geometric Σ_geom = (5/3)·h² + ... matches the empirical λ_p with negative h² coefficient.",
+  "contentBlock": "conj:lambda-scale-substrate-form",
+  "parameters": {
+    "dps": 80
+  },
+  "data": {
+    "pi_alg_at_q0": 2.532779663672884,
+    "lambda_p_target": 2.4599527876829836,
+    "Sigma_geom_implied_h2_coeff": "1.666281800127444230519389",
+    "Sigma_geom_minus_3_4_minus_G": "0.0003162059502252154647854853"
+  },
+  "caveats": [
+    "R&D probe — Σ_geom structural origin is still open."
+  ]
+}
