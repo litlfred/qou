@@ -55,7 +55,7 @@ M_N(q_0, m_e, Q_β) = m_e^a · Q_β^c · M_N̂(q_0)
 
 where `M_N̂(q_0) ∈ ℚ(q_0)` (Laurent in `q_0^{±1/2}` per
 `prop:three-calibration-inputs`) and `(a, c) ∈ ℤ²_{≥0}` with
-`a + c ∈ {0, 1}` for dimensional homogeneity (M_N is a mass).
+`a + c = 1` for dimensional homogeneity (M_N is a mass).
 
 Equivalently: a categorical or topological expression for the
 nucleon scale in terms of the substrate.
@@ -74,9 +74,20 @@ The proton mass `m_p` already has structural pieces on main:
   — $\lambda_{\mathrm{scale}} = 5/2 - h^2 G$ at 5.4 ppm
   (justification, not derivation per audit §13).
 
-If `m_p` reaches substrate-pure form, then `M_N = (m_p + m_n)/2 =
-(m_p + (m_p + Q_β))/2 = m_p + Q_β/2` is also substrate-pure (since
-Q_β is CAL-3, not a 4th calibration).
+If `m_p` reaches substrate-pure form, then per the framework's
+beta-decay relation (`Q_BETA_MEV = m_n − m_p − m_e` in
+`folio-assistant/computations/codata_constants.py`) the neutron
+mass is `m_n = m_p + m_e + Q_β`, so
+
+```
+M_N = (m_p + m_n) / 2
+    = (m_p + (m_p + m_e + Q_β)) / 2
+    = m_p + (m_e + Q_β) / 2
+```
+
+is also substrate-pure (m_e is CAL-1, Q_β is CAL-3 — both are
+already in the canonical 3-input scheme; no 4th calibration is
+introduced).
 
 **Open piece**: closing the Skein resolution of the Borromean
 braid (the OPEN item in the existing `calibration-inputs.md`
@@ -86,7 +97,7 @@ docstring).  This is the same open piece tracked in
 ### Route B — categorical mass from Frobenius trace
 
 The categorical-mass framework
-([`def:categorical-mass`](../../content/quantum-observable-universe/braids-and-knots/categorical-mass.md))
+([`prop:categorical-mass-markov`](../../content/quantum-observable-universe/braids-and-knots/categorical-mass-markov.md))
 expresses `m̃(X)` as a Frobenius trace on the categorical-action
 algebra.  The nucleon mass scale is then the Frobenius trace of
 the proton (or neutron) braid representation — a structural
@@ -120,7 +131,8 @@ Whatever route lands, the derivation must satisfy:
    may appear in `_VALIDATION` form as a comparison target.
 3. **Lean formalisation**: a `theorem nucleon_scale_substrate :
    M_N = m_e^a * Q_β^c * <expression in q>` in
-   `lean/QOU/...` with at most a `sorry` for the calibration-
+   `content/quantum-observable-universe/lean/QOU/...` with at
+   most a `sorry` for the calibration-
    independent Skein resolution (or whichever upstream piece is
    itself still open).
 4. **Probe witness**: a `probe_M_N_substrate.py` script under
