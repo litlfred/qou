@@ -56,6 +56,10 @@ axiomatisation as Lean classes (CLAUDE.md §3b-cond) are fine.
 ## 1. Baseline + setup (run once per session)
 
 ```bash
+# Repo identity — declared once, referenced everywhere below
+OWNER=litlfred
+REPO=qou
+
 # Bootstrap the queue + ledger (gitignored)
 mkdir -p todos
 [ -f todos/proof-integration-queue.json ] || echo '{"items":[],"audited":{}}' > todos/proof-integration-queue.json
@@ -115,7 +119,10 @@ Monitor:
       cur=$(git ls-remote origin main 2>/dev/null | cut -f1)
       if [ -n "$cur" ] && [ "$cur" != "$last" ]; then
         git fetch origin main 2>/dev/null
-        git log --reverse --format='MAIN %H %s' "$last..$cur" | head -20
+        # Emit every new commit — never `head -N` here, or we silently
+        # drop the tail of a fast burst and lose audit events. Use a
+        # tight grep --line-buffered filter downstream if needed.
+        git log --reverse --format='MAIN %H %s' "$last..$cur"
         last=$cur
       fi
       # Every 5 min — also re-list open PRs to catch new ones
@@ -143,20 +150,23 @@ against current `origin/main`, walk the missed range) before re-arming.
 in the repo updated in the last 7 days.
 
 ```python
+# OWNER/REPO declared once in §1 — referenced everywhere below
+OWNER, REPO = "litlfred", "qou"
+
 # 1. Own PR (after the branch is pushed and a PR exists)
 own = <PR number of HEAD branch>
-mcp__github__subscribe_pr_activity(owner="litlfred", repo="qou", pullNumber=own)
+mcp__github__subscribe_pr_activity(owner=OWNER, repo=REPO, pullNumber=own)
 
 # 2. Sibling PRs active in the last 7 days
 prs = mcp__github__list_pull_requests(
-  owner="litlfred", repo="qou",
+  owner=OWNER, repo=REPO,
   state="open", sort="updated", direction="desc", perPage=40
 )
 cutoff = now() - 7d
 for pr in prs:
   if parse(pr["updated_at"]) >= cutoff and pr["number"] != own:
     mcp__github__subscribe_pr_activity(
-      owner="litlfred", repo="qou", pullNumber=pr["number"]
+      owner=OWNER, repo=REPO, pullNumber=pr["number"]
     )
 ```
 
