@@ -90,7 +90,7 @@ def canonical_word_for(Z: int, N: int) -> tuple[int, list[list[int]]]:
 
 def compute_tr_m(Z: int, N: int, label: str,
                  *, q_val: float | None = None,
-                 timeout_sec: int = 600) -> dict:
+                 timeout_sec: int = 3600) -> dict:
     bin_path = find_binary()
     if bin_path is None:
         return {
