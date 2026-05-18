@@ -1,0 +1,227 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-18T16:50:05.959932+00:00",
+  "commitSha": "3722eb85327a07e3899a0f75b2db382e096c38d1",
+  "assertions": [
+    {
+      "name": "no_error_kind_entries",
+      "computed": 0.0,
+      "expected": 1.0,
+      "passed": false,
+      "tolerance": 0.0,
+      "unit": "boolean (1.0 = every witness covers its enumerated scope)",
+      "source": "Closure gate: when this passes, every production witness has a complete row set for its declared atom / partition / block scope."
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 7,
+  "computation": "incomplete-coverage-audit",
+  "scriptFile": "incomplete_coverage_audit.py",
+  "scriptHash": "385c3447f507",
+  "scriptCommitSha": "unknown",
+  "description": "I13 audit per local/compute-integration-watcher: every folio-assistant/computations/*.witness.json is walked for `error_kind` fields anywhere in the JSON tree.  Each hit records the per-entry failure mode + sibling fields (which typically identify the failing atom/partition/label), giving a follow-up agent the per-entry queue needed to extend the upstream producer's coverage.",
+  "contentBlock": "I13 antipattern (compute-integration-watcher.md §antipatterns)",
+  "parameters": {
+    "total_witnesses_with_errors": 1,
+    "total_error_entries": 60
+  },
+  "data": {
+    "error_kind_totals": {
+      "T1_witness_missing": 54,
+      "unknown": 6
+    },
+    "rows": [
+      {
+        "witness": "folio-assistant/computations/paper-six-term-isotope-sweep.witness.json",
+        "total_error_entries": 60,
+        "by_kind": {
+          "T1_witness_missing": 54,
+          "unknown": 6
+        },
+        "sample_entries": [
+          {
+            "json_path": "rows.6",
+            "error_kind": "T1_witness_missing",
+            "siblings": {
+              "isotope": "5Li",
+              "Z": 3,
+              "N": 2,
+              "A": 5,
+              "M_codata": 4669.151,
+              "error": "KeyError: \"no canonical T1 for '5Li'; add to atomic-tr-m-mpfr-50dps.witness.json or markov-peel-atomic-tr-m.witness.json\""
+            }
+          },
+          {
+            "json_path": "rows.7",
+            "error_kind": "T1_witness_missing",
+            "siblings": {
+              "isotope": "6Li",
+              "Z": 3,
+              "N": 3,
+              "A": 6,
+              "M_codata": 5603.052,
+              "error": "KeyError: \"no canonical T1 for '6Li'; add to atomic-tr-m-mpfr-50dps.witness.json or markov-peel-atomic-tr-m.witness.json\""
+            }
+          },
+          {
+            "json_path": "rows.8",
+            "error_kind": "T1_witness_missing",
+            "siblings": {
+              "isotope": "7Li",
+              "Z": 3,
+              "N": 4,
+              "A": 7,
+              "M_codata": 6535.366,
+              "error": "KeyError: \"no canonical T1 for '7Li'; add to atomic-tr-m-mpfr-50dps.witness.json or markov-peel-atomic-tr-m.witness.json\""
+            }
+          },
+          {
+            "json_path": "rows.9",
+            "error_kind": "T1_witness_missing",
+            "siblings": {
+              "isotope": "7Be",
+              "Z": 4,
+              "N": 3,
+              "A": 7,
+              "M_codata": 6536.227,
+              "error": "KeyError: \"no canonical T1 for '7Be'; add to atomic-tr-m-mpfr-50dps.witness.json or markov-peel-atomic-tr-m.witness.json\""
+            }
+          },
+          {
+            "json_path": "rows.10",
+            "error_kind": "T1_witness_missing",
+            "siblings": {
+              "isotope": "8Be",
+              "Z": 4,
+              "N": 4,
+              "A": 8,
+              "M_codata": 7456.894,
+              "error": "KeyError: \"no canonical T1 for '8Be'; add to atomic-tr-m-mpfr-50dps.witness.json or markov-peel-atomic-tr-m.witness.json\""
+            }
+          },
+          {
+            "json_path": "rows.11",
+            "error_kind": "T1_witness_missing",
+            "siblings": {
+              "isotope": "9Be",
+              "Z": 4,
+              "N": 5,
+              "A": 9,
+              "M_codata": 8392.749,
+              "error": "KeyError: \"no canonical T1 for '9Be'; add to atomic-tr-m-mpfr-50dps.witness.json or markov-peel-atomic-tr-m.witness.json\""
+            }
+          },
+          {
+            "json_path": "all_modes.brane-legacy.rows.6",
+            "error_kind": "T1_witness_missing",
+            "siblings": {
+              "isotope": "5Li",
+              "Z": 3,
+              "N": 2,
+              "A": 5,
+              "M_codata": 4669.151,
+              "error": "KeyError: \"no canonical T1 for '5Li'; add to atomic-tr-m-mpfr-50dps.witness.json or markov-peel-atomic-tr-m.witness.json\""
+            }
+          },
+          {
+            "json_path": "all_modes.brane-legacy.rows.7",
+            "error_kind": "T1_witness_missing",
+            "siblings": {
+              "isotope": "6Li",
+              "Z": 3,
+              "N": 3,
+              "A": 6,
+              "M_codata": 5603.052,
+              "error": "KeyError: \"no canonical T1 for '6Li'; add to atomic-tr-m-mpfr-50dps.witness.json or markov-peel-atomic-tr-m.witness.json\""
+            }
+          },
+          {
+            "json_path": "all_modes.brane-legacy.rows.8",
+            "error_kind": "T1_witness_missing",
+            "siblings": {
+              "isotope": "7Li",
+              "Z": 3,
+              "N": 4,
+              "A": 7,
+              "M_codata": 6535.366,
+              "error": "KeyError: \"no canonical T1 for '7Li'; add to atomic-tr-m-mpfr-50dps.witness.json or markov-peel-atomic-tr-m.witness.json\""
+            }
+          },
+          {
+            "json_path": "all_modes.brane-legacy.rows.9",
+            "error_kind": "T1_witness_missing",
+            "siblings": {
+              "isotope": "7Be",
+              "Z": 4,
+              "N": 3,
+              "A": 7,
+              "M_codata": 6536.227,
+              "error": "KeyError: \"no canonical T1 for '7Be'; add to atomic-tr-m-mpfr-50dps.witness.json or markov-peel-atomic-tr-m.witness.json\""
+            }
+          },
+          {
+            "json_path": "all_modes.brane-legacy.rows.10",
+            "error_kind": "T1_witness_missing",
+            "siblings": {
+              "isotope": "8Be",
+              "Z": 4,
+              "N": 4,
+              "A": 8,
+              "M_codata": 7456.894,
+              "error": "KeyError: \"no canonical T1 for '8Be'; add to atomic-tr-m-mpfr-50dps.witness.json or markov-peel-atomic-tr-m.witness.json\""
+            }
+          },
+          {
+            "json_path": "all_modes.brane-legacy.rows.11",
+            "error_kind": "T1_witness_missing",
+            "siblings": {
+              "isotope": "9Be",
+              "Z": 4,
+              "N": 5,
+              "A": 9,
+              "M_codata": 8392.749,
+              "error": "KeyError: \"no canonical T1 for '9Be'; add to atomic-tr-m-mpfr-50dps.witness.json or markov-peel-atomic-tr-m.witness.json\""
+            }
+          },
+          {
+            "json_path": "all_modes.drop.rows.6",
+            "error_kind": "T1_witness_missing",
+            "siblings": {
+              "isotope": "5Li",
+              "Z": 3,
+              "N": 2,
+              "A": 5,
+              "M_codata": 4669.151,
+              "error": "KeyError: \"no canonical T1 for '5Li'; add to atomic-tr-m-mpfr-50dps.witness.json or markov-peel-atomic-tr-m.witness.json\""
+            }
+          },
+          {
+            "json_path": "all_modes.drop.rows.7",
+            "error_kind": "T1_witness_missing",
+            "siblings": {
+              "isotope": "6Li",
+              "Z": 3,
+              "N": 3,
+              "A": 6,
+              "M_codata": 5603.052,
+              "error": "KeyError: \"no canonical T1 for '6Li'; add to atomic-tr-m-mpfr-50dps.witness.json or markov-peel-atomic-tr-m.witness.json\""
+            }
+          },
+          {
+            "json_path": "all_modes.drop.rows.8",
+            "error_kind": "T1_witness_missing",
+            "siblings": {
+              "isotope": "7Li",
+              "Z": 3,
+              "N": 4,
+              "A": 7,
+              "M_codata": 6535.366,
+              "error": "KeyError: \"no canonical T1 for '7Li'; add to atomic-tr-m-mpfr-50dps.witness.json or markov-peel-atomic-tr-m.witness.json\""
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
