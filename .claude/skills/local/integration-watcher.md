@@ -506,19 +506,70 @@ factors:
 Apply §4 — exactly the same pipeline as for incoming events. The
 `source` field on each queue item becomes `backlog`.
 
-### 5d. Quiescence + heartbeat
+### 5d. Quiescence + heartbeat — AUTO-PULL FROM QUEUE WHEN IDLE
 
 A backlog item is preempted by any incoming event. Resume the
-backlog when the queue is quiescent again. Maintain at most one
-in-flight backlog item.
+backlog when the queue is quiescent again.  The number of in-flight
+backlog items is capped by §5m's parallelism cap (currently 4)
+when multiple items are independent; items sharing state serialise.
 
-If the session has been entirely quiescent for ≥ 60 minutes,
-emit a one-liner:
+**Auto-pull policy (MANDATORY).** On every Monitor TICK heartbeat
+(default 5-min cadence) where:
 
-> `<watcher-name>` idle — backlog at N items, queue at M items,
-> next refresh in <next discovery time>.
+1. No incoming event has arrived during this TICK window
+2. The count of items currently in `status: in-progress` is below
+   the parallelism cap (per §5m, default 4)
+3. `todos/${NAME}-queue.json` contains at least one item with
+   `status: queued` (or `status: needs-author` whose author ask
+   has been outstanding ≥ 7 days — the §5e re-ask cadence)
+
+→ **Pull the highest-priority queued item per §5b and start §5c
+processing on it immediately.**  Do not wait for a user prompt.
+Do not emit only the heartbeat one-liner below and stop — the
+heartbeat one-liner is for periods when the queue is *empty*,
+NOT for periods when the queue is non-empty and the agent is
+choosing not to work.
+
+This matches CLAUDE.md §"Agent work-plan policy" rule 4 ("Work
+the queue while idle"): an agent that idles with non-empty queue
+is an audit flag.  The TICK heartbeat is the trigger; the queue
+is the source of "what next".
+
+Sub-agent dispatch.  For long-running items (full content scan,
+multi-file rewire, Lean build) the watcher should launch the
+work via `Agent(run_in_background=true)` so the foreground stays
+responsive to fresh `<github-webhook-activity>` events.  Update
+the item's status to `in-progress` immediately on dispatch and
+back to `resolved` / `needs-author` on the sub-agent's
+completion notification.
+
+Foreground vs background.  Use foreground for items whose
+findings the watcher itself must consume to decide what to queue
+next (a feedback-loop item).  Use background for items whose
+deliverable is a standalone PR / commit / handover doc.
+
+When multiple independent items are eligible per the parallel-by-
+default policy in §5m, pull up to (parallelism-cap −
+currently-in-progress) items in a single TICK and dispatch them
+in one batch.
+
+**Empty-queue heartbeat.**  Only when the queue truly has no
+queued or eligible needs-author items eligible for auto-pull,
+emit a single one-liner per session-quiescence-period:
+
+If the session has been entirely quiescent for ≥ 60 minutes
+AND the auto-pull policy above didn't find anything to dispatch
+(0 queued + 0 eligible needs-author), emit a one-liner:
+
+> `<watcher-name>` idle — backlog at N items, queue at M items
+> (0 eligible for auto-pull), in-progress at K items, next
+> refresh in <next discovery time>.
 
 …and keep the Monitor armed.
+
+(If the queue has eligible items but the agent didn't auto-pull,
+that is a policy violation — fix the watcher's TICK handler, do
+not work around with the one-liner.)
 
 ### 5e. Idle author-ask dispatcher
 
