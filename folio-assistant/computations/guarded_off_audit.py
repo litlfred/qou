@@ -50,6 +50,15 @@ from witness_base import WitnessBuilder  # noqa: E402
 REPO_ROOT = HERE.parent.parent
 
 # Pattern catalogue.  Each tuple: (label, regex).
+#
+# `explicit_skip_block` was dropped after triage (PR follow-up to
+# #750): the original regex `^\s*#\s*(?:skip|skipping|kept for
+# reference|kept for compat|moved to)` matched benign comments
+# mentioning "Skip" (e.g. "# Skip per-term sp.cancel: too slow",
+# "# SKIP_TRACE=1 to produce a witness ...").  These weren't real
+# guarded-off blocks; they were explanatory prose.  Real
+# wired-but-guarded-off blocks are now captured by the four
+# remaining patterns below.
 GUARD_RX = (
     ("if_false_literal",
      re.compile(r'^\s*if\s+(?:False|0)\s*:')),
@@ -60,11 +69,8 @@ GUARD_RX = (
          r'os\.environ\.get\s*\(\s*[\'"][^\'"]+[\'"]\s*,\s*[\'"](?:|0|false|False|FALSE)[\'"]'
      )),
     ("dead_disabled_marker",
-     re.compile(r'^\s*#\s*(?:DEAD|DISABLED|UNUSED|LEGACY):',
+     re.compile(r'^\s*#\s*(?:DEAD|DISABLED|UNUSED|LEGACY|OBSOLETE|DEPRECATED):',
                 re.IGNORECASE)),
-    ("explicit_skip_block",
-     re.compile(r'^\s*#\s*(?:skip|skipping|kept for reference|kept '
-                r'for compat|moved to)', re.IGNORECASE)),
 )
 
 
@@ -80,6 +86,9 @@ def _classify_script(path: Path) -> dict[str, Any] | None:
     lines = text.splitlines()
     hits: list[dict[str, Any]] = []
     for i, line in enumerate(lines, start=1):
+        # Skip lines explicitly triaged with `# noqa: I3 — <reason>`.
+        if re.search(r'#\s*noqa:\s*I3\b', line, re.IGNORECASE):
+            continue
         for label, rx in GUARD_RX:
             if rx.search(line):
                 # Capture ±2 lines for context.
