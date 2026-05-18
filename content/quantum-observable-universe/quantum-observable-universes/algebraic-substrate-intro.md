@@ -2,7 +2,7 @@ The algebraic substrate is the Frobenius--Hopf algebra $A$ viewed as
 a graded ring equipped with the Reeb derivation --- the differential
 operator forced by the categorical volume constraint.  This chapter
 develops the five-step algebraic programme: substrate structure and
-Reeb derivation, the unit particle as a cohomological defect,
+Reeb derivation, the unit particle as a categorical invariant,
 spectral trace and Tannaka--Krein duality, geometric stability via
 the Hasse--Weil bound, and the classical limit that recovers the
 macroscopic continuum.

@@ -2,8 +2,8 @@ The preceding sections established that the algebraic substrate is
 unconditionally stable at the $q$-scale: the Hasse--Weil bound
 guarantees that all Frobenius eigenvalues lie on the critical circle
 $|\alpha_i| = q^{1/2}$, and the Reeb spectrum inherits this alignment
-through the spectral coordinate mapping. The $q$-Chebyshev function
-satisfies its prime-counting estimate with the optimal square-root
+through the spectral coordinate mapping. The substrate-side
+prime-counting estimate holds with the optimal square-root
 error term --- a finite-field Riemann hypothesis, proven, not
 conjectured.
 

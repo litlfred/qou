@@ -37,6 +37,7 @@ export default chapter({
       title: "Archimedean specialisations",
       label: "sec:archimedean-models",
       blocks: [
+        "archimedean-models-intro",
         "calabi-yau",
         "ale",
         "brings-surface-unit-circle",
@@ -92,6 +93,7 @@ export default chapter({
       title: "Finite fields and Jones polynomials",
       label: "sec:finite-fields",
       blocks: [
+        "finite-fields-intro",
         "finite-field-realisation",
         "finite-fields-outlook",
         "jones-polynomials",
@@ -107,6 +109,7 @@ export default chapter({
       title: "Mostow confinement and the Archimedean wall",
       label: "sec:archimedean-encounter",
       blocks: [
+        "archimedean-encounter-intro",
         "mostow-confinement",
         "algebraic-geometric-rigidity-pairing",
         "encounter-literature-bridge",
