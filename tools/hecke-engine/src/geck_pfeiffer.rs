@@ -401,6 +401,80 @@ pub fn chi_lambda_via_gp_hoefsmit(
     total
 }
 
+/// **MPFR variant** of [`chi_lambda_via_gp_hoefsmit`] at arbitrary
+/// precision (≥ 50 dps recommended for the QOU canonical-χ targets).
+///
+/// C-full Step 2 (2026-05-18): per the C-gate audit
+/// (`docs/audits/2026-05-18-hoefsmit-c-gate-gp-cross-validate.md`),
+/// the GP path needs MPFR for production canonical |tr_M| compute.
+/// Uses [`crate::seminormal_mpfr::chi_lambda_braid_mpfr`] per T_w +
+/// [`LaurentPolyQ::evaluate_mpfr`] for the basis-coefficient
+/// polynomials, all at the precision implied by `q`.
+///
+/// **`q` is supplied as a decimal string** (not `f64`) to preserve
+/// arbitrary precision through the FFI; the caller passes the
+/// canonical 50-dps `Q_50_DIGIT_STR` (or higher) from
+/// `folio-assistant/computations/q_parameter.py`. This matches the
+/// convention of `chi_lambda_canonical_h_n_mpfr` in `wenzl_lr.rs`.
+///
+/// **Averaged-crossing handling**: same as the f64 variant — uses
+/// [`braid_to_hecke_with_avg`] and divides by `2^avg_count` at the
+/// end. The divisor is computed via the same `f64::powi` pattern
+/// (then cast to MPFR `Float`) to avoid the `1u64 << k` UB for
+/// large k (per Copilot/Gemini review on PR #720).
+///
+/// Returns the χ^λ value as a decimal string at `dps` precision
+/// (matches `chi_lambda_braid_mpfr` for FFI compatibility).
+pub fn chi_lambda_via_gp_hoefsmit_mpfr(
+    lambda: &[usize],
+    n: usize,
+    word: &[(i32, u32)],
+    q_str: &str,
+    dps: u32,
+) -> String {
+    use rug::Float;
+    let n_lambda: usize = lambda.iter().sum();
+    let prec = (dps as f64 * 3.322 + 16.0) as u32;
+    if n_lambda != n {
+        return Float::with_val(prec, 0).to_string_radix(10, Some(dps as usize));
+    }
+
+    // Parse q at MPFR precision.
+    let q = Float::parse(q_str)
+        .map(|p| Float::with_val(prec, p))
+        .unwrap_or_else(|_| Float::with_val(prec, 1));
+
+    let (basis_expansion, avg_count) = braid_to_hecke_with_avg(n, word);
+    let mut total = Float::with_val(prec, 0);
+
+    for (w, c_w) in &basis_expansion {
+        let red_word = reduced_word(w);
+        let positive_word: Vec<(i32, u32)> =
+            red_word.iter().map(|&g| (1, g)).collect();
+        // Per-T_w character at MPFR precision.
+        let chi_w_str = crate::seminormal_mpfr::chi_lambda_braid_mpfr(
+            lambda, &positive_word, q_str, dps,
+        );
+        let chi_w = Float::parse(&chi_w_str)
+            .map(|p| Float::with_val(prec, p))
+            .unwrap_or_else(|_| Float::with_val(prec, 0));
+        // Basis coefficient c_w(q) evaluated at MPFR precision.
+        let c_w_mpfr = c_w.evaluate_mpfr(&q);
+        // total += c_w * chi_w (all MPFR).
+        let prod = Float::with_val(prec, &c_w_mpfr * &chi_w);
+        total += &prod;
+    }
+
+    // Deferred (1/2)^avg_count normalisation.  Cast f64::powi to MPFR
+    // to avoid the `1u64 << k` UB for large k (same fix as the f64
+    // variant; see Copilot/Gemini review on PR #720).
+    if avg_count > 0 {
+        let divisor = Float::with_val(prec, 2.0_f64.powi(avg_count as i32));
+        total /= divisor;
+    }
+    total.to_string_radix(10, Some(dps as usize))
+}
+
 /// **F3.2.ζ — partial Hecke-conjugation reduction (simple-reflection only).**
 ///
 /// Given a Hecke element `x = Σ c_w · T_w`, repeatedly find a basis
