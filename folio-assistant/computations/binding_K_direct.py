@@ -192,7 +192,7 @@ def main() -> int:
         "absent, this script reports per-atom status only."
     )
     w.set_audit_only("docs/audits/2026-05-09-kite-tail-reconciliation.md")
-    w.set_content_block("prop:atomic-mass-via-rho-k")
+    w.set_content_block("prop:rho-k-graded-expansion")
     w.add_parameter("m_e_MeV", str(M_E_MEV))
     w.add_parameter("m_p_MeV", str(M_P_MEV))
     w.add_parameter("m_n_MeV", str(M_N_MEV))

@@ -161,7 +161,7 @@ def main() -> int:
             "Tests four closed-form candidates against the empirical "
             "κ = -1.07 MeV/excess from #656 v6 single-magic anchor fit."
         )
-        .set_content_block("prop:magic-shell-coupling-witness")
+        .set_content_block("prop:magic-shell-coupling-kappa")
         .add_parameter("q_0", mp.nstr(q, 50))
         .add_parameter("empirical_kappa", float(KAPPA_EMP))
         .add_data("cat_q_values",

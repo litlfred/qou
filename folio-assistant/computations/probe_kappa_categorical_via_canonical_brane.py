@@ -17,7 +17,7 @@ The interface generators come in three types:
   - pn interface: between proton and neutron (always present if Z, N ≥ 1)
   - nn interface: between two neutrons (only present when N ≥ 2)
 
-Per `prop:magic-shell-coupling-witness`, the Δ_coupling has structure:
+Per `prop:magic-shell-coupling-kappa`, the Δ_coupling has structure:
 
   Δ_coupling(Z, N) = (universal piece) + (n_pp − n_nn) · κ · h · E_0
 
@@ -187,7 +187,7 @@ def main() -> int:
             "(V_pp − V_nn) per unit interface excess, with V_pp and V_nn "
             "the per-pp- and per-nn-interface generator's Vol_q^({i})."
         )
-        .set_content_block("prop:magic-shell-coupling-witness")
+        .set_content_block("prop:magic-shell-coupling-kappa")
         .add_parameter("q_0", mp.nstr(q, 50))
         .add_data("per_atom_vols", rows)
         .add_data("V_pp_4He", V_pp)

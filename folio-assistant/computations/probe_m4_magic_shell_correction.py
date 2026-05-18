@@ -11,7 +11,7 @@ residuals.
 
 ## Correction model
 
-Per `prop:magic-shell-coupling-witness` (audit doc on this
+Per `prop:magic-shell-coupling-kappa` (audit doc on this
 branch), the magic-shell coupling has structure:
 
   Δ_coupling(Z, N) ≈ [A−2]_q · E_0 · log(1/h) + (n_pp − n_nn) · κ · h · E_0
@@ -199,7 +199,7 @@ def main() -> int:
             "correction closes the structural T/³He Z↔N asymmetry "
             "that the Q_β chain alone cannot reach (per M3 finding)."
         )
-        .set_content_block("prop:magic-shell-coupling-witness")
+        .set_content_block("prop:magic-shell-coupling-kappa")
         .add_parameter("kappa_per_excess_MeV", float(KAPPA_EMP))
         .add_parameter("kappa_source", "empirical_from_pr656_v6")
         .add_data("rows", rows)

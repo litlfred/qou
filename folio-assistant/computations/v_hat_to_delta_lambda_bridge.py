@@ -276,7 +276,7 @@ def main() -> int:
         "factor needed; if inconclusive → χ^λ doesn't factor as pair-sum."
     )
     w.set_audit_only("docs/audits/2026-05-09-kite-tail-reconciliation.md")
-    w.set_content_block("prop:atomic-mass-via-rho-k")
+    w.set_content_block("prop:rho-k-graded-expansion")
 
     results = []
     for atom_label, Z, N in [

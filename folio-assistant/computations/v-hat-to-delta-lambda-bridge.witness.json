@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-09T20:40:32.334616+00:00",
-  "commitSha": "cb1bf50d1e832377e18f1bc9cebbe69c3ec9578b",
+  "computedAt": "2026-05-18T17:33:58.617177+00:00",
+  "commitSha": "78e889115cacec6f1f7e370b571171863f8a2558",
   "assertions": [
     {
       "name": "one_dim_universal_product_formula_closes",
@@ -13,13 +13,13 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1796,
+  "durationMs": 1324,
   "computation": "v-hat-to-delta-lambda-bridge",
   "scriptFile": "v_hat_to_delta_lambda_bridge.py",
-  "scriptHash": "735455c3970a",
-  "scriptCommitSha": "e417a34df0c42ec25caca0c3673d3fa899c0c1c4",
+  "scriptHash": "2462b48c8ced",
+  "scriptCommitSha": "136ea5c94c5f636cd95a605a1f4fa9a657ea0217",
   "description": "Tests whether the Option G Δ_λ^G factors through the Wedderburn-decomposed pair volumes |V̂_i V̂_j|_λ.  Specifically: is χ^λ(β_K) (the q-character that appears in Δ_λ^G = (target/S) · χ^λ/d_λ) proportional to Σ_pair (V̂_i V̂_j)_λ across the three n=3 channels {sym, std, alt}?  Tests three candidate proportionality forms (direct, dimension-scaled, squared) and reports per-atom constancy across channels.  If constant → bridge closes; if partial → per-channel correction factor needed; if inconclusive → χ^λ doesn't factor as pair-sum.",
-  "contentBlock": "prop:atomic-mass-via-rho-k",
+  "contentBlock": "prop:rho-k-graded-expansion",
   "auditOnly": "docs/audits/2026-05-09-kite-tail-reconciliation.md",
   "data": {
     "per_atom": [
@@ -147,12 +147,12 @@
           }
         },
         "constancy_sigma": {
-          "direct": "0.0",
-          "dimension_scaled": "0.0",
-          "squared": "0.0"
+          "direct": "nan",
+          "dimension_scaled": "nan",
+          "squared": "nan"
         },
-        "best_sigma": "0.0",
-        "verdict": "bridge_closed"
+        "best_sigma": "nan",
+        "verdict": "pair_sum_not_applicable_A_gt_1"
       },
       {
         "atom": "tritium",
@@ -190,12 +190,12 @@
           }
         },
         "constancy_sigma": {
-          "direct": "0.0",
-          "dimension_scaled": "0.0",
-          "squared": "0.0"
+          "direct": "nan",
+          "dimension_scaled": "nan",
+          "squared": "nan"
         },
-        "best_sigma": "0.0",
-        "verdict": "bridge_closed"
+        "best_sigma": "nan",
+        "verdict": "pair_sum_not_applicable_A_gt_1"
       },
       {
         "atom": "helium-3",
@@ -233,12 +233,12 @@
           }
         },
         "constancy_sigma": {
-          "direct": "0.0",
-          "dimension_scaled": "0.0",
-          "squared": "0.0"
+          "direct": "nan",
+          "dimension_scaled": "nan",
+          "squared": "nan"
         },
-        "best_sigma": "0.0",
-        "verdict": "bridge_closed"
+        "best_sigma": "nan",
+        "verdict": "pair_sum_not_applicable_A_gt_1"
       },
       {
         "atom": "helium-4",
@@ -276,12 +276,12 @@
           }
         },
         "constancy_sigma": {
-          "direct": "0.0",
-          "dimension_scaled": "0.0",
-          "squared": "0.0"
+          "direct": "nan",
+          "dimension_scaled": "nan",
+          "squared": "nan"
         },
-        "best_sigma": "0.0",
-        "verdict": "bridge_closed"
+        "best_sigma": "nan",
+        "verdict": "pair_sum_not_applicable_A_gt_1"
       }
     ],
     "hypothesis": "χ^λ(β_K) ∝ Σ_{i<j} (V̂_i V̂_j)_Wedd_λ for each channel λ. Bridge closes if any of {direct, dimension-scaled, squared} ratio is constant across all three n=3 channels.",
