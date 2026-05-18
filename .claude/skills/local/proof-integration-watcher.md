@@ -108,6 +108,51 @@ content block label.
 | **Author-assist** | Class A stub-weakening, hidden axiom, naked conjecture without conditional-class scaffolding, broken inter-proof chain, conjectural-propagation violation |
 | **Defer** | Minor stylistic gap, sorry already carrying `-- Ref:`, conjecture correctly class-axiomatised per §3b-cond |
 
+### Author rules when writing class-axiomatised `.lean` stubs (§3b-cond)
+
+When this watcher (or `local/formalizer`) authors a new
+class-axiomatised `.lean` stub for a naked conjecture:
+
+1. **Imports first, doc block second** (Lean v4.24+). Module
+   documentation `/-! … -/` must come AFTER any `import`
+   statements; placing it first causes parse errors in
+   Lean v4.24.0 and later. Learned from gemini review on #714.
+
+   ```lean
+   import Mathlib.Data.Nat.Defs
+   import Mathlib.Data.Real.Basic
+
+   /-!
+   # <Conjecture title>
+   ...
+   -/
+
+   namespace QOU.<Module>
+   ...
+   ```
+
+2. **Add the imports the opaque Props actually need.** If your
+   opaque Prop signatures mention `ℕ`, import `Mathlib.Data.Nat.Defs`;
+   `ℝ` → `Mathlib.Data.Real.Basic`; `ℂ` → `Mathlib.Data.Complex.Basic`;
+   nothing math-y → `import Mathlib.Tactic` as a safe baseline
+   (still places imports first per rule 1). Missing imports
+   produce "unknown identifier" errors at every `Type*` site.
+
+3. **Always set `lean.ref` in the sibling `.ts`** to the
+   fully-qualified `qou:QOU.<Module>.<ClassName>` URI matching
+   the new namespace+class. Otherwise the watcher's Slot G
+   discovery will still flag the block naked on the next pass.
+
+4. **Cite the conjecture's source** in a `-- Ref:` immediately
+   above the canonical instance's `sorry` field(s) per
+   CLAUDE.md §1. Use `[manuscript]` if no published source.
+
+5. **Verify locally** with `bun run validate <paper>` before
+   pushing. The validate run won't catch Lean syntax errors
+   (Lean isn't installed in CI here for content-only changes)
+   but it will catch broken `lean.ref` resolution + schema
+   shape issues.
+
 ## Slot F — §4e author-ask templates
 
 For `missing-narrative` / `narrative-stub`:
