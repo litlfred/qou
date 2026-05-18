@@ -1,0 +1,106 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-18T20:09:44.384080+00:00",
+  "commitSha": "7e2af75987d7b29edac5f45c0e32ce9ee8862d4c",
+  "assertions": [
+    {
+      "name": "summary_total_observables",
+      "computed": 6,
+      "expected": 6,
+      "passed": true,
+      "tolerance": 0,
+      "description": "Snapshot count"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "per-observable-100x-experimental-status",
+  "scriptFile": "per_observable_100x_status.py",
+  "scriptHash": "f86007a13e1b",
+  "scriptCommitSha": "7e2af75987d7b29edac5f45c0e32ce9ee8862d4c",
+  "description": "Headline status for Workplan v7: report each predicted observable's current error against the 100\u00d7 experimental target (\u03c3_pred \u2264 \u03c3_exp / 100). Audit-only \u2014 reads existing witnesses, does not introduce new predictions.",
+  "auditOnly": "docs/audits/2026-05-18-1ppb-workplan-v7-100x-experimental.md",
+  "data": {
+    "rows": [
+      {
+        "obs": "m_p",
+        "pred_MeV": "938.271852637",
+        "codata_MeV": "938.272088160",
+        "err_ppb": "251.0",
+        "sigma_exp_ppb": "0.3091",
+        "target_100x_ppb": "0.003091",
+        "miss_factor": "8.121e+4",
+        "beats_1x_experimental": false,
+        "beats_100x_experimental": false,
+        "source_witness": "m-p-borromean-verification-50dps.witness.json"
+      },
+      {
+        "obs": "m_n",
+        "pred_MeV": "939.565184668",
+        "codata_MeV": "939.565420520",
+        "err_ppb": "251.0",
+        "sigma_exp_ppb": "0.5747",
+        "target_100x_ppb": "0.005747",
+        "miss_factor": "4.368e+4",
+        "beats_1x_experimental": false,
+        "beats_100x_experimental": false,
+        "source_witness": "m-p-borromean-verification-50dps.witness.json"
+      },
+      {
+        "obs": "m_mu",
+        "pred_MeV": "105.658375649",
+        "codata_MeV": "105.658375500",
+        "err_ppb": "1.410",
+        "sigma_exp_ppb": "21.77",
+        "target_100x_ppb": "0.2177",
+        "miss_factor": "6.477",
+        "beats_1x_experimental": true,
+        "beats_100x_experimental": false,
+        "source_witness": "m-p-borromean-verification-50dps.witness.json"
+      },
+      {
+        "obs": "Delta_pn",
+        "pred_MeV": "1.29333203087",
+        "codata_MeV": "1.29333236000",
+        "err_ppb": "254.5",
+        "sigma_exp_ppb": "394.3",
+        "target_100x_ppb": "3.943",
+        "miss_factor": "64.54",
+        "beats_1x_experimental": true,
+        "beats_100x_experimental": false,
+        "source_witness": "m-p-borromean-verification-50dps.witness.json"
+      },
+      {
+        "obs": "Q_beta",
+        "pred_MeV": "0.783645802845",
+        "codata_MeV": "0.782320000000",
+        "err_ppb": "1.695e+6",
+        "sigma_exp_ppb": "6.391e+5",
+        "target_100x_ppb": "6391.",
+        "miss_factor": "265.2",
+        "beats_1x_experimental": false,
+        "beats_100x_experimental": false,
+        "source_witness": "q-beta-predicted.witness.json"
+      },
+      {
+        "obs": "m_e",
+        "pred_MeV": "0.510998950000",
+        "codata_MeV": "0.510998950000",
+        "err_ppb": "0",
+        "sigma_exp_ppb": "0.2935",
+        "target_100x_ppb": "0.002935",
+        "miss_factor": "N/A (anchor)",
+        "beats_1x_experimental": true,
+        "beats_100x_experimental": true,
+        "source_witness": "(CAL-1 anchor)",
+        "note": "calibration anchor \u2014 err defined as 0"
+      }
+    ],
+    "summary": {
+      "total": 6,
+      "beats_1x_count": 3,
+      "beats_100x_count": 1
+    }
+  }
+}

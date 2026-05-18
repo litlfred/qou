@@ -111,6 +111,44 @@ https://github.com/litlfred/qou/blob/<branch>/<path-to>/<block>.md
 If the branch is not yet pushed, say so explicitly and do not fabricate
 URLs.
 
+## Precision goals (STRICT — read before any precision-affecting work)
+
+The framework's headline precision goal has **two independent legs**.
+Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
+
+| Leg | Target | Status |
+|-----|--------|--------|
+| **L1. Compute precision** | internal cross-method agreement ≤ 1 ppb at substrate q_0 | trivially met — `_precision.py` default is 50 dps compute / 40 dps output |
+| **L2. Per-observable accuracy** | for each predicted observable O: `σ_pred(O) ≤ σ_exp(O) / 100` | partial — see `per-observable-100x-status.witness.json` |
+
+**Key distinctions** (avoid agent confusion):
+
+- **L1 ≠ L2.** A formula that is compute-stable to 50 digits (L1 met)
+  can still miss its 100× experimental target by 10⁴ (L2 missed).
+- **L2 is variable per observable.** Q_β target is 6.4 ppm (loose);
+  absolute m_p target is 3 ppt (research-grade, below CAL-2 floor).
+- **"1 ppb" by itself is ambiguous** — say "L1 compute met" or
+  "L2 met for observable X" not bare "1 ppb".
+
+**Two subgoals under L2:**
+
+- **Subgoal-1 (achievable):** 100× targets ≥ ~780 ppb CAL-2 floor.
+  Closure path: per-isotope Borromean-tower extension + operator-
+  valued branching combiner.
+- **Subgoal-2 (research-grade, out of scope):** 100× targets <
+  CAL-2 floor (absolute m_p / m_n / m_⁴He). Requires substrate-
+  derivation of q_0, which the coordination ledger explicitly
+  declined on 2026-05-08. Do **not** attempt without owner reversal.
+
+**Where to check status:**
+
+- L1: `folio-assistant/computations/onepb-status-dashboard.witness.json`
+- L2: `folio-assistant/computations/per-observable-100x-status.witness.json`
+
+**When writing a precision-affecting change**, run BOTH dashboards
+and report the deltas. Mention which leg the change addresses.
+Do not regress either.
+
 ## CRITICAL: Protected Files — DO NOT MODIFY
 
 The following files are **strictly off-limits** to all coding agents
