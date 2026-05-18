@@ -339,21 +339,22 @@ and reported in every per-isotope record.
 
 ### Layer-1 canonical $|\mathrm{tr}_M(q_0)|$ table
 
-| Atom | $A$ | $n$ | $\|\mathrm{tr}_M(\beta_{\text{atom}}, q_0)\|$ |
-|---|---|---|---|
-| $\mathfrak{p}$ | 1 | 3 | $1.06530622859$ |
-| $\mathfrak{n}$ | 1 | 3 | $0.92323329717$ |
-| D | 2 | 6 | $0.388286471548$ |
-| T | 3 | 9 | $0.104052118676$ |
-| ${}^3$He | 3 | 9 | $0.206540858562$ |
-| ${}^4$He | 4 | 12 | $0.0553483458767$ |
-| ${}^5$Li | 5 | 15 | *(computing)* |
-| ${}^6$Li | 6 | 18 | *(computing)* |
-| ${}^7$Li | 7 | 21 | *(canonical scaling limit)* |
+<!-- AUTO:canonical-tr-m-table BEGIN -->
 
-Computed via [`canonical_mass_table_extended.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/canonical_mass_table_extended.py)
-($\Sigma_\lambda y_\lambda \cdot \chi^\lambda$ at $q_0$, Rust f64 path).
-MPFR-50dps variant available via `--precision mpfr`.
+| Atom | $A$ | $n$ | $\|\mathrm{tr}_M(\beta_{\text{atom}}, q_0)\|$ | Wall (s) |
+|---|---|---|---|---|
+| $\mathfrak{p}$ | 1 | 3 | $1.0653062285923887$ | — |
+| $\mathfrak{n}$ | 1 | 3 | $0.9232332971695832$ | — |
+| D | 2 | 6 | $0.3882864715477129$ | — |
+| T | 3 | 9 | $0.1040521186755255$ | — |
+| ${}^3$He | 3 | 9 | $0.2065408585622623$ | — |
+| ${}^4$He | 4 | 12 | $0.0553483458766979$ | — |
+| ${}^5$Li | 5 | 15 | $0.0294413937003971$ | — |
+| ${}^6$Li | 6 | 18 | $0.0078896372028510$ | — |
+
+_Computed via [`canonical_mass_table_extended.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/canonical_mass_table_extended.py) (method=`?`). Witness: [`canonical-mass-table-extended.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/canonical-mass-table-extended.witness.json). Paper hard floor (CAL-2 propagation): ~780 ppb._
+
+<!-- AUTO:canonical-tr-m-table END -->
 
 ## Build-pipeline integration
 
