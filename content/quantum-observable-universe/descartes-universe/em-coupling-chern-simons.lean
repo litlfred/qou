@@ -76,7 +76,7 @@ class AlphaEmGluonOctetConjecture (q : ℝ) (hq : q > 1) : Prop where
     to a future Archimedean tier per gemini #721 rule. -/
 opaque ChernSimonsGramDeterminantIdentityHolds (q : ℝ) (hq : q > 1) : Prop
 
-/-- **Chern-Simons-correction conjecture** (class-axiomatised
+/-- **Chern-Simons-correction conjecture** (class-axiomatized
     per §3b-cond). Distinct from `AlphaEmGluonOctetConjecture`. -/
 -- Ref: [manuscript] conj:em-coupling-chern-simons
 class ChernSimonsCorrectionConjecture (q : ℝ) (hq : q > 1) : Prop where
