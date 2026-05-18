@@ -41,14 +41,30 @@ Outputs `A-operator-extract-h{n}-{interface}.witness.json`.
 
 ## Test-word generation
 
-The bilinear system has K_inner · K_block equations per λ. For
-robust (over-determined) extraction:
-  - K_block = 12 (standard H_3 test set, used across all levels)
-  - K_inner = max(12, ceil(d_λ_max²)) per level
+The bilinear system has K_inner · K_block equations per λ. The
+default is `K_inner = max(12, n_outer * 2)` (matches the
+implementation `--K-inner` default); this is **NOT** sufficient
+to over-determine high-dim λ for large n (per Gemini review on
+PR #708 — the theoretically-required count for an `((d_μ d_ν)²
+× support_size)`-unknown system is much larger than `n_outer*2`).
 
-Some high-dim λ remain under-determined at K_inner = 12; those are
-reported with rank deficiency but their `A_per_pair` is still
-emitted (least-squares pseudo-inverse).
+Currently-shipped extracts have over-determined low-dim λ and
+pseudo-inverse-determined high-dim λ; the latter still emit
+consistent `A_per_pair` data (residual ~1e-14) because the LR
+support fixes the structure, but uniqueness is not guaranteed
+outside the test-word span. The deuteron extract has been verified
+end-to-end at machine ε via the operator-valued combiner
+(`canonical_tr_m_via_branching.py`).
+
+## Memory scaling caveat (Gemini review #708)
+
+`np.kron(B_xi, B_nu)` and the dense `M` matrix for `lstsq` grow
+as O((d_μ d_ν)²) per support pair. For H_18 (d_λ_max ≈ 16M) this
+exceeds available memory. Practical ceiling for the current
+implementation: **H_12** (⁴He outer interfaces). Beyond that, the
+operator-valued combiner falls back to markov_peel (see
+`canonical_tr_m_via_branching.py`); a sparse-Hoefsmit-block
+approach is the long-term path.
 """
 from __future__ import annotations
 
@@ -90,17 +106,28 @@ def shape_dim(shape: tuple) -> int:
 
 def evaluate_word_matrix(shape: tuple, word: list,
                          q_val: float = None) -> np.ndarray:
-    """Compute ρ_shape(W) ∈ M_{d×d} for word W = [(c, d, gen_idx), ...]."""
+    """Compute ρ_shape(W) ∈ M_{d×d} for word W = [(c, d, gen_idx), ...].
+
+    Optimization (Gemini review #708): avoid allocating
+    `(c σ + d I)` as an intermediate dense matrix; apply
+    `M ← c · (M @ σ) + d · M` in place. Saves one O(dim²) allocation
+    per crossing.
+    """
     if q_val is None:
         q_val = Q0
     sigmas, dim = _compiled_sigmas(shape, "double")
     sigma_mats = [np.asarray(fn(q_val), dtype=complex) for fn in sigmas]
     M = np.eye(dim, dtype=complex)
-    I = np.eye(dim, dtype=complex)
     for (c, d, g) in word:
         if g >= len(sigma_mats):
             raise ValueError(f"gen {g} out of range for shape {shape}")
-        M = M @ (complex(c) * sigma_mats[g] + complex(d) * I)
+        cc = complex(c)
+        dd = complex(d)
+        if dd == 0:
+            M = cc * (M @ sigma_mats[g])
+        else:
+            # M ← c·(M @ σ_g) + d·M
+            M = cc * (M @ sigma_mats[g]) + dd * M
     return M
 
 

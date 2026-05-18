@@ -175,14 +175,28 @@ CANONICAL_CLOSURES = {
 
 
 def build_knot_operator_catalogue(Z: int, N: int) -> list[KnotOperatorCatalogue]:
-    """Build the per-step knot-operator list for the canonical
-    (Z, N) atomic braid.
+    """Build a COARSE per-slot knot-operator catalogue for the
+    canonical (Z, N) atomic braid.
 
-    Layout (matches `mass_at_3A_proper.atom_braid_word_3A`):
+    **Coarse summary, not the full wire-format word.** Per Copilot review
+    on PR #708: `mass_at_3A_proper.atom_braid_word_3A` expands each
+    nucleon slot (3k, 3k+1) into a SEQUENCE of (c, d) operations from
+    `_PROTON_G0` / `_PROTON_G1` / `_NEUTRON_G0` / `_NEUTRON_G1` —
+    typically 11 crossings per nucleon block. This function emits ONE
+    entry per slot summarising the slot's dominant crossing type
+    (σ for proton, σ⁻¹ for neutron), suitable for the IsotopeRecord
+    catalogue overview.
+
+    For the full step-by-step (c, d, gen) word, use
+    `atom_canonical_crossings(Z, N)` from `canonical_braid_crossings.py`
+    — that is the runtime source of truth and is stored separately on
+    the IsotopeRecord as `braid_word_canonical`.
+
+    Layout (per-slot summary):
 
       For each nucleon k = 0..A-1 (ordering: protons first, then neutrons):
-        - intra at base 3k    (σ_0)
-        - intra at base 3k+1  (σ_1)
+        - intra summary at base 3k    (σ_0)
+        - intra summary at base 3k+1  (σ_1)
       For each adjacent pair k, k+1 with k < A-1:
         - interface at gen 3k+2 (pp / nn / pn depending on types)
     """

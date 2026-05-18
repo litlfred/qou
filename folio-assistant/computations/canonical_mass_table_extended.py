@@ -295,15 +295,20 @@ def main() -> int:
             tr_M_q0_canonical_50dps=fmt(tr_m),  # OUTPUT_DPS via _precision
             prediction_method=PredictionMethod.CANONICAL_TRACE,
             calibration_source=CalibrationSource.CAL_1,
+            # Preserve legitimate 0.0 predictions (e.g. p, n) — use explicit
+            # `is not None` check, not truthiness (Copilot review).
             prediction_MeV_50dps=(
-                str(b_pred_existing) if b_pred_existing else None
+                str(b_pred_existing) if b_pred_existing is not None else None
             ),
             B_AME_MeV=b_ame,
             err_MeV=(
                 b_pred_existing - b_ame
                 if (b_pred_existing is not None and b_ame is not None) else None
             ),
-            chi_cache_witness="(computed live via Rust hecke-canonical-chi)",
+            # Provenance reflects actual method used (Copilot review).
+            chi_cache_witness=(
+                f"(computed live via {method_used})"
+            ),
         )
         records.append(record.to_dict())
 
@@ -315,13 +320,22 @@ def main() -> int:
               f"{pred_str:>16} {ame_str:>10} {origin_str:<22} "
               f"{method_used:<12} {wall:>8.1f}")
 
-    atoms_actually_computed = [r["Z"] for r in records], [r["N"] for r in records]
+    # Engine string reflects the actual method (Copilot review).
+    engine_str = (
+        "markov_peel+mpmath" if args.method == "markov_peel"
+        else "rust+mpmath"
+    )
+    method_desc = (
+        "markov_peel.tr_M_atomic (symbolic-q recursive ascent) + mpmath y_λ"
+        if args.method == "markov_peel"
+        else f"Rust hecke-canonical-chi ({args.precision}) + mpmath y_λ"
+    )
     builder = (
-        WitnessBuilder("canonical-mass-table-extended", engine="rust+mpmath")
+        WitnessBuilder("canonical-mass-table-extended", engine=engine_str)
         .set_description(
-            "Extended canonical mass table via Rust hecke-canonical-chi "
-            f"({args.precision}) + mpmath y_λ. Layer 1 canonical pipeline "
-            "per docs/audits/2026-05-18-all-atoms-isotopes-plan.md. "
+            f"Extended canonical mass table via {method_desc}. "
+            "Layer 1 canonical pipeline per "
+            "docs/audits/2026-05-18-all-atoms-isotopes-plan.md. "
             "Coverage is determined by --atoms (see parameters.atoms_requested); "
             "the actual rows reflect what completed within the per-atom "
             "timeout. Each row carries the per-atom IsotopeRecord with "

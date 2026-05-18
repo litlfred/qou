@@ -249,10 +249,12 @@ def compute_chi_lambda_via_branching(
         rho_nu_h3[nu] = get_rho_h3(last_nuc, nu)
 
     # Apply the branching sum
+    # Pre-parse pair keys ONCE before the loop (Gemini review #708 —
+    # ast.literal_eval inside a hot inner loop was a measurable cost).
     import ast
-    chi_total = 0.0 + 0.0j
-    for pair_key, pair_info in lam_data.get("A_per_pair", {}).items():
-        # pair_key is "((ξ_tuple),(ν_tuple))" — parse via ast.literal_eval
+    a_per_pair = lam_data.get("A_per_pair", {})
+    parsed_pairs: list[tuple[tuple, tuple, dict]] = []
+    for pair_key, pair_info in a_per_pair.items():
         try:
             parsed = ast.literal_eval(pair_key)
             xi, nu = parsed[0], parsed[1]
@@ -260,8 +262,12 @@ def compute_chi_lambda_via_branching(
                 xi = tuple(xi)
             if not isinstance(nu, tuple):
                 nu = tuple(nu)
+            parsed_pairs.append((xi, nu, pair_info))
         except (ValueError, SyntaxError):
             continue
+
+    chi_total = 0.0 + 0.0j
+    for xi, nu, pair_info in parsed_pairs:
 
         # Field-name compat: deuteron extract uses d_mu/d_nu;
         # H_9+ extracts use d_xi/d_nu.
@@ -306,7 +312,10 @@ def compute_tr_m_via_branching(
     A = Z + N
     n = 3 * A
     if A < 2:
-        return mp.mpf(0), 0.0, "A < 2: single nucleon — no compound braid"
+        # Return None rather than 0 — branching combiner doesn't apply to
+        # single-nucleon (no inter-nucleon interface). Caller should use
+        # the H_3 Hoefsmit direct path. Copilot review #708.
+        return None, 0.0, "A < 2: branching combiner inapplicable (use direct H_3 path)"
     if A >= 3:
         return None, 0.0, (
             f"A={A}: recursive ρ_ξ(β_inner) at H_{3*(A-1)} not yet "

@@ -107,10 +107,14 @@ def main() -> int:
         return 2
 
     witness = json.loads(WITNESS.read_text())
-    # Witness might or might not have a top-level "data" wrapper; both work
-    witness_data = witness.get("data", witness) if "rows" not in witness else witness
-
-    rendered = render_table(witness_data)
+    # parameters lives at TOP level (WitnessBuilder convention); rows
+    # live under `data`. Merge so render_table sees both — otherwise
+    # `parameters.method` would render as "?" (Copilot review #708).
+    merged = dict(witness)
+    if "data" in witness and isinstance(witness["data"], dict):
+        for k, v in witness["data"].items():
+            merged[k] = v
+    rendered = render_table(merged)
 
     md = ATLAS_MD.read_text()
     if BEGIN_MARKER not in md or END_MARKER not in md:
