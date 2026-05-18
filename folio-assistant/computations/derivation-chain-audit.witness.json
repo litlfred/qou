@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T04:03:43.803902+00:00",
-  "commitSha": "11e0cb56ab223fe59eb3c63dce3dbccae5e1623d",
+  "computedAt": "2026-05-18T05:11:53.375743+00:00",
+  "commitSha": "038daec122d93e6715a05f0a425ca07546f0150d",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -572,11 +572,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 2,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "875916a587c227572f421c22053ad81371976ccc",
+  "scriptCommitSha": "deeead4ec85e681e22a1567ac3ad828427b2f855",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
   "data": {
@@ -2209,6 +2209,7 @@
         "ew-higgs-sdp-probe.witness.json",
         "ew-interface-knot-probe.witness.json",
         "factor-2-normalization-trace.witness.json",
+        "flavor-dressed-mass-from-substrate-split.witness.json",
         "free-neutron-decay.witness.json",
         "fresh-derivation-pn-steps-E-G.witness.json",
         "full-twist-delta-n2-verification.witness.json",

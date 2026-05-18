@@ -7,6 +7,6 @@ export default lemma({
   },
   title: "Deuteron binding energy from Skein-polynomial smoothing",
   tags: ["deuteron", "binding-energy", "skein-polynomial", "codata"],
-  uses: ["lem:nucleon-mass-splitting"],
+  uses: ["prop:flavor-dressed-mass-from-substrate-split"],
   proofs: ["prf:deuteron-binding-energy"],
 });

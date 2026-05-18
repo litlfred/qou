@@ -56,6 +56,7 @@ import QOU.Descartes
 import QOU.Interactions
 import QOU.Encounter
 import QOU.BraidKnot
+import QOU.FlavorDressing
 import QOU.ArchimedeanMassFormula
 import QOU.CODATAChain
 import QOU.ClassicalLimitObstruction
