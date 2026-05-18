@@ -47,6 +47,10 @@ from q_parameter import Q_50_DIGIT_STR
 from experimental_constants import M_E_MEV, M_P_MEV, Q_NEUTRON_MEV
 from hoefsmit_symbolic import Q, chi_lambda_symbolic
 from hecke_character_symbolic import hoefsmit_matrices_symbolic
+# Cached numerical-q Hoefsmit path (P21 — Copilot review on PR #751):
+# eigenvalue extraction reuses `BlockCache` instead of going through
+# the symbolic `hoefsmit_matrices_symbolic` → `evalf` round-trip.
+from syt_prefix_cache import BlockCache, build_seminormal_matrices_cached
 
 mp.mp.dps = 80
 Q_NUM = mp.mpf(Q_50_DIGIT_STR)
@@ -87,6 +91,15 @@ def main() -> int:
     print(f"  β = (σ_1 σ_2^{{-1}})^3 · σ_3 (Markov-stabilised Borromean)")
     print()
     print(f"  {'λ':<12s}  {'dim':>3s}  {'tr':>20s}  {'det':>20s}  {'spec_rad':>20s}")
+
+    # Numerical BlockCache at q_0 (shared across shapes; eliminates the
+    # O(d_λ²) swap-partner search on the eigenvalue pass).
+    q0_num = float(Q_NUM)
+    h0_num = q0_num - 1.0 / q0_num
+    _block_cache_num = BlockCache(q0_num, h0_num)
+
+    import numpy as np
+
     for shape in shapes:
         try:
             matrices, dim, _ = hoefsmit_matrices_symbolic(shape, Q)
@@ -107,18 +120,40 @@ def main() -> int:
             elif ctype == "averaged":
                 cross = sigma_g - (h_sym/2) * eye(dim)
             rho = sp.cancel(rho * cross)
-        # Scalar invariants:
+        # Scalar invariants from the symbolic closed form (cancellable
+        # algebraic expressions in Q):
         trace_rho = sp.cancel(rho.trace())
         det_rho = sp.cancel(rho.det())
-        # Eigenvalues at q_0 (numerical)
+
+        # Numerical eigenvalues via the cached BlockCache path at q_0
+        # (P21 fix per Copilot review on PR #751):
         try:
-            rho_num = rho.evalf(subs={Q: float(Q_NUM)})
-            eigvals = list(rho_num.eigenvals().keys())
-            spec_rad_num = max(abs(complex(ev)) for ev in eigvals)
+            sigmas_num, dim_check, _ = build_seminormal_matrices_cached(
+                shape, cache=_block_cache_num,
+            )
+            assert dim_check == dim, "dim mismatch between symbolic and cached path"
+            # Convert sparse → dense if needed
+            sigmas_dense = [
+                s.toarray() if hasattr(s, "toarray") else np.asarray(s, dtype=float)
+                for s in sigmas_num
+            ]
+            I = np.eye(dim)
+            rho_num = I.copy()
+            for gen_idx, ctype in crossings_borromean_stab:
+                sigma_g = sigmas_dense[gen_idx]
+                if ctype == "sigma":
+                    cross = sigma_g
+                elif ctype == "sigma_inv":
+                    cross = sigma_g - h0_num * I
+                elif ctype == "averaged":
+                    cross = sigma_g - (h0_num / 2.0) * I
+                rho_num = rho_num @ cross
+            eigvals = np.linalg.eigvals(rho_num)
+            spec_rad_num = float(max(abs(ev) for ev in eigvals))
         except Exception:
             spec_rad_num = float("nan")
-        trace_num = float(trace_rho.evalf(subs={Q: float(Q_NUM)}))
-        det_num = float(det_rho.evalf(subs={Q: float(Q_NUM)}))
+        trace_num = float(trace_rho.evalf(subs={Q: q0_num}))
+        det_num = float(det_rho.evalf(subs={Q: q0_num}))
         print(f"  {str(shape):<12s}  {dim:>3d}  {trace_num:>20.10f}  {det_num:>20.10e}  {spec_rad_num:>20.10f}")
         invariants[str(shape)] = {
             "dim": dim,

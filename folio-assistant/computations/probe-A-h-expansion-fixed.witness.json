@@ -1,0 +1,48 @@
+{
+  "engine": "numpy+scipy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-18T19:53:46.508371+00:00",
+  "commitSha": "8197914ddf2974fb11c2cfdd93804010ecbd5029",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 21,
+  "computation": "probe-A-h-expansion-fixed",
+  "scriptFile": "probe_A_h_expansion_fixed.py",
+  "scriptHash": "cf53dccf3dd7",
+  "scriptCommitSha": "ffcf23584fd5c3c3e3e238e70453f2ed5b22cba8",
+  "description": "Numerical proof-attempt: A((4-q)/(4q+3)) = 5/2 - h²·G + O(h^4). Computes A(3/7) (the q=1 leading term) and fits A(a_post_hoc(q)) to a polynomial in h² over a small q-grid. Records c_0, c_2, c_4 fit coefficients and the leading/h² match flags.",
+  "contentBlock": "conj:flavor-dressed-mass-from-substrate-split",
+  "data": {
+    "A_at_q1_3over7": 2.4637499907185796,
+    "leading_target": 2.5,
+    "leading_match": false,
+    "c_0_fit": 2.4630654817382056,
+    "c_2_fit": -0.04983254420526533,
+    "h2_match_minus_G": false,
+    "target_h2_minus_G": -0.915965594177219,
+    "q_samples": [
+      1.0001,
+      1.001,
+      1.005,
+      1.01,
+      1.02,
+      1.05,
+      1.08,
+      1.1099785956,
+      1.15,
+      1.2
+    ],
+    "A_samples_at_a_post_hoc": [
+      2.4637463188310305,
+      2.4637132881367205,
+      2.4635668407880074,
+      2.463384602288829,
+      2.4630228844122337,
+      2.4619601739946324,
+      2.460931753232704,
+      2.459938770424837,
+      2.458667349401308,
+      2.457165204974346
+    ]
+  }
+}
