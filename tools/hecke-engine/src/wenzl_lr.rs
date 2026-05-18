@@ -247,16 +247,29 @@ pub fn chi_lambda_canonical_h_n_f64(
 /// **MPFR variant of [`chi_lambda_canonical_h_n_f64`]** at arbitrary
 /// precision (≥ 50 dps recommended).
 ///
-/// Uses [`seminormal_mpfr::chi_lambda_braid_mpfr`] for each averaged-
-/// expansion sub-word.  Returns the UNNORMALISED sum as a decimal
-/// string (the MPFR `rug::Float` is not `Send`/`Copy`-friendly for
-/// rayon `reduce`, so we serialise via decimal strings).  The
+/// Returns the **averaged** χ^λ value as a decimal string. Each averaged
+/// crossing in the input is substituted directly as `σ - h/2 · I`
+/// (equivalent to `(σ + σ⁻¹)/2` via the Hecke relation), so the
+/// returned value is **already** the half-sum-averaged χ^λ — the
+/// caller does NOT need to divide by `2^k` (the historical
+/// `averaging_denominator`). The Rust binary `hecke-canonical-chi`
+/// reflects this by reporting `averaging_denominator = "1"` to its
+/// downstream Python consumer.
+///
+/// Pre-2026-05-18 docstring described the predecessor (deleted)
+/// implementation which returned the UNNORMALISED 2^k sub-word sum and
+/// required caller-side division by `averaging_denominator`; the
+/// direct-averaging implementation (PR #682) replaced that path
+/// because at ⁴He / H_12 the 2^k expansion took >10 min wall, vs ~tens
+/// of ms with direct substitution.
+///
+/// The MPFR `rug::Float` is not `Send`/`Copy`-friendly for rayon
+/// `reduce`, so we serialise the result via a decimal string. The
 /// substrate parameter `q` is passed as a decimal string to preserve
 /// arbitrary precision through the FFI; the caller substitutes the
 /// canonical 50-dps `q_0` value from `q_parameter.Q_50_DIGIT_STR`.
 ///
-/// Cost: each sub-word evaluation is O(dim² · word_len) at MPFR
-/// precision `dps`; total ≈ 2^k · O(dim² · |word|).
+/// Cost: O(dim² · word_len) at MPFR precision `dps` per partition.
 pub fn chi_lambda_canonical_h_n_mpfr(
     lambda: &[usize],
     n_strands: usize,
