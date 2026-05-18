@@ -1,0 +1,125 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-18T00:06:57.805822+00:00",
+  "commitSha": "51b72e5d8985d7e9934522612fce24a7819a0d98",
+  "assertions": [
+    {
+      "name": "bar_pair_structure_exact",
+      "computed": 8,
+      "expected": 8,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "count"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 15,
+  "computation": "staircase-ew-k3-block-decomposition",
+  "scriptFile": "probe_staircase_ew_k3_block_decomposition.py",
+  "scriptHash": "5bc99250c300",
+  "scriptCommitSha": "unknown",
+  "description": "Schur-Weyl-style block decomposition probe for V_(3,2,1) at mpmath 50 dps. Two analyses: (§1) bar-pair structure of M = ρ(β_EW Δ_I^minimal) — verifies all 16 eigenvalues form 8 perfect bar-pairs with sign −1 (anti-self-reciprocal spectrum: closed under x↦−1/x); det(M) = +1. (§2) next-order correction fit — given the empirical residual = CODATA cot θ_W / (top/2nd) and the leading q^(1/5) approximation from rem:staircase-ew-k3-mpfr-finding, fits residual = q^(1/5) · (1 + α·X) for X ∈ {h, h², h³, h⁴, ℏ_q, ℏ_q², ℏ_q³} and reports α plus any small-denom rational match. Complements rem:staircase-ew-k3-mpfr-finding by searching for the structural origin of the 0.15 % residual. (Note: a direct bar-involution operator B on the SYT basis requires the Schützenberger jeu-de-taquin algorithm — not implemented here; the spectral symmetry is observed directly via the reciprocity check.)",
+  "contentBlock": "conj:staircase-ew-residual",
+  "auditOnly": "docs/audits/2026-05-17-staircase-ew-k3-block-decomposition.md",
+  "parameters": {
+    "k": 3,
+    "staircase_partition": [
+      3,
+      2,
+      1
+    ],
+    "dim_V_rho3": 16,
+    "h_corner": 5,
+    "q_0_50dps": "1.1099785955541805752815940796095093779932822799587"
+  },
+  "data": {
+    "bar_pair_count": 8,
+    "bar_pair_plus_signs": 0,
+    "bar_pair_minus_signs": 8,
+    "unpaired_eigenvalues": 0,
+    "det_M_50dps": "1.0",
+    "max_reciprocity_mismatch_50dps": "2.77967529849588347198615792584e-49",
+    "e_top_50dps": "5.2403253081667519738388231062274238129014069909896",
+    "e_second_50dps": "2.9388009575132422240952918523410573953795476586964",
+    "residual_codata_over_bare_50dps": "1.0226157580964414521705827619177961406211170579618",
+    "predicted_q_pow_one_fifth_50dps": "1.0210874086805358107475240063252813939256726270809",
+    "leading_rel_diff_50dps": "0.0014967860762092807016283051611335709057609310993037",
+    "next_order_correction_fits": {
+      "h^1": {
+        "alpha": "0.0071595894522813353611",
+        "rational_hits": []
+      },
+      "h^2": {
+        "alpha": "0.034246524563508175621",
+        "rational_hits": []
+      },
+      "h^3": {
+        "alpha": "0.16381168955229121955",
+        "rational_hits": []
+      },
+      "h^4": {
+        "alpha": "0.78356183513493912817",
+        "rational_hits": []
+      },
+      "hbar_q": {
+        "alpha": "0.015106580497269096931",
+        "rational_hits": []
+      },
+      "hbar_q^2": {
+        "alpha": "0.15246585864723321628",
+        "rational_hits": []
+      },
+      "hbar_q^3": {
+        "alpha": "1.5387888779489430437",
+        "rational_hits": []
+      }
+    },
+    "log_residual_over_log_q0": "0.2143344500454234127043733148637902559044151841244",
+    "best_rational_fits_residual_exponent": [
+      {
+        "p": 3,
+        "q": 14,
+        "value": "0.214285714285714285714285714286",
+        "abs_err_in_exponent": "0.000048735759709126990087600578076",
+        "rel_err_in_residual": "0.00000508511190627566579967261709839"
+      },
+      {
+        "p": 41,
+        "q": 191,
+        "value": "0.214659685863874345549738219895",
+        "abs_err_in_exponent": "0.000325235818450932845364905031498",
+        "rel_err_in_residual": "0.000033935919132515230779394591416"
+      },
+      {
+        "p": 38,
+        "q": 177,
+        "value": "0.214689265536723163841807909605",
+        "abs_err_in_exponent": "0.00035481549129975113743459474073",
+        "rel_err_in_residual": "0.0000370223933471702026392857557616"
+      },
+      {
+        "p": 35,
+        "q": 163,
+        "value": "0.214723926380368098159509202454",
+        "abs_err_in_exponent": "0.000389476334944685455135887590197",
+        "rel_err_in_residual": "0.0000406390715725601507688885916857"
+      },
+      {
+        "p": 32,
+        "q": 149,
+        "value": "0.214765100671140939597315436242",
+        "abs_err_in_exponent": "0.00043065062571752689294212137782",
+        "rel_err_in_residual": "0.000044935411026000531342899800253"
+      }
+    ],
+    "sum_hook_staircase_k": 14,
+    "structural_hypothesis_exponent": "0.21428571428571428571428571428571428571428571428571",
+    "structural_hypothesis_value_50dps": "1.0226105579808744108400673838827546058131269285766",
+    "structural_hypothesis_rel_diff_50dps": "0.0000050851119062756657996726170983902120654519395543113",
+    "structural_hypothesis_below_codata_floor": true
+  },
+  "caveats": [
+    "Empirical fit: rational hits are reported only for small denominators ≤ 12 within rel-err 1e-3. The ACTUAL closed form (if any) may require larger denominators, transcendental constants (ζ(2), ζ(3)), or a different parameterisation (e.g. content sums, Frobenius coordinates)."
+  ]
+}
