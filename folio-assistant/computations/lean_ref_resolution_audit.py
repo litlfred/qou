@@ -80,7 +80,12 @@ LEAN_PACKAGES = {
                  "lib": "Fred2005"},
 }
 
-LEAN_REF_RX = re.compile(r'ref:\s*"([^:"]+):([^"]+)"')
+# Only match `ref: "..."` inside a `lean: { ... }` block, not
+# inside `simulator: { ref: ... }` etc.  Multi-line tolerant.
+LEAN_REF_RX = re.compile(
+    r'lean:\s*\{[^}]*?ref:\s*"([^:"]+):([^"]+)"',
+    re.DOTALL,
+)
 KIND_RX = re.compile(r'kind:\s*"([a-z]+)"')
 
 # Lean declaration kinds we recognise as "declaring" a name.  Match
