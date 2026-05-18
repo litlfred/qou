@@ -3,6 +3,7 @@ name: canonical-watcher
 roles: [reader, collaborator, owner]
 user_invocable: true
 inherits: local/integration-watcher
+watch_arg: canonical
 description: >
   Canonical-derivation-discipline integration watcher — watches
   origin/main + open active PRs + newly-opened PRs for

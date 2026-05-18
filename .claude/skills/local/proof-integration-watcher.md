@@ -3,6 +3,7 @@ name: proof-integration-watcher
 roles: [reader, collaborator, owner]
 user_invocable: true
 inherits: local/integration-watcher
+watch_arg: proof
 description: >
   Proof-QA integration watcher — watches origin/main + open active
   PRs + newly-opened PRs for narrative-proof (`.md`) or Lean-proof

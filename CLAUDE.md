@@ -184,7 +184,8 @@ When a user request arrives, route to the right skill(s):
 | "watch proofs / proof watcher / proof integration / chase sorries / proof QA on incoming" | `local/proof-integration-watcher` | reader |
 | "watch canonical / canonical watcher / chase numerology / canonical-derivation discipline" | `local/canonical-watcher` | reader |
 | "watch wiring / compute integration watcher / is X wired in / mass-table sweep validation" | `local/compute-integration-watcher` | collaborator |
-| "(abstract — not directly invocable; parent of the 3 watcher skills above)" | `local/integration-watcher` | — |
+| "/integration-watch [proof\|canonical\|compute\|all]" | `local/integration-watch` (dispatcher) | reader |
+| "watch shared mechanics / parent watcher / inherit-from" | `local/integration-watcher` (abstract parent of the 3 watcher children) | reader |
 | "chapter complexity / reorder sections / backward edges / graph energy" | `local/chapter-complexity-review` | reader |
 | "verify substrate / observations trace to U / substrate connectivity" | `local/verify-local-substrate` | reader |
 | "dangling remarks / audit remarks / remark backing" | `local/remark-audit` | reader |

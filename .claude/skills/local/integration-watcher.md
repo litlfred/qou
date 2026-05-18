@@ -1,7 +1,7 @@
 ---
 name: integration-watcher
 roles: [reader, collaborator, owner]
-user_invocable: false
+user_invocable: true
 description: >
   Abstract parent skill for domain-specific **integration watchers**.
   Encodes the shared mechanics — Monitor on `origin/main`, PR
@@ -43,8 +43,36 @@ Three concrete children today:
 | **H. §5b prioritisation** | §5b | Domain-specific ranking rule for the backlog |
 | **I. §6 invariants** | §6 | Per-commit checks the watcher enforces on its own branch |
 
-Everything else — §1, §2, §4a, §4f, §5c-§5h, §7-§9, anti-patterns,
+Everything else — §1, §2, §4a, §4f, §5c-§5l, §7-§9, anti-patterns,
 checklist — is defined here and inherited verbatim.
+
+## 0. Invocation as `/integration-watch [args]`
+
+When the user invokes `/integration-watch` directly:
+
+| User input | Behaviour |
+|------------|-----------|
+| `/integration-watch` (no arg) | **Ask which.** Use `AskUserQuestion` with a 4-option chip set listing the three concrete watchers + "all three"; do NOT auto-pick. |
+| `/integration-watch proof` | Dispatch `local/proof-integration-watcher` |
+| `/integration-watch canonical` | Dispatch `local/canonical-watcher` |
+| `/integration-watch compute` or `/integration-watch compute-integration` | Dispatch `local/compute-integration-watcher` |
+| `/integration-watch all` or `/integration-watch proof,canonical,compute` | Dispatch **all** named watchers in parallel — each gets its own Monitor, its own queue/ledger, its own PR subscription set (deduped). |
+| `/integration-watch <unknown>` | List the available children, reject the unknown name, re-prompt via `AskUserQuestion`. |
+
+**No-arg full-context preamble (per §4e rule):** before the
+`AskUserQuestion`, write a short chat message:
+
+> The three watchers each cover one QA axis. Run them
+> independently (one focused PR per watcher's domain) or all
+> three in parallel (more events but full coverage).
+> - **proof** (`proof-integration-watcher`): no bare sorries,
+>   no axiom growth, naked-conjecture handling per §3b-cond.
+> - **canonical** (`canonical-watcher`): no 4th calibration,
+>   no numerology, no fits (per `prop:three-calibration-discipline`).
+> - **compute** (`compute-integration-watcher`): every `prop:`
+>   has a probe + production consumer (13-pattern I1-I13 audit).
+
+Then the structured `AskUserQuestion` chip set.
 
 ## 1. Baseline + setup (run once per session)
 
@@ -83,19 +111,45 @@ keep this core):
       "finding": "<domain-specific from Slot D>",
       "severity": "critical | major | minor",
       "source": "watch:main:<sha> | watch:pr:<N>:<event-ts> | backlog",
+      "source_sha": "<full SHA of the commit that triggered or backlogged this item>",
       "evidence": "<one paragraph: file:line + offending text>",
       "attempts": [ { "ts": "...", "tactic": "...", "outcome": "fail|partial|ok" } ],
       "status": "queued | in-progress | resolved | needs-author | wontfix",
       "asked_author_at": null
     }
   ],
-  "audited": { "<block-or-script>": "<ISO-8601 ts>" }
+  "audited": {
+    "<block-or-script>": {
+      "ts": "<ISO-8601 ts of last audit pass>",
+      "sha": "<full SHA of main HEAD at audit time>",
+      "criteria": ["<domain-specific finding-class>", "..."]
+    }
+  },
+  "reviewed_up_to": {
+    "<criterion>": "<full SHA of main HEAD at which all commits up-to-and-including have been audited under this criterion>"
+  }
 }
 ```
 
-`audited[]` is the per-block last-pass timestamp; the idle backlog
-sweep (§5) skips blocks audited within the last 7 days unless their
-source files have a newer mtime.
+Schema notes:
+
+- **`source_sha`** on every queue item records the commit that
+  triggered the finding. For backlog items, set to the main HEAD
+  at backlog-pass time.
+- **`audited[<block>]`** is now an object (not a bare timestamp).
+  The `sha` records WHICH main HEAD the audit was against; the
+  `criteria` array records WHICH finding-classes (Slot D) were
+  checked. A block is "audited under criterion X at SHA Y" iff
+  `X ∈ audited[block].criteria` and `audited[block].sha == Y`.
+- **`reviewed_up_to[<criterion>]`** is the per-criterion pointer
+  to the most recent main commit at which the watcher has
+  completed a full sweep under that criterion. Used by §5l
+  resume to compute the unreviewed-commits queue.
+
+The idle backlog sweep (§5) skips blocks whose `audited` entry
+covers the current set of criteria AND was taken at a SHA ≥ the
+most recent change to the block's source files. Anything else
+gets re-audited.
 
 ## 2. Active watching
 
@@ -751,6 +805,89 @@ prompt:
   scope is X only"). The author still gets the merge prompt.
 
 This rule extends §5g step 5(a).
+
+### 5l. Resume protocol — suggest next action on session start
+
+When a watcher starts (fresh session OR `/integration-watch`
+invocation), **before** arming the Monitor, compute the resume
+state and surface a structured suggestion to the user.
+
+**Procedure:**
+
+1. **Load persisted state.** If `todos/${NAME}-queue.json`
+   exists, parse it. Read:
+   - `reviewed_up_to[<criterion>]` per Slot D criterion → the
+     per-criterion last-fully-audited SHA
+   - `items[]` with `status ∈ {queued, in-progress, needs-author}` →
+     open work
+   - `audited[]` → per-block audit recency
+
+2. **Compute the unreviewed-commits queue.** For each criterion
+   `C`:
+
+   ```bash
+   git fetch origin main 2>/dev/null
+   LAST=$(jq -r ".reviewed_up_to.\"$C\" // empty" "$QUEUE")
+   CUR=$(git rev-parse origin/main)
+   if [ -n "$LAST" ] && [ "$LAST" != "$CUR" ]; then
+     git log --reverse --format='%H %s' "$LAST..$CUR" > "/tmp/_${NAME}_${C}_missed"
+   else
+     # No prior pointer; everything is "missed" until first sweep
+     echo "(no prior reviewed-up-to pointer — full backlog applies)"
+   fi
+   ```
+
+   The result per criterion: a list of commit SHAs not yet
+   audited. Trigger §3 filter on each; only the in-scope ones
+   become §4 dispatches.
+
+3. **Compose the resume-suggestion summary** (full-context
+   preamble per §4e), then ask the user via `AskUserQuestion`
+   what to do next. Standard 4-option chip set:
+
+   ```markdown
+   `<watcher-name>` resume — session state:
+
+   | Indicator | Value |
+   |-----------|------:|
+   | Open queue items (queued + in-progress + needs-author) | N |
+   | Unreviewed main commits per criterion (sum across Slot D) | M |
+   | Last fully-audited main HEAD (across all criteria) | <SHA[:12]> |
+   | Current main HEAD | <SHA[:12]> |
+   | Delta | <N commits> |
+
+   Top-3 oldest unaddressed asks: …
+   Top-3 highest-severity queue items: …
+   Newest in-scope main commit not yet audited: <SHA[:12]> "<msg>"
+   ```
+
+   Then the AskUserQuestion:
+   - Option A: **Triage unreviewed commits first** (recommended
+     when delta > 0 and any are in-scope) — walk the missed
+     range through §3 + §4
+   - Option B: **Continue backlog sweep** (recommended when
+     delta == 0 or the backlog has needs-author items) — pull
+     next-highest-priority Slot H item
+   - Option C: **Dispatch a specific chapter / target** (free-form
+     fallback) — user supplies the target
+   - Option D: **Just watch passively** — arm Monitor, no
+     proactive work
+
+4. **Record on every full sweep.** After §4 completes for the
+   newest in-scope commit `S` under criterion `C`, update
+   `reviewed_up_to[C] = S`. After §5 backlog sweep completes a
+   block `B`, update `audited[B] = { ts, sha: <main HEAD>,
+   criteria: [<Slot D criteria checked>] }`.
+
+5. **Resume-suggestion frequency.** Run at session start and
+   whenever the user types `/integration-watch resume` or
+   `<watcher>:status`. Otherwise the watcher runs continuously
+   without re-asking.
+
+The combination of `reviewed_up_to[criterion] + audited[block].{sha,criteria}`
+makes the audit ledger fully replayable: a fresh session can
+reconstruct exactly what's been checked under what criteria
+against what SHA, and ONLY queue the gap.
 
 ## 6. Goal-driven invariants
 

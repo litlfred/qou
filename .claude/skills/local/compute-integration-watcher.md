@@ -3,6 +3,7 @@ name: compute-integration-watcher
 roles: [collaborator, owner]
 user_invocable: true
 inherits: local/integration-watcher
+watch_arg: compute
 description: >
   Cross-layer wiring integration watcher — watches for newly-landed
   mathematical improvements (Lean proofs, propositions, lemmas,
