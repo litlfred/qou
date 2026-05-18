@@ -4,6 +4,10 @@ export default conjecture({
   label: "conj:electron-shells-hopf",
   title:
     "Electron shells as closed sub-Hopf links of the trefoil chain",
+  lean: {
+    ref: "qou:QOU.ElectronShellsHopf.ElectronShellsHopf",
+    validation: "not_checked",
+  },
   tags: [
     "electron",
     "shell",

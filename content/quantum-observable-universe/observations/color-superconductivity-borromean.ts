@@ -4,6 +4,10 @@ export default conjecture({
   label: "conj:color-superconductivity-borromean",
   title:
     "Color superconductivity as Borromean-to-Hopf topological reconfiguration",
+  lean: {
+    ref: "qou:QOU.Descartes.first_order_transition",
+    validation: "not_checked",
+  },
   tags: [
     "color-superconductivity",
     "diquark",

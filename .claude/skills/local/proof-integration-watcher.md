@@ -3,6 +3,7 @@ name: proof-integration-watcher
 roles: [reader, collaborator, owner]
 user_invocable: true
 inherits: local/integration-watcher
+watch_arg: proof
 description: >
   Proof-QA integration watcher — watches origin/main + open active
   PRs + newly-opened PRs for narrative-proof (`.md`) or Lean-proof
@@ -108,6 +109,51 @@ content block label.
 | **Author-assist** | Class A stub-weakening, hidden axiom, naked conjecture without conditional-class scaffolding, broken inter-proof chain, conjectural-propagation violation |
 | **Defer** | Minor stylistic gap, sorry already carrying `-- Ref:`, conjecture correctly class-axiomatised per §3b-cond |
 
+### Author rules when writing class-axiomatised `.lean` stubs (§3b-cond)
+
+When this watcher (or `local/formalizer`) authors a new
+class-axiomatised `.lean` stub for a naked conjecture:
+
+1. **Imports first, doc block second** (Lean v4.24+). Module
+   documentation `/-! … -/` must come AFTER any `import`
+   statements; placing it first causes parse errors in
+   Lean v4.24.0 and later. Learned from gemini review on #714.
+
+   ```lean
+   import Mathlib.Data.Nat.Defs
+   import Mathlib.Data.Real.Basic
+
+   /-!
+   # <Conjecture title>
+   ...
+   -/
+
+   namespace QOU.<Module>
+   ...
+   ```
+
+2. **Add the imports the opaque Props actually need.** If your
+   opaque Prop signatures mention `ℕ`, import `Mathlib.Data.Nat.Defs`;
+   `ℝ` → `Mathlib.Data.Real.Basic`; `ℂ` → `Mathlib.Data.Complex.Basic`;
+   nothing math-y → `import Mathlib.Tactic` as a safe baseline
+   (still places imports first per rule 1). Missing imports
+   produce "unknown identifier" errors at every `Type*` site.
+
+3. **Always set `lean.ref` in the sibling `.ts`** to the
+   fully-qualified `qou:QOU.<Module>.<ClassName>` URI matching
+   the new namespace+class. Otherwise the watcher's Slot G
+   discovery will still flag the block naked on the next pass.
+
+4. **Cite the conjecture's source** in a `-- Ref:` immediately
+   above the canonical instance's `sorry` field(s) per
+   CLAUDE.md §1. Use `[manuscript]` if no published source.
+
+5. **Verify locally** with `bun run validate <paper>` before
+   pushing. The validate run won't catch Lean syntax errors
+   (Lean isn't installed in CI here for content-only changes)
+   but it will catch broken `lean.ref` resolution + schema
+   shape issues.
+
 ## Slot F — §4e author-ask templates
 
 For `missing-narrative` / `narrative-stub`:
@@ -164,12 +210,59 @@ grep -rlE '^export default (theorem|lemma|proposition|corollary|conjecture|defin
 #    .py module). This avoids creating maintenance burden for a
 #    function whose only consumer is the watcher's own backlog scan.
 
-# 3. Naked conjectures (no .lean sibling)
-grep -rlE '^export default conjecture\(' content/ --include='*.ts' 2>/dev/null \
-  | while IFS= read -r ts; do
-      lean="${ts%.ts}.lean"
-      [ ! -f "$lean" ] && echo "$ts"
-    done > /tmp/_pw_naked_conjectures.txt
+# 3. Naked conjectures — REFINED (2026-05-18 round 2):
+#    A `conjecture` block is naked iff its `lean.ref` URI does NOT
+#    resolve to an actual Lean declaration. Sibling-`.lean` presence
+#    is NOT sufficient (the declaration may live in a chapter-level
+#    module like `QGeometricLanglands.lean`); sibling-`.lean` absence
+#    is NOT sufficient (the ref may resolve via the grep fallback).
+#
+#    Note: there is no automated `lean-ref-resolves` rule in
+#    `content/pipeline/validate.ts` today (it only enforces schema
+#    shape + constraint rules). The watcher implements this
+#    resolution test in-session as documented below; if the
+#    pipeline later adopts the same test as a constraint rule,
+#    update this comment to point at it.
+#
+#    Resolution test (in-session, namespace-walk verification):
+#
+#      DECL_PREFIX_RE = ^\s*(?:noncomputable\s+|@\[[^\]]+\]\s+
+#                          |private\s+|protected\s+)*
+#      DECL_KIND_RE   = (theorem|lemma|class|def|structure|instance
+#                       |opaque|axiom)
+#      DECL_RE        = DECL_PREFIX_RE + DECL_KIND_RE + r'\s+'
+#
+#      for each .ts with `export default conjecture(...)`:
+#        ref = extract lean.ref from manifest
+#        if ref is missing → naked
+#        decl_name = ref.split('.')[-1]
+#        candidates = grep -rEln --include='*.lean' "<DECL_RE><decl_name>\b"
+#                     content/<paper>/  (NOT just content/<paper>/lean/ —
+#                     sibling .lean files at chapter level also contain
+#                     declarations and were silently missed by the
+#                     lean/-only path; observed: ~16 wired blocks
+#                     misclassified naked on QOU paper, 2026-05-18 round 3)
+#                     The --include='*.lean' flag is essential: without
+#                     it the grep would match fenced Lean snippets inside
+#                     .md narratives (e.g. "class Foo" code blocks),
+#                     producing false-positive WIRED classifications.
+#        if no candidates → naked
+#        for each candidate file:
+#          read namespaces above the decl line
+#          full = '.'.join(reversed(namespaces)) + '.' + decl_name
+#          if full matches ref's qualifier → WIRED (not naked)
+#        if no namespace match → wrong-namespace ref (separate finding:
+#          `lean-ref-namespace-mismatch`, minor severity, auto-discharge
+#          by setting ref to the discovered `full`)
+#
+#    The DECL_PREFIX_RE handles `@[simp] theorem`, `noncomputable def`,
+#    `private theorem`, etc. — without it the watcher will false-positive
+#    "naked" on decorated declarations. Mirrors the DECL_RE used in
+#    Slot G item 2 (uncited-sorry detection).
+#
+#    The previous (sibling-`.lean`-only) heuristic over-counted by ~37%
+#    on the QOU paper (initial 32 substantive naked-conjecture flags
+#    reduced to 19 actually-naked under the refined test).
 
 # 4. Dual-sibling discovery — .lean exists but .md missing or stub.
 #    Heuristic must handle (a) .md files without `---` frontmatter

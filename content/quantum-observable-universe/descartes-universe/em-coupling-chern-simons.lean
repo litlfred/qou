@@ -63,4 +63,28 @@ class AlphaEmGluonOctetConjecture (q : ℝ) (hq : q > 1) : Prop where
   matches_codata :
     |alphaEmInvCorrected q hq - 137.035999084| < 1e-6
 
+/-- The **Chern-Simons-form** conjecture (distinct from the
+    PSLQ gluon-octet form above). States the algebraic identity
+    `1/α = q · [9]_q · [10]_q · (1 + δ_CS + κ · δ_CS²)`, where
+    `κ` is a Gram-determinant ratio from the Chern-Simons
+    pairing on Bring's surface. Per `conj:em-coupling-chern-
+    simons`, the algebraic content is the existence of such a
+    Gram-determinant `κ` making the identity hold.
+
+    Per `CLAUDE.md §3b-cond`, encoded as opaque Prop + class
+    field. Algebraic tier only — numerical CODATA match deferred
+    to a future Archimedean tier per gemini #721 rule. -/
+opaque ChernSimonsGramDeterminantIdentityHolds (q : ℝ) (hq : q > 1) : Prop
+
+/-- **Chern-Simons-correction conjecture** (class-axiomatized
+    per §3b-cond). Distinct from `AlphaEmGluonOctetConjecture`. -/
+-- Ref: [manuscript] conj:em-coupling-chern-simons
+class ChernSimonsCorrectionConjecture (q : ℝ) (hq : q > 1) : Prop where
+  identity_holds : ChernSimonsGramDeterminantIdentityHolds q hq
+
+-- Ref: [manuscript] conj:em-coupling-chern-simons
+instance chern_simons_correction_conjecture (q : ℝ) (hq : q > 1) :
+    ChernSimonsCorrectionConjecture q hq where
+  identity_holds := sorry
+
 end QOU.DescartesUniverse
