@@ -93,12 +93,51 @@ from bw_chirality_isotopes import (  # noqa: E402
 )
 from term5_v2_chirality import aK_v2  # noqa: E402
 from gb_filtration_jet_tracker import reduce_braid  # noqa: E402
+from _li_2_q_util import li_2_q  # noqa: E402
 
 M_E_MEV = mp.mpf(str(_M_E_MEV_RAW))
 
 
 PER_GEN_WITNESS = HERE / "terms-2-3-atom-per-gen-mpfr-50dps.witness.json"
+Q_WITNESS = HERE / "q-pinning-50-digit.witness.json"
 OUT_PATH = HERE / "proton-mass-full-tower-50dps.witness.json"
+
+
+def _load_q_50dps() -> tuple[mp.mpf, mp.mpf, mp.mpf]:
+    """Load q_0, q_0^{-1}, and z = 1/(q^{1/2}+q^{-1/2}) at 50 dps."""
+    with Q_WITNESS.open() as fh:
+        d = json.load(fh)
+    q = mp.mpf(d["derived_50_digit"]["q"])
+    qi = 1 / q
+    z = 1 / (mp.sqrt(q) + mp.sqrt(qi))
+    return q, qi, z
+
+
+def _compute_t2_t3_from_vols(
+    vols: list[mp.mpf], q: mp.mpf, qi: mp.mpf, z: mp.mpf,
+) -> tuple[mp.mpf, mp.mpf]:
+    """Compute T2 and T3 from per-generator Wedderburn volumes via Li_2^q.
+
+    Per `prop:mass-endomorphism-tower` (canonical Li_2^q form):
+        T2 = Σ_i Li_2^q(|V̂_i^full|)
+        T3 = z² · Σ_{i<j} Li_2^q(|V̂_i^full · V̂_j^full|)
+
+    where Li_2^q is the symmetric q-dilogarithm (radius of convergence
+    |z| < q at q = q_0; see `_li_2_q_util.li_2_q`).
+
+    Returns the partial sums as (t2, t3).  Diverges to MeV scale under
+    the legacy Φ_q form; matches AME within ~1 % under Li_2^q per PR
+    #675 / #682.
+    """
+    t2 = mp.mpf(0)
+    for v in vols:
+        t2 += li_2_q(mp.fabs(v), q, qi)
+    t3 = mp.mpf(0)
+    for i, vi in enumerate(vols):
+        for vj in vols[i + 1:]:
+            t3 += li_2_q(mp.fabs(vi * vj), q, qi)
+    t3 *= z ** 2
+    return t2, t3
 
 
 # Canonical braid words per particle (positive int i ↦ σ_i; negative −i ↦ σ_i^{-1}).
@@ -163,7 +202,16 @@ def _per_gen_results(w: dict) -> list:
 
 
 def _t1_t2_t3_from_per_gen(per_gen_witness: dict, atom: str) -> tuple[mp.mpf, mp.mpf, mp.mpf, list[mp.mpf]]:
-    """Extract T1 (descended) + T2 + T3 + raw V̂_i^full list for ``atom``."""
+    """Extract T1 (descended) + compute T2 + T3 + raw V̂_i^full list for ``atom``.
+
+    T1 (descended) = |∏ V̂_i^full| is the GS-NF / Coxeter-image product.
+    T2 and T3 are computed locally from `wedderburn_vols` via the
+    canonical Li_2^q tower (see `_compute_t2_t3_from_vols`) since
+    `terms_2_3_atom_per_gen_mpfr_50dps.py` on `main` (post-2026-05-17
+    rebase) no longer emits pre-summed `term2_single_50dps` /
+    `term3_pair_50dps` fields.
+    """
+    q0, qi, z = _load_q_50dps()
     for r in _per_gen_results(per_gen_witness):
         if r.get("atom") != atom:
             continue
@@ -172,8 +220,7 @@ def _t1_t2_t3_from_per_gen(per_gen_witness: dict, atom: str) -> tuple[mp.mpf, mp
         for v in vols:
             desc *= v
         t1 = mp.fabs(desc)
-        t2 = mp.mpf(r["term2_single_50dps"])
-        t3 = mp.mpf(r["term3_pair_50dps"])
+        t2, t3 = _compute_t2_t3_from_vols(vols, q0, qi, z)
         return t1, t2, t3, vols
     raise KeyError(f"atom {atom!r} not found in per-gen witness {per_gen_witness.get('computation')!r}")
 
@@ -251,7 +298,14 @@ def main() -> int:
     # A is derived per-particle from GS normal form (see derive_full_tower).
     p = derive_full_tower("proton",   per_gen_w, Z=1, N=0, knot_type="none")
     n = derive_full_tower("neutron",  per_gen_w, Z=0, N=1, knot_type="none")
-    e = derive_full_tower("electron", per_gen_w, Z=0, N=0, knot_type="none")
+    # Schema regression (post-2026-05-17 rebase): main's terms_2_3 producer
+    # dropped the electron atom.  Skip the electron derivation rather than
+    # KeyError; the proton/neutron rows are the substantive output.
+    try:
+        e = derive_full_tower("electron", per_gen_w, Z=0, N=0, knot_type="none")
+    except KeyError:
+        print("  NOTE: electron not in per-gen witness — skipping (CAL-1 anchor)")
+        e = {"m_hecke_50dps": str(M_E_MEV)}  # fall back to CAL-1 anchor
 
     m_p_hecke = mp.mpf(p["m_hecke_50dps"])
     m_n_hecke = mp.mpf(n["m_hecke_50dps"])
@@ -266,7 +320,8 @@ def main() -> int:
 
     print(f"\n  Particle      T1            T2              T3              T4         m_hecke")
     print("  " + "-" * 86)
-    for x in (p, n, e):
+    rows_for_print = [x for x in (p, n, e) if "T1_descended_50dps" in x]
+    for x in rows_for_print:
         vals = [mp.nstr(mp.mpf(x[k]), 8) for k in
                 ("T1_descended_50dps", "T2_single_Li2q_50dps", "T3_pair_Li2q_50dps",
                  "T4_Frobenius_50dps", "m_hecke_50dps")]

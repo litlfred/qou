@@ -65,8 +65,42 @@ from bw_chirality_isotopes import (  # noqa: E402
 )
 from term5_v2_chirality import aK_v2  # noqa: E402
 from gb_filtration_jet_tracker import reduce_braid  # noqa: E402
+from _li_2_q_util import li_2_q  # noqa: E402
 
 M_E_MEV = mp.mpf(str(_M_E_MEV_RAW))
+
+Q_WITNESS = HERE / "q-pinning-50-digit.witness.json"
+
+
+def _load_q_50dps() -> tuple[mp.mpf, mp.mpf, mp.mpf]:
+    """Load q_0, q_0^{-1}, and z = 1/(q^{1/2}+q^{-1/2}) at 50 dps."""
+    with Q_WITNESS.open() as fh:
+        d = json.load(fh)
+    q = mp.mpf(d["derived_50_digit"]["q"])
+    qi = 1 / q
+    z = 1 / (mp.sqrt(q) + mp.sqrt(qi))
+    return q, qi, z
+
+
+def _compute_t2_t3_from_vols(
+    vols: list[mp.mpf], q: mp.mpf, qi: mp.mpf, z: mp.mpf,
+) -> tuple[mp.mpf, mp.mpf]:
+    """Compute T2 = Σ_i Li_2^q(|V̂_i|) and T3 = z²·Σ_{i<j} Li_2^q(|V̂_i·V̂_j|).
+
+    Mirrors ``derive_m_p_hecke_full_tower_50dps._compute_t2_t3_from_vols``.
+    Computes the canonical Li_2^q tower terms from per-generator
+    Wedderburn volumes when the producer no longer emits pre-summed
+    scalars (post-2026-05-17 rebase regression).
+    """
+    t2 = mp.mpf(0)
+    for v in vols:
+        t2 += li_2_q(mp.fabs(v), q, qi)
+    t3 = mp.mpf(0)
+    for i, vi in enumerate(vols):
+        for vj in vols[i + 1:]:
+            t3 += li_2_q(mp.fabs(vi * vj), q, qi)
+    t3 *= z ** 2
+    return t2, t3
 
 
 _CANONICAL_BRAID = {
@@ -106,6 +140,7 @@ OUT_PATH = HERE / "neutron-mass-full-tower-50dps.witness.json"
 def _sum_full_tower(per_gen_witness: dict, atom: str, Z: int, N: int) -> dict:
     """Sum T1+T2+T3+T4+T5 with categorical A (max GS filtration grade)."""
     A = _A_categorical(atom)
+    q0, qi, z = _load_q_50dps()
     # Tolerate both data.results (modern) and top-level results (legacy)
     # schemas — gemini #663 review guidance.
     rows = per_gen_witness.get("data", {}).get("results") or per_gen_witness.get("results", [])
@@ -117,8 +152,9 @@ def _sum_full_tower(per_gen_witness: dict, atom: str, Z: int, N: int) -> dict:
         for v in vols:
             desc *= v
         t1 = mp.fabs(desc)
-        t2 = mp.mpf(r["term2_single_50dps"])
-        t3 = mp.mpf(r["term3_pair_50dps"])
+        # T2/T3 computed locally via Li_2^q since the producer (post-2026-05-17
+        # rebase) no longer emits pre-summed scalars (item 3 from PR #663 followup).
+        t2, t3 = _compute_t2_t3_from_vols(vols, q0, qi, z)
         t4 = term_4_frobenius_mp(A)
         t5_cat = _t5_cat_units_for(A, Z, N)
         return {
@@ -145,7 +181,13 @@ def main() -> int:
     print(f"\n  MPFR @ {mp.mp.dps} dps  —  m_n_pred from full tower (A_categorical)\n")
 
     n_data = _sum_full_tower(per_gen_w, "neutron",  Z=0, N=1)
-    e_data = _sum_full_tower(per_gen_w, "electron", Z=0, N=0)
+    # Schema regression (post-2026-05-17 rebase): main's terms_2_3 producer
+    # dropped the electron atom.  Skip and fall back to CAL-1 anchor.
+    try:
+        e_data = _sum_full_tower(per_gen_w, "electron", Z=0, N=0)
+    except KeyError:
+        print("  NOTE: electron not in per-gen witness — using CAL-1 anchor")
+        e_data = {"m_hecke_50dps": str(M_E_MEV)}
 
     m_n_hecke = mp.mpf(n_data["m_hecke_50dps"])
     m_e_hecke = mp.mpf(e_data["m_hecke_50dps"])
