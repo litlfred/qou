@@ -1,5 +1,7 @@
-_[draft]_ We pause the structural development to look at instances of direct Limit Algebra.
+_[draft]_ The brane tower carries a coherent QOU structure at every level, and the categorical lifting machinery of the previous section ensures the levels assemble. We now pass to the colimit and study the algebra that emerges.
 
-We open at **Quantum Observable Universe as Direct Limit** (def). **Existence and Uniqueness of the Vacuum State** (prop) is the central proposition — the rest of the section hangs on it. The closing block, **The admissible ordering extends through the jet tower** (prop), packages the result for downstream use.
+We begin with **Quantum Observable Universe as Direct Limit** (def), which packages the tower of endomorphism algebras into $\mathcal{A}_\infty = \varinjlim_n \mathrm{End}_{\mathbf{C}}(A_n)$, recovering $\varinjlim \Gamma(J^1\mathcal{S}_n, \mathrm{SU}_{q_n}(2))$ in the archimedean realisation. **Direct limit algebra and the Lusztig integral form** (rem), **Jet Shell of the universe** (rem), and **Stack-like structure of the direct limit algebra** (rem) interpret the colimit through three lenses: Lusztig's integral form, the profinite jet shell, and Yekutieli's twisted-deformation stack. **Existence and Uniqueness of the Vacuum State** (prop) and its proof identify the unique $G_q$-invariant functional on $\mathcal{A}_\infty$. **Global gluing via twisted quantization** (prop) shows how the obstruction class organises a global object across the tower. **The admissible ordering extends through the jet tower** (prop) closes the section by lifting the Gröbner-style ordering from each level to the colimit, providing the well-founded order downstream sections rely on.
+
+The next section, *Mass in the Brane Tower*, uses the vacuum state and the global gluing as the inputs that make the categorical mass identity well-defined.
 
 _(draft.)_

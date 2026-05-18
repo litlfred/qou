@@ -1,3 +1,3 @@
-_[draft]_ The molecular Hecke algebra is the object. This section fixes its definition, its essential data, and the structural lemmas that downstream proofs will lean on.
+_[draft]_ We extend the atomic constructor of Chapter 11 to multi-atom systems. The molecular braid $H_{N_{\mathrm{mol}}}(q)$ (def) joins pre-computed atomic braids inside a single Hecke algebra, and the inter-atomic crossing coefficients (rem) record how strands from different nuclei interact. Two atoms share a single electron trefoil to form a covalent bond as shared electron trefoil (def), and the ILP characterisation of the covalent bond (prop) identifies that shared trefoil as the inverse trefoil $T_{2,3}^{-1}$ — the minimum-crossing knot operator with positive binding energy. With these four objects in hand we can compute any molecule by Hopf-linking atoms.
 
 _(draft.)_
