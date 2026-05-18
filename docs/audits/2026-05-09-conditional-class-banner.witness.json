@@ -1,7 +1,7 @@
 {
   "audit": "§3b-cond conditional-class banner (CLAUDE.md §3b-cond #2 + #3)",
-  "generated": "2026-05-18T03:54:35.757Z",
-  "total_blocks": 1616,
+  "generated": "2026-05-18T16:17:08.321Z",
+  "total_blocks": 1620,
   "conditional_on_class": 12,
   "fully_compliant": 12,
   "missing_lean_class_hypothesis": 0,
@@ -19,8 +19,8 @@
       ],
       "has_lean_class_hypothesis": true,
       "has_md_conditional_banner": true,
-      "lean_file": "content/quantum-observable-universe/algebraic-substrate/surreal-squeeze.lean",
-      "md_file": "content/quantum-observable-universe/algebraic-substrate/surreal-squeeze.md"
+      "lean_file": "content/quantum-observable-universe/appendix-surreals/surreal-squeeze.lean",
+      "md_file": "content/quantum-observable-universe/appendix-surreals/surreal-squeeze.md"
     },
     {
       "label": "prop:collatz-contact-boundary",
@@ -34,8 +34,8 @@
       ],
       "has_lean_class_hypothesis": true,
       "has_md_conditional_banner": true,
-      "lean_file": "content/quantum-observable-universe/algebraic-substrate/collatz-contact-boundary.lean",
-      "md_file": "content/quantum-observable-universe/algebraic-substrate/collatz-contact-boundary.md"
+      "lean_file": "content/quantum-observable-universe/appendix-surreals/collatz-contact-boundary.lean",
+      "md_file": "content/quantum-observable-universe/appendix-surreals/collatz-contact-boundary.md"
     },
     {
       "label": "prop:collatz-no-cycles",
@@ -49,8 +49,8 @@
       ],
       "has_lean_class_hypothesis": true,
       "has_md_conditional_banner": true,
-      "lean_file": "content/quantum-observable-universe/algebraic-substrate/collatz-no-cycles.lean",
-      "md_file": "content/quantum-observable-universe/algebraic-substrate/collatz-no-cycles.md"
+      "lean_file": "content/quantum-observable-universe/appendix-surreals/collatz-no-cycles.lean",
+      "md_file": "content/quantum-observable-universe/appendix-surreals/collatz-no-cycles.md"
     },
     {
       "label": "prop:core-levi-form",
@@ -146,7 +146,7 @@
       "has_lean_class_hypothesis": true,
       "has_md_conditional_banner": true,
       "lean_file": "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/SurrealRateCalculus.lean",
-      "md_file": "content/quantum-observable-universe/algebraic-substrate/surreal-rate-calculus.md"
+      "md_file": "content/quantum-observable-universe/appendix-surreals/surreal-rate-calculus.md"
     },
     {
       "label": "prop:universality",
