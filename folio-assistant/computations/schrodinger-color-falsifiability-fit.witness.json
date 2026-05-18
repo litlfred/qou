@@ -3,6 +3,12 @@
   "engineVersion": "numpy 2.4.4 scipy scipy",
   "computedAt": "2026-05-11T21:41:01.687786+00:00",
   "commitSha": "b30c33df85a99b5bf99eb5ef28622e7f857ad80e",
+  "canonicalDerivationBanner": {
+    "discipline": "falsifiability-validation",
+    "explanation": "This script performs an MLE fit on (eta, sigma) against the Bujack et al. 2022 PNAS color-perception dataset. The fit is an EXTERNAL VALIDATION of the QOU prediction (eta_QOU_predicted = 0.10428, derived canonically from q_0 = 1.1097), NOT a framework calibration. eta is predicted from the substrate parameter; sigma is observer-side nuisance with no upstream consumer. Per prop:three-calibration-discipline, the framework retains exactly three calibrations (q, alpha_3, alpha_5); this fit does not introduce a fourth.",
+    "framework_calibration_count": 3,
+    "this_script_calibrations_added": 0
+  },
   "assertions": [
     {
       "name": "non_riemannian_significant",

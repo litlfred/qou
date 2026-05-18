@@ -209,6 +209,37 @@ grep -rlE '^export default (theorem|lemma|proposition|corollary|conjecture|defin
 #    one-off block in the agent's working memory, NOT a committed
 #    .py module). This avoids creating maintenance burden for a
 #    function whose only consumer is the watcher's own backlog scan.
+#
+#    HARD-GATE — ground-truth cross-check (MANDATORY before queueing
+#    any `uncited-sorry` as `severity: critical`):
+#
+#      Before adding an `uncited-sorry` finding to the watcher queue,
+#      ALWAYS cross-check the heuristic flag against the Lean
+#      elaborator's ground truth via the lean-lsp-mcp tool:
+#
+#        mcp__lean-lsp__lean_diagnostic_messages(file_path)
+#
+#      The elaborator reports REAL sorries — uses of the `sorry`
+#      tactic or term — and never matches the word `sorry` inside
+#      doc strings, block comments, or string literals. If the
+#      diagnostic list for the file is empty (no `sorry`-class
+#      warning) OR the file does not appear among the diagnostics,
+#      the heuristic flag is a FALSE POSITIVE. Mark `status:
+#      wontfix` with a one-line explanation; do NOT queue.
+#
+#      Historical false-positive shapes the heuristic has hit:
+#        - Doc comment "(proved, no sorry)" — comment-stripping
+#          regex on line above failed to suppress a `sorry` token
+#          inside the parenthetical.
+#        - Doc comment "Key properties (all proved, no sorry):" —
+#          colon at end suppressed the "no sorry" exclusion.
+#        - File with ZERO `sorry` tokens flagged due to recursion
+#          in the SORRY_RE regex's tokenisation.
+#
+#      The hard-gate is non-optional. A watcher agent that queues
+#      `uncited-sorry` items without running the diagnostic check
+#      is an audit failure (per `proof-integration-watcher §6`
+#      invariants, finding-class `false-positive-without-gate`).
 
 # 3. Naked conjectures — REFINED (2026-05-18 round 2):
 #    A `conjecture` block is naked iff its `lean.ref` URI does NOT
