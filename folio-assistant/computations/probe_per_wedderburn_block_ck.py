@@ -35,7 +35,9 @@ import sympy as sp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
-mp.mp.dps = 50
+
+from _precision import set_compute_dps, fmt  # noqa: E402
+set_compute_dps()
 
 
 def main() -> int:

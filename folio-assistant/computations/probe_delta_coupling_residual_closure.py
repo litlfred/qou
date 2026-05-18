@@ -55,7 +55,8 @@ from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 # ── 50 dps for consistency with magic-shell-empirical-instantiation ──
-mp.dps = 50
+from _precision import set_compute_dps, fmt  # noqa: E402
+set_compute_dps()
 
 
 def _mpf_from_str(s: str) -> "mpf":
