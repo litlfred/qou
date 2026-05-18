@@ -11,12 +11,14 @@
 //! crossings (sign == 0).  This binary tests only positive-only and
 //! mixed (σ / σ⁻¹) words.  Canonical atomic braids with averaged
 //! crossings require averaged-handling in `braid_to_hecke` first; that
-//! extension is a candidate C-full follow-up.
+//! extension is a candidate C-full follow-up.  Per Copilot review on
+//! PR #718, `braid_to_hecke` now panics on sign == 0 to surface the
+//! mis-use loudly rather than silently treating it as σ.
 //!
-//! Test cases:
-//!   - n=3 short words: σ_1, σ_1 σ_2, σ_1 σ_2 σ_1, mixed (σ_1 σ_2⁻¹)
-//!   - n=6 proton-like word with all σ (no averaged) — sanity check
-//!   - n=9 tritium-like word, σ-only — larger smoke
+//! Test cases (covered by the `cases` vector in `main`):
+//!   - n=3: σ_1; σ_1 σ_2; σ_1 σ_2 σ_1; mixed σ_1 σ_2⁻¹
+//!   - n=4: 5-crossing positive word
+//!   - n=6: 10-crossing alternating σ / σ⁻¹ word
 //!
 //! Output: JSON to stdout with per-(partition, atom-word) rows:
 //!   `{ "n": N, "lambda": [...], "word": [...],
@@ -32,27 +34,23 @@
 //! §C "Geck-Pfeiffer factorization (already scaffolded — biggest potential)".
 
 use hecke_engine::geck_pfeiffer::{braid_to_hecke, chi_lambda_via_gp_hoefsmit};
-use hecke_engine::seminormal::chi_lambda_braid;
+use hecke_engine::seminormal::{chi_lambda_braid, partitions_of};
 
-/// All integer partitions of `n` in decreasing order (reverse-lex).
-fn partitions_of(n: usize) -> Vec<Vec<usize>> {
-    let mut out = Vec::new();
-    fn rec(n: usize, max_part: usize, prefix: &mut Vec<usize>, out: &mut Vec<Vec<usize>>) {
-        if n == 0 {
-            out.push(prefix.clone());
-            return;
-        }
-        let upper = n.min(max_part);
-        for k in (1..=upper).rev() {
-            prefix.push(k);
-            rec(n - k, k, prefix, out);
-            prefix.pop();
-        }
-    }
-    let mut prefix = Vec::new();
-    rec(n, n, &mut prefix, &mut out);
-    out
-}
+/// f64 approximation of the substrate parameter q_0 (calibrated per
+/// `prop:three-calibration-inputs`).  Per Gemini + Copilot reviews on
+/// PR #718, this binary uses the canonical literal rather than a
+/// magic constant.  The full 50-dps decimal lives in
+/// `folio-assistant/computations/q_parameter.py::Q_50_DIGIT_STR`; the
+/// Rust kernel reads that via `q_str` for MPFR paths and uses this
+/// f64 cast for the cross-validation tests (which run at f64
+/// precision via `chi_lambda_braid` / `chi_lambda_via_gp_hoefsmit`).
+///
+/// **Drift discipline**: if Q_50_DIGIT_STR's leading f64-representable
+/// digits drift, update this literal in lock-step. There is no
+/// shared Rust constant module for substrate parameters yet (a
+/// future C-full follow-up could add one and re-export
+/// Q_50_DIGIT_STR's f64 prefix).
+const Q0_F64: f64 = 1.10977859555418057297748154126596420587829;
 
 #[derive(serde::Serialize)]
 struct Row {
@@ -118,8 +116,9 @@ fn validate(n: usize, word: &[(i32, u32)], q: f64) -> Vec<Row> {
 }
 
 fn main() {
-    // Substrate q_0 (decimal approximation of the calibrated point).
-    let q0: f64 = 1.10977859555418057297748154126596420587829;
+    // Substrate q_0 — see Q0_F64 module-level const above for
+    // provenance and drift discipline.
+    let q0: f64 = Q0_F64;
 
     // Test cases — only positive / mixed σ-σ⁻¹ words; no averaged.
     let cases: Vec<(usize, Vec<(i32, u32)>, &str)> = vec![
