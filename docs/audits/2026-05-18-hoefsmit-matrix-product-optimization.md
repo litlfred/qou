@@ -127,9 +127,9 @@ scale well. At n=15 it's actually slower. The win is when:
   sharing word patterns.
 
 Current scaffolding gaps (per docstring):
-- 🚧 Memoization across multiplications
-- 🚧 PyO3 export (so Python can call it)
-- 🚧 Cross-validation with seminormal at q_0 on full atomic braids
+- Memoization across multiplications
+- PyO3 export (so Python can call it)
+- Cross-validation with seminormal at q_0 on full atomic braids
 - F3.2.ζ partial conjugation reduction implemented but limited
   (the docstring notes D braid n=6 takes the basis from ~700 → 145,
   of which 17 are minimal-length and 128 still need the full
