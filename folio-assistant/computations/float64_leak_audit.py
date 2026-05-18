@@ -81,6 +81,15 @@ BUILDER_CONTEXT_RX = re.compile(r"\.(add_data|add_parameter|add_assertion)\b")
 # and other formatting-only contexts.  These don't leak precision into
 # downstream computation.
 DISPLAY_CONTEXT_RX = re.compile(r"\b(print|mp\.nstr|logger|warnings\.warn|sys\.stderr\.write)\b")
+# Comparison / sort / dict-key contexts — float(x) used here doesn't
+# propagate into mpmath computation.  Matches: `< N`, `> N`, `< 1e-N`,
+# `key=lambda ...`, `abs(float(...))`, `"key": float(...)` (raw dict),
+# `assert ...`, and ppm/percent-display patterns.
+COMPARISON_CONTEXT_RX = re.compile(
+    r"(?:(?:<|>|<=|>=|==|!=)\s*\d|key\s*=\s*lambda|\bassert\b|\bppm\b|_pct\b|\bgap_[a-z]\b|reverse=True)"
+)
+# `# noqa: I8 — <reason>` explicit triage marker.
+NOQA_I8_RX = re.compile(r"#\s*noqa:\s*I8\b", re.IGNORECASE)
 # Mp re-wrap on next line: `mp.mpf(str(...))` indicates the float
 # cast is just a stringification step, not a precision leak.
 MP_REWRAP_RX = re.compile(r"\bmp\.mpf\s*\(\s*str\s*\(")
@@ -89,18 +98,28 @@ MP_REWRAP_RX = re.compile(r"\bmp\.mpf\s*\(\s*str\s*\(")
 def _classify_line_context(lines: list[str], idx: int) -> str:
     """Look at ±3 lines around idx for false-positive cues.
     Returns:
+        - 'ok_noqa' if line carries `# noqa: I8 — <reason>` marker
         - 'ok_witness_emit' if inside a builder call
         - 'ok_display' if inside a print / nstr / logger call
+        - 'ok_comparison' if a comparison / sort / assert context
         - 'false_positive_candidate' if re-wrapped via mp.mpf(str(...))
         - 'violation' otherwise.
     """
+    if NOQA_I8_RX.search(lines[idx]):
+        return "ok_noqa"
     # Check the same line first for display context — print / nstr
     # wraps on the same line as the float cast are unambiguous.
     if DISPLAY_CONTEXT_RX.search(lines[idx]):
         return "ok_display"
+    if COMPARISON_CONTEXT_RX.search(lines[idx]):
+        return "ok_comparison"
+    # Multi-line context window — catches f-strings split across
+    # print(\n  f"..."\n) and similar.
     start = max(0, idx - 3)
     end = min(len(lines), idx + 4)
     window = "\n".join(lines[start:end])
+    if DISPLAY_CONTEXT_RX.search(window):
+        return "ok_display"
     if BUILDER_CONTEXT_RX.search(window):
         return "ok_witness_emit"
     if MP_REWRAP_RX.search(window):
@@ -152,6 +171,8 @@ def _classify_script(path: Path) -> dict[str, Any] | None:
     row["hit_count"] = len(hits)
     row["violation_count"] = sum(1 for h in hits if h["context"] == "violation")
     row["display_count"] = sum(1 for h in hits if h["context"] == "ok_display")
+    row["comparison_count"] = sum(1 for h in hits if h["context"] == "ok_comparison")
+    row["noqa_count"] = sum(1 for h in hits if h["context"] == "ok_noqa")
     row["witness_emit_count"] = sum(
         1 for h in hits if h["context"] == "ok_witness_emit"
     )

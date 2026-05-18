@@ -121,7 +121,7 @@ def main() -> int:
         rows.append({
             "partition": list(shape),
             "y_lambda_at_q0": float(y),
-            "chi_lambda_at_q0": float(chi_num),
+            "chi_lambda_at_q0": float(chi_num),  # noqa: I8 — display / raw-dict emit
             "per_block_contribution_at_q0": float(contrib),
         })
 

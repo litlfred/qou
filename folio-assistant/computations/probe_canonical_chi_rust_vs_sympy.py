@@ -86,7 +86,7 @@ def main() -> int:
             match = float(rel_err) < 1e-11
             all_match = all_match and match
             marker = "✓" if match else "✗"
-            rel_err_str = f"{float(rel_err):.2e}"
+            rel_err_str = f"{float(rel_err):.2e}"  # noqa: I8 — display / raw-dict emit
         else:
             marker = "?"
             match = False

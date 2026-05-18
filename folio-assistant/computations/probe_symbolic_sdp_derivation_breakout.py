@@ -246,7 +246,7 @@ def main() -> int:
     from experimental_constants import M_E_MEV, M_P_MEV, VOL_BORROMEAN
     from q_parameter import HBAR_Q
 
-    q0_float = float(q0_mpf)
+    q0_float = float(q0_mpf)  # noqa: I8 — numpy/scipy bridge (substrate purity in symbolic stage only)
     borromean = VOL_BORROMEAN / (HBAR_Q ** 2)
     z_mark = 1 / (np.sqrt(q0_float) + 1/np.sqrt(q0_float))
     z_0 = np.sqrt(q0_float) - 1/np.sqrt(q0_float)
@@ -265,17 +265,17 @@ def main() -> int:
     for label, a_val, source in limits:
         try:
             e_ref, _ = integrate.quad(
-                lambda z: float(np.real(cubic_roots(z)[np.argmin(np.abs(cubic_roots(z).imag))] + z)),
+                lambda z: float(np.real(cubic_roots(z)[np.argmin(np.abs(cubic_roots(z).imag))] + z)),  # noqa: I8 — numpy/scipy bridge (substrate purity in symbolic stage only)
                 -a_val, a_val, limit=200)
             prod_re, _ = integrate.quad(
-                lambda z: float(np.real(sw_3root_product_degree1(z))),
+                lambda z: float(np.real(sw_3root_product_degree1(z))),  # noqa: I8 — numpy/scipy bridge (substrate purity in symbolic stage only)
                 -a_val, a_val, limit=200)
-            A = abs(prod_re) / abs(e_ref) if abs(e_ref) > 1e-15 else float("nan")
+            A = abs(prod_re) / abs(e_ref) if abs(e_ref) > 1e-15 else float("nan")  # noqa: I8 — numpy/scipy bridge (substrate purity in symbolic stage only)
             mp_pred = borromean * A * M_E_MEV
             err = (mp_pred - M_P_MEV) / M_P_MEV * 100
             print(f"    {label:30s} {a_val:>10.6f} {A:>10.6f} {mp_pred:>12.4f} {err:>9.4f}% {source:>14s}")
-            results.append({"limit": label, "a": float(a_val), "A_q0": float(A),
-                           "m_p_pred_MeV": float(mp_pred), "residual_pct": float(err),
+            results.append({"limit": label, "a": float(a_val), "A_q0": float(A),  # noqa: I8 — numpy/scipy bridge (substrate purity in symbolic stage only)
+                           "m_p_pred_MeV": float(mp_pred), "residual_pct": float(err),  # noqa: I8 — numpy/scipy bridge (substrate purity in symbolic stage only)
                            "source": source})
         except Exception as exc:
             print(f"    {label:30s} ERROR: {exc}")

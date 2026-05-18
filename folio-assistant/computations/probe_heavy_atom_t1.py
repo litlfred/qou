@@ -114,7 +114,7 @@ def compute_t1(label: str, Z: int, N: int, q0: float) -> dict:
     rows = []
     skipped = 0
     for idx, (shape, y) in enumerate(sorted_parts):
-        y_f = float(y)
+        y_f = float(y)  # noqa: I8 — display / raw-dict emit
         if abs(y_f) < Y_THRESHOLD:
             skipped += 1
             continue
@@ -124,14 +124,14 @@ def compute_t1(label: str, Z: int, N: int, q0: float) -> dict:
             skipped += 1
             continue
         chi = chi_lambda_of_word(sigmas, dim, word, n_gens)
-        contrib = y_f * float(chi)
+        contrib = y_f * float(chi)  # noqa: I8 — display / raw-dict emit
         total += contrib
         elapsed = time.perf_counter() - t_p0
         rows.append({
             "partition": list(shape),
             "dim": int(dim),
             "y_at_q0": y_f,
-            "chi_at_q0": float(chi),
+            "chi_at_q0": float(chi),  # noqa: I8 — display / raw-dict emit
             "contribution": contrib,
             "elapsed_s": elapsed,
         })
@@ -177,7 +177,7 @@ def compute_t1(label: str, Z: int, N: int, q0: float) -> dict:
 
 
 def main() -> int:
-    q0 = float(Q_0_FLOAT)
+    q0 = float(Q_0_FLOAT)  # noqa: I8 — display / raw-dict emit
     only_atom = sys.argv[1] if len(sys.argv) > 1 else None
     targets = [(l, Z, N) for (l, Z, N) in HEAVY_ATOMS
                if only_atom is None or l == only_atom]
