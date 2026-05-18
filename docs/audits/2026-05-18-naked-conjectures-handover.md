@@ -107,7 +107,7 @@ Aggregate:
 
 ## Per-chapter listing
 
-<parameter name="content_REMAINDER_OBJECT_REPLACE_IN_NEXT_CMD">- Recommended approach: dispatch `local/formalizer` for class-axiomatised Lean stubs (per CLAUDE.md §3b-cond), NOT full proofs.
+- Recommended approach: dispatch `local/formalizer` for class-axiomatised Lean stubs (per CLAUDE.md §3b-cond), NOT full proofs.
 
 ## Per-chapter listing
 
