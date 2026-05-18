@@ -1,0 +1,1915 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-18T17:19:42.336843+00:00",
+  "commitSha": "908a2822e5aefdc5f27da3678494f0020c5c90c4",
+  "assertions": [
+    {
+      "name": "no_i2_probe_only_witnesses",
+      "computed": 0.0,
+      "expected": 1.0,
+      "passed": false,
+      "tolerance": 0.0,
+      "unit": "boolean (1.0 = every probe is consumed somewhere)",
+      "source": "Closure gate: when this passes, every probe witness is consumed by production OR is named as upstream by a downstream witness."
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 7,
+  "computation": "i2-probe-only-audit",
+  "scriptFile": "i2_probe_only_audit.py",
+  "scriptHash": "1155d3faa225",
+  "scriptCommitSha": "unknown",
+  "description": "I2 audit per local/compute-integration-watcher: every *.witness.json with a label-shaped `contentBlock` is checked for references from the production-consumer set (paper_six_term_isotope_sweep, derive_m_p/n, atomic_mass_via_rho_k, mass_table_ppb, canonical_tr_m_via_rust, cross_check_trM_*) and from other witnesses' `upstream_witness_hashes`.  Unreferenced witnesses are I2 probe-only shelf pieces.",
+  "contentBlock": "I2 antipattern (compute-integration-watcher.md §antipatterns)",
+  "parameters": {
+    "production_consumers_count": 10,
+    "total_label_bearing_witnesses": 197
+  },
+  "data": {
+    "by_result": {
+      "i2_probe_only": 159,
+      "wired_production": 38
+    },
+    "production_consumers": [
+      "atomic_mass_via_rho_k.py",
+      "canonical_tr_m_via_rust.py",
+      "cross_check_trM_1ppb.py",
+      "cross_check_trM_wenzl_lr_1ppb.py",
+      "derive_m_n_hecke_full_tower_50dps.py",
+      "derive_m_n_hecke_path_a.py",
+      "derive_m_p_hecke_full_tower_50dps.py",
+      "derive_m_p_hecke_path_a.py",
+      "mass_table_ppb.py",
+      "paper_six_term_isotope_sweep.py"
+    ],
+    "rows": [
+      {
+        "witness": "folio-assistant/computations/A-operator-extract-general.witness.json",
+        "labels": [
+          "conj:operator-valued-sublemma-2-1"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/A-operator-extract-kron.witness.json",
+        "labels": [
+          "conj:operator-valued-sublemma-2-1"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/A-operator-extract-reduced.witness.json",
+        "labels": [
+          "conj:operator-valued-sublemma-2-1"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/A-operator-per-interface.witness.json",
+        "labels": [
+          "conj:operator-valued-sublemma-2-1"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/A-operator-rank-probe.witness.json",
+        "labels": [
+          "conj:operator-valued-sublemma-2-1"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/a-K-via-lp-dual-full.witness.json",
+        "labels": [
+          "conj:knot-factor-frobenius-pairing"
+        ],
+        "production_consumers": [
+          "paper_six_term_isotope_sweep.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
+      },
+      {
+        "witness": "folio-assistant/computations/a-K-via-lp-dual-hecke-basis.witness.json",
+        "labels": [
+          "prop:mass-coefficient-shadow-price"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/a-K-via-lp-dual.witness.json",
+        "labels": [
+          "conj:knot-factor-frobenius-pairing"
+        ],
+        "production_consumers": [
+          "paper_six_term_isotope_sweep.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
+      },
+      {
+        "witness": "folio-assistant/computations/alpha-5-jucys-murphy-central.witness.json",
+        "labels": [
+          "prop:mass-formula-iterative-lp-dual"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/alpha-5-lp-dual-crystal.witness.json",
+        "labels": [
+          "prop:mass-formula-iterative-lp-dual"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/alpha-em-shift-multiplicative-chain.witness.json",
+        "labels": [
+          "prop:alpha-em-shift-multiplicative-chain"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/alpha-k-macdonald-closed-form.witness.json",
+        "labels": [
+          "prop:macdonald-hook-telescope"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/alpha-shift-torus.witness.json",
+        "labels": [
+          "prop:alpha-shift-torus-knot"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/applied-uniqueness-mass-table.witness.json",
+        "labels": [
+          "prop:atom-knot-mass-derivation"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/atomic-braid-mass-table-modes-sweep.witness.json",
+        "labels": [
+          "prop:atomic-mass-gb-nf"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/atomic-braid-mass-table.witness.json",
+        "labels": [
+          "prop:atomic-mass-gb-nf"
+        ],
+        "production_consumers": [
+          "atomic_mass_via_rho_k.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
+      },
+      {
+        "witness": "folio-assistant/computations/baryon-product-from-alt.witness.json",
+        "labels": [
+          "prop:baryon-product-from-alt"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/beta-ew-delta-I-conjugate-pairing.witness.json",
+        "labels": [
+          "conj:weinberg-angle-categorical"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/binding-K-direct.witness.json",
+        "labels": [
+          "prop:atomic-mass-via-rho-k"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/binding-k-enumerator.witness.json",
+        "labels": [
+          "conj:canonical-knot-id-sdp"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/binding-k-solver.witness.json",
+        "labels": [
+          "conj:rho-prefactor-structural"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/borromean-axial-coupling.witness.json",
+        "labels": [
+          "prop:confinement-frobenius-reciprocity"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/braid-encoding-audit.witness.json",
+        "labels": [
+          "prop:atomic-mass-gb-nf"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/brane-tower-finite-laurent.witness.json",
+        "labels": [
+          "prop:mass-endomorphism-tower"
+        ],
+        "production_consumers": [
+          "derive_m_n_hecke_full_tower_50dps.py",
+          "derive_m_p_hecke_full_tower_50dps.py",
+          "paper_six_term_isotope_sweep.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
+      },
+      {
+        "witness": "folio-assistant/computations/build-six-term-substrate-model-b.witness.json",
+        "labels": [
+          "thm:knot-mass-formula-unified"
+        ],
+        "production_consumers": [
+          "paper_six_term_isotope_sweep.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
+      },
+      {
+        "witness": "folio-assistant/computations/c-k-beta-decay-bound.witness.json",
+        "labels": [
+          "conj:archimedean-remainder-exponential-decay"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/c3-categorical-consistency-check.witness.json",
+        "labels": [
+          "prop:hopf-jones-c3-categorical"
+        ],
+        "production_consumers": [
+          "paper_six_term_isotope_sweep.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
+      },
+      {
+        "witness": "folio-assistant/computations/cal-3-q-beta.witness.json",
+        "labels": [
+          "prop:three-calibration-inputs"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/canonical-a-k-magnitude-audit.witness.json",
+        "labels": [
+          "prop:mass-coefficient-shadow-price"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/categorical-bypass-volmatch-demo.witness.json",
+        "labels": [
+          "prop:atom-knot-mass-derivation"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/categorical-q-decay-ba-low-isotopes.witness.json",
+        "labels": [
+          "prop:atom-knot-mass-derivation"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/ch-bond-writhe-lp.witness.json",
+        "labels": [
+          "def:molecular-braid"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/chi-lambda-w0-sign-weighting.witness.json",
+        "labels": [
+          "prop:chi-lambda-w0-sign-weighting"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/chirality-avg-content.witness.json",
+        "labels": [
+          "prop:chirality-writhe-ribbon-derivation"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/close-321-weinberg-gap.witness.json",
+        "labels": [
+          "conj:weinberg-angle-categorical"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/codata-2022-validation-masses.witness.json",
+        "labels": [
+          "prop:three-calibration-inputs"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/codata-masses.witness.json",
+        "labels": [
+          "prop:codata-mass-anchors"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/compound-binding-via-differences.witness.json",
+        "labels": [
+          "prop:atomic-mass-gb-nf"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/confined-knot-binding.witness.json",
+        "labels": [
+          "prop:confined-knot-binding"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/d-density-derivation.witness.json",
+        "labels": [
+          "conj:mass-volume-factorization"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/d-from-scratch.witness.json",
+        "labels": [
+          "prop:atom-knot-mass-derivation"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/delta-coupling-closed-form-probe.witness.json",
+        "labels": [
+          "conj:magic-shell-stabilization"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/delta-coupling-leading-form-probe.witness.json",
+        "labels": [
+          "conj:magic-shell-stabilization"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/delta-coupling-residual-closure-probe.witness.json",
+        "labels": [
+          "conj:magic-shell-stabilization"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/delta-lambda-2row-stratum.witness.json",
+        "labels": [
+          "prop:rho-k-h3a-refinement"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/delta-lambda-closure-v2-combined-pole.witness.json",
+        "labels": [
+          "prop:rho-k-h3a-refinement"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/delta-lambda-closure-v3-full-vs-filtered.witness.json",
+        "labels": [
+          "prop:rho-k-h3a-refinement"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/delta-lambda-closure-v4-two-row.witness.json",
+        "labels": [
+          "prop:rho-k-h3a-refinement"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/delta-lambda-closure-v5-frobenius-chirality.witness.json",
+        "labels": [
+          "prop:rho-k-h3a-refinement"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/delta-lambda-empirical-tabulation.witness.json",
+        "labels": [
+          "prop:rho-k-h3a-refinement"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/delta-lambda-q-sweep-2row.witness.json",
+        "labels": [
+          "prop:rho-k-h3a-refinement"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/delta-lambda-shift-nf-wenzl-probe.witness.json",
+        "labels": [
+          "prop:rho-k-h3a-refinement"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/delta-lambda-via-per-partition-shift-nf.witness.json",
+        "labels": [
+          "prop:rho-k-h3a-refinement"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/delta-n2-lp-dual-extraction.witness.json",
+        "labels": [
+          "conj:categorical-neutrality-saturated-shells"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/delta-n2-placeholder-audit.witness.json",
+        "labels": [
+          "conj:categorical-neutrality-saturated-shells"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/delta-q-decoration.witness.json",
+        "labels": [
+          "def:delta-q-decoration"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/demazure-markov-trace.witness.json",
+        "labels": [
+          "prop:demazure-fiber-markov-trace"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/deuteron-delta-i-audit.witness.json",
+        "labels": [
+          "prop:mass-coefficient-shadow-price"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/flavor-dressed-mass-from-substrate-split.witness.json",
+        "labels": [
+          "prop:flavor-dressed-mass-from-substrate-split"
+        ],
+        "production_consumers": [
+          "paper_six_term_isotope_sweep.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
+      },
+      {
+        "witness": "folio-assistant/computations/full-twist-delta-n2-verification.witness.json",
+        "labels": [
+          "conj:categorical-neutrality-saturated-shells"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/full-twist-root-of-unity-probe.witness.json",
+        "labels": [
+          "conj:categorical-neutrality-saturated-shells"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/graded-hecke-energy-probe.witness.json",
+        "labels": [
+          "prop:graded-hecke-energy-truncation-bound"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/h2-integer-lp.witness.json",
+        "labels": [
+          "prop:h2-lp-dual-binding"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/h2-molecular-binding.witness.json",
+        "labels": [
+          "prop:h2-lp-dual-binding"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/h7a-cross-anchor-a3-probe.witness.json",
+        "labels": [
+          "conj:magic-shell-stabilization"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/habiro-exact-mass-endomorphism.witness.json",
+        "labels": [
+          "prop:mass-endomorphism-tower"
+        ],
+        "production_consumers": [
+          "derive_m_n_hecke_full_tower_50dps.py",
+          "derive_m_p_hecke_full_tower_50dps.py",
+          "paper_six_term_isotope_sweep.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
+      },
+      {
+        "witness": "folio-assistant/computations/habiro-interpolate-cross-validation.witness.json",
+        "labels": [
+          "prop:full-pole-structure-mass-trace"
+        ],
+        "production_consumers": [
+          "paper_six_term_isotope_sweep.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
+      },
+      {
+        "witness": "folio-assistant/computations/he4-canonical-tr-m-block-fingerprint.witness.json",
+        "labels": [
+          "prop:operator-selection-lp"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/he4-sdp-compositional-probe.witness.json",
+        "labels": [
+          "prop:magic-shell-coupling-witness"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/hh-trefoil-corrected.witness.json",
+        "labels": [
+          "def:h2-molecular-braid"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/hh-vertex-volume.witness.json",
+        "labels": [
+          "def:h2-molecular-braid"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/hopf-jones-c3-categorical.witness.json",
+        "labels": [
+          "prop:hopf-jones-c3-categorical"
+        ],
+        "production_consumers": [
+          "paper_six_term_isotope_sweep.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
+      },
+      {
+        "witness": "folio-assistant/computations/hyperbolic-volumes.witness.json",
+        "labels": [
+          "prop:mostow-confinement"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/intermediate-knot-detection.witness.json",
+        "labels": [
+          "prop:confined-knot-binding"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/iterative-lp-dual-h6-deuteron.witness.json",
+        "labels": [
+          "prop:mass-formula-iterative-lp-dual"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/iterative-lp-dual-levels.witness.json",
+        "labels": [
+          "prop:mass-formula-iterative-lp-dual"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/jet-gb-pl-correspondence.witness.json",
+        "labels": [
+          "prop:jet-gb-pl-correspondence"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/jet-knot-invariants.witness.json",
+        "labels": [
+          "prop:confined-knot-binding"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/kappa-categorical-h7a-closed.witness.json",
+        "labels": [
+          "prop:magic-shell-coupling-witness"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/kappa-categorical-via-canonical-brane.witness.json",
+        "labels": [
+          "prop:magic-shell-coupling-witness"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/kappa-d2-catalan-derivation.witness.json",
+        "labels": [
+          "prop:magic-shell-coupling-witness"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/kashiwara-jones-c4-categorical.witness.json",
+        "labels": [
+          "prop:kashiwara-jones-c4-categorical"
+        ],
+        "production_consumers": [
+          "paper_six_term_isotope_sweep.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
+      },
+      {
+        "witness": "folio-assistant/computations/kite-tail-reconciliation.witness.json",
+        "labels": [
+          "prop:full-pole-structure-mass-trace"
+        ],
+        "production_consumers": [
+          "paper_six_term_isotope_sweep.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
+      },
+      {
+        "witness": "folio-assistant/computations/lambda-scale-all-c-i-family-a.witness.json",
+        "labels": [
+          "conj:lambda-scale-substrate-form"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/lambda-scale-derivation-probes-123.witness.json",
+        "labels": [
+          "conj:borromean-baryon-mass-formula"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/lambda-scale-proof-step2-partition-count.witness.json",
+        "labels": [
+          "conj:lambda-scale-substrate-form"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/lambda-scale-proof-step4-h4-remainder.witness.json",
+        "labels": [
+          "conj:lambda-scale-substrate-form"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/lambda-scale-proof-step5-skein-anchor.witness.json",
+        "labels": [
+          "conj:lambda-scale-substrate-form"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/lambda-scale-rd-c4-categorical.witness.json",
+        "labels": [
+          "conj:lambda-scale-substrate-form"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/lambda-scale-rd-c4-pslq-search.witness.json",
+        "labels": [
+          "conj:lambda-scale-substrate-form"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/lambda-scale-rd-h4-half-symmetric.witness.json",
+        "labels": [
+          "conj:lambda-scale-substrate-form"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/lambda-scale-rd-hoefsmit-symbolic.witness.json",
+        "labels": [
+          "conj:lambda-scale-substrate-form"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/lambda-scale-rd1-geometric.witness.json",
+        "labels": [
+          "conj:lambda-scale-substrate-form"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/lambda-scale-rd2-transcendental.witness.json",
+        "labels": [
+          "conj:lambda-scale-substrate-form"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/lambda-scale-rd3-hecke-levels.witness.json",
+        "labels": [
+          "conj:lambda-scale-substrate-form"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/lambda-scale-rd4-k-p-search.witness.json",
+        "labels": [
+          "conj:borromean-baryon-mass-formula"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/lambda-scale-substrate-probe.witness.json",
+        "labels": [
+          "conj:borromean-baryon-mass-formula"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/lp-confinement-nf-forcing.witness.json",
+        "labels": [
+          "conj:confinement-nf-structure-forcing"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/lr-fusion-self-conj-test.witness.json",
+        "labels": [
+          "conj:diagrammatic-double-magic-lr-fusion"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/m-n-difference-formula.witness.json",
+        "labels": [
+          "prop:atomic-mass-gb-nf"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/m-p-borromean-verification-50dps.witness.json",
+        "labels": [
+          "conj:borromean-baryon-mass-formula"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/m2-codata-vs-cos-q-beta.witness.json",
+        "labels": [
+          "prop:q-beta-categorical-precision-ladder"
+        ],
+        "production_consumers": [
+          "paper_six_term_isotope_sweep.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
+      },
+      {
+        "witness": "folio-assistant/computations/m4-magic-shell-correction-mass-table.witness.json",
+        "labels": [
+          "prop:magic-shell-coupling-witness"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/m5-categorical-coulomb-mass-table.witness.json",
+        "labels": [
+          "def:coulomb-charge"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/magic-shell-empirical-instantiation.witness.json",
+        "labels": [
+          "conj:magic-shell-stabilization"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/markov-peel-atomic-tr-m.witness.json",
+        "labels": [
+          "prop:markov-pair-z2"
+        ],
+        "production_consumers": [
+          "cross_check_trM_1ppb.py",
+          "cross_check_trM_wenzl_lr_1ppb.py",
+          "paper_six_term_isotope_sweep.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
+      },
+      {
+        "witness": "folio-assistant/computations/markov-pipeline-cross-validation.witness.json",
+        "labels": [
+          "prop:full-pole-structure-mass-trace"
+        ],
+        "production_consumers": [
+          "paper_six_term_isotope_sweep.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
+      },
+      {
+        "witness": "folio-assistant/computations/markov-substrate-realization.witness.json",
+        "labels": [
+          "prop:full-pole-structure-mass-trace"
+        ],
+        "production_consumers": [
+          "paper_six_term_isotope_sweep.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
+      },
+      {
+        "witness": "folio-assistant/computations/mass-formula-6term-mpfr-50dps.witness.json",
+        "labels": [
+          "thm:knot-mass-formula-unified"
+        ],
+        "production_consumers": [
+          "derive_m_n_hecke_path_a.py",
+          "derive_m_p_hecke_path_a.py",
+          "paper_six_term_isotope_sweep.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
+      },
+      {
+        "witness": "folio-assistant/computations/mass-from-q-symbolic.witness.json",
+        "labels": [
+          "thm:topological-mass"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/mobius-limit-from-thimble.witness.json",
+        "labels": [
+          "prop:mobius-limit-from-thimble"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/molecular-frobenius-lp.witness.json",
+        "labels": [
+          "def:molecular-braid"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/molecular-trefoil-scan.witness.json",
+        "labels": [
+          "def:molecular-braid"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/neutron-error-diagnostic.witness.json",
+        "labels": [
+          "prop:atomic-mass-gb-nf"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/neutron-gap-probes-round2.witness.json",
+        "labels": [
+          "prop:full-pole-structure-mass-trace"
+        ],
+        "production_consumers": [
+          "paper_six_term_isotope_sweep.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
+      },
+      {
+        "witness": "folio-assistant/computations/neutron-gap-probes-round3.witness.json",
+        "labels": [
+          "prop:atom-knot-mass-derivation"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/neutron-gap-probes-round4.witness.json",
+        "labels": [
+          "prop:atom-knot-mass-derivation"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/neutron-gap-probes-round5.witness.json",
+        "labels": [
+          "prop:atom-knot-mass-derivation"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/neutron-gap-probes-round6-canonical.witness.json",
+        "labels": [
+          "prop:atom-knot-mass-derivation"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/neutron-gap-probes-round6.witness.json",
+        "labels": [
+          "prop:atom-knot-mass-derivation"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/neutron-gap-probes-round7.witness.json",
+        "labels": [
+          "prop:atom-knot-mass-derivation"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/neutron-gap-probes.witness.json",
+        "labels": [
+          "prop:joint-tower-sdp-confinement"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/neutron-mass-codata-50dps.witness.json",
+        "labels": [
+          "prop:full-pole-structure-mass-trace"
+        ],
+        "production_consumers": [
+          "paper_six_term_isotope_sweep.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
+      },
+      {
+        "witness": "folio-assistant/computations/neutron-mass-full-tower-50dps.witness.json",
+        "labels": [
+          "prop:mass-endomorphism-tower"
+        ],
+        "production_consumers": [
+          "derive_m_n_hecke_full_tower_50dps.py",
+          "derive_m_p_hecke_full_tower_50dps.py",
+          "paper_six_term_isotope_sweep.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
+      },
+      {
+        "witness": "folio-assistant/computations/nf-transition-lifting.witness.json",
+        "labels": [
+          "conj:jet-filtered-knot-factor"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/nh-basis-shift.witness.json",
+        "labels": [
+          "prop:alpha-shift-torus-knot"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/ocneanu-cancellation-derivation.witness.json",
+        "labels": [
+          "conj:e-hartree-categorical-derivation"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/optimised-magic-verifier.witness.json",
+        "labels": [
+          "conj:double-magic-delta-i-bound"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/option-b-proton-mass-full-chain.witness.json",
+        "labels": [
+          "prop:markov-trace-axiomatic-closed-form"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/path-b-evacuation.witness.json",
+        "labels": [
+          "conj:weinberg-angle-categorical"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/path-b-open-questions.witness.json",
+        "labels": [
+          "conj:weinberg-angle-categorical"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/per-nucleon-shift-derivation.witness.json",
+        "labels": [
+          "prop:per-nucleon-shift-additive-linearity"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/phase2-m-e-hecke-diagnostic.witness.json",
+        "labels": [
+          "prop:atom-knot-mass-derivation"
+        ],
+        "production_consumers": [
+          "derive_m_p_hecke_path_a.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
+      },
+      {
+        "witness": "folio-assistant/computations/picard-lefschetz-thimble.witness.json",
+        "labels": [
+          "def:picard-lefschetz-thimble"
+        ],
+        "production_consumers": [
+          "derive_m_p_hecke_full_tower_50dps.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
+      },
+      {
+        "witness": "folio-assistant/computations/probe-atom-shell-self-duality-mpfr.witness.json",
+        "labels": [
+          "prop:shell-schur-weyl-self-duality"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/probe-atom-shell-self-duality.witness.json",
+        "labels": [
+          "prop:shell-schur-weyl-self-duality"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/probe-d-height-stratification.witness.json",
+        "labels": [
+          "thm:knot-mass-formula-unified"
+        ],
+        "production_consumers": [
+          "paper_six_term_isotope_sweep.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
+      },
+      {
+        "witness": "folio-assistant/computations/probe-d-term23-binding.witness.json",
+        "labels": [
+          "prop:atom-knot-mass-derivation"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/probe-derived-A-from-gs-normal-form.witness.json",
+        "labels": [
+          "prop:mass-endomorphism-tower"
+        ],
+        "production_consumers": [
+          "derive_m_n_hecke_full_tower_50dps.py",
+          "derive_m_p_hecke_full_tower_50dps.py",
+          "paper_six_term_isotope_sweep.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
+      },
+      {
+        "witness": "folio-assistant/computations/probe-per-nucleon-self-duality.witness.json",
+        "labels": [
+          "prop:shell-schur-weyl-self-duality"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/probe-phiq-avg-chi-over-classical-dim.witness.json",
+        "labels": [
+          "conj:brane-tower-z-habiro"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/probe-phiq-multiplicity-refined.witness.json",
+        "labels": [
+          "conj:brane-tower-z-habiro"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/probe-phiq-multiplicity-refinement.witness.json",
+        "labels": [
+          "conj:brane-tower-z-habiro"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/probe-phiq-operator-valued.witness.json",
+        "labels": [
+          "conj:brane-tower-z-habiro"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/probe-phiq-pair-knot-magic-shell.witness.json",
+        "labels": [
+          "conj:brane-tower-z-habiro"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/probe-phiq-pair-knot-markov-trace.witness.json",
+        "labels": [
+          "conj:brane-tower-z-habiro"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/probe-phiq-per-partition-klambda.witness.json",
+        "labels": [
+          "conj:brane-tower-z-habiro"
+        ],
+        "production_consumers": [
+          "paper_six_term_isotope_sweep.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
+      },
+      {
+        "witness": "folio-assistant/computations/probe-phiq-per-partition-n-sweep.witness.json",
+        "labels": [
+          "conj:brane-tower-z-habiro"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/probe-phiq-type-b-fold-depth.witness.json",
+        "labels": [
+          "conj:brane-tower-z-habiro"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/probe-phiq-uniform-k.witness.json",
+        "labels": [
+          "conj:brane-tower-z-habiro"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/probe-phiq-yekutieli-truncation.witness.json",
+        "labels": [
+          "thm:knot-mass-formula-unified"
+        ],
+        "production_consumers": [
+          "paper_six_term_isotope_sweep.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
+      },
+      {
+        "witness": "folio-assistant/computations/probe-proton-mass-scale.witness.json",
+        "labels": [
+          "prop:atom-knot-mass-derivation"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/probe-proton-with-wenzl-weights.witness.json",
+        "labels": [
+          "prop:y-lambda-recipe-from-partition"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/probe-sdp-canonical-paper-formula.witness.json",
+        "labels": [
+          "prop:atom-knot-mass-derivation"
+        ],
+        "production_consumers": [
+          "atomic_mass_via_rho_k.py",
+          "paper_six_term_isotope_sweep.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
+      },
+      {
+        "witness": "folio-assistant/computations/probe-tritium-k-star.witness.json",
+        "labels": [
+          "prop:phi-q-categorical-truncation"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/probe-wedderburn-weight-scheme.witness.json",
+        "labels": [
+          "prop:y-lambda-recipe-from-partition"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/proton-m_e-anomaly-audit.witness.json",
+        "labels": [
+          "prop:full-pole-structure-mass-trace"
+        ],
+        "production_consumers": [
+          "paper_six_term_isotope_sweep.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
+      },
+      {
+        "witness": "folio-assistant/computations/proton-mass-codata-50dps.witness.json",
+        "labels": [
+          "prop:full-pole-structure-mass-trace"
+        ],
+        "production_consumers": [
+          "paper_six_term_isotope_sweep.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
+      },
+      {
+        "witness": "folio-assistant/computations/proton-mass-full-tower-50dps.witness.json",
+        "labels": [
+          "prop:mass-endomorphism-tower"
+        ],
+        "production_consumers": [
+          "derive_m_n_hecke_full_tower_50dps.py",
+          "derive_m_p_hecke_full_tower_50dps.py",
+          "paper_six_term_isotope_sweep.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
+      },
+      {
+        "witness": "folio-assistant/computations/proton-residual-rootcause.witness.json",
+        "labels": [
+          "prop:mass-endomorphism-tower"
+        ],
+        "production_consumers": [
+          "derive_m_n_hecke_full_tower_50dps.py",
+          "derive_m_p_hecke_full_tower_50dps.py",
+          "paper_six_term_isotope_sweep.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
+      },
+      {
+        "witness": "folio-assistant/computations/q-beta-form-a-n1-extension.witness.json",
+        "labels": [
+          "prop:neutron-qvalue-symbolic"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/q-beta-predicted.witness.json",
+        "labels": [
+          "prop:beta-decay-energy-scale"
+        ],
+        "production_consumers": [
+          "paper_six_term_isotope_sweep.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
+      },
+      {
+        "witness": "folio-assistant/computations/q-beta-spectral-bridge.witness.json",
+        "labels": [
+          "prop:q-beta-spectral-bridge"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/q-beta-v2-cos-compose.witness.json",
+        "labels": [
+          "prop:q-beta-categorical-precision-ladder"
+        ],
+        "production_consumers": [
+          "paper_six_term_isotope_sweep.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
+      },
+      {
+        "witness": "folio-assistant/computations/q-pochhammer-seed.witness.json",
+        "labels": [
+          "conj:shared-denominator-cusp-holonomy"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/r5-full-canonical-knot-solver.witness.json",
+        "labels": [
+          "conj:canonical-knot-id-sdp"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/rho-prefactor-structural-verifier.witness.json",
+        "labels": [
+          "conj:rho-prefactor-structural"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/shift-from-nf-basis.witness.json",
+        "labels": [
+          "prop:confinement-nf-partial-proof"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/snappy-cusp-seeding.witness.json",
+        "labels": [
+          "conj:shared-denominator-cusp-holonomy"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/staircase-ew-k3-mpfr-spectral.witness.json",
+        "labels": [
+          "conj:staircase-ew-residual"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/staircase-ew-k4-pairwise-readings.witness.json",
+        "labels": [
+          "conj:staircase-ew-residual"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/staircase-ew-predictions.witness.json",
+        "labels": [
+          "conj:weinberg-angle-categorical"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/staircase-ew-residual-conjecture.witness.json",
+        "labels": [
+          "conj:weinberg-angle-categorical"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/sw-period-thimble-equivalence.witness.json",
+        "labels": [
+          "prop:sw-period-thimble-equivalence"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/tau-three-path-convention-independence.witness.json",
+        "labels": [
+          "prop:rigid-monoidal-structural-gap-invariance"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/term5-aK-audit.witness.json",
+        "labels": [
+          "conj:knot-factor-frobenius-pairing"
+        ],
+        "production_consumers": [
+          "paper_six_term_isotope_sweep.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
+      },
+      {
+        "witness": "folio-assistant/computations/term5-aK-v2-mirror-chirality-probe.witness.json",
+        "labels": [
+          "prop:chirality-dual-space-derivation"
+        ],
+        "production_consumers": [
+          "paper_six_term_isotope_sweep.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
+      },
+      {
+        "witness": "folio-assistant/computations/term6-full-pole-sum.witness.json",
+        "labels": [
+          "prop:full-pole-structure-mass-trace"
+        ],
+        "production_consumers": [
+          "paper_six_term_isotope_sweep.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
+      },
+      {
+        "witness": "folio-assistant/computations/term6-residues-at-roots.witness.json",
+        "labels": [
+          "thm:six-term-mass-formula-complete"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/term7-chi5-basis.witness.json",
+        "labels": [
+          "conj:shell-correction-term-seven"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/term7-height6-partition-enum.witness.json",
+        "labels": [
+          "conj:shell-correction-term-seven"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/tier-0-atlas-pslq-check.witness.json",
+        "labels": [
+          "conj:bring-hyperbolic-knot-bloch-decomposition"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/tier-1-hyperbolic-3braid-pslq.witness.json",
+        "labels": [
+          "conj:bring-hyperbolic-knot-bloch-decomposition"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/tier-2-higher-bridge-pslq.witness.json",
+        "labels": [
+          "conj:bring-hyperbolic-knot-bloch-decomposition"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/tier-2-hyperbolic-bridge3-pslq.witness.json",
+        "labels": [
+          "conj:bring-hyperbolic-knot-bloch-decomposition"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/tr-m-he3-audit.witness.json",
+        "labels": [
+          "conj:brane-tower-z-habiro"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/tr-m-he4-canonical.witness.json",
+        "labels": [
+          "conj:brane-tower-z-habiro"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/unified-low-isotope-predictor.witness.json",
+        "labels": [
+          "prop:atom-knot-mass-derivation"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/unified-mass-molecular.witness.json",
+        "labels": [
+          "def:molecular-braid"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/universal-ilp.witness.json",
+        "labels": [
+          "def:universal-ilp-algorithm"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/v-hat-to-chi-lambda-integrated.witness.json",
+        "labels": [
+          "prop:full-pole-structure-mass-trace"
+        ],
+        "production_consumers": [
+          "paper_six_term_isotope_sweep.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
+      },
+      {
+        "witness": "folio-assistant/computations/v-hat-to-delta-lambda-bridge.witness.json",
+        "labels": [
+          "prop:atomic-mass-via-rho-k"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/wedderburn-lp-ew-wiring.witness.json",
+        "labels": [
+          "prop:knot-operator-lp-selection"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/wedderburn-pair-volumes.witness.json",
+        "labels": [
+          "prop:knot-operator-lp-selection"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/y-lambda-at-q0.witness.json",
+        "labels": [
+          "prop:y-lambda-closed-form-wenzl-bridge"
+        ],
+        "production_consumers": [
+          "canonical_tr_m_via_rust.py"
+        ],
+        "upstream_consumers": [],
+        "result": "wired_production"
+      },
+      {
+        "witness": "folio-assistant/computations/y-lambda-macdonald-telescope.witness.json",
+        "labels": [
+          "prop:macdonald-hook-telescope"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      },
+      {
+        "witness": "folio-assistant/computations/z-n-brane-tower-falsifiability.witness.json",
+        "labels": [
+          "conj:magic-shell-stabilization"
+        ],
+        "production_consumers": [],
+        "upstream_consumers": [],
+        "result": "i2_probe_only"
+      }
+    ]
+  }
+}
