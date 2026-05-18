@@ -11,23 +11,23 @@ of the appendix.
 | Symbol | Reading |
 |--------|---------|
 | $\mathbf{No}$ | The class of surreal numbers (Conway 1976). Contains $\mathbb{R}$ as a proper subclass plus infinite and infinitesimal elements. |
-| $\omega$ | The smallest positive **infinite** surreal. $\omega > n$ for every $n \in \mathbb{N}$. Acts as the surreal analogue of "infinity"; concretely, $\omega = \{\,0, 1, 2, \dots \,\mid\, \,\}$ in Conway's $\{L \mid R\}$ form. |
-| $\varepsilon$ | The smallest positive **infinitesimal**, equal to $1/\omega$. $0 < \varepsilon < 1/n$ for every $n \in \mathbb{N}$. The substrate parameter $q$ in this paper is built from $\varepsilon$ via [the $q$-from-$\varepsilon$ relation](#def:q-from-epsilon). |
-| $1 + \varepsilon$ | The first non-trivial **infinitesimal lift** of $1$. The "relax strict equalities to $1 + \varepsilon$" pattern in the appendix [(`sec:relaxing-strict-equalities`)](#sec:relaxing-strict-equalities) replaces every $x = 1$ with $x = 1 + \varepsilon$ for some surreal $\varepsilon$. |
+| $\omega$ | The surreal representation of the first infinite ordinal. $\omega > n$ for every $n \in \mathbb{N}$ (but $\omega - 1$, $\omega/2$, $\sqrt{\omega}$, … are also infinite surreals — there is no smallest infinite surreal). Concretely, $\omega = \{\,0, 1, 2, \dots \,\mid\,\,\}$ in Conway's $\{L \mid R\}$ form. |
+| $\varepsilon$ | The positive infinitesimal defined as $1/\omega$. $0 < \varepsilon < 1/n$ for every $n \in \mathbb{N}$ (but $\varepsilon/2$, $\varepsilon^2$, … are also infinitesimal — there is no smallest positive infinitesimal). The substrate parameter $q$ in this paper is built from $\varepsilon$ via [the $q$-from-$\varepsilon$ relation](#def:q-from-epsilon). |
+| $1 + \varepsilon$ | An **infinitesimal lift** of $1$. The "relax strict equalities to $1 + \varepsilon$" pattern in the appendix [(`sec:relaxing-strict-equalities`)](#sec:relaxing-strict-equalities) replaces every $x = 1$ with $x = 1 + \varepsilon$ for some surreal infinitesimal $\varepsilon$. |
 | $\mathrm{st}\!:\,\mathbf{No}_{\text{fin}} \to \mathbb{R}$ | The **standard-part functor** on finite (non-infinite) surreals — sends $1 + \varepsilon$ to $1$, sends $\omega^{-1}$ to $0$, sends every finite real to itself. Replaces the classical limit; see [`sec:standard-part-classical-limits`](#sec:standard-part-classical-limits). |
 | $\mathrm{ord}_\omega\,x$ | The **$\omega$-adic order** — leading exponent of $x$ in Conway normal form. Direct surreal analogue of $\mathrm{ord}_p$ in $p$-adic analysis. Used to grade $\mathcal{H}_q$ and to formulate Goncharov-period-depth identifications. |
 | $\{L \mid R\}$ | Conway's **simplest-form construction**: a surreal whose left set is $L$ and right set is $R$. Birthday-graded; the surreal's complexity is the minimum number of construction steps from $\{\,\mid\,\} = 0$. |
 | $b(x)$ | **Birthday** of a surreal $x$ — the ordinal at which $x$ first appears in the Conway construction. $b(0) = 0$, $b(1) = b(-1) = 1$, $b(\omega) = \omega$, $b(\varepsilon) = \omega$. |
-| $a \sim b$ | $a$ and $b$ have the **same standard part** — equivalent up to a finite surreal. Used in Millennium-bound statements: the surreal bound holds **up to a $1 + \varepsilon$ multiplier**, which collapses to equality under $\mathrm{st}$. |
+| $a \sim b$ | $a$ and $b$ have the **same standard part** — i.e. $a - b$ is infinitesimal (or zero). Used in Millennium-bound statements: the surreal bound holds **up to a $1 + \varepsilon$ multiplier**, which collapses to equality under $\mathrm{st}$. |
 | $a \prec b$ | $a$ is **infinitesimal relative to** $b$, i.e. $|a/b|$ is infinitesimal. Conway's asymptotic-domination order. |
 
 **When you see $\varepsilon$ in the substrate-level definitions
 below** — primarily in
 [`def:reeb-epsilon`](#def:reeb-epsilon),
 [`def:q-from-epsilon`](#def:q-from-epsilon),
-and the joint Galois-braid action — read it as "the smallest
-positive surreal infinitesimal", i.e. $1/\omega$. You do not need
-the appendix machinery to follow these definitions.
+and the joint Galois-braid action — read it as "the positive
+infinitesimal $1/\omega$". You do not need the appendix machinery
+to follow these definitions.
 
 **When you see a surreal-bound statement** — e.g.
 [BSD](#rem:bsd-surreal-bound),
