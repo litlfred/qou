@@ -1,7 +1,7 @@
 /-!
 # Elliptic stability locus (conjectural)
 
-Class-axiomatised stub for `conj:elliptic-stability-locus`: the
+Class-axiomatized stub for `conj:elliptic-stability-locus`: the
 nuclear degeneracy locus (valley of stability in (Z, N) integer
 lattice) is the integer-point set of an elliptic curve over
 Bring's surface. The Coulomb and pairing terms in the
@@ -25,7 +25,7 @@ namespace QOU.EllipticStabilityLocus
 /-- **Algebraic claim (Weierstrass form)**: the (Coulomb +
     pairing) part of the nuclear binding ansatz, after rescaling
     by m_e, reduces to a Weierstrass elliptic curve over the
-    coral-tube fibration of Bring's surface. -/
+    color-tube fibration of Bring's surface (`def:color-tube-fibers`). -/
 opaque WeierstrassFormHolds : Prop
 
 /-- **Algebraic claim (integer-point identification)**: the
@@ -33,7 +33,7 @@ opaque WeierstrassFormHolds : Prop
     with the integer points of the Weierstrass curve above. -/
 opaque IntegerPointIdentificationHolds : Prop
 
-/-- **Elliptic-stability-locus conjecture** (class-axiomatised per §3b-cond). -/
+/-- **Elliptic-stability-locus conjecture** (class-axiomatized per §3b-cond). -/
 class EllipticStabilityLocus : Prop where
   weierstrass_form : WeierstrassFormHolds
   integer_point_identification : IntegerPointIdentificationHolds
