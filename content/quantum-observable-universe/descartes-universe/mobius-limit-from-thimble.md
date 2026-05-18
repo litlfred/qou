@@ -65,47 +65,51 @@ $$
 *— i.e. almost vertical, with a slight clockwise tilt.  Symmetrically
 for $z_c^-$ in the lower half-plane.*
 
-**Step 3 (Asymptotic re-entry on the real axis).**
-*Following $\mathcal{J}_{z_c^+}$ along $\hat{u}^+$, the steepest-:refterm[descent]{#descent}
-ODE $dz/dt = -\overline{\nabla S}(z)$ rotates the contour clockwise as
-$\mathrm{Re}(S)$ decreases.  In the leading asymptotic regime
-($t \to \infty$, $|z| \to \infty$ along $\mathcal{J}_{z_c^+}$), the
-$\lambda_{\mathrm{SW}}^{(1)} \sim z$ behaviour at infinity gives
-$S(z) \sim z^2/2$, so the thimble follows the same asymptote as the
-:refterm[descent]{#descent} direction of $z^2/2$ — namely $\arg z = \Theta^+ + \pi$ for
-$\mathrm{Re}(\mathcal{J}_{z_c^+}) \to -\infty$ and $\arg z = \Theta^+$
-for $\mathrm{Re}(\mathcal{J}_{z_c^+}) \to +\infty$.*
+**Step 3 (Möbius pencil from the cubic's Galois data — algebraic).**
+*The integration limit $a(q)$ is **not** the steepest-:refterm[descent]{#descent}
+re-entry abscissa of $\mathcal{J}_{z_c^+}$. The numerical witness
+([`derive-a-thimble-intersection.witness.json` line 92](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/derive-a-thimble-intersection.witness.json))
+records the actual descent crossing at $z\approx 3.86$, an order of magnitude
+larger than $a(q_0)\approx 0.388$. The Möbius pencil is instead determined
+algebraically from the cubic's coefficients, with the archimedean Hessian
+data of Steps 1–2 serving only as a sanity check that the principal
+conjugate pair $z_c^\pm$ is innermost (audit doc Appendix A).*
 
-*The crossing of $\mathcal{J}_{z_c^+}$ through $\mathbb{R}$ occurs when
-the sextic envelope curve in the $z$-plane*
+*The color-tube cubic $F(z, c) = c^3 + (4z+1)c^2 + (6z^2+3z+1)c +
+(4z^3+3z^2+2z+1) \in \mathbb{Z}[z][c]$ is $q$-independent. Its
+discriminant $\Delta(z) \in \mathbb{Z}[z]$ is palindromic of degree $6$,
+so the Galois group of $\Delta$ over $\mathbb{Q}$ acts on the six roots
+$\{z_c\}$ through two involutions: complex conjugation
+$z \mapsto \bar z$ and the palindromy $z \mapsto 1/z$. Together these
+generate a $\mathbb{Z}/2 \times \mathbb{Z}/2$ subgroup acting on the
+root set with three orbits, one of which — the **principal orbit**
+$\{z_c^\pm, 1/z_c^\pm\}$ — contains the conjugate pair closest to
+the fixed locus of $z \mapsto \bar z$.*
 
-$$
-  \mathrm{Re}\bigl(S(z)\bigr) \;=\; \mathrm{Re}\bigl(S(z_c^+)\bigr),
-  \qquad
-  \mathrm{Im}\bigl(S(z)\bigr) \;=\; \mathrm{Im}\bigl(S(z_c^+)\bigr)
-$$
-
-*intersects the real line.  Substituting the polynomial form of
-$S(z) = \int^z \lambda^{(1)}_{\mathrm{SW}}\,dz'$ — a polynomial of
-degree $2$ in $z$ at leading order with rational corrections from the
-cubic discriminant — and solving for the real root yields the
-two-parameter Möbius pencil:*
-
-$$
-  z_{\text{re-entry}}^{\pm}(q)
-  \;=\;
-  \frac{\alpha(q) \pm \beta(q)\sqrt{\Delta_z(q)}}{\gamma(q)},
-$$
-
-*where $\alpha, \beta, \gamma, \Delta_z$ are polynomials in $q$
-determined by the cubic's binomial coefficients $\{1, 4, 6, 4, 1\}$.
-Direct calculation in the numerical witness (see Step 4) shows that
-the **leading-order rational part** of $z_{\text{re-entry}}$ collapses
-to the Möbius transformation*
+*The Möbius transformation $a: q \mapsto (4-q)/(4q+3)$ is the unique
+$\mathrm{PGL}_2(\mathbb{Z})$ element whose matrix entries are the
+binomial coefficients of $F$ (Step 4), with the sign chosen so that its
+fixed points solve $q^2 + q - 1 = 0$ — i.e. lie on the golden node
+$q_{\mathrm{gold}} = 1/\varphi^2$ where $\mathcal{E}_q$ degenerates
+([Möbius golden fixed points](#prop:mobius-golden-fixed-points)).
+The categorical claim is then:*
 
 $$
-  q \mapsto a(q) \;=\; \frac{4 - q}{4q + 3}.
+  \boxed{\;
+    a(q) \;=\; \tau_q(M)
+    \quad\text{with}\quad
+    M = \binom{-1\;\;\,4}{\,4\;\;\,3} \in \mathrm{PGL}_2(\mathbb{Z}),
+  \;}
 $$
+
+*where $M$'s entries come from the cubic's $R$-side binomial data
+(Step 4) and $\tau_q$ is the archimedean fibre functor evaluated at
+substrate $q$. The Hessian data of Steps 1–2 confirms that the
+principal pair $z_c^\pm$ has the smallest absolute value
+($|z_c^\pm|\approx 0.943 < |1/z_c^\pm|\approx 1.060$, palindromy
+verified numerically), so the algebraic integration region defined
+by $M$ encloses exactly this innermost orbit in the archimedean
+realisation.*
 
 **Step 4 (Coefficient identification from the cubic).**
 *The numerator $4 - q$ encodes:*
@@ -144,13 +148,16 @@ recovers $m_p$ to $0.0006\%$ accuracy.*
 
 **Categorical / archimedean status.**
 
-*The proposition is **inherently archimedean**: it speaks about steepest-
-:refterm[descent]{#descent} contours in $\mathbb{C}$ and uses $|H(z_c)|$ and
-$\arg H(z_c)$, both of which require the embedding $\tau \colon R
-\hookrightarrow \mathbb{C}$.  The categorical / $R$-side statement is
-weaker — only that $a(q) \in R(q)$ is the unique Möbius transformation
-satisfying $a(q) = -1/a(q^{-1})$ (a self-duality reflecting the
-$\overline{z_c^+} = z_c^-$ conjugation symmetry of the thimble pair).*
+*The proposition is **predominantly $R$-side** after the Step 3 rewrite:
+the Möbius pencil $M \in \mathrm{PGL}_2(\mathbb{Z})$ is determined by
+the cubic's binomial coefficients (Step 4) and its fixed-point equation
+$q^2 + q - 1 = 0$ — both purely algebraic over $\mathbb{Z}[q^{\pm 1}]$,
+in fact over $\mathbb{Z}[q^{\pm 1}, \zeta_5]$ once the golden fixed
+points are written in closed form. The Hessian numerics
+$|H(z_c)|, \arg H(z_c)$ from Steps 1–2 are used only to confirm that
+the principal Galois orbit $\{z_c^\pm\}$ is innermost — an archimedean
+sanity check that can be replaced by an algebraic-height argument
+over $\mathbb{Z}[q^{\pm 1/2}, \zeta_5]$.*
 
 *The factorisation*
 

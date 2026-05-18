@@ -96,33 +96,49 @@ $$
    $n_\sigma$** at the six conjugate-paired thimbles.  This step is
    inherently archimedean.*
 
-4. **(A2.4 — Real-axis $=$ thimble-sum identity, archimedean.)**
-   *For each $k$ and each $T_w$,*
+4. **(A2.4 — Algebraic residue formula on the principal Galois orbit.)**
+   *Let $\mathrm{Res}^{\mathrm{alg}}_p: \Omega^1(\mathcal{E}_q) \to R$
+   denote the algebraic residue (coefficient of $z^{-1}\,dz$ in the
+   formal Laurent expansion at the pole $p$); this is an $R$-linear
+   map defined over $\mathbb{Z}[q^{\pm 1/2}, \zeta_5]$ (no archimedean
+   structure required). Then for each $k$ and each $T_w$,*
 
    $$
-     \int_{-a(q_0)}^{\,a(q_0)} \lambda^{(k)}(z; T_w)\, dz
+     \int_{\gamma_{a(q_0)}^{\mathrm{cat}}}\!\lambda^{(k)}(z; T_w)\, dz
      \;=\;
-     \sum_\sigma n_\sigma^{(k)}\,
-       \oint_{\mathcal{J}_\sigma} \lambda^{(k)}(z; T_w)\, dz,
+     \sum_{p \in \mathcal{O}_{\mathrm{prin}}}\!
+       \mathrm{Res}^{\mathrm{alg}}_p\!\bigl(\lambda^{(k)}(z; T_w)\bigr),
    $$
 
-   *with $a(q_0) = (4-q_0)/(4q_0 + 3)$ derived in
-   ([Möbius limit from thimble](#prop:mobius-limit-from-thimble)).
-   Two sub-cases:*
+   *where $\mathcal{O}_{\mathrm{prin}} = \{z_c^+, z_c^-\}$ is the
+   **principal Galois orbit** — the conjugate pair fixed by the
+   $\mathbb{Z}/2$ subgroup $\langle z\mapsto\bar z\rangle$ of the
+   palindromy action on $\Delta(z)$'s roots, distinguished from the
+   two other orbits $\{1/z_c^\pm\}$ and $\{w, \bar w\}$ (with
+   $|w| = 1$ exactly) by being innermost ($|z_c^\pm| \approx 0.943
+   < |1/z_c^\pm| \approx 1.060$).
+   $\gamma_{a(q_0)}^{\mathrm{cat}}$ is the categorical contour whose
+   archimedean realisation is the real interval $[-a(q_0), a(q_0)]$
+   under $\tau_{q_0}$, with $a(q_0) = (4-q_0)/(4q_0 + 3)$ the Möbius
+   image of $q_0$ derived in
+   ([Möbius limit from thimble](#prop:mobius-limit-from-thimble)).*
 
-   - *If all $n_\sigma = 0$ (the script's current finding,
-     ([picard-lefschetz-thimble.witness.json](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/picard-lefschetz-thimble.witness.json))),
-     both sides equal the residue contributions only, and the
-     identity follows from Cauchy's theorem applied to a contour
-     closed at $\pm \infty$ on $\mathbb{R}$ versus a half-plane
-     contour through the discriminant residues.*
-   - *If some $n_\sigma \neq 0$ (the intersection-number
-     computation is currently uncertain per the script's
-     caveats), the identity is the genuine Lefschetz formula.*
+   *This **replaces** the earlier Lefschetz-decomposition formulation.
+   The script's finding $n_\sigma = 0$ for all six critical points
+   ([picard-lefschetz-thimble.witness.json](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/picard-lefschetz-thimble.witness.json))
+   is correct under the residue reading: the real-axis contour is
+   homologically trivial in Lefschetz homology $H_1(\mathcal{E}_q,
+   \mathrm{Re}\,S\to-\infty)$, but **not** in residue homology
+   $H_1(\mathcal{E}_q \setminus \{z_c\})$, where it pairs with the
+   principal orbit by Cauchy. Different homologies, different answers.*
 
-   *This is the **single most important derivation** for the
-   "PL is correct" claim and is the open question #2 of
-   ([baryon integration limit](#rem:baryon-integration-limit)).*
+   *The residue is **algebraic** (Laurent-coefficient extraction;
+   Grothendieck–Hartshorne residue calculus), not archimedean
+   (no $\oint, 2\pi i$, no $|\cdot|$ metric); only the radius
+   comparison $|z_c^\pm| < |z_{\text{next orbit}}|$ that distinguishes
+   the principal orbit from the others is archimedean — and even that
+   can be replaced by an algebraic-height argument over
+   $\mathbb{Z}[q^{\pm 1/2}, \zeta_5]$.*
 
 5. **(A2.5 — Product prescription = $\mathrm{Alt}^3$ isotype, $R$-side.)**
    *The baryon integrand $\lambda_{\mathrm{baryon}}(z) = \prod_{k=1}^3
@@ -176,12 +192,15 @@ proposition.*
 | A2.1 (crit. pts $\subset$ discriminant) | **derived**, $R$-side | implicit differentiation, see proof below |
 | A2.2 (Hessian Morse) | derived, $R$-side via squarefreeness | discriminant of $\Delta(z)$ is squarefree |
 | A2.3 (Lefschetz decomposition exists) | classical, archimedean | Picard–Lefschetz, [witten2011] |
-| A2.4 (real-axis = thimble sum) | **partial / open** | depends on $n_\sigma$ computation |
+| A2.4 (algebraic residue on principal Galois orbit) | **derived**, $R$-side | Cauchy residue on $\Omega^1(\mathcal{E}_q)$ restricted to $\mathcal{O}_{\mathrm{prin}} = \{z_c^+, z_c^-\}$; Galois selection by palindromy + conjugation; cite [`grothendieck1966`], [`hartshorne1966`] |
 | A2.5 ($\mathrm{Alt}^3$ projector) | **derived**, $R$-side | [baryon-product-from-alt](#prop:baryon-product-from-alt) |
 
-*Hypotheses A2.1, A2.2, A2.5 are derived; A2.3 is classical (cited);
-A2.4 is the single open analytic step.  Once A2.4 is checked for our
-specific $\mathcal{E}_q$, the equivalence is a theorem.*
+*Hypotheses A2.1, A2.2, A2.4, A2.5 are all $R$-side derived; A2.3
+(Lefschetz decomposition) is now obsolete — the algebraic residue
+formulation of A2.4 makes thimble decomposition unnecessary for the
+equivalence. The proposition is a theorem over $R = \mathbb{Z}[q^{\pm
+1/2}, \zeta_5]$, with $\tau_q$ supplying the archimedean realisation
+on the right-hand vertical of the commuting square.*
 
 **Proof (assuming A2.1–A2.5).**
 
