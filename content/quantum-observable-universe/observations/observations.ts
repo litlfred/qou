@@ -28,7 +28,7 @@ export default chapter({
       title: "Particle Identification Conjectures",
       label: "sec:particle-conjectures",
       blocks: [
-"particle-conjectures-intro",
+        "particle-conjectures-intro",
         "borromean-quark",
         "higgs-t28",
         "s5-equivariant-torus-knots",
@@ -54,7 +54,7 @@ export default chapter({
       title: "Substrate Parameter from Lepton Masses",
       label: "sec:substrate-from-leptons",
       blocks: [
-"substrate-from-leptons-intro",
+        "substrate-from-leptons-intro",
         "skein-mass-relation",
         "skein-mass-relation-proof",
         "knot-volumes-verification",
@@ -67,7 +67,7 @@ export default chapter({
       title: "Mass Predictions and CODATA Comparison",
       label: "sec:mass-predictions",
       blocks: [
-"mass-predictions-intro",
+        "mass-predictions-intro",
         "stability-cubic-plot",
         "neutron-prediction-comparison",
         "q-stability-ranges",
@@ -99,7 +99,7 @@ export default chapter({
       title: "Beta Decay",
       label: "sec:beta-decay-observations",
       blocks: [
-"beta-decay-observations-intro",
+        "beta-decay-observations-intro",
         "qvalue-observation",
         "hadron-half-life-verification",
         "hadron-half-life-regimes",
@@ -132,7 +132,7 @@ export default chapter({
       title: "Large-Scale Observations",
       label: "sec:large-scale",
       blocks: [
-"large-scale-intro",
+        "large-scale-intro",
         "cmb-q-torsion",
         "cmb-torsion-data",
         "gravity-emergent",
@@ -150,7 +150,7 @@ export default chapter({
       title: "Nuclear Stability",
       label: "sec:nuclear-stability-observations",
       blocks: [
-"nuclear-stability-observations-intro",
+        "nuclear-stability-observations-intro",
         "valley-table",
         "golden-ratio-degeneration",
         "hydrogen-knot-structure",
@@ -191,7 +191,7 @@ export default chapter({
       title: "Precision Tests",
       label: "sec:precision-tests",
       blocks: [
-"precision-tests-intro",
+        "precision-tests-intro",
         "photonic-hall",
         "photonic-hall-data",
         "fine-structure-observation",
@@ -209,7 +209,7 @@ export default chapter({
       title: "Proton Radius and Gravity Tests",
       label: "sec:proton-gravity-tests",
       blocks: [
-"proton-gravity-tests-intro",
+        "proton-gravity-tests-intro",
         "proton-radius-puzzle",
         "proton-radius-data",
         "entropic-gravity",
@@ -224,7 +224,7 @@ export default chapter({
       title: "Crystal Resonance Experiments",
       label: "sec:crystal-resonance",
       blocks: [
-"crystal-resonance-intro",
+        "crystal-resonance-intro",
         "crystal-probe-q",
         "substrate-telescope",
         "magnetic-friction",
@@ -241,7 +241,7 @@ export default chapter({
       title: "Breit--Wheeler Pair Creation",
       label: "sec:breit-wheeler-pair-creation",
       blocks: [
-"breit-wheeler-pair-creation-intro",
+        "breit-wheeler-pair-creation-intro",
         "breit-wheeler-observation",
         "pair-creation-energy",
       ],
@@ -252,7 +252,7 @@ export default chapter({
       title: "Complexity and Interpretation",
       label: "sec:complexity-interpretation",
       blocks: [
-"complexity-interpretation-intro",
+        "complexity-interpretation-intro",
         "fermion-boson-chart-localization",
         "complex-chirality-rotation",
         "trefoil-vortex-chirality-flip",
@@ -298,7 +298,7 @@ export default chapter({
       title: "Transcendence Falsifiability Signatures",
       label: "sec:transcendence-signatures",
       blocks: [
-"transcendence-signatures-intro",
+        "transcendence-signatures-intro",
         "observables-algebraic-independence",
         "observables-algebraic-dependence",
       ],
@@ -309,7 +309,7 @@ export default chapter({
       title: "Interactive Simulations",
       label: "sec:simulations",
       blocks: [
-"simulations-intro",
+        "simulations-intro",
         "q-double-slit",
         "double-slit-analytical",
         "brings-surface-simulator",

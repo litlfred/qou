@@ -22,7 +22,7 @@ export default chapter({
       title: "The molecular Hecke algebra",
       label: "sec:molecular-hecke-algebra",
       blocks: [
-"molecular-hecke-algebra-intro",
+        "molecular-hecke-algebra-intro",
         "molecular-braid",
         "molecular-crossing-table",
         "covalent-bond-shared-trefoil",
@@ -35,7 +35,7 @@ export default chapter({
       title: "Electron shells and bonding capacity",
       label: "sec:electron-shells",
       blocks: [
-"electron-shells-intro",
+        "electron-shells-intro",
         "electron-shell-braid-capacity",
         "shell-filling-rule",
         "valence-from-braid",
@@ -49,7 +49,7 @@ export default chapter({
       title: "Hydrogen molecule $H_2$: the covalent bond prototype",
       label: "sec:h2-computation",
       blocks: [
-"h2-computation-intro",
+        "h2-computation-intro",
         "h2-molecular-braid",
         "h2-lp-dual-binding",
         "h2-binding-energy",
@@ -62,7 +62,7 @@ export default chapter({
       title: "Carbon monoxide: heteronuclear bonding",
       label: "sec:co-computation",
       blocks: [
-"co-computation-intro",
+        "co-computation-intro",
         "co-molecular-braid",
         "co-lp-dual-binding",
         "co-triple-bond-energy",
@@ -74,7 +74,7 @@ export default chapter({
       title: "Carbon dioxide: linear triatomic molecule",
       label: "sec:co2-computation",
       blocks: [
-"co2-computation-intro",
+        "co2-computation-intro",
         "co2-molecular-braid",
         "co2-lp-dual-binding",
         "co2-double-bond-symmetry",
@@ -86,7 +86,7 @@ export default chapter({
       title: "Methane: tetrahedral bonding from braid optimization",
       label: "sec:ch4-computation",
       blocks: [
-"ch4-computation-intro",
+        "ch4-computation-intro",
         "ch4-molecular-braid",
         "ch4-lp-dual-binding",
         "ch4-tetrahedral-symmetry",
@@ -98,7 +98,7 @@ export default chapter({
       title: "Benzene: delocalization from threading links",
       label: "sec:benzene-computation",
       blocks: [
-"benzene-computation-intro",
+        "benzene-computation-intro",
         "benzene-molecular-braid",
         "benzene-threading-emergence",
         "benzene-bond-equalization",

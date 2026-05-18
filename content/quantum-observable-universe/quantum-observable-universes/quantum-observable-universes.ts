@@ -21,7 +21,7 @@ export default chapter({
       title: "The Quantum Observable Universe",
       label: "sec:qou-definition",
       blocks: [
-"qou-definition-intro",
+        "qou-definition-intro",
         "quantum-observable-universe",
         "quantum-observable-universe-exists",
         "qou-exists-axiom-1",
@@ -47,7 +47,7 @@ export default chapter({
       title: "Emergence from observability",
       label: "sec:emergence",
       blocks: [
-"emergence-intro",
+        "emergence-intro",
         "frobenius-su2",
         "dagger-su2",
         "volume-from-rigidity",
@@ -72,7 +72,7 @@ export default chapter({
       title: "Maximal torus and weight decomposition",
       label: "sec:weight-decomposition",
       blocks: [
-"weight-decomposition-intro",
+        "weight-decomposition-intro",
         "maximal-torus",
         "maximal-torus-su2",
         "weight-decomposition",
@@ -88,7 +88,7 @@ export default chapter({
       title: "Vectors, hadrons, and the PawLei basis",
       label: "sec:vectors-hadrons",
       blocks: [
-"vectors-hadrons-intro",
+        "vectors-hadrons-intro",
         "adjoint-trace",
         "pawlowski-leitner-basis",
         "pawlowski-leitner-inner-product",
@@ -100,7 +100,7 @@ export default chapter({
       title: "Differential structures and gauge actions",
       label: "sec:differential-structures",
       blocks: [
-"differential-structures-intro",
+        "differential-structures-intro",
         "categorical-reeb",
         "categorical-reeb-exists",
         "categorical-reeb-exists-proof",
@@ -189,7 +189,7 @@ export default chapter({
       title: "Categorical Dirac operator",
       label: "sec:categorical-dirac-operator",
       blocks: [
-"categorical-dirac-operator-intro",
+        "categorical-dirac-operator-intro",
         "categorical-dirac-operator",
         "categorical-dirac-operator-exists",
         "categorical-dirac-operator-exists-proof",
@@ -202,7 +202,7 @@ export default chapter({
       title: "Categorical Lagrangian",
       label: "sec:categorical-lagrangian",
       blocks: [
-"categorical-lagrangian-intro",
+        "categorical-lagrangian-intro",
         "categorical-lagrangian",
         "categorical-lagrangian-exists",
         "categorical-lagrangian-exists-proof",
@@ -215,7 +215,7 @@ export default chapter({
       title: "Categorical action",
       label: "sec:categorical-action",
       blocks: [
-"categorical-action-intro",
+        "categorical-action-intro",
         "categorical-action",
         "categorical-action-exists",
         "categorical-action-exists-proof",
@@ -231,7 +231,7 @@ export default chapter({
       title: "Variational equations and wavefronts",
       label: "sec:variational-equations",
       blocks: [
-"variational-equations-intro",
+        "variational-equations-intro",
         "variational-equations",
         "variational-equations-proof",
         "wavefront-propagation",
@@ -244,7 +244,7 @@ export default chapter({
       title: "Particles, fermions, bosons, and observation",
       label: "sec:particles",
       blocks: [
-"particles-intro",
+        "particles-intro",
         "categorical-q-ext-deriv",
         "categorical-q-ext-deriv-exists",
         "categorical-q-ext-deriv-exists-proof",
@@ -268,7 +268,7 @@ export default chapter({
       title: "Geometric interpretations",
       label: "sec:geometric-interpretations",
       blocks: [
-"geometric-interpretations-intro",
+        "geometric-interpretations-intro",
         "vector-calculus-bridge",
         "q-laplacian-interpretation",
         "q-codifferential-formula-prop",
@@ -286,7 +286,7 @@ export default chapter({
       title: "Categorical instanton and self-duality",
       label: "sec:instanton",
       blocks: [
-"instanton-intro",
+        "instanton-intro",
         "categorical-instanton",
         "categorical-instanton-exists",
         "categorical-instanton-exists-proof",
@@ -307,7 +307,7 @@ export default chapter({
       title: "Non-vanishing of $d_q^2$ and jet prolongation",
       label: "sec:dq-squared",
       blocks: [
-"dq-squared-intro",
+        "dq-squared-intro",
         "categorical-dq-squared",
         "categorical-dq-squared-proof",
         "categorical-q-lie-bracket",
@@ -324,7 +324,7 @@ export default chapter({
       title: "$q$-Deformed operators",
       label: "sec:q-deformed-operators",
       blocks: [
-"q-deformed-operators-intro",
+        "q-deformed-operators-intro",
         "q-ext-deriv",
         "q-lie-bracket",
         "q-connection",
@@ -341,7 +341,7 @@ export default chapter({
       title: "$q$-Harmonic analysis: heat equation, Laplace, Fourier",
       label: "sec:q-harmonic-analysis",
       blocks: [
-"q-harmonic-analysis-intro",
+        "q-harmonic-analysis-intro",
         "q-heat-equation",
         "q-heat-equation-exists",
         "q-heat-equation-exists-proof",
@@ -391,7 +391,7 @@ export default chapter({
       title: "Braiding conventions: eigenvalue labelling, ribbon, orientation",
       label: "sec:braiding-conventions",
       blocks: [
-"braiding-conventions-intro",
+        "braiding-conventions-intro",
         "braiding-unit-circle-convention",
         "sqrt-q-ribbon-structure",
         "sign-as-spin-structure",
@@ -425,7 +425,7 @@ export default chapter({
       title: "Non-vanishing of $d_q^2$ and the $q$-jacobiator",
       label: "sec:dq-squared-elaboration",
       blocks: [
-"dq-squared-elaboration-intro",
+        "dq-squared-elaboration-intro",
         "dq-squared",
         "dq-squared-proof",
         "q-jacobiator",
@@ -438,7 +438,7 @@ export default chapter({
       title: "Physical elaborations",
       label: "sec:physical-elaborations",
       blocks: [
-"physical-elaborations-intro",
+        "physical-elaborations-intro",
         "q-torsion-leaf-minimum",
         "q-harmonic-physical",
         "linearisation-convention",

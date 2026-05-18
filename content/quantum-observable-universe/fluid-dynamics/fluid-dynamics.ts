@@ -39,7 +39,7 @@ export default chapter({
       title: "Vortex spectrum and helicity",
       label: "sec:vortex-spectrum",
       blocks: [
-"vortex-spectrum-intro",
+        "vortex-spectrum-intro",
         "vortex-intensity-modes",
         "discrete-vortex-spectrum",
         "discrete-vortex-physical",
@@ -54,7 +54,7 @@ export default chapter({
       title: "Turbulence and acoustics",
       label: "sec:turbulence-acoustics",
       blocks: [
-"turbulence-acoustics-intro",
+        "turbulence-acoustics-intro",
         "q-turbulence-spectrum",
         "q-turbulence-prediction",
         "berry-vortex-moduli",
@@ -69,7 +69,7 @@ export default chapter({
       title: "Global regularity for $q > 1$",
       label: "sec:q-ns-regularity",
       blocks: [
-"q-ns-regularity-intro",
+        "q-ns-regularity-intro",
         "q-ns-wellposedness",
         "q-ns-proof-strategy",
         "p1-spectral-sobolev",
@@ -84,7 +84,7 @@ export default chapter({
       title: "The NS obstruction",
       label: "sec:ns-obstruction",
       blocks: [
-"ns-obstruction-intro",
+        "ns-obstruction-intro",
         "observability-in-fluid-context",
         "observability-independent-motivation",
         "substrate-line-bundle",
@@ -112,7 +112,7 @@ export default chapter({
       title: "Approaches and open problems",
       label: "sec:ns-approaches",
       blocks: [
-"ns-approaches-intro",
+        "ns-approaches-intro",
         "regularity-breakdown",
         "p2-critical-exponent",
         "p3-blowup-yekutieli",

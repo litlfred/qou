@@ -1,3 +1,3 @@
 import { prose } from "../../schema/builders";
 
-export default prose({ label: "sec:sdescent-prelim-intro" });
+export default prose({ label: "ssec:descent-prelim-intro" });

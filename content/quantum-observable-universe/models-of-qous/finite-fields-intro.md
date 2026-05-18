@@ -1,1 +1,1 @@
-_[draft]_ This section develops *Finite fields and Jones polynomials*. It opens with **$\\mathbb{F}_\\pp$ realisation**, which establishes the section's central object; the remaining blocks unfold its consequences. (Placeholder draft — replace with the section's actual narrative arc.)
+_[draft]_ This section develops *Finite fields and Jones polynomials*. It opens with **$\mathbb{F}_\pp$ realisation**, which establishes the section's central object; the remaining blocks unfold its consequences. (Placeholder draft — replace with the section's actual narrative arc.)

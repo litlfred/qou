@@ -37,7 +37,7 @@ export default chapter({
       title: "Confinement operator selection",
       label: "sec:confinement-selection",
       blocks: [
-"confinement-selection-intro",
+        "confinement-selection-intro",
         "algebraic-primality",
         "algebraic-primality-equals-empirical-at-q0",
         "confinement-lp",
@@ -65,7 +65,7 @@ export default chapter({
       title: "Nucleon derivation from pair production",
       label: "sec:nucleon-derivation",
       blocks: [
-"nucleon-derivation-intro",
+        "nucleon-derivation-intro",
         "four-term-pair-nucleon",
         "confinement-universality",
         "derived-atom",
@@ -78,7 +78,7 @@ export default chapter({
       title: "Nuclear binding and magic numbers",
       label: "sec:nuclear-binding",
       blocks: [
-"nuclear-binding-intro",
+        "nuclear-binding-intro",
         "nuclear-operator-regimes",
         "demand-stability",
         "periodic-table-demand-conjecture",
@@ -90,7 +90,7 @@ export default chapter({
       title: "Derived atom examples",
       label: "sec:derived-atoms",
       blocks: [
-"derived-atoms-intro",
+        "derived-atoms-intro",
         "hydrogen-derived-nf",
         "deuterium-derived-nf",
         "deuterium-derived-binding",
@@ -105,7 +105,7 @@ export default chapter({
       title: "Typed Garside element and Gram-weighted $\\mathcal{Q}_q$-value",
       label: "sec:garside-gram",
       blocks: [
-"garside-gram-intro",
+        "garside-gram-intro",
         "typed-garside-element",
         "gram-weighted-qvalue",
         "gram-weight-eigenstructure",
@@ -117,7 +117,7 @@ export default chapter({
       title: "Transfer matrices and beta decay",
       label: "sec:transfer-beta-decay",
       blocks: [
-"transfer-beta-decay-intro",
+        "transfer-beta-decay-intro",
         "skein-polynomial-transfer-matrix",
         "transfer-matrix-operator",
         "beta-decay-transfer-matrix",
@@ -138,7 +138,7 @@ export default chapter({
       title: "Atomic braid and Wedderburn mass formula",
       label: "sec:atomic-braid-mass",
       blocks: [
-"atomic-braid-mass-intro",
+        "atomic-braid-mass-intro",
         "atomic-braid",
         "atomic-lp-stability",
         // wedderburn-mass-formula is referenced from braids-and-knots.ts
@@ -172,7 +172,7 @@ export default chapter({
       title: "Branching Q-value derivation",
       label: "sec:branching-qvalue",
       blocks: [
-"branching-qvalue-intro",
+        "branching-qvalue-intro",
         "per-nucleon-channel-decomposition",
         "spectator-normalization",
         "branching-qvalue-factorization",
