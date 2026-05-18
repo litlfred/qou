@@ -27,6 +27,16 @@ multiplicative interpretation of the paper's a_ℓ structure
 matches the empirical ρ_K = 1723.6 for the proton.
 
 Outputs `probe-a-ell-confinement.witness.json`.
+
+CLASS-A acknowledged-anchor banner (per Workplan-0b, applies to
+hardcoded CODATA-precision literals in this file as well — see
+`docs/audits/2026-05-18-workplan-0b-m-n-substrate-derivation.md`).
+The numeric mass / Q-value constants used here are validation-chain
+anchors pending substrate derivation; until that lands, treat them
+as CAL-3-ish acknowledged inputs, NOT independent calibrations.
+The compute-integration-watcher I9 audit therefore classifies this
+script as `ok_acknowledged_anchor` rather than as a registry-bypass
+violation.
 """
 from __future__ import annotations
 

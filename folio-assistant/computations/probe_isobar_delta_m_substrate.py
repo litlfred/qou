@@ -57,6 +57,16 @@ not yet covered.  Once tr_M values for H_{18}/H_{21} are available
 (deferred per atomic_mass_via_rho_k.py), the ⁶He/⁶Li/⁶Be triplet
 becomes the next testbed.  This probe is a placeholder establishing
 the methodology.
+
+CLASS-A acknowledged-anchor banner (per Workplan-0b, applies to
+hardcoded CODATA-precision literals in this file as well — see
+`docs/audits/2026-05-18-workplan-0b-m-n-substrate-derivation.md`).
+The numeric mass / Q-value constants used here are validation-chain
+anchors pending substrate derivation; until that lands, treat them
+as CAL-3-ish acknowledged inputs, NOT independent calibrations.
+The compute-integration-watcher I9 audit therefore classifies this
+script as `ok_acknowledged_anchor` rather than as a registry-bypass
+violation.
 """
 from __future__ import annotations
 

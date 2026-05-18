@@ -66,6 +66,16 @@ The PRODUCT-weighted (Scheme 2) overcounts by a factor of 3 because
 it multiplies the masses together rather than summing.  This is the
 substantive structural difference between QCD-style additive mass
 budgets and naive multiplicative PL substrate weighting.
+
+CLASS-A acknowledged-anchor banner (per Workplan-0b, applies to
+hardcoded CODATA-precision literals in this file as well — see
+`docs/audits/2026-05-18-workplan-0b-m-n-substrate-derivation.md`).
+The numeric mass / Q-value constants used here are validation-chain
+anchors pending substrate derivation; until that lands, treat them
+as CAL-3-ish acknowledged inputs, NOT independent calibrations.
+The compute-integration-watcher I9 audit therefore classifies this
+script as `ok_acknowledged_anchor` rather than as a registry-bypass
+violation.
 """
 from __future__ import annotations
 
