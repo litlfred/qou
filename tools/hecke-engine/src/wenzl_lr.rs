@@ -219,41 +219,29 @@ pub fn chi_lambda_canonical_h_n_f64(
     word_with_averaged: &[CrossingPair],
     q: f64,
 ) -> f64 {
-    let avg_positions: Vec<usize> = word_with_averaged
+    // **Direct averaging path (2026-05-18, PR #682).** From the Hecke
+    // relation `σ_g² = h · σ_g + I` with `h = q - q⁻¹`, the half-sum
+    // `(σ_g + σ_g⁻¹)/2 = σ_g - h/2 · I` is a single matrix. Substitute
+    // this directly into the seminormal matrix product instead of
+    // enumerating `2^k` sub-words. For ⁴He (k ≈ 20), the speedup is
+    // ~10⁶× (sub-millisecond instead of >10 minutes at MPFR-50dps).
+    //
+    // The 2^k expansion path below is retained as `_legacy_sub_word_expand`
+    // for cross-validation testing only — `chi_lambda_braid` now handles
+    // sign == 0 as the averaged dispatch.
+    let _ = n_strands; // shape encodes n; kept for API parity
+    let word_signed: Vec<(i32, u32)> = word_with_averaged
         .iter()
-        .enumerate()
-        .filter(|(_, (c, _))| *c == Crossing::Averaged)
-        .map(|(i, _)| i)
-        .collect();
-    let k = avg_positions.len();
-    if k == 0 {
-        let plain = to_plain_word(word_with_averaged);
-        return chi_lambda_braid(lambda, &plain, q);
-    }
-    if k > 20 {
-        panic!(
-            "chi_lambda_canonical_h_n_f64: {} averaged crossings (> 20 cap \
-             = 2^20 ≈ 10^6 sub-words); refusing to expand",
-            k
-        );
-    }
-    let total = 1usize << k;
-    (0..total)
-        .into_par_iter()
-        .map(|mask| {
-            let mut sub_word = word_with_averaged.to_vec();
-            for (bit, &pos) in avg_positions.iter().enumerate() {
-                let take_positive = (mask >> bit) & 1 == 0;
-                sub_word[pos].0 = if take_positive {
-                    Crossing::Sigma
-                } else {
-                    Crossing::SigmaInv
-                };
-            }
-            let plain = to_plain_word(&sub_word);
-            chi_lambda_braid(lambda, &plain, q)
+        .map(|&(c, g)| {
+            let sign = match c {
+                Crossing::Sigma => 1,
+                Crossing::SigmaInv => -1,
+                Crossing::Averaged => 0,
+            };
+            (sign, g)
         })
-        .reduce(|| 0.0_f64, |a, b| a + b)
+        .collect();
+    chi_lambda_braid(lambda, &word_signed, q)
 }
 
 /// **MPFR variant of [`chi_lambda_canonical_h_n_f64`]** at arbitrary
@@ -276,46 +264,24 @@ pub fn chi_lambda_canonical_h_n_mpfr(
     q_str: &str,
     dps: u32,
 ) -> String {
-    use rug::Float;
-    let prec = (dps as f64 * 3.322 + 16.0) as u32;
-    let avg_positions: Vec<usize> = word_with_averaged
+    // **Direct averaging path (2026-05-18, PR #682).** See
+    // `chi_lambda_canonical_h_n_f64` for the math derivation:
+    // `(σ_g + σ_g⁻¹)/2 = σ_g - h/2 · I`, single matrix per averaged
+    // crossing instead of `2^k` sub-words. For ⁴He at MPFR-50dps
+    // (k ≈ 20), wall time drops from >10 min to ~tens of ms.
+    let _ = n_strands;
+    let word_signed: Vec<(i32, u32)> = word_with_averaged
         .iter()
-        .enumerate()
-        .filter(|(_, (c, _))| *c == Crossing::Averaged)
-        .map(|(i, _)| i)
-        .collect();
-    let k = avg_positions.len();
-    let _ = n_strands; // chi_lambda_braid_mpfr does not need n explicitly
-    if k == 0 {
-        let plain = to_plain_word(word_with_averaged);
-        return chi_lambda_braid_mpfr(lambda, &plain, q_str, dps);
-    }
-    if k > 20 {
-        panic!("chi_lambda_canonical_h_n_mpfr: {} averaged crossings exceeds 20-cap", k);
-    }
-    let total = 1usize << k;
-    let strs: Vec<String> = (0..total)
-        .into_par_iter()
-        .map(|mask| {
-            let mut sub_word = word_with_averaged.to_vec();
-            for (bit, &pos) in avg_positions.iter().enumerate() {
-                let take_positive = (mask >> bit) & 1 == 0;
-                sub_word[pos].0 = if take_positive {
-                    Crossing::Sigma
-                } else {
-                    Crossing::SigmaInv
-                };
-            }
-            let plain = to_plain_word(&sub_word);
-            chi_lambda_braid_mpfr(lambda, &plain, q_str, dps)
+        .map(|&(c, g)| {
+            let sign = match c {
+                Crossing::Sigma => 1,
+                Crossing::SigmaInv => -1,
+                Crossing::Averaged => 0,
+            };
+            (sign, g)
         })
         .collect();
-    let mut acc = Float::with_val(prec, 0);
-    for s in &strs {
-        let v = Float::parse(s).expect("parse mpfr sub-word chi");
-        acc += Float::with_val(prec, v);
-    }
-    acc.to_string_radix(10, Some(dps as usize))
+    chi_lambda_braid_mpfr(lambda, &word_signed, q_str, dps)
 }
 
 /// All χ^λ values at H_n for λ ⊢ n, computed in parallel via

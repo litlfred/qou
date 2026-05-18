@@ -144,6 +144,30 @@ fn apply_sigma_inv_mpfr(v: &mut [Float], blocks: &[BlockMpfr], h: &Float, prec: 
     }
 }
 
+/// Apply `v ← (σ_i + σ_i⁻¹)/2 · v = (σ_i - h/2) · v` in-place at MPFR
+/// precision. MPFR analogue of [`crate::seminormal::apply_sigma_averaged_left`].
+/// See that function for the math derivation.
+fn apply_sigma_averaged_mpfr(v: &mut [Float], blocks: &[BlockMpfr], h: &Float, prec: u32) {
+    let half_h = Float::with_val(prec, h) / 2;
+    for block in blocks {
+        match block {
+            BlockMpfr::One { i, a } => {
+                let coef = Float::with_val(prec, a) - &half_h;
+                let new_v = Float::with_val(prec, &v[*i]) * coef;
+                v[*i] = new_v;
+            }
+            BlockMpfr::Two { i, j, a, ap, b } => {
+                let am = Float::with_val(prec, a) - &half_h;
+                let apm = Float::with_val(prec, ap) - &half_h;
+                let vi = v[*i].clone();
+                let vj = v[*j].clone();
+                v[*i] = Float::with_val(prec, &vi) * &am + Float::with_val(prec, &vj) * b;
+                v[*j] = Float::with_val(prec, &vi) * b + Float::with_val(prec, &vj) * &apm;
+            }
+        }
+    }
+}
+
 /// MPFR-precision character `χ_λ(β)` at decimal precision `dps`.
 ///
 /// `q_str` is the substrate parameter as a decimal string (use a string
@@ -217,11 +241,18 @@ pub fn chi_lambda_braid_mpfr(
             v[k] = Float::with_val(prec, 0);
         }
         v[i] = Float::with_val(prec, 1);
+        // Sign convention (matches f64 chi_lambda_braid):
+        //   sign > 0  → σ_g           (positive crossing)
+        //   sign < 0  → σ_g - h·I     (σ_g⁻¹ via Hecke relation)
+        //   sign == 0 → σ_g - h/2·I   (averaged crossing, direct
+        //                              substitution, no 2^k expansion)
         for &(sign, blocks) in resolved.iter().rev() {
-            if sign >= 0 {
+            if sign > 0 {
                 apply_sigma_mpfr(&mut v, blocks, prec);
-            } else {
+            } else if sign < 0 {
                 apply_sigma_inv_mpfr(&mut v, blocks, &h, prec);
+            } else {
+                apply_sigma_averaged_mpfr(&mut v, blocks, &h, prec);
             }
         }
         trace += &v[i];
