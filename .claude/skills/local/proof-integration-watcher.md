@@ -244,11 +244,41 @@ For each changed block, launch the relevant subset of:
 | Specialist | When to run |
 |------------|-------------|
 | `proof-gap-audit` | Always (intra + inter gaps) |
-| `proof-narrative-lean-equivalence` | If both `.md` and `.lean` siblings exist |
+| `proof-narrative-lean-equivalence` | **Whenever `.lean` is touched OR exists for the block** — covers the four drift classes A/B/C/D plus the new **missing-narrative** check (`.lean` exists, `.md` absent or stub-only) |
 | `lean-proof-review` | If `.lean` changed |
 | `lean-completeness-audit` | If `.ts` `kind` requires Lean and `.lean` is missing |
 | `remark-audit` | If kind is `remark` |
 | `proof-triage` | Always — produces fresh sorry inventory for the queue |
+
+**Lean ↔ narrative coupling rule (STRICT).** For every block where
+`.lean` exists, the watcher checks:
+
+1. **Presence.** Does the `.md` sibling exist and contain a non-trivial
+   statement (not just the title + one-line placeholder)?
+   - Missing `.md` → finding `missing-narrative` (major).
+   - Stub `.md` (only frontmatter / heading) → finding
+     `narrative-stub` (major).
+2. **Semantic match.** Does the narrative statement (and proof, if
+   present) describe the same theorem the Lean declaration proves?
+   - Apply the four drift classes from
+     `proof-narrative-lean-equivalence`:
+     - Class A stub weakening (Lean is `trivial` / `True` while
+       narrative claims something substantial)
+     - Class B scope mismatch (Lean proves a special case)
+     - Class C hypothesis drift (different number / strength)
+     - Class D notation drift (symbol register mismatch)
+   - Each drift class becomes a queue item with severity
+     critical (A) / major (B, C) / minor (D).
+
+When either check fails, the resulting queue item carries
+`finding: "missing-narrative" | "narrative-stub" | "drift-class-A" |
+"drift-class-B" | "drift-class-C" | "drift-class-D"` and the standard
+queue shape. The §4e author-ask wording for these is:
+
+> The Lean sibling at `<lean-url>` proves `<lean-statement>`.
+> The narrative `.md` is `<missing | stub | claims X instead>`.
+> Question: 1) write narrative to match Lean, 2) weaken Lean to
+> match narrative, 3) split into two blocks?
 
 Use parallel `Agent` launches (single response, multiple tool calls).
 Cap each agent's report at ~400 words.
@@ -349,10 +379,52 @@ done < /tmp/_pw_all_blocks.txt
 Order the backlog by:
 
 1. **Sorry count** (more sorries → earlier): `grep -c '^[^-]*sorry' <block>.lean`
-2. **Downstream dependents** (more dependents → earlier): walk `uses[]`
+2. **Lean-without-narrative** (any `.lean` block whose `.md` sibling
+   is missing or stub-only — discovered via the dual-sibling
+   enumeration step below). These are presumed-published Lean results
+   with no human-readable statement.
+3. **Downstream dependents** (more dependents → earlier): walk `uses[]`
    from every other block; count edges that point at this block.
-3. **Last-audit recency** (older → earlier): from `queue.audited[]`.
-4. **Alphabetical** as tie-breaker.
+4. **Last-audit recency** (older → earlier): from `queue.audited[]`.
+5. **Alphabetical** as tie-breaker.
+
+#### 5b′. Dual-sibling discovery (Lean ↔ narrative coupling)
+
+Run alongside §5a:
+
+```bash
+# Lean files whose .md sibling is missing or "stub-only"
+> /tmp/_pw_missing_narrative.txt
+> /tmp/_pw_narrative_stub.txt
+find content -name '*.lean' -type f 2>/dev/null \
+  | grep -v '/lean/' \
+  | while IFS= read -r lean; do
+      md="${lean%.lean}.md"
+      ts="${lean%.lean}.ts"
+      [ ! -f "$ts" ] && continue  # not a content block
+      if [ ! -f "$md" ]; then
+        echo "$lean" >> /tmp/_pw_missing_narrative.txt
+        continue
+      fi
+      # "Stub-only" heuristic: .md body (excluding frontmatter) has
+      # fewer than 5 non-blank lines OR no $...$ / $$ math at all
+      body_lines=$(awk '/^---$/{f++; next} f>=2 && NF' "$md" | wc -l)
+      has_math=$(grep -cE '\$' "$md")
+      if [ "$body_lines" -lt 5 ] && [ "$has_math" -eq 0 ]; then
+        echo "$lean" >> /tmp/_pw_narrative_stub.txt
+      fi
+    done
+
+echo "Lean-only blocks (missing narrative): $(wc -l < /tmp/_pw_missing_narrative.txt)"
+echo "Stub-narrative blocks (Lean + thin .md): $(wc -l < /tmp/_pw_narrative_stub.txt)"
+```
+
+Each line becomes a queue item with finding `missing-narrative` or
+`narrative-stub`, severity `major`, source `backlog`.
+
+For blocks WITH both siblings, the per-item §5c processing also
+includes the four-drift-class equivalence check from
+`proof-narrative-lean-equivalence`.
 
 ### 5c. Per-item processing
 
