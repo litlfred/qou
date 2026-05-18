@@ -775,9 +775,56 @@ Workflow:
    file, same finding kind) so one PR addresses a coherent
    tranche, not a single one-line fix.
 2. **Branch.** Create a new branch via
-   `mcp__github__create_branch`, named
-   `claude/<watcher-domain>-<short-task>-<random-suffix>` (e.g.
-   `claude/proof-integration-cite-hygiene-Xyz12`).
+   `mcp__github__create_branch`, named using the **integration-watcher
+   convention**:
+
+   ```
+   claude/iw-<TYPE>-<DESCRIPTIVE-STUB>
+   ```
+
+   - `<TYPE>` — short tag for which watcher is spinning up the PR.
+     Canonical values:
+     - `compute` — from `local/compute-integration-watcher`
+     - `proof` — from `local/proof-integration-watcher`
+     - `canonical` — from `local/canonical-watcher`
+     - `meta` — for changes to the integration-watcher skill family
+       itself (this parent + children + routing).
+     A future sibling watcher uses `<TYPE> = <its-domain-tag>`
+     consistently with its skill filename's domain prefix.  The
+     existing children show the precedent: `compute-integration-watcher`
+     → `compute`; `proof-integration-watcher` → `proof`;
+     `canonical-watcher` (no `-integration-` infix) → `canonical`.
+   - `<DESCRIPTIVE-STUB>` — kebab-case slug naming the issue
+     being addressed.  Aim for 3–6 words that read clearly in a
+     `gh pr list` output.
+
+   Examples of well-formed branch names (each one binds a
+   `<TYPE>` + `<DESCRIPTIVE-STUB>` to a backlog item):
+
+   - **compute** wiring `prop:flavor-split-substrate` into the
+     6-term sweep: `claude/iw-compute-wire-flavor-split-substrate`.
+   - **proof** chasing the last `sorry` in `prop:foo` plus a
+     missing `-- Ref:` citation:
+     `claude/iw-proof-foo-sorry-and-cite-hygiene`.
+   - **canonical** replacing a fitted κ value with a
+     substrate-pure derivation:
+     `claude/iw-canonical-kappa-substrate-derivation`.
+   - **meta** adding a new I-pattern to
+     `compute-integration-watcher`:
+     `claude/iw-meta-add-new-i-pattern`.
+
+   The `iw-` infix is the **mandatory marker** that ties the branch
+   back to the integration-watcher family.  It is the agreed-upon
+   discovery handle for integration-watcher tooling: any future
+   CI dashboard, `/coordinate` extension, or watcher-spawned-PR
+   sweep can grep `claude/iw-` to enumerate the family.  As of
+   this writing the convention is established but not yet
+   programmatically consumed; the §5g step 7 rebase walker in this
+   skill is the first concrete consumer.
+
+   Random suffixes (e.g. `-Xyz12`) are not part of the convention.
+   If a branch name collides with an existing one, append a `-v2`
+   / `-v3` discriminator rather than randomising.
 3. **Apply fixes.** Use `mcp__github__push_files` or `git push`
    from a temp local branch to push the fixes. For most
    non-trivial work, use a local `git checkout -B <temp>
