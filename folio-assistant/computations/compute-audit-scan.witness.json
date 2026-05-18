@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T02:10:06.234477+00:00",
-  "commitSha": "46d347363f6308545ed7aa5387ecb5cb252e5c06",
+  "computedAt": "2026-05-18T02:10:08.113384+00:00",
+  "commitSha": "63f334bf2b06850dfc5537e759a8a5611a16bdfb",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 7,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "d9aa432d54f9",
@@ -1516,7 +1516,7 @@
       {
         "pattern": "P31",
         "file": "mass_formula_6term_mpfr_50dps.py",
-        "line": 401,
+        "line": 511,
         "snippet": "CODATA literal \"938.27208816\"",
         "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },

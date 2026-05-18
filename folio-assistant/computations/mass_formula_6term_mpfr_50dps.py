@@ -384,6 +384,116 @@ def term_6_habiro_residue_mp(A: int) -> mp.mpf:
     )
 
 
+# ── Atom → habiro-coefficients-extended label map ─────────────
+#
+# `habiro-coefficients-extended.witness.json` keys `results` by a
+# human label like "D (deuteron, A=2)"; the consumer here wants
+# look-up by (Z, N). Static map mirrors that script's hard-coded
+# `cases` list.
+_HABIRO_EXT_LABEL_BY_ZN = {
+    (1, 1): "D (deuteron, A=2)",
+    (1, 2): "T (triton, A=3)",
+    (2, 1): "³He (helion, A=3)",
+    (2, 2): "⁴He (alpha, A=4)",
+    (3, 2): "⁵Li (A=5)",
+    (3, 3): "⁶Li (A=6)",
+}
+
+
+def term_6_via_habiro_coeffs_mp(Z: int, N: int) -> mp.mpf:
+    """Term 6 — bounded alternative via direct Habiro series.
+
+    Evaluates the Habiro / cyclotomic expansion
+    ``tr_M(T_w, q) = Σ_m a_m(u) · (u; u)_m`` directly at
+    u_0 = q_0^{1/2} from the per-atom a_m(u) coefficients in
+    [`habiro-coefficients-extended.witness.json`](./habiro-coefficients-extended.witness.json).
+
+    The Habiro coefficients are **integral polynomials in u**
+    (verified `all_integral: True` for every atom A=2..6), so the
+    series converges term-by-term and the result is bounded — in
+    contrast to the Φ_q-residue path (`term_6_habiro_residue_mp`)
+    which diverges to megaelectronvolt scale at A ≥ 3.
+
+    Returns the full Habiro-summed Markov trace at q_0; downstream
+    consumers wanting the **T6 correction term** specifically (i.e.
+    the residue piece after the lower-order terms are subtracted)
+    can compute `tr_M_habiro − tr_M_chi_cache` to isolate the
+    higher-order contribution.
+
+    Coverage: A ∈ {2, 3, 4, 5, 6} via the extended witness on
+    main. A = 1 (proton, neutron) is not in the extended witness
+    (the original `habiro-coefficients-atomic.witness.json` covers
+    A = 1 separately).
+    """
+    label = _HABIRO_EXT_LABEL_BY_ZN.get((Z, N))
+    if label is None:
+        raise KeyError(
+            f"term_6_via_habiro_coeffs_mp: no extended-Habiro coverage "
+            f"for (Z={Z}, N={N}). Coverage: {list(_HABIRO_EXT_LABEL_BY_ZN.keys())}."
+        )
+    path = Path(__file__).parent / "habiro-coefficients-extended.witness.json"
+    if not path.exists():
+        raise FileNotFoundError(
+            f"habiro-coefficients-extended witness missing at {path}; "
+            f"run `habiro_coefficients_extended.py` to regenerate."
+        )
+    with path.open() as f:
+        data = json.load(f)
+    entry = data.get("results", {}).get(label)
+    if entry is None:
+        raise KeyError(
+            f"term_6_via_habiro_coeffs_mp: extended witness has no "
+            f"entry for {label!r}."
+        )
+    a_m_list = entry.get("habiro_coefficients", [])
+    if not a_m_list:
+        raise KeyError(
+            f"term_6_via_habiro_coeffs_mp: empty habiro_coefficients "
+            f"for {label!r}."
+        )
+    # Per `habiro_coefficients_atomic.to_u_polynomial`:
+    #   p_in_u(u)  =  u^shift · denom(u) · tr_M(q = u²)
+    # so the Markov trace at q_0 is recovered as
+    #   tr_M(q_0)  =  p_in_u(u_0) / (u_0^shift · denom(u_0))
+    # with  p_in_u(u_0)  =  Σ_m a_m(u_0) · (u_0; u_0)_m.
+    shift = int(entry.get("shift", 0))
+    denom_str = entry.get("denom_in_u", "1")
+
+    import sympy as sp
+    u_0 = mp.sqrt(Q0_MP)
+    u_0_sp = sp.Float(str(u_0), 50)
+
+    def _eval_sym(expr_str: str) -> mp.mpf:
+        """Evaluate a u-polynomial string at u = u_0 (50 dps)."""
+        expr = sp.sympify(expr_str)
+        for sym in expr.free_symbols:
+            expr = expr.subs(sym, u_0_sp)
+        return mp.mpf(str(sp.N(expr, 50)))
+
+    poch = mp.mpf(1)          # (u; u)_0 = 1
+    p_at_u0 = mp.mpf(0)
+    last_m = -1
+    for entry_m in a_m_list:
+        m = int(entry_m["m"])
+        while last_m < m:
+            last_m += 1
+            if last_m == 0:
+                continue       # (u; u)_0 = 1 already
+            poch *= (1 - u_0 ** last_m)
+        a_m_val = _eval_sym(entry_m["a_m"])
+        p_at_u0 += a_m_val * poch
+
+    denom_at_u0 = _eval_sym(denom_str) if denom_str else mp.mpf(1)
+    if shift != 0:
+        denom_at_u0 *= u_0 ** shift
+    if denom_at_u0 == 0:
+        raise ValueError(
+            f"term_6_via_habiro_coeffs_mp: denom(u_0) vanished for "
+            f"{label!r} — probable pole at q = q_0."
+        )
+    return p_at_u0 / denom_at_u0
+
+
 # ── Entry point ───────────────────────────────────────────────
 
 ATOMS = [
