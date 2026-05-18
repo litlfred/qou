@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-18T04:29:34.159970+00:00",
-  "commitSha": "dc0f9394feecab82403453af071b11b80d144ac5",
+  "computedAt": "2026-05-18T04:34:30.654508+00:00",
+  "commitSha": "f7d019b491c4e7d121401e4297a784bede7f18f2",
   "assertions": [
     {
       "name": "h1_within_0.1pct",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 9,
   "computation": "probe-h1-substrate-closure",
   "scriptFile": "probe_h1_substrate_closure.py",
-  "scriptHash": "6a1a25b09d11",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "f3703c4e5f56",
+  "scriptCommitSha": "5d289221f811562a152881d6620b707fff1106f2",
   "description": "Honest ¹H closure via substrate m_p (C2 inflection) + CAL-1 m_e + Rydberg BE(¹H).  Reports residual +0.069 % vs CODATA.  Item 4 of the #663 follow-up queue.",
   "data": {
     "substrate_inputs": {
@@ -33,7 +33,7 @@
       "residual_pct": 0.06882778385143211
     },
     "residual_source": {
-      "m_p_substrate_residual_MeV": "0.6461433400801000000000000000000000000000",
+      "m_p_substrate_residual_MeV": "0.6461431800801000000000000000000000000000",
       "explanation": "¹H residual ≡ m_p substrate residual at this precision; m_e (CAL-1) and BE_H (~1e-5 MeV) contribute negligibly."
     },
     "status": "¹H closes to substrate accuracy (0.069 %) via the C2 inflection route. Further tightening requires substrate tightening of m_p (next-order C2 correction or full Li_2^q tower closure per PR #671 Items A/B/C).",
