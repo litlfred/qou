@@ -116,17 +116,18 @@ doesn't change.
 
 ## Verdict
 
-- ✅ **GP per-T_w character evaluation** matches seminormal to f64
+- **GP per-T_w character evaluation** matches seminormal to f64
   round-off — go for C-full.
-- ✅ **Sparsity factor at small n** is encouraging (45× at n=6
+- **Sparsity factor at small n** is encouraging (45× at n=6
   with 10-crossing mixed word) — supports the audit's "10-50×
   speedup at high n" projection.
-- ⚠️ **Averaged-crossing extension** in `braid_to_hecke` is the
-  first concrete task for C-full.
-- ⚠️ **MPFR variant** of GP path needs to be written for production
+- **Averaged-crossing extension** in `braid_to_hecke` is the
+  first concrete task for C-full (deferred).
+- **MPFR variant** of GP path needs to be written for production
   use (current GP is f64-only via `seminormal::chi_lambda_braid`).
   Cost: re-implement `evaluate_f64` as `evaluate_mpfr` on
-  `LaurentPolyQ` + route through `chi_lambda_braid_mpfr`. ~1 day.
+  `LaurentPolyQ` + route through `chi_lambda_braid_mpfr`. ~1 day
+  (deferred).
 
 ## Recommended C-full next steps (in dependency order)
 
