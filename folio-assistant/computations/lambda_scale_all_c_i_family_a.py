@@ -81,7 +81,7 @@ def main() -> int:
         print(f"  dim_q V_{label} = {d}")
     w.add_data("dim_q_H4", {k: str(v) for k, v in dim_q_lambdas.items()})
 
-    lambda_A_q = sp.simplify(sum(dim_q_lambdas.values()) / 4)
+    lambda_A_q = sp.cancel(sum(dim_q_lambdas.values()) / 4)
     print(f"\nλ_A(q) = (1/4) Σ_λ dim_q V_λ")
     print(f"       = {lambda_A_q}")
     w.add_data("lambda_A_q_closed_form", str(lambda_A_q))

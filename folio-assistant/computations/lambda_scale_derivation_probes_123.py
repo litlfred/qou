@@ -246,12 +246,14 @@ def main() -> int:
     for k, v in p3.items():
         print(f"  {k}: {v}")
 
+    _lobachevsky_diff = float(abs(VOL_B3_LIT - 16 * (-mp.quad(
+        lambda t: mp.log(2*mp.sin(t)), [mp.mpf(0), mp.pi/4]))))
     w.add_assertion(
         "probe_3_lobachevsky_matches_Vol_B3_within_1e-25",
-        computed=mp.nstr(abs(VOL_B3_LIT - 16 * (-mp.quad(
-            lambda t: mp.log(2*mp.sin(t)), [mp.mpf(0), mp.pi/4]))), 10),
-        expected="< 1e-15 (numerical agreement)",
-        tolerance=None,
+        computed=_lobachevsky_diff,
+        expected=0.0,
+        tolerance=1e-15,
+        unit="absolute",
         source="Vol(B_3) = 16 · Λ(π/4) (Thurston / standard ideal-tetrahedron decomposition)",
     )
 

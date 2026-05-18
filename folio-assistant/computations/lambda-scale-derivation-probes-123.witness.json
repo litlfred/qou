@@ -1,23 +1,25 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-18T15:26:46.928012+00:00",
-  "commitSha": "883529fb666e6a4133bfba2dba113a4e3b82a710",
+  "computedAt": "2026-05-18T16:21:40.630585+00:00",
+  "commitSha": "483196e3b058740bd1d34d35bbe4af214ddd5bad",
   "assertions": [
     {
       "name": "probe_3_lobachevsky_matches_Vol_B3_within_1e-25",
-      "computed": "0.0",
-      "expected": "< 1e-15 (numerical agreement)",
-      "passed": false,
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-15,
+      "unit": "absolute",
       "source": "Vol(B_3) = 16 · Λ(π/4) (Thurston / standard ideal-tetrahedron decomposition)"
     }
   ],
-  "allPassed": false,
-  "durationMs": 47,
+  "allPassed": true,
+  "durationMs": 49,
   "computation": "lambda-scale-derivation-probes-123",
   "scriptFile": "lambda_scale_derivation_probes_123.py",
-  "scriptHash": "978da174d1d8",
-  "scriptCommitSha": "6c834fd6713d8962a2b37c9ed932d2feee4158af",
+  "scriptHash": "bbf2264a0e32",
+  "scriptCommitSha": "178d50b5a339a8ece255566f297ac7db6b7391b6",
   "description": "Probes 1-3 on the substrate derivation of the Borromean baryon λ_scale. Builds on the H_4-conjugate-pair-counting derivation of the '5/2' leading term: at level n=4, partitions split as 2 conjugate pairs {((4),(1^4)), ((3,1),(2,1²))} + 1 self-conjugate {(2,2)} = 5/2 in the half-symmetric count. Probes investigate the h²·G correction, Skein S(B) for proton/neutron, strange baryon extensions, and Vol(B_3) = 8G identity.",
   "contentBlock": "conj:borromean-baryon-mass-formula",
   "parameters": {

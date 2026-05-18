@@ -120,7 +120,7 @@ def main() -> int:
 
     # Markov trace: τ_M(β) = Σ_λ y_λ · χ^λ(β)
     tau_M = sum(y_lambda[shape] * chis[shape] for shape in shapes)
-    tau_M = sp.simplify(tau_M)
+    tau_M = sp.cancel(tau_M)
     print(f"\nτ_M(β_Bor) = {tau_M}")
     w.add_data("tau_M_borromean_symbolic", str(tau_M))
 

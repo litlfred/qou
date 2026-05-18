@@ -104,7 +104,7 @@ def main() -> int:
 
     # Half-symmetric projection π_HS = (1/4) · Σ_λ χ^λ(β)
     pi_HS = sp.Rational(1, 4) * sum(chis[shape] for shape in shapes)
-    pi_HS = sp.simplify(pi_HS)
+    pi_HS = sp.cancel(pi_HS)
     print(f"\nπ_HS(β_stab) = (1/4) Σ_λ χ^λ:")
     print(f"  = {pi_HS}")
     w.add_data("pi_HS_borromean_stab_symbolic", str(pi_HS))

@@ -1,15 +1,15 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-18T14:26:43.162053+00:00",
-  "commitSha": "2a2bbc31e3318ae2fdda66e5ae1efd9402072299",
+  "computedAt": "2026-05-18T16:22:31.076884+00:00",
+  "commitSha": "483196e3b058740bd1d34d35bbe4af214ddd5bad",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 2951,
+  "durationMs": 2027,
   "computation": "lambda-scale-rd-h4-half-symmetric",
   "scriptFile": "lambda_scale_rd_h4_half_symmetric.py",
-  "scriptHash": "e5c2334e3082",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "1bcc1e3ac6a8",
+  "scriptCommitSha": "178d50b5a339a8ece255566f297ac7db6b7391b6",
   "description": "Option 1: H_4 symbolic Hoefsmit + half-symmetric projection. Computes π_HS(β_stab) = (1/4) Σ_λ χ^λ(β_stab) symbolically for β_stab = β_Bor · σ_3 ∈ B_4 (Markov-stabilised Borromean braid). Expands in h to test λ_scale = 5/2 - h²·G - h⁴·c_4 ansatz.",
   "contentBlock": "conj:lambda-scale-substrate-form",
   "data": {
@@ -42,7 +42,7 @@
         "expected": -1
       }
     },
-    "pi_HS_borromean_stab_symbolic": "(q**8*(-2*q**6 + 8*q**4 - 13*q**2 + 18) - 18*q**6 + 13*q**4 - 8*q**2 + 2)/(4*q**7)",
+    "pi_HS_borromean_stab_symbolic": "(-2*q**14 + 8*q**12 - 13*q**10 + 18*q**8 - 18*q**6 + 13*q**4 - 8*q**2 + 2)/(4*q**7)",
     "pi_HS_at_q1": "0",
     "pi_HS_h_expansion": "h_sym*(-2*h_sym**6 - 6*h_sym**4 - h_sym**2 + 5)/4",
     "h_coefficients": {
@@ -51,8 +51,8 @@
       "h4": "0",
       "h6": "0"
     },
-    "pi_HS_at_q0_numeric": 0.2584333352963845,
-    "lambda_p_target_numeric": 2.459953407714213,
+    "pi_HS_at_q0_numeric": 0.25843333529638407,
+    "lambda_p_target_numeric": 2.4599527876829836,
     "conjecture_validation": {
       "h0_equals_5_over_2": false,
       "h2_equals_minus_G_within_1pct": false,

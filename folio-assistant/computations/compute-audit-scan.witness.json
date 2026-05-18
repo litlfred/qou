@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T16:18:09.124942+00:00",
-  "commitSha": "606ee48dcaddbf0c640e3bf242a3ba929fb57d19",
+  "computedAt": "2026-05-18T16:23:00.456835+00:00",
+  "commitSha": "483196e3b058740bd1d34d35bbe4af214ddd5bad",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 7,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "d9aa432d54f9",
@@ -24,8 +24,8 @@
   },
   "data": {
     "by_pattern_count": {
-      "P15": 159,
-      "P16": 121,
+      "P15": 162,
+      "P16": 118,
       "P21": 32,
       "P30": 97,
       "P31": 26
@@ -142,6 +142,7 @@
         "file": "lambda_scale_rd_hoefsmit_symbolic.py",
         "count": 7,
         "patterns": [
+          "P15",
           "P16"
         ]
       },
@@ -1248,6 +1249,13 @@
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
       },
       {
+        "pattern": "P15",
+        "file": "lambda_scale_all_c_i_family_a.py",
+        "line": 84,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
         "pattern": "P16",
         "file": "lambda_scale_all_c_i_family_a.py",
         "line": 69,
@@ -1258,13 +1266,6 @@
         "pattern": "P16",
         "file": "lambda_scale_all_c_i_family_a.py",
         "line": 75,
-        "snippet": "sp.simplify(...)",
-        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
-      },
-      {
-        "pattern": "P16",
-        "file": "lambda_scale_all_c_i_family_a.py",
-        "line": 84,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
@@ -1318,16 +1319,16 @@
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
-        "pattern": "P16",
+        "pattern": "P15",
         "file": "lambda_scale_rd_h4_half_symmetric.py",
-        "line": 78,
-        "snippet": "sp.simplify(...)",
-        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+        "line": 107,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P16",
         "file": "lambda_scale_rd_h4_half_symmetric.py",
-        "line": 107,
+        "line": 78,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
@@ -1346,6 +1347,13 @@
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
+        "pattern": "P15",
+        "file": "lambda_scale_rd_hoefsmit_symbolic.py",
+        "line": 123,
+        "snippet": "sp.cancel(...)",
+        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
+      },
+      {
         "pattern": "P16",
         "file": "lambda_scale_rd_hoefsmit_symbolic.py",
         "line": 80,
@@ -1356,13 +1364,6 @@
         "pattern": "P16",
         "file": "lambda_scale_rd_hoefsmit_symbolic.py",
         "line": 115,
-        "snippet": "sp.simplify(...)",
-        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
-      },
-      {
-        "pattern": "P16",
-        "file": "lambda_scale_rd_hoefsmit_symbolic.py",
-        "line": 123,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
