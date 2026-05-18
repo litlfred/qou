@@ -501,40 +501,93 @@ Per prepared PR:
    `origin/main`.  The walk:
 
    ```bash
-   # Iterate over PRs this watcher prepared (tracked in the
-   # ledger's "watching" section).  For each:
-   git fetch origin main 2>/dev/null
-   for pr_branch in $(awk '/^### Watching/,/^###/{print}' \
-       todos/${NAME}-ledger.md | grep -oE 'claude/iw-[a-z0-9-]+' | sort -u); do
-     # Skip closed PRs (ledger may have stale entries).
-     pr_state=$(mcp__github__pull_request_read method=get \
-                pullNumber=<n> owner=litlfred repo=qou \
-                | jq -r '.state')
-     [ "$pr_state" = "open" ] || continue
+   # One `git fetch origin` outside the loop refreshes every
+   # remote-tracking ref the loop will use.  Per-branch
+   # `git fetch origin <name>` is fragile — it updates
+   # FETCH_HEAD but only updates `refs/remotes/origin/<name>`
+   # when the branch is covered by the remote's fetch refspec.
+   git fetch origin
 
-     # Compute distance from main.
-     git fetch origin "$pr_branch" 2>/dev/null
-     behind=$(git rev-list --count "origin/$pr_branch..origin/main")
-     touches_diff=$(git diff --name-only \
-       "origin/main" "origin/$pr_branch" \
-       | xargs -I {} git log --oneline \
-           "origin/$pr_branch..origin/main" -- {} | wc -l)
+   # Extract branches under the "### Watching" subsection.  The
+   # closing pattern is `^## ` (next top-level header), NOT
+   # `^### ` — `/^### Watching/,/^### /` collapses to one line
+   # (the opening line itself matches the closer).
+   pr_branches=$(awk '/^### Watching/,/^## /' \
+       "todos/${NAME}-ledger.md" \
+       | grep -oE 'claude/iw-[a-z0-9-]+' | sort -u)
 
-     # Rebase trigger: ≥ 3 commits behind, OR ≥ 1 main commit
-     # touched the PR's diff scope.
-     if [ "$behind" -ge 3 ] || [ "$touches_diff" -ge 1 ]; then
-       # Rebase in a worktree to avoid disturbing the current branch.
+   for pr_branch in $pr_branches; do
+     # Map branch → PR number explicitly.  Either via `gh`:
+     pr_num=$(gh pr list --head "$pr_branch" --state open \
+              --json number --jq '.[0].number')
+     # ... or via the MCP equivalent:
+     # mcp__github__list_pull_requests head="$pr_branch" state=open
+     #   | jq '.[0].number'
+     [ -n "$pr_num" ] || continue   # closed / no open PR; skip
+
+     # Distance from main on the branch's tip.
+     behind=$(git rev-list --count \
+              "origin/$pr_branch..origin/main")
+
+     # Diff-scope overlap: which files did MAIN change since the
+     # branch diverged, intersected with files the BRANCH has
+     # changed since divergence?  Diffing the two tips
+     # (`git diff origin/main origin/$pr_branch`) mis-attributes
+     # main's own movement to the PR's scope.  Use merge-base.
+     base=$(git merge-base "origin/main" "origin/$pr_branch")
+     # `xargs -r` skips the inner command entirely when the
+     # piped file list is empty (otherwise an empty diff would
+     # invoke `git log` once with no path filter and count all
+     # main-commits, mis-firing the trigger on new branches).
+     touches_diff=$(
+       git diff --name-only "$base" "origin/$pr_branch" \
+       | xargs -r -I {} git log --oneline \
+           "$base..origin/main" -- {} \
+       | wc -l
+     )
+
+     # Rebase trigger: ≥ 3 commits behind OR ≥ 1 file in the
+     # intersection of (main-changed-since-base) ∩
+     # (branch-changed-since-base).
+     if [ "$behind" -lt 3 ] && [ "$touches_diff" -eq 0 ]; then
+       continue
+     fi
+
+     # Rebase in a worktree.  Use a SUBSHELL so the per-iteration
+     # `trap … EXIT` is scoped to this iteration; a `trap` set in
+     # the outer shell is process-global, gets overwritten each
+     # iteration, and only fires once at shell exit (worktrees
+     # leak).
+     (
        worktree=$(mktemp -d /tmp/iw-rebase.XXXXXX)
        trap 'git worktree remove --force "$worktree" 2>/dev/null; \
              rm -rf "$worktree"' EXIT
+
        git worktree add "$worktree" "origin/$pr_branch" >/dev/null
-       ( cd "$worktree" && git rebase origin/main ) && \
-         ( cd "$worktree" && git push --force-with-lease \
-             origin "HEAD:$pr_branch" ) || \
-         echo "CONFLICT on $pr_branch — flag to author"
-       # trap fires on EXIT
-     fi
-     # Update ledger row with last-rebase-against-main SHA.
+
+       # Explicit if/then/else so rebase-conflict and push-fail
+       # are distinguishable (the classic `A && B || C` collapses
+       # a push failure into the conflict branch — wrong).
+       if ( cd "$worktree" && git rebase origin/main ); then
+         if ( cd "$worktree" && git push --force-with-lease \
+                origin "HEAD:$pr_branch" ); then
+           echo "REBASED + PUSHED $pr_branch"
+         else
+           echo "PUSH FAILED on $pr_branch (lease rejected / remote moved) — retry next cycle"
+         fi
+       else
+         # Conflict — abort so the worktree is in a known state
+         # before the trap removes it.
+         ( cd "$worktree" && git rebase --abort 2>/dev/null ) \
+           || true
+         echo "REBASE CONFLICT on $pr_branch — flag to author (§4e)"
+       fi
+       # trap fires on subshell exit, cleaning THIS iteration's
+       # $worktree (NOT the last loop iteration's).
+     )
+
+     # Update ledger row with last-rebase-against-main SHA on
+     # success (rebased + pushed lines above).
    done
    ```
 
