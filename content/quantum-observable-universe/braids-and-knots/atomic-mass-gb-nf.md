@@ -20,8 +20,8 @@ discipline statuses**:
 
 Per the [three-calibration discipline](three-calibration-inputs.md),
 the (constituent) and (six-term spectral) forms violate the rule by
-admitting additional calibrations beyond CAL-1/2/3; the §Open §Negative
-result on shift-anchor sections below document the empirical
+admitting additional calibrations beyond CAL-1/2/3; the §Open and
+§Negative-result shift-anchor sections below document the empirical
 falsifications and the structural barriers to closure. Treat numerical
 outputs from those two forms as illustrative until the substrate-pure
 replacements land.
