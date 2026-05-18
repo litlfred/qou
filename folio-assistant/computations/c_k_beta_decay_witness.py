@@ -64,10 +64,10 @@ import mpmath as mp
 # Set 50 dps BEFORE importing codata_constants — its mp.mpf
 # constants are built at import time and otherwise inherit the
 # default 15 dps (per Copilot review on PR #639).
-mp.mp.dps = 50
-
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
+from _precision import set_compute_dps, fmt  # noqa: E402
+set_compute_dps()
 
 from codata_constants import M_E_MEV, Q_BETA_MEV  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402

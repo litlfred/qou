@@ -40,13 +40,15 @@ HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
+
+from _precision import set_compute_dps, fmt  # noqa: E402
 from mpmath import mp, mpf  # noqa: E402
 
 from codata_constants import M_E_MEV  # noqa: E402
 from q_parameter import HA_MP, Q_MP  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
-mp.dps = 50
+set_compute_dps()
 
 
 def _mpf_from_str(s: str) -> "mpf":

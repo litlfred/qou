@@ -57,7 +57,8 @@ OUTPUT_CHAIN = HERE / "proton-mass-50dps.derivation.json"
 # per Gemini PR #484 review — see that registry's docstring for the
 # precision-lift roadmap).
 import mpmath as mp  # 50-dps arithmetic per the no-float64 directive
-mp.mp.dps = 50
+from _precision import set_compute_dps, fmt  # noqa: E402
+set_compute_dps()
 
 # CAL-1: m_e from codata_constants registry (P31-triage Phase A).
 from codata_constants import M_E_MEV as M_E_MEV_CODATA

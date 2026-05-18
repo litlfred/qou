@@ -34,7 +34,8 @@ warnings.filterwarnings("ignore")
 sys.path.insert(0, str(Path(__file__).parent))
 
 import mpmath as mp
-mp.mp.dps = 50
+from _precision import set_compute_dps, fmt  # noqa: E402
+set_compute_dps()
 
 from hecke_core import (
     atom_per_generator_volumes,

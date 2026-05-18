@@ -47,8 +47,8 @@ sys.path.insert(0, str(HERE))
 
 from codata_constants import M_E_MEV, M_P_MEV_VALIDATION, M_N_MEV_VALIDATION  # noqa: E402
 
-mp.mp.dps = 50
-
+from _precision import set_compute_dps, fmt
+set_compute_dps()  # mp.mp.dps via QOU_COMPUTE_DPS (default 50)
 from experimental_constants import VOL_BORROMEAN_50DPS_STR  # noqa: E402
 
 VOL_BORROMEAN = mp.mpf(VOL_BORROMEAN_50DPS_STR)
@@ -154,20 +154,20 @@ def main() -> int:
                 "directly to ΔS precision."
             ),
             "data": {
-                "q_0_50dps": str(q),
-                "Vol_Borromean_over_hbar_q_squared": str(V),
-                "Q_beta_AME_MeV": str(Q_beta_AME),
-                "Q_beta_predicted_closed_form_MeV": str(Q_beta_pred),
+                "q_0_50dps": fmt(q),
+                "Vol_Borromean_over_hbar_q_squared": fmt(V),
+                "Q_beta_AME_MeV": fmt(Q_beta_AME),
+                "Q_beta_predicted_closed_form_MeV": fmt(Q_beta_pred),
                 "eps_Q_pct": float(eps_Q * 100),
                 "eps_Q_ppm": float(eps_Q * 1e6),
-                "delta_S_target_dimensionless": str(delta_S_target),
-                "delta_S_derived_dimensionless": str(delta_S_derived),
+                "delta_S_target_dimensionless": fmt(delta_S_target),
+                "delta_S_derived_dimensionless": fmt(delta_S_derived),
                 "eps_delta_S_pct": float(eps_delta_S * 100),
                 "eps_delta_S_ppm": float(eps_delta_S * 1e6),
-                "damping_factor_Q_beta_over_Q_beta_plus_m_e": str(damping),
-                "predicted_eps_delta_S_from_damping_x_eps_Q": str(eps_delta_S_predicted),
+                "damping_factor_Q_beta_over_Q_beta_plus_m_e": fmt(damping),
+                "predicted_eps_delta_S_from_damping_x_eps_Q": fmt(eps_delta_S_predicted),
                 "predicted_eps_delta_S_ppm": float(eps_delta_S_predicted * 1e6),
-                "chain_match_relative_error": str(chain_match),
+                "chain_match_relative_error": fmt(chain_match),
                 "verdict": verdict,
                 "Q_beta_precision_for_1_ppb_on_delta_S": float(1e-3 / damping),
             },

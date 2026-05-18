@@ -1,0 +1,847 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-18T16:41:20.906507+00:00",
+  "commitSha": "74aa18470524511148fc9b8146868f090fcae222",
+  "assertions": [
+    {
+      "name": "no_i8_violations",
+      "computed": 0.0,
+      "expected": 1.0,
+      "passed": false,
+      "tolerance": 0.0,
+      "unit": "boolean (1.0 = no substrate-pure script leaks float64)",
+      "source": "Closure gate: when this passes, every substrate-pure-banner script keeps its derived mpf values through the final witness emit without precision loss."
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 8,
+  "computation": "float64-leak-audit",
+  "scriptFile": "float64_leak_audit.py",
+  "scriptHash": "96fcba75efa4",
+  "scriptCommitSha": "unknown",
+  "description": "I8 audit per local/compute-integration-watcher: scripts whose docstrings claim substrate-pure / canonical / 50-dps precision are scanned for float64 leaks — `np.float64(...)`, `float(...)` casts on derived mpf values, f-string precision clipping, and `==` comparison on mpf values. Antipattern shapes are matched against the four catalogue items. False-positive guards: lines inside builder `add_data` / `add_parameter` / `add_assertion` calls are classified as `ok_witness_emit` (final-step JSON serialization is expected); lines followed within 3 by `mp.mpf(str(...))` re-wrap are `false_positive_candidate`.",
+  "contentBlock": "I8 antipattern (compute-integration-watcher.md §antipatterns)",
+  "parameters": {
+    "substrate_banner_scripts_total": 14
+  },
+  "data": {
+    "by_result": {
+      "ok_no_leaks": 4,
+      "i8_violation": 9,
+      "ok_with_witness_emit_or_fp": 1
+    },
+    "rows": [
+      {
+        "path": "folio-assistant/computations/atomic_braid_mass_terms.py",
+        "substrate_banner": true,
+        "hit_count": 0,
+        "violation_count": 0,
+        "witness_emit_count": 0,
+        "false_positive_count": 0,
+        "hits": [],
+        "result": "ok_no_leaks"
+      },
+      {
+        "path": "folio-assistant/computations/hecke_core_symbolic.py",
+        "substrate_banner": true,
+        "hit_count": 0,
+        "violation_count": 0,
+        "witness_emit_count": 0,
+        "false_positive_count": 0,
+        "hits": [],
+        "result": "ok_no_leaks"
+      },
+      {
+        "path": "folio-assistant/computations/nv1_candidate_a_doubleprime.py",
+        "substrate_banner": true,
+        "hit_count": 0,
+        "violation_count": 0,
+        "witness_emit_count": 0,
+        "false_positive_count": 0,
+        "hits": [],
+        "result": "ok_no_leaks"
+      },
+      {
+        "path": "folio-assistant/computations/probe_T5_categorical_attribution.py",
+        "substrate_banner": true,
+        "hit_count": 18,
+        "violation_count": 16,
+        "witness_emit_count": 2,
+        "false_positive_count": 0,
+        "hits": [
+          {
+            "line_number": 80,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "print(f\"    E_0 = m_e/(q(q-1))     = {float(E_0):>+11.6f} MeV\")"
+          },
+          {
+            "line_number": 81,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "print(f\"    m_e                     = {float(m_e):>+11.6f} MeV\")"
+          },
+          {
+            "line_number": 82,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "print(f\"    h = q - q⁻¹             = {float(h):>+11.6f}\")"
+          },
+          {
+            "line_number": 83,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "print(f\"    ℏ_q = (q-1)/q           = {float(hbar):>+11.6f}\")"
+          },
+          {
+            "line_number": 84,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "print(f\"    z (Markov parameter)    = {float(z):>+11.6f}\")"
+          },
+          {
+            "line_number": 85,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "print(f\"    b² (Kashiwara)          = {float(b_sq):>+11.6f}\")"
+          },
+          {
+            "line_number": 86,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "print(f\"    [2]_q, [3]_q, [4]_q     = {float(bk2):.4f}, {float(bk3):.4f}, {float(bk4):.4f}\")"
+          },
+          {
+            "line_number": 86,
+            "pattern": "fstring_precision_f",
+            "context": "violation",
+            "code_snippet": "print(f\"    [2]_q, [3]_q, [4]_q     = {float(bk2):.4f}, {float(bk3):.4f}, {float(bk4):.4f}\")"
+          },
+          {
+            "line_number": 87,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "print(f\"    log(1/h)                = {float(log_inv_h):>+11.6f}\")"
+          },
+          {
+            "line_number": 96,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "print(f\"    T5({atom:>8}) = {float(t):>+10.5f} MeV\")"
+          },
+          {
+            "line_number": 127,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "gap_p = float((val - targets[\"proton\"]) / targets[\"proton\"] * 100)"
+          },
+          {
+            "line_number": 128,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "gap_n = float((val - targets[\"neutron\"]) / targets[\"neutron\"] * 100)"
+          },
+          {
+            "line_number": 131,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "\"value_MeV\": float(val),"
+          },
+          {
+            "line_number": 151,
+            "pattern": "fstring_precision_f",
+            "context": "violation",
+            "code_snippet": "print(f\"    Z↔N (proton - neutron) shift in candidate: {best['value_MeV'] - best['value_MeV']:.4f} (0 — symmetric)\")"
+          },
+          {
+            "line_number": 152,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "print(f\"    Empirical Z↔N shift: T5(p) - T5(n) = {float(targets['proton'] - targets['neutron']):+.4f} MeV\")"
+          },
+          {
+            "line_number": 157,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "print(f\"    {float(targets['proton'] - targets['neutron']):+.3f} MeV. The T5 chirality-BW term has a\")"
+          },
+          {
+            "line_number": 178,
+            "pattern": "float_cast",
+            "context": "ok_witness_emit",
+            "code_snippet": ".add_data(\"targets_MeV\", {atom: float(t) for atom, t in targets.items()})"
+          },
+          {
+            "line_number": 179,
+            "pattern": "float_cast",
+            "context": "ok_witness_emit",
+            "code_snippet": ".add_data(\"z_n_asymmetry_MeV\", float(targets[\"proton\"] - targets[\"neutron\"]))"
+          }
+        ],
+        "result": "i8_violation"
+      },
+      {
+        "path": "folio-assistant/computations/probe_V_222_projection.py",
+        "substrate_banner": true,
+        "hit_count": 12,
+        "violation_count": 9,
+        "witness_emit_count": 3,
+        "false_positive_count": 0,
+        "hits": [
+          {
+            "line_number": 118,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "print(f\"  {str(shape):>20} {float(y):>+16.10f} {float(chi_num):>+14.6f} {float(contrib):>+16.6f}{marker}\")"
+          },
+          {
+            "line_number": 121,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "\"y_lambda_at_q0\": float(y),"
+          },
+          {
+            "line_number": 122,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "\"chi_lambda_at_q0\": float(chi_num),"
+          },
+          {
+            "line_number": 123,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "\"per_block_contribution_at_q0\": float(contrib),"
+          },
+          {
+            "line_number": 152,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "ratio = abs(v222_contrib / float(F_3_value_at_q0)) if F_3_value_at_q0 != 0 else float('inf')"
+          },
+          {
+            "line_number": 153,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "same_sign = (v222_contrib > 0) == (float(F_3_value_at_q0) > 0)"
+          },
+          {
+            "line_number": 157,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "print(f\"    Framework F_3 = -2·b³·ℏ_q^6      : {float(F_3_value_at_q0):+.6e}\")"
+          },
+          {
+            "line_number": 158,
+            "pattern": "fstring_precision_e",
+            "context": "violation",
+            "code_snippet": "print(f\"    Ratio (magnitudes)               : {ratio:.2e}×\")"
+          },
+          {
+            "line_number": 164,
+            "pattern": "fstring_precision_e",
+            "context": "violation",
+            "code_snippet": "print(f\"    !! MAGNITUDE MISMATCH ({ratio:.0e}×) — V_(2,2,2) ≠ F_3 channel.\")"
+          },
+          {
+            "line_number": 190,
+            "pattern": "float_cast",
+            "context": "ok_witness_emit",
+            "code_snippet": ".add_data(\"total_trM_sigma1_sq\", float(total))"
+          },
+          {
+            "line_number": 191,
+            "pattern": "float_cast",
+            "context": "ok_witness_emit",
+            "code_snippet": ".add_data(\"closed_form_1_plus_q_minus_1_over_sqrt_q\", float(closed_form))"
+          },
+          {
+            "line_number": 193,
+            "pattern": "float_cast",
+            "context": "ok_witness_emit",
+            "code_snippet": ".add_data(\"framework_F_3_value_at_q0\", float(F_3_value_at_q0))"
+          }
+        ],
+        "result": "i8_violation"
+      },
+      {
+        "path": "folio-assistant/computations/probe_canonical_chi_rust_vs_sympy.py",
+        "substrate_banner": true,
+        "hit_count": 3,
+        "violation_count": 3,
+        "witness_emit_count": 0,
+        "false_positive_count": 0,
+        "hits": [
+          {
+            "line_number": 86,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "match = float(rel_err) < 1e-11"
+          },
+          {
+            "line_number": 89,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "rel_err_str = f\"{float(rel_err):.2e}\""
+          },
+          {
+            "line_number": 89,
+            "pattern": "fstring_precision_e",
+            "context": "violation",
+            "code_snippet": "rel_err_str = f\"{float(rel_err):.2e}\""
+          }
+        ],
+        "result": "i8_violation"
+      },
+      {
+        "path": "folio-assistant/computations/probe_flavor_dressed_mass_split.py",
+        "substrate_banner": true,
+        "hit_count": 1,
+        "violation_count": 0,
+        "witness_emit_count": 1,
+        "false_positive_count": 0,
+        "hits": [
+          {
+            "line_number": 216,
+            "pattern": "float_cast",
+            "context": "ok_witness_emit",
+            "code_snippet": "computed=float(abs(residual_vs_codata)),"
+          }
+        ],
+        "result": "ok_with_witness_emit_or_fp"
+      },
+      {
+        "path": "folio-assistant/computations/probe_flavor_split_subleading.py",
+        "substrate_banner": true,
+        "hit_count": 17,
+        "violation_count": 13,
+        "witness_emit_count": 4,
+        "false_positive_count": 0,
+        "hits": [
+          {
+            "line_number": 98,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "base_ppm = float((base - TARGET) / TARGET * 1e6)"
+          },
+          {
+            "line_number": 109,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "derive_ppm = float((refined_derive - TARGET) / TARGET * 1e6)"
+          },
+          {
+            "line_number": 115,
+            "pattern": "fstring_precision_f",
+            "context": "violation",
+            "code_snippet": "print(f\"    tightening        = {abs(base_ppm)/abs(derive_ppm):.1f}× over leading order\")"
+          },
+          {
+            "line_number": 122,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "emp_ppm = float((refined_emp - TARGET) / TARGET * 1e6)"
+          },
+          {
+            "line_number": 128,
+            "pattern": "fstring_precision_f",
+            "context": "violation",
+            "code_snippet": "print(f\"    tightening        = {abs(base_ppm)/abs(emp_ppm):.1f}× over leading order\")"
+          },
+          {
+            "line_number": 146,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "ppm = float((val - TARGET) / TARGET * 1e6)"
+          },
+          {
+            "line_number": 153,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "f\"(residual {float((base*M_N_AVG - DELTA_M)*1000):+.3f} keV)\")"
+          },
+          {
+            "line_number": 155,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "f\"(residual {float((refined_derive*M_N_AVG - DELTA_M)*1000):+.3f} keV)\")"
+          },
+          {
+            "line_number": 157,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "f\"(residual {float((refined_emp*M_N_AVG - DELTA_M)*1000):+.3f} keV)\")"
+          },
+          {
+            "line_number": 162,
+            "pattern": "fstring_precision_f",
+            "context": "violation",
+            "code_snippet": "print(f\"  closing the residual from {abs(base_ppm):.0f} ppm to {abs(derive_ppm):.0f} ppm.\")"
+          },
+          {
+            "line_number": 163,
+            "pattern": "fstring_precision_f",
+            "context": "violation",
+            "code_snippet": "print(f\"  (1 + (q-1)³) gives {abs(emp_ppm):.0f} ppm but its q³ multiplier is\")"
+          },
+          {
+            "line_number": 181,
+            "pattern": "float_cast",
+            "context": "ok_witness_emit",
+            "code_snippet": "\"value\": str(base), \"residual_ppm\": float(base_ppm),"
+          },
+          {
+            "line_number": 190,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "\"residual_ppm\": float(derive_ppm),"
+          },
+          {
+            "line_number": 191,
+            "pattern": "float_cast",
+            "context": "ok_witness_emit",
+            "code_snippet": "\"tightening_over_leading\": float(abs(base_ppm) / abs(derive_ppm)),"
+          },
+          {
+            "line_number": 202,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "\"residual_ppm\": float(emp_ppm),"
+          },
+          {
+            "line_number": 203,
+            "pattern": "float_cast",
+            "context": "ok_witness_emit",
+            "code_snippet": "\"tightening_over_leading\": float(abs(base_ppm) / abs(emp_ppm)),"
+          },
+          {
+            "line_number": 227,
+            "pattern": "float_cast",
+            "context": "ok_witness_emit",
+            "code_snippet": "computed=abs(float(derive_ppm)),"
+          }
+        ],
+        "result": "i8_violation"
+      },
+      {
+        "path": "folio-assistant/computations/probe_flavor_split_substrate.py",
+        "substrate_banner": true,
+        "hit_count": 11,
+        "violation_count": 8,
+        "witness_emit_count": 3,
+        "false_positive_count": 0,
+        "hits": [
+          {
+            "line_number": 136,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "rq = float((val - TGT_QUARK) / TGT_QUARK * 100)"
+          },
+          {
+            "line_number": 153,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "pct_delta_m = float((delta_m_pred - DELTA_M) / DELTA_M * 100)"
+          },
+          {
+            "line_number": 156,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "f\"{pct_delta_m:+.4f}%   ({float((delta_m_pred-DELTA_M)*1000):+.3f} keV)\")"
+          },
+          {
+            "line_number": 163,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "print(f\"  {'α_EM = 1/137':30s} = {float(mpf(1)/137):.8f}   \""
+          },
+          {
+            "line_number": 164,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "f\"({float((mpf(1)/137 - TGT_QUARK)/TGT_QUARK*100):+.2f}%)\")"
+          },
+          {
+            "line_number": 166,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "f\"{float(mpf('0.118')/(4*mp.pi)):.8f}   \""
+          },
+          {
+            "line_number": 166,
+            "pattern": "fstring_precision_f",
+            "context": "violation",
+            "code_snippet": "f\"{float(mpf('0.118')/(4*mp.pi)):.8f}   \""
+          },
+          {
+            "line_number": 167,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "f\"({float((mpf('0.118')/(4*mp.pi) - TGT_QUARK)/TGT_QUARK*100):+.2f}%)\")"
+          },
+          {
+            "line_number": 221,
+            "pattern": "float_cast",
+            "context": "ok_witness_emit",
+            "code_snippet": "\"alpha_EM\": float(mpf(1) / 137),"
+          },
+          {
+            "line_number": 222,
+            "pattern": "float_cast",
+            "context": "ok_witness_emit",
+            "code_snippet": "\"alpha_S_4pi\": float(mpf(\"0.118\") / (4 * mp.pi)),"
+          },
+          {
+            "line_number": 239,
+            "pattern": "float_cast",
+            "context": "ok_witness_emit",
+            "code_snippet": "computed=float(mp.fabs((delta_sub - TGT_QUARK) / TGT_QUARK)),"
+          }
+        ],
+        "result": "i8_violation"
+      },
+      {
+        "path": "folio-assistant/computations/probe_heavy_atom_t1.py",
+        "substrate_banner": true,
+        "hit_count": 9,
+        "violation_count": 9,
+        "witness_emit_count": 0,
+        "false_positive_count": 0,
+        "hits": [
+          {
+            "line_number": 102,
+            "pattern": "fstring_precision_f",
+            "context": "violation",
+            "code_snippet": "f\"({time.perf_counter()-t_y:.1f}s)\","
+          },
+          {
+            "line_number": 107,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "y_vals.items(), key=lambda kv: abs(float(kv[1])), reverse=True"
+          },
+          {
+            "line_number": 115,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "y_f = float(y)"
+          },
+          {
+            "line_number": 125,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "contrib = y_f * float(chi)"
+          },
+          {
+            "line_number": 132,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "\"chi_at_q0\": float(chi),"
+          },
+          {
+            "line_number": 141,
+            "pattern": "fstring_precision_f",
+            "context": "violation",
+            "code_snippet": "f\"dim={dim:>5} t={elapsed:.1f}s \""
+          },
+          {
+            "line_number": 148,
+            "pattern": "fstring_precision_f",
+            "context": "violation",
+            "code_snippet": "f\"  DONE: tr_M = {total:.10f}  \""
+          },
+          {
+            "line_number": 150,
+            "pattern": "fstring_precision_f",
+            "context": "violation",
+            "code_snippet": "f\"in {elapsed:.0f}s\","
+          },
+          {
+            "line_number": 178,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "q0 = float(Q_0_FLOAT)"
+          }
+        ],
+        "result": "i8_violation"
+      },
+      {
+        "path": "folio-assistant/computations/probe_symbolic_sdp_derivation_breakout.py",
+        "substrate_banner": true,
+        "hit_count": 33,
+        "violation_count": 28,
+        "witness_emit_count": 5,
+        "false_positive_count": 0,
+        "hits": [
+          {
+            "line_number": 190,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "print(f\"      block (3):     {trM_3_val}     (pct: {float(trM_3_val/trM_full_val)*100:.4f}%)\")"
+          },
+          {
+            "line_number": 190,
+            "pattern": "fstring_precision_f",
+            "context": "violation",
+            "code_snippet": "print(f\"      block (3):     {trM_3_val}     (pct: {float(trM_3_val/trM_full_val)*100:.4f}%)\")"
+          },
+          {
+            "line_number": 191,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "print(f\"      block (2,1):   {trM_21_val}    (pct: {float(trM_21_val/trM_full_val)*100:.4f}%)\")"
+          },
+          {
+            "line_number": 191,
+            "pattern": "fstring_precision_f",
+            "context": "violation",
+            "code_snippet": "print(f\"      block (2,1):   {trM_21_val}    (pct: {float(trM_21_val/trM_full_val)*100:.4f}%)\")"
+          },
+          {
+            "line_number": 192,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "print(f\"      block (1,1,1): {trM_111_val}   (pct: {float(trM_111_val/trM_full_val)*100:.4f}%)\")"
+          },
+          {
+            "line_number": 192,
+            "pattern": "fstring_precision_f",
+            "context": "violation",
+            "code_snippet": "print(f\"      block (1,1,1): {trM_111_val}   (pct: {float(trM_111_val/trM_full_val)*100:.4f}%)\")"
+          },
+          {
+            "line_number": 200,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "print(f\"    Discrepancy ratio: {float(trM_norm) / 1.0653:.6f}\")"
+          },
+          {
+            "line_number": 200,
+            "pattern": "fstring_precision_f",
+            "context": "violation",
+            "code_snippet": "print(f\"    Discrepancy ratio: {float(trM_norm) / 1.0653:.6f}\")"
+          },
+          {
+            "line_number": 208,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "print(f\"      χ_(2,1)(β_p) ≈ {float(chi_21_val):.4f}  vs  χ_(3) = χ_(1,1,1) = 1\")"
+          },
+          {
+            "line_number": 208,
+            "pattern": "fstring_precision_f",
+            "context": "violation",
+            "code_snippet": "print(f\"      χ_(2,1)(β_p) ≈ {float(chi_21_val):.4f}  vs  χ_(3) = χ_(1,1,1) = 1\")"
+          },
+          {
+            "line_number": 209,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "print(f\"      y_(2,1) > y_(3), y_(1,1,1)  ({float(y_21_val):.4f} vs {float(y_3_val):.4f})\")"
+          },
+          {
+            "line_number": 209,
+            "pattern": "fstring_precision_f",
+            "context": "violation",
+            "code_snippet": "print(f\"      y_(2,1) > y_(3), y_(1,1,1)  ({float(y_21_val):.4f} vs {float(y_3_val):.4f})\")"
+          },
+          {
+            "line_number": 214,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "print(f\"      ratio (3)/(2,1)     = {float(trM_3_val/trM_21_val):.6f}\")"
+          },
+          {
+            "line_number": 214,
+            "pattern": "fstring_precision_f",
+            "context": "violation",
+            "code_snippet": "print(f\"      ratio (3)/(2,1)     = {float(trM_3_val/trM_21_val):.6f}\")"
+          },
+          {
+            "line_number": 215,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "print(f\"      ratio (1,1,1)/(2,1) = {float(trM_111_val/trM_21_val):.6f}\")"
+          },
+          {
+            "line_number": 215,
+            "pattern": "fstring_precision_f",
+            "context": "violation",
+            "code_snippet": "print(f\"      ratio (1,1,1)/(2,1) = {float(trM_111_val/trM_21_val):.6f}\")"
+          },
+          {
+            "line_number": 218,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "print(f\"    ~{float(trM_3_val/trM_full_val)*100:.2f}% of total, damped by factor\")"
+          },
+          {
+            "line_number": 218,
+            "pattern": "fstring_precision_f",
+            "context": "violation",
+            "code_snippet": "print(f\"    ~{float(trM_3_val/trM_full_val)*100:.2f}% of total, damped by factor\")"
+          },
+          {
+            "line_number": 219,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "print(f\"    1/χ_(2,1) ≈ {1/float(chi_21_val):.4f} relative to the standard block.\")"
+          },
+          {
+            "line_number": 219,
+            "pattern": "fstring_precision_f",
+            "context": "violation",
+            "code_snippet": "print(f\"    1/χ_(2,1) ≈ {1/float(chi_21_val):.4f} relative to the standard block.\")"
+          }
+        ],
+        "result": "i8_violation"
+      },
+      {
+        "path": "folio-assistant/computations/probe_t2_t3_proton_neutron_a1.py",
+        "substrate_banner": true,
+        "hit_count": 11,
+        "violation_count": 8,
+        "witness_emit_count": 3,
+        "false_positive_count": 0,
+        "hits": [
+          {
+            "line_number": 132,
+            "pattern": "fstring_precision_e",
+            "context": "violation",
+            "code_snippet": "print(f\"    T2 total = {r['t2_total']:.3e}\")"
+          },
+          {
+            "line_number": 136,
+            "pattern": "fstring_precision_e",
+            "context": "violation",
+            "code_snippet": "print(f\"    T3 raw sum = {r['t3_raw_sum']:.3e}\")"
+          },
+          {
+            "line_number": 137,
+            "pattern": "fstring_precision_f",
+            "context": "violation",
+            "code_snippet": "print(f\"    z_mark² = {r['z_mark_sq']:.4f}\")"
+          },
+          {
+            "line_number": 138,
+            "pattern": "fstring_precision_e",
+            "context": "violation",
+            "code_snippet": "print(f\"    T3 after z² scaling = {r['t3_after_z_sq_scaling']:.3e}\")"
+          },
+          {
+            "line_number": 139,
+            "pattern": "fstring_precision_e",
+            "context": "violation",
+            "code_snippet": "print(f\"  T2 + T3 = {r['t2_plus_t3']:.3e}\")"
+          },
+          {
+            "line_number": 149,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "m_p_hecke_value = float(m_p_hecke_path_a_at_q0())"
+          },
+          {
+            "line_number": 151,
+            "pattern": "fstring_precision_f",
+            "context": "violation",
+            "code_snippet": "print(f\"    m_p_Hecke = {m_p_hecke_value:.6f} (in same units as T1 and T4)\")"
+          },
+          {
+            "line_number": 153,
+            "pattern": "fstring_precision_e",
+            "context": "violation",
+            "code_snippet": "print(f\"  T2+T3 (proton, this probe, raw): {proton_result['t2_plus_t3']:.3e}\")"
+          },
+          {
+            "line_number": 190,
+            "pattern": "float_cast",
+            "context": "ok_witness_emit",
+            "code_snippet": ".add_data(\"ratio_t2t3_over_m_p_hecke\", float(proton_result['t2_plus_t3'] / m_p_hecke_value))"
+          },
+          {
+            "line_number": 191,
+            "pattern": "float_cast",
+            "context": "ok_witness_emit",
+            "code_snippet": ".add_data(\"ratio_t2t3_over_codata\", float(proton_result['t2_plus_t3'] / 938.272))"
+          },
+          {
+            "line_number": 194,
+            "pattern": "float_cast",
+            "context": "ok_witness_emit",
+            "code_snippet": "computed=float(proton_result['t2_plus_t3']) > 1.0,"
+          }
+        ],
+        "result": "i8_violation"
+      },
+      {
+        "path": "folio-assistant/computations/probe_v_hat_wenzl_tilde.py",
+        "substrate_banner": true,
+        "hit_count": 0,
+        "violation_count": 0,
+        "witness_emit_count": 0,
+        "false_positive_count": 0,
+        "hits": [],
+        "result": "ok_no_leaks"
+      },
+      {
+        "path": "folio-assistant/computations/sigma_all_evaluator.py",
+        "substrate_banner": true,
+        "hit_count": 8,
+        "violation_count": 8,
+        "witness_emit_count": 0,
+        "false_positive_count": 0,
+        "hits": [
+          {
+            "line_number": 300,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "got_f = float(got)"
+          },
+          {
+            "line_number": 308,
+            "pattern": "fstring_precision_e",
+            "context": "violation",
+            "code_snippet": "assert max_rel < 1e-14, f\"closed form mismatch (max rel err {max_rel:.2e})\""
+          },
+          {
+            "line_number": 309,
+            "pattern": "fstring_precision_e",
+            "context": "violation",
+            "code_snippet": "print(f\"\\nMax relative error vs symbolic table: {max_rel:.2e}  (passes 1e-14)\")"
+          },
+          {
+            "line_number": 318,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "print(f\"  A={A} → A={A+2}: ratio = {mp.nstr(got, 20)}  rel err = {float(rel):.2e}\")"
+          },
+          {
+            "line_number": 318,
+            "pattern": "fstring_precision_e",
+            "context": "violation",
+            "code_snippet": "print(f\"  A={A} → A={A+2}: ratio = {mp.nstr(got, 20)}  rel err = {float(rel):.2e}\")"
+          },
+          {
+            "line_number": 321,
+            "pattern": "float_cast",
+            "context": "violation",
+            "code_snippet": "print(f\"\\nDecay rate γ(q_0) = {float(gamma):.6f} (audit predicts ≈ 1.357)\")"
+          },
+          {
+            "line_number": 321,
+            "pattern": "fstring_precision_f",
+            "context": "violation",
+            "code_snippet": "print(f\"\\nDecay rate γ(q_0) = {float(gamma):.6f} (audit predicts ≈ 1.357)\")"
+          },
+          {
+            "line_number": 326,
+            "pattern": "fstring_precision_e",
+            "context": "violation",
+            "code_snippet": "print(f\"  A={A:>3}, target={tgt:.0e} → {req}\")"
+          }
+        ],
+        "result": "i8_violation"
+      }
+    ]
+  }
+}

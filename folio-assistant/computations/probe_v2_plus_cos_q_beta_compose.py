@@ -54,13 +54,15 @@ import mpmath as mp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
+
+from _precision import set_compute_dps, fmt  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from codata_constants import (  # noqa: E402
     M_E_MEV, M_N_MEV_VALIDATION, M_P_MEV_VALIDATION,
 )
 from qbeta_physics import q_0_at_50dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 
 def main() -> int:

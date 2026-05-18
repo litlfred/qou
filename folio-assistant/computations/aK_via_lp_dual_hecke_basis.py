@@ -62,8 +62,9 @@ sys.path.insert(0, str(HERE))
 
 from witness_base import WitnessBuilder  # noqa: E402
 from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 Q_PIN = HERE / "q-pinning-50-digit.witness.json"
 Q = float(mp.mpf(json.load(Q_PIN.open())["derived_50_digit"]["q"]))

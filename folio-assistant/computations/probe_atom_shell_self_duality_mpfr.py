@@ -44,7 +44,8 @@ from light_isotope_sweep import atomic_braid_to_crossings
 from q_parameter import Q as Q_0
 from witness_base import WitnessBuilder
 
-mp.mp.dps = 50
+from _precision import set_compute_dps, fmt  # noqa: E402
+set_compute_dps()
 
 
 def transpose_partition(shape):

@@ -83,6 +83,8 @@ HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
+
+from _precision import set_compute_dps, fmt  # noqa: E402
 # Reused machinery from the Occam baseline (do NOT modify upstream).
 from rho_k_h3a_refinement import (  # noqa: E402
     chi_numeric,
@@ -99,7 +101,7 @@ from crystal_basis import crystal_B  # noqa: E402
 from q_parameter import Q_MP  # noqa: E402
 from partition_utils import hook_lengths_with_cells as hook_lengths  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 
 # ---------------------------------------------------------------------

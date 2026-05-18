@@ -40,8 +40,8 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 import mpmath as mp
 
-mp.mp.dps = 50
-
+from _precision import set_compute_dps, fmt
+set_compute_dps()  # mp.mp.dps via QOU_COMPUTE_DPS (default 50)
 from codata_constants import M_E_MEV as _M_E_MP, M_P_MEV as _M_P_MP, M_N_MEV as _M_N_MP
 from witness_base import WitnessBuilder
 
@@ -246,9 +246,9 @@ def main() -> int:
             "Z": {"proton": 1, "neutron": 0, "deuteron": 1}[atom],
             "N": {"proton": 0, "neutron": 1, "deuteron": 1}[atom],
             "rho": RHO[atom],
-            "tr_M_q0": str(tr_M[atom]),
-            "m_K_predicted_MeV": str(m_pred),
-            "m_K_reference_MeV": str(m_ref),
+            "tr_M_q0": fmt(tr_M[atom]),
+            "m_K_predicted_MeV": fmt(m_pred),
+            "m_K_reference_MeV": fmt(m_ref),
             "reference_label": ame_label,
             "err_ppb": err_ppb,
             "formula": formula,
@@ -290,8 +290,8 @@ def main() -> int:
               f"(AME: {mp.nstr(B_D_ame, 12)} MeV, err: {B_D_err_ppb:+.2e} ppb)")
         rows.append({
             "atom": "deuteron-binding",
-            "B_predicted_MeV": str(B_D_pred),
-            "B_AME_MeV": str(B_D_ame),
+            "B_predicted_MeV": fmt(B_D_pred),
+            "B_AME_MeV": fmt(B_D_ame),
             "err_ppb": B_D_err_ppb,
             "formula": "m_p_pred + m_n_pred - m_D_pred",
             "status": "categorical_via_placeholder_m_e_Hecke",

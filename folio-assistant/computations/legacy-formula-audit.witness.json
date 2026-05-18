@@ -1,0 +1,33 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-18T16:58:42.379628+00:00",
+  "commitSha": "90f2b2ffefe0390eabfdb3d4ab7acaef34ee4d93",
+  "assertions": [
+    {
+      "name": "no_i10_violations",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "unit": "boolean (1.0 = no script has both legacy + canonical called)",
+      "source": "Closure gate: when this passes, no script keeps a legacy formula reachable alongside its canonical counterpart."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 7,
+  "computation": "legacy-formula-audit",
+  "scriptFile": "legacy_formula_audit.py",
+  "scriptHash": "6549759454a0",
+  "scriptCommitSha": "unknown",
+  "description": "I10 audit (heuristic) per local/compute-integration-watcher: scripts where a `<name>_legacy` / `_old` / `_v1` / `_v0` / `_pre_canonical` / `_deprecated` / `_orig` / `_original` / `_first` function coexists with a canonical sibling (`<name>`), AND both are still CALLED in the script body.  Strategy 2 also flags banner-marked defs (`# LEGACY`, `# DEPRECATED`, `# OBSOLETE`, `# SUPERSEDED`, `# OLD` above a `def`).  Per-script evidence in `rows[]` lets reviewers triage real I10 violations from intentional A/B cross-validation scripts.",
+  "contentBlock": "I10 antipattern (compute-integration-watcher.md §antipatterns)",
+  "parameters": {
+    "scripts_with_signals": 0,
+    "i10_violation_count": 0,
+    "i10_candidate_count": 0
+  },
+  "data": {
+    "rows": []
+  }
+}

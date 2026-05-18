@@ -39,7 +39,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 
 import mpmath as mp
-mp.mp.dps = 50
+from _precision import set_compute_dps, fmt  # noqa: E402
+set_compute_dps()
 
 from witness_base import WitnessBuilder
 from q_parameter import Q_MP

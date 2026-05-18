@@ -43,7 +43,7 @@ Three concrete children today:
 | **H. §5b prioritisation** | §5b | Domain-specific ranking rule for the backlog |
 | **I. §6 invariants** | §6 | Per-commit checks the watcher enforces on its own branch |
 
-Everything else — §1, §2, §4a, §4f, §5c-§5l, §7-§9, anti-patterns,
+Everything else — §1, §2, §4a, §4f, §5c-§5m, §7-§9, anti-patterns,
 checklist — is defined here and inherited verbatim.
 
 ## 0. Invocation as `/integration-watch [args]`
@@ -506,19 +506,70 @@ factors:
 Apply §4 — exactly the same pipeline as for incoming events. The
 `source` field on each queue item becomes `backlog`.
 
-### 5d. Quiescence + heartbeat
+### 5d. Quiescence + heartbeat — AUTO-PULL FROM QUEUE WHEN IDLE
 
 A backlog item is preempted by any incoming event. Resume the
-backlog when the queue is quiescent again. Maintain at most one
-in-flight backlog item.
+backlog when the queue is quiescent again.  The number of in-flight
+backlog items is capped by §5m's parallelism cap (currently 4)
+when multiple items are independent; items sharing state serialise.
 
-If the session has been entirely quiescent for ≥ 60 minutes,
-emit a one-liner:
+**Auto-pull policy (MANDATORY).** On every Monitor TICK heartbeat
+(default 5-min cadence) where:
 
-> `<watcher-name>` idle — backlog at N items, queue at M items,
-> next refresh in <next discovery time>.
+1. No incoming event has arrived during this TICK window
+2. The count of items currently in `status: in-progress` is below
+   the parallelism cap (per §5m, default 4)
+3. `todos/${NAME}-queue.json` contains at least one item with
+   `status: queued` (or `status: needs-author` whose author ask
+   has been outstanding ≥ 7 days — the §5e re-ask cadence)
+
+→ **Pull the highest-priority queued item per §5b and start §5c
+processing on it immediately.**  Do not wait for a user prompt.
+Do not emit only the heartbeat one-liner below and stop — the
+heartbeat one-liner is for periods when the queue is *empty*,
+NOT for periods when the queue is non-empty and the agent is
+choosing not to work.
+
+This matches CLAUDE.md §"Agent work-plan policy" rule 4 ("Work
+the queue while idle"): an agent that idles with non-empty queue
+is an audit flag.  The TICK heartbeat is the trigger; the queue
+is the source of "what next".
+
+Sub-agent dispatch.  For long-running items (full content scan,
+multi-file rewire, Lean build) the watcher should launch the
+work via `Agent(run_in_background=true)` so the foreground stays
+responsive to fresh `<github-webhook-activity>` events.  Update
+the item's status to `in-progress` immediately on dispatch and
+back to `resolved` / `needs-author` on the sub-agent's
+completion notification.
+
+Foreground vs background.  Use foreground for items whose
+findings the watcher itself must consume to decide what to queue
+next (a feedback-loop item).  Use background for items whose
+deliverable is a standalone PR / commit / handover doc.
+
+When multiple independent items are eligible per the parallel-by-
+default policy in §5m, pull up to (parallelism-cap −
+currently-in-progress) items in a single TICK and dispatch them
+in one batch.
+
+**Empty-queue heartbeat.**  Only when the queue truly has no
+queued or eligible needs-author items eligible for auto-pull,
+emit a single one-liner per session-quiescence-period:
+
+If the session has been entirely quiescent for ≥ 60 minutes
+AND the auto-pull policy above didn't find anything to dispatch
+(0 queued + 0 eligible needs-author), emit a one-liner:
+
+> `<watcher-name>` idle — backlog at N items, queue at M items
+> (0 eligible for auto-pull), in-progress at K items, next
+> refresh in <next discovery time>.
 
 …and keep the Monitor armed.
+
+(If the queue has eligible items but the agent didn't auto-pull,
+that is a policy violation — fix the watcher's TICK handler, do
+not work around with the one-liner.)
 
 ### 5e. Idle author-ask dispatcher
 
@@ -1068,6 +1119,49 @@ The combination of `reviewed_up_to[criterion] + audited[block].{sha,criteria}`
 makes the audit ledger fully replayable: a fresh session can
 reconstruct exactly what's been checked under what criteria
 against what SHA, and ONLY queue the gap.
+
+### 5m. Parallel work during idle windows (MANDATORY for foreground sessions)
+
+When the watcher is idle (no incoming events, no in-flight discharge,
+no pending author ask), **default to parallel work**, not sequential
+single-item processing. Idle time is the watcher's highest-throughput
+window — use it.
+
+**Parallel-by-default decisions:**
+
+| Idle activity | Sequential (anti-pattern) | Parallel (mandatory when ≥ 2 items, capped at 4 per round) |
+|---------------|---------------------------|-------------------------------------|
+| Backlog sweep (§5c) | One block at a time | **One read-only `Agent(Explore)` per block in a single tool-call batch.** Per-block agents must NOT write to `todos/${NAME}-queue.json` — they return findings; the foreground aggregator (Rule 4) does the single queue write. |
+| Sibling-PR triage (`coordinate §7`) | Walk PRs serially | **One agent per PR**, dispatched in one batch (read-only triage, aggregated by foreground) |
+| Prepare-merge sweep on multiple PRs | One PR at a time | **One agent per PR**, each running its own §3a/§3b/one-voice pass (read-only; foreground consolidates) |
+| Cross-criterion §3a derivation-completion sweep | One criterion's missed range serially | **One agent per criterion**, each scanning its slice of `reviewed_up_to[*]..origin/main` (read-only; foreground writes the per-criterion checkpoint) |
+| §4b dispatch to QA specialists | (already required parallel per §4b — keep it) | (same) |
+| §4d auto-discharge attempts on multiple queue items | One sorry / one violation at a time | **One agent per independent item** (4-agent cap; items sharing state must serialize) |
+
+**Anti-parallel cases** (must run sequentially):
+
+- Anything touching the same `todos/${NAME}-queue.json` write (race condition; use a single foreground agent to write, parallel subagents read-only).
+- Anything touching the same Lean build (`lake build` is exclusive).
+- Anything that depends on a prior step's output (rebase → validate, format → lint).
+- Tasks where the user is mid-asking — never dispatch in parallel until the author-ask is resolved.
+
+**Dispatcher rules:**
+
+1. **One response, many `Agent` blocks.** When idle-batching N agents, send them in ONE response with N concurrent `Agent` tool calls (not N sequential responses). The Claude Code harness runs concurrent tool calls in parallel regardless of the background flag (per harness contract: *"If you intend to call multiple tools and there are no dependencies between them, make all of the independent calls in the same response. Maximize use of parallel tool calls."*).
+2. **`run_in_background` — pick by aggregation need:**
+   - `false` (foreground waits, default) when you want **same-turn atomic aggregation**: prepare-merge multi-PR sweep, parallel triage that posts a single consolidated status comment. The foreground turn blocks until all parallel agents return, then writes one consolidated queue update.
+   - `true` (background, async) when the **watcher will continue running anyway** and same-turn aggregation isn't required: idle backlog sweeps, long-running audits. Results arrive as separate notifications; queue updates happen as each agent completes (with care to avoid same-file write races).
+3. **Cap parallelism at 4 agents per round** — beyond that, queue the rest for the next idle window. Avoids context-overflow on the dispatcher's side. With `run_in_background: true`, also re-check the cap on each subsequent idle TICK before launching more so the in-flight count stays ≤ 4.
+4. **Aggregate results** — after all parallel agents return, consolidate findings into a single queue update (single write). With `false` this happens in the same turn; with `true` it happens in a later turn after the last completion notification.
+5. **Don't dispatch parallel work while an author-ask is pending** — the user's reply may pivot the priorities.
+
+**Failure modes this guards against:**
+
+- ❌ Idle watcher walking the backlog one item at a time, finishing 1 audit per 30 s when 4 could finish in the same 30 s.
+- ❌ Per-PR triage taking 5 minutes for 5 PRs when 4 parallel agents finish 4 in ~90 s and the 5th is queued for the next idle window (per the 4-agent cap above).
+- ❌ Dispatching one prepare-merge sweep per response, requiring N round-trips for N PRs.
+
+**Default invariant:** in an idle window with K ≥ 2 independent tasks, the watcher MUST dispatch them in parallel unless one of the anti-parallel cases above applies.
 
 ## 6. Goal-driven invariants
 

@@ -99,11 +99,13 @@ HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
+
+from _precision import set_compute_dps, fmt  # noqa: E402
 # IMPORTANT: set mpmath precision BEFORE importing codata_constants
 # (or any module that constructs ``mp.mpf`` literals at import time).
 # Otherwise CODATA constants are parsed at the default precision and
 # later serialised with spurious binary tail digits.
-mp.mp.dps = 50
+set_compute_dps()
 
 from codata_constants import M_E_MEV, M_P_MEV, M_N_MEV, M_D_MEV  # noqa: E402
 from murnaghan_nakayama import partitions_of, hook_lengths  # noqa: E402

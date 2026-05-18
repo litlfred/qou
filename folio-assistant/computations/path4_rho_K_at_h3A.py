@@ -34,7 +34,9 @@ from mpmath import mp, mpf
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
-mp.dps = 50
+
+from _precision import set_compute_dps, fmt  # noqa: E402
+set_compute_dps()
 
 # q_0 pinning
 Q_WITNESS = HERE / "q-pinning-50-digit.witness.json"

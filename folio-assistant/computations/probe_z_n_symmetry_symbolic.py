@@ -45,7 +45,8 @@ from markov_peel import incremental_reduced_element, tr_M_atomic
 from markov_trace_canonical import tr_M_element
 from hecke_symbolic import q as q_sym, SymbolicHeckeDivision
 
-mp.dps = 50
+from _precision import set_compute_dps, fmt  # noqa: E402
+set_compute_dps()
 
 
 def main():

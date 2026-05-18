@@ -1,0 +1,56 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-18T15:40:05.918134+00:00",
+  "commitSha": "290e7fe9620b0b4ee8ccb788cf93f2c4c32e2b90",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 24,
+  "computation": "lambda-scale-rd4-k-p-search",
+  "scriptFile": "lambda_scale_rd4_k_p_search.py",
+  "scriptHash": "68623954a738",
+  "scriptCommitSha": "unknown",
+  "description": "R&D 4 exploration: search for a specific knot/link K_p with Vol(K_p) = m_p/m_e · ℏ_q² ≈ 18.03, eliminating the λ_scale fudge factor from the Borromean baryon mass formula.",
+  "contentBlock": "conj:borromean-baryon-mass-formula",
+  "parameters": {
+    "dps": 80
+  },
+  "data": {
+    "Vol_K_p_target": 18.0258569345436,
+    "standard_blocks": {
+      "V_tetrahedron": 2.0298832128193074,
+      "V_octahedron": 3.663862376708876,
+      "Vol(4_1)": 4.059766425638615,
+      "Vol(5_2)": 2.82812208833,
+      "Vol(6_1)": 3.16396322648,
+      "Vol(6_2)": 4.40083251217,
+      "Vol(6_3)": 5.69302109614,
+      "Vol(7_4)": 5.13794120982,
+      "Vol(L_Whitehead)": 3.42720252426,
+      "Vol(B_3)": 7.327724753417752
+    },
+    "best_pair_matches": [
+      {
+        "combo": "3·Vol(5_2) + 3·Vol(6_1)",
+        "val": 17.97625594443,
+        "rel_err": -0.0027516578154212373
+      },
+      {
+        "combo": "4·V_octahedron + 1·Vol(L_Whitehead)",
+        "val": 18.082652031095503,
+        "rel_err": 0.0031507570906692227
+      },
+      {
+        "combo": "1·Vol(L_Whitehead) + 2·Vol(B_3)",
+        "val": 18.082652031095503,
+        "rel_err": 0.0031507570906692227
+      },
+      {
+        "combo": "1·Vol(6_2) + 4·Vol(L_Whitehead)",
+        "val": 18.10964260921,
+        "rel_err": 0.0046480827497214
+      }
+    ],
+    "conclusion": "No integer combination of standard small-volume hyperbolic 3-manifolds matches Vol(K_p) = 18.03 to 1 ppm. The closest candidates (9·Vol(4_1) = 18.27, 5·V_oct = 18.32) are off by ~1%. q-deformed Vol candidates including the Family A factor Vol(B_3)·(5/2 + 3h²/4) match λ_p's q-rational form but not the CODATA target exactly. The Borromean baryon mass formula's structural status remains conjectural; foundational paper-level work needed."
+  }
+}

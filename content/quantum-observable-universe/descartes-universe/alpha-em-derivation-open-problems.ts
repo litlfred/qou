@@ -8,7 +8,6 @@ export default remark({
   uses: [
     "prop:em-coupling-projection",
     "conj:em-coupling-chern-simons",
-    "conj:alpha-em-gluon-octet-form",
     "prop:em-coupling-bring-zero-mode",
     "prop:archimedean-functor-uniqueness",
     "rem:figure-8-archimedean-illustration",

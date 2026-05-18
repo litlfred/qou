@@ -271,8 +271,8 @@ the level of a closed structural derivation:
 2. The PSLQ-empirical form $45[3]_q(1+\hbar_q^4[5]_q+8q(\hbar_q^4[5]_q)^2)$
    matches CODATA to $7$ ppb at $q_0$ but disagrees with the bare
    formula at every other $q$ and has only one of four factors
-   structurally derived. Now superseded — see
-   [`conj:alpha-em-gluon-octet-form`](#conj:alpha-em-gluon-octet-form).
+   structurally derived. Now superseded by the additive Bring
+   zero-mode form (item 3 below).
 3. The **additive Bring zero-mode form**
    [`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode):
    $1/\alpha_{EM} = q[9]_q[10]_q + 2g/(4\pi(g-1)) + \mathcal{O}(\alpha)$

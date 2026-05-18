@@ -2,7 +2,7 @@
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "computation": "e0-calibration-audit",
   "description": "Audit of E_0 / Q_β(n) calibration constants across folio-assistant/computations. Reports value-precision drift, anchor-of-pinning violations vs CAL-3, and the PDG-derived uncertainty floor on every E_0-dependent quantity.",
-  "computedAt": "2026-05-18T02:12:37.877946+00:00",
+  "computedAt": "2026-05-18T16:25:44.215956+00:00",
   "reference_blocks": [
     "prop:three-calibration-inputs",
     "rem:calibration-inputs"
@@ -674,7 +674,7 @@
       },
       {
         "file": "folio-assistant/computations/probe_beta_decay_n1_brane_tower.py",
-        "line": 131,
+        "line": 133,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "from codata_constants import Q_BETA_MEV",
@@ -682,7 +682,7 @@
       },
       {
         "file": "folio-assistant/computations/probe_beta_decay_n1_brane_tower.py",
-        "line": 132,
+        "line": 134,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "q_codata = mp.mpf(str(Q_BETA_MEV))",
@@ -690,7 +690,7 @@
       },
       {
         "file": "folio-assistant/computations/probe_beta_decay_residue_sum_h3.py",
-        "line": 119,
+        "line": 121,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "from codata_constants import M_E_MEV, Q_BETA_MEV  # noqa: E402",
@@ -698,7 +698,7 @@
       },
       {
         "file": "folio-assistant/computations/probe_beta_decay_residue_sum_h3.py",
-        "line": 196,
+        "line": 198,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "q_codata = mp.mpf(str(Q_BETA_MEV))",
@@ -706,7 +706,7 @@
       },
       {
         "file": "folio-assistant/computations/probe_q_beta_residue_per_nucleon.py",
-        "line": 40,
+        "line": 41,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "from codata_constants import M_E_MEV, Q_BETA_MEV  # noqa: E402",
@@ -714,7 +714,7 @@
       },
       {
         "file": "folio-assistant/computations/probe_q_beta_residue_per_nucleon.py",
-        "line": 115,
+        "line": 116,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "q_codata = mp.mpf(str(Q_BETA_MEV))",
@@ -722,7 +722,7 @@
       },
       {
         "file": "folio-assistant/computations/q_beta_form_a_n1_extension.py",
-        "line": 91,
+        "line": 92,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "from codata_constants import M_E_MEV, Q_BETA_MEV  # noqa: E402",
@@ -730,7 +730,7 @@
       },
       {
         "file": "folio-assistant/computations/q_beta_form_a_n1_extension.py",
-        "line": 105,
+        "line": 106,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "q_codata = mp.mpf(str(Q_BETA_MEV))",
@@ -738,7 +738,7 @@
       },
       {
         "file": "folio-assistant/computations/q_beta_predicted.py",
-        "line": 57,
+        "line": 58,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "from codata_constants import M_E_MEV, Q_BETA_MEV  # noqa: E402",
@@ -746,7 +746,7 @@
       },
       {
         "file": "folio-assistant/computations/q_beta_predicted.py",
-        "line": 82,
+        "line": 83,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "q_codata = mp.mpf(str(Q_BETA_MEV))",

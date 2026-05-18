@@ -77,6 +77,7 @@ meanings:
   absorbs the eigenvalue-pair sum $q + 1 = q - (-1) = q - (-q^0)$.
 
 Together these decompose the bare Hecke log into a thermodynamic
-term and a substrate-specific normalisation. This decomposition is
-used in the Δ_coupling closed-form claim
-([`conj:delta-coupling-substrate-form`](#conj:delta-coupling-substrate-form)).
+term and a substrate-specific normalisation. This decomposition was
+used in the Δ_coupling closed-form claim (since refuted at
+single-magic anchors; the substrate Δ_coupling derivation
+remains open research).

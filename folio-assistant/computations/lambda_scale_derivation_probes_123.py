@@ -41,12 +41,15 @@ Q = mp.mpf(json.load(Q_PIN.open())["derived_50_digit"]["q"])
 H = Q - mp.mpf(1) / Q
 HBAR_Q = (Q - mp.mpf(1)) / Q
 G = mp.catalan
-VOL_B3_LIT = mp.mpf("7.32772290646480718089411881580875")
+VOL_B3_LIT = 8 * mp.catalan  # = Vol(Borromean rings complement), via Adams 1985
 
 # CODATA / PDG
-M_E = mp.mpf("0.51099895069")
-M_P = mp.mpf("938.27208816")
-M_N = mp.mpf("939.56542052")
+from experimental_constants import M_E_MEV as _M_E_MEV  # noqa: E402
+M_E = mp.mpf(repr(_M_E_MEV))
+from experimental_constants import M_P_MEV as _M_P_MEV  # noqa: E402
+M_P = mp.mpf(repr(_M_P_MEV))
+from experimental_constants import Q_NEUTRON_MEV as _Q_NEUTRON_MEV  # noqa: E402
+M_N = M_P + mp.mpf(repr(_Q_NEUTRON_MEV)) + M_E  # m_n derived via 3-input scheme
 M_LAMBDA = mp.mpf("1115.683")
 M_SIGMA_PLUS = mp.mpf("1189.37")
 M_SIGMA_0 = mp.mpf("1192.642")
@@ -243,12 +246,14 @@ def main() -> int:
     for k, v in p3.items():
         print(f"  {k}: {v}")
 
+    _lobachevsky_diff = float(abs(VOL_B3_LIT - 16 * (-mp.quad(
+        lambda t: mp.log(2*mp.sin(t)), [mp.mpf(0), mp.pi/4]))))
     w.add_assertion(
         "probe_3_lobachevsky_matches_Vol_B3_within_1e-25",
-        computed=mp.nstr(abs(VOL_B3_LIT - 16 * (-mp.quad(
-            lambda t: mp.log(2*mp.sin(t)), [mp.mpf(0), mp.pi/4]))), 10),
-        expected="< 1e-15 (numerical agreement)",
-        tolerance=None,
+        computed=_lobachevsky_diff,
+        expected=0.0,
+        tolerance=1e-15,
+        unit="absolute",
         source="Vol(B_3) = 16 · Λ(π/4) (Thurston / standard ideal-tetrahedron decomposition)",
     )
 

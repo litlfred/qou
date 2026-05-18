@@ -57,7 +57,9 @@ HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
-mp.mp.dps = 50
+from _precision import set_compute_dps, fmt  # noqa: E402
+
+set_compute_dps()
 
 from q_parameter import Q_MP  # noqa: E402
 # Per Copilot PR #619 review: import CAL-3 constants from the
@@ -329,9 +331,9 @@ def load_chi_via_symbolic(witness_file: str, n: int) -> list[dict]:
         y_val = y_at_q0.get(lam, mp.mpf(0))
         out.append({
             "partition": list(lam),
-            "y_at_q0": str(y_val),
-            "chi_q_at_q0": str(chi_val),
-            "contribution": str(y_val * chi_val),
+            "y_at_q0": fmt(y_val),
+            "chi_q_at_q0": fmt(chi_val),
+            "contribution": fmt(y_val * chi_val),
         })
     return out
 
@@ -355,9 +357,9 @@ def load_chi_via_numerical_path(Z: int, N: int) -> tuple[list[dict], mp.mpf]:
     for term in terms:
         rows.append({
             "partition": term["partition"],
-            "y_at_q0": str(term["y_at_q0"]),
-            "chi_q_at_q0": str(term["chi_q_at_q0"]),
-            "contribution": str(term["y_at_q0"] * term["chi_q_at_q0"]),
+            "y_at_q0": fmt(term["y_at_q0"]),
+            "chi_q_at_q0": fmt(term["chi_q_at_q0"]),
+            "contribution": fmt(term["y_at_q0"] * term["chi_q_at_q0"]),
         })
     return rows, mp.mpf(abs(tr_M_total))
 
@@ -448,12 +450,12 @@ def ansatz_a_single_block(atom_data: dict) -> dict:
     return {
         "ansatz": "a_single_block",
         "best_lambda": candidates[0]["lambda"] if candidates else None,
-        "best_delta": str(candidates[0]["delta"]) if candidates else None,
-        "best_abs_delta": str(candidates[0]["abs_delta"]) if candidates else None,
+        "best_delta": fmt(candidates[0]["delta"]) if candidates else None,
+        "best_abs_delta": fmt(candidates[0]["abs_delta"]) if candidates else None,
         "candidates_top5": [
             {"lambda": c["lambda"],
-             "delta": str(c["delta"]),
-             "abs_delta": str(c["abs_delta"])}
+             "delta": fmt(c["delta"]),
+             "abs_delta": fmt(c["abs_delta"])}
             for c in candidates[:5]
         ],
         "n_candidates_skipped_singular": len(atom_data["rows"]) - len(candidates),
@@ -480,9 +482,9 @@ def ansatz_b_shell(atom_data: dict) -> dict:
     return {
         "ansatz": "b_shell_supported",
         "lambda_shell": list(lam_shell),
-        "c_shell": str(c_shell),
-        "delta": str(delta),
-        "abs_delta": str(abs(delta)),
+        "c_shell": fmt(c_shell),
+        "delta": fmt(delta),
+        "abs_delta": fmt(abs(delta)),
     }
 
 
@@ -507,9 +509,9 @@ def ansatz_c_content_monotonic(atom_data: dict) -> dict:
     norm_c2 = mp.sqrt(norm_c2_sum)
     return {
         "ansatz": "c_content_monotonic",
-        "alpha": str(alpha),
-        "weighted_sum_yChi_cContent": str(weighted_sum),
-        "norm_delta_2": str(abs(alpha) * norm_c2),
+        "alpha": fmt(alpha),
+        "weighted_sum_yChi_cContent": fmt(weighted_sum),
+        "norm_delta_2": fmt(abs(alpha) * norm_c2),
     }
 
 
@@ -531,9 +533,9 @@ def ansatz_d_isotypic(atom_data: dict) -> dict:
     alpha = target / weighted_sum
     return {
         "ansatz": "d_isotypic",
-        "alpha": str(alpha),
-        "weighted_sum_yChi_planch": str(weighted_sum),
-        "norm_delta_2": str(abs(alpha) * mp.sqrt(norm_d2)),
+        "alpha": fmt(alpha),
+        "weighted_sum_yChi_planch": fmt(weighted_sum),
+        "norm_delta_2": fmt(abs(alpha) * mp.sqrt(norm_d2)),
     }
 
 
@@ -646,12 +648,12 @@ def main() -> int:
         per_atom[atom] = {
             "Z": data["Z"], "N": data["N"], "n": data["n"],
             "n_partitions": data["n_partitions"],
-            "M_codata_MeV": str(data["M_codata_MeV"]),
-            "constituent_MeV": str(data["constituent_MeV"]),
-            "delta_M_MeV": str(data["delta_M_MeV"]),
-            "tr_M": str(data["tr_M"]),
-            "abs_tr_M": str(data["abs_tr_M"]),
-            "target_signed": str(data["target_signed"]),
+            "M_codata_MeV": fmt(data["M_codata_MeV"]),
+            "constituent_MeV": fmt(data["constituent_MeV"]),
+            "delta_M_MeV": fmt(data["delta_M_MeV"]),
+            "tr_M": fmt(data["tr_M"]),
+            "abs_tr_M": fmt(data["abs_tr_M"]),
+            "target_signed": fmt(data["target_signed"]),
             "a_single_block": a_result,
             "b_shell_supported": b_result,
             "c_content_monotonic": c_result,
@@ -679,10 +681,10 @@ def main() -> int:
     # Emit witness via WitnessBuilder
     # WitnessBuilder constructed above at start of main(); now populate.
     w.parameters.update({
-        "q_0": str(Q0),
-        "m_e_MeV": str(M_E_MEV),
-        "m_p_MeV": str(M_P_MEV),
-        "m_n_MeV": str(M_N_MEV),
+        "q_0": fmt(Q0),
+        "m_e_MeV": fmt(M_E_MEV),
+        "m_p_MeV": fmt(M_P_MEV),
+        "m_n_MeV": fmt(M_N_MEV),
         "precision_note": (
             "Tier-2 chi data (D/T/³He/⁴He) is float64 from "
             "wedderburn_jones_markov.global_wedderburn_sum_q_hecke_seminormal. "

@@ -52,8 +52,9 @@ import sys as _p25_sys
 from pathlib import Path as _P25Path
 _p25_sys.path.insert(0, str(_P25Path(__file__).parent))
 from witness_polynomial import expose_polynomial  # noqa: F401
+from _precision import set_compute_dps, fmt  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 sys.path.insert(0, str(Path(__file__).parent))
 from y_lambda_wenzl_bridge import (
