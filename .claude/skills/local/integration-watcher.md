@@ -190,6 +190,83 @@ Common shapes children typically check:
 
 If `is_in_scope=false`, emit a one-liner to the ledger and return.
 
+### 3a. On-new-commit derivation-completion detection (MANDATORY)
+
+In addition to the domain trigger filter, every watcher must check
+whether the incoming commit **closes** a previously-flagged "open"
+item in the queue. The check runs **before** the §4 pipeline so
+that the same event drives both new-violation detection AND
+queued-item resolution.
+
+```bash
+SHA=<incoming commit>
+changed=$(git diff-tree --no-commit-id --name-only -r "$SHA")
+
+# Step 1 — look for canonical-form arrivals. Heuristic patterns
+# (children override in Slot B-derivation):
+#  - new file `prop:*.ts` or `thm:*.ts` with kind theorem/proposition/lemma
+#    appearing in `content/.../**`
+#  - existing file whose `kind:` field flipped from `conjecture` → provable
+#  - .lean file whose `sorry` count dropped to 0 (axiom audit clean)
+new_propositions=$(
+  echo "$changed" | grep -E 'content/.*\.ts$' | while read ts; do
+    [ -f "$ts" ] || continue
+    git show "$SHA:$ts" 2>/dev/null | grep -qE 'kind:\s*"(theorem|proposition|lemma|corollary)"' \
+      && ! git show "$SHA^:$ts" 2>/dev/null | grep -qE 'kind:\s*"(theorem|proposition|lemma|corollary)"' \
+      && echo "$ts"
+  done
+)
+```
+
+For each newly-arrived derivation, search the queue for items whose
+`status: queued | needs-author` references the now-derived label
+(directly or transitively via `uses[]`). For each hit:
+
+1. **Audit downstream impact.** If the queued item was flagged
+   "open" because it depended on this derivation, the dependency is
+   now closed. Re-classify per §4d.
+2. **Trigger removal candidacy.** If the queued item was a
+   placeholder, legacy, or probing block waiting for the canonical
+   form, mark `status: queued-for-removal` (see §3b below).
+3. **Update the ledger** with a `derivation-completion` row citing
+   both the new commit SHA and the queue item id.
+
+This prevents the watcher from carrying stale "open problem"
+framings after the actual closure lands. Without it, a watcher will
+keep flagging downstream blocks as violations even though the
+upstream derivation is already on main.
+
+### 3b. Removal-over-banner policy (MANDATORY for legacy / superseded)
+
+When a canonical derivation lands and supersedes a legacy /
+deprecated / probing block, the watcher's correct response is
+**remove the legacy block**, not banner-tag it in place. Banner-
+tagging is reserved for blocks that **remain on the canonical
+chain** with an open piece (Class-A acknowledged-stub); legacy
+blocks that have been superseded should leave the paper.
+
+Removal decision matrix:
+
+| Legacy-block shape | Action |
+|--------------------|--------|
+| Block whose `kind: remark` explicitly says "*superseded*" / "*retained for historical context*" / "*legacy*" | **Remove file** + rewire `uses[]` to the superseding block |
+| Falsification report (`rem:*-falsified`) consumed by a summary block | **Remove file**; the summary block carries the negative result |
+| Probing block / negative-result attempt whose conclusion is "doesn't close" / "incomplete" | **Remove file** unless the methodology is reused elsewhere |
+| Class-A acknowledged-stub that is **still on the canonical chain** (e.g. one open piece in a multi-piece derivation) | **Banner-tag** (do NOT remove); the block is canonical with one open piece |
+| Block that consumes a 4th-calibration input self-acknowledgedly (e.g. CODATA `m_p, m_n` upstream) | **Remove the calibrated-form section** (not the whole file); keep the substrate form |
+
+When a child watcher detects a queued-for-removal item, it should:
+
+1. Open a follow-up PR with the file deletion (+ `uses[]` rewires
+   in chapter manifests and downstream consumers).
+2. **Not** silently delete content in the on-going PR — the
+   removal is a separate, reviewable change.
+3. Cite the superseding block in the removal PR description.
+
+The §4 pipeline below handles violation detection; this §3b rule
+governs the disposition of items already in the queue when the
+canonical form arrives.
+
 ## 4. Per-event QA pipeline
 
 When the trigger filter passes, fan out to the domain specialists
