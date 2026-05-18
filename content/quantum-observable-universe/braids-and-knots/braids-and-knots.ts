@@ -41,7 +41,6 @@ export default chapter({
         "jones-markov-trace",
         "trm-hopf-sigma1-sq-closed-form",
         "hecke-log-decomposition",
-        "delta-coupling-substrate-form",
         "hecke-algebra-from-braiding",
         "hecke-normal-form",
         "dark-vision-strand-bandwidth",
