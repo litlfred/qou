@@ -509,10 +509,16 @@ pub fn chi_lambda_via_gp_hoefsmit_mpfr(
 /// `chi_lambda_canonical_all_partitions_mpfr`'s shape. Inner
 /// computation is parallel across partitions via rayon.
 ///
-/// **Memoisation thread-safety**: the per-T_w cache is built once
-/// (sequentially), then each partition reads from it in its own rayon
-/// task. Per-partition work writes only to its own accumulator, so
-/// no cross-thread mutation is required after the cache is built.
+/// **Memoisation thread-safety**: each partition's rayon task builds
+/// its own λ-specific `chi_cache` (HashMap from reduced-word → χ^λ
+/// MPFR) over the deduplicated `distinct_words` list. The cache is
+/// **per-partition**, not shared across rayon tasks — cross-partition
+/// sharing would require cross-thread mutation under rayon, which we
+/// avoid. The λ-independent prefix (basis expansion, reduced-word
+/// extraction, distinct-word deduplication, c_w(q) MPFR evaluation)
+/// IS shared across all partitions: that part runs once before the
+/// rayon dispatch and is read-only inside the parallel loop.
+/// (Note corrected per Copilot review on PR #728.)
 pub fn chi_lambda_via_gp_hoefsmit_all_partitions_mpfr(
     n: usize,
     word: &[(i32, u32)],
@@ -548,21 +554,27 @@ pub fn chi_lambda_via_gp_hoefsmit_all_partitions_mpfr(
     distinct_words.dedup();
 
     // 4. Pre-compute the c_w(q) MPFR evaluations once (λ-independent).
+    // Per Gemini review on PR #728 line 553: parse failure is a
+    // caller bug, not a recoverable error — panic loudly rather
+    // than silently default to q = 1.
     let q = Float::parse(q_str)
         .map(|p| Float::with_val(prec, p))
-        .unwrap_or_else(|_| Float::with_val(prec, 1));
+        .expect(
+            "chi_lambda_via_gp_hoefsmit_all_partitions_mpfr: \
+             q_str is not a valid decimal",
+        );
     let c_w_mpfr_per_term: Vec<Float> = basis_terms
         .iter()
         .map(|(_, c_w)| c_w.evaluate_mpfr(&q))
         .collect();
 
-    // 5. Deferred 2^avg_count divisor (λ-independent).  See the
-    //    f64::powi rationale on `chi_lambda_via_gp_hoefsmit`.
-    let divisor: Option<Float> = if avg_count > 0 {
-        Some(Float::with_val(prec, 2.0_f64.powi(avg_count as i32)))
-    } else {
-        None
-    };
+    // 5. Deferred 2^avg_count normalisation will be applied per-
+    //    partition inside the rayon loop via exact `>>= avg_count`
+    //    on the running MPFR Float (mantissa-preserving via the
+    //    binary exponent field, range-safe across the full u32, no
+    //    f64-range cap).  Matches the convention in
+    //    `chi_lambda_via_gp_hoefsmit_mpfr` after the Gemini #728
+    //    review.
 
     // 6. Per λ: build the per-distinct-word cache, then sum.
     let partitions = crate::seminormal::partitions_of(n);
@@ -580,9 +592,20 @@ pub fn chi_lambda_via_gp_hoefsmit_all_partitions_mpfr(
                 let chi_str = crate::seminormal_mpfr::chi_lambda_braid_mpfr(
                     lambda, &positive_word, q_str, dps,
                 );
+                // Per Gemini + Copilot review on PR #728:
+                // chi_lambda_braid_mpfr emits valid decimal output;
+                // a parse failure here would indicate corruption
+                // and silently coercing to 0 would mask the bug and
+                // also look like a legitimate cancellation.  Panic
+                // loudly with the offending string instead.
                 let chi_f = Float::parse(&chi_str)
                     .map(|p| Float::with_val(prec, p))
-                    .unwrap_or_else(|_| Float::with_val(prec, 0));
+                    .unwrap_or_else(|_| {
+                        panic!(
+                            "chi_lambda_braid_mpfr returned a non-decimal \
+                             string: {chi_str:?}"
+                        )
+                    });
                 chi_cache.insert(rw.clone(), chi_f);
             }
 
@@ -596,9 +619,16 @@ pub fn chi_lambda_via_gp_hoefsmit_all_partitions_mpfr(
                 total += &prod;
             }
 
-            // Apply the deferred 2^avg_count normalisation.
-            if let Some(d) = &divisor {
-                total /= d.clone();
+            // Apply the deferred 2^avg_count normalisation via
+            // exact MPFR right-shift (mantissa-preserving, full-u32
+            // safe).  Per Gemini #565 + Copilot #563 review on PR
+            // #728: the f64::powi cast pattern from the older
+            // divisor approach caps at f64 range ~2^1023 and
+            // overflows to inf for avg_count > 1023, collapsing
+            // results to 0.  `>>=` does the exact division via the
+            // binary exponent field.
+            if avg_count > 0 {
+                total >>= avg_count;
             }
             (lambda.clone(), total.to_string_radix(10, Some(dps as usize)))
         })
