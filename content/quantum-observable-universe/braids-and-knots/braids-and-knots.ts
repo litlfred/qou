@@ -471,6 +471,7 @@ export default chapter({
         "chi-v3-closed-form-proof",
         "chi-per-irrep-cyclotomic-closed-forms",
         "per-block-hopf-jones-absorption-pattern",
+        "conj-qbeta-c-k-closed-forms",
         "chi-v111-via-sign-substitution",
         "chi-v21-hoefsmit-matrix-derivation",
         "phi-d-syt-count-conjecture",
