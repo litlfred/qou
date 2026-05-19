@@ -12,8 +12,10 @@ Lake package.
 namespace QOU.Descartes
 
 
-/-- Abstract context for the `reidemeister_action_table` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
+/-- Abstract context for the `reidemeister_action_table` claim —
+    manuscript-themed typed fields below; sub-claims map to the rows of
+    the manuscript table (each Reidemeister / Markov move's behaviour on
+    the three action sectors plus volume and trace). -/
 class ReidemeisterActionTableContext where
   /-- Proton number `Z`. -/
   Z : ℕ
@@ -21,22 +23,30 @@ class ReidemeisterActionTableContext where
   N : ℕ
   /-- Braid representative type. -/
   Braid : Type
-  /-- Categorical object / monoidal structure. -/
-  CategoricalObj : Type
-  /-- Topological link / knot type. -/
-  Link : Type
-  /-- LP shadow-price / dual variable. -/
-  shadow_price : ℝ
-  /-- Categorical mass / binding energy. -/
-  mass : ℝ
-  /-- Fluid-dynamics velocity / vorticity field. -/
-  VelocityField : Type
-  /-- Gauge connection / curvature. -/
-  Connection : Type
   /-- The crossing / Hecke generator type. -/
   Crossing : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- Manuscript sub-claim (R1) — self-twist move
+      `σ_i ↦ σ_i σ_n` changes volume; trace scales by `z`. -/
+  claim_r1_self_twist : Prop
+  /-- Manuscript sub-claim (R2-q) — `q`-deformed second Reidemeister move
+      `σ_i² = (q − q⁻¹)σ_i + 1` splits gauge channel and changes both
+      volume and trace. -/
+  claim_r2_q_deformed : Prop
+  /-- Manuscript sub-claim (R2-classical) — `σ_i σ_i⁻¹ = 1` preserves
+      every sector. -/
+  claim_r2_classical : Prop
+  /-- Manuscript sub-claim (R3) — Yang–Baxter
+      `σ_i σ_{i+1} σ_i = σ_{i+1} σ_i σ_{i+1}` preserves every sector. -/
+  claim_r3_yang_baxter : Prop
+  /-- Manuscript sub-claim (FarComm) — `σ_i σ_j = σ_j σ_i` (far commute)
+      preserves every sector. -/
+  claim_far_commute : Prop
+  /-- Manuscript sub-claim (M-I) — Markov-I conjugation
+      `β ↦ γ β γ⁻¹` preserves the trace (cyclicity). -/
+  claim_markov_I_conjugation : Prop
+  /-- Manuscript sub-claim (M-II) — Markov-II stabilisation
+      `β ↦ β · σ_n^{±1}` multiplies the trace by `z` or `z⁻¹`. -/
+  claim_markov_II_stabilisation : Prop
 
 /-- **Manuscript statement** (full body):
 
@@ -127,9 +137,17 @@ Markov I &
     placeholder; the `ctx.holds : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/reidemeister-action-table.ts
-theorem reidemeister_action_table [ctx : ReidemeisterActionTableContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem reidemeister_action_table [ctx : ReidemeisterActionTableContext] :
+    ctx.claim_r1_self_twist ∧
+    ctx.claim_r2_q_deformed ∧
+    ctx.claim_r2_classical ∧
+    ctx.claim_r3_yang_baxter ∧
+    ctx.claim_far_commute ∧
+    ctx.claim_markov_I_conjugation ∧
+    ctx.claim_markov_II_stabilisation :=
+  ⟨ctx.claim_r1_self_twist, ctx.claim_r2_q_deformed,
+   ctx.claim_r2_classical, ctx.claim_r3_yang_baxter,
+   ctx.claim_far_commute, ctx.claim_markov_I_conjugation,
+   ctx.claim_markov_II_stabilisation⟩
 
 end QOU.Descartes

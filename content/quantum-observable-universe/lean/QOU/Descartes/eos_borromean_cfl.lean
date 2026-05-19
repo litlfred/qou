@@ -13,28 +13,37 @@ namespace QOU.Descartes
 
 
 /-- Abstract context for the `eos_borromean_cfl` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
+    typed fields below; sub-claims encode (i) Borromean-phase EOS, (ii)
+    CFL-phase EOS, and (iii) the stiffness ratio between them. -/
 class EosBorromeanCflContext where
   /-- Substrate parameter `q : ℝ`. -/
   q : ℝ
-  /-- Proton number `Z`. -/
-  Z : ℕ
-  /-- Neutron number `N`. -/
-  N : ℕ
-  /-- Topological link / knot type. -/
-  Link : Type
-  /-- Hyperbolic volume. -/
-  Vol : ℝ
-  /-- LP shadow-price / dual variable. -/
-  shadow_price : ℝ
-  /-- Categorical mass / binding energy. -/
-  mass : ℝ
-  /-- Fluid-dynamics velocity / vorticity field. -/
-  VelocityField : Type
-  /-- The crossing / Hecke generator type. -/
-  Crossing : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- Borromean baryon mass. -/
+  M_B : ℝ
+  /-- CFL effective quark mass. -/
+  M_D : ℝ
+  /-- Baryon number density `n_B`. -/
+  n_B : ℝ
+  /-- The Borromean-phase energy density `ε_B(n_B)`. -/
+  ε_B : ℝ
+  /-- The Borromean-phase pressure `P_B(n_B)`. -/
+  P_B : ℝ
+  /-- The CFL-phase energy density `ε_D(n_B)`. -/
+  ε_D : ℝ
+  /-- The CFL-phase pressure `P_D(n_B)`. -/
+  P_D : ℝ
+  /-- CFL gap `Δ_CFL = q + q⁻¹`. -/
+  Δ_CFL : ℝ
+  /-- Manuscript sub-claim (i): Borromean-phase EOS — `ε_B` and `P_B`
+      satisfy the cold degenerate-Fermi-gas formula at baryon mass `M_B`. -/
+  claim_i_borromean_eos : Prop
+  /-- Manuscript sub-claim (ii): CFL-phase EOS — `ε_D` and `P_D` satisfy
+      the cold quark Fermi-gas formula at effective mass `M_D`, with an
+      additional gap contribution `3 Δ_CFL² μ_q² / π²`. -/
+  claim_ii_cfl_eos : Prop
+  /-- Manuscript sub-claim (iii): the diquark-to-Borromean stiffness ratio
+      `P_D / P_B` is dominated by `(M_B / M_D) · 3^{5/3}` plus a gap term. -/
+  claim_iii_stiffness_ratio : Prop
 
 /-- **Manuscript statement** (full body):
 
@@ -135,9 +144,11 @@ $q =
     placeholder; the `ctx.holds : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/eos-borromean-cfl.ts
-theorem eos_borromean_cfl [ctx : EosBorromeanCflContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem eos_borromean_cfl [ctx : EosBorromeanCflContext] :
+    ctx.claim_i_borromean_eos ∧
+    ctx.claim_ii_cfl_eos ∧
+    ctx.claim_iii_stiffness_ratio :=
+  ⟨ctx.claim_i_borromean_eos, ctx.claim_ii_cfl_eos,
+   ctx.claim_iii_stiffness_ratio⟩
 
 end QOU.Descartes

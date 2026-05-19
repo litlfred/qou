@@ -13,26 +13,36 @@ namespace QOU.Descartes
 
 
 /-- Abstract context for the `genus_filtration_ideal` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
+    typed fields below; sub-claims encode (i) the Hecke-completeness genus
+    selection `g = 4`, (ii) the genus-filtration ideal `I_4 = (u^5)`, and
+    (iii) its action killing higher-Chebyshev evaluations. -/
 class GenusFiltrationIdealContext where
   /-- Braid representative type. -/
   Braid : Type
-  /-- Partition / Young-diagram indexing. -/
+  /-- Partition / Young-diagram indexing for irreps of `H_n(q)`. -/
   PartitionIdx : Type
-  /-- Topological link / knot type. -/
+  /-- Topological link / torus-knot type. -/
   Link : Type
-  /-- LP shadow-price / dual variable. -/
-  shadow_price : ℝ
-  /-- Cohomology / obstruction class. -/
+  /-- Cohomology / obstruction class type. -/
   ObstructionClass : Type
-  /-- Fluid-dynamics velocity / vorticity field. -/
-  VelocityField : Type
-  /-- The crossing / Hecke generator type. -/
-  Crossing : Type
-  /-- The representation space. -/
-  Rep : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- The representation-evaluation matrix `M_{ij} = χ_{λ_j}(σ_i)`. -/
+  EvalMatrixRank : ℕ
+  /-- The Riemann-surface genus chosen by the algebra. -/
+  genus : ℕ
+  /-- Manuscript sub-claim (i): the *unique minimal* genus satisfying the
+      Hecke completeness condition (rank of the evaluation matrix = `5`)
+      is `g = 4`. -/
+  claim_i_genus_eq_four : genus = 4
+  /-- Manuscript sub-claim (i'): completeness — the evaluation matrix
+      `M_{ij} = χ_{λ_j}(σ_i)` over the embeddable `T_{r,s}` at `g = 4`
+      has rank exactly `5` (all irreps of `H_2(q) ⊕ H_3(q)` are spanned). -/
+  claim_i_completeness_rank_five : EvalMatrixRank = 5
+  /-- Manuscript sub-claim (ii): the genus-filtration ideal is
+      `I_4 = (u^5)` in `ℤ[u]`. -/
+  claim_ii_ideal_eq_u5 : Prop
+  /-- Manuscript sub-claim (iii): the ideal `I_4 = (u^5)` is the obstruction
+      that kills the torus-knot family `T_{2,p}` for every prime `p ≥ 11`. -/
+  claim_iii_kills_higher_torus_knots : Prop
 
 /-- **Manuscript statement** (full body):
 
@@ -88,9 +98,14 @@ algebra of the QOU.*
     placeholder; the `ctx.holds : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/genus-filtration-ideal.ts
-theorem genus_filtration_ideal [ctx : GenusFiltrationIdealContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem genus_filtration_ideal [ctx : GenusFiltrationIdealContext] :
+    ctx.genus = 4 ∧
+    ctx.EvalMatrixRank = 5 ∧
+    ctx.claim_ii_ideal_eq_u5 ∧
+    ctx.claim_iii_kills_higher_torus_knots := by
+  refine ⟨ctx.claim_i_genus_eq_four, ctx.claim_i_completeness_rank_five,
+          ?_, ?_⟩
+  · sorry
+  · sorry
 
 end QOU.Descartes

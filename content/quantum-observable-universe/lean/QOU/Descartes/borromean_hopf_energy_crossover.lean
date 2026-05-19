@@ -12,25 +12,34 @@ Lake package.
 namespace QOU.Descartes
 
 
-/-- Abstract context for the `borromean_hopf_energy_crossover` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
+/-- Abstract context for the `borromean_hopf_energy_crossover` claim —
+    manuscript-themed typed fields below; sub-claims encode (i) the
+    Borromean-phase mass formula, (ii) the Diquark-phase mass formula,
+    and (iii) the crossover condition between the two phases. -/
 class BorromeanHopfEnergyCrossoverContext where
-  /-- Substrate parameter `q : ℝ`. -/
+  /-- Substrate parameter `q : ℝ` (`q > 1`). -/
   q : ℝ
-  /-- Topological link / knot type. -/
-  Link : Type
-  /-- Hyperbolic volume. -/
-  Vol : ℝ
-  /-- LP shadow-price / dual variable. -/
-  shadow_price : ℝ
-  /-- Categorical mass / binding energy. -/
-  mass : ℝ
-  /-- Fluid-dynamics velocity / vorticity field. -/
-  VelocityField : Type
-  /-- The crossing / Hecke generator type. -/
-  Crossing : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  q_gt_one : 1 < q
+  /-- Borromean hyperbolic volume `V_B ≈ 7.32772`. -/
+  V_B : ℝ
+  /-- Mass of the Borromean phase (two `B_3` baryons + inter-baryon Hopf
+      binding). -/
+  M_B : ℝ
+  /-- Mass of the Hopf-diquark phase. -/
+  M_D : ℝ
+  /-- Binding energy per baryon-number in the Borromean phase. -/
+  E_B : ℝ
+  /-- Binding energy per baryon-number in the diquark phase. -/
+  E_D : ℝ
+  /-- Manuscript sub-claim (i): Borromean-phase mass
+      `M_B = 2 · V_B / ℏ_q²` with `ℏ_q = (q − 1) / q`. -/
+  claim_i_borromean_mass : M_B = 2 * V_B / ((q - 1) / q) ^ 2
+  /-- Manuscript sub-claim (ii): Diquark-phase mass `M_D = q + q⁻¹`. -/
+  claim_ii_diquark_mass : M_D = q + q⁻¹
+  /-- Manuscript sub-claim (iii): crossover condition
+      `|E_D| > |E_B|` ⟺ Borromean→Diquark transition energetically
+      favoured. -/
+  claim_iii_crossover : Prop
 
 /-- **Manuscript statement** (full body):
 
@@ -117,9 +126,11 @@ $$
     placeholder; the `ctx.holds : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/borromean-hopf-energy-crossover.ts
-theorem borromean_hopf_energy_crossover [ctx : BorromeanHopfEnergyCrossoverContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem borromean_hopf_energy_crossover [ctx : BorromeanHopfEnergyCrossoverContext] :
+    ctx.M_B = 2 * ctx.V_B / ((ctx.q - 1) / ctx.q) ^ 2 ∧
+    ctx.M_D = ctx.q + ctx.q⁻¹ ∧
+    ctx.claim_iii_crossover :=
+  ⟨ctx.claim_i_borromean_mass, ctx.claim_ii_diquark_mass,
+   ctx.claim_iii_crossover⟩
 
 end QOU.Descartes

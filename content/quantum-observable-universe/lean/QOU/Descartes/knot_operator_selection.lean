@@ -14,14 +14,31 @@ namespace QOU.Descartes
 
 
 /-- Abstract context for the `knot_operator_selection` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
+    typed fields below; sub-claims encode the four numbered parts of the
+    manuscript proposition (spectral decomposition / pair-production /
+    Frobenius demand–supply / min-action selection). -/
 class KnotOperatorSelectionContext where
-  /-- The categorical object / monoidal structure. -/
+  /-- The categorical object `A` of the QOU `(C, A, τ)`. -/
   CategoricalObj : Type
-  /-- The topological-link / knot type. -/
+  /-- The topological-link / torus-knot type. -/
   Link : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- The physics endomorphism Φ ∈ End_C(A). -/
+  Phi : CategoricalObj → CategoricalObj
+  /-- Manuscript sub-claim (i): spectral decomposition
+      `Φ = Σ_{λ ⊢ r} d_λ(q) · Φ_λ` via Schur orthogonality, with
+      `Φ_λ = e_λ Φ e_λ` the projection onto the λ-isotypic component. -/
+  claim_i_spectral_decomposition : Prop
+  /-- Manuscript sub-claim (ii): multi-channel pair-production action
+      `S(γ₁, γ₂) = tr(Φ · (γ₁ ⊗ γ₂)) = Σ_λ d_λ(q) · tr_λ(γ₁ · β(τ_λ) · γ₂)`. -/
+  claim_ii_multichannel_pair_production : Prop
+  /-- Manuscript sub-claim (iii): the Frobenius pairing
+      `⟨K₁, K₂⟩_F = tr_M(K₁ · K₂)` is *non-degenerate* (QUO-1), so every
+      demand profile has a unique minimal-norm matching supply. -/
+  claim_iii_frobenius_demand_supply : Prop
+  /-- Manuscript sub-claim (iv): among all `Φ ∈ End(A)` compatible with
+      the on-shell condition `*_q F_∇ = F_∇`, the selected `Φ` minimises
+      the categorical action. -/
+  claim_iv_minimum_action_selection : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -38,9 +55,14 @@ states.*
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/knot-operator-selection.ts
-theorem knot_operator_selection [ctx : KnotOperatorSelectionContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
+theorem knot_operator_selection [ctx : KnotOperatorSelectionContext] :
+    ctx.claim_i_spectral_decomposition ∧
+    ctx.claim_ii_multichannel_pair_production ∧
+    ctx.claim_iii_frobenius_demand_supply ∧
+    ctx.claim_iv_minimum_action_selection := by
+  -- Manuscript proof: each sub-claim follows from a different input
+  -- (Schur orthogonality / Markov-trace cyclicity / Frobenius non-
+  -- degeneracy / variational principle).
   sorry
 
 end QOU.Descartes

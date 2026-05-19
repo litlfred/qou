@@ -9,30 +9,36 @@ The full Lean statement is pending; this stub exists so the
 Lake package.
 -/
 
+import Mathlib.Algebra.BigOperators.Group.Finset.Defs
+import Mathlib.Data.Real.Basic
+
 namespace QOU.Descartes
 
 
 /-- Abstract context for the `skein_finiteness_bound` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
+    typed fields below; sub-claims encode (i) the Skein-polynomial
+    factorisation, (ii) the per-generator positivity equivalence, and
+    (iii) the finiteness of the stable-configuration count. -/
 class SkeinFinitenessBoundContext where
   /-- Proton number `Z`. -/
   Z : ℕ
   /-- Neutron number `N`. -/
   N : ℕ
-  /-- Braid representative type. -/
-  Braid : Type
-  /-- Hyperbolic volume. -/
-  Vol : ℝ
-  /-- LP shadow-price / dual variable. -/
-  shadow_price : ℝ
-  /-- Fluid-dynamics velocity / vorticity field. -/
-  VelocityField : Type
-  /-- Spectrum / eigenvalue list. -/
-  Spectrum : Type
-  /-- The crossing / Hecke generator type. -/
-  Crossing : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- The Skein polynomial `P_{N(p,n)}(q) ∈ ℝ` at fixed `q`. -/
+  P : ℝ
+  /-- The per-generator traced volume `V̂_i` as a function `Fin (Z + N - 1) → ℝ`. -/
+  V : Fin (Z + N - 1) → ℝ
+  /-- Manuscript sub-claim (i): the Skein polynomial factorises as
+      `P = ∏_{i=0}^{A-2} V̂_i(q)`. -/
+  claim_i_skein_factorisation :
+    P = (Finset.univ.prod (fun i : Fin (Z + N - 1) => V i))
+  /-- Manuscript sub-claim (ii): the configuration `N(Z, N)` is stable iff
+      every per-generator volume is positive (equivalent: `P > 0` together
+      with the lattice inequality `V̂_i > 0` for all `i`). -/
+  claim_ii_per_generator_positivity : Prop
+  /-- Manuscript sub-claim (iii): the set of stable nuclear configurations
+      at fixed `q` is **finite**. -/
+  claim_iii_stable_configurations_finite : Prop
 
 /-- **Manuscript statement** (full body):
 
@@ -116,9 +122,13 @@ large $k$.  The sign of $\hat{V}_i$ depends on:
     placeholder; the `ctx.holds : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/skein-finiteness-bound.ts
-theorem skein_finiteness_bound [ctx : SkeinFinitenessBoundContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem skein_finiteness_bound [ctx : SkeinFinitenessBoundContext] :
+    ctx.P
+      = (Finset.univ.prod (fun i : Fin (ctx.Z + ctx.N - 1) => ctx.V i)) ∧
+    ctx.claim_ii_per_generator_positivity ∧
+    ctx.claim_iii_stable_configurations_finite := by
+  refine ⟨ctx.claim_i_skein_factorisation, ?_, ?_⟩
+  · sorry
+  · sorry
 
 end QOU.Descartes

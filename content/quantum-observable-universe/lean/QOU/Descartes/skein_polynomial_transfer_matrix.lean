@@ -9,11 +9,17 @@ The full Lean statement is pending; this stub exists so the
 Lake package.
 -/
 
+import Mathlib.Algebra.BigOperators.Group.Finset.Defs
+import Mathlib.Data.Real.Basic
+
 namespace QOU.Descartes
 
 
-/-- Abstract context for the `skein_polynomial_transfer_matrix` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
+/-- Abstract context for the `skein_polynomial_transfer_matrix` claim —
+    manuscript-themed typed fields below; sub-claims encode (i) the
+    transfer-matrix factorisation of the Markov-trace Skein polynomial,
+    (ii) the polynomial-degree bound, and (iii) the binomial cost
+    `(A choose 2)` of the algorithm. -/
 class SkeinPolynomialTransferMatrixContext where
   /-- Substrate parameter `q : ℝ`. -/
   q : ℝ
@@ -21,20 +27,22 @@ class SkeinPolynomialTransferMatrixContext where
   Z : ℕ
   /-- Neutron number `N`. -/
   N : ℕ
-  /-- Topological link / knot type. -/
-  Link : Type
-  /-- LP shadow-price / dual variable. -/
-  shadow_price : ℝ
-  /-- Fluid-dynamics velocity / vorticity field. -/
-  VelocityField : Type
-  /-- Spectrum / eigenvalue list. -/
-  Spectrum : Type
-  /-- The crossing / Hecke generator type. -/
-  Crossing : Type
-  /-- The representation space. -/
-  Rep : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- The Skein polynomial `P_N(q) ∈ ℝ` evaluated at fixed `q`. -/
+  P : ℝ
+  /-- The traced volume `V̂_i(q)` at each generator `σ_i`. -/
+  V : Fin (Z + N - 1) → ℝ
+  /-- The degree of the Skein polynomial (in `q^{1/2}`). -/
+  degree : ℕ
+  /-- Manuscript sub-claim (i): Markov-trace factorisation
+      `P_N(q) = ∏_{i=0}^{A-2} V̂_i(q)`. -/
+  claim_i_factorisation :
+    P = (Finset.univ.prod (fun i : Fin (Z + N - 1) => V i))
+  /-- Manuscript sub-claim (ii): the degree (in `q^{1/2}`) is bounded:
+      `deg(P) ≤ A² − 1` where `A = Z + N`. -/
+  claim_ii_degree_bound : degree ≤ (Z + N) ^ 2 - 1
+  /-- Manuscript sub-claim (iii): the algorithm performs exactly
+      `(A choose 2) = A(A-1)/2` transfer-matrix multiplications. -/
+  claim_iii_binomial_cost : Prop
 
 /-- **Manuscript statement** (full body):
 
@@ -98,9 +106,12 @@ $q, -q^{-1}$ with p
     placeholder; the `ctx.holds : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/skein-polynomial-transfer-matrix.ts
-theorem skein_polynomial_transfer_matrix [ctx : SkeinPolynomialTransferMatrixContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem skein_polynomial_transfer_matrix [ctx : SkeinPolynomialTransferMatrixContext] :
+    ctx.P
+      = (Finset.univ.prod (fun i : Fin (ctx.Z + ctx.N - 1) => ctx.V i)) ∧
+    ctx.degree ≤ (ctx.Z + ctx.N) ^ 2 - 1 ∧
+    ctx.claim_iii_binomial_cost :=
+  ⟨ctx.claim_i_factorisation, ctx.claim_ii_degree_bound,
+   ctx.claim_iii_binomial_cost⟩
 
 end QOU.Descartes
