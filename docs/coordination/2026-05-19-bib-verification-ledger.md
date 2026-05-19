@@ -90,3 +90,4 @@ PR #781) which round-trips against this exact file.
 | When (UTC) | Paper | Verifier | Action | Outcome |
 |-----------|-------|----------|--------|---------|
 | 2026-05-19 05:50 | `boyd-vandenberghe-2004` | Claude (`claude-opus-4-7`) | Read TOC + §5.5 + §5.6 + §A.5 of `uploads/boyd-vandenberghe-2004-…pdf` | 4 misattribution fixes applied (commit `66b3caf7f` on `claude/detangler-bib-followup-batch-2026-05-19`). 9 generic Ref lines still need §-specific work. |
+| 2026-05-19 06:14 | `codata2022` | Claude (`claude-opus-4-7`) | Cross-checked 5 .lean Ref sites against `uploads/codata-2022-constants.txt` (NIST CODATA 2022 ASCII table) | verified-clean. Muon-electron mass ratio `206.768 2827(46)` ✓; proton mass energy equiv. `938.272 089 43(29) MeV` ✓; derived hydrogen mass `938.7831 MeV` (= m_p + m_e − 13.6 eV/c²) ✓. |

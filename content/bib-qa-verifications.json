@@ -14,9 +14,12 @@
     },
     {
       "id": "codata2022",
-      "status": "pending",
+      "status": "verified-clean",
       "local_pdf": "uploads/codata-2022-constants.txt",
-      "fixes_applied": 0
+      "verified_at": "2026-05-19T06:14:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 0,
+      "note": "All 5 .lean Ref sites verified against the NIST table: muon-electron mass ratio 206.768 2827(46) ✓; proton mass energy equiv. 938.272 089 43(29) MeV ✓; derived hydrogen mass 938.7831 MeV (= m_p + m_e − 13.6 eV/c²) ✓. No fixes needed."
     },
     {
       "id": "leitnerpawloski2004",
