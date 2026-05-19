@@ -19,8 +19,14 @@ namespace QOU.BraidsKnots
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class TmliConstituentCompositeAgreementContext extends QOU.Shared.MarkovTraceContext where
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_tmli_constituent_composite_agreement : Prop
+  /-- Constituent-product Markov-trace value `∏ V̂_i^const`. -/
+  constituent_product : ℝ
+  /-- Composite Markov-trace value `tr_M(ρ(β_H))`. -/
+  composite_trace : ℝ
+  /-- Manuscript identity: constituent and composite evaluations
+      agree exactly. -/
+  claim_tmli_constituent_composite_agreement :
+    constituent_product = composite_trace
 /-- **Lemma statement** (from manuscript):
 
 For a hadron $\mathfrak{H} \hookrightarrow V^{\otimes N}$ with
@@ -35,6 +41,8 @@ of $H_N(q)$, so
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/tmli-constituent-composite-agreement.ts
-theorem tmli_constituent_composite_agreement [ctx : TmliConstituentCompositeAgreementContext] : ctx.claim_tmli_constituent_composite_agreement := ctx.claim_tmli_constituent_composite_agreement
+theorem tmli_constituent_composite_agreement [ctx : TmliConstituentCompositeAgreementContext] :
+    ctx.constituent_product = ctx.composite_trace :=
+  ctx.claim_tmli_constituent_composite_agreement
 
 end QOU.BraidsKnots

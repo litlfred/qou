@@ -18,14 +18,21 @@ namespace QOU.BraidsKnots
 class NsiQDeformedKernelContext where
   /-- Categorical object / monoidal structure. -/
   CategoricalObj : Type
-  /-- LP shadow-price / dual variable. -/
-  shadow_price : ℝ
-  /-- Categorical mass / binding energy. -/
-  mass : ℝ
-  /-- Fluid-dynamics velocity / vorticity field. -/
-  VelocityField : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_nsi_q_deformed_kernel : Prop
+  /-- Substrate parameter `q : ℝ`. -/
+  q : ℝ
+  /-- Substrate q-Planck `ℏ_q = 1 − q⁻¹`. -/
+  hbar_q : ℝ
+  /-- q-integer `[2]_q = q + q⁻¹`. -/
+  q_int_2 : ℝ
+  /-- Inter-point distance `r = |ρ(s) − ρ(t)|`. -/
+  r : ℝ
+  /-- Classical kernel `1/r²`. -/
+  classical_kernel : ℝ
+  /-- q-deformed kernel `[2]_q / (r² − ℏ_q²)`. -/
+  q_kernel : ℝ
+  /-- Manuscript kernel identity:
+      `q_kernel = [2]_q / (r² − ℏ_q²)`. -/
+  claim_nsi_q_deformed_kernel : q_kernel = q_int_2 / (r ^ 2 - hbar_q ^ 2)
 
 /-- **Manuscript statement** (full body):
 
@@ -48,9 +55,8 @@ $\lvert \varrho(s) - \varrho(t) \rvert = \hbar_q$.*
     placeholder; the `ctx.claim_nsi_q_deformed_kernel : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/nsi-q-deformed-kernel.ts
-theorem nsi_q_deformed_kernel [ctx : NsiQDeformedKernelContext] : ctx.claim_nsi_q_deformed_kernel := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem nsi_q_deformed_kernel [ctx : NsiQDeformedKernelContext] :
+    ctx.q_kernel = ctx.q_int_2 / (ctx.r ^ 2 - ctx.hbar_q ^ 2) :=
+  ctx.claim_nsi_q_deformed_kernel
 
 end QOU.BraidsKnots

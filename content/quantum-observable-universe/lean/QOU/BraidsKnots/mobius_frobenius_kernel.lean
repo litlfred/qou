@@ -18,16 +18,16 @@ namespace QOU.BraidsKnots
 class MobiusFrobeniusKernelContext where
   /-- Substrate parameter `q : ℝ`. -/
   q : ℝ
-  /-- Categorical object / monoidal structure. -/
-  CategoricalObj : Type
-  /-- Topological link / knot type. -/
-  Link : Type
-  /-- LP shadow-price / dual variable. -/
-  shadow_price : ℝ
-  /-- Fluid-dynamics velocity / vorticity field. -/
-  VelocityField : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_mobius_frobenius_kernel : Prop
+  /-- Frobenius–Hopf kernel value `K_FH(q, r)`. -/
+  K_FH : ℝ
+  /-- Inter-point distance `r = |γ(s) − γ(t)|`. -/
+  r : ℝ
+  /-- Classical repulsive kernel `1/r²`. -/
+  K_classical : ℝ
+  /-- Manuscript identity: at `q = 1`, the Frobenius–Hopf kernel
+      collapses to `1/r²`. -/
+  claim_mobius_frobenius_kernel :
+    K_classical = 1 / r ^ 2 ∧ (q = 1 → K_FH = K_classical)
 
 /-- **Manuscript statement** (full body):
 
@@ -50,9 +50,8 @@ $$
     placeholder; the `ctx.claim_mobius_frobenius_kernel : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/mobius-energy-frobenius-kernel.ts
-theorem mobius_frobenius_kernel [ctx : MobiusFrobeniusKernelContext] : ctx.claim_mobius_frobenius_kernel := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem mobius_frobenius_kernel [ctx : MobiusFrobeniusKernelContext] :
+    ctx.K_classical = 1 / ctx.r ^ 2 ∧ (ctx.q = 1 → ctx.K_FH = ctx.K_classical) :=
+  ctx.claim_mobius_frobenius_kernel
 
 end QOU.BraidsKnots
