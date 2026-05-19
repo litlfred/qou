@@ -4,6 +4,7 @@ export default conjecture({
   label: "conj:on-p-modular-hecke",
   title:
     "Modular Hecke at $q = \\zeta_p$ corresponds to nimber surreals $\\mathbf{On}_p$",
+  lean: { ref: "qou:QOU.AppendixSurreals.OnPModularHecke", validation: "stub" },
   tags: [
     "surreal-numbers",
     "characteristic-p",

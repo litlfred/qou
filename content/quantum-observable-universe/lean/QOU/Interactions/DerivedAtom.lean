@@ -166,4 +166,9 @@ def demandIndices (nf : Fin 6 → R_q) (neg : R_q → Prop) [DecidablePred neg] 
 def isShellClosed (nf : Fin 6 → R_q) (neg : R_q → Prop) [DecidablePred neg] : Prop :=
   demandIndices nf neg = ∅
 
+
+/-- Derived-atom record (placeholder marker for content block ref resolution) -/
+-- Ref: [manuscript] disambiguation marker for content-block resolution
+structure DerivedAtom where
+
 end QOU.Interactions

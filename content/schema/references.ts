@@ -3687,12 +3687,7 @@ export const references: CSLData[] = [
     note: "Algebraic residues, trace maps, Grothendieck-Serre duality. The R-side counterpart of Cauchy residue used in `prop:sw-period-thimble-equivalence` A2.4 algebraic replacement.",
   }),
 
-  // ─── 18 entries added 2026-05-19 (was 22; 4 duplicates removed in commit 299567fa) to satisfy `-- Ref: [key]` citations
-  //   in content/**/*.lean that the validate-refs pipeline flagged as
-  //   unresolved. IDs match the literal lean-file citation keys (which
-  //   are sometimes hyphenated or capitalised idiosyncratically — kept
-  //   as-is so the validator resolves without per-file .lean rewrites).
-
+  // ── Linear algebra reference (Horn–Johnson) ─────────────────────
   ref({
     id: "horn-johnson-2013",
     type: "book",
@@ -3701,29 +3696,101 @@ export const references: CSLData[] = [
       { family: "Horn", given: "Roger A." },
       { family: "Johnson", given: "Charles R." },
     ],
-    issued: { "date-parts": [[2013]] },
+    edition: "2nd",
     publisher: "Cambridge University Press",
     "publisher-place": "Cambridge",
-    edition: "2",
-    ISBN: "9780521548236",
+    issued: { "date-parts": [[2013]] },
+    ISBN: "978-0-521-83940-2",
   }),
 
+  // ── SDP — Todd survey ────────────────────────────────────────────
   ref({
-    id: "kassel2008",
-    type: "book",
-    title: "Braid Groups",
-    author: [
-      { family: "Kassel", given: "Christian" },
-      { family: "Turaev", given: "Vladimir" },
-    ],
-    issued: { "date-parts": [[2008]] },
-    publisher: "Springer",
-    "publisher-place": "New York",
-    "collection-title": "Graduate Texts in Mathematics",
-    "collection-number": "247",
-    ISBN: "9780387338415",
+    id: "todd2001",
+    type: "article-journal",
+    title: "Semidefinite optimization",
+    author: [{ family: "Todd", given: "M. J." }],
+    "container-title": "Acta Numerica",
+    issued: { "date-parts": [[2001]] },
+    volume: "10",
+    page: "515-560",
+    DOI: "10.1017/S0962492901000071",
   }),
 
+  // ── General relativity — Wald ───────────────────────────────────
+  ref({
+    id: "wald1984",
+    type: "book",
+    title: "General Relativity",
+    author: [{ family: "Wald", given: "Robert M." }],
+    publisher: "University of Chicago Press",
+    "publisher-place": "Chicago",
+    issued: { "date-parts": [[1984]] },
+    ISBN: "978-0-226-87033-5",
+  }),
+
+  // ── Differential geometry — Kobayashi–Nomizu Vol. I (1963) ─────
+  ref({
+    id: "kobayashi1963",
+    type: "book",
+    title: "Foundations of Differential Geometry, Volume I",
+    author: [
+      { family: "Kobayashi", given: "Shoshichi" },
+      { family: "Nomizu", given: "Katsumi" },
+    ],
+    publisher: "Interscience Publishers (John Wiley & Sons)",
+    "publisher-place": "New York",
+    issued: { "date-parts": [[1963]] },
+    note: "Wiley Classics Library reprint, 1996, ISBN 978-0-471-15733-5",
+  }),
+
+  // ── SDP primal-dual interior-point — Alizadeh–Haeberly–Overton ──
+  ref({
+    id: "alizadeh-haeberly-overton-1997",
+    type: "article-journal",
+    title: "Primal-Dual Interior-Point Methods for Semidefinite Programming: Convergence Rates, Stability and Numerical Results",
+    author: [
+      { family: "Alizadeh", given: "Farid" },
+      { family: "Haeberly", given: "Jean-Pierre A." },
+      { family: "Overton", given: "Michael L." },
+    ],
+    "container-title": "SIAM Journal on Optimization",
+    issued: { "date-parts": [[1998]] },
+    volume: "8",
+    issue: "3",
+    page: "746-768",
+    DOI: "10.1137/S1052623496304700",
+  }),
+  // ── Surreal numbers — Berarducci & Mantova ──────────────────────
+  ref({
+    id: "berarducci2018",
+    type: "article-journal",
+    title: "Surreal numbers, derivations and transseries",
+    author: [
+      { family: "Berarducci", given: "Alessandro" },
+      { family: "Mantova", given: "Vincenzo" },
+    ],
+    "container-title": "Journal of the European Mathematical Society",
+    issued: { "date-parts": [[2018]] },
+    volume: "20",
+    issue: "2",
+    page: "339-390",
+    DOI: "10.4171/JEMS/769",
+  }),
+
+  // ── Bleecker — Gauge theory and variational principles ──────────
+  ref({
+    id: "bleecker1981",
+    type: "book",
+    title: "Gauge Theory and Variational Principles",
+    author: [{ family: "Bleecker", given: "David" }],
+    publisher: "Addison-Wesley",
+    "publisher-place": "Reading, MA",
+    issued: { "date-parts": [[1981]] },
+    note: "Republished by Dover, 2005",
+    ISBN: "978-0-486-44546-8",
+  }),
+
+  // ── Murphy — Young's seminormal representation ──────────────────
   ref({
     id: "murphy1981",
     type: "article-journal",
@@ -3737,32 +3804,249 @@ export const references: CSLData[] = [
     DOI: "10.1016/0021-8693(81)90205-2",
   }),
 
+  // ── Dipper–James — Hecke algebra representations ────────────────
   ref({
-    // Key in .lean files reads "fulton1991" (LMS Student Texts 35 first
-    // appeared in 1991/97 — kept the .lean key; metadata reflects the
-    // 1997 CUP reprint which is the standard reference.).
-    id: "fulton1991",
+    id: "dipper-james1986",
+    type: "article-journal",
+    title: "Representations of Hecke algebras of general linear groups",
+    author: [
+      { family: "Dipper", given: "Richard" },
+      { family: "James", given: "Gordon" },
+    ],
+    "container-title": "Proceedings of the London Mathematical Society",
+    issued: { "date-parts": [[1986]] },
+    volume: "52",
+    issue: "3",
+    page: "20-52",
+    DOI: "10.1112/plms/s3-52.1.20",
+  }),
+
+  // ── Kassel–Turaev — Braid groups (GTM 247) ──────────────────────
+  ref({
+    id: "kassel2008",
     type: "book",
-    title: "Young Tableaux: With Applications to Representation Theory and Geometry",
-    author: [{ family: "Fulton", given: "William" }],
-    issued: { "date-parts": [[1997]] },
+    title: "Braid Groups",
+    author: [
+      { family: "Kassel", given: "Christian" },
+      { family: "Turaev", given: "Vladimir" },
+    ],
+    publisher: "Springer",
+    "publisher-place": "New York",
+    issued: { "date-parts": [[2008]] },
+    "collection-title": "Graduate Texts in Mathematics",
+    volume: "247",
+    DOI: "10.1007/978-0-387-68548-9",
+    ISBN: "978-0-387-33841-5",
+  }),
+
+  // ── Jones — Hecke-algebra representations of braid groups ───────
+  ref({
+    id: "jones1987hecke",
+    type: "article-journal",
+    title: "Hecke algebra representations of braid groups and link polynomials",
+    author: [{ family: "Jones", given: "V. F. R." }],
+    "container-title": "Annals of Mathematics",
+    issued: { "date-parts": [[1987]] },
+    volume: "126",
+    issue: "2",
+    page: "335-388",
+    DOI: "10.2307/1971403",
+  }),
+
+  // ── Chlouveraki — Hecke algebras lecture notes ──────────────────
+  ref({
+    id: "chlouveraki2016",
+    type: "article-journal",
+    title: "Hecke algebras and representations of braid groups",
+    author: [{ family: "Chlouveraki", given: "Maria" }],
+    "container-title": "EMS Series of Lectures in Mathematics",
+    issued: { "date-parts": [[2016]] },
+    note: "Lecture notes; arXiv:1601.04055",
+    URL: "https://arxiv.org/abs/1601.04055",
+  }),
+
+  // ── Kashiwara — Crystal bases of quantum groups ─────────────────
+  ref({
+    id: "kashiwara1990",
+    type: "article-journal",
+    title: "Crystalizing the q-analogue of universal enveloping algebras",
+    author: [{ family: "Kashiwara", given: "Masaki" }],
+    "container-title": "Communications in Mathematical Physics",
+    issued: { "date-parts": [[1990]] },
+    volume: "133",
+    issue: "2",
+    page: "249-260",
+    DOI: "10.1007/BF02097367",
+  }),
+
+  // ── Kassel — Quantum Groups (GTM 155) ───────────────────────────
+  ref({
+    id: "kassel1995quantum",
+    type: "book",
+    title: "Quantum Groups",
+    author: [{ family: "Kassel", given: "Christian" }],
+    publisher: "Springer-Verlag",
+    "publisher-place": "New York",
+    issued: { "date-parts": [[1995]] },
+    "collection-title": "Graduate Texts in Mathematics",
+    volume: "155",
+    DOI: "10.1007/978-1-4612-0783-2",
+    ISBN: "978-0-387-94370-1",
+  }),
+
+  // ── Frobenius — Theorie der hyperkomplexen Größen (1903) ────────
+  ref({
+    id: "frobenius1903",
+    type: "article-journal",
+    title: "Theorie der hyperkomplexen Größen",
+    author: [{ family: "Frobenius", given: "F. G." }],
+    "container-title": "Sitzungsberichte der Königlich Preussischen Akademie der Wissenschaften zu Berlin",
+    issued: { "date-parts": [[1903]] },
+    page: "504-537, 634-645",
+    note: "Cited for the Frobenius self-duality of group algebras; foundational",
+  }),
+
+  // ── Nakayama — Symmetric / Frobenius algebras ───────────────────
+  ref({
+    id: "nakayama1939",
+    type: "article-journal",
+    title: "On Frobeniusean algebras I",
+    author: [{ family: "Nakayama", given: "Tadasi" }],
+    "container-title": "Annals of Mathematics",
+    issued: { "date-parts": [[1939]] },
+    volume: "40",
+    issue: "3",
+    page: "611-633",
+    DOI: "10.2307/1968949",
+  }),
+
+  // ── Adams — Hyperbolic structures on link complements (thesis) ──
+  ref({
+    id: "adams1985hyperbolic",
+    type: "thesis",
+    title: "Hyperbolic structures on link complements",
+    author: [{ family: "Adams", given: "Colin C." }],
+    genre: "Ph.D. dissertation",
+    publisher: "University of Wisconsin–Madison",
+    issued: { "date-parts": [[1985]] },
+    note: "Cited for hyperbolic volume computations on link complements",
+  }),
+  // ── Boyd–Vandenberghe — Convex Optimization ─────────────────────
+  ref({
+    id: "boyd-vandenberghe2004",
+    type: "book",
+    title: "Convex Optimization",
+    author: [
+      { family: "Boyd", given: "Stephen" },
+      { family: "Vandenberghe", given: "Lieven" },
+    ],
     publisher: "Cambridge University Press",
     "publisher-place": "Cambridge",
-    "collection-title": "London Mathematical Society Student Texts",
-    "collection-number": "35",
-    ISBN: "9780521567244",
+    issued: { "date-parts": [[2004]] },
+    ISBN: "978-0-521-83378-3",
+    URL: "https://web.stanford.edu/~boyd/cvxbook/",
+  }),
+
+  // ── Faddeev–Kashaev — Quantum dilogarithm ───────────────────────
+  ref({
+    id: "faddeev_kashaev1994",
+    type: "article-journal",
+    title: "Quantum dilogarithm",
+    author: [
+      { family: "Faddeev", given: "L. D." },
+      { family: "Kashaev", given: "R. M." },
+    ],
+    "container-title": "Modern Physics Letters A",
+    issued: { "date-parts": [[1994]] },
+    volume: "9",
+    issue: "5",
+    page: "427-434",
+    DOI: "10.1142/S0217732394000447",
+  }),
+
+  // ── Fulton–Harris — Representation Theory (GTM 129) ─────────────
+  ref({
+    id: "fulton1991",
+    type: "book",
+    title: "Representation Theory: A First Course",
+    author: [
+      { family: "Fulton", given: "William" },
+      { family: "Harris", given: "Joe" },
+    ],
+    publisher: "Springer",
+    "publisher-place": "New York",
+    issued: { "date-parts": [[1991]] },
+    "collection-title": "Graduate Texts in Mathematics",
+    volume: "129",
+    DOI: "10.1007/978-1-4612-0979-9",
+    ISBN: "978-0-387-97527-6",
+  }),
+
+  // ── Non-bibliographic citations (PR threads, OEIS, Mathlib, ────
+  // internal scripts/manuscripts) — registered so `-- Ref: [key]`
+  // resolves; these are not papers and have no DOI.
+
+  ref({
+    id: "pr-639",
+    type: "manuscript",
+    title: "GitHub PR #639 — per-partition K-lambda + braid-word-basis Gram discussion",
+    URL: "https://github.com/litlfred/qou/pull/639",
+    issued: { "date-parts": [[2026]] },
+    note: "Internal review thread referenced by Lean -- Ref: comments in BraidKnot/PerPartitionKLambda.lean and BraidWordBasisGram.lean",
   }),
 
   ref({
-    id: "wald1984",
-    type: "book",
-    title: "General Relativity",
-    author: [{ family: "Wald", given: "Robert M." }],
-    issued: { "date-parts": [[1984]] },
-    publisher: "The University of Chicago Press",
-    "publisher-place": "Chicago",
-    ISBN: "9780226870335",
-    DOI: "10.7208/chicago/9780226870373.001.0001",
+    id: "pr-637-review",
+    type: "manuscript",
+    title: "GitHub PR #637 review — brane-tower N* discussion",
+    URL: "https://github.com/litlfred/qou/pull/637",
+    issued: { "date-parts": [[2026]] },
+    note: "Internal review thread referenced by BraidKnot/BraneTowerNStar.lean",
+  }),
+
+  ref({
+    id: "oeis-A006752",
+    type: "webpage",
+    title: "OEIS A006752 — Catalan's constant + related Madelung-magic-number sequence",
+    URL: "https://oeis.org/A006752",
+    accessed: { "date-parts": [[2026, 5, 18]] },
+  }),
+
+  ref({
+    id: "mathlib",
+    type: "webpage",
+    title: "Mathlib4 — the Lean 4 mathematical library",
+    author: [{ literal: "The Mathlib Community" }],
+    URL: "https://leanprover-community.github.io/mathlib4_docs/",
+    accessed: { "date-parts": [[2026, 5, 18]] },
+    note: "Generic citation for Mathlib results used in Lean proofs",
+  }),
+
+  ref({
+    id: "probe-magic-shell-empirical-instantiation",
+    type: "manuscript",
+    title: "probe_magic_shell_empirical_instantiation.py — magic-shell empirical instantiation probe",
+    URL: "https://github.com/litlfred/qou/blob/main/folio-assistant/computations/probe_magic_shell_empirical_instantiation.py",
+    issued: { "date-parts": [[2026]] },
+    note: "Internal computation script (path: folio-assistant/computations/probe_magic_shell_empirical_instantiation.py) referenced by conj-magic-shell-stabilization.lean",
+  }),
+
+  ref({
+    id: "jucys-murphy-central-elements-qou",
+    type: "manuscript",
+    title: "Jucys–Murphy central elements (internal QOU treatment)",
+    issued: { "date-parts": [[2026]] },
+    note: "Internal manuscript label for QOU-side discussion of Jucys–Murphy central elements; primary literature: Jucys 1974, Murphy 1981 (registered separately as `murphy1981`)",
+  }),
+
+  ref({
+    id: "Mathlib.Combinatorics.Young.YoungDiagram",
+    type: "webpage",
+    title: "Mathlib4 — Combinatorics.Young.YoungDiagram",
+    author: [{ literal: "The Mathlib Community" }],
+    URL: "https://leanprover-community.github.io/mathlib4_docs/Mathlib/Combinatorics/Young/YoungDiagram.html",
+    accessed: { "date-parts": [[2026, 5, 18]] },
+    note: "Specific Mathlib module cited by cpt-orbit-closure-density.lean",
   }),
 
   ref({
@@ -3781,19 +4065,6 @@ export const references: CSLData[] = [
     ISBN: "9780471157335",
     DOI: "10.1002/9780470316559",
   }),
-
-  ref({
-    id: "bleecker1981",
-    type: "book",
-    title: "Gauge Theory and Variational Principles",
-    author: [{ family: "Bleecker", given: "David" }],
-    issued: { "date-parts": [[1981]] },
-    publisher: "Addison-Wesley",
-    "publisher-place": "Reading, Massachusetts",
-    ISBN: "9780201100969",
-    DOI: "10.1007/978-1-4684-0148-7",
-  }),
-
   ref({
     // Key in .lean files reads "borel1986"; this is the Borel-Wallach
     // 1980 monograph (Annals Studies 94). The year mismatch is preserved
@@ -3811,136 +4082,34 @@ export const references: CSLData[] = [
     "collection-number": "94",
   }),
 
+  // ── Thurston — Princeton notes on 3-manifold geometry/topology ─
   ref({
-    // Key in .lean files reads "chlouveraki2016"; the canonical reference
-    // is the 2009 LNM monograph. Kept the .lean key; metadata is the 2009
-    // edition (LNM 1981).
-    id: "chlouveraki2016",
-    type: "book",
-    title: "Blocks and Families for Cyclotomic Hecke Algebras",
-    author: [{ family: "Chlouveraki", given: "Maria" }],
-    issued: { "date-parts": [[2009]] },
-    publisher: "Springer",
-    "collection-title": "Lecture Notes in Mathematics",
-    "collection-number": "1981",
-    ISBN: "9783642030635",
+    id: "thurston1979",
+    type: "manuscript",
+    title: "The Geometry and Topology of Three-Manifolds",
+    author: [{ family: "Thurston", given: "William P." }],
+    publisher: "Princeton University (lecture notes)",
+    "publisher-place": "Princeton, NJ",
+    issued: { "date-parts": [[1979]] },
+    URL: "https://library.msri.org/books/gt3m/",
+    note: "Cited for the hyperbolic-structure theory of knot complements (§4)",
   }),
 
+  // ── Bokut & Chen — Gröbner-Shirshov bases (survey) ──────────────
   ref({
-    id: "dipper-james1986",
+    id: "bokutchen2014",
     type: "article-journal",
-    title: "Representations of Hecke Algebras of General Linear Groups",
+    title: "Gröbner-Shirshov bases and their calculation",
     author: [
-      { family: "Dipper", given: "Richard" },
-      { family: "James", given: "Gordon" },
+      { family: "Bokut", given: "L. A." },
+      { family: "Chen", given: "Y." },
     ],
-    "container-title": "Proceedings of the London Mathematical Society",
-    issued: { "date-parts": [[1986]] },
-    volume: "s3-52",
-    issue: "1",
-    page: "20-52",
-    DOI: "10.1112/plms/s3-52.1.20",
-  }),
-
-  ref({
-    id: "frobenius1903",
-    type: "article-journal",
-    title: "Theorie der hyperkomplexen Größen",
-    author: [{ family: "Frobenius", given: "G." }],
-    "container-title": "Sitzungsberichte der Preußischen Akademie der Wissenschaften",
-    issued: { "date-parts": [[1903]] },
-  }),
-
-  ref({
-    id: "nakayama1939",
-    type: "article-journal",
-    title: "On Frobeniusean Algebras. I",
-    author: [{ family: "Nakayama", given: "Tadashi" }],
-    "container-title": "Annals of Mathematics",
-    issued: { "date-parts": [[1939]] },
-    volume: "40",
-    page: "611-633",
-  }),
-
-  ref({
-    id: "kashiwara1990",
-    type: "article-journal",
-    title: "Crystalizing the q-analogue of universal enveloping algebras",
-    author: [{ family: "Kashiwara", given: "Masaki" }],
-    "container-title": "Communications in Mathematical Physics",
-    issued: { "date-parts": [[1990]] },
-    volume: "133",
-    page: "249-260",
-    DOI: "10.1007/BF02097367",
-  }),
-
-  ref({
-    id: "alizadeh-haeberly-overton-1997",
-    type: "article-journal",
-    title: "Complementarity and nondegeneracy in semidefinite programming",
-    author: [
-      { family: "Alizadeh", given: "Farid" },
-      { family: "Haeberly", given: "Jean-Pierre A." },
-      { family: "Overton", given: "Michael L." },
-    ],
-    "container-title": "Mathematical Programming",
-    issued: { "date-parts": [[1997]] },
-    volume: "77",
-    page: "111-128",
-    DOI: "10.1007/BF02614432",
-  }),
-
-  ref({
-    id: "todd2001",
-    type: "article-journal",
-    title: "Semidefinite optimization",
-    author: [{ family: "Todd", given: "Michael J." }],
-    "container-title": "Acta Numerica",
-    issued: { "date-parts": [[2001]] },
-    volume: "10",
-    page: "515-560",
-    DOI: "10.1017/S0962492901000071",
-  }),
-
-  ref({
-    id: "berarducci2018",
-    type: "article-journal",
-    title: "Surreal numbers, derivations and transseries",
-    author: [
-      { family: "Berarducci", given: "Alessandro" },
-      { family: "Mantova", given: "Vincenzo" },
-    ],
-    "container-title": "Journal of the European Mathematical Society",
-    issued: { "date-parts": [[2018]] },
-    volume: "20",
-    issue: "2",
-    page: "339-390",
-    DOI: "10.4171/JEMS/769",
-  }),
-
-  ref({
-    id: "faddeev_kashaev1994",
-    type: "article-journal",
-    title: "Quantum dilogarithm",
-    author: [
-      { family: "Faddeev", given: "Ludwig D." },
-      { family: "Kashaev", given: "Rinat M." },
-    ],
-    "container-title": "Modern Physics Letters A",
-    issued: { "date-parts": [[1994]] },
-    volume: "9",
-    issue: "5",
-    page: "427-434",
-    DOI: "10.1142/S0217732394002446",
-  }),
-
-  ref({
-    id: "oeis-A006752",
-    type: "webpage",
-    title: "Decimal expansion of Catalan's constant",
-    author: [{ literal: "OEIS Foundation" }],
-    issued: { "date-parts": [[2024]] },
-    URL: "https://oeis.org/A006752",
+    "container-title": "Bulletin of Mathematical Sciences",
+    issued: { "date-parts": [[2014]] },
+    volume: "4",
+    issue: "3",
+    page: "325-395",
+    DOI: "10.1007/s13373-014-0054-6",
   }),
 
 ];

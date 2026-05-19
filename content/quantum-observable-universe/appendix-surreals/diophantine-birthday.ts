@@ -4,6 +4,7 @@ export default conjecture({
   label: "conj:diophantine-birthday",
   title:
     "Algebraic vs transcendental numbers are separated by birthday trajectory",
+  lean: { ref: "qou:QOU.AppendixSurreals.DiophantineBirthday", validation: "stub" },
   tags: [
     "surreal-numbers",
     "birthday",

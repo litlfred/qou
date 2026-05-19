@@ -4,6 +4,7 @@ export default conjecture({
   label: "conj:bring-trilog-depth-3-witness",
   title:
     "Bring trilog at $\\zeta_5$ as depth-3 grouplike value (50-digit functional-equation cross-validated witness)",
+  lean: { ref: "qou:QOU.BraidKnot.BringTrilogDepth3Witness", validation: "stub" },
   computation: {
     engine: "mpmath",
     script:

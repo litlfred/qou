@@ -4,6 +4,7 @@ export default conjecture({
   label: "conj:n-sym-symmetric-channel-normalization",
   title:
     "$\\mathcal{N}_{\\rm sym}(q)$ — symmetric-channel Plancherel normalization for the EW/Higgs sector",
+  lean: { ref: "qou:QOU.BraidKnot.NSymSymmetricChannelNormalization", validation: "stub" },
   uses: [
     "conj:weak-spectral-completeness",
     "conj:electroweak-higgs-torus-link-triplet",

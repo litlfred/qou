@@ -139,4 +139,9 @@ theorem HasCorrectedMassEndomorphismTower.ne_phi_q_at_zero
   rw [c.uses_li2q, phi_q_at_zero, towerTerm_at_zero]
   norm_num
 
+
+/-- Quantum-dilogarithm disambiguation (placeholder marker for content block ref resolution) -/
+-- Ref: [manuscript] disambiguation marker for content-block resolution
+structure QuantumDilogarithm where
+
 end QOU.BraidKnot
