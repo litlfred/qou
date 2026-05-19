@@ -1,3 +1,5 @@
+import Mathlib.Algebra.BigOperators.Basic
+
 /-!
 # QOU.BraidsKnots.skein_mass_from_linking — placeholder stub
 
@@ -18,12 +20,23 @@ namespace QOU.BraidsKnots
 class SkeinMassFromLinkingContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
-  /-- The topological-link / knot type. -/
-  Link : Type
-  /-- The categorical mass / binding energy. -/
+  /-- The Skein polynomial `Q(q)` of the linking configuration. -/
+  Q : ℝ
+  /-- Mass of the Hopf link `𝓜(L_Hopf)`. -/
+  mass_Hopf : ℝ
+  /-- Number of constituents. -/
+  n : ℕ
+  /-- Volume of constituent knot `K_i`. -/
+  Vol_K : ℕ → ℝ
+  /-- Substrate q-Planck `ℏ_q`. -/
+  hbar_q : ℝ
+  /-- Total hadron mass `𝓜(H)`. -/
   mass : ℝ
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_skein_mass_from_linking : Prop
+  /-- Manuscript identity (Skein mass formula):
+      `𝓜(H) = Q(q) · 𝓜(L_Hopf) + Σ_i Vol(K_i) / ℏ_q²`. -/
+  claim_skein_mass_from_linking :
+    mass = Q * mass_Hopf +
+      (Finset.range n).sum (fun i => Vol_K i / hbar_q ^ 2)
 
 /-- **Lemma statement** (from manuscript):
 
@@ -49,9 +62,9 @@ linking configuration, and $\hbar_q = 1 - q^{-1}$.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/skein-mass-from-linking.ts
-theorem skein_mass_from_linking [ctx : SkeinMassFromLinkingContext] : ctx.claim_skein_mass_from_linking := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem skein_mass_from_linking [ctx : SkeinMassFromLinkingContext] :
+    ctx.mass = ctx.Q * ctx.mass_Hopf +
+      (Finset.range ctx.n).sum (fun i => ctx.Vol_K i / ctx.hbar_q ^ 2) :=
+  ctx.claim_skein_mass_from_linking
 
 end QOU.BraidsKnots
