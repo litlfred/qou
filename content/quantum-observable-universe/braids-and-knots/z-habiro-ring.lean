@@ -12,7 +12,7 @@ truncations.
 This file provides the algebraic skeleton; the conjecture that the
 brane tower lives in this ring as a Cauchy limit is stated separately.
 
--- Ref: [habiro2002] https://doi.org/10.2140/gt.2008.12.2091
+-- Ref: [habiro2002] Habiro, "On the colored Jones polynomials of some simple links," arXiv:math/0505219
 -- Ref: [manuscript] Chapter 3, def:z-habiro-ring
 -/
 

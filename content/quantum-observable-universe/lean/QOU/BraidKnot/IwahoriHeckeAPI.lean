@@ -200,7 +200,7 @@ opaque centralIdempotent
     (§3b-cond pattern) since concrete proof requires constructing
     JM elements + interpolation polynomial, both of which depend on
     a full IwahoriHeckeAlgebra implementation. -/
--- Ref: [murphy1981] https://doi.org/10.1016/0021-8693(81)90205-2
+-- Ref: [murphy1981] Murphy, "A new construction of Young's seminormal representation of the symmetric groups," J. Algebra 69 (1981)
 -- Ref: [dipper-james1986] Hecke-algebra extension.
 axiom centralIdempotent_central_axiom :
     ∀ {n : ℕ} {R : Type*} [CommRing R] {q : R} {h_unit : IsUnit q}
@@ -221,7 +221,7 @@ theorem central_idempotent_central
 /-- **External axiom**: orthogonality of central idempotents follows
     from Lagrange interpolation in commuting variables (the JM
     elements pairwise commute by [murphy1981]). -/
--- Ref: [murphy1981] https://doi.org/10.1016/0021-8693(81)90205-2
+-- Ref: [murphy1981] Murphy, "A new construction of Young's seminormal representation of the symmetric groups," J. Algebra 69 (1981)
 axiom centralIdempotent_orthogonal_axiom :
     ∀ {n : ℕ} {R : Type*} [CommRing R] {q : R} {h_unit : IsUnit q}
       (H : IwahoriHeckeAlgebra n R q h_unit) (lam mu : List ℕ),
@@ -260,7 +260,7 @@ def partitionTranspose : List ℕ → List ℕ
 /-- **External axiom** (manuscript §prop:explicit-central-idempotent
     "Cross-checks" §3-4): the bar involution `q ↦ q⁻¹` acts on
     central idempotents by partition transpose. -/
--- Ref: [murphy1981] https://doi.org/10.1016/0021-8693(81)90205-2
+-- Ref: [murphy1981] Murphy, "A new construction of Young's seminormal representation of the symmetric groups," J. Algebra 69 (1981)
 axiom bar_centralIdempotent_transpose_axiom :
     ∀ {n : ℕ} {R : Type*} [CommRing R] {q : R} {h_unit : IsUnit q}
       (H : IwahoriHeckeAlgebra n R q h_unit) [HeckeBar H]

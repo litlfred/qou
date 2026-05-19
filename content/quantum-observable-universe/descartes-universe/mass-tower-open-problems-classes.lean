@@ -27,7 +27,7 @@ unpack the existential, conclude.
 -- Ref: [manuscript] prop:chirality-writhe-ribbon-derivation
 -- Ref: [manuscript] conj:brane-tower-z-habiro
 -- Ref: [manuscript] prop:em-coupling-bring-zero-mode
--- Ref: [borel1974] https://doi.org/10.24033/asens.1269
+-- Ref: [borel1974] Borel, "Stable real cohomology of arithmetic groups," Ann. Sci. ENS 7 (1974)
 -/
 
 import Mathlib.Analysis.SpecialFunctions.Pow.Real

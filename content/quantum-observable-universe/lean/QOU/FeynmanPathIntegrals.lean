@@ -129,7 +129,7 @@ theorem eigenbasis_decomposition
     `eigenbasis_decomposition`; the trace collapse is a corollary.
 
     LaTeX: `\label{lem:feynman-trace-collapse}` -/
--- Ref: [feynman1948] https://doi.org/10.1103/RevModPhys.20.367
+-- Ref: [feynman1948] Feynman, "Space-time approach to non-relativistic quantum mechanics," Rev. Mod. Phys. 20 (1948)
 theorem trace_collapse
     (decomp : PathIntegrals.SchurWeylDecomposition) :
     decomp.partitions.length ≤ decomp.n / 2 + 1 :=
@@ -276,7 +276,7 @@ theorem jones_trace_generator_at_one
 /-- The q-energy reduces to the classical action at q = 1:
     E_q(K) → S_1(K) because rotational and translational terms
     vanish with ℏ_q → 0. -/
--- Ref: [feynman1948] https://doi.org/10.1103/RevModPhys.20.367
+-- Ref: [feynman1948] Feynman, "Space-time approach to non-relativistic quantum mechanics," Rev. Mod. Phys. 20 (1948)
 theorem q_energy_classical_limit (action rot trans h_q : ℝ) (hq1 : h_q = 0) :
     rot * h_q + trans * h_q + action = action := by
   rw [hq1]; ring
@@ -315,7 +315,7 @@ structure ClassicalLimitDegeneration where
     and the QOU categorical trace.
 
     LaTeX: `\label{rem:feynman-qou-dictionary}` -/
--- Ref: [feynman1948] https://doi.org/10.1103/RevModPhys.20.367
+-- Ref: [feynman1948] Feynman, "Space-time approach to non-relativistic quantum mechanics," Rev. Mod. Phys. 20 (1948)
 structure FeynmanQOUDictionary where
   /-- Configuration space of paths ↔ Braid group B_n acting on V^{⊗n}. -/
   configSpace : PathIntegrals.SchurWeylDecomposition

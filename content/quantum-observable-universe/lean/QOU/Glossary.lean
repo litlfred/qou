@@ -133,7 +133,7 @@ noncomputable def substrateParameter (p : ℝ) : ℝ := 1 + |p|
     categorically by `A ⊗ Ω¹(A)` where `Ω¹(A) = ker(m : A ⊗ A → A)`.
 
     LaTeX: `\label{def:jet-prolongation}` -/
--- Ref: [lurie2009] https://doi.org/10.4310/CDM.2008.v2008.n1.a3
+-- Ref: [lurie2009] Lurie, "On the Classification of Topological Field Theories," arXiv:0905.0465
 structure JetProlongation where
   /-- The base type (algebra `A`). -/
   base : Type*
@@ -146,7 +146,7 @@ structure JetProlongation where
     first-order differential calculus.
 
     LaTeX: `\label{def:kahler-differentials}` -/
--- Ref: [lurie2009] https://doi.org/10.4310/CDM.2008.v2008.n1.a3
+-- Ref: [lurie2009] Lurie, "On the Classification of Topological Field Theories," arXiv:0905.0465
 structure KahlerDifferentials where
   /-- The algebra `A`. -/
   algebra : Type*

@@ -71,7 +71,7 @@ structure GrobnerShirshovBasis where
 
     For a prime p ≥ 5 (i.e., p does not divide 30), the integration
     is compatible with the Descartes braid structure. -/
--- Ref: [hazewinkel1978] https://doi.org/10.1007/978-3-642-35190-6
+-- Ref: [hazewinkel1978] Hazewinkel, "Formal Groups and Applications," Academic Press 1978
 theorem integration_requires_good_prime (p : ℕ) (hp : Nat.Prime p)
     (h5 : 5 ≤ p) : ¬(p ∣ 30) := by
   intro hdvd

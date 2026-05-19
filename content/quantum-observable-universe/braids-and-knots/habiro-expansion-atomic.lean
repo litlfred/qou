@@ -129,7 +129,7 @@ theorem habiro_step_zero (p : ℤ[X]) :
 /-- **External axiom (Habiro 2002):** Habiro expansion exists for
     every integer polynomial. -/
 -- Ref: [manuscript] `prop:habiro-expansion-atomic` Step 2–4
--- Ref: [habiro2002] https://doi.org/10.2140/gt.2004.8.1127
+-- Ref: [habiro2002] Habiro, "On the colored Jones polynomials of some simple links," arXiv:math/0505219
 axiom habiro_expansion_exists_axiom :
     ∀ (p : ℤ[X]), Nonempty (HabiroExpansion p)
 

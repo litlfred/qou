@@ -406,9 +406,9 @@
       "id": "lurie2009",
       "status": "verified-clean",
       "local_pdf": "uploads/lurie2009.pdf",
-      "verified_at": "2026-05-19T15:48:00Z",
+      "verified_at": "2026-05-19T15:54:00Z",
       "verified_by": "Claude (claude-opus-4-7)",
-      "fixes_applied": 0,
+      "fixes_applied": 3,
       "fix_commit": null,
       "note": "PDF verified: 'On the Classification of Topological Field Theories (Draft)' by Jacob Lurie, arXiv:0905.0465. Matches references.ts metadata. Cited in QOU for Lurie's TQFT classification."
     },
@@ -541,6 +541,116 @@
       "fixes_applied": 4,
       "fix_commit": "(this commit)",
       "note": "Murakami & Murakami, colored Jones + simplicial volume (Acta Math. 186, 2001, arXiv:math/9905075). 4 bare-URL Refs upgraded with title+publisher form. No local PDF."
+    },
+    {
+      "id": "lecouvey2007",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T15:54:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 4,
+      "fix_commit": "(this commit)",
+      "note": "4 bare-URL Refs upgraded with title+publisher form."
+    },
+    {
+      "id": "hazewinkel1978",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T15:54:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 4,
+      "fix_commit": "(this commit)",
+      "note": "4 bare-URL Refs upgraded with title+publisher form."
+    },
+    {
+      "id": "habiro2002",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T15:54:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 4,
+      "fix_commit": "(this commit)",
+      "note": "4 bare-URL Refs upgraded with title+publisher form."
+    },
+    {
+      "id": "reshetikhin1991",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T15:54:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 3,
+      "fix_commit": "(this commit)",
+      "note": "3 bare-URL Refs upgraded with title+publisher form."
+    },
+    {
+      "id": "murphy1992",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T15:54:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 3,
+      "fix_commit": "(this commit)",
+      "note": "3 bare-URL Refs upgraded with title+publisher form."
+    },
+    {
+      "id": "murphy1981",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T15:54:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 3,
+      "fix_commit": "(this commit)",
+      "note": "3 bare-URL Refs upgraded with title+publisher form."
+    },
+    {
+      "id": "kazhdan-lusztig1979",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T15:54:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 3,
+      "fix_commit": "(this commit)",
+      "note": "3 bare-URL Refs upgraded with title+publisher form."
+    },
+    {
+      "id": "jones1985",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T15:54:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 3,
+      "fix_commit": "(this commit)",
+      "note": "3 bare-URL Refs upgraded with title+publisher form."
+    },
+    {
+      "id": "feynman1948",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T15:54:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 3,
+      "fix_commit": "(this commit)",
+      "note": "3 bare-URL Refs upgraded with title+publisher form."
+    },
+    {
+      "id": "bring1786",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T15:54:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 3,
+      "fix_commit": "(this commit)",
+      "note": "3 bare-URL Refs upgraded with title+publisher form."
+    },
+    {
+      "id": "borel1974",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T15:54:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 3,
+      "fix_commit": "(this commit)",
+      "note": "3 bare-URL Refs upgraded with title+publisher form."
     }
   ]
 }

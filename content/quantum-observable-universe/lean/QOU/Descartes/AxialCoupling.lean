@@ -129,7 +129,7 @@ noncomputable def axialCouplingRatio : FractionRing R_t :=
     Re-exported from `QOU.Mathlib.SymmetricIdempotent` (Murphy/Mathas
     upstream); concrete definition is the existential
     `∃ b, tracedVolCleared x = tracedVolCleared b`. -/
--- Ref: [murphy1992] https://doi.org/10.1016/0021-8693(92)90139-D
+-- Ref: [murphy1992] Murphy, "On the representation theory of the symmetric groups and associated Hecke algebras," J. Algebra 152 (1992)
 abbrev InSymmetricIdempotent (x : TMatrix) : Prop :=
   QOU.Mathlib.InSymmetricIdempotent x
 
@@ -145,7 +145,7 @@ abbrev InSymmetricIdempotent (x : TMatrix) : Prop :=
     multiset invariance of the symmetric character (Murphy 1992
     Theorem 4.3), which is recorded per-instance via
     `SymCharacterEqual` below. -/
--- Ref: [murphy1992] https://doi.org/10.1016/0021-8693(92)90139-D
+-- Ref: [murphy1992] Murphy, "On the representation theory of the symmetric groups and associated Hecke algebras," J. Algebra 152 (1992)
 
 /-- Symmetric-character equality witness — per-pair.
     `SymCharacterEqual x y` records that `x` and `y` have the same
