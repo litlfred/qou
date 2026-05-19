@@ -97,7 +97,8 @@ Wedderburn blocks).
     Slater + Boyd–Vandenberghe Thm 5.5, this follows from the
     Slater-strict hypothesis once Mathlib SDP duality lands. -/
 -- Ref: [manuscript] particle-interactions/confinement-sdp
--- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
+-- Ref: [boyd-vandenberghe-2004] §5.2.3 (Slater's condition) + §5.3
+--      (strong duality for convex problems)
 class HasConfinementSDPStrongDuality (n : ℕ) [HasConfinementSDPData n]
     (h : slaterStrict n) : Prop where
   strong_duality : primalOpt n = nTarget n * y0Star n
@@ -123,7 +124,8 @@ instance hasConfinementSDPStrongDuality_of_fact (n : ℕ)
     Cf. `markovTraceNF` in `ConfinementLP` for the scalar-LP
     projection recovered when every Wedderburn block decouples. -/
 -- Ref: [manuscript] particle-interactions/confinement-sdp
--- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
+-- Ref: [boyd-vandenberghe-2004] §5.2.3 (Slater's condition) + §5.3
+--      (strong duality for convex problems)
 theorem ConfinementSDP (n : ℕ) [HasConfinementSDPData n] (h : slaterStrict n)
     [HasConfinementSDPStrongDuality n h] :
     primalOpt n = nTarget n * y0Star n :=
@@ -152,7 +154,8 @@ def bindingMultiplicity (n : ℕ) [h : HasSDPBindingMultiplicity n] : ℕ := h.m
     the rank-1 diagonal slice of the SDP feasible spectrahedron. -/
 -- Ref: [manuscript] particle-interactions/confinement-sdp
 -- Ref: [manuscript] particle-interactions/confinement-lp
--- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
+-- Ref: [boyd-vandenberghe-2004] §5.2.3 (Slater's condition) + §5.3
+--      (strong duality for convex problems)
 class ScalarLPProjection (n : ℕ) [HasSDPBindingMultiplicity n]
     [HasConfinementSDPData n]
     (_h : bindingMultiplicity n = 1) : Prop where

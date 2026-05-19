@@ -4,13 +4,13 @@
   "entries": [
     {
       "id": "boyd-vandenberghe-2004",
-      "status": "partial",
+      "status": "fixed",
       "local_pdf": "uploads/boyd-vandenberghe-2004-convex-optimization.pdf",
-      "verified_at": "2026-05-19T05:50:00Z",
+      "verified_at": "2026-05-19T06:38:00Z",
       "verified_by": "Claude (claude-opus-4-7)",
-      "fixes_applied": 4,
-      "fix_commit": "66b3caf7f",
-      "note": "§5.5.3→§5.5.2, §5.5.4→§5.5.2+alizadeh, Thm 5.5→§5.2.3+§5.3, §A.5.3→§A.5.5. 9 generic Refs still need §-specific updates."
+      "fixes_applied": 18,
+      "fix_commit": "(this commit)",
+      "note": "All 17 -- Ref: [boyd-vandenberghe-2004] sites now carry a §-specific citation. (1) 4 misattribution fixes in commit 66b3caf7f: §5.5.3→§5.5.2 (PosSemidefTraceZero), §5.5.4→§5.5.2+alizadeh (SDPRealUniqueness 3 occurrences), Thm 5.5→§5.2.3+§5.3 (SDP 2 occurrences), §A.5.3→§A.5.5 (PosSemidefDiagZero 2 occurrences). (2) 14 generic DOI-only Refs in this commit specified by section: §5.6 perturbation/sensitivity for shell-closure/phase-stratification monotone+openness claims (10 sites across 5 files); §5.2.3+§5.3+§5.5 Slater+strong-duality+KKT for noble-gas SDP (ElectronShell, 2 sites); §5.2.3+§5.3 Slater+strong-duality for ConfinementSDP (3 sites). Verified against uploads/boyd-vandenberghe-2004-convex-optimization.pdf TOC. 0 generic boyd Refs remain in content/."
     },
     {
       "id": "codata2022",

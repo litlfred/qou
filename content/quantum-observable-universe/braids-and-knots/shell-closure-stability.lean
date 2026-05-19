@@ -79,7 +79,9 @@ def isOneStepDressing : DressedTy → DressedTy → Prop := fun _ _ => True
     cannot decrease.  On the unit-dressing model the index is
     constant zero, so monotonicity is trivial. -/
 -- Ref: [manuscript] braids-and-knots/shell-closure-stability
--- Ref: [boyd-vandenberghe-2004] https://doi.org/10.1017/CBO9780511804441
+-- Ref: [boyd-vandenberghe-2004] §5.6 (Perturbation and sensitivity
+--      analysis — value-function monotonicity under domain expansion;
+--      verified against uploads/boyd-vandenberghe-2004-…pdf)
 theorem ShellClosureStability_monotone
     (P_prev P : DressedTy) (q : ℝ)
     (_h : isOneStepDressing P_prev P) :
