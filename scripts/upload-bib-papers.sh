@@ -148,7 +148,10 @@ for entry in "${PAPERS[@]}"; do
     mv "$TMP" "$target_path"
     echo "[ok  ] $target_path  size=${SIZE}B  sha=${SHA:0:12}"
 
-    git add "$target_path"
+    # Use -f to bypass the global *.pdf gitignore rule on uploads/
+    # (the repo's .gitignore should whitelist uploads/* via a `!` rule,
+    # but -f is a defense in depth in case it doesn't).
+    git add -f "$target_path"
     git commit -m "intake: $target (size=${SIZE}B, sha=${SHA:0:12})
 
 $desc

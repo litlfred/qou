@@ -21,6 +21,16 @@ chapters/*.md
 # LaTeX renderer; see content/pipeline/render-latex.ts image case).
 !content/**/rendered/*.pdf
 !figures/*.pdf
+# Whitelist intake uploads (raw PDFs, scans, WHO guidelines etc.
+# committed via scripts/upload-bib-papers.sh and similar intake
+# pipelines per CLAUDE.md §"uploads/").
+!uploads/*.pdf
+!uploads/*.txt
+!uploads/*.json
+!uploads/*.html
+!uploads/*.xml
+!uploads/*.csv
+!uploads/*.tsv
 diff.tex
 main-flat.tex
 tikz-cache/
