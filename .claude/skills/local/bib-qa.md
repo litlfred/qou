@@ -34,11 +34,46 @@ The skill operates at two levels:
 | 4 | `cited_in_paper` | ✓     | Referenced by `\cite{}` in .md/.tex or `-- Ref:` in .lean |
 | 5 | `has_screenshot` | ✓     | Screenshot exists in `content/bib-qa-images/<id>.*` |
 | 6 | `has_local_pdf`  | ✓     | Full paper PDF / data file present at `uploads/<id>*.{pdf,txt}` for offline verification (added 2026-05-19) |
+| 7 | `verification_status` | ✓ | Per-paper verification record exists in `content/schema/bib-verification.ts` with status ∈ {`verified-clean`, `partial`, `fixed`}. Pending/uncited/unfetchable/paper-mismatch all warn. (added 2026-05-19) |
 
 \* ✓* = automated but requires `--check-urls` flag (makes network requests).
 
 Each tag resolves to `pass`, `fail`, `warn`, or `unchecked`.
-The **score** (0–6) is the count of passing tags.
+The **score** (0–7) is the count of passing tags.
+
+### Verification status model (`bib-verification.ts`)
+
+`content/schema/bib-verification.ts` is the typed sidecar to
+`references.ts` recording per-paper verification metadata
+(orthogonal to bibliographic correctness — verification is about
+"has someone read the PDF and confirmed the citation sites match"):
+
+```ts
+type VerificationStatus =
+  | "pending"          // not yet examined
+  | "verified-clean"   // every citation site checked, no fix needed
+  | "partial"          // some sites verified + fixed, others remain
+  | "fixed"            // misattributions resolved
+  | "uncited"          // bib entry has zero consumers (author decision pending)
+  | "paper-mismatch"   // local PDF ≠ references.ts metadata
+  | "unfetchable";     // not in uploads/, cannot verify
+```
+
+Each entry records:
+- `lean_sites` / `md_sites`: citation-site counts at verification time
+- `local_pdf`: path under `uploads/` (if present)
+- `verified_at` / `verified_by`: ISO timestamp + free-text verifier
+- `fixes_applied` + `fix_commit`: count + 12-char SHA of the most
+  recent fix commit
+- `note`: free-text qualifier (≤ 200 chars; longer narrative goes
+  to `docs/coordination/<date>-bib-verification-ledger.md`)
+
+When verifying a paper:
+1. Update the entry's `status`, `verified_at`, `verified_by`,
+   `fixes_applied`, `fix_commit`.
+2. Append a row to the markdown ledger's "Verification log" table.
+3. Commit both files alongside any `-- Ref:` fixes (one commit per
+   paper is the suggested granularity).
 
 ### Intake & local evidence (new — `uploads/` workflow)
 
