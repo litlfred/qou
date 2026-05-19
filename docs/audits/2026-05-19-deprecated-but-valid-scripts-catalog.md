@@ -14,7 +14,7 @@ Re-verified all claims in the table after PR #787 merged. **The systemic finding
 |---|---|---|
 | 11 propositions need wiring | **7** still need it; 4 have a `computation` field (but pointed at *different* live scripts — see below) | Reduce active revival list to 7 |
 | 2 of those 11 propositions exist as blocks (`prop:b-over-a-spectral-decomposition`, `prop:atomic-braid-mass`) | **Neither label exists in `content/`.** The closest blocks are `def:atomic-braid` (sibling, not a mass claim) and the 2-of-3 b/a-trio props (`prop:confined-knot-binding`, `prop:wigner-np-pairing`) | Drop the 2 phantom rows; the b/a trio is really a 2-prop pair |
-| ~30 deprecated scripts | **25 named** + "8 build_*_chain.py" claim verified (exactly 8: `build_alpha_k_h3_chains.py`, `build_atom_tr_M_chains.py`, `build_c_q_chain.py`, `build_hoefsmit_rep_chain.py`, `build_hoefsmit_rep_sigma2_chain.py`, `build_markov_trace_assembly_chain.py`, `build_schur_weyl_weight_chain.py`, `build_sigma_shell_chain.py`). All 25 still in `folio-assistant/computations/_deprecated/`; none revived. | Original "~30" was approximate; precise count is **25**. |
+| ~30 deprecated scripts | **25 scripts total** — this count includes the 8 `build_*_chain.py` scripts attributed to `prop:full-pole-structure-mass-trace` (`build_alpha_k_h3_chains.py`, `build_atom_tr_M_chains.py`, `build_c_q_chain.py`, `build_hoefsmit_rep_chain.py`, `build_hoefsmit_rep_sigma2_chain.py`, `build_markov_trace_assembly_chain.py`, `build_schur_weyl_weight_chain.py`, `build_sigma_shell_chain.py`). All 25 are still in `folio-assistant/computations/_deprecated/`; none revived. | Original "~30" was approximate; precise count is **25** (not 25+8). |
 
 ### Per-proposition wiring status (verified)
 
@@ -46,12 +46,14 @@ Re-verified all claims in the table after PR #787 merged. **The systemic finding
 
 **4 propositions** have a `computation` field but pointing at a *different* live script than the catalog's deprecated ones — verify the alternate covers the same computational scope before treating the deprecated scripts as superseded:
 
-| Proposition | Live (wired) script | Deprecated (orphaned) scripts | Disposition needed |
+The first 3 rows are catalog propositions wired to alternate live scripts. The 4th row (`prop:confined-knot-binding`) is **not** a catalog row but a real proposition that shares `b_over_a_evaluator.py` with the un-wired `prop:wigner-np-pairing` — included here because the supersession decision on that shared script affects both.
+
+| Proposition (origin) | Live (wired) script | Deprecated (orphaned) scripts | Disposition needed |
 |---|---|---|---|
-| `prop:mass-endomorphism-tower` | `habiro_exact_mass_endomorphism.py` | `all_subsets_tower.py`, `atom_per_generator_volumes_sym.py`, `brane_tower_distance_weighted.py`, `brane_tower_plancherel_scaffold.py` | check if any deprecated covers extra cases (full-tower vs. Habiro-exact only) |
-| `prop:atomic-mass-gb-nf` | `canonical_mass_table_extended.py` | `anti_self_reciprocity_universality_probe.py` | check if anti-self-reciprocity probe adds an assertion not in the canonical mass table |
-| `prop:full-pole-structure-mass-trace` | `markov_substrate_realizer.py` (single, 242 LoC) | 8 `build_*_chain.py` scripts (~2200 LoC total) | likely the largest scope gap — 8 chain-builders may carry per-stage emit hooks the realizer does not |
-| (b/a trio: `prop:confined-knot-binding`) | `jet_knot_invariants.py` | `b_over_a_evaluator.py` (shared with `prop:wigner-np-pairing`) | the same script also covers an un-wired prop; revival could serve both |
+| `prop:mass-endomorphism-tower` *(catalog row)* | `habiro_exact_mass_endomorphism.py` | `all_subsets_tower.py`, `atom_per_generator_volumes_sym.py`, `brane_tower_distance_weighted.py`, `brane_tower_plancherel_scaffold.py` | check if any deprecated covers extra cases (full-tower vs. Habiro-exact only) |
+| `prop:atomic-mass-gb-nf` *(catalog row)* | `canonical_mass_table_extended.py` | `anti_self_reciprocity_universality_probe.py` | check if anti-self-reciprocity probe adds an assertion not in the canonical mass table |
+| `prop:full-pole-structure-mass-trace` *(catalog row)* | `markov_substrate_realizer.py` (single, 242 LoC) | 8 `build_*_chain.py` scripts (~2200 LoC total) | likely the largest scope gap — 8 chain-builders may carry per-stage emit hooks the realizer does not |
+| `prop:confined-knot-binding` *(via b/a trio)* | `jet_knot_invariants.py` | `b_over_a_evaluator.py` (shared with `prop:wigner-np-pairing`) | the same script also covers an un-wired prop; revival could serve both |
 
 For each row above, the next agent should diff the live and deprecated scripts to decide whether the deprecated is **(a) genuinely superseded** (then move to `_deprecated/_archive/`), **(b) covers extra scope** (then either fold the missing logic into the live script or re-wire the proposition to consume both), or **(c) covers identical scope but predates the rewrite** (then move).
 
@@ -83,7 +85,7 @@ This is a **systemic paper↔compute wiring gap**, not a single isolated case. C
 
 ## Top revival candidates
 
-> **Updated 2026-05-19** — see [Per-proposition wiring status (verified)](#per-proposition-wiring-status-verified) above. Of the 11 rows below: **7 are still actionable**, **2 have phantom labels** (`prop:atomic-braid-mass`, `prop:b-over-a-spectral-decomposition` don't exist as blocks), and **2 have been wired to a different live script** (`prop:mass-endomorphism-tower`, `prop:full-pole-structure-mass-trace`, plus `prop:atomic-mass-gb-nf`) — those rows need a supersession check, not a revival.
+> **Updated 2026-05-19** — see [Per-proposition wiring status (verified)](#per-proposition-wiring-status-verified) above. Of the 11 rows below: **7 are still actionable**, **2 have phantom labels** (`prop:atomic-braid-mass`, `prop:b-over-a-spectral-decomposition` don't exist as blocks), and **3 have been wired to a different live script** (`prop:mass-endomorphism-tower`, `prop:full-pole-structure-mass-trace`, and `prop:atomic-mass-gb-nf`) — those rows need a supersession check, not a revival. A fourth real proposition, `prop:confined-knot-binding`, is also wired-to-alternate but reached the disposition table via the b/a trio (the phantom row `prop:b-over-a-spectral-decomposition` actually represents two real props: `confined-knot-binding` (wired) + `wigner-np-pairing` (actionable)).
 
 | Proposition | Deprecated script(s) | Why interesting |
 |---|---|---|
@@ -100,7 +102,7 @@ This is a **systemic paper↔compute wiring gap**, not a single isolated case. C
 | `prop:categorical-mass-markov` | `canonical_isospin_pyhecke.py`, `canonical_isospin_pyhecke_full_census.py`, `canonical_isospin_test.py` (3) | Markov-trace mass — multiple variants |
 
 **Total** (original count): ~30 deprecated scripts referencing ~11 live propositions.
-**Verified count** (2026-05-19 update): **25 deprecated scripts** referencing **9 real propositions** (after removing the 2 phantom labels). All 25 scripts are still in `folio-assistant/computations/_deprecated/`; zero revivals have landed.
+**Verified count** (2026-05-19 update): **25 deprecated scripts** referencing **11 real propositions** (the 11 original rows resolve to: 7 actionable single-prop rows + 4 wired-to-alternate (3 named directly + `prop:confined-knot-binding` reached via the b/a trio) + 1 true phantom (`prop:atomic-braid-mass`, no real backup). The other phantom (`prop:b-over-a-spectral-decomposition`) decomposes into the 2 real props `confined-knot-binding` (wired) + `wigner-np-pairing` (actionable).). All 25 scripts are still in `folio-assistant/computations/_deprecated/`; zero revivals have landed.
 
 ## Why they were deprecated
 
@@ -201,7 +203,7 @@ If you are picking up this catalog to **actually revive** the deprecated-but-val
 
 8. **Validate**: `bun run validate quantum-observable-universe` and ensure 0 new warnings.
 
-9. **Commit + push + open PR**. Reference [this catalog](https://github.com/litlfred/qou/blob/claude/closed-forms-first-principles/docs/audits/2026-05-19-deprecated-but-valid-scripts-catalog.md) in the PR body and mark the proposition's row as ✅ revived.
+9. **Commit + push + open PR**. Reference [this catalog](./2026-05-19-deprecated-but-valid-scripts-catalog.md) (relative path; the previous version of this step linked a feature branch URL that would rot post-merge) in the PR body and mark the proposition's row as ✅ revived.
 
 ### Priority order (recommended — re-prioritised 2026-05-19 evening update)
 

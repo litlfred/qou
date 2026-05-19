@@ -159,15 +159,16 @@ Deuteron has $\Delta_I^D = \sigma_3$ (the `+1` in $u_{\text{shift}} = 18Z + 21N 
 
 | Date | Phase | Status | Cherry-pick |
 |---|---|---|---|
-| 2026-05-19 | Re-verify the 11-row table in [`docs/audits/2026-05-19-deprecated-but-valid-scripts-catalog.md`](../audits/2026-05-19-deprecated-but-valid-scripts-catalog.md) (authored on PR #787 morning) | Update landed on this branch — 7 propositions still actionable, 2 phantom labels removed, 3 wired-to-alternate need supersession check, 25 (not ~30) deprecated scripts confirmed orphaned | catalog update + ledger row (this row) |
+| 2026-05-19 | Re-verify the 11-row table in [`docs/audits/2026-05-19-deprecated-but-valid-scripts-catalog.md`](../audits/2026-05-19-deprecated-but-valid-scripts-catalog.md) (authored on PR #787 morning) | Update landed on this branch — the 11 original rows resolve to **11 real propositions**: 7 actionable + 4 wired-to-alternate (3 named directly + `prop:confined-knot-binding` via the b/a trio) + 1 true phantom (`prop:atomic-braid-mass`). 25 (not ~30) deprecated scripts confirmed orphaned. | catalog update + ledger row (this row) |
 
 **Re-survey findings load-bearing for the 1 ppb / Δ_λ thread:**
 
 1. **No deprecated-script revivals** since #787 merged (`git log origin/main -- folio-assistant/computations/_deprecated/` returns zero). The systemic paper↔compute wiring gap persists.
-2. **3 propositions wired to *alternate* scripts**, not the catalog's deprecated ones — supersession-disposition still owed:
+2. **4 propositions wired to *alternate* scripts**, not the catalog's deprecated ones — supersession-disposition still owed:
    - `prop:mass-endomorphism-tower` → `habiro_exact_mass_endomorphism.py` (337 LoC); 4 deprecated towers orphaned.
    - `prop:atomic-mass-gb-nf` → `canonical_mass_table_extended.py` (507 LoC); `anti_self_reciprocity_universality_probe.py` orphaned.
    - `prop:full-pole-structure-mass-trace` → `markov_substrate_realizer.py` (242 LoC); **8** `build_*_chain.py` (~2200 LoC) orphaned — largest scope gap.
+   - `prop:confined-knot-binding` *(via b/a trio)* → `jet_knot_invariants.py` (199 LoC); `b_over_a_evaluator.py` orphaned (also covers the un-wired `prop:wigner-np-pairing`).
 3. **2 phantom-label rows** in the original catalog (`prop:atomic-braid-mass`, `prop:b-over-a-spectral-decomposition`) — neither label exists in `content/`. Either author the missing propositions or delete the rows (and dispose of `atomic_braid_mass_paper_formula.py`, `b_over_a_evaluator.py`).
 4. **Two cross-cutting caveats** added to the catalog's revival procedure: (i) TR_M[5] Markov-trace bug fix (`be773569`) may invalidate witnesses from un-patched code paths; (ii) PR #787 Phase 3 Vol-clusters-by-Z finding constrains what an N-dependent binding-energy formula can look like — useful as a falsifiability gate.
 
