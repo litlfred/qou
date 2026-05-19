@@ -148,6 +148,24 @@
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "b1e998312c5e",
+          "ts": "650a541ff25a",
+          "lean": "5af611a80943"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-adjudicator-particle-interactions",
+          "version": "claude-sonnet-4-6-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T19:01:29.465Z",
+        "reviewed_sha": "56acf4b083ded0ce5f3c7b35bf3f5d34aefa6366",
+        "notes": "default-pass (chapter=particle-interactions)"
+      }
     ]
   },
   "updated_at": "2026-05-20T02:29:29.163Z"

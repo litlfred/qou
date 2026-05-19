@@ -150,6 +150,24 @@
         "severity": "major",
         "evidence": "content/quantum-observable-universe/information-theory/q-gaussian-solves-q-heat.md:23: + q^{-1}(1 - q^{-1})\\,\\mathcal{C}  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$] | content/quantum-observable-universe/information-theory/q-gaussian-solves-q-heat.md:27: where $\\mathcal{C}$ is the Coriolis cross-coupling and $\\Delta_\\xi$ is  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$] | content/quantum-observable-universe/information-theory/q-gaussian-solves-q-heat.md:28: the pure Reeb-spin Laplacian.  Each of $\\mathcal{C}$ and $\\Delta_\\xi$  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$]"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "998ed2682b87",
+          "ts": "d7003bc28923",
+          "lean": "3208f85f48cc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-adjudicator-information-theory",
+          "version": "claude-sonnet-4-6-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T19:01:04.487Z",
+        "reviewed_sha": "56acf4b083ded0ce5f3c7b35bf3f5d34aefa6366",
+        "notes": "default-pass (chapter=information-theory)"
+      }
     ]
   },
   "updated_at": "2026-05-20T02:29:29.163Z"
