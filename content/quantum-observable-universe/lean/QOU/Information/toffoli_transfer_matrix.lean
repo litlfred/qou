@@ -1,3 +1,5 @@
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+
 /-!
 # QOU.Information.toffoli_transfer_matrix — placeholder stub
 
@@ -34,11 +36,12 @@ class ToffoliTransferMatrixContext extends QOU.Shared.MarkovTraceContext where
   claim_i_target_flip_amplitude : ∀ k : ℕ × ℕ, P_flip k = c k * Phi
   /-- Markov parameter `z = 1/(q^{1/2} + q^{-1/2})` specialised to `ℝ`. -/
   z_real : ℝ
+  /-- Traced volume `V̂₁(k)` at generator `σ₁` for control type `k`. -/
+  V_hat_1 : ℕ × ℕ → ℝ
   /-- Manuscript sub-claim (ii) — Single-crossing type-blindness:
-      the traced volume `V̂₁ = z` at generator `σ₁` is independent
-      of crossing type. (Captured as a non-trivial Prop because the
-      `V̂₁` type itself sits over the abstract Hecke algebra `A`.) -/
-  claim_ii_generator_crossing_traced : Prop
+      `V̂₁(k) = z` for every control type `k` (the traced volume at
+      a single crossing is independent of type). -/
+  claim_ii_generator_crossing_traced : ∀ k : ℕ × ℕ, V_hat_1 k = z_real
   /-- The target-flip amplitude `P_{7,6}(q) = 1 · Φ(q) = Φ(q)`
       (governor / q-AND choice). -/
   P_7_6 : ℝ
@@ -58,8 +61,10 @@ class ToffoliTransferMatrixContext extends QOU.Shared.MarkovTraceContext where
   /-- The Toffoli-diagonal amplitude `P_{7,7}(q) = (q + q^{1/2} − 1) /
       (q + 1)`. -/
   P_7_7 : ℝ
-  /-- Manuscript sub-claim (vi) — Toffoli diagonal closed form. -/
-  claim_vi_diagonal_formula : Prop
+  /-- Manuscript sub-claim (vi) — Toffoli diagonal closed form:
+      `P_{7,7}(q) = (q + √q − 1) / (q + 1)`. -/
+  claim_vi_diagonal_formula :
+    P_7_7 = (q_real + Real.sqrt q_real - 1) / (q_real + 1)
 /-- **Proposition statement** (from manuscript):
 
 Let $P_{\mathrm{flip}}(q; k_1, k_2)$ be the target-flip
@@ -78,11 +83,11 @@ Then:*
 -- Ref: [manuscript] quantum-observable-universe/information-theory/toffoli-transfer-matrix.ts
 theorem toffoli_transfer_matrix [ctx : ToffoliTransferMatrixContext] :
     (∀ k : ℕ × ℕ, ctx.P_flip k = ctx.c k * ctx.Phi) ∧
-    ctx.claim_ii_generator_crossing_traced ∧
+    (∀ k : ℕ × ℕ, ctx.V_hat_1 k = ctx.z_real) ∧
     ctx.P_7_6 = ctx.Phi ∧
     ctx.P_6_7 = - ctx.P_7_6 ∧
     (∀ k : ℕ × ℕ, ctx.q_real = 1 → ctx.P_flip k = 0) ∧
-    ctx.claim_vi_diagonal_formula :=
+    ctx.P_7_7 = (ctx.q_real + Real.sqrt ctx.q_real - 1) / (ctx.q_real + 1) :=
   ⟨ctx.claim_i_target_flip_amplitude, ctx.claim_ii_generator_crossing_traced,
    ctx.claim_iii_toffoli_gate_selects, ctx.claim_iv_antisymmetry,
    ctx.claim_v_classical_limit, ctx.claim_vi_diagonal_formula⟩
