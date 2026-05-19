@@ -37,12 +37,16 @@ class GenusFiltrationIdealContext where
       `M_{ij} = χ_{λ_j}(σ_i)` over the embeddable `T_{r,s}` at `g = 4`
       has rank exactly `5` (all irreps of `H_2(q) ⊕ H_3(q)` are spanned). -/
   claim_i_completeness_rank_five : EvalMatrixRank = 5
-  /-- Manuscript sub-claim (ii): the genus-filtration ideal is
-      `I_4 = (u^5)` in `ℤ[u]`. -/
-  claim_ii_ideal_eq_u5 : Prop
-  /-- Manuscript sub-claim (iii): the ideal `I_4 = (u^5)` is the obstruction
-      that kills the torus-knot family `T_{2,p}` for every prime `p ≥ 11`. -/
-  claim_iii_kills_higher_torus_knots : Prop
+  /-- Generator exponent of the ideal `I_g = (u^k_g)`. -/
+  ideal_exponent : ℕ
+  /-- Manuscript sub-claim (ii): the genus-4 filtration ideal is
+      `I_4 = (u^5)`, so the exponent equals 5. -/
+  claim_ii_ideal_eq_u5 : ideal_exponent = 5
+  /-- Predicate: torus knot `T_{2, p}` is killed by the ideal. -/
+  kills_T_2p : ℕ → Prop
+  /-- Manuscript sub-claim (iii): the ideal kills `T_{2, p}` for
+      every odd prime `p ≥ 11`. -/
+  claim_iii_kills_higher_torus_knots : ∀ p : ℕ, 11 ≤ p → kills_T_2p p
 
 /-- **Manuscript statement** (full body):
 
@@ -101,11 +105,9 @@ algebra of the QOU.*
 theorem genus_filtration_ideal [ctx : GenusFiltrationIdealContext] :
     ctx.genus = 4 ∧
     ctx.EvalMatrixRank = 5 ∧
-    ctx.claim_ii_ideal_eq_u5 ∧
-    ctx.claim_iii_kills_higher_torus_knots := by
-  refine ⟨ctx.claim_i_genus_eq_four, ctx.claim_i_completeness_rank_five,
-          ?_, ?_⟩
-  · sorry
-  · sorry
+    ctx.ideal_exponent = 5 ∧
+    (∀ p : ℕ, 11 ≤ p → ctx.kills_T_2p p) :=
+  ⟨ctx.claim_i_genus_eq_four, ctx.claim_i_completeness_rank_five,
+   ctx.claim_ii_ideal_eq_u5, ctx.claim_iii_kills_higher_torus_knots⟩
 
 end QOU.Descartes

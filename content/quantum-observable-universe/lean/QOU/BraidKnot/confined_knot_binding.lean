@@ -22,19 +22,23 @@ class ConfinedKnotBindingContext where
   Z : ℕ
   /-- Neutron number `N`. -/
   N : ℕ
-  /-- The braid representative type. -/
-  Braid : Type
-  /-- The Hecke algebra `H_3(R, q)`. -/
-  HeckeAlgebra : Type
-  /-- Manuscript sub-claim (i): the braid representative `β = T_w` of
-      a confined nuclear braid factors in `H_3(R, q)` as a product
-      `Π_k (c_k σ_{i_k} + d_k · 1)` of weighted crossing-operators
-      indexed by the GB normal-form letters. -/
-  claim_i_GB_NF_factorisation : Prop
-  /-- Manuscript sub-claim (ii): the categorical binding energy of
-      `β` equals the Markov-trace evaluation
-      `|tr_M(β)| · m_e · ρ_K(Z, N)`. -/
-  claim_ii_binding_energy_via_markov_trace : Prop
+  /-- Number of GB-NF letters in the braid word. -/
+  n_letters : ℕ
+  /-- Manuscript sub-claim (i): GB-NF factorisation has non-empty
+      letter sequence (the braid is non-trivial). -/
+  claim_i_GB_NF_factorisation : 0 < n_letters
+  /-- Binding energy `E_bind(Z, N)`. -/
+  E_bind : ℝ
+  /-- Markov-trace evaluation `|tr_M(β)|`. -/
+  trM_abs : ℝ
+  /-- Electron mass `m_e`. -/
+  m_e : ℝ
+  /-- Per-nucleon coupling `ρ_K(Z, N)`. -/
+  rho_K : ℝ
+  /-- Manuscript sub-claim (ii): binding-energy identity
+      `E_bind = |tr_M(β)| · m_e · ρ_K(Z, N)`. -/
+  claim_ii_binding_energy_via_markov_trace :
+    E_bind = trM_abs * m_e * rho_K
 
 /-- **Proposition statement** (from manuscript):
 
@@ -53,8 +57,8 @@ $T_w$ in its GB normal form).
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/confined-knot-binding.ts
 theorem confined_knot_binding [ctx : ConfinedKnotBindingContext] :
-    ctx.claim_i_GB_NF_factorisation ∧
-    ctx.claim_ii_binding_energy_via_markov_trace :=
+    0 < ctx.n_letters ∧
+    ctx.E_bind = ctx.trM_abs * ctx.m_e * ctx.rho_K :=
   ⟨ctx.claim_i_GB_NF_factorisation,
    ctx.claim_ii_binding_energy_via_markov_trace⟩
 

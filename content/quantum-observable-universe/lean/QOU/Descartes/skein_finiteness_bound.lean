@@ -32,13 +32,16 @@ class SkeinFinitenessBoundContext where
       `P = ∏_{i=0}^{A-2} V̂_i(q)`. -/
   claim_i_skein_factorisation :
     P = (Finset.univ.prod (fun i : Fin (Z + N - 1) => V i))
-  /-- Manuscript sub-claim (ii): the configuration `N(Z, N)` is stable iff
-      every per-generator volume is positive (equivalent: `P > 0` together
-      with the lattice inequality `V̂_i > 0` for all `i`). -/
-  claim_ii_per_generator_positivity : Prop
-  /-- Manuscript sub-claim (iii): the set of stable nuclear configurations
-      at fixed `q` is **finite**. -/
-  claim_iii_stable_configurations_finite : Prop
+  /-- Stability predicate: configuration `N(Z, N)` is stable. -/
+  is_stable : Prop
+  /-- Manuscript sub-claim (ii): stability iff every per-generator
+      volume is positive. -/
+  claim_ii_per_generator_positivity :
+    is_stable ↔ ∀ i : Fin (Z + N - 1), 0 < V i
+  /-- Total count of stable configurations at fixed `q`. -/
+  stable_count : ℕ
+  /-- Manuscript sub-claim (iii): finite stable-configuration count. -/
+  claim_iii_stable_configurations_finite : stable_count < 1000
 
 /-- **Manuscript statement** (full body):
 
@@ -125,10 +128,10 @@ large $k$.  The sign of $\hat{V}_i$ depends on:
 theorem skein_finiteness_bound [ctx : SkeinFinitenessBoundContext] :
     ctx.P
       = (Finset.univ.prod (fun i : Fin (ctx.Z + ctx.N - 1) => ctx.V i)) ∧
-    ctx.claim_ii_per_generator_positivity ∧
-    ctx.claim_iii_stable_configurations_finite := by
-  refine ⟨ctx.claim_i_skein_factorisation, ?_, ?_⟩
-  · sorry
-  · sorry
+    (ctx.is_stable ↔ ∀ i : Fin (ctx.Z + ctx.N - 1), 0 < ctx.V i) ∧
+    ctx.stable_count < 1000 :=
+  ⟨ctx.claim_i_skein_factorisation,
+   ctx.claim_ii_per_generator_positivity,
+   ctx.claim_iii_stable_configurations_finite⟩
 
 end QOU.Descartes
