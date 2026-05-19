@@ -1,5 +1,5 @@
 {
-  "description": "Symbolic \u03c7^\u03bb_q(\u03b2_D) for the deuteron's 23-crossing canonical braid word at H_6, per partition \u03bb \u22a2 6.  First-run cache (~155 s); subsequent loads are O(1).  Used by Path A deuteron pole-order verification in per_irrep_pole_deuteron_h6.py.",
+  "description": "Symbolic χ^λ_q(β_D) for the deuteron's 23-crossing canonical braid word at H_6, per partition λ ⊢ 6.  First-run cache (~155 s); subsequent loads are O(1).  Used by Path A deuteron pole-order verification in per_irrep_pole_deuteron_h6.py.",
   "n_partitions": 11,
   "compute_time_sec": 131.11403727531433,
   "chi_lambda_symbolic": [
@@ -94,5 +94,8 @@
       "chi_q_symbolic": "(-q**10 - 5*q**8 - 10*q**6 - 10*q**4 - 5*q**2 - 1)/(32*q**9)"
     }
   ],
-  "auditOnly": "docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md"
+  "auditOnly": "docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md",
+  "engine": "python",
+  "scriptFile": "delta_lambda_empirical_tabulation.py",
+  "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811"
 }

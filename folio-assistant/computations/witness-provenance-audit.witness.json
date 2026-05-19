@@ -1,19 +1,19 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T05:48:32.006739+00:00",
-  "commitSha": "49e6c6a12f2eda16932a7385242c2e1831a90a4a",
+  "computedAt": "2026-05-19T06:37:40.168081+00:00",
+  "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 56,
+      "computed": 0,
       "expected": 0,
-      "passed": false,
+      "passed": true,
       "tolerance": 0,
       "source": "every witness must declare engine/scriptFile/commitSha"
     }
   ],
-  "allPassed": false,
+  "allPassed": true,
   "durationMs": 7,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
@@ -36,14 +36,18 @@
   "data": {
     "counts": {
       "total_scanned": 655,
-      "prov_ok": 569,
+      "prov_ok": 625,
       "prov_audit_exempt": 30,
-      "prov_missing": 56,
+      "prov_missing": 0,
       "prov_parse_error": 0,
-      "completeness_ratio": 0.9145038167938931
+      "completeness_ratio": 1.0
     },
     "by_verdict": {
       "PROV_OK": [
+        {
+          "witness": "4he-binding-full-pipeline.witness.json",
+          "missing_fields": []
+        },
         {
           "witness": "A-operator-extract-general.witness.json",
           "missing_fields": []
@@ -157,6 +161,10 @@
           "missing_fields": []
         },
         {
+          "witness": "atom-nf-symbolic-D.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "atomic-braid-alpha-shift-l6.witness.json",
           "missing_fields": []
         },
@@ -177,6 +185,10 @@
           "missing_fields": []
         },
         {
+          "witness": "atomic-tr-m-wenzl-bridge.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "b-over-a-v5-unified.witness.json",
           "missing_fields": []
         },
@@ -186,6 +198,18 @@
         },
         {
           "witness": "basis-knot-tables.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "beta-decay-energy-scale.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "beta-decay-from-q.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "beta-decay-matrix.witness.json",
           "missing_fields": []
         },
         {
@@ -245,11 +269,23 @@
           "missing_fields": []
         },
         {
+          "witness": "branching-qvalue-chain.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "branching-qvalues.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "brane-tower-finite-laurent.witness.json",
           "missing_fields": []
         },
         {
           "witness": "brane-tower-isospin-diagnosis.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "brane-tower-per-channel-phi-q-probe.witness.json",
           "missing_fields": []
         },
         {
@@ -817,7 +853,55 @@
           "missing_fields": []
         },
         {
+          "witness": "chi-deuteron-h6-at-q0-50dps.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "chi-deuteron-h6.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "chi-helium-3-h9-at-q0-50dps.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "chi-helium-3-h9.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "chi-helium-4-h12-at-q0-50dps.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "chi-helium-4-h12-numeric.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "chi-lambda-w0-sign-weighting.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "chi-neutron-h3-at-q0-50dps.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "chi-neutron-h3.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "chi-proton-h3-at-q0-50dps.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "chi-proton-h3.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "chi-tritium-h9-at-q0-50dps.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "chi-tritium-h9.witness.json",
           "missing_fields": []
         },
         {
@@ -874,6 +958,10 @@
         },
         {
           "witness": "confined-knot-binding.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "confinement-operator-selection.witness.json",
           "missing_fields": []
         },
         {
@@ -1041,6 +1129,10 @@
           "missing_fields": []
         },
         {
+          "witness": "factor-2-normalization-trace.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "family-a-extended-variants.witness.json",
           "missing_fields": []
         },
@@ -1053,11 +1145,23 @@
           "missing_fields": []
         },
         {
+          "witness": "free-neutron-decay.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "fresh-derivation-pn-steps-E-G.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "full-twist-delta-n2-verification.witness.json",
           "missing_fields": []
         },
         {
           "witness": "full-twist-root-of-unity-probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "garside-irrep-qvalues.witness.json",
           "missing_fields": []
         },
         {
@@ -1073,7 +1177,15 @@
           "missing_fields": []
         },
         {
+          "witness": "gb-nf-event-count-universality.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "graded-hecke-energy-probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "gram-matrix-dual.witness.json",
           "missing_fields": []
         },
         {
@@ -1121,6 +1233,10 @@
           "missing_fields": []
         },
         {
+          "witness": "habiro-motivic-orbit-relations.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "habiro-residue-a1.witness.json",
           "missing_fields": []
         },
@@ -1150,6 +1266,10 @@
         },
         {
           "witness": "he4-sdp-compositional-probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "hecke-core-symbolic-migration.witness.json",
           "missing_fields": []
         },
         {
@@ -1193,6 +1313,10 @@
           "missing_fields": []
         },
         {
+          "witness": "inverse-markov-qvalues.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "isospin-mass-tower-collapse.witness.json",
           "missing_fields": []
         },
@@ -1221,6 +1345,14 @@
           "missing_fields": []
         },
         {
+          "witness": "joint-tower-sdp-h3.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "joint-tower-sdp-h6-h9.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "joint-tower-sdp-rust.witness.json",
           "missing_fields": []
         },
@@ -1238,6 +1370,10 @@
         },
         {
           "witness": "kappa-d2-catalan-derivation.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "kashaev-integration-identity.witness.json",
           "missing_fields": []
         },
         {
@@ -1262,6 +1398,10 @@
         },
         {
           "witness": "kite_tail_reconciliation.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "knot-operator-table.witness.json",
           "missing_fields": []
         },
         {
@@ -1333,11 +1473,27 @@
           "missing_fields": []
         },
         {
+          "witness": "level1-qvalues.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "light-isotope-sweep.witness.json",
           "missing_fields": []
         },
         {
+          "witness": "low-isotope-binding-sweep.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "low-isotope-mass-table.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "lp-confinement-nf-forcing.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "lp-duality-check.witness.json",
           "missing_fields": []
         },
         {
@@ -1361,6 +1517,10 @@
           "missing_fields": []
         },
         {
+          "witness": "m3-full-chain-n4-mass-table.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "m4-magic-shell-correction-mass-table.witness.json",
           "missing_fields": []
         },
@@ -1370,6 +1530,10 @@
         },
         {
           "witness": "magic-shell-empirical-instantiation.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "markov-free-energy-qvalues.witness.json",
           "missing_fields": []
         },
         {
@@ -1426,6 +1590,10 @@
         },
         {
           "witness": "mass-table-ppb.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "methodology-deprecation.witness.json",
           "missing_fields": []
         },
         {
@@ -1490,6 +1658,10 @@
         },
         {
           "witness": "neutron-m_n-derivation.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "nf-qvalues.witness.json",
           "missing_fields": []
         },
         {
@@ -1633,7 +1805,23 @@
           "missing_fields": []
         },
         {
+          "witness": "piece1-dimensional-bridge.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "piece2-linked-cluster.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "piece3-interface-vs-intra.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "pn-alpha-lp-dual.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "poly-q-proof.witness.json",
           "missing_fields": []
         },
         {
@@ -2081,6 +2269,22 @@
           "missing_fields": []
         },
         {
+          "witness": "rho-k-markov-multiplicativity.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "rho-k-pair-gen-extension.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "rho-k-pair-gen-v2-wedderburn.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "rho-k-scaling-structure.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "rho-prefactor-structural-verifier.witness.json",
           "missing_fields": []
         },
@@ -2094,6 +2298,10 @@
         },
         {
           "witness": "shadow-price-c-321-q0.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "shell7-bb-stratum.witness.json",
           "missing_fields": []
         },
         {
@@ -2173,7 +2381,15 @@
           "missing_fields": []
         },
         {
+          "witness": "t35-weak-vertex.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "tau-M-four-anchors.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "tau-hat-n-proton-level-1-empty.witness.json",
           "missing_fields": []
         },
         {
@@ -2221,6 +2437,10 @@
           "missing_fields": []
         },
         {
+          "witness": "three-term-wedderburn.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "tier-0-atlas-pslq-check.witness.json",
           "missing_fields": []
         },
@@ -2234,6 +2454,10 @@
         },
         {
           "witness": "tier-2-hyperbolic-bridge3-pslq.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "toffoli-lp-stability.witness.json",
           "missing_fields": []
         },
         {
@@ -2321,456 +2545,7 @@
           "missing_fields": []
         }
       ],
-      "PROV_MISSING": [
-        {
-          "witness": "4he-binding-full-pipeline.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "atom-nf-symbolic-D.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "atomic-tr-m-wenzl-bridge.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "beta-decay-energy-scale.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "beta-decay-from-q.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "beta-decay-matrix.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "branching-qvalue-chain.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "branching-qvalues.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "brane-tower-per-channel-phi-q-probe.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "chi-deuteron-h6-at-q0-50dps.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "chi-deuteron-h6.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "chi-helium-3-h9-at-q0-50dps.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "chi-helium-3-h9.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "chi-helium-4-h12-at-q0-50dps.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "chi-helium-4-h12-numeric.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "chi-neutron-h3-at-q0-50dps.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "chi-neutron-h3.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "chi-proton-h3-at-q0-50dps.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "chi-proton-h3.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "chi-tritium-h9-at-q0-50dps.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "chi-tritium-h9.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "confinement-operator-selection.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "factor-2-normalization-trace.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "free-neutron-decay.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "fresh-derivation-pn-steps-E-G.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "garside-irrep-qvalues.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "gb-nf-event-count-universality.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "gram-matrix-dual.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "habiro-motivic-orbit-relations.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "hecke-core-symbolic-migration.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "inverse-markov-qvalues.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "joint-tower-sdp-h3.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "joint-tower-sdp-h6-h9.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "kashaev-integration-identity.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "knot-operator-table.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "level1-qvalues.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "low-isotope-binding-sweep.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "low-isotope-mass-table.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "lp-duality-check.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "m3-full-chain-n4-mass-table.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "markov-free-energy-qvalues.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "methodology-deprecation.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "nf-qvalues.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "piece1-dimensional-bridge.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "piece2-linked-cluster.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "piece3-interface-vs-intra.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "poly-q-proof.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "rho-k-markov-multiplicativity.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "rho-k-pair-gen-extension.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "rho-k-pair-gen-v2-wedderburn.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "rho-k-scaling-structure.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "shell7-bb-stratum.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "t35-weak-vertex.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "tau-hat-n-proton-level-1-empty.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "three-term-wedderburn.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "toffoli-lp-stability.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        }
-      ],
+      "PROV_MISSING": [],
       "PROV_AUDIT_EXEMPT": [
         {
           "witness": "braid-encoding-audit.witness.json",

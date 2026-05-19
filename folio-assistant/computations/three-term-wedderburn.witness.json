@@ -1,6 +1,6 @@
 {
   "computation": "three-term-wedderburn",
-  "description": "Canonical 3-term Wedderburn-decomposition mass formula. V_3term(g) = w_sym\u00b7lam_sym + w_alt\u00b7lam_alt + w_std\u00b7V_std with Wedderburn weights w_sym=w_alt=q^2/D, w_std=(q^2+1)^2/D, D=q^4+4q^2+1. The alt channel restores the chirality contribution (prop:chirality-dual-space-derivation) that the previous 2-term symmetrised blend dropped. No fitted mixing parameter, no n->p transition calibration constant, no numerical root-find anywhere in the path. Eliminates empirical constants #1 and #5 of docs/canonicalization-review.md \u00a73.1.",
+  "description": "Canonical 3-term Wedderburn-decomposition mass formula. V_3term(g) = w_sym·lam_sym + w_alt·lam_alt + w_std·V_std with Wedderburn weights w_sym=w_alt=q^2/D, w_std=(q^2+1)^2/D, D=q^4+4q^2+1. The alt channel restores the chirality contribution (prop:chirality-dual-space-derivation) that the previous 2-term symmetrised blend dropped. No fitted mixing parameter, no n->p transition calibration constant, no numerical root-find anywhere in the path. Eliminates empirical constants #1 and #5 of docs/canonicalization-review.md §3.1.",
   "computedAt": "2026-05-18T14:43:06.136966+00:00",
   "q_0": 1.1099785955541805,
   "precision_dps": 50,
@@ -69,5 +69,8 @@
       "def err_n("
     ],
     "canonical_only": true
-  }
+  },
+  "engine": "python",
+  "scriptFile": "alpha_blend_tower.py",
+  "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811"
 }

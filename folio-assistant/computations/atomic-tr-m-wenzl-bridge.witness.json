@@ -276,5 +276,8 @@
         "post_archimedean_caveat": "J_K and tr_M live in different categories — see docs/audits/markov-test-is-post-archimedean.md. No ratio-test or writhe-match is computed."
       }
     }
-  ]
+  ],
+  "engine": "python",
+  "scriptFile": "atomic_tr_m_via_wenzl_bridge.py",
+  "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811"
 }

@@ -1,6 +1,6 @@
 {
   "computation": "rho-k-markov-multiplicativity",
-  "description": "Path-1 derivation of \u03c1_K^LO via Markov multiplicativity for disjoint braids (Wenzl 1988 Theorem 5). Verifies the Wenzl branching identity numerically for H_6 \u2193 H_3 \u00d7 H_3 to machine precision: \u03c7^\u03bb(\u03b2_p \u2297 \u03b2_n) = \u03a3 c^\u03bb_{\u03bc\u03bd} \u03c7^\u03bc(\u03b2_p) \u03c7^\u03bd(\u03b2_n). Combined with the Plancherel-weight branching rule (standard rep-theory), this gives tr_M(\u03b2_p \u2297 \u03b2_n) = tr_M(\u03b2_p) \u00b7 tr_M(\u03b2_n) \u2192 \u03c1_K^free is categorically derived. For the bound deuteron, the interface ratio |tr_M(\u03b2_D)|/(|tr_M(\u03b2_p)|\u00b7|tr_M(\u03b2_n)|) \u2248 0.939 quantifies the A^\u03bb_{\u03bc\u03bd}(I) interface contribution per refined Sub-lemma 2.1 (`prop:hecke-branching-trace-decomposition`).",
+  "description": "Path-1 derivation of ρ_K^LO via Markov multiplicativity for disjoint braids (Wenzl 1988 Theorem 5). Verifies the Wenzl branching identity numerically for H_6 ↓ H_3 × H_3 to machine precision: χ^λ(β_p ⊗ β_n) = Σ c^λ_{μν} χ^μ(β_p) χ^ν(β_n). Combined with the Plancherel-weight branching rule (standard rep-theory), this gives tr_M(β_p ⊗ β_n) = tr_M(β_p) · tr_M(β_n) → ρ_K^free is categorically derived. For the bound deuteron, the interface ratio |tr_M(β_D)|/(|tr_M(β_p)|·|tr_M(β_n)|) ≈ 0.939 quantifies the A^λ_{μν}(I) interface contribution per refined Sub-lemma 2.1 (`prop:hecke-branching-trace-decomposition`).",
   "reference_blocks": [
     "prop:atomic-mass-gb-nf",
     "prop:hecke-branching-trace-decomposition",
@@ -20,5 +20,8 @@
   },
   "wenzl_branching_max_diff": 3.197442310920451e-14,
   "wenzl_branching_verified": true,
-  "conclusion": "Markov multiplicativity for disjoint p+n is a categorical consequence of Wenzl 1988 Theorem 5, verified numerically. \u03c1_K^LO is therefore CATEGORICALLY DERIVED, not an empirical ansatz. The deviation in the bound atomic case is the operator-valued A^\u03bb_{\u03bc\u03bd}(I) interface from the refined Sub-lemma 2.1."
+  "conclusion": "Markov multiplicativity for disjoint p+n is a categorical consequence of Wenzl 1988 Theorem 5, verified numerically. ρ_K^LO is therefore CATEGORICALLY DERIVED, not an empirical ansatz. The deviation in the bound atomic case is the operator-valued A^λ_{μν}(I) interface from the refined Sub-lemma 2.1.",
+  "engine": "python",
+  "scriptFile": "rho_k_markov_multiplicativity_probe.py",
+  "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811"
 }
