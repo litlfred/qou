@@ -88,13 +88,14 @@ LEAN_REF_RX = re.compile(
 )
 # Block kind is encoded in the builder function name used at the
 # `export default <builder>(…)` call site (see content/schema/builders.ts).
-# Older blocks used a `kind: "<name>"` field in the manifest object;
-# both forms are matched for backwards compatibility — the builder
-# form is checked first since it's the current authoring convention.
+# Capture any identifier (rather than a hard-coded list) so newly-added
+# builders in `content/schema/builders.ts` automatically flow through —
+# the audit's downstream consumers can decide whether each captured
+# kind is "provable" / "definition" / "remark" / etc. via their own
+# allow-lists.  Older blocks used a `kind: "<name>"` field in the
+# manifest object; KIND_LEGACY_RX preserves that fallback.
 KIND_RX = re.compile(
-    r'^export\s+default\s+(definition|theorem|lemma|proposition|corollary|'
-    r'conjecture|example|remark|proof|prose|equation|diagram|simulator|'
-    r'chapter|paper)\s*\(',
+    r'^export\s+default\s+([A-Za-z_][A-Za-z_0-9]*)\s*\(',
     re.MULTILINE,
 )
 KIND_LEGACY_RX = re.compile(r'kind:\s*"([a-z]+)"')
