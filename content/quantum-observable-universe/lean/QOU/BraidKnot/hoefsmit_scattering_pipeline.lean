@@ -49,11 +49,12 @@ class HoefsmitScatteringPipelineContext where
       (fun λ => w_lambda λ * chi_lambda λ / dim_lambda λ)
   /-- The Yekutieli geometric invariant `Geom(K)`. -/
   Geom_K : ℝ
+  /-- Yekutieli rigid-dualising functor coefficient `c_ω`. -/
+  ω_coeff : ℝ
   /-- Manuscript sub-claim (stage 3 — ω): the Yekutieli rigid-dualising
       pairing maps `J_K(q)` to the piecewise geometric invariant
-      (abstract Prop because the pairing involves the rigid-dualising
-      functor `ω` on `Rep(SU_q(2))`). -/
-  claim_stage_3_yekutieli_omega : Prop
+      `Geom_K = c_ω · J_K`. -/
+  claim_stage_3_yekutieli_omega : Geom_K = ω_coeff * J_K
   /-- Electron mass `m_e`. -/
   m_e : ℝ
   /-- The categorical mass `𝔪`. -/
@@ -133,7 +134,7 @@ theorem hoefsmit_scattering_pipeline [ctx : HoefsmitScatteringPipelineContext] :
     ctx.hoefsmit_nnz_per_row ≤ 2 ∧
     ctx.J_K = (Finset.range ctx.n_partitions).sum
       (fun λ => ctx.w_lambda λ * ctx.chi_lambda λ / ctx.dim_lambda λ) ∧
-    ctx.claim_stage_3_yekutieli_omega ∧
+    ctx.Geom_K = ctx.ω_coeff * ctx.J_K ∧
     ctx.m_total = ctx.Geom_K * ctx.m_e :=
   ⟨ctx.claim_stage_1_hoefsmit, ctx.claim_stage_2_markov_trace,
    ctx.claim_stage_3_yekutieli_omega, ctx.claim_stage_4_electron_mass_scale⟩

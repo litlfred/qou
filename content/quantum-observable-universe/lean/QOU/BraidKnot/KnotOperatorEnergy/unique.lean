@@ -22,11 +22,15 @@ class UniqueContext where
   PartitionIdx : Type
   /-- The knot-operator-energy function `E(λ, q) = |u_λ(q)|`. -/
   E : PartitionIdx → ℝ
-  /-- Manuscript sub-claim (i) — Partition-determined: stays Prop
-      because the `q`-independence of indexing requires a separate
-      `E_at_q : ℝ → PartitionIdx → ℝ` family and the claim
-      `∀ q₁ q₂, E_at_q q₁ λ = E_at_q q₂ λ`, not yet typed. -/
-  claim_i_partition_determined : Prop
+  /-- Family `E_at_q : ℝ → PartitionIdx → ℝ` parametrising the
+      energy by the substrate value. -/
+  E_at_q : ℝ → PartitionIdx → ℝ
+  /-- Manuscript sub-claim (i) — Partition-determined indexing: the
+      partition uniquely indexes the energy regardless of substrate,
+      i.e. `E_at_q q₁ λ = E_at_q q₂ λ` for all `q₁, q₂` (the index
+      `λ` is `q`-independent). -/
+  claim_i_partition_determined :
+    ∀ (q₁ q₂ : ℝ) (λ : PartitionIdx), E_at_q q₁ λ = E_at_q q₂ λ
   /-- Predicate: `q` is in the generic locus (not on the
       boundary variety). -/
   generic_locus : ℝ → Prop
@@ -78,7 +82,8 @@ energies.*
     translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/knot-operator-energy-unique.ts
 theorem unique [ctx : UniqueContext] :
-    ctx.claim_i_partition_determined ∧
+    (∀ (q₁ q₂ : ℝ) (λ : ctx.PartitionIdx),
+      ctx.E_at_q q₁ λ = ctx.E_at_q q₂ λ) ∧
     (ctx.generic_locus ctx.q → ∀ λ : ctx.PartitionIdx, ctx.E λ = ctx.E' λ) ∧
     (∀ (v₁ v₂ : ctx.abs_choice) (λ : ctx.PartitionIdx),
       ctx.abs_equiv v₁ v₂ → ctx.E_choice v₁ λ = ctx.E_choice v₂ λ) :=
