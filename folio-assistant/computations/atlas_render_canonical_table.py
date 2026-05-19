@@ -144,7 +144,7 @@ def main() -> int:
 
     ATLAS_MD.write_text(new_md)
     print(f"  Updated: {ATLAS_MD}")
-    print(f"  Rendered {len(witness_data.get('rows', []))} atom rows.")
+    print(f"  Rendered {len(merged.get('rows', []))} atom rows.")
     return 0
 
 

@@ -1,18 +1,18 @@
 {
-  "engine": "rust+mpmath",
+  "engine": "markov_peel+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T14:26:33.000098+00:00",
-  "commitSha": "5457b2f889d5087d09517e4a7f24164ecf6b9810",
+  "computedAt": "2026-05-19T00:27:50.852823+00:00",
+  "commitSha": "7d814e31135599c27a59d4a80beebcdd80e7e208",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 25,
+  "durationMs": 19,
   "computation": "canonical-mass-table-extended",
   "scriptFile": "canonical_mass_table_extended.py",
-  "scriptHash": "8319657a6da9",
-  "scriptCommitSha": "042fdcd62b30e5a1580f25f1165a3d9be3071c50",
-  "description": "Extended canonical mass table via Rust hecke-canonical-chi (f64) + mpmath y_λ. Layer 1 canonical pipeline per docs/audits/2026-05-18-all-atoms-isotopes-plan.md. Coverage is determined by --atoms (see parameters.atoms_requested); the actual rows reflect what completed within the per-atom timeout. Each row carries the per-atom IsotopeRecord with explicit knot-operator catalogue (intra-nucleon, inter-nucleon interfaces, closure topology).",
+  "scriptHash": "9562246970bc",
+  "scriptCommitSha": "2cbb70fa138c0206465ce5492b88eb49e9b09e43",
+  "description": "Extended canonical mass table via markov_peel.tr_M_atomic (symbolic-q recursive ascent) + mpmath y_λ. Layer 1 canonical pipeline per docs/audits/2026-05-18-all-atoms-isotopes-plan.md. Coverage is determined by --atoms (see parameters.atoms_requested); the actual rows reflect what completed within the per-atom timeout. Each row carries the per-atom IsotopeRecord with explicit knot-operator catalogue (intra-nucleon, inter-nucleon interfaces, closure topology).",
   "parameters": {
-    "q_0": "1.10997859555418051695830018898879867637876138498395",
+    "q_0": "1.10997859555418057528159407960950937799328227995870",
     "method": "markov_peel",
     "precision": "f64",
     "dps": 0,
@@ -22,7 +22,7 @@
     "paper_hard_floor_ppb": 780.0,
     "active_set_pruning_safe": true,
     "atoms_requested": "p,n,D,T,3He,4He,5Li,6Li",
-    "timeout_per_atom_sec": 1700
+    "timeout_per_atom_sec": 1800
   },
   "data": {
     "rows": [
@@ -119,7 +119,7 @@
         "err_pct": null,
         "err_ppb": null,
         "derivation_chain_witness": null,
-        "chi_cache_witness": "(computed live via Rust hecke-canonical-chi)",
+        "chi_cache_witness": "(computed live via markov_peel)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
       },
       {
@@ -215,7 +215,7 @@
         "err_pct": null,
         "err_ppb": null,
         "derivation_chain_witness": null,
-        "chi_cache_witness": "(computed live via Rust hecke-canonical-chi)",
+        "chi_cache_witness": "(computed live via markov_peel)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
       },
       {
@@ -386,7 +386,7 @@
         "err_pct": null,
         "err_ppb": null,
         "derivation_chain_witness": null,
-        "chi_cache_witness": "(computed live via Rust hecke-canonical-chi)",
+        "chi_cache_witness": "(computed live via markov_peel)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
       },
       {
@@ -632,7 +632,7 @@
         "err_pct": null,
         "err_ppb": null,
         "derivation_chain_witness": null,
-        "chi_cache_witness": "(computed live via Rust hecke-canonical-chi)",
+        "chi_cache_witness": "(computed live via markov_peel)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
       },
       {
@@ -878,7 +878,7 @@
         "err_pct": null,
         "err_ppb": null,
         "derivation_chain_witness": null,
-        "chi_cache_witness": "(computed live via Rust hecke-canonical-chi)",
+        "chi_cache_witness": "(computed live via markov_peel)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
       },
       {
@@ -1199,7 +1199,7 @@
         "err_pct": null,
         "err_ppb": null,
         "derivation_chain_witness": null,
-        "chi_cache_witness": "(computed live via Rust hecke-canonical-chi)",
+        "chi_cache_witness": "(computed live via markov_peel)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
       },
       {
@@ -1595,7 +1595,7 @@
         "err_pct": null,
         "err_ppb": null,
         "derivation_chain_witness": null,
-        "chi_cache_witness": "(computed live via Rust hecke-canonical-chi)",
+        "chi_cache_witness": "(computed live via markov_peel)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
       },
       {
@@ -2066,7 +2066,7 @@
         "err_pct": null,
         "err_ppb": null,
         "derivation_chain_witness": null,
-        "chi_cache_witness": "(computed live via Rust hecke-canonical-chi)",
+        "chi_cache_witness": "(computed live via markov_peel)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
       }
     ],
