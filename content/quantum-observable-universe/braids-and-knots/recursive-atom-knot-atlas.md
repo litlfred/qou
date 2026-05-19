@@ -341,18 +341,18 @@ and reported in every per-isotope record.
 
 <!-- AUTO:canonical-tr-m-table BEGIN -->
 
-| Atom | $A$ | $n$ | $\|\mathrm{tr}_M(\beta_{\text{atom}}, q_0)\|$ | Wall (s) |
-|---|---|---|---|---|
-| $\mathfrak{p}$ | 1 | 3 | $1.0653062285923887$ | — |
-| $\mathfrak{n}$ | 1 | 3 | $0.9232332971695832$ | — |
-| D | 2 | 6 | $0.3882864715477129$ | — |
-| T | 3 | 9 | $0.1040521186755255$ | — |
-| ${}^3$He | 3 | 9 | $0.2065408585622623$ | — |
-| ${}^4$He | 4 | 12 | $0.0553483458766979$ | — |
-| ${}^5$Li | 5 | 15 | $0.0294413937003971$ | — |
-| ${}^6$Li | 6 | 18 | $0.0078896372028510$ | — |
+| Atom | $A$ | $n$ | $\|\mathrm{tr}_M(\beta_{\text{atom}}, q_0)\|$ | $B_{\text{pred}}$ MeV | $B_{\text{AME}}$ MeV | err % | $m_{\text{pred}}$ MeV | $m_{\text{CODATA}}$ MeV | err ppm |
+|---|---|---|---|---|---|---|---|---|---|
+| $\mathfrak{p}$ | 1 | 3 | $1.0653062285923887$ | — | — | — | 938.2719 | 938.2721 | -0.251 |
+| $\mathfrak{n}$ | 1 | 3 | $0.9232332971695832$ | — | — | — | 939.5652 | 939.5654 | -0.251 |
+| D | 2 | 6 | $0.3882864715477129$ | 2.2488 | 2.2246 | +1.09 | — | — | — |
+| T | 3 | 9 | $0.1040521186755255$ | 8.4686 | 8.4818 | -0.16 | — | — | — |
+| ${}^3$He | 3 | 9 | $0.2065408585622623$ | 7.4889 | 7.7180 | -2.97 | — | — | — |
+| ${}^4$He | 4 | 12 | $0.0553483458766979$ | 29.9557 | 28.2957 | +5.87 | — | — | — |
+| ${}^5$Li | 5 | 15 | $0.0294413937003971$ | — | 26.3280 | — | — | — | — |
+| ${}^6$Li | 6 | 18 | $0.0078896372028510$ | — | 31.9941 | — | — | — | — |
 
-_Computed via [`canonical_mass_table_extended.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/canonical_mass_table_extended.py) (method=`markov_peel`). Witness: [`canonical-mass-table-extended.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/canonical-mass-table-extended.witness.json). Paper hard floor (CAL-2 propagation): ~780 ppb._
+_Computed via [`canonical_mass_table_extended.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/canonical_mass_table_extended.py) (method=`markov_peel`). Witness: [`canonical-mass-table-extended.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/canonical-mass-table-extended.witness.json). Nucleon masses (m_p, m_n) via [`m-p-borromean-verification-50dps.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/m-p-borromean-verification-50dps.witness.json). Paper hard floor (CAL-2 propagation): ~780 ppb._
 
 <!-- AUTO:canonical-tr-m-table END -->
 

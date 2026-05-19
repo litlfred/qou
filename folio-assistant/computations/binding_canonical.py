@@ -35,11 +35,10 @@ in q that we evaluate at q₀ = 1.11.
 """
 from __future__ import annotations
 
-import sys
 import json
+import sys
 import time
 from pathlib import Path
-from datetime import datetime, timezone
 
 import sympy as sp
 
@@ -51,6 +50,7 @@ from hecke_symbolic import (
 from mass_at_3A_proper import atom_braid_word_3A
 from experimental_constants import Q_NEUTRON_MEV as _Q_BETA_N
 from q_parameter import Q as Q0_NUM, HA as H0_NUM  # central source of truth
+from witness_base import WitnessBuilder  # noqa: E402
 
 
 def build_atom_symbolic(Z: int, N: int, *, include_inter: bool = True,
@@ -254,24 +254,32 @@ if __name__ == "__main__":
         results.append({**r, "atom": name, "B_AME_MeV": B_AME,
                          "delta_m_over_m_pct": dm})
 
-    witness = {
-        "computedAt": datetime.now(timezone.utc).isoformat(),
-        "computation": "binding-canonical-markov",
-        "description": (
+    # Coerce sympy/mpmath fragments to JSON-serialisable types so
+    # WitnessBuilder.save() (which does strict json.dumps) succeeds.
+    safe_results = json.loads(json.dumps(results, default=str))
+    builder = (
+        WitnessBuilder("binding-canonical", engine="sympy+mpmath")
+        .set_description(
             "Atom binding via the canonical Jones-Markov trace "
             "(Direction 1 of validity audit): matches the prop's "
             "explicit-values table tr_M(σ_0)=z, tr_M(σ_0σ_1)=z², "
-            "tr_M(σ_0σ_1σ_0)=hz²+z.  Replaces the Plancherel-"
+            "tr_M(σ_0σ_1σ_0)=hz²+z. Replaces the Plancherel-"
             "weighted trace used in binding_3A and "
-            "atom_markov_trace.  Binding = Q_β(n)·(|tr_M_free| − "
+            "atom_markov_trace. Binding = Q_β(n)·(|tr_M_free| − "
             "|tr_M_atom|) with Q_β(n) = 0.78233341 MeV (free-"
             "neutron β-decay Q-value, CAL-3 calibration input — "
-            "NOT the canonical E_0 = m_e/(q_0(q_0-1)) ≈ 4.186 MeV)."
-        ),
-        "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
-        "parameters": {"q0": Q0_NUM, "Q_beta_n_MeV": float(_Q_BETA_N)},
-        "results": results,
-    }
-    out = Path(__file__).parent / "binding-canonical.witness.json"
-    out.write_text(json.dumps(witness, indent=2, default=str, ensure_ascii=False) + "\n")
+            "NOT the canonical E_0 = m_e/(q_0(q_0-1)) ≈ 4.186 MeV). "
+            "DIAGNOSTIC ONLY: predicted B values are 5–40× smaller "
+            "than AME because Q_β is the wrong energy scale; the "
+            "primary canonical mass-prediction pipeline is "
+            "canonical-mass-table-extended.witness.json. This "
+            "witness is retained for the Direction 1 validity "
+            "audit of the Jones-Markov trace itself."
+        )
+        .set_audit_only("docs/audits/categorical-vs-fitted-q-decay-ba.md")
+        .add_parameter("q0", Q0_NUM)
+        .add_parameter("Q_beta_n_MeV", float(_Q_BETA_N))
+        .add_data("results", safe_results)
+    )
+    out = builder.save()
     print(f"\nWitness: {out}")

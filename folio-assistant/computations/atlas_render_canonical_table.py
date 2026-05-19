@@ -53,27 +53,68 @@ ATOM_LABEL_BY_ZN = {
 }
 
 
+def _fmt_number(v, fmt: str = "{:.4f}") -> str:
+    """Format numeric value or return '—'. Strings are coerced to float."""
+    if v is None or v == "":
+        return "—"
+    try:
+        return fmt.format(float(v))
+    except (TypeError, ValueError):
+        return "—"
+
+
+def _truncate_dps(v, max_digits: int = 16) -> str:
+    """Format mpmath-string values to a fixed display length."""
+    if v is None or v == "":
+        return "—"
+    s = str(v)
+    return s[:max_digits + 2] if len(s) > max_digits + 2 else s
+
+
 def render_table(witness_data: dict) -> str:
-    """Render the markdown table from the witness rows."""
+    """Render the markdown table from the witness rows.
+
+    The atlas is the central display for the mass/β/Q/binding
+    pipeline. Per repo-owner directive 2026-05-19, every row carries:
+
+      - |tr_M(q_0)|        from the Layer-1 canonical pipeline
+      - Binding energy      B_pred vs B_AME (D and up)
+      - Nucleon mass        m_pred vs m_codata (p, n)
+    """
     lines = [
         "",
-        "| Atom | $A$ | $n$ | $\\|\\mathrm{tr}_M(\\beta_{\\text{atom}}, q_0)\\|$ | Wall (s) |",
-        "|---|---|---|---|---|",
+        "| Atom | $A$ | $n$ | $\\|\\mathrm{tr}_M(\\beta_{\\text{atom}}, q_0)\\|$ "
+        "| $B_{\\text{pred}}$ MeV | $B_{\\text{AME}}$ MeV | err % "
+        "| $m_{\\text{pred}}$ MeV | $m_{\\text{CODATA}}$ MeV | err ppm |",
+        "|---|---|---|---|---|---|---|---|---|---|",
     ]
     for row in witness_data.get("rows", []):
         Z = row["Z"]; N = row["N"]; A = row["A"]; n = row["n_strands"]
         label = ATOM_LABEL_BY_ZN.get((Z, N), f"(Z={Z}, N={N})")
-        tr_m = row.get("tr_M_q0_canonical_50dps", "—")
-        # Display only the first 16 significant digits
-        if tr_m and tr_m != "—":
-            tr_m_short = tr_m[:18] if len(tr_m) > 18 else tr_m
-            tr_m_md = f"${tr_m_short}$"
+        tr_m_md = f"${_truncate_dps(row.get('tr_M_q0_canonical_50dps'))}$" \
+                  if row.get("tr_M_q0_canonical_50dps") else "—"
+        # Binding-energy block (D and up; null for p, n)
+        b_pred_md = _fmt_number(row.get("prediction_MeV_50dps"))
+        b_ame_md = _fmt_number(row.get("B_AME_MeV"))
+        err = row.get("err_MeV"); B = row.get("B_AME_MeV")
+        if err is not None and B not in (None, 0, 0.0):
+            try:
+                pct = float(err) / float(B) * 100.0
+                err_pct_md = f"{pct:+.2f}"
+            except (TypeError, ValueError, ZeroDivisionError):
+                err_pct_md = "—"
         else:
-            tr_m_md = "—"
-        # Look up wall from any "rust_duration_ms" / row.get... (absent in
-        # current schema; use a placeholder, can be added if we record it)
-        wall = "—"  # the per-row wall isn't currently in the witness
-        lines.append(f"| {label} | {A} | {n} | {tr_m_md} | {wall} |")
+            err_pct_md = "—"
+        # Nucleon-mass block (p, n; null for D and up)
+        m_pred_md = _fmt_number(row.get("mass_pred_MeV"))
+        m_codata_md = _fmt_number(row.get("mass_codata_MeV"))
+        m_err_ppm_md = _fmt_number(row.get("mass_err_ppm"), "{:+.3f}")
+
+        lines.append(
+            f"| {label} | {A} | {n} | {tr_m_md} "
+            f"| {b_pred_md} | {b_ame_md} | {err_pct_md} "
+            f"| {m_pred_md} | {m_codata_md} | {m_err_ppm_md} |"
+        )
     lines.append("")
     method = witness_data.get("parameters", {}).get("method", "?")
     paper_floor = witness_data.get("parameters", {}).get(
@@ -87,6 +128,10 @@ def render_table(witness_data: dict) -> str:
         f"[`canonical-mass-table-extended.witness.json`]"
         f"(https://github.com/litlfred/qou/blob/main/folio-assistant/"
         f"computations/canonical-mass-table-extended.witness.json). "
+        f"Nucleon masses (m_p, m_n) via "
+        f"[`m-p-borromean-verification-50dps.witness.json`]"
+        f"(https://github.com/litlfred/qou/blob/main/folio-assistant/"
+        f"computations/m-p-borromean-verification-50dps.witness.json). "
         f"Paper hard floor (CAL-2 propagation): ~{int(paper_floor)} ppb._"
     )
     lines.append("")

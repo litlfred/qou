@@ -172,7 +172,9 @@ def compute_tr_m_canonical(
     return abs(tr_m), wall, None, method
 
 
-def lookup_b_pred_existing(Z: int, N: int) -> tuple[float | None, str | None]:
+def lookup_b_pred_existing(
+    Z: int, N: int, mass_table_ppb: dict | None = None,
+) -> tuple[float | None, str | None]:
     """Cross-reference the existing mass-table-ppb prediction (if any).
 
     The canonical pipeline of this script computes |tr_M(q_0)|; mapping
@@ -181,17 +183,73 @@ def lookup_b_pred_existing(Z: int, N: int) -> tuple[float | None, str | None]:
     helper looks up the existing prediction so we can tabulate it
     alongside |tr_M|.
 
+    Pass the pre-loaded mass_table_ppb dict (from
+    ``WitnessBuilder.add_upstream``) so the upstream sha256 is
+    recorded in the emitted witness. Falls back to a fresh disk
+    read for legacy callers.
+
     Returns (B_pred_MeV, origin_label) or (None, None) if absent.
     """
     try:
-        path = HERE / "mass-table-ppb.witness.json"
-        if not path.exists():
-            return None, None
-        w = json.loads(path.read_text())
-        rows = w.get("data", w).get("rows", [])
+        if mass_table_ppb is None:
+            path = HERE / "mass-table-ppb.witness.json"
+            if not path.exists():
+                return None, None
+            mass_table_ppb = json.loads(path.read_text())
+        rows = mass_table_ppb.get("data", mass_table_ppb).get("rows", [])
         for r in rows:
             if r.get("Z") == Z and r.get("N") == N:
                 return r.get("B_pred_MeV"), r.get("origin")
+        return None, None
+    except (KeyError, json.JSONDecodeError):
+        return None, None
+
+
+def lookup_nucleon_mass_borromean(
+    Z: int, N: int, borromean: dict | None = None,
+) -> tuple[float | None, str | None]:
+    """Cross-reference the Borromean tower m_p / m_n prediction.
+
+    `canonical-mass-table-extended` computes |tr_M| but does not
+    self-derive nucleon mass. The Borromean tower verification
+    (`m-p-borromean-verification-50dps.witness.json`) provides
+    m_p and m_n at 0.25 ppm, conditional on
+    `conj:borromean-baryon-mass-formula`. For p (Z=1, N=0) and n
+    (Z=0, N=1) rows we surface this prediction so the table is
+    not misleadingly empty for free nucleons.
+
+    Returns (m_pred_MeV, origin_label) or (None, None).
+    """
+    try:
+        if borromean is None:
+            path = HERE / "m-p-borromean-verification-50dps.witness.json"
+            if not path.exists():
+                return None, None
+            borromean = json.loads(path.read_text())
+        data = borromean.get("data", borromean)
+
+        def _to_float(x: Any) -> float | None:
+            # The Borromean witness stores values as mpmath-formatted
+            # strings (e.g. "938.27185263683084707"). Coerce to f64
+            # for downstream arithmetic; the 50-dps source value is
+            # preserved as a string in the witness file itself.
+            if x is None:
+                return None
+            try:
+                return float(x)
+            except (TypeError, ValueError):
+                return None
+
+        if Z == 1 and N == 0:
+            return (
+                _to_float(data.get("proton", {}).get("m_p_pred_MeV")),
+                "borromean-tower (conj:borromean-baryon-mass-formula)",
+            )
+        if Z == 0 and N == 1:
+            return (
+                _to_float(data.get("neutron", {}).get("m_n_pred_MeV")),
+                "borromean-tower (conj:borromean-baryon-mass-formula)",
+            )
         return None, None
     except (KeyError, json.JSONDecodeError):
         return None, None
@@ -256,6 +314,41 @@ def main() -> int:
           f"{'method':<12} {'wall(s)':>8}")
     print("  " + "-" * 122)
 
+    # Engine + descriptor strings (used both in print headers and below).
+    engine_str = (
+        "markov_peel+mpmath" if args.method == "markov_peel"
+        else "rust+mpmath"
+    )
+    method_desc = (
+        "markov_peel.tr_M_atomic (symbolic-q recursive ascent) + mpmath y_λ"
+        if args.method == "markov_peel"
+        else f"Rust hecke-canonical-chi ({args.precision}) + mpmath y_λ"
+    )
+
+    # Pre-load upstream witnesses through the builder so their
+    # sha256 hashes land in data.upstream_witness_hashes. The two
+    # upstreams are:
+    #   - mass-table-ppb.witness.json (B_pred via Kashaev law +
+    #     α-cluster, light-isotope cross-reference)
+    #   - m-p-borromean-verification-50dps.witness.json (m_p, m_n,
+    #     m_μ at 0.25 ppm via Borromean tower; conditional on
+    #     conj:borromean-baryon-mass-formula)
+    builder = WitnessBuilder("canonical-mass-table-extended", engine=engine_str)
+    mass_table_ppb_data: dict | None = None
+    borromean_data: dict | None = None
+    try:
+        mass_table_ppb_data = builder.add_upstream(
+            HERE / "mass-table-ppb.witness.json"
+        )
+    except FileNotFoundError:
+        pass
+    try:
+        borromean_data = builder.add_upstream(
+            HERE / "m-p-borromean-verification-50dps.witness.json"
+        )
+    except FileNotFoundError:
+        pass
+
     records: list[dict] = []
     for atom_str in requested:
         if atom_str not in label_to_ZN:
@@ -276,11 +369,47 @@ def main() -> int:
         if err:
             print(f"  {atom_str:<6} {A:>2} {n:>3} ERROR ({method_used}): {err[:60]}")
             continue
-        # Cross-reference existing mass-table-ppb prediction (Vol-based,
-        # α-cluster, or volume-match) — this script computes |tr_M|; the
-        # mass-formula step is a separate downstream concern.
-        b_pred_existing, origin = lookup_b_pred_existing(Z, N)
-        b_ame = B_AME_MEV.get((Z, N))
+        # Cross-reference: B_pred for D and up comes from mass-table-ppb
+        # (Kashaev law / α-cluster / volume-match); m_pred for p, n comes
+        # from the Borromean tower verification.
+        # Two cross-reference paths: p, n via Borromean tower (mass);
+        # D and up via mass-table-ppb (binding energy). The schema
+        # uses distinct field groups for each so a single row never
+        # conflates mass with binding-energy.
+        is_nucleon = (Z, N) in [(1, 0), (0, 1)]
+        b_pred_existing: float | None = None
+        b_ame: float | None = None
+        mass_pred: float | None = None
+        mass_codata: float | None = None
+        mass_err: float | None = None
+        mass_err_ppm: float | None = None
+        origin: str | None = None
+        if is_nucleon:
+            mass_pred, origin = lookup_nucleon_mass_borromean(
+                Z, N, borromean_data,
+            )
+            # CODATA references taken from the Borromean witness so the
+            # comparison stays consistent with the prediction source.
+            try:
+                bdata = (borromean_data or {}).get("data", borromean_data or {})
+                key = "proton" if (Z, N) == (1, 0) else "neutron"
+                codata_key = (
+                    "m_p_codata_MeV" if (Z, N) == (1, 0)
+                    else "m_n_codata_MeV"
+                )
+                v = bdata.get(key, {}).get(codata_key)
+                mass_codata = float(v) if v is not None else None
+            except (TypeError, ValueError):
+                mass_codata = None
+            if mass_pred is not None and mass_codata is not None:
+                mass_err = mass_pred - mass_codata
+                if mass_codata != 0.0:
+                    mass_err_ppm = mass_err / mass_codata * 1e6
+        else:
+            b_pred_existing, origin = lookup_b_pred_existing(
+                Z, N, mass_table_ppb_data,
+            )
+            b_ame = B_AME_MEV.get((Z, N))
 
         # Populate braid word + closure for provenance per the schema.
         from isotope_record_schema import CANONICAL_CLOSURES
@@ -295,8 +424,7 @@ def main() -> int:
             tr_M_q0_canonical_50dps=fmt(tr_m),  # OUTPUT_DPS via _precision
             prediction_method=PredictionMethod.CANONICAL_TRACE,
             calibration_source=CalibrationSource.CAL_1,
-            # Preserve legitimate 0.0 predictions (e.g. p, n) — use explicit
-            # `is not None` check, not truthiness (Copilot review).
+            # Binding-energy fields populated only for D and up.
             prediction_MeV_50dps=(
                 str(b_pred_existing) if b_pred_existing is not None else None
             ),
@@ -305,6 +433,13 @@ def main() -> int:
                 b_pred_existing - b_ame
                 if (b_pred_existing is not None and b_ame is not None) else None
             ),
+            # Mass-prediction fields populated only for p, n.
+            mass_pred_MeV=(
+                str(mass_pred) if mass_pred is not None else None
+            ),
+            mass_codata_MeV=mass_codata,
+            mass_err_MeV=mass_err,
+            mass_err_ppm=mass_err_ppm,
             # Provenance reflects actual method used (Copilot review).
             chi_cache_witness=(
                 f"(computed live via {method_used})"
@@ -313,25 +448,23 @@ def main() -> int:
         records.append(record.to_dict())
 
         tr_m_str = fmt(tr_m, dps=15)  # display-only, full precision via fmt
-        pred_str = f"{b_pred_existing:.4f}" if b_pred_existing is not None else "—"
-        ame_str = f"{b_ame:.4f}" if b_ame is not None else "—"
+        if is_nucleon:
+            pred_val = mass_pred
+            ame_val = mass_codata
+        else:
+            pred_val = b_pred_existing
+            ame_val = b_ame
+        pred_str = f"{pred_val:.4f}" if pred_val is not None else "—"
+        ame_str = f"{ame_val:.4f}" if ame_val is not None else "—"
         origin_str = (origin or "—")[:20]
         print(f"  {atom_str:<6} {A:>2} {n:>3} {tr_m_str:<22} "
               f"{pred_str:>16} {ame_str:>10} {origin_str:<22} "
               f"{method_used:<12} {wall:>8.1f}")
 
-    # Engine string reflects the actual method (Copilot review).
-    engine_str = (
-        "markov_peel+mpmath" if args.method == "markov_peel"
-        else "rust+mpmath"
-    )
-    method_desc = (
-        "markov_peel.tr_M_atomic (symbolic-q recursive ascent) + mpmath y_λ"
-        if args.method == "markov_peel"
-        else f"Rust hecke-canonical-chi ({args.precision}) + mpmath y_λ"
-    )
+    # Builder was created early to record upstream sha256 via
+    # add_upstream(); now we finish populating it.
     builder = (
-        WitnessBuilder("canonical-mass-table-extended", engine=engine_str)
+        builder
         .set_description(
             f"Extended canonical mass table via {method_desc}. "
             "Layer 1 canonical pipeline per "
@@ -340,7 +473,11 @@ def main() -> int:
             "the actual rows reflect what completed within the per-atom "
             "timeout. Each row carries the per-atom IsotopeRecord with "
             "explicit knot-operator catalogue (intra-nucleon, inter-nucleon "
-            "interfaces, closure topology)."
+            "interfaces, closure topology). For p and n, the prediction "
+            "column is the Borromean-tower nucleon mass (conditional on "
+            "conj:borromean-baryon-mass-formula, sub-ppm vs CODATA); for "
+            "D and up the prediction column is the mass-table-ppb binding "
+            "energy (Kashaev law / α-cluster / volume-match)."
         )
         .add_parameter("q_0", Q_50_DIGIT_STR)
         .add_parameter("method", args.method)

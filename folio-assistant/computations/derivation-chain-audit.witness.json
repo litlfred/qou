@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T03:53:01.500273+00:00",
-  "commitSha": "39de6596d013a2e1bb2fb1f65ea825ac980f4f73",
+  "computedAt": "2026-05-19T03:53:05.626933+00:00",
+  "commitSha": "cc035dccf5622387f6b8fcf626bb0cb7fb54c714",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2530,6 +2530,7 @@
         "wall-violations.witness.json",
         "wedderburn-lp-ew-wiring.witness.json",
         "wedderburn-pair-volumes.witness.json",
+        "witness-provenance-audit.witness.json",
         "witness-reproducibility-check.witness.json",
         "workplan-0b-mn-routes-b-c.witness.json",
         "workplan-0b-route-b-operator.witness.json",

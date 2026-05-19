@@ -255,6 +255,21 @@ jobs:
           python3 folio-assistant/computations/compute_audit_scan.py
           python3 -c "import json; d=json.load(open('folio-assistant/computations/compute-audit-scan.witness.json')); print('compute-audit-scan:', d['data']['by_pattern_count'])"
 
+      - name: I13 witness-provenance audit (warn-only)
+        # Every *.witness.json under folio-assistant/computations/
+        # must declare engine, scriptFile, commitSha (the
+        # WitnessBuilder convention). Witnesses without these three
+        # fields cannot be reproduced or traced back to source code.
+        # Warn-only at the 113-witness baseline — purpose is to
+        # detect regressions (count growing) while the rest of the
+        # legacy artifacts get migrated to WitnessBuilder.
+        # Per repo-owner directive 2026-05-19: "fix all of these
+        # tables so they always have correct witnessed data from
+        # canonical pipeline. too much divergence."
+        run: |
+          python3 folio-assistant/computations/witness_provenance_audit.py
+          python3 -c "import json; d=json.load(open('folio-assistant/computations/witness-provenance-audit.witness.json')); print('witness-provenance:', d['data']['counts'])"
+
       - name: Run lp_dual_witness_validator (--strict-wired)
         # Per prop:operator-selection-lp § dual program: every wired
         # LP/SDP witness MUST include the LP dual variables

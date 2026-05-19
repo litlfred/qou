@@ -1,16 +1,16 @@
 {
   "engine": "markov_peel+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T00:27:50.852823+00:00",
-  "commitSha": "7d814e31135599c27a59d4a80beebcdd80e7e208",
+  "computedAt": "2026-05-19T02:32:21.311758+00:00",
+  "commitSha": "b82b92391d0b6d0b39f665d3282c70db1b9228a7",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 1396521,
   "computation": "canonical-mass-table-extended",
   "scriptFile": "canonical_mass_table_extended.py",
-  "scriptHash": "9562246970bc",
+  "scriptHash": "fc851276bae2",
   "scriptCommitSha": "2cbb70fa138c0206465ce5492b88eb49e9b09e43",
-  "description": "Extended canonical mass table via markov_peel.tr_M_atomic (symbolic-q recursive ascent) + mpmath y_λ. Layer 1 canonical pipeline per docs/audits/2026-05-18-all-atoms-isotopes-plan.md. Coverage is determined by --atoms (see parameters.atoms_requested); the actual rows reflect what completed within the per-atom timeout. Each row carries the per-atom IsotopeRecord with explicit knot-operator catalogue (intra-nucleon, inter-nucleon interfaces, closure topology).",
+  "description": "Extended canonical mass table via markov_peel.tr_M_atomic (symbolic-q recursive ascent) + mpmath y_λ. Layer 1 canonical pipeline per docs/audits/2026-05-18-all-atoms-isotopes-plan.md. Coverage is determined by --atoms (see parameters.atoms_requested); the actual rows reflect what completed within the per-atom timeout. Each row carries the per-atom IsotopeRecord with explicit knot-operator catalogue (intra-nucleon, inter-nucleon interfaces, closure topology). For p and n, the prediction column is the Borromean-tower nucleon mass (conditional on conj:borromean-baryon-mass-formula, sub-ppm vs CODATA); for D and up the prediction column is the mass-table-ppb binding energy (Kashaev law / α-cluster / volume-match).",
   "parameters": {
     "q_0": "1.10997859555418057528159407960950937799328227995870",
     "method": "markov_peel",
@@ -114,10 +114,14 @@
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
         "prediction_MeV_50dps": null,
-        "B_AME_MeV": 0.0,
+        "B_AME_MeV": null,
         "err_MeV": null,
         "err_pct": null,
         "err_ppb": null,
+        "mass_pred_MeV": "938.2718526368309",
+        "mass_codata_MeV": 938.27208816,
+        "mass_err_MeV": -0.00023552316906716442,
+        "mass_err_ppm": -0.2510179851230974,
         "derivation_chain_witness": null,
         "chi_cache_witness": "(computed live via markov_peel)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
@@ -210,10 +214,14 @@
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
         "prediction_MeV_50dps": null,
-        "B_AME_MeV": 0.0,
+        "B_AME_MeV": null,
         "err_MeV": null,
         "err_pct": null,
         "err_ppb": null,
+        "mass_pred_MeV": "939.5651846677046",
+        "mass_codata_MeV": 939.56542052,
+        "mass_err_MeV": -0.00023585229541822628,
+        "mass_err_ppm": -0.25102274973859134,
         "derivation_chain_witness": null,
         "chi_cache_witness": "(computed live via markov_peel)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
@@ -385,6 +393,10 @@
         "err_MeV": 0.02425490486473425,
         "err_pct": null,
         "err_ppb": null,
+        "mass_pred_MeV": null,
+        "mass_codata_MeV": null,
+        "mass_err_MeV": null,
+        "mass_err_ppm": null,
         "derivation_chain_witness": null,
         "chi_cache_witness": "(computed live via markov_peel)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
@@ -631,6 +643,10 @@
         "err_MeV": -0.013199913466978686,
         "err_pct": null,
         "err_ppb": null,
+        "mass_pred_MeV": null,
+        "mass_codata_MeV": null,
+        "mass_err_MeV": null,
+        "mass_err_ppm": null,
         "derivation_chain_witness": null,
         "chi_cache_witness": "(computed live via markov_peel)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
@@ -877,6 +893,10 @@
         "err_MeV": -0.22912349022904,
         "err_pct": null,
         "err_ppb": null,
+        "mass_pred_MeV": null,
+        "mass_codata_MeV": null,
+        "mass_err_MeV": null,
+        "mass_err_ppm": null,
         "derivation_chain_witness": null,
         "chi_cache_witness": "(computed live via markov_peel)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
@@ -1198,6 +1218,10 @@
         "err_MeV": 1.6600042390838396,
         "err_pct": null,
         "err_ppb": null,
+        "mass_pred_MeV": null,
+        "mass_codata_MeV": null,
+        "mass_err_MeV": null,
+        "mass_err_ppm": null,
         "derivation_chain_witness": null,
         "chi_cache_witness": "(computed live via markov_peel)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
@@ -1594,6 +1618,10 @@
         "err_MeV": null,
         "err_pct": null,
         "err_ppb": null,
+        "mass_pred_MeV": null,
+        "mass_codata_MeV": null,
+        "mass_err_MeV": null,
+        "mass_err_ppm": null,
         "derivation_chain_witness": null,
         "chi_cache_witness": "(computed live via markov_peel)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
@@ -2065,11 +2093,33 @@
         "err_MeV": null,
         "err_pct": null,
         "err_ppb": null,
+        "mass_pred_MeV": null,
+        "mass_codata_MeV": null,
+        "mass_err_MeV": null,
+        "mass_err_ppm": null,
         "derivation_chain_witness": null,
         "chi_cache_witness": "(computed live via markov_peel)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
       }
     ],
-    "n_atoms_computed": 8
+    "n_atoms_computed": 8,
+    "upstream_witness_hashes": [
+      {
+        "path": "mass-table-ppb.witness.json",
+        "sha256": "fb37c94b297a83ad28dcd045dc8c0afa5591b02cf861f84f232145f7df3f9470",
+        "size_bytes": 6961,
+        "commitSha": "b82b92391d0b6d0b39f665d3282c70db1b9228a7",
+        "scriptCommitSha": "07c70b80249ec4d7d64d8eb0721c775389fed122",
+        "computedAt": "2026-05-19T01:28:43.459839+00:00"
+      },
+      {
+        "path": "m-p-borromean-verification-50dps.witness.json",
+        "sha256": "b261735cf47e1504b996894e6ccfc4944ab1ed43d4157dd12a9e28f5a60dde0a",
+        "size_bytes": 4501,
+        "commitSha": "e620f607034d0b81d92b999f5ff2cc68907352b4",
+        "scriptCommitSha": "c30da51bea8725add6b37e84c3e6d14cc94ce01e",
+        "computedAt": "2026-05-19T00:34:55.990181+00:00"
+      }
+    ]
   }
 }

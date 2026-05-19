@@ -1,9 +1,9 @@
 {
   "audit": "§3b-cond conditional-class banner (CLAUDE.md §3b-cond #2 + #3)",
-  "generated": "2026-05-18T17:13:27.863Z",
-  "total_blocks": 1616,
-  "conditional_on_class": 12,
-  "fully_compliant": 12,
+  "generated": "2026-05-19T01:18:23.724Z",
+  "total_blocks": 1724,
+  "conditional_on_class": 9,
+  "fully_compliant": 9,
   "missing_lean_class_hypothesis": 0,
   "missing_md_conditional_banner": 0,
   "findings": [
@@ -66,42 +66,6 @@
       "has_md_conditional_banner": true,
       "lean_file": "content/quantum-observable-universe/fluid-dynamics/core-levi-form.lean",
       "md_file": "content/quantum-observable-universe/fluid-dynamics/core-levi-form.md"
-    },
-    {
-      "label": "prop:geom-universality",
-      "kind": "proposition",
-      "conj_cone": [
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio"
-      ],
-      "has_lean_class_hypothesis": true,
-      "has_md_conditional_banner": true,
-      "lean_file": "content/quantum-observable-universe/braids-and-knots/geom-universality.lean",
-      "md_file": "content/quantum-observable-universe/braids-and-knots/geom-universality.md"
-    },
-    {
-      "label": "prop:geom-yekutieli-alignment",
-      "kind": "proposition",
-      "conj_cone": [
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio"
-      ],
-      "has_lean_class_hypothesis": true,
-      "has_md_conditional_banner": true,
-      "lean_file": "content/quantum-observable-universe/braids-and-knots/geom-yekutieli-alignment.lean",
-      "md_file": "content/quantum-observable-universe/braids-and-knots/geom-yekutieli-alignment.md"
-    },
-    {
-      "label": "prop:hoefsmit-scattering-pipeline",
-      "kind": "proposition",
-      "conj_cone": [
-        "conj:hyperbolic-volume-transcendence",
-        "conj:baryon-period-ratio"
-      ],
-      "has_lean_class_hypothesis": true,
-      "has_md_conditional_banner": true,
-      "lean_file": "content/quantum-observable-universe/braids-and-knots/hoefsmit-scattering-pipeline.lean",
-      "md_file": "content/quantum-observable-universe/braids-and-knots/hoefsmit-scattering-pipeline.md"
     },
     {
       "label": "prop:ns-obstruction-tower",

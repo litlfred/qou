@@ -88,6 +88,9 @@ SOURCES = {
     "witness_reproducibility": (
         HERE / "witness-reproducibility-check.witness.json"
     ),
+    "witness_provenance": (
+        HERE / "witness-provenance-audit.witness.json"
+    ),
 }
 
 
@@ -184,6 +187,25 @@ def _summarize_repro(w: dict[str, Any] | None) -> dict[str, Any]:
         "computedAt": w.get("computedAt"),
         "by_status": data.get("by_status") or {},
         "pass_ratio": data.get("pass_ratio"),
+    }
+
+
+def _summarize_provenance(w: dict[str, Any] | None) -> dict[str, Any]:
+    """I13 witness-provenance completeness."""
+    if w is None:
+        return {
+            "status": "missing",
+            "note": "witness-provenance-audit.witness.json not found",
+        }
+    counts = w.get("data", {}).get("counts", {})
+    return {
+        "status": "loaded",
+        "computedAt": w.get("computedAt"),
+        "total_scanned": counts.get("total_scanned"),
+        "prov_ok": counts.get("prov_ok"),
+        "prov_missing": counts.get("prov_missing"),
+        "prov_audit_exempt": counts.get("prov_audit_exempt"),
+        "completeness_ratio": counts.get("completeness_ratio"),
     }
 
 
@@ -420,6 +442,44 @@ RECOMMENDED_NEXT = [
 ]
 
 
+def _contract_witness_provenance(prov: dict[str, Any]) -> dict[str, Any]:
+    """I13 witness-provenance completeness — every witness must
+    declare engine, scriptFile, commitSha."""
+    if prov.get("status") != "loaded":
+        return {
+            "name": "Witness provenance completeness (I13)",
+            "source": "witness-provenance-audit.witness.json",
+            "metric": "audit witness missing — run witness_provenance_audit.py",
+            "status": "warn",
+            "remediation": (
+                "Run `python3 folio-assistant/computations/"
+                "witness_provenance_audit.py` to emit the audit witness."
+            ),
+        }
+    missing = prov.get("prov_missing") or 0
+    total = prov.get("total_scanned") or 0
+    ratio = prov.get("completeness_ratio") or 0.0
+    return {
+        "name": "Witness provenance completeness (I13)",
+        "source": "witness-provenance-audit.witness.json",
+        "metric": (
+            f"{missing} of {total} witnesses missing "
+            f"engine/scriptFile/commitSha (completeness "
+            f"ratio {ratio:.3f})"
+        ),
+        "status": (
+            "fail" if missing > 50 else
+            "warn" if missing > 0 else
+            "pass"
+        ),
+        "remediation": (
+            "Wrap hand-written .witness.json writers in "
+            "witness_base.WitnessBuilder. See PR #781 fixups for "
+            "the pattern (mass_table_ppb.py, binding_canonical.py)."
+        ),
+    }
+
+
 def main() -> int:
     sources_loaded = {key: _safe_load(path) for key, path in SOURCES.items()}
 
@@ -437,6 +497,9 @@ def main() -> int:
     repro_summary = _summarize_repro(
         sources_loaded["witness_reproducibility"]
     )
+    prov_summary = _summarize_provenance(
+        sources_loaded["witness_provenance"]
+    )
 
     # Per-contract pass/warn/fail
     contracts = [
@@ -446,6 +509,7 @@ def main() -> int:
         _contract_derivation_chains(chain_summary),
         _contract_codata_reconciliation(codata_summary),
         _contract_witness_reproducibility(repro_summary),
+        _contract_witness_provenance(prov_summary),
     ]
 
     # Aggregate score: pass=1, warn=0.5, fail=0, missing=skip

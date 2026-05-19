@@ -1,14 +1,14 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T00:23:11.219950+00:00",
-  "commitSha": "53724089357560bf563dfc49d2050299040b8b9c",
+  "computedAt": "2026-05-19T02:16:12.793594+00:00",
+  "commitSha": "b82b92391d0b6d0b39f665d3282c70db1b9228a7",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 9,
   "computation": "canonical-derivation-pipeline-compliance",
   "scriptFile": "canonical_derivation_pipeline_compliance.py",
-  "scriptHash": "2c0d7ad779f8",
+  "scriptHash": "559b386660e4",
   "scriptCommitSha": "9d90d8c1be442721be328306ed7cf4c67a64ca26",
   "description": "Aggregator dashboard of compute-infra compliance for the canonical-derivation chain. Joins four upstream audit witnesses into one current-state snapshot. See docs/audits/2026-05-12-canonical-derivation-compute-review.md §3 for the contract definitions.",
   "auditOnly": "docs/audits/2026-05-12-canonical-derivation-compute-review.md",
@@ -18,23 +18,24 @@
       "canonical_script_input_audit": "folio-assistant/computations/canonical-script-input-audit.witness.json",
       "derivation_chain_audit": "folio-assistant/computations/derivation-chain-audit.witness.json",
       "codata_reconciliation": "folio-assistant/computations/codata-reconciliation.witness.json",
-      "witness_reproducibility": "folio-assistant/computations/witness-reproducibility-check.witness.json"
+      "witness_reproducibility": "folio-assistant/computations/witness-reproducibility-check.witness.json",
+      "witness_provenance": "folio-assistant/computations/witness-provenance-audit.witness.json"
     }
   },
   "data": {
     "source_summaries": {
       "compute_audit_scan": {
         "status": "loaded",
-        "computedAt": "2026-05-18T20:19:59.424272+00:00",
-        "files_scanned": 591,
+        "computedAt": "2026-05-19T01:20:49.585354+00:00",
+        "files_scanned": 585,
         "by_pattern_count": {
           "P15": 173,
           "P16": 122,
           "P21": 32,
           "P30": 97,
-          "P31": 27
+          "P31": 25
         },
-        "total_findings": 451,
+        "total_findings": 449,
         "top_files": [
           {
             "file": "markov_weights_symbolic.py",
@@ -140,9 +141,9 @@
       },
       "derivation_chain_audit": {
         "status": "loaded",
-        "computedAt": "2026-05-18T20:33:51.823222+00:00",
-        "chain_count": 71,
-        "assertion_count": 91,
+        "computedAt": "2026-05-19T01:17:31.503113+00:00",
+        "chain_count": 70,
+        "assertion_count": 89,
         "all_passed": true,
         "failed_assertion_count": 0
       },
@@ -165,14 +166,14 @@
       {
         "name": "WitnessBuilder usage (P30)",
         "source": "compute-audit-scan.witness.json",
-        "metric": "97 of 591 files write witnesses without WitnessBuilder",
+        "metric": "97 of 585 files write witnesses without WitnessBuilder",
         "status": "fail",
         "remediation": "Batch-port hand-written .witness.json writers to witness_base.WitnessBuilder. Reference: docs/audits/2026-05-08-compute-audit-workplan.md §Tier 2."
       },
       {
         "name": "CODATA constants from registry only (P31)",
         "source": "compute-audit-scan.witness.json",
-        "metric": "27 hardcoded CODATA literals outside the allowlist",
+        "metric": "25 hardcoded CODATA literals outside the allowlist",
         "status": "warn",
         "remediation": "Replace each hit with import from codata_constants (_VALIDATION aliases) or experimental_constants. Tag audit-only consumers with `# noqa: P31` and a justifying comment."
       },
@@ -186,7 +187,7 @@
       {
         "name": "Per-chain trust-basis validation",
         "source": "derivation-chain-audit.witness.json",
-        "metric": "91 assertions across 71 chains; 0 failed",
+        "metric": "89 assertions across 70 chains; 0 failed",
         "status": "pass",
         "remediation": "Read derivation-chain-audit.witness.json `assertions` for failed chain IDs and trust-basis transitions. Each `script_cited` step that fails should be promoted to `derived` or `lean_proven`."
       },
@@ -203,9 +204,16 @@
         "metric": "11/11 builders byte-equal (drift=0, error=0, timeout=0, skip=0)",
         "status": "pass",
         "remediation": "For drift: investigate non-determinism (PYTHONHASHSEED, timestamps, hand-edits to committed JSON not reproduced by the script). For error/timeout: install missing deps or bump PER_BUILDER_TIMEOUT_S. Reference: witness_reproducibility_check.py + docs/audits/2026-05-12-canonical-derivation-compute-review.md §4 P3.2."
+      },
+      {
+        "name": "Witness provenance completeness (I13)",
+        "source": "witness-provenance-audit.witness.json",
+        "metric": "113 of 518 witnesses missing engine/scriptFile/commitSha (completeness ratio 0.782)",
+        "status": "fail",
+        "remediation": "Wrap hand-written .witness.json writers in witness_base.WitnessBuilder. See PR #781 fixups for the pattern (mass_table_ppb.py, binding_canonical.py)."
       }
     ],
-    "infra_score": 0.6666666666666666,
+    "infra_score": 0.5714285714285714,
     "known_open_conflicts": [
       {
         "id": "TR_M_AT_Q0_vs_frobenius_proof",
