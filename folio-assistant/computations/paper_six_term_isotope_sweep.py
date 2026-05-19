@@ -82,6 +82,20 @@ Q0 = Q_MP
 Z_MARK = mp.mpf(str(z_mark))
 H_VAL = mp.mpf(str(h_val))
 
+# Isotopes at A ≥ 5 (Hecke H_{≥15}) whose canonical |tr_M| at q_0
+# is intractable with the current Python mpmath @ 50 dps pipeline
+# (p(15) = 176 partitions and max Hoefsmit dim in the thousands;
+# bu64reus1 on PR #564 hit the 30-min CI timeout already at ⁴He /
+# H_12).  The sweep loop emits a `deferred: true` row for these
+# (no `error_kind`) so the I13 incomplete-coverage audit
+# distinguishes physics-blocked gaps from producer bugs.  Tractable
+# computation awaits (a) Rust kernel with rayon parallel partitions
+# + block-sparse Hoefsmit MPFR, or (b) Wenzl 1988 LR-branching
+# categorical reduction.  See AUDIT-DEEP-2026-05.md §7.
+DEFERRED_INTRACTABLE_ATOMS = frozenset({
+    "5Li", "6Li", "7Li", "7Be", "8Be", "9Be",
+})
+
 
 def abs_mpf(v):
     """Coerce a per-generator volume to abs mpmath float (no f64
@@ -885,6 +899,33 @@ def run_sweep_for_mode(tower_mode: str, isotopes: list, *, verbose: bool = True,
 
     rows = []
     for iso, Z, N, inter, M_codata in isotopes:
+        # ── Deferred-intractable isotopes ───────────────────────────
+        # Per atomic_tr_m_mpfr_50dps.py's ⁴He omission note, isotopes
+        # at A ≥ 5 need Hecke H_{≥15} with p(n) ≥ 176 partitions and
+        # max Hoefsmit dim in the thousands.  Current Python mpmath
+        # @ 50 dps can't produce |tr_M| within the 30-min CI timeout;
+        # tractable compute needs (a) Rust kernel with rayon parallel
+        # partitions + block-sparse Hoefsmit MPFR, or (b) categorical
+        # reduction via Wenzl 1988 LR branching.  Surface these atoms
+        # as `deferred` (NO error_kind) so the I13 incomplete-coverage
+        # audit doesn't conflate physics-blocked gaps with producer
+        # bugs.  Cf. AUDIT-DEEP-2026-05.md §7.
+        if iso in DEFERRED_INTRACTABLE_ATOMS:
+            rows.append({
+                "isotope": iso, "Z": Z, "N": N, "A": Z + N,
+                "M_codata": M_codata,
+                "deferred": True,
+                "deferral_reason": (
+                    f"Canonical |tr_M({iso})| at H_{(Z+N)*3} is intractable"
+                    " with current Python mpmath @ 50 dps; awaits Rust"
+                    " kernel or Wenzl-1988 LR-branching categorical"
+                    " reduction."
+                ),
+            })
+            if verbose:
+                print(f"  {iso:<6} [deferred-intractable] H_{(Z+N)*3}",
+                      flush=True)
+            continue
         try:
             terms = paper_six_term_mass(
                 Z, N, include_inter=inter,
@@ -1247,6 +1288,8 @@ if __name__ == "__main__":
             row = next((r for r in sweep_results[mode]["rows"] if r["isotope"] == iso), None)
             if row is None or "error" in row:
                 line += f" {'ERR':>10}"
+            elif row.get("deferred"):
+                line += f" {'DEF':>10}"
             else:
                 line += f" {row['err_pct']:>+9.3f}%"
         print(line)
