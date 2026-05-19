@@ -75,45 +75,41 @@ def render_table(witness_data: dict) -> str:
     """Render the markdown table from the witness rows.
 
     The atlas is the central display for the mass/β/Q/binding
-    pipeline. Per repo-owner directive 2026-05-19, every row carries:
+    pipeline. Per repo-owner directive 2026-05-19, every row carries
+    a unified `prediction_type` + `prediction_MeV_50dps` triple:
 
-      - |tr_M(q_0)|        from the Layer-1 canonical pipeline
-      - Binding energy      B_pred vs B_AME (D and up)
-      - Nucleon mass        m_pred vs m_codata (p, n)
+      - p, n  → prediction = nucleon mass (Borromean tower);
+                CODATA reference; err in ppm.
+      - D and up → prediction = binding energy (mass-table-ppb);
+                AME reference; err in %.
     """
     lines = [
         "",
         "| Atom | $A$ | $n$ | $\\|\\mathrm{tr}_M(\\beta_{\\text{atom}}, q_0)\\|$ "
-        "| $B_{\\text{pred}}$ MeV | $B_{\\text{AME}}$ MeV | err % "
-        "| $m_{\\text{pred}}$ MeV | $m_{\\text{CODATA}}$ MeV | err ppm |",
-        "|---|---|---|---|---|---|---|---|---|---|",
+        "| Predicting | Prediction (MeV) | Reference (MeV) | Error |",
+        "|---|---|---|---|---|---|---|---|",
     ]
     for row in witness_data.get("rows", []):
         Z = row["Z"]; N = row["N"]; A = row["A"]; n = row["n_strands"]
         label = ATOM_LABEL_BY_ZN.get((Z, N), f"(Z={Z}, N={N})")
         tr_m_md = f"${_truncate_dps(row.get('tr_M_q0_canonical_50dps'))}$" \
                   if row.get("tr_M_q0_canonical_50dps") else "—"
-        # Binding-energy block (D and up; null for p, n)
-        b_pred_md = _fmt_number(row.get("prediction_MeV_50dps"))
-        b_ame_md = _fmt_number(row.get("B_AME_MeV"))
-        err = row.get("err_MeV"); B = row.get("B_AME_MeV")
-        if err is not None and B not in (None, 0, 0.0):
-            try:
-                pct = float(err) / float(B) * 100.0
-                err_pct_md = f"{pct:+.2f}"
-            except (TypeError, ValueError, ZeroDivisionError):
-                err_pct_md = "—"
+        ptype = row.get("prediction_type") or "binding_energy"
+        ptype_label = "mass" if ptype == "mass" else "B (binding)"
+        pred_md = _fmt_number(row.get("prediction_MeV_50dps"))
+        ref_md = _fmt_number(row.get("B_AME_MeV"))
+        # Error: ppm for mass, % for binding energy — the natural unit
+        # for the typical magnitude in each regime.
+        if ptype == "mass":
+            err_unit = "ppm"
+            err_md = _fmt_number(row.get("err_ppm"), "{:+.3f}")
         else:
-            err_pct_md = "—"
-        # Nucleon-mass block (p, n; null for D and up)
-        m_pred_md = _fmt_number(row.get("mass_pred_MeV"))
-        m_codata_md = _fmt_number(row.get("mass_codata_MeV"))
-        m_err_ppm_md = _fmt_number(row.get("mass_err_ppm"), "{:+.3f}")
-
+            err_unit = "%"
+            err_md = _fmt_number(row.get("err_pct"), "{:+.2f}")
+        err_cell = f"{err_md} {err_unit}" if err_md != "—" else "—"
         lines.append(
             f"| {label} | {A} | {n} | {tr_m_md} "
-            f"| {b_pred_md} | {b_ame_md} | {err_pct_md} "
-            f"| {m_pred_md} | {m_codata_md} | {m_err_ppm_md} |"
+            f"| {ptype_label} | {pred_md} | {ref_md} | {err_cell} |"
         )
     lines.append("")
     method = witness_data.get("parameters", {}).get("method", "?")
