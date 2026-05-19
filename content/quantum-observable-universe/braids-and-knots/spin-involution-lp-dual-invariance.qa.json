@@ -150,6 +150,24 @@
         "severity": "major",
         "evidence": "content/quantum-observable-universe/braids-and-knots/spin-involution-lp-dual-invariance.md:92: $\\mathcal{C} := \\{x \\in A : \\tau(\\pi_\\lambda \\cdot x) \\geq 0\\  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$] | content/quantum-observable-universe/braids-and-knots/spin-involution-lp-dual-invariance.md:93: \\forall \\lambda \\in \\Sigma\\}$ satisfies $\\sigma(\\mathcal{C}) =  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$] | content/quantum-observable-universe/braids-and-knots/spin-involution-lp-dual-invariance.md:94: \\mathcal{C}$ (apply Step 1 to each constraint).  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$]"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "fd82f2b91908",
+          "ts": "c78d26f4e849",
+          "lean": "e7dc364583e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-adjudicator-braids-R-Z",
+          "version": "claude-sonnet-4-6-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T19:18:52.573Z",
+        "reviewed_sha": "80f81c2c5ce6556edb14c1d926c3084e22a2289d",
+        "notes": "default-pass (chapter=braids-and-knots, sweep batch=braids-R-Z)"
+      }
     ]
   },
   "updated_at": "2026-05-20T02:29:29.163Z"

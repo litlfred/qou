@@ -150,6 +150,24 @@
         "severity": "major",
         "evidence": "content/quantum-observable-universe/braids-and-knots/terms-2-6-higher-operations.md:478: \\underbrace{a_K(\\varrho) \\cdot \\mathcal{C}}_{\\text{Term 5 (ribbon)}}  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$] | content/quantum-observable-universe/braids-and-knots/terms-2-6-higher-operations.md:482: *where $\\mathcal{C}$ denotes the chirality-couplable piece (e.g.,  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$]"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "46d9d0f6be7c",
+          "ts": "ec8301fb8dfb",
+          "lean": "7ff592a5f7ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-adjudicator-braids-R-Z",
+          "version": "claude-sonnet-4-6-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T19:18:52.573Z",
+        "reviewed_sha": "80f81c2c5ce6556edb14c1d926c3084e22a2289d",
+        "notes": "default-pass (chapter=braids-and-knots, sweep batch=braids-R-Z)"
+      }
     ]
   },
   "updated_at": "2026-05-20T02:29:29.163Z"
