@@ -107,11 +107,22 @@ class IsotopeRecord:
     calibration_source: CalibrationSource = CalibrationSource.CAL_1
     prediction_MeV_50dps: Optional[str] = None        # binding energy
 
-    # Empirical comparison
+    # Empirical comparison — UNIFIED semantics per user directive
+    # 2026-05-19: prediction_MeV_50dps / B_AME_MeV / err_MeV are
+    # polymorphic on `prediction_type`:
+    #   - "binding_energy" (D and up): prediction = B_pred,
+    #     B_AME_MeV = AME binding energy.
+    #   - "mass" (p, n): prediction = Borromean tower nucleon mass,
+    #     B_AME_MeV = CODATA nucleon mass (overloaded field).
+    # err_MeV = prediction − B_AME_MeV in either case.
+    # err_ppm scales the relative error to parts-per-million (useful
+    # primarily for the mass case where ppm is the natural unit).
+    prediction_type: str = "binding_energy"
     B_AME_MeV: Optional[float] = None
     err_MeV: Optional[float] = None
     err_pct: Optional[float] = None
     err_ppb: Optional[float] = None
+    err_ppm: Optional[float] = None
 
     # Provenance
     derivation_chain_witness: Optional[str] = None
@@ -144,11 +155,13 @@ class IsotopeRecord:
             "wedderburn_blocks_active": [list(p) for p in self.wedderburn_blocks_active],
             "prediction_method": self.prediction_method.value,
             "calibration_source": self.calibration_source.value,
+            "prediction_type": self.prediction_type,
             "prediction_MeV_50dps": self.prediction_MeV_50dps,
             "B_AME_MeV": self.B_AME_MeV,
             "err_MeV": self.err_MeV,
             "err_pct": self.err_pct,
             "err_ppb": self.err_ppb,
+            "err_ppm": self.err_ppm,
             "derivation_chain_witness": self.derivation_chain_witness,
             "chi_cache_witness": self.chi_cache_witness,
             "y_lambda_cache_witness": self.y_lambda_cache_witness,

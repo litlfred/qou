@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-05-18T03:09:25.085797+00:00",
-  "commitSha": "86a114e3f13da58d7dcce2f5d7db72f1fcee9a41",
+  "computedAt": "2026-05-19T00:34:55.990181+00:00",
+  "commitSha": "e620f607034d0b81d92b999f5ff2cc68907352b4",
   "assertions": [
     {
       "name": "muon_borromean_baseline_ppm_lt_2",
@@ -33,11 +33,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 10,
   "computation": "m-p-borromean-verification-50dps",
   "scriptFile": "m_p_borromean_verification_50dps.py",
-  "scriptHash": "de1ae9f1cb2a",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "e0b1a76a9c3d",
+  "scriptCommitSha": "c30da51bea8725add6b37e84c3e6d14cc94ce01e",
   "description": "Numerical verification at MPFR 50 dps of `conj:borromean-baryon-mass-formula` against CODATA m_p, m_n. With λ_scale fixed at the documented closure targets (λ_p = 2.4599527869, λ_n = 2.4633436333) the Borromean tower formula reproduces m_p to 0.25 ppm and m_n to similar precision. This explains the 1700× scale gap in the prior single-level Markov-trace m_p chain (`build_proton_mass_50dps_chain.py`): Vol(B_3)/ℏ_q² ≈ 746.42 is the baryon-scale multiplier missing from that chain. The remaining R&D is to DERIVE λ_scale from substrate (currently closed numerically against CODATA).",
   "contentBlock": "conj:borromean-baryon-mass-formula",
   "parameters": {

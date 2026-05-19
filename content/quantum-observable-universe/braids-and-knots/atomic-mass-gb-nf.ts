@@ -26,11 +26,10 @@ export default proposition({
     validation: "not_checked",
   },
   computation: {
-    engine: "mpmath",
-    script: "folio-assistant/computations/atomic_braid_mass_table.py",
+    engine: "python+mpmath",
+    script: "folio-assistant/computations/canonical_mass_table_extended.py",
     witness: [
-      "folio-assistant/computations/atomic-braid-mass-table-modes-sweep.witness.json",
-      "folio-assistant/computations/atomic-braid-mass-table.witness.json",
+      "folio-assistant/computations/canonical-mass-table-extended.witness.json",
     ],
     status: "experimental",
   },

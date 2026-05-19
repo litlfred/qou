@@ -1,21 +1,21 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T18:32:09.955305+00:00",
-  "commitSha": "f9007c5034e57a11bac58640b0bf50cbe721c119",
+  "computedAt": "2026-05-19T00:40:49.181250+00:00",
+  "commitSha": "e620f607034d0b81d92b999f5ff2cc68907352b4",
   "assertions": [
     {
       "name": "no_missing_labels",
-      "computed": 1.0,
+      "computed": 0.0,
       "expected": 1.0,
-      "passed": true,
+      "passed": false,
       "tolerance": 0.0,
       "unit": "boolean (1.0 = every label-shaped contentBlock resolves)",
       "source": "Closure gate: when this passes, every witness's contentBlock points at a real registered block label.  Currently informational; the production-side fix is a per-witness retarget."
     }
   ],
-  "allPassed": true,
-  "durationMs": 7,
+  "allPassed": false,
+  "durationMs": 8,
   "computation": "content-block-label-audit",
   "scriptFile": "content_block_label_audit.py",
   "scriptHash": "d86c5a63a3d7",
@@ -23,13 +23,14 @@
   "description": "I5 audit per local/compute-integration-watcher: every folio-assistant/computations/*.witness.json with a `contentBlock` field is cross-checked against the union of all `label: \"...\"` declarations in content/**/*.ts manifests. Reports `ok` / `missing_label` / `informational_label` per field. Operationalises the 9-hit I5 count from the 2026-05-18 idle sweep (PR #737).",
   "contentBlock": "I5 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
-    "total_fields_audited": 230,
-    "registered_labels_count": 2060
+    "total_fields_audited": 235,
+    "registered_labels_count": 2168
   },
   "data": {
     "by_result": {
-      "informational_label": 14,
-      "ok": 216
+      "informational_label": 15,
+      "ok": 213,
+      "missing_label": 7
     },
     "rows": [
       {
@@ -108,16 +109,6 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/atomic-braid-mass-table-modes-sweep.witness.json",
-        "content_block_value": "prop:atomic-mass-gb-nf",
-        "result": "ok"
-      },
-      {
-        "witness": "folio-assistant/computations/atomic-braid-mass-table.witness.json",
-        "content_block_value": "prop:atomic-mass-gb-nf",
-        "result": "ok"
-      },
-      {
         "witness": "folio-assistant/computations/baryon-product-from-alt.witness.json",
         "content_block_value": "prop:baryon-product-from-alt",
         "result": "ok"
@@ -176,6 +167,11 @@
         "witness": "folio-assistant/computations/c-k-beta-decay-bound.witness.json",
         "content_block_value": "conj:archimedean-remainder-exponential-decay",
         "result": "ok"
+      },
+      {
+        "witness": "folio-assistant/computations/c2-inflection-structure-probe.witness.json",
+        "content_block_value": "conj:flavor-dressed-mass-from-substrate-split",
+        "result": "missing_label"
       },
       {
         "witness": "folio-assistant/computations/c3-categorical-consistency-check.witness.json",
@@ -239,8 +235,8 @@
       },
       {
         "witness": "folio-assistant/computations/codata-masses.witness.json",
-        "content_block_value": "prop:three-calibration-inputs",
-        "result": "ok"
+        "content_block_value": "codata mass anchors (CAL-1/2 inputs; informational, no formal block)",
+        "result": "informational_label"
       },
       {
         "witness": "folio-assistant/computations/compound-binding-via-differences.witness.json",
@@ -346,6 +342,16 @@
         "witness": "folio-assistant/computations/deuteron-delta-i-audit.witness.json",
         "content_block_value": "prop:mass-coefficient-shadow-price",
         "result": "ok"
+      },
+      {
+        "witness": "folio-assistant/computations/family-a-extended-variants.witness.json",
+        "content_block_value": "conj:flavor-dressed-mass-from-substrate-split",
+        "result": "missing_label"
+      },
+      {
+        "witness": "folio-assistant/computations/family-a-variants-investigation.witness.json",
+        "content_block_value": "conj:flavor-dressed-mass-from-substrate-split",
+        "result": "missing_label"
       },
       {
         "witness": "folio-assistant/computations/flavor-dressed-mass-from-substrate-split.witness.json",
@@ -718,16 +724,6 @@
         "result": "ok"
       },
       {
-        "witness": "folio-assistant/computations/neutron-mass-codata-50dps.witness.json",
-        "content_block_value": "prop:full-pole-structure-mass-trace",
-        "result": "ok"
-      },
-      {
-        "witness": "folio-assistant/computations/neutron-mass-full-tower-50dps.witness.json",
-        "content_block_value": "prop:mass-endomorphism-tower",
-        "result": "ok"
-      },
-      {
         "witness": "folio-assistant/computations/nf-transition-lifting.witness.json",
         "content_block_value": "conj:jet-filtered-knot-factor",
         "result": "ok"
@@ -793,6 +789,11 @@
         "result": "ok"
       },
       {
+        "witness": "folio-assistant/computations/probe-A-h-expansion-fixed.witness.json",
+        "content_block_value": "conj:flavor-dressed-mass-from-substrate-split",
+        "result": "missing_label"
+      },
+      {
         "witness": "folio-assistant/computations/probe-atom-shell-self-duality-mpfr.witness.json",
         "content_block_value": "prop:shell-schur-weyl-self-duality",
         "result": "ok"
@@ -805,6 +806,16 @@
       {
         "witness": "folio-assistant/computations/probe-braid-word-basis-gram.witness.json",
         "content_block_value": "rem:per-partition-k-lambda-rule",
+        "result": "ok"
+      },
+      {
+        "witness": "folio-assistant/computations/probe-categorical-action-symbolic.witness.json",
+        "content_block_value": "prop:sw-3root-rational-integrand",
+        "result": "ok"
+      },
+      {
+        "witness": "folio-assistant/computations/probe-categorical-partial-fractions.witness.json",
+        "content_block_value": "prop:sw-3root-rational-integrand",
         "result": "ok"
       },
       {
@@ -1166,6 +1177,21 @@
         "witness": "folio-assistant/computations/wedderburn-pair-volumes.witness.json",
         "content_block_value": "prop:knot-operator-lp-selection",
         "result": "ok"
+      },
+      {
+        "witness": "folio-assistant/computations/workplan-0b-mn-routes-b-c.witness.json",
+        "content_block_value": "conj:flavor-dressed-mass-from-substrate-split",
+        "result": "missing_label"
+      },
+      {
+        "witness": "folio-assistant/computations/workplan-0b-route-b-operator.witness.json",
+        "content_block_value": "conj:flavor-dressed-mass-from-substrate-split",
+        "result": "missing_label"
+      },
+      {
+        "witness": "folio-assistant/computations/workplan-0b-route-c-bring.witness.json",
+        "content_block_value": "conj:flavor-dressed-mass-from-substrate-split",
+        "result": "missing_label"
       },
       {
         "witness": "folio-assistant/computations/y-lambda-at-q0.witness.json",

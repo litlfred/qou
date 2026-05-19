@@ -125,9 +125,15 @@ ALPHA_EM_INV_DERIVED = _bare_alpha_inv * (1.0 + _c1 + _c1**2 * _kappa_gram)
 alpha_em = 1.0 / ALPHA_EM_INV_DERIVED
 alpha_em_derived = alpha_em  # alias for backward compatibility
 
-CATALAN_G = 0.915965594177219015054603514932
-VOL_BORROMEAN = 8 * CATALAN_G                     # Vol(B₃) = 7.328 (hyperbolic)
-VOL_FIGURE8 = 2.029883212819307                    # Vol(4₁) = 2.030 (hyperbolic)
+# Knot volumes — single source of truth (knot_volumes module,
+# mpmath 50dps Clausen / SnapPy HP). See PR #781 knot-vol
+# propagation; pre-refactor these literals were duplicated here
+# AND in mass_table_ppb / magic_A_formula / low_isotope_binding_sweep.
+from knot_volumes import (  # noqa: E402
+    CATALAN_G,
+    VOL_BORROMEAN,
+    VOL_4_1 as VOL_FIGURE8,  # legacy alias preserved
+)
 ALPHA_BORROMEAN = M_E_MEV * VOL_BORROMEAN          # binding scale for Borromean-like nuclei
 ALPHA_FIGURE8 = M_E_MEV * VOL_FIGURE8             # binding scale for figure-8-like nuclei
 ALPHA = ALPHA_BORROMEAN                             # default (backward compat)

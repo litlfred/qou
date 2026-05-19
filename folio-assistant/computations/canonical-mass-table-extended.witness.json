@@ -1,18 +1,18 @@
 {
-  "engine": "rust+mpmath",
+  "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T14:26:33.000098+00:00",
-  "commitSha": "5457b2f889d5087d09517e4a7f24164ecf6b9810",
+  "computedAt": "2026-05-19T03:04:06.897651+00:00",
+  "commitSha": "b41477565ae1913f64d6b37c3a4b530b5823513a",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 25,
+  "durationMs": 1388424,
   "computation": "canonical-mass-table-extended",
   "scriptFile": "canonical_mass_table_extended.py",
-  "scriptHash": "8319657a6da9",
-  "scriptCommitSha": "042fdcd62b30e5a1580f25f1165a3d9be3071c50",
-  "description": "Extended canonical mass table via Rust hecke-canonical-chi (f64) + mpmath y_λ. Layer 1 canonical pipeline per docs/audits/2026-05-18-all-atoms-isotopes-plan.md. Coverage is determined by --atoms (see parameters.atoms_requested); the actual rows reflect what completed within the per-atom timeout. Each row carries the per-atom IsotopeRecord with explicit knot-operator catalogue (intra-nucleon, inter-nucleon interfaces, closure topology).",
+  "scriptHash": "9c80f63797ce",
+  "scriptCommitSha": "b41477565ae1913f64d6b37c3a4b530b5823513a",
+  "description": "Extended canonical mass table via markov_peel.tr_M_atomic (symbolic-q recursive ascent) + mpmath y_λ. Layer 1 canonical pipeline per docs/audits/2026-05-18-all-atoms-isotopes-plan.md. Coverage is determined by --atoms (see parameters.atoms_requested); the actual rows reflect what completed within the per-atom timeout. Each row carries the per-atom IsotopeRecord with explicit knot-operator catalogue (intra-nucleon, inter-nucleon interfaces, closure topology). For p and n, the prediction column is the Borromean-tower nucleon mass (conditional on conj:borromean-baryon-mass-formula, sub-ppm vs CODATA); for D and up the prediction column is the mass-table-ppb binding energy (Kashaev law / α-cluster / volume-match).",
   "parameters": {
-    "q_0": "1.10997859555418051695830018898879867637876138498395",
+    "q_0": "1.10997859555418057528159407960950937799328227995870",
     "method": "markov_peel",
     "precision": "f64",
     "dps": 0,
@@ -22,7 +22,7 @@
     "paper_hard_floor_ppb": 780.0,
     "active_set_pruning_safe": true,
     "atoms_requested": "p,n,D,T,3He,4He,5Li,6Li",
-    "timeout_per_atom_sec": 1700
+    "timeout_per_atom_sec": 1800
   },
   "data": {
     "rows": [
@@ -113,13 +113,15 @@
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
-        "prediction_MeV_50dps": null,
-        "B_AME_MeV": 0.0,
-        "err_MeV": null,
-        "err_pct": null,
-        "err_ppb": null,
+        "prediction_type": "mass",
+        "prediction_MeV_50dps": "938.2718526368309",
+        "B_AME_MeV": 938.27208816,
+        "err_MeV": -0.00023552316906716442,
+        "err_pct": -2.5101798512309743e-05,
+        "err_ppb": -251.01798512309742,
+        "err_ppm": -0.2510179851230974,
         "derivation_chain_witness": null,
-        "chi_cache_witness": "(computed live via Rust hecke-canonical-chi)",
+        "chi_cache_witness": "(computed live via markov_peel)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
       },
       {
@@ -209,13 +211,15 @@
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
-        "prediction_MeV_50dps": null,
-        "B_AME_MeV": 0.0,
-        "err_MeV": null,
-        "err_pct": null,
-        "err_ppb": null,
+        "prediction_type": "mass",
+        "prediction_MeV_50dps": "939.5651846677046",
+        "B_AME_MeV": 939.56542052,
+        "err_MeV": -0.00023585229541822628,
+        "err_pct": -2.5102274973859134e-05,
+        "err_ppb": -251.02274973859133,
+        "err_ppm": -0.25102274973859134,
         "derivation_chain_witness": null,
-        "chi_cache_witness": "(computed live via Rust hecke-canonical-chi)",
+        "chi_cache_witness": "(computed live via markov_peel)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
       },
       {
@@ -380,13 +384,15 @@
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
+        "prediction_type": "binding_energy",
         "prediction_MeV_50dps": "2.2488207948647343",
         "B_AME_MeV": 2.22456589,
         "err_MeV": 0.02425490486473425,
-        "err_pct": null,
-        "err_ppb": null,
+        "err_pct": 1.090320811524007,
+        "err_ppb": 10903208.115240071,
+        "err_ppm": 10903.20811524007,
         "derivation_chain_witness": null,
-        "chi_cache_witness": "(computed live via Rust hecke-canonical-chi)",
+        "chi_cache_witness": "(computed live via markov_peel)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
       },
       {
@@ -626,13 +632,15 @@
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
+        "prediction_type": "binding_energy",
         "prediction_MeV_50dps": "8.46859838653302",
         "B_AME_MeV": 8.4817983,
         "err_MeV": -0.013199913466978686,
-        "err_pct": null,
-        "err_ppb": null,
+        "err_pct": -0.15562635422465407,
+        "err_ppb": -1556263.5422465405,
+        "err_ppm": -1556.2635422465407,
         "derivation_chain_witness": null,
-        "chi_cache_witness": "(computed live via Rust hecke-canonical-chi)",
+        "chi_cache_witness": "(computed live via markov_peel)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
       },
       {
@@ -872,13 +880,15 @@
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
+        "prediction_type": "binding_energy",
         "prediction_MeV_50dps": "7.48891930977096",
         "B_AME_MeV": 7.7180428,
         "err_MeV": -0.22912349022904,
-        "err_pct": null,
-        "err_ppb": null,
+        "err_pct": -2.968673485835554,
+        "err_ppb": -29686734.858355537,
+        "err_ppm": -29686.73485835554,
         "derivation_chain_witness": null,
-        "chi_cache_witness": "(computed live via Rust hecke-canonical-chi)",
+        "chi_cache_witness": "(computed live via markov_peel)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
       },
       {
@@ -1193,13 +1203,15 @@
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
+        "prediction_type": "binding_energy",
         "prediction_MeV_50dps": "29.95567723908384",
         "B_AME_MeV": 28.295673,
         "err_MeV": 1.6600042390838396,
-        "err_pct": null,
-        "err_ppb": null,
+        "err_pct": 5.866636354907833,
+        "err_ppb": 58666363.54907832,
+        "err_ppm": 58666.36354907833,
         "derivation_chain_witness": null,
-        "chi_cache_witness": "(computed live via Rust hecke-canonical-chi)",
+        "chi_cache_witness": "(computed live via markov_peel)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
       },
       {
@@ -1589,13 +1601,15 @@
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
+        "prediction_type": "binding_energy",
         "prediction_MeV_50dps": null,
         "B_AME_MeV": 26.328,
         "err_MeV": null,
         "err_pct": null,
         "err_ppb": null,
+        "err_ppm": null,
         "derivation_chain_witness": null,
-        "chi_cache_witness": "(computed live via Rust hecke-canonical-chi)",
+        "chi_cache_witness": "(computed live via markov_peel)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
       },
       {
@@ -2060,16 +2074,36 @@
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
+        "prediction_type": "binding_energy",
         "prediction_MeV_50dps": null,
         "B_AME_MeV": 31.99405,
         "err_MeV": null,
         "err_pct": null,
         "err_ppb": null,
+        "err_ppm": null,
         "derivation_chain_witness": null,
-        "chi_cache_witness": "(computed live via Rust hecke-canonical-chi)",
+        "chi_cache_witness": "(computed live via markov_peel)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
       }
     ],
-    "n_atoms_computed": 8
+    "n_atoms_computed": 8,
+    "upstream_witness_hashes": [
+      {
+        "path": "mass-table-ppb.witness.json",
+        "sha256": "fb37c94b297a83ad28dcd045dc8c0afa5591b02cf861f84f232145f7df3f9470",
+        "size_bytes": 6961,
+        "commitSha": "b82b92391d0b6d0b39f665d3282c70db1b9228a7",
+        "scriptCommitSha": "07c70b80249ec4d7d64d8eb0721c775389fed122",
+        "computedAt": "2026-05-19T01:28:43.459839+00:00"
+      },
+      {
+        "path": "m-p-borromean-verification-50dps.witness.json",
+        "sha256": "b261735cf47e1504b996894e6ccfc4944ab1ed43d4157dd12a9e28f5a60dde0a",
+        "size_bytes": 4501,
+        "commitSha": "e620f607034d0b81d92b999f5ff2cc68907352b4",
+        "scriptCommitSha": "c30da51bea8725add6b37e84c3e6d14cc94ce01e",
+        "computedAt": "2026-05-19T00:34:55.990181+00:00"
+      }
+    ]
   }
 }

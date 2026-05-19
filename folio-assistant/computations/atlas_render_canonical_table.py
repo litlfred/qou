@@ -53,27 +53,64 @@ ATOM_LABEL_BY_ZN = {
 }
 
 
+def _fmt_number(v, fmt: str = "{:.4f}") -> str:
+    """Format numeric value or return '—'. Strings are coerced to float."""
+    if v is None or v == "":
+        return "—"
+    try:
+        return fmt.format(float(v))
+    except (TypeError, ValueError):
+        return "—"
+
+
+def _truncate_dps(v, max_digits: int = 16) -> str:
+    """Format mpmath-string values to a fixed display length."""
+    if v is None or v == "":
+        return "—"
+    s = str(v)
+    return s[:max_digits + 2] if len(s) > max_digits + 2 else s
+
+
 def render_table(witness_data: dict) -> str:
-    """Render the markdown table from the witness rows."""
+    """Render the markdown table from the witness rows.
+
+    The atlas is the central display for the mass/β/Q/binding
+    pipeline. Per repo-owner directive 2026-05-19, every row carries
+    a unified `prediction_type` + `prediction_MeV_50dps` triple:
+
+      - p, n  → prediction = nucleon mass (Borromean tower);
+                CODATA reference; err in ppm.
+      - D and up → prediction = binding energy (mass-table-ppb);
+                AME reference; err in %.
+    """
     lines = [
         "",
-        "| Atom | $A$ | $n$ | $\\|\\mathrm{tr}_M(\\beta_{\\text{atom}}, q_0)\\|$ | Wall (s) |",
-        "|---|---|---|---|---|",
+        "| Atom | $A$ | $n$ | $\\|\\mathrm{tr}_M(\\beta_{\\text{atom}}, q_0)\\|$ "
+        "| Predicting | Prediction (MeV) | Reference (MeV) | Error |",
+        "|---|---|---|---|---|---|---|---|",
     ]
     for row in witness_data.get("rows", []):
         Z = row["Z"]; N = row["N"]; A = row["A"]; n = row["n_strands"]
         label = ATOM_LABEL_BY_ZN.get((Z, N), f"(Z={Z}, N={N})")
-        tr_m = row.get("tr_M_q0_canonical_50dps", "—")
-        # Display only the first 16 significant digits
-        if tr_m and tr_m != "—":
-            tr_m_short = tr_m[:18] if len(tr_m) > 18 else tr_m
-            tr_m_md = f"${tr_m_short}$"
+        tr_m_md = f"${_truncate_dps(row.get('tr_M_q0_canonical_50dps'))}$" \
+                  if row.get("tr_M_q0_canonical_50dps") else "—"
+        ptype = row.get("prediction_type") or "binding_energy"
+        ptype_label = "mass" if ptype == "mass" else "B (binding)"
+        pred_md = _fmt_number(row.get("prediction_MeV_50dps"))
+        ref_md = _fmt_number(row.get("B_AME_MeV"))
+        # Error: ppm for mass, % for binding energy — the natural unit
+        # for the typical magnitude in each regime.
+        if ptype == "mass":
+            err_unit = "ppm"
+            err_md = _fmt_number(row.get("err_ppm"), "{:+.3f}")
         else:
-            tr_m_md = "—"
-        # Look up wall from any "rust_duration_ms" / row.get... (absent in
-        # current schema; use a placeholder, can be added if we record it)
-        wall = "—"  # the per-row wall isn't currently in the witness
-        lines.append(f"| {label} | {A} | {n} | {tr_m_md} | {wall} |")
+            err_unit = "%"
+            err_md = _fmt_number(row.get("err_pct"), "{:+.2f}")
+        err_cell = f"{err_md} {err_unit}" if err_md != "—" else "—"
+        lines.append(
+            f"| {label} | {A} | {n} | {tr_m_md} "
+            f"| {ptype_label} | {pred_md} | {ref_md} | {err_cell} |"
+        )
     lines.append("")
     method = witness_data.get("parameters", {}).get("method", "?")
     paper_floor = witness_data.get("parameters", {}).get(
@@ -87,6 +124,10 @@ def render_table(witness_data: dict) -> str:
         f"[`canonical-mass-table-extended.witness.json`]"
         f"(https://github.com/litlfred/qou/blob/main/folio-assistant/"
         f"computations/canonical-mass-table-extended.witness.json). "
+        f"Nucleon masses (m_p, m_n) via "
+        f"[`m-p-borromean-verification-50dps.witness.json`]"
+        f"(https://github.com/litlfred/qou/blob/main/folio-assistant/"
+        f"computations/m-p-borromean-verification-50dps.witness.json). "
         f"Paper hard floor (CAL-2 propagation): ~{int(paper_floor)} ppb._"
     )
     lines.append("")
@@ -144,7 +185,7 @@ def main() -> int:
 
     ATLAS_MD.write_text(new_md)
     print(f"  Updated: {ATLAS_MD}")
-    print(f"  Rendered {len(witness_data.get('rows', []))} atom rows.")
+    print(f"  Rendered {len(merged.get('rows', []))} atom rows.")
     return 0
 
 

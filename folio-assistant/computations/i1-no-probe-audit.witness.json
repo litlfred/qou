@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T03:56:50.063013+00:00",
-  "commitSha": "ff51f1cd1b3819c57d138f15577023e61c91ea70",
+  "computedAt": "2026-05-19T00:40:48.155690+00:00",
+  "commitSha": "e620f607034d0b81d92b999f5ff2cc68907352b4",
   "assertions": [
     {
       "name": "no_i1_no_probe_blocks",
@@ -27,8 +27,8 @@
   },
   "data": {
     "by_result": {
-      "i1_pre_lean": 150,
-      "i1_no_probe": 387,
+      "i1_pre_lean": 163,
+      "i1_no_probe": 374,
       "wired": 34,
       "i1_lean_with_sorry": 3,
       "conditional_class": 1
@@ -303,13 +303,12 @@
         "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": true,
-        "probe_witness_count": 6,
+        "probe_witness_count": 4,
         "probe_witnesses": [
-          "atomic-braid-mass-table-modes-sweep.witness.json",
-          "atomic-braid-mass-table.witness.json",
           "braid-encoding-audit.witness.json",
           "compound-binding-via-differences.witness.json",
-          "m-n-difference-formula.witness.json"
+          "m-n-difference-formula.witness.json",
+          "neutron-error-diagnostic.witness.json"
         ],
         "result": "wired"
       },
@@ -988,7 +987,7 @@
         "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": true,
-        "probe_witness_count": 10,
+        "probe_witness_count": 9,
         "probe_witnesses": [
           "habiro-interpolate-cross-validation.witness.json",
           "kite-tail-reconciliation.witness.json",
@@ -1710,13 +1709,13 @@
         "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": true,
-        "probe_witness_count": 6,
+        "probe_witness_count": 5,
         "probe_witnesses": [
           "brane-tower-finite-laurent.witness.json",
           "habiro-exact-mass-endomorphism.witness.json",
-          "neutron-mass-full-tower-50dps.witness.json",
           "probe-derived-A-from-gs-normal-form.witness.json",
-          "proton-mass-full-tower-50dps.witness.json"
+          "proton-mass-full-tower-50dps.witness.json",
+          "proton-residual-rootcause.witness.json"
         ],
         "result": "wired"
       },
@@ -2386,11 +2385,10 @@
         "sibling_lean_exists": false,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
-        "probe_witness_count": 3,
+        "probe_witness_count": 2,
         "probe_witnesses": [
           "cal-3-q-beta.witness.json",
-          "codata-2022-validation-masses.witness.json",
-          "codata-masses.witness.json"
+          "codata-2022-validation-masses.witness.json"
         ],
         "result": "i1_pre_lean"
       },
@@ -3543,17 +3541,6 @@
         "result": "i1_no_probe"
       },
       {
-        "path": "content/quantum-observable-universe/descartes-universe/morse-wall-q-moduli.ts",
-        "label": "prop:morse-wall-q-moduli",
-        "kind": "proposition",
-        "sibling_lean_exists": true,
-        "sibling_sorry_count": 0,
-        "sibling_has_class": false,
-        "probe_witness_count": 0,
-        "probe_witnesses": [],
-        "result": "i1_no_probe"
-      },
-      {
         "path": "content/quantum-observable-universe/descartes-universe/noble-gas-characterization.ts",
         "label": "prop:noble-gas-characterization",
         "kind": "proposition",
@@ -3563,6 +3550,17 @@
         "probe_witness_count": 0,
         "probe_witnesses": [],
         "result": "i1_pre_lean"
+      },
+      {
+        "path": "content/quantum-observable-universe/descartes-universe/nuclear-groebner-reduction.ts",
+        "label": "prop:nuclear-groebner-reduction",
+        "kind": "proposition",
+        "sibling_lean_exists": true,
+        "sibling_sorry_count": 0,
+        "sibling_has_class": false,
+        "probe_witness_count": 0,
+        "probe_witnesses": [],
+        "result": "i1_no_probe"
       },
       {
         "path": "content/quantum-observable-universe/descartes-universe/nuclear-spin-parity.ts",
@@ -4109,12 +4107,12 @@
         "path": "content/quantum-observable-universe/information-theory/horizon-conformal-invariance.ts",
         "label": "prop:horizon-conformal-invariance",
         "kind": "proposition",
-        "sibling_lean_exists": true,
+        "sibling_lean_exists": false,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
         "probe_witness_count": 0,
         "probe_witnesses": [],
-        "result": "i1_no_probe"
+        "result": "i1_pre_lean"
       },
       {
         "path": "content/quantum-observable-universe/information-theory/incompleteness-implies-horizon.ts",
@@ -4219,12 +4217,12 @@
         "path": "content/quantum-observable-universe/information-theory/qou-is-ccc.ts",
         "label": "prop:qou-is-ccc",
         "kind": "proposition",
-        "sibling_lean_exists": true,
+        "sibling_lean_exists": false,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
         "probe_witness_count": 0,
         "probe_witnesses": [],
-        "result": "i1_no_probe"
+        "result": "i1_pre_lean"
       },
       {
         "path": "content/quantum-observable-universe/information-theory/quantum-ideal-gas-law.ts",
@@ -4307,23 +4305,23 @@
         "path": "content/quantum-observable-universe/lifting-and-descent/ccg-cosimplicial-identities.ts",
         "label": "lem:ccg-cosimplicial-identities",
         "kind": "lemma",
-        "sibling_lean_exists": true,
+        "sibling_lean_exists": false,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
         "probe_witness_count": 0,
         "probe_witnesses": [],
-        "result": "i1_no_probe"
+        "result": "i1_pre_lean"
       },
       {
         "path": "content/quantum-observable-universe/lifting-and-descent/ccg-crossed-module-structure.ts",
         "label": "lem:ccg-crossed-module-structure",
         "kind": "lemma",
-        "sibling_lean_exists": true,
+        "sibling_lean_exists": false,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
         "probe_witness_count": 0,
         "probe_witnesses": [],
-        "result": "i1_no_probe"
+        "result": "i1_pre_lean"
       },
       {
         "path": "content/quantum-observable-universe/lifting-and-descent/cosimplicial-crossed-groupoid.ts",
@@ -4340,12 +4338,12 @@
         "path": "content/quantum-observable-universe/lifting-and-descent/descent-cocycle-deviation.ts",
         "label": "lem:descent-cocycle-deviation",
         "kind": "lemma",
-        "sibling_lean_exists": true,
+        "sibling_lean_exists": false,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
         "probe_witness_count": 0,
         "probe_witnesses": [],
-        "result": "i1_no_probe"
+        "result": "i1_pre_lean"
       },
       {
         "path": "content/quantum-observable-universe/lifting-and-descent/descent-condition.ts",
@@ -4417,12 +4415,12 @@
         "path": "content/quantum-observable-universe/lifting-and-descent/jet-prolongation-categorical-jet.ts",
         "label": "lem:jet-prolongation-categorical-jet",
         "kind": "lemma",
-        "sibling_lean_exists": true,
+        "sibling_lean_exists": false,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
         "probe_witness_count": 0,
         "probe_witnesses": [],
-        "result": "i1_no_probe"
+        "result": "i1_pre_lean"
       },
       {
         "path": "content/quantum-observable-universe/lifting-and-descent/jet-prolongation.ts",
@@ -4538,12 +4536,12 @@
         "path": "content/quantum-observable-universe/lifting-and-descent/topological-mass-eigenspace-decomp.ts",
         "label": "lem:topological-mass-eigenspace-decomp",
         "kind": "lemma",
-        "sibling_lean_exists": true,
+        "sibling_lean_exists": false,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
         "probe_witness_count": 0,
         "probe_witnesses": [],
-        "result": "i1_no_probe"
+        "result": "i1_pre_lean"
       },
       {
         "path": "content/quantum-observable-universe/lifting-and-descent/topological-mass-holonomy.ts",
@@ -4796,12 +4794,12 @@
         "path": "content/quantum-observable-universe/observations/deuteron-binding-energy.ts",
         "label": "lem:deuteron-binding-energy",
         "kind": "lemma",
-        "sibling_lean_exists": true,
+        "sibling_lean_exists": false,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
         "probe_witness_count": 0,
         "probe_witnesses": [],
-        "result": "i1_no_probe"
+        "result": "i1_pre_lean"
       },
       {
         "path": "content/quantum-observable-universe/observations/double-slit-massive-pattern.ts",
@@ -4906,12 +4904,12 @@
         "path": "content/quantum-observable-universe/observations/nucleon-borromean-topology.ts",
         "label": "lem:nucleon-borromean-topology",
         "kind": "lemma",
-        "sibling_lean_exists": true,
+        "sibling_lean_exists": false,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
         "probe_witness_count": 0,
         "probe_witnesses": [],
-        "result": "i1_no_probe"
+        "result": "i1_pre_lean"
       },
       {
         "path": "content/quantum-observable-universe/observations/pair-skein-mass-formula.ts",
@@ -6102,45 +6100,45 @@
         "path": "content/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-1.ts",
         "label": "lem:qou-exists-axiom-1",
         "kind": "lemma",
-        "sibling_lean_exists": true,
+        "sibling_lean_exists": false,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
         "probe_witness_count": 0,
         "probe_witnesses": [],
-        "result": "i1_no_probe"
+        "result": "i1_pre_lean"
       },
       {
         "path": "content/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-2.ts",
         "label": "lem:qou-exists-axiom-2",
         "kind": "lemma",
-        "sibling_lean_exists": true,
+        "sibling_lean_exists": false,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
         "probe_witness_count": 0,
         "probe_witnesses": [],
-        "result": "i1_no_probe"
+        "result": "i1_pre_lean"
       },
       {
         "path": "content/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-3.ts",
         "label": "lem:qou-exists-axiom-3",
         "kind": "lemma",
-        "sibling_lean_exists": true,
+        "sibling_lean_exists": false,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
         "probe_witness_count": 0,
         "probe_witnesses": [],
-        "result": "i1_no_probe"
+        "result": "i1_pre_lean"
       },
       {
         "path": "content/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.ts",
         "label": "lem:qou-exists-axiom-4",
         "kind": "lemma",
-        "sibling_lean_exists": true,
+        "sibling_lean_exists": false,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
         "probe_witness_count": 0,
         "probe_witnesses": [],
-        "result": "i1_no_probe"
+        "result": "i1_pre_lean"
       },
       {
         "path": "content/quantum-observable-universe/quantum-observable-universes/quantum-observable-universe-exists.ts",

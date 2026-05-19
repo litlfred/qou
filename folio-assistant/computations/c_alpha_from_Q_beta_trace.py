@@ -44,9 +44,9 @@ from experimental_constants import M_E_MEV, Q_TRITIUM_MEV
 from witness_base import WitnessBuilder
 
 
-CATALAN_G = 0.915965594177219015054603514932
-VOL_BORROMEAN = 8.0 * CATALAN_G
-VOL_7_SQ_1 = 4.7494999818744385084980865556375718851941577840553
+# Knot volumes from canonical knot_volumes module (mpmath 50dps).
+# See PR #781 knot-vol propagation.
+from knot_volumes import CATALAN_G, VOL_BORROMEAN, VOL_7_SQ_1  # noqa: E402
 
 
 def main():
