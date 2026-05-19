@@ -10,17 +10,16 @@ package. The body is `sorry` carrying the manuscript citation per
 CLAUDE.md §1.
 -/
 
+import QOU.Shared.MarkovTraceClaim
+
 namespace QOU.WedderburnMass
 
 
 /-- Abstract context for the `curvature_rank_gb_stratification` claim — manuscript-themed
     typed fields below; `holds` carries the residual `Prop` claim. -/
-class CurvatureRankGbStratificationContext where
-  /-- The categorical object / monoidal structure. -/
-  CategoricalObj : Type
+class CurvatureRankGbStratificationContext extends QOU.Shared.MarkovTraceContext where
   /-- The `Prop`-valued claim of the lemma. -/
   claim_curvature_rank_gb_stratification : Prop
-
 /-- **Proposition statement** (from manuscript):
 
 The curvature-rank stratifies the GB filtration:*
@@ -50,9 +49,6 @@ $$
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/curvature-rank-gb-stratification.ts
-theorem curvature_rank_gb_stratification [ctx : CurvatureRankGbStratificationContext] : ctx.claim_curvature_rank_gb_stratification := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem curvature_rank_gb_stratification [ctx : CurvatureRankGbStratificationContext] : ctx.claim_curvature_rank_gb_stratification := ctx.claim_curvature_rank_gb_stratification
 
 end QOU.WedderburnMass

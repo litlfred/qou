@@ -13,15 +13,15 @@ this plural `QOU.BraidsAndKnots` namespace was inherited from existing
 `.ts` lean.ref URIs (a pre-existing convention drift).
 -/
 
+import QOU.Shared.MarkovTraceClaim
+
 namespace QOU.BraidsAndKnots
 
 
 /-- Abstract context for the `recursive_atom_knot_atlas` claim — manuscript-named
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
-class RecursiveAtomKnotAtlasContext where
-  /-- The braid representative type. -/
-  Braid : Type
+class RecursiveAtomKnotAtlasContext extends QOU.Shared.MarkovTraceContext where
   /-- Manuscript sub-claim (i) — `confined-particle.md` — GB-NF particle registry (canonical $T_w$). -/
   claim_i_confined_particle_md : Prop
   /-- Manuscript sub-claim (ii) — `mass-table-ppb.witness.json` — D..⁴⁰Ca (manual-historical, recursive, magic-A). -/
@@ -34,7 +34,6 @@ class RecursiveAtomKnotAtlasContext where
   claim_v_y_lambda_wenzl_bridge_extended_py_symbolic : Prop
   /-- Manuscript sub-claim (vi) — `li-atom-knot-search.witness.json` — (provisional) volume-match search. -/
   claim_vi_li_atom_knot : Prop
-
 /-- **Content statement** (from manuscript):
 
 **Atlas (recursive, $q_0$-indexed).**

@@ -10,14 +10,14 @@ package. The body is `sorry` carrying the manuscript citation per
 CLAUDE.md §1.
 -/
 
+import QOU.Shared.MarkovTraceClaim
+
 namespace QOU.Torsion
 
 
 /-- Abstract context for the `antiparticle_crossing_reversal` claim — manuscript-themed
     typed fields below; `holds` carries the residual `Prop` claim. -/
-class AntiparticleCrossingReversalContext where
-  /-- The categorical object / monoidal structure. -/
-  CategoricalObj : Type
+class AntiparticleCrossingReversalContext extends QOU.Shared.MarkovTraceContext where
   /-- Manuscript sub-claim (i) — Crossing reversal defines antiparticles. -/
   claim_i_crossing_reversal_defines : Prop
   /-- Manuscript sub-claim (ii) — Crossing energy sign reversal. -/
@@ -26,7 +26,6 @@ class AntiparticleCrossingReversalContext where
   claim_iii_coulomb_charge_reversal : Prop
   /-- Manuscript sub-claim (iv) — Bare mass invariance. -/
   claim_iv_bare_mass_invariance : Prop
-
 /-- **Content statement** (from manuscript):
 
 Let $T_{2,3}$ be the left trefoil (the electron generator) and

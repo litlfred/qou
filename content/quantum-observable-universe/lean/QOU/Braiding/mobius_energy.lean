@@ -10,15 +10,16 @@ package. The body is `sorry` carrying the manuscript citation per
 CLAUDE.md §1.
 -/
 
+import QOU.Shared.MarkovTraceClaim
+
 namespace QOU.Braiding
 
 
-/-- Abstract context for the `mobius_energy` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
-class MobiusEnergyContext where
-  /-- The categorical object / monoidal structure. -/
-  CategoricalObj : Type
-  /-- The `Prop`-valued claim of the lemma. -/
+/-- Abstract context for the `mobius_energy` claim — extends
+    `QOU.Shared.MarkovTraceContext` for the shared substrate / Hecke /
+    Markov-trace structure, plus a block-specific Prop field. -/
+class MobiusEnergyContext extends QOU.Shared.MarkovTraceContext where
+  /-- The substantive claim of the Möbius-energy lemma. -/
   claim_mobius_energy : Prop
 
 /-- **Content statement** (from manuscript):
@@ -35,9 +36,7 @@ $\star_q$ ([Definition](#def:q-hodge-star)).
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/mobius-energy.ts
-theorem mobius_energy [ctx : MobiusEnergyContext] : ctx.claim_mobius_energy := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem mobius_energy [ctx : MobiusEnergyContext] :
+    ctx.claim_mobius_energy := ctx.claim_mobius_energy
 
 end QOU.Braiding

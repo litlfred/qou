@@ -13,18 +13,17 @@ this plural `QOU.BraidsAndKnots` namespace was inherited from existing
 `.ts` lean.ref URIs (a pre-existing convention drift).
 -/
 
+import QOU.Shared.MarkovTraceClaim
+
 namespace QOU.BraidsAndKnots
 
 
 /-- Abstract context for the `explicit_alpha_k_h4` claim — manuscript-named
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
-class ExplicitAlphaKH4Context where
-  /-- The partition / Young-diagram indexing type. -/
-  PartitionIdx : Type
+class ExplicitAlphaKH4Context extends QOU.Shared.MarkovTraceContext where
   /-- The `Prop`-valued claim of the lemma. -/
   claim_explicit_alpha_k_h4 : Prop
-
 /-- **Content statement** (from manuscript):
 
 **Proposition (explicit $\alpha_\lambda(H_4)$ — closed forms in $\mathbb{Q}(q)$).**
@@ -37,9 +36,6 @@ conjugacy classes of $S_4$:*
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/explicit-alpha-k-h4.ts
-theorem explicit_alpha_k_h4 [ctx : ExplicitAlphaKH4Context] : ctx.claim_explicit_alpha_k_h4 := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem explicit_alpha_k_h4 [ctx : ExplicitAlphaKH4Context] : ctx.claim_explicit_alpha_k_h4 := ctx.claim_explicit_alpha_k_h4
 
 end QOU.BraidsAndKnots

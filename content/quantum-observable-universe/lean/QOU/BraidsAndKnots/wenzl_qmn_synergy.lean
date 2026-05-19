@@ -13,24 +13,21 @@ this plural `QOU.BraidsAndKnots` namespace was inherited from existing
 `.ts` lean.ref URIs (a pre-existing convention drift).
 -/
 
+import QOU.Shared.MarkovTraceClaim
+
 namespace QOU.BraidsAndKnots
 
 
 /-- Abstract context for the `wenzl_qmn_synergy` claim — manuscript-named
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
-class WenzlQmnSynergyContext where
-  /-- The braid representative type. -/
-  Braid : Type
-  /-- The partition / Young-diagram indexing type. -/
-  PartitionIdx : Type
+class WenzlQmnSynergyContext extends QOU.Shared.MarkovTraceContext where
   /-- Manuscript sub-claim (i) — Direct verification of Wenzl-bridge correctness: any canonical-braid Markov-trace identity gives a one-shot test of $.... -/
   claim_i_direct_verification_wenzl : Prop
   /-- Manuscript sub-claim (ii) — Mass-formula compute speedup: the depth-resolved Φ_k pipeline in `depth_resolved_phi_k_hoefsmit.py` can replace its H.... -/
   claim_ii_mass_formula_compute : Prop
   /-- Manuscript sub-claim (iii) — Atom-knot identification path for ⁶Li, ⁷Li: - Enumerate hyperbolic knots $K$ with crossing-number $\leq 10$. -/
   claim_iii_atom_knot_identification : Prop
-
 /-- **Proposition statement** (from manuscript):
 
 The Wenzl-bridge ([y-lambda-closed-form](#prop:y-lambda-closed-form-wenzl-bridge))

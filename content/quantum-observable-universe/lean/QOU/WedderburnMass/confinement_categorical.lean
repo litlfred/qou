@@ -10,21 +10,20 @@ package. The body is `sorry` carrying the manuscript citation per
 CLAUDE.md §1.
 -/
 
+import QOU.Shared.MarkovTraceClaim
+
 namespace QOU.WedderburnMass
 
 
 /-- Abstract context for the `confinement_categorical` claim — manuscript-themed
     typed fields below; `holds` carries the residual `Prop` claim. -/
-class ConfinementCategoricalContext where
-  /-- The categorical object / monoidal structure. -/
-  CategoricalObj : Type
+class ConfinementCategoricalContext extends QOU.Shared.MarkovTraceContext where
   /-- Manuscript sub-claim (i) — *(Survival.) The only $E_\infty$-page contributions are $E_\infty^{0, 0} = Z(A) = \bigoplus_\lambda R \cdot e_\lambda$. -/
   claim_i_survival_page_contributions : Prop
   /-- Manuscript sub-claim (ii) — *(Trace factorization.) The Frobenius integral factors through the centre:*. -/
   claim_ii_trace_factorization_frobenius : Prop
   /-- Manuscript sub-claim (iii) — *(Observables are Wedderburn residues.) Every physical observable $\mathfrak{O}(\mathcal{K}, \mathcal{T}) = \int_A \r.... -/
   claim_iii_observables_wedderburn_residues : Prop
-
 /-- **Proposition statement** (from manuscript):
 
 The collapse of the GB-filtration spectral sequence

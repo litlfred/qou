@@ -10,22 +10,21 @@ the `qou` Lake package.  The body is `sorry` carrying the
 manuscript citation per CLAUDE.md §1.
 -/
 
+import QOU.Shared.MarkovTraceClaim
+
 namespace QOU.Molecular
 
 
 /-- Abstract context for the `co2_lp_dual_binding` claim — manuscript-named
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
-class Co2LpDualBindingContext where
-  /-- The braid representative type. -/
-  Braid : Type
+class Co2LpDualBindingContext extends QOU.Shared.MarkovTraceContext where
   /-- Manuscript sub-claim (i) — *Bond order assignments: $(k_1, k_2)$ with $k_1 + k_2 \leq 4$ (carbon's valence)*. -/
   claim_i_bond_order_assignments : Prop
   /-- Manuscript sub-claim (ii) — *Electron-bond assignments: which electrons are shared with which oxygen*. -/
   claim_ii_electron_bond_assignments : Prop
   /-- Manuscript sub-claim (iii) — Strand orderings: permutations of 66 strands. -/
   claim_iii_strand_orderings_permutations : Prop
-
 /-- **Proposition statement** (from manuscript):
 
 The LP dual of the $CO_2$ molecular braid selects the symmetric

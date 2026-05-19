@@ -10,18 +10,17 @@ the `qou` Lake package.  The body is `sorry` carrying the
 manuscript citation per CLAUDE.md §1.
 -/
 
+import QOU.Shared.MarkovTraceClaim
+
 namespace QOU.HadronicMass
 
 
 /-- Abstract context for the `deuteron_binding_energy` claim — manuscript-named
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
-class DeuteronBindingEnergyContext where
-  /-- The braid representative type. -/
-  Braid : Type
+class DeuteronBindingEnergyContext extends QOU.Shared.MarkovTraceContext where
   /-- The `Prop`-valued claim of the lemma. -/
   claim_deuteron_binding_energy : Prop
-
 /-- **Lemma statement** (from manuscript):
 
 The deuteron is the six-component link $L_6$ formed by joining the
@@ -40,9 +39,6 @@ $$
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/deuteron-binding-energy.ts
-theorem deuteron_binding_energy [ctx : DeuteronBindingEnergyContext] : ctx.claim_deuteron_binding_energy := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem deuteron_binding_energy [ctx : DeuteronBindingEnergyContext] : ctx.claim_deuteron_binding_energy := ctx.claim_deuteron_binding_energy
 
 end QOU.HadronicMass

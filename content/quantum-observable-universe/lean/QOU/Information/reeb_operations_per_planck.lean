@@ -10,22 +10,21 @@ the `qou` Lake package.  The body is `sorry` carrying the
 manuscript citation per CLAUDE.md §1.
 -/
 
+import QOU.Shared.MarkovTraceClaim
+
 namespace QOU.Information
 
 
 /-- Abstract context for the `reeb_operations_per_planck` claim — manuscript-named
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
-class ReebOperationsPerPlanckContext where
-  /-- The braid representative type. -/
-  Braid : Type
+class ReebOperationsPerPlanckContext extends QOU.Shared.MarkovTraceContext where
   /-- Manuscript sub-claim (i) — Advances the phase of the Reeb vector by $\hbar_q \approx 0.099$ of a full circuit. -/
   claim_i_advances_phase_reeb : Prop
   /-- Manuscript sub-claim (ii) — Applies the $q$-connection $\nabla_q$ once, correlating adjacent fibers. -/
   claim_ii_applies_connection_once : Prop
   /-- Manuscript sub-claim (iii) — Evaluates one $R$-matrix, resolving one braiding crossing on the exceptional divisor. -/
   claim_iii_evaluates_matrix_resolving : Prop
-
 /-- **Proposition statement** (from manuscript):
 
 Let $q \in k^\times \setminus \{1\}$ and let $t_P(q) = q/(q-1)$

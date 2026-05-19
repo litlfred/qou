@@ -10,22 +10,21 @@ the `qou` Lake package.  The body is `sorry` carrying the
 manuscript citation per CLAUDE.md §1.
 -/
 
+import QOU.Shared.MarkovTraceClaim
+
 namespace QOU.Molecular
 
 
 /-- Abstract context for the `benzene_threading_emergence` claim — manuscript-named
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
-class BenzeneThreadingEmergenceContext where
-  /-- The braid representative type. -/
-  Braid : Type
+class BenzeneThreadingEmergenceContext extends QOU.Shared.MarkovTraceContext where
   /-- Manuscript sub-claim (i) — More shared crossings. -/
   claim_i_more_shared_crossings : Prop
   /-- Manuscript sub-claim (ii) — $D_6$ symmetry. -/
   claim_ii_symmetry : Prop
   /-- Manuscript sub-claim (iii) — Alexander polynomial weight. -/
   claim_iii_alexander_polynomial_weight : Prop
-
 /-- **Proposition statement** (from manuscript):
 
 The LP dual of the benzene molecular braid in $H_{120}(q)$

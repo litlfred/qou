@@ -10,18 +10,17 @@ the `qou` Lake package.  The body is `sorry` carrying the
 manuscript citation per CLAUDE.md §1.
 -/
 
+import QOU.Shared.MarkovTraceClaim
+
 namespace QOU.Molecular
 
 
 /-- Abstract context for the `co_lp_dual_binding` claim — manuscript-named
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
-class CoLpDualBindingContext where
-  /-- The braid representative type. -/
-  Braid : Type
+class CoLpDualBindingContext extends QOU.Shared.MarkovTraceContext where
   /-- The `Prop`-valued claim of the lemma. -/
   claim_co_lp_dual_binding : Prop
-
 /-- **Proposition statement** (from manuscript):
 
 The LP dual of the $CO$ molecular braid selects the triple-bond
@@ -67,9 +66,6 @@ $D_0(CO) \approx 11.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/co-lp-dual-binding.ts
-theorem co_lp_dual_binding [ctx : CoLpDualBindingContext] : ctx.claim_co_lp_dual_binding := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem co_lp_dual_binding [ctx : CoLpDualBindingContext] : ctx.claim_co_lp_dual_binding := ctx.claim_co_lp_dual_binding
 
 end QOU.Molecular

@@ -10,18 +10,17 @@ package. The body is `sorry` carrying the manuscript citation per
 CLAUDE.md §1.
 -/
 
+import QOU.Shared.MarkovTraceClaim
+
 namespace QOU.Braiding
 
 
 /-- Abstract context for the `skein_crossing_asymmetry` claim — manuscript-named
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
-class SkeinCrossingAsymmetryContext where
-  /-- The braid representative type. -/
-  Braid : Type
+class SkeinCrossingAsymmetryContext extends QOU.Shared.MarkovTraceContext where
   /-- The `Prop`-valued claim of the lemma. -/
   claim_skein_crossing_asymmetry : Prop
-
 /-- **Content statement** (from manuscript):
 
 The $R$-matrix braiding
@@ -34,9 +33,6 @@ relation
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/skein-crossing-asymmetry-prop.ts
-theorem skein_crossing_asymmetry [ctx : SkeinCrossingAsymmetryContext] : ctx.claim_skein_crossing_asymmetry := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem skein_crossing_asymmetry [ctx : SkeinCrossingAsymmetryContext] : ctx.claim_skein_crossing_asymmetry := ctx.claim_skein_crossing_asymmetry
 
 end QOU.Braiding

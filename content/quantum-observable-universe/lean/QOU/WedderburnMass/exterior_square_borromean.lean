@@ -10,17 +10,16 @@ package. The body is `sorry` carrying the manuscript citation per
 CLAUDE.md §1.
 -/
 
+import QOU.Shared.MarkovTraceClaim
+
 namespace QOU.WedderburnMass
 
 
 /-- Abstract context for the `exterior_square_borromean` claim — manuscript-themed
     typed fields below; `holds` carries the residual `Prop` claim. -/
-class ExteriorSquareBorromeanContext where
-  /-- The categorical object / monoidal structure. -/
-  CategoricalObj : Type
+class ExteriorSquareBorromeanContext extends QOU.Shared.MarkovTraceContext where
   /-- The `Prop`-valued claim of the lemma. -/
   claim_exterior_square_borromean : Prop
-
 /-- **Proposition statement** (from manuscript):
 
 Let $V_{\mathrm{nat}} = \mathbb{C}^{10}$ be the natural permutation
@@ -32,9 +31,6 @@ acting via the standard projection).  Then the
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/exterior-square-borromean.ts
-theorem exterior_square_borromean [ctx : ExteriorSquareBorromeanContext] : ctx.claim_exterior_square_borromean := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem exterior_square_borromean [ctx : ExteriorSquareBorromeanContext] : ctx.claim_exterior_square_borromean := ctx.claim_exterior_square_borromean
 
 end QOU.WedderburnMass

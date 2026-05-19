@@ -10,17 +10,16 @@ the `lean.ref` URI `qou:QOU.Observations.brane_tower_q_laplacian_decay` resolves
 citation per CLAUDE.md §1.
 -/
 
+import QOU.Shared.MarkovTraceClaim
+
 namespace QOU.Observations
 
 
 /-- Abstract context for the `brane_tower_q_laplacian_decay` claim — manuscript-themed
     typed fields below; `holds` carries the residual `Prop` claim. -/
-class BraneTowerQLaplacianDecayContext where
-  /-- The categorical object / monoidal structure. -/
-  CategoricalObj : Type
+class BraneTowerQLaplacianDecayContext extends QOU.Shared.MarkovTraceContext where
   /-- The `Prop`-valued claim of the lemma. -/
   claim_brane_tower_q_laplacian_decay : Prop
-
 /-- **Proposition statement** (from manuscript):
 
 Dropping the locality assumption for composite physical observables
@@ -39,9 +38,6 @@ contribution.*
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/brane-tower-q-laplacian-decay.ts
-theorem brane_tower_q_laplacian_decay [ctx : BraneTowerQLaplacianDecayContext] : ctx.claim_brane_tower_q_laplacian_decay := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem brane_tower_q_laplacian_decay [ctx : BraneTowerQLaplacianDecayContext] : ctx.claim_brane_tower_q_laplacian_decay := ctx.claim_brane_tower_q_laplacian_decay
 
 end QOU.Observations

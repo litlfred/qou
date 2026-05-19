@@ -13,22 +13,21 @@ this plural `QOU.BraidsAndKnots` namespace was inherited from existing
 `.ts` lean.ref URIs (a pre-existing convention drift).
 -/
 
+import QOU.Shared.MarkovTraceClaim
+
 namespace QOU.BraidsAndKnots
 
 
 /-- Abstract context for the `qmn_recursive_memoized` claim — manuscript-named
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
-class QmnRecursiveMemoizedContext where
-  /-- The partition / Young-diagram indexing type. -/
-  PartitionIdx : Type
+class QmnRecursiveMemoizedContext extends QOU.Shared.MarkovTraceContext where
   /-- Manuscript sub-claim (i) — Looks up `cache[(λ, ρ)]`. -/
   claim_i_looks_up_cache : Prop
   /-- Manuscript sub-claim (ii) — If miss, computes via the recursion above (border-strip enumeration $\to$ recursive call on $(λ \setminus \xi, ρ \set.... -/
   claim_ii_miss_computes_via : Prop
   /-- Manuscript sub-claim (iii) — Stores result in cache. -/
   claim_iii_stores_result_cache : Prop
-
 /-- **Proposition statement** (from manuscript):
 
 The classical Murnaghan-Nakayama rule expresses $\chi_\rho^\lambda$

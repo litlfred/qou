@@ -10,14 +10,14 @@ the `qou` Lake package.  The body is `sorry` carrying the
 manuscript citation per CLAUDE.md §1.
 -/
 
+import QOU.Shared.MarkovTraceClaim
+
 namespace QOU.QuantumBloch
 
 
 /-- Abstract context for the `pentagon_uv_commutation` claim — manuscript-themed
     typed fields below; `holds` carries the residual `Prop` claim. -/
-class PentagonUvCommutationContext where
-  /-- The categorical object / monoidal structure. -/
-  CategoricalObj : Type
+class PentagonUvCommutationContext extends QOU.Shared.MarkovTraceContext where
   /-- Manuscript sub-claim (i) — Hecke braid relation at the operator level (before :refterm[descent]{#descent} to scalars): $\sigma_s \sigma_{s+1} \s.... -/
   claim_i_hecke_braid_relation : Prop
   /-- Manuscript sub-claim (ii) — :refterm[Descent]{#descent} involution split: $\hat\tau_n$ separates $H_n(R, q)$ into $\mathrm{im}\,\hat\tau_n$ (desc.... -/
@@ -26,7 +26,6 @@ class PentagonUvCommutationContext where
   claim_iii_eigenvalue_specialisation_block : Prop
   /-- Manuscript sub-claim (iv) — Operator lift on the transient part: the surviving non-trivial commutation is between level-$n$ and level-$(n+1)$ ope.... -/
   claim_iv_operator_lift_transient : Prop
-
 /-- **Content statement** (from manuscript):
 
 $$

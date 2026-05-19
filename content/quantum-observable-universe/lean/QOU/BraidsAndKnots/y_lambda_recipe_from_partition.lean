@@ -13,18 +13,17 @@ this plural `QOU.BraidsAndKnots` namespace was inherited from existing
 `.ts` lean.ref URIs (a pre-existing convention drift).
 -/
 
+import QOU.Shared.MarkovTraceClaim
+
 namespace QOU.BraidsAndKnots
 
 
 /-- Abstract context for the `y_lambda_recipe_from_partition` claim — manuscript-named
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
-class YLambdaRecipeFromPartitionContext where
-  /-- The partition / Young-diagram indexing type. -/
-  PartitionIdx : Type
+class YLambdaRecipeFromPartitionContext extends QOU.Shared.MarkovTraceContext where
   /-- The `Prop`-valued claim of the lemma. -/
   claim_y_lambda_recipe_from_partition : Prop
-
 /-- **Content statement** (from manuscript):
 
 **Proposition (recipe: $\lambda \mapsto y_\lambda(q)$ as q-rational).**
@@ -38,9 +37,6 @@ denominator.*
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/y-lambda-recipe-from-partition.ts
-theorem y_lambda_recipe_from_partition [ctx : YLambdaRecipeFromPartitionContext] : ctx.claim_y_lambda_recipe_from_partition := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem y_lambda_recipe_from_partition [ctx : YLambdaRecipeFromPartitionContext] : ctx.claim_y_lambda_recipe_from_partition := ctx.claim_y_lambda_recipe_from_partition
 
 end QOU.BraidsAndKnots

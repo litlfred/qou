@@ -10,15 +10,15 @@ the `qou` Lake package.  The body is `sorry` carrying the
 manuscript citation per CLAUDE.md §1.
 -/
 
+import QOU.Shared.MarkovTraceClaim
+
 namespace QOU.Information
 
 
 /-- Abstract context for the `toffoli_transfer_matrix` claim — manuscript-named
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
-class ToffoliTransferMatrixContext where
-  /-- The braid representative type. -/
-  Braid : Type
+class ToffoliTransferMatrixContext extends QOU.Shared.MarkovTraceContext where
   /-- Manuscript sub-claim (i) — (Universal factorization.) *Every target-flip amplitude factors as*. -/
   claim_i_target_flip_amplitude : Prop
   /-- Manuscript sub-claim (ii) — (Single-crossing type-blindness.) *At generator $\sigma_1$ (one crossing), the traced volume $\hat{V}_1 = z(q) = 1/(q.... -/
@@ -31,7 +31,6 @@ class ToffoliTransferMatrixContext where
   claim_v_target_flip_amplitudes : Prop
   /-- Manuscript sub-claim (vi) — (Toffoli diagonal.). -/
   claim_vi : Prop
-
 /-- **Proposition statement** (from manuscript):
 
 Let $P_{\mathrm{flip}}(q; k_1, k_2)$ be the target-flip

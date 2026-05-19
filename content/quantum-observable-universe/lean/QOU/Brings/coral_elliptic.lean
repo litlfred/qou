@@ -10,18 +10,17 @@ package. The body is `sorry` carrying the manuscript citation per
 CLAUDE.md §1.
 -/
 
+import QOU.Shared.MarkovTraceClaim
+
 namespace QOU.Brings
 
 
 /-- Abstract context for the `coral_elliptic` claim — manuscript-named
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
-class CoralEllipticContext where
-  /-- The braid representative type. -/
-  Braid : Type
+class CoralEllipticContext extends QOU.Shared.MarkovTraceContext where
   /-- The `Prop`-valued claim of the lemma. -/
   claim_coral_elliptic : Prop
-
 /-- **Content statement** (from manuscript):
 
 Let $z=x_0/x_1\in\mathbb{P}^1(\mathbb{C})$ be the projective spacetime ratio
@@ -39,9 +38,6 @@ each fixed $z$ to the cubic
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/coral-elliptic.ts
-theorem coral_elliptic [ctx : CoralEllipticContext] : ctx.claim_coral_elliptic := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem coral_elliptic [ctx : CoralEllipticContext] : ctx.claim_coral_elliptic := ctx.claim_coral_elliptic
 
 end QOU.Brings

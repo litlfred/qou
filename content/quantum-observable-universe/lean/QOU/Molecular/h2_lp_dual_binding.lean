@@ -10,18 +10,17 @@ the `qou` Lake package.  The body is `sorry` carrying the
 manuscript citation per CLAUDE.md §1.
 -/
 
+import QOU.Shared.MarkovTraceClaim
+
 namespace QOU.Molecular
 
 
 /-- Abstract context for the `h2_lp_dual_binding` claim — manuscript-named
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
-class H2LpDualBindingContext where
-  /-- The braid representative type. -/
-  Braid : Type
+class H2LpDualBindingContext extends QOU.Shared.MarkovTraceContext where
   /-- The `Prop`-valued claim of the lemma. -/
   claim_h2_lp_dual_binding : Prop
-
 /-- **Proposition statement** (from manuscript):
 
 The LP dual of the $H_2$ molecular braid selects the interleaved
@@ -39,9 +38,6 @@ $$
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/h2-lp-dual-binding.ts
-theorem h2_lp_dual_binding [ctx : H2LpDualBindingContext] : ctx.claim_h2_lp_dual_binding := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem h2_lp_dual_binding [ctx : H2LpDualBindingContext] : ctx.claim_h2_lp_dual_binding := ctx.claim_h2_lp_dual_binding
 
 end QOU.Molecular

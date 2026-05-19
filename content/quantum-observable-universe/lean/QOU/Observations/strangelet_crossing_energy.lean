@@ -10,23 +10,20 @@ the `qou` Lake package.  The body is `sorry` carrying the
 manuscript citation per CLAUDE.md §1.
 -/
 
+import QOU.Shared.MarkovTraceClaim
+
 namespace QOU.Observations
 
 
 /-- Abstract context for the `strangelet_crossing_energy` claim — manuscript-themed
     typed fields below; `holds` carries the residual `Prop` claim. -/
-class StrangeletCrossingEnergyContext where
-  /-- The categorical object / monoidal structure. -/
-  CategoricalObj : Type
-  /-- The topological-link / knot type. -/
-  Link : Type
+class StrangeletCrossingEnergyContext extends QOU.Shared.MarkovTraceContext where
   /-- Manuscript sub-claim (i) — Electromagnetic neutrality. -/
   claim_i_electromagnetic_neutrality : Prop
   /-- Manuscript sub-claim (ii) — Purely strong crossing energy. -/
   claim_ii_purely_strong_crossing : Prop
   /-- Manuscript sub-claim (iii) — Enhanced binding per baryon. -/
   claim_iii_enhanced_binding_per : Prop
-
 /-- **Content statement** (from manuscript):
 
 **Proposition.**

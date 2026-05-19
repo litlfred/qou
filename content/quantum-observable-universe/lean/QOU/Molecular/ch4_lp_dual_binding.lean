@@ -10,22 +10,21 @@ the `qou` Lake package.  The body is `sorry` carrying the
 manuscript citation per CLAUDE.md §1.
 -/
 
+import QOU.Shared.MarkovTraceClaim
+
 namespace QOU.Molecular
 
 
 /-- Abstract context for the `ch4_lp_dual_binding` claim — manuscript-named
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
-class Ch4LpDualBindingContext where
-  /-- The braid representative type. -/
-  Braid : Type
+class Ch4LpDualBindingContext extends QOU.Shared.MarkovTraceContext where
   /-- Manuscript sub-claim (i) — Each C--H bond has the same traced volume $\hat{V}_b$. -/
   claim_i_bond_same_traced : Prop
   /-- Manuscript sub-claim (ii) — Each H--H repulsion has the same $\Phi_1$ penalty. -/
   claim_ii_repulsion_same_penalty : Prop
   /-- Manuscript sub-claim (iii) — The total binding energy is exactly $4 \times \mathbf{E}_{\mathrm{bind}}^{CH}$. -/
   claim_iii_total_binding_energy : Prop
-
 /-- **Proposition statement** (from manuscript):
 
 The LP dual of the $CH_4$ molecular braid in $H_{26}(q)$
