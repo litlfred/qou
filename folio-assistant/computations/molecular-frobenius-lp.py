@@ -53,7 +53,8 @@ TWO_Q = q0 + qi0
 from hecke_core import alpha_em, E_HARTREE_EV as E_hartree_eV, E_MOL as E_mol
 
 NF_NAMES = ["gamma", "s0", "s1", "L+", "L-", "e-"]
-TR_M = np.array([1.0, z, z, z**2, z**2, z**3])
+# e- Markov trace is h·z² + z (NOT z³); see docs/audits/2026-05-19-trm5-markov-bug.md
+TR_M = np.array([1.0, z, z, z**2, z**2, h * z**2 + z])
 
 
 # ══════════════════════════════════════════════════════════════
