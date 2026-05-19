@@ -34,8 +34,13 @@ class WenzlQmnSynergyContext extends QOU.Shared.MarkovTraceContext where
   claim_ii_mass_formula_compute : 100 ≤ qmn_speedup
   /-- Manuscript sub-claim (iii) — Atom-knot identification path for
       ⁶Li, ⁷Li via enumerating hyperbolic knots and comparing
-      `tr_M(β_K)` against the AME binding × hyperbolic-volume ratio. -/
-  claim_iii_atom_knot_identification :
+      `tr_M(β_K)` against the AME binding × hyperbolic-volume ratio.
+      Stays abstract — requires the AME binding table and knot-volume
+      database. -/
+  claim_iii_atom_knot_identification : Prop
+  /-- Manuscript boxed identity — Combined speedup is the product of
+      orthogonal speedups, bounded below by `10⁶×`. -/
+  claim_combined_speedup_bound :
     combined_speedup = wenzl_speedup * qmn_speedup ∧
     1000000 ≤ combined_speedup
   /-- Length of a canonical permutation braid `T_w` (e.g. number of
@@ -94,11 +99,12 @@ this drops the per-isotope compute time from
 theorem wenzl_qmn_synergy [ctx : WenzlQmnSynergyContext] :
     10000 ≤ ctx.wenzl_speedup ∧
     100 ≤ ctx.qmn_speedup ∧
+    ctx.claim_iii_atom_knot_identification ∧
     (ctx.combined_speedup = ctx.wenzl_speedup * ctx.qmn_speedup ∧
      1000000 ≤ ctx.combined_speedup) ∧
     ctx.trM_Tw = ctx.z ^ ctx.lengthW ∧ ctx.wenzlSum = ctx.z ^ ctx.lengthW :=
   ⟨ctx.claim_i_direct_verification_wenzl, ctx.claim_ii_mass_formula_compute,
-   ctx.claim_iii_atom_knot_identification,
+   ctx.claim_iii_atom_knot_identification, ctx.claim_combined_speedup_bound,
    ctx.claim_iv_canonical_trace_power, ctx.claim_v_wenzl_qmn_cross_check⟩
 
 end QOU.BraidsAndKnots

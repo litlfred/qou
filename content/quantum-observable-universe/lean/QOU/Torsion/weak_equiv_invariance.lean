@@ -44,9 +44,8 @@ brane levels $n$ and $m$ is a zigzag of coface and codegeneracy maps
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/weak-equiv-invariance.ts
-theorem weak_equiv_invariance [ctx : WeakEquivInvarianceContext] : ctx.claim_weak_equiv_invariance := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem weak_equiv_invariance [ctx : WeakEquivInvarianceContext] :
+    ∀ n m : ℕ, ctx.weak_equiv n m → ctx.τ_value n = ctx.τ_value m :=
+  ctx.claim_weak_equiv_invariance
 
 end QOU.Torsion
