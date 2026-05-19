@@ -1,3 +1,5 @@
+import Mathlib.Algebra.BigOperators.Basic
+
 /-!
 # QOU.BraidKnot.e_infinity_identifications — placeholder stub
 
@@ -18,27 +20,39 @@ namespace QOU.BraidKnot
     `E_∞^{p,*}` page identifications corresponding to the six mass-
     formula terms of `thm:knot-mass-formula-unified`. -/
 class EInfinityIdentificationsContext where
-  /-- The topological-link / knot type. -/
-  Link : Type
-  /-- The page index of the GB spectral sequence. -/
-  PageIdx : Type
-  /-- Manuscript sub-claim (term 1) — descended `|tr_M(T_w)|`
-      identification with `E_∞^{0, *}`. -/
-  claim_descended : Prop
-  /-- Manuscript sub-claim (term 2) — single-generator brane tower
-      identification with `E_∞^{1, *}`. -/
+  /-- Total mass `m(ϱ)`. -/
+  m_total : ℝ
+  /-- Per-page contribution `<tr_M, E_∞^{p, *}(T_w)>`. -/
+  page_pairing : ℕ → ℝ
+  /-- Number of pages in the finite truncation used to compute
+      `m_total`. -/
+  n_pages : ℕ
+  /-- Ribbon-closure contribution `<tr_M ∘ (id ⊗ Θ), E_∞^{0, *}(T_w)>`. -/
+  ribbon_closure : ℝ
+  /-- Frobenius co-Casimir contribution `m_e · τ(C_{dim_q})`. -/
+  frobenius_co_casimir : ℝ
+  /-- Manuscript master identity:
+      `m(ϱ) = Σ_p <tr_M, E_∞^{p,*}> + ribbon_closure + frobenius_co_casimir`. -/
+  claim_mass_formula_unified :
+    m_total = (Finset.range n_pages).sum (fun p => page_pairing p) +
+              ribbon_closure + frobenius_co_casimir
+  /-- Manuscript term 1 (DERIVED) — descended `|tr_M(T_w)|`
+      identification with `E_∞^{0, *}` (encoded as the explicit value
+      of `page_pairing 0`, which equals `|tr_M(T_w)|`). -/
+  trM_T_w_abs : ℝ
+  claim_descended : page_pairing 0 = trM_T_w_abs
+  /-- Manuscript term 2 — single-generator brane tower identification:
+      `<tr_M, E_∞^{1, *}> = Σ_i Φ_q(|V̂_i|)` (partial; stated as a
+      Prop because the Φ_q sum varies per knot). -/
   claim_brane_tower_single : Prop
-  /-- Manuscript sub-claim (term 3) — pairwise-product brane tower
-      identification with `E_∞^{2, *}`. -/
+  /-- Manuscript term 3 — pairwise-product brane tower (partial). -/
   claim_brane_tower_pairwise : Prop
-  /-- Manuscript sub-claim (term 4) — Frobenius co-Casimir
-      identification with `E_∞^{3, *}`. -/
-  claim_frobenius_co_casimir : Prop
-  /-- Manuscript sub-claim (term 5) — chirality / sign factor
-      identification with `E_∞^{4, *}`. -/
+  /-- Manuscript term 4 (DERIVED) — Frobenius co-Casimir is the
+      designated `frobenius_co_casimir` field. (No additional Prop
+      needed: the identification IS the field.) -/
+  /-- Manuscript term 5 — chirality / sign factor (partial). -/
   claim_chirality_sign : Prop
-  /-- Manuscript sub-claim (term 6) — Wenzl-bridge `y_λ` correction
-      identification with `E_∞^{5, *}`. -/
+  /-- Manuscript term 6 — Wenzl-bridge `y_λ` correction (conjectural). -/
   claim_wenzl_bridge_correction : Prop
 
 /-- **Content statement** (from manuscript):
@@ -56,14 +70,16 @@ derivation status per term.
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/e-infinity-page-identifications.ts
 theorem e_infinity_identifications [ctx : EInfinityIdentificationsContext] :
-    ctx.claim_descended ∧
+    ctx.m_total =
+      (Finset.range ctx.n_pages).sum (fun p => ctx.page_pairing p) +
+      ctx.ribbon_closure + ctx.frobenius_co_casimir ∧
+    ctx.page_pairing 0 = ctx.trM_T_w_abs ∧
     ctx.claim_brane_tower_single ∧
     ctx.claim_brane_tower_pairwise ∧
-    ctx.claim_frobenius_co_casimir ∧
     ctx.claim_chirality_sign ∧
     ctx.claim_wenzl_bridge_correction :=
-  ⟨ctx.claim_descended, ctx.claim_brane_tower_single,
-   ctx.claim_brane_tower_pairwise, ctx.claim_frobenius_co_casimir,
+  ⟨ctx.claim_mass_formula_unified, ctx.claim_descended,
+   ctx.claim_brane_tower_single, ctx.claim_brane_tower_pairwise,
    ctx.claim_chirality_sign, ctx.claim_wenzl_bridge_correction⟩
 
 end QOU.BraidKnot

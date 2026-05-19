@@ -18,16 +18,34 @@ namespace QOU.Brings
 class BringsIsQouContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
-  /-- Manuscript sub-claim (i) — Quantum universe. -/
+  /-- Manuscript sub-claim (i) — Quantum universe: `C = Rep(SU_q(2))`
+      over `R` with `A = O_q(SU(2))` and forgetful fibre functor `τ`. -/
   claim_i_quantum_universe : Prop
-  /-- Manuscript sub-claim (ii) — Observability. -/
+  /-- Manuscript sub-claim (ii) — Observability:
+      `Hom(𝟙, Ad(A)) = 0` (quantum Schur lemma). -/
   claim_ii_observability : Prop
-  /-- Manuscript sub-claim (iii) — Yekutieli lifting. -/
-  claim_iii_yekutieli_lifting : Prop
-  /-- Manuscript sub-claim (iv) — Euler characteristic. -/
-  claim_iv_euler_characteristic : Prop
-  /-- Manuscript sub-claim (v) — Geometric :refterm[descent]{#descent} (for $n = 1$, $\dim M_S = 3$):. -/
-  claim_v_geometric_refterm_descent : Prop
+  /-- Obstruction classes `κ_n` indexed by jet level. -/
+  kappa : ℕ → ℝ
+  /-- Manuscript sub-claim (iii) — Yekutieli lifting: every
+      obstruction class `κ_n ≠ 0` (perpetual obstruction). -/
+  claim_iii_yekutieli_lifting : ∀ n : ℕ, kappa n ≠ 0
+  /-- Genus of Bring's surface `g = 4`. -/
+  g : ℕ
+  /-- Euler characteristic of `A`. -/
+  chi_A : ℤ
+  /-- Manuscript sub-claim (iv) — Euler characteristic: `χ(A) = 2 − 2g`
+      and `g = 4`, so `χ(A) = −6`. -/
+  claim_iv_euler_characteristic : g = 4 ∧ chi_A = 2 - 2 * (g : ℤ) ∧
+                                   chi_A = -6
+  /-- Total ramification `R_tot` and branch-point count of the
+      degree-4 covering `π`. -/
+  R_tot : ℕ
+  n_branch_points : ℕ
+  /-- Manuscript sub-claim (v) — Geometric descent (Riemann–Hurwitz):
+      `n_branch_points = 6` branch points with total ramification
+      `R_tot = 14`. -/
+  claim_v_geometric_descent :
+    n_branch_points = 6 ∧ R_tot = 14
 
 /-- **Content statement** (from manuscript):
 
@@ -40,7 +58,13 @@ to a quantum observable universe over $R$ (with $30 \in R^{\times}$):
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/brings-is-qou.ts
 theorem brings_is_qou [ctx : BringsIsQouContext] :
-    ctx.claim_i_quantum_universe ∧ ctx.claim_ii_observability ∧ ctx.claim_iii_yekutieli_lifting ∧ ctx.claim_iv_euler_characteristic ∧ ctx.claim_v_geometric_refterm_descent :=
-  ⟨ctx.claim_i_quantum_universe, ctx.claim_ii_observability, ctx.claim_iii_yekutieli_lifting, ctx.claim_iv_euler_characteristic, ctx.claim_v_geometric_refterm_descent⟩
+    ctx.claim_i_quantum_universe ∧
+    ctx.claim_ii_observability ∧
+    (∀ n : ℕ, ctx.kappa n ≠ 0) ∧
+    (ctx.g = 4 ∧ ctx.chi_A = 2 - 2 * (ctx.g : ℤ) ∧ ctx.chi_A = -6) ∧
+    (ctx.n_branch_points = 6 ∧ ctx.R_tot = 14) :=
+  ⟨ctx.claim_i_quantum_universe, ctx.claim_ii_observability,
+   ctx.claim_iii_yekutieli_lifting, ctx.claim_iv_euler_characteristic,
+   ctx.claim_v_geometric_descent⟩
 
 end QOU.Brings
