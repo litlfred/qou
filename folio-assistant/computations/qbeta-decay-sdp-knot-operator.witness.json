@@ -1,0 +1,53 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-19T00:59:50.073399+00:00",
+  "commitSha": "bb7c861c5420ff3668de048a7718579a5b4d9167",
+  "assertions": [
+    {
+      "name": "tau_M_T_beta_matches_target_at_q0",
+      "computed": 0.0,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 1e-10,
+      "source": "min-L2-norm SDP exactly reproduces τ_M(T_β) = Q_β/E_0 at q_0"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 22,
+  "computation": "qbeta-decay-sdp-knot-operator",
+  "scriptFile": "qbeta_decay_sdp_solver.py",
+  "scriptHash": "52849951fe16",
+  "scriptCommitSha": "unknown",
+  "description": "β-decay knot operator T_β identified as the min-L2-norm element of H_3(q)'s NF basis satisfying τ_M(T_β) = Q_β/E_0 at q_0. Provides the symbolic τ_M(T_β)(q) function and its Taylor expansion around q=1. The Taylor coefficients are the data from which the c_k precision-ladder coefficients can be extracted (after subtracting Q_A and cos contributions).",
+  "parameters": {
+    "q_0": "1.1099785955541805",
+    "Q_beta_codata": "0.78233341",
+    "E_0": "4.1859808220625245",
+    "n_target": "0.18689369188617716"
+  },
+  "data": {
+    "T_beta_nf_coefficients": {
+      "γ": 0.11406658873131922,
+      "σ₀": 0.05695576718739538,
+      "σ₁": 0.05695576718739538,
+      "L₊": 0.028439172697150118,
+      "L₋": 0.028439172697150118,
+      "e⁻": 0.014200257210780182
+    },
+    "tau_M_at_q0": 0.18689369188617716,
+    "tau_M_at_q_1": 0.18701697441863718,
+    "tau_M_taylor_coefficients": {
+      "a_0": 0.18701697441863718,
+      "a_1": 0.0,
+      "a_2": -0.011340004542323508,
+      "a_3": 0.011340004542323508,
+      "a_4": -0.00890836802184695,
+      "a_5": 0.006476731501370392,
+      "a_6": -0.004606050393795534,
+      "a_7": 0.0032963246991223765
+    },
+    "Q_A_at_q0": 0.7836458028449501,
+    "structural_finding": "T_β is identified as a 6-coefficient NF expansion (min-L2-norm). Its τ_M(q) is a sum of z(q)^k contributions for k=0..3. The c_k extraction requires comparing τ_M(T_β)(q) to Q_A(q)·cos(...) term-by-term in (q-1) — a finite algebraic exercise."
+  }
+}
