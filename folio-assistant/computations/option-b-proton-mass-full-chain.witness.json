@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-19T03:44:51.991275+00:00",
-  "commitSha": "a3ca4764f809a423fd0e7e970400ab5e71320091",
+  "computedAt": "2026-05-19T04:06:28.829453+00:00",
+  "commitSha": "a565201b866a99c843cd8e85aaa08a52d691b28d",
   "assertions": [
     {
       "name": "tr_M_proton_is_rational_in_sqrt_q",
@@ -31,11 +31,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 181,
+  "durationMs": 185,
   "computation": "option-b-proton-mass-full-chain",
   "scriptFile": "option_b_proton_mass_full_chain.py",
-  "scriptHash": "a53dc02e2188",
-  "scriptCommitSha": "a3ca4764f809a423fd0e7e970400ab5e71320091",
+  "scriptHash": "785db0a73401",
+  "scriptCommitSha": "299567fa008ae080c59a726e2f09d68eb5e0a074",
   "description": "Phase 1.6 of the 1ppb plan — Option B from the m_e-anomaly audit.  Full derivation of tr_M(σ_1^7 σ_2^4)(q) as a rational-in-q function via:  (A) braid roster, (B) Hecke quadratic recurrence (a_k, b_k), (C) Wedderburn-block characters χ^λ(β), (D) Markov-axiom y_λ(q), (E) γγ pair-production reduction at every σ-site, (F) SDP knot-operator selection per the prop:operator-selection-lp / §LP/SDP-duals contract, (G) per-step graded/filtered metadata, (H) closed-form symbolic tr_M.  Does NOT consume the placeholder literals M_HECKE_PIPELINE_AT_Q0; emits the rational-in-q anchors from which any downstream mass-formula assembly should derive m_p without algebraic +1 patches.  See docs/audits/2026-05-09-proton-m_e-anomaly.md for the audit; content/quantum-observable-universe/braids-and-knots/markov-trace-axiomatic-closed-form.md for the formal proposition.",
   "contentBlock": "prop:markov-trace-axiomatic-closed-form",
   "parameters": {

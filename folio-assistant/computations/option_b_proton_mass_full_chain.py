@@ -351,7 +351,11 @@ def sdp_select_knot_operator(
     # wrong semantic).
     y_star = [float(v) for v in res.Z_star[1:]]
     tol = 1e-6
-    active_set = [i for i, v in enumerate(y_star) if abs(v) > tol]
+    # Per the operator-selection LP dual contract: active_set = {i : y_star[i] > 0}.
+    # The canonical LP path in lp_dual_solver.py uses `y > dual_tol` (positive only,
+    # not abs). Match that semantic — a slightly-negative dual from solver tolerance
+    # should NOT be reported as active (Copilot review PR #792).
+    active_set = [i for i, v in enumerate(y_star) if v > tol]
     return {
         "site": site_label,
         "feasible": True,

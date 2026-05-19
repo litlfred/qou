@@ -3687,7 +3687,7 @@ export const references: CSLData[] = [
     note: "Algebraic residues, trace maps, Grothendieck-Serre duality. The R-side counterpart of Cauchy residue used in `prop:sw-period-thimble-equivalence` A2.4 algebraic replacement.",
   }),
 
-  // ─── 22 entries added 2026-05-19 to satisfy `-- Ref: [key]` citations
+  // ─── 18 entries added 2026-05-19 (was 22; 4 duplicates removed in commit 299567fa) to satisfy `-- Ref: [key]` citations
   //   in content/**/*.lean that the validate-refs pipeline flagged as
   //   unresolved. IDs match the literal lean-file citation keys (which
   //   are sometimes hyphenated or capitalised idiosyncratically — kept
