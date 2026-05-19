@@ -1712,7 +1712,7 @@ export const references: CSLData[] = [
     page: "188-195",
     issued: { "date-parts": [[1998]] },
     DOI: "10.1016/S0167-2789(98)00054-2",
-    URL: "https://arxiv.org/abs/cond-mat/9710043",
+    URL: "https://arxiv.org/abs/quant-ph/9710043",
   }),
 
   // ── Lloyd 2000: Ultimate physical limits to computation ───────
