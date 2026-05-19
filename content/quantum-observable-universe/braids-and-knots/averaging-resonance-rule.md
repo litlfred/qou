@@ -350,7 +350,7 @@ by isospectral non-uniqueness, not a stylistic or numerical
 preference — and so makes the $1/2$ fingerprint at the half-fill
 rung the *canonical* invariant, not a chosen one.
 
-### Cross-link to pentagon reduction (PR #804 / main)
+### Cross-link to pentagon reduction
 
 The Leibniz layer in the c_5 deep-dive section below relates the
 $P_{\mathrm{avg}}^2$ algebra to the pentagon-coherence diagram.
@@ -364,7 +364,7 @@ The post-$\tau$ $\log^2$ correction documented there closes the
 T3 deferral structurally — relevant to anyone extending the
 precision-ladder beyond rung 10.
 
-### Falsified-FR caveat (PR #819 Phase 5c.1)
+### Falsified-FR caveat (cross-PR Phase 5c.1 cross-check)
 
 A naive Frobenius-reciprocity identity at the per-Wedderburn-
 block dominant level — $\sum_\lambda y_\lambda \chi_\lambda(\beta_K^{Z=2})

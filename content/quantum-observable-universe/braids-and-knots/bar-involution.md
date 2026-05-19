@@ -99,7 +99,7 @@ $$h \;=\; q - q^{-1} \;=\; \underbrace{(q^{1/2} - q^{-1/2})}_{h_{1/2},\;\text{ba
 
 The bar-anti-symmetry of $h$ comes *entirely* from $h_{1/2}$; the
 bar-symmetric Markov parameter $z = 1/(q^{1/2}+q^{-1/2})$ factor
-is bar-invariant. This is the same $z$ that PR #819's Phase 5c.1
+is bar-invariant. This is the same $z$ that the cross-PR Phase 5c.1 cross-check
 identified as the interface-knot value $\Delta_I^K = z$ exactly.
 
 ### Hoefsmit-Quantum-2 identity

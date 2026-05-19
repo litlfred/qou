@@ -55,7 +55,7 @@ $$h \;=\; \underbrace{(q^{1/2} - q^{-1/2})}_{h_{1/2},\;\text{bar-ANTI-sym}} \;\c
 The bar-anti-symmetry of $h$ comes *entirely* from the half-step
 factor $h_{1/2} = q^{1/2} - q^{-1/2}$; the second factor is the
 **Markov parameter** $z = 1/(q^{1/2}+q^{-1/2})$ that appears as
-the interface-knot value $\Delta_I^K = z$ in PR #819 Phase 5c.1
+the interface-knot value $\Delta_I^K = z$ in the cross-PR Phase 5c.1 cross-check (`delta_lambda_fr_identity_phase5c.py`)
 (0.0001% match — derivation-grade categorical equality).
 
 So **the same $z$ that is the Markov-axiom interface-knot factor
@@ -108,8 +108,8 @@ $$
 $$
 
 Proved as a formal-power-series identity in
-the formal-power-series identity established on PR #801 (`li2q-phiq-bar-symmetrization` content block)
-(cherry-picked from PR #801). The bar-anti-symmetric kernel here is
+[`prop:li2q-phiq-bar-symmetrization`](#prop:li2q-phiq-bar-symmetrization).
+The bar-anti-symmetric kernel here is
 $\log \Phi_q - \log \Phi_{q^{-1}}$; the bar-symmetric projection
 $P_{\mathrm{avg}}$ kills it and produces Li_2^q on the residual.
 
@@ -189,9 +189,9 @@ verified empirical matches, all in the bar-symmetric projection:
 
 | Layer | Empirical match | Source |
 |---|---|---|
-| Series (Li_2^q) | sign-correct binding energies on D, T, ³He; variance $1.82\times$ | PR #801 `binding_depth_stratified_rust.py` |
+| Series (Li_2^q) | sign-correct binding energies on D, T, ³He; variance $1.82\times$ | `folio-assistant/computations/binding_depth_stratified_rust.py` |
 | Phase (cos at N=1) | $Q_\beta$ to sub-ppt | `prop:neutron-qvalue-symbolic` |
-| Gain (cosh at per-Z step) | rel. error $0.022\%$ on $\alpha_Z$ | PR #819 Phase 5b audit |
+| Gain (cosh at per-Z step) | rel. error $0.022\%$ on $\alpha_Z$ | cross-PR Phase 5b audit (`docs/audits/2026-05-19-delta-lambda-phase5-alpha-derivation-progress.md`) |
 
 The bar-anti-symmetric alternative ($\Phi_q$ alone, $\sin$,
 $\sinh$) is empirically falsified:
@@ -235,7 +235,7 @@ into proved theorems:
 
 1. **Series-layer proof from category alone**. Li_2^q ↔ Φ_q ↔
    Φ_{q^{-1}} identity is proved algebraically in
-   the formal-power-series identity established on PR #801 (`li2q-phiq-bar-symmetrization` content block)
+   [`prop:li2q-phiq-bar-symmetrization`](#prop:li2q-phiq-bar-symmetrization)
    over $\mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$. Lifting that
    to a `theorem` (no `sorry`) is the first concrete target.
 
@@ -258,7 +258,7 @@ representation-theory project, not a one-PR closure.
 
 ## Status
 
-- **Series**: algebraic identity proved (PR #801).
+- **Series**: algebraic identity proved (`prop:li2q-phiq-bar-symmetrization`).
 - **Phase**: algebraic identity proved (Mathlib `Real.cos_neg`).
 - **Gain**: algebraic identity proved (Mathlib `Real.cosh_neg`).
 - **Unification**: open R&D (this proposition).
