@@ -32,9 +32,12 @@
     },
     {
       "id": "yekutieli2008",
-      "status": "pending",
+      "status": "verified-clean",
       "local_pdf": "uploads/yekutieli2008.pdf",
-      "fixes_applied": 0
+      "verified_at": "2026-05-19T06:26:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 0,
+      "note": "Confirmed paper is 'Twisted Deformation Quantization of Algebraic Varieties' by Amnon Yekutieli (Contemporary Mathematics survey, arXiv:0801.3233v4 2011). §2 'Poisson Deformations of Algebraic Varieties' — matches QOU's citation in global-gluing.lean:28 + Torsion/GlobalGluing.lean:30 for 'O_{q(p)}(G) of functions on the quantum group deformed by the local substrate parameter'. Scope match."
     },
     {
       "id": "zink2002",
