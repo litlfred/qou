@@ -12,9 +12,16 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.FluidDynamics
 
-/-- QOU.FluidDynamics.ns_kummer_specialisation
+/-- **Content statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+Let $(\mathbf{C}, A, \tau)$ be a QOU with
+$\kappa_0 = e(\xi) \in H^2(\mathcal{S}, \mathbb{G}_m)$ and
+$\mathrm{tr}(\kappa_0) = \chi(A)$.
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.ts
 theorem ns_kummer_specialisation : True := by
   -- TODO: replace `True` with the real statement and discharge it.

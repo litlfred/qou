@@ -15,9 +15,17 @@ this plural `QOU.BraidsAndKnots` namespace was inherited from existing
 
 namespace QOU.BraidsAndKnots
 
-/-- Explicit α_k at H_4
+/-- **Content statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+**Proposition (explicit $\alpha_\lambda(H_4)$ — closed forms in $\mathbb{Q}(q)$).**
+*Let $z = 1/(\sqrt q + 1/\sqrt q)$ be the Markov parameter and
+$\{T_{w_C}\}_C$ canonical Hecke representatives of the $p(4) = 5$
+conjugacy classes of $S_4$:*
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/explicit-alpha-k-h4.ts
 theorem explicit_alpha_k_h4 : True := by
   -- TODO: replace `True` with the real statement and discharge it.

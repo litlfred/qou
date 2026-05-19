@@ -12,9 +12,22 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.ParticleInteractions
 
-/-- QOU.ParticleInteractions.parity_regime_selection
+/-- **Theorem statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+For all $q > 1$:*
+
+$$
+  \operatorname{sign}(a^Z \cdot b^{N-1}) = (-1)^{A-1}
+$$
+
+*The Q-value regimes are:*
+
+1.
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/parity-regime-selection.ts
 theorem parity_regime_selection : True := by
   -- TODO: replace `True` with the real statement and discharge it.

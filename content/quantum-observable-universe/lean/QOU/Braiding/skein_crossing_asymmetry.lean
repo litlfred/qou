@@ -12,9 +12,17 @@ CLAUDE.md §1.
 
 namespace QOU.Braiding
 
-/-- skein crossing asymmetry
+/-- **Content statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+The $R$-matrix braiding
+([R-matrix](#rem:r-matrix-braiding)) introduces a fundamental
+asymmetry between positive and negative crossings: the Skein
+relation
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/skein-crossing-asymmetry-prop.ts
 theorem skein_crossing_asymmetry : True := by
   -- TODO: replace `True` with the real statement and discharge it.

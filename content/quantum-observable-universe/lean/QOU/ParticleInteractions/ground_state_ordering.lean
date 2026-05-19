@@ -12,9 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.ParticleInteractions
 
-/-- Ground-state ordering from transfer matrix eigenvalues
+/-- **Proposition statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+The nuclear ground state ordering for a nucleus with $Z$ protons
+and $N$ neutrons ($A = Z + N$) is determined by:*
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/ground-state-ordering.ts
 theorem ground_state_ordering : True := by
   -- TODO: replace `True` with the real statement and discharge it.

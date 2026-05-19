@@ -12,9 +12,15 @@ CLAUDE.md §1.
 
 namespace QOU.Torsion
 
-/-- brane boundary structure
+/-- **Content statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+The defining boundary $\partial A_n$
+([brane boundary](#def\:brane-boundary)) has the following properties:
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/brane-boundary-structure.ts
 theorem brane_boundary_structure : True := by
   -- TODO: replace `True` with the real statement and discharge it.

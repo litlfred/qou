@@ -12,9 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.ParticleInteractions
 
-/-- LP stability of the atomic braid
+/-- **Proposition statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+The bare hydrogen atom $[e, \mathfrak{p}] = \sigma_0^{-1}$ in
+$H_2(q)$ is
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/atomic-lp-stability.ts
 theorem atomic_lp_stability : True := by
   -- TODO: replace `True` with the real statement and discharge it.

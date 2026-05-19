@@ -15,9 +15,27 @@ this plural `QOU.BraidsAndKnots` namespace was inherited from existing
 
 namespace QOU.BraidsAndKnots
 
-/-- qmn recursive memoized
+/-- **Proposition statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+The classical Murnaghan-Nakayama rule expresses $\chi_\rho^\lambda$
+recursively via border-strip removal:*
+
+$$
+  \chi_\rho^\lambda \;=\; \sum_{\xi \in BS(\lambda, \rho_1)}
+                          (-1)^{\mathrm{ht}(\xi)} \,
+                          \chi_{\rho \setminus \rho_1}^{\lambda \setminus \xi}
+$$
+
+*where $BS(\lambda, \rho_1)$ is the set of border strips of size $\rho_1$
+in $\lambda$, $\mathrm{ht}(\xi)$ is the height of strip $\xi$, and
+$\rho \setminus \rho_1$ is $\rho$ with its first part removed.*
+
+*The
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/qmn-recursive-memoized.ts
 theorem qmn_recursive_memoized : True := by
   -- TODO: replace `True` with the real statement and discharge it.

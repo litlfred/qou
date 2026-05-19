@@ -12,9 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.FluidDynamics
 
-/-- Acoustic horizon formation and gravitational emergence
+/-- **Content statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+The [acoustic metric](#rem:madelung-fluid) $g_{\mathrm{ac}}$ admits
+horizons wherever $|v| = c_s$.
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/acoustic-horizon-conditions.ts
 theorem acoustic_horizon_conditions : True := by
   -- TODO: replace `True` with the real statement and discharge it.

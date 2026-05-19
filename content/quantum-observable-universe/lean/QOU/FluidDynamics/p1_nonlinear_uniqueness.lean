@@ -12,9 +12,20 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.FluidDynamics
 
-/-- QOU.FluidDynamics.p1_nonlinear_uniqueness
+/-- **Content statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+Let $(\mathbf{C}, A, \tau)$ be a
+[QOU](#def:quantum-observable-universe) with substrate parameter
+$q > 1$.  Let $v$ be a divergence-free solution of the
+[q-NS system](#def:q-navier-stokes) with initial energy
+$E_0 = \lVert v_0 \rVert_A^2$ and let
+$C_q = (\sum_k [k]_q^{-2})^{1/2}$ be the
+[Sobolev constant](#prop:q-spectral-sobolev).
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.ts
 theorem p1_nonlinear_uniqueness : True := by
   -- TODO: replace `True` with the real statement and discharge it.

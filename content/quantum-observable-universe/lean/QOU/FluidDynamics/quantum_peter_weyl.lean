@@ -12,9 +12,18 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.FluidDynamics
 
-/-- QOU.FluidDynamics.quantum_peter_weyl
+/-- **Content statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+The [spectral-Sobolev theory](#prop:q-spectral-sobolev) identifies
+a single gap: completeness of the $\Delta_q$-eigenbasis.  This
+theorem closes it by proving the quantum Peter--Weyl theorem for
+$\mathrm{SU}_q(2)$ using the categorical infrastructure already
+available.
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/quantum-peter-weyl.ts
 theorem quantum_peter_weyl : True := by
   -- TODO: replace `True` with the real statement and discharge it.

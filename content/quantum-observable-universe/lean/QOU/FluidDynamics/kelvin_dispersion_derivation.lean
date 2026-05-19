@@ -12,9 +12,17 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.FluidDynamics
 
-/-- Kelvin wave dispersion from the $q$-Laplacian eigenvalue problem
+/-- **Content statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+The [discrete vortex spectrum](#prop:discrete-vortex-spectrum) states
+that the eigenvalues of the $q$-Laplacian on a vortex filament are
+$\lambda_k^{(q)} = [k]_q^2 \cdot \hbar_q / L_q^2$.  This
+subsection derives this from first principles.
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/kelvin-dispersion-derivation.ts
 theorem kelvin_dispersion_derivation : True := by
   -- TODO: replace `True` with the real statement and discharge it.

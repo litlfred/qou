@@ -15,9 +15,21 @@ this plural `QOU.BraidsAndKnots` namespace was inherited from existing
 
 namespace QOU.BraidsAndKnots
 
-/-- Recursive atom-knot atlas
+/-- **Content statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+**Atlas (recursive, $q_0$-indexed).**
+*Each entry of the atlas is determined by the
+[GB-NF / confinement source of truth](#def:confined-particle): a
+particle/atom is identified by the Markov-equivalence class
+$[K]_M$ of its canonical Hecke element $T_w \in H_{n_0}(q_0)$,
+expressed in $\sigma_*$ braid generators of the braid group $B_{n_0}$.
+Confinement at $q_0$ is verified via the
+[confinement SDP](#prop:confinement-sdp).*
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/recursive-atom-knot-atlas.ts
 theorem recursive_atom_knot_atlas : True := by
   -- TODO: replace `True` with the real statement and discharge it.

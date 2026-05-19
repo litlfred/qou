@@ -12,9 +12,34 @@ CLAUDE.md §1.
 
 namespace QOU.WedderburnMass
 
-/-- curvature rank gb stratification
+/-- **Proposition statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+The curvature-rank stratifies the GB filtration:*
+
+$$
+  \boxed{
+    J^{\,r}(q) / J^{\,r+1}(q)
+    \;=\;
+    \bigl\{T_w \in H_n(R, q)\ \bigm|\ r(T_w) = r\bigr\},
+  }
+$$
+
+*so the spectral-sequence pages of
+[GB spectral sequence](#prop:gb-spectral-sequence) decompose by
+curvature-rank:*
+
+$$
+  E_r^{\ell, *}(H_n(R, q))
+  \;=\;
+  \bigl\{ T_w\text{-induced cohomology classes of curvature-rank } \ell\bigr\}.
+$$
+
+*Consequence: the
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/curvature-rank-gb-stratification.ts
 theorem curvature_rank_gb_stratification : True := by
   -- TODO: replace `True` with the real statement and discharge it.

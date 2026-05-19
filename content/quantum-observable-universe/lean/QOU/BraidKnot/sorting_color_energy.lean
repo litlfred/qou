@@ -12,9 +12,19 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.BraidKnot
 
-/-- QOU.BraidKnot.sorting_color_energy
+/-- **Proposition statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+Let $\sigma_i$ be the Hecke generator
+([R-matrix braiding](#rem:r-matrix-braiding)) acting on
+$V \otimes V$, where $V$ is the fundamental representation.
+Then:*
+
+1.
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/sorting-color-energy.ts
 theorem sorting_color_energy : True := by
   -- TODO: replace `True` with the real statement and discharge it.

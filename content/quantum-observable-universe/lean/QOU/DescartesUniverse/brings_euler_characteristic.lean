@@ -12,9 +12,24 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.DescartesUniverse
 
-/-- Categorical Euler characteristic of $\\mathcal{O}_q(\\mathrm{SU}(2))$ on Bring's surface
+/-- **Lemma statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+The categorical Euler characteristic
+$\chi(A) = \mathrm{tr}(\mathrm{id}_A)$ for
+$A = \mathcal{O}_q(\mathrm{SU}(2))$ on Bring's surface $\Sigma_4$
+equals*
+
+$$
+  \chi(A) = \chi(\Sigma_4) = 2 - 2g(\Sigma_4) = -6,
+$$
+
+*and this value is recovered as the quantum dimension specialised at
+the Descartes substrate parameter $q_0$.
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/brings-euler-characteristic.ts
 theorem brings_euler_characteristic : True := by
   -- TODO: replace `True` with the real statement and discharge it.

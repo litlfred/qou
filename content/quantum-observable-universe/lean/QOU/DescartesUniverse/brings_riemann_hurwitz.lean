@@ -12,9 +12,26 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.DescartesUniverse
 
-/-- Riemann--Hurwitz count for the canonical map $\\Sigma_4 \\to \\mathbb{P}(V)$
+/-- **Lemma statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+The Reeb quotient $M_S \to \Sigma_4$ collapses
+$\mathrm{U}(1)$-orbits to the weight-$0$ subalgebra
+$A_0 = A^{\mathrm{U}(1)}$, and the canonical covering
+$\pi \colon \Sigma_4 \to \mathbb{P}(V)$ has degree $4$ with total
+ramification*
+
+$$
+  R_{\mathrm{tot}}
+  = 2g(\Sigma_4) - 2 - 4(2g(\mathbb{P}^1) - 2)
+  = 14,
+$$
+
+*distributed by $S_5$-symmetry over exactly $6$ branch points.
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/brings-riemann-hurwitz.ts
 theorem brings_riemann_hurwitz : True := by
   -- TODO: replace `True` with the real statement and discharge it.

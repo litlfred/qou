@@ -12,9 +12,17 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.BraidKnot
 
-/-- Three calibration parameters from Wedderburn-Artin decomposition of $H_3(q)$
+/-- **Content statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+The number of calibration inputs
+([calibration inputs](#rem:calibration-inputs)) is not ad hoc:
+it equals the number of **irreducible representations** of
+$H_3(R, q)$, which is the number of partitions of $3$.
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/three-parameters-wedderburn.ts
 theorem three_parameters_wedderburn : True := by
   -- TODO: replace `True` with the real statement and discharge it.

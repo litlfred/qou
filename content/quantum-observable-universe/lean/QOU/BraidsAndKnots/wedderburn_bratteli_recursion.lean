@@ -15,9 +15,18 @@ this plural `QOU.BraidsAndKnots` namespace was inherited from existing
 
 namespace QOU.BraidsAndKnots
 
-/-- Wedderburn-Bratteli recursion
+/-- **Proposition statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+Let $H_n(R, q)$ be the Iwahori–Hecke algebra at generic $q$ with
+Markov parameter $z = 1/(\sqrt q + 1/\sqrt q)$, and let
+$\{y_\lambda^{(n)}\}_{\lambda \,\vdash\, n}$ be the Jones–Markov
+weights of [α_k derivation procedure](#prop:alpha-k-derivation-procedure).
+Then the family $\{y_\lambda^{(n)}\}_{n \geq 1}$ satisfies a
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/wedderburn-bratteli-recursion.ts
 theorem wedderburn_bratteli_recursion : True := by
   -- TODO: replace `True` with the real statement and discharge it.

@@ -12,9 +12,18 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.LiftingDescent
 
-/-- Crossed-module structure on $(\\mathrm{SU}_{q_n}(2), \\mathcal{O}_M^{\\times})$
+/-- **Lemma statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+At each level $n$, the pair
+$(\mathrm{SU}_{q_n}(2), \mathcal{O}_M^{\times})$ is a crossed module
+in the sense of [yekutieli2010], with boundary
+$\partial(a) = a \cdot \mathbf{1}$ and conjugation action
+$g \cdot a = g a g^{-1}$.
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/ccg-crossed-module-structure.ts
 theorem ccg_crossed_module_structure : True := by
   -- TODO: replace `True` with the real statement and discharge it.

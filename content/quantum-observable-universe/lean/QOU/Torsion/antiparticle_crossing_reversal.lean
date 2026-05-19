@@ -12,9 +12,15 @@ CLAUDE.md §1.
 
 namespace QOU.Torsion
 
-/-- antiparticle crossing reversal
+/-- **Content statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+Let $T_{2,3}$ be the left trefoil (the electron generator) and
+$T_{2,3}^{\sigma}$ its mirror image (all crossings reversed).
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/antiparticle-crossing-reversal.ts
 theorem antiparticle_crossing_reversal : True := by
   -- TODO: replace `True` with the real statement and discharge it.

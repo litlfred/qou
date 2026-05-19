@@ -12,9 +12,19 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.ParticleInteractions
 
-/-- Confinement operator selection via minimum action
+/-- **Content statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+The Borromean braid $\mathcal{B}_3 = (\sigma_0\sigma_1^{-1})^3$ is not
+asserted as the confinement operator — it is **selected** by the
+minimum-action principle
+([knot operator selection](#prop:knot-operator-selection))
+acting on the $6 \times 6$ Gram matrix
+([Frobenius Gram matrix](#prop:frobenius-gram-matrix)).
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/confinement-operator-selection.ts
 theorem confinement_operator_selection : True := by
   -- TODO: replace `True` with the real statement and discharge it.

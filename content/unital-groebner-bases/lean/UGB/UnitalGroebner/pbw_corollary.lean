@@ -12,9 +12,16 @@ citation per CLAUDE.md §1.
 
 namespace UGB.UnitalGroebner
 
-/-- Poincaré--Birkhoff--Witt theorem over commutative rings
+/-- **Content statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+Let $\mathfrak{g}$ be a Lie algebra over $R$, a commutative ring with
+unity, with Lie bracket $[\,{,}\,]_{\mathfrak{g}}$. Then the universal
+enveloping algebra
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] unital-groebner-bases/unital-groebner-bases-chapter/pbw-corollary.ts
 theorem pbw_corollary : True := by
   -- TODO: replace `True` with the real statement and discharge it.

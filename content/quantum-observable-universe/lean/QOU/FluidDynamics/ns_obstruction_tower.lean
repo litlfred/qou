@@ -12,9 +12,19 @@ CLAUDE.md §1.
 
 namespace QOU.FluidDynamics
 
-/-- ns obstruction tower
+/-- **Content statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+Let $(\mathbf{C}, A, \tau)$ be a QOU with Euler characteristic
+$\chi(A)$ and [Yekutieli obstruction
+classes](#def:quantum-characteristic-classes)
+$\kappa_n \in H^2(\mathcal{S}, \mathcal{B})$.  Let
+$\Sigma \subset \mathcal{S}$ be the collision locus of two
+anti-parallel vortex filaments.
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.ts
 theorem ns_obstruction_tower : True := by
   -- TODO: replace `True` with the real statement and discharge it.

@@ -12,9 +12,16 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.ParticleInteractions
 
-/-- Nucleon derivation from 4-term photon pair production
+/-- **Content statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+The proton and neutron are **derived** — not asserted — from
+three independent $\gamma\gamma$ pair productions using the full
+4-term photon color content.
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/four-term-pair-nucleon.ts
 theorem four_term_pair_nucleon : True := by
   -- TODO: replace `True` with the real statement and discharge it.

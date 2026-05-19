@@ -12,9 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.FluidDynamics
 
-/-- QOU.FluidDynamics.ns_singularity_descartes
+/-- **Content statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+Let $(\mathbf{C}, A, \tau)$ be the Descartes quantum universe
+with $\chi(A) = -6$ (Bring's surface of genus 4).
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/ns-singularity-descartes.ts
 theorem ns_singularity_descartes : True := by
   -- TODO: replace `True` with the real statement and discharge it.

@@ -12,9 +12,14 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.BraidKnot
 
-/-- QOU.BraidKnot.jet_prefix_gb_filtration
+/-- **Proposition statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+Define the
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/jet-prefix-gb-filtration.ts
 theorem jet_prefix_gb_filtration : True := by
   -- TODO: replace `True` with the real statement and discharge it.

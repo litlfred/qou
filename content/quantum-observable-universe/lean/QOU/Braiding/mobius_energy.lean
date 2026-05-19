@@ -12,9 +12,19 @@ CLAUDE.md §1.
 
 namespace QOU.Braiding
 
-/-- mobius energy
+/-- **Content statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe
+([Definition](#def:quantum-observable-universe)) with substrate
+parameter $q$ ([Definition](#def:substrate-parameter)),
+categorical action $\mathcal{S}_q$
+([Definition](#def:categorical-action)), and $q$-Hodge star
+$\star_q$ ([Definition](#def:q-hodge-star)).
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/mobius-energy.ts
 theorem mobius_energy : True := by
   -- TODO: replace `True` with the real statement and discharge it.

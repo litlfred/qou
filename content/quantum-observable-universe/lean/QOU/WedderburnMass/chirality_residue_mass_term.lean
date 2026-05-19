@@ -12,9 +12,19 @@ CLAUDE.md §1.
 
 namespace QOU.WedderburnMass
 
-/-- chirality residue mass term
+/-- **Proposition statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+Per the
+[unified curvature-rank mass formula](#prop:unified-curvature-rank-mass-formula),
+the categorical mass of a knot $\mathcal{K}$ probed by test element
+$\mathcal{T} \in A = H_n(R, q)$ decomposes as a sum over GB-filtration
+strata.  This proposition refines that decomposition by splitting each
+stratum into a
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/chirality-residue-mass-term.ts
 theorem chirality_residue_mass_term : True := by
   -- TODO: replace `True` with the real statement and discharge it.

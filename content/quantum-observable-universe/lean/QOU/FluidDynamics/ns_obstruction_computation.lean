@@ -12,9 +12,17 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.FluidDynamics
 
-/-- QOU.FluidDynamics.ns_obstruction_computation
+/-- **Content statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+Let $(\mathbf{C}, A, \tau)$ be the Descartes universe with
+$\chi(A) = -6$ (Bring's surface of genus 4).  Let $\Sigma$ be
+the collision locus of an anti-parallel vortex pair with
+linking number $\mathrm{lk} = 1$.
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/ns-obstruction-computation.ts
 theorem ns_obstruction_computation : True := by
   -- TODO: replace `True` with the real statement and discharge it.

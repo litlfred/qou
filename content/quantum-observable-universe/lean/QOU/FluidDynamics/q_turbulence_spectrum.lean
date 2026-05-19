@@ -12,9 +12,17 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.FluidDynamics
 
-/-- $q$-deformed energy cascade and modified Kolmogorov spectrum
+/-- **Content statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+In the brane fluid with [substrate parameter](#def:substrate-parameter)
+$q > 1$ and [Planck--Reynolds number](#rem:planck-reynolds)
+$\mathrm{Re}_q = 2/(q-1)$, the energy spectrum of a turbulent
+vortex tangle satisfies a $q$-deformed Kolmogorov law.
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.ts
 theorem q_turbulence_spectrum : True := by
   -- TODO: replace `True` with the real statement and discharge it.

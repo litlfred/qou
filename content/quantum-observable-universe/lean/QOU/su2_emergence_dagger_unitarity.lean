@@ -12,9 +12,16 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU
 
-/-- Frobenius dagger forces $G \\subseteq \\mathrm{U}(2)$
+/-- **Lemma statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+Under the QOU hypotheses of [emergence of the gauge group](#thm:su2-emergence),
+every tensor automorphism $g \in G$ preserves the Frobenius dagger
+on $\tau(V)$; equivalently, $G \subseteq \mathrm{U}(2)$.
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/su2-emergence-dagger-unitarity.ts
 theorem su2_emergence_dagger_unitarity : True := by
   -- TODO: replace `True` with the real statement and discharge it.

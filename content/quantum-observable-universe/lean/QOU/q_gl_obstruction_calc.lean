@@ -12,9 +12,17 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU
 
-/-- Obstruction to $q$-flatness
+/-- **Content statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with
+$\chi(A) \neq 0$ and obstruction class
+$\kappa_0 = e(\xi) \in H^2(\mathcal{S}, \mathbb{G}_m)$
+([quantum characteristic classes](#def:quantum-characteristic-classes)).
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/q-geometric-langlands/q-gl-obstruction-calc.ts
 theorem q_gl_obstruction_calc : True := by
   -- TODO: replace `True` with the real statement and discharge it.

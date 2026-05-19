@@ -12,9 +12,19 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.FluidDynamics
 
-/-- Categorical helicity conservation
+/-- **Content statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+Let $(\mathbf{C}, \varTheta, G, \mathcal{S})$ be a
+[QOU](#def:quantum-observable-universe) with brane fluid velocity
+$v = \nabla_A S$ and vorticity
+$\omega = \mathrm{curl}_Av = \nabla_A \times v$.  Define the
+**categorical helicity** of a vortex configuration
+$\{\varrho_1, \ldots, \varrho_n\}$ as
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/helicity-conservation.ts
 theorem helicity_conservation : True := by
   -- TODO: replace `True` with the real statement and discharge it.

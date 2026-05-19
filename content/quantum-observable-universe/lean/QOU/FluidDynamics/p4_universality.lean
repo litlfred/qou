@@ -12,9 +12,18 @@ CLAUDE.md §1.
 
 namespace QOU.FluidDynamics
 
-/-- p4 universality
+/-- **Content statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+The [critical exponent](#conj:critical-exponent) $\alpha = 4/3$
+governs the rate at which enstrophy diverges as $q \to 1$.
+The question is whether $\alpha$ depends on the initial data
+$v_0$ or only on the categorical invariants of
+$(\mathbf{C}, A, \tau)$.
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/p4-universality.ts
 theorem p4_universality : True := by
   -- TODO: replace `True` with the real statement and discharge it.

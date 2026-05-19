@@ -12,9 +12,17 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.FluidDynamics
 
-/-- Discrete vortex mode spectrum
+/-- **Content statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+Let $\varrho$ be a stable vortex filament of length $L$ in the
+brane fluid with [substrate parameter](#def:substrate-parameter)
+$q > 1$, and let $\Delta_q$ be the $q$-Laplacian acting on
+sections of the normal bundle $N_\varrho$.  Then:
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts
 theorem discrete_vortex_spectrum : True := by
   -- TODO: replace `True` with the real statement and discharge it.

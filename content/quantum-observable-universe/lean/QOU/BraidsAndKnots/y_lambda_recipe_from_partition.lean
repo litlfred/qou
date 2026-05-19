@@ -15,9 +15,18 @@ this plural `QOU.BraidsAndKnots` namespace was inherited from existing
 
 namespace QOU.BraidsAndKnots
 
-/-- y_lambda recipe from partition
+/-- **Content statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+**Proposition (recipe: $\lambda \mapsto y_\lambda(q)$ as q-rational).**
+*Given a partition $\lambda \,\vdash\, n$, the Jones-Markov central
+coefficient $y_\lambda(q)$ is determined by the following algorithm,
+yielding a rational function in $\sqrt q$ with cyclotomic
+denominator.*
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/y-lambda-recipe-from-partition.ts
 theorem y_lambda_recipe_from_partition : True := by
   -- TODO: replace `True` with the real statement and discharge it.

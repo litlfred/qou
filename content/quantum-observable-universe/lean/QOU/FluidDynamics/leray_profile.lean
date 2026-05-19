@@ -12,9 +12,20 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.FluidDynamics
 
-/-- QOU.FluidDynamics.leray_profile
+/-- **Content statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+> **Summary.** Near the blowup time $T^*$, the singular NS
+> solution approaches a self-similar Leray profile $V(\xi)$ on
+> the rescaled coordinate $\xi = (x-x_0)/\sqrt{T^*-t}$.  The QOU
+> representation theory constrains this profile to a finite-
+> dimensional ansatz: $V$ is a sum of weight-$j$ matrix entries
+> of $\mathrm{SU}_q(2)$ representations, with coefficients fixed
+> by the singular gerbe data $(\Sigma, n^*, \kappa_{n^*})$.
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/leray-profile.ts
 theorem leray_profile : True := by
   -- TODO: replace `True` with the real statement and discharge it.

@@ -12,9 +12,20 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.BraidKnot
 
-/-- QOU.BraidKnot.spectral_sequence_h3_explicit
+/-- **Content statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+This proposition computes the differentials $d_1, d_2$ of the
+GB-filtered Hochschild spectral sequence
+([GB spectral sequence](#prop:gb-spectral-sequence)) **explicitly**
+on $H_3(R, q)$ over the paper's ground ring $R$ (paper's categorical base ring),
+making the page identifications
+([$E_\infty$ page identifications](#prop:e-infinity-page-identifications))
+concrete for the single-nucleon case.
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/spectral-sequence-h3-explicit.ts
 theorem spectral_sequence_h3_explicit : True := by
   -- TODO: replace `True` with the real statement and discharge it.

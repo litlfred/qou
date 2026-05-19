@@ -12,9 +12,20 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.HadronicMass
 
-/-- Nucleon Borromean topology and Hopf-link binding
+/-- **Lemma statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+The proton and neutron are each modelled as a Borromean
+configuration ($6_2^3$) of three quark vortices, bound internally by
+Hopf links $\mathcal{L}_{\mathrm{Hopf}}$ representing the
+color-exchange interaction.  Since the Hopf link is a torus link with
+$\mathrm{Vol}(\mathcal{L}_{\mathrm{Hopf}}) = 0$, its mass contribution
+arises entirely from the Skein functional, not from hyperbolic
+volume.
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/nucleon-borromean-topology.ts
 theorem nucleon_borromean_topology : True := by
   -- TODO: replace `True` with the real statement and discharge it.

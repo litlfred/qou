@@ -12,9 +12,21 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.BraidKnot
 
-/-- QOU.BraidKnot.confined_knot_binding
+/-- **Proposition statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+Let $\beta \in H_3(R, q)$ be a confined nuclear braid
+([atomic braid](#def:atomic-braid)) — typically
+$\beta = T_w = \mathtt{atom\_braid\_word\_3A}(Z, N)$
+([`mass_at_3A_proper.atom_braid_word_3A`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/mass_at_3A_proper.py))
+— built from crossing operators
+$c_k \sigma_{i_k} + d_k \cdot 1 \in H_3(R, q)$ at generators
+$\sigma_{i_k}$ with parameters $(c_k, d_k)$ (the $k$-th letter of
+$T_w$ in its GB normal form).
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/confined-knot-binding.ts
 theorem confined_knot_binding : True := by
   -- TODO: replace `True` with the real statement and discharge it.

@@ -12,9 +12,20 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.BraidKnot
 
-/-- QOU.BraidKnot.terms_2_6_higher_operations
+/-- **Content statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+Terms 2 (single-generator brane tower $\sum \Phi_q(|\hat V_i|)$) and
+6 (jet-level prefix corrections) of the unified knot mass formula
+([unified knot mass](#thm:knot-mass-formula-unified)) are the two
+remaining open identifications in the spectral-sequence framework
+([$E_\infty$ page identifications](#prop:e-infinity-page-identifications)).
+This proposition sketches concrete avenues to close both via
+**higher operations** on the Hochschild cohomology of $H_n(R, q)$.
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/terms-2-6-higher-operations.ts
 theorem terms_2_6_higher_operations : True := by
   -- TODO: replace `True` with the real statement and discharge it.

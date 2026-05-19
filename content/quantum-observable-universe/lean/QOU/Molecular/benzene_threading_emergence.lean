@@ -12,9 +12,20 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.Molecular
 
-/-- Threading link $T(2,6)$ emerges as the LP-optimal $\\pi$ configuration
+/-- **Proposition statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+The LP dual of the benzene molecular braid in $H_{120}(q)$
+selects the threading link $T(2, 6) = (\sigma_1\sigma_2 \cdots
+\sigma_5)^2$ as the optimal $\pi$-electron configuration.*
+
+*After the $\sigma$-bond framework is assembled (steps 1--4),
+there remain 6 unpaired electrons — one from each carbon's $2p_z$
+orbital.  The LP dual optimises their placement:*
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/benzene-threading-emergence.ts
 theorem benzene_threading_emergence : True := by
   -- TODO: replace `True` with the real statement and discharge it.

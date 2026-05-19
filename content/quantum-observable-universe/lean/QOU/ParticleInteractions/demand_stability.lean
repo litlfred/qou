@@ -12,9 +12,16 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.ParticleInteractions
 
-/-- Demand profile determines nuclear and atomic stability
+/-- **Proposition statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+The derived atom $\mathcal{A}(Z, N)$ is:*
+
+1.
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/demand-stability.ts
 theorem demand_stability : True := by
   -- TODO: replace `True` with the real statement and discharge it.

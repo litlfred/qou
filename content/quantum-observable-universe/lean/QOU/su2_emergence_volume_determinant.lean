@@ -12,9 +12,16 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU
 
-/-- Volume constraint forces $\\det(g_V) = 1$
+/-- **Lemma statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+Under the QOU hypotheses of [emergence of the gauge group](#thm:su2-emergence),
+every tensor automorphism $g \in G$ of the fibre functor $\tau$
+satisfies $\det(g_V) = 1$; equivalently, $G \subseteq \mathrm{SL}(2)$.
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/su2-emergence-volume-determinant.ts
 theorem su2_emergence_volume_determinant : True := by
   -- TODO: replace `True` with the real statement and discharge it.

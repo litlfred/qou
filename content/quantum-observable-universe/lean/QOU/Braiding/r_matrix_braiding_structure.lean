@@ -12,9 +12,16 @@ CLAUDE.md §1.
 
 namespace QOU.Braiding
 
-/-- r matrix braiding structure
+/-- **Content statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+The universal $R$-matrix
+$\mathcal{R} \in \mathcal{U}_q(\mathfrak{su}(2)) \hat{\otimes} \mathcal{U}_q(\mathfrak{su}(2))$
+([quantum SU(2)](#def:quantum-su2)) satisfies the Yang--Baxter equation
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/r-matrix-braiding-structure.ts
 theorem r_matrix_braiding_structure : True := by
   -- TODO: replace `True` with the real statement and discharge it.

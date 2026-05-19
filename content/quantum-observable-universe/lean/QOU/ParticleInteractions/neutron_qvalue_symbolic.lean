@@ -12,9 +12,19 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.ParticleInteractions
 
-/-- Symbolic $Q$-value of free neutron decay
+/-- **Content statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+The $Q$-value of free neutron $\beta^-$-decay
+$n \to p + e^- + \bar\nu_e$ is derived symbolically from
+the categorical three-calibration inputs $m_e$ ($H^0$) and $q_0$ ($H^1$,
+fixed by $m_\mu/m_e$) — $Q_\beta(n)$ ($H^2$) is the
+$\beta$-decay datum being predicted, not used as input
+([three-calibration discipline](#prop:three-calibration-discipline)).
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.ts
 theorem neutron_qvalue_symbolic : True := by
   -- TODO: replace `True` with the real statement and discharge it.

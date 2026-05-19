@@ -12,9 +12,16 @@ CLAUDE.md §1.
 
 namespace QOU.WedderburnMass
 
-/-- exterior square borromean
+/-- **Proposition statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+Let $V_{\mathrm{nat}} = \mathbb{C}^{10}$ be the natural permutation
+representation of $S_{10}$ (or its q-deformation $H_{10}(q)$
+acting via the standard projection).  Then the
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/exterior-square-borromean.ts
 theorem exterior_square_borromean : True := by
   -- TODO: replace `True` with the real statement and discharge it.

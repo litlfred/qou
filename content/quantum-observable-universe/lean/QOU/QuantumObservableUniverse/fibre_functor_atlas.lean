@@ -12,9 +12,20 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.QuantumObservableUniverse
 
-/-- QOU.QuantumObservableUniverse.fibre_functor_atlas
+/-- **Proposition statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe
+with $G = \mathrm{Aut}^{\otimes}(\tau)$
+([Tannaka–Krein](#rem:tannaka-krein-overview)).  In the following,
+$\omega, \omega'$ denote arbitrary fibre functors on $\mathbf{C}$
+(not the canonical $\tau$).  Then:*
+
+1.
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/fibre-functor-atlas.ts
 theorem fibre_functor_atlas : True := by
   -- TODO: replace `True` with the real statement and discharge it.

@@ -12,9 +12,18 @@ CLAUDE.md §1.
 
 namespace QOU.Braiding
 
-/-- fermion boson knot link
+/-- **Content statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+**Proposition.**
+The fermion--boson decomposition
+([fermion--boson decomposition](#def:fermion-boson-decomposition))
+coincides with the knot--link decomposition of the $T(2,n)$
+torus family on the Bring's surface:
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/fermion-boson-knot-link.ts
 theorem fermion_boson_knot_link : True := by
   -- TODO: replace `True` with the real statement and discharge it.

@@ -12,9 +12,20 @@ CLAUDE.md §1.
 
 namespace QOU.FluidDynamics
 
-/-- core levi form
+/-- **Content statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+Let $\varrho$ be a [geodesic vortex](#rem:geodesic-vortices) in
+the [state bundle](#ex:c-quantum-observable-universe) $(\mathcal{S}, \varTheta)$
+with contact form $\varTheta$ and
+[Levi form](#def:levi-form-defect)
+$\mathcal{L}_\varTheta(V, W) = -id\varTheta(V, \bar{W})$.  At each
+point $p \in \varrho$, let $N_p\varrho \subset \ker(\varTheta_p)$ be
+the horizontal normal plane.  Define:
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/core-levi-form.ts
 theorem core_levi_form : True := by
   -- TODO: replace `True` with the real statement and discharge it.

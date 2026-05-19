@@ -12,9 +12,19 @@ CLAUDE.md §1.
 
 namespace QOU.Torsion
 
-/-- quantum dilogarithm
+/-- **Content statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+In the archimedean realisation, the transient trace contribution
+$\mathrm{tr}_{\mathrm{trans}}(\varrho, p_i)$ from the
+[topological decomposition of mass](#thm:topological-mass) evaluates
+to the quantum dilogarithm $\Phi_q(z_i)$, where $z_i$ is the spectral
+coordinate of $p_i$ in the Briggs--Klein chart
+([Briggs--Klein chart](#def:briggs-klein-chart)).
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.ts
 theorem quantum_dilogarithm : True := by
   -- TODO: replace `True` with the real statement and discharge it.

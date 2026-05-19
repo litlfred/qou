@@ -12,9 +12,17 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.Descartes
 
-/-- QOU.Descartes.noble_gas_characterization
+/-- **Content statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+An atom $\mathcal{A}(p,n)$ is a **noble gas** if and only if
+its electron cloud $p \cdot T_{2,3}$ decomposes as a disjoint
+union of closed sub-Hopf links — that is, every shell is
+topologically **full of curls**.
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/noble-gas-characterization.ts
 theorem noble_gas_characterization : True := by
   -- TODO: replace `True` with the real statement and discharge it.

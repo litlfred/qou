@@ -12,9 +12,31 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.ParticleInteractions
 
-/-- QOU.ParticleInteractions.positron_correction
+/-- **Proposition statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+The character sum $\Sigma_\lambda \chi_\lambda(\Delta)$
+subtracts the categorical action of* both *fermions produced
+in pair creation (2 units of $m_e$), but the Q-value subtracts
+only the emitted electron (1 unit).  The difference is the
+positron action:*
+
+$$
+  Q = \Sigma_{\mathrm{char}} \times m_e + 1 \times m_e
+$$
+
+*where the $+1$ is $m_{e^+}/m_e$.*
+
+## When the correction applies
+
+The positron correction is needed in two regimes
+([parity regime selection](#thm:parity-regime-selection)):
+
+1.
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/positron-correction.ts
 theorem positron_correction : True := by
   -- TODO: replace `True` with the real statement and discharge it.

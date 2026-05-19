@@ -12,9 +12,30 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.Information
 
-/-- Mass as photon threading cost
+/-- **Proposition statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+Let $\mathfrak{H}$ be a knot composite with braid word $\beta_{\mathfrak{H}} \in B_n$.
+The categorical mass $\mathfrak{m}_{\mathfrak{H}}$
+([mass identity](#def:mass-identity)) equals the total
+Gröbner--Shirshov reduction cost of threading the photon strand
+$\gamma$ through the hadron braid:*
+
+$$
+  \mathfrak{m}_{\mathfrak{H}}
+  =  (q - 1)^2 \sum_{\text{Hecke steps}}
+  |c_w| \cdot |q - q^{-1}|,
+$$
+
+*where the sum is over all Hecke reductions
+$\sigma_i^2 \to (q - q^{-1})\sigma_i + 1$ needed to move the
+photon strand from above $\beta_{\mathfrak{H}}$ to below $\beta_{\mathfrak{H}}$ in the
+augmented braid $\gamma \otimes \beta_{\mathfrak{H}} \in B_{n+1}$, and
+$c_w$ are the coefficients at each step.*
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/information-theory/photon-threading-mass.ts
 theorem photon_threading_mass : True := by
   -- TODO: replace `True` with the real statement and discharge it.

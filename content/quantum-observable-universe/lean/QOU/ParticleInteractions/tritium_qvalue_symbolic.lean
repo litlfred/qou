@@ -12,9 +12,14 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.ParticleInteractions
 
-/-- QOU.ParticleInteractions.tritium_qvalue_symbolic
+/-- **Statement statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+**Proposition.**
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/tritium-qvalue-symbolic.ts
 theorem tritium_qvalue_symbolic : True := by
   -- TODO: replace `True` with the real statement and discharge it.

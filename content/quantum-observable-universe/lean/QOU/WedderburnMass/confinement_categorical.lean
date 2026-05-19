@@ -12,9 +12,18 @@ CLAUDE.md §1.
 
 namespace QOU.WedderburnMass
 
-/-- confinement categorical
+/-- **Proposition statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+The collapse of the GB-filtration spectral sequence
+([spectral sequence collapse](#prop:spectral-sequence-collapse))
+is the categorical statement of color confinement: only central
+elements of $A = H_n(R, q)$ survive as physical observables, and
+"colored" non-central elements are cohomologically trivial.*
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/confinement-categorical.ts
 theorem confinement_categorical : True := by
   -- TODO: replace `True` with the real statement and discharge it.

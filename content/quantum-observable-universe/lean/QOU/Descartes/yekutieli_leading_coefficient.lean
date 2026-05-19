@@ -12,9 +12,17 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.Descartes
 
-/-- Yekutieli obstruction equals the leading Chebyshev coefficient
+/-- **Lemma statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+For $T_{2,p}$ at level $n = g + 1 = 5$, the Yekutieli obstruction
+$\kappa(T_{2,p}) \in H^2(\mathcal{S}, \mathcal{B})$ equals the
+leading Chebyshev coefficient $c_{(p-1)/2} = 1$.  In particular
+$\kappa(T_{2,p}) \neq 0$ for $q \neq 1$.
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/yekutieli-leading-coefficient.ts
 theorem yekutieli_leading_coefficient : True := by
   -- TODO: replace `True` with the real statement and discharge it.

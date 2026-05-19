@@ -12,9 +12,17 @@ citation per CLAUDE.md §1.
 
 namespace QOU.Observations
 
-/-- Hecke transfer matrices satisfy Blitvić's pair-partition combinatorial hypothesis for the non-commutative CLT
+/-- **Proposition statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+The non-commutative random variables $\sigma_i \in H_\infty(q)$
+under the Markov trace $\mathrm{tr}_M$ satisfy the pair-partition
+combinatorial hypothesis of Blitvić's two-parameter non-commutative
+central limit theorem [`blitvic2012`].*
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/hecke-satisfies-blitvic-hypothesis.ts
 theorem hecke_satisfies_blitvic_hypothesis : True := by
   -- TODO: replace `True` with the real statement and discharge it.

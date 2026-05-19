@@ -12,9 +12,26 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.HadronicMass
 
-/-- Pair Skein mass and crossing-by-crossing recursion
+/-- **Lemma statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+The Borromean braid of a nucleon with quarks $(q_1, q_2, q_3)$
+contributes a pair Skein mass at each of its three color-exchange
+crossing pairs:*
+
+$$
+  \mathcal{S}_{ab}(q)
+  =
+  \frac{q\mu_a +  q^{-1}\mu_b}
+       {q^{1/2} + q^{-1/2}},
+$$
+
+*where $\mu_a$ is the dressed quark Skein mass of species $a$.  The
+total nucleon mass is the sum over the three crossing pairs:
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/pair-skein-mass-formula.ts
 theorem pair_skein_mass_formula : True := by
   -- TODO: replace `True` with the real statement and discharge it.

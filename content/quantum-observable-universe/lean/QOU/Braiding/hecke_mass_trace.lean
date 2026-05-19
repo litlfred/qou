@@ -12,9 +12,17 @@ CLAUDE.md §1.
 
 namespace QOU.Braiding
 
-/-- hecke mass trace
+/-- **Content statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+Let $(\mathbf{C}, A, \tau)$ be a QOU, let $\varrho \colon \mathbf{1} \to A$
+be a vortex with braid representative $\beta \in B_n$, and let
+$\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$ be its Hecke mass element
+([Hecke mass element](#def:hecke-mass-element)).
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/hecke-mass-trace.ts
 theorem hecke_mass_trace : True := by
   -- TODO: replace `True` with the real statement and discharge it.

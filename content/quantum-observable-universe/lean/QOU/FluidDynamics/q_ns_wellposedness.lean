@@ -12,9 +12,21 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.FluidDynamics
 
-/-- Global regularity of the $q$-deformed Navier--Stokes equation
+/-- **Content statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+Let $(\mathbf{C}, A, \tau)$ be a
+[QOU](#def:quantum-observable-universe) with
+[substrate parameter](#def:substrate-parameter)
+$q \in \mathrm{End}(\mathbf{1})$, $q > 1$.  Let
+$\Delta_q = d_q\delta_q + \delta_q d_q$ be the
+[$q$-Laplacian](#rem:q-laplacian-interpretation) on $\Omega^k(A)$
+and let $\nu_q = \frac{1}{2}(1 - q^{-1}) > 0$ be the kinematic
+viscosity.
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types (Polynomial /
+    Matrix / categorical structures / etc.) and translating the manuscript
+    claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/q-ns-wellposedness.ts
 theorem q_ns_wellposedness : True := by
   -- TODO: replace `True` with the real statement and discharge it.
