@@ -13,12 +13,12 @@ CLAUDE.md §1.
 namespace QOU.FluidDynamics
 
 
-/-- Abstract context for the `p4_universality` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
-    claim of the lemma. -/
+/-- Abstract context for the `p4_universality` claim — manuscript-themed
+    typed fields below; `holds` carries the residual `Prop` claim. -/
 class P4UniversalityContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `p4_universality` below for the manuscript statement). -/
+  /-- The categorical object / monoidal structure. -/
+  CategoricalObj : Type
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Content statement** (from manuscript):

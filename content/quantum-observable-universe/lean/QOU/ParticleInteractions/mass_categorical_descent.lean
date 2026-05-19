@@ -13,12 +13,14 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.ParticleInteractions
 
 
-/-- Abstract context for the `mass_categorical_descent` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
-    claim of the lemma. -/
+/-- Abstract context for the `mass_categorical_descent` claim — manuscript-themed
+    typed fields below; `holds` carries the residual `Prop` claim. -/
 class MassCategoricalDescentContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `mass_categorical_descent` below for the manuscript statement). -/
+  /-- The categorical object / monoidal structure. -/
+  CategoricalObj : Type
+  /-- The categorical mass / binding energy. -/
+  mass : ℝ
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Content statement** (from manuscript):

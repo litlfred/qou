@@ -13,12 +13,14 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.ParticleInteractions
 
 
-/-- Abstract context for the `confinement_frobenius_reciprocity` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
-    claim of the lemma. -/
+/-- Abstract context for the `confinement_frobenius_reciprocity` claim — manuscript-themed
+    typed fields below; `holds` carries the residual `Prop` claim. -/
 class ConfinementFrobeniusReciprocityContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `confinement_frobenius_reciprocity` below for the manuscript statement). -/
+  /-- The categorical object / monoidal structure. -/
+  CategoricalObj : Type
+  /-- The LP shadow-price / dual variable. -/
+  shadow_price : ℝ
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Proposition statement** (from manuscript):

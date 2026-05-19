@@ -13,12 +13,14 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.Observations
 
 
-/-- Abstract context for the `substrate_consistency_window` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
-    claim of the lemma. -/
+/-- Abstract context for the `substrate_consistency_window` claim — manuscript-themed
+    typed fields below; `holds` carries the residual `Prop` claim. -/
 class SubstrateConsistencyWindowContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `substrate_consistency_window` below for the manuscript statement). -/
+  /-- The categorical object / monoidal structure. -/
+  CategoricalObj : Type
+  /-- The categorical mass / binding energy. -/
+  mass : ℝ
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Content statement** (from manuscript):

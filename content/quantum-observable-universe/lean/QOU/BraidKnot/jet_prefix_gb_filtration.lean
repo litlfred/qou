@@ -13,12 +13,12 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.BraidKnot
 
 
-/-- Abstract context for the `jet_prefix_gb_filtration` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
-    claim of the lemma. -/
+/-- Abstract context for the `jet_prefix_gb_filtration` claim — manuscript-themed
+    typed fields below; `holds` carries the residual `Prop` claim. -/
 class JetPrefixGbFiltrationContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `jet_prefix_gb_filtration` below for the manuscript statement). -/
+  /-- The categorical object / monoidal structure. -/
+  CategoricalObj : Type
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Proposition statement** (from manuscript):

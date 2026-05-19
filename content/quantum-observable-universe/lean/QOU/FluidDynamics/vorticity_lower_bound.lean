@@ -13,12 +13,14 @@ CLAUDE.md §1.
 namespace QOU.FluidDynamics
 
 
-/-- Abstract context for the `vorticity_lower_bound` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
-    claim of the lemma. -/
+/-- Abstract context for the `vorticity_lower_bound` claim — manuscript-themed
+    typed fields below; `holds` carries the residual `Prop` claim. -/
 class VorticityLowerBoundContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `vorticity_lower_bound` below for the manuscript statement). -/
+  /-- The categorical object / monoidal structure. -/
+  CategoricalObj : Type
+  /-- The substrate parameter `q`. -/
+  q : ℝ
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Content statement** (from manuscript):

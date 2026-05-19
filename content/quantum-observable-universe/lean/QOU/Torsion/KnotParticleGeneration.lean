@@ -13,12 +13,12 @@ CLAUDE.md §1.
 namespace QOU.Torsion
 
 
-/-- Abstract context for the `KnotParticleGeneration` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
-    claim of the lemma. -/
+/-- Abstract context for the `KnotParticleGeneration` claim — manuscript-themed
+    typed fields below; `holds` carries the residual `Prop` claim. -/
 class KnotparticlegenerationContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `KnotParticleGeneration` below for the manuscript statement). -/
+  /-- The topological-link / knot type. -/
+  Link : Type
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Content statement** (from manuscript):

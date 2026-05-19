@@ -16,12 +16,16 @@ this plural `QOU.BraidsAndKnots` namespace was inherited from existing
 namespace QOU.BraidsAndKnots
 
 
-/-- Abstract context for the `ew_interface_knot` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
-    claim of the lemma. -/
+/-- Abstract context for the `ew_interface_knot` claim — manuscript-themed
+    typed fields below; `holds` carries the residual `Prop` claim. -/
 class EwInterfaceKnotContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `ew_interface_knot` below for the manuscript statement). -/
+  /-- The categorical object / monoidal structure. -/
+  CategoricalObj : Type
+  /-- A root-of-unity parameter (e.g. `ζ_p`). -/
+  zeta : ℂ
+  /-- The topological-link / knot type. -/
+  Link : Type
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Content statement** (from manuscript):

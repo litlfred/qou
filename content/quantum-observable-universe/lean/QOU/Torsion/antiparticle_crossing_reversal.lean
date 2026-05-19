@@ -13,12 +13,12 @@ CLAUDE.md §1.
 namespace QOU.Torsion
 
 
-/-- Abstract context for the `antiparticle_crossing_reversal` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
-    claim of the lemma. -/
+/-- Abstract context for the `antiparticle_crossing_reversal` claim — manuscript-themed
+    typed fields below; `holds` carries the residual `Prop` claim. -/
 class AntiparticleCrossingReversalContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `antiparticle_crossing_reversal` below for the manuscript statement). -/
+  /-- The categorical object / monoidal structure. -/
+  CategoricalObj : Type
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Content statement** (from manuscript):

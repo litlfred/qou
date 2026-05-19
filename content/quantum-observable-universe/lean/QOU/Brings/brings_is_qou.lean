@@ -13,12 +13,12 @@ CLAUDE.md §1.
 namespace QOU.Brings
 
 
-/-- Abstract context for the `brings_is_qou` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
-    claim of the lemma. -/
+/-- Abstract context for the `brings_is_qou` claim — manuscript-themed
+    typed fields below; `holds` carries the residual `Prop` claim. -/
 class BringsIsQouContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `brings_is_qou` below for the manuscript statement). -/
+  /-- The categorical object / monoidal structure. -/
+  CategoricalObj : Type
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Content statement** (from manuscript):

@@ -13,12 +13,12 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.QuantumBloch
 
 
-/-- Abstract context for the `pentagon_uv_commutation` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
-    claim of the lemma. -/
+/-- Abstract context for the `pentagon_uv_commutation` claim — manuscript-themed
+    typed fields below; `holds` carries the residual `Prop` claim. -/
 class PentagonUvCommutationContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `pentagon_uv_commutation` below for the manuscript statement). -/
+  /-- The categorical object / monoidal structure. -/
+  CategoricalObj : Type
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Content statement** (from manuscript):

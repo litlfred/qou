@@ -13,12 +13,12 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.ParticleInteractions
 
 
-/-- Abstract context for the `tritium_qvalue_symbolic` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
-    claim of the lemma. -/
+/-- Abstract context for the `tritium_qvalue_symbolic` claim — manuscript-themed
+    typed fields below; `holds` carries the residual `Prop` claim. -/
 class TritiumQvalueSymbolicContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `tritium_qvalue_symbolic` below for the manuscript statement). -/
+  /-- The categorical object / monoidal structure. -/
+  CategoricalObj : Type
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Manuscript statement** (from manuscript):

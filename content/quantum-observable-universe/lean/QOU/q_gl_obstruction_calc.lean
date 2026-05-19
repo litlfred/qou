@@ -13,12 +13,12 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU
 
 
-/-- Abstract context for the `q_gl_obstruction_calc` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
-    claim of the lemma. -/
+/-- Abstract context for the `q_gl_obstruction_calc` claim — manuscript-themed
+    typed fields below; `holds` carries the residual `Prop` claim. -/
 class QGlObstructionCalcContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `q_gl_obstruction_calc` below for the manuscript statement). -/
+  /-- The categorical object / monoidal structure. -/
+  CategoricalObj : Type
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Content statement** (from manuscript):

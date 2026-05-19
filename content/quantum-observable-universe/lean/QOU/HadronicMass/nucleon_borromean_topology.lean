@@ -13,12 +13,18 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.HadronicMass
 
 
-/-- Abstract context for the `nucleon_borromean_topology` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
-    claim of the lemma. -/
+/-- Abstract context for the `nucleon_borromean_topology` claim — manuscript-themed
+    typed fields below; `holds` carries the residual `Prop` claim. -/
 class NucleonBorromeanTopologyContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `nucleon_borromean_topology` below for the manuscript statement). -/
+  /-- The categorical object / monoidal structure. -/
+  CategoricalObj : Type
+  /-- The topological-link / knot type. -/
+  Link : Type
+  /-- The hyperbolic volume function. -/
+  Vol : ℝ
+  /-- The categorical mass / binding energy. -/
+  mass : ℝ
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Lemma statement** (from manuscript):

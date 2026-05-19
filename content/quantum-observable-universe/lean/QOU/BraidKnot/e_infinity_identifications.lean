@@ -13,12 +13,14 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.BraidKnot
 
 
-/-- Abstract context for the `e_infinity_identifications` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
-    claim of the lemma. -/
+/-- Abstract context for the `e_infinity_identifications` claim — manuscript-themed
+    typed fields below; `holds` carries the residual `Prop` claim. -/
 class EInfinityIdentificationsContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `e_infinity_identifications` below for the manuscript statement). -/
+  /-- The topological-link / knot type. -/
+  Link : Type
+  /-- The categorical mass / binding energy. -/
+  mass : ℝ
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Content statement** (from manuscript):

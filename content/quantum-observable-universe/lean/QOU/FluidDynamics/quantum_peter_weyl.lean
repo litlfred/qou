@@ -13,12 +13,12 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.FluidDynamics
 
 
-/-- Abstract context for the `quantum_peter_weyl` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
-    claim of the lemma. -/
+/-- Abstract context for the `quantum_peter_weyl` claim — manuscript-themed
+    typed fields below; `holds` carries the residual `Prop` claim. -/
 class QuantumPeterWeylContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `quantum_peter_weyl` below for the manuscript statement). -/
+  /-- The categorical object / monoidal structure. -/
+  CategoricalObj : Type
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Content statement** (from manuscript):

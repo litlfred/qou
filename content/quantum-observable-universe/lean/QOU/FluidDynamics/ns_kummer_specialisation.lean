@@ -13,12 +13,12 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.FluidDynamics
 
 
-/-- Abstract context for the `ns_kummer_specialisation` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
-    claim of the lemma. -/
+/-- Abstract context for the `ns_kummer_specialisation` claim — manuscript-themed
+    typed fields below; `holds` carries the residual `Prop` claim. -/
 class NsKummerSpecialisationContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `ns_kummer_specialisation` below for the manuscript statement). -/
+  /-- The categorical object / monoidal structure. -/
+  CategoricalObj : Type
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Content statement** (from manuscript):

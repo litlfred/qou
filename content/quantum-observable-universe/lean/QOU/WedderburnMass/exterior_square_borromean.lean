@@ -13,12 +13,12 @@ CLAUDE.md §1.
 namespace QOU.WedderburnMass
 
 
-/-- Abstract context for the `exterior_square_borromean` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
-    claim of the lemma. -/
+/-- Abstract context for the `exterior_square_borromean` claim — manuscript-themed
+    typed fields below; `holds` carries the residual `Prop` claim. -/
 class ExteriorSquareBorromeanContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `exterior_square_borromean` below for the manuscript statement). -/
+  /-- The categorical object / monoidal structure. -/
+  CategoricalObj : Type
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Proposition statement** (from manuscript):

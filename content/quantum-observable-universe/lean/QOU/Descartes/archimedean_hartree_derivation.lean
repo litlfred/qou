@@ -13,12 +13,14 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.Descartes
 
 
-/-- Abstract context for the `archimedean_hartree_derivation` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
-    claim of the lemma. -/
+/-- Abstract context for the `archimedean_hartree_derivation` claim — manuscript-themed
+    typed fields below; `holds` carries the residual `Prop` claim. -/
 class ArchimedeanHartreeDerivationContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `archimedean_hartree_derivation` below for the manuscript statement). -/
+  /-- The categorical object / monoidal structure. -/
+  CategoricalObj : Type
+  /-- The categorical mass / binding energy. -/
+  mass : ℝ
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Proposition statement** (from manuscript):

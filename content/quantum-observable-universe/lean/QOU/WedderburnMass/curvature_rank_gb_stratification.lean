@@ -13,12 +13,12 @@ CLAUDE.md §1.
 namespace QOU.WedderburnMass
 
 
-/-- Abstract context for the `curvature_rank_gb_stratification` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
-    claim of the lemma. -/
+/-- Abstract context for the `curvature_rank_gb_stratification` claim — manuscript-themed
+    typed fields below; `holds` carries the residual `Prop` claim. -/
 class CurvatureRankGbStratificationContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `curvature_rank_gb_stratification` below for the manuscript statement). -/
+  /-- The categorical object / monoidal structure. -/
+  CategoricalObj : Type
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Proposition statement** (from manuscript):

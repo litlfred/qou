@@ -13,12 +13,16 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.BraidKnot
 
 
-/-- Abstract context for the `terms_2_6_higher_operations` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
-    claim of the lemma. -/
+/-- Abstract context for the `terms_2_6_higher_operations` claim — manuscript-themed
+    typed fields below; `holds` carries the residual `Prop` claim. -/
 class Terms26HigherOperationsContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `terms_2_6_higher_operations` below for the manuscript statement). -/
+  /-- The categorical object / monoidal structure. -/
+  CategoricalObj : Type
+  /-- The topological-link / knot type. -/
+  Link : Type
+  /-- The categorical mass / binding energy. -/
+  mass : ℝ
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Content statement** (from manuscript):

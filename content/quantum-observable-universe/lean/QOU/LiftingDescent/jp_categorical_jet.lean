@@ -13,12 +13,14 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.LiftingDescent
 
 
-/-- Abstract context for the `jp_categorical_jet` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
-    claim of the lemma. -/
+/-- Abstract context for the `jp_categorical_jet` claim — manuscript-themed
+    typed fields below; `holds` carries the residual `Prop` claim. -/
 class JpCategoricalJetContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `jp_categorical_jet` below for the manuscript statement). -/
+  /-- The categorical object / monoidal structure. -/
+  CategoricalObj : Type
+  /-- The topological-link / knot type. -/
+  Link : Type
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Lemma statement** (from manuscript):

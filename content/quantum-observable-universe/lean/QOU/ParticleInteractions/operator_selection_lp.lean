@@ -13,12 +13,16 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.ParticleInteractions
 
 
-/-- Abstract context for the `operator_selection_lp` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
-    claim of the lemma. -/
+/-- Abstract context for the `operator_selection_lp` claim — manuscript-themed
+    typed fields below; `holds` carries the residual `Prop` claim. -/
 class OperatorSelectionLpContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `operator_selection_lp` below for the manuscript statement). -/
+  /-- The categorical object / monoidal structure. -/
+  CategoricalObj : Type
+  /-- The topological-link / knot type. -/
+  Link : Type
+  /-- The LP shadow-price / dual variable. -/
+  shadow_price : ℝ
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Proposition statement** (from manuscript):

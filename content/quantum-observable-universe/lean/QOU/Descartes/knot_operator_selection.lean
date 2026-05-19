@@ -13,12 +13,14 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.Descartes
 
 
-/-- Abstract context for the `knot_operator_selection` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
-    claim of the lemma. -/
+/-- Abstract context for the `knot_operator_selection` claim — manuscript-themed
+    typed fields below; `holds` carries the residual `Prop` claim. -/
 class KnotOperatorSelectionContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `knot_operator_selection` below for the manuscript statement). -/
+  /-- The categorical object / monoidal structure. -/
+  CategoricalObj : Type
+  /-- The topological-link / knot type. -/
+  Link : Type
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Proposition statement** (from manuscript):
