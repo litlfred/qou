@@ -1171,6 +1171,16 @@
       "fixes_applied": 0,
       "fix_commit": "(this commit)",
       "note": "New bib entry for Blitvi\u0107's 'Two-Parameter Non-Commutative Central Limit Theorem' (arXiv:1205.4003, the wrongly-fetched PDF at uploads/blitvic2012.pdf). Currently uncited in QOU (the existing 9 blitvic2012 citation sites all reference the OTHER Blitvi\u0107 paper, 'The (q,t)-Gaussian process'). The PDF now has a canonical bib home; can be renamed to uploads/blitvic2012-clt.pdf in a follow-up upload-branch commit, or left in place pending decision."
+    },
+    {
+      "id": "fulton-harris1991",
+      "status": "verified-clean",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T17:55:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 5,
+      "fix_commit": "(this commit)",
+      "note": "Fulton & Harris, 'Representation Theory: A First Course' (Springer GTM 129, 1991). New bib entry split from fulton1991 (which stays as 'Young Tableaux' LMS Student Texts 35). 5 .lean Ref lines in baryon-product-from-alt.lean re-keyed from fulton1991 \u2192 fulton-harris1991 (all reference Repn Theory \u00a72 / \u00a72.1 Frobenius character)."
     }
   ]
 }

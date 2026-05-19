@@ -3803,6 +3803,31 @@ export const references: CSLData[] = [
     ISBN: "9780521567244",
   }),
 
+  // ── Fulton & Harris 1991 (Representation Theory: A First Course) ──
+  // Distinct from fulton1991 (Young Tableaux). Added during bib audit
+  // triage on 2026-05-19 because content/.../baryon-product-from-alt.lean
+  // cites '[fulton1991] Representation Theory: A First Course, §2'
+  // (i.e. Fulton-Harris); per user's "keep LMS w/ yt" directive, the
+  // existing fulton1991 stays as Young Tableaux and this entry is added
+  // separately. The 5 baryon-product-from-alt.lean Ref lines need to be
+  // re-keyed to `fulton-harris1991` in a follow-up cleanup.
+  ref({
+    id: "fulton-harris1991",
+    type: "book",
+    title: "Representation Theory: A First Course",
+    author: [
+      { family: "Fulton", given: "William" },
+      { family: "Harris", given: "Joe" },
+    ],
+    issued: { "date-parts": [[1991]] },
+    publisher: "Springer",
+    "publisher-place": "New York",
+    "collection-title": "Graduate Texts in Mathematics",
+    "collection-number": "129",
+    ISBN: "9780387974958",
+    DOI: "10.1007/978-1-4612-0979-9",
+  }),
+
   ref({
     id: "wald1984",
     type: "book",
@@ -3849,16 +3874,14 @@ export const references: CSLData[] = [
     // 1980 monograph (Annals Studies 94). The year mismatch is preserved
     // as-is so the .lean citation resolves without per-file rewrites.
     id: "borel1986",
-    type: "book",
-    title: "Continuous Cohomology, Discrete Subgroups, and Representations of Reductive Groups",
+    type: "article-journal",
+    title: "Cohomologie de SL_n et valeurs de fonctions zêta aux points entiers",
     author: [
       { family: "Borel", given: "Armand" },
-      { family: "Wallach", given: "Nolan R." },
     ],
-    issued: { "date-parts": [[1980]] },
-    publisher: "Princeton University Press",
-    "collection-title": "Annals of Mathematics Studies",
-    "collection-number": "94",
+    "container-title": "Annales Scientifiques de l'École Normale Supérieure",
+    issued: { "date-parts": [[1977]] },
+    note: "Cited in QOU .lean files as 'Borel-Zagier' for hyperbolic-volume / regulator content (see Descartes/HyperbolicVolumeTranscendence.lean). Previously entry was Borel-Wallach 'Continuous Cohomology' (Annals Studies 94, 1980) — wrong work; replaced 2026-05-19 per bib audit triage.",
   }),
 
   ref({
@@ -3895,21 +3918,23 @@ export const references: CSLData[] = [
   ref({
     id: "frobenius1903",
     type: "article-journal",
-    title: "Theorie der hyperkomplexen Größen",
+    title: "Über die Charaktere der symmetrischen Gruppe",
     author: [{ family: "Frobenius", given: "G." }],
-    "container-title": "Sitzungsberichte der Preußischen Akademie der Wissenschaften",
+    "container-title": "Journal für die reine und angewandte Mathematik (Crelle's Journal)",
     issued: { "date-parts": [[1903]] },
+    note: "Cited in QOU as 'Über die Charaktere der symmetrischen Gruppe (J. reine angew. Math.)' — Frobenius's character-table paper for symmetric groups. Previously entry was the unrelated 'Theorie der hyperkomplexen Größen' (Sitzungsberichte); replaced 2026-05-19 per bib audit triage.",
   }),
 
   ref({
     id: "nakayama1939",
     type: "article-journal",
-    title: "On Frobeniusean Algebras. I",
+    title: "On Frobeniusean Algebras. II",
     author: [{ family: "Nakayama", given: "Tadashi" }],
     "container-title": "Annals of Mathematics",
     issued: { "date-parts": [[1939]] },
-    volume: "40",
-    page: "611-633",
+    volume: "42",
+    page: "1-21",
+    note: "Cited in QOU as 'On Frobenius algebras II, Ann. of Math. 42' — the SECOND installment of Nakayama's two-part Frobenius-algebra series. Previously entry was Part I (vol 40); replaced 2026-05-19 per bib audit triage. Part I is in J. Math. Soc. Japan / Ann. Math. depending on source.",
   }),
 
   ref({

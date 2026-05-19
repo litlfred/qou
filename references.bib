@@ -4,7 +4,7 @@
 % Key convention:  <firstauthorlastname><year>  (all lower-case)
 % Source of truth: content/schema/references.ts (CSL-JSON)
 % Generator:       content/pipeline/export-bibtex.ts
-% Generated:       2026-05-19T17:48:05.940Z
+% Generated:       2026-05-19T17:54:15.026Z
 @article{chenier2026,
   author  = {Ch{\'{e}}nier, A. and d'Aligny, B. and Pellerin, F. and Blanchard, P.-{\'{E}}. and Ozawa, T. and Carusotto, I. and St-Jean, P.},
   title   = {{Quantized Hall Drift in a Frequency-Encoded Photonic Chern Insulator}},
@@ -2434,6 +2434,17 @@
   isbn      = {9780521567244},
 }
 
+@book{fulton-harris1991,
+  author    = {Fulton, William and Harris, Joe},
+  title     = {{Representation Theory: A First Course}},
+  year      = {1991},
+  publisher = {Springer},
+  series    = {Graduate Texts in Mathematics},
+  number    = {129},
+  doi       = {10.1007/978-1-4612-0979-9},
+  isbn      = {9780387974958},
+}
+
 @book{wald1984,
   author     = {Wald, Robert M.},
   title      = {{General Relativity}},
@@ -2465,13 +2476,12 @@
   annotation = {[Partial] 1 fix by Claude (claude-opus-4-7) 2026-05-19},
 }
 
-@book{borel1986,
-  author    = {Borel, Armand and Wallach, Nolan R.},
-  title     = {{Continuous Cohomology, Discrete Subgroups, and Representations of Reductive Groups}},
-  year      = {1980},
-  publisher = {Princeton University Press},
-  series    = {Annals of Mathematics Studies},
-  number    = {94},
+@article{borel1986,
+  author  = {Borel, Armand},
+  title   = {{Cohomologie de SL_n et valeurs de fonctions z{\^{e}}ta aux points entiers}},
+  journal = {Annales Scientifiques de l'{\'{E}}cole Normale Sup{\'{e}}rieure},
+  year    = {1977},
+  note    = {Cited in QOU .lean files as 'Borel-Zagier' for hyperbolic-volume / regulator content (see Descartes/HyperbolicVolumeTranscendence.lean). Previously entry was Borel-Wallach 'Continuous Cohomology' (Annals Studies 94, 1980) — wrong work; replaced 2026-05-19 per bib audit triage.},
 }
 
 @book{chlouveraki2016,
@@ -2497,18 +2507,20 @@
 
 @article{frobenius1903,
   author  = {Frobenius, G.},
-  title   = {{Theorie der hyperkomplexen Gr{\"o}{\ss}en}},
-  journal = {Sitzungsberichte der Preu{\ss}ischen Akademie der Wissenschaften},
+  title   = {{{\"U}ber die Charaktere der symmetrischen Gruppe}},
+  journal = {Journal f{\"u}r die reine und angewandte Mathematik (Crelle's Journal)},
   year    = {1903},
+  note    = {Cited in QOU as '{\"U}ber die Charaktere der symmetrischen Gruppe (J. reine angew. Math.)' — Frobenius's character-table paper for symmetric groups. Previously entry was the unrelated 'Theorie der hyperkomplexen Gr{\"o}{\ss}en' (Sitzungsberichte); replaced 2026-05-19 per bib audit triage.},
 }
 
 @article{nakayama1939,
   author  = {Nakayama, Tadashi},
-  title   = {{On Frobeniusean Algebras. I}},
+  title   = {{On Frobeniusean Algebras. II}},
   journal = {Annals of Mathematics},
   year    = {1939},
-  volume  = {40},
-  pages   = {611--633},
+  volume  = {42},
+  pages   = {1--21},
+  note    = {Cited in QOU as 'On Frobenius algebras II, Ann. of Math. 42' — the SECOND installment of Nakayama's two-part Frobenius-algebra series. Previously entry was Part I (vol 40); replaced 2026-05-19 per bib audit triage. Part I is in J. Math. Soc. Japan / Ann. Math. depending on source.},
 }
 
 @article{kashiwara1990,
