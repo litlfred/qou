@@ -4,6 +4,10 @@ export default conjecture({
   label: "conj:delta-lambda-categorical-closure",
   title:
     "Per-partition $\\Delta_\\lambda(K)$ as the per-block algebraic residue at $\\mathcal{O}_{\\mathrm{prin}}^{(\\lambda)}$",
+  lean: {
+    ref: "qou:QOU.Descartes.DeltaLambdaCategoricalClosure",
+    validation: "not_checked",
+  },
   tags: [
     "delta-lambda",
     "binding-energy",

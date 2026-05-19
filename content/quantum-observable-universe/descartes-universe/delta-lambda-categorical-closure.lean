@@ -44,21 +44,40 @@ namespace QOU.Descartes
 
 /-- Abstract type-class encoding the per-partition Δ_λ closure
     hypothesis. Instances are constructed for specific atoms once
-    the closure form is verified empirically (Phase 1b).
+    the closure form is verified empirically (Phase 1b/2).
 
-    The class has one field — the per-partition Δ_λ function — and
-    the conjectural closure-form identity as a class-axiom. -/
+    **Phase 1 placeholder design (Copilot PR #787 review):** the
+    `closure_form` field is intentionally a *trivial existential*
+    in this Phase 1a draft, NOT a substantive axiom. The intended
+    rhs predicate — `delta_lambda lambda K = sum_residues_at_-
+    principal_orbit lambda K` against a concrete
+    `sum_residues_at_principal_orbit` symbol referencing the per-λ
+    block-projection π_λ, the per-λ discriminant Δ^(λ), and the
+    algebraic-residue functor — requires concrete Lean types for
+    `Partition`, `KnotData`, `chi_lambda`, `pi_lambda`, and the
+    SW-period block-projection machinery that does not yet exist
+    in the QOU Lake build. Until those concrete types land
+    (planned: Phase 3 of the closed-forms workplan), the closure
+    form identity is the **narrative content** of the `.md`
+    sibling, and this class merely registers the type signature
+    of `delta_lambda` so downstream code can be stated
+    conditionally on its existence. -/
 class DeltaLambdaCategoricalClosure (R : Type*) [CommRing R] where
   /-- The per-partition Δ_λ values for a given knot K. The opaque
       `Partition` and `KnotData` placeholders stand in for the
       concrete categorical data (a partition of n, the canonical
       atomic braid word β_K in H_n(R,q)). -/
   delta_lambda : ∀ (Partition KnotData : Type), Partition → KnotData → R
-  /-- The closure-form identity: Δ_λ(K) equals the per-block
-      algebraic residue sum at the per-λ principal Galois orbit.
-      Stated as an opaque equation; the RHS is the categorical
-      construction defined narratively in the .md sibling file. -/
-  closure_form :
+  /-- **Phase 1a placeholder; intentionally trivial.** The class
+      registers the type signature of `delta_lambda`; the actual
+      closure-form identity lives in the `.md` sibling and will
+      be encoded as a substantive predicate against a concrete
+      `sum_residues_at_principal_orbit` symbol in Phase 3 once
+      the necessary block-projection / algebraic-residue
+      machinery is wired into the Lake build. Any `delta_lambda`
+      function satisfies this field today — that is by design,
+      not an oversight. -/
+  closure_form_placeholder :
     ∀ (Partition KnotData : Type) (lambda : Partition) (K : KnotData),
       ∃ (rhs : R), delta_lambda Partition KnotData lambda K = rhs
 

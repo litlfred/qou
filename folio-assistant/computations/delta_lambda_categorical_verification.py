@@ -41,6 +41,7 @@ Ref: [manuscript] docs/audits/2026-05-19-closed-forms-first-principles-workplan.
 
 from __future__ import annotations
 
+import ast
 import json
 import sys
 from pathlib import Path
@@ -52,11 +53,11 @@ import mpmath as mp
 import numpy as np
 
 from witness_base import WitnessBuilder
+# Canonical constants — avoid re-typed CODATA / q_0 literals (Copilot PR #787 review).
+from codata_constants import M_E_MEV
+from q_parameter import Q as Q0
 
-
-M_E_MEV = mp.mpf("0.51099895069")  # CODATA 2022 electron mass
 B_D_AME_MEV = mp.mpf("2.22456607")  # AME 2020 deuteron binding energy
-Q0 = mp.mpf("1.1099785955541805")
 
 
 def load_chi_deuteron() -> tuple[mp.mpf, list[dict]]:
@@ -66,7 +67,11 @@ def load_chi_deuteron() -> tuple[mp.mpf, list[dict]]:
     by_part = w["by_partition"]
     parsed = []
     for p in by_part:
-        lam = p["partition"] if isinstance(p["partition"], list) else eval(p["partition"])
+        # The witness can carry `partition` either as a JSON list or as
+        # its string repr ("[6]" etc.). Use ast.literal_eval — never
+        # bare eval (Copilot PR #787 review).
+        raw = p["partition"]
+        lam = raw if isinstance(raw, list) else ast.literal_eval(raw)
         parsed.append({
             "partition": str(lam),
             "lam": lam,
@@ -152,7 +157,20 @@ def residue_via_circle(f, z_c: complex, eps: float = 1e-3, n: int = 400) -> comp
 
 
 def base_residue_sum_at_k(k: int) -> complex:
-    """Σ_{p ∈ O_prin} Res^alg_p (λ^(k)_SW), the per-k "base residue"."""
+    """Σ_{p ∈ O_prin} Res^alg_p (λ^(k)_SW), the per-k "base residue".
+
+    ⚠ Numerical precision caveat (Copilot PR #787 review): this contour
+    integral is computed in numpy float64 (~ 17 decimal digits), NOT at
+    the script's mpmath 50-dps target. For ε = 1e-3 and 400 sample
+    points, the noise floor on the residue magnitude is approximately
+    ε · float64_eps ≈ 1e-16 — well above values like the k=0 / k=1
+    base residues (5e-6 / 1e-5 range). The "k=2 residue identically
+    zero" finding in the audit doc is therefore consistent with
+    float64-precision cancellation; an mpmath-quadrature reimplementation
+    would resolve whether k=2 is truly zero or merely smaller than 1e-6.
+    For Phase 1b diagnostic purposes, float64 suffices; Phase 2 should
+    re-run at mpmath precision before claiming the per-k structure is
+    categorically true."""
     principal = find_principal_pair()
     res = sum(residue_via_circle(lambda z, kk=k: lambda_SW_k(z, kk), zc)
               for zc in principal)
@@ -296,16 +314,23 @@ def main() -> int:
         source="chi-deuteron-h6-at-q0-50dps.witness.json",
     )
 
-    # Best-mapping closure assertion (loose tolerance; we want to see what we get)
+    # Closure-form assertion at the quantitative target: ≤ 1% relative
+    # error (the band the closure form actually claims to meet).
+    # Per Copilot PR #787 review: this asserts the QUANTITATIVE target,
+    # so a failure here truthfully reflects the closure form's
+    # current quantitative MISS (the verdict field above records the
+    # qualitative band). Tightening from "factor of 2" to "≤ 1% relative"
+    # makes allPassed: false consistent with the negative diagnostic.
     builder.add_assertion(
-        "best_mapping_B_D_pred_within_factor_2",
+        "best_mapping_B_D_pred_within_1_percent",
         computed=float(mp.mpf(results[best_map]["B_D_predicted_MeV"])),
         expected=float(B_D_AME_MEV),
-        tolerance=float(B_D_AME_MEV),  # factor of 2 either way
+        tolerance=float(B_D_AME_MEV) * 0.01,  # ≤ 1% relative
         unit="MeV",
         source=(
             f"closure form Δ_λ = |base_residue[k({best_map}(λ))]| "
-            f"applied to deuteron"
+            f"applied to deuteron (Phase 1b naive form; Phase 2 "
+            f"two-factor closure with JSJ Vol^(λ) addresses the miss)"
         ),
     )
 

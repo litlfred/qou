@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T03:53:42.973887+00:00",
-  "commitSha": "9445579955dc8c8e41782042f2f2e5a78dd01fc6",
+  "computedAt": "2026-05-19T04:47:41.573885+00:00",
+  "commitSha": "69b2470c6b7a4fcc44eddc17cf781777315f82fe",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -559,11 +559,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 2,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "07c70b80249ec4d7d64d8eb0721c775389fed122",
+  "scriptCommitSha": "0fd092af098ad97f907de89376fe0a570b24dc76",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
   "data": {
@@ -2282,6 +2282,7 @@
         "delta-coupling-pp-nn-correlation-probe.witness.json",
         "delta-coupling-residual-closure-probe.witness.json",
         "delta-lambda-2row-stratum.witness.json",
+        "delta-lambda-categorical-verification.witness.json",
         "delta-lambda-closure-v2-combined-pole.witness.json",
         "delta-lambda-closure-v3-full-vs-filtered.witness.json",
         "delta-lambda-closure-v4-two-row.witness.json",
