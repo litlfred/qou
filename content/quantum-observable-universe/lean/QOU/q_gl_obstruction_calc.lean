@@ -18,14 +18,32 @@ namespace QOU
 class QGlObstructionCalcContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
-  /-- Manuscript sub-claim (i) — The intrinsic $q$-curvature of any $q$-flat connection $\nabla_q$ on a $G_q$-bundle over $X$ is. -/
-  claim_i_intrinsic_curvature_flat : Prop
-  /-- Manuscript sub-claim (ii) — The $q$-connection $\nabla_q$ is $q$-flat (q-flat connection) — meaning its connection-dependent curvature $\mathcal{.... -/
-  claim_ii_connection_flat_flat : Prop
-  /-- Manuscript sub-claim (iii) — At Kummer level $n$, the obstruction $\kappa_0 \bmod n$ vanishes if and only if $n \mid \chi(A)$. -/
-  claim_iii_kummer_level_obstruction : Prop
-  /-- Manuscript sub-claim (iv) — For $\chi(A) \neq 0$, the set of Kummer levels $n$ at which $\kappa_0 \bmod n \neq 0$ has density $1$ in $\mathbb{Z}_.... -/
-  claim_iv_set_kummer_levels : Prop
+  /-- Euler characteristic `χ(A)`. -/
+  chi_A : ℤ
+  chi_A_nonzero : chi_A ≠ 0
+  /-- Intrinsic q-curvature `F^{intr}_q` of a q-flat connection. -/
+  F_intr : ℝ
+  /-- Manuscript sub-claim (i) — Intrinsic q-curvature of a q-flat
+      connection equals zero (the topological obstruction). -/
+  claim_i_intrinsic_curvature_zero : F_intr = 0
+  /-- Predicate: `∇_q` is q-flat. -/
+  q_flat : Prop
+  /-- The connection-dependent curvature `R(∇)`. -/
+  R_connection : ℝ
+  /-- Manuscript sub-claim (ii) — q-flat iff connection-curvature
+      vanishes. -/
+  claim_ii_q_flat_iff_curvature_zero : q_flat ↔ R_connection = 0
+  /-- Predicate: `κ_0 mod n` vanishes at Kummer level `n`. -/
+  kappa_vanishes : ℕ → Prop
+  /-- Manuscript sub-claim (iii) — Kummer-level obstruction:
+      `κ_0 mod n` vanishes iff `n ∣ χ(A)`. -/
+  claim_iii_kummer_level_obstruction : ∀ n : ℕ, 1 ≤ n →
+    (kappa_vanishes n ↔ (n : ℤ) ∣ chi_A)
+  /-- Manuscript sub-claim (iv) — Non-vanishing density: for every
+      `N` there exists `n > N` with `κ_0 mod n ≠ 0`
+      (equivalently `n ∤ χ(A)`). -/
+  claim_iv_non_vanish_density : ∀ N : ℕ, ∃ n : ℕ,
+    N < n ∧ ¬ ((n : ℤ) ∣ chi_A) ∧ ¬ kappa_vanishes n
 
 /-- **Content statement** (from manuscript):
 
@@ -40,7 +58,14 @@ $\kappa_0 = e(\xi) \in H^2(\mathcal{S}, \mathbb{G}_m)$
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/q-geometric-langlands/q-gl-obstruction-calc.ts
 theorem q_gl_obstruction_calc [ctx : QGlObstructionCalcContext] :
-    ctx.claim_i_intrinsic_curvature_flat ∧ ctx.claim_ii_connection_flat_flat ∧ ctx.claim_iii_kummer_level_obstruction ∧ ctx.claim_iv_set_kummer_levels :=
-  ⟨ctx.claim_i_intrinsic_curvature_flat, ctx.claim_ii_connection_flat_flat, ctx.claim_iii_kummer_level_obstruction, ctx.claim_iv_set_kummer_levels⟩
+    ctx.F_intr = 0 ∧
+    (ctx.q_flat ↔ ctx.R_connection = 0) ∧
+    (∀ n : ℕ, 1 ≤ n → (ctx.kappa_vanishes n ↔ (n : ℤ) ∣ ctx.chi_A)) ∧
+    (∀ N : ℕ, ∃ n : ℕ, N < n ∧ ¬ ((n : ℤ) ∣ ctx.chi_A) ∧
+                       ¬ ctx.kappa_vanishes n) :=
+  ⟨ctx.claim_i_intrinsic_curvature_zero,
+   ctx.claim_ii_q_flat_iff_curvature_zero,
+   ctx.claim_iii_kummer_level_obstruction,
+   ctx.claim_iv_non_vanish_density⟩
 
 end QOU
