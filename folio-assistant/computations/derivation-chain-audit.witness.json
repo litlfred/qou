@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T18:28:24.524947+00:00",
-  "commitSha": "848c95d9909064f0a73466c226af34b7e08a5996",
+  "computedAt": "2026-05-19T18:34:21.172913+00:00",
+  "commitSha": "92c3e34628da0f6c16d18bc4de554cc49ea9a45a",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2310,6 +2310,7 @@
         "entanglement-orders.witness.json",
         "ew-higgs-sdp-probe.witness.json",
         "ew-interface-knot-probe.witness.json",
+        "explicit-central-idempotent-probe.witness.json",
         "factor-2-normalization-trace.witness.json",
         "family-a-extended-variants.witness.json",
         "family-a-variants-investigation.witness.json",
