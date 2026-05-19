@@ -1,3 +1,5 @@
+import Mathlib.Algebra.BigOperators.Basic
+
 /-!
 # QOU.BraidKnot.hoefsmit_scattering_pipeline — placeholder stub
 
@@ -25,19 +27,39 @@ class HoefsmitScatteringPipelineContext where
   Braid : Type
   /-- Partition / Young-diagram indexing. -/
   PartitionIdx : Type
-  /-- Manuscript sub-claim (stage 1 — Hoefsmit): each crossing `σ_i`
-      acts on the Wedderburn block `ρ_λ` via the Hoefsmit seminormal
-      matrix with at most 2 non-zeros per row. -/
-  claim_stage_1_hoefsmit : Prop
-  /-- Manuscript sub-claim (stage 2 — Markov trace): the Markov-trace
-      formula `J_K(q) = Σ_λ w_λ · χ_λ(β) / dim(λ)`. -/
-  claim_stage_2_markov_trace : Prop
+  /-- Number of non-zeros per row of the Hoefsmit seminormal matrix. -/
+  hoefsmit_nnz_per_row : ℕ
+  /-- Manuscript sub-claim (stage 1 — Hoefsmit sparsity): at most
+      2 non-zeros per row. -/
+  claim_stage_1_hoefsmit : hoefsmit_nnz_per_row ≤ 2
+  /-- Number of partitions of strand count `k`. -/
+  n_partitions : ℕ
+  /-- Wedderburn-block weights `w_λ` indexed by partition. -/
+  w_lambda : ℕ → ℝ
+  /-- Characters `χ_λ(β)` indexed by partition. -/
+  chi_lambda : ℕ → ℝ
+  /-- Block dimensions `dim(λ)` indexed by partition. -/
+  dim_lambda : ℕ → ℝ
+  /-- The Jones polynomial value `J_K(q)`. -/
+  J_K : ℝ
+  /-- Manuscript sub-claim (stage 2 — Markov trace formula):
+      `J_K(q) = Σ_λ w_λ · χ_λ(β) / dim(λ)`. -/
+  claim_stage_2_markov_trace :
+    J_K = (Finset.range n_partitions).sum
+      (fun λ => w_lambda λ * chi_lambda λ / dim_lambda λ)
+  /-- The Yekutieli geometric invariant `Geom(K)`. -/
+  Geom_K : ℝ
   /-- Manuscript sub-claim (stage 3 — ω): the Yekutieli rigid-dualising
-      pairing maps `J_K(q)` to the piecewise geometric invariant. -/
+      pairing maps `J_K(q)` to the piecewise geometric invariant
+      (abstract Prop because the pairing involves the rigid-dualising
+      functor `ω` on `Rep(SU_q(2))`). -/
   claim_stage_3_yekutieli_omega : Prop
-  /-- Manuscript sub-claim (stage 4 — ×m_e): scaling by the electron
-      mass gives the categorical mass `𝔪`. -/
-  claim_stage_4_electron_mass_scale : Prop
+  /-- Electron mass `m_e`. -/
+  m_e : ℝ
+  /-- The categorical mass `𝔪`. -/
+  m_total : ℝ
+  /-- Manuscript sub-claim (stage 4 — ×m_e): `𝔪 = Geom(K) · m_e`. -/
+  claim_stage_4_electron_mass_scale : m_total = Geom_K * m_e
 
 /-- **Manuscript statement** (full body):
 
@@ -108,10 +130,11 @@ $\chi_\lambda(\beta)$ is determined by Young's lattice path c
     translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/hoefsmit-scattering-pipeline.ts
 theorem hoefsmit_scattering_pipeline [ctx : HoefsmitScatteringPipelineContext] :
-    ctx.claim_stage_1_hoefsmit ∧
-    ctx.claim_stage_2_markov_trace ∧
+    ctx.hoefsmit_nnz_per_row ≤ 2 ∧
+    ctx.J_K = (Finset.range ctx.n_partitions).sum
+      (fun λ => ctx.w_lambda λ * ctx.chi_lambda λ / ctx.dim_lambda λ) ∧
     ctx.claim_stage_3_yekutieli_omega ∧
-    ctx.claim_stage_4_electron_mass_scale :=
+    ctx.m_total = ctx.Geom_K * ctx.m_e :=
   ⟨ctx.claim_stage_1_hoefsmit, ctx.claim_stage_2_markov_trace,
    ctx.claim_stage_3_yekutieli_omega, ctx.claim_stage_4_electron_mass_scale⟩
 
