@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T03:56:50.063013+00:00",
-  "commitSha": "ff51f1cd1b3819c57d138f15577023e61c91ea70",
+  "computedAt": "2026-05-19T04:00:22.134714+00:00",
+  "commitSha": "2c099779ab3b3961772ed4159138ed8ce5077684",
   "assertions": [
     {
       "name": "no_i1_no_probe_blocks",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 8,
+  "durationMs": 7,
   "computation": "i1-no-probe-audit",
   "scriptFile": "i1_no_probe_audit.py",
   "scriptHash": "0e004cc143d0",
@@ -27,9 +27,9 @@
   },
   "data": {
     "by_result": {
-      "i1_pre_lean": 150,
-      "i1_no_probe": 387,
-      "wired": 34,
+      "i1_pre_lean": 144,
+      "i1_no_probe": 391,
+      "wired": 36,
       "i1_lean_with_sorry": 3,
       "conditional_class": 1
     },
@@ -203,12 +203,12 @@
         "path": "content/quantum-observable-universe/appendix-surreals/surreal-rate-calculus.ts",
         "label": "prop:surreal-rate-calculus",
         "kind": "proposition",
-        "sibling_lean_exists": false,
+        "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
         "probe_witness_count": 0,
         "probe_witnesses": [],
-        "result": "i1_pre_lean"
+        "result": "i1_no_probe"
       },
       {
         "path": "content/quantum-observable-universe/appendix-surreals/surreal-squeeze.ts",
@@ -431,14 +431,14 @@
         "path": "content/quantum-observable-universe/braids-and-knots/chirality-writhe-ribbon-derivation.ts",
         "label": "prop:chirality-writhe-ribbon-derivation",
         "kind": "proposition",
-        "sibling_lean_exists": false,
+        "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
         "probe_witness_count": 1,
         "probe_witnesses": [
           "chirality-avg-content.witness.json"
         ],
-        "result": "i1_pre_lean"
+        "result": "wired"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/cl3-zeta5-orbit-sum-identity.ts",
@@ -593,7 +593,7 @@
         "path": "content/quantum-observable-universe/braids-and-knots/crystal-r-matrix-sub-lemma.ts",
         "label": "prop:crystal-r-matrix-sub-lemma",
         "kind": "proposition",
-        "sibling_lean_exists": false,
+        "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
         "probe_witness_count": 2,
@@ -601,7 +601,7 @@
           "A-operator-extract-reduced.witness.json",
           "A-operator-per-interface.witness.json"
         ],
-        "result": "i1_pre_lean"
+        "result": "wired"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/curvature-rank-gb-stratification.ts",
@@ -706,12 +706,12 @@
         "path": "content/quantum-observable-universe/braids-and-knots/delta-max-uniform-bound.ts",
         "label": "prop:delta-max-uniform-bound",
         "kind": "proposition",
-        "sibling_lean_exists": false,
+        "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
         "probe_witness_count": 0,
         "probe_witnesses": [],
-        "result": "i1_pre_lean"
+        "result": "i1_no_probe"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/demazure-fiber-markov-trace.ts",
@@ -862,12 +862,12 @@
         "path": "content/quantum-observable-universe/braids-and-knots/feynman-eigenbasis-decomposition.ts",
         "label": "lem:feynman-eigenbasis-decomposition",
         "kind": "lemma",
-        "sibling_lean_exists": false,
+        "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
         "probe_witness_count": 0,
         "probe_witnesses": [],
-        "result": "i1_pre_lean"
+        "result": "i1_no_probe"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/feynman-markov-identification.ts",
@@ -884,12 +884,12 @@
         "path": "content/quantum-observable-universe/braids-and-knots/feynman-trace-collapse.ts",
         "label": "lem:feynman-trace-collapse",
         "kind": "lemma",
-        "sibling_lean_exists": false,
+        "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
         "probe_witness_count": 0,
         "probe_witnesses": [],
-        "result": "i1_pre_lean"
+        "result": "i1_no_probe"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/figure-eight-branching-rule.ts",
