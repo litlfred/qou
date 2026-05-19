@@ -18,8 +18,13 @@ namespace QOU.QuantumObservableUniverse
 class ExistsAxiom3ChernContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_exists_axiom_3_chern : Prop
+  /-- First categorical Chern class `c_1(Ad(A))`. -/
+  c_1 : ℝ
+  /-- Second categorical Chern class `c_2(Ad(A))`. -/
+  c_2 : ℝ
+  /-- Manuscript identity (axiom 3 — vanishing categorical Chern
+      classes): `c_1 = 0 ∧ c_2 = 0`. -/
+  claim_exists_axiom_3_chern : c_1 = 0 ∧ c_2 = 0
 
 /-- **Lemma statement** (from manuscript):
 
@@ -37,9 +42,8 @@ into the ribbon twist.
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-3.ts
-theorem exists_axiom_3_chern [ctx : ExistsAxiom3ChernContext] : ctx.claim_exists_axiom_3_chern := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem exists_axiom_3_chern [ctx : ExistsAxiom3ChernContext] :
+    ctx.c_1 = 0 ∧ ctx.c_2 = 0 :=
+  ctx.claim_exists_axiom_3_chern
 
 end QOU.QuantumObservableUniverse

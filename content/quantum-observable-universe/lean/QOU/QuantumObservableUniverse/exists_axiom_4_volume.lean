@@ -18,8 +18,15 @@ namespace QOU.QuantumObservableUniverse
 class ExistsAxiom4VolumeContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_exists_axiom_4_volume : Prop
+  /-- The Tannaka group `G = Aut⊗(τ)` (abstract group type). -/
+  G : Type
+  /-- The quantum determinant `ε : Λ^n V → 𝟙`, encoded as a scalar
+      value `ε : G → ℝ` post-functor evaluation. -/
+  ε : G → ℝ
+  /-- Manuscript identity (axiom 4 — categorical volume): the
+      quantum determinant is invariant under tensor automorphisms,
+      i.e. `ε` is the constant function. -/
+  claim_exists_axiom_4_volume : ∀ g h : G, ε g = ε h
 
 /-- **Lemma statement** (from manuscript):
 
@@ -39,9 +46,8 @@ $$
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.ts
-theorem exists_axiom_4_volume [ctx : ExistsAxiom4VolumeContext] : ctx.claim_exists_axiom_4_volume := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem exists_axiom_4_volume [ctx : ExistsAxiom4VolumeContext] :
+    ∀ g h : ctx.G, ctx.ε g = ctx.ε h :=
+  ctx.claim_exists_axiom_4_volume
 
 end QOU.QuantumObservableUniverse

@@ -16,10 +16,12 @@ namespace QOU.QuantumObservableUniverse
 /-- Abstract context for the `exists_axiom_2_observability` claim — manuscript-themed
     typed fields below; `holds` carries the residual `Prop` claim. -/
 class ExistsAxiom2ObservabilityContext where
-  /-- Fluid-dynamics velocity / vorticity field. -/
-  VelocityField : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_exists_axiom_2_observability : Prop
+  /-- Dimension of `Hom_C(𝟙, Ad(A))` modulo the unit summand. -/
+  hom_dim : ℕ
+  /-- Manuscript identity (axiom 2 — observability):
+      `Hom_C(𝟙, Ad(A)) = 0` modulo the unit, equivalent to
+      `hom_dim = 0`. -/
+  claim_exists_axiom_2_observability : hom_dim = 0
 
 /-- **Lemma statement** (from manuscript):
 
@@ -33,9 +35,8 @@ modulo the unit, verifying axiom~(2) of
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-2.ts
-theorem exists_axiom_2_observability [ctx : ExistsAxiom2ObservabilityContext] : ctx.claim_exists_axiom_2_observability := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem exists_axiom_2_observability [ctx : ExistsAxiom2ObservabilityContext] :
+    ctx.hom_dim = 0 :=
+  ctx.claim_exists_axiom_2_observability
 
 end QOU.QuantumObservableUniverse

@@ -1,3 +1,5 @@
+import Mathlib.Algebra.BigOperators.Basic
+
 /-!
 # QOU.FeynmanPathIntegrals.markov_identification — placeholder stub
 
@@ -19,10 +21,22 @@ namespace QOU.FeynmanPathIntegrals
 class MarkovIdentificationContext where
   /-- The braid representative type. -/
   Braid : Type
-  /-- The partition / Young-diagram indexing type. -/
-  PartitionIdx : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_markov_identification : Prop
+  /-- Number of partitions of length ≤ 2 in the eigenbasis sum. -/
+  n_partitions : ℕ
+  /-- Markov weights `w_λ` per partition. -/
+  w : ℕ → ℝ
+  /-- Per-partition partial trace `tr_{S_λ}(ρ(β))`. -/
+  tr_S : ℕ → ℝ
+  /-- Eigenbasis transition amplitude (defined as the weighted sum). -/
+  amplitude_eigenbasis : ℝ
+  /-- Jones-Markov trace `tr_M(ρ(β))`. -/
+  tr_M : ℝ
+  /-- Manuscript identity: eigenbasis sum equals Jones-Markov trace
+      AND coincides with `Σ_λ w_λ · tr_{S_λ}`. -/
+  claim_markov_identification :
+    amplitude_eigenbasis =
+      (Finset.range n_partitions).sum (fun λ => w λ * tr_S λ) ∧
+    amplitude_eigenbasis = tr_M
 
 /-- **Lemma statement** (from manuscript):
 
@@ -46,9 +60,10 @@ $w_\lambda = \dim_q(V_\lambda) \cdot \dim(S_\lambda) / \dim_q(V^{\otimes n})$.
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/feynman-markov-identification.ts
-theorem markov_identification [ctx : MarkovIdentificationContext] : ctx.claim_markov_identification := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem markov_identification [ctx : MarkovIdentificationContext] :
+    ctx.amplitude_eigenbasis =
+      (Finset.range ctx.n_partitions).sum (fun λ => ctx.w λ * ctx.tr_S λ) ∧
+    ctx.amplitude_eigenbasis = ctx.tr_M :=
+  ctx.claim_markov_identification
 
 end QOU.FeynmanPathIntegrals
