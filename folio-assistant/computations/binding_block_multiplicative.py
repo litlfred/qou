@@ -69,6 +69,7 @@ from __future__ import annotations
 
 import json
 import sys
+from collections import Counter
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -255,7 +256,6 @@ def predict_binding(Z: int, N: int, factors: dict, q: mp.mpf,
         # Build pair-count table: for each (free_pair, atom_pair) type,
         # count how many pairs (i, j) with i in interface or j in interface
         # have that pair-of-symbols.
-        from collections import Counter
         pair_counts: Counter = Counter()
         for i in range(n_gens):
             fi_f, fi_a = gen_tags[i]
