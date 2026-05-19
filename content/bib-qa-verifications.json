@@ -1241,6 +1241,86 @@
       "fixes_applied": 0,
       "fix_commit": "(this commit)",
       "note": "PDF is Bujack et al. 'The non-Riemannian nature of perceptual color space' (PNAS 2022) \u2014 exact match."
+    },
+    {
+      "id": "carter-leal-saliola-2000",
+      "status": "verified-clean",
+      "local_pdf": "uploads/0008040v1.pdf",
+      "verified_at": "2026-05-19T18:23:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 0,
+      "fix_commit": "(this commit)",
+      "note": "Lusztig cones type A. Fits QOU crystal-basis / Hecke content; potential citation target."
+    },
+    {
+      "id": "geck-lambropoulou-2004",
+      "status": "verified-clean",
+      "local_pdf": "uploads/0405508v1.pdf",
+      "verified_at": "2026-05-19T18:23:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 0,
+      "fix_commit": "(this commit)",
+      "note": "Geck-Lambropoulou Iwahori-Hecke type B Markov traces. DIRECT fit with braids-and-knots Markov work."
+    },
+    {
+      "id": "webster-williamson-2014-markov",
+      "status": "verified-clean",
+      "local_pdf": "uploads/0911.4494v2.pdf",
+      "verified_at": "2026-05-19T18:23:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 0,
+      "fix_commit": "(this commit)",
+      "note": "Webster-Williamson Geometry of Markov traces. DIRECT fit with QOU Markov-trace content."
+    },
+    {
+      "id": "kuhlmann-matusinski-2012",
+      "status": "verified-clean",
+      "local_pdf": "uploads/1203.4538v1.pdf",
+      "verified_at": "2026-05-19T18:23:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 0,
+      "fix_commit": "(this commit)",
+      "note": "Kuhlmann-Matusinski surreal exp-log equivalence. Fits Surreal Numbers appendix."
+    },
+    {
+      "id": "jing-liu-2021",
+      "status": "verified-clean",
+      "local_pdf": "uploads/2104.06067v1.pdf",
+      "verified_at": "2026-05-19T18:23:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 0,
+      "fix_commit": "(this commit)",
+      "note": "Jing-Liu Iwahori-Hecke characters type A. DIRECT fit with QOU chi-character content."
+    },
+    {
+      "id": "halverson-1998-markov-weights",
+      "status": "verified-clean",
+      "local_pdf": "uploads/9806163v1.pdf",
+      "verified_at": "2026-05-19T18:23:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 0,
+      "fix_commit": "(this commit)",
+      "note": "Halverson Markov-trace weights on Hecke. DIRECT fit with QOU Wedderburn-block weight content."
+    },
+    {
+      "id": "franecki-kapranov-1999",
+      "status": "pending-placement",
+      "local_pdf": "uploads/9909088v1.pdf",
+      "verified_at": "2026-05-19T18:23:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 0,
+      "fix_commit": "(this commit)",
+      "note": "Franecki-Kapranov constructible sheaves Riemann-Roch. Possible categorical fit; no obvious citation site yet."
+    },
+    {
+      "id": "lu-1999-canonical-bundles",
+      "status": "pending-placement",
+      "local_pdf": "uploads/9911033v1.pdf",
+      "verified_at": "2026-05-19T18:23:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 0,
+      "fix_commit": "(this commit)",
+      "note": "Lu canonical bundle sections over Riemann surface. Possible Bring's-surface fit; no obvious citation site yet."
     }
   ]
 }
