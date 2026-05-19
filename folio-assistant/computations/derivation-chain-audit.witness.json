@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T18:54:50.495848+00:00",
-  "commitSha": "b8d4b15c510588220f7e6b46372c4b5770ffb51c",
+  "computedAt": "2026-05-19T19:36:42.074738+00:00",
+  "commitSha": "5544d4b2e2c8f9d8e6cbb82a30238edffa7d4a61",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2274,6 +2274,7 @@
         "crystal-shift-nf-atomic.witness.json",
         "crystal-transport-h3-verification.witness.json",
         "cyclotomic-depth3-dimension-pslq.witness.json",
+        "cyclotomic-orbit-sum-all-depths-probe.witness.json",
         "cyclotomic-trilog-imaginary-closed-form-probe.witness.json",
         "cyclotomic-trilog-imaginary.witness.json",
         "d-density-derivation.witness.json",
