@@ -55,14 +55,22 @@ $= 1 \cdot (-2) + [2]_q^2 \cdot (-1/2) + 1 \cdot (-2)$
 which evaluates at $q = 1$ to $-2 + 4 \cdot (-1/2) + (-2) = -6$,
 **before** Wenzl-bridge re-weighting via $y_\lambda$.
 
-Under the Markov-bridge $y_\lambda$ weighting (not $\dim_q^2$):
+Under the Markov-bridge $y_\lambda$ weighting (not Plancherel measure;
+$y_\lambda$ at $q=1$ satisfies $\mathrm{tr}_M(1)=1, \mathrm{tr}_M(\sigma)=z=1/2,
+\mathrm{tr}_M(\sigma_1\sigma_2)=z^2=1/4$ giving
+$y_{(3)}(1)=1/2, y_{(2,1)}(1)=1/4, y_{(1,1,1)}(1)=0$, sum $3/4$):
 $y_{(3)}(1) \cdot (-2) + y_{(2,1)}(1) \cdot (-1) + y_{(1,1,1)}(1) \cdot (-2)
-= \tfrac{1}{6}(-2) + \tfrac{2}{3}(-1) + \tfrac{1}{6}(-2)
-= -\tfrac{4}{3}$
+= \tfrac{1}{2}(-2) + \tfrac{1}{4}(-1) + 0 \cdot (-2)
+= -\tfrac{5}{4}$
 
 This is the Markov-trace LO coefficient
-$\tau_M(\beta_n - \beta_p) \approx -\tfrac{4}{3}\varepsilon + O(\varepsilon^2)$,
-which matches the direct compute at $q_0$ to four-decimal precision.
+$\tau_M(\beta_n - \beta_p) \approx -\tfrac{5}{4}\varepsilon + O(\varepsilon^2)$
+(NB: at $q_0$ rather than $q=1$, the $y_\lambda$ values differ — at
+$q_0$ they're $(0.4154, 0.2809, 0.0227)$ summing to $0.7191$, NOT $3/4$,
+because Wenzl-bridge weights are $q$-dependent rational functions, not
+a probability measure). The Markov-trace direct compute at $q_0$ gives
+$\tau_M(\beta_n - \beta_p) \approx -0.142$ (consistent with the
+$y_\lambda(q_0) \cdot \chi_\lambda(q_0)$ sum).
 
 ## Why this matters
 

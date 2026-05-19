@@ -569,11 +569,11 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       units: null,
     }),
 
-    gram_z_cubed: Object.freeze({
-      name: "gram_z_cubed",
+    gram_tr_M_e_minus: Object.freeze({
+      name: "gram_tr_M_e_minus",
       description:
-        "Markov trace z^3 of e^- = σ_0σ_1σ_0 at q_0 (post TR_M[5] fix). Verifies the canonical derivation tr_M(σ_0σ_1σ_0) = z^3.",
-      symbol: "z^3",
+        "Markov trace of e^- = σ_0σ_1σ_0 at q_0: tr_M(e^-) = h·z² + z (post-2026-05-19 TR_M[5] fix per docs/audits/2026-05-19-trm5-markov-bug.md). The earlier z^3 value was a bug.",
+      symbol: "h \\cdot z^2 + z",
       witnessFile:
         "folio-assistant/computations/gram-matrix-dual.witness.json",
       witnessPath: "markov_trace_basis.e⁻",

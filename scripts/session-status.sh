@@ -148,9 +148,8 @@ SUMMARY=$(cat <<EOSUMMARY
 ║  Lean mode: $(printf '%-42s' "$LEAN_MODE")║
 ║  TODOs: $(printf '%-46s' "$TODO_SUMMARY")║
 ╠══════════════════════════════════════════════════════╣
-║  Precision goals: L1 compute ≤ 1 ppb (50 dps default)║
-║  L2 per-observable ≤ σ_exp/100 — see docs/           ║
-║  precision-goals.md                                  ║
+║  Precision: $(printf '%-42s' "L1 ≤ 1 ppb (50 dps default)")║
+║             $(printf '%-42s' "L2 ≤ σ_exp/100 (see docs/precision-goals.md)")║
 ╚══════════════════════════════════════════════════════╝
 EOSUMMARY
 )

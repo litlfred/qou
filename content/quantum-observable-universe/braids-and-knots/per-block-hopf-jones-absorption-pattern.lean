@@ -54,25 +54,21 @@ def jones_hopf_at_q1 : R := -2
 /-- **LO ε^1 absorption coefficient for V_(3): −2 (full Hopf-Jones value).**
 
 The leading-order term of `chi_V3_diff` in (q − 1) is `-2·(q-1)` plus
-higher orders. The coefficient is read off the cleaner form
-`-(q²+1)²·(q+1)·ℏ_q/4` evaluated at q=1 where ℏ_q = (q-1)/q ≈ (q-1). -/
+higher orders. -/
 -- Ref: [manuscript] prop:q-beta-c3-hopf-three-fold-markov (Fact 3)
-theorem lo_eps1_coefficient_V3 :
-    (-(1 : R)^2 + (-1)) = (-2 : R) := by ring  -- LO at q=1: -(1²+1)²·(1+1)/4 = -2·... structural identity below
--- Detailed derivation: factor out (q²-1) = q(q+1)·ℏ_q in chi_V3_diff,
--- giving -(q²+1)²(q+1)·ℏ_q/4. At q=1: -(2)²·2/4 = -2. The LO coefficient
--- in ε (with ε ≈ ℏ_q at q=1) is -2 = J_Hopf(q=1).
+theorem chi_V3_diff_value_at_1 : chi_V3_diff (1 : R) = 0 := by
+  unfold chi_V3_diff; ring
 
 /-- **LO ε^1 absorption coefficient for V_(2,1): −1 (half Hopf-Jones).**
 
-The cleaner form `-(q⁴+1)·(q+1)·ℏ_q/(4q²)` at q=1: -(2)·2/4 = -1. -/
-theorem lo_eps1_coefficient_V21 : ((-1 : R) * 1) = (-1 : R) := by ring
+The cleaner form `-(q⁴+1)·(q+1)·ℏ_q/(4q²)` at q=1 vanishes (since
+ℏ_q = 0 at q=1). The LO ε^1 coefficient in (q-1) expansion is -1. -/
+theorem chi_V21_diff_value_at_1 : chi_V21_diff (1 : R) = 0 := by
+  unfold chi_V21_diff; ring
 
-/-- **LO ε^1 absorption coefficient for V_(1,1,1): −2 (full Hopf-Jones, same as V_(3)).**
-
-By the q ↔ q⁻¹ duality of V_(3) and V_(1,1,1) (conjugate-partition
-symmetry), the LO ε^1 coefficient is identical to that of V_(3). -/
-theorem lo_eps1_coefficient_V111 : (-(1 : R)^2 + (-1)) = (-2 : R) := by ring
+/-- **LO ε^1 absorption coefficient for V_(1,1,1): −2 (full Hopf-Jones, same as V_(3)).** -/
+theorem chi_V111_diff_value_at_1 : chi_V111_diff (1 : R) = 0 := by
+  unfold chi_V111_diff; ring
 
 /-- **Dimension-scaled Hopf-Jones absorption summary.**
 
@@ -81,12 +77,18 @@ The LO ε^1 coefficient pattern (−2, −1, −2) corresponds to:
 - 2D rep (V_(2,1)): absorbs half (= J_Hopf(q=1) / 2 = -1).
 
 The 2D character carries multiplicity `dim V_(2,1) = 2` in the
-Wedderburn sum, so the dimension-weighted total Hopf contribution is:
-- 1 · (-2) + 2 · (-1) + 1 · (-2) = -6 (before y_λ re-weighting)
-- y-weighted at q=1: (1/6)(-2) + (2/3)(-1) + (1/6)(-2) = -4/3
+Wedderburn sum.
 
-Connecting to global Markov-trace LO: τ_M(β_n − β_p)(q) ≈ -(4/3)ε.
-Verified empirically at q_0 to four-decimal precision. -/
+NB: the Wenzl-bridge `y_λ(q=1)` is NOT Plancherel; solving the
+Ocneanu-Wenzl Markov axioms (tr_M(1)=1, tr_M(σ)=z=1/2, tr_M(σ_1σ_2)=z²=1/4)
+gives y_(3)(1) = 1/2, y_(2,1)(1) = 1/4, y_(1,1,1)(1) = 0 (sum 3/4).
+The y-weighted LO is then (1/2)(-2) + (1/4)(-1) + 0·(-2) = -5/4.
+
+Full proof of the LO ε^1 extraction (factoring χ_λ_diff = (q²-1)·...,
+substituting q=1+ε, reading off ε^1 coefficient) is left to a
+follow-up extension; this file establishes the value-at-1 vanishing
+(necessary condition for χ_λ_diff to be O(ε)) and the integer LO
+pattern (-2, -1, -2) as a `decide`-discharged fact below. -/
 theorem dimension_scaled_absorption_pattern :
     -- The integer pattern (V_(3), V_(2,1), V_(1,1,1)) → (-2, -1, -2):
     let c_V3 : ℤ := -2
