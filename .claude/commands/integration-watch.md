@@ -38,10 +38,18 @@ this command is the user-invocable wrapper.
 
 ## Role gating
 
-- `reader`: `proof`, `canonical`, `detangler`, `all readable three`
-  (compute hidden).
-- `collaborator` / `owner`: all five chips including `compute` and
-  `all four`.
+The no-arg `/integration-watch` `AskUserQuestion` is capped at 4
+chips. With 4 watchers (proof / canonical / compute / detangler) +
+an "all" option totalling 5 logical choices, the chip set is
+trimmed to fit:
+
+- **`reader`**: 4 chips (compute hidden) — `proof`, `canonical`,
+  `detangler`, `all readable three`.
+- **`collaborator` / `owner`**: 4 chips — `proof`, `canonical`,
+  `detangler`, `all four`. The individual `compute` chip is
+  dropped; compute is still reachable via the `all four` chip
+  (which includes it) or by typing `/integration-watch compute`
+  directly with the argument grammar above.
 
 ## No-argument behaviour
 

@@ -64,7 +64,7 @@ When the user invokes `/integration-watch` directly:
 
 | User input | Behaviour |
 |------------|-----------|
-| `/integration-watch` (no arg) | **Ask which.** Use `AskUserQuestion` with a 4-option chip set listing role-accessible watchers + "all"; do NOT auto-pick. |
+| `/integration-watch` (no arg) | **Ask which.** Use `AskUserQuestion` capped at 4 chips. Role-gated chip set: **`reader`** sees `proof` / `canonical` / `detangler` / `all readable three` (compute hidden); **`collaborator` / `owner`** sees `proof` / `canonical` / `detangler` / `all four` (the individual `compute` chip is dropped to fit the 4-option cap; compute is still reachable via the `all four` chip or by typing `/integration-watch compute` directly). Do NOT auto-pick. |
 | `/integration-watch proof` | Dispatch `local/proof-integration-watcher` |
 | `/integration-watch canonical` | Dispatch `local/canonical-watcher` |
 | `/integration-watch compute` or `/integration-watch compute-integration` | Dispatch `local/compute-integration-watcher` |
