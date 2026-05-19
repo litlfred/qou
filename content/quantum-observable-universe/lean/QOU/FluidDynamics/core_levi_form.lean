@@ -39,13 +39,17 @@ class CoreLeviFormContext extends QOU.Shared.SobolevHkRegularityContext where
   /-- Manuscript sub-claim (iii) — Non-degenerate contact structure
       at `Σ`: both Levi eigenvalues are strictly positive. -/
   claim_iii_contact_structure_remains : 0 < lambda_min
-  /-- Manuscript sub-claim (iv) — Observability axiom holds locally
-      at every `p ∈ Σ`. Stays abstract because the axiom statement
-      lives over the abstract category `C`. -/
-  claim_iv_observability_axiom_holds : Prop
+  /-- Dimension of `Hom_C(𝟙, Ad(A))` locally at each `p ∈ Σ`. -/
+  hom_dim_at_p : ℕ
+  /-- Manuscript sub-claim (iv) — Observability axiom holds locally:
+      `dim Hom_C(𝟙, Ad(A)) = 0` at every `p ∈ Σ`. -/
+  claim_iv_observability_axiom_holds : hom_dim_at_p = 0
+  /-- Dimension of the maximal integral submanifold of `ker(Θ)` at `Σ`. -/
+  integral_submfd_dim : ℕ
   /-- Manuscript sub-claim (v) — No 2-dimensional integral submanifold
-      of `ker(Θ)` forms at `Σ` (Frobenius integrability fails). -/
-  claim_v_no_integral_submanifold : Prop
+      of `ker(Θ)` forms at `Σ` (Frobenius integrability fails):
+      `integral_submfd_dim < 2`. -/
+  claim_v_no_integral_submanifold : integral_submfd_dim < 2
 /-- **Content statement** (from manuscript):
 
 Let $\varrho$ be a [geodesic vortex](#rem:geodesic-vortices) in
@@ -65,8 +69,8 @@ theorem core_levi_form [ctx : CoreLeviFormContext] :
     ctx.aspect_sup ≤ ctx.C ∧
     ctx.cond_sup ≤ ctx.C ^ 2 ∧
     0 < ctx.lambda_min ∧
-    ctx.claim_iv_observability_axiom_holds ∧
-    ctx.claim_v_no_integral_submanifold :=
+    ctx.hom_dim_at_p = 0 ∧
+    ctx.integral_submfd_dim < 2 :=
   ⟨ctx.claim_i_core_aspect_ratio, ctx.claim_ii_levi_form_condition,
    ctx.claim_iii_contact_structure_remains,
    ctx.claim_iv_observability_axiom_holds, ctx.claim_v_no_integral_submanifold⟩

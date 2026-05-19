@@ -35,13 +35,16 @@ class ReebOperationsPerPlanckContext extends QOU.Shared.MarkovTraceContext where
       vector phase by `ℏ_q` of a full circuit (per-step phase
       increment). -/
   claim_i_advances_phase_reeb : 0 < hbar_q ∧ hbar_q < 1
+  /-- Number of `∇_q` connection applications per iteration. -/
+  n_connection_apps : ℕ
   /-- Manuscript sub-claim (ii) — Each iteration applies the
-      `q`-connection `∇_q` once on the exceptional divisor (operational
-      claim — captured as Prop). -/
-  claim_ii_applies_connection_once : Prop
-  /-- Manuscript sub-claim (iii) — Each iteration evaluates one
-      `R`-matrix, resolving one braiding crossing. -/
-  claim_iii_evaluates_matrix_resolving : Prop
+      `q`-connection `∇_q` exactly once. -/
+  claim_ii_applies_connection_once : n_connection_apps = 1
+  /-- Number of `R`-matrix evaluations per iteration. -/
+  n_R_matrix_evals : ℕ
+  /-- Manuscript sub-claim (iii) — Each iteration evaluates exactly
+      one `R`-matrix. -/
+  claim_iii_evaluates_matrix_resolving : n_R_matrix_evals = 1
 /-- **Proposition statement** (from manuscript):
 
 Let $q \in k^\times \setminus \{1\}$ and let $t_P(q) = q/(q-1)$
@@ -77,8 +80,8 @@ theorem reeb_operations_per_planck [ctx : ReebOperationsPerPlanckContext] :
     (ctx.n_R = ctx.t_P ∧ ctx.t_P = ctx.q_real / (ctx.q_real - 1) ∧
      ctx.t_P = 1 / ctx.hbar_q) ∧
     (0 < ctx.hbar_q ∧ ctx.hbar_q < 1) ∧
-    ctx.claim_ii_applies_connection_once ∧
-    ctx.claim_iii_evaluates_matrix_resolving :=
+    ctx.n_connection_apps = 1 ∧
+    ctx.n_R_matrix_evals = 1 :=
   ⟨ctx.claim_n_R_eq_t_P, ctx.claim_i_advances_phase_reeb,
    ctx.claim_ii_applies_connection_once,
    ctx.claim_iii_evaluates_matrix_resolving⟩
