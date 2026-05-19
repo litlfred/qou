@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T07:30:14.045462+00:00",
-  "commitSha": "0519a113a1114b0f89cf11069636821d53026fcd",
+  "computedAt": "2026-05-19T07:31:16.125742+00:00",
+  "commitSha": "74fb7a62b6ea152cb66331582c2e90a10f9399ce",
   "assertions": [
     {
       "name": "no_i1_no_probe_blocks",
@@ -27,8 +27,8 @@
   },
   "data": {
     "by_result": {
-      "i1_no_probe": 523,
-      "wired": 50,
+      "i1_no_probe": 522,
+      "wired": 51,
       "i1_lean_with_sorry": 1,
       "conditional_class": 1
     },
@@ -3276,9 +3276,11 @@
         "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
-        "probe_witness_count": 0,
-        "probe_witnesses": [],
-        "result": "i1_no_probe"
+        "probe_witness_count": 1,
+        "probe_witnesses": [
+          "gauge-coupling-uniqueness-probe.witness.json"
+        ],
+        "result": "wired"
       },
       {
         "path": "content/quantum-observable-universe/descartes-universe/generation-completeness.ts",
