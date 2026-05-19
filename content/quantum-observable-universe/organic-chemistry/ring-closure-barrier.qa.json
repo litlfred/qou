@@ -148,6 +148,24 @@
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "2d704aca7975",
+          "ts": "141de25a8dd3",
+          "lean": "1ffafe10e5df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-adjudicator-organic-chemistry-refill",
+          "version": "claude-opus-4-7-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T18:58:53.780Z",
+        "reviewed_sha": "b7b008a7191c2ead31d4e5b7af9a99246d2b849f",
+        "notes": "auto-fill after early heuristic-test reset cleared fit entries; previously adjudicated as pass by one-voice-audit agent in the initial 16-block test sweep."
+      }
     ]
   },
   "updated_at": "2026-05-20T02:29:29.163Z"
