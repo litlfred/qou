@@ -109,21 +109,56 @@ async function modeCrossCheck(): Promise<CheckResult[]> {
       comments++;
       const entry = refMap.get(key);
       if (!entry) continue; // validate-refs already catches missing keys
-      // Extract surname (sequence of capitalised words at start of desc)
-      const surnameMatch = desc.match(/^([A-Z][a-zA-Zé\-']+)(?:[,\s]+(?:and|&)\s+([A-Z][a-zA-Zé\-']+))?/);
+      // Heuristic v3 (2026-05-19): the description after `-- Ref: [key]`
+      // is varied — sometimes a full citation snippet ("Boyd & Vandenberghe,
+      // Convex Optimization 2004"), sometimes a topic hint
+      // ("Hecke-skein normalization"), sometimes a bare DOI/URL, sometimes
+      // empty. Only flag a surname mismatch when:
+      //   1. The description contains prose (≥5 alphabetic words), AND
+      //   2. None of the entry's author surnames appear anywhere in the
+      //      lowercased description.
+      // This skips URL-only / DOI-only / topic-hint-only descriptions
+      // (which v2's "always check" misclassified as FPs).
+      const authorFamilies: string[] = (entry.author ?? [])
+        .map((a: any) => (a.family ?? a.literal ?? "").toLowerCase())
+        .filter((s: string) => s.length >= 3);
       const yearMatch = desc.match(/\b(19|20)\d{2}\b/);
-      const entryFamily = entry.author?.[0]?.family ?? entry.author?.[0]?.literal ?? "";
       const entryYear = entry.issued?.["date-parts"]?.[0]?.[0];
       checked++;
-      // Warn if entry's surname doesn't appear in any of the first 2 description tokens
-      if (surnameMatch && entryFamily) {
-        const descSurname = surnameMatch[1].toLowerCase();
-        const entryFamLower = entryFamily.toLowerCase();
-        if (!entryFamLower.includes(descSurname) && !descSurname.includes(entryFamLower)) {
+      // Strip URLs, DOIs, and punctuation; count remaining alphabetic words
+      const descStripped = desc
+        .replace(/\bhttps?:\/\/\S+/g, " ")     // URLs
+        .replace(/\bdoi:\s*\S+/gi, " ")         // doi:foo
+        .replace(/\b10\.\d{4,}\/\S+/g, " ")     // bare DOI patterns
+        .replace(/\barxiv:\s*\S+/gi, " ")       // arxiv:foo
+        .toLowerCase()
+        .replace(/[`"',()§\[\]{}]/g, " ");
+      const proseWords = descStripped.split(/\s+/).filter((w) => /^[a-zé\-']{2,}$/.test(w));
+      const isProseDescription = proseWords.length >= 5;
+      // Heuristic v4 addition: also accept the description if it shares a
+      // significant title word with the entry. Many .lean Ref descriptions
+      // cite the work by title rather than surname (e.g.
+      // `[kauffman1991] Knots and Physics, World Scientific`); these are
+      // genuine matches that v3 incorrectly flagged.
+      const entryTitle: string = ((entry as any).title ?? "").toLowerCase();
+      const stopwords = new Set([
+        "a", "an", "the", "of", "and", "or", "in", "on", "for", "to", "from",
+        "with", "by", "at", "as", "is", "are", "be",
+      ]);
+      const titleWords = entryTitle
+        .split(/[\s\-:,]+/)
+        .filter((w) => w.length >= 4 && !stopwords.has(w));
+      if (isProseDescription && authorFamilies.length > 0) {
+        const anyAuthorMentioned = authorFamilies.some(
+          (fam) => descStripped.includes(fam)
+        );
+        const anyTitleWordMentioned = titleWords.length > 0
+          && titleWords.some((tw) => descStripped.includes(tw));
+        if (!anyAuthorMentioned && !anyTitleWordMentioned) {
           out.push({
             entry: key,
             severity: "warn",
-            note: `surname mismatch: .lean says "${surnameMatch[1]}", entry has "${entryFamily}" (${path.relative(REPO_ROOT, f)})`,
+            note: `entry author [${authorFamilies.join(", ")}] AND title words [${titleWords.slice(0, 3).join(", ")}] both absent from description "${desc.slice(0, 80)}" (${path.relative(REPO_ROOT, f)})`,
           });
         }
       }
