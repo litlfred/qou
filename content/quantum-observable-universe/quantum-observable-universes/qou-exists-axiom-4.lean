@@ -32,7 +32,10 @@ namespace QOU.QuantumObservableUniverse
     epimorphism that pins the categorical determinant.  This is
     the categorical formulation of the `SL(2)` gauge restriction. -/
 -- Ref: [manuscript] §1 Quantum Observable Universe, Axiom 4
-theorem exists_axiom_4_volume
+-- NOTE: `def`, not `theorem` — a Hom-set `Q.exteriorSquare ⟶ (𝟙_ Q.C)`
+-- is a `Type _` (morphisms are data, not propositions).  Per Copilot
+-- review on PR #794.
+def exists_axiom_4_volume
     {k : Type*} [Field k] (Q : QOU.QuantumObservableUniverse.{u, v} k) :
     Q.exteriorSquare ⟶ (𝟙_ Q.C) :=
   Q.volumeForm

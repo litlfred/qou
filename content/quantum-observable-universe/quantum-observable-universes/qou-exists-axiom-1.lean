@@ -36,7 +36,9 @@ namespace QOU.QuantumObservableUniverse
     non-degenerate Haar-state Frobenius pairing on `A`. -/
 -- Ref: [manuscript] §1 Quantum Observable Universe, Axiom 1
 -- Ref: [kock2004]
-theorem exists_axiom_1_frobenius
+-- NOTE: `def`, not `theorem` — `FrobeniusHopfData` is a `Type _`
+-- (data, not a proposition).  Per Copilot review on PR #794.
+def exists_axiom_1_frobenius
     {k : Type*} [Field k] (Q : QOU.QuantumObservableUniverse.{u, v} k) :
     @QOU.FrobeniusHopfData Q.C Q.catInst Q.monInst :=
   Q.frobHopf
