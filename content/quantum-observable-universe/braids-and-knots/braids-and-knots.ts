@@ -368,9 +368,22 @@ export default chapter({
     }),
 
     // ── Calibration and algebraic mass formula ──────────────────────────
+    // ── Calibration and algebraic mass formula (P2 split 2026-05-19,
+    //    phase 1): the 134-block sec:calibration-algebraic-mass
+    //    (7.4× over the 3-18 band) split into 7 topical sub-sections
+    //    following the mass-formula pedagogy: derivation → Hoefsmit
+    //    & convergence → q-beta precision ladder → Archimedean
+    //    realization → cyclotomic depth-3 → Hecke-Baer-star →
+    //    mutant Jones falsifiability. The existing
+    //    calibration-algebraic-mass-intro stays at the top of A as
+    //    the umbrella narrative. Phase-1 densities 15/19/37/12/10/4/13.
+    //    Section C (37) remains over the upper bound; phase-2
+    //    follow-up will internal-split.
+
+    // §A — Mass-formula derivation
     section({
-      title: "Calibration and Algebraic Mass Formula",
-      label: "sec:calibration-algebraic-mass",
+      title: "Mass-formula derivation",
+      label: "sec:mass-formula-derivation",
       blocks: [
         "calibration-algebraic-mass-intro",
         "mass-element-nf",
@@ -387,6 +400,14 @@ export default chapter({
         "deuteron-binding-frobenius-codim",
         "hoefsmit-seminormal-form",
         "figure-eight-branching-rule",
+      ],
+    }),
+
+    // §B — Hoefsmit, convergence, and atomic-shell evidence
+    section({
+      title: "Hoefsmit, convergence, and atomic-shell evidence",
+      label: "sec:hoefsmit-convergence-atomic",
+      blocks: [
         "universal-braid-branching",
         "hoefsmit-scattering-pipeline",
         "hecke-convergence-bound",
@@ -406,6 +427,17 @@ export default chapter({
         "markov-trace-frobenius-selection",
         "hecke-1d-irrep-closed-form-character",
         "hoefsmit-V21-cos-symmetrization",
+      ],
+    }),
+
+    // §C — q-beta precision ladder (PHASE-1: 37 blocks, over band;
+    //   phase-2 follow-up will internal-split, likely into 3 sub-
+    //   sections: markov axioms + braid-link enumeration / chi-character
+    //   closed-forms / Kashiwara-Jones interpretations + quantum-dilog)
+    section({
+      title: "$q$-$\\beta$ precision ladder",
+      label: "sec:q-beta-precision-ladder",
+      blocks: [
         "q-beta-categorical-precision-ladder",
         "markov-axioms-primitive",
         "markov-trace-inductive-limit",
@@ -444,6 +476,14 @@ export default chapter({
         "phi-q-categorical-truncation",
         "phi-q-categorical-truncation-proof",
         "algebraic-quantum-volume-specialization",
+      ],
+    }),
+
+    // §D — Archimedean realization (functor + Kashaev volume bridge)
+    section({
+      title: "Archimedean realization and Kashaev volume",
+      label: "sec:archimedean-realization-kashaev",
+      blocks: [
         "archimedean-realization-functor",
         // Absorbed from former Ch `encounter`: pre-tau-vs-post-tau
         // interprets `def:archimedean-realization-functor` directly
@@ -462,6 +502,14 @@ export default chapter({
         "vc-as-depth-2-instance",
         // 50-digit numerical witness on the Bring-figure-8 embedding.
         "bring-figure-eight-depth-2-witness",
+      ],
+    }),
+
+    // §E — Cyclotomic depth-3 trilog identities
+    section({
+      title: "Cyclotomic depth-3 trilog identities",
+      label: "sec:cyclotomic-depth-3-trilog",
+      blocks: [
         // 50-digit functional-equation cross-validated depth-3 witness.
         "bring-trilog-depth-3-witness",
         // Im Li_3(ζ_5) = 4π³/125 (Tate-rational, Kummer reflection).
@@ -479,6 +527,14 @@ export default chapter({
         "jonquiere-cyclotomic-tate-rationality",
         "cyclotomic-orbit-sum-all-depths",
         "cyclotomic-dimension-synthesis-all-depths",
+      ],
+    }),
+
+    // §F — Hecke-Baer-star foundation and chirality pairing
+    section({
+      title: "Hecke-Baer-star foundation and chirality pairing",
+      label: "sec:hecke-baer-star-chirality",
+      blocks: [
         // Hecke-algebra Baer-* foundation (generic q).
         "hecke-baer-star-generic",
         // Explicit central primitive idempotents via Murphy elements.
@@ -487,6 +543,14 @@ export default chapter({
         "chirality-period-pairing",
         // Bring-embeddable knots: genus-bounded falsifiability targets.
         "bring-embeddable-knots",
+      ],
+    }),
+
+    // §G — Mutant Jones falsifiability and Bloch group closure
+    section({
+      title: "Mutant Jones falsifiability and Bloch group closure",
+      label: "sec:mutant-jones-bloch-group",
+      blocks: [
         // Placement of paper's existing knot-indexed convolutions in
         // the bi-filtration grid.
         "knot-indexed-convolution-grid",
