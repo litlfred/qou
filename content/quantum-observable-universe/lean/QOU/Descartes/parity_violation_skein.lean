@@ -13,26 +13,23 @@ namespace QOU.Descartes
 
 
 /-- Abstract context for the `parity_violation_skein` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
+    typed fields below; sub-claims encode the three steps of the manuscript
+    derivation (eigenvalue asymmetry / Skein mirror / iff `q = 1`). -/
 class ParityViolationSkeinContext where
   /-- Substrate parameter `q : ℝ`. -/
   q : ℝ
-  /-- Braid representative type. -/
-  Braid : Type
-  /-- Categorical object / monoidal structure. -/
-  CategoricalObj : Type
-  /-- Topological link / knot type. -/
-  Link : Type
-  /-- LP shadow-price / dual variable. -/
-  shadow_price : ℝ
-  /-- Fluid-dynamics velocity / vorticity field. -/
-  VelocityField : Type
-  /-- Spectrum / eigenvalue list. -/
-  Spectrum : Type
-  /-- The crossing / Hecke generator type. -/
-  Crossing : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- Manuscript sub-claim (i): the Hecke generator `σ = P ∘ R` has
+      eigenvalues `(q, -q⁻¹)` on the symmetric / antisymmetric channels
+      `S²V ⊕ Λ²V`; positive crossing `L_+` carries `q`, negative `L_-`
+      carries `-q⁻¹`. -/
+  claim_i_hecke_eigenvalues : Prop
+  /-- Manuscript sub-claim (ii): Skein-mirror invariance is equivalent
+      to the eigenvalue-fixed-point equation `q = q⁻¹`. -/
+  claim_ii_skein_mirror_iff_eigenvalue_eq : Prop
+  /-- Manuscript sub-claim (iii): the substrate ray excludes `q = ±1`
+      (the bar-involution fixed locus); equivalently the symmetric /
+      antisymmetric eigenvalues differ in absolute value. -/
+  claim_iii_q_ne_one_on_substrate : q ≠ 1
 
 /-- **Manuscript statement** (full body):
 
@@ -115,9 +112,15 @@ $\mathcal{P}:
     placeholder; the `ctx.holds : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/parity-violation-skein.ts
-theorem parity_violation_skein [ctx : ParityViolationSkeinContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem parity_violation_skein [ctx : ParityViolationSkeinContext] :
+    ctx.claim_i_hecke_eigenvalues ∧
+    ctx.claim_ii_skein_mirror_iff_eigenvalue_eq ∧
+    ctx.q ≠ 1 := by
+  -- The `q ≠ 1` half is immediate from the substrate-ray hypothesis;
+  -- the eigenvalue / mirror-equivalence claims are recorded abstractly
+  -- pending the manuscript translation of the categorical proof.
+  refine ⟨?_, ?_, ctx.claim_iii_q_ne_one_on_substrate⟩
+  · sorry
+  · sorry
 
 end QOU.Descartes

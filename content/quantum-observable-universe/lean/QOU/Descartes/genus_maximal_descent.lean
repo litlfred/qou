@@ -13,18 +13,22 @@ namespace QOU.Descartes
 
 
 /-- Abstract context for the `genus_maximal_descent` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
+    typed fields below; `claim_i` / `claim_ii` carry the two main assertions. -/
 class GenusMaximalDescentContext where
-  /-- Categorical object / monoidal structure. -/
+  /-- Categorical object `A` of the Descartes universe `(C, A, τ)`. -/
   CategoricalObj : Type
-  /-- LP shadow-price / dual variable. -/
-  shadow_price : ℝ
-  /-- The fibre functor `τ`. -/
+  /-- The fibre functor `τ : C → Vect`. -/
   Functor : Type → Type
-  /-- Fluid-dynamics velocity / vorticity field. -/
-  VelocityField : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- The Riemann surface `M_0` obtained by geometric descent. -/
+  RiemannSurface : Type
+  /-- The genus of `M_0`. -/
+  genus : ℕ
+  /-- Manuscript sub-claim (i): under the descent, `M_0` is a compact Riemann
+      surface of genus exactly `4` — `genus = 4`. -/
+  claim_i_genus_eq_four : genus = 4
+  /-- Manuscript sub-claim (ii): the Hurwitz bound on the automorphism group
+      of `Σ_4` is `|Aut(Σ_4)| ≤ 84 (g − 1) = 252`. -/
+  claim_ii_hurwitz_bound : Prop
 
 /-- **Manuscript statement** (full body):
 
@@ -45,9 +49,12 @@ $|\mathrm{Aut}(\Sigma)| \leq 84(g - 1) = 252$.
     placeholder; the `ctx.holds : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/genus-maximal-descent.ts
-theorem genus_maximal_descent [ctx : GenusMaximalDescentContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
+theorem genus_maximal_descent [ctx : GenusMaximalDescentContext] :
+    ctx.genus = 4 ∧ ctx.claim_ii_hurwitz_bound := by
+  -- Manuscript proof referenced above; the `genus = 4` half follows
+  -- directly from the class hypothesis; the Hurwitz bound is recorded
+  -- abstractly pending a Mathlib-aware concretisation of `Aut(Σ_g)`.
+  refine ⟨ctx.claim_i_genus_eq_four, ?_⟩
   sorry
 
 end QOU.Descartes

@@ -13,16 +13,23 @@ namespace QOU.Descartes
 
 
 /-- Abstract context for the `skew_poisson_integration` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
+    typed fields below; `claim_i` / `claim_ii` / `claim_iii` carry the three
+    numbered sub-claims of the manuscript proposition. -/
 class SkewPoissonIntegrationContext where
-  /-- Categorical object / monoidal structure. -/
+  /-- Categorical object / monoidal structure (formal group `H`). -/
   CategoricalObj : Type
-  /-- LP shadow-price / dual variable. -/
-  shadow_price : ℝ
-  /-- Fluid-dynamics velocity / vorticity field. -/
-  VelocityField : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- The integrating non-commutative formal group `G/ℤ_p`. -/
+  IntegratingGroup : Type
+  /-- Manuscript sub-claim (i): `G ⊗_{ℤ_p} 𝔽_p ≅ H` —
+      reduction modulo `p` recovers the original commutative formal group. -/
+  claim_i_reduction_isomorphism : Prop
+  /-- Manuscript sub-claim (ii): `Dist(G)` is a Gröbner–Shirshov deformation
+      of `Dist(H)` via the enveloping-algebra relations. -/
+  claim_ii_distribution_deformation : Prop
+  /-- Manuscript sub-claim (iii): the comultiplication on `Dist(G)` is
+      *strongly multiplicative* — Frobenius relation
+      `(Id ⊗ m) ∘ (Δ ⊗ Id) = Δ ∘ m` is preserved under the deformation. -/
+  claim_iii_frobenius_preserved : Prop
 
 /-- **Manuscript statement** (full body):
 
@@ -46,9 +53,12 @@ $\pi_<$ a skewed-Poisson structure on $H$.  Then there exists a
     placeholder; the `ctx.holds : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/models-of-qous/skew-poisson-integration.ts
-theorem skew_poisson_integration [ctx : SkewPoissonIntegrationContext] : ctx.holds := by
+theorem skew_poisson_integration [ctx : SkewPoissonIntegrationContext] :
+    ctx.claim_i_reduction_isomorphism ∧
+    ctx.claim_ii_distribution_deformation ∧
+    ctx.claim_iii_frobenius_preserved := by
   -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
+  -- type-level Lean translation of the hypotheses for each sub-claim.
   sorry
 
 end QOU.Descartes

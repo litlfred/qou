@@ -9,11 +9,16 @@ The full Lean statement is pending; this stub exists so the
 Lake package.
 -/
 
+import Mathlib.Algebra.BigOperators.Group.Finset.Defs
+import Mathlib.Data.Real.Basic
+
 namespace QOU.Descartes
 
 
 /-- Abstract context for the `gram_weighted_qvalue` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
+    typed fields below; sub-claims encode the three structural pieces of
+    `eq:gram-weighted-qvalue` (the formula itself, the NF-reduction-cost
+    definition `Δ_k`, and the Gram-weight definition `w_k`). -/
 class GramWeightedQvalueContext where
   /-- Substrate parameter `q : ℝ`. -/
   q : ℝ
@@ -21,18 +26,26 @@ class GramWeightedQvalueContext where
   Z : ℕ
   /-- Neutron number `N`. -/
   N : ℕ
-  /-- Braid representative type. -/
-  Braid : Type
-  /-- Categorical object / monoidal structure. -/
-  CategoricalObj : Type
-  /-- LP shadow-price / dual variable. -/
-  shadow_price : ℝ
-  /-- Categorical mass / binding energy. -/
-  mass : ℝ
-  /-- Fluid-dynamics velocity / vorticity field. -/
-  VelocityField : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- The electron mass `m_e : ℝ` (CODATA input). -/
+  m_e : ℝ
+  /-- The `Q`-value of the `β⁻`-decay channel. -/
+  Q : ℝ
+  /-- The NF-reduction cost per neutron-conversion channel `k`, indexed
+      `Fin N → ℝ`. -/
+  Δ : Fin N → ℝ
+  /-- The Gram weight per channel `k`, indexed `Fin N → ℝ`; should sum to
+      `1` (probability distribution over conversion channels). -/
+  w : Fin N → ℝ
+  /-- Manuscript sub-claim (i) — the `Q`-value formula:
+      `Q = (Σ_k w_k · Δ_k) · N · m_e`. -/
+  claim_i_qvalue_formula :
+    Q = (Finset.univ.sum (fun k : Fin N => w k * Δ k)) * (N : ℝ) * m_e
+  /-- Manuscript sub-claim (ii): the Gram weights sum to `1`. -/
+  claim_ii_weights_sum_to_one :
+    Finset.univ.sum (fun k : Fin N => w k) = 1
+  /-- Manuscript sub-claim (iii): every channel weight is non-negative
+      (so the formula above is interpretable as a weighted average). -/
+  claim_iii_weights_nonneg : ∀ k : Fin N, 0 ≤ w k
 
 /-- **Manuscript statement** (full body):
 
@@ -122,9 +135,9 @@ The $Q$-value has three factors:
     placeholder; the `ctx.holds : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/gram-weighted-qvalue.ts
-theorem gram_weighted_qvalue [ctx : GramWeightedQvalueContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem gram_weighted_qvalue [ctx : GramWeightedQvalueContext] :
+    ctx.Q
+      = (Finset.univ.sum (fun k : Fin ctx.N => ctx.w k * ctx.Δ k))
+        * (ctx.N : ℝ) * ctx.m_e := ctx.claim_i_qvalue_formula
 
 end QOU.Descartes

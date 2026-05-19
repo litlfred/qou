@@ -12,7 +12,7 @@
 ```
 
 *(where `s = Polynomial.X`).  Substituting `u = s²`, for every odd
-prime `p`, the polynomial `a p` is a polynomial in `u = s²` of
+positive `p`, the polynomial `a p` is a polynomial in `u = s²` of
 degree `(p - 1) / 2 = g(T_{2,p})` with leading coefficient `1`.*
 
 The statement below records the recurrence, the half-degree shape,
