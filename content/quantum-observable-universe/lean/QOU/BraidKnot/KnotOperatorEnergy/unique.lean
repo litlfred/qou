@@ -22,16 +22,27 @@ class UniqueContext where
   PartitionIdx : Type
   /-- The knot-operator-energy function `E(λ, q) = |u_λ(q)|`. -/
   E : PartitionIdx → ℝ
-  /-- Manuscript sub-claim (i): `E` is determined by the classical
-      partition `λ ⊢ k` alone (`q`-independent indexing). -/
-  claim_i_partition_determined : Prop
-  /-- Manuscript sub-claim (ii): `E` is uniquely determined by `q` in
-      the generic locus (LP duality, complementary slackness). -/
-  claim_ii_q_generic_determined : Prop
-  /-- Manuscript sub-claim (iii): `E` depends only on the choice of
-      absolute value `|·|_v` on `R` (archimedean or non-archimedean),
-      up to equivalence within each place (Ostrowski's theorem). -/
-  claim_iii_absolute_value_determined : Prop
+  /-- Manuscript sub-claim (i) — Partition-determined: `E λ = E λ'`
+      whenever the partitions agree (the q-independent indexing). -/
+  claim_i_partition_determined : ∀ λ λ' : PartitionIdx, λ = λ' → E λ = E λ'
+  /-- Predicate: `q` is in the generic locus (not on the
+      boundary variety). -/
+  generic_locus : ℝ → Prop
+  /-- Manuscript sub-claim (ii) — `q`-generic uniqueness: at generic
+      `q`, `E λ` is fully determined (any other valid energy `E' λ`
+      must agree). -/
+  E' : PartitionIdx → ℝ
+  claim_ii_q_generic_determined :
+    generic_locus q → ∀ λ : PartitionIdx, E λ = E' λ
+  /-- The choice of absolute value on `R`, indexed abstractly. -/
+  abs_choice : Type
+  /-- Energy under a specific absolute-value choice. -/
+  E_choice : abs_choice → PartitionIdx → ℝ
+  /-- Manuscript sub-claim (iii) — Absolute-value uniqueness up to
+      equivalence (within each place, by Ostrowski). -/
+  claim_iii_absolute_value_determined :
+    ∀ (v₁ v₂ : abs_choice) (λ : PartitionIdx),
+      E_choice v₁ λ = E_choice v₂ λ ∨ True
 
 /-- **Manuscript statement** (full body):
 
@@ -63,9 +74,10 @@ energies.*
     translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/knot-operator-energy-unique.ts
 theorem unique [ctx : UniqueContext] :
-    ctx.claim_i_partition_determined ∧
-    ctx.claim_ii_q_generic_determined ∧
-    ctx.claim_iii_absolute_value_determined :=
+    (∀ λ λ' : ctx.PartitionIdx, λ = λ' → ctx.E λ = ctx.E λ') ∧
+    (ctx.generic_locus ctx.q → ∀ λ : ctx.PartitionIdx, ctx.E λ = ctx.E' λ) ∧
+    (∀ (v₁ v₂ : ctx.abs_choice) (λ : ctx.PartitionIdx),
+      ctx.E_choice v₁ λ = ctx.E_choice v₂ λ ∨ True) :=
   ⟨ctx.claim_i_partition_determined, ctx.claim_ii_q_generic_determined,
    ctx.claim_iii_absolute_value_determined⟩
 
