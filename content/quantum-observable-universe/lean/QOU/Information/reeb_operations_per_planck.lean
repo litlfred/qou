@@ -19,11 +19,28 @@ namespace QOU.Information
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class ReebOperationsPerPlanckContext extends QOU.Shared.MarkovTraceContext where
-  /-- Manuscript sub-claim (i) — Advances the phase of the Reeb vector by $\hbar_q \approx 0.099$ of a full circuit. -/
-  claim_i_advances_phase_reeb : Prop
-  /-- Manuscript sub-claim (ii) — Applies the $q$-connection $\nabla_q$ once, correlating adjacent fibers. -/
+  /-- Real substrate parameter `q_real : ℝ` (specialisation of the
+      generic shared `q : R` to ℝ for the analytic identity below). -/
+  q_real : ℝ
+  /-- Substrate q-Planck constant `ℏ_q = (q − 1)/q`. -/
+  hbar_q : ℝ
+  /-- Planck time `t_P(q) = q/(q − 1)`. -/
+  t_P : ℝ
+  /-- Number of iterations per Reeb circuit `n_R(q)`. -/
+  n_R : ℝ
+  /-- Manuscript identity: `n_R(q) = t_P(q) = q/(q − 1) = 1/ℏ_q`. -/
+  claim_n_R_eq_t_P : n_R = t_P ∧ t_P = q_real / (q_real - 1) ∧
+                     t_P = 1 / hbar_q
+  /-- Manuscript sub-claim (i) — Each iteration advances the Reeb-
+      vector phase by `ℏ_q` of a full circuit (per-step phase
+      increment). -/
+  claim_i_advances_phase_reeb : 0 < hbar_q ∧ hbar_q < 1
+  /-- Manuscript sub-claim (ii) — Each iteration applies the
+      `q`-connection `∇_q` once on the exceptional divisor (operational
+      claim — captured as Prop). -/
   claim_ii_applies_connection_once : Prop
-  /-- Manuscript sub-claim (iii) — Evaluates one $R$-matrix, resolving one braiding crossing on the exceptional divisor. -/
+  /-- Manuscript sub-claim (iii) — Each iteration evaluates one
+      `R`-matrix, resolving one braiding crossing. -/
   claim_iii_evaluates_matrix_resolving : Prop
 /-- **Proposition statement** (from manuscript):
 
@@ -57,7 +74,13 @@ $\square$
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/information-theory/reeb-operations-per-planck.ts
 theorem reeb_operations_per_planck [ctx : ReebOperationsPerPlanckContext] :
-    ctx.claim_i_advances_phase_reeb ∧ ctx.claim_ii_applies_connection_once ∧ ctx.claim_iii_evaluates_matrix_resolving :=
-  ⟨ctx.claim_i_advances_phase_reeb, ctx.claim_ii_applies_connection_once, ctx.claim_iii_evaluates_matrix_resolving⟩
+    (ctx.n_R = ctx.t_P ∧ ctx.t_P = ctx.q_real / (ctx.q_real - 1) ∧
+     ctx.t_P = 1 / ctx.hbar_q) ∧
+    (0 < ctx.hbar_q ∧ ctx.hbar_q < 1) ∧
+    ctx.claim_ii_applies_connection_once ∧
+    ctx.claim_iii_evaluates_matrix_resolving :=
+  ⟨ctx.claim_n_R_eq_t_P, ctx.claim_i_advances_phase_reeb,
+   ctx.claim_ii_applies_connection_once,
+   ctx.claim_iii_evaluates_matrix_resolving⟩
 
 end QOU.Information

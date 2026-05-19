@@ -18,10 +18,25 @@ namespace QOU.FluidDynamics
 /-- Abstract context for the `ns_obstruction_computation` claim — manuscript-themed
     typed fields below; `holds` carries the residual `Prop` claim. -/
 class NsObstructionComputationContext extends QOU.Shared.SobolevHkRegularityContext where
-  /-- Manuscript sub-claim (i) — Topological: $\mathrm{lk} \cdot e(\xi)|_p$, which is nonzero iff the Reeb field has a zero at $p$ (iff the contact st.... -/
-  claim_i_topological_which_nonzero : Prop
-  /-- Manuscript sub-claim (ii) — Analytic: $\delta_n|_\Sigma$, which is nonzero whenever the $n$-th jet of the velocity diverges (for all $n \geq 1$ i.... -/
-  claim_ii_analytic_which_nonzero : Prop
+  /-- Linking number `lk` of the colliding vortex pair. -/
+  lk : ℤ
+  /-- Euler class value `e(ξ)|_p` at the collision point. -/
+  e_xi_at_p : ℝ
+  /-- Predicate: the Reeb field has a zero at `p`. -/
+  reeb_zero_at_p : Prop
+  /-- Manuscript sub-claim (i) — Topological obstruction:
+      `lk · e(ξ)|_p ≠ 0` iff the Reeb field has a zero at `p`. -/
+  claim_i_topological_obstruction :
+    ((lk : ℝ) * e_xi_at_p ≠ 0) ↔ reeb_zero_at_p
+  /-- Per-jet-level obstruction `δ_n` restricted to the collision
+      surface `Σ`. -/
+  delta_n : ℕ → ℝ
+  /-- Predicate: the `n`-th jet of the velocity diverges on `Σ`. -/
+  jet_diverges : ℕ → Prop
+  /-- Manuscript sub-claim (ii) — Analytic obstruction:
+      `δ_n|_Σ ≠ 0` iff the `n`-th velocity jet diverges. -/
+  claim_ii_analytic_obstruction :
+    ∀ n : ℕ, 1 ≤ n → (delta_n n ≠ 0 ↔ jet_diverges n)
 /-- **Content statement** (from manuscript):
 
 Let $(\mathbf{C}, A, \tau)$ be the Descartes universe with
@@ -35,7 +50,8 @@ linking number $\mathrm{lk} = 1$.
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/ns-obstruction-computation.ts
 theorem ns_obstruction_computation [ctx : NsObstructionComputationContext] :
-    ctx.claim_i_topological_which_nonzero ∧ ctx.claim_ii_analytic_which_nonzero :=
-  ⟨ctx.claim_i_topological_which_nonzero, ctx.claim_ii_analytic_which_nonzero⟩
+    (((ctx.lk : ℝ) * ctx.e_xi_at_p ≠ 0) ↔ ctx.reeb_zero_at_p) ∧
+    (∀ n : ℕ, 1 ≤ n → (ctx.delta_n n ≠ 0 ↔ ctx.jet_diverges n)) :=
+  ⟨ctx.claim_i_topological_obstruction, ctx.claim_ii_analytic_obstruction⟩
 
 end QOU.FluidDynamics
