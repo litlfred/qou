@@ -42,17 +42,7 @@ def test_prediction_str():
     assert "MeV" in s
 
 
-def test_p1_stubs_raise_notimplemented():
-    """Until P2 vendors the canonical-pipeline modules, public
-    compute paths raise NotImplementedError with a pointer to the
-    architecture plan."""
-    import qou_mass as qm
-    for call, args, kwargs in [
-        (qm.predict, ("4He",), {}),
-        (qm.predict_nucleon, ("p",), {}),
-        (qm.compute_tr_M, (2, 2), {}),
-        (qm.canonical_braid, (2, 2), {}),
-    ]:
-        with pytest.raises(NotImplementedError) as exc:
-            call(*args, **kwargs)
-        assert "P1" in str(exc.value) or "skeleton" in str(exc.value)
+# test_p1_stubs_raise_notimplemented removed in P2 — the public
+# compute paths are now LIVE (read from vendored per-Z shards).
+# See test_p2_integration.py for the numerical golden tests that
+# replaced this shape-only check.
