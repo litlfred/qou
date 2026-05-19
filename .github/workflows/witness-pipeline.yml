@@ -226,15 +226,6 @@ jobs:
         run: |
           python3 folio-assistant/computations/markov_trace_axiomatic_multi_atom.py
 
-      - name: Atomic-braid mass-table (Strategy 3 — knot-op + Δ_n²)
-        # Re-derives the six-term mass formula using the atomic-braid
-        # Markov-trace anchor (PR #534/#547) with inter-carrier
-        # coupling via the canonical jet-knot-invariants a_k(Z,N) and
-        # full-twist Δ_n² scalar. Per-atom predictions for p, n, D,
-        # T, ³He, ⁴He vs CODATA. Informational; does not gate CI.
-        run: |
-          python3 folio-assistant/computations/atomic_braid_mass_table.py || true
-
       - name: Full-twist Δ_n² scalar verification
         # Per prop:categorical-neutrality-saturated-shells: tabulates
         # c(λ) and q^c(λ) per Wedderburn block at n ∈ {1,...,12};
@@ -402,14 +393,17 @@ jobs:
           # is the pragmatic interim.
           PATHSPECS=':(glob)folio-assistant/computations/*.witness.json
           :(glob)folio-assistant/computations/*.derivation.json
-          :(exclude)folio-assistant/computations/delta-lambda-empirical-tabulation.witness.json
-          :(exclude)folio-assistant/computations/atomic-braid-mass-table.witness.json'
+          :(exclude)folio-assistant/computations/delta-lambda-empirical-tabulation.witness.json'
           if git diff --quiet -- $PATHSPECS; then
             echo "Witnesses + derivation chains bit-stable."
             exit 0
           fi
           echo "Witnesses changed — filtering expected drift fields..."
-          drift=$(git diff -- $PATHSPECS | \
+          # --diff-filter=ACMR: only Added/Copied/Modified/Renamed —
+          # exclude Deleted (D). Witness deletions are intentional
+          # cleanup (e.g. legacy-compute removals in PR #781); they
+          # go through PR review, not the bit-stability gate.
+          drift=$(git diff --diff-filter=ACMR -- $PATHSPECS | \
                   grep -E "^[+-]" | \
                   grep -vE "^\+\+\+|^---" | \
                   grep -vE '"([a-zA-Z_]*_)?(computedAt|timestamp|durationMs|trace_time_sec|time_sec|elapsed_sec|elapsed_ms|commitSha|scriptCommitSha|scriptHash|engineVersion|engine|engine_version)":' || true)
