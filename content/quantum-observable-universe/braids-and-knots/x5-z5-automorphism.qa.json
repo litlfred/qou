@@ -148,6 +148,26 @@
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "85ca19d7d5d3",
+          "ts": "e5fbac628a82",
+          "lean": "9c7fdf03a90b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-adjudicator-bk-critical",
+          "version": "claude-opus-4-7-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T17:59:48.610Z",
+        "reviewed_sha": "b4893f9a1a71b351e5906e2937653bf0e96f723f",
+        "severity": "major",
+        "evidence": "x5-z5-automorphism.md:1-25: 'Let X_5: y² = x⁵ - 1 be the hyperelliptic quintic...The map φ_5(x,y) = (ζ_5 x, y) is an automorphism of order 5.'",
+        "notes": "Z_5 automorphism of hyperelliptic quintic. Pure algebraic geometry, no knot/braid framing. Belongs in descartes-universe/."
+      }
     ]
   },
   "updated_at": "2026-05-20T02:29:29.163Z"

@@ -152,6 +152,24 @@
         "severity": "major",
         "evidence": "content/quantum-observable-universe/braids-and-knots/n-sym-symmetric-channel-normalization.md:98: \\cdot \\mathcal{C}(q),  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$] | content/quantum-observable-universe/braids-and-knots/n-sym-symmetric-channel-normalization.md:101: where $\\mathcal{C}(q)$ is the substrate's vacuum-volume constant.  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$]"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "9303abaed820",
+          "ts": "f4e6aa46fb79",
+          "lean": "9b2bb218707d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-adjudicator-bk-critical",
+          "version": "claude-opus-4-7-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T17:59:48.610Z",
+        "reviewed_sha": "b4893f9a1a71b351e5906e2937653bf0e96f723f",
+        "notes": "Symmetric-channel Plancherel normalization N_v with [2k]_q^2 — Hecke quantum integers."
+      }
     ]
   },
   "updated_at": "2026-05-20T02:29:29.163Z"

@@ -150,6 +150,24 @@
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "b7cea3fbab38",
+          "ts": "e78490069579",
+          "lean": "2929a16d580c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-adjudicator-bk-critical",
+          "version": "claude-opus-4-7-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T17:59:48.610Z",
+        "reviewed_sha": "b4893f9a1a71b351e5906e2937653bf0e96f723f",
+        "notes": "Vol(4_1)/ħ_q^2 = m_μ/m_e CAL-2 cross-check — knot (figure-8) volume in calibration; valid in Ch 4."
+      }
     ]
   },
   "updated_at": "2026-05-20T02:29:29.163Z"

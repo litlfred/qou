@@ -148,6 +148,26 @@
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "2f97c48f627c",
+          "ts": "ef6c0dbf9455",
+          "lean": "8ac424ff98a1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-adjudicator-bk-critical",
+          "version": "claude-opus-4-7-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T17:59:48.610Z",
+        "reviewed_sha": "b4893f9a1a71b351e5906e2937653bf0e96f723f",
+        "severity": "major",
+        "evidence": "lagrange-resolvent-transform.ts:6: title 'Discrete Fourier transform diagonalises C_5 on the Brings surface'",
+        "notes": "Pure DFT on C_5 / Bring's surface — no knots, no braids, no Hecke. Belongs in descartes-universe/."
+      }
     ]
   },
   "updated_at": "2026-05-20T02:29:29.163Z"

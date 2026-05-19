@@ -148,6 +148,26 @@
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "7023319b254a",
+          "ts": "0c595f5e6475",
+          "lean": "c6e107834c94"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-adjudicator-bk-critical",
+          "version": "claude-opus-4-7-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T17:59:48.610Z",
+        "reviewed_sha": "b4893f9a1a71b351e5906e2937653bf0e96f723f",
+        "severity": "major",
+        "evidence": "exceptional-divisor.md:1: 'Let (C,Θ,G,S) be a QOU and let p∈M be a brane point with outward normal N(p)=p/|p|...'",
+        "notes": "Pure brane geometry — exceptional P^1(C) fibre of state bundle, blow-up map. Zero knot/braid framing. Belongs in quantum-observable-universes/ or descartes-universe/."
+      }
     ]
   },
   "updated_at": "2026-05-20T02:29:29.163Z"
