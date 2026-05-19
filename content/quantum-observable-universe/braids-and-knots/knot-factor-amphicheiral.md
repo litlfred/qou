@@ -54,23 +54,30 @@ This is the alternating-block projection used in the
 ${}^3\mathrm{H}$ and ${}^3\mathrm{He}$ formulas — not a fitted
 ansatz.
 
-**Note on the historical formulation.**  An earlier version of
-this corollary stated
-$\chi_\lambda(\beta_\mathcal{K}^*) = (-1)^{[\lambda = (1^n)]}\chi_\lambda(\beta_\mathcal{K})$
-("sign-flip on the alternating block") and collapsed the formula
-to $a = 1 - h^2$ with $h := \chi_{(1^n)}/\chi_{(1^n)}(\mathbf{1})$.
-The sign-flip claim is empirically false on $4_1$: the
-1-dimensional alternating character factors through writhe, which
-is $0$ for both $\beta_{4_1}$ and its mirror, so both compute to
-$+1$ rather than to opposite signs.  In addition, the collapse to
-$1 - h^2$ silently invoked
-$\sum_{\lambda \neq (1^n)} w_\lambda (\chi_\lambda/\chi_\lambda(\mathbf{1}))^2 = 1$,
-which is a Cauchy–Schwarz bound, not an identity.  The
-Markov-amphicheirality framework above replaces both defects with
-a single, structural condition (conjugacy of $\beta_K^*$ to
-$\beta_K$ in $H_n$) that $4_1$ in fact satisfies, and gives the
-clean sum-of-positive-squares formula.  See the resolution
-discussion in
-[`docs/coordination/i1-probe-author-queue-2026-05-19.md`](../../../../docs/coordination/i1-probe-author-queue-2026-05-19.md)
-and the computational verification in
-[`folio-assistant/computations/knot_factor_amphicheiral_BD_probe.py`](../../../../folio-assistant/computations/knot_factor_amphicheiral_BD_probe.py).
+> **Errata banner (2026-05-19) — proof's sign-flip claim flagged.**
+> The proof's assertion
+> $\chi_\lambda(\beta_\mathcal{K}^*) = (-1)^{[\lambda=(1^n)]}
+> \chi_\lambda(\beta_\mathcal{K})$
+> is empirically inconsistent with the canonical Hoefsmit characters
+> of the figure-eight $\beta = \sigma_1 \sigma_2^{-1} \sigma_1
+> \sigma_2^{-1}$ at $q_0$: the BD probe
+> [`knot-factor-amphicheiral-BD-probe.witness.json`](../../folio-assistant/computations/knot-factor-amphicheiral-BD-probe.witness.json)
+> reports
+> $\chi_{(1^3)}(\beta) = \chi_{(1^3)}(\beta^*) = +1$
+> (writhe-0, no sign flip), not the predicted $\chi_{(1^3)}(\beta^*)
+> = -\chi_{(1^3)}(\beta) = -1$.  The standard categorical reading is
+> that amphicheirality preserves the **Markov trace**
+> $\mathrm{tr}_M(\rho(\beta_\mathcal{K}))$, not individual block
+> characters $\chi_\lambda(\beta_\mathcal{K})$; only the Markov-trace
+> ratio is a topological invariant after Markov stabilisation.  A
+> revised derivation of $a_\mathcal{K}$ via Markov-invariance — or
+> a Gram-pairing form $a_\mathcal{K} = \mathrm{tr}_M(\beta \cdot
+> \beta^*) / \mathrm{tr}_M(\mathbf{1})$ — is the natural next step
+> and is filed in
+> [`docs/coordination/2026-05-19-i1-hecke-cluster-handover.md`](../../docs/coordination/2026-05-19-i1-hecke-cluster-handover.md)
+> as a deferred follow-up.  This banner stages the issue for the
+> revision and does **not** assert the displayed $a = 1 - h^2$
+> formula is correct or incorrect — empirical agreement with
+> tritium / helium-3 mass data remains the dispositive check, and
+> the BD probe records the relevant Hoefsmit values for both
+> $\beta$ and $\beta^*$.
