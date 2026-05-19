@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T04:47:44.454947+00:00",
-  "commitSha": "9ba10943e6caa859a349be0c106e2cf1fd46f7e4",
+  "computedAt": "2026-05-19T05:14:25.272504+00:00",
+  "commitSha": "196fd730c9c92b94d34221fefe59e35847dc7beb",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 13,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "8d9eed8d9be8",
@@ -13,7 +13,7 @@
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 595,
+    "files_scanned": 605,
     "patterns": [
       "P15",
       "P16",
@@ -25,7 +25,7 @@
   "data": {
     "by_pattern_count": {
       "P15": 173,
-      "P16": 122,
+      "P16": 133,
       "P21": 32,
       "P30": 95,
       "P31": 25
@@ -2857,6 +2857,83 @@
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P16",
+        "file": "qbeta_per_block_paper_closed_forms.py",
+        "line": 70,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "qbeta_per_block_paper_closed_forms.py",
+        "line": 115,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "qbeta_per_block_paper_closed_forms.py",
+        "line": 136,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "qbeta_per_block_paper_closed_forms.py",
+        "line": 164,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "qbeta_per_block_paper_closed_forms.py",
+        "line": 168,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "qbeta_per_block_symbolic.py",
+        "line": 82,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "qbeta_per_block_symbolic.py",
+        "line": 97,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "qbeta_per_block_symbolic.py",
+        "line": 104,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "qbeta_per_block_symbolic.py",
+        "line": 185,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "qbeta_per_block_symbolic.py",
+        "line": 186,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P16",
+        "file": "qbeta_per_block_symbolic.py",
+        "line": 187,
+        "snippet": "sp.simplify(...)",
+        "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
       },
       {
         "pattern": "P15",

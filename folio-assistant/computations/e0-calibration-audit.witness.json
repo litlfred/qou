@@ -2,7 +2,7 @@
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "computation": "e0-calibration-audit",
   "description": "Audit of E_0 / Q_β(n) calibration constants across folio-assistant/computations. Reports value-precision drift, anchor-of-pinning violations vs CAL-3, and the PDG-derived uncertainty floor on every E_0-dependent quantity.",
-  "computedAt": "2026-05-19T03:53:45.021662+00:00",
+  "computedAt": "2026-05-19T04:36:24.765987+00:00",
   "reference_blocks": [
     "prop:three-calibration-inputs",
     "rem:calibration-inputs"
@@ -681,6 +681,46 @@
         "kind": "doc"
       },
       {
+        "file": "folio-assistant/computations/per_observable_100x_status.py",
+        "line": 37,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "Q_BETA_MEV, Q_BETA_MEV_ERR,",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/per_observable_100x_status.py",
+        "line": 37,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "Q_BETA_MEV, Q_BETA_MEV_ERR,",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/per_observable_100x_status.py",
+        "line": 81,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "\"Q_beta\":   (Q_BETA_MEV,      Q_BETA_MEV_ERR,         \"CAL-3 anchor\",",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/per_observable_100x_status.py",
+        "line": 81,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "\"Q_beta\":   (Q_BETA_MEV,      Q_BETA_MEV_ERR,         \"CAL-3 anchor\",",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/per_observable_100x_status.py",
+        "line": 82,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "\"codata_constants.Q_BETA_MEV (← cal-3-q-beta.witness.json)\"),",
+        "kind": "doc"
+      },
+      {
         "file": "folio-assistant/computations/probe_beta_decay_n1_brane_tower.py",
         "line": 133,
         "pattern": "Q_BETA_MEV",
@@ -798,6 +838,46 @@
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "q_codata = mp.mpf(str(Q_BETA_MEV))",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/qbeta_decay_sdp_solver.py",
+        "line": 46,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "from codata_constants import M_E_MEV, Q_BETA_MEV  # noqa: E402",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/qbeta_decay_sdp_solver.py",
+        "line": 66,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "n_target = float(Q_BETA_MEV) / E_0",
+        "kind": "active"
+      },
+      {
+        "file": "folio-assistant/computations/qbeta_decay_sdp_solver.py",
+        "line": 74,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "print(f\"Q_β CODATA = {float(Q_BETA_MEV):.10f} MeV\")",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/qbeta_decay_sdp_solver.py",
+        "line": 147,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "print(f\"  Q_β(q_0) / m_e = {float(Q_BETA_MEV) / float(M_E_MEV):.6f}\")",
+        "kind": "doc"
+      },
+      {
+        "file": "folio-assistant/computations/qbeta_decay_sdp_solver.py",
+        "line": 170,
+        "pattern": "Q_BETA_MEV",
+        "match": "Q_BETA_MEV",
+        "context": "w.add_parameter(\"Q_beta_codata\", str(float(Q_BETA_MEV)))",
         "kind": "active"
       }
     ],
