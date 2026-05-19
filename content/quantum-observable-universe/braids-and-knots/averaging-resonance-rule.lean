@@ -169,6 +169,59 @@ theorem empirical_sector_classification (k : ℕ) (hk : 3 ≤ k ∧ k ≤ 10) :
   obtain ⟨_, _⟩ := hk
   interval_cases k <;> rfl
 
+/-- **Conjecture (half-fill rung is the unique averaging-resonant rung)**.
+
+    The categorical-action argument that the bar-invariant fixed-point
+    sector first surfaces exactly at the half-fill rung
+    `k = ⌊n_total / 2⌋` is **not yet derived**. The empirical evidence
+    on the proton typed-B_3 recipe (`n_total = 11`, observed
+    averaging-resonant rung k = 5) is consistent with this conjecture
+    but does not prove it.
+
+    Axiomatised as a Lean class so downstream theorems can be stated
+    conditionally on `[HalfFillRungIsOutlier]` per CLAUDE.md §3b-cond
+    (conditional-class exception). Any future categorical proof
+    instantiates the class; until then, the class is a single named
+    `sorry` and downstream consumers carry the explicit hypothesis.
+
+    The conjecture has two fields:
+
+    1. `outlier_eq_half_fill`: the unique averaging-resonant rung in
+       the precision-ladder expansion of a typed-B_n braid with
+       `n_avg ≥ 2` equals `halfFillRung`.
+    2. `non_half_fill_pure_sigma`: every other rung `k` in the
+       extracted ladder window classifies as `pureSigma`. -/
+class HalfFillRungIsOutlier (d : TypedBnDistribution) where
+  /-- The bound-state recipe must have at least two averaged crossings
+      for the averaging-resonance phenomenon to surface — with
+      `n_avg ∈ {0, 1}` no averaging fingerprint appears at any rung. -/
+  n_avg_ge_two : 2 ≤ d.n_avg
+  /-- The unique averaging-resonant rung is the half-fill rung. -/
+  outlier_eq_half_fill :
+    ∀ k : ℕ, correctSectorCriterion d k = .averagingResonant ↔
+      k = halfFillRung d
+  /-- Equivalent rephrasing: every other rung in the ladder window is
+      pure-σ. (Follows from `outlier_eq_half_fill` but stated for
+      direct use by downstream consumers.) -/
+  non_half_fill_pure_sigma :
+    ∀ k : ℕ, k ≠ halfFillRung d →
+      correctSectorCriterion d k = .pureSigma
+
+/-- **Theorem (conditional on `HalfFillRungIsOutlier protonDistribution`)**:
+    on the proton typed-B_3 recipe, the unique averaging-resonant
+    rung is k = 5.
+
+    Status: rigorous-conditional — fully verified by Lean modulo the
+    `HalfFillRungIsOutlier` class instance. See CLAUDE.md §3b-cond
+    for the conditional-class discipline. -/
+theorem proton_outlier_eq_five
+    [h : HalfFillRungIsOutlier protonDistribution] :
+    ∀ k : ℕ, correctSectorCriterion protonDistribution k = .averagingResonant
+      ↔ k = 5 := by
+  intro k
+  rw [h.outlier_eq_half_fill]
+  rw [proton_half_fill_eq_five]
+
 /-- **`AveragingResonanceRule`** — the package-qualified top-level
     declaration backing
     `lean.ref = "qou:QOU.BraidKnot.AveragingResonanceRule"`. Bundles
