@@ -387,3 +387,26 @@ The "K_1* = K_3* = 6_1 chirality WINS" claim is **superseded** by PR #826's corr
 | **#837** | Lean typed claims round-8 | **MERGED** (2026-05-20) | — |
 | #816, #814 | qbeta-ladder c_k thread | adjacent (bar-symmetric corrections at different rungs); #814 cherry-picked into main as #833 | — |
 | #818, #820, #817, #807, #761, #774, #738, #823 | assorted infrastructure / domain work | non-overlapping | — |
+
+## 2026-05-20 (very late) — Phase 5f: FR pullback at k=1, k=2 — marginal only ([PR #831](https://github.com/litlfred/qou/pull/831) commit `5f-pending`)
+
+Extends [PR #826](https://github.com/litlfred/qou/pull/826)'s k=3 FR-pullback test to curvature ranks k=1 and k=2. $K_3^* = 4_1$ fixed per #826. Sweep: $6 \times 6$ grid over $(K_1^*, K_2^*)$ candidates $\in \{$ unknot, 3_1, 4_1, 5_1, 5_2, 6_1 $\}$.
+
+**Result**: best variance **1.5432×** at $(K_1^*, K_2^*) = (\text{unknot}, 5_2)$, only **+0.5% vs #826's K_3*=4_1-only baseline (1.551×)**. The top 4 configurations are within 0.04% of each other; K_1* ranking is essentially flat across all candidates.
+
+**Cross-validation**: this script's K_3*=4_1 baseline reproduces #826's reported 1.551× to within 0.0003 (passes the `baseline_matches_PR_826` assertion).
+
+**Interpretation**: the FR-pullback mechanism's variance reduction is **concentrated at k = 3**; depths 1 and 2 are partially redundant under the current formula. Three structural readings (audit doc [`docs/audits/2026-05-19-phase5f-fr-pullback-k1-k2.md`](../audits/2026-05-19-phase5f-fr-pullback-k1-k2.md)):
+
+1. Depth-3 chirality stratum carries the bulk of the FR content.
+2. The remaining 1.54× variance is in something the depth-stratified FR does not see at any k. Candidates: Markov-trace constituent factor 1.220358, Vol_hyp-by-Z effect, Phase 5b cosh(h)-like Hecke correction.
+3. **$K_1^*, K_2^*$ may be trivial (unknot)** — the current FR pullback formula at k=1, 2 collapses to uniform Plancherel restriction. The 0.5% improvement is plausibly numerical noise.
+
+**Recommendation for `prop:depth-stratified-frobenius-reciprocity`** (queued for follow-up):
+
+- $K_3^* = 4_1$ structurally identified (per #826 + this cross-validation).
+- $K_1^*, K_2^*$ may simplify to "unknot" or be dropped from the conjecture's existence requirements; the current formulation as "open structural question" is consistent with the empirical finding.
+- Closing the remaining 1.54× residual requires a **different mechanism**, not deeper FR pullback. Phase 5g-5i candidates:
+  - Phase 5g — Markov-trace constituent factor 1.220358 categorical identification (from #819 Phase 5d.3).
+  - Phase 5h — Phase 5b cosh(h)-like correction integrated into the depth-stratified formula.
+  - Phase 5i — Vol_hyp normalisation by Z to extract the bare hyperbolic content (from PR #787 Phase 3).
