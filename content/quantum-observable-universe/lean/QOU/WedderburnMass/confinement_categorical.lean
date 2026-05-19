@@ -1,3 +1,5 @@
+import Mathlib.Algebra.BigOperators.Basic
+
 /-!
 # QOU.WedderburnMass.confinement_categorical — placeholder stub
 
@@ -18,11 +20,28 @@ namespace QOU.WedderburnMass
 /-- Abstract context for the `confinement_categorical` claim — manuscript-themed
     typed fields below; `holds` carries the residual `Prop` claim. -/
 class ConfinementCategoricalContext extends QOU.Shared.MarkovTraceContext where
-  /-- Manuscript sub-claim (i) — *(Survival.) The only $E_\infty$-page contributions are $E_\infty^{0, 0} = Z(A) = \bigoplus_\lambda R \cdot e_\lambda$. -/
-  claim_i_survival_page_contributions : Prop
-  /-- Manuscript sub-claim (ii) — *(Trace factorization.) The Frobenius integral factors through the centre:*. -/
-  claim_ii_trace_factorization_frobenius : Prop
-  /-- Manuscript sub-claim (iii) — *(Observables are Wedderburn residues.) Every physical observable $\mathfrak{O}(\mathcal{K}, \mathcal{T}) = \int_A \r.... -/
+  /-- Number of Wedderburn blocks (partitions of `n`). -/
+  n_blocks : ℕ
+  /-- Per-block contribution to the `E_∞^{0,0}` page (`R · e_λ`
+      scalar coefficient). -/
+  e_block : ℕ → ℝ
+  /-- Total `E_∞^{0,0}` contribution. -/
+  E_infinity_00 : ℝ
+  /-- Manuscript sub-claim (i) — Survival: `E_∞^{0,0} = Z(A) =
+      ⊕_λ R·e_λ` (center decomposes into block sum). -/
+  claim_i_survival_page_contributions :
+    E_infinity_00 = (Finset.range n_blocks).sum (fun λ => e_block λ)
+  /-- Frobenius integral evaluated on an arbitrary algebra element. -/
+  integral : A → ℝ
+  /-- Projector onto the center of `A`. -/
+  pi_centre : A → A
+  /-- Manuscript sub-claim (ii) — Trace factorization: the Frobenius
+      integral equals the integral after centre projection. -/
+  claim_ii_trace_factorization_frobenius :
+    ∀ x : A, integral x = integral (pi_centre x)
+  /-- Manuscript sub-claim (iii) — Observables are Wedderburn residues
+      (categorical formulation requires the per-block residue
+      isomorphism; stays Prop). -/
   claim_iii_observables_wedderburn_residues : Prop
 /-- **Proposition statement** (from manuscript):
 
@@ -38,7 +57,12 @@ elements of $A = H_n(R, q)$ survive as physical observables, and
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/confinement-categorical.ts
 theorem confinement_categorical [ctx : ConfinementCategoricalContext] :
-    ctx.claim_i_survival_page_contributions ∧ ctx.claim_ii_trace_factorization_frobenius ∧ ctx.claim_iii_observables_wedderburn_residues :=
-  ⟨ctx.claim_i_survival_page_contributions, ctx.claim_ii_trace_factorization_frobenius, ctx.claim_iii_observables_wedderburn_residues⟩
+    ctx.E_infinity_00 = (Finset.range ctx.n_blocks).sum
+                          (fun λ => ctx.e_block λ) ∧
+    (∀ x : ctx.A, ctx.integral x = ctx.integral (ctx.pi_centre x)) ∧
+    ctx.claim_iii_observables_wedderburn_residues :=
+  ⟨ctx.claim_i_survival_page_contributions,
+   ctx.claim_ii_trace_factorization_frobenius,
+   ctx.claim_iii_observables_wedderburn_residues⟩
 
 end QOU.WedderburnMass
