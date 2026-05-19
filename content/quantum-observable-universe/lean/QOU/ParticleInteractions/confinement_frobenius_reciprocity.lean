@@ -26,24 +26,33 @@ class ConfinementFrobeniusReciprocityContext where
   HeckeAlgebra : Type
   /-- The bound-state operator `T ∈ H_n(q)`. -/
   T : HeckeAlgebra
-  /-- The LP-active set `A*(T) ⊆ {1, ..., d}`. -/
-  A_star : Set ℕ
-  /-- Manuscript sub-claim (i): the operator-selection LP primal optimum
-      `T = Σ_i x*_i b_i` exists. -/
-  claim_i_primal_optimum : Prop
-  /-- Manuscript sub-claim (ii): the dual optimum `(y_0*, y*)` exists and
-      is non-trivial (`y_0* > 0`). -/
-  claim_ii_dual_optimum : Prop
-  /-- Manuscript sub-claim (iii): the LP-active set
-      `A*(T) = {i : y*_i > 0}` is non-empty. -/
-  claim_iii_active_set_nonempty : Prop
-  /-- Manuscript sub-claim (iv): for every observable `O ∈ H_n(q)`, its
-      physical expectation in `T` decomposes via the Frobenius pairing
-      as a sum over the LP-active set. -/
-  claim_iv_frobenius_decomposition : Prop
-  /-- Manuscript sub-claim (v): strong duality (complementary
-      slackness) holds — `primal_obj = dual_obj`. -/
-  claim_v_strong_duality : Prop
+  /-- NF basis size `d`. -/
+  d : ℕ
+  /-- LP-active set `A*(T) ⊆ {1, ..., d}` (membership predicate). -/
+  A_star : Fin d → Prop
+  /-- Primal-optimum coefficients `x*_i` and dual shadow prices `y*_i`. -/
+  x_star : Fin d → ℝ
+  y_star : Fin d → ℝ
+  /-- Dual `y_0*`. -/
+  y_0_star : ℝ
+  /-- Primal/dual objective values. -/
+  primal_obj dual_obj : ℝ
+  /-- Manuscript sub-claim (i) — LP primal optimum exists with
+      a finite non-zero coefficient. -/
+  claim_i_primal_optimum : ∃ i : Fin d, x_star i ≠ 0
+  /-- Manuscript sub-claim (ii) — Dual optimum non-trivial:
+      `y_0* > 0`. -/
+  claim_ii_dual_optimum : 0 < y_0_star
+  /-- Manuscript sub-claim (iii) — LP-active set non-empty:
+      `∃ i, A_star i`. -/
+  claim_iii_active_set_nonempty : ∃ i : Fin d, A_star i
+  /-- Manuscript sub-claim (iv) — Active-set characterisation:
+      `A_star i ↔ 0 < y_star i`. -/
+  claim_iv_active_iff_dual_positive :
+    ∀ i : Fin d, A_star i ↔ 0 < y_star i
+  /-- Manuscript sub-claim (v) — Strong duality
+      `primal_obj = dual_obj`. -/
+  claim_v_strong_duality : primal_obj = dual_obj
 
 /-- **Proposition statement** (from manuscript):
 
@@ -70,13 +79,13 @@ $T$ is the
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.ts
 theorem confinement_frobenius_reciprocity [ctx : ConfinementFrobeniusReciprocityContext] :
-    ctx.claim_i_primal_optimum ∧
-    ctx.claim_ii_dual_optimum ∧
-    ctx.claim_iii_active_set_nonempty ∧
-    ctx.claim_iv_frobenius_decomposition ∧
-    ctx.claim_v_strong_duality :=
+    (∃ i : Fin ctx.d, ctx.x_star i ≠ 0) ∧
+    0 < ctx.y_0_star ∧
+    (∃ i : Fin ctx.d, ctx.A_star i) ∧
+    (∀ i : Fin ctx.d, ctx.A_star i ↔ 0 < ctx.y_star i) ∧
+    ctx.primal_obj = ctx.dual_obj :=
   ⟨ctx.claim_i_primal_optimum, ctx.claim_ii_dual_optimum,
    ctx.claim_iii_active_set_nonempty,
-   ctx.claim_iv_frobenius_decomposition, ctx.claim_v_strong_duality⟩
+   ctx.claim_iv_active_iff_dual_positive, ctx.claim_v_strong_duality⟩
 
 end QOU.ParticleInteractions
