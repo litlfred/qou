@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T15:52:09.344480+00:00",
-  "commitSha": "0019cf22cb876a8cb2fa2d57e874699c770d2da1",
+  "computedAt": "2026-05-19T17:04:52.723753+00:00",
+  "commitSha": "d7246feed461040b477d5586ed1526e7c87ffbf8",
   "assertions": [],
   "allPassed": true,
   "durationMs": 7,
@@ -24,8 +24,8 @@
   },
   "data": {
     "by_pattern_count": {
-      "P15": 175,
-      "P16": 164,
+      "P15": 173,
+      "P16": 159,
       "P21": 32,
       "P30": 94,
       "P31": 25
@@ -1414,20 +1414,6 @@
         "line": 94,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
-      },
-      {
-        "pattern": "P15",
-        "file": "knot_factor_borromean_composite_probe.py",
-        "line": 76,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
-      },
-      {
-        "pattern": "P15",
-        "file": "knot_factor_borromean_composite_probe.py",
-        "line": 82,
-        "snippet": "sp.cancel(...)",
-        "note": "sp.cancel does GCD reduction across the entire rational expression; on tritium-scale (~12000 ops) it walls past 120s. Prefer sp.together followed by sp.div, or move to LaurentQ. Ref: 18fce929."
       },
       {
         "pattern": "P15",
