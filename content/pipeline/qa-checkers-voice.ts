@@ -303,12 +303,34 @@ export function checkWallSide(
 // ── voice-ai-slop ───────────────────────────────────────────────
 
 /**
+ * Strip backtick-delimited inline code spans from a markdown line.
+ * Used by the line-by-line ai-slop / scholarly-default scans so
+ * technical variable names or `you`-named identifiers inside code
+ * spans don't trigger false positives.
+ *
+ * Does not handle escaped backticks. Markdown's strict rules
+ * (matching backtick-run lengths) are not enforced — for our
+ * scanner the simpler regex is good enough; the only goal is to
+ * suppress obvious inline-code matches.
+ */
+function stripInlineCode(line: string): string {
+  return line.replace(/`[^`]+`/g, "");
+}
+
+/**
  * Direct LLM tells — phrases that should NEVER appear in published
- * scholarly prose. These produce zero false-positives in practice;
- * any hit is a real ai-slop violation.
+ * scholarly prose. These produce few false-positives in practice;
+ * any hit is a likely ai-slop violation.
+ *
+ * Note: the "it's important/worth to note that" pattern was removed
+ * after Gemini PR #823 review — those phrases are standard in
+ * scholarly technical writing and were producing false positives on
+ * legitimate prose at the critical-severity level. The remaining
+ * patterns are LLM-specific (lecturer phrases, status updates,
+ * conversational fillers).
  */
 const AI_SLOP_DIRECT_RE =
-  /\b(let me (?:think|clarify|explain|address|now|first|see)|here'?s what (?:I|we)(?: did| will| have)?|I'?ll (?:go ahead|now|first|address|explain)|great question|let'?s (?:explore|dive (?:in|into)|unpack|examine)|note that we should|it'?s (?:important|worth) (?:to note|noting) that|delve (?:into|in)|in (?:a )?nutshell)\b/i;
+  /\b(let me (?:think|clarify|explain|address|now|first|see)|here'?s what (?:I|we)(?: did| will| have)?|I'?ll (?:go ahead|now|first|address|explain)|great question|let'?s (?:explore|dive (?:in|into)|unpack|examine)|note that we should|delve (?:into|in)|in (?:a )?nutshell)\b/i;
 
 /**
  * Hedging / softener language frequently inserted by LLMs but
@@ -349,22 +371,30 @@ export function checkAiSlop(mdPath: string): CheckerResult {
   const hits: CheckerHit[] = [];
 
   // Pass 1 — direct LLM tells (line-by-line so we can cite line).
+  // Both fenced code blocks (skipped via inFence) and inline
+  // backtick spans (stripped per-line) are excluded from the scan.
   let inFence = false;
+  const proseLineIndices: number[] = []; // for fence-aware Pass-3 idx
   lines.forEach((l, i) => {
     if (/^```/.test(l.trim())) {
       inFence = !inFence;
       return;
     }
     if (inFence) return;
-    if (AI_SLOP_DIRECT_RE.test(l)) {
+    proseLineIndices.push(i);
+    const cleanedLine = stripInlineCode(l);
+    if (AI_SLOP_DIRECT_RE.test(cleanedLine)) {
       hits.push({ file: mdPath, line: i + 1, text: l.trim().slice(0, 200) });
     }
   });
 
-  // Pass 2 — hedge-token concentration. Strip code fences first;
-  // count distinct hedge tokens in the remaining prose. ≥ 3 distinct
-  // hedge tokens in one .md file is the signal.
-  const proseOnly = src.replace(/```[\s\S]*?```/g, "");
+  // Pass 2 — hedge-token concentration. Strip BOTH fenced code
+  // blocks AND inline backtick spans, then count distinct hedge
+  // tokens in the remaining prose. ≥ 3 distinct hedge tokens in
+  // one .md file is the signal.
+  const proseOnly = src
+    .replace(/```[\s\S]*?```/g, "")
+    .replace(/`[^`]+`/g, "");
   const distinctHedges = AI_SLOP_HEDGE_TOKENS.filter((re) =>
     re.test(proseOnly),
   );
@@ -377,12 +407,17 @@ export function checkAiSlop(mdPath: string): CheckerResult {
   }
 
   // Pass 3 — First/Second/Third cadence (whole-file scan).
+  // Fence-aware idx: find the first "First," that lives on a prose
+  // line (not inside a fenced block). Without this, a code snippet
+  // containing "First," earlier in the file would mislocate the
+  // evidence pointer.
   if (AI_SLOP_FIRST_SECOND_THIRD_RE.test(proseOnly)) {
-    // Find the line for the first "First," opener.
-    const idx = lines.findIndex((l) => /\bFirst,\s/.test(l));
+    const firstProseIdx = proseLineIndices.find((i) =>
+      /\bFirst,\s/.test(stripInlineCode(lines[i])),
+    );
     hits.push({
       file: mdPath,
-      line: idx >= 0 ? idx + 1 : 1,
+      line: firstProseIdx !== undefined ? firstProseIdx + 1 : 1,
       text: "First/Second/Third bullet cadence — characteristic LLM structural crutch",
     });
   }
@@ -427,9 +462,10 @@ export function checkScholarlyDefault(
   const hits: CheckerHit[] = [];
 
   // Scan .md. Fenced code blocks (```) are skipped via `inFence`;
-  // HTML-style `<!-- ... -->` and inline comments are intentionally
-  // NOT stripped because they render as visible text in the
-  // markdown pipeline (and so are part of paper voice).
+  // inline backtick spans are stripped per-line so technical terms
+  // / identifiers in code don't trigger false positives. HTML-style
+  // `<!-- ... -->` comments are intentionally NOT stripped — they
+  // render as visible text in the markdown pipeline.
   let inFence = false;
   lines.forEach((l, i) => {
     if (/^```/.test(l.trim())) {
@@ -437,43 +473,136 @@ export function checkScholarlyDefault(
       return;
     }
     if (inFence) return;
-    if (SECOND_PERSON_RE.test(l)) {
+    const cleanedLine = stripInlineCode(l);
+    if (SECOND_PERSON_RE.test(cleanedLine)) {
       hits.push({ file: mdPath, line: i + 1, text: l.trim().slice(0, 200) });
     }
-    if (LECTURER_OPENER_RE.test(l)) {
+    if (LECTURER_OPENER_RE.test(cleanedLine)) {
       hits.push({ file: mdPath, line: i + 1, text: l.trim().slice(0, 200) });
     }
-    if (PAPER_PAST_TENSE_RE.test(l)) {
+    if (PAPER_PAST_TENSE_RE.test(cleanedLine)) {
       hits.push({ file: mdPath, line: i + 1, text: l.trim().slice(0, 200) });
     }
   });
 
   // Also scan Lean docstrings — proof bodies share the scholarly
-  // standard. Look at /-! ... -/ module docs and /-- ... -/ decl
-  // docstrings; line comments (-- ...) are skipped (they're code
-  // annotations, not prose).
-  if (leanPath && existsSync(leanPath)) {
-    const leanSrc = readFileSync(leanPath, "utf-8");
-    // Extract docstring spans only; everything else is code.
-    const docs = [...leanSrc.matchAll(/\/-!?[\s\S]*?-\//g)].map((m) => m[0]);
-    const docsText = docs.join("\n");
-    if (SECOND_PERSON_RE.test(docsText)) {
-      hits.push({
-        file: leanPath,
-        line: 1,
-        text: "Lean docstring uses second-person address",
-      });
-    }
-    if (LECTURER_OPENER_RE.test(docsText)) {
-      hits.push({
-        file: leanPath,
-        line: 1,
-        text: "Lean docstring uses lecturer-cadence opener",
-      });
+  // standard. Extract /-! ... -/ module docs and /-- ... -/ decl
+  // docstrings as line-tracked spans so we can cite the actual
+  // offending line + quote (not just `line: 1`).
+  if (leanPath) {
+    const { src: leanSrc } = readSource(leanPath);
+    if (leanSrc) {
+      for (const span of extractLeanDocstrings(leanSrc)) {
+        // span.startLine is 1-based; span.body has the raw text.
+        // Iterate INTERNAL docstring lines so we cite the exact
+        // offender. The three RE's use the same matchers as the
+        // .md scan above (incl. PAPER_PAST_TENSE_RE — missing
+        // from the previous version).
+        span.body.split("\n").forEach((dl, j) => {
+          const cleanedLine = stripInlineCode(dl);
+          const lineNo = span.startLine + j;
+          // SECOND_PERSON_RE is case-insensitive, not anchored — fine.
+          if (SECOND_PERSON_RE.test(cleanedLine)) {
+            hits.push({
+              file: leanPath,
+              line: lineNo,
+              text: dl.trim().slice(0, 200) || "(empty)",
+            });
+          }
+          // LECTURER_OPENER_RE uses `^` so it must match line-start.
+          // Per-line iteration applies the anchor naturally; the prior
+          // whole-doc-string scan needed the `m` flag.
+          if (LECTURER_OPENER_RE.test(cleanedLine)) {
+            hits.push({
+              file: leanPath,
+              line: lineNo,
+              text: dl.trim().slice(0, 200) || "(empty)",
+            });
+          }
+          if (PAPER_PAST_TENSE_RE.test(cleanedLine)) {
+            hits.push({
+              file: leanPath,
+              line: lineNo,
+              text: dl.trim().slice(0, 200) || "(empty)",
+            });
+          }
+        });
+      }
     }
   }
 
   return { result: hits.length > 0 ? "fail" : "pass", hits };
+}
+
+/**
+ * Extract Lean docstring spans (/-! ... -/ and /-- ... -/) with
+ * line-number tracking. Returns `{ startLine, body }` per span,
+ * where `startLine` is the 1-based line of the opening delimiter's
+ * line in the source, and `body` is the inner text (NOT including
+ * the `/-! ` or trailing ` -/`).
+ *
+ * Handles **nested** block comments — Lean permits `/- /- … -/ -/`
+ * — by tracking nesting depth. Without this, a docstring containing
+ * a nested `-/` would terminate the span prematurely.
+ */
+function extractLeanDocstrings(
+  src: string,
+): Array<{ startLine: number; body: string }> {
+  const out: Array<{ startLine: number; body: string }> = [];
+  // Find all docstring openers. `/-!` or `/--` followed by anything
+  // except `-/`. We do a manual nested scan rather than a regex.
+  let i = 0;
+  const n = src.length;
+  let lineNum = 1;
+  // Pre-compute newline positions so startLine is O(1) per opener.
+  const newlineAt: number[] = [];
+  for (let k = 0; k < n; k++) {
+    if (src.charCodeAt(k) === 10 /* \n */) newlineAt.push(k);
+  }
+  const lineOf = (pos: number): number => {
+    // Lower bound on newlineAt for pos.
+    let lo = 0;
+    let hi = newlineAt.length;
+    while (lo < hi) {
+      const mid = (lo + hi) >>> 1;
+      if (newlineAt[mid] < pos) lo = mid + 1;
+      else hi = mid;
+    }
+    return lo + 1;
+  };
+  void lineNum; // suppress unused
+
+  while (i < n - 2) {
+    const isDocOpener =
+      src[i] === "/" &&
+      src[i + 1] === "-" &&
+      (src[i + 2] === "!" || src[i + 2] === "-");
+    if (!isDocOpener) {
+      i++;
+      continue;
+    }
+    const startLine = lineOf(i);
+    // Skip the opening `/-!` or `/--`.
+    let j = i + 3;
+    let depth = 1;
+    while (j < n - 1 && depth > 0) {
+      if (src[j] === "/" && src[j + 1] === "-") {
+        depth++;
+        j += 2;
+      } else if (src[j] === "-" && src[j + 1] === "/") {
+        depth--;
+        j += 2;
+      } else {
+        j++;
+      }
+    }
+    // body = inside the docstring, between opener+3 and the closing -/.
+    const bodyEnd = depth === 0 ? j - 2 : j;
+    const body = src.slice(i + 3, bodyEnd);
+    out.push({ startLine, body });
+    i = j;
+  }
+  return out;
 }
 
 // ── Dispatch table ──────────────────────────────────────────────
