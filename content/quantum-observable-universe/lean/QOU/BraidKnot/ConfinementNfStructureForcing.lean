@@ -23,8 +23,16 @@ namespace QOU.BraidKnot
 
     Conjectural class — see [`conj:confinement-nf-structure-forcing`](../../../quantum-observable-universe/braids-and-knots/confinement-nf-structure-forcing.md). -/
 class ConfinementNfStructureForcing where
-  /-- Scalar residual encoding the conjecture's content (placeholder
-      shape: refine to match the actual claim). -/
+  /-- **Conjecture statement** (from manuscript):
+
+      Let $\beta = \beta_1 \star I \star \beta_2 \in B_n$ be a compound
+braid where $I$ is a basis interface braid (e.g. a torus-knot
+generator). Let $A := \{\lambda \vdash n : y_\lambda^* > 0\}$ be the
+LP/SDP
+
+      Field schema below is a structural placeholder; refine per §3b
+      to match the conjecture's actual content. The single sorry on
+      the `noncomputable instance` is the conjecture itself. -/
   residual : ℝ
   /-- The residual vanishes (the conjecture is the assertion that
       this holds). -/

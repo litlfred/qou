@@ -23,8 +23,18 @@ namespace QOU.AppendixSurreals
 
     Conjectural class — see [`conj:local-infinitesimal-field`](../../../quantum-observable-universe/appendix-surreals/local-infinitesimal-field.md). -/
 class LocalInfinitesimalField where
-  /-- Scalar residual encoding the conjecture's content (placeholder
-      shape: refine to match the actual claim). -/
+  /-- **Content statement** (from manuscript):
+
+      The appendix so far treats the substrate parameter $q = 1 +
+\varepsilon$ as a **single global element** of the valuation ring
+$\mathcal{O} \subset \mathbf{No}$. This conjecture proposes a
+richer structure: $\varepsilon$ is a **sheaf** of infinitesimals
+across a scheme $X$, with $q(x) = 1 + \varepsilon(x)$ varying
+locally from patch to patch.
+
+      Field schema below is a structural placeholder; refine per §3b
+      to match the conjecture's actual content. The single sorry on
+      the `noncomputable instance` is the conjecture itself. -/
   residual : ℝ
   /-- The residual vanishes (the conjecture is the assertion that
       this holds). -/

@@ -23,8 +23,26 @@ namespace QOU.Observations.QCltNonCommutative
 
     Conjectural class — see [`conj:q-clt-non-commutative`](../../../quantum-observable-universe/observations/q-clt-non-commutative.md). -/
 class QCltNonCommutative where
-  /-- Scalar residual encoding the conjecture's content (placeholder
-      shape: refine to match the actual claim). -/
+  /-- **Conjecture statement** (from manuscript):
+
+      Let $(H_\infty(q), \mathrm{tr}_M)$ be the QOU non-commutative
+probability space in the Wenzl positivity regime
+([algebraic GNS embedding](#prop:algebraic-gns-embedding)). Let
+$\{\sigma_1, \sigma_2, \ldots\}$ be the braid transfer matrices.
+Define the rescaled centred sum*
+$$
+  S_n \;:=\; \frac{1}{\sqrt{n}}
+    \sum_{i=1}^{n} \bigl(\sigma_i - z \cdot 1\bigr),
+  \qquad z = 1/(q^{1/2}+q^{-1/2}).
+$$
+*Then under the joint Faddeev scaling $n \to \infty$,
+$q \to 1^+$, $n\lvert 1 - q\rvert \to \infty$:*
+
+1. *(Blitvić $(q,t)$-Gaussian limit,
+
+      Field schema below is a structural placeholder; refine per §3b
+      to match the conjecture's actual content. The single sorry on
+      the `noncomputable instance` is the conjecture itself. -/
   residual : ℝ
   /-- The residual vanishes (the conjecture is the assertion that
       this holds). -/

@@ -23,8 +23,27 @@ namespace QOU.Torsion
 
     Conjectural class — see [`conj:yang-mills-mass-gap`](../../../quantum-observable-universe/models-of-qous/yang-mills-mass-gap.md). -/
 class YangMillsMassGap where
-  /-- Scalar residual encoding the conjecture's content (placeholder
-      shape: refine to match the actual claim). -/
+  /-- **Conjecture statement** (from manuscript):
+
+      Let $(\mathbf{C}, A, \tau)$ be a
+([quantum observable universe](#def:quantum-observable-universe)) over a
+commutative ring $R$ with substrate parameter $q > 1$.  Let
+$\nabla$ be a ([categorical connection](#def:categorical-connection)) on
+the Frobenius--Hopf object $A$ with curvature $F_\nabla = \nabla^2$,
+and let $S_q[\nabla]$ be the
+([$q$-weighted Yang--Mills--Levi functional](#def:q-yang-mills-levi)).
+Let $\Omega_0 \colon R \to \mathrm{End}_{\mathbf{C}}(A)$ be the
+([vacuum state](#prop:vacuum-state)) --- the unique
+$G_q$-invariant functional on the direct limit algebra
+$\mathcal{A}_\infty = \varinjlim \mathrm{End}_{\mathbf{C}}(A_n)$.*
+
+*Then:*
+
+1.
+
+      Field schema below is a structural placeholder; refine per §3b
+      to match the conjecture's actual content. The single sorry on
+      the `noncomputable instance` is the conjecture itself. -/
   residual : ℝ
   /-- The residual vanishes (the conjecture is the assertion that
       this holds). -/

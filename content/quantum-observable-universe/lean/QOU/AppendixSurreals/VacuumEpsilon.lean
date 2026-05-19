@@ -23,8 +23,18 @@ namespace QOU.AppendixSurreals
 
     Conjectural class — see [`conj:vacuum-epsilon`](../../../quantum-observable-universe/appendix-surreals/vacuum-epsilon.md). -/
 class VacuumEpsilon where
-  /-- Scalar residual encoding the conjecture's content (placeholder
-      shape: refine to match the actual claim). -/
+  /-- **Content statement** (from manuscript):
+
+      The Hoefsmit scattering pipeline assigns to each link $L$ a
+*geometric energy* $\mathrm{Geom}(L) \in \mathbb{R}$
+([Hoefsmit scattering pipeline](#prop:hoefsmit-scattering-pipeline)).
+The vacuum normalisation requires $\mathrm{Geom}(\unicode{9737}) = 0$
+on the unknot, so that the empty link contributes nothing to
+particle masses.
+
+      Field schema below is a structural placeholder; refine per §3b
+      to match the conjecture's actual content. The single sorry on
+      the `noncomputable instance` is the conjecture itself. -/
   residual : ℝ
   /-- The residual vanishes (the conjecture is the assertion that
       this holds). -/

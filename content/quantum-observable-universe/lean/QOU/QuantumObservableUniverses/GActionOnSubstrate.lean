@@ -23,8 +23,24 @@ namespace QOU.QuantumObservableUniverses
 
     Conjectural class — see [`conj:g-action-on-substrate`](../../../quantum-observable-universe/quantum-observable-universes/g-action-on-substrate.md). -/
 class GActionOnSubstrate where
-  /-- Scalar residual encoding the conjecture's content (placeholder
-      shape: refine to match the actual claim). -/
+  /-- **Conjecture statement** (from manuscript):
+
+      Let $A$ be a Frobenius–Hopf substrate
+([substrate axioms](#def:frobenius-hopf-substrate)) in $\mathbf{C} =
+\mathbf{Rep}(\mathrm{SU}_q(2))$. Then $A$ admits a unique
+$G$-equivariant structure for $G = \mathrm{SU}(2)_L \times
+\mathrm{U}(1)_Y$ compatible with the path-α torus-link identification
+(electroweak/Higgs torus-link triplet [planned, not yet authored]),
+specified by the four axioms below. From these axioms the
+symmetric-channel Frobenius trace
+$\mathrm{tr}_F(e_{\rm sym}^{\rm EW} \cdot e_H)$ — the value
+$\mathcal{N}_{\rm sym}(q)$ — is computable in closed form.*
+
+### The four axioms
+
+      Field schema below is a structural placeholder; refine per §3b
+      to match the conjecture's actual content. The single sorry on
+      the `noncomputable instance` is the conjecture itself. -/
   residual : ℝ
   /-- The residual vanishes (the conjecture is the assertion that
       this holds). -/

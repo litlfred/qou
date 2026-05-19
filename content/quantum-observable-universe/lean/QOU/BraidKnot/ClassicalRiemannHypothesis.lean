@@ -23,8 +23,14 @@ namespace QOU.BraidKnot
 
     Conjectural class — see [`conj:classical-riemann-hypothesis`](../../../quantum-observable-universe/braids-and-knots/classical-riemann-hypothesis.md). -/
 class ClassicalRiemannHypothesis where
-  /-- Scalar residual encoding the conjecture's content (placeholder
-      shape: refine to match the actual claim). -/
+  /-- **Content statement** (from manuscript):
+
+      **Conjecture (Riemann, 1859).** All non-trivial zeros of the Riemann
+zeta function $\zeta(s)$ satisfy
+
+      Field schema below is a structural placeholder; refine per §3b
+      to match the conjecture's actual content. The single sorry on
+      the `noncomputable instance` is the conjecture itself. -/
   residual : ℝ
   /-- The residual vanishes (the conjecture is the assertion that
       this holds). -/

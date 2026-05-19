@@ -23,8 +23,16 @@ namespace QOU.BraidKnot
 
     Conjectural class — see [`conj:two-filtration-bridge`](../../../quantum-observable-universe/braids-and-knots/two-filtration-bridge.md). -/
 class TwoFiltrationBridge where
-  /-- Scalar residual encoding the conjecture's content (placeholder
-      shape: refine to match the actual claim). -/
+  /-- **Conjecture statement** (from manuscript):
+
+      The substrate convolution Hopf algebra $\mathcal{H}_q$ carries
+two distinct filtrations:*
+
+- *the
+
+      Field schema below is a structural placeholder; refine per §3b
+      to match the conjecture's actual content. The single sorry on
+      the `noncomputable instance` is the conjecture itself. -/
   residual : ℝ
   /-- The residual vanishes (the conjecture is the assertion that
       this holds). -/
