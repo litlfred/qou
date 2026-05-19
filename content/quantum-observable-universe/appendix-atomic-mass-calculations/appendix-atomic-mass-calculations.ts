@@ -37,6 +37,8 @@ export default chapter({
       label: "sec:amc-summary",
       blocks: [
         "amc-summary",
+        "amc-natural-elements-table",
+        "amc-synthetic-elements-table",
       ],
     }),
     section({
