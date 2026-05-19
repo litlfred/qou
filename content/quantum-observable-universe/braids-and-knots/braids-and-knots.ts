@@ -472,6 +472,7 @@ export default chapter({
         "chi-per-irrep-cyclotomic-closed-forms",
         "per-block-hopf-jones-absorption-pattern",
         "conj-qbeta-c-k-closed-forms",
+        "c5-involution-leibniz-decomposition",
         "chi-v111-via-sign-substitution",
         "chi-v21-hoefsmit-matrix-derivation",
         "phi-d-syt-count-conjecture",
