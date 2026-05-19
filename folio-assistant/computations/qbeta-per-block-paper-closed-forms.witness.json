@@ -1,0 +1,88 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-19T03:20:12.995773+00:00",
+  "commitSha": "4f9225b91fc53249061911910f6d58ec3783e6b7",
+  "assertions": [
+    {
+      "name": "paper_and_clean_forms_agree",
+      "computed": 0.0,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 1e-30,
+      "source": "Paper's (q²-1) form and clean (q+1)·ℏ_q form are symbolically equal"
+    },
+    {
+      "name": "sum_y_lambda_chi_lambda_diff_matches_tau_M",
+      "computed": 1.422805623318979e-09,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 1e-07,
+      "source": "Σ y_λ · χ_λ(β_n - β_p) = τ_M(β_n - β_p) at q_0"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 93,
+  "computation": "qbeta-per-block-paper-closed-forms",
+  "scriptFile": "qbeta_per_block_paper_closed_forms.py",
+  "scriptHash": "c54db859094b",
+  "scriptCommitSha": "unknown",
+  "description": "Verifies the paper's per-Wedderburn-block closed forms for χ_λ(β_n - β_p) at H_3(q) and identifies the cleaner factored form: each block's character difference is LINEAR in ℏ_q = (q-1)/q at leading order. This provides the structural foundation for per-block c_k^(λ) extraction in the Q_β precision ladder.",
+  "data": {
+    "paper_closed_forms": {
+      "(3)": "-(q**2 - 1)*(q**2 + 1)**2/(4*q)",
+      "(2,1)": "(q**2 - 1)*(-q**4 - 1)/(4*q**3)",
+      "(1,1,1)": "-(q**2 - 1)*(q**2 + 1)**2/(4*q**5)"
+    },
+    "cleaner_hbar_q_forms": {
+      "(3)": "-(q - 1)*(q + 1)*(q**2 + 1)**2/(4*q)",
+      "(2,1)": "(q - 1)*(q + 1)*(-q**4 - 1)/(4*q**3)",
+      "(1,1,1)": "-(q - 1)*(q + 1)*(q**2 + 1)**2/(4*q**5)"
+    },
+    "chi_at_q_0": {
+      "(3)": -0.2603876773101367,
+      "(2,1)": -0.10681447000899742,
+      "(1,1,1)": -0.17153865926224274
+    },
+    "y_lambda_at_q_0": {
+      "(3)": 0.41539578633456653,
+      "(2,1)": 0.2809296339798641,
+      "(1,1,1)": 0.02274494570570528
+    },
+    "tau_M_diff_at_q_0": -0.1420729314228056,
+    "taylor_coefficients_per_block_ε_order": {
+      "(3)": [
+        "0",
+        "-2",
+        "-3",
+        "-3",
+        "-1",
+        "-1/2",
+        "1/4"
+      ],
+      "(2,1)": [
+        "0",
+        "-1",
+        "1/2",
+        "-5/2",
+        "7/2",
+        "-5",
+        "27/4"
+      ],
+      "(1,1,1)": [
+        "0",
+        "-2",
+        "5",
+        "-11",
+        "21",
+        "-73/2",
+        "237/4"
+      ]
+    },
+    "leading_order_ℏ_q_coefficient": {
+      "(3)": "(1 - q**2)*(q**2 + 1)**2/(4*(q - 1))",
+      "(2,1)": "(-q**5 - q**4 - q - 1)/(4*q**2)",
+      "(1,1,1)": "(1 - q**2)*(q**2 + 1)**2/(4*q**4*(q - 1))"
+    }
+  }
+}
