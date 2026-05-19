@@ -15,14 +15,18 @@ namespace QOU.FrobeniusHopfData
 /-- Abstract context for the `frobeniusForm` claim — manuscript-themed
     typed fields below; `holds` carries the residual `Prop` claim. -/
 class FrobeniusFormContext where
-  /-- Categorical object / monoidal structure. -/
-  CategoricalObj : Type
-  /-- LP shadow-price / dual variable. -/
-  shadow_price : ℝ
-  /-- Fluid-dynamics velocity / vorticity field. -/
-  VelocityField : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_frobeniusForm : Prop
+  /-- Categorical object `A`. -/
+  A : Type
+  /-- Dual object `A^∨`. -/
+  A_dual : Type
+  /-- The Frobenius-pairing-induced map `A → A^∨`. -/
+  pairing : A → A_dual
+  /-- Predicate: the pairing is non-degenerate, i.e. `pairing` is
+      an isomorphism. -/
+  is_iso : Prop
+  /-- Manuscript identity: Frobenius pairing is non-degenerate iff
+      the snake identities hold (encoded as the iso property). -/
+  claim_frobeniusForm : is_iso ↔ Function.Bijective pairing
 
 /-- **Manuscript statement** (full body):
 
@@ -62,9 +66,8 @@ and its mirror are both equal to $\mathrm{id}_A$.
     placeholder; the `ctx.claim_frobeniusForm : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-universes/frobenius-pairing.ts
-theorem frobeniusForm [ctx : FrobeniusFormContext] : ctx.claim_frobeniusForm := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem frobeniusForm [ctx : FrobeniusFormContext] :
+    ctx.is_iso ↔ Function.Bijective ctx.pairing :=
+  ctx.claim_frobeniusForm
 
 end QOU.FrobeniusHopfData

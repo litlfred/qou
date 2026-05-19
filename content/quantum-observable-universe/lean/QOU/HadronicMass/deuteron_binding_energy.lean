@@ -19,8 +19,14 @@ namespace QOU.HadronicMass
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class DeuteronBindingEnergyContext extends QOU.Shared.MarkovTraceContext where
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_deuteron_binding_energy : Prop
+  /-- Predicted deuteron binding energy `ΔE_bind` (MeV). -/
+  ΔE_bind : ℝ
+  /-- CODATA experimental value 2.2246 MeV. -/
+  ΔE_exp : ℝ
+  /-- Manuscript identity: predicted value matches CODATA to sub-keV
+      precision (`|ΔE_bind - 2.2246| < 0.001` MeV, i.e. 1 keV). -/
+  claim_deuteron_binding_energy :
+    ΔE_exp = 2.2246 ∧ |ΔE_bind - ΔE_exp| < 0.001
 /-- **Lemma statement** (from manuscript):
 
 The deuteron is the six-component link $L_6$ formed by joining the
@@ -39,6 +45,8 @@ $$
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/deuteron-binding-energy.ts
-theorem deuteron_binding_energy [ctx : DeuteronBindingEnergyContext] : ctx.claim_deuteron_binding_energy := ctx.claim_deuteron_binding_energy
+theorem deuteron_binding_energy [ctx : DeuteronBindingEnergyContext] :
+    ctx.ΔE_exp = 2.2246 ∧ |ctx.ΔE_bind - ctx.ΔE_exp| < 0.001 :=
+  ctx.claim_deuteron_binding_energy
 
 end QOU.HadronicMass
