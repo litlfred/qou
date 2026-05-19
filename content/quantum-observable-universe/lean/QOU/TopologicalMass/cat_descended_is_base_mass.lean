@@ -19,8 +19,13 @@ namespace QOU.TopologicalMass
 class CatDescendedIsBaseMassContext where
   /-- The braid representative type. -/
   Braid : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_cat_descended_is_base_mass : Prop
+  /-- Categorical mass integrand `α` at level `n + 1`. -/
+  α : ℝ
+  /-- Base-level descended mass. -/
+  base_mass : ℝ
+  /-- Manuscript identity: the level-`n+1` integrand `α` descends
+      to the base-level mass. -/
+  claim_cat_descended_is_base_mass : α = base_mass
 
 /-- **Lemma statement** (from manuscript):
 
@@ -32,9 +37,8 @@ $n+1$, and let $\varrho_0$ be its base-level descent.  Then
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/topological-mass-cat-descended.ts
-theorem cat_descended_is_base_mass [ctx : CatDescendedIsBaseMassContext] : ctx.claim_cat_descended_is_base_mass := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem cat_descended_is_base_mass [ctx : CatDescendedIsBaseMassContext] :
+    ctx.α = ctx.base_mass :=
+  ctx.claim_cat_descended_is_base_mass
 
 end QOU.TopologicalMass

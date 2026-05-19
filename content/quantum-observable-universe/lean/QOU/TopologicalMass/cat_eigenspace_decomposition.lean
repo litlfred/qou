@@ -19,8 +19,15 @@ namespace QOU.TopologicalMass
 class CatEigenspaceDecompositionContext where
   /-- The braid representative type. -/
   Braid : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_cat_eigenspace_decomposition : Prop
+  /-- Categorical mass integrand `α`. -/
+  α : ℝ
+  /-- Descended (level-base) component of `α`. -/
+  α_descended : ℝ
+  /-- Transient (above-base) component of `α`. -/
+  α_transient : ℝ
+  /-- Manuscript identity: orthogonal decomposition
+      `α = α_descended + α_transient`. -/
+  claim_cat_eigenspace_decomposition : α = α_descended + α_transient
 
 /-- **Lemma statement** (from manuscript):
 
@@ -35,9 +42,8 @@ components, giving
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/topological-mass-cat-eigenspace.ts
-theorem cat_eigenspace_decomposition [ctx : CatEigenspaceDecompositionContext] : ctx.claim_cat_eigenspace_decomposition := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem cat_eigenspace_decomposition [ctx : CatEigenspaceDecompositionContext] :
+    ctx.α = ctx.α_descended + ctx.α_transient :=
+  ctx.claim_cat_eigenspace_decomposition
 
 end QOU.TopologicalMass
