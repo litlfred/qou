@@ -46,11 +46,8 @@ HEAD_ENTRIES = [
         "boyd-vandenberghe-2004-convex-optimization.pdf",
         "Boyd & Vandenberghe, Convex Optimization (CUP 2004) — free PDF from author's Stanford page; references.ts key boyd-vandenberghe-2004",
     ),
-    (
-        "https://amdc.in2p3.fr/masstables/Ame2020/mass_1.mas20.txt",
-        "ame2020-mass-table.txt",
-        "AME 2020 atomic mass evaluation (AMDC/IN2P3) — primary data source for QOU mass-formula validation",
-    ),
+    # AME 2020 mass table already present at uploads/mass_1.mas20.txt;
+    # no need to re-download.
     (
         "https://physics.nist.gov/cuu/Constants/Table/allascii.txt",
         "codata-2022-constants.txt",
