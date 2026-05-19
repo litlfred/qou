@@ -26,8 +26,10 @@ LaTeX label: `prop:sw-3root-rational-integrand`
 -/
 
 import Mathlib.Data.Real.Basic
-import Mathlib.Data.Polynomial.Basic
+import Mathlib.Algebra.Polynomial.Basic
 import Mathlib.RingTheory.Polynomial.Basic
+import Mathlib.Tactic.LinearCombination
+import Mathlib.Tactic.Ring
 
 namespace QOU.BraidKnot
 
@@ -101,16 +103,24 @@ theorem colorTubeCubic_at_zero_factored (c : ℝ) :
     that for any factorization F = (c - r₁)(c - r₂)(c - r₃),
     we have r₁ + r₂ + r₃ = -(4z+1).) -/
 -- Ref: [lang2002algebra] §IV.8 — Vieta's formulas
--- This theorem requires actual root extraction; deferred to Mathlib
--- once `Polynomial.cubicRoots_sum` lands.
+-- Proof: extract three point-values of the polynomial identity, then
+-- combine them linearly to isolate the c² coefficient (which equals
+-- -(r₁+r₂+r₃) in the factored form, and 4z+1 in the expanded form).
+-- The combination (1/2)·F(1) + (1/2)·F(-1) − F(0) cancels the c³ and
+-- linear-c terms, leaving 2·(c² coeff) on the LHS and -2·s₁ on the
+-- RHS — yielding s₁ = -(4z+1).
 theorem cubic_roots_sum_vieta (z : ℝ) (r₁ r₂ r₃ : ℝ)
     (h : colorTubeCubic z = fun c => (c - r₁) * (c - r₂) * (c - r₃)) :
     r₁ + r₂ + r₃ = -(4*z + 1) := by
-  -- Expand the factored form and compare with the cubic
-  -- (c - r₁)(c - r₂)(c - r₃) = c³ − (r₁+r₂+r₃)c² + (r₁r₂+r₁r₃+r₂r₃)c − r₁r₂r₃
-  -- Match with c³ + (4z+1)c² + (6z²+3z+1)c + (4z³+3z²+2z+1)
-  -- → -(r₁+r₂+r₃) = 4z+1 → r₁+r₂+r₃ = -(4z+1) ✓
-  sorry  -- Ref: [lang2002algebra] §IV.8 — Vieta's formulas (pending Mathlib)
+  have h0 := congr_fun h 0
+  have h1 := congr_fun h 1
+  have hm1 := congr_fun h (-1)
+  unfold colorTubeCubic at h0 h1 hm1
+  -- h0  : … = (0 - r₁) · (0 - r₂) · (0 - r₃)        — fixes r₁r₂r₃
+  -- h1  : … = (1 - r₁) · (1 - r₂) · (1 - r₃)
+  -- hm1 : … = (-1 - r₁) · (-1 - r₂) · (-1 - r₃)
+  -- (h1 + hm1)/2 - h0   collapses to   4z+1 = -(r₁+r₂+r₃)
+  linear_combination ((1:ℝ)/2) * h1 + ((1:ℝ)/2) * hm1 - h0
 
 /-- **Main proposition**: λ_SW^(1)(z) = -P(z)/D(z).
     This is the definition + the rational-function structure; the

@@ -2,65 +2,74 @@
 # QOU.Descartes.morse_wall_q_moduli — Morse wall of the integration-limit pencil
 
 The baryon integration-limit Möbius transformation
-`a(q) = (4 - q) / (4*q + 3)` has fixed points at `q^2 + q - 1 = 0` —
-i.e. at `1/φ` and `-φ` — and these constitute the **Morse wall** of
-the q-family of SW actions `S_q` on `E_q`: the algebraic locus where
-the integration-limit pencil's Möbius section becomes stationary.
+$f(q) = (4 - q)/(4q + 3)$ has fixed points at $q^2 + q - 1 = 0$ —
+i.e. at $1/\varphi$ and $-\varphi$ — and these constitute the
+**Morse wall** of the $q$-family of SW actions $S_q$ on $\mathcal{E}_q$:
+the algebraic locus where the integration-limit pencil's Möbius
+section becomes stationary.
 
-This file proves the **polynomial Morse-wall identity**:
-
-  given any commutative ring `R` and elements `q, u : R` such that
-  `u * (4*q + 3) = 1` (i.e. `u` is a left-inverse of `4q+3`),
-  the fixed-point equation `(4 - q) * u = q` is equivalent to the
-  polynomial identity `4 * (q^2 + q - 1) = 0`.
-
-The "4 *" multiplier on the RHS is the artefact of the algebraic
-manipulation; it does NOT require `(4 : R)` to be a unit. Over rings
-of characteristic 0 (or any ring where 4 is a non-zero-divisor),
-this reduces to `q^2 + q - 1 = 0`, recovering the closed-form fixed
-points `{1/φ, -φ}` after adjoining `√5 ∈ ℤ[ζ_5]`.
+This file states the Laurent-polynomial fixed-point equation over any
+field `R` in which `4 ≠ 0` (i.e. characteristic ≠ 2), matching the
+narrative setting $\operatorname{Frac}(\mathbb{Z}[q^{\pm 1}])$. The
+final cancellation step `4·(q² + q − 1) = 0  ⟹  q² + q − 1 = 0`
+genuinely requires both a no-zero-divisors structure and `4 ≠ 0`;
+neither is available over an arbitrary `CommRing` (e.g. the equivalence
+fails at `R = ℤ/4ℤ`, `q = 0`).  The full equivalence with the
+closed-form $\{1/\varphi, -\varphi\}$ over the cyclotomic ring is
+deferred (requires `Mathlib.NumberTheory.Cyclotomic` to express
+$\sqrt{5} \in \mathbb{Z}[\zeta_5]$ symbolically).
 
 -- Ref: [pham1965] generalised Picard-Lefschetz formula
 -- Ref: [seidel2008] Fukaya-Seidel category of a Lefschetz fibration
 -- Ref: [arnold-gusein-zade-varchenko1988] Singularities II §10-11
 -/
 
+import Mathlib.Algebra.Polynomial.Basic
+import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Tactic.LinearCombination
-import Mathlib.Tactic.Ring
+import Mathlib.Tactic.FieldSimp
 
 namespace QOU.Descartes
 
-/-- **Morse-wall identity.**
-    Over any commutative ring `R` with element `q : R` and a
-    left-inverse `u` of `4*q + 3` (i.e. `u * (4*q + 3) = 1`),
-    the Möbius fixed-point equation `(4 - q) * u = q` is equivalent
-    to the polynomial identity `4 * (q^2 + q - 1) = 0`.
+open Polynomial LaurentPolynomial
 
-    The multiplier `4` on the RHS is universal (no characteristic
-    assumption); over rings where `(4 : R)` is a non-zero-divisor
-    (e.g. characteristic 0), this collapses to `q^2 + q - 1 = 0`. -/
+/-- The Möbius integration-limit characteristic polynomial.
+    Its vanishing locus is the Morse wall. -/
+def mobius_fp_poly : Polynomial ℤ := X^2 + X - 1
+
+/-- **Morse-wall identity.**
+    Over any field `R` in which `4 ≠ 0`, and an element `q : R` such
+    that `4*q + 3` is invertible, the Möbius fixed-point equation
+    `a(q) = q` (with `a(q) = (4 - q) / (4*q + 3)`) is equivalent to the
+    polynomial identity `q^2 + q - 1 = 0`.
+
+    The `(4 : R) ≠ 0` hypothesis is essential: without it the final
+    cancellation `4·(q²+q−1) = 0 ⟹ q²+q−1 = 0` fails (e.g. char 2). -/
+-- Ref: [pham1965] generalised Picard-Lefschetz formula
+-- Ref: [seidel2008] Fukaya-Seidel category of a Lefschetz fibration
 theorem morse_wall_q_moduli
-    {R : Type*} [CommRing R] (q u : R)
-    (hu : u * (4 * q + 3) = 1) :
-    (4 - q) * u = q ↔ 4 * (q^2 + q - 1) = 0 := by
+    {R : Type*} [Field R]
+    (q : R) (h_inv : IsUnit (4 * q + 3)) (h4 : (4 : R) ≠ 0) :
+    (∃ u : R, u * (4 * q + 3) = 1 ∧
+      (4 - q) * u = q) ↔
+    q ^ 2 + q - 1 = 0 := by
+  have h_ne : (4 * q + 3 : R) ≠ 0 := h_inv.ne_zero
   refine ⟨?_, ?_⟩
-  · -- Forward: (4 - q) * u = q  ⟹  4·(q²+q-1) = 0.
-    -- Multiply hq by (4q+3) and use hu to eliminate u.
-    intro hq
-    have h2 : 4 - q = q * (4 * q + 3) := by
-      have step : (4 - q) * (u * (4 * q + 3)) = q * (4 * q + 3) := by
-        have : (4 - q) * (u * (4 * q + 3)) = (4 - q) * u * (4 * q + 3) := by ring
-        rw [this, hq]
-      rwa [hu, mul_one] at step
-    -- h2 says 4 - q = 4q² + 3q, i.e. 4q² + 4q - 4 = 0.
-    linear_combination -h2
-  · -- Reverse: 4·(q²+q-1) = 0  ⟹  (4 - q) * u = q.
-    -- The polynomial identity gives 4 - q = q·(4q+3); multiply by u
-    -- on the right and use hu : u·(4q+3) = 1 to collapse.
-    intro h
-    have h2 : 4 - q = q * (4 * q + 3) := by linear_combination -h
-    have step : (4 - q) * u = q * ((4 * q + 3) * u) := by
-      rw [h2]; ring
-    rw [step, mul_comm (4 * q + 3) u, hu, mul_one]
+  · -- (⇒)  Multiply the fixed-point equation by `(4q+3)`, then use
+    --      `u*(4q+3) = 1` to clear `u`, then cancel the leading `4`.
+    rintro ⟨u, hu, hfix⟩
+    have h1 : (4 - q) = q * (4 * q + 3) := by
+      have key : (4 - q) * (u * (4 * q + 3)) = q * (4 * q + 3) := by
+        rw [← mul_assoc, hfix]
+      rwa [hu, mul_one] at key
+    have h2 : (4 : R) * (q ^ 2 + q - 1) = 0 := by linear_combination -h1
+    exact (mul_eq_zero.mp h2).resolve_left h4
+  · -- (⇐)  Take `u := (4q + 3)⁻¹`; the fixed-point equation then
+    --      reduces, after clearing the denominator, to `4·(q²+q−1) = 0`,
+    --      which holds by hypothesis.
+    intro h_poly
+    refine ⟨(4 * q + 3)⁻¹, inv_mul_cancel₀ h_ne, ?_⟩
+    field_simp
+    linear_combination -4 * h_poly
 
 end QOU.Descartes
