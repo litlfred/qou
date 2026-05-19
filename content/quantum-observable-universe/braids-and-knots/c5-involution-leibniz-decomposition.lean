@@ -46,6 +46,58 @@ noncomputable def sigmaAvg (q : ℝ) : ℝ → ℝ :=
 noncomputable def c5Decomposition (q : ℝ) : ℝ :=
   - hoefsmitBSq q - 1/2
 
+/-- The q-quantum integer `[2]_q = q + q⁻¹`. -/
+noncomputable def quantumTwo (q : ℝ) : ℝ := q + 1/q
+
+/-- **Hoefsmit-Quantum-2 identity (PROVABLE)**: the off-diagonal
+    coupling `b²` on `V_{(2,1)}` of the Hecke algebra `H_3(q)`
+    equals `1 - 1/[2]_q²`, where `[2]_q = q + q⁻¹`.
+
+    Proof: pure algebraic identity over a field of char ≠ 2, since
+    `(q² + 1)² = q² · (q + q⁻¹)²`.
+
+    Status: rigorous algebraic identity, no `sorry`. This locks
+    one piece of the `prop:bar-symmetric-three-layer-synthesis`
+    chain — the bar-symmetric form of `b²` is *manifestly* bar-
+    symmetric because `[2]_q` is bar-symmetric (`q + q⁻¹` is
+    invariant under `q ↔ q⁻¹`). -/
+theorem hoefsmit_b_squared_eq_one_minus_inv_quantum_two_squared
+    (q : ℝ) (hq : q ≠ 0) :
+    hoefsmitBSq q = 1 - 1 / (quantumTwo q)^2 := by
+  unfold hoefsmitBSq quantumTwo
+  have h_q2 : q^2 + 1 ≠ 0 := by positivity
+  have h_2q : q + 1/q ≠ 0 := by
+    intro habs
+    have := congrArg (· * q) habs
+    simp at this
+    have : q^2 + 1 = 0 := by linarith [this]
+    exact h_q2 this
+  field_simp
+  ring
+
+/-- **Corollary: c_5 closed-form via quantum-2.**
+    The conjectured c_5 decomposition `c_5 = -b² - 1/2` rewrites
+    as `c_5 = -3/2 + 1/[2]_q²`. Both factors are bar-symmetric;
+    the q-independent `-3/2` is a commutative-QOU constant (the
+    classical-limit value at `q → 1` gives `c_5 = -5/4`). -/
+theorem c5_decomposition_via_quantum_two
+    (q : ℝ) (hq : q ≠ 0) :
+    c5Decomposition q = -3/2 + 1 / (quantumTwo q)^2 := by
+  unfold c5Decomposition
+  rw [hoefsmit_b_squared_eq_one_minus_inv_quantum_two_squared q hq]
+  ring
+
+/-- **Commutative-QOU value of `c_5`.** At `q = 1`, `[2]_q = 2`,
+    so `c_5(1) = -3/2 + 1/4 = -5/4`. The "-1/2" in the empirical
+    decomposition is q-independent and SURVIVES the commutative
+    limit — it is not a quantum-deformation artifact but a
+    commutative-QOU Wedderburn constant. -/
+theorem c5_classical_limit_eq_neg_five_quarters :
+    c5Decomposition 1 = -5/4 := by
+  rw [c5_decomposition_via_quantum_two 1 (by norm_num : (1:ℝ) ≠ 0)]
+  unfold quantumTwo
+  norm_num
+
 /-- **At the silver ratio q = 1+√2, b² = 7/8 exactly.**
 
     Derivation:

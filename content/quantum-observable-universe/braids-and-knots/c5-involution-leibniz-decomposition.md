@@ -1,3 +1,15 @@
+> **Bar-symmetry class** (per [`def:bar-involution`](#def:bar-involution)):
+> $c_5(q) = -b^2(q) - 1/2 = -3/2 + 1/[2]_q^2$ is **bar-symmetric**
+> as a function of $q$. The Hoefsmit-Quantum-2 identity
+> $b^2 = 1 - 1/[2]_q^2$ is a proved algebraic theorem in the
+> Lean sibling (`hoefsmit_b_squared_eq_one_minus_inv_quantum_two_squared`,
+> no `sorry`). The "$-1/2$" piece is a q-independent
+> commutative-QOU constant; $c_5(q=1) = -5/4$ proved as
+> `c5_classical_limit_eq_neg_five_quarters`. So the c_5 outlier
+> at silver is the *arithmetic sum* of two clean bar-symmetric
+> pieces landing on inert prime $11 \in \mathbb{Z}[1+\sqrt 2]$,
+> not a quantum-deformation artifact.
+
 > **Refined-framing note (added when promoting this block from the
 > source PR into the level-selection rule PR).** This block
 > *interprets* the unique averaging-resonant rung k = 5 identified

@@ -1,3 +1,6 @@
+> **Bar-symmetry class** (per [`def:bar-involution`](#def:bar-involution)):
+> The averaged crossing $\sigma_{\mathrm{avg}} = (\sigma + \sigma^{-1})/2 = \sigma - h/2$ is the **bar-symmetric** ($P_{\mathrm{avg}}$) projection of $\sigma$. The Hecke skein $h = q - q^{-1}$ is bar-anti-symmetric. The $1/2$ fingerprint at the unique averaging-resonant rung is the bar-symmetric projection of the Hopf-link bar-anti-symmetric kernel at the half-fill rung. All extracted $c_k(q)$ closed forms are bar-symmetric as functions of $q$.
+
 **Proposition (averaging-resonance rule for $c_k$ sectors).**
 
 *Let $\beta \in H_n(q)$ be a typed-$\mathbf{B}_n$ braid word with

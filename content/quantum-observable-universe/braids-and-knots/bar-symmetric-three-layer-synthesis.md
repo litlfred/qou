@@ -13,9 +13,17 @@ underlying bar-anti-symmetric operator; the ODD-part
 ($\Phi_q$ alone, $\sin$, $\sinh$) is what the framework
 empirically rejects.*
 
-## What's bar-symmetric vs bar-anti-symmetric
+> **Bar-symmetry primer.** All bar-symmetry / bar-anti-symmetry
+> definitions, the classification table of every QOU quantity
+> by bar-type, the canonical algebraic identities ($h =
+> h_{1/2}/z$, $b^2 = 1 - 1/[2]_q^2$, $c_5 = -3/2 + 1/[2]_q^2$),
+> and the Kac–Sunada meta-justification all live in the
+> canonical reference block
+> [`def:bar-involution`](#def:bar-involution). This proposition
+> consumes those definitions and adds the three-layer-synthesis
+> *conjecture* on top.
 
-### Why $h = q - q^{-1}$ is bar-anti-symmetric (illustration)
+## Quick reminder: why $h = q - q^{-1}$ is bar-anti-symmetric (illustration)
 
 Three views of the same fact:
 
