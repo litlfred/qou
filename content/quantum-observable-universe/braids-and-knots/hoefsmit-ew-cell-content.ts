@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Hoefsmit cell-content identification of the EW triplet inside $\\mathrm{End}_R(V^{\\otimes 6})$",
   lean: {
-    ref: "qou:QOU.BraidsAndKnots.hoefsmit_ew_cell_content",
+    ref: "qou:QOU.BraidsAndKnots.HoefsmitEWCellContent",
     validation: "not_checked",
   },
   uses: [

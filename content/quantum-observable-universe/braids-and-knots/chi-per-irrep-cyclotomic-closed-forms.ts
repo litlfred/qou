@@ -2,10 +2,6 @@ import { remark } from "../../schema/builders";
 
 export default remark({
   label: "rem:chi-per-irrep-cyclotomic-closed-forms",
-  lean: {
-    ref: "qou:QOU.BraidKnot.chi_per_irrep_cyclotomic_closed_forms",
-    validation: "not_checked",
-  },
   interprets: "rem:chi-v3-closed-form-proof",
   title:
     "All three $V_\\lambda$ per-irrep character difference closed forms with **cyclotomic factor pattern**: $V_{(3)}, V_{(1,1,1)}$ → $\\Phi_4^2$; $V_{(2,1)}$ → $\\Phi_8$; denominator powers $q, q^3, q^5$ track content sum",

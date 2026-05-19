@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "$(1{-}q)\\,\\log\\Phi_n(x; q) \\to \\mathrm{Li}_2(x)$ under $\\tau_{\\mathrm{arch}}$",
   lean: {
-    ref: "qou:QOU.QPochhammer.partialProduct_archimedean_limit",
+    ref: "qou:QOU.QPochhammer.ArchimedeanLimit",
     validation: "not_checked",
   },
   uses: [

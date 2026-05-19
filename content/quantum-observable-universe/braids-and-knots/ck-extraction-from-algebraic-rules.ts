@@ -2,10 +2,6 @@ import { remark } from "../../schema/builders";
 
 export default remark({
   label: "rem:ck-extraction-from-algebraic-rules",
-  lean: {
-    ref: "qou:QOU.BraidKnot.ck_extraction_from_algebraic_rules",
-    validation: "not_checked",
-  },
   interprets: "prop:q-beta-categorical-precision-ladder",
   title:
     "$c_k$ extraction from four algebraic reduction rules (Yang-Baxter, $q$-Young symmetrizers, Hecke quadratic, GB/jet) on the typed-$\\mathbf{B}_3$ word: the closed forms $c_k \\in \\{b, b^2, -2, b^2+1/2\\}$ are derivable outputs, not phenomenological identifications",

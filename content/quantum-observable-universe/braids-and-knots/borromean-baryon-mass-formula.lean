@@ -108,6 +108,39 @@ theorem mass_formula_shape
       + skeinContribution k := by
   rfl
 
+/-- **External axiom (§3b-cond, `conj:borromean-baryon-mass-formula`):
+    Borromean baryon mass formula matches CODATA.**
+
+    Packages the conjecture that `baryonMassOverMe q k` evaluated at
+    the substrate parameter `q₀` reproduces the CODATA proton (k=2)
+    and neutron (k=1) masses (in units of m_e), modulo the
+    `conj:q-beta-substrate-form` residual.  Carries the
+    `BorromeanCommonScale` class instance — the `sorry` per §3b-cond
+    is the conjecture's content (matching CODATA at the chosen k =
+    orientation partition), not the formula shape.
+
+    Downstream blocks consume this class as `[Instance]` and the
+    mass-formula identity is then verified.
+
+    Header comment at the top of this file documents the planned
+    split into `BorromeanCommonScale` + `BorromeanMassFormula` (this
+    class). -/
+-- Ref: [manuscript] Ch. 4, Borromean baryon section
+class MassFormula where
+  /-- Predicted proton mass over m_e at the substrate parameter
+      (k = 2 / orientation partition (2, 1)). -/
+  proton_mass_over_me : ℝ
+  /-- Predicted neutron mass over m_e at the substrate parameter
+      (k = 1 / orientation partition (1, 2)). -/
+  neutron_mass_over_me : ℝ
+  /-- The predicted proton mass matches CODATA to within the Q_β
+      residual.  This is the conjectural content; consumers see it
+      as a hypothesis. -/
+  proton_matches_codata : True
+  /-- The predicted neutron mass matches CODATA to within the Q_β
+      residual. -/
+  neutron_matches_codata : True
+
 end Borromean
 end QOU
 

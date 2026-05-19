@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Categorical linking operation $\\mathrm{Lk}_R$: ribbon-category dual of topological linking number",
   lean: {
-    ref: "qou:QOU.BraidsAndKnots.categorical_linking_operation",
+    ref: "qou:QOU.BraidsAndKnots.CategoricalLinkingOperation",
     validation: "not_checked",
   },
   uses: [

@@ -2,10 +2,6 @@ import { remark } from "../../schema/builders";
 
 export default remark({
   label: "rem:per-wedderburn-block-c5-c6",
-  lean: {
-    ref: "qou:QOU.BraidKnot.per_wedderburn_block_c5_c6",
-    validation: "not_checked",
-  },
   interprets: "rem:multi-link-jones-q1-extension",
   title:
     "Per-Wedderburn-block $c_5/c_6$ scaffolding: weighted-sum hypothesis that the empirical $c_5 \\approx -395$, $c_6 \\approx -45485$ arise from a $\\dim_q^2$-weighted sum over the three $H_3$ irreps $V_{(3)}, V_{(2,1)}, V_{(1^3)}$",

@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Weinberg angle $\\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors",
   lean: {
-    ref: "qou:QOU.BraidsAndKnots.weinberg_angle_categorical",
+    ref: "qou:QOU.BraidsAndKnots.WeinbergAngleCategorical",
     validation: "not_checked",
   },
   uses: [

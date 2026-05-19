@@ -605,6 +605,49 @@ AND the auto-pull policy above didn't find anything to dispatch
 that is a policy violation — fix the watcher's TICK handler, do
 not work around with the one-liner.)
 
+### 5d-bis. Own-PR-CI-wait counts as idle (MANDATORY)
+
+After you push a PR you authored this session, **do not stop**.
+The webhook subscription will deliver CI/review events when they
+arrive; meanwhile the agent is idle in §5d's sense and MUST pull
+the next backlog item. Specifically:
+
+1. **Push + subscribe + immediately re-enter §5d auto-pull.** The
+   tick that opens the new PR is the same tick that should pull
+   the next queued item. Don't emit the empty-queue heartbeat
+   (§5d) just because *this* PR exists — the queue is the source
+   of truth, not the existence of a pending PR.
+
+2. **Pick a non-overlapping item.** The new item's scope must not
+   touch files modified in the in-flight PR (per the §5m
+   parallel-by-default rule). Use `git diff origin/main..HEAD
+   --name-only` on the in-flight branch to compute the exclusion
+   set, then filter the queue by that set before ranking per §5b.
+
+3. **Open the next item on a NEW branch off `origin/main`** — not
+   off the in-flight PR's branch — so the next PR is independent
+   and lands in its own merge cycle. If the in-flight PR is later
+   modified during code review, those changes do not need to be
+   carried into the second PR.
+
+4. **Webhook events still preempt.** A
+   `<github-webhook-activity>` for the in-flight PR (CI failure,
+   review comment) preempts the next-item work per §5d's
+   "incoming event preempts backlog" rule. After addressing the
+   webhook, return to the next-item work.
+
+5. **Exhaust the queue, not your patience.** Continue batching
+   (push → subscribe → pull next → repeat) until either (a) the
+   queue is empty, (b) every remaining item touches files in an
+   in-flight PR (cannot start non-overlapping work), or (c) the
+   user says "stop" / "park" / "switch to X".
+
+This matches the user-accessibility rule in CLAUDE.md
+("Run commands proactively — don't ask 'shall I run X?'") and
+the work-plan policy ("Work the queue while idle"). Asking the
+user "what should I do next?" while the queue is non-empty and
+in-flight PRs are non-blocking is an audit flag.
+
 ### 5e. Idle author-ask dispatcher
 
 When the watcher enters an idle window AND the queue contains

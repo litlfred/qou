@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T22:16:08.046962+00:00",
-  "commitSha": "53724089357560bf563dfc49d2050299040b8b9c",
+  "computedAt": "2026-05-19T02:04:02.116135+00:00",
+  "commitSha": "82a5f9a3f71e21bc31d6d9b1357653acddeae789",
   "assertions": [
     {
       "name": "no_error_kind_entries",
@@ -15,137 +15,23 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 7,
+  "durationMs": 12,
   "computation": "incomplete-coverage-audit",
   "scriptFile": "incomplete_coverage_audit.py",
-  "scriptHash": "385c3447f507",
+  "scriptHash": "91e01c8a92f5",
   "scriptCommitSha": "90f2b2ffefe0390eabfdb3d4ab7acaef34ee4d93",
   "description": "I13 audit per local/compute-integration-watcher: every folio-assistant/computations/*.witness.json is walked for `error_kind` fields anywhere in the JSON tree.  Each hit records the per-entry failure mode + sibling fields (which typically identify the failing atom/partition/label), giving a follow-up agent the per-entry queue needed to extend the upstream producer's coverage.",
   "contentBlock": "I13 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
-    "total_witnesses_with_errors": 2,
-    "total_error_entries": 75
+    "total_witnesses_with_errors": 1,
+    "total_error_entries": 60
   },
   "data": {
     "error_kind_totals": {
-      "T1_witness_missing": 69,
+      "T1_witness_missing": 54,
       "unknown": 6
     },
     "rows": [
-      {
-        "witness": "folio-assistant/computations/incomplete-coverage-audit.witness.json",
-        "total_error_entries": 15,
-        "by_kind": {
-          "T1_witness_missing": 15
-        },
-        "sample_entries": [
-          {
-            "json_path": "data.rows.0.sample_entries.0",
-            "error_kind": "T1_witness_missing",
-            "siblings": {
-              "json_path": "rows.6"
-            }
-          },
-          {
-            "json_path": "data.rows.0.sample_entries.1",
-            "error_kind": "T1_witness_missing",
-            "siblings": {
-              "json_path": "rows.7"
-            }
-          },
-          {
-            "json_path": "data.rows.0.sample_entries.2",
-            "error_kind": "T1_witness_missing",
-            "siblings": {
-              "json_path": "rows.8"
-            }
-          },
-          {
-            "json_path": "data.rows.0.sample_entries.3",
-            "error_kind": "T1_witness_missing",
-            "siblings": {
-              "json_path": "rows.9"
-            }
-          },
-          {
-            "json_path": "data.rows.0.sample_entries.4",
-            "error_kind": "T1_witness_missing",
-            "siblings": {
-              "json_path": "rows.10"
-            }
-          },
-          {
-            "json_path": "data.rows.0.sample_entries.5",
-            "error_kind": "T1_witness_missing",
-            "siblings": {
-              "json_path": "rows.11"
-            }
-          },
-          {
-            "json_path": "data.rows.0.sample_entries.6",
-            "error_kind": "T1_witness_missing",
-            "siblings": {
-              "json_path": "all_modes.brane-legacy.rows.6"
-            }
-          },
-          {
-            "json_path": "data.rows.0.sample_entries.7",
-            "error_kind": "T1_witness_missing",
-            "siblings": {
-              "json_path": "all_modes.brane-legacy.rows.7"
-            }
-          },
-          {
-            "json_path": "data.rows.0.sample_entries.8",
-            "error_kind": "T1_witness_missing",
-            "siblings": {
-              "json_path": "all_modes.brane-legacy.rows.8"
-            }
-          },
-          {
-            "json_path": "data.rows.0.sample_entries.9",
-            "error_kind": "T1_witness_missing",
-            "siblings": {
-              "json_path": "all_modes.brane-legacy.rows.9"
-            }
-          },
-          {
-            "json_path": "data.rows.0.sample_entries.10",
-            "error_kind": "T1_witness_missing",
-            "siblings": {
-              "json_path": "all_modes.brane-legacy.rows.10"
-            }
-          },
-          {
-            "json_path": "data.rows.0.sample_entries.11",
-            "error_kind": "T1_witness_missing",
-            "siblings": {
-              "json_path": "all_modes.brane-legacy.rows.11"
-            }
-          },
-          {
-            "json_path": "data.rows.0.sample_entries.12",
-            "error_kind": "T1_witness_missing",
-            "siblings": {
-              "json_path": "all_modes.drop.rows.6"
-            }
-          },
-          {
-            "json_path": "data.rows.0.sample_entries.13",
-            "error_kind": "T1_witness_missing",
-            "siblings": {
-              "json_path": "all_modes.drop.rows.7"
-            }
-          },
-          {
-            "json_path": "data.rows.0.sample_entries.14",
-            "error_kind": "T1_witness_missing",
-            "siblings": {
-              "json_path": "all_modes.drop.rows.8"
-            }
-          }
-        ]
-      },
       {
         "witness": "folio-assistant/computations/paper-six-term-isotope-sweep.witness.json",
         "total_error_entries": 60,

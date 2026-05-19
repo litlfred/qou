@@ -2,10 +2,6 @@ import { remark } from "../../schema/builders";
 
 export default remark({
   label: "rem:markov-trace-operator-construction",
-  lean: {
-    ref: "qou:QOU.BraidKnot.markov_trace_operator_construction",
-    validation: "not_checked",
-  },
   interprets: "rem:markov-trace-inductive-limit",
   title:
     "Operator-theoretic construction of the Jones-Wenzl Markov trace on the inductive limit $\\mathbf{B}_\\infty$ — per-$n$ Hilbert reps + inductive embeddings + GNS / bicommutant von Neumann factor scaffolding",

@@ -2,10 +2,6 @@ import { remark } from "../../schema/builders";
 
 export default remark({
   label: "rem:chi-v21-hoefsmit-matrix-derivation",
-  lean: {
-    ref: "qou:QOU.BraidKnot.chi_v21_hoefsmit_matrix_derivation",
-    validation: "not_checked",
-  },
   interprets: "rem:chi-per-irrep-cyclotomic-closed-forms",
   title:
     "V_(2,1) Hoefsmit 2×2 matrix derivation scaffolding: scalar trace + Hecke-quadratic identities + Laurent decomposition of the closed form $-(q^4+1)(q^2-1)/(4q^3)$",
