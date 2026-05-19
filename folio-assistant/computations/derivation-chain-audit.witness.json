@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T20:33:51.823222+00:00",
-  "commitSha": "76d8f4327f8043f573a97f542ae263eb2c84f30d",
+  "computedAt": "2026-05-19T00:40:07.077442+00:00",
+  "commitSha": "52be148400c9dac47b3d0bc971bc9a89f6f26aa6",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2487,6 +2487,7 @@
         "q-pinning-50-digit.witness.json",
         "q-pochhammer-seed.witness.json",
         "r5-full-canonical-knot-solver.witness.json",
+        "residue-algebraic-verification.witness.json",
         "rho-f-categorical-probe.witness.json",
         "rho-f-volume-binding-gap.witness.json",
         "rho-k-full-via-wenzl-lr.witness.json",
