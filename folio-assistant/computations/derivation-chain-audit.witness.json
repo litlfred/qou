@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T23:25:37.680188+00:00",
-  "commitSha": "4fe4881d8a09226aefb789d6e6b30d0f40dcbcf4",
+  "computedAt": "2026-05-19T23:26:05.821526+00:00",
+  "commitSha": "ad08ddc14293651d3fa571893dc9bf256b2214bd",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2356,7 +2356,6 @@
         "habiro-interpolate-cross-validation.witness.json",
         "habiro-motivic-orbit-relations.witness.json",
         "habiro-residue-a1.witness.json",
-        "habiro-tail-in-ideal-validation.witness.json",
         "hadron-knot-table.witness.json",
         "hardcoded-literal-audit.witness.json",
         "he4-burau-alexander.witness.json",
