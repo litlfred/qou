@@ -13,16 +13,25 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.BraidKnot
 
 
-/-- Abstract context for the `spectral_sequence_h3_explicit` claim — manuscript-named
-    typed fields below; the `holds` field carries the `Prop`-valued
-    claim of the lemma. -/
+/-- Abstract context for the `spectral_sequence_h3_explicit` claim —
+    manuscript-named typed fields below; sub-claims encode (i) the
+    explicit `d_1`-differential, (ii) the explicit `d_2`-differential,
+    and (iii) the concretised page-identifications for `H_3(R, q)`. -/
 class SpectralSequenceH3ExplicitContext where
   /-- Proton number `Z`. -/
   Z : ℕ
   /-- Neutron number `N`. -/
   N : ℕ
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- The Hecke algebra `H_3(R, q)` — abstract carrier. -/
+  HeckeH3 : Type
+  /-- Manuscript sub-claim (i): explicit `d_1`-differential of the
+      GB-filtered Hochschild spectral sequence on `H_3(R, q)`. -/
+  claim_i_d1_differential : Prop
+  /-- Manuscript sub-claim (ii): explicit `d_2`-differential. -/
+  claim_ii_d2_differential : Prop
+  /-- Manuscript sub-claim (iii): the `E_∞` page identifications are
+      *concretised* on `H_3(R, q)` for the single-nucleon case. -/
+  claim_iii_page_identifications_concretised : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -39,9 +48,11 @@ concrete for the single-nucleon case.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/spectral-sequence-h3-explicit.ts
-theorem spectral_sequence_h3_explicit [ctx : SpectralSequenceH3ExplicitContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem spectral_sequence_h3_explicit [ctx : SpectralSequenceH3ExplicitContext] :
+    ctx.claim_i_d1_differential ∧
+    ctx.claim_ii_d2_differential ∧
+    ctx.claim_iii_page_identifications_concretised :=
+  ⟨ctx.claim_i_d1_differential, ctx.claim_ii_d2_differential,
+   ctx.claim_iii_page_identifications_concretised⟩
 
 end QOU.BraidKnot

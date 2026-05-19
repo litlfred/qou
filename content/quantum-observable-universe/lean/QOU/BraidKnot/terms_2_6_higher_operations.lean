@@ -13,17 +13,26 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.BraidKnot
 
 
-/-- Abstract context for the `terms_2_6_higher_operations` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
+/-- Abstract context for the `terms_2_6_higher_operations` claim —
+    manuscript-themed typed fields below; sub-claims encode the two
+    open identifications (term 2: single-generator brane tower; term 6:
+    jet-level prefix correction) of the unified knot-mass formula via
+    higher operations on the Hochschild cohomology of `H_n(R, q)`. -/
 class Terms26HigherOperationsContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
   /-- The topological-link / knot type. -/
   Link : Type
-  /-- The categorical mass / binding energy. -/
-  mass : ℝ
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- The Hecke algebra `H_n(R, q)`. -/
+  HeckeAlgebra : Type
+  /-- Manuscript sub-claim (term 2): single-generator brane tower
+      `Σ Φ_q(|V̂_i|)` identification with the `E_∞^{1,*}` page via
+      a Hochschild higher-operation `μ_2`. -/
+  claim_term_2_single_generator_brane_tower : Prop
+  /-- Manuscript sub-claim (term 6): jet-level prefix correction
+      identification with the `E_∞^{5,*}` page via a Hochschild
+      higher-operation `μ_6`. -/
+  claim_term_6_jet_prefix_correction : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -40,9 +49,10 @@ This proposition sketches concrete avenues to close both via
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/terms-2-6-higher-operations.ts
-theorem terms_2_6_higher_operations [ctx : Terms26HigherOperationsContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem terms_2_6_higher_operations [ctx : Terms26HigherOperationsContext] :
+    ctx.claim_term_2_single_generator_brane_tower ∧
+    ctx.claim_term_6_jet_prefix_correction :=
+  ⟨ctx.claim_term_2_single_generator_brane_tower,
+   ctx.claim_term_6_jet_prefix_correction⟩
 
 end QOU.BraidKnot

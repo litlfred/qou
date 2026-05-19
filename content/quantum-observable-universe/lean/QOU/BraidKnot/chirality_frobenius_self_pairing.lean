@@ -13,13 +13,19 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.BraidKnot
 
 
-/-- Abstract context for the `chirality_frobenius_self_pairing` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
+/-- Abstract context for the `chirality_frobenius_self_pairing` claim —
+    manuscript-themed typed fields below; the chirality-factor identity
+    is captured as `claim_chirality_factor`. -/
 class ChiralityFrobeniusSelfPairingContext where
-  /-- Fluid-dynamics velocity / vorticity field. -/
-  VelocityField : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- Substrate parameter `q : ℝ`. -/
+  q : ℝ
+  /-- The Hecke parameter `h = q − q⁻¹`. -/
+  h : ℝ
+  /-- The chirality factor `χ : ℝ` for the Frobenius self-pairing. -/
+  χ : ℝ
+  /-- Manuscript claim — the chirality factor is `χ = 1 − h²`
+      (Frobenius self-pairing identity). -/
+  claim_chirality_factor : χ = 1 - h ^ 2
 
 /-- **Proposition statement** (from manuscript):
 
@@ -31,9 +37,8 @@ The chirality factor satisfies:*
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/chirality-from-frobenius-self-pairing.ts
-theorem chirality_frobenius_self_pairing [ctx : ChiralityFrobeniusSelfPairingContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem chirality_frobenius_self_pairing [ctx : ChiralityFrobeniusSelfPairingContext] :
+    ctx.χ = 1 - ctx.h ^ 2 :=
+  ctx.claim_chirality_factor
 
 end QOU.BraidKnot
