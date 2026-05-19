@@ -19,7 +19,7 @@ class KnotParticleGenerationContext where
   /-- The topological-link / knot type. -/
   Link : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  claim_KnotParticleGeneration : Prop
+  claim_knot_particle_generation : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -33,7 +33,7 @@ color-tube fibration.
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/knot-particle-generation.ts
-theorem KnotParticleGeneration [ctx : KnotParticleGenerationContext] : ctx.claim_KnotParticleGeneration := by
+theorem KnotParticleGeneration [ctx : KnotParticleGenerationContext] : ctx.claim_knot_particle_generation := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

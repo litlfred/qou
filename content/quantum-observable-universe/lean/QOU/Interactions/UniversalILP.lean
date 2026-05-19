@@ -22,7 +22,7 @@ class UniversalILPContext where
   /-- Neutron number `N`. -/
   N : ℕ
   /-- The `Prop`-valued claim of the lemma. -/
-  claim_UniversalILP : Prop
+  claim_universal_ilp : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -36,7 +36,7 @@ to quarks, nucleons, atoms, and molecules.*
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/universal-ilp-algorithm.ts
-theorem UniversalILP [ctx : UniversalILPContext] : ctx.claim_UniversalILP := by
+theorem UniversalILP [ctx : UniversalILPContext] : ctx.claim_universal_ilp := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

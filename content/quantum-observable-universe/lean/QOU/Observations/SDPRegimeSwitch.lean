@@ -28,7 +28,7 @@ class SDPRegimeSwitchContext where
   /-- The partition / Young-diagram indexing type. -/
   PartitionIdx : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  claim_SDPRegimeSwitch : Prop
+  claim_sdp_regime_switch : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -72,7 +72,7 @@ observables.*
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/sdp-regime-switch.ts
-theorem SDPRegimeSwitch [ctx : SDPRegimeSwitchContext] : ctx.claim_SDPRegimeSwitch := by
+theorem SDPRegimeSwitch [ctx : SDPRegimeSwitchContext] : ctx.claim_sdp_regime_switch := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry
