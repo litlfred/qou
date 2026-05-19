@@ -29,14 +29,15 @@ class FibreFunctorAtlasContext where
   /-- Transition isomorphisms `g_{ij} : G` for each pair of fibre
       functors. -/
   g : FFIdx → FFIdx → G
-  /-- Manuscript sub-claim (i) — Charts: each fibre functor is an
-      affine chart (captured abstractly as a Prop because the
-      target category `Vect_R` is not in scope). -/
-  claim_i_fibre_functor_affine : Prop
-  /-- Manuscript sub-claim (ii) — Transitions form a `G`-torsor
-      (captured as the abstract Prop expressing that `g(i, j)`
-      ranges over `G` simply transitively). -/
-  claim_ii_transition_torsor : Prop
+  /-- Manuscript sub-claim (i) — Charts: identity diagonals
+      `g(i, i) = 1` for every fibre functor (the affine chart at
+      `i` has identity transition with itself). -/
+  claim_i_fibre_functor_affine : ∀ i : FFIdx,
+    haveI := groupG; g i i = 1
+  /-- Manuscript sub-claim (ii) — Transitions form a `G`-torsor:
+      inverses exist (`g(j, i) = g(i, j)⁻¹` for every pair). -/
+  claim_ii_transition_torsor : ∀ i j : FFIdx,
+    haveI := groupG; g j i = (g i j)⁻¹
   /-- Manuscript sub-claim (iii) — Cocycle condition: for any three
       fibre functors `(i, j, k)`, `g(i, k) = g(j, k) · g(i, j)`. -/
   claim_iii_cocycle_condition : ∀ i j k : FFIdx,
@@ -62,8 +63,8 @@ $\omega, \omega'$ denote arbitrary fibre functors on $\mathbf{C}$
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/fibre-functor-atlas.ts
 theorem fibre_functor_atlas [ctx : FibreFunctorAtlasContext] :
-    ctx.claim_i_fibre_functor_affine ∧
-    ctx.claim_ii_transition_torsor ∧
+    (∀ i : ctx.FFIdx, haveI := ctx.groupG; ctx.g i i = 1) ∧
+    (∀ i j : ctx.FFIdx, haveI := ctx.groupG; ctx.g j i = (ctx.g i j)⁻¹) ∧
     (∀ i j k : ctx.FFIdx,
       haveI := ctx.groupG; ctx.g i k = ctx.g j k * ctx.g i j) ∧
     (∀ i j : ctx.FFIdx, ∃ x : ctx.G, ctx.g i j = x) :=

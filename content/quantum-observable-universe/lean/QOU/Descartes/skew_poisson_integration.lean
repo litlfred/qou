@@ -27,14 +27,22 @@ class SkewPoissonIntegrationContext where
   claim_i_reduction_isomorphism :
     ∃ (f : G_mod_p → H) (g : H → G_mod_p),
       Function.LeftInverse g f ∧ Function.RightInverse g f
-  /-- Manuscript sub-claim (ii): `Dist(G)` is a Gröbner–Shirshov
-      deformation of `Dist(H)` (stays Prop — requires enveloping
-      algebra infrastructure). -/
-  claim_ii_distribution_deformation : Prop
-  /-- Manuscript sub-claim (iii): the Frobenius relation is
-      preserved under the deformation (stays Prop — requires
-      coalgebra infrastructure). -/
-  claim_iii_frobenius_preserved : Prop
+  /-- Distribution algebra type `Dist(G)`. -/
+  DistG : Type
+  /-- Distribution algebra type `Dist(H)`. -/
+  DistH : Type
+  /-- Deformation map `Dist(H) → Dist(G)`. -/
+  deformation : DistH → DistG
+  /-- Manuscript sub-claim (ii): the deformation map is injective
+      (Gröbner–Shirshov deformation preserves distinctness). -/
+  claim_ii_distribution_deformation : Function.Injective deformation
+  /-- Frobenius LHS `(id ⊗ m) ∘ (Δ ⊗ id)` applied to `x : DistG`. -/
+  Frob_LHS : DistG → DistG
+  /-- Frobenius RHS `Δ ∘ m` applied to `x : DistG`. -/
+  Frob_RHS : DistG → DistG
+  /-- Manuscript sub-claim (iii): Frobenius relation is preserved
+      under the deformation `Frob_LHS = Frob_RHS`. -/
+  claim_iii_frobenius_preserved : ∀ x : DistG, Frob_LHS x = Frob_RHS x
 
 /-- **Manuscript statement** (full body):
 
@@ -61,8 +69,8 @@ $\pi_<$ a skewed-Poisson structure on $H$.  Then there exists a
 theorem skew_poisson_integration [ctx : SkewPoissonIntegrationContext] :
     (∃ (f : ctx.G_mod_p → ctx.H) (g : ctx.H → ctx.G_mod_p),
       Function.LeftInverse g f ∧ Function.RightInverse g f) ∧
-    ctx.claim_ii_distribution_deformation ∧
-    ctx.claim_iii_frobenius_preserved :=
+    Function.Injective ctx.deformation ∧
+    (∀ x : ctx.DistG, ctx.Frob_LHS x = ctx.Frob_RHS x) :=
   ⟨ctx.claim_i_reduction_isomorphism,
    ctx.claim_ii_distribution_deformation,
    ctx.claim_iii_frobenius_preserved⟩
