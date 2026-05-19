@@ -140,15 +140,22 @@ structure StrongDualityPair (sdp : SDPPrimal n R ι) where
   obj_eq : True
 
 /-- **Strong-duality typeclass**: witnesses that an SDP satisfies
-    the primal-dual identity (Boyd-Vandenberghe Thm 5.5). -/
--- Ref: [boyd-vandenberghe-2004] Theorem 5.5
+    the primal-dual identity (Slater's condition + strong duality
+    for convex problems, Boyd-Vandenberghe §5.2.3 + §5.3). -/
+-- Ref: [boyd-vandenberghe-2004] §5.2.3 + §5.3 (Slater's condition
+--      implies strong duality for convex problems).
+--      Note: Boyd doesn't number theorems; "Theorem 5.5" was a
+--      misattribution — the result is stated in §5.2.3 and proved
+--      in §5.3.2.
 class HasStrongDuality (sdp : SDPPrimal n R ι)
     (_h : sdp.IsStrictlyFeasible) : Prop where
   /-- A strong-duality pair exists. -/
   pair : Nonempty (StrongDualityPair sdp)
 
 /-- **Strong duality** (per-instance form). -/
--- Ref: [boyd-vandenberghe-2004] Theorem 5.5
+-- Ref: [boyd-vandenberghe-2004] §5.2.3 + §5.3
+--      (Slater's condition implies strong duality for convex problems;
+--      Boyd doesn't number theorems — "Theorem 5.5" was a misattribution.)
 theorem strong_duality (sdp : SDPPrimal n R ι)
     (h : sdp.IsStrictlyFeasible) [hStrong : HasStrongDuality sdp h] :
     Nonempty (StrongDualityPair sdp) :=

@@ -147,7 +147,12 @@ theorem RealStrongDualityPair.dualSlack_mul_feasible_eq_zero
       - `S · (Φ' − Φ*) = 0` and `(Φ' − Φ*) · S = 0`
     where `S = dualSlack ystar`, the optimal face has dimension 0
     and `Φ' = Φ*`. -/
--- Ref: [boyd-vandenberghe-2004] §5.5.4
+-- Ref: [boyd-vandenberghe-2004] §5.5.2 (strict complementarity defined
+--      at end of "Complementary slackness")
+-- Ref: [alizadeh-haeberly-overton-1997] §3 (Strict complementarity in
+--      SDP — the canonical authority for the optimal-face-dimension /
+--      uniqueness result; Boyd's §5.5.4 is "Mechanics interpretation
+--      of KKT", which doesn't cover this.)
 axiom slater_strict_complementarity_kernel_axiom :
     ∀ {n : ℕ} {ι : Type*} {sdp : SDPPrimal n ℝ ι}
       (sc : RealStrictComplementarityPair sdp)
@@ -374,7 +379,12 @@ Concrete instances:
     Lean-typed bookkeeping for the multi-week Mathlib SDP-
     rank-deficiency theorem; concrete instances supply the
     proof for specific cases. -/
--- Ref: [boyd-vandenberghe-2004] §5.5.4
+-- Ref: [boyd-vandenberghe-2004] §5.5.2 (strict complementarity defined
+--      at end of "Complementary slackness")
+-- Ref: [alizadeh-haeberly-overton-1997] §3 (Strict complementarity in
+--      SDP — the canonical authority for the optimal-face-dimension /
+--      uniqueness result; Boyd's §5.5.4 is "Mechanics interpretation
+--      of KKT", which doesn't cover this.)
 class SDPSlaterUniqueness
     {n : ℕ} {ι : Type*} [Fintype ι]
     (sdp : SDPPrimal n ℝ ι) (sc : RealStrictComplementarityPair sdp) : Prop where
@@ -523,7 +533,12 @@ theorem Matrix.PosSemidef.mul_zero_comm
     Replacing this `axiom` with a Mathlib theorem will turn
     `SDPSlaterUniqueness.ofSlater_proven` (below) into a fully
     sorry-free, axiom-free proof. -/
--- Ref: [boyd-vandenberghe-2004] §5.5.4
+-- Ref: [boyd-vandenberghe-2004] §5.5.2 (strict complementarity defined
+--      at end of "Complementary slackness")
+-- Ref: [alizadeh-haeberly-overton-1997] §3 (Strict complementarity in
+--      SDP — the canonical authority for the optimal-face-dimension /
+--      uniqueness result; Boyd's §5.5.4 is "Mechanics interpretation
+--      of KKT", which doesn't cover this.)
 -- Ref: [todd2001] §3.4
 -- Ref: [alizadeh-haeberly-overton-1997] *Complementarity and
 --      nondegeneracy in semidefinite programming*
