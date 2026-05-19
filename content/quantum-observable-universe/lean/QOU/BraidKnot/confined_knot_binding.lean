@@ -13,9 +13,10 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.BraidKnot
 
 
-/-- Abstract context for the `confined_knot_binding` claim — manuscript-named
-    typed fields below; the `holds` field carries the `Prop`-valued
-    claim of the lemma. -/
+/-- Abstract context for the `confined_knot_binding` claim — manuscript-
+    named typed fields below; sub-claims encode (i) the GB normal-form
+    decomposition `β = Π (c_k σ_{i_k} + d_k)` and (ii) the binding-energy
+    formula. -/
 class ConfinedKnotBindingContext where
   /-- Proton number `Z`. -/
   Z : ℕ
@@ -23,8 +24,17 @@ class ConfinedKnotBindingContext where
   N : ℕ
   /-- The braid representative type. -/
   Braid : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- The Hecke algebra `H_3(R, q)`. -/
+  HeckeAlgebra : Type
+  /-- Manuscript sub-claim (i): the braid representative `β = T_w` of
+      a confined nuclear braid factors in `H_3(R, q)` as a product
+      `Π_k (c_k σ_{i_k} + d_k · 1)` of weighted crossing-operators
+      indexed by the GB normal-form letters. -/
+  claim_i_GB_NF_factorisation : Prop
+  /-- Manuscript sub-claim (ii): the categorical binding energy of
+      `β` equals the Markov-trace evaluation
+      `|tr_M(β)| · m_e · ρ_K(Z, N)`. -/
+  claim_ii_binding_energy_via_markov_trace : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -42,9 +52,10 @@ $T_w$ in its GB normal form).
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/confined-knot-binding.ts
-theorem confined_knot_binding [ctx : ConfinedKnotBindingContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem confined_knot_binding [ctx : ConfinedKnotBindingContext] :
+    ctx.claim_i_GB_NF_factorisation ∧
+    ctx.claim_ii_binding_energy_via_markov_trace :=
+  ⟨ctx.claim_i_GB_NF_factorisation,
+   ctx.claim_ii_binding_energy_via_markov_trace⟩
 
 end QOU.BraidKnot

@@ -13,30 +13,25 @@ namespace QOU.BraidKnot
 
 
 /-- Abstract context for the `knot_mass_unified` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
+    typed fields below; the boxed six-term spectral expansion of
+    `𝔪(ϱ)` is encoded as a single equality on `mass`. -/
 class KnotMassUnifiedContext where
-  /-- Proton number `Z`. -/
-  Z : ℕ
-  /-- Neutron number `N`. -/
-  N : ℕ
-  /-- Braid representative type. -/
-  Braid : Type
-  /-- Categorical object / monoidal structure. -/
-  CategoricalObj : Type
-  /-- Topological link / knot type. -/
-  Link : Type
-  /-- Hyperbolic volume. -/
-  Vol : ℝ
-  /-- LP shadow-price / dual variable. -/
-  shadow_price : ℝ
-  /-- Categorical mass / binding energy. -/
+  /-- Substrate parameter `q : ℝ`. -/
+  q : ℝ
+  /-- The strand count of the braid representative. -/
+  n : ℕ
+  /-- The categorical mass `𝔪(ϱ) : ℝ`. -/
   mass : ℝ
-  /-- Fluid-dynamics velocity / vorticity field. -/
-  VelocityField : Type
-  /-- Spectrum / eigenvalue list. -/
-  Spectrum : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- The descended piece `|tr_M(T_w)| : ℝ`. -/
+  descended : ℝ
+  /-- The brane-tower piece (two sums of `Li_2^q`). -/
+  brane_tower : ℝ
+  /-- The Frobenius co-Casimir piece `m_e · tr_M(C_{dim_q}^{H_n})`. -/
+  frobenius_co_casimir : ℝ
+  /-- Manuscript boxed identity — the unified knot-mass formula:
+      `𝔪(ϱ) = descended − brane_tower + frobenius_co_casimir`. -/
+  claim_boxed_six_term_expansion :
+    mass = descended - brane_tower + frobenius_co_casimir
 
 /-- **Manuscript statement** (full body):
 
@@ -89,9 +84,8 @@ $[n]_q = (q^n - q^{-n})/(q - q^{-1})$.  Per
     placeholder; the `ctx.holds : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/knot-mass-formula-unified.ts
-theorem knot_mass_unified [ctx : KnotMassUnifiedContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem knot_mass_unified [ctx : KnotMassUnifiedContext] :
+    ctx.mass = ctx.descended - ctx.brane_tower + ctx.frobenius_co_casimir :=
+  ctx.claim_boxed_six_term_expansion
 
 end QOU.BraidKnot

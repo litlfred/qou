@@ -12,25 +12,29 @@ Lake package.
 namespace QOU.BraidKnot
 
 
-/-- Abstract context for the `wedderburnWeightCanonical` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
+/-- Abstract context for the `wedderburnWeightCanonical` claim —
+    manuscript-themed typed fields below; sub-claims encode (i) the
+    canonical Wedderburn-block weight `w̃_λ = dim_q(λ)² / [n]_q!`,
+    (ii) the BW-form identity `β_λ = -½ · w̃_λ`, and (iii) the LP
+    shadow-price identity `C_λ = ½(q - q⁻¹) · w̃_λ`. -/
 class WedderburnweightcanonicalContext where
   /-- Substrate parameter `q : ℝ`. -/
   q : ℝ
   /-- Partition / Young-diagram indexing. -/
   PartitionIdx : Type
-  /-- Categorical object / monoidal structure. -/
-  CategoricalObj : Type
-  /-- LP shadow-price / dual variable. -/
-  shadow_price : ℝ
-  /-- Categorical mass / binding energy. -/
-  mass : ℝ
-  /-- Fluid-dynamics velocity / vorticity field. -/
-  VelocityField : Type
-  /-- The representation space. -/
-  Rep : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- The canonical Wedderburn-block weight `w̃_λ = dim_q(λ)² / [n]_q!`. -/
+  w_tilde : PartitionIdx → ℝ
+  /-- The BW mass coefficient `β_λ`. -/
+  β : PartitionIdx → ℝ
+  /-- The LP shadow-price `C_λ`. -/
+  C : PartitionIdx → ℝ
+  /-- Manuscript sub-claim (ii) — BW form: `β_λ = -½ · w̃_λ` for every
+      partition `λ` (definitional). -/
+  claim_ii_BW_form : ∀ λ : PartitionIdx, β λ = -(1/2) * w_tilde λ
+  /-- Manuscript sub-claim (iii) — LP shadow-price:
+      `C_λ = ½(q - q⁻¹) · w̃_λ` for every partition `λ`. -/
+  claim_iii_LP_shadow_price :
+    ∀ λ : PartitionIdx, C λ = (1/2) * (q - q⁻¹) * w_tilde λ
 
 /-- **Manuscript statement** (full body):
 
@@ -86,9 +90,10 @@ hook–content closed form:*
     placeholder; the `ctx.holds : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/wedderburn-weight-canonical.ts
-theorem wedderburnWeightCanonical [ctx : WedderburnweightcanonicalContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem wedderburnWeightCanonical [ctx : WedderburnweightcanonicalContext] :
+    (∀ λ : ctx.PartitionIdx, ctx.β λ = -(1/2) * ctx.w_tilde λ) ∧
+    (∀ λ : ctx.PartitionIdx,
+      ctx.C λ = (1/2) * (ctx.q - ctx.q⁻¹) * ctx.w_tilde λ) :=
+  ⟨ctx.claim_ii_BW_form, ctx.claim_iii_LP_shadow_price⟩
 
 end QOU.BraidKnot

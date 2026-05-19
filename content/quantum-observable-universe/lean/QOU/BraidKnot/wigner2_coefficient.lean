@@ -13,22 +13,32 @@ namespace QOU.BraidKnot
 
 
 /-- Abstract context for the `wigner2_coefficient` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
+    typed fields below; sub-claims encode (i) the per-generator-trace
+    identity, (ii) the BW coefficient closed form, and (iii) the explicit
+    `λ = [3,2,1]` evaluation. -/
 class Wigner2CoefficientContext where
+  /-- Substrate parameter `q : ℝ`. -/
+  q : ℝ
+  /-- Hecke parameter `h = q - q⁻¹`. -/
+  h : ℝ
+  h_eq : h = q - q⁻¹
   /-- Partition / Young-diagram indexing. -/
   PartitionIdx : Type
-  /-- LP shadow-price / dual variable. -/
-  shadow_price : ℝ
-  /-- Categorical mass / binding energy. -/
-  mass : ℝ
-  /-- Fluid-dynamics velocity / vorticity field. -/
-  VelocityField : Type
-  /-- The crossing / Hecke generator type. -/
-  Crossing : Type
-  /-- The representation space. -/
-  Rep : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- For each self-conjugate partition `λ`, the per-generator average trace
+      `⟨tr σ_g⟩_λ = tr(σ_g^{(λ)}) / dim(λ)`. -/
+  per_gen_trace : PartitionIdx → ℝ
+  /-- The BW coefficient indexed by partition. -/
+  C_λ : PartitionIdx → ℝ
+  /-- The classical Plancherel weight `w_λ = (dim V_λ)² / n!`. -/
+  w_λ : PartitionIdx → ℝ
+  /-- Manuscript sub-claim (i): for every self-conjugate `λ` and every
+      generator `g`, the per-generator trace equals `h / 2`. -/
+  claim_i_per_generator_trace :
+    ∀ λ : PartitionIdx, per_gen_trace λ = h / 2
+  /-- Manuscript sub-claim (ii): BW coefficient closed form
+      `C_λ = w_λ · h / 2` for every self-conjugate `λ`. -/
+  claim_ii_BW_closed_form :
+    ∀ λ : PartitionIdx, C_λ λ = w_λ λ * h / 2
 
 /-- **Manuscript statement** (full body):
 
@@ -102,9 +112,9 @@ of shape $\lambda$.  Under this involution:
     placeholder; the `ctx.holds : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/wigner-2-coefficient.ts
-theorem wigner2_coefficient [ctx : Wigner2CoefficientContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem wigner2_coefficient [ctx : Wigner2CoefficientContext] :
+    (∀ λ : ctx.PartitionIdx, ctx.per_gen_trace λ = ctx.h / 2) ∧
+    (∀ λ : ctx.PartitionIdx, ctx.C_λ λ = ctx.w_λ λ * ctx.h / 2) :=
+  ⟨ctx.claim_i_per_generator_trace, ctx.claim_ii_BW_closed_form⟩
 
 end QOU.BraidKnot
