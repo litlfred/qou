@@ -230,39 +230,50 @@ def main() -> int:
         d["pairwise_rel_deltas"] = {k: str(v) for k, v in rel_pairs.items()}
         deltas.append(d)
 
-    out = {
-        "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
-        "computation": "cross-check-trM-1ppb",
-        "description": (
+    # Route through WitnessBuilder so engine/scriptFile/commitSha/
+    # scriptHash/scriptCommitSha/engineVersion provenance is auto-
+    # emitted (closes the last remaining I14 audit gap surfaced on
+    # PR #816: cross-check-trM-1ppb.witness.json was the only
+    # PROV_MISSING witness after the habiro migration in `6211b2077`).
+    # Previously the script hand-wrote raw JSON, so the trailing
+    # provenance fields were manually backfilled (PR #809) and got
+    # stripped on every re-run.
+    from witness_base import WitnessBuilder, _witnesses_substantively_equal
+    w = WitnessBuilder(
+        name="cross-check-trM-1ppb",
+        engine="mpmath",
+        output_dir=OUT_PATH.parent,
+    )
+    w.set_audit_only("docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md")
+    w.add_parameter(
+        "description",
+        (
             "Pairwise comparison of tr_M(β_atom) @ q_0 between the "
             "Hoefsmit/mpfr 50-dps brute-force path and the Markov-"
             "axiom recursive ascent (markov_peel, production "
             "witness from PR #520). Tolerance is 1 ppb (1e-9 "
             "relative)."
         ),
-        "computedAt": datetime.now(timezone.utc).isoformat(),
-        "tolerance_relative": str(TOLERANCE),
-        "working_precision_dps": args.dps,
-        "atoms_compared": len(deltas),
-        "any_diverge": any_diverge,
-        "deltas": deltas,
-    }
-    # Content-diff-aware write: preserve on-disk file if the new witness
-    # differs only in ephemeral meta fields (commitSha, computedAt,
-    # durationMs, scriptCommitSha). See witness_base._witnesses_substantively_equal.
-    from witness_base import _witnesses_substantively_equal
-    new_bytes = json.dumps(out, indent=2, ensure_ascii=False)
-    if OUT_PATH.exists():
-        try:
-            existing = json.loads(OUT_PATH.read_text())
-            if not _witnesses_substantively_equal(existing, out):
-                OUT_PATH.write_text(new_bytes)
-        except (json.JSONDecodeError, OSError):
-            OUT_PATH.write_text(new_bytes)
-    else:
-        OUT_PATH.write_text(new_bytes)
+    )
+    w.add_parameter("tolerance_relative", str(TOLERANCE))
+    w.add_parameter("working_precision_dps", args.dps)
+    w.add_data("atoms_compared", len(deltas))
+    w.add_data("any_diverge", any_diverge)
+    w.add_data("deltas", deltas)
+    w.add_assertion(
+        name="all_atoms_within_1ppb",
+        computed=0 if any_diverge else 1,
+        expected=1,
+        source=(
+            "tr_M(β_atom) @ q_0 must agree between Hoefsmit/mpfr "
+            "and markov_peel paths within 1 ppb relative"
+        ),
+    )
+    # WitnessBuilder.save() already implements content-diff-aware
+    # preservation of on-disk ephemeral fields.
+    out_path = w.save()
     print()
-    print(f"  Witness: {OUT_PATH.name}")
+    print(f"  Witness: {out_path.name}")
     print(f"  atoms compared: {len(deltas)}, divergent: "
           f"{sum(1 for d in deltas if not d['within_1ppb'])}")
 
