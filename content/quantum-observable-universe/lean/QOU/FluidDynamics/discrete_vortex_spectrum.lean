@@ -46,12 +46,12 @@ class DiscreteVortexSpectrumContext where
       `n = 2j ∈ ℕ` and `[j]_q := q_int n`.) -/
   claim_ii_spin_levels : ∀ n : ℕ,
     E_level n = (hbar_q / (2 * I_q)) * (q_int n) * (q_int (n + 1))
+  /-- Transition energy `ΔE_{n,n'}` between levels `n` and `n'`. -/
+  ΔE_trans : ℕ → ℕ → ℝ
   /-- Manuscript sub-claim (iii) — ladder transitions with selection
-      rule `|j − j'| = 1`; the energy difference is the standard
-      `q`-rotor gap (`Δ E = E_{j'} − E_j`). Stated abstractly because
-      the selection rule and the ladder action `E_±` live on the
-      `SU_q(2)` weight-space decomposition. -/
-  claim_iii_ladder_transitions : Prop
+      rule `|n − n'| = 1`: the transition energy is `E_{n'} − E_n`. -/
+  claim_iii_ladder_transitions : ∀ n n' : ℕ,
+    (n + 1 = n' ∨ n' + 1 = n) → ΔE_trans n n' = E_level n' - E_level n
   /-- Manuscript sub-claim (iv) — classical limit: at `q = 1` the
       `q`-integer `[k]_q` collapses to `k`. -/
   claim_iv_classical_kelvin_limit : q = 1 → ∀ k : ℕ, q_int k = (k : ℝ)
@@ -73,7 +73,8 @@ theorem discrete_vortex_spectrum [ctx : DiscreteVortexSpectrumContext] :
       ctx.λ k = (ctx.q_int k) ^ 2 * ctx.hbar_q / ctx.L_q ^ 2) ∧
     (∀ n : ℕ, ctx.E_level n =
       (ctx.hbar_q / (2 * ctx.I_q)) * (ctx.q_int n) * (ctx.q_int (n + 1))) ∧
-    ctx.claim_iii_ladder_transitions ∧
+    (∀ n n' : ℕ, (n + 1 = n' ∨ n' + 1 = n) →
+      ctx.ΔE_trans n n' = ctx.E_level n' - ctx.E_level n) ∧
     (ctx.q = 1 → ∀ k : ℕ, ctx.q_int k = (k : ℝ)) :=
   ⟨ctx.claim_i_discrete_eigenvalues, ctx.claim_ii_spin_levels,
    ctx.claim_iii_ladder_transitions, ctx.claim_iv_classical_kelvin_limit⟩

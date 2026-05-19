@@ -34,8 +34,14 @@ class P1SpectralSobolevContext where
   claim_b_growth_bound : ∀ k : ℕ, 1 ≤ k →
     q ^ (2 * k) / (q - q⁻¹) ^ 2 ≤ μ k ∧
     μ k ≤ (q ^ (2 * k) / (q - q⁻¹) ^ 2) * (1 + q ^ (-4 * (k : ℤ)))
-  /-- Sub-claim (c) — Sobolev embedding `H¹_q ↪ L^∞` (compact). -/
-  claim_c_sobolev_embedding : Prop
+  /-- Sobolev embedding constant `C_S` for `H¹_q ↪ L^∞`. -/
+  C_S : ℝ
+  /-- `H¹_q`-norm and `L^∞`-norm of an arbitrary test function. -/
+  H1_norm : ℝ
+  Linf_norm : ℝ
+  /-- Sub-claim (c) — Sobolev embedding bound:
+      `‖f‖_{L^∞} ≤ C_S · ‖f‖_{H¹_q}`. -/
+  claim_c_sobolev_embedding : Linf_norm ≤ C_S * H1_norm
 
 /-- **Content statement** (from manuscript):
 
@@ -56,7 +62,7 @@ $\langle \cdot, \cdot \rangle_\varTheta$ be the
 theorem p1_spectral_sobolev [ctx : P1SpectralSobolevContext] :
     (∀ k : ℕ, ctx.μ k ≤ ctx.μ (k + 1) ∧ 0 ≤ ctx.μ 0) ∧
     (∀ k : ℕ, ctx.μ k = (ctx.q_int k) ^ 2) ∧
-    ctx.claim_c_sobolev_embedding :=
+    ctx.Linf_norm ≤ ctx.C_S * ctx.H1_norm :=
   ⟨ctx.claim_a_discrete_spectrum, ctx.claim_b_eigenvalue_formula,
    ctx.claim_c_sobolev_embedding⟩
 
