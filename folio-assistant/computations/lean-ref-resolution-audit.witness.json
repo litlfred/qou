@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T03:22:18.690355+00:00",
-  "commitSha": "b8edca941e3800c6538e0d8db545f7afb5107a20",
+  "computedAt": "2026-05-19T03:25:39.004406+00:00",
+  "commitSha": "fd75ab1081c652c4806c8a7a943b71e21a4a3ce2",
   "assertions": [
     {
       "name": "no_unregistered_package_prefixes",
@@ -9828,7 +9828,7 @@
         "kind": "proposition",
         "pkg": "qou",
         "decl_path": "QOU.horizon_conformal_invariance",
-        "sibling_exists": false,
+        "sibling_exists": true,
         "sibling_declares": false,
         "lake_root_exists": false,
         "lake_root_declares": false,
@@ -10137,7 +10137,7 @@
         "kind": "proposition",
         "pkg": "qou",
         "decl_path": "QOU.qou_is_ccc",
-        "sibling_exists": false,
+        "sibling_exists": true,
         "sibling_declares": false,
         "lake_root_exists": false,
         "lake_root_declares": false,

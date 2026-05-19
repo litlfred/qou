@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T03:15:24.813911+00:00",
-  "commitSha": "4fdce59b15e59ae9ab33742b3f76bccecee25a1d",
+  "computedAt": "2026-05-19T03:25:39.457425+00:00",
+  "commitSha": "fd75ab1081c652c4806c8a7a943b71e21a4a3ce2",
   "assertions": [
     {
       "name": "no_i1_no_probe_blocks",
@@ -27,8 +27,8 @@
   },
   "data": {
     "by_result": {
-      "i1_pre_lean": 158,
-      "i1_no_probe": 379,
+      "i1_pre_lean": 156,
+      "i1_no_probe": 381,
       "wired": 34,
       "i1_lean_with_sorry": 3,
       "conditional_class": 1
@@ -4109,12 +4109,12 @@
         "path": "content/quantum-observable-universe/information-theory/horizon-conformal-invariance.ts",
         "label": "prop:horizon-conformal-invariance",
         "kind": "proposition",
-        "sibling_lean_exists": false,
+        "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
         "probe_witness_count": 0,
         "probe_witnesses": [],
-        "result": "i1_pre_lean"
+        "result": "i1_no_probe"
       },
       {
         "path": "content/quantum-observable-universe/information-theory/incompleteness-implies-horizon.ts",
@@ -4219,12 +4219,12 @@
         "path": "content/quantum-observable-universe/information-theory/qou-is-ccc.ts",
         "label": "prop:qou-is-ccc",
         "kind": "proposition",
-        "sibling_lean_exists": false,
+        "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
         "probe_witness_count": 0,
         "probe_witnesses": [],
-        "result": "i1_pre_lean"
+        "result": "i1_no_probe"
       },
       {
         "path": "content/quantum-observable-universe/information-theory/quantum-ideal-gas-law.ts",
