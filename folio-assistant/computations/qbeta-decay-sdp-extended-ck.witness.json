@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T19:00:24.065502+00:00",
-  "commitSha": "44d241d451f68b0aa04fd01f79443c518bb25640",
+  "computedAt": "2026-05-19T23:19:33.417230+00:00",
+  "commitSha": "77dba8f7663981877aa8960f788259b0f228d903",
   "assertions": [
     {
       "name": "c_8_extracted_finite",
@@ -33,8 +33,8 @@
   "durationMs": 4,
   "computation": "qbeta-decay-sdp-extended-ck",
   "scriptFile": "qbeta_decay_sdp_extended_ck.py",
-  "scriptHash": "dcd4677257d4",
-  "scriptCommitSha": "5c057c3efbde90893358f97737ea04d6b4f235e5",
+  "scriptHash": "daf1c885abd3",
+  "scriptCommitSha": "654f2dd2f2acbf04f00374319cba7088b3436337",
   "description": "EXTENDED c_k extraction at rungs k=8, 9, 10 via SDP-T_β. Continues qbeta_decay_sdp_full_ck.py beyond k=7 to test the PR #814 prediction that averaging-resonance rungs carry 1/2 fingerprints. Pell-Lucas-clean test at silver ratio classifies each rung as pure-σ or averaging-resonance.",
   "parameters": {
     "q_0_50dps": "1.1099785955541805752815940796095093779932822799587",
@@ -67,7 +67,7 @@
       "c_10": 105411380.10260098
     },
     "silver_ratio_test": {
-      "method": "Substitute b² = 7/8 (exact at silver q = 1+√2) into natural pattern continuation, reduce to a/b, test |a|·32 for Pell-Lucas-cleanness.",
+      "method": "Substitute b² = 7/8 (exact at silver q = 1+√2) into natural pattern continuation of the c_k closed form, reduce to a rational a/b in lowest terms, and test the REDUCED numerator |a| via the refined Pell-Lucas-cleanness criterion in ck_sector_classifier.is_pell_lucas_clean (|a| of the form a_n^j · 2^t for some Pell-Lucas a_n > 1, j ∈ {0..4}, t ≥ 0). The `scaled_numerator` field per rung below records |a|·32 for legacy display only — the actual test does not multiply by any common denominator.",
       "pell_lucas_sequence": [
         1,
         1,
@@ -83,7 +83,7 @@
         8119,
         19601
       ],
-      "common_denominator": 32,
+      "common_denominator_for_display_only": 32,
       "rungs": {
         "c_8": {
           "silver_value": "49/16",

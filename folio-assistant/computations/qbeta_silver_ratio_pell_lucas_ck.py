@@ -82,17 +82,19 @@ def main() -> None:
     # Use the canonical classifier so this script and the SDP
     # extractor agree on cleanliness — see prop:averaging-resonance-rule.
     from ck_sector_classifier import is_pell_lucas_clean  # noqa: E402
-    pell_lucas_clean = []
+    # Track cleanliness in a dict keyed by k so downstream checks
+    # don't rely on insertion / index ordering (per Copilot review).
+    clean_by_k: dict[int, bool] = {}
     common_denom = 32
     for k, (expr, val) in c_k_closed.items():
         scaled = val * common_denom
         clean = is_pell_lucas_clean(val)
         status = "✓ clean" if clean else "✗ OUTLIER"
-        pell_lucas_clean.append(clean)
+        clean_by_k[k] = clean
         print(f"  c_{k} {expr:>30} {str(val):>15} {scaled.numerator:>10} {status:>15}")
     print()
 
-    if not pell_lucas_clean[2]:  # c_5 is at index 2
+    if not clean_by_k[5]:
         print("=" * 72)
         print("c_5 OUTLIER analysis")
         print("=" * 72)
@@ -114,7 +116,6 @@ def main() -> None:
         ]
         for label, val in cands:
             scaled = val * 32
-            num = abs(scaled.numerator)
             print(f"  {label:50s} = {val} (·32 = {scaled.numerator})")
 
     # Witness
@@ -135,8 +136,7 @@ def main() -> None:
         f"c_{k}": str(val) for k, (_, val) in c_k_closed.items()
     })
     w.add_data("pell_lucas_clean_per_k", {
-        f"c_{k}": pell_lucas_clean[i]
-        for i, k in enumerate([3, 4, 5, 6, 7])
+        f"c_{k}": clean_by_k[k] for k in sorted(clean_by_k)
     })
     w.add_data("outlier_finding", (
         "c_5 = -11/8 at silver ratio; 11 is not Pell-Lucas. "

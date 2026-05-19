@@ -360,11 +360,17 @@ def main() -> None:
     w.add_data("silver_ratio_test", {
         "method": (
             "Substitute b² = 7/8 (exact at silver q = 1+√2) into natural "
-            "pattern continuation, reduce to a/b, test |a|·32 for "
-            "Pell-Lucas-cleanness."
+            "pattern continuation of the c_k closed form, reduce to a "
+            "rational a/b in lowest terms, and test the REDUCED "
+            "numerator |a| via the refined Pell-Lucas-cleanness "
+            "criterion in ck_sector_classifier.is_pell_lucas_clean "
+            "(|a| of the form a_n^j · 2^t for some Pell-Lucas a_n > 1, "
+            "j ∈ {0..4}, t ≥ 0). The `scaled_numerator` field per rung "
+            "below records |a|·32 for legacy display only — the actual "
+            "test does not multiply by any common denominator."
         ),
         "pell_lucas_sequence": PELL_LUCAS,
-        "common_denominator": common_denom,
+        "common_denominator_for_display_only": common_denom,
         "rungs": {f"c_{k}": info for k, info in rung_classifications.items()},
     })
 
