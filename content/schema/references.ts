@@ -3685,6 +3685,8 @@ export const references: CSLData[] = [
     volume: "20",
     DOI: "10.1007/BFb0080482",
     note: "Algebraic residues, trace maps, Grothendieck-Serre duality. The R-side counterpart of Cauchy residue used in `prop:sw-period-thimble-equivalence` A2.4 algebraic replacement.",
+  }),
+
   // ── Linear algebra reference (Horn–Johnson) ─────────────────────
   ref({
     id: "horn-johnson-2013",
