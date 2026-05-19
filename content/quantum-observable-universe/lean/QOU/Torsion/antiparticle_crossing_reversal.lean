@@ -27,10 +27,17 @@ class AntiparticleCrossingReversalContext extends QOU.Shared.MarkovTraceContext 
   E_cross_anti : ℝ
   /-- Crossing energy evaluated under `q ↔ q⁻¹` swap. -/
   E_cross_bar : ℝ
-  /-- Manuscript sub-claim (i) — Crossing reversal defines
-      antiparticles (captured as an abstract Prop because it
-      involves the braid-mirror operation on the braid group). -/
-  claim_i_crossing_reversal_defines : Prop
+  /-- Braid type (for the mirror operation). -/
+  Braid : Type
+  /-- Braid representative of a hadron and its mirror image. -/
+  β_hadron : Braid
+  β_anti : Braid
+  /-- Mirror involution `σ ↦ σ⁻¹` on braids. -/
+  mirror : Braid → Braid
+  /-- Manuscript sub-claim (i) — Crossing reversal defines the
+      antihadron via the braid-mirror involution: `β_anti = mirror β`. -/
+  claim_i_crossing_reversal_defines :
+    β_anti = mirror β_hadron ∧ ∀ b : Braid, mirror (mirror b) = b
   /-- Manuscript sub-claim (ii) — Crossing energy sign reversal under
       `q ↔ q⁻¹`: `E_cross(𝔋^σ) = −E_cross(𝔋)|_{q ↔ q⁻¹}`. -/
   claim_ii_crossing_energy_sign : E_cross_anti = - E_cross_bar
@@ -57,7 +64,8 @@ $T_{2,3}^{\sigma}$ its mirror image (all crossings reversed).
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/antiparticle-crossing-reversal.ts
 theorem antiparticle_crossing_reversal [ctx : AntiparticleCrossingReversalContext] :
-    ctx.claim_i_crossing_reversal_defines ∧
+    (ctx.β_anti = ctx.mirror ctx.β_hadron ∧
+     ∀ b : ctx.Braid, ctx.mirror (ctx.mirror b) = b) ∧
     ctx.E_cross_anti = - ctx.E_cross_bar ∧
     ctx.Q_charge_anti = - ctx.Q_charge ∧
     ctx.m_bare_anti = ctx.m_bare :=
