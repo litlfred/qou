@@ -1,21 +1,21 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T00:40:49.181250+00:00",
-  "commitSha": "e620f607034d0b81d92b999f5ff2cc68907352b4",
+  "computedAt": "2026-05-19T05:06:27.716919+00:00",
+  "commitSha": "0b4ed0a2e04ce91e7f376bd32f9f9185f16e567a",
   "assertions": [
     {
       "name": "no_missing_labels",
-      "computed": 0.0,
+      "computed": 1.0,
       "expected": 1.0,
-      "passed": false,
+      "passed": true,
       "tolerance": 0.0,
       "unit": "boolean (1.0 = every label-shaped contentBlock resolves)",
       "source": "Closure gate: when this passes, every witness's contentBlock points at a real registered block label.  Currently informational; the production-side fix is a per-witness retarget."
     }
   ],
-  "allPassed": false,
-  "durationMs": 8,
+  "allPassed": true,
+  "durationMs": 7,
   "computation": "content-block-label-audit",
   "scriptFile": "content_block_label_audit.py",
   "scriptHash": "d86c5a63a3d7",
@@ -24,13 +24,12 @@
   "contentBlock": "I5 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
     "total_fields_audited": 235,
-    "registered_labels_count": 2168
+    "registered_labels_count": 2201
   },
   "data": {
     "by_result": {
-      "informational_label": 15,
-      "ok": 213,
-      "missing_label": 7
+      "informational_label": 14,
+      "ok": 221
     },
     "rows": [
       {
@@ -170,8 +169,8 @@
       },
       {
         "witness": "folio-assistant/computations/c2-inflection-structure-probe.witness.json",
-        "content_block_value": "conj:flavor-dressed-mass-from-substrate-split",
-        "result": "missing_label"
+        "content_block_value": "prop:flavor-dressed-mass-from-substrate-split",
+        "result": "ok"
       },
       {
         "witness": "folio-assistant/computations/c3-categorical-consistency-check.witness.json",
@@ -235,8 +234,8 @@
       },
       {
         "witness": "folio-assistant/computations/codata-masses.witness.json",
-        "content_block_value": "codata mass anchors (CAL-1/2 inputs; informational, no formal block)",
-        "result": "informational_label"
+        "content_block_value": "prop:three-calibration-inputs",
+        "result": "ok"
       },
       {
         "witness": "folio-assistant/computations/compound-binding-via-differences.witness.json",
@@ -345,13 +344,13 @@
       },
       {
         "witness": "folio-assistant/computations/family-a-extended-variants.witness.json",
-        "content_block_value": "conj:flavor-dressed-mass-from-substrate-split",
-        "result": "missing_label"
+        "content_block_value": "prop:flavor-dressed-mass-from-substrate-split",
+        "result": "ok"
       },
       {
         "witness": "folio-assistant/computations/family-a-variants-investigation.witness.json",
-        "content_block_value": "conj:flavor-dressed-mass-from-substrate-split",
-        "result": "missing_label"
+        "content_block_value": "prop:flavor-dressed-mass-from-substrate-split",
+        "result": "ok"
       },
       {
         "witness": "folio-assistant/computations/flavor-dressed-mass-from-substrate-split.witness.json",
@@ -785,13 +784,13 @@
       },
       {
         "witness": "folio-assistant/computations/picard-lefschetz-thimble.witness.json",
-        "content_block_value": "def:picard-lefschetz-thimble",
+        "content_block_value": "rem:picard-lefschetz-thimble",
         "result": "ok"
       },
       {
         "witness": "folio-assistant/computations/probe-A-h-expansion-fixed.witness.json",
-        "content_block_value": "conj:flavor-dressed-mass-from-substrate-split",
-        "result": "missing_label"
+        "content_block_value": "prop:flavor-dressed-mass-from-substrate-split",
+        "result": "ok"
       },
       {
         "witness": "folio-assistant/computations/probe-atom-shell-self-duality-mpfr.witness.json",
@@ -1180,18 +1179,18 @@
       },
       {
         "witness": "folio-assistant/computations/workplan-0b-mn-routes-b-c.witness.json",
-        "content_block_value": "conj:flavor-dressed-mass-from-substrate-split",
-        "result": "missing_label"
+        "content_block_value": "prop:flavor-dressed-mass-from-substrate-split",
+        "result": "ok"
       },
       {
         "witness": "folio-assistant/computations/workplan-0b-route-b-operator.witness.json",
-        "content_block_value": "conj:flavor-dressed-mass-from-substrate-split",
-        "result": "missing_label"
+        "content_block_value": "prop:flavor-dressed-mass-from-substrate-split",
+        "result": "ok"
       },
       {
         "witness": "folio-assistant/computations/workplan-0b-route-c-bring.witness.json",
-        "content_block_value": "conj:flavor-dressed-mass-from-substrate-split",
-        "result": "missing_label"
+        "content_block_value": "prop:flavor-dressed-mass-from-substrate-split",
+        "result": "ok"
       },
       {
         "witness": "folio-assistant/computations/y-lambda-at-q0.witness.json",
