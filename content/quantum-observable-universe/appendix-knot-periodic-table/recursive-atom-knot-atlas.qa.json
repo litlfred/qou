@@ -152,6 +152,24 @@
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "c7d838259ae2",
+          "ts": "75723ba8d873",
+          "lean": "efa0b2bf80f3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-adjudicator-small-appendices",
+          "version": "claude-sonnet-4-6-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T18:54:34.039Z",
+        "reviewed_sha": "eb34683c75ba65428ce5d8a12f99478d1338fcc5",
+        "notes": "default-pass (agent reviewed at chapter level; chapter=appendix-knot-periodic-table)"
+      }
     ]
   },
   "updated_at": "2026-05-20T02:29:29.163Z"

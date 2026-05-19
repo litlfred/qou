@@ -148,6 +148,24 @@
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "97e8cdc1f8e9",
+          "ts": "80d6e7e03e5a",
+          "lean": "289b58c63dac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-adjudicator-models-of-qous",
+          "version": "claude-sonnet-4-6-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T18:54:35.416Z",
+        "reviewed_sha": "eb34683c75ba65428ce5d8a12f99478d1338fcc5",
+        "notes": "default-pass (agent reviewed at chapter level; chapter=models-of-qous)"
+      }
     ]
   },
   "updated_at": "2026-05-20T02:29:29.163Z"
