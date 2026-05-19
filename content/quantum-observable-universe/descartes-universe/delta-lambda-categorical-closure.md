@@ -105,22 +105,65 @@ three-calibration discipline is preserved.
 
 ## Verification status
 
-**Unverified.** This conjecture is the central proposed step
-identified in the closed-forms-first-principles workplan
-([`docs/audits/2026-05-19-closed-forms-first-principles-workplan.md`](https://github.com/litlfred/qou/blob/claude/closed-forms-first-principles/docs/audits/2026-05-19-closed-forms-first-principles-workplan.md)).
-Phase 1b will:
+**Phase 1b numerical test on deuteron — partial / negative.**
 
-1. Compute $\Delta^{(\lambda)}(z)$ for each partition $\lambda$ at $n = 6$
-   (deuteron, $A = 2$).
-2. Identify the per-$\lambda$ principal Galois orbit
-   $\mathcal{O}_{\mathrm{prin}}^{(\lambda)}$.
-3. Compute $\Delta_\lambda(D)$ via the closure form.
-4. Sum $\sum_\lambda y_\lambda(q_0) \chi^\lambda(\beta_D) \Delta_\lambda(D)$.
-5. Compare to AME 2020 deuteron binding $B(D) = 2.2246$ MeV.
+The script
+[`delta_lambda_categorical_verification.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/delta_lambda_categorical_verification.py)
+tests the naive closure form (using the **bare** principal Galois orbit
+$\mathcal{O}_{\mathrm{prin}} = \{z_c^\pm\}$ for all $\lambda$, i.e.
+ignoring the per-$\lambda$ projection of $\Delta(z)$) with five
+candidate $k(\lambda)$ mappings: by rows, by first row, by distinct
+rows, by isotype channel, by hook length. None reproduce the AME 2020
+deuteron binding $B(D) = 2.22456$ MeV at the required precision:
 
-If the result matches AME at ≤ 1 ppm, the closure is empirically
-substantiated and the conjecture upgrades to a proposition (Phase 3
-Lean formalization).
+| Mapping | $B(D)$ predicted | Error |
+|---|---:|---:|
+| by_first_row | 0.0670 MeV | 97% miss |
+| by_sign | 0.0491 MeV | 98% miss |
+| by_hook | 0.0516 MeV | 98% miss |
+| by_distinct_rows | −0.0067 MeV | 100% miss |
+| by_rows | −0.0100 MeV | 100% miss |
+
+**Diagnosis** (compared to empirical Δ tabulation in
+[`delta-lambda-empirical-tabulation.witness.json`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/delta-lambda-empirical-tabulation.witness.json)):
+
+- Empirical best-single-block $\Delta_{[5,1]}(D) \approx -22.96$.
+- My closure form predicts $\Delta_{[5,1]}(D) \approx |c_3| \approx 0.260$
+  (using $k = 3$ at the principal pair).
+- Ratio: ≈ **88×**, missing a large structural factor.
+
+Plausible missing factors (not tested in this PR):
+
+- $1/\hbar_q^2 \approx 102$ (Borromean / Planck-tick rescaling) —
+  gives ≈ 26.5, close to 22.96.
+- A dimension-of-irrep factor $\dim_q(\lambda)$ — the standard partition
+  $[5,1]$ has $\dim_q = 5$, giving ≈ 1.3, too small alone.
+- Combined: $\dim_q(\lambda) / \hbar_q^2 \approx 510$, too large.
+
+**Honest assessment.** The bare closure form is **not numerically
+correct**, but the order of magnitude (~ 10⁻¹ MeV vs target 2.225 MeV)
+is the right ballpark — much closer than the six failed ansätze from
+PR #777 which were either tautologically zero or off by orders of
+magnitude wrong-sign. The closure form's **structure** (per-λ algebraic
+residue at a Galois orbit) is consistent with the substrate-level
+diagnostic; the **normalization** needs a categorical refinement.
+
+**Next refinement paths:**
+
+1. **Per-$\lambda$ discriminant factorization** (the R1 risk in the
+   workplan): if $\Delta^{(\lambda)}(z) \neq \Delta(z)$ for non-trivial
+   $\lambda$, the per-$\lambda$ Galois orbit is different — possibly
+   larger — giving larger residues.
+2. **Borromean-tower rescaling**: factor of $1/\hbar_q^2$ matches the
+   m_p Borromean tower normalization; integration into Δ_λ would tie
+   it back to the substrate-derived $\rho_K$ thread.
+3. **Higher jet prolongation** $k \geq 4$ — currently only $k \in \{0, 1, 2, 3\}$
+   are implemented; higher-order corrections may rescale.
+
+Phase 2 will pursue path (1) — the per-$\lambda$ discriminant
+factorization is the categorical refinement most consistent with
+the algebraic-residue framework, and the empirical 88× factor
+suggests a non-trivial block-decomposition is present.
 
 ## Risk register
 
