@@ -36,23 +36,61 @@ For each Wedderburn block `V_λ` of H_3, the τ_M expansion at order
 weighted by the Wenzl-bridge `y_λ`, sums across blocks to the
 empirical c_k. -/
 
-/-- The c_5 contribution from V_(3) (symmetric block). -/
-def c5_from_V3 (_q : ℝ) : ℝ := 0  -- placeholder; full content from probe
+/-!  Per-block ε^k Taylor coefficients of χ_λ(β_n − β_p) computed
+     2026-05-19 from the paper's closed forms (see
+     `chi-per-irrep-cyclotomic-closed-forms`) Taylor-expanded around
+     q=1. These are the per-block contributions to the LO order-k
+     term of `τ_M(β_n − β_p)`, NOT the precision-ladder coefficients
+     `c_k^(λ)` directly — the conversion requires normalisation
+     against `Q_A · cos(α − bℏ_q²/2)`, which is an open categorical
+     question (see `docs/audits/2026-05-19-qbeta-per-block-paper-closed-forms.md`).
+
+     The actual precision-ladder c_k^(λ) extraction is left as the
+     class instance below; these named scalars provide the
+     foundational per-block ε^k content. -/
+
+/-- Per-block ε^5 Taylor coefficient of χ_(3)(β_n − β_p).
+    From `-(q²+1)²(q²-1)/(4q)` Taylor expansion in (q-1) at order 5. -/
+def chiV3_eps5_coefficient : ℝ := -1/2
+
+/-- Per-block ε^5 Taylor coefficient of χ_(2,1)(β_n − β_p).
+    From `-(q⁴+1)(q²-1)/(4q³)` Taylor expansion in (q-1) at order 5. -/
+def chiV21_eps5_coefficient : ℝ := -5
+
+/-- Per-block ε^5 Taylor coefficient of χ_(1,1,1)(β_n − β_p).
+    From `-(q²+1)²(q²-1)/(4q⁵)` Taylor expansion in (q-1) at order 5. -/
+def chiV111_eps5_coefficient : ℝ := -73/2
+
+/-- Per-block ε^6 Taylor coefficient of χ_(3)(β_n − β_p). -/
+def chiV3_eps6_coefficient : ℝ := 1/4
+
+/-- Per-block ε^6 Taylor coefficient of χ_(2,1)(β_n − β_p). -/
+def chiV21_eps6_coefficient : ℝ := 27/4
+
+/-- Per-block ε^6 Taylor coefficient of χ_(1,1,1)(β_n − β_p). -/
+def chiV111_eps6_coefficient : ℝ := 237/4
+
+/-- The c_5 contribution from V_(3) (symmetric block).
+    OPEN: conversion of `chiV3_eps5_coefficient` to a precision-ladder
+    `c_5^(3)` requires the per-block normalisation against
+    `Q_A · cos(α − bℏ_q²/2)`. Placeholder retained until the
+    categorical extraction rule is identified. -/
+def c5_from_V3 (_q : ℝ) : ℝ := 0  -- placeholder; foundational ε^5 in chiV3_eps5_coefficient
 
 /-- The c_5 contribution from V_(2,1) (Hoefsmit block). -/
-def c5_from_V21 (_q : ℝ) : ℝ := 0  -- placeholder
+def c5_from_V21 (_q : ℝ) : ℝ := 0  -- placeholder; foundational ε^5 in chiV21_eps5_coefficient
 
 /-- The c_5 contribution from V_(1,1,1) (antisymmetric block). -/
-def c5_from_V111 (_q : ℝ) : ℝ := 0  -- placeholder
+def c5_from_V111 (_q : ℝ) : ℝ := 0  -- placeholder; foundational ε^5 in chiV111_eps5_coefficient
 
 /-- The c_6 contribution from V_(3). -/
-def c6_from_V3 (_q : ℝ) : ℝ := (0 : ℝ)  -- placeholder
+def c6_from_V3 (_q : ℝ) : ℝ := (0 : ℝ)  -- placeholder; ε^6 in chiV3_eps6_coefficient
 
 /-- The c_6 contribution from V_(2,1). -/
-def c6_from_V21 (_q : ℝ) : ℝ := (0 : ℝ)  -- placeholder
+def c6_from_V21 (_q : ℝ) : ℝ := (0 : ℝ)  -- placeholder; ε^6 in chiV21_eps6_coefficient
 
 /-- The c_6 contribution from V_(1,1,1). -/
-def c6_from_V111 (_q : ℝ) : ℝ := (0 : ℝ)  -- placeholder
+def c6_from_V111 (_q : ℝ) : ℝ := (0 : ℝ)  -- placeholder; ε^6 in chiV111_eps6_coefficient
 
 /-! ## Per-block weighting and total
 

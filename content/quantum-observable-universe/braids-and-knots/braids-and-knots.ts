@@ -470,6 +470,7 @@ export default chapter({
         "markov-trace-operator-construction",
         "chi-v3-closed-form-proof",
         "chi-per-irrep-cyclotomic-closed-forms",
+        "per-block-hopf-jones-absorption-pattern",
         "chi-v111-via-sign-substitution",
         "chi-v21-hoefsmit-matrix-derivation",
         "phi-d-syt-count-conjecture",
