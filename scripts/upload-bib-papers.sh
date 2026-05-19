@@ -183,8 +183,13 @@ elif [[ $ADDED -eq 0 ]]; then
 fi
 
 # ── Push branch ───────────────────────────────────────────────
-echo "[git] push -u origin $BRANCH"
-git push -u origin "$BRANCH"
+# Use --force-with-lease: this branch is uniquely owned by the script
+# (named claude/upload-bib-papers-<utc-ymd>), so a previous broken run
+# may have left a different tip on remote. --force-with-lease is safe
+# — it only force-pushes if the remote matches what we last fetched,
+# bailing out if someone else has pushed in between.
+echo "[git] push --force-with-lease -u origin $BRANCH"
+git push --force-with-lease -u origin "$BRANCH"
 
 PUSHED_URL="https://github.com/${REPO_SLUG}/tree/${BRANCH}"
 echo "[ok ] branch pushed: $PUSHED_URL ($ADDED commits)"
