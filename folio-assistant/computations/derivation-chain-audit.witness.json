@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T16:22:32.532609+00:00",
-  "commitSha": "3d8fba067f7dbe9fb8ed2bce95515cfe23e1b086",
+  "computedAt": "2026-05-19T16:23:09.333773+00:00",
+  "commitSha": "f67d20bd9f50232774053f14b71a852d891cedba",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2264,6 +2264,7 @@
         "confined-knot-binding.witness.json",
         "confinement-operator-selection.witness.json",
         "content-block-label-audit.witness.json",
+        "cross-check-trM-1ppb.witness.json",
         "cross-check-trM-wenzl-lr-1ppb.witness.json",
         "crystal-alpha-shift-pole-orders.witness.json",
         "crystal-basis-primitives.witness.json",
