@@ -1,7 +1,7 @@
 {
   "audit": "§3b-cond conditional-class banner (CLAUDE.md §3b-cond #2 + #3)",
-  "generated": "2026-05-19T01:18:23.724Z",
-  "total_blocks": 1724,
+  "generated": "2026-05-19T17:17:24.704Z",
+  "total_blocks": 1728,
   "conditional_on_class": 9,
   "fully_compliant": 9,
   "missing_lean_class_hypothesis": 0,
@@ -109,7 +109,7 @@
       ],
       "has_lean_class_hypothesis": true,
       "has_md_conditional_banner": true,
-      "lean_file": "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/SurrealRateCalculus.lean",
+      "lean_file": "content/quantum-observable-universe/appendix-surreals/surreal-rate-calculus.lean",
       "md_file": "content/quantum-observable-universe/appendix-surreals/surreal-rate-calculus.md"
     },
     {
