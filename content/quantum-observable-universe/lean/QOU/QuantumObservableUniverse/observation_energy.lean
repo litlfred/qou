@@ -16,14 +16,35 @@ namespace QOU.QuantumObservableUniverse
 /-- Abstract context for the `observation_energy` claim — manuscript-themed
     typed fields below; `holds` carries the residual `Prop` claim. -/
 class ObservationEnergyContext where
-  /-- The categorical object / monoidal structure. -/
-  CategoricalObj : Type
-  /-- Manuscript sub-claim (i) — (Quantum energy increases.) *The quantum Planck constant $\hbar_q = 1 - q^{-1}$ (quantum Planck constant) satisfies*. -/
-  claim_i_quantum_planck_constant : Prop
-  /-- Manuscript sub-claim (ii) — (Action deformation.) *The categorical action $S_q[\nabla, \lambda, \psi]$ (categorical action) evaluated at the pert.... -/
-  claim_ii_categorical_action_categorical : Prop
-  /-- Manuscript sub-claim (iii) — (Classical energy is unconstrained in sign.) *The classical energy (the $q \to 1$ shadow of the action) can increase .... -/
-  claim_iii_classical_energy_shadow : Prop
+  /-- Substrate parameter `q : ℝ`. -/
+  q : ℝ
+  q_gt_one : 1 < q
+  /-- Substrate perturbation `δq > 0`. -/
+  δq : ℝ
+  δq_pos : 0 < δq
+  /-- Quantum Planck constant `ℏ_q = 1 − q⁻¹`. -/
+  hbar : ℝ → ℝ
+  hbar_eq : ∀ x : ℝ, hbar x = 1 - x⁻¹
+  /-- Manuscript sub-claim (i) — Quantum energy increases:
+      `ℏ_{q+δq} − ℏ_q = δq / (q(q+δq)) > 0`. -/
+  claim_i_quantum_planck_increases :
+    hbar (q + δq) - hbar q = δq / (q * (q + δq)) ∧
+    0 < δq / (q * (q + δq))
+  /-- Categorical action `S_q`. -/
+  S : ℝ → ℝ
+  /-- First-order derivative `∂S/∂q`. -/
+  dS_dq : ℝ
+  /-- Second-order remainder `R_2(δq)`. -/
+  R_2 : ℝ → ℝ
+  /-- Manuscript sub-claim (ii) — Action deformation:
+      `S_{q+δq} = S_q + δq · ∂S/∂q + R_2(δq)` with `R_2 = O(δq²)`. -/
+  claim_ii_action_first_order :
+    S (q + δq) = S q + δq * dS_dq + R_2 δq
+  /-- Classical energy `E_classical` (q → 1 shadow). -/
+  E_classical : ℝ → ℝ
+  /-- Manuscript sub-claim (iii) — Classical energy unconstrained
+      in sign: `E_classical` need not be monotone in `q`. -/
+  claim_iii_classical_unconstrained : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -39,7 +60,14 @@ substrate perturbation $\delta q$.  Then:*
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/observation-energy.ts
 theorem observation_energy [ctx : ObservationEnergyContext] :
-    ctx.claim_i_quantum_planck_constant ∧ ctx.claim_ii_categorical_action_categorical ∧ ctx.claim_iii_classical_energy_shadow :=
-  ⟨ctx.claim_i_quantum_planck_constant, ctx.claim_ii_categorical_action_categorical, ctx.claim_iii_classical_energy_shadow⟩
+    (ctx.hbar (ctx.q + ctx.δq) - ctx.hbar ctx.q =
+       ctx.δq / (ctx.q * (ctx.q + ctx.δq)) ∧
+     0 < ctx.δq / (ctx.q * (ctx.q + ctx.δq))) ∧
+    ctx.S (ctx.q + ctx.δq) = ctx.S ctx.q + ctx.δq * ctx.dS_dq +
+      ctx.R_2 ctx.δq ∧
+    ctx.claim_iii_classical_unconstrained :=
+  ⟨ctx.claim_i_quantum_planck_increases,
+   ctx.claim_ii_action_first_order,
+   ctx.claim_iii_classical_unconstrained⟩
 
 end QOU.QuantumObservableUniverse

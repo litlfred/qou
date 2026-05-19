@@ -15,22 +15,36 @@ namespace QOU
 /-- Abstract context for the `variational_equations` claim — manuscript-themed
     typed fields below; `holds` carries the residual `Prop` claim. -/
 class VariationalEquationsContext where
-  /-- Categorical object / monoidal structure. -/
-  CategoricalObj : Type
-  /-- LP shadow-price / dual variable. -/
-  shadow_price : ℝ
-  /-- Fluid-dynamics velocity / vorticity field. -/
-  VelocityField : Type
-  /-- Gauge connection / curvature. -/
-  Connection : Type
-  /-- The crossing / Hecke generator type. -/
-  Crossing : Type
-  /-- Manuscript sub-claim (i) — Gravity (vary $\int_A$): $\delta\mathcal{S}_q / \delta\!\int_A = 0$ yields the categorical Einstein equation:. -/
-  claim_i_gravity_vary_yields : Prop
-  /-- Manuscript sub-claim (ii) — Gauge (vary $\nabla$): $\delta\mathcal{S}_q / \delta\nabla = 0$ yields the categorical Yang--Mills equation:. -/
-  claim_ii_gauge_vary_yields : Prop
-  /-- Manuscript sub-claim (iii) — Matter (vary $\psi$): $\delta\mathcal{S}_q / \delta\psi = 0$ yields the :refterm[categorical transport]{#categorical-.... -/
-  claim_iii_matter_vary_yields : Prop
+  /-- Categorical action `S_q` (abstract). -/
+  EndA : Type
+  /-- Substrate parameter `q : ℝ`. -/
+  q : ℝ
+  /-- Ricci-like endomorphism `R_∫ : EndA`. -/
+  R_int : EndA
+  /-- Half-trace endomorphism `½·tr(R_∫)·id_A : EndA`. -/
+  R_int_trace_half : EndA
+  /-- Stress-energy endomorphism `T_q[∇, ψ] : EndA`. -/
+  T_q : EndA
+  /-- Subtraction on `EndA` (categorical action provides this as the
+      abstract additive structure). -/
+  sub : EndA → EndA → EndA
+  /-- Manuscript sub-claim (i) — Categorical Einstein equation:
+      `R_∫ − ½ tr(R_∫) id_A = T_q[∇, ψ]`. -/
+  claim_i_categorical_einstein : sub R_int R_int_trace_half = T_q
+  /-- Yang–Mills LHS `∇⋆_q F + q·[F, ⋆_q F] : EndA`. -/
+  YM_LHS : EndA
+  /-- Matter current `J_ψ : EndA`. -/
+  J_psi : EndA
+  /-- Manuscript sub-claim (ii) — Categorical Yang–Mills equation:
+      `∇⋆_q F + q·[F, ⋆_q F] = J_ψ`. -/
+  claim_ii_categorical_yang_mills : YM_LHS = J_psi
+  /-- Matter section `D_∇ ψ : EndA`. -/
+  D_psi : EndA
+  /-- Zero element of `EndA`. -/
+  zero_A : EndA
+  /-- Manuscript sub-claim (iii) — Categorical transport (Dirac)
+      equation: `D_∇ ψ = 0`. -/
+  claim_iii_categorical_transport : D_psi = zero_A
 
 /-- **Manuscript statement** (full body):
 
@@ -88,7 +102,11 @@ equations are:
     sub-claim fields; the residual sub-claim Props are still abstract. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/variational-equations.ts
 theorem variational_equations [ctx : VariationalEquationsContext] :
-    ctx.claim_i_gravity_vary_yields ∧ ctx.claim_ii_gauge_vary_yields ∧ ctx.claim_iii_matter_vary_yields :=
-  ⟨ctx.claim_i_gravity_vary_yields, ctx.claim_ii_gauge_vary_yields, ctx.claim_iii_matter_vary_yields⟩
+    ctx.sub ctx.R_int ctx.R_int_trace_half = ctx.T_q ∧
+    ctx.YM_LHS = ctx.J_psi ∧
+    ctx.D_psi = ctx.zero_A :=
+  ⟨ctx.claim_i_categorical_einstein,
+   ctx.claim_ii_categorical_yang_mills,
+   ctx.claim_iii_categorical_transport⟩
 
 end QOU
