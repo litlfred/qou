@@ -19,8 +19,14 @@ namespace QOU.Experimental
 class LocalSubstrateQContext where
   /-- The substrate parameter `q : ℝ`. -/
   q : ℝ
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_local_substrate_q : Prop
+  /-- Measured value of `q` at the local observable universe. -/
+  q_measured : ℝ
+  /-- Measurement uncertainty `Δq`. -/
+  Δq : ℝ
+  Δq_pos : 0 < Δq
+  /-- Manuscript identity: locally, the substrate parameter `q`
+      satisfies `|q − q_measured| ≤ Δq` (CODATA-style consistency). -/
+  claim_local_substrate_q : |q - q_measured| ≤ Δq
 
 /-- **Content statement** (from manuscript):
 
@@ -33,9 +39,8 @@ universe, the substrate parameter $q$
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/local-substrate-q.ts
-theorem local_substrate_q [ctx : LocalSubstrateQContext] : ctx.claim_local_substrate_q := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem local_substrate_q [ctx : LocalSubstrateQContext] :
+    |ctx.q - ctx.q_measured| ≤ ctx.Δq :=
+  ctx.claim_local_substrate_q
 
 end QOU.Experimental

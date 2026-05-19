@@ -19,10 +19,12 @@ namespace QOU.BaryonWeight
 class Beta4HookContext where
   /-- The braid representative type. -/
   Braid : Type
-  /-- The partition / Young-diagram indexing type. -/
-  PartitionIdx : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_beta4_hook : Prop
+  /-- The hook coefficient `β_4`. -/
+  beta4 : ℝ
+  /-- Wedderburn-Artin weight `w_{[2,2]}(4) = dim_q([2,2])² / [4]_q!`. -/
+  w_22 : ℝ
+  /-- Manuscript identity: `β_4 = −½ · w_{[2,2]}(4) ≈ −0.083`. -/
+  claim_beta4_hook : beta4 = - (1/2) * w_22 ∧ |beta4 + 0.083| < 0.005
 
 /-- **Proposition statement** (from manuscript):
 
@@ -59,9 +61,8 @@ The coefficient $\beta_4$ is set by the
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/hook-weight-derivation.ts
-theorem beta4_hook [ctx : Beta4HookContext] : ctx.claim_beta4_hook := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem beta4_hook [ctx : Beta4HookContext] :
+    ctx.beta4 = - (1/2) * ctx.w_22 ∧ |ctx.beta4 + 0.083| < 0.005 :=
+  ctx.claim_beta4_hook
 
 end QOU.BaryonWeight

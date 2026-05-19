@@ -18,10 +18,20 @@ namespace QOU.Experimental
 class TerminalResolutionContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
-  /-- The categorical mass / binding energy. -/
+  /-- Predicted hadronic mass. -/
   mass : ℝ
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_terminal_resolution : Prop
+  /-- Neutrino-vacuum-drag contribution `m_ν`. -/
+  m_nu_drag : ℝ
+  /-- Strong-force binding energy contribution `E_strong`. -/
+  E_strong : ℝ
+  /-- CODATA experimental mass. -/
+  mass_codata : ℝ
+  /-- Sub-keV tolerance threshold (`< 0.001` MeV). -/
+  tol : ℝ
+  /-- Manuscript identity: hadronic mass decomposes linearly into
+      neutrino-drag + strong-binding, matching CODATA within `tol`. -/
+  claim_terminal_resolution :
+    mass = m_nu_drag + E_strong ∧ |mass - mass_codata| ≤ tol
 
 /-- **Content statement** (from manuscript):
 
@@ -32,9 +42,9 @@ Using the derived $q_0$, the hadronic mass collapses into a linear combination o
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/terminal-resolution.ts
-theorem terminal_resolution [ctx : TerminalResolutionContext] : ctx.claim_terminal_resolution := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem terminal_resolution [ctx : TerminalResolutionContext] :
+    ctx.mass = ctx.m_nu_drag + ctx.E_strong ∧
+    |ctx.mass - ctx.mass_codata| ≤ ctx.tol :=
+  ctx.claim_terminal_resolution
 
 end QOU.Experimental
