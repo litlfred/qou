@@ -142,50 +142,64 @@
       "id": "gromov1982",
       "status": "uncited",
       "local_pdf": "uploads/gromov1982.pdf",
+      "verified_at": "2026-05-19T06:33:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
       "fixes_applied": 0,
-      "note": "Bib orphan; decision pending (keep / remove / find use)."
+      "note": "PDF verified: 'Volume and bounded cohomology' by Michael Gromov, Publications IHES vol 56 (1982). Title matches references.ts. Bib orphan — no .lean or .md citation sites in QOU. Decision pending (keep as forward-ref / remove / find use). Likely candidate for citation alongside thurston1978 in hyperbolic-volume contexts."
     },
     {
       "id": "bilsonthompson2005",
       "status": "uncited",
       "local_pdf": "uploads/bilsonthompson2005.pdf",
+      "verified_at": "2026-05-19T06:33:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
       "fixes_applied": 0,
-      "note": "Bib orphan (topological preon model); decision pending."
+      "note": "PDF verified: 'A topological model of composite preons' by Sundance O. Bilson-Thompson (arXiv:hep-ph/0503213, ADP-05-05/T615). Title matches references.ts. Bib orphan — no QOU citation. Likely candidate for citation alongside QOU's knot-particle model (braids-and-knots/ chapters); the Bilson-Thompson preon-as-braid construction parallels QOU's topological-particle approach. Decision pending."
     },
     {
       "id": "finster2021",
       "status": "uncited",
       "local_pdf": "uploads/finster2021.pdf",
+      "verified_at": "2026-05-19T06:33:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
       "fixes_applied": 0,
-      "note": "Bib orphan (causal fermion systems — wave functions); decision pending."
+      "note": "PDF verified: 'The linear dynamics of wave functions in causal fermion systems' by Finster, Kamran, Oppio (arXiv:2101.08673). Title matches. Bib orphan — no QOU citation. Causal fermion systems are tangential to QOU's brane substrate but conceptually related. Decision pending."
     },
     {
       "id": "finster2022",
       "status": "uncited",
       "local_pdf": "uploads/finster2022.pdf",
+      "verified_at": "2026-05-19T06:33:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
       "fixes_applied": 0,
-      "note": "Bib orphan (causal fermion systems — baryogenesis); decision pending."
+      "note": "PDF verified: 'A mechanism of baryogenesis for causal fermion systems' by Finster, Jokel, Paganini (arXiv:2111.05556). Title matches. Bib orphan."
     },
     {
       "id": "finster2024",
       "status": "uncited",
       "local_pdf": "uploads/finster2024.pdf",
+      "verified_at": "2026-05-19T06:33:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
       "fixes_applied": 0,
-      "note": "Bib orphan (causal fermion systems — collapse theory); decision pending."
+      "note": "PDF verified: 'Causal fermion systems as an effective collapse theory' by Finster, Kleiner, Paganini (arXiv:2405.19254). Title matches. Bib orphan."
     },
     {
       "id": "dappiaggi2024",
       "status": "uncited",
       "local_pdf": "uploads/dappiaggi2024.pdf",
+      "verified_at": "2026-05-19T06:33:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
       "fixes_applied": 0,
-      "note": "Bib orphan (holographic mixing in causal fermion systems); decision pending."
+      "note": "PDF verified: 'Holographic mixing and Fock space dynamics of causal fermion systems' by Dappiaggi, Finster, Kamran, Reintjes (arXiv:2410.18045, Oct 2024 / May 2025). Title matches. Bib orphan."
     },
     {
       "id": "blitvic2012",
-      "status": "uncited",
+      "status": "paper-mismatch",
       "local_pdf": "uploads/blitvic2012.pdf",
+      "verified_at": "2026-05-19T06:33:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
       "fixes_applied": 0,
-      "note": "Bib orphan ((q,t)-Gaussian process); decision pending."
+      "note": "PDF MISMATCH: arXiv:1205.4003 = 'Two-Parameter Non-Commutative Central Limit Theorem' by Natasha Blitvić, but references.ts entry title says 'The (q,t)-Gaussian process'. These are two different Blitvić papers — the bib metadata may be for a different Blitvić arxiv id, OR the QOU intent is the (q,t)-Gaussian paper and the URL/arxiv-id needs fixing. Plus bib orphan (no QOU citations). Decision pending: update bib title to match the downloaded paper, OR update arxiv URL to point at the actual (q,t)-Gaussian paper."
     }
   ]
 }
