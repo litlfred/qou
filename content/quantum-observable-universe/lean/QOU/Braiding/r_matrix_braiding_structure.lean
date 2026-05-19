@@ -1,30 +1,54 @@
 /-!
-# QOU.Braiding.r_matrix_braiding_structure — placeholder stub
+# QOU.Braiding.r_matrix_braiding_structure — Yang-Baxter for the universal `R`-matrix
 
-**Placeholder canonical** for content block referenced by
-`qou:QOU.Braiding.r_matrix_braiding_structure`.
+**Proposition** ([`prop:r-matrix-braiding-structure`](../../../quantum-observable-universe/braids-and-knots/r-matrix-braiding-structure.md)).
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI resolves to a real declaration in the `qou` Lake
-package. The body is `sorry` carrying the manuscript citation per
-CLAUDE.md §1.
+*The universal `R`-matrix
+`R ∈ U_q(𝔰𝔲(2)) ⊗̂ U_q(𝔰𝔲(2))` satisfies the Yang–Baxter equation*
+
+```
+  R₁₂ · R₁₃ · R₂₃ = R₂₃ · R₁₃ · R₁₂
+```
+
+*and the braid operator `R̆ = P ∘ R` (with `P` the tensor swap)
+gives a representation of the braid group on any tensor product of
+finite-dimensional `U_q(𝔰𝔲(2))`-modules.*
+
+The Lean encoding records the YBE as an equation on an abstract
+`RMatrixBraidingContext` carrying the three-fold tensor product
+maps `R₁₂, R₁₃, R₂₃`.
+
+-- Ref: [manuscript] quantum-observable-universe/braids-and-knots/r-matrix-braiding-structure.md
 -/
 
 namespace QOU.Braiding
 
-/-- **Content statement** (from manuscript):
+/-- Abstract context for the universal `R`-matrix and its Yang–Baxter
+    equation. -/
+class RMatrixBraidingContext where
+  /-- The three-fold tensor product space `V ⊗ V ⊗ V`. -/
+  V3 : Type
+  /-- Multiplication on `V3` (composition of operators). -/
+  comp : V3 → V3 → V3
+  /-- The three `R`-matrix actions on the three pairs of strands. -/
+  R12 : V3
+  R13 : V3
+  R23 : V3
 
-The universal $R$-matrix
-$\mathcal{R} \in \mathcal{U}_q(\mathfrak{su}(2)) \hat{\otimes} \mathcal{U}_q(\mathfrak{su}(2))$
-([quantum SU(2)](#def:quantum-su2)) satisfies the Yang--Baxter equation
+/-- **Yang–Baxter equation for the universal `R`-matrix**
+    ([`prop:r-matrix-braiding-structure`]).
 
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/r-matrix-braiding-structure.ts
-theorem r_matrix_braiding_structure : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+    `R₁₂ ∘ R₁₃ ∘ R₂₃ = R₂₃ ∘ R₁₃ ∘ R₁₂`. -/
+-- Ref: [manuscript] quantum-observable-universe/braids-and-knots/r-matrix-braiding-structure.md
+theorem r_matrix_braiding_structure
+    [ctx : RMatrixBraidingContext] :
+    ctx.comp (ctx.comp ctx.R12 ctx.R13) ctx.R23
+      = ctx.comp (ctx.comp ctx.R23 ctx.R13) ctx.R12 := by
+  -- Manuscript proof: this is the universal Yang–Baxter equation
+  -- for the `R`-matrix of `U_q(𝔰𝔲(2))`, proved by Drinfeld–Jimbo
+  -- 1985. Concretisation requires Mathlib quantum-group infra.
+  -- Ref: [drinfeld1985] V. Drinfeld, *Hopf algebras and the quantum Yang-Baxter equation*, 1985.
+  -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/r-matrix-braiding-structure.md
   sorry
 
 end QOU.Braiding
