@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T18:07:10.772808+00:00",
-  "commitSha": "b7a80f862706deb318c7b766b19045b2c1aef671",
+  "computedAt": "2026-05-19T18:11:12.702482+00:00",
+  "commitSha": "ef3b364fc7414ca88912eb4ac750290d89833c5d",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2317,6 +2317,7 @@
         "float64-leak-audit.witness.json",
         "free-neutron-decay.witness.json",
         "fresh-derivation-pn-steps-E-G.witness.json",
+        "frobenius-gram-matrix-probe.witness.json",
         "full-twist-delta-n2-verification.witness.json",
         "full-twist-root-of-unity-probe.witness.json",
         "garside-irrep-qvalues.witness.json",
