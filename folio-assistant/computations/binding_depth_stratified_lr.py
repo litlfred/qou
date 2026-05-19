@@ -181,19 +181,20 @@ def main() -> int:
         n_strands, chi_atom = load_chi_dict(atom)
         chi_free = free_chi_for_atom(atom)
 
-        # Restrict chi_free to the same partitions as chi_atom
-        # (so the depth-Φ_k sums are over the SAME partition set —
-        # ensures the difference is well-defined for partial chi_atom).
-        atom_parts = set(chi_atom.keys())
-        chi_free_restricted = {lam: chi_free.get(lam, mp.mpf(0))
-                                for lam in atom_parts}
+        # Use chi_free at ALL partitions (LR computes them all);
+        # atom chi may be partial — missing partitions treated as 0
+        # (only matters for ⁴He where 53/77 partitions are missing).
+        atom_partial = len(chi_atom) < len(chi_free)
+        chi_free_for_phi = chi_free  # ALL partitions
+        chi_atom_for_phi = {lam: chi_atom.get(lam, mp.mpf(0))
+                             for lam in chi_free.keys()}
 
         # Compute Φ_k for depths 0 .. n_strands - 1
         delta_phi_total = mp.mpf(0)
         per_depth = {}
         for k in range(n_strands):
-            phi_atom = phi_k_from_dict(chi_atom, n_strands, k)
-            phi_free = phi_k_from_dict(chi_free_restricted, n_strands, k)
+            phi_atom = phi_k_from_dict(chi_atom_for_phi, n_strands, k)
+            phi_free = phi_k_from_dict(chi_free_for_phi, n_strands, k)
             delta = phi_free - phi_atom
             ak = alpha_k(k)
             contrib = ak * delta
