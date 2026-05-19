@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T15:52:09.707695+00:00",
-  "commitSha": "0019cf22cb876a8cb2fa2d57e874699c770d2da1",
+  "computedAt": "2026-05-19T17:10:55.981689+00:00",
+  "commitSha": "28bf379b56b58bf1115a482dddac0aa7bca82013",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2350,6 +2350,7 @@
         "he4-compositional-consistency.witness.json",
         "he4-jsj-topology.witness.json",
         "he4-sdp-compositional-probe.witness.json",
+        "hecke-branching-trace-decomposition-probe.witness.json",
         "hecke-core-symbolic-migration.witness.json",
         "hh-trefoil-corrected.witness.json",
         "hh-vertex-volume.witness.json",

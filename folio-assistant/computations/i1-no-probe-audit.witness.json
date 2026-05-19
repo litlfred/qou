@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T07:43:54.384781+00:00",
-  "commitSha": "12f0a07bc194ea42f324acc3eb0adc0958a0bd61",
+  "computedAt": "2026-05-19T17:10:56.471154+00:00",
+  "commitSha": "28bf379b56b58bf1115a482dddac0aa7bca82013",
   "assertions": [
     {
       "name": "no_i1_no_probe_blocks",
@@ -27,8 +27,8 @@
   },
   "data": {
     "by_result": {
-      "i1_no_probe": 519,
-      "wired": 54,
+      "i1_no_probe": 518,
+      "wired": 55,
       "i1_lean_with_sorry": 1,
       "conditional_class": 1
     },
@@ -1200,9 +1200,11 @@
         "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": true,
-        "probe_witness_count": 0,
-        "probe_witnesses": [],
-        "result": "i1_no_probe"
+        "probe_witness_count": 1,
+        "probe_witnesses": [
+          "hecke-branching-trace-decomposition-probe.witness.json"
+        ],
+        "result": "wired"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/hecke-convergence-bound.ts",
