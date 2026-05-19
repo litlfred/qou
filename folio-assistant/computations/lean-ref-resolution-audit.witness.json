@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T03:45:06.722678+00:00",
-  "commitSha": "0da5a699ddefe8dfdb6337accfa167b76849f92d",
+  "computedAt": "2026-05-19T03:56:49.628669+00:00",
+  "commitSha": "ff51f1cd1b3819c57d138f15577023e61c91ea70",
   "assertions": [
     {
       "name": "no_unregistered_package_prefixes",
@@ -15,7 +15,7 @@
     },
     {
       "name": "ok_count_matches_total_minus_failures",
-      "computed": 675.0,
+      "computed": 677.0,
       "expected": 925.0,
       "passed": false,
       "tolerance": 0.0,
@@ -36,9 +36,9 @@
   },
   "data": {
     "by_result": {
-      "ok": 675,
+      "ok": 677,
       "sibling_no_decl": 136,
-      "grep_no_match": 111,
+      "grep_no_match": 109,
       "lake_root_missing_grep_hit": 1,
       "sibling_missing": 2
     },
@@ -11873,14 +11873,18 @@
         "kind": "lemma",
         "pkg": "qou",
         "decl_path": "QOU.HadronicMass.deuteron_binding_energy",
-        "sibling_exists": false,
-        "sibling_declares": false,
+        "sibling_exists": true,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/observations/deuteron-binding-energy.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "grep_no_match"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.ts",
@@ -12205,14 +12209,18 @@
         "kind": "lemma",
         "pkg": "qou",
         "decl_path": "QOU.HadronicMass.nucleon_borromean_topology",
-        "sibling_exists": false,
-        "sibling_declares": false,
+        "sibling_exists": true,
+        "sibling_declares": true,
         "lake_root_exists": false,
         "lake_root_declares": false,
         "lake_parent_declares": false,
-        "grep_hit": false,
+        "grep_hits": [
+          "/home/user/qou/content/quantum-observable-universe/observations/nucleon-borromean-topology.lean"
+        ],
+        "grep_hit": true,
         "grep_hit_under_lake_root": false,
-        "result": "grep_no_match"
+        "result": "ok",
+        "resolved_via": "sibling"
       },
       {
         "path": "content/quantum-observable-universe/observations/pair-skein-mass-formula.ts",
