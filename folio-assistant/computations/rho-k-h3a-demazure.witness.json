@@ -1,8 +1,8 @@
 {
   "computation": "rho-k-h3a-demazure",
   "computedAt": "2026-05-09T05:36:40.257419+00:00",
-  "description": "\u0394_\u03bb OPTION C \u2014 Demazure-fiber selector for the H_{3A} Wedderburn refinement of \u03c1_K (deuteron).  Replaces the Occam single-partition heuristic of rho_k_h3a_refinement.py with the derived rule \u0394_\u03bb \u2261 y_\u03bb(q_0) \u00b7 D_w(\u03bb)/D_{w_0}(\u03bb) where D_w(\u03bb) is the Demazure character at the canonical reduced word w of the underlying S_6 permutation \u03c0_\u03b2 of the deuteron braid \u03b2_D, and D_{w_0}(\u03bb) is the Demazure character at the longest element w_0 \u2208 S_6.  This is the Demazure-fiber Markov-trace functional T^Dem from prop:demazure-fiber-markov-trace (commit e77a4b4d).  Reports the implied mass-equation closure residual.",
-  "engine": "\u03c7^\u03bb via mpmath numeric Hoefsmit at q_0 (50 dps), multiprocessing.Pool(4); D_w via sympy Demazure operators at principal specialisation x_i \u21a6 q^{i\u22121}, evaluated at q_0 to 50 dps",
+  "description": "Δ_λ OPTION C — Demazure-fiber selector for the H_{3A} Wedderburn refinement of ρ_K (deuteron).  Replaces the Occam single-partition heuristic of rho_k_h3a_refinement.py with the derived rule Δ_λ ≡ y_λ(q_0) · D_w(λ)/D_{w_0}(λ) where D_w(λ) is the Demazure character at the canonical reduced word w of the underlying S_6 permutation π_β of the deuteron braid β_D, and D_{w_0}(λ) is the Demazure character at the longest element w_0 ∈ S_6.  This is the Demazure-fiber Markov-trace functional T^Dem from prop:demazure-fiber-markov-trace (commit e77a4b4d).  Reports the implied mass-equation closure residual.",
+  "engine": "χ^λ via mpmath numeric Hoefsmit at q_0 (50 dps), multiprocessing.Pool(4); D_w via sympy Demazure operators at principal specialisation x_i ↦ q^{i−1}, evaluated at q_0 to 50 dps",
   "scriptFile": "rho_k_h3a_demazure.py",
   "scriptHash": "sha256:d59affc0782387a0c549721c5fbbf8562833d8edb4bda9193c43057d5bb1a4bb",
   "parameters": {
@@ -13,7 +13,7 @@
     "A": 2,
     "n_strands": 6,
     "braid_word_source": "mass_at_3A_proper.atom_braid_word_3A(1, 1)",
-    "braid_word_str": "\u03b2_p \u00b7 I \u00b7 \u03b2_n  (canonical: H_3 \u2297 H_3 \u2282 H_6 with interface I = \u03c3_3 - h/2\u00b71 at gen_idx=2)",
+    "braid_word_str": "β_p · I · β_n  (canonical: H_3 ⊗ H_3 ⊂ H_6 with interface I = σ_3 - h/2·1 at gen_idx=2)",
     "crossings_typed": [
       [
         0,
@@ -364,10 +364,11 @@
       "demazure_minus_occam_MeV": "2.2245845412705121121798572206272152601667949692405"
     }
   },
-  "audit_reference": "AUDIT-DEEP-2026-05.md \u00a77 P3' \u2014 \u0394_\u03bb derivation race (Option C)",
+  "audit_reference": "AUDIT-DEEP-2026-05.md §7 P3' — Δ_λ derivation race (Option C)",
   "parent_pr": "#600",
   "content_block_demazure": "prop:demazure-fiber-markov-trace",
   "content_block_rho_k": "prop:rho-k-h3a-refinement",
-  "notes": "Option C of the \u0394_\u03bb derivation race (PR #600 parent). The Demazure-fiber rule is a STRUCTURAL prediction: \u0394_\u03bb is fixed by the geometry of the braid (via \u03c0_\u03b2 and D_w) and the Wenzl-bridge weight y_\u03bb.  No tuning, no per-\u03bb sign flips \u2014 the only free choice is the Coxeter projection \u03c0 : B_n \u2192 S_n itself.  The closure error is the falsification signal: a value close to zero would validate the Demazure-fiber selector; a value at the MeV scale or larger means the rule is incomplete (e.g. missing a Hochschild-cohomology phase, or needs a different Coxeter section).  HONEST REPORTING: the outcome_classification field reports the verdict.",
-  "follow_up": "If the closure passes, extend to (T, \u00b3He) at n=9 and \u2074He at n=12 \u2014 the same code path applies (just longer Coxeter projection and bigger Demazure tables).  If the closure fails, sweep alternative reduced-word choices (every reduced word for the same \u03c0_\u03b2 gives the SAME Demazure character \u2014 the operators satisfy the braid relations on reduced words \u2014 so this control is null).  Then sweep alternative Coxeter projections (e.g. signed lifts of \u03c3_i\u207b\u00b9 that flip the underlying reflection)."
+  "notes": "Option C of the Δ_λ derivation race (PR #600 parent). The Demazure-fiber rule is a STRUCTURAL prediction: Δ_λ is fixed by the geometry of the braid (via π_β and D_w) and the Wenzl-bridge weight y_λ.  No tuning, no per-λ sign flips — the only free choice is the Coxeter projection π : B_n → S_n itself.  The closure error is the falsification signal: a value close to zero would validate the Demazure-fiber selector; a value at the MeV scale or larger means the rule is incomplete (e.g. missing a Hochschild-cohomology phase, or needs a different Coxeter section).  HONEST REPORTING: the outcome_classification field reports the verdict.",
+  "follow_up": "If the closure passes, extend to (T, ³He) at n=9 and ⁴He at n=12 — the same code path applies (just longer Coxeter projection and bigger Demazure tables).  If the closure fails, sweep alternative reduced-word choices (every reduced word for the same π_β gives the SAME Demazure character — the operators satisfy the braid relations on reduced words — so this control is null).  Then sweep alternative Coxeter projections (e.g. signed lifts of σ_i⁻¹ that flip the underlying reflection).",
+  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
 }

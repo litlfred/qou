@@ -1,9 +1,9 @@
 {
   "computation": "beta-decay-residue-sum-h3-probe",
   "scriptFile": "probe_beta_decay_residue_sum_h3.py",
-  "description": "\u03b2-decay residual closure via Mittag-Leffler residue sum at H_3 roots of unity (prop:gb-residue-spectral-sum), substrate-derived. Computes \u03a3_{\u03bb, \u03b6} Res_{q=\u03b6}[w_\u03bb(q) \u03c7_\u03bb(\u03b2)] / (q_0 - \u03b6) for the \u03b2-decay operator \u03b2 = \u03c3_0\u03c3_1^{-1} on the 3 H_3 irreps. NO FITTING. All inputs from substrate (Schur-Weyl weights + Hecke characters + roots of unity).",
-  "auditOnly": "docs/audits/2026-05-10-hbar-q-scaling-audit.md; schur-weyl-mass-decomposition.md (full mass formula); brane-tower-z-habiro.md (cyclotomic projection at n_\u22c6)",
-  "no_fitting_assertion": "w_\u03bb from Schur-Weyl prop, \u03c7_\u03bb from H_3 Hoefsmit seminormal rep, poles from [n]_q = 0, residues by sympy.residue, q_0 from CAL-2, m_e from CAL-1. No parameter tuning at any step.",
+  "description": "β-decay residual closure via Mittag-Leffler residue sum at H_3 roots of unity (prop:gb-residue-spectral-sum), substrate-derived. Computes Σ_{λ, ζ} Res_{q=ζ}[w_λ(q) χ_λ(β)] / (q_0 - ζ) for the β-decay operator β = σ_0σ_1^{-1} on the 3 H_3 irreps. NO FITTING. All inputs from substrate (Schur-Weyl weights + Hecke characters + roots of unity).",
+  "auditOnly": "docs/audits/2026-05-10-hbar-q-scaling-audit.md; schur-weyl-mass-decomposition.md (full mass formula); brane-tower-z-habiro.md (cyclotomic projection at n_⋆)",
+  "no_fitting_assertion": "w_λ from Schur-Weyl prop, χ_λ from H_3 Hoefsmit seminormal rep, poles from [n]_q = 0, residues by sympy.residue, q_0 from CAL-2, m_e from CAL-1. No parameter tuning at any step.",
   "data": {
     "q_0_50dps": "1.109978595554180511686921345997486426854316403",
     "m_e_MeV": "0.51099894999999995182093925905064679682254791259766",
@@ -80,5 +80,7 @@
         "contribution_real": 0.11632067905853384
       }
     ]
-  }
+  },
+  "engine": "python+sympy",
+  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
 }

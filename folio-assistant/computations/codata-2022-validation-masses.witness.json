@@ -15,9 +15,18 @@
   },
   "discipline": {
     "framework_calibration_count": 3,
-    "calibration_set": ["m_e (CAL-1)", "m_mu_over_e (CAL-2)", "Q_beta_n (CAL-3)"],
+    "calibration_set": [
+      "m_e (CAL-1)",
+      "m_mu_over_e (CAL-2)",
+      "Q_beta_n (CAL-3)"
+    ],
     "predictions_listed_in_this_witness": [
-      "m_p_MeV", "m_n_MeV", "m_D_MeV", "m_T_MeV", "m_3He_MeV", "m_4He_MeV"
+      "m_p_MeV",
+      "m_n_MeV",
+      "m_D_MeV",
+      "m_T_MeV",
+      "m_3He_MeV",
+      "m_4He_MeV"
     ],
     "validation_use_pattern": "err_ppb = (m_X_pred - m_X_validation) / m_X_validation * 1e9"
   },
@@ -26,32 +35,26 @@
     "m_e_MeV_err": "0.00000000015",
     "m_e_MeV_codata_quoted": "0.5109989500(15) MeV/c² (CODATA 2022)",
     "m_e_MeV_role": "CAL-1 — leptonic mass scale (the framework's only direct mass-scale input).",
-
     "m_p_MeV": "938.27208816",
     "m_p_MeV_err": "0.00000029",
     "m_p_MeV_codata_quoted": "938.27208816(29) MeV/c² (CODATA 2022)",
     "m_p_MeV_role": "VALIDATION-ONLY — framework prediction is m_p = |tr_M(p, q_0)| · E_0 with E_0 from CAL-3.",
-
     "m_n_MeV": "939.56542052",
     "m_n_MeV_err": "0.00000054",
     "m_n_MeV_codata_quoted": "939.56542052(54) MeV/c² (CODATA 2022)",
     "m_n_MeV_role": "VALIDATION-ONLY — framework prediction is m_n = m_p + Q_β + m_e (3-input convention; see neutron-gap-probes-round3.witness.json).",
-
     "m_D_MeV": "1875.61294257",
     "m_D_MeV_err": "0.00000057",
     "m_D_MeV_codata_quoted": "1875.61294257(57) MeV/c² (CODATA 2022)",
     "m_D_MeV_role": "VALIDATION-ONLY — framework prediction is m_D = (m_p + m_n)_pred + Binding(K=D); B(D) categorical via |tr_M(D)|, atomic-tr-m-mpfr-50dps.witness.json.",
-
     "m_T_MeV": "2808.92113298",
     "m_T_MeV_err": "0.00000085",
     "m_T_MeV_codata_quoted": "2808.92113298(85) MeV/c² (CODATA 2022)",
     "m_T_MeV_role": "VALIDATION-ONLY.",
-
     "m_3He_MeV": "2808.39160743",
     "m_3He_MeV_err": "0.00000085",
     "m_3He_MeV_codata_quoted": "2808.39160743(85) MeV/c² (CODATA 2022)",
     "m_3He_MeV_role": "VALIDATION-ONLY.",
-
     "m_4He_MeV": "3727.37940660",
     "m_4He_MeV_err": "0.00000110",
     "m_4He_MeV_codata_quoted": "3727.3794066(11) MeV/c² (CODATA 2022)",
@@ -65,5 +68,6 @@
       "tolerance_basis": "combined CODATA σ of (m_e, m_p, m_n) under uncorrelated upper bound",
       "comment": "Cross-check only. Q_β is the primary CAL-3 input (cal-3-q-beta.witness.json); this consistency check verifies CODATA refresh does not break the constraint."
     }
-  }
+  },
+  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
 }
