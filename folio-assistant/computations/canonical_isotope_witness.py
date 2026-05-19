@@ -196,6 +196,29 @@ def assemble_row(
             "Z": Z, "N": N, "A": A, "element": element,
             "prediction_type": "mass",
             "layer": "L1-borromean-via-canonical",
+            # canonical_status taxonomy (added 2026-05-19 per user
+            # directive "L4 only use canonical; fix l1 empirical too"):
+            #   canonical-substrate    — pure substrate derivation
+            #                            (Borromean tower nucleons,
+            #                            conditional on conj:borromean-
+            #                            baryon-mass-formula).
+            #   canonical-with-empirical-assignment — canonical |tr_M| /
+            #                            Vol(K) / m_e BUT the (knot, ρ_K)
+            #                            assignment per atom is from the
+            #                            framework hypothesis table, not
+            #                            from a substrate derivation.
+            #                            ρ_K(Z, N) substrate derivation
+            #                            is OPEN (ILP / confinement).
+            #   canonical-recursive    — derived from a lower canonical
+            #                            tier via structural recursion
+            #                            (L2 α-cluster: anchored on ⁴He
+            #                            + c_αα via Vol(7²₁)).
+            #   heuristic              — interpolation between canonical
+            #                            anchors (L3 partial-shell);
+            #                            NOT derivation, MUST NOT feed
+            #                            downstream "canonical" outputs.
+            #   pending                — no framework prediction.
+            "canonical_status": "canonical-substrate",
             "prediction_MeV_50dps": (
                 l1.get("prediction_MeV_50dps") if l1 else None
             ),
@@ -216,16 +239,25 @@ def assemble_row(
     l3 = l3_lookup(Z, N, layer3)
     b_pred: float | None = None
     layer_used: str | None = None
+    canonical_status: str = "pending"
     if l1 and l1.get("prediction_MeV_50dps") is not None:
         try:
             b_pred = float(l1["prediction_MeV_50dps"])
             layer_used = "L1-canonical"
+            # L1 B comes from mass-table-ppb's per-atom (knot, ρ_K)
+            # hypothesis table — empirical-assignment, not substrate-
+            # derived. The |tr_M| / Vol / m_e factors ARE canonical.
+            canonical_status = "canonical-with-empirical-assignment"
         except (TypeError, ValueError):
             b_pred = None
     if b_pred is None and l2:
         try:
             b_pred = float(l2.get("B_pred_MeV"))
             layer_used = "L2-alpha-cluster"
+            # L2 is structurally recursive on L1's ⁴He anchor; the
+            # α-count is determined by (Z, N) for magic atoms and
+            # c_αα = m_e · Vol(7²₁) is canonical.
+            canonical_status = "canonical-recursive"
         except (TypeError, ValueError):
             b_pred = None
     if b_pred is None and l3:
@@ -233,6 +265,11 @@ def assemble_row(
             b_pred = float(l3.get("B_pred_MeV"))
             l3_strategy = l3.get("strategy", "partial-shell")
             layer_used = f"L3-{l3_strategy}"
+            # L3 partial-shell linearly interpolates between L2
+            # anchors at fractional shell-fill f ∈ {¼, ½, ¾} —
+            # heuristic, not substrate-derived. Demoted per user
+            # directive 2026-05-19; ρ_K(Z, N) derivation OPEN.
+            canonical_status = "heuristic"
         except (TypeError, ValueError):
             b_pred = None
 
@@ -241,12 +278,26 @@ def assemble_row(
     err_ppm = (err_MeV / b_ame_mev * 1e6) if (err_MeV is not None and b_ame_mev) else None
 
     # L4 composite mass: M = N·m_n + Z·m_p − B
+    # CANONICAL ONLY (per user directive 2026-05-19): emit only when
+    # B comes from a canonical-status layer (canonical-substrate,
+    # canonical-with-empirical-assignment, canonical-recursive). The
+    # heuristic L3 partial-shell and the pending atoms get NO
+    # composite mass — those rows surface as L?-derivation-pending in
+    # the atlas.
     m_composite_MeV: float | None = None
-    if m_p_borr is not None and m_n_borr is not None and b_pred is not None:
+    composite_canonical_status: str = "pending"
+    if (
+        m_p_borr is not None
+        and m_n_borr is not None
+        and b_pred is not None
+        and canonical_status in (
+            "canonical-substrate",
+            "canonical-with-empirical-assignment",
+            "canonical-recursive",
+        )
+    ):
         m_composite_MeV = N * m_n_borr + Z * m_p_borr - b_pred
-    elif m_p_borr is not None and m_n_borr is not None and b_ame_mev is not None:
-        # If no framework B, fall back to AME B for the composite.
-        m_composite_MeV = N * m_n_borr + Z * m_p_borr - b_ame_mev
+        composite_canonical_status = canonical_status
 
     # L4 reference: from AME atomic mass (× 931.494 MeV/u).
     m_composite_ref_MeV = (
@@ -267,17 +318,22 @@ def assemble_row(
         "Z": Z, "N": N, "A": A, "element": element,
         "prediction_type": "binding_energy",
         "layer": layer_used or "L?-pending",
+        "canonical_status": canonical_status,
         "prediction_MeV_50dps": b_pred,
         "reference_MeV_50dps": b_ame_mev,
         "err_MeV": err_MeV,
         "err_pct": err_pct,
         "err_ppm": err_ppm,
-        # L4 composite mass (always emitted when m_p, m_n, B all known)
+        # L4 composite mass — emitted ONLY when B is canonical
+        # (canonical_status ∈ {canonical-substrate,
+        # canonical-with-empirical-assignment, canonical-recursive}).
+        # No AME B fallback. heuristic / pending rows get None here.
         "composite_mass": {
             "M_pred_MeV": m_composite_MeV,
             "M_AME_MeV": m_composite_ref_MeV,
             "err_MeV": m_composite_err_MeV,
             "err_ppm": m_composite_err_ppm,
+            "canonical_status": composite_canonical_status,
             "formula": "N·m_n + Z·m_p − B(A,Z)",
             "m_p_source": (
                 "borromean-tower (conj:borromean-baryon-mass-formula)"
