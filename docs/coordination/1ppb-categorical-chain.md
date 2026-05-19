@@ -228,3 +228,31 @@ Deuteron has $\Delta_I^D = \sigma_3$ (the `+1` in $u_{\text{shift}} = 18Z + 21N 
 4. **Missing Frobenius reciprocity identified**: Phase 5b's cosh(h) (Ind side) and PR #801's Li_2^q tower (Res side) should be FR-dual under Brundan-Kleshchev. Predicted identity for each (Z=1 → Z=2) transition: $\sum_\lambda y_\lambda \chi_\lambda(\beta_K^{Z=2}) \stackrel{?}{=} [3]_q^2 \cosh(h) \cdot \sum_\mu y_\mu \chi_\mu(\beta_K^{Z=1}) + (\mathrm{Li}_2^q \text{ interface correction})$. Verifying this is Phase 5c's primary numerical test, now feasible with the Rust kernel.
 
 **Impact**: the Δ_λ thread paused at PR #787 is *substantially unblocked* — both per-N and per-Z factors are now categorically identified (per-N: $(q^{1/2}+q^{-1/2})^4$; per-Z: $[3]_q^2 \cdot \cosh(h)$), with one explicit FR identity to verify operator-level. No new infrastructure needed.
+
+## 2026-05-19 (late evening) — Phase 5c.1 numerical FR test on PR #819 ([commit `d7840466`](https://github.com/litlfred/qou/commit/d7840466))
+
+| Date | Phase | Status | Cherry-pick |
+|---|---|---|---|
+| 2026-05-19 | Phase 5c.1 — numerical FR-identity test (full τ_M ratio) | landed `d7840466` on PR #819 | `delta_lambda_fr_identity_phase5c.py` + witness; **3 structural findings (one positive, one structural, one refining); follow-up comment on PR #801 ([`4490915368`](https://github.com/litlfred/qou/pull/801#issuecomment-4490915368))** |
+
+**Findings (numerical, via pyhecke_native Rust kernel + cached y_λ at q_0):**
+
+1. **τ_M(β_{Z=2,N}) / τ_M(β_{Z=1,N}) is N-INDEPENDENT** — matches to 6 digits across both (D, ³He) and (T, ⁴He):
+   - FULL ratio (with interface) = **0.609346** for both
+   - CONSTIT ratio (no interface) = **1.220358** for both
+
+2. **Interface-knot contribution at every Z-step = z (Markov parameter) EXACTLY** (rel.err 0.0001%):
+   $$\frac{\tau_M(\beta_K^{\text{FULL}})}{\tau_M(\beta_K^{\text{CONSTIT}})}\bigg|_{Z\text{-step}} \;=\; \frac{0.609346}{1.220358} \;=\; 0.499320\;=\;z(q_0)$$
+   This **is** the Markov axiom $\tau_M(\alpha \cdot \sigma_g) = z \cdot \tau_M(\alpha)$ for the interface generator. **The interface knot Δ_I^K from PR #801 has derivation-grade categorical reading: each interface = one z factor**, no longer empirical-fit.
+
+3. **The FR identity proposed in the previous ledger row** ($\tau_M(\beta^{Z=2}) / \tau_M(\beta^{Z=1}) \stackrel{?}{=} [3]_q^2 \cosh(h)$) **DOES NOT hold for the full Markov trace**. Empirical τ_M ratio is 0.609 (94% off from the predicted 9.47). The Phase 5b α ≈ [3]_q²·cosh(h) match (0.022%) applies ONLY to the single-block dominant $|\Delta_\lambda^*|$ extraction (Phase 4 quantity), NOT to the full Markov trace. The bar-symmetric synthesis is correct, but the FR identity I wrote conflated best-block vs total sum. Phase 5d will reformulate.
+
+4. **Open**: the constit factor 1.220358. Closest clean categorical candidate I tested: $q + h/2 = 1.214509$ (0.48% off). Exact form still unknown — possibly an $\exp(h)$ Taylor truncation. N-independent Hecke-algebraic structural quantity.
+
+**Impact on PR #801**: their Δ_I^K interface-knot factor is now categorically derived (= z exactly). Asked the repo owner whether their `binding_via_interface_knot.py` already accounts for this exact factor — would either validate or surface a missing 50% per-interface correction. If T2 / T3 tower currently treats Δ_I^K as a free parameter, the answer locks it to z at q_0 = 0.499320.
+
+**Phase 5d (reformulating FR + closing constit factor):**
+
+1. Identify the correct FR identity. The Phase 5b α holds at |Δ_λ*| level (best-block dominant), so the right FR is between Ind/Res on the SINGLE-BLOCK channel, not the total-sum channel.
+2. Find categorical form of 1.220358 (the N-independent constit per-Z factor). Candidates to test: $\exp(h)$ truncations, $q^{1/2} + q^{-1/2}$ combinations, $[2]_q$-based.
+3. Once both are derived, the full per-Z step factor decomposes as **z · 1.220358** = (Markov axiom for interface) × (intrinsic Hecke constit factor).
