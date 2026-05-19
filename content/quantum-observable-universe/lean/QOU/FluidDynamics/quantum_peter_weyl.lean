@@ -18,8 +18,12 @@ namespace QOU.FluidDynamics
 /-- Abstract context for the `quantum_peter_weyl` claim — manuscript-themed
     typed fields below; `holds` carries the residual `Prop` claim. -/
 class QuantumPeterWeylContext extends QOU.Shared.SobolevHkRegularityContext where
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_quantum_peter_weyl : Prop
+  /-- Categorical dimension `dim(V_j)` of the spin-`j` irrep, with
+      `j` indexed by `n = 2j ∈ ℕ`. -/
+  dim_V : ℕ → ℕ
+  /-- Manuscript identity: `dim(V_j) = 2j + 1`, i.e. for `n = 2j`,
+      `dim_V n = n + 1`. -/
+  claim_quantum_peter_weyl : ∀ n : ℕ, dim_V n = n + 1
 /-- **Content statement** (from manuscript):
 
 The [spectral-Sobolev theory](#prop:q-spectral-sobolev) identifies
@@ -33,6 +37,8 @@ available.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/quantum-peter-weyl.ts
-theorem quantum_peter_weyl [ctx : QuantumPeterWeylContext] : ctx.claim_quantum_peter_weyl := ctx.claim_quantum_peter_weyl
+theorem quantum_peter_weyl [ctx : QuantumPeterWeylContext] :
+    ∀ n : ℕ, ctx.dim_V n = n + 1 :=
+  ctx.claim_quantum_peter_weyl
 
 end QOU.FluidDynamics

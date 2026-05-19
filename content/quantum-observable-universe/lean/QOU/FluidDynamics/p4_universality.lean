@@ -25,9 +25,8 @@ class P4UniversalityContext where
   d : ℕ
   /-- The gauge-group rank. -/
   gauge_rank : ℕ
-  /-- Manuscript sub-claim (i) — `α` depends only on the Euler
-      characteristic `χ(A)` (equivalently the base-manifold genus). -/
-  claim_i_euler_char_only : Prop
+  /-- Manuscript sub-claim (i) — Critical exponent is `α = 4/3`. -/
+  claim_i_alpha_value : α = 4 / 3
   /-- Manuscript sub-claim (ii) — spatial dimension is `d = 3`
       (fixed by the contact structure). -/
   claim_ii_dim_three : d = 3
@@ -49,8 +48,8 @@ $(\mathbf{C}, A, \tau)$.
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/p4-universality.ts
 theorem p4_universality [ctx : P4UniversalityContext] :
-    ctx.claim_i_euler_char_only ∧ ctx.d = 3 ∧ ctx.gauge_rank = 1 :=
-  ⟨ctx.claim_i_euler_char_only, ctx.claim_ii_dim_three,
+    ctx.α = 4 / 3 ∧ ctx.d = 3 ∧ ctx.gauge_rank = 1 :=
+  ⟨ctx.claim_i_alpha_value, ctx.claim_ii_dim_three,
    ctx.claim_iii_gauge_rank_one⟩
 
 end QOU.FluidDynamics

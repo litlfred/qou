@@ -31,7 +31,7 @@ class VorticityLowerBoundContext where
   C_pos : 0 < C
   /-- Manuscript claim — vorticity lower bound near the blowup:
       `|ω*(t, x)| ≥ C / d(t)` along the counter-example trajectory. -/
-  claim_lower_bound : Prop
+  claim_lower_bound : ∀ (t x : ℝ), |ω_star t x| ≥ C / d t
 
 /-- **Content statement** (from manuscript):
 
@@ -48,6 +48,7 @@ filament cores.
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.ts
 theorem vorticity_lower_bound [ctx : VorticityLowerBoundContext] :
-    ctx.claim_lower_bound := ctx.claim_lower_bound
+    ∀ (t x : ℝ), |ctx.ω_star t x| ≥ ctx.C / ctx.d t :=
+  ctx.claim_lower_bound
 
 end QOU.FluidDynamics
