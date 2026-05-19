@@ -42,7 +42,7 @@ from typing import Iterable
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 REFS_TS = REPO_ROOT / "content" / "schema" / "references.ts"
-ARXIV_API = "http://export.arxiv.org/api/query"
+ARXIV_API = "https://export.arxiv.org/api/query"  # HTTPS per arxiv recommendation (Gemini #820)
 ARXIV_NS = {"a": "http://www.w3.org/2005/Atom",
             "arxiv": "http://arxiv.org/schemas/atom"}
 
@@ -59,17 +59,27 @@ def parse_refs() -> list[dict]:
         body = m.group(1)
 
         def field(name: str) -> str | None:
-            r = re.search(rf'{name}:\s*"([^"]+)"', body)
-            return r.group(1) if r else None
+            # Accept double-quote, single-quote, or backtick string
+            # delimiters (TypeScript allows all three); handle escaped
+            # quote of the same kind via [^…]*? (Gemini #820 — references.ts
+            # entries are double-quoted in practice but the parser
+            # shouldn't assume).
+            for q in ('"', "'", '`'):
+                r = re.search(rf'{name}:\s*{q}((?:[^{q}\\]|\\.)*){q}', body)
+                if r:
+                    # Unescape \\ and \q sequences
+                    return r.group(1).replace(f'\\{q}', q).replace('\\\\', '\\')
+            return None
 
         eid = field("id")
         if not eid:
             continue
 
-        # author family names
+        # author family names — same quote-flexibility as field()
         families: list[str] = []
-        for am in re.finditer(r'family:\s*"([^"]+)"', body):
-            families.append(am.group(1))
+        for q in ('"', "'", '`'):
+            for am in re.finditer(rf'family:\s*{q}((?:[^{q}\\]|\\.)*){q}', body):
+                families.append(am.group(1).replace(f'\\{q}', q).replace('\\\\', '\\'))
 
         year_m = re.search(r'issued.*?\[\[(\d{4})', body, re.DOTALL)
         year = int(year_m.group(1)) if year_m else None
@@ -137,7 +147,7 @@ def arxiv_search(query: str, max_results: int = 3, retries: int = 3) -> list[dic
     for entry in root.findall("a:entry", ARXIV_NS):
         title_el = entry.find("a:title", ARXIV_NS)
         id_el = entry.find("a:id", ARXIV_NS)
-        if title_el is None or id_el is None:
+        if title_el is None or id_el is None or not id_el.text:
             continue
         # arxiv id is the last path segment of the entry id URL
         arxiv_id = id_el.text.rsplit("/", 1)[-1]

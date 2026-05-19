@@ -136,7 +136,14 @@ UTC_YMD="$(date -u +%Y-%m-%d)"
 SAFE_NAME="$(echo "$TARGET" | sed 's/[^A-Za-z0-9._-]/-/g' | cut -c1-40)"
 BRANCH="claude/upload-${SAFE_NAME}-${UTC_YMD}"
 echo "[git] new branch: $BRANCH (off origin/$DEFAULT_BRANCH)"
-git checkout -b "$BRANCH" "origin/$DEFAULT_BRANCH"
+if git rev-parse --verify --quiet "$BRANCH" >/dev/null; then
+  # Idempotent re-run: branch already exists locally (Gemini #820).
+  echo "[git] branch $BRANCH already exists locally; checking out"
+  git checkout "$BRANCH"
+else
+  echo "[git] new branch: $BRANCH (off origin/$DEFAULT_BRANCH)"
+  git checkout -b "$BRANCH" "origin/$DEFAULT_BRANCH"
+fi
 
 git add "$TARGET_PATH"
 if git diff --cached --quiet; then

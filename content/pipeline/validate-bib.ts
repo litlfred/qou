@@ -155,7 +155,9 @@ async function modeCrossCheck(): Promise<CheckResult[]> {
         .replace(/\barxiv:\s*\S+/gi, " ")       // arxiv:foo
         .toLowerCase()
         .replace(/[`"',()§\[\]{}]/g, " ");
-      const proseWords = descStripped.split(/\s+/).filter((w) => /^[a-zé\-']{2,}$/.test(w));
+      // Unicode-aware (\p{L} = any letter): catches Erdős, Möbius, Krein
+      // etc. that the original [a-zé...] class would drop (Gemini #820).
+      const proseWords = descStripped.split(/\s+/).filter((w) => /^[\p{L}\-']{2,}$/u.test(w));
       const isProseDescription = proseWords.length >= 5;
       // Heuristic v4 addition: also accept the description if it shares a
       // significant title word with the entry. Many .lean Ref descriptions
