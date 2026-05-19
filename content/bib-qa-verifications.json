@@ -434,13 +434,13 @@
     },
     {
       "id": "navon2021",
-      "status": "verified-clean",
+      "status": "uncited",
       "local_pdf": "uploads/navon2021.pdf",
       "verified_at": "2026-05-19T15:48:00Z",
       "verified_by": "Claude (claude-opus-4-7)",
       "fixes_applied": 0,
       "fix_commit": null,
-      "note": "PDF verified: 'Quantum Gases in Optical Boxes' by Nir Navon, arXiv:2106.09716. BEC / box-trap experimental review."
+      "note": "PDF verified: 'Quantum Gases in Optical Boxes' by Nir Navon, arXiv:2106.09716. BEC / box-trap experimental review. | RE-CHECK 2026-05-19 17:20: Navon \u2014 Quantum Gases in Optical Boxes (arXiv:2106.09716, PDF verified). Bib orphan (0 cites). Was promoted to verified-clean based on PDF match, but no .lean/.md/.ts citation site exists."
     },
     {
       "id": "gauthier2019",
@@ -1131,6 +1131,46 @@
       "fixes_applied": 0,
       "fix_commit": null,
       "note": "PDF verified: Shishikura, \"The Hausdorff dimension of the boundary of the Mandelbrot set and Julia sets,\" Ann. Math. 147 (1998), arXiv:math/9201282. Verified."
+    },
+    {
+      "id": "bokut2005",
+      "status": "uncited",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T17:20:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 0,
+      "fix_commit": null,
+      "note": "Bokut \u2014 Gr\u00f6bner-Shirshov for groups/semigroups/Lie algebras. Bib orphan (0 cites)."
+    },
+    {
+      "id": "cardona2023",
+      "status": "uncited",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T17:20:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 0,
+      "fix_commit": null,
+      "note": "Cardona 2023 \u2014 recent, possibly forward-ref intent. Bib orphan (0 cites)."
+    },
+    {
+      "id": "murakami2001",
+      "status": "uncited",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T17:20:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 0,
+      "fix_commit": null,
+      "note": "Murakami 2001 \u2014 possibly intended as murakami-murakami2001 (which IS cited 4 sites). Bib orphan (0 cites)."
+    },
+    {
+      "id": "wigner1960",
+      "status": "uncited",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T17:20:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 0,
+      "fix_commit": null,
+      "note": "Wigner \u2014 'Unreasonable Effectiveness' 1960. Bib orphan (0 cites). Decision: keep as canonical reference / remove."
     }
   ]
 }
