@@ -71,3 +71,31 @@ Scope:
   branch.
 - ❌ Adding compute criteria to the registry before #807 lands —
   let that PR own its domain; offer the schema, don't pre-empt.
+
+## Round 2 — auto-detect-new-skills convention (2026-05-19 T17:47Z)
+
+Added a new rule across three skill files so in-flight branches
+detect newly-added skill files on every `git fetch origin main`
+and prompt the user before adopting (via AskUserQuestion).
+
+| Skill | Section added | What it does |
+|-------|---------------|--------------|
+| `local/watch.md` | §3.Q3a | `/watch` flow: scan `--diff-filter=A` for new `.claude/skills/local/*.md` files; prompt 3-chip adopt/defer/skip |
+| `local/coordinate.md` | §8a-bis | Coordinator triage cycle: same scan during §8 watch-main pass |
+| `local/integration-watcher.md` | §3c | Parent contract: all five integration-watcher children inherit the rule automatically |
+
+Convention published in PR #823 commit `7176d54c`. One-time
+announcement comments posted on the four siblings:
+
+| PR | Comment |
+|----|---------|
+| #820 | [#issuecomment-4490469971](https://github.com/litlfred/qou/pull/820#issuecomment-4490469971) |
+| #806 | [#issuecomment-4490471321](https://github.com/litlfred/qou/pull/806#issuecomment-4490471321) |
+| #738 | [#issuecomment-4490472275](https://github.com/litlfred/qou/pull/738#issuecomment-4490472275) |
+| #807 | [#issuecomment-4490473244](https://github.com/litlfred/qou/pull/807#issuecomment-4490473244) |
+
+Future skill landings (after this round) will be auto-discovered
+by every in-flight branch's next `/watch` or `/coordinate` cycle
+without manual announcement. The cost-saving target is sibling-PR
+review churn caused by branches that didn't know a relevant new
+infrastructure had landed.
