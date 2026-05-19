@@ -1,3 +1,5 @@
+import Mathlib.Algebra.BigOperators.Basic
+
 /-!
 # QOU.ParticleInteractions.mass_categorical_descent — placeholder stub
 
@@ -24,15 +26,22 @@ class MassCategoricalDescentContext where
   m_endo : CategoricalObj → CategoricalObj
   /-- The categorical mass value `m : ℝ`. -/
   m : ℝ
+  /-- Decomposition components from the brane-tower descent (per-level
+      contributions). -/
+  m_level : ℕ → ℝ
+  /-- Number of brane-tower levels in the descent. -/
+  n_levels : ℕ
+  /-- Manuscript sub-claim (i): descent decomposition of `m` as a
+      sum over brane-tower levels. -/
+  claim_i_descent_decomposition :
+    m = (Finset.range n_levels).sum (fun ℓ => m_level ℓ)
   /-- The BW liquid-drop formula value `m_BW : ℝ`. -/
   m_BW : ℝ
-  /-- Manuscript sub-claim (i): the QOU mass formula is the descent
-      decomposition of `𝔪` under the brane-tower blow-up. -/
-  claim_i_descent_decomposition : Prop
-  /-- Manuscript sub-claim (ii): the Bethe–Weizsäcker liquid-drop
-      ansatz is recovered as one phenomenology of the descent
-      decomposition. -/
-  claim_ii_BW_recovery : Prop
+  /-- Relative deviation between categorical and BW values. -/
+  rel_err : ℝ
+  /-- Manuscript sub-claim (ii): BW liquid-drop recovery: the
+      categorical mass approximates BW within `rel_err`. -/
+  claim_ii_BW_recovery : |m - m_BW| ≤ rel_err
 
 /-- **Content statement** (from manuscript):
 
@@ -50,7 +59,8 @@ for the recovered coefficients.
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/mass-categorical-descent.ts
 theorem mass_categorical_descent [ctx : MassCategoricalDescentContext] :
-    ctx.claim_i_descent_decomposition ∧ ctx.claim_ii_BW_recovery :=
+    ctx.m = (Finset.range ctx.n_levels).sum (fun ℓ => ctx.m_level ℓ) ∧
+    |ctx.m - ctx.m_BW| ≤ ctx.rel_err :=
   ⟨ctx.claim_i_descent_decomposition, ctx.claim_ii_BW_recovery⟩
 
 end QOU.ParticleInteractions

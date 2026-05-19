@@ -1,3 +1,5 @@
+import Mathlib.Algebra.BigOperators.Basic
+
 /-!
 # QOU.ParticleInteractions.lp_dual_stability — placeholder stub
 
@@ -40,17 +42,25 @@ class LpDualStabilityContext where
   y_0_star : ℝ
   /-- The target nucleon count `n_target : ℕ`. -/
   n_target : ℕ
-  /-- Manuscript sub-claim (i): primal LP-stability — `Gx* ≥ 0` in all
-      `channels` directions. -/
-  claim_i_primal_stable : Prop
+  /-- The primal solution `x* : Fin channels → ℝ`. -/
+  x_star : Fin channels → ℝ
+  /-- Manuscript sub-claim (i): primal LP-stability — `(Gx*)_i ≥ 0`
+      in all `channels` directions. -/
+  claim_i_primal_stable : ∀ i : Fin channels,
+    0 ≤ (Finset.univ.sum fun j : Fin channels => G i j * x_star j)
   /-- Manuscript sub-claim (ii): dual shadow prices bounded —
       `|y*_i| ≤ κ(G) · ||t||` for every channel `i`. -/
   claim_ii_dual_bounded :
     ∀ i : Fin channels, |y_star i| ≤ κ_G * t_norm
-  /-- Manuscript sub-claim (iii): partial confinement (`σ_0 σ_1⁻¹`)
-      is LP-unstable — `Gx` has negative `σ_0` component
-      `≈ -0.106`. -/
-  claim_iii_sub_braid_unstable : Prop
+  /-- Partial-confinement primal vector `x_partial : Fin channels → ℝ`. -/
+  x_partial : Fin channels → ℝ
+  /-- Sub-braid σ_0 channel index. -/
+  σ_0_idx : Fin channels
+  /-- Manuscript sub-claim (iii): partial confinement is LP-unstable —
+      the σ_0 channel of `G · x_partial` is strictly negative. -/
+  claim_iii_sub_braid_unstable :
+    (Finset.univ.sum fun j : Fin channels =>
+      G σ_0_idx j * x_partial j) < 0
   /-- Manuscript sub-claim (iv): strong duality —
       `tr_M(x*) = y_0* · n_target`. -/
   claim_iv_strong_duality :
@@ -81,9 +91,12 @@ $B_3 \cdot \Phi_{\mathrm{quarks}}$). Then:*
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/lp-dual-stability.ts
 theorem lp_dual_stability [ctx : LpDualStabilityContext] :
-    ctx.claim_i_primal_stable ∧
+    (∀ i : Fin ctx.channels,
+      0 ≤ (Finset.univ.sum fun j : Fin ctx.channels =>
+        ctx.G i j * ctx.x_star j)) ∧
     (∀ i : Fin ctx.channels, |ctx.y_star i| ≤ ctx.κ_G * ctx.t_norm) ∧
-    ctx.claim_iii_sub_braid_unstable ∧
+    (Finset.univ.sum fun j : Fin ctx.channels =>
+      ctx.G ctx.σ_0_idx j * ctx.x_partial j) < 0 ∧
     ctx.tr_M_x_star = ctx.y_0_star * (ctx.n_target : ℝ) :=
   ⟨ctx.claim_i_primal_stable, ctx.claim_ii_dual_bounded,
    ctx.claim_iii_sub_braid_unstable, ctx.claim_iv_strong_duality⟩
