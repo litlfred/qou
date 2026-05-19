@@ -318,6 +318,7 @@ export const references: CSLData[] = [
     volume: "8",
     page: "295-310",
     DOI: "10.2140/gt.2004.8.295",
+    URL: "https://arxiv.org/abs/0311489",
   }),
 
   // ── Fred 2005 (dissertation) ──────────────────────────────────
@@ -535,6 +536,7 @@ export const references: CSLData[] = [
     volume: "2008",
     page: "129-280",
     DOI: "10.4310/CDM.2008.v2008.n1.a3",
+    URL: "https://arxiv.org/abs/0905.0465",
   }),
 
   // ── Turaev 2010 ───────────────────────────────────────────────
@@ -551,6 +553,7 @@ export const references: CSLData[] = [
     "collection-title": "De Gruyter Studies in Mathematics",
     "collection-number": 18,
     DOI: "10.1515/9783110221831",
+    URL: "https://arxiv.org/abs/9409028",
   }),
 
   // ── Witten 1988 ───────────────────────────────────────────────
@@ -585,6 +588,7 @@ export const references: CSLData[] = [
     page: "347-446",
     DOI: "10.1090/conm/560",
     note: "arXiv:1001.2933",
+    URL: "https://arxiv.org/abs/1001.2933",
   }),
 
   // ── Yekutieli 2010 ────────────────────────────────────────────
@@ -602,6 +606,7 @@ export const references: CSLData[] = [
     page: "445-486",
     DOI: "10.1016/j.aim.2010.03.002",
     note: "arXiv:0801.0083",
+    URL: "https://arxiv.org/abs/0801.0083",
   }),
 
   // ── Yekutieli 2008 ────────────────────────────────────────────
@@ -630,6 +635,7 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[2015]] },
     DOI: "10.1142/9537",
     note: "arXiv:1007.1250",
+    URL: "https://arxiv.org/abs/1007.1250",
   }),
 
   // ── Yekutieli 2009 (published 2012) ───────────────────────────
@@ -647,6 +653,7 @@ export const references: CSLData[] = [
     page: "2338-2360",
     DOI: "10.1016/j.jpaa.2012.03.009",
     note: "arXiv:0905.0488",
+    URL: "https://arxiv.org/abs/1103.1035",
   }),
 
   // ── Freed, Hopkins, Lurie, Teleman 2010 ───────────────────────
@@ -1131,6 +1138,7 @@ export const references: CSLData[] = [
     page: "1-20",
     DOI: "10.1007/BF02101594",
     note: "Introduces the quantum dilogarithm",
+    URL: "https://arxiv.org/abs/9408041",
   }),
 
   // ── Jones 1985 ────────────────────────────────────────────────
@@ -1245,6 +1253,7 @@ export const references: CSLData[] = [
     "collection-title": "Mathematical Surveys and Monographs",
     "collection-number": 88,
     DOI: "10.1090/surv/088",
+    URL: "https://arxiv.org/abs/0007054",
   }),
 
   // ── Donaldson 1990 ────────────────────────────────────────────
@@ -1308,6 +1317,7 @@ export const references: CSLData[] = [
     page: "2091-2170",
     DOI: "10.2140/gt.2008.12.2091",
     note: "First circulated 2002",
+    URL: "https://arxiv.org/abs/0505219",
   }),
 
   ref({
@@ -1321,6 +1331,7 @@ export const references: CSLData[] = [
     page: "1-81",
     DOI: "10.1007/s00222-007-0071-0",
     note: "Preprint 2004; introduces the Habiro ring cyclotomic expansion.",
+    URL: "https://arxiv.org/abs/0605314",
   }),
 
   // ── Nuclear shell model (Mayer–Jensen) ──────────────────────────
@@ -1368,6 +1379,7 @@ export const references: CSLData[] = [
     page: "806-809",
     DOI: "10.1103/PhysRevLett.84.806",
     issued: { "date-parts": [[2000]] },
+    URL: "https://arxiv.org/abs/9912015",
   }),
 
   ref({
@@ -1417,6 +1429,7 @@ export const references: CSLData[] = [
     page: "647-691",
     DOI: "10.1103/RevModPhys.81.647",
     issued: { "date-parts": [[2009]] },
+    URL: "https://arxiv.org/abs/0801.2952",
   }),
 
   ref({
@@ -1433,6 +1446,7 @@ export const references: CSLData[] = [
     page: "1334-1341",
     DOI: "10.1038/s41567-021-01403-z",
     issued: { "date-parts": [[2021]] },
+    URL: "https://arxiv.org/abs/2106.09716",
   }),
 
   ref({
@@ -1455,6 +1469,7 @@ export const references: CSLData[] = [
     page: "1264-1267",
     DOI: "10.1126/science.aat5718",
     issued: { "date-parts": [[2019]] },
+    URL: "https://arxiv.org/abs/1801.06951",
   }),
 
   // ── Nature Physics: Kleckner & Irvine 2013 ─────────────────────
@@ -1492,6 +1507,7 @@ export const references: CSLData[] = [
     page: "15350-15355",
     DOI: "10.1073/pnas.1407232111",
     issued: { "date-parts": [[2014]] },
+    URL: "https://arxiv.org/abs/1404.6513",
   }),
 
   // ── PRL: Christenson et al. 1964 (CP violation in kaons) ────────
@@ -1527,6 +1543,7 @@ export const references: CSLData[] = [
     page: "091801",
     DOI: "10.1103/PhysRevLett.87.091801",
     issued: { "date-parts": [[2001]] },
+    URL: "https://arxiv.org/abs/0107013",
   }),
 
   // ── Feynman 1948 ──────────────────────────────────────────────
@@ -1661,6 +1678,7 @@ export const references: CSLData[] = [
     page: "31-38",
     issued: { "date-parts": [[2003]] },
     DOI: "10.1090/S0273-0979-02-00964-3",
+    URL: "https://arxiv.org/abs/0101025",
   }),
 
   // ── Wigner 1960: Unreasonable effectiveness ───────────────────
@@ -1694,6 +1712,7 @@ export const references: CSLData[] = [
     page: "188-195",
     issued: { "date-parts": [[1998]] },
     DOI: "10.1016/S0167-2789(98)00054-2",
+    URL: "https://arxiv.org/abs/9710043",
   }),
 
   // ── Lloyd 2000: Ultimate physical limits to computation ───────
@@ -1709,6 +1728,7 @@ export const references: CSLData[] = [
     page: "1047-1054",
     issued: { "date-parts": [[2000]] },
     DOI: "10.1038/35023282",
+    URL: "https://arxiv.org/abs/9908043",
   }),
 
   // ── Lang 2002: Algebra (Vieta + resultants, §IV.8) ───────────
@@ -1742,6 +1762,7 @@ export const references: CSLData[] = [
     page: "1260-1263",
     issued: { "date-parts": [[1995]] },
     DOI: "10.1103/PhysRevLett.75.1260",
+    URL: "https://arxiv.org/abs/9504004",
   }),
 
   // ── Bekenstein 1981: Entropy-to-energy bound ──────────────────
@@ -1857,6 +1878,7 @@ export const references: CSLData[] = [
     page: "225-267",
     issued: { "date-parts": [[1998]] },
     DOI: "10.2307/121009",
+    URL: "https://arxiv.org/abs/9201282",
   }),
 
   // ── Witten 1984 ───────────────────────────────────────────────
@@ -1963,6 +1985,7 @@ export const references: CSLData[] = [
     issue: "1",
     page: "2-111",
     DOI: "10.1016/j.aop.2005.10.005",
+    URL: "https://arxiv.org/abs/0506438",
   }),
 
   // ── Nayak et al. 2008 ─────────────────────────────────────────
@@ -1984,6 +2007,7 @@ export const references: CSLData[] = [
     issue: "3",
     page: "1083-1159",
     DOI: "10.1103/RevModPhys.80.1083",
+    URL: "https://arxiv.org/abs/0707.1889",
   }),
 
   // ── Bakalov & Kirillov 2001 ───────────────────────────────────
@@ -2314,6 +2338,7 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[2007]] },
     page: "387-533",
     DOI: "10.1007/978-3-540-30308-4_11",
+    URL: "https://arxiv.org/abs/0512172",
   }),
 
   // ── Aganagic–Frenkel–Okounkov 2017 ─────────────────────────────
@@ -2331,6 +2356,7 @@ export const references: CSLData[] = [
     volume: "79",
     page: "1-83",
     DOI: "10.1090/mosc/278",
+    URL: "https://arxiv.org/abs/1701.03146",
   }),
 
   // ── STAR 2021: Breit-Wheeler azimuthal asymmetry ────────────────
@@ -2649,6 +2675,7 @@ export const references: CSLData[] = [
     issue: "1",
     page: "157-190",
     DOI: "10.1307/mmj/1030132713",
+    URL: "https://arxiv.org/abs/0401318",
   }),
 
   // ── Bufetov 2020 (ASEP and Hecke algebras) ──────────────────
