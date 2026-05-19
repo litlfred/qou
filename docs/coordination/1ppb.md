@@ -73,6 +73,13 @@
 | 2026-05-15 | this branch (`claude/review-1ppb-prs-EC0ay`) | **F1-SDP: ⁴He compositional channel fingerprint** — primal T⊕p; D⊕D is most binding-receptive sub-braid | this commit | [`probe_he4_sdp_compositional.py`](../../folio-assistant/computations/probe_he4_sdp_compositional.py) + [`he4-sdp-compositional-probe.witness.json`](../../folio-assistant/computations/he4-sdp-compositional-probe.witness.json). Channel decomposition for ⁴He = (Z=2, N=2): {D⊕D (residual 24.16 MeV), T⊕p (20.38), ³He⊕n (21.18)} against `n_target = Δ_coupling(2,2) = 13.197` MeV. LP solution (cvxpy unavailable → scipy linprog fallback; equivalent for diagonal $G$): strong duality holds (gap = 0), `primal_obj = dual_obj = 268.95`. **Primal**: `x_star = (0, 13.197, 0)` — LP picks T⊕p exclusively to satisfy the binding-residual constraint (channel with smallest per-unit cost). **Dual / shadow prices**: `y_star = (3.778, 0, 0.796)` — D⊕D has the highest receptivity (consistent with the doubly-magic pole-saturation framing); ³He⊕n secondary. **Active set = {D⊕D, ³He⊕n}** — these constraints are tight, meaning the binding would respond most to relaxing the deuteron-pairing channel. Two-tier structural fingerprint: T⊕p carries the primal weight; D⊕D is the most binding-receptive sub-braid. Cross-check via companion braid-composition probe (running in parallel, results pending). |
 | 2026-05-15 | this branch (`claude/review-1ppb-prs-EC0ay`) | **V2 production-wired into `paper_six_term_mass` (compute infra now consistent)** | this commit | New canonical library [`term5_v2_chirality.py`](../../folio-assistant/computations/term5_v2_chirality.py) exposes `aK_v2(Z, N, q_val=Q_0)` (mp.mpf-return; 50-dps-compatible) and `term5_v2_factor(...)`. Wired into both production mass-formula entry points: (a) [`paper_six_term_isotope_sweep.paper_six_term_mass`](../../folio-assistant/computations/paper_six_term_isotope_sweep.py) gains a `chirality_source: "v2" | "closed_form"` flag (default `"v2"`); (b) [`mass_formula_6term_mpfr_50dps.term_5_chirality_bw_mp`](../../folio-assistant/computations/mass_formula_6term_mpfr_50dps.py) gains `chirality_source: "v2" | "bw_legacy"` (default `"v2"`). V2 cache-miss for out-of-window (Z, N) surfaces a routing-decision print and falls back to the legacy path so the sweep completes. Probe [`probe_term5_aK_v2_mirror_chirality.py`](../../folio-assistant/computations/probe_term5_aK_v2_mirror_chirality.py) de-duplicated to import the library — single source of truth. Verified: `aK_v2()` returns 2.4237, 2.1336, 5.2279, 10.4774, 13.9937 for {p, n, D, T, ³He} matching the witness to <1e-9. **`term5_chirality_factor_a_K` everywhere downstream now derives from substrate-V2, not from `chirality_signs_for_isotope` heuristic.** Witness row records `term5_chirality_source` field for routing auditability. Per CLAUDE.md "consistent compute infra" directive: every consumer of `term5_chirality_factor_a_K` (proton/neutron derive paths, isotope sweep, 50-dps mass formula) now reads from the same library function. |
 | 2026-05-15 | [#656](https://github.com/litlfred/qou/pull/656) | **§6 ESCALATION — duplicate H7a-NOT-universal finding + decomposition convention discrepancy** | open `4b55c424` | Sibling Claude session independently arrived at the same "H7a not universal across anchors" headline that this branch's F2 probe found, but with different anchor decomposition. **#656 convention:** `Δ_coupling(2,1) = Δ_cat(³He) − Δ_cat(D)` (previous-magic-shell baseline; consistent extension of #645's `⁴He − 2·³He`). **F2 convention (this branch):** `Δ_coupling(2,1) = Δ_cat(³He) − Δ_cat(D) − Δ_cat(p)` (fully-decomposed baseline). Differences are exactly $\Delta_\mathrm{cat}(p) = -0.544$ and $\Delta_\mathrm{cat}(n) = -0.472$ MeV. **Both agree on the universality refutation** — Z↔N asymmetry is robust under either reading. **Going forward:** #656's convention is canonical (matches #645 original); F2 reading retained per §6 (do-not-silently-rewrite). **Substantive complement from #656:** D-2 substrate-derivation candidate `$\mathrm{Cat}_q(A-1, 1) = [A-1]_q [A-2]_q / ([2]_q [A]_q)$` with Z/N-dependent SYT-shape corrections — sharper than the "$[Z-1]_q [N-1]_q$" guess this branch surfaced. After #656 merges, cherry-pick D-2 acknowledgement into [`2026-05-15-three-pr-integration.md`](../audits/2026-05-15-three-pr-integration.md) (already done in §F2). Escalation comment posted [here](https://github.com/litlfred/qou/pull/656#issuecomment-4463949553). |
+| 2026-05-18 | this branch (`claude/track-a-b-per-isotope-and-rho-xi`) | **TRUE GOAL recodification — 1 ppb compute ALONE is insufficient; goal is L1 (compute ≤ 1 ppb) AND L2 (100× experimental per observable).** Authoritative reference: [`docs/precision-goals.md`](../precision-goals.md). | this commit | L1 trivially met (`_precision.py` default 50 dps; Layer 2 dashboard `max_rel_delta = 0.0`). L2 status (initial snapshot via [`per_observable_100x_status.py`](../../folio-assistant/computations/per_observable_100x_status.py)): **1 / 6 observables beat 100× target** (only m_e CAL-1 anchor by definition); muon misses by 6.5×, Δm_pn by 64×, Q_β by 263×, absolute m_p/m_n by ~81 000×/44 000× (latter two below ~780 ppb CAL-2 floor → research-grade). Split into **Subgoal-1 (achievable)** = 100× targets ≥ floor (Q_β, Δm, binding energies); **Subgoal-2 (declined)** = targets < floor (absolute masses, requires q_0 substrate-derivation declined 2026-05-08). v7 workplan: [`docs/audits/2026-05-18-1ppb-workplan-v7-100x-experimental.md`](../audits/2026-05-18-1ppb-workplan-v7-100x-experimental.md). CLAUDE.md + copilot-instructions.md + session-status.sh updated so all agents read the two-leg target on session start. |
+| 2026-05-18 | [#777](https://github.com/litlfred/qou/pull/777) (this branch) | **Δ_λ gating context surfaced** — Track A binding-energy predictions (D / T / ³He / ⁴He) are gated until Δ_λ has a categorical derivation. Six closure ansätze have failed on the deuteron (Occam single-support, Frobenius co-Casimir 1/dim_q, Demazure-fibre, LP-Plancherel, LP-Frobenius, Crystal-graph). | this commit | New audit: [`docs/audits/2026-05-18-delta-lambda-gating-context.md`](../audits/2026-05-18-delta-lambda-gating-context.md). Diagnosis: M_λ(K) is the Archimedean realization functor's per-block action (GAP-A-3 / GAP-A-4). **Do not propose a 7th fit-based ansatz** — three-calibration discipline review will catch it. Productive paths: GAP-A-3/A-4 resolution (categorical) + Option E (Kashiwara crystal). Surfaced in CLAUDE.md § Precision goals + precision-goals.md binding-energy target table. |
+| 2026-05-18 | [#777](https://github.com/litlfred/qou/pull/777) | **/coordinate sweep — 3 sibling intent comments posted** (#772, #761, #751) | this commit | **#772** (210× scale-gap audit, adjacent): #777's per-observable framing is downstream of #772's ρ_K vs E_0 clarification — [comment](https://github.com/litlfred/qou/pull/772#issuecomment-4481987449). **#761** (combined 10-PR with v6 workplan, supersession): v7 in #777 supersedes v6 — recommend dropping v6 from #761 or letting it land as snapshot-dated then superseded — [comment](https://github.com/litlfred/qou/pull/761#issuecomment-4481990414). **#751** (Workplan-0b/M_N λ_scale R&D, dependency): #751's C2 inflection ≈ 5/2 − h²·G IS the Δm_pn L2 closure path (64× gap reduction) — open question posted re Laurent expansion — [comment](https://github.com/litlfred/qou/pull/751#issuecomment-4481994148). |
+| 2026-05-18 | [#777](https://github.com/litlfred/qou/pull/777) | **N=3 Q_β categorical beats 100× target (24%) — major L2 correction** | this commit | Per-observable script was reading Q_β N=0 (Form A bare, 1.68 ppm err = 215 000× miss). Switched to N=3 categorical (c_3 = -2 = J_Hopf(q=1)) from `q-beta-operator-valued-N3.witness.json`: residual 6.02 ppb < 7.80 ppb target. **L2 score 1/6 → 2/6** beats 100× (m_e + Q_β). Also documented N=4 sign issue in `q-beta-categorical-precision-ladder.md`: boxed form `(1 + (b²+½)·b⁴·ℏ_q⁸)` worsens to +12.6 ppb; sign-flipped `(1 - (b²+½)·b⁴·ℏ_q⁸)` correctly closes to -0.57 ppb. Audit: [`2026-05-18-qbeta-n4-sign-investigation.md`](../audits/2026-05-18-qbeta-n4-sign-investigation.md). |
+| 2026-05-18 | [#751](https://github.com/litlfred/qou/pull/751) | **MERGED** — λ_scale substrate-derivation Routes A/B/C landed on main (`894c3db97`) | merged | C2 inflection structure probe, Route B operator probe, Route C Bring probe, Family A extended variants. v7 in #777 references these as the Δm_pn L2 closure path. Merged into branch; v7 doc updated to cite on-main location rather than the merged PR. |
+| 2026-05-18 | [#776](https://github.com/litlfred/qou/pull/776) | **MERGED** — I12 lake-root retargets + skill prefs (`537240893`) | merged | Skill prefs encoded: (1) one branch / one PR for related things; (2) no parallel agent dispatch without consent; (3) backlog batches large by default. Applied to #777 workflow already. |
+| 2026-05-18 | [#775](https://github.com/litlfred/qou/pull/775) | **MERGED** — I7 stale-probe rerun batch (`81390cac2`) | merged | Pure witness refresh; no scope overlap. |
 
 
 ## Open phases (workplan from `AUDIT-DEEP-2026-05.md` §7)
@@ -159,3 +166,111 @@ Open siblings classified against #683 (canonical χ^λ via fast Rust f64 Hoefsmi
 | # | Question | Resolution |
 |---|----------|------------|
 | 5 | Python vs Rust for ⁴He chi cache compute? | **Both, complementary.** PR #682 ships Python sympy chi-cache reader (covers atoms with built caches); PR #683 ships Rust direct f64 Hoefsmit (covers atoms where caches are partial, faster compute, f64 precision). Same downstream witness consumers can read either via `canonical-tr-m-via-{chi-cache,rust}.witness.json`. |
+
+## 2026-05-19 — /coordinate sweep (PR #777 — SDP-T_β derivation of c_2..c_7)
+
+Open siblings classified against #777 (Q_β precision-ladder + SDP-identified β-decay knot operator):
+
+| Sibling | Title | Overlap | Classification | Cherry-pick |
+|---------|-------|---------|----------------|-------------|
+| [#781](https://github.com/litlfred/qou/pull/781) | mass tables: remove legacy compute, align canonical + Borromean p,n | **complementary** — establishes canonical τ_M(β_p), τ_M(β_n) values that #777's SDP-T_β uses | **dependency** — #781 lands first; #777 consumes canonical τ_M | none (no file conflicts; layered) |
+| [#772](https://github.com/litlfred/qou/pull/772) | 210× scale-gap audit — ρ_K·m_e ≠ E_0^(N=0) | **consistent** — #777 uses E_0 = m_e/(q_0(q_0-1)) framing per #772's clarification | already coordinated in #777 body | none |
+| [#761](https://github.com/litlfred/qou/pull/761) | combined 10-PR bundle (Hoefsmit/GP + chirality + workplan v6) | adjacent layer — Rust Hoefsmit compute under #777's b values | **adjacent** | none (#777's v7 supersedes v6 from #739 in #761) |
+| [#783](https://github.com/litlfred/qou/pull/783) | I13 audit self-recursion fix | unrelated audit infra | **adjacent** | none |
+| [#774](https://github.com/litlfred/qou/pull/774) | I3 audit heuristic tighten | unrelated audit infra | **adjacent** | none |
+| [#738](https://github.com/litlfred/qou/pull/738) | detangler story coherence | editorial infra | **adjacent** | none |
+| [#736](https://github.com/litlfred/qou/pull/736) | wire orphan conjectures + bib entries | content cleanup | **adjacent** | none |
+| [#650](https://github.com/litlfred/qou/pull/650) | q-CLT scope conflict | scope discussion | **adjacent** | none |
+| [#646](https://github.com/litlfred/qou/pull/646) | Lean v4.24.0 lake fix | build infra | **adjacent** | none |
+
+### Intent comment
+
+Posted [#781 comment](https://github.com/litlfred/qou/pull/781#issuecomment-4483890136) — #781 (canonical τ_M) lands first, then #777 (SDP consumer).
+
+### #777 SDP work summary (new since previous /coordinate)
+
+Commits added since v7 docs landing (`8a212bc6c..72c620f9a`):
+
+| Commit | Content |
+|---|---|
+| `0aaabdb64` | Path 1 operator-identification probe (negative result on V_(2,1) alone) |
+| `0c24a8509` | fuller context audit on where c_k enter the framework |
+| `bb7c861c5` | general statement audit — c_k as Taylor coeffs of τ_M(T_β) |
+| `f7403a5ab` | SDP-T_β identification + c_2, c_3 derivation |
+| `5de71f85b` | FULL c_2..c_7 derivation via R(q_0) factorization |
+| `72c620f9a` | honest audit — closed forms are leading-order approximations, c_7 = -8 is wrong |
+
+**Key result:** the SDP-T_β framework with R(q_0) = Q_β/(Q_A·cos) factorization derives c_2..c_7 EXACTLY at q_0. The "empirical c_k" from `binding_q_target_sweep` are tautologically determined by R(q_0). The "closed forms" (c_3·b⁴, -(b²+1/2), 4·b², -8) are leading-order categorical interpretations with accuracy degrading from 0.9% (c_4) to 86%-off (c_7).
+
+### Next concrete tasks queued (per user direction)
+
+1. Multi-loop Kashiwara decomposition exploration (Path A) — categorical proof of c_4 = c_3·b⁴
+2. KLR canonical-basis trace exploration (Path B) — alternative derivation
+3. Spectral-sequence stratification (Path C) — most ambitious
+
+User asked to "ask where you need insight (give context)" for each path — that's the queued follow-up work.
+
+## 2026-05-19 (evening) — PR #777 closing summary: c_4..c_7 first-principles derivation OPEN
+
+PR #777 session concluded with **clear negative results** and a roadmap for follow-up sessions.
+
+### What's proved
+
+| Item | Status | Reference |
+|------|--------|-----------|
+| c_3 = J_Hopf(q=1) = -2 | **proved** | `q-beta-c3-hopf-three-fold-markov.md` Fact 3 (2-strand sub-braid → Hopf-link Jones at q=1) |
+| Per-block χ_λ closed forms | proved (paper, Lean for V_(3)) | `chi-per-irrep-cyclotomic-closed-forms.{md,lean}` |
+| LO ε^1 = (-2, -1, -2) pattern | proved | `per-block-hopf-jones-absorption-pattern.{ts,md,lean}` (new this PR) |
+| SDP-T_β derives c_k from R(q_0) | proved | `qbeta_decay_sdp_full_ck.py` + witness (all 4 assertions pass) |
+| Algebraic factor identity through N=5 | proved (Lean) | `precision_ladder_N5_canonical_compat` (ring identity) |
+
+### What was falsified
+
+| Hypothesis | Result | Reference |
+|------------|--------|-----------|
+| Per-block c_k = Σ_λ dim_q²·c_k^(λ) (framework scaffolding) | **falsified** at c_3 = -2 (gives -8) | `2026-05-19-per-block-ck-extraction-rule.md` |
+| y_λ-weighted uniform c_k^(λ) ≡ c_k | **falsified** at all c_k (q_0 off 28%, q=1 off 25%) | `qbeta_per_block_uniform_rule_verify.py` |
+| Closed forms c_3·b⁴, -(b²+1/2), 4·b², -8 as symbolic identities | **falsified** — leading-order approximations only (c_7 86% off) | `2026-05-19-qbeta-closed-forms-not-symbolic-identities.md` |
+| Hoefsmit operator on V_(2,1) at H_3 generates c_k | **negative** — bare search exhausted | `qbeta_operator_identification_probe.py` |
+| y_λ(q=1) = Plancherel (1/6, 2/3, 1/6) | **incorrect** — actual is (1/2, 1/4, 0) sum=3/4 | `qbeta_per_block_uniform_rule_verify.py` + late audit |
+
+### What's open (queued for follow-up PR scope)
+
+**The c_4..c_7 first-principles derivation remains OPEN**. Currently empirical numerology with leading-order categorical interpretations. Two viable research-grade paths:
+
+1. **Khovanov-Rozansky polynomial of typed-braid Markov closure at finite q** (~1 week+):
+   - Identify the specific link L = closure of typed-B_3 braid for β_n / β_p
+   - Compute Kh(L)(q, t) at finite q (not just q=1 specialisation)
+   - Expand around q=q_0; extract c_k as Taylor coefficients
+   - Requires either tabulated Khovanov polynomials or custom KR implementation
+
+2. **KLR canonical-basis Markov trace formula** (~research project):
+   - Identify per-Wedderburn-block canonical-basis trace formula
+   - Per agent `a7e7c6fc5e9dcdd3f` report: framework has the Hecke-KLR bridge scaffolding (`kazhdan-lusztig-classical-limit.md`, `crystal-basis-resolves-mass-tower-open-problems.lean`) but the explicit per-block trace formula is the gap
+
+3. **Spectral-sequence stratification** (~weeks): abandoned per user direction this PR, but recorded for completeness.
+
+### Downstream validation TODOs (separate PR scope, this PR's TR_M[5] fix triggered)
+
+- [x] Fix pyhecke.gram TR_M[5] = z³ → h·z² + z (this PR commit `239a30e5e`)
+- [x] Fix latent shadowing in pn_alpha_lp_dual.py + molecular-frobenius-lp.py (this PR `de39188a6`)
+- [x] Regenerate 5 affected downstream witnesses (this PR `de39188a6`)
+- [ ] **Update content blocks** that quote pre-fix Gram values (gram_det = -0.36 → -0.19, Markov trace e_- = 0.124 → 0.551). Anti-staleness `:val[...]` syntax is in place — extending coverage to all ~12 candidate sites identified by Path-3 background agent is a follow-up.
+- [ ] **Verify against existing test suites** any content blocks that reference the regenerated witnesses' numerical claims.
+
+### Cross-PR dependencies noted
+
+- PR #781 (canonical mass tables): merged-ready; my SDP-T_β uses #781's canonical τ_M(β_p), τ_M(β_n) values. Merge order: #781 first, then #777.
+- PR #792 (refs + LP-dual repairs): merged into main 2026-05-19. Did NOT include TR_M[5] fix. Their 3 LP-dual repair witnesses (option_b_proton_mass_full_chain, probe_braid_word_basis_gram, probe_sdp_active_set_dominant_partition) may carry pre-fix Gram-derived values — needs verification post-rebase of #777.
+
+### Files added/changed in #777 (counts)
+
+- Audit docs: 8 new (`docs/audits/2026-05-18-*.md`, `docs/audits/2026-05-19-*.md`)
+- Lean blocks: 1 new (`per-block-hopf-jones-absorption-pattern.lean`)
+- Content blocks: 2 new (`per-block-hopf-jones-absorption-pattern.{ts,md}`) + 1 updated (`per-wedderburn-block-c5-c6.md`)
+- Compute scripts: 6 new (qbeta_*.py)
+- Witnesses: 7 regenerated + 6 new
+- Bug fixes: pyhecke.gram TR_M[5], 2 latent shadowing bugs
+- Content updates with `:val[...]` anti-staleness: 4 files + 8 registry entries
+
+Total: 33 commits, +5500 lines, -200 lines.

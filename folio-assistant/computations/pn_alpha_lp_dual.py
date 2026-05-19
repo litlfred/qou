@@ -203,7 +203,9 @@ def binding_at_alpha(Z, N, pn_alpha: float) -> dict:
 
 NF_BASIS = _PG_NF_BASIS  # moved to pyhecke.gram
 NF_NAMES = ["γ", "σ₀", "σ₁", "L₊", "L₋", "e⁻"]
-TR_M_BASIS = np.array([1.0, z_mark, z_mark, z_mark**2, z_mark**2, z_mark**3])
+# e⁻ Markov trace is h·z² + z (NOT z³); see docs/audits/2026-05-19-trm5-markov-bug.md
+TR_M_BASIS = np.array([1.0, z_mark, z_mark, z_mark**2, z_mark**2,
+                        h * z_mark**2 + z_mark])
 
 
 def hecke_mul(t1, t2):

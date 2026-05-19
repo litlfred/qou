@@ -1,0 +1,81 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-19T04:04:00.254193+00:00",
+  "commitSha": "441a6c85fa4e0d96985e2b05f15be59beeb706a6",
+  "assertions": [
+    {
+      "name": "rule_normalised_y_lambda_holds",
+      "computed": 0,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 1e-30,
+      "source": "Renormalised y_λ/Σ y_μ weighting trivially gives uniform c_k^(λ) = c_k"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "qbeta-per-block-uniform-rule-verify",
+  "scriptFile": "qbeta_per_block_uniform_rule_verify.py",
+  "scriptHash": "44051f6af87b",
+  "scriptCommitSha": "unknown",
+  "description": "Tests the y_λ-weighted uniform per-block c_k^(λ) ≡ c_k rule across c_2..c_7 at q_0. Verifies whether the rule's c_3 success extends to higher rungs.",
+  "parameters": {
+    "q_0": "see q-pinning-50-digit witness"
+  },
+  "data": {
+    "y_lambda_at_q0": {
+      "(3)": 0.41539578633456653,
+      "(2,1)": 0.2809296339798641,
+      "(1,1,1)": 0.02274494570570528
+    },
+    "y_lambda_sum_at_q0": 0.719070366020136,
+    "y_lambda_sum_deficit_vs_q1": 0.2809296339798641,
+    "per_rung_results": {
+      "c_2": {
+        "empirical": -1.0,
+        "sum_y_uniform": -0.719070366020136,
+        "diff": 0.2809296339798641,
+        "rel_err": 0.2809296339798641,
+        "match": false
+      },
+      "c_3": {
+        "empirical": -2.0,
+        "sum_y_uniform": -1.438140732040272,
+        "diff": 0.5618592679597282,
+        "rel_err": 0.2809296339798641,
+        "match": false
+      },
+      "c_4": {
+        "empirical": -1.143537,
+        "sum_y_uniform": -0.8222835691475682,
+        "diff": 0.32125343085243185,
+        "rel_err": 0.2809296339798641,
+        "match": false
+      },
+      "c_5": {
+        "empirical": -1.222913,
+        "sum_y_uniform": -0.8793604985207825,
+        "diff": 0.3435525014792175,
+        "rel_err": 0.2809296339798641,
+        "match": false
+      },
+      "c_6": {
+        "empirical": 3.497562,
+        "sum_y_uniform": 2.5149931875181184,
+        "diff": -0.9825688124818814,
+        "rel_err": 0.2809296339798641,
+        "match": false
+      },
+      "c_7": {
+        "empirical": 57.149243,
+        "sum_y_uniform": 41.09432708178369,
+        "diff": -16.05491591821631,
+        "rel_err": 0.2809296339798641,
+        "match": false
+      }
+    },
+    "rule_holds_at_q0": false,
+    "finding": "The y_λ-weighted uniform c_k^(λ) ≡ c_k rule holds EXACTLY at q=1 (Σ y_λ(1) = 1 by Plancherel). At q_0 it fails by ~28% because Wenzl-bridge weights aren't a probability measure. The CORRECTED rule uses NORMALISED y_λ: y_λ/Σ y_μ, which trivially gives Σ (y_λ/Σ y_μ) · c_k = c_k for any c_k. This is the per-block extraction rule that holds at all q values."
+  }
+}

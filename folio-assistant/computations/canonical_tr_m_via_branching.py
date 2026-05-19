@@ -211,14 +211,44 @@ def compute_chi_lambda_via_branching(
         for xi in partitions_of(3):
             rho_xi[xi] = get_rho_h3(first_nuc, xi)
     else:
-        # Recursive: ρ_ξ(β_inner) at H_{n_inner} via branching
-        for xi in partitions_of(n_inner):
-            # Reduce the (A-1)-nucleon atom's contribution to ξ.
-            # NOTE: this is the recursive case — for A ≥ 3 we'd build
-            # this by another branching pass. To keep this initial
-            # implementation tractable, we only handle A=2 end-to-end
-            # for now (deuteron). A ≥ 3 needs the recursion.
-            return None
+        # A ≥ 3: ρ_ξ(β_inner) for the (A-1)-nucleon prefix.
+        #
+        # NAIVE direct-eval at H_{n_inner} (evaluate_word_matrix_np on
+        # atom_braid_word_3A(Z_inner, N_inner)) does NOT work with the
+        # current A^λ_{ξν}(I_A) extracts at H_9 / H_12 / H_15 / H_18.
+        #
+        # ROOT CAUSE: the H_9+ extracts are produced by least-squares
+        # fitting over a small set of H_3 test words for the inner
+        # family. For every partition λ ⊢ 9 with d_λ > 1 the bilinear
+        # system is RANK-DEFICIENT (e.g. λ=[8,1] has n_unknowns=30,
+        # n_equations=144, rank=14; λ=[4,3,1,1] has n_unknowns=3390,
+        # rank=66). The fitted A matrix is the min-norm solution for
+        # H_3 inner-test-words, NOT a universal interface operator.
+        # When the inner braid is a 2-nucleon deuteron at H_6 instead
+        # of a single nucleon at H_3, the same A matrix gives wrong
+        # χ^λ. Empirically: A=2 deuteron matches markov_peel at 7e-15
+        # (H_6 extract IS full-rank); A=3 tritium/³He differ from
+        # markov_peel by 21-42 % (H_9 extracts are under-fitted).
+        #
+        # CLOSURE PATHS (documented for follow-up):
+        #
+        #   (a) Regenerate H_9 / H_12 / H_15 / H_18 extracts with a
+        #       test-word set large enough to make rank ≥ n_unknowns
+        #       for every λ. For H_9 [4,3,1,1] this requires
+        #       ≥ 3390 test words; for H_18 [3,3,3,3,3,3] it explodes.
+        #
+        #   (b) Build a TRULY recursive ρ_ξ via the matrix-form Wenzl
+        #       branching identity (requires the operator-form A^λ
+        #       reconstruction, not just the trace form).
+        #
+        #   (c) Fall back to canonical markov_peel.tr_M_atomic for the
+        #       inner — gives the correct |tr_M| symbolically at any q,
+        #       at the cost of bypassing the branching combiner's
+        #       speedup.
+        #
+        # For now, return None with a clear diagnostic so callers
+        # don't get silently-wrong A=3 values.
+        return None
 
     # Outer interface: between nucleon (A-1) (=first nucleon for A=2)
     # and nucleon A (=second)
@@ -318,10 +348,13 @@ def compute_tr_m_via_branching(
         return None, 0.0, "A < 2: branching combiner inapplicable (use direct H_3 path)"
     if A >= 3:
         return None, 0.0, (
-            f"A={A}: recursive ρ_ξ(β_inner) at H_{3*(A-1)} not yet "
-            "implemented. Skeleton supports A=2 (deuteron) only; "
-            "extending to A ≥ 3 requires a recursive branching pass "
-            "(deferred)."
+            f"A={A}: recursive ρ_ξ(β_inner) at H_{3*(A-1)} blocked by "
+            "underdetermined H_9+ extracts (rank ≪ n_unknowns; A^λ "
+            "matrices are least-squares fits over the H_3 inner-test "
+            "family, NOT universal). See canonical_tr_m_via_branching."
+            "compute_chi_lambda_via_branching docstring for closure "
+            "paths. A=2 (deuteron) is the only end-to-end case via "
+            "this combiner; for A ≥ 3 use markov_peel.tr_M_atomic."
         )
 
     # Load required extracts

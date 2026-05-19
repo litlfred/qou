@@ -1,0 +1,394 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-18T23:35:29.016761+00:00",
+  "commitSha": "90502dca9e06bf83198c5a89b19d5faee87dba7c",
+  "assertions": [
+    {
+      "name": "c_3_exact_match",
+      "computed": -2,
+      "expected": -2,
+      "passed": true,
+      "tolerance": 0,
+      "source": "J_Hopf(q=1) = -2 matches empirical c_3 exactly"
+    },
+    {
+      "name": "c_5_within_2pct_of_13",
+      "computed": 0.014278703502148276,
+      "expected": 0,
+      "passed": true,
+      "tolerance": 0.02,
+      "source": "cohomological-strata conjecture c_5 = 13 = Kh(Hopf)+Kh(Borr)+1"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "khovanov-klr-rank-cohomology-probe",
+  "scriptFile": "khovanov_klr_rank_cohomology_probe.py",
+  "scriptHash": "0d3f018825df",
+  "scriptCommitSha": "unknown",
+  "description": "Cohomological-strata probe for Q_β precision-ladder c_k. Tests whether empirical c_4, c_5 decompose as (integer Khovanov rank or KLR canonical-basis dim) − α·b² for clean integer α. Exploratory; the residual α values indicate where further strata or q-deformations would close the categorical derivation.",
+  "data": {
+    "klr_canonical_dimensions": [
+      {
+        "shape": [
+          2
+        ],
+        "n": 2,
+        "klr_canonical_dim": 3
+      },
+      {
+        "shape": [
+          1,
+          1
+        ],
+        "n": 2,
+        "klr_canonical_dim": 1
+      },
+      {
+        "shape": [
+          3
+        ],
+        "n": 3,
+        "klr_canonical_dim": 10
+      },
+      {
+        "shape": [
+          2,
+          1
+        ],
+        "n": 3,
+        "klr_canonical_dim": 8
+      },
+      {
+        "shape": [
+          1,
+          1,
+          1
+        ],
+        "n": 3,
+        "klr_canonical_dim": 1
+      },
+      {
+        "shape": [
+          4
+        ],
+        "n": 4,
+        "klr_canonical_dim": 35
+      },
+      {
+        "shape": [
+          3,
+          1
+        ],
+        "n": 4,
+        "klr_canonical_dim": 45
+      },
+      {
+        "shape": [
+          2,
+          2
+        ],
+        "n": 4,
+        "klr_canonical_dim": 20
+      },
+      {
+        "shape": [
+          2,
+          1,
+          1
+        ],
+        "n": 4,
+        "klr_canonical_dim": 15
+      },
+      {
+        "shape": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "n": 4,
+        "klr_canonical_dim": 1
+      },
+      {
+        "shape": [
+          5
+        ],
+        "n": 5,
+        "klr_canonical_dim": 126
+      },
+      {
+        "shape": [
+          4,
+          1
+        ],
+        "n": 5,
+        "klr_canonical_dim": 224
+      },
+      {
+        "shape": [
+          3,
+          2
+        ],
+        "n": 5,
+        "klr_canonical_dim": 175
+      },
+      {
+        "shape": [
+          3,
+          1,
+          1
+        ],
+        "n": 5,
+        "klr_canonical_dim": 126
+      },
+      {
+        "shape": [
+          2,
+          2,
+          1
+        ],
+        "n": 5,
+        "klr_canonical_dim": 75
+      },
+      {
+        "shape": [
+          2,
+          1,
+          1,
+          1
+        ],
+        "n": 5,
+        "klr_canonical_dim": 24
+      },
+      {
+        "shape": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "n": 5,
+        "klr_canonical_dim": 1
+      }
+    ],
+    "khovanov_ranks_at_q1": {
+      "unknot": {
+        "L": 1,
+        "J_at_1": 1,
+        "Kh_rank": 2
+      },
+      "Hopf_pos": {
+        "L": 2,
+        "J_at_1": -2,
+        "Kh_rank": 4
+      },
+      "Hopf_neg": {
+        "L": 2,
+        "J_at_1": -2,
+        "Kh_rank": 4
+      },
+      "trefoil_3_1_R": {
+        "L": 1,
+        "J_at_1": -3,
+        "Kh_rank": 4
+      },
+      "trefoil_3_1_L": {
+        "L": 1,
+        "J_at_1": -3,
+        "Kh_rank": 4
+      },
+      "figure_8_4_1": {
+        "L": 1,
+        "J_at_1": -3,
+        "Kh_rank": 5
+      },
+      "5_1": {
+        "L": 1,
+        "J_at_1": 1,
+        "Kh_rank": 6
+      },
+      "5_2": {
+        "L": 1,
+        "J_at_1": -3,
+        "Kh_rank": 6
+      },
+      "Solomon_4_2_1": {
+        "L": 2,
+        "J_at_1": 4,
+        "Kh_rank": 8
+      },
+      "Whitehead_5_2_1": {
+        "L": 2,
+        "J_at_1": 0,
+        "Kh_rank": 8
+      },
+      "Borromean_6_3_2": {
+        "L": 3,
+        "J_at_1": 4,
+        "Kh_rank": 8
+      },
+      "6_1": {
+        "L": 1,
+        "J_at_1": -7,
+        "Kh_rank": 9
+      }
+    },
+    "empirical_c_values": {
+      "c_3_categorical_exact": -2,
+      "c_3_categorical_source": "J_Hopf(q=1)",
+      "c_4_empirical_exact_closure": -1.143537,
+      "c_4_doc_categorical_form": -1.252702113845058,
+      "c_4_doc_residual_relative": 0.09546268624894341,
+      "c_5_empirical_exact_closure": 12.81699,
+      "c_5_conjecture_13": 13,
+      "c_5_conjecture_13_residual_relative": 0.014278703502148276
+    },
+    "c_4_decompositions_top10": [
+      {
+        "source": "J(Hopf_pos@q=1)",
+        "D": -2.0,
+        "alpha": -1.137851195375148,
+        "near_integer": false,
+        "decomposition": "-2 - (-1.1379)·b²"
+      },
+      {
+        "source": "J(Hopf_neg@q=1)",
+        "D": -2.0,
+        "alpha": -1.137851195375148,
+        "near_integer": false,
+        "decomposition": "-2 - (-1.1379)·b²"
+      },
+      {
+        "source": "J(Whitehead_5_2_1@q=1)",
+        "D": 0.0,
+        "alpha": 1.519242445272838,
+        "near_integer": false,
+        "decomposition": "0 - (1.5192)·b²"
+      },
+      {
+        "source": "J(trefoil_3_1_R@q=1)",
+        "D": -3.0,
+        "alpha": -2.466398015699141,
+        "near_integer": false,
+        "decomposition": "-3 - (-2.4664)·b²"
+      },
+      {
+        "source": "J(trefoil_3_1_L@q=1)",
+        "D": -3.0,
+        "alpha": -2.466398015699141,
+        "near_integer": false,
+        "decomposition": "-3 - (-2.4664)·b²"
+      },
+      {
+        "source": "J(figure_8_4_1@q=1)",
+        "D": -3.0,
+        "alpha": -2.466398015699141,
+        "near_integer": false,
+        "decomposition": "-3 - (-2.4664)·b²"
+      },
+      {
+        "source": "J(5_2@q=1)",
+        "D": -3.0,
+        "alpha": -2.466398015699141,
+        "near_integer": false,
+        "decomposition": "-3 - (-2.4664)·b²"
+      },
+      {
+        "source": "J(unknot@q=1)",
+        "D": 1.0,
+        "alpha": 2.8477892655968313,
+        "near_integer": false,
+        "decomposition": "1 - (2.8478)·b²"
+      },
+      {
+        "source": "J(5_1@q=1)",
+        "D": 1.0,
+        "alpha": 2.8477892655968313,
+        "near_integer": false,
+        "decomposition": "1 - (2.8478)·b²"
+      },
+      {
+        "source": "Kh_rank(unknot)",
+        "D": 2.0,
+        "alpha": 4.176336085920824,
+        "near_integer": false,
+        "decomposition": "2 - (4.1763)·b²"
+      }
+    ],
+    "c_5_decompositions_top10": [
+      {
+        "source": "Kh(Hopf) + Kh(Borromean) + 1",
+        "D": 13.0,
+        "alpha": 0.24313735358749322,
+        "near_integer": false,
+        "decomposition": "13 - (0.2431)·b²"
+      },
+      {
+        "source": "Kh(Borromean) + Kh(trefoil) + 1",
+        "D": 13.0,
+        "alpha": 0.24313735358749322,
+        "near_integer": false,
+        "decomposition": "13 - (0.2431)·b²"
+      },
+      {
+        "source": "(-J_Hopf)^2 + (-J_Hopf)^3 + 1",
+        "D": 13.0,
+        "alpha": 0.24313735358749322,
+        "near_integer": false,
+        "decomposition": "13 - (0.2431)·b²"
+      },
+      {
+        "source": "|J(Borromean)| · 3 + 1",
+        "D": 13.0,
+        "alpha": 0.24313735358749322,
+        "near_integer": false,
+        "decomposition": "13 - (0.2431)·b²"
+      },
+      {
+        "source": "|J(Borromean)| · 3",
+        "D": 12.0,
+        "alpha": -1.0854094667364997,
+        "near_integer": false,
+        "decomposition": "12 - (-1.0854)·b²"
+      },
+      {
+        "source": "Kh(Hopf) + Kh(figure_8) + 1",
+        "D": 10.0,
+        "alpha": -3.7425031073844854,
+        "near_integer": false,
+        "decomposition": "10 - (-3.7425)·b²"
+      },
+      {
+        "source": "Kh_rank(6_1)",
+        "D": 9.0,
+        "alpha": -5.071049927708478,
+        "near_integer": false,
+        "decomposition": "9 - (-5.0710)·b²"
+      },
+      {
+        "source": "Kh(Hopf) + Kh(trefoil) + 1",
+        "D": 9.0,
+        "alpha": -5.071049927708478,
+        "near_integer": false,
+        "decomposition": "9 - (-5.0710)·b²"
+      },
+      {
+        "source": "Kh_rank(Solomon_4_2_1)",
+        "D": 8.0,
+        "alpha": -6.399596748032471,
+        "near_integer": false,
+        "decomposition": "8 - (-6.3996)·b²"
+      },
+      {
+        "source": "Kh_rank(Whitehead_5_2_1)",
+        "D": 8.0,
+        "alpha": -6.399596748032471,
+        "near_integer": false,
+        "decomposition": "8 - (-6.3996)·b²"
+      }
+    ]
+  }
+}
