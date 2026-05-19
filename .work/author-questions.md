@@ -17,6 +17,27 @@ Each question has 2-4 concrete options to pick from.
 - Sobolev blocks (~5) → `QOU.Shared.SobolevHkRegularityContext`
 - ~108 hand-crafted blocks remain with bespoke typed fields (not refactored — already have substantive content)
 
+## Status — Backlog-exhaustion grind (2026-05-19 late evening)
+
+After this round (38 newly-typed blocks):
+
+- 118 files still carry abstract `: Prop` (down from 143 at session start)
+- 73 commits ahead of `origin/main`
+- 259 Lean files modified vs main
+
+Most-typed identity classes covered in this round:
+
+| Identity shape | Examples |
+|----------------|----------|
+| Closed-form equation | `shift = 18Z + 21N + 1`, `m_𝔋 = (q − 1)² · |q − q⁻¹| · Σ|c_w|`, `n_R = t_P = q/(q − 1) = 1/ℏ_q` |
+| Inequality bound | `\|T(ρ) − ℏ_q² Δ⁽¹⁾(ρ)\| ≤ ℏ_q⁴‖ρ‖q⁻²/(1 − q⁻²)`, `‖B(v)‖ ≤ C_q‖v‖‖d_q v‖` |
+| Energy / spectral law | `μ_k = [k]_q²`, `E_q(k) = C_q ε^{2/3} [k]_q^{-5/3}` |
+| Matrix-product identity | Vieta `λ_+λ_− = −1`, Binet formula for `(T^n)_{ij}` |
+| Move-by-move trace law | Reidemeister table (R1, R2_q, R3, far-commute, Markov-I/II) |
+| `iff` characterisation | NS-blowup iff Levi-form positive, parity-mirror iff `q = q⁻¹` |
+| Conditional regime | parity_regime_selection (`A` parity dispatches Q-value formula) |
+| Cocycle / group law | fibre-functor atlas `g(i,k) = g(j,k) · g(i,j)` |
+
 ## Status — Backlog-exhaustion continuation (2026-05-19 evening)
 
 19 more blocks hand-crafted with typed sub-claims in this round
