@@ -1,20 +1,20 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T04:55:48.071066+00:00",
-  "commitSha": "1ee29eb6165f64358bb483f3fba5ec0ad66fd479",
+  "computedAt": "2026-05-19T05:17:18.790378+00:00",
+  "commitSha": "0b4ed0a2e04ce91e7f376bd32f9f9185f16e567a",
   "assertions": [
     {
       "name": "no_error_kind_entries",
-      "computed": 0.0,
+      "computed": 1.0,
       "expected": 1.0,
-      "passed": false,
+      "passed": true,
       "tolerance": 0.0,
       "unit": "boolean (1.0 = every witness covers its enumerated scope)",
       "source": "Closure gate: when this passes, every production witness has a complete row set for its declared atom / partition / block scope."
     }
   ],
-  "allPassed": false,
+  "allPassed": true,
   "durationMs": 7,
   "computation": "incomplete-coverage-audit",
   "scriptFile": "incomplete_coverage_audit.py",
@@ -23,95 +23,11 @@
   "description": "I13 audit per local/compute-integration-watcher: every folio-assistant/computations/*.witness.json is walked for `error_kind` fields anywhere in the JSON tree.  Each hit records the per-entry failure mode + sibling fields (which typically identify the failing atom/partition/label), giving a follow-up agent the per-entry queue needed to extend the upstream producer's coverage.",
   "contentBlock": "I13 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
-    "total_witnesses_with_errors": 1,
-    "total_error_entries": 6
+    "total_witnesses_with_errors": 0,
+    "total_error_entries": 0
   },
   "data": {
-    "error_kind_totals": {
-      "unknown": 6
-    },
-    "rows": [
-      {
-        "witness": "folio-assistant/computations/paper-six-term-isotope-sweep.witness.json",
-        "total_error_entries": 6,
-        "by_kind": {
-          "unknown": 6
-        },
-        "sample_entries": [
-          {
-            "json_path": "all_modes.habiro.rows.3",
-            "error_kind": "unknown",
-            "siblings": {
-              "isotope": "T",
-              "Z": 1,
-              "N": 2,
-              "A": 3,
-              "M_codata": 2809.432,
-              "error": "KeyError: \"tower_mode='habiro': atom 'T' missing from path-b-habiro-mass-probe.witness.json; current coverage = ['p', 'n', 'D']. Extend habiro-coefficients-atomic.witness.json upstream.\""
-            }
-          },
-          {
-            "json_path": "all_modes.habiro.rows.4",
-            "error_kind": "unknown",
-            "siblings": {
-              "isotope": "3He",
-              "Z": 2,
-              "N": 1,
-              "A": 3,
-              "M_codata": 2809.413,
-              "error": "KeyError: \"tower_mode='habiro': atom '3He' missing from path-b-habiro-mass-probe.witness.json; current coverage = ['p', 'n', 'D']. Extend habiro-coefficients-atomic.witness.json upstream.\""
-            }
-          },
-          {
-            "json_path": "all_modes.habiro.rows.5",
-            "error_kind": "unknown",
-            "siblings": {
-              "isotope": "4He",
-              "Z": 2,
-              "N": 2,
-              "A": 4,
-              "M_codata": 3728.401,
-              "error": "KeyError: \"tower_mode='habiro': atom '4He' missing from path-b-habiro-mass-probe.witness.json; current coverage = ['p', 'n', 'D']. Extend habiro-coefficients-atomic.witness.json upstream.\""
-            }
-          },
-          {
-            "json_path": "all_modes.per-partition-k.rows.0",
-            "error_kind": "unknown",
-            "siblings": {
-              "isotope": "p",
-              "Z": 1,
-              "N": 0,
-              "A": 1,
-              "M_codata": 938.272,
-              "error": "KeyError: \"tower_mode='per-partition-k': atom 'p' (probe key 'p') missing from probe-phiq-per-partition-klambda.witness.json; current coverage = ['deuteron', 'tritium', 'he3']. Extend probe-phiq-per-partition-klambda.witness.json upstream.\""
-            }
-          },
-          {
-            "json_path": "all_modes.per-partition-k.rows.1",
-            "error_kind": "unknown",
-            "siblings": {
-              "isotope": "n",
-              "Z": 0,
-              "N": 1,
-              "A": 1,
-              "M_codata": 939.565,
-              "error": "KeyError: \"tower_mode='per-partition-k': atom 'n' (probe key 'n') missing from probe-phiq-per-partition-klambda.witness.json; current coverage = ['deuteron', 'tritium', 'he3']. Extend probe-phiq-per-partition-klambda.witness.json upstream.\""
-            }
-          },
-          {
-            "json_path": "all_modes.per-partition-k.rows.5",
-            "error_kind": "unknown",
-            "siblings": {
-              "isotope": "4He",
-              "Z": 2,
-              "N": 2,
-              "A": 4,
-              "M_codata": 3728.401,
-              "error": "KeyError: \"tower_mode='per-partition-k': atom '4He' (probe key '4He') missing from probe-phiq-per-partition-klambda.witness.json; current coverage = ['deuteron', 'tritium', 'he3']. Extend probe-phiq-per-partition-klambda.witness.json upstream.\""
-            }
-          }
-        ]
-      }
-    ]
+    "error_kind_totals": {},
+    "rows": []
   }
 }
