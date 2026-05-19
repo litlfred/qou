@@ -444,6 +444,7 @@ export default chapter({
       blocks: [
         "q-beta-categorical-precision-ladder",
         "c5-involution-leibniz-decomposition",
+        "bar-symmetric-three-layer-synthesis",
         "markov-axioms-primitive",
         "markov-trace-inductive-limit",
         "braid-link-types",

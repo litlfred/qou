@@ -14,6 +14,20 @@
 > See [`prop:averaging-resonance-rule`](#prop:averaging-resonance-rule)
 > §"Why $k = 5$ specifically".
 
+> **Pentagon-reduction cross-link.** The Leibniz expansion in
+> step 3 below uses the q-dilogarithm pentagon identity
+> implicitly. The algebraic identity making this rigorous in
+> $\mathbb{Z}[q^{\pm 1}]$ for $|z| \ge q$ via duplication
+> $u = v = i\sqrt{|z|}$, plus the post-$\tau$ $\log_q^2$
+> correction, lives on `main` in
+> [`pentagon_reduction_li2q.py`](../../../folio-assistant/computations/pentagon_reduction_li2q.py)
+> with audit doc
+> [`2026-05-19-pentagon-reduction-li2q.md`](../../../docs/audits/2026-05-19-pentagon-reduction-li2q.md).
+> Cross-link: the *Pentagon coherence layer* of $c_5$'s
+> decomposition (one of the three layers in
+> [`prop:bar-symmetric-three-layer-synthesis`](#prop:bar-symmetric-three-layer-synthesis))
+> is what `pentagon_reduction_li2q.py` makes algebraic.
+
 **Proposition ($c_5$ involution + Leibniz decomposition).**
 
 *Let $c_5(q)$ be the precision-ladder coefficient at rung $N=5$ in

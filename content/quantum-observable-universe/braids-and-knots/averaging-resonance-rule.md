@@ -264,6 +264,119 @@ categorical action. The involution interpretation **supplies the
 magnitude** of the fingerprint ($1/2 = h/2$ at silver ratio); the
 half-fill hypothesis **supplies the rung**.
 
+### Why $c_5$ is an outlier at silver but **not** at golden ratio
+
+The c_5 closed form $-(b^2 + 1/2)$ depends on the quadratic-field
+choice through $b^2$. At two natural quadratic fields:
+
+| | **Silver** $q = 1+\sqrt 2$ | **Golden** $q = \varphi = (1+\sqrt 5)/2$ |
+|---|---|---|
+| $h = q - q^{-1}$ | $2$ | $1$ |
+| Hecke quadratic | $\sigma^2 = 2\sigma + 1$ | $\sigma^2 = \sigma + 1$ |
+| Integer ring | $\mathbb{Z}[1+\sqrt 2]$ | $\mathbb{Z}[\varphi]$ |
+| $[n]_q$ for $n$ odd | Pell-Lucas $a_n$ | Lucas $L_n$ |
+| $b^2$ | $7/8$ exactly | $4/5$ exactly |
+| $c_5 = -(b^2 + 1/2)$ | $-11/8$ | $-13/10$ |
+| $c_5$ numerator | **$11$ inert in $\mathbb{Z}[1+\sqrt 2]$** | **$13 = F_7$ Fibonacci** |
+| $c_5$ clean? | **NO — outlier** | **YES — in natural closure** |
+| $\Delta(\mathrm{net}) = h(h-2)/2$ | $0$ — β-decay null | $-1/2$ — NOT a null |
+
+**The c_5 outlier is silver-specific**, not a universal property of
+the precision ladder. The chain of reasoning:
+
+1. $\Delta(\mathrm{net}) = h(h-2)/2$ has a root at $h = 2$ (silver),
+   not at $h = 1$ (golden) or any other small $h$.
+2. At the β-decay null ($h = 2$), proton/neutron Markov traces
+   become categorically indistinguishable — the system collapses
+   into the bar-invariant fixed-point sector.
+3. That collapse leaves an inert-prime fingerprint ($11$, the
+   first inert prime in $\mathbb{Z}[1+\sqrt 2]$) in the c_5
+   numerator.
+4. At golden ratio there is no analogous null at small $h$, so no
+   forced collapse, and $c_5$'s numerator stays inside the natural
+   closure (Fibonacci $13 = F_7$).
+
+So "c_5 is the outlier" is more precisely **"c_5 is the outlier at
+the β-decay null, which is silver"**. The half-fill hypothesis
+$k_{\text{outlier}} = \lfloor n_{\text{total}}/2 \rfloor$ predicts
+which rung; the integer-ring-of-the-quadratic-null determines
+whether the numerator there is clean (golden) or inert-prime
+(silver).
+
+**Falsifiable**: if one constructs a different observable whose
+null occurs at $q = \varphi$, the c_k closed forms in that frame
+would exhibit Fibonacci-analog outliers at the half-fill rung of
+*that* braid recipe — same structural mechanism, different integer
+ring. The silver-specific $11$ is the algebraic fingerprint of the
+**unique observed null** ($Q_\beta$), not a universal precision-
+ladder feature.
+
+### Refinement: bar-symmetric projection is *universal*, not local
+
+The "involution supplies the magnitude" framing above is a *local*
+statement (single-layer, series-level). Per
+[`prop:bar-symmetric-three-layer-synthesis`](#prop:bar-symmetric-three-layer-synthesis),
+the same bar-symmetric projection $P_{\mathrm{avg}} = (1 + \overline{(\cdot)})/2$
+operates at three independent layers of the framework:
+
+| Layer | This rule lives here | Bar-anti-sym kernel | Bar-sym projection |
+|---|---|---|---|
+| **Series** | THIS proposition's $c_5$ outlier | Hopf-link bar-skew | $-1/2$ in $c_5$ |
+| **Phase** | $N=1$ rung in master $Q_\beta$ | $\alpha = (z-1)h/2$ (bar-odd) | $\cos(\alpha - b\hbar_q^2/2)$ |
+| **Gain** | per-$Z$ step factor | $h$ (bar-odd) | $[3]_q^2 \cdot \cosh(h)$, 0.022% empirical |
+
+So the $-1/2$ in $c_5$ is the *series-layer avatar* of the same
+universal categorical operator that produces $\cos$ at phase and
+$\cosh$ at gain. The "involution" framing isolated this at the
+series level; the three-layer synthesis claims it is the same
+operator throughout. **Conjectural**; see the synthesis block for
+the falsification candidates.
+
+### Kac–Sunada meta-justification: bar-symmetric is forced, not chosen
+
+Kac (1966): "can you hear the shape of a drum?" Sunada (1985):
+no — isospectral non-isometric drum-shapes exist. The braid-
+theoretic analog: distinct braids share $\tau_M(\beta)$ at fixed
+$q$ (Hecke-trace isospectral pairs). **But demanding agreement at
+both $q$ AND $q^{-1}$ — bar-symmetric matching — is much tighter.**
+The Faddeev $\Phi_q$ channel hears only one orientation; symmetric
+$\mathrm{Li}_2^q$ hears the bar-symmetrized spectrum.
+
+This recasts the choice of bar-symmetric projection as **forced**
+by isospectral non-uniqueness, not a stylistic or numerical
+preference — and so makes the $1/2$ fingerprint at the half-fill
+rung the *canonical* invariant, not a chosen one.
+
+### Cross-link to pentagon reduction (PR #804 / main)
+
+The Leibniz layer in the c_5 deep-dive section below relates the
+$P_{\mathrm{avg}}^2$ algebra to the pentagon-coherence diagram.
+The algebraic identity for $\mathrm{Li}_2^q$ at $|z| \ge q$ via
+duplication $u = v = i\sqrt{|z|}$ is the categorical content of
+the pentagon and is on `main` in
+[`pentagon_reduction_li2q.py`](../../../folio-assistant/computations/pentagon_reduction_li2q.py)
++ audit doc
+[`2026-05-19-pentagon-reduction-li2q.md`](../../../docs/audits/2026-05-19-pentagon-reduction-li2q.md).
+The post-$\tau$ $\log^2$ correction documented there closes the
+T3 deferral structurally — relevant to anyone extending the
+precision-ladder beyond rung 10.
+
+### Falsified-FR caveat (PR #819 Phase 5c.1)
+
+A naive Frobenius-reciprocity identity at the per-Wedderburn-
+block dominant level — $\sum_\lambda y_\lambda \chi_\lambda(\beta_K^{Z=2})
+\stackrel{?}{=} [3]_q^2 \cosh(h) \sum_\mu y_\mu \chi_\mu(\beta_K^{Z=1})
++ \mathrm{Li}_2^q\text{ tower}$ — was tested at the full
+$\tau_M$ level and **falsified** (full ratio 0.609 vs predicted
+9.47). The $[3]_q^2 \cosh(h)$ to 0.022% match applies only at the
+single-block dominant $|\Delta_\lambda^*|$ level, not full sum.
+
+Implication for the level-selection rule: any per-Wedderburn-
+block refinement of the predictive criterion (refinement
+direction #3 below) must distinguish "single-block dominant" from
+"full $\tau_M$" — they do not transfer freely. Recorded so the
+next refinement attempt doesn't re-encounter the same trap.
+
 ## Deep dive on $c_5$: where, what, why, and what supplies the $1/2$
 
 ### Where $c_5$ appears
