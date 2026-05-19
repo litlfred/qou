@@ -334,10 +334,7 @@ def main() -> int:
     print("  " + "-" * 122)
 
     # Engine + descriptor strings (used both in print headers and below).
-    engine_str = (
-        "markov_peel+mpmath" if args.method == "markov_peel"
-        else "rust+mpmath"
-    )
+    engine_str = "python+mpmath"
     method_desc = (
         "markov_peel.tr_M_atomic (symbolic-q recursive ascent) + mpmath y_λ"
         if args.method == "markov_peel"
