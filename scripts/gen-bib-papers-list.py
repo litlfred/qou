@@ -87,10 +87,24 @@ def url_to_pdf(url: str) -> str | None:
     # arxiv.org/pdf/<id> already direct
     if "arxiv.org/pdf/" in url:
         return url
-    # numdam.org typically serves PDFs from /item or /article
-    if "numdam.org" in url:
-        return url
-    # archive.org/details/<id> → archive.org/download/<id>
+    # NIST CGI Value-lookup is NOT a paper — it renders a single
+    # constant as a GIF image inside an HTML page. Skip.
+    if re.match(r"https?://physics\.nist\.gov/cgi-bin/cuu/Value", url):
+        return None
+    # numdam.org/item/<id>/  →  numdam.org/item/<id>.pdf
+    # The /item/<id>/ URL serves the HTML landing page; append .pdf
+    # (without trailing slash) to get the actual PDF.
+    m = re.match(r"https?://(?:www\.)?numdam\.org/item/(.+?)/?$", url)
+    if m:
+        return f"https://www.numdam.org/item/{m.group(1)}.pdf"
+    # archive.org/details/<id> → archive.org/download/<id>/<id>.pdf
+    # WARN: archive.org's per-item PDF filename doesn't always match
+    # <id> (sometimes <id>_bw.pdf, sometimes <id>_text.pdf, sometimes
+    # a different stem entirely). The /download/<id>/<id>.pdf guess
+    # works for some items (e.g. klein1888) but fails on others
+    # (heisenberg1958: 401; weil1948: 503). For reliable resolution,
+    # the archive.org metadata API would need to be consulted — defer
+    # that to a future improvement.
     m = re.match(r"https?://archive\.org/details/([^/]+)/?$", url)
     if m:
         return f"https://archive.org/download/{m.group(1)}/{m.group(1)}.pdf"
