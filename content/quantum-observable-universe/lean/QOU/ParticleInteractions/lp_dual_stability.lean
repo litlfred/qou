@@ -13,12 +13,15 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.ParticleInteractions
 
 
-/-- Abstract context for the `lp_dual_stability` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
+/-- Abstract context for the `lp_dual_stability` claim — manuscript-named
+    typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class LpDualStabilityContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `lp_dual_stability` below for the manuscript statement). -/
+  /-- The braid representative type. -/
+  Braid : Type
+  /-- The Hecke generator `σᵢ` indexed by `ℕ`. -/
+  hecke_gen : ℕ → Prop
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Proposition statement** (from manuscript):

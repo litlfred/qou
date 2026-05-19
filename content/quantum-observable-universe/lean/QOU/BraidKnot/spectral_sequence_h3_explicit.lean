@@ -13,12 +13,15 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.BraidKnot
 
 
-/-- Abstract context for the `spectral_sequence_h3_explicit` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
+/-- Abstract context for the `spectral_sequence_h3_explicit` claim — manuscript-named
+    typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class SpectralSequenceH3ExplicitContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `spectral_sequence_h3_explicit` below for the manuscript statement). -/
+  /-- Proton number `Z`. -/
+  Z : ℕ
+  /-- Neutron number `N`. -/
+  N : ℕ
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Content statement** (from manuscript):

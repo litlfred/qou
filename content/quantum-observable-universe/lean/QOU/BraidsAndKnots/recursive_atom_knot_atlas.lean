@@ -16,12 +16,13 @@ this plural `QOU.BraidsAndKnots` namespace was inherited from existing
 namespace QOU.BraidsAndKnots
 
 
-/-- Abstract context for the `recursive_atom_knot_atlas` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
+/-- Abstract context for the `recursive_atom_knot_atlas` claim — manuscript-named
+    typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class RecursiveAtomKnotAtlasContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `recursive_atom_knot_atlas` below for the manuscript statement). -/
+  /-- The braid representative type. -/
+  Braid : Type
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Content statement** (from manuscript):

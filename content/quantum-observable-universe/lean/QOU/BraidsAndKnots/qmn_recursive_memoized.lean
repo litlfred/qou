@@ -16,12 +16,13 @@ this plural `QOU.BraidsAndKnots` namespace was inherited from existing
 namespace QOU.BraidsAndKnots
 
 
-/-- Abstract context for the `qmn_recursive_memoized` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
+/-- Abstract context for the `qmn_recursive_memoized` claim — manuscript-named
+    typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class QmnRecursiveMemoizedContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `qmn_recursive_memoized` below for the manuscript statement). -/
+  /-- The partition / Young-diagram indexing type. -/
+  PartitionIdx : Type
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Proposition statement** (from manuscript):

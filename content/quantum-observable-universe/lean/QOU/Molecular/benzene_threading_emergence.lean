@@ -13,12 +13,13 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.Molecular
 
 
-/-- Abstract context for the `benzene_threading_emergence` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
+/-- Abstract context for the `benzene_threading_emergence` claim — manuscript-named
+    typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class BenzeneThreadingEmergenceContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `benzene_threading_emergence` below for the manuscript statement). -/
+  /-- The braid representative type. -/
+  Braid : Type
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Proposition statement** (from manuscript):

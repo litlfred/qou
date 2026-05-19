@@ -13,12 +13,15 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.BaryonWeight
 
 
-/-- Abstract context for the `beta4_hook` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
+/-- Abstract context for the `beta4_hook` claim — manuscript-named
+    typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class Beta4HookContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `beta4_hook` below for the manuscript statement). -/
+  /-- The braid representative type. -/
+  Braid : Type
+  /-- The partition / Young-diagram indexing type. -/
+  PartitionIdx : Type
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Proposition statement** (from manuscript):

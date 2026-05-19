@@ -13,12 +13,13 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.LiftingDescent
 
 
-/-- Abstract context for the `tm_descended_is_holonomy` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
+/-- Abstract context for the `tm_descended_is_holonomy` claim — manuscript-named
+    typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class TmDescendedIsHolonomyContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `tm_descended_is_holonomy` below for the manuscript statement). -/
+  /-- The braid representative type. -/
+  Braid : Type
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Lemma statement** (from manuscript):

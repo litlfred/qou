@@ -13,12 +13,15 @@ citation per CLAUDE.md §1.
 namespace QOU.Observations
 
 
-/-- Abstract context for the `hecke_satisfies_blitvic_hypothesis` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
+/-- Abstract context for the `hecke_satisfies_blitvic_hypothesis` claim — manuscript-named
+    typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class HeckeSatisfiesBlitvicHypothesisContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `hecke_satisfies_blitvic_hypothesis` below for the manuscript statement). -/
+  /-- The partition / Young-diagram indexing type. -/
+  PartitionIdx : Type
+  /-- The Hecke generator `σᵢ` indexed by `ℕ`. -/
+  hecke_gen : ℕ → Prop
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Proposition statement** (from manuscript):

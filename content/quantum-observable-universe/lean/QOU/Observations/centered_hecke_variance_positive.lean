@@ -13,12 +13,15 @@ citation per CLAUDE.md §1.
 namespace QOU.Observations
 
 
-/-- Abstract context for the `centered_hecke_variance_positive` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
+/-- Abstract context for the `centered_hecke_variance_positive` claim — manuscript-named
+    typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class CenteredHeckeVariancePositiveContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `centered_hecke_variance_positive` below for the manuscript statement). -/
+  /-- The substrate parameter `q : ℝ`. -/
+  q : ℝ
+  /-- The Hecke generator `σᵢ` indexed by `ℕ`. -/
+  hecke_gen : ℕ → Prop
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Proposition statement** (from manuscript):

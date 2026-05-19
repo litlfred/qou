@@ -13,12 +13,15 @@ CLAUDE.md §1.
 namespace QOU.ParticleInteractions
 
 
-/-- Abstract context for the `SpectatorNormalization` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
+/-- Abstract context for the `SpectatorNormalization` claim — manuscript-named
+    typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class SpectatornormalizationContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `SpectatorNormalization` below for the manuscript statement). -/
+  /-- Proton number `Z`. -/
+  Z : ℕ
+  /-- Neutron number `N`. -/
+  N : ℕ
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Content statement** (from manuscript):

@@ -13,12 +13,13 @@ CLAUDE.md §1.
 namespace QOU.FluidDynamics
 
 
-/-- Abstract context for the `root_of_unity_truncation` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
+/-- Abstract context for the `root_of_unity_truncation` claim — manuscript-named
+    typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class RootOfUnityTruncationContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `root_of_unity_truncation` below for the manuscript statement). -/
+  /-- The substrate parameter `q : ℝ`. -/
+  q : ℝ
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Content statement** (from manuscript):

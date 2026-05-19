@@ -13,12 +13,13 @@ CLAUDE.md §1.
 namespace QOU.Brings
 
 
-/-- Abstract context for the `coral_elliptic` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
+/-- Abstract context for the `coral_elliptic` claim — manuscript-named
+    typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class CoralEllipticContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `coral_elliptic` below for the manuscript statement). -/
+  /-- The braid representative type. -/
+  Braid : Type
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Content statement** (from manuscript):

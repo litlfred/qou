@@ -13,12 +13,13 @@ CLAUDE.md §1.
 namespace QOU.Braiding
 
 
-/-- Abstract context for the `skein_crossing_asymmetry` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
+/-- Abstract context for the `skein_crossing_asymmetry` claim — manuscript-named
+    typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class SkeinCrossingAsymmetryContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `skein_crossing_asymmetry` below for the manuscript statement). -/
+  /-- The braid representative type. -/
+  Braid : Type
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Content statement** (from manuscript):

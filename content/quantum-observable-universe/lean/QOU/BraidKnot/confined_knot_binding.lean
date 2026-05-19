@@ -13,12 +13,17 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.BraidKnot
 
 
-/-- Abstract context for the `confined_knot_binding` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
+/-- Abstract context for the `confined_knot_binding` claim — manuscript-named
+    typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class ConfinedKnotBindingContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `confined_knot_binding` below for the manuscript statement). -/
+  /-- Proton number `Z`. -/
+  Z : ℕ
+  /-- Neutron number `N`. -/
+  N : ℕ
+  /-- The braid representative type. -/
+  Braid : Type
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Proposition statement** (from manuscript):

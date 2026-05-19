@@ -13,12 +13,21 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.Observations
 
 
-/-- Abstract context for the `SDPRegimeSwitch` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
+/-- Abstract context for the `SDPRegimeSwitch` claim — manuscript-named
+    typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class SdpregimeswitchContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `SDPRegimeSwitch` below for the manuscript statement). -/
+  /-- The substrate parameter `q : ℝ`. -/
+  q : ℝ
+  /-- Proton number `Z`. -/
+  Z : ℕ
+  /-- Neutron number `N`. -/
+  N : ℕ
+  /-- The braid representative type. -/
+  Braid : Type
+  /-- The partition / Young-diagram indexing type. -/
+  PartitionIdx : Type
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Proposition statement** (from manuscript):

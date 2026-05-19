@@ -16,12 +16,13 @@ this plural `QOU.BraidsAndKnots` namespace was inherited from existing
 namespace QOU.BraidsAndKnots
 
 
-/-- Abstract context for the `demazure_fiber_markov_trace` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
+/-- Abstract context for the `demazure_fiber_markov_trace` claim — manuscript-named
+    typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class DemazureFiberMarkovTraceContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `demazure_fiber_markov_trace` below for the manuscript statement). -/
+  /-- The partition / Young-diagram indexing type. -/
+  PartitionIdx : Type
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Proposition statement** (from manuscript):

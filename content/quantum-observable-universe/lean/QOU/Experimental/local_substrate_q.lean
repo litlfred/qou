@@ -13,12 +13,13 @@ CLAUDE.md §1.
 namespace QOU.Experimental
 
 
-/-- Abstract context for the `local_substrate_q` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
+/-- Abstract context for the `local_substrate_q` claim — manuscript-named
+    typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class LocalSubstrateQContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `local_substrate_q` below for the manuscript statement). -/
+  /-- The substrate parameter `q : ℝ`. -/
+  q : ℝ
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Content statement** (from manuscript):

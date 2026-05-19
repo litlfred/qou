@@ -13,12 +13,15 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.FluidDynamics
 
 
-/-- Abstract context for the `discrete_vortex_spectrum` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
+/-- Abstract context for the `discrete_vortex_spectrum` claim — manuscript-named
+    typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class DiscreteVortexSpectrumContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `discrete_vortex_spectrum` below for the manuscript statement). -/
+  /-- The substrate parameter `q : ℝ`. -/
+  q : ℝ
+  /-- The braid representative type. -/
+  Braid : Type
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Content statement** (from manuscript):

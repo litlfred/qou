@@ -13,12 +13,13 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.BraidsKnots
 
 
-/-- Abstract context for the `tmli_constituent_composite_agreement` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
+/-- Abstract context for the `tmli_constituent_composite_agreement` claim — manuscript-named
+    typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class TmliConstituentCompositeAgreementContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `tmli_constituent_composite_agreement` below for the manuscript statement). -/
+  /-- The braid representative type. -/
+  Braid : Type
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Lemma statement** (from manuscript):

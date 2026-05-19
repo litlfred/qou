@@ -13,12 +13,15 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.ParticleInteractions
 
 
-/-- Abstract context for the `demand_stability` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
+/-- Abstract context for the `demand_stability` claim — manuscript-named
+    typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class DemandStabilityContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `demand_stability` below for the manuscript statement). -/
+  /-- Proton number `Z`. -/
+  Z : ℕ
+  /-- Neutron number `N`. -/
+  N : ℕ
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Proposition statement** (from manuscript):

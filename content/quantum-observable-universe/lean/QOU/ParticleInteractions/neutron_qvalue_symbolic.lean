@@ -13,12 +13,13 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.ParticleInteractions
 
 
-/-- Abstract context for the `neutron_qvalue_symbolic` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
+/-- Abstract context for the `neutron_qvalue_symbolic` claim — manuscript-named
+    typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class NeutronQvalueSymbolicContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `neutron_qvalue_symbolic` below for the manuscript statement). -/
+  /-- The braid representative type. -/
+  Braid : Type
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Content statement** (from manuscript):

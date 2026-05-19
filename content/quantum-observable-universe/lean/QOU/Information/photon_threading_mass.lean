@@ -13,12 +13,15 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.Information
 
 
-/-- Abstract context for the `photon_threading_mass` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
+/-- Abstract context for the `photon_threading_mass` claim — manuscript-named
+    typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class PhotonThreadingMassContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `photon_threading_mass` below for the manuscript statement). -/
+  /-- The braid representative type. -/
+  Braid : Type
+  /-- The Hecke generator `σᵢ` indexed by `ℕ`. -/
+  hecke_gen : ℕ → Prop
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Proposition statement** (from manuscript):

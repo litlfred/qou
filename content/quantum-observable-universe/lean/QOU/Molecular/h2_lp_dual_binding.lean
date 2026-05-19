@@ -13,12 +13,13 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.Molecular
 
 
-/-- Abstract context for the `h2_lp_dual_binding` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
+/-- Abstract context for the `h2_lp_dual_binding` claim — manuscript-named
+    typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class H2LpDualBindingContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `h2_lp_dual_binding` below for the manuscript statement). -/
+  /-- The braid representative type. -/
+  Braid : Type
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Proposition statement** (from manuscript):

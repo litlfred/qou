@@ -13,12 +13,13 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.FluidDynamics
 
 
-/-- Abstract context for the `p1_nonlinear_uniqueness` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
+/-- Abstract context for the `p1_nonlinear_uniqueness` claim — manuscript-named
+    typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class P1NonlinearUniquenessContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `p1_nonlinear_uniqueness` below for the manuscript statement). -/
+  /-- The substrate parameter `q : ℝ`. -/
+  q : ℝ
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Content statement** (from manuscript):

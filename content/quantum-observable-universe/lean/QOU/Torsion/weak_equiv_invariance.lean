@@ -13,12 +13,13 @@ CLAUDE.md §1.
 namespace QOU.Torsion
 
 
-/-- Abstract context for the `weak_equiv_invariance` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
+/-- Abstract context for the `weak_equiv_invariance` claim — manuscript-named
+    typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class WeakEquivInvarianceContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `weak_equiv_invariance` below for the manuscript statement). -/
+  /-- The substrate parameter `q : ℝ`. -/
+  q : ℝ
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Content statement** (from manuscript):

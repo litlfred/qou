@@ -13,12 +13,13 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.HadronicMass
 
 
-/-- Abstract context for the `deuteron_binding_energy` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
+/-- Abstract context for the `deuteron_binding_energy` claim — manuscript-named
+    typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class DeuteronBindingEnergyContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `deuteron_binding_energy` below for the manuscript statement). -/
+  /-- The braid representative type. -/
+  Braid : Type
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Lemma statement** (from manuscript):

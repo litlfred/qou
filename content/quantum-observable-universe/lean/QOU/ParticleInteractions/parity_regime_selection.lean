@@ -13,12 +13,17 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.ParticleInteractions
 
 
-/-- Abstract context for the `parity_regime_selection` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
+/-- Abstract context for the `parity_regime_selection` claim — manuscript-named
+    typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class ParityRegimeSelectionContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `parity_regime_selection` below for the manuscript statement). -/
+  /-- The substrate parameter `q : ℝ`. -/
+  q : ℝ
+  /-- Proton number `Z`. -/
+  Z : ℕ
+  /-- Neutron number `N`. -/
+  N : ℕ
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Theorem statement** (from manuscript):

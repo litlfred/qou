@@ -16,12 +16,13 @@ this plural `QOU.BraidsAndKnots` namespace was inherited from existing
 namespace QOU.BraidsAndKnots
 
 
-/-- Abstract context for the `explicit_alpha_k_h4` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
+/-- Abstract context for the `explicit_alpha_k_h4` claim — manuscript-named
+    typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class ExplicitAlphaKH4Context where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `explicit_alpha_k_h4` below for the manuscript statement). -/
+  /-- The partition / Young-diagram indexing type. -/
+  PartitionIdx : Type
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Content statement** (from manuscript):
