@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Post-τ pentagon = pre-τ pentagon + q-log² Rogers correction",
   lean: {
-    ref: "qou:QOU.BraidKnot.q_rogers_pentagon_archimedean",
+    ref: "qou:QOU.BraidKnot.QRogersAnalyticContinuation",
     validation: "not_checked",
   },
   uses: [

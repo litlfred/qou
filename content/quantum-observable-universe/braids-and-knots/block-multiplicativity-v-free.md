@@ -143,9 +143,14 @@ finer agreement awaits the $T_3$ pair-term closure (see
 **Conjecture** — empirically verified to 4 digits at $A \in \{2, 3\}$,
 classical-limit ($q = 1$) proven via Plancherel duality. Lean class
 [`qou:QOU.BraidKnot.BlockMultiplicativityVFree`](https://github.com/litlfred/qou/blob/claude/log-delta-categorical-derivation/content/quantum-observable-universe/lean/QOU/BraidKnot/BlockMultiplicativityVFree.lean)
-axiomatises the q-deformed identity (one `sorry` — the q-Schur duality
-gap). Downstream consequences (the closed-form $B^{(1)}_{\text{dim}}$)
-are then fully verified by Lean modulo this single conjectural input.
+axiomatises the q-deformed identity as a Lean *class hypothesis*
+(`q_schur_duality_holds_at` predicate field, per CLAUDE.md §3b-cond)
+— **not a `sorry`**. The file contains 0 sorries; the open
+q-deformation step is encoded as a typeclass constraint that
+downstream theorems consume via `[Instance]`. Downstream
+consequences (the closed-form $B^{(1)}_{\text{dim}}$) are then
+fully verified by Lean modulo this single class-axiomatised
+conjectural input.
 
 Falsifiability: a single H_12 (⁴He) computation showing $V^{(12)}_g$ on
 a proton block differs from $V^{(6)}_g$ on the same proton block by

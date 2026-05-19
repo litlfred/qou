@@ -72,7 +72,7 @@ theorem rogersLogCorrection_symmetric (u v : ℝ) :
     rogersLogCorrection u v = rogersLogCorrection v u := by
   unfold rogersLogCorrection
   rw [mul_comm u v]
-  ring
+  exact mul_comm _ _
 
 /-- The q-Rogers analytic-continuation conjecture as a Lean class.
 

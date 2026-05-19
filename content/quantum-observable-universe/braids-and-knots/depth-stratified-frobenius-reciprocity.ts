@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Frobenius-reciprocity ideal restriction at low curvature-rank",
   lean: {
-    ref: "qou:QOU.BraidKnot.depth_stratified_frobenius_reciprocity",
+    ref: "qou:QOU.BraidKnot.DepthStratifiedFrobeniusReciprocity",
     validation: "not_checked",
   },
   uses: [

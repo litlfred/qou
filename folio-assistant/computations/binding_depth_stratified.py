@@ -69,7 +69,8 @@ from _precision import set_compute_dps, fmt
 from witness_base import WitnessBuilder
 from codata_constants import M_E_MEV
 from mass_at_3A_proper import (
-    markov_trace_3A, dim_q, qfac, E_0_CALIBRATION_MEV)
+    atom_braid_word_3A, markov_trace_3A, dim_q, qfac,
+    E_0_CALIBRATION_MEV)
 from q_parameter import Q as Q0
 
 
@@ -139,7 +140,6 @@ def compute_atom_binding(Z: int, N: int) -> dict:
     vacuum). This is the q-shuffle convolution structure, NOT a
     tensor product over independent H_3 algebras.
     """
-    from mass_at_3A_proper import atom_braid_word_3A
     A = Z + N
     n_strands = 3 * A
 

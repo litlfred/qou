@@ -27,7 +27,7 @@ Each atom lives in a different *categorical stratum*:
 
 ## Diagnosis: per-knot ideal restriction missing at low k
 
-Per [`prop:plancherel-term-7-formulation`](../content/quantum-observable-universe/braids-and-knots/plancherel-term-7-formulation.md), the *Frobenius integral* at low depth k ≤ 3 should factor through a *distinguished hyperbolic-knot ideal*:
+Per [`prop:plancherel-term-7-formulation`](../../content/quantum-observable-universe/braids-and-knots/plancherel-term-7-formulation.md), the *Frobenius integral* at low depth k ≤ 3 should factor through a *distinguished hyperbolic-knot ideal*:
 
 > "At low strata k ≤ 3 the restricted Frobenius integral
 > $\int_{A_\lambda} \rho(\beta_K) \cdot T$ factors through specific

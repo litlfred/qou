@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Symmetric q-dilogarithm as bar-symmetrization of Faddeev",
   lean: {
-    ref: "qou:QOU.BraidKnot.li2q_phiq_bar_symmetrization",
+    ref: "qou:QOU.BraidKnot.Li2qPhiqBarSymmetrization",
     validation: "not_checked",
   },
   uses: [
