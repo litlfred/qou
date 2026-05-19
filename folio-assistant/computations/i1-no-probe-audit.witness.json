@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T17:48:22.570779+00:00",
-  "commitSha": "77251ee7bc44c5a084926f0900eed5525d58f461",
+  "computedAt": "2026-05-19T17:54:26.796577+00:00",
+  "commitSha": "da35531582023051bf1c4e0dbc2a5ccaa2a6bf51",
   "assertions": [
     {
       "name": "no_i1_no_probe_blocks",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 8,
+  "durationMs": 7,
   "computation": "i1-no-probe-audit",
   "scriptFile": "i1_no_probe_audit.py",
   "scriptHash": "0e004cc143d0",
@@ -27,8 +27,8 @@
   },
   "data": {
     "by_result": {
-      "i1_no_probe": 514,
-      "wired": 59,
+      "i1_no_probe": 513,
+      "wired": 60,
       "i1_lean_with_sorry": 1,
       "conditional_class": 1
     },
@@ -1226,9 +1226,11 @@
         "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
-        "probe_witness_count": 0,
-        "probe_witnesses": [],
-        "result": "i1_no_probe"
+        "probe_witness_count": 1,
+        "probe_witnesses": [
+          "hecke-log-decomposition-probe.witness.json"
+        ],
+        "result": "wired"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/hecke-markov-transition.ts",
