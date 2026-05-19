@@ -1,3 +1,5 @@
+import Mathlib.Algebra.BigOperators.Basic
+
 /-!
 # QOU.BraidsAndKnots.demazure_fiber_markov_trace — placeholder stub
 
@@ -22,12 +24,29 @@ namespace QOU.BraidsAndKnots
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class DemazureFiberMarkovTraceContext extends QOU.Shared.OperatorSelectionLPContext where
-  /-- Manuscript sub-claim (i) — *$T^{\mathrm{Dem}}(\lambda;\, w_0) = y_\lambda$ — the standard Jones–Markov coefficient is the saturated case.*. -/
-  claim_i_standard_jones_markov : Prop
-  /-- Manuscript sub-claim (ii) — *For $w < w_0$ (Bruhat order), $T^{\mathrm{Dem}}(\lambda;\, w)$ is the structural resonance width of the $\lambda$-bl.... -/
+  /-- Demazure-fiber Markov trace `T^Dem(λ; w)`. -/
+  T_Dem : ℕ → ℕ → ℝ
+  /-- Jones-Markov central coefficient `y_λ`. -/
+  y_lambda : ℕ → ℝ
+  /-- Longest element index `w_0` of `S_n`. -/
+  w_0 : ℕ
+  /-- Manuscript sub-claim (i) — Saturated case:
+      `T^Dem(λ; w_0) = y_λ`. -/
+  claim_i_standard_jones_markov : ∀ λ : ℕ, T_Dem λ w_0 = y_lambda λ
+  /-- Manuscript sub-claim (ii) — Bruhat-order structural resonance:
+      for `w` below `w_0` (Bruhat order), `T^Dem(λ; w)` measures the
+      sub-crystal resonance width (stays Prop because Bruhat order
+      and sub-crystal width require additional infrastructure). -/
   claim_ii_bruhat_order_structural : Prop
-  /-- Manuscript sub-claim (iii) — *Plancherel completeness: $\sum_{\lambda \vdash n} f_\lambda \cdot T^{\mathrm{Dem}}(\lambda;\, w_0) = 1$ reduces to t.... -/
-  claim_iii_plancherel_completeness_reduces : Prop
+  /-- Number of standard Young tableaux `f_λ`. -/
+  f_lambda : ℕ → ℝ
+  /-- Number of partitions of `n`. -/
+  n_partitions : ℕ
+  /-- Manuscript sub-claim (iii) — Plancherel completeness:
+      `Σ_{λ ⊢ n} f_λ · T^Dem(λ; w_0) = 1`. -/
+  claim_iii_plancherel_completeness :
+    (Finset.range n_partitions).sum
+      (fun λ => f_lambda λ * T_Dem λ w_0) = 1
 /-- **Proposition statement** (from manuscript):
 
 Let $V_\lambda$ be the irreducible $S_n$-module indexed by
@@ -76,7 +95,11 @@ principal specialisation $x_i \mapsto q^{i-1}$.  Then:*
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/demazure-fiber-markov-trace.ts
 theorem demazure_fiber_markov_trace [ctx : DemazureFiberMarkovTraceContext] :
-    ctx.claim_i_standard_jones_markov ∧ ctx.claim_ii_bruhat_order_structural ∧ ctx.claim_iii_plancherel_completeness_reduces :=
-  ⟨ctx.claim_i_standard_jones_markov, ctx.claim_ii_bruhat_order_structural, ctx.claim_iii_plancherel_completeness_reduces⟩
+    (∀ λ : ℕ, ctx.T_Dem λ ctx.w_0 = ctx.y_lambda λ) ∧
+    ctx.claim_ii_bruhat_order_structural ∧
+    (Finset.range ctx.n_partitions).sum
+      (fun λ => ctx.f_lambda λ * ctx.T_Dem λ ctx.w_0) = 1 :=
+  ⟨ctx.claim_i_standard_jones_markov, ctx.claim_ii_bruhat_order_structural,
+   ctx.claim_iii_plancherel_completeness⟩
 
 end QOU.BraidsAndKnots
