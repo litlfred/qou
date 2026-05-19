@@ -9,6 +9,7 @@ Adapt ALL responses accordingly:
 - **Run commands proactively** — don't ask "shall I run X?", just run it.
 - **Branch/commit/push without asking** unless destructive.
 - **Interpret terse/misspelled input charitably** — infer intent, don't ask for clarification on typos.
+- **Combine related work into one branch / one PR. Minimize their creation.** Default to stacking commits on an existing in-flight branch when the new work shares a theme (detangler structural cleanup, watcher infrastructure, doc currency, etc.) with what's already there. Before creating a new branch, check whether the active branches host related scope — if yes, switch to that branch and add a commit there. Only spin a new branch when the work is genuinely unrelated (different domain) or when the existing branch is already large enough that adding more would hurt reviewer comprehension. Reviewers prefer one coherent 6-commit PR to six 1-commit PRs covering the same theme. Mirrors `.claude/skills/local/integration-watcher.md` §0a item 1 and item 3 ("cluster aggressively", "group a lot").
 
 This repository is a formal mathematics paper with:
 - **Content objects** (`.ts` + `.md` + `.lean` file triples) as authoritative source
