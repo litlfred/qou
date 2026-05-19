@@ -10,6 +10,8 @@ export default proposition({
     "Averaging-resonance rule for $c_k$ sectors: precision-ladder rung $k$ lies in the bar-invariant fixed-point sector (= picks up the $1/2$ fingerprint at silver ratio) iff the silver-ratio Pell-Lucas test on $c_k$ fails; empirically $k = 5$ is the only such outlier in the proton typed-$\\mathbf{B}_3$ ladder at $k \\in \\{3, \\ldots, 10\\}$",
   uses: [
     "prop:neutron-qvalue-symbolic",
+    "prop:silver-ratio-beta-decay-null",
+    "prop:c5-involution-leibniz-decomposition",
   ],
   cites: [
     "wenzl1988",

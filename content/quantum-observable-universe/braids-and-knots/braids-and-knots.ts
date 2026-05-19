@@ -443,6 +443,7 @@ export default chapter({
       label: "sec:markov-axioms-braid-link",
       blocks: [
         "q-beta-categorical-precision-ladder",
+        "c5-involution-leibniz-decomposition",
         "markov-axioms-primitive",
         "markov-trace-inductive-limit",
         "braid-link-types",
