@@ -29,12 +29,24 @@ class JointTowerSdpConfinementContext where
       hadron `H ∈ R` and every Wedderburn block `λ ⊢ n_0(H)`, the block
       projection `ρ_λ(T_w(H))` is positive semidefinite. -/
   claim_i_wedderburn_positivity : Prop
+  /-- SDP coefficient `c_{H, w}` indexed by hadron index `H : ℕ` and
+      word index `w : ℕ`. -/
+  coefficient : ℕ → ℕ → ℝ
+  /-- Word length `ℓ(w)`. -/
+  word_length : ℕ → ℕ
+  /-- Maximum word length allowed by the GB filtration for hadron `H`. -/
+  gb_filtration_length : ℕ → ℕ
   /-- Manuscript sub-claim (ii): GB-filtration grading — coefficients
-      `c_{H, w}` are non-zero only when `ℓ(w) ∈ Filt(H)`. -/
-  claim_ii_gb_filtration_grading : Prop
+      `c_{H, w}` are non-zero only when `ℓ(w)` lies in the GB filtration
+      window of hadron `H`. -/
+  claim_ii_gb_filtration_grading : ∀ H w : ℕ,
+    coefficient H w ≠ 0 → word_length w ≤ gb_filtration_length H
+  /-- Jet order of an SDP variable index. -/
+  jet_order : ℕ → ℕ
   /-- Manuscript sub-claim (iii): jet-order ordering — the SDP variable
-      indexing respects the recursive jet order. -/
-  claim_iii_jet_order_ordering : Prop
+      indexing respects the recursive jet order monotonically. -/
+  claim_iii_jet_order_ordering : ∀ i j : ℕ,
+    i ≤ j → jet_order i ≤ jet_order j
   /-- Manuscript sub-claim (iv): cross-level compatibility — for every
       tower step `H → H'`, the canonical embedding
       `π_{H → H'} : H_{n_0(H')}(q) ↪ H_{n_0(H)}(q)` satisfies
@@ -84,8 +96,9 @@ on each
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.ts
 theorem joint_tower_sdp_confinement [ctx : JointTowerSdpConfinementContext] :
     ctx.claim_i_wedderburn_positivity ∧
-    ctx.claim_ii_gb_filtration_grading ∧
-    ctx.claim_iii_jet_order_ordering ∧
+    (∀ H w : ℕ, ctx.coefficient H w ≠ 0 →
+      ctx.word_length w ≤ ctx.gb_filtration_length H) ∧
+    (∀ i j : ℕ, i ≤ j → ctx.jet_order i ≤ ctx.jet_order j) ∧
     ctx.claim_iv_cross_level_compatibility :=
   ⟨ctx.claim_i_wedderburn_positivity, ctx.claim_ii_gb_filtration_grading,
    ctx.claim_iii_jet_order_ordering, ctx.claim_iv_cross_level_compatibility⟩

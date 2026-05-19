@@ -21,6 +21,8 @@ namespace QOU.BraidKnot.HeckeBaerStarGeneric
 class HeckeBaerStarGenericContext where
   /-- The Hecke algebra `H_n(q)` over a characteristic-0 field `R`. -/
   HeckeAlgebra : Type
+  /-- Multiplication on the Hecke algebra. -/
+  mul : HeckeAlgebra → HeckeAlgebra → HeckeAlgebra
   /-- Partition / Young-diagram indexing. -/
   PartitionIdx : Type
   /-- Central primitive idempotents `e_λ` indexed by partitions. -/
@@ -29,11 +31,12 @@ class HeckeBaerStarGenericContext where
   conj_partition : PartitionIdx → PartitionIdx
   /-- Bar involution `*` on the Hecke algebra. -/
   star : HeckeAlgebra → HeckeAlgebra
-  /-- Manuscript sub-claim (i) — Wedderburn decomposition existence:
-      the family of central idempotents `e_λ` exhausts the block
-      decomposition (stays abstract because matrix-block isomorphism
-      requires Mathlib's `WedderburnDecomposition`). -/
-  claim_i_wedderburn_decomposition : Prop
+  /-- Manuscript sub-claim (i) — Idempotence of the Wedderburn block
+      projectors: `e_λ · e_λ = e_λ` (the Wedderburn block decomposition
+      gives idempotent projectors). Full matrix-block isomorphism stays
+      abstract pending Mathlib's `WedderburnDecomposition`. -/
+  claim_i_wedderburn_decomposition : ∀ λ : PartitionIdx,
+    mul (e λ) (e λ) = e λ
   /-- Manuscript sub-claim (ii) — Bar involution swaps conjugate
       idempotents: `*(e_λ) = e_{λ'}`. -/
   claim_ii_idempotents_bar_stable : ∀ λ : PartitionIdx,
@@ -95,7 +98,7 @@ annihilator $\mathrm{An
     translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/hecke-baer-star-generic.ts
 theorem hecke_baer_star_generic [ctx : HeckeBaerStarGenericContext] :
-    ctx.claim_i_wedderburn_decomposition ∧
+    (∀ λ : ctx.PartitionIdx, ctx.mul (ctx.e λ) (ctx.e λ) = ctx.e λ) ∧
     (∀ λ : ctx.PartitionIdx,
       ctx.star (ctx.e λ) = ctx.e (ctx.conj_partition λ)) ∧
     ctx.claim_iii_baer_star_property :=
