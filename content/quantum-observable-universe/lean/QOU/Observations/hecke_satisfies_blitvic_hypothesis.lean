@@ -1,3 +1,5 @@
+import Mathlib.Algebra.Ring.Basic
+
 /-!
 # QOU.Observations.hecke_satisfies_blitvic_hypothesis — placeholder stub
 
@@ -17,15 +19,26 @@ namespace QOU.Observations
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class HeckeSatisfiesBlitvicHypothesisContext where
-  /-- The partition / Young-diagram indexing type. -/
-  PartitionIdx : Type
-  /-- The Hecke generator `σᵢ` indexed by `ℕ`. -/
-  hecke_gen : ℕ → Prop
-  /-- Manuscript sub-claim (i) — The Hecke quadratic relation (algebra-level, no analysis). -/
-  claim_i_hecke_quadratic_relation : Prop
-  /-- Manuscript sub-claim (ii) — The Markov property of $\mathrm{tr}_M$ (`thm:jones-markov-trace`). -/
-  claim_ii_markov_property_thm : Prop
-  /-- Manuscript sub-claim (iii) — Wenzl's product factorisation (`prop:trace-locality-meets-gs-non-locality`). -/
+  /-- The Hecke-algebra carrier `A` (abstract type). -/
+  A : Type
+  /-- Ring structure on `A` so the Hecke quadratic relation can use
+      `*`, `+`, and `1`. -/
+  ringA : Ring A
+  /-- The Hecke generators `σᵢ : A` indexed by `ℕ`. -/
+  σ : ℕ → A
+  /-- The scalar `(q − q⁻¹)` as an element of `A`. -/
+  h_A : A
+  /-- Manuscript sub-claim (i) — Hecke quadratic relation:
+      `σᵢ² = (q − q⁻¹)·σᵢ + 1`. -/
+  claim_i_hecke_quadratic_relation : ∀ i : ℕ,
+    haveI := ringA; σ i * σ i = h_A * σ i + 1
+  /-- Manuscript sub-claim (ii) — Markov property of `tr_M`:
+      `tr_M(x · σ_n) = z · tr_M(x)` (captured abstractly because the
+      Markov-parameter map lives on the inductive limit `H_∞`). -/
+  claim_ii_markov_property : Prop
+  /-- Manuscript sub-claim (iii) — Wenzl's product factorisation:
+      the centred-generator moment vanishes on odd-length words and
+      decomposes over pair-partitions on even-length words. -/
   claim_iii_wenzl_product_factorisation : Prop
 
 /-- **Proposition statement** (from manuscript):
@@ -40,8 +53,13 @@ central limit theorem [`blitvic2012`].*
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/hecke-satisfies-blitvic-hypothesis.ts
-theorem hecke_satisfies_blitvic_hypothesis [ctx : HeckeSatisfiesBlitvicHypothesisContext] :
-    ctx.claim_i_hecke_quadratic_relation ∧ ctx.claim_ii_markov_property_thm ∧ ctx.claim_iii_wenzl_product_factorisation :=
-  ⟨ctx.claim_i_hecke_quadratic_relation, ctx.claim_ii_markov_property_thm, ctx.claim_iii_wenzl_product_factorisation⟩
+theorem hecke_satisfies_blitvic_hypothesis
+    [ctx : HeckeSatisfiesBlitvicHypothesisContext] :
+    (∀ i : ℕ, haveI := ctx.ringA;
+      ctx.σ i * ctx.σ i = ctx.h_A * ctx.σ i + 1) ∧
+    ctx.claim_ii_markov_property ∧
+    ctx.claim_iii_wenzl_product_factorisation :=
+  ⟨ctx.claim_i_hecke_quadratic_relation, ctx.claim_ii_markov_property,
+   ctx.claim_iii_wenzl_product_factorisation⟩
 
 end QOU.Observations
