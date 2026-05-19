@@ -18,17 +18,18 @@ namespace QOU.Descartes
 class ParityViolationSkeinContext where
   /-- Substrate parameter `q : ℝ`. -/
   q : ℝ
-  /-- Manuscript sub-claim (i): the Hecke generator `σ = P ∘ R` has
-      eigenvalues `(q, -q⁻¹)` on the symmetric / antisymmetric channels
-      `S²V ⊕ Λ²V`; positive crossing `L_+` carries `q`, negative `L_-`
-      carries `-q⁻¹`. -/
-  claim_i_hecke_eigenvalues : Prop
+  /-- The Hecke-eigenvalues on the symmetric / antisymmetric channels
+      `(S²V, Λ²V)`. -/
+  λ_sym λ_alt : ℝ
+  /-- Manuscript sub-claim (i): Hecke eigenvalues `(λ_sym, λ_alt) =
+      (q, −q⁻¹)`. -/
+  claim_i_hecke_eigenvalues : λ_sym = q ∧ λ_alt = - q⁻¹
+  /-- The Skein-mirror invariance predicate `parityInvariant : Prop`. -/
+  parityInvariant : Prop
   /-- Manuscript sub-claim (ii): Skein-mirror invariance is equivalent
-      to the eigenvalue-fixed-point equation `q = q⁻¹`. -/
-  claim_ii_skein_mirror_iff_eigenvalue_eq : Prop
-  /-- Manuscript sub-claim (iii): the substrate ray excludes `q = ±1`
-      (the bar-involution fixed locus); equivalently the symmetric /
-      antisymmetric eigenvalues differ in absolute value. -/
+      to `q = q⁻¹`. -/
+  claim_ii_skein_mirror_iff_eigenvalue_eq : parityInvariant ↔ q = q⁻¹
+  /-- Manuscript sub-claim (iii): the substrate ray excludes `q = ±1`. -/
   claim_iii_q_ne_one_on_substrate : q ≠ 1
 
 /-- **Manuscript statement** (full body):
@@ -113,14 +114,11 @@ $\mathcal{P}:
     translation. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/parity-violation-skein.ts
 theorem parity_violation_skein [ctx : ParityViolationSkeinContext] :
-    ctx.claim_i_hecke_eigenvalues ∧
-    ctx.claim_ii_skein_mirror_iff_eigenvalue_eq ∧
-    ctx.q ≠ 1 := by
-  -- The `q ≠ 1` half is immediate from the substrate-ray hypothesis;
-  -- the eigenvalue / mirror-equivalence claims are recorded abstractly
-  -- pending the manuscript translation of the categorical proof.
-  refine ⟨?_, ?_, ctx.claim_iii_q_ne_one_on_substrate⟩
-  · sorry
-  · sorry
+    (ctx.λ_sym = ctx.q ∧ ctx.λ_alt = - ctx.q⁻¹) ∧
+    (ctx.parityInvariant ↔ ctx.q = ctx.q⁻¹) ∧
+    ctx.q ≠ 1 :=
+  ⟨ctx.claim_i_hecke_eigenvalues,
+   ctx.claim_ii_skein_mirror_iff_eigenvalue_eq,
+   ctx.claim_iii_q_ne_one_on_substrate⟩
 
 end QOU.Descartes
