@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T17:50:07.938218+00:00",
-  "commitSha": "484d152a28cde6d598f210448b9ec414963d6935",
+  "computedAt": "2026-05-19T19:42:08.882202+00:00",
+  "commitSha": "1093ba59657017e054610f0889ed8b72d510ea20",
   "assertions": [],
   "allPassed": true,
   "durationMs": 8,
@@ -13,7 +13,7 @@
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 616,
+    "files_scanned": 617,
     "patterns": [
       "P15",
       "P16",
@@ -28,7 +28,7 @@
       "P16": 164,
       "P21": 32,
       "P30": 95,
-      "P31": 25
+      "P31": 26
     },
     "top_files": [
       {
@@ -1603,6 +1603,13 @@
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
+      },
+      {
+        "pattern": "P31",
+        "file": "log_delta_categorical_derivation.py",
+        "line": 88,
+        "snippet": "CODATA literal \"0.51099895\"",
+        "note": "Hardcoded CODATA literal outside the registry inflates the three-calibration count past CAL-1/2/3. Import from codata_constants (validation aliases) or experimental_constants instead. Audit-only scripts may add `# noqa: P31` with a justifying comment. Ref: codata_constants.py:90-145; docs/audits/2026-05-12-canonical-derivation-compute-review.md §3."
       },
       {
         "pattern": "P30",

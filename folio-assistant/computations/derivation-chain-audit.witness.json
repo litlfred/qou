@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T15:20:22.902847+00:00",
-  "commitSha": "85de84926db280c0a76346593b2f43816a104571",
+  "computedAt": "2026-05-19T16:47:28.146832+00:00",
+  "commitSha": "90784819b1f29e958bee63f055fdb0b6c498e2c9",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -563,7 +563,7 @@
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "07c70b80249ec4d7d64d8eb0721c775389fed122",
+  "scriptCommitSha": "0fd092af098ad97f907de89376fe0a570b24dc76",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
   "data": {
@@ -2410,6 +2410,7 @@
         "legacy-formula-audit.witness.json",
         "level1-qvalues.witness.json",
         "light-isotope-sweep.witness.json",
+        "log-delta-categorical-derivation.witness.json",
         "low-isotope-binding-sweep.witness.json",
         "low-isotope-mass-table.witness.json",
         "lp-confinement-nf-forcing.witness.json",
