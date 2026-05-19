@@ -25,17 +25,28 @@ class ConfinementOperatorSelectionContext where
   HeckeAlgebra : Type
   /-- The Borromean braid `𝓑_3 ∈ H_3(q)`. -/
   B3 : HeckeAlgebra
-  /-- The 6×6 Frobenius Gram matrix `G : Fin 6 → Fin 6 → ℝ`. -/
-  G : Fin 6 → Fin 6 → ℝ
-  /-- Manuscript sub-claim (i): the Borromean braid equals
-      `(σ_0 σ_1⁻¹)^3` in `H_3(q)` (definitional). -/
-  claim_i_borromean_word : Prop
-  /-- Manuscript sub-claim (ii): `𝓑_3` is the minimum-action element
-      of the 6-element NF basis under the Gram-quadratic form. -/
-  claim_ii_min_action_selection : Prop
-  /-- Manuscript sub-claim (iii): the selected operator coincides
-      with the optimum of the operator-selection LP. -/
-  claim_iii_LP_consistency : Prop
+  /-- The braid word `(σ_0 σ_1⁻¹)^3 ∈ H_3(q)`. -/
+  borromean_word : HeckeAlgebra
+  /-- Manuscript sub-claim (i) — Definitional identity:
+      `𝓑_3 = (σ_0 σ_1⁻¹)^3` in `H_3(q)`. -/
+  claim_i_borromean_word : B3 = borromean_word
+  /-- The 6-element NF basis index. -/
+  NF_basis : Fin 6 → HeckeAlgebra
+  /-- The Frobenius-quadratic action `S(b) = b · G · b` for each basis
+      element. -/
+  S_quad : Fin 6 → ℝ
+  /-- Manuscript sub-claim (ii) — Minimum-action selection: there
+      exists an index `i₀` such that `S_quad(i₀) ≤ S_quad(j)` for
+      all `j`, and `B3 = NF_basis i₀`. -/
+  claim_ii_min_action_selection :
+    ∃ i₀ : Fin 6, (∀ j : Fin 6, S_quad i₀ ≤ S_quad j) ∧ B3 = NF_basis i₀
+  /-- LP primal objective at the selected operator. -/
+  primal_obj_at_B3 : ℝ
+  /-- LP primal objective at the optimal LP solution. -/
+  primal_obj_LP_optimum : ℝ
+  /-- Manuscript sub-claim (iii) — LP consistency: the minimum-action
+      selection equals the LP optimum value. -/
+  claim_iii_LP_consistency : primal_obj_at_B3 = primal_obj_LP_optimum
 
 /-- **Content statement** (from manuscript):
 
@@ -52,9 +63,10 @@ acting on the $6 \times 6$ Gram matrix
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/confinement-operator-selection.ts
 theorem confinement_operator_selection [ctx : ConfinementOperatorSelectionContext] :
-    ctx.claim_i_borromean_word ∧
-    ctx.claim_ii_min_action_selection ∧
-    ctx.claim_iii_LP_consistency :=
+    ctx.B3 = ctx.borromean_word ∧
+    (∃ i₀ : Fin 6, (∀ j : Fin 6, ctx.S_quad i₀ ≤ ctx.S_quad j) ∧
+                   ctx.B3 = ctx.NF_basis i₀) ∧
+    ctx.primal_obj_at_B3 = ctx.primal_obj_LP_optimum :=
   ⟨ctx.claim_i_borromean_word, ctx.claim_ii_min_action_selection,
    ctx.claim_iii_LP_consistency⟩
 

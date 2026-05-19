@@ -19,12 +19,27 @@ namespace QOU.Molecular
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class BenzeneThreadingEmergenceContext extends QOU.Shared.MarkovTraceContext where
-  /-- Manuscript sub-claim (i) — More shared crossings. -/
-  claim_i_more_shared_crossings : Prop
-  /-- Manuscript sub-claim (ii) — $D_6$ symmetry. -/
-  claim_ii_symmetry : Prop
-  /-- Manuscript sub-claim (iii) — Alexander polynomial weight. -/
-  claim_iii_alexander_polynomial_weight : Prop
+  /-- Number of shared crossings in the threading-link configuration. -/
+  n_shared_threading : ℕ
+  /-- Number of shared crossings in a competing localised-bond
+      configuration. -/
+  n_shared_localised : ℕ
+  /-- Manuscript sub-claim (i) — Threading has more shared crossings
+      than any competing localised configuration. -/
+  claim_i_more_shared_crossings : n_shared_localised < n_shared_threading
+  /-- Order of the symmetry group acting on the π-electron
+      configuration. -/
+  symmetry_order : ℕ
+  /-- Manuscript sub-claim (ii) — `D_6` symmetry: the threading
+      configuration has 12-fold symmetry (`|D_6| = 12`). -/
+  claim_ii_d6_symmetry : symmetry_order = 12
+  /-- Alexander polynomial weight (squared, real-valued) of the
+      threading configuration at `q = q_0`. -/
+  alexander_weight : ℝ
+  /-- Manuscript sub-claim (iii) — Alexander polynomial weight is
+      non-zero on the threading link (so the configuration appears
+      in the LP-active set). -/
+  claim_iii_alexander_polynomial_weight : alexander_weight ≠ 0
 /-- **Proposition statement** (from manuscript):
 
 The LP dual of the benzene molecular braid in $H_{120}(q)$
@@ -41,7 +56,10 @@ orbital.  The LP dual optimises their placement:*
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/benzene-threading-emergence.ts
 theorem benzene_threading_emergence [ctx : BenzeneThreadingEmergenceContext] :
-    ctx.claim_i_more_shared_crossings ∧ ctx.claim_ii_symmetry ∧ ctx.claim_iii_alexander_polynomial_weight :=
-  ⟨ctx.claim_i_more_shared_crossings, ctx.claim_ii_symmetry, ctx.claim_iii_alexander_polynomial_weight⟩
+    ctx.n_shared_localised < ctx.n_shared_threading ∧
+    ctx.symmetry_order = 12 ∧
+    ctx.alexander_weight ≠ 0 :=
+  ⟨ctx.claim_i_more_shared_crossings, ctx.claim_ii_d6_symmetry,
+   ctx.claim_iii_alexander_polynomial_weight⟩
 
 end QOU.Molecular
