@@ -196,6 +196,49 @@ function collectCitations(): Map<string, string[]> {
           }
         }
       }
+
+      // Tick-quoted bracket cite form: [`refkey`] (used in .md prose
+      // when the content-pipeline carries the formal cites: array in
+      // the .ts sibling; see e.g. cfs-comparison-summary.md).
+      const TICK_BRACKET_PAT = /\[`([a-z][a-z0-9_-]*\d{4}[a-z]*)`\]/g;
+      while ((m = TICK_BRACKET_PAT.exec(content)) !== null) {
+        const key = m[1];
+        if (allRefIds.has(key)) {
+          if (!citedIn.has(key)) citedIn.set(key, []);
+          const rel = file.replace(REPO_ROOT + "/", "");
+          if (!citedIn.get(key)!.includes(rel)) {
+            citedIn.get(key)!.push(rel);
+          }
+        }
+      }
+    }
+  }
+
+  // Content .ts manifest cites: [...] arrays — the authoritative
+  // citation declaration for blocks whose .md uses an informal
+  // reference style. Added 2026-05-19 after the bib audit found
+  // 6 papers wrongly flagged as `uncited` because the inventory
+  // missed this source.
+  const tsFiles = scanFilesRecursive(join(REPO_ROOT, "content"), ".ts");
+  // Match: cites: [ "key1", "key2", ... ]  (handles single + multi-line)
+  const TS_CITES_PAT = /\bcites\s*:\s*\[([^\]]*?)\]/gs;
+  const TS_CITES_KEY = /["'`]([a-z][a-z0-9_-]*\d{4}[a-z]*)["'`]/gi;
+  for (const file of tsFiles) {
+    const content = readFileSync(file, "utf-8");
+    let m;
+    const pat = new RegExp(TS_CITES_PAT.source, TS_CITES_PAT.flags);
+    while ((m = pat.exec(content)) !== null) {
+      const arrBody = m[1];
+      const kp = new RegExp(TS_CITES_KEY.source, TS_CITES_KEY.flags);
+      let km;
+      while ((km = kp.exec(arrBody)) !== null) {
+        const key = km[1];
+        if (!citedIn.has(key)) citedIn.set(key, []);
+        const rel = file.replace(REPO_ROOT + "/", "");
+        if (!citedIn.get(key)!.includes(rel)) {
+          citedIn.get(key)!.push(rel);
+        }
+      }
     }
   }
 
