@@ -256,3 +256,28 @@ Deuteron has $\Delta_I^D = \sigma_3$ (the `+1` in $u_{\text{shift}} = 18Z + 21N 
 1. Identify the correct FR identity. The Phase 5b α holds at |Δ_λ*| level (best-block dominant), so the right FR is between Ind/Res on the SINGLE-BLOCK channel, not the total-sum channel.
 2. Find categorical form of 1.220358 (the N-independent constit per-Z factor). Candidates to test: $\exp(h)$ truncations, $q^{1/2} + q^{-1/2}$ combinations, $[2]_q$-based.
 3. Once both are derived, the full per-Z step factor decomposes as **z · 1.220358** = (Markov axiom for interface) × (intrinsic Hecke constit factor).
+
+## 2026-05-19 (night) — Phase 5d.4 + 5d.5 + 5d.5b + Lean: knot-particle dictionary connection ([PR #819](https://github.com/litlfred/qou/pull/819) commits `21ddb64c`, `8aafaf24`, `3038eb87`)
+
+| Phase | Status | Result |
+|---|---|---|
+| 5d.4 — V̂-level z-transfer | landed `21ddb64c` | **z-exactness is τ_M-level only, NOT V̂-level.** V̂ at interface generators is FLAVOR-SELECTIVE: {0 for p-n, +h/2 for p-p, -h/2 for n-n} — 5/5 interfaces match across D/T/³He. |
+| 5d.5 — K_k* search | landed `21ddb64c` | Torus knots (3_1, 5_1, 7_1) dominate |Z_norm| ranking. Per knot-particle dictionary: 3_1=e, 5_1=μ, 7_1=τ (lepton generations 1/2/3). |
+| Lean — close 226 sorries | landed `8aafaf24` | 217 True-placeholder stubs + 9 in MassComputationChainRoadmap. **48 remain (46 §3b-cond intentional + 2 Kashaev infrastructure)**. |
+| Lean — q_0_inversion_unique proof | landed `3038eb87` | §3b-cond class `MRatioInversionMonotone` + constructive uniqueness proof. MassComputationChainRoadmap now 0 sorries. |
+| 5d.5b — K_k* variance test | landed `3038eb87` | **K_1* = K_3* = 6_1 (chirality) WINS** at every K_2* — variance 1.49× (vs 1.82× baseline). **Lepton-generation assignment (K_1*=e, K_2*=μ) FALSIFIED** (1.74×). |
+
+**Key structural finding (5d.5b)**: the chirality channel 6_1 dominates **both** outer curvature ranks (k=1 and k=3); the optimal K_2* is unknot (neutrino) — uniform Plancherel restriction. Reading: depth-stratification = chirality-at-endpoints + neutrino-at-middle, **not** lepton-generation as the dictionary mapping naively suggested.
+
+**Knot-particle dictionary integration**: confirms torus knots are structurally distinguished K_k* candidates, **but** the lepton-generation assignment underperforms by 16% vs. chirality-at-endpoints. The catalog's "K_3* = 6_1" claim should likely extend to "K_1* = K_3* = 6_1".
+
+**Coordination posts**:
+- [PR #801 comment `4491365695`](https://github.com/litlfred/qou/pull/801#issuecomment-4491365695) — variance findings + asks back on full-formula test + K_2* = unknot interpretation
+- [PR #801 body update](https://api.github.com/repos/litlfred/qou/pulls/801) — variance 2.31× → 1.82× refresh + ⁴He H_12 closure + new test-plan items
+
+**Next concrete tasks (Phase 5e):**
+
+1. 5e.1 — Run the FULL PR #801 depth-stratified formula (with α_k + Vol_hyp scaling) under each (K_1*, K_2*) candidate — variance may shift; current simplified probe might miss structural elements.
+2. 5e.2 — If chirality-at-endpoints holds under the full formula, propose K_1* = K_3* = 6_1 as a refinement to the depth-stratified-frobenius-reciprocity proposition in PR #801.
+3. 5e.3 — Derive cosh(h) operator-level (Phase 5c.2 still queued) — would close the per-Z step factor exactly.
+4. 5e.4 — Build SnapPy bridge for Kashaev.lean's `pieceVolume` (closes the last 2 non-§3b-cond Lean sorries).
