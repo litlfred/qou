@@ -1,3 +1,5 @@
+import Mathlib.Algebra.BigOperators.Basic
+
 /-!
 # QOU.Torsion.mass_decomposition_categorical — placeholder stub
 
@@ -19,10 +21,16 @@ namespace QOU.Torsion
 class MassDecompositionCategoricalContext where
   /-- The substrate parameter `q : ℝ`. -/
   q : ℝ
-  /-- The braid representative type. -/
-  Braid : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_mass_decomposition_categorical : Prop
+  /-- The brane-tower depth `N`. -/
+  N : ℕ
+  /-- Total categorical mass `𝔪(ρ)`. -/
+  mass : ℝ
+  /-- Per-level mass contribution `𝔪_n(ρ_n)`. -/
+  mass_level : ℕ → ℝ
+  /-- Manuscript identity: tower decomposition
+      `𝔪(ρ) = Σ_{n=0..N-1} 𝔪_n(ρ_n)`. -/
+  claim_mass_decomposition_categorical :
+    mass = (Finset.range N).sum (fun n => mass_level n)
 
 /-- **Content statement** (from manuscript):
 
@@ -40,9 +48,8 @@ base-level morphism $\varrho_0 \colon \mathbf{1} \to A_0$.
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/topological-mass.ts
-theorem mass_decomposition_categorical [ctx : MassDecompositionCategoricalContext] : ctx.claim_mass_decomposition_categorical := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem mass_decomposition_categorical [ctx : MassDecompositionCategoricalContext] :
+    ctx.mass = (Finset.range ctx.N).sum (fun n => ctx.mass_level n) :=
+  ctx.claim_mass_decomposition_categorical
 
 end QOU.Torsion

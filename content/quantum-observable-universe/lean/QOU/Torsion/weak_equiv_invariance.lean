@@ -19,8 +19,15 @@ namespace QOU.Torsion
 class WeakEquivInvarianceContext where
   /-- The substrate parameter `q : ℝ`. -/
   q : ℝ
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_weak_equiv_invariance : Prop
+  /-- Vacuum-state evaluation `τ : 𝒜_∞ → ℝ`. -/
+  τ_value : ℕ → ℝ
+  /-- Predicate: levels `n` and `m` are connected by a weak
+      equivalence (zigzag of coface/codegeneracy maps). -/
+  weak_equiv : ℕ → ℕ → Prop
+  /-- Manuscript identity: vacuum state is invariant under weak
+      equivalence between brane levels. -/
+  claim_weak_equiv_invariance :
+    ∀ n m : ℕ, weak_equiv n m → τ_value n = τ_value m
 
 /-- **Content statement** (from manuscript):
 
