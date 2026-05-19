@@ -23,9 +23,12 @@
     },
     {
       "id": "leitnerpawloski2004",
-      "status": "pending",
+      "status": "partial",
       "local_pdf": "uploads/leitnerpawloski2004.pdf",
-      "fixes_applied": 0
+      "verified_at": "2026-05-19T06:18:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 0,
+      "note": "arXiv math/0409565 = LP2004 'Unital Gröbner Bases over Arbitrary Commutative Ground Rings' (10 pp.). Content: §2 unital GB definitions, Buchberger over R, PBW corollary. NO inner products, NO intertwiners, NO representation theory beyond GB-representations. Verified-clean for content/unital-groebner-bases/.../groebner-basis.lean (cites Definition 5 of LP2004 — exact match). MISMATCH for content/quantum-observable-universe/quantum-observable-universes/pawlowski-leitner-inner-product.lean and content/quantum-observable-universe/lean/QOU/RepresentationTheory.lean — both cite leitnerpawloski2004 for 'PL inner product' / 'PL basis dimension formula', neither of which appears in LP2004. Likely a different Pawlowski-Leitner work (Pawlowski's thesis or a separate representation-theory paper). Author decision pending: (a) add a new bib entry for the actual cited work, (b) change the QOU citation key, or (c) update the QOU content to match LP2004's actual scope."
     },
     {
       "id": "yekutieli2008",
