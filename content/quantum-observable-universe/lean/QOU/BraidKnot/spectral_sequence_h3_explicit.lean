@@ -22,6 +22,11 @@ class SpectralSequenceH3ExplicitContext where
   Z : ℕ
   /-- Neutron number `N`. -/
   N : ℕ
+  /-- Strand count of the Hecke algebra (manuscript: `H_3` ⇒ 3). -/
+  n_strands : ℕ
+  /-- Manuscript fact (encoded in the file's name): the Hecke algebra
+      under study is `H_3(R, q)`, i.e. the 3-strand case. -/
+  claim_strand_count : n_strands = 3
   /-- The Hecke algebra `H_3(R, q)` — abstract carrier. -/
   HeckeH3 : Type
   /-- Manuscript sub-claim (i): explicit `d_1`-differential of the
@@ -49,10 +54,12 @@ concrete for the single-nucleon case.
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/spectral-sequence-h3-explicit.ts
 theorem spectral_sequence_h3_explicit [ctx : SpectralSequenceH3ExplicitContext] :
+    ctx.n_strands = 3 ∧
     ctx.claim_i_d1_differential ∧
     ctx.claim_ii_d2_differential ∧
     ctx.claim_iii_page_identifications_concretised :=
-  ⟨ctx.claim_i_d1_differential, ctx.claim_ii_d2_differential,
+  ⟨ctx.claim_strand_count, ctx.claim_i_d1_differential,
+   ctx.claim_ii_d2_differential,
    ctx.claim_iii_page_identifications_concretised⟩
 
 end QOU.BraidKnot

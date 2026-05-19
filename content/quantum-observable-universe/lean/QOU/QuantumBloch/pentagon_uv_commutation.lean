@@ -26,9 +26,13 @@ class PentagonUvCommutationContext extends QOU.Shared.MarkovTraceContext where
       `Φ_q(v) · Φ_q(u) = Φ_q(u) · Φ_q(uv) · Φ_q(v)`. -/
   claim_pentagon_master :
     haveI := ringR; Phi_q v * Phi_q u = Phi_q u * Phi_q (u * v) * Phi_q v
+  /-- Hecke generator family `σ : ℕ → R` (`σ s` represents `σ_s`). -/
+  σ : ℕ → R
   /-- Manuscript sub-claim (i) — Hecke braid relation at the operator
-      level: `σ_s σ_{s+1} σ_s = σ_{s+1} σ_s σ_{s+1}`. -/
-  claim_i_hecke_braid_relation : Prop
+      level: `σ_s σ_{s+1} σ_s = σ_{s+1} σ_s σ_{s+1}` for every `s`. -/
+  claim_i_hecke_braid_relation : ∀ s : ℕ,
+    haveI := ringR;
+      σ s * σ (s + 1) * σ s = σ (s + 1) * σ s * σ (s + 1)
   /-- Manuscript sub-claim (ii) — Descent involution split:
       `τ̂_n` separates `H_n(R, q)` into descended / transient parts. -/
   claim_ii_descent_involution_split : Prop
@@ -53,7 +57,9 @@ theorem pentagon_uv_commutation [ctx : PentagonUvCommutationContext] :
     (haveI := ctx.ringR;
       ctx.Phi_q ctx.v * ctx.Phi_q ctx.u =
         ctx.Phi_q ctx.u * ctx.Phi_q (ctx.u * ctx.v) * ctx.Phi_q ctx.v) ∧
-    ctx.claim_i_hecke_braid_relation ∧
+    (∀ s : ℕ, haveI := ctx.ringR;
+      ctx.σ s * ctx.σ (s + 1) * ctx.σ s =
+        ctx.σ (s + 1) * ctx.σ s * ctx.σ (s + 1)) ∧
     ctx.claim_ii_descent_involution_split ∧
     ctx.claim_iii_eigenvalue_specialisation ∧
     ctx.claim_iv_operator_lift_transient :=

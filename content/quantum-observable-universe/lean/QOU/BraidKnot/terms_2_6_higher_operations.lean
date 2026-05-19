@@ -25,14 +25,26 @@ class Terms26HigherOperationsContext where
   Link : Type
   /-- The Hecke algebra `H_n(R, q)`. -/
   HeckeAlgebra : Type
+  /-- Page index targeted by term 2 (single-generator brane tower
+      identification). -/
+  target_page_term_2 : ℕ
+  /-- Hochschild higher-operation arity used for term 2. -/
+  hochschild_arity_term_2 : ℕ
   /-- Manuscript sub-claim (term 2): single-generator brane tower
-      `Σ Φ_q(|V̂_i|)` identification with the `E_∞^{1,*}` page via
-      a Hochschild higher-operation `μ_2`. -/
-  claim_term_2_single_generator_brane_tower : Prop
+      identifies with the `E_∞^{1,*}` page via the binary Hochschild
+      higher-operation `μ_2` (page index `1`, arity `2`). -/
+  claim_term_2_single_generator_brane_tower :
+    target_page_term_2 = 1 ∧ hochschild_arity_term_2 = 2
+  /-- Page index targeted by term 6 (jet-level prefix correction
+      identification). -/
+  target_page_term_6 : ℕ
+  /-- Hochschild higher-operation arity used for term 6. -/
+  hochschild_arity_term_6 : ℕ
   /-- Manuscript sub-claim (term 6): jet-level prefix correction
-      identification with the `E_∞^{5,*}` page via a Hochschild
-      higher-operation `μ_6`. -/
-  claim_term_6_jet_prefix_correction : Prop
+      identifies with the `E_∞^{5,*}` page via the Hochschild higher-
+      operation `μ_6` (page index `5`, arity `6`). -/
+  claim_term_6_jet_prefix_correction :
+    target_page_term_6 = 5 ∧ hochschild_arity_term_6 = 6
 
 /-- **Content statement** (from manuscript):
 
@@ -50,8 +62,8 @@ This proposition sketches concrete avenues to close both via
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/terms-2-6-higher-operations.ts
 theorem terms_2_6_higher_operations [ctx : Terms26HigherOperationsContext] :
-    ctx.claim_term_2_single_generator_brane_tower ∧
-    ctx.claim_term_6_jet_prefix_correction :=
+    (ctx.target_page_term_2 = 1 ∧ ctx.hochschild_arity_term_2 = 2) ∧
+    (ctx.target_page_term_6 = 5 ∧ ctx.hochschild_arity_term_6 = 6) :=
   ⟨ctx.claim_term_2_single_generator_brane_tower,
    ctx.claim_term_6_jet_prefix_correction⟩
 
