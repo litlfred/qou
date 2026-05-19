@@ -36,11 +36,17 @@ class HelicityConservationContext where
   /-- Manuscript sub-claim (ii) — Călugăreanu–White–Fuller
       decomposition `ℋ_q(0) = Wr_q + Tw_q + linking_q`. -/
   claim_ii_CWF_decomposition : H_q 0 = writhe_q + twist_q + linking_q
-  /-- Manuscript sub-claim (iii) — Jones-polynomial refinement: the
-      Jones polynomial separates classes where `ℋ_q` alone does not
-      (formalised as an abstract Prop because it ranges over the
-      space of vortex configurations). -/
-  claim_iii_jones_refinement : Prop
+  /-- Predicate: two vortex configurations are knot-equivalent
+      (same isotopy class). -/
+  knot_equiv : Prop
+  /-- Jones polynomial value (real-valued at substrate). -/
+  J_K : ℝ
+  /-- Alternative configuration's Jones value. -/
+  J_K_alt : ℝ
+  /-- Manuscript sub-claim (iii) — Jones-polynomial refinement: when
+      Jones polynomials agree, the configurations are knot-equivalent
+      (Jones polynomial is a knot invariant separator). -/
+  claim_iii_jones_refinement : J_K = J_K_alt → knot_equiv
   /-- The classical Moffatt helicity `H = ∫ v · ω dV`. -/
   H_classical : ℝ
   /-- Manuscript sub-claim (iv) — Classical limit: as `q → 1`,
@@ -64,7 +70,7 @@ $\{\varrho_1, \ldots, \varrho_n\}$ as
 theorem helicity_conservation [ctx : HelicityConservationContext] :
     (∀ t : ℝ, ctx.H_q t = ctx.H_q 0) ∧
     ctx.H_q 0 = ctx.writhe_q + ctx.twist_q + ctx.linking_q ∧
-    ctx.claim_iii_jones_refinement ∧
+    (ctx.J_K = ctx.J_K_alt → ctx.knot_equiv) ∧
     (ctx.q = 1 → ctx.H_q 0 = ctx.H_classical) :=
   ⟨ctx.claim_i_conservation, ctx.claim_ii_CWF_decomposition,
    ctx.claim_iii_jones_refinement, ctx.claim_iv_classical_limit⟩

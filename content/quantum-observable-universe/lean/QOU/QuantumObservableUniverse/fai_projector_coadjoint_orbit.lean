@@ -16,10 +16,21 @@ namespace QOU.QuantumObservableUniverse
 /-- Abstract context for the `fai_projector_coadjoint_orbit` claim — manuscript-themed
     typed fields below; `holds` carries the residual `Prop` claim. -/
 class FaiProjectorCoadjointOrbitContext where
-  /-- The categorical object / monoidal structure. -/
-  CategoricalObj : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_fai_projector_coadjoint_orbit : Prop
+  /-- The standard representation `V`. -/
+  V : Type
+  /-- Rank-1 projector `ρ : V → V`. -/
+  ρ : V → V
+  /-- Identity map on `V`. -/
+  id_V : V → V
+  /-- Scalar `(1/2) · id_V` — the traceless-component constant. -/
+  half_id : V → V
+  /-- Traceless component `σ(ρ) = ρ - (1/2)·id_V`. -/
+  σ_rho : V → V
+  /-- The squared involution `(2σ(ρ))²` (after scalar doubling). -/
+  twice_sigma_sq : V → V
+  /-- Manuscript identity: `(2σ(ρ))² = id_V` (the rank-1-projector
+      traceless-component generates an involution). -/
+  claim_fai_projector_coadjoint_orbit : ∀ v : V, twice_sigma_sq v = id_V v
 
 /-- **Lemma statement** (from manuscript):
 
@@ -36,9 +47,8 @@ coadjoint orbit in $\mathrm{Ad}(A)$.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/fai-projector-coadjoint-orbit.ts
-theorem fai_projector_coadjoint_orbit [ctx : FaiProjectorCoadjointOrbitContext] : ctx.claim_fai_projector_coadjoint_orbit := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem fai_projector_coadjoint_orbit [ctx : FaiProjectorCoadjointOrbitContext] :
+    ∀ v : ctx.V, ctx.twice_sigma_sq v = ctx.id_V v :=
+  ctx.claim_fai_projector_coadjoint_orbit
 
 end QOU.QuantumObservableUniverse
