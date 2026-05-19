@@ -86,3 +86,17 @@ $$\Delta_\lambda(K) = \mathrm{Vol}_{\mathrm{hyp}}^{(\lambda)}(K) \cdot \tau_q\!\
 - [PR #781 comment](https://github.com/litlfred/qou/pull/781) — light-touch downstream-consumer notice
 
 **Holding** Phase 2 until PR #777's owner confirms (i) the closure is outside the 6 banned fit ansätze and (ii) PR #708's `Vol_hyp^(λ)(K)` machinery is accessible.
+
+## 2026-05-19 — Δ_λ Phase 2 + Phase 3 (branch `claude/closed-forms-first-principles`, [PR #787](https://github.com/litlfred/qou/pull/787))
+
+| Date | Phase | Status | Cherry-pick |
+|---|---|---|---|
+| 2026-05-19 | Phase 2 (two-factor V(K)·c_λ) | landed `b4e196e2`; **FALSIFIED** on 8 V(K) candidates | `delta_lambda_two_factor_phase2.py` + falsification doc |
+| 2026-05-19 | Phase 3 (JSJ Vol via SnapPy) | landed `b7b11519`; **FALSIFIED** (rel_std 1.4) but reveals **Vol(canonical(K)) clusters by Z** | `delta_lambda_jsj_phase3.py` + Vol_hyp(D)=Vol(T)=12.776; Vol(³He)=Vol(⁴He)=12.554 |
+| 2026-05-19 | Coord on #777 | comment posted (this round) | asks #1 (f64-vs-mpmath knot-vol audit) and #2 (per-JSJ-piece quantum-invariant infrastructure) |
+
+**Hard categorical finding (Phase 3):** Vol_hyp of the canonical atomic braid closure is **invariant under adding nucleons at fixed Z**. The N-direction is Seifert-fibered (Vol contribution = 0). Per-N binding-energy structure must live in Seifert-piece quantum invariants, not in the hyperbolic core.
+
+This **constrains** PR #781's Kashaev mass-table formula (ρ_F · Vol_hyp) — same-Z isotopes should use the same Vol per my Phase 3 measurement; if PR #781 assigns different Vol to D vs T (same Z=1), that's a discrepancy worth surfacing.
+
+**Status**: Δ_λ thread **paused** at PR #787 pending owner answers on the per-JSJ-piece-quantum-invariant infrastructure (ask #2). If no such infrastructure, the branch lands as a diagnostic package (3 phases of productive negatives + Z-clustering structural finding) and the thread pivots to another closed-form option.
