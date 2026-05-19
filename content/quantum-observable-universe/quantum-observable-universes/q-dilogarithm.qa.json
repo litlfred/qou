@@ -148,6 +148,24 @@
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "3bf0077b8525",
+          "ts": "23f9ae6bc045",
+          "lean": "7b970000332f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-adjudicator-qou-univs-L-R",
+          "version": "claude-sonnet-4-6-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T19:13:12.122Z",
+        "reviewed_sha": "6f8825bd1db6bfe695ea6f757547529ccb5ea9aa",
+        "notes": "default-pass (chapter=quantum-observable-universes)"
+      }
     ]
   },
   "updated_at": "2026-05-20T02:29:29.163Z"

@@ -148,6 +148,24 @@
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "3e0ca7a5d01c",
+          "ts": "214ac0237b18",
+          "lean": "e6018b43bd7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-adjudicator-braids-A-D",
+          "version": "claude-sonnet-4-6-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T19:14:09.489Z",
+        "reviewed_sha": "6f8825bd1db6bfe695ea6f757547529ccb5ea9aa",
+        "notes": "default-pass (chapter=braids-and-knots, sweep batch=braids-A-D)"
+      }
     ]
   },
   "updated_at": "2026-05-20T02:29:29.163Z"

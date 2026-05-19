@@ -150,6 +150,24 @@
         "severity": "major",
         "evidence": "content/quantum-observable-universe/braids-and-knots/confinement-grading-correspondence-conditional.md:5: *Let $\\mathcal{C}$ denote the upstream conjectural class  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$] | content/quantum-observable-universe/braids-and-knots/confinement-grading-correspondence-conditional.md:11: [**conditional on $\\mathcal{C}$**], the  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$]"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a006881ef458",
+          "ts": "818290759af3",
+          "lean": "eb43c1c13ad7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-adjudicator-braids-A-D",
+          "version": "claude-sonnet-4-6-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T19:14:09.489Z",
+        "reviewed_sha": "6f8825bd1db6bfe695ea6f757547529ccb5ea9aa",
+        "notes": "default-pass (chapter=braids-and-knots, sweep batch=braids-A-D)"
+      }
     ]
   },
   "updated_at": "2026-05-20T02:29:29.163Z"
