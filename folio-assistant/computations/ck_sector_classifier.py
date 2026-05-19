@@ -30,30 +30,24 @@ from __future__ import annotations
 from dataclasses import dataclass
 from fractions import Fraction
 from math import comb
+from pathlib import Path
+import sys
 from typing import Literal
 
-
-def _pell_lucas_up_to(bound: int) -> list[int]:
-    """Generate Pell-Lucas numbers a_n with a_{n+1} = 2·a_n + a_{n-1},
-    a_0 = a_1 = 1, up to (and including) the first value ≥ bound.
-
-    The bound is on Pell-Lucas magnitude, not on rung k — callers
-    pass the numerator they want to factor against.
-    """
-    if bound <= 0:
-        return []
-    a, b = 1, 1
-    out = [a]
-    while a < bound:
-        a, b = b, 2 * b + a
-        out.append(a)
-    return out
-
-
-# Convenience snapshot for self-test display and downstream introspection.
-# Not used by `is_pell_lucas_clean` — that calls `_pell_lucas_up_to(num)`.
-PELL_LUCAS = _pell_lucas_up_to(10_000)
-PELL = [0, 1, 2, 5, 12, 29, 70, 169, 408, 985, 2378]
+# Centralised Pell-Lucas / silver-ratio primitives (was duplicated
+# here pre-PR #816; moved to `silver_ratio_utils.py` per Gemini's
+# follow-up to keep one canonical implementation that the
+# extended-c_k SDP probe and the silver-ratio Pell-Lucas benchmark
+# both share).
+HERE = Path(__file__).resolve().parent
+if str(HERE) not in sys.path:
+    sys.path.insert(0, str(HERE))
+from silver_ratio_utils import (  # noqa: E402,F401 — re-exported
+    PELL,
+    PELL_LUCAS,
+    is_pell_lucas_clean,
+    pell_lucas_up_to as _pell_lucas_up_to,
+)
 
 Sector = Literal["pure_sigma", "averaging_resonant"]
 
@@ -80,51 +74,6 @@ class TypedB3Distribution:
 
 PROTON_DIST = TypedB3Distribution()
 NEUTRON_DIST = TypedB3Distribution(n_sigma=5, n_sigma_inv=4, n_avg=2)
-
-
-def is_pell_lucas_clean(value: Fraction) -> bool:
-    """Test if a rational value is Pell-Lucas-clean at silver ratio.
-
-    The reduced numerator (in absolute value) is considered clean iff
-    it has the form  pl^j · 2^t  for some Pell-Lucas number pl > 1 and
-    j ∈ {0, 1, ..., 4}, t ∈ {0, 1, 2, ...} (the j = 0 case collapses to
-    a bare power of 2). Empirically the c_k closed forms observed so
-    far all sit in this shape; j > 4 has not yet been needed but the
-    bound is easy to lift if a future c_k pushes past it.
-
-    Examples:
-      -2          → True (power of 2, j = 0)
-      -49/32      → True (49 = a_3², t = 0)
-      -11/8       → False (11 is not in Pell-Lucas)
-      7/2         → True (7 = a_3)
-      -8          → True (-8 = -2³)
-      49/16       → True (49 = a_3²)
-      -7          → True (a_3)
-      343/128     → True (343 = a_3³)
-      98 = 49·2   → True (a_3² · 2¹)
-    """
-    num = abs(value.numerator)
-    if num == 0:
-        return True
-    # Power of 2 (covers num = 1 = 2^0 as well; j = 0 case)
-    if (num & (num - 1)) == 0:
-        return True
-    # (Pell-Lucas number)^j times (power of 2), for j ∈ 1..4.
-    # Generate Pell-Lucas on demand up to `num` so the test stays valid
-    # for c_k whose numerators exceed any pre-stored prefix.
-    for pl in _pell_lucas_up_to(num):
-        if pl <= 1:
-            continue
-        p_pow = 1
-        for _j in range(1, 5):
-            p_pow *= pl
-            if p_pow > num:
-                break
-            if num % p_pow == 0:
-                quotient = num // p_pow
-                if quotient != 0 and (quotient & (quotient - 1)) == 0:
-                    return True
-    return False
 
 
 def classify_sector_empirical(c_k_at_silver: Fraction) -> Sector:
