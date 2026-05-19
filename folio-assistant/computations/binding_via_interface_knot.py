@@ -143,7 +143,9 @@ def mass_tower_first_order(
     # Pentagon factorisation introduces complex intermediates whose
     # imaginary parts cancel structurally; keep the real part (with
     # tracking of residual for diagnostic).
-    t3_imag_residue = float(mp.im(t3))
+    # Copilot review #2 on PR #822: keep imag residue as mp.mpf string
+    # to preserve high-precision (don't truncate to ~53 bits).
+    t3_imag_residue = str(mp.im(t3))
     t3 = mp.re(t3)
 
     return {
@@ -309,10 +311,13 @@ def main() -> int:
                    "sign-wrong.")
     elif signs_correct and mom < 3.96:
         verdict = (f"IMPROVES — max/min^(1) = {mom:.3f}, signs correct. "
-                   "Sign-fix versus tensor-product. T3 closure pending.")
+                   "T3 now computed via pentagon-reduction "
+                   "(`pentagon_reduction_li2q.li_2_q_pentagon`); "
+                   "higher-order tower terms beyond T3 still pending.")
     elif signs_correct:
         verdict = (f"SIGN-FIX — max/min^(1) = {mom:.3f}; signs correct "
-                   "(tensor-product was wrong-sign). T3 closure pending.")
+                   "(tensor-product was wrong-sign). T3 computed via "
+                   "pentagon-reduction; higher-order tower pending.")
     else:
         verdict = (f"NO IMPROVEMENT — max/min^(1) = {mom:.3f}, "
                    f"signs_correct = {signs_correct}")

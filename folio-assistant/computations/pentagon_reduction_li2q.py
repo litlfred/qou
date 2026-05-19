@@ -338,14 +338,16 @@ def main() -> int:
         )
         .set_description(
             "Pentagon-identity reduction of Li_2^q at pair-product "
-            "arguments |V_i V_j| > q_0 (which exceed the series "
-            "convergence radius). Algebraic reorganisation per the "
-            "Hopf-algebra pentagon identity (★ above); not analytic "
-            "continuation. Applied to the V̂ values from PR #801's "
-            "binding_via_interface_knot.py to compute the previously-"
-            "deferred T3 contribution; gives the first numerical T3 "
-            "value for D, T, ³He and shows the magnitude shift "
-            "towards B_AME."
+            "arguments |V_i V_j| > q_0. Algebraic reorganisation per "
+            "the Hopf-algebra pentagon identity (★ above); not "
+            "analytic continuation. Applied to the V̂ values from PR "
+            "#801's binding_via_interface_knot.py. SCALE NOTE: per-"
+            "atom 'B_MeV_first_plus_T3' here uses m_e (CAL-1) as the "
+            "dimensional factor; companion "
+            "binding-via-interface-knot.witness.json uses E_0 = "
+            "Q_β(n), so its 'B_MeV_with_t3' differs by factor "
+            "~m_e/E_0 ≈ 0.65×. Both scalings are valid; choose per "
+            "downstream convention."
         )
         .add_parameter("q_0", str(q))
         .add_parameter("z_markov", str(z_markov))

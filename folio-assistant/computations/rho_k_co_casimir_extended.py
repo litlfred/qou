@@ -75,13 +75,18 @@ Q_MP = mp.mpf(Q_50_DIGIT_STR)
 
 
 def _chi_worker(args):
-    """Pool worker: chi_numeric for one partition. Re-imports inside
-    the worker subprocess so the global mpmath dps is set correctly
-    before any computation."""
+    """Pool worker: chi_numpy for one partition (10-50× faster than
+    chi_numeric, validated against mpmath at 1e-14 relative tolerance
+    per docs/audits/2026-05-19-cocasimir-compute-bottleneck.md).
+    Falls back to chi_numeric if numpy import unavailable."""
     lam, crossings, q_str, dps = args
     mp.mp.dps = dps
-    from rho_k_h3a_refinement import chi_numeric as _chi  # noqa: E402
-    return _chi(lam, crossings, mp.mpf(q_str))
+    try:
+        from hoefsmit_numpy import chi_numpy as _chi  # noqa: E402
+        return _chi(lam, crossings, float(mp.mpf(q_str)))
+    except ImportError:
+        from rho_k_h3a_refinement import chi_numeric as _chi  # noqa: E402
+        return _chi(lam, crossings, mp.mpf(q_str))
 
 
 # ── Helpers ──────────────────────────────────────────────────────
@@ -115,6 +120,9 @@ def evaluate_at_q0(expr) -> mp.mpf:
     return mp.mpf(str(val.evalf(60)))
 
 
+_Y_LAMBDA_CACHE: dict[int, dict] = {}
+
+
 def load_y_lambda_for_n(n: int):
     """Load y_λ for the given n. Returns dict[partition_tuple, value].
 
@@ -124,10 +132,16 @@ def load_y_lambda_for_n(n: int):
     Fall back to the NUMERIC witness (`y-lambda-wenzl-witness.json`)
     covering n=2..30 — y_λ pre-evaluated at q_0 (value type: mp.mpf).
 
+    Cached per-n at module scope (Copilot review #1 on PR #822):
+    multi-atom runs no longer re-parse the (large) witness JSON
+    per atom — once per `n`, then dict lookup.
+
     Per repo-owner directive 2026-05-19 "all nucleotides": the numeric
     fallback extends co-Casimir coverage from n=12 (only ⁴He) to
     n=30 (covers ⁵Li, ⁶Li, ⁷Li, ⁸Be, ⁹Be, ¹⁰Be — up to A=10).
     """
+    if n in _Y_LAMBDA_CACHE:
+        return _Y_LAMBDA_CACHE[n]
     # Try symbolic first (n=2..12)
     sym_path = HERE / "y-lambda-wenzl-bridge-symbolic-witness.json"
     if sym_path.exists():
@@ -144,6 +158,7 @@ def load_y_lambda_for_n(n: int):
                     if qsym is not Q_SYM:
                         expr = expr.subs(qsym, Q_SYM)
                 out[lam] = expr
+            _Y_LAMBDA_CACHE[n] = out
             return out
     # Fall back to numeric (n=2..30) — pre-evaluated at q_0
     num_path = HERE / "y-lambda-wenzl-witness.json"
@@ -164,6 +179,7 @@ def load_y_lambda_for_n(n: int):
     for w in block["weights"]:
         lam = tuple(w["partition"])
         out_num[lam] = mp.mpf(w["y_lambda_numeric"])
+    _Y_LAMBDA_CACHE[n] = out_num
     return out_num
 
 
@@ -446,13 +462,19 @@ def main(argv: list[str] | None = None) -> int:
             "Substrate-derived ρ_K^pred via the Frobenius co-Casimir "
             "Option B (Δ_λ := 1/dim_q(λ), forced by "
             "thm:frobenius-codim-universal — zero free parameters, "
-            "τ-invariant) for every atom with both an L1 canonical "
-            "|tr_M| value (from canonical-mass-table-extended) and a "
-            "y_λ symbolic table for n=3A (from "
-            "y-lambda-wenzl-bridge-symbolic-witness). Generalises "
-            "rho_k_h3a_co_casimir.py from D-only to {p, n, D, T, "
-            "³He, ⁴He}. Per repo-owner directive 2026-05-19 — Q1 "
-            "of /coordinate PR #802 follow-up list."
+            "τ-invariant). Loads y_λ from EITHER the symbolic Wenzl-"
+            "bridge witness (n=2..12, sp.Expr in q) OR the numeric "
+            "Wenzl witness (n=2..30, mp.mpf at q_0) — picks whichever "
+            "covers the requested n. Per repo-owner directive 2026-"
+            "05-19 'all nucleotides', DEFAULT_ATOMS extended to "
+            "A ≤ 10 (5Li, 6Li, 7Li, 7Be, 8Be, 9Be, 10B); gate via "
+            "--max-A (default 4). Generalises rho_k_h3a_co_casimir.py "
+            "from D-only. Witness MeV scaling: rows use m_e (CAL-1) "
+            "as the natural scale for ρ_K^LO and the co-Casimir "
+            "correction; per-atom 'M_pred_MeV' = ρ_K_pred · m_e · "
+            "|tr_M|. Note: binding-via-interface-knot.witness.json "
+            "uses E_0 = Q_β(n) instead — different scale by ~m_e/E_0 "
+            "≈ 0.65×."
         )
         .add_parameter("q_0", Q_50_DIGIT_STR)
         .add_parameter("m_e_MeV", str(M_E_MEV))
