@@ -11,7 +11,6 @@ export default proposition({
   uses: [
     "prop:neutron-qvalue-symbolic",
     "prop:q-beta-form-a-n1-symbolic",
-    "def:hecke-quadratic",
     "rem:per-block-hopf-jones-absorption-pattern",
   ],
   cites: [
