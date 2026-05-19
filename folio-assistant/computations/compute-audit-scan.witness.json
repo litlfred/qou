@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T23:28:04.419594+00:00",
-  "commitSha": "564f00432450881ba6870b13809acc68102f2cc9",
+  "computedAt": "2026-05-19T23:28:59.237891+00:00",
+  "commitSha": "078937003656930bbc1e4989b28c559851828f3b",
   "assertions": [],
   "allPassed": true,
   "durationMs": 7,
@@ -13,7 +13,7 @@
   "description": "Static scan of folio-assistant/computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 640,
+    "files_scanned": 641,
     "patterns": [
       "P15",
       "P16",
@@ -27,7 +27,7 @@
       "P15": 174,
       "P16": 164,
       "P21": 32,
-      "P30": 94,
+      "P30": 93,
       "P31": 25
     },
     "top_files": [
@@ -501,13 +501,6 @@
       {
         "pattern": "P30",
         "file": "confinement-operator-selection.py",
-        "line": 1,
-        "snippet": "json.dump → .witness.json without WitnessBuilder",
-        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
-      },
-      {
-        "pattern": "P30",
-        "file": "cross_check_trM_1ppb.py",
         "line": 1,
         "snippet": "json.dump → .witness.json without WitnessBuilder",
         "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
