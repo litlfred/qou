@@ -43,6 +43,19 @@ sys.path.insert(0, str(Path(__file__).parent))
 from habiro_types import HabiroAtomicWitness, HabiroCompletionRecord  # noqa: E402
 
 
+def _git_head_sha() -> str:
+    """Return the current `git rev-parse HEAD`, or 'unknown' if unavailable."""
+    import subprocess
+    try:
+        return subprocess.check_output(
+            ["git", "rev-parse", "HEAD"],
+            cwd=Path(__file__).parent,
+            stderr=subprocess.DEVNULL,
+        ).decode().strip()
+    except Exception:
+        return "unknown"
+
+
 HERE = Path(__file__).parent
 INPUT_WITNESS = HERE / "habiro-coefficients-atomic.witness.json"
 OUTPUT_WITNESS = HERE / "habiro-tail-in-ideal-validation.witness.json"
@@ -167,7 +180,7 @@ def main() -> int:
         "overall_pass": overall_pass,
         "results": per_atom_results,
         "scriptFile": "habiro_witness_validator.py",
-        "commitSha": "6bf5ae949523bb865715af1103b47cd0ecabcc32",
+        "commitSha": _git_head_sha(),
     }
     # polynomial_q_not_applicable: validator emits boolean divisibility /
     # exact-reconstruction checks over ZZ[u], not a polynomial-in-q form.

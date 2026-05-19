@@ -1,19 +1,19 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T06:37:40.168081+00:00",
-  "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811",
+  "computedAt": "2026-05-19T17:18:45.701569+00:00",
+  "commitSha": "9e2eed0c0de37bac11ea9ab352c2e2eefe72bb1b",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 0,
+      "computed": 1,
       "expected": 0,
-      "passed": true,
+      "passed": false,
       "tolerance": 0,
       "source": "every witness must declare engine/scriptFile/commitSha"
     }
   ],
-  "allPassed": true,
+  "allPassed": false,
   "durationMs": 7,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
@@ -35,12 +35,12 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 655,
-      "prov_ok": 625,
-      "prov_audit_exempt": 30,
-      "prov_missing": 0,
+      "total_scanned": 665,
+      "prov_ok": 633,
+      "prov_audit_exempt": 31,
+      "prov_missing": 1,
       "prov_parse_error": 0,
-      "completeness_ratio": 1.0
+      "completeness_ratio": 0.9984962406015038
     },
     "by_verdict": {
       "PROV_OK": [
@@ -258,6 +258,10 @@
         },
         {
           "witness": "binding-q-target-sweep.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "binding-via-interface-knot.witness.json",
           "missing_fields": []
         },
         {
@@ -949,6 +953,10 @@
           "missing_fields": []
         },
         {
+          "witness": "commutative-chirality-vanishes-probe.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "compound-binding-via-differences.witness.json",
           "missing_fields": []
         },
@@ -962,10 +970,6 @@
         },
         {
           "witness": "confinement-operator-selection.witness.json",
-          "missing_fields": []
-        },
-        {
-          "witness": "cross-check-trM-1ppb.witness.json",
           "missing_fields": []
         },
         {
@@ -1105,6 +1109,10 @@
           "missing_fields": []
         },
         {
+          "witness": "descartes-knot-eigenbasis-probe.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "deuteron_tr_M_symbolic.witness.json",
           "missing_fields": []
         },
@@ -1165,6 +1173,10 @@
           "missing_fields": []
         },
         {
+          "witness": "gauge-coupling-uniqueness-probe.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "gb-depth-period-bring-fig8.witness.json",
           "missing_fields": []
         },
@@ -1222,6 +1234,10 @@
         },
         {
           "witness": "habiro-exact-mass-endomorphism.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "habiro-expansion-atomic-probe.witness.json",
           "missing_fields": []
         },
         {
@@ -1398,6 +1414,14 @@
         },
         {
           "witness": "kite_tail_reconciliation.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "knot-factor-amphicheiral-BD-probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "knot-factor-amphicheiral-probe.witness.json",
           "missing_fields": []
         },
         {
@@ -1746,6 +1770,10 @@
         },
         {
           "witness": "path4-rho-K-at-h3A.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "pentagon-reduction-li2q.witness.json",
           "missing_fields": []
         },
         {
@@ -2229,6 +2257,10 @@
           "missing_fields": []
         },
         {
+          "witness": "rho-k-co-casimir-extended.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "rho-k-full-via-wenzl-lr.witness.json",
           "missing_fields": []
         },
@@ -2545,7 +2577,16 @@
           "missing_fields": []
         }
       ],
-      "PROV_MISSING": [],
+      "PROV_MISSING": [
+        {
+          "witness": "cross-check-trM-1ppb.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        }
+      ],
       "PROV_AUDIT_EXEMPT": [
         {
           "witness": "braid-encoding-audit.witness.json",
@@ -2661,6 +2702,10 @@
         },
         {
           "witness": "validation-as-input-audit.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "weight-factor-audit.witness.json",
           "missing_fields": []
         },
         {
