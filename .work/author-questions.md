@@ -17,9 +17,34 @@ Each question has 2-4 concrete options to pick from.
 - Sobolev blocks (~5) → `QOU.Shared.SobolevHkRegularityContext`
 - ~108 hand-crafted blocks remain with bespoke typed fields (not refactored — already have substantive content)
 
-## Status — Final pass complete
+## Status — Backlog-exhaustion continuation (2026-05-19 evening)
 
-After the structural meat-adding pass (PR #806):
+19 more blocks hand-crafted with typed sub-claims in this round
+(after the initial structural pass):
+
+| Block | Chapter | Typed identity captured |
+|-------|---------|-------------------------|
+| `wenzl_qmn_synergy` | BraidsAndKnots | `tr_M(T_w) = z^{ℓ(w)}` + Wenzl/q-MN cross-check |
+| `root_of_unity_truncation` | FluidDynamics | Bernstein bound + NS↔Levi contact-geometric iff |
+| `brane_tower_q_laplacian_decay` | Observations | Geometric-tail bound `≤ ℏ_q⁴ ‖ρ‖_L² · q⁻²/(1−q⁻²)` |
+| `per_nucleon_shift_additive_linearity` | BraidKnot | Closed form `shift(Z, N) = 18Z + 21N + 1` |
+| `toffoli_transfer_matrix` | Information | Factorisation, antisymmetry, classical limit |
+| `q_ns_wellposedness` | FluidDynamics | Energy inequality + exp spectral decay |
+| `acoustic_horizon_conditions` | FluidDynamics | `ℳ = 1`, `0 < ‖∇ℳ²‖`, `0 ≤ T_{00}k^μk^ν` |
+| `helicity_conservation` | FluidDynamics | `ℋ_q(t) = ℋ_q(0)` + CWF decomposition + Moffatt limit |
+| `discrete_vortex_spectrum` | FluidDynamics | `λ_k = [k]_q²ℏ_q/L_q²` + intensity-level `E_j` |
+| `core_levi_form` | FluidDynamics | Aspect/Levi-cond/eigenvalue bounds |
+| `p1_spectral_sobolev` | FluidDynamics | Discrete-spectrum + `μ_k = [k]_q²` |
+| `parity_regime_selection` | ParticleInteractions | 3 Q-value regime equations |
+| `demand_stability` | ParticleInteractions | Beta-stable + shell-closed + doubly-magic |
+| `ground_state_ordering` | ParticleInteractions | Interleaving + tail-pack + boundary correction |
+| `strangelet_crossing_energy` | Observations | `Q = 0` + purely-strong `E_cross` + binding inequality |
+| `hecke_satisfies_blitvic_hypothesis` | Observations | Hecke quadratic relation `σᵢ² = h·σᵢ + 1` |
+| `parity_violation_skein` | Descartes | `(λ_sym, λ_alt) = (q, −q⁻¹)` + parity ↔ `q=q⁻¹` |
+| `eos_borromean_cfl` | Descartes | Fermi-gas EOS + CFL-gap + stiffness ratio |
+| `shell_structure_eigenvalues` | Descartes | Binet formula `(T^n)_{ij}` + traced volume |
+
+**Earlier pass (PR #806):**
 
 | Chapter | Blocks | Status |
 |---------|--------|--------|
