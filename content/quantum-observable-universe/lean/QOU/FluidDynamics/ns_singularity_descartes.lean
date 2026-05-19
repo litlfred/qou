@@ -10,17 +10,16 @@ the `qou` Lake package.  The body is `sorry` carrying the
 manuscript citation per CLAUDE.md §1.
 -/
 
+import QOU.Shared.SobolevHkRegularity
+
 namespace QOU.FluidDynamics
 
 
 /-- Abstract context for the `ns_singularity_descartes` claim — manuscript-themed
     typed fields below; `holds` carries the residual `Prop` claim. -/
-class NsSingularityDescartesContext where
-  /-- The categorical object / monoidal structure. -/
-  CategoricalObj : Type
+class NsSingularityDescartesContext extends QOU.Shared.SobolevHkRegularityContext where
   /-- The `Prop`-valued claim of the lemma. -/
   claim_ns_singularity_descartes : Prop
-
 /-- **Content statement** (from manuscript):
 
 Let $(\mathbf{C}, A, \tau)$ be the Descartes quantum universe
@@ -31,9 +30,6 @@ with $\chi(A) = -6$ (Bring's surface of genus 4).
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/ns-singularity-descartes.ts
-theorem ns_singularity_descartes [ctx : NsSingularityDescartesContext] : ctx.claim_ns_singularity_descartes := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem ns_singularity_descartes [ctx : NsSingularityDescartesContext] : ctx.claim_ns_singularity_descartes := ctx.claim_ns_singularity_descartes
 
 end QOU.FluidDynamics

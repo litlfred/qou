@@ -10,21 +10,18 @@ the `qou` Lake package.  The body is `sorry` carrying the
 manuscript citation per CLAUDE.md §1.
 -/
 
+import QOU.Shared.SobolevHkRegularity
+
 namespace QOU.FluidDynamics
 
 
 /-- Abstract context for the `ns_obstruction_computation` claim — manuscript-themed
     typed fields below; `holds` carries the residual `Prop` claim. -/
-class NsObstructionComputationContext where
-  /-- The categorical object / monoidal structure. -/
-  CategoricalObj : Type
-  /-- The topological-link / knot type. -/
-  Link : Type
+class NsObstructionComputationContext extends QOU.Shared.SobolevHkRegularityContext where
   /-- Manuscript sub-claim (i) — Topological: $\mathrm{lk} \cdot e(\xi)|_p$, which is nonzero iff the Reeb field has a zero at $p$ (iff the contact st.... -/
   claim_i_topological_which_nonzero : Prop
   /-- Manuscript sub-claim (ii) — Analytic: $\delta_n|_\Sigma$, which is nonzero whenever the $n$-th jet of the velocity diverges (for all $n \geq 1$ i.... -/
   claim_ii_analytic_which_nonzero : Prop
-
 /-- **Content statement** (from manuscript):
 
 Let $(\mathbf{C}, A, \tau)$ be the Descartes universe with

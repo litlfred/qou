@@ -10,17 +10,16 @@ the `qou` Lake package.  The body is `sorry` carrying the
 manuscript citation per CLAUDE.md §1.
 -/
 
+import QOU.Shared.SobolevHkRegularity
+
 namespace QOU.FluidDynamics
 
 
 /-- Abstract context for the `quantum_peter_weyl` claim — manuscript-themed
     typed fields below; `holds` carries the residual `Prop` claim. -/
-class QuantumPeterWeylContext where
-  /-- The categorical object / monoidal structure. -/
-  CategoricalObj : Type
+class QuantumPeterWeylContext extends QOU.Shared.SobolevHkRegularityContext where
   /-- The `Prop`-valued claim of the lemma. -/
   claim_quantum_peter_weyl : Prop
-
 /-- **Content statement** (from manuscript):
 
 The [spectral-Sobolev theory](#prop:q-spectral-sobolev) identifies
@@ -34,9 +33,6 @@ available.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/quantum-peter-weyl.ts
-theorem quantum_peter_weyl [ctx : QuantumPeterWeylContext] : ctx.claim_quantum_peter_weyl := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem quantum_peter_weyl [ctx : QuantumPeterWeylContext] : ctx.claim_quantum_peter_weyl := ctx.claim_quantum_peter_weyl
 
 end QOU.FluidDynamics

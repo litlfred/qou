@@ -10,7 +10,7 @@ the `qou` Lake package.  The body is `sorry` carrying the
 manuscript citation per CLAUDE.md §1.
 -/
 
-import QOU.Shared.MarkovTraceClaim
+import QOU.Shared.OperatorSelectionLP
 
 namespace QOU.Molecular
 
@@ -18,7 +18,7 @@ namespace QOU.Molecular
 /-- Abstract context for the `h2_lp_dual_binding` claim — manuscript-named
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
-class H2LpDualBindingContext extends QOU.Shared.MarkovTraceContext where
+class H2LpDualBindingContext extends QOU.Shared.OperatorSelectionLPContext where
   /-- The `Prop`-valued claim of the lemma. -/
   claim_h2_lp_dual_binding : Prop
 /-- **Proposition statement** (from manuscript):

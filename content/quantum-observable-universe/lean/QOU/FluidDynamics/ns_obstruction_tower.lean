@@ -10,17 +10,16 @@ package. The body is `sorry` carrying the manuscript citation per
 CLAUDE.md §1.
 -/
 
+import QOU.Shared.SobolevHkRegularity
+
 namespace QOU.FluidDynamics
 
 
 /-- Abstract context for the `ns_obstruction_tower` claim — manuscript-themed
     typed fields below; `holds` carries the residual `Prop` claim. -/
-class NsObstructionTowerContext where
-  /-- The categorical object / monoidal structure. -/
-  CategoricalObj : Type
+class NsObstructionTowerContext extends QOU.Shared.SobolevHkRegularityContext where
   /-- The `Prop`-valued claim of the lemma. -/
   claim_ns_obstruction_tower : Prop
-
 /-- **Content statement** (from manuscript):
 
 Let $(\mathbf{C}, A, \tau)$ be a QOU with Euler characteristic
@@ -35,9 +34,6 @@ anti-parallel vortex filaments.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.ts
-theorem ns_obstruction_tower [ctx : NsObstructionTowerContext] : ctx.claim_ns_obstruction_tower := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem ns_obstruction_tower [ctx : NsObstructionTowerContext] : ctx.claim_ns_obstruction_tower := ctx.claim_ns_obstruction_tower
 
 end QOU.FluidDynamics

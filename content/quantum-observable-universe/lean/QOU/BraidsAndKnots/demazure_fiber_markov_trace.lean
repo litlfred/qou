@@ -13,7 +13,7 @@ this plural `QOU.BraidsAndKnots` namespace was inherited from existing
 `.ts` lean.ref URIs (a pre-existing convention drift).
 -/
 
-import QOU.Shared.MarkovTraceClaim
+import QOU.Shared.OperatorSelectionLP
 
 namespace QOU.BraidsAndKnots
 
@@ -21,7 +21,7 @@ namespace QOU.BraidsAndKnots
 /-- Abstract context for the `demazure_fiber_markov_trace` claim — manuscript-named
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
-class DemazureFiberMarkovTraceContext extends QOU.Shared.MarkovTraceContext where
+class DemazureFiberMarkovTraceContext extends QOU.Shared.OperatorSelectionLPContext where
   /-- Manuscript sub-claim (i) — *$T^{\mathrm{Dem}}(\lambda;\, w_0) = y_\lambda$ — the standard Jones–Markov coefficient is the saturated case.*. -/
   claim_i_standard_jones_markov : Prop
   /-- Manuscript sub-claim (ii) — *For $w < w_0$ (Bruhat order), $T^{\mathrm{Dem}}(\lambda;\, w)$ is the structural resonance width of the $\lambda$-bl.... -/

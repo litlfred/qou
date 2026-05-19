@@ -10,15 +10,15 @@ package. The body is `sorry` carrying the manuscript citation per
 CLAUDE.md §1.
 -/
 
+import QOU.Shared.SobolevHkRegularity
+
 namespace QOU.FluidDynamics
 
 
 /-- Abstract context for the `core_levi_form` claim — manuscript-named
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
-class CoreLeviFormContext where
-  /-- The braid representative type. -/
-  Braid : Type
+class CoreLeviFormContext extends QOU.Shared.SobolevHkRegularityContext where
   /-- Manuscript sub-claim (i) — The core aspect ratio is bounded: $\sup_{t < T^*} a_\perp(t) / a_\parallel(t) \leq C$. -/
   claim_i_core_aspect_ratio : Prop
   /-- Manuscript sub-claim (ii) — The Levi form condition number is bounded: $\sup_{t < T^*} \mathrm{cond}(\mathcal{L}_\varTheta|_{N_p}) \leq C^2$. -/
@@ -29,7 +29,6 @@ class CoreLeviFormContext where
   claim_iv_observability_axiom_holds : Prop
   /-- Manuscript sub-claim (v) — No 2-dimensional integral submanifold of $\ker(\varTheta)$ forms at $\Sigma$ (Frobenius integrability does not hold). -/
   claim_v_dimensional_integral_submanifold : Prop
-
 /-- **Content statement** (from manuscript):
 
 Let $\varrho$ be a [geodesic vortex](#rem:geodesic-vortices) in
