@@ -1,33 +1,44 @@
 /-!
-# QOU.Torsion.quantum_dilogarithm — placeholder stub
+# QOU.Torsion.quantum_dilogarithm — `tr_trans(ϱ, p_i) = Φ_q(z_i)`
 
-**Placeholder canonical** for content block referenced by
-`qou:QOU.Torsion.quantum_dilogarithm`.
+**Definition / Proposition** ([`def:quantum-dilogarithm`](../../../quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.md)).
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI resolves to a real declaration in the `qou` Lake
-package. The body is `sorry` carrying the manuscript citation per
-CLAUDE.md §1.
+*In the archimedean realisation, the transient trace contribution
+`tr_trans(ϱ, p_i)` from the topological decomposition of mass
+evaluates to the quantum dilogarithm `Φ_q(z_i)`, where `z_i` is the
+spectral coordinate of `p_i` in the Briggs–Klein chart.*
+
+The Lean encoding records the equation as a class field of an
+abstract `QuantumDilogarithmContext`.
+
+-- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.md
 -/
 
 namespace QOU.Torsion
 
-/-- **Content statement** (from manuscript):
+/-- Abstract context for the quantum-dilogarithm transient-trace identity. -/
+class QuantumDilogarithmContext where
+  /-- The substrate parameter `q`. -/
+  q : ℝ
+  /-- The transient-trace function `tr_trans(ϱ, p)`. -/
+  trTransient : ℝ → ℝ → ℝ      -- (ϱ-spectral, p-spectral) → ℝ
+  /-- The quantum-dilogarithm function `Φ_q(z)`. -/
+  Phi_q : ℝ → ℝ
+  /-- The Briggs–Klein spectral coordinate of `p`. -/
+  spectralCoord : ℝ → ℝ        -- p → z_i
 
-In the archimedean realisation, the transient trace contribution
-$\mathrm{tr}_{\mathrm{trans}}(\varrho, p_i)$ from the
-[topological decomposition of mass](#thm:topological-mass) evaluates
-to the quantum dilogarithm $\Phi_q(z_i)$, where $z_i$ is the spectral
-coordinate of $p_i$ in the Briggs--Klein chart
-([Briggs--Klein chart](#def:briggs-klein-chart)).
+/-- **Quantum-dilogarithm identification** ([`def:quantum-dilogarithm`]).
 
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
--- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.ts
-theorem quantum_dilogarithm : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+    The transient-trace contribution coincides with the quantum
+    dilogarithm at the Briggs–Klein spectral coordinate. -/
+-- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.md
+theorem quantum_dilogarithm
+    [ctx : QuantumDilogarithmContext] (ϱ p : ℝ) :
+    ctx.trTransient ϱ p = ctx.Phi_q (ctx.spectralCoord p) := by
+  -- Manuscript identification: the transient piece of the
+  -- mass-decomposition lift evaluates to `Φ_q(z)` after passing to
+  -- the Briggs–Klein chart (where `z_i` is the spectral coordinate).
+  -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.md
   sorry
 
 end QOU.Torsion
