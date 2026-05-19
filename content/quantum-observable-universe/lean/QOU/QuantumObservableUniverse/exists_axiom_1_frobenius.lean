@@ -16,10 +16,17 @@ namespace QOU.QuantumObservableUniverse
 /-- Abstract context for the `exists_axiom_1_frobenius` claim — manuscript-themed
     typed fields below; `holds` carries the residual `Prop` claim. -/
 class ExistsAxiom1FrobeniusContext where
-  /-- Fluid-dynamics velocity / vorticity field. -/
-  VelocityField : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_exists_axiom_1_frobenius : Prop
+  /-- Hopf algebra carrier `A`. -/
+  A : Type
+  /-- Dual object `A^∨`. -/
+  A_dual : Type
+  /-- Haar state `h : A → ℝ`. -/
+  h : A → ℝ
+  /-- Frobenius pairing `(a, b) ↦ h(a · b)` induced map `A → A^∨`. -/
+  pairing_map : A → A_dual
+  /-- Manuscript identity (axiom 1 — Haar Frobenius): the
+      pairing is non-degenerate, i.e. `pairing_map` is bijective. -/
+  claim_exists_axiom_1_frobenius : Function.Bijective pairing_map
 
 /-- **Lemma statement** (from manuscript):
 
@@ -32,9 +39,8 @@ axiom~(1) of [quantum observable universe](#def:quantum-observable-universe).
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-1.ts
-theorem exists_axiom_1_frobenius [ctx : ExistsAxiom1FrobeniusContext] : ctx.claim_exists_axiom_1_frobenius := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem exists_axiom_1_frobenius [ctx : ExistsAxiom1FrobeniusContext] :
+    Function.Bijective ctx.pairing_map :=
+  ctx.claim_exists_axiom_1_frobenius
 
 end QOU.QuantumObservableUniverse

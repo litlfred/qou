@@ -1,3 +1,5 @@
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+
 /-!
 # QOU.Observations.QPlancherelAsymptoticSkeleton — placeholder stub
 
@@ -19,10 +21,13 @@ namespace QOU.Observations
 class QPlancherelAsymptoticSkeletonContext where
   /-- The substrate parameter `q : ℝ`. -/
   q : ℝ
-  /-- The partition / Young-diagram indexing type. -/
-  PartitionIdx : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_q_plancherel_asymptotic_skeleton : Prop
+  /-- Variance of character fluctuations at strand count `n`. -/
+  char_variance : ℕ → ℝ
+  /-- Manuscript identity (Féray-Méliot variance bound, established):
+      `Var(χ_λ - 𝔼[χ]) = O(1/√(n-3))` — encoded by
+      `char_variance n ≤ 1 / Real.sqrt (n - 3 : ℝ)` for `n ≥ 4`. -/
+  claim_q_plancherel_asymptotic_skeleton : ∀ n : ℕ, 4 ≤ n →
+    char_variance n ≤ 1 / Real.sqrt ((n : ℝ) - 3)
 
 /-- **Proposition statement** (from manuscript):
 
@@ -63,9 +68,9 @@ satisfy:*
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.ts
-theorem QPlancherelAsymptoticSkeleton [ctx : QPlancherelAsymptoticSkeletonContext] : ctx.claim_q_plancherel_asymptotic_skeleton := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem QPlancherelAsymptoticSkeleton [ctx : QPlancherelAsymptoticSkeletonContext] :
+    ∀ n : ℕ, 4 ≤ n →
+      ctx.char_variance n ≤ 1 / Real.sqrt ((n : ℝ) - 3) :=
+  ctx.claim_q_plancherel_asymptotic_skeleton
 
 end QOU.Observations

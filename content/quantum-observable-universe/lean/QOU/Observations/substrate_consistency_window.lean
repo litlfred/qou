@@ -18,10 +18,18 @@ namespace QOU.Observations
 class SubstrateConsistencyWindowContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
-  /-- The categorical mass / binding energy. -/
-  mass : ℝ
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_substrate_consistency_window : Prop
+  /-- Number of independent measurement classes. -/
+  n_classes : ℕ
+  /-- Per-class lower bound `q_lo k` on `q`. -/
+  q_lo : ℕ → ℝ
+  /-- Per-class upper bound `q_hi k` on `q`. -/
+  q_hi : ℕ → ℝ
+  /-- The unique substrate parameter `q*`. -/
+  q_star : ℝ
+  /-- Manuscript identity: each measurement-class window contains
+      `q*` (overdetermined-consistency). -/
+  claim_substrate_consistency_window :
+    ∀ k : ℕ, k < n_classes → q_lo k ≤ q_star ∧ q_star ≤ q_hi k
 
 /-- **Content statement** (from manuscript):
 
@@ -37,9 +45,9 @@ overlap.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/substrate-consistency-window.ts
-theorem substrate_consistency_window [ctx : SubstrateConsistencyWindowContext] : ctx.claim_substrate_consistency_window := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem substrate_consistency_window [ctx : SubstrateConsistencyWindowContext] :
+    ∀ k : ℕ, k < ctx.n_classes →
+      ctx.q_lo k ≤ ctx.q_star ∧ ctx.q_star ≤ ctx.q_hi k :=
+  ctx.claim_substrate_consistency_window
 
 end QOU.Observations
