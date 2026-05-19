@@ -30,7 +30,7 @@ ATLAS_MD = (
     HERE.parent.parent
     / "content"
     / "quantum-observable-universe"
-    / "braids-and-knots"
+    / "appendix-knot-periodic-table"
     / "recursive-atom-knot-atlas.md"
 )
 WITNESS = HERE / "canonical-mass-table-extended.witness.json"

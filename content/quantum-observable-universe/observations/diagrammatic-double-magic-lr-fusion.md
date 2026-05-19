@@ -13,7 +13,7 @@ flux.
 ## Setup
 
 Let $Z, N \in \mathbb{N}$ with $A = Z + N$. The atomic-knot framework
-([prop:recursive-atom-knot-atlas](../braids-and-knots/recursive-atom-knot-atlas.md))
+([prop:recursive-atom-knot-atlas](../appendix-knot-periodic-table/recursive-atom-knot-atlas.md))
 constructs the nuclide knot $\mathfrak{H}(Z, N)$ as a fused product
 of the $Z$-block (proton braid word at level $Z$) and the $N$-block
 (neutron braid word at level $N$). On the Hecke side, fusion is the

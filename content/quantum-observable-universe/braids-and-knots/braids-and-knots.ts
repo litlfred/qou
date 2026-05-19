@@ -801,7 +801,6 @@ export default chapter({
         "knot-mass-formula-unified",
         "nuclear-knot-classification",
         "geom-yekutieli-alignment",
-        "recursive-atom-knot-atlas",
         "content-scaling-correspondence",
         "partition-sum-proton-residual",
         "np-discrepancy-resolution",
