@@ -3,7 +3,7 @@ import { corollary } from "../../schema/builders";
 export default corollary({
   label: "cor:knot-factor-amphicheiral",
   title:
-    "Amphicheiral knot factor reduces to $a = 1 - h^2$",
+    "Knot factor for Markov-amphicheiral knots: sum of positive squares",
   lean: {
     ref: "qou:QOU.BraidKnot.knot_factor_amphicheiral",
     validation: "not_checked",
