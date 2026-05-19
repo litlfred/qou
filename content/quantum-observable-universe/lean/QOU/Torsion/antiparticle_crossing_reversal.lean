@@ -18,14 +18,34 @@ namespace QOU.Torsion
 /-- Abstract context for the `antiparticle_crossing_reversal` claim — manuscript-themed
     typed fields below; `holds` carries the residual `Prop` claim. -/
 class AntiparticleCrossingReversalContext extends QOU.Shared.MarkovTraceContext where
-  /-- Manuscript sub-claim (i) — Crossing reversal defines antiparticles. -/
+  /-- Substrate parameter `q : ℝ` (specialisation of the generic
+      shared `q : R`). -/
+  q_real : ℝ
+  /-- Crossing energy of a hadron. -/
+  E_cross : ℝ
+  /-- Crossing energy of the corresponding antihadron. -/
+  E_cross_anti : ℝ
+  /-- Crossing energy evaluated under `q ↔ q⁻¹` swap. -/
+  E_cross_bar : ℝ
+  /-- Manuscript sub-claim (i) — Crossing reversal defines
+      antiparticles (captured as an abstract Prop because it
+      involves the braid-mirror operation on the braid group). -/
   claim_i_crossing_reversal_defines : Prop
-  /-- Manuscript sub-claim (ii) — Crossing energy sign reversal. -/
-  claim_ii_crossing_energy_sign : Prop
-  /-- Manuscript sub-claim (iii) — Coulomb charge reversal. -/
-  claim_iii_coulomb_charge_reversal : Prop
-  /-- Manuscript sub-claim (iv) — Bare mass invariance. -/
-  claim_iv_bare_mass_invariance : Prop
+  /-- Manuscript sub-claim (ii) — Crossing energy sign reversal under
+      `q ↔ q⁻¹`: `E_cross(𝔋^σ) = −E_cross(𝔋)|_{q ↔ q⁻¹}`. -/
+  claim_ii_crossing_energy_sign : E_cross_anti = - E_cross_bar
+  /-- Coulomb charge of a hadron and its antihadron. -/
+  Q_charge : ℝ
+  Q_charge_anti : ℝ
+  /-- Manuscript sub-claim (iii) — Coulomb charge reversal:
+      `Q(𝔋^σ) = −Q(𝔋)`. -/
+  claim_iii_coulomb_charge_reversal : Q_charge_anti = - Q_charge
+  /-- Bare mass of a hadron and its antihadron. -/
+  m_bare : ℝ
+  m_bare_anti : ℝ
+  /-- Manuscript sub-claim (iv) — Bare mass invariance: the mirror
+      preserves the knot type so `m_bare(𝔋^σ) = m_bare(𝔋)`. -/
+  claim_iv_bare_mass_invariance : m_bare_anti = m_bare
 /-- **Content statement** (from manuscript):
 
 Let $T_{2,3}$ be the left trefoil (the electron generator) and
@@ -37,7 +57,13 @@ $T_{2,3}^{\sigma}$ its mirror image (all crossings reversed).
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/antiparticle-crossing-reversal.ts
 theorem antiparticle_crossing_reversal [ctx : AntiparticleCrossingReversalContext] :
-    ctx.claim_i_crossing_reversal_defines ∧ ctx.claim_ii_crossing_energy_sign ∧ ctx.claim_iii_coulomb_charge_reversal ∧ ctx.claim_iv_bare_mass_invariance :=
-  ⟨ctx.claim_i_crossing_reversal_defines, ctx.claim_ii_crossing_energy_sign, ctx.claim_iii_coulomb_charge_reversal, ctx.claim_iv_bare_mass_invariance⟩
+    ctx.claim_i_crossing_reversal_defines ∧
+    ctx.E_cross_anti = - ctx.E_cross_bar ∧
+    ctx.Q_charge_anti = - ctx.Q_charge ∧
+    ctx.m_bare_anti = ctx.m_bare :=
+  ⟨ctx.claim_i_crossing_reversal_defines,
+   ctx.claim_ii_crossing_energy_sign,
+   ctx.claim_iii_coulomb_charge_reversal,
+   ctx.claim_iv_bare_mass_invariance⟩
 
 end QOU.Torsion
