@@ -1,31 +1,64 @@
 /-!
-# QOU.Descartes.noble_gas_characterization — placeholder stub
+# QOU.Descartes.noble_gas_characterization — noble gas iff full-of-curls
 
-**Placeholder canonical** for content block
-[`prop:noble-gas-characterization`](../../../quantum-observable-universe/descartes-universe/noble-gas-characterization.md): *QOU.Descartes.noble_gas_characterization*.
+**Proposition** ([`prop:noble-gas-characterization`](../../../quantum-observable-universe/descartes-universe/noble-gas-characterization.md)).
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.Descartes.noble_gas_characterization` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per CLAUDE.md §1.
+*An atom `𝓐(p, n)` is a **noble gas** if and only if its electron
+cloud `p · T_{2,3}` decomposes as a disjoint union of closed sub-Hopf
+links — i.e. every shell is topologically full of curls.*
+
+The Lean encoding uses an abstract `AtomLike` structure with two
+predicates:
+
+  * `IsNobleGas a` — physical noble-gas predicate (chemically inert).
+  * `IsFullOfCurls a` — topological predicate ("`p · T_{2,3}` admits
+    a closed-sub-Hopf-link decomposition with monotone nesting").
+
+The theorem is the iff between the two predicates; both sides are
+abstract `Prop`s at this stage.  Concretising `IsFullOfCurls` to the
+explicit `S₁ ⊔ … ⊔ S_k` decomposition with `S_i = 2·n_i² · T_{2,3}`
+plus monotone nesting `n_1 < … < n_k` is downstream work once the
+underlying knot-theoretic structures (`HopfLink`, `T_{2,3}`,
+`SubLink`) have been Lean-translated.
+
+-- Ref: [manuscript] quantum-observable-universe/descartes-universe/noble-gas-characterization.md
 -/
 
 namespace QOU.Descartes
 
-/-- **Content statement** (from manuscript):
+/-- Abstract atom record: a stable nucleus (`def:stable-nucleus`) with
+    proton/neutron counts and the topological data of its electron
+    cloud `p · T_{2,3}`. -/
+class AtomLike where
+  /-- Proton number. -/
+  Z : ℕ
+  /-- Neutron number. -/
+  N : ℕ
+  /-- Stability witness: only stable nuclei are admitted. -/
+  stable : Prop
+  /-- Topological noble-gas predicate: the electron cloud decomposes
+      as a disjoint union of closed sub-Hopf links with monotone
+      nesting (`p · T_{2,3} = S_1 ⊔ … ⊔ S_k`, each
+      `S_i = 2 n_i² · T_{2,3}`, with `n_1 < … < n_k`). -/
+  IsFullOfCurls : Prop
+  /-- Physical noble-gas predicate: chemically inert. -/
+  IsNobleGas : Prop
 
-An atom $\mathcal{A}(p,n)$ is a **noble gas** if and only if
-its electron cloud $p \cdot T_{2,3}$ decomposes as a disjoint
-union of closed sub-Hopf links — that is, every shell is
-topologically **full of curls**.
+/-- **Noble gas ⟺ full-of-curls** ([`prop:noble-gas-characterization`]).
 
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
--- Ref: [manuscript] quantum-observable-universe/descartes-universe/noble-gas-characterization.ts
-theorem noble_gas_characterization : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+    For a stable atom `𝓐(Z, N)`, chemical inertness (noble-gas status)
+    coincides exactly with the topological full-of-curls decomposition
+    of its electron cloud.  Both directions of the iff are recorded
+    as a single statement; concretising either side to explicit
+    Hopf-link enumeration is downstream work. -/
+-- Ref: [manuscript] quantum-observable-universe/descartes-universe/noble-gas-characterization.md
+theorem noble_gas_characterization [a : AtomLike] (h_stable : a.stable) :
+    a.IsNobleGas ↔ a.IsFullOfCurls := by
+  -- Manuscript argument: full-of-curls ⟺ no unpaired electron strand
+  -- ⟺ chemical inertness. Concretisation requires Lean-translation
+  -- of `def:stable-nucleus`, `T_{2,3}`, and the `S_i = 2 n_i² · T_{2,3}`
+  -- shell-closure predicate.
+  -- Ref: [manuscript] quantum-observable-universe/descartes-universe/noble-gas-characterization.md
   sorry
 
 end QOU.Descartes

@@ -1,49 +1,79 @@
 /-!
-# QOU.Torsion.neutron_proton_splitting — placeholder stub
+# QOU.Torsion.neutron_proton_splitting — neutron-proton mass splitting
 
-**Placeholder canonical** for content block
-[`prop:neutron-proton-splitting`](../../../quantum-observable-universe/particle-interactions/neutron-proton-splitting.md): *Neutron--proton mass splitting*.
+**Proposition** ([`prop:neutron-proton-splitting`](../../../quantum-observable-universe/particle-interactions/neutron-proton-splitting.md)).
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.Torsion.neutron_proton_splitting` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per CLAUDE.md §1.
+*The neutron–proton mass difference is*
+
+```
+  Δm = m_n − m_p = α · |Φ(udd) − Φ(uud)| ≈ 1.302 MeV
+```
+
+*where `Φ(uud)` and `Φ(udd)` are the quantum-dilogarithm volumes of
+the proton and neutron quark orderings respectively, and
+`α = m_e · 8G` is the same binding scale as the atomic mass formula.
+CODATA value: `Δm = 1.293 MeV` (error 0.63 %).*
+
+The Lean encoding records the formula as an equality between two
+`ℝ`-valued quantities pinned to the empirical CODATA value within
+the manuscript's 0.63 % tolerance.  Concretising `Φ` to a
+quantum-dilogarithm computation against the proton / neutron braid
+words is downstream work.
+
+-- Ref: [manuscript] quantum-observable-universe/particle-interactions/neutron-proton-splitting.md
 -/
 
 namespace QOU.Torsion
 
-/-- **Proposition statement** (from manuscript):
+/-- Abstract container for the neutron-proton splitting context:
+    the binding scale `α = m_e · 8G`, the proton/neutron
+    quantum-dilogarithm volumes `Φ(uud)` and `Φ(udd)`, and the
+    physical masses `m_p`, `m_n`. -/
+class NeutronProtonSplittingContext where
+  /-- Binding scale `α = m_e · 8G`. -/
+  α : ℝ
+  /-- Quantum-dilogarithm volume of the proton (uud) braid. -/
+  Φ_uud : ℝ
+  /-- Quantum-dilogarithm volume of the neutron (udd) braid. -/
+  Φ_udd : ℝ
+  /-- Proton rest mass (MeV). -/
+  m_p : ℝ
+  /-- Neutron rest mass (MeV). -/
+  m_n : ℝ
 
-The neutron--proton mass difference is*
+/-- The CODATA-derived neutron-proton mass difference in MeV. -/
+def codataNeutronProtonSplittingMeV : ℝ := 1.293
 
-$$
-  \Delta m = m_{\mathfrak{n}} - m_{\mathfrak{p}}
-  = \alpha \cdot \lvert \Phi(\mathfrak{u}\mathfrak{d}\mathfrak{d})
-    - \Phi(\mathfrak{u}\mathfrak{u}\mathfrak{d}) \rvert
-  \approx 1.302 \; \mathrm{MeV}
-$$
+/-- The framework-predicted neutron-proton mass difference in MeV
+    (`α · |Φ(udd) − Φ(uud)|` per the manuscript). -/
+def predictedNeutronProtonSplitting [ctx : NeutronProtonSplittingContext] : ℝ :=
+  ctx.α * |ctx.Φ_udd - ctx.Φ_uud|
 
-*where $\Phi(\mathfrak{u}\mathfrak{u}\mathfrak{d})$ and
-$\Phi(\mathfrak{u}\mathfrak{d}\mathfrak{d})$ are the quantum
-dilogarithm volumes of the proton and neutron quark orderings
-respectively, and $\alpha = m_e \times 8G$ is the same binding
-scale as in the atomic mass formula.*
+/-- **Neutron-proton mass splitting** ([`prop:neutron-proton-splitting`]).
 
-*The splitting arises from replacing one
-$\mathfrak{u}\mathfrak{u}$ crossing ($\sigma$, eigenvalue $q$)
-with one $\mathfrak{d}\mathfrak{d}$ crossing ($\sigma^{-1}$,
-eigenvalue $q^{-1}$).  The $\mathfrak{d}\mathfrak{d}$ crossing
-has more confinement energy than $\mathfrak{u}\mathfrak{u}$,
-making the neutron heavier.  CODATA: $\Delta m = 1.293$ MeV
-(error: $0.63\%$).
+    The mass difference `m_n − m_p` equals the binding scale `α`
+    times the absolute difference of the quark-ordering quantum-
+    dilogarithm volumes, matching the empirical CODATA value of
+    `1.293 MeV` within the 0.63 % manuscript tolerance.
 
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/neutron-proton-splitting.ts
-theorem neutron_proton_splitting : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+    Stated as a CONJUNCTION:
+
+      (1) The framework formula holds: `m_n − m_p = α · |Φ(udd) − Φ(uud)|`.
+      (2) The framework value agrees with CODATA `1.293 MeV` within
+          `1 %` relative tolerance.
+-/
+-- Ref: [manuscript] quantum-observable-universe/particle-interactions/neutron-proton-splitting.md
+theorem neutron_proton_splitting [ctx : NeutronProtonSplittingContext] :
+    (ctx.m_n - ctx.m_p = ctx.α * |ctx.Φ_udd - ctx.Φ_uud|) ∧
+    (|ctx.m_n - ctx.m_p - codataNeutronProtonSplittingMeV|
+      ≤ 0.01 * codataNeutronProtonSplittingMeV) := by
+  -- Manuscript derivation: replacing one `uu` crossing with `dd`
+  -- shifts the confinement energy by `α · |Φ(udd) − Φ(uud)|`; the
+  -- numerical match to CODATA is verified empirically in
+  -- `folio-assistant/computations/atomic_braid_mass_table.py`.
+  -- Concretisation requires Lean-translating the quark-braid
+  -- representation theory.
+  -- Ref: [manuscript] quantum-observable-universe/particle-interactions/neutron-proton-splitting.md
   sorry
 
 end QOU.Torsion
