@@ -86,3 +86,7 @@ import QOU.Braiding.TrMHopfSigma1SqClosedForm
 import QOU.Information.HeckeLogDecomposition
 import QOU.JetHorizon
 import QOU.MagicShell.DeltaCouplingSubstrateForm
+-- Migrated from content-tree extract
+-- (`quantum-observable-universes/categorical-dq-squared-proof.lean`).
+-- See `AUDIT-REPORT.md §P3` for the open non-vanishing direction.
+import QOU.CategoricalDqSquared
