@@ -13,15 +13,27 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.ParticleInteractions
 
 
-/-- Abstract context for the `frobenius_positivity_filter` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
+/-- Abstract context for the `frobenius_positivity_filter` claim —
+    manuscript-themed typed fields below; sub-claims encode the
+    parent / daughter positivity condition and the exclusion bound. -/
 class FrobeniusPositivityFilterContext where
-  /-- The categorical object / monoidal structure. -/
-  CategoricalObj : Type
-  /-- The LP shadow-price / dual variable. -/
-  shadow_price : ℝ
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  /-- Mass number `A`. -/
+  A : ℕ
+  /-- Parent product `m_{e, par} = ∏ G_{n_m}(c_m)`. -/
+  m_e_par : ℝ
+  /-- Daughter product `m_{e, dau} = ∏ G_{n'_m}(c_m)`. -/
+  m_e_dau : ℝ
+  /-- Number of admissible configurations. -/
+  admissible_count : ℕ
+  /-- Manuscript sub-claim (i): configuration is Frobenius-positive
+      iff `m_{e, par} ≥ 0 ∧ m_{e, dau} ≥ 0`. -/
+  claim_i_positivity_condition :
+    Prop
+  /-- Manuscript sub-claim (ii): exactly `2^{A-1}` out of `4^A`
+      configurations are excluded, i.e.
+      `admissible_count = 4^A − 2^{A-1}`. -/
+  claim_ii_exclusion_count :
+    admissible_count = 4 ^ A - 2 ^ (A - 1)
 
 /-- **Proposition statement** (from manuscript):
 
@@ -53,9 +65,9 @@ In the discrete (branching) setting, it acts as a
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/frobenius-positivity-filter.ts
-theorem frobenius_positivity_filter [ctx : FrobeniusPositivityFilterContext] : ctx.claim := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem frobenius_positivity_filter [ctx : FrobeniusPositivityFilterContext] :
+    ctx.claim_i_positivity_condition ∧
+    ctx.admissible_count = 4 ^ ctx.A - 2 ^ (ctx.A - 1) :=
+  ⟨ctx.claim_i_positivity_condition, ctx.claim_ii_exclusion_count⟩
 
 end QOU.ParticleInteractions

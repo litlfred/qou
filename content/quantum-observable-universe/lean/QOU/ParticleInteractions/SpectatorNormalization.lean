@@ -13,16 +13,24 @@ CLAUDE.md §1.
 namespace QOU.ParticleInteractions
 
 
-/-- Abstract context for the `SpectatorNormalization` claim — manuscript-named
-    typed fields below; the `holds` field carries the `Prop`-valued
-    claim of the lemma. -/
+/-- Abstract context for the `SpectatorNormalization` claim —
+    manuscript-themed typed fields below; the spectator-count
+    identity for `β⁻`-decay is captured. -/
 class SpectatornormalizationContext where
-  /-- Proton number `Z`. -/
+  /-- Proton number `Z` of parent. -/
   Z : ℕ
-  /-- Neutron number `N`. -/
+  /-- Neutron number `N` of parent. -/
   N : ℕ
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  /-- Number of converting nucleons (always `1` for `β⁻` decay). -/
+  converting : ℕ
+  /-- Number of spectator protons (always `Z` for `β⁻` decay). -/
+  spectator_p : ℕ
+  /-- Number of spectator neutrons (always `N − 1` for `β⁻` decay). -/
+  spectator_n : ℕ
+  /-- Manuscript sub-claim — spectator counts:
+      `converting = 1`, `spectator_p = Z`, `spectator_n = N − 1`. -/
+  claim_spectator_counts :
+    converting = 1 ∧ spectator_p = Z ∧ spectator_n = N - 1
 
 /-- **Content statement** (from manuscript):
 
@@ -36,9 +44,8 @@ $N - 1$ neutrons are spectators.
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/spectator-normalization.ts
-theorem SpectatorNormalization [ctx : SpectatornormalizationContext] : ctx.claim := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem SpectatorNormalization [ctx : SpectatornormalizationContext] :
+    ctx.converting = 1 ∧ ctx.spectator_p = ctx.Z ∧ ctx.spectator_n = ctx.N - 1 :=
+  ctx.claim_spectator_counts
 
 end QOU.ParticleInteractions

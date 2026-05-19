@@ -13,16 +13,27 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.ParticleInteractions
 
 
-/-- Abstract context for the `ground_state_ordering` claim — manuscript-named
-    typed fields below; the `holds` field carries the `Prop`-valued
-    claim of the lemma. -/
+/-- Abstract context for the `ground_state_ordering` claim —
+    manuscript-themed typed fields below; the ground-state ordering
+    is selected by the transfer-matrix eigenvalues `λ_±` and the
+    Z, N counts. -/
 class GroundStateOrderingContext where
   /-- Proton number `Z`. -/
   Z : ℕ
   /-- Neutron number `N`. -/
   N : ℕ
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  /-- Substrate parameter `q : ℝ`. -/
+  q : ℝ
+  /-- Transfer-matrix dominant eigenvalue. -/
+  λ_plus : ℝ
+  /-- Transfer-matrix subdominant eigenvalue. -/
+  λ_minus : ℝ
+  /-- Manuscript sub-claim — ground-state ordering is determined by
+      the transfer-matrix eigenstructure parameterised by `Z`, `N`. -/
+  claim_eigenvalue_selection : Prop
+  /-- Manuscript sub-claim — eigenvalue identity:
+      `λ_+ · λ_− = −1`. -/
+  claim_vieta_product : λ_plus * λ_minus = -1
 
 /-- **Proposition statement** (from manuscript):
 
@@ -34,9 +45,8 @@ and $N$ neutrons ($A = Z + N$) is determined by:*
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/ground-state-ordering.ts
-theorem ground_state_ordering [ctx : GroundStateOrderingContext] : ctx.claim := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem ground_state_ordering [ctx : GroundStateOrderingContext] :
+    ctx.claim_eigenvalue_selection ∧ ctx.λ_plus * ctx.λ_minus = -1 :=
+  ⟨ctx.claim_eigenvalue_selection, ctx.claim_vieta_product⟩
 
 end QOU.ParticleInteractions

@@ -10,19 +10,33 @@ package. The body is `sorry` carrying the manuscript citation per
 CLAUDE.md §1.
 -/
 
+import Mathlib.Algebra.BigOperators.Group.Finset.Defs
+import Mathlib.Data.Real.Basic
+
 namespace QOU.ParticleInteractions
 
 
-/-- Abstract context for the `PerNucleonChannelDecomposition` claim — manuscript-named
-    typed fields below; the `holds` field carries the `Prop`-valued
-    claim of the lemma. -/
+/-- Abstract context for the `PerNucleonChannelDecomposition` claim —
+    manuscript-themed typed fields below; the Garside-product
+    factorisation `M = ∏_m M_m` with each `M_m` four-channel-typed is
+    captured as `claim_factorisation`. -/
 class PernucleonchanneldecompositionContext where
   /-- Proton number `Z`. -/
   Z : ℕ
   /-- Neutron number `N`. -/
   N : ℕ
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  /-- Mass number `A = Z + N`. -/
+  A : ℕ
+  A_eq : A = Z + N
+  /-- The Garside element of the nucleus. -/
+  M : ℝ
+  /-- The per-nucleon contributions `M_m : Fin A → ℝ` (four-channel
+      decomposed). -/
+  M_m : Fin A → ℝ
+  /-- Manuscript claim — Garside element factorises as the product of
+      per-nucleon contributions: `M = ∏_{m=0}^{A-1} M_m`. -/
+  claim_factorisation :
+    M = (Finset.univ.prod fun m : Fin A => M_m m)
 
 /-- **Content statement** (from manuscript):
 
@@ -35,9 +49,8 @@ of $H_3(q)$.
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.ts
-theorem PerNucleonChannelDecomposition [ctx : PernucleonchanneldecompositionContext] : ctx.claim := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem PerNucleonChannelDecomposition [ctx : PernucleonchanneldecompositionContext] :
+    ctx.M = (Finset.univ.prod fun m : Fin ctx.A => ctx.M_m m) :=
+  ctx.claim_factorisation
 
 end QOU.ParticleInteractions

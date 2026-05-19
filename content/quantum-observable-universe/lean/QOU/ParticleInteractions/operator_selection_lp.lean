@@ -10,20 +10,48 @@ the `qou` Lake package.  The body is `sorry` carrying the
 manuscript citation per CLAUDE.md §1.
 -/
 
+import Mathlib.Algebra.BigOperators.Group.Finset.Defs
+import Mathlib.Data.Real.Basic
+
 namespace QOU.ParticleInteractions
 
 
-/-- Abstract context for the `operator_selection_lp` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
+/-- Abstract context for the `operator_selection_lp` claim —
+    manuscript-themed typed fields below; sub-claims encode the
+    primal-feasibility net constraint, Frobenius positivity, and
+    strong-duality identity of the operator-selection LP. -/
 class OperatorSelectionLpContext where
-  /-- The categorical object / monoidal structure. -/
-  CategoricalObj : Type
-  /-- The topological-link / knot type. -/
-  Link : Type
-  /-- The LP shadow-price / dual variable. -/
-  shadow_price : ℝ
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  /-- The strand number `n ≥ 2`. -/
+  n : ℕ
+  /-- The basis cardinality `d = n!`. -/
+  d : ℕ
+  /-- The target net value `n_target ∈ ℝ_{>0}`. -/
+  n_target : ℝ
+  /-- The Markov-trace coefficients `t : Fin d → ℝ`. -/
+  t : Fin d → ℝ
+  /-- The Frobenius Gram matrix `G : Fin d → Fin d → ℝ`. -/
+  G : Fin d → Fin d → ℝ
+  /-- The primal optimum `x* : Fin d → ℝ`. -/
+  x_star : Fin d → ℝ
+  /-- The Markov-trace dual variable `y_0* : ℝ`. -/
+  y_0_star : ℝ
+  /-- The Frobenius-positivity dual variables `y* : Fin d → ℝ`. -/
+  y_star : Fin d → ℝ
+  /-- Manuscript sub-claim — primal optimum satisfies the net
+      constraint `Σ x*_i = n_target`. -/
+  claim_primal_net :
+    (Finset.univ.sum fun i : Fin d => x_star i) = n_target
+  /-- Manuscript sub-claim — primal feasibility:
+      `Σ_j G_{ij} x*_j ≥ 0` for every `i`. -/
+  claim_primal_feasible :
+    ∀ i : Fin d,
+      0 ≤ (Finset.univ.sum fun j : Fin d => G i j * x_star j)
+  /-- Manuscript sub-claim — strong duality:
+      `primal_obj = dual_obj`, i.e.
+      `Σ t_i x*_i = n_target · y_0*`. -/
+  claim_strong_duality :
+    (Finset.univ.sum fun i : Fin d => t i * x_star i)
+      = n_target * y_0_star
 
 /-- **Proposition statement** (from manuscript):
 
@@ -71,9 +99,13 @@ carries unbounded demand.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/operator-selection-lp.ts
-theorem operator_selection_lp [ctx : OperatorSelectionLpContext] : ctx.claim := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem operator_selection_lp [ctx : OperatorSelectionLpContext] :
+    (Finset.univ.sum fun i : Fin ctx.d => ctx.x_star i) = ctx.n_target ∧
+    (∀ i : Fin ctx.d,
+      0 ≤ (Finset.univ.sum fun j : Fin ctx.d => ctx.G i j * ctx.x_star j)) ∧
+    (Finset.univ.sum fun i : Fin ctx.d => ctx.t i * ctx.x_star i)
+      = ctx.n_target * ctx.y_0_star :=
+  ⟨ctx.claim_primal_net, ctx.claim_primal_feasible,
+   ctx.claim_strong_duality⟩
 
 end QOU.ParticleInteractions

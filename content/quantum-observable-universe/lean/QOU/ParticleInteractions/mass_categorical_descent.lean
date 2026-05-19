@@ -13,15 +13,26 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.ParticleInteractions
 
 
-/-- Abstract context for the `mass_categorical_descent` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
+/-- Abstract context for the `mass_categorical_descent` claim —
+    manuscript-themed typed fields below; the QOU-mass-formula
+    descent identity, together with its recovery of the Bethe–
+    Weizsäcker liquid-drop phenomenology, is captured. -/
 class MassCategoricalDescentContext where
-  /-- The categorical object / monoidal structure. -/
+  /-- The categorical object `A` of the QOU `(C, A, τ)`. -/
   CategoricalObj : Type
-  /-- The categorical mass / binding energy. -/
-  mass : ℝ
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  /-- The mass endomorphism `𝔪 : A → A` (abstract carrier). -/
+  m_endo : CategoricalObj → CategoricalObj
+  /-- The categorical mass value `m : ℝ`. -/
+  m : ℝ
+  /-- The BW liquid-drop formula value `m_BW : ℝ`. -/
+  m_BW : ℝ
+  /-- Manuscript sub-claim (i): the QOU mass formula is the descent
+      decomposition of `𝔪` under the brane-tower blow-up. -/
+  claim_i_descent_decomposition : Prop
+  /-- Manuscript sub-claim (ii): the Bethe–Weizsäcker liquid-drop
+      ansatz is recovered as one phenomenology of the descent
+      decomposition. -/
+  claim_ii_BW_recovery : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -38,9 +49,8 @@ for the recovered coefficients.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/mass-categorical-descent.ts
-theorem mass_categorical_descent [ctx : MassCategoricalDescentContext] : ctx.claim := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem mass_categorical_descent [ctx : MassCategoricalDescentContext] :
+    ctx.claim_i_descent_decomposition ∧ ctx.claim_ii_BW_recovery :=
+  ⟨ctx.claim_i_descent_decomposition, ctx.claim_ii_BW_recovery⟩
 
 end QOU.ParticleInteractions

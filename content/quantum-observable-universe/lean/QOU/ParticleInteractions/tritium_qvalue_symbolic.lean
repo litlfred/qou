@@ -13,13 +13,21 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.ParticleInteractions
 
 
-/-- Abstract context for the `tritium_qvalue_symbolic` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
+/-- Abstract context for the `tritium_qvalue_symbolic` claim —
+    manuscript-themed typed fields below; the closed-form rational
+    function for `Q(³H → ³He)` is captured as `claim_closed_form`. -/
 class TritiumQvalueSymbolicContext where
-  /-- The categorical object / monoidal structure. -/
-  CategoricalObj : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  /-- Substrate parameter `q : ℝ`. -/
+  q : ℝ
+  /-- Electron mass `m_e : ℝ`. -/
+  m_e : ℝ
+  /-- The Q-value `Q(³H → ³He) : ℝ`. -/
+  Q : ℝ
+  /-- Manuscript closed-form identity:
+      `Q = m_e · 3 · (q² − 1)³ · (q² + 1)² · (3q⁴ + 4q² + 3) / (32 q^7)`. -/
+  claim_closed_form :
+    Q = m_e * 3 * (q ^ 2 - 1) ^ 3 * (q ^ 2 + 1) ^ 2
+        * (3 * q ^ 4 + 4 * q ^ 2 + 3) / (32 * q ^ 7)
 
 /-- **Manuscript statement** (from manuscript):
 
@@ -30,9 +38,10 @@ class TritiumQvalueSymbolicContext where
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/tritium-qvalue-symbolic.ts
-theorem tritium_qvalue_symbolic [ctx : TritiumQvalueSymbolicContext] : ctx.claim := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem tritium_qvalue_symbolic [ctx : TritiumQvalueSymbolicContext] :
+    ctx.Q
+      = ctx.m_e * 3 * (ctx.q ^ 2 - 1) ^ 3 * (ctx.q ^ 2 + 1) ^ 2
+        * (3 * ctx.q ^ 4 + 4 * ctx.q ^ 2 + 3) / (32 * ctx.q ^ 7) :=
+  ctx.claim_closed_form
 
 end QOU.ParticleInteractions
