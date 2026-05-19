@@ -19,12 +19,20 @@ namespace QOU.Molecular
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class Co2LpDualBindingContext extends QOU.Shared.OperatorSelectionLPContext where
-  /-- Manuscript sub-claim (i) — *Bond order assignments: $(k_1, k_2)$ with $k_1 + k_2 \leq 4$ (carbon's valence)*. -/
-  claim_i_bond_order_assignments : Prop
-  /-- Manuscript sub-claim (ii) — *Electron-bond assignments: which electrons are shared with which oxygen*. -/
-  claim_ii_electron_bond_assignments : Prop
-  /-- Manuscript sub-claim (iii) — Strand orderings: permutations of 66 strands. -/
-  claim_iii_strand_orderings_permutations : Prop
+  /-- Bond orders to the two oxygen atoms `(k₁, k₂)`. -/
+  k1 k2 : ℕ
+  /-- Manuscript sub-claim (i) — Carbon valence constraint:
+      `k₁ + k₂ ≤ 4`. -/
+  claim_i_carbon_valence : k1 + k2 ≤ 4
+  /-- Manuscript sub-claim (ii) — Symmetric double-bond minimum:
+      `(k₁, k₂) = (2, 2)` is the ground-state assignment (so
+      `k₁ = 2` and `k₂ = 2`). -/
+  claim_ii_symmetric_double_bond : k1 = 2 ∧ k2 = 2
+  /-- The number of strands in the CO₂ molecular braid. -/
+  n_strands : ℕ
+  /-- Manuscript sub-claim (iii) — CO₂ uses exactly 66 strands
+      (carbon 14 + 2·oxygen 26 = 66 counting 8-bond valences). -/
+  claim_iii_strand_count : n_strands = 66
 /-- **Proposition statement** (from manuscript):
 
 The LP dual of the $CO_2$ molecular braid selects the symmetric
@@ -62,7 +70,10 @@ wins over asymmetric alternatives $(3, 1)$ or $(1, 3)$ because:*
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/co2-lp-dual-binding.ts
 theorem co2_lp_dual_binding [ctx : Co2LpDualBindingContext] :
-    ctx.claim_i_bond_order_assignments ∧ ctx.claim_ii_electron_bond_assignments ∧ ctx.claim_iii_strand_orderings_permutations :=
-  ⟨ctx.claim_i_bond_order_assignments, ctx.claim_ii_electron_bond_assignments, ctx.claim_iii_strand_orderings_permutations⟩
+    ctx.k1 + ctx.k2 ≤ 4 ∧
+    (ctx.k1 = 2 ∧ ctx.k2 = 2) ∧
+    ctx.n_strands = 66 :=
+  ⟨ctx.claim_i_carbon_valence, ctx.claim_ii_symmetric_double_bond,
+   ctx.claim_iii_strand_count⟩
 
 end QOU.Molecular

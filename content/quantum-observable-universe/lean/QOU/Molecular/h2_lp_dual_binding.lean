@@ -1,3 +1,5 @@
+import Mathlib.Analysis.SpecialFunctions.Log.Basic
+
 /-!
 # QOU.Molecular.h2_lp_dual_binding — placeholder stub
 
@@ -19,8 +21,16 @@ namespace QOU.Molecular
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class H2LpDualBindingContext extends QOU.Shared.OperatorSelectionLPContext where
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_h2_lp_dual_binding : Prop
+  /-- Traced volume `V̂_i^{H₂}` for the three crossings in the H₂
+      molecular braid (indices `0..2`). -/
+  V_hat_H2 : Fin 3 → ℝ
+  /-- Molecular `Φ₁` for H₂. -/
+  Phi1_H2 : ℝ
+  /-- Manuscript identity:
+      `Φ₁^{H₂} = Σ_{i=0..2} ln |V̂_i^{H₂}|`. -/
+  claim_h2_lp_dual_binding :
+    Phi1_H2 = Real.log |V_hat_H2 0| + Real.log |V_hat_H2 1| +
+              Real.log |V_hat_H2 2|
 /-- **Proposition statement** (from manuscript):
 
 The LP dual of the $H_2$ molecular braid selects the interleaved
@@ -38,6 +48,9 @@ $$
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/h2-lp-dual-binding.ts
-theorem h2_lp_dual_binding [ctx : H2LpDualBindingContext] : ctx.claim_h2_lp_dual_binding := ctx.claim_h2_lp_dual_binding
+theorem h2_lp_dual_binding [ctx : H2LpDualBindingContext] :
+    ctx.Phi1_H2 = Real.log |ctx.V_hat_H2 0| + Real.log |ctx.V_hat_H2 1| +
+                  Real.log |ctx.V_hat_H2 2| :=
+  ctx.claim_h2_lp_dual_binding
 
 end QOU.Molecular

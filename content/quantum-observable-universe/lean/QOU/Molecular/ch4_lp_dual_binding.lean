@@ -19,12 +19,26 @@ namespace QOU.Molecular
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class Ch4LpDualBindingContext extends QOU.Shared.MarkovTraceContext where
-  /-- Manuscript sub-claim (i) — Each C--H bond has the same traced volume $\hat{V}_b$. -/
-  claim_i_bond_same_traced : Prop
-  /-- Manuscript sub-claim (ii) — Each H--H repulsion has the same $\Phi_1$ penalty. -/
-  claim_ii_repulsion_same_penalty : Prop
-  /-- Manuscript sub-claim (iii) — The total binding energy is exactly $4 \times \mathbf{E}_{\mathrm{bind}}^{CH}$. -/
-  claim_iii_total_binding_energy : Prop
+  /-- Traced volume `V̂_b` of each C–H bond (indexed by bond index
+      `0..3`). -/
+  V_hat_bond : Fin 4 → ℝ
+  /-- Manuscript sub-claim (i) — `S₄` symmetry: every C–H bond has
+      the same traced volume. -/
+  claim_i_bond_same_traced : ∀ i j : Fin 4, V_hat_bond i = V_hat_bond j
+  /-- H–H repulsion penalty `Φ_HH` per H–H pair (indexed by the
+      6 pairs in `Fin 6`). -/
+  Phi_HH_pair : Fin 6 → ℝ
+  /-- Manuscript sub-claim (ii) — `S₄` symmetry: every H–H repulsion
+      has the same penalty. -/
+  claim_ii_repulsion_same_penalty :
+    ∀ i j : Fin 6, Phi_HH_pair i = Phi_HH_pair j
+  /-- Single C–H bond binding energy. -/
+  E_bind_CH : ℝ
+  /-- Total binding energy of the CH₄ molecule. -/
+  E_bind_total : ℝ
+  /-- Manuscript sub-claim (iii) — Total binding is exactly
+      `4 · E_bind^{CH}`. -/
+  claim_iii_total_binding_energy : E_bind_total = 4 * E_bind_CH
 /-- **Proposition statement** (from manuscript):
 
 The LP dual of the $CH_4$ molecular braid in $H_{26}(q)$
@@ -58,7 +72,10 @@ braid-theoretic origin of the
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/ch4-lp-dual-binding.ts
 theorem ch4_lp_dual_binding [ctx : Ch4LpDualBindingContext] :
-    ctx.claim_i_bond_same_traced ∧ ctx.claim_ii_repulsion_same_penalty ∧ ctx.claim_iii_total_binding_energy :=
-  ⟨ctx.claim_i_bond_same_traced, ctx.claim_ii_repulsion_same_penalty, ctx.claim_iii_total_binding_energy⟩
+    (∀ i j : Fin 4, ctx.V_hat_bond i = ctx.V_hat_bond j) ∧
+    (∀ i j : Fin 6, ctx.Phi_HH_pair i = ctx.Phi_HH_pair j) ∧
+    ctx.E_bind_total = 4 * ctx.E_bind_CH :=
+  ⟨ctx.claim_i_bond_same_traced, ctx.claim_ii_repulsion_same_penalty,
+   ctx.claim_iii_total_binding_energy⟩
 
 end QOU.Molecular
