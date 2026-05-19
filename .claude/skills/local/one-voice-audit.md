@@ -9,7 +9,12 @@ roles: [collaborator, owner]
 
 The paper speaks with **one voice**: an authoritative, scholarly,
 third-person voice making claims about quantum observable universes.
-Anything that breaks that voice is a violation. Common breakages:
+**Scholarly voice is the default** for both narrative `.md` AND proof
+bodies (Lean docstrings, expository comments) — exceptions require an
+explicit author marker (`tags: ["non-scholarly-voice-exception"]` on
+the block's `.ts` manifest, with a `notes` field on the QA report
+recording the rationale). Anything that breaks that voice is a
+violation. Common breakages:
 
 1. **Status markers** in body prose — `✅ Done`, `(TODO)`, `(TBD)`,
    `**Pending.**`, etc. These are work-tracker speech
@@ -25,6 +30,31 @@ Anything that breaks that voice is a violation. Common breakages:
 5. **Unicode characters that don't compile** — `↦` U+21A6, `⁻` U+207B,
    `√` U+221A, `─` U+2500, `✅` U+2705, etc. — even when intended,
    they crash `pdflatex` unless mapped in the preamble.
+6. **AI / status-update phrasing (LLM tells)** — "Let me think about
+   this", "Here's what I did", "I'll go ahead and", "Note that we
+   should", "Great question", repeated First/Second/Third bullet
+   cadence, over-use of "essentially" / "comprehensive" / "leverage"
+   / "streamline" / "robust" / "delve into".
+7. **Non-scholarly default tone** — block prose or Lean docstring
+   that drifts into lecturer cadence ("So what we're going to do is
+   …"), journalistic register ("In a surprising twist, …"), or
+   second-person address ("You will see that …") without explicit
+   author opt-out.
+8. **Block placement does not fit section/chapter** — a block whose
+   topic, kind, or register is incongruent with its surrounding
+   section. Symptoms: a `definition` in a "Discussion" section, a
+   `proposition` outside the chapter's proof chain, a `prose` block
+   that introduces a topic the chapter does not subsequently cover.
+9. **Deprecated framework usage** — 5-tuple `(M, Θ, G, P, E)` instead
+   of `(C, Θ, G, S)`; `$\omega$` for fibre functor (canonical: `$\tau$`);
+   `$\mathcal{C}$` for category (canonical: `$\mathbf{C}$`); bare
+   `$H_q$` for any of three distinct objects ($\mathcal{H}_q$,
+   $\hat{H}_q$, $H_n(q)$, $H_q(\lambda)$).
+10. **Archimedean / algebraic wall side mismatch** — per CLAUDE.md
+    §7c, algebraic substrate blocks must NOT mention `Real.*`,
+    `linarith`, `0 < q`, or `ℝ` without declaring archimedean
+    specialisation; archimedean blocks must declare their `ℝ`
+    types explicitly.
 
 ## When to use
 
@@ -32,6 +62,13 @@ Anything that breaks that voice is a violation. Common breakages:
 - Before `prepare-merge` on any branch.
 - On demand: "audit one-voice", "find status leaks", "clean up
   TODO markers".
+- As the **adjudicator** for the non-automated criteria
+  (`voice-scholarly-default`, `voice-ai-slop`,
+  `fit-section-chapter`) dispatched by
+  [`local/one-voice-integration-watcher`](one-voice-integration-watcher.md).
+  When invoked in this mode, write a reviewer entry to the
+  block's sidecar `<block>.qa.json` rather than (or in addition
+  to) reporting in chat — see *§ QA report integration* below.
 
 ## Workflow
 
@@ -105,8 +142,80 @@ Report back with:
 - **Kicked back** — TodoItem entries created, requiring author attention
 - **Verified clean** — files swept and clean
 
+## QA report integration
+
+The watcher persists every finding to the block's sibling
+`<block>.qa.json` file (schema:
+[`folio-assistant/schemas/block-qa.ts`](../../../folio-assistant/schemas/block-qa.ts)).
+Per-criterion staleness is keyed by SHA-256 prefix of the source
+files at audit time — when the `.md` (or `.ts` / `.lean`) is later
+edited, the recorded `field_hash` no longer matches, and the
+criterion is stale.
+
+### CLI primitives
+
+- **Sweep** — runs every automated criterion on a content root and
+  writes / updates the sidecars:
+
+  ```bash
+  cd content
+  bun run pipeline/qa-sweep.ts \
+    quantum-observable-universe/organic-chemistry
+  ```
+
+- **Staleness map** — reports which blocks have fresh / stale /
+  missing audits per criterion:
+
+  ```bash
+  cd content
+  bun run pipeline/qa-staleness.ts \
+    quantum-observable-universe/organic-chemistry
+  ```
+
+- **CI gate** — fail the build if any block has critical findings
+  or no sidecar:
+
+  ```bash
+  bun run pipeline/qa-sweep.ts \
+    quantum-observable-universe --ci
+  ```
+
+### Multi-reviewer writes (when an agent adjudicates)
+
+When invoked by the watcher for one of the non-automated criteria
+(`voice-scholarly-default`, `voice-ai-slop`, `fit-section-chapter`),
+**append** a new entry to the corresponding criterion's array.
+**Never delete** prior entries. Reviewer identity must be
+`{ kind: "agent", id: "one-voice-audit", version: "<model id>" }`
+for agent runs and `{ kind: "human", id: "<github-login>" }` for
+manual adjudications.
+
+An entry's shape:
+
+```json
+{
+  "field_hash": { "md": "<12-char-sha>", "ts": "<…>", "lean": "<…>" },
+  "result": "pass" | "fail" | "warn" | "n/a",
+  "severity": "critical" | "major" | "minor",
+  "evidence": "<file:line: verbatim quote>",
+  "reviewer": { "kind": "agent", "id": "one-voice-audit" },
+  "reviewed_at": "<ISO-8601 UTC>",
+  "reviewed_sha": "<main HEAD at audit time>",
+  "notes": "<rationale / context>"
+}
+```
+
+The current verdict for a criterion is the most-recent entry whose
+`field_hash` matches the present source files. Human entries
+outrank agent entries; agent entries outrank script entries — but
+*only* when the higher-rank entry's `field_hash` is still fresh.
+
 ## Cross-references
 
+- [`one-voice-integration-watcher`](one-voice-integration-watcher.md) —
+  the watcher that drives this skill in audit-as-sidecar mode.
+  Covers 11 criteria across four domains (voice, fit, framework,
+  wall) and persists per-block reports.
 - `markdown-render-check` — catches Unicode crashes and `+`-bullet
   failures *before* push; complementary preventive skill.
 - `readability-editing` — broader prose tightening; one-voice is a

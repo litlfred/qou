@@ -228,6 +228,17 @@ export {
   isPrecisionScalar,
 } from "./precision-scalar";
 
+// ── Per-block QA reports (block-qa.ts) ──────────────────────────
+
+export type {
+  QaReviewerKind,
+  QaReviewer,
+  QaFieldHash,
+  QaCriterionEntry,
+  BlockQaReport,
+  QaCriterionDefinition,
+} from "./block-qa";
+
 // ── Lean package registry ───────────────────────────────────────
 
 export type { LeanPackage, ParsedLeanRef } from "./lean-packages";
