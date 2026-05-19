@@ -81,30 +81,19 @@ def is_pell_lucas_clean(value: Fraction) -> bool:
     num = abs(value.numerator)
     if num == 0:
         return True
-    # Direct membership
-    if num in PELL_LUCAS:
+    # Power of 2 (covers num = 1 = 2^0 as well)
+    if (num & (num - 1)) == 0:
         return True
-    # Power of 2
-    if num != 0 and (num & (num - 1)) == 0:
-        return True
-    # Power of 2 times Pell-Lucas
-    for pl in PELL_LUCAS:
-        if pl > 0 and num % pl == 0:
-            quotient = num // pl
-            if quotient != 0 and (quotient & (quotient - 1)) == 0:
-                return True
-    # Powers of Pell-Lucas numbers (a_n^j for small j)
-    for pl in PELL_LUCAS:
-        if pl > 1:
-            for j in range(2, 5):
-                if pl ** j == num:
+    # (Pell-Lucas number)^j times (power of 2), for j in 1..4.
+    # Use a set to deduplicate the leading 1 in PELL_LUCAS.
+    for pl in {p for p in PELL_LUCAS if p > 1}:
+        p_pow = 1
+        for _j in range(1, 5):
+            p_pow *= pl
+            if num % p_pow == 0:
+                quotient = num // p_pow
+                if quotient != 0 and (quotient & (quotient - 1)) == 0:
                     return True
-    # NB: the actual rule for "averaging-resonant" classification is
-    # whether the DENOMINATOR carries a power of 2 NOT compensated by
-    # the numerator structure. -11/8 fails because 11 has no Pell-Lucas
-    # structure. -49/32 passes because 49 = a_3² survives the /32.
-    # For "1/2 fingerprint": check if reduced form has denom = 2*k for k > 1
-    # AND numerator is not divisible by the denom's structure.
     return False
 
 
@@ -124,8 +113,9 @@ def classify_sector_empirical(c_k_at_silver: Fraction) -> Sector:
 def classify_sector_predictive(dist: TypedB3Distribution, k: int) -> Sector:
     """Predictive classification via argmax-binomial combinatorial rule.
 
-    WARNING: this rule is currently FALSIFIED at k ∈ {4, 6, 7, 9}.
-    Use for refinement R&D; do NOT use for production classification.
+    WARNING: this rule is currently FALSIFIED at k ∈ {4, 6, 7, 8, 9, 10}
+    (25% accuracy — correct only at k = 3 and k = 5). Use for refinement
+    R&D; do NOT use for production classification.
 
     Returns the sector predicted by m_k ≥ 1 (averaging dominance) or
     m_k = 0 (pure-σ dominance).
@@ -137,7 +127,9 @@ def classify_sector_predictive(dist: TypedB3Distribution, k: int) -> Sector:
     for m in range(1, n_avg + 1):
         if 0 <= k - m <= n_non_avg:
             w = comb(n_avg, m) * comb(n_non_avg, k - m)
-            if w > best_weight:
+            # Use >= to match the spec in averaging-resonance-rule.md:
+            # m_k = max {m : binomial product >= pure-σ baseline}
+            if w >= best_weight:
                 best_weight = w
                 best_m = m
     return "averaging_resonant" if best_m >= 1 else "pure_sigma"
