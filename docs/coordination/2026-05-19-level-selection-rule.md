@@ -14,7 +14,8 @@ criterion that singles out the resonant rung(s).
 | **#816** (this) | `claude/close-level-selection-rule-bvMvw` | lead | open, awaiting CI |
 | #814 | `claude/qbeta-fsc-categorical-ratio-2026-05-19` | **upstream / inconsistent finding** (see §1) | open |
 | #808 | `claude/co-casimir-extension-2026-05-19` | unrelated (5-atom co-casimir; no $c_k$ touch) | open |
-| #801 | `claude/log-delta-categorical-derivation` | unrelated (Δ_I^K interface-knot binding) | open |
+| #801 | `claude/log-delta-categorical-derivation` | **parallel — low coupling** (Δ_I^K interface-knot binding; only shared touchpoint = `braids-and-knots.ts` manifest in different sections; downstream of `averaging-resonance-rule` if it ever extends to higher precision-ladder rungs) | open |
+| #809 | `claude/per-item-batch-2026-05-19` | merged today (witness-provenance backfill, 115 → 0) | merged into `main` baseline |
 | #806 | `claude/lean-substantive-pass-2026-05-19` | possible Lean-build interaction only | open |
 | #807 | `claude/compute-audit-P33-P34-2026-05-19` | possible compute-audit policy interaction | open |
 | #802 | `claude/canonical-discipline-l1-l3-l4-2026-05-19` | unrelated | open |
@@ -61,3 +62,7 @@ No silent rewrite, no cherry-pick.
 - `origin/main` checked at session start; no new commits touching
   `braids-and-knots/averaging-*`, `silver-ratio-*`, or `ck_sector_*`.
 - Subscribed to PR #816 activity.
+- Coordination posts (this session):
+  - PR #814: supersession proposal (cherry-picked silver-ratio + c5-involution narrative into #816). https://github.com/litlfred/qou/pull/814#issuecomment-4490831098
+  - PR #801: parallel-work intent post, no ask. https://github.com/litlfred/qou/pull/801#issuecomment-4490986987
+- PR #809 (witness-provenance backfill 115 → 0) merged to main today (`f893cc929`). Explains why the I14 audit was previously clean on `main` but surfaced PROV_MISSING regressions on my branch — producers like `cross_check_trM_1ppb.py` and (formerly) `habiro_witness_validator.py` strip the manually-backfilled fields on every re-run. My #816 fix (`habiro_witness_validator.py` → `WitnessBuilder`) is the structural cure for habiro; `cross_check_trM_1ppb.py` migration is the remaining piece.
