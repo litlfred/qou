@@ -293,5 +293,8 @@
     "proof-input": "Marker appears with derivation-step language ('by Mostow rigidity', 'gives Vol(K) = …'). LIKELY a wall violation; manual review required.",
     "tau-image": "Marker appears under explicit τ-image / Archimedean realization framing. Allowed.",
     "context-only": "Marker appears in motivational / introductory prose without being a proof step. Allowed."
-  }
+  },
+  "engine": "python",
+  "scriptFile": "wall_violations_sweep.py",
+  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
 }

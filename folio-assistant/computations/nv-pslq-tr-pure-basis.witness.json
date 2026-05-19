@@ -32,5 +32,8 @@
     "top_hits": []
   },
   "verdict": "no-conclusive-closed-form",
-  "conclusion": "Bar-self-duality of tr_pure imposes a strong structural constraint. The bar-symmetric ansatz B3 yields a smaller basis (lower FDR) than the prior monomial search. Any hit found is suggestive but still requires categorical authoring of the F-shape, not just numerical confirmation."
+  "conclusion": "Bar-self-duality of tr_pure imposes a strong structural constraint. The bar-symmetric ansatz B3 yields a smaller basis (lower FDR) than the prior monomial search. Any hit found is suggestive but still requires categorical authoring of the F-shape, not just numerical confirmation.",
+  "engine": "python",
+  "scriptFile": "nv_pslq_tr_pure_basis.py",
+  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
 }

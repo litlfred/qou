@@ -1808,5 +1808,8 @@
   "n_consistent": 11,
   "all_lambda_consistent": true,
   "n_scalar_blocks": 16,
-  "n_operator_blocks": 19
+  "n_operator_blocks": 19,
+  "engine": "python",
+  "scriptFile": "sublemma_2_1_A_operator_extract.py",
+  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
 }

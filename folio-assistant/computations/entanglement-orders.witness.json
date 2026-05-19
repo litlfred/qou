@@ -141,7 +141,7 @@
           "description": "Σ_{k=7-subset} z^(2·span) · Φ_q(Π V̂_i)"
         },
         "8": {
-          "contribution": 0.00007746166218660589,
+          "contribution": 7.746166218660589e-05,
           "n_terms": 1,
           "description": "Σ_{k=8-subset} z^(2·span) · Φ_q(Π V̂_i)"
         }
@@ -202,5 +202,8 @@
       },
       "total": 2926282.297069703
     }
-  ]
+  ],
+  "engine": "python",
+  "scriptFile": "entanglement_orders.py",
+  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
 }

@@ -173,5 +173,8 @@
     "(B) audit Φ_q derivation in prop:mass-endomorphism-tower",
     "(C) re-evaluate brane-tower applicability at q_0 (vs roots)",
     "(D) check Term 5 chirality absorbs more p/n asymmetry"
-  ]
+  ],
+  "engine": "python",
+  "scriptFile": "brane_tower_isospin_diagnosis.py",
+  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
 }
