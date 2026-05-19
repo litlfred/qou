@@ -17,6 +17,12 @@ export default proposition({
     "wenzl1988",
     "jones1985",
   ],
+  computation: {
+    engine: "mpmath",
+    script: "folio-assistant/computations/gram-matrix-dual.py",
+    witness: "folio-assistant/computations/gram-matrix-dual.witness.json",
+    status: "verified",
+  },
   tags: [
     "q-beta",
     "spectral-bridge",
