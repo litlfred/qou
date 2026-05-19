@@ -1,22 +1,22 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T03:25:53.487972+00:00",
-  "commitSha": "2d252e4eef35a653eaa42a3b757a6793947e1978",
+  "computedAt": "2026-05-19T03:41:07.490074+00:00",
+  "commitSha": "387b1b7706fba84f5915dec4971f14f26520cbe7",
   "assertions": [],
   "allPassed": true,
   "durationMs": 31,
   "computation": "canonical-isotope-witness-Z09",
   "scriptFile": "canonical_isotope_witness.py",
-  "scriptHash": "a52b60c35ccc",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "a771cb862c70",
+  "scriptCommitSha": "c9aa51f6f07d61e12bc58868010054ceb27fbc2d",
   "description": "Per-Z=9 shard of the recursive atom-knot atlas. Element: F. Covers every (Z=9, N) in AME 2020. Each row carries: prediction_type ∈ {mass, binding_energy}; the prediction value (from L1 canonical |tr_M| via markov_peel+mpmath, OR L2 α-cluster recursion); the AME 2020 reference; err in MeV / % / ppm; L4 composite mass M = N·m_n + Z·m_p − B (when nucleon masses + B are available). L1 source: canonical-mass-table-extended.witness.json; L2 source: alpha-cluster-recursion.witness.json; nucleon masses: m-p-borromean-verification-50dps.witness.json.",
   "parameters": {
     "Z": 9,
     "element": "F",
     "q_0": "1.10997859555418057528159407960950937799328227995870",
     "rows_total": 19,
-    "rows_with_prediction": 0,
+    "rows_with_prediction": 1,
     "rows_with_composite_mass": 19
   },
   "data": {
@@ -201,20 +201,20 @@
         "A": 19,
         "element": "F",
         "prediction_type": "binding_energy",
-        "layer": "L?-pending",
-        "prediction_MeV_50dps": null,
+        "layer": "L3-partial-shell:f=0.750 from A=16→20",
+        "prediction_MeV_50dps": 156.24735703386574,
         "reference_MeV_50dps": 147.8013648,
-        "err_MeV": null,
-        "err_pct": null,
-        "err_ppm": null,
+        "err_MeV": 8.445992233865752,
+        "err_pct": 5.714421003685991,
+        "err_ppm": 57144.210036859906,
         "composite_mass": {
-          "M_pred_MeV": 17692.29715560852,
+          "M_pred_MeV": 17683.851163374657,
           "M_AME_MeV": 17696.900500865682,
-          "err_MeV": -4.603345257160981,
-          "err_ppm": -260.12155388090696,
+          "err_MeV": -13.049337491025653,
+          "err_ppm": -737.3798304616854,
           "formula": "N·m_n + Z·m_p − B(A,Z)",
           "m_p_source": "borromean-tower (conj:borromean-baryon-mass-formula)",
-          "B_source": null
+          "B_source": "L3-partial-shell:f=0.750 from A=16→20"
         },
         "ame_reference": {
           "B_AME_keV": 147801.36479999998,
@@ -589,6 +589,14 @@
         "commitSha": null,
         "scriptCommitSha": null,
         "computedAt": "2026-05-19T03:17:28.931573+00:00"
+      },
+      {
+        "path": "low-isotope-binding-sweep.witness.json",
+        "sha256": "317d839b8a837e2f5b09bc1fb11c9dd45f824ee642f2d7eb5ffcf3e0b3439a82",
+        "size_bytes": 7903,
+        "commitSha": null,
+        "scriptCommitSha": null,
+        "computedAt": null
       },
       {
         "path": "m-p-borromean-verification-50dps.witness.json",

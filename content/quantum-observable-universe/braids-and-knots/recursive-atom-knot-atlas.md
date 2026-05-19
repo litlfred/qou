@@ -462,15 +462,15 @@ _2 of 8 isotopes with a framework prediction; 8 of 8 with L4 composite mass $M =
 
 ### Lithium (Z = 3)
 
-_0 of 11 isotopes with a framework prediction; 11 of 11 with L4 composite mass $M = N \cdot m_n + Z \cdot m_p - B$._
+_2 of 11 isotopes with a framework prediction; 11 of 11 with L4 composite mass $M = N \cdot m_n + Z \cdot m_p - B$._
 
 | Atom | $A$ | $N$ | Layer | Predicts | Prediction (MeV) | Reference (MeV) | Error | $M_{\text{composite}}$ |
 |---|---|---|---|---|---|---|---|---|
 | ${}^{3}$Li | 3 | 0 | L?-pending | binding_energy | — | -6.8010 | — | 2821.6166 MeV (-542.8 ppm) |
 | ${}^{4}$Li | 4 | 1 | L?-pending | binding_energy | — | 4.6150 | — | 3749.7657 MeV (-408.9 ppm) |
 | ${}^{5}$Li | 5 | 2 | L?-pending | binding_energy | — | 26.3307 | — | 4667.6153 MeV (-328.6 ppm) |
-| ${}^{6}$Li | 6 | 3 | L?-pending | binding_energy | — | 31.9940 | — | 5601.5171 MeV (-273.8 ppm) |
-| ${}^{7}$Li | 7 | 4 | L?-pending | binding_energy | — | 39.2451 | — | 6533.8312 MeV (-234.8 ppm) |
+| ${}^{6}$Li | 6 | 3 | L3-partial-shell:f=0.500 from A=4→8 | binding_energy | 43.6570 | 31.9940 | +36.45 % | 5589.8541 MeV (-2355.4 ppm) |
+| ${}^{7}$Li | 7 | 4 | L3-partial-shell:f=0.750 from A=4→8 | binding_energy | 51.3377 | 39.2451 | +30.81 % | 6521.7386 MeV (-2085.1 ppm) |
 | ${}^{8}$Li | 8 | 5 | L?-pending | binding_energy | — | 41.2777 | — | 7471.3638 MeV (-205.4 ppm) |
 | ${}^{9}$Li | 9 | 6 | L?-pending | binding_energy | — | 45.3399 | — | 8406.8667 MeV (-182.6 ppm) |
 | ${}^{10}$Li | 10 | 7 | L?-pending | binding_energy | — | 45.3135 | — | 9346.4583 MeV (-164.2 ppm) |
@@ -480,7 +480,7 @@ _0 of 11 isotopes with a framework prediction; 11 of 11 with L4 composite mass $
 
 ### Beryllium (Z = 4)
 
-_1 of 12 isotopes with a framework prediction; 12 of 12 with L4 composite mass $M = N \cdot m_n + Z \cdot m_p - B$._
+_3 of 12 isotopes with a framework prediction; 12 of 12 with L4 composite mass $M = N \cdot m_n + Z \cdot m_p - B$._
 
 | Atom | $A$ | $N$ | Layer | Predicts | Prediction (MeV) | Reference (MeV) | Error | $M_{\text{composite}}$ |
 |---|---|---|---|---|---|---|---|---|
@@ -488,8 +488,8 @@ _1 of 12 isotopes with a framework prediction; 12 of 12 with L4 composite mass $
 | ${}^{6}$Be | 6 | 2 | L?-pending | binding_energy | — | 26.9235 | — | 5605.2943 MeV (-364.8 ppm) |
 | ${}^{7}$Be | 7 | 3 | L?-pending | binding_energy | — | 37.6008 | — | 6534.1821 MeV (-313.0 ppm) |
 | ${}^{8}$Be | 8 | 4 | L2-alpha-cluster | binding_energy | 62.3383 | 56.4995 | +10.33 % | 7449.0098 MeV (-1057.4 ppm) |
-| ${}^{9}$Be | 9 | 5 | L?-pending | binding_energy | — | 58.1640 | — | 8392.7493 MeV (-243.7 ppm) |
-| ${}^{10}$Be | 10 | 6 | L?-pending | binding_energy | — | 64.9763 | — | 9325.5022 MeV (-219.4 ppm) |
+| ${}^{9}$Be | 9 | 5 | L3-partial-shell:f=0.250 from A=8→12 | binding_energy | 67.3058 | 58.1640 | +15.72 % | 8383.6076 MeV (-1332.7 ppm) |
+| ${}^{10}$Be | 10 | 6 | L3-partial-shell:f=0.500 from A=8→12 | binding_energy | 75.5932 | 64.9763 | +16.34 % | 9314.8854 MeV (-1357.6 ppm) |
 | ${}^{11}$Be | 11 | 7 | L?-pending | binding_energy | — | 65.4779 | — | 10264.5658 MeV (-199.3 ppm) |
 | ${}^{12}$Be | 12 | 8 | L?-pending | binding_energy | — | 68.6487 | — | 11200.9602 MeV (-182.7 ppm) |
 | ${}^{13}$Be | 13 | 9 | L?-pending | binding_energy | — | 68.1387 | — | 12141.0354 MeV (-168.6 ppm) |
@@ -499,7 +499,7 @@ _1 of 12 isotopes with a framework prediction; 12 of 12 with L4 composite mass $
 
 ### Boron (Z = 5)
 
-_0 of 16 isotopes with a framework prediction; 16 of 16 with L4 composite mass $M = N \cdot m_n + Z \cdot m_p - B$._
+_2 of 16 isotopes with a framework prediction; 16 of 16 with L4 composite mass $M = N \cdot m_n + Z \cdot m_p - B$._
 
 | Atom | $A$ | $N$ | Layer | Predicts | Prediction (MeV) | Reference (MeV) | Error | $M_{\text{composite}}$ |
 |---|---|---|---|---|---|---|---|---|
@@ -507,8 +507,8 @@ _0 of 16 isotopes with a framework prediction; 16 of 16 with L4 composite mass $
 | ${}^{7}$B | 7 | 2 | L?-pending | binding_energy | — | 24.9109 | — | 6545.5787 MeV (-390.4 ppm) |
 | ${}^{8}$B | 8 | 3 | L?-pending | binding_energy | — | 37.7372 | — | 7472.3176 MeV (-342.1 ppm) |
 | ${}^{9}$B | 9 | 4 | L?-pending | binding_energy | — | 56.3136 | — | 8393.3064 MeV (-304.6 ppm) |
-| ${}^{10}$B | 10 | 5 | L?-pending | binding_energy | — | 64.7508 | — | 9324.4344 MeV (-274.2 ppm) |
-| ${}^{11}$B | 11 | 6 | L?-pending | binding_energy | — | 76.2051 | — | 10252.5453 MeV (-249.4 ppm) |
+| ${}^{10}$B | 10 | 5 | L3-partial-shell:f=0.500 from A=8→12 | binding_energy | 75.5932 | 64.7508 | +16.74 % | 9313.5920 MeV (-1436.6 ppm) |
+| ${}^{11}$B | 11 | 6 | L3-partial-shell:f=0.750 from A=8→12 | binding_energy | 83.8806 | 76.2051 | +10.07 % | 10244.8698 MeV (-997.8 ppm) |
 | ${}^{12}$B | 12 | 7 | L?-pending | binding_energy | — | 79.5747 | — | 11188.7409 MeV (-228.5 ppm) |
 | ${}^{13}$B | 13 | 8 | L?-pending | binding_energy | — | 84.4535 | — | 12123.4273 MeV (-211.0 ppm) |
 | ${}^{14}$B | 14 | 9 | L?-pending | binding_energy | — | 85.4230 | — | 13062.0229 MeV (-195.8 ppm) |
@@ -522,7 +522,7 @@ _0 of 16 isotopes with a framework prediction; 16 of 16 with L4 composite mass $
 
 ### Carbon (Z = 6)
 
-_1 of 16 isotopes with a framework prediction; 16 of 16 with L4 composite mass $M = N \cdot m_n + Z \cdot m_p - B$._
+_2 of 16 isotopes with a framework prediction; 16 of 16 with L4 composite mass $M = N \cdot m_n + Z \cdot m_p - B$._
 
 | Atom | $A$ | $N$ | Layer | Predicts | Prediction (MeV) | Reference (MeV) | Error | $M_{\text{composite}}$ |
 |---|---|---|---|---|---|---|---|---|
@@ -531,7 +531,7 @@ _1 of 16 isotopes with a framework prediction; 16 of 16 with L4 composite mass $
 | ${}^{10}$C | 10 | 4 | L?-pending | binding_energy | — | 60.3204 | — | 9327.5714 MeV (-328.8 ppm) |
 | ${}^{11}$C | 11 | 5 | L?-pending | binding_energy | — | 73.4410 | — | 10254.0160 MeV (-299.2 ppm) |
 | ${}^{12}$C | 12 | 6 | L2-alpha-cluster | binding_energy | 97.1480 | 92.1617 | +5.41 % | 11169.8742 MeV (-720.6 ppm) |
-| ${}^{13}$C | 13 | 7 | L?-pending | binding_energy | — | 97.1080 | — | 12109.4794 MeV (-253.4 ppm) |
+| ${}^{13}$C | 13 | 7 | L3-partial-shell:f=0.250 from A=12→16 | binding_energy | 101.0622 | 97.1080 | +4.07 % | 12105.5253 MeV (-579.8 ppm) |
 | ${}^{14}$C | 14 | 8 | L?-pending | binding_energy | — | 105.2845 | — | 13040.8681 MeV (-235.3 ppm) |
 | ${}^{15}$C | 15 | 9 | L?-pending | binding_energy | — | 106.5025 | — | 13979.2152 MeV (-219.5 ppm) |
 | ${}^{16}$C | 16 | 10 | L?-pending | binding_energy | — | 110.7529 | — | 14914.5301 MeV (-205.8 ppm) |
@@ -545,7 +545,7 @@ _1 of 16 isotopes with a framework prediction; 16 of 16 with L4 composite mass $
 
 ### Nitrogen (Z = 7)
 
-_0 of 16 isotopes with a framework prediction; 16 of 16 with L4 composite mass $M = N \cdot m_n + Z \cdot m_p - B$._
+_2 of 16 isotopes with a framework prediction; 16 of 16 with L4 composite mass $M = N \cdot m_n + Z \cdot m_p - B$._
 
 | Atom | $A$ | $N$ | Layer | Predicts | Prediction (MeV) | Reference (MeV) | Error | $M_{\text{composite}}$ |
 |---|---|---|---|---|---|---|---|---|
@@ -553,8 +553,8 @@ _0 of 16 isotopes with a framework prediction; 16 of 16 with L4 composite mass $
 | ${}^{11}$N | 11 | 4 | L?-pending | binding_energy | — | 58.9424 | — | 10267.2213 MeV (-348.5 ppm) |
 | ${}^{12}$N | 12 | 5 | L?-pending | binding_energy | — | 74.0413 | — | 11191.6876 MeV (-319.8 ppm) |
 | ${}^{13}$N | 13 | 6 | L?-pending | binding_energy | — | 94.1052 | — | 12111.1889 MeV (-295.5 ppm) |
-| ${}^{14}$N | 14 | 7 | L?-pending | binding_energy | — | 104.6586 | — | 13040.2007 MeV (-274.5 ppm) |
-| ${}^{15}$N | 15 | 8 | L?-pending | binding_energy | — | 115.4919 | — | 13968.9325 MeV (-256.2 ppm) |
+| ${}^{14}$N | 14 | 7 | L3-partial-shell:f=0.500 from A=12→16 | binding_energy | 109.9563 | 104.6586 | +5.06 % | 13034.9029 MeV (-680.6 ppm) |
+| ${}^{15}$N | 15 | 8 | L3-partial-shell:f=0.750 from A=12→16 | binding_energy | 118.8505 | 115.4919 | +2.91 % | 13965.5740 MeV (-496.6 ppm) |
 | ${}^{16}$N | 16 | 9 | L?-pending | binding_energy | — | 117.9808 | — | 14906.0089 MeV (-240.2 ppm) |
 | ${}^{17}$N | 17 | 10 | L?-pending | binding_energy | — | 123.8659 | — | 15839.6889 MeV (-226.0 ppm) |
 | ${}^{18}$N | 18 | 11 | L?-pending | binding_energy | — | 126.6941 | — | 16776.4259 MeV (-213.4 ppm) |
@@ -568,7 +568,7 @@ _0 of 16 isotopes with a framework prediction; 16 of 16 with L4 composite mass $
 
 ### Oxygen (Z = 8)
 
-_1 of 18 isotopes with a framework prediction; 18 of 18 with L4 composite mass $M = N \cdot m_n + Z \cdot m_p - B$._
+_3 of 18 isotopes with a framework prediction; 18 of 18 with L4 composite mass $M = N \cdot m_n + Z \cdot m_p - B$._
 
 | Atom | $A$ | $N$ | Layer | Predicts | Prediction (MeV) | Reference (MeV) | Error | $M_{\text{composite}}$ |
 |---|---|---|---|---|---|---|---|---|
@@ -578,8 +578,8 @@ _1 of 18 isotopes with a framework prediction; 18 of 18 with L4 composite mass $
 | ${}^{14}$O | 14 | 6 | L?-pending | binding_energy | — | 98.7319 | — | 13044.8340 MeV (-313.5 ppm) |
 | ${}^{15}$O | 15 | 7 | L?-pending | binding_energy | — | 111.9554 | — | 13971.1757 MeV (-292.8 ppm) |
 | ${}^{16}$O | 16 | 8 | L2-alpha-cluster | binding_energy | 134.3846 | 127.6193 | +5.30 % | 14888.3117 MeV (-728.7 ppm) |
-| ${}^{17}$O | 17 | 9 | L?-pending | binding_energy | — | 131.7624 | — | 15830.4991 MeV (-258.4 ppm) |
-| ${}^{18}$O | 18 | 10 | L?-pending | binding_energy | — | 139.8078 | — | 16762.0189 MeV (-244.1 ppm) |
+| ${}^{17}$O | 17 | 9 | L3-partial-shell:f=0.250 from A=16→20 | binding_energy | 137.2455 | 131.7624 | +4.16 % | 15825.0159 MeV (-604.7 ppm) |
+| ${}^{18}$O | 18 | 10 | L3-partial-shell:f=0.500 from A=16→20 | binding_energy | 146.7464 | 139.8078 | +4.96 % | 16755.0802 MeV (-657.9 ppm) |
 | ${}^{19}$O | 19 | 11 | L?-pending | binding_energy | — | 143.7634 | — | 17697.6284 MeV (-231.2 ppm) |
 | ${}^{20}$O | 20 | 12 | L?-pending | binding_energy | — | 151.3714 | — | 18629.5856 MeV (-219.6 ppm) |
 | ${}^{21}$O | 21 | 13 | L?-pending | binding_energy | — | 155.1769 | — | 19565.3454 MeV (-209.1 ppm) |
@@ -593,7 +593,7 @@ _1 of 18 isotopes with a framework prediction; 18 of 18 with L4 composite mass $
 
 ### Fluorine (Z = 9)
 
-_0 of 19 isotopes with a framework prediction; 19 of 19 with L4 composite mass $M = N \cdot m_n + Z \cdot m_p - B$._
+_1 of 19 isotopes with a framework prediction; 19 of 19 with L4 composite mass $M = N \cdot m_n + Z \cdot m_p - B$._
 
 | Atom | $A$ | $N$ | Layer | Predicts | Prediction (MeV) | Reference (MeV) | Error | $M_{\text{composite}}$ |
 |---|---|---|---|---|---|---|---|---|
@@ -603,7 +603,7 @@ _0 of 19 isotopes with a framework prediction; 19 of 19 with L4 composite mass $
 | ${}^{16}$F | 16 | 7 | L?-pending | binding_energy | — | 111.4248 | — | 14909.9782 MeV (-308.6 ppm) |
 | ${}^{17}$F | 17 | 8 | L?-pending | binding_energy | — | 128.2196 | — | 15832.7486 MeV (-290.6 ppm) |
 | ${}^{18}$F | 18 | 9 | L?-pending | binding_energy | — | 137.3695 | — | 16763.1638 MeV (-274.5 ppm) |
-| ${}^{19}$F | 19 | 10 | L?-pending | binding_energy | — | 147.8014 | — | 17692.2972 MeV (-260.1 ppm) |
+| ${}^{19}$F | 19 | 10 | L3-partial-shell:f=0.750 from A=16→20 | binding_energy | 156.2474 | 147.8014 | +5.71 % | 17683.8512 MeV (-737.4 ppm) |
 | ${}^{20}$F | 20 | 11 | L?-pending | binding_energy | — | 154.4027 | — | 18625.2610 MeV (-247.1 ppm) |
 | ${}^{21}$F | 21 | 12 | L?-pending | binding_energy | — | 162.5042 | — | 19556.7247 MeV (-235.4 ppm) |
 | ${}^{22}$F | 22 | 13 | L?-pending | binding_energy | — | 167.7345 | — | 20491.0596 MeV (-224.6 ppm) |
@@ -619,7 +619,7 @@ _0 of 19 isotopes with a framework prediction; 19 of 19 with L4 composite mass $
 
 ### Neon (Z = 10)
 
-_1 of 20 isotopes with a framework prediction; 20 of 20 with L4 composite mass $M = N \cdot m_n + Z \cdot m_p - B$._
+_3 of 20 isotopes with a framework prediction; 20 of 20 with L4 composite mass $M = N \cdot m_n + Z \cdot m_p - B$._
 
 | Atom | $A$ | $N$ | Layer | Predicts | Prediction (MeV) | Reference (MeV) | Error | $M_{\text{composite}}$ |
 |---|---|---|---|---|---|---|---|---|
@@ -629,8 +629,8 @@ _1 of 20 isotopes with a framework prediction; 20 of 20 with L4 composite mass $
 | ${}^{18}$Ne | 18 | 8 | L?-pending | binding_energy | — | 132.1426 | — | 16767.0974 MeV (-304.9 ppm) |
 | ${}^{19}$Ne | 19 | 9 | L?-pending | binding_energy | — | 143.7795 | — | 17695.0257 MeV (-288.9 ppm) |
 | ${}^{20}$Ne | 20 | 10 | L2-alpha-cluster | binding_energy | 174.0483 | 160.6448 | +8.34 % | 18604.3221 MeV (-994.4 ppm) |
-| ${}^{21}$Ne | 21 | 11 | L?-pending | binding_energy | — | 167.4060 | — | 19550.5296 MeV (-261.6 ppm) |
-| ${}^{22}$Ne | 22 | 12 | L?-pending | binding_energy | — | 177.7702 | — | 20479.7305 MeV (-249.7 ppm) |
+| ${}^{21}$Ne | 21 | 11 | L3-partial-shell:f=0.250 from A=20→24 | binding_energy | 175.8559 | 167.4060 | +5.05 % | 19542.0796 MeV (-693.6 ppm) |
+| ${}^{22}$Ne | 22 | 12 | L3-partial-shell:f=0.500 from A=20→24 | binding_energy | 185.9636 | 177.7702 | +4.61 % | 20471.5372 MeV (-649.7 ppm) |
 | ${}^{23}$Ne | 23 | 13 | L?-pending | binding_energy | — | 182.9709 | — | 21414.0950 MeV (-238.8 ppm) |
 | ${}^{24}$Ne | 24 | 14 | L?-pending | binding_energy | — | 191.8398 | — | 22344.7913 MeV (-228.9 ppm) |
 | ${}^{25}$Ne | 25 | 15 | L?-pending | binding_energy | — | 195.9950 | — | 23280.2013 MeV (-219.7 ppm) |

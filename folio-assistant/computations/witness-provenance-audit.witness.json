@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T03:31:04.472460+00:00",
-  "commitSha": "c9aa51f6f07d61e12bc58868010054ceb27fbc2d",
+  "computedAt": "2026-05-19T03:41:41.556923+00:00",
+  "commitSha": "387b1b7706fba84f5915dec4971f14f26520cbe7",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 114,
+      "computed": 115,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 12,
+  "durationMs": 10,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "77d54f1cc990",
@@ -35,12 +35,12 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 639,
-      "prov_ok": 495,
+      "total_scanned": 641,
+      "prov_ok": 496,
       "prov_audit_exempt": 30,
-      "prov_missing": 114,
+      "prov_missing": 115,
       "prov_parse_error": 0,
-      "completeness_ratio": 0.8215962441314554
+      "completeness_ratio": 0.8205928237129485
     },
     "by_verdict": {
       "PROV_OK": [
@@ -1797,6 +1797,10 @@
           "missing_fields": []
         },
         {
+          "witness": "q-values-derived.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "r5-full-canonical-knot-solver.witness.json",
           "missing_fields": []
         },
@@ -2547,6 +2551,14 @@
         },
         {
           "witness": "level1-qvalues.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "low-isotope-binding-sweep.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",

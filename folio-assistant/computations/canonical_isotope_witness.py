@@ -78,6 +78,12 @@ def load_layer2() -> dict:
     return json.loads(path.read_text()) if path.exists() else {}
 
 
+def load_layer3() -> dict:
+    """Load the L3 low-isotope binding sweep (partial-shell)."""
+    path = HERE / "low-isotope-binding-sweep.witness.json"
+    return json.loads(path.read_text()) if path.exists() else {}
+
+
 def load_borromean() -> dict:
     """Load m_p, m_n, m_μ from the Borromean tower witness."""
     path = HERE / "m-p-borromean-verification-50dps.witness.json"
@@ -129,10 +135,29 @@ def l2_lookup(Z: int, N: int, layer2: dict) -> dict | None:
     return None
 
 
+def l3_lookup(Z: int, N: int, layer3: dict) -> dict | None:
+    """Return the L3 partial-shell / census row for (Z, N).
+
+    L3 covers odd-A and non-magic light isotopes (⁷Li, ⁹Be, ¹¹B,
+    ¹⁴N, ¹⁹F, etc.) via partial-shell interpolation between
+    α-cluster anchor points. Accuracy is 5–36 % (worst at half-
+    filled shells); use as a fallback after L1 / L2.
+    """
+    rows = (
+        layer3.get("data", {}).get("rows")
+        or layer3.get("rows")
+        or []
+    )
+    for r in rows:
+        if int(r.get("Z", -1)) == Z and int(r.get("N", -1)) == N:
+            return r
+    return None
+
+
 # ── Row assembly ──────────────────────────────────────────────────
 
 def assemble_row(
-    ame_entry: dict, layer1: dict, layer2: dict,
+    ame_entry: dict, layer1: dict, layer2: dict, layer3: dict,
     m_p_borr: float | None, m_n_borr: float | None,
 ) -> dict:
     """Compose a per-nuclide row from AME reference + L1/L2 layers."""
@@ -188,6 +213,7 @@ def assemble_row(
     # Composite nuclei: binding-energy prediction (D and up).
     l1 = l1_lookup(Z, N, layer1)
     l2 = l2_lookup(Z, N, layer2)
+    l3 = l3_lookup(Z, N, layer3)
     b_pred: float | None = None
     layer_used: str | None = None
     if l1 and l1.get("prediction_MeV_50dps") is not None:
@@ -200,6 +226,13 @@ def assemble_row(
         try:
             b_pred = float(l2.get("B_pred_MeV"))
             layer_used = "L2-alpha-cluster"
+        except (TypeError, ValueError):
+            b_pred = None
+    if b_pred is None and l3:
+        try:
+            b_pred = float(l3.get("B_pred_MeV"))
+            l3_strategy = l3.get("strategy", "partial-shell")
+            layer_used = f"L3-{l3_strategy}"
         except (TypeError, ValueError):
             b_pred = None
 
@@ -372,6 +405,7 @@ def main(argv: list[str] | None = None) -> int:
     ame = load_ame2020()
     layer1 = load_layer1()
     layer2 = load_layer2()
+    layer3 = load_layer3()
     borromean = load_borromean()
     m_p_borr, m_n_borr = borromean_m_p_m_n(borromean)
 
@@ -401,6 +435,7 @@ def main(argv: list[str] | None = None) -> int:
     upstreams = [
         HERE / "canonical-mass-table-extended.witness.json",
         HERE / "alpha-cluster-recursion.witness.json",
+        HERE / "low-isotope-binding-sweep.witness.json",
         HERE / "m-p-borromean-verification-50dps.witness.json",
         HERE / "data" / "ame2020.json",
     ]
@@ -408,7 +443,7 @@ def main(argv: list[str] | None = None) -> int:
         if not entries:
             continue
         rows = [
-            assemble_row(e, layer1, layer2, m_p_borr, m_n_borr)
+            assemble_row(e, layer1, layer2, layer3, m_p_borr, m_n_borr)
             for e in entries
         ]
         path = emit_z_shard(Z, rows, upstreams)
