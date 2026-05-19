@@ -7619,5 +7619,8 @@
       "Rust integration: extend tools/hecke-engine to emit design-spec joint-tower-SDP certificate format (per-grade filtration, jet log, Wedderburn-block sparsity, cross-level consistency edges).",
       "Once Rust emitter lands, ³H (B_5 / 8_11) gets its Hoefsmit-PSD check for free."
     ]
-  }
+  },
+  "engine": "python",
+  "scriptFile": "witness_staleness_tracker.py",
+  "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811"
 }

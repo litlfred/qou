@@ -452,5 +452,8 @@
     "rho-k-h3a-lp-dual.witness.json",
     "rho-k-h3a-gg-trajectory.witness.json",
     "binding-k-solver.witness.json"
-  ]
+  ],
+  "engine": "python",
+  "scriptFile": "rho_census_wedderburn_experiment.py",
+  "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811"
 }

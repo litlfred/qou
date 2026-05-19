@@ -1,6 +1,6 @@
 {
   "name": "low-isotope-binding-sweep",
-  "description": "Low-isotope (Z = 1..10) binding-energy sweep using the mass-volume factorization framework (Ch 11 \u00a78).  Three strategies applied in order: (A) census-knot match for A \u2264 3, (B) \u03b1-cluster unfolding for Z = N, A = 4n, (C) partial-shell linear interpolation for odd-A and non-N=Z atoms.  Zero free parameters per strategy.",
+  "description": "Low-isotope (Z = 1..10) binding-energy sweep using the mass-volume factorization framework (Ch 11 §8).  Three strategies applied in order: (A) census-knot match for A ≤ 3, (B) α-cluster unfolding for Z = N, A = 4n, (C) partial-shell linear interpolation for odd-A and non-N=Z atoms.  Zero free parameters per strategy.",
   "timestamp": "2026-05-19T03:39:30.650553+00:00",
   "framework_refs": [
     "conj:mass-volume-factorization",
@@ -42,7 +42,7 @@
       "B_pred_MeV": 2.2488207948647343,
       "residual_MeV": 0.024240794864734294,
       "error_pct": 1.0896796188374567,
-      "strategy": "census:6_2,\u03c1=m_e"
+      "strategy": "census:6_2,ρ=m_e"
     },
     {
       "symbol": "3H",
@@ -53,7 +53,7 @@
       "B_pred_MeV": 8.46859838653302,
       "residual_MeV": -0.013201613466979012,
       "error_pct": -0.15564636594801826,
-      "strategy": "census:8_11,\u03c1=2m_e"
+      "strategy": "census:8_11,ρ=2m_e"
     },
     {
       "symbol": "3He",
@@ -64,7 +64,7 @@
       "B_pred_MeV": 7.48891930977096,
       "residual_MeV": -0.22908069022903987,
       "error_pct": -2.96813540073905,
-      "strategy": "census:Borromean,\u03c1=2m_e"
+      "strategy": "census:Borromean,ρ=2m_e"
     },
     {
       "symbol": "4He",
@@ -75,7 +75,7 @@
       "B_pred_MeV": 28.295674,
       "residual_MeV": 1.4000000000180535e-05,
       "error_pct": 4.947755238853073e-05,
-      "strategy": "\u03b1-cluster:n_\u03b1=1,pairs=0"
+      "strategy": "α-cluster:n_α=1,pairs=0"
     },
     {
       "symbol": "6Li",
@@ -86,7 +86,7 @@
       "B_pred_MeV": 43.65700575188143,
       "residual_MeV": 11.662905751881429,
       "error_pct": 36.453301552103134,
-      "strategy": "partial-shell:f=0.500 from A=4\u21928"
+      "strategy": "partial-shell:f=0.500 from A=4→8"
     },
     {
       "symbol": "7Li",
@@ -97,7 +97,7 @@
       "B_pred_MeV": 51.33767162782215,
       "residual_MeV": 12.093071627822148,
       "error_pct": 30.81461303675448,
-      "strategy": "partial-shell:f=0.750 from A=4\u21928"
+      "strategy": "partial-shell:f=0.750 from A=4→8"
     },
     {
       "symbol": "8Be",
@@ -108,7 +108,7 @@
       "B_pred_MeV": 59.01833750376286,
       "residual_MeV": 2.5188375037628603,
       "error_pct": 4.458158928420358,
-      "strategy": "\u03b1-cluster:n_\u03b1=2,pairs=1"
+      "strategy": "α-cluster:n_α=2,pairs=1"
     },
     {
       "symbol": "9Be",
@@ -119,7 +119,7 @@
       "B_pred_MeV": 67.30575075564428,
       "residual_MeV": 9.14065075564428,
       "error_pct": 15.71500909590851,
-      "strategy": "partial-shell:f=0.250 from A=8\u219212"
+      "strategy": "partial-shell:f=0.250 from A=8→12"
     },
     {
       "symbol": "10Be",
@@ -130,7 +130,7 @@
       "B_pred_MeV": 75.59316400752571,
       "residual_MeV": 10.615664007525709,
       "error_pct": 16.337446050595524,
-      "strategy": "partial-shell:f=0.500 from A=8\u219212"
+      "strategy": "partial-shell:f=0.500 from A=8→12"
     },
     {
       "symbol": "10B",
@@ -141,7 +141,7 @@
       "B_pred_MeV": 75.59316400752571,
       "residual_MeV": 10.841964007525718,
       "error_pct": 16.74403564339459,
-      "strategy": "partial-shell:f=0.500 from A=8\u219212"
+      "strategy": "partial-shell:f=0.500 from A=8→12"
     },
     {
       "symbol": "11B",
@@ -152,7 +152,7 @@
       "B_pred_MeV": 83.88057725940715,
       "residual_MeV": 7.67517725940715,
       "error_pct": 10.07169735925164,
-      "strategy": "partial-shell:f=0.750 from A=8\u219212"
+      "strategy": "partial-shell:f=0.750 from A=8→12"
     },
     {
       "symbol": "12C",
@@ -163,7 +163,7 @@
       "B_pred_MeV": 92.16799051128858,
       "residual_MeV": 0.006290511288582934,
       "error_pct": 0.00682551568447949,
-      "strategy": "\u03b1-cluster:n_\u03b1=3,pairs=3"
+      "strategy": "α-cluster:n_α=3,pairs=3"
     },
     {
       "symbol": "13C",
@@ -174,7 +174,7 @@
       "B_pred_MeV": 101.06215113911072,
       "residual_MeV": 3.9540511391107316,
       "error_pct": 4.0718036282356795,
-      "strategy": "partial-shell:f=0.250 from A=12\u219216"
+      "strategy": "partial-shell:f=0.250 from A=12→16"
     },
     {
       "symbol": "14N",
@@ -185,7 +185,7 @@
       "B_pred_MeV": 109.95631176693286,
       "residual_MeV": 5.2974117669328535,
       "error_pct": 5.061597023218143,
-      "strategy": "partial-shell:f=0.500 from A=12\u219216"
+      "strategy": "partial-shell:f=0.500 from A=12→16"
     },
     {
       "symbol": "15N",
@@ -196,7 +196,7 @@
       "B_pred_MeV": 118.850472394755,
       "residual_MeV": 3.358572394755001,
       "error_pct": 2.908058829021776,
-      "strategy": "partial-shell:f=0.750 from A=12\u219216"
+      "strategy": "partial-shell:f=0.750 from A=12→16"
     },
     {
       "symbol": "16O",
@@ -207,7 +207,7 @@
       "B_pred_MeV": 127.74463302257715,
       "residual_MeV": 0.12533302257715206,
       "error_pct": 0.09820851750256589,
-      "strategy": "\u03b1-cluster:n_\u03b1=4,pairs=6"
+      "strategy": "α-cluster:n_α=4,pairs=6"
     },
     {
       "symbol": "17O",
@@ -218,7 +218,7 @@
       "B_pred_MeV": 137.24554102634,
       "residual_MeV": 5.482641026339991,
       "error_pct": 4.160989949629213,
-      "strategy": "partial-shell:f=0.250 from A=16\u219220"
+      "strategy": "partial-shell:f=0.250 from A=16→20"
     },
     {
       "symbol": "18O",
@@ -229,7 +229,7 @@
       "B_pred_MeV": 146.74644903010287,
       "residual_MeV": 6.939049030102865,
       "error_pct": 4.963291664177193,
-      "strategy": "partial-shell:f=0.500 from A=16\u219220"
+      "strategy": "partial-shell:f=0.500 from A=16→20"
     },
     {
       "symbol": "19F",
@@ -240,7 +240,7 @@
       "B_pred_MeV": 156.24735703386574,
       "residual_MeV": 8.446057033865742,
       "error_pct": 5.714467351684824,
-      "strategy": "partial-shell:f=0.750 from A=16\u219220"
+      "strategy": "partial-shell:f=0.750 from A=16→20"
     },
     {
       "symbol": "20Ne",
@@ -251,7 +251,7 @@
       "B_pred_MeV": 165.74826503762858,
       "residual_MeV": 5.103365037628578,
       "error_pct": 3.176798664401159,
-      "strategy": "\u03b1-cluster:n_\u03b1=5,pairs=10"
+      "strategy": "α-cluster:n_α=5,pairs=10"
     },
     {
       "symbol": "21Ne",
@@ -262,7 +262,7 @@
       "B_pred_MeV": 175.85592041733216,
       "residual_MeV": 8.449920417332152,
       "error_pct": 5.047561268611729,
-      "strategy": "partial-shell:f=0.250 from A=20\u219224"
+      "strategy": "partial-shell:f=0.250 from A=20→24"
     },
     {
       "symbol": "22Ne",
@@ -273,7 +273,7 @@
       "B_pred_MeV": 185.96357579703573,
       "residual_MeV": 8.19357579703572,
       "error_pct": 4.609088033434055,
-      "strategy": "partial-shell:f=0.500 from A=20\u219224"
+      "strategy": "partial-shell:f=0.500 from A=20→24"
     }
   ],
   "stats_by_strategy": {
@@ -282,7 +282,7 @@
       "mean_abs_err_pct": 1.404487128508175,
       "max_abs_err_pct": 2.96813540073905
     },
-    "\u03b1-cluster": {
+    "α-cluster": {
       "n": 5,
       "mean_abs_err_pct": 1.5480082207121904,
       "max_abs_err_pct": 4.458158928420358
@@ -292,5 +292,8 @@
       "mean_abs_err_pct": 11.619497177572896,
       "max_abs_err_pct": 36.453301552103134
     }
-  }
+  },
+  "engine": "python",
+  "scriptFile": "low_isotope_binding_sweep.py",
+  "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811"
 }

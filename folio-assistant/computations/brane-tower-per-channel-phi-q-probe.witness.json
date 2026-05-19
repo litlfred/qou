@@ -61,5 +61,8 @@
   ],
   "isospin_T_minus_3He_per_channel_MeV": 516.4237311794556,
   "isospin_T_minus_3He_legacy_MeV": -465.6443216399647,
-  "codata_T_minus_3He_MeV": 0.019
+  "codata_T_minus_3He_MeV": 0.019,
+  "engine": "python",
+  "scriptFile": "brane_tower_per_channel_phi_q.py",
+  "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811"
 }

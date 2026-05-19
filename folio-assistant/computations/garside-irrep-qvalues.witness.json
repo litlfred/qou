@@ -121,7 +121,7 @@
       "sum_weighted_dtr": 9.02079542785348e-11,
       "sum_dtr": 26.119044237188202,
       "sum_abs_weighted_dtr": 9.083737743993915e-11,
-      "weight_coverage": 0.000038763609397647214,
+      "weight_coverage": 3.8763609397647214e-05,
       "irreps": [
         {
           "partition": [
@@ -226,5 +226,8 @@
     }
   ],
   "precision": "f64_numeric_fallback",
-  "truncation_eps": 0
+  "truncation_eps": 0,
+  "engine": "python",
+  "scriptFile": "garside-irrep-qvalues.py",
+  "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811"
 }

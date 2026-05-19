@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T05:11:08.984640+00:00",
-  "commitSha": "965db1af885544e8ff1dc256b6804b930cac9597",
+  "computedAt": "2026-05-19T06:35:27.597391+00:00",
+  "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811",
   "assertions": [
     {
       "name": "no_unregistered_package_prefixes",
@@ -16,15 +16,15 @@
     {
       "name": "ok_count_matches_total_minus_failures",
       "computed": 968.0,
-      "expected": 968.0,
-      "passed": true,
+      "expected": 969.0,
+      "passed": false,
       "tolerance": 0.0,
       "unit": "count (gates only at full closure)",
       "source": "Closure gate: when this passes, every content-block lean.ref resolves to an actual declaration.  Currently informational; the production-side fix is a follow-up PR per the watcher's §5j spawn protocol."
     }
   ],
-  "allPassed": true,
-  "durationMs": 9,
+  "allPassed": false,
+  "durationMs": 8,
   "computation": "lean-ref-resolution-audit",
   "scriptFile": "lean_ref_resolution_audit.py",
   "scriptHash": "a0c94bc39a15",
@@ -32,11 +32,12 @@
   "description": "I12 audit per local/compute-integration-watcher: walk every content/.../*.ts content-block file with a `lean.ref` URI of the form `<package>:<Decl.Path>` and attempt the 3-step resolution the export pipeline performs (sibling → Lake-root → grep). Classifies each as `ok` or one of six failure modes. Operationalises the 305-hit I12 count from the 2026-05-18 idle sweep (PR #737).",
   "contentBlock": "I12 antipattern (compute-integration-watcher.md §antipatterns)",
   "parameters": {
-    "total_blocks_with_lean_ref": 968
+    "total_blocks_with_lean_ref": 969
   },
   "data": {
     "by_result": {
-      "ok": 968
+      "ok": 968,
+      "sibling_no_decl": 1
     },
     "rows": [
       {
@@ -5335,6 +5336,21 @@
         "grep_hit_under_lake_root": true,
         "result": "ok",
         "resolved_via": "lake_root"
+      },
+      {
+        "path": "content/quantum-observable-universe/braids-and-knots/per-block-hopf-jones-absorption-pattern.ts",
+        "ref": "qou:QOU.BraidKnot.per_block_hopf_jones_absorption",
+        "kind": "remark",
+        "pkg": "qou",
+        "decl_path": "QOU.BraidKnot.per_block_hopf_jones_absorption",
+        "sibling_exists": true,
+        "sibling_declares": false,
+        "lake_root_exists": false,
+        "lake_root_declares": false,
+        "lake_parent_declares": false,
+        "grep_hit": false,
+        "grep_hit_under_lake_root": false,
+        "result": "sibling_no_decl"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/per-braid-mass-tower.ts",
