@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T20:04:57.458095+00:00",
-  "commitSha": "41a2be0148d082318ad32818c50d172168e04b59",
+  "computedAt": "2026-05-19T20:10:27.423417+00:00",
+  "commitSha": "2fcf166b5ec811a56a30ae0baf3c1033a67d4946",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2490,6 +2490,7 @@
         "path-b-habiro-mass-probe.witness.json",
         "path-b-open-questions.witness.json",
         "path4-rho-K-at-h3A.witness.json",
+        "pauli-factor-wedderburn-probe.witness.json",
         "pentagon-reduction-li2q.witness.json",
         "per-atom-grading-bound.witness.json",
         "per-atom-rho-deviation.witness.json",

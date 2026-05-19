@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T20:04:58.354722+00:00",
-  "commitSha": "41a2be0148d082318ad32818c50d172168e04b59",
+  "computedAt": "2026-05-19T20:10:28.107634+00:00",
+  "commitSha": "2fcf166b5ec811a56a30ae0baf3c1033a67d4946",
   "assertions": [
     {
       "name": "no_i1_no_probe_blocks",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 10,
+  "durationMs": 11,
   "computation": "i1-no-probe-audit",
   "scriptFile": "i1_no_probe_audit.py",
   "scriptHash": "0e004cc143d0",
@@ -27,8 +27,8 @@
   },
   "data": {
     "by_result": {
-      "i1_no_probe": 501,
-      "wired": 72,
+      "i1_no_probe": 500,
+      "wired": 73,
       "i1_lean_with_sorry": 1,
       "conditional_class": 1
     },
@@ -1875,9 +1875,11 @@
         "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
-        "probe_witness_count": 0,
-        "probe_witnesses": [],
-        "result": "i1_no_probe"
+        "probe_witness_count": 1,
+        "probe_witnesses": [
+          "pauli-factor-wedderburn-probe.witness.json"
+        ],
+        "result": "wired"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/pentagon-uv-commutation.ts",
