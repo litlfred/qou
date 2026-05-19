@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T16:47:28.146832+00:00",
-  "commitSha": "90784819b1f29e958bee63f055fdb0b6c498e2c9",
+  "computedAt": "2026-05-19T16:47:33.724218+00:00",
+  "commitSha": "29494ad2a92faea3bd28739d3ee2d6875b53d390",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2411,6 +2411,7 @@
         "level1-qvalues.witness.json",
         "light-isotope-sweep.witness.json",
         "log-delta-categorical-derivation.witness.json",
+        "log-delta-full-mass-subtract.witness.json",
         "low-isotope-binding-sweep.witness.json",
         "low-isotope-mass-table.witness.json",
         "lp-confinement-nf-forcing.witness.json",
