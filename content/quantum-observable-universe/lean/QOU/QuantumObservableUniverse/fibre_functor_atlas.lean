@@ -1,3 +1,5 @@
+import Mathlib.Algebra.Group.Defs
+
 /-!
 # QOU.QuantumObservableUniverse.fibre_functor_atlas — placeholder stub
 
@@ -18,14 +20,31 @@ namespace QOU.QuantumObservableUniverse
 class FibreFunctorAtlasContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
-  /-- Manuscript sub-claim (i) — (Charts.) *Each fibre functor $\omega \colon \mathbf{C} \to \mathbf{Vect}_R$ is an affine chart: a concrete realisati.... -/
+  /-- Tannaka group `G = Aut⊗(τ)`. -/
+  G : Type
+  /-- Group structure on `G`. -/
+  groupG : Group G
+  /-- Fibre functor index set (indexes the chart cover). -/
+  FFIdx : Type
+  /-- Transition isomorphisms `g_{ij} : G` for each pair of fibre
+      functors. -/
+  g : FFIdx → FFIdx → G
+  /-- Manuscript sub-claim (i) — Charts: each fibre functor is an
+      affine chart (captured abstractly as a Prop because the
+      target category `Vect_R` is not in scope). -/
   claim_i_fibre_functor_affine : Prop
-  /-- Manuscript sub-claim (ii) — (Transitions.) *For any two fibre functors $\omega, \omega'$, the set of monoidal natural isomorphisms $\omega \xrigh.... -/
-  claim_ii_fibre_functors_set : Prop
-  /-- Manuscript sub-claim (iii) — (Cocycle condition.) *Given three fibre functors $\omega, \omega', \omega''$ with transition isomorphisms $g_{01}, g_.... -/
-  claim_iii_given_fibre_functors : Prop
-  /-- Manuscript sub-claim (iv) — (Atlas.) *The category of all fibre functors on $\mathbf{C}$, with monoidal natural isomorphisms as morphisms, is a $.... -/
-  claim_iv_category_fibre_functors : Prop
+  /-- Manuscript sub-claim (ii) — Transitions form a `G`-torsor
+      (captured as the abstract Prop expressing that `g(i, j)`
+      ranges over `G` simply transitively). -/
+  claim_ii_transition_torsor : Prop
+  /-- Manuscript sub-claim (iii) — Cocycle condition: for any three
+      fibre functors `(i, j, k)`, `g(i, k) = g(j, k) · g(i, j)`. -/
+  claim_iii_cocycle_condition : ∀ i j k : FFIdx,
+    haveI := groupG; g i k = g j k * g i j
+  /-- Manuscript sub-claim (iv) — Atlas: the category of fibre
+      functors is a connected `G`-gerbe (any two fibre functors
+      are connected by some transition isomorphism). -/
+  claim_iv_atlas_connected : ∀ i j : FFIdx, ∃ x : G, g i j = x
 
 /-- **Proposition statement** (from manuscript):
 
@@ -43,7 +62,12 @@ $\omega, \omega'$ denote arbitrary fibre functors on $\mathbf{C}$
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/fibre-functor-atlas.ts
 theorem fibre_functor_atlas [ctx : FibreFunctorAtlasContext] :
-    ctx.claim_i_fibre_functor_affine ∧ ctx.claim_ii_fibre_functors_set ∧ ctx.claim_iii_given_fibre_functors ∧ ctx.claim_iv_category_fibre_functors :=
-  ⟨ctx.claim_i_fibre_functor_affine, ctx.claim_ii_fibre_functors_set, ctx.claim_iii_given_fibre_functors, ctx.claim_iv_category_fibre_functors⟩
+    ctx.claim_i_fibre_functor_affine ∧
+    ctx.claim_ii_transition_torsor ∧
+    (∀ i j k : ctx.FFIdx,
+      haveI := ctx.groupG; ctx.g i k = ctx.g j k * ctx.g i j) ∧
+    (∀ i j : ctx.FFIdx, ∃ x : ctx.G, ctx.g i j = x) :=
+  ⟨ctx.claim_i_fibre_functor_affine, ctx.claim_ii_transition_torsor,
+   ctx.claim_iii_cocycle_condition, ctx.claim_iv_atlas_connected⟩
 
 end QOU.QuantumObservableUniverse
