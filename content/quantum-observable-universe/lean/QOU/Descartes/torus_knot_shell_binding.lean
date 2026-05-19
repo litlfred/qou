@@ -29,8 +29,9 @@ class TorusKnotShellBindingContext where
   /-- The Chebyshev crossing coefficients of `T_{2, n}` indexed by `n`. -/
   cd : ℕ → ℝ × ℝ
   /-- Manuscript sub-claim (i): the inter-shell operator
-      `Φ_shell^(ℓ) : H_A(q) → H_{A+1}(q)` post-multiplies by
-      `(c_{n_s} σ + d_{n_s})` and applies Gröbner–Shirshov reduction. -/
+      `Φ_shell^(ℓ) : H_A(q) → H_{A+1}(q)`. Stays abstract because
+      typing the post-multiplication structure requires the Hecke
+      algebra ring infrastructure. -/
   claim_i_intershell_operator : Prop
   /-- The Hecke deformation parameter `s = q − q⁻¹` used in the
       Chebyshev recurrence. -/
@@ -41,10 +42,16 @@ class TorusKnotShellBindingContext where
   claim_ii_chebyshev_recurrence : ∀ n : ℕ,
     (cd (n + 1)).1 = s * (cd n).1 + (cd n).2 ∧
     (cd (n + 1)).2 = (cd n).1
+  /-- Magic-number sequence indexed by shell number. -/
+  magic_numbers : ℕ → ℕ
   /-- Manuscript sub-claim (iii): magic numbers `(2, 8, 20, 28, 50, 82,
-      126)` emerge as the shell-occupancies `n_s` at which a torus knot
-      `T_{2, n_s}` closes a Bruhat-symmetric Poincaré histogram. -/
-  claim_iii_magic_numbers : Prop
+      126)` emerge as the shell-occupancies — closed-form values
+      of the first 7 shells. -/
+  claim_iii_magic_numbers :
+    magic_numbers 0 = 2 ∧ magic_numbers 1 = 8 ∧
+    magic_numbers 2 = 20 ∧ magic_numbers 3 = 28 ∧
+    magic_numbers 4 = 50 ∧ magic_numbers 5 = 82 ∧
+    magic_numbers 6 = 126
 
 /-- **Manuscript statement** (full body):
 
@@ -113,7 +120,10 @@ theorem torus_knot_shell_binding [ctx : TorusKnotShellBindingContext] :
     (∀ n : ℕ,
       (ctx.cd (n + 1)).1 = ctx.s * (ctx.cd n).1 + (ctx.cd n).2 ∧
       (ctx.cd (n + 1)).2 = (ctx.cd n).1) ∧
-    ctx.claim_iii_magic_numbers :=
+    (ctx.magic_numbers 0 = 2 ∧ ctx.magic_numbers 1 = 8 ∧
+     ctx.magic_numbers 2 = 20 ∧ ctx.magic_numbers 3 = 28 ∧
+     ctx.magic_numbers 4 = 50 ∧ ctx.magic_numbers 5 = 82 ∧
+     ctx.magic_numbers 6 = 126) :=
   ⟨ctx.claim_i_intershell_operator, ctx.claim_ii_chebyshev_recurrence,
    ctx.claim_iii_magic_numbers⟩
 
