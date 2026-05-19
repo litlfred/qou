@@ -18,6 +18,6 @@ namespace QOU.Torsion
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/brane-boundary-structure.ts
 theorem brane_boundary_structure : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.Torsion

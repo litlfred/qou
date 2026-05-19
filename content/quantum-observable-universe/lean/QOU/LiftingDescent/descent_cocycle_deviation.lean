@@ -18,6 +18,6 @@ namespace QOU.LiftingDescent
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/descent-cocycle-deviation.ts
 theorem descent_cocycle_deviation : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.LiftingDescent

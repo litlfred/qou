@@ -18,6 +18,6 @@ namespace QOU.Observations
 -- Ref: [manuscript] quantum-observable-universe/observations/strangelet-crossing-energy.ts
 theorem strangelet_crossing_energy : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.Observations

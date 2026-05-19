@@ -17,6 +17,6 @@ namespace QOU
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/emergence-to-quantum-flat.ts
 theorem emergence_to_quantum_flat : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU

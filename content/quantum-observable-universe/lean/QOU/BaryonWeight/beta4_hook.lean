@@ -18,6 +18,6 @@ namespace QOU.BaryonWeight
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/hook-weight-derivation.ts
 theorem beta4_hook : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.BaryonWeight

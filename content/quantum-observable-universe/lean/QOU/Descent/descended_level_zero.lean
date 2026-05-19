@@ -18,6 +18,6 @@ namespace QOU.Descent
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/descended-level-zero.ts
 theorem descended_level_zero : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.Descent

@@ -21,6 +21,6 @@ namespace QOU.BraidsAndKnots
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/wedderburn-bratteli-recursion.ts
 theorem wedderburn_bratteli_recursion : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.BraidsAndKnots

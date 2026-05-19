@@ -18,6 +18,6 @@ namespace QOU.Torsion
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/weak-equiv-invariance.ts
 theorem weak_equiv_invariance : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.Torsion

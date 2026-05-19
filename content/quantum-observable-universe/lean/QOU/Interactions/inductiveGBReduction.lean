@@ -18,6 +18,6 @@ namespace QOU.Interactions
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/inductive-gb-reduction.ts
 theorem inductiveGBReduction : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.Interactions

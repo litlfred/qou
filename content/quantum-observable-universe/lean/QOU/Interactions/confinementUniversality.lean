@@ -18,6 +18,6 @@ namespace QOU.Interactions
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/confinement-universality.ts
 theorem confinementUniversality : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.Interactions

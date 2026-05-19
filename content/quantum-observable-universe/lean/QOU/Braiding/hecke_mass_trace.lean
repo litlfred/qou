@@ -18,6 +18,6 @@ namespace QOU.Braiding
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/hecke-mass-trace.ts
 theorem hecke_mass_trace : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.Braiding

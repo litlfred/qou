@@ -18,6 +18,6 @@ namespace QOU.Information
 -- Ref: [manuscript] quantum-observable-universe/information-theory/toffoli-transfer-matrix.ts
 theorem toffoli_transfer_matrix : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.Information

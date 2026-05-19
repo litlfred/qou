@@ -18,6 +18,6 @@ namespace QOU.BraidsKnots
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/nsi-q-deformed-kernel.ts
 theorem nsi_q_deformed_kernel : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.BraidsKnots

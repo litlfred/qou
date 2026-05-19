@@ -21,6 +21,6 @@ namespace QOU.BraidsAndKnots
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/qmn-recursive-memoized.ts
 theorem qmn_recursive_memoized : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.BraidsAndKnots

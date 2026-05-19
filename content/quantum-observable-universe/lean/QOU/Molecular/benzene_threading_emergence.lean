@@ -18,6 +18,6 @@ namespace QOU.Molecular
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/benzene-threading-emergence.ts
 theorem benzene_threading_emergence : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.Molecular

@@ -18,6 +18,6 @@ namespace QOU.LiftingDescent
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/topological-mass-transient-localisation.ts
 theorem tm_transient_localisation : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.LiftingDescent

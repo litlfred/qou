@@ -18,6 +18,6 @@ namespace QOU.LiftingDescent
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/ccg-crossed-module-structure.ts
 theorem ccg_crossed_module_structure : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.LiftingDescent

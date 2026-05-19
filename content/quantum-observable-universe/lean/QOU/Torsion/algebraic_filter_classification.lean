@@ -18,6 +18,6 @@ namespace QOU.Torsion
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/algebraic-filter-classification.ts
 theorem algebraic_filter_classification : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.Torsion

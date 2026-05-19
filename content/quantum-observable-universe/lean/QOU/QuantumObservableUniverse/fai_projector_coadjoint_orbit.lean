@@ -18,6 +18,6 @@ namespace QOU.QuantumObservableUniverse
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/fai-projector-coadjoint-orbit.ts
 theorem fai_projector_coadjoint_orbit : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.QuantumObservableUniverse

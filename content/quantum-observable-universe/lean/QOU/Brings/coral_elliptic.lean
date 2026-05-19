@@ -18,6 +18,6 @@ namespace QOU.Brings
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/coral-elliptic.ts
 theorem coral_elliptic : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.Brings

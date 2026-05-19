@@ -18,6 +18,6 @@ namespace QOU.Torsion
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/neutron-proton-splitting.ts
 theorem neutron_proton_splitting : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.Torsion

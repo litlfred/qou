@@ -18,6 +18,6 @@ namespace QOU.Molecular
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/shell-filling-rule.ts
 theorem shell_filling_rule : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.Molecular

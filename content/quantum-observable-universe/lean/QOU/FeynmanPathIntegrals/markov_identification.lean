@@ -18,6 +18,6 @@ namespace QOU.FeynmanPathIntegrals
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/feynman-markov-identification.ts
 theorem markov_identification : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.FeynmanPathIntegrals

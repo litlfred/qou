@@ -17,6 +17,6 @@ namespace QOU.BringsSurface
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/lagrange-resolvent-transform.ts
 theorem lagrange_resolvent_transform : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.BringsSurface

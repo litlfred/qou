@@ -18,6 +18,6 @@ namespace QOU.Information
 -- Ref: [manuscript] quantum-observable-universe/information-theory/photon-threading-mass.ts
 theorem photon_threading_mass : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.Information

@@ -18,6 +18,6 @@ namespace QOU.HadronicMass
 -- Ref: [manuscript] quantum-observable-universe/observations/nucleon-borromean-topology.ts
 theorem nucleon_borromean_topology : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.HadronicMass

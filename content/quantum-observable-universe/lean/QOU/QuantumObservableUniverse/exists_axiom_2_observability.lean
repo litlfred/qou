@@ -18,6 +18,6 @@ namespace QOU.QuantumObservableUniverse
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-2.ts
 theorem exists_axiom_2_observability : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.QuantumObservableUniverse

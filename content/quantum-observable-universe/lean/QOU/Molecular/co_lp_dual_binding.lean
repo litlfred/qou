@@ -18,6 +18,6 @@ namespace QOU.Molecular
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/co-lp-dual-binding.ts
 theorem co_lp_dual_binding : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.Molecular

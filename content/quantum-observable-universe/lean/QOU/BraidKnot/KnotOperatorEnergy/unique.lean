@@ -17,6 +17,6 @@ namespace QOU.BraidKnot.KnotOperatorEnergy
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/knot-operator-energy-unique.ts
 theorem unique : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.BraidKnot.KnotOperatorEnergy

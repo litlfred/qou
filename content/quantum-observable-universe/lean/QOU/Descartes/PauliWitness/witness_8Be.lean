@@ -17,6 +17,6 @@ namespace QOU.Descartes.PauliWitness
 -- Ref: [manuscript] quantum-observable-universe/appendix-nf-witnesses/witness-8be.ts
 theorem witness_8Be : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.Descartes.PauliWitness

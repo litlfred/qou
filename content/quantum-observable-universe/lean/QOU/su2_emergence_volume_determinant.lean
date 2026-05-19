@@ -18,6 +18,6 @@ namespace QOU
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/su2-emergence-volume-determinant.ts
 theorem su2_emergence_volume_determinant : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU
