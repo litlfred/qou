@@ -410,6 +410,8 @@ export default chapter({
         "q-dilogarithm-exists-proof",
         "q-dilogarithm-unique",
         "q-dilogarithm-unique-proof",
+        // Generating-functions-as-Reeb-flow-solutions synthesis (Commit 3).
+        "generating-functions-solve-reeb-flow",
       ],
     }),
 

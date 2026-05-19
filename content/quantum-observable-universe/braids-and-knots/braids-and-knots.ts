@@ -187,6 +187,15 @@ export default chapter({
         "reeb-exceptional-divisor",
         "vertex-operator",
         "vertex-operator-dictionary",
+        // ── Reeb-flow dynamics + six S₃ operators (Commit 1) ───────
+        "q-reeb-flow-on-coral-coords",
+        "six-canonical-knot-operators",
+        "garside-as-compound-flow",
+        // ── Boundary disc fusion + complement=volume (Commit 2) ─────
+        "ramified-disc-fusion",
+        "reeb-bundle-complement-equals-volume",
+        "torus-knot-zero-volume-via-reeb",
+        "hyperbolic-knot-positive-volume-via-reeb",
       ],
     }),
 
