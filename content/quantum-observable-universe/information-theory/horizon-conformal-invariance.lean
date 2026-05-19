@@ -2,12 +2,11 @@
 # QOU.horizon_conformal_invariance — sibling stub
 
 The canonical Lean source for `prop:horizon-conformal-invariance`
-lives at
-`content/quantum-observable-universe/lean/QOU/JetHorizon.lean:211`
+lives in `lean/QOU/JetHorizon.lean` as `QOU.horizon_conformal_invariance`
 (Lake-built under the `qou` package).  The decl declares: for any
-`JetHorizon H`, every degree-0 section coincides with `H.algebra.zero
-0` — the categorical core of Penrose's conformal-cyclic invariance
-condition.
+`H : JetHorizon`, every degree-0 section coincides with
+`H.algebra.zero 0` — the categorical core of Penrose's
+conformal-cyclic invariance condition.
 
 This sibling re-exports the Lake module so the content-block's
 `lean.ref` URI (`qou:QOU.horizon_conformal_invariance`) resolves

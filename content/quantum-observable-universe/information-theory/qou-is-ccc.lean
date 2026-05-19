@@ -1,8 +1,8 @@
 /-!
 # QOU.qou_is_ccc — sibling stub
 
-The canonical Lean source for `prop:qou-is-ccc` lives at
-`content/quantum-observable-universe/lean/QOU/JetHorizon.lean:250`
+The canonical Lean source for `prop:qou-is-ccc` lives in
+`lean/QOU/JetHorizon.lean` as `QOU.qou_is_ccc`
 (Lake-built under the `qou` package).  The decl establishes the
 horizon-local form of the CCC (conformal-cyclic cosmology)
 properties: degree-0 sections vanish, degree ≥ 1 data persists.
