@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T18:34:21.827236+00:00",
-  "commitSha": "92c3e34628da0f6c16d18bc4de554cc49ea9a45a",
+  "computedAt": "2026-05-19T19:58:21.616300+00:00",
+  "commitSha": "a6553642d4005b8193d2a4a1ee74739b462a8ff0",
   "assertions": [
     {
       "name": "no_i1_no_probe_blocks",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 8,
+  "durationMs": 10,
   "computation": "i1-no-probe-audit",
   "scriptFile": "i1_no_probe_audit.py",
   "scriptHash": "0e004cc143d0",
@@ -27,8 +27,8 @@
   },
   "data": {
     "by_result": {
-      "i1_no_probe": 506,
-      "wired": 67,
+      "i1_no_probe": 505,
+      "wired": 68,
       "i1_lean_with_sorry": 1,
       "conditional_class": 1
     },
@@ -687,9 +687,11 @@
         "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
-        "probe_witness_count": 0,
-        "probe_witnesses": [],
-        "result": "i1_no_probe"
+        "probe_witness_count": 1,
+        "probe_witnesses": [
+          "cyclotomic-trilog-imaginary-closed-form-probe.witness.json"
+        ],
+        "result": "wired"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/degree-one-braid-trivial-volume.ts",
