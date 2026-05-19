@@ -50,13 +50,14 @@
 1. **Awaiting merge.** All 12 probes pass; CI green; rebased onto `origin/main` (`b8d4b15c5`). Gemini + Copilot have reviewed three rounds; final-round comments are stale (all referenced state pre-`d7246fe` / `702e02e`). No outstanding actionable review items.
 2. **Title may need narrowing** if PR-size matters more than thematic coherence — current title reflects the full scope.
 
-### B. Follow-up scope explicitly deferred from #818
+### B. Follow-up scope
 
-| Follow-up | Why it was deferred |
+| Item | Status |
 |---|---|
-| **Centralise Hoefsmit construction.** Move `build_hoefsmit_mpfr` from `probe_staircase_ew_k3_categorical.py` into a shared utility module (`hecke_hoefsmit.py` or similar); migrate every probe in the cluster + the canonical SYT enumerator. | Touches 12+ producers; better as one dedicated infrastructure PR than piecemeal. Acknowledged with TODO in source. (Gemini repeatedly flagged this; Copilot too.) |
-| **Re-state cor:knot-factor-amphicheiral's Application paragraph.** PR #815's BD probe used invalid matrices but the verdict (4_1 IS Markov-amphicheiral) survived correction. The corollary's "Application" paragraph should be revisited with the corrected single-component value χ_(2,1)(β_{4_1}) ≈ −0.91068 (not −1). | Content edit on `.md`; out of scope for the probe-cluster PR. Possibly bundle with the cor:knot-factor-amphicheiral content revision. |
-| **`q_mn_canonical.py` referenced in `prop:wenzl-qmn-synergy` doesn't exist.** | Either rename the reference, or create the missing file. Probably one of the pieces in `tools/pyhecke/`. |
+| **Centralise Hoefsmit construction.** Move `build_hoefsmit_mpfr` from `probe_staircase_ew_k3_categorical.py` into a shared utility module; migrate every probe in the cluster + the canonical SYT enumerator. | **DEFERRED** — touches 12+ producers; better as one dedicated infrastructure PR than piecemeal. TODOs in source. |
+| **`prop:wenzl-qmn-synergy` references nonexistent `q_mn_canonical.py`.** | **RESOLVED** in commit `bc1ff75fd` — updated to annotate the deprecated location and point to the active canonical path `hecke_characters.chi_lambda_braid`. |
+| **`prop:explicit-central-idempotent` Lagrange-product scope.** | **RESOLVED** in commit `bc1ff75fd` — formula now ranges the inner product over the union 𝒞(n) of distinct cell contents across every μ ⊢ n.  Off-block residue 0 under corrected scope (vs. ~32 literal). |
+| **`cor:knot-factor-amphicheiral` sign-flip claim.** | **FLAGGED** in commit `c8722c735` — errata banner added documenting that the proof's sign-flip claim `χ_λ(β*) = (-1)^{[λ=(1^n)]} χ_λ(β)` is empirically inconsistent with the BD probe's canonical Hoefsmit values for the figure-eight (both give +1 on (1^3), not opposite signs).  **Full math revision deferred** (owner scope) — natural directions: derive `a_K` via Markov-invariance directly, or use the Gram-pairing form `a_K = tr_M(β · β*) / tr_M(𝟙)`. |
 
 ### D. Paper-level findings surfaced by the probes
 
