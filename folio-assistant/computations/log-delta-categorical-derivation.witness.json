@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T04:57:30.204905+00:00",
-  "commitSha": "d3c673521389bcc71f798b3517bbd1f8bc8e630a",
+  "computedAt": "2026-05-19T05:36:23.334495+00:00",
+  "commitSha": "b4348f37ab92b5325135d94ea9d0e42b53908c04",
   "assertions": [
     {
       "name": "data_loaded",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 27,
+  "durationMs": 26,
   "computation": "log-delta-categorical-derivation",
   "scriptFile": "log_delta_categorical_derivation.py",
-  "scriptHash": "eed652b6455f",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "8b20e0277af1",
+  "scriptCommitSha": "43e3e6fd20ec2125ec2526cf2c0ebdbb817cab7e",
   "description": "Categorical-derivation test for the log-Δ form (PR #787 Phase 2 5.22× residual). Applies prop:unified-curvature-rank-mass-formula with structural α_k and tests three Wedderburn-weighting forms (y_λ, w_λ, identity) on D, T, ³He, ⁴He.",
   "parameters": {
     "q0": "1.1099785955541805",

@@ -41,6 +41,7 @@ sys.path.insert(0, str(HERE))
 import mpmath as mp
 
 from witness_base import WitnessBuilder
+from codata_constants import M_E_MEV
 from q_parameter import Q as Q0
 
 CHI_FILES = {
@@ -69,7 +70,7 @@ def alpha_k(k):
     G = mp.catalan
     if k in (0, 1, 3): return mp.mpf(1)
     if k == 2: return z_mark ** 2
-    return mp.mpf("0.51099895") * 8 * G
+    return mp.mpf(str(M_E_MEV)) * 8 * G  # k >= 4 (CAL-1)
 
 
 def q_int(k):

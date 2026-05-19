@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T05:02:43.887066+00:00",
-  "commitSha": "43e3e6fd20ec2125ec2526cf2c0ebdbb817cab7e",
+  "computedAt": "2026-05-19T05:36:23.455306+00:00",
+  "commitSha": "b4348f37ab92b5325135d94ea9d0e42b53908c04",
   "assertions": [
     {
       "name": "data_loaded",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 24,
+  "durationMs": 23,
   "computation": "log-delta-full-mass-subtract",
   "scriptFile": "log_delta_full_mass_subtract.py",
-  "scriptHash": "ce7e93b735e8",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "a9f7770fe14a",
+  "scriptCommitSha": "dac29b4419419ba093c6d287c433e7033c5ca697",
   "description": "Categorical test: B(K) = m_{q,K} - Z·m_{q,p} - N·m_{q,n} via prop:unified-curvature-rank-mass-formula with paper-prescribed ~w_λ weight. Tests if the binding-energy projection IS the n-strand-renormalized difference.",
   "data": {
     "full_mass_per_species": {

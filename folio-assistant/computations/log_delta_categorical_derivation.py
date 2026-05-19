@@ -42,6 +42,7 @@ Ref: docs/audits/2026-05-19-deprecated-but-valid-scripts-catalog.md
 
 from __future__ import annotations
 
+import ast
 import json
 import sys
 from pathlib import Path
@@ -84,8 +85,8 @@ def alpha_k(k: int) -> mp.mpf:
     if k == 1: return mp.mpf(1)
     if k == 2: return z_mark ** 2
     if k == 3: return mp.mpf(1)
-    # k >= 4: Term 7 universal
-    return mp.mpf("0.51099895") * 8 * G
+    # k >= 4: Term 7 universal (CAL-1 = M_E_MEV)
+    return mp.mpf(str(M_E_MEV)) * 8 * G
 
 
 def load_partition_data(atom: str) -> tuple[int, list[dict]]:
@@ -94,7 +95,7 @@ def load_partition_data(atom: str) -> tuple[int, list[dict]]:
     n = int(w["n_strands"])
     parsed = []
     for p in w["by_partition"]:
-        lam = p["partition"] if isinstance(p["partition"], list) else __import__("ast").literal_eval(p["partition"])
+        lam = p["partition"] if isinstance(p["partition"], list) else ast.literal_eval(p["partition"])
         parsed.append({
             "partition": tuple(lam),
             "depth": depth(lam),
