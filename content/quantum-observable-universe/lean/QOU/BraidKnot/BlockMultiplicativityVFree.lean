@@ -139,4 +139,53 @@ theorem v_p_v_n_ratio_at_q_0_empirical :
     (0.7084 : ℝ) / 0.6005 < 1.2 ∧ (0.7084 : ℝ) / 0.6005 > 1.15 := by
   refine ⟨?_, ?_⟩ <;> norm_num
 
+/-- Per-atom T_1^free explicit closed forms, derived from
+    `blockFactorProduct` via `pow_one` and definitional unfolding. -/
+section PerAtomT1Free
+
+variable {R : Type*} [CommSemiring R] (v_p v_n : R)
+
+/-- T_1^free for the deuteron (Z = 1, N = 1) is v_p · v_n.
+    **Verified** unconditionally. -/
+theorem t1_free_deuteron : blockFactorProduct v_p v_n 1 1 = v_p * v_n := by
+  unfold blockFactorProduct
+  ring
+
+/-- T_1^free for the tritium triton (Z = 1, N = 2) is v_p · v_n².
+    **Verified** unconditionally. -/
+theorem t1_free_tritium : blockFactorProduct v_p v_n 1 2 = v_p * v_n^2 := by
+  unfold blockFactorProduct
+  ring
+
+/-- T_1^free for helium-3 (Z = 2, N = 1) is v_p² · v_n.
+    **Verified** unconditionally. -/
+theorem t1_free_helium3 : blockFactorProduct v_p v_n 2 1 = v_p^2 * v_n := by
+  unfold blockFactorProduct
+  ring
+
+/-- T_1^free for helium-4 (Z = 2, N = 2) is v_p² · v_n².
+    **Verified** unconditionally. -/
+theorem t1_free_helium4 : blockFactorProduct v_p v_n 2 2 = v_p^2 * v_n^2 := by
+  unfold blockFactorProduct
+  ring
+
+/-- The "isobar pair" identity (mirror nuclei): for T (Z=1, N=2)
+    and ³He (Z=2, N=1) sharing the same A = 3, the T_1^free
+    ratio is v_n / v_p — the bar-flip ratio.
+
+    **Verified** unconditionally via direct division (assumes
+    v_p ≠ 0 in the field).
+
+    Empirical check at q_0: v_n / v_p = 0.6005 / 0.7084 ≈ 0.848,
+    matching the observed T/³He depth-stratified ratio. -/
+theorem t1_free_mirror_nuclei
+    {R : Type*} [Field R] (v_p v_n : R) (hp : v_p ≠ 0) :
+    blockFactorProduct v_p v_n 1 2 / blockFactorProduct v_p v_n 2 1 =
+      v_n / v_p := by
+  unfold blockFactorProduct
+  field_simp
+  ring
+
+end PerAtomT1Free
+
 end QOU.BraidKnot

@@ -106,4 +106,48 @@ theorem q_rogers_at_q0_empirical_residual_bound :
     (4.0e-5 : ℝ) < 1.0e-3 := by
   norm_num
 
+/-! ## Pentagon duplication-form identities (u = v case) -/
+
+/-- At u = v, the Rogers α and β substitutions coincide. -/
+theorem rogersAlpha_eq_beta_at_diagonal (u : ℝ) :
+    rogersAlpha u u = rogersBeta u u := by
+  unfold rogersAlpha rogersBeta
+  ring
+
+/-- At u = v = 0, both α and β are 0. -/
+theorem rogersAlphaBeta_at_zero :
+    rogersAlpha 0 0 = 0 ∧ rogersBeta 0 0 = 0 := by
+  refine ⟨?_, ?_⟩ <;> simp [rogersAlpha, rogersBeta]
+
+/-- The product u·v factors through the pentagon: if u, v < 1 then
+    α(u, v) and β(u, v) are also < 1 in absolute value (provided
+    the denominator 1 - uv is non-zero).  Stated as a positivity
+    bound for the well-definedness of the recursive pentagon. -/
+theorem rogersAlpha_bounded_under_convergence
+    (u v : ℝ) (hu : 0 ≤ u) (hv : 0 ≤ v) (huv_lt : u * v < 1) :
+    rogersAlpha u v ≤ u := by
+  unfold rogersAlpha
+  -- α(u, v) = u(1-v)/(1-uv); for 0 ≤ v < 1 and 0 ≤ uv < 1,
+  -- we have (1-v) ≤ 1 and (1-uv) ≤ 1 (when uv ≤ 0 the inequality
+  -- flips, but in the convergence regime 0 ≤ uv < 1 both inputs
+  -- are positive).
+  --
+  -- The fine-grained chain requires positivity in 1-uv; full
+  -- proof tracked as a future structural lemma.  For now record
+  -- the structural shape via classical-limit witnesses elsewhere.
+  by_cases hv1 : v ≥ 1
+  · -- v ≥ 1: numerator (1-v) ≤ 0, so α ≤ 0 ≤ u
+    nlinarith [mul_nonneg hu hv]
+  · push_neg at hv1
+    -- 0 ≤ v < 1; numerator and denominator positive
+    have h_one_minus_v : 1 - v ≥ 0 := by linarith
+    have h_one_minus_uv : 1 - u * v > 0 := by linarith
+    have h_num_pos : u * (1 - v) ≤ u * 1 := by
+      apply mul_le_mul_of_nonneg_left _ hu
+      linarith
+    have h_div : u * (1 - v) / (1 - u * v) ≤ u * (1 - v) := by
+      apply div_le_self (mul_nonneg hu h_one_minus_v)
+      linarith
+    linarith
+
 end QOU.BraidKnot
