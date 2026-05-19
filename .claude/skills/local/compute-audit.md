@@ -222,6 +222,57 @@ numerical equivalence at q₀ before/after.
   `.derivation.json` that drift on the next CI regeneration (see
   build_markov_trace_assembly_neutron_chain.py 2026-05-12 fix).
 
+- **P33. Latent shadowing of imported algebra constants.**  A
+  module imports a shared constant (e.g. `from pyhecke.gram import
+  TR_M`) and **then locally redefines it** further down in the
+  module body:
+
+  ```python
+  from pyhecke.gram import TR_M as _PG_TR_M  # corrected upstream
+  ...
+  TR_M = np.array([1.0, z, z, z**2, z**2, z**3])  # ← shadowing
+  ```
+
+  The local definition wins; upstream fixes don't propagate to
+  consumers.  Visible signature: two definitions of the same
+  algebra constant in one file, one of which arrives via
+  `from … import`.  Detection heuristic: for each
+  `from <shared_module> import <CONST>`, grep the same file for
+  `\b<CONST>\s*=` and flag any subsequent assignment.  Reference
+  fix: PR `8ce8630fc` — `pn_alpha_lp_dual.py` and
+  `molecular-frobenius-lp.py` both redefined `TR_M = np.array
+  ([..., z**3])` (buggy) shadowing the corrected upstream
+  `h·z² + z`.  See `docs/audits/2026-05-19-trm5-markov-bug.md`.
+
+- **P34. Algebraic-invariant cross-check absent.** A producer
+  emits algebra-valued data (Markov-trace values, Gram matrices,
+  representation matrices) without cross-checking the
+  mathematical invariants the data must satisfy.  Typical
+  invariants:
+
+  - **Gram symmetry**: `‖G − Gᵀ‖ ≤ eps` for `G[i,j] = tr(b_i·b_j)`.
+  - **Markov-axiom recursion**: `tr_M(σᵢ·x) = z·tr_M(x)` for
+    `x ∈ Hᵢ` (sub-algebra).
+  - **Cyclicity**: `tr(xy) = tr(yx)` for all `x, y`.
+  - **Hecke quadratic**: `σᵢ² = h·σᵢ + 1` and downstream
+    consequences (e.g. `tr_M(σᵢ²) = h·z + 1`).
+  - **Bar-involution**: `tr(x̄) = bar(tr(x))`.
+
+  The trm5 bug (PR `be773569f`) emitted `TR_M[5] = z³` instead of
+  the Markov-axiom-derived `h·z² + z`; the visible symptom was
+  the Gram matrix becoming **non-symmetric** (`‖G − Gᵀ‖ > 1e-3`)
+  because `b_i·b_j` and `b_j·b_i` reduced to the same NF element
+  but their bug-affected trace evaluations differed.  Discrepancy
+  was 4.4× at q_0.  Reference fix: `pyhecke.gram` line 50 + 178
+  (sympy Fraction mirror); audit doc:
+  `docs/audits/2026-05-19-trm5-markov-bug.md`.
+
+  Producer recommendation: every algebra-valued witness emits a
+  `cross_checks` field listing the invariants verified and their
+  residuals, with a strict-mode CI gate that fails on any
+  residual above its tolerance (typically `1e-12` symbolic /
+  `1e-8` mpmath@50dps / `1e-6` float64).
+
 ## Pattern → fix-success references
 
 | Pattern | Reference fix |
