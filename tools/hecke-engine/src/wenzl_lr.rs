@@ -318,7 +318,6 @@ pub fn chi_lambda_canonical_all_partitions_mpfr(
         .collect()
 }
 
-
 /// All χ^λ values at H_n for λ ⊢ n, computed in parallel via
 /// [`chi_lambda_canonical_h_n_f64`].
 ///
