@@ -154,7 +154,8 @@ def load_block_factors_from_witness() -> dict:
 
 def predict_binding(Z: int, N: int, factors: dict, q: mp.mpf,
                      q_inv: mp.mpf, z: mp.mpf, *,
-                     include_t3: bool = True) -> dict:
+                     include_t3: bool = True,
+                     t3_mode: str = "full_pairs") -> dict:
     """Closed-form B_pred via block-multiplicativity + structural
     interface arrangement.
 
@@ -264,6 +265,8 @@ def predict_binding(Z: int, N: int, factors: dict, q: mp.mpf,
                 is_j_inter = fj_f.startswith("I_")
                 if not (is_i_inter or is_j_inter):
                     continue  # non-interface pair cancels in T3_diff
+                if t3_mode == "adjacent_only" and (j - i) > 1:
+                    continue  # adjacent-pair-only restriction
                 pair_counts[(tuple(sorted([fi_f, fj_f])),
                              tuple(sorted([fi_a, fj_a])))] += 1
 
@@ -332,7 +335,8 @@ def main() -> int:
           f"{'T3_diff':>10} {'B_MeV':>10} {'B_AME':>10} {'ratio':>8}")
     results = {}
     for atom, (Z, N) in ZN.items():
-        r_t3 = predict_binding(Z, N, factors, q, q_inv, z, include_t3=True)
+        r_t3 = predict_binding(Z, N, factors, q, q_inv, z, include_t3=True,
+                                t3_mode="full_pairs")
         r_no = predict_binding(Z, N, factors, q, q_inv, z, include_t3=False)
         B_AME_val = B_AME.get(atom, mp.mpf(0))
         B_with_t3 = mp.mpf(r_t3["B_MeV_with_T3"])
@@ -353,8 +357,8 @@ def main() -> int:
         print(f"  {atom:<6} {Z:>3} {N:>3} "
               f"{float(r_t3['T1_free']):>10.4f} "
               f"{float(r_t3['T2_diff']):>10.4f} "
-              f"{float(r_t3['T3_diff']):>10.4f} "
-              f"{float(B_with_t3):>10.4f} "
+              f"{float(r_t3['T3_diff']):>10.2f} "
+              f"{float(B_with_t3):>10.2f} "
               f"{float(B_AME_val):>10.4f} {float(ratio_t3):>8.4f}")
 
     builder.add_data("per_atom", results)
@@ -409,11 +413,11 @@ def main() -> int:
         verdict = (f"signs_correct = {signs_correct}, "
                    f"max/min^(1) = {mom:.3f}.")
     builder.add_data("verdict", verdict)
-    print(f"\n  Variance summary:")
-    print(f"  T1+T2 only (all 16 atoms):       max/min = {mom_fo:.3f}")
-    print(f"  T1+T2+T3 (light atoms A≤4):      max/min = {mom_light:.3f}")
-    print(f"  T1+T2+T3 (medium atoms 6≤A≤14):  max/min = {mom_med:.3f}")
-    print(f"  T1+T2+T3 (all 16 atoms):         max/min = {mom:.3f}")
+    print(f"\n  Variance summary across {len(valid)} atoms (D → ⁵⁶Fe):")
+    print(f"    T1+T2 only:                  max/min = {mom_fo:.3f}")
+    print(f"    T1+T2+T3 full-pairs:         max/min = {mom:.3f}  (A²-growth)")
+    print(f"    T1+T2+T3 full, light A≤4:    max/min = {mom_light:.3f}")
+    print(f"    T1+T2+T3 full, medium 6≤A≤14: max/min = {mom_med:.3f}")
     print(f"  All signs +: {signs_correct}")
     print(f"  Verdict: {verdict}")
 

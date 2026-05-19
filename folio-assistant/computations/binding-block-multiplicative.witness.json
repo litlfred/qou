@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T07:21:55.518174+00:00",
-  "commitSha": "6f7aa77cbecdfc5f3d4139f2e95766a7196c6a0a",
+  "computedAt": "2026-05-19T07:26:17.480516+00:00",
+  "commitSha": "65a3985e2dee965a6dd556d7aef771315e2e07aa",
   "assertions": [
     {
       "name": "block_multiplicativity_calibration_loaded",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6303,
+  "durationMs": 6148,
   "computation": "binding-block-multiplicative",
   "scriptFile": "binding_block_multiplicative.py",
-  "scriptHash": "32eb060f9a81",
-  "scriptCommitSha": "f43da4152d7270114dc2d7b820dcc9f1fed2b1d1",
+  "scriptHash": "84cc88bc8e1e",
+  "scriptCommitSha": "65a3985e2dee965a6dd556d7aef771315e2e07aa",
   "description": "Closed-form B(K) via block-multiplicativity (T1_free = v_p^Z · v_n^N) + structural interface arrangement, derived from empirical A-independence of V̂(free) at H_6 / H_9 (D, T, ³He). Scales to all atoms in microseconds; no H_{3A} character sum required beyond H_6 (calibration only).",
   "parameters": {
     "Q_beta_CAL3_MeV": "0.7823334100000222",
