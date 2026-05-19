@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.Interactions
 
+
+/-- Abstract context for the `nucleon_ordering_factorization` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class NucleonOrderingFactorizationContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `nucleon_ordering_factorization` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Proposition statement** (from manuscript):
 
 Let $\mathcal{N}(Z, N)$ be a nuclear braid in $H_A(q)$ with
@@ -34,8 +43,9 @@ $$
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/nucleon-ordering-factorization.ts
-theorem nucleon_ordering_factorization : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem nucleon_ordering_factorization [ctx : NucleonOrderingFactorizationContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.Interactions

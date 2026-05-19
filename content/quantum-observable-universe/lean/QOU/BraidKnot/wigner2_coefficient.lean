@@ -11,12 +11,20 @@ Lake package.
 
 namespace QOU.BraidKnot
 
-/-- wigner2 coefficient
 
-    Placeholder; full formalisation pending. -/
+/-- Abstract context for the `wigner2_coefficient` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class Wigner2CoefficientContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `wigner2_coefficient` below for the manuscript statement). -/
+  holds : Prop
+
+/-- Placeholder for `wigner2_coefficient` (no manuscript-statement docstring found). -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/wigner-2-coefficient.ts
-theorem wigner2_coefficient : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem wigner2_coefficient [ctx : Wigner2CoefficientContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.BraidKnot

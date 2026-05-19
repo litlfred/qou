@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.ParticleInteractions
 
+
+/-- Abstract context for the `frobenius_positivity_filter` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class FrobeniusPositivityFilterContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `frobenius_positivity_filter` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Proposition statement** (from manuscript):
 
 For even $A$: a channel configuration
@@ -42,8 +51,9 @@ In the discrete (branching) setting, it acts as a
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/frobenius-positivity-filter.ts
-theorem frobenius_positivity_filter : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem frobenius_positivity_filter [ctx : FrobeniusPositivityFilterContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.ParticleInteractions

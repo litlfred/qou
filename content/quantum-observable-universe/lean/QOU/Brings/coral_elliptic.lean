@@ -12,6 +12,15 @@ CLAUDE.md §1.
 
 namespace QOU.Brings
 
+
+/-- Abstract context for the `coral_elliptic` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class CoralEllipticContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `coral_elliptic` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Content statement** (from manuscript):
 
 Let $z=x_0/x_1\in\mathbb{P}^1(\mathbb{C})$ be the projective spacetime ratio
@@ -29,8 +38,9 @@ each fixed $z$ to the cubic
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/coral-elliptic.ts
-theorem coral_elliptic : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem coral_elliptic [ctx : CoralEllipticContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.Brings

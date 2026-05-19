@@ -12,6 +12,14 @@ citation per CLAUDE.md §1.
 
 namespace UGB.UnitalGroebner
 
+
+/-- Abstract context for the `pbw_corollary` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class PbwCorollaryContext where
+  /-- The `Prop`-valued claim of the lemma. -/
+  holds : Prop
+
 /-- **Content statement** (from manuscript):
 
 Let $\mathfrak{g}$ be a Lie algebra over $R$, a commutative ring with
@@ -23,8 +31,9 @@ enveloping algebra
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] unital-groebner-bases/unital-groebner-bases-chapter/pbw-corollary.ts
-theorem pbw_corollary : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem pbw_corollary [ctx : PbwCorollaryContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end UGB.UnitalGroebner

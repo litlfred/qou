@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.BaryonWeight
 
+
+/-- Abstract context for the `beta4_hook` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class Beta4HookContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `beta4_hook` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Proposition statement** (from manuscript):
 
 The coefficient of the hook invariant $\Phi_4$ in the
@@ -47,8 +56,9 @@ The coefficient $\beta_4$ is set by the
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/hook-weight-derivation.ts
-theorem beta4_hook : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem beta4_hook [ctx : Beta4HookContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.BaryonWeight

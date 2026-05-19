@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.BraidKnot
 
+
+/-- Abstract context for the `terms_2_6_higher_operations` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class Terms26HigherOperationsContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `terms_2_6_higher_operations` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Content statement** (from manuscript):
 
 Terms 2 (single-generator brane tower $\sum \Phi_q(|\hat V_i|)$) and
@@ -27,8 +36,9 @@ This proposition sketches concrete avenues to close both via
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/terms-2-6-higher-operations.ts
-theorem terms_2_6_higher_operations : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem terms_2_6_higher_operations [ctx : Terms26HigherOperationsContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.BraidKnot

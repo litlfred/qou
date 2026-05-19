@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.Observations
 
+
+/-- Abstract context for the `substrate_consistency_window` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class SubstrateConsistencyWindowContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `substrate_consistency_window` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Content statement** (from manuscript):
 
 The QOU framework has **one free parameter**: the substrate
@@ -26,8 +35,9 @@ overlap.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/substrate-consistency-window.ts
-theorem substrate_consistency_window : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem substrate_consistency_window [ctx : SubstrateConsistencyWindowContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.Observations

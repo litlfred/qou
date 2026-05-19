@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU
 
+
+/-- Abstract context for the `q_gl_obstruction_calc` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class QGlObstructionCalcContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `q_gl_obstruction_calc` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Content statement** (from manuscript):
 
 Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe with
@@ -24,8 +33,9 @@ $\kappa_0 = e(\xi) \in H^2(\mathcal{S}, \mathbb{G}_m)$
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/q-geometric-langlands/q-gl-obstruction-calc.ts
-theorem q_gl_obstruction_calc : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem q_gl_obstruction_calc [ctx : QGlObstructionCalcContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU

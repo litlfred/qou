@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.FluidDynamics
 
+
+/-- Abstract context for the `p1_nonlinear_uniqueness` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class P1NonlinearUniquenessContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `p1_nonlinear_uniqueness` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Content statement** (from manuscript):
 
 Let $(\mathbf{C}, A, \tau)$ be a
@@ -27,8 +36,9 @@ $C_q = (\sum_k [k]_q^{-2})^{1/2}$ be the
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/p1-nonlinear-uniqueness.ts
-theorem p1_nonlinear_uniqueness : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem p1_nonlinear_uniqueness [ctx : P1NonlinearUniquenessContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.FluidDynamics

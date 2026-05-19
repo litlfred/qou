@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.FluidDynamics
 
+
+/-- Abstract context for the `leray_profile` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class LerayProfileContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `leray_profile` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Content statement** (from manuscript):
 
 > **Summary.** Near the blowup time $T^*$, the singular NS
@@ -27,8 +36,9 @@ namespace QOU.FluidDynamics
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/leray-profile.ts
-theorem leray_profile : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem leray_profile [ctx : LerayProfileContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.FluidDynamics

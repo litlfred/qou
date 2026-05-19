@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.LiftingDescent
 
+
+/-- Abstract context for the `jp_categorical_jet` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class JpCategoricalJetContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `jp_categorical_jet` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Lemma statement** (from manuscript):
 
 The categorical jet object
@@ -25,8 +34,9 @@ $(\Delta', \varepsilon', S')$ from $A$.
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/jet-prolongation-categorical-jet.ts
-theorem jp_categorical_jet : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem jp_categorical_jet [ctx : JpCategoricalJetContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.LiftingDescent

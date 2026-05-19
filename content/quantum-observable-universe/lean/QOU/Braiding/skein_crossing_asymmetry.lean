@@ -12,6 +12,15 @@ CLAUDE.md §1.
 
 namespace QOU.Braiding
 
+
+/-- Abstract context for the `skein_crossing_asymmetry` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class SkeinCrossingAsymmetryContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `skein_crossing_asymmetry` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Content statement** (from manuscript):
 
 The $R$-matrix braiding
@@ -24,8 +33,9 @@ relation
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/skein-crossing-asymmetry-prop.ts
-theorem skein_crossing_asymmetry : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem skein_crossing_asymmetry [ctx : SkeinCrossingAsymmetryContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.Braiding

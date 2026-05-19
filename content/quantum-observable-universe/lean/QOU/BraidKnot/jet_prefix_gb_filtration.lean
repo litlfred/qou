@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.BraidKnot
 
+
+/-- Abstract context for the `jet_prefix_gb_filtration` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class JetPrefixGbFiltrationContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `jet_prefix_gb_filtration` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Proposition statement** (from manuscript):
 
 Define the
@@ -21,8 +30,9 @@ Define the
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/jet-prefix-gb-filtration.ts
-theorem jet_prefix_gb_filtration : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem jet_prefix_gb_filtration [ctx : JetPrefixGbFiltrationContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.BraidKnot

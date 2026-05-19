@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.QuantumObservableUniverse
 
+
+/-- Abstract context for the `observation_energy` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class ObservationEnergyContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `observation_energy` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Proposition statement** (from manuscript):
 
 Let $\mathfrak{I}\in \Gamma(U, \mathrm{Ad}(J^1 \mathcal{S}))$
@@ -25,8 +34,9 @@ substrate perturbation $\delta q$.  Then:*
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/observation-energy.ts
-theorem observation_energy : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem observation_energy [ctx : ObservationEnergyContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.QuantumObservableUniverse

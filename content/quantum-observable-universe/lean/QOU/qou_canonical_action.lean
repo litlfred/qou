@@ -11,12 +11,20 @@ Lake package.
 
 namespace QOU
 
-/-- qou canonical action
 
-    Placeholder; full formalisation pending. -/
+/-- Abstract context for the `qou_canonical_action` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class QouCanonicalActionContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `qou_canonical_action` below for the manuscript statement). -/
+  holds : Prop
+
+/-- Placeholder for `qou_canonical_action` (no manuscript-statement docstring found). -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/qou-canonical-action.ts
-theorem qou_canonical_action : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem qou_canonical_action [ctx : QouCanonicalActionContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU

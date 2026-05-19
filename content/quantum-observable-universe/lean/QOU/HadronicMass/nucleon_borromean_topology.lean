@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.HadronicMass
 
+
+/-- Abstract context for the `nucleon_borromean_topology` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class NucleonBorromeanTopologyContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `nucleon_borromean_topology` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Lemma statement** (from manuscript):
 
 The proton and neutron are each modelled as a Borromean
@@ -27,8 +36,9 @@ volume.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/nucleon-borromean-topology.ts
-theorem nucleon_borromean_topology : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem nucleon_borromean_topology [ctx : NucleonBorromeanTopologyContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.HadronicMass

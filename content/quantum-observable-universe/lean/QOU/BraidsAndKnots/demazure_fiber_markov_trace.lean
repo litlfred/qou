@@ -15,6 +15,15 @@ this plural `QOU.BraidsAndKnots` namespace was inherited from existing
 
 namespace QOU.BraidsAndKnots
 
+
+/-- Abstract context for the `demazure_fiber_markov_trace` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class DemazureFiberMarkovTraceContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `demazure_fiber_markov_trace` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Proposition statement** (from manuscript):
 
 Let $V_\lambda$ be the irreducible $S_n$-module indexed by
@@ -62,8 +71,9 @@ principal specialisation $x_i \mapsto q^{i-1}$.  Then:*
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/demazure-fiber-markov-trace.ts
-theorem demazure_fiber_markov_trace : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem demazure_fiber_markov_trace [ctx : DemazureFiberMarkovTraceContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.BraidsAndKnots

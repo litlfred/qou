@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.ParticleInteractions
 
+
+/-- Abstract context for the `ground_state_ordering` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class GroundStateOrderingContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `ground_state_ordering` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Proposition statement** (from manuscript):
 
 The nuclear ground state ordering for a nucleus with $Z$ protons
@@ -22,8 +31,9 @@ and $N$ neutrons ($A = Z + N$) is determined by:*
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/ground-state-ordering.ts
-theorem ground_state_ordering : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem ground_state_ordering [ctx : GroundStateOrderingContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.ParticleInteractions

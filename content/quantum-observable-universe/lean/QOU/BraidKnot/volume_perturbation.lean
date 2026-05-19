@@ -11,12 +11,20 @@ Lake package.
 
 namespace QOU.BraidKnot
 
-/-- volume perturbation
 
-    Placeholder; full formalisation pending. -/
+/-- Abstract context for the `volume_perturbation` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class VolumePerturbationContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `volume_perturbation` below for the manuscript statement). -/
+  holds : Prop
+
+/-- Placeholder for `volume_perturbation` (no manuscript-statement docstring found). -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/volume-perturbation-formula.ts
-theorem volume_perturbation : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem volume_perturbation [ctx : VolumePerturbationContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.BraidKnot

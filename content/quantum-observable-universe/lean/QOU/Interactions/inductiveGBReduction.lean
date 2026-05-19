@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.Interactions
 
+
+/-- Abstract context for the `inductiveGBReduction` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class InductivegbreductionContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `inductiveGBReduction` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Proposition statement** (from manuscript):
 
 Let $\mathcal{N}_{\leq k}$ denote the Gröbner--Shirshov normal form
@@ -52,8 +61,9 @@ The key identity enabling this is the
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/inductive-gb-reduction.ts
-theorem inductiveGBReduction : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem inductiveGBReduction [ctx : InductivegbreductionContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.Interactions

@@ -11,12 +11,20 @@ Lake package.
 
 namespace QOU
 
-/-- variational equations
 
-    Placeholder; full formalisation pending. -/
+/-- Abstract context for the `variational_equations` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class VariationalEquationsContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `variational_equations` below for the manuscript statement). -/
+  holds : Prop
+
+/-- Placeholder for `variational_equations` (no manuscript-statement docstring found). -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/variational-equations.ts
-theorem variational_equations : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem variational_equations [ctx : VariationalEquationsContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU

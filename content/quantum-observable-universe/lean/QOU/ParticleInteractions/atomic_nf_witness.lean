@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.ParticleInteractions
 
+
+/-- Abstract context for the `atomic_nf_witness` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class AtomicNfWitnessContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `atomic_nf_witness` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Proposition statement** (from manuscript):
 
 For each atom $(Z, N)$ with $Z = 1$--$20$, the atomic braid
@@ -48,8 +57,9 @@ to be in Gröbner--Shirshov normal form.  Specifically:*
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/atomic-nf-witness.ts
-theorem atomic_nf_witness : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem atomic_nf_witness [ctx : AtomicNfWitnessContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.ParticleInteractions

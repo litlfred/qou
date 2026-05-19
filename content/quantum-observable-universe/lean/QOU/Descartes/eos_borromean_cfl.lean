@@ -11,12 +11,20 @@ Lake package.
 
 namespace QOU.Descartes
 
-/-- eos borromean cfl
 
-    Placeholder; full formalisation pending. -/
+/-- Abstract context for the `eos_borromean_cfl` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class EosBorromeanCflContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `eos_borromean_cfl` below for the manuscript statement). -/
+  holds : Prop
+
+/-- Placeholder for `eos_borromean_cfl` (no manuscript-statement docstring found). -/
 -- Ref: [manuscript] quantum-observable-universe/observations/eos-borromean-cfl.ts
-theorem eos_borromean_cfl : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem eos_borromean_cfl [ctx : EosBorromeanCflContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.Descartes

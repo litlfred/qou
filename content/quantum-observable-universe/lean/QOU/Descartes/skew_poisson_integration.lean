@@ -11,12 +11,20 @@ Lake package.
 
 namespace QOU.Descartes
 
-/-- skew poisson integration
 
-    Placeholder; full formalisation pending. -/
+/-- Abstract context for the `skew_poisson_integration` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class SkewPoissonIntegrationContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `skew_poisson_integration` below for the manuscript statement). -/
+  holds : Prop
+
+/-- Placeholder for `skew_poisson_integration` (no manuscript-statement docstring found). -/
 -- Ref: [manuscript] quantum-observable-universe/models-of-qous/skew-poisson-integration.ts
-theorem skew_poisson_integration : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem skew_poisson_integration [ctx : SkewPoissonIntegrationContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.Descartes

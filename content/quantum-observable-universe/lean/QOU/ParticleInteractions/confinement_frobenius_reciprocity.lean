@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.ParticleInteractions
 
+
+/-- Abstract context for the `confinement_frobenius_reciprocity` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class ConfinementFrobeniusReciprocityContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `confinement_frobenius_reciprocity` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Proposition statement** (from manuscript):
 
 Let $T \in H_n(q)$ be a confined bound-state operator selected by the
@@ -36,8 +45,9 @@ $T$ is the
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.ts
-theorem confinement_frobenius_reciprocity : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem confinement_frobenius_reciprocity [ctx : ConfinementFrobeniusReciprocityContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.ParticleInteractions

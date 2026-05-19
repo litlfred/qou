@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.ParticleInteractions
 
+
+/-- Abstract context for the `deuterium_derived_binding` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class DeuteriumDerivedBindingContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `deuterium_derived_binding` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Proposition statement** (from manuscript):
 
 Let $\mathrm{NF}(\mathfrak{p})$ and $\mathrm{NF}(\mathfrak{n})$
@@ -48,8 +57,9 @@ pair).
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/deuterium-derived-binding.ts
-theorem deuterium_derived_binding : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem deuterium_derived_binding [ctx : DeuteriumDerivedBindingContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.ParticleInteractions

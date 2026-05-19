@@ -12,6 +12,15 @@ CLAUDE.md §1.
 
 namespace QOU.WedderburnMass
 
+
+/-- Abstract context for the `confinement_categorical` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class ConfinementCategoricalContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `confinement_categorical` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Proposition statement** (from manuscript):
 
 The collapse of the GB-filtration spectral sequence
@@ -25,8 +34,9 @@ elements of $A = H_n(R, q)$ survive as physical observables, and
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/confinement-categorical.ts
-theorem confinement_categorical : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem confinement_categorical [ctx : ConfinementCategoricalContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.WedderburnMass

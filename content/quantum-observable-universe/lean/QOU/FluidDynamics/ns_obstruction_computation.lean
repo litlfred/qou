@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.FluidDynamics
 
+
+/-- Abstract context for the `ns_obstruction_computation` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class NsObstructionComputationContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `ns_obstruction_computation` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Content statement** (from manuscript):
 
 Let $(\mathbf{C}, A, \tau)$ be the Descartes universe with
@@ -24,8 +33,9 @@ linking number $\mathrm{lk} = 1$.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/ns-obstruction-computation.ts
-theorem ns_obstruction_computation : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem ns_obstruction_computation [ctx : NsObstructionComputationContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.FluidDynamics

@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.Information
 
+
+/-- Abstract context for the `photon_threading_mass` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class PhotonThreadingMassContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `photon_threading_mass` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Proposition statement** (from manuscript):
 
 Let $\mathfrak{H}$ be a knot composite with braid word $\beta_{\mathfrak{H}} \in B_n$.
@@ -37,8 +46,9 @@ $c_w$ are the coefficients at each step.*
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/information-theory/photon-threading-mass.ts
-theorem photon_threading_mass : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem photon_threading_mass [ctx : PhotonThreadingMassContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.Information

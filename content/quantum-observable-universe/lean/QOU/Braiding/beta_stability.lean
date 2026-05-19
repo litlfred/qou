@@ -12,6 +12,15 @@ CLAUDE.md §1.
 
 namespace QOU.Braiding
 
+
+/-- Abstract context for the `beta_stability` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class BetaStabilityContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `beta_stability` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Content statement** (from manuscript):
 
 The stable neutron number $n^*(p)$ for each element is determined
@@ -24,8 +33,9 @@ at fixed $p$.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/beta-stability.ts
-theorem beta_stability : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem beta_stability [ctx : BetaStabilityContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.Braiding

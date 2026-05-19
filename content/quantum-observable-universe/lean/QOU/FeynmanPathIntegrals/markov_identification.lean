@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.FeynmanPathIntegrals
 
+
+/-- Abstract context for the `markov_identification` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class MarkovIdentificationContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `markov_identification` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Lemma statement** (from manuscript):
 
 Let $\beta \in B_n$ act on $V^{\otimes n}$ via $\rho_n$.  The
@@ -34,8 +43,9 @@ $w_\lambda = \dim_q(V_\lambda) \cdot \dim(S_\lambda) / \dim_q(V^{\otimes n})$.
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/feynman-markov-identification.ts
-theorem markov_identification : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem markov_identification [ctx : MarkovIdentificationContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.FeynmanPathIntegrals

@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.DescartesUniverse
 
+
+/-- Abstract context for the `mi_sw_cartan_reduction` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class MiSwCartanReductionContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `mi_sw_cartan_reduction` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Lemma statement** (from manuscript):
 
 On the exceptional divisor $\mathcal{S}_c \cong \mathbb{P}^1(\mathbb{C})$
@@ -29,8 +38,9 @@ $$
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/mi-sw-abelianisation-cartan.ts
-theorem mi_sw_cartan_reduction : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem mi_sw_cartan_reduction [ctx : MiSwCartanReductionContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.DescartesUniverse

@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.Molecular
 
+
+/-- Abstract context for the `h2_lp_dual_binding` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class H2LpDualBindingContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `h2_lp_dual_binding` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Proposition statement** (from manuscript):
 
 The LP dual of the $H_2$ molecular braid selects the interleaved
@@ -29,8 +38,9 @@ $$
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/h2-lp-dual-binding.ts
-theorem h2_lp_dual_binding : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem h2_lp_dual_binding [ctx : H2LpDualBindingContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.Molecular

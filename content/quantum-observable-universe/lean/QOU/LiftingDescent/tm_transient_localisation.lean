@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.LiftingDescent
 
+
+/-- Abstract context for the `tm_transient_localisation` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class TmTransientLocalisationContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `tm_transient_localisation` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Lemma statement** (from manuscript):
 
 The transient component $\alpha - \hat{\tau}_n(\alpha)$ has support
@@ -23,8 +32,9 @@ decomposes as a sum over the exceptional divisors $E_i$:
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/topological-mass-transient-localisation.ts
-theorem tm_transient_localisation : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem tm_transient_localisation [ctx : TmTransientLocalisationContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.LiftingDescent

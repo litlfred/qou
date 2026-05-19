@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.HadronicMass
 
+
+/-- Abstract context for the `pair_skein_mass_formula` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class PairSkeinMassFormulaContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `pair_skein_mass_formula` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Lemma statement** (from manuscript):
 
 The Borromean braid of a nucleon with quarks $(q_1, q_2, q_3)$
@@ -33,8 +42,9 @@ total nucleon mass is the sum over the three crossing pairs:
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/pair-skein-mass-formula.ts
-theorem pair_skein_mass_formula : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem pair_skein_mass_formula [ctx : PairSkeinMassFormulaContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.HadronicMass

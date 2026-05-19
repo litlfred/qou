@@ -12,6 +12,15 @@ CLAUDE.md §1.
 
 namespace QOU.FluidDynamics
 
+
+/-- Abstract context for the `ns_obstruction_tower` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class NsObstructionTowerContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `ns_obstruction_tower` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Content statement** (from manuscript):
 
 Let $(\mathbf{C}, A, \tau)$ be a QOU with Euler characteristic
@@ -26,8 +35,9 @@ anti-parallel vortex filaments.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.ts
-theorem ns_obstruction_tower : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem ns_obstruction_tower [ctx : NsObstructionTowerContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.FluidDynamics

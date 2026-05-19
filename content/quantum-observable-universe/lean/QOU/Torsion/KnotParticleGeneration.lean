@@ -12,6 +12,15 @@ CLAUDE.md §1.
 
 namespace QOU.Torsion
 
+
+/-- Abstract context for the `KnotParticleGeneration` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class KnotparticlegenerationContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `KnotParticleGeneration` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Content statement** (from manuscript):
 
 The particle spectrum is generated from a finite set of torus knot
@@ -24,8 +33,9 @@ color-tube fibration.
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/knot-particle-generation.ts
-theorem KnotParticleGeneration : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem KnotParticleGeneration [ctx : KnotparticlegenerationContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.Torsion

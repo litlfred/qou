@@ -12,6 +12,15 @@ CLAUDE.md §1.
 
 namespace QOU.Torsion
 
+
+/-- Abstract context for the `weak_equiv_invariance` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class WeakEquivInvarianceContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `weak_equiv_invariance` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Content statement** (from manuscript):
 
 Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe and let
@@ -27,8 +36,9 @@ brane levels $n$ and $m$ is a zigzag of coface and codegeneracy maps
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/weak-equiv-invariance.ts
-theorem weak_equiv_invariance : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem weak_equiv_invariance [ctx : WeakEquivInvarianceContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.Torsion

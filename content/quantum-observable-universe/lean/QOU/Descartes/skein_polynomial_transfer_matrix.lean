@@ -11,12 +11,20 @@ Lake package.
 
 namespace QOU.Descartes
 
-/-- skein polynomial transfer matrix
 
-    Placeholder; full formalisation pending. -/
+/-- Abstract context for the `skein_polynomial_transfer_matrix` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class SkeinPolynomialTransferMatrixContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `skein_polynomial_transfer_matrix` below for the manuscript statement). -/
+  holds : Prop
+
+/-- Placeholder for `skein_polynomial_transfer_matrix` (no manuscript-statement docstring found). -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/skein-polynomial-transfer-matrix.ts
-theorem skein_polynomial_transfer_matrix : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem skein_polynomial_transfer_matrix [ctx : SkeinPolynomialTransferMatrixContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.Descartes

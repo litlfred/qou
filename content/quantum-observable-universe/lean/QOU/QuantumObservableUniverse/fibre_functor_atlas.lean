@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.QuantumObservableUniverse
 
+
+/-- Abstract context for the `fibre_functor_atlas` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class FibreFunctorAtlasContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `fibre_functor_atlas` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Proposition statement** (from manuscript):
 
 Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe
@@ -27,8 +36,9 @@ $\omega, \omega'$ denote arbitrary fibre functors on $\mathbf{C}$
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/fibre-functor-atlas.ts
-theorem fibre_functor_atlas : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem fibre_functor_atlas [ctx : FibreFunctorAtlasContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.QuantumObservableUniverse

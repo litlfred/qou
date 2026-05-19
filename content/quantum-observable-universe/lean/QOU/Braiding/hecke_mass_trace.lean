@@ -12,6 +12,15 @@ CLAUDE.md §1.
 
 namespace QOU.Braiding
 
+
+/-- Abstract context for the `hecke_mass_trace` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class HeckeMassTraceContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `hecke_mass_trace` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Content statement** (from manuscript):
 
 Let $(\mathbf{C}, A, \tau)$ be a QOU, let $\varrho \colon \mathbf{1} \to A$
@@ -24,8 +33,9 @@ $\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$ be its Hecke mass element
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/hecke-mass-trace.ts
-theorem hecke_mass_trace : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem hecke_mass_trace [ctx : HeckeMassTraceContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.Braiding

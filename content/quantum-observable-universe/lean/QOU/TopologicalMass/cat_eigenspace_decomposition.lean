@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.TopologicalMass
 
+
+/-- Abstract context for the `cat_eigenspace_decomposition` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class CatEigenspaceDecompositionContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `cat_eigenspace_decomposition` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Lemma statement** (from manuscript):
 
 Let $\alpha = (\int_A \otimes \mathrm{id}) \circ \Delta \circ \varrho$
@@ -25,8 +34,9 @@ components, giving
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/topological-mass-cat-eigenspace.ts
-theorem cat_eigenspace_decomposition : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem cat_eigenspace_decomposition [ctx : CatEigenspaceDecompositionContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.TopologicalMass

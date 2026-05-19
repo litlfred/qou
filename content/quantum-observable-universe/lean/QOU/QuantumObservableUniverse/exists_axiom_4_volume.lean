@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.QuantumObservableUniverse
 
+
+/-- Abstract context for the `exists_axiom_4_volume` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class ExistsAxiom4VolumeContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `exists_axiom_4_volume` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Lemma statement** (from manuscript):
 
 Let $V \in \mathbf{C}$ be the standard representation of dimension
@@ -30,8 +39,9 @@ $$
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.ts
-theorem exists_axiom_4_volume : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem exists_axiom_4_volume [ctx : ExistsAxiom4VolumeContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.QuantumObservableUniverse

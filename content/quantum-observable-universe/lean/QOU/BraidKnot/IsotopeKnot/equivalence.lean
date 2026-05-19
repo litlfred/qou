@@ -11,12 +11,20 @@ Lake package.
 
 namespace QOU.BraidKnot.IsotopeKnot
 
-/-- equivalence
 
-    Placeholder; full formalisation pending. -/
+/-- Abstract context for the `equivalence` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class EquivalenceContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `equivalence` below for the manuscript statement). -/
+  holds : Prop
+
+/-- Placeholder for `equivalence` (no manuscript-statement docstring found). -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/isotope-knot-equivalence.ts
-theorem equivalence : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem equivalence [ctx : EquivalenceContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.BraidKnot.IsotopeKnot

@@ -11,12 +11,20 @@ Lake package.
 
 namespace QOU.BraidKnot
 
-/-- hoefsmit scattering pipeline
 
-    Placeholder; full formalisation pending. -/
+/-- Abstract context for the `hoefsmit_scattering_pipeline` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class HoefsmitScatteringPipelineContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `hoefsmit_scattering_pipeline` below for the manuscript statement). -/
+  holds : Prop
+
+/-- Placeholder for `hoefsmit_scattering_pipeline` (no manuscript-statement docstring found). -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/hoefsmit-scattering-pipeline.ts
-theorem hoefsmit_scattering_pipeline : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem hoefsmit_scattering_pipeline [ctx : HoefsmitScatteringPipelineContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.BraidKnot

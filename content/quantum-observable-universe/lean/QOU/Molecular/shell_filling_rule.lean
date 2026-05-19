@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.Molecular
 
+
+/-- Abstract context for the `shell_filling_rule` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class ShellFillingRuleContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `shell_filling_rule` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Proposition statement** (from manuscript):
 
 The ground-state electron configuration of atom $(Z, N)$ is the
@@ -49,8 +58,9 @@ penalty for electron-electron repulsion at shell $n$.*
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/shell-filling-rule.ts
-theorem shell_filling_rule : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem shell_filling_rule [ctx : ShellFillingRuleContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.Molecular

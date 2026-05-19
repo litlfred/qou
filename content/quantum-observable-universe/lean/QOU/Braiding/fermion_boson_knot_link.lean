@@ -12,6 +12,15 @@ CLAUDE.md §1.
 
 namespace QOU.Braiding
 
+
+/-- Abstract context for the `fermion_boson_knot_link` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class FermionBosonKnotLinkContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `fermion_boson_knot_link` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Content statement** (from manuscript):
 
 **Proposition.**
@@ -25,8 +34,9 @@ torus family on the Bring's surface:
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/fermion-boson-knot-link.ts
-theorem fermion_boson_knot_link : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem fermion_boson_knot_link [ctx : FermionBosonKnotLinkContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.Braiding

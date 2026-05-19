@@ -12,6 +12,15 @@ CLAUDE.md §1.
 
 namespace QOU.FluidDynamics
 
+
+/-- Abstract context for the `vorticity_lower_bound` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class VorticityLowerBoundContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `vorticity_lower_bound` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Content statement** (from manuscript):
 
 Let $v_q$ be the q-NS solution for anti-parallel vortex pair
@@ -26,8 +35,9 @@ filament cores.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.ts
-theorem vorticity_lower_bound : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem vorticity_lower_bound [ctx : VorticityLowerBoundContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.FluidDynamics

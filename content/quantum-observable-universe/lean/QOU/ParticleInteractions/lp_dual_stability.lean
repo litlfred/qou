@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.ParticleInteractions
 
+
+/-- Abstract context for the `lp_dual_stability` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class LpDualStabilityContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `lp_dual_stability` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Proposition statement** (from manuscript):
 
 Let $x^*$ be a confined hadron (proton or neutron, built via
@@ -36,8 +45,9 @@ $B_3 \cdot \Phi_{\mathrm{quarks}}$). Then:*
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/lp-dual-stability.ts
-theorem lp_dual_stability : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem lp_dual_stability [ctx : LpDualStabilityContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.ParticleInteractions

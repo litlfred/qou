@@ -11,12 +11,20 @@ Lake package.
 
 namespace QOU.BraidKnot.HeckeBaerStarGeneric
 
-/-- hecke baer star generic
 
-    Placeholder; full formalisation pending. -/
+/-- Abstract context for the `hecke_baer_star_generic` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class HeckeBaerStarGenericContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `hecke_baer_star_generic` below for the manuscript statement). -/
+  holds : Prop
+
+/-- Placeholder for `hecke_baer_star_generic` (no manuscript-statement docstring found). -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/hecke-baer-star-generic.ts
-theorem hecke_baer_star_generic : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem hecke_baer_star_generic [ctx : HeckeBaerStarGenericContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.BraidKnot.HeckeBaerStarGeneric

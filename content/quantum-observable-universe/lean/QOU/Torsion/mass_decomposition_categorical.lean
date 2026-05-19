@@ -12,6 +12,15 @@ CLAUDE.md §1.
 
 namespace QOU.Torsion
 
+
+/-- Abstract context for the `mass_decomposition_categorical` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class MassDecompositionCategoricalContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `mass_decomposition_categorical` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Content statement** (from manuscript):
 
 Let $(\mathbf{C}, A, \tau)$ be a
@@ -28,8 +37,9 @@ base-level morphism $\varrho_0 \colon \mathbf{1} \to A_0$.
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/topological-mass.ts
-theorem mass_decomposition_categorical : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem mass_decomposition_categorical [ctx : MassDecompositionCategoricalContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.Torsion

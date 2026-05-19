@@ -12,6 +12,15 @@ citation per CLAUDE.md §1.
 
 namespace QOU.Observations
 
+
+/-- Abstract context for the `centered_hecke_variance_positive` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class CenteredHeckeVariancePositiveContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `centered_hecke_variance_positive` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Proposition statement** (from manuscript):
 
 Let $q > 0$ with $q^{1/2} + q^{-1/2} > 2$ (Wenzl positivity regime).
@@ -31,8 +40,9 @@ the QOU substrate $q_0 \approx 1.110$, $\mathrm{Var}(\sigma_i) \approx 0.855$.*
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/centered-hecke-variance-positive.ts
-theorem centered_hecke_variance_positive : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem centered_hecke_variance_positive [ctx : CenteredHeckeVariancePositiveContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.Observations

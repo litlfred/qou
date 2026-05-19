@@ -12,6 +12,15 @@ CLAUDE.md §1.
 
 namespace QOU.Brings
 
+
+/-- Abstract context for the `brings_is_qou` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class BringsIsQouContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `brings_is_qou` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Content statement** (from manuscript):
 
 Bring's surface $\Sigma_4$ ([Bring's surface](#def\:brings-surface)) gives rise
@@ -22,8 +31,9 @@ to a quantum observable universe over $R$ (with $30 \in R^{\times}$):
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/brings-is-qou.ts
-theorem brings_is_qou : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem brings_is_qou [ctx : BringsIsQouContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.Brings

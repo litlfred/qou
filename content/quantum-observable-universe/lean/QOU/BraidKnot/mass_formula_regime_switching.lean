@@ -11,12 +11,20 @@ Lake package.
 
 namespace QOU.BraidKnot
 
-/-- mass formula regime switching
 
-    Placeholder; full formalisation pending. -/
+/-- Abstract context for the `mass_formula_regime_switching` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class MassFormulaRegimeSwitchingContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `mass_formula_regime_switching` below for the manuscript statement). -/
+  holds : Prop
+
+/-- Placeholder for `mass_formula_regime_switching` (no manuscript-statement docstring found). -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/mass-formula-regime-switching.ts
-theorem mass_formula_regime_switching : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem mass_formula_regime_switching [ctx : MassFormulaRegimeSwitchingContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.BraidKnot

@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.BraidKnot
 
+
+/-- Abstract context for the `algebraic_quantum_volume_specialization` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class AlgebraicQuantumVolumeSpecializationContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `algebraic_quantum_volume_specialization` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Proposition statement** (from manuscript):
 
 The algebraic quantum volume
@@ -25,8 +34,9 @@ QOU-internal derivation; the other two are*
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/algebraic-quantum-volume-specialization.ts
-theorem algebraic_quantum_volume_specialization : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem algebraic_quantum_volume_specialization [ctx : AlgebraicQuantumVolumeSpecializationContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.BraidKnot

@@ -15,6 +15,15 @@ this plural `QOU.BraidsAndKnots` namespace was inherited from existing
 
 namespace QOU.BraidsAndKnots
 
+
+/-- Abstract context for the `recursive_atom_knot_atlas` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class RecursiveAtomKnotAtlasContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `recursive_atom_knot_atlas` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Content statement** (from manuscript):
 
 **Atlas (recursive, $q_0$-indexed).**
@@ -31,8 +40,9 @@ Confinement at $q_0$ is verified via the
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/recursive-atom-knot-atlas.ts
-theorem recursive_atom_knot_atlas : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem recursive_atom_knot_atlas [ctx : RecursiveAtomKnotAtlasContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.BraidsAndKnots

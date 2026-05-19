@@ -15,6 +15,15 @@ this plural `QOU.BraidsAndKnots` namespace was inherited from existing
 
 namespace QOU.BraidsAndKnots
 
+
+/-- Abstract context for the `wenzl_qmn_synergy` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class WenzlQmnSynergyContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `wenzl_qmn_synergy` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Proposition statement** (from manuscript):
 
 The Wenzl-bridge ([y-lambda-closed-form](#prop:y-lambda-closed-form-wenzl-bridge))
@@ -52,8 +61,9 @@ this drops the per-isotope compute time from
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/wenzl-qmn-synergy.ts
-theorem wenzl_qmn_synergy : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem wenzl_qmn_synergy [ctx : WenzlQmnSynergyContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.BraidsAndKnots

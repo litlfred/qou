@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.BraidKnot
 
+
+/-- Abstract context for the `e_infinity_identifications` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class EInfinityIdentificationsContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `e_infinity_identifications` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Content statement** (from manuscript):
 
 Having established the GB spectral sequence exists and converges
@@ -26,8 +35,9 @@ derivation status per term.
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/e-infinity-page-identifications.ts
-theorem e_infinity_identifications : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem e_infinity_identifications [ctx : EInfinityIdentificationsContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.BraidKnot

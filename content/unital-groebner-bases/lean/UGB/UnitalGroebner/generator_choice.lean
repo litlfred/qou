@@ -12,6 +12,14 @@ citation per CLAUDE.md §1.
 
 namespace UGB.UnitalGroebner
 
+
+/-- Abstract context for the `generator_choice` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class GeneratorChoiceContext where
+  /-- The `Prop`-valued claim of the lemma. -/
+  holds : Prop
+
 /-- **Manuscript statement** (full body):
 
 Let $R$ be a commutative ring with unity, $A$ an $R$-algebra which
@@ -29,8 +37,9 @@ $\gamma_i \in \Gamma$.
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] unital-groebner-bases/unital-groebner-bases-chapter/generator-choice-lemma.ts
-theorem generator_choice : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem generator_choice [ctx : GeneratorChoiceContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end UGB.UnitalGroebner

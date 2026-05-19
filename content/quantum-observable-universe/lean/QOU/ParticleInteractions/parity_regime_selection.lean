@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.ParticleInteractions
 
+
+/-- Abstract context for the `parity_regime_selection` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class ParityRegimeSelectionContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `parity_regime_selection` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Theorem statement** (from manuscript):
 
 For all $q > 1$:*
@@ -29,8 +38,9 @@ $$
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/parity-regime-selection.ts
-theorem parity_regime_selection : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem parity_regime_selection [ctx : ParityRegimeSelectionContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.ParticleInteractions

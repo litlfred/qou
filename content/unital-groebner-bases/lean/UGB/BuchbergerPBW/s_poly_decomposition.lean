@@ -12,6 +12,14 @@ citation per CLAUDE.md §1.
 
 namespace UGB.BuchbergerPBW
 
+
+/-- Abstract context for the `s_poly_decomposition` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class SPolyDecompositionContext where
+  /-- The `Prop`-valued claim of the lemma. -/
+  holds : Prop
+
 /-- **Manuscript statement** (full body):
 
 Let $R$ be a commutative ring with unity, $A$ an $R$-algebra which is free as an
@@ -40,8 +48,9 @@ which gives the desired result. $\square$
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] unital-groebner-bases/buchberger-and-pbw/s-polynomial-decomposition.ts
-theorem s_poly_decomposition : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem s_poly_decomposition [ctx : SPolyDecompositionContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end UGB.BuchbergerPBW

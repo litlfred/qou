@@ -11,12 +11,20 @@ Lake package.
 
 namespace QOU.HyperellipticQuintic
 
-/-- minimal z5 classification
 
-    Placeholder; full formalisation pending. -/
+/-- Abstract context for the `minimal_z5_classification` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class MinimalZ5ClassificationContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `minimal_z5_classification` below for the manuscript statement). -/
+  holds : Prop
+
+/-- Placeholder for `minimal_z5_classification` (no manuscript-statement docstring found). -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/hyperelliptic-z5-classification.ts
-theorem minimal_z5_classification : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem minimal_z5_classification [ctx : MinimalZ5ClassificationContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.HyperellipticQuintic

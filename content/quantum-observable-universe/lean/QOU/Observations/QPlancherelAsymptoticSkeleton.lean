@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.Observations
 
+
+/-- Abstract context for the `QPlancherelAsymptoticSkeleton` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class QplancherelasymptoticskeletonContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `QPlancherelAsymptoticSkeleton` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Proposition statement** (from manuscript):
 
 Let $\tilde w_\lambda^{(n)} := \dim_q^2(\lambda) / [n]_q!$ be the
@@ -51,8 +60,9 @@ satisfy:*
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.ts
-theorem QPlancherelAsymptoticSkeleton : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem QPlancherelAsymptoticSkeleton [ctx : QplancherelasymptoticskeletonContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.Observations

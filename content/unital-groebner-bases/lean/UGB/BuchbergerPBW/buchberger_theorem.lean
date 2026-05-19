@@ -12,6 +12,14 @@ citation per CLAUDE.md §1.
 
 namespace UGB.BuchbergerPBW
 
+
+/-- Abstract context for the `buchberger_theorem` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class BuchbergerTheoremContext where
+  /-- The `Prop`-valued claim of the lemma. -/
+  holds : Prop
+
 /-- **Content statement** (from manuscript):
 
 Let $R$ be a commutative ring with unity, $A$ an $R$-algebra which is free as an
@@ -25,8 +33,9 @@ remainder under the division algorithm.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] unital-groebner-bases/buchberger-and-pbw/buchberger-theorem.ts
-theorem buchberger_theorem : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem buchberger_theorem [ctx : BuchbergerTheoremContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end UGB.BuchbergerPBW

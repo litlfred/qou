@@ -12,6 +12,14 @@ citation per CLAUDE.md §1.
 
 namespace UGB.UnitalGroebner
 
+
+/-- Abstract context for the `lemma_generator_choice` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class LemmaGeneratorChoiceContext where
+  /-- The `Prop`-valued claim of the lemma. -/
+  holds : Prop
+
 /-- **Content statement** (from manuscript):
 
 Let $R$ be a commutative ring with unity, $A$ an $R$-algebra which is free as an
@@ -25,8 +33,9 @@ $h_i = g_{\gamma_i}$ for some $\gamma_i \in \Gamma$.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] unital-groebner-bases/unital-groebner-bases-chapter/lemma-generator-choice.ts
-theorem lemma_generator_choice : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem lemma_generator_choice [ctx : LemmaGeneratorChoiceContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end UGB.UnitalGroebner

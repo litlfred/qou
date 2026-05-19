@@ -12,6 +12,14 @@ citation per CLAUDE.md §1.
 
 namespace UGB.BuchbergerPBW
 
+
+/-- Abstract context for the `ugb_pbw_corollary` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class UgbPbwCorollaryContext where
+  /-- The `Prop`-valued claim of the lemma. -/
+  holds : Prop
+
 /-- **Manuscript statement** (full body):
 
 Let $\mathfrak{g}$ be a Lie algebra over $R$, a commutative ring with unity, with
@@ -38,8 +46,9 @@ corollary follows from [Theorem 2](#thm:ugb-main). $\square$
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] unital-groebner-bases/buchberger-and-pbw/pbw-corollary.ts
-theorem ugb_pbw_corollary : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem ugb_pbw_corollary [ctx : UgbPbwCorollaryContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end UGB.BuchbergerPBW

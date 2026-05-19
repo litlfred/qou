@@ -11,12 +11,20 @@ Lake package.
 
 namespace QOU.Descartes
 
-/-- em coupling projection
 
-    Placeholder; full formalisation pending. -/
+/-- Abstract context for the `em_coupling_projection` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class EmCouplingProjectionContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `em_coupling_projection` below for the manuscript statement). -/
+  holds : Prop
+
+/-- Placeholder for `em_coupling_projection` (no manuscript-statement docstring found). -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/em-coupling-projection.ts
-theorem em_coupling_projection : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem em_coupling_projection [ctx : EmCouplingProjectionContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.Descartes

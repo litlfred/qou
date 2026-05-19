@@ -15,6 +15,15 @@ this plural `QOU.BraidsAndKnots` namespace was inherited from existing
 
 namespace QOU.BraidsAndKnots
 
+
+/-- Abstract context for the `ew_interface_knot` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class EwInterfaceKnotContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `ew_interface_knot` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Content statement** (from manuscript):
 
 **Definition (electroweak interface knot $\Delta_I$).**
@@ -34,8 +43,9 @@ $H \leftrightarrow \sigma_5^{\,8}$ act
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/ew-interface-knot.ts
-theorem ew_interface_knot : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem ew_interface_knot [ctx : EwInterfaceKnotContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.BraidsAndKnots

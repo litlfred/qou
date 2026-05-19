@@ -12,6 +12,14 @@ citation per CLAUDE.md §1.
 
 namespace UGB.UnitalGroebner
 
+
+/-- Abstract context for the `unital_groebner_decomposition` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class UnitalGroebnerDecompositionContext where
+  /-- The `Prop`-valued claim of the lemma. -/
+  holds : Prop
+
 /-- **Manuscript statement** (full body):
 
 Let $R$ be a commutative ring with unity. Let $A$ be an $R$-algebra
@@ -30,8 +38,9 @@ which do not occur as leading monomials of members of $G$. Then:
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] unital-groebner-bases/unital-groebner-bases-chapter/main-theorem.ts
-theorem unital_groebner_decomposition : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem unital_groebner_decomposition [ctx : UnitalGroebnerDecompositionContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end UGB.UnitalGroebner

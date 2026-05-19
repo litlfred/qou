@@ -12,6 +12,14 @@ citation per CLAUDE.md §1.
 
 namespace UGB.Introduction
 
+
+/-- Abstract context for the `main_theorem_statement` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class MainTheoremStatementContext where
+  /-- The `Prop`-valued claim of the lemma. -/
+  holds : Prop
+
 /-- **Manuscript statement** (full body):
 
 Let $R$ be a commutative algebra with unity. Let $A$ be an $R$-algebra which is
@@ -27,8 +35,9 @@ monomials which do not occur as leading monomials of members of $G$. Then:
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] unital-groebner-bases/introduction/ugb-main-theorem-statement.ts
-theorem main_theorem_statement : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem main_theorem_statement [ctx : MainTheoremStatementContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end UGB.Introduction

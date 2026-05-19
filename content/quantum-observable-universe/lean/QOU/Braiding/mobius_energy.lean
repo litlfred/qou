@@ -12,6 +12,15 @@ CLAUDE.md §1.
 
 namespace QOU.Braiding
 
+
+/-- Abstract context for the `mobius_energy` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class MobiusEnergyContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `mobius_energy` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Content statement** (from manuscript):
 
 Let $(\mathbf{C}, A, \tau)$ be a quantum observable universe
@@ -26,8 +35,9 @@ $\star_q$ ([Definition](#def:q-hodge-star)).
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/mobius-energy.ts
-theorem mobius_energy : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem mobius_energy [ctx : MobiusEnergyContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.Braiding

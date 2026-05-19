@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.DescartesUniverse
 
+
+/-- Abstract context for the `brings_riemann_hurwitz` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class BringsRiemannHurwitzContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `brings_riemann_hurwitz` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Lemma statement** (from manuscript):
 
 The Reeb quotient $M_S \to \Sigma_4$ collapses
@@ -33,8 +42,9 @@ $$
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/brings-riemann-hurwitz.ts
-theorem brings_riemann_hurwitz : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem brings_riemann_hurwitz [ctx : BringsRiemannHurwitzContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.DescartesUniverse

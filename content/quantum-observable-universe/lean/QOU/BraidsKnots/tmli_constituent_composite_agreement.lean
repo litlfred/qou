@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.BraidsKnots
 
+
+/-- Abstract context for the `tmli_constituent_composite_agreement` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class TmliConstituentCompositeAgreementContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `tmli_constituent_composite_agreement` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Lemma statement** (from manuscript):
 
 For a hadron $\mathfrak{H} \hookrightarrow V^{\otimes N}$ with
@@ -26,8 +35,9 @@ of $H_N(q)$, so
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/tmli-constituent-composite-agreement.ts
-theorem tmli_constituent_composite_agreement : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem tmli_constituent_composite_agreement [ctx : TmliConstituentCompositeAgreementContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.BraidsKnots

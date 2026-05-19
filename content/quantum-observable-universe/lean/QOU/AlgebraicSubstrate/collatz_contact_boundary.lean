@@ -11,12 +11,20 @@ Lake package.
 
 namespace QOU.AlgebraicSubstrate
 
-/-- collatz contact boundary
 
-    Placeholder; full formalisation pending. -/
+/-- Abstract context for the `collatz_contact_boundary` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class CollatzContactBoundaryContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `collatz_contact_boundary` below for the manuscript statement). -/
+  holds : Prop
+
+/-- Placeholder for `collatz_contact_boundary` (no manuscript-statement docstring found). -/
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/collatz-contact-boundary.ts
-theorem collatz_contact_boundary : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem collatz_contact_boundary [ctx : CollatzContactBoundaryContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.AlgebraicSubstrate

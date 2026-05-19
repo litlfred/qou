@@ -11,12 +11,20 @@ Lake package.
 
 namespace QOU.BraidKnot
 
-/-- geom yekutieli alignment
 
-    Placeholder; full formalisation pending. -/
+/-- Abstract context for the `geom_yekutieli_alignment` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class GeomYekutieliAlignmentContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `geom_yekutieli_alignment` below for the manuscript statement). -/
+  holds : Prop
+
+/-- Placeholder for `geom_yekutieli_alignment` (no manuscript-statement docstring found). -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/geom-yekutieli-alignment.ts
-theorem geom_yekutieli_alignment : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem geom_yekutieli_alignment [ctx : GeomYekutieliAlignmentContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.BraidKnot

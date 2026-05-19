@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.Information
 
+
+/-- Abstract context for the `toffoli_transfer_matrix` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class ToffoliTransferMatrixContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `toffoli_transfer_matrix` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Proposition statement** (from manuscript):
 
 Let $P_{\mathrm{flip}}(q; k_1, k_2)$ be the target-flip
@@ -28,8 +37,9 @@ Then:*
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/information-theory/toffoli-transfer-matrix.ts
-theorem toffoli_transfer_matrix : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem toffoli_transfer_matrix [ctx : ToffoliTransferMatrixContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.Information

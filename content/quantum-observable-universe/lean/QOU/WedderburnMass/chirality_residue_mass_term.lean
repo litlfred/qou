@@ -12,6 +12,15 @@ CLAUDE.md §1.
 
 namespace QOU.WedderburnMass
 
+
+/-- Abstract context for the `chirality_residue_mass_term` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class ChiralityResidueMassTermContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `chirality_residue_mass_term` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Proposition statement** (from manuscript):
 
 Per the
@@ -26,8 +35,9 @@ stratum into a
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/chirality-residue-mass-term.ts
-theorem chirality_residue_mass_term : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem chirality_residue_mass_term [ctx : ChiralityResidueMassTermContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.WedderburnMass

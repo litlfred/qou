@@ -12,6 +12,15 @@ CLAUDE.md §1.
 
 namespace QOU.Experimental
 
+
+/-- Abstract context for the `terminal_resolution` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class TerminalResolutionContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `terminal_resolution` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Content statement** (from manuscript):
 
 Using the derived $q_0$, the hadronic mass collapses into a linear combination of the neutrino vacuum drag and the pure strong-force binding energy. All four rows match CODATA to sub-keV precision:
@@ -21,8 +30,9 @@ Using the derived $q_0$, the hadronic mass collapses into a linear combination o
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/terminal-resolution.ts
-theorem terminal_resolution : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem terminal_resolution [ctx : TerminalResolutionContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.Experimental

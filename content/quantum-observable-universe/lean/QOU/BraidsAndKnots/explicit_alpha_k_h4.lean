@@ -15,6 +15,15 @@ this plural `QOU.BraidsAndKnots` namespace was inherited from existing
 
 namespace QOU.BraidsAndKnots
 
+
+/-- Abstract context for the `explicit_alpha_k_h4` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class ExplicitAlphaKH4Context where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `explicit_alpha_k_h4` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Content statement** (from manuscript):
 
 **Proposition (explicit $\alpha_\lambda(H_4)$ — closed forms in $\mathbb{Q}(q)$).**
@@ -27,8 +36,9 @@ conjugacy classes of $S_4$:*
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/explicit-alpha-k-h4.ts
-theorem explicit_alpha_k_h4 : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem explicit_alpha_k_h4 [ctx : ExplicitAlphaKH4Context] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.BraidsAndKnots

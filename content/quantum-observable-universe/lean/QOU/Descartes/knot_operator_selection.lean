@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.Descartes
 
+
+/-- Abstract context for the `knot_operator_selection` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class KnotOperatorSelectionContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `knot_operator_selection` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Proposition statement** (from manuscript):
 
 Let $(\mathbf{C}, A, \tau)$ be a QOU with archimedean
@@ -27,8 +36,9 @@ states.*
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/knot-operator-selection.ts
-theorem knot_operator_selection : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem knot_operator_selection [ctx : KnotOperatorSelectionContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.Descartes

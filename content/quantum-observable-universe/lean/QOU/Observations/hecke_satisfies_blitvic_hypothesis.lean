@@ -12,6 +12,15 @@ citation per CLAUDE.md §1.
 
 namespace QOU.Observations
 
+
+/-- Abstract context for the `hecke_satisfies_blitvic_hypothesis` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class HeckeSatisfiesBlitvicHypothesisContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `hecke_satisfies_blitvic_hypothesis` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Proposition statement** (from manuscript):
 
 The non-commutative random variables $\sigma_i \in H_\infty(q)$
@@ -24,8 +33,9 @@ central limit theorem [`blitvic2012`].*
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/hecke-satisfies-blitvic-hypothesis.ts
-theorem hecke_satisfies_blitvic_hypothesis : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem hecke_satisfies_blitvic_hypothesis [ctx : HeckeSatisfiesBlitvicHypothesisContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.Observations

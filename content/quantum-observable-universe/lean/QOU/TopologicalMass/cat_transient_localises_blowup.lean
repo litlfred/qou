@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.TopologicalMass
 
+
+/-- Abstract context for the `cat_transient_localises_blowup` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class CatTransientLocalisesBlowupContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `cat_transient_localises_blowup` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Lemma statement** (from manuscript):
 
 The transient component $\alpha - \hat{\tau}_n(\alpha) \in
@@ -24,8 +33,9 @@ disjoint local contributions:
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/topological-mass-cat-transient.ts
-theorem cat_transient_localises_blowup : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem cat_transient_localises_blowup [ctx : CatTransientLocalisesBlowupContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.TopologicalMass

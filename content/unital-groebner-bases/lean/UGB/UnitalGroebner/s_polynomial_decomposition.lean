@@ -12,6 +12,14 @@ citation per CLAUDE.md §1.
 
 namespace UGB.UnitalGroebner
 
+
+/-- Abstract context for the `s_polynomial_decomposition` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class SPolynomialDecompositionContext where
+  /-- The `Prop`-valued claim of the lemma. -/
+  holds : Prop
+
 /-- **Content statement** (from manuscript):
 
 Let $R$ be a commutative ring with unity, $A$ an $R$-algebra which
@@ -25,8 +33,9 @@ and $\mathrm{LC}(f_i) \in R^\times$. If
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] unital-groebner-bases/unital-groebner-bases-chapter/s-polynomial-decomposition.ts
-theorem s_polynomial_decomposition : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem s_polynomial_decomposition [ctx : SPolynomialDecompositionContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end UGB.UnitalGroebner

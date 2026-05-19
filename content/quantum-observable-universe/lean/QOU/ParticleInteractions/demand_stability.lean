@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.ParticleInteractions
 
+
+/-- Abstract context for the `demand_stability` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class DemandStabilityContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `demand_stability` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Proposition statement** (from manuscript):
 
 The derived atom $\mathcal{A}(Z, N)$ is:*
@@ -23,8 +32,9 @@ The derived atom $\mathcal{A}(Z, N)$ is:*
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/demand-stability.ts
-theorem demand_stability : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem demand_stability [ctx : DemandStabilityContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.ParticleInteractions

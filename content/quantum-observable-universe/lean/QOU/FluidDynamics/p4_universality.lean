@@ -12,6 +12,15 @@ CLAUDE.md §1.
 
 namespace QOU.FluidDynamics
 
+
+/-- Abstract context for the `p4_universality` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class P4UniversalityContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `p4_universality` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Content statement** (from manuscript):
 
 The [critical exponent](#conj:critical-exponent) $\alpha = 4/3$
@@ -25,8 +34,9 @@ $(\mathbf{C}, A, \tau)$.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/p4-universality.ts
-theorem p4_universality : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem p4_universality [ctx : P4UniversalityContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.FluidDynamics

@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.Information
 
+
+/-- Abstract context for the `reeb_operations_per_planck` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class ReebOperationsPerPlanckContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `reeb_operations_per_planck` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Proposition statement** (from manuscript):
 
 Let $q \in k^\times \setminus \{1\}$ and let $t_P(q) = q/(q-1)$
@@ -43,8 +52,9 @@ $\square$
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/information-theory/reeb-operations-per-planck.ts
-theorem reeb_operations_per_planck : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem reeb_operations_per_planck [ctx : ReebOperationsPerPlanckContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.Information

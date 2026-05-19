@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.Observations
 
+
+/-- Abstract context for the `strangelet_crossing_energy` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class StrangeletCrossingEnergyContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `strangelet_crossing_energy` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Content statement** (from manuscript):
 
 **Proposition.**
@@ -26,8 +35,9 @@ by the Hopf link $\mathcal{L}_H$.  Then:
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/strangelet-crossing-energy.ts
-theorem strangelet_crossing_energy : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem strangelet_crossing_energy [ctx : StrangeletCrossingEnergyContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.Observations

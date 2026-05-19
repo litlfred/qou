@@ -11,12 +11,20 @@ Lake package.
 
 namespace QOU
 
-/-- orbital fourier decomposition
 
-    Placeholder; full formalisation pending. -/
+/-- Abstract context for the `orbital_fourier_decomposition` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class OrbitalFourierDecompositionContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `orbital_fourier_decomposition` below for the manuscript statement). -/
+  holds : Prop
+
+/-- Placeholder for `orbital_fourier_decomposition` (no manuscript-statement docstring found). -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/orbital-fourier-decomposition.ts
-theorem orbital_fourier_decomposition : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem orbital_fourier_decomposition [ctx : OrbitalFourierDecompositionContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU

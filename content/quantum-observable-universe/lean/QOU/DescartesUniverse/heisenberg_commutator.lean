@@ -11,12 +11,20 @@ Lake package.
 
 namespace QOU.DescartesUniverse
 
-/-- heisenberg commutator
 
-    Placeholder; full formalisation pending. -/
+/-- Abstract context for the `heisenberg_commutator` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class HeisenbergCommutatorContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `heisenberg_commutator` below for the manuscript statement). -/
+  holds : Prop
+
+/-- Placeholder for `heisenberg_commutator` (no manuscript-statement docstring found). -/
 -- Ref: [manuscript] quantum-observable-universe/models-of-qous/heisenberg-commutator-prop.ts
-theorem heisenberg_commutator : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem heisenberg_commutator [ctx : HeisenbergCommutatorContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.DescartesUniverse

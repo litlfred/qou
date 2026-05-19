@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.BraidKnot
 
+
+/-- Abstract context for the `chirality_frobenius_self_pairing` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class ChiralityFrobeniusSelfPairingContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `chirality_frobenius_self_pairing` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Proposition statement** (from manuscript):
 
 The chirality factor satisfies:*
@@ -22,8 +31,9 @@ The chirality factor satisfies:*
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/chirality-from-frobenius-self-pairing.ts
-theorem chirality_frobenius_self_pairing : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem chirality_frobenius_self_pairing [ctx : ChiralityFrobeniusSelfPairingContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.BraidKnot

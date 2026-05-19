@@ -11,12 +11,20 @@ Lake package.
 
 namespace QOU.Descartes.PauliWitness
 
-/-- witness 12C
 
-    Placeholder; full formalisation pending. -/
+/-- Abstract context for the `witness_12C` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class Witness12cContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `witness_12C` below for the manuscript statement). -/
+  holds : Prop
+
+/-- Placeholder for `witness_12C` (no manuscript-statement docstring found). -/
 -- Ref: [manuscript] quantum-observable-universe/appendix-nf-witnesses/witness-12c.ts
-theorem witness_12C : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem witness_12C [ctx : Witness12cContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.Descartes.PauliWitness

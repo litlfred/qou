@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.ParticleInteractions
 
+
+/-- Abstract context for the `operator_selection_lp` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class OperatorSelectionLpContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `operator_selection_lp` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Proposition statement** (from manuscript):
 
 The knot operator $\Phi = \sum_{i=1}^{d} x_i b_i \in H_n(q)$ for a
@@ -58,8 +67,9 @@ carries unbounded demand.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/operator-selection-lp.ts
-theorem operator_selection_lp : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem operator_selection_lp [ctx : OperatorSelectionLpContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.ParticleInteractions

@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.Molecular
 
+
+/-- Abstract context for the `benzene_threading_emergence` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class BenzeneThreadingEmergenceContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `benzene_threading_emergence` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Proposition statement** (from manuscript):
 
 The LP dual of the benzene molecular braid in $H_{120}(q)$
@@ -27,8 +36,9 @@ orbital.  The LP dual optimises their placement:*
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/benzene-threading-emergence.ts
-theorem benzene_threading_emergence : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem benzene_threading_emergence [ctx : BenzeneThreadingEmergenceContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.Molecular

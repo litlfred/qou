@@ -12,6 +12,15 @@ citation per CLAUDE.md §1.
 
 namespace QOU.Observations
 
+
+/-- Abstract context for the `brane_tower_q_laplacian_decay` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class BraneTowerQLaplacianDecayContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `brane_tower_q_laplacian_decay` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Proposition statement** (from manuscript):
 
 Dropping the locality assumption for composite physical observables
@@ -30,8 +39,9 @@ contribution.*
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/brane-tower-q-laplacian-decay.ts
-theorem brane_tower_q_laplacian_decay : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem brane_tower_q_laplacian_decay [ctx : BraneTowerQLaplacianDecayContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.Observations

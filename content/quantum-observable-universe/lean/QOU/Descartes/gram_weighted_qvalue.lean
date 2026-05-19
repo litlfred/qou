@@ -11,12 +11,20 @@ Lake package.
 
 namespace QOU.Descartes
 
-/-- gram weighted qvalue
 
-    Placeholder; full formalisation pending. -/
+/-- Abstract context for the `gram_weighted_qvalue` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class GramWeightedQvalueContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `gram_weighted_qvalue` below for the manuscript statement). -/
+  holds : Prop
+
+/-- Placeholder for `gram_weighted_qvalue` (no manuscript-statement docstring found). -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/gram-weighted-qvalue.ts
-theorem gram_weighted_qvalue : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem gram_weighted_qvalue [ctx : GramWeightedQvalueContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.Descartes

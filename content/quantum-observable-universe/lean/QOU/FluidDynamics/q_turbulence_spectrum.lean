@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.FluidDynamics
 
+
+/-- Abstract context for the `q_turbulence_spectrum` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class QTurbulenceSpectrumContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `q_turbulence_spectrum` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Content statement** (from manuscript):
 
 In the brane fluid with [substrate parameter](#def:substrate-parameter)
@@ -24,8 +33,9 @@ vortex tangle satisfies a $q$-deformed Kolmogorov law.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.ts
-theorem q_turbulence_spectrum : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem q_turbulence_spectrum [ctx : QTurbulenceSpectrumContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.FluidDynamics

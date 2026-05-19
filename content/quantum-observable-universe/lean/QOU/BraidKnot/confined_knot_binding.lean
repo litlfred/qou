@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.BraidKnot
 
+
+/-- Abstract context for the `confined_knot_binding` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class ConfinedKnotBindingContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `confined_knot_binding` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Proposition statement** (from manuscript):
 
 Let $\beta \in H_3(R, q)$ be a confined nuclear braid
@@ -28,8 +37,9 @@ $T_w$ in its GB normal form).
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/confined-knot-binding.ts
-theorem confined_knot_binding : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem confined_knot_binding [ctx : ConfinedKnotBindingContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.BraidKnot

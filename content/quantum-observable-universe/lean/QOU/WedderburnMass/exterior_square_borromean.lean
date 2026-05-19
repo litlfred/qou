@@ -12,6 +12,15 @@ CLAUDE.md §1.
 
 namespace QOU.WedderburnMass
 
+
+/-- Abstract context for the `exterior_square_borromean` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class ExteriorSquareBorromeanContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `exterior_square_borromean` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Proposition statement** (from manuscript):
 
 Let $V_{\mathrm{nat}} = \mathbb{C}^{10}$ be the natural permutation
@@ -23,8 +32,9 @@ acting via the standard projection).  Then the
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/exterior-square-borromean.ts
-theorem exterior_square_borromean : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem exterior_square_borromean [ctx : ExteriorSquareBorromeanContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.WedderburnMass

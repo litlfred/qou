@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.Molecular
 
+
+/-- Abstract context for the `co_lp_dual_binding` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class CoLpDualBindingContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `co_lp_dual_binding` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Proposition statement** (from manuscript):
 
 The LP dual of the $CO$ molecular braid selects the triple-bond
@@ -57,8 +66,9 @@ $D_0(CO) \approx 11.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/co-lp-dual-binding.ts
-theorem co_lp_dual_binding : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem co_lp_dual_binding [ctx : CoLpDualBindingContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.Molecular

@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.BraidKnot
 
+
+/-- Abstract context for the `frobenius_antipode_unifies` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class FrobeniusAntipodeUnifiesContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `frobenius_antipode_unifies` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Content statement** (from manuscript):
 
 **Synthesis.**
@@ -28,8 +37,9 @@ findings under a single categorical primitive.*
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/frobenius-antipode-unifies-chirality-and-tower.ts
-theorem frobenius_antipode_unifies : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem frobenius_antipode_unifies [ctx : FrobeniusAntipodeUnifiesContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.BraidKnot

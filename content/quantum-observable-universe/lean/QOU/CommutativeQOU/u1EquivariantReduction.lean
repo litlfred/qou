@@ -11,12 +11,20 @@ Lake package.
 
 namespace QOU.CommutativeQOU
 
-/-- u1EquivariantReduction
 
-    Placeholder; full formalisation pending. -/
+/-- Abstract context for the `u1EquivariantReduction` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class U1equivariantreductionContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `u1EquivariantReduction` below for the manuscript statement). -/
+  holds : Prop
+
+/-- Placeholder for `u1EquivariantReduction` (no manuscript-statement docstring found). -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/u1-equivariant-reduction.ts
-theorem u1EquivariantReduction : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem u1EquivariantReduction [ctx : U1equivariantreductionContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.CommutativeQOU

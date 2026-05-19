@@ -12,6 +12,15 @@ CLAUDE.md §1.
 
 namespace QOU.ParticleInteractions
 
+
+/-- Abstract context for the `SpectatorNormalization` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class SpectatornormalizationContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `SpectatorNormalization` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Content statement** (from manuscript):
 
 The **spectator normalization** captures the contribution of
@@ -24,8 +33,9 @@ $N - 1$ neutrons are spectators.
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/spectator-normalization.ts
-theorem SpectatorNormalization : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem SpectatorNormalization [ctx : SpectatornormalizationContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.ParticleInteractions

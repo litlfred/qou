@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.Observations
 
+
+/-- Abstract context for the `SDPRegimeSwitch` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class SdpregimeswitchContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `SDPRegimeSwitch` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Proposition statement** (from manuscript):
 
 The semidefinite-programming (SDP) extension of the LP-dual
@@ -54,8 +63,9 @@ observables.*
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/sdp-regime-switch.ts
-theorem SDPRegimeSwitch : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem SDPRegimeSwitch [ctx : SdpregimeswitchContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.Observations

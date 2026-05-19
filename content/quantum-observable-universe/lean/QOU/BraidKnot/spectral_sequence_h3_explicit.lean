@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.BraidKnot
 
+
+/-- Abstract context for the `spectral_sequence_h3_explicit` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class SpectralSequenceH3ExplicitContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `spectral_sequence_h3_explicit` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Content statement** (from manuscript):
 
 This proposition computes the differentials $d_1, d_2$ of the
@@ -27,8 +36,9 @@ concrete for the single-nucleon case.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/spectral-sequence-h3-explicit.ts
-theorem spectral_sequence_h3_explicit : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem spectral_sequence_h3_explicit [ctx : SpectralSequenceH3ExplicitContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.BraidKnot

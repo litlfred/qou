@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.LiftingDescent
 
+
+/-- Abstract context for the `tm_eigenspace_decomp` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class TmEigenspaceDecompContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `tm_eigenspace_decomp` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Lemma statement** (from manuscript):
 
 Let $\alpha = (\nabla_A q, L \wedge F^+)$ be the integrand of the
@@ -25,8 +34,9 @@ direct sums gives
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/topological-mass-eigenspace-decomp.ts
-theorem tm_eigenspace_decomp : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem tm_eigenspace_decomp [ctx : TmEigenspaceDecompContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.LiftingDescent

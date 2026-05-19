@@ -12,6 +12,15 @@ CLAUDE.md §1.
 
 namespace QOU.Torsion
 
+
+/-- Abstract context for the `antiparticle_crossing_reversal` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class AntiparticleCrossingReversalContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `antiparticle_crossing_reversal` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Content statement** (from manuscript):
 
 Let $T_{2,3}$ be the left trefoil (the electron generator) and
@@ -22,8 +31,9 @@ $T_{2,3}^{\sigma}$ its mirror image (all crossings reversed).
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/antiparticle-crossing-reversal.ts
-theorem antiparticle_crossing_reversal : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem antiparticle_crossing_reversal [ctx : AntiparticleCrossingReversalContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.Torsion

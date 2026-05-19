@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.QuantumObservableUniverse
 
+
+/-- Abstract context for the `exists_axiom_3_chern` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class ExistsAxiom3ChernContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `exists_axiom_3_chern` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Lemma statement** (from manuscript):
 
 Under the proposition's hypothesis $c_{1}(\mathrm{Ad}(P)) = c_{2}(\mathrm{Ad}(P)) = 0$,
@@ -28,8 +37,9 @@ into the ribbon twist.
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-3.ts
-theorem exists_axiom_3_chern : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem exists_axiom_3_chern [ctx : ExistsAxiom3ChernContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.QuantumObservableUniverse

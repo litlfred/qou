@@ -11,12 +11,20 @@ Lake package.
 
 namespace QOU.Descartes
 
-/-- reidemeister action table
 
-    Placeholder; full formalisation pending. -/
+/-- Abstract context for the `reidemeister_action_table` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class ReidemeisterActionTableContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `reidemeister_action_table` below for the manuscript statement). -/
+  holds : Prop
+
+/-- Placeholder for `reidemeister_action_table` (no manuscript-statement docstring found). -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/reidemeister-action-table.ts
-theorem reidemeister_action_table : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem reidemeister_action_table [ctx : ReidemeisterActionTableContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.Descartes

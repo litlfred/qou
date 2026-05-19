@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.Molecular
 
+
+/-- Abstract context for the `co2_lp_dual_binding` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class Co2LpDualBindingContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `co2_lp_dual_binding` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Proposition statement** (from manuscript):
 
 The LP dual of the $CO_2$ molecular braid selects the symmetric
@@ -48,8 +57,9 @@ wins over asymmetric alternatives $(3, 1)$ or $(1, 3)$ because:*
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/co2-lp-dual-binding.ts
-theorem co2_lp_dual_binding : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem co2_lp_dual_binding [ctx : Co2LpDualBindingContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.Molecular

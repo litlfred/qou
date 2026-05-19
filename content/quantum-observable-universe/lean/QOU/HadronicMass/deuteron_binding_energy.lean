@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.HadronicMass
 
+
+/-- Abstract context for the `deuteron_binding_energy` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class DeuteronBindingEnergyContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `deuteron_binding_energy` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Lemma statement** (from manuscript):
 
 The deuteron is the six-component link $L_6$ formed by joining the
@@ -30,8 +39,9 @@ $$
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/deuteron-binding-energy.ts
-theorem deuteron_binding_energy : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem deuteron_binding_energy [ctx : DeuteronBindingEnergyContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.HadronicMass

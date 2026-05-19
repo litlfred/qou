@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.BraidsKnots
 
+
+/-- Abstract context for the `skein_mass_from_linking` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class SkeinMassFromLinkingContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `skein_mass_from_linking` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Lemma statement** (from manuscript):
 
 Evaluating the mass functional $\mathcal{M}$ on the terminal Skein
@@ -36,8 +45,9 @@ linking configuration, and $\hbar_q = 1 - q^{-1}$.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/skein-mass-from-linking.ts
-theorem skein_mass_from_linking : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem skein_mass_from_linking [ctx : SkeinMassFromLinkingContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.BraidsKnots

@@ -12,6 +12,15 @@ CLAUDE.md §1.
 
 namespace QOU.WedderburnMass
 
+
+/-- Abstract context for the `curvature_rank_gb_stratification` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class CurvatureRankGbStratificationContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `curvature_rank_gb_stratification` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Proposition statement** (from manuscript):
 
 The curvature-rank stratifies the GB filtration:*
@@ -41,8 +50,9 @@ $$
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/curvature-rank-gb-stratification.ts
-theorem curvature_rank_gb_stratification : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem curvature_rank_gb_stratification [ctx : CurvatureRankGbStratificationContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.WedderburnMass

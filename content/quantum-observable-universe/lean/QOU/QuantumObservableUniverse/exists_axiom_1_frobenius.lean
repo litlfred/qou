@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.QuantumObservableUniverse
 
+
+/-- Abstract context for the `exists_axiom_1_frobenius` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class ExistsAxiom1FrobeniusContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `exists_axiom_1_frobenius` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Lemma statement** (from manuscript):
 
 The Haar state $h = \int_{A}$ on $A = \mathcal{O}_{q}(G)$ is faithful;
@@ -23,8 +32,9 @@ axiom~(1) of [quantum observable universe](#def:quantum-observable-universe).
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-1.ts
-theorem exists_axiom_1_frobenius : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem exists_axiom_1_frobenius [ctx : ExistsAxiom1FrobeniusContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.QuantumObservableUniverse

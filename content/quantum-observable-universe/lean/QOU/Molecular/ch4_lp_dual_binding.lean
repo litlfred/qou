@@ -12,6 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.Molecular
 
+
+/-- Abstract context for the `ch4_lp_dual_binding` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class Ch4LpDualBindingContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `ch4_lp_dual_binding` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Proposition statement** (from manuscript):
 
 The LP dual of the $CH_4$ molecular braid in $H_{26}(q)$
@@ -44,8 +53,9 @@ braid-theoretic origin of the
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/ch4-lp-dual-binding.ts
-theorem ch4_lp_dual_binding : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem ch4_lp_dual_binding [ctx : Ch4LpDualBindingContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.Molecular

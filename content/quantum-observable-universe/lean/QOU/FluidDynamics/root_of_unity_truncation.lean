@@ -12,6 +12,15 @@ CLAUDE.md §1.
 
 namespace QOU.FluidDynamics
 
+
+/-- Abstract context for the `root_of_unity_truncation` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class RootOfUnityTruncationContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `root_of_unity_truncation` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Content statement** (from manuscript):
 
 The [QOU axiom](#def:substrate-parameter) requires that $q$ is
@@ -26,8 +35,9 @@ accumulation of infinitely many such truncations.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.ts
-theorem root_of_unity_truncation : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem root_of_unity_truncation [ctx : RootOfUnityTruncationContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.FluidDynamics

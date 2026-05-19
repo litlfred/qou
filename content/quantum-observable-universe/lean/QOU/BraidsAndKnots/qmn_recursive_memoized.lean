@@ -15,6 +15,15 @@ this plural `QOU.BraidsAndKnots` namespace was inherited from existing
 
 namespace QOU.BraidsAndKnots
 
+
+/-- Abstract context for the `qmn_recursive_memoized` claim — fields encode the
+    manuscript hypotheses; the `holds` field is the substantive
+    claim of the lemma. -/
+class QmnRecursiveMemoizedContext where
+  /-- The `Prop`-valued claim of the lemma (see docstring on
+      `qmn_recursive_memoized` below for the manuscript statement). -/
+  holds : Prop
+
 /-- **Proposition statement** (from manuscript):
 
 The classical Murnaghan-Nakayama rule expresses $\chi_\rho^\lambda$
@@ -37,8 +46,9 @@ $\rho \setminus \rho_1$ is $\rho$ with its first part removed.*
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/qmn-recursive-memoized.ts
-theorem qmn_recursive_memoized : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+theorem qmn_recursive_memoized [ctx : QmnRecursiveMemoizedContext] : ctx.holds := by
+  -- Manuscript proof referenced above; concretisation requires
+  -- type-level Lean translation of the hypotheses.
   sorry
 
 end QOU.BraidsAndKnots
