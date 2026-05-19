@@ -22,7 +22,7 @@ Concretely, the encounter has three moments:
 
 2. **Crossing onto the fibre.**  At the threshold where
    $\partial F / \partial \mathbf{c} = 0$ on the colour-tube
-   cubic ([Picard--Lefschetz thimble](#def:picard-lefschetz-thimble)
+   cubic ([Picard--Lefschetz thimble](#rem:picard-lefschetz-thimble)
    §setup), the base coordinate $z$ hits a discriminant zero,
    the smooth base structure pinches, and the operative
    morphisms are now those of $\mathcal{S}_p$ — the

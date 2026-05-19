@@ -7,7 +7,7 @@ export default remark({
   uses: [
     "prop:confinement-sdp",
     "prop:mass-coefficient-shadow-price",
-    "def:picard-lefschetz-thimble",
+    "rem:picard-lefschetz-thimble",
     "conj:gb-reduction-pl-thimble-bijection",
   ],
   cites: ["witten2011", "neumann-zagier1985"],

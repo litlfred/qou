@@ -5,9 +5,9 @@ export default proposition({
   title:
     "Equivalence of categorical Markov–Frobenius pairing and SW thimble periods on $\\mathcal{E}_q$",
   chapter: "descartes-universe",
-  cites: ["witten2011", "yekutieli2015"],
+  cites: ["witten2011", "yekutieli2015", "grothendieck1966", "hartshorne1966", "pham1965"],
   uses: [
-    "def:picard-lefschetz-thimble",
+    "rem:picard-lefschetz-thimble",
     "rem:lepton-mass-integrals",
     "prop:descartes-elliptic-curve",
     "prop:e-infinity-page-identifications",

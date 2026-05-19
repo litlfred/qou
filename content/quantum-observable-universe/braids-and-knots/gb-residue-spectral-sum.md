@@ -106,7 +106,7 @@ $J^p\mathcal{S}$ on $\mathcal{E}_q(\mathbb{C})$ via
 and the residues at $\zeta_\ell \in S^1$ are replaced by
 Picard–Lefschetz residues at the discriminant locus
 $\{z \in \mathbb{C} : \Delta(z) = 0\}$ of the color-tube cubic
-([Picard–Lefschetz thimble](#def:picard-lefschetz-thimble)).
+([Picard–Lefschetz thimble](#rem:picard-lefschetz-thimble)).
 Because the discriminant points lie strictly off $S^1$, the
 $\mathbb{C}$-side residues converge unconditionally and the sum
 $\sum_p n_p \cdot \Pi^{(p)}$ is a bona fide complex-analytic

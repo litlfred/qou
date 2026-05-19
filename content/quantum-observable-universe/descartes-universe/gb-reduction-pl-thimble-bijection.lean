@@ -20,7 +20,7 @@ namespace QOU.PicardLefschetz
     bearing via `Complex.im`.  Phase-invariance holds because
     `thimbleFlowStep` is the identity (preserving the imaginary
     part trivially). -/
--- Ref: [manuscript] def:picard-lefschetz-thimble
+-- Ref: [manuscript] rem:picard-lefschetz-thimble
 def imSAction : ℂ → ℝ := fun z => z.im
 
 /-- A generic GB normal-form reduction operator.  Concrete model:
@@ -30,7 +30,7 @@ def gbReduceStep (depth : ℕ) : ℕ := depth
 
 /-- One Euler step of the gradient-flow ODE on the thimble.
     Concrete model: identity on `z_c` (the trivial flow). -/
--- Ref: [manuscript] def:picard-lefschetz-thimble
+-- Ref: [manuscript] rem:picard-lefschetz-thimble
 def thimbleFlowStep (z_c : ℂ) (_dt : ℝ) : ℂ := z_c
 
 /-- The conjecture as a typeclass over a GB-depth `n`.  An instance

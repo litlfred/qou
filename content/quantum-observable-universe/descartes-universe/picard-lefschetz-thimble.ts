@@ -1,8 +1,9 @@
-import { definition } from "../../schema/builders";
+import { remark } from "../../schema/builders";
 
-export default definition({
-  label: "def:picard-lefschetz-thimble",
-  title: "Picard--Lefschetz thimble decomposition of the color-tube cubic",
+export default remark({
+  label: "rem:picard-lefschetz-thimble",
+  title: "Picard--Lefschetz thimbles: archimedean shadow of the algebraic residue",
+  interprets: "prop:sw-period-thimble-equivalence",
   lean: {
     ref: "qou:QOU.Descartes.ThimbleData",
     validation: "not_checked",
@@ -10,16 +11,17 @@ export default definition({
   tags: [
     "picard-lefschetz",
     "thimble",
-    "steepest-descent",
+    "archimedean-shadow",
+    "exposition",
     "color-tube",
-    "discriminant",
     "seiberg-witten",
-    "baryon-mass",
   ],
   uses: [
     "rem:lepton-mass-integrals",
     "prop:descartes-elliptic-curve",
+    "prop:sw-period-thimble-equivalence",
   ],
+  cites: ["pham1965", "seidel2008", "witten2011"],
   computation: {
     engine: "scipy",
     script: "folio-assistant/computations/picard_lefschetz_thimble.py",

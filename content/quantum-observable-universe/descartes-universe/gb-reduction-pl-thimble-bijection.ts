@@ -10,7 +10,7 @@ export default conjecture({
   },
   uses: [
     "prop:jet-gb-pl-correspondence",
-    "def:picard-lefschetz-thimble",
+    "rem:picard-lefschetz-thimble",
     "prop:sw-period-thimble-equivalence",
     "def:q-pochhammer-partial-product",
     "conj:denominator-zeros-as-sw-critical-points",

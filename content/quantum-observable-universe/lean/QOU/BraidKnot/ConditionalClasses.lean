@@ -16,7 +16,7 @@
 
   Ref: [manuscript]
     - conj:hyperbolic-volume-transcendence
-    - conj:baryon-period-ratio
+    - rem:baryon-period-ratio
 -/
 
 import Mathlib.Data.Real.Basic
@@ -41,7 +41,7 @@ class SingleVolumeIrrational : Prop where
       let hbar_q2 := (1 - 1/q) ^ 2
       (vol / hbar_q2) * (hbar_q2 / vol) = 1
 
-/-- **§3b-cond hypothesis class** for `conj:baryon-period-ratio`.
+/-- **§3b-cond hypothesis class** for `rem:baryon-period-ratio`.
 
     Local re-declaration of the upstream
     `QOU.Descartes.PLCorrectnessHypotheses` class.  Concrete
@@ -49,7 +49,7 @@ class SingleVolumeIrrational : Prop where
     period ratio is bounded between two non-negative real values
     (an existence statement for the Picard-Lefschetz decomposition
     of the period integral, with explicit witness bounds). -/
--- Ref: [manuscript] conj:baryon-period-ratio
+-- Ref: [manuscript] rem:baryon-period-ratio
 class PLCorrectnessHypotheses : Prop where
   /-- Picard-Lefschetz decomposition admits a non-negative
       lower-bound witness on every q > 1.  Canonical form: the

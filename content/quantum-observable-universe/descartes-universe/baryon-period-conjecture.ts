@@ -1,18 +1,21 @@
-import { conjecture } from "../../schema/builders";
+import { remark } from "../../schema/builders";
 
-export default conjecture({
-  label: "conj:baryon-period-ratio",
+export default remark({
+  label: "rem:baryon-period-ratio",
   title:
-    "Proton--electron mass ratio from Picard--Lefschetz thimble periods",
+    "Proton--electron mass ratio as a corollary of the SW-period equivalence",
+  interprets: "prop:sw-period-thimble-equivalence",
   tags: [
-    "picard-lefschetz",
     "baryon",
     "mass-ratio",
     "proton",
     "electron",
-    "seiberg-witten",
-    "thimble",
-    "open-problem",
+    "corollary",
+    "exposition",
   ],
-  uses: ["def:picard-lefschetz-thimble"],
+  uses: [
+    "prop:sw-period-thimble-equivalence",
+    "prop:mobius-limit-from-thimble",
+    "rem:picard-lefschetz-thimble",
+  ],
 });

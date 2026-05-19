@@ -19,7 +19,7 @@ remark records the matches.
   the Neumann--Zagier potential $\Phi_{\mathrm{NZ}}(z)$.  The
   cubic stability potential studied in
   [Chapter 9](#chap:descartes-universe) (colour-tube cubic;
-  [Picard--Lefschetz thimble](#def:picard-lefschetz-thimble))
+  [Picard--Lefschetz thimble](#rem:picard-lefschetz-thimble))
   is isogenous to $\Phi_{\mathrm{NZ}}$, with critical points
   at the "settled" configurations where the meridian and
   longitude holonomies are complete.

@@ -368,9 +368,8 @@ export default chapter({
         // Knot-to-particle mass spectrum
         "knot-formula-table",
         "mass-from-generators",
-        // Volume tower and Picard-Lefschetz decomposition
+        // Volume tower and Picard-Lefschetz decomposition (archimedean shadow only)
         "picard-lefschetz-thimble",
-        "pl-yekutieli-stokes",
         "volume-tower-decomposition",
         "cs-evaluation-faithfulness",
         // Transcendence and algebraic independence
@@ -393,14 +392,14 @@ export default chapter({
         "golden-quartet-galois",
         "moduli-symmetry-d4",
         "mobius-limit-from-thimble",
-        // PL ↔ categorical mass-tower bridges (archimedean split kept strict)
+        "morse-wall-q-moduli",
+        // Categorical Markov-Frobenius ≡ algebraic residue (PL = archimedean shadow)
         "sw-period-thimble-equivalence",
         "jet-gb-pl-correspondence",
-        // Algebraic-geometric duality of PL and SW theories
+        // Algebraic-geometric duality with SW theory
         "gb-reduction-pl-thimble-bijection",
         "denominator-zeros-as-sw-critical-points",
         "abelianisation-at-algebraic-poles",
-        "pl-jsj-mass-integration-equivalence",
       ],
     }),
     // ── §5. Orbital symmetry and cohomological embedding ────────────

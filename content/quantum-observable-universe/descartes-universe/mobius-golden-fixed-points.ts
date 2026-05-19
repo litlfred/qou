@@ -18,7 +18,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "def:picard-lefschetz-thimble",
+    "rem:picard-lefschetz-thimble",
     "rem:color-tube-cubic",
     "prop:golden-skew-dual-node",
     "prop:moduli-symmetry-d4",

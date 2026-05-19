@@ -245,7 +245,7 @@ The pairing's $\mathbb{C}$-realisation is then the higher-order
 Picard–Lefschetz residue $\Pi^{(\ell)}$ of the prolonged SW
 differential $\lambda_{\mathrm{SW}}^{(\ell)}$ at the discriminant
 locus
-([Picard–Lefschetz thimble](#def:picard-lefschetz-thimble),
+([Picard–Lefschetz thimble](#rem:picard-lefschetz-thimble),
  [SW-period thimble equivalence](#prop:sw-period-thimble-equivalence)).
 This collapses Term 6 from "conjectural" on the analytic side to a
 straightforward PL computation using the same machinery that

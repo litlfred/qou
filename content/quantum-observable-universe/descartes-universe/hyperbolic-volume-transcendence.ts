@@ -10,7 +10,7 @@ export default conjecture({
     "bloch-wigner",
     "open-problem",
   ],
-  uses: ["conj:baryon-period-ratio"],
+  uses: ["rem:baryon-period-ratio"],
   lean: { ref: "qou:QOU.Descartes.HyperbolicVolumeIndependence",
     validation: "not_checked",
   },

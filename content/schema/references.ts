@@ -3610,6 +3610,83 @@ export const references: CSLData[] = [
     DOI: "10.1016/j.physa.2006.08.009",
   }),
 
+  // ── Pham 1965 — generalised Picard-Lefschetz formula ──────────
+  ref({
+    id: "pham1965",
+    type: "article-journal",
+    title: "Formules de Picard-Lefschetz généralisées et ramification des intégrales",
+    author: [{ family: "Pham", given: "Frédéric" }],
+    "container-title": "Bulletin de la Société Mathématique de France",
+    issued: { "date-parts": [[1965]] },
+    volume: "93",
+    page: "333-367",
+    URL: "https://www.numdam.org/item/BSMF_1965__93__333_0/",
+    note: "Original generalised Picard-Lefschetz formula; thimble integration + Hessian-degeneracy locus as ramification of period integrals.",
+  }),
+
+  // ── Arnold-Gusein-Zade-Varchenko 1988 — Singularities II ──────
+  ref({
+    id: "arnold-gusein-zade-varchenko1988",
+    type: "book",
+    title: "Singularities of Differentiable Maps, Volume II: Monodromy and Asymptotics of Integrals",
+    author: [
+      { family: "Arnold", given: "V. I." },
+      { family: "Gusein-Zade", given: "S. M." },
+      { family: "Varchenko", given: "A. N." },
+    ],
+    publisher: "Birkhäuser",
+    "publisher-place": "Boston",
+    issued: { "date-parts": [[1988]] },
+    "collection-title": "Monographs in Mathematics",
+    volume: "83",
+    ISBN: "978-0-8176-3185-5",
+    note: "Ch. 10-11 classify degenerate critical points (A_k, D_k, E_k); discriminant of a family = d²S = 0 wall.",
+  }),
+
+  // ── Seidel 2008 — Fukaya Categories and Picard-Lefschetz ──────
+  ref({
+    id: "seidel2008",
+    type: "book",
+    title: "Fukaya Categories and Picard-Lefschetz Theory",
+    author: [{ family: "Seidel", given: "Paul" }],
+    publisher: "European Mathematical Society",
+    "publisher-place": "Zürich",
+    issued: { "date-parts": [[2008]] },
+    "collection-title": "Zurich Lectures in Advanced Mathematics",
+    DOI: "10.4171/063",
+    ISBN: "978-3-03719-063-0",
+    note: "Fukaya-Seidel category of a Lefschetz fibration; thimble = object, Floer cohomology = morphism. Morse non-degeneracy is the existence hypothesis.",
+  }),
+
+  // ── Grothendieck 1966 — Algebraic de Rham / residue ───────────
+  ref({
+    id: "grothendieck1966",
+    type: "article-journal",
+    title: "On the de Rham cohomology of algebraic varieties",
+    author: [{ family: "Grothendieck", given: "Alexander" }],
+    "container-title": "Publications Mathématiques de l'IHÉS",
+    issued: { "date-parts": [[1966]] },
+    volume: "29",
+    page: "95-103",
+    DOI: "10.1007/BF02684807",
+    note: "Algebraic de Rham cohomology; foundation for algebraic (non-archimedean) residue calculus on smooth schemes.",
+  }),
+
+  // ── Hartshorne 1966 — Residues and Duality (LNM 20) ───────────
+  ref({
+    id: "hartshorne1966",
+    type: "book",
+    title: "Residues and Duality",
+    author: [{ family: "Hartshorne", given: "Robin" }],
+    publisher: "Springer",
+    "publisher-place": "Berlin",
+    issued: { "date-parts": [[1966]] },
+    "collection-title": "Lecture Notes in Mathematics",
+    volume: "20",
+    DOI: "10.1007/BFb0080482",
+    note: "Algebraic residues, trace maps, Grothendieck-Serre duality. The R-side counterpart of Cauchy residue used in `prop:sw-period-thimble-equivalence` A2.4 algebraic replacement.",
+  }),
+
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────

@@ -33,7 +33,7 @@
   "scriptHash": "8b322563a508",
   "scriptCommitSha": "f33f5c97f7bce950c88bd973d970f983b33bda6b",
   "description": "CODATA 2022 / AME 2020 proton, neutron, electron masses (MeV/c^2), re-exported from folio-assistant/computations/codata_constants.py so the values registry can pin Lean and Markdown literals via :leanval[m_e_MeV] / :leanval[m_p_MeV] / :leanval[m_n_MeV].",
-  "contentBlock": "codata mass anchors (CAL-1/2 inputs; informational, no formal block)",
+  "contentBlock": "prop:three-calibration-inputs",
   "parameters": {
     "source": "CODATA 2022 (m_e, m_p); AME 2020 + Q_β (m_n)"
   },
