@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T17:48:20.210863+00:00",
-  "commitSha": "77251ee7bc44c5a084926f0900eed5525d58f461",
+  "computedAt": "2026-05-19T17:54:26.167287+00:00",
+  "commitSha": "da35531582023051bf1c4e0dbc2a5ccaa2a6bf51",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2353,6 +2353,7 @@
         "hecke-1d-irrep-closed-form-character-probe.witness.json",
         "hecke-branching-trace-decomposition-probe.witness.json",
         "hecke-core-symbolic-migration.witness.json",
+        "hecke-log-decomposition-probe.witness.json",
         "hecke-markov-transition-probe.witness.json",
         "hh-trefoil-corrected.witness.json",
         "hh-vertex-volume.witness.json",

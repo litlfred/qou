@@ -1,0 +1,67 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-19T17:54:06.724988+00:00",
+  "commitSha": "da35531582023051bf1c4e0dbc2a5ccaa2a6bf51",
+  "assertions": [
+    {
+      "name": "factorisation_h_equals_hbar_q_times_q_plus_1",
+      "computed": 1.3363823550460978e-51,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-40,
+      "unit": "max over {q_0, 1.5, 2} of |h − ℏ_q · (q+1)|",
+      "source": "Direct algebraic chain: h = (q²−1)/q = (q−1)(q+1)/q = ℏ_q · (q+1)."
+    },
+    {
+      "name": "log_decomposition_identity",
+      "computed": 3.3409558876152446e-52,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-40,
+      "unit": "max over {q_0, 1.5, 2} of |log(1/h) − log(1/ℏ_q) + log(1+q)|",
+      "source": "Taking log of the factorisation: log(1/h) = log(1/(ℏ_q·(q+1))) = log(1/ℏ_q) − log(1+q)."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "hecke-log-decomposition-probe",
+  "scriptFile": "hecke_log_decomposition_probe.py",
+  "scriptHash": "c487d7b2558d",
+  "scriptCommitSha": "unknown",
+  "description": "I1 probe for prop:hecke-log-decomposition.  Verifies h = ℏ_q · (q + 1) and equivalently log(1/h) = log(1/ℏ_q) − log(1 + q), at three q values {q_0, 1.5, 2.0}.  h = q − q⁻¹ is the Hecke skein deformation; ℏ_q = (q − 1)/q is the QOU quantum Planck constant.  All residues at ~1e-50 (mpmath 50 dps).",
+  "contentBlock": "prop:hecke-log-decomposition",
+  "parameters": {
+    "q_0_50dps": "1.10997859555418057528159407960950937799328227995870",
+    "max_factorisation_residue": 1.3363823550460978e-51,
+    "max_log_form_residue": 3.3409558876152446e-52
+  },
+  "data": {
+    "per_q_value_results": [
+      {
+        "label": "q_0 (substrate)",
+        "q": 1.1099785955541805,
+        "h": 0.20906032198987945,
+        "hbar_q": 0.09908172643569889,
+        "factorisation_residue": 6.681911775230489e-52,
+        "log_form_residue": 0.0
+      },
+      {
+        "label": "q = 1.5",
+        "q": 1.5,
+        "h": 0.8333333333333334,
+        "hbar_q": 0.3333333333333333,
+        "factorisation_residue": 1.3363823550460978e-51,
+        "log_form_residue": 3.3409558876152446e-52
+      },
+      {
+        "label": "q = 2",
+        "q": 2.0,
+        "h": 1.5,
+        "hbar_q": 0.5,
+        "factorisation_residue": 0.0,
+        "log_form_residue": 0.0
+      }
+    ]
+  }
+}
