@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T07:49:12.836184+00:00",
-  "commitSha": "03feef59aa87e8c92bafa77a6052e28fef698269",
+  "computedAt": "2026-05-19T20:05:01.449915+00:00",
+  "commitSha": "f881590a67cafd81ede7dd7c0cd410effcda14f6",
   "assertions": [
     {
       "name": "data_loaded",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 687,
+  "durationMs": 2885,
   "computation": "binding-depth-stratified",
   "scriptFile": "binding_depth_stratified.py",
-  "scriptHash": "c94479d6973c",
-  "scriptCommitSha": "03feef59aa87e8c92bafa77a6052e28fef698269",
+  "scriptHash": "0b64f86cb954",
+  "scriptCommitSha": "f22376661e57a98df9615f0c72d6d23dac4d23a9",
   "description": "Depth-stratified α_k · Φ_k binding via prop:plancherel-term-7-formulation. α_{k≥4} = m_e · 8G provides universal damping at high curvature rank. Both atom and free chi at same H_{3A}; binding is the categorical difference Φ_k(β_K) − Φ_k(T_constit^K) summed with structural α_k weights.",
   "parameters": {
     "m_e_CAL1_MeV": "0.51099894999999995182093925905064679682254791259766",
