@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T15:20:22.902847+00:00",
-  "commitSha": "85de84926db280c0a76346593b2f43816a104571",
+  "computedAt": "2026-05-19T18:54:50.495848+00:00",
+  "commitSha": "b8d4b15c510588220f7e6b46372c4b5770ffb51c",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -563,7 +563,7 @@
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "2cbc6ab80cb0",
-  "scriptCommitSha": "07c70b80249ec4d7d64d8eb0721c775389fed122",
+  "scriptCommitSha": "0fd092af098ad97f907de89376fe0a570b24dc76",
   "description": "Per-chain validation + computational-trust audit per the QOU methodology directive: every numerical claim must trace back to first-principles axioms via a DerivationChain.",
   "auditOnly": "docs/audits/2026-05-02-pr503-ci-failure-postmortem.md",
   "data": {
@@ -2274,6 +2274,7 @@
         "crystal-shift-nf-atomic.witness.json",
         "crystal-transport-h3-verification.witness.json",
         "cyclotomic-depth3-dimension-pslq.witness.json",
+        "cyclotomic-trilog-imaginary-closed-form-probe.witness.json",
         "cyclotomic-trilog-imaginary.witness.json",
         "d-density-derivation.witness.json",
         "d-from-scratch.witness.json",

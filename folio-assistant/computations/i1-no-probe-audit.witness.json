@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T07:33:20.519525+00:00",
-  "commitSha": "e80a6fa7af6f90e282e1d2fa8c17b2a56ac418a8",
+  "computedAt": "2026-05-19T18:54:50.961539+00:00",
+  "commitSha": "b8d4b15c510588220f7e6b46372c4b5770ffb51c",
   "assertions": [
     {
       "name": "no_i1_no_probe_blocks",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 8,
+  "durationMs": 7,
   "computation": "i1-no-probe-audit",
   "scriptFile": "i1_no_probe_audit.py",
   "scriptHash": "0e004cc143d0",
@@ -27,8 +27,8 @@
   },
   "data": {
     "by_result": {
-      "i1_no_probe": 520,
-      "wired": 53,
+      "i1_no_probe": 519,
+      "wired": 54,
       "i1_lean_with_sorry": 1,
       "conditional_class": 1
     },
@@ -687,9 +687,11 @@
         "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
-        "probe_witness_count": 0,
-        "probe_witnesses": [],
-        "result": "i1_no_probe"
+        "probe_witness_count": 1,
+        "probe_witnesses": [
+          "cyclotomic-trilog-imaginary-closed-form-probe.witness.json"
+        ],
+        "result": "wired"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/degree-one-braid-trivial-volume.ts",
@@ -1449,8 +1451,9 @@
         "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
-        "probe_witness_count": 1,
+        "probe_witness_count": 2,
         "probe_witnesses": [
+          "knot-factor-amphicheiral-BD-probe.witness.json",
           "knot-factor-amphicheiral-probe.witness.json"
         ],
         "result": "wired"
