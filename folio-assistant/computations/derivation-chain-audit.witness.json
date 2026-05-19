@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T17:58:14.580037+00:00",
-  "commitSha": "c4b9049cf0e3a4a15df32c6f58347683e7fff6b2",
+  "computedAt": "2026-05-19T18:00:39.110868+00:00",
+  "commitSha": "5bd9f205d35c9863c2299ba7f748f2e11dbb2497",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2501,6 +2501,7 @@
         "piece1-dimensional-bridge.witness.json",
         "piece2-linked-cluster.witness.json",
         "piece3-interface-vs-intra.witness.json",
+        "plancherel-weight-boundedness-probe.witness.json",
         "pn-alpha-lp-dual.witness.json",
         "poly-q-proof.witness.json",
         "probe-A-h-expansion-fixed.witness.json",
