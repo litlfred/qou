@@ -108,9 +108,9 @@ non-commutative setting.
 
 […truncated; see manuscript for remainder…]
 
-    The Lean encoding below is a `theorem foo [ctx] : ctx.holds := by sorry`
-    placeholder; the `ctx.holds : Prop` field carries the residual claim,
-    awaiting per-block type-level translation. -/
+    The Lean encoding below splits the manuscript claim into named
+    sub-claim fields; concretisation requires per-block manuscript
+    translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/geom-yekutieli-alignment.ts
 theorem geom_yekutieli_alignment [ctx : GeomYekutieliAlignmentContext] :
     -- The piecewise formula: any one of the three cases holds (the

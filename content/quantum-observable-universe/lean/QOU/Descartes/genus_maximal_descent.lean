@@ -45,9 +45,9 @@ Riemann--Roch on $M_0$ forces $2(1 - g) = -6$, hence $g = 4$.  This is the
 maximal genus consistent with the Hurwitz bound
 $|\mathrm{Aut}(\Sigma)| \leq 84(g - 1) = 252$.
 
-    The Lean encoding below is a `theorem foo [ctx] : ctx.holds := by sorry`
-    placeholder; the `ctx.holds : Prop` field carries the residual claim,
-    awaiting per-block type-level translation. -/
+    The Lean encoding below splits the manuscript claim into named
+    sub-claim fields; concretisation requires per-block manuscript
+    translation. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/genus-maximal-descent.ts
 theorem genus_maximal_descent [ctx : GenusMaximalDescentContext] :
     ctx.genus = 4 ∧ ctx.claim_ii_hurwitz_bound := by

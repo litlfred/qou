@@ -92,9 +92,9 @@ contour integrals, no factors of $2 \pi i$, and no renormalisation-group
 
 […truncated; see manuscript for remainder…]
 
-    The Lean encoding below is a `theorem foo [ctx] : ctx.holds := by sorry`
-    placeholder; the `ctx.holds : Prop` field carries the residual claim,
-    awaiting per-block type-level translation. -/
+    The Lean encoding below splits the manuscript claim into named
+    sub-claim fields; concretisation requires per-block manuscript
+    translation. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/em-coupling-projection.ts
 theorem em_coupling_projection [ctx : EmCouplingProjectionContext] :
     (ctx.endRank = 2 ∧ ctx.centralIdempotentCount = 2) ∧

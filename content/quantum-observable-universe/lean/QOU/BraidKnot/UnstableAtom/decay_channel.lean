@@ -87,9 +87,9 @@ $E(\lambda^*, q^*) = |y_{\lambda^*}(q^*)| = 0$ — the LP
 boundary for the violated constraint vanishes.  Crossing $q^*$
 flips ILP feasibility.*
 
-    The Lean encoding below is a `theorem foo [ctx] : ctx.holds := by sorry`
-    placeholder; the `ctx.holds : Prop` field carries the residual claim,
-    awaiting per-block type-level translation. -/
+    The Lean encoding below splits the manuscript claim into named
+    sub-claim fields; concretisation requires per-block manuscript
+    translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/unstable-atom-decay-channel.ts
 theorem decay_channel [ctx : DecayChannelContext] :
     ctx.claim_i_well_defined ∧

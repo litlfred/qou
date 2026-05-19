@@ -78,9 +78,9 @@ on each
 
 […truncated; see manuscript for remainder…]
 
-    The Lean encoding below is a `theorem foo [ctx] : ctx.holds := by sorry`
-    placeholder; the `ctx.holds : Prop` field carries the residual claim,
-    awaiting per-block type-level translation. -/
+    The Lean encoding below splits the manuscript claim into named
+    sub-claim fields; concretisation requires per-block manuscript
+    translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/joint-tower-sdp-confinement.ts
 theorem joint_tower_sdp_confinement [ctx : JointTowerSdpConfinementContext] :
     ctx.claim_i_wedderburn_positivity ∧

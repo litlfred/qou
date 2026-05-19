@@ -80,9 +80,9 @@ $[n]_q = (q^n - q^{-n})/(q - q^{-1})$.  Per
 
 […truncated; see manuscript for remainder…]
 
-    The Lean encoding below is a `theorem foo [ctx] : ctx.holds := by sorry`
-    placeholder; the `ctx.holds : Prop` field carries the residual claim,
-    awaiting per-block type-level translation. -/
+    The Lean encoding below splits the manuscript claim into named
+    sub-claim fields; concretisation requires per-block manuscript
+    translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/knot-mass-formula-unified.ts
 theorem knot_mass_unified [ctx : KnotMassUnifiedContext] :
     ctx.mass = ctx.descended - ctx.brane_tower + ctx.frobenius_co_casimir :=

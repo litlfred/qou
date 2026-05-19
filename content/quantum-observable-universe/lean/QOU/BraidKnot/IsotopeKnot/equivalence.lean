@@ -64,9 +64,9 @@ element $Z$ (e.g. $Z = 6$: ${}^{12}\mathrm{C}, {}^{13}\mathrm{C},
 **element class** for $Z$.  This recovers the chemical element
 concept categorically — element = isotope class.*
 
-    The Lean encoding below is a `theorem foo [ctx] : ctx.holds := by sorry`
-    placeholder; the `ctx.holds : Prop` field carries the residual claim,
-    awaiting per-block type-level translation. -/
+    The Lean encoding below splits the manuscript claim into named
+    sub-claim fields; concretisation requires per-block manuscript
+    translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/isotope-knot-equivalence.ts
 theorem equivalence [ctx : EquivalenceContext] :
     Equivalence ctx.isotope :=

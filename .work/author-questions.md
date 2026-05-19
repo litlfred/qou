@@ -1,7 +1,42 @@
 # Author Questions — Meat-Adding Pass Analysis
 
-Compiled while upgrading ~212 placeholder canonicals on PR #806.
+Compiled while upgrading ~250 placeholder canonicals on PR #806.
 Each question has 2-4 concrete options to pick from.
+
+## Status — Where we are
+
+- **Descartes** (17 blocks): all hand-crafted with typed sub-claims —
+  Polynomial recurrences, eigenvalue identities, boxed mass formulas,
+  piecewise-defined invariants. Hand-crafted.
+- **BraidKnot** (21 blocks): all hand-crafted with typed sub-claims —
+  Hecke / Wedderburn / Markov-trace / spectral-sequence content.
+  Hand-crafted.
+- **126 other blocks** (FluidDynamics / ParticleInteractions /
+  Molecular / WedderburnMass / etc): bulk-transformed
+  (`.work/bulk-split-holds.py`). 42 of these now expose named
+  `claim_i, claim_ii, …, claim_N : Prop` sub-claim fields whose
+  number matches the `.md`-detected numbered list. The remaining 84
+  files (no numbered sub-claims in .md) are renamed
+  `holds : Prop` → `claim : Prop`.
+- **0 `holds : Prop`** fields remain in the QOU package.
+
+## Patterns observed during the pass
+
+1. **Boxed identities** (`$\boxed{lhs = rhs}$` in .md) → captured as
+   `claim_boxed : lhs = rhs` typed claim with `lhs, rhs : ℝ` abstract.
+2. **Numbered sub-claim lists** (`1. ... 2. ... 3. ...`) →
+   `claim_i, claim_ii, claim_iii : Prop`. Common in propositions
+   with "proof has three steps" structure.
+3. **Piecewise / regime-switching formulas** (`\begin{cases}`) →
+   conditional sub-claims `A → B = ...`.
+4. **Equivalence-relation proofs** (refl / sym / trans) →
+   three `claim_refl`, `claim_sym`, `claim_trans` predicates that
+   compose into `Equivalence` via Mathlib's structure.
+5. **Tables of moves** (Reidemeister R1/R2/R3 / Markov-I/II) →
+   row-specific sub-claims, one per move.
+6. **Existence + Uniqueness** patterns → two sub-claims, often the
+   uniqueness half typed (e.g. `=` on a derived field) and the
+   existence half abstract.
 
 ## Q1 — How aggressive should we be with `claim : Prop` vs typed?
 
@@ -10,37 +45,36 @@ Currently every block carries:
 ```lean
 class FooContext where
   -- typed hypothesis fields (q : ℝ, Z : ℕ, Braid : Type, etc.)
-  holds : Prop                 -- the residual claim, still abstract
+  claim : Prop                 -- (or claim_i, claim_ii, ...)
 
-theorem foo [ctx : FooContext] : ctx.holds := by sorry
+theorem foo [ctx : FooContext] : ctx.claim := by sorry
 ```
 
-The `holds : Prop` field is a placeholder — it carries no internal
+The `claim : Prop` field is a placeholder — it carries no internal
 structure. Refining it requires per-block work to express the
 manuscript claim in Lean's type system.
 
 **Options for the next pass**:
 
-1. **(A) Leave `holds : Prop` everywhere; do per-block claim
-   refinement chapter-by-chapter** (Descartes → BraidKnot →
-   ParticleInteractions → …). Highest fidelity, slowest. ~5-30 min
-   per block × 164 = 14-82 hrs.
+1. **(A) Hand-craft chapter-by-chapter** (Descartes + BraidKnot
+   done → ParticleInteractions → FluidDynamics → …). Highest
+   fidelity, slowest. ~5-30 min per block × 126 remaining =
+   10-60 hrs.
 
-2. **(B) Bulk-convert to `claim : ⟨lhs⟩ = ⟨rhs⟩`** where the .md
-   has an explicit equation, else leave `holds : Prop`. Recognises
-   `=`, `↔`, `<`, `≤` in the docstring; extracts the LHS/RHS as
-   abstract `R` / `Prop` symbols. Fast but the claims are still
-   abstract — only the SHAPE (=/↔) is captured.
+2. **(B) Build shared typeclass infrastructure** for common themes
+   (Hecke / Markov / Wedderburn / Skein-polynomial / Fluid-dynamics
+   Sobolev). Then refactor blocks to use the shared infra. Slowest
+   setup but highest reuse — once `MarkovTraceClaim`,
+   `WedderburnDecomposition`, `SkeinResolution`, `SobolevHk`
+   typeclasses are defined, the per-block work is "name the
+   witness fields and instantiate".
 
-3. **(C) Build shared typeclass infrastructure** for common themes
-   (Hecke / Markov / Wedderburn / Skein-polynomial / Fluid-dynamics).
-   Then refactor blocks to use the shared infra. Slowest setup but
-   highest reuse — once `MarkovTraceClaim`, `WedderburnDecomposition`,
-   `SkeinResolution` typeclasses are defined, the per-block work
-   is "name the witness fields".
+3. **(C) Stop here.** The bulk transformation gave every block a
+   typed-fields context with named claim Props.  Substantive
+   concretisation per block is deferred until specific blocks are
+   actively used downstream.
 
-## Q2 — Should we merge the `noncomputable instance` sorries with
-the new context pattern?
+## Q2 — `noncomputable instance` sorries vs the new context pattern
 
 The 27 conjecture-class placeholders use:
 
@@ -52,11 +86,11 @@ class FooConjecture where
 noncomputable instance : FooConjecture := by sorry
 ```
 
-The new bulk-shape blocks use:
+The bulk-shape blocks use:
 
 ```lean
-class FooContext where ...; holds : Prop
-theorem foo [ctx] : ctx.holds := by sorry
+class FooContext where ...; claim : Prop
+theorem foo [ctx] : ctx.claim := by sorry
 ```
 
 These are different patterns. Should I:
@@ -81,20 +115,20 @@ than meaningful types.
 (e.g., a `QOU.Categorical.MöbiusSection` typeclass) that I'd
 re-use across multiple blocks? Or per-block hand-crafted is fine?
 
-## Q4 — Which next chapter to deepen?
+## Q4 — Which next chapter to deepen (if option A in Q1)?
 
-Given the typed-field pass is done, picking ONE chapter and hand-
-crafting all its blocks (Q1 option A) gives the highest fidelity.
 Suggested ordering by manuscript-importance × Lean-ease:
 
-1. **`descartes-universe`** (~20 blocks) — many `Polynomial ℤ` /
-   `Matrix ℝ` claims I've already typed in.
-2. **`appendix-surreals`** — Mathlib's `Surreal` is well-developed;
-   could close several sorries via existing `OrderHom` infra.
-3. **`particle-interactions`** — heavy on numerical predictions
-   (CODATA + tolerance); good for `norm_num` discharges.
-4. **`fluid-dynamics`** — heavy on q-NS analysis; requires
-   substantial Mathlib `Sobolev` / `L^p` infra.
+1. **`particle-interactions`** (18 blocks) — heavy on numerical
+   predictions (CODATA + tolerance); good for `norm_num` discharges.
+2. **`fluid-dynamics`** (18 blocks) — heavy on q-NS analysis;
+   requires substantial Mathlib `Sobolev` / `L^p` infra.
+3. **`molecular`** (6 blocks) — LP-dual structure, similar to what
+   Descartes-LP work already established.
+4. **`wedderburn-mass`** (4 blocks) — categorical, draws on
+   already-done BraidKnot infrastructure.
+5. **`hadronic-mass`** (3 blocks) — short, focused on nucleon
+   binding-energy formulas.
 
 ## Q5 — `axiom` vs `class+instance` for the §3b conjecture witnesses?
 
@@ -107,3 +141,46 @@ allows downstream conditional dependence.
 
 **Keep class form or migrate to `axiom` per-claim?**
 
+## Q6 (NEW) — Mechanical-split fidelity check
+
+The bulk-script numbered-sub-claim splits introduced 42 files with
+generic docstrings:
+
+```lean
+  /-- Manuscript sub-claim (i). -/
+  claim_i : Prop
+  /-- Manuscript sub-claim (ii). -/
+  claim_ii : Prop
+  ...
+```
+
+These names map to *list positions* in the .md, not semantic content.
+A future pass could:
+
+1. **(A) Leave as-is** — names like `claim_i, claim_ii` are mechanical
+   but obvious, and downstream code can refer to them.
+2. **(B) Add manuscript-fragment summaries** — re-read each .md and
+   replace `claim_i : Prop` with a one-line natural-language summary
+   in the docstring (still `Prop`-typed). Manual but quick.
+3. **(C) Rename to semantic identifiers** — for example
+   `claim_i → claim_well_defined`, `claim_ii → claim_unique`,
+   `claim_iii → claim_phase_boundary`. Most readable but most work.
+
+## Q7 (NEW) — Should we update `ctx.holds` docstring boilerplate?
+
+The previously-hand-crafted 38 files (Descartes + BraidKnot) still
+contain dead text in their bottom docstrings referencing
+`ctx.holds`:
+
+> The Lean encoding below is a `theorem foo [ctx] : ctx.holds := by sorry`
+> placeholder; the `ctx.holds : Prop` field carries the residual claim,
+> awaiting per-block type-level translation.
+
+This is purely cosmetic (the actual class no longer has a `holds`
+field; the docstring footer references a name that no longer
+exists). Should I:
+
+1. **(A) Sweep and clean** — replace with the updated boilerplate the
+   bulk script writes (~38 files, 1 commit, 5 minutes).
+2. **(B) Leave it** — readers can see from the class definition that
+   `holds` is gone; the docstring footer is historical.

@@ -103,9 +103,9 @@ $\chi_\lambda(\beta)$ is determined by Young's lattice path c
 
 […truncated; see manuscript for remainder…]
 
-    The Lean encoding below is a `theorem foo [ctx] : ctx.holds := by sorry`
-    placeholder; the `ctx.holds : Prop` field carries the residual claim,
-    awaiting per-block type-level translation. -/
+    The Lean encoding below splits the manuscript claim into named
+    sub-claim fields; concretisation requires per-block manuscript
+    translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/hoefsmit-scattering-pipeline.ts
 theorem hoefsmit_scattering_pipeline [ctx : HoefsmitScatteringPipelineContext] :
     ctx.claim_stage_1_hoefsmit ∧

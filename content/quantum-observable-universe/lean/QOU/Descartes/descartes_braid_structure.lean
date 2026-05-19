@@ -61,9 +61,9 @@ Let $(\mathbf{C}, A, \tau)$ be a Descartes universe
    ([$p$-adic realisation](#ex:p-adic-realisation)), where knot complements
    and skein relations are not available.
 
-    The Lean encoding below is a `theorem foo [ctx] : ctx.holds := by sorry`
-    placeholder; the `ctx.holds : Prop` field carries the residual claim,
-    awaiting per-block type-level translation. -/
+    The Lean encoding below splits the manuscript claim into named
+    sub-claim fields; concretisation requires per-block manuscript
+    translation. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/descartes-braid-structure.ts
 theorem descartes_braid_structure [ctx : DescartesBraidStructureContext] :
     ctx.claim_i_faithful_rep ∧

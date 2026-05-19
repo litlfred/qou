@@ -86,9 +86,9 @@ hook–content closed form:*
 
 […truncated; see manuscript for remainder…]
 
-    The Lean encoding below is a `theorem foo [ctx] : ctx.holds := by sorry`
-    placeholder; the `ctx.holds : Prop` field carries the residual claim,
-    awaiting per-block type-level translation. -/
+    The Lean encoding below splits the manuscript claim into named
+    sub-claim fields; concretisation requires per-block manuscript
+    translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/wedderburn-weight-canonical.ts
 theorem wedderburnWeightCanonical [ctx : WedderburnweightcanonicalContext] :
     (∀ λ : ctx.PartitionIdx, ctx.β λ = -(1/2) * ctx.w_tilde λ) ∧

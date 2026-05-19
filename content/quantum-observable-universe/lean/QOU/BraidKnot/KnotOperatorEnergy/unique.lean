@@ -58,9 +58,9 @@ the canonical choice is fixed by the base ring itself.*
 price evaluated under equivalent absolute values gives equal
 energies.*
 
-    The Lean encoding below is a `theorem foo [ctx] : ctx.holds := by sorry`
-    placeholder; the `ctx.holds : Prop` field carries the residual claim,
-    awaiting per-block type-level translation. -/
+    The Lean encoding below splits the manuscript claim into named
+    sub-claim fields; concretisation requires per-block manuscript
+    translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/knot-operator-energy-unique.ts
 theorem unique [ctx : UniqueContext] :
     ctx.claim_i_partition_determined ∧

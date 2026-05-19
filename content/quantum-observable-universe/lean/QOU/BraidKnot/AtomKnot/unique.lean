@@ -75,9 +75,9 @@ permutation) yield different isotopy classes — these are
 **distinct atom-knots** at the same $(Z, N)$, corresponding to
 different physical isomers.*
 
-    The Lean encoding below is a `theorem foo [ctx] : ctx.holds := by sorry`
-    placeholder; the `ctx.holds : Prop` field carries the residual claim,
-    awaiting per-block type-level translation. -/
+    The Lean encoding below splits the manuscript claim into named
+    sub-claim fields; concretisation requires per-block manuscript
+    translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/atom-knot-unique.ts
 theorem unique [ctx : UniqueContext] :
     ∀ β₁ β₂ : ctx.Braid, ctx.realises_NF β₁ → ctx.realises_NF β₂ →

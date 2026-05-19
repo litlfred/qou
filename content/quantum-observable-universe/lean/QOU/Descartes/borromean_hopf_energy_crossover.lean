@@ -122,9 +122,9 @@ $$
 
 […truncated; see manuscript for remainder…]
 
-    The Lean encoding below is a `theorem foo [ctx] : ctx.holds := by sorry`
-    placeholder; the `ctx.holds : Prop` field carries the residual claim,
-    awaiting per-block type-level translation. -/
+    The Lean encoding below splits the manuscript claim into named
+    sub-claim fields; concretisation requires per-block manuscript
+    translation. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/borromean-hopf-energy-crossover.ts
 theorem borromean_hopf_energy_crossover [ctx : BorromeanHopfEnergyCrossoverContext] :
     ctx.M_B = 2 * ctx.V_B / ((ctx.q - 1) / ctx.q) ^ 2 ∧

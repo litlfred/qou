@@ -49,9 +49,9 @@ $\pi_<$ a skewed-Poisson structure on $H$.  Then there exists a
    *strong multiplicativity* condition: the Frobenius relation
    $(\mathrm{Id}\otimes m)\circ(\Delta\otimes\mathrm{Id}) = \Delta\circ m$ is preserved under the deformation.
 
-    The Lean encoding below is a `theorem foo [ctx] : ctx.holds := by sorry`
-    placeholder; the `ctx.holds : Prop` field carries the residual claim,
-    awaiting per-block type-level translation. -/
+    The Lean encoding below splits the manuscript claim into named
+    sub-claim fields; concretisation requires per-block manuscript
+    translation. -/
 -- Ref: [manuscript] quantum-observable-universe/models-of-qous/skew-poisson-integration.ts
 theorem skew_poisson_integration [ctx : SkewPoissonIntegrationContext] :
     ctx.claim_i_reduction_isomorphism ∧

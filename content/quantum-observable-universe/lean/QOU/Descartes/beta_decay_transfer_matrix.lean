@@ -113,9 +113,9 @@ $$
 
 […truncated; see manuscript for remainder…]
 
-    The Lean encoding below is a `theorem foo [ctx] : ctx.holds := by sorry`
-    placeholder; the `ctx.holds : Prop` field carries the residual claim,
-    awaiting per-block type-level translation. -/
+    The Lean encoding below splits the manuscript claim into named
+    sub-claim fields; concretisation requires per-block manuscript
+    translation. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/beta-decay-transfer-matrix.ts
 theorem beta_decay_transfer_matrix [ctx : BetaDecayTransferMatrixContext] :
     ctx.claim_i_transfer_matrices ∧

@@ -90,9 +90,9 @@ from the Hecke algebra $H_3(R, q)$:*
 
 […truncated; see manuscript for remainder…]
 
-    The Lean encoding below is a `theorem foo [ctx] : ctx.holds := by sorry`
-    placeholder; the `ctx.holds : Prop` field carries the residual claim,
-    awaiting per-block type-level translation. -/
+    The Lean encoding below splits the manuscript claim into named
+    sub-claim fields; concretisation requires per-block manuscript
+    translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/mass-formula-regime-switching.ts
 theorem mass_formula_regime_switching [ctx : MassFormulaRegimeSwitchingContext] :
     (ctx.Z + ctx.N = 2 → ctx.B = ctx.B_SW + ctx.frobenius_co_casimir) ∧

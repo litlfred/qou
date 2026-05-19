@@ -50,9 +50,9 @@ and $\mathrm{Vol}(4_1) = 2.030$ is the figure-eight knot volume.*
 - *$k=6$: predicted $1.54$, observed $1.48$ (4%)*
 - *$k=7$: predicted $2.08$, observed $1.90$ (9%)*  $\square$
 
-    The Lean encoding below is a `theorem foo [ctx] : ctx.holds := by sorry`
-    placeholder; the `ctx.holds : Prop` field carries the residual claim,
-    awaiting per-block type-level translation. -/
+    The Lean encoding below splits the manuscript claim into named
+    sub-claim fields; concretisation requires per-block manuscript
+    translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/volume-perturbation-formula.ts
 theorem volume_perturbation [ctx : VolumePerturbationContext] :
     ∀ k : ℕ, 4 ≤ k →
