@@ -55,7 +55,7 @@ class FibreFunctorMarkovTrace (R : Type*) (q z : R) (n : ℕ)
     the Markov trace is unique. -/
 class MarkovTraceFamilyOneDim (R : Type*) (q z : R) where
   /-- Any two Markov traces with the same `z` and `tr(1) = 1` agree. -/
-  unique : True   -- Ref: [chlouveraki2016-hdr] Chlouveraki HDR Theorem 6.20 (NOT the 2009 LNM monograph)
+  unique : True   -- Ref: [chlouveraki2016-hdr] Chlouveraki 2016 HDR Theorem 6.20 (NOT the 2009 LNM monograph)
 
 /-- **Step 4 (main applicability theorem).** Combining Steps 1–3,
     the Markov trace on `H_n(R, q)` produced by the QOU fibre
@@ -72,7 +72,7 @@ theorem wenzl_bridge_applicability_qou
     -- categorical level via the uniqueness instance.
     True := by
   trivial
-  -- Ref: [chlouveraki2016-hdr] Chlouveraki HDR Theorem 6.20 (NOT the 2009 LNM monograph)
+  -- Ref: [chlouveraki2016-hdr] Chlouveraki 2016 HDR Theorem 6.20 (NOT the 2009 LNM monograph)
   -- Ref: [wenzl1988] Wenzl, "Hecke algebras of type A_n …"
   -- Ref: prop:y-lambda-closed-form-wenzl-bridge
 

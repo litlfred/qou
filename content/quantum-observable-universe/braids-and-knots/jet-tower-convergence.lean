@@ -100,7 +100,8 @@ theorem jet_tower_tail_bound
       (HasSum (fun n => r ^ (n + 1) * Δ (n + 1)) T) ∧
       |T - ∑ n ∈ Finset.range N, r ^ (n + 1) * Δ (n + 1)|
         ≤ Δmax * r ^ (N + 1) / (1 - r) := by
-  -- Ref: [leitner2026] — summability and the explicit tail bound
+  -- Ref: [leitner2026] (Leitner, Quantum Observable Universe, Ch. 6
+  -- braids-and-knots) — summability and the explicit tail bound
   -- follow from `summable_tower_terms` and `geometric_tail_bound`.
   have hsum : Summable (fun n : ℕ => r ^ (n + 1) * Δ (n + 1)) :=
     summable_tower_terms hr0 hr1 hΔmax hbound

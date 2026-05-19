@@ -2754,12 +2754,11 @@ export const references: CSLData[] = [
   ref({
     id: "wenzl1988b",
     type: "article-journal",
-    title: "On the structure of Brauer's centralizer algebras",
+    title: "Wenzl 1988 — placeholder (title/venue/pages to be verified)",
     author: [{ family: "Wenzl", given: "Hans" }],
-    "container-title": "Annals of Mathematics",
     issued: { "date-parts": [[1988]] },
     DOI: "10.1007/BF01393839",
-    note: "TODO: verify exact title + volume/pages — placeholder per the BF01393839 DOI cited inline in delta-q-decoration.lean (distinct from wenzl1988 which has DOI BF01404457).",
+    note: "PLACEHOLDER: only the DOI 10.1007/BF01393839 is verified (cited inline in delta-q-decoration.lean as a Wenzl 1988 work). The Springer 10.1007/BF... prefix suggests Invent. Math. or similar, NOT Annals of Math (which uses 10.2307 / 10.4007). Resolve DOI manually before publication. Distinct from wenzl1988 = Hecke algebras of type An (DOI BF01404457, Invent. Math. 92).",
   }),
 
   // ── Neumann-Zagier 1985 (volumes of hyperbolic 3-manifolds) ───

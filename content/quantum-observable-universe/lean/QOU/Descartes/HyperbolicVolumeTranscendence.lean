@@ -180,7 +180,7 @@ noncomputable def baselineDecomposition
     -- Mathlib name for the previously-named `summable_of_ne_finset_zero`).
     -- Strategy: show |levelContribution n| = levelContribution n pointwise,
     -- then use HasSum.summable on hasSum_ite_eq.
-    -- Ref: [yekutieli2010] manuscript Chapter 5
+    -- Ref: [yekutieli2015] manuscript Chapter 5 (Nonabelian multiplicative integration on surfaces)
     have heq : (fun n => |if n = (0 : ℕ) then vol else (0 : ℝ)|) =
         fun n => if n = 0 then vol else 0 := by
       funext n
@@ -513,7 +513,7 @@ gives the Yekutieli bridge theorem. -/
 -- class is itself the open question.  Pattern 4 narrowing:
 -- typeclass binding to a specific Yekutieli witness, rather than a
 -- universal axiom.
--- Ref: [yekutieli2010] Nonabelian multiplicative integration on surfaces
+-- Ref: [yekutieli2015] Yekutieli, Nonabelian multiplicative integration on surfaces
 
 /-- **Tower-noncollapse → independence — typeclass.**
 

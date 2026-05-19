@@ -46,7 +46,7 @@ namespace QOU.Descartes.OpenProblems
     empirically (helium-4 doubly magic excess) and structurally
     (level-5 = first shell-closure quorum). -/
 -- Ref: [manuscript] conj:shell-correction-term-seven
--- Ref: [mayer1949] DOI 10.1103/PhysRev.75.1969
+-- Ref: [mayer1949] Mayer 1949, Phys. Rev. 75 p.1969, DOI 10.1103/PhysRev.75.1969
 noncomputable def alpha5_value : ℝ := -1  -- sign-constraint witness; magnitude awaits derivation
 
 /-- **Term-7 shell-correction class — strengthened.** A concrete

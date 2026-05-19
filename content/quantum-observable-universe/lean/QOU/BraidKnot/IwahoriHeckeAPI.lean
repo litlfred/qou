@@ -150,8 +150,8 @@ class MarkovTraceStabilisation
     (H : IwahoriHeckeAlgebra n R q h_unit)
     (H_succ : IwahoriHeckeAlgebra (n + 1) R q h_unit) : Prop where
   stabilisation : True
-  -- Ref: [jones1987] — uniqueness of Markov trace on
-  -- the inductive limit H_∞(q).
+  -- Ref: [jones1987] Jones, Hecke algebra representations of braid groups
+  -- and link polynomials — §3 uniqueness of Markov trace on H_∞(q).
 
 /-! ## Wedderburn decomposition (axiomatic, generic q) -/
 

@@ -98,7 +98,7 @@ theorem figure_eight_depth_2_under_keystone
 theorem bring_trilog_zeta5_depth_3_under_keystone
     {q : R} [GBDepthPeriodCorrespondence q] : True :=
   -- Ref: [zagier1986] — multiple-zeta-value functional equations.
-  -- Ref: [kontsevich1995] — motivic Galois group action on periods.
+  -- Ref: [kontsevich1995] Kontsevich 1995 Lecture at Orsay — motivic Galois group action on periods.
   -- Ref: [manuscript] §conj:bring-trilog-depth-3-witness — the
   -- depth-3 numerical witness with 50-digit functional-equation
   -- cross-validation (residual 5.5e-51).
