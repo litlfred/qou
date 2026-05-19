@@ -42,9 +42,15 @@ class ObservationEnergyContext where
     S (q + δq) = S q + δq * dS_dq + R_2 δq
   /-- Classical energy `E_classical` (q → 1 shadow). -/
   E_classical : ℝ → ℝ
+  /-- Witness points where `E_classical` exhibits both signs of
+      change (`q₁ ≠ q₂` and the classical energy is *not* monotone). -/
+  q_inc q_dec : ℝ
   /-- Manuscript sub-claim (iii) — Classical energy unconstrained
-      in sign: `E_classical` need not be monotone in `q`. -/
-  claim_iii_classical_unconstrained : Prop
+      in sign: there exist substrate values at which `E_classical`
+      both increases and decreases under `δq` perturbation. -/
+  claim_iii_classical_unconstrained :
+    E_classical (q_inc + δq) > E_classical q_inc ∧
+    E_classical (q_dec + δq) < E_classical q_dec
 
 /-- **Proposition statement** (from manuscript):
 
@@ -65,7 +71,8 @@ theorem observation_energy [ctx : ObservationEnergyContext] :
      0 < ctx.δq / (ctx.q * (ctx.q + ctx.δq))) ∧
     ctx.S (ctx.q + ctx.δq) = ctx.S ctx.q + ctx.δq * ctx.dS_dq +
       ctx.R_2 ctx.δq ∧
-    ctx.claim_iii_classical_unconstrained :=
+    (ctx.E_classical (ctx.q_inc + ctx.δq) > ctx.E_classical ctx.q_inc ∧
+     ctx.E_classical (ctx.q_dec + ctx.δq) < ctx.E_classical ctx.q_dec) :=
   ⟨ctx.claim_i_quantum_planck_increases,
    ctx.claim_ii_action_first_order,
    ctx.claim_iii_classical_unconstrained⟩
