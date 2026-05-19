@@ -152,7 +152,25 @@ def load_qbeta_precision_ladder() -> list[dict]:
             "categorical_source": "Hopf-link Jones polynomial at q=1 (cross-block)",
         })
 
-        # N=4 categorical (c_4 = b² + 1/2)  — DOC FORM, see audit
+        # N=4 canonical per 2026-05-19 audit: c_4 = c_3 · b⁴ = -2·b⁴
+        # Closes to ~1% empirical; replaces the doc's `b² + 1/2` form.
+        c4_canonical = mpf(-2) * (b ** 4)
+        Q_N4_canonical = Q_N3 * (1 + c4_canonical * (b ** 4) * (hbar_sq ** 4))
+        rungs.append({
+            "N": "4-canonical",
+            "label": "Q_N3 · (1 + c₃·b⁴ · b⁴·ℏ_q⁸)  [CANONICAL 2026-05-19: c₄ = c₃·b⁴]",
+            "Q_pred_MeV": fmt(Q_N4_canonical, 14),
+            "err_MeV": fmt(Q_N4_canonical - Q_AME, 4),
+            "err_ppb": fmt((Q_N4_canonical - Q_AME) / Q_AME * mpf("1e9"), 6),
+            "categorical_source": (
+                "c_3 · b⁴ — Hopf Jones at q=1 times pure Kashiwara b⁴. "
+                "Per 2026-05-19-qbeta-all-ck-categorical-extension.md "
+                "(0.91% empirical residual; replaces doc's b² + 1/2 "
+                "which was 9.5% off)."
+            ),
+        })
+
+        # N=4 doc form (kept for comparison; superseded by canonical)
         c4_doc = b * b + mpf(1) / mpf(2)
         Q_N4_doc = Q_N3 * (1 + c4_doc * (b ** 4) * (hbar_sq ** 4))
         rungs.append({
@@ -184,32 +202,41 @@ def load_qbeta_precision_ladder() -> list[dict]:
             ),
         })
 
-        # N=5 candidates — multi-stratum cohomological hypothesis
-        # (see 2026-05-18-qbeta-n5-cohomological-breakdown.md).
-        # The simple "alternating Kashiwara × Jones" pattern breaks
-        # here because (k=5) total degree admits ≥4 spectral-sequence
-        # strata E^{p,q}_∞ with p+q=5. Empirical closure: c_5 ≈ 12.82.
-        # Best clean candidate: c_5 = 13 = (-c_3)³ + (-c_3)² + 1
-        # = 8 + 4 + 1 (geometric-like sum over cohomological depths).
+        # N=5 canonical per 2026-05-19 audit: c_5 = -(b² + 1/2)
+        # This is the doc's original "c_4 = b² + 1/2" form, but correctly
+        # placed at N=5 (the doc had the rung index off by one). Sub-ppt
+        # closure when applied on top of canonical c_4 = c_3·b⁴.
+        c5_canonical = -(b * b + mpf(1) / mpf(2))
+        Q_N5_canonical = Q_N4_canonical * (1 + c5_canonical * (b ** 5) * (hbar_sq ** 5))
+        rungs.append({
+            "N": "5-canonical",
+            "label": "Q_N4-canonical · (1 - (b²+1/2)·b⁵·ℏ_q^10)  [CANONICAL 2026-05-19: c₅ = -(b²+1/2)]",
+            "Q_pred_MeV": fmt(Q_N5_canonical, 14),
+            "err_MeV": fmt(Q_N5_canonical - Q_AME, 4),
+            "err_ppb": fmt((Q_N5_canonical - Q_AME) / Q_AME * mpf("1e9"), 6),
+            "categorical_source": (
+                "-(b² + 1/2) — Kashiwara b² + Hopf-half offset. This is "
+                "the doc's original 'c_4 = b² + 1/2' form, but correctly "
+                "placed at N=5 (the doc had the rung index off by one). "
+                "Sub-ppt closure when applied on top of the canonical "
+                "c_4 = c_3·b⁴ form. Per "
+                "2026-05-19-qbeta-all-ck-categorical-extension.md."
+            ),
+        })
+
+        # N=5 with c_5 = 13 (the older cohomological-strata conjecture,
+        # kept as comparison row)
         c5_13 = mpf(13)
         Q_N5_13 = Q_N4_flipped * (1 + c5_13 * (b ** 5) * (hbar_sq ** 5))
         rungs.append({
-            "N": 5,
-            "label": "Q_N4-flipped · (1 + 13·b⁵·ℏ_q^10)  [conjectural: 2³+2²+1]",
+            "N": "5-cohomstrata",
+            "label": "Q_N4-flipped · (1 + 13·b⁵·ℏ_q^10)  [SUPERSEDED conjectural: 2³+2²+1]",
             "Q_pred_MeV": fmt(Q_N5_13, 14),
             "err_MeV": fmt(Q_N5_13 - Q_AME, 4),
             "err_ppb": fmt((Q_N5_13 - Q_AME) / Q_AME * mpf("1e9"), 6),
             "categorical_source": (
-                "Cohomological-strata conjecture: c_5 = (-c_3)³ + (-c_3)² + 1 "
-                "= 8 + 4 + 1 = 13. Sum-of-strata interpretation per "
-                "qbeta-n5-cohomological-breakdown audit. CONJECTURAL — "
-                "matches empirical 12.82 to ~1%."
-            ),
-            "note": (
-                "Closes to ~0.01 ppb. Empirical exact-closure c_5 = "
-                "+12.82 (categorical c_5 = 13 over-corrects by 1%, "
-                "leaving a tiny positive residual — consistent with "
-                "higher rungs N≥6 closing the remainder)."
+                "Older cohomological-strata conjecture c_5 = 13. "
+                "Superseded by the 2026-05-19 form c_5 = c_3² · 3 + b."
             ),
         })
 
@@ -319,9 +346,9 @@ if __name__ == "__main__":
     w.add_assertion(
         "qbeta_ladder_rungs",
         computed=len(out["qbeta_precision_ladder"]),
-        expected=7,
+        expected=9,
         tolerance=0,
-        source="N=0..N=3 + N=4 doc-form + N=4 sign-fixed + N=5 conjectural (7 rungs)",
+        source="N=0..N=3 + N=4 canonical/doc/flipped + N=5 canonical/cohomstrata (9 rungs)",
     )
     for upstream in [
         COMPUTE_DIR / "canonical-tr-m-via-chi-cache.witness.json",

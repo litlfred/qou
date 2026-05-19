@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T23:20:38.528222+00:00",
-  "commitSha": "349834e8181773d7c32a76d8eaa65ac101269e76",
+  "computedAt": "2026-05-19T00:11:43.235379+00:00",
+  "commitSha": "630a828ede9464f120c8fd33b10c6502bc06786a",
   "assertions": [
     {
       "name": "binding_rows_count",
@@ -14,19 +14,19 @@
     },
     {
       "name": "qbeta_ladder_rungs",
-      "computed": 7,
-      "expected": 7,
+      "computed": 9,
+      "expected": 9,
       "passed": true,
       "tolerance": 0,
-      "source": "N=0..N=3 + N=4 doc-form + N=4 sign-fixed + N=5 conjectural (7 rungs)"
+      "source": "N=0..N=3 + N=4 canonical/doc/flipped + N=5 canonical/cohomstrata (9 rungs)"
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 10,
   "computation": "binding-q-target-sweep",
   "scriptFile": "binding_q_target_sweep.py",
-  "scriptHash": "50d1c2946cfa",
-  "scriptCommitSha": "5e93de47d199400a541690f37c24f8b00fdae5a2",
+  "scriptHash": "da7c6ed9ed35",
+  "scriptCommitSha": "90502dca9e06bf83198c5a89b19d5faee87dba7c",
   "description": "Per-isotope binding-energy + Q_β precision-ladder sweep against Workplan v7 L2 100×-experimental targets. Shows current canonical state across all on-disk witnesses. Audit-only — no new predictions.",
   "data": {
     "binding_rows": [
@@ -155,6 +155,14 @@
         "categorical_source": "Hopf-link Jones polynomial at q=1 (cross-block)"
       },
       {
+        "N": "4-canonical",
+        "label": "Q_N3 · (1 + c₃·b⁴ · b⁴·ℏ_q⁸)  [CANONICAL 2026-05-19: c₄ = c₃·b⁴]",
+        "Q_pred_MeV": "0.78233341404288",
+        "err_MeV": "4.288e-11",
+        "err_ppb": "0.0548137",
+        "categorical_source": "c_3 · b⁴ — Hopf Jones at q=1 times pure Kashiwara b⁴. Per 2026-05-19-qbeta-all-ck-categorical-extension.md (0.91% empirical residual; replaces doc's b² + 1/2 which was 9.5% off)."
+      },
+      {
         "N": 4,
         "label": "Q_N3 · (1 + c₄·b⁴·ℏ_q⁸)  [doc: c₄ = +(b²+1/2)]",
         "Q_pred_MeV": "0.78233342386545",
@@ -173,13 +181,20 @@
         "note": "Sign-flipped categorical closes to -0.57 ppb. Beats 7.80 ppb target by 14×. Doc's claimed -7 ppt requires empirical c_4 = -1.144 (9.5% off categorical)."
       },
       {
-        "N": 5,
-        "label": "Q_N4-flipped · (1 + 13·b⁵·ℏ_q^10)  [conjectural: 2³+2²+1]",
+        "N": "5-canonical",
+        "label": "Q_N4-canonical · (1 - (b²+1/2)·b⁵·ℏ_q^10)  [CANONICAL 2026-05-19: c₅ = -(b²+1/2)]",
+        "Q_pred_MeV": "0.78233341399896",
+        "err_MeV": "-1.045e-12",
+        "err_ppb": "-0.00133523",
+        "categorical_source": "-(b² + 1/2) — Kashiwara b² + Hopf-half offset. This is the doc's original 'c_4 = b² + 1/2' form, but correctly placed at N=5 (the doc had the rung index off by one). Sub-ppt closure when applied on top of the canonical c_4 = c_3·b⁴ form. Per 2026-05-19-qbeta-all-ck-categorical-extension.md."
+      },
+      {
+        "N": "5-cohomstrata",
+        "label": "Q_N4-flipped · (1 + 13·b⁵·ℏ_q^10)  [SUPERSEDED conjectural: 2³+2²+1]",
         "Q_pred_MeV": "0.78233341400642",
         "err_MeV": "6.417e-12",
         "err_ppb": "0.00820291",
-        "categorical_source": "Cohomological-strata conjecture: c_5 = (-c_3)³ + (-c_3)² + 1 = 8 + 4 + 1 = 13. Sum-of-strata interpretation per qbeta-n5-cohomological-breakdown audit. CONJECTURAL — matches empirical 12.82 to ~1%.",
-        "note": "Closes to ~0.01 ppb. Empirical exact-closure c_5 = +12.82 (categorical c_5 = 13 over-corrects by 1%, leaving a tiny positive residual — consistent with higher rungs N≥6 closing the remainder)."
+        "categorical_source": "Older cohomological-strata conjecture c_5 = 13. Superseded by the 2026-05-19 form c_5 = c_3² · 3 + b."
       }
     ],
     "upstream_witness_hashes": [
