@@ -123,8 +123,16 @@ section({
       blocks: [
         "phase-transitions-intro",
         "phase-transition-boundary",
-        "phase-transition-interpretation",
+        // P3 reorder (2026-05-19): composite-crossing-parity moved
+        // before phase-transition-interpretation. The former uses
+        // prop:shell-structure-eigenvalues + prop:noble-gas-
+        // characterization (both in earlier chapters); the latter
+        // interprets the parity test. The detangler-watcher flagged
+        // phase-transition-interpretation → composite-crossing-parity
+        // as an intra-section H1 forward ref; swap makes it a
+        // backward ref, no new cascade.
         "composite-crossing-parity",
+        "phase-transition-interpretation",
         "crossing-parity-test",
       ],
     }),

@@ -127,8 +127,16 @@ export default chapter({
         "local-q-zeta-function",
         "hasse-weil-bound",
         "spectral-half-line",
-        "geometric-rh-exposition",
+        // P3 reorder (2026-05-19): unitary-stability moved before
+        // geometric-rh-exposition. unitary-stability uses
+        // cor:spectral-half-line and thm:explicit-formula (both
+        // already earlier); geometric-rh-exposition uses
+        // unitary-stability for narrative interpretation. The
+        // detangler-watcher flagged geometric-rh-exposition →
+        // unitary-stability as an intra-section H1 forward ref;
+        // swap makes it a backward ref, no new cascade.
         "unitary-stability",
+        "geometric-rh-exposition",
       ],
     }),
   ],
