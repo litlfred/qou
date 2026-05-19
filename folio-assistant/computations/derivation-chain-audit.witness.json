@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T18:04:05.569639+00:00",
-  "commitSha": "3eef62b7cf11a81aac53bc2c54aef88379e871a8",
+  "computedAt": "2026-05-19T18:07:10.772808+00:00",
+  "commitSha": "b7a80f862706deb318c7b766b19045b2c1aef671",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2664,6 +2664,7 @@
         "term7-chi5-basis.witness.json",
         "term7-height6-partition-enum.witness.json",
         "terms-2-3-atom-per-gen-mpfr-50dps.witness.json",
+        "three-parameters-wedderburn-probe.witness.json",
         "three-term-wedderburn.witness.json",
         "tier-0-atlas-pslq-check.witness.json",
         "tier-1-hyperbolic-3braid-pslq.witness.json",
