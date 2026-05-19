@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+sympy",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T19:06:46.577239+00:00",
-  "commitSha": "1fb4c623ea594ce58c7bc522982110cb63672419",
+  "engineVersion": "python 3.12.3",
+  "computedAt": "2026-05-19T20:26:49.783886+00:00",
+  "commitSha": "fdbd580a3291415b6d5b73a26dd6c1f7d822ad6a",
   "assertions": [
     {
       "name": "partition_sum_equals_recursive_reducer",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8394,
+  "durationMs": 7698,
   "computation": "q-hecke-seminormal-character-closure-probe",
   "scriptFile": "q_hecke_seminormal_character_closure_probe.py",
   "scriptHash": "288e79eb52eb",
-  "scriptCommitSha": "7b82cb92cb4e3b305794fe70927e912b64683d04",
+  "scriptCommitSha": "a6553642d4005b8193d2a4a1ee74739b462a8ff0",
   "description": "I1 probe for prop:q-hecke-seminormal-character-closure. Verifies tr_M^{partition-sum}(β) := Σ_λ y_λ(q) · χ_λ(β) equals tr_M(β) computed via the recursive Markov-axiom reducer, on 5 test braids in B_3 (covering identity, single generator, Coxeter, figure-eight, full-twist).  B_4 tests were dropped because y_lambda_symbolic(n=4) exceeds the 3-min symbolic compute timeout.  LHS uses canonical Hoefsmit χ_λ (mpmath 50 dps) × y_λ from `markov_weights_symbolic` (sympy.N at 30 dps).  RHS uses `markov_trace_recursive.markov_trace_of_word`.  All residues below 1e-10 witness the partition-sum closure.",
   "contentBlock": "prop:q-hecke-seminormal-character-closure",
   "parameters": {
