@@ -1,24 +1,24 @@
 {
   "$schema": "block-qa/v1",
-  "label": "prop:x5-z5-automorphism",
+  "label": "prop:x5-bring-weight-identification",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/braids-and-knots/x5-z5-automorphism.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/x5-z5-automorphism.md",
-    "lean": "content/quantum-observable-universe/braids-and-knots/x5-z5-automorphism.lean"
+    "ts": "content/quantum-observable-universe/braids-and-knots/x5-bring-weight-identification.ts",
+    "md": "content/quantum-observable-universe/braids-and-knots/x5-bring-weight-identification.md",
+    "lean": "content/quantum-observable-universe/braids-and-knots/x5-bring-weight-identification.lean"
   },
   "source_hashes": {
-    "md": "6f686ffd7e7a",
-    "ts": "e5fbac628a82",
-    "lean": "9c7fdf03a90b"
+    "md": "c9881e2ce847",
+    "ts": "421b76d5dbf6",
+    "lean": "9577ea8bd51d"
   },
   "criteria": {
     "wall-side-correct": [
       {
         "field_hash": {
-          "md": "6f686ffd7e7a",
-          "ts": "e5fbac628a82",
-          "lean": "9c7fdf03a90b"
+          "md": "c9881e2ce847",
+          "ts": "421b76d5dbf6",
+          "lean": "9577ea8bd51d"
         },
         "result": "pass",
         "reviewer": {
@@ -33,9 +33,9 @@
     "voice-status-leak": [
       {
         "field_hash": {
-          "md": "6f686ffd7e7a",
-          "ts": "e5fbac628a82",
-          "lean": "9c7fdf03a90b"
+          "md": "c9881e2ce847",
+          "ts": "421b76d5dbf6",
+          "lean": "9577ea8bd51d"
         },
         "result": "pass",
         "reviewer": {
@@ -50,9 +50,9 @@
     "voice-emoji-content": [
       {
         "field_hash": {
-          "md": "6f686ffd7e7a",
-          "ts": "e5fbac628a82",
-          "lean": "9c7fdf03a90b"
+          "md": "c9881e2ce847",
+          "ts": "421b76d5dbf6",
+          "lean": "9577ea8bd51d"
         },
         "result": "pass",
         "reviewer": {
@@ -67,9 +67,9 @@
     "voice-first-person-work": [
       {
         "field_hash": {
-          "md": "6f686ffd7e7a",
-          "ts": "e5fbac628a82",
-          "lean": "9c7fdf03a90b"
+          "md": "c9881e2ce847",
+          "ts": "421b76d5dbf6",
+          "lean": "9577ea8bd51d"
         },
         "result": "pass",
         "reviewer": {
@@ -84,9 +84,9 @@
     "voice-time-stamped-notes": [
       {
         "field_hash": {
-          "md": "6f686ffd7e7a",
-          "ts": "e5fbac628a82",
-          "lean": "9c7fdf03a90b"
+          "md": "c9881e2ce847",
+          "ts": "421b76d5dbf6",
+          "lean": "9577ea8bd51d"
         },
         "result": "pass",
         "reviewer": {
@@ -101,9 +101,9 @@
     "voice-unicode-crash": [
       {
         "field_hash": {
-          "md": "6f686ffd7e7a",
-          "ts": "e5fbac628a82",
-          "lean": "9c7fdf03a90b"
+          "md": "c9881e2ce847",
+          "ts": "421b76d5dbf6",
+          "lean": "9577ea8bd51d"
         },
         "result": "pass",
         "reviewer": {
@@ -118,9 +118,9 @@
     "voice-editorializing": [
       {
         "field_hash": {
-          "md": "6f686ffd7e7a",
-          "ts": "e5fbac628a82",
-          "lean": "9c7fdf03a90b"
+          "md": "c9881e2ce847",
+          "ts": "421b76d5dbf6",
+          "lean": "9577ea8bd51d"
         },
         "result": "pass",
         "reviewer": {
@@ -135,9 +135,9 @@
     "framework-canonical": [
       {
         "field_hash": {
-          "md": "6f686ffd7e7a",
-          "ts": "e5fbac628a82",
-          "lean": "9c7fdf03a90b"
+          "md": "c9881e2ce847",
+          "ts": "421b76d5dbf6",
+          "lean": "9577ea8bd51d"
         },
         "result": "pass",
         "reviewer": {
@@ -152,9 +152,9 @@
     "fit-section-chapter": [
       {
         "field_hash": {
-          "md": "85ca19d7d5d3",
-          "ts": "e5fbac628a82",
-          "lean": "9c7fdf03a90b"
+          "md": "d39437e948db",
+          "ts": "421b76d5dbf6",
+          "lean": "9577ea8bd51d"
         },
         "result": "fail",
         "reviewer": {
@@ -165,8 +165,24 @@
         "reviewed_at": "2026-05-19T17:59:48.610Z",
         "reviewed_sha": "b4893f9a1a71b351e5906e2937653bf0e96f723f",
         "severity": "major",
-        "evidence": "x5-z5-automorphism.md:1-25: 'Let X_5: y² = x⁵ - 1 be the hyperelliptic quintic...The map φ_5(x,y) = (ζ_5 x, y) is an automorphism of order 5.'",
-        "notes": "Z_5 automorphism of hyperelliptic quintic. Pure algebraic geometry, no knot/braid framing. Belongs in descartes-universe/."
+        "evidence": "x5-bring-weight-identification.md:1-25: 'On Bring's surface the first Lagrange resolvent w_1 is an eigenvector of σ...there is a canonical Z_5-equivariant identification...'",
+        "notes": "Z_5-weight identification between Bring's surface and the hyperelliptic quintic X_5 — algebraic geometry, no knot/braid framing. Belongs in descartes-universe/."
+      },
+      {
+        "field_hash": {
+          "md": "d39437e948db",
+          "ts": "421b76d5dbf6",
+          "lean": "9577ea8bd51d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-orchestrator-resolver-relocation",
+          "version": "claude-opus-4-7-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T18:14:19.413Z",
+        "reviewed_sha": "5bd5a24c30a8571808f5dff0c95dfbe441f8ce5a",
+        "notes": "Relocated; Z_5-weight identification Bring ↔ X_5 fits descartes-universe scope."
       }
     ]
   },
