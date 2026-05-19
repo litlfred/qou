@@ -7,7 +7,7 @@
 
 ## Session deliverables (commits on #818)
 
-### I1 probes wired — 12 propositions retired from `i1_no_probe`
+### I1 probes wired — 14 propositions retired from `i1_no_probe`
 
 | # | content block | What it witnesses |
 |---|---|---|
@@ -23,9 +23,11 @@
 | 10 | `prop:wedderburn-weight-canonical` | `dim_q(λ) → f_λ` as q→1+; `Σ_λ tilde w_λ ≠ 1` at q_0 (the "not a probability measure" property) |
 | 11 | `prop:three-parameters-wedderburn` | `H_3 ≅ M_1 ⊕ M_2 ⊕ M_1`; eigenvalue structure +q / mixed / −q⁻¹ per block |
 | 12 | `prop:frobenius-gram-matrix` | 6×6 Gram matrix on NF basis: symmetric, det ≠ 0, indefinite signature (5 +, 1 −) |
+| 13 | `prop:jucys-murphy-central-elements-qou` | P_ℓ = e_ℓ(J_1, …, J_n) acts as scalar c_ℓ(λ) = e_ℓ({q^{2c(□)}}) on V_λ; 15 irreps over n ∈ {3,4,5}, 45 ℓ-tests |
+| 14 | `prop:explicit-central-idempotent` | Central-idempotent Lagrange formula **with scope correction** (see Paper finding D below) |
 
-**I1 audit movement (session):** `i1_no_probe` 525 → 508 (–17), `wired` 53 → 65 (+12).
-**Audit movement (current PR alone):** `i1_no_probe` 520 → 508 (–12, all from PR #818).
+**I1 audit movement (session):** `i1_no_probe` 525 → 506 (–19), `wired` 53 → 67 (+14).
+**Audit movement (current PR alone):** `i1_no_probe` 520 → 506 (–14, all from PR #818).
 
 ### Latent-bug fixes carried inline (per CLAUDE.md "small-moderate fixes" pattern)
 
@@ -55,6 +57,12 @@
 | **Centralise Hoefsmit construction.** Move `build_hoefsmit_mpfr` from `probe_staircase_ew_k3_categorical.py` into a shared utility module (`hecke_hoefsmit.py` or similar); migrate every probe in the cluster + the canonical SYT enumerator. | Touches 12+ producers; better as one dedicated infrastructure PR than piecemeal. Acknowledged with TODO in source. (Gemini repeatedly flagged this; Copilot too.) |
 | **Re-state cor:knot-factor-amphicheiral's Application paragraph.** PR #815's BD probe used invalid matrices but the verdict (4_1 IS Markov-amphicheiral) survived correction. The corollary's "Application" paragraph should be revisited with the corrected single-component value χ_(2,1)(β_{4_1}) ≈ −0.91068 (not −1). | Content edit on `.md`; out of scope for the probe-cluster PR. Possibly bundle with the cor:knot-factor-amphicheiral content revision. |
 | **`q_mn_canonical.py` referenced in `prop:wenzl-qmn-synergy` doesn't exist.** | Either rename the reference, or create the missing file. Probably one of the pieces in `tools/pyhecke/`. |
+
+### D. Paper-level findings surfaced by the probes
+
+| Finding | Where | Details |
+|---|---|---|
+| **`prop:explicit-central-idempotent` Lagrange-product scope is too narrow** | `content/quantum-observable-universe/braids-and-knots/explicit-central-idempotent.md` | The proposition's literal formula has the inner product range over cells of λ only.  With that scope, the off-block projection does NOT vanish (off-block residue ~32 at q_0 — the probe surfaces this).  The CORRECTED formula extends the inner product over the UNION of distinct cell contents across every μ ⊢ n; with that scope, e_λ · v_{T'} = δ_{λ,μ} exactly and Σ_λ e_λ = 1 (probe verifies, residue 0).  Surfaced + documented in the probe's witness (`formula_scope_correction_note` data block).  **Recommended fix:** update the proposition's `.md` to make the inner-product scope explicit. |
 
 ### C. Next I1 probe candidates (after #818 lands)
 
@@ -105,6 +113,8 @@ python3 folio-assistant/computations/plancherel_weight_boundedness_probe.py
 python3 folio-assistant/computations/wedderburn_weight_canonical_probe.py
 python3 folio-assistant/computations/three_parameters_wedderburn_probe.py
 python3 folio-assistant/computations/frobenius_gram_matrix_probe.py
+python3 folio-assistant/computations/jucys_murphy_central_elements_qou_probe.py
+python3 folio-assistant/computations/explicit_central_idempotent_probe.py
 
 python3 folio-assistant/computations/i1_no_probe_audit.py
 # Inspect data.by_result for current totals
