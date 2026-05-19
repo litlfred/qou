@@ -1,3 +1,5 @@
+import Mathlib.Analysis.SpecialFunctions.Exp
+
 /-!
 # QOU.FluidDynamics.q_ns_wellposedness — placeholder stub
 
@@ -25,15 +27,30 @@ class QNsWellposednessContext where
   ν_q : ℝ
   ν_q_eq : ν_q = (1 - q⁻¹) / 2
   ν_q_pos : 0 < ν_q
+  /-- Squared `L²` (Frobenius) norm of the velocity `v(t)` at time `t`. -/
+  v_norm_sq : ℝ → ℝ
+  /-- Squared `L²` norm of the gradient `d_q v(s)` at time `s`. -/
+  dv_norm_sq : ℝ → ℝ
+  /-- Cumulative dissipation `∫_0^t ||d_q v(s)||² ds`. -/
+  dissipation : ℝ → ℝ
   /-- Manuscript sub-claim (i) — categorical smoothness:
-      `t ↦ v(t) ∈ Ω¹(A)` is smooth (infinitely differentiable). -/
+      `t ↦ v(t) ∈ Ω¹(A)` is smooth (infinitely differentiable in the
+      internal hom of `C`; captured as an abstract Prop because the
+      categorical smoothness predicate sits on `C`). -/
   claim_i_smoothness : Prop
   /-- Manuscript sub-claim (ii) — energy inequality:
-      `||v(t)||²_{L²} + 2 ν_q ∫_0^t ||∇v(s)||²_{L²} ds ≤ ||v(0)||²_{L²}`. -/
-  claim_ii_energy_inequality : Prop
+      `||v(t)||²_{L²} + 2 ν_q ∫_0^t ||d_q v(s)||²_{L²} ds ≤ ||v(0)||²_{L²}`. -/
+  claim_ii_energy_inequality : ∀ t : ℝ, 0 ≤ t →
+    v_norm_sq t + 2 * ν_q * dissipation t ≤ v_norm_sq 0
+  /-- The `k`-th `Δ_q`-eigencomponent magnitude `|v̂_k(t)|`. -/
+  v_hat : ℕ → ℝ → ℝ
+  /-- The q-integer `[k]_q` (as a real number). -/
+  q_int : ℕ → ℝ
   /-- Manuscript sub-claim (iii) — spectral decay: the
-      `Δ_q`-eigencomponents `v̂_k ∈ V_k` decay exponentially in `[k]_q`. -/
-  claim_iii_spectral_decay : Prop
+      `Δ_q`-eigencomponents `v̂_k` decay at exponential-in-`[k]_q` rate
+      `|v̂_k(t)| ≤ |v̂_k(0)| · exp(-ν_q [k]_q² t)`. -/
+  claim_iii_spectral_decay : ∀ (k : ℕ) (t : ℝ), 0 ≤ t →
+    v_hat k t ≤ v_hat k 0 * Real.exp (- ν_q * (q_int k) ^ 2 * t)
 
 /-- **Content statement** (from manuscript):
 
@@ -53,8 +70,11 @@ viscosity.
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/q-ns-wellposedness.ts
 theorem q_ns_wellposedness [ctx : QNsWellposednessContext] :
     ctx.claim_i_smoothness ∧
-    ctx.claim_ii_energy_inequality ∧
-    ctx.claim_iii_spectral_decay :=
+    (∀ t : ℝ, 0 ≤ t →
+      ctx.v_norm_sq t + 2 * ctx.ν_q * ctx.dissipation t ≤ ctx.v_norm_sq 0) ∧
+    (∀ (k : ℕ) (t : ℝ), 0 ≤ t →
+      ctx.v_hat k t ≤ ctx.v_hat k 0 *
+        Real.exp (- ctx.ν_q * (ctx.q_int k) ^ 2 * t)) :=
   ⟨ctx.claim_i_smoothness, ctx.claim_ii_energy_inequality,
    ctx.claim_iii_spectral_decay⟩
 
