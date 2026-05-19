@@ -109,8 +109,9 @@ def needs_arxiv_search(e: dict) -> bool:
     return True
 
 
-def arxiv_search(query: str, max_results: int = 3) -> list[dict]:
-    """Hit arxiv API with a query; return up to max_results matches."""
+def arxiv_search(query: str, max_results: int = 3, retries: int = 3) -> list[dict]:
+    """Hit arxiv API with a query; return up to max_results matches.
+    Retries on timeout with exponential backoff."""
     params = urllib.parse.urlencode({
         "search_query": query,
         "max_results": max_results,
@@ -119,8 +120,18 @@ def arxiv_search(query: str, max_results: int = 3) -> list[dict]:
     })
     url = f"{ARXIV_API}?{params}"
     req = urllib.request.Request(url, headers={"User-Agent": UA})
-    with urllib.request.urlopen(req, timeout=15) as resp:
-        body = resp.read().decode("utf-8")
+    last_err: Exception | None = None
+    for attempt in range(retries):
+        try:
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                body = resp.read().decode("utf-8")
+            break
+        except Exception as ex:
+            last_err = ex
+            wait = 2 ** attempt  # 1, 2, 4
+            time.sleep(wait)
+    else:
+        raise last_err if last_err else Exception("unknown arxiv error")
     root = ET.fromstring(body)
     out = []
     for entry in root.findall("a:entry", ARXIV_NS):
@@ -196,7 +207,49 @@ def main() -> int:
     found: list[dict] = []
     not_found: list[dict] = []
 
+    # Resume support: skip ids that already appear in a prior report
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    report = REPO_ROOT / "docs" / "coordination" / f"{today}-arxiv-mirror-search.md"
+    already_seen: set[str] = set()
+    if report.exists():
+        prior = report.read_text()
+        already_seen = set(re.findall(r"`([\w\d_.-]+)`(?:.+arxiv\.org/abs)", prior))
+        print(f"  resuming: {len(already_seen)} ids already in prior report")
+
+    def write_report() -> None:
+        report.parent.mkdir(parents=True, exist_ok=True)
+        lines = [f"# arxiv mirror search — {today}", "",
+                 f"Total refs scanned: {len(candidates)}",
+                 f"High-confidence matches (sim ≥ {args.threshold}): {len(found)}",
+                 f"No match: {len(not_found)}", ""]
+        if found:
+            lines.append("## Suggested arxiv URLs to add")
+            lines.append("")
+            lines.append("| ref id | arxiv id | similarity | arxiv title |")
+            lines.append("|--------|----------|-----------:|-------------|")
+            for f in sorted(found, key=lambda x: -x["similarity"]):
+                lines.append(
+                    f"| `{f['id']}` | [`{f['arxiv_id']}`](https://arxiv.org/abs/{f['arxiv_id']}) "
+                    f"| {f['similarity']:.2f} | {f['arxiv_title'][:80]} |"
+                )
+            lines.append("")
+            lines.append("To apply: add `URL: \"https://arxiv.org/abs/<id>\"` to each "
+                         "ref's entry in `content/schema/references.ts`, then re-run "
+                         "`scripts/upload-bib-papers.sh` to fetch the PDFs.")
+        if not_found:
+            lines.append("")
+            lines.append("## No-match (or low similarity)")
+            lines.append("")
+            for nf in not_found[:50]:
+                lines.append(f"- `{nf['id']}`")
+            if len(not_found) > 50:
+                lines.append(f"- … ({len(not_found) - 50} more)")
+        report.write_text("\n".join(lines) + "\n")
+
     for i, e in enumerate(candidates, 1):
+        if e["id"] in already_seen:
+            print(f"  [{i}/{len(candidates)}] {e['id']}: (skipped — already in report)")
+            continue
         query = build_query(e)
         if not query:
             not_found.append({"id": e["id"], "reason": "no query buildable"})
@@ -232,37 +285,12 @@ def main() -> int:
         # arxiv rate-limit politeness: 1 req/3s
         time.sleep(3)
 
-    # Emit markdown report
-    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    report = REPO_ROOT / "docs" / "coordination" / f"{today}-arxiv-mirror-search.md"
-    report.parent.mkdir(parents=True, exist_ok=True)
-    lines = [f"# arxiv mirror search — {today}", "",
-             f"Total refs scanned: {len(candidates)}",
-             f"High-confidence matches (sim ≥ {args.threshold}): {len(found)}",
-             f"No match: {len(not_found)}", ""]
-    if found:
-        lines.append("## Suggested arxiv URLs to add")
-        lines.append("")
-        lines.append("| ref id | arxiv id | similarity | arxiv title |")
-        lines.append("|--------|----------|-----------:|-------------|")
-        for f in sorted(found, key=lambda x: -x["similarity"]):
-            lines.append(
-                f"| `{f['id']}` | [`{f['arxiv_id']}`](https://arxiv.org/abs/{f['arxiv_id']}) "
-                f"| {f['similarity']:.2f} | {f['arxiv_title'][:80]} |"
-            )
-        lines.append("")
-        lines.append("To apply: add `URL: \"https://arxiv.org/abs/<id>\"` to each "
-                     "ref's entry in `content/schema/references.ts`, then re-run "
-                     "`scripts/upload-bib-papers.sh` to fetch the PDFs.")
-    if not_found:
-        lines.append("")
-        lines.append("## No-match (or low similarity)")
-        lines.append("")
-        for nf in not_found[:50]:  # cap markdown size
-            lines.append(f"- `{nf['id']}`")
-        if len(not_found) > 50:
-            lines.append(f"- … ({len(not_found) - 50} more)")
-    report.write_text("\n".join(lines) + "\n")
+        # Save report every 10 searches so a timeout-kill doesn't lose progress
+        if i % 10 == 0:
+            write_report()
+
+    # Emit final markdown report
+    write_report()
     print(f"\nReport: {report.relative_to(REPO_ROOT)}")
     print(f"Found {len(found)} high-confidence arxiv matches")
     return 0
