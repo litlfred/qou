@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-19T16:57:39.287492+00:00",
-  "commitSha": "702e02e0c6c8d4ce9b343473e81cfe00d3a8b740",
+  "computedAt": "2026-05-19T19:06:37.700507+00:00",
+  "commitSha": "1fb4c623ea594ce58c7bc522982110cb63672419",
   "assertions": [
     {
       "name": "chi_33_h6_decoupling_matches_lr_branching",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 41,
+  "durationMs": 43,
   "computation": "knot-factor-borromean-composite-probe",
   "scriptFile": "knot_factor_borromean_composite_probe.py",
-  "scriptHash": "ec490f0eed78",
-  "scriptCommitSha": "cc3b4e57f958d2c0d19ad10cb1743d8b4a01e409",
+  "scriptHash": "b17cc82a77b1",
+  "scriptCommitSha": "cd916618c6bfaaae33bcd23490a8e4f26743db83",
   "description": "I1 probe for cor:knot-factor-borromean-composite.  Witnesses Brunnian decoupling at k=2 (⁴He as Bor_2) via TWO independent paths:  (a) single-component H_3 characters of the figure-eight β_{4_1} for each λ ⊢ 3 (verified by the BD probe in PR #815);  (b) direct H_6 Hoefsmit evaluation of the disjoint braid β_Bor_2 ∈ B_6 on irreps λ ⊢ 6 that are NOT tensor products of single-component reps (specifically λ = (3,3) dim 5 and λ = (4,2) dim 9), compared against the Littlewood-Richardson branching prediction Σ_(μ,ν) c^λ_{μν} χ_μ(β_{4_1}) χ_ν(β_{4_1}).  Equality on (b) is the real structural witness — it validates the embedding β_{4_1}^(1,2,3) · β_{4_1}^(4,5,6) ↪ H_6 and the LR-branching factorisation, which is the content of Brunnian decoupling.  Per Copilot follow-up review on PR #818, the prior Kronecker-only check was algebraically tautological (tr(A ⊗ A) = (tr A)² is an identity) and has been replaced by the H_6 construction below.",
   "contentBlock": "cor:knot-factor-borromean-composite",
   "parameters": {

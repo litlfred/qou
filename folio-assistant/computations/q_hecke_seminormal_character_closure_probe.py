@@ -12,9 +12,11 @@ equals the canonical Markov-axiom reducer tr_M(β) for the same braid
 Schur principal specialization.
 
 This probe verifies the equality numerically at q = q_0 for a suite
-of braid words in B_3 and B_4 covering pure-positive, mixed, and
-the figure-eight β_{4_1} cases.  All residues at ~1e-15 (sympy
-float-substitution precision); the test passes when the two
+of 5 braid words in B_3 covering pure-positive, Coxeter, the
+figure-eight β_{4_1}, identity, and a full-twist case.  B_4 tests
+were planned but dropped because y_lambda_symbolic(n=4) exceeds the
+3-minute symbolic-compute timeout.  All residues at ~1e-30 (sympy.N
+30-dps precision floor); the test passes when the two
 implementations agree to better than 1e-10.
 
   · LHS — partition-sum via canonical Hoefsmit χ_λ (mpmath 50 dps)
@@ -70,36 +72,6 @@ def _evaluate_word_in_hoefsmit(shape: tuple, word_signed: list[int]):
             g = sigmas[-s - 1] ** (-1)
         M = M * g
     return sum(M[i, i] for i in range(dim))
-
-
-def _partition_sum_tr_m(n: int, word_signed: list[int],
-                        q_sympy: sp.Float):
-    """Compute tr_M(β) via Σ y_λ(q) · χ_λ(β) at q_sympy ≈ q_0.
-
-    y_λ is taken symbolic via `y_lambda_symbolic(n)` then evaluated
-    at q_sympy; χ_λ via canonical Hoefsmit at Q_MP (mpmath).
-    """
-    y_symbolic = y_lambda_symbolic(n)
-    q_sym = sp.symbols("q", positive=True)
-    result = mp.mpf(0)
-    per_lambda = []
-    for shape in _partitions_of(n):
-        chi = _evaluate_word_in_hoefsmit(shape, word_signed)
-        # y_λ might be in q_sym; substitute and evaluate.
-        # The markov_weights_symbolic module uses Q_W = q² and a
-        # complicated z_W = q · z; we use y_lambda_symbolic which
-        # already substitutes these out to a function of q.
-        y_at_q0_sym = y_symbolic[shape].subs(q_sym, q_sympy)
-        y_val = mp.mpf(str(sp.N(y_at_q0_sym, 30)))
-        contrib = y_val * chi
-        result += contrib
-        per_lambda.append({
-            "shape": str(shape),
-            "y_lambda_at_q0": float(y_val),
-            "chi_lambda": float(chi),
-            "contribution": float(contrib),
-        })
-    return result, per_lambda
 
 
 def main() -> int:
@@ -185,9 +157,11 @@ def main() -> int:
             "I1 probe for prop:q-hecke-seminormal-character-closure. "
             "Verifies tr_M^{partition-sum}(β) := Σ_λ y_λ(q) · χ_λ(β) "
             "equals tr_M(β) computed via the recursive Markov-axiom "
-            "reducer, on 7 test braids in B_3 and B_4 (covering "
+            f"reducer, on {len(TESTS)} test braids in B_3 (covering "
             "identity, single generator, Coxeter, figure-eight, "
-            "full-twist).  LHS uses canonical Hoefsmit χ_λ "
+            "full-twist).  B_4 tests were dropped because "
+            "y_lambda_symbolic(n=4) exceeds the 3-min symbolic "
+            "compute timeout.  LHS uses canonical Hoefsmit χ_λ "
             "(mpmath 50 dps) × y_λ from `markov_weights_symbolic` "
             "(sympy.N at 30 dps).  RHS uses "
             "`markov_trace_recursive.markov_trace_of_word`.  All "
@@ -204,8 +178,8 @@ def main() -> int:
             expected=0.0,
             tolerance=1e-10,
             unit=(
-                "max over 7 test braids of |Σ_λ y_λ(q_0)·χ_λ(β) − "
-                "tr_M(β) via recursive reducer|"
+                f"max over {len(TESTS)} test braids of "
+                "|Σ_λ y_λ(q_0)·χ_λ(β) − tr_M(β) via recursive reducer|"
             ),
             source=(
                 "Wedderburn-Artin decomposition H_n(q) ≅ ⊕_λ "
