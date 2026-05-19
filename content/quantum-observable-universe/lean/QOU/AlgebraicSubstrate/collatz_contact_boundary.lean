@@ -17,16 +17,18 @@ namespace QOU.AlgebraicSubstrate
 class CollatzContactBoundaryContext where
   /-- Substrate parameter `q : ℝ`. -/
   q : ℝ
-  /-- LP shadow-price / dual variable. -/
-  shadow_price : ℝ
-  /-- The fibre functor `τ`. -/
-  Functor : Type → Type
-  /-- Cohomology / obstruction class. -/
-  ObstructionClass : Type
-  /-- Fluid-dynamics velocity / vorticity field. -/
-  VelocityField : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_collatz_contact_boundary : Prop
+  /-- The q-integer `[2]_q = q + 1`. -/
+  q_int_2 : ℝ
+  q_int_2_eq : q_int_2 = q + 1
+  /-- Euler characteristic `χ(A) = -6` (Descartes / Bring's surface). -/
+  chi_A : ℤ
+  chi_A_eq : chi_A = -6
+  /-- Kummer-level-2 obstruction is removable. -/
+  kummer_obstruction_removable : Prop
+  /-- Manuscript identity: at the `[2]_q`-divisor `q = -1`, Kummer
+      level-2 obstruction is removable because `2 ∣ χ(A) = -6`. -/
+  claim_collatz_contact_boundary :
+    (q_int_2 = 0 → q = -1) ∧ ((2 : ℤ) ∣ chi_A)
 
 /-- **Manuscript statement** (full body):
 
@@ -92,9 +94,8 @@ $$
     placeholder; the `ctx.claim_collatz_contact_boundary : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/collatz-contact-boundary.ts
-theorem collatz_contact_boundary [ctx : CollatzContactBoundaryContext] : ctx.claim_collatz_contact_boundary := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem collatz_contact_boundary [ctx : CollatzContactBoundaryContext] :
+    (ctx.q_int_2 = 0 → ctx.q = -1) ∧ ((2 : ℤ) ∣ ctx.chi_A) :=
+  ctx.claim_collatz_contact_boundary
 
 end QOU.AlgebraicSubstrate

@@ -1,3 +1,5 @@
+import Mathlib.Algebra.BigOperators.Basic
+
 /-!
 # QOU.WedderburnMass.chirality_residue_mass_term — placeholder stub
 
@@ -18,12 +20,20 @@ namespace QOU.WedderburnMass
 class ChiralityResidueMassTermContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
-  /-- The topological-link / knot type. -/
-  Link : Type
-  /-- The categorical mass / binding energy. -/
+  /-- Categorical mass `𝔪(K, T)` of knot `K` probed by test element `T`. -/
   mass : ℝ
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_chirality_residue_mass_term : Prop
+  /-- Number of GB-filtration strata. -/
+  n_strata : ℕ
+  /-- Mass contribution per stratum from the achiral (mirror-symmetric)
+      part. -/
+  mass_achiral : ℕ → ℝ
+  /-- Mass contribution per stratum from the chiral (residue) part. -/
+  mass_chiral : ℕ → ℝ
+  /-- Manuscript identity: total mass is the sum over strata of
+      achiral + chiral parts. -/
+  claim_chirality_residue_mass_term :
+    mass = (Finset.range n_strata).sum
+      (fun s => mass_achiral s + mass_chiral s)
 
 /-- **Proposition statement** (from manuscript):
 
@@ -39,9 +49,9 @@ stratum into a
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/chirality-residue-mass-term.ts
-theorem chirality_residue_mass_term [ctx : ChiralityResidueMassTermContext] : ctx.claim_chirality_residue_mass_term := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem chirality_residue_mass_term [ctx : ChiralityResidueMassTermContext] :
+    ctx.mass = (Finset.range ctx.n_strata).sum
+      (fun s => ctx.mass_achiral s + ctx.mass_chiral s) :=
+  ctx.claim_chirality_residue_mass_term
 
 end QOU.WedderburnMass

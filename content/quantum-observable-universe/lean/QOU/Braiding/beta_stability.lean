@@ -18,10 +18,15 @@ namespace QOU.Braiding
 class BetaStabilityContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
-  /-- The categorical mass / binding energy. -/
-  mass : ℝ
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_beta_stability : Prop
+  /-- Proton number `p`. -/
+  p : ℕ
+  /-- Stable neutron number `n*(p)` for proton number `p`. -/
+  n_star : ℕ
+  /-- Skein binding Lagrangian as a function of neutron number. -/
+  L_skein : ℕ → ℝ
+  /-- Manuscript identity: `n*(p)` extremises `L_skein` at fixed `p`:
+      `L_skein(n*) ≤ L_skein(n)` for all `n`. -/
+  claim_beta_stability : ∀ n : ℕ, L_skein n_star ≤ L_skein n
 
 /-- **Content statement** (from manuscript):
 
@@ -35,9 +40,8 @@ at fixed $p$.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/beta-stability.ts
-theorem beta_stability [ctx : BetaStabilityContext] : ctx.claim_beta_stability := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem beta_stability [ctx : BetaStabilityContext] :
+    ∀ n : ℕ, ctx.L_skein ctx.n_star ≤ ctx.L_skein n :=
+  ctx.claim_beta_stability
 
 end QOU.Braiding

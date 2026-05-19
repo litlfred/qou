@@ -19,8 +19,16 @@ namespace QOU.Molecular
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class CoLpDualBindingContext extends QOU.Shared.MarkovTraceContext where
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_co_lp_dual_binding : Prop
+  /-- The selected CO bond order `k* ∈ {1, 2, 3}`. -/
+  k_star : ℕ
+  /-- `Φ_1` at bond order `k`. -/
+  Phi_1_k : ℕ → ℝ
+  /-- Manuscript identity: triple bond `k* = 3` is the LP-optimal
+      configuration (`Φ_1` minimum over `k ∈ {1, 2, 3}`). -/
+  claim_co_lp_dual_binding :
+    k_star = 3 ∧
+    Phi_1_k k_star ≤ Phi_1_k 1 ∧
+    Phi_1_k k_star ≤ Phi_1_k 2
 /-- **Proposition statement** (from manuscript):
 
 The LP dual of the $CO$ molecular braid selects the triple-bond
@@ -66,6 +74,10 @@ $D_0(CO) \approx 11.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/co-lp-dual-binding.ts
-theorem co_lp_dual_binding [ctx : CoLpDualBindingContext] : ctx.claim_co_lp_dual_binding := ctx.claim_co_lp_dual_binding
+theorem co_lp_dual_binding [ctx : CoLpDualBindingContext] :
+    ctx.k_star = 3 ∧
+    ctx.Phi_1_k ctx.k_star ≤ ctx.Phi_1_k 1 ∧
+    ctx.Phi_1_k ctx.k_star ≤ ctx.Phi_1_k 2 :=
+  ctx.claim_co_lp_dual_binding
 
 end QOU.Molecular
