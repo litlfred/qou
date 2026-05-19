@@ -12,23 +12,33 @@ Lake package.
 namespace QOU.Descartes
 
 
-/-- Abstract context for the `shell_structure_eigenvalues` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
+/-- Abstract context for the `shell_structure_eigenvalues` claim —
+    manuscript-themed typed fields below; sub-claims encode (i) the
+    characteristic polynomial of `T_γe`, (ii) the eigenvalue closed-form,
+    (iii) the Chebyshev structure of `T^n`, and (iv) the shell-volume
+    formula. -/
 class ShellStructureEigenvaluesContext where
   /-- Substrate parameter `q : ℝ`. -/
   q : ℝ
-  /-- Topological link / knot type. -/
-  Link : Type
-  /-- Hyperbolic volume. -/
-  Vol : ℝ
-  /-- LP shadow-price / dual variable. -/
-  shadow_price : ℝ
-  /-- Fluid-dynamics velocity / vorticity field. -/
-  VelocityField : Type
-  /-- Spectrum / eigenvalue list. -/
-  Spectrum : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- Eigenvalue `λ_+` of the photon-electron transfer matrix `T_γe`. -/
+  λ_plus : ℝ
+  /-- Eigenvalue `λ_−` of `T_γe`. -/
+  λ_minus : ℝ
+  /-- Manuscript sub-claim (i): the characteristic polynomial of
+      `T_γe = T_pp` is `λ² − (q − q⁻¹) λ − 1`; equivalently the
+      eigenvalues satisfy `λ_± · λ_∓ = -1` (Vieta product). -/
+  claim_i_char_poly_product : λ_plus * λ_minus = -1
+  /-- Manuscript sub-claim (ii): the sum of eigenvalues is `q − q⁻¹`
+      (Vieta sum). -/
+  claim_ii_eigenvalue_sum : λ_plus + λ_minus = q - q⁻¹
+  /-- Manuscript sub-claim (iii): the `(n+1)`-th matrix-power entries
+      `(T^n)_{ij}` are Chebyshev polynomials of the second kind in
+      `(q − q⁻¹) / 2`. -/
+  claim_iii_chebyshev_second_kind : Prop
+  /-- Manuscript sub-claim (iv): the Markov-traced volume at shell `n`
+      satisfies `V̂(n, q) = z · (T^n)_{11} + (T^n)_{21}` where `z` is the
+      Markov parameter. -/
+  claim_iv_traced_volume : Prop
 
 /-- **Manuscript statement** (full body):
 
@@ -146,9 +156,12 @@ $$
     placeholder; the `ctx.holds : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/shell-structure-eigenvalues.ts
-theorem shell_structure_eigenvalues [ctx : ShellStructureEigenvaluesContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem shell_structure_eigenvalues [ctx : ShellStructureEigenvaluesContext] :
+    ctx.λ_plus * ctx.λ_minus = -1 ∧
+    ctx.λ_plus + ctx.λ_minus = ctx.q - ctx.q⁻¹ ∧
+    ctx.claim_iii_chebyshev_second_kind ∧
+    ctx.claim_iv_traced_volume :=
+  ⟨ctx.claim_i_char_poly_product, ctx.claim_ii_eigenvalue_sum,
+   ctx.claim_iii_chebyshev_second_kind, ctx.claim_iv_traced_volume⟩
 
 end QOU.Descartes

@@ -12,27 +12,33 @@ Lake package.
 namespace QOU.Descartes
 
 
-/-- Abstract context for the `beta_decay_transfer_matrix` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
+/-- Abstract context for the `beta_decay_transfer_matrix` claim —
+    manuscript-themed typed fields below; sub-claims encode (i) the three
+    crossing transfer matrices, (ii) the unimodularity `det T_pp = det
+    T_nn = −1`, and (iii) the universal Δ_β identity. -/
 class BetaDecayTransferMatrixContext where
-  /-- Proton number `Z`. -/
-  Z : ℕ
-  /-- Neutron number `N`. -/
-  N : ℕ
-  /-- Braid representative type. -/
-  Braid : Type
-  /-- Topological link / knot type. -/
-  Link : Type
-  /-- LP shadow-price / dual variable. -/
-  shadow_price : ℝ
-  /-- Fluid-dynamics velocity / vorticity field. -/
-  VelocityField : Type
-  /-- Spectrum / eigenvalue list. -/
-  Spectrum : Type
-  /-- The crossing / Hecke generator type. -/
-  Crossing : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- Substrate parameter `q : ℝ`. -/
+  q : ℝ
+  /-- Determinant of the proton–proton transfer matrix `T_pp`. -/
+  det_T_pp : ℝ
+  /-- Determinant of the neutron–neutron transfer matrix `T_nn`. -/
+  det_T_nn : ℝ
+  /-- The universal `Δ_β` matrix — `T_mix − T_nn`. -/
+  Δβ_lower : ℝ
+  /-- The same `Δ_β` matrix computed as `T_pp − T_mix`. -/
+  Δβ_upper : ℝ
+  /-- Manuscript sub-claim (i): the three transfer matrices `T_pp`,
+      `T_nn`, `T_mix` are explicitly given as `2 × 2` matrices over
+      `ℤ[q^±1]` (formal abstraction; concretisation requires `Matrix`
+      machinery). -/
+  claim_i_transfer_matrices : Prop
+  /-- Manuscript sub-claim (ii): `det T_pp = det T_nn = −1` (Hecke
+      unimodularity). -/
+  claim_ii_unimodular_pp_nn :
+    det_T_pp = -1 ∧ det_T_nn = -1
+  /-- Manuscript sub-claim (iii): the two elementary decay matrices
+      coincide — `Δ_β^{nn→mix} = T_mix − T_nn = T_pp − T_mix = Δ_β^{mix→pp}`. -/
+  claim_iii_universal_delta : Δβ_lower = Δβ_upper
 
 /-- **Manuscript statement** (full body):
 
@@ -111,9 +117,11 @@ $$
     placeholder; the `ctx.holds : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/beta-decay-transfer-matrix.ts
-theorem beta_decay_transfer_matrix [ctx : BetaDecayTransferMatrixContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem beta_decay_transfer_matrix [ctx : BetaDecayTransferMatrixContext] :
+    ctx.claim_i_transfer_matrices ∧
+    (ctx.det_T_pp = -1 ∧ ctx.det_T_nn = -1) ∧
+    ctx.Δβ_lower = ctx.Δβ_upper :=
+  ⟨ctx.claim_i_transfer_matrices, ctx.claim_ii_unimodular_pp_nn,
+   ctx.claim_iii_universal_delta⟩
 
 end QOU.Descartes

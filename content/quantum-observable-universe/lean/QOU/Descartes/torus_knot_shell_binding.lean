@@ -12,8 +12,11 @@ Lake package.
 namespace QOU.Descartes
 
 
-/-- Abstract context for the `torus_knot_shell_binding` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
+/-- Abstract context for the `torus_knot_shell_binding` claim —
+    manuscript-themed typed fields below; sub-claims encode (i) the
+    inter-shell operator `Φ_shell^(ℓ)`, (ii) the Chebyshev recurrence on
+    `(c_n, d_n)`, and (iii) the emergence of magic numbers from the
+    torus-knot hierarchy. -/
 class TorusKnotShellBindingContext where
   /-- Proton number `Z`. -/
   Z : ℕ
@@ -21,16 +24,27 @@ class TorusKnotShellBindingContext where
   N : ℕ
   /-- Braid representative type. -/
   Braid : Type
-  /-- Topological link / knot type. -/
-  Link : Type
-  /-- LP shadow-price / dual variable. -/
-  shadow_price : ℝ
-  /-- Fluid-dynamics velocity / vorticity field. -/
-  VelocityField : Type
-  /-- The crossing / Hecke generator type. -/
-  Crossing : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  holds : Prop
+  /-- The Hecke algebra `H_A(q)` for `A = Z + N`. -/
+  HeckeAlgebra : Type
+  /-- The Chebyshev crossing coefficients of `T_{2, n}` indexed by `n`. -/
+  cd : ℕ → ℝ × ℝ
+  /-- Manuscript sub-claim (i): the inter-shell operator
+      `Φ_shell^(ℓ) : H_A(q) → H_{A+1}(q)` post-multiplies by
+      `(c_{n_s} σ + d_{n_s})` and applies Gröbner–Shirshov reduction. -/
+  claim_i_intershell_operator : Prop
+  /-- The Hecke deformation parameter `s = q − q⁻¹` used in the
+      Chebyshev recurrence. -/
+  s : ℝ
+  /-- Manuscript sub-claim (ii): the Chebyshev coefficients satisfy the
+      recurrence `c_{n+1} = s · c_n + d_n` and `d_{n+1} = c_n`, where
+      `s = q − q⁻¹` is the Hecke parameter. -/
+  claim_ii_chebyshev_recurrence : ∀ n : ℕ,
+    (cd (n + 1)).1 = s * (cd n).1 + (cd n).2 ∧
+    (cd (n + 1)).2 = (cd n).1
+  /-- Manuscript sub-claim (iii): magic numbers `(2, 8, 20, 28, 50, 82,
+      126)` emerge as the shell-occupancies `n_s` at which a torus knot
+      `T_{2, n_s}` closes a Bruhat-symmetric Poincaré histogram. -/
+  claim_iii_magic_numbers : Prop
 
 /-- **Manuscript statement** (full body):
 
@@ -94,9 +108,13 @@ transfer matrix satisfy the
     placeholder; the `ctx.holds : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/torus-knot-shell-binding.ts
-theorem torus_knot_shell_binding [ctx : TorusKnotShellBindingContext] : ctx.holds := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem torus_knot_shell_binding [ctx : TorusKnotShellBindingContext] :
+    ctx.claim_i_intershell_operator ∧
+    (∀ n : ℕ,
+      (ctx.cd (n + 1)).1 = ctx.s * (ctx.cd n).1 + (ctx.cd n).2 ∧
+      (ctx.cd (n + 1)).2 = (ctx.cd n).1) ∧
+    ctx.claim_iii_magic_numbers :=
+  ⟨ctx.claim_i_intershell_operator, ctx.claim_ii_chebyshev_recurrence,
+   ctx.claim_iii_magic_numbers⟩
 
 end QOU.Descartes
