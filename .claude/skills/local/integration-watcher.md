@@ -21,7 +21,7 @@ compute-chain wiring, or any future domain — runs a domain QA
 pipeline on every detected change, queues findings, attempts
 auto-discharge where possible, and asks the author for the rest.
 
-Four concrete children today:
+Five concrete children today:
 
 | Child | Domain | Goal |
 |-------|--------|------|
@@ -29,6 +29,7 @@ Four concrete children today:
 | [`canonical-watcher`](canonical-watcher.md) | Canonical-derivation discipline | No 4th calibration, no numerology, no coefficient fits (per `prop:three-calibration-discipline`) |
 | [`compute-integration-watcher`](compute-integration-watcher.md) | Cross-layer compute wiring | Every `prop:`/`thm:`/`lem:` block has a probe + production consumer (13-pattern I1-I13 audit) |
 | [`detangler-integration-watcher`](detangler-integration-watcher.md) | Structural QA (graph + density) | No new forward refs (H1-H7), sections in 3-18 block band (R1-R3), no new cross-chapter forward edges, archimedean wall preserved |
+| [`one-voice-integration-watcher`](one-voice-integration-watcher.md) | Content-block voice + fit + framework + wall placement | Scholarly voice (narrative + proof bodies), zero AI-slop, block fit to section/chapter, canonical-vs-deprecated notation, archimedean/algebraic wall placement; persists per-block `<block>.qa.json` audit reports (multi-reviewer, hash-keyed staleness) |
 
 ## Domain slots (every child must fill)
 

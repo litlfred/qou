@@ -22,7 +22,11 @@
     "migrate-lean-refs": "bun run pipeline/migrate-lean-refs.ts --write",
     "migrate-lean-refs:dry": "bun run pipeline/migrate-lean-refs.ts",
     "audit-wiring": "bun run pipeline/audit-wiring.ts",
-    "audit-wiring:strict": "bun run pipeline/audit-wiring.ts --strict"
+    "audit-wiring:strict": "bun run pipeline/audit-wiring.ts --strict",
+    "qa-sweep": "bun run pipeline/qa-sweep.ts",
+    "qa-sweep:ci": "bun run pipeline/qa-sweep.ts --ci",
+    "qa-staleness": "bun run pipeline/qa-staleness.ts",
+    "qa-staleness:ci": "bun run pipeline/qa-staleness.ts --ci"
   },
   "dependencies": {
     "@unified-latex/unified-latex-util-arguments": "^1.8.0",

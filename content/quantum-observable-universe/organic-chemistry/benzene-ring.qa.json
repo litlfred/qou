@@ -1,0 +1,196 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "ex:benzene-ring",
+  "kind": "example",
+  "paths": {
+    "ts": "quantum-observable-universe/organic-chemistry/benzene-ring.ts",
+    "md": "quantum-observable-universe/organic-chemistry/benzene-ring.md"
+  },
+  "source_hashes": {
+    "md": "ad56da723c66",
+    "ts": "3a835a98c15f"
+  },
+  "criteria": {
+    "voice-status-leak": [
+      {
+        "field_hash": {
+          "md": "ad56da723c66",
+          "ts": "3a835a98c15f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-19T16:04:11.209Z",
+        "reviewed_sha": "90784819b1f29e958bee63f055fdb0b6c498e2c9"
+      }
+    ],
+    "voice-emoji-content": [
+      {
+        "field_hash": {
+          "md": "ad56da723c66",
+          "ts": "3a835a98c15f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-19T16:04:11.209Z",
+        "reviewed_sha": "90784819b1f29e958bee63f055fdb0b6c498e2c9"
+      }
+    ],
+    "voice-first-person-work": [
+      {
+        "field_hash": {
+          "md": "ad56da723c66",
+          "ts": "3a835a98c15f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-19T16:04:11.209Z",
+        "reviewed_sha": "90784819b1f29e958bee63f055fdb0b6c498e2c9"
+      }
+    ],
+    "voice-time-stamped-notes": [
+      {
+        "field_hash": {
+          "md": "ad56da723c66",
+          "ts": "3a835a98c15f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-19T16:04:11.209Z",
+        "reviewed_sha": "90784819b1f29e958bee63f055fdb0b6c498e2c9"
+      }
+    ],
+    "voice-unicode-crash": [
+      {
+        "field_hash": {
+          "md": "ad56da723c66",
+          "ts": "3a835a98c15f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-19T16:04:11.209Z",
+        "reviewed_sha": "90784819b1f29e958bee63f055fdb0b6c498e2c9"
+      }
+    ],
+    "voice-editorializing": [
+      {
+        "field_hash": {
+          "md": "ad56da723c66",
+          "ts": "3a835a98c15f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-19T16:04:11.209Z",
+        "reviewed_sha": "90784819b1f29e958bee63f055fdb0b6c498e2c9"
+      }
+    ],
+    "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "ad56da723c66",
+          "ts": "3a835a98c15f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-19T16:04:11.209Z",
+        "reviewed_sha": "90784819b1f29e958bee63f055fdb0b6c498e2c9"
+      }
+    ],
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "ad56da723c66",
+          "ts": "3a835a98c15f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-19T16:05:16.014Z",
+        "reviewed_sha": "90784819b1f29e958bee63f055fdb0b6c498e2c9",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "ad56da723c66",
+          "ts": "3a835a98c15f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "claude-opus-4-7-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T16:16:24.574Z",
+        "reviewed_sha": "90784819b1f29e958bee63f055fdb0b6c498e2c9",
+        "notes": "uses third-person declarative scholarly voice throughout; no first/second person editorialising"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "ad56da723c66",
+          "ts": "3a835a98c15f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "claude-opus-4-7-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T16:16:24.574Z",
+        "reviewed_sha": "90784819b1f29e958bee63f055fdb0b6c498e2c9",
+        "notes": "no LLM tells; bullet-headers (Construction, Hydrogen attachment, etc.) are standard mathematical exposition not slop"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "ad56da723c66",
+          "ts": "3a835a98c15f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "claude-opus-4-7-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T16:16:24.574Z",
+        "reviewed_sha": "90784819b1f29e958bee63f055fdb0b6c498e2c9",
+        "notes": "example block interpreting def:molecular-hopf-ring; benzene is the canonical aromatic ring; correct kind and placement"
+      }
+    ]
+  },
+  "updated_at": "2026-05-19T16:16:24.574Z"
+}

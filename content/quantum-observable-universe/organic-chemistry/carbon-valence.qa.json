@@ -1,0 +1,196 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "rem:carbon-valence",
+  "kind": "remark",
+  "paths": {
+    "ts": "quantum-observable-universe/organic-chemistry/carbon-valence.ts",
+    "md": "quantum-observable-universe/organic-chemistry/carbon-valence.md"
+  },
+  "source_hashes": {
+    "md": "fbad461e0877",
+    "ts": "1705da752253"
+  },
+  "criteria": {
+    "voice-status-leak": [
+      {
+        "field_hash": {
+          "md": "fbad461e0877",
+          "ts": "1705da752253"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-19T16:04:11.209Z",
+        "reviewed_sha": "90784819b1f29e958bee63f055fdb0b6c498e2c9"
+      }
+    ],
+    "voice-emoji-content": [
+      {
+        "field_hash": {
+          "md": "fbad461e0877",
+          "ts": "1705da752253"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-19T16:04:11.209Z",
+        "reviewed_sha": "90784819b1f29e958bee63f055fdb0b6c498e2c9"
+      }
+    ],
+    "voice-first-person-work": [
+      {
+        "field_hash": {
+          "md": "fbad461e0877",
+          "ts": "1705da752253"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-19T16:04:11.209Z",
+        "reviewed_sha": "90784819b1f29e958bee63f055fdb0b6c498e2c9"
+      }
+    ],
+    "voice-time-stamped-notes": [
+      {
+        "field_hash": {
+          "md": "fbad461e0877",
+          "ts": "1705da752253"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-19T16:04:11.209Z",
+        "reviewed_sha": "90784819b1f29e958bee63f055fdb0b6c498e2c9"
+      }
+    ],
+    "voice-unicode-crash": [
+      {
+        "field_hash": {
+          "md": "fbad461e0877",
+          "ts": "1705da752253"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-19T16:04:11.209Z",
+        "reviewed_sha": "90784819b1f29e958bee63f055fdb0b6c498e2c9"
+      }
+    ],
+    "voice-editorializing": [
+      {
+        "field_hash": {
+          "md": "fbad461e0877",
+          "ts": "1705da752253"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-19T16:04:11.209Z",
+        "reviewed_sha": "90784819b1f29e958bee63f055fdb0b6c498e2c9"
+      }
+    ],
+    "framework-canonical": [
+      {
+        "field_hash": {
+          "md": "fbad461e0877",
+          "ts": "1705da752253"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-19T16:04:11.209Z",
+        "reviewed_sha": "90784819b1f29e958bee63f055fdb0b6c498e2c9"
+      }
+    ],
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "fbad461e0877",
+          "ts": "1705da752253"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-sweep.ts",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-05-19T16:05:16.014Z",
+        "reviewed_sha": "90784819b1f29e958bee63f055fdb0b6c498e2c9",
+        "notes": "block has no .lean sibling"
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "fbad461e0877",
+          "ts": "1705da752253"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "claude-opus-4-7-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T16:16:24.574Z",
+        "reviewed_sha": "90784819b1f29e958bee63f055fdb0b6c498e2c9",
+        "notes": "scholarly third-person; declarative present tense"
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "fbad461e0877",
+          "ts": "1705da752253"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "claude-opus-4-7-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T16:16:24.574Z",
+        "reviewed_sha": "90784819b1f29e958bee63f055fdb0b6c498e2c9",
+        "notes": "numbered list (1/2/3) is a substantive taxonomy of carbon's three properties, not a cadence crutch; each item carries genuine content"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "fbad461e0877",
+          "ts": "1705da752253"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "claude-opus-4-7-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T16:16:24.574Z",
+        "reviewed_sha": "90784819b1f29e958bee63f055fdb0b6c498e2c9",
+        "notes": "remark interpreting def:covalent-bond-types; carbon valence is the lynchpin of organic chemistry; correct kind and placement"
+      }
+    ]
+  },
+  "updated_at": "2026-05-19T16:16:24.574Z"
+}

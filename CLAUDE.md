@@ -260,6 +260,9 @@ When a user request arrives, route to the right skill(s):
 | "fix rendering / rendering fix / quick fix" | `local/rendering-fixes` | reader |
 | "check markdown render / GitHub view / proof markdown" | `local/markdown-render-check` | reader |
 | "one voice / status leak / TODO in prose / strip emoji / scholarly voice" | `local/one-voice-audit` (sweep) + `local/one-voice-style-guide` (author voice profile) | collaborator |
+| "watch one-voice / voice + AI slop + fit + framework + wall / QA reports per block / staleness map" | `local/one-voice-integration-watcher` | collaborator |
+| "/integration-watch one-voice / voice" | `local/integration-watch` (dispatcher → one-voice-integration-watcher child) | collaborator |
+| "QA report / .qa.json / multi-reviewer / hash staleness / per-block audit sidecar" | `content/pipeline/qa-sweep.ts` + `qa-staleness.ts` (CLI), `folio-assistant/schemas/block-qa.ts` (schema) | collaborator |
 | "coordinate PRs / sibling PRs / cross-PR / cherry-pick / inconsistent finding" | `local/coordinate` (or `/coordinate` slash command) | collaborator |
 | "watch main / watch upstream / watch this PR / watch branch X" | `local/watch` | reader |
 | "session todos / work plan / what's left / track progress" | `local/todo-manager` (session work-plan, TodoWrite) | reader |
