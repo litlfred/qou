@@ -1,0 +1,103 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-19T03:19:36.526375+00:00",
+  "commitSha": "c930a8b42d278b6eb36bf8b4f6fc092711124a5a",
+  "assertions": [
+    {
+      "name": "snappy_available",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "unit": "boolean",
+      "source": "snappy.version() = 3.3.2"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 2821,
+  "computation": "delta-lambda-jsj-phase3",
+  "scriptFile": "delta_lambda_jsj_phase3.py",
+  "scriptHash": "775664dc0a48",
+  "scriptCommitSha": "unknown",
+  "description": "Phase 3 of the closed-forms-first-principles workplan: tests the JSJ-decomposition closure form Δ_λ(K) = Σ_P c_λ^(P) · Vol_hyp(P) on D, T, ³He, ⁴He. Uses SnapPy to extract hyperbolic volumes of canonical braid closures, then tests separability V(K) = Vol(K) against empirical |Δ_λ*|.",
+  "parameters": {
+    "snappy_version": "3.3.2",
+    "q0": "1.1099785955541805"
+  },
+  "data": {
+    "braids": {
+      "D": {
+        "word_length": 23,
+        "n_strands": 6
+      },
+      "T": {
+        "word_length": 35,
+        "n_strands": 9
+      },
+      "3He": {
+        "word_length": 35,
+        "n_strands": 9
+      },
+      "4He": {
+        "word_length": 47,
+        "n_strands": 12
+      }
+    },
+    "jsj_volumes": {
+      "D": {
+        "word_length": 23,
+        "n_strands": 6,
+        "n_components": 2,
+        "hyperbolic_volume": 12.776095278687214,
+        "n_tetrahedra": 20,
+        "simplification": "global→level→global→level→global"
+      },
+      "T": {
+        "word_length": 35,
+        "n_strands": 9,
+        "n_components": 3,
+        "hyperbolic_volume": 12.776095552543637,
+        "n_tetrahedra": 31,
+        "simplification": "global→level→global→level→global"
+      },
+      "3He": {
+        "word_length": 35,
+        "n_strands": 9,
+        "n_components": 1,
+        "hyperbolic_volume": 12.554085624045491,
+        "n_tetrahedra": 30,
+        "simplification": "global→level→global→level→global"
+      },
+      "4He": {
+        "word_length": 47,
+        "n_strands": 12,
+        "n_components": 2,
+        "hyperbolic_volume": 12.554075323566847,
+        "n_tetrahedra": 49,
+        "simplification": "global→level→global→level→global"
+      }
+    },
+    "empirical_best_abs_delta": {
+      "D": 22.95944766931559,
+      "T": 366.32690098133276,
+      "3He": 210.97082881830084,
+      "4He": 3451.1436910977163
+    },
+    "delta_over_vol_ratios": {
+      "D": 1.797062965522495,
+      "T": 28.67283666396808,
+      "3He": 16.804953792430528,
+      "4He": 274.90226099083037
+    },
+    "ratio_stats": {
+      "mean": 80.54427860318788,
+      "min": 1.797062965522495,
+      "max": 274.90226099083037,
+      "max_over_min": 152.97308233765904,
+      "rel_std": 1.3981880552546044,
+      "n_valid": 4
+    },
+    "verdict": "MISS — rel_std = 1.398, V(K) = Vol(K) insufficient"
+  }
+}
