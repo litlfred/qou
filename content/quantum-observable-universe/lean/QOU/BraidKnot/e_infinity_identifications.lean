@@ -41,17 +41,28 @@ class EInfinityIdentificationsContext where
       of `page_pairing 0`, which equals `|tr_M(T_w)|`). -/
   trM_T_w_abs : ℝ
   claim_descended : page_pairing 0 = trM_T_w_abs
+  /-- Number of brane indices `i` in the single-generator brane tower. -/
+  n_branes : ℕ
+  /-- Single-generator brane contribution `Φ_q(|V̂_i|)` at index `i`. -/
+  brane_pairing : ℕ → ℝ
   /-- Manuscript term 2 — single-generator brane tower identification:
-      `<tr_M, E_∞^{1, *}> = Σ_i Φ_q(|V̂_i|)` (partial; stated as a
-      Prop because the Φ_q sum varies per knot). -/
-  claim_brane_tower_single : Prop
-  /-- Manuscript term 3 — pairwise-product brane tower (partial). -/
-  claim_brane_tower_pairwise : Prop
+      `<tr_M, E_∞^{1, *}> = Σ_i Φ_q(|V̂_i|)`. -/
+  claim_brane_tower_single :
+    page_pairing 1 = (Finset.range n_branes).sum (fun i => brane_pairing i)
+  /-- Pairwise-product brane contribution `Φ_q(|V̂_i| · |V̂_j|)`. -/
+  brane_pairwise : ℕ → ℕ → ℝ
+  /-- Manuscript term 3 — pairwise-product brane tower identification:
+      `<tr_M, E_∞^{2, *}> = Σ_{i,j} Φ_q(|V̂_i| · |V̂_j|)`. -/
+  claim_brane_tower_pairwise :
+    page_pairing 2 = (Finset.range n_branes).sum (fun i =>
+      (Finset.range n_branes).sum (fun j => brane_pairwise i j))
   /-- Manuscript term 4 (DERIVED) — Frobenius co-Casimir is the
       designated `frobenius_co_casimir` field. (No additional Prop
       needed: the identification IS the field.) -/
-  /-- Manuscript term 5 — chirality / sign factor (partial). -/
-  claim_chirality_sign : Prop
+  /-- Chirality / sign factor of the mass-formula term 5 (must be ±1). -/
+  chirality_sign : ℤ
+  /-- Manuscript term 5 — chirality / sign factor: `chirality_sign ∈ {±1}`. -/
+  claim_chirality_sign : chirality_sign = 1 ∨ chirality_sign = -1
   /-- Manuscript term 6 — Wenzl-bridge `y_λ` correction (conjectural). -/
   claim_wenzl_bridge_correction : Prop
 
@@ -74,9 +85,12 @@ theorem e_infinity_identifications [ctx : EInfinityIdentificationsContext] :
       (Finset.range ctx.n_pages).sum (fun p => ctx.page_pairing p) +
       ctx.ribbon_closure + ctx.frobenius_co_casimir ∧
     ctx.page_pairing 0 = ctx.trM_T_w_abs ∧
-    ctx.claim_brane_tower_single ∧
-    ctx.claim_brane_tower_pairwise ∧
-    ctx.claim_chirality_sign ∧
+    (ctx.page_pairing 1 =
+      (Finset.range ctx.n_branes).sum (fun i => ctx.brane_pairing i)) ∧
+    (ctx.page_pairing 2 =
+      (Finset.range ctx.n_branes).sum (fun i =>
+        (Finset.range ctx.n_branes).sum (fun j => ctx.brane_pairwise i j))) ∧
+    (ctx.chirality_sign = 1 ∨ ctx.chirality_sign = -1) ∧
     ctx.claim_wenzl_bridge_correction :=
   ⟨ctx.claim_mass_formula_unified, ctx.claim_descended,
    ctx.claim_brane_tower_single, ctx.claim_brane_tower_pairwise,

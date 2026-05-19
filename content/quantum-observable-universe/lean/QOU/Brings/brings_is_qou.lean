@@ -21,9 +21,11 @@ class BringsIsQouContext where
   /-- Manuscript sub-claim (i) — Quantum universe: `C = Rep(SU_q(2))`
       over `R` with `A = O_q(SU(2))` and forgetful fibre functor `τ`. -/
   claim_i_quantum_universe : Prop
-  /-- Manuscript sub-claim (ii) — Observability:
-      `Hom(𝟙, Ad(A)) = 0` (quantum Schur lemma). -/
-  claim_ii_observability : Prop
+  /-- Dimension of the hom-space `Hom(𝟙, Ad(A))`. -/
+  hom_one_to_ad_A_dim : ℕ
+  /-- Manuscript sub-claim (ii) — Observability: `dim Hom(𝟙, Ad(A)) = 0`
+      (quantum Schur lemma — the adjoint action has no invariants). -/
+  claim_ii_observability : hom_one_to_ad_A_dim = 0
   /-- Obstruction classes `κ_n` indexed by jet level. -/
   kappa : ℕ → ℝ
   /-- Manuscript sub-claim (iii) — Yekutieli lifting: every
@@ -59,7 +61,7 @@ to a quantum observable universe over $R$ (with $30 \in R^{\times}$):
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/brings-is-qou.ts
 theorem brings_is_qou [ctx : BringsIsQouContext] :
     ctx.claim_i_quantum_universe ∧
-    ctx.claim_ii_observability ∧
+    ctx.hom_one_to_ad_A_dim = 0 ∧
     (∀ n : ℕ, ctx.kappa n ≠ 0) ∧
     (ctx.g = 4 ∧ ctx.chi_A = 2 - 2 * (ctx.g : ℤ) ∧ ctx.chi_A = -6) ∧
     (ctx.n_branch_points = 6 ∧ ctx.R_tot = 14) :=
