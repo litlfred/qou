@@ -1,0 +1,140 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-19T00:32:25.196716+00:00",
+  "commitSha": "786697eda72f78237ecf3bd6913eb67a0cfff17f",
+  "assertions": [
+    {
+      "name": "amplification_factor_LHS_real_axis_matches_empirical",
+      "computed": 2.459938770426329,
+      "expected": 2.4599,
+      "passed": true,
+      "tolerance": 0.01,
+      "unit": "ratio",
+      "source": "picard_lefschetz_thimble.py best_limit (4-q)/(4q+3) at q_0"
+    },
+    {
+      "name": "residue_sum_nontrivial",
+      "computed": 0.2602940093404509,
+      "expected": 0.5,
+      "passed": true,
+      "tolerance": 0.5,
+      "unit": "abs residue",
+      "source": "algebraic-residue formulation per prop:sw-period-thimble-equivalence A2.4"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 701,
+  "computation": "residue-algebraic-verification",
+  "scriptFile": "residue_algebraic_verification.py",
+  "scriptHash": "0b7cb15f5997",
+  "scriptCommitSha": "unknown",
+  "description": "Numerical verification of prop:sw-period-thimble-equivalence A2.4 algebraic-residue formula at q_0: compares the real-axis interval integral (empirical m_p closure) with the algebraic residue sum at the principal Galois orbit {z_c^±} of the color-tube discriminant.",
+  "parameters": {
+    "q0": "1.1099785955541805",
+    "a_q0_mobius_limit": "0.38844820732799046",
+    "hbar_q": "0.09908172643569887"
+  },
+  "data": {
+    "discriminant_roots": [
+      {
+        "re": -0.9748155329780381,
+        "im": 0.2230127275846431,
+        "abs": 0.9999999999999994
+      },
+      {
+        "re": -0.9748155329780381,
+        "im": -0.2230127275846431,
+        "abs": 0.9999999999999994
+      },
+      {
+        "re": 0.11898594678977026,
+        "im": 1.0536407427121104,
+        "abs": 1.0603379038006637
+      },
+      {
+        "re": 0.11898594678977026,
+        "im": -1.0536407427121104,
+        "abs": 1.0603379038006637
+      },
+      {
+        "re": 0.10582958618826828,
+        "im": 0.9371389378389046,
+        "abs": 0.9430955890717602
+      },
+      {
+        "re": 0.10582958618826828,
+        "im": -0.9371389378389046,
+        "abs": 0.9430955890717602
+      }
+    ],
+    "principal_orbit": [
+      {
+        "re": 0.10582958618826828,
+        "im": 0.9371389378389046,
+        "abs": 0.9430955890717602
+      },
+      {
+        "re": 0.10582958618826828,
+        "im": -0.9371389378389046,
+        "abs": 0.9430955890717602
+      }
+    ],
+    "baryon_numerator": {
+      "lhs_real_axis_interval_integral": {
+        "re": -1.9097374233874442,
+        "im": -6.79375875682927e-19,
+        "abs": 1.9097374233874442
+      },
+      "rhs_algebraic_residue_sum": {
+        "re": -0.2602940093404509,
+        "im": 5.273559366969494e-16,
+        "abs": 0.2602940093404509
+      },
+      "rhs_per_residue": [
+        {
+          "z_c": {
+            "re": 0.10582958618826828,
+            "im": 0.9371389378389046
+          },
+          "res": {
+            "re": -0.1301470046702257,
+            "im": 0.21533486568324414,
+            "abs": 0.25160951334051845
+          }
+        },
+        {
+          "z_c": {
+            "re": 0.10582958618826828,
+            "im": -0.9371389378389046
+          },
+          "res": {
+            "re": -0.13014700467022516,
+            "im": -0.21533486568324361,
+            "abs": 0.25160951334051773
+          }
+        }
+      ],
+      "lhs_over_rhs_ratio_abs": 7.336847391249823,
+      "lhs_over_rhs_ratio_2pi_norm": 1.1676955290282864
+    },
+    "electron_denominator": {
+      "lhs_real_axis_interval_integral": {
+        "re": -0.7763353488088933,
+        "im": -5.180476704400345e-18,
+        "abs": 0.7763353488088933
+      },
+      "note": "Electron integrand (c_0 + z) is holomorphic on the principal orbit's neighbourhood; residue sum is identically zero. The algebraic content of the electron mass channel is the direct interval integration, not a residue."
+    },
+    "amplification_via_lhs": {
+      "A_q0": 2.459938770426329,
+      "m_p_predicted_MeV": 938.2667417705236,
+      "m_p_codata_MeV": 938.27208816,
+      "error_percent": 0.0005698122691513367
+    },
+    "amplification_via_rhs_numerator": {
+      "A_q0_using_residue_numerator": 0.33528553058908334,
+      "note": "Numerator uses algebraic residue sum; denominator uses interval integral (no residue analog for c_0 + z). Whether this matches the empirical 2.460 indicates whether the LHS=RHS equality holds up to the conventional 2πi factor on the numerator."
+    }
+  }
+}

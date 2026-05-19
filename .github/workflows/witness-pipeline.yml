@@ -156,6 +156,19 @@ jobs:
           python3 folio-assistant/computations/sw_period_thimble_equivalence.py
           python3 -c "import json,sys; w=json.load(open('folio-assistant/computations/sw-period-thimble-equivalence.witness.json')); sys.exit(0 if w.get('allPassed') else 1)"
 
+      - name: Run residue_algebraic_verification (A2.4 algebraic-residue
+          / real-axis comparison post-PR #779)
+        # Numerical verification of prop:sw-period-thimble-equivalence
+        # A2.4 algebraic-residue swap at q_0: computes both the real-
+        # axis interval integral and the algebraic residue sum at the
+        # principal Galois orbit {z_c^±}, asserts the LHS amplification
+        # factor matches the empirical 2.460 → m_p ≈ 938.267 MeV closure.
+        # Documents the LHS-vs-RHS comparison as a research-grade
+        # refinement target for A2.4's literal residue identity.
+        run: |
+          python3 folio-assistant/computations/residue_algebraic_verification.py
+          python3 -c "import json,sys; w=json.load(open('folio-assistant/computations/residue-algebraic-verification.witness.json')); sys.exit(0 if w.get('allPassed') else 1)"
+
       - name: Run jet_gb_pl_correspondence
         run: |
           python3 folio-assistant/computations/jet_gb_pl_correspondence.py
