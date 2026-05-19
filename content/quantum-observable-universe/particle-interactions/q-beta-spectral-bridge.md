@@ -177,8 +177,8 @@ and verified numerically at 50 dps via
 
 | Quantity at $q_0 = 1.109978595554181$ | Value (50 dps) |
 |---|---|
-| $h = q - q^{-1}$ | $0.2090603219898795$ |
-| $z = 1/(\sqrt q + 1/\sqrt q)$ | $0.4993203340335983$ |
+| $h = q - q^{-1}$ | $:val[gram_h]{precision=15}$ |
+| $z = 1/(\sqrt q + 1/\sqrt q)$ | $:val[gram_z]{precision=15}$ |
 | Form A: $\lvert\Delta(\mathrm{net})\rvert$ | $0.1872072128746234$ |
 | Form B: $\ln(1 + z h)$ | $0.0992913985971513$ |
 | Predicted bridge $1/z + (z-1)h/(2z)$ | $1.897907634272056$ |

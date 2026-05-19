@@ -545,6 +545,18 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
     // Backed by the rebuilt TR_M[5] Markov trace.  Witnesses
     // regenerated 2026-05-19 after the pyhecke.gram bug fix.
 
+    gram_h: Object.freeze({
+      name: "gram_h",
+      description:
+        "Hecke parameter h = q - q^{-1} = HA at q_0 — substrate Hecke-algebra structure constant.",
+      symbol: "h",
+      witnessFile:
+        "folio-assistant/computations/gram-matrix-dual.witness.json",
+      witnessPath: "parameters.HA",
+      defaultPrecision: 5,
+      units: null,
+    }),
+
     gram_z: Object.freeze({
       name: "gram_z",
       description:
