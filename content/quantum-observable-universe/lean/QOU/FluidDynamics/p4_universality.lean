@@ -13,17 +13,27 @@ CLAUDE.md §1.
 namespace QOU.FluidDynamics
 
 
-/-- Abstract context for the `p4_universality` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
+/-- Abstract context for the `p4_universality` claim —
+    manuscript-themed typed fields below; the critical exponent
+    `α = 4/3` depends only on three categorical invariants. -/
 class P4UniversalityContext where
-  /-- The categorical object / monoidal structure. -/
+  /-- The categorical object `A` of the QOU `(C, A, τ)`. -/
   CategoricalObj : Type
-  /-- Manuscript sub-claim (i) — The Euler characteristic $\chi(A)$ of the Frobenius--Hopf object (equivalently, the genus of the base manifold in the.... -/
-  claim_i : Prop
-  /-- Manuscript sub-claim (ii) — The spatial dimension $d = 3$ (fixed by the contact structure). -/
-  claim_ii : Prop
-  /-- Manuscript sub-claim (iii) — The rank of the gauge group ($\mathrm{SU}(2)$, rank 1). -/
-  claim_iii : Prop
+  /-- The critical exponent `α : ℝ` (manuscript value `4/3`). -/
+  α : ℝ
+  /-- The spatial dimension `d`. -/
+  d : ℕ
+  /-- The gauge-group rank. -/
+  gauge_rank : ℕ
+  /-- Manuscript sub-claim (i) — `α` depends only on the Euler
+      characteristic `χ(A)` (equivalently the base-manifold genus). -/
+  claim_i_euler_char_only : Prop
+  /-- Manuscript sub-claim (ii) — spatial dimension is `d = 3`
+      (fixed by the contact structure). -/
+  claim_ii_dim_three : d = 3
+  /-- Manuscript sub-claim (iii) — gauge-group rank is `1`
+      (`SU(2)`). -/
+  claim_iii_gauge_rank_one : gauge_rank = 1
 
 /-- **Content statement** (from manuscript):
 
@@ -39,7 +49,8 @@ $(\mathbf{C}, A, \tau)$.
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/p4-universality.ts
 theorem p4_universality [ctx : P4UniversalityContext] :
-    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii :=
-  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii⟩
+    ctx.claim_i_euler_char_only ∧ ctx.d = 3 ∧ ctx.gauge_rank = 1 :=
+  ⟨ctx.claim_i_euler_char_only, ctx.claim_ii_dim_three,
+   ctx.claim_iii_gauge_rank_one⟩
 
 end QOU.FluidDynamics

@@ -13,20 +13,28 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.FluidDynamics
 
 
-/-- Abstract context for the `helicity_conservation` claim — manuscript-named
-    typed fields below; the `holds` field carries the `Prop`-valued
-    claim of the lemma. -/
+/-- Abstract context for the `helicity_conservation` claim —
+    manuscript-themed typed fields below; sub-claims encode (i)
+    `dℋ_q/dt = 0` under the quantum Euler equation, (ii)
+    Călugăreanu–White–Fuller decomposition, (iii) Jones polynomial
+    refinement, (iv) classical Moffatt-helicity limit. -/
 class HelicityConservationContext where
-  /-- The braid representative type. -/
-  Braid : Type
-  /-- Manuscript sub-claim (i) — Conservation. -/
-  claim_i : Prop
-  /-- Manuscript sub-claim (ii) — Decomposition. -/
-  claim_ii : Prop
-  /-- Manuscript sub-claim (iii) — Jones polynomial refinement. -/
-  claim_iii : Prop
-  /-- Manuscript sub-claim (iv) — Classical limit. -/
-  claim_iv : Prop
+  /-- Substrate parameter `q : ℝ`. -/
+  q : ℝ
+  /-- The categorical helicity `ℋ_q` as a function of time. -/
+  H_q : ℝ → ℝ
+  /-- Manuscript sub-claim (i) — Conservation: `dℋ_q/dt = 0`. -/
+  claim_i_conservation : Prop
+  /-- Manuscript sub-claim (ii) — Călugăreanu–White–Fuller
+      decomposition `ℋ_q = Wr_q + Tw_q + 2·lk_q` for each filament. -/
+  claim_ii_CWF_decomposition : Prop
+  /-- Manuscript sub-claim (iii) — Jones-polynomial refinement: the
+      Jones polynomial separates classes where `ℋ_q` alone does not. -/
+  claim_iii_jones_refinement : Prop
+  /-- Manuscript sub-claim (iv) — Classical limit: as `q → 1`,
+      `ℋ_q` reduces to the classical Moffatt helicity
+      `H = ∫ v · ω dV`. -/
+  claim_iv_classical_limit : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -43,7 +51,11 @@ $\{\varrho_1, \ldots, \varrho_n\}$ as
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/helicity-conservation.ts
 theorem helicity_conservation [ctx : HelicityConservationContext] :
-    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii ∧ ctx.claim_iv :=
-  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii, ctx.claim_iv⟩
+    ctx.claim_i_conservation ∧
+    ctx.claim_ii_CWF_decomposition ∧
+    ctx.claim_iii_jones_refinement ∧
+    ctx.claim_iv_classical_limit :=
+  ⟨ctx.claim_i_conservation, ctx.claim_ii_CWF_decomposition,
+   ctx.claim_iii_jones_refinement, ctx.claim_iv_classical_limit⟩
 
 end QOU.FluidDynamics

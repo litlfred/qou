@@ -13,18 +13,27 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.FluidDynamics
 
 
-/-- Abstract context for the `q_ns_wellposedness` claim — manuscript-named
-    typed fields below; the `holds` field carries the `Prop`-valued
-    claim of the lemma. -/
+/-- Abstract context for the `q_ns_wellposedness` claim —
+    manuscript-themed typed fields below; sub-claims encode (i)
+    categorical smoothness of `t ↦ v(t)`, (ii) energy inequality,
+    and (iii) `Δ_q`-eigencomponent spectral decay. -/
 class QNsWellposednessContext where
   /-- The substrate parameter `q : ℝ`. -/
   q : ℝ
-  /-- Manuscript sub-claim (i) — Smoothness in $\mathbf{C}$: the map $t \mapsto v(t) \in \Omega^1(A)$ is smooth (infinitely differentiable in the inte.... -/
-  claim_i : Prop
-  /-- Manuscript sub-claim (ii) — Energy inequality: for all $t \geq 0$,. -/
-  claim_ii : Prop
-  /-- Manuscript sub-claim (iii) — Spectral decay: the $\Delta_q$-eigencomponents $\hat{v}_k \in V_k \subset \Omega^1(A)$ (where $\Delta_q|_{V_k} = [k]_.... -/
-  claim_iii : Prop
+  q_gt_one : 1 < q
+  /-- The kinematic viscosity `ν_q = ½(1 − q⁻¹) > 0`. -/
+  ν_q : ℝ
+  ν_q_eq : ν_q = (1 - q⁻¹) / 2
+  ν_q_pos : 0 < ν_q
+  /-- Manuscript sub-claim (i) — categorical smoothness:
+      `t ↦ v(t) ∈ Ω¹(A)` is smooth (infinitely differentiable). -/
+  claim_i_smoothness : Prop
+  /-- Manuscript sub-claim (ii) — energy inequality:
+      `||v(t)||²_{L²} + 2 ν_q ∫_0^t ||∇v(s)||²_{L²} ds ≤ ||v(0)||²_{L²}`. -/
+  claim_ii_energy_inequality : Prop
+  /-- Manuscript sub-claim (iii) — spectral decay: the
+      `Δ_q`-eigencomponents `v̂_k ∈ V_k` decay exponentially in `[k]_q`. -/
+  claim_iii_spectral_decay : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -43,7 +52,10 @@ viscosity.
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/q-ns-wellposedness.ts
 theorem q_ns_wellposedness [ctx : QNsWellposednessContext] :
-    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii :=
-  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii⟩
+    ctx.claim_i_smoothness ∧
+    ctx.claim_ii_energy_inequality ∧
+    ctx.claim_iii_spectral_decay :=
+  ⟨ctx.claim_i_smoothness, ctx.claim_ii_energy_inequality,
+   ctx.claim_iii_spectral_decay⟩
 
 end QOU.FluidDynamics

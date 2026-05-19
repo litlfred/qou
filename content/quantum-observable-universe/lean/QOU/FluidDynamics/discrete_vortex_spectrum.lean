@@ -13,22 +13,31 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.FluidDynamics
 
 
-/-- Abstract context for the `discrete_vortex_spectrum` claim — manuscript-named
-    typed fields below; the `holds` field carries the `Prop`-valued
-    claim of the lemma. -/
+/-- Abstract context for the `discrete_vortex_spectrum` claim —
+    manuscript-themed typed fields below; sub-claims encode (i)
+    discrete `q`-Laplacian eigenvalues, (ii) spin-labelled intensity
+    levels, (iii) ladder-mode transitions, and (iv) the classical
+    Kelvin-wave limit. -/
 class DiscreteVortexSpectrumContext where
   /-- The substrate parameter `q : ℝ`. -/
   q : ℝ
-  /-- The braid representative type. -/
-  Braid : Type
-  /-- Manuscript sub-claim (i) — The eigenvalues of $\Delta_q$ restricted to $\varrho$ form a discrete spectrum $\{\lambda_k^{(q)}\}_{k \geq 1}$ with. -/
-  claim_i : Prop
-  /-- Manuscript sub-claim (ii) — The intensity levels of the vortex are indexed by the spin label $j \in \frac{1}{2}\mathbb{Z}_{\geq 0}$ of the $\math.... -/
-  claim_ii : Prop
-  /-- Manuscript sub-claim (iii) — Transitions between intensity levels $j \to j'$ are mediated by the ladder modes $E_\pm$ of the weight-space decompos.... -/
-  claim_iii : Prop
-  /-- Manuscript sub-claim (iv) — In the classical limit $q \to 1$: - $[k]_q \to k$ and the Kelvin-wave spectrum is recovered. -/
-  claim_iv : Prop
+  /-- The substrate vortex filament length `L : ℝ`. -/
+  L : ℝ
+  /-- The discrete spectrum `λ_k^{(q)} : ℕ → ℝ`. -/
+  λ : ℕ → ℝ
+  /-- Manuscript sub-claim (i) — discrete eigenvalues: the eigenvalues
+      of `Δ_q` restricted to `ϱ` form a discrete spectrum
+      `{λ_k^{(q)}}_{k ≥ 1}` with `[k]_q` ordering. -/
+  claim_i_discrete_eigenvalues : Prop
+  /-- Manuscript sub-claim (ii) — spin-labelled intensity levels:
+      `j ∈ ½ℤ_{≥0}` of the `𝔰𝔲(2)` weight-space decomposition. -/
+  claim_ii_spin_levels : Prop
+  /-- Manuscript sub-claim (iii) — ladder transitions mediated by
+      `E_±` of the weight-space decomposition. -/
+  claim_iii_ladder_transitions : Prop
+  /-- Manuscript sub-claim (iv) — classical limit:
+      `[k]_q → k` as `q → 1`, recovering the Kelvin-wave spectrum. -/
+  claim_iv_classical_kelvin_limit : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -43,7 +52,11 @@ sections of the normal bundle $N_\varrho$.  Then:
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.ts
 theorem discrete_vortex_spectrum [ctx : DiscreteVortexSpectrumContext] :
-    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii ∧ ctx.claim_iv :=
-  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii, ctx.claim_iv⟩
+    ctx.claim_i_discrete_eigenvalues ∧
+    ctx.claim_ii_spin_levels ∧
+    ctx.claim_iii_ladder_transitions ∧
+    ctx.claim_iv_classical_kelvin_limit :=
+  ⟨ctx.claim_i_discrete_eigenvalues, ctx.claim_ii_spin_levels,
+   ctx.claim_iii_ladder_transitions, ctx.claim_iv_classical_kelvin_limit⟩
 
 end QOU.FluidDynamics
