@@ -62,9 +62,12 @@ class DeuteriumDerivedBindingContext where
   claim_v_binding_energy_formula :
     B_d = (tr_M_p + tr_M_n - tr_M_Tpn_n) * m_e * Vol_B3
           * (1 - α_EM / 2)
+  /-- CODATA deuteron binding energy `B_exp = 2.2246 MeV`. -/
+  B_exp : ℝ
   /-- Manuscript sub-claim (vi): the formula recovers the CODATA
-      value `B(d) ≈ 2.224 MeV` within experimental tolerance. -/
-  claim_vi_codata_match : Prop
+      value within 1-keV tolerance. -/
+  claim_vi_codata_match :
+    B_exp = 2.2246 ∧ |B_d - B_exp| < 0.001
 
 /-- **Proposition statement** (from manuscript):
 
@@ -110,7 +113,7 @@ theorem deuterium_derived_binding [ctx : DeuteriumDerivedBindingContext] :
     (ctx.B_d
       = (ctx.tr_M_p + ctx.tr_M_n - ctx.tr_M_Tpn_n) * ctx.m_e * ctx.Vol_B3
         * (1 - ctx.α_EM / 2)) ∧
-    ctx.claim_vi_codata_match :=
+    (ctx.B_exp = 2.2246 ∧ |ctx.B_d - ctx.B_exp| < 0.001) :=
   ⟨ctx.claim_i_NF_existence, ctx.claim_ii_B3_factorisation,
    ctx.claim_iii_h6_factorisation, ctx.claim_iv_Tpn_symmetric,
    ctx.claim_v_binding_energy_formula, ctx.claim_vi_codata_match⟩

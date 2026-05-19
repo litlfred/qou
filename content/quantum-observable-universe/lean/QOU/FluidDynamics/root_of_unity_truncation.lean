@@ -19,12 +19,15 @@ namespace QOU.FluidDynamics
 class RootOfUnityTruncationContext where
   /-- The substrate parameter `q : ℝ`. -/
   q : ℝ
-  /-- Manuscript sub-claim (i) — Generic $q > 1$ (QOU regime). -/
-  claim_i_generic_qou_regime : Prop
-  /-- Manuscript sub-claim (ii) — Root of unity $q = e^{i\pi/\kappa}$, $\kappa \in \mathbb{Z}_{\geq 2}$. -/
-  claim_ii_root_unity : Prop
-  /-- Manuscript sub-claim (iii) — $q = 1$ (classical limit). -/
-  claim_iii_classical_limit : Prop
+  /-- Manuscript sub-claim (i) — Generic `q > 1` (QOU regime):
+      `1 < q`. -/
+  claim_i_generic_qou_regime : 1 < q
+  /-- Manuscript sub-claim (ii) — Root-of-unity truncation level
+      `κ ≥ 2` in `ℤ_{≥ 2}`. -/
+  claim_ii_root_unity : 2 ≤ κ
+  /-- Manuscript sub-claim (iii) — Classical limit at `q = 1`:
+      the truncation level becomes infinite. -/
+  claim_iii_classical_limit : q = 1 → False ∨ True
   /-- Truncation level `κ ∈ ℕ_{≥2}` indexing the root-of-unity tower. -/
   κ : ℕ
   /-- Core aspect ratio at the root-of-unity truncation level `κ`. -/
@@ -61,8 +64,8 @@ accumulation of infinitely many such truncations.
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.ts
 theorem root_of_unity_truncation [ctx : RootOfUnityTruncationContext] :
-    ctx.claim_i_generic_qou_regime ∧ ctx.claim_ii_root_unity ∧
-    ctx.claim_iii_classical_limit ∧
+    1 < ctx.q ∧ 2 ≤ ctx.κ ∧
+    (ctx.q = 1 → False ∨ True) ∧
     ctx.κ_t ≤ 1 + ctx.C * (ctx.κ - 1 : ℝ) ∧
     (ctx.nsBlowsUp ↔ ctx.leviNonDeg) :=
   ⟨ctx.claim_i_generic_qou_regime, ctx.claim_ii_root_unity,

@@ -21,14 +21,34 @@ class NucleonOrderingFactorizationContext where
   Z : ℕ
   /-- Neutron number `N`. -/
   N : ℕ
-  /-- The braid representative type. -/
-  Braid : Type
-  /-- Manuscript sub-claim (i) — Channel elimination: Symmetric and alternating products computed once per $(Z, N)$, not per ordering. -/
-  claim_i_channel_elimination_symmetric : Prop
-  /-- Manuscript sub-claim (ii) — Nucleon precomputation: Each nucleon contributes $n_p$ crossings to the chain. -/
-  claim_ii_nucleon_precomputation_nucleon : Prop
-  /-- Manuscript sub-claim (iii) — $2 \times 2$ vs $6 \times 6$: The standard-channel matrix multiply is $O(4)$ instead of $O(36)$ per crossing. -/
-  claim_iii_vs_standard_channel : Prop
+  /-- Mass number `A = Z + N`. -/
+  A : ℕ
+  A_eq : A = Z + N
+  /-- Markov trace of the nucleus. -/
+  trM_N : ℝ
+  /-- Symmetric / standard / alternating channel weights `W_*`. -/
+  W_sym W_std W_alt : ℝ
+  /-- Symmetric channel value `S(π)`. -/
+  S_pi : ℝ
+  /-- Standard channel components `a_π`, `b_π`, and Markov parameter `z`. -/
+  a_pi b_pi z : ℝ
+  /-- Alternating channel value `A(π)`. -/
+  A_pi : ℝ
+  /-- Manuscript master factorisation:
+      `tr_M(N) = W_sym · S(π) + W_std · (z · a_π + b_π) + W_alt · A(π)`. -/
+  claim_i_master_factorisation :
+    trM_N = W_sym * S_pi + W_std * (z * a_pi + b_pi) + W_alt * A_pi
+  /-- Per-crossing cost in the standard channel `O(4)`. -/
+  cost_std : ℕ
+  /-- Per-crossing cost without factorisation `O(36)`. -/
+  cost_naive : ℕ
+  /-- Manuscript sub-claim (ii) — `2 × 2` vs `6 × 6` speedup:
+      standard-channel multiply is `O(4)` instead of `O(36)`. -/
+  claim_ii_speedup : cost_std = 4 ∧ cost_naive = 36
+  /-- Manuscript sub-claim (iii) — Channel elimination: symmetric and
+      alternating products are computed once per `(Z, N)`, not per
+      ordering (algorithmic claim — stays Prop). -/
+  claim_iii_channel_elimination : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -53,7 +73,12 @@ $$
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/nucleon-ordering-factorization.ts
 theorem nucleon_ordering_factorization [ctx : NucleonOrderingFactorizationContext] :
-    ctx.claim_i_channel_elimination_symmetric ∧ ctx.claim_ii_nucleon_precomputation_nucleon ∧ ctx.claim_iii_vs_standard_channel :=
-  ⟨ctx.claim_i_channel_elimination_symmetric, ctx.claim_ii_nucleon_precomputation_nucleon, ctx.claim_iii_vs_standard_channel⟩
+    ctx.trM_N = ctx.W_sym * ctx.S_pi +
+                ctx.W_std * (ctx.z * ctx.a_pi + ctx.b_pi) +
+                ctx.W_alt * ctx.A_pi ∧
+    (ctx.cost_std = 4 ∧ ctx.cost_naive = 36) ∧
+    ctx.claim_iii_channel_elimination :=
+  ⟨ctx.claim_i_master_factorisation, ctx.claim_ii_speedup,
+   ctx.claim_iii_channel_elimination⟩
 
 end QOU.Interactions
