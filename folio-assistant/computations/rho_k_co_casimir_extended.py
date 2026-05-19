@@ -169,10 +169,17 @@ def compute_co_casimir_for_atom(
     # ρ_K^LO = (Z·m_p + N·m_n) / (m_e · |tr_M|) — tautological,
     # but needed as the baseline that the co-Casimir correction
     # modifies.
-    # For p alone we use CODATA m_p; for composite atoms we use
-    # Z·m_p + N·m_n with CODATA masses (anchor for the LO formula).
-    m_p_codata = mp.mpf("938.27208816")
-    m_n_codata = mp.mpf("939.56542052")
+    # CODATA m_p, m_n imported from codata_constants registry
+    # (P31 compliance per Copilot review): these are VALIDATION
+    # targets — the script uses them as the LO baseline that the
+    # substrate-derived co-Casimir correction modifies, NOT as
+    # independent calibration inputs. The substrate-derivation
+    # status is captured by the Borromean tower elsewhere; this
+    # script's job is to numerically evaluate the Frobenius
+    # co-Casimir refinement against that baseline.
+    from codata_constants import M_P_MEV_VALIDATION, M_N_MEV_VALIDATION
+    m_p_codata = mp.mpf(str(M_P_MEV_VALIDATION))
+    m_n_codata = mp.mpf(str(M_N_MEV_VALIDATION))
     constituent_sum = Z * m_p_codata + N * m_n_codata
     rho_K_LO = constituent_sum / (M_E_MEV * abs_tr_M)
     print(f"  ρ_K^LO     = {mp.nstr(rho_K_LO, 18)}")

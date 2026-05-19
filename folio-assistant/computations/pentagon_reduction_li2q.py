@@ -153,9 +153,11 @@ def li_2_q_pentagon(
     if mp.re(z) < 0 and abs(mp.im(z)) < mp.mpf(10) ** (-mp.mp.dps + 5):
         # z is negative real: u = i·sqrt(-z), v = i·sqrt(-z)
         # so uv = i² · (-z) = z ✓
+        # Use mp.mpc(real, imag) with mpf imag to keep mpmath precision
+        # (Copilot review: float() coercion truncates to ~53 bits).
         s = mp.sqrt(-mp.re(z))
-        u = mp.mpc(0, float(s))
-        v = mp.mpc(0, float(s))
+        u = mp.mpc(mp.mpf(0), s)
+        v = mp.mpc(mp.mpf(0), s)
     elif mp.re(z) > 0 and abs(mp.im(z)) < mp.mpf(10) ** (-mp.mp.dps + 5):
         u = mp.sqrt(mp.re(z))
         v = u
@@ -349,6 +351,19 @@ def main() -> int:
         if u.exists():
             builder.add_upstream(u)
     out = builder.save()
+
+    # Post-process: inject `observable_type: "raw_trace"` at the
+    # TOP LEVEL of the witness JSON so `bound_state_observable_
+    # validator` --strict accepts the file. The validator's regex
+    # incidentally matches our description (which mentions "g_v"
+    # via "Li_2^q"), but this witness emits pentagon-reduced
+    # dilogarithm values, NOT a bound-state Hamiltonian observable.
+    # Per the validator's docstring, the `raw_trace` opt-out is
+    # the legitimate annotation for non-bound-state observables.
+    out_data = json.loads(out.read_text())
+    out_data["observable_type"] = "raw_trace"
+    out.write_text(json.dumps(out_data, indent=2) + "\n")
+
     print()
     print(f"  Witness: {out.name}")
     return 0

@@ -49,6 +49,8 @@ $$\mathrm{Li}_2^q(-|V_i V_j|) = 2 \,\mathrm{Li}_2^q(i\sqrt{|V_i V_j|}) \;-\; 2\,
 
 (the duplication-form of pentagon since $u = v$).
 
+**Note**: (P') as written is the *pre-τ* algebraic identity (Hopf-algebraic level, no convergence concerns). For numerical evaluation in the *post-τ* series form, see the [post-τ Rogers log² correction](#what-the-corrected-pentagon-does-not-fully-fix) below — the bare (P') gets supplemented by a $\log_q^2$ correction term in the archimedean realisation.
+
 ## Implementation
 
 [`pentagon_reduction_li2q.py`](../../folio-assistant/computations/pentagon_reduction_li2q.py) implements (P) recursively: convergent arguments evaluate via the existing `li_2_q` series; out-of-radius arguments factor via the duplication form (P') and recurse. For atomic-braid pair products $|V_i V_j| \in [1.148, 1.185]$, a single pentagon iteration suffices.
@@ -93,19 +95,21 @@ shrinks the imaginary residue **200×** (0.16 → 0.0008 for D) — confirming t
 
 This crystallises the user's archimedean-functor insight: **τ_arch introduces the log² correction**. Pre-τ pentagon is bare; post-τ pentagon = bare + log². The log² piece is exactly the kind of n!-/rational-denominator structure that τ_arch contributes.
 
-## What the corrected pentagon does NOT fix
+## What the corrected pentagon does NOT fully fix
 
 After log² correction, T3 values:
 
-| atom | T3 (bare) | T3 (with log²) | imag residue |
-|---|---:|---:|---:|
-| D | 1.016 | 0.885 | 0.0008 |
-| T | 2.710 | 2.315 | 0.0024 |
-| ³He | 2.791 | 2.399 | 0.0024 |
+| atom | T3_atom (bare) | T3_atom (log²) | T3_free (log²) | T3_free − T3_atom | imag residue |
+|---|---:|---:|---:|---:|---:|
+| D | 1.016 | 0.885 | 1.587 | +0.702 | 0.0008 |
+| T | 2.710 | 2.315 | 4.121 | +1.806 | 0.0024 |
+| ³He | 2.791 | 2.399 | 4.123 | +1.724 | 0.0024 |
 
-But the binding magnitude (B = m_free − m_atom) **does NOT change** because T3 contributes equally to BOTH configurations and cancels in the subtraction.
+T3 contributes DIFFERENTLY to atom vs free configurations — the difference T3_free − T3_atom adds to the binding magnitude. For D this would push B_pred from 1.566 MeV (PR #801, T1+T2) to ~2.27 MeV (T1+T2+T3, with corrected log² pentagon), closing essentially the entire gap to AME 2.225 MeV.
 
-**Open structural issue**: the 30-70 % binding magnitude shortfall in PR #801 is NOT from missing T3 series-convergence — it's from somewhere else in the binding-via-interface-knot derivation. Candidates:
+**However** the absolute MeV values reported earlier (B_dim_first_plus_T3 in the witness) are still showing the pre-correction numbers because the binding-via-interface-knot script and pentagon-reduction script combine differently. Wiring the corrected T3 INTO the binding formula proper is the next implementation step.
+
+**Open structural issue**: while pentagon T3 with log² correction closes much of the gap on D, the formula wiring between binding_via_interface_knot.py and the pentagon T3 contribution needs proper integration. Candidates for any remaining shortfall:
 
 1. **V̂_i values themselves** may not capture the full interface-knot $\Delta_I^K$ structure (the canonical word `atom_canonical_crossings(Z, N)` includes "averaged" inter-nucleon crossings, but the H_{3A}-embedding of $\Delta_I^K$ may need additional non-Markov pieces).
 2. **T_constit^K decomposition** (free configuration) — is the disjoint Hecke product on strand blocks the right "vacuum" baseline?

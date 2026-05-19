@@ -8,19 +8,22 @@ etc etc)" — motivated by the err-vs-n scaling pattern in the co-Casimir
 extension (441 → 2.7 ppm as n=3 → n=9), which suggests a small
 systematic weight error that averages out at higher n.
 
-This script implements the C1-C8 cross-consistency checks catalogued
-in `docs/audits/2026-05-19-weight-factor-audit.md`:
+This script implements 4 of the 8 cross-consistency checks
+catalogued in `docs/audits/2026-05-19-weight-factor-audit.md`:
 
-  C1: Σ_λ w_λ = 1  (classical Plancherel probability measure)
-  C2: w̃_λ → w_λ as q → 1
-  C3: y_λ(q=1) = w_λ on the self-conjugate stratum (Wenzl bridge)
-  C4: Σ_λ w̃_λ ≈ 1.51 at q_0, n=12  (notation-collisions check)
-  C5: Σ_λ 1/dim_q(λ) = τ(C_dim_q^{H_n})  (Frobenius co-Casimir theorem)
-  C6: χ^λ(β_1 β_2) = χ^λ(β_2 β_1)  (Hoefsmit cyclic-invariance, the
-      foundational identity for Markov trace)
-  C7: LP shadow-price strong duality (enforced by
-      lp_dual_witness_validator.py — referenced, not re-run here)
-  C8: z = 1/(q^{1/2} + q^{-1/2}) at q_0 = 0.499…
+  C1: Σ_λ w_λ = 1  (classical Plancherel)               — IMPLEMENTED
+  C2: w̃_λ → w_λ as q → 1                                — stub (TODO)
+  C3: y_λ(q=1) = w_λ on self-conjugate stratum          — stub (TODO)
+  C4: Σ_λ w̃_λ at q_0  (tilde-Wedderburn sum)            — IMPLEMENTED
+  C5: Σ_λ 1/dim_q(λ) = τ(C_dim_q^{H_n})  (Frobenius)    — IMPLEMENTED
+  C6: χ^λ(β_1 β_2) = χ^λ(β_2 β_1)  (Hoefsmit cyclic)    — stub (TODO)
+  C7: LP shadow-price strong duality                     — external
+       (enforced by `lp_dual_witness_validator.py`; not re-run here)
+  C8: z = 1/(q^{1/2} + q^{-1/2}) at q_0 ≈ 0.4993        — IMPLEMENTED
+
+C2, C3, C6 require additional infrastructure (q → 1 limit machinery,
+Wenzl-bridge eval at q=1, per-atom braid pair inputs) and are filed
+as follow-up work in the companion audit doc.
 
 Each check emits a row in the witness `weight-factor-audit.witness.json`
 with {check, n, computed, expected, tolerance, passed}.

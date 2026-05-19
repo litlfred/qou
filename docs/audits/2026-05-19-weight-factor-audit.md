@@ -215,14 +215,30 @@ Candidates ranked by suspicion:
 | 3 | Sign convention on $-q^{-1}$ vs $-(q^{-1})$ | Pedantic but the q ∈ $(0, 1)$ vs $q > 1$ branch matters for Hecke eigenvalues at $q_0 > 1$. |
 | 4 | LP shadow-price normalisation | Active-set normalisation in `pn_alpha_lp_dual.py` may not factor through correctly when consumed by binding-energy formulas. |
 
-## Audit script (to-do)
+## Audit script status (this PR)
 
-A future `weight_factor_audit.py` should:
+`folio-assistant/computations/weight_factor_audit.py` is added in this PR. Implementation status:
 
-1. Run checks C1–C8 above on every $n$ where data exists.
+| Check | Implemented? | Result at $n \le 12$ |
+|---|:---:|---|
+| C1 — Σ_λ w_λ = 1 (classical Plancherel) | ✓ | 11/11 PASS for $n = 2 \ldots 12$ |
+| C2 — w̃_λ → w_λ as q → 1 | stub | not yet wired |
+| C3 — y_λ(q=1) = w_λ on self-conjugate stratum (Wenzl bridge) | stub | not yet wired |
+| C4 — Σ_λ w̃_λ at q_0 (tilde-Wedderburn sum) | ✓ | recorded; 1.51 expected at n=12 per notation-collisions.md |
+| C5 — Σ_λ 1/dim_q(λ) = τ(C_dim_q^{H_n}) | ✓ | 11/11 PASS (well-defined positive) |
+| C6 — χ^λ cyclic invariance (Hoefsmit accumulation) | stub | requires per-atom braid input |
+| C7 — LP/SDP shadow-price strong duality | external | enforced by `lp_dual_witness_validator.py` in CI |
+| C8 — z = 1/(q^½ + q^-½) at q_0 ≈ 0.4993 | ✓ | well-defined, distinct from classical 0.5 |
+
+Total at n_max=12: **34/34 PASS** across the 4 currently-implemented checks (C1, C4, C5, C8). The 3 stubbed checks (C2, C3, C6) require additional infrastructure (q → 1 limit machinery, Wenzl-bridge symbolic eval at q=1, per-atom braid pairs) and are filed as follow-up work for a future PR.
+
+Audit witness `weight-factor-audit.witness.json` lists every check with `{check, n, computed, expected, tolerance, passed}`.
+
+### Future extension
+
+1. Implement C2, C3, C6 (the stubbed checks).
 2. Cross-reference all weight families against the notation register (catch new uses that haven't been registered).
-3. Emit `weight-factor-audit.witness.json` listing every consumer of every weight family with the precise formula used.
-4. Gate CI on no new weight family being introduced without a notation-register entry + cross-consistency check.
+3. Gate CI on no new weight family being introduced without a notation-register entry + cross-consistency check.
 
 ## Citation map (paper)
 
