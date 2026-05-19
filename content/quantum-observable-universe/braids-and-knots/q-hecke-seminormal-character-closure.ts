@@ -50,6 +50,7 @@ export default proposition({
     "hoefsmit1974",
     "mathas1999",
     "jones1987",
+    "jing-liu-2021",
   ],
   computation: {
     engine: "numpy",

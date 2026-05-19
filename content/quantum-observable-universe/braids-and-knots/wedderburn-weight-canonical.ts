@@ -20,7 +20,7 @@ export default proposition({
     "prop:wedderburn-as-noncomm-fourier",
     "prop:plancherel-weight-boundedness",
   ],
-  cites: ["jones1985", "wenzl1988", "kassel1995"],
+  cites: ["jones1985", "wenzl1988", "kassel1995", "halverson-1998-markov-weights"],
   computation: {
     engine: "python",
     script:
