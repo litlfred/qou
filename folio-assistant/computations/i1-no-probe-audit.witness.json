@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T07:32:21.032813+00:00",
-  "commitSha": "a0de7c2e768b85456aba8eb80e4aead959feb5e4",
+  "computedAt": "2026-05-19T07:33:20.519525+00:00",
+  "commitSha": "e80a6fa7af6f90e282e1d2fa8c17b2a56ac418a8",
   "assertions": [
     {
       "name": "no_i1_no_probe_blocks",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 7,
+  "durationMs": 8,
   "computation": "i1-no-probe-audit",
   "scriptFile": "i1_no_probe_audit.py",
   "scriptHash": "0e004cc143d0",
@@ -27,8 +27,8 @@
   },
   "data": {
     "by_result": {
-      "i1_no_probe": 521,
-      "wired": 52,
+      "i1_no_probe": 520,
+      "wired": 53,
       "i1_lean_with_sorry": 1,
       "conditional_class": 1
     },
@@ -1449,9 +1449,11 @@
         "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
-        "probe_witness_count": 0,
-        "probe_witnesses": [],
-        "result": "i1_no_probe"
+        "probe_witness_count": 1,
+        "probe_witnesses": [
+          "knot-factor-amphicheiral-probe.witness.json"
+        ],
+        "result": "wired"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/knot-factor-borromean-composite.ts",
