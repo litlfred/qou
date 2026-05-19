@@ -44,7 +44,7 @@ Three concrete routes (from
 2. **KLR canonical-basis trace formula**: per-Wedderburn-block
    canonical-basis Markov trace at orders $\varepsilon^8, \varepsilon^{10},
    \varepsilon^{12}$ — the framework has scaffolding (Hecke-KLR bridge in
-   [`rem:kazhdan-lusztig-classical-limit`](#rem:kazhdan-lusztig-classical-limit)),
+   [`conj:kazhdan-lusztig-classical-limit`](#conj:kazhdan-lusztig-classical-limit)),
    open piece is the explicit per-block trace formula.
 3. **Spectral-sequence stratification** (declined by ledger 2026-05-19;
    no good candidate spectral sequence in framework's content).
