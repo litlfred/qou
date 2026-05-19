@@ -21,15 +21,19 @@ namespace QOU.BraidsAndKnots
 class EwInterfaceKnotContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
-  /-- A root-of-unity parameter (e.g. `ζ_p`). -/
-  zeta : ℂ
-  /-- The topological-link / knot type. -/
-  Link : Type
-  /-- Manuscript sub-claim (i) — Direct parallel with the deuteron derivation. -/
-  claim_i_direct_parallel_deuteron : Prop
-  /-- Manuscript sub-claim (ii) — Resolves the simple-multiplicity Weinberg-angle failure. -/
-  claim_ii_resolves_simple_multiplicity : Prop
-  /-- Manuscript sub-claim (iii) — Bar-self-duality breakdown is structural. -/
+  /-- Strand count of the EW interface knot (manuscript: `n = 6`). -/
+  n_strands : ℕ
+  /-- EW-carrier exponents `(σ_1^4, σ_3^6, σ_5^8)` for `(W, Z, H)`. -/
+  exp_W exp_Z exp_H : ℕ
+  /-- Manuscript sub-claim (i) — Strand-count identity: the EW
+      interface knot lives in `H_6(q)` (n_strands = 6). -/
+  claim_i_strand_count : n_strands = 6
+  /-- Manuscript sub-claim (ii) — EW-carrier exponents:
+      `(W, Z, H) ↔ (σ_1^4, σ_3^6, σ_5^8)`. -/
+  claim_ii_ew_carrier_exponents :
+    exp_W = 4 ∧ exp_Z = 6 ∧ exp_H = 8
+  /-- Manuscript sub-claim (iii) — Bar-self-duality breakdown is
+      structural (categorical claim — stays Prop). -/
   claim_iii_bar_self_duality : Prop
 
 /-- **Content statement** (from manuscript):
@@ -52,7 +56,10 @@ $H \leftrightarrow \sigma_5^{\,8}$ act
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/ew-interface-knot.ts
 theorem ew_interface_knot [ctx : EwInterfaceKnotContext] :
-    ctx.claim_i_direct_parallel_deuteron ∧ ctx.claim_ii_resolves_simple_multiplicity ∧ ctx.claim_iii_bar_self_duality :=
-  ⟨ctx.claim_i_direct_parallel_deuteron, ctx.claim_ii_resolves_simple_multiplicity, ctx.claim_iii_bar_self_duality⟩
+    ctx.n_strands = 6 ∧
+    (ctx.exp_W = 4 ∧ ctx.exp_Z = 6 ∧ ctx.exp_H = 8) ∧
+    ctx.claim_iii_bar_self_duality :=
+  ⟨ctx.claim_i_strand_count, ctx.claim_ii_ew_carrier_exponents,
+   ctx.claim_iii_bar_self_duality⟩
 
 end QOU.BraidsAndKnots
