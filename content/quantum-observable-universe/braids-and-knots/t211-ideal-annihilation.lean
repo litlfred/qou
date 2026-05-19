@@ -93,7 +93,7 @@ theorem eleven_not_dvd_factorial_5 : ¬ (11 ∣ Nat.factorial 5) := by
 
     **Proof**: from Mathlib's `orderOf_dvd_card` (Lagrange) combined
     with `Fintype.card_perm` (which gives `|Perm (Fin n)| = n!`). -/
--- Ref: [mathlib] Mathlib.GroupTheory.OrderOfElement
+-- See Mathlib stdlib Mathlib.GroupTheory.OrderOfElement
 -- Ref: [manuscript] §4/t211-ideal-annihilation
 theorem orderOf_perm_dvd_factorial (n : ℕ) (σ : Equiv.Perm (Fin n)) :
     (orderOf σ : ℕ) ∣ Nat.factorial n := by

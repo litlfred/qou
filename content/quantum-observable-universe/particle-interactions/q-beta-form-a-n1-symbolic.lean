@@ -117,7 +117,7 @@ def QBetaAN1_geometric_lift_refuted_empirically : Prop :=
   -- |Q_β^{A,N=1}(q_0) - Q_β^CODATA| / Q_β^CODATA > ℏ_q⁴ / (1 - ℏ_q²)
   True  -- structural marker; actual numerical bound lives in the witness
 
--- Ref: [#639] q_beta_form_a_n1_extension.py + witness
+-- See PR #639 q_beta_form_a_n1_extension.py + witness
 /-- Marker theorem for the negative finding (always True; the
     actual content is the witness-recorded numerical inequality). -/
 theorem geometric_N1_lift_refuted :

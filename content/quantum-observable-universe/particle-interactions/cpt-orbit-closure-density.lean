@@ -47,7 +47,7 @@ constant Partition (n : ℕ) : Type
     `YoungDiagram` decidability in Mathlib). -/
 instance partitionDecEq (n : ℕ) : DecidableEq (Partition n) := by
   intro a b
-  -- Ref: [Mathlib.Combinatorics.Young.YoungDiagram] decEq instance
+  -- See Mathlib module Mathlib.Combinatorics.Young.YoungDiagram decEq instance
   -- on YoungDiagram is a derived `DecidableEq`; the wrapper here
   -- inherits it once the constant `Partition n` is unfolded.
   exact Classical.decEq _ a b
@@ -59,7 +59,7 @@ constant partitionTranspose {n : ℕ} : Partition n → Partition n
 /-- `partitionTranspose` is involutive. -/
 axiom partitionTranspose_involutive {n : ℕ} :
     Function.Involutive (@partitionTranspose n)
-  -- Ref: [Mathlib.Combinatorics.Young.YoungDiagram] —
+  -- See Mathlib module Mathlib.Combinatorics.Young.YoungDiagram —
   --      YoungDiagram.transpose_transpose
 
 /-! ## Orbit-closure predicate -/
