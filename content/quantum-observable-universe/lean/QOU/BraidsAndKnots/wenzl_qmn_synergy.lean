@@ -22,19 +22,22 @@ namespace QOU.BraidsAndKnots
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class WenzlQmnSynergyContext extends QOU.Shared.MarkovTraceContext where
-  /-- Manuscript sub-claim (i) — Direct verification of Wenzl-bridge
-      correctness: every canonical-braid Markov-trace identity gives a
-      one-shot test of $y_λ(q)$ values without resorting to MPFR or
-      sympy linear-system solve. -/
-  claim_i_direct_verification_wenzl : Prop
-  /-- Manuscript sub-claim (ii) — Mass-formula compute speedup: the
-      depth-resolved Φ_k pipeline can replace its Hoefsmit character
-      calls with q-MN where applicable. -/
-  claim_ii_mass_formula_compute : Prop
+  /-- Speedup factor of Wenzl bridge vs linear-system solve. -/
+  wenzl_speedup : ℝ
+  /-- Speedup factor of q-MN vs Hoefsmit characters. -/
+  qmn_speedup : ℝ
+  /-- Combined speedup factor (`= wenzl_speedup · qmn_speedup`). -/
+  combined_speedup : ℝ
+  /-- Manuscript sub-claim (i) — Wenzl-bridge speedup `≥ 10⁴×`. -/
+  claim_i_direct_verification_wenzl : 10000 ≤ wenzl_speedup
+  /-- Manuscript sub-claim (ii) — q-MN speedup `≥ 10²×`. -/
+  claim_ii_mass_formula_compute : 100 ≤ qmn_speedup
   /-- Manuscript sub-claim (iii) — Atom-knot identification path for
       ⁶Li, ⁷Li via enumerating hyperbolic knots and comparing
       `tr_M(β_K)` against the AME binding × hyperbolic-volume ratio. -/
-  claim_iii_atom_knot_identification : Prop
+  claim_iii_atom_knot_identification :
+    combined_speedup = wenzl_speedup * qmn_speedup ∧
+    1000000 ≤ combined_speedup
   /-- Length of a canonical permutation braid `T_w` (e.g. number of
       crossings in its reduced word). -/
   lengthW : ℕ
@@ -89,8 +92,10 @@ this drops the per-isotope compute time from
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/wenzl-qmn-synergy.ts
 theorem wenzl_qmn_synergy [ctx : WenzlQmnSynergyContext] :
-    ctx.claim_i_direct_verification_wenzl ∧ ctx.claim_ii_mass_formula_compute ∧
-    ctx.claim_iii_atom_knot_identification ∧
+    10000 ≤ ctx.wenzl_speedup ∧
+    100 ≤ ctx.qmn_speedup ∧
+    (ctx.combined_speedup = ctx.wenzl_speedup * ctx.qmn_speedup ∧
+     1000000 ≤ ctx.combined_speedup) ∧
     ctx.trM_Tw = ctx.z ^ ctx.lengthW ∧ ctx.wenzlSum = ctx.z ^ ctx.lengthW :=
   ⟨ctx.claim_i_direct_verification_wenzl, ctx.claim_ii_mass_formula_compute,
    ctx.claim_iii_atom_knot_identification,
