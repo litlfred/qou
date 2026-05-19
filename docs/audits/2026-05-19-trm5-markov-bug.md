@@ -96,6 +96,22 @@ The bug made the linear system `tr_M(b_i) = Σ_λ y_λ·χ_λ(b_i)` over-determi
 
 This was the motivation: per-Wedderburn-block decomposition for the c_k derivation requires this consistency. The path is now unblocked.
 
+## Downstream verification sweep (2026-05-19, parallel agent)
+
+Verified all 5 modules importing `pyhecke.gram.TR_M`:
+
+| Module | Status | Diagnosis |
+|--------|--------|-----------|
+| `aK_via_lp_dual_hecke_basis.py` | **MAJOR** | x_star changes ~30×, now σ₀↔σ₁ symmetric (was asymmetric pre-fix). LP active-set unchanged, strong duality holds. Post-fix is correct. |
+| `confinement-operator-selection.py` | **MAJOR** | Gram determinant changes −0.36 → −0.19, eigenvalues shift; NF decompositions of operators unchanged. Post-fix Gram is symmetric (was non-symmetric pre-fix). |
+| `gram-matrix-dual.py` | **MAJOR** | Markov trace of e_⁻ corrected: 0.124 → 0.551. Eigenvalues shift accordingly. Post-fix is correct. |
+| `pn_alpha_lp_dual.py` | **UNAFFECTED via import** but **LATENT SHADOWING BUG** at line 206: `TR_M_BASIS = np.array([1.0, z_mark, z_mark, z_mark**2, z_mark**2, z_mark**3])` — locally redefines TR_M with the buggy `z**3` pattern, shadowing the imported (fixed) `_PG_TR_M`. Script must be patched separately. |
+| `molecular-frobenius-lp.py` | **UNAFFECTED via import** but **LATENT SHADOWING BUG** at line 56: `TR_M = np.array([1.0, z, z, z**2, z**2, z**3])` — same shadowing pattern. Script must be patched separately. |
+
+**Action: NEW bug fix needed** — `pn_alpha_lp_dual.py:206` and `molecular-frobenius-lp.py:56` both have local TR_M arrays that hard-code `z**3` (the same bug). Fix: remove the local arrays, use the imported `_PG_TR_M`.
+
+**Recommendation per the verification agent**: handle witness regeneration + script-shadow cleanup in a **dedicated follow-up PR**. This PR's scope is the core `pyhecke.gram` fix; the downstream consequences are quantitatively significant (e.g., aK x_star changes 30×) and warrant their own review.
+
 ## Cross-references
 
 - `tools/pyhecke/python/pyhecke/gram.py` lines 50 + 178 — fix locations
@@ -103,3 +119,5 @@ This was the motivation: per-Wedderburn-block decomposition for the c_k derivati
 - `folio-assistant/computations/qbeta-decay-sdp-knot-operator.witness.json` — needs T_β NF coeff update
 - `docs/audits/2026-05-19-qbeta-ladder-sdp-c2-c3-derived.md` — SDP-T_β derivation (c_k unchanged by fix)
 - `docs/audits/2026-05-19-qbeta-ladder-knot-operator-general-statement.md` — Path B per-block scaffolding (now usable)
+- `folio-assistant/computations/pn_alpha_lp_dual.py` line 206 — latent shadowing bug, needs follow-up fix
+- `folio-assistant/computations/molecular-frobenius-lp.py` line 56 — latent shadowing bug, needs follow-up fix
