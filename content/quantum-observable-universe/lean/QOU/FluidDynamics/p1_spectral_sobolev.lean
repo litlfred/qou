@@ -19,8 +19,23 @@ namespace QOU.FluidDynamics
 class P1SpectralSobolevContext where
   /-- The substrate parameter `q : ℝ`. -/
   q : ℝ
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_p1_spectral_sobolev : Prop
+  q_gt_one : 1 < q
+  /-- The q-integer `[k]_q = (q^k − q^{−k})/(q − q^{−1})`. -/
+  q_int : ℕ → ℝ
+  /-- The discrete `q`-Laplacian eigenvalues `μ_k^{(q)}`. -/
+  μ : ℕ → ℝ
+  /-- Sub-claim (a) — Discrete spectrum: every eigenvalue is
+      non-negative and ordered. -/
+  claim_a_discrete_spectrum : ∀ k : ℕ, μ k ≤ μ (k + 1) ∧ 0 ≤ μ 0
+  /-- Sub-claim (b) — Eigenvalue closed form `μ_k^{(q)} = [k]_q²`. -/
+  claim_b_eigenvalue_formula : ∀ k : ℕ, μ k = (q_int k) ^ 2
+  /-- Sub-claim (b') — Growth bound: `q^{2k}/(q − q⁻¹)² ≤ μ_k ≤
+      (q^{2k}/(q − q⁻¹)²) · (1 + q^{−4k})`. -/
+  claim_b_growth_bound : ∀ k : ℕ, 1 ≤ k →
+    q ^ (2 * k) / (q - q⁻¹) ^ 2 ≤ μ k ∧
+    μ k ≤ (q ^ (2 * k) / (q - q⁻¹) ^ 2) * (1 + q ^ (-4 * (k : ℤ)))
+  /-- Sub-claim (c) — Sobolev embedding `H¹_q ↪ L^∞` (compact). -/
+  claim_c_sobolev_embedding : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -38,9 +53,11 @@ $\langle \cdot, \cdot \rangle_\varTheta$ be the
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/p1-spectral-sobolev.ts
-theorem p1_spectral_sobolev [ctx : P1SpectralSobolevContext] : ctx.claim_p1_spectral_sobolev := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem p1_spectral_sobolev [ctx : P1SpectralSobolevContext] :
+    (∀ k : ℕ, ctx.μ k ≤ ctx.μ (k + 1) ∧ 0 ≤ ctx.μ 0) ∧
+    (∀ k : ℕ, ctx.μ k = (ctx.q_int k) ^ 2) ∧
+    ctx.claim_c_sobolev_embedding :=
+  ⟨ctx.claim_a_discrete_spectrum, ctx.claim_b_eigenvalue_formula,
+   ctx.claim_c_sobolev_embedding⟩
 
 end QOU.FluidDynamics

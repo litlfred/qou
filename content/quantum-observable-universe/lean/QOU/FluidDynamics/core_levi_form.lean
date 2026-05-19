@@ -19,16 +19,33 @@ namespace QOU.FluidDynamics
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class CoreLeviFormContext extends QOU.Shared.SobolevHkRegularityContext where
-  /-- Manuscript sub-claim (i) — The core aspect ratio is bounded: $\sup_{t < T^*} a_\perp(t) / a_\parallel(t) \leq C$. -/
-  claim_i_core_aspect_ratio : Prop
-  /-- Manuscript sub-claim (ii) — The Levi form condition number is bounded: $\sup_{t < T^*} \mathrm{cond}(\mathcal{L}_\varTheta|_{N_p}) \leq C^2$. -/
-  claim_ii_levi_form_condition : Prop
-  /-- Manuscript sub-claim (iii) — The contact structure $\ker(\varTheta)$ remains non-degenerate at the collision locus $\Sigma$: both eigenvalues $\la.... -/
-  claim_iii_contact_structure_remains : Prop
-  /-- Manuscript sub-claim (iv) — The observability axiom $\mathrm{Hom}_{\mathbf{C}}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ holds locally at every $p \in \Si.... -/
+  /-- The supremum-over-time `sup_{t<T*} (a_⊥/a_∥)(t)` of the core
+      aspect ratio. -/
+  aspect_sup : ℝ
+  /-- The aspect-ratio bound constant `C`. -/
+  C : ℝ
+  /-- The supremum-over-time `sup_{t<T*} cond(L|_{N_p})` of the Levi-
+      form condition number on the horizontal normal plane. -/
+  cond_sup : ℝ
+  /-- Manuscript sub-claim (i) — Bounded core aspect ratio: the
+      supremum is finite. -/
+  claim_i_core_aspect_ratio : aspect_sup ≤ C
+  /-- Manuscript sub-claim (ii) — Bounded Levi-form condition number
+      (squared aspect-ratio bound). -/
+  claim_ii_levi_form_condition : cond_sup ≤ C ^ 2
+  /-- The minimum Levi eigenvalue `min(λ_∥, λ_⊥)` on the collision
+      locus `Σ`. -/
+  lambda_min : ℝ
+  /-- Manuscript sub-claim (iii) — Non-degenerate contact structure
+      at `Σ`: both Levi eigenvalues are strictly positive. -/
+  claim_iii_contact_structure_remains : 0 < lambda_min
+  /-- Manuscript sub-claim (iv) — Observability axiom holds locally
+      at every `p ∈ Σ`. Stays abstract because the axiom statement
+      lives over the abstract category `C`. -/
   claim_iv_observability_axiom_holds : Prop
-  /-- Manuscript sub-claim (v) — No 2-dimensional integral submanifold of $\ker(\varTheta)$ forms at $\Sigma$ (Frobenius integrability does not hold). -/
-  claim_v_dimensional_integral_submanifold : Prop
+  /-- Manuscript sub-claim (v) — No 2-dimensional integral submanifold
+      of `ker(Θ)` forms at `Σ` (Frobenius integrability fails). -/
+  claim_v_no_integral_submanifold : Prop
 /-- **Content statement** (from manuscript):
 
 Let $\varrho$ be a [geodesic vortex](#rem:geodesic-vortices) in
@@ -45,7 +62,13 @@ the horizontal normal plane.  Define:
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/core-levi-form.ts
 theorem core_levi_form [ctx : CoreLeviFormContext] :
-    ctx.claim_i_core_aspect_ratio ∧ ctx.claim_ii_levi_form_condition ∧ ctx.claim_iii_contact_structure_remains ∧ ctx.claim_iv_observability_axiom_holds ∧ ctx.claim_v_dimensional_integral_submanifold :=
-  ⟨ctx.claim_i_core_aspect_ratio, ctx.claim_ii_levi_form_condition, ctx.claim_iii_contact_structure_remains, ctx.claim_iv_observability_axiom_holds, ctx.claim_v_dimensional_integral_submanifold⟩
+    ctx.aspect_sup ≤ ctx.C ∧
+    ctx.cond_sup ≤ ctx.C ^ 2 ∧
+    0 < ctx.lambda_min ∧
+    ctx.claim_iv_observability_axiom_holds ∧
+    ctx.claim_v_no_integral_submanifold :=
+  ⟨ctx.claim_i_core_aspect_ratio, ctx.claim_ii_levi_form_condition,
+   ctx.claim_iii_contact_structure_remains,
+   ctx.claim_iv_observability_axiom_holds, ctx.claim_v_no_integral_submanifold⟩
 
 end QOU.FluidDynamics
