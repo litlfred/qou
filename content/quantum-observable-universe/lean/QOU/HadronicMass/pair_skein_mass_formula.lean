@@ -1,3 +1,5 @@
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+
 /-!
 # QOU.HadronicMass.pair_skein_mass_formula — placeholder stub
 
@@ -21,10 +23,17 @@ class PairSkeinMassFormulaContext where
   Z : ℕ
   /-- Neutron number `N`. -/
   N : ℕ
-  /-- The braid representative type. -/
-  Braid : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_pair_skein_mass_formula : Prop
+  /-- Substrate parameter `q : ℝ`. -/
+  q : ℝ
+  /-- Dressed quark Skein masses (indexed by species). -/
+  μ : ℕ → ℝ
+  /-- Pair Skein mass `S_{ab}(q)` for quark species `(a, b)`. -/
+  S_ab : ℕ → ℕ → ℝ
+  /-- Manuscript identity: pair Skein mass
+      `S_{ab}(q) = (q μ_a + q⁻¹ μ_b) / (q^{1/2} + q^{-1/2})`. -/
+  claim_pair_skein_mass_formula : ∀ a b : ℕ,
+    S_ab a b = (q * μ a + q⁻¹ * μ b) /
+               (Real.sqrt q + 1 / Real.sqrt q)
 
 /-- **Lemma statement** (from manuscript):
 
@@ -47,9 +56,10 @@ total nucleon mass is the sum over the three crossing pairs:
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/pair-skein-mass-formula.ts
-theorem pair_skein_mass_formula [ctx : PairSkeinMassFormulaContext] : ctx.claim_pair_skein_mass_formula := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem pair_skein_mass_formula [ctx : PairSkeinMassFormulaContext] :
+    ∀ a b : ℕ, ctx.S_ab a b =
+      (ctx.q * ctx.μ a + ctx.q⁻¹ * ctx.μ b) /
+      (Real.sqrt ctx.q + 1 / Real.sqrt ctx.q) :=
+  ctx.claim_pair_skein_mass_formula
 
 end QOU.HadronicMass

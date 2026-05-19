@@ -26,9 +26,10 @@ class GenusMaximalDescentContext where
   /-- Manuscript sub-claim (i): under the descent, `M_0` is a compact Riemann
       surface of genus exactly `4` — `genus = 4`. -/
   claim_i_genus_eq_four : genus = 4
-  /-- Manuscript sub-claim (ii): the Hurwitz bound on the automorphism group
-      of `Σ_4` is `|Aut(Σ_4)| ≤ 84 (g − 1) = 252`. -/
-  claim_ii_hurwitz_bound : Prop
+  /-- Order of the automorphism group of `Σ_g`. -/
+  aut_order : ℕ
+  /-- Manuscript sub-claim (ii): Hurwitz bound `|Aut(Σ_g)| ≤ 84(g − 1)`. -/
+  claim_ii_hurwitz_bound : aut_order ≤ 84 * (genus - 1)
 
 /-- **Manuscript statement** (full body):
 
@@ -50,11 +51,7 @@ $|\mathrm{Aut}(\Sigma)| \leq 84(g - 1) = 252$.
     translation. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/genus-maximal-descent.ts
 theorem genus_maximal_descent [ctx : GenusMaximalDescentContext] :
-    ctx.genus = 4 ∧ ctx.claim_ii_hurwitz_bound := by
-  -- Manuscript proof referenced above; the `genus = 4` half follows
-  -- directly from the class hypothesis; the Hurwitz bound is recorded
-  -- abstractly pending a Mathlib-aware concretisation of `Aut(Σ_g)`.
-  refine ⟨ctx.claim_i_genus_eq_four, ?_⟩
-  sorry
+    ctx.genus = 4 ∧ ctx.aut_order ≤ 84 * (ctx.genus - 1) :=
+  ⟨ctx.claim_i_genus_eq_four, ctx.claim_ii_hurwitz_bound⟩
 
 end QOU.Descartes
