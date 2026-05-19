@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T04:47:41.573885+00:00",
-  "commitSha": "69b2470c6b7a4fcc44eddc17cf781777315f82fe",
+  "computedAt": "2026-05-19T04:47:43.245636+00:00",
+  "commitSha": "92a868af1e63a13e51de0a277ecc0df5c8b38451",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -2290,6 +2290,7 @@
         "delta-lambda-empirical-tabulation.witness.json",
         "delta-lambda-q-sweep-2row.witness.json",
         "delta-lambda-shift-nf-wenzl-probe.witness.json",
+        "delta-lambda-two-factor-phase2.witness.json",
         "delta-lambda-via-per-partition-shift-nf.witness.json",
         "delta-n2-lp-dual-extraction.witness.json",
         "delta-n2-placeholder-audit.witness.json",
