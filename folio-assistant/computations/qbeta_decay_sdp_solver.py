@@ -50,9 +50,15 @@ import sympy as sp  # noqa: E402
 
 q_sym = sp.Symbol("q", positive=True)
 z_sym = 1 / (sp.sqrt(q_sym) + 1 / sp.sqrt(q_sym))
+h_sym = q_sym - 1 / q_sym
 
-# NF basis t_i(q) functions: γ=1, σ₀=z, σ₁=z, L₊=z², L₋=z², e⁻=z³
-T_SYM = [sp.Integer(1), z_sym, z_sym, z_sym ** 2, z_sym ** 2, z_sym ** 3]
+# NF basis t_i(q) Markov-trace functions on H_3(q) (post-2026-05-19 fix):
+#   γ → 1, σ_0 → z, σ_1 → z, L_+ → z², L_- → z², e_- → h·z² + z
+# The e_- entry was previously z³ (bug); the correct value via the
+# Markov-trace recursion is h·z² + z. See
+# `docs/audits/2026-05-19-trm5-markov-bug.md` for derivation.
+T_SYM = [sp.Integer(1), z_sym, z_sym, z_sym ** 2, z_sym ** 2,
+         h_sym * z_sym ** 2 + z_sym]
 
 
 def main() -> None:
