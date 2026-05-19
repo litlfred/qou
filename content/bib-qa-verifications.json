@@ -161,57 +161,57 @@
     },
     {
       "id": "gromov1982",
-      "status": "uncited",
+      "status": "verified-clean",
       "local_pdf": "uploads/gromov1982.pdf",
-      "verified_at": "2026-05-19T06:33:00Z",
+      "verified_at": "2026-05-19T16:40:00Z",
       "verified_by": "Claude (claude-opus-4-7)",
       "fixes_applied": 0,
-      "note": "PDF verified: 'Volume and bounded cohomology' by Michael Gromov, Publications IHES vol 56 (1982). Title matches references.ts. Bib orphan \u2014 no .lean or .md citation sites in QOU. Decision pending (keep as forward-ref / remove / find use). Likely candidate for citation alongside thurston1978 in hyperbolic-volume contexts."
+      "note": "PDF verified: 'Volume and bounded cohomology' by Michael Gromov, Publications IHES vol 56 (1982). Title matches references.ts. Bib orphan \u2014 no .lean or .md citation sites in QOU. Decision pending (keep as forward-ref / remove / find use). Likely candidate for citation alongside thurston1978 in hyperbolic-volume contexts. | Re-classified from `uncited`: discovered citation via cites: [] array in per-braid-mass-tower.ts + \\cite{gromov1982,...} in atom-knot-mass-derivation.md. Earlier inventory missed multi-arg \\cite and .ts cites: arrays."
     },
     {
       "id": "bilsonthompson2005",
-      "status": "uncited",
+      "status": "verified-clean",
       "local_pdf": "uploads/bilsonthompson2005.pdf",
-      "verified_at": "2026-05-19T06:33:00Z",
+      "verified_at": "2026-05-19T16:40:00Z",
       "verified_by": "Claude (claude-opus-4-7)",
       "fixes_applied": 0,
-      "note": "PDF verified: 'A topological model of composite preons' by Sundance O. Bilson-Thompson (arXiv:hep-ph/0503213, ADP-05-05/T615). Title matches references.ts. Bib orphan \u2014 no QOU citation. Likely candidate for citation alongside QOU's knot-particle model (braids-and-knots/ chapters); the Bilson-Thompson preon-as-braid construction parallels QOU's topological-particle approach. Decision pending."
+      "note": "PDF verified: 'A topological model of composite preons' by Sundance O. Bilson-Thompson (arXiv:hep-ph/0503213, ADP-05-05/T615). Title matches references.ts. Bib orphan \u2014 no QOU citation. Likely candidate for citation alongside QOU's knot-particle model (braids-and-knots/ chapters); the Bilson-Thompson preon-as-braid construction parallels QOU's topological-particle approach. Decision pending. | Re-classified from `uncited`: 3 citation sites (\\cite{bilsonthompson2005,bilsonthompson2007} in breit-wheeler-vertex-literature.md + vertex-factorisation-intro.md + cites: in .ts). PDF verified."
     },
     {
       "id": "finster2021",
-      "status": "uncited",
+      "status": "verified-clean",
       "local_pdf": "uploads/finster2021.pdf",
-      "verified_at": "2026-05-19T06:33:00Z",
+      "verified_at": "2026-05-19T16:40:00Z",
       "verified_by": "Claude (claude-opus-4-7)",
       "fixes_applied": 0,
-      "note": "PDF verified: 'The linear dynamics of wave functions in causal fermion systems' by Finster, Kamran, Oppio (arXiv:2101.08673). Title matches. Bib orphan \u2014 no QOU citation. Causal fermion systems are tangential to QOU's brane substrate but conceptually related. Decision pending."
+      "note": "PDF verified: 'The linear dynamics of wave functions in causal fermion systems' by Finster, Kamran, Oppio (arXiv:2101.08673). Title matches. Bib orphan \u2014 no QOU citation. Causal fermion systems are tangential to QOU's brane substrate but conceptually related. Decision pending. | Re-classified from `uncited`: cited via cites: [...] in cfs-comparison-summary.ts + algebraic-gns-embedding.ts. Inline [`finster2021`] tick-bracket form in .md prose. PDF verified."
     },
     {
       "id": "finster2022",
-      "status": "uncited",
+      "status": "verified-clean",
       "local_pdf": "uploads/finster2022.pdf",
-      "verified_at": "2026-05-19T06:33:00Z",
+      "verified_at": "2026-05-19T16:40:00Z",
       "verified_by": "Claude (claude-opus-4-7)",
       "fixes_applied": 0,
-      "note": "PDF verified: 'A mechanism of baryogenesis for causal fermion systems' by Finster, Jokel, Paganini (arXiv:2111.05556). Title matches. Bib orphan."
+      "note": "PDF verified: 'A mechanism of baryogenesis for causal fermion systems' by Finster, Jokel, Paganini (arXiv:2111.05556). Title matches. Bib orphan. | Re-classified from `uncited`: cited via cites: [...] in cfs-comparison-summary.ts + algebraic-gns-embedding.ts. PDF verified."
     },
     {
       "id": "finster2024",
-      "status": "uncited",
+      "status": "verified-clean",
       "local_pdf": "uploads/finster2024.pdf",
-      "verified_at": "2026-05-19T06:33:00Z",
+      "verified_at": "2026-05-19T16:40:00Z",
       "verified_by": "Claude (claude-opus-4-7)",
       "fixes_applied": 0,
-      "note": "PDF verified: 'Causal fermion systems as an effective collapse theory' by Finster, Kleiner, Paganini (arXiv:2405.19254). Title matches. Bib orphan."
+      "note": "PDF verified: 'Causal fermion systems as an effective collapse theory' by Finster, Kleiner, Paganini (arXiv:2405.19254). Title matches. Bib orphan. | Re-classified from `uncited`: cited via cites: [...] in cfs-comparison-summary.ts + algebraic-gns-embedding.ts. PDF verified."
     },
     {
       "id": "dappiaggi2024",
-      "status": "uncited",
+      "status": "verified-clean",
       "local_pdf": "uploads/dappiaggi2024.pdf",
-      "verified_at": "2026-05-19T06:33:00Z",
+      "verified_at": "2026-05-19T16:40:00Z",
       "verified_by": "Claude (claude-opus-4-7)",
       "fixes_applied": 0,
-      "note": "PDF verified: 'Holographic mixing and Fock space dynamics of causal fermion systems' by Dappiaggi, Finster, Kamran, Reintjes (arXiv:2410.18045, Oct 2024 / May 2025). Title matches. Bib orphan."
+      "note": "PDF verified: 'Holographic mixing and Fock space dynamics of causal fermion systems' by Dappiaggi, Finster, Kamran, Reintjes (arXiv:2410.18045, Oct 2024 / May 2025). Title matches. Bib orphan. | Re-classified from `uncited`: cited via cites: [...] in cfs-comparison-summary.ts + algebraic-gns-embedding.ts. PDF verified."
     },
     {
       "id": "blitvic2012",
@@ -220,7 +220,7 @@
       "verified_at": "2026-05-19T06:33:00Z",
       "verified_by": "Claude (claude-opus-4-7)",
       "fixes_applied": 0,
-      "note": "PDF MISMATCH: arXiv:1205.4003 = 'Two-Parameter Non-Commutative Central Limit Theorem' by Natasha Blitvi\u0107, but references.ts entry title says 'The (q,t)-Gaussian process'. These are two different Blitvi\u0107 papers \u2014 the bib metadata may be for a different Blitvi\u0107 arxiv id, OR the QOU intent is the (q,t)-Gaussian paper and the URL/arxiv-id needs fixing. Plus bib orphan (no QOU citations). Decision pending: update bib title to match the downloaded paper, OR update arxiv URL to point at the actual (q,t)-Gaussian paper."
+      "note": "PDF MISMATCH: arXiv:1205.4003 = 'Two-Parameter Non-Commutative Central Limit Theorem' by Natasha Blitvi\u0107, but references.ts entry title says 'The (q,t)-Gaussian process'. These are two different Blitvi\u0107 papers \u2014 the bib metadata may be for a different Blitvi\u0107 arxiv id, OR the QOU intent is the (q,t)-Gaussian paper and the URL/arxiv-id needs fixing. Plus bib orphan (no QOU citations). Decision pending: update bib title to match the downloaded paper, OR update arxiv URL to point at the actual (q,t)-Gaussian paper. | UPDATE: actually has 5 citation sites via cites: arrays. The paper-mismatch (arxiv:1205.4003 = 'Two-Parameter Non-Commutative CLT', not the bib title 'The (q,t)-Gaussian process') still needs author decision: split keys or rename bib title."
     },
     {
       "id": "turaev2010",
