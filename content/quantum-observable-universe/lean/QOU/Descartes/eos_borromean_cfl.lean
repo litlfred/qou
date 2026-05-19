@@ -1,3 +1,6 @@
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
+
 /-!
 # QOU.Descartes.eos_borromean_cfl — placeholder stub
 
@@ -34,16 +37,31 @@ class EosBorromeanCflContext where
   P_D : ℝ
   /-- CFL gap `Δ_CFL = q + q⁻¹`. -/
   Δ_CFL : ℝ
-  /-- Manuscript sub-claim (i): Borromean-phase EOS — `ε_B` and `P_B`
-      satisfy the cold degenerate-Fermi-gas formula at baryon mass `M_B`. -/
-  claim_i_borromean_eos : Prop
-  /-- Manuscript sub-claim (ii): CFL-phase EOS — `ε_D` and `P_D` satisfy
-      the cold quark Fermi-gas formula at effective mass `M_D`, with an
-      additional gap contribution `3 Δ_CFL² μ_q² / π²`. -/
-  claim_ii_cfl_eos : Prop
-  /-- Manuscript sub-claim (iii): the diquark-to-Borromean stiffness ratio
-      `P_D / P_B` is dominated by `(M_B / M_D) · 3^{5/3}` plus a gap term. -/
-  claim_iii_stiffness_ratio : Prop
+  /-- Substrate `ℏ_q = (q − 1)/q`. -/
+  hbar_q : ℝ
+  /-- Quark chemical potential `μ_q`. -/
+  μ_q : ℝ
+  /-- Manuscript sub-claim (i) — Borromean-phase EOS:
+      `ε_B = M_B · n_B + (3/5)·(ℏ_q²(3π²)^{2/3}/(2 M_B))·n_B^{5/3}`
+      and `P_B = (ℏ_q²(3π²)^{2/3}/(5 M_B))·n_B^{5/3}`. -/
+  claim_i_borromean_eos :
+    ε_B = M_B * n_B +
+      (3 / 5) * (hbar_q ^ 2 * (3 * Real.pi ^ 2) ^ ((2 : ℝ) / 3) /
+        (2 * M_B)) * n_B ^ ((5 : ℝ) / 3) ∧
+    P_B = (hbar_q ^ 2 * (3 * Real.pi ^ 2) ^ ((2 : ℝ) / 3) /
+        (5 * M_B)) * n_B ^ ((5 : ℝ) / 3)
+  /-- Manuscript sub-claim (ii) — CFL-phase pressure includes the
+      gap contribution `3 Δ_CFL² μ_q² / π²` on top of the cold quark
+      Fermi-gas term. -/
+  claim_ii_cfl_eos :
+    P_D = (hbar_q ^ 2 * (3 * Real.pi ^ 2) ^ ((2 : ℝ) / 3) /
+        (5 * M_D)) * (3 * n_B) ^ ((5 : ℝ) / 3) +
+      3 * Δ_CFL ^ 2 * μ_q ^ 2 / Real.pi ^ 2
+  /-- Manuscript sub-claim (iii) — Stiffness ratio:
+      `P_D / P_B = (M_B / M_D) · 3^{5/3} + 3 Δ_CFL² μ_q² / (π² P_B)`. -/
+  claim_iii_stiffness_ratio :
+    P_D / P_B = (M_B / M_D) * (3 : ℝ) ^ ((5 : ℝ) / 3) +
+      3 * Δ_CFL ^ 2 * μ_q ^ 2 / (Real.pi ^ 2 * P_B)
 
 /-- **Manuscript statement** (full body):
 
@@ -145,9 +163,16 @@ $q =
     translation. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/eos-borromean-cfl.ts
 theorem eos_borromean_cfl [ctx : EosBorromeanCflContext] :
-    ctx.claim_i_borromean_eos ∧
-    ctx.claim_ii_cfl_eos ∧
-    ctx.claim_iii_stiffness_ratio :=
+    (ctx.ε_B = ctx.M_B * ctx.n_B +
+      (3 / 5) * (ctx.hbar_q ^ 2 * (3 * Real.pi ^ 2) ^ ((2 : ℝ) / 3) /
+        (2 * ctx.M_B)) * ctx.n_B ^ ((5 : ℝ) / 3) ∧
+     ctx.P_B = (ctx.hbar_q ^ 2 * (3 * Real.pi ^ 2) ^ ((2 : ℝ) / 3) /
+        (5 * ctx.M_B)) * ctx.n_B ^ ((5 : ℝ) / 3)) ∧
+    ctx.P_D = (ctx.hbar_q ^ 2 * (3 * Real.pi ^ 2) ^ ((2 : ℝ) / 3) /
+      (5 * ctx.M_D)) * (3 * ctx.n_B) ^ ((5 : ℝ) / 3) +
+      3 * ctx.Δ_CFL ^ 2 * ctx.μ_q ^ 2 / Real.pi ^ 2 ∧
+    ctx.P_D / ctx.P_B = (ctx.M_B / ctx.M_D) * (3 : ℝ) ^ ((5 : ℝ) / 3) +
+      3 * ctx.Δ_CFL ^ 2 * ctx.μ_q ^ 2 / (Real.pi ^ 2 * ctx.P_B) :=
   ⟨ctx.claim_i_borromean_eos, ctx.claim_ii_cfl_eos,
    ctx.claim_iii_stiffness_ratio⟩
 
