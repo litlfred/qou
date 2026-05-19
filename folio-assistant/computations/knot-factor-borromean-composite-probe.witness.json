@@ -1,0 +1,62 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-05-19T07:43:53.862882+00:00",
+  "commitSha": "12f0a07bc194ea42f324acc3eb0adc0958a0bd61",
+  "assertions": [
+    {
+      "name": "chi_3_decouples_at_k_2",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 1e-30,
+      "unit": "χ_(3)(β_Bor_2) = χ_(3)(β_{4_1})² = 1·1 = 1",
+      "source": "Brunnian decoupling on the trivial λ = (3) block."
+    },
+    {
+      "name": "chi_21_decouples_at_k_2",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 1e-10,
+      "unit": "χ_(2,1)(β_Bor_2) = χ_(2,1)(β_{4_1})² = (-1)² = 1",
+      "source": "Brunnian decoupling on the standard λ = (2,1) block."
+    },
+    {
+      "name": "chi_alt_decouples_at_k_2",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 1e-30,
+      "unit": "χ_(1^3)(β_Bor_2) = χ_(1^3)(β_{4_1})² = 1·1 = 1",
+      "source": "Brunnian decoupling on the alternating λ = (1^n) block."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "knot-factor-borromean-composite-probe",
+  "scriptFile": "knot_factor_borromean_composite_probe.py",
+  "scriptHash": "defa6cd8efab",
+  "scriptCommitSha": "unknown",
+  "description": "I1 probe for cor:knot-factor-borromean-composite.  Verifies the Brunnian-decoupling structural claim for k=2 (⁴He as Bor_2): χ_λ(β_Bor_2) = χ_λ(β_{4_1})² for each λ ⊢ 3.  Uses the single-component 4_1 characters verified by the BD probe in PR #815.  Records the per-block expected products.  Note: the explicit formula (1 − h²)^k from the old corollary statement is moot under the revised Markov-amphicheirality framework (PR #817), but the underlying decoupling claim — that disjoint Brunnian components give multiplicative characters — remains structurally valid and is the content this probe witnesses.",
+  "contentBlock": "cor:knot-factor-borromean-composite",
+  "parameters": {
+    "q_0_50dps": "1.1099785955541805752815940796095093779930000000000",
+    "chi_3_single_4_1": 1.0,
+    "chi_21_single_4_1_at_q0": -1.0,
+    "chi_alt_single_4_1": 1.0
+  },
+  "data": {
+    "brunnian_decoupling_k2_expected": {
+      "chi_3_Bor_2": 1.0,
+      "chi_21_Bor_2": 1.0,
+      "chi_alt_Bor_2": 1.0,
+      "rule": "χ_λ(β_Bor_k) = ∏_i χ_λ(β_{4_1}^(i))  on each λ"
+    },
+    "cascade_note": {
+      "old_formula": "a_Bor_k = (1 − h²)^k  [from cor:knot-factor-amphicheiral, OLD]",
+      "revised_formula": "a_Bor_k = (a_{4_1})^k where a_{4_1} = Σ_λ w_λ · (χ_λ(β_{4_1})/χ_λ(𝟏))²  [from cor:knot-factor-amphicheiral, PR #817]",
+      "structural_invariant": "Brunnian decoupling χ_λ(β_Bor_k) = ∏_i χ_λ(β_{4_1}^(i)) is independent of the amphicheiral-corollary form; this probe witnesses the decoupling alone."
+    }
+  }
+}
