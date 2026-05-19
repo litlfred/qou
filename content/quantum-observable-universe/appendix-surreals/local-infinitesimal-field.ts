@@ -4,6 +4,7 @@ export default conjecture({
   label: "conj:local-infinitesimal-field",
   title:
     "Substrate parameter as a local infinitesimal field $\\varepsilon(x)$",
+  lean: { ref: "qou:QOU.AppendixSurreals.LocalInfinitesimalField", validation: "stub" },
   tags: [
     "surreal-numbers",
     "substrate-parameter",

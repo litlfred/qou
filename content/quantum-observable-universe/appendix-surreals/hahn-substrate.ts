@@ -4,6 +4,7 @@ export default conjecture({
   label: "conj:hahn-substrate",
   title:
     "Substrate parameter as a Hahn series in $\\varepsilon$ over $\\mathbf{No}$",
+  lean: { ref: "qou:QOU.AppendixSurreals.HahnSubstrate", validation: "stub" },
   tags: [
     "surreal-numbers",
     "substrate-parameter",

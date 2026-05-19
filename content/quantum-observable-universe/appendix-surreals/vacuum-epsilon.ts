@@ -4,6 +4,7 @@ export default conjecture({
   label: "conj:vacuum-epsilon",
   title:
     "Infinitesimal vacuum: $\\mathrm{Geom}(\\unicode{9737}) = \\varepsilon$",
+  lean: { ref: "qou:QOU.AppendixSurreals.VacuumEpsilon", validation: "stub" },
   tags: [
     "surreal-numbers",
     "vacuum",

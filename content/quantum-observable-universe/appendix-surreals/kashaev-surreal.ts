@@ -4,6 +4,7 @@ export default conjecture({
   label: "conj:kashaev-surreal",
   title:
     "Kashaev volume conjecture as a surreal standard-part identity",
+  lean: { ref: "qou:QOU.AppendixSurreals.KashaevSurreal", validation: "stub" },
   tags: [
     "surreal-numbers",
     "kashaev",
