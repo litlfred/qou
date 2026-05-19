@@ -12,7 +12,7 @@ export default proposition({
     engine: "python",
     script: "folio-assistant/computations/atomic_chirality_residue.py",
     witness: "folio-assistant/computations/atomic-chirality-residue.witness.json",
-    status: "not_run",
+    status: "verified",
     requires: ["mpmath", "numpy"],
   },
 });

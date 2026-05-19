@@ -21,7 +21,7 @@
   "scriptHash": "7dad8e700167",
   "scriptCommitSha": "unknown",
   "description": "Phase 5c.1 of the Δ_λ thread: numerical test of the Frobenius-reciprocity identity predicted by the Phase 5b bar-symmetric synthesis. Computes τ_M(β) = Σ_λ y_λ · χ_λ(β) at q_0 for D, T, ³He, ⁴He via cached y_λ + pyhecke_native χ_λ. Compares both the full canonical braid (include_inter=True) and the constituent-vacuum baseline (include_inter=False; PR #801's T_constit). The ratio τ_M(β_{Z=2}^N) / τ_M(β_{Z=1}^N) is the Ind-side per-Z step factor; under FR it should equal [3]_q² · cosh(h) · (interface-knot correction).",
-  "contentBlock": "conj:delta-lambda-categorical-closure",
+  "contentBlock": "prop:interface-knot-markov-z",
   "parameters": {
     "q0": "1.1099785955541805",
     "h": "0.20906032198987932471742728288258909142161010413127",
