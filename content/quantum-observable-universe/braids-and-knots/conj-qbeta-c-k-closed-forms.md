@@ -22,11 +22,12 @@ via the Lean class `QBetaPrecisionLadderCoefficients`).
 | $c_4$ | $c_3 \cdot b^4 = -2 \cdot b^4$ | **0.9%** residual | Hopf Jones × Kashiwara $b^4$ correction (multiplicative mixing) |
 | $c_5$ | $-(b^2 + 1/2)$ | **2.4%** residual | Kashiwara $b^2$ + half-Hopf integer offset (mixed) |
 | $c_6$ | $c_3^2 \cdot b^2 = 4 \cdot b^2$ | **14%** residual | Hopf Jones squared × Kashiwara $b^2$ |
-| $c_7$ | $c_3^3 = -8$ | **86%** off (sign-wrong) | Hopf Jones cubed (pattern guess; leverage limit at $N=7$ means almost any value closes) |
+| $c_7$ | $c_3^3 = -8$ | **signed error $+114\%$** (magnitude error $86\%$, opposite sign) | Hopf Jones cubed (pattern guess; leverage limit at $N=7$ means almost any value closes) |
 
-The match quality degrades with $k$. The $c_7$ closed form is
-**decisively wrong** by 86% with opposite sign vs the empirical
-value $+57.15$. The conjecture is retained because the $N=7$
+The match quality degrades with $k$. The $c_7$ closed form has
+**signed relative error $|{-8} - 57.149|/57.149 \approx 114\%$**
+(magnitude-only error $|8 - 57.149|/57.149 \approx 86\%$). The
+conjecture is retained because the $N=7$
 correction's leverage on cumulative $Q_\beta$ residual is at the
 $10^{-13}$ scale (any $c_7 \in [-100, +100]$ closes to within
 $10^{-4}$ ppb), so the actual numerical value is under-determined.

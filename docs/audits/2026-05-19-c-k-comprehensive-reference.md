@@ -115,11 +115,11 @@ with:
   - **Borel-Weil-Bott contribution** at 2nd cohomological order
   - **Trace of Casimir squared** on a specific weight space
 
-### $c_7 \approx +57.149$ — empirical (closed form $c_3^3 = -8$, 86% off WITH SIGN WRONG)
+### $c_7 \approx +57.149$ — empirical (closed form $c_3^3 = -8$, signed error +114%)
 
 - **Where it lives**: $(1 + c_7 b^7 \hbar_q^{14})$ — N=7 rung.
 - **Empirical value**: $+57.149243$.
-- **Conjectured closed form**: $c_3^3 = -8$ — **WRONG**: 86% off in magnitude AND opposite sign.
+- **Conjectured closed form**: $c_3^3 = -8$ — **WRONG**: signed relative error $|{-8} - 57.149|/57.149 \approx 114\%$ (magnitude-only error $86\%$, opposite sign of conjecture).
 - **Why retained**: at N=7 the **leverage limit** kicks in. $c_7 \cdot b^7 \hbar_q^{14}$ is at scale $10^{-13}$; ANY $c_7 \in [-100, +100]$ closes the residual to within $10^{-4}$ ppb. The actual value is **not uniquely determined** by closure data.
 - **Derivation route**: **EMPIRICAL pattern guess** at the leverage floor. Categorical interpretation is highly speculative.
 - **Physical meaning**: at this leverage scale, no clean physical interpretation. The framework's L2 100×-experimental target (7.8 ppb) is met at N=3 — c_4..c_7 are research-grade overprecision beyond physical relevance.

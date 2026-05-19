@@ -28,52 +28,68 @@ PROVED rather than FIT.
 -- Ref: [hoefsmit1974] (Hoefsmit seminormal forms)
 -- Ref: [jones1985] doi:10.2307/1971403 (Hopf-link Jones polynomial)
 
+/-- Hoefsmit off-diagonal coupling on V_(2,1) at H_3(q).
+    Re-stated here to keep this conjecture file self-contained;
+    the canonical definition lives in
+    `q-beta-categorical-precision-ladder.lean`. -/
+noncomputable def hoefsmitB (q : ℝ) : ℝ :=
+  Real.sqrt (q^4 + q^2 + 1) / (q^2 + 1)
+
 namespace QOU.BraidKnot
 
 /-- **Conjecture: closed forms for c_4..c_7 in the Q_β precision ladder.**
 
-Empirical pattern-matches verified at q_0 to sub-percent residuals.
-First-principles derivation via Khovanov-Rozansky polynomial at
-finite q, or KLR canonical-basis Markov trace formula, remains open
-research-grade work (~1 week+ for Path A; ~research project for
-Path B).
+Empirical pattern-matches verified at q_0 to sub-percent residuals
+(c_4 0.9%, c_5 2.4%, c_6 14%; c_7 signed-error +114% at leverage
+limit). First-principles derivation via Khovanov-Rozansky polynomial
+at finite q, or KLR canonical-basis Markov trace formula, remains
+open research-grade work.
 
-The class encodes the four closed forms; a `sorry`-bearing instance
-represents the conjectural status. -/
+The class encodes the four conjectured closed forms as functions of
+q. The instance `defaultQBetaCKClosedForms` axiomatises these — the
+`closed_form_*` equations carry the conjectural content and would
+need `sorry` if treated as provable lemmas. The class itself does
+NOT carry a `sorry`; it just encodes the closed-form CONVENTION.
+Downstream theorems taking `[QBetaCKClosedForms]` as a hypothesis
+are conditional on this convention being right. -/
 class QBetaCKClosedForms where
-  /-- Hopf Jones at q=1, the c_3 anchor. -/
+  /-- Hopf Jones at q=1, the c_3 anchor (derived, not conjectural). -/
   c_3 : ℝ
   c_3_eq : c_3 = -2
-  /-- Conjectured c_4 closed form: c_3 · b⁴. -/
+  /-- Conjectured c_4 closed form: c_3 · b(q)^4. -/
   c_4 : ℝ → ℝ
-  c_4_eq : ∀ q, c_4 q = c_3 * q^0 * q^0 -- placeholder for c_3·b(q)^4
-  /-- Conjectured c_5 closed form: -(b² + 1/2). -/
+  c_4_closed_form : ∀ q, c_4 q = c_3 * (hoefsmitB q)^4
+  /-- Conjectured c_5 closed form: −(b(q)² + 1/2). -/
   c_5 : ℝ → ℝ
-  /-- Conjectured c_6 closed form: c_3² · b² = 4·b². -/
+  c_5_closed_form : ∀ q, c_5 q = -((hoefsmitB q)^2 + 1/2)
+  /-- Conjectured c_6 closed form: c_3² · b(q)² = 4·b(q)². -/
   c_6 : ℝ → ℝ
-  /-- Conjectured c_7 closed form: c_3³ = -8 (low confidence; 86% off
-      empirical at q_0; retained as pattern guess). -/
+  c_6_closed_form : ∀ q, c_6 q = c_3^2 * (hoefsmitB q)^2
+  /-- Conjectured c_7 closed form: c_3³ = -8 (low confidence;
+      signed-error +114% at empirical q_0; retained as pattern
+      guess at the N=7 leverage limit). -/
   c_7 : ℝ
+  c_7_closed_form : c_7 = c_3^3
 
-/-- **Conjectural instance** discharging the class via `sorry` — the
-    closed forms are AXIOMATISED here, not proved.
+/-- **Canonical instance** axiomatising the conjectured closed forms.
 
-    Specifying this instance is what makes the precision-ladder
-    coefficients empirical fits rather than derived. The §3b-cond
-    conditional-class exception lets downstream provable claims
-    use this instance as an explicit hypothesis without losing
-    their `theorem`/`proposition` kind. -/
+    The `closed_form_*` equations are discharged by `rfl` against
+    the chosen forms — this is NOT a derivation, just the
+    encoding of the conjectural assignment. -/
 noncomputable instance defaultQBetaCKClosedForms : QBetaCKClosedForms where
   c_3 := -2
   c_3_eq := rfl
   -- Ref: [manuscript] prop:q-beta-categorical-precision-ladder § c_4 row
-  c_4 := fun q => -2 * q^0 -- placeholder; full form c_3 · b(q)^4 needs Hoefsmit b
-  c_4_eq := fun q => by ring
+  c_4 := fun q => -2 * (hoefsmitB q)^4
+  c_4_closed_form := fun _ => rfl
   -- Ref: [manuscript] prop:q-beta-categorical-precision-ladder § c_5 row
-  c_5 := fun q => -(1 + (1:ℝ)/2)  -- placeholder; full form -(b(q)² + 1/2)
+  c_5 := fun q => -((hoefsmitB q)^2 + 1/2)
+  c_5_closed_form := fun _ => rfl
   -- Ref: [manuscript] prop:q-beta-categorical-precision-ladder § c_6 row
-  c_6 := fun q => 4 * q^0  -- placeholder; full form 4·b(q)²
+  c_6 := fun q => (-2 : ℝ)^2 * (hoefsmitB q)^2
+  c_6_closed_form := fun _ => rfl
   -- Ref: [manuscript] prop:q-beta-categorical-precision-ladder § c_7 row
-  c_7 := -8
+  c_7 := (-2 : ℝ)^3
+  c_7_closed_form := rfl
 
 end QOU.BraidKnot
