@@ -36,9 +36,11 @@ class BorromeanHopfEnergyCrossoverContext where
   claim_i_borromean_mass : M_B = 2 * V_B / ((q - 1) / q) ^ 2
   /-- Manuscript sub-claim (ii): Diquark-phase mass `M_D = q + q⁻¹`. -/
   claim_ii_diquark_mass : M_D = q + q⁻¹
-  /-- Manuscript sub-claim (iii) — crossover condition:
-      diquark phase favoured iff `|E_D| > |E_B|`. -/
-  claim_iii_crossover : |E_D| > |E_B| ↔ E_D < E_B
+  /-- Predicate: the diquark phase is energetically favoured. -/
+  diquark_favoured : Prop
+  /-- Manuscript sub-claim (iii) — crossover condition: diquark
+      phase is favoured iff `|E_D| > |E_B|`. -/
+  claim_iii_crossover : diquark_favoured ↔ |E_D| > |E_B|
 
 /-- **Manuscript statement** (full body):
 
@@ -128,7 +130,7 @@ $$
 theorem borromean_hopf_energy_crossover [ctx : BorromeanHopfEnergyCrossoverContext] :
     ctx.M_B = 2 * ctx.V_B / ((ctx.q - 1) / ctx.q) ^ 2 ∧
     ctx.M_D = ctx.q + ctx.q⁻¹ ∧
-    (|ctx.E_D| > |ctx.E_B| ↔ ctx.E_D < ctx.E_B) :=
+    (ctx.diquark_favoured ↔ |ctx.E_D| > |ctx.E_B|) :=
   ⟨ctx.claim_i_borromean_mass, ctx.claim_ii_diquark_mass,
    ctx.claim_iii_crossover⟩
 

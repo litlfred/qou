@@ -1,3 +1,5 @@
+import Mathlib.Algebra.BigOperators.Basic
+
 /-!
 # QOU.FluidDynamics.leray_profile — placeholder stub
 
@@ -30,10 +32,13 @@ class LerayProfileContext where
   V : ℝ → ℝ
   /-- Maximum spin level `j_max` in the finite-dimensional ansatz. -/
   j_max : ℕ
-  /-- Manuscript identity: the Leray profile is a finite-dimensional
-      `SU_q(2)`-matrix ansatz with `j_max < ∞` (encoded as
-      `j_max + 1`-many weight components). -/
-  claim_leray_factorisation : j_max + 1 > 0
+  /-- Finite ansatz family `V_n : Fin (j_max + 1) → ℝ`. Reconstructs
+      the Leray profile from its weight-`j` matrix-entry components. -/
+  V_coeff : Fin (j_max + 1) → ℝ
+  /-- Manuscript identity: the Leray profile is reconstructed as a
+      finite sum over the `(j_max + 1)`-many weight components, i.e.
+      `V(0) = Σ_n V_coeff n`. -/
+  claim_leray_factorisation : V 0 = (Finset.univ.sum fun n => V_coeff n)
 
 /-- **Content statement** (from manuscript):
 
@@ -51,7 +56,7 @@ class LerayProfileContext where
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/leray-profile.ts
 theorem leray_profile [ctx : LerayProfileContext] :
-    ctx.j_max + 1 > 0 :=
+    ctx.V 0 = (Finset.univ.sum fun n : Fin (ctx.j_max + 1) => ctx.V_coeff n) :=
   ctx.claim_leray_factorisation
 
 end QOU.FluidDynamics

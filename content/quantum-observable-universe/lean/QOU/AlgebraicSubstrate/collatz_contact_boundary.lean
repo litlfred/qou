@@ -28,7 +28,7 @@ class CollatzContactBoundaryContext where
   /-- Manuscript identity: at the `[2]_q`-divisor `q = -1`, Kummer
       level-2 obstruction is removable because `2 ∣ χ(A) = -6`. -/
   claim_collatz_contact_boundary :
-    (q_int_2 = 0 → q = -1) ∧ ((2 : ℤ) ∣ chi_A)
+    (q_int_2 = 0 → kummer_obstruction_removable) ∧ ((2 : ℤ) ∣ chi_A)
 
 /-- **Manuscript statement** (full body):
 
@@ -95,7 +95,8 @@ $$
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/collatz-contact-boundary.ts
 theorem collatz_contact_boundary [ctx : CollatzContactBoundaryContext] :
-    (ctx.q_int_2 = 0 → ctx.q = -1) ∧ ((2 : ℤ) ∣ ctx.chi_A) :=
+    (ctx.q_int_2 = 0 → ctx.kummer_obstruction_removable) ∧
+    ((2 : ℤ) ∣ ctx.chi_A) :=
   ctx.claim_collatz_contact_boundary
 
 end QOU.AlgebraicSubstrate

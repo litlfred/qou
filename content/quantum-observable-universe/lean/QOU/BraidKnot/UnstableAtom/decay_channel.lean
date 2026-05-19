@@ -34,9 +34,12 @@ class DecayChannelContext where
   claim_i_well_defined : E_lambda ≠ 0
   /-- Predicate: `q` is on the boundary variety `{q : E(λ*, q) = 0}`. -/
   on_boundary : ℝ → Prop
+  /-- A candidate alternative decay-channel partition `λ'`. -/
+  λ_alt : PartitionIdx
   /-- Manuscript sub-claim (ii) — Uniqueness off the boundary variety:
-      `q ∉ boundary → λ*(K, q)` is unique. -/
-  claim_ii_unique_off_boundary : ¬ on_boundary q → ¬ on_boundary q
+      off the boundary, every alternative `λ'` that also minimises
+      `E_λ` must coincide with `λ*`. -/
+  claim_ii_unique_off_boundary : ¬ on_boundary q → λ_alt = λ_star
   /-- The two endpoints of the phase-crossing interval. -/
   q_1 q_2 : ℝ
   /-- Manuscript sub-claim (iii) — Phase-boundary crossing: stable at
@@ -101,7 +104,7 @@ flips ILP feasibility.*
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/unstable-atom-decay-channel.ts
 theorem decay_channel [ctx : DecayChannelContext] :
     ctx.E_lambda ≠ 0 ∧
-    (¬ ctx.on_boundary ctx.q → ¬ ctx.on_boundary ctx.q) ∧
+    (¬ ctx.on_boundary ctx.q → ctx.λ_alt = ctx.λ_star) ∧
     (ctx.q_1 ≤ ctx.q ∧ ctx.q ≤ ctx.q_2 →
       ∃ q_star : ℝ, ctx.q_1 ≤ q_star ∧ q_star ≤ ctx.q_2 ∧
         ctx.on_boundary q_star) :=

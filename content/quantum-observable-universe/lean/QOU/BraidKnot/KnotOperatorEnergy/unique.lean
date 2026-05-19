@@ -22,9 +22,11 @@ class UniqueContext where
   PartitionIdx : Type
   /-- The knot-operator-energy function `E(λ, q) = |u_λ(q)|`. -/
   E : PartitionIdx → ℝ
-  /-- Manuscript sub-claim (i) — Partition-determined: `E λ = E λ'`
-      whenever the partitions agree (the q-independent indexing). -/
-  claim_i_partition_determined : ∀ λ λ' : PartitionIdx, λ = λ' → E λ = E λ'
+  /-- Manuscript sub-claim (i) — Partition-determined: stays Prop
+      because the `q`-independence of indexing requires a separate
+      `E_at_q : ℝ → PartitionIdx → ℝ` family and the claim
+      `∀ q₁ q₂, E_at_q q₁ λ = E_at_q q₂ λ`, not yet typed. -/
+  claim_i_partition_determined : Prop
   /-- Predicate: `q` is in the generic locus (not on the
       boundary variety). -/
   generic_locus : ℝ → Prop
@@ -38,11 +40,13 @@ class UniqueContext where
   abs_choice : Type
   /-- Energy under a specific absolute-value choice. -/
   E_choice : abs_choice → PartitionIdx → ℝ
+  /-- Equivalence relation on absolute-value choices (Ostrowski-class). -/
+  abs_equiv : abs_choice → abs_choice → Prop
   /-- Manuscript sub-claim (iii) — Absolute-value uniqueness up to
-      equivalence (within each place, by Ostrowski). -/
+      Ostrowski equivalence: equivalent choices yield equal energies. -/
   claim_iii_absolute_value_determined :
     ∀ (v₁ v₂ : abs_choice) (λ : PartitionIdx),
-      E_choice v₁ λ = E_choice v₂ λ ∨ True
+      abs_equiv v₁ v₂ → E_choice v₁ λ = E_choice v₂ λ
 
 /-- **Manuscript statement** (full body):
 
@@ -74,10 +78,10 @@ energies.*
     translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/knot-operator-energy-unique.ts
 theorem unique [ctx : UniqueContext] :
-    (∀ λ λ' : ctx.PartitionIdx, λ = λ' → ctx.E λ = ctx.E λ') ∧
+    ctx.claim_i_partition_determined ∧
     (ctx.generic_locus ctx.q → ∀ λ : ctx.PartitionIdx, ctx.E λ = ctx.E' λ) ∧
     (∀ (v₁ v₂ : ctx.abs_choice) (λ : ctx.PartitionIdx),
-      ctx.E_choice v₁ λ = ctx.E_choice v₂ λ ∨ True) :=
+      ctx.abs_equiv v₁ v₂ → ctx.E_choice v₁ λ = ctx.E_choice v₂ λ) :=
   ⟨ctx.claim_i_partition_determined, ctx.claim_ii_q_generic_determined,
    ctx.claim_iii_absolute_value_determined⟩
 
