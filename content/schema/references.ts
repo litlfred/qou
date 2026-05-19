@@ -3890,6 +3890,24 @@ export const references: CSLData[] = [
     DOI: "10.1002/9780470316559",
   }),
 
+  // ── Differential geometry — Kobayashi–Nomizu Vol. I (1963) ─────
+  // (merged from main — original 1963 Interscience edition, distinct
+  //  from the 1996 Wiley Classics reprint above. Some .lean files
+  //  cite the 1963 original; the 1996 reprint is the same content.)
+  ref({
+    id: "kobayashi1963",
+    type: "book",
+    title: "Foundations of Differential Geometry, Volume I",
+    author: [
+      { family: "Kobayashi", given: "Shoshichi" },
+      { family: "Nomizu", given: "Katsumi" },
+    ],
+    publisher: "Interscience Publishers (John Wiley & Sons)",
+    "publisher-place": "New York",
+    issued: { "date-parts": [[1963]] },
+    note: "Wiley Classics Library reprint, 1996, ISBN 978-0-471-15733-5",
+  }),
+
   ref({
     id: "bleecker1981",
     type: "book",
@@ -4204,6 +4222,38 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[1999]] },
     URL: "https://arxiv.org/abs/math/9911033",
     note: "arXiv:math/9911033. Added 2026-05-19 from uploads/ gap audit. Possible fit with QOU's Riemann-surface / Bring's-surface geometry (descartes-universe chapters) but no obvious citation target found in current QOU prose; mark pending-placement.",
+  }),
+
+  // ── Thurston — Princeton notes on 3-manifold geometry/topology ─
+  // (merged from main via PR #736 — kept verbatim from origin/main)
+  ref({
+    id: "thurston1979",
+    type: "manuscript",
+    title: "The Geometry and Topology of Three-Manifolds",
+    author: [{ family: "Thurston", given: "William P." }],
+    publisher: "Princeton University (lecture notes)",
+    "publisher-place": "Princeton, NJ",
+    issued: { "date-parts": [[1979]] },
+    URL: "https://library.msri.org/books/gt3m/",
+    note: "Cited for the hyperbolic-structure theory of knot complements (§4)",
+  }),
+
+  // ── Bokut & Chen — Gröbner-Shirshov bases (survey) ──────────────
+  // (merged from main via PR #736 — kept verbatim from origin/main)
+  ref({
+    id: "bokutchen2014",
+    type: "article-journal",
+    title: "Gröbner-Shirshov bases and their calculation",
+    author: [
+      { family: "Bokut", given: "L. A." },
+      { family: "Chen", given: "Y." },
+    ],
+    "container-title": "Bulletin of Mathematical Sciences",
+    issued: { "date-parts": [[2014]] },
+    volume: "4",
+    issue: "3",
+    page: "325-395",
+    DOI: "10.1007/s13373-014-0054-6",
   }),
 
 ];

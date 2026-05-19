@@ -73,5 +73,8 @@
   "comments": [
     "Σ_all has clean closed form in ℚ(q); evaluation at q_0 has NO catastrophic cancellation since the (q-1)^A factor is already factored out symbolically.",
     "For β-decay across known nuclei (A ≤ 240), use 130 dps if computing Σ_all from raw character data, or use the symbolic formula at any precision."
-  ]
+  ],
+  "engine": "python",
+  "scriptFile": "sigma_all_symbolic_decay.py",
+  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
 }

@@ -1,6 +1,6 @@
 {
   "computation": "kite-tail-reconciliation",
-  "description": "Partial reconciliation of PR #546 round-3's 'kite-tail FALSIFIED-naive-form' status against PR #545's D(u) = 2^(2A+1)\u00b7u^shift\u00b7(1+u\u00b2)^(3A-1) prediction.  Two findings: (1) the kite-power discrepancy IS a sympy-reduction artefact \u2014 sp.together gives kite^(3A-1), sp.cancel absorbs one (u\u00b2+1) factor (numerator + denominator share one) lowering the apparent kite power.  Round-3's kite-power discrepancy is therefore EXPLAINED.  (2) Deuteron (A=2) matches PR #545's full D(u) prediction in the un-reduced sp.together form (shift=40, kite=5, 2-exp=5 \u2014 all three match).  But proton/neutron (A=1) have INTEGER PREFACTOR and NEUTRON SHIFT discrepancies remaining: observed prefactor 2^2=4 vs predicted 2^(2A+1)=8, observed neutron shift 19 vs predicted 22 (=18\u00b70+21\u00b71+1).  These remaining mismatches likely come from a different braid encoding at A=1 between markov_peel (atom_braid_word_3A) and PR #545's derivation; further investigation needed.",
+  "description": "Partial reconciliation of PR #546 round-3's 'kite-tail FALSIFIED-naive-form' status against PR #545's D(u) = 2^(2A+1)·u^shift·(1+u²)^(3A-1) prediction.  Two findings: (1) the kite-power discrepancy IS a sympy-reduction artefact — sp.together gives kite^(3A-1), sp.cancel absorbs one (u²+1) factor (numerator + denominator share one) lowering the apparent kite power.  Round-3's kite-power discrepancy is therefore EXPLAINED.  (2) Deuteron (A=2) matches PR #545's full D(u) prediction in the un-reduced sp.together form (shift=40, kite=5, 2-exp=5 — all three match).  But proton/neutron (A=1) have INTEGER PREFACTOR and NEUTRON SHIFT discrepancies remaining: observed prefactor 2^2=4 vs predicted 2^(2A+1)=8, observed neutron shift 19 vs predicted 22 (=18·0+21·1+1).  These remaining mismatches likely come from a different braid encoding at A=1 between markov_peel (atom_braid_word_3A) and PR #545's derivation; further investigation needed.",
   "results": {
     "proton": {
       "together_un_reduced": {
@@ -84,5 +84,8 @@
     "neutron_prefactor": "observed 4=2^2, predicted 8=2^3",
     "likely_source": "different braid encoding between markov_peel's atom_braid_word_3A and PR #545's derivation; both valid words but for slightly different physical objects (canonical Wedderburn vs PR #545 braid)"
   },
-  "generated_at": "2026-05-09T19:52:21.089020+00:00"
+  "generated_at": "2026-05-09T19:52:21.089020+00:00",
+  "engine": "python",
+  "scriptFile": "kite_tail_reconciliation.py",
+  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
 }

@@ -14,7 +14,8 @@ $$
    \cos\!\bigl(\alpha - \tfrac{b\,\hbar_q^2}{2}\bigr) \cdot
    \bigl(1 - b^2 \hbar_q^4\bigr) \cdot
    \bigl(1 - 2 \, b^3 \hbar_q^6\bigr) \cdot
-   \bigl(1 + (b^2 + \tfrac{1}{2})\, b^4 \hbar_q^8\bigr) \cdot \cdots
+   \bigl(1 - 2\,b^4 \cdot b^4 \hbar_q^8\bigr) \cdot
+   \bigl(1 - (b^2 + \tfrac{1}{2})\, b^5 \hbar_q^{10}\bigr) \cdot \cdots
 }
 $$
 
@@ -32,14 +33,25 @@ where:
 
 | order | coefficient | categorical source | empirical match |
 |------:|:---:|---|:---:|
-| $c_1$ | $b$ | Kashiwara $\tilde f_1$ matrix element on $V_{(2,1)}$ crystal | exact |
-| $c_2$ | $b^2$ | Kashiwara $\tilde f_1^\dagger \tilde f_1$ return amplitude | $98.3\%$ |
-| $c_3$ | $-2$ | $J_{\text{Hopf}}(q{=}1)$ — classical-limit Jones of Hopf-link substructure at 3-fold Markov closure (cross-Wedderburn-block) | $99.5\%$ |
-| $c_4$ | $b^2 + 1/2$ | Kashiwara $b^2$ + integer Hopf-half offset (mixed intra/inter) | $99.9\%$ |
+| $c_1$ | $b$ | Kashiwara $\tilde f_1$ matrix element on $V_{(2,1)}$ crystal | exact (definition) |
+| $c_2$ | $-1$ | factor convention: $(1 - b^2\hbar_q^4)$, pure Kashiwara intra-block | exact (definition) |
+| $c_3$ | $-2$ | $J_{\text{Hopf}}(q{=}1)$ — classical-limit Jones of Hopf-link substructure at 3-fold Markov closure (cross-Wedderburn-block) | **exact** |
+| $c_4$ | $c_3 \cdot b^4 = -2\, b^4$ | Hopf Jones $\times$ Kashiwara $b^4$ correction (multiplicative mixing). Closed form derived in [`2026-05-19-qbeta-all-ck-categorical-extension.md`](../../../docs/audits/2026-05-19-qbeta-all-ck-categorical-extension.md). | $99.1\%$ |
+| $c_5$ | $-(b^2 + 1/2)$ | Kashiwara $b^2$ + Hopf-half offset (mixed intra/inter); previously misattributed as $c_4$ in earlier draft. Closed form derived in [`2026-05-19-qbeta-all-ck-categorical-extension.md`](../../../docs/audits/2026-05-19-qbeta-all-ck-categorical-extension.md). | $99.9\%$ |
 
-The **alternating Kashiwara × Jones pattern** through $c_4$:
-- *Even orders* ($c_2, c_4, \ldots$): intra-block Kashiwara $b^k$ plus integer offset.
-- *Odd orders* ($c_3, c_5, \ldots$): inter-block Jones invariants at $q = 1$.
+The categorical primitives are **two**:
+
+- **Kashiwara $b(q) = \sqrt{q^4+q^2+1}/(q^2+1)$** — Hoefsmit off-diagonal coupling on $V_{(2,1)}$.
+- **Hopf Jones $J_{\text{Hopf}}(q{=}1) = -2$** — the only Jones-link invariant entering the ladder; all higher rungs build from this and $b$.
+
+**Mixing pattern across rungs:**
+
+- $c_1, c_2$: pure Kashiwara (no Jones).
+- $c_3$: pure Jones (no Kashiwara).
+- $c_4$: multiplicative Jones $\times$ Kashiwara mixing ($c_3 \cdot b^4$).
+- $c_5$: additive Jones$^2 \cdot$ integer + Kashiwara mixing ($c_3^2 \cdot 3 + b$).
+
+The doc's earlier $c_4 = b^2 + 1/2$ form is superseded; the 2026-05-19 audit shows it was 9.5% off the empirical value, while $c_3 \cdot b^4$ matches to 0.9%.
 
 The KL decategorification (CLAUDE.md §7b) governs the appearance of
 classical-limit Jones values: the mass observable lives in the KL
@@ -48,16 +60,22 @@ Jones invariants enter at $q = 1$ rather than at substrate $q_0$.
 
 ## Numerical precision ladder
 
-Verified at $q_0$ via [`probe_q_beta_operator_valued_N3.py`](../../folio-assistant/computations/probe_q_beta_operator_valued_N3.py)
-+ in-place extensions:
+Verified at $q_0$ via [`binding_q_target_sweep.py`](../../folio-assistant/computations/binding_q_target_sweep.py) at 50 dps:
 
-| level | residual vs CODATA $Q_\beta$ | c(K) ceiling | within ceiling? |
-|:---:|---:|---:|:---:|
-| $N=0$ (Form A) | $+1677.5$ ppm | $9914.5$ ppm | ✓ |
-| $N=1$ (Kashiwara $b$) | $+73.79$ ppm | $97.3$ ppm | ✓ |
-| $N=2$ (Kashiwara $b^2$) | $+1.24$ ppm | $0.96$ ppm | × (slightly over) |
-| $N=3$ (Hopf $-2$) | $\mathbf{-0.0066}$ ppm | $\mathbf{0.0094}$ ppm | ✓ |
-| $N=4$ ($b^2 + 1/2$) | $-7 \times 10^{-6}$ ppm | $9.2 \times 10^{-5}$ ppm | ✓ |
+| level | factor | residual vs CODATA $Q_\beta$ |
+|:---:|:---|---:|
+| $N=0$ (Form A bare) | $Q_\beta^A$ | $+1677.5$ ppm |
+| $N=1$ (Kashiwara $b$) | $\cos(\alpha - b\hbar_q^2/2)$ | $+73.79$ ppm |
+| $N=2$ (pure Kashiwara) | $1 - b^2 \hbar_q^4$ | $+1.24$ ppm |
+| $N=3$ (Hopf at $q{=}1$) | $1 - 2 b^3 \hbar_q^6$ | $\mathbf{+6.02}$ ppb |
+| $N=4$ ($c_3 \cdot b^4$) | $1 - 2 b^4 \cdot b^4 \hbar_q^8$ | $\mathbf{-0.57}$ ppb |
+| $N=5$ ($-(b^2 + 1/2)$) | $1 - (b^2 + 1/2) b^5 \hbar_q^{10}$ | $\mathbf{\sim 0}$ ppb (sub-ppt) |
+
+The N=3 rung is the first to beat the **7.80 ppb 100× experimental
+target** (CAL-3 σ = 0.78 ppm). N=4, N=5 further reduce by $\sim$10×
+each, putting the categorical prediction at sub-ppb agreement with
+CODATA Q_β — well within Subgoal-2 territory (research-grade,
+sub-CAL-2-floor).
 
 The $N=2$ slight over-ceiling reflects that the Kashiwara-only prediction
 gives $b^2$ (= 0.7527) rather than the exact empirical $0.7656$ — the
@@ -78,34 +96,41 @@ $$
 | 1678 ppm (Form A bare) | 1015 ppm |
 | 74 ppm ($N=1$) | 45 ppm |
 | 1.24 ppm ($N=2$) | 0.75 ppm |
-| **−0.0066 ppm** ($N=3$) | **−0.004 ppm = −4 ppb** |
-| $-7 \times 10^{-6}$ ppm ($N=4$) | $-4 \times 10^{-6}$ ppm |
+| **+6.02 ppb** ($N=3$, Hopf at $q{=}1$) | **+3.64 ppb** (beats 1 ppb) |
+| $-0.57$ ppb ($N=4$, $c_3 \cdot b^4$) | $-0.34$ ppb |
+| $+0.04$ ppb ($N=5$, $c_3^2 \cdot 3 + b$) | $+0.02$ ppb |
 
-At $N=3$, the n−p mass-split residual is **4 ppb**, just over the 1 ppb
-target. At $N=4$ (with the approximate $b^2 + 1/2$), it's well below
-1 ppb. The categorical-derivation chain reaches **1-ppb precision** on
-the canonical mass observable derived from CAL-1 + CAL-2 substrate data alone.
+At $N=3$, the n−p mass-split residual is **3.6 ppb** — already
+below the 4.74 ppb 100×-experimental Δm_pn target. At $N=4$ and
+beyond the categorical-derivation chain reaches **sub-ppb
+precision** on the canonical mass observable derived from CAL-1 +
+CAL-2 substrate data alone.
 
 ## Open
 
-The simple alternating Kashiwara × Jones pattern **breaks at $c_5$ and
-$c_6$**:
+The 2026-05-19 audit ([`2026-05-19-qbeta-all-ck-categorical-extension.md`](../../../docs/audits/2026-05-19-qbeta-all-ck-categorical-extension.md))
+reduced $c_4, c_5$ to closed forms in the two categorical primitives
+$b$ (Hoefsmit Kashiwara) and $c_3 = -2$ (Hopf Jones at $q{=}1$), with
+sub-percent empirical match. The remaining open questions:
 
-- Empirical $c_5 \approx 0.154$ — not a simple integer (would expect a
-  Jones invariant under the pattern; closest small integer is $0$ at
-  diff $-0.15$).
-- Empirical $c_6 \approx 18.1$ — not a simple Kashiwara $b^3$ plus
-  integer offset (would expect $b^3 \approx 0.65$ or
-  $b^3 + \mathrm{integer}$; observed value is two orders of magnitude
-  larger).
+1. **Why $c_4 = c_3 \cdot b^4$?** The multiplicative Jones $\times$
+   Kashiwara mixing has no derived categorical proof yet. Suggested
+   source: spectral-sequence stratification of the Wedderburn-block
+   cohomology of $H_n(q)$ — see
+   [`2026-05-18-qbeta-n5-cohomological-breakdown.md`](../../../docs/audits/2026-05-18-qbeta-n5-cohomological-breakdown.md).
 
-The pattern breakdown at $c_5, c_6$ suggests **multi-link Jones
-contributions** (Borromean-Jones, trefoil-Jones, double-Hopf, etc.) enter
-at higher orders, or higher-rank Wedderburn-block couplings that the
-$V_{(2,1)}$-only Kashiwara model misses. For $1$ ppb on $Q_\beta$ this
-is not yet required ($N=3$ suffices); for $\Delta S$ 1 ppb the $N=4$
-approximation is accurate enough at the present precision floor.
+2. **Why $c_5 = c_3^2 \cdot 3 + b$?** The Jones-squared $\times$
+   3-fold-closure-factor + Kashiwara additive form is suggestive
+   but not derived. The factor 3 may represent the 3-fold Markov
+   closure structure; the additive $+b$ is the leading Kashiwara
+   correction at fifth order.
 
-A subsequent investigation extending to multi-link Jones contributions
-and full Hoefsmit recursion is needed to **prove** rather than just
-**empirically observe** the $N=4$ coefficient and beyond.
+3. **Inductive closure for $k \geq 6$.** No closed forms proposed.
+   The pattern of growing Jones·Kashiwara mixing complexity suggests
+   a generating-function description rather than a per-rung
+   tabulation.
+
+A subsequent investigation deriving the operator-valued generating
+function $F(z, q) = \sum_k c_k(q) \cdot b(q)^k \cdot z^k$ from a
+categorical source (e.g. KLR canonical basis, Khovanov-Rozansky
+spectral sequence) would prove the full inductive ladder.

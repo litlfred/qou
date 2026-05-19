@@ -11,7 +11,7 @@
     "m_e_MeV": 0.51099895,
     "delta_m_MeV": 1.2933323600000222,
     "Q_decay_MeV": 0.7823334100000222,
-    "Q_decay_MeV_err": 6.129437351829285e-7
+    "Q_decay_MeV_err": 6.129437351829285e-07
   },
   "nucleon_nf": {
     "neutron": {
@@ -41,7 +41,7 @@
       "σ₀": 0.012400974233012563,
       "σ₁": 0.011424985206317961,
       "L₊": -0.10899457695115022,
-      "L₋": -0.00009983850827455232,
+      "L₋": -9.983850827455232e-05,
       "e⁻": -0.0009759890266926585
     },
     "delta_net": -0.1882906200111204
@@ -89,5 +89,8 @@
     "match": true
   },
   "precision": "f64_numeric_fallback",
-  "truncation_eps": 0
+  "truncation_eps": 0,
+  "engine": "python",
+  "scriptFile": "trefoil-quark-nucleon-nf.py",
+  "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811"
 }

@@ -48,7 +48,7 @@
       "atom": "helium-4",
       "bridge_canonical": 0,
       "markov_peel": 0.05534834587669799,
-      "pyhecke_SW_pseudo_canonical": 0.000004425191012271548,
+      "pyhecke_SW_pseudo_canonical": 4.425191012271548e-06,
       "peel_vs_bridge_ratio": null,
       "pyhecke_vs_bridge_ratio": null
     }
@@ -59,5 +59,8 @@
     "pr_524_initial_claim": "pyhecke SW (FAR off canonical, orders of magnitude wrong)",
     "T_eq_3He_on_canonical": false,
     "T_3He_canonical_ratio": "1.985"
-  }
+  },
+  "engine": "python",
+  "scriptFile": "canonical_tr_m_three_path_comparison.py",
+  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
 }

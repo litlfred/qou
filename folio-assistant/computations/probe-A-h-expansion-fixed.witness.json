@@ -11,7 +11,7 @@
   "scriptHash": "cf53dccf3dd7",
   "scriptCommitSha": "ffcf23584fd5c3c3e3e238e70453f2ed5b22cba8",
   "description": "Numerical proof-attempt: A((4-q)/(4q+3)) = 5/2 - h²·G + O(h^4). Computes A(3/7) (the q=1 leading term) and fits A(a_post_hoc(q)) to a polynomial in h² over a small q-grid. Records c_0, c_2, c_4 fit coefficients and the leading/h² match flags.",
-  "contentBlock": "conj:flavor-dressed-mass-from-substrate-split",
+  "contentBlock": "prop:flavor-dressed-mass-from-substrate-split",
   "data": {
     "A_at_q1_3over7": 2.4637499907185796,
     "leading_target": 2.5,

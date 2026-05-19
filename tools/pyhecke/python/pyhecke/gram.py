@@ -47,7 +47,12 @@ W_ALT = _q2 / _denom_w
 
 NF_BASIS: list[tuple[int, ...]] = [(), (0,), (1,), (0, 1), (1, 0), (0, 1, 0)]
 NF_NAMES: list[str] = ["γ", "σ₀", "σ₁", "L₊", "L₋", "e⁻"]
-TR_M = np.array([1.0, z, z, z ** 2, z ** 2, z ** 3])
+# Markov-Ocneanu-Wenzl trace tr_M on the GB-NF basis of H_3(q).
+# tr_M(γ) = 1; tr_M(σ_i) = z; tr_M(σ_i σ_j) = z² (i ≠ j, by Markov axiom).
+# For e⁻ = σ_0·σ_1·σ_0: via Markov-trace recursion (cyclicity + σ_0² =
+# h·σ_0 + 1) the correct value is h·z² + z, NOT z³ as listed prior to
+# the 2026-05-19 fix (see docs/audits/2026-05-19-trm5-markov-bug.md).
+TR_M = np.array([1.0, z, z, z ** 2, z ** 2, h * z ** 2 + z])
 
 
 # Bond operators for molecular binding (per-generator crossing chains)
@@ -175,7 +180,8 @@ _H_FRAC = _Q_FRAC - _QI_FRAC  # h = q - 1/q (exact rational)
 _Z_FRAC = Fraction(4993, 10000)  # z ≈ 1/(q^{1/2}+q^{-1/2})
 
 _TR_M_FRAC = [Fraction(1), _Z_FRAC, _Z_FRAC,
-              _Z_FRAC ** 2, _Z_FRAC ** 2, _Z_FRAC ** 3]
+              _Z_FRAC ** 2, _Z_FRAC ** 2,
+              _H_FRAC * _Z_FRAC ** 2 + _Z_FRAC]  # fix 2026-05-19 (was _Z_FRAC ** 3)
 
 _SYM_EIG_FRAC = [Fraction(1), _Q_FRAC, _Q_FRAC,
                  _Q_FRAC ** 2, _Q_FRAC ** 2, _Q_FRAC ** 3]

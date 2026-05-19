@@ -82,6 +82,20 @@ Q0 = Q_MP
 Z_MARK = mp.mpf(str(z_mark))
 H_VAL = mp.mpf(str(h_val))
 
+# Isotopes at A ≥ 5 (Hecke H_{≥15}) whose canonical |tr_M| at q_0
+# is intractable with the current Python mpmath @ 50 dps pipeline
+# (p(15) = 176 partitions and max Hoefsmit dim in the thousands;
+# bu64reus1 on PR #564 hit the 30-min CI timeout already at ⁴He /
+# H_12).  The sweep loop emits a `deferred: true` row for these
+# (no `error_kind`) so the I13 incomplete-coverage audit
+# distinguishes physics-blocked gaps from producer bugs.  Tractable
+# computation awaits (a) Rust kernel with rayon parallel partitions
+# + block-sparse Hoefsmit MPFR, or (b) Wenzl 1988 LR-branching
+# categorical reduction.  See AUDIT-DEEP-2026-05.md §7.
+DEFERRED_INTRACTABLE_ATOMS = frozenset({
+    "5Li", "6Li", "7Li", "7Be", "8Be", "9Be",
+})
+
 
 def abs_mpf(v):
     """Coerce a per-generator volume to abs mpmath float (no f64
@@ -885,6 +899,33 @@ def run_sweep_for_mode(tower_mode: str, isotopes: list, *, verbose: bool = True,
 
     rows = []
     for iso, Z, N, inter, M_codata in isotopes:
+        # ── Deferred-intractable isotopes ───────────────────────────
+        # Per atomic_tr_m_mpfr_50dps.py's ⁴He omission note, isotopes
+        # at A ≥ 5 need Hecke H_{≥15} with p(n) ≥ 176 partitions and
+        # max Hoefsmit dim in the thousands.  Current Python mpmath
+        # @ 50 dps can't produce |tr_M| within the 30-min CI timeout;
+        # tractable compute needs (a) Rust kernel with rayon parallel
+        # partitions + block-sparse Hoefsmit MPFR, or (b) categorical
+        # reduction via Wenzl 1988 LR branching.  Surface these atoms
+        # as `deferred` (NO error_kind) so the I13 incomplete-coverage
+        # audit doesn't conflate physics-blocked gaps with producer
+        # bugs.  Cf. AUDIT-DEEP-2026-05.md §7.
+        if iso in DEFERRED_INTRACTABLE_ATOMS:
+            rows.append({
+                "isotope": iso, "Z": Z, "N": N, "A": Z + N,
+                "M_codata": M_codata,
+                "deferred": True,
+                "deferral_reason": (
+                    f"Canonical |tr_M({iso})| at H_{(Z+N)*3} is intractable"
+                    " with current Python mpmath @ 50 dps; awaits Rust"
+                    " kernel or Wenzl-1988 LR-branching categorical"
+                    " reduction."
+                ),
+            })
+            if verbose:
+                print(f"  {iso:<6} [deferred-intractable] H_{(Z+N)*3}",
+                      flush=True)
+            continue
         try:
             terms = paper_six_term_mass(
                 Z, N, include_inter=inter,
@@ -896,6 +937,59 @@ def run_sweep_for_mode(tower_mode: str, isotopes: list, *, verbose: bool = True,
             # can distinguish T1-witness gaps (A ≥ 5 atoms not yet
             # computed) from genuine compute regressions.
             err_msg = f"{type(exc).__name__}: {exc}"
+            # Detect tower-mode upstream-witness gaps:
+            #   `tower_mode='habiro'` reads
+            #       `path-b-habiro-mass-probe.witness.json`
+            #       (current coverage: {p, n, D};
+            #        missing for the A=1..4 set: T, 3He, 4He).
+            #   `tower_mode='per-partition-k'` reads
+            #       `probe-phiq-per-partition-klambda.witness.json`
+            #       (current coverage: {D, T, 3He};
+            #        missing for the A=1..4 set: p, n, 4He).
+            # These are atom/mode coverage gaps, not producer bugs —
+            # emit `deferred: true, deferred_mode: <mode>` plus the
+            # specific upstream witness filename so the I13 audit
+            # surfaces *actionable* deferrals rather than opaque
+            # `error_kind`.  Cf. PR #798's deferred-intractable
+            # pattern for atom-level gaps.
+            _TOWER_MODE_UPSTREAM = {
+                "habiro": "path-b-habiro-mass-probe.witness.json",
+                "per-partition-k":
+                    "probe-phiq-per-partition-klambda.witness.json",
+            }
+            if (isinstance(exc, KeyError)
+                    and "missing from" in str(exc)
+                    and (f"tower_mode={tower_mode!r}" in str(exc)
+                         or f"tower_mode='{tower_mode}'" in str(exc))):
+                upstream_witness = _TOWER_MODE_UPSTREAM.get(
+                    tower_mode, "<unknown upstream witness>"
+                )
+                # Try to extract the "current coverage = [...]" hint
+                # from the KeyError message so the deferral row keeps
+                # the actionable list even though we're not raising.
+                exc_str = str(exc)
+                upstream_coverage_hint = None
+                if "current coverage = " in exc_str:
+                    after = exc_str.split("current coverage = ", 1)[1]
+                    upstream_coverage_hint = after.split(".", 1)[0].strip()
+                rows.append({
+                    "isotope": iso, "Z": Z, "N": N, "A": Z + N,
+                    "M_codata": M_codata,
+                    "deferred": True,
+                    "deferred_mode": tower_mode,
+                    "upstream_witness": upstream_witness,
+                    "upstream_coverage_hint": upstream_coverage_hint,
+                    "deferral_reason": (
+                        f"tower_mode={tower_mode!r} requires {iso!r} in"
+                        f" {upstream_witness}; current coverage = "
+                        f"{upstream_coverage_hint or '<unknown>'}."
+                        " Extend the upstream witness to clear this row."
+                    ),
+                })
+                if verbose:
+                    print(f"  {iso:<6} [deferred-mode={tower_mode}]",
+                          flush=True)
+                continue
             error_kind = "unknown"
             if isinstance(exc, KeyError) and "no canonical T1" in str(exc):
                 error_kind = "T1_witness_missing"
@@ -1247,6 +1341,8 @@ if __name__ == "__main__":
             row = next((r for r in sweep_results[mode]["rows"] if r["isotope"] == iso), None)
             if row is None or "error" in row:
                 line += f" {'ERR':>10}"
+            elif row.get("deferred"):
+                line += f" {'DEF':>10}"
             else:
                 line += f" {row['err_pct']:>+9.3f}%"
         print(line)

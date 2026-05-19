@@ -4,9 +4,10 @@ roles: [reader, collaborator, owner]
 user_invocable: true
 description: >
   Dispatcher for the `/integration-watch` slash command. Routes to
-  one or more of the four concrete integration watchers
+  one or more of the five concrete integration watchers
   (proof-integration-watcher, canonical-watcher,
-  compute-integration-watcher, detangler-integration-watcher).
+  compute-integration-watcher, detangler-integration-watcher,
+  one-voice-integration-watcher).
   With no argument, lists the available watchers and asks the user
   which to invoke. With arguments, dispatches the named watchers
   in parallel (each gets its own Monitor, queue, ledger, and
@@ -14,7 +15,7 @@ description: >
 allowed-tools: Read Edit Write Bash Grep Glob Agent Monitor Skill
 ---
 
-# /integration-watch — dispatcher for the 4 integration watchers
+# /integration-watch — dispatcher for the 5 integration watchers
 
 A thin dispatcher in front of [`local/integration-watcher`](integration-watcher.md)
 §0 (Invocation). When the user types `/integration-watch` (with or
@@ -31,7 +32,9 @@ more concrete child watchers and invokes them.
 /integration-watch compute-integration          → same as `compute`
 /integration-watch detangler                    → just detangler-integration-watcher
 /integration-watch detanglement                 → same as `detangler`
-/integration-watch all                          → all four in parallel
+/integration-watch one-voice                    → just one-voice-integration-watcher
+/integration-watch voice                        → same as `one-voice`
+/integration-watch all                          → all five in parallel
 /integration-watch proof,canonical              → those two in parallel
 /integration-watch proof canonical              → same (space-separated)
 /integration-watch proof detanglement canonical → three in parallel
@@ -44,9 +47,9 @@ Per `integration-watcher §0` + `§4e` (full-context preamble):
 
 1. **Chat preamble** (always before the AskUserQuestion):
 
-   > The four watchers each cover one QA axis. Run them
+   > The five watchers each cover one QA axis. Run them
    > independently (one focused PR per watcher's domain) or all
-   > four in parallel (more events but full coverage).
+   > five in parallel (more events but full coverage).
    >
    > - **proof** — proof-integration-watcher: no bare sorries,
    >   no axiom growth, naked-conjecture handling per §3b-cond.
@@ -58,46 +61,55 @@ Per `integration-watcher §0` + `§4e` (full-context preamble):
    >   forward refs (H1-H7), sections in 3-18 block band (R1-R3),
    >   no new cross-chapter forward edges, archimedean wall
    >   preserved.
+   > - **one-voice** — one-voice-integration-watcher: scholarly
+   >   voice (narrative + proof bodies), no AI slop, block fit
+   >   to section/chapter, canonical-vs-deprecated notation,
+   >   archimedean/algebraic wall placement. Persists per-block
+   >   `<block>.qa.json` audit reports (multi-reviewer, hash-keyed
+   >   staleness).
 
 2. **Role-gate the chip set.** Before composing the
    `AskUserQuestion`, detect the user's role (`reader` /
-   `collaborator` / `owner`). The `compute` chip requires
-   `collaborator`+ (the child skill's role gate); the `all` chip
-   transitively requires `collaborator`+ because it includes
-   compute. `detangler` is `reader`-accessible (read-only audit
-   skill). For a `reader` invocation:
+   `collaborator` / `owner`). The `compute` and `one-voice`
+   chips require `collaborator`+ (the child skills' role gates);
+   the `all` chip transitively requires `collaborator`+ because
+   it includes compute + one-voice. `proof`, `canonical`, and
+   `detangler` are `reader`-accessible (read-only audit skills).
 
-   - Either **hide** the `compute` chip and replace `all four`
-     with `all readable three` (proof + canonical + detangler), OR
-   - **Annotate** the chip with `(needs collaborator)` and reject
-     the selection at dispatch time with a re-prompt explaining
-     the role gate.
+   AskUserQuestion has a 4-option cap. With six candidates
+   (`proof`, `canonical`, `detangler`, `compute`, `one-voice`,
+   `all`), the chip set is composed as:
 
-   Default behaviour: hide `compute` from `reader`s entirely;
-   annotate for `collaborator`+ (no annotation needed; chips are
-   already accessible). AskUserQuestion's 4-option cap means
-   `reader` and `collaborator` chip sets are sized exactly to fit
-   (3 individuals + 1 "all" each).
+   - **reader**: `proof`, `canonical`, `detangler`,
+     `all readable three` — `compute`, `one-voice`, and `all`
+     hidden (each requires collaborator+).
+   - **collaborator / owner**: prefer the umbrella + the two
+     read-only watchers most relevant to the current session
+     (`proof`, `canonical`, `one-voice`, `all`). `compute` and
+     `detangler` reachable via direct slash invocation or via
+     `all`. The dispatcher MAY rotate which two individual
+     watchers are surfaced based on session context (e.g. when
+     a `.lean` change just landed, surface `proof` + `one-voice`;
+     when a `prop:` block was added, surface `compute` +
+     `canonical`).
 
 3. **AskUserQuestion** with up to 4 chips (role-gated):
 
    - Header `Which watcher`, question `Which integration watcher(s) to invoke?`
-   - Options (when role ≥ collaborator) — pick 4 of 5:
+   - Options (collaborator / owner default chip set):
      - `proof` — proof QA (any role)
      - `canonical` — canonical-derivation discipline (any role)
-     - `detangler` — structural QA (graph + density)
-     - `compute` — compute-wiring completeness (collaborator+)
-     - `all four` — parallel dispatch (collaborator+ since all
-       includes compute)
-     - **Note**: when 5 candidates exceed the 4-cap, drop the
-       individual `compute` chip in favour of `all four` (compute
-       is reachable via `all four` or `/integration-watch compute`).
+     - `one-voice` — scholarly voice + AI-slop + fit + framework + wall (collaborator+)
+     - `all five` — parallel dispatch (collaborator+ since all
+       includes compute + one-voice)
+     - **Note**: `compute` and `detangler` reachable via direct
+       invocation (`/integration-watch compute`) or via `all five`.
    - Options (when role = reader):
      - `proof` — proof QA
      - `canonical` — canonical-derivation discipline
      - `detangler` — structural QA
      - `all readable three` — parallel proof + canonical + detangler
-     - (compute / all-four hidden)
+     - (compute / one-voice / all-five hidden)
 
    `multiSelect: true` so the user can pick any subset.
 
@@ -129,7 +141,8 @@ When multiple watchers are dispatched in parallel:
 - **Dispatches to**: `local/proof-integration-watcher`,
   `local/canonical-watcher`,
   `local/compute-integration-watcher`,
-  `local/detangler-integration-watcher`
+  `local/detangler-integration-watcher`,
+  `local/one-voice-integration-watcher`
 - **Inherits everything**: §0-§9 of the parent
 
 ## Examples

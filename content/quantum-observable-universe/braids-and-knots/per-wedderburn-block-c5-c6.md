@@ -7,7 +7,31 @@ and $c_6 \approx -45485$, 50–3000× off any simple multi-link Jones
 candidate (see
 [`rem:multi-link-jones-q1-extension`](#rem:multi-link-jones-q1-extension)).
 
-## Working hypothesis (next probe)
+## Status: open R&D — no known non-trivial per-block decomposition rule
+
+The $\dim_q^2$ weighting hypothesis below was the original scaffolding
+direction. The 2026-05-19 audit ([`per-block-ck-extraction-rule.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-19-per-block-ck-extraction-rule.md))
+showed it is **falsified** at $c_3 = -2$: $\sum_\lambda \dim_q^2 \cdot c_3^{(\lambda)}$
+under the per-block LO $\varepsilon^1$ pattern $(-2, -1, -2)$ gives
+$-8$, not $-2$. A $y_\lambda$-weighted uniform-rule alternative ALSO
+fails at $q_0$ across all $c_k$ tested (since $\sum_\lambda y_\lambda(q_0) \neq 1$;
+verified in `qbeta_per_block_uniform_rule_verify.py`). With
+normalised weights the rule becomes tautological.
+
+**Conclusion: there is currently NO known non-trivial uniform-per-block
+decomposition rule for $c_k$ consistent at $q_0$.** The per-block
+structure that IS real operates at the $\chi_\lambda$-character level
+(LO $\varepsilon^1 = (-2, -1, -2)$ pattern in
+[`rem:per-block-hopf-jones-absorption-pattern`](#rem:per-block-hopf-jones-absorption-pattern)),
+not at the precision-ladder coefficient level.
+
+The original $\dim_q^2$ hypothesis is retained below as **falsified
+working hypothesis** for record-keeping; the substantive next direction
+is the Khovanov-Rozansky / KLR-canonical-basis route (Path 2 of
+[`2026-05-19-qbeta-ladder-closure-path.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-19-qbeta-ladder-closure-path.md)),
+which operates at the link-Markov-closure level rather than per-block.
+
+## Original (falsified) working hypothesis
 
 Per the open R&D pointer in
 [`rem:multi-link-jones-q1-extension`](#rem:multi-link-jones-q1-extension)
@@ -16,7 +40,7 @@ and [`rem:h3-hecke-idempotents`](#rem:h3-hecke-idempotents):
 $$
   c_k(q_0) \;=\;
   \sum_{\lambda \vdash 3}\; \dim_q^2(V_\lambda) \cdot c_k^{(\lambda)}(q_0),
-  \quad k \in \{5, 6\}
+  \quad k \in \{5, 6\} \quad \text{(FALSIFIED)}
 $$
 
 where $c_k^{(\lambda)}(q)$ are per-block scalar functions of $q$,

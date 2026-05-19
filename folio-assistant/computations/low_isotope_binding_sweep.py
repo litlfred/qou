@@ -50,16 +50,21 @@ from q_parameter import Q as Q0, HBAR_Q, HBAR_Q_SQ
 # coerced to float for json-serialisable arithmetic in this script.
 from codata_constants import M_E_MEV as _M_E_MEV_MP
 
-# ── Framework constants ───────────────────────────────────────────
+# Knot volumes — single source of truth (knot_volumes module,
+# mpmath 50dps Clausen / SnapPy HP literature). Pre-refactor these
+# were f64 hardcoded literals at varying precision (VOL_7_2_1 =
+# 4.7495 = 4 digits, VOL_6_2 = 4.40083 = 5 digits, etc.); now all
+# derive from the same 50-dps source. See knot-vol _precision
+# propagation in PR #781 coordination ledger.
+from knot_volumes import (  # noqa: E402
+    CATALAN_G,
+    VOL_BORROMEAN,
+    VOL_7_SQ_1 as VOL_7_2_1,    # legacy alias preserved
+    VOL_6_2,
+    VOL_8_11,
+)
 
-CATALAN_G = 0.915965594177219015054603514932
-VOL_BORROMEAN = 8.0 * CATALAN_G          # ≈ 7.32772
-VOL_7_2_1 = 4.7495                        # 7²_1 link, SnapPy census
 M_E_MEV = float(_M_E_MEV_MP)
-
-# Strategy-(A) named census knots
-VOL_6_2 = 4.40083    # figure-eight-like hyperbolic knot, SnapPy
-VOL_8_11 = 8.28632   # 8-crossing hyperbolic, SnapPy
 
 # Strategy-(B) α-cluster parameters
 B_4HE_MEV = 28.295674                     # AME2020

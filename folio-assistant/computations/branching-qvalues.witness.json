@@ -8,7 +8,7 @@
     "mass_ratio_mu_e": 206.768283,
     "m_e_MeV": 0.51099895,
     "q0": 1.1099785955541805,
-    "q0_uncertainty": 1.3578965598837824e-9
+    "q0_uncertainty": 1.3578965598837824e-09
   },
   "per_nucleon_channels": {
     "proton": {
@@ -84,5 +84,8 @@
     ]
   },
   "precision": "f64_numeric_fallback",
-  "truncation_eps": 0
+  "truncation_eps": 0,
+  "engine": "python",
+  "scriptFile": "frob_filter_cancellation_test.py",
+  "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811"
 }

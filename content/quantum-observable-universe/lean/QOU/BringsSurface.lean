@@ -294,4 +294,49 @@ theorem BringsQOU.yekutieli_lifting (_bq : BringsQOU) (n : ℕ) :
     ∃ (yd : YekutieliLiftingData), yd.level = n := by
   exact ⟨{ level := n, num_patches := 9, obstruction_vanishes := by omega }, rfl⟩
 
+/-! ## §Viewport — interactive visualiser serialisation state -/
+
+/-- Render mode for the Bring's-surface visualiser.
+
+    * `cp1`  — show the `ℂP¹` exceptional fibre of the chiral elliptic
+      curve at the cone-point.
+    * `cone` — show the outgoing chiral tube cones in colour-sector
+      coordinates `(𝔯, 𝔤, 𝔟)`. -/
+inductive ViewportMode where
+  | cp1
+  | cone
+  deriving DecidableEq, Repr
+
+/-- Spherical camera state for the visualiser viewport.  The
+    convention is the standard `(θ, ϕ, r)` with `θ ∈ [0, 2π)`
+    azimuth, `ϕ ∈ [0, π]` polar, `r ≥ 0` radius; the look-at target
+    is an explicit `ℝ³` point in colour-sector coordinates. -/
+structure CameraState where
+  /-- Azimuthal angle θ. -/
+  theta     : ℝ
+  /-- Polar angle ϕ. -/
+  phi       : ℝ
+  /-- Radius from look-at target. -/
+  radius    : ℝ
+  /-- Look-at target in `(𝔯, 𝔤, 𝔟)` colour-sector coordinates. -/
+  lookAt    : Fin 3 → ℝ
+
+/-- **Bring's-surface visualiser viewport state.**
+
+    Serialisable configuration consumed by the interactive 3D
+    renderer; reproducing a view from a URL or markdown embed
+    requires precisely these fields.
+
+    LaTeX label: `def:viz-brings-surface` (chapter-dir sibling
+    `content/visualizer/overview/viz-brings-surface.lean`). -/
+-- Ref: [manuscript] content/visualizer/overview/viz-brings-surface.md
+structure ViewportState where
+  /-- Torsion / chirality parameter `q`.  `q = 0` is the classical
+      limit; `q > 0` introduces chiral twist. -/
+  q       : ℝ
+  /-- Render mode (CP¹ vs. cone). -/
+  mode    : ViewportMode
+  /-- Spherical camera state. -/
+  camera  : CameraState
+
 end QOU.BringsSurface

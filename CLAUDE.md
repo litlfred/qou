@@ -154,6 +154,55 @@ https://github.com/litlfred/qou/blob/<branch>/<path-to>/<block>.md
 If the branch is not yet pushed, say so explicitly and do not fabricate
 URLs.
 
+## Precision goals (STRICT — read before any precision-affecting work)
+
+The framework's headline precision goal has **two independent legs**.
+Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
+
+| Leg | Target | Status |
+|-----|--------|--------|
+| **L1. Compute precision** | internal cross-method agreement ≤ 1 ppb at substrate q_0 | trivially met — `_precision.py` default is 50 dps compute / 40 dps output |
+| **L2. Per-observable accuracy** | for each predicted observable O: `σ_pred(O) ≤ σ_exp(O) / 100` | partial — see `per-observable-100x-status.witness.json` |
+
+**Key distinctions** (avoid agent confusion):
+
+- **L1 ≠ L2.** A formula that is compute-stable to 50 digits (L1 met)
+  can still miss its 100× experimental target by 10⁴ (L2 missed).
+- **L2 is variable per observable.** Q_β target is 6.4 ppm (loose);
+  absolute m_p target is 3 ppt (research-grade, below CAL-2 floor).
+- **"1 ppb" by itself is ambiguous** — say "L1 compute met" or
+  "L2 met for observable X" not bare "1 ppb".
+
+**Two subgoals under L2:**
+
+- **Subgoal-1 (achievable):** 100× targets ≥ ~780 ppb CAL-2 floor.
+  Closure path: per-isotope Borromean-tower extension + operator-
+  valued branching combiner.
+- **Subgoal-2 (research-grade, out of scope):** 100× targets <
+  CAL-2 floor (absolute m_p / m_n / m_⁴He). Requires substrate-
+  derivation of q_0, which the coordination ledger explicitly
+  declined on 2026-05-08. Do **not** attempt without owner reversal.
+
+**Δ_λ gate (Track A blocker).** The per-isotope binding-energy
+formula `B(K) = m_e · Σ_λ y_λ χ^λ Δ_λ` requires per-partition Δ_λ
+values, and six closure ansätze (Frobenius co-Casimir, Demazure-
+fibre, LP-Plancherel, LP-Frobenius, crystal-graph, augmented Markov)
+have all failed on the deuteron. **Do not propose a seventh fit-
+based ansatz** — the three-calibration discipline review will catch
+it. The productive directions are GAP-A-3 / GAP-A-4 (categorical
+brane-tower level selection / ρ general rule) and Option E (Kashiwara
+crystal). Full context:
+[`docs/audits/2026-05-18-delta-lambda-gating-context.md`](docs/audits/2026-05-18-delta-lambda-gating-context.md).
+
+**Where to check status:**
+
+- L1: `folio-assistant/computations/onepb-status-dashboard.witness.json`
+- L2: `folio-assistant/computations/per-observable-100x-status.witness.json`
+
+**When writing a precision-affecting change**, run BOTH dashboards
+and report the deltas. Mention which leg the change addresses.
+Do not regress either.
+
 ## CRITICAL: Protected Files — DO NOT MODIFY
 
 The following files are **strictly off-limits** to all coding agents
@@ -254,6 +303,9 @@ When a user request arrives, route to the right skill(s):
 | "fix rendering / rendering fix / quick fix" | `local/rendering-fixes` | reader |
 | "check markdown render / GitHub view / proof markdown" | `local/markdown-render-check` | reader |
 | "one voice / status leak / TODO in prose / strip emoji / scholarly voice" | `local/one-voice-audit` (sweep) + `local/one-voice-style-guide` (author voice profile) | collaborator |
+| "watch one-voice / voice + AI slop + fit + framework + wall / QA reports per block / staleness map" | `local/one-voice-integration-watcher` | collaborator |
+| "/integration-watch one-voice / voice" | `local/integration-watch` (dispatcher → one-voice-integration-watcher child) | collaborator |
+| "QA report / .qa.json / multi-reviewer / hash staleness / per-block audit sidecar" | `content/pipeline/qa-sweep.ts` + `qa-staleness.ts` (CLI), `folio-assistant/schemas/block-qa.ts` (schema) | collaborator |
 | "coordinate PRs / sibling PRs / cross-PR / cherry-pick / inconsistent finding" | `local/coordinate` (or `/coordinate` slash command) | collaborator |
 | "watch main / watch upstream / watch this PR / watch branch X" | `local/watch` | reader |
 | "session todos / work plan / what's left / track progress" | `local/todo-manager` (session work-plan, TodoWrite) | reader |

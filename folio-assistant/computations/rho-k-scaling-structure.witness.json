@@ -1,6 +1,6 @@
 {
   "computation": "rho-k-scaling-structure",
-  "description": "\u03c1_K scaling-structure probe. Tests three structural ans\u00e4tze for the categorical density \u03c1_K = M(K) / (m_e \u00b7 |tr_M(NF_GS(\u03b2_K))|): (1) power-law in A; (2) leading-order constituent-mass ansatz \u03c1_K = (Z\u00b7m_p + N\u00b7m_n)/(m_e\u00b7|tr_M|); (3) mirror-pair analysis (T vs \u00b3He) showing \u03c1_K is NOT a function of (A, n_strands) alone. The leading-order ansatz captures \u03c1_K to ~0.1% across A=1..3 \u2014 the categorical question reduces to deriving the nucleon-mass anchors from H_3(q_0).",
+  "description": "ρ_K scaling-structure probe. Tests three structural ansätze for the categorical density ρ_K = M(K) / (m_e · |tr_M(NF_GS(β_K))|): (1) power-law in A; (2) leading-order constituent-mass ansatz ρ_K = (Z·m_p + N·m_n)/(m_e·|tr_M|); (3) mirror-pair analysis (T vs ³He) showing ρ_K is NOT a function of (A, n_strands) alone. The leading-order ansatz captures ρ_K to ~0.1% across A=1..3 — the categorical question reduces to deriving the nucleon-mass anchors from H_3(q_0).",
   "reference_blocks": [
     "prop:atomic-mass-gb-nf",
     "prop:categorical-mass-markov",
@@ -95,6 +95,9 @@
     "T_M_codata": 2808.92113298,
     "3He_M_codata": 2808.39160743,
     "M_diff_MeV": 0.5295255500000167,
-    "note": "T and \u00b3He have the same A=3 and n_strands=9, so any categorical formula for \u03c1_K depending only on A is blind to this pair. The actual \u03c1_K differs by ~2\u00d7 because |tr_M| differs by ~2\u00d7; M_codata differs by only 0.5 MeV (0.02%). Hence \u03c1_K \u00b7 |tr_M| is nearly identical for the mirror pair \u2014 consistent with \u03c1_K \u00b7 |tr_M| = M/m_e being the physically-meaningful quantity, and \u03c1_K alone being a normalisation that depends inversely on |tr_M|."
-  }
+    "note": "T and ³He have the same A=3 and n_strands=9, so any categorical formula for ρ_K depending only on A is blind to this pair. The actual ρ_K differs by ~2× because |tr_M| differs by ~2×; M_codata differs by only 0.5 MeV (0.02%). Hence ρ_K · |tr_M| is nearly identical for the mirror pair — consistent with ρ_K · |tr_M| = M/m_e being the physically-meaningful quantity, and ρ_K alone being a normalisation that depends inversely on |tr_M|."
+  },
+  "engine": "python",
+  "scriptFile": "rho_k_scaling_structure_probe.py",
+  "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811"
 }

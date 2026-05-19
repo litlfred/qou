@@ -413,5 +413,8 @@
   },
   "verdict": "fail",
   "verdict_note": "Relative deviation -0.662 exceeds CODATA precision substantially; q-deformed Plancherel sum is falsified.",
-  "timing_seconds": 0.012160539627075195
+  "timing_seconds": 0.012160539627075195,
+  "engine": "python",
+  "scriptFile": "nv1_candidate_a_doubleprime.py",
+  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
 }

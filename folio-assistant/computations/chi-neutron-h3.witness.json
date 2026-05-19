@@ -1,5 +1,5 @@
 {
-  "description": "Symbolic \u03c7^\u03bb_q(\u03b2_atomic(0, 1)) \u2014 neutron \u2014 for the canonical atomic braid word at H_3, per partition \u03bb \u22a2 3.  Incrementally saved per partition so a SIGTERM/timeout mid-loop preserves work done so far.",
+  "description": "Symbolic χ^λ_q(β_atomic(0, 1)) — neutron — for the canonical atomic braid word at H_3, per partition λ ⊢ 3.  Incrementally saved per partition so a SIGTERM/timeout mid-loop preserves work done so far.",
   "atom": "neutron",
   "Z": 0,
   "N": 1,
@@ -32,5 +32,8 @@
       ],
       "chi_q_symbolic": "(-q**4 - 2*q**2 - 1)/(4*q**3)"
     }
-  ]
+  ],
+  "engine": "python",
+  "scriptFile": "delta_lambda_empirical_tabulation.py",
+  "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811"
 }

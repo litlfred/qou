@@ -60,3 +60,43 @@ fail YB cubic with `σ_0 = diag(q, −q⁻¹)`. Analytical fix: swap
 Await Gemini/Copilot review responses on #665 and #672; address as
 they come in. R&D items 1-5 (from #672's inventory) are queued for
 follow-up branches; none touch sibling PR scopes.
+
+## 2026-05-19 — Δ_λ categorical closure (branch `claude/closed-forms-first-principles`, no PR)
+
+| Date | Branch / PR | Phase | Status | Cherry-pick |
+|---|---|---|---|---|
+| 2026-05-19 | `claude/closed-forms-first-principles` (no PR) | Phase 1a — conjecture block | landed `66c655ed` | `conj:delta-lambda-categorical-closure` content triple |
+| 2026-05-19 | same | Phase 1b — verification on deuteron | landed `8da9ca67`; **NEGATIVE** — naive form misses by 33× | `delta_lambda_categorical_verification.py` + witness |
+| 2026-05-19 | same | Δ_λ exploration | landed `7f82b0c9` | 3 Galois orbits via reciprocal cubic $16w^3+24w^2-13w+2=0$; $k=2$-residue-zero anomaly; per-knot factor required (T/³He degeneracy falsifies universal-c) |
+
+**Findings load-bearing for the 1ppb / 1ppm thread:**
+
+1. **Δ_λ depends on knot K beyond χ^λ.** Cross-atom test: T (c=20.7) vs ³He (c=7.14) at same n=9. Universal-c hypothesis falsified. Δ_λ closure requires a per-knot factor (likely JSJ volume).
+
+2. **Discriminant 3-orbit structure** (palindromic Δ(z) → reciprocal cubic) is the categorical refinement of PR #779's "principal pair". 3 orbits available for per-block selection.
+
+3. **$k=2$ residue vanishes** identically across all 3 orbits. Constrains the k(λ) mapping to $\{0, 1, 3\}$.
+
+**Proposed Phase 2 closure form:**
+
+$$\Delta_\lambda(K) = \mathrm{Vol}_{\mathrm{hyp}}^{(\lambda)}(K) \cdot \tau_q\!\Bigl(\sum_{p \in \mathcal{O}^{(\lambda)}} \mathrm{Res}^{\mathrm{alg}}_p (\lambda^{(k(\lambda))}_{\mathrm{SW}})\Bigr)$$
+
+**Coordination posts:**
+- [PR #777 comment](https://github.com/litlfred/qou/pull/777) — intent + 2 asks
+- [PR #781 comment](https://github.com/litlfred/qou/pull/781) — light-touch downstream-consumer notice
+
+**Holding** Phase 2 until PR #777's owner confirms (i) the closure is outside the 6 banned fit ansätze and (ii) PR #708's `Vol_hyp^(λ)(K)` machinery is accessible.
+
+## 2026-05-19 — Δ_λ Phase 2 + Phase 3 (branch `claude/closed-forms-first-principles`, [PR #787](https://github.com/litlfred/qou/pull/787))
+
+| Date | Phase | Status | Cherry-pick |
+|---|---|---|---|
+| 2026-05-19 | Phase 2 (two-factor V(K)·c_λ) | landed `b4e196e2`; **FALSIFIED** on 8 V(K) candidates | `delta_lambda_two_factor_phase2.py` + falsification doc |
+| 2026-05-19 | Phase 3 (JSJ Vol via SnapPy) | landed `b7b11519`; **FALSIFIED** (rel_std 1.4) but reveals **Vol(canonical(K)) clusters by Z** | `delta_lambda_jsj_phase3.py` + Vol_hyp(D)=Vol(T)=12.776; Vol(³He)=Vol(⁴He)=12.554 |
+| 2026-05-19 | Coord on #777 | comment posted (this round) | asks #1 (f64-vs-mpmath knot-vol audit) and #2 (per-JSJ-piece quantum-invariant infrastructure) |
+
+**Hard categorical finding (Phase 3):** Vol_hyp of the canonical atomic braid closure is **invariant under adding nucleons at fixed Z**. The N-direction is Seifert-fibered (Vol contribution = 0). Per-N binding-energy structure must live in Seifert-piece quantum invariants, not in the hyperbolic core.
+
+This **constrains** PR #781's Kashaev mass-table formula (ρ_F · Vol_hyp) — same-Z isotopes should use the same Vol per my Phase 3 measurement; if PR #781 assigns different Vol to D vs T (same Z=1), that's a discrepancy worth surfacing.
+
+**Status**: Δ_λ thread **paused** at PR #787 pending owner answers on the per-JSJ-piece-quantum-invariant infrastructure (ask #2). If no such infrastructure, the branch lands as a diagnostic package (3 phases of productive negatives + Z-clustering structural finding) and the thread pivots to another closed-form option.

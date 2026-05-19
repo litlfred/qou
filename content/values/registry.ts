@@ -288,13 +288,19 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       units: "MeV",
     }),
 
+    // NOTE: `data.rows.2` indexes the deuteron row. The row order
+    // in `canonical-mass-table-extended.witness.json` is fixed by
+    // DEFAULT_ATOMS in canonical_mass_table_extended.py and must
+    // not be reordered (proton=0, neutron=1, D=2, T=3, ³He=4,
+    // ⁴He=5, ⁵Li=6, ⁶Li=7). A (Z, N)-keyed lookup is the long-term
+    // fix; tracked as a follow-up. See Gemini #781 review.
     B_2H_AME_MeV: Object.freeze({
       name: "B_2H_AME_MeV",
       description: "AME experimental binding energy of deuterium (2H).",
       symbol: "B_{\\mathrm{AME}}(\\mathrm{D})",
       witnessFile:
-        "folio-assistant/computations/canonical-mass-table.witness.json",
-      witnessPath: "results.0.B_AME_MeV",
+        "folio-assistant/computations/canonical-mass-table-extended.witness.json",
+      witnessPath: "data.rows.2.B_AME_MeV",
       defaultPrecision: 5,
       units: "MeV",
     }),
@@ -533,6 +539,122 @@ export const WITNESSED_VALUES: Readonly<Record<string, WitnessedValueEntry>> =
       witnessPath: "data.gap_lower_bound",
       defaultPrecision: 1,
       units: null,
+    }),
+
+    // ── Frobenius Gram matrix / NF basis (H_3) ──────────────────
+    // Backed by the rebuilt TR_M[5] Markov trace.  Witnesses
+    // regenerated 2026-05-19 after the pyhecke.gram bug fix.
+
+    gram_h: Object.freeze({
+      name: "gram_h",
+      description:
+        "Hecke parameter h = q - q^{-1} = HA at q_0 — substrate Hecke-algebra structure constant.",
+      symbol: "h",
+      witnessFile:
+        "folio-assistant/computations/gram-matrix-dual.witness.json",
+      witnessPath: "parameters.HA",
+      defaultPrecision: 5,
+      units: null,
+    }),
+
+    gram_z: Object.freeze({
+      name: "gram_z",
+      description:
+        "Markov parameter z = 1/(q^{1/2} + q^{-1/2}) at q_0 — Gram-matrix entry tr_M(σ_0) = tr_M(σ_1).",
+      symbol: "z",
+      witnessFile:
+        "folio-assistant/computations/gram-matrix-dual.witness.json",
+      witnessPath: "parameters.z",
+      defaultPrecision: 5,
+      units: null,
+    }),
+
+    gram_z_sq: Object.freeze({
+      name: "gram_z_sq",
+      description:
+        "Markov trace z^2 of L_± = σ_0σ_1 / σ_1σ_0 at q_0.",
+      symbol: "z^2",
+      witnessFile:
+        "folio-assistant/computations/gram-matrix-dual.witness.json",
+      witnessPath: "markov_trace_basis.L₊",
+      defaultPrecision: 5,
+      units: null,
+    }),
+
+    gram_tr_M_e_minus: Object.freeze({
+      name: "gram_tr_M_e_minus",
+      description:
+        "Markov trace of e^- = σ_0σ_1σ_0 at q_0: tr_M(e^-) = h·z² + z (post-2026-05-19 TR_M[5] fix per docs/audits/2026-05-19-trm5-markov-bug.md). The earlier z^3 value was a bug.",
+      symbol: "h \\cdot z^2 + z",
+      witnessFile:
+        "folio-assistant/computations/gram-matrix-dual.witness.json",
+      witnessPath: "markov_trace_basis.e⁻",
+      defaultPrecision: 5,
+      units: null,
+    }),
+
+    gram_det: Object.freeze({
+      name: "gram_det",
+      description:
+        "Determinant of the 6×6 NF Gram matrix at q_0 (post TR_M[5] fix).",
+      symbol: "\\det G",
+      witnessFile:
+        "folio-assistant/computations/confinement-operator-selection.witness.json",
+      witnessPath: "gram_det",
+      defaultPrecision: 4,
+      units: null,
+    }),
+
+    // ── Confinement operator selection (B_3 ranking) ────────────
+
+    confinement_B3_net_proton: Object.freeze({
+      name: "confinement_B3_net_proton",
+      description:
+        "Net constraint net(B_3 · uud) at q_0 — selects the Borromean operator as the unique confinement choice.",
+      symbol: "\\mathrm{net}(\\mathcal{B}_3 \\cdot uud)",
+      witnessFile:
+        "folio-assistant/computations/confinement-operator-selection.witness.json",
+      witnessPath: "candidates.proton.B₃ = (σ₀σ₁⁻¹)³.net",
+      defaultPrecision: 4,
+      units: null,
+    }),
+
+    confinement_Lplus_net_proton: Object.freeze({
+      name: "confinement_Lplus_net_proton",
+      description:
+        "Net constraint net(L_+ · uud) at q_0 — runner-up in candidate-operator ranking (no confinement, mesonic pairing).",
+      symbol: "\\mathrm{net}(L_+ \\cdot uud)",
+      witnessFile:
+        "folio-assistant/computations/confinement-operator-selection.witness.json",
+      witnessPath: "candidates.proton.L₊ = σ₀σ₁.net",
+      defaultPrecision: 4,
+      units: null,
+    }),
+
+    confinement_id_net_proton: Object.freeze({
+      name: "confinement_id_net_proton",
+      description:
+        "Net constraint net(𝟙 · uud) for the unconfined (identity) candidate at q_0.",
+      symbol: "\\mathrm{net}(\\mathbf{1} \\cdot uud)",
+      witnessFile:
+        "folio-assistant/computations/confinement-operator-selection.witness.json",
+      witnessPath: "candidates.proton.𝟏 (identity, no binding).net",
+      defaultPrecision: 4,
+      units: null,
+    }),
+
+    // ── Molecular Frobenius LP (covalent bond derivation) ───────
+
+    E_mol_eV: Object.freeze({
+      name: "E_mol_eV",
+      description:
+        "Per-crossing molecular energy scale E_mol = m_e · q^{-5} (eV) at q_0 — input parameter to molecular Frobenius LP.",
+      symbol: "\\mathbf{E}_{\\mathrm{mol}}",
+      witnessFile:
+        "folio-assistant/computations/molecular-frobenius-lp.witness.json",
+      witnessPath: "parameters.E_mol_eV",
+      defaultPrecision: 4,
+      units: "eV",
     }),
   });
 

@@ -53,10 +53,10 @@ q = Q
 qi = Q_INV
 me = M_E_MEV
 
-# Catalan's constant G ≈ 0.915965594...
-# Vol(Borromean) = 8G (theorem)
-CATALAN_G = 0.915965594177219015054603514932
-ALPHA = me * 8 * CATALAN_G  # binding scale ≈ 3.744 MeV
+# Knot volumes from canonical knot_volumes module (mpmath 50dps).
+# See PR #781 knot-vol propagation.
+from knot_volumes import CATALAN_G, VOL_BORROMEAN  # noqa: E402
+ALPHA = me * VOL_BORROMEAN  # binding scale ≈ 3.744 MeV
 
 # Per-nucleon channel sums from the T_{2,3} eigendecomposition
 # (proved in per-nucleon-channel-decomposition.md)

@@ -19,6 +19,25 @@ This is a formal mathematics paper.  Copilot **must**:
 
 ---
 
+## 0a  Precision Goals (STRICT — read before precision-affecting changes)
+
+The framework's headline precision goal has **two independent legs** —
+read [`docs/precision-goals.md`](../docs/precision-goals.md) for the full
+specification. Summary:
+
+- **L1. Compute precision** — internal cross-method agreement ≤ 1 ppb at
+  substrate q_0. Trivially met (`_precision.py` default 50 dps).
+- **L2. Per-observable accuracy** — for each predicted observable O,
+  `σ_pred(O) ≤ σ_exp(O) / 100` ("100× more precise than experimental").
+  Variable per observable; **partial** (1/6 currently meets target).
+
+Status witnesses:
+
+- L1: `folio-assistant/computations/onepb-status-dashboard.witness.json`
+- L2: `folio-assistant/computations/per-observable-100x-status.witness.json`
+
+Never say "1 ppb met" without specifying *which leg*. L1 ≠ L2.
+
 ## 1  Guiding Philosophy
 
 Model every chapter on the style of a rigorous graduate mathematics textbook —

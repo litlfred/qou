@@ -4,6 +4,7 @@ export default conjecture({
   label: "conj:q-collatz",
   title:
     "The $q$-Collatz conjecture: Skein-module crossing resolution",
+  lean: { ref: "qou:QOU.AppendixSurreals.QCollatz", validation: "stub" },
   uses: [
     "rem:substrate-gm-torsion",
     "thm:qou-obstruction-reduction",

@@ -1,15 +1,15 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.12.3",
-  "computedAt": "2026-05-12T19:26:37.726976+00:00",
-  "commitSha": "21a2c62d8b60ac8a785eaac07d37a3629743d069",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-19T03:04:37.135899+00:00",
+  "commitSha": "b41477565ae1913f64d6b37c3a4b530b5823513a",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 10,
   "computation": "canonical-derivation-pipeline-compliance",
   "scriptFile": "canonical_derivation_pipeline_compliance.py",
-  "scriptHash": "0494fcd088dd",
-  "scriptCommitSha": "a9b76d93d4f820682da6f3505d1945cee3412e6d",
+  "scriptHash": "b856bad69b60",
+  "scriptCommitSha": "0f9a88df1128107eb3b8e0b40d47af4c2fc33662",
   "description": "Aggregator dashboard of compute-infra compliance for the canonical-derivation chain. Joins four upstream audit witnesses into one current-state snapshot. See docs/audits/2026-05-12-canonical-derivation-compute-review.md §3 for the contract definitions.",
   "auditOnly": "docs/audits/2026-05-12-canonical-derivation-compute-review.md",
   "parameters": {
@@ -18,23 +18,24 @@
       "canonical_script_input_audit": "folio-assistant/computations/canonical-script-input-audit.witness.json",
       "derivation_chain_audit": "folio-assistant/computations/derivation-chain-audit.witness.json",
       "codata_reconciliation": "folio-assistant/computations/codata-reconciliation.witness.json",
-      "witness_reproducibility": "folio-assistant/computations/witness-reproducibility-check.witness.json"
+      "witness_reproducibility": "folio-assistant/computations/witness-reproducibility-check.witness.json",
+      "witness_provenance": "folio-assistant/computations/witness-provenance-audit.witness.json"
     }
   },
   "data": {
     "source_summaries": {
       "compute_audit_scan": {
         "status": "loaded",
-        "computedAt": "2026-05-12T19:26:28.139973+00:00",
-        "files_scanned": 407,
+        "computedAt": "2026-05-19T01:20:49.585354+00:00",
+        "files_scanned": 585,
         "by_pattern_count": {
-          "P15": 111,
-          "P16": 89,
-          "P21": 21,
-          "P30": 96,
-          "P31": 10
+          "P15": 173,
+          "P16": 122,
+          "P21": 32,
+          "P30": 97,
+          "P31": 25
         },
-        "total_findings": 327,
+        "total_findings": 449,
         "top_files": [
           {
             "file": "markov_weights_symbolic.py",
@@ -62,6 +63,13 @@
               "P15",
               "P16",
               "P30"
+            ]
+          },
+          {
+            "file": "probe_symbolic_sdp_derivation_breakout.py",
+            "count": 11,
+            "patterns": [
+              "P16"
             ]
           },
           {
@@ -109,40 +117,33 @@
               "P16",
               "P30"
             ]
-          },
-          {
-            "file": "hecke_character_symbolic.py",
-            "count": 7,
-            "patterns": [
-              "P15",
-              "P16",
-              "P21",
-              "P30"
-            ]
           }
         ]
       },
       "canonical_script_input_audit": {
         "status": "loaded",
-        "computedAt": "2026-04-27T21:31:45.085444+00:00",
+        "computedAt": "2026-05-18T17:38:36.938270+00:00",
         "by_scheme": {
-          "no-hadronic-input (substrate-only or pure dimensionless)": 340,
-          "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)": 112,
-          "vol-hyp-fitted (uses hyperbolic volume; FITTED under option B)": 54,
-          "m_p-only (no Q_β; m_n derivation TBD)": 9,
-          "Q_β-only-hadronic": 12
+          "no-hadronic-input (substrate-only or pure dimensionless)": 429,
+          "4-input-mp-and-mn (over-counts hadronic if Q_β implicit)": 55,
+          "vol-hyp-fitted (uses hyperbolic volume; FITTED under option B)": 34,
+          "Q_β-only-hadronic": 15,
+          "3-input-canonical-with-substrate-splitting (m_n − m_p derived from prop:flavor-dressed-mass-from-substrate-split; m_p + m_n used only for M_N anchor — CLASS-A pending Workplan-0b)": 1,
+          "m_p-only (no Q_β; m_n derivation TBD)": 24,
+          "3-input-canonical (m_p + Q_β; per calibration-inputs.md)": 4,
+          "3-input-canonical-with-substrate-splitting-pure (consumes substrate-splitting witness; no CODATA nucleon masses — post-Workplan-0b target form)": 2
         },
-        "canonical_3input_count": 12,
-        "over_count_count": 112,
-        "vol_hyp_fitted_count": 54,
-        "total_classified": 527,
-        "canonical_ratio": 0.022770398481973434
+        "canonical_3input_count": 22,
+        "over_count_count": 55,
+        "vol_hyp_fitted_count": 34,
+        "total_classified": 564,
+        "canonical_ratio": 0.03900709219858156
       },
       "derivation_chain_audit": {
         "status": "loaded",
-        "computedAt": "2026-05-11T22:48:01.762235+00:00",
-        "chain_count": 71,
-        "assertion_count": 91,
+        "computedAt": "2026-05-19T01:17:31.503113+00:00",
+        "chain_count": 70,
+        "assertion_count": 89,
         "all_passed": true,
         "failed_assertion_count": 0
       },
@@ -165,28 +166,28 @@
       {
         "name": "WitnessBuilder usage (P30)",
         "source": "compute-audit-scan.witness.json",
-        "metric": "96 of 407 files write witnesses without WitnessBuilder",
+        "metric": "97 of 585 files write witnesses without WitnessBuilder",
         "status": "fail",
         "remediation": "Batch-port hand-written .witness.json writers to witness_base.WitnessBuilder. Reference: docs/audits/2026-05-08-compute-audit-workplan.md §Tier 2."
       },
       {
         "name": "CODATA constants from registry only (P31)",
         "source": "compute-audit-scan.witness.json",
-        "metric": "10 hardcoded CODATA literals outside the allowlist",
+        "metric": "25 hardcoded CODATA literals outside the allowlist",
         "status": "warn",
         "remediation": "Replace each hit with import from codata_constants (_VALIDATION aliases) or experimental_constants. Tag audit-only consumers with `# noqa: P31` and a justifying comment."
       },
       {
         "name": "3-input canonical scheme (CAL-1/2/3)",
         "source": "canonical-script-input-audit.witness.json",
-        "metric": "12 canonical / 112 over-count / 527 classified",
-        "status": "fail",
+        "metric": "22 canonical / 55 over-count / 564 classified",
+        "status": "warn",
         "remediation": "Migrate over-count scripts (consume both m_p and m_n) to the 3-input scheme: m_n = m_p + Q_β + m_e, with m_p derived from |tr_M(p, q_0)| · E_0. Reference: docs/audits/2026-05-10-workplan-0b-script-rewire-handoff.md."
       },
       {
         "name": "Per-chain trust-basis validation",
         "source": "derivation-chain-audit.witness.json",
-        "metric": "91 assertions across 71 chains; 0 failed",
+        "metric": "89 assertions across 70 chains; 0 failed",
         "status": "pass",
         "remediation": "Read derivation-chain-audit.witness.json `assertions` for failed chain IDs and trust-basis transitions. Each `script_cited` step that fails should be promoted to `derived` or `lean_proven`."
       },
@@ -203,9 +204,16 @@
         "metric": "11/11 builders byte-equal (drift=0, error=0, timeout=0, skip=0)",
         "status": "pass",
         "remediation": "For drift: investigate non-determinism (PYTHONHASHSEED, timestamps, hand-edits to committed JSON not reproduced by the script). For error/timeout: install missing deps or bump PER_BUILDER_TIMEOUT_S. Reference: witness_reproducibility_check.py + docs/audits/2026-05-12-canonical-derivation-compute-review.md §4 P3.2."
+      },
+      {
+        "name": "Witness provenance completeness (I14)",
+        "source": "witness-provenance-audit.witness.json",
+        "metric": "113 of 518 witnesses missing engine/scriptFile/commitSha (completeness ratio 0.782)",
+        "status": "fail",
+        "remediation": "Wrap hand-written .witness.json writers in witness_base.WitnessBuilder. See PR #781 fixups for the pattern (mass_table_ppb.py, binding_canonical.py)."
       }
     ],
-    "infra_score": 0.5833333333333334,
+    "infra_score": 0.5714285714285714,
     "known_open_conflicts": [
       {
         "id": "TR_M_AT_Q0_vs_frobenius_proof",

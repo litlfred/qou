@@ -1,7 +1,7 @@
 {
-  "computedAt": "2026-04-26T23:51:41.293823+00:00",
+  "computedAt": "2026-05-19T00:00:00.000000+00:00",
   "computation": "methodology-deprecation",
-  "description": "Per-particle methodology audit for the recursive atom-knot atlas. Records which particle-knot identifications are PRINCIPLED (derived from GB-NF) vs MANUAL-HISTORICAL (volume-match in older work) vs DEPRECATED (volume-match search in this branch).",
+  "description": "Per-particle methodology audit for the recursive atom-knot atlas. Records which particle-knot identifications are PRINCIPLED (derived from GB-NF) vs MANUAL-HISTORICAL (volume-match in older work) vs DEPRECATED (volume-match search in this branch). Also tracks DEPRECATED COMPUTE WITNESSES — witness JSON files superseded by canonical-pipeline equivalents that must NOT be cited as primary numerical evidence.",
   "auditOnly": "docs/audits/2h-markov-trace-zero-audit.md",
   "principled_path": {
     "step_1": "GB-NF (Gröbner-Shirshov normal form) in confined-particle.md gives canonical T_w ∈ H_{n_0}(q_0).",
@@ -52,6 +52,35 @@
       "Standing in for the joint SDP-on-full-tower derivation."
     ],
     "admissible_replacement": "Joint SDP on the full mass tower with GB filtration + jet-order tracking → canonical T_w per atom → Markov closure → hp_volume_of_link_closure(braid_word, digits ≥ 50) → B_pred = ρ · m_e · Vol_hyp → a-posteriori AME comparison."
+  },
+  "removed_legacy_compute_artifacts": {
+    "_description": "Witness JSONs and producer scripts that were misleading legacy compute paths (off-main commitSha, f64-fallback orphans, acknowledged-broken neutron chains). Removed from the repository on 2026-05-19 per repo-owner directive: 'get rid of/fix what led you astray. it should be removed.' Recorded here as historical record so future agents do not re-introduce equivalent legacy paths.",
+    "_removed_at": "2026-05-19",
+    "canonical_pipeline_replacement": {
+      "binding_energies (D, T, ³He, ⁴He, ⁵Li, ⁶Li)": "canonical-mass-table-extended.witness.json (canonical_mass_table_extended.py, markov_peel+mpmath, Layer-1 pipeline)",
+      "nucleon_masses (m_p, m_n, m_μ at 0.25 ppm)": "m-p-borromean-verification-50dps.witness.json (m_p_borromean_verification_50dps.py, mpmath 50dps, conditional on conj:borromean-baryon-mass-formula)",
+      "atom_knot_atlas": "recursive-atom-knot-atlas.md (auto-render via atlas_render_canonical_table.py)"
+    },
+    "removed_witnesses": [
+      "canonical-mass-table.witness.json (orphan f64-fallback, no producer/engine/commitSha; 4-row D/T/³He/⁴He binding-energy table)",
+      "atomic-braid-mass-table.witness.json (off-main commitSha; six-term formula 24–54 % errors)",
+      "atomic-braid-mass-table-modes-sweep.witness.json (T1-modes sweep over the legacy six-term formula; best mode still 22 % mean err)",
+      "neutron-mass-codata-50dps.witness.json (legacy mass_endomorphism.py f64 chain; m_n_pred = 0.561 MeV, off by ~1700×)",
+      "neutron-mass-full-tower-50dps.witness.json (acknowledged −62.9 % residual structural framework gap)",
+      "neutron-mass-50dps.derivation.json (companion to neutron-mass-codata-50dps)"
+    ],
+    "removed_producers": [
+      "atomic_braid_mass_table.py",
+      "atomic_braid_mass_table_modes_sweep.py",
+      "atomic_braid_mass_terms.py (helper used only by the two scripts above)",
+      "build_neutron_mass_50dps_chain.py",
+      "derive_m_n_hecke_full_tower_50dps.py"
+    ],
+    "tracking_audits": {
+      "m_n_substrate_derivation": "docs/audits/2026-05-18-workplan-0b-m-n-substrate-derivation.md",
+      "tower_closure_plan": "docs/audits/2026-05-16-t1-t4-tower-closure-plan.md"
+    },
+    "invariant_to_uphold": "Mass-table witnesses MUST declare engine, scriptFile, and commitSha and MUST be reachable from main HEAD. Layer-1 canonical pipeline (markov_peel+mpmath or rust+mpmath 50dps) is the only allowed compute path for binding-energy predictions. Nucleon masses go through the Borromean tower verification or a substrate-derived path; the legacy mass_endomorphism.py f64 chain is removed."
   },
   "method_classifications": {
     "principled-gb-nf": "Knot is the closure of the GB-NF canonical braid in H_{n_0}(q_0); closure derived a priori.",
@@ -173,5 +202,8 @@
     "magic_or_recursive_count": 2,
     "deprecated_count": 2,
     "total": 13
-  }
+  },
+  "engine": "python",
+  "scriptFile": "witness_staleness_tracker.py",
+  "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811"
 }

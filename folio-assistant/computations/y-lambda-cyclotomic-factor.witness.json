@@ -102,5 +102,8 @@
     }
   },
   "precision": "symbolic_q",
-  "truncation_eps": 0
+  "truncation_eps": 0,
+  "engine": "python",
+  "scriptFile": "y_lambda_cyclotomic_factor.py",
+  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
 }

@@ -4,6 +4,7 @@ export default conjecture({
   label: "conj:graded-baer-star-Hq",
   title:
     "Graded Baer-* on $\\mathcal{H}_q$ across the depth filtration",
+  lean: { ref: "qou:QOU.BraidKnot.GradedBaerStarHq", validation: "stub" },
   uses: [
     "def:frobenius-hopf-substrate",
     "conj:gb-depth-period-correspondence",

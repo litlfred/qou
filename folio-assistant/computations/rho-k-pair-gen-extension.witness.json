@@ -1,6 +1,6 @@
 {
   "computation": "rho-k-pair-gen-extension",
-  "description": "Probes the pair-generator extension of `prop:atomic-braid-mass`'s formula M = constituent + \u03b1\u00b7\u03a3 ln|V_i| by adding \u03b1\u00b7z\u00b2\u00b7\u03a3_{i<j} ln|V_i V_j|. This term is the log-volume analog of T_3 = -z\u00b2 \u03a3 Li_2^q(-|V_i V_j|) from `thm:knot-mass-formula-unified`. The naive log-additive implementation \u03a3 ln|V_i V_j| = (n-1)\u00b7\u03a3 ln|V_i| is a pure rescaling and does not improve accuracy. The correct pair-gen term requires Wedderburn-block-decomposed pair amplitudes (sym/std/alt coupling), parallel to the full-Wedderburn single-gen volume.",
+  "description": "Probes the pair-generator extension of `prop:atomic-braid-mass`'s formula M = constituent + α·Σ ln|V_i| by adding α·z²·Σ_{i<j} ln|V_i V_j|. This term is the log-volume analog of T_3 = -z² Σ Li_2^q(-|V_i V_j|) from `thm:knot-mass-formula-unified`. The naive log-additive implementation Σ ln|V_i V_j| = (n-1)·Σ ln|V_i| is a pure rescaling and does not improve accuracy. The correct pair-gen term requires Wedderburn-block-decomposed pair amplitudes (sym/std/alt coupling), parallel to the full-Wedderburn single-gen volume.",
   "reference_blocks": [
     "prop:atomic-braid-mass",
     "thm:knot-mass-formula-unified",
@@ -466,5 +466,8 @@
     "max_err_pct_with_pair_naive": 17.91618278824691,
     "naive_pair_improves": false
   },
-  "open_question": "The naive log-additive pair term \u03a3 ln|V_i V_j| = (n-1)\u00b7\u03a3 ln|V_i| is just a rescaling. The PROPER pair-coupling term matching T_3 of `thm:knot-mass-formula-unified` requires Wedderburn-decomposed pair amplitudes from sym/std/alt block coupling. Implementing requires a new atom_per_generator_pair_volumes(Z, N) routine returning |V\u0302_i V\u0302_j|_Wedderburn for each (i, j) pair."
+  "open_question": "The naive log-additive pair term Σ ln|V_i V_j| = (n-1)·Σ ln|V_i| is just a rescaling. The PROPER pair-coupling term matching T_3 of `thm:knot-mass-formula-unified` requires Wedderburn-decomposed pair amplitudes from sym/std/alt block coupling. Implementing requires a new atom_per_generator_pair_volumes(Z, N) routine returning |V̂_i V̂_j|_Wedderburn for each (i, j) pair.",
+  "engine": "python",
+  "scriptFile": "rho_k_pair_gen_extension_probe.py",
+  "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811"
 }

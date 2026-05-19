@@ -16,28 +16,61 @@ Write $h = q - q^{-1}$ and $z = 1/(q^{1/2} + q^{-1/2})$.
 | $\sigma_1$ | $z$ |
 | $L_+ = \sigma_0\sigma_1$ | $z^2$ |
 | $L_- = \sigma_1\sigma_0$ | $z^2$ |
-| $e^- = \sigma_0\sigma_1\sigma_0$ | $z^3$ |
+| $e^- = \sigma_0\sigma_1\sigma_0$ | $hz^2 + z$ |
 
-The trace of $e^-$ follows from Yang--Baxter and the Markov property:
+> **Errata (2026-05-19).** Earlier versions of this block asserted
+> $\mathrm{tr}_M(e^-) = z^3$ and offered a "peel-from-the-right"
+> derivation. This was incorrect: $\sigma_1\sigma_0$ is **not** in
+> the sub-algebra $H_2 = \langle \sigma_0 \rangle$ (the Markov axiom
+> $\mathrm{tr}_M(\sigma_n \cdot x) = z\,\mathrm{tr}_M(x)$ requires
+> $x \in H_n$), so the Markov-property step cannot be applied
+> directly to $\sigma_1 \cdot \sigma_0\sigma_0$ after the cyclicity
+> step. The canonical Ocneanu--Wenzl recursion gives
+> $\mathrm{tr}_M(e^-) = hz^2 + z$, verified independently in
+> [`docs/audits/2026-05-19-trm5-markov-bug.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-19-trm5-markov-bug.md)
+> against the y-lambda Wenzl-bridge consistency
+> $\mathrm{tr}_M(b_i) = \sum_\lambda y_\lambda(q) \chi_\lambda(b_i)$
+> (residual $\sim 10^{-32}$ after fix; ${\sim}0.12$ before).
+> The fix has been applied to
+> `tools/pyhecke/python/pyhecke/gram.py` and the Gram matrix table
+> below.
+
+The trace of $e^-$ follows from the Ocneanu--Wenzl Markov recursion
+(cyclicity + Hecke quadratic + Markov axiom restricted to the
+sub-algebra):
 $\mathrm{tr}_M(\sigma_0\sigma_1\sigma_0)
-= \mathrm{tr}_M(\sigma_1\sigma_0\sigma_1)
-= z \cdot \mathrm{tr}_M(\sigma_1\sigma_0)
-= z \cdot z^2 = z^3$.
+= \mathrm{tr}_M(\sigma_1\sigma_0^2) \;\text{(cyclicity)}
+= \mathrm{tr}_M(\sigma_1(h\sigma_0+1)) \;\text{(Hecke quadratic)}
+= h\cdot\mathrm{tr}_M(\sigma_1\sigma_0) + \mathrm{tr}_M(\sigma_1)
+= h \cdot z\,\mathrm{tr}_M(\sigma_0) + z
+= hz^2 + z$
+(the last step uses the Markov axiom on $\sigma_1$ paired with
+$\sigma_0 \in H_1$).
 
-**Note.** An earlier version of this document used a cyclicity
-argument giving $hz^2 + z$.  That derivation incorrectly applied
-$\sigma_0\sigma_1\sigma_0 = \sigma_0^2\sigma_1$ (cyclicity gives
-$\mathrm{tr}_M(ABC) = \mathrm{tr}_M(CAB)$, yielding
-$\sigma_0 \cdot \sigma_0\sigma_1 \neq \sigma_0^2\sigma_1$ as a
-rewrite of $\sigma_0\sigma_1\sigma_0$).  The canonical Markov-property
-derivation (peeling the boundary generator $\sigma_1$ from the right
-at each step) gives $z^3$.
+At $q_0 \approx 1.1097$, $hz^2 + z \approx 0.5514$ (the stale
+$z^3 \approx 0.1245$ was off by a factor of 4.4).
 
 ## Gram matrix (symbolic in $q$)
 
-**Proposition.**
+> **Errata banner (2026-05-19) — symbolic Gram entries below
+> require recomputation.** The proposition's matrix and $g_{ij}$
+> formulas were derived assuming $\mathrm{tr}_M(e^-) = z^3$
+> (now known to be incorrect — see errata above). The entries
+> that involve $\mathrm{tr}_M$ applied to a product whose Hecke
+> normal form contains $e^-$ must be rederived with
+> $\mathrm{tr}_M(e^-) = hz^2 + z$. Numerically, the post-fix Gram
+> matrix is symmetric to machine precision and reproduces the
+> y-lambda Wenzl-bridge identity exactly (Markov-bug audit,
+> § "Visible symptom: Gram matrix non-symmetric"). The corrected
+> Python compute lives at `tools/pyhecke/python/pyhecke/gram.py`;
+> a follow-up commit will recompute the symbolic table below.
+
+**Proposition (stale symbolic entries — see banner above).**
 *The $6 \times 6$ Gram matrix $G_{ij} = \mathrm{tr}_M(b_i \cdot b_j)$
-over the NF basis $\{\gamma, \sigma_0, \sigma_1, L_+, L_-, e^-\}$ is:*
+over the NF basis $\{\gamma, \sigma_0, \sigma_1, L_+, L_-, e^-\}$
+has the structural form below; the entries containing $z^3$ or
+higher $z^k$ powers from $\mathrm{tr}_M(e^-)$ are stale and need
+the $z^3 \mapsto hz^2 + z$ substitution to be propagated:*
 
 $$
   G
@@ -52,7 +85,7 @@ $$
   \end{pmatrix}
 $$
 
-*where:*
+*where (STALE — pending recomputation):*
 - $g_{15} = hz^3 + z^2$ (from $\sigma_0 \cdot e^- = he^- + L_-$)
 - $g_{34} = hz^3 + hz + 1$ (from $L_+ \cdot L_- = he^- + h\sigma_0 + \gamma$)
 - $g_{35} = h^2z^3 + 2hz^2 + z$ (from $L_+ \cdot e^- = h^2e^- + hL_+ + hL_- + \sigma_1$)

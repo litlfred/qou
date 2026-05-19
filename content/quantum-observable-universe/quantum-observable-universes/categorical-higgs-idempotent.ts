@@ -4,13 +4,11 @@ export default conjecture({
   label: "conj:categorical-higgs-idempotent",
   title:
     "Categorical Higgs idempotent $e_H \\colon A \\to A$ projecting onto unbroken $\\mathrm{U}(1)_{em}$",
+  lean: { ref: "qou:QOU.QuantumObservableUniverses.CategoricalHiggsIdempotent", validation: "stub" },
   uses: [
     "def:frobenius-hopf-substrate",
     "def:categorical-action",
-    "conj:electroweak-mass-eigenstate-count",
-    "conj:force-carrier-knot-vs-link-dichotomy",
     "thm:em-spectral-completeness",
-    "prop:gauge-coupling-uniqueness",
   ],
   tags: [
     "higgs-mechanism",

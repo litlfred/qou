@@ -218,7 +218,7 @@ theorem variational_yang_mills {C : Type u} [CategoryTheory.Category.{v} C]
 
 /-- **Transport equation** (per-instance form). -/
 -- Ref: [manuscript] §1-quantum-observable-universe
--- Ref: [kobayashi1996] Foundations of Differential Geometry, Volume 1 — see content/schema/references.ts
+-- Ref: [kobayashi1963] Kobayashi-Nomizu, Foundations of Differential Geometry, Vol. I (1963 Interscience; 1996 Wiley reprint = kobayashi1996), DOI 10.1002/9780470316559
 theorem variational_transport {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C] [CategoryTheory.Preadditive C]
     (fh : FrobeniusHopfData C)

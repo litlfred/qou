@@ -449,6 +449,7 @@ export default chapter({
         "moduli-symmetry-d4",
         "mobius-limit-from-thimble",
         "morse-wall-q-moduli",
+        "delta-lambda-categorical-closure",
         // Categorical Markov-Frobenius ≡ algebraic residue (PL = archimedean shadow)
         "sw-period-thimble-equivalence",
         "jet-gb-pl-correspondence",

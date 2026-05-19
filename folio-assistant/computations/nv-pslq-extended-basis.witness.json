@@ -121,5 +121,8 @@
     "n_deep_genuine_relations": 0,
     "conclusion": "INCONCLUSIVE",
     "verdict": "Extended basis does NOT close NV-1: no log(N_v) relation at any tested tolerance.  Consistent with the conjectured form iff N_sym(q) is transcendental in the basis — N_sym must be authored explicitly before PSLQ can verify."
-  }
+  },
+  "engine": "python",
+  "scriptFile": "nv_pslq_extended_basis.py",
+  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
 }

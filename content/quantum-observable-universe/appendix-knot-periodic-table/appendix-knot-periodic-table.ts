@@ -25,7 +25,7 @@ export default chapter({
       label: "sec:knot-periodic-table",
       blocks: [
         "knot-periodic-table",
-        "knot-periodic-table-grid",
+        "recursive-atom-knot-atlas",
       ],
     }),
     section({

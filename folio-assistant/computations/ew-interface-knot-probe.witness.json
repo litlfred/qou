@@ -86,5 +86,8 @@
     }
   },
   "verdict": "delta-I-trivialises-on-2-of-20-pure-tableaux",
-  "interpretation": "If Δ_I^minimal mixes ALL disjoint-pure tableaux, then the Higgs-vev coupling has no diagonal-invariant subspace in the EW pure-eigenspace decomposition — every state acquires non-trivial Δ_I-induced rotation.  This is structurally consistent with EWSB being a genuinely non-abelian (non-disjoint) coupling.  Quantitative match against Weinberg θ_W requires extracting the actual eigenvalue structure of β_EW(Δ_I^minimal), not just counting which tableaux become mixed."
+  "interpretation": "If Δ_I^minimal mixes ALL disjoint-pure tableaux, then the Higgs-vev coupling has no diagonal-invariant subspace in the EW pure-eigenspace decomposition — every state acquires non-trivial Δ_I-induced rotation.  This is structurally consistent with EWSB being a genuinely non-abelian (non-disjoint) coupling.  Quantitative match against Weinberg θ_W requires extracting the actual eigenvalue structure of β_EW(Δ_I^minimal), not just counting which tableaux become mixed.",
+  "engine": "python",
+  "scriptFile": "ew_interface_knot_probe.py",
+  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
 }

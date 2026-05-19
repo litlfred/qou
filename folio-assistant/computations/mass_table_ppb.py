@@ -28,10 +28,8 @@ Borromean rings.  No AME input.
 from __future__ import annotations
 
 import sys
-import json
 import warnings
 from pathlib import Path
-from datetime import datetime, timezone
 
 warnings.filterwarnings("ignore", category=UserWarning)
 
@@ -39,13 +37,18 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 from q_parameter import Q as Q0
 from experimental_constants import M_E_MEV
+from witness_base import WitnessBuilder  # noqa: E402
+from knot_volumes import VOL_BORROMEAN, VOL_7_SQ_1  # noqa: E402
 
-CATALAN_G = 0.915965594177219015054603514932
-VOL_BORROMEAN = 8.0 * CATALAN_G                # = 8G = Vol(L6a4)
+# Knot volumes now imported from `knot_volumes` (canonical mpmath
+# 50dps source). Catalan G + Vol(L6a4) = 8G + Vol(7²_1) literature
+# values. Pre-refactor these were f64-hardcoded literals; post-
+# refactor they live in the centralised module so a `--precision
+# mpfr` lift only needs to update one place. See I14 audit and the
+# coordination ledger entry "knot-vol _precision propagation".
 
 # Atomic-pair α-α coupling knot: 7²_1 (Whitehead-like linked pair).
-# DERIVED: c_αα = m_e · Vol(7²_1).  No AME fit.
-VOL_7_SQ_1 = 4.7494999818744385084980865556375718851941577840553  # SnapPy HP
+# DERIVED: c_αα = m_e · Vol(7²_1). No AME fit.
 C_ALPHA_DERIVED = M_E_MEV * VOL_7_SQ_1         # ≈ 2.4270 MeV
 
 # Hyperbolic volumes from SnapPy (50-digit HP, independent of AME).
@@ -239,33 +242,29 @@ def main() -> int:
     mean_ppb = sum(abs(r["err_ppb"]) for r in ok) / len(ok) if ok else 0.0
     print(f"    mean |err|:   {mean_pct:.4f}%  =  {mean_ppb:.3e} ppb")
 
-    witness = {
-        "computedAt": datetime.now(timezone.utc).isoformat(),
-        "computation": "mass-table-ppb-zero-param",
-        "description": (
+    builder = (
+        WitnessBuilder("mass-table-ppb", engine="python+snappy")
+        .set_description(
             "AME2020 light-atom binding vs strictly zero-free-parameter "
             "predictions: Kashaev law B = ρ_F · Vol_hyp(K) with ρ_F ∈ "
             "{m_e, 2m_e}; atom→knot assignments from framework rules "
             "(magic A·8G, α-cluster with c_αα = m_e·Vol(7²_1)) or "
-            "census search (flagged 'hyp: census-assigned').  "
+            "census search (flagged 'hyp: census-assigned'). "
             "NO AME-derived calibrations or fits."
-        ),
-        "auditOnly": "docs/audits/2026-05-03-next-session-plan-to-1ppb.md",
-        "parameters": {
-            "q_0": Q0,
-            "m_e_MeV": M_E_MEV,
-            "vol_borromean_8G": VOL_BORROMEAN,
-            "vol_7_sq_1": VOL_7_SQ_1,
-            "c_alpha_derived_MeV": C_ALPHA_DERIVED,
-        },
-        "rows": rows,
-        "atoms_no_assignment": no_assign,
-        "within": {str(k): v for k, v in within.items()},
-        "mean_abs_pct": mean_pct,
-        "mean_abs_ppb": mean_ppb,
-    }
-    out = Path(__file__).parent / "mass-table-ppb.witness.json"
-    out.write_text(json.dumps(witness, indent=2, ensure_ascii=False) + "\n")
+        )
+        .set_audit_only("docs/audits/2026-05-03-next-session-plan-to-1ppb.md")
+        .add_parameter("q_0", Q0)
+        .add_parameter("m_e_MeV", M_E_MEV)
+        .add_parameter("vol_borromean_8G", VOL_BORROMEAN)
+        .add_parameter("vol_7_sq_1", VOL_7_SQ_1)
+        .add_parameter("c_alpha_derived_MeV", C_ALPHA_DERIVED)
+        .add_data("rows", rows)
+        .add_data("atoms_no_assignment", no_assign)
+        .add_data("within", {str(k): v for k, v in within.items()})
+        .add_data("mean_abs_pct", mean_pct)
+        .add_data("mean_abs_ppb", mean_ppb)
+    )
+    out = builder.save()
     print(f"\n  Witness: {out}")
     return 0
 

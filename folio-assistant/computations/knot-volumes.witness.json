@@ -4,7 +4,7 @@
   "computedAt": "2026-04-07T12:33:26.002226+00:00",
   "assertions": [
     {
-      "name": "Vol(0_1) \u2014 unknot (neutrino)",
+      "name": "Vol(0_1) — unknot (neutrino)",
       "computed": 0.0,
       "expected": 0.0,
       "tolerance": 1e-10,
@@ -12,7 +12,7 @@
       "source": "Trivial knot"
     },
     {
-      "name": "Vol(3_1) \u2014 trefoil (electron)",
+      "name": "Vol(3_1) — trefoil (electron)",
       "computed": 0.0,
       "expected": 0.0,
       "tolerance": 1e-10,
@@ -20,15 +20,15 @@
       "source": "Torus knot (non-hyperbolic)"
     },
     {
-      "name": "Vol(4_1) \u2014 figure-eight (Higgs field / mass mechanism)",
+      "name": "Vol(4_1) — figure-eight (Higgs field / mass mechanism)",
       "computed": 2.029883212819307,
       "expected": 2.02988321281931,
       "tolerance": 1e-10,
       "unit": "volume",
-      "source": "OEIS A091518, 3\u00b7Cl\u2082(\u03c0/3)"
+      "source": "OEIS A091518, 3·Cl₂(π/3)"
     },
     {
-      "name": "Vol(5_1) \u2014 cinquefoil (muon T_{2,5})",
+      "name": "Vol(5_1) — cinquefoil (muon T_{2,5})",
       "computed": 0.0,
       "expected": 0.0,
       "tolerance": 1e-10,
@@ -36,7 +36,7 @@
       "source": "Torus knot (non-hyperbolic)"
     },
     {
-      "name": "Vol(5_2) \u2014 three-twist (strange quark)",
+      "name": "Vol(5_2) — three-twist (strange quark)",
       "computed": 2.828122088330783,
       "expected": 2.82812208832975,
       "tolerance": 1e-10,
@@ -44,7 +44,7 @@
       "source": "SnapPy census"
     },
     {
-      "name": "Vol(7_1) \u2014 septafoil (tau T_{2,7})",
+      "name": "Vol(7_1) — septafoil (tau T_{2,7})",
       "computed": 0.0,
       "expected": 0.0,
       "tolerance": 1e-10,
@@ -52,7 +52,7 @@
       "source": "Torus knot (non-hyperbolic)"
     },
     {
-      "name": "Vol(L2a1) \u2014 Hopf link (strong force)",
+      "name": "Vol(L2a1) — Hopf link (strong force)",
       "computed": -3.556201149539995e-08,
       "expected": 0.0,
       "tolerance": 1e-06,
@@ -60,15 +60,15 @@
       "source": "Torus link (non-hyperbolic)"
     },
     {
-      "name": "Vol(L6a4) \u2014 Borromean rings (nucleon)",
+      "name": "Vol(L6a4) — Borromean rings (nucleon)",
       "computed": 7.327724753417752,
       "expected": 7.32772475341775,
       "tolerance": 1e-10,
       "unit": "volume",
-      "source": "8\u00b7G (Catalan's constant), OEIS A006752"
+      "source": "8·G (Catalan's constant), OEIS A006752"
     },
     {
-      "name": "m_\u03bc/m_e (CODATA 2022)",
+      "name": "m_μ/m_e (CODATA 2022)",
       "computed": 206.768283,
       "expected": 206.768283,
       "tolerance": 1e-07,
@@ -76,7 +76,7 @@
       "source": "CODATA 2022"
     },
     {
-      "name": "substrate q from Vol(4_1) and m_\u03bc/m_e",
+      "name": "substrate q from Vol(4_1) and m_μ/m_e",
       "computed": 1.1099785955541805,
       "expected": 1.10997,
       "tolerance": 0.001,
@@ -84,7 +84,7 @@
       "source": "QOU derivation (Ch11)"
     },
     {
-      "name": "\u210f_q = 1 - 1/q",
+      "name": "ℏ_q = 1 - 1/q",
       "computed": 0.0990817264356989,
       "expected": 0.09905,
       "tolerance": 0.001,
@@ -95,5 +95,7 @@
   "allPassed": true,
   "durationMs": 8,
   "precision": "f64_numeric_fallback",
-  "truncation_eps": 0.0
+  "truncation_eps": 0.0,
+  "scriptFile": "knot_volumes.py",
+  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
 }

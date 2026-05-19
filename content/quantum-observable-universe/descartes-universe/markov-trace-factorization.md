@@ -137,7 +137,7 @@ verification confirms code correctness, not an approximation:
 
 | Nucleus | $A$ | $\binom{A}{2}$ | $\prod_i \hat{V}_i$ | Direct trace | Ratio |
 |---------|-----|:-:|------|------|:-----:|
-| ${}^{2}\mathrm{H}$ | 2 | 1 | $0.49932008$ | $0.49932008$ | $1$ |
+| ${}^{2}\mathrm{H}$ | 2 | 1 | $:val[gram_z]{precision=8}$ | $:val[gram_z]{precision=8}$ | $1$ |
 | ${}^{3}\mathrm{H}$ | 3 | 3 | $0.65630083$ | $0.65630083$ | $1$ |
 | ${}^{3}\mathrm{He}$ | 3 | 3 | $0.60100173$ | $0.60100173$ | $1$ |
 | ${}^{4}\mathrm{He}$ | 4 | 6 | $0.50430647$ | $0.50430647$ | $1$ |

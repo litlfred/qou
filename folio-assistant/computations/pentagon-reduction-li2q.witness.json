@@ -1,0 +1,100 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-19T07:29:51.825652+00:00",
+  "commitSha": "a31a067c4145c212f793c3fd77340b9c2cf68565",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "pentagon-reduction-li2q",
+  "scriptFile": "pentagon_reduction_li2q.py",
+  "scriptHash": "41826e918891",
+  "scriptCommitSha": "93212b6dc9e346221c92f34a214228a13365580b",
+  "description": "Pentagon-identity reduction of Li_2^q at pair-product arguments |V_i V_j| > q_0 (which exceed the series convergence radius). Algebraic reorganisation per the Hopf-algebra pentagon identity (\u2605 above); not analytic continuation. Applied to the V\u0302 values from PR #801's binding_via_interface_knot.py to compute the previously-deferred T3 contribution; gives the first numerical T3 value for D, T, \u00b3He and shows the magnitude shift towards B_AME.",
+  "parameters": {
+    "q_0": "1.1099785955541805752815940796095093779932822799587",
+    "z_markov": "0.49932033403359825002066908467672150636931636263446",
+    "convergence_radius_Li2q": "1.1099785955541805752815940796095093779932822799587",
+    "method": "pentagon-identity-recursive"
+  },
+  "data": {
+    "per_atom": [
+      {
+        "atom": "D",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "n_strands": 6,
+        "T1_atom": "4.5283072561032394809582138112697000859989810750898e-17",
+        "T2_atom": "5.3810873187238524519842137955628711074548766405675",
+        "T3_atom_pentagon": "0.88467763632272820823392795411262071076635800513232",
+        "T1_free": "0.42531835560314862580989014290558032669358245013452",
+        "T2_free": "6.9574618501401396909636749393067796900699609817963",
+        "T3_free_pentagon": "1.5873898165779025398312952967479840070306619977837",
+        "B_dim_first_plus_T3": "2.7044050672746101511036460682524573959908326713176",
+        "B_MeV_first_plus_T3": "1.381948149752005148873304482048634064271049704669",
+        "B_AME_MeV": "2.2245660699999998399789546965621411800384521484375",
+        "ratio_pred_over_AME": 0.6212214455612933,
+        "max_pair_product_atom": "1.14834784950530699001048570147408",
+        "t3_divergent_pairs_atom": 1
+      },
+      {
+        "atom": "T",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "n_strands": 9,
+        "T1_atom": "2.4610392278924496522230449264942154203718749863906e-18",
+        "T2_atom": "8.2147767758076342506701357664863362278569267174656",
+        "T3_atom_pentagon": "2.315100152052305060907171382429515259784488912132",
+        "T1_free": "0.25536310758945405245319034609063381733400817105622",
+        "T2_free": "11.260145980144194929690185285153377147659217534783",
+        "T3_free_pentagon": "4.4832326932780738253068664325456179411222608092772",
+        "B_dim_first_plus_T3": "5.4688648531517834934118956869813277662510259590246",
+        "B_MeV_first_plus_T3": "2.7945841976524655557608106135569871581601197014843",
+        "B_AME_MeV": "8.4817979999999995044390743714757263660430908203125",
+        "ratio_pred_over_AME": 0.3294801641883556,
+        "max_pair_product_atom": "1.18454393089562593514334588133635",
+        "t3_divergent_pairs_atom": 3
+      },
+      {
+        "atom": "3He",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "n_strands": 9,
+        "T1_atom": "1.4866054030558820798564976183888152675419764919999e-18",
+        "T2_atom": "8.1432448973559183560946675208456768400137702048853",
+        "T3_atom_pentagon": "2.3986640437641474933051681561751755125998318006681",
+        "T1_free": "0.30128965739261812396990721277557044585301818335705",
+        "T2_free": "11.188614101692479016756626726927205177035213365808",
+        "T3_free_pentagon": "4.5999462572034615555730999538092395953670870042364",
+        "B_dim_first_plus_T3": "5.5479410751684928454131928134352807857852189294592",
+        "B_MeV_first_plus_T3": "2.8349920640729709170886538438129743744914217984738",
+        "B_AME_MeV": "7.7180428000000000920977072382811456918716430664063",
+        "ratio_pred_over_AME": 0.3673200755083881,
+        "max_pair_product_atom": "1.1483478495053062514332538851737",
+        "t3_divergent_pairs_atom": 3
+      }
+    ],
+    "upstream_witness_hashes": [
+      {
+        "path": "binding-via-interface-knot.witness.json",
+        "sha256": "e9a71a5200c5b8b1d198bca510edfcb4800671ffc669c5b94e87132085ec1f8a",
+        "size_bytes": 8332,
+        "commitSha": "14f81f5f554404b8af059855b0b2b9f755f6364d",
+        "scriptCommitSha": "14f81f5f554404b8af059855b0b2b9f755f6364d",
+        "computedAt": "2026-05-19T06:32:44.193196+00:00"
+      },
+      {
+        "path": "canonical-mass-table-extended.witness.json",
+        "sha256": "dfe598c57f241559378fef2d96c95013ec074ed2127a867a795202cbd714d30d",
+        "size_bytes": 51154,
+        "commitSha": "b41477565ae1913f64d6b37c3a4b530b5823513a",
+        "scriptCommitSha": "b41477565ae1913f64d6b37c3a4b530b5823513a",
+        "computedAt": "2026-05-19T03:04:06.897651+00:00"
+      }
+    ]
+  },
+  "observable_type": "raw_trace"
+}

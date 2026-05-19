@@ -1,11 +1,22 @@
 **$c_k$ extraction from four algebraic reduction rules on the typed-$\mathbf{B}_3$ word.**
 
+> **Errata banner (2026-05-19) — $c_4$ closed form has shifted.**
+> The original $c_4 = b^2 + 1/2$ form below is superseded by
+> $c_4 = c_3 \cdot b^4 = -2 b^4$ (per PR #777's SDP-$T_\beta$
+> derivation and [`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder)).
+> The $b^2 + 1/2$ shape is now attributed to $c_5$ (with sign
+> flip: $c_5 = -(b^2 + 1/2)$). The four-rule reframing remains
+> valid; only the per-rung closed-form column needs updating.
+> Audit: [`docs/audits/2026-05-19-qbeta-all-ck-categorical-extension.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-05-19-qbeta-all-ck-categorical-extension.md).
+
 The $Q_\beta$ categorical precision ladder
 ([`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder))
 displays per-rung coefficients
 
 $$
-  c_1 = b, \quad c_2 = b^2, \quad c_3 = -2, \quad c_4 = b^2 + \tfrac{1}{2}
+  c_1 = b, \quad c_2 = b^2, \quad c_3 = -2, \quad
+  c_4 = c_3 \cdot b^4 = -2 b^4, \quad
+  c_5 = -(b^2 + \tfrac{1}{2})
 $$
 
 with $b = \sqrt{q^4+q^2+1}/(q^2+1)$ (Hoefsmit $V_{(2,1)}$ off-diagonal
@@ -38,7 +49,8 @@ word:
 | 1 | $b$ | Kashiwara $\tilde f_1$ matrix element on $V_{(2,1)}$ (Rules 1+2+3) |
 | 2 | $b^2$ | $\tilde f_1^\dagger \tilde f_1$ return amplitude (Rules 1+2+3) |
 | 3 | $-2 = J_{\mathrm{Hopf}}(q=1)$ | 3-fold Markov closure → Hopf substructure → KL classical limit (Rules 1+4) |
-| 4 | $b^2 + 1/2$ | mixed intra/inter — Kashiwara $b^2$ + Hopf-half rational offset (Rules 1+2+3+4) |
+| 4 | $c_3 \cdot b^4 = -2 b^4$ | Jones $\times$ Kashiwara multiplicative mixing — Rules 1+3+4 (the old $b^2 + 1/2$ value belongs at $k = 5$ with a sign flip; superseded per 2026-05-19 audit) |
+| 5 | $-(b^2 + 1/2)$ | Kashiwara $b^2$ + Hopf-half offset (mixed intra/inter) — the form originally attributed to $k = 4$ |
 | $\geq 5$ | $0$ | open R&D (see [`prop:categorical-chain-convergence-mechanisms`](#prop:categorical-chain-convergence-mechanisms)) |
 
 ## Per-order agreement

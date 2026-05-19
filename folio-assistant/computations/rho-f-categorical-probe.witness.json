@@ -102,5 +102,8 @@
       }
     }
   ],
-  "note": "C3 reduces ³He error from −2.97% to −0.14% with zero AME input.  However C3 worsens ³H (−2.0% vs C0 +0.15%).  The residual ³H deficit implies an additional categorical correction beyond the proton/neutron tr_M ratio is needed.  GAP-A remains partially open.  See analysis doc docs/audits/2026-05-04-w1-rho-substrate-analysis.md."
+  "note": "C3 reduces ³He error from −2.97% to −0.14% with zero AME input.  However C3 worsens ³H (−2.0% vs C0 +0.15%).  The residual ³H deficit implies an additional categorical correction beyond the proton/neutron tr_M ratio is needed.  GAP-A remains partially open.  See analysis doc docs/audits/2026-05-04-w1-rho-substrate-analysis.md.",
+  "engine": "python",
+  "scriptFile": "rho_f_categorical_probe.py",
+  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
 }

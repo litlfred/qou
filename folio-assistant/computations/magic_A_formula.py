@@ -45,15 +45,12 @@ from pathlib import Path
 # CODATA 2022
 M_E_MEV: float = 0.51099895069
 
-# Catalan's constant (truncated to f64 precision; full 50-dps value not
-# preserved in float arithmetic — the formula B = ρ · m_e · A · 8G is
-# evaluated in plain Python float, giving ~16-digit accuracy regardless).
-# Reference value: G = 0.91596559417721901505460351493238411077414937428167
-CATALAN_G: float = 0.9159655941772190
-
-# 8G = Vol(L6a4) = Vol(Borromean rings) — exact hyperbolic-geometry identity
-# (= 2 ideal octahedra × 4G each).
-VOL_BORROMEAN: float = 8.0 * CATALAN_G  # ≈ 7.32772475341775
+# Catalan's constant + Vol(L6a4) = Vol(Borromean rings) = 8G now
+# imported from the canonical knot_volumes module (mpmath 50dps source).
+# Pre-refactor (PR #781 knot-vol _precision propagation): these were
+# f64-hardcoded literals here AND in mass_table_ppb.py / etc. Now
+# all consumers share a single source of truth.
+from knot_volumes import CATALAN_G, VOL_BORROMEAN  # noqa: E402
 
 # AME2020 reference values for verification
 AME_BA_MEV = {
