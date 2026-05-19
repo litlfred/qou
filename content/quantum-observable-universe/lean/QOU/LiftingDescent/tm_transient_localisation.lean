@@ -13,12 +13,12 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.LiftingDescent
 
 
-/-- Abstract context for the `tm_transient_localisation` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
-    claim of the lemma. -/
+/-- Abstract context for the `tm_transient_localisation` claim — manuscript-themed
+    typed fields below; `holds` carries the residual `Prop` claim. -/
 class TmTransientLocalisationContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `tm_transient_localisation` below for the manuscript statement). -/
+  /-- Fluid-dynamics velocity / vorticity field. -/
+  VelocityField : Type
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Lemma statement** (from manuscript):

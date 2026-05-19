@@ -12,15 +12,46 @@ Lake package.
 namespace QOU.DescartesUniverse
 
 
-/-- Abstract context for the `heisenberg_commutator` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
-    claim of the lemma. -/
+/-- Abstract context for the `heisenberg_commutator` claim — manuscript-themed
+    typed fields below; `holds` carries the residual `Prop` claim. -/
 class HeisenbergCommutatorContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `heisenberg_commutator` below for the manuscript statement). -/
+  /-- Substrate parameter `q : ℝ`. -/
+  q : ℝ
+  /-- LP shadow-price / dual variable. -/
+  shadow_price : ℝ
+  /-- The fibre functor `τ`. -/
+  Functor : Type → Type
+  /-- Fluid-dynamics velocity / vorticity field. -/
+  VelocityField : Type
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
-/-- Placeholder for `heisenberg_commutator` (no manuscript-statement docstring found). -/
+/-- **Manuscript statement** (full body):
+
+Let $\hat{X}, \hat{P}$ be position and momentum observables on the
+fibre $\mathbb{P}^1(\mathbb{C})$, let $J \colon H \to H$ be the
+complex structure on the Levi distribution ($J^2 = -\mathrm{Id}$),
+and let $q \in \mathrm{End}(\mathbf{1})$ be the substrate parameter
+([substrate parameter](#def:substrate-parameter)).  Then the
+$q$-deformed commutator is
+
+$$
+  [\hat{X}, \hat{P}]_q =  J\hbar_q(p),
+  \qquad
+  \hbar_q(p) =  1 - q(p)^{-1},
+$$
+
+where $\hbar_q$ is the quantum Planck constant
+([quantum Planck constant](#def:quantum-planck-constant)).
+In particular:
+
+1. As $q \to 1$, $[\hat{X}, \hat{P}]_q \to 0$ (classical limit).
+2. As $q \to \infty$, $[\hat{X}, \hat{P}]_q \to J$ (maximal
+   uncertainty).
+
+    The Lean encoding below is a `theorem foo [ctx] : ctx.holds := by sorry`
+    placeholder; the `ctx.holds : Prop` field carries the residual claim,
+    awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/models-of-qous/heisenberg-commutator-prop.ts
 theorem heisenberg_commutator [ctx : HeisenbergCommutatorContext] : ctx.holds := by
   -- Manuscript proof referenced above; concretisation requires

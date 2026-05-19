@@ -13,15 +13,33 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.ParticleInteractions
 
 
-/-- Abstract context for the `transfer_matrix_identities` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
-    claim of the lemma. -/
+/-- Abstract context for the `transfer_matrix_identities` claim — manuscript-themed
+    typed fields below; `holds` carries the residual `Prop` claim. -/
 class TransferMatrixIdentitiesContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `transfer_matrix_identities` below for the manuscript statement). -/
+  /-- LP shadow-price / dual variable. -/
+  shadow_price : ℝ
+  /-- Fluid-dynamics velocity / vorticity field. -/
+  VelocityField : Type
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
-/-- Placeholder for `transfer_matrix_identities` (no manuscript-statement docstring found). -/
+/-- **Manuscript statement** (full body):
+
+The three typed transfer matrices satisfy two exact
+identities in $\mathrm{M}_2(\mathbb{Z}[q^{\pm 1}])$.
+
+## Statement
+
+**Proposition.**
+
+**(i)** $T_{pp} \cdot T_{nn} = T_{nn} \cdot T_{pp} = I$.
+
+**(ii)** $T_{pn}^2 = \dfrac{[2]_q^2}{4} \cdot I$, where
+$[2]_q = q + q^{-1}$.
+
+    The Lean encoding below is a `theorem foo [ctx] : ctx.holds := by sorry`
+    placeholder; the `ctx.holds : Prop` field carries the residual claim,
+    awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/transfer-matrix-identities.ts
 theorem transfer_matrix_identities [ctx : TransferMatrixIdentitiesContext] : ctx.holds := by
   -- Manuscript proof referenced above; concretisation requires

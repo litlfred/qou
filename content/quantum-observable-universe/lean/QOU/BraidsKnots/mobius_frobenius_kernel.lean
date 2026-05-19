@@ -13,15 +13,42 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.BraidsKnots
 
 
-/-- Abstract context for the `mobius_frobenius_kernel` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
-    claim of the lemma. -/
+/-- Abstract context for the `mobius_frobenius_kernel` claim — manuscript-themed
+    typed fields below; `holds` carries the residual `Prop` claim. -/
 class MobiusFrobeniusKernelContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `mobius_frobenius_kernel` below for the manuscript statement). -/
+  /-- Substrate parameter `q : ℝ`. -/
+  q : ℝ
+  /-- Categorical object / monoidal structure. -/
+  CategoricalObj : Type
+  /-- Topological link / knot type. -/
+  Link : Type
+  /-- LP shadow-price / dual variable. -/
+  shadow_price : ℝ
+  /-- Fluid-dynamics velocity / vorticity field. -/
+  VelocityField : Type
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
-/-- Placeholder for `mobius_frobenius_kernel` (no manuscript-statement docstring found). -/
+/-- **Manuscript statement** (full body):
+
+**Lemma.**
+*At $q = 1$ the $q$-Hodge star reduces to the classical Hodge star,
+and the Frobenius pairing
+$\int_A \circ \mu$ on $A \otimes A$ reduces to the standard
+$\mathrm{SU}(2)$ Killing form.  The Frobenius--Hopf kernel collapses
+to the repulsive $1/r^2$:*
+
+$$
+  \mathrm{tr}\bigl(
+    \Delta(\gamma(s)) \otimes \Delta(\gamma(t))
+  \bigr)
+  \xrightarrow{q \to 1}
+  \frac{1}{\lvert \gamma(s) - \gamma(t) \rvert^2}.
+$$
+
+    The Lean encoding below is a `theorem foo [ctx] : ctx.holds := by sorry`
+    placeholder; the `ctx.holds : Prop` field carries the residual claim,
+    awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/mobius-energy-frobenius-kernel.ts
 theorem mobius_frobenius_kernel [ctx : MobiusFrobeniusKernelContext] : ctx.holds := by
   -- Manuscript proof referenced above; concretisation requires

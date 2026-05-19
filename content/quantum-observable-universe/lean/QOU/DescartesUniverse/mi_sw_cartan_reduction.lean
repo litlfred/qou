@@ -13,12 +13,14 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.DescartesUniverse
 
 
-/-- Abstract context for the `mi_sw_cartan_reduction` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
-    claim of the lemma. -/
+/-- Abstract context for the `mi_sw_cartan_reduction` claim — manuscript-themed
+    typed fields below; `holds` carries the residual `Prop` claim. -/
 class MiSwCartanReductionContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `mi_sw_cartan_reduction` below for the manuscript statement). -/
+  /-- Fluid-dynamics velocity / vorticity field. -/
+  VelocityField : Type
+  /-- Gauge connection / curvature. -/
+  Connection : Type
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Lemma statement** (from manuscript):

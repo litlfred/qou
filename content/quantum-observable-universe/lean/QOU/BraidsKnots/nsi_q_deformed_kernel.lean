@@ -13,15 +13,40 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.BraidsKnots
 
 
-/-- Abstract context for the `nsi_q_deformed_kernel` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
-    claim of the lemma. -/
+/-- Abstract context for the `nsi_q_deformed_kernel` claim — manuscript-themed
+    typed fields below; `holds` carries the residual `Prop` claim. -/
 class NsiQDeformedKernelContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `nsi_q_deformed_kernel` below for the manuscript statement). -/
+  /-- Categorical object / monoidal structure. -/
+  CategoricalObj : Type
+  /-- LP shadow-price / dual variable. -/
+  shadow_price : ℝ
+  /-- Categorical mass / binding energy. -/
+  mass : ℝ
+  /-- Fluid-dynamics velocity / vorticity field. -/
+  VelocityField : Type
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
-/-- Placeholder for `nsi_q_deformed_kernel` (no manuscript-statement docstring found). -/
+/-- **Manuscript statement** (full body):
+
+**Lemma.**
+*For $q \neq 1$, the categorical mass of a vortex filament
+$\varrho$ inherits a kernel*
+
+$$
+  \frac{1}{\lvert \varrho(s) - \varrho(t) \rvert^2}
+   \longmapsto 
+  \frac{[2]_q}{\lvert \varrho(s) - \varrho(t) \rvert^2
+  - \hbar_q^{2}},
+$$
+
+*where $[2]_q = q + q^{-1}$, $\hbar_q = 1 - q^{-1}$, and the kernel
+has a hard singularity at
+$\lvert \varrho(s) - \varrho(t) \rvert = \hbar_q$.*
+
+    The Lean encoding below is a `theorem foo [ctx] : ctx.holds := by sorry`
+    placeholder; the `ctx.holds : Prop` field carries the residual claim,
+    awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/nsi-q-deformed-kernel.ts
 theorem nsi_q_deformed_kernel [ctx : NsiQDeformedKernelContext] : ctx.holds := by
   -- Manuscript proof referenced above; concretisation requires

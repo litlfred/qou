@@ -13,12 +13,12 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.QuantumObservableUniverse
 
 
-/-- Abstract context for the `exists_axiom_1_frobenius` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
-    claim of the lemma. -/
+/-- Abstract context for the `exists_axiom_1_frobenius` claim — manuscript-themed
+    typed fields below; `holds` carries the residual `Prop` claim. -/
 class ExistsAxiom1FrobeniusContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `exists_axiom_1_frobenius` below for the manuscript statement). -/
+  /-- Fluid-dynamics velocity / vorticity field. -/
+  VelocityField : Type
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Lemma statement** (from manuscript):

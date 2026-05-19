@@ -13,12 +13,12 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.TopologicalMass
 
 
-/-- Abstract context for the `cat_transient_localises_blowup` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
-    claim of the lemma. -/
+/-- Abstract context for the `cat_transient_localises_blowup` claim — manuscript-themed
+    typed fields below; `holds` carries the residual `Prop` claim. -/
 class CatTransientLocalisesBlowupContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `cat_transient_localises_blowup` below for the manuscript statement). -/
+  /-- Fluid-dynamics velocity / vorticity field. -/
+  VelocityField : Type
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Lemma statement** (from manuscript):

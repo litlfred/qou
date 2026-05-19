@@ -12,15 +12,43 @@ Lake package.
 namespace QOU.BraidKnot
 
 
-/-- Abstract context for the `volume_perturbation` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
-    claim of the lemma. -/
+/-- Abstract context for the `volume_perturbation` claim — manuscript-themed
+    typed fields below; `holds` carries the residual `Prop` claim. -/
 class VolumePerturbationContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `volume_perturbation` below for the manuscript statement). -/
+  /-- Topological link / knot type. -/
+  Link : Type
+  /-- Hyperbolic volume. -/
+  Vol : ℝ
+  /-- LP shadow-price / dual variable. -/
+  shadow_price : ℝ
+  /-- Categorical mass / binding energy. -/
+  mass : ℝ
+  /-- Fluid-dynamics velocity / vorticity field. -/
+  VelocityField : Type
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
-/-- Placeholder for `volume_perturbation` (no manuscript-statement docstring found). -/
+/-- **Manuscript statement** (full body):
+
+**Proposition.**
+*The vertex volume perturbation when going from $H_k$ to $H_{k+1}$
+is:*
+$$\delta\Phi_k = z^2 \cdot \mathrm{Vol}(4_1) \cdot [k{-}3]_q$$
+*where $z = 1/(\sqrt{q}+1/\sqrt{q})$ is the Markov parameter
+and $\mathrm{Vol}(4_1) = 2.030$ is the figure-eight knot volume.*
+
+*Both fundamental hyperbolic volumes appear:*
+- *$\mathrm{Vol}(\mathcal{B}_3) = 8G$ sets the binding scale $\alpha$*
+- *$\mathrm{Vol}(4_1)$ sets the perturbation unit per level*
+
+*Verified for heavy nuclei (Ca, Fe) at $k = 5, 6, 7$:*
+- *$k=5$: predicted $1.02$, observed $1.15$ (13%)*
+- *$k=6$: predicted $1.54$, observed $1.48$ (4%)*
+- *$k=7$: predicted $2.08$, observed $1.90$ (9%)*  $\square$
+
+    The Lean encoding below is a `theorem foo [ctx] : ctx.holds := by sorry`
+    placeholder; the `ctx.holds : Prop` field carries the residual claim,
+    awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/volume-perturbation-formula.ts
 theorem volume_perturbation [ctx : VolumePerturbationContext] : ctx.holds := by
   -- Manuscript proof referenced above; concretisation requires

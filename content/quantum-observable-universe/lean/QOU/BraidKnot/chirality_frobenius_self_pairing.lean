@@ -13,12 +13,12 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.BraidKnot
 
 
-/-- Abstract context for the `chirality_frobenius_self_pairing` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
-    claim of the lemma. -/
+/-- Abstract context for the `chirality_frobenius_self_pairing` claim — manuscript-themed
+    typed fields below; `holds` carries the residual `Prop` claim. -/
 class ChiralityFrobeniusSelfPairingContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `chirality_frobenius_self_pairing` below for the manuscript statement). -/
+  /-- Fluid-dynamics velocity / vorticity field. -/
+  VelocityField : Type
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
 /-- **Proposition statement** (from manuscript):

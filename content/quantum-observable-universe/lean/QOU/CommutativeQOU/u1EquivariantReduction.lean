@@ -12,15 +12,67 @@ Lake package.
 namespace QOU.CommutativeQOU
 
 
-/-- Abstract context for the `u1EquivariantReduction` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
-    claim of the lemma. -/
+/-- Abstract context for the `u1EquivariantReduction` claim — manuscript-themed
+    typed fields below; `holds` carries the residual `Prop` claim. -/
 class U1equivariantreductionContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `u1EquivariantReduction` below for the manuscript statement). -/
+  /-- LP shadow-price / dual variable. -/
+  shadow_price : ℝ
+  /-- The fibre functor `τ`. -/
+  Functor : Type → Type
+  /-- Fluid-dynamics velocity / vorticity field. -/
+  VelocityField : Type
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
-/-- Placeholder for `u1EquivariantReduction` (no manuscript-statement docstring found). -/
+/-- **Manuscript statement** (full body):
+
+**Proposition.**
+Let $(\mathbf{C}, \varTheta, G, \mathcal{S})$ be a commutative-limit QOU
+([def:commutative-qou](#def:commutative-qou)) and let
+$\mathcal{S}_p \cong \mathbb{P}^1(\mathbb{C})$ be the exceptional
+divisor at a brane point $p$
+([def:exceptional-divisor](#def:exceptional-divisor)).  Fix the
+action of the maximal torus $\mathrm{U}(1) \subset \mathrm{SU}(2)$
+by rotation about the polar axis.  The space of
+$\mathrm{U}(1)$-equivariant observables on $\mathcal{S}_p$,
+
+$$
+  \mathrm{Obs}_{\mathrm{U}(1)}(\mathcal{S}_p)
+    = 
+   \bigl(\mathrm{Obs}(\mathcal{S}_p)\bigr)^{\mathrm{U}(1)},
+$$
+
+is supported on the orbit space
+$\mathcal{S}_p / \mathrm{U}(1) \cong [0, \pi]$, and over the interior
+of the interval restricts to a free $\mathrm{U}(1)$-bundle whose
+section space is parametrised by a single phase coordinate
+$\varphi \in S^1$.
+
+*Proof sketch.*
+Using the spherical parametrisation of
+[def:exceptional-divisor](#def:exceptional-divisor), the
+$\mathrm{U}(1)$ action is $\psi \mapsto \psi + \alpha$, leaving $\phi$
+fixed.  Quotienting by $\psi$ identifies orbits with $\phi \in [0,\pi]$;
+the two fixed points $\phi = 0, \pi$ (the poles) collapse the $\psi$
+fibre to a point, while over $\phi \in (0, \pi)$ the fibre is
+isomorphic to $S^1$ with phase coordinate $\psi$.
+$\mathrm{U}(1)$-equivariant observables therefore descend to sections
+of the associated phase-$S^1$ bundle over $(0, \pi)$, which in the
+commutative limit is trivialisable to give a single global phase
+coordinate $\varphi \in S^1$.  $\square$
+
+**Scope of the claim.**  The statement does *not* say the geometric
+fibre $\mathcal{S}_p$ itself collapses --- it remains
+$\mathbb{P}^1(\mathbb{C}) \cong S^2$.  What collapses is the
+$\mathrm{U}(1)$-invariant observable algebra, which reduces to
+functions on $S^1$ modulo the two polar fixed points.  The physical
+interpretation of this $S^1$ as the single $\mathrm{U}(1)$ phase
+tube is recorded in
+[rem:u1-phase-tube](#rem:u1-phase-tube).
+
+    The Lean encoding below is a `theorem foo [ctx] : ctx.holds := by sorry`
+    placeholder; the `ctx.holds : Prop` field carries the residual claim,
+    awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/u1-equivariant-reduction.ts
 theorem u1EquivariantReduction [ctx : U1equivariantreductionContext] : ctx.holds := by
   -- Manuscript proof referenced above; concretisation requires

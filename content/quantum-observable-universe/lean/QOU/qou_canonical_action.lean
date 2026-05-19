@@ -12,15 +12,93 @@ Lake package.
 namespace QOU
 
 
-/-- Abstract context for the `qou_canonical_action` claim — fields encode the
-    manuscript hypotheses; the `holds` field is the substantive
-    claim of the lemma. -/
+/-- Abstract context for the `qou_canonical_action` claim — manuscript-themed
+    typed fields below; `holds` carries the residual `Prop` claim. -/
 class QouCanonicalActionContext where
-  /-- The `Prop`-valued claim of the lemma (see docstring on
-      `qou_canonical_action` below for the manuscript statement). -/
+  /-- Substrate parameter `q : ℝ`. -/
+  q : ℝ
+  /-- Categorical object / monoidal structure. -/
+  CategoricalObj : Type
+  /-- Topological link / knot type. -/
+  Link : Type
+  /-- LP shadow-price / dual variable. -/
+  shadow_price : ℝ
+  /-- Fluid-dynamics velocity / vorticity field. -/
+  VelocityField : Type
+  /-- Gauge connection / curvature. -/
+  Connection : Type
+  /-- The `Prop`-valued claim of the lemma. -/
   holds : Prop
 
-/-- Placeholder for `qou_canonical_action` (no manuscript-statement docstring found). -/
+/-- **Manuscript statement** (full body):
+
+Let $(\mathbf{C}, A, \tau)$ be a
+([quantum observable universe](#def:quantum-observable-universe)) equipped with
+connection $\nabla$ ([categorical connection](#def:categorical-connection)),
+substrate parameter $q$ ([substrate parameter](#def:substrate-parameter)),
+$q$-Hodge star $\star_q$ ([$q$-Hodge star](#def:q-hodge-star)),
+and state $\psi \colon \mathbf{1} \to A$.
+Then $(\mathbf{C}, A, \tau)$ determines a
+([categorical action](#def:categorical-action)), unique up to a scalar
+$\lambda \in R^{\times}$,
+
+$$
+  \mathcal{S}_q
+  = 
+  \mathrm{tr}(\mathcal{L}_q),
+$$
+
+where $\mathcal{L}_q = \mathcal{L}_q(\nabla, \psi)$ is the categorical
+Lagrangian ([categorical Lagrangian](#def:categorical-lagrangian)).
+The physics endomorphism is $\Phi_q = \mathcal{L}_q$.
+
+The square of the Dirac operator
+([categorical Dirac operator](#def:categorical-dirac-operator))
+decomposes via the Frobenius--Hopf structure as
+
+$$
+  \mathcal{D}_\nabla^{2}
+  = 
+  q \cdot R_{\int} +  \mathrm{tr}_A\!\bigl(
+    F_\nabla \wedge_q \star_q F_\nabla
+  \bigr),
+$$
+
+so the categorical action expands to three terms:
+
+```tex
+\begin{equation}\label{eq:canonical-action-decomposition}
+  \mathcal{S}_q[\nabla, \textstyle\int_A, \psi]
+  = 
+  \underbrace{%
+    \mathrm{tr}\bigl(q \cdot R_{\int}\bigr)
+  }_{\text{gravity}}
+  + 
+  \underbrace{%
+    \int_A \!\circ \mathrm{tr}_A\bigl(
+      F_\nabla \wedge_q \star_q F_\nabla
+    \bigr)
+  }_{\text{gauge}}
+  + 
+  \underbrace{%
+    \int_A\!\bigl(\psi^* \cdot \mathcal{D}_\nabla\psi\bigr)
+  }_{\text{matter}},
+\end{equation}
+```
+
+with notation as in [categorical action notation](#sec:categorical-action-notation).
+Here $\mathrm{tr} = \mathrm{ev}_A \circ (\mathrm{id}_{A^\vee} \otimes {-}) \circ \mathrm{coev}_A$ is the categorical trace, which plays the role of
+spacetime integration; $R_{\int}$ is the Frobenius--Ricci endomorphism;
+and $F_\nabla = \nabla^2$ is the curvature.
+
+*Uniqueness up to scalar.*  The evaluation and coevaluation maps are
+determined up to unique isomorphism by 
+
+[…truncated; see manuscript for remainder…]
+
+    The Lean encoding below is a `theorem foo [ctx] : ctx.holds := by sorry`
+    placeholder; the `ctx.holds : Prop` field carries the residual claim,
+    awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/qou-canonical-action.ts
 theorem qou_canonical_action [ctx : QouCanonicalActionContext] : ctx.holds := by
   -- Manuscript proof referenced above; concretisation requires
