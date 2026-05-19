@@ -100,3 +100,27 @@ $$\Delta_\lambda(K) = \mathrm{Vol}_{\mathrm{hyp}}^{(\lambda)}(K) \cdot \tau_q\!\
 This **constrains** PR #781's Kashaev mass-table formula (ρ_F · Vol_hyp) — same-Z isotopes should use the same Vol per my Phase 3 measurement; if PR #781 assigns different Vol to D vs T (same Z=1), that's a discrepancy worth surfacing.
 
 **Status**: Δ_λ thread **paused** at PR #787 pending owner answers on the per-JSJ-piece-quantum-invariant infrastructure (ask #2). If no such infrastructure, the branch lands as a diagnostic package (3 phases of productive negatives + Z-clustering structural finding) and the thread pivots to another closed-form option.
+
+## 2026-05-19 — log-Δ categorical derivation → Δ_I^K interface knot (branch `claude/log-delta-categorical-derivation`, [PR #801](https://github.com/litlfred/qou/pull/801))
+
+| Date | Phase | Status | Cherry-pick |
+|---|---|---|---|
+| 2026-05-19 | Phase 1 — 3 weight forms (y_λ / ~w_λ / identity) | landed `43e3e6fd`; best 4.6× variance (identity weighting) | `log_delta_categorical_derivation.py` |
+| 2026-05-19 | Phase 2 — full-mass-subtract, $B = m_K - Z m_p - N m_n$ | landed `dac29b44`; **3.96× best** (paper weight ~w_λ) but T/³He **WRONG SIGN** | `log_delta_full_mass_subtract.py` |
+| 2026-05-19 | Phase 3 — per-depth-stratified subtraction | landed `433de5c1`; identical 3.96× (constituents max depth 2 in $H_3$) | `log_delta_per_depth_binding.py` |
+
+**Hard structural finding (re-reading the paper after user pushback):**
+Tensor-product baseline $Z \cdot \mathfrak{m}(\beta_p) + N \cdot \mathfrak{m}(\beta_n)$
+**in independent $H_3$ algebras** is structurally wrong. The categorically-correct composite is
+$$\beta_K = \underbrace{\beta_p^{(1)} \cdots \beta_n^{(N)}}_{T_{\text{constit}}^K \text{ on disjoint strand blocks}} \cdot \Delta_I^K \;\in\; H_{3(Z+N)}(q)$$
+per [`def:ew-interface-knot`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/ew-interface-knot.md)
+and [`prop:atomic-mass-gb-nf`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/atomic-mass-gb-nf.md).
+Deuteron has $\Delta_I^D = \sigma_3$ (the `+1` in $u_{\text{shift}} = 18Z + 21N + 1$). T, ³He, ⁴He each have their own $\Delta_I^K$ characterising "what is involved in binding at that confinement level".
+
+**Resolution path (in flight):** Recompute $B(K) = \mathfrak{m}(\beta_K) - \mathfrak{m}(T_{\text{constit}}^K)$ with both braids in the **same** Hecke algebra. Mass-endomorphism conditions (Markov-invariance term-by-term, $|S| \le 2$ R-side bound, symmetric $\mathrm{Li}_2^q$ form, spectral-sequence collapse, $B(p) = B(n) = 0$) satisfied by construction.
+
+**Coordination posts:**
+- [PR #800 comment](https://github.com/litlfred/qou/pull/800#issuecomment-4484723377) — informational, no overlap with I13 sweep
+- [PR #761 comment](https://github.com/litlfred/qou/pull/761#issuecomment-4484724112) — ask about GP MPFR engine accepting arbitrary braid-word input for $T_{\text{constit}}^K$ chi computation
+
+**Alignment note:** Will add `canonical_status` taxonomy field per branch `claude/canonical-discipline-l1-l3-l4-2026-05-19` (commit `98ed2add`) to all new witnesses. Categorical-substrate path; not L3 heuristic.
