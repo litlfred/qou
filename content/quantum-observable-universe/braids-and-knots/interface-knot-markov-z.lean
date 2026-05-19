@@ -122,21 +122,61 @@ theorem interface_knot_markov_z
     inst.tau_M (alpha * sigma) = inst.z * inst.tau_M alpha :=
   inst.markov_axiom alpha sigma h_interface h_below
 
-/-! ## §3. Iterated form (specialised to the per-Z step) -/
+/-! ## §3. Negative-interface variant via Hecke skein -/
+
+/-- **Markov-Hecke-skein algebra**: an extension of `MarkovTraceAlgebra`
+    that also carries the Hecke skein parameter `h` and the skein
+    relation `σ⁻¹ = σ - h·1` on interface generators.  This lets us
+    compute the Markov trace of `α · σ⁻¹` from the Markov axiom on
+    `α · σ`.
+
+    In the concrete Hecke setting H_n(q), `h = q - q⁻¹` and the
+    skein relation is the canonical defining identity of the
+    Iwahori-Hecke algebra (per CLAUDE.md §7a). -/
+class MarkovHeckeSkeinAlgebra (R : Type*) [CommRing R]
+    extends MarkovTraceAlgebra R where
+  /-- The Hecke skein parameter h ∈ R. -/
+  h : R
+  /-- Inverse of an interface generator (in the abstract algebra). -/
+  sigma_inv : R → R
+  /-- Hecke skein relation: σ⁻¹ = σ - h·1 on interface generators. -/
+  hecke_skein :
+    ∀ (sigma : R),
+      isInterface sigma →
+      sigma_inv sigma = sigma - h * 1
+
+/-- **Negative-interface Markov-Hecke identity**: for a negative
+    interface generator σ⁻¹ (corresponding to an n-n boundary in
+    the canonical atomic braid), the Markov trace ratio is
+    `(z - h)`, NOT `z`.
+
+    Proof: by Hecke skein, σ⁻¹ = σ - h·1, so
+      τ_M(α · σ⁻¹) = τ_M(α · σ - α · h · 1)
+                    = τ_M(α · σ) - h · τ_M(α)
+                    = z · τ_M(α) - h · τ_M(α)
+                    = (z - h) · τ_M(α). -/
+-- Ref: [jones1987] Hecke algebra representations of braid groups
+-- Ref: [manuscript] prop:interface-knot-markov-z §"Negative interface variant"
+theorem interface_knot_markov_z_negative
+    {R : Type*} [CommRing R] [inst : MarkovHeckeSkeinAlgebra R]
+    (alpha sigma : R)
+    (h_interface : inst.isInterface sigma)
+    (h_below : inst.isBelow alpha sigma)
+    (h_tau_linear :
+      inst.tau_M (alpha * (sigma - inst.h * 1))
+        = inst.tau_M (alpha * sigma) - inst.h * inst.tau_M alpha) :
+    inst.tau_M (alpha * inst.sigma_inv sigma)
+      = (inst.z - inst.h) * inst.tau_M alpha := by
+  rw [inst.hecke_skein sigma h_interface]
+  rw [h_tau_linear]
+  rw [inst.markov_axiom alpha sigma h_interface h_below]
+  ring
+
+/-! ## §4. Per-step factorisation (positive + negative) -/
 
 /-- **Per-Z step factorisation**: for the per-Z-step transition
-    (Z, N) → (Z+1, N), exactly one interface generator is added at
-    the new strand-block boundary, so the Markov trace ratio is
-    exactly z.
-
-    Concretely: if β_{K_2} = β_{K_1} · σ_{interface} where σ is the
-    new interface generator and β_{K_1} is the previous canonical
-    atomic braid, then
-
-      τ_M(β_{K_2}) = z · τ_M(β_{K_1}).
-
-    This is the version directly tested in Phase 5c.1 (PR #819) and
-    verified to 4 decimal places across both N values. -/
+    (Z, N) → (Z+1, N), the new interface is a *positive* generator
+    (p-p or p-n boundary), contributing a factor of `z`. -/
 -- Ref: [manuscript] prop:interface-knot-markov-z §"Per-Z step"
 theorem interface_knot_markov_z_per_Z_step
     {R : Type*} [CommRing R] [inst : MarkovTraceAlgebra R]

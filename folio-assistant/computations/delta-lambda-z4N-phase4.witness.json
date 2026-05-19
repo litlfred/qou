@@ -1,9 +1,18 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T16:29:22.890672+00:00",
-  "commitSha": "dd19766963b80bf83170f248cd36367e7e0fa193",
+  "computedAt": "2026-05-19T20:33:29.800821+00:00",
+  "commitSha": "0e4de705a7e49e2e93a7b19e673e4be49bf16388",
   "assertions": [
+    {
+      "name": "alpha_cosh_h_z_step_correction_rel_err",
+      "computed": 0.00022293942012139494,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.001,
+      "unit": "rel_err",
+      "source": "Phase 5b refinement: α ≈ [3]_q² · cosh(h) at q_0. Empirical α = 9.469447; [3]_q² · cosh(h) = 9.467336; rel.err = 0.0223% (conj:alpha-cosh-h-z-step-correction)."
+    },
     {
       "name": "per_N_factor_matches_inv_z_to_4",
       "computed": 0.01685175450552392,
@@ -33,11 +42,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 258,
   "computation": "delta-lambda-z4N-phase4",
   "scriptFile": "delta_lambda_z4N_phase4.py",
-  "scriptHash": "b367fbfe9f83",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "070fb9ff1242",
+  "scriptCommitSha": "831ca36f58b0a833c997881abef6596fdeac19b3",
   "description": "Phase 4 of the closed-forms-first-principles workplan: tests V(K) = Vol_hyp(K) · α^(Z-1) · (q^{1/2}+q^{-1/2})^(4N) as the Δ_λ closure factor. Identifies the per-N step factor as (q^{1/2}+q^{-1/2})^4 = z^(-4) — the 4th power of the quantum dim of spin-½. Empirical T/D = 15.955, ⁴He/³He = 16.358 vs predicted 16.087 (≤ 2% rel. err.). The per-Z step factor α remains empirical-fit at this phase.",
   "parameters": {
     "q0": "1.1099785955541805",
@@ -169,6 +178,13 @@
         "4He": 0.025056863084588318
       },
       "max_rel_err": 0.025056863084588318
+    },
+    "alpha_cosh_h_refinement": {
+      "alpha_empirical": 9.469447049459621,
+      "qint_3_sq": 9.264147542895085,
+      "cosh_h": 1.0219328182258607,
+      "alpha_qint3sq_cosh_h": 9.467336406970958,
+      "rel_err": 0.00022293942012139494
     }
   }
 }

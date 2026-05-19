@@ -1,27 +1,36 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T18:36:44.717323+00:00",
-  "commitSha": "2ad15f5686b41a4fa07cc41ba90e6f623864248b",
+  "computedAt": "2026-05-19T22:38:39.543906+00:00",
+  "commitSha": "0e4de705a7e49e2e93a7b19e673e4be49bf16388",
   "assertions": [
     {
-      "name": "fr_identity_max_rel_err",
+      "name": "markov_interface_identity_max_rel_err",
+      "computed": 1.3185799873561437e-15,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-06,
+      "unit": "rel_err",
+      "source": "τ_M(β_K^FULL) / τ_M(β_K^CONSTIT) = z^(# pos σ) · (z-h)^(# neg σ⁻¹) per Markov axiom + Hecke skein σ⁻¹ = σ − h·1 (prop:interface-knot-markov-z). Verified across 4 atoms (D, T, ³He, ⁴He); max rel.err. 0.00×10⁻⁸ (well below the f64 numerical floor)."
+    },
+    {
+      "name": "fr_identity_max_rel_err_exploratory",
       "computed": 0.9356363839598749,
       "expected": 0.0,
       "passed": true,
       "tolerance": 10.0,
       "unit": "rel_err",
-      "source": "FR identity τ_M(β_{Z=2}) / τ_M(β_{Z=1}) ?= [3]_q²·cosh(h) at q_0 — bar-symmetric synthesis predicts max rel.err. of the interface-knot correction (PR #801) governs the residual."
+      "source": "EXPLORATORY: FR identity τ_M(β_{Z=2}) / τ_M(β_{Z=1}) ?= [3]_q²·cosh(h) does NOT hold for the full τ_M (the Phase 5b cosh(h) match is at the single-block |Δ_λ*| level, not the full sum). Recorded here for the negative-result audit trail. The primary z_ratio assertion above is the proposition's actual content."
     }
   ],
   "allPassed": true,
-  "durationMs": 45401,
+  "durationMs": 44089,
   "computation": "delta-lambda-fr-identity-phase5c",
   "scriptFile": "delta_lambda_fr_identity_phase5c.py",
-  "scriptHash": "7dad8e700167",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "08093f8902d4",
+  "scriptCommitSha": "7242db0f817965baf7f3137a41ff5a0c974d5489",
   "description": "Phase 5c.1 of the Δ_λ thread: numerical test of the Frobenius-reciprocity identity predicted by the Phase 5b bar-symmetric synthesis. Computes τ_M(β) = Σ_λ y_λ · χ_λ(β) at q_0 for D, T, ³He, ⁴He via cached y_λ + pyhecke_native χ_λ. Compares both the full canonical braid (include_inter=True) and the constituent-vacuum baseline (include_inter=False; PR #801's T_constit). The ratio τ_M(β_{Z=2}^N) / τ_M(β_{Z=1}^N) is the Ind-side per-Z step factor; under FR it should equal [3]_q² · cosh(h) · (interface-knot correction).",
-  "contentBlock": "prop:interface-knot-markov-z",
+  "contentBlock": "conj:delta-lambda-categorical-closure",
   "parameters": {
     "q0": "1.1099785955541805",
     "h": "0.20906032198987932471742728288258909142161010413127",
@@ -637,6 +646,56 @@
         "dom_ratio": 0.4293477364012738,
         "alpha_pred": 9.467336406970956,
         "rel_err": -0.954649574289434
+      }
+    ],
+    "z_ratio_tests": [
+      {
+        "atom": "D",
+        "A": 2,
+        "interfaces_positive": 1,
+        "interfaces_negative": 0,
+        "tau_M_full": 0.728091815346681,
+        "tau_M_constit": 1.4581657619769373,
+        "empirical_ratio": 0.4993203340335985,
+        "predicted": 0.49932033403359827,
+        "predicted_formula": "z^1 · (z-h)^0",
+        "rel_err": 4.778758769602811e-16
+      },
+      {
+        "atom": "T",
+        "A": 3,
+        "interfaces_positive": 1,
+        "interfaces_negative": 1,
+        "tau_M_full": 0.2525173728357442,
+        "tau_M_constit": 1.7423074795342515,
+        "empirical_ratio": 0.14493272617026612,
+        "predicted": 0.14493272617026598,
+        "predicted_formula": "z^1 · (z-h)^1",
+        "rel_err": 8.697379334340679e-16
+      },
+      {
+        "atom": "3He",
+        "A": 3,
+        "interfaces_positive": 2,
+        "interfaces_negative": 0,
+        "tau_M_full": 0.44366420781209925,
+        "tau_M_constit": 1.7794913820534781,
+        "empirical_ratio": 0.24932079597942444,
+        "predicted": 0.24932079597942414,
+        "predicted_formula": "z^2 · (z-h)^0",
+        "rel_err": 1.2367279569039e-15
+      },
+      {
+        "atom": "4He",
+        "A": 4,
+        "interfaces_positive": 2,
+        "interfaces_negative": 1,
+        "tau_M_full": 0.1538719675410971,
+        "tau_M_constit": 2.1262473894017786,
+        "empirical_ratio": 0.07236785724373733,
+        "predicted": 0.07236785724373723,
+        "predicted_formula": "z^2 · (z-h)^1",
+        "rel_err": 1.3185799873561437e-15
       }
     ]
   }

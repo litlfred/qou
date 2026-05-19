@@ -93,14 +93,16 @@ def reduced_burau_generator(i: int, n: int, t):
     else:
         # i with 1 < i < n-1 (i is 1-indexed braid generator)
         # 0-indexed rows: row i-1 is the "centre"
+        # Per Birman §3.3 (matching the comment at lines 78-80):
+        #   [[1,  t,  0],
+        #    [0, -t,  1],
+        #    [0,  1,  0]]
         r = i - 1
         M[r - 1, r] = t
-        M[r, r - 1] = 1
         M[r, r] = -t
+        M[r, r + 1] = 1
         M[r + 1, r] = 1
-        M[r + 1, r + 1] = 1
-        # Reset row r-1 diagonal and row r+1 diagonal to 0/1 carefully:
-        M[r - 1, r - 1] = 1
+        M[r + 1, r + 1] = 0
     return M
 
 
@@ -131,7 +133,9 @@ def alexander_from_braid(word: list[int], n: int, t):
     det = sp.det(sp.eye(n - 1) - B)
     # Multiply by (1 - t^n) / (1 - t) = 1 + t + t^2 + ... + t^{n-1}
     geom = sum(t**k for k in range(n))
-    alex = sp.simplify(det * geom)
+    # Use sp.cancel for rational expressions — significantly faster
+    # than sp.simplify and sufficient for the simplification we need.
+    alex = sp.cancel(det * geom)
     return alex
 
 

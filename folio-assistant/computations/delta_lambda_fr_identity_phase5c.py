@@ -266,20 +266,103 @@ def main() -> int:
               f"rel.err: {float((ratio - alpha_pred)/alpha_pred)*100:+.2f}%")
     builder.add_data("dominant_block_tests", dominant_tests)
 
-    # Assertion: FR identity holds at the |τ_M| level within tolerance
+    # ── Primary assertion: z-identity (the proposition's actual claim) ──
+    # τ_M(β_K^FULL) / τ_M(β_K^CONSTIT) should equal z exactly per the
+    # Markov axiom (prop:interface-knot-markov-z). This is the
+    # categorical content of the Phase 5c.1 finding.
+    z_markov = 1 / (mp.sqrt(Q0) + 1 / mp.sqrt(Q0))
+    h_hecke = Q0 - 1 / Q0
+    z_minus_h = z_markov - h_hecke
+    # Per Markov axiom + Hecke skein σ⁻¹ = σ - h·1:
+    #   tr_M(α · σ)  = z · tr_M(α)        (positive interface)
+    #   tr_M(α · σ⁻¹) = (z - h) · tr_M(α) (negative interface)
+    # Canonical atomic-braid interface census (per atom_braid_word_3A):
+    #   D    = p · σ_3       · n           → 1 pos
+    #   T    = p · σ_3       · n · σ_6⁻¹ · n → 1 pos + 1 neg
+    #   ³He  = p · σ_3       · p · σ_6     · n → 2 pos
+    #   ⁴He  = p · σ_3 · p · σ_6 · n · σ_9⁻¹ · n → 2 pos + 1 neg
+    interface_census = {
+        "D":   {"pos": 1, "neg": 0},
+        "T":   {"pos": 1, "neg": 1},
+        "3He": {"pos": 2, "neg": 0},
+        "4He": {"pos": 2, "neg": 1},
+    }
+    z_ratio_tests = []
+    atom_zn = {name: (Z, N) for name, Z, N in ATOMS}
+    for atom_name in ("D", "T", "3He", "4He"):
+        if atom_name not in results_full or atom_name not in results_constit:
+            continue
+        if "error" in results_full.get(atom_name, {}) or "error" in results_constit.get(atom_name, {}):
+            continue
+        try:
+            tm_full = mp.mpf(str(results_full[atom_name]["total_tr_M"]))
+            tm_constit = mp.mpf(str(results_constit[atom_name]["total_tr_M"]))
+            if tm_constit == 0:
+                continue
+            ratio = tm_full / tm_constit
+            Z_atom, N_atom = atom_zn[atom_name]
+            A = Z_atom + N_atom
+            census = interface_census[atom_name]
+            expected = (z_markov ** census["pos"]) * (z_minus_h ** census["neg"])
+            rel_err = abs(ratio - expected) / expected if expected != 0 else mp.mpf("inf")
+            z_ratio_tests.append({
+                "atom": atom_name, "A": A,
+                "interfaces_positive": census["pos"],
+                "interfaces_negative": census["neg"],
+                "tau_M_full": float(tm_full), "tau_M_constit": float(tm_constit),
+                "empirical_ratio": float(ratio),
+                "predicted": float(expected),
+                "predicted_formula": f"z^{census['pos']} · (z-h)^{census['neg']}",
+                "rel_err": float(rel_err),
+            })
+        except Exception as e:
+            print(f"  z-ratio test {atom_name}: ERR {e}")
+    builder.add_data("z_ratio_tests", z_ratio_tests)
+
+    print("\n=== Markov-axiom interface identity (proposition's content) ===")
+    print(f"  Predicted: τ_M(β_K^FULL) / τ_M(β_K^CONSTIT) = z^(# pos) · (z-h)^(# neg)")
+    print(f"  per Markov axiom + Hecke skein σ⁻¹ = σ - h·1")
+    for t in z_ratio_tests:
+        print(f"    {t['atom']} (A={t['A']}, {t['interfaces_positive']} pos + {t['interfaces_negative']} neg): "
+              f"empirical = {t['empirical_ratio']:.8f}, "
+              f"predicted {t['predicted_formula']} = {t['predicted']:.8f}, "
+              f"rel.err = {t['rel_err']:.2e}")
+
+    if z_ratio_tests:
+        z_max_rel_err = max(t["rel_err"] for t in z_ratio_tests)
+        builder.add_assertion(
+            "markov_interface_identity_max_rel_err",
+            computed=float(z_max_rel_err),
+            expected=0.0,
+            tolerance=1e-6,  # numerical precision floor of pyhecke_native f64
+            unit="rel_err",
+            source=(
+                "τ_M(β_K^FULL) / τ_M(β_K^CONSTIT) = z^(# pos σ) · (z-h)^(# neg σ⁻¹) "
+                "per Markov axiom + Hecke skein σ⁻¹ = σ − h·1 "
+                "(prop:interface-knot-markov-z). Verified across "
+                f"{len(z_ratio_tests)} atoms (D, T, ³He, ⁴He); max rel.err. "
+                f"{float(z_max_rel_err) * 1e8:.2f}×10⁻⁸ (well below the "
+                f"f64 numerical floor)."
+            ),
+        )
+
+    # ── Exploratory assertion: FR identity (kept but separated as exploratory) ──
     if fr_tests:
         max_rel_err_abs = max(abs(t["rel_err_abs"]) for t in fr_tests
                               if t["scope"] == "FULL")
         builder.add_assertion(
-            "fr_identity_max_rel_err",
+            "fr_identity_max_rel_err_exploratory",
             computed=float(max_rel_err_abs),
             expected=0.0,
             tolerance=10.0,  # very loose — this is exploratory
             unit="rel_err",
             source=(
-                "FR identity τ_M(β_{Z=2}) / τ_M(β_{Z=1}) ?= [3]_q²·cosh(h) "
-                "at q_0 — bar-symmetric synthesis predicts max rel.err. "
-                "of the interface-knot correction (PR #801) governs the residual."
+                "EXPLORATORY: FR identity τ_M(β_{Z=2}) / τ_M(β_{Z=1}) "
+                "?= [3]_q²·cosh(h) does NOT hold for the full τ_M (the "
+                "Phase 5b cosh(h) match is at the single-block |Δ_λ*| "
+                "level, not the full sum). Recorded here for the "
+                "negative-result audit trail. The primary z_ratio "
+                "assertion above is the proposition's actual content."
             ),
         )
 

@@ -229,6 +229,37 @@ def main() -> int:
     })
 
     # ── 6. Assertions ──────────────────────────────────────────────
+
+    # Phase 5b refinement: α ≈ [3]_q² · cosh(h) at q_0 (0.022% match).
+    # This is the content of conj:alpha-cosh-h-z-step-correction
+    # ([conj:alpha-cosh-h-z-step-correction.md](#conj:alpha-cosh-h-z-step-correction)).
+    h = q - 1 / q
+    qint_3 = (q ** 3 - q ** -3) / (q - 1 / q)
+    qint_3_sq = qint_3 ** 2
+    alpha_cosh_pred = qint_3_sq * mp.cosh(h)
+    alpha_cosh_rel_err = abs(alpha_emp - alpha_cosh_pred) / alpha_cosh_pred
+    builder.add_data("alpha_cosh_h_refinement", {
+        "alpha_empirical": float(alpha_emp),
+        "qint_3_sq": float(qint_3_sq),
+        "cosh_h": float(mp.cosh(h)),
+        "alpha_qint3sq_cosh_h": float(alpha_cosh_pred),
+        "rel_err": float(alpha_cosh_rel_err),
+    })
+    builder.add_assertion(
+        "alpha_cosh_h_z_step_correction_rel_err",
+        computed=float(alpha_cosh_rel_err),
+        expected=0.0,
+        tolerance=0.001,  # 0.1% — much tighter than Phase 4 zero-parameter form
+        unit="rel_err",
+        source=(
+            f"Phase 5b refinement: α ≈ [3]_q² · cosh(h) at q_0. "
+            f"Empirical α = {float(alpha_emp):.6f}; "
+            f"[3]_q² · cosh(h) = {float(alpha_cosh_pred):.6f}; "
+            f"rel.err = {float(alpha_cosh_rel_err) * 100:.4f}% "
+            f"(conj:alpha-cosh-h-z-step-correction)."
+        ),
+    )
+
     builder.add_assertion(
         "per_N_factor_matches_inv_z_to_4",
         computed=float(max(abs(per_N_emp["T_over_D"]    - per_N_pred) / per_N_pred,

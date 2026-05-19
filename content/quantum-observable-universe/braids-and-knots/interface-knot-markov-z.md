@@ -1,4 +1,4 @@
-**Proposition (Interface-knot contribution to canonical-atom Markov trace = z).**
+**Proposition (Interface-knot contribution to canonical-atom Markov trace).**
 
 *Let $\beta_K \in H_{3A}(q)$ be the canonical atomic braid for atom
 $K = (Z, N)$ with $A = Z + N$, decomposed as*
@@ -9,111 +9,116 @@ $$
 is the disjoint Hecke product on disjoint 3-strand blocks (constituent
 vacuum, [`def:ew-interface-knot`](#def:ew-interface-knot)) and
 $\Delta_I^K$ is the interface knot — a product of single-generator
-crossings $\sigma_g$ at the strand-block boundaries
-$g \in \{3, 6, \ldots, 3(Z+N-1)\}$.*
+crossings at the strand-block boundaries
+$g \in \{3, 6, \ldots, 3(Z+N-1)\}$, each one either $\sigma_g$
+(positive) or $\sigma_g^{-1}$ (negative).*
 
-*Then the Markov trace ratio at any per-Z step satisfies*
+*Then the Markov trace ratio satisfies the **Markov-axiom interface
+identity***
 $$
   \boxed{\;
     \frac{\tau_M(\beta_K)}{\tau_M(\beta_K^{\mathrm{constit}})}
-    \;=\; z(q) \;:=\; \frac{1}{q^{1/2} + q^{-1/2}}
+    \;=\; z(q)^{p_+(K)} \cdot \bigl(z(q) - h(q)\bigr)^{p_-(K)}
   \;}
   \tag{$\star$}
 $$
-*exactly, for each interface generator $\sigma_g$ peeled off via the
-Markov axiom.*
+*exactly, where $z(q) = 1/(q^{1/2}+q^{-1/2})$ is the Markov parameter,
+$h(q) = q - q^{-1}$ is the Hecke skein parameter, and $p_+(K)$ /
+$p_-(K)$ are the counts of positive / negative interface generators
+in $\Delta_I^K$.*
 
-### Proof (Markov axiom on the interface)
+### Proof (Markov axiom + Hecke skein)
 
-Let $\sigma_g$ be the interface generator separating two adjacent
-strand-blocks at strand boundary $g$. Let $\alpha = \beta_K \cdot
-\sigma_g^{-1}$ so that $\beta_K = \alpha \cdot \sigma_g$. By the
-**Markov axiom** ([`thm:jones-markov-trace`](#thm:jones-markov-trace),
-the canonical Markov trace on $H_n(q)$):
+For a positive interface generator $\sigma_g$, the **Markov axiom**
+([`thm:jones-markov-trace`](#thm:jones-markov-trace)) gives
 $$
   \tau_M(\alpha \cdot \sigma_g) \;=\; z \cdot \tau_M(\alpha)
-  \qquad \forall\, \alpha \in H_{n}(q),
+  \qquad \forall\, \alpha \in H_{n}(q).
 $$
-provided $\sigma_g$ is the *last* generator (top of strand $g$) and
-the trace ignores the strand $g+1$ extension. The canonical atomic
-braid construction is precisely a sequence of nucleon-block Hecke
-products separated by such boundary generators, so iterating the
-Markov axiom over each interface gives
+For a negative interface generator $\sigma_g^{-1}$, the **Hecke skein
+relation** $\sigma_g^{-1} = \sigma_g - h \cdot \mathbf{1}$ combined
+with linearity of $\tau_M$ gives
 $$
-  \tau_M(\beta_K)
-   \;=\; z \cdot \tau_M\!\bigl(\beta_K \cdot \sigma_g^{-1}\bigr)
-   \;=\; z \cdot \tau_M\!\bigl(\beta_K^{\mathrm{constit}, g}\bigr)
+  \tau_M(\alpha \cdot \sigma_g^{-1})
+  \;=\; \tau_M(\alpha \cdot \sigma_g) - h \cdot \tau_M(\alpha)
+  \;=\; (z - h) \cdot \tau_M(\alpha).
 $$
-where $\beta_K^{\mathrm{constit}, g}$ is the partial constituent braid
-with one fewer interface. Composing over all interfaces yields
-$$
-  \tau_M(\beta_K) \;=\; z^{(\text{number of interfaces})} \cdot \tau_M(\beta_K^{\mathrm{constit}}).
-$$
-For a canonical atomic braid with $A$ nucleons, the number of
-boundary-interface generators is $A - 1$. Per-Z step (going from
-$(Z, N)$ to $(Z+1, N)$ at fixed $N$), exactly one interface is added,
-contributing a single factor of $z$. This proves ($\star$).
+Iterating over the $p_+(K) + p_-(K)$ interface generators of
+$\Delta_I^K$ — each one is "topmost" relative to the constituent
+sub-braid below it — and applying the appropriate factor per sign
+yields the boxed identity ($\star$).
 
-### Numerical verification
+### Empirical verification (4 atoms, 50-dps Rust kernel)
 
 Computed via [`delta_lambda_fr_identity_phase5c.py`](../../../folio-assistant/computations/delta_lambda_fr_identity_phase5c.py)
-using `pyhecke_native` Rust kernel for full $\tau_M$ at $H_n$, $n \in \{6, 9, 12\}$:
+using `pyhecke_native` for full $\tau_M$ at $H_n$ for $n \in \{6, 9, 12\}$:
 
-| Transition | $\tau_M(\beta_K^{\mathrm{FULL}})$ | $\tau_M(\beta_K^{\mathrm{CONSTIT}})$ | ratio | $z(q_0)$ |
-|---|---:|---:|---:|---:|
-| D → ³He (Z=1→2, N=1) | 0.443664 | 1.779491 | 0.249320 | 0.249320 |
-| T → ⁴He (Z=1→2, N=2) | 0.153872 | 2.126247 | 0.072366 | — |
+| atom | $A$ | $p_+$ | $p_-$ | $\tau_M^{\mathrm{FULL}}/\tau_M^{\mathrm{CONSTIT}}$ | predicted $z^{p_+}(z-h)^{p_-}$ | rel. err. |
+|---|:-:|:-:|:-:|---:|---:|---:|
+| D    | 2 | 1 | 0 | 0.49932033 | 0.49932033 | $5\times10^{-16}$ |
+| T    | 3 | 1 | 1 | 0.14493273 | 0.14493273 | $9\times10^{-16}$ |
+| ³He  | 3 | 2 | 0 | 0.24932080 | 0.24932080 | $1\times10^{-15}$ |
+| ⁴He  | 4 | 2 | 1 | 0.07236786 | 0.07236786 | $1\times10^{-15}$ |
 
-Single-Z-step ratio: 0.609346 across both N values (N-independent),
-matching $z(q_0) \cdot (\text{constit factor}) = 0.499320 \cdot 1.220358 = 0.609346$.
+Max rel. err. across all 4 atoms: $\sim 10^{-15}$ — exact at f64 precision.
 
-**Rel. err.**: $|0.499320 - z(q_0)| / z(q_0) < 10^{-4}$ at the
-50-dps precision of `pyhecke_native`. The structural identity is
-exact; numerical error is precision-floor only.
+Per-atom interface census (from `atom_braid_word_3A`):
+
+- **D**: $p \cdot \sigma_3 \cdot n$ — 1 positive (p-n).
+- **T**: $p \cdot \sigma_3 \cdot n \cdot \sigma_6^{-1} \cdot n$ — 1 positive (p-n) + 1 negative (n-n).
+- **³He**: $p \cdot \sigma_3 \cdot p \cdot \sigma_6 \cdot n$ — 2 positive (p-p, p-n).
+- **⁴He**: $p \cdot \sigma_3 \cdot p \cdot \sigma_6 \cdot n \cdot \sigma_9^{-1} \cdot n$ — 2 positive (p-p, p-n) + 1 negative (n-n).
 
 ### Structural reading
 
 The interface knot $\Delta_I^K$ is **categorically the Markov-axiom
-boundary contribution** to the canonical atomic braid. It is not a
-phenomenological factor or fit parameter — it is a direct consequence
-of the canonical Markov trace's defining property on $H_n(q)$.
+boundary contribution** to the canonical atomic braid:
 
-This locks one of PR #801's central ingredients (the interface-knot
-factorisation $\beta_K = \beta_K^{\mathrm{constit}} \cdot \Delta_I^K$)
-as derivation-grade. The downstream binding-energy formula's
-interface contribution is then **substrate-derived**: each interface
-generator contributes a factor of $z = 1/(q^{1/2}+q^{-1/2})$ to the
-Markov trace, hence to the binding-energy product structure.
+- **Positive interface** $\sigma_g$ (p-p or p-n boundary) → factor $z$ exactly
+  (single application of the Markov axiom).
+- **Negative interface** $\sigma_g^{-1}$ (n-n boundary, antisymmetric quark
+  pair) → factor $z - h$ exactly (Markov axiom + Hecke skein $\sigma^{-1} =
+  \sigma - h \cdot \mathbf{1}$).
+
+The crossing-sign / nucleon-flavor pairing is encoded in
+$\Delta_I^K$ via $p_+(K)$ and $p_-(K)$ counts — these are determined
+structurally by the canonical-braid construction, not phenomenologically
+fit.
+
+This locks PR #801's interface-knot factorisation as
+*derivation-grade*: each interface in the canonical atomic braid
+contributes a Markov-trace factor that is either $z$ or $z - h$,
+determined by the crossing sign. No empirical-fit parameter remains
+at the $\tau_M$ level.
 
 ### Consequences
 
-1. **Atom-braid trace factorisation**: For an atomic braid with $A$
-   nucleons,
+1. **Atom-braid trace factorisation.** For any canonical atomic braid:
    $$
-     \tau_M(\beta_K) \;=\; z^{A-1} \cdot \tau_M(\beta_K^{\mathrm{constit}}).
+     \tau_M(\beta_K) \;=\; z^{p_+(K)} \cdot (z-h)^{p_-(K)} \cdot \tau_M(\beta_K^{\mathrm{constit}}).
    $$
 
-2. **Per-Z step**: each added proton contributes one $z$ factor to the
-   total Markov trace via the new interface.
+2. **Per-Z step.** Adding a proton (Z+1) inserts one positive interface
+   (p-* boundary): $\tau_M$ multiplies by $z$.
 
-3. **Block-multiplicativity refinement**: the conjecture
-   [`conj:block-multiplicativity-v-free`](#conj:block-multiplicativity-v-free)
-   on $\hat V^{\mathrm{free}}$ has a Markov-trace counterpart at the
-   raw $\tau_M$ level: $\tau_M(\beta_K^{\mathrm{constit}}) = $ product
-   of per-nucleon traces with a strand-count-dependent Markov-trace
-   correction (not addressed here).
+3. **Per-N step within a pair.** Adding a neutron after an existing
+   neutron (n-n boundary) inserts one negative interface: $\tau_M$
+   multiplies by $z - h$ (not by $z$).
 
-4. **Phase 5b $\cosh(h)$ correction lives ELSEWHERE**: the per-Z step
+4. **Per-N step crossing pair-flavor.** Adding a neutron after a proton
+   (p-n boundary) inserts one positive interface: factor $z$.
+
+5. **Phase 5b $\cosh(h)$ correction lives ELSEWHERE.** The per-Z step
    factor $\alpha \approx [3]_q^2 \cdot \cosh(h)$ identified in
-   PR #819 Phase 5b is at the single-block $|\Delta_\lambda^*|$
-   extraction level, not the full $\tau_M$ ratio. The $z$-exactness
-   at the full $\tau_M$ level (this proposition) and the cosh(h)
-   correction at the best-block level are **complementary structural
-   facts**, not contradictions.
+   [`conj:alpha-cosh-h-z-step-correction`](#conj:alpha-cosh-h-z-step-correction)
+   is at the **single-block $|\Delta_\lambda^*|$ extraction level**,
+   not the full $\tau_M$ ratio. The $\tau_M$-level identity is
+   *exact* ($\star$); the single-block-level correction is *empirical*
+   and structurally distinct.
 
 ### Implementation reference
 
 - Script: [`folio-assistant/computations/delta_lambda_fr_identity_phase5c.py`](../../../folio-assistant/computations/delta_lambda_fr_identity_phase5c.py)
-- Witness: `folio-assistant/computations/delta-lambda-fr-identity-phase5c.witness.json`
+- Witness: `folio-assistant/computations/delta-lambda-fr-identity-phase5c.witness.json` (2 assertions; **Markov-axiom interface identity passes to $10^{-15}$ rel. err.**)
 - Cross-reference (PR #801): [`def:ew-interface-knot`](#def:ew-interface-knot) (the canonical interface-knot definition).
-- Cross-reference (PR #819): Phase 5c.1 audit doc covers the empirical extraction across all 4 atoms.
+- Cross-reference (PR #819): Phase 5c.1 audit doc covers the empirical extraction; this proposition is the categorical resolution.

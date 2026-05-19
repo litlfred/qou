@@ -97,14 +97,34 @@ def depth_k(p: tuple) -> int:
     return len(p) - 1
 
 
+# Module-level cache for χ^λ(K) lookups: (K_word_key, lam) → chi.
+# The K_k* variance scan repeatedly evaluates the same (K, λ) pairs
+# across the (atom, k, K_1*, K_2*) loop; memoising at the module
+# level avoids the redundant ~5× recomputation per scan entry.
+_CHI_K_CACHE: dict[tuple, float] = {}
+
+
 def chi_K_at_lambda(K_word: list, lam: tuple) -> float:
+    """Cached evaluation of χ^λ(e_K) at q_0.
+
+    Uses a module-level dict keyed by (tuple(K_word), lam) — both
+    arguments are hashable, and `K_word` is short and reused
+    across the variance scan.
+    """
+    cache_key = (tuple(K_word), lam)
+    cached = _CHI_K_CACHE.get(cache_key)
+    if cached is not None:
+        return cached
     if not K_word:
-        return float(dim_q(lam))
-    word_m = [(1 if s > 0 else -1, abs(s)) for s in K_word]
-    try:
-        return float(chi_lambda_braid(lam, word_m, q_value=Q0_FLOAT))
-    except Exception:
-        return 0.0
+        value = float(dim_q(lam))
+    else:
+        word_m = [(1 if s > 0 else -1, abs(s)) for s in K_word]
+        try:
+            value = float(chi_lambda_braid(lam, word_m, q_value=Q0_FLOAT))
+        except Exception:
+            value = 0.0
+    _CHI_K_CACHE[cache_key] = value
+    return value
 
 
 def phi_k_with_K(by_partition: list, n_strands: int, k: int,
