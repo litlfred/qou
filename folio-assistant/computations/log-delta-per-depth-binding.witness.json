@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T05:36:23.564659+00:00",
-  "commitSha": "b4348f37ab92b5325135d94ea9d0e42b53908c04",
+  "computedAt": "2026-05-19T06:18:52.671765+00:00",
+  "commitSha": "2a099a3af3ebf98ff76de54df30e7e157adbfb58",
   "assertions": [
     {
       "name": "data_loaded",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 18,
+  "durationMs": 17,
   "computation": "log-delta-per-depth-binding",
   "scriptFile": "log_delta_per_depth_binding.py",
-  "scriptHash": "f2aa500e56ca",
-  "scriptCommitSha": "433de5c14015053dc3b3e9fe9315526297b05bb8",
+  "scriptHash": "3f86c4f81581",
+  "scriptCommitSha": "2a099a3af3ebf98ff76de54df30e7e157adbfb58",
   "description": "Option (a) test: per-depth-stratified binding subtraction in prop:unified-curvature-rank-mass-formula. B(K) = Σ_k α_k · [m^(k)_K - Z·m^(k)_p - N·m^(k)_n] with paper-prescribed ~w_λ.",
   "data": {
     "phi_k_per_species": {
@@ -444,6 +444,7 @@
         ]
       }
     },
+    "canonical_status": "canonical-with-empirical-assignment",
     "max_over_min": 3.9610512143104657,
     "verdict": "NO IMPROVEMENT — max/min = 3.961 (≥ 3.96×)",
     "all_signs_correct": false

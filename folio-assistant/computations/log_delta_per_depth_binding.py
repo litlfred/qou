@@ -179,6 +179,7 @@ def main() -> int:
         print(f"  {atom:<6} {n_atom:>3} {float(B_pred):>16.6f} {float(B_emp):>10.4f} {float(ratio):>16.6f}")
 
     builder.add_data("per_depth_binding_results", results)
+    builder.add_data("canonical_status", "canonical-with-empirical-assignment")
 
     # Variance
     abs_ratios = [r["abs_ratio"] for r in results.values()]

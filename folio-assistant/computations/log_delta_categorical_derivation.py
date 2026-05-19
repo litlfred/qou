@@ -189,6 +189,7 @@ def main() -> int:
                 "mean_log_abs_ratio": float(mean_log),
             }
     builder.add_data("unified_formula_per_weight_form", results)
+    builder.add_data("canonical_status", "canonical-with-empirical-assignment")
 
     print(f"\n{'weight form':<14} {'max/min ratio':>14} {'mean log|m/B|':>14}")
     for wf in ("y_lambda", "w_lambda", "identity"):

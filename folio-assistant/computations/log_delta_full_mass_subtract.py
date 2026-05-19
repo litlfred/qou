@@ -182,6 +182,7 @@ def main() -> int:
         print()
 
     builder.add_data("binding_by_difference", results)
+    builder.add_data("canonical_status", "canonical-with-empirical-assignment")
 
     # Cross-atom variance
     print(f"{'w_form':<10} {'min ratio':>12} {'max ratio':>12} {'max/min':>10}")

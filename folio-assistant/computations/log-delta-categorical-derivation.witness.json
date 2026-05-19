@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T05:36:23.334495+00:00",
-  "commitSha": "b4348f37ab92b5325135d94ea9d0e42b53908c04",
+  "computedAt": "2026-05-19T06:18:52.452257+00:00",
+  "commitSha": "2a099a3af3ebf98ff76de54df30e7e157adbfb58",
   "assertions": [
     {
       "name": "data_loaded",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 26,
+  "durationMs": 29,
   "computation": "log-delta-categorical-derivation",
   "scriptFile": "log_delta_categorical_derivation.py",
-  "scriptHash": "8b20e0277af1",
-  "scriptCommitSha": "43e3e6fd20ec2125ec2526cf2c0ebdbb817cab7e",
+  "scriptHash": "d510d3833a7f",
+  "scriptCommitSha": "2a099a3af3ebf98ff76de54df30e7e157adbfb58",
   "description": "Categorical-derivation test for the log-Δ form (PR #787 Phase 2 5.22× residual). Applies prop:unified-curvature-rank-mass-formula with structural α_k and tests three Wedderburn-weighting forms (y_λ, w_λ, identity) on D, T, ³He, ⁴He.",
   "parameters": {
     "q0": "1.1099785955541805",
@@ -120,6 +120,7 @@
         }
       }
     },
+    "canonical_status": "canonical-with-empirical-assignment",
     "best_weight_form": "identity",
     "best_max_over_min": 4.639212227547583,
     "verdict": "IMPROVES — identity gives max/min = 4.64 (better than Phase 2's 5.22×)"
