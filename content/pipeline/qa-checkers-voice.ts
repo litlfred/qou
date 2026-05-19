@@ -314,8 +314,11 @@ const AI_SLOP_DIRECT_RE =
  * Hedging / softener language frequently inserted by LLMs but
  * inappropriate in a precise mathematical paper. Conservative —
  * single-word hits should be a hint, not necessarily a violation.
- * We treat *combinations* (≥ 2 distinct tokens in the same block)
- * as the actual signal.
+ * We treat *combinations* (≥ 3 distinct tokens in the same block)
+ * as the actual signal — the threshold balances catching real
+ * LLM-output concentrations against the false-positive rate on
+ * legitimate technical writing that uses one or two of these words
+ * naturally.
  */
 const AI_SLOP_HEDGE_TOKENS = [
   /\bessentially\b/i,
