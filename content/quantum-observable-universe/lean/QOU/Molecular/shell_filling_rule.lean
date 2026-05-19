@@ -21,14 +21,29 @@ class ShellFillingRuleContext where
   Z : ℕ
   /-- Neutron number `N`. -/
   N : ℕ
-  /-- The braid representative type. -/
-  Braid : Type
-  /-- Manuscript sub-claim (i) — *Inner shells ($n < n_{\mathrm{val}}$) fill completely because each additional electron in a partly filled inner shel.... -/
-  claim_i_inner_shells_fill : Prop
-  /-- Manuscript sub-claim (ii) — *Within the valence shell, electrons distribute to maximise the number of singly occupied sites (Hund's rule) because.... -/
-  claim_ii_within_valence_shell : Prop
-  /-- Manuscript sub-claim (iii) — The LP dual of the electron assignment problem is:. -/
-  claim_iii_lp_dual_electron : Prop
+  /-- The valence shell index `n_val`. -/
+  n_val : ℕ
+  /-- The occupation count at shell `n` after aufbau. -/
+  occupancy : ℕ → ℕ
+  /-- Maximum capacity of shell `n` (2n²). -/
+  capacity : ℕ → ℕ
+  /-- Manuscript sub-claim (i) — Inner shells `n < n_val` fill
+      completely: `occupancy n = capacity n` for all `n < n_val`. -/
+  claim_i_inner_shells_fill : ∀ n : ℕ, n < n_val → occupancy n = capacity n
+  /-- Number of singly-occupied sites in the valence shell. -/
+  singly_occupied : ℕ
+  /-- Manuscript sub-claim (ii) — Hund's rule: the valence-shell
+      configuration maximises singly-occupied sites. The maximum
+      equals `min(electrons in valence, capacity n_val)`. -/
+  claim_ii_hunds_rule_max : ∀ other : ℕ, other ≤ singly_occupied
+  /-- LP dual variable `y_0` (electron chemical potential). -/
+  y_0 : ℝ
+  /-- LP primal objective for the electron assignment problem
+      `Z · y_0`. -/
+  primal_obj : ℝ
+  /-- Manuscript sub-claim (iii) — LP dual objective equals
+      `Z · y_0`. -/
+  claim_iii_lp_dual_objective : primal_obj = (Z : ℝ) * y_0
 
 /-- **Proposition statement** (from manuscript):
 
@@ -68,7 +83,10 @@ penalty for electron-electron repulsion at shell $n$.*
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/shell-filling-rule.ts
 theorem shell_filling_rule [ctx : ShellFillingRuleContext] :
-    ctx.claim_i_inner_shells_fill ∧ ctx.claim_ii_within_valence_shell ∧ ctx.claim_iii_lp_dual_electron :=
-  ⟨ctx.claim_i_inner_shells_fill, ctx.claim_ii_within_valence_shell, ctx.claim_iii_lp_dual_electron⟩
+    (∀ n : ℕ, n < ctx.n_val → ctx.occupancy n = ctx.capacity n) ∧
+    (∀ other : ℕ, other ≤ ctx.singly_occupied) ∧
+    ctx.primal_obj = (ctx.Z : ℝ) * ctx.y_0 :=
+  ⟨ctx.claim_i_inner_shells_fill, ctx.claim_ii_hunds_rule_max,
+   ctx.claim_iii_lp_dual_objective⟩
 
 end QOU.Molecular

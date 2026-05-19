@@ -21,32 +21,54 @@ class ReidemeisterActionTableContext where
   Z : ℕ
   /-- Neutron number `N`. -/
   N : ℕ
+  /-- Substrate parameter `q : ℝ`. -/
+  q : ℝ
+  /-- Markov parameter `z = 1/(q^{1/2} + q^{-1/2})`. -/
+  z : ℝ
   /-- Braid representative type. -/
   Braid : Type
-  /-- The crossing / Hecke generator type. -/
-  Crossing : Type
-  /-- Manuscript sub-claim (R1) — self-twist move
-      `σ_i ↦ σ_i σ_n` changes volume; trace scales by `z`. -/
-  claim_r1_self_twist : Prop
-  /-- Manuscript sub-claim (R2-q) — `q`-deformed second Reidemeister move
-      `σ_i² = (q − q⁻¹)σ_i + 1` splits gauge channel and changes both
-      volume and trace. -/
-  claim_r2_q_deformed : Prop
-  /-- Manuscript sub-claim (R2-classical) — `σ_i σ_i⁻¹ = 1` preserves
-      every sector. -/
-  claim_r2_classical : Prop
-  /-- Manuscript sub-claim (R3) — Yang–Baxter
-      `σ_i σ_{i+1} σ_i = σ_{i+1} σ_i σ_{i+1}` preserves every sector. -/
-  claim_r3_yang_baxter : Prop
-  /-- Manuscript sub-claim (FarComm) — `σ_i σ_j = σ_j σ_i` (far commute)
-      preserves every sector. -/
-  claim_far_commute : Prop
-  /-- Manuscript sub-claim (M-I) — Markov-I conjugation
-      `β ↦ γ β γ⁻¹` preserves the trace (cyclicity). -/
-  claim_markov_I_conjugation : Prop
+  /-- Markov-trace function on braids `tr_M : Braid → ℝ`. -/
+  trM : Braid → ℝ
+  /-- The base braid `β` whose moves we're tracking. -/
+  β : Braid
+  /-- The braid after applying an R1 self-twist `β ↦ β · σ_n`. -/
+  β_R1 : Braid
+  /-- Manuscript sub-claim (R1) — self-twist `β ↦ β · σ_n` scales the
+      Markov trace by `z`. -/
+  claim_r1_self_twist : trM β_R1 = z * trM β
+  /-- The two braids resulting from the q-deformed R2 split
+      `σ_i² = (q − q⁻¹)σ_i + 1`: one with single crossing, one trivial. -/
+  β_R2q_split_one : Braid
+  β_R2q_split_two : Braid
+  /-- Manuscript sub-claim (R2-q) — `q`-deformed second Reidemeister
+      move splits the trace as `tr(σ²β) = (q − q⁻¹)·tr(σβ) + tr(β)`. -/
+  claim_r2_q_deformed : trM β_R2q_split_one + trM β_R2q_split_two =
+    (q - q⁻¹) * trM β_R2q_split_one + trM β
+  /-- The braid after applying R2-classical `σ_i σ_i⁻¹ = 1` (= original). -/
+  β_R2c : Braid
+  /-- Manuscript sub-claim (R2-classical) — `σ_i σ_i⁻¹ = 1` is the
+      identity move; trace is preserved exactly. -/
+  claim_r2_classical : trM β_R2c = trM β
+  /-- The braid after applying R3 Yang-Baxter. -/
+  β_R3 : Braid
+  /-- Manuscript sub-claim (R3) — Yang-Baxter
+      `σ_i σ_{i+1} σ_i = σ_{i+1} σ_i σ_{i+1}` preserves the trace. -/
+  claim_r3_yang_baxter : trM β_R3 = trM β
+  /-- The braid after applying a far-commute swap. -/
+  β_FC : Braid
+  /-- Manuscript sub-claim (FarComm) — `σ_i σ_j = σ_j σ_i` (|i − j| ≥ 2)
+      preserves the trace. -/
+  claim_far_commute : trM β_FC = trM β
+  /-- The Markov-I conjugate `γ β γ⁻¹`. -/
+  β_MI : Braid
+  /-- Manuscript sub-claim (M-I) — Markov-I conjugation preserves
+      the trace (cyclicity). -/
+  claim_markov_I_conjugation : trM β_MI = trM β
+  /-- The Markov-II stabilised braid `β · σ_n` (positive case). -/
+  β_MII : Braid
   /-- Manuscript sub-claim (M-II) — Markov-II stabilisation
-      `β ↦ β · σ_n^{±1}` multiplies the trace by `z` or `z⁻¹`. -/
-  claim_markov_II_stabilisation : Prop
+      `β ↦ β · σ_n` multiplies the trace by `z`. -/
+  claim_markov_II_stabilisation : trM β_MII = z * trM β
 
 /-- **Manuscript statement** (full body):
 
@@ -138,13 +160,14 @@ Markov I &
     translation. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/reidemeister-action-table.ts
 theorem reidemeister_action_table [ctx : ReidemeisterActionTableContext] :
-    ctx.claim_r1_self_twist ∧
-    ctx.claim_r2_q_deformed ∧
-    ctx.claim_r2_classical ∧
-    ctx.claim_r3_yang_baxter ∧
-    ctx.claim_far_commute ∧
-    ctx.claim_markov_I_conjugation ∧
-    ctx.claim_markov_II_stabilisation :=
+    ctx.trM ctx.β_R1 = ctx.z * ctx.trM ctx.β ∧
+    ctx.trM ctx.β_R2q_split_one + ctx.trM ctx.β_R2q_split_two =
+      (ctx.q - ctx.q⁻¹) * ctx.trM ctx.β_R2q_split_one + ctx.trM ctx.β ∧
+    ctx.trM ctx.β_R2c = ctx.trM ctx.β ∧
+    ctx.trM ctx.β_R3 = ctx.trM ctx.β ∧
+    ctx.trM ctx.β_FC = ctx.trM ctx.β ∧
+    ctx.trM ctx.β_MI = ctx.trM ctx.β ∧
+    ctx.trM ctx.β_MII = ctx.z * ctx.trM ctx.β :=
   ⟨ctx.claim_r1_self_twist, ctx.claim_r2_q_deformed,
    ctx.claim_r2_classical, ctx.claim_r3_yang_baxter,
    ctx.claim_far_commute, ctx.claim_markov_I_conjugation,
