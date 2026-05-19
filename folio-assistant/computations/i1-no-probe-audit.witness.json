@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T19:58:21.616300+00:00",
-  "commitSha": "a6553642d4005b8193d2a4a1ee74739b462a8ff0",
+  "computedAt": "2026-05-19T19:59:23.465494+00:00",
+  "commitSha": "cbb141fd701f8e6a49214ccf46dbd9f9fcbd768d",
   "assertions": [
     {
       "name": "no_i1_no_probe_blocks",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 10,
+  "durationMs": 9,
   "computation": "i1-no-probe-audit",
   "scriptFile": "i1_no_probe_audit.py",
   "scriptHash": "0e004cc143d0",
@@ -27,8 +27,8 @@
   },
   "data": {
     "by_result": {
-      "i1_no_probe": 505,
-      "wired": 68,
+      "i1_no_probe": 504,
+      "wired": 69,
       "i1_lean_with_sorry": 1,
       "conditional_class": 1
     },
@@ -676,9 +676,11 @@
         "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
-        "probe_witness_count": 0,
-        "probe_witnesses": [],
-        "result": "i1_no_probe"
+        "probe_witness_count": 1,
+        "probe_witnesses": [
+          "cyclotomic-orbit-sum-all-depths-probe.witness.json"
+        ],
+        "result": "wired"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/cyclotomic-trilog-imaginary-closed-form.ts",
