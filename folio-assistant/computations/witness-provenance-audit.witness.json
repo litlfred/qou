@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T03:41:41.556923+00:00",
-  "commitSha": "387b1b7706fba84f5915dec4971f14f26520cbe7",
+  "computedAt": "2026-05-19T05:37:13.281342+00:00",
+  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 115,
+      "computed": 104,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 10,
+  "durationMs": 7,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "77d54f1cc990",
-  "scriptCommitSha": "fe179a807a3198e318421e52778a4e30a8f4897a",
+  "scriptCommitSha": "1032f09b11e2fa0ba02bb7c871966c9dc2c93fb6",
   "description": "I14 audit per repo-owner directive 2026-05-19: every witness JSON must declare engine, scriptFile, commitSha (WitnessBuilder convention) so it can be reproduced and traced. Witnesses ending in -audit/-scan/-compliance are exempt by glob (state-tracking outputs). Files listed under methodology-deprecation's removed_legacy_compute_artifacts.removed_witnesses are skipped (deleted by design).",
   "parameters": {
     "required_fields": [
@@ -35,12 +35,12 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 641,
-      "prov_ok": 496,
+      "total_scanned": 655,
+      "prov_ok": 521,
       "prov_audit_exempt": 30,
-      "prov_missing": 115,
+      "prov_missing": 104,
       "prov_parse_error": 0,
-      "completeness_ratio": 0.8205928237129485
+      "completeness_ratio": 0.8412213740458016
     },
     "by_verdict": {
       "PROV_OK": [
@@ -173,6 +173,10 @@
           "missing_fields": []
         },
         {
+          "witness": "beta-decay-residue-sum-h3-probe.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "beta-ew-delta-I-conjugate-pairing.witness.json",
           "missing_fields": []
         },
@@ -190,6 +194,10 @@
         },
         {
           "witness": "binding-k-solver.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "binding-q-target-sweep.witness.json",
           "missing_fields": []
         },
         {
@@ -230,6 +238,10 @@
         },
         {
           "witness": "c3-taylor-extraction.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "cal-3-q-beta.witness.json",
           "missing_fields": []
         },
         {
@@ -789,6 +801,10 @@
           "missing_fields": []
         },
         {
+          "witness": "codata-2022-validation-masses.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "codata-masses.witness.json",
           "missing_fields": []
         },
@@ -881,6 +897,10 @@
           "missing_fields": []
         },
         {
+          "witness": "delta-lambda-categorical-verification.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "delta-lambda-closure-v2-combined-pole.witness.json",
           "missing_fields": []
         },
@@ -901,11 +921,19 @@
           "missing_fields": []
         },
         {
+          "witness": "delta-lambda-jsj-phase3.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "delta-lambda-q-sweep-2row.witness.json",
           "missing_fields": []
         },
         {
           "witness": "delta-lambda-shift-nf-wenzl-probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "delta-lambda-two-factor-phase2.witness.json",
           "missing_fields": []
         },
         {
@@ -989,6 +1017,10 @@
           "missing_fields": []
         },
         {
+          "witness": "habiro-coefficients-extended.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "habiro-exact-mass-endomorphism.witness.json",
           "missing_fields": []
         },
@@ -998,6 +1030,10 @@
         },
         {
           "witness": "habiro-residue-a1.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "habiro-tail-in-ideal-validation.witness.json",
           "missing_fields": []
         },
         {
@@ -1093,6 +1129,10 @@
           "missing_fields": []
         },
         {
+          "witness": "joint-tower-sdp-rust.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "jonquiere-cyclotomic-general.witness.json",
           "missing_fields": []
         },
@@ -1117,7 +1157,19 @@
           "missing_fields": []
         },
         {
+          "witness": "khovanov-at-q0-probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "khovanov-klr-rank-cohomology-probe.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "kite-tail-reconciliation.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "knot-volumes.witness.json",
           "missing_fields": []
         },
         {
@@ -1414,6 +1466,10 @@
         },
         {
           "witness": "per-nucleon-shift-derivation.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "per-observable-100x-status.witness.json",
           "missing_fields": []
         },
         {
@@ -1801,7 +1857,35 @@
           "missing_fields": []
         },
         {
+          "witness": "qbeta-decay-sdp-full-ck-derivation.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-decay-sdp-knot-operator.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-operator-identification-probe.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-per-block-paper-closed-forms.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-per-block-symbolic-decomposition.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "qbeta-per-block-uniform-rule-verify.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "r5-full-canonical-knot-solver.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "residue-algebraic-verification.witness.json",
           "missing_fields": []
         },
         {
@@ -1817,6 +1901,14 @@
           "missing_fields": []
         },
         {
+          "witness": "rho-k-h3a-crystal.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "rho-k-h3a-demazure.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "rho-k-h3a-frobenius-pairing.witness.json",
           "missing_fields": []
         },
@@ -1829,7 +1921,15 @@
           "missing_fields": []
         },
         {
+          "witness": "rho-k-h3a-refinement.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "rho-k-h3a-wenzl-bridge.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "rho-k-leading-order-verification.witness.json",
           "missing_fields": []
         },
         {
@@ -2119,13 +2219,6 @@
           ]
         },
         {
-          "witness": "beta-decay-residue-sum-h3-probe.witness.json",
-          "missing_fields": [
-            "engine",
-            "commitSha"
-          ]
-        },
-        {
           "witness": "beta-ew-delta-I-321-and-wedderburn.witness.json",
           "missing_fields": [
             "engine",
@@ -2202,12 +2295,6 @@
           "missing_fields": [
             "engine",
             "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "cal-3-q-beta.witness.json",
-          "missing_fields": [
             "commitSha"
           ]
         },
@@ -2312,12 +2399,6 @@
           "missing_fields": [
             "engine",
             "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "codata-2022-validation-masses.witness.json",
-          "missing_fields": [
             "commitSha"
           ]
         },
@@ -2442,13 +2523,6 @@
           ]
         },
         {
-          "witness": "habiro-coefficients-extended.witness.json",
-          "missing_fields": [
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
           "witness": "habiro-coefficients-interpolate.witness.json",
           "missing_fields": [
             "engine",
@@ -2468,13 +2542,6 @@
           "witness": "habiro-motivic-orbit-relations.witness.json",
           "missing_fields": [
             "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "habiro-tail-in-ideal-validation.witness.json",
-          "missing_fields": [
             "scriptFile",
             "commitSha"
           ]
@@ -2512,13 +2579,6 @@
           ]
         },
         {
-          "witness": "joint-tower-sdp-rust.witness.json",
-          "missing_fields": [
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
           "witness": "kashaev-integration-identity.witness.json",
           "missing_fields": [
             "engine",
@@ -2538,13 +2598,6 @@
           "witness": "knot-operator-table.witness.json",
           "missing_fields": [
             "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "knot-volumes.witness.json",
-          "missing_fields": [
             "scriptFile",
             "commitSha"
           ]
@@ -2745,31 +2798,6 @@
           "witness": "rho-f-categorical-probe.witness.json",
           "missing_fields": [
             "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "rho-k-h3a-crystal.witness.json",
-          "missing_fields": [
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "rho-k-h3a-demazure.witness.json",
-          "missing_fields": [
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "rho-k-h3a-refinement.witness.json",
-          "missing_fields": [
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "rho-k-leading-order-verification.witness.json",
-          "missing_fields": [
             "scriptFile",
             "commitSha"
           ]
