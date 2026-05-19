@@ -34,7 +34,9 @@ HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, Q_MP  # noqa: E402
+from probe_staircase_ew_k3_categorical import build_hoefsmit_mpfr  # noqa: E402
+from mpmath import mp  # noqa: E402
 
 
 def main() -> int:
@@ -67,9 +69,6 @@ def main() -> int:
     # The H_6 LR-branching predictions below use this corrected
     # single-component value and match the H_6 Hoefsmit direct
     # trace to ~1e-50 precision.
-    from probe_staircase_ew_k3_categorical import build_hoefsmit_mpfr  # noqa: E402
-    from q_parameter import Q_MP  # noqa: E402
-    from mpmath import mp  # noqa: E402
     mp.dps = 50
 
     chi_3_single = mp.mpf(1)

@@ -196,7 +196,7 @@ def main() -> int:
 
     for r in results:
         builder.add_assertion(
-            name=f"branching_decomposition_lambda_{r['lambda'].replace(' ', '').replace('(', '').replace(')', '').replace(',', '_')}",
+            name=f"branching_decomposition_lambda_{r['lambda'].replace(' ', '').replace('(', '').replace(')', '').replace(',', '_').rstrip('_')}",
             computed=r["residue"],
             expected=0.0,
             tolerance=1e-40,

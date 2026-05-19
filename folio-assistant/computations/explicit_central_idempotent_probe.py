@@ -46,17 +46,6 @@ from q_parameter import Q_MP, Q_50_DIGIT_STR  # noqa: E402
 from hecke_character_symbolic import standard_young_tableaux  # noqa: E402
 
 
-def _content(cell_idx: int, shape: tuple[int, ...]) -> int:
-    """Linear cell-index → (i, j) → content j − i for `shape`."""
-    cnt = 0
-    for i, row_len in enumerate(shape):
-        for j in range(row_len):
-            if cnt == cell_idx:
-                return j - i
-            cnt += 1
-    raise IndexError
-
-
 def _e_lambda_eigenvalue_on_syt(lam, mu, T_prime, q,
                                  union_contents=None):
     """Compute e_λ acting on the Hoefsmit basis vector v_{T'} for
@@ -146,7 +135,7 @@ def main() -> int:
 
     union_contents = _union_contents_for_n(SHAPES, n)
 
-    def _run_pass(union_arg, label):
+    def _run_pass(union_arg):
         per_rows = []
         max_own_block_resid = mp.mpf(0)
         max_off_block_resid = mp.mpf(0)
@@ -187,12 +176,11 @@ def main() -> int:
                 float(max_complete_resid))
 
     # Pass 1 — literal proposition formula (cells of λ only).
-    literal_rows, lit_own, lit_off, lit_complete = _run_pass(
-        None, "literal")
+    literal_rows, lit_own, lit_off, lit_complete = _run_pass(None)
 
     # Pass 2 — corrected formula (cells over union of all μ ⊢ n).
     corrected_rows, cor_own, cor_off, cor_complete = _run_pass(
-        union_contents, "corrected")
+        union_contents)
 
     max_idempotent_value_residue = mp.mpf(cor_own)
     max_off_block_residue = mp.mpf(cor_off)

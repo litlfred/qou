@@ -14,19 +14,21 @@ Frame-Robinson-Thrall)
 
 Three identity checks:
 
-  (1) **Classical limit.**  At q → 1, dim_q(λ) → f_λ := n!/∏ h_x
-      (classical Frame-Robinson-Thrall).  Tested by direct
-      symbolic-limit computation for n = 1…6 across all partitions.
+  (1) **Classical-limit check.**  Evaluate dim_q(λ) at q = 1 + ε
+      (ε = 1e-13) and compare to f_λ := n!/∏ h_x (classical
+      Frame-Robinson-Thrall).  The 0/0 singularity of [k]_q at
+      q = 1 is sidestepped by the perturbed evaluation; residue is
+      bounded by O(ε), well below the assertion tolerance.  Tested
+      for n = 1…6 across all 22 partitions.
 
-  (2) **q=1 collapse to Plancherel.**  At q = 1,
-      w̃_λ = f_λ²/n!  recovers the classical Plancherel weight, so
-      Σ_λ w̃_λ → 1 exactly.
-
-  (3) **q-deformed normalisation drift.**  At q = q_0 ≠ 1,
-      Σ_λ w̃_λ ≠ 1 in general — this is the non-probability-
-      measure property called out in CLAUDE.md's notation register.
-      Probe documents the actual sum at q_0 for n = 3, 4, 5
-      (informational; not asserted to any specific value).
+  (2) **q-deformed normalisation drift at q_0.**  At q = q_0 ≠ 1,
+      Σ_λ w̃_λ ≠ 1 in general — the non-probability-measure
+      property called out in CLAUDE.md's notation register.  Probe
+      documents the actual sum at q_0 for n = 3, 4, 5
+      (informational `add_data`; not asserted to any value).  At
+      q = 1 the sum collapses to the classical Plancherel
+      normalisation Σ_λ w_λ = 1; that classical check is wired by
+      `plancherel_weight_boundedness_probe.py` (exact in ℚ).
 
 Emits `wedderburn-weight-canonical-probe.witness.json`.
 """
@@ -81,12 +83,12 @@ def _hook_lengths(shape: tuple[int, ...]) -> list[int]:
 
 
 def _q_int(k: int, q: "mp.mpf") -> "mp.mpf":
-    """[k]_q = (q^k − q⁻ᵏ) / (q − q⁻¹).
+    """[k]_q  :=  (q^k − q⁻ᵏ) / (q − q⁻¹).
 
-    At q=1 this is a 0/0 limit — use the polynomial form
-    [k]_q = 1 + q² + q⁴ + … + q^{2(k-1)} times q^{1−k} ... no, the
-    standard definition is [k]_q = (q^k - q^{-k})/(q - q^{-1}).
-    At q=1, the limit is k.
+    The standard balanced q-integer.  At q = 1 the formula above is
+    0/0; the L'Hôpital limit is k.  Implementation returns `k`
+    exactly when |q − 1| < 1e-30 to avoid the numerical
+    singularity; outside that band the closed form is used.
     """
     if abs(q - 1) < mp.mpf("1e-30"):
         return mp.mpf(k)
