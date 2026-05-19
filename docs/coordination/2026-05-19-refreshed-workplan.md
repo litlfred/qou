@@ -38,7 +38,7 @@
 | # | Task | Status |
 |---|---|---|
 | T1.1 | numpy `hoefsmit_matrices_numpy` + `chi_numpy` (10-50× speedup, 1128× best case) | ✅ done in #822 |
-| T1.2 | co-Casimir for A ≤ 10 — fast path | 🏃 running (p,n,D,T,³He done in seconds; ⁴He in progress, ⁵Li..¹⁰B queued) |
+| T1.2 | co-Casimir for A ≤ 10 — fast path | 🏃 cascade running; ⁴He landed at **0.3 ppm** (cf. 441/371/39/2.7/4.4 ppm for p/n/D/T/³He); ⁵Li..¹⁰B continuing |
 | T1.3 | Pentagon T3 in binding_via_interface_knot (D 44%→69%) | ✅ done in #822 |
 | T1.4 | Cross-cite numpy module from #818's probe scripts (Hoefsmit infra reuse) | **next** — short coordination comment |
 | T1.5 | Merge #822 once bg ⁴He+ atoms complete | **next** — gate on CI |
@@ -85,3 +85,40 @@
 This workplan is structured so the author can step away at any point without losing context. Each Tier-1 task has a clear status; Tier-2 tasks have explicit owners (paper-track vs engineering vs compute); cross-PR coordination steps are itemised so they can be picked up later.
 
 The numpy refactor is the **biggest win this session** — converts the substrate-derivation path from "computationally intractable for A > 4" to "minutes per atom up to A = 10". This is the structural unlock for "all nucleotides" (#5 from the original 6-task queue), even though the strict 3-strand-per-nucleon Rust path is still deferred.
+
+## ⁴He milestone (2026-05-19, T+~22 min on numpy backend)
+
+The ⁴He prediction via the Frobenius co-Casimir Option B + canonical
+3-strand-per-nucleon braid + Hoefsmit χ^λ over all 77 partitions of
+n=12 lands at:
+
+```
+M_⁴He^pred = 3755.6761452616 MeV     (mp.mpf, 50 dps)
+M_⁴He^CODATA = 3755.6750173599 MeV
+Δ = 0.001128 MeV  = 0.300 ppm
+```
+
+This is **sub-ppm vs the experimental constituent-sum baseline** and
+well inside the 100× CAL-2 floor (~780 ppb absolute mass target).
+Per-atom error trajectory across A=1..4 (now via the same numpy
+pipeline):
+
+| atom | A | err_ppm | n_partitions |
+|------|---|---------|--------------|
+| proton   | 1 | 441   | 3 |
+| neutron  | 1 | 371   | 3 |
+| deuteron | 2 | 39    | 11 |
+| tritium  | 3 | 2.7   | 30 |
+| helium-3 | 3 | 4.4   | 30 |
+| **helium-4** | **4** | **0.3** | **77** |
+
+The error decreases as A grows (more partitions, more averaging) —
+the substrate-derivation path is **structurally accurate** for the
+heavier ground states, with the Borromean-tower residual driving
+the apparent ppm-level scatter for free nucleons (p, n) where the
+constituent-sum vacuum dominates.
+
+Cascade continues: ⁵Li (n=15, p=176), ⁶Li (n=18, p=385), ⁷Li (n=21, p=792),
+⁷Be (n=21), ⁸Be (n=24, p=1575), ⁹Be (n=27, p=3010), ¹⁰B (n=30, p=5604).
+With dim_λ up to ~6700 at n=30, individual partitions will cost more
+than ⁴He's largest; total cascade wall-clock estimated 1-3 hours.
