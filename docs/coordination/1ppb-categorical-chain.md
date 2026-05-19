@@ -155,3 +155,26 @@ Deuteron has $\Delta_I^D = \sigma_3$ (the `+1` in $u_{\text{shift}} = 18Z + 21N 
 **Structural finding (verified empirically at A=2,3 exact to 4 digits):** per-generator V̂ values at H_{3A} are A-INDEPENDENT for the disjoint Hecke product. Block factors v_p = 0.7084, v_n = 0.6005, |V^pp/nn_inter| = 0.1045, |V^pn_inter| = 0. Scales B(K) prediction to ALL atoms in microseconds — no H_{3A} character sum beyond H_6 / H_9 calibration. Conjecture content block + Lean class committed (`conj:block-multiplicativity-v-free`).
 
 **Open structural target (heavy-atom variance):** T3 pair-blowup grows as A² (number of interface-involving pairs ≈ 5A(A-1)/2). AME binding grows linearly in A. The mismatch may be resolved by switching from the mass-endomorphism blow-up tower (T1+T2+T3) to the **depth-stratified α_k · Φ_k formulation** for k ≥ 4 — where α_{k≥4} = m_e · 8G provides built-in damping at high curvature rank ([`prop:plancherel-term-7-formulation`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/plancherel-term-7-formulation.md)). Cross-reference to PR #814's involution/Leibniz analysis of c_5's 1/2 fingerprint — same averaged-crossing mechanism plausibly drives the α_{k≥4} damping universal at depth k ≥ 4.
+## 2026-05-19 (evening) — Deprecated-but-valid catalog re-verification (branch `claude/update-deprecated-scripts-catalog-jvbyM`)
+
+| Date | Phase | Status | Cherry-pick |
+|---|---|---|---|
+| 2026-05-19 | Re-verify the 11-row table in [`docs/audits/2026-05-19-deprecated-but-valid-scripts-catalog.md`](../audits/2026-05-19-deprecated-but-valid-scripts-catalog.md) (authored on PR #787 morning) | Update landed on this branch — 7 propositions still actionable, 2 phantom labels removed, 3 wired-to-alternate need supersession check, 25 (not ~30) deprecated scripts confirmed orphaned | catalog update + ledger row (this row) |
+
+**Re-survey findings load-bearing for the 1 ppb / Δ_λ thread:**
+
+1. **No deprecated-script revivals** since #787 merged (`git log origin/main -- folio-assistant/computations/_deprecated/` returns zero). The systemic paper↔compute wiring gap persists.
+2. **3 propositions wired to *alternate* scripts**, not the catalog's deprecated ones — supersession-disposition still owed:
+   - `prop:mass-endomorphism-tower` → `habiro_exact_mass_endomorphism.py` (337 LoC); 4 deprecated towers orphaned.
+   - `prop:atomic-mass-gb-nf` → `canonical_mass_table_extended.py` (507 LoC); `anti_self_reciprocity_universality_probe.py` orphaned.
+   - `prop:full-pole-structure-mass-trace` → `markov_substrate_realizer.py` (242 LoC); **8** `build_*_chain.py` (~2200 LoC) orphaned — largest scope gap.
+3. **2 phantom-label rows** in the original catalog (`prop:atomic-braid-mass`, `prop:b-over-a-spectral-decomposition`) — neither label exists in `content/`. Either author the missing propositions or delete the rows (and dispose of `atomic_braid_mass_paper_formula.py`, `b_over_a_evaluator.py`).
+4. **Two cross-cutting caveats** added to the catalog's revival procedure: (i) TR_M[5] Markov-trace bug fix (`be773569`) may invalidate witnesses from un-patched code paths; (ii) PR #787 Phase 3 Vol-clusters-by-Z finding constrains what an N-dependent binding-energy formula can look like — useful as a falsifiability gate.
+
+**Coordination posts**: none required this round — the affected propositions are unowned (no open PR is reviving any of them), and the systemic finding is documented in the catalog + ledger row above. If a future PR proposes reviving a catalog-listed script, the reviver should consult both caveats before running.
+
+**Next concrete tasks (non-overlapping, queued for whoever picks up):**
+
+- Pick one of the 7 actionable propositions (highest yield: `prop:unified-curvature-rank-mass-formula` if the Δ_λ thread unpauses; otherwise `prop:confinement-categorical` since it's a single-script revival) and run the catalog's per-revival procedure end-to-end.
+- For the 3 wired-to-alternate propositions, diff the live and deprecated scripts and decide supersession (move to `_deprecated/_archive/`) or scope-gap (fold logic in / re-wire to consume both). The `prop:full-pole-structure-mass-trace` case is the most interesting because the 8 `build_*_chain.py` scripts collectively dwarf the single live realizer.
+- For the 2 phantom labels, ask the original author whether the underlying claims were intended to exist as separate blocks, or whether the scripts should be re-deprecated under a different proposition (or moved to `_archive/`).
