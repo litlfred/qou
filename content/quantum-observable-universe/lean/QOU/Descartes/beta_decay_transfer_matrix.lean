@@ -27,11 +27,17 @@ class BetaDecayTransferMatrixContext where
   Δβ_lower : ℝ
   /-- The same `Δ_β` matrix computed as `T_pp − T_mix`. -/
   Δβ_upper : ℝ
-  /-- Manuscript sub-claim (i): the three transfer matrices `T_pp`,
-      `T_nn`, `T_mix` are explicitly given as `2 × 2` matrices over
-      `ℤ[q^±1]` (formal abstraction; concretisation requires `Matrix`
-      machinery). -/
-  claim_i_transfer_matrices : Prop
+  /-- Trace of the proton–proton transfer matrix `T_pp = q − q⁻¹`. -/
+  tr_T_pp : ℝ
+  /-- Trace of the neutron–neutron transfer matrix `T_nn = -(q − q⁻¹)`. -/
+  tr_T_nn : ℝ
+  /-- Trace of the mixed crossing transfer matrix `T_mix = 0`. -/
+  tr_T_mix : ℝ
+  /-- Manuscript sub-claim (i): the three crossing transfer matrices
+      have manuscript-prescribed traces:
+      `tr T_pp = q − q⁻¹`, `tr T_nn = -(q − q⁻¹)`, `tr T_mix = 0`. -/
+  claim_i_transfer_matrices :
+    tr_T_pp = q - q⁻¹ ∧ tr_T_nn = -(q - q⁻¹) ∧ tr_T_mix = 0
   /-- Manuscript sub-claim (ii): `det T_pp = det T_nn = −1` (Hecke
       unimodularity). -/
   claim_ii_unimodular_pp_nn :
@@ -118,7 +124,8 @@ $$
     translation. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/beta-decay-transfer-matrix.ts
 theorem beta_decay_transfer_matrix [ctx : BetaDecayTransferMatrixContext] :
-    ctx.claim_i_transfer_matrices ∧
+    (ctx.tr_T_pp = ctx.q - ctx.q⁻¹ ∧ ctx.tr_T_nn = -(ctx.q - ctx.q⁻¹) ∧
+     ctx.tr_T_mix = 0) ∧
     (ctx.det_T_pp = -1 ∧ ctx.det_T_nn = -1) ∧
     ctx.Δβ_lower = ctx.Δβ_upper :=
   ⟨ctx.claim_i_transfer_matrices, ctx.claim_ii_unimodular_pp_nn,

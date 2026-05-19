@@ -25,10 +25,13 @@ class DescartesBraidStructureContext where
   Rep : Type
   /-- The order of the image of `ρ_3` in `SU(2)`. -/
   image_order : ℕ
-  /-- Manuscript sub-claim (i): faithful representation
-      `ρ_3 : B_3 → Aut_C(V ⊗ V ⊗ V)`. Stays abstract Prop because
-      the categorical braiding sits on `Rep(SU_q(2))`. -/
-  claim_i_faithful_rep : Prop
+  /-- The image cardinality of `ρ_3 : B_3 → Aut_C(V⊗V⊗V)` measured
+      by its Tannaka group order. (Faithfulness manifests as
+      bijection-on-orbits.) -/
+  ρ_3_image_size : ℕ
+  /-- Manuscript sub-claim (i): faithful representation gives image
+      order `≥ 12` (faithful into `Dic_3` of order 12). -/
+  claim_i_faithful_rep : 12 ≤ ρ_3_image_size
   /-- Manuscript sub-claim (ii) — Image order is `|Dic_3| = 12`. -/
   claim_ii_image_order_eq_12 : image_order = 12
   /-- Number of `S_3` copies inside `S_5 = Aut(Σ_4)`. -/
@@ -71,7 +74,7 @@ Let $(\mathbf{C}, A, \tau)$ be a Descartes universe
     translation. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/descartes-braid-structure.ts
 theorem descartes_braid_structure [ctx : DescartesBraidStructureContext] :
-    ctx.claim_i_faithful_rep ∧
+    12 ≤ ctx.ρ_3_image_size ∧
     ctx.image_order = 12 ∧
     ctx.n_S3_copies = 3 ∧
     (∀ R : Type, ctx.defined_over R) :=
