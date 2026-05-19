@@ -19,11 +19,11 @@ namespace QOU.Molecular
 class Co2LpDualBindingContext where
   /-- The braid representative type. -/
   Braid : Type
-  /-- Manuscript sub-claim (i). -/
+  /-- Manuscript sub-claim (i) — *Bond order assignments: $(k_1, k_2)$ with $k_1 + k_2 \leq 4$ (carbon's valence)*. -/
   claim_i : Prop
-  /-- Manuscript sub-claim (ii). -/
+  /-- Manuscript sub-claim (ii) — *Electron-bond assignments: which electrons are shared with which oxygen*. -/
   claim_ii : Prop
-  /-- Manuscript sub-claim (iii). -/
+  /-- Manuscript sub-claim (iii) — Strand orderings: permutations of 66 strands. -/
   claim_iii : Prop
 
 /-- **Proposition statement** (from manuscript):

@@ -22,11 +22,11 @@ namespace QOU.BraidsAndKnots
 class QmnRecursiveMemoizedContext where
   /-- The partition / Young-diagram indexing type. -/
   PartitionIdx : Type
-  /-- Manuscript sub-claim (i). -/
+  /-- Manuscript sub-claim (i) — Looks up `cache[(λ, ρ)]`. -/
   claim_i : Prop
-  /-- Manuscript sub-claim (ii). -/
+  /-- Manuscript sub-claim (ii) — If miss, computes via the recursion above (border-strip enumeration $\to$ recursive call on $(λ \setminus \xi, ρ \set.... -/
   claim_ii : Prop
-  /-- Manuscript sub-claim (iii). -/
+  /-- Manuscript sub-claim (iii) — Stores result in cache. -/
   claim_iii : Prop
 
 /-- **Proposition statement** (from manuscript):

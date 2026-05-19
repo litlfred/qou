@@ -20,9 +20,9 @@ class NsObstructionComputationContext where
   CategoricalObj : Type
   /-- The topological-link / knot type. -/
   Link : Type
-  /-- Manuscript sub-claim (i). -/
+  /-- Manuscript sub-claim (i) — Topological: $\mathrm{lk} \cdot e(\xi)|_p$, which is nonzero iff the Reeb field has a zero at $p$ (iff the contact st.... -/
   claim_i : Prop
-  /-- Manuscript sub-claim (ii). -/
+  /-- Manuscript sub-claim (ii) — Analytic: $\delta_n|_\Sigma$, which is nonzero whenever the $n$-th jet of the velocity diverges (for all $n \geq 1$ i.... -/
   claim_ii : Prop
 
 /-- **Content statement** (from manuscript):

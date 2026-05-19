@@ -19,15 +19,15 @@ namespace QOU.FluidDynamics
 class CoreLeviFormContext where
   /-- The braid representative type. -/
   Braid : Type
-  /-- Manuscript sub-claim (i). -/
+  /-- Manuscript sub-claim (i) — The core aspect ratio is bounded: $\sup_{t < T^*} a_\perp(t) / a_\parallel(t) \leq C$. -/
   claim_i : Prop
-  /-- Manuscript sub-claim (ii). -/
+  /-- Manuscript sub-claim (ii) — The Levi form condition number is bounded: $\sup_{t < T^*} \mathrm{cond}(\mathcal{L}_\varTheta|_{N_p}) \leq C^2$. -/
   claim_ii : Prop
-  /-- Manuscript sub-claim (iii). -/
+  /-- Manuscript sub-claim (iii) — The contact structure $\ker(\varTheta)$ remains non-degenerate at the collision locus $\Sigma$: both eigenvalues $\la.... -/
   claim_iii : Prop
-  /-- Manuscript sub-claim (iv). -/
+  /-- Manuscript sub-claim (iv) — The observability axiom $\mathrm{Hom}_{\mathbf{C}}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ holds locally at every $p \in \Si.... -/
   claim_iv : Prop
-  /-- Manuscript sub-claim (v). -/
+  /-- Manuscript sub-claim (v) — No 2-dimensional integral submanifold of $\ker(\varTheta)$ forms at $\Sigma$ (Frobenius integrability does not hold). -/
   claim_v : Prop
 
 /-- **Content statement** (from manuscript):

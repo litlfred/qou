@@ -18,13 +18,13 @@ namespace QOU.QuantumBloch
 class PentagonUvCommutationContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
-  /-- Manuscript sub-claim (i). -/
+  /-- Manuscript sub-claim (i) — Hecke braid relation at the operator level (before :refterm[descent]{#descent} to scalars): $\sigma_s \sigma_{s+1} \s.... -/
   claim_i : Prop
-  /-- Manuscript sub-claim (ii). -/
+  /-- Manuscript sub-claim (ii) — :refterm[Descent]{#descent} involution split: $\hat\tau_n$ separates $H_n(R, q)$ into $\mathrm{im}\,\hat\tau_n$ (desc.... -/
   claim_ii : Prop
-  /-- Manuscript sub-claim (iii). -/
+  /-- Manuscript sub-claim (iii) — Eigenvalue specialisation on the $q$-block of $\sigma_s$ reduces the descended part to scalar form, where commutation.... -/
   claim_iii : Prop
-  /-- Manuscript sub-claim (iv). -/
+  /-- Manuscript sub-claim (iv) — Operator lift on the transient part: the surviving non-trivial commutation is between level-$n$ and level-$(n+1)$ ope.... -/
   claim_iv : Prop
 
 /-- **Content statement** (from manuscript):

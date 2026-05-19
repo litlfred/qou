@@ -18,11 +18,11 @@ namespace QOU.QuantumObservableUniverse
 class ObservationEnergyContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
-  /-- Manuscript sub-claim (i). -/
+  /-- Manuscript sub-claim (i) — (Quantum energy increases.) *The quantum Planck constant $\hbar_q = 1 - q^{-1}$ (quantum Planck constant) satisfies*. -/
   claim_i : Prop
-  /-- Manuscript sub-claim (ii). -/
+  /-- Manuscript sub-claim (ii) — (Action deformation.) *The categorical action $S_q[\nabla, \lambda, \psi]$ (categorical action) evaluated at the pert.... -/
   claim_ii : Prop
-  /-- Manuscript sub-claim (iii). -/
+  /-- Manuscript sub-claim (iii) — (Classical energy is unconstrained in sign.) *The classical energy (the $q \to 1$ shadow of the action) can increase .... -/
   claim_iii : Prop
 
 /-- **Proposition statement** (from manuscript):

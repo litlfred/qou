@@ -24,11 +24,11 @@ class WenzlQmnSynergyContext where
   Braid : Type
   /-- The partition / Young-diagram indexing type. -/
   PartitionIdx : Type
-  /-- Manuscript sub-claim (i). -/
+  /-- Manuscript sub-claim (i) — Direct verification of Wenzl-bridge correctness: any canonical-braid Markov-trace identity gives a one-shot test of $.... -/
   claim_i : Prop
-  /-- Manuscript sub-claim (ii). -/
+  /-- Manuscript sub-claim (ii) — Mass-formula compute speedup: the depth-resolved Φ_k pipeline in `depth_resolved_phi_k_hoefsmit.py` can replace its H.... -/
   claim_ii : Prop
-  /-- Manuscript sub-claim (iii). -/
+  /-- Manuscript sub-claim (iii) — Atom-knot identification path for ⁶Li, ⁷Li: - Enumerate hyperbolic knots $K$ with crossing-number $\leq 10$. -/
   claim_iii : Prop
 
 /-- **Proposition statement** (from manuscript):

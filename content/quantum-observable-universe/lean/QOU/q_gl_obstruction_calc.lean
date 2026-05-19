@@ -18,13 +18,13 @@ namespace QOU
 class QGlObstructionCalcContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
-  /-- Manuscript sub-claim (i). -/
+  /-- Manuscript sub-claim (i) — The intrinsic $q$-curvature of any $q$-flat connection $\nabla_q$ on a $G_q$-bundle over $X$ is. -/
   claim_i : Prop
-  /-- Manuscript sub-claim (ii). -/
+  /-- Manuscript sub-claim (ii) — The $q$-connection $\nabla_q$ is $q$-flat (q-flat connection) — meaning its connection-dependent curvature $\mathcal{.... -/
   claim_ii : Prop
-  /-- Manuscript sub-claim (iii). -/
+  /-- Manuscript sub-claim (iii) — At Kummer level $n$, the obstruction $\kappa_0 \bmod n$ vanishes if and only if $n \mid \chi(A)$. -/
   claim_iii : Prop
-  /-- Manuscript sub-claim (iv). -/
+  /-- Manuscript sub-claim (iv) — For $\chi(A) \neq 0$, the set of Kummer levels $n$ at which $\kappa_0 \bmod n \neq 0$ has density $1$ in $\mathbb{Z}_.... -/
   claim_iv : Prop
 
 /-- **Content statement** (from manuscript):

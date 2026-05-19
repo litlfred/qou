@@ -23,11 +23,11 @@ class ShellFillingRuleContext where
   N : ℕ
   /-- The braid representative type. -/
   Braid : Type
-  /-- Manuscript sub-claim (i). -/
+  /-- Manuscript sub-claim (i) — *Inner shells ($n < n_{\mathrm{val}}$) fill completely because each additional electron in a partly filled inner shel.... -/
   claim_i : Prop
-  /-- Manuscript sub-claim (ii). -/
+  /-- Manuscript sub-claim (ii) — *Within the valence shell, electrons distribute to maximise the number of singly occupied sites (Hund's rule) because.... -/
   claim_ii : Prop
-  /-- Manuscript sub-claim (iii). -/
+  /-- Manuscript sub-claim (iii) — The LP dual of the electron assignment problem is:. -/
   claim_iii : Prop
 
 /-- **Proposition statement** (from manuscript):

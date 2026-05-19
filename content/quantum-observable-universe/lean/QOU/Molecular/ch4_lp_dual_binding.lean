@@ -19,11 +19,11 @@ namespace QOU.Molecular
 class Ch4LpDualBindingContext where
   /-- The braid representative type. -/
   Braid : Type
-  /-- Manuscript sub-claim (i). -/
+  /-- Manuscript sub-claim (i) — Each C--H bond has the same traced volume $\hat{V}_b$. -/
   claim_i : Prop
-  /-- Manuscript sub-claim (ii). -/
+  /-- Manuscript sub-claim (ii) — Each H--H repulsion has the same $\Phi_1$ penalty. -/
   claim_ii : Prop
-  /-- Manuscript sub-claim (iii). -/
+  /-- Manuscript sub-claim (iii) — The total binding energy is exactly $4 \times \mathbf{E}_{\mathrm{bind}}^{CH}$. -/
   claim_iii : Prop
 
 /-- **Proposition statement** (from manuscript):

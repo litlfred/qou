@@ -21,13 +21,13 @@ class DiscreteVortexSpectrumContext where
   q : ℝ
   /-- The braid representative type. -/
   Braid : Type
-  /-- Manuscript sub-claim (i). -/
+  /-- Manuscript sub-claim (i) — The eigenvalues of $\Delta_q$ restricted to $\varrho$ form a discrete spectrum $\{\lambda_k^{(q)}\}_{k \geq 1}$ with. -/
   claim_i : Prop
-  /-- Manuscript sub-claim (ii). -/
+  /-- Manuscript sub-claim (ii) — The intensity levels of the vortex are indexed by the spin label $j \in \frac{1}{2}\mathbb{Z}_{\geq 0}$ of the $\math.... -/
   claim_ii : Prop
-  /-- Manuscript sub-claim (iii). -/
+  /-- Manuscript sub-claim (iii) — Transitions between intensity levels $j \to j'$ are mediated by the ladder modes $E_\pm$ of the weight-space decompos.... -/
   claim_iii : Prop
-  /-- Manuscript sub-claim (iv). -/
+  /-- Manuscript sub-claim (iv) — In the classical limit $q \to 1$: - $[k]_q \to k$ and the Kelvin-wave spectrum is recovered. -/
   claim_iv : Prop
 
 /-- **Content statement** (from manuscript):

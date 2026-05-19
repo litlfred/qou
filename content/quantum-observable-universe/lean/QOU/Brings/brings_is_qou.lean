@@ -18,15 +18,15 @@ namespace QOU.Brings
 class BringsIsQouContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
-  /-- Manuscript sub-claim (i). -/
+  /-- Manuscript sub-claim (i) — Quantum universe. -/
   claim_i : Prop
-  /-- Manuscript sub-claim (ii). -/
+  /-- Manuscript sub-claim (ii) — Observability. -/
   claim_ii : Prop
-  /-- Manuscript sub-claim (iii). -/
+  /-- Manuscript sub-claim (iii) — Yekutieli lifting. -/
   claim_iii : Prop
-  /-- Manuscript sub-claim (iv). -/
+  /-- Manuscript sub-claim (iv) — Euler characteristic. -/
   claim_iv : Prop
-  /-- Manuscript sub-claim (v). -/
+  /-- Manuscript sub-claim (v) — Geometric :refterm[descent]{#descent} (for $n = 1$, $\dim M_S = 3$):. -/
   claim_v : Prop
 
 /-- **Content statement** (from manuscript):

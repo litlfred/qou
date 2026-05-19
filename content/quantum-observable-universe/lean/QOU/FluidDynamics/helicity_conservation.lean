@@ -19,13 +19,13 @@ namespace QOU.FluidDynamics
 class HelicityConservationContext where
   /-- The braid representative type. -/
   Braid : Type
-  /-- Manuscript sub-claim (i). -/
+  /-- Manuscript sub-claim (i) — Conservation. -/
   claim_i : Prop
-  /-- Manuscript sub-claim (ii). -/
+  /-- Manuscript sub-claim (ii) — Decomposition. -/
   claim_ii : Prop
-  /-- Manuscript sub-claim (iii). -/
+  /-- Manuscript sub-claim (iii) — Jones polynomial refinement. -/
   claim_iii : Prop
-  /-- Manuscript sub-claim (iv). -/
+  /-- Manuscript sub-claim (iv) — Classical limit. -/
   claim_iv : Prop
 
 /-- **Content statement** (from manuscript):

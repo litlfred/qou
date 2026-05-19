@@ -19,17 +19,17 @@ namespace QOU.Information
 class ToffoliTransferMatrixContext where
   /-- The braid representative type. -/
   Braid : Type
-  /-- Manuscript sub-claim (i). -/
+  /-- Manuscript sub-claim (i) — (Universal factorization.) *Every target-flip amplitude factors as*. -/
   claim_i : Prop
-  /-- Manuscript sub-claim (ii). -/
+  /-- Manuscript sub-claim (ii) — (Single-crossing type-blindness.) *At generator $\sigma_1$ (one crossing), the traced volume $\hat{V}_1 = z(q) = 1/(q.... -/
   claim_ii : Prop
-  /-- Manuscript sub-claim (iii). -/
+  /-- Manuscript sub-claim (iii) — (The q-AND = governor choice.) *The Toffoli gate selects the target strand whose control–control pair has $c = 1$ ($\.... -/
   claim_iii : Prop
-  /-- Manuscript sub-claim (iv). -/
+  /-- Manuscript sub-claim (iv) — (Antisymmetry.) $P_{6,7}(q) = -P_{7,6}(q)$.*. -/
   claim_iv : Prop
-  /-- Manuscript sub-claim (v). -/
+  /-- Manuscript sub-claim (v) — (Classical limit.) *All target-flip amplitudes vanish as $q \to 1$: the core $\Phi(q)$ carries the factor $(q - 1)$.*. -/
   claim_v : Prop
-  /-- Manuscript sub-claim (vi). -/
+  /-- Manuscript sub-claim (vi) — (Toffoli diagonal.). -/
   claim_vi : Prop
 
 /-- **Proposition statement** (from manuscript):

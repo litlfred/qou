@@ -19,11 +19,11 @@ namespace QOU.Information
 class ReebOperationsPerPlanckContext where
   /-- The braid representative type. -/
   Braid : Type
-  /-- Manuscript sub-claim (i). -/
+  /-- Manuscript sub-claim (i) — Advances the phase of the Reeb vector by $\hbar_q \approx 0.099$ of a full circuit. -/
   claim_i : Prop
-  /-- Manuscript sub-claim (ii). -/
+  /-- Manuscript sub-claim (ii) — Applies the $q$-connection $\nabla_q$ once, correlating adjacent fibers. -/
   claim_ii : Prop
-  /-- Manuscript sub-claim (iii). -/
+  /-- Manuscript sub-claim (iii) — Evaluates one $R$-matrix, resolving one braiding crossing on the exceptional divisor. -/
   claim_iii : Prop
 
 /-- **Proposition statement** (from manuscript):

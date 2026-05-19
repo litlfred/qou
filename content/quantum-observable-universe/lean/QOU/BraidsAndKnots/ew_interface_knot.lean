@@ -25,11 +25,11 @@ class EwInterfaceKnotContext where
   zeta : ℂ
   /-- The topological-link / knot type. -/
   Link : Type
-  /-- Manuscript sub-claim (i). -/
+  /-- Manuscript sub-claim (i) — Direct parallel with the deuteron derivation. -/
   claim_i : Prop
-  /-- Manuscript sub-claim (ii). -/
+  /-- Manuscript sub-claim (ii) — Resolves the simple-multiplicity Weinberg-angle failure. -/
   claim_ii : Prop
-  /-- Manuscript sub-claim (iii). -/
+  /-- Manuscript sub-claim (iii) — Bar-self-duality breakdown is structural. -/
   claim_iii : Prop
 
 /-- **Content statement** (from manuscript):

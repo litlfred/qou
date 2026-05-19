@@ -20,11 +20,11 @@ class StrangeletCrossingEnergyContext where
   CategoricalObj : Type
   /-- The topological-link / knot type. -/
   Link : Type
-  /-- Manuscript sub-claim (i). -/
+  /-- Manuscript sub-claim (i) — Electromagnetic neutrality. -/
   claim_i : Prop
-  /-- Manuscript sub-claim (ii). -/
+  /-- Manuscript sub-claim (ii) — Purely strong crossing energy. -/
   claim_ii : Prop
-  /-- Manuscript sub-claim (iii). -/
+  /-- Manuscript sub-claim (iii) — Enhanced binding per baryon. -/
   claim_iii : Prop
 
 /-- **Content statement** (from manuscript):

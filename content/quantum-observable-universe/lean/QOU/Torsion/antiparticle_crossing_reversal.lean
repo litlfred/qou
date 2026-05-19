@@ -18,13 +18,13 @@ namespace QOU.Torsion
 class AntiparticleCrossingReversalContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
-  /-- Manuscript sub-claim (i). -/
+  /-- Manuscript sub-claim (i) — Crossing reversal defines antiparticles. -/
   claim_i : Prop
-  /-- Manuscript sub-claim (ii). -/
+  /-- Manuscript sub-claim (ii) — Crossing energy sign reversal. -/
   claim_ii : Prop
-  /-- Manuscript sub-claim (iii). -/
+  /-- Manuscript sub-claim (iii) — Coulomb charge reversal. -/
   claim_iii : Prop
-  /-- Manuscript sub-claim (iv). -/
+  /-- Manuscript sub-claim (iv) — Bare mass invariance. -/
   claim_iv : Prop
 
 /-- **Content statement** (from manuscript):

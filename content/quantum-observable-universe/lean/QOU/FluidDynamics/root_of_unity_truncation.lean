@@ -19,11 +19,11 @@ namespace QOU.FluidDynamics
 class RootOfUnityTruncationContext where
   /-- The substrate parameter `q : ℝ`. -/
   q : ℝ
-  /-- Manuscript sub-claim (i). -/
+  /-- Manuscript sub-claim (i) — Generic $q > 1$ (QOU regime). -/
   claim_i : Prop
-  /-- Manuscript sub-claim (ii). -/
+  /-- Manuscript sub-claim (ii) — Root of unity $q = e^{i\pi/\kappa}$, $\kappa \in \mathbb{Z}_{\geq 2}$. -/
   claim_ii : Prop
-  /-- Manuscript sub-claim (iii). -/
+  /-- Manuscript sub-claim (iii) — $q = 1$ (classical limit). -/
   claim_iii : Prop
 
 /-- **Content statement** (from manuscript):

@@ -18,13 +18,13 @@ namespace QOU.QuantumObservableUniverse
 class FibreFunctorAtlasContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
-  /-- Manuscript sub-claim (i). -/
+  /-- Manuscript sub-claim (i) — (Charts.) *Each fibre functor $\omega \colon \mathbf{C} \to \mathbf{Vect}_R$ is an affine chart: a concrete realisati.... -/
   claim_i : Prop
-  /-- Manuscript sub-claim (ii). -/
+  /-- Manuscript sub-claim (ii) — (Transitions.) *For any two fibre functors $\omega, \omega'$, the set of monoidal natural isomorphisms $\omega \xrigh.... -/
   claim_ii : Prop
-  /-- Manuscript sub-claim (iii). -/
+  /-- Manuscript sub-claim (iii) — (Cocycle condition.) *Given three fibre functors $\omega, \omega', \omega''$ with transition isomorphisms $g_{01}, g_.... -/
   claim_iii : Prop
-  /-- Manuscript sub-claim (iv). -/
+  /-- Manuscript sub-claim (iv) — (Atlas.) *The category of all fibre functors on $\mathbf{C}$, with monoidal natural isomorphisms as morphisms, is a $.... -/
   claim_iv : Prop
 
 /-- **Proposition statement** (from manuscript):

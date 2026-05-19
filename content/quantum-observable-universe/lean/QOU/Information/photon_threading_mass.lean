@@ -21,11 +21,11 @@ class PhotonThreadingMassContext where
   Braid : Type
   /-- The Hecke generator `σᵢ` indexed by `ℕ`. -/
   hecke_gen : ℕ → Prop
-  /-- Manuscript sub-claim (i). -/
+  /-- Manuscript sub-claim (i) — Start. -/
   claim_i : Prop
-  /-- Manuscript sub-claim (ii). -/
+  /-- Manuscript sub-claim (ii) — Thread. -/
   claim_ii : Prop
-  /-- Manuscript sub-claim (iii). -/
+  /-- Manuscript sub-claim (iii) — End. -/
   claim_iii : Prop
 
 /-- **Proposition statement** (from manuscript):

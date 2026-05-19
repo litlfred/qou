@@ -22,17 +22,17 @@ namespace QOU.BraidsAndKnots
 class RecursiveAtomKnotAtlasContext where
   /-- The braid representative type. -/
   Braid : Type
-  /-- Manuscript sub-claim (i). -/
+  /-- Manuscript sub-claim (i) — `confined-particle.md` — GB-NF particle registry (canonical $T_w$). -/
   claim_i : Prop
-  /-- Manuscript sub-claim (ii). -/
+  /-- Manuscript sub-claim (ii) — `mass-table-ppb.witness.json` — D..⁴⁰Ca (manual-historical, recursive, magic-A). -/
   claim_ii : Prop
-  /-- Manuscript sub-claim (iii). -/
+  /-- Manuscript sub-claim (iii) — `methodology-deprecation.witness.json` — per-particle methodology audit. -/
   claim_iii : Prop
-  /-- Manuscript sub-claim (iv). -/
+  /-- Manuscript sub-claim (iv) — `hp_volume.py` — $\geq 50$-digit symbolic-$q$ Markov-closure $\to$ $\mathrm{Vol}_{\mathrm{hyp}}$. -/
   claim_iv : Prop
-  /-- Manuscript sub-claim (v). -/
+  /-- Manuscript sub-claim (v) — `y_lambda_wenzl_bridge_extended.py` — symbolic-$q$ Wenzl bridge for $y_\lambda$. -/
   claim_v : Prop
-  /-- Manuscript sub-claim (vi). -/
+  /-- Manuscript sub-claim (vi) — `li-atom-knot-search.witness.json` — (provisional) volume-match search. -/
   claim_vi : Prop
 
 /-- **Content statement** (from manuscript):

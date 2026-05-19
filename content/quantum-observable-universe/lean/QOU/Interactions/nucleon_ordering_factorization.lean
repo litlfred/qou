@@ -23,11 +23,11 @@ class NucleonOrderingFactorizationContext where
   N : ℕ
   /-- The braid representative type. -/
   Braid : Type
-  /-- Manuscript sub-claim (i). -/
+  /-- Manuscript sub-claim (i) — Channel elimination: Symmetric and alternating products computed once per $(Z, N)$, not per ordering. -/
   claim_i : Prop
-  /-- Manuscript sub-claim (ii). -/
+  /-- Manuscript sub-claim (ii) — Nucleon precomputation: Each nucleon contributes $n_p$ crossings to the chain. -/
   claim_ii : Prop
-  /-- Manuscript sub-claim (iii). -/
+  /-- Manuscript sub-claim (iii) — $2 \times 2$ vs $6 \times 6$: The standard-channel matrix multiply is $O(4)$ instead of $O(36)$ per crossing. -/
   claim_iii : Prop
 
 /-- **Proposition statement** (from manuscript):

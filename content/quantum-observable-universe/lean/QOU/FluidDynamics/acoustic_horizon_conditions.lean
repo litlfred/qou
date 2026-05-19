@@ -18,11 +18,11 @@ namespace QOU.FluidDynamics
 class AcousticHorizonConditionsContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
-  /-- Manuscript sub-claim (i). -/
+  /-- Manuscript sub-claim (i) — Transonic flow. -/
   claim_i : Prop
-  /-- Manuscript sub-claim (ii). -/
+  /-- Manuscript sub-claim (ii) — Non-degeneracy. -/
   claim_ii : Prop
-  /-- Manuscript sub-claim (iii). -/
+  /-- Manuscript sub-claim (iii) — Energy condition. -/
   claim_iii : Prop
 
 /-- **Content statement** (from manuscript):

@@ -25,11 +25,11 @@ class VariationalEquationsContext where
   Connection : Type
   /-- The crossing / Hecke generator type. -/
   Crossing : Type
-  /-- Manuscript sub-claim (i). -/
+  /-- Manuscript sub-claim (i) — Gravity (vary $\int_A$): $\delta\mathcal{S}_q / \delta\!\int_A = 0$ yields the categorical Einstein equation:. -/
   claim_i : Prop
-  /-- Manuscript sub-claim (ii). -/
+  /-- Manuscript sub-claim (ii) — Gauge (vary $\nabla$): $\delta\mathcal{S}_q / \delta\nabla = 0$ yields the categorical Yang--Mills equation:. -/
   claim_ii : Prop
-  /-- Manuscript sub-claim (iii). -/
+  /-- Manuscript sub-claim (iii) — Matter (vary $\psi$): $\delta\mathcal{S}_q / \delta\psi = 0$ yields the :refterm[categorical transport]{#categorical-.... -/
   claim_iii : Prop
 
 /-- **Manuscript statement** (full body):

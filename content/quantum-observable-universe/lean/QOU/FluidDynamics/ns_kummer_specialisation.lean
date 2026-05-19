@@ -18,11 +18,11 @@ namespace QOU.FluidDynamics
 class NsKummerSpecialisationContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
-  /-- Manuscript sub-claim (i). -/
+  /-- Manuscript sub-claim (i) — The specialisation $\kappa_0|_{q=1}$ is nonzero in $H^2(\mathcal{S}, \mathbb{G}_m)/n$ for all $n \nmid \chi(A)$. -/
   claim_i : Prop
-  /-- Manuscript sub-claim (ii). -/
+  /-- Manuscript sub-claim (ii) — Since the set $\{n : n \nmid \chi(A)\}$ is infinite (it contains all primes not dividing $\chi(A)$), the obstruction .... -/
   claim_ii : Prop
-  /-- Manuscript sub-claim (iii). -/
+  /-- Manuscript sub-claim (iii) — The obstruction vanishes only at the finitely many Kummer levels $n \mid \chi(A)$, which correspond to the finitely m.... -/
   claim_iii : Prop
 
 /-- **Content statement** (from manuscript):

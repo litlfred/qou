@@ -19,11 +19,11 @@ namespace QOU.Molecular
 class BenzeneThreadingEmergenceContext where
   /-- The braid representative type. -/
   Braid : Type
-  /-- Manuscript sub-claim (i). -/
+  /-- Manuscript sub-claim (i) — More shared crossings. -/
   claim_i : Prop
-  /-- Manuscript sub-claim (ii). -/
+  /-- Manuscript sub-claim (ii) — $D_6$ symmetry. -/
   claim_ii : Prop
-  /-- Manuscript sub-claim (iii). -/
+  /-- Manuscript sub-claim (iii) — Alexander polynomial weight. -/
   claim_iii : Prop
 
 /-- **Proposition statement** (from manuscript):

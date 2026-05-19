@@ -22,11 +22,11 @@ namespace QOU.BraidsAndKnots
 class DemazureFiberMarkovTraceContext where
   /-- The partition / Young-diagram indexing type. -/
   PartitionIdx : Type
-  /-- Manuscript sub-claim (i). -/
+  /-- Manuscript sub-claim (i) — *$T^{\mathrm{Dem}}(\lambda;\, w_0) = y_\lambda$ — the standard Jones–Markov coefficient is the saturated case.*. -/
   claim_i : Prop
-  /-- Manuscript sub-claim (ii). -/
+  /-- Manuscript sub-claim (ii) — *For $w < w_0$ (Bruhat order), $T^{\mathrm{Dem}}(\lambda;\, w)$ is the structural resonance width of the $\lambda$-bl.... -/
   claim_ii : Prop
-  /-- Manuscript sub-claim (iii). -/
+  /-- Manuscript sub-claim (iii) — *Plancherel completeness: $\sum_{\lambda \vdash n} f_\lambda \cdot T^{\mathrm{Dem}}(\lambda;\, w_0) = 1$ reduces to t.... -/
   claim_iii : Prop
 
 /-- **Proposition statement** (from manuscript):

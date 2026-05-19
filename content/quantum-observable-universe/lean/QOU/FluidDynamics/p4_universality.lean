@@ -18,11 +18,11 @@ namespace QOU.FluidDynamics
 class P4UniversalityContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
-  /-- Manuscript sub-claim (i). -/
+  /-- Manuscript sub-claim (i) — The Euler characteristic $\chi(A)$ of the Frobenius--Hopf object (equivalently, the genus of the base manifold in the.... -/
   claim_i : Prop
-  /-- Manuscript sub-claim (ii). -/
+  /-- Manuscript sub-claim (ii) — The spatial dimension $d = 3$ (fixed by the contact structure). -/
   claim_ii : Prop
-  /-- Manuscript sub-claim (iii). -/
+  /-- Manuscript sub-claim (iii) — The rank of the gauge group ($\mathrm{SU}(2)$, rank 1). -/
   claim_iii : Prop
 
 /-- **Content statement** (from manuscript):

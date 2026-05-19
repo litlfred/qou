@@ -19,11 +19,11 @@ namespace QOU.FluidDynamics
 class QNsWellposednessContext where
   /-- The substrate parameter `q : ℝ`. -/
   q : ℝ
-  /-- Manuscript sub-claim (i). -/
+  /-- Manuscript sub-claim (i) — Smoothness in $\mathbf{C}$: the map $t \mapsto v(t) \in \Omega^1(A)$ is smooth (infinitely differentiable in the inte.... -/
   claim_i : Prop
-  /-- Manuscript sub-claim (ii). -/
+  /-- Manuscript sub-claim (ii) — Energy inequality: for all $t \geq 0$,. -/
   claim_ii : Prop
-  /-- Manuscript sub-claim (iii). -/
+  /-- Manuscript sub-claim (iii) — Spectral decay: the $\Delta_q$-eigencomponents $\hat{v}_k \in V_k \subset \Omega^1(A)$ (where $\Delta_q|_{V_k} = [k]_.... -/
   claim_iii : Prop
 
 /-- **Content statement** (from manuscript):

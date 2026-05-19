@@ -21,11 +21,11 @@ class HeckeSatisfiesBlitvicHypothesisContext where
   PartitionIdx : Type
   /-- The Hecke generator `σᵢ` indexed by `ℕ`. -/
   hecke_gen : ℕ → Prop
-  /-- Manuscript sub-claim (i). -/
+  /-- Manuscript sub-claim (i) — The Hecke quadratic relation (algebra-level, no analysis). -/
   claim_i : Prop
-  /-- Manuscript sub-claim (ii). -/
+  /-- Manuscript sub-claim (ii) — The Markov property of $\mathrm{tr}_M$ (`thm:jones-markov-trace`). -/
   claim_ii : Prop
-  /-- Manuscript sub-claim (iii). -/
+  /-- Manuscript sub-claim (iii) — Wenzl's product factorisation (`prop:trace-locality-meets-gs-non-locality`). -/
   claim_iii : Prop
 
 /-- **Proposition statement** (from manuscript):
