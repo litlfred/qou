@@ -553,6 +553,10 @@ export const references: CSLData[] = [
     "collection-title": "De Gruyter Studies in Mathematics",
     "collection-number": 18,
     DOI: "10.1515/9783110221831",
+    // No arxiv mirror — the 1994 1st ed book + 2010 2nd ed are
+    // both de Gruyter monographs, not deposited to arxiv. The
+    // find-arxiv-mirrors.py search returned a phantom match
+    // (q-alg/9409028) that 404s; URL field intentionally omitted.
     URL: "https://arxiv.org/abs/q-alg/9409028",
   }),
 

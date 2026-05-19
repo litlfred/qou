@@ -39,10 +39,17 @@ DEFAULT_BRANCH="main"
 DRY_RUN=0
 OPEN_PR=0
 
+FORCE=0
 for a in "$@"; do
   case "$a" in
     --dry-run) DRY_RUN=1 ;;
     --pr) OPEN_PR=1 ;;
+    --force)
+      # Re-download all listed papers even if uploads/<target> already
+      # exists. Useful when a URL was corrected in references.ts but the
+      # old (wrong) PDF was already fetched in a prior run — without
+      # --force, the script idempotently skips and the wrong PDF stays.
+      FORCE=1 ;;
     --help|-h)
       sed -n '2,/^$/p' "$0" | sed 's/^# \?//'
       exit 0
@@ -129,11 +136,16 @@ for entry in "${PAPERS[@]}"; do
   IFS='|' read -r url target desc <<<"$entry"
   target_path="$UPLOADS_DIR/$target"
 
-  if [[ -f "$target_path" ]]; then
+  if [[ -f "$target_path" && $FORCE -eq 0 ]]; then
     SHA_LOCAL="$(sha256sum "$target_path" | cut -d' ' -f1)"
     echo "[skip] $target_path already present (sha=${SHA_LOCAL:0:12})"
     SKIPPED=$((SKIPPED+1))
     continue
+  fi
+  if [[ -f "$target_path" && $FORCE -eq 1 ]]; then
+    OLD_SHA="$(sha256sum "$target_path" | cut -d' ' -f1)"
+    echo "[force] $target_path exists (sha=${OLD_SHA:0:12}) — re-downloading"
+    rm -f "$target_path"
   fi
 
   echo "[get ] $url"
