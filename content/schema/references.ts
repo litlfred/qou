@@ -652,7 +652,7 @@ export const references: CSLData[] = [
     issue: "11",
     page: "2338-2360",
     DOI: "10.1016/j.jpaa.2012.03.009",
-    note: "arXiv:0905.0488",
+    note: "arXiv:1103.1035 (revised 2011 version; an earlier preprint at arXiv:0905.0488 has the same title — same paper, different revision)",
     URL: "https://arxiv.org/abs/1103.1035",
   }),
 

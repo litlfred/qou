@@ -135,7 +135,7 @@ predicate parameterised by the realisation function so the
 manuscript-level claim has a Lean-level handle.
 -/
 -- Ref: [thurston1978] The geometry and topology of three-manifolds.
--- Ref: [murakami-murakami2001] https://doi.org/10.1007/BF02392716
+-- Ref: [murakami-murakami2001] Murakami & Murakami, "The colored Jones polynomials and the simplicial volume of a knot," Acta Math. 186 (2001), arXiv:math/9905075
 theorem figure8_calibration
     (D τ_arch : ℝ → ℝ) (z₀ : ℝ)
     (c : ℝ)

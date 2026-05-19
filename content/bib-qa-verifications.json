@@ -481,6 +481,66 @@
       "fixes_applied": 0,
       "fix_commit": null,
       "note": "PDF verified: 'Quantum q-Langlands Correspondence' by Aganagic et al., arXiv:1701.03146. Matches references.ts; q-Langlands is QOU-relevant."
+    },
+    {
+      "id": "diaconis-ram2000",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T15:51:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 7,
+      "fix_commit": "(this commit)",
+      "note": "Diaconis & Ram, IHA Metropolis algorithms (Ann. Appl. Probab. 2000, arXiv:math/0401318). 7 bare-URL Refs upgraded with title+publisher form. No local PDF."
+    },
+    {
+      "id": "kashiwara1991",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T15:51:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 6,
+      "fix_commit": "(this commit)",
+      "note": "Kashiwara, crystal bases (Duke Math. J. 63, 1991). 6 bare-URL Refs upgraded with title+publisher form. No local PDF."
+    },
+    {
+      "id": "edge1978",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T15:51:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 6,
+      "fix_commit": "(this commit)",
+      "note": "Edge, Bring's curve (J. London Math. Soc. 18, 1978). 6 bare-URL Refs upgraded with title+publisher form. No local PDF."
+    },
+    {
+      "id": "chari1994",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T15:51:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 5,
+      "fix_commit": "(this commit)",
+      "note": "Chari & Pressley, A Guide to Quantum Groups (CUP 1994). 5 bare-URL Refs upgraded with title+publisher form. No local PDF."
+    },
+    {
+      "id": "brundankleshchev2009",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T15:51:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 5,
+      "fix_commit": "(this commit)",
+      "note": "Brundan & Kleshchev, Blocks of cyclotomic Hecke / KLR (Invent. Math. 178, 2009, arXiv:0808.2032). 5 bare-URL Refs upgraded with title+publisher form. No local PDF."
+    },
+    {
+      "id": "murakami-murakami2001",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T15:51:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 4,
+      "fix_commit": "(this commit)",
+      "note": "Murakami & Murakami, colored Jones + simplicial volume (Acta Math. 186, 2001, arXiv:math/9905075). 4 bare-URL Refs upgraded with title+publisher form. No local PDF."
     }
   ]
 }

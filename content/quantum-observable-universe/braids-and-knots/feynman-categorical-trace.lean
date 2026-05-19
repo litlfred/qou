@@ -5,7 +5,7 @@
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
--- Ref: [chari1994] https://doi.org/10.1017/CBO9780511623868
+-- Ref: [chari1994] Chari & Pressley, "A Guide to Quantum Groups," CUP 1994
 
 import QOU.FeynmanPathIntegrals
 

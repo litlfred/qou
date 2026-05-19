@@ -30,7 +30,7 @@ universe u
     extensions: if a prefix lies in `Z_n`, every continuation also
     lies in `Z_n`, and `τ` annihilates the extended normal form. -/
 -- Ref: [khovanovlauda2009] Khovanov & Lauda, "A diagrammatic approach to categorification of quantum groups," Repr. Theory 13 (2009), arXiv:0803.4121
--- Ref: [brundankleshchev2009] https://doi.org/10.1007/s00222-009-0204-8
+-- Ref: [brundankleshchev2009] Brundan & Kleshchev, "Blocks of cyclotomic Hecke algebras and Khovanov-Lauda algebras," Invent. Math. 178 (2009), arXiv:0808.2032
 class CemeteryGroupEmergence (R : Type u) [CommRing R] (q : R)
     [C : CrystalGraphRealization R q] where
   /-- Predicate: a crystal node lies in the cemetery group `Z_n`. -/

@@ -57,7 +57,7 @@ theorem qNum_at_one (n : ℕ) : qNum 1 n = (n : ℝ) := by
 
     Proof: when `q > 1`, both `qⁿ > q⁻ⁿ` and `q > q⁻¹`, so num/denom > 0.
     When `0 < q < 1`, both inequalities reverse, so neg/neg > 0. -/
--- Ref: [chari1994] https://doi.org/10.1017/CBO9780511623868
+-- Ref: [chari1994] Chari & Pressley, "A Guide to Quantum Groups," CUP 1994
 theorem qNum_pos {q : ℝ} {n : ℕ} (hq : 0 < q) (hq1 : q ≠ 1) (hn : 0 < n) :
     0 < qNum q n := by
   unfold qNum
@@ -112,7 +112,7 @@ theorem qNum_pos {q : ℝ} {n : ℕ} (hq : 0 < q) (hq1 : q ≠ 1) (hn : 0 < n) :
     Sorry retained with this diagnosis.
 
     LaTeX: `\label{lem:feynman-eigenbasis-decomposition}` -/
--- Ref: [chari1994] https://doi.org/10.1017/CBO9780511623868
+-- Ref: [chari1994] Chari & Pressley, "A Guide to Quantum Groups," CUP 1994
 theorem eigenbasis_decomposition
     (decomp : PathIntegrals.SchurWeylDecomposition) :
     decomp.partitions.length ≤ decomp.n / 2 + 1 :=
@@ -285,7 +285,7 @@ theorem q_energy_classical_limit (action rot trans h_q : ℝ) (hq1 : h_q = 0) :
     the Hecke algebra degenerates to the symmetric group algebra.
 
     LaTeX: `\label{prop:feynman-classical-limit}` -/
--- Ref: [chari1994] https://doi.org/10.1017/CBO9780511623868
+-- Ref: [chari1994] Chari & Pressley, "A Guide to Quantum Groups," CUP 1994
 structure ClassicalLimitDegeneration where
   /-- Number of strands. -/
   n : ℕ

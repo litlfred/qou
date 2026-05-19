@@ -37,7 +37,7 @@ namespace QOU.Braiding
 
     We work at the level of eigenvalues (scalars), which suffices for
     the transition probability computation. -/
--- Ref: [diaconis-ram2000] https://doi.org/10.1214/aoap/1019487508
+-- Ref: [diaconis-ram2000] Diaconis & Ram, "Analysis of systematic scan Metropolis algorithms using Iwahori-Hecke algebra techniques," Ann. Appl. Probab. 12 (2000), arXiv:math/0401318
 structure SpectralIdempotentData where
   /-- Deformation parameter q. -/
   q : ℝ
@@ -77,7 +77,7 @@ noncomputable def SpectralIdempotentData.p_minus (d : SpectralIdempotentData) : 
 /-- **p₊ + p₋ = 1**: the transition probabilities form a probability
     distribution.  This is the normalisation of eigenvalues to a
     stochastic operator. -/
--- Ref: [diaconis-ram2000] https://doi.org/10.1214/aoap/1019487508
+-- Ref: [diaconis-ram2000] Diaconis & Ram, "Analysis of systematic scan Metropolis algorithms using Iwahori-Hecke algebra techniques," Ann. Appl. Probab. 12 (2000), arXiv:math/0401318
 theorem SpectralIdempotentData.prob_sum_one (d : SpectralIdempotentData) :
     d.p_plus + d.p_minus = 1 := by
   unfold p_plus p_minus gap
@@ -100,7 +100,7 @@ theorem SpectralIdempotentData.p_minus_pos (d : SpectralIdempotentData) :
     The ratio of transition probabilities equals q², the Boltzmann
     weight for a single crossing.  This identifies q² as the
     fugacity of the Mallows measure. -/
--- Ref: [diaconis-ram2000] https://doi.org/10.1214/aoap/1019487508
+-- Ref: [diaconis-ram2000] Diaconis & Ram, "Analysis of systematic scan Metropolis algorithms using Iwahori-Hecke algebra techniques," Ann. Appl. Probab. 12 (2000), arXiv:math/0401318
 theorem SpectralIdempotentData.boltzmann_ratio (d : SpectralIdempotentData) :
     d.p_plus / d.p_minus = d.q ^ 2 := by
   unfold p_plus p_minus
@@ -171,7 +171,7 @@ noncomputable def MarkovTransitionStep.vertexVolume (s : MarkovTransitionStep) :
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
--- Ref: [diaconis-ram2000] https://doi.org/10.1214/aoap/1019487508
+-- Ref: [diaconis-ram2000] Diaconis & Ram, "Analysis of systematic scan Metropolis algorithms using Iwahori-Hecke algebra techniques," Ann. Appl. Probab. 12 (2000), arXiv:math/0401318
 structure MarkovChainFactorization where
   /-- Number of strands. -/
   n : ℕ
@@ -213,7 +213,7 @@ structure CrossingData where
 
     This is the spectral content of the Markov parameter:
     the expected eigenvalue under the stochastic transition operator. -/
--- Ref: [diaconis-ram2000] https://doi.org/10.1307/mmj/1030132713
+-- Ref: [diaconis-ram2000] Diaconis & Ram, "Analysis of systematic scan Metropolis algorithms using Iwahori-Hecke algebra techniques," Ann. Appl. Probab. 12 (2000), arXiv:math/0401318
 theorem eigenvalue_expectation (d : SpectralIdempotentData) :
     d.p_plus * d.q + d.p_minus * (-d.q⁻¹) =
     d.q - d.q⁻¹ := by
@@ -245,7 +245,7 @@ theorem eigenvalue_expectation (d : SpectralIdempotentData) :
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
--- Ref: [diaconis-ram2000] https://doi.org/10.1214/aoap/1019487508
+-- Ref: [diaconis-ram2000] Diaconis & Ram, "Analysis of systematic scan Metropolis algorithms using Iwahori-Hecke algebra techniques," Ann. Appl. Probab. 12 (2000), arXiv:math/0401318
 axiom markov_chain_factorization_axiom :
     ∀ (n : ℕ) (_hn : n ≥ 2)
       (steps : Fin (n - 1) → MarkovTransitionStep)
@@ -257,7 +257,7 @@ axiom markov_chain_factorization_axiom :
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
--- Ref: [diaconis-ram2000] https://doi.org/10.1214/aoap/1019487508
+-- Ref: [diaconis-ram2000] Diaconis & Ram, "Analysis of systematic scan Metropolis algorithms using Iwahori-Hecke algebra techniques," Ann. Appl. Probab. 12 (2000), arXiv:math/0401318
 theorem markov_chain_factorization_exists
     (n : ℕ) (hn : n ≥ 2)
     (steps : Fin (n - 1) → MarkovTransitionStep)
