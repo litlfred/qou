@@ -3165,23 +3165,10 @@ export const references: CSLData[] = [
       "Reprinted by AMS Chelsea Publishing, 2003 (ISBN 978-0-8218-3436-7).",
   }),
 
-  // ── Murakami & Murakami 2001 ──────────────────────────────────
-  ref({
-    id: "murakami2001",
-    type: "article-journal",
-    title: "The colored Jones polynomials and the simplicial volume of a knot",
-    author: [
-      { family: "Murakami", given: "Hitoshi" },
-      { family: "Murakami", given: "Jun" },
-    ],
-    "container-title": "Acta Mathematica",
-    issued: { "date-parts": [[2001]] },
-    volume: "186",
-    issue: "1",
-    page: "85-104",
-    DOI: "10.1007/BF02392716",
-    URL: "https://doi.org/10.1007/BF02392716",
-  }),
+  // murakami2001 — REMOVED as duplicate of murakami-murakami2001
+  // (same DOI 10.1007/BF02392716, same paper; murakami-murakami2001
+  // has 4 citation sites in QOU; this bare-keyed variant had 0).
+  // Removed 2026-05-19 during bib audit triage of uncited orphans.
 
   // ── Bilson-Thompson 2005 ──────────────────────────────────────
   ref({
