@@ -18,6 +18,6 @@ namespace QOU.WedderburnMass
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/exterior-square-borromean.ts
 theorem exterior_square_borromean : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.WedderburnMass

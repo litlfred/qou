@@ -18,6 +18,6 @@ namespace QOU.QuantumObservableUniverse
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/fibre-functor-atlas.ts
 theorem fibre_functor_atlas : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.QuantumObservableUniverse

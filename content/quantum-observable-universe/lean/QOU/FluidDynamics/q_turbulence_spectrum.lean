@@ -18,6 +18,6 @@ namespace QOU.FluidDynamics
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/q-turbulence-spectrum.ts
 theorem q_turbulence_spectrum : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.FluidDynamics

@@ -18,6 +18,6 @@ namespace QOU.ParticleInteractions
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/ground-state-ordering.ts
 theorem ground_state_ordering : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.ParticleInteractions

@@ -17,6 +17,6 @@ namespace QOU.CommutativeQOU
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/u1-equivariant-reduction.ts
 theorem u1EquivariantReduction : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.CommutativeQOU

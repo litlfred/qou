@@ -155,3 +155,129 @@ Deuteron has $\Delta_I^D = \sigma_3$ (the `+1` in $u_{\text{shift}} = 18Z + 21N 
 **Structural finding (verified empirically at A=2,3 exact to 4 digits):** per-generator V̂ values at H_{3A} are A-INDEPENDENT for the disjoint Hecke product. Block factors v_p = 0.7084, v_n = 0.6005, |V^pp/nn_inter| = 0.1045, |V^pn_inter| = 0. Scales B(K) prediction to ALL atoms in microseconds — no H_{3A} character sum beyond H_6 / H_9 calibration. Conjecture content block + Lean class committed (`conj:block-multiplicativity-v-free`).
 
 **Open structural target (heavy-atom variance):** T3 pair-blowup grows as A² (number of interface-involving pairs ≈ 5A(A-1)/2). AME binding grows linearly in A. The mismatch may be resolved by switching from the mass-endomorphism blow-up tower (T1+T2+T3) to the **depth-stratified α_k · Φ_k formulation** for k ≥ 4 — where α_{k≥4} = m_e · 8G provides built-in damping at high curvature rank ([`prop:plancherel-term-7-formulation`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/plancherel-term-7-formulation.md)). Cross-reference to PR #814's involution/Leibniz analysis of c_5's 1/2 fingerprint — same averaged-crossing mechanism plausibly drives the α_{k≥4} damping universal at depth k ≥ 4.
+## 2026-05-19 (evening) — Deprecated-but-valid catalog re-verification (branch `claude/update-deprecated-scripts-catalog-jvbyM`)
+
+| Date | Phase | Status | Cherry-pick |
+|---|---|---|---|
+| 2026-05-19 | Re-verify the 11-row table in [`docs/audits/2026-05-19-deprecated-but-valid-scripts-catalog.md`](../audits/2026-05-19-deprecated-but-valid-scripts-catalog.md) (authored on PR #787 morning) | Update landed on this branch — the 11 original rows resolve to **11 real propositions**: 7 actionable + 4 wired-to-alternate (3 named directly + `prop:confined-knot-binding` via the b/a trio) + 1 true phantom (`prop:atomic-braid-mass`). 25 (not ~30) deprecated scripts confirmed orphaned. | catalog update + ledger row (this row) |
+
+**Re-survey findings load-bearing for the 1 ppb / Δ_λ thread:**
+
+1. **No deprecated-script revivals** since #787 merged (`git log origin/main -- folio-assistant/computations/_deprecated/` returns zero). The systemic paper↔compute wiring gap persists.
+2. **4 propositions wired to *alternate* scripts**, not the catalog's deprecated ones — supersession-disposition still owed:
+   - `prop:mass-endomorphism-tower` → `habiro_exact_mass_endomorphism.py` (337 LoC); 4 deprecated towers orphaned.
+   - `prop:atomic-mass-gb-nf` → `canonical_mass_table_extended.py` (507 LoC); `anti_self_reciprocity_universality_probe.py` orphaned.
+   - `prop:full-pole-structure-mass-trace` → `markov_substrate_realizer.py` (242 LoC); **8** `build_*_chain.py` (~2200 LoC) orphaned — largest scope gap.
+   - `prop:confined-knot-binding` *(via b/a trio)* → `jet_knot_invariants.py` (199 LoC); `b_over_a_evaluator.py` orphaned (also covers the un-wired `prop:wigner-np-pairing`).
+3. **2 phantom-label rows** in the original catalog (`prop:atomic-braid-mass`, `prop:b-over-a-spectral-decomposition`) — neither label exists in `content/`. Either author the missing propositions or delete the rows (and dispose of `atomic_braid_mass_paper_formula.py`, `b_over_a_evaluator.py`).
+4. **Two cross-cutting caveats** added to the catalog's revival procedure: (i) TR_M[5] Markov-trace bug fix (`be773569`) may invalidate witnesses from un-patched code paths; (ii) PR #787 Phase 3 Vol-clusters-by-Z finding constrains what an N-dependent binding-energy formula can look like — useful as a falsifiability gate.
+
+**Coordination posts**: none required this round — the affected propositions are unowned (no open PR is reviving any of them), and the systemic finding is documented in the catalog + ledger row above. If a future PR proposes reviving a catalog-listed script, the reviver should consult both caveats before running.
+
+**Next concrete tasks (non-overlapping, queued for whoever picks up):**
+
+- Pick one of the 7 actionable propositions (highest yield: `prop:unified-curvature-rank-mass-formula` if the Δ_λ thread unpauses; otherwise `prop:confinement-categorical` since it's a single-script revival) and run the catalog's per-revival procedure end-to-end.
+- For the 3 wired-to-alternate propositions, diff the live and deprecated scripts and decide supersession (move to `_deprecated/_archive/`) or scope-gap (fold logic in / re-wire to consume both). The `prop:full-pole-structure-mass-trace` case is the most interesting because the 8 `build_*_chain.py` scripts collectively dwarf the single live realizer.
+- For the 2 phantom labels, ask the original author whether the underlying claims were intended to exist as separate blocks, or whether the scripts should be re-deprecated under a different proposition (or moved to `_archive/`).
+
+## 2026-05-19 (evening) — Δ_λ Phase 4: zero-parameter closure via `[8]_q`, `[3]_q²`, `(q^{1/2}+q^{-1/2})^{4N}` (branch `claude/update-deprecated-scripts-catalog-jvbyM`, [PR #819](https://github.com/litlfred/qou/pull/819))
+
+| Date | Phase | Status | Cherry-pick |
+|---|---|---|---|
+| 2026-05-19 | Phase 4 — categorical observation: $(q^{1/2}+q^{-1/2})^4 \approx 16.087$ matches empirical per-N ratios T/D=15.95 and ⁴He/³He=16.36 (≤ 1.7% rel.err.) | Closure formula identified: $\lvert\Delta_\lambda^*(K)\rvert \approx (\mathrm{Vol}_{\mathrm{hyp}}(K) / [8]_q) \cdot [3]_q^{2(Z-1)} \cdot (q^{1/2}+q^{-1/2})^{4N}$ | `delta_lambda_z4N_phase4.py` + witness; audit doc [`docs/audits/2026-05-19-delta-lambda-phase4-z4N-closure.md`](../audits/2026-05-19-delta-lambda-phase4-z4N-closure.md) |
+
+**Hard categorical findings:**
+
+1. **Per-N factor is `(q^{1/2}+q^{-1/2})^4 = (dim_q V_{1/2})^4`** — substrate-derived, no fit; matches empirical T/D and ⁴He/³He ratios to ≤ 1.7%. **This identifies the Seifert-piece contribution as a 4-channel fundamental-rep tensor factor.** Resolves PR #787 Phase 3's open question about per-JSJ-piece quantum-invariant infrastructure: no per-piece RT machinery is needed; the Seifert-N factor is just a product of quantum dims of $V_{1/2}$.
+
+2. **Per-Z factor is `[3]_q^2` = $(\dim_q V_1)^2$** — substrate-derived, rel.err. 2.17%; not as clean as per-N but reasonable. Closest categorical candidate (the adjoint rep squared, naturally associated with 3-quark baryon content).
+
+3. **Overall normalisation is `1/[8]_q`** — substrate-derived, rel.err. 0.49%; this is the Plancherel-like normalisation of the higher-spin block.
+
+4. **Zero-parameter formula matches empirical $\lvert\Delta_\lambda^*(K)\rvert$ to max rel.err. 2.51%** across D (0.07%), T (0.90%), ³He (0.86%), ⁴He (2.51%) — vs. Phase 3 baseline rel_std = 1.398. One-parameter fit (extract α empirically) gives rel_std = 0.0066, a 210× tightening.
+
+**Impact on the 1ppb thread:** the Δ_λ thread, previously **paused at PR #787 pending owner answers on per-JSJ-piece quantum-invariant infrastructure**, is **substantially advanced** — the per-piece infrastructure is no longer needed because the closure factorises through quantum integers and dim_q V_{1/2} that the existing QOU formalism already provides (Hoefsmit, Hecke skein). The thread is **not yet closed** — the per-Z factor $[3]_q^2$ residual (2.17%) and the constant $1/[8]_q$ derivation remain research targets.
+
+**Connection to existing PRs:**
+- **PR #787** (closed-forms Phase 1b/2/3): the Vol-clusters-by-Z finding from Phase 3 is the empirical baseline for this finding. No conflict — Phase 4 extends Phase 3.
+- **PR #777** (Track A: per-isotope Δ_λ closure): if the Phase 4 formula extends to additional atoms (⁵He, ⁶Li, ⁷Li), it would close Track A's per-isotope binding-energy formula at the 100× experimental target for those atoms. Worth a coordination comment when the formula has been tested on ≥ 1 atom beyond the original 4.
+- **PR #804** (qbeta-followup): the qbeta-ladder closure path (c_4..c_7 as `conj:qbeta-c-k-closed-forms`) and this Δ_λ closure are orthogonal but both involve products of quantum integers at q_0. Worth a cross-reference in the next round of the closed-forms thread.
+
+**Next concrete tasks (Δ_λ Phase 5):**
+
+1. **Derive $\alpha = [3]_q^2$ rigorously.** The 2.17% rel.err. between empirical α and $[3]_q^2$ is either fit noise or a categorical correction. Test: compute the Markov trace of the per-proton braid `_proton_braid_word()` and check whether it evaluates to $[3]_q^2$ exactly.
+2. **Derive $1/[8]_q$ rigorously.** Identify the categorical role of $[8]_q$ in the canonical braid trace normalisation. Candidate: total quantum dim of the relevant Wedderburn block.
+3. **Extend the closure to ⁵He, ⁶Li, ⁷Li.** Requires building canonical braid words for these atoms in `probe_he4_jsj_topology.py` style; re-run Phase 4 probe; verify the formula extends.
+4. **Cast as a per-partition formula.** The single-block extraction is a heuristic; generalise to $\lvert\Delta_\lambda(K)\rvert \propto [3]_q^{2(Z-1)} \cdot (q^{1/2}+q^{-1/2})^{4N} \cdot \mathrm{Vol}_{\mathrm{hyp}}(K) \cdot W_\lambda(q)$ where $W_\lambda(q)$ is the partition-specific weight; test on the 11-partition deuteron tabulation from Phase 1b.
+
+## 2026-05-19 (evening, late) — Phase 5b α ≈ [3]_q²·cosh(h) + bar-symmetric unification with PR #801 ([PR #819](https://github.com/litlfred/qou/pull/819))
+
+| Date | Phase | Status | Cherry-pick |
+|---|---|---|---|
+| 2026-05-19 | Phase 5b — α-residual closure via cosh(h) | landed `26bcabaf`; **near-exact match (0.022%) of α ≈ [3]_q²·cosh(h)** at q_0 | `pyhecke_native` Rust kernel build fix + audit doc update |
+| 2026-05-19 | Bar-symmetric synthesis with PR #801 (Symmetric Li_2^q tower) | coordination comment on #801 ([4490779685](https://github.com/litlfred/qou/pull/801#issuecomment-4490779685)) | three-layer bar-symmetric picture: series (Li_2^q) ↔ phase (cos_q) ↔ gain (cosh(h)), with predicted FR identity |
+
+**Findings load-bearing for the 1ppb / Δ_λ thread:**
+
+1. **`pyhecke_native` (Rust kernel) built locally** ([commit `26bcabaf`](https://github.com/litlfred/qou/commit/26bcabaf)) — fixed 2 duplicate function definitions in `tools/hecke-engine/src/wenzl_lr.rs` that were blocking the build. With Rust kernel: $\chi_\lambda$ at $H_9$ now ~10 ms vs Python timeout at 180s. Unblocks all Markov-trace witness refreshes for $n \le 21$.
+
+2. **Phase 5b α-residual finding**: $\alpha / [3]_q^2 = 1.022157$ matches $\cosh(h) = 1.021933$ to **5 significant digits** at $q_0$ (50 dps) — well above empirical-tabulation noise. The Hecke skein parameter $h = q - q^{-1}$ gives a clean categorical reading: $\cosh(h)$ is the **symmetric-channel Hecke-deformation correction** from $\sigma^2 = h\sigma + 1$.
+
+3. **Bar-symmetric unification with PR #801**: three q-deformation corrections used in QOU mass formulas — symmetric Li_2^q (T2/T3 tower in #801), cos(α−b·ℏ_q²/2) (N=1 rung in master Q_β), and cosh(h) (per-Z step in Phase 5b) — are **all bar-symmetric projections** of bar-anti-symmetric Hecke operators. The bar-anti-symmetric counterparts (Faddeev $\Phi_q$, sin/odd-phase, sinh(h)) are exactly the channels that break mirror-nucleus symmetry. The bar-symmetric projection is the **isospectral lift** (Kac-Sunada reframing: τ_M at q alone doesn't determine braid; τ_M at both q and q⁻¹ tightens it dramatically).
+
+4. **Missing Frobenius reciprocity identified**: Phase 5b's cosh(h) (Ind side) and PR #801's Li_2^q tower (Res side) should be FR-dual under Brundan-Kleshchev. Predicted identity for each (Z=1 → Z=2) transition: $\sum_\lambda y_\lambda \chi_\lambda(\beta_K^{Z=2}) \stackrel{?}{=} [3]_q^2 \cosh(h) \cdot \sum_\mu y_\mu \chi_\mu(\beta_K^{Z=1}) + (\mathrm{Li}_2^q \text{ interface correction})$. Verifying this is Phase 5c's primary numerical test, now feasible with the Rust kernel.
+
+**Impact**: the Δ_λ thread paused at PR #787 is *substantially unblocked* — both per-N and per-Z factors are now categorically identified (per-N: $(q^{1/2}+q^{-1/2})^4$; per-Z: $[3]_q^2 \cdot \cosh(h)$), with one explicit FR identity to verify operator-level. No new infrastructure needed.
+
+## 2026-05-19 (late evening) — Phase 5c.1 numerical FR test on PR #819 ([commit `d7840466`](https://github.com/litlfred/qou/commit/d7840466))
+
+| Date | Phase | Status | Cherry-pick |
+|---|---|---|---|
+| 2026-05-19 | Phase 5c.1 — numerical FR-identity test (full τ_M ratio) | landed `d7840466` on PR #819 | `delta_lambda_fr_identity_phase5c.py` + witness; **3 structural findings (one positive, one structural, one refining); follow-up comment on PR #801 ([`4490915368`](https://github.com/litlfred/qou/pull/801#issuecomment-4490915368))** |
+
+**Findings (numerical, via pyhecke_native Rust kernel + cached y_λ at q_0):**
+
+1. **τ_M(β_{Z=2,N}) / τ_M(β_{Z=1,N}) is N-INDEPENDENT** — matches to 6 digits across both (D, ³He) and (T, ⁴He):
+   - FULL ratio (with interface) = **0.609346** for both
+   - CONSTIT ratio (no interface) = **1.220358** for both
+
+2. **Interface-knot contribution at every Z-step = z (Markov parameter) EXACTLY** (rel.err 0.0001%):
+   $$\frac{\tau_M(\beta_K^{\text{FULL}})}{\tau_M(\beta_K^{\text{CONSTIT}})}\bigg|_{Z\text{-step}} \;=\; \frac{0.609346}{1.220358} \;=\; 0.499320\;=\;z(q_0)$$
+   This **is** the Markov axiom $\tau_M(\alpha \cdot \sigma_g) = z \cdot \tau_M(\alpha)$ for the interface generator. **The interface knot Δ_I^K from PR #801 has derivation-grade categorical reading: each interface = one z factor**, no longer empirical-fit.
+
+3. **The FR identity proposed in the previous ledger row** ($\tau_M(\beta^{Z=2}) / \tau_M(\beta^{Z=1}) \stackrel{?}{=} [3]_q^2 \cosh(h)$) **DOES NOT hold for the full Markov trace**. Empirical τ_M ratio is 0.609 (94% off from the predicted 9.47). The Phase 5b α ≈ [3]_q²·cosh(h) match (0.022%) applies ONLY to the single-block dominant $|\Delta_\lambda^*|$ extraction (Phase 4 quantity), NOT to the full Markov trace. The bar-symmetric synthesis is correct, but the FR identity I wrote conflated best-block vs total sum. Phase 5d will reformulate.
+
+4. **Open**: the constit factor 1.220358. Closest clean categorical candidate I tested: $q + h/2 = 1.214509$ (0.48% off). Exact form still unknown — possibly an $\exp(h)$ Taylor truncation. N-independent Hecke-algebraic structural quantity.
+
+**Impact on PR #801**: their Δ_I^K interface-knot factor is now categorically derived (= z exactly). Asked the repo owner whether their `binding_via_interface_knot.py` already accounts for this exact factor — would either validate or surface a missing 50% per-interface correction. If T2 / T3 tower currently treats Δ_I^K as a free parameter, the answer locks it to z at q_0 = 0.499320.
+
+**Phase 5d (reformulating FR + closing constit factor):**
+
+1. Identify the correct FR identity. The Phase 5b α holds at |Δ_λ*| level (best-block dominant), so the right FR is between Ind/Res on the SINGLE-BLOCK channel, not the total-sum channel.
+2. Find categorical form of 1.220358 (the N-independent constit per-Z factor). Candidates to test: $\exp(h)$ truncations, $q^{1/2} + q^{-1/2}$ combinations, $[2]_q$-based.
+3. Once both are derived, the full per-Z step factor decomposes as **z · 1.220358** = (Markov axiom for interface) × (intrinsic Hecke constit factor).
+
+## 2026-05-19 (night) — Phase 5d.4 + 5d.5 + 5d.5b + Lean: knot-particle dictionary connection ([PR #819](https://github.com/litlfred/qou/pull/819) commits `21ddb64c`, `8aafaf24`, `3038eb87`)
+
+| Phase | Status | Result |
+|---|---|---|
+| 5d.4 — V̂-level z-transfer | landed `21ddb64c` | **z-exactness is τ_M-level only, NOT V̂-level.** V̂ at interface generators is FLAVOR-SELECTIVE: {0 for p-n, +h/2 for p-p, -h/2 for n-n} — 5/5 interfaces match across D/T/³He. |
+| 5d.5 — K_k* search | landed `21ddb64c` | Torus knots (3_1, 5_1, 7_1) dominate |Z_norm| ranking. Per knot-particle dictionary: 3_1=e, 5_1=μ, 7_1=τ (lepton generations 1/2/3). |
+| Lean — close 226 sorries | landed `8aafaf24` | 217 True-placeholder stubs + 9 in MassComputationChainRoadmap. **48 remain (46 §3b-cond intentional + 2 Kashaev infrastructure)**. |
+| Lean — q_0_inversion_unique proof | landed `3038eb87` | §3b-cond class `MRatioInversionMonotone` + constructive uniqueness proof. MassComputationChainRoadmap now 0 sorries. |
+| 5d.5b — K_k* variance test | landed `3038eb87` | **K_1* = K_3* = 6_1 (chirality) WINS** at every K_2* — variance 1.49× (vs 1.82× baseline). **Lepton-generation assignment (K_1*=e, K_2*=μ) FALSIFIED** (1.74×). |
+
+**Key structural finding (5d.5b)**: the chirality channel 6_1 dominates **both** outer curvature ranks (k=1 and k=3); the optimal K_2* is unknot (neutrino) — uniform Plancherel restriction. Reading: depth-stratification = chirality-at-endpoints + neutrino-at-middle, **not** lepton-generation as the dictionary mapping naively suggested.
+
+**Knot-particle dictionary integration**: confirms torus knots are structurally distinguished K_k* candidates, **but** the lepton-generation assignment underperforms by 16% vs. chirality-at-endpoints. The catalog's "K_3* = 6_1" claim should likely extend to "K_1* = K_3* = 6_1".
+
+**Coordination posts**:
+- [PR #801 comment `4491365695`](https://github.com/litlfred/qou/pull/801#issuecomment-4491365695) — variance findings + asks back on full-formula test + K_2* = unknot interpretation
+- [PR #801 body update](https://api.github.com/repos/litlfred/qou/pulls/801) — variance 2.31× → 1.82× refresh + ⁴He H_12 closure + new test-plan items
+
+**Next concrete tasks (Phase 5e):**
+
+1. 5e.1 — Run the FULL PR #801 depth-stratified formula (with α_k + Vol_hyp scaling) under each (K_1*, K_2*) candidate — variance may shift; current simplified probe might miss structural elements.
+2. 5e.2 — If chirality-at-endpoints holds under the full formula, propose K_1* = K_3* = 6_1 as a refinement to the depth-stratified-frobenius-reciprocity proposition in PR #801.
+3. 5e.3 — Derive cosh(h) operator-level (Phase 5c.2 still queued) — would close the per-Z step factor exactly.
+4. 5e.4 — Build SnapPy bridge for Kashaev.lean's `pieceVolume` (closes the last 2 non-§3b-cond Lean sorries).

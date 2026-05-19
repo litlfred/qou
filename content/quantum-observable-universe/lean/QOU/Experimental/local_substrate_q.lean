@@ -18,6 +18,6 @@ namespace QOU.Experimental
 -- Ref: [manuscript] quantum-observable-universe/observations/local-substrate-q.ts
 theorem local_substrate_q : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.Experimental

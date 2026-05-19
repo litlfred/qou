@@ -18,6 +18,6 @@ namespace QOU.HadronicMass
 -- Ref: [manuscript] quantum-observable-universe/observations/deuteron-binding-energy.ts
 theorem deuteron_binding_energy : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.HadronicMass

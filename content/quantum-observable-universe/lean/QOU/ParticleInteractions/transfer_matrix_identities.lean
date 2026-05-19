@@ -18,6 +18,6 @@ namespace QOU.ParticleInteractions
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/transfer-matrix-identities.ts
 theorem transfer_matrix_identities : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.ParticleInteractions

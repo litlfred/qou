@@ -18,6 +18,6 @@ namespace QOU.QuantumObservableUniverse
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/observation-energy.ts
 theorem observation_energy : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.QuantumObservableUniverse

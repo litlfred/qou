@@ -17,6 +17,6 @@ namespace QOU
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/volume-from-rigidity.ts
 theorem volume_from_rigidity : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU

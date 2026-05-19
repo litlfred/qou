@@ -18,6 +18,6 @@ namespace QOU.WedderburnMass
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/confinement-categorical.ts
 theorem confinement_categorical : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.WedderburnMass

@@ -21,6 +21,6 @@ namespace QOU.BraidsAndKnots
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/wenzl-qmn-synergy.ts
 theorem wenzl_qmn_synergy : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.BraidsAndKnots

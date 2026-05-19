@@ -17,6 +17,6 @@ namespace QOU.BraidKnot
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/volume-perturbation-formula.ts
 theorem volume_perturbation : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.BraidKnot

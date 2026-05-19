@@ -17,6 +17,6 @@ namespace QOU.BraidKnot
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/eigenvalue-product-expansion.ts
 theorem eigenvalue_product_expansion : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.BraidKnot

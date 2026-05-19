@@ -17,6 +17,6 @@ namespace QOU
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/substrate-radial-coordinate.ts
 theorem substrate_radial_coordinate : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU

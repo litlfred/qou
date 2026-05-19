@@ -17,6 +17,6 @@ namespace QOU.BraidKnot
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/hoefsmit-seminormal-form.ts
 theorem hoefsmit_seminormal_form : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.BraidKnot

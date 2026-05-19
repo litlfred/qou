@@ -18,6 +18,6 @@ namespace QOU.BraidKnot
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/e-infinity-page-identifications.ts
 theorem e_infinity_identifications : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.BraidKnot

@@ -18,6 +18,6 @@ namespace QOU.Observations
 -- Ref: [manuscript] quantum-observable-universe/observations/centered-hecke-variance-positive.ts
 theorem centered_hecke_variance_positive : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.Observations

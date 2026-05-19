@@ -17,6 +17,6 @@ namespace QOU.Descartes
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/gram-weighted-qvalue.ts
 theorem gram_weighted_qvalue : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.Descartes

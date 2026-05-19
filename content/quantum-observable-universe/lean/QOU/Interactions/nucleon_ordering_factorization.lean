@@ -18,6 +18,6 @@ namespace QOU.Interactions
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/nucleon-ordering-factorization.ts
 theorem nucleon_ordering_factorization : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.Interactions

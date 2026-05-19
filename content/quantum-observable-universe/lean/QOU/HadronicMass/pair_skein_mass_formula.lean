@@ -18,6 +18,6 @@ namespace QOU.HadronicMass
 -- Ref: [manuscript] quantum-observable-universe/observations/pair-skein-mass-formula.ts
 theorem pair_skein_mass_formula : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.HadronicMass

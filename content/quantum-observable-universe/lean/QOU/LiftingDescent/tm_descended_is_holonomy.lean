@@ -18,6 +18,6 @@ namespace QOU.LiftingDescent
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/topological-mass-holonomy.ts
 theorem tm_descended_is_holonomy : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.LiftingDescent

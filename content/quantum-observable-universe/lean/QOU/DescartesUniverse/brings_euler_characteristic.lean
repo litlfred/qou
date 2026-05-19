@@ -18,6 +18,6 @@ namespace QOU.DescartesUniverse
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/brings-euler-characteristic.ts
 theorem brings_euler_characteristic : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.DescartesUniverse

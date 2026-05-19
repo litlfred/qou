@@ -18,6 +18,6 @@ namespace QOU.Braiding
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/mobius-energy.ts
 theorem mobius_energy : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.Braiding

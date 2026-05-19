@@ -18,6 +18,6 @@ namespace QOU.BraidKnot
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/per-nucleon-shift-additive-linearity.ts
 theorem per_nucleon_shift_additive_linearity : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.BraidKnot

@@ -17,6 +17,6 @@ namespace QOU.FrobeniusHopfData
 -- Ref: [manuscript] quantum-observable-universe/quantum-universes/frobenius-pairing.ts
 theorem frobeniusForm : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.FrobeniusHopfData

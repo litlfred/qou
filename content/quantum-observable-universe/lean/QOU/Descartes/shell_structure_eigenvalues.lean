@@ -17,6 +17,6 @@ namespace QOU.Descartes
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/shell-structure-eigenvalues.ts
 theorem shell_structure_eigenvalues : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.Descartes

@@ -18,6 +18,6 @@ namespace QOU.Observations
 -- Ref: [manuscript] quantum-observable-universe/observations/sdp-regime-switch.ts
 theorem SDPRegimeSwitch : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.Observations

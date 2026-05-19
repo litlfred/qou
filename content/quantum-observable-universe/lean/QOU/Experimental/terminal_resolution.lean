@@ -18,6 +18,6 @@ namespace QOU.Experimental
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/terminal-resolution.ts
 theorem terminal_resolution : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.Experimental

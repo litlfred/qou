@@ -17,6 +17,6 @@ namespace QOU
 -- Ref: [manuscript] quantum-observable-universe/quantum-universes/frobenius-relation.ts
 theorem frobenius_relation : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU

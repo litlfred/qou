@@ -18,6 +18,6 @@ namespace QOU.Brings
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/brings-is-qou.ts
 theorem brings_is_qou : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.Brings

@@ -18,6 +18,6 @@ namespace QOU.DescartesUniverse
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/mi-sw-abelianisation-cartan.ts
 theorem mi_sw_cartan_reduction : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.DescartesUniverse

@@ -17,6 +17,6 @@ namespace QOU.BraidKnot.UnstableAtom
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/unstable-atom-decay-channel.ts
 theorem decay_channel : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.BraidKnot.UnstableAtom

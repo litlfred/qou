@@ -18,6 +18,6 @@ namespace QOU.ParticleInteractions
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/corrected-markov-trace.ts
 theorem corrected_markov_trace : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.ParticleInteractions

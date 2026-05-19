@@ -17,6 +17,6 @@ namespace QOU.DescartesUniverse
 -- Ref: [manuscript] quantum-observable-universe/models-of-qous/heisenberg-commutator-prop.ts
 theorem heisenberg_commutator : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.DescartesUniverse

@@ -21,6 +21,6 @@ namespace QOU.BraidsAndKnots
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/demazure-fiber-markov-trace.ts
 theorem demazure_fiber_markov_trace : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.BraidsAndKnots

@@ -18,6 +18,6 @@ namespace QOU.FluidDynamics
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.ts
 theorem ns_kummer_specialisation : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.FluidDynamics

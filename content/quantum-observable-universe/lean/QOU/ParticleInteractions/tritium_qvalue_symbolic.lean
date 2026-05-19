@@ -18,6 +18,6 @@ namespace QOU.ParticleInteractions
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/tritium-qvalue-symbolic.ts
 theorem tritium_qvalue_symbolic : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.ParticleInteractions

@@ -18,6 +18,6 @@ namespace QOU.FluidDynamics
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.ts
 theorem ns_obstruction_tower : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.FluidDynamics

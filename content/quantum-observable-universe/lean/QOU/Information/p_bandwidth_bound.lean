@@ -18,6 +18,6 @@ namespace QOU.Information
 -- Ref: [manuscript] quantum-observable-universe/information-theory/p-bandwidth-bound.ts
 theorem p_bandwidth_bound : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.Information

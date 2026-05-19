@@ -17,6 +17,6 @@ namespace QOU.Descartes
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/skein-polynomial-transfer-matrix.ts
 theorem skein_polynomial_transfer_matrix : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.Descartes

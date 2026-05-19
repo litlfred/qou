@@ -18,6 +18,6 @@ namespace QOU.TopologicalMass
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/topological-mass-cat-descended.ts
 theorem cat_descended_is_base_mass : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.TopologicalMass

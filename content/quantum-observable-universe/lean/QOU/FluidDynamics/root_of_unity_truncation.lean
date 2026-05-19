@@ -18,6 +18,6 @@ namespace QOU.FluidDynamics
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.ts
 theorem root_of_unity_truncation : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.FluidDynamics

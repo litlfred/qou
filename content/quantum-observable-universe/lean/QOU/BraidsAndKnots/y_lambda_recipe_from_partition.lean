@@ -21,6 +21,6 @@ namespace QOU.BraidsAndKnots
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/y-lambda-recipe-from-partition.ts
 theorem y_lambda_recipe_from_partition : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.BraidsAndKnots

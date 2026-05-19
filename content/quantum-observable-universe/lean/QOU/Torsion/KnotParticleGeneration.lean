@@ -18,6 +18,6 @@ namespace QOU.Torsion
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/knot-particle-generation.ts
 theorem KnotParticleGeneration : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.Torsion

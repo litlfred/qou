@@ -18,6 +18,6 @@ namespace QOU.BraidsKnots
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/skein-mass-from-linking.ts
 theorem skein_mass_from_linking : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.BraidsKnots

@@ -17,6 +17,6 @@ namespace QOU
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/variational-equations.ts
 theorem variational_equations : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU

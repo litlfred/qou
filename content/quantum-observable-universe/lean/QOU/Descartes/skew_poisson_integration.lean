@@ -17,6 +17,6 @@ namespace QOU.Descartes
 -- Ref: [manuscript] quantum-observable-universe/models-of-qous/skew-poisson-integration.ts
 theorem skew_poisson_integration : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.Descartes

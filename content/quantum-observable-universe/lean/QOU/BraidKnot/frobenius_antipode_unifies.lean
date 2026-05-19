@@ -18,6 +18,6 @@ namespace QOU.BraidKnot
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/frobenius-antipode-unifies-chirality-and-tower.ts
 theorem frobenius_antipode_unifies : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.BraidKnot

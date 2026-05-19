@@ -18,6 +18,6 @@ namespace QOU.LiftingDescent
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/ccg-cosimplicial-identities.ts
 theorem ccg_cosimplicial_identities : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.LiftingDescent

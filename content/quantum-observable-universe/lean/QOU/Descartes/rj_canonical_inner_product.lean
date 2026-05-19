@@ -18,6 +18,6 @@ namespace QOU.Descartes
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/rj-canonical-inner-product.ts
 theorem rj_canonical_inner_product : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.Descartes

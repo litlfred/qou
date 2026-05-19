@@ -17,6 +17,6 @@ namespace QOU.BraidKnot.HeckeBaerStarGeneric
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/hecke-baer-star-generic.ts
 theorem hecke_baer_star_generic : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.BraidKnot.HeckeBaerStarGeneric

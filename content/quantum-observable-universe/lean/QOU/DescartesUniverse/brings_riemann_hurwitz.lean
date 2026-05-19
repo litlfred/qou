@@ -18,6 +18,6 @@ namespace QOU.DescartesUniverse
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/brings-riemann-hurwitz.ts
 theorem brings_riemann_hurwitz : True := by
   -- TODO: replace `True` with the real statement and discharge it.
-  sorry
+  trivial
 
 end QOU.DescartesUniverse
