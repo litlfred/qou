@@ -24,7 +24,7 @@ the QOU framework:
 
 ## References
 
-- [leitnerpawloski2004] https://arxiv.org/abs/math/0409565
+- [pawlowski-leitner-rep] (see content/schema/references.ts — TODO bib lookup)
 - [kock2004] https://doi.org/10.1017/CBO9780511615443
 - [manuscript] §1, Vectors, hadrons, and the Pawlowski–Leitner basis
 -/
@@ -179,7 +179,7 @@ def killingFormRatio : ℤ := -2
     when `n ≡ 2j (mod 2)` and `n ≥ 2j`, and zero otherwise.
 
     LaTeX: `\label{prop:pawlowski-leitner-basis}`
-    Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565 -/
+    Ref: [pawlowski-leitner-rep] PL inner product / intertwiner basis -/
 noncomputable def pawLeiDim (twice_j : ℕ) (n : ℕ) : ℕ :=
   if n % 2 ≠ twice_j % 2 then 0
   else if n < twice_j then 0
@@ -211,7 +211,7 @@ theorem pawLei_minimal_dim (twice_j : ℕ) :
     tableaux of shape `λ ⊢ n` with at most 2 rows and
     `λ₁ - λ₂ = 2j`.
 
-    Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565 -/
+    Ref: [pawlowski-leitner-rep] PL inner product / intertwiner basis -/
 structure PawLeiBasis where
   /-- The spin label (as twice_j). -/
   twice_j : ℕ
@@ -235,14 +235,14 @@ structure PawLeiBasis where
     this pairing: `⟨T_λ, T_μ⟩_PL = δ_{λμ} ‖T_λ‖²`.
 
     LaTeX: `\label{prop:pawlowski-leitner-inner-product}`
-    Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565 -/
+    Ref: [pawlowski-leitner-rep] PL inner product / intertwiner basis -/
 structure PawLeiInnerProduct where
   /-- The underlying basis data. -/
   basis : PawLeiBasis
   /-- The norm-squared of each basis vector (positive rational). -/
   normSq : Fin basis.num_basis → ℝ
   /-- All norms are positive. -/
-  -- Ref: [leitnerpawloski2004] https://arxiv.org/abs/math/0409565
+  -- Ref: [pawlowski-leitner-rep] PL inner product / SU(2) intertwiner basis — TODO bib lookup
   normSq_pos : ∀ i, normSq i > 0
 
 /-- The **orthogonal inner product** induced by the PL basis.

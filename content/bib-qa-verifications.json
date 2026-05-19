@@ -566,11 +566,11 @@
       "id": "habiro2002",
       "status": "verified-clean",
       "local_pdf": "uploads/habiro2002.pdf",
-      "verified_at": "2026-05-19T16:14:00Z",
+      "verified_at": "2026-05-19T18:01:00Z",
       "verified_by": "Claude (claude-opus-4-7)",
       "fixes_applied": 4,
       "fix_commit": "(this commit)",
-      "note": "4 bare-URL Refs upgraded with title+publisher form. | PDF verified: Habiro, \"Bottom tangles and universal invariants,\" Algebr. Geom. Topol. 6 (2006) (arXiv:math/0505219). Note: bib `issued` says 2008 but PDF says 2006; same paper, journal published in 2006."
+      "note": "4 bare-URL Refs upgraded with title+publisher form. | PDF verified: Habiro, \"Bottom tangles and universal invariants,\" Algebr. Geom. Topol. 6 (2006) (arXiv:math/0505219). Note: bib `issued` says 2008 but PDF says 2006; same paper, journal published in 2006. | UPDATE 2026-05-19 18:01: year fixed 2008 \u2192 2006 (published Algebr. Geom. Topol. 6) per validate-bib year-mismatch."
     },
     {
       "id": "reshetikhin1991",
@@ -1181,6 +1181,56 @@
       "fixes_applied": 5,
       "fix_commit": "(this commit)",
       "note": "Fulton & Harris, 'Representation Theory: A First Course' (Springer GTM 129, 1991). New bib entry split from fulton1991 (which stays as 'Young Tableaux' LMS Student Texts 35). 5 .lean Ref lines in baryon-product-from-alt.lean re-keyed from fulton1991 \u2192 fulton-harris1991 (all reference Repn Theory \u00a72 / \u00a72.1 Frobenius character)."
+    },
+    {
+      "id": "chlouveraki2016-hdr",
+      "status": "pending-placement",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T18:01:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 0,
+      "fix_commit": "(this commit)",
+      "note": "TODO bib lookup (Chlouveraki HDR thesis 2016). 4 .lean sites cite 'HDR Theorem 6.20' but I haven't re-keyed them yet (need to find specific sites). Entry exists; sites can be updated when HDR metadata is filled in."
+    },
+    {
+      "id": "kashiwara1990-duke",
+      "status": "pending-placement",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T18:01:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 0,
+      "fix_commit": "(this commit)",
+      "note": "TODO bib lookup. Placeholder for kashiwara DOI 10.1215/S0012-7094-90-06120-X cited inline in QOU .lean."
+    },
+    {
+      "id": "kashiwara1990-cmp2",
+      "status": "pending-placement",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T18:01:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 0,
+      "fix_commit": "(this commit)",
+      "note": "TODO bib lookup. Placeholder for kashiwara DOI 10.1007/BF02100009 cited inline in QOU .lean."
+    },
+    {
+      "id": "wenzl1988b",
+      "status": "pending-placement",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T18:01:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 0,
+      "fix_commit": "(this commit)",
+      "note": "TODO bib lookup. Placeholder for wenzl1988 DOI 10.1007/BF01393839 (distinct from wenzl1988 = BF01404457). Inline-DOI sites in delta-q-decoration.lean reference this paper."
+    },
+    {
+      "id": "pawlowski-leitner-rep",
+      "status": "verified-clean",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T18:01:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 0,
+      "fix_commit": "(this commit)",
+      "note": "Re-keyed 8 QOU citation sites (pawlowski-leitner-inner-product.lean + RepresentationTheory.lean) from leitnerpawloski2004. Bib metadata TODO (PL inner product + SU(2) intertwiner basis \u2014 possibly Paw\u0142owski's PhD thesis)."
     }
   ]
 }

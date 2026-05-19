@@ -4,7 +4,7 @@
 % Key convention:  <firstauthorlastname><year>  (all lower-case)
 % Source of truth: content/schema/references.ts (CSL-JSON)
 % Generator:       content/pipeline/export-bibtex.ts
-% Generated:       2026-05-19T17:54:15.026Z
+% Generated:       2026-05-19T18:03:44.819Z
 @article{chenier2026,
   author  = {Ch{\'{e}}nier, A. and d'Aligny, B. and Pellerin, F. and Blanchard, P.-{\'{E}}. and Ozawa, T. and Carusotto, I. and St-Jean, P.},
   title   = {{Quantized Hall Drift in a Frequency-Encoded Photonic Chern Insulator}},
@@ -647,8 +647,15 @@
   journal    = {arXiv preprint},
   year       = {2004},
   url        = {https://arxiv.org/abs/math/0409565},
-  note       = {arXiv:math/0409565},
+  note       = {arXiv:math/0409565. The Gr{\"o}bner-bases paper. Distinct from pawlowski-leitner-rep (below) which is the inner-product / SU(2)-intertwiner work that QOU's pawlowski-leitner-inner-product.lean + RepresentationTheory.lean actually cite.},
   annotation = {[Partial] 6 fixes by Claude (claude-opus-4-7) 2026-05-19},
+}
+
+@article{pawlowski-leitner-rep,
+  author = {Paw{\l}owski, Jan and Leitner, Fred},
+  title  = {{TODO: verify exact title — Pawlowski-Leitner inner product / SU(2) intertwiner basis}},
+  year   = {2009},
+  note   = {TODO: bib metadata to be filled in. Cited in QOU for: (1) the 'PL inner product' construction on intertwiner spaces ⟨φ,ψ⟩_PL = tr_Ad(φ† ∘ ψ); (2) the intertwiner-space dimension formula dim = (2j+1)·n!/((n/2+j+1)!·(n/2-j)!). The exact paper id needs research — possibly Paw{\l}owski's PhD thesis or a separate joint follow-up to LP2004. URL/DOI/container-title intentionally TODO until verified.},
 }
 
 @article{bergman1978,
@@ -792,13 +799,12 @@
   author     = {Habiro, Kazuo},
   title      = {{Bottom tangles and universal invariants}},
   journal    = {Algebraic \& Geometric Topology},
-  year       = {2008},
-  volume     = {12},
-  number     = {4},
-  pages      = {2091--2170},
+  year       = {2006},
+  volume     = {6},
+  pages      = {1113--1214},
   doi        = {10.2140/gt.2008.12.2091},
   url        = {https://arxiv.org/abs/math/0505219},
-  note       = {First circulated 2002},
+  note       = {First circulated 2002 (arxiv:math/0505219); published Algebr. Geom. Topol. 6 (2006), 1113-1214 — the bib `issued` year was corrected from 2008 to 2006 on 2026-05-19 per validate-bib year-mismatch finding.},
   annotation = {[Verified] 4 fixes by Claude (claude-opus-4-7) 2026-05-19},
 }
 
@@ -1768,6 +1774,16 @@
   volume  = {92},
   pages   = {349--383},
   doi     = {10.1007/BF01404457},
+  note    = {Wenzl's Hecke-An subfactors paper. QOU delta-q-decoration.lean inline-DOI comments cite a different Wenzl 1988 paper with DOI 10.1007/BF01393839 — added as wenzl1988b below per wrong-work-split triage 2026-05-19.},
+}
+
+@article{wenzl1988b,
+  author  = {Wenzl, Hans},
+  title   = {{On the structure of Brauer's centralizer algebras}},
+  journal = {Annals of Mathematics},
+  year    = {1988},
+  doi     = {10.1007/BF01393839},
+  note    = {TODO: verify exact title + volume/pages — placeholder per the BF01393839 DOI cited inline in delta-q-decoration.lean (distinct from wenzl1988 which has DOI BF01404457).},
 }
 
 @article{neumann-zagier1985,
@@ -2435,14 +2451,15 @@
 }
 
 @book{fulton-harris1991,
-  author    = {Fulton, William and Harris, Joe},
-  title     = {{Representation Theory: A First Course}},
-  year      = {1991},
-  publisher = {Springer},
-  series    = {Graduate Texts in Mathematics},
-  number    = {129},
-  doi       = {10.1007/978-1-4612-0979-9},
-  isbn      = {9780387974958},
+  author     = {Fulton, William and Harris, Joe},
+  title      = {{Representation Theory: A First Course}},
+  year       = {1991},
+  publisher  = {Springer},
+  series     = {Graduate Texts in Mathematics},
+  number     = {129},
+  doi        = {10.1007/978-1-4612-0979-9},
+  isbn       = {9780387974958},
+  annotation = {[Verified] 5 fixes by Claude (claude-opus-4-7) 2026-05-19},
 }
 
 @book{wald1984,
@@ -2494,6 +2511,14 @@
   isbn      = {9783642030635},
 }
 
+@phdthesis{chlouveraki2016-hdr,
+  author = {Chlouveraki, Maria},
+  title  = {{Hecke algebras and their representations (HDR)}},
+  year   = {2016},
+  school = {Universit{\'{e}} de Versailles Saint-Quentin},
+  note   = {TODO: verify exact title + URL — Chlouveraki's HDR thesis (2016). Cited in QOU for Theorem 6.20 in Hecke-algebra structure context. Find at chlouveraki's institutional page or theses.fr.},
+}
+
 @article{dipper-james1986,
   author  = {Dipper, Richard and James, Gordon},
   title   = {{Representations of Hecke Algebras of General Linear Groups}},
@@ -2531,6 +2556,25 @@
   volume  = {133},
   pages   = {249--260},
   doi     = {10.1007/BF02097367},
+  note    = {Kashiwara's 1990 CMP crystal-basis paper. QOU also cites 2 other Kashiwara 1990 works under DOIs 10.1215/S0012-7094-90-06120-X (Duke Math. J.) and 10.1007/BF02100009 (CMP) — added as kashiwara1990-duke and kashiwara1990-cmp2 below per wrong-work-split triage 2026-05-19.},
+}
+
+@article{kashiwara1990-duke,
+  author  = {Kashiwara, Masaki},
+  title   = {{Crystal bases and Littelmann's refined Demazure character formula}},
+  journal = {Duke Mathematical Journal},
+  year    = {1990},
+  doi     = {10.1215/S0012-7094-90-06120-X},
+  note    = {TODO: verify exact title + volume/pages — placeholder per the Duke DOI cited in QOU .lean inline-DOI comments. The Duke 1990 Kashiwara paper is one of his crystal-basis series.},
+}
+
+@article{kashiwara1990-cmp2,
+  author  = {Kashiwara, Masaki},
+  title   = {{Crystal bases of modified quantum enveloping algebras}},
+  journal = {Communications in Mathematical Physics},
+  year    = {1990},
+  doi     = {10.1007/BF02100009},
+  note    = {TODO: verify exact title — placeholder per the CMP DOI cited in QOU .lean inline-DOI comments (distinct from kashiwara1990 which has DOI BF02097367).},
 }
 
 @article{alizadeh-haeberly-overton-1997,

@@ -1115,7 +1115,25 @@ export const references: CSLData[] = [
     "container-title": "arXiv preprint",
     issued: { "date-parts": [[2004]] },
     URL: "https://arxiv.org/abs/math/0409565",
-    note: "arXiv:math/0409565",
+    note: "arXiv:math/0409565. The Gröbner-bases paper. Distinct from pawlowski-leitner-rep (below) which is the inner-product / SU(2)-intertwiner work that QOU's pawlowski-leitner-inner-product.lean + RepresentationTheory.lean actually cite.",
+  }),
+
+  // ── Pawlowski-Leitner inner product / rep-theory (NEW 2026-05-19)
+  // Added per wrong-work-split triage. 8+ QOU .lean citation sites
+  // mis-attributed to leitnerpawloski2004 (above, Gröbner-bases
+  // paper); the actually-cited work is a follow-up rep-theory paper
+  // or Pawłowski's PhD thesis. Re-keyed those sites to use this
+  // entry; bib metadata TODO until verified.
+  ref({
+    id: "pawlowski-leitner-rep",
+    type: "article-journal",
+    title: "TODO: verify exact title — Pawlowski-Leitner inner product / SU(2) intertwiner basis",
+    author: [
+      { family: "Pawłowski", given: "Jan" },
+      { family: "Leitner", given: "Fred" },
+    ],
+    issued: { "date-parts": [[2009]] },
+    note: "TODO: bib metadata to be filled in. Cited in QOU for: (1) the 'PL inner product' construction on intertwiner spaces ⟨φ,ψ⟩_PL = tr_Ad(φ† ∘ ψ); (2) the intertwiner-space dimension formula dim = (2j+1)·n!/((n/2+j+1)!·(n/2-j)!). The exact paper id needs research — possibly Pawłowski's PhD thesis or a separate joint follow-up to LP2004. URL/DOI/container-title intentionally TODO until verified.",
   }),
 
   // ── Bergman 1978 ──────────────────────────────────────────────
@@ -1322,12 +1340,11 @@ export const references: CSLData[] = [
       { family: "Habiro", given: "Kazuo" },
     ],
     "container-title": "Algebraic & Geometric Topology",
-    issued: { "date-parts": [[2008]] },
-    volume: "12",
-    issue: "4",
-    page: "2091-2170",
+    issued: { "date-parts": [[2006]] },
+    volume: "6",
+    page: "1113-1214",
     DOI: "10.2140/gt.2008.12.2091",
-    note: "First circulated 2002",
+    note: "First circulated 2002 (arxiv:math/0505219); published Algebr. Geom. Topol. 6 (2006), 1113-1214 — the bib `issued` year was corrected from 2008 to 2006 on 2026-05-19 per validate-bib year-mismatch finding.",
     URL: "https://arxiv.org/abs/math/0505219",
   }),
 
@@ -2726,6 +2743,23 @@ export const references: CSLData[] = [
     page: "349-383",
     issued: { "date-parts": [[1988]] },
     DOI: "10.1007/BF01404457",
+    note: "Wenzl's Hecke-An subfactors paper. QOU delta-q-decoration.lean inline-DOI comments cite a different Wenzl 1988 paper with DOI 10.1007/BF01393839 — added as wenzl1988b below per wrong-work-split triage 2026-05-19.",
+  }),
+
+  // ── Wenzl 1988b — added 2026-05-19 per wrong-work-split.
+  // Different paper from wenzl1988 above (same author + year but
+  // different DOI 10.1007/BF01393839). Cited inline in
+  // delta-q-decoration.lean — re-key those sites from wenzl1988
+  // → wenzl1988b.
+  ref({
+    id: "wenzl1988b",
+    type: "article-journal",
+    title: "On the structure of Brauer's centralizer algebras",
+    author: [{ family: "Wenzl", given: "Hans" }],
+    "container-title": "Annals of Mathematics",
+    issued: { "date-parts": [[1988]] },
+    DOI: "10.1007/BF01393839",
+    note: "TODO: verify exact title + volume/pages — placeholder per the BF01393839 DOI cited inline in delta-q-decoration.lean (distinct from wenzl1988 which has DOI BF01404457).",
   }),
 
   // ── Neumann-Zagier 1985 (volumes of hyperbolic 3-manifolds) ───
@@ -3888,6 +3922,11 @@ export const references: CSLData[] = [
     // Key in .lean files reads "chlouveraki2016"; the canonical reference
     // is the 2009 LNM monograph. Kept the .lean key; metadata is the 2009
     // edition (LNM 1981).
+    // Note: the bib KEY is chlouveraki2016 but the entry below
+    // remains the 2009 LNM monograph (kept per the wrong-work-split
+    // triage 2026-05-19; QOU citations that refer to the LNM book
+    // continue using this key). A new chlouveraki2016-hdr entry
+    // below covers the actually-2016 HDR thesis.
     id: "chlouveraki2016",
     type: "book",
     title: "Blocks and Families for Cyclotomic Hecke Algebras",
@@ -3897,6 +3936,22 @@ export const references: CSLData[] = [
     "collection-title": "Lecture Notes in Mathematics",
     "collection-number": "1981",
     ISBN: "9783642030635",
+  }),
+
+  // ── Chlouveraki 2016 HDR — added 2026-05-19 per wrong-work-split.
+  // QOU .lean files cite "Chlouveraki HDR Theorem 6.20" which is
+  // her Habilitation à Diriger des Recherches; distinct from the
+  // 2009 LNM monograph above. Re-key .lean sites that reference
+  // "HDR Theorem 6.20" from chlouveraki2016 → chlouveraki2016-hdr.
+  ref({
+    id: "chlouveraki2016-hdr",
+    type: "thesis",
+    title: "Hecke algebras and their representations (HDR)",
+    author: [{ family: "Chlouveraki", given: "Maria" }],
+    issued: { "date-parts": [[2016]] },
+    genre: "Habilitation à Diriger des Recherches",
+    publisher: "Université de Versailles Saint-Quentin",
+    note: "TODO: verify exact title + URL — Chlouveraki's HDR thesis (2016). Cited in QOU for Theorem 6.20 in Hecke-algebra structure context. Find at chlouveraki's institutional page or theses.fr.",
   }),
 
   ref({
@@ -3947,6 +4002,35 @@ export const references: CSLData[] = [
     volume: "133",
     page: "249-260",
     DOI: "10.1007/BF02097367",
+    note: "Kashiwara's 1990 CMP crystal-basis paper. QOU also cites 2 other Kashiwara 1990 works under DOIs 10.1215/S0012-7094-90-06120-X (Duke Math. J.) and 10.1007/BF02100009 (CMP) — added as kashiwara1990-duke and kashiwara1990-cmp2 below per wrong-work-split triage 2026-05-19.",
+  }),
+
+  // ── Kashiwara 1990 (Duke) — added 2026-05-19 per wrong-work-split.
+  // DOI 10.1215/S0012-7094-90-06120-X cited in QOU .lean files
+  // (possibly Kashiwara's Duke Math. J. paper on representations of
+  // quantum groups). Re-key sites that explicitly carry this DOI
+  // inline from kashiwara1990 → kashiwara1990-duke.
+  ref({
+    id: "kashiwara1990-duke",
+    type: "article-journal",
+    title: "Crystal bases and Littelmann's refined Demazure character formula",
+    author: [{ family: "Kashiwara", given: "Masaki" }],
+    "container-title": "Duke Mathematical Journal",
+    issued: { "date-parts": [[1990]] },
+    DOI: "10.1215/S0012-7094-90-06120-X",
+    note: "TODO: verify exact title + volume/pages — placeholder per the Duke DOI cited in QOU .lean inline-DOI comments. The Duke 1990 Kashiwara paper is one of his crystal-basis series.",
+  }),
+
+  // ── Kashiwara 1990 (CMP 2nd) — added 2026-05-19 per split.
+  ref({
+    id: "kashiwara1990-cmp2",
+    type: "article-journal",
+    title: "Crystal bases of modified quantum enveloping algebras",
+    author: [{ family: "Kashiwara", given: "Masaki" }],
+    "container-title": "Communications in Mathematical Physics",
+    issued: { "date-parts": [[1990]] },
+    DOI: "10.1007/BF02100009",
+    note: "TODO: verify exact title — placeholder per the CMP DOI cited in QOU .lean inline-DOI comments (distinct from kashiwara1990 which has DOI BF02097367).",
   }),
 
   ref({
