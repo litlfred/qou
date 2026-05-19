@@ -876,6 +876,7 @@ export default chapter({
         "alpha-k-derivation-procedure",
         "alpha-k-categorical-closure",
         "chi-lambda-w0-sign-weighting",
+        "averaging-resonance-rule",
         "atom-knot-mass-derivation",
         "atom-knot-mass-derivation-proof",
         "joint-tower-sdp-confinement",
