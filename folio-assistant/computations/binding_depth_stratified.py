@@ -3,6 +3,23 @@ binding_depth_stratified.py — depth-stratified α_k · Φ_k formula
 on the same H_{3A}(q), with α_{k≥4} = m_e · 8G damping per
 prop:plancherel-term-7-formulation.
 
+CATEGORICAL STRUCTURE — KNOT CONVOLUTION OPERATOR (NOT TENSOR PRODUCT):
+
+Per def:ew-interface-knot + the knot-indexed-convolution-grid bi-
+filtration: the atomic braid is the q-shuffle CONVOLUTION
+
+    β_K = T_constit^K  *_q  Δ_I^K  ∈ H_{3A}(q)
+
+where T_constit^K is the disjoint Hecke product of nucleon braids on
+disjoint strand-blocks AND Δ_I^K is the interface-knot operator applied
+via Hecke multiplication. BOTH configurations live in the SAME H_{3A}
+algebra with the SAME Wedderburn weights ~w_λ — verified at runtime
+below (body identical, only interface gens differ).
+
+This is STRUCTURALLY DISTINCT from a tensor-product baseline
+(Z · m(β_p)_H_3 + N · m(β_n)_H_3 in independent H_3 algebras) which
+gives 3.96× variance + WRONG SIGN on T/³He (rejected on PR #801).
+
 Per user direction (2026-05-19, see PR #814 cross-reference):
 the heavy-atom variance issue in binding_block_multiplicative.py
 (T3 pair-blowup grows as A², AME as A) is structurally addressed
@@ -113,9 +130,35 @@ def compute_atom_binding(Z: int, N: int) -> dict:
     Computes chi^λ for both atom (include_inter=True) and free
     (include_inter=False) configs at H_{3A}, applies α_k · Φ_k,
     takes the difference.
+
+    STRUCTURE CHECK: both configs use the SAME H_{3A} algebra
+    (convolution structure via atom_braid_word_3A); only difference
+    is whether interface generators (positions 3k+2 for k=0..A-2)
+    carry the Δ_I^K crossings (atom) or are empty (free / constituent
+    vacuum). This is the q-shuffle convolution structure, NOT a
+    tensor product over independent H_3 algebras.
     """
+    from mass_at_3A_proper import atom_braid_word_3A
     A = Z + N
     n_strands = 3 * A
+
+    # Runtime verification: body of atom and free braid words are
+    # identical; only difference is interface-gen crossings.
+    w_atom = atom_braid_word_3A(Z, N, include_inter=True)
+    w_free = atom_braid_word_3A(Z, N, include_inter=False)
+    body_atom = [(c, d, g) for c, d, g in w_atom
+                  if g % 3 != 2 or g >= n_strands - 1]
+    body_free = [(c, d, g) for c, d, g in w_free
+                  if g % 3 != 2 or g >= n_strands - 1]
+    if body_atom != body_free:
+        raise RuntimeError(
+            f"Body word differs between atom and free configs for "
+            f"(Z={Z}, N={N}). Expected only interface-gen difference; "
+            f"got body diff = {len(body_atom) - len(body_free)} entries. "
+            "This breaks the q-shuffle convolution structure — "
+            "configs must use the same H_{3A} algebra with only "
+            "interface gens toggled."
+        )
 
     atom_data = markov_trace_3A(Z, N, include_inter=True)
     free_data = markov_trace_3A(Z, N, include_inter=False)
