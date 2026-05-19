@@ -35,12 +35,13 @@ suppression of high-curvature-rank contributions, matching the
 linear-A scaling of AME binding (vs the A²-scaling of the
 mass-endomorphism pair blowup).
 
-For the binding:
-  B(K) = m_K(β_K) − m_K(T_constit^K)
-       = Σ_k α_k · [Φ_k(β_K) − Φ_k(T_constit^K)]
+For the binding (positive when the bound state has lower mass):
+  B(K) := m_K(T_constit^K) − m_K(β_K)
+       = Σ_k α_k · [Φ_k(T_constit^K) − Φ_k(β_K)]
 
-with BOTH chi computations at the SAME H_{3A}, per the Δ_I^K
-structural fix established in PR #801.
+i.e. the implementation computes  delta = phi_free − phi_atom  per
+depth k and sums with α_k.  Both chi computations are at the SAME
+H_{3A}, per the Δ_I^K structural fix established in PR #801.
 
 CROSS-REFERENCE (PR #814): the involution / Leibniz origin of c_5's
 1/2 fingerprint generalises to the universal α_{k≥4} damping —
@@ -186,10 +187,12 @@ def compute_atom_binding(Z: int, N: int) -> dict:
         }
         delta_phi_total += contrib
 
-    B_MeV = delta_phi_total  # already in MeV units (α_{k≥4} has m_e factor)
-    # For low-k contributions, alpha is dimensionless; we still scale via E_0
-    # CAVEAT: the unified formula's overall normalization is structural;
-    # we report both raw B_dim and B_MeV.
+    B_MeV = delta_phi_total
+    # Output is reported in MeV because α_{k≥4} = m_e · 8G carries the
+    # MeV scale; at low k, α_k is dimensionless and the per-stratum
+    # contribution is mixed-units (added as if MeV).  This is the same
+    # convention as prop:plancherel-term-7-formulation's universal
+    # high-k residue — no external E_0 multiplier is applied here.
     return {
         "Z": Z, "N": N, "A": A, "n_strands": n_strands,
         "n_partitions_atom": atom_data["n_partitions"],

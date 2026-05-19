@@ -18,6 +18,8 @@ Ref: [macdonald1995] Symmetric Functions and Hall Polynomials, 2nd ed.,
 Ref: prop:free-config-chi-lr-equivalence.md
 -/
 
+import Mathlib.Algebra.Ring.Defs
+
 namespace QOU.BraidKnot
 
 /-- A Hecke character for the disjoint product of A H_3 braids,
