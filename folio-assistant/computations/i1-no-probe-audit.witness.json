@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T06:34:50.425593+00:00",
-  "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811",
+  "computedAt": "2026-05-19T06:48:34.318952+00:00",
+  "commitSha": "2b859a46865c8339a0eeae6200a4ebc823b051fd",
   "assertions": [
     {
       "name": "no_i1_no_probe_blocks",
@@ -27,8 +27,8 @@
   },
   "data": {
     "by_result": {
-      "i1_no_probe": 525,
-      "wired": 48,
+      "i1_no_probe": 524,
+      "wired": 49,
       "i1_lean_with_sorry": 1,
       "conditional_class": 1
     },
@@ -478,9 +478,11 @@
         "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
-        "probe_witness_count": 0,
-        "probe_witnesses": [],
-        "result": "i1_no_probe"
+        "probe_witness_count": 1,
+        "probe_witnesses": [
+          "commutative-chirality-vanishes-probe.witness.json"
+        ],
+        "result": "wired"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/compound-beta-shell-calibration.ts",
