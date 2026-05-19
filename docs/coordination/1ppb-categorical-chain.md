@@ -179,3 +179,33 @@ Deuteron has $\Delta_I^D = \sigma_3$ (the `+1` in $u_{\text{shift}} = 18Z + 21N 
 - Pick one of the 7 actionable propositions (highest yield: `prop:unified-curvature-rank-mass-formula` if the Δ_λ thread unpauses; otherwise `prop:confinement-categorical` since it's a single-script revival) and run the catalog's per-revival procedure end-to-end.
 - For the 3 wired-to-alternate propositions, diff the live and deprecated scripts and decide supersession (move to `_deprecated/_archive/`) or scope-gap (fold logic in / re-wire to consume both). The `prop:full-pole-structure-mass-trace` case is the most interesting because the 8 `build_*_chain.py` scripts collectively dwarf the single live realizer.
 - For the 2 phantom labels, ask the original author whether the underlying claims were intended to exist as separate blocks, or whether the scripts should be re-deprecated under a different proposition (or moved to `_archive/`).
+
+## 2026-05-19 (evening) — Δ_λ Phase 4: zero-parameter closure via `[8]_q`, `[3]_q²`, `(q^{1/2}+q^{-1/2})^{4N}` (branch `claude/update-deprecated-scripts-catalog-jvbyM`, [PR #819](https://github.com/litlfred/qou/pull/819))
+
+| Date | Phase | Status | Cherry-pick |
+|---|---|---|---|
+| 2026-05-19 | Phase 4 — categorical observation: $(q^{1/2}+q^{-1/2})^4 \approx 16.087$ matches empirical per-N ratios T/D=15.95 and ⁴He/³He=16.36 (≤ 1.7% rel.err.) | Closure formula identified: $\lvert\Delta_\lambda^*(K)\rvert \approx (\mathrm{Vol}_{\mathrm{hyp}}(K) / [8]_q) \cdot [3]_q^{2(Z-1)} \cdot (q^{1/2}+q^{-1/2})^{4N}$ | `delta_lambda_z4N_phase4.py` + witness; audit doc [`docs/audits/2026-05-19-delta-lambda-phase4-z4N-closure.md`](../audits/2026-05-19-delta-lambda-phase4-z4N-closure.md) |
+
+**Hard categorical findings:**
+
+1. **Per-N factor is `(q^{1/2}+q^{-1/2})^4 = (dim_q V_{1/2})^4`** — substrate-derived, no fit; matches empirical T/D and ⁴He/³He ratios to ≤ 1.7%. **This identifies the Seifert-piece contribution as a 4-channel fundamental-rep tensor factor.** Resolves PR #787 Phase 3's open question about per-JSJ-piece quantum-invariant infrastructure: no per-piece RT machinery is needed; the Seifert-N factor is just a product of quantum dims of $V_{1/2}$.
+
+2. **Per-Z factor is `[3]_q^2` = $(\dim_q V_1)^2$** — substrate-derived, rel.err. 2.17%; not as clean as per-N but reasonable. Closest categorical candidate (the adjoint rep squared, naturally associated with 3-quark baryon content).
+
+3. **Overall normalisation is `1/[8]_q`** — substrate-derived, rel.err. 0.49%; this is the Plancherel-like normalisation of the higher-spin block.
+
+4. **Zero-parameter formula matches empirical $\lvert\Delta_\lambda^*(K)\rvert$ to max rel.err. 2.51%** across D (0.07%), T (0.90%), ³He (0.86%), ⁴He (2.51%) — vs. Phase 3 baseline rel_std = 1.398. One-parameter fit (extract α empirically) gives rel_std = 0.0066, a 210× tightening.
+
+**Impact on the 1ppb thread:** the Δ_λ thread, previously **paused at PR #787 pending owner answers on per-JSJ-piece quantum-invariant infrastructure**, is **substantially advanced** — the per-piece infrastructure is no longer needed because the closure factorises through quantum integers and dim_q V_{1/2} that the existing QOU formalism already provides (Hoefsmit, Hecke skein). The thread is **not yet closed** — the per-Z factor $[3]_q^2$ residual (2.17%) and the constant $1/[8]_q$ derivation remain research targets.
+
+**Connection to existing PRs:**
+- **PR #787** (closed-forms Phase 1b/2/3): the Vol-clusters-by-Z finding from Phase 3 is the empirical baseline for this finding. No conflict — Phase 4 extends Phase 3.
+- **PR #777** (Track A: per-isotope Δ_λ closure): if the Phase 4 formula extends to additional atoms (⁵He, ⁶Li, ⁷Li), it would close Track A's per-isotope binding-energy formula at the 100× experimental target for those atoms. Worth a coordination comment when the formula has been tested on ≥ 1 atom beyond the original 4.
+- **PR #804** (qbeta-followup): the qbeta-ladder closure path (c_4..c_7 as `conj:qbeta-c-k-closed-forms`) and this Δ_λ closure are orthogonal but both involve products of quantum integers at q_0. Worth a cross-reference in the next round of the closed-forms thread.
+
+**Next concrete tasks (Δ_λ Phase 5):**
+
+1. **Derive $\alpha = [3]_q^2$ rigorously.** The 2.17% rel.err. between empirical α and $[3]_q^2$ is either fit noise or a categorical correction. Test: compute the Markov trace of the per-proton braid `_proton_braid_word()` and check whether it evaluates to $[3]_q^2$ exactly.
+2. **Derive $1/[8]_q$ rigorously.** Identify the categorical role of $[8]_q$ in the canonical braid trace normalisation. Candidate: total quantum dim of the relevant Wedderburn block.
+3. **Extend the closure to ⁵He, ⁶Li, ⁷Li.** Requires building canonical braid words for these atoms in `probe_he4_jsj_topology.py` style; re-run Phase 4 probe; verify the formula extends.
+4. **Cast as a per-partition formula.** The single-block extraction is a heuristic; generalise to $\lvert\Delta_\lambda(K)\rvert \propto [3]_q^{2(Z-1)} \cdot (q^{1/2}+q^{-1/2})^{4N} \cdot \mathrm{Vol}_{\mathrm{hyp}}(K) \cdot W_\lambda(q)$ where $W_\lambda(q)$ is the partition-specific weight; test on the 11-partition deuteron tabulation from Phase 1b.
