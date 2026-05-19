@@ -20,7 +20,7 @@ class CatDescendedIsBaseMassContext where
   /-- The braid representative type. -/
   Braid : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  claim_cat_descended_is_base_mass : Prop
 
 /-- **Lemma statement** (from manuscript):
 
@@ -32,7 +32,7 @@ $n+1$, and let $\varrho_0$ be its base-level descent.  Then
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/topological-mass-cat-descended.ts
-theorem cat_descended_is_base_mass [ctx : CatDescendedIsBaseMassContext] : ctx.claim := by
+theorem cat_descended_is_base_mass [ctx : CatDescendedIsBaseMassContext] : ctx.claim_cat_descended_is_base_mass := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

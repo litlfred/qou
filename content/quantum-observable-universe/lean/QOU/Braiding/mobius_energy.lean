@@ -19,7 +19,7 @@ class MobiusEnergyContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  claim_mobius_energy : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -35,7 +35,7 @@ $\star_q$ ([Definition](#def:q-hodge-star)).
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/mobius-energy.ts
-theorem mobius_energy [ctx : MobiusEnergyContext] : ctx.claim := by
+theorem mobius_energy [ctx : MobiusEnergyContext] : ctx.claim_mobius_energy := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

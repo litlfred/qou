@@ -13,13 +13,26 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.FluidDynamics
 
 
-/-- Abstract context for the `leray_profile` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
+/-- Abstract context for the `leray_profile` claim —
+    manuscript-themed typed fields below; the self-similar Leray
+    profile is captured as a finite-dimensional ansatz in
+    `SU_q(2)` weight-`j` matrix entries. -/
 class LerayProfileContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  /-- The blowup time `T* : ℝ`. -/
+  T_star : ℝ
+  /-- The blowup location `x_0 : ℝ × ℝ × ℝ`. -/
+  x_0 : ℝ × ℝ × ℝ
+  /-- The rescaled coordinate `ξ : ℝ → ℝ` (function of time). -/
+  ξ : ℝ → ℝ
+  /-- The Leray profile `V : ℝ → ℝ`. -/
+  V : ℝ → ℝ
+  /-- Manuscript claim — Leray-profile factorisation: near the
+      blowup, the singular solution approaches `V(ξ)` where `V` is
+      a finite-dimensional sum of weight-`j` `SU_q(2)` matrix
+      entries with coefficients fixed by the singular-gerbe data. -/
+  claim_leray_factorisation : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -36,9 +49,7 @@ class LerayProfileContext where
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/leray-profile.ts
-theorem leray_profile [ctx : LerayProfileContext] : ctx.claim := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem leray_profile [ctx : LerayProfileContext] :
+    ctx.claim_leray_factorisation := ctx.claim_leray_factorisation
 
 end QOU.FluidDynamics

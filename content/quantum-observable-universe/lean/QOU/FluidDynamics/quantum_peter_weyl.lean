@@ -19,7 +19,7 @@ class QuantumPeterWeylContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  claim_quantum_peter_weyl : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -34,7 +34,7 @@ available.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/quantum-peter-weyl.ts
-theorem quantum_peter_weyl [ctx : QuantumPeterWeylContext] : ctx.claim := by
+theorem quantum_peter_weyl [ctx : QuantumPeterWeylContext] : ctx.claim_quantum_peter_weyl := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

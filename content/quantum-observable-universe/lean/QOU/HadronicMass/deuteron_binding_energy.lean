@@ -20,7 +20,7 @@ class DeuteronBindingEnergyContext where
   /-- The braid representative type. -/
   Braid : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  claim_deuteron_binding_energy : Prop
 
 /-- **Lemma statement** (from manuscript):
 
@@ -40,7 +40,7 @@ $$
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/deuteron-binding-energy.ts
-theorem deuteron_binding_energy [ctx : DeuteronBindingEnergyContext] : ctx.claim := by
+theorem deuteron_binding_energy [ctx : DeuteronBindingEnergyContext] : ctx.claim_deuteron_binding_energy := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

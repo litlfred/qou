@@ -23,7 +23,7 @@ class SkeinMassFromLinkingContext where
   /-- The categorical mass / binding energy. -/
   mass : ℝ
   /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  claim_skein_mass_from_linking : Prop
 
 /-- **Lemma statement** (from manuscript):
 
@@ -49,7 +49,7 @@ linking configuration, and $\hbar_q = 1 - q^{-1}$.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/skein-mass-from-linking.ts
-theorem skein_mass_from_linking [ctx : SkeinMassFromLinkingContext] : ctx.claim := by
+theorem skein_mass_from_linking [ctx : SkeinMassFromLinkingContext] : ctx.claim_skein_mass_from_linking := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

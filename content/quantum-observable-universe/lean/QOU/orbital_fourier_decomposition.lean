@@ -26,7 +26,7 @@ class OrbitalFourierDecompositionContext where
   /-- Fluid-dynamics velocity / vorticity field. -/
   VelocityField : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  claim_orbital_fourier_decomposition : Prop
 
 /-- **Manuscript statement** (full body):
 
@@ -107,11 +107,11 @@ $$
 
 […truncated; see manuscript for remainder…]
 
-    The Lean encoding below is a `theorem foo [ctx] : ctx.claim := by sorry`
-    placeholder; the `ctx.claim : Prop` field carries the residual claim,
+    The Lean encoding below is a `theorem foo [ctx] : ctx.claim_orbital_fourier_decomposition := by sorry`
+    placeholder; the `ctx.claim_orbital_fourier_decomposition : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/orbital-fourier-decomposition.ts
-theorem orbital_fourier_decomposition [ctx : OrbitalFourierDecompositionContext] : ctx.claim := by
+theorem orbital_fourier_decomposition [ctx : OrbitalFourierDecompositionContext] : ctx.claim_orbital_fourier_decomposition := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

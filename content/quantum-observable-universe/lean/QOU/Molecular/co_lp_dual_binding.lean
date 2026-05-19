@@ -20,7 +20,7 @@ class CoLpDualBindingContext where
   /-- The braid representative type. -/
   Braid : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  claim_co_lp_dual_binding : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -67,7 +67,7 @@ $D_0(CO) \approx 11.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/co-lp-dual-binding.ts
-theorem co_lp_dual_binding [ctx : CoLpDualBindingContext] : ctx.claim := by
+theorem co_lp_dual_binding [ctx : CoLpDualBindingContext] : ctx.claim_co_lp_dual_binding := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

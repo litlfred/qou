@@ -20,7 +20,7 @@ class LocalSubstrateQContext where
   /-- The substrate parameter `q : ℝ`. -/
   q : ℝ
   /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  claim_local_substrate_q : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -33,7 +33,7 @@ universe, the substrate parameter $q$
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/local-substrate-q.ts
-theorem local_substrate_q [ctx : LocalSubstrateQContext] : ctx.claim := by
+theorem local_substrate_q [ctx : LocalSubstrateQContext] : ctx.claim_local_substrate_q := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

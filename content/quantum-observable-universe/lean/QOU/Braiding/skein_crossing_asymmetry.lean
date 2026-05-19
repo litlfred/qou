@@ -20,7 +20,7 @@ class SkeinCrossingAsymmetryContext where
   /-- The braid representative type. -/
   Braid : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  claim_skein_crossing_asymmetry : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -34,7 +34,7 @@ relation
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/skein-crossing-asymmetry-prop.ts
-theorem skein_crossing_asymmetry [ctx : SkeinCrossingAsymmetryContext] : ctx.claim := by
+theorem skein_crossing_asymmetry [ctx : SkeinCrossingAsymmetryContext] : ctx.claim_skein_crossing_asymmetry := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

@@ -21,7 +21,7 @@ class FermionBosonKnotLinkContext where
   /-- The topological-link / knot type. -/
   Link : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  claim_fermion_boson_knot_link : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -36,7 +36,7 @@ torus family on the Bring's surface:
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/fermion-boson-knot-link.ts
-theorem fermion_boson_knot_link [ctx : FermionBosonKnotLinkContext] : ctx.claim := by
+theorem fermion_boson_knot_link [ctx : FermionBosonKnotLinkContext] : ctx.claim_fermion_boson_knot_link := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

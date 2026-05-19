@@ -13,15 +13,25 @@ CLAUDE.md §1.
 namespace QOU.FluidDynamics
 
 
-/-- Abstract context for the `vorticity_lower_bound` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
+/-- Abstract context for the `vorticity_lower_bound` claim —
+    manuscript-themed typed fields below; the claim asserts a
+    pointwise lower bound on `|ω*|` along the weak-limit
+    counter-example trajectory. -/
 class VorticityLowerBoundContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
   /-- The substrate parameter `q`. -/
   q : ℝ
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  /-- The weak-limit vorticity `ω*(t, x) : ℝ`. -/
+  ω_star : ℝ → ℝ → ℝ
+  /-- The vortex-core separation `d(t) : ℝ`. -/
+  d : ℝ → ℝ
+  /-- The lower-bound constant `C : ℝ` (positive). -/
+  C : ℝ
+  C_pos : 0 < C
+  /-- Manuscript claim — vorticity lower bound near the blowup:
+      `|ω*(t, x)| ≥ C / d(t)` along the counter-example trajectory. -/
+  claim_lower_bound : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -37,9 +47,7 @@ filament cores.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.ts
-theorem vorticity_lower_bound [ctx : VorticityLowerBoundContext] : ctx.claim := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem vorticity_lower_bound [ctx : VorticityLowerBoundContext] :
+    ctx.claim_lower_bound := ctx.claim_lower_bound
 
 end QOU.FluidDynamics

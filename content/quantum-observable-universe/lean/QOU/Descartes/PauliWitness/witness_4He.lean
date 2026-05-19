@@ -24,7 +24,7 @@ class Witness4heContext where
   /-- Fluid-dynamics velocity / vorticity field. -/
   VelocityField : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  claim_witness_4He : Prop
 
 /-- **Manuscript statement** (full body):
 
@@ -45,11 +45,11 @@ Hecke normal form, the alternating trace $\mathrm{tr}_{\mathrm{alt}}$
 captures the full multi-generator correlation that the $2 \times 2$
 transfer matrix cannot resolve.
 
-    The Lean encoding below is a `theorem foo [ctx] : ctx.claim := by sorry`
-    placeholder; the `ctx.claim : Prop` field carries the residual claim,
+    The Lean encoding below is a `theorem foo [ctx] : ctx.claim_witness_4He := by sorry`
+    placeholder; the `ctx.claim_witness_4He : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/appendix-nf-witnesses/witness-4he.ts
-theorem witness_4He [ctx : Witness4heContext] : ctx.claim := by
+theorem witness_4He [ctx : Witness4heContext] : ctx.claim_witness_4He := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

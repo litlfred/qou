@@ -19,7 +19,7 @@ class CurvatureRankGbStratificationContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  claim_curvature_rank_gb_stratification : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -50,7 +50,7 @@ $$
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/curvature-rank-gb-stratification.ts
-theorem curvature_rank_gb_stratification [ctx : CurvatureRankGbStratificationContext] : ctx.claim := by
+theorem curvature_rank_gb_stratification [ctx : CurvatureRankGbStratificationContext] : ctx.claim_curvature_rank_gb_stratification := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

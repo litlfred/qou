@@ -22,7 +22,7 @@ class QplancherelasymptoticskeletonContext where
   /-- The partition / Young-diagram indexing type. -/
   PartitionIdx : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  claim_QPlancherelAsymptoticSkeleton : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -63,7 +63,7 @@ satisfy:*
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.ts
-theorem QPlancherelAsymptoticSkeleton [ctx : QplancherelasymptoticskeletonContext] : ctx.claim := by
+theorem QPlancherelAsymptoticSkeleton [ctx : QplancherelasymptoticskeletonContext] : ctx.claim_QPlancherelAsymptoticSkeleton := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

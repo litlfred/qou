@@ -21,7 +21,7 @@ class BetaStabilityContext where
   /-- The categorical mass / binding energy. -/
   mass : ℝ
   /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  claim_beta_stability : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -35,7 +35,7 @@ at fixed $p$.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/beta-stability.ts
-theorem beta_stability [ctx : BetaStabilityContext] : ctx.claim := by
+theorem beta_stability [ctx : BetaStabilityContext] : ctx.claim_beta_stability := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

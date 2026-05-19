@@ -23,7 +23,7 @@ class YLambdaRecipeFromPartitionContext where
   /-- The partition / Young-diagram indexing type. -/
   PartitionIdx : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  claim_y_lambda_recipe_from_partition : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -38,7 +38,7 @@ denominator.*
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/y-lambda-recipe-from-partition.ts
-theorem y_lambda_recipe_from_partition [ctx : YLambdaRecipeFromPartitionContext] : ctx.claim := by
+theorem y_lambda_recipe_from_partition [ctx : YLambdaRecipeFromPartitionContext] : ctx.claim_y_lambda_recipe_from_partition := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

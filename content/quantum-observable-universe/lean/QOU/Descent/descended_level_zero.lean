@@ -21,7 +21,7 @@ class DescendedLevelZeroContext where
   /-- The categorical mass / binding energy. -/
   mass : ℝ
   /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  claim_descended_level_zero : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -40,7 +40,7 @@ jet level at which it is read off.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/descended-level-zero.ts
-theorem descended_level_zero [ctx : DescendedLevelZeroContext] : ctx.claim := by
+theorem descended_level_zero [ctx : DescendedLevelZeroContext] : ctx.claim_descended_level_zero := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

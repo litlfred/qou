@@ -26,7 +26,7 @@ class CollatzContactBoundaryContext where
   /-- Fluid-dynamics velocity / vorticity field. -/
   VelocityField : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  claim_collatz_contact_boundary : Prop
 
 /-- **Manuscript statement** (full body):
 
@@ -88,11 +88,11 @@ $$
 
 […truncated; see manuscript for remainder…]
 
-    The Lean encoding below is a `theorem foo [ctx] : ctx.claim := by sorry`
-    placeholder; the `ctx.claim : Prop` field carries the residual claim,
+    The Lean encoding below is a `theorem foo [ctx] : ctx.claim_collatz_contact_boundary := by sorry`
+    placeholder; the `ctx.claim_collatz_contact_boundary : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/collatz-contact-boundary.ts
-theorem collatz_contact_boundary [ctx : CollatzContactBoundaryContext] : ctx.claim := by
+theorem collatz_contact_boundary [ctx : CollatzContactBoundaryContext] : ctx.claim_collatz_contact_boundary := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

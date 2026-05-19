@@ -22,7 +22,7 @@ class MarkovIdentificationContext where
   /-- The partition / Young-diagram indexing type. -/
   PartitionIdx : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  claim_markov_identification : Prop
 
 /-- **Lemma statement** (from manuscript):
 
@@ -46,7 +46,7 @@ $w_\lambda = \dim_q(V_\lambda) \cdot \dim(S_\lambda) / \dim_q(V^{\otimes n})$.
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/feynman-markov-identification.ts
-theorem markov_identification [ctx : MarkovIdentificationContext] : ctx.claim := by
+theorem markov_identification [ctx : MarkovIdentificationContext] : ctx.claim_markov_identification := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

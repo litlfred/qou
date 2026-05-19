@@ -25,7 +25,7 @@ class NsiQDeformedKernelContext where
   /-- Fluid-dynamics velocity / vorticity field. -/
   VelocityField : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  claim_nsi_q_deformed_kernel : Prop
 
 /-- **Manuscript statement** (full body):
 
@@ -44,11 +44,11 @@ $$
 has a hard singularity at
 $\lvert \varrho(s) - \varrho(t) \rvert = \hbar_q$.*
 
-    The Lean encoding below is a `theorem foo [ctx] : ctx.claim := by sorry`
-    placeholder; the `ctx.claim : Prop` field carries the residual claim,
+    The Lean encoding below is a `theorem foo [ctx] : ctx.claim_nsi_q_deformed_kernel := by sorry`
+    placeholder; the `ctx.claim_nsi_q_deformed_kernel : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/nsi-q-deformed-kernel.ts
-theorem nsi_q_deformed_kernel [ctx : NsiQDeformedKernelContext] : ctx.claim := by
+theorem nsi_q_deformed_kernel [ctx : NsiQDeformedKernelContext] : ctx.claim_nsi_q_deformed_kernel := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

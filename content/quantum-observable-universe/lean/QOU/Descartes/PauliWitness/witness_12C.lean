@@ -28,7 +28,7 @@ class Witness12cContext where
   /-- The crossing / Hecke generator type. -/
   Crossing : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  claim_witness_12C : Prop
 
 /-- **Manuscript statement** (full body):
 
@@ -52,11 +52,11 @@ antisymmetric channel as $A$ grows.  The Hoyle state
 normal form; it would require a separate witness at an excited
 braid configuration.
 
-    The Lean encoding below is a `theorem foo [ctx] : ctx.claim := by sorry`
-    placeholder; the `ctx.claim : Prop` field carries the residual claim,
+    The Lean encoding below is a `theorem foo [ctx] : ctx.claim_witness_12C := by sorry`
+    placeholder; the `ctx.claim_witness_12C : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/appendix-nf-witnesses/witness-12c.ts
-theorem witness_12C [ctx : Witness12cContext] : ctx.claim := by
+theorem witness_12C [ctx : Witness12cContext] : ctx.claim_witness_12C := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

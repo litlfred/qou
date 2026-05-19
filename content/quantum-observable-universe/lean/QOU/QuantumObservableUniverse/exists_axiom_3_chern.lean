@@ -19,7 +19,7 @@ class ExistsAxiom3ChernContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  claim_exists_axiom_3_chern : Prop
 
 /-- **Lemma statement** (from manuscript):
 
@@ -37,7 +37,7 @@ into the ribbon twist.
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-3.ts
-theorem exists_axiom_3_chern [ctx : ExistsAxiom3ChernContext] : ctx.claim := by
+theorem exists_axiom_3_chern [ctx : ExistsAxiom3ChernContext] : ctx.claim_exists_axiom_3_chern := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

@@ -24,7 +24,7 @@ class CollatzNoCyclesContext where
   /-- Fluid-dynamics velocity / vorticity field. -/
   VelocityField : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  claim_collatz_no_cycles : Prop
 
 /-- **Manuscript statement** (full body):
 
@@ -92,11 +92,11 @@ is a consequence of consecutive integers being coprime
 
 […truncated; see manuscript for remainder…]
 
-    The Lean encoding below is a `theorem foo [ctx] : ctx.claim := by sorry`
-    placeholder; the `ctx.claim : Prop` field carries the residual claim,
+    The Lean encoding below is a `theorem foo [ctx] : ctx.claim_collatz_no_cycles := by sorry`
+    placeholder; the `ctx.claim_collatz_no_cycles : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/collatz-no-cycles.ts
-theorem collatz_no_cycles [ctx : CollatzNoCyclesContext] : ctx.claim := by
+theorem collatz_no_cycles [ctx : CollatzNoCyclesContext] : ctx.claim_collatz_no_cycles := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

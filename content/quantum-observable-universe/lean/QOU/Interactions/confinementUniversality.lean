@@ -24,7 +24,7 @@ class ConfinementuniversalityContext where
   /-- The Hecke generator `σᵢ` indexed by `ℕ`. -/
   hecke_gen : ℕ → Prop
   /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  claim_confinementUniversality : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -57,7 +57,7 @@ The derivation chain has two stages:
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/confinement-universality.ts
-theorem confinementUniversality [ctx : ConfinementuniversalityContext] : ctx.claim := by
+theorem confinementUniversality [ctx : ConfinementuniversalityContext] : ctx.claim_confinementUniversality := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

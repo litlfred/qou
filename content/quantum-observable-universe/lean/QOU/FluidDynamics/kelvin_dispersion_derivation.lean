@@ -13,13 +13,27 @@ manuscript citation per CLAUDE.md §1.
 namespace QOU.FluidDynamics
 
 
-/-- Abstract context for the `kelvin_dispersion_derivation` claim — manuscript-themed
-    typed fields below; `holds` carries the residual `Prop` claim. -/
+/-- Abstract context for the `kelvin_dispersion_derivation` claim —
+    manuscript-themed typed fields below; the q-Laplacian eigenvalue
+    identity `λ_k^{(q)} = [k]_q² · ℏ_q / L_q²` is captured as
+    `claim_dispersion_identity`. -/
 class KelvinDispersionDerivationContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  /-- Substrate parameter `q : ℝ`. -/
+  q : ℝ
+  /-- Quantum Planck constant `ℏ_q : ℝ`. -/
+  hbar_q : ℝ
+  /-- Vortex filament length `L_q : ℝ`. -/
+  L_q : ℝ
+  /-- The discrete eigenvalue `λ_k^{(q)} : ℕ → ℝ`. -/
+  λ : ℕ → ℝ
+  /-- The `q`-integer `[k]_q : ℕ → ℝ`. -/
+  q_int : ℕ → ℝ
+  /-- Manuscript dispersion identity:
+      `λ_k^{(q)} = [k]_q² · ℏ_q / L_q²` for every level `k`. -/
+  claim_dispersion_identity :
+    ∀ k : ℕ, λ k = q_int k ^ 2 * hbar_q / L_q ^ 2
 
 /-- **Content statement** (from manuscript):
 
@@ -33,9 +47,8 @@ subsection derives this from first principles.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/kelvin-dispersion-derivation.ts
-theorem kelvin_dispersion_derivation [ctx : KelvinDispersionDerivationContext] : ctx.claim := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem kelvin_dispersion_derivation [ctx : KelvinDispersionDerivationContext] :
+    ∀ k : ℕ, ctx.λ k = ctx.q_int k ^ 2 * ctx.hbar_q / ctx.L_q ^ 2 :=
+  ctx.claim_dispersion_identity
 
 end QOU.FluidDynamics

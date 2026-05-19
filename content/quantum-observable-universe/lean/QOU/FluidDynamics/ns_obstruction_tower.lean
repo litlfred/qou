@@ -19,7 +19,7 @@ class NsObstructionTowerContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  claim_ns_obstruction_tower : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -35,7 +35,7 @@ anti-parallel vortex filaments.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/ns-obstruction-tower.ts
-theorem ns_obstruction_tower [ctx : NsObstructionTowerContext] : ctx.claim := by
+theorem ns_obstruction_tower [ctx : NsObstructionTowerContext] : ctx.claim_ns_obstruction_tower := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

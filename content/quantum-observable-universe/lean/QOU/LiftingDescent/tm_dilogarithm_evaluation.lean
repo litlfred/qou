@@ -19,7 +19,7 @@ class TmDilogarithmEvaluationContext where
   /-- The spectrum / eigenvalue list. -/
   spectrum : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  claim_tm_dilogarithm_evaluation : Prop
 
 /-- **Lemma statement** (from manuscript):
 
@@ -43,7 +43,7 @@ $$
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/topological-mass-dilogarithm.ts
-theorem tm_dilogarithm_evaluation [ctx : TmDilogarithmEvaluationContext] : ctx.claim := by
+theorem tm_dilogarithm_evaluation [ctx : TmDilogarithmEvaluationContext] : ctx.claim_tm_dilogarithm_evaluation := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

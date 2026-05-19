@@ -20,7 +20,7 @@ class H2LpDualBindingContext where
   /-- The braid representative type. -/
   Braid : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  claim_h2_lp_dual_binding : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -39,7 +39,7 @@ $$
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/h2-lp-dual-binding.ts
-theorem h2_lp_dual_binding [ctx : H2LpDualBindingContext] : ctx.claim := by
+theorem h2_lp_dual_binding [ctx : H2LpDualBindingContext] : ctx.claim_h2_lp_dual_binding := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

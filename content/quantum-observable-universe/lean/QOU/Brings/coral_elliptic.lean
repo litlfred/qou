@@ -20,7 +20,7 @@ class CoralEllipticContext where
   /-- The braid representative type. -/
   Braid : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  claim_coral_elliptic : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -39,7 +39,7 @@ each fixed $z$ to the cubic
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/coral-elliptic.ts
-theorem coral_elliptic [ctx : CoralEllipticContext] : ctx.claim := by
+theorem coral_elliptic [ctx : CoralEllipticContext] : ctx.claim_coral_elliptic := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

@@ -20,7 +20,7 @@ class MinimalZ5ClassificationContext where
   /-- Fluid-dynamics velocity / vorticity field. -/
   VelocityField : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  claim_minimal_z5_classification : Prop
 
 /-- **Manuscript statement** (full body):
 
@@ -76,11 +76,11 @@ The combinatorial decomposi
 
 […truncated; see manuscript for remainder…]
 
-    The Lean encoding below is a `theorem foo [ctx] : ctx.claim := by sorry`
-    placeholder; the `ctx.claim : Prop` field carries the residual claim,
+    The Lean encoding below is a `theorem foo [ctx] : ctx.claim_minimal_z5_classification := by sorry`
+    placeholder; the `ctx.claim_minimal_z5_classification : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/hyperelliptic-z5-classification.ts
-theorem minimal_z5_classification [ctx : MinimalZ5ClassificationContext] : ctx.claim := by
+theorem minimal_z5_classification [ctx : MinimalZ5ClassificationContext] : ctx.claim_minimal_z5_classification := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

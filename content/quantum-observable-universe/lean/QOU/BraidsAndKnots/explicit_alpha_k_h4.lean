@@ -23,7 +23,7 @@ class ExplicitAlphaKH4Context where
   /-- The partition / Young-diagram indexing type. -/
   PartitionIdx : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  claim_explicit_alpha_k_h4 : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -37,7 +37,7 @@ conjugacy classes of $S_4$:*
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/explicit-alpha-k-h4.ts
-theorem explicit_alpha_k_h4 [ctx : ExplicitAlphaKH4Context] : ctx.claim := by
+theorem explicit_alpha_k_h4 [ctx : ExplicitAlphaKH4Context] : ctx.claim_explicit_alpha_k_h4 := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

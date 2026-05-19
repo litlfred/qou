@@ -19,7 +19,7 @@ class FaiProjectorCoadjointOrbitContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  claim_fai_projector_coadjoint_orbit : Prop
 
 /-- **Lemma statement** (from manuscript):
 
@@ -36,7 +36,7 @@ coadjoint orbit in $\mathrm{Ad}(A)$.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/fai-projector-coadjoint-orbit.ts
-theorem fai_projector_coadjoint_orbit [ctx : FaiProjectorCoadjointOrbitContext] : ctx.claim := by
+theorem fai_projector_coadjoint_orbit [ctx : FaiProjectorCoadjointOrbitContext] : ctx.claim_fai_projector_coadjoint_orbit := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

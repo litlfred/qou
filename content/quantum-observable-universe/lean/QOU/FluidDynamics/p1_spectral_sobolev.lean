@@ -20,7 +20,7 @@ class P1SpectralSobolevContext where
   /-- The substrate parameter `q : ℝ`. -/
   q : ℝ
   /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  claim_p1_spectral_sobolev : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -38,7 +38,7 @@ $\langle \cdot, \cdot \rangle_\varTheta$ be the
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/p1-spectral-sobolev.ts
-theorem p1_spectral_sobolev [ctx : P1SpectralSobolevContext] : ctx.claim := by
+theorem p1_spectral_sobolev [ctx : P1SpectralSobolevContext] : ctx.claim_p1_spectral_sobolev := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

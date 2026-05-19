@@ -19,7 +19,7 @@ class ExistsAxiom4VolumeContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  claim_exists_axiom_4_volume : Prop
 
 /-- **Lemma statement** (from manuscript):
 
@@ -39,7 +39,7 @@ $$
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.ts
-theorem exists_axiom_4_volume [ctx : ExistsAxiom4VolumeContext] : ctx.claim := by
+theorem exists_axiom_4_volume [ctx : ExistsAxiom4VolumeContext] : ctx.claim_exists_axiom_4_volume := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

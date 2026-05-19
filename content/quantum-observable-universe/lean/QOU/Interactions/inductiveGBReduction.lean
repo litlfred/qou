@@ -24,7 +24,7 @@ class InductivegbreductionContext where
   /-- The Hecke generator `σᵢ` indexed by `ℕ`. -/
   hecke_gen : ℕ → Prop
   /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  claim_inductiveGBReduction : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -66,7 +66,7 @@ The key identity enabling this is the
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/inductive-gb-reduction.ts
-theorem inductiveGBReduction [ctx : InductivegbreductionContext] : ctx.claim := by
+theorem inductiveGBReduction [ctx : InductivegbreductionContext] : ctx.claim_inductiveGBReduction := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

@@ -19,7 +19,7 @@ class NsSingularityDescartesContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  claim_ns_singularity_descartes : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -31,7 +31,7 @@ with $\chi(A) = -6$ (Bring's surface of genus 4).
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/ns-singularity-descartes.ts
-theorem ns_singularity_descartes [ctx : NsSingularityDescartesContext] : ctx.claim := by
+theorem ns_singularity_descartes [ctx : NsSingularityDescartesContext] : ctx.claim_ns_singularity_descartes := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

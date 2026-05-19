@@ -26,7 +26,7 @@ class Witness8beContext where
   /-- The crossing / Hecke generator type. -/
   Crossing : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  claim_witness_8Be : Prop
 
 /-- **Manuscript statement** (full body):
 
@@ -49,11 +49,11 @@ ${}^8\mathrm{Be}$ is even-even but not doubly magic; its instability
 distribution: the $\ell = 7$ fully correlated term carries less
 relative amplitude than in neighbouring stable nuclei.
 
-    The Lean encoding below is a `theorem foo [ctx] : ctx.claim := by sorry`
-    placeholder; the `ctx.claim : Prop` field carries the residual claim,
+    The Lean encoding below is a `theorem foo [ctx] : ctx.claim_witness_8Be := by sorry`
+    placeholder; the `ctx.claim_witness_8Be : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/appendix-nf-witnesses/witness-8be.ts
-theorem witness_8Be [ctx : Witness8beContext] : ctx.claim := by
+theorem witness_8Be [ctx : Witness8beContext] : ctx.claim_witness_8Be := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

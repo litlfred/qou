@@ -22,7 +22,7 @@ class FrobeniusformContext where
   /-- Fluid-dynamics velocity / vorticity field. -/
   VelocityField : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  claim_frobeniusForm : Prop
 
 /-- **Manuscript statement** (full body):
 
@@ -58,11 +58,11 @@ $$
 
 and its mirror are both equal to $\mathrm{id}_A$.
 
-    The Lean encoding below is a `theorem foo [ctx] : ctx.claim := by sorry`
-    placeholder; the `ctx.claim : Prop` field carries the residual claim,
+    The Lean encoding below is a `theorem foo [ctx] : ctx.claim_frobeniusForm := by sorry`
+    placeholder; the `ctx.claim_frobeniusForm : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-universes/frobenius-pairing.ts
-theorem frobeniusForm [ctx : FrobeniusformContext] : ctx.claim := by
+theorem frobeniusForm [ctx : FrobeniusformContext] : ctx.claim_frobeniusForm := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

@@ -22,7 +22,7 @@ class Beta4HookContext where
   /-- The partition / Young-diagram indexing type. -/
   PartitionIdx : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  claim_beta4_hook : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -59,7 +59,7 @@ The coefficient $\beta_4$ is set by the
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/hook-weight-derivation.ts
-theorem beta4_hook [ctx : Beta4HookContext] : ctx.claim := by
+theorem beta4_hook [ctx : Beta4HookContext] : ctx.claim_beta4_hook := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

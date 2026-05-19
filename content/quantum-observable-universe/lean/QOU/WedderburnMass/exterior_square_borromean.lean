@@ -19,7 +19,7 @@ class ExteriorSquareBorromeanContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  claim_exterior_square_borromean : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -32,7 +32,7 @@ acting via the standard projection).  Then the
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/exterior-square-borromean.ts
-theorem exterior_square_borromean [ctx : ExteriorSquareBorromeanContext] : ctx.claim := by
+theorem exterior_square_borromean [ctx : ExteriorSquareBorromeanContext] : ctx.claim_exterior_square_borromean := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

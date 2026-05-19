@@ -19,7 +19,7 @@ class BringsRiemannHurwitzContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  claim_brings_riemann_hurwitz : Prop
 
 /-- **Lemma statement** (from manuscript):
 
@@ -42,7 +42,7 @@ $$
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/brings-riemann-hurwitz.ts
-theorem brings_riemann_hurwitz [ctx : BringsRiemannHurwitzContext] : ctx.claim := by
+theorem brings_riemann_hurwitz [ctx : BringsRiemannHurwitzContext] : ctx.claim_brings_riemann_hurwitz := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

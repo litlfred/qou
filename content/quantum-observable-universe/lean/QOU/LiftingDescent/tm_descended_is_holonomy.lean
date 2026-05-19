@@ -20,7 +20,7 @@ class TmDescendedIsHolonomyContext where
   /-- The braid representative type. -/
   Braid : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  claim_tm_descended_is_holonomy : Prop
 
 /-- **Lemma statement** (from manuscript):
 
@@ -34,7 +34,7 @@ the unknot-core holonomy:
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/topological-mass-holonomy.ts
-theorem tm_descended_is_holonomy [ctx : TmDescendedIsHolonomyContext] : ctx.claim := by
+theorem tm_descended_is_holonomy [ctx : TmDescendedIsHolonomyContext] : ctx.claim_tm_descended_is_holonomy := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

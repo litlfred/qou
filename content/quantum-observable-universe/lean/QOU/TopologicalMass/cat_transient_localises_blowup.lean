@@ -19,7 +19,7 @@ class CatTransientLocalisesBlowupContext where
   /-- Fluid-dynamics velocity / vorticity field. -/
   VelocityField : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  claim_cat_transient_localises_blowup : Prop
 
 /-- **Lemma statement** (from manuscript):
 
@@ -33,7 +33,7 @@ disjoint local contributions:
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/topological-mass-cat-transient.ts
-theorem cat_transient_localises_blowup [ctx : CatTransientLocalisesBlowupContext] : ctx.claim := by
+theorem cat_transient_localises_blowup [ctx : CatTransientLocalisesBlowupContext] : ctx.claim_cat_transient_localises_blowup := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

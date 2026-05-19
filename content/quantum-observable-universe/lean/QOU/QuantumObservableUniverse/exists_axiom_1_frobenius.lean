@@ -19,7 +19,7 @@ class ExistsAxiom1FrobeniusContext where
   /-- Fluid-dynamics velocity / vorticity field. -/
   VelocityField : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  claim_exists_axiom_1_frobenius : Prop
 
 /-- **Lemma statement** (from manuscript):
 
@@ -32,7 +32,7 @@ axiom~(1) of [quantum observable universe](#def:quantum-observable-universe).
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-1.ts
-theorem exists_axiom_1_frobenius [ctx : ExistsAxiom1FrobeniusContext] : ctx.claim := by
+theorem exists_axiom_1_frobenius [ctx : ExistsAxiom1FrobeniusContext] : ctx.claim_exists_axiom_1_frobenius := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry

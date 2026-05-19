@@ -21,7 +21,7 @@ class JpCategoricalJetContext where
   /-- The topological-link / knot type. -/
   Link : Type
   /-- The `Prop`-valued claim of the lemma. -/
-  claim : Prop
+  claim_jp_categorical_jet : Prop
 
 /-- **Lemma statement** (from manuscript):
 
@@ -36,7 +36,7 @@ $(\Delta', \varepsilon', S')$ from $A$.
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/jet-prolongation-categorical-jet.ts
-theorem jp_categorical_jet [ctx : JpCategoricalJetContext] : ctx.claim := by
+theorem jp_categorical_jet [ctx : JpCategoricalJetContext] : ctx.claim_jp_categorical_jet := by
   -- Manuscript proof referenced above; concretisation requires
   -- type-level Lean translation of the hypotheses.
   sorry
