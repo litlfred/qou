@@ -25,28 +25,43 @@ class AtomicNfWitnessContext where
   N : ℕ
   /-- The mass number `A = Z + N`. -/
   A : ℕ
+  A_eq : A = Z + N
   /-- The braid representative type. -/
   Braid : Type
-  /-- Manuscript sub-claim (i): the ground-state nucleon ordering is
-      the global minimum of `Φ_1` over all `binom(A, Z)` permutations
-      (exact for `binom(A, Z) ≤ 50000`; steepest descent otherwise). -/
-  claim_i_global_min_ordering : Prop
-  /-- Manuscript sub-claim (ii): each electron is inserted at the
-      position minimising `Φ_1` (greedy; verified to pair adjacent to
-      protons). -/
-  claim_ii_greedy_electron_placement : Prop
-  /-- Manuscript sub-claim (iii): the Gröbner–Shirshov reduction
-      converges at each construction step (Diamond Lemma — overlap
-      ambiguities resolved). -/
-  claim_iii_gb_convergence : Prop
-  /-- Manuscript sub-claim (iv): the final NF element is accumulated
-      without mid-construction stripping for `A ≤ 9`; for `A > 9` it is
-      stripped at controlled thresholds (200k–500k words). -/
-  claim_iv_NF_accumulation : Prop
-  /-- Manuscript sub-claim (v): JSON certificates committed to the
-      repo record `F_Pauli`, `tr_alt(q_0)`, `net(q_0)`, compute time,
-      word count, engine version per computed atom. -/
-  claim_v_certificate_output : Prop
+  /-- `Φ₁` cost of an ordering (indexed by nucleon-permutation index). -/
+  Phi_1 : ℕ → ℝ
+  /-- Ground-state ordering index `π*` that minimises `Φ₁`. -/
+  pi_star : ℕ
+  /-- Manuscript sub-claim (i) — Global `Φ₁` minimum:
+      `Phi_1(π*) ≤ Phi_1(π)` for all candidate orderings `π`. -/
+  claim_i_global_min_ordering : ∀ π : ℕ, Phi_1 pi_star ≤ Phi_1 π
+  /-- `Φ₁` cost as a function of electron position (greedy step). -/
+  Phi_1_electron : ℕ → ℝ
+  /-- The greedy-chosen electron position `e*`. -/
+  electron_pos_star : ℕ
+  /-- Manuscript sub-claim (ii) — Greedy electron placement
+      minimises `Φ₁_electron`. -/
+  claim_ii_greedy_electron_placement :
+    ∀ p : ℕ, Phi_1_electron electron_pos_star ≤ Phi_1_electron p
+  /-- Predicate: GB reduction at construction step `k` converges. -/
+  gb_converges : ℕ → Prop
+  /-- Manuscript sub-claim (iii) — GB reduction converges at every
+      construction step. -/
+  claim_iii_gb_convergence : ∀ k : ℕ, gb_converges k
+  /-- Word-count cap `W_max(A)` for mid-construction stripping. -/
+  W_max : ℕ → ℕ
+  /-- Predicate: NF element accumulated without stripping at mass `A`. -/
+  NF_no_strip : ℕ → Prop
+  /-- Manuscript sub-claim (iv) — No mid-construction stripping for
+      `A ≤ 9`. -/
+  claim_iv_NF_accumulation : ∀ a : ℕ, a ≤ 9 → NF_no_strip a
+  /-- The `F_Pauli` value recorded in the witness certificate. -/
+  F_Pauli : ℝ
+  /-- The `tr_alt(q_0)` and `net(q_0)` values from the certificate. -/
+  trAlt net : ℝ
+  /-- Manuscript sub-claim (v) — Pauli character definition:
+      `F_Pauli = |tr_alt(q_0) / net(q_0)|`. -/
+  claim_v_certificate_definition : F_Pauli = |trAlt / net|
 
 /-- **Proposition statement** (from manuscript):
 
@@ -85,13 +100,14 @@ to be in Gröbner--Shirshov normal form.  Specifically:*
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/atomic-nf-witness.ts
 theorem atomic_nf_witness [ctx : AtomicNfWitnessContext] :
-    ctx.claim_i_global_min_ordering ∧
-    ctx.claim_ii_greedy_electron_placement ∧
-    ctx.claim_iii_gb_convergence ∧
-    ctx.claim_iv_NF_accumulation ∧
-    ctx.claim_v_certificate_output :=
+    (∀ π : ℕ, ctx.Phi_1 ctx.pi_star ≤ ctx.Phi_1 π) ∧
+    (∀ p : ℕ, ctx.Phi_1_electron ctx.electron_pos_star ≤
+                ctx.Phi_1_electron p) ∧
+    (∀ k : ℕ, ctx.gb_converges k) ∧
+    (∀ a : ℕ, a ≤ 9 → ctx.NF_no_strip a) ∧
+    ctx.F_Pauli = |ctx.trAlt / ctx.net| :=
   ⟨ctx.claim_i_global_min_ordering, ctx.claim_ii_greedy_electron_placement,
    ctx.claim_iii_gb_convergence, ctx.claim_iv_NF_accumulation,
-   ctx.claim_v_certificate_output⟩
+   ctx.claim_v_certificate_definition⟩
 
 end QOU.ParticleInteractions
