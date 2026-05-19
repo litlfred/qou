@@ -12,9 +12,17 @@ CLAUDE.md §1.
 
 namespace QOU.ParticleInteractions
 
-/-- SpectatorNormalization
+/-- **Content statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+The **spectator normalization** captures the contribution of
+unchanged nucleons to the Q-value character sum.  In a beta
+decay ${}^A_Z X \to {}^A_{Z+1} Y + e^- + \bar\nu$, only one
+neutron converts to a proton; the remaining $Z$ protons and
+$N - 1$ neutrons are spectators.
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types and translating
+    the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/spectator-normalization.ts
 theorem SpectatorNormalization : True := by
   -- TODO: replace `True` with the real statement and discharge it.

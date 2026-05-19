@@ -12,9 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.TopologicalMass
 
-/-- Descended term equals the base-level mass
+/-- **Lemma statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+Let $\alpha = (\int_A \otimes \mathrm{id}) \circ \Delta \circ \varrho$
+be the categorical mass integrand of a closed cycle $\varrho$ at level
+$n+1$, and let $\varrho_0$ be its base-level :refterm[descent]{#descent}.  Then
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types and translating
+    the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/topological-mass-cat-descended.ts
 theorem cat_descended_is_base_mass : True := by
   -- TODO: replace `True` with the real statement and discharge it.

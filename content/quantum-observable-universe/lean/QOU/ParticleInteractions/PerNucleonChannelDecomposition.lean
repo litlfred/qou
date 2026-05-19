@@ -12,9 +12,16 @@ CLAUDE.md §1.
 
 namespace QOU.ParticleInteractions
 
-/-- PerNucleonChannelDecomposition
+/-- **Content statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+The Garside matrix element for a nucleus of mass number $A$
+factors as a product of **per-nucleon contributions**, each
+decomposed into four channels by the $T_{2,3}$ eigenstructure
+of $H_3(q)$.
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types and translating
+    the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.ts
 theorem PerNucleonChannelDecomposition : True := by
   -- TODO: replace `True` with the real statement and discharge it.

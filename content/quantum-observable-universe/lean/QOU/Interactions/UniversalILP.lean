@@ -12,9 +12,17 @@ CLAUDE.md §1.
 
 namespace QOU.Interactions
 
-/-- UniversalILP
+/-- **Content statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+**Definition (Universal ILP Algorithm).**
+*A single integer linear program selects the operator at every
+level of the QOU construction.  The same Gram matrix $G$, the
+same Frobenius check $Gx \geq 0$, and the same ILP are applied
+to quarks, nucleons, atoms, and molecules.*
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types and translating
+    the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/universal-ilp-algorithm.ts
 theorem UniversalILP : True := by
   -- TODO: replace `True` with the real statement and discharge it.

@@ -12,9 +12,18 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.LiftingDescent
 
-/-- Eigenspace decomposition of the mass integrand (descent involution)
+/-- **Lemma statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+Let $\alpha = (\nabla_A q, L \wedge F^+)$ be the integrand of the
+mass identity for a vortex $\varrho$, and let $\hat{\tau}_n$ be the
+:refterm[descent]{#descent} involution.  The Killing-form orthogonality of
+$\mathcal{A}_{n+1}^{\mathrm{desc}} \oplus \mathcal{A}_{n+1}^{\mathrm{trans}}$
+together with multiplicative-integral additivity over orthogonal
+direct sums gives
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types and translating
+    the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/topological-mass-eigenspace-decomp.ts
 theorem tm_eigenspace_decomp : True := by
   -- TODO: replace `True` with the real statement and discharge it.

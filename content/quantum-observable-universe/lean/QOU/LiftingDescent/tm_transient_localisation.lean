@@ -12,9 +12,16 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.LiftingDescent
 
-/-- Transient terms localise to exceptional divisors
+/-- **Lemma statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+The transient component $\alpha - \hat{\tau}_n(\alpha)$ has support
+contained in disjoint discs $D_i$ centred at the blow-up points
+$p_1, \ldots, p_N$, and the norm of the multiplicative integral
+decomposes as a sum over the exceptional divisors $E_i$:
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types and translating
+    the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/topological-mass-transient-localisation.ts
 theorem tm_transient_localisation : True := by
   -- TODO: replace `True` with the real statement and discharge it.

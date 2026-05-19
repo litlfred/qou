@@ -12,9 +12,16 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.Interactions
 
-/-- QOU.Interactions.nuclearOperatorRegimes
+/-- **Proposition statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+In the inductive construction of $\mathcal{N}(Z, N)$
+([derived atom](#def:derived-atom)), the optimal inter-nucleon
+binding operator $\Phi_k$ at step $k$ (adding nucleon $k+1$ to
+nucleus $\mathcal{N}_{\leq k}$) belongs to one of three regimes:*
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types and translating
+    the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/nuclear-operator-regimes.ts
 theorem nuclearOperatorRegimes : True := by
   -- TODO: replace `True` with the real statement and discharge it.

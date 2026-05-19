@@ -12,9 +12,22 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.DescartesUniverse
 
-/-- Cartan reduction recovers the Seiberg--Witten differential
+/-- **Lemma statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+On the exceptional divisor $\mathcal{S}_c \cong \mathbb{P}^1(\mathbb{C})$
+the principal $\mathrm{SU}(2)$-bundle trivialises, the connection
+$\nabla_A$ reduces to a $\mathfrak{su}(2)$-valued $1$-form, and its
+Cartan component satisfies*
+
+$$
+  A^0 = X\, dz = \lambda_{\mathrm{SW}},
+$$
+
+*recovering the Seiberg--Witten differential.
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types and translating
+    the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/mi-sw-abelianisation-cartan.ts
 theorem mi_sw_cartan_reduction : True := by
   -- TODO: replace `True` with the real statement and discharge it.

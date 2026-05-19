@@ -12,9 +12,17 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.TopologicalMass
 
-/-- Transient terms localise to blow-up centres (categorical)
+/-- **Lemma statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+The transient component $\alpha - \hat{\tau}_n(\alpha) \in
+\mathcal{A}_{n+1}^{\mathrm{trans}}$ has support contained in the
+union of the kernels of $\mathfrak{d}_{n+1}$ at the blow-up centres
+$p_1, \ldots, p_N$, and the transient trace decomposes as a sum of
+disjoint local contributions:
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types and translating
+    the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/topological-mass-cat-transient.ts
 theorem cat_transient_localises_blowup : True := by
   -- TODO: replace `True` with the real statement and discharge it.

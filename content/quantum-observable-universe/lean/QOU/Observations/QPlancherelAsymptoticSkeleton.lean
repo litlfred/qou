@@ -12,9 +12,44 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.Observations
 
-/-- QOU.Observations.QPlancherelAsymptoticSkeleton
+/-- **Proposition statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+Let $\tilde w_\lambda^{(n)} := \dim_q^2(\lambda) / [n]_q!$ be the
+q-deformed Wedderburn weight on partitions of $n$
+([Wedderburn weight canonical form](#prop:wedderburn-weight-canonical)).
+There exists a topological space $\Omega_q$ (the q-deformed Thoma
+simplex) and a sequence of pushforward maps*
+$$
+  \iota_n \colon \{\lambda \vdash n\}
+    \;\longrightarrow\; \Omega_q,
+  \qquad
+  n \in \mathbb{N},
+$$
+*such that the pushforward measures
+$\mu_n^{(q)} := (\iota_n)_*\,\tilde w_\lambda^{(n)}$ on $\Omega_q$
+satisfy:*
+
+1. *(Existence of limit at $q = 1$, established.) For $q = 1$, the
+   sequence $\{\mu_n^{(1)}\}$ converges weakly to a measure
+   $\mu_\infty^{(1)}$ on the classical Thoma simplex* [`kerov1981`,
+   `biane1998`].
+2. *(Variance bound at generic $q$, established by Féray–Méliot.)
+   The character fluctuations $\chi_\lambda - \mathbb{E}_q[\chi]$
+   measured under $\mu_n^{(q)}$ have variance
+   $O(1/\sqrt{n - 3})$* [`feray2010`].
+3. *(Limit identification, conjectural.) For $q \neq 1$ in the
+   Wenzl positivity regime
+   ([algebraic GNS embedding](#prop:algebraic-gns-embedding)),
+   $\{\mu_n^{(q)}\}$ converges weakly to a limit measure
+   $\mu_\infty^{(q)}$ on $\Omega_q$. The identification of
+   $\mu_\infty^{(q)}$ with a measure on the GNS operator algebra
+   $\pi_{\mathrm{GNS}}(H_\infty(q))$ is conditional on the existence
+   of a continuous map $\Omega_q \to L(\mathcal{H})$ compatible with
+   $\iota_n$.*
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types and translating
+    the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.ts
 theorem QPlancherelAsymptoticSkeleton : True := by
   -- TODO: replace `True` with the real statement and discharge it.

@@ -12,9 +12,23 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.QuantumObservableUniverse
 
-/-- Axiom 4 — categorical volume constraint via the quantum determinant
+/-- **Lemma statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+Let $V \in \mathbf{C}$ be the standard representation of dimension
+$n$.  The quantum determinant $\epsilon \colon \Lambda^{n} V \to \mathbf{1}$
+is invariant under all tensor automorphisms of the fibre functor:*
+
+$$
+  \epsilon \circ \Lambda^{n}(g_{V}) = \epsilon
+  \quad \text{for all } g \in \mathrm{Aut}^{\otimes}(\tau).
+$$
+
+*This verifies axiom~(4) of
+[quantum observable universe](#def:quantum-observable-universe).
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types and translating
+    the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.ts
 theorem exists_axiom_4_volume : True := by
   -- TODO: replace `True` with the real statement and discharge it.

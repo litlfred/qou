@@ -12,9 +12,17 @@ CLAUDE.md §1.
 
 namespace QOU.Torsion
 
-/-- KnotParticleGeneration
+/-- **Content statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+The particle spectrum is generated from a finite set of torus knot
+*generators* $T_{m,n}$ (with $\gcd(m,n) = 1$) embedded in the
+standard torus $\mathbb{T}^2 \subset S^3$, together with two
+*linking operations* that act on the exceptional divisor and the
+color-tube fibration.
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types and translating
+    the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/knot-particle-generation.ts
 theorem KnotParticleGeneration : True := by
   -- TODO: replace `True` with the real statement and discharge it.

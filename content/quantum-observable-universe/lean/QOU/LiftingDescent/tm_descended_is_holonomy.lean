@@ -12,9 +12,17 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.LiftingDescent
 
-/-- Descended term is the unknot-core holonomy
+/-- **Lemma statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+Under the topological blow-up decomposition
+$\Sigma = \Sigma_0 \cup \bigcup_{i=1}^N D_i$, where $\Sigma_0$ is a
+disc spanning the unknot core $\varrho_0$ and each $D_i$ is the
+exceptional disc at the $i$-th blow-up, the descended term equals
+the unknot-core holonomy:
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types and translating
+    the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/topological-mass-holonomy.ts
 theorem tm_descended_is_holonomy : True := by
   -- TODO: replace `True` with the real statement and discharge it.

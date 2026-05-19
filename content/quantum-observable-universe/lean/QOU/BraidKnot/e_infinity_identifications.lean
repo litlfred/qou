@@ -12,9 +12,19 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.BraidKnot
 
-/-- QOU.BraidKnot.e_infinity_identifications
+/-- **Content statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+Having established the GB spectral sequence exists and converges
+([GB spectral sequence](#prop:gb-spectral-sequence)), the remaining
+task is to **identify** each $E_\infty^{p, *}$ page with a specific
+mass-formula term from
+([unified knot mass](#thm:knot-mass-formula-unified)).  This
+proposition attempts that identification for all six terms, marking
+derivation status per term.
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types and translating
+    the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/e-infinity-page-identifications.ts
 theorem e_infinity_identifications : True := by
   -- TODO: replace `True` with the real statement and discharge it.

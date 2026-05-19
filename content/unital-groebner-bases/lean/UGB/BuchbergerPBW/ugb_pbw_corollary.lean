@@ -12,9 +12,14 @@ citation per CLAUDE.md §1.
 
 namespace UGB.BuchbergerPBW
 
-/-- Poincaré–Birkhoff–Witt theorem over a commutative ring
+/-- **Content statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+Let $\mathfrak{g}$ be a Lie algebra over $R$, a commutative ring with unity, with
+Lie bracket $[\,,\,]_{\mathfrak{g}}$. Then:
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types and translating
+    the manuscript claim above. -/
 -- Ref: [manuscript] unital-groebner-bases/buchberger-and-pbw/pbw-corollary.ts
 theorem ugb_pbw_corollary : True := by
   -- TODO: replace `True` with the real statement and discharge it.

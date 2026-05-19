@@ -12,9 +12,18 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.TopologicalMass
 
-/-- Eigenspace decomposition of the categorical mass integrand
+/-- **Lemma statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+Let $\alpha = (\int_A \otimes \mathrm{id}) \circ \Delta \circ \varrho$
+be the categorical mass integrand of a closed cycle $\varrho$.  When
+the [Frobenius pairing](#def\:frobenius-pairing) is compatible with the
+$*$-involution, the :refterm[descent]{#descent} involution $\hat{\tau}_n$ produces an
+orthogonal decomposition of $\alpha$ into descended and transient
+components, giving
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types and translating
+    the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/topological-mass-cat-eigenspace.ts
 theorem cat_eigenspace_decomposition : True := by
   -- TODO: replace `True` with the real statement and discharge it.

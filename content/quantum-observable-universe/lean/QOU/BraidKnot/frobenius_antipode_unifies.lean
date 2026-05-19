@@ -12,9 +12,21 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.BraidKnot
 
-/-- QOU.BraidKnot.frobenius_antipode_unifies
+/-- **Content statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+**Synthesis.**
+*Two seemingly distinct derivations — Term 5 chirality factor
+([chirality dual-space](#prop:chirality-dual-space-derivation))
+and the upstream **neutron tower closure** via
+`alpha_blend_tower.py` — use the **same algebraic operation**:
+the **Frobenius antipode**
+$S \colon \sigma \mapsto \sigma^{-1}$ on the Hecke algebra
+$H_n(R, q)$.  This unifies what appeared to be unrelated structural
+findings under a single categorical primitive.*
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types and translating
+    the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/frobenius-antipode-unifies-chirality-and-tower.ts
 theorem frobenius_antipode_unifies : True := by
   -- TODO: replace `True` with the real statement and discharge it.

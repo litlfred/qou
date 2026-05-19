@@ -12,9 +12,17 @@ citation per CLAUDE.md §1.
 
 namespace UGB.Introduction
 
-/-- Freeness of quotient by unital Gröbner--Shirshov basis
+/-- **Content statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+Let $R$ be a commutative algebra with unity. Let $A$ be an $R$-algebra which is
+free as an $R$-module and without quasi-zeros. Let $(B, <)$ be an admissible
+system on $A$ and let $I$ be a two-sided ideal of $A$ with a unital Gröbner--Shirshov
+basis $G$. Define $\widetilde{O}(G)$ to be the free $R$-module spanned by the
+monomials which do not occur as leading monomials of members of $G$. Then:
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types and translating
+    the manuscript claim above. -/
 -- Ref: [manuscript] unital-groebner-bases/introduction/ugb-main-theorem-statement.ts
 theorem main_theorem_statement : True := by
   -- TODO: replace `True` with the real statement and discharge it.

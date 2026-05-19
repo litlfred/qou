@@ -12,9 +12,15 @@ manuscript citation per CLAUDE.md §1.
 
 namespace QOU.BraidKnot.SixTermPerDerivationWeights
 
-/-- Per-derivation weights for the six-term mass formula
+/-- **Proposition statement** (from manuscript):
 
-    Placeholder statement; full formalisation pending. -/
+The atomic mass $\mathcal{M}(Z, N)$ is recovered from the
+[unified six-term decomposition](#thm:six-term-mass-formula-complete)
+by
+
+    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
+    upgrading requires choosing the appropriate Lean types and translating
+    the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/six-term-per-derivation-weights.ts
 theorem binding_assembly : True := by
   -- TODO: replace `True` with the real statement and discharge it.
