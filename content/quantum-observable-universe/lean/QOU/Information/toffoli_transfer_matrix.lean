@@ -20,15 +20,15 @@ class ToffoliTransferMatrixContext where
   /-- The braid representative type. -/
   Braid : Type
   /-- Manuscript sub-claim (i) — (Universal factorization.) *Every target-flip amplitude factors as*. -/
-  claim_i : Prop
+  claim_i_target_flip_amplitude : Prop
   /-- Manuscript sub-claim (ii) — (Single-crossing type-blindness.) *At generator $\sigma_1$ (one crossing), the traced volume $\hat{V}_1 = z(q) = 1/(q.... -/
-  claim_ii : Prop
+  claim_ii_generator_crossing_traced : Prop
   /-- Manuscript sub-claim (iii) — (The q-AND = governor choice.) *The Toffoli gate selects the target strand whose control–control pair has $c = 1$ ($\.... -/
-  claim_iii : Prop
+  claim_iii_toffoli_gate_selects : Prop
   /-- Manuscript sub-claim (iv) — (Antisymmetry.) $P_{6,7}(q) = -P_{7,6}(q)$.*. -/
   claim_iv : Prop
   /-- Manuscript sub-claim (v) — (Classical limit.) *All target-flip amplitudes vanish as $q \to 1$: the core $\Phi(q)$ carries the factor $(q - 1)$.*. -/
-  claim_v : Prop
+  claim_v_target_flip_amplitudes : Prop
   /-- Manuscript sub-claim (vi) — (Toffoli diagonal.). -/
   claim_vi : Prop
 
@@ -49,7 +49,7 @@ Then:*
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/information-theory/toffoli-transfer-matrix.ts
 theorem toffoli_transfer_matrix [ctx : ToffoliTransferMatrixContext] :
-    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii ∧ ctx.claim_iv ∧ ctx.claim_v ∧ ctx.claim_vi :=
-  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii, ctx.claim_iv, ctx.claim_v, ctx.claim_vi⟩
+    ctx.claim_i_target_flip_amplitude ∧ ctx.claim_ii_generator_crossing_traced ∧ ctx.claim_iii_toffoli_gate_selects ∧ ctx.claim_iv ∧ ctx.claim_v_target_flip_amplitudes ∧ ctx.claim_vi :=
+  ⟨ctx.claim_i_target_flip_amplitude, ctx.claim_ii_generator_crossing_traced, ctx.claim_iii_toffoli_gate_selects, ctx.claim_iv, ctx.claim_v_target_flip_amplitudes, ctx.claim_vi⟩
 
 end QOU.Information

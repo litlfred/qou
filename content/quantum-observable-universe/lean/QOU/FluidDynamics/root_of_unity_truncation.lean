@@ -20,11 +20,11 @@ class RootOfUnityTruncationContext where
   /-- The substrate parameter `q : ℝ`. -/
   q : ℝ
   /-- Manuscript sub-claim (i) — Generic $q > 1$ (QOU regime). -/
-  claim_i : Prop
+  claim_i_generic_qou_regime : Prop
   /-- Manuscript sub-claim (ii) — Root of unity $q = e^{i\pi/\kappa}$, $\kappa \in \mathbb{Z}_{\geq 2}$. -/
-  claim_ii : Prop
+  claim_ii_root_unity : Prop
   /-- Manuscript sub-claim (iii) — $q = 1$ (classical limit). -/
-  claim_iii : Prop
+  claim_iii_classical_limit : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -41,7 +41,7 @@ accumulation of infinitely many such truncations.
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.ts
 theorem root_of_unity_truncation [ctx : RootOfUnityTruncationContext] :
-    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii :=
-  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii⟩
+    ctx.claim_i_generic_qou_regime ∧ ctx.claim_ii_root_unity ∧ ctx.claim_iii_classical_limit :=
+  ⟨ctx.claim_i_generic_qou_regime, ctx.claim_ii_root_unity, ctx.claim_iii_classical_limit⟩
 
 end QOU.FluidDynamics

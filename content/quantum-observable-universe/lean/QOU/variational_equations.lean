@@ -26,11 +26,11 @@ class VariationalEquationsContext where
   /-- The crossing / Hecke generator type. -/
   Crossing : Type
   /-- Manuscript sub-claim (i) — Gravity (vary $\int_A$): $\delta\mathcal{S}_q / \delta\!\int_A = 0$ yields the categorical Einstein equation:. -/
-  claim_i : Prop
+  claim_i_gravity_vary_yields : Prop
   /-- Manuscript sub-claim (ii) — Gauge (vary $\nabla$): $\delta\mathcal{S}_q / \delta\nabla = 0$ yields the categorical Yang--Mills equation:. -/
-  claim_ii : Prop
+  claim_ii_gauge_vary_yields : Prop
   /-- Manuscript sub-claim (iii) — Matter (vary $\psi$): $\delta\mathcal{S}_q / \delta\psi = 0$ yields the :refterm[categorical transport]{#categorical-.... -/
-  claim_iii : Prop
+  claim_iii_matter_vary_yields : Prop
 
 /-- **Manuscript statement** (full body):
 
@@ -88,7 +88,7 @@ equations are:
     sub-claim fields; the residual sub-claim Props are still abstract. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/variational-equations.ts
 theorem variational_equations [ctx : VariationalEquationsContext] :
-    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii :=
-  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii⟩
+    ctx.claim_i_gravity_vary_yields ∧ ctx.claim_ii_gauge_vary_yields ∧ ctx.claim_iii_matter_vary_yields :=
+  ⟨ctx.claim_i_gravity_vary_yields, ctx.claim_ii_gauge_vary_yields, ctx.claim_iii_matter_vary_yields⟩
 
 end QOU

@@ -24,11 +24,11 @@ class NucleonOrderingFactorizationContext where
   /-- The braid representative type. -/
   Braid : Type
   /-- Manuscript sub-claim (i) — Channel elimination: Symmetric and alternating products computed once per $(Z, N)$, not per ordering. -/
-  claim_i : Prop
+  claim_i_channel_elimination_symmetric : Prop
   /-- Manuscript sub-claim (ii) — Nucleon precomputation: Each nucleon contributes $n_p$ crossings to the chain. -/
-  claim_ii : Prop
+  claim_ii_nucleon_precomputation_nucleon : Prop
   /-- Manuscript sub-claim (iii) — $2 \times 2$ vs $6 \times 6$: The standard-channel matrix multiply is $O(4)$ instead of $O(36)$ per crossing. -/
-  claim_iii : Prop
+  claim_iii_vs_standard_channel : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -53,7 +53,7 @@ $$
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/nucleon-ordering-factorization.ts
 theorem nucleon_ordering_factorization [ctx : NucleonOrderingFactorizationContext] :
-    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii :=
-  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii⟩
+    ctx.claim_i_channel_elimination_symmetric ∧ ctx.claim_ii_nucleon_precomputation_nucleon ∧ ctx.claim_iii_vs_standard_channel :=
+  ⟨ctx.claim_i_channel_elimination_symmetric, ctx.claim_ii_nucleon_precomputation_nucleon, ctx.claim_iii_vs_standard_channel⟩
 
 end QOU.Interactions

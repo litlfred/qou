@@ -22,11 +22,11 @@ class HeckeSatisfiesBlitvicHypothesisContext where
   /-- The Hecke generator `σᵢ` indexed by `ℕ`. -/
   hecke_gen : ℕ → Prop
   /-- Manuscript sub-claim (i) — The Hecke quadratic relation (algebra-level, no analysis). -/
-  claim_i : Prop
+  claim_i_hecke_quadratic_relation : Prop
   /-- Manuscript sub-claim (ii) — The Markov property of $\mathrm{tr}_M$ (`thm:jones-markov-trace`). -/
-  claim_ii : Prop
+  claim_ii_markov_property_thm : Prop
   /-- Manuscript sub-claim (iii) — Wenzl's product factorisation (`prop:trace-locality-meets-gs-non-locality`). -/
-  claim_iii : Prop
+  claim_iii_wenzl_product_factorisation : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -41,7 +41,7 @@ central limit theorem [`blitvic2012`].*
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/hecke-satisfies-blitvic-hypothesis.ts
 theorem hecke_satisfies_blitvic_hypothesis [ctx : HeckeSatisfiesBlitvicHypothesisContext] :
-    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii :=
-  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii⟩
+    ctx.claim_i_hecke_quadratic_relation ∧ ctx.claim_ii_markov_property_thm ∧ ctx.claim_iii_wenzl_product_factorisation :=
+  ⟨ctx.claim_i_hecke_quadratic_relation, ctx.claim_ii_markov_property_thm, ctx.claim_iii_wenzl_product_factorisation⟩
 
 end QOU.Observations

@@ -23,11 +23,11 @@ class WedderburnBratteliRecursionContext where
   /-- The partition / Young-diagram indexing type. -/
   PartitionIdx : Type
   /-- Manuscript sub-claim (i) — Per-row monotonicity: along a fixed-shape path $\lambda^{(1)} \nearrow \lambda^{(2)} \nearrow \cdots$ where each adde.... -/
-  claim_i : Prop
+  claim_i_per_row_monotonicity : Prop
   /-- Manuscript sub-claim (ii) — Sign tracking: when the added cell has negative $q$-content (sub-diagonal), the ratio is negative — explaining the st.... -/
-  claim_ii : Prop
+  claim_ii_sign_tracking_added : Prop
   /-- Manuscript sub-claim (iii) — Trivial-rep limit: for $\lambda = (n)$, the ratio $y_{(n+1)}^{(n+1)} / y_{(n)}^{(n)}$ descends monotonically toward $.... -/
-  claim_iii : Prop
+  claim_iii_trivial_rep_limit : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -43,7 +43,7 @@ Then the family $\{y_\lambda^{(n)}\}_{n \geq 1}$ satisfies a
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/wedderburn-bratteli-recursion.ts
 theorem wedderburn_bratteli_recursion [ctx : WedderburnBratteliRecursionContext] :
-    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii :=
-  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii⟩
+    ctx.claim_i_per_row_monotonicity ∧ ctx.claim_ii_sign_tracking_added ∧ ctx.claim_iii_trivial_rep_limit :=
+  ⟨ctx.claim_i_per_row_monotonicity, ctx.claim_ii_sign_tracking_added, ctx.claim_iii_trivial_rep_limit⟩
 
 end QOU.BraidsAndKnots

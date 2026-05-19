@@ -19,13 +19,13 @@ class PentagonUvCommutationContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
   /-- Manuscript sub-claim (i) — Hecke braid relation at the operator level (before :refterm[descent]{#descent} to scalars): $\sigma_s \sigma_{s+1} \s.... -/
-  claim_i : Prop
+  claim_i_hecke_braid_relation : Prop
   /-- Manuscript sub-claim (ii) — :refterm[Descent]{#descent} involution split: $\hat\tau_n$ separates $H_n(R, q)$ into $\mathrm{im}\,\hat\tau_n$ (desc.... -/
-  claim_ii : Prop
+  claim_ii_refterm_descent_descent : Prop
   /-- Manuscript sub-claim (iii) — Eigenvalue specialisation on the $q$-block of $\sigma_s$ reduces the descended part to scalar form, where commutation.... -/
-  claim_iii : Prop
+  claim_iii_eigenvalue_specialisation_block : Prop
   /-- Manuscript sub-claim (iv) — Operator lift on the transient part: the surviving non-trivial commutation is between level-$n$ and level-$(n+1)$ ope.... -/
-  claim_iv : Prop
+  claim_iv_operator_lift_transient : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -39,7 +39,7 @@ $$
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/pentagon-uv-commutation.ts
 theorem pentagon_uv_commutation [ctx : PentagonUvCommutationContext] :
-    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii ∧ ctx.claim_iv :=
-  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii, ctx.claim_iv⟩
+    ctx.claim_i_hecke_braid_relation ∧ ctx.claim_ii_refterm_descent_descent ∧ ctx.claim_iii_eigenvalue_specialisation_block ∧ ctx.claim_iv_operator_lift_transient :=
+  ⟨ctx.claim_i_hecke_braid_relation, ctx.claim_ii_refterm_descent_descent, ctx.claim_iii_eigenvalue_specialisation_block, ctx.claim_iv_operator_lift_transient⟩
 
 end QOU.QuantumBloch

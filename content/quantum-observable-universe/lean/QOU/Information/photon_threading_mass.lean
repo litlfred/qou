@@ -22,11 +22,11 @@ class PhotonThreadingMassContext where
   /-- The Hecke generator `σᵢ` indexed by `ℕ`. -/
   hecke_gen : ℕ → Prop
   /-- Manuscript sub-claim (i) — Start. -/
-  claim_i : Prop
+  claim_i_start : Prop
   /-- Manuscript sub-claim (ii) — Thread. -/
-  claim_ii : Prop
+  claim_ii_thread : Prop
   /-- Manuscript sub-claim (iii) — End. -/
-  claim_iii : Prop
+  claim_iii_end : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -54,7 +54,7 @@ $c_w$ are the coefficients at each step.*
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/information-theory/photon-threading-mass.ts
 theorem photon_threading_mass [ctx : PhotonThreadingMassContext] :
-    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii :=
-  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii⟩
+    ctx.claim_i_start ∧ ctx.claim_ii_thread ∧ ctx.claim_iii_end :=
+  ⟨ctx.claim_i_start, ctx.claim_ii_thread, ctx.claim_iii_end⟩
 
 end QOU.Information

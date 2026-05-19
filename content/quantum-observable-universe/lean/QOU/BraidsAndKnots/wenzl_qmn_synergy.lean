@@ -25,11 +25,11 @@ class WenzlQmnSynergyContext where
   /-- The partition / Young-diagram indexing type. -/
   PartitionIdx : Type
   /-- Manuscript sub-claim (i) — Direct verification of Wenzl-bridge correctness: any canonical-braid Markov-trace identity gives a one-shot test of $.... -/
-  claim_i : Prop
+  claim_i_direct_verification_wenzl : Prop
   /-- Manuscript sub-claim (ii) — Mass-formula compute speedup: the depth-resolved Φ_k pipeline in `depth_resolved_phi_k_hoefsmit.py` can replace its H.... -/
-  claim_ii : Prop
+  claim_ii_mass_formula_compute : Prop
   /-- Manuscript sub-claim (iii) — Atom-knot identification path for ⁶Li, ⁷Li: - Enumerate hyperbolic knots $K$ with crossing-number $\leq 10$. -/
-  claim_iii : Prop
+  claim_iii_atom_knot_identification : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -69,7 +69,7 @@ this drops the per-isotope compute time from
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/wenzl-qmn-synergy.ts
 theorem wenzl_qmn_synergy [ctx : WenzlQmnSynergyContext] :
-    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii :=
-  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii⟩
+    ctx.claim_i_direct_verification_wenzl ∧ ctx.claim_ii_mass_formula_compute ∧ ctx.claim_iii_atom_knot_identification :=
+  ⟨ctx.claim_i_direct_verification_wenzl, ctx.claim_ii_mass_formula_compute, ctx.claim_iii_atom_knot_identification⟩
 
 end QOU.BraidsAndKnots

@@ -20,11 +20,11 @@ class Ch4LpDualBindingContext where
   /-- The braid representative type. -/
   Braid : Type
   /-- Manuscript sub-claim (i) — Each C--H bond has the same traced volume $\hat{V}_b$. -/
-  claim_i : Prop
+  claim_i_bond_same_traced : Prop
   /-- Manuscript sub-claim (ii) — Each H--H repulsion has the same $\Phi_1$ penalty. -/
-  claim_ii : Prop
+  claim_ii_repulsion_same_penalty : Prop
   /-- Manuscript sub-claim (iii) — The total binding energy is exactly $4 \times \mathbf{E}_{\mathrm{bind}}^{CH}$. -/
-  claim_iii : Prop
+  claim_iii_total_binding_energy : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -59,7 +59,7 @@ braid-theoretic origin of the
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/ch4-lp-dual-binding.ts
 theorem ch4_lp_dual_binding [ctx : Ch4LpDualBindingContext] :
-    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii :=
-  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii⟩
+    ctx.claim_i_bond_same_traced ∧ ctx.claim_ii_repulsion_same_penalty ∧ ctx.claim_iii_total_binding_energy :=
+  ⟨ctx.claim_i_bond_same_traced, ctx.claim_ii_repulsion_same_penalty, ctx.claim_iii_total_binding_energy⟩
 
 end QOU.Molecular

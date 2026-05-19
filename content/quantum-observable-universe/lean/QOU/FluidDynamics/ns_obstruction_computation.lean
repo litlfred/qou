@@ -21,9 +21,9 @@ class NsObstructionComputationContext where
   /-- The topological-link / knot type. -/
   Link : Type
   /-- Manuscript sub-claim (i) — Topological: $\mathrm{lk} \cdot e(\xi)|_p$, which is nonzero iff the Reeb field has a zero at $p$ (iff the contact st.... -/
-  claim_i : Prop
+  claim_i_topological_which_nonzero : Prop
   /-- Manuscript sub-claim (ii) — Analytic: $\delta_n|_\Sigma$, which is nonzero whenever the $n$-th jet of the velocity diverges (for all $n \geq 1$ i.... -/
-  claim_ii : Prop
+  claim_ii_analytic_which_nonzero : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -38,7 +38,7 @@ linking number $\mathrm{lk} = 1$.
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/ns-obstruction-computation.ts
 theorem ns_obstruction_computation [ctx : NsObstructionComputationContext] :
-    ctx.claim_i ∧ ctx.claim_ii :=
-  ⟨ctx.claim_i, ctx.claim_ii⟩
+    ctx.claim_i_topological_which_nonzero ∧ ctx.claim_ii_analytic_which_nonzero :=
+  ⟨ctx.claim_i_topological_which_nonzero, ctx.claim_ii_analytic_which_nonzero⟩
 
 end QOU.FluidDynamics

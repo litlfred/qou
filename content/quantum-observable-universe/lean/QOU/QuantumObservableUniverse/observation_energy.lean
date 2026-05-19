@@ -19,11 +19,11 @@ class ObservationEnergyContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
   /-- Manuscript sub-claim (i) — (Quantum energy increases.) *The quantum Planck constant $\hbar_q = 1 - q^{-1}$ (quantum Planck constant) satisfies*. -/
-  claim_i : Prop
+  claim_i_quantum_planck_constant : Prop
   /-- Manuscript sub-claim (ii) — (Action deformation.) *The categorical action $S_q[\nabla, \lambda, \psi]$ (categorical action) evaluated at the pert.... -/
-  claim_ii : Prop
+  claim_ii_categorical_action_categorical : Prop
   /-- Manuscript sub-claim (iii) — (Classical energy is unconstrained in sign.) *The classical energy (the $q \to 1$ shadow of the action) can increase .... -/
-  claim_iii : Prop
+  claim_iii_classical_energy_shadow : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -39,7 +39,7 @@ substrate perturbation $\delta q$.  Then:*
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/observation-energy.ts
 theorem observation_energy [ctx : ObservationEnergyContext] :
-    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii :=
-  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii⟩
+    ctx.claim_i_quantum_planck_constant ∧ ctx.claim_ii_categorical_action_categorical ∧ ctx.claim_iii_classical_energy_shadow :=
+  ⟨ctx.claim_i_quantum_planck_constant, ctx.claim_ii_categorical_action_categorical, ctx.claim_iii_classical_energy_shadow⟩
 
 end QOU.QuantumObservableUniverse

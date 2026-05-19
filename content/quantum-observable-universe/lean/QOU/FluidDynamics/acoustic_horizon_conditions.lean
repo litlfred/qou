@@ -19,11 +19,11 @@ class AcousticHorizonConditionsContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
   /-- Manuscript sub-claim (i) — Transonic flow. -/
-  claim_i : Prop
+  claim_i_transonic_flow : Prop
   /-- Manuscript sub-claim (ii) — Non-degeneracy. -/
-  claim_ii : Prop
+  claim_ii_non_degeneracy : Prop
   /-- Manuscript sub-claim (iii) — Energy condition. -/
-  claim_iii : Prop
+  claim_iii_energy_condition : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -36,7 +36,7 @@ horizons wherever $|v| = c_s$.
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/acoustic-horizon-conditions.ts
 theorem acoustic_horizon_conditions [ctx : AcousticHorizonConditionsContext] :
-    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii :=
-  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii⟩
+    ctx.claim_i_transonic_flow ∧ ctx.claim_ii_non_degeneracy ∧ ctx.claim_iii_energy_condition :=
+  ⟨ctx.claim_i_transonic_flow, ctx.claim_ii_non_degeneracy, ctx.claim_iii_energy_condition⟩
 
 end QOU.FluidDynamics

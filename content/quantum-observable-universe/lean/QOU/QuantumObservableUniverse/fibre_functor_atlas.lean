@@ -19,13 +19,13 @@ class FibreFunctorAtlasContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
   /-- Manuscript sub-claim (i) — (Charts.) *Each fibre functor $\omega \colon \mathbf{C} \to \mathbf{Vect}_R$ is an affine chart: a concrete realisati.... -/
-  claim_i : Prop
+  claim_i_fibre_functor_affine : Prop
   /-- Manuscript sub-claim (ii) — (Transitions.) *For any two fibre functors $\omega, \omega'$, the set of monoidal natural isomorphisms $\omega \xrigh.... -/
-  claim_ii : Prop
+  claim_ii_fibre_functors_set : Prop
   /-- Manuscript sub-claim (iii) — (Cocycle condition.) *Given three fibre functors $\omega, \omega', \omega''$ with transition isomorphisms $g_{01}, g_.... -/
-  claim_iii : Prop
+  claim_iii_given_fibre_functors : Prop
   /-- Manuscript sub-claim (iv) — (Atlas.) *The category of all fibre functors on $\mathbf{C}$, with monoidal natural isomorphisms as morphisms, is a $.... -/
-  claim_iv : Prop
+  claim_iv_category_fibre_functors : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -43,7 +43,7 @@ $\omega, \omega'$ denote arbitrary fibre functors on $\mathbf{C}$
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/fibre-functor-atlas.ts
 theorem fibre_functor_atlas [ctx : FibreFunctorAtlasContext] :
-    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii ∧ ctx.claim_iv :=
-  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii, ctx.claim_iv⟩
+    ctx.claim_i_fibre_functor_affine ∧ ctx.claim_ii_fibre_functors_set ∧ ctx.claim_iii_given_fibre_functors ∧ ctx.claim_iv_category_fibre_functors :=
+  ⟨ctx.claim_i_fibre_functor_affine, ctx.claim_ii_fibre_functors_set, ctx.claim_iii_given_fibre_functors, ctx.claim_iv_category_fibre_functors⟩
 
 end QOU.QuantumObservableUniverse

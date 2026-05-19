@@ -19,11 +19,11 @@ class ConfinementCategoricalContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
   /-- Manuscript sub-claim (i) — *(Survival.) The only $E_\infty$-page contributions are $E_\infty^{0, 0} = Z(A) = \bigoplus_\lambda R \cdot e_\lambda$. -/
-  claim_i : Prop
+  claim_i_survival_page_contributions : Prop
   /-- Manuscript sub-claim (ii) — *(Trace factorization.) The Frobenius integral factors through the centre:*. -/
-  claim_ii : Prop
+  claim_ii_trace_factorization_frobenius : Prop
   /-- Manuscript sub-claim (iii) — *(Observables are Wedderburn residues.) Every physical observable $\mathfrak{O}(\mathcal{K}, \mathcal{T}) = \int_A \r.... -/
-  claim_iii : Prop
+  claim_iii_observables_wedderburn_residues : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -39,7 +39,7 @@ elements of $A = H_n(R, q)$ survive as physical observables, and
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/confinement-categorical.ts
 theorem confinement_categorical [ctx : ConfinementCategoricalContext] :
-    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii :=
-  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii⟩
+    ctx.claim_i_survival_page_contributions ∧ ctx.claim_ii_trace_factorization_frobenius ∧ ctx.claim_iii_observables_wedderburn_residues :=
+  ⟨ctx.claim_i_survival_page_contributions, ctx.claim_ii_trace_factorization_frobenius, ctx.claim_iii_observables_wedderburn_residues⟩
 
 end QOU.WedderburnMass

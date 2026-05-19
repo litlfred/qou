@@ -20,11 +20,11 @@ class BenzeneThreadingEmergenceContext where
   /-- The braid representative type. -/
   Braid : Type
   /-- Manuscript sub-claim (i) — More shared crossings. -/
-  claim_i : Prop
+  claim_i_more_shared_crossings : Prop
   /-- Manuscript sub-claim (ii) — $D_6$ symmetry. -/
-  claim_ii : Prop
+  claim_ii_symmetry : Prop
   /-- Manuscript sub-claim (iii) — Alexander polynomial weight. -/
-  claim_iii : Prop
+  claim_iii_alexander_polynomial_weight : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -42,7 +42,7 @@ orbital.  The LP dual optimises their placement:*
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/benzene-threading-emergence.ts
 theorem benzene_threading_emergence [ctx : BenzeneThreadingEmergenceContext] :
-    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii :=
-  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii⟩
+    ctx.claim_i_more_shared_crossings ∧ ctx.claim_ii_symmetry ∧ ctx.claim_iii_alexander_polynomial_weight :=
+  ⟨ctx.claim_i_more_shared_crossings, ctx.claim_ii_symmetry, ctx.claim_iii_alexander_polynomial_weight⟩
 
 end QOU.Molecular

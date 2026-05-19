@@ -19,11 +19,11 @@ class NsKummerSpecialisationContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
   /-- Manuscript sub-claim (i) — The specialisation $\kappa_0|_{q=1}$ is nonzero in $H^2(\mathcal{S}, \mathbb{G}_m)/n$ for all $n \nmid \chi(A)$. -/
-  claim_i : Prop
+  claim_i_specialisation_nonzero : Prop
   /-- Manuscript sub-claim (ii) — Since the set $\{n : n \nmid \chi(A)\}$ is infinite (it contains all primes not dividing $\chi(A)$), the obstruction .... -/
-  claim_ii : Prop
+  claim_ii_since_set_infinite : Prop
   /-- Manuscript sub-claim (iii) — The obstruction vanishes only at the finitely many Kummer levels $n \mid \chi(A)$, which correspond to the finitely m.... -/
-  claim_iii : Prop
+  claim_iii_obstruction_vanishes_finitely : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -37,7 +37,7 @@ $\mathrm{tr}(\kappa_0) = \chi(A)$.
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/ns-kummer-specialisation.ts
 theorem ns_kummer_specialisation [ctx : NsKummerSpecialisationContext] :
-    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii :=
-  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii⟩
+    ctx.claim_i_specialisation_nonzero ∧ ctx.claim_ii_since_set_infinite ∧ ctx.claim_iii_obstruction_vanishes_finitely :=
+  ⟨ctx.claim_i_specialisation_nonzero, ctx.claim_ii_since_set_infinite, ctx.claim_iii_obstruction_vanishes_finitely⟩
 
 end QOU.FluidDynamics

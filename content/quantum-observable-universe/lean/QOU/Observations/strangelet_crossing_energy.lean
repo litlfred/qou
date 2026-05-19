@@ -21,11 +21,11 @@ class StrangeletCrossingEnergyContext where
   /-- The topological-link / knot type. -/
   Link : Type
   /-- Manuscript sub-claim (i) — Electromagnetic neutrality. -/
-  claim_i : Prop
+  claim_i_electromagnetic_neutrality : Prop
   /-- Manuscript sub-claim (ii) — Purely strong crossing energy. -/
-  claim_ii : Prop
+  claim_ii_purely_strong_crossing : Prop
   /-- Manuscript sub-claim (iii) — Enhanced binding per baryon. -/
-  claim_iii : Prop
+  claim_iii_enhanced_binding_per : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -42,7 +42,7 @@ by the Hopf link $\mathcal{L}_H$.  Then:
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/strangelet-crossing-energy.ts
 theorem strangelet_crossing_energy [ctx : StrangeletCrossingEnergyContext] :
-    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii :=
-  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii⟩
+    ctx.claim_i_electromagnetic_neutrality ∧ ctx.claim_ii_purely_strong_crossing ∧ ctx.claim_iii_enhanced_binding_per :=
+  ⟨ctx.claim_i_electromagnetic_neutrality, ctx.claim_ii_purely_strong_crossing, ctx.claim_iii_enhanced_binding_per⟩
 
 end QOU.Observations

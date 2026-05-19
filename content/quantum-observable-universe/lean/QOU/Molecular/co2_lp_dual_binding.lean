@@ -20,11 +20,11 @@ class Co2LpDualBindingContext where
   /-- The braid representative type. -/
   Braid : Type
   /-- Manuscript sub-claim (i) — *Bond order assignments: $(k_1, k_2)$ with $k_1 + k_2 \leq 4$ (carbon's valence)*. -/
-  claim_i : Prop
+  claim_i_bond_order_assignments : Prop
   /-- Manuscript sub-claim (ii) — *Electron-bond assignments: which electrons are shared with which oxygen*. -/
-  claim_ii : Prop
+  claim_ii_electron_bond_assignments : Prop
   /-- Manuscript sub-claim (iii) — Strand orderings: permutations of 66 strands. -/
-  claim_iii : Prop
+  claim_iii_strand_orderings_permutations : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -63,7 +63,7 @@ wins over asymmetric alternatives $(3, 1)$ or $(1, 3)$ because:*
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/co2-lp-dual-binding.ts
 theorem co2_lp_dual_binding [ctx : Co2LpDualBindingContext] :
-    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii :=
-  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii⟩
+    ctx.claim_i_bond_order_assignments ∧ ctx.claim_ii_electron_bond_assignments ∧ ctx.claim_iii_strand_orderings_permutations :=
+  ⟨ctx.claim_i_bond_order_assignments, ctx.claim_ii_electron_bond_assignments, ctx.claim_iii_strand_orderings_permutations⟩
 
 end QOU.Molecular

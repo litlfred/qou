@@ -19,15 +19,15 @@ class BringsIsQouContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
   /-- Manuscript sub-claim (i) — Quantum universe. -/
-  claim_i : Prop
+  claim_i_quantum_universe : Prop
   /-- Manuscript sub-claim (ii) — Observability. -/
-  claim_ii : Prop
+  claim_ii_observability : Prop
   /-- Manuscript sub-claim (iii) — Yekutieli lifting. -/
-  claim_iii : Prop
+  claim_iii_yekutieli_lifting : Prop
   /-- Manuscript sub-claim (iv) — Euler characteristic. -/
-  claim_iv : Prop
+  claim_iv_euler_characteristic : Prop
   /-- Manuscript sub-claim (v) — Geometric :refterm[descent]{#descent} (for $n = 1$, $\dim M_S = 3$):. -/
-  claim_v : Prop
+  claim_v_geometric_refterm_descent : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -40,7 +40,7 @@ to a quantum observable universe over $R$ (with $30 \in R^{\times}$):
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/brings-is-qou.ts
 theorem brings_is_qou [ctx : BringsIsQouContext] :
-    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii ∧ ctx.claim_iv ∧ ctx.claim_v :=
-  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii, ctx.claim_iv, ctx.claim_v⟩
+    ctx.claim_i_quantum_universe ∧ ctx.claim_ii_observability ∧ ctx.claim_iii_yekutieli_lifting ∧ ctx.claim_iv_euler_characteristic ∧ ctx.claim_v_geometric_refterm_descent :=
+  ⟨ctx.claim_i_quantum_universe, ctx.claim_ii_observability, ctx.claim_iii_yekutieli_lifting, ctx.claim_iv_euler_characteristic, ctx.claim_v_geometric_refterm_descent⟩
 
 end QOU.Brings

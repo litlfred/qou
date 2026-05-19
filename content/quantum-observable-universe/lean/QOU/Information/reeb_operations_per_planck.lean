@@ -20,11 +20,11 @@ class ReebOperationsPerPlanckContext where
   /-- The braid representative type. -/
   Braid : Type
   /-- Manuscript sub-claim (i) — Advances the phase of the Reeb vector by $\hbar_q \approx 0.099$ of a full circuit. -/
-  claim_i : Prop
+  claim_i_advances_phase_reeb : Prop
   /-- Manuscript sub-claim (ii) — Applies the $q$-connection $\nabla_q$ once, correlating adjacent fibers. -/
-  claim_ii : Prop
+  claim_ii_applies_connection_once : Prop
   /-- Manuscript sub-claim (iii) — Evaluates one $R$-matrix, resolving one braiding crossing on the exceptional divisor. -/
-  claim_iii : Prop
+  claim_iii_evaluates_matrix_resolving : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -58,7 +58,7 @@ $\square$
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/information-theory/reeb-operations-per-planck.ts
 theorem reeb_operations_per_planck [ctx : ReebOperationsPerPlanckContext] :
-    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii :=
-  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii⟩
+    ctx.claim_i_advances_phase_reeb ∧ ctx.claim_ii_applies_connection_once ∧ ctx.claim_iii_evaluates_matrix_resolving :=
+  ⟨ctx.claim_i_advances_phase_reeb, ctx.claim_ii_applies_connection_once, ctx.claim_iii_evaluates_matrix_resolving⟩
 
 end QOU.Information

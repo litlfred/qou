@@ -23,11 +23,11 @@ class DemazureFiberMarkovTraceContext where
   /-- The partition / Young-diagram indexing type. -/
   PartitionIdx : Type
   /-- Manuscript sub-claim (i) — *$T^{\mathrm{Dem}}(\lambda;\, w_0) = y_\lambda$ — the standard Jones–Markov coefficient is the saturated case.*. -/
-  claim_i : Prop
+  claim_i_standard_jones_markov : Prop
   /-- Manuscript sub-claim (ii) — *For $w < w_0$ (Bruhat order), $T^{\mathrm{Dem}}(\lambda;\, w)$ is the structural resonance width of the $\lambda$-bl.... -/
-  claim_ii : Prop
+  claim_ii_bruhat_order_structural : Prop
   /-- Manuscript sub-claim (iii) — *Plancherel completeness: $\sum_{\lambda \vdash n} f_\lambda \cdot T^{\mathrm{Dem}}(\lambda;\, w_0) = 1$ reduces to t.... -/
-  claim_iii : Prop
+  claim_iii_plancherel_completeness_reduces : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -77,7 +77,7 @@ principal specialisation $x_i \mapsto q^{i-1}$.  Then:*
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/demazure-fiber-markov-trace.ts
 theorem demazure_fiber_markov_trace [ctx : DemazureFiberMarkovTraceContext] :
-    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii :=
-  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii⟩
+    ctx.claim_i_standard_jones_markov ∧ ctx.claim_ii_bruhat_order_structural ∧ ctx.claim_iii_plancherel_completeness_reduces :=
+  ⟨ctx.claim_i_standard_jones_markov, ctx.claim_ii_bruhat_order_structural, ctx.claim_iii_plancherel_completeness_reduces⟩
 
 end QOU.BraidsAndKnots

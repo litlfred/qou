@@ -23,17 +23,17 @@ class RecursiveAtomKnotAtlasContext where
   /-- The braid representative type. -/
   Braid : Type
   /-- Manuscript sub-claim (i) — `confined-particle.md` — GB-NF particle registry (canonical $T_w$). -/
-  claim_i : Prop
+  claim_i_confined_particle_md : Prop
   /-- Manuscript sub-claim (ii) — `mass-table-ppb.witness.json` — D..⁴⁰Ca (manual-historical, recursive, magic-A). -/
-  claim_ii : Prop
+  claim_ii_mass_table_ppb : Prop
   /-- Manuscript sub-claim (iii) — `methodology-deprecation.witness.json` — per-particle methodology audit. -/
-  claim_iii : Prop
+  claim_iii_methodology_deprecation_witness : Prop
   /-- Manuscript sub-claim (iv) — `hp_volume.py` — $\geq 50$-digit symbolic-$q$ Markov-closure $\to$ $\mathrm{Vol}_{\mathrm{hyp}}$. -/
-  claim_iv : Prop
+  claim_iv_hp_volume_py_digit : Prop
   /-- Manuscript sub-claim (v) — `y_lambda_wenzl_bridge_extended.py` — symbolic-$q$ Wenzl bridge for $y_\lambda$. -/
-  claim_v : Prop
+  claim_v_y_lambda_wenzl_bridge_extended_py_symbolic : Prop
   /-- Manuscript sub-claim (vi) — `li-atom-knot-search.witness.json` — (provisional) volume-match search. -/
-  claim_vi : Prop
+  claim_vi_li_atom_knot : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -52,7 +52,7 @@ Confinement at $q_0$ is verified via the
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/recursive-atom-knot-atlas.ts
 theorem recursive_atom_knot_atlas [ctx : RecursiveAtomKnotAtlasContext] :
-    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii ∧ ctx.claim_iv ∧ ctx.claim_v ∧ ctx.claim_vi :=
-  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii, ctx.claim_iv, ctx.claim_v, ctx.claim_vi⟩
+    ctx.claim_i_confined_particle_md ∧ ctx.claim_ii_mass_table_ppb ∧ ctx.claim_iii_methodology_deprecation_witness ∧ ctx.claim_iv_hp_volume_py_digit ∧ ctx.claim_v_y_lambda_wenzl_bridge_extended_py_symbolic ∧ ctx.claim_vi_li_atom_knot :=
+  ⟨ctx.claim_i_confined_particle_md, ctx.claim_ii_mass_table_ppb, ctx.claim_iii_methodology_deprecation_witness, ctx.claim_iv_hp_volume_py_digit, ctx.claim_v_y_lambda_wenzl_bridge_extended_py_symbolic, ctx.claim_vi_li_atom_knot⟩
 
 end QOU.BraidsAndKnots

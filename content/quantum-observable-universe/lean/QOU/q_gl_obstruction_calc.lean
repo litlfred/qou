@@ -19,13 +19,13 @@ class QGlObstructionCalcContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
   /-- Manuscript sub-claim (i) — The intrinsic $q$-curvature of any $q$-flat connection $\nabla_q$ on a $G_q$-bundle over $X$ is. -/
-  claim_i : Prop
+  claim_i_intrinsic_curvature_flat : Prop
   /-- Manuscript sub-claim (ii) — The $q$-connection $\nabla_q$ is $q$-flat (q-flat connection) — meaning its connection-dependent curvature $\mathcal{.... -/
-  claim_ii : Prop
+  claim_ii_connection_flat_flat : Prop
   /-- Manuscript sub-claim (iii) — At Kummer level $n$, the obstruction $\kappa_0 \bmod n$ vanishes if and only if $n \mid \chi(A)$. -/
-  claim_iii : Prop
+  claim_iii_kummer_level_obstruction : Prop
   /-- Manuscript sub-claim (iv) — For $\chi(A) \neq 0$, the set of Kummer levels $n$ at which $\kappa_0 \bmod n \neq 0$ has density $1$ in $\mathbb{Z}_.... -/
-  claim_iv : Prop
+  claim_iv_set_kummer_levels : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -40,7 +40,7 @@ $\kappa_0 = e(\xi) \in H^2(\mathcal{S}, \mathbb{G}_m)$
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/q-geometric-langlands/q-gl-obstruction-calc.ts
 theorem q_gl_obstruction_calc [ctx : QGlObstructionCalcContext] :
-    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii ∧ ctx.claim_iv :=
-  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii, ctx.claim_iv⟩
+    ctx.claim_i_intrinsic_curvature_flat ∧ ctx.claim_ii_connection_flat_flat ∧ ctx.claim_iii_kummer_level_obstruction ∧ ctx.claim_iv_set_kummer_levels :=
+  ⟨ctx.claim_i_intrinsic_curvature_flat, ctx.claim_ii_connection_flat_flat, ctx.claim_iii_kummer_level_obstruction, ctx.claim_iv_set_kummer_levels⟩
 
 end QOU

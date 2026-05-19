@@ -26,11 +26,11 @@ class EwInterfaceKnotContext where
   /-- The topological-link / knot type. -/
   Link : Type
   /-- Manuscript sub-claim (i) — Direct parallel with the deuteron derivation. -/
-  claim_i : Prop
+  claim_i_direct_parallel_deuteron : Prop
   /-- Manuscript sub-claim (ii) — Resolves the simple-multiplicity Weinberg-angle failure. -/
-  claim_ii : Prop
+  claim_ii_resolves_simple_multiplicity : Prop
   /-- Manuscript sub-claim (iii) — Bar-self-duality breakdown is structural. -/
-  claim_iii : Prop
+  claim_iii_bar_self_duality : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -52,7 +52,7 @@ $H \leftrightarrow \sigma_5^{\,8}$ act
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/ew-interface-knot.ts
 theorem ew_interface_knot [ctx : EwInterfaceKnotContext] :
-    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii :=
-  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii⟩
+    ctx.claim_i_direct_parallel_deuteron ∧ ctx.claim_ii_resolves_simple_multiplicity ∧ ctx.claim_iii_bar_self_duality :=
+  ⟨ctx.claim_i_direct_parallel_deuteron, ctx.claim_ii_resolves_simple_multiplicity, ctx.claim_iii_bar_self_duality⟩
 
 end QOU.BraidsAndKnots

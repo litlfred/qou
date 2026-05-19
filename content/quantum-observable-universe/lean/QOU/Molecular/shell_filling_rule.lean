@@ -24,11 +24,11 @@ class ShellFillingRuleContext where
   /-- The braid representative type. -/
   Braid : Type
   /-- Manuscript sub-claim (i) — *Inner shells ($n < n_{\mathrm{val}}$) fill completely because each additional electron in a partly filled inner shel.... -/
-  claim_i : Prop
+  claim_i_inner_shells_fill : Prop
   /-- Manuscript sub-claim (ii) — *Within the valence shell, electrons distribute to maximise the number of singly occupied sites (Hund's rule) because.... -/
-  claim_ii : Prop
+  claim_ii_within_valence_shell : Prop
   /-- Manuscript sub-claim (iii) — The LP dual of the electron assignment problem is:. -/
-  claim_iii : Prop
+  claim_iii_lp_dual_electron : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -68,7 +68,7 @@ penalty for electron-electron repulsion at shell $n$.*
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/shell-filling-rule.ts
 theorem shell_filling_rule [ctx : ShellFillingRuleContext] :
-    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii :=
-  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii⟩
+    ctx.claim_i_inner_shells_fill ∧ ctx.claim_ii_within_valence_shell ∧ ctx.claim_iii_lp_dual_electron :=
+  ⟨ctx.claim_i_inner_shells_fill, ctx.claim_ii_within_valence_shell, ctx.claim_iii_lp_dual_electron⟩
 
 end QOU.Molecular

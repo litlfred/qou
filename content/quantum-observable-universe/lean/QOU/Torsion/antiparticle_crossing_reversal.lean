@@ -19,13 +19,13 @@ class AntiparticleCrossingReversalContext where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
   /-- Manuscript sub-claim (i) — Crossing reversal defines antiparticles. -/
-  claim_i : Prop
+  claim_i_crossing_reversal_defines : Prop
   /-- Manuscript sub-claim (ii) — Crossing energy sign reversal. -/
-  claim_ii : Prop
+  claim_ii_crossing_energy_sign : Prop
   /-- Manuscript sub-claim (iii) — Coulomb charge reversal. -/
-  claim_iii : Prop
+  claim_iii_coulomb_charge_reversal : Prop
   /-- Manuscript sub-claim (iv) — Bare mass invariance. -/
-  claim_iv : Prop
+  claim_iv_bare_mass_invariance : Prop
 
 /-- **Content statement** (from manuscript):
 
@@ -38,7 +38,7 @@ $T_{2,3}^{\sigma}$ its mirror image (all crossings reversed).
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/antiparticle-crossing-reversal.ts
 theorem antiparticle_crossing_reversal [ctx : AntiparticleCrossingReversalContext] :
-    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii ∧ ctx.claim_iv :=
-  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii, ctx.claim_iv⟩
+    ctx.claim_i_crossing_reversal_defines ∧ ctx.claim_ii_crossing_energy_sign ∧ ctx.claim_iii_coulomb_charge_reversal ∧ ctx.claim_iv_bare_mass_invariance :=
+  ⟨ctx.claim_i_crossing_reversal_defines, ctx.claim_ii_crossing_energy_sign, ctx.claim_iii_coulomb_charge_reversal, ctx.claim_iv_bare_mass_invariance⟩
 
 end QOU.Torsion

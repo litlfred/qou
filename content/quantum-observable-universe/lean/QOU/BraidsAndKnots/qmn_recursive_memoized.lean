@@ -23,11 +23,11 @@ class QmnRecursiveMemoizedContext where
   /-- The partition / Young-diagram indexing type. -/
   PartitionIdx : Type
   /-- Manuscript sub-claim (i) — Looks up `cache[(λ, ρ)]`. -/
-  claim_i : Prop
+  claim_i_looks_up_cache : Prop
   /-- Manuscript sub-claim (ii) — If miss, computes via the recursion above (border-strip enumeration $\to$ recursive call on $(λ \setminus \xi, ρ \set.... -/
-  claim_ii : Prop
+  claim_ii_miss_computes_via : Prop
   /-- Manuscript sub-claim (iii) — Stores result in cache. -/
-  claim_iii : Prop
+  claim_iii_stores_result_cache : Prop
 
 /-- **Proposition statement** (from manuscript):
 
@@ -52,7 +52,7 @@ $\rho \setminus \rho_1$ is $\rho$ with its first part removed.*
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/qmn-recursive-memoized.ts
 theorem qmn_recursive_memoized [ctx : QmnRecursiveMemoizedContext] :
-    ctx.claim_i ∧ ctx.claim_ii ∧ ctx.claim_iii :=
-  ⟨ctx.claim_i, ctx.claim_ii, ctx.claim_iii⟩
+    ctx.claim_i_looks_up_cache ∧ ctx.claim_ii_miss_computes_via ∧ ctx.claim_iii_stores_result_cache :=
+  ⟨ctx.claim_i_looks_up_cache, ctx.claim_ii_miss_computes_via, ctx.claim_iii_stores_result_cache⟩
 
 end QOU.BraidsAndKnots
