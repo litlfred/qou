@@ -2,6 +2,16 @@
 /**
  * validate-bib.ts — comprehensive bibliography correctness audit.
  *
+ * **Network requirement.** Modes `--doi`, `--crossref`, and `--arxiv`
+ * issue outbound HTTPS to `doi.org`, `api.crossref.org`, and
+ * `arxiv.org` respectively. Sandboxed environments with whitelist-
+ * only egress (Claude Code on the web, some CI runners) will see
+ * uniform 403/timeout failures from those modes; the script reports
+ * them as warnings rather than errors so a sandbox run isn't taken
+ * for a bib failure. Run these modes from a local machine or a
+ * runner with general outbound access. `--cross-check` and
+ * `--pandoc` (assuming pandoc is installed) work offline.
+ *
  * Modes (run individually or combined; `--all` enables every check):
  *
  *   --doi           DOI resolution: HEAD-request each entry's DOI →
@@ -72,10 +82,22 @@ async function modeDoi(): Promise<CheckResult[]> {
     try {
       const ctrl = new AbortController();
       const timer = setTimeout(() => ctrl.abort(), 5000);
-      const resp = await fetch(url, { method: "HEAD", redirect: "follow", signal: ctrl.signal });
+      // doi.org returns 403 to bare HEAD requests; use GET with a
+      // User-Agent header to satisfy CDN gatekeeping. We just need
+      // the redirect to land somewhere, so manual mode + status check.
+      const resp = await fetch(url, {
+        method: "GET",
+        redirect: "manual",
+        headers: { "User-Agent": "qou-validate-bib/1.0 (DOI verification; +https://github.com/litlfred/qou)" },
+        signal: ctrl.signal,
+      });
       clearTimeout(timer);
+      // doi.org returns 301/302 with Location to the publisher
+      // (successful resolution); 200 (rare but possible); 404 = unknown DOI.
       if (resp.status === 200 || resp.status === 301 || resp.status === 302) {
-        out.push({ entry: r.id, severity: "ok", note: `${resp.status} OK` });
+        out.push({ entry: r.id, severity: "ok", note: `${resp.status} resolved` });
+      } else if (resp.status === 404) {
+        out.push({ entry: r.id, severity: "error", note: `404 DOI not found: ${url}` });
       } else {
         out.push({ entry: r.id, severity: "warn", note: `HTTP ${resp.status} for ${url}` });
       }
