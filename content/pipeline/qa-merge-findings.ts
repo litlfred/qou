@@ -38,6 +38,7 @@ import {
   gitHeadSha,
   loadQaReport,
   saveQaReport,
+  readBlockManifest,
 } from "./qa-utils";
 import { QA_CRITERIA_BY_ID } from "./qa-criteria-registry";
 import type {
@@ -191,19 +192,12 @@ function run(): void {
     let report: BlockQaReport | undefined = loadQaReport(qaPath);
     if (!report) {
       // Bootstrap a fresh sidecar — agent can write the first
-      // entry even if qa-sweep hasn't run yet.
-      const label = (() => {
-        const src = readFileSync(tsPath, "utf-8");
-        const m = src.match(/\blabel\s*:\s*"([^"]+)"/);
-        return m?.[1] ?? "unknown";
-      })();
-      const kind = (() => {
-        const src = readFileSync(tsPath, "utf-8");
-        const m = src.match(
-          /export\s+default\s+(definition|theorem|lemma|proposition|corollary|conjecture|example|remark|proof|prose|equation|diagram|simulator)\s*\(/,
-        );
-        return m?.[1] ?? "unknown";
-      })();
+      // entry even if qa-sweep hasn't run yet. Reuses the shared
+      // `readBlockManifest` helper to extract { kind, label } in a
+      // single file read.
+      const manifest = readBlockManifest(tsPath);
+      const label = manifest?.label ?? "unknown";
+      const kind = manifest?.kind ?? "unknown";
       report = {
         $schema: "block-qa/v1",
         label,

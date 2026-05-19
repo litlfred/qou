@@ -59,11 +59,15 @@ export function checkStatusLeak(mdPath: string): CheckerResult {
 const EMOJI_RE = /[✅❌⚠⏳🔧🚧☑☒✓✗★🎯🚀🔥]/;
 
 export function checkEmojiContent(mdPath: string): CheckerResult {
-  // Allow ✓/✗ inside table rows (pipe-delimited).
+  // ✓ and ✗ are allowed inside table rows for compact comparison
+  // markers. Any OTHER emoji in a table row (or any emoji at all in
+  // body prose) is a hit.
   const hits = scan(mdPath, EMOJI_RE, (l) => {
-    // Tolerate explicit table rows starting/containing `|`.
-    if (l.trim().startsWith("|") && /✓|✗/.test(l) && !/[✅❌⚠⏳🔧🚧]/.test(l))
-      return false;
+    if (l.trim().startsWith("|")) {
+      // In a table row, flag iff at least one non-✓/✗ emoji is present.
+      return /[✅❌⚠⏳🔧🚧☑☒★🎯🚀🔥]/.test(l);
+    }
+    // Body prose: every EMOJI_RE match is a hit.
     return true;
   });
   return { result: hits.length > 0 ? "fail" : "pass", hits };
@@ -228,8 +232,10 @@ export function checkWallSide(
     return { result: "pass", hits: [] };
   }
   const leanSrc = readFileSync(leanPath, "utf-8");
-  // Strip block comments to reduce false positives on documentation.
-  const stripped = leanSrc.replace(/\/-([\s\S]*?)-\//g, "");
+  // Strip Lean block comments (/- ... -/) AND line comments (-- ...)
+  // to reduce false positives when archimedean markers appear inside
+  // narrative comments of an otherwise-algebraic file.
+  const stripped = leanSrc.replace(/\/-[\s\S]*?-\/|--.*$/gm, "");
   const isArchimedean = ARCHIMEDEAN_LEAN_RE.test(stripped);
   const isAlgebraic = ALGEBRAIC_LEAN_RE.test(stripped);
   const hits: CheckerHit[] = [];
