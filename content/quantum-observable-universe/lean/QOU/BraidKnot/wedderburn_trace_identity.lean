@@ -1,38 +1,57 @@
 /-!
-# QOU.BraidKnot.wedderburn_trace_identity — placeholder stub
+# QOU.BraidKnot.wedderburn_trace_identity — `Σ_λ dim_q(λ)² = [n]_q!`
 
-**Placeholder canonical** for content block
-[`prop:wedderburn-trace-identity`](../../../quantum-observable-universe/braids-and-knots/wedderburn-trace-identity.md): *Wedderburn trace identity for $H_n(q)$*.
+**Proposition** ([`prop:wedderburn-trace-identity`](../../../quantum-observable-universe/braids-and-knots/wedderburn-trace-identity.md)).
 
-The full Lean statement and proof are pending; this stub exists so
-the `lean.ref` URI `qou:QOU.BraidKnot.wedderburn_trace_identity` resolves to a real declaration in
-the `qou` Lake package.  The body is `sorry` carrying the
-manuscript citation per CLAUDE.md §1.
+*For the Hecke algebra `H_n(R, q)` over `R` with parameter
+`q ≠ 0, ±1`, the sum of squared quantum dimensions equals the
+quantum factorial:*
+
+```
+  Σ_{λ ⊢ n} dim_q(λ)² = [n]_q!
+```
+
+*where `[n]_q! = [1]_q · [2]_q · … · [n]_q`.*
+
+The Lean encoding records the identity as a `Finset.sum`-style
+claim over the set of partitions of `n`.  Concretising
+`dim_q : Partition → R` and `qFactorial : ℕ → R` to explicit
+combinatorial constructions is downstream work.
+
+-- Ref: [manuscript] quantum-observable-universe/braids-and-knots/wedderburn-trace-identity.md
 -/
 
 namespace QOU.BraidKnot
 
-/-- **Proposition statement** (from manuscript):
+/-- Abstract context for the Wedderburn trace identity. -/
+class WedderburnTraceContext (n : ℕ) where
+  /-- The Hecke parameter `q`. -/
+  q : ℝ
+  q_ne_zero : q ≠ 0
+  q_ne_one : q ≠ 1
+  q_ne_neg_one : q ≠ -1
+  /-- Indexing type for partitions of `n`. -/
+  Partition : Type
+  /-- The set of partitions of `n` (as a `Finset` for summation). -/
+  partitions : Finset Partition
+  /-- The quantum dimension `dim_q(λ) : ℝ`. -/
+  qDim : Partition → ℝ
+  /-- The quantum factorial `[n]_q! : ℝ`. -/
+  qFactorial : ℝ
 
-For the Hecke algebra $H_n(R, q)$ over $R$
-with parameter $q \neq 0, \pm 1$, the sum of squared quantum
-dimensions equals the quantum factorial:*
+/-- **Wedderburn trace identity** ([`prop:wedderburn-trace-identity`]).
 
-$$
-  \sum_{\lambda \vdash n} \dim_q(\lambda)^2 = [n]_q!
-$$
-
-*where $\dim_q(\lambda)$ is the $q$-analogue of the dimension of
-the irreducible representation indexed by the partition $\lambda$,
-and $[n]_q! = [1]_q [2]_q \cdots [n]_q$.*
-
-    The Lean encoding below is a `theorem foo : True := by sorry` placeholder;
-    upgrading requires choosing the appropriate Lean types (Polynomial /
-    Matrix / categorical structures / etc.) and translating the manuscript
-    claim above. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/wedderburn-trace-identity.ts
-theorem wedderburn_trace_identity : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+    `Σ_{λ ⊢ n} dim_q(λ)² = [n]_q!`. -/
+-- Ref: [manuscript] quantum-observable-universe/braids-and-knots/wedderburn-trace-identity.md
+theorem wedderburn_trace_identity
+    {n : ℕ} [ctx : WedderburnTraceContext n] :
+    (ctx.partitions.sum fun lam => ctx.qDim lam ^ 2) = ctx.qFactorial := by
+  -- Manuscript proof: standard Wedderburn decomposition of `H_n(q)`
+  -- as `⊕_λ End(V_λ)` over generic `q`, plus the q-deformation of
+  -- the classical identity `Σ d_λ² = n!`.
+  -- Concretisation requires the actual Mathlib quantum-dimension
+  -- combinatorics on `Nat.Partition`.
+  -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/wedderburn-trace-identity.md
   sorry
 
 end QOU.BraidKnot

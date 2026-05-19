@@ -1,22 +1,84 @@
 /-!
-# QOU.BraidKnot.hoefsmit_seminormal_form — placeholder stub
+# QOU.BraidKnot.hoefsmit_seminormal_form — explicit `ρ_λ(σᵢ)` matrix entries
 
-**Placeholder canonical** for content block at
-[`quantum-observable-universe/braids-and-knots/hoefsmit-seminormal-form.ts`](quantum-observable-universe/braids-and-knots/hoefsmit-seminormal-form.ts).
+**Proposition** ([`prop:hoefsmit-seminormal-form`](../../../quantum-observable-universe/braids-and-knots/hoefsmit-seminormal-form.md)).
 
-The full Lean statement is pending; this stub exists so the
-`lean.ref` URI `qou:QOU.BraidKnot.hoefsmit_seminormal_form` resolves to a real declaration in the `qou`
-Lake package.
+*For each partition `λ ⊢ n` and substrate parameter `q > 1`, the
+Hoefsmit seminormal form gives an explicit matrix representation
+`ρ_λ : H_n(R, q) → M_{d_λ}(ℂ)` where `d_λ = |SYT(λ)|` is the number
+of standard Young tableaux of shape `λ`.  The generator `σᵢ` acts on
+the SYT basis by*
+
+```
+  ρ_λ(σᵢ)_{s s'} = a_ρ      if s' = s
+                 = b        if s' = sᵢ (the swap of i, i+1)
+                 = 0        otherwise
+```
+
+*where*
+
+```
+  a_ρ = (q − q⁻¹) / (1 − q^{-2ρ}),
+  b   = √(1 − a_ρ²)
+```
+
+*and `ρ = ρ(s, i)` is the axial distance between cells `i` and `i+1`
+in `s`.*
+
+The Lean encoding records the matrix entries against an abstract
+`HoefsmitSeminormalContext` carrying the SYT data and the
+representation matrix.
+
+-- Ref: [manuscript] quantum-observable-universe/braids-and-knots/hoefsmit-seminormal-form.md
+-- Ref: [hoefsmit1974] P. Hoefsmit, Representations of Hecke algebras of finite groups with BN-pairs of classical type, PhD thesis 1974.
 -/
 
 namespace QOU.BraidKnot
 
-/-- hoefsmit seminormal form
+/-- Abstract context for the Hoefsmit seminormal form. -/
+class HoefsmitSeminormalContext (n : ℕ) where
+  /-- The substrate parameter `q > 1`. -/
+  q : ℝ
+  q_gt_one : 1 < q
+  /-- Indexing type for partitions of `n`. -/
+  Partition : Type
+  /-- Indexing type for standard Young tableaux. -/
+  SYT : Partition → Type
+  /-- The axial distance `ρ(s, i)` between cells `i` and `i+1`. -/
+  axialDistance : ∀ {λ : Partition}, SYT λ → ℕ → ℤ
+  /-- The Hoefsmit diagonal entry `a_ρ = (q − q⁻¹) / (1 − q^{-2ρ})`. -/
+  hoefsmitDiagonal : ℤ → ℝ
+  /-- The Hoefsmit off-diagonal entry `b = √(1 − a_ρ²)`. -/
+  hoefsmitOffDiagonal : ℤ → ℝ
+  /-- The representation matrix entry `ρ_λ(σᵢ)_{s s'}`. -/
+  repMatrix : ∀ {λ : Partition} (s s' : SYT λ) (i : ℕ), ℝ
+  /-- The "swap-i-result" function, partial since it may not yield
+      a valid SYT. -/
+  swapIResult : ∀ {λ : Partition}, SYT λ → ℕ → Option (SYT λ)
 
-    Placeholder; full formalisation pending. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/hoefsmit-seminormal-form.ts
-theorem hoefsmit_seminormal_form : True := by
-  -- TODO: replace `True` with the real statement and discharge it.
+/-- **Hoefsmit seminormal form matrix entries** ([`prop:hoefsmit-seminormal-form`]).
+
+    `ρ_λ(σᵢ)_{s s'}` evaluates to `a_ρ` on the diagonal, `b` on the
+    swap-i result (when valid), and `0` elsewhere. -/
+-- Ref: [manuscript] quantum-observable-universe/braids-and-knots/hoefsmit-seminormal-form.md
+-- Ref: [hoefsmit1974]
+theorem hoefsmit_seminormal_form
+    {n : ℕ} [ctx : HoefsmitSeminormalContext n]
+    {λ : ctx.Partition} (s s' : ctx.SYT λ) (i : ℕ) :
+    ctx.repMatrix s s' i
+      = if s' = s then
+          ctx.hoefsmitDiagonal (ctx.axialDistance s i)
+        else
+          match ctx.swapIResult s i with
+          | some t =>
+              if s' = t then ctx.hoefsmitOffDiagonal (ctx.axialDistance s i) else 0
+          | none => 0 := by
+  -- Manuscript proof: direct computation from the Hoefsmit thesis.
+  -- The `a_ρ` / `b` entries come from solving the Hecke quadratic
+  -- `σ_i² = (q − q⁻¹)·σ_i + 1` block-diagonalised in the SYT basis.
+  -- Concretisation requires Lean SYT infrastructure.
+  -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/hoefsmit-seminormal-form.md
+  -- Ref: [hoefsmit1974]
   sorry
 
 end QOU.BraidKnot
