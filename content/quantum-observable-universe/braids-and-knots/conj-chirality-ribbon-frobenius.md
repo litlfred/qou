@@ -148,7 +148,7 @@ The conjecture splits along **chirality class**:
     },
   $$
   where the q-deformed Wedderburn-weight ratio at
-  $q_0 \approx 1.10998$ is $\tilde w_{(2,1)} / \tilde w_{(3)} \approx
+  $q_0 = 1.109978595554181\ldots$ (50 dps) is $\tilde w_{(2,1)} / \tilde w_{(3)} \approx
   4.454$ (and $\tilde w_{(3)} = \tilde w_{(1,1,1)}$
   by transposition symmetry).  The reduction follows from
   $c(\lambda) \in \{+3, 0, -3\}$ for $\lambda \in \{(3), (2,1),

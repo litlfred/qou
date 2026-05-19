@@ -65,7 +65,7 @@ behavior of $\operatorname{arsinh}(\eta d)/\eta$.
 
 **Numerical prediction from the substrate parameter.**
 
-Substituting the QOU substrate value $q_0 \approx 1.1097$ gives
+Substituting the QOU substrate value $q_0 = 1.109978595554181\ldots$ (50 dps) gives
 
 $$
   \eta = \frac{q_0 - q_0^{-1}}{2} \approx 0.1043,

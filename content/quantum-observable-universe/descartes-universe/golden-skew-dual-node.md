@@ -37,7 +37,7 @@ $\square$
 
 **Stability band on both sides.**
 
-Our universe sits at $q_0 \approx 1.1097$, in the open interval
+Our universe sits at $q_0 = 1.109978595554181\ldots$ (50 dps), in the open interval
 $(1, \varphi^2)$.  The two golden nodes bracket the physical regime,
 giving a **two-sided stability margin**:
 

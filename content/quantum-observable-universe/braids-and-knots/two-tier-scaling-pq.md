@@ -33,7 +33,7 @@ trivial component, and Reidemeister-I invariance would fail
 ## Tier 2: physical scaling — base mass $m_0$
 
 Evaluating the normalised $P_K(q)$ at the substrate parameter
-$q_0 \approx 1.1097$ produces a dimensionless real number; converting
+$q_0 = 1.109978595554181\ldots$ (50 dps) produces a dimensionless real number; converting
 to MeV requires multiplication by a base mass scale,
 
 $$

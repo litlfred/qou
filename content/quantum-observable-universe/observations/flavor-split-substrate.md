@@ -23,7 +23,7 @@ $$
 $h_q = q - q^{-1}$ is the Hecke crossing scale, and
 $[2]_q = q + q^{-1}$ is the doublet quantum integer.*
 
-*At $q = q_0 \approx 1.10998$ this closes the CODATA value*
+*At $q = q_0 = 1.109978595554181\ldots$ (50 dps) this closes the CODATA value*
 $(m_n - m_p)/M_N = 1.293\,\text{MeV} / 938.92\,\text{MeV} \approx 1.377 \times 10^{-3}$
 *to within $-0.10\%$.*
 

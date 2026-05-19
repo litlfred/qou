@@ -93,7 +93,7 @@ object: **how efficiently rationals approach a real**.
    at birthday approaching $\omega$; elements of $S$ (generic
    transcendentals) at stabilising finite birthdays.
 
-4. **QOU substrate parameter $q_0 \approx 1.1097$**: the
+4. **QOU substrate parameter $q_0 = 1.109978595554181\ldots$ (50 dps)**: the
    conjectured value (not known to be algebraic or
    transcendental) has a specific birthday trajectory. If
    computable, this would *decide* its algebraic status.

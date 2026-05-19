@@ -1,6 +1,6 @@
 **Remark (dressed-quark numerology at $q_0$).**
 
-At the substrate parameter $q_0 \approx 1.10998$, combining
+At the substrate parameter $q_0 = 1.109978595554181\ldots$ (50 dps), combining
 [`prop:flavor-dressed-mass-from-substrate-split`](../braids-and-knots/flavor-dressed-mass-from-substrate-split.md)
 with the baryon-content sum rule $\bar\mu \approx M_N / 3$ pins the
 individual dressed-quark masses to

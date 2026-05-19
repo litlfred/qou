@@ -240,7 +240,7 @@ expression cannot be the substrate-level trace; it was a
 $H_2(q)$-only computation, which lost the cell-content structure
 that enforces bar-self-duality.
 
-Numerical comparison at $q_0 \approx 1.10998$:
+Numerical comparison at $q_0 = 1.109978595554181\ldots$ (50 dps):
 
 | Quantity | Value at $q_0$ |
 |----------|---------------:|

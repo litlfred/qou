@@ -72,7 +72,7 @@ $\epsilon$-$\delta$ argument is needed because the Peter–Weyl
 decomposition is *discrete*.
 
 **Bring's surface specialisation.** On Bring's QOU with
-$q = q_0 \approx 1.1097$, the Haar state evaluates to:
+$q = q_0 = 1.109978595554181\ldots$ (50 dps), the Haar state evaluates to:
 
 $$
   \varphi(t^j_{m,m'})

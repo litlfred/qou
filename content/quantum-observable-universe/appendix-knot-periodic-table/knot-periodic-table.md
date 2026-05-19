@@ -105,7 +105,7 @@ with anomalously high $B/A$.
 $2, 8, 20, 28, 50, 82, 126$ (neutrons).
 
 **Input parameters** (one free parameter):
-$q = q_0 \approx 1.1097$, $\hbar_q = 1 - q_0^{-1} \approx 0.09888$,
+$q = q_0 = 1.109978595554181\ldots$ (50 dps), $\hbar_q = 1 - q_0^{-1} \approx 0.09888$,
 $\mathbf{E}_{\times} = \tfrac{1}{2}(q_0 - q_0^{-1}) \approx 0.10450$,
 $m_{\mathfrak{p}} \approx 938.272$ MeV,
 $m_{\mathfrak{n}} \approx 939.565$ MeV,
