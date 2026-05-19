@@ -341,6 +341,50 @@ The `bib-qa.json` schema:
 }
 ```
 
+## Verification status rendered in PDF/HTML (added 2026-05-19)
+
+The bib-qa-verifications.json status surfaces in the rendered
+bibliography (PDF + HTML) via the `annotation` field in
+`references.bib`:
+
+  @book{boyd-vandenberghe-2004,
+    author     = {...},
+    title      = {{Convex Optimization}},
+    annotation = {[Verified+Fixed] 18 fixes by Claude (claude-opus-4-7) 2026-05-19},
+  }
+
+`content/pipeline/export-bibtex.ts` reads
+`content/bib-qa-verifications.json` at export time and injects a
+short status marker per entry. Format:
+
+  [<status-symbol>] [<N fixes>] [by <verifier>] [<date>]
+
+Status symbols:
+  [Verified]        — verified-clean (every site checked, no fix)
+  [Verified+Fixed]  — fixed (misattributions resolved)
+  [Partial]         — partial (some sites verified + fixed)
+  [Pending]         — pending (not yet examined)
+  [Uncited]         — bib orphan (no QOU citations)
+  [Paper-Mismatch]  — local PDF ≠ bib metadata
+  [Unfetchable]     — not in uploads/
+
+Rendering targets:
+- **LaTeX/biblatex**: the `annotation` field renders via
+  `\printfield[brackets]{annotation}` in custom styles, or
+  `\bibliographystyle{plainnat-annote}` for natbib.
+- **Pandoc HTML**: CSL templates that include the `annote` field
+  display it inline; some styles render it as a separate
+  paragraph.
+- **bib-qa.html dashboard**: already surfaces the full
+  `verification` object from `bib-qa.json` (typed sidecar).
+
+When adding new entries or updating verification status, regen
+both:
+
+  cd content
+  bun run export-bibtex   # → references.bib with annotations
+  bun run pipeline/bib-qa.ts   # → bib-qa.json for dashboard
+
 ## Always cross-check arxiv for mirror preprints (added 2026-05-19)
 
 When verifying a published-journal paper, always check arxiv.org for

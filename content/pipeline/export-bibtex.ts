@@ -12,15 +12,62 @@
  * @module content/pipeline/export-bibtex
  */
 
-import { writeFileSync } from "fs";
+import { writeFileSync, readFileSync, existsSync } from "fs";
 import { resolve, join } from "path";
 import type { Data as CSLData, Person as CSLPerson } from "csl-json";
 import { references } from "../schema/references";
 
 const REPO_ROOT = resolve(import.meta.dir, "../..");
+const CONTENT_DIR = resolve(import.meta.dir, "..");
 const args = process.argv.slice(2);
 const outIdx = args.indexOf("--out");
 const outPath = outIdx >= 0 ? resolve(args[outIdx + 1]) : join(REPO_ROOT, "references.bib");
+
+// ── Verification status sidecar (added 2026-05-19) ──────────────
+// Loaded once; each entryToBibtex() reads its own row and emits an
+// `annotation = {...}` field that LaTeX / biblatex / pandoc can
+// display in the rendered bibliography.
+
+interface VerifEntry {
+  id: string;
+  status: string;
+  local_pdf?: string;
+  verified_at?: string;
+  verified_by?: string;
+  fixes_applied?: number;
+  fix_commit?: string;
+  note?: string;
+}
+
+const verifPath = join(CONTENT_DIR, "bib-qa-verifications.json");
+let verifMap: Map<string, VerifEntry> = new Map();
+if (existsSync(verifPath)) {
+  const raw = JSON.parse(readFileSync(verifPath, "utf-8"));
+  verifMap = new Map((raw.entries as VerifEntry[]).map((e) => [e.id, e]));
+}
+
+function verificationAnnotation(id: string): string | null {
+  const v = verifMap.get(id);
+  if (!v) return null;
+  // Short symbol per status (works in BibTeX `annotation` field and HTML)
+  const SYM: Record<string, string> = {
+    "verified-clean": "[Verified]",
+    "fixed":          "[Verified+Fixed]",
+    "partial":        "[Partial]",
+    "pending":        "[Pending]",
+    "uncited":        "[Uncited]",
+    "paper-mismatch": "[Paper-Mismatch]",
+    "unfetchable":    "[Unfetchable]",
+  };
+  const sym = SYM[v.status] ?? `[${v.status}]`;
+  const parts = [sym];
+  if (v.fixes_applied && v.fixes_applied > 0) {
+    parts.push(`${v.fixes_applied} fix${v.fixes_applied !== 1 ? "es" : ""}`);
+  }
+  if (v.verified_by) parts.push(`by ${v.verified_by}`);
+  if (v.verified_at) parts.push(v.verified_at.slice(0, 10)); // YYYY-MM-DD
+  return parts.join(" ");
+}
 
 // ── CSL type → BibTeX entry type mapping ────────────────────────
 
@@ -178,6 +225,16 @@ function entryToBibtex(entry: CSLData): string {
 
   // Note
   if (entry.note) fields.push(["note", texEscape(entry.note)]);
+
+  // Verification annotation (added 2026-05-19) — bibLaTeX renders
+  // this as a small marker on each bib entry in the rendered PDF;
+  // pandoc/CSL HTML output can also surface it via the `annote`
+  // CSL field. The marker tells readers whether the citation was
+  // verified by a human / agent against the source.
+  const annot = verificationAnnotation(entry.id);
+  if (annot) {
+    fields.push(["annotation", texEscape(annot)]);
+  }
 
   // Howpublished for misc
   if (bibType === "misc" && entry.publisher && !fields.some(([k]) => k === "publisher")) {
