@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T03:25:39.457425+00:00",
-  "commitSha": "fd75ab1081c652c4806c8a7a943b71e21a4a3ce2",
+  "computedAt": "2026-05-19T03:56:50.063013+00:00",
+  "commitSha": "ff51f1cd1b3819c57d138f15577023e61c91ea70",
   "assertions": [
     {
       "name": "no_i1_no_probe_blocks",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 7,
+  "durationMs": 8,
   "computation": "i1-no-probe-audit",
   "scriptFile": "i1_no_probe_audit.py",
   "scriptHash": "0e004cc143d0",
@@ -27,8 +27,8 @@
   },
   "data": {
     "by_result": {
-      "i1_pre_lean": 156,
-      "i1_no_probe": 381,
+      "i1_pre_lean": 150,
+      "i1_no_probe": 387,
       "wired": 34,
       "i1_lean_with_sorry": 3,
       "conditional_class": 1
@@ -4796,12 +4796,12 @@
         "path": "content/quantum-observable-universe/observations/deuteron-binding-energy.ts",
         "label": "lem:deuteron-binding-energy",
         "kind": "lemma",
-        "sibling_lean_exists": false,
+        "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
         "probe_witness_count": 0,
         "probe_witnesses": [],
-        "result": "i1_pre_lean"
+        "result": "i1_no_probe"
       },
       {
         "path": "content/quantum-observable-universe/observations/double-slit-massive-pattern.ts",
@@ -4906,12 +4906,12 @@
         "path": "content/quantum-observable-universe/observations/nucleon-borromean-topology.ts",
         "label": "lem:nucleon-borromean-topology",
         "kind": "lemma",
-        "sibling_lean_exists": false,
+        "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
         "probe_witness_count": 0,
         "probe_witnesses": [],
-        "result": "i1_pre_lean"
+        "result": "i1_no_probe"
       },
       {
         "path": "content/quantum-observable-universe/observations/pair-skein-mass-formula.ts",
@@ -6102,45 +6102,45 @@
         "path": "content/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-1.ts",
         "label": "lem:qou-exists-axiom-1",
         "kind": "lemma",
-        "sibling_lean_exists": false,
+        "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
         "probe_witness_count": 0,
         "probe_witnesses": [],
-        "result": "i1_pre_lean"
+        "result": "i1_no_probe"
       },
       {
         "path": "content/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-2.ts",
         "label": "lem:qou-exists-axiom-2",
         "kind": "lemma",
-        "sibling_lean_exists": false,
+        "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
         "probe_witness_count": 0,
         "probe_witnesses": [],
-        "result": "i1_pre_lean"
+        "result": "i1_no_probe"
       },
       {
         "path": "content/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-3.ts",
         "label": "lem:qou-exists-axiom-3",
         "kind": "lemma",
-        "sibling_lean_exists": false,
+        "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
         "probe_witness_count": 0,
         "probe_witnesses": [],
-        "result": "i1_pre_lean"
+        "result": "i1_no_probe"
       },
       {
         "path": "content/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.ts",
         "label": "lem:qou-exists-axiom-4",
         "kind": "lemma",
-        "sibling_lean_exists": false,
+        "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
         "probe_witness_count": 0,
         "probe_witnesses": [],
-        "result": "i1_pre_lean"
+        "result": "i1_no_probe"
       },
       {
         "path": "content/quantum-observable-universe/quantum-observable-universes/quantum-observable-universe-exists.ts",
