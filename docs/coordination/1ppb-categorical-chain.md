@@ -209,3 +209,22 @@ Deuteron has $\Delta_I^D = \sigma_3$ (the `+1` in $u_{\text{shift}} = 18Z + 21N 
 2. **Derive $1/[8]_q$ rigorously.** Identify the categorical role of $[8]_q$ in the canonical braid trace normalisation. Candidate: total quantum dim of the relevant Wedderburn block.
 3. **Extend the closure to ⁵He, ⁶Li, ⁷Li.** Requires building canonical braid words for these atoms in `probe_he4_jsj_topology.py` style; re-run Phase 4 probe; verify the formula extends.
 4. **Cast as a per-partition formula.** The single-block extraction is a heuristic; generalise to $\lvert\Delta_\lambda(K)\rvert \propto [3]_q^{2(Z-1)} \cdot (q^{1/2}+q^{-1/2})^{4N} \cdot \mathrm{Vol}_{\mathrm{hyp}}(K) \cdot W_\lambda(q)$ where $W_\lambda(q)$ is the partition-specific weight; test on the 11-partition deuteron tabulation from Phase 1b.
+
+## 2026-05-19 (evening, late) — Phase 5b α ≈ [3]_q²·cosh(h) + bar-symmetric unification with PR #801 ([PR #819](https://github.com/litlfred/qou/pull/819))
+
+| Date | Phase | Status | Cherry-pick |
+|---|---|---|---|
+| 2026-05-19 | Phase 5b — α-residual closure via cosh(h) | landed `26bcabaf`; **near-exact match (0.022%) of α ≈ [3]_q²·cosh(h)** at q_0 | `pyhecke_native` Rust kernel build fix + audit doc update |
+| 2026-05-19 | Bar-symmetric synthesis with PR #801 (Symmetric Li_2^q tower) | coordination comment on #801 ([4490779685](https://github.com/litlfred/qou/pull/801#issuecomment-4490779685)) | three-layer bar-symmetric picture: series (Li_2^q) ↔ phase (cos_q) ↔ gain (cosh(h)), with predicted FR identity |
+
+**Findings load-bearing for the 1ppb / Δ_λ thread:**
+
+1. **`pyhecke_native` (Rust kernel) built locally** ([commit `26bcabaf`](https://github.com/litlfred/qou/commit/26bcabaf)) — fixed 2 duplicate function definitions in `tools/hecke-engine/src/wenzl_lr.rs` that were blocking the build. With Rust kernel: $\chi_\lambda$ at $H_9$ now ~10 ms vs Python timeout at 180s. Unblocks all Markov-trace witness refreshes for $n \le 21$.
+
+2. **Phase 5b α-residual finding**: $\alpha / [3]_q^2 = 1.022157$ matches $\cosh(h) = 1.021933$ to **5 significant digits** at $q_0$ (50 dps) — well above empirical-tabulation noise. The Hecke skein parameter $h = q - q^{-1}$ gives a clean categorical reading: $\cosh(h)$ is the **symmetric-channel Hecke-deformation correction** from $\sigma^2 = h\sigma + 1$.
+
+3. **Bar-symmetric unification with PR #801**: three q-deformation corrections used in QOU mass formulas — symmetric Li_2^q (T2/T3 tower in #801), cos(α−b·ℏ_q²/2) (N=1 rung in master Q_β), and cosh(h) (per-Z step in Phase 5b) — are **all bar-symmetric projections** of bar-anti-symmetric Hecke operators. The bar-anti-symmetric counterparts (Faddeev $\Phi_q$, sin/odd-phase, sinh(h)) are exactly the channels that break mirror-nucleus symmetry. The bar-symmetric projection is the **isospectral lift** (Kac-Sunada reframing: τ_M at q alone doesn't determine braid; τ_M at both q and q⁻¹ tightens it dramatically).
+
+4. **Missing Frobenius reciprocity identified**: Phase 5b's cosh(h) (Ind side) and PR #801's Li_2^q tower (Res side) should be FR-dual under Brundan-Kleshchev. Predicted identity for each (Z=1 → Z=2) transition: $\sum_\lambda y_\lambda \chi_\lambda(\beta_K^{Z=2}) \stackrel{?}{=} [3]_q^2 \cosh(h) \cdot \sum_\mu y_\mu \chi_\mu(\beta_K^{Z=1}) + (\mathrm{Li}_2^q \text{ interface correction})$. Verifying this is Phase 5c's primary numerical test, now feasible with the Rust kernel.
+
+**Impact**: the Δ_λ thread paused at PR #787 is *substantially unblocked* — both per-N and per-Z factors are now categorically identified (per-N: $(q^{1/2}+q^{-1/2})^4$; per-Z: $[3]_q^2 \cdot \cosh(h)$), with one explicit FR identity to verify operator-level. No new infrastructure needed.

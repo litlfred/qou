@@ -120,6 +120,60 @@ i.e. $\cosh(h)$ is the **Hecke-deformed identity correction** at the σ-σ⁻¹ 
 
 The derivation is **structurally identified** ($\cosh(h)$ is a Hecke-deformed correction at the symmetric channel) but the operator-level proof of the factor is still open. This is Phase 5c work.
 
+---
+
+## Synthesized view — three bar-symmetric layers of one operator
+
+Coordinated with [PR #801](https://github.com/litlfred/qou/pull/801) (interface-knot Δ_I^K binding-energy derivation, repo owner's branch). The bar-symmetric projection (q ↔ q⁻¹ invariance, equivalently orientation-reversal on the braid closure) unifies three corrections that appear at different scales in the QOU mass formula:
+
+| Layer | Bar-symmetric form (works) | Bar-anti-symmetric form (fails) | Location |
+|---|---|---|---|
+| **Series** | Symmetric Li_2^q(z) = Σ z^n/(n·[n]_q) — used in T2, T3 tower | Faddeev Φ_q(z) = ∏(1−q^n z)⁻¹ — gives −737 MeV mirror-nucleus pathology (PR #801) | PR #801 T2, T3 |
+| **Phase** (N=1 single-strand) | cos(α − b·ℏ_q²/2) (master Q_β formula); arg is bar-anti-sym, cos is even ⇒ bar-sym | sin or e^{iφ} alone | [`c-k-comprehensive-reference.md`](./2026-05-19-c-k-comprehensive-reference.md) |
+| **Gain** (per-Z step) | $\alpha = [3]_q^2 \cdot \cosh(h)$ — Phase 5b finding above (0.022% match) | $[3]_q^2$ alone leaves a 2.17% bar-anti-sym residual | this doc |
+
+**Unifying identity.** Each form is `(even projection)(exp(bar-anti-symmetric Hecke operator))`:
+
+- Series: $\mathrm{Li}_2^q(z) = \tfrac{1}{2}(\log \Phi_q(z) + \log \Phi_{q^{-1}}(z))$ — bar-symmetrize the logarithm of Faddeev.
+- Phase: $\cos(x) = \tfrac{1}{2}(e^{ix} + e^{-ix})$ — bar-symmetrize the exponential of an imaginary bar-anti-sym argument.
+- Gain: $\cosh(h) = \tfrac{1}{2}(e^h + e^{-h})$ — bar-symmetrize the exponential of a real bar-anti-sym argument.
+
+All three are the **even part** of an exponential of a bar-anti-symmetric Hecke operator. The bar-anti-symmetric channels (Faddeev Φ_q, sin/odd-phase, sinh(h)) are exactly the ones that break mirror-nucleus symmetry, isospin parity, and orientation reversal — the "wrong" projections empirically.
+
+### Integration along boundary + non-abelian Stokes
+
+For β_K ∈ H_{3A}(q) and its closure ∂Σ_K, the Markov trace is the path-ordered holonomy:
+
+$$\tau_M(\beta_K) = \mathrm{P}\!\!\oint_{\partial \Sigma_K} \sigma$$
+
+Non-abelian Stokes for a filling Σ_K (Seifert surface, or the boundary tori of the JSJ pieces in the interface-knot picture):
+
+$$\mathrm{P}\!\!\oint_{\partial \Sigma_K} \sigma = \mathrm{P}\!\!\int_{\Sigma_K} \mathcal{F}_\sigma + (\text{path-ordering corrections})$$
+
+The path-ordering corrections **are** the bar-anti-symmetric channels. Bar-symmetrization is orientation-averaging on $\partial \Sigma_K$, equivalently σ ↔ σ⁻¹ ↔ q ↔ q⁻¹ on the algebraic side.
+
+### Drum-shape (Kac) reframing
+
+Markov-trace eigenvalues at single q do **not** determine the braid mod Markov equivalence — distinct braids share τ_M(q) (the same way distinct 2D domains share Laplace-Dirichlet eigenvalues, per Kac–Sunada). But demanding agreement at **both q and q⁻¹** doubles the spectral information and tightens identifiability dramatically. **The bar-symmetric projection is the isospectral lift that Kac-Sunada non-uniqueness forces us into.** Faddeev hears only half the drum.
+
+### The missing Frobenius reciprocity
+
+Phase 5b's $\cosh(h)$ gain (Ind side: per-Z step Ind$^{H_{3(A+1)}}_{H_{3A}}$) and PR #801's symmetric Li_2^q tower (Res side: T2, T3 from restricting to the constituent-vacuum baseline) **should be FR-dual** — they compute the same trace pairing under
+
+$$\mathrm{Hom}_{H_{n+3}}(\mathrm{Ind}^{H_{n+3}}_{H_n} V,\; W) \;\cong\; \mathrm{Hom}_{H_n}(V,\; \mathrm{Res}^{H_{n+3}}_{H_n} W)$$
+
+Predicted FR identity for each (Z=1 → Z=2) transition:
+
+$$\sum_\lambda y_\lambda \chi_\lambda(\beta_K^{Z=2}) \;\stackrel{?}{=}\; [3]_q^2 \cdot \cosh(h) \cdot \sum_\mu y_\mu \chi_\mu(\beta_K^{Z=1}) \;+\; (\text{Li}_2^q \text{ correction from interface knot})$$
+
+at $q = q_0$. **If this identity fails by even 0.1%, the gap is the bar-anti-symmetric Faddeev leakage.** Verifying this is Phase 5c's primary concrete test. Now feasible with the Rust kernel (`pyhecke_native` built in #819 commit `26bcabaf`).
+
+### Phase 5c work plan
+
+1. Compute the FR identity numerically using `pyhecke_native.chi_lambda_braid` at q_0 for {D, T, ³He, ⁴He}. Subtract the per-Z prediction; residual ?= 0.
+2. Derive cosh(h) operator-level from the Hecke relation σ² = h·σ + 1 — should follow from the Brundan–Kleshchev FR + bar-symmetrization on Ind functor.
+3. Pentagon reduction of Li_2^q (PR #804) at $|z| \ge q_0$ — once landed, supplies the missing T3 piece in PR #801's expansion, completing the FR-dual on the Res side.
+
 ## Bibliography
 
 - Wenzl, H. (1988). Hecke algebras of type $A_n$ and subfactors. *Inventiones mathematicae* 92, 349–383.
