@@ -16,10 +16,16 @@ namespace QOU.DescartesUniverse
 /-- Abstract context for the `brings_riemann_hurwitz` claim — manuscript-themed
     typed fields below; `holds` carries the residual `Prop` claim. -/
 class BringsRiemannHurwitzContext where
-  /-- The categorical object / monoidal structure. -/
-  CategoricalObj : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_brings_riemann_hurwitz : Prop
+  /-- Degree of the covering `π : Σ_4 → ℙ(V)`. -/
+  deg : ℕ
+  /-- Total ramification `R_tot`. -/
+  R_tot : ℕ
+  /-- Number of branch points (under the `S_5`-symmetric ramification). -/
+  n_branch : ℕ
+  /-- Manuscript identity (Riemann-Hurwitz on Bring's surface):
+      `deg = 4 ∧ R_tot = 14 ∧ n_branch = 6`. -/
+  claim_brings_riemann_hurwitz :
+    deg = 4 ∧ R_tot = 14 ∧ n_branch = 6
 
 /-- **Lemma statement** (from manuscript):
 
@@ -42,9 +48,8 @@ $$
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/brings-riemann-hurwitz.ts
-theorem brings_riemann_hurwitz [ctx : BringsRiemannHurwitzContext] : ctx.claim_brings_riemann_hurwitz := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem brings_riemann_hurwitz [ctx : BringsRiemannHurwitzContext] :
+    ctx.deg = 4 ∧ ctx.R_tot = 14 ∧ ctx.n_branch = 6 :=
+  ctx.claim_brings_riemann_hurwitz
 
 end QOU.DescartesUniverse

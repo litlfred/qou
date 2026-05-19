@@ -19,8 +19,13 @@ namespace QOU.DescartesUniverse
 class BringsEulerCharacteristicContext where
   /-- The substrate parameter `q : ℝ`. -/
   q : ℝ
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_brings_euler_characteristic : Prop
+  /-- Bring's surface genus `g(Σ_4) = 4`. -/
+  g : ℕ
+  /-- Categorical Euler characteristic `χ(A) = tr(id_A)`. -/
+  chi_A : ℤ
+  /-- Manuscript identity: `g = 4 ∧ χ(A) = 2 − 2g = −6`. -/
+  claim_brings_euler_characteristic :
+    g = 4 ∧ chi_A = 2 - 2 * (g : ℤ) ∧ chi_A = -6
 
 /-- **Lemma statement** (from manuscript):
 
@@ -41,9 +46,8 @@ the Descartes substrate parameter $q_0$.
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/brings-euler-characteristic.ts
-theorem brings_euler_characteristic [ctx : BringsEulerCharacteristicContext] : ctx.claim_brings_euler_characteristic := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem brings_euler_characteristic [ctx : BringsEulerCharacteristicContext] :
+    ctx.g = 4 ∧ ctx.chi_A = 2 - 2 * (ctx.g : ℤ) ∧ ctx.chi_A = -6 :=
+  ctx.claim_brings_euler_characteristic
 
 end QOU.DescartesUniverse

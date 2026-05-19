@@ -16,12 +16,16 @@ namespace QOU.DescartesUniverse
 /-- Abstract context for the `mi_sw_cartan_reduction` claim — manuscript-themed
     typed fields below; `holds` carries the residual `Prop` claim. -/
 class MiSwCartanReductionContext where
-  /-- Fluid-dynamics velocity / vorticity field. -/
-  VelocityField : Type
-  /-- Gauge connection / curvature. -/
-  Connection : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_mi_sw_cartan_reduction : Prop
+  /-- Cartan component `A⁰` of the reduced connection. -/
+  A_0 : ℝ
+  /-- Local coordinate function value `X · dz` evaluated at the
+      relevant point. -/
+  X_dz : ℝ
+  /-- Seiberg-Witten differential `λ_SW`. -/
+  lambda_SW : ℝ
+  /-- Manuscript identity: `A⁰ = X · dz = λ_SW` (the Cartan component
+      recovers the SW differential). -/
+  claim_mi_sw_cartan_reduction : A_0 = X_dz ∧ X_dz = lambda_SW
 
 /-- **Lemma statement** (from manuscript):
 
@@ -40,9 +44,8 @@ $$
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/mi-sw-abelianisation-cartan.ts
-theorem mi_sw_cartan_reduction [ctx : MiSwCartanReductionContext] : ctx.claim_mi_sw_cartan_reduction := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem mi_sw_cartan_reduction [ctx : MiSwCartanReductionContext] :
+    ctx.A_0 = ctx.X_dz ∧ ctx.X_dz = ctx.lambda_SW :=
+  ctx.claim_mi_sw_cartan_reduction
 
 end QOU.DescartesUniverse

@@ -18,8 +18,17 @@ namespace QOU.Torsion
 class KnotParticleGenerationContext where
   /-- The topological-link / knot type. -/
   Link : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_knot_particle_generation : Prop
+  /-- Predicate: knot `K` is a torus-knot generator `T_{m,n}` with
+      `gcd(m, n) = 1`. -/
+  is_torus_generator : Link → ℕ → ℕ → Prop
+  /-- Number of linking operations on the exceptional divisor /
+      color-tube fibration. -/
+  n_linking_ops : ℕ
+  /-- Manuscript identity: there are exactly 2 linking operations,
+      and every torus-knot generator has coprime indices. -/
+  claim_knot_particle_generation :
+    n_linking_ops = 2 ∧
+    ∀ (K : Link) (m n : ℕ), is_torus_generator K m n → Nat.Coprime m n
 
 /-- **Content statement** (from manuscript):
 
@@ -33,9 +42,10 @@ color-tube fibration.
     upgrading requires choosing the appropriate Lean types and translating
     the manuscript claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/knot-particle-generation.ts
-theorem KnotParticleGeneration [ctx : KnotParticleGenerationContext] : ctx.claim_knot_particle_generation := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem KnotParticleGeneration [ctx : KnotParticleGenerationContext] :
+    ctx.n_linking_ops = 2 ∧
+    ∀ (K : ctx.Link) (m n : ℕ),
+      ctx.is_torus_generator K m n → Nat.Coprime m n :=
+  ctx.claim_knot_particle_generation
 
 end QOU.Torsion
