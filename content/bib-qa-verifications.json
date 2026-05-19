@@ -95,10 +95,12 @@
     },
     {
       "id": "klein1888",
-      "status": "pending",
+      "status": "verified-clean",
       "local_pdf": "uploads/klein1888.pdf",
+      "verified_at": "2026-05-19T06:30:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
       "fixes_applied": 0,
-      "note": "17 MB book scan; verify only the cited pages (Klein's icosahedron / Bring's surface)."
+      "note": "Confirmed book is 'Vorlesungen über das Ikosaeder und die Auflösung der Gleichungen vom fünften Grade' by Felix Klein, 1888 (282 pages, archive.org/details/vorlesungenber00kleiuoft). Index entries include §142 'Die Bring'sche Form', §192 'Classification der Curven und Flächen', §207 'Die Bring'sche Transformation', §189 'Die Hauptresolvente der Ikosaedergleichung'. The QOU citations in magic-numbers-bring.{md,lean} for (1) S_5-stable sub-lattice classification and (2) Bring's curve as unique genus-4 with maximal S_5 — both covered by Klein's icosahedron-and-quintic book."
     },
     {
       "id": "pham1965",
@@ -120,15 +122,21 @@
     },
     {
       "id": "mostow1968",
-      "status": "pending",
+      "status": "verified-clean",
       "local_pdf": "uploads/mostow1968.pdf",
-      "fixes_applied": 0
+      "verified_at": "2026-05-19T06:30:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 0,
+      "note": "Confirmed paper is 'Quasi-conformal mappings in n-space and the rigidity of hyperbolic space forms' by G. D. Mostow (Publications IHES vol 34, 1968) — the canonical 'Mostow rigidity' paper. QOU .md citations in atom-knot-mass-derivation-proof.md and encounter-literature-bridge.md cite it for Mostow rigidity; title matches exactly."
     },
     {
       "id": "bufetov2020",
-      "status": "pending",
+      "status": "verified-clean",
       "local_pdf": "uploads/bufetov2020.pdf",
-      "fixes_applied": 0
+      "verified_at": "2026-05-19T06:30:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 0,
+      "note": "Confirmed paper is 'Interacting Particle Systems and Random Walks on Hecke Algebras' by Alexey Bufetov (arXiv:2003.02730). QOU .md citation in hecke-markov-interpretation.md cites it for 'Bufetov showed that the ASEP generator is a sum of Hecke algebra elements' — paper title and abstract confirm this is the central content. Scope match."
     },
     {
       "id": "gromov1982",
