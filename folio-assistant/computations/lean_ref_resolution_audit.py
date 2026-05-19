@@ -86,7 +86,18 @@ LEAN_REF_RX = re.compile(
     r'lean:\s*\{[^}]*?ref:\s*"([^:"]+):([^"]+)"',
     re.DOTALL,
 )
-KIND_RX = re.compile(r'kind:\s*"([a-z]+)"')
+# Block kind is encoded in the builder function name used at the
+# `export default <builder>(…)` call site (see content/schema/builders.ts).
+# Older blocks used a `kind: "<name>"` field in the manifest object;
+# both forms are matched for backwards compatibility — the builder
+# form is checked first since it's the current authoring convention.
+KIND_RX = re.compile(
+    r'^export\s+default\s+(definition|theorem|lemma|proposition|corollary|'
+    r'conjecture|example|remark|proof|prose|equation|diagram|simulator|'
+    r'chapter|paper)\s*\(',
+    re.MULTILINE,
+)
+KIND_LEGACY_RX = re.compile(r'kind:\s*"([a-z]+)"')
 
 # Lean declaration kinds we recognise as "declaring" a name.  Match
 # `def foo`, `theorem foo`, `noncomputable def foo`, etc.  Trailing
@@ -136,7 +147,7 @@ def _classify_one(ts_path: Path) -> dict[str, Any]:
 
     pkg, decl_path = ref_match.group(1), ref_match.group(2)
 
-    kind_match = KIND_RX.search(text)
+    kind_match = KIND_RX.search(text) or KIND_LEGACY_RX.search(text)
     kind = kind_match.group(1) if kind_match else "unknown"
 
     row: dict[str, Any] = {
