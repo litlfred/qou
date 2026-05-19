@@ -100,3 +100,58 @@ $$\Delta_\lambda(K) = \mathrm{Vol}_{\mathrm{hyp}}^{(\lambda)}(K) \cdot \tau_q\!\
 This **constrains** PR #781's Kashaev mass-table formula (ρ_F · Vol_hyp) — same-Z isotopes should use the same Vol per my Phase 3 measurement; if PR #781 assigns different Vol to D vs T (same Z=1), that's a discrepancy worth surfacing.
 
 **Status**: Δ_λ thread **paused** at PR #787 pending owner answers on the per-JSJ-piece-quantum-invariant infrastructure (ask #2). If no such infrastructure, the branch lands as a diagnostic package (3 phases of productive negatives + Z-clustering structural finding) and the thread pivots to another closed-form option.
+
+## 2026-05-19 — log-Δ categorical derivation → Δ_I^K interface knot (branch `claude/log-delta-categorical-derivation`, [PR #801](https://github.com/litlfred/qou/pull/801))
+
+| Date | Phase | Status | Cherry-pick |
+|---|---|---|---|
+| 2026-05-19 | Phase 1 — 3 weight forms (y_λ / ~w_λ / identity) | landed `43e3e6fd`; best 4.6× variance (identity weighting) | `log_delta_categorical_derivation.py` |
+| 2026-05-19 | Phase 2 — full-mass-subtract, $B = m_K - Z m_p - N m_n$ | landed `dac29b44`; **3.96× best** (paper weight ~w_λ) but T/³He **WRONG SIGN** | `log_delta_full_mass_subtract.py` |
+| 2026-05-19 | Phase 3 — per-depth-stratified subtraction | landed `433de5c1`; identical 3.96× (constituents max depth 2 in $H_3$) | `log_delta_per_depth_binding.py` |
+
+**Hard structural finding (re-reading the paper after user pushback):**
+Tensor-product baseline $Z \cdot \mathfrak{m}(\beta_p) + N \cdot \mathfrak{m}(\beta_n)$
+**in independent $H_3$ algebras** is structurally wrong. The categorically-correct composite is
+$$\beta_K = \underbrace{\beta_p^{(1)} \cdots \beta_n^{(N)}}_{T_{\text{constit}}^K \text{ on disjoint strand blocks}} \cdot \Delta_I^K \;\in\; H_{3(Z+N)}(q)$$
+per [`def:ew-interface-knot`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/ew-interface-knot.md)
+and [`prop:atomic-mass-gb-nf`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/atomic-mass-gb-nf.md).
+Deuteron has $\Delta_I^D = \sigma_3$ (the `+1` in $u_{\text{shift}} = 18Z + 21N + 1$). T, ³He, ⁴He each have their own $\Delta_I^K$ characterising "what is involved in binding at that confinement level".
+
+**Resolution path (in flight):** Recompute $B(K) = \mathfrak{m}(\beta_K) - \mathfrak{m}(T_{\text{constit}}^K)$ with both braids in the **same** Hecke algebra. Mass-endomorphism conditions (Markov-invariance term-by-term, $|S| \le 2$ R-side bound, symmetric $\mathrm{Li}_2^q$ form, spectral-sequence collapse, $B(p) = B(n) = 0$) satisfied by construction.
+
+**Coordination posts:**
+- [PR #800 comment](https://github.com/litlfred/qou/pull/800#issuecomment-4484723377) — informational, no overlap with I13 sweep
+- [PR #761 comment](https://github.com/litlfred/qou/pull/761#issuecomment-4484724112) — ask about GP MPFR engine accepting arbitrary braid-word input for $T_{\text{constit}}^K$ chi computation
+
+**Alignment note:** Will add `canonical_status` taxonomy field per branch `claude/canonical-discipline-l1-l3-l4-2026-05-19` (commit `98ed2add`) to all new witnesses. Categorical-substrate path; not L3 heuristic.
+
+### 2026-05-19 — interface-knot Δ_I^K result on PR #801
+
+| Date | Phase | Status | Cherry-pick |
+|---|---|---|---|
+| 2026-05-19 | Δ_I^K + same $H_{3(Z+N)}$ baseline (T1+T2 first-order) | landed `5b620576`; **variance 3.96× → 2.31×, T/³He sign-fixed** | `binding_via_interface_knot.py` (consumes existing `atom_braid_word_3A(include_inter=True/False)` toggle) |
+
+**Hard improvement vs tensor-product baseline:**
+- D: B_pred = 1.566 MeV (AME 2.225, ratio 0.704)
+- T: B_pred = 2.582 MeV (AME 8.482, ratio 0.304)
+- ³He: B_pred = 2.618 MeV (AME 7.718, ratio 0.339)
+- max/min = 2.31× (was 3.96× tensor)
+- ALL signs positive (was T/³He wrong sign under tensor)
+
+**Deferred to next iteration:**
+- ⁴He H_12 character sum requires > 12 GB RAM on this host. Witness records `atoms_deferred: ["4He"]` with `INCLUDE_4HE=1` env-flag override.
+- T3 (pair) closure pending: for some pairs in H_{3A>3}, |V̂_i V̂_j| > q_0 ≈ 1.1097 exceeds Li_2^q convergence radius. Three structural options identified in PR body.
+
+**Canonical_status taxonomy alignment:** all 4 witnesses on this branch (3 phase scripts + interface-knot) now carry `canonical_status: canonical-with-empirical-assignment` per the new taxonomy from `claude/canonical-discipline-l1-l3-l4-2026-05-19` commit `98ed2add`.
+
+### 2026-05-19 — Block-multiplicativity scaling on PR #801 (followups)
+
+| Date | Phase | Status | Cherry-pick |
+|---|---|---|---|
+| 2026-05-19 | Block-multiplicativity scaling (16 atoms D → ⁵⁶Fe) | landed `f43da415`; **variance 5.47× T1+T2, 1.65× medium A=6..14, 10.99× all 16 (T3 over-counts A²)** | `binding_block_multiplicative.py` + `conj:block-multiplicativity-v-free` content triple |
+| 2026-05-19 | T3 closure via interface-pair structural cancellation | landed `65a3985e` + `f00ae129`; finite even though T3_free / T3_atom individually diverge | structural cancellation rule (non-interface pairs cancel) |
+| 2026-05-19 | Coord on PR #814 (silver-ratio Q_β null / Pell-Lucas c_k) | comment posted | ask on involution/Leibniz origin of c_5 generalising to α_{k≥4} damping |
+
+**Structural finding (verified empirically at A=2,3 exact to 4 digits):** per-generator V̂ values at H_{3A} are A-INDEPENDENT for the disjoint Hecke product. Block factors v_p = 0.7084, v_n = 0.6005, |V^pp/nn_inter| = 0.1045, |V^pn_inter| = 0. Scales B(K) prediction to ALL atoms in microseconds — no H_{3A} character sum beyond H_6 / H_9 calibration. Conjecture content block + Lean class committed (`conj:block-multiplicativity-v-free`).
+
+**Open structural target (heavy-atom variance):** T3 pair-blowup grows as A² (number of interface-involving pairs ≈ 5A(A-1)/2). AME binding grows linearly in A. The mismatch may be resolved by switching from the mass-endomorphism blow-up tower (T1+T2+T3) to the **depth-stratified α_k · Φ_k formulation** for k ≥ 4 — where α_{k≥4} = m_e · 8G provides built-in damping at high curvature rank ([`prop:plancherel-term-7-formulation`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/braids-and-knots/plancherel-term-7-formulation.md)). Cross-reference to PR #814's involution/Leibniz analysis of c_5's 1/2 fingerprint — same averaged-crossing mechanism plausibly drives the α_{k≥4} damping universal at depth k ≥ 4.

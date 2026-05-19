@@ -1,0 +1,81 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-19T17:12:25.795258+00:00",
+  "commitSha": "58a1870603bf54f4399179e0eb5a0a3a98aa5977",
+  "assertions": [
+    {
+      "name": "codata_mp_me_loaded",
+      "computed": 1836.152,
+      "expected": 1836.152,
+      "passed": true,
+      "tolerance": 1e-10,
+      "unit": "m_p/m_e",
+      "source": "CODATA 2022"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 22,
+  "computation": "m-p-m-e-li2q",
+  "scriptFile": "m_p_m_e_li2q.py",
+  "scriptHash": "699fddd60c0e",
+  "scriptCommitSha": "unknown",
+  "description": "Re-derives m_p/m_e under symmetric Li_2^q (replacing Faddeev Φ_q per prop:mass-endomorphism-tower SUPERSEDED banner). Compares to legacy Faddeev result and CODATA 1836.152.",
+  "data": {
+    "results": {
+      "Phi_q": {
+        "electron": {
+          "desc": 0.5938490006705097,
+          "single": 629.9354190959173,
+          "cross": 0.0,
+          "total": 630.5292680965878
+        },
+        "proton": {
+          "desc": 0.9603954911881509,
+          "single": 1096978.396175676,
+          "cross": 82016.16886542024,
+          "total": 1178995.5254365874
+        },
+        "neutron": {
+          "desc": 0.6986007968090441,
+          "single": 429527.0178585687,
+          "cross": 686.8741912194527,
+          "total": 430214.59065058496
+        },
+        "m_p/m_e": 1869.850592337583,
+        "m_n/m_e": 682.3070909131571,
+        "m_n/m_p": 0.3648992565016517,
+        "err_pct_mp_me": 1.8352833718332153,
+        "err_pct_mn_me": 62.8915522779794
+      },
+      "Li_2_q": {
+        "electron": {
+          "desc": 0.5938490006705097,
+          "single": 0.716900473983327,
+          "cross": 0.0,
+          "total": 1.3107494746538366
+        },
+        "proton": {
+          "desc": 0.9603954911881509,
+          "single": 3.01978611039166,
+          "cross": 0.3612748187058826,
+          "total": 4.341456420285693
+        },
+        "neutron": {
+          "desc": 0.6986007968090441,
+          "single": 2.4015179087673038,
+          "cross": 0.22051465249093458,
+          "total": 3.3206333580672824
+        },
+        "m_p/m_e": 3.3121939045081468,
+        "m_n/m_e": 2.533385229045579,
+        "m_n/m_p": 0.7648662192142344,
+        "err_pct_mp_me": 99.81961221595445,
+        "err_pct_mn_me": 99.86221747570298
+      }
+    },
+    "phi_q_err_mp_me_pct": 1.8352833718332153,
+    "li2q_err_mp_me_pct": 99.81961221595445,
+    "verdict": "Li_2^q WORSE: 99.82% vs Φ_q 1.84%. Faddeev deprecation may require refining the formula (structural change beyond F-substitution)."
+  }
+}

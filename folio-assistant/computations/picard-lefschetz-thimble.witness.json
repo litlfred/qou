@@ -1,8 +1,8 @@
 {
   "engine": "scipy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T03:19:28.794827+00:00",
-  "commitSha": "dbfc940f3d58cce2a1a86bcd497c1a8178f19977",
+  "computedAt": "2026-05-19T20:07:54.152799+00:00",
+  "commitSha": "f881590a67cafd81ede7dd7c0cd410effcda14f6",
   "assertions": [
     {
       "name": "m_p from ∏ dc_k/dz (best-fit limit; NOT pure substrate)",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 21,
   "computation": "picard-lefschetz-thimble",
   "scriptFile": "picard_lefschetz_thimble.py",
-  "scriptHash": "81c84e9e855a",
-  "scriptCommitSha": "316c53d4f575b12885a44dfca5e0e3d47e155f35",
+  "scriptHash": "e711190e0cb5",
+  "scriptCommitSha": "0fd092af098ad97f907de89376fe0a570b24dc76",
   "description": "Picard-Lefschetz thimble decomposition for the color-tube cubic. Computes critical points, Hessians, thimble directions, intersection numbers, SW period integrals (single-root and simultaneous 3-root prescriptions).",
   "contentBlock": "rem:picard-lefschetz-thimble",
   "parameters": {
