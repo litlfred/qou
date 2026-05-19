@@ -78,7 +78,7 @@ theorem explicit_central_idempotent_via_murphy
   -- Ref: [murphy1981] — Murphy elements in symmetric-group algebras.
   -- Ref: [dipper-james1986] — extension of Murphy's construction
   -- to the Iwahori–Hecke algebra at generic q.
-  -- Ref: [jucys-murphy-central-elements-qou] — the paper's
+  -- See content block jucys-murphy-central-elements-qou — the paper's
   -- prop:jucys-murphy-central-elements-qou block establishing
   -- diagonal action of J_k on the Hoefsmit seminormal basis with
   -- eigenvalue c_T(k; q).

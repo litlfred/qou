@@ -19,7 +19,7 @@
     - Positivity / PSD claims are deferred to specializations
       `R → F` with `F` a real-closed field and `q ↦ q* > 1`.
 
-  Ref: [kassel1995quantum] Kassel, "Quantum Groups," Springer
+  Ref: [kassel1995] Kassel, "Quantum Groups," Springer
        1995, §VI (Iwahori-Hecke algebra Wedderburn decomposition
        + Frobenius trace).
 -/
@@ -127,7 +127,7 @@ theorem weak_symmetric_normalization_eq
     [_inst : WeakSymmetricNormalization R q] :
     weak_symmetric_normalization q
       = ⅟(3 : R) * (q^4 + q^6 + q^8) := by
-  -- Ref: [kassel1995quantum] https://link.springer.com/book/10.1007/978-1-4612-0783-2
+  -- Ref: [kassel1995] https://link.springer.com/book/10.1007/978-1-4612-0783-2
   -- Ref: weak-symmetric-normalization.md §"Statement (formal)"
   rfl
 

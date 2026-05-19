@@ -342,19 +342,26 @@ def sdp_select_knot_operator(
     # CVXPY exposes the equality dual via constraints[0] in the wrapper;
     # the wrapper returns dual_obj = n_target · y0_star, so y0_star = dual_obj / n_target.
     y0_star = res.dual_obj / n_target if n_target != 0 else float("nan")
-    # Per the contract: active_set = {i : y_star[i] > 0}.  CVXPY returns
-    # the dual on the inequality G@x >= 0 in res via a derived field;
-    # in our wrapper we expose only X*, Z* and the gap.  For an
-    # active-set proxy, use Gx > tol componentwise.
-    Gx = G_gram @ np.asarray(res.X_star)
+    # Per the SDP wrapper's Z_star layout (lp_dual_solver.py line 391):
+    #   Z_star = [y_eq, *y_ineq]
+    # so Z_star[0] == y0_star and Z_star[1:] == the per-channel inequality
+    # shadow prices, which is the actual `y_star` of the LP/SDP dual contract.
+    # The active set is the support of y_star above the tol (Copilot review
+    # PR #792 — earlier revision used Gx, the PRIMAL slack, which has the
+    # wrong semantic).
+    y_star = [float(v) for v in res.Z_star[1:]]
     tol = 1e-6
-    active_set = [i for i, v in enumerate(Gx.tolist()) if abs(v) > tol]
+    # Per the operator-selection LP dual contract: active_set = {i : y_star[i] > 0}.
+    # The canonical LP path in lp_dual_solver.py uses `y > dual_tol` (positive only,
+    # not abs). Match that semantic — a slightly-negative dual from solver tolerance
+    # should NOT be reported as active (Copilot review PR #792).
+    active_set = [i for i, v in enumerate(y_star) if v > tol]
     return {
         "site": site_label,
         "feasible": True,
         "x_star": list(map(float, res.X_star)),
         "y0_star": float(y0_star),
-        "y_star_proxy": [float(v) for v in Gx.tolist()],
+        "y_star": y_star,
         "active_set": active_set,
         "primal_obj": float(res.primal_obj),
         "dual_obj": float(res.dual_obj),

@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-05-18T19:21:32.810661+00:00",
-  "commitSha": "1f9d08c0ae95a6092fe56100849d3d0f22171f36",
+  "computedAt": "2026-05-19T04:06:28.829453+00:00",
+  "commitSha": "a565201b866a99c843cd8e85aaa08a52d691b28d",
   "assertions": [
     {
       "name": "tr_M_proton_is_rational_in_sqrt_q",
@@ -31,42 +31,42 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 162,
+  "durationMs": 185,
   "computation": "option-b-proton-mass-full-chain",
   "scriptFile": "option_b_proton_mass_full_chain.py",
-  "scriptHash": "c1ed0fd6d285",
-  "scriptCommitSha": "unknown",
-  "description": "Phase 1.6 of the 1ppb plan \u2014 Option B from the m_e-anomaly audit.  Full derivation of tr_M(\u03c3_1^7 \u03c3_2^4)(q) as a rational-in-q function via:  (A) braid roster, (B) Hecke quadratic recurrence (a_k, b_k), (C) Wedderburn-block characters \u03c7^\u03bb(\u03b2), (D) Markov-axiom y_\u03bb(q), (E) \u03b3\u03b3 pair-production reduction at every \u03c3-site, (F) SDP knot-operator selection per the prop:operator-selection-lp / \u00a7LP/SDP-duals contract, (G) per-step graded/filtered metadata, (H) closed-form symbolic tr_M.  Does NOT consume the placeholder literals M_HECKE_PIPELINE_AT_Q0; emits the rational-in-q anchors from which any downstream mass-formula assembly should derive m_p without algebraic +1 patches.  See docs/audits/2026-05-09-proton-m_e-anomaly.md for the audit; content/quantum-observable-universe/braids-and-knots/markov-trace-axiomatic-closed-form.md for the formal proposition.",
+  "scriptHash": "785db0a73401",
+  "scriptCommitSha": "299567fa008ae080c59a726e2f09d68eb5e0a074",
+  "description": "Phase 1.6 of the 1ppb plan — Option B from the m_e-anomaly audit.  Full derivation of tr_M(σ_1^7 σ_2^4)(q) as a rational-in-q function via:  (A) braid roster, (B) Hecke quadratic recurrence (a_k, b_k), (C) Wedderburn-block characters χ^λ(β), (D) Markov-axiom y_λ(q), (E) γγ pair-production reduction at every σ-site, (F) SDP knot-operator selection per the prop:operator-selection-lp / §LP/SDP-duals contract, (G) per-step graded/filtered metadata, (H) closed-form symbolic tr_M.  Does NOT consume the placeholder literals M_HECKE_PIPELINE_AT_Q0; emits the rational-in-q anchors from which any downstream mass-formula assembly should derive m_p without algebraic +1 patches.  See docs/audits/2026-05-09-proton-m_e-anomaly.md for the audit; content/quantum-observable-universe/braids-and-knots/markov-trace-axiomatic-closed-form.md for the formal proposition.",
   "contentBlock": "prop:markov-trace-axiomatic-closed-form",
   "parameters": {
     "q_0": 1.1099785955541805,
     "M_E_MEV_codata": 0.51099895,
     "M_P_MEV_codata": 938.27208816,
-    "electron_word": "\u03c3_1^3",
-    "proton_word": "\u03c3_1^7 \u00b7 \u03c3_2^4"
+    "electron_word": "σ_1^3",
+    "proton_word": "σ_1^7 · σ_2^4"
   },
   "data": {
     "phases": [
       {
-        "name": "Phase A \u2014 Braid roster",
+        "name": "Phase A — Braid roster",
         "operation": "Declare braid words for each particle",
         "inputs": [
           "substrate-braid-roster"
         ],
         "output": {
-          "electron": "\u03c3_1^3",
-          "proton": "\u03c3_1^7 \u00b7 \u03c3_2^4",
-          "gamma_gamma": "\u03c3_i^2"
+          "electron": "σ_1^3",
+          "proton": "σ_1^7 · σ_2^4",
+          "gamma_gamma": "σ_i^2"
         },
         "jet_order": 0,
         "gb_filtration_level": 0,
-        "spectral_stratum": "archimedean (q \u2208 \u211d_{>1})"
+        "spectral_stratum": "archimedean (q ∈ ℝ_{>1})"
       },
       {
-        "name": "Phase B \u2014 Hecke quadratic recurrence",
-        "operation": "Iterate a_{k+1} = h\u00b7a_k + b_k, b_{k+1} = a_k from (a_0, b_0) = (0, 1)",
+        "name": "Phase B — Hecke quadratic recurrence",
+        "operation": "Iterate a_{k+1} = h·a_k + b_k, b_{k+1} = a_k from (a_0, b_0) = (0, 1)",
         "inputs": [
-          "Hecke.Energy: \u03c3^2 = h\u00b7\u03c3 + 1"
+          "Hecke.Energy: σ^2 = h·σ + 1"
         ],
         "output": {
           "recurrence_table": [
@@ -117,8 +117,8 @@
         "spectral_stratum": "generic"
       },
       {
-        "name": "Phase C \u2014 Wedderburn-block characters",
-        "operation": "Apply \u03c3-eigenvalue rule (sym \u21a6 q, alt \u21a6 \u2212q^{-1}) for 1-dim blocks; (a_k \u03c3 + b_k I) reduction for 2-dim std block",
+        "name": "Phase C — Wedderburn-block characters",
+        "operation": "Apply σ-eigenvalue rule (sym ↦ q, alt ↦ −q^{-1}) for 1-dim blocks; (a_k σ + b_k I) reduction for 2-dim std block",
         "inputs": [
           "Phase B"
         ],
@@ -138,8 +138,8 @@
         "spectral_stratum": "generic"
       },
       {
-        "name": "Phase D \u2014 Markov-axiom y_\u03bb(q)",
-        "operation": "Solve linear system \u03a3_\u03bb y_\u03bb \u00b7 \u03c7^\u03bb(\u03b2) = (1, z, z\u00b2) for \u03b2 = (1, \u03c3_1, \u03c3_1\u03c3_2)",
+        "name": "Phase D — Markov-axiom y_λ(q)",
+        "operation": "Solve linear system Σ_λ y_λ · χ^λ(β) = (1, z, z²) for β = (1, σ_1, σ_1σ_2)",
         "inputs": [
           "Phase C",
           "Markov axioms (FiniteJones first principle)"
@@ -160,8 +160,8 @@
         "spectral_stratum": "generic"
       },
       {
-        "name": "Phase E \u2014 \u03b3\u03b3 pair-production reduction",
-        "operation": "Apply \u03b3\u03b3 = \u03c3_i^2 \u2192 h\u00b7\u03c3_i + \ud835\udfcf at every two-\u03c3 contiguity in each braid",
+        "name": "Phase E — γγ pair-production reduction",
+        "operation": "Apply γγ = σ_i^2 → h·σ_i + 𝟏 at every two-σ contiguity in each braid",
         "inputs": [
           "Phase A",
           "Hecke.Energy"
@@ -169,9 +169,9 @@
         "output": {
           "reductions": [
             {
-              "site": "\u03c3_1",
-              "input": "\u03b3\u03b3 = \u03c3_{generator_idx}^2",
-              "rewrite_rule": "Hecke quadratic \u03c3_i^2 = h\u00b7\u03c3_i + \ud835\udfcf",
+              "site": "σ_1",
+              "input": "γγ = σ_{generator_idx}^2",
+              "rewrite_rule": "Hecke quadratic σ_i^2 = h·σ_i + 𝟏",
               "output_factor_sigma": "(q**2 - 1)/q",
               "output_factor_identity": "1",
               "graded_components": {
@@ -183,9 +183,9 @@
               "occurrence_index": 0
             },
             {
-              "site": "\u03c3_1",
-              "input": "\u03b3\u03b3 = \u03c3_{generator_idx}^2",
-              "rewrite_rule": "Hecke quadratic \u03c3_i^2 = h\u00b7\u03c3_i + \ud835\udfcf",
+              "site": "σ_1",
+              "input": "γγ = σ_{generator_idx}^2",
+              "rewrite_rule": "Hecke quadratic σ_i^2 = h·σ_i + 𝟏",
               "output_factor_sigma": "(q**2 - 1)/q",
               "output_factor_identity": "1",
               "graded_components": {
@@ -197,9 +197,9 @@
               "occurrence_index": 0
             },
             {
-              "site": "\u03c3_1",
-              "input": "\u03b3\u03b3 = \u03c3_{generator_idx}^2",
-              "rewrite_rule": "Hecke quadratic \u03c3_i^2 = h\u00b7\u03c3_i + \ud835\udfcf",
+              "site": "σ_1",
+              "input": "γγ = σ_{generator_idx}^2",
+              "rewrite_rule": "Hecke quadratic σ_i^2 = h·σ_i + 𝟏",
               "output_factor_sigma": "(q**2 - 1)/q",
               "output_factor_identity": "1",
               "graded_components": {
@@ -211,9 +211,9 @@
               "occurrence_index": 1
             },
             {
-              "site": "\u03c3_1",
-              "input": "\u03b3\u03b3 = \u03c3_{generator_idx}^2",
-              "rewrite_rule": "Hecke quadratic \u03c3_i^2 = h\u00b7\u03c3_i + \ud835\udfcf",
+              "site": "σ_1",
+              "input": "γγ = σ_{generator_idx}^2",
+              "rewrite_rule": "Hecke quadratic σ_i^2 = h·σ_i + 𝟏",
               "output_factor_sigma": "(q**2 - 1)/q",
               "output_factor_identity": "1",
               "graded_components": {
@@ -225,9 +225,9 @@
               "occurrence_index": 2
             },
             {
-              "site": "\u03c3_2",
-              "input": "\u03b3\u03b3 = \u03c3_{generator_idx}^2",
-              "rewrite_rule": "Hecke quadratic \u03c3_i^2 = h\u00b7\u03c3_i + \ud835\udfcf",
+              "site": "σ_2",
+              "input": "γγ = σ_{generator_idx}^2",
+              "rewrite_rule": "Hecke quadratic σ_i^2 = h·σ_i + 𝟏",
               "output_factor_sigma": "(q**2 - 1)/q",
               "output_factor_identity": "1",
               "graded_components": {
@@ -239,9 +239,9 @@
               "occurrence_index": 0
             },
             {
-              "site": "\u03c3_2",
-              "input": "\u03b3\u03b3 = \u03c3_{generator_idx}^2",
-              "rewrite_rule": "Hecke quadratic \u03c3_i^2 = h\u00b7\u03c3_i + \ud835\udfcf",
+              "site": "σ_2",
+              "input": "γγ = σ_{generator_idx}^2",
+              "rewrite_rule": "Hecke quadratic σ_i^2 = h·σ_i + 𝟏",
               "output_factor_sigma": "(q**2 - 1)/q",
               "output_factor_identity": "1",
               "graded_components": {
@@ -260,8 +260,8 @@
         "spectral_stratum": "generic"
       },
       {
-        "name": "Phase F \u2014 SDP knot-operator selection",
-        "operation": "Solve M(x) \u227d 0 PSD program per prop:operator-selection-lp; emit y0_star, y_star, active_set, duality_gap",
+        "name": "Phase F — SDP knot-operator selection",
+        "operation": "Solve M(x) ≽ 0 PSD program per prop:operator-selection-lp; emit y0_star, y_star, active_set, duality_gap",
         "inputs": [
           "Phase E",
           "lp_dual_solver.solve_psd_operator_selection_sdp"
@@ -269,21 +269,18 @@
         "output": {
           "sdp_results": [
             {
-              "site": "electron-aggregate-1-\u03b3\u03b3",
+              "site": "electron-aggregate-1-γγ",
               "feasible": true,
               "x_star": [
                 0.5000000140546316,
                 0.5000000140545966
               ],
               "y0_star": 0.9999999627956595,
-              "y_star_proxy": [
-                0.5000000140546316,
-                0.5000000140545966
+              "y_star": [
+                0.0,
+                0.0
               ],
-              "active_set": [
-                0,
-                1
-              ],
+              "active_set": [],
               "primal_obj": 1.0000000281092283,
               "dual_obj": 0.9999999627956595,
               "duality_gap": 6.531356877559347e-08,
@@ -294,7 +291,7 @@
               "strong_duality_holds": true
             },
             {
-              "site": "proton-aggregate-5-\u03b3\u03b3",
+              "site": "proton-aggregate-5-γγ",
               "feasible": true,
               "x_star": [
                 1.6666666873305023,
@@ -302,16 +299,12 @@
                 1.666666687330478
               ],
               "y0_star": 0.9999998060098461,
-              "y_star_proxy": [
-                1.6666666873305023,
-                1.666666687330478,
-                1.666666687330478
+              "y_star": [
+                0.0,
+                0.0,
+                0.0
               ],
-              "active_set": [
-                0,
-                1,
-                2
-              ],
+              "active_set": [],
               "primal_obj": 5.000000061991458,
               "dual_obj": 4.9999990300492305,
               "duality_gap": 1.0319422276694468e-06,
@@ -323,15 +316,15 @@
               "strong_duality_holds": false
             }
           ],
-          "contract_compliance": "Per CLAUDE.md \u00a7LP/SDP duals (5 fields all present)"
+          "contract_compliance": "Per CLAUDE.md §LP/SDP duals (5 fields all present)"
         },
         "jet_order": 0,
         "gb_filtration_level": 2,
         "spectral_stratum": "archimedean (q_0)"
       },
       {
-        "name": "Phase H \u2014 m_p / m_e closed-form anchors",
-        "operation": "Assemble tr_M(\u03b2)(q) = \u03a3_\u03bb y_\u03bb(q) \u00b7 \u03c7^\u03bb(\u03b2) symbolically; evaluate at q_0",
+        "name": "Phase H — m_p / m_e closed-form anchors",
+        "operation": "Assemble tr_M(β)(q) = Σ_λ y_λ(q) · χ^λ(β) symbolically; evaluate at q_0",
         "inputs": [
           "Phase C",
           "Phase D"
@@ -343,7 +336,7 @@
           "tr_M_electron_at_q0": 0.7302040595096823,
           "ratio_tr_M_p_over_e": 2.236571466262063,
           "codata_m_p_over_m_e": 1836.1526734252586,
-          "note": "The ratio tr_M(p)/tr_M(e) at q_0 is NOT m_p/m_e by itself \u2014 the mass-formula assembly (Terms 2-6 of mass-formula-6term-mpfr-50dps.witness.json) maps the trace to mass.  This phase emits the rational-in-q anchors from which any future mass-formula assembly should derive m_p; the placeholder literals in M_HECKE_PIPELINE_AT_Q0 are NOT consumed."
+          "note": "The ratio tr_M(p)/tr_M(e) at q_0 is NOT m_p/m_e by itself — the mass-formula assembly (Terms 2-6 of mass-formula-6term-mpfr-50dps.witness.json) maps the trace to mass.  This phase emits the rational-in-q anchors from which any future mass-formula assembly should derive m_p; the placeholder literals in M_HECKE_PIPELINE_AT_Q0 are NOT consumed."
         },
         "jet_order": 0,
         "gb_filtration_level": 0,

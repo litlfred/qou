@@ -96,7 +96,7 @@ def IsRootOfUnityH {R : Type*} [Monoid R] (q : R) : Prop :=
   the `T_i T_j = T_j T_i` braid relation for non-adjacent indices,
   lifted to a `Prop` we can check by `decide`.
 -/
--- Ref: [kassel1995quantum] §VII (braid-group presentation)
+-- Ref: [kassel1995] §VII (braid-group presentation)
 def FarCommutes (i j : ℕ) : Prop := i + 2 ≤ j ∨ j + 2 ≤ i
 
 /-- The W/Z/H carrier triple `(1, 3, 5)` in `B_6` is pairwise

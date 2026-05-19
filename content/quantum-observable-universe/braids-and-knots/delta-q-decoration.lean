@@ -28,7 +28,10 @@ seminormal-basis representation matrices, which are not in Mathlib at
 present.  The algorithmic content is implemented in Python
 (`delta_q_decoration.py`) and validated against witness data.
 
--- Ref: [Wenzl1988] doi:10.1007/BF01393839  (Hecke algebra at roots of unity)
+-- Ref: [wenzl1988]  -- TODO: inline DOI 10.1007/BF01393839 points at a
+--                   -- different Wenzl 1988 paper than the wenzl1988 entry's
+--                   -- DOI (10.1007/BF01404457). Author needs to decide
+--                   -- whether to split into wenzl1988a/b or pick one.
 sorry
 -/
 /-- Concrete model: the indexing type for the per-irrep tuple is the
@@ -36,7 +39,8 @@ sorry
     list-based partition records `Fin (Nat.partition.length n)`.
     The full per-irrep matrix data (q-deformed Specht modules in
     seminormal basis) is the upgrade target documented above. -/
--- Ref: [Wenzl1988] doi:10.1007/BF01393839
+-- Ref: [wenzl1988]  -- (inline DOI removed; see line 31 TODO re DOI
+--                   --  mismatch with the wenzl1988 entry)
 def delta_q (n : ℕ) : Type := Fin n
 
 end QOU.BraidKnot

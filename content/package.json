@@ -13,6 +13,7 @@
     "render-tex": "bun run ../scripts/render-tex/render-tex-blocks.ts",
     "export-bibtex": "bun run pipeline/export-bibtex.ts",
     "validate-refs": "bun run pipeline/validate-references.ts",
+    "validate-bib": "bun run pipeline/validate-bib.ts",
     "audit-tex-source": "bun run pipeline/audit-tex-source.ts",
     "audit-tex-source:strict": "bun run pipeline/audit-tex-source.ts --strict",
     "bib-qa": "bun run pipeline/bib-qa.ts",

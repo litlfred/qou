@@ -464,7 +464,7 @@ class R5FullWitness (n : LightNucleus) where
     * `max_inactive_dual` — maximum dual variable value on the
       inactive set (slack constraints).  Strict complementarity
       requires this to be exactly zero. -/
--- Ref: [BoydVandenberghe2004] §5.5 ("Strict complementarity")
+-- Ref: [boyd-vandenberghe-2004] §5.5 ("Strict complementarity")
 structure StrictComplementarity (n : LightNucleus)
     [w : R5FullWitness n] : Prop where
   /-- Concrete real-valued field: minimum eigenvalue across all
@@ -535,7 +535,7 @@ theorem helium3_canonical_uniqueness_via_strict_complementarity
   -- level requires `Mathlib.Analysis.Convex.StrictConvex`
   -- specialised to PSD-cone-constrained programs, deferred).
   --
-  -- Ref: [BoydVandenberghe2004] §5.5 ("Strict complementarity")
+  -- Ref: [boyd-vandenberghe-2004] §5.5 ("Strict complementarity")
   -- Ref: [manuscript] PR #608 r5-full-canonical-knot-solver.witness.json
   obtain ⟨_min_block_eig, _min_dual_y_on_active, _max_inactive_dual,
           _active_dual_pos_or_empty, _inactive_dual_zero⟩ := sc
