@@ -162,7 +162,10 @@ theorem trivial_eigenvalue_flat (k : ℕ) : (1 : R_q) ^ k = 1 := one_pow k
     The transfer matrix has eigenvalues (1, 1), giving degenerate
     Chebyshev recurrence with no shell structure. -/
 -- Ref: [manuscript] §4/t211-ideal-annihilation
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 axiom non_embeddable_eigenvalues_trivial (m n : ℕ) (hne : notEmbeddable m n 4)
     -- (q : R_q) (hq : q > 1) :  -- (archimedean; not meaningful over R_q)
     -- The transfer matrix eigenvalues for a non-embeddable knot are both 1.

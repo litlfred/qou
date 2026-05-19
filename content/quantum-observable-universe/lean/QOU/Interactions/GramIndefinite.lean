@@ -137,7 +137,10 @@ open QOU.Descartes
     = σ₁σ₀·σ₁² = σ₁σ₀·(HA·σ₁+1) = HA·e⁻ + L₋.
 
     In the standard 2×2 representation: -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem hopfPlus_sq :
     hopfPlus * hopfPlus =
     hopfMinus + HA_t • (stdRep3_gen0 * stdRep3_gen1 * stdRep3_gen0) := by
@@ -151,7 +154,10 @@ theorem hopfPlus_sq :
 
     σ₀σ₁σ₁σ₀ = σ₀·(HA·σ₁+1)·σ₀ = HA·σ₀σ₁σ₀ + σ₀²
     = HA·e⁻ + HA·σ₀ + 1. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem hopfPlus_mul_hopfMinus :
     hopfPlus * hopfMinus =
     1 + HA_t • stdRep3_gen0 +
@@ -173,7 +179,10 @@ theorem hopfPlus_mul_hopfMinus :
     z² - HAz - 1 < 1/4 - 0 - 1 < 0.
 
     Therefore vᵀGv < 0 and G is NOT positive semidefinite. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 -- (The Gram matrix of H₃(q) has indefinite signature.)
 theorem gram_indefinite_witness :
     -- In the 2×2 standard rep, L₊² + L₋² ≠ 2·L₊·L₋

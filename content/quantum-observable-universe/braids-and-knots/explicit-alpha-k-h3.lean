@@ -51,7 +51,10 @@ structure HeckeQ (R : Type u) [Field R] where
 
     `α_0 = 1`, `α_1 = 0`, `α_2 = z²`, `α_3 = h · z² + z`. -/
 -- Ref: [manuscript] Ch. Braids and Knots, §α_k at H_3
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem explicit_alpha_k_h3 {R : Type u} [Field R] (Q : HeckeQ R) :
     ∃ a₀ a₁ a₂ a₃ : R,
       a₀ = 1 ∧ a₁ = 0 ∧ a₂ = Q.z ^ 2 ∧ a₃ = Q.h * Q.z ^ 2 + Q.z :=

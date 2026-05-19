@@ -147,7 +147,10 @@ noncomputable def crossingCoeffsWithPol
     regardless of the polarization argument; the crossing coefficients
     are determined entirely by the crossing type (discrete quark-flavor
     data), which is independent of the continuous photon parameters. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem confinement_universality :
     ∀ (p₁ p₂ : ParticleType) (pol pol' : PolarizationParams),
     crossingCoeffsWithPol (crossingType p₁ p₂) pol =

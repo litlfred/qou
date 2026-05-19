@@ -39,7 +39,10 @@ noncomputable def signPoly (q : ℝ) : ℝ :=
   q ^ 8 - 3 * q ^ 6 - 3 * q ^ 2 + 1
 
 /-- p(1) = −4 < 0. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem signPoly_at_one : signPoly 1 = -4 := by
   unfold signPoly; ring
 
@@ -48,7 +51,10 @@ theorem signPoly_at_one_neg : signPoly 1 < 0 := by
   rw [signPoly_at_one]; norm_num
 
 /-- p(2) = 53 > 0.  (By intermediate value, p has a root in (1,2).) -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem signPoly_at_two : signPoly 2 = 53 := by
   unfold signPoly; ring
 
@@ -68,7 +74,10 @@ noncomputable def protonTrefoilCoeff (q : ℝ) : ℝ :=
 
 /-- At q = 1, the proton e⁻ coefficient is 0.
     (The (q−1)² factor vanishes.) -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem proton_trefoil_at_one : protonTrefoilCoeff 1 = 0 := by
   unfold protonTrefoilCoeff signPoly; ring
 
@@ -76,25 +85,37 @@ theorem proton_trefoil_at_one : protonTrefoilCoeff 1 = 0 := by
     p(11/10) = (11/10)⁸ − 3(11/10)⁶ − 3(11/10)² + 1
              = 214358881/100000000 − 3·1771561/1000000 − 3·121/100 + 1
              = −580109419/100000000 < 0. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem signPoly_at_11_10 : signPoly (11/10 : ℝ) < 0 := by
   unfold signPoly; norm_num
 
 /-- p(12/10) < 0.  Direct rational evaluation.
     p(6/5) = −3116459/390625 < 0. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem signPoly_at_12_10 : signPoly (12/10 : ℝ) < 0 := by
   unfold signPoly; norm_num
 
 /-- p(15/10) < 0.  Direct rational evaluation.
     p(3/2) = −3659/256 < 0. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem signPoly_at_15_10 : signPoly (15/10 : ℝ) < 0 := by
   unfold signPoly; norm_num
 
 /-- p(18/10) < 0.  Direct rational evaluation.
     p(9/5) = −217604/390625 < 0. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem signPoly_at_18_10 : signPoly (18/10 : ℝ) < 0 := by
   unfold signPoly; norm_num
 
@@ -107,7 +128,10 @@ theorem signPoly_at_18_10 : signPoly (18/10 : ℝ) < 0 := by
     protonTrefoilCoeff(11/10) = (1/10)²·(21/10)²·p(11/10)/(4·(11/10)⁶)
     The prefactor (q−1)²(q+1)²/(4q⁶) is positive for q > 1.
     So sign = sign(p) < 0. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem proton_trefoil_neg_at_11_10 : protonTrefoilCoeff (11/10 : ℝ) < 0 := by
   unfold protonTrefoilCoeff signPoly
   norm_num
@@ -141,7 +165,10 @@ theorem derivFactor_at_3_2_neg : derivFactor (3/2 : ℝ) < 0 := by
     For q ≤ 3/2: 4q² ≤ 4·(9/4) = 9, so 4q² − 9 ≤ 0.
     Since q⁴ ≥ 0, we get q⁴(4q² − 9) ≤ 0.
     Therefore r(q) ≤ 0 − 3 = −3 < 0. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem derivFactor_neg_on_interval (q : ℝ) (hq1 : 1 ≤ q) (hq2 : q ≤ 3/2) :
     derivFactor q < 0 := by
   unfold derivFactor
@@ -157,7 +184,10 @@ theorem derivFactor_neg_on_interval (q : ℝ) (hq1 : 1 ≤ q) (hq2 : q ≤ 3/2) 
 /-- p'(q) = 2q · r(q) < 0 for q ∈ (1, 3/2].
     Since r(q) < 0 (proved above) and q > 0, the product is negative.
     Therefore p is strictly decreasing on [1, 3/2]. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem signPoly_deriv_neg (q : ℝ) (hq1 : 1 ≤ q) (hq2 : q ≤ 3/2) :
     2 * q * derivFactor q < 0 := by
   have hq_pos : 0 < q := by linarith
@@ -176,7 +206,10 @@ theorem signPoly_deriv_neg (q : ℝ) (hq1 : 1 ≤ q) (hq2 : q ≤ 3/2) :
       • 3q² − 1 ≥ 2 > 0                (since q ≥ 1)
 
     Therefore −p(q) ≥ 1 · 3/4 + 2 = 11/4 > 0, so p(q) < 0. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem signPoly_neg_on_interval (q : ℝ) (hq1 : 1 ≤ q) (hq2 : q ≤ 3/2) :
     signPoly q < 0 := by
   unfold signPoly
@@ -198,7 +231,10 @@ theorem signPoly_neg_on_interval (q : ℝ) (hq1 : 1 ≤ q) (hq2 : q ≤ 3/2) :
 
     Combined with neutron_trefoil_neg (which holds for ALL q > 1),
     both nucleons have e⁻ < 0 — the beta decay channel is open. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem proton_trefoil_neg_on_interval (q : ℝ) (hq1 : 1 < q) (hq2 : q ≤ 3/2) :
     protonTrefoilCoeff q < 0 := by
   unfold protonTrefoilCoeff
@@ -233,7 +269,10 @@ noncomputable def neutronTrefoilCoeff (q : ℝ) : ℝ :=
 /-- c_{e⁻}(𝔫) < 0 for all q > 1.
     Proof: (q−1)² > 0, (q+1)² > 0, (q²+1)² > 0, 4q⁴ > 0.
     Product is positive, so −product < 0. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem neutron_trefoil_neg (q : ℝ) (hq : q > 1) :
     neutronTrefoilCoeff q < 0 := by
   unfold neutronTrefoilCoeff
@@ -262,7 +301,10 @@ noncomputable def trefoilDiff (q : ℝ) : ℝ :=
   -((q - 1) ^ 4 * (q + 1) ^ 4 * (q ^ 4 + 1)) / (4 * q ^ 6)
 
 /-- The difference is negative for all q > 1. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem neutron_more_negative (q : ℝ) (hq : q > 1) :
     trefoilDiff q < 0 := by
   unfold trefoilDiff

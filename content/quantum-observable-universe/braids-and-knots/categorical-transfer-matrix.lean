@@ -96,7 +96,10 @@ theorem InteractionBiFiltration.step_preserves_bound
     the same hadron (possibly at different filtration levels),
     the vertex volumes agree. -/
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 axiom transfer_matrix_level_independence
     -- {q : R_q} (hq : q > 1)  -- (archimedean; not meaningful over R_q)
     (T₁ T₂ : CategoricalTransferMatrix q)

@@ -67,6 +67,16 @@
       "note": "Confirmed paper is 'Surreal numbers, derivations and transseries' by Berarducci & Mantova (arXiv:1503.00315). PolynomialEval.lean:202 cites §2 — §2 (subsections 2.1 Order and simplicity, 2.2 Field operations, ...) is where the surreal field structure + polynomial extensions are developed. Cited scope matches."
     },
     {
+      "id": "jones1987",
+      "status": "fixed",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T06:50:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 142,
+      "fix_commit": "(this commit)",
+      "note": "Jones, 'Hecke algebra representations of braid groups and link polynomials', Ann. Math. 126 (1987). 142 bare-URL `-- Ref: [jones1987] https://doi.org/10.2307/1971403` lines across 58 .lean files bulk-updated to §-specific citation: §3 (The Markov trace) + §4 (Link polynomials), the two sections that cover all sampled Lean citations (Markov trace conjugation invariance, Hecke trace evaluation, skein/braid polynomial calculations, trefoil/Borromean link polynomials, q-Schur-Weyl in Hecke algebra). 20-context sample (random + targeted) confirmed uniform §3+§4 scope before bulk-replace. No local PDF in uploads/ (Annals of Mathematics paywalled; not on arxiv). Status fixed: 142 lines now §-specific."
+    },
+    {
       "id": "faddeev_kashaev1994",
       "status": "verified-clean",
       "local_pdf": "uploads/faddeev-kashaev-1994-quantum-dilogarithm.pdf",

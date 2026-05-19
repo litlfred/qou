@@ -84,7 +84,10 @@ structure HeckeAlgebraData where
        H_n(q)-module S_λ.
     3. **Link invariance**: the trace value depends only on the isotopy
        class of the braid closure, yielding the Jones polynomial. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 structure JonesMarkovTrace (H : HeckeAlgebraData) where
   /-- The trace functional tr_M : H_n(q) → ℝ. -/
   tr : H.carrier → R_q
@@ -152,7 +155,10 @@ structure JonesMarkovTrace (H : HeckeAlgebraData) where
 
     We axiomatise this as: given valid Hecke algebra data, the structure
     `JonesMarkovTrace` is inhabited. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403, Theorem 5.1
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version., Theorem 5.1
 axiom jones_markov_trace_exists (H : HeckeAlgebraData) :
     JonesMarkovTrace H
 

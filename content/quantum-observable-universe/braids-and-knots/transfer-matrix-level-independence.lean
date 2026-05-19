@@ -54,10 +54,16 @@ structure HadronConfig where
     the isotopy class of the hadron and the knot types of its
     constituents — it is independent of the braid representative,
     PawLei embedding, and crossing evaluation order within S_p. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 -- Ref: [manuscript] §4/transfer-matrix-level-independence
 /-- **External axiom (Jones 1987): Markov trace product theorem.** -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 axiom transfer_matrix_level_independence_axiom :
     ∀ (H : HadronConfig) (constituentProduct : R_q),
       constituentProduct = H.constituentPolynomials.foldl (· * ·) 1 →

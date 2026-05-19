@@ -70,7 +70,10 @@ theorem hecke_level_independent (hp : HeckeParams) (strands : ℕ)
     tr_M^{(n+1)}(ℓ_n(w)) = tr_M^{(n)}(w) for all w ∈ H^{(n)}(q).
     This is the knot-coordinate form of Euler characteristic stability:
     the Jones polynomial of a knot does not depend on brane level. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 axiom markov_level_compatible {n : ℕ} (hp : HeckeParams)
     (w : AlgElement (HeckeGen n) R_q) :
     -- tr_M at level n+1 of the jet-embedded element equals

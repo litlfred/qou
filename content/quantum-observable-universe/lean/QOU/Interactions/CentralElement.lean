@@ -57,7 +57,10 @@ open QOU.Descartes Matrix
     irrep V_λ, and for λ = (2,1) the content is 0, so Δ² ↦ I.
 
     Numerically verified: (σ₀σ₁σ₀)² = I at all tested q values. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem fullTwist_sq_eq_one :
     (stdRep3_gen0 * stdRep3_gen1 * stdRep3_gen0) *
     (stdRep3_gen0 * stdRep3_gen1 * stdRep3_gen0) = (1 : TMatrix) := by
@@ -71,7 +74,10 @@ theorem fullTwist_sq_eq_one :
 /-- B₃ = (σ₀σ₁⁻¹)³ ≠ Δ² = (σ₀σ₁σ₀)² in the standard rep.
     Δ² = I (proved above), but B₃ ≠ I (proved above).
     Therefore B₃ ≠ Δ². -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem borromean3_ne_fullTwist :
     borromean3 ≠
     (stdRep3_gen0 * stdRep3_gen1 * stdRep3_gen0) *

@@ -83,7 +83,10 @@ noncomputable def degreeOne (V : VolumeInterface) : V.carrier :=
     `vol V.one = 0` and `vol (V.term i) = 0` are part of the interface.
 -/
 -- Ref: [manuscript] lem:degree-one-braid-trivial-volume
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 -- Ref: [kashaev1997] https://doi.org/10.1023/A:1007364912784
 theorem geom_degree_one_zero (V : VolumeInterface) :
     V.vol (degreeOne V) = 0 := by

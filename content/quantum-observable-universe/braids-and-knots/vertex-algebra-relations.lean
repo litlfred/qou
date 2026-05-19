@@ -84,13 +84,19 @@ open QOU.GrobnerShirshov.Hecke
 /-- **Markov trace** on H_n(q) — axiomatised pending the full
     Markov-recursion-on-GS-normal-forms implementation in the
     transfer-matrix framework. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 axiom MarkovTrace {n : ℕ} (hp : HeckeParams) (f : AlgElement (HeckeGen n) R_q) : R_q
 
 /-- **AlgElement.embed_succ** — embed H_n into H_{n+1} by treating
     generators as σ₀,…,σ_{n-1}.  Axiomatised pending the concrete
     Hecke-algebra implementation. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 axiom AlgElement.embed_succ {n : ℕ} (f : AlgElement (HeckeGen n) R_q) :
     AlgElement (HeckeGen (n + 1)) R_q
 
@@ -106,7 +112,10 @@ axiom AlgElement.zero {n : ℕ} : AlgElement (HeckeGen n) R_q
 
 /-- QU-3a: Markov conjugation invariance —
     tr_M(σᵢ · f) = tr_M(f · σᵢ) for all i and f. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 axiom markov_conjugation {n : ℕ} (hp : HeckeParams) (i : Fin n)
     (f : AlgElement (HeckeGen n) R_q) :
     MarkovTrace hp (AlgElement.leftMulGen ⟨i⟩ f)
@@ -114,7 +123,10 @@ axiom markov_conjugation {n : ℕ} (hp : HeckeParams) (i : Fin n)
 
 /-- QU-3b: Markov stabilisation —
     tr_M(f · σ_n) = δ⁻¹ · tr_M(f) where δ = -(q + q⁻¹). -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 axiom markov_stabilisation {n : ℕ} (hp : HeckeParams)
     (f : AlgElement (HeckeGen n) R_q) :
     MarkovTrace hp (AlgElement.leftMulGen ⟨⟨n, by omega⟩⟩
@@ -124,7 +136,10 @@ axiom markov_stabilisation {n : ℕ} (hp : HeckeParams)
 /-- QU-3c: Non-degeneracy —
     the Markov trace pairing (f, g) ↦ tr_M(f · g) is non-degenerate
     on GS normal forms. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 axiom markov_nondegenerate {n : ℕ} (hp : HeckeParams)
     (f : AlgElement (HeckeGen n) R_q) :
     (∀ g : AlgElement (HeckeGen n) R_q,

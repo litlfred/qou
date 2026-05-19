@@ -144,7 +144,10 @@ theorem one_dim_factors_per_generator
     proof is mechanical (multiplicativity + per-term linear-form
     evaluation + regrouping by `i_idx`) but the regrouping step's
     exact form depends on the Mathlib API at the call site. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 -- Ref: [wenzl1988] https://doi.org/10.1007/BF01393378
 axiom one_dim_factors_per_generator_axiom :
     ∀ {R : Type u} {n : ℕ} {q : R} {A : Type u}

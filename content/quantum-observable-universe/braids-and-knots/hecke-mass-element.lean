@@ -54,7 +54,10 @@ universe u
     We encode this as a structure carrying the decomposition data,
     polymorphic in the ground ring `R` (pre-Arch: `R = ℤ[q^±1]`). -/
 -- Ref: [manuscript] §4/hecke-mass-element
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 structure HeckeMassElement (R : Type u) [CommRing R] where
   /-- The particle's Hecke element ρ(β) (before Frobenius dressing). -/
   particleElement : R

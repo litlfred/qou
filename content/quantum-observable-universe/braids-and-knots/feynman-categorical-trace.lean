@@ -1,7 +1,10 @@
 -- Feynman transition amplitude as categorical trace
 -- See QOU/FeynmanPathIntegrals.lean §2 for the full formalization
 --
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 -- Ref: [chari1994] https://doi.org/10.1017/CBO9780511623868
 
 import QOU.FeynmanPathIntegrals

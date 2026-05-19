@@ -100,7 +100,10 @@ noncomputable def nf_b3 : HeckeNF :=
   mul_right_s1_inv (mul_right_s0 nf_unit2)
 
 /-- The e⁻ coefficient of the Hecke-engine-computed B₃ is zero. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem nf_b3_trefoil_zero : nf_b3 5 = 0 := by
   simp [nf_b3, nf_unit2, nf_unit, mul_right_s1_inv, mul_right_s0,
         mul_right_s1, hecke_add, hecke_smul, HA]
@@ -114,7 +117,10 @@ theorem nf_b3_trefoil_zero : nf_b3 5 = 0 := by
     requires either a `simp only` call with the precise lemma list
     that does not recurse, or a `decide`-based numerical check.
     Sorry retained pending refactor. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem nf_b3_eq_witness (i : Fin 6) :
     nf_b3 i = b3_nf_coefficients i := by
   -- Ref: [jones1987] https://doi.org/10.2307/1971403
@@ -141,7 +147,10 @@ noncomputable def nf_proton4 : HeckeNF :=
 /-- The 4×proton e⁻ coefficient, computed by the Hecke engine.
     This should equal (q−1)²(q+1)²(q⁸−3q⁶−3q²+1) / q⁶
     (which is 4 times the proton e⁻ coefficient). -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem nf_proton4_trefoil :
     nf_proton4 5 = (q - q_inv) * (q - q_inv) *
       (q * q * q * q - 3 * q * q - 3 * q_inv * q_inv + q_inv * q_inv * q_inv * q_inv) := by
@@ -167,7 +176,10 @@ noncomputable def nf_neutron4 : HeckeNF :=
     4·c_e(𝔫) = −HA² · (q² + q⁻² + 2) = −q⁴ + 2 − q⁻⁴
 
     No division needed — the result is in ℤ[q, q⁻¹]. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem nf_neutron4_trefoil :
     nf_neutron4 5 = -((q - q_inv) * (q - q_inv) * (q * q + q_inv * q_inv + 2)) := by
   simp [nf_neutron4, nf_b3, nf_unit2, nf_unit, mul_right_s1_inv,

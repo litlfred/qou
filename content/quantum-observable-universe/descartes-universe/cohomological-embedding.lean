@@ -63,7 +63,10 @@ structure TorusKnotRep where
       and color-squared strong force (T_{2,9} embeds).
 
     We encode the four parts as fields of a structure. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 structure CohomologicalEmbedding where
   /-- The genus of the moduli surface. -/
@@ -85,7 +88,10 @@ structure CohomologicalEmbedding where
     The QOU axioms force g = 4, and the six torus knots
     T_{2,3}, T_{2,5}, T_{2,7}, T_{2,9}, T_{3,4}, T_{3,5}
     exhaust H¹(Σ₄). -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 theorem cohomological_embedding :
     ∃ (ce : CohomologicalEmbedding), ce.genus = 4 ∧ ce.spanning_rank = 5 := by

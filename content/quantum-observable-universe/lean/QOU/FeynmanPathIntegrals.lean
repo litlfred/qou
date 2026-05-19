@@ -145,7 +145,10 @@ theorem trace_collapse
     pending the full Wedderburn-Artin formalisation in Mathlib.
 
     LaTeX: `\label{lem:feynman-markov-identification}` -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 class MarkovIdentification (sumWeightedTraces markovTrace : ℝ) : Prop where
   /-- The weighted-character sum equals the Markov trace. -/
   identity : sumWeightedTraces = markovTrace
@@ -172,7 +175,10 @@ instance markovIdentification_refl (x : ℝ) : MarkovIdentification x x :=
     finite algebraic expression.
 
     LaTeX: `\label{prop:feynman-categorical-trace}` -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 structure FeynmanCategoricalTrace where
   /-- The q-Schur–Weyl decomposition providing the eigenbasis. -/
   decomp : PathIntegrals.SchurWeylDecomposition
@@ -208,7 +214,10 @@ theorem amplitude_finite_sum (fct : FeynmanCategoricalTrace) :
 /-- **Mass from transition amplitude**: the categorical mass at a single
     brane level equals the absolute value of the Markov trace, which
     equals the absolute value of the transition amplitude. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem mass_eq_abs_amplitude (fct : FeynmanCategoricalTrace)
     (h : fct.decomp.hecke.carrier) :
     |fct.markov.tr (fct.consistent.symm ▸ h)| = |fct.transitionAmplitude h| := by
@@ -250,7 +259,10 @@ theorem speed_diverges_at_one (ε : ℝ) (hε : 0 < ε) :
     The full J_K(1) = 1 result follows from the fact that every
     element of H_n(1) ≅ k[S_n] is a product of generators T_i,
     and tr is multiplicative on the augmentation ideal at z = 0. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem jones_trace_generator_at_one
     (markov : PathIntegrals.MarkovTrace)
     -- At q = 1, T² = 1 for each generator

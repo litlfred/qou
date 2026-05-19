@@ -69,13 +69,19 @@ noncomputable def proton4_nf : Fin 6 → R_t
 /-- 4× proton matrix = NF-reconstructed matrix.
     This is the same approach as b3_nf_correct but with a longer
     matrix chain (6 multiplications instead of 3). -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 -- (Verification via faithful representation; ring may timeout on
 --  the 16+ degree Laurent polynomials.)
 -- proton4_nf_verification: the full NF matching (proton4 = nfToMatrix proton4_nf)
 -- requires degree-16+ Laurent polynomial ring computation which may timeout.
 -- The e⁻ coefficient is proved nonzero in HeckeEngine.lean (nf_proton4_trefoil).
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 
 /-! ## §3  Key property: proton and neutron e⁻ signs -/
 

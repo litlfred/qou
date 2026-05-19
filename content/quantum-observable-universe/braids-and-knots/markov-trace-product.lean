@@ -136,7 +136,10 @@ structure MarkovTraceProduct where
     1. Chain reduction: each σ_i reduces to a_i σ_i + b_i
     2. Markov property: tr(x σ_n) = z · tr(x)
     3. Independence: the remaining word involves only σ_0,...,σ_{i-1} -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 theorem markov_trace_product
     -- (n : ℕ) (hn : n ≥ 2) (q : R_q) (hq : q > 1)  -- (archimedean; not meaningful over R_q)

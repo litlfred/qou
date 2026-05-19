@@ -52,7 +52,10 @@ noncomputable def h3_histogram (x : Fin 6 → R_q) : List ℕ :=
 /-- The helium histogram is [0, 1, 1, 0] — zero terms at length 0,
     one at length 1 (σ₁), one at length 2 (σ₀σ₁), zero at length 3.
     This is palindromic (Poincaré dual). -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 theorem helium_histogram_palindromic :
     IsPalindromic [0, 1, 1, 0] := by
   unfold IsPalindromic
@@ -75,7 +78,10 @@ class PalindromicityOrbitalType (Z : ℕ) where
     IsPalindromic histogram ↔ Z ≤ 4
 
 /-- Z=2 instance: helium is palindromic and Z ≤ 4. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 instance : PalindromicityOrbitalType 2 where
   histogram := [0, 1, 1, 0]
   palindromic_iff_s_type := by

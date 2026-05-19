@@ -74,7 +74,10 @@ noncomputable def bareQValue (q : ℝ) (skeinRatio : ℝ) (m_e : ℝ) : ℝ :=
     (iii) F(τ(r,s), N) is the knot operator (Markov trace of τ·T_β on active shells)
     (iv)  The product collapses to a single term (shell cancellation)
     (v)   The decomposition is exact — terminates at degree 2 on Σ₄ -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 -- Ref: [turaev2010] https://doi.org/10.1515/9783110221848
 -- Ref: [manuscript] §5/spectral-decomposition-qvalue
 theorem spectral_decomposition_qvalue

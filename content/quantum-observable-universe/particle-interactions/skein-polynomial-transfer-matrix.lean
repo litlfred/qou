@@ -169,7 +169,10 @@ noncomputable def Q_q_from_polynomials
     P^(2β) - P^(par) ≠ (P^(β₁) - P^(par)) + (P^(β₂) - P^(par))
     The difference is the nuclear matrix element polynomial. -/
 -- Ref: [manuscript] §6/skein-polynomial-transfer-matrix
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 structure DoubleBetaCrossTerm where
   /-- Parent Skein polynomial value. -/
   P_par : ℝ

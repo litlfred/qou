@@ -131,7 +131,10 @@ theorem SpectralIdempotentData.bias (d : SpectralIdempotentData) :
     the expectation value of generator n is independent of the history
     x ∈ H_{n−1}(q).  The vertex volume V̂_i = z · a_i + b_i is the
     one-step conditional expectation. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 structure MarkovTransitionStep where
   /-- Hecke reduction coefficient a_i (coefficient of T_i). -/
   a : ℝ
@@ -164,7 +167,10 @@ noncomputable def MarkovTransitionStep.vertexVolume (s : MarkovTransitionStep) :
     not on the other generators.  This is the direct consequence of
     memorylessness: each step is conditionally independent given the
     Markov property. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 -- Ref: [diaconis-ram2000] https://doi.org/10.1214/aoap/1019487508
 structure MarkovChainFactorization where
   /-- Number of strands. -/
@@ -235,7 +241,10 @@ theorem eigenvalue_expectation (d : SpectralIdempotentData) :
     cyclicity) gives the totalTrace as a product of per-vertex
     volumes.  Pending the full Mathlib port of the Markov trace
     machinery in markov-trace-product.lean. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 -- Ref: [diaconis-ram2000] https://doi.org/10.1214/aoap/1019487508
 axiom markov_chain_factorization_axiom :
     ∀ (n : ℕ) (_hn : n ≥ 2)
@@ -244,7 +253,10 @@ axiom markov_chain_factorization_axiom :
       (_h_markov : ∀ i, (steps i).z = (steps 0).z),
         totalTrace = Finset.univ.prod (fun i => (steps i).vertexVolume)
 
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 -- Ref: [diaconis-ram2000] https://doi.org/10.1214/aoap/1019487508
 theorem markov_chain_factorization_exists
     (n : ℕ) (hn : n ≥ 2)

@@ -92,7 +92,10 @@ def BraidMove.preservesTrace : BraidMove → Prop
     All nuclear observables (mass, binding energy, Q-value,
     half-life) trace back to the single deformation parameter q
     through the R2 Hecke relation. -/
--- Ref: [jones1987] https://doi.org/10.2307/1971403
+-- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
+--      — Jones, "Hecke algebra representations of braid groups and link
+--      polynomials," Ann. Math. 126 (1987). Verified against the
+--      published version.
 -- Ref: [manuscript] §5/reidemeister-action-table
 -- theorem reidemeister_action_table (q : R_q) (hq : 1 < q)  -- (archimedean; not meaningful over R_q)
     (T : R_q)
