@@ -153,21 +153,33 @@ def load_block_factors_from_witness() -> dict:
 
 
 def predict_binding(Z: int, N: int, factors: dict, q: mp.mpf,
-                     q_inv: mp.mpf, z: mp.mpf) -> dict:
-    """Closed-form B_pred^(1) via block-multiplicativity + structural
+                     q_inv: mp.mpf, z: mp.mpf, *,
+                     include_t3: bool = True) -> dict:
+    """Closed-form B_pred via block-multiplicativity + structural
     interface arrangement.
 
     Arrangement [p, p, ..., n, n, ...] gives:
-      - (Z-1) p-p interfaces
-      - 1 p-n boundary interface (if Z >= 1 and N >= 1)
-      - (N-1) n-n interfaces
+      - (Z-1) p-p interfaces at gen 3k+2 for k=0..Z-2
+      - 1 p-n boundary interface at gen 3(Z-1)+2 = 3Z-1
+      - (N-1) n-n interfaces at gen 3(Z+k)+2 for k=0..N-2
 
     T1_free = v_p^Z · v_n^N
     T1_atom = 0  (p-n interface has V=0, kills product)
     T2_diff = Σ_{interface} [Li_2^q(1) - Li_2^q(|V^X_inter|)]
-    B_dim^(1) = T1_free + T2_diff
-    B_MeV^(1) = E_0 · B_dim^(1),  E_0 = Q_β (CAL-3)
+    T3_diff = z² · Σ_{pairs (i,j) with at least one interface}
+              [Li_2^q(|V_i^free V_j^free|) - Li_2^q(|V_i^atom V_j^atom|)]
+
+    Structural cancellation in T3: non-interface pairs have V_free =
+    V_atom, contribute 0 to T3_diff. The DIVERGENT pairs (where
+    |V_i V_j| ≥ q_0) live entirely in non-interface space, so they
+    cancel — T3_diff is FINITE even though T3_free and T3_atom
+    individually diverge.
+
+    B_dim^(2) = T1_free + T2_diff + T3_diff
+    B_MeV^(2) = E_0 · B_dim^(2),  E_0 = Q_β (CAL-3)
     """
+    v_p_0, v_p_1 = factors["v_p_factors"]
+    v_n_0, v_n_1 = factors["v_n_factors"]
     v_p = factors["v_p"]
     v_n = factors["v_n"]
 
@@ -187,18 +199,94 @@ def predict_binding(Z: int, N: int, factors: dict, q: mp.mpf,
                + n_nn * (Li2q_1 - Li2q_nn)
                + n_pn * (Li2q_1 - Li2q_pn))
 
-    B_dim = T1_free - T1_atom + T2_diff
+    T3_diff = mp.mpf(0)
+    if include_t3 and (n_pp + n_nn + n_pn) > 0:
+        # OPTIMIZATION: Only ~7 distinct V values appear:
+        #   v_p_0, v_p_1, v_n_0, v_n_1 (4 block values)
+        #   1.0 (free interface)
+        #   |V^pp_inter|, |V^nn_inter|, |V^pn_inter|=0 (atom interfaces)
+        # So at most 7×7/2 = 28 distinct |V_i V_j| products.
+        # Cache Li_2^q for each product, then sum via integer pair-counts.
+        A = Z + N
+        # Tag each gen by (config-symbol). Symbols:
+        #   "p0", "p1": proton block gens 0, 1
+        #   "n0", "n1": neutron block gens 0, 1
+        #   "I_free_pp", "I_atom_pp": interface between two protons
+        #   "I_free_nn", "I_atom_nn": interface between two neutrons
+        #   "I_free_pn", "I_atom_pn": interface between p and n
+        flavor_of_block = ['p'] * Z + ['n'] * N
+
+        def gen_sym(g: int, config: str) -> str:
+            block, local = g // 3, g % 3
+            if local in (0, 1):
+                flav = flavor_of_block[block]
+                return f"{flav}{local}"
+            # interface
+            fl, fr = flavor_of_block[block], flavor_of_block[block + 1]
+            kind = "pp" if (fl, fr) == ('p', 'p') else (
+                   "nn" if (fl, fr) == ('n', 'n') else "pn")
+            return f"I_{config}_{kind}"
+
+        # V values per symbol
+        sym_v = {
+            "p0": v_p_0, "p1": v_p_1, "n0": v_n_0, "n1": v_n_1,
+            "I_free_pp": mp.mpf(1), "I_free_nn": mp.mpf(1),
+            "I_free_pn": mp.mpf(1),
+            "I_atom_pp": factors["V_pp_inter"],
+            "I_atom_nn": factors["V_nn_inter"],
+            "I_atom_pn": factors["V_pn_inter"],
+        }
+
+        # Memoised Li_2^q for each distinct |V_a · V_b|
+        li2_cache: dict[tuple[str, str], mp.mpf] = {}
+        def li2_for_pair(a: str, b: str) -> mp.mpf:
+            key = (a, b) if a <= b else (b, a)
+            if key not in li2_cache:
+                prod = mp.fabs(sym_v[key[0]] * sym_v[key[1]])
+                li2_cache[key] = li_2_q(prod, q, q_inv)
+            return li2_cache[key]
+
+        # Enumerate gens once with their (free_sym, atom_sym) tags
+        n_gens = 3 * A - 1
+        gen_tags = [(gen_sym(g, "free"), gen_sym(g, "atom"))
+                    for g in range(n_gens)]
+
+        # Build pair-count table: for each (free_pair, atom_pair) type,
+        # count how many pairs (i, j) with i in interface or j in interface
+        # have that pair-of-symbols.
+        from collections import Counter
+        pair_counts: Counter = Counter()
+        for i in range(n_gens):
+            fi_f, fi_a = gen_tags[i]
+            is_i_inter = fi_f.startswith("I_")
+            for j in range(i + 1, n_gens):
+                fj_f, fj_a = gen_tags[j]
+                is_j_inter = fj_f.startswith("I_")
+                if not (is_i_inter or is_j_inter):
+                    continue  # non-interface pair cancels in T3_diff
+                pair_counts[(tuple(sorted([fi_f, fj_f])),
+                             tuple(sorted([fi_a, fj_a])))] += 1
+
+        for (free_pair, atom_pair), count in pair_counts.items():
+            free_term = li2_for_pair(*free_pair)
+            atom_term = li2_for_pair(*atom_pair)
+            T3_diff += count * (free_term - atom_term)
+        T3_diff *= z * z
+
+    B_dim = T1_free - T1_atom + T2_diff + T3_diff
     B_MeV = mp.mpf(str(E_0_CALIBRATION_MEV)) * B_dim
 
     return {
         "Z": Z, "N": N, "A": Z + N,
         "T1_free": fmt(T1_free), "T1_atom": fmt(T1_atom),
         "T2_diff": fmt(T2_diff),
+        "T3_diff": fmt(T3_diff),
         "n_interfaces": {"p-p": n_pp, "p-n": n_pn, "n-n": n_nn},
-        "B_dim_first_order": fmt(B_dim),
-        "B_MeV_first_order": fmt(B_MeV),
+        "B_dim_with_T3": fmt(B_dim),
+        "B_MeV_with_T3": fmt(B_MeV),
         "B_pred_sign": "+" if B_MeV > 0 else "-",
-        "canonical_status": "canonical-recursive",  # derived from H_6 block factors
+        "canonical_status": "canonical-recursive",
+        "compute_order": "T1+T2+T3 (block-multiplicative closed-form)",
     }
 
 
@@ -241,28 +329,66 @@ def main() -> int:
           f"|V^pp|={float(factors['V_pp_inter']):.4f}, "
           f"|V^nn|={float(factors['V_nn_inter']):.4f}")
     print(f"\n{'atom':<6} {'Z':>3} {'N':>3} {'T1_free':>10} {'T2_diff':>10} "
-          f"{'B_MeV^(1)':>10} {'B_AME':>10} {'ratio':>8}")
+          f"{'T3_diff':>10} {'B_MeV':>10} {'B_AME':>10} {'ratio':>8}")
     results = {}
     for atom, (Z, N) in ZN.items():
-        r = predict_binding(Z, N, factors, q, q_inv, z)
+        r_t3 = predict_binding(Z, N, factors, q, q_inv, z, include_t3=True)
+        r_no = predict_binding(Z, N, factors, q, q_inv, z, include_t3=False)
         B_AME_val = B_AME.get(atom, mp.mpf(0))
-        ratio = (mp.mpf(r["B_MeV_first_order"]) / B_AME_val
-                 if B_AME_val > 0 else mp.mpf("nan"))
-        r["B_AME_MeV"] = fmt(B_AME_val)
-        r["ratio_pred_over_AME"] = float(ratio)
-        results[atom] = r
+        B_with_t3 = mp.mpf(r_t3["B_MeV_with_T3"])
+        B_first_order = (mp.mpf(r_no["T1_free"]) - mp.mpf(r_no["T1_atom"])
+                          + mp.mpf(r_no["T2_diff"]))
+        B_first_order *= mp.mpf(str(E_0_CALIBRATION_MEV))
+        ratio_t3 = (B_with_t3 / B_AME_val if B_AME_val > 0
+                    else mp.mpf("nan"))
+        ratio_no = (B_first_order / B_AME_val if B_AME_val > 0
+                    else mp.mpf("nan"))
+        results[atom] = {
+            **r_t3,
+            "B_MeV_first_order_T1T2": fmt(B_first_order),
+            "B_AME_MeV": fmt(B_AME_val),
+            "ratio_pred_over_AME_T3": float(ratio_t3),
+            "ratio_pred_over_AME_first_order": float(ratio_no),
+        }
         print(f"  {atom:<6} {Z:>3} {N:>3} "
-              f"{float(r['T1_free']):>10.4f} {float(r['T2_diff']):>10.4f} "
-              f"{float(r['B_MeV_first_order']):>10.4f} "
-              f"{float(B_AME_val):>10.4f} {float(ratio):>8.4f}")
+              f"{float(r_t3['T1_free']):>10.4f} "
+              f"{float(r_t3['T2_diff']):>10.4f} "
+              f"{float(r_t3['T3_diff']):>10.4f} "
+              f"{float(B_with_t3):>10.4f} "
+              f"{float(B_AME_val):>10.4f} {float(ratio_t3):>8.4f}")
 
     builder.add_data("per_atom", results)
 
     # Cross-atom variance (only atoms with AME data)
-    valid = {k: r for k, r in results.items() if r["ratio_pred_over_AME"] != 0}
-    ratios = [abs(r["ratio_pred_over_AME"]) for r in valid.values()]
+    valid = {k: r for k, r in results.items()
+             if r["ratio_pred_over_AME_T3"] != 0}
+    ratios = [abs(r["ratio_pred_over_AME_T3"]) for r in valid.values()]
+    ratios_fo = [abs(r["ratio_pred_over_AME_first_order"])
+                  for r in valid.values()]
     rmin, rmax = (min(ratios), max(ratios)) if ratios else (0, 0)
     mom = rmax / rmin if rmin > 0 else float("inf")
+    rmin_fo, rmax_fo = ((min(ratios_fo), max(ratios_fo))
+                        if ratios_fo else (0, 0))
+    mom_fo = rmax_fo / rmin_fo if rmin_fo > 0 else float("inf")
+    # Light atoms only (A ≤ 4): T3 over-counts for heavy A
+    light_keys = [k for k in valid if valid[k]["A"] <= 4]
+    light_ratios = [abs(valid[k]["ratio_pred_over_AME_T3"])
+                    for k in light_keys]
+    rmin_light, rmax_light = ((min(light_ratios), max(light_ratios))
+                              if light_ratios else (0, 0))
+    mom_light = rmax_light / rmin_light if rmin_light > 0 else float("inf")
+    medium_keys = [k for k in valid if 6 <= valid[k]["A"] <= 14]
+    medium_ratios = [abs(valid[k]["ratio_pred_over_AME_T3"])
+                     for k in medium_keys]
+    rmin_med, rmax_med = ((min(medium_ratios), max(medium_ratios))
+                          if medium_ratios else (0, 0))
+    mom_med = rmax_med / rmin_med if rmin_med > 0 else float("inf")
+    builder.add_data("max_over_min_T1T2_only_all_atoms", float(mom_fo))
+    builder.add_data("max_over_min_with_T3_light_atoms_only_A_le_4",
+                      float(mom_light))
+    builder.add_data("max_over_min_with_T3_medium_atoms_A_6_to_14",
+                      float(mom_med))
+    builder.add_data("max_over_min_with_T3_all_16_atoms", float(mom))
     signs_correct = all(r["B_pred_sign"] == "+" for r in valid.values())
 
     builder.add_data("atoms_evaluated", list(valid.keys()))
@@ -283,8 +409,12 @@ def main() -> int:
         verdict = (f"signs_correct = {signs_correct}, "
                    f"max/min^(1) = {mom:.3f}.")
     builder.add_data("verdict", verdict)
-    print(f"\n  max/min |ratio| = {mom:.4f}")
-    print(f"  All signs +:    {signs_correct}")
+    print(f"\n  Variance summary:")
+    print(f"  T1+T2 only (all 16 atoms):       max/min = {mom_fo:.3f}")
+    print(f"  T1+T2+T3 (light atoms A≤4):      max/min = {mom_light:.3f}")
+    print(f"  T1+T2+T3 (medium atoms 6≤A≤14):  max/min = {mom_med:.3f}")
+    print(f"  T1+T2+T3 (all 16 atoms):         max/min = {mom:.3f}")
+    print(f"  All signs +: {signs_correct}")
     print(f"  Verdict: {verdict}")
 
     # Scaling demonstration
