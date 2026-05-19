@@ -1,5 +1,5 @@
 The complete per-element knot-periodic table ($Z = 1$ to
-$92$): for each element we list the predicted neutron count
+$92$): each row gives the predicted neutron count
 $N_{\mathrm{pred}}$ from the beta-stability formula, the closed
 $\alpha$ sub-links $k_\alpha$, and the QOU mass $M_q$ vs. the
 observed AME2020 mass $M_o$. See [knot-periodic-table-intro
