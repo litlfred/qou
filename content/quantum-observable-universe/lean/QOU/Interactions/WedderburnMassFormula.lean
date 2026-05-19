@@ -225,7 +225,7 @@ noncomputable def wedderburnMass (Z N : ℕ) [HasHoefsmitData Z N] (q : ℝ) : �
     splits canonically into nucleon, electron, and binding
     contributions. -/
 -- Ref: [manuscript] particle-interactions/wedderburn-mass-formula
--- Ref: [wedderburn1908] https://doi.org/10.1112/plms/s2-6.1.77
+-- Ref: [wedderburn1908] Wedderburn, "On hypercomplex numbers," Proc. London Math. Soc. s2-6 (1908)
 theorem wedderburnMass_split (Z N : ℕ) [HasHoefsmitData Z N] (q : ℝ) :
     wedderburnMass Z N q
       = (Z : ℝ) * m_p + (N : ℝ) * m_n + (Z : ℝ) * m_e

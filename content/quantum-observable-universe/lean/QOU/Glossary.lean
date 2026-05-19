@@ -67,7 +67,7 @@ noncomputable def quantumParameter : ℝ := 1.1097
 
     LaTeX: `\label{def:fibre-functor}`
     Mathlib: `Mathlib.CategoryTheory.Functor.Basic` -/
--- Ref: [baez1995] https://doi.org/10.1063/1.531236
+-- Ref: [baez1995] Baez, "Knots and quantum gravity: progress and prospects," J. Math. Phys. 36 (1995)
 structure FibreFunctor where
   /-- Source category (representation category). -/
   source : Type*

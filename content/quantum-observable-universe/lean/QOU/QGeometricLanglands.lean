@@ -128,7 +128,7 @@ structure QFlatConnection (M : Type*) where
 
     LaTeX: `\label{def:q-hecke-operator}`
     uses: `prop:braid-action-tensor`, `def:q-local-system` -/
--- Ref: [aganagic2018] https://doi.org/10.1090/mosc/278
+-- Ref: [aganagic2018] Aganagic, Frenkel, Okounkov, "Quantum q-Langlands Correspondence," arXiv:1701.03146
 structure QHeckeOperator (M : Type*) where
   /-- The substrate parameter. -/
   sp : SubstrateParameter M
@@ -180,7 +180,7 @@ structure QHeckeEigensheaf (M : Type*) where
 
     LaTeX: `\label{def:q-langlands-dual}`
     uses: `def:quantum-gauge-group`, `def:quantum-su2` -/
--- Ref: [aganagic2018] https://doi.org/10.1090/mosc/278
+-- Ref: [aganagic2018] Aganagic, Frenkel, Okounkov, "Quantum q-Langlands Correspondence," arXiv:1701.03146
 structure QLanglandsDual (M : Type*) where
   /-- The original quantum gauge group. -/
   gaugeGroup : QuantumGaugeGroup M
@@ -390,7 +390,7 @@ theorem q_gl_kummer_filtration (χ : ℤ) (hχ : χ ≠ 0) :
     LaTeX: `\label{conj:q-geometric-langlands}`
     uses: `def:q-local-system`, `def:q-hecke-eigensheaf`,
           `def:q-langlands-dual`, `def:q-flat-connection` -/
--- Ref: [aganagic2018] https://doi.org/10.1090/mosc/278
+-- Ref: [aganagic2018] Aganagic, Frenkel, Okounkov, "Quantum q-Langlands Correspondence," arXiv:1701.03146
 class QGeometricLanglandsConjecture (M : Type*) where
   /-- The Langlands functor: eigensheaves ↦ local systems. -/
   langlandsFunctor : QHeckeEigensheaf M → QLocalSystem M

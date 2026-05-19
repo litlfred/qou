@@ -93,7 +93,7 @@ where `ℏ_q = 1 - 1/q` is the quantum Planck constant. -/
 
     This is the central equation of the QOU mass derivation.
     Ref: Manuscript Conjecture 4.25. -/
--- Ref: [kronheimer2004] https://doi.org/10.2140/gt.2004.8.295
+-- Ref: [kronheimer2004] Kronheimer & Mrowka, "Witten's conjecture and Property P," arXiv:math/0311489
 theorem skein_mass_residue (q : ℝ) (_hq : q > 1) :
     let h_q := quantum_planck q
     h_q ≠ 0 →

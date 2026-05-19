@@ -45,8 +45,8 @@ universe u
       `(σ_i - q) ∘ (σ_i + 1) = 0`;
     - `anyonic_holds` — the **conjectural** statement that the QOU
       particle spectrum is exhausted by `H_n(R, q)`-modules. -/
--- Ref: [kitaev2006] https://doi.org/10.1016/j.aop.2005.10.005
--- Ref: [nayak2008] https://doi.org/10.1103/RevModPhys.80.1083
+-- Ref: [kitaev2006] Kitaev, "Anyons in an exactly solved model and beyond," arXiv:cond-mat/0506438
+-- Ref: [nayak2008] Nayak, Simon, Stern, Freedman, Das Sarma, "Non-Abelian Anyons and Topological Quantum Computation," arXiv:0707.1889
 -- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
 --      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
 --      DOI: 10.1007/978-1-4612-0783-2

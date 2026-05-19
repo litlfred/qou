@@ -14,7 +14,7 @@ become conditional on `[ShellCondensation n]` instances.
 -- Ref: [manuscript] conj:homological-shell-condensation
 -- Ref: [bialynicki1973] https://doi.org/10.2307/1970915
 -- Ref: [yekutieli2010] Yekutieli, "Central Extensions of Gerbes," Adv. Math. 225 (2010), arXiv:0801.0083
--- Ref: [ariki1996] https://doi.org/10.1112/S0024611596000366
+-- Ref: [ariki1996] Ariki, "On the decomposition numbers of the Hecke algebra of G(m, 1, n)," J. Math. Kyoto Univ. 36 (1996)
 -/
 
 import Mathlib.Algebra.BigOperators.Basic

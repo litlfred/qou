@@ -54,7 +54,7 @@ structure InsertionConfig where
 -- Ref: [kassel1995] Ch. VIII (Quantum SL(2)) + Ch. XIII (Braided categories)
 --      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
 --      DOI: 10.1007/978-1-4612-0783-2
--- Ref: [frenkel2004] https://doi.org/10.1090/surv/088
+-- Ref: [frenkel2004] Frenkel, "Lectures on the Langlands program and conformal field theory," arXiv:hep-th/0512172 (related: 0007054)
 structure InteractionBiFiltration where
   /-- The underlying insertion configuration. -/
   config : InsertionConfig

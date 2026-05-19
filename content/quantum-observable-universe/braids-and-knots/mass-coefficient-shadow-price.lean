@@ -16,7 +16,7 @@ The proposition connects three structures:
 The factorisation is unique by orthogonality of Wedderburn blocks.
 -/
 
--- Ref: [wedderburn1908] https://doi.org/10.1112/plms/s2-6.1.77
+-- Ref: [wedderburn1908] Wedderburn, "On hypercomplex numbers," Proc. London Math. Soc. s2-6 (1908)
 -- Ref: [hoefsmit1974] Representations of Hecke algebras
 
 namespace QOU.BraidKnot

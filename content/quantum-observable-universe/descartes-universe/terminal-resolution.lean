@@ -72,7 +72,7 @@ not the experimental target. -/
     topological mass formula at q ≈ 1.1097.  Externally verified
     against the Skein polynomial of the trefoil pair. -/
 -- Ref: [manuscript] §11, CODATA 2018
--- Ref: [kronheimer2004] https://doi.org/10.2140/gt.2004.8.295
+-- Ref: [kronheimer2004] Kronheimer & Mrowka, "Witten's conjecture and Property P," arXiv:math/0311489
 noncomputable def qou_proton_MeV : ℝ := 938.272
 
 axiom qou_proton_bound :

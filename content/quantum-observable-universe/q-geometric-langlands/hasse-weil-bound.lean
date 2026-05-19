@@ -37,7 +37,7 @@ namespace QOU.AlgebraicSubstrate
 /-- **External axiom (Weil 1948 §IV; Rosen 2002 Ch 5 Thm 5.9):
     functional-equation pairing of zeta eigenvalues.** -/
 -- Ref: [weil1948] Weil, "Sur les courbes algébriques et les variétés qui s'en déduisent," Hermann, Paris (1948)
--- Ref: [rosen2002] https://doi.org/10.1007/978-1-4757-6046-0
+-- Ref: [rosen2002] Rosen, "Number Theory in Function Fields," Springer GTM 210, 2002
 axiom eigenvalue_functional_equation_axiom :
     ∀ (Z : LocalQZetaFunction) (i : Fin 8),
       ∃ (j : Fin 8), Z.eigenvalues j = ↑Z.q / Z.eigenvalues i
@@ -75,7 +75,7 @@ theorem castelnuovo_severi_bound
     See [rosen2002] Ch 5, proof of Thm 5.12. -/
 /-- **External axiom (Rosen 2002 Ch 5 proof of Thm 5.12):
     functional equation + Castelnuovo–Severi force equality.** -/
--- Ref: [rosen2002] https://doi.org/10.1007/978-1-4757-6046-0
+-- Ref: [rosen2002] Rosen, "Number Theory in Function Fields," Springer GTM 210, 2002
 axiom eigenvalue_norm_sq_axiom :
     ∀ (Z : LocalQZetaFunction) (i : Fin 8)
       (_h_cs : Complex.abs (Z.eigenvalues i) ^ 2 ≤ Z.q)

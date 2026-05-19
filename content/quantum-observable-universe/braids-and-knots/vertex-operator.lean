@@ -36,7 +36,7 @@ def q_inv_param : R_q := LaurentPolynomial.T (-1)
     Given a state a ∈ V_n (level n of the brane tower), the vertex
     operator Y(a, z) is a formal Laurent series in the affine
     coordinate z = v₁/v₂ on 𝒮_p whose modes are R-matrix insertions. -/
--- Ref: [frenkel2004] https://doi.org/10.1090/surv/088
+-- Ref: [frenkel2004] Frenkel, "Lectures on the Langlands program and conformal field theory," arXiv:hep-th/0512172 (related: 0007054)
 structure VertexOperator (q : R_q) where
   /-- The Reeb bundle (base space for the insertion). -/
   bundle : ReebBundle q

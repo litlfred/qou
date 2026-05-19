@@ -11,9 +11,9 @@ Downstream double-magic binding-energy predictions become
 conditional on `[DoubleMagicConjecture Z N]` instances.
 
 -- Ref: [manuscript] conj:diagrammatic-double-magic-lr-fusion
--- Ref: [ariki1996] https://doi.org/10.1112/S0024611596000366
+-- Ref: [ariki1996] Ariki, "On the decomposition numbers of the Hecke algebra of G(m, 1, n)," J. Math. Kyoto Univ. 36 (1996)
 -- Ref: [ram1991] https://doi.org/10.1007/BF01231331
--- Ref: [geckpfeiffer2000] https://doi.org/10.1093/oso/9780198502500.001.0001
+-- Ref: [geckpfeiffer2000] Geck & Pfeiffer, "Characters of Finite Coxeter Groups and Iwahori-Hecke Algebras," LMS Monographs 21, OUP 2000
 -/
 
 import Mathlib.Algebra.BigOperators.Basic

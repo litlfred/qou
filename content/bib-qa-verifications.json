@@ -466,9 +466,9 @@
       "id": "nayak2008",
       "status": "verified-clean",
       "local_pdf": "uploads/nayak2008.pdf",
-      "verified_at": "2026-05-19T15:48:00Z",
+      "verified_at": "2026-05-19T15:57:00Z",
       "verified_by": "Claude (claude-opus-4-7)",
-      "fixes_applied": 0,
+      "fixes_applied": 2,
       "fix_commit": null,
       "note": "PDF verified: 'Non-Abelian Anyons and Topological Quantum Computation' by Nayak, Simon, Stern, Freedman, Das Sarma, arXiv:0707.1889. Anyons review \u2014 matches references.ts."
     },
@@ -476,9 +476,9 @@
       "id": "aganagic2018",
       "status": "verified-clean",
       "local_pdf": "uploads/aganagic2018.pdf",
-      "verified_at": "2026-05-19T15:48:00Z",
+      "verified_at": "2026-05-19T15:57:00Z",
       "verified_by": "Claude (claude-opus-4-7)",
-      "fixes_applied": 0,
+      "fixes_applied": 3,
       "fix_commit": null,
       "note": "PDF verified: 'Quantum q-Langlands Correspondence' by Aganagic et al., arXiv:1701.03146. Matches references.ts; q-Langlands is QOU-relevant."
     },
@@ -651,6 +651,126 @@
       "fixes_applied": 3,
       "fix_commit": "(this commit)",
       "note": "3 bare-URL Refs upgraded with title+publisher form."
+    },
+    {
+      "id": "wedderburn1908",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T15:57:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 2,
+      "fix_commit": "(this commit)",
+      "note": "2 bare-URL Refs upgraded with title+publisher form."
+    },
+    {
+      "id": "rosen2002",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T15:57:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 2,
+      "fix_commit": "(this commit)",
+      "note": "2 bare-URL Refs upgraded with title+publisher form."
+    },
+    {
+      "id": "morton1986",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T15:57:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 2,
+      "fix_commit": "(this commit)",
+      "note": "2 bare-URL Refs upgraded with title+publisher form."
+    },
+    {
+      "id": "maclane1971",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T15:57:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 2,
+      "fix_commit": "(this commit)",
+      "note": "2 bare-URL Refs upgraded with title+publisher form."
+    },
+    {
+      "id": "kronheimer2004",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T15:57:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 2,
+      "fix_commit": "(this commit)",
+      "note": "2 bare-URL Refs upgraded with title+publisher form."
+    },
+    {
+      "id": "kitaev2006",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T15:57:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 2,
+      "fix_commit": "(this commit)",
+      "note": "2 bare-URL Refs upgraded with title+publisher form."
+    },
+    {
+      "id": "kawauchi1996",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T15:57:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 2,
+      "fix_commit": "(this commit)",
+      "note": "2 bare-URL Refs upgraded with title+publisher form."
+    },
+    {
+      "id": "kauffman1991",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T15:57:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 2,
+      "fix_commit": "(this commit)",
+      "note": "2 bare-URL Refs upgraded with title+publisher form."
+    },
+    {
+      "id": "geckpfeiffer2000",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T15:57:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 2,
+      "fix_commit": "(this commit)",
+      "note": "2 bare-URL Refs upgraded with title+publisher form."
+    },
+    {
+      "id": "frenkel2004",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T15:57:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 2,
+      "fix_commit": "(this commit)",
+      "note": "2 bare-URL Refs upgraded with title+publisher form."
+    },
+    {
+      "id": "baez1995",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T15:57:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 2,
+      "fix_commit": "(this commit)",
+      "note": "2 bare-URL Refs upgraded with title+publisher form."
+    },
+    {
+      "id": "ariki1996",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T15:57:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 2,
+      "fix_commit": "(this commit)",
+      "note": "2 bare-URL Refs upgraded with title+publisher form."
     }
   ]
 }
