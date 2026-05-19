@@ -124,3 +124,22 @@ Deuteron has $\Delta_I^D = \sigma_3$ (the `+1` in $u_{\text{shift}} = 18Z + 21N 
 - [PR #761 comment](https://github.com/litlfred/qou/pull/761#issuecomment-4484724112) — ask about GP MPFR engine accepting arbitrary braid-word input for $T_{\text{constit}}^K$ chi computation
 
 **Alignment note:** Will add `canonical_status` taxonomy field per branch `claude/canonical-discipline-l1-l3-l4-2026-05-19` (commit `98ed2add`) to all new witnesses. Categorical-substrate path; not L3 heuristic.
+
+### 2026-05-19 — interface-knot Δ_I^K result on PR #801
+
+| Date | Phase | Status | Cherry-pick |
+|---|---|---|---|
+| 2026-05-19 | Δ_I^K + same $H_{3(Z+N)}$ baseline (T1+T2 first-order) | landed `5b620576`; **variance 3.96× → 2.31×, T/³He sign-fixed** | `binding_via_interface_knot.py` (consumes existing `atom_braid_word_3A(include_inter=True/False)` toggle) |
+
+**Hard improvement vs tensor-product baseline:**
+- D: B_pred = 1.566 MeV (AME 2.225, ratio 0.704)
+- T: B_pred = 2.582 MeV (AME 8.482, ratio 0.304)
+- ³He: B_pred = 2.618 MeV (AME 7.718, ratio 0.339)
+- max/min = 2.31× (was 3.96× tensor)
+- ALL signs positive (was T/³He wrong sign under tensor)
+
+**Deferred to next iteration:**
+- ⁴He H_12 character sum requires > 12 GB RAM on this host. Witness records `atoms_deferred: ["4He"]` with `INCLUDE_4HE=1` env-flag override.
+- T3 (pair) closure pending: for some pairs in H_{3A>3}, |V̂_i V̂_j| > q_0 ≈ 1.1097 exceeds Li_2^q convergence radius. Three structural options identified in PR body.
+
+**Canonical_status taxonomy alignment:** all 4 witnesses on this branch (3 phase scripts + interface-knot) now carry `canonical_status: canonical-with-empirical-assignment` per the new taxonomy from `claude/canonical-discipline-l1-l3-l4-2026-05-19` commit `98ed2add`.
