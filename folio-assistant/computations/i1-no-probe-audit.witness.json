@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T20:10:28.107634+00:00",
-  "commitSha": "2fcf166b5ec811a56a30ae0baf3c1033a67d4946",
+  "computedAt": "2026-05-19T20:14:22.723075+00:00",
+  "commitSha": "875105c0efc43ee08e57f12d562c43b82f5fde51",
   "assertions": [
     {
       "name": "no_i1_no_probe_blocks",
@@ -15,7 +15,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 11,
+  "durationMs": 9,
   "computation": "i1-no-probe-audit",
   "scriptFile": "i1_no_probe_audit.py",
   "scriptHash": "0e004cc143d0",
@@ -27,8 +27,8 @@
   },
   "data": {
     "by_result": {
-      "i1_no_probe": 500,
-      "wired": 73,
+      "i1_no_probe": 499,
+      "wired": 74,
       "i1_lean_with_sorry": 1,
       "conditional_class": 1
     },
@@ -645,9 +645,11 @@
         "sibling_lean_exists": true,
         "sibling_sorry_count": 0,
         "sibling_has_class": false,
-        "probe_witness_count": 0,
-        "probe_witnesses": [],
-        "result": "i1_no_probe"
+        "probe_witness_count": 1,
+        "probe_witnesses": [
+          "cyclotomic-depth3-dimension-synthesis-probe.witness.json"
+        ],
+        "result": "wired"
       },
       {
         "path": "content/quantum-observable-universe/braids-and-knots/cyclotomic-dimension-synthesis-all-depths.ts",
