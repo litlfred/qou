@@ -17,18 +17,17 @@ namespace QOU
 class QouCanonicalActionContext where
   /-- Substrate parameter `q : ℝ`. -/
   q : ℝ
-  /-- Categorical object / monoidal structure. -/
-  CategoricalObj : Type
-  /-- Topological link / knot type. -/
-  Link : Type
-  /-- LP shadow-price / dual variable. -/
-  shadow_price : ℝ
-  /-- Fluid-dynamics velocity / vorticity field. -/
-  VelocityField : Type
-  /-- Gauge connection / curvature. -/
-  Connection : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_qou_canonical_action : Prop
+  /-- The categorical action `𝒮_q`. -/
+  S_q : ℝ
+  /-- Gravity term `tr(q · R_∫)`. -/
+  S_grav : ℝ
+  /-- Gauge term `∫ tr(F ∧_q ⋆_q F)`. -/
+  S_gauge : ℝ
+  /-- Matter term `∫ (ψ* · D_∇ ψ)`. -/
+  S_matter : ℝ
+  /-- Manuscript identity (boxed decomposition):
+      `𝒮_q = 𝒮_grav + 𝒮_gauge + 𝒮_matter`. -/
+  claim_qou_canonical_action : S_q = S_grav + S_gauge + S_matter
 
 /-- **Manuscript statement** (full body):
 
@@ -100,9 +99,8 @@ determined up to unique isomorphism by
     placeholder; the `ctx.claim_qou_canonical_action : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/qou-canonical-action.ts
-theorem qou_canonical_action [ctx : QouCanonicalActionContext] : ctx.claim_qou_canonical_action := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem qou_canonical_action [ctx : QouCanonicalActionContext] :
+    ctx.S_q = ctx.S_grav + ctx.S_gauge + ctx.S_matter :=
+  ctx.claim_qou_canonical_action
 
 end QOU

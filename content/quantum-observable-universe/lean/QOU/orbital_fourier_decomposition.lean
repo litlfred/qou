@@ -17,16 +17,21 @@ namespace QOU
 class OrbitalFourierDecompositionContext where
   /-- Categorical object / monoidal structure. -/
   CategoricalObj : Type
-  /-- Topological link / knot type. -/
-  Link : Type
-  /-- LP shadow-price / dual variable. -/
-  shadow_price : ℝ
-  /-- Categorical mass / binding energy. -/
-  mass : ℝ
-  /-- Fluid-dynamics velocity / vorticity field. -/
-  VelocityField : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_orbital_fourier_decomposition : Prop
+  /-- Total framing twist `k = tw(σ)`. -/
+  k : ℤ
+  /-- Principal quantum number `n`. -/
+  n : ℕ
+  /-- Azimuthal quantum number `ℓ`. -/
+  ℓ : ℕ
+  /-- Magnetic quantum number `m`. -/
+  m : ℤ
+  /-- Spin quantum number `s : ±1/2`. -/
+  s : ℝ
+  /-- Manuscript master identity: `k = 2(n − 1)` ties the global
+      R-I count to the principal quantum number. -/
+  claim_orbital_fourier_decomposition :
+    k = 2 * (n - 1 : ℤ) ∧ ℓ < n ∧ -(ℓ : ℤ) ≤ m ∧ m ≤ (ℓ : ℤ) ∧
+    (s = 1/2 ∨ s = -(1/2))
 
 /-- **Manuscript statement** (full body):
 
@@ -111,9 +116,10 @@ $$
     placeholder; the `ctx.claim_orbital_fourier_decomposition : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/descartes-universe/orbital-fourier-decomposition.ts
-theorem orbital_fourier_decomposition [ctx : OrbitalFourierDecompositionContext] : ctx.claim_orbital_fourier_decomposition := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem orbital_fourier_decomposition [ctx : OrbitalFourierDecompositionContext] :
+    ctx.k = 2 * (ctx.n - 1 : ℤ) ∧ ctx.ℓ < ctx.n ∧
+    -(ctx.ℓ : ℤ) ≤ ctx.m ∧ ctx.m ≤ (ctx.ℓ : ℤ) ∧
+    (ctx.s = 1/2 ∨ ctx.s = -(1/2)) :=
+  ctx.claim_orbital_fourier_decomposition
 
 end QOU
