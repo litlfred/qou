@@ -332,3 +332,58 @@ Neither candidate substitution recovers ~1836. Confirms `mass-endomorphism-tower
 **Surfacing on siblings:**
 - [#819 comment](https://github.com/litlfred/qou/pull/819#issuecomment-4492904065) — coordination intent posted before empirical check; will follow up with the result reversal here
 - [#826](https://github.com/litlfred/qou/pull/826) — the FR-pullback PR that triggered the deprecation request stays focused on its original FR-test scope; deprecation work spun out to this ledger entry instead of stacking on #826
+## 2026-05-19 (post-merge sweep) — PR #801 + PR #819 both merged; #826 supersedes K_3* finding
+
+**State of the thread** (after [PR #819](https://github.com/litlfred/qou/pull/819) merged 2026-05-19T23:00Z and [PR #801](https://github.com/litlfred/qou/pull/801) merged ~22:50Z):
+
+- **`prop:interface-knot-markov-z`** (proved sorry-free in #819): $\tau_M(\beta_K^{\text{FULL}}) / \tau_M(\beta_K^{\text{CONSTIT}}) = z^{p_+(K)} \cdot (z - h)^{p_-(K)}$, verified to $10^{-15}$ on D / T / ³He / ⁴He. Markov axiom + Hecke skein. Independent of K_k* and stands as a clean categorical theorem.
+- **`conj:alpha-cosh-h-z-step-correction`** (#819, §3b-cond): $\alpha \approx [3]_q^2 \cdot \cosh(h)$ at $q_0$ to 0.022%. Open: operator-level proof of the $\cosh(h)$ correction.
+- **PR #801**'s `def:ew-interface-knot`, `conj:depth-stratified-frobenius-reciprocity`, `conj:block-multiplicativity-v-free`, `li2q-phiq-bar-symmetrization`, `q-rogers-pentagon-archimedean` now all on main.
+
+### K_3* correction — PR #826 supersedes Phase 5d.5b (mine)
+
+[PR #826](https://github.com/litlfred/qou/pull/826) empirically tested `conj:depth-stratified-frobenius-reciprocity` at k=3 with corrected braid words (verified against KnotInfo via `hyperbolic_volume_cross_check`) and proper $S_{\text{uniform},k}$-preserving weight normalization. Result REVERSES the Phase 5d.5b finding:
+
+| K_3* candidate | variance max/min | vs baseline |
+|---|---:|---:|
+| (uniform) | 1.82× | — |
+| **4_1** (figure-8) | **1.551×** | **+14.8% — best** |
+| 5_2 | 1.591× | +12.6% |
+| 6_1 (Stevedore) | 1.878× | -3.2% (regresses) |
+
+**Two bugs in Phase 5d.5b probe identified by #826:**
+
+1. **6_1 braid word was wrong.** Stevedore knot has braid index 4, but `(1, 1, -2, 1, -2, -2)` is a 3-strand word. My probe was testing "whatever 3-strand knot the table calls 6_1", not Stevedore.
+2. **Weight normalization missing $S_{\text{uniform},k}$ preservation.** FR-pulled-back depth-3 weights summed to 1 instead of preserving the uniform Plancherel depth-3 total.
+
+**Authoritative finding (post-#826):** the K_3* candidate empirically minimising variance is **4_1**, not 6_1. This matches the derivation in `prop:chirality-from-frobenius-self-pairing` (Fricke trace relation gives $\chi_{4_1}((2,1)) = 2 - [3]_q$ at H_3 — derived from the Hecke skein, no asserted naming). The "K_3* = 6_1" naming in the catalog was an unsupported aside.
+
+### Phase 5d.5b ledger row above — superseded
+
+The "K_1* = K_3* = 6_1 chirality WINS" claim is **superseded** by PR #826's corrected probe. Lessons:
+
+- My probe used a 3-strand "6_1" braid (mislabelled) AND had a weight-normalization bug. #826 corrected the normalization and cross-validated the table against KnotInfo via `hyperbolic_volume_cross_check`, but it still used the same repo-labeled 3-strand 6_1 candidate. A real Stevedore (braid index 4) test at H_n with n ≥ 4 strand-blocks remains out-of-scope (see 5e.5 below).
+- The Phase 5e.1 full-formula finding (depth-2 = electron at 1.368×) is unaffected — it tests a DIFFERENT question (which K minimises variance at depth-2, not which K_3* the catalog should reference).
+- The Markov-axiom interface identity from Phase 5c.1 is independent of K_k* and stands.
+
+### Refreshed Phase 5e backlog (post-#826)
+
+1. ~~5e.2 — propose K_1* = K_3* = 6_1~~ **FALSIFIED by #826**. Updated: K_3* = 4_1 per #826, consistent with `prop:chirality-from-frobenius-self-pairing` derivation.
+2. 5e.1 — full-formula variance scan: still valuable but the candidate set should now centre on 4_1 (per #826); the depth-2 = electron finding is unchanged.
+3. **K_1*, K_2* identification — STILL OPEN.** #826 only tested k=3. Phase 5f candidate: extend #826's probe to k ∈ {1, 2} using the corrected braid-word infrastructure.
+4. 5e.3 — derive `cosh(h)` operator-level (Phase 5c.2 still queued).
+5. 5e.4 — SnapPy bridge for Kashaev.lean's `pieceVolume`.
+6. **NEW 5e.5 — Real Stevedore 6_1 test at H_n with n ≥ 4 strand-blocks.** Requires the canonical-braid construction to lift to 4-strand sub-braids. #826 flags this as out-of-scope follow-up.
+7. **NEW 5e.6 — Update `prop:depth-stratified-frobenius-reciprocity` text** to remove the "K_3* = 6_1" aside. Per #826's resolution, the paper should reflect 4_1 as the derived K_3*.
+
+### Cross-PR sibling scope map (post-#819 merge)
+
+| PR | Title | Classification | Action |
+|---|---|---|---|
+| **#826** | FR pullback at k=3 — 4_1 best | **MERGED** (2026-05-19); K_3* = 4_1 incorporated | — |
+| **#827** | (sub-#826) braid-word + normalization fixes | merged with #826 | — |
+| **#829** | T2.3 Wenzl LR convention adapter + `prop:lr-tensor-character-bridge` | **MERGED** (2026-05-20) | — |
+| **#806** | Lean enrichment 188 placeholders | **CLOSED unmerged** (2026-05-19) | — |
+| **#837** | Lean typed claims round-8 | **MERGED** (2026-05-20) | — |
+| #816, #814 | qbeta-ladder c_k thread | adjacent (bar-symmetric corrections at different rungs); #814 cherry-picked into main as #833 | — |
+| #818, #820, #817, #807, #761, #774, #738, #823 | assorted infrastructure / domain work | non-overlapping | — |
