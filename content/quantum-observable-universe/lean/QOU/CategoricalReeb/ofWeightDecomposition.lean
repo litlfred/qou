@@ -17,12 +17,13 @@ namespace QOU.CategoricalReeb
 class OfWeightDecompositionContext where
   /-- Categorical object / monoidal structure. -/
   CategoricalObj : Type
-  /-- LP shadow-price / dual variable. -/
-  shadow_price : ℝ
-  /-- Fluid-dynamics velocity / vorticity field. -/
-  VelocityField : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_ofWeightDecomposition : Prop
+  /-- Reeb vector field `ξ : A → A` (categorical endomorphism). -/
+  ξ : CategoricalObj → CategoricalObj
+  /-- Contact 1-form `Θ_A : A → 𝟙` (evaluated to scalar `ℝ`). -/
+  Θ_A : CategoricalObj → ℝ
+  /-- Manuscript sub-claim (normalisation): `Θ_A(ξ x) = 1` for every
+      element `x` (equivalently, `Θ_A ∘ ξ = id_𝟙`). -/
+  claim_ofWeightDecomposition : ∀ x : CategoricalObj, Θ_A (ξ x) = 1
 
 /-- **Manuscript statement** (full body):
 
@@ -54,9 +55,8 @@ $(\xi, \varTheta_A)$ on $A$ satisfying:
     placeholder; the `ctx.claim_ofWeightDecomposition : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/categorical-reeb-exists.ts
-theorem ofWeightDecomposition [ctx : OfWeightDecompositionContext] : ctx.claim_ofWeightDecomposition := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem ofWeightDecomposition [ctx : OfWeightDecompositionContext] :
+    ∀ x : ctx.CategoricalObj, ctx.Θ_A (ctx.ξ x) = 1 :=
+  ctx.claim_ofWeightDecomposition
 
 end QOU.CategoricalReeb

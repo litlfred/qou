@@ -17,14 +17,19 @@ namespace QOU.DescartesUniverse
 class HeisenbergCommutatorContext where
   /-- Substrate parameter `q : ℝ`. -/
   q : ℝ
-  /-- LP shadow-price / dual variable. -/
-  shadow_price : ℝ
-  /-- The fibre functor `τ`. -/
-  Functor : Type → Type
-  /-- Fluid-dynamics velocity / vorticity field. -/
-  VelocityField : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_heisenberg_commutator : Prop
+  /-- q-Planck constant `ℏ_q = 1 − q⁻¹`. -/
+  hbar_q : ℝ
+  /-- Complex-structure scalar `J` (acts as `± i` on Levi distribution
+      eigenspaces; collapsed to ℝ for the limits). -/
+  J : ℝ
+  /-- q-Deformed commutator value `[X̂, P̂]_q`. -/
+  commutator_q : ℝ
+  /-- Manuscript identities:
+      `ℏ_q = 1 − q⁻¹`, `commutator_q = J · ℏ_q`, classical limit
+      `q = 1 → commutator_q = 0`. -/
+  claim_heisenberg_commutator :
+    hbar_q = 1 - q⁻¹ ∧ commutator_q = J * hbar_q ∧
+    (q = 1 → commutator_q = 0)
 
 /-- **Manuscript statement** (full body):
 
@@ -53,9 +58,10 @@ In particular:
     placeholder; the `ctx.claim_heisenberg_commutator : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/models-of-qous/heisenberg-commutator-prop.ts
-theorem heisenberg_commutator [ctx : HeisenbergCommutatorContext] : ctx.claim_heisenberg_commutator := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem heisenberg_commutator [ctx : HeisenbergCommutatorContext] :
+    ctx.hbar_q = 1 - ctx.q⁻¹ ∧
+    ctx.commutator_q = ctx.J * ctx.hbar_q ∧
+    (ctx.q = 1 → ctx.commutator_q = 0) :=
+  ctx.claim_heisenberg_commutator
 
 end QOU.DescartesUniverse

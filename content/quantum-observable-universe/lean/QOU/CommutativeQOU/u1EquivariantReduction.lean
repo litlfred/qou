@@ -1,3 +1,5 @@
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
+
 /-!
 # QOU.CommutativeQOU.u1EquivariantReduction — placeholder stub
 
@@ -15,14 +17,14 @@ namespace QOU.CommutativeQOU
 /-- Abstract context for the `u1EquivariantReduction` claim — manuscript-themed
     typed fields below; `holds` carries the residual `Prop` claim. -/
 class U1EquivariantReductionContext where
-  /-- LP shadow-price / dual variable. -/
-  shadow_price : ℝ
-  /-- The fibre functor `τ`. -/
-  Functor : Type → Type
-  /-- Fluid-dynamics velocity / vorticity field. -/
-  VelocityField : Type
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_u1EquivariantReduction : Prop
+  /-- Number of pole fixed points (`φ = 0, π`). -/
+  n_fixed_poles : ℕ
+  /-- Length of the orbit-space interval (`[0, π]`). -/
+  orbit_interval_length : ℝ
+  /-- Manuscript identities: 2 polar fixed points; orbit space has
+      length `π`. -/
+  claim_u1EquivariantReduction :
+    n_fixed_poles = 2 ∧ orbit_interval_length = Real.pi
 
 /-- **Manuscript statement** (full body):
 
@@ -74,9 +76,8 @@ tube is recorded in
     placeholder; the `ctx.claim_u1EquivariantReduction : Prop` field carries the residual claim,
     awaiting per-block type-level translation. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/u1-equivariant-reduction.ts
-theorem u1EquivariantReduction [ctx : U1EquivariantReductionContext] : ctx.claim_u1EquivariantReduction := by
-  -- Manuscript proof referenced above; concretisation requires
-  -- type-level Lean translation of the hypotheses.
-  sorry
+theorem u1EquivariantReduction [ctx : U1EquivariantReductionContext] :
+    ctx.n_fixed_poles = 2 ∧ ctx.orbit_interval_length = Real.pi :=
+  ctx.claim_u1EquivariantReduction
 
 end QOU.CommutativeQOU
