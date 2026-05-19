@@ -16,7 +16,7 @@ become conditional theorems parameterised on
 --      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
 --      DOI: 10.1007/978-1-4612-0783-2
 -- Ref: [geckpfeiffer2000] https://doi.org/10.1093/oso/9780198502500.001.0001
--- Ref: [mathas1999] https://doi.org/10.1090/ulect/015
+-- Ref: [mathas1999] Mathas, "Iwahori–Hecke Algebras and Schur Algebras of the Symmetric Group," AMS Univ. Lect. Series 15, 1999
 -/
 
 import Mathlib.Algebra.BigOperators.Basic

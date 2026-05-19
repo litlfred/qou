@@ -104,7 +104,7 @@ theorem euler_level_stable (n : ℕ) : (2 : ℤ) - 2 * 4 = -6 := by norm_num
     of the R-matrix at level n+1:
     κ_n = tr_M^{(n+1)}((1 - τ̂_n) Ř^{(n+1)}).
     Perpetual obstruction: κ_n ≠ 0 for all n when χ = -6. -/
--- Ref: [yekutieli2010] https://doi.org/10.1016/j.aim.2010.06.007
+-- Ref: [yekutieli2010] Yekutieli, "Central Extensions of Gerbes," Adv. Math. 225 (2010), arXiv:0801.0083
 axiom yekutieli_perpetual (hp : HeckeParams) (n : ℕ) :
     -- The Chebyshev degree of the obstruction at level n is (p-1)/2,
     -- which exceeds 4 for p ≥ 11. By genus-filtration-ideal, this
@@ -113,7 +113,7 @@ axiom yekutieli_perpetual (hp : HeckeParams) (n : ℕ) :
     hp.q > 1 → hp.q⁻¹ * (1 - hp.q⁻¹) ≠ 0
 
 /-- The obstruction coefficient is nonzero (proved). -/
--- Ref: [yekutieli2010] https://doi.org/10.1016/j.aim.2010.06.007
+-- Ref: [yekutieli2010] Yekutieli, "Central Extensions of Gerbes," Adv. Math. 225 (2010), arXiv:0801.0083
 -- theorem yekutieli_coeff_nonzero (q : R_q) (hq : q > 1) :  -- (archimedean; not meaningful over R_q)
     q⁻¹ * (1 - q⁻¹) ≠ 0 := by
   have hqi : q⁻¹ > 0 := by positivity
@@ -128,7 +128,7 @@ axiom yekutieli_perpetual (hp : HeckeParams) (n : ℕ) :
     at brane level n.  Built from jet prolongation ℓ_n and descent
     homomorphism 𝔡_{n+1}.  This is a specific operator, not an
     arbitrary endomorphism. -/
--- Ref: [yekutieli2010] https://doi.org/10.1016/j.aim.2010.06.007
+-- Ref: [yekutieli2010] Yekutieli, "Central Extensions of Gerbes," Adv. Math. 225 (2010), arXiv:0801.0083
 structure DescentOperator (n : ℕ) (hp : HeckeParams) where
   /-- The jet prolongation ℓ_n : H^{(n)} → H^{(n+1)}. -/
   jet_embed : RewritingSystem (HeckeGen n) R_q → RewritingSystem (HeckeGen n) R_q
@@ -143,7 +143,7 @@ structure DescentOperator (n : ℕ) (hp : HeckeParams) where
 
     Proof: τ̂² = (ℓ ∘ 𝔡) ∘ (ℓ ∘ 𝔡) = ℓ ∘ (𝔡 ∘ ℓ) ∘ 𝔡 = ℓ ∘ id ∘ 𝔡 = ℓ ∘ 𝔡 = τ̂. -/
 -- Ref: [manuscript] §4/vertex-algebra-jet-relations
--- Ref: [yekutieli2010] https://doi.org/10.1016/j.aim.2010.06.007
+-- Ref: [yekutieli2010] Yekutieli, "Central Extensions of Gerbes," Adv. Math. 225 (2010), arXiv:0801.0083
 theorem descent_idempotent {n : ℕ} {hp : HeckeParams}
     (op : DescentOperator n hp)
     (w : RewritingSystem (HeckeGen n) R_q) :

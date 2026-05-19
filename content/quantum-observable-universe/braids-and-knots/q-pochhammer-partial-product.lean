@@ -11,7 +11,7 @@ algebraic shadow of the inductive filtration step that drives jet-
 stratified GB reduction.
 
 -- Ref: [manuscript] def:q-pochhammer-partial-product
--- Ref: [faddeev1994] https://doi.org/10.1142/S0217732394002793
+-- Ref: [faddeev1994] Faddeev, "Current-like variables in massive and massless integrable models," Lectures 1994
 -/
 
 import Mathlib.Algebra.BigOperators.Basic

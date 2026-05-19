@@ -319,7 +319,7 @@ theorem obstruction_cofinite_persistence (χ : ℤ) (hχ : χ ≠ 0) :
     LaTeX: `\label{prop:q-gl-kummer-filtration}`
     uses: `prop:q-gl-obstruction-calc`, `conj:q-geometric-langlands`,
           `def:q-local-system` -/
--- Ref: [yekutieli2010] https://doi.org/10.1515/crelle.2010.002
+-- Ref: [yekutieli2010] Yekutieli, "Central Extensions of Gerbes," Adv. Math. 225 (2010), arXiv:0801.0083
 theorem kummer_divisibility_criterion (χ : ℤ) (n : ℕ) (hn : n ≥ 1) :
     -- The Kummer reduction vanishes iff n divides χ
     (↑n : ℤ) ∣ χ ↔ χ % ↑n = 0 := by
@@ -354,7 +354,7 @@ theorem kummer_no_universal_lift :
 
     LaTeX: `\label{conj:q-gl-kummer-filtration}`
     uses: `prop:q-gl-obstruction-calc`, `conj:q-geometric-langlands` -/
--- Ref: [yekutieli2010] https://doi.org/10.1515/crelle.2010.002
+-- Ref: [yekutieli2010] Yekutieli, "Central Extensions of Gerbes," Adv. Math. 225 (2010), arXiv:0801.0083
 -- Ref: [frenkel2007] https://doi.org/10.1007/978-3-540-30308-4_11
 theorem q_gl_kummer_filtration (χ : ℤ) (hχ : χ ≠ 0) :
     -- (1) Divisibility criterion at every level

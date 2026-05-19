@@ -33,7 +33,7 @@ namespace QOU
 
     LaTeX: `\label{cor:mass-identity-C}`
     Ref: [yekutieli2015] -/
--- Ref: [yekutieli2015] https://doi.org/10.1016/j.aim.2015.04.006
+-- Ref: [yekutieli2015] Yekutieli, "Nonabelian Multiplicative Integration on Surfaces," World Scientific 2015 (DOI: 10.1142/9537)
 structure ArchimedeanMassData where
   /-- The holonomy value ‖Hol_{∇_A}(γ; 𝔊)‖. -/
   holonomy_norm : ℝ
@@ -51,7 +51,7 @@ structure ArchimedeanMassData where
     This is a deep analytic result about path-ordered exponentials
     on principal bundles. It requires the theory of iterated
     integrals and Chen's transport, not yet in Mathlib. -/
--- Ref: [yekutieli2015] https://doi.org/10.1016/j.aim.2015.04.006
+-- Ref: [yekutieli2015] Yekutieli, "Nonabelian Multiplicative Integration on Surfaces," World Scientific 2015 (DOI: 10.1142/9537)
 axiom nonabelian_stokes (data : ArchimedeanMassData) :
     data.mult_integral_norm = data.holonomy_norm
 
@@ -62,7 +62,7 @@ axiom nonabelian_stokes (data : ArchimedeanMassData) :
 
     This bridges the abstract categorical definition
     (mass-identity.lean) to the analytic computation. -/
--- Ref: [yekutieli2015] https://doi.org/10.1016/j.aim.2015.04.006
+-- Ref: [yekutieli2015] Yekutieli, "Nonabelian Multiplicative Integration on Surfaces," World Scientific 2015 (DOI: 10.1142/9537)
 -- Ref: [manuscript] §3, Corollary: Archimedean mass identity
 axiom categorical_equals_multiplicative_integral (data : ArchimedeanMassData) :
     data.categorical_mass_norm = data.mult_integral_norm

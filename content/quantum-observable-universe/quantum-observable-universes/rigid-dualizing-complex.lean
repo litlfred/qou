@@ -36,7 +36,7 @@ structure RigidDualizingComplex (A : Type*) [Ring A] where
   /-- Van den Bergh duality holds with respect to `ω_A•`. -/
   vdb_duality : Prop
 
--- Ref: [yekutieli2015] https://doi.org/10.1515/9783110291230
+-- Ref: [yekutieli2015] Yekutieli, "Nonabelian Multiplicative Integration on Surfaces," World Scientific 2015 (DOI: 10.1142/9537)
 /-- Existence of a rigid dualizing complex for a suitable
     non-commutative algebra satisfying van den Bergh conditions.
 

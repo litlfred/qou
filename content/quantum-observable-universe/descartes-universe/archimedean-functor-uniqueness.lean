@@ -26,7 +26,7 @@ each class's docstring.
 -- Ref: [bloch2000] Bloch, Higher Regulators, Algebraic K-Theory,
    and Zeta Functions of Elliptic Curves, AMS CRM 11 (2000).
 -- Ref: [kashaev1997] https://doi.org/10.1023/A:1007364912784
--- Ref: [faddeev1994] https://doi.org/10.1142/S0217732394002793
+-- Ref: [faddeev1994] Faddeev, "Current-like variables in massive and massless integrable models," Lectures 1994
 -/
 
 import Mathlib.Algebra.Order.Field.Basic

@@ -117,7 +117,7 @@ def seifertGenus_T2p (p : ℕ) : ℕ := (p - 1) / 2
     (Seifert genus).  Stated as an opaque axiom because the
     full polynomial ring formalization is deferred. -/
 -- Ref: [manuscript] §6/genus-filtration-ideal
--- Ref: [yekutieli2010] https://doi.org/10.1016/j.aim.2010.06.007
+-- Ref: [yekutieli2010] Yekutieli, "Central Extensions of Gerbes," Adv. Math. 225 (2010), arXiv:0801.0083
 axiom chebyshev_degree_eq_genus :
     ∀ (p : ℕ), Odd p → 2 ≤ p →
     ∀ (s : R_q), s ≠ 0 →
@@ -154,7 +154,7 @@ theorem genus4_cutoff (p : ℕ) (hp : Odd p) (hp2 : 3 ≤ p) :
     (p-1)/2 > g.  Stated as opaque axiom: proving this requires
     formalizing polynomial degree in ℤ[u], which is deferred. -/
 -- Ref: [manuscript] §6/genus-filtration-ideal
--- Ref: [yekutieli2010] https://doi.org/10.1016/j.aim.2010.06.007
+-- Ref: [yekutieli2010] Yekutieli, "Central Extensions of Gerbes," Adv. Math. 225 (2010), arXiv:0801.0083
 axiom leading_chebyshev_coeff_is_one :
     ∀ (p : ℕ), Odd p → 3 ≤ p →
     ∀ (s : R_q), s ≠ 0 →
