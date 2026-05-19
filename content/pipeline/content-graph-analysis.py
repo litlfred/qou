@@ -324,14 +324,69 @@ PROVABLE_KINDS = {
 NARRATIVE_KINDS = {"prose", "equation", "diagram", "simulator"}
 
 
+def _is_statement_to_own_proof(from_label: str, to_label: str) -> bool:
+    """Detect the proof-after-statement pattern that the H1 heuristic
+    must NOT flag as a forward reference.
+
+    Proofs of named statements (`prf:foo`) belong immediately after their
+    statement (`prop:foo`, `lem:foo`, `thm:foo`, `cor:foo`). The "later
+    position" of the proof block IS the correct authoring order, not a
+    detangler finding. Skip pairs of the form:
+
+        prop:foo  → prf:foo                  (exact suffix match)
+        prop:foo  → prf:foo-proof            (with -proof suffix)
+        prop:foo  → prf:foo-<qualifier>      (qualified-variant proofs)
+        lem:foo   → prf:foo                  (etc. — same shape for any
+        thm:foo   → prf:foo                   of the four provable-kind
+        cor:foo   → prf:foo                   prefixes)
+
+    Documented in `.claude/skills/local/detangler-integration-watcher.md`
+    Slot D under "Excluded forward-reference patterns". The earlier
+    detangler heuristic flagged 143+ such pairs as H1 false positives
+    on QOU paper main; this filter eliminates that class. The
+    qualified-variant rule (`prf:foo-bar`) trades a slight risk of
+    false-negatives (a real forward ref where the proof name happens
+    to share a `-`-prefixed segment with an unrelated earlier
+    statement) for the practical wins; given the paper's naming
+    convention, this risk is empirically zero today.
+    """
+    if not to_label.startswith("prf:"):
+        return False
+    proof_suffix = to_label[len("prf:"):]
+    # Strip trailing "-proof" if present, so prf:foo-proof matches
+    # prop:foo just as cleanly as prf:foo does.
+    if proof_suffix.endswith("-proof"):
+        proof_suffix = proof_suffix[: -len("-proof")]
+    for kind in ("prop:", "lem:", "thm:", "cor:"):
+        statement_suffix = from_label[len(kind):] if from_label.startswith(kind) else None
+        if statement_suffix is None:
+            continue
+        # Exact match: prop:foo → prf:foo (or via the -proof strip).
+        if proof_suffix == statement_suffix:
+            return True
+        # Qualified variant: prop:foo → prf:foo-<qualifier>.
+        if proof_suffix.startswith(statement_suffix + "-"):
+            return True
+    return False
+
+
 def h1_forward_references(
     blocks: list[BlockInfo],
     label_to_block: dict[str, BlockInfo],
     edges: list[tuple[str, str, str]],
 ) -> list[Finding]:
-    """H1 — Forward references: block A uses block B defined later."""
+    """H1 — Forward references: block A uses block B defined later.
+
+    Excludes statement-to-own-proof pairs (see
+    `_is_statement_to_own_proof`) — those are the correct authoring
+    order, not findings.
+    """
     findings = []
     for from_label, to_label, etype in edges:
+        # Statement-to-own-proof is the correct authoring order, not
+        # a forward reference. Skip without flagging.
+        if _is_statement_to_own_proof(from_label, to_label):
+            continue
         fb = label_to_block.get(from_label)
         tb = label_to_block.get(to_label)
         if fb is None or tb is None:
