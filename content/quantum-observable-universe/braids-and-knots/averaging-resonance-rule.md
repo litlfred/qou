@@ -285,7 +285,7 @@ From there it propagates to every downstream observable:
 |---|---|
 | [`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder) | Rung-5 factor $(1 + c_5 b^5 \hbar_q^{10})$ in $\tau_M(\beta_n)/\tau_M(\beta_p)$. |
 | [`prop:neutron-qvalue-symbolic`](#prop:neutron-qvalue-symbolic) | Form A's relative-order-$\hbar_q^{10}$ correction to $Q_\beta$. |
-| [`conj-qbeta-c-k-closed-forms`](#conj-qbeta-c-k-closed-forms) | Conjectured closed form $c_5 = -(b^2 + 1/2)$ — the only $c_k$ that does **not** factor through $c_3$ and $b^2$. |
+| [`conj:qbeta-c-k-closed-forms`](#conj:qbeta-c-k-closed-forms) | Conjectured closed form $c_5 = -(b^2 + 1/2)$ — the only $c_k$ that does **not** factor through $c_3$ and $b^2$. |
 | `qbeta_decay_sdp_extended_ck.py` (compute infra) | Per-rung extraction; $c_5$ is the unique entry tagged averaging-resonant at silver ratio. |
 
 At the silver ratio $q = 1+\sqrt{2}$ (where $b^2 = 7/8$ exactly):

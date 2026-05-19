@@ -57,7 +57,7 @@ from ck_sector_classifier import is_pell_lucas_clean  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 set_compute_dps()
-from mpmath import mp, mpf, identify, sqrt  # noqa: E402
+from mpmath import mp, mpf  # noqa: E402
 
 
 # Pell-Lucas companion sequence: a_n where (1+√2)^n = a_n + b_n·√2
@@ -103,7 +103,7 @@ def pell_lucas_clean(frac: Fraction) -> tuple[bool, str]:
     return True, "Pell-Lucas-clean (refined test)"
 
 
-def evaluate_at_silver_ratio(c_k_val_at_q0: mpf, k: int) -> Fraction | None:
+def evaluate_at_silver_ratio(_c_k_val_at_q0: mpf, k: int) -> Fraction | None:
     """Evaluate the EXTRACTED c_k at the silver ratio q = 1+√2.
 
     Since the extracted c_k at q_0 is a 50dps mpf with no closed form,
@@ -139,16 +139,21 @@ def evaluate_at_silver_ratio(c_k_val_at_q0: mpf, k: int) -> Fraction | None:
 
 
 def main() -> None:
-    # Load 50dps inputs
-    d = json.load(open(HERE / "q-beta-operator-valued-N3.witness.json"))
+    # Load 50dps inputs. Schema: `{..., "data": {Q_N2, Q_AME, ...}}`.
+    # The pinning witness has a different top-level layout
+    # (`derived_50_digit.q`) — do NOT assume a uniform schema across
+    # witness files.
+    with open(HERE / "q-beta-operator-valued-N3.witness.json") as f:
+        d = json.load(f)
     data = d["data"]
     Q_N2 = mpf(str(data["Q_N2"]))
     Q_AME = mpf(str(data["Q_AME"]))
     b = mpf(str(data["hoefsmit_b"]))
     hbar_q_sq = mpf(str(data["hbar_q_sq"]))
 
-    # q_0 from pinning witness
-    qp = json.load(open(HERE / "q-pinning-50-digit.witness.json"))
+    # q_0 from pinning witness (different schema)
+    with open(HERE / "q-pinning-50-digit.witness.json") as f:
+        qp = json.load(f)
     q_0 = mpf(str(qp["derived_50_digit"]["q"]))
 
     # Form A · cos correction (as in qbeta_decay_sdp_full_ck.py)

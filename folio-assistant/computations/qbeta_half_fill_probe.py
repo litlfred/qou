@@ -34,19 +34,15 @@ Status: experimental (probe).
 """
 from __future__ import annotations
 
-import json
 import sys
-from dataclasses import asdict
 from math import comb
 from pathlib import Path
 
-# Reuse the canonical TypedB3Distribution + classify_sector_predictive.
+# Reuse the canonical TypedB3Distribution from the sector classifier.
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
-from ck_sector_classifier import (  # noqa: E402
-    TypedB3Distribution,
-    classify_sector_predictive,
-)
+from ck_sector_classifier import TypedB3Distribution  # noqa: E402
+from witness_base import WitnessBuilder  # noqa: E402
 
 
 def half_fill_rung(n_total: int) -> int:
@@ -113,37 +109,42 @@ def probe(n_total_range: range) -> list[dict]:
     return rows
 
 
-def emit_witness(rows: list[dict]) -> dict:
-    """Build the witness JSON payload."""
+def build_witness(rows: list[dict]) -> WitnessBuilder:
+    """Build the witness via the canonical WitnessBuilder so the output
+    JSON follows the ComputationWitness shape (computedAt, commitSha,
+    scriptHash, engineVersion, etc.) and drift detection works.
+    """
     proton_row = next((r for r in rows if r["n_total"] == 11), None)
-    return {
-        "schema_version": "1.0",
-        "description": (
-            "Combinatorial probe of the half-fill hypothesis "
-            "k_outlier = ⌊n_total/2⌋ across varying typed-B_n recipes "
-            "with n_avg = 2. Does NOT extract c_k values — "
-            "falsification via SDP-T_β at non-n_total=11 is a "
-            "follow-up probe."
-        ),
-        "computation": "prop:averaging-resonance-rule",
-        "hypothesis": "k_outlier = floor(n_total / 2)",
-        "fixed_parameters": {"n_avg": 2, "skew_ratio": "2:1 σ:σ⁻¹"},
-        "rows": rows,
-        "anchor_row": proton_row,
-        "anchor_empirical_outlier": 5,
-        "anchor_match": (
-            proton_row is not None
-            and proton_row["half_fill_predicted_k_outlier"] == 5
-        ),
-        "status": "experimental",
-        "engine": "python",
-        "engine_version": sys.version.split()[0],
-    }
+    anchor_match = (
+        proton_row is not None
+        and proton_row["half_fill_predicted_k_outlier"] == 5
+    )
+    w = WitnessBuilder(
+        name="qbeta-half-fill-probe",
+        engine="python",
+        output_dir=HERE,
+    )
+    w.add_parameter("computation", "prop:averaging-resonance-rule")
+    w.add_parameter("hypothesis", "k_outlier = floor(n_total / 2)")
+    w.add_parameter("fixed_parameters", {"n_avg": 2, "skew_ratio": "2:1 σ:σ⁻¹"})
+    w.add_data("rows", rows)
+    w.add_data("anchor_row", proton_row)
+    w.add_data("anchor_empirical_outlier", 5)
+    # The half-fill prediction on the proton recipe (n_total = 11) must
+    # equal the empirical outlier k = 5.
+    w.add_assertion(
+        name="half_fill_matches_empirical_proton_outlier",
+        computed=proton_row["half_fill_predicted_k_outlier"] if proton_row else -1,
+        expected=5,
+        source="prop:averaging-resonance-rule",
+    )
+    return w
 
 
 def main() -> None:
     rows = probe(range(9, 16))  # n_total ∈ {9, ..., 15}
-    witness = emit_witness(rows)
+    w = build_witness(rows)
+    proton_row = next((r for r in rows if r["n_total"] == 11), None)
     print("=" * 78)
     print("Half-fill hypothesis combinatorial probe")
     print("=" * 78)
@@ -162,7 +163,7 @@ def main() -> None:
               f"{str(r['argmax_all_averaging_rungs']):>30}")
     print()
     print("Anchor check (proton typed-B_3, n_total = 11):")
-    anchor = witness["anchor_row"]
+    anchor = proton_row
     if anchor:
         agree = anchor["half_fill_predicted_k_outlier"] == 5
         print(f"  half-fill predicts k = {anchor['half_fill_predicted_k_outlier']}; "
@@ -184,8 +185,7 @@ def main() -> None:
     print("    falsification requires extending SDP-T_β extraction to")
     print("    non-n_total=11 braid recipes.")
 
-    out = HERE / "qbeta-half-fill-probe.witness.json"
-    out.write_text(json.dumps(witness, indent=2) + "\n")
+    out = w.save()
     print()
     print(f"Witness emitted: {out.relative_to(HERE.parent.parent)}")
 

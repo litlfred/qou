@@ -27,7 +27,12 @@ export default proposition({
   ],
   computation: {
     engine: "python",
-    script: "folio-assistant/computations/ck_sector_classifier.py",
+    script: "folio-assistant/computations/qbeta_half_fill_probe.py",
+    witness: [
+      "folio-assistant/computations/qbeta-half-fill-probe.witness.json",
+      "folio-assistant/computations/qbeta-decay-sdp-extended-ck.witness.json",
+      "folio-assistant/computations/qbeta-silver-ratio-pell-lucas-ck.witness.json",
+    ],
     status: "experimental",
   },
 });

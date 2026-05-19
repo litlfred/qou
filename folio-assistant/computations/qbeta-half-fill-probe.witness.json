@@ -1,68 +1,252 @@
 {
-  "schema_version": "1.0",
-  "description": "Combinatorial probe of the half-fill hypothesis k_outlier = \u230an_total/2\u230b across varying typed-B_n recipes with n_avg = 2. Does NOT extract c_k values \u2014 falsification via SDP-T_\u03b2 at non-n_total=11 is a follow-up probe.",
-  "computation": "prop:averaging-resonance-rule",
-  "hypothesis": "k_outlier = floor(n_total / 2)",
-  "fixed_parameters": {
-    "n_avg": 2,
-    "skew_ratio": "2:1 \u03c3:\u03c3\u207b\u00b9"
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-19T16:39:35.364204+00:00",
+  "commitSha": "8742eaa037e72cbe7a8757b1905466d5b26344ce",
+  "assertions": [
+    {
+      "name": "half_fill_matches_empirical_proton_outlier",
+      "computed": 5,
+      "expected": 5,
+      "passed": true,
+      "source": "prop:averaging-resonance-rule"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 2,
+  "computation": "qbeta-half-fill-probe",
+  "scriptFile": "qbeta_half_fill_probe.py",
+  "scriptHash": "1de396492169",
+  "scriptCommitSha": "5fb4a37c9d205881da8db60a0008b38c50435253",
+  "parameters": {
+    "computation": "prop:averaging-resonance-rule",
+    "hypothesis": "k_outlier = floor(n_total / 2)",
+    "fixed_parameters": {
+      "n_avg": 2,
+      "skew_ratio": "2:1 σ:σ⁻¹"
+    }
   },
-  "rows": [
-    {
-      "n_total": 9,
-      "n_sigma": 5,
-      "n_sigma_inv": 2,
-      "n_avg": 2,
-      "half_fill_predicted_k_outlier": 4,
-      "argmax_first_averaging_k": 3,
-      "argmax_all_averaging_rungs": [
-        3,
-        4,
-        5,
-        6,
-        7,
-        8
-      ],
-      "m_k_table": {
-        "2": 0,
-        "3": 1,
-        "4": 1,
-        "5": 1,
-        "6": 1,
-        "7": 2,
-        "8": 2
+  "data": {
+    "rows": [
+      {
+        "n_total": 9,
+        "n_sigma": 5,
+        "n_sigma_inv": 2,
+        "n_avg": 2,
+        "half_fill_predicted_k_outlier": 4,
+        "argmax_first_averaging_k": 3,
+        "argmax_all_averaging_rungs": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "m_k_table": {
+          "2": 0,
+          "3": 1,
+          "4": 1,
+          "5": 1,
+          "6": 1,
+          "7": 2,
+          "8": 2
+        },
+        "half_fill_in_argmax_set": true
       },
-      "half_fill_in_argmax_set": true
-    },
-    {
-      "n_total": 10,
-      "n_sigma": 6,
-      "n_sigma_inv": 2,
-      "n_avg": 2,
-      "half_fill_predicted_k_outlier": 5,
-      "argmax_first_averaging_k": 3,
-      "argmax_all_averaging_rungs": [
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9
-      ],
-      "m_k_table": {
-        "2": 0,
-        "3": 1,
-        "4": 1,
-        "5": 1,
-        "6": 1,
-        "7": 2,
-        "8": 2,
-        "9": 2
+      {
+        "n_total": 10,
+        "n_sigma": 6,
+        "n_sigma_inv": 2,
+        "n_avg": 2,
+        "half_fill_predicted_k_outlier": 5,
+        "argmax_first_averaging_k": 3,
+        "argmax_all_averaging_rungs": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "m_k_table": {
+          "2": 0,
+          "3": 1,
+          "4": 1,
+          "5": 1,
+          "6": 1,
+          "7": 2,
+          "8": 2,
+          "9": 2
+        },
+        "half_fill_in_argmax_set": true
       },
-      "half_fill_in_argmax_set": true
-    },
-    {
+      {
+        "n_total": 11,
+        "n_sigma": 6,
+        "n_sigma_inv": 3,
+        "n_avg": 2,
+        "half_fill_predicted_k_outlier": 5,
+        "argmax_first_averaging_k": 4,
+        "argmax_all_averaging_rungs": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "m_k_table": {
+          "2": 0,
+          "3": 0,
+          "4": 1,
+          "5": 1,
+          "6": 1,
+          "7": 1,
+          "8": 2,
+          "9": 2,
+          "10": 2
+        },
+        "half_fill_in_argmax_set": true
+      },
+      {
+        "n_total": 12,
+        "n_sigma": 7,
+        "n_sigma_inv": 3,
+        "n_avg": 2,
+        "half_fill_predicted_k_outlier": 6,
+        "argmax_first_averaging_k": 4,
+        "argmax_all_averaging_rungs": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "m_k_table": {
+          "2": 0,
+          "3": 0,
+          "4": 1,
+          "5": 1,
+          "6": 1,
+          "7": 1,
+          "8": 1,
+          "9": 2,
+          "10": 2,
+          "11": 2
+        },
+        "half_fill_in_argmax_set": true
+      },
+      {
+        "n_total": 13,
+        "n_sigma": 8,
+        "n_sigma_inv": 3,
+        "n_avg": 2,
+        "half_fill_predicted_k_outlier": 6,
+        "argmax_first_averaging_k": 4,
+        "argmax_all_averaging_rungs": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "m_k_table": {
+          "2": 0,
+          "3": 0,
+          "4": 1,
+          "5": 1,
+          "6": 1,
+          "7": 1,
+          "8": 1,
+          "9": 2,
+          "10": 2,
+          "11": 2,
+          "12": 2
+        },
+        "half_fill_in_argmax_set": true
+      },
+      {
+        "n_total": 14,
+        "n_sigma": 8,
+        "n_sigma_inv": 4,
+        "n_avg": 2,
+        "half_fill_predicted_k_outlier": 7,
+        "argmax_first_averaging_k": 5,
+        "argmax_all_averaging_rungs": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13
+        ],
+        "m_k_table": {
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 1,
+          "6": 1,
+          "7": 1,
+          "8": 1,
+          "9": 1,
+          "10": 2,
+          "11": 2,
+          "12": 2,
+          "13": 2
+        },
+        "half_fill_in_argmax_set": true
+      },
+      {
+        "n_total": 15,
+        "n_sigma": 9,
+        "n_sigma_inv": 4,
+        "n_avg": 2,
+        "half_fill_predicted_k_outlier": 7,
+        "argmax_first_averaging_k": 5,
+        "argmax_all_averaging_rungs": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "m_k_table": {
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 1,
+          "6": 1,
+          "7": 1,
+          "8": 1,
+          "9": 1,
+          "10": 1,
+          "11": 2,
+          "12": 2,
+          "13": 2,
+          "14": 2
+        },
+        "half_fill_in_argmax_set": true
+      }
+    ],
+    "anchor_row": {
       "n_total": 11,
       "n_sigma": 6,
       "n_sigma_inv": 3,
@@ -91,173 +275,6 @@
       },
       "half_fill_in_argmax_set": true
     },
-    {
-      "n_total": 12,
-      "n_sigma": 7,
-      "n_sigma_inv": 3,
-      "n_avg": 2,
-      "half_fill_predicted_k_outlier": 6,
-      "argmax_first_averaging_k": 4,
-      "argmax_all_averaging_rungs": [
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11
-      ],
-      "m_k_table": {
-        "2": 0,
-        "3": 0,
-        "4": 1,
-        "5": 1,
-        "6": 1,
-        "7": 1,
-        "8": 1,
-        "9": 2,
-        "10": 2,
-        "11": 2
-      },
-      "half_fill_in_argmax_set": true
-    },
-    {
-      "n_total": 13,
-      "n_sigma": 8,
-      "n_sigma_inv": 3,
-      "n_avg": 2,
-      "half_fill_predicted_k_outlier": 6,
-      "argmax_first_averaging_k": 4,
-      "argmax_all_averaging_rungs": [
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12
-      ],
-      "m_k_table": {
-        "2": 0,
-        "3": 0,
-        "4": 1,
-        "5": 1,
-        "6": 1,
-        "7": 1,
-        "8": 1,
-        "9": 2,
-        "10": 2,
-        "11": 2,
-        "12": 2
-      },
-      "half_fill_in_argmax_set": true
-    },
-    {
-      "n_total": 14,
-      "n_sigma": 8,
-      "n_sigma_inv": 4,
-      "n_avg": 2,
-      "half_fill_predicted_k_outlier": 7,
-      "argmax_first_averaging_k": 5,
-      "argmax_all_averaging_rungs": [
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13
-      ],
-      "m_k_table": {
-        "2": 0,
-        "3": 0,
-        "4": 0,
-        "5": 1,
-        "6": 1,
-        "7": 1,
-        "8": 1,
-        "9": 1,
-        "10": 2,
-        "11": 2,
-        "12": 2,
-        "13": 2
-      },
-      "half_fill_in_argmax_set": true
-    },
-    {
-      "n_total": 15,
-      "n_sigma": 9,
-      "n_sigma_inv": 4,
-      "n_avg": 2,
-      "half_fill_predicted_k_outlier": 7,
-      "argmax_first_averaging_k": 5,
-      "argmax_all_averaging_rungs": [
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14
-      ],
-      "m_k_table": {
-        "2": 0,
-        "3": 0,
-        "4": 0,
-        "5": 1,
-        "6": 1,
-        "7": 1,
-        "8": 1,
-        "9": 1,
-        "10": 1,
-        "11": 2,
-        "12": 2,
-        "13": 2,
-        "14": 2
-      },
-      "half_fill_in_argmax_set": true
-    }
-  ],
-  "anchor_row": {
-    "n_total": 11,
-    "n_sigma": 6,
-    "n_sigma_inv": 3,
-    "n_avg": 2,
-    "half_fill_predicted_k_outlier": 5,
-    "argmax_first_averaging_k": 4,
-    "argmax_all_averaging_rungs": [
-      4,
-      5,
-      6,
-      7,
-      8,
-      9,
-      10
-    ],
-    "m_k_table": {
-      "2": 0,
-      "3": 0,
-      "4": 1,
-      "5": 1,
-      "6": 1,
-      "7": 1,
-      "8": 2,
-      "9": 2,
-      "10": 2
-    },
-    "half_fill_in_argmax_set": true
-  },
-  "anchor_empirical_outlier": 5,
-  "anchor_match": true,
-  "status": "experimental",
-  "engine": "python",
-  "engine_version": "3.11.15"
+    "anchor_empirical_outlier": 5
+  }
 }

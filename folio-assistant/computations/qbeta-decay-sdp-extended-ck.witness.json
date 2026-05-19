@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-19T15:29:51.198859+00:00",
-  "commitSha": "a914ea76aac14481754b0982a47af5c00233c71d",
+  "computedAt": "2026-05-19T16:38:44.669902+00:00",
+  "commitSha": "8742eaa037e72cbe7a8757b1905466d5b26344ce",
   "assertions": [
     {
       "name": "c_8_extracted_finite",
@@ -33,8 +33,8 @@
   "durationMs": 4,
   "computation": "qbeta-decay-sdp-extended-ck",
   "scriptFile": "qbeta_decay_sdp_extended_ck.py",
-  "scriptHash": "60ec9e5ad8a6",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "7780d4d1e1eb",
+  "scriptCommitSha": "041240ae4cd3c40e3019d2979bf847ac02297b63",
   "description": "EXTENDED c_k extraction at rungs k=8, 9, 10 via SDP-T_β. Continues qbeta_decay_sdp_full_ck.py beyond k=7 to test the PR #814 prediction that averaging-resonance rungs carry 1/2 fingerprints. Pell-Lucas-clean test at silver ratio classifies each rung as pure-σ or averaging-resonance.",
   "parameters": {
     "q_0_50dps": "1.1099785955541805752815940796095093779932822799587",

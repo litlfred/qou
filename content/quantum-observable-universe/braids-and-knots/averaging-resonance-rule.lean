@@ -113,18 +113,23 @@ theorem proton_half_fill_eq_five :
   unfold halfFillRung protonDistribution
   decide
 
-/-- **Falsification of naive argmax-binomial criterion**: under the
-    refined empirical classification, the naive rule predicts
-    averaging for k ∈ {4, 5, 6, 7, 8, 9, 10} but empirical evidence
-    shows averaging only at k = 5. The naive rule has 2/8 ≈ 25%
-    accuracy (correct at k = 3 and k = 5 only).
+/-- **Falsification of naive argmax-binomial criterion**: there is a
+    rung k where `naiveArgmaxBinomial protonDistribution k ≥ 1`
+    (i.e., the heuristic predicts averaging-resonant) but
+    `empiricalSector k = .pureSigma`. The naive rule has 2/8 ≈ 25%
+    accuracy on the proton ladder (correct only at k = 3 and k = 5).
 
-    Concrete witness: at k = 4, `empiricalSector 4 = .pureSigma`. -/
+    Concrete witness: at k = 4, `naiveArgmaxBinomial protonDistribution 4 = 1`
+    (so the rule predicts averaging-resonant) but
+    `empiricalSector 4 = .pureSigma` (Pell-Lucas-clean closed form). -/
 theorem naive_argmax_binomial_is_falsified :
-    ∃ k : ℕ, k ∈ [4, 6, 7, 8, 9, 10].toFinset ∧
-      empiricalSector k = .pureSigma := by
-  use 4
-  refine ⟨by decide, by rfl⟩
+    ∃ k : ℕ, naiveArgmaxBinomial protonDistribution k ≥ 1 ∧
+      empiricalSector k = RungSector.pureSigma := by
+  refine ⟨4, ?_, ?_⟩
+  · -- naiveArgmaxBinomial protonDistribution 4 = 1 by computation
+    decide
+  · -- empiricalSector 4 = .pureSigma by definitional unfolding
+    rfl
 
 /-- **Open conjecture: the correct sector criterion.**
 
