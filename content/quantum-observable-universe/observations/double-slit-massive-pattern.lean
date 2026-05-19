@@ -79,7 +79,7 @@ theorem double_slit_massive_pattern_classical_envelope
     involving (1 − q⁻¹)². This is the main proposition content:
     the excess width is of order (1 − q⁻¹)², consistent with
     precision diffraction experiments. -/
--- Ref: [bach2013] https://doi.org/10.1088/1367-2630/15/3/033018
+-- Ref: [bach2013] Controlled double-slit electron diffraction — see content/schema/references.ts
 /-- **External axiom (§3b-cond pattern): double_slit_massive_pattern.**
 
     Auto-extracted from the single-sorry theorem body in this file.

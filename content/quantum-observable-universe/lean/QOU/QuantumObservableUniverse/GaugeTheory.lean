@@ -194,7 +194,7 @@ instance hasCategoricalEOM_of_facts {C : Type u}
     Use this lemma — backed by `HasCategoricalEOM` — instead of the
     deprecated universal axiom. -/
 -- Ref: [manuscript] §1-quantum-observable-universe
--- Ref: [wald1984] https://doi.org/10.7208/chicago/9780226870373.001.0001
+-- Ref: [wald1984] General Relativity — see content/schema/references.ts
 theorem variational_einstein {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C] [CategoryTheory.Preadditive C]
     (fh : FrobeniusHopfData C)
@@ -206,7 +206,7 @@ theorem variational_einstein {C : Type u} [CategoryTheory.Category.{v} C]
 
 /-- **Yang–Mills equation** (per-instance form). -/
 -- Ref: [manuscript] §1-quantum-observable-universe
--- Ref: [bleecker1981] https://doi.org/10.1007/978-1-4684-0148-7
+-- Ref: [bleecker1981] Gauge Theory and Variational Principles — see content/schema/references.ts
 theorem variational_yang_mills {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C] [CategoryTheory.Preadditive C]
     (fh : FrobeniusHopfData C)
@@ -218,7 +218,7 @@ theorem variational_yang_mills {C : Type u} [CategoryTheory.Category.{v} C]
 
 /-- **Transport equation** (per-instance form). -/
 -- Ref: [manuscript] §1-quantum-observable-universe
--- Ref: [kobayashi1996] https://doi.org/10.1002/9780470316559
+-- Ref: [kobayashi1996] Foundations of Differential Geometry, Volume 1 — see content/schema/references.ts
 theorem variational_transport {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C] [CategoryTheory.Preadditive C]
     (fh : FrobeniusHopfData C)

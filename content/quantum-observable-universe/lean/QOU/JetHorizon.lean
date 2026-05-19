@@ -52,7 +52,7 @@ structure GradedJetAlgebra where
     algebra A_0 vanishes.  The horizon ideal h ⊂ Γ(U, A_0) blocks
     all zeroth-order sections; higher-degree jet data (A_k/A_0 for
     k ≥ 1) can carry non-trivial sections across the horizon. -/
--- Ref: [hawking1975] https://doi.org/10.1007/BF02345020
+-- Ref: [hawking1975] Particle creation by black holes — see content/schema/references.ts
 -- Ref: [manuscript] §9/jet-horizon
 structure JetHorizon where
   /-- The graded jet algebra over the chart. -/

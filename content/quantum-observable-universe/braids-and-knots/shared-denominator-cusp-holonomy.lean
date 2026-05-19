@@ -9,7 +9,7 @@ Conditional on the upstream `AlgebraicGeometricEquivalence` and
 
 -- Ref: [manuscript] conj:shared-denominator-cusp-holonomy
 -- Ref: [thurston1978] manuscript: The geometry and topology of 3-manifolds
--- Ref: [neumann-zagier1985] https://doi.org/10.1016/0040-9383(85)90004-7
+-- Ref: [neumann-zagier1985] Volumes of hyperbolic three-manifolds — see content/schema/references.ts
 -/
 
 import Mathlib.Algebra.BigOperators.Basic

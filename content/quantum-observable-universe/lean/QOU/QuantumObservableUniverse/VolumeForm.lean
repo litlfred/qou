@@ -94,7 +94,7 @@ class SU2EmergenceVolumeDeterminant (det_g : ℝ) : Prop where
     witness pending the categorical-dagger formalisation.
 
     LaTeX: `\label{lem:su2-emergence-dagger-unitarity}` -/
--- Ref: [woronowicz1987] https://doi.org/10.1007/BF01219077
+-- Ref: [woronowicz1987] Compact matrix pseudogroups — see content/schema/references.ts
 class SU2EmergenceDaggerUnitarity (g_dagger g_inv : ℝ → ℝ) : Prop where
   /-- `g†` agrees with `g⁻¹`. -/
   unitary : g_dagger = g_inv

@@ -236,7 +236,7 @@ class HasYangMillsMassGap (q : ℝ) (tm : CategoricalTransferMatrix) where
 
     Ref: [jaffe2006] https://www.claymath.org/millennium/yang-mills-the-maths-gap/
     Ref: [manuscript] Chapter 5, §1 -/
--- Ref: [jaffe2006] https://www.claymath.org/millennium/yang-mills-the-maths-gap/
+-- Ref: [jaffe2006] Quantum Yang2013Mills Theory — see content/schema/references.ts
 -- Ref: [manuscript] Chapter 5, §1
 theorem yangMillsMassGap_construction (q : ℝ) (_ : 1 < q)
     (tm : CategoricalTransferMatrix) [h : HasYangMillsMassGap q tm] :

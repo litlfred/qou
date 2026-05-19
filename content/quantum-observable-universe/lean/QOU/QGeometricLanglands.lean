@@ -241,7 +241,7 @@ structure QOper (M : Type*) where
     in Mathlib.
 
     LaTeX: `\label{rem:fibre-functor-rigidity}` -/
--- Ref: [deligne1990] https://doi.org/10.1007/978-0-8176-4576-2_8
+-- Ref: [deligne1990] Cat00e9gories tannakiennes — see content/schema/references.ts
 class FibreFunctorRigidity (M : Type*) where
   /-- Two q-local systems with the same substrate and the same
       holonomy residues at every point are equal. -/

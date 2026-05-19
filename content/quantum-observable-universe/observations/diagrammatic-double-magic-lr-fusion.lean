@@ -12,7 +12,7 @@ conditional on `[DoubleMagicConjecture Z N]` instances.
 
 -- Ref: [manuscript] conj:diagrammatic-double-magic-lr-fusion
 -- Ref: [ariki1996] Ariki, "On the decomposition numbers of the Hecke algebra of G(m, 1, n)," J. Math. Kyoto Univ. 36 (1996)
--- Ref: [ram1991] https://doi.org/10.1007/BF01231331
+-- Ref: [ram1991]     title: — see content/schema/references.ts
 -- Ref: [geckpfeiffer2000] Geck & Pfeiffer, "Characters of Finite Coxeter Groups and Iwahori-Hecke Algebras," LMS Monographs 21, OUP 2000
 -/
 

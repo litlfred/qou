@@ -72,7 +72,7 @@ noncomputable def m_e : ℝ := 0.51099895069
     Catalan's constant is open (Apéry-style result not yet
     available in Mathlib), so we use the standard high-precision
     decimal. -/
--- Ref: [oeis-A006752] https://oeis.org/A006752
+-- Ref: [oeis-A006752] Decimal expansion of Catalan's constant — see content/schema/references.ts
 noncomputable def catalan_G : ℝ := 0.91596559417721901505
 
 /-- Binding scale `α = m_e · 8 G`. -/

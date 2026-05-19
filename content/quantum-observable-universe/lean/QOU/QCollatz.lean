@@ -93,7 +93,7 @@ theorem skein_divisibility (q : ℝ) (hq : q ≠ 1) :
     [2]_q² and [3]_q is exactly q — the substrate parameter.
 
     At q = 1: 2² - 3 = 1.  At q₀ ≈ 1.1097: 2.11² - 3.34 ≈ 1.11. -/
--- Ref: [lagarias2010] https://doi.org/10.1090/978-0-8218-4940-8
+-- Ref: [lagarias2010] The Ultimate Challenge: The $3x+1$ Problem — see content/schema/references.ts
 theorem qInt_gap (q : ℝ) (hq : q ≠ 1) :
     qInt q 2 ^ 2 - qInt q 3 = q := by
   rw [qInt_two q hq, qInt_three q hq]; ring

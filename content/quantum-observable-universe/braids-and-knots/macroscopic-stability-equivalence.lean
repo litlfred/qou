@@ -61,7 +61,7 @@ def SpectralPersistence (spectral_limit : ℕ → Fin 8 → R_q) : Prop :=
     X^ρ/ρ violates the error bound. -/
 /-- **External axiom (von Koch 1901):** Riemann hypothesis is
     equivalent to optimal Chebyshev error. -/
--- Ref: [vonkoch1901] https://doi.org/10.1007/BF02403071
+-- Ref: [vonkoch1901] Sur la distribution des nombres premiers — see content/schema/references.ts
 axiom macroscopic_iff_rh_axiom :
     ∀ (ψ : R_q → R_q) (ζ : ℂ → ℂ),
       MacroscopicStability ψ ↔ RiemannHypothesis ζ

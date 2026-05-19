@@ -69,7 +69,7 @@ category (only `Rep k G` for group G exists). -/
     The carrier `A` and its `HopfAlgebra` instance are concrete
     Mathlib structures.  The equivalence is stated as `Prop`
     pending Mathlib infrastructure for `Rep` of a Hopf algebra. -/
--- Ref: [woronowicz1988] https://doi.org/10.1007/BF01219077
+-- Ref: [woronowicz1988] Tannaka-Kre012dn duality for compact matrix pseu — see content/schema/references.ts
 structure TannakaKreinReconstruction
     (C : Type u) [Category.{v} C] [MonoidalCategory C]
     (k : Type w) [CommRing k] where

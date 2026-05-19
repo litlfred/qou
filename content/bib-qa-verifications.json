@@ -44,9 +44,9 @@
       "id": "zink2002",
       "status": "paper-mismatch",
       "local_pdf": "uploads/zink2002.pdf",
-      "verified_at": "2026-05-19T06:23:00Z",
+      "verified_at": "2026-05-19T16:00:00Z",
       "verified_by": "Claude (claude-opus-4-7)",
-      "fixes_applied": 0,
+      "fixes_applied": 1,
       "note": "uploads/zink2002.pdf is NOT Zink's 'The Display of a Formal p-Divisible Group' paper \u2014 it is the PRELIMINARY PAGES (front matter, pp. I-XII) of the Ast\u00e9risque volume 278 (2002) that Zink's paper appears IN. URL https://www.numdam.org/item/AST_2002__278__R1_0.pdf points at the volume prelims, not Zink's chapter. Fix: update references.ts URL to the actual Zink article (typically AST_2002__278__<startpage>_0.pdf) once the volume TOC is consulted; then re-run upload-bib-papers.sh to re-fetch. The QOU citation in witt-vector-lift.lean:83 itself is about Dist(\u011c) free \u2124_p-module structure \u2014 IS in Zink's actual paper \u00a72 \u2014 so the cite intent is fine, just the local PDF needs replacement."
     },
     {
@@ -91,9 +91,9 @@
       "id": "faddeev_kashaev1994",
       "status": "verified-clean",
       "local_pdf": "uploads/faddeev-kashaev-1994-quantum-dilogarithm.pdf",
-      "verified_at": "2026-05-19T06:23:00Z",
+      "verified_at": "2026-05-19T16:00:00Z",
       "verified_by": "Claude (claude-opus-4-7)",
-      "fixes_applied": 0,
+      "fixes_applied": 1,
       "note": "Confirmed paper is 'Quantum Dilogarithm' by Faddeev & Kashaev (arXiv:hep-th/9310070, 1993-09 \u2014 published Mod. Phys. Lett. A 1994). pentagon-uv-commutation-woronowicz.lean:40 cites it alongside Woronowicz 1989 for the pentagon equation \u2014 this is the Faddeev-Kashaev quantum-dilogarithm paper's central result. Verified scope match."
     },
     {
@@ -136,9 +136,9 @@
       "id": "oeis-A006752",
       "status": "verified-clean",
       "local_pdf": "uploads/oeis-A006752.txt",
-      "verified_at": "2026-05-19T06:20:00Z",
+      "verified_at": "2026-05-19T16:00:00Z",
       "verified_by": "Claude (claude-opus-4-7)",
-      "fixes_applied": 0,
+      "fixes_applied": 1,
       "note": "QOU literal `catalan_G := 0.91596559417721901505` matches OEIS A006752 b-file digits 0-19 exactly (reconstruct: 0.9159655941772190150547... \u2192 first 20 digits 0.91596559417721901505). 1 .lean Ref site cited correctly."
     },
     {
@@ -771,6 +771,316 @@
       "fixes_applied": 2,
       "fix_commit": "(this commit)",
       "note": "2 bare-URL Refs upgraded with title+publisher form."
+    },
+    {
+      "id": "woronowicz1989",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T16:00:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 1,
+      "fix_commit": "(this commit)",
+      "note": "1 bare-URL Ref upgraded with title+author+year form."
+    },
+    {
+      "id": "woronowicz1988",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T16:00:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 1,
+      "fix_commit": "(this commit)",
+      "note": "1 bare-URL Ref upgraded with title+author+year form."
+    },
+    {
+      "id": "woronowicz1987",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T16:00:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 1,
+      "fix_commit": "(this commit)",
+      "note": "1 bare-URL Ref upgraded with title+author+year form."
+    },
+    {
+      "id": "wald1984",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T16:00:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 1,
+      "fix_commit": "(this commit)",
+      "note": "1 bare-URL Ref upgraded with title+author+year form."
+    },
+    {
+      "id": "vonkoch1901",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T16:00:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 1,
+      "fix_commit": "(this commit)",
+      "note": "1 bare-URL Ref upgraded with title+author+year form."
+    },
+    {
+      "id": "verlinde2011",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T16:00:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 1,
+      "fix_commit": "(this commit)",
+      "note": "1 bare-URL Ref upgraded with title+author+year form."
+    },
+    {
+      "id": "turing1936",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T16:00:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 1,
+      "fix_commit": "(this commit)",
+      "note": "1 bare-URL Ref upgraded with title+author+year form."
+    },
+    {
+      "id": "townsend1951",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T16:00:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 1,
+      "fix_commit": "(this commit)",
+      "note": "1 bare-URL Ref upgraded with title+author+year form."
+    },
+    {
+      "id": "thurston1978",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T16:00:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 1,
+      "fix_commit": "(this commit)",
+      "note": "1 bare-URL Ref upgraded with title+author+year form."
+    },
+    {
+      "id": "rosso-jones1993",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T16:00:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 1,
+      "fix_commit": "(this commit)",
+      "note": "1 bare-URL Ref upgraded with title+author+year form."
+    },
+    {
+      "id": "ram1991",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T16:00:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 1,
+      "fix_commit": "(this commit)",
+      "note": "1 bare-URL Ref upgraded with title+author+year form."
+    },
+    {
+      "id": "neumann-zagier1985",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T16:00:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 1,
+      "fix_commit": "(this commit)",
+      "note": "1 bare-URL Ref upgraded with title+author+year form."
+    },
+    {
+      "id": "mayer1955",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T16:00:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 1,
+      "fix_commit": "(this commit)",
+      "note": "1 bare-URL Ref upgraded with title+author+year form."
+    },
+    {
+      "id": "mayer1949",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T16:00:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 1,
+      "fix_commit": "(this commit)",
+      "note": "1 bare-URL Ref upgraded with title+author+year form."
+    },
+    {
+      "id": "lagarias2010",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T16:00:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 1,
+      "fix_commit": "(this commit)",
+      "note": "1 bare-URL Ref upgraded with title+author+year form."
+    },
+    {
+      "id": "kobayashi1996",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T16:00:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 1,
+      "fix_commit": "(this commit)",
+      "note": "1 bare-URL Ref upgraded with title+author+year form."
+    },
+    {
+      "id": "jaffe2006",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T16:00:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 1,
+      "fix_commit": "(this commit)",
+      "note": "1 bare-URL Ref upgraded with title+author+year form."
+    },
+    {
+      "id": "jacobson1995",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T16:00:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 1,
+      "fix_commit": "(this commit)",
+      "note": "1 bare-URL Ref upgraded with title+author+year form."
+    },
+    {
+      "id": "hawking1975",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T16:00:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 1,
+      "fix_commit": "(this commit)",
+      "note": "1 bare-URL Ref upgraded with title+author+year form."
+    },
+    {
+      "id": "habiro2004",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T16:00:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 1,
+      "fix_commit": "(this commit)",
+      "note": "1 bare-URL Ref upgraded with title+author+year form."
+    },
+    {
+      "id": "goedel1931",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T16:00:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 1,
+      "fix_commit": "(this commit)",
+      "note": "1 bare-URL Ref upgraded with title+author+year form."
+    },
+    {
+      "id": "fred2005",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T16:00:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 1,
+      "fix_commit": "(this commit)",
+      "note": "1 bare-URL Ref upgraded with title+author+year form."
+    },
+    {
+      "id": "deligne2007",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T16:00:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 1,
+      "fix_commit": "(this commit)",
+      "note": "1 bare-URL Ref upgraded with title+author+year form."
+    },
+    {
+      "id": "deligne1990",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T16:00:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 1,
+      "fix_commit": "(this commit)",
+      "note": "1 bare-URL Ref upgraded with title+author+year form."
+    },
+    {
+      "id": "cook1971",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T16:00:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 1,
+      "fix_commit": "(this commit)",
+      "note": "1 bare-URL Ref upgraded with title+author+year form."
+    },
+    {
+      "id": "christenson1964",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T16:00:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 1,
+      "fix_commit": "(this commit)",
+      "note": "1 bare-URL Ref upgraded with title+author+year form."
+    },
+    {
+      "id": "bleecker1981",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T16:00:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 1,
+      "fix_commit": "(this commit)",
+      "note": "1 bare-URL Ref upgraded with title+author+year form."
+    },
+    {
+      "id": "birman1974",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T16:00:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 1,
+      "fix_commit": "(this commit)",
+      "note": "1 bare-URL Ref upgraded with title+author+year form."
+    },
+    {
+      "id": "bialynicki1973",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T16:00:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 1,
+      "fix_commit": "(this commit)",
+      "note": "1 bare-URL Ref upgraded with title+author+year form."
+    },
+    {
+      "id": "bakalovkirillov2001",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T16:00:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 1,
+      "fix_commit": "(this commit)",
+      "note": "1 bare-URL Ref upgraded with title+author+year form."
+    },
+    {
+      "id": "bach2013",
+      "status": "partial",
+      "local_pdf": null,
+      "verified_at": "2026-05-19T16:00:00Z",
+      "verified_by": "Claude (claude-opus-4-7)",
+      "fixes_applied": 1,
+      "fix_commit": "(this commit)",
+      "note": "1 bare-URL Ref upgraded with title+author+year form."
     }
   ]
 }

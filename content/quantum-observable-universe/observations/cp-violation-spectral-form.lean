@@ -42,7 +42,7 @@ noncomputable def deltaCP (W : WedderburnComplexCharacters) : ℝ :=
     is the imaginary part of the alternating/symmetric Wedderburn-block
     character ratio. -/
 -- Ref: [manuscript] §6/cp-violation-spectral-form
--- Ref: [christenson1964] https://doi.org/10.1103/PhysRevLett.13.138
+-- Ref: [christenson1964] Evidence for the $2\pi$ Decay of the $K_2^0$ Meso — see content/schema/references.ts
 theorem cp_violation_spectral_form
     [ComplexSubstrate]
     (W : WedderburnComplexCharacters) :
