@@ -148,6 +148,24 @@
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "af318ceb66a4",
+          "ts": "9129628797b4",
+          "lean": "c12acd23e843"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-adjudicator-descartes-A-G",
+          "version": "claude-sonnet-4-6-2026-05-19"
+        },
+        "reviewed_at": "2026-05-19T19:09:23.596Z",
+        "reviewed_sha": "fe4effd2092e90b619161d721df95845e802f21e",
+        "notes": "default-pass (chapter=descartes-universe)"
+      }
     ]
   },
   "updated_at": "2026-05-20T02:29:29.163Z"
