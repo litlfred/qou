@@ -3760,22 +3760,6 @@ export const references: CSLData[] = [
     page: "746-768",
     DOI: "10.1137/S1052623496304700",
   }),
-
-  // ── K-theory / Borel regulator (1974 ENS) ───────────────────────
-  ref({
-    id: "borel1974",
-    type: "article-journal",
-    title: "Stable real cohomology of arithmetic groups",
-    author: [{ family: "Borel", given: "Armand" }],
-    "container-title": "Annales Scientifiques de l'École Normale Supérieure",
-    issued: { "date-parts": [[1974]] },
-    volume: "7",
-    issue: "4",
-    page: "235-272",
-    DOI: "10.24033/asens.1269",
-    note: "Cited for the Borel regulator and rank computations on K_{2n-1}(Z)",
-  }),
-
   // ── Surreal numbers — Berarducci & Mantova ──────────────────────
   ref({
     id: "berarducci2018",
@@ -3947,21 +3931,6 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[1985]] },
     note: "Cited for hyperbolic volume computations on link complements",
   }),
-
-  // ── Wenzl — Hecke-algebra trace and limit ───────────────────────
-  ref({
-    id: "wenzl1988",
-    type: "article-journal",
-    title: "Hecke algebras of type A_n and subfactors",
-    author: [{ family: "Wenzl", given: "Hans" }],
-    "container-title": "Inventiones Mathematicae",
-    issued: { "date-parts": [[1988]] },
-    volume: "92",
-    issue: "2",
-    page: "349-383",
-    DOI: "10.1007/BF01404457",
-  }),
-
   // ── Boyd–Vandenberghe — Convex Optimization ─────────────────────
   ref({
     id: "boyd-vandenberghe2004",
@@ -4080,84 +4049,6 @@ export const references: CSLData[] = [
     note: "Specific Mathlib module cited by cpt-orbit-closure-density.lean",
   }),
 
-  // ─── 18 entries added 2026-05-19 (was 22; 4 duplicates removed in commit 299567fa) to satisfy `-- Ref: [key]` citations
-  //   in content/**/*.lean that the validate-refs pipeline flagged as
-  //   unresolved. IDs match the literal lean-file citation keys (which
-  //   are sometimes hyphenated or capitalised idiosyncratically — kept
-  //   as-is so the validator resolves without per-file .lean rewrites).
-
-  ref({
-    id: "horn-johnson-2013",
-    type: "book",
-    title: "Matrix Analysis",
-    author: [
-      { family: "Horn", given: "Roger A." },
-      { family: "Johnson", given: "Charles R." },
-    ],
-    issued: { "date-parts": [[2013]] },
-    publisher: "Cambridge University Press",
-    "publisher-place": "Cambridge",
-    edition: "2",
-    ISBN: "9780521548236",
-  }),
-
-  ref({
-    id: "kassel2008",
-    type: "book",
-    title: "Braid Groups",
-    author: [
-      { family: "Kassel", given: "Christian" },
-      { family: "Turaev", given: "Vladimir" },
-    ],
-    issued: { "date-parts": [[2008]] },
-    publisher: "Springer",
-    "publisher-place": "New York",
-    "collection-title": "Graduate Texts in Mathematics",
-    "collection-number": "247",
-    ISBN: "9780387338415",
-  }),
-
-  ref({
-    id: "murphy1981",
-    type: "article-journal",
-    title: "A new construction of Young's seminormal representation of the symmetric groups",
-    author: [{ family: "Murphy", given: "G. E." }],
-    "container-title": "Journal of Algebra",
-    issued: { "date-parts": [[1981]] },
-    volume: "69",
-    issue: "2",
-    page: "287-297",
-    DOI: "10.1016/0021-8693(81)90205-2",
-  }),
-
-  ref({
-    // Key in .lean files reads "fulton1991" (LMS Student Texts 35 first
-    // appeared in 1991/97 — kept the .lean key; metadata reflects the
-    // 1997 CUP reprint which is the standard reference.).
-    id: "fulton1991",
-    type: "book",
-    title: "Young Tableaux: With Applications to Representation Theory and Geometry",
-    author: [{ family: "Fulton", given: "William" }],
-    issued: { "date-parts": [[1997]] },
-    publisher: "Cambridge University Press",
-    "publisher-place": "Cambridge",
-    "collection-title": "London Mathematical Society Student Texts",
-    "collection-number": "35",
-    ISBN: "9780521567244",
-  }),
-
-  ref({
-    id: "wald1984",
-    type: "book",
-    title: "General Relativity",
-    author: [{ family: "Wald", given: "Robert M." }],
-    issued: { "date-parts": [[1984]] },
-    publisher: "The University of Chicago Press",
-    "publisher-place": "Chicago",
-    ISBN: "9780226870335",
-    DOI: "10.7208/chicago/9780226870373.001.0001",
-  }),
-
   ref({
     // Key in .lean is "kobayashi1996"; this is the 1996 Wiley Classics
     // reprint of Kobayashi-Nomizu Foundations of Differential Geometry I.
@@ -4174,19 +4065,6 @@ export const references: CSLData[] = [
     ISBN: "9780471157335",
     DOI: "10.1002/9780470316559",
   }),
-
-  ref({
-    id: "bleecker1981",
-    type: "book",
-    title: "Gauge Theory and Variational Principles",
-    author: [{ family: "Bleecker", given: "David" }],
-    issued: { "date-parts": [[1981]] },
-    publisher: "Addison-Wesley",
-    "publisher-place": "Reading, Massachusetts",
-    ISBN: "9780201100969",
-    DOI: "10.1007/978-1-4684-0148-7",
-  }),
-
   ref({
     // Key in .lean files reads "borel1986"; this is the Borel-Wallach
     // 1980 monograph (Annals Studies 94). The year mismatch is preserved
@@ -4204,136 +4082,34 @@ export const references: CSLData[] = [
     "collection-number": "94",
   }),
 
+  // ── Thurston — Princeton notes on 3-manifold geometry/topology ─
   ref({
-    // Key in .lean files reads "chlouveraki2016"; the canonical reference
-    // is the 2009 LNM monograph. Kept the .lean key; metadata is the 2009
-    // edition (LNM 1981).
-    id: "chlouveraki2016",
-    type: "book",
-    title: "Blocks and Families for Cyclotomic Hecke Algebras",
-    author: [{ family: "Chlouveraki", given: "Maria" }],
-    issued: { "date-parts": [[2009]] },
-    publisher: "Springer",
-    "collection-title": "Lecture Notes in Mathematics",
-    "collection-number": "1981",
-    ISBN: "9783642030635",
+    id: "thurston1979",
+    type: "manuscript",
+    title: "The Geometry and Topology of Three-Manifolds",
+    author: [{ family: "Thurston", given: "William P." }],
+    publisher: "Princeton University (lecture notes)",
+    "publisher-place": "Princeton, NJ",
+    issued: { "date-parts": [[1979]] },
+    URL: "https://library.msri.org/books/gt3m/",
+    note: "Cited for the hyperbolic-structure theory of knot complements (§4)",
   }),
 
+  // ── Bokut & Chen — Gröbner-Shirshov bases (survey) ──────────────
   ref({
-    id: "dipper-james1986",
+    id: "bokutchen2014",
     type: "article-journal",
-    title: "Representations of Hecke Algebras of General Linear Groups",
+    title: "Gröbner-Shirshov bases and their calculation",
     author: [
-      { family: "Dipper", given: "Richard" },
-      { family: "James", given: "Gordon" },
+      { family: "Bokut", given: "L. A." },
+      { family: "Chen", given: "Y." },
     ],
-    "container-title": "Proceedings of the London Mathematical Society",
-    issued: { "date-parts": [[1986]] },
-    volume: "s3-52",
-    issue: "1",
-    page: "20-52",
-    DOI: "10.1112/plms/s3-52.1.20",
-  }),
-
-  ref({
-    id: "frobenius1903",
-    type: "article-journal",
-    title: "Theorie der hyperkomplexen Größen",
-    author: [{ family: "Frobenius", given: "G." }],
-    "container-title": "Sitzungsberichte der Preußischen Akademie der Wissenschaften",
-    issued: { "date-parts": [[1903]] },
-  }),
-
-  ref({
-    id: "nakayama1939",
-    type: "article-journal",
-    title: "On Frobeniusean Algebras. I",
-    author: [{ family: "Nakayama", given: "Tadashi" }],
-    "container-title": "Annals of Mathematics",
-    issued: { "date-parts": [[1939]] },
-    volume: "40",
-    page: "611-633",
-  }),
-
-  ref({
-    id: "kashiwara1990",
-    type: "article-journal",
-    title: "Crystalizing the q-analogue of universal enveloping algebras",
-    author: [{ family: "Kashiwara", given: "Masaki" }],
-    "container-title": "Communications in Mathematical Physics",
-    issued: { "date-parts": [[1990]] },
-    volume: "133",
-    page: "249-260",
-    DOI: "10.1007/BF02097367",
-  }),
-
-  ref({
-    id: "alizadeh-haeberly-overton-1997",
-    type: "article-journal",
-    title: "Complementarity and nondegeneracy in semidefinite programming",
-    author: [
-      { family: "Alizadeh", given: "Farid" },
-      { family: "Haeberly", given: "Jean-Pierre A." },
-      { family: "Overton", given: "Michael L." },
-    ],
-    "container-title": "Mathematical Programming",
-    issued: { "date-parts": [[1997]] },
-    volume: "77",
-    page: "111-128",
-    DOI: "10.1007/BF02614432",
-  }),
-
-  ref({
-    id: "todd2001",
-    type: "article-journal",
-    title: "Semidefinite optimization",
-    author: [{ family: "Todd", given: "Michael J." }],
-    "container-title": "Acta Numerica",
-    issued: { "date-parts": [[2001]] },
-    volume: "10",
-    page: "515-560",
-    DOI: "10.1017/S0962492901000071",
-  }),
-
-  ref({
-    id: "berarducci2018",
-    type: "article-journal",
-    title: "Surreal numbers, derivations and transseries",
-    author: [
-      { family: "Berarducci", given: "Alessandro" },
-      { family: "Mantova", given: "Vincenzo" },
-    ],
-    "container-title": "Journal of the European Mathematical Society",
-    issued: { "date-parts": [[2018]] },
-    volume: "20",
-    issue: "2",
-    page: "339-390",
-    DOI: "10.4171/JEMS/769",
-  }),
-
-  ref({
-    id: "faddeev_kashaev1994",
-    type: "article-journal",
-    title: "Quantum dilogarithm",
-    author: [
-      { family: "Faddeev", given: "Ludwig D." },
-      { family: "Kashaev", given: "Rinat M." },
-    ],
-    "container-title": "Modern Physics Letters A",
-    issued: { "date-parts": [[1994]] },
-    volume: "9",
-    issue: "5",
-    page: "427-434",
-    DOI: "10.1142/S0217732394002446",
-  }),
-
-  ref({
-    id: "oeis-A006752",
-    type: "webpage",
-    title: "Decimal expansion of Catalan's constant",
-    author: [{ literal: "OEIS Foundation" }],
-    issued: { "date-parts": [[2024]] },
-    URL: "https://oeis.org/A006752",
+    "container-title": "Bulletin of Mathematical Sciences",
+    issued: { "date-parts": [[2014]] },
+    volume: "4",
+    issue: "3",
+    page: "325-395",
+    DOI: "10.1007/s13373-014-0054-6",
   }),
 
 ];
