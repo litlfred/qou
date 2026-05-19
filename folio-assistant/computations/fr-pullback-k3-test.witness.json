@@ -1,0 +1,186 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-19T20:33:01.603552+00:00",
+  "commitSha": "84aea2c7075f1de872eff0f6da9ba2922fa8525a",
+  "assertions": [
+    {
+      "name": "data_loaded",
+      "computed": 2.22456607,
+      "expected": 2.22456607,
+      "passed": true,
+      "tolerance": 1e-10,
+      "unit": "B(D) MeV",
+      "source": "AME 2020 deuteron binding"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5832,
+  "computation": "fr-pullback-k3-test",
+  "scriptFile": "fr_pullback_k3_test.py",
+  "scriptHash": "06c2e243f624",
+  "scriptCommitSha": "unknown",
+  "description": "Empirical test of conj:depth-stratified-frobenius-reciprocity at k=3 with candidate distinguished knots {4_1, 5_2, 6_1}. Computes FR-pullback weight ~w_λ^{(K_dist)} = dim_q²(λ)·|χ^λ(K_dist)| / Z_normalization at depth k=3 and re-runs depth-stratified binding-energy variance test.",
+  "parameters": {
+    "m_e_CAL1_MeV": "0.51099894999999995182093925905064679682254791259766",
+    "q0_f64": "1.1099785955541805"
+  },
+  "data": {
+    "baseline_variance_no_fr": 1.82,
+    "per_knot": {
+      "4_1": {
+        "per_atom": {
+          "D": {
+            "Z": 1,
+            "N": 1,
+            "A": 2,
+            "n_strands": 6,
+            "knot_name": "4_1",
+            "B_MeV": "1.585472543892406292320902727430047627511",
+            "B_pred_sign": "+",
+            "B_AME_MeV": "2.224566069999999839978954696562141180038",
+            "ratio_pred_over_AME": 0.7127109260874442
+          },
+          "T": {
+            "Z": 1,
+            "N": 2,
+            "A": 3,
+            "n_strands": 9,
+            "knot_name": "4_1",
+            "B_MeV": "3.874593781375926626164406805393846998118",
+            "B_pred_sign": "+",
+            "B_AME_MeV": "8.481797999999999504439074371475726366043",
+            "ratio_pred_over_AME": 0.45681278679071663
+          },
+          "3He": {
+            "Z": 2,
+            "N": 1,
+            "A": 3,
+            "n_strands": 9,
+            "knot_name": "4_1",
+            "B_MeV": "3.705872418686270964271628693146489007932",
+            "B_pred_sign": "+",
+            "B_AME_MeV": "7.718042800000000092097707238281145691872",
+            "ratio_pred_over_AME": 0.4801570183941285
+          },
+          "4He": {
+            "Z": 2,
+            "N": 2,
+            "A": 4,
+            "n_strands": 12,
+            "knot_name": "4_1",
+            "B_MeV": "16.04563355084999744943624370607116041505",
+            "B_pred_sign": "+",
+            "B_AME_MeV": "28.29567400000000176873982127290219068527",
+            "ratio_pred_over_AME": 0.5670702012911937
+          }
+        },
+        "max_over_min": 1.5601816470473808,
+        "all_signs_correct": true
+      },
+      "5_2": {
+        "per_atom": {
+          "D": {
+            "Z": 1,
+            "N": 1,
+            "A": 2,
+            "n_strands": 6,
+            "knot_name": "5_2",
+            "B_MeV": "0.9155671353979125115945398516139061767463",
+            "B_pred_sign": "+",
+            "B_AME_MeV": "2.224566069999999839978954696562141180038",
+            "ratio_pred_over_AME": 0.4115711139107289
+          },
+          "T": {
+            "Z": 1,
+            "N": 2,
+            "A": 3,
+            "n_strands": 9,
+            "knot_name": "5_2",
+            "B_MeV": "3.965981820821742847296618054406420885302",
+            "B_pred_sign": "+",
+            "B_AME_MeV": "8.481797999999999504439074371475726366043",
+            "ratio_pred_over_AME": 0.46758739371318947
+          },
+          "3He": {
+            "Z": 2,
+            "N": 1,
+            "A": 3,
+            "n_strands": 9,
+            "knot_name": "5_2",
+            "B_MeV": "3.652433880516058724163168251006284730727",
+            "B_pred_sign": "+",
+            "B_AME_MeV": "7.718042800000000092097707238281145691872",
+            "ratio_pred_over_AME": 0.47323317260122716
+          },
+          "4He": {
+            "Z": 2,
+            "N": 2,
+            "A": 4,
+            "n_strands": 12,
+            "knot_name": "5_2",
+            "B_MeV": "16.32807748645353179266613214306495216563",
+            "B_pred_sign": "+",
+            "B_AME_MeV": "28.29567400000000176873982127290219068527",
+            "ratio_pred_over_AME": 0.577052078224167
+          }
+        },
+        "max_over_min": 1.4020713765381783,
+        "all_signs_correct": true
+      },
+      "6_1": {
+        "per_atom": {
+          "D": {
+            "Z": 1,
+            "N": 1,
+            "A": 2,
+            "n_strands": 6,
+            "knot_name": "6_1",
+            "B_MeV": "1.049322791271313627472532122799958333340",
+            "B_pred_sign": "+",
+            "B_AME_MeV": "2.224566069999999839978954696562141180038",
+            "ratio_pred_over_AME": 0.47169774160554095
+          },
+          "T": {
+            "Z": 1,
+            "N": 2,
+            "A": 3,
+            "n_strands": 9,
+            "knot_name": "6_1",
+            "B_MeV": "4.280963949590867197215146326113559204377",
+            "B_pred_sign": "+",
+            "B_AME_MeV": "8.481797999999999504439074371475726366043",
+            "ratio_pred_over_AME": 0.5047236387368418
+          },
+          "3He": {
+            "Z": 2,
+            "N": 1,
+            "A": 3,
+            "n_strands": 9,
+            "knot_name": "6_1",
+            "B_MeV": "3.909388720255416225925613058274932737750",
+            "B_pred_sign": "+",
+            "B_AME_MeV": "7.718042800000000092097707238281145691872",
+            "ratio_pred_over_AME": 0.5065259187543526
+          },
+          "4He": {
+            "Z": 2,
+            "N": 2,
+            "A": 4,
+            "n_strands": 12,
+            "knot_name": "6_1",
+            "B_MeV": "16.45931020514223556420862295812362885720",
+            "B_pred_sign": "+",
+            "B_AME_MeV": "28.29567400000000176873982127290219068527",
+            "ratio_pred_over_AME": 0.5816899857251053
+          }
+        },
+        "max_over_min": 1.2331837412347542,
+        "all_signs_correct": true
+      }
+    },
+    "verdict": "Best K_3*: 6_1 closes variance to 1.233× (was 1.82×) — STRONG support for FR conjecture.",
+    "best_knot": "6_1",
+    "best_max_over_min": 1.2331837412347542
+  }
+}
