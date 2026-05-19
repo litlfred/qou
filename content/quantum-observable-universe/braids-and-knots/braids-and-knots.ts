@@ -507,16 +507,32 @@ export default chapter({
       ],
     }),
 
-    // ── Atom, isotope, and confinement levels ──────────────────────────
+    // ── Atom, isotope, and confinement levels (P1 split 2026-05-19):
+    //    the 43-block sec:atom-isotope-confinement is split into six
+    //    topical sub-sections following the natural pedagogy:
+    //    energy → confinement → pair production → particles & shells →
+    //    atoms & isotopes → magic shells. The existing
+    //    atom-isotope-confinement-intro stays at the top of A and
+    //    previews all six sub-sections as an umbrella narrative.
+
+    // §A — Knot-operator energy: the foundational invariant
     section({
-      title: "Atom, Isotope, and Confinement Levels",
-      label: "sec:atom-isotope-confinement",
+      title: "Knot-operator energy",
+      label: "sec:knot-operator-energy",
       blocks: [
         "atom-isotope-confinement-intro",
         "knot-operator-energy",
         "knot-operator-energy-exists",
         "knot-operator-energy-unique",
         "local-shadow-ordering",
+      ],
+    }),
+
+    // §B — Confinement level: when knots stabilise into bound states
+    section({
+      title: "Confinement level and the cemetery group",
+      label: "sec:confinement-level",
+      blocks: [
         "confinement-level",
         "confinement-level-exists",
         "confinement-level-unique",
@@ -526,12 +542,28 @@ export default chapter({
         "confinement-grading-correspondence-conditional",
         "cemetery-group-emergence",
         "ontological-agnosticism",
+      ],
+    }),
+
+    // §C — Pair production and anyon collapse: operations on confined states
+    section({
+      title: "Pair production and anyon collapse",
+      label: "sec:pair-production-anyon",
+      blocks: [
         "symmetric-crystal-pair-production",
         "two-photon-pair-production",
         "hecke-anyonic-substrate",
         "root-of-unity-mtc-truncation",
         "kazhdan-lusztig-classical-limit",
         "anyon-observation-collapse",
+      ],
+    }),
+
+    // §D — Confined particles and shells: the typed particle inventory
+    section({
+      title: "Confined particles and shells",
+      label: "sec:confined-particles-shells",
+      blocks: [
         "confined-particle",
         "confinement-category",
         "electron-shell",
@@ -542,6 +574,14 @@ export default chapter({
         "level-sufficiency-interprets",
         "confinement-phase-stratification",
         "phase-scoped-applicability",
+      ],
+    }),
+
+    // §E — Atom and isotope knots: compound bound states
+    section({
+      title: "Atom and isotope knots",
+      label: "sec:atom-isotope-knots",
+      blocks: [
         "atom-knot",
         "atom-knot-exists",
         "atom-knot-unique",
@@ -551,6 +591,14 @@ export default chapter({
         "stable-atom-decidable",
         "unstable-atom",
         "unstable-atom-decay-channel",
+      ],
+    }),
+
+    // §F — Magic shells: special-case stability under shell coupling
+    section({
+      title: "Magic shells and the $\\kappa$ coupling",
+      label: "sec:magic-shells",
+      blocks: [
         "ilp-solution-count-unwrap",
         "shell-schur-weyl-self-duality",
         "compound-beta-shell-calibration",
