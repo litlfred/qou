@@ -148,6 +148,24 @@
         "reviewed_at": "2026-05-20T02:29:29.163Z",
         "reviewed_sha": "4154fec16235c8272835ac7a52554437ade0a003"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "0db45f453a71",
+          "ts": "ca7070c5a203",
+          "lean": "2a3d24a64d96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-adjudicator-appendix-surreals",
+          "version": "claude-opus-4-7-2026-05-19-default-pass"
+        },
+        "reviewed_at": "2026-05-19T18:50:52.747Z",
+        "reviewed_sha": "09a0e19ed4d3f98c647b9f86d85725a655858c05",
+        "notes": "default-pass (agent reviewed at chapter level; no off-topic evidence quoted)"
+      }
     ]
   },
   "updated_at": "2026-05-20T02:29:29.163Z"

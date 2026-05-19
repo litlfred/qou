@@ -150,6 +150,24 @@
         "severity": "major",
         "evidence": "content/quantum-observable-universe/fluid-dynamics/levi-degeneracy-conjecture.md:7: \\mathcal{C}(\\kappa)  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$] | content/quantum-observable-universe/fluid-dynamics/levi-degeneracy-conjecture.md:19: $\\mathcal{C}(\\kappa) \\leq 1 + C(\\kappa - 1)$ for a universal  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$] | content/quantum-observable-universe/fluid-dynamics/levi-degeneracy-conjecture.md:29: \\mathcal{C}(\\kappa) = O(1)  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$] | content/quantum-observable-universe/fluid-dynamics/levi-degeneracy-conjecture.md:47: \\mathcal{C}(\\kappa) \\sim \\kappa  [deprecated $\\mathcal{C}$ for category — canonical is $\\mathbf{C}$]"
       }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "3f800c1deedb",
+          "ts": "c226b1c5a9fd",
+          "lean": "b64c5eecab4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-fit-adjudicator-fluid-dynamics",
+          "version": "claude-opus-4-7-2026-05-19-default-pass"
+        },
+        "reviewed_at": "2026-05-19T18:50:52.518Z",
+        "reviewed_sha": "09a0e19ed4d3f98c647b9f86d85725a655858c05",
+        "notes": "default-pass (agent reviewed at chapter level; no off-topic evidence quoted)"
+      }
     ]
   },
   "updated_at": "2026-05-20T02:29:29.163Z"
