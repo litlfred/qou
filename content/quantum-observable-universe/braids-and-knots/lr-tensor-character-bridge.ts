@@ -11,6 +11,8 @@ export default proposition({
          "markov-trace", "compute-bridge"],
   uses: [
     "prop:hecke-branching-trace-decomposition",
+    "prop:interface-knot-markov-z",
+    "def:ew-interface-knot",
     "rem:hecke-algebra-from-braiding",
     "prop:y-lambda-closed-form-wenzl-bridge",
     "prop:wenzl-bridge-applicability-qou",

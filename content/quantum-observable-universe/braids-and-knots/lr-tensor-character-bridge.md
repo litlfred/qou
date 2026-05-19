@@ -94,24 +94,34 @@ The canonical $(Z, N)$-braid
 factors as
 
 $$
-  \beta_{Z,N}
-  \;=\; \beta_{\mathrm{disjoint}} \cdot \beta_{\mathrm{interface}},
+  \beta_K
+  \;=\; \beta_K^{\mathrm{constit}} \cdot \Delta_I^K,
 $$
 
-where $\beta_{\mathrm{disjoint}} = \beta_1 \otimes \cdots \otimes
-\beta_A$ is the parabolic tensor of the $A := Z + N$ per-nucleon
-$H_3$ canonical sub-braids, and $\beta_{\mathrm{interface}}$ is a
-short word in the inter-nucleon Hecke generators $\sigma_{3k+2}$
-($0 \leq k < A-1$), one factor per adjacent nucleon pair. The
-per-pair factor is $\sigma$ on a proton--proton arc, $\sigma^{-1}$
-on a neutron--neutron arc, and the averaged half-sum
-$\tfrac{1}{2}(\sigma + \sigma^{-1})$ on a mixed proton--neutron arc.
-The present corollary applies directly to $\beta_{\mathrm{disjoint}}$;
-the interface factor is handled by the
-([branching trace decomposition](#prop:hecke-branching-trace-decomposition))
-with $I = \beta_{\mathrm{interface}}$, multiplying the seminormal
-representation matrix at $H_{3A}$ after the LR sum has been
-evaluated.
+where $\beta_K^{\mathrm{constit}} = \beta_p^{(1)} \otimes \cdots
+\otimes \beta_n^{(N)}$ is the parabolic tensor of the
+$A := Z + N$ per-nucleon $H_3$ canonical sub-braids (constituent
+vacuum) and $\Delta_I^K$ is the
+([electroweak interface knot](#def:ew-interface-knot)) --- a short
+word in the inter-nucleon Hecke generators $\sigma_{3k+2}$
+($0 \leq k < A-1$), one single-generator crossing per adjacent
+nucleon pair, with sign $\sigma$ on a proton--proton arc and
+$\sigma^{-1}$ on a neutron--neutron arc. The present proposition
+applies directly to $\beta_K^{\mathrm{constit}}$; the interface
+contribution is governed by the
+([Markov-axiom interface identity](#prop:interface-knot-markov-z))
+
+$$
+  \frac{\tau_M(\beta_K)}{\tau_M(\beta_K^{\mathrm{constit}})}
+  \;=\; z(q)^{p_+(K)} \cdot \bigl(z(q) - h(q)\bigr)^{p_-(K)},
+$$
+
+a closed scalar form in the substrate parameters
+$z = 1/(\sqrt q + 1/\sqrt q)$ and $h = q - q^{-1}$ (with $p_\pm(K)$
+the counts of positive / negative interface generators). The mixed
+proton--neutron averaged-half-sum case
+$\tfrac{1}{2}(\sigma + \sigma^{-1})$ enters as a sign-balanced
+combination of the closed identities above.
 
 **Cost asymmetry: small per-nucleon $H_3$ vs. large $H_{3A}$.**
 At each nucleon, $\lambda_i \vdash 3$ with $\dim \lambda_i \leq 2$, so
@@ -181,11 +191,15 @@ the canonical word that this corollary strictly governs.
 ## Scope of applicability
 
 The identity holds for tensor-product (parabolic) braids only. The
-non-tensor inter-nucleon factor $\beta_{\mathrm{interface}}$ does not
-factor through the parabolic embedding; its contribution is the
-$I \neq \mathbf{1}$ regime governed by
-([prop:hecke-branching-trace-decomposition](#prop:hecke-branching-trace-decomposition)).
-The LR bridge is the correct primitive for the disjoint factor, not
-for the entire canonical braid; the convention adapter keeps the
-partition explicit so downstream consumers do not silently apply LR
-to a non-tensor braid.
+interface knot $\Delta_I^K$ does not factor through the parabolic
+embedding; its contribution is the $I \neq \mathbf{1}$ regime
+governed by the
+([branching trace decomposition](#prop:hecke-branching-trace-decomposition))
+in the operator-valued form, and admits the closed scalar form of
+the
+([Markov-axiom interface identity](#prop:interface-knot-markov-z))
+on the Markov-trace ratio. The LR bridge is the correct primitive
+for the constituent-vacuum factor, not for the entire canonical
+braid; the convention adapter keeps the partition explicit so
+downstream consumers do not silently apply LR to a non-tensor
+braid.
