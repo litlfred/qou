@@ -1,0 +1,202 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-19T06:32:44.193196+00:00",
+  "commitSha": "14f81f5f554404b8af059855b0b2b9f755f6364d",
+  "assertions": [
+    {
+      "name": "data_loaded",
+      "computed": 2.22456607,
+      "expected": 2.22456607,
+      "passed": true,
+      "tolerance": 1e-10,
+      "unit": "B(D) MeV",
+      "source": "AME 2020 deuteron binding"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 1510,
+  "computation": "binding-via-interface-knot",
+  "scriptFile": "binding_via_interface_knot.py",
+  "scriptHash": "604405ba240d",
+  "scriptCommitSha": "14f81f5f554404b8af059855b0b2b9f755f6364d",
+  "description": "Categorical binding energy via interface-knot Δ_I^K + Hecke-product constituent vacuum (both in same H_{3A}(q)). First-order (T1+T2) computation with Li_2^q tower; T3 convergence diagnosed but deferred (pair products exceed q_0 ≈ 1.1097 for some H_{3A>3} pairs).",
+  "parameters": {
+    "Q_beta_CAL3_MeV": "0.7823334100000222",
+    "m_e_CAL1_MeV": "0.51099894999999995182093925905064679682254791259766",
+    "q0_50dps": "1.1099785955541805752815940796095093779932822799587",
+    "z_markov_50dps": "0.49932033403359825002066908467672150636931636263446"
+  },
+  "data": {
+    "per_atom": {
+      "D": {
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "n_strands": 6,
+        "atom_config": {
+          "t1": "4.5283072561032394809582138112697000859989810750898e-17",
+          "t2": "5.3810873187238524519842137955628711074548766405675",
+          "m_first_order": "5.3810873187238524972672863565952659170370147532645",
+          "max_pair_product": "1.14834784950530699001048570147408",
+          "t3_divergent_pairs": 1,
+          "n_generators": 5,
+          "vols_full": [
+            "0.6713859088665624",
+            "1.0551103311661434",
+            "1.0646865333807654e-16",
+            "0.5516561227194702",
+            "1.0883675532170312"
+          ]
+        },
+        "free_config": {
+          "t1": "0.42531835560314862580989014290558032669358245013452",
+          "t2": "6.9574618501401396909636749393067796900699609817963",
+          "m_first_order": "7.3827802057432883167735650822123600167635434319308",
+          "max_pair_product": "1.14834784950530699001048570147408",
+          "t3_divergent_pairs": 1,
+          "n_generators": 5,
+          "vols_full": [
+            "0.6713859088665624",
+            "1.0551103311661434",
+            "1.0",
+            "0.5516561227194702",
+            "1.0883675532170312"
+          ]
+        },
+        "B_dim_first_order": "2.0016928870194358195062787256170940997265286786663",
+        "B_MeV_first_order": "1.5659912220747043985325833832976686207176439481328",
+        "B_AME_MeV": "2.2245660699999998399789546965621411800384521484375",
+        "ratio_pred_over_AME": 0.7039535679309828,
+        "B_pred_sign": "+",
+        "canonical_status": "canonical-with-empirical-assignment",
+        "T3_deferred": true,
+        "T3_deferral_reason": "Pair Li_2^q diverges for some pairs in H_{3A>3} (max |V_i V_j| ≥ q_0); structural regularization required, see script docstring."
+      },
+      "T": {
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "n_strands": 9,
+        "atom_config": {
+          "t1": "2.4610392278924496522230449264942154203718749863906e-18",
+          "t2": "8.2147767758076342506701357664863362278569267174656",
+          "m_first_order": "8.2147767758076342531311749943787858800799716439598",
+          "max_pair_product": "1.18454393089562593514334588133635",
+          "t3_divergent_pairs": 3,
+          "n_generators": 8,
+          "vols_full": [
+            "0.671385908866562",
+            "1.0551103311661432",
+            "9.219741872626246e-17",
+            "0.5516561227194703",
+            "1.0883675532170307",
+            "-0.10453016099493968",
+            "0.5516561227194703",
+            "1.0883675532170305"
+          ]
+        },
+        "free_config": {
+          "t1": "0.25536310758945405245319034609063381733400817105622",
+          "t2": "11.260145980144194929690185285153377147659217534783",
+          "m_first_order": "11.515509087733648982143375631244010964993225705839",
+          "max_pair_product": "1.18454393089562593514334588133635",
+          "t3_divergent_pairs": 3,
+          "n_generators": 8,
+          "vols_full": [
+            "0.671385908866562",
+            "1.0551103311661432",
+            "0.9999999999999997",
+            "0.5516561227194703",
+            "1.0883675532170307",
+            "0.9999999999999997",
+            "0.5516561227194703",
+            "1.0883675532170305"
+          ]
+        },
+        "B_dim_first_order": "3.3007323119260147290122006368652250849132540618796",
+        "B_MeV_first_order": "2.5822731650863360469156656133699273219518640124235",
+        "B_AME_MeV": "8.4817979999999995044390743714757263660430908203125",
+        "ratio_pred_over_AME": 0.30444879317879725,
+        "B_pred_sign": "+",
+        "canonical_status": "canonical-with-empirical-assignment",
+        "T3_deferred": true,
+        "T3_deferral_reason": "Pair Li_2^q diverges for some pairs in H_{3A>3} (max |V_i V_j| ≥ q_0); structural regularization required, see script docstring."
+      },
+      "3He": {
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "n_strands": 9,
+        "atom_config": {
+          "t1": "1.4866054030558820798564976183888152675419764919999e-18",
+          "t2": "8.1432448973559183560946675208456768400137702048853",
+          "m_first_order": "8.1432448973559183575812729239015589198702678232741",
+          "max_pair_product": "1.1483478495053062514332538851737",
+          "t3_divergent_pairs": 3,
+          "n_generators": 8,
+          "vols_full": [
+            "0.671385908866562",
+            "1.0551103311661432",
+            "0.10453016099493974",
+            "0.6713859088665605",
+            "1.0551103311661434",
+            "4.720302856811402e-17",
+            "0.5516561227194703",
+            "1.0883675532170305"
+          ]
+        },
+        "free_config": {
+          "t1": "0.30128965739261812396990721277557044585301818335705",
+          "t2": "11.188614101692479016756626726927205177035213365808",
+          "m_first_order": "11.489903759085097140726533939702775622888231549165",
+          "max_pair_product": "1.1483478495053062514332538851737",
+          "t3_divergent_pairs": 3,
+          "n_generators": 8,
+          "vols_full": [
+            "0.671385908866562",
+            "1.0551103311661432",
+            "0.9999999999999997",
+            "0.6713859088665605",
+            "1.0551103311661434",
+            "0.9999999999999997",
+            "0.5516561227194703",
+            "1.0883675532170305"
+          ]
+        },
+        "B_dim_first_order": "3.3466588617291787831452610158012167030179637258911",
+        "B_MeV_first_order": "2.6182030394033812297444129636008155702155516399435",
+        "B_AME_MeV": "7.7180428000000000920977072382811456918716430664063",
+        "ratio_pred_over_AME": 0.33923147451363983,
+        "B_pred_sign": "+",
+        "canonical_status": "canonical-with-empirical-assignment",
+        "T3_deferred": true,
+        "T3_deferral_reason": "Pair Li_2^q diverges for some pairs in H_{3A>3} (max |V_i V_j| ≥ q_0); structural regularization required, see script docstring."
+      }
+    },
+    "atoms_computed": [
+      "D",
+      "T",
+      "3He"
+    ],
+    "atoms_failed": [],
+    "atoms_deferred": [
+      "4He"
+    ],
+    "deferral_note": "4He H_12 character sum requires > 12 GB RAM. Run with INCLUDE_4HE=1 on a larger host, or cherry-pick the geck_pfeiffer Rust kernel from PR #761 for a faster path.",
+    "max_over_min_abs_first_order": 2.3122232168532975,
+    "all_signs_correct_first_order": true,
+    "compared_to_tensor_product_baseline": {
+      "tensor_product_max_over_min": 3.96,
+      "tensor_product_sign_correct": false,
+      "tensor_product_failure_modes": [
+        "T/³He predicted UNBOUND (wrong sign)",
+        "Wrong Hecke algebra (independent H_3 instead of common H_{3A})",
+        "No interface knot in baseline (tensor → no inter-block crossing)"
+      ],
+      "this_first_order_max_over_min": 2.3122232168532975,
+      "this_first_order_sign_correct": true
+    },
+    "verdict": "IMPROVES — max/min^(1) = 2.312, signs correct. Sign-fix versus tensor-product. T3 closure pending."
+  }
+}

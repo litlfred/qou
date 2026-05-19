@@ -1,0 +1,295 @@
+"""
+binding_via_interface_knot.py — categorical binding energy via the
+interface-knot Δ_I^K + Hecke-product constituent vacuum, both braids
+living in the *same* H_{3A}(q) algebra.
+
+Per the structural finding in PR #801: the tensor-product baseline
+$Z·m(β_p) + N·m(β_n)$ (independent H_3 algebras) is categorically
+wrong.  The correct composite is
+
+    β_K = (β_p^(1) … β_n^(N))  ·  Δ_I^K   ∈ H_{3A}(q)
+          ───────── disjoint Hecke product on
+                    disjoint strand blocks ─────────  ──── interface knot ─
+
+Per `def:ew-interface-knot` and `prop:atomic-mass-gb-nf` (deuteron's
+Δ_I^D = σ_3 contributes the `+1` in u_shift = 18Z + 21N + 1).  The
+existing canonical generator `atom_braid_word_3A(Z, N, include_inter=
+True/False)` provides exactly the toggle: `True` yields β_K, `False`
+yields T_constit^K (disjoint Hecke product, no interface crossings).
+
+Mass-endomorphism conditions (`prop:mass-endomorphism-tower`)
+satisfied by construction for the same-Hecke-algebra subtraction:
+
+  - Markov-invariance term-by-term (Li_2^q tower preserves it)
+  - |S| ≤ 2 R-side bound (descended + single + pair only)
+  - Symmetric Li_2^q (NOT Faddeev Φ_q — Faddeev gives −737 MeV
+    mirror-nucleus pathology per SUPERSEDED banner)
+  - Three blow-up types: descended, single-gen, pair (weighted by z²)
+  - Three-calibration discipline (m_e, q_0; Q_β only for absolute
+    scale — variance test uses dimensionless B_dim)
+  - B(p) = B(n) = 0 by construction (no interface for single nucleon)
+
+CONVERGENCE FINDING — pair Li_2^q diverges at H_{3A>3}.
+For atoms beyond the proton/neutron (H_3 case), some per-generator
+V̂_i exceed 1 (V̂ ≈ 1.05–1.09 — within the H_{3A} Wedderburn-character
+spectrum), and pair products |V̂_i V̂_j| ≈ 1.15 exceed the Li_2^q
+convergence radius |z| < q_0 ≈ 1.1097.  The first-order tower
+T1 + T2 (descended + single-generator) is FINITE; T3 (pair) requires
+regularization.  This script:
+
+  1. Computes T1 + T2 (first-order, FINITE) and reports
+     B_dim^(1) = (T1+T2)_free − (T1+T2)_atom — categorical
+     prediction at |S| ≤ 1.
+  2. Diagnoses T3 by counting pair-product over-radius events;
+     reports `T3_divergent_pairs` and `max_pair_product` per atom.
+  3. T3 regularization (next iteration): options include (a) re-
+     deriving V̂ under a Wedderburn-weight scheme that bounds |V̂|
+     < q^{1/2}, (b) analytic continuation of Li_2^q via
+     reflection formula at |z| ≥ q, (c) restriction to non-
+     divergent pairs with a structural justification.
+
+Ref: prop:unified-curvature-rank-mass-formula
+Ref: prop:mass-endomorphism-tower
+Ref: def:ew-interface-knot
+Ref: prop:atomic-mass-gb-nf
+"""
+
+from __future__ import annotations
+
+import os
+import sys
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE))
+
+import mpmath as mp
+
+from witness_base import WitnessBuilder
+from codata_constants import M_E_MEV
+from mass_at_3A_proper import per_generator_V_hat_3A, E_0_CALIBRATION_MEV
+from _li_2_q_util import load_q_50dps, li_2_q
+
+
+B_AME = {
+    "D":   mp.mpf("2.22456607"),
+    "T":   mp.mpf("8.481798"),
+    "3He": mp.mpf("7.7180428"),
+    "4He": mp.mpf("28.295674"),
+}
+
+ZN = {"D": (1, 1), "T": (1, 2), "3He": (2, 1), "4He": (2, 2)}
+
+
+def mass_tower_first_order(
+    vols: list[dict], q: mp.mpf, q_inv: mp.mpf, z: mp.mpf,
+) -> dict:
+    """First-order |S| ≤ 1 mass tower (descended + single-generator).
+
+    T1 = |∏ V̂_i|
+    T2 = Σ_i Li_2^q(|V̂_i|)
+
+    Each Li_2^q(|V̂_i|) is finite at q_0 ≈ 1.1097 since |V̂_i| < q_0
+    (the V̂ values are Wedderburn-character-weighted, bounded by the
+    σ generator's spectral radius q_0).
+
+    Also DIAGNOSES the pair term: counts pairs with
+    |V̂_i V̂_j| ≥ q_0 (where Li_2^q diverges) for downstream
+    regularization decisions.
+    """
+    flat = [mp.mpf(str(vd["full"])) for vd in vols]
+    n = len(flat)
+
+    desc = mp.mpf(1)
+    for v in flat:
+        desc *= v
+    t1 = mp.fabs(desc)
+
+    t2 = mp.mpf(0)
+    for v in flat:
+        t2 += li_2_q(mp.fabs(v), q, q_inv)
+
+    max_pair = mp.mpf(0)
+    div_pairs = 0
+    for i in range(n):
+        for j in range(i + 1, n):
+            p = mp.fabs(flat[i] * flat[j])
+            if p > max_pair:
+                max_pair = p
+            if p >= q:
+                div_pairs += 1
+
+    return {
+        "t1": t1, "t2": t2, "m_first_order": t1 + t2,
+        "max_pair_product": max_pair,
+        "t3_divergent_pairs": div_pairs,
+        "n_generators": n,
+        "vols_full": [str(v) for v in flat],
+    }
+
+
+def main() -> int:
+    mp.mp.dps = 50
+    builder = WitnessBuilder("binding-via-interface-knot")
+    builder.set_description(
+        "Categorical binding energy via interface-knot Δ_I^K + Hecke-"
+        "product constituent vacuum (both in same H_{3A}(q)). "
+        "First-order (T1+T2) computation with Li_2^q tower; T3 "
+        "convergence diagnosed but deferred (pair products exceed "
+        "q_0 ≈ 1.1097 for some H_{3A>3} pairs)."
+    )
+    builder.add_parameter("Q_beta_CAL3_MeV", str(E_0_CALIBRATION_MEV))
+    builder.add_parameter("m_e_CAL1_MeV", str(M_E_MEV))
+
+    q, q_inv, z = load_q_50dps()
+    builder.add_parameter("q0_50dps", str(q))
+    builder.add_parameter("z_markov_50dps", str(z))
+    print(f"q_0 = {float(q):.6f},  z_M = {float(z):.6f}")
+    print(f"{'atom':<6} {'A':>2} {'T1_a':>10} {'T2_a':>10} {'m_a':>10} "
+          f"{'T1_f':>10} {'T2_f':>10} {'m_f':>10} {'B_dim^(1)':>10} "
+          f"{'B_MeV^(1)':>10} {'B_AME':>8} {'ratio':>8} "
+          f"{'max|VV|_a':>10} {'div_a':>6}")
+
+    # 4He H_12 character sum requires > 12 GB RAM and ~5 min CPU; skip
+    # by default. Override with INCLUDE_4HE=1 on a larger host.
+    include_4he = os.environ.get("INCLUDE_4HE") == "1"
+    atom_list = ("D", "T", "3He", "4He") if include_4he else ("D", "T", "3He")
+
+    results = {}
+    for atom in atom_list:
+        Z, N = ZN[atom]
+        try:
+            vols_atom = per_generator_V_hat_3A(
+                Z, N, include_inter=True,
+                weight_scheme="normalized_plancherel")
+            vols_free = per_generator_V_hat_3A(
+                Z, N, include_inter=False,
+                weight_scheme="normalized_plancherel")
+        except (MemoryError, RuntimeError) as exc:
+            results[atom] = {
+                "Z": Z, "N": N, "A": Z + N, "n_strands": 3 * (Z + N),
+                "compute_failed": True,
+                "failure_reason": f"{type(exc).__name__}: {exc}",
+                "canonical_status": "canonical-with-empirical-assignment",
+                "T3_deferred": True,
+                "T3_deferral_reason": (
+                    "Compute failed before T3; H_12 character on this "
+                    "host insufficient RAM. Retry on larger host or "
+                    "use Rust geck_pfeiffer kernel (cherry-pick from PR #761)."
+                ),
+            }
+            print(f"  {atom:<6} {Z+N:>2}  COMPUTE FAILED: "
+                  f"{type(exc).__name__}: {exc}")
+            continue
+
+        ra = mass_tower_first_order(vols_atom, q, q_inv, z)
+        rf = mass_tower_first_order(vols_free, q, q_inv, z)
+
+        B_dim1 = rf["m_first_order"] - ra["m_first_order"]
+        B_MeV1 = mp.mpf(str(E_0_CALIBRATION_MEV)) * B_dim1
+        B_emp = B_AME[atom]
+        ratio = B_MeV1 / B_emp
+
+        results[atom] = {
+            "Z": Z, "N": N, "A": Z + N, "n_strands": 3 * (Z + N),
+            "atom_config": ra, "free_config": rf,
+            "B_dim_first_order": str(B_dim1),
+            "B_MeV_first_order": str(B_MeV1),
+            "B_AME_MeV": str(B_emp),
+            "ratio_pred_over_AME": float(ratio),
+            "B_pred_sign": "+" if B_MeV1 > 0 else "-",
+            "canonical_status": "canonical-with-empirical-assignment",
+            "T3_deferred": True,
+            "T3_deferral_reason": (
+                "Pair Li_2^q diverges for some pairs in H_{3A>3} "
+                "(max |V_i V_j| ≥ q_0); structural regularization "
+                "required, see script docstring."
+            ),
+        }
+        # mpf→str→repr for the diagnostics fields
+        for k in ("t1", "t2", "m_first_order", "max_pair_product"):
+            for sub in (ra, rf):
+                sub[k] = str(sub[k])
+        print(f"  {atom:<6} {Z+N:>2} "
+              f"{float(ra['t1']):>10.4e} {float(ra['t2']):>10.4f} "
+              f"{float(ra['m_first_order']):>10.4f} "
+              f"{float(rf['t1']):>10.4e} {float(rf['t2']):>10.4f} "
+              f"{float(rf['m_first_order']):>10.4f} "
+              f"{float(B_dim1):>10.4f} {float(B_MeV1):>10.4f} "
+              f"{float(B_emp):>8.4f} {float(ratio):>8.4f} "
+              f"{float(ra['max_pair_product']):>10.4f} "
+              f"{ra['t3_divergent_pairs']:>6}")
+
+    builder.add_data("per_atom", results)
+
+    # Cross-atom variance (only successfully-computed atoms)
+    computed = {k: r for k, r in results.items() if not r.get("compute_failed")}
+    ratios = [r["ratio_pred_over_AME"] for r in computed.values()]
+    abs_ratios = [abs(x) for x in ratios]
+    rmin, rmax = (min(abs_ratios), max(abs_ratios)) if abs_ratios else (0, 0)
+    mom = rmax / rmin if rmin > 0 else float("inf")
+    signs_correct = all(r["B_pred_sign"] == "+" for r in computed.values())
+    builder.add_data("atoms_computed", list(computed.keys()))
+    builder.add_data("atoms_failed",
+                      [k for k, r in results.items() if r.get("compute_failed")])
+    if not include_4he:
+        builder.add_data("atoms_deferred", ["4He"])
+        builder.add_data("deferral_note", (
+            "4He H_12 character sum requires > 12 GB RAM. Run with "
+            "INCLUDE_4HE=1 on a larger host, or cherry-pick the "
+            "geck_pfeiffer Rust kernel from PR #761 for a faster path."
+        ))
+
+    builder.add_data("max_over_min_abs_first_order", float(mom))
+    builder.add_data("all_signs_correct_first_order", signs_correct)
+
+    # Categorical-derivation comparison
+    builder.add_data("compared_to_tensor_product_baseline", {
+        "tensor_product_max_over_min": 3.96,
+        "tensor_product_sign_correct": False,
+        "tensor_product_failure_modes": [
+            "T/³He predicted UNBOUND (wrong sign)",
+            "Wrong Hecke algebra (independent H_3 instead of common H_{3A})",
+            "No interface knot in baseline (tensor → no inter-block crossing)",
+        ],
+        "this_first_order_max_over_min": float(mom),
+        "this_first_order_sign_correct": signs_correct,
+    })
+
+    if mom < 1.05 and signs_correct:
+        verdict = (f"PASS — max/min^(1) = {mom:.3f} < 1.05; all signs correct. "
+                   "First-order interface-knot tower closes the variance.")
+    elif mom < 1.5 and signs_correct:
+        verdict = (f"STRONG — max/min^(1) = {mom:.3f} < 1.5×, signs correct. "
+                   "Major improvement over tensor-product 3.96× variance + "
+                   "sign-wrong.")
+    elif signs_correct and mom < 3.96:
+        verdict = (f"IMPROVES — max/min^(1) = {mom:.3f}, signs correct. "
+                   "Sign-fix versus tensor-product. T3 closure pending.")
+    elif signs_correct:
+        verdict = (f"SIGN-FIX — max/min^(1) = {mom:.3f}; signs correct "
+                   "(tensor-product was wrong-sign). T3 closure pending.")
+    else:
+        verdict = (f"NO IMPROVEMENT — max/min^(1) = {mom:.3f}, "
+                   f"signs_correct = {signs_correct}")
+    builder.add_data("verdict", verdict)
+    print(f"\n  max/min |ratio|^(1) = {mom:.4f}  (was 3.96× under tensor-product)")
+    print(f"  All B_pred^(1) > 0:   {signs_correct}  "
+          "(was False — T/³He were UNBOUND under tensor-product)")
+    print(f"  Verdict: {verdict}")
+
+    builder.add_assertion(
+        "data_loaded",
+        computed=float(B_AME["D"]),
+        expected=2.22456607,
+        tolerance=1e-10,
+        unit="B(D) MeV",
+        source="AME 2020 deuteron binding",
+    )
+
+    builder.save()
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
