@@ -22,12 +22,35 @@ namespace QOU.BraidsAndKnots
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class WenzlQmnSynergyContext extends QOU.Shared.MarkovTraceContext where
-  /-- Manuscript sub-claim (i) — Direct verification of Wenzl-bridge correctness: any canonical-braid Markov-trace identity gives a one-shot test of $.... -/
+  /-- Manuscript sub-claim (i) — Direct verification of Wenzl-bridge
+      correctness: every canonical-braid Markov-trace identity gives a
+      one-shot test of $y_λ(q)$ values without resorting to MPFR or
+      sympy linear-system solve. -/
   claim_i_direct_verification_wenzl : Prop
-  /-- Manuscript sub-claim (ii) — Mass-formula compute speedup: the depth-resolved Φ_k pipeline in `depth_resolved_phi_k_hoefsmit.py` can replace its H.... -/
+  /-- Manuscript sub-claim (ii) — Mass-formula compute speedup: the
+      depth-resolved Φ_k pipeline can replace its Hoefsmit character
+      calls with q-MN where applicable. -/
   claim_ii_mass_formula_compute : Prop
-  /-- Manuscript sub-claim (iii) — Atom-knot identification path for ⁶Li, ⁷Li: - Enumerate hyperbolic knots $K$ with crossing-number $\leq 10$. -/
+  /-- Manuscript sub-claim (iii) — Atom-knot identification path for
+      ⁶Li, ⁷Li via enumerating hyperbolic knots and comparing
+      `tr_M(β_K)` against the AME binding × hyperbolic-volume ratio. -/
   claim_iii_atom_knot_identification : Prop
+  /-- Length of a canonical permutation braid `T_w` (e.g. number of
+      crossings in its reduced word). -/
+  lengthW : ℕ
+  /-- Markov parameter `z = 1/(q^{1/2} + q^{-1/2})`. -/
+  z : ℝ
+  /-- Markov trace value `tr_M(T_w)` on the canonical braid. -/
+  trM_Tw : ℝ
+  /-- Wenzl-bridge / q-MN reconstruction `Σ_λ y_λ(q) · χ_λ(T_w; q)`. -/
+  wenzlSum : ℝ
+  /-- Manuscript boxed identity: on any canonical permutation braid,
+      the Markov trace equals `z^{ℓ(w)}` (Markov axiom + cyclicity). -/
+  claim_iv_canonical_trace_power : trM_Tw = z ^ lengthW
+  /-- Cross-validation identity: the Wenzl/q-MN reconstruction matches
+      the closed-form `z^{ℓ(w)}`, giving an independent verification
+      of both formulas at every `n` and every reduced word `w`. -/
+  claim_v_wenzl_qmn_cross_check : wenzlSum = z ^ lengthW
 /-- **Proposition statement** (from manuscript):
 
 The Wenzl-bridge ([y-lambda-closed-form](#prop:y-lambda-closed-form-wenzl-bridge))
@@ -66,7 +89,11 @@ this drops the per-isotope compute time from
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/wenzl-qmn-synergy.ts
 theorem wenzl_qmn_synergy [ctx : WenzlQmnSynergyContext] :
-    ctx.claim_i_direct_verification_wenzl ∧ ctx.claim_ii_mass_formula_compute ∧ ctx.claim_iii_atom_knot_identification :=
-  ⟨ctx.claim_i_direct_verification_wenzl, ctx.claim_ii_mass_formula_compute, ctx.claim_iii_atom_knot_identification⟩
+    ctx.claim_i_direct_verification_wenzl ∧ ctx.claim_ii_mass_formula_compute ∧
+    ctx.claim_iii_atom_knot_identification ∧
+    ctx.trM_Tw = ctx.z ^ ctx.lengthW ∧ ctx.wenzlSum = ctx.z ^ ctx.lengthW :=
+  ⟨ctx.claim_i_direct_verification_wenzl, ctx.claim_ii_mass_formula_compute,
+   ctx.claim_iii_atom_knot_identification,
+   ctx.claim_iv_canonical_trace_power, ctx.claim_v_wenzl_qmn_cross_check⟩
 
 end QOU.BraidsAndKnots

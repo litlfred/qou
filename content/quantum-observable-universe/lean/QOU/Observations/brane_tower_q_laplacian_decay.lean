@@ -18,8 +18,28 @@ namespace QOU.Observations
 /-- Abstract context for the `brane_tower_q_laplacian_decay` claim — manuscript-themed
     typed fields below; `holds` carries the residual `Prop` claim. -/
 class BraneTowerQLaplacianDecayContext extends QOU.Shared.MarkovTraceContext where
-  /-- The `Prop`-valued claim of the lemma. -/
-  claim_brane_tower_q_laplacian_decay : Prop
+  /-- Substrate `q` specialised to `ℝ` for the inequality (the shared
+      context carries a generic `q : R`; the bound itself lives over
+      `ℝ` because it is a real-valued norm inequality). -/
+  q_real : ℝ
+  /-- Substrate q-Planck constant `ℏ_q = (q − 1)/q`. -/
+  hbar_q : ℝ
+  /-- Reeb-bundle density `ρ` (abstract domain). -/
+  RhoType : Type
+  /-- Reeb-bundle density representative `ρ : RhoType`. -/
+  ρ : RhoType
+  /-- L² norm of `ρ` on the Reeb bundle. -/
+  rho_L2 : ℝ
+  /-- The brane-tower sum `T(ρ) = Σ_{n≥1} ℏ_q^{2n} Δ⁽ⁿ⁾(ρ)`. -/
+  T_rho : ℝ
+  /-- The single-jet (n = 1) Laplacian contribution `Δ⁽¹⁾(ρ)`. -/
+  delta1_rho : ℝ
+  /-- Manuscript boxed identity: the brane-tower remainder above the
+      local single-jet contribution is dominated by a geometric tail
+      with ratio `q⁻²`. -/
+  claim_brane_tower_q_laplacian_decay :
+    |T_rho - hbar_q ^ 2 * delta1_rho|
+      ≤ hbar_q ^ 4 * rho_L2 * (q_real ^ (-2 : ℤ) / (1 - q_real ^ (-2 : ℤ)))
 /-- **Proposition statement** (from manuscript):
 
 Dropping the locality assumption for composite physical observables
@@ -38,6 +58,10 @@ contribution.*
     Matrix / categorical structures / etc.) and translating the manuscript
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/brane-tower-q-laplacian-decay.ts
-theorem brane_tower_q_laplacian_decay [ctx : BraneTowerQLaplacianDecayContext] : ctx.claim_brane_tower_q_laplacian_decay := ctx.claim_brane_tower_q_laplacian_decay
+theorem brane_tower_q_laplacian_decay [ctx : BraneTowerQLaplacianDecayContext] :
+    |ctx.T_rho - ctx.hbar_q ^ 2 * ctx.delta1_rho|
+      ≤ ctx.hbar_q ^ 4 * ctx.rho_L2 *
+        (ctx.q_real ^ (-2 : ℤ) / (1 - ctx.q_real ^ (-2 : ℤ))) :=
+  ctx.claim_brane_tower_q_laplacian_decay
 
 end QOU.Observations

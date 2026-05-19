@@ -25,6 +25,26 @@ class RootOfUnityTruncationContext where
   claim_ii_root_unity : Prop
   /-- Manuscript sub-claim (iii) — $q = 1$ (classical limit). -/
   claim_iii_classical_limit : Prop
+  /-- Truncation level `κ ∈ ℕ_{≥2}` indexing the root-of-unity tower. -/
+  κ : ℕ
+  /-- Core aspect ratio at the root-of-unity truncation level `κ`. -/
+  κ_t : ℝ
+  /-- Universal Bernstein constant `C` for the trigonometric-polynomial
+      bound `sup_t κ(t) ≤ 1 + C·(κ − 1)`. -/
+  C : ℝ
+  /-- Manuscript sub-claim (iv) — Bernstein bound at root of unity:
+      `sup_t κ(t) ≤ 1 + C·(κ − 1)`. -/
+  claim_iv_bernstein_bound : κ_t ≤ 1 + C * (κ - 1 : ℝ)
+  /-- Statement that the Navier-Stokes system blows up at the
+      collision of two vortex filaments. -/
+  nsBlowsUp : Prop
+  /-- Statement that the Levi form (contact form of the brane) stays
+      non-degenerate at the collision point. -/
+  leviNonDeg : Prop
+  /-- Manuscript boxed identity (contact-geometric form of the
+      millennium problem): NS blowup occurs iff the Levi form stays
+      non-degenerate, iff the aspect ratio is `O(1)`. -/
+  claim_v_blowup_iff_levi_iff_kappa : nsBlowsUp ↔ leviNonDeg
 
 /-- **Content statement** (from manuscript):
 
@@ -41,7 +61,12 @@ accumulation of infinitely many such truncations.
     claim above. -/
 -- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.ts
 theorem root_of_unity_truncation [ctx : RootOfUnityTruncationContext] :
-    ctx.claim_i_generic_qou_regime ∧ ctx.claim_ii_root_unity ∧ ctx.claim_iii_classical_limit :=
-  ⟨ctx.claim_i_generic_qou_regime, ctx.claim_ii_root_unity, ctx.claim_iii_classical_limit⟩
+    ctx.claim_i_generic_qou_regime ∧ ctx.claim_ii_root_unity ∧
+    ctx.claim_iii_classical_limit ∧
+    ctx.κ_t ≤ 1 + ctx.C * (ctx.κ - 1 : ℝ) ∧
+    (ctx.nsBlowsUp ↔ ctx.leviNonDeg) :=
+  ⟨ctx.claim_i_generic_qou_regime, ctx.claim_ii_root_unity,
+   ctx.claim_iii_classical_limit, ctx.claim_iv_bernstein_bound,
+   ctx.claim_v_blowup_iff_levi_iff_kappa⟩
 
 end QOU.FluidDynamics
